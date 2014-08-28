@@ -15,7 +15,7 @@ import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 
 /**
  * An {@link ITreeContentProvider} which is implemented and customizable using the EMF Facet customization mechanisms.
- * 
+ *
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
  * @since 0.2
@@ -24,7 +24,7 @@ public interface ICustomizedTreeContentProvider extends ITreeContentProvider {
 	/**
 	 * This method returns the customization manager used by the content provider. Updates to the list of loaded
 	 * customizations have to be done using the {@link ICustomizationManager} returned by this method.
-	 * 
+	 *
 	 * @return the customization manager used by this content provider.
 	 */
 	ICustomizationManager getCustomizationManager();

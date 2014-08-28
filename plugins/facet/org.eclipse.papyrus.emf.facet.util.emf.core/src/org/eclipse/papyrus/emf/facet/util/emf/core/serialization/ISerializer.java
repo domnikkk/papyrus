@@ -13,7 +13,7 @@ package org.eclipse.papyrus.emf.facet.util.emf.core.serialization;
 /**
  * The interface that must be implemented when adding an extension to the "serializer" extension
  * point.
- * 
+ *
  * @see ISerializationRegistry
  */
 // note: the serializer has to return the {@link Class} object instead of a qualified name
@@ -27,8 +27,7 @@ public interface ISerializer<T> {
 	String serialize(T value);
 
 	/**
-	 * Deserialize the given String back into the original value that was serialized with
-	 * {@link ISerializer#serialize(Object)}
+	 * Deserialize the given String back into the original value that was serialized with {@link ISerializer#serialize(Object)}
 	 */
 	T deserialize(String serializedValue);
 }

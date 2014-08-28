@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 429826
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.readonly;
 
@@ -32,19 +32,19 @@ public class EMFReadOnlyHandler extends AbstractReadOnlyHandler {
 	}
 
 	public Optional<Boolean> anyReadOnly(Set<ReadOnlyAxis> axes, URI[] uris) {
-		if(axes.contains(ReadOnlyAxis.PERMISSION)) {
-			for(URI uri : uris) {
-				if(!(uri.isPlatformResource() || uri.isFile())) {
+		if (axes.contains(ReadOnlyAxis.PERMISSION)) {
+			for (URI uri : uris) {
+				if (!(uri.isPlatformResource() || uri.isFile())) {
 					return Optional.of(Boolean.TRUE);
 				}
 			}
 		}
-		
+
 		return Optional.absent();
 	}
 
 	public Optional<Boolean> makeWritable(Set<ReadOnlyAxis> axes, URI[] uris) {
-		return Optional.absent(); //We cannot change the read-only status
+		return Optional.absent(); // We cannot change the read-only status
 	}
 
 }

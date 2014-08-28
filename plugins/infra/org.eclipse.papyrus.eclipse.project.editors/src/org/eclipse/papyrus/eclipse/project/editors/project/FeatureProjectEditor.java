@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,7 +44,7 @@ import org.xml.sax.SAXException;
 
 public class FeatureProjectEditor extends ProjectEditor implements IFeatureProjectEditor {
 
-	//TODO pour l'externalization : utiliser l'éditeur de Properties! dans java Utils
+	// TODO pour l'externalization : utiliser l'éditeur de Properties! dans java Utils
 
 	private Document fragmentXML;;
 
@@ -53,11 +53,11 @@ public class FeatureProjectEditor extends ProjectEditor implements IFeatureProje
 	private Element fragmentRoot;;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param project
-	 *        the eclipse project
+	 *            the eclipse project
 	 * @throws ParserConfigurationException
 	 * @throws SAXException
 	 * @throws IOException
@@ -68,15 +68,15 @@ public class FeatureProjectEditor extends ProjectEditor implements IFeatureProje
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.project.ProjectEditor#init()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	@Override
 	public void init() {
 		this.fragmentFile = getPlugin();
-		if((this.fragmentFile != null) && this.fragmentFile.exists()) {
+		if ((this.fragmentFile != null) && this.fragmentFile.exists()) {
 			final DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder documentBuilder;
 			try {
@@ -95,21 +95,21 @@ public class FeatureProjectEditor extends ProjectEditor implements IFeatureProje
 
 	/**
 	 * Create the file plugin.xml
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.project.ProjectEditor#createFiles(Set)
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	@Override
 	public void createFiles(final Set<String> files) {
-		//TODO
-		//		throw new UnsupportedOperationException();
+		// TODO
+		// throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.project.AbstractProjectEditor.plugin.AbstractEditor#exists()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	@Override
@@ -122,10 +122,9 @@ public class FeatureProjectEditor extends ProjectEditor implements IFeatureProje
 
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IPluginProjectEditor#setAttribute(org.w3c.dom.Element, java.lang.String,
-	 *      java.lang.String)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IPluginProjectEditor#setAttribute(org.w3c.dom.Element, java.lang.String, java.lang.String)
+	 *
 	 *      {@inheritDoc}
 	 */
 	public void setAttribute(final Element element, final String attributeName, final String attributeValue) {
@@ -134,13 +133,13 @@ public class FeatureProjectEditor extends ProjectEditor implements IFeatureProje
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the plugin file if it exists
 	 */
 	private IFile getPlugin() {
 		final IFile plugin = getProject().getFile(FRAGMENT_XML_FILE);
-		if(plugin.exists()) {
+		if (plugin.exists()) {
 			return plugin;
 		}
 		return null;
@@ -148,14 +147,14 @@ public class FeatureProjectEditor extends ProjectEditor implements IFeatureProje
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.project.ProjectEditor#save()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	@Override
 	public void save() {
-		if(exists()) {
+		if (exists()) {
 			try {
 				final TransformerFactory transformerFactory = TransformerFactory.newInstance();
 				final Transformer transformer = transformerFactory.newTransformer();
@@ -176,39 +175,39 @@ public class FeatureProjectEditor extends ProjectEditor implements IFeatureProje
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.project.ProjectEditor#getMissingNature()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	@Override
 	public Set<String> getMissingNature() {
 		return Collections.EMPTY_SET;
-		//TODO
+		// TODO
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.project.ProjectEditor#getMissingFiles()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	@Override
 	public Set<String> getMissingFiles() {
 		return Collections.EMPTY_SET;
-		//TODO
+		// TODO
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.file.AbstractFileEditor#getMissingBuildCommand()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	@Override
 	public Set<String> getMissingBuildCommand() {
 		return Collections.emptySet();
-		//TODO
+		// TODO
 	}
 
 	/**
@@ -240,11 +239,12 @@ public class FeatureProjectEditor extends ProjectEditor implements IFeatureProje
 	public static final String URL = "url";
 
 	public void setDescription(final String copyrightURL, final String copyrightDesc) {
-		if(exists()) {
-			//			this.fragmentRoot.getChildNodes():AttributeNode(name)
-			//			getDescriptionNode(DESCRIPTION);
-			Element extension = getNode(DESCRIPTION);;//this.fragmentXML.getgetElementById(DESCRIPTION);
-			if(extension == null) {
+		if (exists()) {
+			// this.fragmentRoot.getChildNodes():AttributeNode(name)
+			// getDescriptionNode(DESCRIPTION);
+			Element extension = getNode(DESCRIPTION);
+			;// this.fragmentXML.getgetElementById(DESCRIPTION);
+			if (extension == null) {
 				extension = this.fragmentXML.createElement(DESCRIPTION);
 				extension.setAttribute(URL, copyrightURL);
 				extension.setTextContent(copyrightDesc);
@@ -261,17 +261,17 @@ public class FeatureProjectEditor extends ProjectEditor implements IFeatureProje
 	}
 
 	protected void setURLNode(final String nodeName, final String url, final String description) {
-		if(exists()) {
+		if (exists()) {
 			Element extension = getNode(nodeName);
-			if(extension == null) {
+			if (extension == null) {
 				extension = this.fragmentXML.createElement(nodeName);
-				if(url != null) {
+				if (url != null) {
 					extension.setAttribute(URL, url);
 				}
 				extension.setTextContent(description);
 				this.fragmentRoot.appendChild(extension);
 			} else {
-				if(url != null) {
+				if (url != null) {
 					extension.setAttribute(URL, url);
 				}
 				extension.setTextContent(description);
@@ -297,11 +297,11 @@ public class FeatureProjectEditor extends ProjectEditor implements IFeatureProje
 
 	public String getCopyrightURL() {
 		final Element copyrightNode = getNode(COPYRIGHT);
-		if(copyrightNode != null) {
+		if (copyrightNode != null) {
 			final String value = copyrightNode.getAttribute("url");
-			if((value != null) && value.startsWith("%")) {
+			if ((value != null) && value.startsWith("%")) {
 				final IFile file = getProject().getFile("feature.properties");
-				final Properties prop = new Properties(); //TODO create a method to use Properties for others fields too
+				final Properties prop = new Properties(); // TODO create a method to use Properties for others fields too
 				try {
 					prop.load(file.getContents());
 				} catch (final IOException e) {
@@ -310,8 +310,8 @@ public class FeatureProjectEditor extends ProjectEditor implements IFeatureProje
 					Activator.log.error(e);
 				}
 				final Object val = prop.get("url");
-				if(val != null) {
-					return (String)val;
+				if (val != null) {
+					return (String) val;
 				}
 			}
 			return copyrightNode.getAttribute("url");
@@ -322,7 +322,7 @@ public class FeatureProjectEditor extends ProjectEditor implements IFeatureProje
 
 	public String getCopyrightText() {
 		final Element copyrightNode = getNode(COPYRIGHT);
-		if(copyrightNode != null) {
+		if (copyrightNode != null) {
 			return copyrightNode.getTextContent();
 		}
 		return null;
@@ -334,21 +334,21 @@ public class FeatureProjectEditor extends ProjectEditor implements IFeatureProje
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nodeName
-	 *        the node name
+	 *            the node name
 	 * @return
 	 */
 	public Element getNode(final String nodeName) {
-		if(exists()) {
+		if (exists()) {
 			final NodeList nodes = this.fragmentRoot.getChildNodes();
-			for(int i = 0; i < nodes.getLength(); i++) {
+			for (int i = 0; i < nodes.getLength(); i++) {
 				final Node item = nodes.item(i);
-				if(item instanceof NodeList) {
+				if (item instanceof NodeList) {
 					final String name = item.getNodeName();
-					if(name.equals(nodeName)) {
-						if(item instanceof Element) {
-							return (Element)item;
+					if (name.equals(nodeName)) {
+						if (item instanceof Element) {
+							return (Element) item;
 						}
 					}
 				}

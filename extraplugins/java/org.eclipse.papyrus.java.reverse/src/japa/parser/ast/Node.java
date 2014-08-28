@@ -27,7 +27,7 @@ import japa.parser.ast.visitor.VoidVisitor;
 
 /**
  * Abstract class for all nodes of the AST.
- * 
+ *
  * @author Julio Vilmar Gesser
  */
 public abstract class Node {
@@ -57,15 +57,15 @@ public abstract class Node {
 
 	/**
 	 * Accept method for visitor support.
-	 * 
+	 *
 	 * @param <R>
-	 *        the type the return value of the visitor
+	 *            the type the return value of the visitor
 	 * @param <A>
-	 *        the type the argument passed for the visitor
+	 *            the type the argument passed for the visitor
 	 * @param v
-	 *        the visitor implementation
+	 *            the visitor implementation
 	 * @param arg
-	 *        any value relevant for the visitor
+	 *            any value relevant for the visitor
 	 * @return the result of the visit
 	 */
 	public <R, A> R accept(GenericVisitor<R, A> v, A arg) {
@@ -74,13 +74,13 @@ public abstract class Node {
 
 	/**
 	 * Accept method for visitor support.
-	 * 
+	 *
 	 * @param <A>
-	 *        the type the argument passed for the visitor
+	 *            the type the argument passed for the visitor
 	 * @param v
-	 *        the visitor implementation
+	 *            the visitor implementation
 	 * @param arg
-	 *        any value relevant for the visitor
+	 *            any value relevant for the visitor
 	 */
 	public <A> void accept(VoidVisitor<A> v, A arg) {
 		v.visit(this, arg);
@@ -88,7 +88,7 @@ public abstract class Node {
 
 	/**
 	 * Return the begin column of this node.
-	 * 
+	 *
 	 * @return the begin column of this node
 	 */
 	public final int getBeginColumn() {
@@ -97,7 +97,7 @@ public abstract class Node {
 
 	/**
 	 * Return the begin line of this node.
-	 * 
+	 *
 	 * @return the begin line of this node
 	 */
 	public final int getBeginLine() {
@@ -113,7 +113,7 @@ public abstract class Node {
 
 	/**
 	 * Return the end column of this node.
-	 * 
+	 *
 	 * @return the end column of this node
 	 */
 	public final int getEndColumn() {
@@ -122,7 +122,7 @@ public abstract class Node {
 
 	/**
 	 * Return the end line of this node.
-	 * 
+	 *
 	 * @return the end line of this node
 	 */
 	public final int getEndLine() {
@@ -131,9 +131,9 @@ public abstract class Node {
 
 	/**
 	 * Sets the begin column of this node.
-	 * 
+	 *
 	 * @param beginColumn
-	 *        the begin column of this node
+	 *            the begin column of this node
 	 */
 	public final void setBeginColumn(int beginColumn) {
 		this.beginColumn = beginColumn;
@@ -141,9 +141,9 @@ public abstract class Node {
 
 	/**
 	 * Sets the begin line of this node.
-	 * 
+	 *
 	 * @param beginLine
-	 *        the begin line of this node
+	 *            the begin line of this node
 	 */
 	public final void setBeginLine(int beginLine) {
 		this.beginLine = beginLine;
@@ -158,9 +158,9 @@ public abstract class Node {
 
 	/**
 	 * Sets the end column of this node.
-	 * 
+	 *
 	 * @param endColumn
-	 *        the end column of this node
+	 *            the end column of this node
 	 */
 	public final void setEndColumn(int endColumn) {
 		this.endColumn = endColumn;
@@ -168,9 +168,9 @@ public abstract class Node {
 
 	/**
 	 * Sets the end line of this node.
-	 * 
+	 *
 	 * @param endLine
-	 *        the end line of this node
+	 *            the end line of this node
 	 */
 	public final void setEndLine(int endLine) {
 		this.endLine = endLine;
@@ -178,7 +178,7 @@ public abstract class Node {
 
 	/**
 	 * Return the String representation of this node.
-	 * 
+	 *
 	 * @return the String representation of this node
 	 */
 	@Override

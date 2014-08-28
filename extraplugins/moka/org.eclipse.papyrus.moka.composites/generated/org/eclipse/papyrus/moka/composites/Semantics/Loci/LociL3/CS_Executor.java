@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,6 +28,7 @@ import org.eclipse.uml2.uml.Class;
 
 public class CS_Executor extends Executor {
 
+	@Override
 	public Reference start(Class type, List<ParameterValue> inputs) {
 		// Instantiate the given class and start any behavior of the resulting
 		// object.
@@ -45,9 +46,9 @@ public class CS_Executor extends Executor {
 		object.startBehavior(type, inputs);
 
 		Reference reference;
-		if(object instanceof CS_Object) {
+		if (object instanceof CS_Object) {
 			reference = new CS_Reference();
-			((CS_Reference)reference).compositeReferent = (CS_Object)object;
+			((CS_Reference) reference).compositeReferent = (CS_Object) object;
 		} else {
 			reference = new Reference();
 		}

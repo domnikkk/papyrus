@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.IConstraint
 import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.Mode;
 
 /**
- * this is constraint constraint provider see extension point 
+ * this is constraint constraint provider see extension point
  *
  */
 public class ConstraintProviderImpl implements IConstraintProvider {
@@ -29,14 +29,14 @@ public class ConstraintProviderImpl implements IConstraintProvider {
 	private List<IConstraintsCategory> constraintsCategories = new ArrayList<IConstraintsCategory>();
 	private Mode mode;
 	private boolean cache;
-	private EPackage ePackage=null;
+	private EPackage ePackage = null;
 
 
-/**
- * 
- * Constructor.
- *
- */
+	/**
+	 *
+	 * Constructor.
+	 *
+	 */
 	public ConstraintProviderImpl() {
 
 		this.mode = Mode.Batch;
@@ -72,7 +72,7 @@ public class ConstraintProviderImpl implements IConstraintProvider {
 		return ePackage;
 	}
 
-	public void setEPackage(EPackage ePackage){
-		this.ePackage=ePackage;
+	public void setEPackage(EPackage ePackage) {
+		this.ePackage = ePackage;
 	}
 }

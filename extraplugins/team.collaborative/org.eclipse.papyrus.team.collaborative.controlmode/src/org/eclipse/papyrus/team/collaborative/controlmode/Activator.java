@@ -38,6 +38,7 @@ public class Activator extends AbstractUIPlugin {
 	 * 
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
 	 */
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
@@ -48,6 +49,7 @@ public class Activator extends AbstractUIPlugin {
 	 * 
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
 	 */
+	@Override
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
 		super.stop(context);
@@ -55,7 +57,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -63,14 +65,14 @@ public class Activator extends AbstractUIPlugin {
 	}
 
 	/**
-	 * 
+	 *
 	 * This method returns an <code>org.eclipse.swt.graphics.Image</code> identified by its pluginId and iconPath.<BR>
 	 */
 	public static Image getPluginIconImage(String pluginId, String iconPath) {
 		String key = pluginId + iconPath;
 		ImageRegistry registry = getDefault().getImageRegistry();
 		Image image = registry.get(key);
-		if(image == null) {
+		if (image == null) {
 			ImageDescriptor desc = AbstractUIPlugin.imageDescriptorFromPlugin(pluginId, iconPath);
 			registry.put(key, desc);
 			image = registry.get(key);

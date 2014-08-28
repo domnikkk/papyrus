@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,22 +24,22 @@ public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "org.eclipse.papyrus.uml.diagram.communication.custom.messages.messages"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 */
 	public static String CommandHelper_PropertySelection;
 
 	/**
-	 * 
+	 *
 	 */
 	public static String CommandHelper_SelectProperty;
 
 	/**
-	 * 
+	 *
 	 */
 	public static String CommandHelper_SelectSignature;
 
 	/**
-	 * 
+	 *
 	 */
 	public static String CommandHelper_signatureslection;
 

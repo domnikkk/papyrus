@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 
 /**
  * Utility class for Actions
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ActionUtil {
 
@@ -36,17 +36,17 @@ public class ActionUtil {
 	 * themselves. This method adapts a collections of such objects to their
 	 * underlying EObjects, so that EMF can handle them.
 	 * Objects that cannot be adapted remain as-is in the collection.
-	 * 
+	 *
 	 * @param selection
-	 *        The collection to adapt
+	 *            The collection to adapt
 	 * @return
 	 *         The adapted selection
 	 */
 	public static Collection<Object> getAdaptedSelection(Collection<? extends Object> selection) {
 		Collection<Object> newSelection = new LinkedList<Object>();
-		for(Object o : selection) {
+		for (Object o : selection) {
 			EObject adaptedEObject = EMFHelper.getEObject(o);
-			if(adaptedEObject != null) {
+			if (adaptedEObject != null) {
 				newSelection.add(adaptedEObject);
 			} else {
 				newSelection.add(o);
@@ -62,22 +62,22 @@ public class ActionUtil {
 	 * themselves. This method adapts a ISelection of such objects to their
 	 * underlying EObjects, so that EMF can handle them.
 	 * Objects that cannot be adapted remain as-is in the selection.
-	 * 
+	 *
 	 * @param sourceSelection
-	 *        The selection to adapt
+	 *            The selection to adapt
 	 * @return
 	 *         The adapted selection
 	 */
 	public static ISelection getAdaptedSelection(ISelection sourceSelection) {
-		if(sourceSelection instanceof StructuredSelection) {
-			StructuredSelection currentSelection = (StructuredSelection)sourceSelection;
+		if (sourceSelection instanceof StructuredSelection) {
+			StructuredSelection currentSelection = (StructuredSelection) sourceSelection;
 			List<Object> newSelection = new LinkedList<Object>();
 
 			Iterator<?> it = currentSelection.iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				Object object = it.next();
 				EObject adaptedEObject = EMFHelper.getEObject(object);
-				if(adaptedEObject != null) {
+				if (adaptedEObject != null) {
 					newSelection.add(adaptedEObject);
 				} else {
 					newSelection.add(object);

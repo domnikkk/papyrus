@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2012 Mia-Software.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  * 	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
- * 
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.impl;
 
@@ -17,13 +17,9 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.EFacetPackage;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.ExtensiblePackage;
-
 import org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQuery;
 import org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQueryFactory;
 import org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQueryPackage;
@@ -32,26 +28,24 @@ import org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQueryPackag
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class OclQueryPackageImpl extends EPackageImpl implements OclQueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass oclQueryEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQueryPackage#eNS_URI
 	 * @see #init()
@@ -64,27 +58,29 @@ public class OclQueryPackageImpl extends EPackageImpl implements OclQueryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link OclQueryPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 *
+	 * <p>
+	 * This method is used to initialize {@link OclQueryPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static OclQueryPackage init() {
-		if (isInited) return (OclQueryPackage)EPackage.Registry.INSTANCE.getEPackage(OclQueryPackage.eNS_URI);
+		if (isInited) {
+			return (OclQueryPackage) EPackage.Registry.INSTANCE.getEPackage(OclQueryPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		OclQueryPackageImpl theOclQueryPackage = (OclQueryPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof OclQueryPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new OclQueryPackageImpl());
+		OclQueryPackageImpl theOclQueryPackage = (OclQueryPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof OclQueryPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new OclQueryPackageImpl());
 
 		isInited = true;
 
@@ -100,7 +96,7 @@ public class OclQueryPackageImpl extends EPackageImpl implements OclQueryPackage
 		// Mark meta-data to indicate it can't be changed
 		theOclQueryPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(OclQueryPackage.eNS_URI, theOclQueryPackage);
 		return theOclQueryPackage;
@@ -109,8 +105,10 @@ public class OclQueryPackageImpl extends EPackageImpl implements OclQueryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getOclQuery() {
 		return oclQueryEClass;
 	}
@@ -118,46 +116,56 @@ public class OclQueryPackageImpl extends EPackageImpl implements OclQueryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getOclQuery_Context() {
-		return (EReference)oclQueryEClass.getEStructuralFeatures().get(0);
+		return (EReference) oclQueryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getOclQuery_OclExpression() {
-		return (EAttribute)oclQueryEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) oclQueryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public OclQueryFactory getOclQueryFactory() {
-		return (OclQueryFactory)getEFactoryInstance();
+		return (OclQueryFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -169,19 +177,23 @@ public class OclQueryPackageImpl extends EPackageImpl implements OclQueryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -190,7 +202,7 @@ public class OclQueryPackageImpl extends EPackageImpl implements OclQueryPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ExtensiblePackage theExtensiblePackage = (ExtensiblePackage)EPackage.Registry.INSTANCE.getEPackage(ExtensiblePackage.eNS_URI);
+		ExtensiblePackage theExtensiblePackage = (ExtensiblePackage) EPackage.Registry.INSTANCE.getEPackage(ExtensiblePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -210,4 +222,4 @@ public class OclQueryPackageImpl extends EPackageImpl implements OclQueryPackage
 		createResource(eNS_URI);
 	}
 
-} //OclQueryPackageImpl
+} // OclQueryPackageImpl

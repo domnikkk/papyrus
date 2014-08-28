@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -41,27 +41,28 @@ public class ElementTypeValidator implements ISelectionStatusValidator {
 	/**
 	 * <pre>
 	 * The selection has to match the {@link IElementType} for validation.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
+	@Override
 	public IStatus validate(Object[] selection) {
 
 		IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, Messages.ElementTypeValidator_NoSelection);
 
-		if((selection.length == 1) && (selection[0] instanceof EObject)) {
+		if ((selection.length == 1) && (selection[0] instanceof EObject)) {
 
 			// Default status : invalid
 			status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, NLS.bind(Messages.ElementTypeValidator_InvalidSelection, elementType.getDisplayName()));
 
-			EObject selected = (EObject)selection[0];
-			if(elementType instanceof ISpecializationType) {
-				if(((ISpecializationType)elementType).getMatcher().matches(selected)) {
+			EObject selected = (EObject) selection[0];
+			if (elementType instanceof ISpecializationType) {
+				if (((ISpecializationType) elementType).getMatcher().matches(selected)) {
 					status = new Status(IStatus.OK, Activator.PLUGIN_ID, Messages.ElementTypeValidator_ValidSelection);
 				}
 
 			} else {
-				if(elementType.getEClass().isInstance(selected)) {
+				if (elementType.getEClass().isInstance(selected)) {
 					status = new Status(IStatus.OK, Activator.PLUGIN_ID, Messages.ElementTypeValidator_ValidSelection);
 				}
 			}

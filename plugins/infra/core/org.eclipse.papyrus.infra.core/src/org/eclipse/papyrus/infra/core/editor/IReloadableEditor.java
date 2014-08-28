@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,6 +21,8 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.ui.URIEditorInput;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -38,6 +40,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IURIEditorInput;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.ide.IDE;
@@ -51,16 +54,16 @@ public interface IReloadableEditor {
 
 	/**
 	 * Reloads me in-place in the perspective layout.
-	 * 
+	 *
 	 * @param triggeringResources
-	 *        the resources that have changed in some way, triggering re-load
+	 *            the resources that have changed in some way, triggering re-load
 	 * @param reason
-	 *        the reason why the re-load is being requested
+	 *            the reason why the re-load is being requested
 	 * @param dirtyPolicy
-	 *        how the client would like to handle the case of a dirty editor
-	 * 
+	 *            how the client would like to handle the case of a dirty editor
+	 *
 	 * @throws CoreException
-	 *         on any failure to unload, reload, or whatever
+	 *             on any failure to unload, reload, or whatever
 	 */
 	void reloadEditor(Collection<? extends Resource> triggeringResources, ReloadReason reason, DirtyPolicy dirtyPolicy) throws CoreException;
 
@@ -79,10 +82,10 @@ public interface IReloadableEditor {
 
 		/**
 		 * Queries whether, under ordinary circumstances, the editor should attempt to re-load to pick up changes in its dependent resources.
-		 * 
+		 *
 		 * @param triggeringResources
-		 *        the resources triggering re-load (or close)
-		 * 
+		 *            the resources triggering re-load (or close)
+		 *
 		 * @return whether the editor should re-load
 		 */
 		public boolean shouldReload(Collection<? extends Resource> triggeringResources) {
@@ -118,9 +121,14 @@ public interface IReloadableEditor {
 			public DirtyPolicy resolve(IEditorPart editor, final Collection<? extends Resource> triggeringResources, final ReloadReason reason) throws CoreException {
 				final boolean dirty = editor.isDirty();
 
-				if(!dirty && reason.shouldReload(triggeringResources)) {
-					// Just re-open it. Simple
-					return DO_NOT_SAVE;
+				if (!dirty) {
+					if (reason.shouldReload(triggeringResources)) {
+						// Just re-load it. Simple
+						return DO_NOT_SAVE;
+					} else if (isPrincipalResourceAffected(editor, triggeringResources)) {
+						// Just close it. Also simple
+						return DO_NOT_SAVE;
+					}
 				}
 
 				final String editorName = getEditorName(editor);
@@ -132,7 +140,7 @@ public interface IReloadableEditor {
 				final String dontSaveOption;
 				final String ignoreOption = "Ignore";
 
-				switch(reason) {
+				switch (reason) {
 				case RESOURCES_DELETED:
 					promptTitle = "Resources Deleted";
 					promptIntro = NLS.bind("Some resources used by \"{0}\" have been deleted.", editorName);
@@ -149,8 +157,8 @@ public interface IReloadableEditor {
 
 				Callable<DirtyPolicy> result;
 
-				if(allReadOnly) {
-					//Only read-only models have changed. We (most likely) won't save them within this current editor. As they are already loaded, we can just continue.
+				if (allReadOnly) {
+					// Only read-only models have changed. We (most likely) won't save them within this current editor. As they are already loaded, we can just continue.
 					result = new Callable<DirtyPolicy>() {
 
 						@Override
@@ -159,16 +167,17 @@ public interface IReloadableEditor {
 
 							final String message;
 							final String[] options;
-							if(dirty) {
+							if (dirty) {
 								message = promptIntro + " Note: all these resources are loaded in read-only mode and won't be overridden if you choose to save. Unsaved changes will be lost.";
-								options = new String[]{ saveOption, dontSaveOption, ignoreOption };
+								options = new String[] { saveOption, dontSaveOption, ignoreOption };
 							} else {
 								message = promptIntro;
-								options = new String[]{ dontSaveOption, ignoreOption };
+								options = new String[] { dontSaveOption, ignoreOption };
 							}
 
 							final MessageDialog dialog = new MessageDialog(parentShell, promptTitle, null, message, MessageDialog.WARNING, options, 0) {
 
+								@Override
 								protected void setShellStyle(int newShellStyle) {
 									super.setShellStyle(newShellStyle | SWT.SHEET);
 								}
@@ -177,10 +186,10 @@ public interface IReloadableEditor {
 
 							DirtyPolicy result;
 
-							if(answer == SWT.DEFAULT) {
+							if (answer == SWT.DEFAULT) {
 								// User hit Esc or dismissed the dialog with the window manager button. Ignore
 								result = IGNORE;
-							} else if(dirty) {
+							} else if (dirty) {
 								result = values()[answer];
 							} else {
 								result = values()[answer + 1]; // Account for the missing "Save and Xxx" option
@@ -190,7 +199,7 @@ public interface IReloadableEditor {
 						}
 					};
 				} else {
-					//At least one read-write resource has changed. Potential conflicts.
+					// At least one read-write resource has changed. Potential conflicts.
 					result = new Callable<DirtyPolicy>() {
 
 						@Override
@@ -201,7 +210,7 @@ public interface IReloadableEditor {
 							final String action = reason.shouldReload(triggeringResources) ? "re-open" : "close";
 							final String message;
 
-							if(dirty) {
+							if (dirty) {
 								message = promptIntro + NLS.bind(" Do you wish to {0} the current editor? Unsaved changes will be lost.", action);
 							} else {
 								message = promptIntro + NLS.bind(" Do you wish to {0} the current editor?", action);
@@ -210,11 +219,12 @@ public interface IReloadableEditor {
 							final String[] options = { IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL };
 							final MessageDialog dialog = new MessageDialog(parentShell, promptTitle, null, message, MessageDialog.WARNING, options, 0) {
 
+								@Override
 								protected void setShellStyle(int newShellStyle) {
 									super.setShellStyle(newShellStyle | SWT.SHEET);
 								}
 							};
-							if(dialog.open() == 0) {
+							if (dialog.open() == 0) {
 								result = DO_NOT_SAVE;
 							}
 
@@ -235,7 +245,7 @@ public interface IReloadableEditor {
 
 		/**
 		 * Queries the default dirty policy currently in effect. The default-default is {@link #PROMPT_TO_SAVE}.
-		 * 
+		 *
 		 * @return the default policy
 		 */
 		public static DirtyPolicy getDefault() {
@@ -244,32 +254,36 @@ public interface IReloadableEditor {
 
 		/**
 		 * Resolves me to a specific actionable policy, based on the resources that are triggering re-load (or close) and the reason.
-		 * 
+		 *
 		 * @param editor
-		 *        the editor to be re-loaded
+		 *            the editor to be re-loaded
 		 * @param triggeringResources
-		 *        the resources (possibly an empty collection) that have changed
+		 *            the resources (possibly an empty collection) that have changed
 		 * @param reloadReason
-		 *        the reason why re-load (or close) is triggered
-		 * 
+		 *            the reason why re-load (or close) is triggered
+		 *
 		 * @return the specific policy to implement in re-loading the editor
-		 * 
+		 *
 		 * @throws CoreException
-		 *         on failure to resolve the specific policy
+		 *             on failure to resolve the specific policy
 		 */
 		public DirtyPolicy resolve(IEditorPart editor, Collection<? extends Resource> triggeringResources, ReloadReason reason) throws CoreException {
 			return this;
 		}
 
 		String getEditorName(IEditorPart editor) {
-			String result = editor.getTitle();
+			ModelSet modelSet = getModelSet(editor);
+			return (modelSet == null) ? editor.getTitle() : modelSet.getURIWithoutExtension().lastSegment();
+		}
 
-			if(editor instanceof IMultiDiagramEditor) {
+		private ModelSet getModelSet(IEditorPart editor) {
+			ModelSet result = null;
+
+			if (editor instanceof IMultiDiagramEditor) {
 				try {
-					ModelSet modelSet = ((IMultiDiagramEditor)editor).getServicesRegistry().getService(ModelSet.class);
-					result = modelSet.getURIWithoutExtension().lastSegment();
+					result = ((IMultiDiagramEditor) editor).getServicesRegistry().getService(ModelSet.class);
 				} catch (ServiceException e) {
-					// No problem.  We have a fall-back
+					// No problem. We have a fall-back
 					Activator.log.error(e);
 				}
 			}
@@ -277,10 +291,49 @@ public interface IReloadableEditor {
 			return result;
 		}
 
+		boolean isPrincipalResourceAffected(IEditorPart editor, Collection<? extends Resource> triggeringResources) {
+			boolean result = false;
+
+			ModelSet modelSet = getModelSet(editor);
+			if (modelSet != null) {
+				URI principalURI = modelSet.getURIWithoutExtension();
+				for (Resource next : triggeringResources) {
+					if (next.getURI().trimFileExtension().equals(principalURI)) {
+						result = true;
+						break;
+					}
+				}
+			} else {
+				URI principalURI = getURI(editor.getEditorInput());
+				if (principalURI != null) {
+					for (Resource next : triggeringResources) {
+						if (next.getURI().equals(principalURI)) {
+							result = true;
+							break;
+						}
+					}
+				}
+			}
+
+			return result;
+		}
+
+		private URI getURI(IEditorInput input) {
+			URI result = null;
+
+			if (input instanceof URIEditorInput) {
+				result = ((URIEditorInput) input).getURI();
+			} else if (input instanceof IURIEditorInput) {
+				result = URI.createURI(((IURIEditorInput) input).getURI().toString());
+			}
+
+			return result;
+		}
+
 		protected boolean allReadOnly(Collection<? extends Resource> resources) {
-			for(Resource resource : resources) {
+			for (Resource resource : resources) {
 				EditingDomain domain = TransactionUtil.getEditingDomain(resource);
-				if((domain == null) || !domain.isReadOnly(resource)) {
+				if ((domain == null) || !domain.isReadOnly(resource)) {
 					return false;
 				}
 			}
@@ -307,6 +360,7 @@ public interface IReloadableEditor {
 			return AdapterUtils.adapt(editor, IReloadableEditor.class, new Adapter(editor));
 		}
 
+		@Override
 		public void reloadEditor(Collection<? extends Resource> triggeringResources, ReloadReason reason, DirtyPolicy dirtyPolicy) throws CoreException {
 			final IWorkbenchPage page = editor.getSite().getPage();
 			final IEditorInput currentInput = editor.getEditorInput();
@@ -318,15 +372,15 @@ public interface IReloadableEditor {
 			final DirtyPolicy action = dirtyPolicy.resolve(editor, triggeringResources, reason);
 			final boolean save = action == DirtyPolicy.SAVE;
 
-			if(save && editor.isDirty()) {
+			if (save && editor.isDirty()) {
 				editor.doSave(new NullProgressMonitor());
 			}
 
-			if(action != DirtyPolicy.IGNORE) {
+			if (action != DirtyPolicy.IGNORE) {
 				page.closeEditor(editor, save);
 
 				// If resources were deleted, we close and don't re-open
-				if(reason.shouldReload(triggeringResources)) {
+				if (reason.shouldReload(triggeringResources)) {
 					display.asyncExec(new Runnable() {
 
 						@Override

@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.Planet;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -20,6 +19,7 @@ public class PlanetImpl extends PhysicalObjectImpl implements Planet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PlanetImpl() {
@@ -29,6 +29,7 @@ public class PlanetImpl extends PhysicalObjectImpl implements Planet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class PlanetImpl extends PhysicalObjectImpl implements Planet {
 		return RobotMLPackage.Literals.PLANET;
 	}
 
-} //PlanetImpl
+} // PlanetImpl

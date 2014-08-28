@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,11 +24,12 @@ public class CommunicationDiagramCreationCondition extends PerspectiveContextDep
 
 	/**
 	 * Creates the.
-	 * 
+	 *
 	 * @param selectedElement
-	 *        the selected element
+	 *            the selected element
 	 * @return whether the diagram can be created.
 	 */
+	@Override
 	public boolean create(EObject selectedElement) {
 		return false;
 	}

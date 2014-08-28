@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,9 +45,9 @@ import org.eclipse.papyrus.views.properties.util.PropertiesUtil;
  * Default implementation for ILayoutGenerator
  * PropertyEditors are grouped by their property type (Strings, booleans, ...)
  * Boolean and integer sections have two columns, while the other ones have only one columns
- * 
+ *
  * All multiple value editors are displayed after all the single value editors.
- * 
+ *
  * @author Camille Letavernier
  */
 public class StandardLayoutGenerator implements ILayoutGenerator {
@@ -67,7 +67,7 @@ public class StandardLayoutGenerator implements ILayoutGenerator {
 
 		Section section = createSection(parent);
 
-		for(Map.Entry<Category, List<PropertyEditor>> mapping : editorsByCategory.entrySet()) {
+		for (Map.Entry<Category, List<PropertyEditor>> mapping : editorsByCategory.entrySet()) {
 			Category category = mapping.getKey();
 			List<PropertyEditor> categorizedEditors = mapping.getValue();
 
@@ -98,11 +98,11 @@ public class StandardLayoutGenerator implements ILayoutGenerator {
 	}
 
 	protected void sortEditors(List<PropertyEditor> editors) {
-		for(PropertyEditor editor : editors) {
+		for (PropertyEditor editor : editors) {
 			Category category = new Category(editor.getProperty());
 			getByCategory(category).add(editor);
 
-			if(editor.getWidgetType() == null) {
+			if (editor.getWidgetType() == null) {
 				Activator.log.warn(String.format("Editor for property %s doesn't have a WidgetType", editor.getProperty().getName())); //$NON-NLS-1$
 				continue;
 			}
@@ -116,7 +116,7 @@ public class StandardLayoutGenerator implements ILayoutGenerator {
 
 		Section section = ContextsFactory.eINSTANCE.createSection();
 		section.setName(parent.getName());
-		section.setSectionFile(String.format("ui/%s.xwt", section.getName().replaceAll(" ", ""))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ 
+		section.setSectionFile(String.format("ui/%s.xwt", section.getName().replaceAll(" ", ""))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
 		URI compositeURI = URI.createURI(section.getSectionFile());
 		compositeURI = compositeURI.resolve(parent.eResource().getURI());
@@ -147,8 +147,8 @@ public class StandardLayoutGenerator implements ILayoutGenerator {
 
 	protected List<ValueAttribute> createNamespaces(Collection<Namespace> namespaces) {
 		List<ValueAttribute> xmlNamespaces = new LinkedList<ValueAttribute>();
-		for(Namespace namespace : namespaces) {
-			if(namespace == null) {
+		for (Namespace namespace : namespaces) {
+			if (namespace == null) {
 				continue;
 			}
 
@@ -161,7 +161,7 @@ public class StandardLayoutGenerator implements ILayoutGenerator {
 	}
 
 	protected List<PropertyEditor> getByCategory(Category category) {
-		if(!editorsByCategory.containsKey(category)) {
+		if (!editorsByCategory.containsKey(category)) {
 			editorsByCategory.put(category, new LinkedList<PropertyEditor>());
 		}
 		return editorsByCategory.get(category);
@@ -174,7 +174,7 @@ public class StandardLayoutGenerator implements ILayoutGenerator {
 		public int multiplicity;
 
 		public Integer getNumColumns() {
-			switch(editorType) {
+			switch (editorType) {
 			case BOOLEAN:
 				return 2;
 			case ENUMERATION:
@@ -186,7 +186,7 @@ public class StandardLayoutGenerator implements ILayoutGenerator {
 			case STRING:
 				return 1;
 			}
-			return 1; //Cannot happen
+			return 1; // Cannot happen
 		}
 
 		public Category(Property property) {
@@ -206,34 +206,34 @@ public class StandardLayoutGenerator implements ILayoutGenerator {
 
 		@Override
 		public boolean equals(Object obj) {
-			if(this == obj) {
+			if (this == obj) {
 				return true;
 			}
-			if(obj == null) {
+			if (obj == null) {
 				return false;
 			}
-			if(!(obj instanceof Category)) {
+			if (!(obj instanceof Category)) {
 				return false;
 			}
-			Category other = (Category)obj;
-			if(!getOuterType().equals(other.getOuterType())) {
+			Category other = (Category) obj;
+			if (!getOuterType().equals(other.getOuterType())) {
 				return false;
 			}
-			if(editorType != other.editorType) {
+			if (editorType != other.editorType) {
 				return false;
 			}
-			if(multiplicity != other.multiplicity) {
+			if (multiplicity != other.multiplicity) {
 				return false;
 			}
 			return true;
 		}
 
 		public int compareTo(Category category) {
-			if(category == null) {
+			if (category == null) {
 				return -1;
 			}
 
-			if(category.multiplicity != multiplicity) {
+			if (category.multiplicity != multiplicity) {
 				return multiplicity == 1 ? -1 : 1;
 			}
 
@@ -243,8 +243,8 @@ public class StandardLayoutGenerator implements ILayoutGenerator {
 
 		public Integer getTypeIndex() {
 			int i = 0;
-			for(Type type : orderedTypes) {
-				if(type == editorType) {
+			for (Type type : orderedTypes) {
+				if (type == editorType) {
 					return i;
 				}
 				i++;
@@ -265,13 +265,13 @@ public class StandardLayoutGenerator implements ILayoutGenerator {
 	/**
 	 * The order in which the types are displayed
 	 */
-	public static Type[] orderedTypes = new Type[]{ Type.STRING, Type.BOOLEAN, Type.INTEGER, Type.ENUMERATION, Type.REFERENCE };
+	public static Type[] orderedTypes = new Type[] { Type.STRING, Type.BOOLEAN, Type.INTEGER, Type.ENUMERATION, Type.REFERENCE };
 
 	public String getName() {
 		return Messages.StandardLayoutGenerator_name;
 	}
 
 	public void setGenerator(IGenerator generator) {
-		//Ignored
+		// Ignored
 	}
 }

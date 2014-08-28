@@ -84,24 +84,24 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 	 * if the parameter eref is null,It will look for the good role of the child eobject
 	 *
 	 * @param domain
-	 *        the Transactional Domain , cannot be null
+	 *            the Transactional Domain , cannot be null
 	 * @param targetOwner
-	 *        the eobject that will contain the drop object, cannot be null
+	 *            the eobject that will contain the drop object, cannot be null
 	 * @param childElement
-	 *        that we want to move, cannot be null
+	 *            that we want to move, cannot be null
 	 * @param the
-	 *        EREFERENCE for the role of the child element, can be null
+	 *            EREFERENCE for the role of the child element, can be null
 	 * @return the list of commands to to the drop
 	 */
 	protected List<Command> getDropIntoCommand(TransactionalEditingDomain domain, EObject targetOwner, EObject childElement, EReference eref) {
 		ArrayList<Command> commandList = new ArrayList<Command>();
 		MoveRequest moveRequest = new MoveRequest(targetOwner, childElement);
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(targetOwner);
-		if(provider != null) {
+		if (provider != null) {
 			// Retrieve delete command from the Element Edit service
 			ICommand command = provider.getEditCommand(moveRequest);
 
-			if(command != null) {
+			if (command != null) {
 				commandList.add(new GMFtoEMFCommandWrapper(command));
 			}
 
@@ -122,11 +122,11 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 	 * get a list that contains command to move a view into a new element
 	 *
 	 * @param domain
-	 *        the transactionnal edit domain, cannot be null
+	 *            the transactionnal edit domain, cannot be null
 	 * @param target
-	 *        the target of the drop, cannot be null
+	 *            the target of the drop, cannot be null
 	 * @param view
-	 *        the diagram that will move, cannot be null
+	 *            the diagram that will move, cannot be null
 	 * @return a list that contains one command to move the diagram
 	 */
 	protected Command getDropViewCommands(TransactionalEditingDomain domain, EObject target, EObject view) {
@@ -143,10 +143,10 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 		// Retrieve reassignment command from the Element Edit service
 		Command command = proto.getCommandChangeOwner(view, target);
 
-		if(command != null) {
+		if (command != null) {
 			Resource targetNotationResource = getTargetNotationResource(target);
-			if(targetNotationResource != null) {
-				if(!targetNotationResource.equals(view.eResource())) {
+			if (targetNotationResource != null) {
+				if (!targetNotationResource.equals(view.eResource())) {
 					List<Command> list = new ArrayList<Command>();
 					list.add(command);
 					list.add(new GMFtoEMFCommandWrapper(new MoveOpenableCommand(domain, "", view, targetNotationResource)));
@@ -162,8 +162,8 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 	}
 
 	protected Resource getTargetNotationResource(EObject targetOwner) {
-		if(targetOwner.eResource() != null && targetOwner.eResource().getResourceSet() instanceof ModelSet) {
-			ModelSet modelSet = (ModelSet)targetOwner.eResource().getResourceSet();
+		if (targetOwner.eResource() != null && targetOwner.eResource().getResourceSet() instanceof ModelSet) {
+			ModelSet modelSet = (ModelSet) targetOwner.eResource().getResourceSet();
 			return modelSet.getAssociatedResource(targetOwner, NotationModel.NOTATION_FILE_EXTENSION);
 		}
 		return null;
@@ -174,13 +174,13 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 	 * It will look for the good role of the child eobject
 	 *
 	 * @param domain
-	 *        the Transactional Domain, cannot be null
+	 *            the Transactional Domain, cannot be null
 	 * @param targetOwner
-	 *        the eobject that will contain the drop object , cannot be null
+	 *            the eobject that will contain the drop object , cannot be null
 	 * @param objectLocation
-	 *        the object where we want to drop the object
+	 *            the object where we want to drop the object
 	 * @param newElement
-	 *        that we want to move, cannot be null
+	 *            that we want to move, cannot be null
 	 * @return the list of commands to to the drop
 	 */
 	protected List<Command> getOrderChangeCommand(TransactionalEditingDomain domain, EObject targetOwner, EObject objectLocation, EObject newElement, boolean before) {
@@ -189,21 +189,21 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 		EList<EStructuralFeature> featureList = targetOwner.eClass().getEAllStructuralFeatures();
 
 		// Abort when trying to change order moving the element in one of its children
-		if(EcoreUtil.isAncestor(newElement, targetOwner)) {
+		if (EcoreUtil.isAncestor(newElement, targetOwner)) {
 			return Collections.emptyList();
 		}
 
-		//find the feature between childreen and owner
+		// find the feature between childreen and owner
 		Iterator<EStructuralFeature> iterator = featureList.iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			EStructuralFeature eStructuralFeature = iterator.next();
 
-			if(eStructuralFeature instanceof EReference) {
-				EReference ref = (EReference)eStructuralFeature;
+			if (eStructuralFeature instanceof EReference) {
+				EReference ref = (EReference) eStructuralFeature;
 
-				if(ref.isContainment()) {
+				if (ref.isContainment()) {
 
-					if(isSubClass(ref.getEType(), newElement.eClass())) {
+					if (isSubClass(ref.getEType(), newElement.eClass())) {
 						possibleEFeatures.add(eStructuralFeature);
 					}
 
@@ -211,24 +211,24 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 			}
 		}
 
-		//create the command
+		// create the command
 		Iterator<EStructuralFeature> iteratorFeature = possibleEFeatures.iterator();
-		while(iteratorFeature.hasNext()) {
+		while (iteratorFeature.hasNext()) {
 			EStructuralFeature eStructuralFeature = iteratorFeature.next();
 			ArrayList<EObject> tmp = new ArrayList<EObject>();
-			if(targetOwner.eGet(eStructuralFeature) instanceof Collection<?>) {
-				//get all element of this efeature
-				tmp.addAll((Collection<EObject>)targetOwner.eGet(eStructuralFeature));
+			if (targetOwner.eGet(eStructuralFeature) instanceof Collection<?>) {
+				// get all element of this efeature
+				tmp.addAll((Collection<EObject>) targetOwner.eGet(eStructuralFeature));
 
-				if(!newElement.equals(objectLocation)) {
+				if (!newElement.equals(objectLocation)) {
 					tmp.remove(newElement);
-					//normally tmp.indexOf(objectLocation)!= -1
-					//if this the case objectlocation=new element and
-					//it has been removed
+					// normally tmp.indexOf(objectLocation)!= -1
+					// if this the case objectlocation=new element and
+					// it has been removed
 					int indexObject = tmp.indexOf(objectLocation);
-					if(before && indexObject != -1) {
+					if (before && indexObject != -1) {
 						tmp.add(tmp.indexOf(objectLocation), newElement);
-					} else if(!before && indexObject != -1) {
+					} else if (!before && indexObject != -1) {
 						tmp.add(tmp.indexOf(objectLocation) + 1, newElement);
 					}
 				}
@@ -238,11 +238,11 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 
 			SetRequest setRequest = new SetRequest(targetOwner, eStructuralFeature, tmp);
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(targetOwner);
-			if(provider != null) {
+			if (provider != null) {
 				// Retrieve delete command from the Element Edit service
 				ICommand command = provider.getEditCommand(setRequest);
 
-				if(command != null) {
+				if (command != null) {
 					commandList.add(new GMFtoEMFCommandWrapper(command));
 				}
 			}
@@ -258,32 +258,32 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 	 * get the list of good command by taking in account if this is a change order or a drop into
 	 *
 	 * @param target
-	 *        the target object of the drop
+	 *            the target object of the drop
 	 * @return the list of command
 	 */
 	public CompoundCommand getDrop(Object target) {
 		CommonDropAdapter dropAdapter = getCommonDropAdapter();
 		List<Command> commandList = new ArrayList<Command>();
-		switch(dropAdapter.getCurrentOperation()) {
+		switch (dropAdapter.getCurrentOperation()) {
 		case DND.DROP_MOVE:
-			if(dropAdapter.getCurrentLocation() == ViewerDropAdapter.LOCATION_BEFORE) {
-				if(target instanceof EObjectTreeElement) {
+			if (dropAdapter.getCurrentLocation() == ViewerDropAdapter.LOCATION_BEFORE) {
+				if (target instanceof EObjectTreeElement) {
 					commandList = getOrderChangeCommand(target, true);
 				}
-			} else if(dropAdapter.getCurrentLocation() == ViewerDropAdapter.LOCATION_AFTER) {
-				if(target instanceof EObjectTreeElement) {
+			} else if (dropAdapter.getCurrentLocation() == ViewerDropAdapter.LOCATION_AFTER) {
+				if (target instanceof EObjectTreeElement) {
 					commandList = getOrderChangeCommand(target, false);
 				}
-			} else if(dropAdapter.getCurrentLocation() == ViewerDropAdapter.LOCATION_ON) {
-				if(target instanceof EObjectTreeElement) {
+			} else if (dropAdapter.getCurrentLocation() == ViewerDropAdapter.LOCATION_ON) {
+				if (target instanceof EObjectTreeElement) {
 					commandList = getDropIntoCommand(target, null);
 				}
-				if(target instanceof EReferenceTreeElement) {
-					commandList = getDropIntoCommand(((EReferenceTreeElement)target).getParent(), ((EReferenceTreeElement)target).getEReference());
+				if (target instanceof EReferenceTreeElement) {
+					commandList = getDropIntoCommand(((EReferenceTreeElement) target).getParent(), ((EReferenceTreeElement) target).getEReference());
 				}
 			}
 
-			else if(dropAdapter.getCurrentLocation() == ViewerDropAdapter.LOCATION_NONE) {
+			else if (dropAdapter.getCurrentLocation() == ViewerDropAdapter.LOCATION_NONE) {
 			}
 			break;
 		}
@@ -294,17 +294,17 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 	 * Test if a possibleSub eclass is a sub eclass
 	 *
 	 * @param aclass
-	 *        , cannot be null
+	 *            , cannot be null
 	 * @param possibleSubClasse
-	 *        , cannot be null
+	 *            , cannot be null
 	 * @return true if possible eclass is a subtype of a eclass or false
 	 */
 	public boolean isSubClass(EClassifier aclass, EClass possibleSubClasse) {
-		if(aclass.equals(possibleSubClasse)) {
+		if (aclass.equals(possibleSubClasse)) {
 			return true;
 		}
 		EList<EClass> superTypeList = possibleSubClasse.getEAllSuperTypes();
-		if(superTypeList.contains(aclass)) {
+		if (superTypeList.contains(aclass)) {
 			return true;
 		}
 		return false;
@@ -313,7 +313,7 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 	@Override
 	public IStatus validateDrop(Object target, int operation, TransferData transferType) {
 		Command dropCommand = getDrop(target);
-		if(dropCommand.canExecute()) {
+		if (dropCommand.canExecute()) {
 			return Status.OK_STATUS;
 		}
 		return Status.CANCEL_STATUS;
@@ -323,36 +323,36 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 	 * get the list of commands to drop an element
 	 *
 	 * @param target
-	 *        , can be null but do nothing
+	 *            , can be null but do nothing
 	 * @param the
-	 *        role where there is a drop ( can be null)
+	 *            role where there is a drop ( can be null)
 	 * @return the list of the commands
 	 */
 	protected List<Command> getDropIntoCommand(final Object target, EReference eref) {
 
-		//init
+		// init
 		ArrayList<Command> result = new ArrayList<Command>();
 		EObject targetEObject = null;
 
 		targetEObject = EMFHelper.getEObject(target);
-		if(targetEObject == null) {
+		if (targetEObject == null) {
 			return result;
 		}
 
-		//get Command from the selection
+		// get Command from the selection
 		ISelection selection = LocalSelectionTransfer.getTransfer().getSelection();
-		if(selection instanceof IStructuredSelection) {
-			List<?> selectedElements = ((IStructuredSelection)selection).toList();
+		if (selection instanceof IStructuredSelection) {
+			List<?> selectedElements = ((IStructuredSelection) selection).toList();
 			Iterator<?> it = selectedElements.iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				Object object = it.next();
 				EObject eObjectchild = EMFHelper.getEObject(object);
 
-				if(ViewPrototype.isViewObject(eObjectchild) && getEditors(targetEObject).contains(eObjectchild)) {
+				if (ViewPrototype.isViewObject(eObjectchild) && getEditors(targetEObject).contains(eObjectchild)) {
 					result.add(getDropViewCommands(getEditingDomain(targetEObject), targetEObject, eObjectchild));
 				}
-				//test if object is an eobject
-				else if(eObjectchild != null) {
+				// test if object is an eobject
+				else if (eObjectchild != null) {
 					result.addAll(getDropIntoCommand(getEditingDomain(targetEObject), targetEObject, eObjectchild, eref));
 				}
 
@@ -379,33 +379,33 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 	 * get the list of commands to drop an element
 	 *
 	 * @param target
-	 *        , can be null but do nothing
+	 *            , can be null but do nothing
 	 * @return the list of the commands
 	 */
 	protected List<Command> getOrderChangeCommand(final Object target, boolean before) {
 
-		//init
+		// init
 		ArrayList<Command> result = new ArrayList<Command>();
 		EObject objectLocation = null;
 		EObject objectOwner = null;
 
 		objectLocation = EMFHelper.getEObject(target);
-		if(objectLocation == null) {
+		if (objectLocation == null) {
 			return result;
 		}
 
 		objectOwner = objectLocation.eContainer();
 
-		//get Command from the selection
+		// get Command from the selection
 		ISelection selection = LocalSelectionTransfer.getTransfer().getSelection();
-		if(selection instanceof IStructuredSelection) {
-			List<?> selectedElements = ((IStructuredSelection)selection).toList();
+		if (selection instanceof IStructuredSelection) {
+			List<?> selectedElements = ((IStructuredSelection) selection).toList();
 			Iterator<?> it = selectedElements.iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				Object object = it.next();
 				EObject eObjectchild = EMFHelper.getEObject(object);
-				//test if object is an eobject
-				if(eObjectchild != null && objectOwner != null) {
+				// test if object is an eobject
+				if (eObjectchild != null && objectOwner != null) {
 
 					result.addAll(getOrderChangeCommand(getEditingDomain(eObjectchild), objectOwner, objectLocation, eObjectchild, before));
 				}

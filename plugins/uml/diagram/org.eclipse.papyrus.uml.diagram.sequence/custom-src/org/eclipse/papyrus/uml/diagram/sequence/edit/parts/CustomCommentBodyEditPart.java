@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ public class CustomCommentBodyEditPart extends CommentBodyEditPart {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomCommentBodyEditPart(View view) {
@@ -35,8 +35,8 @@ public class CustomCommentBodyEditPart extends CommentBodyEditPart {
 
 	@Override
 	protected void setLabelIconHelper(IFigure figure, Image icon) {
-		if(figure instanceof HTMLCornerBentFigure) {
-			((HTMLCornerBentFigure)figure).setAppliedStereotypeIcon(icon);
+		if (figure instanceof HTMLCornerBentFigure) {
+			((HTMLCornerBentFigure) figure).setAppliedStereotypeIcon(icon);
 		} else {
 			super.setLabelIconHelper(figure, icon);
 		}

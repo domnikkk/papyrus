@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -41,36 +41,37 @@ public class CompactLifelineCompartmentItemSemanticEditPolicyCN extends UMLBaseI
 	/**
 	 * @generated
 	 */
+	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
 		IElementType requestElementType = req.getElementType();
-		if(requestElementType == null) {
+		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-		if(UMLElementTypes.StateInvariant_28 == requestElementType) {
+		if (UMLElementTypes.StateInvariant_28 == requestElementType) {
 			return getGEFWrapper(new CompactStateInvariantCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.OccurrenceSpecification_12 == requestElementType) {
+		if (UMLElementTypes.OccurrenceSpecification_12 == requestElementType) {
 			return getGEFWrapper(new OccurrenceSpecificationCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.MessageOccurrenceSpecification_13 == requestElementType) {
+		if (UMLElementTypes.MessageOccurrenceSpecification_13 == requestElementType) {
 			return getGEFWrapper(new MessageOccurrenceSpecificationCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.DestructionOccurrenceSpecification_27 == requestElementType) {
+		if (UMLElementTypes.DestructionOccurrenceSpecification_27 == requestElementType) {
 			return getGEFWrapper(new DestructionOccurrenceSpecificationCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.DurationConstraint_18 == requestElementType) {
+		if (UMLElementTypes.DurationConstraint_18 == requestElementType) {
 			return getGEFWrapper(new DurationConstraintCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.DurationObservation_17 == requestElementType) {
+		if (UMLElementTypes.DurationObservation_17 == requestElementType) {
 			return getGEFWrapper(new DurationObservationCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.TimeConstraint_15 == requestElementType) {
+		if (UMLElementTypes.TimeConstraint_15 == requestElementType) {
 			return getGEFWrapper(new TimeConstraintCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.TimeObservation_16 == requestElementType) {
+		if (UMLElementTypes.TimeObservation_16 == requestElementType) {
 			return getGEFWrapper(new TimeObservationCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.GeneralOrdering_67 == requestElementType) {
+		if (UMLElementTypes.GeneralOrdering_67 == requestElementType) {
 			return getGEFWrapper(new GeneralOrderingCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		return super.getCreateCommand(req);

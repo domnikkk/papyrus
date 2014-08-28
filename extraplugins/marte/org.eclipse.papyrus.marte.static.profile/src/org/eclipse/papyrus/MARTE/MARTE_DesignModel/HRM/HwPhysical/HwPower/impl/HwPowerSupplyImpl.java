@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,8 +27,8 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPower.HwPowe
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPower.impl.HwPowerSupplyImpl#getSuppliedPower <em>Supplied Power</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPower.impl.HwPowerSupplyImpl#getCapacity <em>Capacity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPower.impl.HwPowerSupplyImpl#getSuppliedPower <em>Supplied Power</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPower.impl.HwPowerSupplyImpl#getCapacity <em>Capacity</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +39,7 @@ public class HwPowerSupplyImpl extends HwComponentImpl implements HwPowerSupply 
 	 * The default value of the '{@link #getSuppliedPower() <em>Supplied Power</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSuppliedPower()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class HwPowerSupplyImpl extends HwComponentImpl implements HwPowerSupply 
 	 * The cached value of the '{@link #getSuppliedPower() <em>Supplied Power</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSuppliedPower()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class HwPowerSupplyImpl extends HwComponentImpl implements HwPowerSupply 
 	 * The default value of the '{@link #getCapacity() <em>Capacity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getCapacity()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class HwPowerSupplyImpl extends HwComponentImpl implements HwPowerSupply 
 	 * The cached value of the '{@link #getCapacity() <em>Capacity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getCapacity()
 	 * @generated
 	 * @ordered
@@ -78,6 +82,7 @@ public class HwPowerSupplyImpl extends HwComponentImpl implements HwPowerSupply 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HwPowerSupplyImpl() {
@@ -87,6 +92,7 @@ public class HwPowerSupplyImpl extends HwComponentImpl implements HwPowerSupply 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,8 +103,10 @@ public class HwPowerSupplyImpl extends HwComponentImpl implements HwPowerSupply 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getSuppliedPower() {
 		return suppliedPower;
 	}
@@ -106,20 +114,25 @@ public class HwPowerSupplyImpl extends HwComponentImpl implements HwPowerSupply 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setSuppliedPower(String newSuppliedPower) {
 		String oldSuppliedPower = suppliedPower;
 		suppliedPower = newSuppliedPower;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwPowerPackage.HW_POWER_SUPPLY__SUPPLIED_POWER, oldSuppliedPower, suppliedPower));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getCapacity() {
 		return capacity;
 	}
@@ -127,27 +140,31 @@ public class HwPowerSupplyImpl extends HwComponentImpl implements HwPowerSupply 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setCapacity(String newCapacity) {
 		String oldCapacity = capacity;
 		capacity = newCapacity;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwPowerPackage.HW_POWER_SUPPLY__CAPACITY, oldCapacity, capacity));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwPowerPackage.HW_POWER_SUPPLY__SUPPLIED_POWER:
-				return getSuppliedPower();
-			case HwPowerPackage.HW_POWER_SUPPLY__CAPACITY:
-				return getCapacity();
+		case HwPowerPackage.HW_POWER_SUPPLY__SUPPLIED_POWER:
+			return getSuppliedPower();
+		case HwPowerPackage.HW_POWER_SUPPLY__CAPACITY:
+			return getCapacity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -155,17 +172,18 @@ public class HwPowerSupplyImpl extends HwComponentImpl implements HwPowerSupply 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwPowerPackage.HW_POWER_SUPPLY__SUPPLIED_POWER:
-				setSuppliedPower((String)newValue);
-				return;
-			case HwPowerPackage.HW_POWER_SUPPLY__CAPACITY:
-				setCapacity((String)newValue);
-				return;
+		case HwPowerPackage.HW_POWER_SUPPLY__SUPPLIED_POWER:
+			setSuppliedPower((String) newValue);
+			return;
+		case HwPowerPackage.HW_POWER_SUPPLY__CAPACITY:
+			setCapacity((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -173,17 +191,18 @@ public class HwPowerSupplyImpl extends HwComponentImpl implements HwPowerSupply 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwPowerPackage.HW_POWER_SUPPLY__SUPPLIED_POWER:
-				setSuppliedPower(SUPPLIED_POWER_EDEFAULT);
-				return;
-			case HwPowerPackage.HW_POWER_SUPPLY__CAPACITY:
-				setCapacity(CAPACITY_EDEFAULT);
-				return;
+		case HwPowerPackage.HW_POWER_SUPPLY__SUPPLIED_POWER:
+			setSuppliedPower(SUPPLIED_POWER_EDEFAULT);
+			return;
+		case HwPowerPackage.HW_POWER_SUPPLY__CAPACITY:
+			setCapacity(CAPACITY_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -191,15 +210,16 @@ public class HwPowerSupplyImpl extends HwComponentImpl implements HwPowerSupply 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwPowerPackage.HW_POWER_SUPPLY__SUPPLIED_POWER:
-				return SUPPLIED_POWER_EDEFAULT == null ? suppliedPower != null : !SUPPLIED_POWER_EDEFAULT.equals(suppliedPower);
-			case HwPowerPackage.HW_POWER_SUPPLY__CAPACITY:
-				return CAPACITY_EDEFAULT == null ? capacity != null : !CAPACITY_EDEFAULT.equals(capacity);
+		case HwPowerPackage.HW_POWER_SUPPLY__SUPPLIED_POWER:
+			return SUPPLIED_POWER_EDEFAULT == null ? suppliedPower != null : !SUPPLIED_POWER_EDEFAULT.equals(suppliedPower);
+		case HwPowerPackage.HW_POWER_SUPPLY__CAPACITY:
+			return CAPACITY_EDEFAULT == null ? capacity != null : !CAPACITY_EDEFAULT.equals(capacity);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -207,11 +227,14 @@ public class HwPowerSupplyImpl extends HwComponentImpl implements HwPowerSupply 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (suppliedPower: ");
@@ -222,4 +245,4 @@ public class HwPowerSupplyImpl extends HwComponentImpl implements HwPowerSupply 
 		return result.toString();
 	}
 
-} //HwPowerSupplyImpl
+} // HwPowerSupplyImpl

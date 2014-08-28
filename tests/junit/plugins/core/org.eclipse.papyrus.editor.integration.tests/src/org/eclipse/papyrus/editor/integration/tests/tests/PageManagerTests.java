@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 433371
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.editor.integration.tests.tests;
 
@@ -313,10 +313,10 @@ public class PageManagerTests extends AbstractEditorIntegrationTest {
 		initModel("bug433371", "delete_sash_page", getBundle());
 		ModelSet modelSet = getModelSet();
 		final Diagram diagram = (Diagram)NotationUtils.getNotationModel(modelSet).getResource().getContents().get(1);
-		
+
 		IPageManager pageManager = editor.getServicesRegistry().getService(IPageManager.class);
 		pageManager.selectPage(diagram); // Make sure the one we want deleted is active
-		
+
 		testPageDeletion(diagram.getElement(), diagram, UmlSequenceDiagramForMultiEditor.class);
 	}
 

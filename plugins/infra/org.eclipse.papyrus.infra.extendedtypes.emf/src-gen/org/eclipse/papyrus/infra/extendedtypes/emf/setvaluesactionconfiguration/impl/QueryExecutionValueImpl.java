@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.QueryExecutionValue;
 import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationPackage;
 
@@ -20,6 +19,7 @@ public class QueryExecutionValueImpl extends DynamicValueImpl implements QueryEx
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected QueryExecutionValueImpl() {
@@ -29,6 +29,7 @@ public class QueryExecutionValueImpl extends DynamicValueImpl implements QueryEx
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class QueryExecutionValueImpl extends DynamicValueImpl implements QueryEx
 		return SetValuesActionConfigurationPackage.Literals.QUERY_EXECUTION_VALUE;
 	}
 
-} //QueryExecutionValueImpl
+} // QueryExecutionValueImpl

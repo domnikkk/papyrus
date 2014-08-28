@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -73,8 +73,9 @@ public class CustomFirstRegionInCompositeStateCreateElementCommand extends Abstr
 		if (compartment.getChildren().isEmpty()) {
 			View owner = (View) compartment.eContainer();
 			State state = (State) owner.getElement();
-			if (state.getSubmachine() == null)
+			if (state.getSubmachine() == null) {
 				return true;
+			}
 			return false;
 		}
 		// CHECK THIS
@@ -133,7 +134,7 @@ public class CustomFirstRegionInCompositeStateCreateElementCommand extends Abstr
 		}
 		// create a view for the new region on the stateMachineCompartment
 		String semanticHint = ((IHintedType) UMLElementTypes.Region_3000).getSemanticHint();
-		View newRegion = (View) ViewService.getInstance().createNode(adaptableForDropped, compartment, semanticHint, -1, prefHints);
+		View newRegion = ViewService.getInstance().createNode(adaptableForDropped, compartment, semanticHint, -1, prefHints);
 		// add region specific annotation
 		Zone.createRegionDefaultAnnotation(newRegion);
 		// adjust bounds and zone

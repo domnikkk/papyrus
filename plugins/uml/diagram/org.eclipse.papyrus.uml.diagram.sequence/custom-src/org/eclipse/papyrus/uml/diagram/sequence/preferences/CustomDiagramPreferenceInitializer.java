@@ -13,6 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.preferences;
 
+import org.eclipse.gmf.runtime.diagram.ui.preferences.DiagramsPreferencePage;
 import org.eclipse.jface.preference.IPreferenceStore;
 
 /**
@@ -22,7 +23,7 @@ public class CustomDiagramPreferenceInitializer extends DiagramPreferenceInitial
 
 	/**
 	 * Add the diagram preference page to the initialization
-	 * 
+	 *
 	 * @Override (update at each gmf change) diagram preference page
 	 */
 	@Override
@@ -49,10 +50,10 @@ public class CustomDiagramPreferenceInitializer extends DiagramPreferenceInitial
 		MessagePreferencePage.initDefaults(store);
 		GeneralOrderingPreferencePage.initDefaults(store);
 		// diagram preference page
-		DiagramGeneralPreferencePage.initDefaults(store);
+		DiagramsPreferencePage.initDefaults(store);
 		DestructionOccurrenceSpecificationPreferencePage.initDefaults(store);
 
-		//Custom preference pages.
+		// Custom preference pages.
 		CustomCombinedFragmentPreferencePage.initDefaults(store);
 		CustomConsiderIgnoreFragmentPreferencePage.initDefaults(store);
 		CustomDestructionOccurrenceSpecificationPreferencePage.initDefaults(store);

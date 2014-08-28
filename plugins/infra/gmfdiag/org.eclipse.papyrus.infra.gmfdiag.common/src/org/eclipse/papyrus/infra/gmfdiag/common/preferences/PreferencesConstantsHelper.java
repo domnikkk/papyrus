@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -42,7 +42,7 @@ import org.eclipse.gmf.runtime.diagram.ui.internal.properties.WorkspaceViewerPro
  * <p>
  * It also helps to retrieve the string used to store the preference type for a given element.
  * </p>
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public class PreferencesConstantsHelper {
@@ -86,7 +86,7 @@ public class PreferencesConstantsHelper {
 
 	private final static String GRADIENT_POLICY_CONSTANT = GRADIENT + POLICY;
 
-	private final static String JUMPLINK_STATUS_CONSTANT = JUMPLINK + "status"; //$NON-NLS-1$ 
+	private final static String JUMPLINK_STATUS_CONSTANT = JUMPLINK + "status"; //$NON-NLS-1$
 
 	private final static String JUMPLINK_REVERSE_CONSTANT = JUMPLINK + "reverse"; //$NON-NLS-1$
 
@@ -144,7 +144,7 @@ public class PreferencesConstantsHelper {
 
 	public final static String INVERT_BINDING_FOR_DEFAULT_RESIZE_AND_CONSTRAINED_RESIZE_CONSTANT = "invertBindingForDefaultResizeAndConstrainedResize"; //$NON-NLS-1$
 
-	
+
 	/**
 	 * A preference of type COLOR FILL
 	 */
@@ -329,11 +329,11 @@ public class PreferencesConstantsHelper {
 
 	/**
 	 * Get the preference constant used to store the preference of an element.
-	 * 
+	 *
 	 * @param elementName
-	 *        the name of the element
+	 *            the name of the element
 	 * @param preferenceType
-	 *        the type of preference to store. It must be a value defined in {@link PreferenceConstantHelper}
+	 *            the type of preference to store. It must be a value defined in {@link PreferenceConstantHelper}
 	 * @return the constant used.
 	 */
 	public static String getConstant(String elementName, int preferenceType) {
@@ -341,7 +341,7 @@ public class PreferencesConstantsHelper {
 		sb.append(elementName);
 		sb.append("."); //$NON-NLS-1$
 
-		switch(preferenceType) {
+		switch (preferenceType) {
 		case COLOR_FILL:
 			sb.append(COLOR_FILL_CONSTANT);
 			break;
@@ -449,11 +449,11 @@ public class PreferencesConstantsHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param elementName
-	 *        diagramKind+'_'+element
+	 *            diagramKind+'_'+element
 	 * @param preferenceType
-	 *        the type of preference to store. It must be a value defined in {@link PreferenceConstantHelper}
+	 *            the type of preference to store. It must be a value defined in {@link PreferenceConstantHelper}
 	 * @return the key for the element of a diagram
 	 */
 	public static String getElementConstant(String elementName, int preferenceType) {
@@ -461,13 +461,13 @@ public class PreferencesConstantsHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param elementName
-	 *        diagramKind+'_'+element
+	 *            diagramKind+'_'+element
 	 * @param compartmentName
-	 *        the compartment name
+	 *            the compartment name
 	 * @param preferenceType
-	 *        the type of preference to store. It must be a value defined in {@link PreferenceConstantHelper}
+	 *            the type of preference to store. It must be a value defined in {@link PreferenceConstantHelper}
 	 * @return the key for the element of a diagram
 	 */
 	public static String getCompartmentElementConstant(String elementName, String compartmentName, int preferenceType) {
@@ -476,14 +476,14 @@ public class PreferencesConstantsHelper {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param elementName
-	 *        diagramKind+'_'+element
+	 *            diagramKind+'_'+element
 	 * @param labelRole
-	 *        he role of the label
+	 *            he role of the label
 	 * @param preferenceType
-	 *        the type of preference to store. It must be a value defined in {@link PreferenceConstantHelper}
+	 *            the type of preference to store. It must be a value defined in {@link PreferenceConstantHelper}
 	 * @return the key for the element of a diagram
 	 */
 	public static String getLabelElementConstant(String elementName, String labelRole, int preferenceType) {
@@ -492,9 +492,9 @@ public class PreferencesConstantsHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param preferenceType
-	 *        the type of preference to store. It must be a value defined in {@link PreferenceConstantHelper}
+	 *            the type of preference to store. It must be a value defined in {@link PreferenceConstantHelper}
 	 * @return get the preference key at the papyrus editor level
 	 */
 	public static String getPapyrusEditorConstant(int preferenceType) {
@@ -502,11 +502,11 @@ public class PreferencesConstantsHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param diagramKind
-	 *        the kind of diagram.
+	 *            the kind of diagram.
 	 * @param preferenceType
-	 *        the type of preference to store. It must be a value defined in {@link PreferenceConstantHelper}
+	 *            the type of preference to store. It must be a value defined in {@link PreferenceConstantHelper}
 	 * @return the preference key at the diagram level
 	 */
 	public static String getDiagramConstant(String diagramKind, int preferenceType) {

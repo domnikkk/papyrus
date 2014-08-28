@@ -42,17 +42,17 @@ public class EnableWriteCommandHandler extends AbstractHandler {
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		EObject elem = getSelectedElement();
-		if(elem != null && elem.eResource() != null && elem.eResource().getResourceSet() != null) {
+		if (elem != null && elem.eResource() != null && elem.eResource().getResourceSet() != null) {
 			Resource res = elem.eResource();
 			ResourceSet rs = res.getResourceSet();
 
-			if(res.getURI() != null && res.getURI().isPlatformResource()) {
+			if (res.getURI() != null && res.getURI().isPlatformResource()) {
 				IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(res.getURI().toPlatformString(true)));
 				IPapyrusFile papFile = PapyrusModelHelper.getPapyrusModelFactory().createIPapyrusFile(file);
 				IFile[] associatedFiles = OneFileUtils.getAssociatedFiles(papFile);
 
 				URI[] associatedUris = new URI[associatedFiles.length];
-				for (int i=0 ; i < associatedFiles.length ; i++) {
+				for (int i = 0; i < associatedFiles.length; i++) {
 					associatedUris[i] = URI.createPlatformResourceURI(associatedFiles[i].getFullPath().toString(), true);
 				}
 
@@ -64,32 +64,32 @@ public class EnableWriteCommandHandler extends AbstractHandler {
 
 	protected EObject getSelectedElement() {
 		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-		if (activeWorkbenchWindow!=null){
+		if (activeWorkbenchWindow != null) {
 			ISelection selection = activeWorkbenchWindow.getSelectionService().getSelection();
-			if(selection instanceof IStructuredSelection) {
-				Object obj = ((IStructuredSelection)selection).getFirstElement();
+			if (selection instanceof IStructuredSelection) {
+				Object obj = ((IStructuredSelection) selection).getFirstElement();
 				return resolveSemanticObject(obj);
-			}			
+			}
 		}
 		return null;
 	}
 
 	/**
 	 * Resolve semantic element
-	 * 
+	 *
 	 * @param object
-	 *        the object to resolve
+	 *            the object to resolve
 	 * @return <code>null</code> or the semantic element associated to the
 	 *         specified object
 	 */
 	protected EObject resolveSemanticObject(Object object) {
 		Object businessObject = BusinessModelResolver.getInstance().getBusinessModel(object);
-		if(businessObject instanceof EObject) {
-			return (EObject)businessObject;
+		if (businessObject instanceof EObject) {
+			return (EObject) businessObject;
 		}
 		return null;
 	}
-	
+
 	@Override
 	public void setEnabled(Object evaluationContext) {
 		EObject selected = getSelectedElement();

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -43,37 +43,38 @@ public class DefaultXYLayoutEditPolicy extends XYLayoutWithConstrainedResizedEdi
 	/**
 	 * Called in response to a <tt>REQ_CREATE</tt> request. Returns a command
 	 * to set each created element bounds and auto-size properties.
-	 * 
+	 *
 	 * @param request
-	 *        a create request (understands instances of {@link CreateViewRequest}).
+	 *            a create request (understands instances of {@link CreateViewRequest}).
 	 * @return a command to satisfy the request; <tt>null</tt> if the request is not
 	 *         understood.
 	 */
+	@Override
 	protected Command getCreateCommand(CreateRequest request) {
-		CreateViewRequest req = (CreateViewRequest)request;
+		CreateViewRequest req = (CreateViewRequest) request;
 
 
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 
 		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(editingDomain, DiagramUIMessages.AddCommand_Label);
 		Iterator<?> iter = req.getViewDescriptors().iterator();
-		final Rectangle BOUNDS = (Rectangle)getConstraintFor(request);
+		final Rectangle BOUNDS = (Rectangle) getConstraintFor(request);
 		boolean couldBeSnaped = request.getLocation().equals(LayoutHelper.UNDEFINED.getLocation()) && req.isSnapToEnabled();
-		while(iter.hasNext()) {
-			CreateViewRequest.ViewDescriptor viewDescriptor = (CreateViewRequest.ViewDescriptor)iter.next();
+		while (iter.hasNext()) {
+			CreateViewRequest.ViewDescriptor viewDescriptor = (CreateViewRequest.ViewDescriptor) iter.next();
 			Rectangle rect = getBoundsOffest(req, BOUNDS, viewDescriptor);
 
-			//see bug 427129: Figures newly created via the palette should be snapped to grid if "snap to grid" is activated
-			if(couldBeSnaped) {
-				//this code fix the bug in some case...
+			// see bug 427129: Figures newly created via the palette should be snapped to grid if "snap to grid" is activated
+			if (couldBeSnaped) {
+				// this code fix the bug in some case...
 				int add = 0;
-				DiagramRootEditPart drep = (DiagramRootEditPart)getHost().getRoot();
+				DiagramRootEditPart drep = (DiagramRootEditPart) getHost().getRoot();
 				double spacing = drep.getGridSpacing();
 				final double max_value = spacing * 20;
-				final SnapToHelper helper = (SnapToHelper)getHost().getAdapter(SnapToHelper.class);
-				if(helper != null) {
+				final SnapToHelper helper = (SnapToHelper) getHost().getAdapter(SnapToHelper.class);
+				if (helper != null) {
 					final LayoutHelper layoutHelper = new LayoutHelper();
-					while(add < max_value) {//we define a max value to do test
+					while (add < max_value) {// we define a max value to do test
 						Rectangle LOCAL_BOUNDS = BOUNDS.getCopy();
 						LOCAL_BOUNDS.translate(add, add);
 						Rectangle tmp_rect = getBoundsOffest(req, LOCAL_BOUNDS, viewDescriptor);
@@ -83,8 +84,8 @@ public class DefaultXYLayoutEditPolicy extends XYLayoutWithConstrainedResizedEdi
 						PrecisionPoint res1 = new PrecisionPoint(tmp_rect.getLocation());
 						helper.snapPoint(request, PositionConstants.NORTH_WEST, res1.getPreciseCopy(), res1);
 						final Point pt = layoutHelper.validatePosition(getHostFigure(), resultRect.setLocation(res1));
-						if(couldBeSnaped) {
-							if(pt.equals(resultRect.getLocation())) {
+						if (couldBeSnaped) {
+							if (pt.equals(resultRect.getLocation())) {
 								rect.setLocation(resultRect.getLocation());
 								break;
 							} else {
@@ -95,7 +96,7 @@ public class DefaultXYLayoutEditPolicy extends XYLayoutWithConstrainedResizedEdi
 					}
 				}
 			}
-			if(rect.getSize().isEmpty()) {
+			if (rect.getSize().isEmpty()) {
 				// Only set location and let the ViewFactory deal with dimension.
 				cc.compose(new SetBoundsCommand(editingDomain, DiagramUIMessages.SetLocationCommand_Label_Resize, viewDescriptor, rect.getLocation().getCopy()));
 
@@ -107,7 +108,7 @@ public class DefaultXYLayoutEditPolicy extends XYLayoutWithConstrainedResizedEdi
 
 		}
 
-		if(cc.reduce() == null) {
+		if (cc.reduce() == null) {
 			return null;
 		}
 		return chainGuideAttachmentCommands(request, new ICommandProxy(cc.reduce()));

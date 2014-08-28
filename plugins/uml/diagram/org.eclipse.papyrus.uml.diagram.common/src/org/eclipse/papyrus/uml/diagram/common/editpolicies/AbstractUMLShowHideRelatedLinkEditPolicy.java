@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,28 +55,28 @@ import org.eclipse.uml2.uml.Relationship;
 
 
 /**
- * 
+ *
  * Abstract class used to show hide related links on UML Diagram
- * 
+ *
  */
 public abstract class AbstractUMLShowHideRelatedLinkEditPolicy extends AbstractShowHideRelatedLinkEditPolicy {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param host
-	 *        the host for this edit policy
+	 *            the host for this edit policy
 	 */
 	public AbstractUMLShowHideRelatedLinkEditPolicy(final DiagramEditPart host) {
 		super(host);
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 *
 	 */
 	public AbstractUMLShowHideRelatedLinkEditPolicy() {
@@ -85,10 +85,9 @@ public abstract class AbstractUMLShowHideRelatedLinkEditPolicy extends AbstractS
 
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.AbstractShowHideRelatedLinkEditPolicy#getShowHideRelatedLinkCommandWithDialog(java.util.Collection,
-	 *      java.util.Map, java.util.Set, java.util.Map, java.util.Collection)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.AbstractShowHideRelatedLinkEditPolicy#getShowHideRelatedLinkCommandWithDialog(java.util.Collection, java.util.Map, java.util.Set, java.util.Map, java.util.Collection)
+	 *
 	 * @param selectedEditParts
 	 * @param availableLinks
 	 * @param visibleLinks
@@ -99,19 +98,20 @@ public abstract class AbstractUMLShowHideRelatedLinkEditPolicy extends AbstractS
 	 *         to the user selection
 	 */
 	@Override
-	protected Command getShowHideRelatedLinkCommandWithDialog(final Collection<EditPart> selectedEditParts, final Map<EditPart, Set<EObject>> availableLinks, final Set<EObject> visibleLinks, final Domain2Notation domain2NotationMap, final Collection<UpdaterLinkDescriptor> linksDescriptors) {
-		//0. build the mapping between semantic link and their representations used in the dialog
+	protected Command getShowHideRelatedLinkCommandWithDialog(final Collection<EditPart> selectedEditParts, final Map<EditPart, Set<EObject>> availableLinks, final Set<EObject> visibleLinks, final Domain2Notation domain2NotationMap,
+			final Collection<UpdaterLinkDescriptor> linksDescriptors) {
+		// 0. build the mapping between semantic link and their representations used in the dialog
 		final Map<EObject, LinkEndsMapper> linkMapping = new HashMap<EObject, LinkEndsMapper>();
 		final Iterator<UpdaterLinkDescriptor> iter = linksDescriptors.iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			final UpdaterLinkDescriptor current = iter.next();
 			final EObject link = current.getModelElement();
-			if(link instanceof Element) {
-				linkMapping.put(link, createLinkEndMapper((Element)link, current));
-			} else if(link instanceof EdgeWithNoSemanticElementRepresentationImpl) {
-				final EObject source = ((EdgeWithNoSemanticElementRepresentationImpl)link).getSource();
-				if(source instanceof Comment || source instanceof Constraint) {
-					linkMapping.put(link, createLinkEndMapper((Element)source, current));
+			if (link instanceof Element) {
+				linkMapping.put(link, createLinkEndMapper((Element) link, current));
+			} else if (link instanceof EdgeWithNoSemanticElementRepresentationImpl) {
+				final EObject source = ((EdgeWithNoSemanticElementRepresentationImpl) link).getSource();
+				if (source instanceof Comment || source instanceof Constraint) {
+					linkMapping.put(link, createLinkEndMapper((Element) source, current));
 				}
 			}
 		}
@@ -129,18 +129,19 @@ public abstract class AbstractUMLShowHideRelatedLinkEditPolicy extends AbstractS
 
 
 	/**
-	 * 
+	 *
 	 * @param descriptor
-	 *        the link descriptor
+	 *            the link descriptor
 	 * @return
 	 *         the collection of link descriptors without some invalid descriptor (we get this case when the link doesn't have source AND target, but
 	 *         only ends)
 	 */
+	@Override
 	protected Collection<UpdaterLinkDescriptor> removeInvalidLinkDescriptor(final Collection<UpdaterLinkDescriptor> descriptor) {
 		final Collection<UpdaterLinkDescriptor> firstResult = super.removeInvalidLinkDescriptor(descriptor);
 		final Collection<UpdaterLinkDescriptor> result = new ArrayList<UpdaterLinkDescriptor>();
 		final Iterator<UpdaterLinkDescriptor> iter = firstResult.iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			final UpdaterLinkDescriptor current = iter.next();
 			final EObject modelElement = current.getModelElement();
 
@@ -148,35 +149,35 @@ public abstract class AbstractUMLShowHideRelatedLinkEditPolicy extends AbstractS
 			 * for example, for association between Class1 and class2, we get a link descriptor between class1 and class2 BUT another one between
 			 * class1 and class1...
 			 */
-			if(!isAnOrientedLink(modelElement)) {
+			if (!isAnOrientedLink(modelElement)) {
 				EObject src = current.getSource();
 				EObject target = current.getDestination();
-				if(src == target) {
-					final Collection<?> sources = LinkMappingHelper.getSource((Element)modelElement);
-					final Collection<?> targets = LinkMappingHelper.getTarget((Element)modelElement);
-					if(sources.size() > 1 && sources.equals(targets)) {
+				if (src == target) {
+					final Collection<?> sources = LinkMappingHelper.getSource((Element) modelElement);
+					final Collection<?> targets = LinkMappingHelper.getTarget((Element) modelElement);
+					if (sources.size() > 1 && sources.equals(targets)) {
 						int nbOccurencesInSource = 0;
 						final Iterator<?> iterSrc = sources.iterator();
-						while(nbOccurencesInSource < 2 && iterSrc.hasNext()) {
-							if(iterSrc.next() == src) {
+						while (nbOccurencesInSource < 2 && iterSrc.hasNext()) {
+							if (iterSrc.next() == src) {
 								nbOccurencesInSource++;
 							}
 						}
 
 						int nbOccurencesInTarget = 0;
 						final Iterator<?> iterTarget = targets.iterator();
-						while(nbOccurencesInTarget < 2 && iterTarget.hasNext()) {
-							if(iterTarget.next() == src) {
+						while (nbOccurencesInTarget < 2 && iterTarget.hasNext()) {
+							if (iterTarget.next() == src) {
 								nbOccurencesInTarget++;
 							}
 						}
 
-						if(nbOccurencesInSource > 1 || nbOccurencesInTarget > 1) {
-							//do nothing;
+						if (nbOccurencesInSource > 1 || nbOccurencesInTarget > 1) {
+							// do nothing;
 						} else {
-							continue;//we must exclude it!
+							continue;// we must exclude it!
 						}
-					} else if(!(sources.contains(src) && targets.contains(src))) {
+					} else if (!(sources.contains(src) && targets.contains(src))) {
 						continue;
 					}
 				}
@@ -187,19 +188,19 @@ public abstract class AbstractUMLShowHideRelatedLinkEditPolicy extends AbstractS
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         <code>true</code> if the link is oriented and <code>false</code> if not.
 	 *         If not, that is to say than {@link LinkMappingHelper} should returns the same values for sources and targets
 	 */
 	public static final boolean isAnOrientedLink(final EObject link) {
-		if(link instanceof DirectedRelationship) {
+		if (link instanceof DirectedRelationship) {
 			return true;
-		} else if(link instanceof Relationship) {
+		} else if (link instanceof Relationship) {
 			return false;
-		} else if(link instanceof Connector) {
+		} else if (link instanceof Connector) {
 			return false;
-		} else if(link instanceof Comment || link instanceof Constraint) {
+		} else if (link instanceof Comment || link instanceof Constraint) {
 			return true;
 		}
 		return false;
@@ -209,9 +210,9 @@ public abstract class AbstractUMLShowHideRelatedLinkEditPolicy extends AbstractS
 
 
 	/**
-	 * 
+	 *
 	 * @param element
-	 *        an element
+	 *            an element
 	 * @return
 	 *         a linkEndsMapper according to this element
 	 */
@@ -219,11 +220,11 @@ public abstract class AbstractUMLShowHideRelatedLinkEditPolicy extends AbstractS
 		Collection<?> ends;
 		Collection<?> sources;
 		Collection<?> targets;
-		if(element instanceof Comment || element instanceof Constraint) {
+		if (element instanceof Comment || element instanceof Constraint) {
 			ends = Collections.emptyList();
 			sources = Collections.singletonList(descriptor.getSource());
 			targets = Collections.singletonList(descriptor.getDestination());
-		} else if(isAnOrientedLink(element)) {
+		} else if (isAnOrientedLink(element)) {
 			ends = Collections.emptyList();
 			sources = LinkMappingHelper.getSource(element);
 			targets = LinkMappingHelper.getTarget(element);
@@ -236,18 +237,20 @@ public abstract class AbstractUMLShowHideRelatedLinkEditPolicy extends AbstractS
 	}
 
 	/**
-	 * 
+	 *
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @return
 	 *         the command to open the dialog to choose the link to show
 	 */
-	protected ICommand getOpenDialogCommand(final TransactionalEditingDomain domain, final Collection<EditPart> selectedEditPart, final Map<EditPart, Set<EObject>> availableLinks, final Collection<EObject> initialSelection, final Map<EObject, LinkEndsMapper> linkMapping) {
+	protected ICommand getOpenDialogCommand(final TransactionalEditingDomain domain, final Collection<EditPart> selectedEditPart, final Map<EditPart, Set<EObject>> availableLinks, final Collection<EObject> initialSelection,
+			final Map<EObject, LinkEndsMapper> linkMapping) {
 		final ICommand cmd = new AbstractTransactionalCommand(domain, "Open Show/HideDialogCommand", null) {//$NON-NLS-1$
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				final ShowHideRelatedLinkSelectionDialog dialog = new ShowHideRelatedLinkSelectionDialog(Display.getDefault().getActiveShell(), getLabelProvider(), new AbstractShowHideRelatedLinkEditPolicy.LinkContentProvider(availableLinks), availableLinks, linkMapping);
+				final ShowHideRelatedLinkSelectionDialog dialog = new ShowHideRelatedLinkSelectionDialog(Display.getDefault().getActiveShell(), getLabelProvider(), new AbstractShowHideRelatedLinkEditPolicy.LinkContentProvider(availableLinks), availableLinks,
+						linkMapping);
 				dialog.setTitle("Show/Hide Links");//$NON-NLS-1$
 				dialog.setMessage("Choose the links to show.");//$NON-NLS-1$
 				dialog.setInput(selectedEditPart);
@@ -255,7 +258,7 @@ public abstract class AbstractUMLShowHideRelatedLinkEditPolicy extends AbstractS
 				dialog.setExpandedElements(selectedEditPart.toArray());
 				dialog.setContainerMode(true);
 				int status = dialog.open();
-				if(status == Window.CANCEL) {
+				if (status == Window.CANCEL) {
 					return CommandResult.newCancelledCommandResult();
 				}
 				return CommandResult.newOKCommandResult(Arrays.asList(dialog.getResult()));
@@ -266,9 +269,9 @@ public abstract class AbstractUMLShowHideRelatedLinkEditPolicy extends AbstractS
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.AbstractShowHideRelatedLinkEditPolicy#getLabelProvider()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

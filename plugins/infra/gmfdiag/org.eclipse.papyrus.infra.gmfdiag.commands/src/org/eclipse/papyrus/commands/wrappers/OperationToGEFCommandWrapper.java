@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 Atos, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ import org.eclipse.papyrus.commands.INonDirtying;
 /**
  * A GEF Command that wraps an undoable operation. Each method is redirected to the operation. <br>
  * In case the {@link IUndoableOperation} is a {@link ICommand}, you should use {@link org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy} instead of this implementation.
- * 
+ *
  * @author vhemery
  */
 public class OperationToGEFCommandWrapper extends Command {
@@ -36,7 +36,7 @@ public class OperationToGEFCommandWrapper extends Command {
 
 	/**
 	 * Construct a new command wrapper
-	 * 
+	 *
 	 * @param baseOperation
 	 */
 	public OperationToGEFCommandWrapper(IUndoableOperation baseOperation) {
@@ -44,16 +44,16 @@ public class OperationToGEFCommandWrapper extends Command {
 		operation = baseOperation;
 		Assert.isNotNull(operation);
 	}
-	
+
 	/**
 	 * Wraps the given {@code operation}, accounting for possible non-dirty state.
-	 * 
+	 *
 	 * @param operation
-	 *        an operation to wrap
+	 *            an operation to wrap
 	 * @return the best wrapper for the {@code operation}
 	 */
 	public static Command wrap(IUndoableOperation operation) {
-		if(operation instanceof INonDirtying) {
+		if (operation instanceof INonDirtying) {
 			return new NonDirtying(operation);
 		}
 		return new OperationToGEFCommandWrapper(operation);
@@ -61,7 +61,7 @@ public class OperationToGEFCommandWrapper extends Command {
 
 	/**
 	 * Get the {@link IUndoableOperation} to which calls are redirected
-	 * 
+	 *
 	 * @return operation
 	 */
 	public IUndoableOperation getOperation() {
@@ -136,11 +136,11 @@ public class OperationToGEFCommandWrapper extends Command {
 	public String getLabel() {
 		return operation.getLabel();
 	}
-	
+
 	//
 	// Nested types
 	//
-	
+
 	/**
 	 * A non-dirtying wrapper for non-dirtying commands.
 	 */
@@ -149,10 +149,10 @@ public class OperationToGEFCommandWrapper extends Command {
 		public NonDirtying(IUndoableOperation operation) {
 			super(operation);
 
-			if(!(operation instanceof INonDirtying)) {
+			if (!(operation instanceof INonDirtying)) {
 				throw new IllegalArgumentException("Wrapped operation is not non-dirtying"); //$NON-NLS-1$
 			}
 		}
-		
+
 	}
 }

@@ -18,7 +18,7 @@ import org.eclipse.papyrus.eastadl.timing.impl.EventImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.events.impl.EventFaultFailureImpl#getFaultFailure <em>Fault Failure</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.events.impl.EventFaultFailureImpl#getFaultFailure <em>Fault Failure</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,6 +29,7 @@ public class EventFaultFailureImpl extends EventImpl implements EventFaultFailur
 	 * The cached value of the '{@link #getFaultFailure() <em>Fault Failure</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFaultFailure()
 	 * @generated
 	 * @ordered
@@ -38,6 +39,7 @@ public class EventFaultFailureImpl extends EventImpl implements EventFaultFailur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected EventFaultFailureImpl() {
@@ -47,6 +49,7 @@ public class EventFaultFailureImpl extends EventImpl implements EventFaultFailur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -57,15 +60,18 @@ public class EventFaultFailureImpl extends EventImpl implements EventFaultFailur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public FaultFailure getFaultFailure() {
 		if (faultFailure != null && faultFailure.eIsProxy()) {
-			InternalEObject oldFaultFailure = (InternalEObject)faultFailure;
-			faultFailure = (FaultFailure)eResolveProxy(oldFaultFailure);
+			InternalEObject oldFaultFailure = (InternalEObject) faultFailure;
+			faultFailure = (FaultFailure) eResolveProxy(oldFaultFailure);
 			if (faultFailure != oldFaultFailure) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventsPackage.EVENT_FAULT_FAILURE__FAULT_FAILURE, oldFaultFailure, faultFailure));
+				}
 			}
 		}
 		return faultFailure;
@@ -74,6 +80,7 @@ public class EventFaultFailureImpl extends EventImpl implements EventFaultFailur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public FaultFailure basicGetFaultFailure() {
@@ -83,26 +90,32 @@ public class EventFaultFailureImpl extends EventImpl implements EventFaultFailur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setFaultFailure(FaultFailure newFaultFailure) {
 		FaultFailure oldFaultFailure = faultFailure;
 		faultFailure = newFaultFailure;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EventsPackage.EVENT_FAULT_FAILURE__FAULT_FAILURE, oldFaultFailure, faultFailure));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EventsPackage.EVENT_FAULT_FAILURE__FAULT_FAILURE:
-				if (resolve) return getFaultFailure();
-				return basicGetFaultFailure();
+		case EventsPackage.EVENT_FAULT_FAILURE__FAULT_FAILURE:
+			if (resolve) {
+				return getFaultFailure();
+			}
+			return basicGetFaultFailure();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,14 +123,15 @@ public class EventFaultFailureImpl extends EventImpl implements EventFaultFailur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EventsPackage.EVENT_FAULT_FAILURE__FAULT_FAILURE:
-				setFaultFailure((FaultFailure)newValue);
-				return;
+		case EventsPackage.EVENT_FAULT_FAILURE__FAULT_FAILURE:
+			setFaultFailure((FaultFailure) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -125,14 +139,15 @@ public class EventFaultFailureImpl extends EventImpl implements EventFaultFailur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EventsPackage.EVENT_FAULT_FAILURE__FAULT_FAILURE:
-				setFaultFailure((FaultFailure)null);
-				return;
+		case EventsPackage.EVENT_FAULT_FAILURE__FAULT_FAILURE:
+			setFaultFailure((FaultFailure) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,15 +155,16 @@ public class EventFaultFailureImpl extends EventImpl implements EventFaultFailur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EventsPackage.EVENT_FAULT_FAILURE__FAULT_FAILURE:
-				return faultFailure != null;
+		case EventsPackage.EVENT_FAULT_FAILURE__FAULT_FAILURE:
+			return faultFailure != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //EventFaultFailureImpl
+} // EventFaultFailureImpl

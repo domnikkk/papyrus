@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,11 +27,11 @@ import org.eclipse.core.runtime.MultiStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.gmf.runtime.common.core.service.ProviderPriority;
-import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.TrayDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.part.PaletteUtil;
 import org.eclipse.papyrus.uml.diagram.common.part.PapyrusPalettePreferences;
@@ -57,19 +57,19 @@ public abstract class AbstractDeployPaletteConfigurationHandler extends Abstract
 		public String paletteName;
 		public ProviderPriority priority;
 		public String editorID;
-		public String requiredProfiles ;
+		public String requiredProfiles;
 		public String fileName;
 		private Text nameText;
 		private Text editorText;
 		private Text profilesText;
-		private CCombo priorityCombo; 
-		
-		
+		private CCombo priorityCombo;
+
+
 		/**
 		 * @param shell
-		 * @param priority 
-		 * @param editorID 
-		 * @param requiredProfiles 
+		 * @param priority
+		 * @param editorID
+		 * @param requiredProfiles
 		 */
 		protected UpdateContentDialog(Shell shell, String fileName, String paletteName, ProviderPriority priority, String editorID, Set<String> requiredProfiles) {
 			super(shell);
@@ -77,23 +77,23 @@ public abstract class AbstractDeployPaletteConfigurationHandler extends Abstract
 			this.paletteName = paletteName;
 			this.priority = priority;
 			this.editorID = editorID;
-			if(requiredProfiles !=null) {
-				this.requiredProfiles = PaletteUtil.getSerializedProfileList(requiredProfiles);	
+			if (requiredProfiles != null) {
+				this.requiredProfiles = PaletteUtil.getSerializedProfileList(requiredProfiles);
 			}
 		}
-		
+
 		/**
 		 * {@inheritDoc}
 		 */
 		@Override
 		protected void configureShell(Shell newShell) {
 			super.configureShell(newShell);
-			if(newShell!=null) {
+			if (newShell != null) {
 				newShell.setText("Configure Deployment of the palette");
 				newShell.setSize(600, 400);
 			}
 		}
-		
+
 		/**
 		 * {@inheritDoc}
 		 */
@@ -103,84 +103,84 @@ public abstract class AbstractDeployPaletteConfigurationHandler extends Abstract
 			Composite composite = new Composite(superComposite, SWT.NONE);
 			composite.setLayout(new GridLayout(2, false));
 			composite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
-			
+
 			// new grid data will all necessary info
 			Label nameLabel = new Label(composite, SWT.NONE);
 			nameLabel.setText("Name:");
 			nameText = new Text(composite, SWT.BORDER);
-			if(paletteName == null) {
+			if (paletteName == null) {
 				paletteName = fileName;
 			}
 			nameText.setText(paletteName);
 			nameText.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
-			
+
 			Label priorityLabel = new Label(composite, SWT.NONE);
 			priorityLabel.setText("Priority:");
 			priorityCombo = new CCombo(composite, SWT.BORDER);
 			priorityCombo.setEditable(false);
-			priorityCombo.setItems(new String[] {ProviderPriority.LOWEST.getName(), ProviderPriority.LOW.getName(), ProviderPriority.MEDIUM.getName(), ProviderPriority.HIGH.getName(), ProviderPriority.HIGHEST.getName()});
-			if(ProviderPriority.LOWEST.equals(priority)) {
+			priorityCombo.setItems(new String[] { ProviderPriority.LOWEST.getName(), ProviderPriority.LOW.getName(), ProviderPriority.MEDIUM.getName(), ProviderPriority.HIGH.getName(), ProviderPriority.HIGHEST.getName() });
+			if (ProviderPriority.LOWEST.equals(priority)) {
 				priorityCombo.select(0);
-			} else if(ProviderPriority.LOW.equals(priority)) {
+			} else if (ProviderPriority.LOW.equals(priority)) {
 				priorityCombo.select(1);
-			} else if(ProviderPriority.MEDIUM.equals(priority)) {
+			} else if (ProviderPriority.MEDIUM.equals(priority)) {
 				priorityCombo.select(2);
-			} else if(ProviderPriority.HIGH.equals(priority)) {
+			} else if (ProviderPriority.HIGH.equals(priority)) {
 				priorityCombo.select(3);
-			} else if(ProviderPriority.HIGHEST.equals(priority)) {
+			} else if (ProviderPriority.HIGHEST.equals(priority)) {
 				priorityCombo.select(4);
-			}  else {
+			} else {
 				priorityCombo.select(2); // default = medium
 			}
 			priorityCombo.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
-			
+
 			Label editorLabel = new Label(composite, SWT.NONE);
 			editorLabel.setText("Editor:");
 			editorText = new Text(composite, SWT.BORDER);
-			if(editorID == null) {
+			if (editorID == null) {
 				// TODO: try to see if a Papyrus editor is currently opened?
 				editorID = "";
 			}
 			editorText.setText(editorID);
 			editorText.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
-			
+
 			// list of profiles
 			Label profilesLabel = new Label(composite, SWT.NONE);
 			profilesLabel.setText("Profiles:");
 			profilesText = new Text(composite, SWT.BORDER);
-			if(requiredProfiles != null) {
+			if (requiredProfiles != null) {
 				profilesText.setText(requiredProfiles);
 			}
 			profilesText.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
-			
+
 			return superComposite;
 		}
-		
+
 		/**
 		 * {@inheritDoc}
 		 */
 		@Override
 		protected void okPressed() {
 			// updates values
-			if(nameText!=null && ! nameText.isDisposed()) {
-				paletteName = nameText.getText();	
+			if (nameText != null && !nameText.isDisposed()) {
+				paletteName = nameText.getText();
 			}
-			
-			if(editorText!=null && ! editorText.isDisposed()) {
-				editorID = editorText.getText();	
+
+			if (editorText != null && !editorText.isDisposed()) {
+				editorID = editorText.getText();
 			}
-			
-			if(priorityCombo!=null && ! priorityCombo.isDisposed()) {
+
+			if (priorityCombo != null && !priorityCombo.isDisposed()) {
 				priority = ProviderPriority.parse(priorityCombo.getText());
 			}
-			
-			if(profilesText!=null && ! profilesText.isDisposed()) {
-				requiredProfiles = profilesText.getText();	
+
+			if (profilesText != null && !profilesText.isDisposed()) {
+				requiredProfiles = profilesText.getText();
 			}
-			
+
 			super.okPressed();
 		}
-		
+
 	}
 
 	/**
@@ -188,119 +188,119 @@ public abstract class AbstractDeployPaletteConfigurationHandler extends Abstract
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
-		if(!(currentSelection instanceof IStructuredSelection) || currentSelection.isEmpty()) {
+		if (!(currentSelection instanceof IStructuredSelection) || currentSelection.isEmpty()) {
 			return null;
 		}
-	
-		final IStructuredSelection selection = (IStructuredSelection)currentSelection;
-	
+
+		final IStructuredSelection selection = (IStructuredSelection) currentSelection;
+
 		final Shell activeShell = HandlerUtil.getActiveShell(event);
-	
-		
+
+
 		doExecute(selection, activeShell, new NullProgressMonitor());
 		return null;
-	
+
 	}
 
 	protected void doExecute(IStructuredSelection selection, Shell activeShell, IProgressMonitor monitor) {
-		
+
 		Iterator<?> selectionIterator = selection.iterator();
-	
+
 		MultiStatus result = new MultiStatus(Activator.ID, IStatus.OK, "The palette configuration has been successfully deployed and activated", null);
-	
-		while(selectionIterator.hasNext()) {
+
+		while (selectionIterator.hasNext()) {
 			Object selectedElement = selectionIterator.next();
-			if(selectedElement instanceof IAdaptable) {
-				IFile selectedFile = (IFile)((IAdaptable)selectedElement).getAdapter(IFile.class);
-				if(selectedFile == null) {
+			if (selectedElement instanceof IAdaptable) {
+				IFile selectedFile = (IFile) ((IAdaptable) selectedElement).getAdapter(IFile.class);
+				if (selectedFile == null) {
 					monitor.worked(1);
 					result.add(new Status(IStatus.ERROR, Activator.ID, "The selected element is not a file"));
 					continue;
 				}
-	
-				
+
+
 				String fileName = selectedFile.getFullPath().removeFileExtension().lastSegment();
 				monitor.subTask("Deploy " + fileName);
 				boolean alreadyDeployed = false;
 				// retrieve info => open a dialog, filled by current opened editor ?
 				ProviderPriority priority = getPriority(fileName);
-				if(priority ==null) {
+				if (priority == null) {
 					priority = ProviderPriority.MEDIUM;
 				} else {
 					alreadyDeployed = true;
 				}
-				
+
 				String editorID = getEditorID(fileName);
-				if(editorID !=null) {
+				if (editorID != null) {
 					alreadyDeployed = true;
 				}
-				
+
 				String paletteName = getPaletteName(fileName);
-				if(paletteName !=null) {
+				if (paletteName != null) {
 					alreadyDeployed = true;
 				}
-				Set<String> requiredProfiles = getRequiredProfiles(fileName); 
-				if(requiredProfiles !=null && requiredProfiles.size() > 0) {
+				Set<String> requiredProfiles = getRequiredProfiles(fileName);
+				if (requiredProfiles != null && requiredProfiles.size() > 0) {
 					alreadyDeployed = true;
 				}
 				String path = selectedFile.getFullPath().toString();
-				
-				
+
+
 				UpdateContentDialog dialog = new UpdateContentDialog(activeShell, fileName, paletteName, priority, editorID, requiredProfiles);
 				int returnCode = dialog.open();
-				if(Dialog.OK==returnCode) {
+				if (Window.OK == returnCode) {
 					boolean validUpdate = true;
-					
+
 					// update values from the editor
-					if(dialog.paletteName !=null && dialog.paletteName.length()>0) {
-						paletteName = dialog.paletteName;	
+					if (dialog.paletteName != null && dialog.paletteName.length() > 0) {
+						paletteName = dialog.paletteName;
 					} else {
 						validUpdate = false;
 					}
-					
-					if(dialog.priority !=null ) {
-						priority = dialog.priority;	
+
+					if (dialog.priority != null) {
+						priority = dialog.priority;
 					} else {
 						validUpdate = false;
 					}
-					
-					if(dialog.editorID !=null && dialog.editorID.length()>0) {
-						editorID = dialog.editorID;	
-					}else {
+
+					if (dialog.editorID != null && dialog.editorID.length() > 0) {
+						editorID = dialog.editorID;
+					} else {
 						validUpdate = false;
 					}
-					
-					if(dialog.requiredProfiles !=null && dialog.requiredProfiles.length()>0) {
+
+					if (dialog.requiredProfiles != null && dialog.requiredProfiles.length() > 0) {
 						requiredProfiles = PaletteUtil.getProfileSetFromString(dialog.requiredProfiles);
-					}else {
+					} else {
 						requiredProfiles = Collections.emptySet();
 					}
-					
-					if(validUpdate) {
-						if(alreadyDeployed) {
+
+					if (validUpdate) {
+						if (alreadyDeployed) {
 							// update values and set visible again
 							result.add(activatePalette(fileName, paletteName, path, priority, editorID, requiredProfiles));
 						} else {
 							result.add(deployPalette(fileName, paletteName, path, priority, editorID, requiredProfiles));
 						}
 					} else {
-						result.add(new Status(IStatus.ERROR, Activator.ID, "The palette configuration was not deployed, because dialog content was not valid"));		
+						result.add(new Status(IStatus.ERROR, Activator.ID, "The palette configuration was not deployed, because dialog content was not valid"));
 					}
 				} else {
 					result.add(new Status(IStatus.ERROR, Activator.ID, "The palette configuration was not deployed, because user did cancel the dialog"));
 				}
-				
+
 			}
 		}
-	
-		if(result.getChildren().length == 1) {
-			if(result.isOK()) {
+
+		if (result.getChildren().length == 1) {
+			if (result.isOK()) {
 				MessageDialog.openInformation(activeShell, "Success", result.getMessage());
-			} else if(result.getSeverity() < IStatus.ERROR) { //Errors are already logged
+			} else if (result.getSeverity() < IStatus.ERROR) { // Errors are already logged
 				StatusManager.getManager().handle(result, StatusManager.SHOW);
 			}
-		} else { //Merge the result and specify an appropriate message based on the result
-			if(result.isOK()) {
+		} else { // Merge the result and specify an appropriate message based on the result
+			if (result.isOK()) {
 				MessageDialog.openInformation(activeShell, "Success", result.getMessage());
 			} else {
 				MultiStatus actualResult = new MultiStatus(Activator.ID, result.getCode(), "Some errors occurred during the deployment", result.getException());
@@ -335,6 +335,7 @@ public abstract class AbstractDeployPaletteConfigurationHandler extends Abstract
 
 	/**
 	 * Warning. Can be <code>null</code>!
+	 *
 	 * @param identifier
 	 * @return
 	 */
@@ -343,7 +344,7 @@ public abstract class AbstractDeployPaletteConfigurationHandler extends Abstract
 	}
 
 	protected abstract XMLMemento getMemento();
-	
+
 	/**
 	 * @param fileName
 	 * @param paletteName
@@ -364,6 +365,6 @@ public abstract class AbstractDeployPaletteConfigurationHandler extends Abstract
 	 * @param requiredProfiles
 	 * @return
 	 */
-	protected abstract IStatus activatePalette(String fileName, String paletteName, String path, ProviderPriority priority, String editorID, Set<String> requiredProfiles) ; 
+	protected abstract IStatus activatePalette(String fileName, String paletteName, String path, ProviderPriority priority, String editorID, Set<String> requiredProfiles);
 
 }

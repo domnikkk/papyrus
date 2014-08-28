@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.AssignmentCompletion;
 import org.eclipse.papyrus.uml.alf.alf.InvocationOrAssignementOrDeclarationStatement;
@@ -106,7 +103,11 @@ public class InvocationOrAssignementOrDeclarationStatementImpl extends Statement
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__TYPE_PART_OR_ASSIGNED_PART_OR_INVOCATION_PART, oldTypePart_OR_assignedPart_OR_invocationPart, newTypePart_OR_assignedPart_OR_invocationPart);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -121,15 +122,20 @@ public class InvocationOrAssignementOrDeclarationStatementImpl extends Statement
     if (newTypePart_OR_assignedPart_OR_invocationPart != typePart_OR_assignedPart_OR_invocationPart)
     {
       NotificationChain msgs = null;
-      if (typePart_OR_assignedPart_OR_invocationPart != null)
-        msgs = ((InternalEObject)typePart_OR_assignedPart_OR_invocationPart).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__TYPE_PART_OR_ASSIGNED_PART_OR_INVOCATION_PART, null, msgs);
-      if (newTypePart_OR_assignedPart_OR_invocationPart != null)
-        msgs = ((InternalEObject)newTypePart_OR_assignedPart_OR_invocationPart).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__TYPE_PART_OR_ASSIGNED_PART_OR_INVOCATION_PART, null, msgs);
+      if (typePart_OR_assignedPart_OR_invocationPart != null) {
+		msgs = ((InternalEObject)typePart_OR_assignedPart_OR_invocationPart).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__TYPE_PART_OR_ASSIGNED_PART_OR_INVOCATION_PART, null, msgs);
+	}
+      if (newTypePart_OR_assignedPart_OR_invocationPart != null) {
+		msgs = ((InternalEObject)newTypePart_OR_assignedPart_OR_invocationPart).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__TYPE_PART_OR_ASSIGNED_PART_OR_INVOCATION_PART, null, msgs);
+	}
       msgs = basicSetTypePart_OR_assignedPart_OR_invocationPart(newTypePart_OR_assignedPart_OR_invocationPart, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__TYPE_PART_OR_ASSIGNED_PART_OR_INVOCATION_PART, newTypePart_OR_assignedPart_OR_invocationPart, newTypePart_OR_assignedPart_OR_invocationPart));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__TYPE_PART_OR_ASSIGNED_PART_OR_INVOCATION_PART, newTypePart_OR_assignedPart_OR_invocationPart, newTypePart_OR_assignedPart_OR_invocationPart));
+	}
   }
 
   /**
@@ -154,7 +160,11 @@ public class InvocationOrAssignementOrDeclarationStatementImpl extends Statement
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__VARIABLE_DECLARATION_COMPLETION, oldVariableDeclarationCompletion, newVariableDeclarationCompletion);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -169,15 +179,20 @@ public class InvocationOrAssignementOrDeclarationStatementImpl extends Statement
     if (newVariableDeclarationCompletion != variableDeclarationCompletion)
     {
       NotificationChain msgs = null;
-      if (variableDeclarationCompletion != null)
-        msgs = ((InternalEObject)variableDeclarationCompletion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__VARIABLE_DECLARATION_COMPLETION, null, msgs);
-      if (newVariableDeclarationCompletion != null)
-        msgs = ((InternalEObject)newVariableDeclarationCompletion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__VARIABLE_DECLARATION_COMPLETION, null, msgs);
+      if (variableDeclarationCompletion != null) {
+		msgs = ((InternalEObject)variableDeclarationCompletion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__VARIABLE_DECLARATION_COMPLETION, null, msgs);
+	}
+      if (newVariableDeclarationCompletion != null) {
+		msgs = ((InternalEObject)newVariableDeclarationCompletion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__VARIABLE_DECLARATION_COMPLETION, null, msgs);
+	}
       msgs = basicSetVariableDeclarationCompletion(newVariableDeclarationCompletion, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__VARIABLE_DECLARATION_COMPLETION, newVariableDeclarationCompletion, newVariableDeclarationCompletion));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__VARIABLE_DECLARATION_COMPLETION, newVariableDeclarationCompletion, newVariableDeclarationCompletion));
+	}
   }
 
   /**
@@ -202,7 +217,11 @@ public class InvocationOrAssignementOrDeclarationStatementImpl extends Statement
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__ASSIGNMENT_COMPLETION, oldAssignmentCompletion, newAssignmentCompletion);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -217,15 +236,20 @@ public class InvocationOrAssignementOrDeclarationStatementImpl extends Statement
     if (newAssignmentCompletion != assignmentCompletion)
     {
       NotificationChain msgs = null;
-      if (assignmentCompletion != null)
-        msgs = ((InternalEObject)assignmentCompletion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__ASSIGNMENT_COMPLETION, null, msgs);
-      if (newAssignmentCompletion != null)
-        msgs = ((InternalEObject)newAssignmentCompletion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__ASSIGNMENT_COMPLETION, null, msgs);
+      if (assignmentCompletion != null) {
+		msgs = ((InternalEObject)assignmentCompletion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__ASSIGNMENT_COMPLETION, null, msgs);
+	}
+      if (newAssignmentCompletion != null) {
+		msgs = ((InternalEObject)newAssignmentCompletion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__ASSIGNMENT_COMPLETION, null, msgs);
+	}
       msgs = basicSetAssignmentCompletion(newAssignmentCompletion, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__ASSIGNMENT_COMPLETION, newAssignmentCompletion, newAssignmentCompletion));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT__ASSIGNMENT_COMPLETION, newAssignmentCompletion, newAssignmentCompletion));
+	}
   }
 
   /**

@@ -45,72 +45,84 @@ import org.eclipse.papyrus.papyrusgmfgenextension.SpecificLocatorExternalLabel;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
+ *
  * @generated
  */
 public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements PapyrusgmfgenextensionPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass extendedGenViewEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass commentedElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass propertyRefreshHookEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass externalHookEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass specificLocatorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass papyrusExtensionRootNodeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass alternateCanvasEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass alternateGenTopLevelNodeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass alternateGenLinkEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass mutatingCanvasEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass ownedEditpartEClass = null;
@@ -118,6 +130,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass specificDiagramUpdaterEClass = null;
@@ -125,6 +138,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass genNodeConstraintEClass = null;
@@ -132,6 +146,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass specificLocatorExternalLabelEClass = null;
@@ -139,6 +154,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass additionalEditPartCandiesEClass = null;
@@ -146,6 +162,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass editPartUsingDeleteServiceEClass = null;
@@ -153,6 +170,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass editPartUsingReorientServiceEClass = null;
@@ -160,6 +178,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass labelVisibilityPreferenceEClass = null;
@@ -167,6 +186,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass compartmentVisibilityPreferenceEClass = null;
@@ -174,6 +194,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass compartmentTitleVisibilityPreferenceEClass = null;
@@ -181,6 +202,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass constrainedByReferenceCompartmentItemSemanticEditPolicyEClass = null;
@@ -188,6 +210,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass externalElementTypesLibraryEClass = null;
@@ -195,6 +218,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass externalMetamodelTypeEClass = null;
@@ -202,6 +226,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass generateUsingElementTypeCreationCommandEClass = null;
@@ -209,19 +234,17 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass customDiagramUpdaterSingletonEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#eNS_URI
 	 * @see #init()
@@ -233,26 +256,31 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link PapyrusgmfgenextensionPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * <p>
+	 * This method is used to initialize {@link PapyrusgmfgenextensionPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static PapyrusgmfgenextensionPackage init() {
-		if (isInited) return (PapyrusgmfgenextensionPackage)EPackage.Registry.INSTANCE.getEPackage(PapyrusgmfgenextensionPackage.eNS_URI);
+		if (isInited) {
+			return (PapyrusgmfgenextensionPackage) EPackage.Registry.INSTANCE.getEPackage(PapyrusgmfgenextensionPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		PapyrusgmfgenextensionPackageImpl thePapyrusgmfgenextensionPackage = (PapyrusgmfgenextensionPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PapyrusgmfgenextensionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new PapyrusgmfgenextensionPackageImpl());
+		PapyrusgmfgenextensionPackageImpl thePapyrusgmfgenextensionPackage = (PapyrusgmfgenextensionPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PapyrusgmfgenextensionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+				: new PapyrusgmfgenextensionPackageImpl());
 
 		isInited = true;
 
@@ -269,7 +297,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 		// Mark meta-data to indicate it can't be changed
 		thePapyrusgmfgenextensionPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(PapyrusgmfgenextensionPackage.eNS_URI, thePapyrusgmfgenextensionPackage);
 		return thePapyrusgmfgenextensionPackage;
@@ -277,273 +305,341 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getExtendedGenView() {
 		return extendedGenViewEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getExtendedGenView_GenView() {
-		return (EReference)extendedGenViewEClass.getEStructuralFeatures().get(0);
+		return (EReference) extendedGenViewEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExtendedGenView_IsAbstract() {
-		return (EAttribute)extendedGenViewEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) extendedGenViewEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getExtendedGenView_SuperGenViews() {
-		return (EReference)extendedGenViewEClass.getEStructuralFeatures().get(2);
+		return (EReference) extendedGenViewEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getExtendedGenView_PropRefreshHook() {
-		return (EReference)extendedGenViewEClass.getEStructuralFeatures().get(3);
+		return (EReference) extendedGenViewEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExtendedGenView_Name() {
-		return (EAttribute)extendedGenViewEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) extendedGenViewEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExtendedGenView_SuperOwnedEditPart() {
-		return (EAttribute)extendedGenViewEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) extendedGenViewEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getCommentedElement() {
 		return commentedElementEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCommentedElement_Comment() {
-		return (EAttribute)commentedElementEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) commentedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertyRefreshHook() {
 		return propertyRefreshHookEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPropertyRefreshHook_TriggeringCondition() {
-		return (EAttribute)propertyRefreshHookEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) propertyRefreshHookEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPropertyRefreshHook_Action() {
-		return (EAttribute)propertyRefreshHookEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) propertyRefreshHookEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getExternalHook() {
 		return externalHookEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExternalHook_Classpath() {
-		return (EAttribute)externalHookEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) externalHookEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getSpecificLocator() {
 		return specificLocatorEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getSpecificLocator_GenChildSideAffixedNode() {
-		return (EReference)specificLocatorEClass.getEStructuralFeatures().get(0);
+		return (EReference) specificLocatorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getPapyrusExtensionRootNode() {
 		return papyrusExtensionRootNodeEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPapyrusExtensionRootNode_ExtensionNodes() {
-		return (EReference)papyrusExtensionRootNodeEClass.getEStructuralFeatures().get(0);
+		return (EReference) papyrusExtensionRootNodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getAlternateCanvas() {
 		return alternateCanvasEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAlternateCanvas_DomainDiagramElement() {
-		return (EReference)alternateCanvasEClass.getEStructuralFeatures().get(0);
+		return (EReference) alternateCanvasEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAlternateCanvas_AlternateTopLevelNodes() {
-		return (EReference)alternateCanvasEClass.getEStructuralFeatures().get(1);
+		return (EReference) alternateCanvasEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAlternateCanvas_AlternateLinkNodes() {
-		return (EReference)alternateCanvasEClass.getEStructuralFeatures().get(2);
+		return (EReference) alternateCanvasEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAlternateCanvas_Diagram() {
-		return (EReference)alternateCanvasEClass.getEStructuralFeatures().get(3);
+		return (EReference) alternateCanvasEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getAlternateGenTopLevelNode() {
 		return alternateGenTopLevelNodeEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAlternateGenTopLevelNode_GenTopLevelNode() {
-		return (EReference)alternateGenTopLevelNodeEClass.getEStructuralFeatures().get(0);
+		return (EReference) alternateGenTopLevelNodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAlternateGenTopLevelNode_TypeModelFacet() {
-		return (EReference)alternateGenTopLevelNodeEClass.getEStructuralFeatures().get(1);
+		return (EReference) alternateGenTopLevelNodeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getAlternateGenLink() {
 		return alternateGenLinkEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAlternateGenLink_GenLinkNode() {
-		return (EReference)alternateGenLinkEClass.getEStructuralFeatures().get(0);
+		return (EReference) alternateGenLinkEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAlternateGenLink_TypeModelFacet() {
-		return (EReference)alternateGenLinkEClass.getEStructuralFeatures().get(1);
+		return (EReference) alternateGenLinkEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getMutatingCanvas() {
 		return mutatingCanvasEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getMutatingCanvas_AlternateCanvases() {
-		return (EReference)mutatingCanvasEClass.getEStructuralFeatures().get(0);
+		return (EReference) mutatingCanvasEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getOwnedEditpart() {
 		return ownedEditpartEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getOwnedEditpart_Name() {
-		return (EAttribute)ownedEditpartEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) ownedEditpartEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getSpecificDiagramUpdater() {
 		return specificDiagramUpdaterEClass;
 	}
@@ -551,17 +647,21 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getSpecificDiagramUpdater_GenNode() {
-		return (EReference)specificDiagramUpdaterEClass.getEStructuralFeatures().get(0);
+		return (EReference) specificDiagramUpdaterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getGenNodeConstraint() {
 		return genNodeConstraintEClass;
 	}
@@ -569,26 +669,32 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getGenNodeConstraint_GenNode() {
-		return (EReference)genNodeConstraintEClass.getEStructuralFeatures().get(0);
+		return (EReference) genNodeConstraintEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getGenNodeConstraint_GenConstraint() {
-		return (EReference)genNodeConstraintEClass.getEStructuralFeatures().get(1);
+		return (EReference) genNodeConstraintEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getSpecificLocatorExternalLabel() {
 		return specificLocatorExternalLabelEClass;
 	}
@@ -596,17 +702,21 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getSpecificLocatorExternalLabel_GenExternalNodeLabel() {
-		return (EReference)specificLocatorExternalLabelEClass.getEStructuralFeatures().get(0);
+		return (EReference) specificLocatorExternalLabelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getAdditionalEditPartCandies() {
 		return additionalEditPartCandiesEClass;
 	}
@@ -614,17 +724,21 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAdditionalEditPartCandies_BaseEditHelperPackage() {
-		return (EAttribute)additionalEditPartCandiesEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) additionalEditPartCandiesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getEditPartUsingDeleteService() {
 		return editPartUsingDeleteServiceEClass;
 	}
@@ -632,26 +746,32 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEditPartUsingDeleteService_Name() {
-		return (EAttribute)editPartUsingDeleteServiceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) editPartUsingDeleteServiceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEditPartUsingDeleteService_GenView() {
-		return (EReference)editPartUsingDeleteServiceEClass.getEStructuralFeatures().get(1);
+		return (EReference) editPartUsingDeleteServiceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getEditPartUsingReorientService() {
 		return editPartUsingReorientServiceEClass;
 	}
@@ -659,26 +779,32 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEditPartUsingReorientService_Name() {
-		return (EAttribute)editPartUsingReorientServiceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) editPartUsingReorientServiceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEditPartUsingReorientService_GenView() {
-		return (EReference)editPartUsingReorientServiceEClass.getEStructuralFeatures().get(1);
+		return (EReference) editPartUsingReorientServiceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLabelVisibilityPreference() {
 		return labelVisibilityPreferenceEClass;
 	}
@@ -686,53 +812,65 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLabelVisibilityPreference_Role() {
-		return (EAttribute)labelVisibilityPreferenceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) labelVisibilityPreferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLabelVisibilityPreference_IconPathRole() {
-		return (EAttribute)labelVisibilityPreferenceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) labelVisibilityPreferenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLabelVisibilityPreference_LinkLabels() {
-		return (EReference)labelVisibilityPreferenceEClass.getEStructuralFeatures().get(2);
+		return (EReference) labelVisibilityPreferenceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLabelVisibilityPreference_ExternalNodeLabels() {
-		return (EReference)labelVisibilityPreferenceEClass.getEStructuralFeatures().get(3);
+		return (EReference) labelVisibilityPreferenceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLabelVisibilityPreference_VisibleByDefault() {
-		return (EAttribute)labelVisibilityPreferenceEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) labelVisibilityPreferenceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getCompartmentVisibilityPreference() {
 		return compartmentVisibilityPreferenceEClass;
 	}
@@ -740,26 +878,32 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCompartmentVisibilityPreference_VisibleByDefault() {
-		return (EAttribute)compartmentVisibilityPreferenceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) compartmentVisibilityPreferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getCompartmentVisibilityPreference_Compartments() {
-		return (EReference)compartmentVisibilityPreferenceEClass.getEStructuralFeatures().get(1);
+		return (EReference) compartmentVisibilityPreferenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getCompartmentTitleVisibilityPreference() {
 		return compartmentTitleVisibilityPreferenceEClass;
 	}
@@ -767,26 +911,32 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCompartmentTitleVisibilityPreference_VisibleByDefault() {
-		return (EAttribute)compartmentTitleVisibilityPreferenceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) compartmentTitleVisibilityPreferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getCompartmentTitleVisibilityPreference_Compartments() {
-		return (EReference)compartmentTitleVisibilityPreferenceEClass.getEStructuralFeatures().get(1);
+		return (EReference) compartmentTitleVisibilityPreferenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getConstrainedByReferenceCompartmentItemSemanticEditPolicy() {
 		return constrainedByReferenceCompartmentItemSemanticEditPolicyEClass;
 	}
@@ -794,17 +944,21 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getConstrainedByReferenceCompartmentItemSemanticEditPolicy_GenView() {
-		return (EReference)constrainedByReferenceCompartmentItemSemanticEditPolicyEClass.getEStructuralFeatures().get(0);
+		return (EReference) constrainedByReferenceCompartmentItemSemanticEditPolicyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getExternalElementTypesLibrary() {
 		return externalElementTypesLibraryEClass;
 	}
@@ -812,8 +966,10 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getExternalMetamodelType() {
 		return externalMetamodelTypeEClass;
 	}
@@ -821,17 +977,21 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getExternalMetamodelType_ElementTypeRef() {
-		return (EReference)externalMetamodelTypeEClass.getEStructuralFeatures().get(0);
+		return (EReference) externalMetamodelTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getGenerateUsingElementTypeCreationCommand() {
 		return generateUsingElementTypeCreationCommandEClass;
 	}
@@ -839,8 +999,10 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getCustomDiagramUpdaterSingleton() {
 		return customDiagramUpdaterSingletonEClass;
 	}
@@ -848,34 +1010,42 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCustomDiagramUpdaterSingleton_SingletonPath() {
-		return (EAttribute)customDiagramUpdaterSingletonEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) customDiagramUpdaterSingletonEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public PapyrusgmfgenextensionFactory getPapyrusgmfgenextensionFactory() {
-		return (PapyrusgmfgenextensionFactory)getEFactoryInstance();
+		return (PapyrusgmfgenextensionFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -975,18 +1145,22 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -995,10 +1169,10 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		GMFGenPackage theGMFGenPackage = (GMFGenPackage)EPackage.Registry.INSTANCE.getEPackage(GMFGenPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-		GenModelPackage theGenModelPackage = (GenModelPackage)EPackage.Registry.INSTANCE.getEPackage(GenModelPackage.eNS_URI);
-		DomaincontextcodegenPackage theDomaincontextcodegenPackage = (DomaincontextcodegenPackage)EPackage.Registry.INSTANCE.getEPackage(DomaincontextcodegenPackage.eNS_URI);
+		GMFGenPackage theGMFGenPackage = (GMFGenPackage) EPackage.Registry.INSTANCE.getEPackage(GMFGenPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		GenModelPackage theGenModelPackage = (GenModelPackage) EPackage.Registry.INSTANCE.getEPackage(GenModelPackage.eNS_URI);
+		DomaincontextcodegenPackage theDomaincontextcodegenPackage = (DomaincontextcodegenPackage) EPackage.Registry.INSTANCE.getEPackage(DomaincontextcodegenPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1033,10 +1207,13 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(extendedGenViewEClass, ExtendedGenView.class, "ExtendedGenView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExtendedGenView_GenView(), theGMFGenPackage.getGenCommonBase(), null, "genView", null, 1, -1, ExtendedGenView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getExtendedGenView_GenView(), theGMFGenPackage.getGenCommonBase(), null, "genView", null, 1, -1, ExtendedGenView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getExtendedGenView_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", null, 1, 1, ExtendedGenView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getExtendedGenView_SuperGenViews(), theGMFGenPackage.getGenCommonBase(), null, "superGenViews", null, 0, -1, ExtendedGenView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getExtendedGenView_PropRefreshHook(), this.getPropertyRefreshHook(), null, "propRefreshHook", null, 0, 1, ExtendedGenView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getExtendedGenView_SuperGenViews(), theGMFGenPackage.getGenCommonBase(), null, "superGenViews", null, 0, -1, ExtendedGenView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getExtendedGenView_PropRefreshHook(), this.getPropertyRefreshHook(), null, "propRefreshHook", null, 0, 1, ExtendedGenView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getExtendedGenView_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ExtendedGenView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExtendedGenView_SuperOwnedEditPart(), theEcorePackage.getEString(), "superOwnedEditPart", null, 0, 1, ExtendedGenView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1044,86 +1221,116 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 		initEAttribute(getCommentedElement_Comment(), ecorePackage.getEString(), "comment", null, 1, 1, CommentedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(propertyRefreshHookEClass, PropertyRefreshHook.class, "PropertyRefreshHook", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPropertyRefreshHook_TriggeringCondition(), ecorePackage.getEString(), "triggeringCondition", null, 1, 1, PropertyRefreshHook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getPropertyRefreshHook_TriggeringCondition(), ecorePackage.getEString(), "triggeringCondition", null, 1, 1, PropertyRefreshHook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getPropertyRefreshHook_Action(), ecorePackage.getEString(), "action", null, 1, 1, PropertyRefreshHook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(externalHookEClass, ExternalHook.class, "ExternalHook", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getExternalHook_Classpath(), ecorePackage.getEString(), "classpath", null, 0, 1, ExternalHook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(specificLocatorEClass, SpecificLocator.class, "SpecificLocator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSpecificLocator_GenChildSideAffixedNode(), theGMFGenPackage.getGenChildSideAffixedNode(), null, "genChildSideAffixedNode", null, 0, -1, SpecificLocator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecificLocator_GenChildSideAffixedNode(), theGMFGenPackage.getGenChildSideAffixedNode(), null, "genChildSideAffixedNode", null, 0, -1, SpecificLocator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(papyrusExtensionRootNodeEClass, PapyrusExtensionRootNode.class, "PapyrusExtensionRootNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPapyrusExtensionRootNode_ExtensionNodes(), this.getCommentedElement(), null, "extensionNodes", null, 0, -1, PapyrusExtensionRootNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPapyrusExtensionRootNode_ExtensionNodes(), this.getCommentedElement(), null, "extensionNodes", null, 0, -1, PapyrusExtensionRootNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(alternateCanvasEClass, AlternateCanvas.class, "AlternateCanvas", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAlternateCanvas_DomainDiagramElement(), theGenModelPackage.getGenClass(), null, "domainDiagramElement", null, 1, 1, AlternateCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAlternateCanvas_AlternateTopLevelNodes(), this.getAlternateGenTopLevelNode(), null, "alternateTopLevelNodes", null, 0, -1, AlternateCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAlternateCanvas_AlternateLinkNodes(), this.getAlternateGenLink(), null, "alternateLinkNodes", null, 0, -1, AlternateCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAlternateCanvas_Diagram(), theGMFGenPackage.getGenDiagram(), null, "diagram", null, 1, 1, AlternateCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAlternateCanvas_DomainDiagramElement(), theGenModelPackage.getGenClass(), null, "domainDiagramElement", null, 1, 1, AlternateCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAlternateCanvas_AlternateTopLevelNodes(), this.getAlternateGenTopLevelNode(), null, "alternateTopLevelNodes", null, 0, -1, AlternateCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAlternateCanvas_AlternateLinkNodes(), this.getAlternateGenLink(), null, "alternateLinkNodes", null, 0, -1, AlternateCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAlternateCanvas_Diagram(), theGMFGenPackage.getGenDiagram(), null, "diagram", null, 1, 1, AlternateCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(alternateGenTopLevelNodeEClass, AlternateGenTopLevelNode.class, "AlternateGenTopLevelNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAlternateGenTopLevelNode_GenTopLevelNode(), theGMFGenPackage.getGenTopLevelNode(), null, "genTopLevelNode", null, 1, 1, AlternateGenTopLevelNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAlternateGenTopLevelNode_TypeModelFacet(), theGMFGenPackage.getTypeModelFacet(), null, "typeModelFacet", null, 1, 1, AlternateGenTopLevelNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAlternateGenTopLevelNode_GenTopLevelNode(), theGMFGenPackage.getGenTopLevelNode(), null, "genTopLevelNode", null, 1, 1, AlternateGenTopLevelNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAlternateGenTopLevelNode_TypeModelFacet(), theGMFGenPackage.getTypeModelFacet(), null, "typeModelFacet", null, 1, 1, AlternateGenTopLevelNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(alternateGenLinkEClass, AlternateGenLink.class, "AlternateGenLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAlternateGenLink_GenLinkNode(), theGMFGenPackage.getGenLink(), null, "genLinkNode", null, 1, 1, AlternateGenLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAlternateGenLink_TypeModelFacet(), theGMFGenPackage.getTypeModelFacet(), null, "typeModelFacet", null, 1, 1, AlternateGenLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAlternateGenLink_GenLinkNode(), theGMFGenPackage.getGenLink(), null, "genLinkNode", null, 1, 1, AlternateGenLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getAlternateGenLink_TypeModelFacet(), theGMFGenPackage.getTypeModelFacet(), null, "typeModelFacet", null, 1, 1, AlternateGenLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mutatingCanvasEClass, MutatingCanvas.class, "MutatingCanvas", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMutatingCanvas_AlternateCanvases(), this.getAlternateCanvas(), null, "alternateCanvases", null, 0, -1, MutatingCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMutatingCanvas_AlternateCanvases(), this.getAlternateCanvas(), null, "alternateCanvases", null, 0, -1, MutatingCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(ownedEditpartEClass, OwnedEditpart.class, "OwnedEditpart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOwnedEditpart_Name(), theEcorePackage.getEString(), "name", null, 0, 1, OwnedEditpart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specificDiagramUpdaterEClass, SpecificDiagramUpdater.class, "SpecificDiagramUpdater", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSpecificDiagramUpdater_GenNode(), theGMFGenPackage.getGenCommonBase(), null, "genNode", null, 0, 1, SpecificDiagramUpdater.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecificDiagramUpdater_GenNode(), theGMFGenPackage.getGenCommonBase(), null, "genNode", null, 0, 1, SpecificDiagramUpdater.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(genNodeConstraintEClass, GenNodeConstraint.class, "GenNodeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGenNodeConstraint_GenNode(), theGMFGenPackage.getGenNode(), null, "genNode", null, 0, -1, GenNodeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGenNodeConstraint_GenConstraint(), theGMFGenPackage.getGenConstraint(), null, "genConstraint", null, 0, 1, GenNodeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGenNodeConstraint_GenNode(), theGMFGenPackage.getGenNode(), null, "genNode", null, 0, -1, GenNodeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getGenNodeConstraint_GenConstraint(), theGMFGenPackage.getGenConstraint(), null, "genConstraint", null, 0, 1, GenNodeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specificLocatorExternalLabelEClass, SpecificLocatorExternalLabel.class, "SpecificLocatorExternalLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSpecificLocatorExternalLabel_GenExternalNodeLabel(), theGMFGenPackage.getGenExternalNodeLabel(), null, "genExternalNodeLabel", null, 0, -1, SpecificLocatorExternalLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecificLocatorExternalLabel_GenExternalNodeLabel(), theGMFGenPackage.getGenExternalNodeLabel(), null, "genExternalNodeLabel", null, 0, -1, SpecificLocatorExternalLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(additionalEditPartCandiesEClass, AdditionalEditPartCandies.class, "AdditionalEditPartCandies", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAdditionalEditPartCandies_BaseEditHelperPackage(), theEcorePackage.getEString(), "baseEditHelperPackage", null, 0, 1, AdditionalEditPartCandies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAdditionalEditPartCandies_BaseEditHelperPackage(), theEcorePackage.getEString(), "baseEditHelperPackage", null, 0, 1, AdditionalEditPartCandies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(editPartUsingDeleteServiceEClass, EditPartUsingDeleteService.class, "EditPartUsingDeleteService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEditPartUsingDeleteService_Name(), theEcorePackage.getEString(), "name", null, 0, 1, EditPartUsingDeleteService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEditPartUsingDeleteService_GenView(), theGMFGenPackage.getGenCommonBase(), null, "genView", null, 0, -1, EditPartUsingDeleteService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getEditPartUsingDeleteService_GenView(), theGMFGenPackage.getGenCommonBase(), null, "genView", null, 0, -1, EditPartUsingDeleteService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(editPartUsingReorientServiceEClass, EditPartUsingReorientService.class, "EditPartUsingReorientService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEditPartUsingReorientService_Name(), theEcorePackage.getEString(), "name", null, 0, 1, EditPartUsingReorientService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEditPartUsingReorientService_GenView(), theGMFGenPackage.getGenLink(), null, "genView", null, 0, -1, EditPartUsingReorientService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getEditPartUsingReorientService_GenView(), theGMFGenPackage.getGenLink(), null, "genView", null, 0, -1, EditPartUsingReorientService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(labelVisibilityPreferenceEClass, LabelVisibilityPreference.class, "LabelVisibilityPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLabelVisibilityPreference_Role(), theEcorePackage.getEString(), "role", null, 1, 1, LabelVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLabelVisibilityPreference_IconPathRole(), ecorePackage.getEString(), "iconPathRole", null, 0, 1, LabelVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLabelVisibilityPreference_LinkLabels(), theGMFGenPackage.getGenLinkLabel(), null, "linkLabels", null, 0, -1, LabelVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLabelVisibilityPreference_ExternalNodeLabels(), theGMFGenPackage.getGenExternalNodeLabel(), null, "externalNodeLabels", null, 0, -1, LabelVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLabelVisibilityPreference_VisibleByDefault(), theEcorePackage.getEBoolean(), "visibleByDefault", "true", 0, 1, LabelVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLabelVisibilityPreference_LinkLabels(), theGMFGenPackage.getGenLinkLabel(), null, "linkLabels", null, 0, -1, LabelVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLabelVisibilityPreference_ExternalNodeLabels(), theGMFGenPackage.getGenExternalNodeLabel(), null, "externalNodeLabels", null, 0, -1, LabelVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLabelVisibilityPreference_VisibleByDefault(), theEcorePackage.getEBoolean(), "visibleByDefault", "true", 0, 1, LabelVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(compartmentVisibilityPreferenceEClass, CompartmentVisibilityPreference.class, "CompartmentVisibilityPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCompartmentVisibilityPreference_VisibleByDefault(), theEcorePackage.getEBoolean(), "visibleByDefault", "true", 0, 1, CompartmentVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCompartmentVisibilityPreference_Compartments(), theGMFGenPackage.getGenCompartment(), null, "compartments", null, 0, -1, CompartmentVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCompartmentVisibilityPreference_VisibleByDefault(), theEcorePackage.getEBoolean(), "visibleByDefault", "true", 0, 1, CompartmentVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCompartmentVisibilityPreference_Compartments(), theGMFGenPackage.getGenCompartment(), null, "compartments", null, 0, -1, CompartmentVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(compartmentTitleVisibilityPreferenceEClass, CompartmentTitleVisibilityPreference.class, "CompartmentTitleVisibilityPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCompartmentTitleVisibilityPreference_VisibleByDefault(), theEcorePackage.getEBoolean(), "visibleByDefault", "true", 0, 1, CompartmentTitleVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCompartmentTitleVisibilityPreference_Compartments(), theGMFGenPackage.getGenCompartment(), null, "compartments", null, 0, -1, CompartmentTitleVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCompartmentTitleVisibilityPreference_VisibleByDefault(), theEcorePackage.getEBoolean(), "visibleByDefault", "true", 0, 1, CompartmentTitleVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCompartmentTitleVisibilityPreference_Compartments(), theGMFGenPackage.getGenCompartment(), null, "compartments", null, 0, -1, CompartmentTitleVisibilityPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(constrainedByReferenceCompartmentItemSemanticEditPolicyEClass, ConstrainedByReferenceCompartmentItemSemanticEditPolicy.class, "ConstrainedByReferenceCompartmentItemSemanticEditPolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConstrainedByReferenceCompartmentItemSemanticEditPolicy_GenView(), theGMFGenPackage.getGenCommonBase(), null, "genView", null, 0, -1, ConstrainedByReferenceCompartmentItemSemanticEditPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(constrainedByReferenceCompartmentItemSemanticEditPolicyEClass, ConstrainedByReferenceCompartmentItemSemanticEditPolicy.class, "ConstrainedByReferenceCompartmentItemSemanticEditPolicy", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConstrainedByReferenceCompartmentItemSemanticEditPolicy_GenView(), theGMFGenPackage.getGenCommonBase(), null, "genView", null, 0, -1, ConstrainedByReferenceCompartmentItemSemanticEditPolicy.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(externalElementTypesLibraryEClass, ExternalElementTypesLibrary.class, "ExternalElementTypesLibrary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(externalMetamodelTypeEClass, ExternalMetamodelType.class, "ExternalMetamodelType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExternalMetamodelType_ElementTypeRef(), theDomaincontextcodegenPackage.getElementType(), null, "elementTypeRef", null, 0, 1, ExternalMetamodelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExternalMetamodelType_ElementTypeRef(), theDomaincontextcodegenPackage.getElementType(), null, "elementTypeRef", null, 0, 1, ExternalMetamodelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(generateUsingElementTypeCreationCommandEClass, GenerateUsingElementTypeCreationCommand.class, "GenerateUsingElementTypeCreationCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(customDiagramUpdaterSingletonEClass, CustomDiagramUpdaterSingleton.class, "CustomDiagramUpdaterSingleton", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCustomDiagramUpdaterSingleton_SingletonPath(), ecorePackage.getEString(), "singletonPath", null, 1, 1, CustomDiagramUpdaterSingleton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCustomDiagramUpdaterSingleton_SingletonPath(), ecorePackage.getEString(), "singletonPath", null, 1, 1, CustomDiagramUpdaterSingleton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

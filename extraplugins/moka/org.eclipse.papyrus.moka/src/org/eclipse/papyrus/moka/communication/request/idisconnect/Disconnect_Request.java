@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,10 @@ public class Disconnect_Request extends RequestMessage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
+	@Override
 	public String marshall() {
 		return Marshaller.getInstance().disconnect_request_marshal(this);
 	}

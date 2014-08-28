@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,20 +29,20 @@ public class InvertedViewerComparator
 
 	public static ViewerComparator invert(ViewerComparator comparator) {
 		return (comparator instanceof InvertedViewerComparator)
-			? ((InvertedViewerComparator) comparator).comparator
-			: new InvertedViewerComparator(comparator);
+				? ((InvertedViewerComparator) comparator).comparator
+				: new InvertedViewerComparator(comparator);
 	}
 
 	public static ViewerComparator unwrap(ViewerComparator comparator) {
 		return (comparator instanceof InvertedViewerComparator)
-			? ((InvertedViewerComparator) comparator).comparator
-			: comparator;
+				? ((InvertedViewerComparator) comparator).comparator
+				: comparator;
 	}
-	
+
 	public static int direction(ViewerComparator comparator) {
 		return (comparator instanceof InvertedViewerComparator)
-			? SWT.DOWN
-			: SWT.UP;
+				? SWT.DOWN
+				: SWT.UP;
 	}
 
 	@Override
@@ -68,6 +68,6 @@ public class InvertedViewerComparator
 	@Override
 	public boolean equals(Object obj) {
 		return (obj instanceof InvertedViewerComparator)
-			&& ((InvertedViewerComparator) obj).comparator.equals(comparator);
+				&& ((InvertedViewerComparator) obj).comparator.equals(comparator);
 	}
 }

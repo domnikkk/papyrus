@@ -26,10 +26,10 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVProcedureImpl#getBase_Class <em>Base Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVProcedureImpl#getAbstractVVProcedure <em>Abstract VV Procedure</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVProcedureImpl#getVvIntendedOutcome <em>Vv Intended Outcome</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVProcedureImpl#getVvStimuli <em>Vv Stimuli</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVProcedureImpl#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVProcedureImpl#getAbstractVVProcedure <em>Abstract VV Procedure</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVProcedureImpl#getVvIntendedOutcome <em>Vv Intended Outcome</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVProcedureImpl#getVvStimuli <em>Vv Stimuli</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	 * The cached value of the '{@link #getAbstractVVProcedure() <em>Abstract VV Procedure</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getAbstractVVProcedure()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected VVProcedureImpl() {
@@ -68,6 +71,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,15 +82,18 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VerificationvalidationPackage.VV_PROCEDURE__BASE_CLASS, oldBase_Class, base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -95,6 +102,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -104,27 +112,33 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, VerificationvalidationPackage.VV_PROCEDURE__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public VVProcedure getAbstractVVProcedure() {
 		if (abstractVVProcedure != null && abstractVVProcedure.eIsProxy()) {
-			InternalEObject oldAbstractVVProcedure = (InternalEObject)abstractVVProcedure;
-			abstractVVProcedure = (VVProcedure)eResolveProxy(oldAbstractVVProcedure);
+			InternalEObject oldAbstractVVProcedure = (InternalEObject) abstractVVProcedure;
+			abstractVVProcedure = (VVProcedure) eResolveProxy(oldAbstractVVProcedure);
 			if (abstractVVProcedure != oldAbstractVVProcedure) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VerificationvalidationPackage.VV_PROCEDURE__ABSTRACT_VV_PROCEDURE, oldAbstractVVProcedure, abstractVVProcedure));
+				}
 			}
 		}
 		return abstractVVProcedure;
@@ -133,6 +147,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public VVProcedure basicGetAbstractVVProcedure() {
@@ -142,77 +157,91 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setAbstractVVProcedure(VVProcedure newAbstractVVProcedure) {
 		VVProcedure oldAbstractVVProcedure = abstractVVProcedure;
 		abstractVVProcedure = newAbstractVVProcedure;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, VerificationvalidationPackage.VV_PROCEDURE__ABSTRACT_VV_PROCEDURE, oldAbstractVVProcedure, abstractVVProcedure));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<VVIntendedOutcome> getVvIntendedOutcome() {
 		EList<VVIntendedOutcome> results = new BasicEList<VVIntendedOutcome>();
 		VVIntendedOutcome adlVVIntendedOutcome = null;
 		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
-			
+
 			while (it.hasNext()) {
 				Element element = it.next();
-				adlVVIntendedOutcome = (VVIntendedOutcome )UMLUtil.getStereotypeApplication(element, VVIntendedOutcome.class);
-				if (adlVVIntendedOutcome != null)
+				adlVVIntendedOutcome = UMLUtil.getStereotypeApplication(element, VVIntendedOutcome.class);
+				if (adlVVIntendedOutcome != null) {
 					results.add(adlVVIntendedOutcome);
+				}
 			}
 		}
-		
+
 		return new BasicInternalEList<VVIntendedOutcome>(VVIntendedOutcome.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<VVStimuli> getVvStimuli() {
 		EList<VVStimuli> results = new BasicEList<VVStimuli>();
 		VVStimuli adlVVStimuli = null;
 		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
-			
+
 			while (it.hasNext()) {
 				Element element = it.next();
-				adlVVStimuli = (VVStimuli )UMLUtil.getStereotypeApplication(element, VVStimuli.class);
-				if (adlVVStimuli != null)
+				adlVVStimuli = UMLUtil.getStereotypeApplication(element, VVStimuli.class);
+				if (adlVVStimuli != null) {
 					results.add(adlVVStimuli);
+				}
 			}
 		}
-		
+
 		return new BasicInternalEList<VVStimuli>(VVStimuli.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VerificationvalidationPackage.VV_PROCEDURE__BASE_CLASS:
-				if (resolve) return getBase_Class();
-				return basicGetBase_Class();
-			case VerificationvalidationPackage.VV_PROCEDURE__ABSTRACT_VV_PROCEDURE:
-				if (resolve) return getAbstractVVProcedure();
-				return basicGetAbstractVVProcedure();
-			case VerificationvalidationPackage.VV_PROCEDURE__VV_INTENDED_OUTCOME:
-				return getVvIntendedOutcome();
-			case VerificationvalidationPackage.VV_PROCEDURE__VV_STIMULI:
-				return getVvStimuli();
+		case VerificationvalidationPackage.VV_PROCEDURE__BASE_CLASS:
+			if (resolve) {
+				return getBase_Class();
+			}
+			return basicGetBase_Class();
+		case VerificationvalidationPackage.VV_PROCEDURE__ABSTRACT_VV_PROCEDURE:
+			if (resolve) {
+				return getAbstractVVProcedure();
+			}
+			return basicGetAbstractVVProcedure();
+		case VerificationvalidationPackage.VV_PROCEDURE__VV_INTENDED_OUTCOME:
+			return getVvIntendedOutcome();
+		case VerificationvalidationPackage.VV_PROCEDURE__VV_STIMULI:
+			return getVvStimuli();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -220,17 +249,18 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VerificationvalidationPackage.VV_PROCEDURE__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
-				return;
-			case VerificationvalidationPackage.VV_PROCEDURE__ABSTRACT_VV_PROCEDURE:
-				setAbstractVVProcedure((VVProcedure)newValue);
-				return;
+		case VerificationvalidationPackage.VV_PROCEDURE__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) newValue);
+			return;
+		case VerificationvalidationPackage.VV_PROCEDURE__ABSTRACT_VV_PROCEDURE:
+			setAbstractVVProcedure((VVProcedure) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -238,17 +268,18 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VerificationvalidationPackage.VV_PROCEDURE__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)null);
-				return;
-			case VerificationvalidationPackage.VV_PROCEDURE__ABSTRACT_VV_PROCEDURE:
-				setAbstractVVProcedure((VVProcedure)null);
-				return;
+		case VerificationvalidationPackage.VV_PROCEDURE__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) null);
+			return;
+		case VerificationvalidationPackage.VV_PROCEDURE__ABSTRACT_VV_PROCEDURE:
+			setAbstractVVProcedure((VVProcedure) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -256,21 +287,22 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VerificationvalidationPackage.VV_PROCEDURE__BASE_CLASS:
-				return base_Class != null;
-			case VerificationvalidationPackage.VV_PROCEDURE__ABSTRACT_VV_PROCEDURE:
-				return abstractVVProcedure != null;
-			case VerificationvalidationPackage.VV_PROCEDURE__VV_INTENDED_OUTCOME:
-				return !getVvIntendedOutcome().isEmpty();
-			case VerificationvalidationPackage.VV_PROCEDURE__VV_STIMULI:
-				return !getVvStimuli().isEmpty();
+		case VerificationvalidationPackage.VV_PROCEDURE__BASE_CLASS:
+			return base_Class != null;
+		case VerificationvalidationPackage.VV_PROCEDURE__ABSTRACT_VV_PROCEDURE:
+			return abstractVVProcedure != null;
+		case VerificationvalidationPackage.VV_PROCEDURE__VV_INTENDED_OUTCOME:
+			return !getVvIntendedOutcome().isEmpty();
+		case VerificationvalidationPackage.VV_PROCEDURE__VV_STIMULI:
+			return !getVvStimuli().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //VVProcedureImpl
+} // VVProcedureImpl

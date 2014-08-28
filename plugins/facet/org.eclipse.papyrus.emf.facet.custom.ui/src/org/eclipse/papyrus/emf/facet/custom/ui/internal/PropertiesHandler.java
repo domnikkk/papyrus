@@ -1,11 +1,11 @@
 /**
  *  Copyright (c) 2012 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 361794 - [Restructuring] New customization meta-model
  *      Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.custom.ui.IContentPropertiesHandler;
 import org.eclipse.papyrus.emf.facet.custom.ui.IFontPropertiesHandler;
 import org.eclipse.papyrus.emf.facet.custom.ui.ISelectionPropertiesHandler;
@@ -32,16 +33,15 @@ import org.eclipse.papyrus.emf.facet.efacet.core.FacetUtils;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
-import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 
 public class PropertiesHandler implements IContentPropertiesHandler,
 		ILabelPropertiesHandler, ISelectionPropertiesHandler, IFontPropertiesHandler {
 	private static final String SEPARATOR = "::"; //$NON-NLS-1$
 	private static final String CUSTOM_PROPERTIES = "resources/customproperties.efacet"; //$NON-NLS-1$
-	
+
 	private static final String CUSTOM = "CustomizedEObject"; //$NON-NLS-1$
 	private static final String TT_CUSTOM = "CustomizedToolTipEObject"; //$NON-NLS-1$
-	
+
 	private static final String IMAGE = "image"; //$NON-NLS-1$
 	private static final String LABEL = "label"; //$NON-NLS-1$
 	private static final String BACKGROUND = "background"; //$NON-NLS-1$
@@ -61,19 +61,19 @@ public class PropertiesHandler implements IContentPropertiesHandler,
 	private static final String BOTTOM_M_OVERLAY = "bottomMiddleOverlay"; //$NON-NLS-1$
 	private static final String BOTTOM_R_OVERLAY = "bottomRightOverlay"; //$NON-NLS-1$
 	private static final String SELECTION = "selection"; //$NON-NLS-1$
-	
-	//for tooltips
+
+	// for tooltips
 	private static final String TEXT = "text"; //$NON-NLS-1$
 	private static final String TIME_DISPLAYED = "timeDisplayed"; //$NON-NLS-1$
 	private static final String DISPLAY_DELAY = "displayDelayTime"; //$NON-NLS-1$
 	private static final String SHADOW = "shadow"; //$NON-NLS-1$
 	private static final String ALIGNMENT = "alignment"; //$NON-NLS-1$
-		
+
 	private final Resource resource;
 	private final Map<String, FacetOperation> map = new HashMap<String, FacetOperation>();
 
 	/**
-	 * 
+	 *
 	 * @deprecated Must be replaced by
 	 *             org.eclipse.papyrus.emf.facet.custom.ui.internal.PropertiesHandler
 	 *             .PropertiesHandler(ICustomizationManager)
@@ -86,7 +86,7 @@ public class PropertiesHandler implements IContentPropertiesHandler,
 				.appendSegments(PropertiesHandler.CUSTOM_PROPERTIES.split("/")); //$NON-NLS-1$
 		this.resource = resourceSet.getResource(propertiesUri, true);
 	}
-	
+
 	public PropertiesHandler(final ICustomizationManager customizationMgr) {
 		final String bundleName = Activator.getDefault().getBundle().getSymbolicName();
 		URI propertiesUri = URI.createPlatformPluginURI(bundleName, true);
@@ -119,17 +119,18 @@ public class PropertiesHandler implements IContentPropertiesHandler,
 		}
 		return result;
 	}
-	
+
 	public FacetOperation getImageProperty() {
 		return getPropertyByName(PropertiesHandler.CUSTOM,
 				PropertiesHandler.IMAGE);
 	}
 
-	
+
 	public FacetOperation getCollapseLink() {
 		return getPropertyByName(PropertiesHandler.CUSTOM,
 				PropertiesHandler.COLLAPSE_LINK);
 	}
+
 	public FacetOperation getLabelProperty() {
 		return getPropertyByName(PropertiesHandler.CUSTOM,
 				PropertiesHandler.LABEL);
@@ -209,7 +210,7 @@ public class PropertiesHandler implements IContentPropertiesHandler,
 		return getPropertyByName(PropertiesHandler.CUSTOM,
 				PropertiesHandler.BOTTOM_R_OVERLAY);
 	}
-	
+
 	public FacetOperation getSelectionProperty() {
 		return getPropertyByName(PropertiesHandler.CUSTOM,
 				PropertiesHandler.SELECTION);

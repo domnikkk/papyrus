@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -312,176 +312,178 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Tool createTool(String toolId) {
-		if(toolId.equals(CREATEACTIVITYPARTITION1CREATIONTOOL)) {
+		if (toolId.equals(CREATEACTIVITYPARTITION1CREATIONTOOL)) {
 			return createActivityPartition1CreationTool();
 		}
-		if(toolId.equals(CREATEINTERRUPTIBLEACTIVITYREGION2CREATIONTOOL)) {
+		if (toolId.equals(CREATEINTERRUPTIBLEACTIVITYREGION2CREATIONTOOL)) {
 			return createInterruptibleActivityRegion2CreationTool();
 		}
-		if(toolId.equals(CREATEINITIALNODE1CREATIONTOOL)) {
+		if (toolId.equals(CREATEINITIALNODE1CREATIONTOOL)) {
 			return createInitialnode1CreationTool();
 		}
-		if(toolId.equals(CREATEACTIVITYFINAL2CREATIONTOOL)) {
+		if (toolId.equals(CREATEACTIVITYFINAL2CREATIONTOOL)) {
 			return createActivityfinal2CreationTool();
 		}
-		if(toolId.equals(CREATEFLOWFINAL3CREATIONTOOL)) {
+		if (toolId.equals(CREATEFLOWFINAL3CREATIONTOOL)) {
 			return createFlowfinal3CreationTool();
 		}
-		if(toolId.equals(CREATEDECISIONNODE4CREATIONTOOL)) {
+		if (toolId.equals(CREATEDECISIONNODE4CREATIONTOOL)) {
 			return createDecisionnode4CreationTool();
 		}
-		if(toolId.equals(CREATEMERGENODE5CREATIONTOOL)) {
+		if (toolId.equals(CREATEMERGENODE5CREATIONTOOL)) {
 			return createMergenode5CreationTool();
 		}
-		if(toolId.equals(CREATEJOINNODE6CREATIONTOOL)) {
+		if (toolId.equals(CREATEJOINNODE6CREATIONTOOL)) {
 			return createJoinnode6CreationTool();
 		}
-		if(toolId.equals(CREATEFORKNODE7CREATIONTOOL)) {
+		if (toolId.equals(CREATEFORKNODE7CREATIONTOOL)) {
 			return createForknode7CreationTool();
 		}
-		if(toolId.equals(CREATEACTIVITY1CREATIONTOOL)) {
+		if (toolId.equals(CREATEACTIVITY1CREATIONTOOL)) {
 			return createActivity1CreationTool();
 		}
-		if(toolId.equals(CREATEACTIVITYPARAMETERNODE2CREATIONTOOL)) {
+		if (toolId.equals(CREATEACTIVITYPARAMETERNODE2CREATIONTOOL)) {
 			return createActivityParameterNode2CreationTool();
 		}
-		if(toolId.equals(CREATECENTRALBUFFERNODE3CREATIONTOOL)) {
+		if (toolId.equals(CREATECENTRALBUFFERNODE3CREATIONTOOL)) {
 			return createCentralBufferNode3CreationTool();
 		}
-		if(toolId.equals(CREATEDATASTORENODE4CREATIONTOOL)) {
+		if (toolId.equals(CREATEDATASTORENODE4CREATIONTOOL)) {
 			return createDataStoreNode4CreationTool();
 		}
-		if(toolId.equals(CREATECOMMENT5CREATIONTOOL)) {
+		if (toolId.equals(CREATECOMMENT5CREATIONTOOL)) {
 			return createComment5CreationTool();
 		}
-		if(toolId.equals(CREATECONSTRAINT6CREATIONTOOL)) {
+		if (toolId.equals(CREATECONSTRAINT6CREATIONTOOL)) {
 			return createConstraint6CreationTool();
 		}
-		if(toolId.equals(CREATECONTROLFLOW1CREATIONTOOL)) {
+		if (toolId.equals(CREATECONTROLFLOW1CREATIONTOOL)) {
 			return createControlFlow1CreationTool();
 		}
-		if(toolId.equals(CREATEEXCEPTIONHANDLER2CREATIONTOOL)) {
+		if (toolId.equals(CREATEEXCEPTIONHANDLER2CREATIONTOOL)) {
 			return createExceptionHandler2CreationTool();
 		}
-		if(toolId.equals(CREATEOBJECTFLOW3CREATIONTOOL)) {
+		if (toolId.equals(CREATEOBJECTFLOW3CREATIONTOOL)) {
 			return createObjectFlow3CreationTool();
 		}
-		if(toolId.equals(CREATELINK4CREATIONTOOL)) {
+		if (toolId.equals(CREATELINK4CREATIONTOOL)) {
 			return createLink4CreationTool();
 		}
-		if(toolId.equals(CREATELOCALPRECONDITIONCONSTRAINT1CREATIONTOOL)) {
+		if (toolId.equals(CREATELOCALPRECONDITIONCONSTRAINT1CREATIONTOOL)) {
 			return createLocalPreconditionConstraint1CreationTool();
 		}
-		if(toolId.equals(CREATELOCALPRECONDITIONINTERVALCONSTRAINT3CREATIONTOOL)) {
+		if (toolId.equals(CREATELOCALPRECONDITIONINTERVALCONSTRAINT3CREATIONTOOL)) {
 			return createLocalPreconditionIntervalConstraint3CreationTool();
 		}
-		if(toolId.equals(CREATELOCALPRECONDITIONDURATIONCONSTRAINT4CREATIONTOOL)) {
+		if (toolId.equals(CREATELOCALPRECONDITIONDURATIONCONSTRAINT4CREATIONTOOL)) {
 			return createLocalPreconditionDurationConstraint4CreationTool();
 		}
-		if(toolId.equals(CREATELOCALPRECONDITIONTIMECONSTRAINT5CREATIONTOOL)) {
+		if (toolId.equals(CREATELOCALPRECONDITIONTIMECONSTRAINT5CREATIONTOOL)) {
 			return createLocalPreconditionTimeConstraint5CreationTool();
 		}
-		if(toolId.equals(CREATELOCALPOSTCONDITIONCONSTRAINT6CREATIONTOOL)) {
+		if (toolId.equals(CREATELOCALPOSTCONDITIONCONSTRAINT6CREATIONTOOL)) {
 			return createLocalPostconditionConstraint6CreationTool();
 		}
-		if(toolId.equals(CREATELOCALPOSTCONDITIONINTERVALCONSTRAINT8CREATIONTOOL)) {
+		if (toolId.equals(CREATELOCALPOSTCONDITIONINTERVALCONSTRAINT8CREATIONTOOL)) {
 			return createLocalPostconditionIntervalConstraint8CreationTool();
 		}
-		if(toolId.equals(CREATELOCALPOSTCONDITIONDURATIONCONSTRAINT9CREATIONTOOL)) {
+		if (toolId.equals(CREATELOCALPOSTCONDITIONDURATIONCONSTRAINT9CREATIONTOOL)) {
 			return createLocalPostconditionDurationConstraint9CreationTool();
 		}
-		if(toolId.equals(CREATELOCALPOSTCONDITIONTIMECONSTRAINT10CREATIONTOOL)) {
+		if (toolId.equals(CREATELOCALPOSTCONDITIONTIMECONSTRAINT10CREATIONTOOL)) {
 			return createLocalPostconditionTimeConstraint10CreationTool();
 		}
-		if(toolId.equals(CREATEOUTPUTPIN1CREATIONTOOL)) {
+		if (toolId.equals(CREATEOUTPUTPIN1CREATIONTOOL)) {
 			return createOutputPin1CreationTool();
 		}
-		if(toolId.equals(CREATEINPUTPIN2CREATIONTOOL)) {
+		if (toolId.equals(CREATEINPUTPIN2CREATIONTOOL)) {
 			return createInputPin2CreationTool();
 		}
-		if(toolId.equals(CREATEACTIONINPUTPIN3CREATIONTOOL)) {
+		if (toolId.equals(CREATEACTIONINPUTPIN3CREATIONTOOL)) {
 			return createActionInputPin3CreationTool();
 		}
-		if(toolId.equals(CREATEVALUEPIN4CREATIONTOOL)) {
+		if (toolId.equals(CREATEVALUEPIN4CREATIONTOOL)) {
 			return createValuePin4CreationTool();
 		}
-		if(toolId.equals(CREATEEXPANSIONREGION1CREATIONTOOL)) {
+		if (toolId.equals(CREATEEXPANSIONREGION1CREATIONTOOL)) {
 			return createExpansionRegion1CreationTool();
 		}
-		if(toolId.equals(CREATEINPUTEXPANSIONNODE2CREATIONTOOL)) {
+		if (toolId.equals(CREATEINPUTEXPANSIONNODE2CREATIONTOOL)) {
 			return createInputExpansionNode2CreationTool();
 		}
-		if(toolId.equals(CREATEOUTPUTEXPANSIONNODE3CREATIONTOOL)) {
+		if (toolId.equals(CREATEOUTPUTEXPANSIONNODE3CREATIONTOOL)) {
 			return createOutputExpansionNode3CreationTool();
 		}
-		if(toolId.equals(CREATEBROADCASTSIGNALACTION1CREATIONTOOL)) {
+		if (toolId.equals(CREATEBROADCASTSIGNALACTION1CREATIONTOOL)) {
 			return createBroadcastSignalAction1CreationTool();
 		}
-		if(toolId.equals(CREATECALLBEHAVIORACTION2CREATIONTOOL)) {
+		if (toolId.equals(CREATECALLBEHAVIORACTION2CREATIONTOOL)) {
 			return createCallBehaviorAction2CreationTool();
 		}
-		if(toolId.equals(CREATECALLOPERATIONACTION3CREATIONTOOL)) {
+		if (toolId.equals(CREATECALLOPERATIONACTION3CREATIONTOOL)) {
 			return createCallOperationAction3CreationTool();
 		}
-		if(toolId.equals(CREATESENDOBJECTACTION4CREATIONTOOL)) {
+		if (toolId.equals(CREATESENDOBJECTACTION4CREATIONTOOL)) {
 			return createSendObjectAction4CreationTool();
 		}
-		if(toolId.equals(CREATESENDSIGNALACTION5CREATIONTOOL)) {
+		if (toolId.equals(CREATESENDSIGNALACTION5CREATIONTOOL)) {
 			return createSendSignalAction5CreationTool();
 		}
-		if(toolId.equals(CREATECREATEOBJECTACTION1CREATIONTOOL)) {
+		if (toolId.equals(CREATECREATEOBJECTACTION1CREATIONTOOL)) {
 			return createCreateObjectAction1CreationTool();
 		}
-		if(toolId.equals(CREATEDESTROYOBJECTACTION2CREATIONTOOL)) {
+		if (toolId.equals(CREATEDESTROYOBJECTACTION2CREATIONTOOL)) {
 			return createDestroyObjectAction2CreationTool();
 		}
-		if(toolId.equals(CREATEREADSELFACTION3CREATIONTOOL)) {
+		if (toolId.equals(CREATEREADSELFACTION3CREATIONTOOL)) {
 			return createReadSelfAction3CreationTool();
 		}
-		if(toolId.equals(CREATESTRUCTUREDACTIVITYNODE1CREATIONTOOL)) {
+		if (toolId.equals(CREATESTRUCTUREDACTIVITYNODE1CREATIONTOOL)) {
 			return createStructuredActivityNode1CreationTool();
 		}
-		if(toolId.equals(CREATELOOPNODE2CREATIONTOOL)) {
+		if (toolId.equals(CREATELOOPNODE2CREATIONTOOL)) {
 			return createLoopNode2CreationTool();
 		}
-		if(toolId.equals(CREATESEQUENCENODE3CREATIONTOOL)) {
+		if (toolId.equals(CREATESEQUENCENODE3CREATIONTOOL)) {
 			return createSequenceNode3CreationTool();
 		}
-		if(toolId.equals(CREATECONDITIONALNODE4CREATIONTOOL)) {
+		if (toolId.equals(CREATECONDITIONALNODE4CREATIONTOOL)) {
 			return createConditionalNode4CreationTool();
 		}
-		if(toolId.equals(CREATEREADSTRUCTURALFEATUREACTION1CREATIONTOOL)) {
+		if (toolId.equals(CREATEREADSTRUCTURALFEATUREACTION1CREATIONTOOL)) {
 			return createReadStructuralFeatureAction1CreationTool();
 		}
-		if(toolId.equals(CREATEADDSTRUCTURALFEATUREVALUEACTION2CREATIONTOOL)) {
+		if (toolId.equals(CREATEADDSTRUCTURALFEATUREVALUEACTION2CREATIONTOOL)) {
 			return createAddStructuralFeatureValueAction2CreationTool();
 		}
-		if(toolId.equals(CREATEADDSTRUCTURALFEATUREVALUEACTION3CREATIONTOOL)) {
+		if (toolId.equals(CREATEADDSTRUCTURALFEATUREVALUEACTION3CREATIONTOOL)) {
 			return createAddStructuralFeatureValueAction3CreationTool();
 		}
-		if(toolId.equals(CREATEREADSTRUCTURALFEATUREACTION4CREATIONTOOL)) {
+		if (toolId.equals(CREATEREADSTRUCTURALFEATUREACTION4CREATIONTOOL)) {
 			return createReadStructuralFeatureAction4CreationTool();
 		}
-		if(toolId.equals(CREATEADDVARIABLEVALUEACTION1CREATIONTOOL)) {
+		if (toolId.equals(CREATEADDVARIABLEVALUEACTION1CREATIONTOOL)) {
 			return createAddVariableValueAction1CreationTool();
 		}
-		if(toolId.equals(CREATEREADVARIABLEACTION2CREATIONTOOL)) {
+		if (toolId.equals(CREATEREADVARIABLEACTION2CREATIONTOOL)) {
 			return createReadVariableAction2CreationTool();
 		}
-		if(toolId.equals(CREATEOPAQUEACTION1CREATIONTOOL)) {
+		if (toolId.equals(CREATEOPAQUEACTION1CREATIONTOOL)) {
 			return createOpaqueAction1CreationTool();
 		}
-		if(toolId.equals(CREATEVALUESPECIFICATIONACTION2CREATIONTOOL)) {
+		if (toolId.equals(CREATEVALUESPECIFICATIONACTION2CREATIONTOOL)) {
 			return createValueSpecificationAction2CreationTool();
 		}
-		if(toolId.equals(CREATEACCEPTEVENTACTION1CREATIONTOOL)) {
+		if (toolId.equals(CREATEACCEPTEVENTACTION1CREATIONTOOL)) {
 			return createAcceptEventAction1CreationTool();
 		}
 		// default return: null
 		return null;
 	}
 
+	@Override
 	public Object getTemplate(String templateId) {
 		// default return: null
 		return null;

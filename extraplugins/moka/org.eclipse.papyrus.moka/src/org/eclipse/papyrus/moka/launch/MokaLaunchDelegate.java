@@ -73,7 +73,7 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ILaunchConfigurationDelegate#launch(org.eclipse.debug.core.ILaunchConfiguration, java.lang.String,
 	 * org.eclipse.debug.core.ILaunch, org.eclipse.core.runtime.IProgressMonitor)
 	 */
@@ -81,7 +81,7 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 
 		// instantiates the actual execution engine
 		IExecutionEngine engine = this.instantiateExecutionEngine();
-		if(engine == null) {
+		if (engine == null) {
 			this.abort("Could not instantiate execution engine", null);
 		}
 
@@ -96,8 +96,8 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 
 		IEditorPart part = EditorUtils.getEditorPart(resourceURI);
 
-		//IEditorPart part = workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor() ;
-		ServicesRegistry servicesRegistry = (ServicesRegistry)part.getAdapter(ServicesRegistry.class);
+		// IEditorPart part = workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor() ;
+		ServicesRegistry servicesRegistry = (ServicesRegistry) part.getAdapter(ServicesRegistry.class);
 		ResourceSet resourceSet = null;
 		try {
 			resourceSet = servicesRegistry.getService(ModelSet.class);
@@ -108,7 +108,7 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 
 		// from the arguments, retrieves the EObject to be executed
 
-		//ResourceSet resourceSet = new ResourceSetImpl() ;
+		// ResourceSet resourceSet = new ResourceSetImpl() ;
 		Resource resource = resourceSet.getResource(URI.createURI(resourceURI), true);
 		final EObject eObjectToExecute = resource.getEObject(uriFragment);
 
@@ -119,7 +119,7 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 		requestPort = findFreePort();
 		eventPort = findFreePort();
 		replyPort = findFreePort();
-		if(requestPort == -1 || replyPort == -1 || eventPort == -1) {
+		if (requestPort == -1 || replyPort == -1 || eventPort == -1) {
 			this.abort("Unable to find free port", null);
 		}
 
@@ -155,18 +155,18 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 		try {
 			IConfigurationElement e = null;
 			String selectedExecutionEngine = "" + Activator.getDefault().getPreferenceStore().getString(MokaConstants.MOKA_DEFAULT_EXECUTION_ENGINE_PREF);
-			if(selectedExecutionEngine == null || selectedExecutionEngine.equals("")) {
+			if (selectedExecutionEngine == null || selectedExecutionEngine.equals("")) {
 				// This situation happens when the preferences for the default moka execution engine have never been changed
 				e = config[0];
 			} else {
-				for(int i = 0; i < config.length; i++) {
-					if(config[i].getNamespaceIdentifier().equals(selectedExecutionEngine)) {
+				for (int i = 0; i < config.length; i++) {
+					if (config[i].getNamespaceIdentifier().equals(selectedExecutionEngine)) {
 						e = config[i];
 					}
 				}
 			}
 			final Object o = e.createExecutableExtension("class");
-			return (IExecutionEngine)o;
+			return (IExecutionEngine) o;
 		} catch (CoreException ex) {
 			org.eclipse.papyrus.infra.core.Activator.log.equals(ex);
 		} catch (Exception ex) {
@@ -189,7 +189,7 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 			return socket.getLocalPort();
 		} catch (IOException e) {
 		} finally {
-			if(socket != null) {
+			if (socket != null) {
 				try {
 					socket.close();
 				} catch (IOException e) {

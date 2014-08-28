@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AliasIdDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage;
 
@@ -18,7 +15,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AliasIdDescImpl#getAliasedService <em>Aliased Service</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AliasIdDescImpl#getAliasedService <em>Aliased Service</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,6 +26,7 @@ public class AliasIdDescImpl extends AbstractServiceIdDescImpl implements AliasI
 	 * The default value of the '{@link #getAliasedService() <em>Aliased Service</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getAliasedService()
 	 * @generated
 	 * @ordered
@@ -39,6 +37,7 @@ public class AliasIdDescImpl extends AbstractServiceIdDescImpl implements AliasI
 	 * The cached value of the '{@link #getAliasedService() <em>Aliased Service</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getAliasedService()
 	 * @generated
 	 * @ordered
@@ -48,6 +47,7 @@ public class AliasIdDescImpl extends AbstractServiceIdDescImpl implements AliasI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected AliasIdDescImpl() {
@@ -57,6 +57,7 @@ public class AliasIdDescImpl extends AbstractServiceIdDescImpl implements AliasI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -67,8 +68,10 @@ public class AliasIdDescImpl extends AbstractServiceIdDescImpl implements AliasI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getAliasedService() {
 		return aliasedService;
 	}
@@ -76,25 +79,29 @@ public class AliasIdDescImpl extends AbstractServiceIdDescImpl implements AliasI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setAliasedService(String newAliasedService) {
 		String oldAliasedService = aliasedService;
 		aliasedService = newAliasedService;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorswithidPackage.ALIAS_ID_DESC__ALIASED_SERVICE, oldAliasedService, aliasedService));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ALIAS_ID_DESC__ALIASED_SERVICE:
-				return getAliasedService();
+		case ServicedescriptorswithidPackage.ALIAS_ID_DESC__ALIASED_SERVICE:
+			return getAliasedService();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -102,14 +109,15 @@ public class AliasIdDescImpl extends AbstractServiceIdDescImpl implements AliasI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ALIAS_ID_DESC__ALIASED_SERVICE:
-				setAliasedService((String)newValue);
-				return;
+		case ServicedescriptorswithidPackage.ALIAS_ID_DESC__ALIASED_SERVICE:
+			setAliasedService((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -117,14 +125,15 @@ public class AliasIdDescImpl extends AbstractServiceIdDescImpl implements AliasI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ALIAS_ID_DESC__ALIASED_SERVICE:
-				setAliasedService(ALIASED_SERVICE_EDEFAULT);
-				return;
+		case ServicedescriptorswithidPackage.ALIAS_ID_DESC__ALIASED_SERVICE:
+			setAliasedService(ALIASED_SERVICE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -132,13 +141,14 @@ public class AliasIdDescImpl extends AbstractServiceIdDescImpl implements AliasI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ALIAS_ID_DESC__ALIASED_SERVICE:
-				return ALIASED_SERVICE_EDEFAULT == null ? aliasedService != null : !ALIASED_SERVICE_EDEFAULT.equals(aliasedService);
+		case ServicedescriptorswithidPackage.ALIAS_ID_DESC__ALIASED_SERVICE:
+			return ALIASED_SERVICE_EDEFAULT == null ? aliasedService != null : !ALIASED_SERVICE_EDEFAULT.equals(aliasedService);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -146,11 +156,14 @@ public class AliasIdDescImpl extends AbstractServiceIdDescImpl implements AliasI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (aliasedService: ");
@@ -159,4 +172,4 @@ public class AliasIdDescImpl extends AbstractServiceIdDescImpl implements AliasI
 		return result.toString();
 	}
 
-} //AliasIdDescImpl
+} // AliasIdDescImpl

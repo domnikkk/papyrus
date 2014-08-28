@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2014 ATOS ORIGIN, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Atos Origin - Initial API and implementation
- * Christian W. Damus (CEA) - bug 386118 
+ * Christian W. Damus (CEA) - bug 386118
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.sheet;
@@ -40,88 +40,91 @@ public class UMLPropertySection extends AdvancedPropertySection implements IProp
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.ui.views.properties.IPropertySourceProvider#getPropertySource
 	 * (java.lang.Object)
 	 */
+	@Override
 	public IPropertySource getPropertySource(Object object) {
-		if(object instanceof IPropertySource) {
-			return (IPropertySource)object;
+		if (object instanceof IPropertySource) {
+			return (IPropertySource) object;
 		}
 		AdapterFactory af = getAdapterFactory(object);
-		if(af != null) {
-			IItemPropertySource ips = (IItemPropertySource)af.adapt(object, IItemPropertySource.class);
-			if(ips != null) {
+		if (af != null) {
+			IItemPropertySource ips = (IItemPropertySource) af.adapt(object, IItemPropertySource.class);
+			if (ips != null) {
 				return new UMLPropertySource(object, ips);
 			}
 		}
-		if(object instanceof IAdaptable) {
-			return (IPropertySource)((IAdaptable)object).getAdapter(IPropertySource.class);
+		if (object instanceof IAdaptable) {
+			return (IPropertySource) ((IAdaptable) object).getAdapter(IPropertySource.class);
 		}
 		return null;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.diagram.ui.properties.sections.
 	 * AdvancedPropertySection# getPropertySourceProvider()
 	 */
+	@Override
 	protected IPropertySourceProvider getPropertySourceProvider() {
 		return this;
 	}
 
 	/**
 	 * Modify/unwrap selection.
-	 * 
+	 *
 	 */
 	protected Object transformSelection(Object selected) {
-		if(selected == null) {
+		if (selected == null) {
 			return null;
 		}
-		if(selected instanceof IAdaptable && ((IAdaptable)selected).getAdapter(IPropertySource.class) != null) {
-			return ((IAdaptable)selected).getAdapter(IPropertySource.class);
+		if (selected instanceof IAdaptable && ((IAdaptable) selected).getAdapter(IPropertySource.class) != null) {
+			return ((IAdaptable) selected).getAdapter(IPropertySource.class);
 		}
-		if(selected instanceof EditPart) {
-			Object model = ((EditPart)selected).getModel();
-			return model instanceof View ? ((View)model).getElement() : null;
+		if (selected instanceof EditPart) {
+			Object model = ((EditPart) selected).getModel();
+			return model instanceof View ? ((View) model).getElement() : null;
 		}
-		if(selected instanceof View) {
-			return ((View)selected).getElement();
+		if (selected instanceof View) {
+			return ((View) selected).getElement();
 		}
-		if(selected instanceof IAdaptable) {
-			View view = (View)((IAdaptable)selected).getAdapter(View.class);
-			if(view != null) {
+		if (selected instanceof IAdaptable) {
+			View view = (View) ((IAdaptable) selected).getAdapter(View.class);
+			if (view != null) {
 				return view.getElement();
 			}
 		}
-		
+
 		EObject elem = EMFHelper.getEObject(selected);
-		if(elem != null) {
+		if (elem != null) {
 			return elem;
 		}
-		
+
 		return selected;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.
 	 * AdvancedPropertySection#setInput(org .eclipse.ui.IWorkbenchPart,
 	 * org.eclipse.jface.viewers.ISelection)
 	 */
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
-		if(selection.isEmpty() || false == selection instanceof StructuredSelection) {
+		if (selection.isEmpty() || false == selection instanceof StructuredSelection) {
 			super.setInput(part, selection);
 			return;
 		}
-		final StructuredSelection structuredSelection = ((StructuredSelection)selection);
+		final StructuredSelection structuredSelection = ((StructuredSelection) selection);
 		ArrayList transformedSelection = new ArrayList(structuredSelection.size());
-		for(Iterator it = structuredSelection.iterator(); it.hasNext();) {
+		for (Iterator it = structuredSelection.iterator(); it.hasNext();) {
 			Object r = transformSelection(it.next());
-			if(r != null) {
+			if (r != null) {
 				transformedSelection.add(r);
 			}
 		}
@@ -130,17 +133,17 @@ public class UMLPropertySection extends AdvancedPropertySection implements IProp
 
 	/**
 	 * Get the adapterFactory of the given object
-	 * 
+	 *
 	 * @param Object
 	 * @return the adapter factory
 	 */
 	protected AdapterFactory getAdapterFactory(Object object) {
-		if(getEditingDomain() instanceof AdapterFactoryEditingDomain) {
-			return ((AdapterFactoryEditingDomain)getEditingDomain()).getAdapterFactory();
+		if (getEditingDomain() instanceof AdapterFactoryEditingDomain) {
+			return ((AdapterFactoryEditingDomain) getEditingDomain()).getAdapterFactory();
 		}
 		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(object);
-		if(editingDomain != null) {
-			return ((AdapterFactoryEditingDomain)editingDomain).getAdapterFactory();
+		if (editingDomain != null) {
+			return ((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory();
 		}
 		return null;
 	}

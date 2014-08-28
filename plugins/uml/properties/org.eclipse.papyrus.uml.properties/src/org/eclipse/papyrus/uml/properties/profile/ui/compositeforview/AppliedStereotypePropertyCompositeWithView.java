@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,11 +41,11 @@ public class AppliedStereotypePropertyCompositeWithView extends org.eclipse.papy
 
 	/**
 	 * The Constructor.
-	 * 
+	 *
 	 * @param stereotypeComposite
-	 *        the stereotype composite
+	 *            the stereotype composite
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	public AppliedStereotypePropertyCompositeWithView(Composite parent, AppliedStereotypeCompositeWithView stereotypeComposite) {
 		super(parent);
@@ -56,13 +56,13 @@ public class AppliedStereotypePropertyCompositeWithView extends org.eclipse.papy
 
 	/**
 	 * Touch model.
-	 * 
-	 * 
+	 *
+	 *
 	 */
 	protected void touchModel() {
 
 		// CommandSupport.exec ("update stereotype", /* command)
-		if(currentView == null) {
+		if (currentView == null) {
 			return;
 		}
 
@@ -143,16 +143,16 @@ public class AppliedStereotypePropertyCompositeWithView extends org.eclipse.papy
 
 	/**
 	 * Sets the stereotype composite.
-	 * 
+	 *
 	 * @param stereotypeComposite
-	 *        the stereotype composite
+	 *            the stereotype composite
 	 */
 	public void setStereotypeComposite(AppliedStereotypeCompositeWithView stereotypeComposite) {
 		this.stereotypeComposite = stereotypeComposite;
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	@Override
 	public void disposeListeners() {

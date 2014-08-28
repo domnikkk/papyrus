@@ -19,10 +19,10 @@ import org.eclipse.papyrus.team.collaborative.core.reports.CollabStatus;
 
 /**
  * Do an update action
- * 
+ *
  * @author adaussy
- * 
- * 
+ *
+ *
  */
 public interface IUpdater extends IExtendedURISuperSet {
 
@@ -32,7 +32,7 @@ public interface IUpdater extends IExtendedURISuperSet {
 
 	/**
 	 * Update element of {@link IExtendedURISuperSet#getExtendedSet()}
-	 * 
+	 *
 	 * @return
 	 * @throws CollabException
 	 */
@@ -40,7 +40,7 @@ public interface IUpdater extends IExtendedURISuperSet {
 
 	/**
 	 * Check if the elements has been modified
-	 * 
+	 *
 	 * @param uri
 	 * @return
 	 * @throws CollabException

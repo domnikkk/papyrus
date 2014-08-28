@@ -1,11 +1,11 @@
 /**
  *  Copyright (c) 2011-2012 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 361794 - [Restructuring] EMF Facet customization meta-model
  *      Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
@@ -26,13 +26,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
+import org.eclipse.papyrus.emf.facet.custom.core.exception.CustomizationException;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManagerFactory;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
-import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
-import org.eclipse.papyrus.emf.facet.custom.core.exception.CustomizationException;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 
 public class CustomizationManager implements ICustomizationManager {
 
@@ -42,7 +42,7 @@ public class CustomizationManager implements ICustomizationManager {
 	public CustomizationManager(final ResourceSet resourceSet) {
 		this.facetManager = IFacetManagerFactory.DEFAULT.getOrCreateFacetManager(resourceSet);
 	}
-	
+
 	public CustomizationManager(final IFacetManager facetManager) {
 		this.facetManager = facetManager;
 	}
@@ -64,14 +64,15 @@ public class CustomizationManager implements ICustomizationManager {
 			final Class<T> classs)
 			throws CustomizationException {
 		// Begin precondition checking section
-		/* The scope of a customization property is not available yet in new customization meta-model
-		if (!(customizationProperty.getScope().contains(
-				CustomizationPropertyScope.ECLASS) || (customizationProperty
-				.getScope().contains(CustomizationPropertyScope.FACET)))) {
-			throw new RuntimeException(
-					"The customization property is expected to be applicable on an EClass or on a Facet"); //$NON-NLS-1$
-		}
-		*/
+		/*
+		 * The scope of a customization property is not available yet in new customization meta-model
+		 * if (!(customizationProperty.getScope().contains(
+		 * CustomizationPropertyScope.ECLASS) || (customizationProperty
+		 * .getScope().contains(CustomizationPropertyScope.FACET)))) {
+		 * throw new RuntimeException(
+		 * "The customization property is expected to be applicable on an EClass or on a Facet"); //$NON-NLS-1$
+		 * }
+		 */
 		// End precondition checking section
 		T result = null;
 		try {
@@ -81,7 +82,7 @@ public class CustomizationManager implements ICustomizationManager {
 					classs, null, args);
 		} catch (final Exception e) {
 			throw new CustomizationException(e);
-		} 
+		}
 		return result;
 	}
 
@@ -92,34 +93,33 @@ public class CustomizationManager implements ICustomizationManager {
 			throws CustomizationException {
 		// Begin precondition checking section
 		if (eObject == null) {
-			throw new IllegalArgumentException(
-					"The parameter 'eObject' must not be null."); //$NON-NLS-1$
+			throw new IllegalArgumentException("The parameter 'eObject' must not be null."); //$NON-NLS-1$
 		}
 		if (customizationProperty == null) {
-			throw new IllegalArgumentException(
-					"The parameter 'customizationProperty' must not be null."); //$NON-NLS-1$
+			throw new IllegalArgumentException("The parameter 'customizationProperty' must not be null."); //$NON-NLS-1$
 		}
-		/* The scope of a customization property is not available yet in new customization meta-model
-		if (!(eStructuralFeature instanceof EReference)) {
-			if (customizationProperty.getScope().equals(
-					CustomizationPropertyScope.EREFERENCE)) {
-				throw new CustomizationException(
-						"The eStructuralFeature is an instance of " //$NON-NLS-1$
-								+ eStructuralFeature.getClass().getName()
-								+ " but EReference is expected."); //$NON-NLS-1$
-			}
-		}
-
-		if (!(eStructuralFeature instanceof EAttribute)) {
-			if (customizationProperty.getScope().equals(
-					CustomizationPropertyScope.EATTRIBUTE)) {
-				throw new CustomizationException(
-						"The eStructuralFeature is an instance of " //$NON-NLS-1$
-								+ eStructuralFeature.getClass().getName()
-								+ " but EAttribute is expected."); //$NON-NLS-1$
-			}
-		}
-		*/
+		/*
+		 * The scope of a customization property is not available yet in new customization meta-model
+		 * if (!(eStructuralFeature instanceof EReference)) {
+		 * if (customizationProperty.getScope().equals(
+		 * CustomizationPropertyScope.EREFERENCE)) {
+		 * throw new CustomizationException(
+		 * "The eStructuralFeature is an instance of " //$NON-NLS-1$
+		 * + eStructuralFeature.getClass().getName()
+		 * + " but EReference is expected."); //$NON-NLS-1$
+		 * }
+		 * }
+		 *
+		 * if (!(eStructuralFeature instanceof EAttribute)) {
+		 * if (customizationProperty.getScope().equals(
+		 * CustomizationPropertyScope.EATTRIBUTE)) {
+		 * throw new CustomizationException(
+		 * "The eStructuralFeature is an instance of " //$NON-NLS-1$
+		 * + eStructuralFeature.getClass().getName()
+		 * + " but EAttribute is expected."); //$NON-NLS-1$
+		 * }
+		 * }
+		 */
 		// End precondition checking section
 		try {
 			return this.facetManager.invoke(eObject, customizationProperty, classs, null, new Object[] { eTypedElement });
@@ -131,8 +131,7 @@ public class CustomizationManager implements ICustomizationManager {
 	public List<FacetOperation> getCustomizationPropertiesByName(
 			final String name) {
 		if (name == null) {
-			throw new IllegalArgumentException(
-					"The parameter 'name' must not be null."); //$NON-NLS-1$
+			throw new IllegalArgumentException("The parameter 'name' must not be null."); //$NON-NLS-1$
 		}
 		List<FacetOperation> results = new ArrayList<FacetOperation>();
 		for (FacetOperation customizationProperty : this.customProperties) {
@@ -145,8 +144,7 @@ public class CustomizationManager implements ICustomizationManager {
 
 	public void addCustomization(final URI uri) {
 		if (uri == null) {
-			throw new IllegalArgumentException(
-					"The parameter 'uri' must not be null."); //$NON-NLS-1$
+			throw new IllegalArgumentException("The parameter 'uri' must not be null."); //$NON-NLS-1$
 		}
 		Resource resource = this.facetManager.getResourceSet().getResource(uri, true);
 		Iterator<EObject> iterator = resource.getAllContents();

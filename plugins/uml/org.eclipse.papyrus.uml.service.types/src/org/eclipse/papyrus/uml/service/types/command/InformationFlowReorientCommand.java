@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.uml2.uml.InformationFlow;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
@@ -41,7 +42,7 @@ public class InformationFlowReorientCommand extends EditElementCommand {
 	/**
 	 * <pre>
 	 * Constructor.
-	 * 
+	 *
 	 * @param request the re-orient relationship request.
 	 * </pre>
 	 */
@@ -55,51 +56,53 @@ public class InformationFlowReorientCommand extends EditElementCommand {
 	/**
 	 * <pre>
 	 * @see org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand#canExecute()
-	 * 
+	 *
 	 * @return true if the command is executable.
 	 * </pre>
 	 */
+	@Override
 	public boolean canExecute() {
-		if(false == getElementToEdit() instanceof InformationFlow) {
+		if (false == getElementToEdit() instanceof InformationFlow) {
 			return false;
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
 	}
 
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
+		if (!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
 			return false;
 		}
-		if(!(getLink().eContainer() instanceof Package)) {
+		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
 		return true;
 	}
 
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
+		if (!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
 			return false;
 		}
-		if(!(getLink().eContainer() instanceof Package)) {
+		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
 		return true;
 	}
 
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -116,22 +119,22 @@ public class InformationFlowReorientCommand extends EditElementCommand {
 	}
 
 	protected InformationFlow getLink() {
-		return (InformationFlow)getElementToEdit();
+		return (InformationFlow) getElementToEdit();
 	}
 
 	protected NamedElement getOldSource() {
-		return (NamedElement)oldEnd;
+		return (NamedElement) oldEnd;
 	}
 
 	protected NamedElement getNewSource() {
-		return (NamedElement)newEnd;
+		return (NamedElement) newEnd;
 	}
 
 	protected NamedElement getOldTarget() {
-		return (NamedElement)oldEnd;
+		return (NamedElement) oldEnd;
 	}
 
 	protected NamedElement getNewTarget() {
-		return (NamedElement)newEnd;
+		return (NamedElement) newEnd;
 	}
 }

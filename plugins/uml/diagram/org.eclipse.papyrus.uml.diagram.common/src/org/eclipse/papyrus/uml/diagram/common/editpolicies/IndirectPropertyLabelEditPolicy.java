@@ -27,10 +27,11 @@ public class IndirectPropertyLabelEditPolicy extends PropertyLabelEditPolicy imp
 	 *
 	 * @return the view controlled by the host edit part
 	 */
+	@Override
 	protected View getView() {
-		if(getHost().getModel() instanceof View) {
-			if(((View)getHost().getModel()).eContainer() instanceof View) {
-				return (View)((View)getHost().getModel()).eContainer();
+		if (getHost().getModel() instanceof View) {
+			if (((View) getHost().getModel()).eContainer() instanceof View) {
+				return (View) ((View) getHost().getModel()).eContainer();
 			}
 			return null;
 		}

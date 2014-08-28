@@ -42,6 +42,7 @@ public class UseCaseSubjectFigure extends NodeNamedElementFigure {
 
 	private boolean myUseLocalCoordinates = false;
 
+	@Override
 	protected boolean useLocalCoordinates() {
 		return myUseLocalCoordinates;
 	}

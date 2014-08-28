@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - 402525
- * 
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.databinding.custom;
 
@@ -30,9 +30,9 @@ import org.eclipse.papyrus.uml.tools.databinding.CommandBasedObservableValue;
 /**
  * Abstract implementation for an ObservableValue associated to a GMF custom
  * style (NamedStyle).
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public abstract class AbstractCustomStyleObservableValue extends AbstractObservableValue implements CommandBasedObservableValue, IChangeListener, IObserving {
 
@@ -59,6 +59,7 @@ public abstract class AbstractCustomStyleObservableValue extends AbstractObserva
 		source.eAdapters().add(listener = new CustomStyleListener(source, styleFeature, this, styleName));
 	}
 
+	@Override
 	public void handleChange(ChangeEvent event) {
 
 		final Object oldValue = lastValue;
@@ -82,7 +83,7 @@ public abstract class AbstractCustomStyleObservableValue extends AbstractObserva
 	@Override
 	protected Object doGetValue() {
 		NamedStyle valueStyle = source.getNamedStyle(styleClass, styleName);
-		if(valueStyle != null) {
+		if (valueStyle != null) {
 			lastValue = valueStyle.eGet(styleFeature);
 		} else {
 			lastValue = getDefaultValue();
@@ -92,7 +93,7 @@ public abstract class AbstractCustomStyleObservableValue extends AbstractObserva
 
 	/**
 	 * Gets the default value when this style is not set.
-	 * 
+	 *
 	 * @return The default value for this NamedStyle
 	 */
 	protected abstract Object getDefaultValue();
@@ -101,13 +102,14 @@ public abstract class AbstractCustomStyleObservableValue extends AbstractObserva
 	protected void doSetValue(Object value) {
 		Command command = getCommand(value);
 		domain.getCommandStack().execute(command);
-		doGetValue(); //Refresh the lastValue
+		doGetValue(); // Refresh the lastValue
 	}
 
+	@Override
 	public Command getCommand(Object value) {
 		return new CustomStyleValueCommand(source, value, styleClass, styleFeature, styleName);
 	}
-	
+
 	@Override
 	public Object getObserved() {
 		return source;

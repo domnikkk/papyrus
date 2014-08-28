@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2012 CEA LIST.
- * 
- *  
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *   Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *   Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.Parametricque
  * <li>{@link org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ArgumentImpl#getArgumentName <em>Argument Name</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class ArgumentImpl extends EObjectImpl implements Argument {
@@ -41,7 +41,7 @@ public abstract class ArgumentImpl extends EObjectImpl implements Argument {
 	 * The default value of the '{@link #getArgumentName() <em>Argument Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getArgumentName()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public abstract class ArgumentImpl extends EObjectImpl implements Argument {
 	 * The cached value of the '{@link #getArgumentName() <em>Argument Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getArgumentName()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public abstract class ArgumentImpl extends EObjectImpl implements Argument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArgumentImpl() {
@@ -72,7 +72,7 @@ public abstract class ArgumentImpl extends EObjectImpl implements Argument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public abstract class ArgumentImpl extends EObjectImpl implements Argument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getArgumentName() {
@@ -93,25 +93,26 @@ public abstract class ArgumentImpl extends EObjectImpl implements Argument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setArgumentName(String newArgumentName) {
 		String oldArgumentName = argumentName;
 		argumentName = newArgumentName;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ParametricqueryPackage.ARGUMENT__ARGUMENT_NAME, oldArgumentName, argumentName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case ParametricqueryPackage.ARGUMENT__ARGUMENT_NAME:
 			return getArgumentName();
 		}
@@ -121,14 +122,14 @@ public abstract class ArgumentImpl extends EObjectImpl implements Argument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case ParametricqueryPackage.ARGUMENT__ARGUMENT_NAME:
-			setArgumentName((String)newValue);
+			setArgumentName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -137,12 +138,12 @@ public abstract class ArgumentImpl extends EObjectImpl implements Argument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ParametricqueryPackage.ARGUMENT__ARGUMENT_NAME:
 			setArgumentName(ARGUMENT_NAME_EDEFAULT);
 			return;
@@ -153,12 +154,12 @@ public abstract class ArgumentImpl extends EObjectImpl implements Argument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ParametricqueryPackage.ARGUMENT__ARGUMENT_NAME:
 			return ARGUMENT_NAME_EDEFAULT == null ? argumentName != null : !ARGUMENT_NAME_EDEFAULT.equals(argumentName);
 		}
@@ -168,13 +169,14 @@ public abstract class ArgumentImpl extends EObjectImpl implements Argument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (argumentName: "); //$NON-NLS-1$
@@ -183,4 +185,4 @@ public abstract class ArgumentImpl extends EObjectImpl implements Argument {
 		return result.toString();
 	}
 
-} //ArgumentImpl
+} // ArgumentImpl

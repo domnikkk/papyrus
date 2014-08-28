@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,13 +47,13 @@ public class CollaborationUseHelperAdvice extends AbstractEditHelperAdvice {
 		EObject elementToEdit = request.getContainer();
 
 		// Test if current destroy reference is removing a RoleBinding from CollaborationUse role, and destroy this role binding
-		if((elementToEdit instanceof CollaborationUse) && (request.getContainingFeature() == UMLPackage.eINSTANCE.getCollaborationUse_RoleBinding())) {
+		if ((elementToEdit instanceof CollaborationUse) && (request.getContainingFeature() == UMLPackage.eINSTANCE.getCollaborationUse_RoleBinding())) {
 
-			CollaborationUse cUse = (CollaborationUse)elementToEdit;
+			CollaborationUse cUse = (CollaborationUse) elementToEdit;
 
 			// Removing referenced Dependency from roleBinding should delete the dependency
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(cUse);
-			if(provider != null) {
+			if (provider != null) {
 
 				// Retrieve delete command from the Element Edit service
 				DestroyElementRequest req = new DestroyElementRequest(request.getReferencedObject(), false);
@@ -64,7 +64,7 @@ public class CollaborationUseHelperAdvice extends AbstractEditHelperAdvice {
 			}
 		}
 
-		if(gmfCommand != null) {
+		if (gmfCommand != null) {
 			gmfCommand = gmfCommand.reduce();
 		}
 
@@ -81,25 +81,25 @@ public class CollaborationUseHelperAdvice extends AbstractEditHelperAdvice {
 		EObject elementToEdit = request.getElementToEdit();
 
 		// Test if current set command is removing a RoleBinding(s) from CollaborationUse role, and destroy this role binding
-		if((elementToEdit instanceof CollaborationUse) && (request.getFeature() == UMLPackage.eINSTANCE.getCollaborationUse_RoleBinding())) {
+		if ((elementToEdit instanceof CollaborationUse) && (request.getFeature() == UMLPackage.eINSTANCE.getCollaborationUse_RoleBinding())) {
 
-			CollaborationUse cUse = (CollaborationUse)elementToEdit;
+			CollaborationUse cUse = (CollaborationUse) elementToEdit;
 
 			// Removing referenced Dependency from roleBinding should delete the dependency
 			Set<Dependency> roleBindingsToDelete = new HashSet<Dependency>();
 			roleBindingsToDelete.addAll(cUse.getRoleBindings());
 
-			if(request.getValue() instanceof List<?>) {
-				// request.getValue() is expected to be EList<Dependency> here. 
-				roleBindingsToDelete.removeAll((List<?>)request.getValue());
+			if (request.getValue() instanceof List<?>) {
+				// request.getValue() is expected to be EList<Dependency> here.
+				roleBindingsToDelete.removeAll((List<?>) request.getValue());
 			}
 
 
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(cUse);
-			if(provider != null) {
+			if (provider != null) {
 				// Parse roleBindings and create deletion command
 				Iterator<Dependency> it = roleBindingsToDelete.iterator();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					Dependency roleBinding = it.next();
 
 					// Retrieve delete command from the Element Edit service
@@ -113,19 +113,19 @@ public class CollaborationUseHelperAdvice extends AbstractEditHelperAdvice {
 		}
 
 		// Test if current set command is modifying the type of the CollaborationUse
-		if((elementToEdit instanceof CollaborationUse) && (request.getFeature() == UMLPackage.eINSTANCE.getCollaborationUse_Type()) && ((request.getValue() == null) || (request.getValue() instanceof Collaboration))) {
+		if ((elementToEdit instanceof CollaborationUse) && (request.getFeature() == UMLPackage.eINSTANCE.getCollaborationUse_Type()) && ((request.getValue() == null) || (request.getValue() instanceof Collaboration))) {
 
-			CollaborationUse cUse = (CollaborationUse)elementToEdit;
+			CollaborationUse cUse = (CollaborationUse) elementToEdit;
 
-			Collaboration newType = (Collaboration)request.getValue();
-			if(newType != cUse.getType()) {
+			Collaboration newType = (Collaboration) request.getValue();
+			if (newType != cUse.getType()) {
 
 				IElementEditService provider = ElementEditServiceUtils.getCommandProvider(cUse);
-				if(provider != null) {
+				if (provider != null) {
 
 					// Parse roleBindings and create deletion command for all
 					Iterator<Dependency> it = cUse.getRoleBindings().iterator();
-					while(it.hasNext()) {
+					while (it.hasNext()) {
 						Dependency roleBinding = it.next();
 
 						// Retrieve delete command from the Element Edit service
@@ -140,7 +140,7 @@ public class CollaborationUseHelperAdvice extends AbstractEditHelperAdvice {
 
 		}
 
-		if(gmfCommand != null) {
+		if (gmfCommand != null) {
 			gmfCommand = gmfCommand.reduce();
 		}
 

@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.customization.model.customizationplugin.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.customization.model.customizationplugin.ConstraintsEnvironment;
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage;
 
@@ -20,6 +19,7 @@ public class ConstraintsEnvironmentImpl extends FileBasedCustomizableElementImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ConstraintsEnvironmentImpl() {
@@ -29,6 +29,7 @@ public class ConstraintsEnvironmentImpl extends FileBasedCustomizableElementImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class ConstraintsEnvironmentImpl extends FileBasedCustomizableElementImpl
 		return CustomizationPluginPackage.Literals.CONSTRAINTS_ENVIRONMENT;
 	}
 
-} //ConstraintsEnvironmentImpl
+} // ConstraintsEnvironmentImpl

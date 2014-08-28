@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,9 +26,9 @@ import org.eclipse.uml2.uml.Extension;
 
 /**
  * This editPolicy removes the property matching to the extension in the stereotype
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class CustomExtensionItemSemanticEditPolicy extends ExtensionItemSemanticEditPolicy {
 
@@ -36,14 +36,14 @@ public class CustomExtensionItemSemanticEditPolicy extends ExtensionItemSemantic
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = new CompoundCommand("Destroy Extension"); //$NON-NLS-1$
 		EObject elementToDestroy = req.getElementToDestroy();
-		if(elementToDestroy instanceof Extension) {
+		if (elementToDestroy instanceof Extension) {
 
-			Command steCmd = StereotypeHelper.getRemovePropertyCommand((Extension)elementToDestroy);
-			if(steCmd.canExecute()) {
+			Command steCmd = StereotypeHelper.getRemovePropertyCommand((Extension) elementToDestroy);
+			if (steCmd.canExecute()) {
 				cc.add(steCmd);
 			}
 			Command superCmd = super.getDestroyElementCommand(req);
-			if(superCmd.canExecute()) {
+			if (superCmd.canExecute()) {
 				cc.add(superCmd);
 			}
 		}

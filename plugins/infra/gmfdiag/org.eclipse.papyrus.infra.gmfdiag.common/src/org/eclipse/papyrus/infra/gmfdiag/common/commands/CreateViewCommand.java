@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -24,9 +24,7 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 
 /**
  * A replacement for CreateCommand that avoids that takes into account the incorrect
- * generation of ViewProvider by GMFTooling and modifies SemanticAdapter in call to
- * {@link ViewService#provides(Class, org.eclipse.core.runtime.IAdaptable, View, String, int, boolean, org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint)}
- * .
+ * generation of ViewProvider by GMFTooling and modifies SemanticAdapter in call to {@link ViewService#provides(Class, org.eclipse.core.runtime.IAdaptable, View, String, int, boolean, org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint)} .
  */
 public class CreateViewCommand extends CreateCommand {
 
@@ -42,13 +40,13 @@ public class CreateViewCommand extends CreateCommand {
 	public boolean canExecute() {
 
 		// Warning the element adapter can possibly be null (see: https://bugs.eclipse.org/bugs/show_bug.cgi?id=353129)
-		if(viewDescriptor.getElementAdapter() == null) {
+		if (viewDescriptor.getElementAdapter() == null) {
 			return false;
 		}
 
 		// Try to adapt the descriptor ElementAdapter in EObject
 		EObject element = EMFHelper.getEObject(viewDescriptor.getElementAdapter());
-		IElementType elementType = (IElementType)viewDescriptor.getElementAdapter().getAdapter(IElementType.class);
+		IElementType elementType = (IElementType) viewDescriptor.getElementAdapter().getAdapter(IElementType.class);
 
 		SemanticElementAdapter semanticAdapter = new SemanticElementAdapter(element, elementType);
 

@@ -16,12 +16,13 @@ import org.eclipse.emf.ecore.EReference;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.uml.properties.languagepreferences.languagepreferencesFactory
  * @model kind="package"
  * @generated
@@ -31,6 +32,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "languagepreferences";
@@ -39,6 +41,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/properties/uml/languagePreferences";
@@ -47,6 +50,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "lgpref";
@@ -55,6 +59,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	languagepreferencesPackage eINSTANCE = org.eclipse.papyrus.uml.properties.languagepreferences.impl.languagepreferencesPackageImpl.init();
@@ -63,6 +68,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.properties.languagepreferences.impl.LanguageImpl <em>Language</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.impl.LanguageImpl
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.impl.languagepreferencesPackageImpl#getLanguage()
 	 * @generated
@@ -73,6 +79,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -82,6 +89,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The feature id for the '<em><b>Prefered Editor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -91,6 +99,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The number of structural features of the '<em>Language</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -100,6 +109,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.properties.languagepreferences.impl.EditorImpl <em>Editor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.impl.EditorImpl
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.impl.languagepreferencesPackageImpl#getEditor()
 	 * @generated
@@ -110,6 +120,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -119,6 +130,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The number of structural features of the '<em>Editor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -128,6 +140,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.properties.languagepreferences.impl.PreferencesImpl <em>Preferences</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.impl.PreferencesImpl
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.impl.languagepreferencesPackageImpl#getPreferences()
 	 * @generated
@@ -138,6 +151,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The feature id for the '<em><b>Languages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -147,6 +161,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The feature id for the '<em><b>Editors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -156,6 +171,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The feature id for the '<em><b>Default Editor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -165,6 +181,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * The number of structural features of the '<em>Preferences</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -175,6 +192,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.properties.languagepreferences.Language <em>Language</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Language</em>'.
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.Language
 	 * @generated
@@ -185,6 +203,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.properties.languagepreferences.Language#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.Language#getName()
 	 * @see #getLanguage()
@@ -196,6 +215,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.uml.properties.languagepreferences.Language#getPreferedEditor <em>Prefered Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Prefered Editor</em>'.
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.Language#getPreferedEditor()
 	 * @see #getLanguage()
@@ -207,6 +227,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.properties.languagepreferences.Editor <em>Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Editor</em>'.
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.Editor
 	 * @generated
@@ -217,6 +238,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.properties.languagepreferences.Editor#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Class</em>'.
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.Editor#getClass_()
 	 * @see #getEditor()
@@ -228,6 +250,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.properties.languagepreferences.Preferences <em>Preferences</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Preferences</em>'.
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.Preferences
 	 * @generated
@@ -238,6 +261,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.uml.properties.languagepreferences.Preferences#getLanguages <em>Languages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Languages</em>'.
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.Preferences#getLanguages()
 	 * @see #getPreferences()
@@ -249,6 +273,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.uml.properties.languagepreferences.Preferences#getEditors <em>Editors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Editors</em>'.
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.Preferences#getEditors()
 	 * @see #getPreferences()
@@ -260,6 +285,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.uml.properties.languagepreferences.Preferences#getDefaultEditor <em>Default Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Default Editor</em>'.
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.Preferences#getDefaultEditor()
 	 * @see #getPreferences()
@@ -271,6 +297,7 @@ public interface languagepreferencesPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -280,12 +307,13 @@ public interface languagepreferencesPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -293,6 +321,7 @@ public interface languagepreferencesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.properties.languagepreferences.impl.LanguageImpl <em>Language</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.uml.properties.languagepreferences.impl.LanguageImpl
 		 * @see org.eclipse.papyrus.uml.properties.languagepreferences.impl.languagepreferencesPackageImpl#getLanguage()
 		 * @generated
@@ -303,6 +332,7 @@ public interface languagepreferencesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute LANGUAGE__NAME = eINSTANCE.getLanguage_Name();
@@ -311,6 +341,7 @@ public interface languagepreferencesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Prefered Editor</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference LANGUAGE__PREFERED_EDITOR = eINSTANCE.getLanguage_PreferedEditor();
@@ -319,6 +350,7 @@ public interface languagepreferencesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.properties.languagepreferences.impl.EditorImpl <em>Editor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.uml.properties.languagepreferences.impl.EditorImpl
 		 * @see org.eclipse.papyrus.uml.properties.languagepreferences.impl.languagepreferencesPackageImpl#getEditor()
 		 * @generated
@@ -329,6 +361,7 @@ public interface languagepreferencesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute EDITOR__CLASS = eINSTANCE.getEditor_Class();
@@ -337,6 +370,7 @@ public interface languagepreferencesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.properties.languagepreferences.impl.PreferencesImpl <em>Preferences</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.uml.properties.languagepreferences.impl.PreferencesImpl
 		 * @see org.eclipse.papyrus.uml.properties.languagepreferences.impl.languagepreferencesPackageImpl#getPreferences()
 		 * @generated
@@ -347,6 +381,7 @@ public interface languagepreferencesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Languages</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference PREFERENCES__LANGUAGES = eINSTANCE.getPreferences_Languages();
@@ -355,6 +390,7 @@ public interface languagepreferencesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Editors</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference PREFERENCES__EDITORS = eINSTANCE.getPreferences_Editors();
@@ -363,10 +399,11 @@ public interface languagepreferencesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Default Editor</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference PREFERENCES__DEFAULT_EDITOR = eINSTANCE.getPreferences_DefaultEditor();
 
 	}
 
-} //languagepreferencesPackage
+} // languagepreferencesPackage

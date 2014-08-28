@@ -65,6 +65,7 @@ import org.eclipse.papyrus.uml.diagram.common.commands.DeleteLinkDuringCreationC
 import org.eclipse.papyrus.uml.diagram.common.commands.SemanticAdapter;
 import org.eclipse.papyrus.uml.diagram.common.helper.AssociationEndSourceLabelHelper;
 import org.eclipse.papyrus.uml.diagram.common.helper.AssociationEndTargetLabelHelper;
+import org.eclipse.papyrus.uml.diagram.common.helper.MultiAssociationHelper;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.NamedElement;
@@ -109,7 +110,7 @@ public class CustomMultiAssociationHelper extends org.eclipse.papyrus.uml.diagra
 	@SuppressWarnings("unchecked")
 	public static void createSemanticBranchStyles(View view) {
 		org.eclipse.gmf.runtime.notation.EObjectValueStyle semanticbranchStyle = NotationFactory.eINSTANCE.createEObjectValueStyle();
-		semanticbranchStyle.setName(CustomMultiAssociationHelper.SEMANTIC_BRANCH);
+		semanticbranchStyle.setName(MultiAssociationHelper.SEMANTIC_BRANCH);
 		view.getStyles().add(semanticbranchStyle);
 	}
 

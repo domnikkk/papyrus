@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class ConstraintBlockEditHelperAdvice extends AbstractStereotypedElementE
 
 	/**
 	 * Restriction on ConstraintBlock owned Structural and Behavioral features.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -46,8 +46,8 @@ public class ConstraintBlockEditHelperAdvice extends AbstractStereotypedElementE
 
 		IElementType elementToCreate = request.getElementType();
 
-		if(UMLElementTypes.STRUCTURAL_FEATURE.getEClass().isSuperTypeOf(elementToCreate.getEClass())) {
-			if(elementToCreate != SysMLElementTypes.CONSTRAINT_PROPERTY && elementToCreate != UMLElementTypes.PROPERTY) {
+		if (UMLElementTypes.STRUCTURAL_FEATURE.getEClass().isSuperTypeOf(elementToCreate.getEClass())) {
+			if (elementToCreate != SysMLElementTypes.CONSTRAINT_PROPERTY && elementToCreate != UMLElementTypes.PROPERTY) {
 				return null;
 			}
 		}
@@ -57,7 +57,7 @@ public class ConstraintBlockEditHelperAdvice extends AbstractStereotypedElementE
 
 	/**
 	 * Complete creation process by applying the expected stereotype
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -65,9 +65,10 @@ public class ConstraintBlockEditHelperAdvice extends AbstractStereotypedElementE
 
 		return new ConfigureElementCommand(request) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				NamedElement element = (NamedElement)request.getElementToConfigure();
-				if(element != null) {
+				NamedElement element = (NamedElement) request.getElementToConfigure();
+				if (element != null) {
 					StereotypeApplicationHelper.INSTANCE.applyStereotype(element, ConstraintsPackage.eINSTANCE.getConstraintBlock());
 
 					// Set default name

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -36,9 +36,9 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Show Existing Link Helper for SysML. This class provides specific management for SysML Association.
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class SysMLCreateOrShowExistingElementHelper extends CreateOrShowExistingElementHelper {
 
@@ -48,18 +48,18 @@ public class SysMLCreateOrShowExistingElementHelper extends CreateOrShowExisting
 	private ConnectorUtils sysmlConnectorUtils = new ConnectorUtils();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public SysMLCreateOrShowExistingElementHelper() {
 		super();
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param linkHelper
 	 */
 	public SysMLCreateOrShowExistingElementHelper(final ILinkMappingHelper linkHelper) {
@@ -67,7 +67,7 @@ public class SysMLCreateOrShowExistingElementHelper extends CreateOrShowExisting
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.helper.CreateOrShowExistingElementHelper#getIElementTypeNameToDisplay(org.eclipse.gmf.runtime.emf.type.core.IElementType)
 	 *
 	 * @param elementType
@@ -75,46 +75,51 @@ public class SysMLCreateOrShowExistingElementHelper extends CreateOrShowExisting
 	 */
 	@Override
 	protected String getIElementTypeNameToDisplay(final IElementType elementType) {
-		if(SysMLElementTypes.ASSOCIATION_NONE.equals(elementType) || SysMLElementTypes.ASSOCIATION_NONE_DIRECTED.equals(elementType)) {
+		if (SysMLElementTypes.ASSOCIATION_NONE.equals(elementType) || SysMLElementTypes.ASSOCIATION_NONE_DIRECTED.equals(elementType)) {
 			return "Association/DirectAssociation"; //$NON-NLS-1$
-		} else if(SysMLElementTypes.ASSOCIATION_COMPOSITE.equals(elementType) || SysMLElementTypes.ASSOCIATION_COMPOSITE_DIRECTED.equals(elementType)) {
+		} else if (SysMLElementTypes.ASSOCIATION_COMPOSITE.equals(elementType) || SysMLElementTypes.ASSOCIATION_COMPOSITE_DIRECTED.equals(elementType)) {
 			return "Composition/DirectComposition"; //$NON-NLS-1$
-		} else if(SysMLElementTypes.ASSOCIATION_SHARED.equals(elementType) || SysMLElementTypes.ASSOCIATION_SHARED_DIRECTED.equals(elementType)) {
+		} else if (SysMLElementTypes.ASSOCIATION_SHARED.equals(elementType) || SysMLElementTypes.ASSOCIATION_SHARED_DIRECTED.equals(elementType)) {
 			return "Aggregation/DirectAggregation"; //$NON-NLS-1$
 		}
 		return super.getIElementTypeNameToDisplay(elementType);
 	}
-	
+
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.uml.diagram.common.helper.CreateOrShowExistingElementHelper#hasWantedType(org.eclipse.emf.ecore.EObject,
-	 *      org.eclipse.gmf.runtime.emf.type.core.IElementType)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.uml.diagram.common.helper.CreateOrShowExistingElementHelper#hasWantedType(org.eclipse.emf.ecore.EObject, org.eclipse.gmf.runtime.emf.type.core.IElementType)
+	 *
 	 * @param eobject
-	 *        an eobject
+	 *            an eobject
 	 * @param wantedType
-	 *        the wanted element type
+	 *            the wanted element type
 	 * @return
 	 *         true if the eobject is an instance of the wanted element type.
-	 * 
+	 *
 	 *         Add test for SysML Association
 	 */
 	@Override
 	protected boolean hasWantedType(final EObject eobject, final IElementType wantedType) {
 		boolean result = super.hasWantedType(eobject, wantedType);
-		if(result) {
-			if(eobject instanceof Association) {
-				final AggregationKind current = getAssociationAggregationKind((Association)eobject);
-				if(current == AggregationKind.NONE_LITERAL) {
-					if(SysMLElementTypes.ASSOCIATION_NONE.equals(current) || SysMLElementTypes.ASSOCIATION_NONE_DIRECTED.equals(wantedType)) {
+		if (result) {
+			if (eobject instanceof Association) {
+				Association association = (Association) eobject;
+				// Skip incomplete associations: it can't be a duplicate of the current link (Which has a source and a target)
+				if (association.getMemberEnds().size() < 2) {
+					return false;
+				}
+
+				final AggregationKind current = getAssociationAggregationKind((Association) eobject);
+				if (current == AggregationKind.NONE_LITERAL) {
+					if (SysMLElementTypes.ASSOCIATION_NONE.equals(current) || SysMLElementTypes.ASSOCIATION_NONE_DIRECTED.equals(wantedType)) {
 						result = true;
 					}
-				} else if(current == AggregationKind.COMPOSITE_LITERAL) {
-					if(SysMLElementTypes.ASSOCIATION_COMPOSITE.equals(current) || SysMLElementTypes.ASSOCIATION_COMPOSITE_DIRECTED.equals(wantedType)) {
+				} else if (current == AggregationKind.COMPOSITE_LITERAL) {
+					if (SysMLElementTypes.ASSOCIATION_COMPOSITE.equals(current) || SysMLElementTypes.ASSOCIATION_COMPOSITE_DIRECTED.equals(wantedType)) {
 						result = true;
 					}
-				} else if(current == AggregationKind.SHARED_LITERAL) {
-					if(SysMLElementTypes.ASSOCIATION_SHARED.equals(current) || SysMLElementTypes.ASSOCIATION_SHARED_DIRECTED.equals(wantedType)) {
+				} else if (current == AggregationKind.SHARED_LITERAL) {
+					if (SysMLElementTypes.ASSOCIATION_SHARED.equals(current) || SysMLElementTypes.ASSOCIATION_SHARED_DIRECTED.equals(wantedType)) {
 						result = true;
 					}
 				} else {
@@ -126,18 +131,24 @@ public class SysMLCreateOrShowExistingElementHelper extends CreateOrShowExisting
 	}
 
 	/**
-	 * 
+	 *
 	 * @param association
-	 *        an association
+	 *            an association
 	 * @return
 	 *         the association kind for the association
 	 */
 	private static final AggregationKind getAssociationAggregationKind(final Association association) {
+		// Incomplete associations
+		if (association.getMemberEnds().size() < 2) {
+			return AggregationKind.NONE_LITERAL;
+		}
+
 		final Property source = association.getMemberEnds().get(0);
 		final Property target = association.getMemberEnds().get(1);
-		if(source.getAggregation() == AggregationKind.NONE_LITERAL && target.getAggregation() == AggregationKind.NONE_LITERAL) {
+
+		if (source.getAggregation() == AggregationKind.NONE_LITERAL && target.getAggregation() == AggregationKind.NONE_LITERAL) {
 			return AggregationKind.NONE_LITERAL;
-		} else if((source.getAggregation() == AggregationKind.COMPOSITE_LITERAL) || (target.getAggregation() == AggregationKind.COMPOSITE_LITERAL)) {
+		} else if ((source.getAggregation() == AggregationKind.COMPOSITE_LITERAL) || (target.getAggregation() == AggregationKind.COMPOSITE_LITERAL)) {
 			return AggregationKind.COMPOSITE_LITERAL;
 		} else {
 			return AggregationKind.SHARED_LITERAL;
@@ -147,25 +158,26 @@ public class SysMLCreateOrShowExistingElementHelper extends CreateOrShowExisting
 
 	/**
 	 * @param request
-	 *        the request for the creation
+	 *            the request for the creation
 	 * @param wantedEClass
 	 * @return
 	 *         a list of {@link EdgeEndsMapper} referencing the existing links between the source and the target
 	 */
+	@Override
 	protected List<EdgeEndsMapper> getExistingLinksBetweenSourceAndTarget(final CreateRelationshipRequest request, final IElementType wantedElementType) {
-		if(wantedElementType.getEClass() == UMLPackage.eINSTANCE.getConnector()) {
+		if (wantedElementType.getEClass() == UMLPackage.eINSTANCE.getConnector()) {
 			final List<EdgeEndsMapper> existingElement = new ArrayList<EdgeEndsMapper>();
-			for(final Element current : ((Element)request.getContainer()).getOwnedElements()) {
-				if(hasWantedType(current, wantedElementType)) {
+			for (final Element current : ((Element) request.getContainer()).getOwnedElements()) {
+				if (hasWantedType(current, wantedElementType)) {
 					final Collection<?> sources = this.linkMappingHelper.getSource(current);
 					final Collection<?> targets = this.linkMappingHelper.getTarget(current);
 
-					if(sources.contains(request.getSource()) && targets.contains(request.getTarget())) {
-						//we verify the nestedPath before to propose to restore a connector
-						View sourceView = (View)request.getParameter(RequestParameterConstants.EDGE_CREATE_REQUEST_SOURCE_VIEW);
-						View targetView = (View)request.getParameter(RequestParameterConstants.EDGE_CREATE_REQUEST_TARGET_VIEW);
-						boolean canBeDisplayed = this.sysmlConnectorUtils.canDisplayExistingConnectorBetweenViewsAccordingToNestedPaths((Connector)current, sourceView, targetView);
-						if(canBeDisplayed) {
+					if (sources.contains(request.getSource()) && targets.contains(request.getTarget())) {
+						// we verify the nestedPath before to propose to restore a connector
+						View sourceView = (View) request.getParameter(RequestParameterConstants.EDGE_CREATE_REQUEST_SOURCE_VIEW);
+						View targetView = (View) request.getParameter(RequestParameterConstants.EDGE_CREATE_REQUEST_TARGET_VIEW);
+						boolean canBeDisplayed = ConnectorUtils.canDisplayExistingConnectorBetweenViewsAccordingToNestedPaths((Connector) current, sourceView, targetView);
+						if (canBeDisplayed) {
 							existingElement.add(new EdgeEndsMapper(current, sources, null, null));
 						}
 					}

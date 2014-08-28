@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ import org.eclipse.uml2.uml.CollaborationUse;
 /**
  * This class bundles the configuration space of the action language source viewer. Instances of
  * this class are passed to the configure method of <code>SourceViewer</code>.
- * 
+ *
  * @see org.eclipse.jface.text.source.SourceViewerConfiguration
  */
 public class CollaborationUseLabelSourceViewerConfiguration extends SourceViewerConfiguration {
@@ -43,9 +43,9 @@ public class CollaborationUseLabelSourceViewerConfiguration extends SourceViewer
 
 	/**
 	 * Creates a new CollaborationUseLabelSourceViewerConfiguration
-	 * 
+	 *
 	 * @param collaborationUse
-	 *        the {@link CollaborationUse} to edit
+	 *            the {@link CollaborationUse} to edit
 	 */
 	public CollaborationUseLabelSourceViewerConfiguration(CollaborationUse collaborationUse) {
 		setCollaborationUse(collaborationUse);
@@ -65,7 +65,7 @@ public class CollaborationUseLabelSourceViewerConfiguration extends SourceViewer
 
 		/**
 		 * Constructor
-		 * 
+		 *
 		 * @param attribute
 		 */
 		public SingleTokenScanner(TextAttribute attribute) {
@@ -117,7 +117,7 @@ public class CollaborationUseLabelSourceViewerConfiguration extends SourceViewer
 
 	/**
 	 * Returns the edited {@link CollaborationUse}
-	 * 
+	 *
 	 * @return the {@link CollaborationUse} to edit
 	 */
 	public CollaborationUse getCollaborationUse() {
@@ -126,9 +126,9 @@ public class CollaborationUseLabelSourceViewerConfiguration extends SourceViewer
 
 	/**
 	 * Sets the {@link CollaborationUse} to Edit
-	 * 
+	 *
 	 * @param collaborationUse
-	 *        the {@link CollaborationUse} to edit
+	 *            the {@link CollaborationUse} to edit
 	 */
 	public void setCollaborationUse(CollaborationUse collaborationUse) {
 		this.collaborationUse = collaborationUse;

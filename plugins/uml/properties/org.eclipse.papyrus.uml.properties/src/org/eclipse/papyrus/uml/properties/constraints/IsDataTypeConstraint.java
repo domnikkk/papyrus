@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.eclipse.papyrus.uml.properties.datatype.DataTypeObservableValue;
  * This constraints tests whether an Object is an instance of a DataType
  * The "null" DataType instance should still be matched by this constraint.
  * It is encapsulated in a DataTypeObservableObject instance (Which is never null).
- * 
+ *
  * @author Camille Letavernier
  */
 public class IsDataTypeConstraint extends AbstractConstraint {
@@ -41,11 +41,11 @@ public class IsDataTypeConstraint extends AbstractConstraint {
 
 	@Override
 	public boolean match(Object selection) {
-		if(dataType == null) {
+		if (dataType == null) {
 			return false;
 		}
-		if(selection instanceof DataTypeObservableValue) {
-			DataTypeObservableValue observer = (DataTypeObservableValue)selection;
+		if (selection instanceof DataTypeObservableValue) {
+			DataTypeObservableValue observer = (DataTypeObservableValue) selection;
 			return observer.getValueType() == dataType;
 		}
 
@@ -54,12 +54,12 @@ public class IsDataTypeConstraint extends AbstractConstraint {
 
 	@Override
 	protected boolean equivalent(Constraint constraint) {
-		if(constraint == null) {
+		if (constraint == null) {
 			return false;
 		}
 
-		if(constraint instanceof IsDataTypeConstraint) {
-			return ((IsDataTypeConstraint)constraint).dataType == dataType;
+		if (constraint instanceof IsDataTypeConstraint) {
+			return ((IsDataTypeConstraint) constraint).dataType == dataType;
 		}
 
 		return false;

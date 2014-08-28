@@ -17,9 +17,9 @@ import org.eclipse.papyrus.customization.properties.generation.wizard.widget.Ter
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.customization.properties.generation.fieldselection.PropertyDefinition#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.customization.properties.generation.fieldselection.PropertyDefinition#getValueSingle <em>Value Single</em>}</li>
- *   <li>{@link org.eclipse.papyrus.customization.properties.generation.fieldselection.PropertyDefinition#getValueMultiple <em>Value Multiple</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.properties.generation.fieldselection.PropertyDefinition#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.properties.generation.fieldselection.PropertyDefinition#getValueSingle <em>Value Single</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.properties.generation.fieldselection.PropertyDefinition#getValueMultiple <em>Value Multiple</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +36,7 @@ public interface PropertyDefinition extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.customization.properties.generation.fieldselection.FieldSelectionPackage#getPropertyDefinition_Name()
@@ -48,7 +49,9 @@ public interface PropertyDefinition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.properties.generation.fieldselection.PropertyDefinition#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -62,6 +65,7 @@ public interface PropertyDefinition extends EObject {
 	 * If the meaning of the '<em>Value Single</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Value Single</em>' attribute.
 	 * @see #setValueSingle(State)
 	 * @see org.eclipse.papyrus.customization.properties.generation.fieldselection.FieldSelectionPackage#getPropertyDefinition_ValueSingle()
@@ -74,7 +78,9 @@ public interface PropertyDefinition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.properties.generation.fieldselection.PropertyDefinition#getValueSingle <em>Value Single</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value Single</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Value Single</em>' attribute.
 	 * @see #getValueSingle()
 	 * @generated
 	 */
@@ -88,6 +94,7 @@ public interface PropertyDefinition extends EObject {
 	 * If the meaning of the '<em>Value Multiple</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Value Multiple</em>' attribute.
 	 * @see #setValueMultiple(State)
 	 * @see org.eclipse.papyrus.customization.properties.generation.fieldselection.FieldSelectionPackage#getPropertyDefinition_ValueMultiple()
@@ -100,7 +107,9 @@ public interface PropertyDefinition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.properties.generation.fieldselection.PropertyDefinition#getValueMultiple <em>Value Multiple</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value Multiple</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Value Multiple</em>' attribute.
 	 * @see #getValueMultiple()
 	 * @generated
 	 */

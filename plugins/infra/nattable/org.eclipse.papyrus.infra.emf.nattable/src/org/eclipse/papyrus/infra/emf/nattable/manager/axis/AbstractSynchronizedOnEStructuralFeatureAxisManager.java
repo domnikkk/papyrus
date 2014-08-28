@@ -31,7 +31,6 @@ import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager;
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
-import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.EObjectAxis;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.EStructuralFeatureValueFillingConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IAxisConfiguration;
@@ -42,9 +41,9 @@ import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 
 
 /**
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extends AbstractAxisManager {
 
@@ -59,11 +58,10 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 	protected Collection<EStructuralFeature> listenFeatures;
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#init(org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager,
-	 *      org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation,
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#init(org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager, org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation,
 	 *      org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.AbstractAxisProvider)
-	 * 
+	 *
 	 * @param manager
 	 * @param provider
 	 * @param rep
@@ -75,27 +73,28 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#canDestroyAxisElement(java.lang.Integer)
-	 * 
+	 *
 	 * @param axisPosition
 	 * @return
 	 */
+	@Override
 	public boolean canDestroyAxisElement(Integer axisPosition) {
 		final Object current = getElements().get(axisPosition);
 		final Object elementToDestroy = AxisUtils.getRepresentedElement(current);
-		if(this.managedObject.contains(current) || this.managedObject.contains(elementToDestroy)) {
-			if(elementToDestroy instanceof EObject) {
-				return !EMFHelper.isReadOnly((EObject)elementToDestroy);
+		if (this.managedObject.contains(current) || this.managedObject.contains(elementToDestroy)) {
+			if (elementToDestroy instanceof EObject) {
+				return !EMFHelper.isReadOnly((EObject) elementToDestroy);
 			}
 		}
 		return false;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#addListeners()
-	 * 
+	 *
 	 */
 	@Override
 	protected void addListeners() {
@@ -104,14 +103,14 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#initializeManagedObjectList()
-	 * 
+	 *
 	 */
 	@Override
 	protected void initializeManagedObjectList() {
-		for(final Object current : getFeaturesValue()) {
-			if(isAllowedContents(current)) {
+		for (final Object current : getFeaturesValue()) {
+			if (isAllowedContents(current)) {
 				this.managedObject.add(current);
 			}
 		}
@@ -119,20 +118,20 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the list of the objects which are referenced by the listen features
 	 */
 	@SuppressWarnings("unchecked")
 	protected List<Object> getFeaturesValue() {
 		final List<Object> featureValue = new ArrayList<Object>();
-		for(final EStructuralFeature current : getListenFeatures()) {
-			if(current.isMany()) {
+		for (final EStructuralFeature current : getListenFeatures()) {
+			if (current.isMany()) {
 				final Object value = getTableContext().eGet(current);
-				if(value instanceof Collection<?>) {
-					featureValue.addAll((Collection<Object>)value);
+				if (value instanceof Collection<?>) {
+					featureValue.addAll((Collection<Object>) value);
 				} else {
-					featureValue.add(value);//never tested
+					featureValue.add(value);// never tested
 				}
 			}
 		}
@@ -141,18 +140,18 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 
 	/**
 	 * Update the list of the managed objects, ignoring ordered elements
-	 * 
+	 *
 	 * @param toAdd
-	 *        the list of the elements to add to the managed objects list
+	 *            the list of the elements to add to the managed objects list
 	 * @param toRemove
-	 *        the list of the elements to remove to the managed objects list
+	 *            the list of the elements to remove to the managed objects list
 	 */
 	protected void updateManagedList(final List<Object> toAdd, final List<Object> toRemove) {
-		if(!toAdd.isEmpty() || !toRemove.isEmpty()) {
+		if (!toAdd.isEmpty() || !toRemove.isEmpty()) {
 			List<Object> newValue = new ArrayList<Object>(this.managedObject);
 			newValue.removeAll(toRemove);
 			newValue.addAll(toAdd);
-			if(toAdd.size() > 0) {
+			if (toAdd.size() > 0) {
 				newValue = organizeContents(newValue);
 			}
 			this.managedObject.clear();
@@ -164,9 +163,9 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 
 	/**
 	 * This method allows to organize the axis contents before to display them in the table
-	 * 
+	 *
 	 * @param objects
-	 *        the list of objects
+	 *            the list of objects
 	 * @return
 	 *         the sorted list of objects
 	 */
@@ -176,7 +175,7 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 
 
 	/**
-	 * 
+	 *
 	 * add a listener on the table context to listen the required feature
 	 */
 	protected void addContextFeatureValueListener() {
@@ -184,7 +183,7 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 
 			@Override
 			public void notifyChanged(Notification msg) {
-				if(getListenFeatures().contains(msg.getFeature())) {
+				if (getListenFeatures().contains(msg.getFeature())) {
 					featureValueHasChanged(msg);
 				}
 			};
@@ -195,7 +194,7 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 
 	/**
 	 * this method verify that the fields and the parameters are correct for this synchronized table
-	 * 
+	 *
 	 */
 	protected void verifyValues() {
 		Assert.isTrue(!getListenFeatures().isEmpty());
@@ -203,18 +202,18 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the features to listen according to the current table configuration or <code>null</code> if it is not definedS
 	 */
 	protected Collection<EStructuralFeature> getListenFeatures() {
-		if(this.listenFeatures == null) {
+		if (this.listenFeatures == null) {
 			this.listenFeatures = new ArrayList<EStructuralFeature>();
 			final Collection<EStructuralFeatureValueFillingConfiguration> configs = getFillingConfigurations();
 			final Collection<EStructuralFeature> avalaibleFeatures = getTableContext().eClass().getEAllStructuralFeatures();
-			for(EStructuralFeatureValueFillingConfiguration eStructuralFeatureValueFillingConfiguration : configs) {
+			for (EStructuralFeatureValueFillingConfiguration eStructuralFeatureValueFillingConfiguration : configs) {
 				final EStructuralFeature feature = eStructuralFeatureValueFillingConfiguration.getListenFeature();
-				if(feature != null && avalaibleFeatures.contains(feature) && !this.listenFeatures.contains(feature)) {
+				if (feature != null && avalaibleFeatures.contains(feature) && !this.listenFeatures.contains(feature)) {
 					listenFeatures.add(feature);
 				}
 			}
@@ -223,24 +222,24 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the filling configuration used by the table or <code>null</code> if any is defined
 	 */
-	protected Collection<EStructuralFeatureValueFillingConfiguration> getFillingConfigurations() {//FIXME : local configuration not yet managed
+	protected Collection<EStructuralFeatureValueFillingConfiguration> getFillingConfigurations() {// FIXME : local configuration not yet managed
 		final Collection<EStructuralFeatureValueFillingConfiguration> configs = new ArrayList<EStructuralFeatureValueFillingConfiguration>();
-		for(final IAxisConfiguration current : this.representedAxisManager.getSpecificAxisConfigurations()) {
-			if(current instanceof EStructuralFeatureValueFillingConfiguration) {
-				configs.add((EStructuralFeatureValueFillingConfiguration)current);
+		for (final IAxisConfiguration current : this.representedAxisManager.getSpecificAxisConfigurations()) {
+			if (current instanceof EStructuralFeatureValueFillingConfiguration) {
+				configs.add((EStructuralFeatureValueFillingConfiguration) current);
 			}
 		}
 		return configs;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#removeListeners()
-	 * 
+	 *
 	 */
 	@Override
 	protected void removeListeners() {
@@ -250,18 +249,18 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 
 	/**
 	 * verify that the context contains the feature
-	 * 
+	 *
 	 */
 	protected void verifyFeatureMultiplicity() {
-		for(final EStructuralFeature feature : getListenFeatures()) {
+		for (final EStructuralFeature feature : getListenFeatures()) {
 			Assert.isTrue(feature.isMany());
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#canDropAxisElement(java.util.Collection)
-	 * 
+	 *
 	 * @param objectsToAdd
 	 * @return
 	 */
@@ -271,9 +270,9 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#canInsertAxis(java.util.Collection, int)
-	 * 
+	 *
 	 * @param objectsToAdd
 	 * @param index
 	 * @return
@@ -284,9 +283,9 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#canMoveAxis()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -295,29 +294,31 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#isDynamic()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public final boolean isDynamic() {
 		return true;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#isSlave()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public boolean isSlave() {
 		return false;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#canEditAxisHeader()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -327,9 +328,9 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 
 	/**
 	 * Configurations of axis on synchronized features will not be saved
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#canBeSavedAsConfig()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -338,31 +339,31 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 	}
 
 	/**
-	 * 
+	 *
 	 * @param notification
-	 *        update the list of the managed objects if its required
+	 *            update the list of the managed objects if its required
 	 */
 	protected void featureValueHasChanged(final Notification notification) {
-		if(notification.isTouch()) {
+		if (notification.isTouch()) {
 			return;
 		}
 
 		int eventType = notification.getEventType();
 		List<Object> toAdd = new ArrayList<Object>();
 		List<Object> toRemove = new ArrayList<Object>();
-		switch(eventType) {
+		switch (eventType) {
 		case Notification.REMOVING_ADAPTER:
-			break;//nothing to do
+			break;// nothing to do
 		case Notification.ADD:
 			Object newValue = notification.getNewValue();
-			if(isAllowedContents(newValue) && !isAlreadyManaged(newValue)) {
+			if (isAllowedContents(newValue) && !isAlreadyManaged(newValue)) {
 				toAdd.add(newValue);
 			}
 			break;
 		case Notification.ADD_MANY:
-			Collection<?> newValues = (Collection<?>)notification.getNewValue();
-			for(final Object current : newValues) {
-				if(isAllowedContents(current) && !isAlreadyManaged(current)) {
+			Collection<?> newValues = (Collection<?>) notification.getNewValue();
+			for (final Object current : newValues) {
+				if (isAllowedContents(current) && !isAlreadyManaged(current)) {
 					toAdd.add(current);
 				}
 			}
@@ -370,18 +371,18 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 		case Notification.EVENT_TYPE_COUNT:
 			break;
 		case Notification.MOVE:
-			//we ignore it
+			// we ignore it
 			break;
 		case Notification.REMOVE:
 			final Object oldValue = notification.getOldValue();
-			if(this.managedObject.contains(oldValue)) {
+			if (this.managedObject.contains(oldValue)) {
 				toRemove.add(oldValue);
 			}
 			break;
 		case Notification.REMOVE_MANY:
-			Collection<?> oldValues = (Collection<?>)notification.getOldValue();
-			for(final Object current : oldValues) {
-				if(this.managedObject.contains(oldValues)) {
+			Collection<?> oldValues = (Collection<?>) notification.getOldValue();
+			for (final Object current : oldValues) {
+				if (this.managedObject.contains(oldValues)) {
 					toRemove.add(current);
 				}
 			}
@@ -389,21 +390,21 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 		case Notification.RESOLVE:
 		case Notification.SET:
 		case Notification.UNSET:
-			//case Notification.NO_FEATURE_ID:
-			//case Notification.NO_INDEX:
+			// case Notification.NO_FEATURE_ID:
+			// case Notification.NO_INDEX:
 
 		default:
 			break;
 		}
-		if(toAdd.size() > 0 || toRemove.size() > 0) {
+		if (toAdd.size() > 0 || toRemove.size() > 0) {
 			updateManagedList(toAdd, toRemove);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.nattable.manager.axis.AbstractUMLSynchronizedOnFeatureAxisManager#getAllManagedAxis()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -412,19 +413,20 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#getDestroyAxisElementCommand(TransactionalEditingDomain, java.lang.Integer)
-	 * 
+	 *
 	 * @param domain
 	 * @param axisPosition
 	 * @return
 	 */
+	@Override
 	public Command getDestroyAxisElementCommand(TransactionalEditingDomain domain, Integer axisPosition) {
-		if(canDestroyAxisElement(axisPosition)) {
+		if (canDestroyAxisElement(axisPosition)) {
 			final Object current = getElements().get(axisPosition);
 			Object elementToDestroy = AxisUtils.getRepresentedElement(current);
-			if(elementToDestroy != null && elementToDestroy instanceof EObject) {
-				final DestroyElementRequest request = new DestroyElementRequest((TransactionalEditingDomain)getContextEditingDomain(), (EObject)elementToDestroy, false);
+			if (elementToDestroy != null && elementToDestroy instanceof EObject) {
+				final DestroyElementRequest request = new DestroyElementRequest(getContextEditingDomain(), (EObject) elementToDestroy, false);
 				final IElementEditService provider = ElementEditServiceUtils.getCommandProvider(elementToDestroy);
 				return new GMFtoEMFCommandWrapper(provider.getEditCommand(request));
 			}

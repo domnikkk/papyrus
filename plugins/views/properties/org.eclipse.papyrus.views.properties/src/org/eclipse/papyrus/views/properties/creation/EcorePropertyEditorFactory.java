@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -57,9 +57,9 @@ import org.eclipse.swt.widgets.MenuItem;
  * The matching {@link org.eclipse.papyrus.views.properties.contexts.View}s from all
  * applied {@link org.eclipse.papyrus.views.properties.contexts.Context}s are used to
  * display the right form to edit the EObject.
- * 
+ *
  * If no EClass is specified, a list of all concrete subclasses of {@link #type} will be displayed before the instantiation.
- * 
+ *
  * @author Camille Letavernier
  */
 public class EcorePropertyEditorFactory extends PropertyEditorFactory {
@@ -118,16 +118,16 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 	protected Map<EObject, CreateIn> createIn = new HashMap<EObject, CreateIn>();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * The factory will be able to instantiate the given EClass
-	 * 
+	 *
 	 * @param type
-	 *        The type of EClass to instantiate when creating new EObjects.
+	 *            The type of EClass to instantiate when creating new EObjects.
 	 */
 	public EcorePropertyEditorFactory(EReference referenceIn) {
-		if(referenceIn == null) {
+		if (referenceIn == null) {
 			throw new IllegalArgumentException("The referenceIn parameter must be set"); //$NON-NLS-1$
 		}
 
@@ -153,7 +153,7 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 
 	/**
 	 * Sets the nsUri of the EClass used by this factory to instantiate new EObjects
-	 * 
+	 *
 	 * @param nsUri
 	 * @see #getClassName
 	 */
@@ -164,7 +164,7 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 
 	/**
 	 * Sets the className of the EClass used by this factory to instantiate new EObjects
-	 * 
+	 *
 	 * @param className
 	 * @see #getNsUri()
 	 */
@@ -174,13 +174,13 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 	}
 
 	private void checkEClass() {
-		if(nsUri != null && className != null) {
+		if (nsUri != null && className != null) {
 			EPackage ePackage = EPackage.Registry.INSTANCE.getEPackage(nsUri);
-			if(ePackage == null) {
+			if (ePackage == null) {
 				Activator.log.warn("Cannot find the EPackage corresponding to URI " + nsUri); //$NON-NLS-1$
 			}
-			eClass = (EClass)ePackage.getEClassifier(className);
-			if(eClass == null) {
+			eClass = (EClass) ePackage.getEClassifier(className);
+			if (eClass == null) {
 				Activator.log.warn("Cannot find the EClass " + className + " in the package " + nsUri); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		}
@@ -200,22 +200,22 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 	@Override
 	public final Object createObject(Control widget, Object context) {
 		Object result;
-		
+
 		final ResourceSet previous = NestedEditingDialogContext.getInstance().push(context);
-		
+
 		try {
 			result = doCreateObject(widget, context);
 		} finally {
 			NestedEditingDialogContext.getInstance().pop(previous);
 		}
-		
+
 		return result;
 	}
-	
+
 	protected Object doCreateObject(Control widget, Object context) {
 		Object instance;
-		
-		if(referenceIn.isContainment()) {
+
+		if (referenceIn.isContainment()) {
 			instance = simpleCreateObject(widget);
 		} else {
 			instance = createObjectInDifferentContainer(widget);
@@ -240,7 +240,7 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 				NestedEditingDialogContext.getInstance().exit();
 			}
 		} catch (OperationCanceledException e) {
-			if(!NestedEditingDialogContext.getInstance().isNested()) {
+			if (!NestedEditingDialogContext.getInstance().isNested()) {
 				// Propagate to the caller if not in a nested edit dialog
 				throw e;
 			}
@@ -249,19 +249,19 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 
 		return result;
 	}
-	
+
 	protected final Object basicDoEdit(Control widget, Object source, Set<View> views, String dialogTitle) {
 		return super.doEdit(widget, source, views, dialogTitle);
 	}
-	
+
 	@Override
 	protected void handleEditCancelled(Control widget, Object source) {
 		throw new OperationCanceledException();
 	}
-	
+
 	protected EObject simpleCreateObject(Control widget) {
 		EClass eClass = chooseEClass(widget);
-		if(eClass == null) {
+		if (eClass == null) {
 			return null;
 		}
 
@@ -271,7 +271,7 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 
 	protected EObject createObjectInDifferentContainer(Control widget) {
 		EObject instance = simpleCreateObject(widget);
-		if(instance == null) {
+		if (instance == null) {
 			return null;
 		}
 
@@ -288,7 +288,7 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 		dialog.setProviders(containerContentProvider, referenceContentProvider, containerLabelProvider, referenceLabelProvider);
 		dialog.setTitle(getCreationDialogTitle());
 		int result = dialog.open();
-		if(result != Window.OK) {
+		if (result != Window.OK) {
 			return null;
 		}
 		CreateIn createIn = new CreateIn();
@@ -305,37 +305,37 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 	 * Otherwise, displays a list of all valid concrete EClasses that
 	 * are subtypes of {@link #type}, from which the user can choose
 	 * the one to instantiate.
-	 * 
+	 *
 	 * @param widget
-	 *        The control used to open a selection list (if more than one EClass
-	 *        can be instantiated)
+	 *            The control used to open a selection list (if more than one EClass
+	 *            can be instantiated)
 	 * @return
 	 *         The EClass to instantiate
 	 */
 	protected EClass chooseEClass(Control widget) {
-		if(eClass != null) {
+		if (eClass != null) {
 			return eClass;
 		}
 
 		List<EClass> availableClasses = getAvailableEClasses();
-		if(availableClasses.isEmpty()) {
+		if (availableClasses.isEmpty()) {
 			return null;
 		}
 
-		if(availableClasses.size() == 1) {
+		if (availableClasses.size() == 1) {
 			this.className = availableClasses.get(0).getName();
 			return availableClasses.get(0);
 		}
 
 		final Menu menu = new Menu(widget);
-		for(EClass eClass : availableClasses) {
+		for (EClass eClass : availableClasses) {
 			final MenuItem item = new MenuItem(menu, SWT.NONE);
 			item.setText(eClass.getName());
 			item.setData("eClass", eClass); //$NON-NLS-1$
 			item.addSelectionListener(new SelectionListener() {
 
 				public void widgetSelected(SelectionEvent e) {
-					EcorePropertyEditorFactory.this.eClass = (EClass)item.getData("eClass"); //$NON-NLS-1$
+					EcorePropertyEditorFactory.this.eClass = (EClass) item.getData("eClass"); //$NON-NLS-1$
 				}
 
 				public void widgetDefaultSelected(SelectionEvent e) {
@@ -347,23 +347,23 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 
 		menu.setVisible(true);
 
-		//The menu is blocking the thread
+		// The menu is blocking the thread
 		Display display = widget.getDisplay();
-		while(menu.isVisible()) {
+		while (menu.isVisible()) {
 			try {
-				if(!display.readAndDispatch()) {
+				if (!display.readAndDispatch()) {
 					display.sleep();
 				}
 			} catch (Throwable ex) {
 				Activator.log.error(ex);
 			}
 		}
-		if(!display.isDisposed()) {
+		if (!display.isDisposed()) {
 			display.update();
 		}
 
 		EClass eClass = this.eClass;
-		if(eClass != null) {
+		if (eClass != null) {
 			className = eClass.getName();
 		}
 		this.eClass = null;
@@ -387,13 +387,13 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 	 */
 	@Override
 	public Collection<Object> validateObjects(Collection<Object> objectsToValidate) {
-		if(!referenceIn.isContainment()) {
-			for(Object objectToValidate : objectsToValidate) {
-				//We add the object to the containment reference
-				//They will be automatically added to the edited reference
-				//(referenceIn) after this method returns
+		if (!referenceIn.isContainment()) {
+			for (Object objectToValidate : objectsToValidate) {
+				// We add the object to the containment reference
+				// They will be automatically added to the edited reference
+				// (referenceIn) after this method returns
 				CreateIn creationInformation = this.createIn.get(objectToValidate);
-				if(creationInformation != null) {
+				if (creationInformation != null) {
 					creationInformation.createInObject.eSet(creationInformation.createInReference, objectToValidate);
 				} else {
 					Activator.log.warn("Unknown object : " + objectToValidate);
@@ -414,8 +414,8 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 
 	@Override
 	public String getEditionDialogTitle(Object objectToEdit) {
-		if(objectToEdit instanceof EObject) {
-			return "Edit " + ((EObject)objectToEdit).eClass().getName();
+		if (objectToEdit instanceof EObject) {
+			return "Edit " + ((EObject) objectToEdit).eClass().getName();
 		}
 		return super.getEditionDialogTitle(objectToEdit);
 	}
@@ -445,7 +445,7 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 	/**
 	 * Sets the same label provider for both #referenceLabelProvider
 	 * and #containerLabelProvider
-	 * 
+	 *
 	 * @param labelProvider
 	 */
 	public void setLabelProvider(ILabelProvider labelProvider) {
@@ -468,21 +468,20 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 	public void setReferenceContentProvider(CreateInFeatureContentProvider contentProvider) {
 		this.referenceContentProvider = contentProvider;
 	}
-	
+
 	@Override
 	protected CreationContext getCreationContext(Object element) {
-		return (element instanceof EObject) ? getCreationContext((EObject)element, true) : super.getCreationContext(element);
+		return (element instanceof EObject) ? getCreationContext((EObject) element, true) : super.getCreationContext(element);
 	}
-	
+
 	/**
 	 * Gets the creation context providing the element in which a {@code modelElement} is being created.
-	 * 
+	 *
 	 * @param modelElement
-	 *        a model element that is currently being created and probably is, therefore, not yet attached to the model
+	 *            a model element that is currently being created and probably is, therefore, not yet attached to the model
 	 * @param demandCreate
-	 *        whether to create the context and implicitly attach it if it is not already attached. This is only appropriate in the case that the
-	 *        {@code modelElement} is the element in which context we are creating new elements
-	 * 
+	 *            whether to create the context and implicitly attach it if it is not already attached. This is only appropriate in the case that the {@code modelElement} is the element in which context we are creating new elements
+	 *
 	 * @return the creation context, or {@code null} if none is currently attached and we did not elect to create it on demand
 	 */
 	public static CreationContext getCreationContext(EObject modelElement, boolean demandCreate) {
@@ -507,10 +506,10 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 			}
 
 			public void popCreatedElement(Object newElement) {
-				if(createdElements.remove(newElement)) {
-					((Notifier)newElement).eAdapters().remove(this);
+				if (createdElements.remove(newElement)) {
+					((Notifier) newElement).eAdapters().remove(this);
 
-					if(createdElements.isEmpty()) {
+					if (createdElements.isEmpty()) {
 						// Don't need this context adapter any more
 						context.eAdapters().remove(this);
 					}
@@ -519,12 +518,12 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 
 			public void pushCreatedElement(Object newElement) {
 				createdElements.add(newElement);
-				((Notifier)newElement).eAdapters().add(this);
+				((Notifier) newElement).eAdapters().add(this);
 			}
 		}
 
-		CreationContext result = (CreationContext)EcoreUtil.getExistingAdapter(modelElement, CreationContext.class);
-		if((result == null) && demandCreate) {
+		CreationContext result = (CreationContext) EcoreUtil.getExistingAdapter(modelElement, CreationContext.class);
+		if ((result == null) && demandCreate) {
 			result = new EObjectCreationContext(modelElement);
 		}
 

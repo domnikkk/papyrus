@@ -980,7 +980,8 @@
 	<metamodelType id="org.eclipse.papyrus.uml.InterruptibleActivityRegion" name="UML::InterruptibleActivityRegion"
 		eclass="InterruptibleActivityRegion"
 		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InterruptibleActivityRegion.gif"
-		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
+		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" 
+		edithelper="org.eclipse.papyrus.uml.service.types.helper.InterruptibleActivityRegionHelper">
 			<param name="semanticHint" value="UML::InterruptibleActivityRegion"/>
 	</metamodelType>
 	
@@ -2036,12 +2037,6 @@
 	<adviceBinding id="org.eclipse.papyrus.uml.advice.ExecutionSpecification"
 		class="org.eclipse.papyrus.uml.service.types.helper.advice.ExecutionSpecificationHelperAdvice"
 		inheritance="all" typeId="org.eclipse.papyrus.uml.ExecutionSpecification">
-	</adviceBinding>
-	
-	<!-- Helper advice for Feature name initialization -->
-	<adviceBinding id="org.eclipse.papyrus.uml.advice.FeatureNameInitializer"
-		class="org.eclipse.papyrus.uml.service.types.helper.advice.FeatureNameInitializerHelperAdvice"
-		inheritance="all" typeId="org.eclipse.papyrus.uml.Feature">
 	</adviceBinding>
 	
 	<!-- Helper advice for Lifeline -->

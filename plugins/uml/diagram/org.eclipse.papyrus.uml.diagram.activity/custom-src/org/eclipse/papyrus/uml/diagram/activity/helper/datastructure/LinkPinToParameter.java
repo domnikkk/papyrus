@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.uml2.uml.TypedElement;
  * Data structure to store link between a Pin and a Parameter in an {@link CallAction}.
  * UML do not provide this link. This link is define by constraints. In MDT Papyrus we have decided to save this link in order to be able to
  * synchronized call Action and their Structural Behaviors.
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class LinkPinToParameter implements ILinkPinToTarget {
 
@@ -49,11 +49,11 @@ public class LinkPinToParameter implements ILinkPinToTarget {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param pin
-	 *        {@link Pin}
+	 *            {@link Pin}
 	 * @param parameter
-	 *        {@link Parameter} which is referenced by the pin of the {@link CallAction} element
+	 *            {@link Parameter} which is referenced by the pin of the {@link CallAction} element
 	 */
 	public LinkPinToParameter(Pin pin, TypedElement parameter) {
 		super();
@@ -61,6 +61,7 @@ public class LinkPinToParameter implements ILinkPinToTarget {
 		this.parameter = parameter;
 	}
 
+	@Override
 	public Pin getPin() {
 		return pin;
 	}
@@ -77,6 +78,7 @@ public class LinkPinToParameter implements ILinkPinToTarget {
 		this.parameter = parameter;
 	}
 
+	@Override
 	public Element getTarget() {
 		return parameter;
 	}

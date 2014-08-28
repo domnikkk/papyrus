@@ -66,7 +66,7 @@ import org.eclipse.ui.part.ISetSelectionTarget;
  * This is a simple wizard for creating a new model file.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DomaincontextcodegenModelWizard extends Wizard implements INewWizard {
@@ -75,7 +75,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays.asList(DomainContextEditorPlugin.INSTANCE.getString("_UI_DomaincontextcodegenEditorFilenameExtensions").split("\\s*,\\s*")));
@@ -84,7 +84,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * A formatted list of supported file extensions, suitable for display.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS = DomainContextEditorPlugin.INSTANCE.getString("_UI_DomaincontextcodegenEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
@@ -93,7 +93,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * This caches an instance of the model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DomaincontextcodegenPackage domaincontextcodegenPackage = DomaincontextcodegenPackage.eINSTANCE;
@@ -102,7 +102,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * This caches an instance of the model factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DomaincontextcodegenFactory domaincontextcodegenFactory = domaincontextcodegenPackage.getDomaincontextcodegenFactory();
@@ -111,7 +111,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * This is the file creation page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DomaincontextcodegenModelWizardNewFileCreationPage newFileCreationPage;
@@ -120,7 +120,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * This is the initial object creation page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DomaincontextcodegenModelWizardInitialObjectCreationPage initialObjectCreationPage;
@@ -129,7 +129,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * Remember the selection during initialization for populating the default container.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IStructuredSelection selection;
@@ -138,7 +138,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * Remember the workbench during initialization.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IWorkbench workbench;
@@ -147,7 +147,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * Caches the names of the types that can be created as the root object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected List<String> initialObjectNames;
@@ -156,7 +156,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
@@ -170,16 +170,16 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * Returns the names of the types that can be created as the root object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<String> getInitialObjectNames() {
-		if(initialObjectNames == null) {
+		if (initialObjectNames == null) {
 			initialObjectNames = new ArrayList<String>();
-			for(EClassifier eClassifier : domaincontextcodegenPackage.getEClassifiers()) {
-				if(eClassifier instanceof EClass) {
-					EClass eClass = (EClass)eClassifier;
-					if(!eClass.isAbstract()) {
+			for (EClassifier eClassifier : domaincontextcodegenPackage.getEClassifiers()) {
+				if (eClassifier instanceof EClass) {
+					EClass eClass = (EClass) eClassifier;
+					if (!eClass.isAbstract()) {
 						initialObjectNames.add(eClass.getName());
 					}
 				}
@@ -193,11 +193,11 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * Create a new model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass)domaincontextcodegenPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EClass eClass = (EClass) domaincontextcodegenPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
 		EObject rootObject = domaincontextcodegenFactory.create(eClass);
 		return rootObject;
 	}
@@ -206,7 +206,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * Do the work after everything is specified.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +238,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 						// Add the initial model object to the contents.
 						//
 						EObject rootObject = createInitialModel();
-						if(rootObject != null) {
+						if (rootObject != null) {
 							resource.getContents().add(rootObject);
 						}
 
@@ -262,12 +262,12 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 			IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
 			IWorkbenchPage page = workbenchWindow.getActivePage();
 			final IWorkbenchPart activePart = page.getActivePart();
-			if(activePart instanceof ISetSelectionTarget) {
+			if (activePart instanceof ISetSelectionTarget) {
 				final ISelection targetSelection = new StructuredSelection(modelFile);
 				getShell().getDisplay().asyncExec(new Runnable() {
 
 					public void run() {
-						((ISetSelectionTarget)activePart).selectReveal(targetSelection);
+						((ISetSelectionTarget) activePart).selectReveal(targetSelection);
 					}
 				});
 			}
@@ -292,7 +292,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * This is the one page of the wizard.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public class DomaincontextcodegenModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
@@ -301,7 +301,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public DomaincontextcodegenModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
@@ -312,16 +312,16 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 		 * The framework calls this to see if the file is correct.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		@Override
 		protected boolean validatePage() {
-			if(super.validatePage()) {
+			if (super.validatePage()) {
 				String extension = new Path(getFileName()).getFileExtension();
-				if(extension == null || !FILE_EXTENSIONS.contains(extension)) {
+				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(DomainContextEditorPlugin.INSTANCE.getString(key, new Object[]{ FORMATTED_FILE_EXTENSIONS }));
+					setErrorMessage(DomainContextEditorPlugin.INSTANCE.getString(key, new Object[] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
 				return true;
@@ -332,7 +332,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public IFile getModelFile() {
@@ -344,7 +344,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * This is the page where the type of object to create is selected.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public class DomaincontextcodegenModelWizardInitialObjectCreationPage extends WizardPage {
@@ -352,7 +352,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected Combo initialObjectField;
@@ -367,7 +367,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected Combo encodingField;
@@ -376,7 +376,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public DomaincontextcodegenModelWizardInitialObjectCreationPage(String pageId) {
@@ -386,7 +386,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public void createControl(Composite parent) {
@@ -421,11 +421,11 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 				initialObjectField.setLayoutData(data);
 			}
 
-			for(String objectName : getInitialObjectNames()) {
+			for (String objectName : getInitialObjectNames()) {
 				initialObjectField.add(getLabel(objectName));
 			}
 
-			if(initialObjectField.getItemCount() == 1) {
+			if (initialObjectField.getItemCount() == 1) {
 				initialObjectField.select(0);
 			}
 			initialObjectField.addModifyListener(validator);
@@ -446,7 +446,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 				encodingField.setLayoutData(data);
 			}
 
-			for(String encoding : getEncodings()) {
+			for (String encoding : getEncodings()) {
 				encodingField.add(encoding);
 			}
 
@@ -460,7 +460,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected ModifyListener validator = new ModifyListener() {
@@ -473,7 +473,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected boolean validatePage() {
@@ -483,14 +483,14 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		@Override
 		public void setVisible(boolean visible) {
 			super.setVisible(visible);
-			if(visible) {
-				if(initialObjectField.getItemCount() == 1) {
+			if (visible) {
+				if (initialObjectField.getItemCount() == 1) {
 					initialObjectField.clearSelection();
 					encodingField.setFocus();
 				} else {
@@ -503,14 +503,14 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public String getInitialObjectName() {
 			String label = initialObjectField.getText();
 
-			for(String name : getInitialObjectNames()) {
-				if(getLabel(name).equals(label)) {
+			for (String name : getInitialObjectNames()) {
+				if (getLabel(name).equals(label)) {
 					return name;
 				}
 			}
@@ -520,7 +520,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public String getEncoding() {
@@ -531,7 +531,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 		 * Returns the label for the specified type name.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected String getLabel(String typeName) {
@@ -546,13 +546,13 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected Collection<String> getEncodings() {
-			if(encodings == null) {
+			if (encodings == null) {
 				encodings = new ArrayList<String>();
-				for(StringTokenizer stringTokenizer = new StringTokenizer(DomainContextEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens();) {
+				for (StringTokenizer stringTokenizer = new StringTokenizer(DomainContextEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens();) {
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -564,7 +564,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * The framework calls this to create the contents of the wizard.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -579,21 +579,21 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
 		//
-		if(selection != null && !selection.isEmpty()) {
+		if (selection != null && !selection.isEmpty()) {
 			// Get the resource...
 			//
 			Object selectedElement = selection.iterator().next();
-			if(selectedElement instanceof IResource) {
+			if (selectedElement instanceof IResource) {
 				// Get the resource parent, if its a file.
 				//
-				IResource selectedResource = (IResource)selectedElement;
-				if(selectedResource.getType() == IResource.FILE) {
+				IResource selectedResource = (IResource) selectedElement;
+				if (selectedResource.getType() == IResource.FILE) {
 					selectedResource = selectedResource.getParent();
 				}
 
 				// This gives us a directory...
 				//
-				if(selectedResource instanceof IFolder || selectedResource instanceof IProject) {
+				if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
 					// Set this for the container.
 					//
 					newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
@@ -603,7 +603,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 					String defaultModelBaseFilename = DomainContextEditorPlugin.INSTANCE.getString("_UI_DomaincontextcodegenEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-					for(int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
+					for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
 						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
 					}
 					newFileCreationPage.setFileName(modelFilename);
@@ -620,7 +620,7 @@ public class DomaincontextcodegenModelWizard extends Wizard implements INewWizar
 	 * Get the file from the page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IFile getModelFile() {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,11 +52,11 @@ public class AppliedStereotypeDisplayComposite extends AppearanceDecoratedTreeCo
 
 	/**
 	 * The default constructor.
-	 * 
+	 *
 	 * @param style
-	 *        the style of this panel
+	 *            the style of this panel
 	 * @param parent
-	 *        the parent Composite for this panel
+	 *            the parent Composite for this panel
 	 */
 	public AppliedStereotypeDisplayComposite(AppliedStereotypePanel parent) {
 		super(parent, SWT.NONE, "Applied stereotypes", true);
@@ -65,8 +65,8 @@ public class AppliedStereotypeDisplayComposite extends AppearanceDecoratedTreeCo
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param parent
 	 */
 	public AppliedStereotypeDisplayComposite(Composite parent) {
@@ -74,11 +74,11 @@ public class AppliedStereotypeDisplayComposite extends AppearanceDecoratedTreeCo
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param factory
 	 * @param parent
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -91,7 +91,7 @@ public class AppliedStereotypeDisplayComposite extends AppearanceDecoratedTreeCo
 
 	/**
 	 * Gets the selected.
-	 * 
+	 *
 	 * @return Returns the selected element.
 	 */
 	public Element getSelected() {
@@ -100,7 +100,7 @@ public class AppliedStereotypeDisplayComposite extends AppearanceDecoratedTreeCo
 
 	/**
 	 * Gets the tree.
-	 * 
+	 *
 	 * @return the tree
 	 */
 	public Tree getTree() {
@@ -109,14 +109,14 @@ public class AppliedStereotypeDisplayComposite extends AppearanceDecoratedTreeCo
 
 	/**
 	 * Sets the input.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 */
 	public void setInput(StereotypedElementTreeObject element) {
 		treeViewer.setInput(element);
 		// boolean toto = Activator.getDefault().getPreferenceStore().getBoolean(ProfilePreferenceConstants.EXPAND_STERETOYPES_TREE);
-		if(Activator.getDefault().getPreferenceStore().getBoolean(ProfilePreferenceConstants.EXPAND_STEREOTYPES_TREE)) {
+		if (Activator.getDefault().getPreferenceStore().getBoolean(ProfilePreferenceConstants.EXPAND_STEREOTYPES_TREE)) {
 			treeViewer.expandAll();
 		}
 	}
@@ -127,14 +127,14 @@ public class AppliedStereotypeDisplayComposite extends AppearanceDecoratedTreeCo
 	@Override
 	public void refresh() {
 
-		if(treeViewer.getTree() != null && !(treeViewer.getTree().isDisposed())) {
+		if (treeViewer.getTree() != null && !(treeViewer.getTree().isDisposed())) {
 			treeViewer.refresh();
 		}
 	}
 
 	/**
 	 * Creates the stereotypes tree.
-	 * 
+	 *
 	 * @return the tree of applied stereotypes and properties
 	 */
 	private void createStereotypesTree() {
@@ -146,21 +146,21 @@ public class AppliedStereotypeDisplayComposite extends AppearanceDecoratedTreeCo
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param event
 	 */
 	public void selectionChanged(SelectionChangedEvent event) {
-		if(parentPanel != null) {
-			if(event == null) {
+		if (parentPanel != null) {
+			if (event == null) {
 				parentPanel.setSelectedProperty(null);
 				return;
 			}
 
-			IStructuredSelection structSelection = (IStructuredSelection)event.getSelection();
+			IStructuredSelection structSelection = (IStructuredSelection) event.getSelection();
 			Object selection = structSelection.getFirstElement();
-			if(selection instanceof AppliedStereotypePropertyTreeObject) {
-				parentPanel.setSelectedProperty((AppliedStereotypePropertyTreeObject)selection);
+			if (selection instanceof AppliedStereotypePropertyTreeObject) {
+				parentPanel.setSelectedProperty((AppliedStereotypePropertyTreeObject) selection);
 			} else {
 				parentPanel.setSelectedProperty(null);
 			}

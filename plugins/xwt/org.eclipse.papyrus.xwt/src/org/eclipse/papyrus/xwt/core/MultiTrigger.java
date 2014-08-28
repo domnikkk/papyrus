@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -47,21 +47,21 @@ public class MultiTrigger extends TriggerBase {
 		}
 
 		public void handleChange(ChangeEvent event) {
-			for(Condition condition : getConditions()) {
-				if(!condition.evaluate(element)) {
+			for (Condition condition : getConditions()) {
+				if (!condition.evaluate(element)) {
 					restoreValues();
 					return;
 				}
 			}
 
-			if(oldvalues != null && !oldvalues.isEmpty()) {
+			if (oldvalues != null && !oldvalues.isEmpty()) {
 				return;
 			}
 
-			for(SetterBase setter : getSetters()) {
+			for (SetterBase setter : getSetters()) {
 				try {
 					Object oldValue = setter.applyTo(element, true);
-					if(oldvalues == null) {
+					if (oldvalues == null) {
 						oldvalues = new HashMap<SetterBase, Object>();
 					}
 					oldvalues.put(setter, oldValue);
@@ -78,16 +78,16 @@ public class MultiTrigger extends TriggerBase {
 
 	@Override
 	public void prepare(Object target) {
-		if(getConditions().length == 0) {
+		if (getConditions().length == 0) {
 			return;
 		}
 		ValueChangeListener changeListener = new ValueChangeListener(target);
-		for(Condition condition : getConditions()) {
+		for (Condition condition : getConditions()) {
 			String propertyName = condition.getProperty();
 			String sourceName = condition.getSourceName();
 
 			Object source = getElementByName(target, sourceName);
-			if(source == null) {
+			if (source == null) {
 				throw new XWTException("No element is found with the name = " + sourceName);
 			}
 			IObservable observableValue = ScopeManager.observeValue(source, source, propertyName, UpdateSourceTrigger.PropertyChanged);

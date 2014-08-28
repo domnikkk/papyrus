@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,15 +22,15 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * Factory Helper used to set the opacity setting on groups ( setAlpha , listenner, preferences etc...)
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class OpacityFactoryHelper {
 
 	/**
 	 * Get the preference group to set the opqcity
-	 * 
+	 *
 	 * @param parent
 	 * @param key
 	 * @param dialogPage
@@ -43,22 +43,23 @@ public class OpacityFactoryHelper {
 
 	/**
 	 * Init the opacity preferences of a figure
-	 * 
+	 *
 	 * @param preferenceName
-	 *        Name of the preferences which point to the alpha preference
+	 *            Name of the preferences which point to the alpha preference
 	 * @param store
-	 *        Preference Store
+	 *            Preference Store
 	 * @param figure
-	 *        Figure on which the alpha setting has to be made
+	 *            Figure on which the alpha setting has to be made
 	 */
 	static public void initOpacityPreferences(final String preferenceName, final IPreferenceStore store, final Shape figure) {
 		Integer defaultAlpha = getStoredValueOfOpacity(preferenceName, store);
 		figure.setAlpha(defaultAlpha);
 		store.addPropertyChangeListener(new IPropertyChangeListener() {
 
+			@Override
 			public void propertyChange(PropertyChangeEvent event) {
-				if(preferenceName.equals(event.getProperty())) {
-					if(figure != null) {
+				if (preferenceName.equals(event.getProperty())) {
+					if (figure != null) {
 						figure.setAlpha(store.getInt(preferenceName));
 					}
 				}
@@ -68,11 +69,11 @@ public class OpacityFactoryHelper {
 
 	/**
 	 * Get the store value of the alpha setting
-	 * 
+	 *
 	 * @param preferenceName
-	 *        name of the preference
+	 *            name of the preference
 	 * @param store
-	 *        Preference store
+	 *            Preference store
 	 * @return
 	 */
 	static public Integer getStoredValueOfOpacity(String preferenceName, IPreferenceStore store) {

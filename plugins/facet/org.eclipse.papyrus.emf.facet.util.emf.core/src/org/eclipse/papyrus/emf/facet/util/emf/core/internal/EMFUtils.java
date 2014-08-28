@@ -36,10 +36,10 @@ public final class EMFUtils {
 	/**
 	 * Computes the least common supertype of all the given metaclasses. That is, the most derived
 	 * type that is a supertype of all the given classes.
-	 * 
+	 *
 	 * @param classes
 	 *            the list of metaclasses
-	 * 
+	 *
 	 * @return the least common supertype of all the given metaclasses, or <code>null</code> if
 	 *         there is none, or several. In this case, the only common supertype can be considered
 	 *         as {@link EObject} .
@@ -51,15 +51,14 @@ public final class EMFUtils {
 	/**
 	 * Computes the least common supertype of all the given metaclasses. That is, the most derived
 	 * type that is a supertype of all the given classes.
-	 * 
+	 *
 	 * @param classes
 	 *            the list of metaclasses
 	 * @param feature
 	 *            if not <code>null</code>, then only metaclasses that contain this feature will be
 	 *            considered
-	 * 
-	 * @return the least common supertype of all the given metaclasses, or the {@link EObject}
-	 *         {@link EClass} if there is none, or several.
+	 *
+	 * @return the least common supertype of all the given metaclasses, or the {@link EObject} {@link EClass} if there is none, or several.
 	 */
 	public static EClass computeLeastCommonSupertype(final Collection<EClass> classes,
 			final EStructuralFeature feature) {
@@ -146,7 +145,7 @@ public final class EMFUtils {
 		}
 		return list.get(0);
 	}
-	
+
 
 	public static Set<EClass> getAllFeatureOwner(final List<EObject> elements,
 			final EStructuralFeature feature) {
@@ -158,5 +157,5 @@ public final class EMFUtils {
 		}
 		return owners;
 	}
-	
+
 }

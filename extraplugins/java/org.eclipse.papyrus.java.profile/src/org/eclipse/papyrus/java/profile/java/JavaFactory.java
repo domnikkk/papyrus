@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.java.profile.java.JavaPackage
  * @generated
  */
@@ -21,6 +22,7 @@ public interface JavaFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	JavaFactory eINSTANCE = org.eclipse.papyrus.java.profile.java.impl.JavaFactoryImpl.init();
@@ -29,6 +31,7 @@ public interface JavaFactory extends EFactory {
 	 * Returns a new object of class '<em>Class</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Class</em>'.
 	 * @generated
 	 */
@@ -38,6 +41,7 @@ public interface JavaFactory extends EFactory {
 	 * Returns a new object of class '<em>Package </em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Package </em>'.
 	 * @generated
 	 */
@@ -47,6 +51,7 @@ public interface JavaFactory extends EFactory {
 	 * Returns a new object of class '<em>Method</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Method</em>'.
 	 * @generated
 	 */
@@ -56,6 +61,7 @@ public interface JavaFactory extends EFactory {
 	 * Returns a new object of class '<em>Parameter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Parameter</em>'.
 	 * @generated
 	 */
@@ -65,6 +71,7 @@ public interface JavaFactory extends EFactory {
 	 * Returns a new object of class '<em>Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Property</em>'.
 	 * @generated
 	 */
@@ -74,6 +81,7 @@ public interface JavaFactory extends EFactory {
 	 * Returns a new object of class '<em>Primitive Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Primitive Type</em>'.
 	 * @generated
 	 */
@@ -83,6 +91,7 @@ public interface JavaFactory extends EFactory {
 	 * Returns a new object of class '<em>Project</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Project</em>'.
 	 * @generated
 	 */
@@ -92,6 +101,7 @@ public interface JavaFactory extends EFactory {
 	 * Returns a new object of class '<em>Src Folder</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Src Folder</em>'.
 	 * @generated
 	 */
@@ -101,9 +111,10 @@ public interface JavaFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
 	JavaPackage getJavaPackage();
 
-} //JavaFactory
+} // JavaFactory

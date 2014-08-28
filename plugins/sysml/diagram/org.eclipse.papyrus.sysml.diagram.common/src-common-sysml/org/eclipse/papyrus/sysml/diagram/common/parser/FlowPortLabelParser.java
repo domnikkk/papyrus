@@ -31,6 +31,7 @@ import org.eclipse.papyrus.sysml.portandflows.FlowPort;
 import org.eclipse.papyrus.sysml.portandflows.FlowSpecification;
 import org.eclipse.papyrus.sysml.portandflows.PortandflowsPackage;
 import org.eclipse.papyrus.uml.diagram.common.parser.PropertyLabelParser;
+import org.eclipse.papyrus.uml.tools.utils.ICustomAppearance;
 import org.eclipse.papyrus.uml.tools.utils.ValueSpecificationUtil;
 import org.eclipse.uml2.uml.InstanceValue;
 import org.eclipse.uml2.uml.Port;
@@ -58,24 +59,24 @@ public class FlowPortLabelParser extends PropertyLabelParser {
 
 		Collection<String> maskValues = getMaskValues(element);
 
-		if(maskValues.isEmpty()) {
+		if (maskValues.isEmpty()) {
 			return MaskedLabel;
 		}
 
 		String result = "";
 		EObject eObject = EMFHelper.getEObject(element);
 
-		if((eObject != null) && (eObject instanceof Port)) {
+		if ((eObject != null) && (eObject instanceof Port)) {
 
-			Property property = (Property)eObject;
+			Property property = (Property) eObject;
 
 			FlowPort flowPort = UMLUtil.getStereotypeApplication(property, FlowPort.class);
-			if(flowPort != null) {
+			if (flowPort != null) {
 
 				// manage direction only if the FlowPort is type and type is not a FlowSpecification
-				if(maskValues.contains(ILabelPreferenceConstants.DISP_DIRECTION)) {
+				if (maskValues.contains(ICustomAppearance.DISP_DIRECTION)) {
 					String direction;
-					switch(flowPort.getDirection().getValue()) {
+					switch (flowPort.getDirection().getValue()) {
 					case FlowDirection.IN_VALUE:
 						direction = "in";
 						break;
@@ -91,16 +92,16 @@ public class FlowPortLabelParser extends PropertyLabelParser {
 					}
 
 					// manage direction only if the FlowPort is not a FlowSpecification
-					if((property.getType() == null) || ((property.getType() != null) && (UMLUtil.getStereotypeApplication(property.getType(), FlowSpecification.class) == null))) {
+					if ((property.getType() == null) || ((property.getType() != null) && (UMLUtil.getStereotypeApplication(property.getType(), FlowSpecification.class) == null))) {
 						result = String.format(DIRECTION_FORMAT, direction, result);
 					}
 				}
 			}
 
 			// manage visibility
-			if(maskValues.contains(ILabelPreferenceConstants.DISP_VISIBILITY)) {
+			if (maskValues.contains(ICustomAppearance.DISP_VISIBILITY)) {
 				String visibility;
-				switch(property.getVisibility().getValue()) {
+				switch (property.getVisibility().getValue()) {
 				case VisibilityKind.PACKAGE:
 					visibility = "~";
 					break;
@@ -121,27 +122,27 @@ public class FlowPortLabelParser extends PropertyLabelParser {
 			}
 
 			// manage derived modifier
-			if((maskValues.contains(ILabelPreferenceConstants.DISP_DERIVE)) && (property.isDerived())) {
+			if ((maskValues.contains(ICustomAppearance.DISP_DERIVE)) && (property.isDerived())) {
 				result = String.format(DERIVED_FORMAT, result);
 			}
 
 			// manage name
-			if((maskValues.contains(ILabelPreferenceConstants.DISP_NAME)) && (property.isSetName())) {
+			if ((maskValues.contains(ICustomAppearance.DISP_NAME)) && (property.isSetName())) {
 				String name = property.getName();
 				result = String.format(NAME_FORMAT, result, name);
 			}
 
 			// manage type and conjugated property
-			if((maskValues.contains(ILabelPreferenceConstants.DISP_TYPE))) {
+			if ((maskValues.contains(ICustomAppearance.DISP_TYPE))) {
 
 				String type = "<Undefined>";
-				if(property.getType() != null) {
+				if (property.getType() != null) {
 					type = property.getType().getName();
 				}
 
 				// If type is undefined only show "<Undefined>" when explicitly asked.
-				if((maskValues.contains(ILabelPreferenceConstants.DISP_UNDEFINED_TYPE)) || (!"<Undefined>".equals(type))) {
-					if((flowPort != null) && (flowPort.isConjugated())) {
+				if ((maskValues.contains(ILabelPreferenceConstants.DISP_UNDEFINED_TYPE)) || (!"<Undefined>".equals(type))) {
+					if ((flowPort != null) && (flowPort.isConjugated())) {
 						type = String.format(CONJUGATED_FORMAT, type);
 					}
 					result = String.format(TYPE_FORMAT, result, type);
@@ -149,15 +150,15 @@ public class FlowPortLabelParser extends PropertyLabelParser {
 			}
 
 			// manage multiplicity
-			if((maskValues.contains(ILabelPreferenceConstants.DISP_MULTIPLICITY))) {
+			if ((maskValues.contains(ICustomAppearance.DISP_MULTIPLICITY))) {
 
 				// If multiplicity is [1] (SysML default), only show when explicitly asked.
 				// TODO : add a case for default with multiplicity not set.
 				String lower = (property.getLowerValue() != null) ? ValueSpecificationUtil.getSpecificationValue(property.getLowerValue()) : "1";
 				String upper = (property.getLowerValue() != null) ? ValueSpecificationUtil.getSpecificationValue(property.getUpperValue()) : "1";
-				if((maskValues.contains(ILabelPreferenceConstants.DISP_DEFAULT_MULTIPLICITY)) || !("1".equals(lower) && "1".equals(upper))) {
+				if ((maskValues.contains(ILabelPreferenceConstants.DISP_DEFAULT_MULTIPLICITY)) || !("1".equals(lower) && "1".equals(upper))) {
 
-					if(lower.equals(upper)) {
+					if (lower.equals(upper)) {
 						result = String.format(MULTIPLICITY_FORMAT_ALT, result, lower, upper);
 					} else {
 						result = String.format(MULTIPLICITY_FORMAT, result, lower, upper);
@@ -166,35 +167,35 @@ public class FlowPortLabelParser extends PropertyLabelParser {
 			}
 
 			// manage default value
-			if((maskValues.contains(ILabelPreferenceConstants.DISP_DEFAULT_VALUE)) && ((property.getDefaultValue() != null))) {
+			if ((maskValues.contains(ICustomAppearance.DISP_DEFAULT_VALUE)) && ((property.getDefaultValue() != null))) {
 				ValueSpecification valueSpecification = property.getDefaultValue();
-				if(valueSpecification instanceof InstanceValue && property.getType().equals(valueSpecification.getType())) {
+				if (valueSpecification instanceof InstanceValue && property.getType().equals(valueSpecification.getType())) {
 					result = String.format(DEFAULT_VALUE_FORMAT, result, ValueSpecificationUtil.getSpecificationValue(valueSpecification));
 				}
 			}
 
 			// manage modifier
-			if(maskValues.contains(ILabelPreferenceConstants.DISP_MODIFIERS)) {
+			if (maskValues.contains(ICustomAppearance.DISP_MODIFIERS)) {
 				StringBuffer sb = new StringBuffer();
-				if(property.isReadOnly()) {
+				if (property.isReadOnly()) {
 					sb.append(sb.length() == 0 ? "readOnly" : ", readOnly");
 				}
-				if(property.isOrdered()) {
+				if (property.isOrdered()) {
 					sb.append(sb.length() == 0 ? "ordered" : ", ordered");
 				}
-				if(property.isUnique()) {
+				if (property.isUnique()) {
 					sb.append(sb.length() == 0 ? "unique" : ", unique");
 				}
-				if(property.isDerivedUnion()) {
+				if (property.isDerivedUnion()) {
 					sb.append(sb.length() == 0 ? "union" : ", union");
 				}
 				EList<Property> redefinedProperties = property.getRedefinedProperties();
-				if(redefinedProperties != null && !redefinedProperties.isEmpty()) {
-					for(Property p : redefinedProperties) {
+				if (redefinedProperties != null && !redefinedProperties.isEmpty()) {
+					for (Property p : redefinedProperties) {
 						sb.append(sb.length() == 0 ? p.getName() : ", redefines " + p.getName());
 					}
 				}
-				if(sb.length() != 0) {
+				if (sb.length() != 0) {
 					result = String.format(MODIFIER_FORMAT, result, sb.toString());
 				}
 			}
@@ -209,9 +210,9 @@ public class FlowPortLabelParser extends PropertyLabelParser {
 	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 
-		if(event instanceof Notification) {
-			Object feature = ((Notification)event).getFeature();
-			if(feature instanceof EStructuralFeature) {
+		if (event instanceof Notification) {
+			Object feature = ((Notification) event).getFeature();
+			if (feature instanceof EStructuralFeature) {
 				return PortandflowsPackage.eINSTANCE.getFlowPort_Direction().equals(feature) || PortandflowsPackage.eINSTANCE.getFlowPort_IsConjugated().equals(feature) || super.isAffectingEvent(event, flags);
 			}
 		}
@@ -226,11 +227,11 @@ public class FlowPortLabelParser extends PropertyLabelParser {
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = super.getSemanticElementsBeingParsed(element);
 
-		if((element != null) && (element instanceof Port)) {
-			Port semElement = (Port)element;
+		if ((element != null) && (element instanceof Port)) {
+			Port semElement = (Port) element;
 
 			FlowPort flowPort = UMLUtil.getStereotypeApplication(semElement, FlowPort.class);
-			if(flowPort != null) {
+			if (flowPort != null) {
 				semanticElementsBeingParsed.add(flowPort);
 			}
 		}
@@ -240,21 +241,21 @@ public class FlowPortLabelParser extends PropertyLabelParser {
 	@Override
 	public Map<String, String> getMasks() {
 		Map<String, String> masks = new HashMap<String, String>();
-		masks.put(ILabelPreferenceConstants.DISP_DIRECTION, "Direction");
-		masks.put(ILabelPreferenceConstants.DISP_VISIBILITY, "Visibility");
-		masks.put(ILabelPreferenceConstants.DISP_DERIVE, "Is Derived");
-		masks.put(ILabelPreferenceConstants.DISP_NAME, "Name");
-		masks.put(ILabelPreferenceConstants.DISP_TYPE, "Type");
+		masks.put(ICustomAppearance.DISP_DIRECTION, "Direction");
+		masks.put(ICustomAppearance.DISP_VISIBILITY, "Visibility");
+		masks.put(ICustomAppearance.DISP_DERIVE, "Is Derived");
+		masks.put(ICustomAppearance.DISP_NAME, "Name");
+		masks.put(ICustomAppearance.DISP_TYPE, "Type");
 		masks.put(ILabelPreferenceConstants.DISP_UNDEFINED_TYPE, "Show <Undefined> type");
-		masks.put(ILabelPreferenceConstants.DISP_MULTIPLICITY, "Multiplicity");
+		masks.put(ICustomAppearance.DISP_MULTIPLICITY, "Multiplicity");
 		masks.put(ILabelPreferenceConstants.DISP_DEFAULT_MULTIPLICITY, "Show default multiplicity");
-		masks.put(ILabelPreferenceConstants.DISP_DEFAULT_VALUE, "Default Value");
-		masks.put(ILabelPreferenceConstants.DISP_MODIFIERS, "Modifiers");
+		masks.put(ICustomAppearance.DISP_DEFAULT_VALUE, "Default Value");
+		masks.put(ICustomAppearance.DISP_MODIFIERS, "Modifiers");
 		return masks;
 	}
 
 	@Override
 	public Collection<String> getDefaultValue(IAdaptable element) {
-		return Arrays.asList(ILabelPreferenceConstants.DISP_DIRECTION, ILabelPreferenceConstants.DISP_NAME, ILabelPreferenceConstants.DISP_TYPE, ILabelPreferenceConstants.DISP_UNDEFINED_TYPE);
+		return Arrays.asList(ICustomAppearance.DISP_DIRECTION, ICustomAppearance.DISP_NAME, ICustomAppearance.DISP_TYPE, ILabelPreferenceConstants.DISP_UNDEFINED_TYPE);
 	}
 }

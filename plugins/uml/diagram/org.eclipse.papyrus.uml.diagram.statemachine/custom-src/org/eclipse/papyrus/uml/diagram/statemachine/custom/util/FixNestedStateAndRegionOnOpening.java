@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.StateEditPart;
 
 /**
  * This class fixes two bugs
- * 
+ *
  * - bug 401059, i.e. it removes obsolete compartments from states
  * - bug 397730, contents of region is not visible caused by invalid region position
  */
@@ -46,9 +46,9 @@ public class FixNestedStateAndRegionOnOpening {
 
 	/**
 	 * This method fixes the bounds of interaction operands
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 */
 	public void fix(Diagram diagram) {
 
@@ -58,27 +58,27 @@ public class FixNestedStateAndRegionOnOpening {
 
 		// Parse diagram content
 		Iterator<EObject> it = diagram.eAllContents();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject current = it.next();
 
 			// Select only nodes
-			if(!(current instanceof Node)) {
+			if (!(current instanceof Node)) {
 				continue;
 			}
 
-			String currentType = ((View)current).getType();
-			if(SEP_ID.equals(currentType)) {
+			String currentType = ((View) current).getType();
+			if (SEP_ID.equals(currentType)) {
 
 				// for bug 401059
-				Shape stateShape = (Shape)current;
+				Shape stateShape = (Shape) current;
 				EList<View> removeChilds = new BasicEList<View>();
-				for(Object child : stateShape.getChildren()) {
-					View childV = (View)child;
-					if(childV.getType().equals(COMPARTMENT_6003) || (childV.getType().equals(COMPARTMENT_6004))) {
+				for (Object child : stateShape.getChildren()) {
+					View childV = (View) child;
+					if (childV.getType().equals(COMPARTMENT_6003) || (childV.getType().equals(COMPARTMENT_6004))) {
 						removeChilds.add(childV);
 					}
 				}
-				for(View removeChild : removeChilds) {
+				for (View removeChild : removeChilds) {
 					// Fix when current location is not the valid location (only possible if parent size is set)
 					TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(diagram);
 					Command fixCommand = new RemoveChildCommand(editingDomain, stateShape, removeChild);
@@ -86,16 +86,16 @@ public class FixNestedStateAndRegionOnOpening {
 					editingDomain.getCommandStack().execute(fixCommand);
 				}
 			}
-			else if(REGION_ID.equals(currentType)) {
+			else if (REGION_ID.equals(currentType)) {
 
 				// for bug 397730
-				Node regionNode = (Node)current;
+				Node regionNode = (Node) current;
 				View parentNode = ViewUtil.getViewContainer(regionNode);
-				if(parentNode.getChildren().size() == 1) {
+				if (parentNode.getChildren().size() == 1) {
 					// don't correct, if multiple regions (in this case, not all coordinates must be 0)
 
-					Bounds regionBounds = (Bounds)regionNode.getLayoutConstraint();
-				
+					Bounds regionBounds = (Bounds) regionNode.getLayoutConstraint();
+
 					// stateNode.getChildren();
 					// Fix when current location is not the valid location (only possible if parent size is set)
 					if ((regionBounds.getX() != 0) || (regionBounds.getY() != 0)) {

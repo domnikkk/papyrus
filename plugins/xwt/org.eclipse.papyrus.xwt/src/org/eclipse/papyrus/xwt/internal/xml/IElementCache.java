@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,21 +36,21 @@ public interface IElementCache {
 
 	/**
 	 * Obtains the previously cached element parsed from the given {@code url}.
-	 * 
+	 *
 	 * @param url
-	 *        the URL of an XWT resource
-	 * 
+	 *            the URL of an XWT resource
+	 *
 	 * @return the previously parsed contents of the resource, or {@code null} if the cache has nothing for this {@code url}
 	 */
 	Element getElement(URL url);
 
 	/**
 	 * Adds an {@code element} parsed from the resource indicated by the given {@code url}.
-	 * 
+	 *
 	 * @param url
-	 *        the URL of an XWT resource that was parsed
+	 *            the URL of an XWT resource that was parsed
 	 * @param element
-	 *        the element that was parsed from it
+	 *            the element that was parsed from it
 	 */
 	void cache(URL url, Element element);
 }

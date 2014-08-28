@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 /**
  * This command proxy wraps a GEF command into a GMF one,
  * with result stored in the CommandResult.
- * 
+ *
  * @author mvelten
- * 
+ *
  */
 public class CommandProxyWithResult extends CommandProxy {
 

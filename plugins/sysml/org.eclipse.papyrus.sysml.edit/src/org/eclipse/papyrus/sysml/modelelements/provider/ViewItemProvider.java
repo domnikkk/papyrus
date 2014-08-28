@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.sysml.modelelements.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -33,7 +34,7 @@ import org.eclipse.papyrus.sysml.provider.SysmlEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.sysml.modelelements.View} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ViewItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
@@ -44,7 +45,7 @@ public class ViewItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ViewItemProvider(AdapterFactory adapterFactory) {
@@ -55,12 +56,12 @@ public class ViewItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addViewPointPropertyDescriptor(object);
@@ -73,29 +74,31 @@ public class ViewItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * This adds a property descriptor for the View Point feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addViewPointPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_View_viewPoint_feature"), getString("_UI_PropertyDescriptor_description", "_UI_View_viewPoint_feature", "_UI_View_type"), ModelelementsPackage.Literals.VIEW__VIEW_POINT, false, false, false, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_View_viewPoint_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_View_viewPoint_feature", "_UI_View_type"), ModelelementsPackage.Literals.VIEW__VIEW_POINT, false, false, false, null, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Base Package feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBase_PackagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_View_base_Package_feature"), getString("_UI_PropertyDescriptor_description", "_UI_View_base_Package_feature", "_UI_View_type"), ModelelementsPackage.Literals.VIEW__BASE_PACKAGE, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_View_base_Package_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_View_base_Package_feature", "_UI_View_type"), ModelelementsPackage.Literals.VIEW__BASE_PACKAGE, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This returns View.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +110,7 @@ public class ViewItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +123,7 @@ public class ViewItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +137,7 @@ public class ViewItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +149,7 @@ public class ViewItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

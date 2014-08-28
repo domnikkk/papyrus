@@ -11,9 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.documentation.plugin.documentation.Comment;
 import org.eclipse.papyrus.documentation.plugin.documentation.Dependency;
 import org.eclipse.papyrus.documentation.plugin.documentation.Documentation;
@@ -26,12 +24,14 @@ import org.eclipse.papyrus.documentation.plugin.documentation.Person;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class DocumentationPackageImpl extends EPackageImpl implements DocumentationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass documentationEClass = null;
@@ -39,6 +39,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass dependencyEClass = null;
@@ -46,6 +47,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass fileDependencyEClass = null;
@@ -53,6 +55,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass personEClass = null;
@@ -60,20 +63,17 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass commentEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage#eNS_URI
 	 * @see #init()
@@ -86,27 +86,30 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link DocumentationPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 *
+	 * <p>
+	 * This method is used to initialize {@link DocumentationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static DocumentationPackage init() {
-		if (isInited) return (DocumentationPackage)EPackage.Registry.INSTANCE.getEPackage(DocumentationPackage.eNS_URI);
+		if (isInited) {
+			return (DocumentationPackage) EPackage.Registry.INSTANCE.getEPackage(DocumentationPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		DocumentationPackageImpl theDocumentationPackage = (DocumentationPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DocumentationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DocumentationPackageImpl());
+		DocumentationPackageImpl theDocumentationPackage = (DocumentationPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DocumentationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DocumentationPackageImpl());
 
 		isInited = true;
 
@@ -122,7 +125,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 		// Mark meta-data to indicate it can't be changed
 		theDocumentationPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(DocumentationPackage.eNS_URI, theDocumentationPackage);
 		return theDocumentationPackage;
@@ -131,6 +134,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getDocumentation() {
@@ -140,42 +144,47 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getDocumentation_Description() {
-		return (EAttribute)documentationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) documentationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getDocumentation_ImplicitDependencies() {
-		return (EReference)documentationEClass.getEStructuralFeatures().get(1);
+		return (EReference) documentationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getDocumentation_Referent() {
-		return (EReference)documentationEClass.getEStructuralFeatures().get(2);
+		return (EReference) documentationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getDocumentation_AdditionalComments() {
-		return (EReference)documentationEClass.getEStructuralFeatures().get(3);
+		return (EReference) documentationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getDependency() {
@@ -185,24 +194,27 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getDependency_Plugin() {
-		return (EAttribute)dependencyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) dependencyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getDependency_Comment() {
-		return (EAttribute)dependencyEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) dependencyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getFileDependency() {
@@ -212,15 +224,17 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getFileDependency_File() {
-		return (EAttribute)fileDependencyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) fileDependencyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getPerson() {
@@ -230,42 +244,47 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getPerson_FirstName() {
-		return (EAttribute)personEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) personEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getPerson_LastName() {
-		return (EAttribute)personEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) personEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getPerson_EMail() {
-		return (EAttribute)personEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) personEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getPerson_CurrentCompany() {
-		return (EAttribute)personEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) personEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getComment() {
@@ -275,46 +294,53 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getComment_Title() {
-		return (EAttribute)commentEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) commentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getComment_Contents() {
-		return (EAttribute)commentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) commentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DocumentationFactory getDocumentationFactory() {
-		return (DocumentationFactory)getEFactoryInstance();
+		return (DocumentationFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -345,19 +371,23 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -366,7 +396,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -382,9 +412,11 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 		// Initialize classes and features; add operations and parameters
 		initEClass(documentationEClass, Documentation.class, "Documentation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentation_Description(), ecorePackage.getEString(), "description", null, 1, 1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocumentation_ImplicitDependencies(), this.getDependency(), null, "implicitDependencies", null, 0, -1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentation_ImplicitDependencies(), this.getDependency(), null, "implicitDependencies", null, 0, -1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentation_Referent(), this.getPerson(), null, "referent", null, 0, -1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocumentation_AdditionalComments(), this.getComment(), null, "additionalComments", null, 0, -1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentation_AdditionalComments(), this.getComment(), null, "additionalComments", null, 0, -1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(dependencyEClass, Dependency.class, "Dependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDependency_Plugin(), ecorePackage.getEString(), "plugin", null, 1, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -407,4 +439,4 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 		createResource(eNS_URI);
 	}
 
-} //DocumentationPackageImpl
+} // DocumentationPackageImpl

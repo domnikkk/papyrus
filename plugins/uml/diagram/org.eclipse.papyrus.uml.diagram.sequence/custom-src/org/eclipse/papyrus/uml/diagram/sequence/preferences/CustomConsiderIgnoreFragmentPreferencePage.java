@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,30 +49,34 @@ public class CustomConsiderIgnoreFragmentPreferencePage extends ConsiderIgnoreFr
 		String key = PackageEditPart.MODEL_ID + "_ConsiderIgnoreFragment";
 		store.setDefault(PreferencesConstantsHelper.getElementConstant(key, PreferencesConstantsHelper.WIDTH), 40);
 		store.setDefault(PreferencesConstantsHelper.getElementConstant(key, PreferencesConstantsHelper.HEIGHT), 40);
-		for(String name : compartments) {
+		for (String name : compartments) {
 			String preferenceName = PreferencesConstantsHelper.getCompartmentElementConstant(key, name, PreferencesConstantsHelper.COMPARTMENT_VISIBILITY);
 			store.setDefault(preferenceName, true);
 		}
 	}
 
+	@Override
 	protected TreeMap<String, Boolean> getCompartmentTitleVisibilityPreferences() {
 		TreeMap<String, Boolean> map = new TreeMap<String, Boolean>();
-		for(String name : compartments) {
+		for (String name : compartments) {
 			map.put(name, Boolean.FALSE);
 		}
 		return map;
 	}
 
+	@Override
 	protected void initializeCompartmentsList() {
-		for(String name : compartments) {
+		for (String name : compartments) {
 			this.compartmentsList.add(name);
 		}
 	}
 
+	@Override
 	protected TreeMap<String, String> getLabelRole() {
 		return new TreeMap<String, String>();
 	}
 
+	@Override
 	protected void createPageContents(Composite parent) {
 		super.createPageContents(parent);
 		NodeColorGroup colorGroupForNodeComposite = new NodeColorGroup(parent, getPreferenceKey(), this);
@@ -81,12 +85,12 @@ public class CustomConsiderIgnoreFragmentPreferencePage extends ConsiderIgnoreFr
 		addAbstractGroup(backgroundColorGroup);
 		DecorationGroup decorationGroup = new DecorationGroup(parent, getPreferenceKey(), this);
 		addAbstractGroup(decorationGroup);
-		if(!compartmentsList.isEmpty()) {
+		if (!compartmentsList.isEmpty()) {
 			NodeCompartmentGroupEx compartmentGroup = new NodeCompartmentGroupEx(parent, getPreferenceKey(), this, compartmentsList, getCompartmentTitleVisibilityPreferences().keySet(), getPreferenceStore());
 			addAbstractGroup(compartmentGroup);
 		}
-		//Label role group
-		if(!getLabelRole().isEmpty()) {
+		// Label role group
+		if (!getLabelRole().isEmpty()) {
 			LabelGroup compartmentGroup = new LabelGroup(parent, getPreferenceKey(), this, getLabelRole());
 			addAbstractGroup(compartmentGroup);
 		}

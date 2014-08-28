@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -58,25 +58,26 @@ public class ConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.
 	/**
 	 * Gets the encapsulated container.
 	 *
-	 * @param view the view
+	 * @param view
+	 *            the view
 	 * @return the nearest encapsulated structure container or null
 	 */
 	public View getEncapsulatedContainer(View view) {
 		View encapsulatedContainer = null;
 
-		for(View containerView : getStructureContainers(view)) {
+		for (View containerView : getStructureContainers(view)) {
 
-			if(view == containerView) {
+			if (view == containerView) {
 				continue;
 			}
 
-			if((view.getElement() instanceof Port) && (containerView.getChildren().contains(view))) {
+			if ((view.getElement() instanceof Port) && (containerView.getChildren().contains(view))) {
 				continue;
 			}
 
 			StructuredClassifier structuredClassifier = getStructuredClassifier(containerView);
 			Block block = UMLUtil.getStereotypeApplication(structuredClassifier, Block.class);
-			if(block.isEncapsulated()) {
+			if (block.isEncapsulated()) {
 				encapsulatedContainer = containerView;
 				break;
 			}
@@ -87,22 +88,22 @@ public class ConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.
 
 	/**
 	 * Test if an encapsulation crossing is required to connect the checked end to the opposite end.
-	 * 
+	 *
 	 * @param checkedEnd
-	 *        the checked end view.
+	 *            the checked end view.
 	 * @param oppositeEnd
-	 *        the opposite end view.
+	 *            the opposite end view.
 	 * @return true if the gesture break encapsulation rule.
 	 */
 	public boolean isCrossingEncapsulation(View checkedEnd, View oppositeEnd) {
 		boolean isCrossingEncapsulation = false;
 
 		View encapsulatedContainer = new ConnectorUtils().getEncapsulatedContainer(checkedEnd);
-		if(encapsulatedContainer != null) {
+		if (encapsulatedContainer != null) {
 			View containerView = new ConnectorUtils().deduceViewContainer(checkedEnd, oppositeEnd);
 			List<View> containers = new ConnectorUtils().getStructureContainers(checkedEnd);
 
-			if(containers.indexOf(encapsulatedContainer) < containers.indexOf(containerView)) {
+			if (containers.indexOf(encapsulatedContainer) < containers.indexOf(containerView)) {
 				isCrossingEncapsulation = true;
 			}
 		}
@@ -112,22 +113,22 @@ public class ConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.
 
 	/**
 	 * Get the path of structure views crossed by the checked end.
-	 * 
+	 *
 	 * @param checkedEnd
-	 *        the checked end view.
+	 *            the checked end view.
 	 * @param oppositeEnd
-	 *        the opposite end view.
+	 *            the opposite end view.
 	 * @return the list of crossed structure views.
 	 */
 	public List<View> getNestedPath(View checkedEnd, View oppositeEnd) {
 		List<View> isNestedConnectableElement = new ArrayList<View>();
 
 		View nearestContainer = new ConnectorUtils().getNearestStructureContainer(checkedEnd);
-		if(nearestContainer != null) {
+		if (nearestContainer != null) {
 			View containerView = new ConnectorUtils().deduceViewContainer(checkedEnd, oppositeEnd);
 			List<View> containers = new ConnectorUtils().getStructureContainers(checkedEnd);
 
-			if(containers.indexOf(nearestContainer) < containers.indexOf(containerView)) {
+			if (containers.indexOf(nearestContainer) < containers.indexOf(containerView)) {
 				isNestedConnectableElement = containers.subList(containers.indexOf(nearestContainer), containers.indexOf(containerView));
 			}
 		}
@@ -140,27 +141,27 @@ public class ConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.
 
 	/**
 	 * Get the path of structure views crossed by the checked end.
-	 * 
+	 *
 	 * @param checkedEnd
-	 *        the checked end view.
+	 *            the checked end view.
 	 * @param oppositeEnd
-	 *        the opposite end view.
+	 *            the opposite end view.
 	 * @return the list of crossed structure views.
 	 */
 	public List<Property> getNestedPropertyPath(View checkedEnd, View oppositeEnd) {
 		List<Property> nestedPropertyPath = new ArrayList<Property>();
 		List<View> nestedPath = getNestedPath(checkedEnd, oppositeEnd);
 
-		for(View view : nestedPath) {
-			if((view.getElement() != null) && (view.getElement() instanceof Property)) {
-				nestedPropertyPath.add((Property)view.getElement());
+		for (View view : nestedPath) {
+			if ((view.getElement() != null) && (view.getElement() instanceof Property)) {
+				nestedPropertyPath.add((Property) view.getElement());
 			}
 		}
 
 		// if end is a port, and the list is not empty, add the property from the check view in the list
-		if(!nestedPropertyPath.isEmpty() && checkedEnd.getElement() instanceof Port) {
+		if (!nestedPropertyPath.isEmpty() && checkedEnd.getElement() instanceof Port) {
 			Property partWithPort = getPartWithPort(checkedEnd, oppositeEnd);
-			if(partWithPort != null) {
+			if (partWithPort != null) {
 				nestedPropertyPath.add(partWithPort);
 			}
 		}
@@ -170,11 +171,11 @@ public class ConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.
 
 	/**
 	 * Test if the checked end is nested (means it cross StructuredClassifier borders).
-	 * 
+	 *
 	 * @param checkedEnd
-	 *        the checked end view.
+	 *            the checked end view.
 	 * @param oppositeEnd
-	 *        the opposite end view.
+	 *            the opposite end view.
 	 * @return true if the checked end is nested.
 	 */
 	public boolean isNestedConnectableElement(View checkedEnd, View oppositeEnd) {
@@ -184,19 +185,20 @@ public class ConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.
 	/**
 	 * Gets the nearest structure container.
 	 *
-	 * @param view the view
+	 * @param view
+	 *            the view
 	 * @return the nearest structure container or null
 	 */
 	public View getNearestStructureContainer(View view) {
 		View nearestStructureContainer = null;
 
-		for(View containerView : getStructureContainers(view)) {
+		for (View containerView : getStructureContainers(view)) {
 
-			if(view == containerView) {
+			if (view == containerView) {
 				continue;
 			}
 
-			if((view.getElement() instanceof Port) && (containerView.getChildren().contains(view))) {
+			if ((view.getElement() instanceof Port) && (containerView.getChildren().contains(view))) {
 				continue;
 			}
 
@@ -212,25 +214,26 @@ public class ConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.
 	/**
 	 * Gets the role path.
 	 *
-	 * @param end the connector end
+	 * @param end
+	 *            the connector end
 	 * @return the role path
-	 * the path for the role of the connector end (without using label provider)
+	 *         the path for the role of the connector end (without using label provider)
 	 */
 	public static final String getRolePath(final ConnectorEnd end) {
 		final NestedConnectorEnd nestedConnectorEnd = UMLUtil.getStereotypeApplication(end, NestedConnectorEnd.class);
 		final ConnectableElement role = end.getRole();
 		final StringBuilder rolePath = new StringBuilder();
-		if(role != null) {
-			if(nestedConnectorEnd != null) {
+		if (role != null) {
+			if (nestedConnectorEnd != null) {
 				final List<Property> properties = nestedConnectorEnd.getPropertyPath();
-				for(final Property current : properties) {
+				for (final Property current : properties) {
 					rolePath.append(getNameWithQuotes(current));
 					rolePath.append(ConnectorUtils.PART_SEPARATOR);
 				}
 			} else {
-				//when the stereotype is applied, the Property for partWithPort is included in the stereotype#path
+				// when the stereotype is applied, the Property for partWithPort is included in the stereotype#path
 				final Property partWithPort = end.getPartWithPort();
-				if(partWithPort != null) {
+				if (partWithPort != null) {
 					rolePath.append(getNameWithQuotes(partWithPort));
 					rolePath.append(ConnectorUtils.PART_SEPARATOR);
 				}
@@ -244,9 +247,10 @@ public class ConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.
 	/**
 	 * Gets the name with quotes.
 	 *
-	 * @param property a property
+	 * @param property
+	 *            a property
 	 * @return the name with quotes
-	 * the property name with name delimiter if it is required
+	 *         the property name with name delimiter if it is required
 	 */
 	public static final String getNameWithQuotes(final NamedElement property) {
 		final String partName = property.getName();
@@ -254,10 +258,10 @@ public class ConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.
 		final Pattern pattern = Pattern.compile(ConnectorUtils.HAS_NO_WORD_CHAR_REGEX);
 		final Matcher matcher = pattern.matcher(partName);
 		boolean mustHaveQuote = false;
-		while(matcher.find() && !mustHaveQuote) {
+		while (matcher.find() && !mustHaveQuote) {
 			mustHaveQuote = true;
 		}
-		if(mustHaveQuote) {
+		if (mustHaveQuote) {
 			partNameBuffer.append(ConnectorUtils.STRING_DELIMITER);
 			partNameBuffer.append(partName);
 			partNameBuffer.append(ConnectorUtils.STRING_DELIMITER);
@@ -271,19 +275,19 @@ public class ConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.
 	/**
 	 * Checks if is crossing encapuslation.
 	 *
-	 * @param nestedPath the nested path
-	 * @return true, if is crossing encapuslation
-	 * <code>true</code> if we are breaking encapsulation (see SysML rules in SysML Standard 1.2, p.44):
-	 * isEncapsulated: Boolean [0..1] If true, then the block is treated as a black box; a part typed by this black box can only be connected
-	 * via its ports or directly to its outer boundary. If false, or if a value is not present, then connections can be established to
-	 * elements of its internal structure via deep-nested connector ends.
+	 * @param nestedPath
+	 *            the nested path
+	 * @return true, if is crossing encapuslation <code>true</code> if we are breaking encapsulation (see SysML rules in SysML Standard 1.2, p.44):
+	 *         isEncapsulated: Boolean [0..1] If true, then the block is treated as a black box; a part typed by this black box can only be connected
+	 *         via its ports or directly to its outer boundary. If false, or if a value is not present, then connections can be established to
+	 *         elements of its internal structure via deep-nested connector ends.
 	 */
 	public static final boolean isCrossingEncapuslation(final List<Property> nestedPath) {
-		for(final Property current : nestedPath) {
+		for (final Property current : nestedPath) {
 			final Type type = current.getType();
-			if(type != null) {
+			if (type != null) {
 				final Block block = UMLUtil.getStereotypeApplication(type, Block.class);
-				if(block != null && block.isEncapsulated()) {
+				if (block != null && block.isEncapsulated()) {
 					return true;
 				}
 			}
@@ -294,21 +298,23 @@ public class ConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.
 	/**
 	 * Can display existing connector between views according to nested paths.
 	 *
-	 * @param connector a connector existing in the model
-	 * @param sourceView a potential source for this connector
-	 * @param targetView a potential target for this connector
-	 * @return true, if successful
-	 * <code>true</code> if displaying the existing connector between this source and this target view is correct
+	 * @param connector
+	 *            a connector existing in the model
+	 * @param sourceView
+	 *            a potential source for this connector
+	 * @param targetView
+	 *            a potential target for this connector
+	 * @return true, if successful <code>true</code> if displaying the existing connector between this source and this target view is correct
 	 */
 	public static boolean canDisplayExistingConnectorBetweenViewsAccordingToNestedPaths(final Connector connector, final View sourceView, final View targetView) {
 		ConnectorUtils utils = new ConnectorUtils();
 		final List<Property> sourcePath = utils.getNestedPropertyPath(sourceView, targetView);
 		final List<Property> targetPath = utils.getNestedPropertyPath(targetView, sourceView);
 		boolean hasWantedPath = true;
-		for(final ConnectorEnd end : connector.getEnds()) {
-			if(sourceView != null && end.getRole() == sourceView.getElement()) {
+		for (final ConnectorEnd end : connector.getEnds()) {
+			if (sourceView != null && end.getRole() == sourceView.getElement()) {
 				hasWantedPath = hasWantedPath && haveSamePath(sourcePath, end);
-			} else if(targetView != null && end.getRole() == targetView.getElement()) {
+			} else if (targetView != null && end.getRole() == targetView.getElement()) {
 				hasWantedPath = hasWantedPath && haveSamePath(targetPath, end);
 			}
 		}
@@ -316,146 +322,153 @@ public class ConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.
 	}
 
 
-	
+
 	/**
 	 * Have same path.
 	 *
-	 * @param wantedPath the wanted nested path for the end
-	 * @param end an end
+	 * @param wantedPath
+	 *            the wanted nested path for the end
+	 * @param end
+	 *            an end
 	 * @return true, if successful
-	 * true if the end has as nested path THE wanted path
+	 *         true if the end has as nested path THE wanted path
 	 */
 	protected static boolean haveSamePath(final List<Property> wantedPath, final ConnectorEnd end) {
 		Stereotype ste = end.getAppliedStereotype("SysML::Blocks::NestedConnectorEnd");//$NON-NLS-1$
-		if(ste != null) {
-			final NestedConnectorEnd nestedConnectorEnd = (NestedConnectorEnd)end.getStereotypeApplication(ste);
+		if (ste != null) {
+			final NestedConnectorEnd nestedConnectorEnd = (NestedConnectorEnd) end.getStereotypeApplication(ste);
 			return nestedConnectorEnd.getPropertyPath().equals(wantedPath);
 		} else {
 			return wantedPath.isEmpty();
 		}
 	}
-	
-	
-	
+
+
+
 	/**
 	 * Can display existing connector between views according to partWithPort.
 	 *
-	 * @param connector the connector
-	 * @param sourceView the source view
-	 * @param targetView the target view
+	 * @param connector
+	 *            the connector
+	 * @param sourceView
+	 *            the source view
+	 * @param targetView
+	 *            the target view
 	 * @return true, if successful
 	 */
 	public boolean canDisplayExistingConnectorBetweenViewsAccordingToPartWithPort(final Connector connector, final View sourceView, final View targetView) {
 		Property partWithPort = getPartWithPortFromConnector(connector);
-		if (partWithPort != null){
+		if (partWithPort != null) {
 			String partWithPortName = partWithPort.getName();
 			Type partWithPortType = partWithPort.getType();
 			EObject sourceContainer = ((View) sourceView.eContainer()).getElement();
-			EObject targetContainer = ((View) targetView.eContainer()).getElement();		
-			
+			EObject targetContainer = ((View) targetView.eContainer()).getElement();
+
 			boolean sameSourceType = false;
-			if (sourceContainer instanceof TypedElement){
-				sameSourceType = partWithPortType.conformsTo(((TypedElement)sourceContainer).getType());
+			if (sourceContainer instanceof TypedElement) {
+				sameSourceType = partWithPortType.conformsTo(((TypedElement) sourceContainer).getType());
 			}
 			boolean sameSourceName = partWithPortName.equals(((NamedElement) sourceContainer).getName());
-			
+
 			boolean sameTargetType = false;
-			if (targetContainer instanceof TypedElement){
-				sameTargetType = partWithPortType.conformsTo(((TypedElement)targetContainer).getType());
+			if (targetContainer instanceof TypedElement) {
+				sameTargetType = partWithPortType.conformsTo(((TypedElement) targetContainer).getType());
 			}
 			boolean sametargetName = partWithPortName.equals(((NamedElement) targetContainer).getName());
-			
+
 			return (sameSourceType && sameSourceName) || (sameTargetType && sametargetName);
 		}
 		return true;
-	}	
-	
+	}
+
 	/**
 	 * Gets the partWithPort from the connector.
 	 *
-	 * @param connector the connector
+	 * @param connector
+	 *            the connector
 	 * @return the part with port from connector
 	 */
-	public Property getPartWithPortFromConnector(final Connector connector){
-		if (connector!=null && connector.getEnds() != null){
-			for(final ConnectorEnd end : connector.getEnds()) {
+	public Property getPartWithPortFromConnector(final Connector connector) {
+		if (connector != null && connector.getEnds() != null) {
+			for (final ConnectorEnd end : connector.getEnds()) {
 				Property partWithPort = end.getPartWithPort();
-				if (partWithPort != null){
+				if (partWithPort != null) {
 					return partWithPort;
 				}
 			}
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Test if the relationship creation is allowed.
-	 * 
+	 *
 	 * @param source
-	 *        the relationship source can be null
+	 *            the relationship source can be null
 	 * @param target
-	 *        the relationship target can be null
+	 *            the relationship target can be null
 	 * @param sourceView
-	 *        the relationship graphical source can be null
+	 *            the relationship graphical source can be null
 	 * @param targetView
-	 *        the relationship graphical target can be null
+	 *            the relationship graphical target can be null
 	 * @return true if the creation is allowed
 	 */
 	public static boolean canCreate(EObject source, EObject target, View sourceView, View targetView) {
 
-		if((source != null) && !(source instanceof ConnectableElement)) {
+		if ((source != null) && !(source instanceof ConnectableElement)) {
 			return false;
 		}
 
-		if((target != null) && !(target instanceof ConnectableElement)) {
+		if ((target != null) && !(target instanceof ConnectableElement)) {
 			return false;
 		}
 
-		if((sourceView != null) && (targetView != null)) {
+		if ((sourceView != null) && (targetView != null)) {
 			// Allow to create a self connector on a view
-//			if(sourceView == targetView) {
-//				return false;
-//			}
+			// if(sourceView == targetView) {
+			// return false;
+			// }
 
 			// Cannot create a connector from a view representing a Part to its own Port (or the opposite)
-			if((sourceView.getChildren().contains(targetView)) || (targetView.getChildren().contains(sourceView))) {
+			if ((sourceView.getChildren().contains(targetView)) || (targetView.getChildren().contains(sourceView))) {
 				return false;
 			}
 
 			// Cannot connect a Part to one of its (possibly indirect) containment, must connect to one of its Port.
-			if(new ConnectorUtils().getStructureContainers(sourceView).contains(targetView) || new ConnectorUtils().getStructureContainers(targetView).contains(sourceView)) {
+			if (new ConnectorUtils().getStructureContainers(sourceView).contains(targetView) || new ConnectorUtils().getStructureContainers(targetView).contains(sourceView)) {
 				return false;
 			}
 		}
 		return true;
 	}
-	
-	
+
+
 
 	/**
 	 * Filter connectors that have this property in their <NestedConnectorEnd> property path.
+	 *
 	 * @param connectors
 	 * @param part
 	 * @return connectors that have this property in their <NestedConnectorEnd> property path.
 	 */
-	public static List<Connector> filterConnectorByPropertyInNestedConnectorEnd(List<Connector> connectors, Property part) {		
+	public static List<Connector> filterConnectorByPropertyInNestedConnectorEnd(List<Connector> connectors, Property part) {
 		List<Connector> res = new ArrayList<Connector>();
-		for(Connector connector : connectors) {
+		for (Connector connector : connectors) {
 			EList<ConnectorEnd> ends = connector.getEnds();
-			for(ConnectorEnd connectorEnd : ends) {
+			for (ConnectorEnd connectorEnd : ends) {
 				NestedConnectorEnd stereotypeApplication = UMLUtil.getStereotypeApplication(connectorEnd, NestedConnectorEnd.class);
-				if (stereotypeApplication != null){
+				if (stereotypeApplication != null) {
 					EList<Property> propertyPath = stereotypeApplication.getPropertyPath();
-					for(Property property : propertyPath) {
-						if (property.equals(part)){	
+					for (Property property : propertyPath) {
+						if (property.equals(part)) {
 							res.add(connector);
 						}
 					}
 				}
-			}			
+			}
 		}
 		return res;
-	}	
-	
-	
+	}
+
+
 }

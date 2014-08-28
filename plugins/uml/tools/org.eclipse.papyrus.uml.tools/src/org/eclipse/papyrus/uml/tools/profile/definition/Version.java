@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,13 +39,13 @@ public class Version {
 
 	/**
 	 * Creates a new Version
-	 * 
+	 *
 	 * @param major
-	 *        the major version value (should be positive)
+	 *            the major version value (should be positive)
 	 * @param minor
-	 *        the minor version value (should be positive)
+	 *            the minor version value (should be positive)
 	 * @param micro
-	 *        the micro version value (should be positive)
+	 *            the micro version value (should be positive)
 	 */
 	public Version(int major, int minor, int micro) {
 		this.major = major;
@@ -55,24 +55,24 @@ public class Version {
 
 	/**
 	 * Creates a new Version, parsing a string value
-	 * 
+	 *
 	 * @param value
-	 *        the string representing the version
+	 *            the string representing the version
 	 */
 	public Version(String value) throws IllegalArgumentException {
 		try {
 			StringTokenizer st = new StringTokenizer(value, SEPARATOR, true);
 			major = Integer.parseInt(st.nextToken());
 
-			if(st.hasMoreTokens()) {
+			if (st.hasMoreTokens()) {
 				st.nextToken(); // consume delimiter
 				minor = Integer.parseInt(st.nextToken());
 
-				if(st.hasMoreTokens()) {
+				if (st.hasMoreTokens()) {
 					st.nextToken(); // consume delimiter
 					micro = Integer.parseInt(st.nextToken());
 
-					if(st.hasMoreTokens()) {
+					if (st.hasMoreTokens()) {
 						throw new IllegalArgumentException("invalid format");
 					}
 				}
@@ -84,7 +84,7 @@ public class Version {
 
 	/**
 	 * Returns the major version number
-	 * 
+	 *
 	 * @return The major version number
 	 */
 	public int getMajor() {
@@ -93,7 +93,7 @@ public class Version {
 
 	/**
 	 * Returns the minor version number
-	 * 
+	 *
 	 * @return The minor version number
 	 */
 	public int getMinor() {
@@ -102,7 +102,7 @@ public class Version {
 
 	/**
 	 * Returns the micro version number
-	 * 
+	 *
 	 * @return The micro version number
 	 */
 	public int getMicro() {
@@ -111,13 +111,13 @@ public class Version {
 
 	/**
 	 * Updates the version numbers
-	 * 
+	 *
 	 * @param major
-	 *        the new major value
+	 *            the new major value
 	 * @param minor
-	 *        the new minor value
+	 *            the new minor value
 	 * @param micro
-	 *        the new micro value
+	 *            the new micro value
 	 */
 	public void updateVersion(int major, int minor, int micro) {
 		this.major = major;
@@ -128,18 +128,18 @@ public class Version {
 	// org.osgi.framework.Version
 	/**
 	 * Creates a version given the specific String
-	 * 
+	 *
 	 * @param version
-	 *        the string to parse
+	 *            the string to parse
 	 * @return the version value corresponding to the String
 	 */
 	public static Version parseVersion(String version) throws IllegalArgumentException {
-		if(version == null) {
+		if (version == null) {
 			return emptyVersion;
 		}
 
 		version = version.trim();
-		if(version.length() == 0) {
+		if (version.length() == 0) {
 			return emptyVersion;
 		}
 		return new Version(version);

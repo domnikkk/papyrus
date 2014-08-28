@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,19 +9,19 @@
  *
  * Contributors:
  *  Mathieu Velten (Atos Origin) mathieu.velten@atosorigin.com - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common;
 
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
 
 /**
- * Use the standard utils
- * {@link DiagramUtils}
+ * Use the standard utils {@link DiagramUtils}
  *
  */
-@Deprecated // use DiagramUtils
-public class DiagramsUtil extends DiagramUtils{
+@Deprecated
+// use DiagramUtils
+public class DiagramsUtil extends DiagramUtils {
 
-	
+
 }

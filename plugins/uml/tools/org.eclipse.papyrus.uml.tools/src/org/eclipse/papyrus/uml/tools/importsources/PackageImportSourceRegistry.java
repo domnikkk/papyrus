@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,9 +50,9 @@ public class PackageImportSourceRegistry implements Iterable<PackageImportSource
 	public PackageImportSourceRegistry(IEvaluationService evaluationService) {
 		this.evaluationService = evaluationService;
 
-		for(IConfigurationElement config : sort(Platform.getExtensionRegistry().getConfigurationElementsFor(EXTPT_ID))) {
+		for (IConfigurationElement config : sort(Platform.getExtensionRegistry().getConfigurationElementsFor(EXTPT_ID))) {
 
-			if("importSource".equals(config.getName())) {
+			if ("importSource".equals(config.getName())) {
 				descriptors.add(new Descriptor(config));
 			}
 		}
@@ -70,8 +70,8 @@ public class PackageImportSourceRegistry implements Iterable<PackageImportSource
 
 		List<IPackageImportSource> result = new java.util.ArrayList<IPackageImportSource>(3);
 
-		for(Descriptor next : this) {
-			if(next.canImportInto(selection)) {
+		for (Descriptor next : this) {
+			if (next.canImportInto(selection)) {
 				result.add(next.getInstance());
 			}
 		}
@@ -94,11 +94,11 @@ public class PackageImportSourceRegistry implements Iterable<PackageImportSource
 				String plugin1 = o1.getContributor().getName();
 				String plugin2 = o2.getContributor().getName();
 
-				if(plugin1.equals(plugin2)) {
+				if (plugin1.equals(plugin2)) {
 					result = 0;
-				} else if(Activator.PLUGIN_ID.equals(plugin1)) {
+				} else if (Activator.PLUGIN_ID.equals(plugin1)) {
 					result = +1;
-				} else if(Activator.PLUGIN_ID.equals(plugin2)) {
+				} else if (Activator.PLUGIN_ID.equals(plugin2)) {
 					result = -1;
 				} else {
 					result = 0;
@@ -138,16 +138,16 @@ public class PackageImportSourceRegistry implements Iterable<PackageImportSource
 		}
 
 		IPackageImportSource getInstance() {
-			if(instance == null) {
+			if (instance == null) {
 				try {
-					instance = (IPackageImportSource)config.createExecutableExtension("class");
+					instance = (IPackageImportSource) config.createExecutableExtension("class");
 				} catch (ClassCastException e) {
 					Activator.log.error("Import source does not implement IPackageImportSource interface.", e);
 				} catch (Exception e) {
 					Activator.log.error("Could not instantiate storage provider.", e);
 				}
 
-				if(instance == null) {
+				if (instance == null) {
 					instance = new NullImportSource();
 				}
 			}
@@ -158,7 +158,7 @@ public class PackageImportSourceRegistry implements Iterable<PackageImportSource
 		public boolean canImportInto(Collection<?> initialSelection) {
 			boolean result;
 
-			if(matchSelection != null) {
+			if (matchSelection != null) {
 				IEvaluationContext ctx = new EvaluationContext(evaluationService.getCurrentState(), initialSelection);
 
 				EvaluationResult evalResult = EvaluationResult.FALSE;
@@ -194,7 +194,7 @@ public class PackageImportSourceRegistry implements Iterable<PackageImportSource
 		}
 
 		public void dispose() {
-			if(instance != null) {
+			if (instance != null) {
 				instance.dispose();
 				instance = null;
 			}
@@ -202,7 +202,7 @@ public class PackageImportSourceRegistry implements Iterable<PackageImportSource
 
 		private void initMatchExpression(IConfigurationElement parentConfig) {
 			IConfigurationElement[] configs = parentConfig.getChildren("enablement");
-			if(configs.length > 0) {
+			if (configs.length > 0) {
 				try {
 					matchSelection = ExpressionConverter.getDefault().perform(configs[0]);
 				} catch (CoreException e) {

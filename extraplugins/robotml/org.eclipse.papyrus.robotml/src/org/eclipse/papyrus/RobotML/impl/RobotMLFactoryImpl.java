@@ -6,11 +6,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.eclipse.papyrus.RobotML.ActuatedJoint;
 import org.eclipse.papyrus.RobotML.ActuatorHardware;
 import org.eclipse.papyrus.RobotML.ActuatorSystem;
@@ -102,6 +99,7 @@ import org.eclipse.papyrus.RobotML.WeaponSystem;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
@@ -109,16 +107,16 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static RobotMLFactory init() {
 		try {
-			RobotMLFactory theRobotMLFactory = (RobotMLFactory)EPackage.Registry.INSTANCE.getEFactory(RobotMLPackage.eNS_URI);
+			RobotMLFactory theRobotMLFactory = (RobotMLFactory) EPackage.Registry.INSTANCE.getEFactory(RobotMLPackage.eNS_URI);
 			if (theRobotMLFactory != null) {
 				return theRobotMLFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new RobotMLFactoryImpl();
@@ -128,6 +126,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public RobotMLFactoryImpl() {
@@ -137,151 +136,233 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case RobotMLPackage.TRANSITION: return createTransition();
-			case RobotMLPackage.ALGORITHM: return createAlgorithm();
-			case RobotMLPackage.STATE: return createState();
-			case RobotMLPackage.ACTUATED_JOINT: return createActuatedJoint();
-			case RobotMLPackage.JOINT: return createJoint();
-			case RobotMLPackage.COMPLETE_BONDING: return createCompleteBonding();
-			case RobotMLPackage.ROBOT: return createRobot();
-			case RobotMLPackage.SYSTEM: return createSystem();
-			case RobotMLPackage.AGENT: return createAgent();
-			case RobotMLPackage.PHYSICAL_OBJECT: return createPhysicalObject();
-			case RobotMLPackage.ENVIRONMENT: return createEnvironment();
-			case RobotMLPackage.SURFACE: return createSurface();
-			case RobotMLPackage.DATA_FLOW_PORT: return createDataFlowPort();
-			case RobotMLPackage.SERVICE_PORT: return createServicePort();
-			case RobotMLPackage.ACTUATOR_SYSTEM: return createActuatorSystem();
-			case RobotMLPackage.ROBOTIC_SYSTEM: return createRoboticSystem();
-			case RobotMLPackage.CYBER_PHYSICAL_SYSTEM: return createCyberPhysicalSystem();
-			case RobotMLPackage.SENSOR_SYSTEM: return createSensorSystem();
-			case RobotMLPackage.HARDWARE: return createHardware();
-			case RobotMLPackage.SOFTWARE: return createSoftware();
-			case RobotMLPackage.ENGINE_SYSTEM: return createEngineSystem();
-			case RobotMLPackage.STEERED_WHEEL_SYSTEM: return createSteeredWheelSystem();
-			case RobotMLPackage.LOCOMOTION_SYSTEM: return createLocomotionSystem();
-			case RobotMLPackage.IMAGE_SENSOR_SYSTEM: return createImageSensorSystem();
-			case RobotMLPackage.CAMERA_SYSTEM: return createCameraSystem();
-			case RobotMLPackage.OBJECT_DETECTION_SENSOR_SYSTEM: return createObjectDetectionSensorSystem();
-			case RobotMLPackage.OBJECT_TRACKING_SENSOR_SYSTEM: return createObjectTrackingSensorSystem();
-			case RobotMLPackage.LIDAR_SYSTEM: return createLidarSystem();
-			case RobotMLPackage.LOCALIZATION_SENSOR_SYSTEM: return createLocalizationSensorSystem();
-			case RobotMLPackage.GPS_SYSTEM: return createGPSSystem();
-			case RobotMLPackage.ALGORITHM_LIBRARY: return createAlgorithmLibrary();
-			case RobotMLPackage.SENSOR_DRIVER: return createSensorDriver();
-			case RobotMLPackage.BUILDING: return createBuilding();
-			case RobotMLPackage.PLANET: return createPlanet();
-			case RobotMLPackage.LAND_SURFACE: return createLandSurface();
-			case RobotMLPackage.FLOOR: return createFloor();
-			case RobotMLPackage.WATER_SURFACE: return createWaterSurface();
-			case RobotMLPackage.HUMAN: return createHuman();
-			case RobotMLPackage.PEDESTRIAN: return createPedestrian();
-			case RobotMLPackage.STAIRS: return createStairs();
-			case RobotMLPackage.PLATFORM: return createPlatform();
-			case RobotMLPackage.EXTERNAL_LIBRARY: return createExternalLibrary();
-			case RobotMLPackage.ROBOTIC_MIDDLEWARE: return createRoboticMiddleware();
-			case RobotMLPackage.ROBOTIC_SIMULATOR: return createRoboticSimulator();
-			case RobotMLPackage.CYCAB_TK: return createCycabTK();
-			case RobotMLPackage.BLENDER_MORSE: return createBlenderMorse();
-			case RobotMLPackage.ON_PORT: return createOnPort();
-			case RobotMLPackage.ALLOCATE: return createAllocate();
-			case RobotMLPackage.INERTIAL_MEASUREMENT_UNIT_SYSTEM: return createInertialMeasurementUnitSystem();
-			case RobotMLPackage.INERTIAL_NAVIGATION_SYSTEM: return createInertialNavigationSystem();
-			case RobotMLPackage.ODOMETRY_SYSTEM: return createOdometrySystem();
-			case RobotMLPackage.INFRA_RED_PROXIMETRY_SYSTEM: return createInfraRedProximetrySystem();
-			case RobotMLPackage.DEPLOYMENT_PLAN: return createDeploymentPlan();
-			case RobotMLPackage.GYROSCOPE: return createGyroscope();
-			case RobotMLPackage.ON_PROPERTY: return createOnProperty();
-			case RobotMLPackage.CHASSIS: return createChassis();
-			case RobotMLPackage.SUPPORTING_STRUCTURE: return createSupportingStructure();
-			case RobotMLPackage.MECHANICAL_LINKAGE: return createMechanicalLinkage();
-			case RobotMLPackage.LEG: return createLeg();
-			case RobotMLPackage.LOCOMOTION_HARDWARE: return createLocomotionHardware();
-			case RobotMLPackage.ACTUATOR_HARDWARE: return createActuatorHardware();
-			case RobotMLPackage.MOBILE_ROBOT: return createMobileRobot();
-			case RobotMLPackage.MANIPULATOR: return createManipulator();
-			case RobotMLPackage.PILOTED_SYSTEM: return createPilotedSystem();
-			case RobotMLPackage.POWER_HARDWARE: return createPowerHardware();
-			case RobotMLPackage.SENSOR_HARDWARE: return createSensorHardware();
-			case RobotMLPackage.GRASPING_HARDWARE: return createGraspingHardware();
-			case RobotMLPackage.STEERED_WHEEL_HARDWARE: return createSteeredWheelHardware();
-			case RobotMLPackage.ARM: return createArm();
-			case RobotMLPackage.LEG_SYSTEM: return createLegSystem();
-			case RobotMLPackage.GRASPING_SYSTEM: return createGraspingSystem();
-			case RobotMLPackage.WEAPON_SYSTEM: return createWeaponSystem();
-			case RobotMLPackage.MAN_MACHINE_INTERFACE_SYSTEM: return createManMachineInterfaceSystem();
-			case RobotMLPackage.CLOSED_LOOP_CONTROL_SYSTEM: return createClosedLoopControlSystem();
-			case RobotMLPackage.OPEN_LOOP_CONTROL_SYSTEM: return createOpenLoopControlSystem();
-			case RobotMLPackage.ROBOTIC_HEAD: return createRoboticHead();
-			case RobotMLPackage.NAVIGATION_COMMAND_SYSTEM: return createNavigationCommandSystem();
-			case RobotMLPackage.JOYSTIC_NAVIGATION_SYSTEM: return createJoysticNavigationSystem();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case RobotMLPackage.TRANSITION:
+			return createTransition();
+		case RobotMLPackage.ALGORITHM:
+			return createAlgorithm();
+		case RobotMLPackage.STATE:
+			return createState();
+		case RobotMLPackage.ACTUATED_JOINT:
+			return createActuatedJoint();
+		case RobotMLPackage.JOINT:
+			return createJoint();
+		case RobotMLPackage.COMPLETE_BONDING:
+			return createCompleteBonding();
+		case RobotMLPackage.ROBOT:
+			return createRobot();
+		case RobotMLPackage.SYSTEM:
+			return createSystem();
+		case RobotMLPackage.AGENT:
+			return createAgent();
+		case RobotMLPackage.PHYSICAL_OBJECT:
+			return createPhysicalObject();
+		case RobotMLPackage.ENVIRONMENT:
+			return createEnvironment();
+		case RobotMLPackage.SURFACE:
+			return createSurface();
+		case RobotMLPackage.DATA_FLOW_PORT:
+			return createDataFlowPort();
+		case RobotMLPackage.SERVICE_PORT:
+			return createServicePort();
+		case RobotMLPackage.ACTUATOR_SYSTEM:
+			return createActuatorSystem();
+		case RobotMLPackage.ROBOTIC_SYSTEM:
+			return createRoboticSystem();
+		case RobotMLPackage.CYBER_PHYSICAL_SYSTEM:
+			return createCyberPhysicalSystem();
+		case RobotMLPackage.SENSOR_SYSTEM:
+			return createSensorSystem();
+		case RobotMLPackage.HARDWARE:
+			return createHardware();
+		case RobotMLPackage.SOFTWARE:
+			return createSoftware();
+		case RobotMLPackage.ENGINE_SYSTEM:
+			return createEngineSystem();
+		case RobotMLPackage.STEERED_WHEEL_SYSTEM:
+			return createSteeredWheelSystem();
+		case RobotMLPackage.LOCOMOTION_SYSTEM:
+			return createLocomotionSystem();
+		case RobotMLPackage.IMAGE_SENSOR_SYSTEM:
+			return createImageSensorSystem();
+		case RobotMLPackage.CAMERA_SYSTEM:
+			return createCameraSystem();
+		case RobotMLPackage.OBJECT_DETECTION_SENSOR_SYSTEM:
+			return createObjectDetectionSensorSystem();
+		case RobotMLPackage.OBJECT_TRACKING_SENSOR_SYSTEM:
+			return createObjectTrackingSensorSystem();
+		case RobotMLPackage.LIDAR_SYSTEM:
+			return createLidarSystem();
+		case RobotMLPackage.LOCALIZATION_SENSOR_SYSTEM:
+			return createLocalizationSensorSystem();
+		case RobotMLPackage.GPS_SYSTEM:
+			return createGPSSystem();
+		case RobotMLPackage.ALGORITHM_LIBRARY:
+			return createAlgorithmLibrary();
+		case RobotMLPackage.SENSOR_DRIVER:
+			return createSensorDriver();
+		case RobotMLPackage.BUILDING:
+			return createBuilding();
+		case RobotMLPackage.PLANET:
+			return createPlanet();
+		case RobotMLPackage.LAND_SURFACE:
+			return createLandSurface();
+		case RobotMLPackage.FLOOR:
+			return createFloor();
+		case RobotMLPackage.WATER_SURFACE:
+			return createWaterSurface();
+		case RobotMLPackage.HUMAN:
+			return createHuman();
+		case RobotMLPackage.PEDESTRIAN:
+			return createPedestrian();
+		case RobotMLPackage.STAIRS:
+			return createStairs();
+		case RobotMLPackage.PLATFORM:
+			return createPlatform();
+		case RobotMLPackage.EXTERNAL_LIBRARY:
+			return createExternalLibrary();
+		case RobotMLPackage.ROBOTIC_MIDDLEWARE:
+			return createRoboticMiddleware();
+		case RobotMLPackage.ROBOTIC_SIMULATOR:
+			return createRoboticSimulator();
+		case RobotMLPackage.CYCAB_TK:
+			return createCycabTK();
+		case RobotMLPackage.BLENDER_MORSE:
+			return createBlenderMorse();
+		case RobotMLPackage.ON_PORT:
+			return createOnPort();
+		case RobotMLPackage.ALLOCATE:
+			return createAllocate();
+		case RobotMLPackage.INERTIAL_MEASUREMENT_UNIT_SYSTEM:
+			return createInertialMeasurementUnitSystem();
+		case RobotMLPackage.INERTIAL_NAVIGATION_SYSTEM:
+			return createInertialNavigationSystem();
+		case RobotMLPackage.ODOMETRY_SYSTEM:
+			return createOdometrySystem();
+		case RobotMLPackage.INFRA_RED_PROXIMETRY_SYSTEM:
+			return createInfraRedProximetrySystem();
+		case RobotMLPackage.DEPLOYMENT_PLAN:
+			return createDeploymentPlan();
+		case RobotMLPackage.GYROSCOPE:
+			return createGyroscope();
+		case RobotMLPackage.ON_PROPERTY:
+			return createOnProperty();
+		case RobotMLPackage.CHASSIS:
+			return createChassis();
+		case RobotMLPackage.SUPPORTING_STRUCTURE:
+			return createSupportingStructure();
+		case RobotMLPackage.MECHANICAL_LINKAGE:
+			return createMechanicalLinkage();
+		case RobotMLPackage.LEG:
+			return createLeg();
+		case RobotMLPackage.LOCOMOTION_HARDWARE:
+			return createLocomotionHardware();
+		case RobotMLPackage.ACTUATOR_HARDWARE:
+			return createActuatorHardware();
+		case RobotMLPackage.MOBILE_ROBOT:
+			return createMobileRobot();
+		case RobotMLPackage.MANIPULATOR:
+			return createManipulator();
+		case RobotMLPackage.PILOTED_SYSTEM:
+			return createPilotedSystem();
+		case RobotMLPackage.POWER_HARDWARE:
+			return createPowerHardware();
+		case RobotMLPackage.SENSOR_HARDWARE:
+			return createSensorHardware();
+		case RobotMLPackage.GRASPING_HARDWARE:
+			return createGraspingHardware();
+		case RobotMLPackage.STEERED_WHEEL_HARDWARE:
+			return createSteeredWheelHardware();
+		case RobotMLPackage.ARM:
+			return createArm();
+		case RobotMLPackage.LEG_SYSTEM:
+			return createLegSystem();
+		case RobotMLPackage.GRASPING_SYSTEM:
+			return createGraspingSystem();
+		case RobotMLPackage.WEAPON_SYSTEM:
+			return createWeaponSystem();
+		case RobotMLPackage.MAN_MACHINE_INTERFACE_SYSTEM:
+			return createManMachineInterfaceSystem();
+		case RobotMLPackage.CLOSED_LOOP_CONTROL_SYSTEM:
+			return createClosedLoopControlSystem();
+		case RobotMLPackage.OPEN_LOOP_CONTROL_SYSTEM:
+			return createOpenLoopControlSystem();
+		case RobotMLPackage.ROBOTIC_HEAD:
+			return createRoboticHead();
+		case RobotMLPackage.NAVIGATION_COMMAND_SYSTEM:
+			return createNavigationCommandSystem();
+		case RobotMLPackage.JOYSTIC_NAVIGATION_SYSTEM:
+			return createJoysticNavigationSystem();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case RobotMLPackage.SYNCHRONIZATION_KIND:
-				return createSynchronizationKindFromString(eDataType, initialValue);
-			case RobotMLPackage.DATA_FLOW_DIRECTION_KIND:
-				return createDataFlowDirectionKindFromString(eDataType, initialValue);
-			case RobotMLPackage.SERVICE_FLOW_KIND:
-				return createServiceFlowKindFromString(eDataType, initialValue);
-			case RobotMLPackage.UGV_KIND:
-				return createUGVKindFromString(eDataType, initialValue);
-			case RobotMLPackage.ROBOTIC_MIDDLEWARE_KIND:
-				return createRoboticMiddlewareKindFromString(eDataType, initialValue);
-			case RobotMLPackage.SHADE:
-				return createShadeFromString(eDataType, initialValue);
-			case RobotMLPackage.MOBILE_ROBOT_KIND:
-				return createMobileRobotKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case RobotMLPackage.SYNCHRONIZATION_KIND:
+			return createSynchronizationKindFromString(eDataType, initialValue);
+		case RobotMLPackage.DATA_FLOW_DIRECTION_KIND:
+			return createDataFlowDirectionKindFromString(eDataType, initialValue);
+		case RobotMLPackage.SERVICE_FLOW_KIND:
+			return createServiceFlowKindFromString(eDataType, initialValue);
+		case RobotMLPackage.UGV_KIND:
+			return createUGVKindFromString(eDataType, initialValue);
+		case RobotMLPackage.ROBOTIC_MIDDLEWARE_KIND:
+			return createRoboticMiddlewareKindFromString(eDataType, initialValue);
+		case RobotMLPackage.SHADE:
+			return createShadeFromString(eDataType, initialValue);
+		case RobotMLPackage.MOBILE_ROBOT_KIND:
+			return createMobileRobotKindFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case RobotMLPackage.SYNCHRONIZATION_KIND:
-				return convertSynchronizationKindToString(eDataType, instanceValue);
-			case RobotMLPackage.DATA_FLOW_DIRECTION_KIND:
-				return convertDataFlowDirectionKindToString(eDataType, instanceValue);
-			case RobotMLPackage.SERVICE_FLOW_KIND:
-				return convertServiceFlowKindToString(eDataType, instanceValue);
-			case RobotMLPackage.UGV_KIND:
-				return convertUGVKindToString(eDataType, instanceValue);
-			case RobotMLPackage.ROBOTIC_MIDDLEWARE_KIND:
-				return convertRoboticMiddlewareKindToString(eDataType, instanceValue);
-			case RobotMLPackage.SHADE:
-				return convertShadeToString(eDataType, instanceValue);
-			case RobotMLPackage.MOBILE_ROBOT_KIND:
-				return convertMobileRobotKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case RobotMLPackage.SYNCHRONIZATION_KIND:
+			return convertSynchronizationKindToString(eDataType, instanceValue);
+		case RobotMLPackage.DATA_FLOW_DIRECTION_KIND:
+			return convertDataFlowDirectionKindToString(eDataType, instanceValue);
+		case RobotMLPackage.SERVICE_FLOW_KIND:
+			return convertServiceFlowKindToString(eDataType, instanceValue);
+		case RobotMLPackage.UGV_KIND:
+			return convertUGVKindToString(eDataType, instanceValue);
+		case RobotMLPackage.ROBOTIC_MIDDLEWARE_KIND:
+			return convertRoboticMiddlewareKindToString(eDataType, instanceValue);
+		case RobotMLPackage.SHADE:
+			return convertShadeToString(eDataType, instanceValue);
+		case RobotMLPackage.MOBILE_ROBOT_KIND:
+			return convertMobileRobotKindToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Transition createTransition() {
@@ -292,6 +373,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Algorithm createAlgorithm() {
@@ -302,6 +384,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public State createState() {
@@ -312,6 +395,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ActuatedJoint createActuatedJoint() {
@@ -322,6 +406,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Joint createJoint() {
@@ -332,6 +417,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public CompleteBonding createCompleteBonding() {
@@ -342,6 +428,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Robot createRobot() {
@@ -352,6 +439,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public org.eclipse.papyrus.RobotML.System createSystem() {
@@ -362,6 +450,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Agent createAgent() {
@@ -372,6 +461,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PhysicalObject createPhysicalObject() {
@@ -382,6 +472,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Environment createEnvironment() {
@@ -392,6 +483,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Surface createSurface() {
@@ -402,6 +494,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DataFlowPort createDataFlowPort() {
@@ -412,6 +505,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ServicePort createServicePort() {
@@ -422,6 +516,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ActuatorSystem createActuatorSystem() {
@@ -432,6 +527,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public RoboticSystem createRoboticSystem() {
@@ -442,6 +538,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public CyberPhysicalSystem createCyberPhysicalSystem() {
@@ -452,6 +549,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SensorSystem createSensorSystem() {
@@ -462,6 +560,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Hardware createHardware() {
@@ -472,6 +571,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Software createSoftware() {
@@ -482,6 +582,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EngineSystem createEngineSystem() {
@@ -492,6 +593,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SteeredWheelSystem createSteeredWheelSystem() {
@@ -502,6 +604,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LocomotionSystem createLocomotionSystem() {
@@ -512,6 +615,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ImageSensorSystem createImageSensorSystem() {
@@ -522,6 +626,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public CameraSystem createCameraSystem() {
@@ -532,6 +637,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ObjectDetectionSensorSystem createObjectDetectionSensorSystem() {
@@ -542,6 +648,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ObjectTrackingSensorSystem createObjectTrackingSensorSystem() {
@@ -552,6 +659,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LidarSystem createLidarSystem() {
@@ -562,6 +670,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LocalizationSensorSystem createLocalizationSensorSystem() {
@@ -572,6 +681,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public GPSSystem createGPSSystem() {
@@ -582,6 +692,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public AlgorithmLibrary createAlgorithmLibrary() {
@@ -592,6 +703,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SensorDriver createSensorDriver() {
@@ -602,6 +714,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Building createBuilding() {
@@ -612,6 +725,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Planet createPlanet() {
@@ -622,6 +736,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LandSurface createLandSurface() {
@@ -632,6 +747,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Floor createFloor() {
@@ -642,6 +758,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public WaterSurface createWaterSurface() {
@@ -652,6 +769,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Human createHuman() {
@@ -662,6 +780,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Pedestrian createPedestrian() {
@@ -672,6 +791,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Stairs createStairs() {
@@ -682,6 +802,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Platform createPlatform() {
@@ -692,6 +813,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ExternalLibrary createExternalLibrary() {
@@ -702,6 +824,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public RoboticMiddleware createRoboticMiddleware() {
@@ -712,6 +835,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public RoboticSimulator createRoboticSimulator() {
@@ -722,6 +846,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public CycabTK createCycabTK() {
@@ -732,6 +857,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public BlenderMorse createBlenderMorse() {
@@ -742,6 +868,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public OnPort createOnPort() {
@@ -752,6 +879,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Allocate createAllocate() {
@@ -762,6 +890,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public InertialMeasurementUnitSystem createInertialMeasurementUnitSystem() {
@@ -772,6 +901,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public InertialNavigationSystem createInertialNavigationSystem() {
@@ -782,6 +912,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public OdometrySystem createOdometrySystem() {
@@ -792,6 +923,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public InfraRedProximetrySystem createInfraRedProximetrySystem() {
@@ -802,6 +934,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DeploymentPlan createDeploymentPlan() {
@@ -812,6 +945,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Gyroscope createGyroscope() {
@@ -822,6 +956,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public OnProperty createOnProperty() {
@@ -832,6 +967,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Chassis createChassis() {
@@ -842,6 +978,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SupportingStructure createSupportingStructure() {
@@ -852,6 +989,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MechanicalLinkage createMechanicalLinkage() {
@@ -862,6 +1000,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Leg createLeg() {
@@ -872,6 +1011,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LocomotionHardware createLocomotionHardware() {
@@ -882,6 +1022,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ActuatorHardware createActuatorHardware() {
@@ -892,6 +1033,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MobileRobot createMobileRobot() {
@@ -902,6 +1044,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Manipulator createManipulator() {
@@ -912,6 +1055,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PilotedSystem createPilotedSystem() {
@@ -922,6 +1066,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PowerHardware createPowerHardware() {
@@ -932,6 +1077,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SensorHardware createSensorHardware() {
@@ -942,6 +1088,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public GraspingHardware createGraspingHardware() {
@@ -952,6 +1099,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SteeredWheelHardware createSteeredWheelHardware() {
@@ -962,6 +1110,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Arm createArm() {
@@ -972,6 +1121,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LegSystem createLegSystem() {
@@ -982,6 +1132,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public GraspingSystem createGraspingSystem() {
@@ -992,6 +1143,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public WeaponSystem createWeaponSystem() {
@@ -1002,6 +1154,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ManMachineInterfaceSystem createManMachineInterfaceSystem() {
@@ -1012,6 +1165,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ClosedLoopControlSystem createClosedLoopControlSystem() {
@@ -1022,6 +1176,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public OpenLoopControlSystem createOpenLoopControlSystem() {
@@ -1032,6 +1187,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public RoboticHead createRoboticHead() {
@@ -1042,6 +1198,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NavigationCommandSystem createNavigationCommandSystem() {
@@ -1052,6 +1209,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public JoysticNavigationSystem createJoysticNavigationSystem() {
@@ -1062,17 +1220,21 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SynchronizationKind createSynchronizationKindFromString(EDataType eDataType, String initialValue) {
 		SynchronizationKind result = SynchronizationKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertSynchronizationKindToString(EDataType eDataType, Object instanceValue) {
@@ -1082,17 +1244,21 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DataFlowDirectionKind createDataFlowDirectionKindFromString(EDataType eDataType, String initialValue) {
 		DataFlowDirectionKind result = DataFlowDirectionKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertDataFlowDirectionKindToString(EDataType eDataType, Object instanceValue) {
@@ -1102,17 +1268,21 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ServiceFlowKind createServiceFlowKindFromString(EDataType eDataType, String initialValue) {
 		ServiceFlowKind result = ServiceFlowKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertServiceFlowKindToString(EDataType eDataType, Object instanceValue) {
@@ -1122,17 +1292,21 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public UGVKind createUGVKindFromString(EDataType eDataType, String initialValue) {
 		UGVKind result = UGVKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertUGVKindToString(EDataType eDataType, Object instanceValue) {
@@ -1142,17 +1316,21 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public RoboticMiddlewareKind createRoboticMiddlewareKindFromString(EDataType eDataType, String initialValue) {
 		RoboticMiddlewareKind result = RoboticMiddlewareKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertRoboticMiddlewareKindToString(EDataType eDataType, Object instanceValue) {
@@ -1162,17 +1340,21 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Shade createShadeFromString(EDataType eDataType, String initialValue) {
 		Shade result = Shade.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertShadeToString(EDataType eDataType, Object instanceValue) {
@@ -1182,17 +1364,21 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MobileRobotKind createMobileRobotKindFromString(EDataType eDataType, String initialValue) {
 		MobileRobotKind result = MobileRobotKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertMobileRobotKindToString(EDataType eDataType, Object instanceValue) {
@@ -1202,15 +1388,17 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public RobotMLPackage getRobotMLPackage() {
-		return (RobotMLPackage)getEPackage();
+		return (RobotMLPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -1219,4 +1407,4 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 		return RobotMLPackage.eINSTANCE;
 	}
 
-} //RobotMLFactoryImpl
+} // RobotMLFactoryImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -65,23 +65,23 @@ public class PapyrusCDTEditorHandler extends CmdHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.infra.core.commands.AbstractHandler#isEnabled()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public boolean isEnabled() {
 		updateSelectedEObject();
 		if (selectedEObject instanceof Class ||
-			selectedEObject instanceof Operation ||
-			selectedEObject instanceof Transition)
+				selectedEObject instanceof Operation ||
+				selectedEObject instanceof Transition)
 		{
 			URI uri = selectedEObject.eResource().getURI();
 
 			// URIConverter uriConverter = resource.getResourceSet().getURIConverter();
 			IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-			if(uri.segmentCount() < 2) {
+			if (uri.segmentCount() < 2) {
 				return false;
 			}
 			IProject modelProject = root.getProject(uri.segment(1));
@@ -92,17 +92,18 @@ public class PapyrusCDTEditorHandler extends CmdHandler {
 
 	/**
 	 * @see org.eclipse.infra.core.commands.IHandler#execute(org.eclipse.infra.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
 	 */
+	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
 		try {
 			final ServicesRegistry serviceRegistry = ServiceUtilsForHandlers.getInstance().getServiceRegistry(event);
 			TransactionalEditingDomain domain = ServiceUtils.getInstance().getTransactionalEditingDomain(serviceRegistry);
 
-			//Create the transactional command
+			// Create the transactional command
 			AbstractEMFOperation command = new AbstractEMFOperation(domain, "Create CDT editor") {
 
 				@Override
@@ -133,7 +134,7 @@ public class PapyrusCDTEditorHandler extends CmdHandler {
 
 	/**
 	 * Do the execution of the command.
-	 * 
+	 *
 	 * @param serviceRegistry
 	 * @throws ServiceException
 	 * @throws NotFoundException
@@ -141,7 +142,7 @@ public class PapyrusCDTEditorHandler extends CmdHandler {
 	public void doExecute(final ServicesRegistry serviceRegistry) throws ServiceException, NotFoundException {
 		// Get the page manager allowing to add/open an editor.
 		final IPageManager pageMngr = ServiceUtils.getInstance().getIPageManager(serviceRegistry);
-				
+
 		Classifier classifierToEdit = getClassifierToEdit();
 		if (LocateCppProject.getTargetProject(classifierToEdit, true) == null) {
 			return;
@@ -154,7 +155,7 @@ public class PapyrusCDTEditorHandler extends CmdHandler {
 			// add the new editor model to the sash.
 		}
 		editorModel.setSelectedObject(selectedEObject);
-		
+
 		final TextEditorModel editorModelFinal = editorModel;
 		// open asynchronously to prevent handler cycles, see bug 434484
 		Display.getDefault().asyncExec(new Runnable() {
@@ -169,62 +170,63 @@ public class PapyrusCDTEditorHandler extends CmdHandler {
 					pageMngr.openPage(editorModelFinal);
 				}
 				try {
-				// TODO Auto-generated method stub
-				// move page to the RIGHT
-				DiSashModelManager modelMngr = ServiceUtils.getInstance().getService(DiSashModelManager.class, serviceRegistry);
-				ISashWindowsContentProvider sashContentProvider = modelMngr.getISashWindowsContentProvider();
-				Object rootModel = sashContentProvider.getRootModel();
-			
-		 		if (rootModel instanceof TabFolder) {
-		 			// root = tabFolder, i.e. there is a single folder
-					ISashWindowsContainer sashContainer = ServiceUtils.getInstance().getISashWindowsContainer(serviceRegistry);
-					int index = lookupIndex((TabFolder) rootModel, editorModelFinal);
-					if (index != -1) {
-						sashContentProvider.createFolder(sashContainer.getSelectedTabFolderModel(), index, sashContainer.getSelectedTabFolderModel(), SWT.RIGHT);
+					// TODO Auto-generated method stub
+					// move page to the RIGHT
+					DiSashModelManager modelMngr = ServiceUtils.getInstance().getService(DiSashModelManager.class, serviceRegistry);
+					ISashWindowsContentProvider sashContentProvider = modelMngr.getISashWindowsContentProvider();
+					Object rootModel = sashContentProvider.getRootModel();
+
+					if (rootModel instanceof TabFolder) {
+						// root = tabFolder, i.e. there is a single folder
+						ISashWindowsContainer sashContainer = ServiceUtils.getInstance().getISashWindowsContainer(serviceRegistry);
+						int index = lookupIndex((TabFolder) rootModel, editorModelFinal);
+						if (index != -1) {
+							sashContentProvider.createFolder(sashContainer.getSelectedTabFolderModel(), index, sashContainer.getSelectedTabFolderModel(), SWT.RIGHT);
+						}
 					}
-				}
-		 		else if (rootModel instanceof SashPanel) {
-		 			// multiple tab-folders exist. Find existing one and move editorModel to other
-		 			// TODO
-		 			// ISashWindowsContainer sashContainer = ServiceUtils.getInstance().getISashWindowsContainer(serviceRegistry);
-		 			// sashContentProvider.movePage(sashContainer.getSelectedTabFolderModel(), lookupIndex(sourceTab, editorModel), targetTabModel, -1);
-				}
+					else if (rootModel instanceof SashPanel) {
+						// multiple tab-folders exist. Find existing one and move editorModel to other
+						// TODO
+						// ISashWindowsContainer sashContainer = ServiceUtils.getInstance().getISashWindowsContainer(serviceRegistry);
+						// sashContentProvider.movePage(sashContainer.getSelectedTabFolderModel(), lookupIndex(sourceTab, editorModel), targetTabModel, -1);
+					}
 				} catch (ServiceException e) {
-					
+
 				}
 			}
-			
+
 		});
-		
+
 	}
 
 	/**
 	 * Create a model identifying the editor. This model will be saved with the sash
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
 	 * @throws NotFoundException
-	 *         The model where to save the TableInstance is not found.
+	 *             The model where to save the TableInstance is not found.
 	 */
 	protected TextEditorModel createEditorModel(final ServicesRegistry serviceRegistry, Classifier classifierToEdit) throws ServiceException, NotFoundException {
 		TextEditorModel editorModel = TextEditorModelFactory.eINSTANCE.createTextEditorModel();
-		
+
 		editorModel.setEditedObject(classifierToEdit);
 		editorModel.setType(PapyrusCDTEditor.EDITOR_TYPE);
 		editorModel.setName("CDT " + classifierToEdit.getName()); //$NON-NLS-1$
 		TextEditorModelSharedResource model = (TextEditorModelSharedResource)
-			ServiceUtils.getInstance().getModelSet(serviceRegistry).getModelChecked(TextEditorModelSharedResource.MODEL_ID);
+				ServiceUtils.getInstance().getModelSet(serviceRegistry).getModelChecked(TextEditorModelSharedResource.MODEL_ID);
 		model.addTextEditorModel(editorModel);
 
 		return editorModel;
 	}
-	
+
 	/**
 	 * The classifier to edit - corresponding to the selected object.
+	 *
 	 * @return
 	 */
 	protected Classifier getClassifierToEdit() {
-		if(selectedEObject instanceof Operation) {
+		if (selectedEObject instanceof Operation) {
 			return ((Operation) selectedEObject).getFeaturingClassifiers().get(0);
 		}
 		else if (selectedEObject instanceof Transition) {
@@ -236,32 +238,34 @@ public class PapyrusCDTEditorHandler extends CmdHandler {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * return the editor model corresponding to an EObject
-	 *  
-	 * @param serviceRegistry the service registry
-	 * @param classifierToEdit The classifier for which a CDT editor should be opened
+	 *
+	 * @param serviceRegistry
+	 *            the service registry
+	 * @param classifierToEdit
+	 *            The classifier for which a CDT editor should be opened
 	 * @return
 	 * @throws ServiceException
 	 * @throws NotFoundException
 	 */
 	protected TextEditorModel getEditorModel(final ServicesRegistry serviceRegistry, Classifier classifierToEdit) throws ServiceException, NotFoundException {
 		TextEditorModelSharedResource model = (TextEditorModelSharedResource)
-			ServiceUtils.getInstance().getModelSet(serviceRegistry).getModelChecked(TextEditorModelSharedResource.MODEL_ID);
+				ServiceUtils.getInstance().getModelSet(serviceRegistry).getModelChecked(TextEditorModelSharedResource.MODEL_ID);
 		return model.getTextEditorModel(classifierToEdit);
 	}
-	
-	 /**
-     * Recursively search in sash models for a FolderModel.
-     * Return the first encountered folder.
-     * 
-     * @param panelModel
-     * @return
-     */
-    public static int lookupIndex(TabFolder folder, Object model) {
 
-    	int index = 0;
+	/**
+	 * Recursively search in sash models for a FolderModel.
+	 * Return the first encountered folder.
+	 *
+	 * @param panelModel
+	 * @return
+	 */
+	public static int lookupIndex(TabFolder folder, Object model) {
+
+		int index = 0;
 		for (PageRef pr : folder.getChildren()) {
 			if (pr.getPageIdentifier() == model) {
 				return index;
@@ -269,5 +273,5 @@ public class PapyrusCDTEditorHandler extends CmdHandler {
 			index++;
 		}
 		return -1;
-    }
+	}
 }

@@ -26,9 +26,9 @@ import com.google.common.collect.Collections2;
 
 /**
  * Extends {@link AbstractExtendedURIBuilder} adding some utilitary method to manipulate files
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public abstract class AbstractExtendedURIBuilderForFile extends AbstractExtendedURIBuilder {
 
@@ -38,13 +38,13 @@ public abstract class AbstractExtendedURIBuilderForFile extends AbstractExtended
 
 	/**
 	 * Transform resource to {@link IFile}
-	 * 
+	 *
 	 * @param r
-	 *        the r
+	 *            the r
 	 * @return the i file
 	 */
 	protected IFile toIFile(Resource r) {
-		if(r != null) {
+		if (r != null) {
 			return TO_FILE_FUNCTION.apply(r);
 		}
 		return null;
@@ -53,6 +53,7 @@ public abstract class AbstractExtendedURIBuilderForFile extends AbstractExtended
 	/** The Constant TO_FILE_FUNCTION. */
 	protected static final Function<Resource, IFile> TO_FILE_FUNCTION = new Function<Resource, IFile>() {
 
+		@Override
 		public IFile apply(Resource from) {
 
 			return WorkspaceSynchronizer.getFile(from);
@@ -61,9 +62,9 @@ public abstract class AbstractExtendedURIBuilderForFile extends AbstractExtended
 
 	/**
 	 * Gets the target files.
-	 * 
+	 *
 	 * @param resourcesToLock
-	 *        the resources to lock
+	 *            the resources to lock
 	 * @return the target files
 	 */
 	protected static IFile[] getTargetFiles(Collection<Resource> resourcesToLock) {

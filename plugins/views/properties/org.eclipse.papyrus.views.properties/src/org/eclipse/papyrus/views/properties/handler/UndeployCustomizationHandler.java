@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,11 +42,11 @@ public class UndeployCustomizationHandler extends AbstractHandler implements IHa
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
 		ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
-		if(!(currentSelection instanceof IStructuredSelection) || currentSelection.isEmpty()) {
+		if (!(currentSelection instanceof IStructuredSelection) || currentSelection.isEmpty()) {
 			return null;
 		}
 
-		final IStructuredSelection selection = (IStructuredSelection)currentSelection;
+		final IStructuredSelection selection = (IStructuredSelection) currentSelection;
 
 		final Shell activeShell = HandlerUtil.getActiveShell(event);
 
@@ -56,7 +56,7 @@ public class UndeployCustomizationHandler extends AbstractHandler implements IHa
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
 				IStatus result = doExecute(selection, monitor);
-				if(result.isOK()) {
+				if (result.isOK()) {
 					monitor.subTask("Refreshing properties view configuration");
 					ConfigurationManager.getInstance().update();
 				}
@@ -72,7 +72,7 @@ public class UndeployCustomizationHandler extends AbstractHandler implements IHa
 				activeShell.getDisplay().asyncExec(new Runnable() {
 
 					public void run() {
-						if(event.getResult().isOK()) {
+						if (event.getResult().isOK()) {
 							MessageDialog.openInformation(activeShell, "Success", event.getResult().getMessage());
 						} else {
 							MessageDialog.openWarning(activeShell, "Error", event.getResult().getMessage());
@@ -92,16 +92,16 @@ public class UndeployCustomizationHandler extends AbstractHandler implements IHa
 	protected IStatus doExecute(IStructuredSelection selection, IProgressMonitor monitor) {
 		Iterator<?> selectionIterator = selection.iterator();
 
-		//Update is a long running task. Do it only once, in a job, at the end of the action.
+		// Update is a long running task. Do it only once, in a job, at the end of the action.
 		boolean needsUpdate = false;
 
 		monitor.beginTask("Disabling configurations", selection.size());
 
-		while(selectionIterator.hasNext()) {
+		while (selectionIterator.hasNext()) {
 			Object selectedElement = selectionIterator.next();
-			if(selectedElement instanceof IAdaptable) {
-				IFile selectedFile = (IFile)((IAdaptable)selectedElement).getAdapter(IFile.class);
-				if(selectedFile == null) {
+			if (selectedElement instanceof IAdaptable) {
+				IFile selectedFile = (IFile) ((IAdaptable) selectedElement).getAdapter(IFile.class);
+				if (selectedFile == null) {
 					monitor.worked(1);
 					continue;
 				}
@@ -109,22 +109,22 @@ public class UndeployCustomizationHandler extends AbstractHandler implements IHa
 				monitor.subTask("Disable " + selectedFile.getFullPath().removeFileExtension().lastSegment());
 
 				URI emfURI = null;
-				if(selectedFile.getFullPath() != null) {
+				if (selectedFile.getFullPath() != null) {
 					emfURI = URI.createPlatformResourceURI(selectedFile.getFullPath().toString(), true);
-				} else if(selectedFile.getRawLocation() != null) {
+				} else if (selectedFile.getRawLocation() != null) {
 					emfURI = URI.createFileURI(selectedFile.getRawLocation().toString());
 				}
 
-				if(emfURI == null) {
+				if (emfURI == null) {
 					monitor.worked(1);
 					continue;
 				}
 
 				try {
 
-					for(Context deployedContext : ConfigurationManager.getInstance().getContexts()) {
-						if(ConfigurationManager.getInstance().isCustomizable(deployedContext)) { //Should always be true
-							if(EcoreUtil.getURI(deployedContext).trimFragment().equals(emfURI)) {
+					for (Context deployedContext : ConfigurationManager.getInstance().getContexts()) {
+						if (ConfigurationManager.getInstance().isCustomizable(deployedContext)) { // Should always be true
+							if (EcoreUtil.getURI(deployedContext).trimFragment().equals(emfURI)) {
 								ConfigurationManager.getInstance().deleteContext(deployedContext, false);
 								needsUpdate = true;
 								break;
@@ -139,7 +139,7 @@ public class UndeployCustomizationHandler extends AbstractHandler implements IHa
 			}
 		}
 
-		if(needsUpdate) {
+		if (needsUpdate) {
 			return new Status(IStatus.OK, Activator.PLUGIN_ID, "The selected properties view configuration has been successfully disabled");
 		} else {
 			return new Status(IStatus.WARNING, Activator.PLUGIN_ID, "The selected properties view configuration is not deployed");

@@ -1,8 +1,10 @@
 Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
-Bundle-SymbolicName: org.eclipse.papyrus.layers.documentation;singleton:=true
-Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.help
 Bundle-Vendor: %providerName
+Bundle-Version: 1.0.1.qualifier
+Bundle-Name: %pluginName
 Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.papyrus.layers.documentation;singleto
+ n:=true
+

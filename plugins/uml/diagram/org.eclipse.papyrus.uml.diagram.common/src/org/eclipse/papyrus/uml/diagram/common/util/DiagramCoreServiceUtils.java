@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 LIFL & CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ import org.eclipse.ui.IWorkbenchPart;
 
 /**
  * A set of utility methods to get the Services from the core.
- * 
+ *
  * @author cedric dumoulin
  * @deprecated Use {@link ServiceUtilsForGMF}
  */
@@ -42,17 +42,17 @@ public class DiagramCoreServiceUtils {
 	 * <li>EditParts - getDiagramEditDomain()</li>
 	 * <li>EditPolicies - getHost().getDiagramEditDomain()</li>
 	 * </ul>
-	 * 
+	 *
 	 * @param domain
-	 *        or null if not found
+	 *            or null if not found
 	 * @return
 	 */
 	static ServicesRegistry getServiceRegistry(IDiagramEditDomain domain) {
 
-		if(domain instanceof DiagramEditDomain) {
-			IWorkbenchPart part = ((DiagramEditDomain)domain).getEditorPart().getEditorSite().getPart();
-			if(part instanceof UmlGmfDiagramEditor) {
-				return ((UmlGmfDiagramEditor)part).getServicesRegistry();
+		if (domain instanceof DiagramEditDomain) {
+			IWorkbenchPart part = ((DiagramEditDomain) domain).getEditorPart().getEditorSite().getPart();
+			if (part instanceof UmlGmfDiagramEditor) {
+				return ((UmlGmfDiagramEditor) part).getServicesRegistry();
 			}
 		}
 		return null;
@@ -67,28 +67,28 @@ public class DiagramCoreServiceUtils {
 	 * <li>EditParts - getDiagramEditDomain()</li>
 	 * <li>EditPolicies - getHost().getDiagramEditDomain()</li>
 	 * </ul>
-	 * 
+	 *
 	 * @param domain
-	 *        or null if not found
+	 *            or null if not found
 	 * @return
 	 */
 	static ServicesRegistry getServiceRegistryChecked(IDiagramEditDomain domain) throws ServiceException {
 
 		return ServiceUtilsForGMF.getInstance().getServiceRegistry(domain);
 
-		//		if(domain instanceof DiagramEditDomain) {
-		//			IWorkbenchPart part = ((DiagramEditDomain)domain).getEditorPart().getEditorSite().getPart();
-		//			if(part instanceof UmlGmfDiagramEditor) {
-		//				return ((UmlGmfDiagramEditor)part).getServicesRegistry();
-		//			}
-		//		}
-		//		throw new ServiceNotFoundException("Can't get the ServiceRegistry.");
+		// if(domain instanceof DiagramEditDomain) {
+		// IWorkbenchPart part = ((DiagramEditDomain)domain).getEditorPart().getEditorSite().getPart();
+		// if(part instanceof UmlGmfDiagramEditor) {
+		// return ((UmlGmfDiagramEditor)part).getServicesRegistry();
+		// }
+		// }
+		// throw new ServiceNotFoundException("Can't get the ServiceRegistry.");
 
 	}
 
 	/**
 	 * Gets the {@link TransactionalEditingDomain} registered in the {@link ServicesRegistry}.
-	 * 
+	 *
 	 * @param domain
 	 * @return
 	 */
@@ -107,11 +107,11 @@ public class DiagramCoreServiceUtils {
 
 	/**
 	 * Gets the {@link TransactionalEditingDomain} registered in the {@link ServicesRegistry}.
-	 * 
+	 *
 	 * @param domain
 	 * @return
 	 * @throws ServiceException
-	 *         If the TransactionalEditingDomain can not be found.
+	 *             If the TransactionalEditingDomain can not be found.
 	 */
 	public static TransactionalEditingDomain getTransactionalEditingDomainChecked(IDiagramEditDomain domain) throws ServiceException {
 		return getServiceRegistryChecked(domain).getService(TransactionalEditingDomain.class);

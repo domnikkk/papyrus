@@ -88,16 +88,16 @@ public abstract class ConnectionEditPart extends ConnectionNodeEditPart implemen
 		super.refresh();
 		IFigure figure = this.getFigure();
 		Object model = this.getModel();
-		if(figure instanceof PapyrusEdgeFigure && model instanceof Connector) {
-			Connector connector = (Connector)model;
-			PapyrusEdgeFigure edge = (PapyrusEdgeFigure)figure;
+		if (figure instanceof PapyrusEdgeFigure && model instanceof Connector) {
+			Connector connector = (Connector) model;
+			PapyrusEdgeFigure edge = (PapyrusEdgeFigure) figure;
 			// Reset the style
 			edge.resetStyle();
 			// Re-apply the CSS-defined style if any
-			String lineStyle = extract((StringValueStyle)connector.getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), LINE_STYLE));
-			int lineDashLength = extract((IntValueStyle)connector.getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), LINE_DASH_LENGTH));
-			int lineDashGap = extract((IntValueStyle)connector.getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), LINE_DASH_GAP));
-			if(lineStyle != null) {
+			String lineStyle = extract((StringValueStyle) connector.getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), LINE_STYLE));
+			int lineDashLength = extract((IntValueStyle) connector.getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), LINE_DASH_LENGTH));
+			int lineDashGap = extract((IntValueStyle) connector.getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), LINE_DASH_GAP));
+			if (lineStyle != null) {
 				setupLineStyle(edge, lineStyle, connector.getLineWidth(), lineDashLength < LINE_DASH_MIN_LENGTH ? LINE_DASH_MIN_LENGTH : lineDashLength, lineDashGap < LINE_GAP_MIN_LENGTH ? LINE_GAP_MIN_LENGTH : lineDashGap);
 			}
 			String decoration = extract((StringValueStyle) connector.getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), TARGET_DECORATION));
@@ -115,11 +115,11 @@ public abstract class ConnectionEditPart extends ConnectionNodeEditPart implemen
 	 * Extracts the primitive value from the given style
 	 *
 	 * @param style
-	 *        The style
+	 *            The style
 	 * @return The primitive value
 	 */
 	private String extract(StringValueStyle style) {
-		if(style == null || style.getStringValue() == null || style.getStringValue().isEmpty()) {
+		if (style == null || style.getStringValue() == null || style.getStringValue().isEmpty()) {
 			return null;
 		}
 		return style.getStringValue();
@@ -129,11 +129,11 @@ public abstract class ConnectionEditPart extends ConnectionNodeEditPart implemen
 	 * Extracts the primitive value from the given style
 	 *
 	 * @param style
-	 *        The style
+	 *            The style
 	 * @return The primitive value
 	 */
 	private int extract(IntValueStyle style) {
-		if(style == null) {
+		if (style == null) {
 			return 0;
 		}
 		return style.getIntValue();
@@ -143,15 +143,15 @@ public abstract class ConnectionEditPart extends ConnectionNodeEditPart implemen
 	 * Setups the line style of the edge according to the given CSS style
 	 *
 	 * @param edge
-	 *        The shape to setup
+	 *            The shape to setup
 	 * @param style
-	 *        The CSS style
+	 *            The CSS style
 	 * @param originalWidth
-	 *        Original width of the connector
+	 *            Original width of the connector
 	 * @param lineDashLength
-	 *        Length of the dashes
+	 *            Length of the dashes
 	 * @param lineDashGap
-	 *        Length of the gap between dashes
+	 *            Length of the gap between dashes
 	 */
 	private void setupLineStyle(PapyrusEdgeFigure edge, String style, int originalWidth, int lineDashLength, int lineDashGap) {
 		if ("hidden".equals(style)) {

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,7 +41,7 @@ public class PapyrusRepositoryAdminManager extends ContainerEventAdapter<CDOAdmi
 	public void install(IContainer<? extends CDOAdminClient> container) {
 		container.addListener(this);
 
-		for(CDOAdminClient next : container.getElements()) {
+		for (CDOAdminClient next : container.getElements()) {
 			next.addListener(repositoryListener);
 		}
 	}
@@ -65,11 +65,11 @@ public class PapyrusRepositoryAdminManager extends ContainerEventAdapter<CDOAdmi
 	}
 
 	protected void fireRepositoryAdminEvent(int eventType, String url, String name) {
-		if(!listeners.isEmpty()) {
+		if (!listeners.isEmpty()) {
 			PapyrusRepositoryAdminEvent event = new PapyrusRepositoryAdminEvent(this, eventType, url, name);
-			for(IPapyrusRepositoryAdminListener next : listeners) {
+			for (IPapyrusRepositoryAdminListener next : listeners) {
 				try {
-					switch(eventType) {
+					switch (eventType) {
 					case PapyrusRepositoryAdminEvent.REPOSITORY_ADDED:
 						next.repositoryAdded(event);
 						break;
@@ -92,12 +92,12 @@ public class PapyrusRepositoryAdminManager extends ContainerEventAdapter<CDOAdmi
 
 		@Override
 		protected void onAdded(IContainer<CDOAdminRepository> container, CDOAdminRepository element) {
-			if(container instanceof CDOAdminClient) {
-				CDOAdminClient client = (CDOAdminClient)container;
+			if (container instanceof CDOAdminClient) {
+				CDOAdminClient client = (CDOAdminClient) container;
 				String url = String.format("%s?repositoryName=%s", client.getURL(), element.getName()); //$NON-NLS-1$
 				repositories.put(element, url);
 
-				if(client.isConnected()) {
+				if (client.isConnected()) {
 					// Only notify for repositories added while connected, which ensures that we don't
 					// get a cascade of events on initial connection and discovery of existing repositories
 					fireRepositoryAdminEvent(PapyrusRepositoryAdminEvent.REPOSITORY_ADDED, url, element.getName());
@@ -107,11 +107,11 @@ public class PapyrusRepositoryAdminManager extends ContainerEventAdapter<CDOAdmi
 
 		@Override
 		protected void onRemoved(IContainer<CDOAdminRepository> container, CDOAdminRepository element) {
-			if(container instanceof CDOAdminClient) {
-				CDOAdminClient client = (CDOAdminClient)container;
+			if (container instanceof CDOAdminClient) {
+				CDOAdminClient client = (CDOAdminClient) container;
 				String url = repositories.remove(element);
 
-				if((url != null) && client.isConnected()) {
+				if ((url != null) && client.isConnected()) {
 					// Only notify for repositories removed while connected, which ensures that we don't
 					// get a cascade of events on disconnection from the server
 					fireRepositoryAdminEvent(PapyrusRepositoryAdminEvent.REPOSITORY_REMOVED, url, element.getName());

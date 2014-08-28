@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -77,16 +77,16 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 	}
 
 	public static StereotypeApplicationRepairSnippet getInstance(ModelSet modelSet) {
-		UMLResourceLoadAdapter adapter = (UMLResourceLoadAdapter)EcoreUtil.getExistingAdapter(modelSet, StereotypeApplicationRepairSnippet.class);
+		UMLResourceLoadAdapter adapter = (UMLResourceLoadAdapter) EcoreUtil.getExistingAdapter(modelSet, StereotypeApplicationRepairSnippet.class);
 		return (adapter == null) ? null : adapter.getSnippet();
 	}
 
 	public IStatus repair(ModelSet modelSet) {
 		IStatus result = Status.OK_STATUS;
 
-		if(presenter != null) {
-			for(Resource next : ImmutableList.copyOf(modelSet.getResources())) {
-				if(next.isLoaded()) {
+		if (presenter != null) {
+			for (Resource next : ImmutableList.copyOf(modelSet.getResources())) {
+				if (next.isLoaded()) {
 					handleResourceLoaded(next);
 				}
 			}
@@ -96,8 +96,8 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 				presenter.awaitPending(false);
 
 				// Did we fix all of the zombies?
-				for(Resource next : ImmutableList.copyOf(modelSet.getResources())) {
-					if(next.isLoaded() && (getZombieStereotypes(next) != null)) {
+				for (Resource next : ImmutableList.copyOf(modelSet.getResources())) {
+					if (next.isLoaded() && (getZombieStereotypes(next) != null)) {
 						result = new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Stereotype repair did not successfully repair all stereotype application problems.");
 						break;
 					}
@@ -111,7 +111,7 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 	}
 
 	protected void handleResourceLoaded(final Resource resource) {
-		final ModelSet modelSet = (ModelSet)resource.getResourceSet();
+		final ModelSet modelSet = (ModelSet) resource.getResourceSet();
 
 		StereotypeRepairService.startedRepairing(modelSet, resource);
 		boolean presented = false;
@@ -119,7 +119,7 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		try {
 			ZombieStereotypesDescriptor zombies = getZombieStereotypes(resource);
 
-			if((zombies != null) && (presenter != null)) {
+			if ((zombies != null) && (presenter != null)) {
 				presenter.addZombies(zombies);
 				presenter.onPendingDone(new Runnable() {
 
@@ -130,7 +130,7 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 				presented = true;
 			}
 		} finally {
-			if(!presented) {
+			if (!presented) {
 				StereotypeRepairService.finishedRepairing(modelSet, resource);
 			}
 		}
@@ -141,27 +141,27 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		Element root = getRootUMLElement(resource);
 
 		// Only check for zombies in resources that we can modify (those being the resources in the user model opened in the editor)
-		if((root instanceof Package) && !EMFHelper.isReadOnly(resource, EMFHelper.resolveEditingDomain(root))) {
-			result = getZombieStereotypes(resource, (Package)root);
+		if ((root instanceof Package) && !EMFHelper.isReadOnly(resource, EMFHelper.resolveEditingDomain(root))) {
+			result = getZombieStereotypes(resource, (Package) root);
 		}
 
 		return result;
 	}
 
 	protected Element getRootUMLElement(Resource resource) {
-		return (Element)EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.ELEMENT);
+		return (Element) EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.ELEMENT);
 	}
 
 	protected ZombieStereotypesDescriptor getZombieStereotypes(Resource resource, Package root) {
 		ZombieStereotypesDescriptor result = null;
 
 		Collection<ProfileApplication> profileApplications = Lists.newArrayList();
-		for(TreeIterator<EObject> iter = EcoreUtil.getAllProperContents(Collections.singleton(root), false); iter.hasNext();) {
+		for (TreeIterator<EObject> iter = EcoreUtil.getAllProperContents(Collections.singleton(root), false); iter.hasNext();) {
 			EObject next = iter.next();
-			if(next instanceof ProfileApplication) {
-				profileApplications.add((ProfileApplication)next);
+			if (next instanceof ProfileApplication) {
+				profileApplications.add((ProfileApplication) next);
 				iter.prune();
-			} else if(!(next instanceof Package) && !(next instanceof Component)) {
+			} else if (!(next instanceof Package) && !(next instanceof Component)) {
 				// No sense looking for packages except in the things that can contain packages
 				iter.prune();
 			}
@@ -170,19 +170,19 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		Set<EPackage> appliedDefinitions = getAppliedDefinitions(profileApplications);
 
 		Function<? super EPackage, Profile> profileSupplier = dynamicProfileSupplier;
-		if(profileSupplier == null) {
+		if (profileSupplier == null) {
 			profileSupplier = presenter.getDynamicProfileSupplier();
 		}
 
 		ZombieStereotypesDescriptor zombies = new ZombieStereotypesDescriptor(resource, root, appliedDefinitions, profileSupplier, getLabelProvider());
 
-		for(EObject next : resource.getContents()) {
-			if(!(next instanceof Element)) {
+		for (EObject next : resource.getContents()) {
+			if (!(next instanceof Element)) {
 				zombies.analyze(next);
 			}
 		}
 
-		if(zombies.hasZombies()) {
+		if (zombies.hasZombies()) {
 			result = zombies;
 		}
 
@@ -192,9 +192,9 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 	protected Set<EPackage> getAppliedDefinitions(Iterable<? extends ProfileApplication> profileApplications) {
 		Set<EPackage> result = Sets.newHashSet();
 
-		for(ProfileApplication next : profileApplications) {
+		for (ProfileApplication next : profileApplications) {
 			EPackage definition = next.getAppliedDefinition();
-			if((definition != null) && !definition.eIsProxy()) {
+			if ((definition != null) && !definition.eIsProxy()) {
 				result.add(definition);
 			}
 		}
@@ -203,11 +203,11 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 	}
 
 	private LabelProviderService getLabelProvider() {
-		if(labelProviderService == null) {
+		if (labelProviderService == null) {
 			try {
 				labelProviderService = ServiceUtilsForResourceSet.getInstance().getService(LabelProviderService.class, adapter.getResourceSet());
 			} catch (Exception e) {
-				// Fine.  Create a local instance
+				// Fine. Create a local instance
 				labelProviderService = new LabelProviderServiceImpl();
 				localLabelProvider = true;
 			}
@@ -224,7 +224,7 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		try {
 			IEditorPart editor = ServiceUtilsForResourceSet.getInstance().getService(IMultiDiagramEditor.class, modelsManager);
 
-			if(editor != null) {
+			if (editor != null) {
 				// this model is opened in an editor. That is the context in which we want to provide our services
 				presenter = new ZombieStereotypeDialogPresenter(editor.getSite().getShell(), modelsManager);
 				adapter.adapt(modelsManager);
@@ -235,12 +235,12 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 	}
 
 	public void dispose(ModelSet modelsManager) {
-		if(presenter != null) {
+		if (presenter != null) {
 			presenter.dispose();
 			presenter = null;
 		}
 
-		if(localLabelProvider) {
+		if (localLabelProvider) {
 			try {
 				labelProviderService.disposeService();
 			} catch (ServiceException e) {
@@ -273,31 +273,31 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		public void notifyChanged(Notification msg) {
 			Object notifier = msg.getNotifier();
 
-			if(notifier instanceof ResourceSet) {
-				handleNotification((ResourceSet)notifier, msg);
-			} else if(notifier instanceof Resource) {
-				handleNotification((Resource)notifier, msg);
+			if (notifier instanceof ResourceSet) {
+				handleNotification((ResourceSet) notifier, msg);
+			} else if (notifier instanceof Resource) {
+				handleNotification((Resource) notifier, msg);
 			}
 		}
 
 		ResourceSet getResourceSet() {
-			return (ResourceSet)getTarget();
+			return (ResourceSet) getTarget();
 		}
 
 		@Override
 		public void setTarget(Notifier newTarget) {
-			if((newTarget == null) || (newTarget instanceof ResourceSet)) {
+			if ((newTarget == null) || (newTarget instanceof ResourceSet)) {
 				super.setTarget(newTarget);
 			}
 
-			if(newTarget instanceof ResourceSet) {
+			if (newTarget instanceof ResourceSet) {
 				// Iterate a defensive copy because other adapters cause concurrent additions by loading additional resources
-				for(Resource next : ImmutableList.copyOf(((ResourceSet)newTarget).getResources())) {
+				for (Resource next : ImmutableList.copyOf(((ResourceSet) newTarget).getResources())) {
 					adapt(next);
 				}
-			} else if(newTarget instanceof Resource) {
-				Resource resource = (Resource)newTarget;
-				if(resource.isLoaded()) {
+			} else if (newTarget instanceof Resource) {
+				Resource resource = (Resource) newTarget;
+				if (resource.isLoaded()) {
 					// already loaded? Handled it
 					handleResourceLoaded(resource);
 				}
@@ -306,8 +306,8 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 
 		@Override
 		public void unsetTarget(Notifier oldTarget) {
-			if(oldTarget == getResourceSet()) {
-				for(Resource next : getResourceSet().getResources()) {
+			if (oldTarget == getResourceSet()) {
+				for (Resource next : getResourceSet().getResources()) {
 					unadapt(next);
 				}
 			}
@@ -316,7 +316,7 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		}
 
 		protected void adapt(Notifier notifier) {
-			if(!notifier.eAdapters().contains(this)) {
+			if (!notifier.eAdapters().contains(this)) {
 				notifier.eAdapters().add(this);
 			}
 		}
@@ -326,15 +326,15 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		}
 
 		protected void handleNotification(ResourceSet rset, Notification msg) {
-			switch(msg.getFeatureID(ResourceSet.class)) {
+			switch (msg.getFeatureID(ResourceSet.class)) {
 			case ResourceSet.RESOURCE_SET__RESOURCES:
-				switch(msg.getEventType()) {
+				switch (msg.getEventType()) {
 				case Notification.ADD:
-					adapt((Resource)msg.getNewValue());
+					adapt((Resource) msg.getNewValue());
 					break;
 				case Notification.ADD_MANY:
-					for(Object next : (Collection<?>)msg.getNewValue()) {
-						adapt((Resource)next);
+					for (Object next : (Collection<?>) msg.getNewValue()) {
+						adapt((Resource) next);
 					}
 					break;
 				}
@@ -343,9 +343,9 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		}
 
 		protected void handleNotification(Resource resource, Notification msg) {
-			switch(msg.getFeatureID(Resource.class)) {
+			switch (msg.getFeatureID(Resource.class)) {
 			case Resource.RESOURCE__IS_LOADED:
-				if(msg.getNewBooleanValue()) {
+				if (msg.getNewBooleanValue()) {
 					handleResourceLoaded(resource);
 				}
 				break;

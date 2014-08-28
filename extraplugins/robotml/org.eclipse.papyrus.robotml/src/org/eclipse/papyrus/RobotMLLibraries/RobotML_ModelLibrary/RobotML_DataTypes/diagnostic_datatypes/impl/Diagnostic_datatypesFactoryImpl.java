@@ -5,17 +5,19 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.*;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.DiagnosticArray;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.DiagnosticStatus;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.Diagnostic_datatypesFactory;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.Diagnostic_datatypesPackage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.KeyValue;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Diagnostic_datatypesFactory {
@@ -23,16 +25,16 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static Diagnostic_datatypesFactory init() {
 		try {
-			Diagnostic_datatypesFactory theDiagnostic_datatypesFactory = (Diagnostic_datatypesFactory)EPackage.Registry.INSTANCE.getEFactory(Diagnostic_datatypesPackage.eNS_URI);
+			Diagnostic_datatypesFactory theDiagnostic_datatypesFactory = (Diagnostic_datatypesFactory) EPackage.Registry.INSTANCE.getEFactory(Diagnostic_datatypesPackage.eNS_URI);
 			if (theDiagnostic_datatypesFactory != null) {
 				return theDiagnostic_datatypesFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new Diagnostic_datatypesFactoryImpl();
@@ -42,6 +44,7 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Diagnostic_datatypesFactoryImpl() {
@@ -51,22 +54,27 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case Diagnostic_datatypesPackage.DIAGNOSTIC_ARRAY: return createDiagnosticArray();
-			case Diagnostic_datatypesPackage.DIAGNOSTIC_STATUS: return createDiagnosticStatus();
-			case Diagnostic_datatypesPackage.KEY_VALUE: return createKeyValue();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case Diagnostic_datatypesPackage.DIAGNOSTIC_ARRAY:
+			return createDiagnosticArray();
+		case Diagnostic_datatypesPackage.DIAGNOSTIC_STATUS:
+			return createDiagnosticStatus();
+		case Diagnostic_datatypesPackage.KEY_VALUE:
+			return createKeyValue();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DiagnosticArray createDiagnosticArray() {
@@ -77,6 +85,7 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DiagnosticStatus createDiagnosticStatus() {
@@ -87,6 +96,7 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public KeyValue createKeyValue() {
@@ -97,15 +107,17 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Diagnostic_datatypesPackage getDiagnostic_datatypesPackage() {
-		return (Diagnostic_datatypesPackage)getEPackage();
+		return (Diagnostic_datatypesPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -114,4 +126,4 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 		return Diagnostic_datatypesPackage.eINSTANCE;
 	}
 
-} //Diagnostic_datatypesFactoryImpl
+} // Diagnostic_datatypesFactoryImpl

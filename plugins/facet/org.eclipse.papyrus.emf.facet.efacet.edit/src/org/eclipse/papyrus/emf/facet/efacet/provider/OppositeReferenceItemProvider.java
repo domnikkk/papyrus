@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.provider;
 
@@ -33,16 +33,17 @@ import org.eclipse.papyrus.emf.facet.efacet.OppositeReference;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.OppositeReference} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  * @deprecated use the new eFacet metamodel in org.eclipse.papyrus.emf.facet.efacet.metamodel. Cf.
  *             https://bugs.eclipse.org/bugs/show_bug.cgi?id=373672
  */
 @Deprecated
-//generated code
+// generated code
 @SuppressWarnings("all")
 public class OppositeReferenceItemProvider
-	extends FacetElementItemProvider
-	implements
+		extends FacetElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -52,6 +53,7 @@ public class OppositeReferenceItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public OppositeReferenceItemProvider(AdapterFactory adapterFactory) {
@@ -62,6 +64,7 @@ public class OppositeReferenceItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,28 +81,30 @@ public class OppositeReferenceItemProvider
 	 * This adds a property descriptor for the FOpposite feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addFOppositePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OppositeReference_fOpposite_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_OppositeReference_fOpposite_feature", "_UI_OppositeReference_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 EFacetPackage.Literals.OPPOSITE_REFERENCE__FOPPOSITE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_OppositeReference_fOpposite_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_OppositeReference_fOpposite_feature", "_UI_OppositeReference_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						EFacetPackage.Literals.OPPOSITE_REFERENCE__FOPPOSITE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns OppositeReference.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,14 +116,15 @@ public class OppositeReferenceItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((OppositeReference)object).getName();
+		String label = ((OppositeReference) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_OppositeReference_type") : //$NON-NLS-1$
-			getString("_UI_OppositeReference_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_OppositeReference_type") : //$NON-NLS-1$
+				getString("_UI_OppositeReference_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -126,6 +132,7 @@ public class OppositeReferenceItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,6 +146,7 @@ public class OppositeReferenceItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

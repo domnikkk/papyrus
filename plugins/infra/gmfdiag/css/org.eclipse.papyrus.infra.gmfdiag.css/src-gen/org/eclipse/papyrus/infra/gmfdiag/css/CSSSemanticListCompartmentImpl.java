@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,36 +33,37 @@ public class CSSSemanticListCompartmentImpl extends SemanticListCompartmentImpl 
 	private CSSView cssView;
 
 	protected CSSDrawerStyle getDrawerStyle() {
-		if(drawerStyle == null) {
+		if (drawerStyle == null) {
 			drawerStyle = new CSSDrawerStyleDelegate(this, getEngine());
 		}
 		return drawerStyle;
 	}
 
 	protected ExtendedCSSEngine getEngine() {
-		if(engine == null) {
-			engine = ((CSSDiagramImpl)getDiagram()).getEngine();
+		if (engine == null) {
+			engine = ((CSSDiagramImpl) getDiagram()).getEngine();
 		}
 		return engine;
 	}
 
 	protected CSSView getCSSView() {
-		if(cssView == null) {
+		if (cssView == null) {
 			cssView = new CSSViewDelegate(this, getEngine());
 		}
 		return cssView;
 	}
 
 
-	//////////////////////////////////////////
-	//	Forwards accesses to CSS properties	//
-	//////////////////////////////////////////
+	// ////////////////////////////////////////
+	// Forwards accesses to CSS properties //
+	// ////////////////////////////////////////
 
 
+	@Override
 	public boolean isCSSCollapsed() {
 		boolean value = super.isCollapsed();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getDrawerStyle_Collapsed(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getDrawerStyle_Collapsed(), value)) {
 			return value;
 		} else {
 			return getDrawerStyle().isCSSCollapsed();
@@ -72,7 +73,7 @@ public class CSSSemanticListCompartmentImpl extends SemanticListCompartmentImpl 
 
 	@Override
 	public boolean isCollapsed() {
-		//return super.isCollapsed();
+		// return super.isCollapsed();
 		return isCSSCollapsed();
 	}
 
@@ -84,7 +85,7 @@ public class CSSSemanticListCompartmentImpl extends SemanticListCompartmentImpl 
 	public boolean isCSSVisible() {
 		boolean value = super.isVisible();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getView_Visible(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getView_Visible(), value)) {
 			return value;
 		} else {
 			return getCSSView().isCSSVisible();
@@ -93,9 +94,9 @@ public class CSSSemanticListCompartmentImpl extends SemanticListCompartmentImpl 
 
 
 
-	////////////////////////////////////////////////
-	//	Implements a setter for each CSS property //
-	////////////////////////////////////////////////	
+	// //////////////////////////////////////////////
+	// Implements a setter for each CSS property //
+	// //////////////////////////////////////////////
 
 	@Override
 	public void setVisible(boolean value) {
@@ -169,9 +170,9 @@ public class CSSSemanticListCompartmentImpl extends SemanticListCompartmentImpl 
 		ForceValueHelper.setValue(this, feature, value);
 	}
 
-	//////////////////////////////////
-	//	Implements the unset method //
-	//////////////////////////////////
+	// ////////////////////////////////
+	// Implements the unset method //
+	// ////////////////////////////////
 
 	@Override
 	public void eUnset(int featureId) {

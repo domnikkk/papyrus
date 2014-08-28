@@ -28,8 +28,8 @@ import org.eclipse.papyrus.infra.constraints.DisplayUnit;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.impl.DisplayUnitImpl#getConstraints <em>Constraints</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.impl.DisplayUnitImpl#getElementMultiplicity <em>Element Multiplicity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.impl.DisplayUnitImpl#getConstraints <em>Constraints</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.impl.DisplayUnitImpl#getElementMultiplicity <em>Element Multiplicity</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	 * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getConstraints()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	 * The default value of the '{@link #getElementMultiplicity() <em>Element Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementMultiplicity()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	 * The cached value of the '{@link #getElementMultiplicity() <em>Element Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementMultiplicity()
 	 * @generated
 	 * @ordered
@@ -68,6 +71,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DisplayUnitImpl() {
@@ -77,6 +81,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,6 +92,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<ConstraintDescriptor> getConstraints() {
@@ -99,6 +105,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public int getElementMultiplicity() {
@@ -108,26 +115,29 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setElementMultiplicity(int newElementMultiplicity) {
 		int oldElementMultiplicity = elementMultiplicity;
 		elementMultiplicity = newElementMultiplicity;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ConstraintsPackage.DISPLAY_UNIT__ELEMENT_MULTIPLICITY, oldElementMultiplicity, elementMultiplicity));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraints()).basicAdd(otherEnd, msgs);
+		case ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getConstraints()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -135,13 +145,14 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS:
-				return ((InternalEList<?>)getConstraints()).basicRemove(otherEnd, msgs);
+		case ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS:
+			return ((InternalEList<?>) getConstraints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -149,15 +160,16 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS:
-				return getConstraints();
-			case ConstraintsPackage.DISPLAY_UNIT__ELEMENT_MULTIPLICITY:
-				return getElementMultiplicity();
+		case ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS:
+			return getConstraints();
+		case ConstraintsPackage.DISPLAY_UNIT__ELEMENT_MULTIPLICITY:
+			return getElementMultiplicity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,19 +177,20 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS:
-				getConstraints().clear();
-				getConstraints().addAll((Collection<? extends ConstraintDescriptor>)newValue);
-				return;
-			case ConstraintsPackage.DISPLAY_UNIT__ELEMENT_MULTIPLICITY:
-				setElementMultiplicity((Integer)newValue);
-				return;
+		case ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS:
+			getConstraints().clear();
+			getConstraints().addAll((Collection<? extends ConstraintDescriptor>) newValue);
+			return;
+		case ConstraintsPackage.DISPLAY_UNIT__ELEMENT_MULTIPLICITY:
+			setElementMultiplicity((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -185,17 +198,18 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS:
-				getConstraints().clear();
-				return;
-			case ConstraintsPackage.DISPLAY_UNIT__ELEMENT_MULTIPLICITY:
-				setElementMultiplicity(ELEMENT_MULTIPLICITY_EDEFAULT);
-				return;
+		case ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS:
+			getConstraints().clear();
+			return;
+		case ConstraintsPackage.DISPLAY_UNIT__ELEMENT_MULTIPLICITY:
+			setElementMultiplicity(ELEMENT_MULTIPLICITY_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,15 +217,16 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS:
-				return constraints != null && !constraints.isEmpty();
-			case ConstraintsPackage.DISPLAY_UNIT__ELEMENT_MULTIPLICITY:
-				return elementMultiplicity != ELEMENT_MULTIPLICITY_EDEFAULT;
+		case ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS:
+			return constraints != null && !constraints.isEmpty();
+		case ConstraintsPackage.DISPLAY_UNIT__ELEMENT_MULTIPLICITY:
+			return elementMultiplicity != ELEMENT_MULTIPLICITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -219,11 +234,14 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (elementMultiplicity: ");
@@ -232,4 +250,4 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 		return result.toString();
 	}
 
-} //DisplayUnitImpl
+} // DisplayUnitImpl

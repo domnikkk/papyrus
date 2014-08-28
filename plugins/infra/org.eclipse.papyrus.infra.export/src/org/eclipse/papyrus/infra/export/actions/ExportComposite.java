@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    Anass RADOUANI (AtoS) 
+ *    Anass RADOUANI (AtoS)
  *******************************************************************************/
 
 package org.eclipse.papyrus.infra.export.actions;
@@ -57,7 +57,7 @@ public class ExportComposite extends Composite {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param parent
 	 * @param style
 	 */
@@ -70,9 +70,9 @@ public class ExportComposite extends Composite {
 
 	/**
 	 * Create the view of the list of interaction operators
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite to contain this group
+	 *            the parent composite to contain this group
 	 */
 	protected void createDialogContents() {
 		Composite composite = new Composite(this, SWT.NONE);
@@ -125,14 +125,15 @@ public class ExportComposite extends Composite {
 
 		outputDirectoryBtn.addSelectionListener(new SelectionAdapter() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				ContainerSelectionDialog csDialog = new ContainerSelectionDialog(Activator.getActiveWorkbenchShell(), ResourcesPlugin.getWorkspace().getRoot(), true, Messages.ExportAllDiagramsDialog_3);
 
 
-				if(csDialog.open() == Window.OK) {
+				if (csDialog.open() == Window.OK) {
 					Object[] results = csDialog.getResult();
-					if(results.length == 1 && results[0] instanceof IPath) {
-						URI uri = URI.createPlatformResourceURI(((IPath)results[0]).toString(), true);
+					if (results.length == 1 && results[0] instanceof IPath) {
+						URI uri = URI.createPlatformResourceURI(((IPath) results[0]).toString(), true);
 						outputDirectory = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(uri.toPlatformString(true)));
 						outputPathTxt.setText(outputDirectory.getLocation().toString());
 					}
@@ -142,6 +143,7 @@ public class ExportComposite extends Composite {
 
 		outputFormatCb.addSelectionListener(new SelectionAdapter() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				exporter = outputFormatCb.getText();
 			}
@@ -150,7 +152,7 @@ public class ExportComposite extends Composite {
 
 	/**
 	 * set the file from which diagrams will be exported
-	 * 
+	 *
 	 * @param file
 	 */
 	public void setSelectedDiagramFile(IFile file) {
@@ -161,7 +163,7 @@ public class ExportComposite extends Composite {
 	private void loadData() {
 		outputDirectory = selectedDiagramFile.getParent();
 		outputPathTxt.setText(outputDirectory.getLocation().toString());
-		for(ImageFileFormat imageFileFormat : ImageFileFormat.VALUES) {
+		for (ImageFileFormat imageFileFormat : ImageFileFormat.VALUES) {
 			outputFormatCb.add(imageFileFormat.toString());
 		}
 
@@ -172,7 +174,7 @@ public class ExportComposite extends Composite {
 
 	/**
 	 * return the output directory where exported diagrams will be saved
-	 * 
+	 *
 	 * @return
 	 */
 	public IResource getOutputDirectory() {
@@ -181,7 +183,7 @@ public class ExportComposite extends Composite {
 
 	/**
 	 * return the path to the output directory
-	 * 
+	 *
 	 * @return
 	 */
 	public String getExporter() {
@@ -190,7 +192,7 @@ public class ExportComposite extends Composite {
 
 	/**
 	 * return the qualified name of the diagram
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean getQualifiedName() {

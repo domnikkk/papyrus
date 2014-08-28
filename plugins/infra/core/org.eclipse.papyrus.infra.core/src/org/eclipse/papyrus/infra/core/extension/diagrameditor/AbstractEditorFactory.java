@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,12 +13,13 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.extension.diagrameditor;
 
+import org.eclipse.papyrus.infra.core.editorsfactory.IEditorFactory;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 
 /**
  * Abstract base class for Factory of editors. See {@link IEditorFactory}.
- * 
- * 
+ *
+ *
  * @author Remi Schnekenburger
  * @author Patrick Tessier
  * @author cedric dumoulin
@@ -46,11 +47,11 @@ public abstract class AbstractEditorFactory implements IPluggableEditorFactory {
 
 	/**
 	 * Creates a new AbstractEditorFactory.
-	 * 
+	 *
 	 * @param diagramClass
-	 *        expected Class of the diagram to create.
+	 *            expected Class of the diagram to create.
 	 * @param expectedType
-	 *        expected diagram type (@see {@link Diagram#getType()})
+	 *            expected diagram type (@see {@link Diagram#getType()})
 	 */
 	public AbstractEditorFactory(Class<?> diagramClass, String expectedType) {
 		assert (expectedType != null);
@@ -60,12 +61,13 @@ public abstract class AbstractEditorFactory implements IPluggableEditorFactory {
 
 	/**
 	 * Initialize the factory with useful Classes.
-	 * 
+	 *
 	 * @param serviceRegistry
-	 *        Service registry that will be provided to created editor.
+	 *            Service registry that will be provided to created editor.
 	 * @param editorDescriptor
-	 *        Descriptor containing data from the Eclipse Extension.
+	 *            Descriptor containing data from the Eclipse Extension.
 	 */
+	@Override
 	public void init(ServicesRegistry serviceRegistry, EditorDescriptor editorDescriptor) {
 		this.editorDescriptor = editorDescriptor;
 		this.serviceRegistry = serviceRegistry;
@@ -81,7 +83,7 @@ public abstract class AbstractEditorFactory implements IPluggableEditorFactory {
 
 	/**
 	 * Returns the expected class for the diagram implementation
-	 * 
+	 *
 	 * @return the expected class for the diagram implementation
 	 */
 	public Class<?> getDiagramClass() {
@@ -90,7 +92,7 @@ public abstract class AbstractEditorFactory implements IPluggableEditorFactory {
 
 	/**
 	 * Returns the expected type of the diagram
-	 * 
+	 *
 	 * @return the expected diagram type (@see {@link Diagram#getType()})
 	 */
 	public String getExpectedType() {

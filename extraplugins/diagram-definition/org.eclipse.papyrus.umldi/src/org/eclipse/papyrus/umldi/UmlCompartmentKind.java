@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Uml Compartment Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.umldi.UMLDIPackage#getUmlCompartmentKind()
  * @model
  * @generated
@@ -32,7 +32,7 @@ public enum UmlCompartmentKind implements Enumerator {
 	 * The '<em><b>Attributes</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ATTRIBUTES_VALUE
 	 * @generated
 	 * @ordered
@@ -42,7 +42,7 @@ public enum UmlCompartmentKind implements Enumerator {
 	 * The '<em><b>Operations</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OPERATIONS_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum UmlCompartmentKind implements Enumerator {
 	 * If the meaning of '<em><b>Attributes</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ATTRIBUTES
 	 * @model name="attributes"
 	 * @generated
@@ -71,7 +71,7 @@ public enum UmlCompartmentKind implements Enumerator {
 	 * If the meaning of '<em><b>Operations</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OPERATIONS
 	 * @model name="operations"
 	 * @generated
@@ -83,16 +83,16 @@ public enum UmlCompartmentKind implements Enumerator {
 	 * An array of all the '<em><b>Uml Compartment Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	private static final UmlCompartmentKind[] VALUES_ARRAY = new UmlCompartmentKind[]{ ATTRIBUTES, OPERATIONS, };
+	private static final UmlCompartmentKind[] VALUES_ARRAY = new UmlCompartmentKind[] { ATTRIBUTES, OPERATIONS, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Uml Compartment Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<UmlCompartmentKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -101,13 +101,13 @@ public enum UmlCompartmentKind implements Enumerator {
 	 * Returns the '<em><b>Uml Compartment Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static UmlCompartmentKind get(String literal) {
-		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			UmlCompartmentKind result = VALUES_ARRAY[i];
-			if(result.toString().equals(literal)) {
+			if (result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -118,13 +118,13 @@ public enum UmlCompartmentKind implements Enumerator {
 	 * Returns the '<em><b>Uml Compartment Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static UmlCompartmentKind getByName(String name) {
-		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			UmlCompartmentKind result = VALUES_ARRAY[i];
-			if(result.getName().equals(name)) {
+			if (result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -135,11 +135,11 @@ public enum UmlCompartmentKind implements Enumerator {
 	 * Returns the '<em><b>Uml Compartment Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static UmlCompartmentKind get(int value) {
-		switch(value) {
+		switch (value) {
 		case ATTRIBUTES_VALUE:
 			return ATTRIBUTES;
 		case OPERATIONS_VALUE:
@@ -151,7 +151,7 @@ public enum UmlCompartmentKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -159,7 +159,7 @@ public enum UmlCompartmentKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -167,7 +167,7 @@ public enum UmlCompartmentKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -176,7 +176,7 @@ public enum UmlCompartmentKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private UmlCompartmentKind(int value, String name, String literal) {
@@ -188,9 +188,10 @@ public enum UmlCompartmentKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 		return value;
 	}
@@ -198,9 +199,10 @@ public enum UmlCompartmentKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -208,9 +210,10 @@ public enum UmlCompartmentKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
 		return literal;
 	}
@@ -219,11 +222,11 @@ public enum UmlCompartmentKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-} //UmlCompartmentKind
+} // UmlCompartmentKind

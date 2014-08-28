@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,6 +49,7 @@ import org.eclipse.papyrus.cdo.validation.problems.util.ProblemsAdapterFactory;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc --> <!--
  * end-user-doc -->
+ *
  * @generated
  */
 public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
@@ -56,15 +57,15 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
 
 	/**
-	 * This is used to implement
-	 * {@link org.eclipse.emf.edit.provider.IChangeNotifier}. <!--
+	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -73,6 +74,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	 * This helps manage the child creation extenders.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(ProblemsEditPlugin.INSTANCE, ProblemsPackage.eNS_URI);
@@ -81,6 +83,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -92,7 +95,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ProblemsItemProviderAdapterFactory() {
@@ -111,20 +114,20 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.cdo.validation.problems.EProblem} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected EProblemItemProvider eProblemItemProvider;
 
 	/**
-	 * This creates an adapter for a
-	 * {@link org.eclipse.papyrus.cdo.validation.problems.EProblem}. <!--
+	 * This creates an adapter for a {@link org.eclipse.papyrus.cdo.validation.problems.EProblem}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createEProblemAdapter() {
-		if(eProblemItemProvider == null) {
+		if (eProblemItemProvider == null) {
 			eProblemItemProvider = new EProblemItemProvider(this);
 		}
 
@@ -134,6 +137,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected EProblemsContainerItemProvider eProblemsContainerItemProvider;
@@ -141,11 +145,12 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createEProblemsContainerAdapter() {
-		if(eProblemsContainerItemProvider == null) {
+		if (eProblemsContainerItemProvider == null) {
 			eProblemsContainerItemProvider = new EProblemsContainerItemProvider(this);
 		}
 
@@ -156,6 +161,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	 * This keeps track of the one adapter used for all {@link java.util.Map.Entry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected AttributeItemProvider attributeItemProvider;
@@ -164,11 +170,12 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	 * This creates an adapter for a {@link java.util.Map.Entry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createAttributeAdapter() {
-		if(attributeItemProvider == null) {
+		if (attributeItemProvider == null) {
 			attributeItemProvider = new AttributeItemProvider(this);
 		}
 
@@ -178,9 +185,10 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This returns the root adapter factory that contains this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -188,15 +196,17 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This sets the composed adapter factory that contains this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,6 +217,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,13 +227,14 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if(isFactoryForType(type)) {
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if(!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -232,6 +244,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public List<IChildCreationExtender> getChildCreationExtenders() {
@@ -240,16 +253,20 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ResourceLocator getResourceLocator() {
 		return childCreationExtenderManager;
 	}
@@ -257,8 +274,10 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This adds a listener.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -266,23 +285,25 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This removes a listener.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
 
 	/**
-	 * This delegates to {@link #changeNotifier} and to
-	 * {@link #parentAdapterFactory}. <!-- begin-user-doc --> <!-- end-user-doc
+	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if(parentAdapterFactory != null) {
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -290,16 +311,20 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This disposes all of the item providers created by this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if(eProblemItemProvider != null)
+		if (eProblemItemProvider != null) {
 			eProblemItemProvider.dispose();
-		if(eProblemsContainerItemProvider != null)
+		}
+		if (eProblemsContainerItemProvider != null) {
 			eProblemsContainerItemProvider.dispose();
-		if(attributeItemProvider != null)
+		}
+		if (attributeItemProvider != null) {
 			attributeItemProvider.dispose();
+		}
 	}
 
 }

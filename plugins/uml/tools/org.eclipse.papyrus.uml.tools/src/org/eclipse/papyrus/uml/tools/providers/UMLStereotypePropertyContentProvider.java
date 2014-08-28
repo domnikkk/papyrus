@@ -29,9 +29,9 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
- * 
+ *
  * This content providers is used to get the properties of stereotypes
- * 
+ *
  */
 public class UMLStereotypePropertyContentProvider implements IHierarchicContentProvider, IInheritedElementContentProvider, IIgnoreStereotypeBasePropertyContentProvider {
 
@@ -53,13 +53,13 @@ public class UMLStereotypePropertyContentProvider implements IHierarchicContentP
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param profiles
-	 *        the profiles to navigate
-	 * 
-	 *        the boolean fields are initialized to false
+	 *            the profiles to navigate
+	 *
+	 *            the boolean fields are initialized to false
 	 */
 	public UMLStereotypePropertyContentProvider(final List<Profile> profiles) {
 		this.profiles = profiles;
@@ -68,9 +68,9 @@ public class UMLStereotypePropertyContentProvider implements IHierarchicContentP
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public UMLStereotypePropertyContentProvider() {
 		this(null);
@@ -78,7 +78,7 @@ public class UMLStereotypePropertyContentProvider implements IHierarchicContentP
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public Object[] getElements() {
@@ -86,9 +86,9 @@ public class UMLStereotypePropertyContentProvider implements IHierarchicContentP
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getElements(java.lang.Object)
-	 * 
+	 *
 	 * @param inputElement
 	 * @return
 	 */
@@ -97,35 +97,35 @@ public class UMLStereotypePropertyContentProvider implements IHierarchicContentP
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getChildren(java.lang.Object)
-	 * 
+	 *
 	 * @param parentElement
 	 * @return
 	 */
 	public Object[] getChildren(Object parentElement) {
 		List<Object> children = new ArrayList<Object>();
-		if(hasChildren(parentElement)) {
-			if(parentElement instanceof Package) {
-				for(final EObject current : ((Package)parentElement).getOwnedMembers()) {
-					if(hasChildren(current)) {
+		if (hasChildren(parentElement)) {
+			if (parentElement instanceof Package) {
+				for (final EObject current : ((Package) parentElement).getOwnedMembers()) {
+					if (hasChildren(current)) {
 						children.add(current);
 					}
 				}
-			} else if(parentElement instanceof Stereotype) {
-				if(ignoreInheritedProperties) {
-					if(this.ignoreBaseProperty) {
-						children.addAll(StereotypeUtil.getStereotypePropertiesWithoutBaseProperties((Stereotype)parentElement));
+			} else if (parentElement instanceof Stereotype) {
+				if (ignoreInheritedProperties) {
+					if (this.ignoreBaseProperty) {
+						children.addAll(StereotypeUtil.getStereotypePropertiesWithoutBaseProperties((Stereotype) parentElement));
 					} else {
-						children.addAll((((Stereotype)parentElement).getOwnedAttributes()));
+						children.addAll((((Stereotype) parentElement).getOwnedAttributes()));
 					}
 
 				} else {
-					if(this.ignoreBaseProperty) {
-						children.addAll(StereotypeUtil.getAllStereotypePropertiesWithoutBaseProperties((Stereotype)parentElement));
+					if (this.ignoreBaseProperty) {
+						children.addAll(StereotypeUtil.getAllStereotypePropertiesWithoutBaseProperties((Stereotype) parentElement));
 
 					} else {
-						children.addAll((((Stereotype)parentElement).getAllAttributes()));
+						children.addAll((((Stereotype) parentElement).getAllAttributes()));
 					}
 				}
 			}
@@ -136,31 +136,31 @@ public class UMLStereotypePropertyContentProvider implements IHierarchicContentP
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getParent(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	public Object getParent(Object element) {
-		if(element instanceof EObject) {
-			return ((EObject)element).eContainer();
+		if (element instanceof EObject) {
+			return ((EObject) element).eContainer();
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#hasChildren(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	public boolean hasChildren(Object element) {
-		if(element instanceof Element) {
-			final TreeIterator<EObject> iter = ((EObject)element).eAllContents();
-			while(iter.hasNext()) {
-				if(isValidValue(iter.next())) {
+		if (element instanceof Element) {
+			final TreeIterator<EObject> iter = ((EObject) element).eAllContents();
+			while (iter.hasNext()) {
+				if (isValidValue(iter.next())) {
 					return true;
 				}
 			}
@@ -176,19 +176,19 @@ public class UMLStereotypePropertyContentProvider implements IHierarchicContentP
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IHierarchicContentProvider#isValidValue(java.lang.Object)
-	 * 
+	 *
 	 * @param element
-	 *        an element
+	 *            an element
 	 * @return
 	 *         <code>true</code> if the element is a Property owned by a Stereotype
 	 */
 	public boolean isValidValue(Object element) {
-		if(element instanceof Element) {
-			boolean result = element instanceof Property && ((Element)element).eContainer() instanceof Stereotype;
-			if(result) {
-				return StereotypeUtil.isValidStereotypeProperty((Property)element);
+		if (element instanceof Element) {
+			boolean result = element instanceof Property && ((Element) element).eContainer() instanceof Stereotype;
+			if (result) {
+				return StereotypeUtil.isValidStereotypeProperty((Property) element);
 			}
 			return result;
 		}
@@ -196,9 +196,9 @@ public class UMLStereotypePropertyContentProvider implements IHierarchicContentP
 	}
 
 	/**
-	 * 
+	 *
 	 * @param profiles
-	 *        the list of the profiles to navigate
+	 *            the list of the profiles to navigate
 	 */
 	public void setProfiles(final List<Profile> profiles) {
 		this.profiles = profiles;
@@ -206,7 +206,7 @@ public class UMLStereotypePropertyContentProvider implements IHierarchicContentP
 
 	/**
 	 * Setter for {@link #ignoreBaseProperty}
-	 * 
+	 *
 	 * @param ignoreBaseProperty
 	 */
 	public void setIgnoreBaseProperty(boolean ignoreBaseProperty) {
@@ -215,9 +215,9 @@ public class UMLStereotypePropertyContentProvider implements IHierarchicContentP
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IInheritedElementContentProvider#setIgnoreInheritedElements(boolean)
-	 * 
+	 *
 	 * @param ignoreInheritedElements
 	 */
 	public void setIgnoreInheritedElements(final boolean ignoreInheritedElements) {
@@ -225,9 +225,9 @@ public class UMLStereotypePropertyContentProvider implements IHierarchicContentP
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IInheritedElementContentProvider#isIgnoringInheritedElements()
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isIgnoringInheritedElements() {
@@ -235,9 +235,9 @@ public class UMLStereotypePropertyContentProvider implements IHierarchicContentP
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.tools.providers.IIgnoreStereotypeBasePropertyContentProvider#isIgnoringBaseProperty()
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isIgnoringBaseProperty() {

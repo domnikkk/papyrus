@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class ConstraintBlockPropertyEditHelperAdvice extends AbstractEditHelperA
 
 	/**
 	 * Every {@link Property} created in the context of a {@link ConstraintBlock} is Composite.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -38,12 +38,13 @@ public class ConstraintBlockPropertyEditHelperAdvice extends AbstractEditHelperA
 
 		return new ConfigureElementCommand(request) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				Property element = (Property)request.getElementToConfigure();
-				if(element != null) {
-					
+				Property element = (Property) request.getElementToConfigure();
+				if (element != null) {
+
 					Element owner = element.getOwner();
-					if (((ISpecializationType)SysMLElementTypes.CONSTRAINT_BLOCK).getMatcher().matches(owner)) {
+					if (((ISpecializationType) SysMLElementTypes.CONSTRAINT_BLOCK).getMatcher().matches(owner)) {
 						element.setAggregation(AggregationKind.COMPOSITE_LITERAL);
 					}
 				}

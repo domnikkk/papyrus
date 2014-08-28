@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -80,8 +80,9 @@ public class CustomStateMachineResizeCommand extends AbstractTransactionalComman
 		Zone.setWidth(stateMachineCompartment, Zone.getWidth(stateMachine));
 		Zone.setHeight(stateMachineCompartment, Zone.getHeight(stateMachine) - Zone.getHeight(stateMachineLabel));
 		Zone.setY(stateMachineCompartment, Zone.getHeight(stateMachineLabel));
-		if (internalResize && (dx == 0))
+		if (internalResize && (dx == 0)) {
 			return CommandResult.newOKCommandResult();
+		}
 		// one region displayed case
 		if (stateMachineCompartment.getChildren().size() == 1) {
 			// we need to resize the region

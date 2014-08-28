@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,18 +16,18 @@ package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
 /**
  * Main Exception from the SashWindowsSystem.
- * 
+ *
  * @author dumoulin
  */
 public class SashWindowsException extends Exception {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * 
+	 *
 	 */
 	public SashWindowsException() {
 	}

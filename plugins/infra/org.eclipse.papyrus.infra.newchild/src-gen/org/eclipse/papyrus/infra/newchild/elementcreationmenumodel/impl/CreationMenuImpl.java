@@ -1,23 +1,20 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  * 	CEA LIST - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.CreationMenu;
 import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreationMenuModelPackage;
 
@@ -28,9 +25,9 @@ import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreati
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.impl.CreationMenuImpl#getElementTypeIdRef <em>Element Type Id Ref</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.impl.CreationMenuImpl#getRole <em>Role</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.impl.CreationMenuImpl#isDisplayAllRoles <em>Display All Roles</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.impl.CreationMenuImpl#getElementTypeIdRef <em>Element Type Id Ref</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.impl.CreationMenuImpl#getRole <em>Role</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.impl.CreationMenuImpl#isDisplayAllRoles <em>Display All Roles</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +38,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	 * The default value of the '{@link #getElementTypeIdRef() <em>Element Type Id Ref</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementTypeIdRef()
 	 * @generated
 	 * @ordered
@@ -51,6 +49,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	 * The cached value of the '{@link #getElementTypeIdRef() <em>Element Type Id Ref</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementTypeIdRef()
 	 * @generated
 	 * @ordered
@@ -61,6 +60,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	 * The default value of the '{@link #getRole() <em>Role</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRole()
 	 * @generated
 	 * @ordered
@@ -71,6 +71,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	 * The cached value of the '{@link #getRole() <em>Role</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRole()
 	 * @generated
 	 * @ordered
@@ -81,6 +82,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	 * The default value of the '{@link #isDisplayAllRoles() <em>Display All Roles</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isDisplayAllRoles()
 	 * @generated
 	 * @ordered
@@ -91,6 +93,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	 * The cached value of the '{@link #isDisplayAllRoles() <em>Display All Roles</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isDisplayAllRoles()
 	 * @generated
 	 * @ordered
@@ -100,6 +103,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected CreationMenuImpl() {
@@ -109,6 +113,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,6 +124,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getElementTypeIdRef() {
@@ -128,18 +134,21 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setElementTypeIdRef(String newElementTypeIdRef) {
 		String oldElementTypeIdRef = elementTypeIdRef;
 		elementTypeIdRef = newElementTypeIdRef;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementCreationMenuModelPackage.CREATION_MENU__ELEMENT_TYPE_ID_REF, oldElementTypeIdRef, elementTypeIdRef));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getRole() {
@@ -149,18 +158,21 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setRole(String newRole) {
 		String oldRole = role;
 		role = newRole;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementCreationMenuModelPackage.CREATION_MENU__ROLE, oldRole, role));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public boolean isDisplayAllRoles() {
@@ -170,29 +182,32 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDisplayAllRoles(boolean newDisplayAllRoles) {
 		boolean oldDisplayAllRoles = displayAllRoles;
 		displayAllRoles = newDisplayAllRoles;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementCreationMenuModelPackage.CREATION_MENU__DISPLAY_ALL_ROLES, oldDisplayAllRoles, displayAllRoles));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ElementCreationMenuModelPackage.CREATION_MENU__ELEMENT_TYPE_ID_REF:
-				return getElementTypeIdRef();
-			case ElementCreationMenuModelPackage.CREATION_MENU__ROLE:
-				return getRole();
-			case ElementCreationMenuModelPackage.CREATION_MENU__DISPLAY_ALL_ROLES:
-				return isDisplayAllRoles();
+		case ElementCreationMenuModelPackage.CREATION_MENU__ELEMENT_TYPE_ID_REF:
+			return getElementTypeIdRef();
+		case ElementCreationMenuModelPackage.CREATION_MENU__ROLE:
+			return getRole();
+		case ElementCreationMenuModelPackage.CREATION_MENU__DISPLAY_ALL_ROLES:
+			return isDisplayAllRoles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -200,20 +215,21 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ElementCreationMenuModelPackage.CREATION_MENU__ELEMENT_TYPE_ID_REF:
-				setElementTypeIdRef((String)newValue);
-				return;
-			case ElementCreationMenuModelPackage.CREATION_MENU__ROLE:
-				setRole((String)newValue);
-				return;
-			case ElementCreationMenuModelPackage.CREATION_MENU__DISPLAY_ALL_ROLES:
-				setDisplayAllRoles((Boolean)newValue);
-				return;
+		case ElementCreationMenuModelPackage.CREATION_MENU__ELEMENT_TYPE_ID_REF:
+			setElementTypeIdRef((String) newValue);
+			return;
+		case ElementCreationMenuModelPackage.CREATION_MENU__ROLE:
+			setRole((String) newValue);
+			return;
+		case ElementCreationMenuModelPackage.CREATION_MENU__DISPLAY_ALL_ROLES:
+			setDisplayAllRoles((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -221,20 +237,21 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ElementCreationMenuModelPackage.CREATION_MENU__ELEMENT_TYPE_ID_REF:
-				setElementTypeIdRef(ELEMENT_TYPE_ID_REF_EDEFAULT);
-				return;
-			case ElementCreationMenuModelPackage.CREATION_MENU__ROLE:
-				setRole(ROLE_EDEFAULT);
-				return;
-			case ElementCreationMenuModelPackage.CREATION_MENU__DISPLAY_ALL_ROLES:
-				setDisplayAllRoles(DISPLAY_ALL_ROLES_EDEFAULT);
-				return;
+		case ElementCreationMenuModelPackage.CREATION_MENU__ELEMENT_TYPE_ID_REF:
+			setElementTypeIdRef(ELEMENT_TYPE_ID_REF_EDEFAULT);
+			return;
+		case ElementCreationMenuModelPackage.CREATION_MENU__ROLE:
+			setRole(ROLE_EDEFAULT);
+			return;
+		case ElementCreationMenuModelPackage.CREATION_MENU__DISPLAY_ALL_ROLES:
+			setDisplayAllRoles(DISPLAY_ALL_ROLES_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -242,17 +259,18 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ElementCreationMenuModelPackage.CREATION_MENU__ELEMENT_TYPE_ID_REF:
-				return ELEMENT_TYPE_ID_REF_EDEFAULT == null ? elementTypeIdRef != null : !ELEMENT_TYPE_ID_REF_EDEFAULT.equals(elementTypeIdRef);
-			case ElementCreationMenuModelPackage.CREATION_MENU__ROLE:
-				return ROLE_EDEFAULT == null ? role != null : !ROLE_EDEFAULT.equals(role);
-			case ElementCreationMenuModelPackage.CREATION_MENU__DISPLAY_ALL_ROLES:
-				return displayAllRoles != DISPLAY_ALL_ROLES_EDEFAULT;
+		case ElementCreationMenuModelPackage.CREATION_MENU__ELEMENT_TYPE_ID_REF:
+			return ELEMENT_TYPE_ID_REF_EDEFAULT == null ? elementTypeIdRef != null : !ELEMENT_TYPE_ID_REF_EDEFAULT.equals(elementTypeIdRef);
+		case ElementCreationMenuModelPackage.CREATION_MENU__ROLE:
+			return ROLE_EDEFAULT == null ? role != null : !ROLE_EDEFAULT.equals(role);
+		case ElementCreationMenuModelPackage.CREATION_MENU__DISPLAY_ALL_ROLES:
+			return displayAllRoles != DISPLAY_ALL_ROLES_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -260,11 +278,14 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (elementTypeIdRef: ");
@@ -277,4 +298,4 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 		return result.toString();
 	}
 
-} //CreationMenuImpl
+} // CreationMenuImpl

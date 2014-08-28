@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,13 +39,13 @@ public class RepositoryAdminListener implements IPapyrusRepositoryAdminListener 
 		final String url = event.getRepositoryURL();
 
 		IPapyrusRepository existing = repositoryManager.getRepository(url);
-		if(existing == null) {
+		if (existing == null) {
 			final String name = event.getRepositoryName();
 			UIUtil.getDisplay().asyncExec(new Runnable() {
 
 				@Override
 				public void run() {
-					if(MessageDialog.openQuestion(UIUtil.getActiveWorkbenchWindow().getShell(), Messages.RepositoryAdminListener_0, NLS.bind(Messages.RepositoryAdminListener_1, name))) {
+					if (MessageDialog.openQuestion(UIUtil.getActiveWorkbenchWindow().getShell(), Messages.RepositoryAdminListener_0, NLS.bind(Messages.RepositoryAdminListener_1, name))) {
 						repositoryManager.createRepository(url).setName(uniqueName(name));
 						repositoryManager.saveRepositories();
 					}
@@ -57,13 +57,13 @@ public class RepositoryAdminListener implements IPapyrusRepositoryAdminListener 
 	@Override
 	public void repositoryRemoved(PapyrusRepositoryAdminEvent event) {
 		final IPapyrusRepository existing = repositoryManager.getRepository(event.getRepositoryURL());
-		if(existing != null) {
+		if (existing != null) {
 			final String name = existing.getName();
 			UIUtil.getDisplay().asyncExec(new Runnable() {
 
 				@Override
 				public void run() {
-					if(MessageDialog.openQuestion(UIUtil.getActiveWorkbenchWindow().getShell(), Messages.RepositoryAdminListener_2, NLS.bind(Messages.RepositoryAdminListener_3, name))) {
+					if (MessageDialog.openQuestion(UIUtil.getActiveWorkbenchWindow().getShell(), Messages.RepositoryAdminListener_2, NLS.bind(Messages.RepositoryAdminListener_3, name))) {
 						repositoryManager.removeRepository(existing);
 						repositoryManager.saveRepositories();
 					}
@@ -79,14 +79,14 @@ public class RepositoryAdminListener implements IPapyrusRepositoryAdminListener 
 
 		do {
 			again = false;
-			for(IPapyrusRepository next : repositoryManager.getRepositories()) {
-				if(result.equals(next.getName())) {
+			for (IPapyrusRepository next : repositoryManager.getRepositories()) {
+				if (result.equals(next.getName())) {
 					result = NLS.bind(Messages.RepositoryAdminListener_4, preferredName, counter++);
 					again = true;
 					break;
 				}
 			}
-		} while(again);
+		} while (again);
 
 		return result;
 	}

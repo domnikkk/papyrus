@@ -9,17 +9,18 @@ package org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWit
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.*;
+import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintRule;
+import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintSpecification;
+import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintWithVSLlFactory;
+import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintWithVSLlPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class ConstraintWithVSLlFactoryImpl extends EFactoryImpl implements ConstraintWithVSLlFactory {
@@ -27,16 +28,16 @@ public class ConstraintWithVSLlFactoryImpl extends EFactoryImpl implements Const
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static ConstraintWithVSLlFactory init() {
 		try {
-			ConstraintWithVSLlFactory theConstraintWithVSLlFactory = (ConstraintWithVSLlFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/marte/textedit/constraintwithvsl/xtext/ConstraintWithVSLl"); 
+			ConstraintWithVSLlFactory theConstraintWithVSLlFactory = (ConstraintWithVSLlFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/marte/textedit/constraintwithvsl/xtext/ConstraintWithVSLl");
 			if (theConstraintWithVSLlFactory != null) {
 				return theConstraintWithVSLlFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ConstraintWithVSLlFactoryImpl();
@@ -46,6 +47,7 @@ public class ConstraintWithVSLlFactoryImpl extends EFactoryImpl implements Const
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ConstraintWithVSLlFactoryImpl() {
@@ -55,23 +57,28 @@ public class ConstraintWithVSLlFactoryImpl extends EFactoryImpl implements Const
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ConstraintWithVSLlPackage.CONSTRAINT_RULE: return createConstraintRule();
-			case ConstraintWithVSLlPackage.CONSTRAINT_SPECIFICATION: return createConstraintSpecification();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case ConstraintWithVSLlPackage.CONSTRAINT_RULE:
+			return createConstraintRule();
+		case ConstraintWithVSLlPackage.CONSTRAINT_SPECIFICATION:
+			return createConstraintSpecification();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ConstraintRule createConstraintRule() {
 		ConstraintRuleImpl constraintRule = new ConstraintRuleImpl();
 		return constraintRule;
@@ -80,8 +87,10 @@ public class ConstraintWithVSLlFactoryImpl extends EFactoryImpl implements Const
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ConstraintSpecification createConstraintSpecification() {
 		ConstraintSpecificationImpl constraintSpecification = new ConstraintSpecificationImpl();
 		return constraintSpecification;
@@ -90,15 +99,18 @@ public class ConstraintWithVSLlFactoryImpl extends EFactoryImpl implements Const
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ConstraintWithVSLlPackage getConstraintWithVSLlPackage() {
-		return (ConstraintWithVSLlPackage)getEPackage();
+		return (ConstraintWithVSLlPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -107,4 +119,4 @@ public class ConstraintWithVSLlFactoryImpl extends EFactoryImpl implements Const
 		return ConstraintWithVSLlPackage.eINSTANCE;
 	}
 
-} //ConstraintWithVSLlFactoryImpl
+} // ConstraintWithVSLlFactoryImpl

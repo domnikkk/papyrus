@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.papyrus.uml.diagram.common.layout.SameAlignment;
  * This class provides a custom method to do an align action using links and not
  * nodes. This action moves node to set the selected link vertically or
  * horizontally. The anchor connection don't move on the node.
- * 
+ *
  */
 public class AlignmentLinkHelper {
 
@@ -44,13 +44,13 @@ public class AlignmentLinkHelper {
 	private List<SameAlignment> families = new ArrayList<SameAlignment>();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param editparts
-	 *        the selected editpart for the alignment action
+	 *            the selected editpart for the alignment action
 	 * @param alignment
-	 *        the alignment
+	 *            the alignment
 	 */
 	public AlignmentLinkHelper(List<?> editparts, int alignment) {
 		this.linkEditparts = editparts;
@@ -59,19 +59,18 @@ public class AlignmentLinkHelper {
 
 	/**
 	 * Returns the command for this link representation
-	 * 
+	 *
 	 * @return <ul>
 	 *         <li>the command for this link representation</li>
-	 *         <li> {@linkplain UnexecutableCommand#INSTANCE} if the alignment is {@linkplain PositionConstants#MIDDLE} or
-	 *         {@linkplain PositionConstants#CENTER}</li>
+	 *         <li> {@linkplain UnexecutableCommand#INSTANCE} if the alignment is {@linkplain PositionConstants#MIDDLE} or {@linkplain PositionConstants#CENTER}</li>
 	 *         </ul>
 	 */
 	public Command createCommand() {
-		if(this.alignment == PositionConstants.MIDDLE || this.alignment == PositionConstants.CENTER || this.linkEditparts.size() == 0) {
+		if (this.alignment == PositionConstants.MIDDLE || this.alignment == PositionConstants.CENTER || this.linkEditparts.size() == 0) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		organizeSelection();
-		if(isAncestorSelected()) {
+		if (isAncestorSelected()) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return getCommand();
@@ -79,25 +78,25 @@ public class AlignmentLinkHelper {
 
 	/**
 	 * Tests if a parent and one of these children are selected
-	 * 
+	 *
 	 * @return <ul>
 	 *         <li>{@code true}</li>if a parent and one of these children are selected
 	 *         <li>{@code false}</li>if not
 	 *         </ul>
-	 * 
+	 *
 	 */
 	protected boolean isAncestorSelected() {
 		List<EditPart> nodesEditPart = new ArrayList<EditPart>();
 		// get all the sources and target for the selected links
-		for(Object currentEP : linkEditparts) {
-			EditPart source = ((AbstractConnectionEditPart)currentEP).getSource();
-			EditPart target = ((AbstractConnectionEditPart)currentEP).getTarget();
+		for (Object currentEP : linkEditparts) {
+			EditPart source = ((AbstractConnectionEditPart) currentEP).getSource();
+			EditPart target = ((AbstractConnectionEditPart) currentEP).getTarget();
 			nodesEditPart.add(source);
 			nodesEditPart.add(target);
 		}
 		// test if a selected editpart is included another selected editpart
-		for(EditPart ep : nodesEditPart) {
-			if(ToolUtilities.isAncestorContainedIn(nodesEditPart, ep)) {
+		for (EditPart ep : nodesEditPart) {
+			if (ToolUtilities.isAncestorContainedIn(nodesEditPart, ep)) {
 				return true;
 			}
 		}
@@ -106,15 +105,15 @@ public class AlignmentLinkHelper {
 
 	/**
 	 * Builds and returns the command for this link representation
-	 * 
+	 *
 	 * @return the command for this link representation
 	 */
 	protected Command getCommand() {
 		CompoundCommand cmd = new CompoundCommand("Command for alignment by links"); //$NON-NLS-1$
 		Command tmp;
-		for(SameAlignment currentFamily : families) {
+		for (SameAlignment currentFamily : families) {
 			tmp = currentFamily.getCommand();
-			if(tmp != null && tmp.canExecute()) {
+			if (tmp != null && tmp.canExecute()) {
 				cmd.add(tmp);
 			}
 		}
@@ -127,10 +126,10 @@ public class AlignmentLinkHelper {
 	 * links which share nodes are owned by the same {@linkplain SameAlignment}.
 	 */
 	protected void organizeSelection() {
-		for(Object currentEP : this.linkEditparts) {
+		for (Object currentEP : this.linkEditparts) {
 			// get the editPart source and target for the link
-			EditPart source = ((AbstractConnectionEditPart)currentEP).getSource();
-			EditPart target = ((AbstractConnectionEditPart)currentEP).getTarget();
+			EditPart source = ((AbstractConnectionEditPart) currentEP).getSource();
+			EditPart target = ((AbstractConnectionEditPart) currentEP).getTarget();
 
 			SameAlignment familySource = null;
 			SameAlignment familyTarget = null;
@@ -138,17 +137,17 @@ public class AlignmentLinkHelper {
 			EditPartRepresentation sourceRep = null;
 			EditPartRepresentation targetRep = null;
 			// we look for a representation of these source and target
-			for(SameAlignment family : families) {
-				if(family.getEditPartRepresentationFor(source) != null) {
+			for (SameAlignment family : families) {
+				if (family.getEditPartRepresentationFor(source) != null) {
 					sourceRep = family.getEditPartRepresentationFor(source);
 				}
-				if(family.getEditPartRepresentationFor(target) != null) {
+				if (family.getEditPartRepresentationFor(target) != null) {
 					targetRep = family.getEditPartRepresentationFor(target);
 				}
-				if(sourceRep != null) {
+				if (sourceRep != null) {
 					familySource = family;
 				}
-				if(targetRep != null) {
+				if (targetRep != null) {
 					familyTarget = family;
 				}
 			}
@@ -158,18 +157,18 @@ public class AlignmentLinkHelper {
 			 * representation, and we add it the element containing by the
 			 * target representation
 			 */
-			if(familySource != null && familyTarget != null) {
+			if (familySource != null && familyTarget != null) {
 				familySource.addFamily(familyTarget);
 				families.remove(familyTarget);
-			} else if(familySource != null) {// a source representation exists
+			} else if (familySource != null) {// a source representation exists
 												// yet, we add it this link
-				familySource.addTriplet((EditPart)currentEP, sourceRep, new EditPartRepresentation(target));
-			} else if(familyTarget != null) {// a target representation exists
+				familySource.addTriplet((EditPart) currentEP, sourceRep, new EditPartRepresentation(target));
+			} else if (familyTarget != null) {// a target representation exists
 												// yet, we add it this link
-				familyTarget.addTriplet((EditPart)currentEP, new EditPartRepresentation(source), targetRep);
+				familyTarget.addTriplet((EditPart) currentEP, new EditPartRepresentation(source), targetRep);
 			} else {// nothing exists, we create a new link representation
 				SameAlignment newFamily = new SameAlignment(this.alignment);
-				newFamily.addTriplet((EditPart)currentEP, new EditPartRepresentation(source), new EditPartRepresentation(target));
+				newFamily.addTriplet((EditPart) currentEP, new EditPartRepresentation(source), new EditPartRepresentation(target));
 				families.add(newFamily);
 			}
 		}

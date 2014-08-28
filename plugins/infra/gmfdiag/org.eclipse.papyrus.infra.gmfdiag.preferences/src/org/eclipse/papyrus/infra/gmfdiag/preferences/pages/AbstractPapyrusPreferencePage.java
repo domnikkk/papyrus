@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2008 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,15 +36,14 @@ import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
 /**
  * An abstract implementation of a Preference page.
- * 
+ *
  * This preference page allows clients to define preference page in the preference of Eclipse, and
  * in the properties of a project in the workspace.
  * <p>
  * Clients must implement :
  * <ul>
  * <li><code>getBundleId()</code> method in order to define the preference scope (Project or Instance) of the preference page.</li>
- * <li><code>createPageContents()</code> method to populate the preference page with the different {@link AbstractGroup}. </br>Each group added has to
- * be declared through the <code>addAbstractGroup(AbstractGroup fe)</code> method</li>
+ * <li><code>createPageContents()</code> method to populate the preference page with the different {@link AbstractGroup}. </br>Each group added has to be declared through the <code>addAbstractGroup(AbstractGroup fe)</code> method</li>
  * </ul>
  * </p>
  */
@@ -71,6 +70,7 @@ public abstract class AbstractPapyrusPreferencePage extends PreferencePage imple
 		return this.key;
 	}
 
+	@Override
 	public IPreferenceStore getPreferenceStore() {
 		return Activator.getDefault().getPreferenceStore();
 	}
@@ -79,15 +79,16 @@ public abstract class AbstractPapyrusPreferencePage extends PreferencePage imple
 	 * @see org.eclipse.ui.IWorkbenchPropertyPage#setElement(org.eclipse.core.runtime.IAdaptable)
 	 */
 	public void setElement(IAdaptable element) {
-		project = (IProject)element.getAdapter(IResource.class);
+		project = (IProject) element.getAdapter(IResource.class);
 	}
 
 	/**
 	 * @see org.eclipse.jface.preference.PreferencePage#doGetPreferenceStore()
 	 */
+	@Override
 	protected IPreferenceStore doGetPreferenceStore() {
 		IPreferenceStore store;
-		if(project != null) {
+		if (project != null) {
 			store = new ScopedPreferenceStore(new ProjectScope(project), getBundleId());
 		} else {
 			store = new ScopedPreferenceStore(new InstanceScope(), getBundleId());
@@ -97,12 +98,12 @@ public abstract class AbstractPapyrusPreferencePage extends PreferencePage imple
 
 	/**
 	 * Initializes this preference page for the given workbench.
-	 * 
+	 *
 	 * @param workbench
-	 *        the workbench
-	 * 
+	 *            the workbench
+	 *
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
-	 * 
+	 *
 	 */
 	public void init(IWorkbench workbench) {
 		// Do nothing
@@ -135,9 +136,9 @@ public abstract class AbstractPapyrusPreferencePage extends PreferencePage imple
 	 * <p>
 	 * Each field added has to be declared through the <code>addEditorFields(FieldEditor fe)</code> method
 	 * </p>
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite
+	 *            the parent composite
 	 */
 	protected abstract void createPageContents(Composite parent);
 
@@ -145,12 +146,13 @@ public abstract class AbstractPapyrusPreferencePage extends PreferencePage imple
 	 * Add the given field editor to the page.
 	 */
 	protected void addAbstractGroup(AbstractGroup fe) {
-		if(groupSet == null) {
+		if (groupSet == null) {
 			groupSet = new HashSet<AbstractGroup>();
 		}
 		groupSet.add(fe);
 	}
 
+	@Override
 	public boolean performOk() {
 		VisiblePageSingleton.getInstance().store();
 		return super.performOk();
@@ -160,8 +162,8 @@ public abstract class AbstractPapyrusPreferencePage extends PreferencePage imple
 	 * Stores the values of the fields contained in this page into the preference store.
 	 */
 	protected void storePreferences() {
-		if(groupSet != null) {
-			for(AbstractGroup gs : groupSet) {
+		if (groupSet != null) {
+			for (AbstractGroup gs : groupSet) {
 				gs.storePreferences();
 			}
 		}
@@ -177,9 +179,10 @@ public abstract class AbstractPapyrusPreferencePage extends PreferencePage imple
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.PreferencePage#performDefaults()
 	 */
+	@Override
 	protected void performDefaults() {
 		loadDefaultPreferences();
 		super.performDefaults();
@@ -189,8 +192,8 @@ public abstract class AbstractPapyrusPreferencePage extends PreferencePage imple
 	 * Load the default preferences of the fields contained in this page
 	 */
 	private void loadDefaultPreferences() {
-		if(groupSet != null) {
-			for(AbstractGroup gs : groupSet) {
+		if (groupSet != null) {
+			for (AbstractGroup gs : groupSet) {
 				gs.loadDefault();
 			}
 		}
@@ -201,8 +204,8 @@ public abstract class AbstractPapyrusPreferencePage extends PreferencePage imple
 	 * Init groups contained in this page.
 	 */
 	private void initGroup() {
-		if(groupSet != null) {
-			for(AbstractGroup gs : groupSet) {
+		if (groupSet != null) {
+			for (AbstractGroup gs : groupSet) {
 				gs.setPreferenceStore(getPreferenceStore());
 				gs.load();
 			}
@@ -212,8 +215,8 @@ public abstract class AbstractPapyrusPreferencePage extends PreferencePage imple
 	@Override
 	public void dispose() {
 		super.dispose();
-		if(groupSet != null) {
-			for(AbstractGroup gs : groupSet) {
+		if (groupSet != null) {
+			for (AbstractGroup gs : groupSet) {
 				gs.dispose();
 			}
 		}
@@ -224,7 +227,7 @@ public abstract class AbstractPapyrusPreferencePage extends PreferencePage imple
 	@Override
 	public void setVisible(boolean visible) {
 		// TODO Auto-generated method stub
-		if(visible == true) {
+		if (visible == true) {
 			VisiblePageSingleton.getInstance().setVisiblePage(this);
 			initGroup();
 		}
@@ -234,7 +237,7 @@ public abstract class AbstractPapyrusPreferencePage extends PreferencePage imple
 
 	/**
 	 * The bundle ID used to defined the preference store
-	 * 
+	 *
 	 * @return String
 	 */
 	protected abstract String getBundleId();

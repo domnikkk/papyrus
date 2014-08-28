@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -60,18 +60,18 @@ public abstract class CustomAbstractViewProvider extends AbstractViewProvider {
 	@Override
 	protected boolean provides(CreateViewForKindOperation op) {
 		// This method should generally not be called (https://bugs.eclipse.org/bugs/show_bug.cgi?id=346739).
-		if((diagramType == null) || (!diagramType.equals(op.getContainerView().getDiagram().getType()))) {
+		if ((diagramType == null) || (!diagramType.equals(op.getContainerView().getDiagram().getType()))) {
 			return false;
 		}
-		//		if(op.getViewKind() == Node.class) {
-		//			String graphicalType = getNodeGraphicalType(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint());
-		//			return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), graphicalType) != null;
-		//		}
+		// if(op.getViewKind() == Node.class) {
+		// String graphicalType = getNodeGraphicalType(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint());
+		// return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), graphicalType) != null;
+		// }
 		//
-		//		if(op.getViewKind() == Edge.class) {
-		//			String graphicalType = getEdgeGraphicalType(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint());
-		//			return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), graphicalType) != null;
-		//		}
+		// if(op.getViewKind() == Edge.class) {
+		// String graphicalType = getEdgeGraphicalType(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint());
+		// return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), graphicalType) != null;
+		// }
 		throw new UnsupportedOperationException("Should never be called by the " + diagramType + " diagram.");
 	}
 
@@ -80,7 +80,7 @@ public abstract class CustomAbstractViewProvider extends AbstractViewProvider {
 	 */
 	@Override
 	protected boolean provides(CreateEdgeViewOperation operation) {
-		if((diagramType == null) || (!diagramType.equals(operation.getContainerView().getDiagram().getType()))) {
+		if ((diagramType == null) || (!diagramType.equals(operation.getContainerView().getDiagram().getType()))) {
 			return false;
 		}
 		String graphicalType = getEdgeGraphicalType(operation.getSemanticAdapter(), operation.getContainerView(), operation.getSemanticHint());
@@ -92,7 +92,7 @@ public abstract class CustomAbstractViewProvider extends AbstractViewProvider {
 	 */
 	@Override
 	protected boolean provides(CreateNodeViewOperation operation) {
-		if((diagramType == null) || (!diagramType.equals(operation.getContainerView().getDiagram().getType()))) {
+		if ((diagramType == null) || (!diagramType.equals(operation.getContainerView().getDiagram().getType()))) {
 			return false;
 		}
 		String graphicalType = getNodeGraphicalType(operation.getSemanticAdapter(), operation.getContainerView(), operation.getSemanticHint());
@@ -102,15 +102,15 @@ public abstract class CustomAbstractViewProvider extends AbstractViewProvider {
 	private String getNodeGraphicalType(IAdaptable semanticAdapter, View containerView, String semanticHint) {
 		String graphicalType = null;
 		// Some ViewDescriptor constructors initialize unspecified semanticHint with ""
-		if((semanticHint != null) && (!"".equals(semanticHint))) {
+		if ((semanticHint != null) && (!"".equals(semanticHint))) {
 			graphicalType = registry.getNodeGraphicalType(semanticHint, containerView.getType());
 		} else {
-			EObject domainElement = (EObject)semanticAdapter.getAdapter(EObject.class);
-			if(domainElement != null) {
+			EObject domainElement = (EObject) semanticAdapter.getAdapter(EObject.class);
+			if (domainElement != null) {
 				graphicalType = registry.getNodeGraphicalType(domainElement, containerView.getType());
 			}
-			IElementType elementType = (IElementType)semanticAdapter.getAdapter(IElementType.class);
-			if(elementType != null) {
+			IElementType elementType = (IElementType) semanticAdapter.getAdapter(IElementType.class);
+			if (elementType != null) {
 				graphicalType = registry.getNodeGraphicalType(elementType, containerView.getType());
 			}
 		}
@@ -120,15 +120,15 @@ public abstract class CustomAbstractViewProvider extends AbstractViewProvider {
 	private String getEdgeGraphicalType(IAdaptable semanticAdapter, View containerView, String semanticHint) {
 		String graphicalType = null;
 		// Some ViewDescriptor constructors initialize unspecified semanticHint with ""
-		if((semanticHint != null) && (!"".equals(semanticHint))) {
+		if ((semanticHint != null) && (!"".equals(semanticHint))) {
 			graphicalType = registry.getEdgeGraphicalType(semanticHint);
 		} else {
-			EObject domainElement = (EObject)semanticAdapter.getAdapter(EObject.class);
-			if(domainElement != null) {
+			EObject domainElement = (EObject) semanticAdapter.getAdapter(EObject.class);
+			if (domainElement != null) {
 				graphicalType = registry.getEdgeGraphicalType(domainElement);
 			}
-			IElementType elementType = (IElementType)semanticAdapter.getAdapter(IElementType.class);
-			if(elementType != null) {
+			IElementType elementType = (IElementType) semanticAdapter.getAdapter(IElementType.class);
+			if (elementType != null) {
 				graphicalType = registry.getEdgeGraphicalType(elementType);
 			}
 		}

@@ -12,6 +12,7 @@ package org.eclipse.papyrus.emf.facet.query.java.core.internal.exceptions;
 
 /**
  * This exception is raised whenever the class being created already exists.
+ *
  * @since 0.2
  */
 public class ClassAlreadyExistsException extends Exception {

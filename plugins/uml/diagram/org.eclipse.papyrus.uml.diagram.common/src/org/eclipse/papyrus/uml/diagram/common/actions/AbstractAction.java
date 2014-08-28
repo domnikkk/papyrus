@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
@@ -30,7 +30,7 @@ import org.eclipse.ui.PlatformUI;
 /**
  * This class is the common base for actions. It provide helper to access to
  * current diagram and selection.
- * 
+ *
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  */
 public abstract class AbstractAction extends Action {
@@ -44,11 +44,11 @@ public abstract class AbstractAction extends Action {
 	 */
 	protected Diagram getCurrentDiagram() {
 		IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if(editorPart instanceof IMultiDiagramEditor) {
-			editorPart = ((IMultiDiagramEditor)editorPart).getActiveEditor();
-			if(editorPart instanceof DiagramEditor) {
-				host = ((DiagramEditor)editorPart).getDiagramEditPart();
-				View view = (View)host.getModel();
+		if (editorPart instanceof IMultiDiagramEditor) {
+			editorPart = ((IMultiDiagramEditor) editorPart).getActiveEditor();
+			if (editorPart instanceof DiagramEditor) {
+				host = ((DiagramEditor) editorPart).getDiagramEditPart();
+				View view = (View) host.getModel();
 				Diagram diagram = view.getDiagram();
 				return diagram;
 			}
@@ -69,24 +69,24 @@ public abstract class AbstractAction extends Action {
 	protected List<View> getSelection() {
 		List<View> viewSelected = new ArrayList<View>();
 		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-		if (activeWorkbenchWindow!=null){
+		if (activeWorkbenchWindow != null) {
 			ISelection selection = activeWorkbenchWindow.getSelectionService().getSelection();
-			if(false == selection instanceof IStructuredSelection) {
+			if (false == selection instanceof IStructuredSelection) {
 				return Collections.emptyList();
 			}
-			for(Object object : ((IStructuredSelection)selection).toList()) {
-				if(false == object instanceof IGraphicalEditPart) {
+			for (Object object : ((IStructuredSelection) selection).toList()) {
+				if (false == object instanceof IGraphicalEditPart) {
 					continue;
 				}
-				if(object instanceof DiagramEditPart) {
+				if (object instanceof DiagramEditPart) {
 					continue;
 				}
-				View view = ((IGraphicalEditPart)object).getNotationView();
-				if(view.getEAnnotation("Shortcut") != null) {
+				View view = ((IGraphicalEditPart) object).getNotationView();
+				if (view.getEAnnotation("Shortcut") != null) {
 					continue;
 				}
 				viewSelected.add(view);
-			}			
+			}
 		}
 		return viewSelected;
 	}

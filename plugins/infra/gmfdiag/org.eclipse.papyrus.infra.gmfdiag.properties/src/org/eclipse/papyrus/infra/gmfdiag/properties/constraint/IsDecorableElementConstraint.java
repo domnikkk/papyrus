@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -20,6 +20,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.constraints.constraints.AbstractConstraint;
 import org.eclipse.papyrus.infra.constraints.constraints.Constraint;
+
 //import org.eclipse.papyrus.infra.gmfdiag.common.providers.ShapeDecorator;
 
 
@@ -31,12 +32,13 @@ public class IsDecorableElementConstraint extends AbstractConstraint {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean match(Object selection) {
-		if(selection instanceof IAdaptable) {
-			View node  = (View)((IAdaptable)selection).getAdapter(View.class);
-			if(node != null && !(node instanceof Diagram)) {
-				DescriptionStyle descStyle = (DescriptionStyle)node.getStyle(NotationPackage.eINSTANCE.getDescriptionStyle());
-				if(descStyle != null) {
+		if (selection instanceof IAdaptable) {
+			View node = (View) ((IAdaptable) selection).getAdapter(View.class);
+			if (node != null && !(node instanceof Diagram)) {
+				DescriptionStyle descStyle = (DescriptionStyle) node.getStyle(NotationPackage.eINSTANCE.getDescriptionStyle());
+				if (descStyle != null) {
 					return true;
 				}
 			}
@@ -50,7 +52,7 @@ public class IsDecorableElementConstraint extends AbstractConstraint {
 	 */
 	@Override
 	protected boolean equivalent(Constraint constraint) {
-		if(constraint == null) {
+		if (constraint == null) {
 			return false;
 		}
 

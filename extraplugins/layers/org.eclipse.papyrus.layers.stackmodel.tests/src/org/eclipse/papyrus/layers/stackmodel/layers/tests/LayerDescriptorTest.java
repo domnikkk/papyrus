@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.tests;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptor;
@@ -13,6 +12,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Layer Descriptor</b></em>'.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class LayerDescriptorTest extends TestCase {
@@ -21,6 +21,7 @@ public class LayerDescriptorTest extends TestCase {
 	 * The fixture for this Layer Descriptor test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LayerDescriptor fixture = null;
@@ -28,6 +29,7 @@ public class LayerDescriptorTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -38,6 +40,7 @@ public class LayerDescriptorTest extends TestCase {
 	 * Constructs a new Layer Descriptor test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LayerDescriptorTest(String name) {
@@ -48,6 +51,7 @@ public class LayerDescriptorTest extends TestCase {
 	 * Sets the fixture for this Layer Descriptor test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void setFixture(LayerDescriptor fixture) {
@@ -58,6 +62,7 @@ public class LayerDescriptorTest extends TestCase {
 	 * Returns the fixture for this Layer Descriptor test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LayerDescriptor getFixture() {
@@ -67,6 +72,7 @@ public class LayerDescriptorTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -78,6 +84,7 @@ public class LayerDescriptorTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -86,4 +93,4 @@ public class LayerDescriptorTest extends TestCase {
 		setFixture(null);
 	}
 
-} //LayerDescriptorTest
+} // LayerDescriptorTest

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,28 +28,27 @@ import org.eclipse.ui.navigator.CommonDragAdapterAssistant;
 
 /**
  * This class allows to provides Drag&Drop between the Model Explorer and the Tables (or others View/Editors)
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class EObjectDragAdapterAssistant extends CommonDragAdapterAssistant {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.navigator.CommonDragAdapterAssistant#getSupportedTransferTypes()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public Transfer[] getSupportedTransferTypes() {
-		return new Transfer[]{ LocalTransfer.getInstance() };
+		return new Transfer[] { LocalTransfer.getInstance() };
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.ui.navigator.CommonDragAdapterAssistant#setDragData(org.eclipse.swt.dnd.DragSourceEvent,
-	 *      org.eclipse.jface.viewers.IStructuredSelection)
-	 * 
+	 *
+	 * @see org.eclipse.ui.navigator.CommonDragAdapterAssistant#setDragData(org.eclipse.swt.dnd.DragSourceEvent, org.eclipse.jface.viewers.IStructuredSelection)
+	 *
 	 * @param anEvent
 	 * @param aSelection
 	 * @return
@@ -59,15 +58,15 @@ public class EObjectDragAdapterAssistant extends CommonDragAdapterAssistant {
 		Iterator<?> iter = aSelection.iterator();
 		List<Object> selectedElements = new ArrayList<Object>();
 
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			Object current = iter.next();
-				EObject eobject =EMFHelper.getEObject(current);
-				if(eobject != null) {
-					selectedElements.add(eobject);
-				}
+			EObject eobject = EMFHelper.getEObject(current);
+			if (eobject != null) {
+				selectedElements.add(eobject);
+			}
 		}
 
-		if(!selectedElements.isEmpty()) {
+		if (!selectedElements.isEmpty()) {
 			anEvent.data = new StructuredSelection(selectedElements);
 		}
 		return anEvent.data != null;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,9 +59,9 @@ public class ElementInitializers {
 	public void init_Interaction_2001(Interaction instance) {
 		try {
 			Object value_0 = name_Interaction_2001(instance);
-			instance.setName((String)value_0);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -71,9 +71,9 @@ public class ElementInitializers {
 	public void init_ConsiderIgnoreFragment_3007(ConsiderIgnoreFragment instance) {
 		try {
 			Object value_0 = name_ConsiderIgnoreFragment_3007(instance);
-			instance.setName((String)value_0);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -83,9 +83,9 @@ public class ElementInitializers {
 	public void init_CombinedFragment_3004(CombinedFragment instance) {
 		try {
 			Object value_0 = name_CombinedFragment_3004(instance);
-			instance.setName((String)value_0);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -95,9 +95,9 @@ public class ElementInitializers {
 	public void init_InteractionUse_3002(InteractionUse instance) {
 		try {
 			Object value_0 = name_InteractionUse_3002(instance);
-			instance.setName((String)value_0);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -107,9 +107,9 @@ public class ElementInitializers {
 	public void init_Continuation_3016(Continuation instance) {
 		try {
 			Object value_0 = name_Continuation_3016(instance);
-			instance.setName((String)value_0);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -119,9 +119,9 @@ public class ElementInitializers {
 	public void init_Lifeline_3001(Lifeline instance) {
 		try {
 			Object value_0 = name_Lifeline_3001(instance);
-			instance.setName((String)value_0);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -131,9 +131,9 @@ public class ElementInitializers {
 	public void init_StateInvariant_3017(StateInvariant instance) {
 		try {
 			Object value_0 = name_StateInvariant_3017(instance);
-			instance.setName((String)value_0);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -143,9 +143,9 @@ public class ElementInitializers {
 	public void init_CombinedFragment_3018(CombinedFragment instance) {
 		try {
 			Object value_0 = name_CombinedFragment_3018(instance);
-			instance.setName((String)value_0);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -157,13 +157,13 @@ public class ElementInitializers {
 			TimeInterval newInstance_0_0 = UMLFactory.eINSTANCE.createTimeInterval();
 			instance.setSpecification(newInstance_0_0);
 			Object value_0_0_0 = name_specification_TimeConstraint_3019(newInstance_0_0);
-			newInstance_0_0.setName((String)value_0_0_0);
+			newInstance_0_0.setName((String) value_0_0_0);
 			// init Time Interval
 			init_TimeInterval(newInstance_0_0);
 			Object value_1 = name_TimeConstraint_3019(instance);
-			instance.setName((String)value_1);
+			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -173,9 +173,9 @@ public class ElementInitializers {
 	public void init_TimeObservation_3020(TimeObservation instance) {
 		try {
 			Object value_0 = name_TimeObservation_3020(instance);
-			instance.setName((String)value_0);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -187,13 +187,13 @@ public class ElementInitializers {
 			DurationInterval newInstance_0_0 = UMLFactory.eINSTANCE.createDurationInterval();
 			instance.setSpecification(newInstance_0_0);
 			Object value_0_0_0 = name_specification_DurationConstraint_3021(newInstance_0_0);
-			newInstance_0_0.setName((String)value_0_0_0);
+			newInstance_0_0.setName((String) value_0_0_0);
 			// init Duration Interval
 			init_DurationInterval(newInstance_0_0);
 			Object value_1 = name_DurationConstraint_3021(instance);
-			instance.setName((String)value_1);
+			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -203,17 +203,17 @@ public class ElementInitializers {
 	public void init_DestructionOccurrenceSpecification_3022(DestructionOccurrenceSpecification instance) {
 		try {
 			Object value_0 = name_DestructionOccurrenceSpecification_3022(instance);
-			instance.setName((String)value_0);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
 	/**
 	 * Initialize a time interval
-	 * 
+	 *
 	 * @param instance
-	 *        instance to initialize
+	 *            instance to initialize
 	 */
 	private void init_TimeInterval(TimeInterval instance) {
 		// time interval
@@ -234,9 +234,9 @@ public class ElementInitializers {
 
 	/**
 	 * Initialize a duration interval
-	 * 
+	 *
 	 * @param instance
-	 *        instance to initialize
+	 *            instance to initialize
 	 */
 	private void init_DurationInterval(DurationInterval instance) {
 		// duration interval
@@ -263,9 +263,9 @@ public class ElementInitializers {
 			LiteralString newInstance_0_0 = UMLFactory.eINSTANCE.createLiteralString();
 			instance.setSpecification(newInstance_0_0);
 			Object value_0_0_0 = value_specification_Constraint_3008(newInstance_0_0);
-			newInstance_0_0.setValue((String)value_0_0_0);
+			newInstance_0_0.setValue((String) value_0_0_0);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -275,9 +275,9 @@ public class ElementInitializers {
 	public void init_Comment_3009(Comment instance) {
 		try {
 			Object value_0 = UMLOCLFactory.getExpression(0, UMLPackage.eINSTANCE.getComment(), null).evaluate(instance);
-			instance.setBody((String)value_0);
+			instance.setBody((String) value_0);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -289,13 +289,13 @@ public class ElementInitializers {
 			DurationInterval newInstance_0_0 = UMLFactory.eINSTANCE.createDurationInterval();
 			instance.setSpecification(newInstance_0_0);
 			Object value_0_0_0 = name_specification_DurationConstraint_3023(newInstance_0_0);
-			newInstance_0_0.setName((String)value_0_0_0);
+			newInstance_0_0.setName((String) value_0_0_0);
 			// init Duration Interval
 			init_DurationInterval(newInstance_0_0);
 			Object value_1 = name_DurationConstraint_3023(instance);
-			instance.setName((String)value_1);
+			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -305,9 +305,9 @@ public class ElementInitializers {
 	public void init_DurationObservation_3024(DurationObservation instance) {
 		try {
 			Object value_0 = name_DurationObservation_3024(instance);
-			instance.setName((String)value_0);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -317,9 +317,9 @@ public class ElementInitializers {
 	public void init_GeneralOrdering_4012(GeneralOrdering instance) {
 		try {
 			Object value_0 = name_GeneralOrdering_4012(instance);
-			instance.setName((String)value_0);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -461,7 +461,7 @@ public class ElementInitializers {
 	 */
 	public static ElementInitializers getInstance() {
 		ElementInitializers cached = UMLDiagramEditorPlugin.getInstance().getElementInitializers();
-		if(cached == null) {
+		if (cached == null) {
 			UMLDiagramEditorPlugin.getInstance().setElementInitializers(cached = new ElementInitializers());
 		}
 		return cached;
@@ -470,9 +470,9 @@ public class ElementInitializers {
 	/**
 	 * @generated NOT
 	 *            Initialize the name of a namedElement
-	 * 
+	 *
 	 * @param namedElement
-	 *        the namedElement
+	 *            the namedElement
 	 */
 	public static void init_NamedElement(NamedElement namedElement) {
 		init_NamedElement(namedElement, ""); //$NON-NLS-1$
@@ -481,11 +481,11 @@ public class ElementInitializers {
 	/**
 	 * @generated NOT
 	 *            Initialize the name of a namedElement with a given prefix
-	 * 
+	 *
 	 * @param namedElement
-	 *        the namedElement
+	 *            the namedElement
 	 * @param prefix
-	 *        a prefix for the name
+	 *            a prefix for the name
 	 */
 	public static void init_NamedElement(NamedElement namedElement, String prefix) {
 		init_NamedElement(namedElement, prefix, namedElement.eClass().getName(), "");
@@ -494,13 +494,13 @@ public class ElementInitializers {
 	/**
 	 * @generated NOT
 	 *            Initialize the name of a namedElement with a given suffix
-	 * 
+	 *
 	 * @param namedElement
-	 *        the namedElement
+	 *            the namedElement
 	 * @param prefix
-	 *        the prefix for the name
+	 *            the prefix for the name
 	 * @param suffix
-	 *        a suffix for the name
+	 *            a suffix for the name
 	 */
 	public static void init_NamedElement(NamedElement namedElement, String prefix, String suffix) {
 		init_NamedElement(namedElement, prefix, namedElement.eClass().getName(), suffix);
@@ -509,37 +509,37 @@ public class ElementInitializers {
 	/**
 	 * @generated NOT
 	 *            Initialize the name of a namedElement with a given suffix
-	 * 
+	 *
 	 * @param namedElement
-	 *        the namedElement
+	 *            the namedElement
 	 * @param prefix
-	 *        the prefix for the name
+	 *            the prefix for the name
 	 * @param body
-	 *        the body used for the name
+	 *            the body used for the name
 	 * @param suffix
-	 *        a suffix for the name
+	 *            a suffix for the name
 	 */
 	public static void init_NamedElement(NamedElement namedElement, String prefix, String body, String suffix) {
 		try {
 			namedElement.setName(getNamedElement(namedElement, prefix, body, suffix));
 		} catch (RuntimeException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
 	}
 
 	/**
 	 * @generated NOT
-	 * 
+	 *
 	 */
 	private static String getNamedElement(NamedElement namedElement, String prefix, String body, String suffix) {
 		String base = prefix + body + suffix;
 		Namespace namespace = namedElement.getNamespace();
-		if(namespace != null) {
+		if (namespace != null) {
 			Set<NamedElement> members = new HashSet<NamedElement>();
 			members.addAll(namespace.getMembers());
 			// add general orderings which are not in initial selection
-			if(namespace instanceof Interaction) {
-				members.addAll(((Interaction)namespace).getGeneralOrderings());
+			if (namespace instanceof Interaction) {
+				members.addAll(((Interaction) namespace).getGeneralOrderings());
 			}
 			return getNextNumberedName(members, base);
 		}
@@ -550,14 +550,14 @@ public class ElementInitializers {
 	public static String getNextNumberedName(Collection currentElements, String base) {
 		int nextNumber = -1;
 		Set<String> elementNames = new HashSet<String>();
-		for(Object o : currentElements) {
-			if(o instanceof NamedElement) {
-				String name = ((NamedElement)o).getName();
-				if(name != null && name.startsWith(base)) {
+		for (Object o : currentElements) {
+			if (o instanceof NamedElement) {
+				String name = ((NamedElement) o).getName();
+				if (name != null && name.startsWith(base)) {
 					elementNames.add(name);
 					String end = name.substring(base.length());
 					int nextNumberTmp = -1;
-					if(end.trim().equals("")) {
+					if (end.trim().equals("")) {
 						nextNumberTmp = 0;
 					} else {
 						try {
@@ -566,13 +566,13 @@ public class ElementInitializers {
 							nextNumberTmp = -1;
 						}
 					}
-					if(nextNumberTmp > nextNumber) {
+					if (nextNumberTmp > nextNumber) {
 						nextNumber = nextNumberTmp;
 					}
 				}
 			}
 		}
-		if(nextNumber == -1) {
+		if (nextNumber == -1) {
 			return generateUniqueName(base, elementNames, base, nextNumber);
 		} else {
 			return generateUniqueName(base + nextNumber, elementNames, base, nextNumber);
@@ -580,7 +580,7 @@ public class ElementInitializers {
 	}
 
 	private static String generateUniqueName(String name, Set<String> elementNames, String base, int nextNumber) {
-		while(elementNames.contains(name)) {
+		while (elementNames.contains(name)) {
 			nextNumber++;
 			name = base + nextNumber;
 		}

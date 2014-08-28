@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -41,40 +41,43 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * type. Since the component typing the port can have multiple provided and required
  * ports, the ports are implicitly owned by the port. Conjugation on the level of an extended
  * port level will conjugate all ports of the component typing the port.
- * 
+ *
  * The derived interface that is provided will concatenate provided port names within the
  * extended port with the port name and provided a "big" interface.
  * The derived interface that is required is identical, except for a conjugation on the
  * extended port level.
- * 
+ *
  * Creates a fixed template binding that binds T (of the extended Port) to the used data type
- * 
+ *
  * Here, the idea is that the port type is a classifier, e.g. the data type that is
  * transported by a DDS port. The port kind is the extended port, e.g. DDSWrite.
- * 
+ *
  * The derived property isExtended of FCM port-kind is true, if the class representing the port-kind owns at least one
  * port
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class TemplatePort implements ITemplateMappingRule {
 
+	@Override
 	public Interface getProvided(org.eclipse.papyrus.FCM.Port p, boolean update)
 	{
 		return null;
 	}
 
+	@Override
 	public Interface getRequired(org.eclipse.papyrus.FCM.Port p, boolean update)
 	{
 		return null;
 	}
 
+	@Override
 	public PortKind getBoundType(org.eclipse.papyrus.FCM.Port p)
 	{
 		Port port = p.getBase_Port();
 		Type type = port.getType();
-		if(!(type instanceof Classifier)) {
+		if (!(type instanceof Classifier)) {
 			return null;
 		}
 		if (p.getKind() == null) {
@@ -83,14 +86,14 @@ public class TemplatePort implements ITemplateMappingRule {
 		Class extendedPort = p.getKind().getBase_Class();
 		TemplateSignature signature = TemplateUtils.getSignature(extendedPort.getNearestPackage());
 		Package pkgTemplate = signature.getNearestPackage();
-		if(pkgTemplate != null) {
+		if (pkgTemplate != null) {
 			EList<Namespace> path = TemplateUtils.relativePathWithMerge(extendedPort, pkgTemplate);
-			
-			String name = pkgTemplate.getName() + "_" + type.getName();  //$NON-NLS-1$
+
+			String name = pkgTemplate.getName() + "_" + type.getName(); //$NON-NLS-1$
 			Package model = Utils.getTop(port);
 			Package pkg = model.getNestedPackage(name);
 			if (pkg == null) {
-				model = Utils.getFirstLevel(port);	// try whether package template exists here
+				model = Utils.getFirstLevel(port); // try whether package template exists here
 				// required for target model with additional "root" folder
 				pkg = model.getNestedPackage(name);
 			}
@@ -110,25 +113,26 @@ public class TemplatePort implements ITemplateMappingRule {
 		return null;
 	}
 
+	@Override
 	public void updateBinding(org.eclipse.papyrus.FCM.Port p) {
 		Port port = p.getBase_Port();
 		Type type = port.getType();
-		if(!(type instanceof Classifier)) {
+		if (!(type instanceof Classifier)) {
 			return;
 		}
 		Class extendedPort = p.getKind().getBase_Class();
 
 		TemplateSignature signature = TemplateUtils.getSignature(extendedPort.getNearestPackage());
-		if(signature != null) {
+		if (signature != null) {
 			Package model = Utils.getTop(port);
 			try {
 				TemplateBinding binding =
-					TemplateUtils.fixedBinding(model, extendedPort, (Classifier)type);
+						TemplateUtils.fixedBinding(model, extendedPort, (Classifier) type);
 				LazyCopier copy = new LazyCopier(model, model, false, true);
 				TemplateInstantiation ti = new TemplateInstantiation(copy, binding);
 				// remove listener synchronizing implementation, since it would add derived
 				// elements for the extended port itself (e.g. provided operations)
-				if(copy.postCopyListeners.contains(FixTemplateSync.getInstance())) {
+				if (copy.postCopyListeners.contains(FixTemplateSync.getInstance())) {
 					copy.postCopyListeners.remove(FixTemplateSync.getInstance());
 				}
 
@@ -138,11 +142,12 @@ public class TemplatePort implements ITemplateMappingRule {
 			}
 		}
 	}
-	
+
+	@Override
 	public boolean needsUpdate(org.eclipse.papyrus.FCM.Port p) {
 		Port port = p.getBase_Port();
 		Type type = port.getType();
-		if(!(type instanceof Classifier)) {
+		if (!(type instanceof Classifier)) {
 			return false;
 		}
 		if (p.getKind() == null) {
@@ -151,14 +156,14 @@ public class TemplatePort implements ITemplateMappingRule {
 		Class extendedPort = p.getKind().getBase_Class();
 		TemplateSignature signature = TemplateUtils.getSignature(extendedPort.getNearestPackage());
 		Package pkgTemplate = signature.getNearestPackage();
-		if(pkgTemplate != null) {
+		if (pkgTemplate != null) {
 			EList<Namespace> path = TemplateUtils.relativePathWithMerge(extendedPort, pkgTemplate);
-			
-			String name = pkgTemplate.getName() + "_" + type.getName();  //$NON-NLS-1$
+
+			String name = pkgTemplate.getName() + "_" + type.getName(); //$NON-NLS-1$
 			Package model = Utils.getTop(port);
 			Package pkg = model.getNestedPackage(name);
 			if (pkg == null) {
-				model = Utils.getFirstLevel(port);	// try whether package template exists here
+				model = Utils.getFirstLevel(port); // try whether package template exists here
 				// required for target model with additional "root" folder
 				pkg = model.getNestedPackage(name);
 			}

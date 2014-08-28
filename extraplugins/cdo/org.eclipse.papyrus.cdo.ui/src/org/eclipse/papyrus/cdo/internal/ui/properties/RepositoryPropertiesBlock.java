@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -136,18 +136,20 @@ public class RepositoryPropertiesBlock
 			}
 		});
 		protocolCombo
-			.addSelectionChangedListener(new ISelectionChangedListener() {
+				.addSelectionChangedListener(new ISelectionChangedListener() {
 
-				public void selectionChanged(SelectionChangedEvent event) {
-					if (defaultPort.getSelection()) {
-						updatePortForProtocol();
-						recalculateURL();
+					@Override
+					public void selectionChanged(SelectionChangedEvent event) {
+						if (defaultPort.getSelection()) {
+							updatePortForProtocol();
+							recalculateURL();
+						}
 					}
-				}
-			});
+				});
 
 		ModifyListener modifyListener = new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
 				recalculateURL();
 			}
@@ -161,7 +163,7 @@ public class RepositoryPropertiesBlock
 
 		return result;
 	}
-	
+
 	public void dispose() {
 		// pass
 	}
@@ -172,24 +174,24 @@ public class RepositoryPropertiesBlock
 		}
 
 		String name = (repository == null)
-			? (createMode
-				? Messages.RepositoryPropertiesBlock_6
-				: "") //$NON-NLS-1$
-			: repository.getName();
+				? (createMode
+						? Messages.RepositoryPropertiesBlock_6
+						: "") //$NON-NLS-1$
+				: repository.getName();
 		String url = (repository == null)
-			? (createMode
-				? "tcp://localhost?repositoryName=repo1" //$NON-NLS-1$
-				: null)
-			: repository.getURL();
+				? (createMode
+						? "tcp://localhost?repositoryName=repo1" //$NON-NLS-1$
+						: null)
+				: repository.getURL();
 		URI uri = (url == null)
-			? null
-			: URI.createURI(url);
+				? null
+				: URI.createURI(url);
 		String host = (uri == null)
-			? "" //$NON-NLS-1$
-			: parseHost(uri);
+				? "" //$NON-NLS-1$
+				: parseHost(uri);
 		String repo = (uri == null)
-			? "" //$NON-NLS-1$
-			: parseRepositoryName(uri);
+				? "" //$NON-NLS-1$
+				: parseRepositoryName(uri);
 		Protocol protocol = Protocol.TCP;
 		String portString = ""; //$NON-NLS-1$
 		boolean isDefaultPort = true;
@@ -233,7 +235,7 @@ public class RepositoryPropertiesBlock
 		Protocol result = Protocol.TCP;
 
 		IStructuredSelection sel = (IStructuredSelection) protocolCombo
-			.getSelection();
+				.getSelection();
 		if (!sel.isEmpty()) {
 			result = (Protocol) sel.getFirstElement();
 		}
@@ -282,22 +284,22 @@ public class RepositoryPropertiesBlock
 		url = computeURL();
 
 		IPapyrusRepository existing = PapyrusRepositoryManager.INSTANCE
-			.getRepository(url);
+				.getRepository(url);
 		if ((existing != null) && (existing != repository)) {
 			setStatus(error(NLS.bind(
-				Messages.RepositoryPropertiesBlock_16,
-				existing.getName())));
+					Messages.RepositoryPropertiesBlock_16,
+					existing.getName())));
 			return;
 		}
 
 		for (IPapyrusRepository next : PapyrusRepositoryManager.INSTANCE
-			.getRepositories()) {
+				.getRepositories()) {
 
 			if ((next != repository) && Objects.equal(next.getName(), name)) {
 				setStatus(warning(NLS
-					.bind(
-						Messages.RepositoryPropertiesBlock_17,
-						next.getName())));
+						.bind(
+								Messages.RepositoryPropertiesBlock_17,
+								next.getName())));
 				return;
 			}
 		}
@@ -331,8 +333,8 @@ public class RepositoryPropertiesBlock
 	private int parsePort(URI uri) {
 		String result = uri.port();
 		return (result == null)
-			? -1
-			: Integer.parseInt(result);
+				? -1
+				: Integer.parseInt(result);
 	}
 
 	private String parseHost(URI uri) {
@@ -367,6 +369,7 @@ public class RepositoryPropertiesBlock
 				super(RepositoryPropertiesBlock.this);
 			}
 
+			@Override
 			public IStatus getStatus() {
 				return status;
 			}
@@ -427,11 +430,12 @@ public class RepositoryPropertiesBlock
 	public static class StatusChangedEventAdapter
 			implements IListener {
 
+		@Override
 		public void notifyEvent(IEvent event) {
 			if (event instanceof IStatusChangedEvent) {
 				handleStatusChanged(
-					(RepositoryPropertiesBlock) event.getSource(),
-					((IStatusChangedEvent) event).getStatus());
+						(RepositoryPropertiesBlock) event.getSource(),
+						((IStatusChangedEvent) event).getStatus());
 			} else {
 				handleOtherEvent(event);
 			}
@@ -458,23 +462,23 @@ public class RepositoryPropertiesBlock
 			int messageSeverity;
 
 			switch (newStatus.getSeverity()) {
-				case IStatus.OK :
-					messageSeverity = IMessageProvider.NONE;
-					break;
-				case IStatus.INFO :
-					messageSeverity = IMessageProvider.INFORMATION;
-					break;
-				case IStatus.WARNING :
-					messageSeverity = IMessageProvider.WARNING;
-					break;
-				default :
-					messageSeverity = IMessageProvider.ERROR;
-					break;
+			case IStatus.OK:
+				messageSeverity = IMessageProvider.NONE;
+				break;
+			case IStatus.INFO:
+				messageSeverity = IMessageProvider.INFORMATION;
+				break;
+			case IStatus.WARNING:
+				messageSeverity = IMessageProvider.WARNING;
+				break;
+			default:
+				messageSeverity = IMessageProvider.ERROR;
+				break;
 			}
 
 			handleMessageChange(newStatus.isOK()
-				? null
-				: newStatus.getMessage(), messageSeverity);
+					? null
+					: newStatus.getMessage(), messageSeverity);
 		}
 
 		protected void handleMessageChange(String message, int messageSeverity) {

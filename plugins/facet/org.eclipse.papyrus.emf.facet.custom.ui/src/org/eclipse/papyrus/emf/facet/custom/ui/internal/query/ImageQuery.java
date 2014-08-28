@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IImage;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.ImageProvider;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.custompt.ImageWrapper;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
@@ -30,7 +31,6 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetAttribu
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetReference;
 import org.eclipse.papyrus.emf.facet.query.java.core.IJavaQuery2;
 import org.eclipse.papyrus.emf.facet.query.java.core.IParameterValueList2;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IImage;
 import org.eclipse.swt.graphics.Image;
 
 public class ImageQuery implements IJavaQuery2<EObject, IImage> {
@@ -57,25 +57,25 @@ public class ImageQuery implements IJavaQuery2<EObject, IImage> {
 		IImage result = null;
 		final ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(
 				ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
-		
+
 		try {
-			final IItemLabelProvider itemLabelProvider = (IItemLabelProvider)adapterFactory.adapt(source, IItemLabelProvider.class);
-			if(itemLabelProvider != null) {
+			final IItemLabelProvider itemLabelProvider = (IItemLabelProvider) adapterFactory.adapt(source, IItemLabelProvider.class);
+			if (itemLabelProvider != null) {
 				Object imageObject = itemLabelProvider.getImage(source);
 				Image image = ExtendedImageRegistry.getInstance().getImage(imageObject);
 				result = new ImageWrapper(image);
-////			final ImageDescriptor imgDescriptor = ExtendedImageRegistry.getInstance().getImageDescriptor(source);
-//				final IImageProvider imgProvider = IImageProviderFactory.DEFAULT.createIImageProvider(Activator.getDefault());
-//				if(imgDescriptor != null) {
-//					final Image image = imgProvider.getImage(imgDescriptor);
-//					result = new ImageWrapper(image);
-//				}
+				// // final ImageDescriptor imgDescriptor = ExtendedImageRegistry.getInstance().getImageDescriptor(source);
+				// final IImageProvider imgProvider = IImageProviderFactory.DEFAULT.createIImageProvider(Activator.getDefault());
+				// if(imgDescriptor != null) {
+				// final Image image = imgProvider.getImage(imgDescriptor);
+				// result = new ImageWrapper(image);
+				// }
 			}
 		} finally {
 			// Dispose the adapter factory because it added an adapter that would leak, as it will never be reused
 			adapterFactory.dispose();
 		}
-		
+
 		return result;
 	}
 

@@ -14,9 +14,10 @@ import org.eclipse.papyrus.layers.stackmodel.layers.Property;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.Property#createInstance() <em>Create Instance</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.Property#createInstance() <em>Create Instance</em>}</li>
  * </ul>
  * </p>
+ *
  * @generated
  */
 public class PropertyTest extends FolderElementTest {
@@ -24,6 +25,7 @@ public class PropertyTest extends FolderElementTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -34,6 +36,7 @@ public class PropertyTest extends FolderElementTest {
 	 * Constructs a new Property test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PropertyTest(String name) {
@@ -44,16 +47,18 @@ public class PropertyTest extends FolderElementTest {
 	 * Returns the fixture for this Property test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	protected Property getFixture() {
-		return (Property)fixture;
+		return (Property) fixture;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -65,6 +70,7 @@ public class PropertyTest extends FolderElementTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -77,6 +83,7 @@ public class PropertyTest extends FolderElementTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.Property#createInstance() <em>Create Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Property#createInstance()
 	 * @generated
 	 */
@@ -86,4 +93,4 @@ public class PropertyTest extends FolderElementTest {
 		fail();
 	}
 
-} //PropertyTest
+} // PropertyTest

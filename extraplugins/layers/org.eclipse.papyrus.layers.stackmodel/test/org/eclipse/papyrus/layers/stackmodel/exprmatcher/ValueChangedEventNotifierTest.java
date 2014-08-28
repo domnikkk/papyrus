@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,15 +14,15 @@
 
 package org.eclipse.papyrus.layers.stackmodel.exprmatcher;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.gmf.runtime.notation.Shape;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.layers.stackmodel.util.NotationAndUmlModelsFactory;
 import org.eclipse.papyrus.layers.stackmodel.util.TriggeredEventTraces;
-import org.eclipse.papyrus.layers.stackmodel.util.TriggeredEventTraces.TriggeredEvent;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Property;
 import org.junit.After;
@@ -58,8 +58,8 @@ public class ValueChangedEventNotifierTest {
 		Diagram diagram1 = modelsFactory.newDiagram();
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
 
-		ValueChangedEventNotifierFactory notifierFactory = new ValueChangedEventNotifierFactory();		
-		ValueChangedEventNotifier eventNotifier = (ValueChangedEventNotifier)notifierFactory.adapt(c1, ValueChangedEventNotifier.class);
+		ValueChangedEventNotifierFactory notifierFactory = new ValueChangedEventNotifierFactory();
+		ValueChangedEventNotifier eventNotifier = (ValueChangedEventNotifier) notifierFactory.adapt(c1, ValueChangedEventNotifier.class);
 
 		// Assert
 		assertNotNull("notifier created", eventNotifier);
@@ -74,8 +74,8 @@ public class ValueChangedEventNotifierTest {
 		Diagram diagram1 = modelsFactory.newDiagram();
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
 
-		ValueChangedEventNotifierFactory notifierFactory = new ValueChangedEventNotifierFactory();		
-		ValueChangedEventNotifier eventNotifier = (ValueChangedEventNotifier)notifierFactory.adapt(diagram1, ValueChangedEventNotifier.class);
+		ValueChangedEventNotifierFactory notifierFactory = new ValueChangedEventNotifierFactory();
+		ValueChangedEventNotifier eventNotifier = (ValueChangedEventNotifier) notifierFactory.adapt(diagram1, ValueChangedEventNotifier.class);
 
 		TraceValueChangedEventListener listener = new TraceValueChangedEventListener();
 		eventNotifier.addEventListener(listener);
@@ -93,8 +93,8 @@ public class ValueChangedEventNotifierTest {
 		Diagram diagram1 = modelsFactory.newDiagram();
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
 
-		ValueChangedEventNotifierFactory notifierFactory = new ValueChangedEventNotifierFactory();		
-		ValueChangedEventNotifier eventNotifier = (ValueChangedEventNotifier)notifierFactory.adapt(diagram1, ValueChangedEventNotifier.class);
+		ValueChangedEventNotifierFactory notifierFactory = new ValueChangedEventNotifierFactory();
+		ValueChangedEventNotifier eventNotifier = (ValueChangedEventNotifier) notifierFactory.adapt(diagram1, ValueChangedEventNotifier.class);
 
 		TraceValueChangedEventListener listener = new TraceValueChangedEventListener();
 		eventNotifier.addEventListener(listener);
@@ -113,14 +113,14 @@ public class ValueChangedEventNotifierTest {
 		Diagram diagram1 = modelsFactory.newDiagram();
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
 
-		ValueChangedEventNotifierFactory notifierFactory = new ValueChangedEventNotifierFactory();		
-		ValueChangedEventNotifier eventNotifier = (ValueChangedEventNotifier)notifierFactory.adapt(diagram1, ValueChangedEventNotifier.class);
+		ValueChangedEventNotifierFactory notifierFactory = new ValueChangedEventNotifierFactory();
+		ValueChangedEventNotifier eventNotifier = (ValueChangedEventNotifier) notifierFactory.adapt(diagram1, ValueChangedEventNotifier.class);
 
 		TraceValueChangedEventListener listener = new TraceValueChangedEventListener();
 		eventNotifier.addEventListener(listener);
 		TriggeredEventTraces<Notification> traces = listener.traces;
 		int expectedEventCount = 1;
-		
+
 		// Action
 		traces.clear();
 		// Modify ele
@@ -129,8 +129,8 @@ public class ValueChangedEventNotifierTest {
 		// Assert
 		// Assert
 		assertTrue("event recorded", traces.contains("valueChanged"));
-		assertEquals("right number of events", expectedEventCount, traces.traces.size() );
-		
+		assertEquals("right number of events", expectedEventCount, traces.traces.size());
+
 	}
 
 	/**
@@ -142,14 +142,14 @@ public class ValueChangedEventNotifierTest {
 		Diagram diagram1 = modelsFactory.newDiagram();
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
 
-		ValueChangedEventNotifierFactory notifierFactory = new ValueChangedEventNotifierFactory();		
-		ValueChangedEventNotifier eventNotifier = (ValueChangedEventNotifier)notifierFactory.adapt(diagram1, ValueChangedEventNotifier.class);
+		ValueChangedEventNotifierFactory notifierFactory = new ValueChangedEventNotifierFactory();
+		ValueChangedEventNotifier eventNotifier = (ValueChangedEventNotifier) notifierFactory.adapt(diagram1, ValueChangedEventNotifier.class);
 
 		TraceValueChangedEventListener listener = new TraceValueChangedEventListener();
 		eventNotifier.addEventListener(listener);
 		TriggeredEventTraces<Notification> traces = listener.traces;
 		int expectedEventCount = 1;
-		
+
 		// Action
 		traces.clear();
 		// Modify ele
@@ -158,8 +158,8 @@ public class ValueChangedEventNotifierTest {
 		// Assert
 		// Assert
 		assertTrue("event recorded", traces.contains("valueChanged"));
-		assertEquals("one event recorded", expectedEventCount, traces.traces.size() );
-		
+		assertEquals("one event recorded", expectedEventCount, traces.traces.size());
+
 	}
 
 	/**
@@ -172,14 +172,14 @@ public class ValueChangedEventNotifierTest {
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
 		Property p1 = modelsFactory.newProperty(c1, "p1");
 
-		ValueChangedEventNotifierFactory notifierFactory = new ValueChangedEventNotifierFactory();		
-		ValueChangedEventNotifier eventNotifier = (ValueChangedEventNotifier)notifierFactory.adapt(diagram1);
+		ValueChangedEventNotifierFactory notifierFactory = new ValueChangedEventNotifierFactory();
+		ValueChangedEventNotifier eventNotifier = notifierFactory.adapt(diagram1);
 
 		TraceValueChangedEventListener listener = new TraceValueChangedEventListener();
 		eventNotifier.addEventListener(listener);
 		TriggeredEventTraces<Notification> traces = listener.traces;
 		int expectedEventCount = 1;
-		
+
 		// Action
 		traces.clear();
 		// Modify ele
@@ -187,8 +187,8 @@ public class ValueChangedEventNotifierTest {
 
 		// Assert
 		assertTrue("event recorded", traces.contains("valueChanged"));
-		assertEquals("one event recorded", expectedEventCount, traces.traces.size() );
-		
+		assertEquals("one event recorded", expectedEventCount, traces.traces.size());
+
 	}
 
 	/**
@@ -200,22 +200,22 @@ public class ValueChangedEventNotifierTest {
 		Diagram diagram1 = modelsFactory.newDiagram();
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
 
-		ValueChangedEventNotifierFactory notifierFactory = new ValueChangedEventNotifierFactory();		
-		ValueChangedEventNotifier eventNotifier = (ValueChangedEventNotifier)notifierFactory.adapt(diagram1, ValueChangedEventNotifier.class);
+		ValueChangedEventNotifierFactory notifierFactory = new ValueChangedEventNotifierFactory();
+		ValueChangedEventNotifier eventNotifier = (ValueChangedEventNotifier) notifierFactory.adapt(diagram1, ValueChangedEventNotifier.class);
 
 		TraceValueChangedEventListener listener = new TraceValueChangedEventListener();
 		eventNotifier.addEventListener(listener);
 		TriggeredEventTraces<Notification> traces = listener.traces;
 		int expectedEventCount = 1; // Name is set before attachment ==> no corresponding event.
-		
+
 		// Action
 		traces.clear();
 		Class c2 = modelsFactory.newClass(diagram1, "C2");
 
 		// Assert
 		assertTrue("event recorded", traces.contains("valueChanged"));
-		assertEquals("one event recorded", expectedEventCount, traces.traces.size() );
-		
+		assertEquals("one event recorded", expectedEventCount, traces.traces.size());
+
 	}
 
 

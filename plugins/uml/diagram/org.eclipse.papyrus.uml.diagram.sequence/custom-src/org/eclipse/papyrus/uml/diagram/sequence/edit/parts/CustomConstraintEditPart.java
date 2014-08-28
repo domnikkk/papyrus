@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ public class CustomConstraintEditPart extends ConstraintEditPart {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomConstraintEditPart(View view) {
@@ -61,13 +61,13 @@ public class CustomConstraintEditPart extends ConstraintEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
-		if(event.getFeature() instanceof EReference) {
-			EReference ref = (EReference)event.getFeature();
-			if("specification".equals(ref.getName())) {
+		if (event.getFeature() instanceof EReference) {
+			EReference ref = (EReference) event.getFeature();
+			if ("specification".equals(ref.getName())) {
 				List parts = getChildren();
-				for(Object p : parts) {
-					if(p instanceof Constraint2EditPart) {
-						((Constraint2EditPart)p).handleNotificationEvent(event);
+				for (Object p : parts) {
+					if (p instanceof Constraint2EditPart) {
+						((Constraint2EditPart) p).handleNotificationEvent(event);
 					}
 				}
 			}
@@ -76,17 +76,17 @@ public class CustomConstraintEditPart extends ConstraintEditPart {
 
 	@Override
 	protected void setLineWidth(int width) {
-		if(primaryShape instanceof NodeFigure) {
-			((NodeFigure)primaryShape).setLineWidth(width);
+		if (primaryShape instanceof NodeFigure) {
+			((NodeFigure) primaryShape).setLineWidth(width);
 		}
 		super.setLineWidth(width);
 	}
 
 	protected void refreshLabel() {
 		List parts = getChildren();
-		for(Object p : parts) {
-			if(p instanceof Constraint2EditPart) {
-				((Constraint2EditPart)p).refreshLabel();
+		for (Object p : parts) {
+			if (p instanceof Constraint2EditPart) {
+				((Constraint2EditPart) p).refreshLabel();
 			}
 		}
 	}
@@ -100,12 +100,12 @@ public class CustomConstraintEditPart extends ConstraintEditPart {
 
 	@Override
 	protected void refreshTransparency() {
-		FillStyle style = (FillStyle)getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
-		if(style != null) {
+		FillStyle style = (FillStyle) getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
+		if (style != null) {
 			setTransparency(style.getTransparency());
 		}
 	}
-	
+
 	@Override
 	protected IElementType elementTypeOfToolAfterCreation() {
 		return UMLElementTypes.ConstraintContext_8500;

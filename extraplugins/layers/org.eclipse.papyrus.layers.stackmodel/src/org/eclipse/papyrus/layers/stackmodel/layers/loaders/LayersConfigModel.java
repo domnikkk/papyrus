@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -45,20 +45,21 @@ import org.eclipse.papyrus.layers.stackmodel.operators.FillAverageOperator;
 /**
  * This class encapsulate an LayersConfig model.
  * It provides a default instance initialized with a model.
+ *
  * @author cedric dumoulin
  *
  */
 public class LayersConfigModel {
 
 	/**
-	 * The default instance used by all applications. 
+	 * The default instance used by all applications.
 	 */
 	static final protected LayersConfigModel instance;
-	
+
 	protected Resource resource;
-	
-	
-	
+
+
+
 	/**
 	 * Create and initialize default instance.
 	 */
@@ -66,7 +67,7 @@ public class LayersConfigModel {
 		instance = new LayersConfigModel();
 		instance.initDefaultModel();
 	}
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -75,7 +76,7 @@ public class LayersConfigModel {
 		createResourceAndRootFolder();
 	}
 
-	
+
 	/**
 	 * @return the instance
 	 */
@@ -89,7 +90,7 @@ public class LayersConfigModel {
 	private void initDefaultModel() {
 		// Create model
 		Folder layeropFolder = createFolder(getRootFolder(), "layerOp");
-		
+
 		LayerOperatorConfig stackedLayersOperatorConfig = createLayerOperatorConfig(layeropFolder, "stackedLayersOperator", LayersPackage.eINSTANCE.getStackedLayerOperatorDescriptor().getName());
 		LayerOperatorConfig stackedLayersOperatorMinimunConfig = createLayerOperatorConfig(layeropFolder, "stackedLayersOperatorMinimum", LayersPackage.eINSTANCE.getStackedLayerOperatorDescriptor().getName());
 		createLayerOperatorConfig(layeropFolder, "stackedLayersOperatorMaximum", LayersPackage.eINSTANCE.getStackedLayerOperatorDescriptor().getName());
@@ -100,9 +101,9 @@ public class LayersConfigModel {
 		OperatorConfig operatorBooleanAnd = createPropertyOperatorConfig(operatorFolder, "operatorBooleanAnd", BooleanAndOperator.class.getName());
 		OperatorConfig operatorBooleanOr = createPropertyOperatorConfig(operatorFolder, "operatorBooleanOr", BooleanOrOperator.class.getName());
 		OperatorConfig operatorFillAverage = createPropertyOperatorConfig(operatorFolder, "operatorFillAverage", FillAverageOperator.class.getName());
-	
-	
-		// Create basic types 
+
+
+		// Create basic types
 		Folder typeFolder = createFolder(getRootFolder(), "types");
 		TypeConfig typeBoolean = createTypeConfig(typeFolder, "boolean");
 		TypeConfig typeInt = createTypeConfig(typeFolder, "int");
@@ -111,8 +112,8 @@ public class LayersConfigModel {
 		TypeConfig typeColor = createTypeConfig(typeFolder, "Color");
 		TypeConfig typeFill = createTypeConfig(typeFolder, "Fill");
 		TypeConfig typeLine = createTypeConfig(typeFolder, "Line");
-		
-		// Create properties 
+
+		// Create properties
 		Folder propertiesFolder = createFolder(getRootFolder(), "properties");
 		PropertyId propertyIsVisible = createPropertyId(propertiesFolder, "isVisible", typeBoolean);
 		PropertyId propertyIsAbstract = createPropertyId(propertiesFolder, "isAbstract", typeBoolean);
@@ -121,30 +122,30 @@ public class LayersConfigModel {
 		PropertyId propertyFont = createPropertyId(propertiesFolder, "font", typeFont);
 		PropertyId propertyBgcolor = createPropertyId(propertiesFolder, "bgcolor", typeColor);
 		PropertyId propertyFgcolor = createPropertyId(propertiesFolder, "fgcolor", typeColor);
-		
+
 		// Bind operators to layers
 		Folder opBindingFolder = createFolder(getRootFolder(), "opBindings");
-	
+
 		LayerOperatorMultipleBinding layerOpBindingsA = createLayerOperatorsMultipleBinding(opBindingFolder, stackedLayersOperatorConfig);
 		createOperatorBinding(layerOpBindingsA, propertyIsVisible, operatorBooleanAnd);
 		createOperatorBinding(layerOpBindingsA, propertyIsAbstract, operatorBooleanAnd);
 		createOperatorBinding(layerOpBindingsA, propertyFill, operatorFillAverage);
-	
+
 		LayerOperatorMultipleBinding layerOpBindingsB = createLayerOperatorsMultipleBinding(opBindingFolder, stackedLayersOperatorMinimunConfig);
 		createOperatorBinding(layerOpBindingsB, propertyIsVisible, operatorBooleanOr);
 		createOperatorBinding(layerOpBindingsB, propertyIsAbstract, operatorBooleanOr);
 		createOperatorBinding(layerOpBindingsB, propertyFill, operatorFillAverage);
-	
+
 		LayerOperatorMultipleBinding layerOpBindingsAverage = createLayerOperatorsMultipleBinding(opBindingFolder, stackedLayersOperatorAverage);
 		createOperatorBinding(layerOpBindingsAverage, propertyIsVisible, operatorBooleanOr);
 		createOperatorBinding(layerOpBindingsAverage, propertyIsAbstract, operatorBooleanOr);
 		createOperatorBinding(layerOpBindingsAverage, propertyFill, operatorFillAverage);
-	
+
 	}
 
 	/**
 	 * Create the resource and add it the root folder.
-	 * 
+	 *
 	 * @return
 	 */
 	protected Folder createResourceAndRootFolder() {
@@ -176,25 +177,27 @@ public class LayersConfigModel {
 	/**
 	 * Get the root folder of the model.
 	 * There is always a root folder
+	 *
 	 * @return
 	 */
 	public Folder getRootFolder() {
-		return (Folder)getResource().getContents().get(0);
+		return (Folder) getResource().getContents().get(0);
 	}
-	
+
 	/**
 	 * Get all {@link LayerOperatorConfig} contained in the model.
+	 *
 	 * @return
 	 */
 	public List<LayerOperatorConfig> getAllLayerOperatorConfig() {
 
 		List<LayerOperatorConfig> res = new ArrayList<LayerOperatorConfig>();
-		
+
 		TreeIterator<EObject> iter = resource.getAllContents();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			EObject obj = iter.next();
-			if( obj instanceof LayerOperatorConfig) {
-				res.add((LayerOperatorConfig)obj);
+			if (obj instanceof LayerOperatorConfig) {
+				res.add((LayerOperatorConfig) obj);
 			}
 		}
 		return res;
@@ -202,20 +205,21 @@ public class LayersConfigModel {
 
 	/**
 	 * Get all object of the specified type contained in the model.
-	 * 
-	 * @param type The expected type for objects
-	 * 
+	 *
+	 * @param type
+	 *            The expected type for objects
+	 *
 	 * @return A list of object with the specified type.
 	 */
 	@SuppressWarnings("unchecked")
-	public <T extends EObject> List<T> getAllOfType( Class<T> type) {
+	public <T extends EObject> List<T> getAllOfType(Class<T> type) {
 		List<T> res = new ArrayList<T>();
-		
+
 		TreeIterator<EObject> iter = resource.getAllContents();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			EObject obj = iter.next();
-			if( type.isInstance(obj) ) {
-				res.add((T)obj);
+			if (type.isInstance(obj)) {
+				res.add((T) obj);
 			}
 		}
 		return res;
@@ -223,17 +227,18 @@ public class LayersConfigModel {
 
 	/**
 	 * Get all operators config objects.
-	 * 
+	 *
 	 * @return
 	 */
 	public List<OperatorConfig> getAllOperatorConfig() {
-		
+
 		return getAllOfType(OperatorConfig.class);
 	}
 
 
 	/**
 	 * Get all {@link OperatorBinding} declared in the model.
+	 *
 	 * @return
 	 */
 	public List<OperatorBinding> getAllOperatorBinding() {
@@ -243,10 +248,10 @@ public class LayersConfigModel {
 
 	/**
 	 * Initialize the provided model with some defs for tests.
-	 * 
+	 *
 	 * @param model
 	 */
 	private void initLayersConfigModel(LayersConfigModel model) {
-		
+
 	}
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,19 +25,19 @@ import org.eclipse.swt.widgets.Widget;
 /**
  * An adapter for Drag & Drop in the Context editor. The default Ecore drag & drop
  * is not compatible with the EMF Facet Tree Elements
- * 
+ *
  * @author Camille Letavernier
  */
 public class MoDiscoDropAdapter extends EditingDomainViewerDropAdapter {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
-	 *        The Editing domain for this Drop Adapter
+	 *            The Editing domain for this Drop Adapter
 	 * @param viewer
-	 *        The Viewer for this Drop Adapter
+	 *            The Viewer for this Drop Adapter
 	 */
 	public MoDiscoDropAdapter(EditingDomain domain, Viewer viewer) {
 		super(domain, viewer);
@@ -45,8 +45,8 @@ public class MoDiscoDropAdapter extends EditingDomainViewerDropAdapter {
 
 	@Override
 	protected Collection<?> extractDragSource(Object object) {
-		if(object instanceof ISelection) {
-			return super.extractDragSource(ActionUtil.getAdaptedSelection((ISelection)object));
+		if (object instanceof ISelection) {
+			return super.extractDragSource(ActionUtil.getAdaptedSelection((ISelection) object));
 		} else {
 			return super.extractDragSource(object);
 		}
@@ -55,9 +55,9 @@ public class MoDiscoDropAdapter extends EditingDomainViewerDropAdapter {
 	@Override
 	protected Object extractDropTarget(Widget item) {
 		Object dropTarget = super.extractDropTarget(item);
-		if(dropTarget instanceof IAdaptable) {
-			Object adapter = ((IAdaptable)dropTarget).getAdapter(EObject.class);
-			if(adapter != null) {
+		if (dropTarget instanceof IAdaptable) {
+			Object adapter = ((IAdaptable) dropTarget).getAdapter(EObject.class);
+			if (adapter != null) {
 				return adapter;
 			}
 		}

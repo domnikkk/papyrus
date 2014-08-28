@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -110,16 +110,16 @@ public class RefreshProfileDialog extends SelectionDialog {
 
 	protected void installEditors(TreeViewer viewer) {
 		viewer.expandAll();
-		for(TreeItem item : viewer.getTree().getItems()) {
+		for (TreeItem item : viewer.getTree().getItems()) {
 			installEditors(item, rootPackage);
 		}
 	}
 
 	protected void installEditors(TreeItem treeItem, final Object parentPackage) {
 		Object currentDataItem = treeItem.getData();
-		if(currentDataItem instanceof ProfileApplication) {
+		if (currentDataItem instanceof ProfileApplication) {
 
-			final ProfileApplication profileApplication = (ProfileApplication)currentDataItem;
+			final ProfileApplication profileApplication = (ProfileApplication) currentDataItem;
 
 			Tree tree = treeItem.getParent();
 
@@ -127,20 +127,20 @@ public class RefreshProfileDialog extends SelectionDialog {
 
 			checkbox.setSelection(true);
 
-			getProfilesToReapply((Package)profileApplication.getOwner()).add(profileApplication.getAppliedProfile());
+			getProfilesToReapply((Package) profileApplication.getOwner()).add(profileApplication.getAppliedProfile());
 
 			checkbox.addSelectionListener(new SelectionListener() {
 
 				public void widgetSelected(SelectionEvent e) {
-					if(checkbox.getSelection()) {
-						getProfilesToReapply((Package)profileApplication.getOwner()).add(profileApplication.getAppliedProfile());
+					if (checkbox.getSelection()) {
+						getProfilesToReapply((Package) profileApplication.getOwner()).add(profileApplication.getAppliedProfile());
 					} else {
-						getProfilesToReapply((Package)profileApplication.getOwner()).remove(profileApplication.getAppliedProfile());
+						getProfilesToReapply((Package) profileApplication.getOwner()).remove(profileApplication.getAppliedProfile());
 					}
 				}
 
 				public void widgetDefaultSelected(SelectionEvent e) {
-					//Nothing
+					// Nothing
 				}
 
 			});
@@ -153,18 +153,18 @@ public class RefreshProfileDialog extends SelectionDialog {
 		}
 
 
-		for(TreeItem subitem : treeItem.getItems()) {
+		for (TreeItem subitem : treeItem.getItems()) {
 			installEditors(subitem, currentDataItem);
 		}
 	}
 
 	@Override
 	protected Composite getDialogArea() {
-		return (Composite)super.getDialogArea();
+		return (Composite) super.getDialogArea();
 	}
 
 	protected Collection<Profile> getProfilesToReapply(Package currentPackage) {
-		if(!profilesToReapply.containsKey(currentPackage)) {
+		if (!profilesToReapply.containsKey(currentPackage)) {
 			profilesToReapply.put(currentPackage, new LinkedHashSet<Profile>());
 		}
 
@@ -174,7 +174,7 @@ public class RefreshProfileDialog extends SelectionDialog {
 	@Override
 	protected void okPressed() {
 		setSelectionResult(profilesToReapply.values().toArray());
-		if(callback != null) {
+		if (callback != null) {
 			callback.run();
 		}
 		super.okPressed();

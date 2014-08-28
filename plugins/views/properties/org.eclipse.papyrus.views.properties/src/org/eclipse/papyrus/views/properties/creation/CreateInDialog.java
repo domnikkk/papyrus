@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -102,15 +102,15 @@ public class CreateInDialog extends TrayDialog {
 		containerDialog.addCommitListener(new ICommitListener() {
 
 			public void commit(AbstractEditor editor) {
-				container = (EObject)containerDialog.getValue();
+				container = (EObject) containerDialog.getValue();
 				referenceDialog.setInput(container);
 				referenceContentProvider.inputChanged(null, null, container);
-				if(referenceContentProvider.getElements().length == 0) {
+				if (referenceContentProvider.getElements().length == 0) {
 					referenceDialog.setValue(null);
-				} else if(referenceContentProvider.getElements().length == 1) {
+				} else if (referenceContentProvider.getElements().length == 1) {
 					referenceDialog.setValue(referenceContentProvider.getElements()[0]);
 				} else {
-					if(!Arrays.asList(referenceContentProvider.getElements()).contains(referenceDialog.getValue())) {
+					if (!Arrays.asList(referenceContentProvider.getElements()).contains(referenceDialog.getValue())) {
 						referenceDialog.setValue(null);
 					}
 				}
@@ -121,7 +121,7 @@ public class CreateInDialog extends TrayDialog {
 		referenceDialog.addCommitListener(new ICommitListener() {
 
 			public void commit(AbstractEditor editor) {
-				containmentReference = (EReference)referenceDialog.getValue();
+				containmentReference = (EReference) referenceDialog.getValue();
 				updateControls();
 			}
 		});
@@ -133,7 +133,7 @@ public class CreateInDialog extends TrayDialog {
 	protected void updateControls() {
 		referenceDialog.setReadOnly(referenceContentProvider.getElements().length < 2);
 
-		if(container == null || containmentReference == null) {
+		if (container == null || containmentReference == null) {
 			getButton(OK).setEnabled(false);
 			return;
 		}
@@ -143,7 +143,7 @@ public class CreateInDialog extends TrayDialog {
 
 	@Override
 	protected Composite getDialogArea() {
-		return (Composite)super.getDialogArea();
+		return (Composite) super.getDialogArea();
 	}
 
 	public EObject getContainer() {
@@ -160,7 +160,7 @@ public class CreateInDialog extends TrayDialog {
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite composite = (Composite)super.createDialogArea(parent);
+		Composite composite = (Composite) super.createDialogArea(parent);
 		composite.setLayout(new PropertiesLayout(true));
 		return composite;
 	}

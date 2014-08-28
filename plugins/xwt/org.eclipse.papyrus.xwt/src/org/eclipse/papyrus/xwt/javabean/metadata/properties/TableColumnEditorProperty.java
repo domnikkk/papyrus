@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -16,7 +16,7 @@ import org.eclipse.papyrus.xwt.internal.xml.Element;
 import org.eclipse.swt.widgets.TableColumn;
 
 /**
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class TableColumnEditorProperty extends AbstractProperty {
@@ -26,12 +26,12 @@ public class TableColumnEditorProperty extends AbstractProperty {
 	}
 
 	public Object getValue(Object target) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
-		TableColumn tableColumn = (TableColumn)target;
+		TableColumn tableColumn = (TableColumn) target;
 		return tableColumn.getData(PropertiesConstants.DATA_DEFINED_EDITOR);
 	}
 
 	public void setValue(Object target, Object value) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
-		TableColumn tableColumn = (TableColumn)target;
+		TableColumn tableColumn = (TableColumn) target;
 		tableColumn.setData(PropertiesConstants.DATA_DEFINED_EDITOR, value);
 	}
 

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.runtime;
 
@@ -24,7 +24,7 @@ import org.eclipse.papyrus.views.properties.contexts.View;
 
 /**
  * The implementation for ViewConstraintEngine
- * 
+ *
  * @author Camille Letavernier
  */
 public class ViewConstraintEngineImpl extends DefaultConstraintEngine<View> implements ViewConstraintEngine {
@@ -33,16 +33,16 @@ public class ViewConstraintEngineImpl extends DefaultConstraintEngine<View> impl
 	public synchronized void refresh() {
 		constraints.clear();
 		Collection<Context> contexts = ConfigurationManager.getInstance().getEnabledContexts();
-		for(Context context : contexts) {
+		for (Context context : contexts) {
 			addContext(context);
 		}
-		
+
 		fireConstraintsChanged();
 	}
 
 	public void addContext(final Context context) {
-		for(View view : context.getViews()) {
-			for(ConstraintDescriptor descriptor : view.getConstraints()) {
+		for (View view : context.getViews()) {
+			for (ConstraintDescriptor descriptor : view.getConstraints()) {
 				addConstraint(descriptor);
 			}
 		}

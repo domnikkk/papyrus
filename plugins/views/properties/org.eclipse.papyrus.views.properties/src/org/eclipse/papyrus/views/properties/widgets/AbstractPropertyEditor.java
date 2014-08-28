@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,8 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.widgets;
 
@@ -27,6 +29,8 @@ import org.eclipse.papyrus.views.properties.Activator;
 import org.eclipse.papyrus.views.properties.contexts.Context;
 import org.eclipse.papyrus.views.properties.contexts.Property;
 import org.eclipse.papyrus.views.properties.modelelement.DataSource;
+import org.eclipse.papyrus.views.properties.modelelement.DataSourceChangedEvent;
+import org.eclipse.papyrus.views.properties.modelelement.IDataSourceListener;
 import org.eclipse.papyrus.views.properties.runtime.ConfigurationManager;
 import org.eclipse.papyrus.views.properties.util.PropertiesUtil;
 import org.eclipse.swt.events.DisposeEvent;
@@ -46,12 +50,14 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	/**
 	 * The qualified propertyPath. Represents the property edited by this widget
 	 */
-	protected String propertyPath; //Format : "DataContextElement:propertyName"
+	protected String propertyPath; // Format : "DataContextElement:propertyName"
 
 	/**
 	 * The DataSource representing the semantic objects
 	 */
 	protected DataSource input;
+
+	private IDataSourceListener dataSourceListener;
 
 	protected boolean readOnly = false;
 
@@ -79,10 +85,11 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 */
 	protected IObservableValue observableValue;
 
-	
+
 	protected IValidator modelValidator;
-	
+
 	protected IConverter targetToModelConverter;
+
 	/**
 	 * Indicates if the editor's label should be displayed
 	 */
@@ -147,7 +154,7 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 		editor.addDisposeListener(new DisposeListener() {
 
 			public void widgetDisposed(DisposeEvent e) {
-				if(input != null) {
+				if (input != null) {
 					input.removeChangeListener(AbstractPropertyEditor.this);
 				}
 			}
@@ -161,17 +168,17 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 * the parameters are set.
 	 */
 	protected void checkInput() {
-		if(propertyPath != null && input != null) {
+		if (propertyPath != null && input != null) {
 			isEditable = input.isEditable(propertyPath);
 			try {
 				doBinding();
 			} catch (Exception ex) {
-				//TODO : Handle the exception here. Display something ?
+				// TODO : Handle the exception here. Display something ?
 				Activator.log.error(ex);
 			}
 
-			if(getInputObservable() instanceof ICommitListener && getEditor() != null) {
-				getEditor().addCommitListener((ICommitListener)getInputObservable());
+			if (getInputObservable() instanceof ICommitListener && getEditor() != null) {
+				getEditor().addCommitListener((ICommitListener) getInputObservable());
 			}
 
 			updateLabel();
@@ -183,26 +190,26 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 * Binds the AbstractEditor (Either List or Value editor) to the semantic element
 	 */
 	protected void doBinding() {
-		if(listEditor != null) {
+		if (listEditor != null) {
 			IObservableList inputObservableList = getInputObservableList();
 
-			if(inputObservableList != null) {
+			if (inputObservableList != null) {
 				listEditor.setModelObservable(inputObservableList);
 			}
 
-		} else if(valueEditor != null) {
+		} else if (valueEditor != null) {
 			IObservableValue inputObservableValue = getInputObservableValue();
 
-			if(inputObservableValue != null) {
+			if (inputObservableValue != null) {
 				valueEditor.setStrategies();
 
-	
+
 
 				IValidator modelVal = getValidator();
-				if(modelVal!=null){
+				if (modelVal != null) {
 
 					valueEditor.setModelValidator(modelVal);
-				}	
+				}
 				valueEditor.setModelObservable(inputObservableValue);
 
 
@@ -214,7 +221,7 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 		boolean isReadOnly = getReadOnly();
 		applyReadOnly(isReadOnly);
 
-		if(input.forceRefresh(propertyPath)) {
+		if (input.forceRefresh(propertyPath)) {
 			input.addChangeListener(this);
 		}
 	}
@@ -223,11 +230,11 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 * Applies the readOnly state to the editor
 	 *
 	 * @param readOnly
-	 *        Indicates if this widget should be read-only
+	 *            Indicates if this widget should be read-only
 	 */
 	protected void applyReadOnly(boolean readOnly) {
 		AbstractEditor editor = getEditor();
-		if(editor != null) {
+		if (editor != null) {
 			editor.setReadOnly(readOnly);
 		}
 	}
@@ -235,16 +242,16 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	/**
 	 * {@inheritDoc}
 	 */
-	//TODO : This method handles a change on the DataSource. This should not be a ChangeEvent, as the DataSource is not an IObservable
-	//This method should be changed, and the source of the event should be checked (Otherwise, it cannot be extended).
-	//TODO : Remove the "final" modifier to let subclasses extend this behavior,
-	//when the source of the event is checked. Until then, it is not safe to override this method
+	// TODO : This method handles a change on the DataSource. This should not be a ChangeEvent, as the DataSource is not an IObservable
+	// This method should be changed, and the source of the event should be checked (Otherwise, it cannot be extended).
+	// TODO : Remove the "final" modifier to let subclasses extend this behavior,
+	// when the source of the event is checked. Until then, it is not safe to override this method
 	public final void handleChange(ChangeEvent event) {
-		//Handle the "forceRefresh" behavior when the input DataSource sends a ChangeEvent
+		// Handle the "forceRefresh" behavior when the input DataSource sends a ChangeEvent
 		AbstractEditor editor = getEditor();
-		if(editor != null ) {
+		if (editor != null) {
 			editor.refreshValue();
-		}	
+		}
 	}
 
 	/**
@@ -266,9 +273,9 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 */
 	public void updateLabel() {
 		String label = getLabel();
-		//		if(input != null && propertyPath != null && input.isMandatory(propertyPath)) {
+		// if(input != null && propertyPath != null && input.isMandatory(propertyPath)) {
 		//			label += " *"; //$NON-NLS-1$
-		//		}
+		// }
 
 		updateLabel(label);
 	}
@@ -277,10 +284,10 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 * Updates the label for this PropertyEditor.
 	 */
 	public void updateLabel(String label) {
-		if(showLabel) {
-			if(valueEditor != null) {
+		if (showLabel) {
+			if (valueEditor != null) {
 				valueEditor.setLabel(label);
-			} else if(listEditor != null) {
+			} else if (listEditor != null) {
 				listEditor.setLabel(label);
 			}
 		}
@@ -299,8 +306,22 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 * @param input
 	 */
 	public void setInput(DataSource input) {
-		this.input = input;
-		checkInput();
+		final DataSource oldInput = this.input;
+		if (input != oldInput) {
+			if (oldInput != null) {
+				oldInput.removeDataSourceListener(getDataSourceListener());
+			}
+
+			this.input = input;
+
+			if (input != null) {
+				input.addDataSourceListener(getDataSourceListener());
+			}
+
+			// Only do this after attaching our listener so that it will be ahead of
+			// any ModelElements created for properties
+			checkInput();
+		}
 	}
 
 	/**
@@ -314,12 +335,12 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 * @return the formatted property name for this Property Editor
 	 */
 	protected String getLabel() {
-		if(customLabel != null) {
+		if (customLabel != null) {
 			return customLabel;
 		}
 
 		Property property = getModelProperty();
-		if(property == null || property.getLabel() == null || property.getLabel().trim().equals("")) { //$NON-NLS-1$
+		if (property == null || property.getLabel() == null || property.getLabel().trim().equals("")) { //$NON-NLS-1$
 			return PropertiesUtil.getLabel(getLocalPropertyPath());
 		}
 
@@ -334,19 +355,19 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 		String description = ""; //$NON-NLS-1$
 		Property property = getModelProperty();
 
-		if(property != null) {
+		if (property != null) {
 			description = property.getDescription();
 		}
 
-		//Append the propertyPath to the description
-		if(description == null || description.trim().equals("")) { //$NON-NLS-1$
+		// Append the propertyPath to the description
+		if (description == null || description.trim().equals("")) { //$NON-NLS-1$
 			description = getLocalPropertyPath();
 		} else {
 			description = PropertiesUtil.resizeString(description, descriptionMaxCharPerLine);
 			description = getLocalPropertyPath() + ": " + description;
 		}
 
-			
+
 		updateDescription(description);
 	}
 
@@ -355,10 +376,10 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 * The description is the widget's ToolTipText
 	 */
 	protected void updateDescription(String description) {
-		if(valueEditor != null) {
+		if (valueEditor != null) {
 			valueEditor.setToolTipText(description);
-		} else if(listEditor != null) {
-			
+		} else if (listEditor != null) {
+
 			listEditor.setToolTipText(description);
 		}
 	}
@@ -369,7 +390,7 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 * @return The property associated to the Editor's {@link #propertyPath}
 	 */
 	protected Property getModelProperty() {
-		if(propertyPath == null) {
+		if (propertyPath == null) {
 			return null;
 		}
 		Context context = getContext();
@@ -378,7 +399,7 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	}
 
 	private Context getContext() {
-		if(input == null) {
+		if (input == null) {
 			return null;
 		} else {
 			return input.getView().getContext();
@@ -392,7 +413,7 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 */
 	public void setReadOnly(boolean readOnly) {
 		this.readOnly = readOnly;
-		if(getEditor() != null) {
+		if (getEditor() != null) {
 			getEditor().setReadOnly(getReadOnly());
 		}
 	}
@@ -420,9 +441,9 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 *         available
 	 */
 	protected IObservableList getInputObservableList() {
-		if(observableList == null) {
+		if (observableList == null) {
 			try {
-				observableList = (IObservableList)input.getObservable(propertyPath);
+				observableList = (IObservableList) input.getObservable(propertyPath);
 			} catch (Exception ex) {
 				Activator.log.error("Cannot find a valid IObservableList for " + propertyPath, ex); //$NON-NLS-1$
 			}
@@ -436,9 +457,9 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 *         available
 	 */
 	protected IObservableValue getInputObservableValue() {
-		if(observableValue == null) {
+		if (observableValue == null) {
 			try {
-				observableValue = (IObservableValue)input.getObservable(propertyPath);
+				observableValue = (IObservableValue) input.getObservable(propertyPath);
 			} catch (Exception ex) {
 				Activator.log.error("Cannot find a valid IObservableValue for " + propertyPath, ex); //$NON-NLS-1$
 			}
@@ -454,14 +475,14 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 * @return The IObservable associated to this propertyEditor
 	 */
 	protected IObservable getInputObservable() {
-		if(input == null || propertyPath == null) {
+		if (input == null || propertyPath == null) {
 			return null;
 		}
 
-		if(listEditor != null) {
+		if (listEditor != null) {
 			return getInputObservableList();
 		}
-		if(valueEditor != null) {
+		if (valueEditor != null) {
 			return getInputObservableValue();
 		}
 		return null;
@@ -480,7 +501,7 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 * @param data
 	 */
 	public void setLayoutData(Object data) {
-		if(getEditor() != null) {
+		if (getEditor() != null) {
 			getEditor().setLayoutData(data);
 		}
 	}
@@ -503,7 +524,7 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	public void setShowLabel(boolean showLabel) {
 		AbstractEditor editor = getEditor();
 		this.showLabel = showLabel;
-		if(editor != null) {
+		if (editor != null) {
 			editor.setDisplayLabel(showLabel);
 		}
 	}
@@ -523,7 +544,7 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 * default label
 	 *
 	 * @param customLabel
-	 *        The label to use with this property editor
+	 *            The label to use with this property editor
 	 */
 	public void setCustomLabel(String customLabel) {
 		this.customLabel = customLabel;
@@ -541,22 +562,21 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 * @return the Control defined by this Property Editor
 	 */
 	public Control getControl() {
-		if(valueEditor == null) {
+		if (valueEditor == null) {
 			return listEditor;
 		}
 		return valueEditor;
 	}
-	
+
 	/**
-	 * @return the IValidator for this property editor 
+	 * @return the IValidator for this property editor
 	 */
-	
-	public IValidator getValidator(){
-		if(modelValidator==null){
-			try{
+
+	public IValidator getValidator() {
+		if (modelValidator == null) {
+			try {
 				modelValidator = input.getValidator(propertyPath);
-			}
-			catch(Exception ex){
+			} catch (Exception ex) {
 				Activator.log.error("Cannot find a valid Validator for " + propertyPath, ex); //$NON-NLS-1$
 
 			}
@@ -564,5 +584,37 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 
 		return modelValidator;
 	}
-	
+
+	private IDataSourceListener getDataSourceListener() {
+		if (dataSourceListener == null) {
+			dataSourceListener = new IDataSourceListener() {
+
+				public void dataSourceChanged(DataSourceChangedEvent event) {
+					// The data source's selection changed. Update my validator or clear it if now there is none
+					IObservableValue observable = AbstractPropertyEditor.this.observableValue;
+
+					if ((observable != null) && (modelValidator != null) && (valueEditor != null) && !valueEditor.isDisposed()) {
+						modelValidator = null;
+
+						// First, clear the validator to disable validation
+						valueEditor.setStrategies();
+						valueEditor.setModelValidator(null);
+
+						// Then re-enable to later when ready for user input
+						observable.getRealm().asyncExec(new Runnable() {
+
+							public void run() {
+								if ((valueEditor != null) && !valueEditor.isDisposed()) {
+									valueEditor.setStrategies();
+									valueEditor.setModelValidator(getValidator());
+								}
+							}
+						});
+					}
+				}
+			};
+		}
+
+		return dataSourceListener;
+	}
 }

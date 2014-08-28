@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,18 +21,18 @@ import org.eclipse.papyrus.emf.facet.query.java.core.IJavaQuery2;
 import org.eclipse.papyrus.emf.facet.query.java.core.IParameterValueList2;
 
 public class NotVisibleStructuralFeatureQuery implements IJavaQuery2<Diagram, Boolean> {
-	public Boolean evaluate(final Diagram context, 
+	public Boolean evaluate(final Diagram context,
 			final IParameterValueList2 parameterValues,
 			final IFacetManager facetManager)
 			throws DerivedTypedElementException {
-		ParameterValue parameterValue= (ParameterValue)parameterValues.getParameterValueByName("eStructuralFeature");
-		EStructuralFeature eStructuralFeature=(EStructuralFeature)parameterValue.getValue();
-		//if eStructural feature ==null this is root model explorer.
-		//border effect of  this kind of queries
-		if (eStructuralFeature==null){
+		ParameterValue parameterValue = parameterValues.getParameterValueByName("eStructuralFeature");
+		EStructuralFeature eStructuralFeature = (EStructuralFeature) parameterValue.getValue();
+		// if eStructural feature ==null this is root model explorer.
+		// border effect of this kind of queries
+		if (eStructuralFeature == null) {
 			return true;
 		}
-		
+
 		return false;
 	}
 }

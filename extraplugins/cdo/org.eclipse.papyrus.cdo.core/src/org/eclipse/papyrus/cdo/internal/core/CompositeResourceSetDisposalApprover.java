@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,25 +27,26 @@ class CompositeResourceSetDisposalApprover
 		implements IResourceSetDisposalApprover {
 
 	private final List<IResourceSetDisposalApprover> approvers = Lists
-		.newArrayListWithExpectedSize(1);
+			.newArrayListWithExpectedSize(1);
 
 	CompositeResourceSetDisposalApprover() {
 		super();
 	}
 
+	@Override
 	public DisposeAction disposalRequested(IPapyrusRepository repository,
 			Collection<ResourceSet> resourceSets) {
-		
+
 		DisposeAction result = DisposeAction.CLOSE;
 
 		if (!resourceSets.isEmpty() && !approvers.isEmpty()) {
 			for (IResourceSetDisposalApprover next : approvers) {
 				DisposeAction action = wrapNull(next
-					.disposalRequested(repository, resourceSets));
+						.disposalRequested(repository, resourceSets));
 
 				result = result.compareTo(action) > 0
-					? action
-					: result;
+						? action
+						: result;
 
 				if (result == DisposeAction.NONE) {
 					// no need to consult anyone else
@@ -59,8 +60,8 @@ class CompositeResourceSetDisposalApprover
 
 	private DisposeAction wrapNull(DisposeAction action) {
 		return (action == null)
-			? DisposeAction.NONE
-			: action;
+				? DisposeAction.NONE
+				: action;
 	}
 
 	void addApprover(IResourceSetDisposalApprover approver) {

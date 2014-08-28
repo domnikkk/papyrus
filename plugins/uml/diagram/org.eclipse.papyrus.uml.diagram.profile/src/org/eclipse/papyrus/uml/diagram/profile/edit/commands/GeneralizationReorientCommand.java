@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.papyrus.uml.diagram.profile.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Generalization;
@@ -55,14 +56,15 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(false == getElementToEdit() instanceof Generalization) {
+		if (false == getElementToEdit() instanceof Generalization) {
 			return false;
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -72,7 +74,7 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof Classifier && newEnd instanceof Classifier)) {
+		if (!(oldEnd instanceof Classifier && newEnd instanceof Classifier)) {
 			return false;
 		}
 		Classifier target = getLink().getGeneral();
@@ -83,27 +85,28 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof Classifier && newEnd instanceof Classifier)) {
+		if (!(oldEnd instanceof Classifier && newEnd instanceof Classifier)) {
 			return false;
 		}
-		if(!(getLink().eContainer() instanceof Classifier)) {
+		if (!(getLink().eContainer() instanceof Classifier)) {
 			return false;
 		}
-		Classifier source = (Classifier)getLink().eContainer();
+		Classifier source = (Classifier) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistGeneralization_4002(getLink(), source, getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -130,34 +133,34 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected Generalization getLink() {
-		return (Generalization)getElementToEdit();
+		return (Generalization) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Classifier getOldSource() {
-		return (Classifier)oldEnd;
+		return (Classifier) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Classifier getNewSource() {
-		return (Classifier)newEnd;
+		return (Classifier) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Classifier getOldTarget() {
-		return (Classifier)oldEnd;
+		return (Classifier) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Classifier getNewTarget() {
-		return (Classifier)newEnd;
+		return (Classifier) newEnd;
 	}
 }

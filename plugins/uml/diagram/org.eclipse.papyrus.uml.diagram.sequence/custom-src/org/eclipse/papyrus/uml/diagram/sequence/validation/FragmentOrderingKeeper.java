@@ -49,19 +49,18 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
  * In the order Interaction's fragment property, the order is kept as a valid trace,
  * </ul>
  * <ul>
- * Or at least, when there is no valid trace, that the order is kept for each lifeline (not to loose sequence information on a lifeline, which is
- * contained only graphically otherwise).
+ * Or at least, when there is no valid trace, that the order is kept for each lifeline (not to loose sequence information on a lifeline, which is contained only graphically otherwise).
  * </ul>
  * </li> <br/>
  * Note that this class contains an algorithm which computes a valid trace. With little adaptation, it could easily provide all valid traces, hence,
  * compare two lifelines to know whether they are equivalent.
- * 
+ *
  * @author vhemery
  */
 public class FragmentOrderingKeeper {
 
 	/** A constant equals to half the smallest location delta */
-	private static final float HALF_UNIT = (float)0.5;
+	private static final float HALF_UNIT = (float) 0.5;
 
 	/** Format for displaying an element's name */
 	private static final String NAME_FORMAT = "<{0}> {1}";
@@ -88,36 +87,36 @@ public class FragmentOrderingKeeper {
 
 	/**
 	 * Validate modification and update the interaction's fragments order if necessary.
-	 * 
+	 *
 	 * @see org.eclipse.emf.validation.AbstractModelConstraint#validate(org.eclipse.emf.validation.IValidationContext)
-	 * 
+	 *
 	 * @param target
-	 *        the target to validate
+	 *            the target to validate
 	 * @param ctx
-	 *        validation context
+	 *            validation context
 	 * @return status
 	 */
 	public IStatus validate(EObject target, IValidationContext ctx) {
-		if(target instanceof Interaction) {
-			Interaction interaction = (Interaction)target;
+		if (target instanceof Interaction) {
+			Interaction interaction = (Interaction) target;
 			boolean valid = validateOrder(interaction);
-			if(!valid) {
+			if (!valid) {
 				IStatus status = ctx.createFailureStatus(getConflictingFragmentsFormattedString());
 				removeModelReferences();
 				return status;
 			}
-		} else if(target instanceof InteractionOperand) {
-			InteractionOperand interactionOp = (InteractionOperand)target;
+		} else if (target instanceof InteractionOperand) {
+			InteractionOperand interactionOp = (InteractionOperand) target;
 			boolean valid = validateOrder(interactionOp);
-			if(!valid) {
+			if (!valid) {
 				IStatus status = ctx.createFailureStatus(getConflictingFragmentsFormattedString());
 				removeModelReferences();
 				return status;
 			}
-		} else if(target instanceof InteractionFragment) {
-			InteractionFragment fragment = (InteractionFragment)target;
+		} else if (target instanceof InteractionFragment) {
+			InteractionFragment fragment = (InteractionFragment) target;
 			boolean valid = validateOrder(fragment.getEnclosingInteraction());
-			if(!valid) {
+			if (!valid) {
 				IStatus status = ctx.createFailureStatus(getConflictingFragmentsFormattedString());
 				removeModelReferences();
 				return status;
@@ -129,12 +128,12 @@ public class FragmentOrderingKeeper {
 
 	/**
 	 * Get a formatted string with names of all conflicting fragments
-	 * 
+	 *
 	 * @return formatted string
 	 */
 	private String getConflictingFragmentsFormattedString() {
 		StringBuffer buff = new StringBuffer();
-		for(InteractionFragment frag : conflictingFragments) {
+		for (InteractionFragment frag : conflictingFragments) {
 			buff.append(System.getProperty("line.separator"));
 			String name = NLS.bind(NAME_FORMAT, frag.eClass().getName(), frag.getQualifiedName());
 			buff.append(name);
@@ -149,35 +148,35 @@ public class FragmentOrderingKeeper {
 		// orderedFragments is an EList, hence, we must not empty it.
 		orderedFragments = null;
 		// other lists can be cleared.
-		if(constrainingLifelineParts != null) {
+		if (constrainingLifelineParts != null) {
 			constrainingLifelineParts.clear();
 		}
-		if(constrainingMessages != null) {
+		if (constrainingMessages != null) {
 			constrainingMessages.clear();
 		}
-		if(constrainingExecutions != null) {
+		if (constrainingExecutions != null) {
 			constrainingExecutions.clear();
 		}
-		if(constrainingGeneralOrderings != null) {
+		if (constrainingGeneralOrderings != null) {
 			constrainingGeneralOrderings.clear();
 		}
-		//constrainingCombinedFragments.clear();
-		if(orderConstraints != null) {
+		// constrainingCombinedFragments.clear();
+		if (orderConstraints != null) {
 			orderConstraints.clear();
 		}
-		if(conflictingFragments != null) {
+		if (conflictingFragments != null) {
 			conflictingFragments.clear();
 		}
-		if(optionallyOrderedFragments != null) {
+		if (optionallyOrderedFragments != null) {
 			optionallyOrderedFragments.clear();
 		}
 	}
 
 	/**
 	 * Validate the order of interaction operand's fragments
-	 * 
+	 *
 	 * @param interactionOperand
-	 *        the interaction operand
+	 *            the interaction operand
 	 * @return true if a valid trace has been computed, false if none exists
 	 */
 	private boolean validateOrder(InteractionOperand interactionOperand) {
@@ -188,9 +187,9 @@ public class FragmentOrderingKeeper {
 
 	/**
 	 * Validate the order of interaction's fragments
-	 * 
+	 *
 	 * @param interaction
-	 *        the interaction
+	 *            the interaction
 	 * @return true if a valid trace has been computed, false if none exists
 	 */
 	private boolean validateOrder(Interaction interaction) {
@@ -222,8 +221,8 @@ public class FragmentOrderingKeeper {
 	private void computeConstraints() {
 		IEditorPart editor = MDTUtil.getActiveEditor();
 		DiagramEditPart diagram = null;
-		if(editor instanceof IDiagramWorkbenchPart) {
-			diagram = ((IDiagramWorkbenchPart)editor).getDiagramEditPart();
+		if (editor instanceof IDiagramWorkbenchPart) {
+			diagram = ((IDiagramWorkbenchPart) editor).getDiagramEditPart();
 		}
 		// reset constraints
 		constrainingNotRepresentedLifelines = new HashSet<Lifeline>();
@@ -233,24 +232,24 @@ public class FragmentOrderingKeeper {
 		constrainingExecutions = new HashSet<ExecutionSpecification>();
 		constrainingGeneralOrderings = new HashSet<GeneralOrdering>();
 		// get new constraining objects
-		for(InteractionFragment fragment : orderedFragments) {
+		for (InteractionFragment fragment : orderedFragments) {
 			// get Lifelines
-			for(Lifeline lifeline : fragment.getCovereds()) {
+			for (Lifeline lifeline : fragment.getCovereds()) {
 				boolean lifelineRepresented = false;
 				List<?> lifelineViews = DiagramEditPartsUtil.getEObjectViews(lifeline);
-				for(Object lifelineView : lifelineViews) {
-					if(lifelineView instanceof View && diagram != null) {
-						int visualID = UMLVisualIDRegistry.getVisualID((View)lifelineView);
-						if(visualID == LifelineEditPart.VISUAL_ID) {
-							EditPart part = DiagramEditPartsUtil.getEditPartFromView((View)lifelineView, diagram);
-							if(part instanceof LifelineEditPart) {
-								constrainingLifelineParts.add((LifelineEditPart)part);
+				for (Object lifelineView : lifelineViews) {
+					if (lifelineView instanceof View && diagram != null) {
+						int visualID = UMLVisualIDRegistry.getVisualID((View) lifelineView);
+						if (visualID == LifelineEditPart.VISUAL_ID) {
+							EditPart part = DiagramEditPartsUtil.getEditPartFromView((View) lifelineView, diagram);
+							if (part instanceof LifelineEditPart) {
+								constrainingLifelineParts.add((LifelineEditPart) part);
 								lifelineRepresented = true;
 							}
 						}
 					}
 				}
-				if(!lifelineRepresented) {
+				if (!lifelineRepresented) {
 					// rely on old order for the lifeline
 					constrainingNotRepresentedLifelines.add(lifeline);
 				}
@@ -269,26 +268,26 @@ public class FragmentOrderingKeeper {
 			 * }
 			 */
 			// get Messages
-			if(fragment instanceof MessageOccurrenceSpecification) {
-				Message mess = ((MessageOccurrenceSpecification)fragment).getMessage();
-				if(mess != null) {
+			if (fragment instanceof MessageOccurrenceSpecification) {
+				Message mess = ((MessageOccurrenceSpecification) fragment).getMessage();
+				if (mess != null) {
 					constrainingMessages.add(mess);
 				}
 			}
 			// get ExecutionSpecifications
-			if(fragment instanceof ExecutionSpecification) {
-				constrainingExecutions.add((ExecutionSpecification)fragment);
-			} else if(fragment instanceof ExecutionOccurrenceSpecification) {
-				ExecutionSpecification exe = ((ExecutionOccurrenceSpecification)fragment).getExecution();
-				if(exe != null) {
+			if (fragment instanceof ExecutionSpecification) {
+				constrainingExecutions.add((ExecutionSpecification) fragment);
+			} else if (fragment instanceof ExecutionOccurrenceSpecification) {
+				ExecutionSpecification exe = ((ExecutionOccurrenceSpecification) fragment).getExecution();
+				if (exe != null) {
 					constrainingExecutions.add(exe);
 				}
 			}
 			// get General Orderings
-			if(fragment instanceof OccurrenceSpecification) {
-				EList<GeneralOrdering> orderings = ((OccurrenceSpecification)fragment).getToAfters();
+			if (fragment instanceof OccurrenceSpecification) {
+				EList<GeneralOrdering> orderings = ((OccurrenceSpecification) fragment).getToAfters();
 				constrainingGeneralOrderings.addAll(orderings);
-				orderings = ((OccurrenceSpecification)fragment).getToBefores();
+				orderings = ((OccurrenceSpecification) fragment).getToBefores();
 				constrainingGeneralOrderings.addAll(orderings);
 			}
 		}
@@ -324,11 +323,11 @@ public class FragmentOrderingKeeper {
 		orderConstraints = new ArrayList<List<InteractionFragment>>(numberOfConstraints);
 		int indexConstraint = 0;
 		// construct lifelines constraints (model only)
-		for(Lifeline lifeline : constrainingNotRepresentedLifelines) {
+		for (Lifeline lifeline : constrainingNotRepresentedLifelines) {
 			List<InteractionFragment> constraint = new ArrayList<InteractionFragment>();
-			//fill constraint : previous order for elements of lifeline not drawn
-			for(InteractionFragment fragment : orderedFragments) {
-				if(lifeline.getCoveredBys().contains(fragment)) {
+			// fill constraint : previous order for elements of lifeline not drawn
+			for (InteractionFragment fragment : orderedFragments) {
+				if (lifeline.getCoveredBys().contains(fragment)) {
 					constraint.add(fragment);
 				}
 			}
@@ -338,9 +337,9 @@ public class FragmentOrderingKeeper {
 			indexConstraint++;
 		}
 		// construct lifelines constraints (graphical and model)
-		for(LifelineEditPart part : constrainingLifelineParts) {
+		for (LifelineEditPart part : constrainingLifelineParts) {
 			TreeMap<Float, InteractionFragment> constraint = new TreeMap<Float, InteractionFragment>();
-			//fill constraint : graphical location and previous order of elements not drawn
+			// fill constraint : graphical location and previous order of elements not drawn
 			fillConstraintWithLifelineEvents(constraint, part, indexConstraint);
 			// store constraint
 			ArrayList<InteractionFragment> list = new ArrayList<InteractionFragment>(constraint.values());
@@ -361,16 +360,16 @@ public class FragmentOrderingKeeper {
 		 * }
 		 */
 		// construct messages constraints
-		for(Message mess : constrainingMessages) {
+		for (Message mess : constrainingMessages) {
 			List<InteractionFragment> constraint = new ArrayList<InteractionFragment>(2);
-			//fill constraint : send > receive
+			// fill constraint : send > receive
 			MessageEnd frag = mess.getSendEvent();
-			if(frag instanceof InteractionFragment && orderedFragments.contains(frag)) {
-				constraint.add((InteractionFragment)frag);
+			if (frag instanceof InteractionFragment && orderedFragments.contains(frag)) {
+				constraint.add((InteractionFragment) frag);
 			}
 			frag = mess.getReceiveEvent();
-			if(frag instanceof InteractionFragment && orderedFragments.contains(frag)) {
-				constraint.add((InteractionFragment)frag);
+			if (frag instanceof InteractionFragment && orderedFragments.contains(frag)) {
+				constraint.add((InteractionFragment) frag);
 			}
 			DestructionOccurrenceUtil.constraintDestructionOccurrence(mess, constraint);
 			// store constraint
@@ -378,19 +377,19 @@ public class FragmentOrderingKeeper {
 			indexConstraint++;
 		}
 		// construct executions constraints
-		for(ExecutionSpecification exe : constrainingExecutions) {
+		for (ExecutionSpecification exe : constrainingExecutions) {
 			List<InteractionFragment> constraint = new ArrayList<InteractionFragment>(3);
-			//fill constraint : start > execution > finish
+			// fill constraint : start > execution > finish
 			InteractionFragment frag = exe.getStart();
-			if(frag != null && orderedFragments.contains(frag)) {
+			if (frag != null && orderedFragments.contains(frag)) {
 				constraint.add(frag);
 			}
 			frag = exe;
-			if(orderedFragments.contains(frag)) {
+			if (orderedFragments.contains(frag)) {
 				constraint.add(frag);
 			}
 			frag = exe.getFinish();
-			if(frag != null && orderedFragments.contains(frag)) {
+			if (frag != null && orderedFragments.contains(frag)) {
 				constraint.add(frag);
 			}
 			// store constraint
@@ -398,15 +397,15 @@ public class FragmentOrderingKeeper {
 			indexConstraint++;
 		}
 		// construct general orderings constraints
-		for(GeneralOrdering genOrd : constrainingGeneralOrderings) {
+		for (GeneralOrdering genOrd : constrainingGeneralOrderings) {
 			List<InteractionFragment> constraint = new ArrayList<InteractionFragment>(2);
-			//fill constraint : before > after
+			// fill constraint : before > after
 			InteractionFragment frag = genOrd.getBefore();
-			if(frag != null && orderedFragments.contains(frag)) {
+			if (frag != null && orderedFragments.contains(frag)) {
 				constraint.add(frag);
 			}
 			frag = genOrd.getAfter();
-			if(frag != null && orderedFragments.contains(frag)) {
+			if (frag != null && orderedFragments.contains(frag)) {
 				constraint.add(frag);
 			}
 			// store constraint
@@ -417,23 +416,23 @@ public class FragmentOrderingKeeper {
 
 	/**
 	 * Fill the constraint imposed by a lifeline
-	 * 
+	 *
 	 * @param constraint
-	 *        the tree map for hosting the constraint
+	 *            the tree map for hosting the constraint
 	 * @param lifelinePart
-	 *        the lifeline edit part
+	 *            the lifeline edit part
 	 * @param indexConstraint
-	 *        index of constraint
+	 *            index of constraint
 	 */
 	private void fillConstraintWithLifelineEvents(TreeMap<Float, InteractionFragment> constraint, LifelineEditPart lifelinePart, int indexConstraint) {
 		EObject lifeline = lifelinePart.resolveSemanticElement();
-		if(lifeline instanceof Lifeline) {
+		if (lifeline instanceof Lifeline) {
 			List<InteractionFragment> nonLocalizedEvents = new ArrayList<InteractionFragment>();
 			// sort fragments according to their location on the lifeline
-			for(InteractionFragment event : ((Lifeline)lifeline).getCoveredBys()) {
-				if(orderedFragments.contains(event)) {
+			for (InteractionFragment event : ((Lifeline) lifeline).getCoveredBys()) {
+				if (orderedFragments.contains(event)) {
 					Point loc = SequenceUtil.findLocationOfEvent(lifelinePart, event);
-					if(loc != null) {
+					if (loc != null) {
 						float index = findNonConflictingYIndexOnLifeline(loc.y, constraint, event);
 						constraint.put(index, event);
 					} else {
@@ -445,23 +444,23 @@ public class FragmentOrderingKeeper {
 			optionallyOrderedFragments.put(indexConstraint, nonLocalizedEvents);
 			// add not drawn events according to their old order in the valid trace
 			InteractionFragment lastMetSortedFragment = null;
-			for(InteractionFragment fragment : orderedFragments) {
-				if(((Lifeline)lifeline).getCoveredBys().contains(fragment)) {
+			for (InteractionFragment fragment : orderedFragments) {
+				if (((Lifeline) lifeline).getCoveredBys().contains(fragment)) {
 					// this is a fragment of the lifeline.
-					if(constraint.containsValue(fragment)) {
+					if (constraint.containsValue(fragment)) {
 						lastMetSortedFragment = fragment;
-					} else if(nonLocalizedEvents.contains(fragment) && lastMetSortedFragment == null) {
+					} else if (nonLocalizedEvents.contains(fragment) && lastMetSortedFragment == null) {
 						// insert it at the very beginning
-						constraint.put((float)0, fragment);
+						constraint.put((float) 0, fragment);
 						lastMetSortedFragment = fragment;
-					} else if(nonLocalizedEvents.contains(fragment)) {
+					} else if (nonLocalizedEvents.contains(fragment)) {
 						// insert it just after lastMetSortedFragment
 						Iterator<Entry<Float, InteractionFragment>> entryIt = constraint.entrySet().iterator();
 						// find float key of lastMetSortedFragment
-						while(entryIt.hasNext()) {
+						while (entryIt.hasNext()) {
 							Entry<Float, InteractionFragment> entry = entryIt.next();
-							if(entry.getValue().equals(lastMetSortedFragment)) {
-								if(entryIt.hasNext()) {
+							if (entry.getValue().equals(lastMetSortedFragment)) {
+								if (entryIt.hasNext()) {
 									// insert between the two fragments
 									float key = (entry.getKey() + entryIt.next().getKey()) / 2;
 									constraint.put(key, fragment);
@@ -484,21 +483,21 @@ public class FragmentOrderingKeeper {
 
 	/**
 	 * Find a float index corresponding approximatively to the location of event on the lifeline.
-	 * 
+	 *
 	 * @param y
-	 *        real location of event on the lifeline
+	 *            real location of event on the lifeline
 	 * @param eventsMap
-	 *        map containing other events of the lifeline
+	 *            map containing other events of the lifeline
 	 * @param event
-	 *        event to find a float index for
+	 *            event to find a float index for
 	 * @return unused float index for the map
 	 */
 	private float findNonConflictingYIndexOnLifeline(int y, TreeMap<Float, InteractionFragment> eventsMap, InteractionFragment event) {
 		float index = Integer.valueOf(y).floatValue();
 		float delta = HALF_UNIT;
-		while(eventsMap.containsKey(index)) {
+		while (eventsMap.containsKey(index)) {
 			InteractionFragment otherEvent = eventsMap.get(index);
-			if(simulatenousEventsHappenInThisOrder(otherEvent, event)) {
+			if (simulatenousEventsHappenInThisOrder(otherEvent, event)) {
 				// other event must happen before the event
 				index += delta;
 			} else {
@@ -512,53 +511,53 @@ public class FragmentOrderingKeeper {
 
 	/**
 	 * Gives the order between two fragments which virtually happen at the same time
-	 * 
+	 *
 	 * @param firstFragment
-	 *        first InteractionFragment
+	 *            first InteractionFragment
 	 * @param secondFragment
-	 *        second InteractionFragment
+	 *            second InteractionFragment
 	 * @return true if firstEvent should happen before secondEvent, false if the contrary.
 	 */
 	private boolean simulatenousEventsHappenInThisOrder(InteractionFragment firstFragment, InteractionFragment secondFragment) {
 		// DestructionEvent comes last
-		if(firstFragment instanceof DestructionOccurrenceSpecification) {
+		if (firstFragment instanceof DestructionOccurrenceSpecification) {
 			return false;
-		} else if(secondFragment instanceof DestructionOccurrenceSpecification) {
+		} else if (secondFragment instanceof DestructionOccurrenceSpecification) {
 			return true;
 		}
 		// a receiving message event should trigger any other event
-		if(firstFragment instanceof MessageOccurrenceSpecification && EcoreUtil.equals(((MessageOccurrenceSpecification)firstFragment).getMessage().getReceiveEvent(), firstFragment)) {
+		if (firstFragment instanceof MessageOccurrenceSpecification && EcoreUtil.equals(((MessageOccurrenceSpecification) firstFragment).getMessage().getReceiveEvent(), firstFragment)) {
 			return true;
 		}
-		if(secondFragment instanceof MessageOccurrenceSpecification && EcoreUtil.equals(((MessageOccurrenceSpecification)secondFragment).getMessage().getReceiveEvent(), secondFragment)) {
+		if (secondFragment instanceof MessageOccurrenceSpecification && EcoreUtil.equals(((MessageOccurrenceSpecification) secondFragment).getMessage().getReceiveEvent(), secondFragment)) {
 			return false;
 		}
 		// a starting execution event should happen before subsequent execution's events (except creation message receive)
-		if(firstFragment instanceof ExecutionOccurrenceSpecification && EcoreUtil.equals(((ExecutionOccurrenceSpecification)firstFragment).getExecution().getStart(), firstFragment)) {
+		if (firstFragment instanceof ExecutionOccurrenceSpecification && EcoreUtil.equals(((ExecutionOccurrenceSpecification) firstFragment).getExecution().getStart(), firstFragment)) {
 			return true;
 		}
-		if(secondFragment instanceof ExecutionOccurrenceSpecification && EcoreUtil.equals(((ExecutionOccurrenceSpecification)secondFragment).getExecution().getStart(), secondFragment)) {
+		if (secondFragment instanceof ExecutionOccurrenceSpecification && EcoreUtil.equals(((ExecutionOccurrenceSpecification) secondFragment).getExecution().getStart(), secondFragment)) {
 			return false;
 		}
 		// an execution event should happen before subsequent execution's events (except starting)
-		if(firstFragment instanceof ExecutionSpecification) {
+		if (firstFragment instanceof ExecutionSpecification) {
 			return true;
 		}
-		if(secondFragment instanceof ExecutionSpecification) {
+		if (secondFragment instanceof ExecutionSpecification) {
 			return false;
 		}
 		// a finishing execution event should happen after terminated execution's events
-		if(firstFragment instanceof ExecutionOccurrenceSpecification && EcoreUtil.equals(((ExecutionOccurrenceSpecification)firstFragment).getExecution().getFinish(), firstFragment)) {
+		if (firstFragment instanceof ExecutionOccurrenceSpecification && EcoreUtil.equals(((ExecutionOccurrenceSpecification) firstFragment).getExecution().getFinish(), firstFragment)) {
 			return false;
 		}
-		if(secondFragment instanceof ExecutionOccurrenceSpecification && EcoreUtil.equals(((ExecutionOccurrenceSpecification)secondFragment).getExecution().getFinish(), secondFragment)) {
+		if (secondFragment instanceof ExecutionOccurrenceSpecification && EcoreUtil.equals(((ExecutionOccurrenceSpecification) secondFragment).getExecution().getFinish(), secondFragment)) {
 			return true;
 		}
 		// a sending message event should happen preferably after an unspecified event
-		if(firstFragment instanceof MessageOccurrenceSpecification && EcoreUtil.equals(((MessageOccurrenceSpecification)firstFragment).getMessage().getSendEvent(), firstFragment)) {
+		if (firstFragment instanceof MessageOccurrenceSpecification && EcoreUtil.equals(((MessageOccurrenceSpecification) firstFragment).getMessage().getSendEvent(), firstFragment)) {
 			return false;
 		}
-		if(secondFragment instanceof MessageOccurrenceSpecification && EcoreUtil.equals(((MessageOccurrenceSpecification)secondFragment).getMessage().getSendEvent(), secondFragment)) {
+		if (secondFragment instanceof MessageOccurrenceSpecification && EcoreUtil.equals(((MessageOccurrenceSpecification) secondFragment).getMessage().getSendEvent(), secondFragment)) {
 			return true;
 		}
 		// otherwise, no importance
@@ -567,9 +566,9 @@ public class FragmentOrderingKeeper {
 
 	/**
 	 * Reorder the fragments according to constraints to make a valid trace.
-	 * 
+	 *
 	 * NOTE : this algorithm could easily be adapted to compute all valid traces.
-	 * 
+	 *
 	 * @return true if a valid trace has been computed, false if there is no valid trace
 	 */
 	private boolean reorderFragmentsInAValidTrace() {
@@ -586,56 +585,56 @@ public class FragmentOrderingKeeper {
 		// pointers to first elements to handle in each constraint list
 		int[] pointers = new int[n];
 		Arrays.fill(pointers, 0);
-		while(getFragmentToInspect(-1, pointers) != null) {
+		while (getFragmentToInspect(-1, pointers) != null) {
 			// inspect each constraint list to know whether fragment is mature enough, in such a case, store it with constraint index
 			Map<Integer, InteractionFragment> matureFragments = new HashMap<Integer, InteractionFragment>(n);
-			for(int i = 0; i < n; i++) {
+			for (int i = 0; i < n; i++) {
 				InteractionFragment fragmentToInspect = getFragmentToInspect(i, pointers);
 				// if no more fragment in this constraint (fragmentToInspect == null), nothing to do
-				if(fragmentToInspect != null) {
+				if (fragmentToInspect != null) {
 					/*
 					 * Check whether fragment is mature enough :
 					 * Fragment can happen only if other constraints do not impose it to happen after their current fragment.
 					 */
 					boolean wait = false;
-					for(int j = 0; j < n; j++) {
-						if(i != j) {
+					for (int j = 0; j < n; j++) {
+						if (i != j) {
 							// check that current fragment of constraint j must not occur before
-							if(pointers[j] < orderConstraints.get(j).size()) {
+							if (pointers[j] < orderConstraints.get(j).size()) {
 								List<InteractionFragment> waitingList = orderConstraints.get(j).subList(pointers[j] + 1, orderConstraints.get(j).size());
-								if(waitingList.contains(fragmentToInspect)) {
+								if (waitingList.contains(fragmentToInspect)) {
 									wait = true;
 									break;
 								}
 							}
 						}
 					}
-					if(!wait) {
-						//Fragment is ready to happen.
+					if (!wait) {
+						// Fragment is ready to happen.
 						matureFragments.put(i, fragmentToInspect);
 					}
 				}
 			}
-			if(matureFragments.isEmpty()) {
-				//FIXME duplicated code : try again, without optional order
+			if (matureFragments.isEmpty()) {
+				// FIXME duplicated code : try again, without optional order
 				// inspect each constraint list to know whether fragment is mature enough, in such a case, store it with constraint index
 				matureFragments = new HashMap<Integer, InteractionFragment>(n);
-				for(int i = 0; i < n; i++) {
+				for (int i = 0; i < n; i++) {
 					InteractionFragment fragmentToInspect = getFragmentToInspect(i, pointers);
 					// if no more fragment in this constraint (fragmentToInspect == null), nothing to do
-					if(fragmentToInspect != null) {
+					if (fragmentToInspect != null) {
 						/*
 						 * Check whether fragment is mature enough :
 						 * Fragment can happen only if other constraints do not impose it to happen after their current fragment.
 						 */
 						boolean wait = false;
-						for(int j = 0; j < n; j++) {
-							if(i != j) {
+						for (int j = 0; j < n; j++) {
+							if (i != j) {
 								// check that current fragment of constraint j must not occur before
-								if(pointers[j] < orderConstraints.get(j).size()) {
+								if (pointers[j] < orderConstraints.get(j).size()) {
 									// only difference : ignore order for fragments in optionallyOrderedFragments
 									int updatedPointer = pointers[j];
-									if(optionallyOrderedFragments.containsKey(j)) {
+									if (optionallyOrderedFragments.containsKey(j)) {
 										List<InteractionFragment> ignore = optionallyOrderedFragments.get(j);
 										/*
 										 * // hack for coregion
@@ -646,32 +645,32 @@ public class FragmentOrderingKeeper {
 										 * updatedPointer++;
 										 * }
 										 */
-										while(ignore.contains(orderConstraints.get(j).get(updatedPointer))) {
+										while (ignore.contains(orderConstraints.get(j).get(updatedPointer))) {
 											updatedPointer++;
 										}
 									}
 									List<InteractionFragment> waitingList = orderConstraints.get(j).subList(updatedPointer + 1, orderConstraints.get(j).size());
-									if(waitingList.contains(fragmentToInspect)) {
+									if (waitingList.contains(fragmentToInspect)) {
 										wait = true;
 										break;
 									}
 								}
 							}
 						}
-						if(!wait) {
-							//Fragment is ready to happen.
+						if (!wait) {
+							// Fragment is ready to happen.
 							matureFragments.put(i, fragmentToInspect);
 						}
 					}
 				}
-				if(matureFragments.isEmpty()) {
+				if (matureFragments.isEmpty()) {
 					// no valid trace.
-					if(valid) {
+					if (valid) {
 						// store first conflicting fragments for user explanation
 						conflictingFragments = new HashSet<InteractionFragment>(n);
-						for(int k = 0; k < n; k++) {
+						for (int k = 0; k < n; k++) {
 							InteractionFragment frag = getFragmentToInspect(k, pointers);
-							if(frag != null) {
+							if (frag != null) {
 								conflictingFragments.add(frag);
 							}
 						}
@@ -684,9 +683,9 @@ public class FragmentOrderingKeeper {
 					InteractionFragment addedFragment = getFragmentToInspect(-1, pointers);
 					reorderedFragments.add(addedFragment);
 					// increment pointers of constraints whose fragment has been added.
-					for(int k = 0; k < n; k++) {
+					for (int k = 0; k < n; k++) {
 						InteractionFragment frag = getFragmentToInspect(k, pointers);
-						while(reorderedFragments.contains(frag)) {
+						while (reorderedFragments.contains(frag)) {
 							// either frag == addedFragment and has just been added, or it has been added earlier after a conflict
 							pointers[k]++;
 							frag = getFragmentToInspect(k, pointers);
@@ -701,42 +700,42 @@ public class FragmentOrderingKeeper {
 					Set<InteractionFragment> fragmentsSet = new HashSet<InteractionFragment>(matureFragments.values());
 					reorderedFragments.addAll(fragmentsSet);
 					// increment pointers of constraints whose fragment has been added.
-					for(int incrementingPointerIndex : matureFragments.keySet()) {
+					for (int incrementingPointerIndex : matureFragments.keySet()) {
 						InteractionFragment frag = getFragmentToInspect(incrementingPointerIndex, pointers);
-						while(reorderedFragments.contains(frag)) {
+						while (reorderedFragments.contains(frag)) {
 							// either frag == addedFragment and has just been added, or it has been added earlier after a conflict
 							pointers[incrementingPointerIndex]++;
 							frag = getFragmentToInspect(incrementingPointerIndex, pointers);
 						}
 					}
 				}
-				//				// no valid trace.
-				//				if(valid) {
-				//					// store first conflicting fragments for user explanation
-				//					conflictingFragments = new HashSet<InteractionFragment>(n);
-				//					for(int k = 0; k < n; k++) {
-				//						InteractionFragment frag = getFragmentToInspect(k, pointers);
-				//						if(frag != null) {
-				//							conflictingFragments.add(frag);
-				//						}
-				//					}
-				//				}
-				//				valid = false;
-				//				/*
-				//				 * We must at least keep order of constraints with higher priority.
-				//				 * Take the next event in the first available constraint.
-				//				 */
-				//				InteractionFragment addedFragment = getFragmentToInspect(-1, pointers);
-				//				reorderedFragments.add(addedFragment);
-				//				// increment pointers of constraints whose fragment has been added.
-				//				for(int k = 0; k < n; k++) {
-				//					InteractionFragment frag = getFragmentToInspect(k, pointers);
-				//					while(reorderedFragments.contains(frag)) {
-				//						// either frag == addedFragment and has just been added, or it has been added earlier after a conflict
-				//						pointers[k]++;
-				//						frag = getFragmentToInspect(k, pointers);
-				//					}
-				//				}
+				// // no valid trace.
+				// if(valid) {
+				// // store first conflicting fragments for user explanation
+				// conflictingFragments = new HashSet<InteractionFragment>(n);
+				// for(int k = 0; k < n; k++) {
+				// InteractionFragment frag = getFragmentToInspect(k, pointers);
+				// if(frag != null) {
+				// conflictingFragments.add(frag);
+				// }
+				// }
+				// }
+				// valid = false;
+				// /*
+				// * We must at least keep order of constraints with higher priority.
+				// * Take the next event in the first available constraint.
+				// */
+				// InteractionFragment addedFragment = getFragmentToInspect(-1, pointers);
+				// reorderedFragments.add(addedFragment);
+				// // increment pointers of constraints whose fragment has been added.
+				// for(int k = 0; k < n; k++) {
+				// InteractionFragment frag = getFragmentToInspect(k, pointers);
+				// while(reorderedFragments.contains(frag)) {
+				// // either frag == addedFragment and has just been added, or it has been added earlier after a conflict
+				// pointers[k]++;
+				// frag = getFragmentToInspect(k, pointers);
+				// }
+				// }
 			} else {
 				/*
 				 * NOTE : to compute every traces, fork here by making fragmentsSet.size() branches, adding only one mature fragment for each
@@ -746,9 +745,9 @@ public class FragmentOrderingKeeper {
 				Set<InteractionFragment> fragmentsSet = new HashSet<InteractionFragment>(matureFragments.values());
 				reorderedFragments.addAll(fragmentsSet);
 				// increment pointers of constraints whose fragment has been added.
-				for(int incrementingPointerIndex : matureFragments.keySet()) {
+				for (int incrementingPointerIndex : matureFragments.keySet()) {
 					InteractionFragment frag = getFragmentToInspect(incrementingPointerIndex, pointers);
-					while(reorderedFragments.contains(frag)) {
+					while (reorderedFragments.contains(frag)) {
 						// either frag == addedFragment and has just been added, or it has been added earlier after a conflict
 						pointers[incrementingPointerIndex]++;
 						frag = getFragmentToInspect(incrementingPointerIndex, pointers);
@@ -768,7 +767,7 @@ public class FragmentOrderingKeeper {
 		 * Only move operations must be performed on the EList, since others strongly affect the model.
 		 */
 		int size = reorderedFragments.size();
-		for(int i = 0; i < size; i++) {
+		for (int i = 0; i < size; i++) {
 			orderedFragments.move(i, reorderedFragments.get(i));
 		}
 		return valid;
@@ -776,31 +775,31 @@ public class FragmentOrderingKeeper {
 
 	/**
 	 * Get the fragment to inspect for the trace computing algorithm.
-	 * 
+	 *
 	 * @param i
-	 *        index of constraint to take in account, or -1 for taking the first available one with the highest priority
+	 *            index of constraint to take in account, or -1 for taking the first available one with the highest priority
 	 * @param pointers
-	 *        pointers indicating fragments to inspect in each constraint
+	 *            pointers indicating fragments to inspect in each constraint
 	 * @return fragment which must be inspected or null if none left
 	 */
 	private InteractionFragment getFragmentToInspect(int i, int[] pointers) {
-		if(orderConstraints.size() != pointers.length) {
+		if (orderConstraints.size() != pointers.length) {
 			// should not happen, incorrect pointers argument
 			return null;
 		}
-		if(i < 0 || i >= orderConstraints.size()) {
+		if (i < 0 || i >= orderConstraints.size()) {
 			i = -1;
 			// compute best i with highest priority
 			int j = 0;
-			while(j < orderConstraints.size() && i == -1) {
-				if(pointers[j] < orderConstraints.get(j).size()) {
+			while (j < orderConstraints.size() && i == -1) {
+				if (pointers[j] < orderConstraints.get(j).size()) {
 					// elements left in constraint j. Best constraint index found.
 					i = j;
 				}
 				j++;
 			}
 		}
-		if(0 <= i && i < orderConstraints.size() && pointers[i] < orderConstraints.get(i).size()) {
+		if (0 <= i && i < orderConstraints.size() && pointers[i] < orderConstraints.get(i).size()) {
 			// return next fragment in constraint
 			return orderConstraints.get(i).get(pointers[i]);
 		} else {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ public class LinesBorder extends LineBorder {
 
 	/** The positions where the borders are drawn */
 	private int positions = PositionConstants.NONE;
-	
+
 	private int leftInset = 0;
 	private int rightInset = 0;
 	private int topInset = 0;
@@ -43,7 +43,7 @@ public class LinesBorder extends LineBorder {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param sides
 	 */
 	public LinesBorder(int sides) {
@@ -52,14 +52,14 @@ public class LinesBorder extends LineBorder {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param width
-	 *        the width of the line in relative coordinates
+	 *            the width of the line in relative coordinates
 	 * @param sides
-	 *        the sides to draw. The value should be a bitwise composition
-	 *        of PositionConstants.NONE, PositionConstants.TOP,
-	 *        PositionConstants.BOTTOM, PositionConstants.LEFT,
-	 *        PositionConstants.RIGHT
+	 *            the sides to draw. The value should be a bitwise composition
+	 *            of PositionConstants.NONE, PositionConstants.TOP,
+	 *            PositionConstants.BOTTOM, PositionConstants.LEFT,
+	 *            PositionConstants.RIGHT
 	 */
 	public LinesBorder(int width, int sides) {
 		super(width);
@@ -68,7 +68,7 @@ public class LinesBorder extends LineBorder {
 
 	/**
 	 * Get drawn sides
-	 * 
+	 *
 	 * @return Returns the side positions.
 	 */
 	public int getSides() {
@@ -77,12 +77,12 @@ public class LinesBorder extends LineBorder {
 
 	/**
 	 * Change drawn sides
-	 * 
+	 *
 	 * @param sides
-	 *        the sides to draw. The value should be a bitwise composition
-	 *        of PositionConstants.NONE, PositionConstants.TOP,
-	 *        PositionConstants.BOTTOM, PositionConstants.LEFT,
-	 *        PositionConstants.RIGHT
+	 *            the sides to draw. The value should be a bitwise composition
+	 *            of PositionConstants.NONE, PositionConstants.TOP,
+	 *            PositionConstants.BOTTOM, PositionConstants.LEFT,
+	 *            PositionConstants.RIGHT
 	 */
 	public void setSides(int sides) {
 		this.positions = sides;
@@ -90,22 +90,23 @@ public class LinesBorder extends LineBorder {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.Border#getInsets(org.eclipse.draw2d.IFigure)
 	 */
+	@Override
 	public Insets getInsets(IFigure figure) {
-		return new Insets(getTopInset(), getLeftInset(),  getBottomInset(), getRightInset());
+		return new Insets(getTopInset(), getLeftInset(), getBottomInset(), getRightInset());
 	}
 
 	/**
 	 * Paints the border based on the inputs given.
-	 * 
+	 *
 	 * @param figure
-	 *        <code>IFigure</code> for which this is the border.
+	 *            <code>IFigure</code> for which this is the border.
 	 * @param graphics
-	 *        <code>Graphics</code> handle for drawing the border.
+	 *            <code>Graphics</code> handle for drawing the border.
 	 * @param insets
-	 *        Space to be taken up by this border.
+	 *            Space to be taken up by this border.
 	 */
 	@Override
 	public void paint(IFigure figure, Graphics graphics, Insets insets) {
@@ -124,16 +125,16 @@ public class LinesBorder extends LineBorder {
 		tempRect.y += halfWidthInLP;
 		tempRect.height -= getWidth();
 
-		if((positions & PositionConstants.TOP) > 0) {
+		if ((positions & PositionConstants.TOP) > 0) {
 			graphics.drawLine(tempRect.getTopLeft(), tempRect.getTopRight());
 		}
-		if((positions & PositionConstants.LEFT) > 0) {
+		if ((positions & PositionConstants.LEFT) > 0) {
 			graphics.drawLine(tempRect.getTopLeft(), tempRect.getBottomLeft());
 		}
-		if((positions & PositionConstants.BOTTOM) > 0) {
+		if ((positions & PositionConstants.BOTTOM) > 0) {
 			graphics.drawLine(tempRect.getBottomLeft(), tempRect.getBottomRight());
 		}
-		if((positions & PositionConstants.RIGHT) > 0) {
+		if ((positions & PositionConstants.RIGHT) > 0) {
 			graphics.drawLine(tempRect.getTopRight(), tempRect.getBottomRight());
 		}
 	}
@@ -147,7 +148,7 @@ public class LinesBorder extends LineBorder {
 	}
 
 	public int getLeftInset() {
-		if (leftInset < getWidth() && (positions & PositionConstants.LEFT) > 0){
+		if (leftInset < getWidth() && (positions & PositionConstants.LEFT) > 0) {
 			return getWidth();
 		}
 		return leftInset;
@@ -158,7 +159,7 @@ public class LinesBorder extends LineBorder {
 	}
 
 	public int getRightInset() {
-		if (rightInset < getWidth() && (positions & PositionConstants.RIGHT) > 0){
+		if (rightInset < getWidth() && (positions & PositionConstants.RIGHT) > 0) {
 			return getWidth();
 		}
 		return rightInset;
@@ -169,7 +170,7 @@ public class LinesBorder extends LineBorder {
 	}
 
 	public int getTopInset() {
-		if (topInset < getWidth() && (positions & PositionConstants.TOP) > 0){
+		if (topInset < getWidth() && (positions & PositionConstants.TOP) > 0) {
 			return getWidth();
 		}
 		return topInset;
@@ -180,7 +181,7 @@ public class LinesBorder extends LineBorder {
 	}
 
 	public int getBottomInset() {
-		if (bottomInset < getWidth() && (positions & PositionConstants.TOP) > 0){
+		if (bottomInset < getWidth() && (positions & PositionConstants.TOP) > 0) {
 			return getWidth();
 		}
 		return bottomInset;

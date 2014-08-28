@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,9 +62,9 @@ public class ResourceDropAdapterAssistant extends CommonDropAdapterAssistant {
 		IStatus result = INVALID_DROP;
 
 		// we can drop a local-selection transfer consisting of DI models onto a workspace container (project or folder)
-		if(LocalSelectionTransfer.getTransfer().isSupportedType(transferType) && CDOPredicates.adaptsTo(IContainer.class).apply(target)) {
+		if (LocalSelectionTransfer.getTransfer().isSupportedType(transferType) && CDOPredicates.adaptsTo(IContainer.class).apply(target)) {
 			IStructuredSelection sel = CDOUtils.tryCast(LocalSelectionTransfer.getTransfer().getSelection(), IStructuredSelection.class);
-			if((sel != null) && !sel.isEmpty() && Iterables.all((List<?>)sel.toList(), CDOPredicates.adaptsTo(DIModel.class))) {
+			if ((sel != null) && !sel.isEmpty() && Iterables.all((List<?>) sel.toList(), CDOPredicates.adaptsTo(DIModel.class))) {
 				result = VALID_DROP;
 			}
 		}
@@ -77,9 +77,9 @@ public class ResourceDropAdapterAssistant extends CommonDropAdapterAssistant {
 		IStatus result = INVALID_DROP;
 
 		IStructuredSelection sel = CDOUtils.tryCast(LocalSelectionTransfer.getTransfer().getSelection(), IStructuredSelection.class);
-		if((sel != null) && !sel.isEmpty()) {
+		if ((sel != null) && !sel.isEmpty()) {
 			IContainer container = CDOUtils.adapt(aTarget, IContainer.class);
-			if(container != null) {
+			if (container != null) {
 				Function<Object, URI> uriFunction = Functions.compose(new Function<DIModel, URI>() {
 
 					@Override
@@ -88,7 +88,7 @@ public class ResourceDropAdapterAssistant extends CommonDropAdapterAssistant {
 					}
 				}, CDOFunctions.adapt(DIModel.class));
 
-				List<URI> uris = Lists.newArrayList(transform((List<?>)sel.toList(), uriFunction));
+				List<URI> uris = Lists.newArrayList(transform((List<?>) sel.toList(), uriFunction));
 				ExportModelHandler.exportModels(container, uris);
 				result = VALID_DROP;
 			}

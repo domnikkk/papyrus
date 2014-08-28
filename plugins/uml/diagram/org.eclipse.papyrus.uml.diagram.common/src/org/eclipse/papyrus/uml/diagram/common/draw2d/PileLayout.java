@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
 /**
  * All children are placed on top of each other. Gap may be set between
  * children.
- * 
+ *
  * @author dstadnik
  */
 public class PileLayout extends AbstractHintLayout {
@@ -58,18 +58,21 @@ public class PileLayout extends AbstractHintLayout {
 		myStretchBottom = stretchBottom;
 	}
 
+	@Override
 	public void remove(IFigure figure) {
 		myConstraints.remove(figure);
 	}
 
+	@Override
 	public void setConstraint(IFigure figure, Object constraint) {
-		if(constraint == null) {
+		if (constraint == null) {
 			remove(figure);
 		} else {
 			myConstraints.put(figure, constraint);
 		}
 	}
 
+	@Override
 	public Object getConstraint(IFigure figure) {
 		return myConstraints.get(figure);
 	}
@@ -80,7 +83,7 @@ public class PileLayout extends AbstractHintLayout {
 	 */
 	protected PileConstraint getPileConstraint(IFigure figure) {
 		Object constraint = getConstraint(figure);
-		return constraint instanceof PileConstraint ? (PileConstraint)constraint : FILL;
+		return constraint instanceof PileConstraint ? (PileConstraint) constraint : FILL;
 	}
 
 	protected Dimension calculateSize(IFigure container, int wHint, int hHint, SizeExtractor sizeExtractor) {
@@ -88,10 +91,10 @@ public class PileLayout extends AbstractHintLayout {
 		int totalHeight = 0; // Height of all components
 
 		List<?> children = container.getChildren();
-		for(int i = 0; i < children.size(); i++) {
-			IFigure child = (IFigure)children.get(i);
+		for (int i = 0; i < children.size(); i++) {
+			IFigure child = (IFigure) children.get(i);
 			Dimension size = sizeExtractor.getSize(child, wHint, hHint);
-			if(totalWidth < size.width) {
+			if (totalWidth < size.width) {
 				totalWidth = size.width;
 			}
 			totalHeight += size.height + getGap();
@@ -107,28 +110,31 @@ public class PileLayout extends AbstractHintLayout {
 		return new Dimension(totalWidth, totalHeight);
 	}
 
+	@Override
 	protected Dimension calculateMinimumSize(IFigure container, int wHint, int hHint) {
 		return calculateSize(container, wHint, hHint, MIN_SIZE_EXTRACTOR);
 	}
 
+	@Override
 	protected Dimension calculatePreferredSize(IFigure container, int wHint, int hHint) {
 		return calculateSize(container, wHint, hHint, PREF_SIZE_EXTRACTOR);
 	}
 
+	@Override
 	public void layout(IFigure container) {
 		Rectangle clientArea = container.getClientArea();
 		int y = clientArea.y;
 		final int maxY = clientArea.y + clientArea.height;
 		List<?> children = container.getChildren();
-		for(int i = 0; i < children.size(); i++) {
-			IFigure child = (IFigure)children.get(i);
+		for (int i = 0; i < children.size(); i++) {
+			IFigure child = (IFigure) children.get(i);
 			Dimension preferred = child.getPreferredSize(clientArea.width, clientArea.height);
 			int height = preferred.height;
-			if(y >= maxY) {
+			if (y >= maxY) {
 				Rectangle bounds = new Rectangle(clientArea.x, maxY, clientArea.width, 0);
 				child.setBounds(bounds);
 				continue;
-			} else if(y + height > maxY || (isStretchBottom() && i == children.size() - 1)) {
+			} else if (y + height > maxY || (isStretchBottom() && i == children.size() - 1)) {
 				height = maxY - y;
 			}
 			Rectangle bounds = new Rectangle(clientArea.x, y, clientArea.width, height);
@@ -146,6 +152,7 @@ public class PileLayout extends AbstractHintLayout {
 
 	private static final SizeExtractor MIN_SIZE_EXTRACTOR = new SizeExtractor() {
 
+		@Override
 		public Dimension getSize(IFigure figure, int wHint, int hHint) {
 			return figure.getMinimumSize(wHint, hHint);
 		}
@@ -153,6 +160,7 @@ public class PileLayout extends AbstractHintLayout {
 
 	private static final SizeExtractor PREF_SIZE_EXTRACTOR = new SizeExtractor() {
 
+		@Override
 		public Dimension getSize(IFigure figure, int wHint, int hHint) {
 			return figure.getPreferredSize(wHint, hHint);
 		}
@@ -171,11 +179,11 @@ public class PileLayout extends AbstractHintLayout {
 		/**
 		 * Changes bounds of child with specified preferred size. New bounds
 		 * should fit in specified bounds.
-		 * 
+		 *
 		 * @param preferred
-		 *        Prefferred size of a child.
+		 *            Prefferred size of a child.
 		 * @param bounds
-		 *        Max child bounds.
+		 *            Max child bounds.
 		 */
 		public void setChildBounds(Dimension preferred, Rectangle bounds);
 	}
@@ -185,12 +193,14 @@ public class PileLayout extends AbstractHintLayout {
 	 */
 	public static final PileConstraint FILL = new PileConstraint() {
 
+		@Override
 		public void setChildBounds(Dimension preferred, Rectangle bounds) {
 		}
 	};
 
 	public static final PileConstraint ALIGN_LEFT = new PileConstraint() {
 
+		@Override
 		public void setChildBounds(Dimension preferred, Rectangle bounds) {
 			bounds.width = Math.min(preferred.width, bounds.width);
 		}
@@ -198,8 +208,9 @@ public class PileLayout extends AbstractHintLayout {
 
 	public static final PileConstraint ALIGN_CENTER = new PileConstraint() {
 
+		@Override
 		public void setChildBounds(Dimension preferred, Rectangle bounds) {
-			if(bounds.width > preferred.width) {
+			if (bounds.width > preferred.width) {
 				final int offset = (bounds.width - preferred.width) / 2;
 				bounds.x += offset;
 				bounds.width = preferred.width;
@@ -209,8 +220,9 @@ public class PileLayout extends AbstractHintLayout {
 
 	public static final PileConstraint ALIGN_RIGHT = new PileConstraint() {
 
+		@Override
 		public void setChildBounds(Dimension preferred, Rectangle bounds) {
-			if(bounds.width > preferred.width) {
+			if (bounds.width > preferred.width) {
 				bounds.x += bounds.width - preferred.width;
 				bounds.width = preferred.width;
 			}

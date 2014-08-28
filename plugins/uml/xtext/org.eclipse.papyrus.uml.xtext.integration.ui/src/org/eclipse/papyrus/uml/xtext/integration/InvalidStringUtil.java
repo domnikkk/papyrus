@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * @author ac221913
- * 
+ *
  */
 public class InvalidStringUtil {
 
@@ -109,7 +109,7 @@ public class InvalidStringUtil {
 			IRegisteredProfile registeredActionLanguageProfile = Registry.getRegisteredProfile(ACTION_LANGUAGE_PROFILE_NAME, null);
 			URI modelUri = registeredActionLanguageProfile.getUri();
 			Package root = PackageUtil.getRootPackage(element);
-	
+
 			Resource modelResource = root.eResource().getResourceSet()
 					.getResource(modelUri, true);
 			if (modelResource.getContents().get(0) instanceof Profile) {

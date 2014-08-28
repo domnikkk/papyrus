@@ -11,7 +11,7 @@ package org.eclipse.papyrus.papyrusgmfgenextension;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.CustomDiagramUpdaterSingleton#getSingletonPath <em>Singleton Path</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.CustomDiagramUpdaterSingleton#getSingletonPath <em>Singleton Path</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,10 +25,10 @@ public interface CustomDiagramUpdaterSingleton extends CommentedElement {
 	 * Returns the value of the '<em><b>Singleton Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Singleton Path</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Singleton Path</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Singleton Path</em>' attribute.
 	 * @see #setSingletonPath(String)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getCustomDiagramUpdaterSingleton_SingletonPath()
@@ -41,7 +41,9 @@ public interface CustomDiagramUpdaterSingleton extends CommentedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.CustomDiagramUpdaterSingleton#getSingletonPath <em>Singleton Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Singleton Path</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Singleton Path</em>' attribute.
 	 * @see #getSingletonPath()
 	 * @generated
 	 */

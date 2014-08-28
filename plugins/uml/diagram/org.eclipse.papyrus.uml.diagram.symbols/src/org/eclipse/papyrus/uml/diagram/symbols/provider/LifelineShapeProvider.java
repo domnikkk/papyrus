@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.uml2.uml.Type;
 /**
  * Shape Provider for lifeline. It is based on the Type of the TypedElement
  * represented by the lifeline (if any)
- * 
+ *
  * @author Camille Letavernier
  *
  */
@@ -28,7 +28,7 @@ public class LifelineShapeProvider extends TypedElementShapeProvider {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * The "type" of a Lifeline is the type of the ConnectableElement represented by the Lifeline
 	 */
 	@Override
@@ -39,7 +39,7 @@ public class LifelineShapeProvider extends TypedElementShapeProvider {
 
 		Object element = ((View) view).getElement();
 		if (element instanceof Lifeline) {
-			Lifeline lifeline = (Lifeline)element;
+			Lifeline lifeline = (Lifeline) element;
 			ConnectableElement typedElement = lifeline.getRepresents();
 			if (typedElement != null) {
 				return typedElement.getType();

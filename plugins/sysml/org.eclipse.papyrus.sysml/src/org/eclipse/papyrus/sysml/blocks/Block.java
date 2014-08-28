@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>Block</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.papyrus.sysml.blocks.Block#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.sysml.blocks.BlocksPackage#getBlock()
  * @model
  * @generated
@@ -39,7 +39,7 @@ public interface Block extends EObject {
 	 * If the meaning of the '<em>Is Encapsulated</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Encapsulated</em>' attribute.
 	 * @see #setIsEncapsulated(boolean)
 	 * @see org.eclipse.papyrus.sysml.blocks.BlocksPackage#getBlock_IsEncapsulated()
@@ -55,7 +55,7 @@ public interface Block extends EObject {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.sysml.blocks.BlocksPackage#getBlock_Base_Class()
@@ -68,9 +68,9 @@ public interface Block extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.sysml.blocks.Block#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Base Class</em>' reference.
+	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
@@ -80,9 +80,9 @@ public interface Block extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.sysml.blocks.Block#isEncapsulated <em>Is Encapsulated</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Is Encapsulated</em>' attribute.
+	 *            the new value of the '<em>Is Encapsulated</em>' attribute.
 	 * @see #isEncapsulated()
 	 * @generated
 	 */

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,26 +47,26 @@ public class XMLPaletteDefinitionProxyFactory implements XMLPaletteDefinitionVis
 
 	/**
 	 * Creates a new XMLDefinitionPaletteFactory
-	 * 
+	 *
 	 * @param root
-	 *        the palette root to fill
+	 *            the palette root to fill
 	 * @param predefinedEntries
-	 *        existing predefined entries
+	 *            existing predefined entries
 	 */
 	public XMLPaletteDefinitionProxyFactory(Map<String, PaletteEntry> predefinedEntries) {
 		this.predefinedEntries = predefinedEntries;
 		registry = new HashMap<Node, IPaletteEntryProxy>();
 	}
-	
+
 	/**
 	 * Returns the parent proxy for the given node
-	 * 
+	 *
 	 * @param node
-	 *        the node for which the parent is searched
+	 *            the node for which the parent is searched
 	 * @return the parent of this node
 	 */
 	protected PaletteContainerProxy getParentProxy(Node node) {
-		return (PaletteContainerProxy)registry.get(node.getParentNode());
+		return (PaletteContainerProxy) registry.get(node.getParentNode());
 	}
 
 	/**
@@ -85,12 +85,13 @@ public class XMLPaletteDefinitionProxyFactory implements XMLPaletteDefinitionVis
 		PaletteEntry entry = predefinedEntries.get(id);
 		PaletteContainerProxy proxy;
 		Node descriptionNode = node.getAttributes().getNamedItem(DESCRIPTION);
-		proxy = new PaletteLocalDrawerProxy(node.getAttributes().getNamedItem(NAME).getNodeValue(), node.getAttributes().getNamedItem(ID).getNodeValue(), node.getAttributes().getNamedItem(ICON_PATH).getNodeValue(), (descriptionNode != null) ? descriptionNode.getNodeValue() : "");
+		proxy = new PaletteLocalDrawerProxy(node.getAttributes().getNamedItem(NAME).getNodeValue(), node.getAttributes().getNamedItem(ID).getNodeValue(), node.getAttributes().getNamedItem(ICON_PATH).getNodeValue(),
+				(descriptionNode != null) ? descriptionNode.getNodeValue() : "");
 
 		getParentProxy(node).addChild(proxy);
 		registry.put(node, proxy);
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -130,8 +131,8 @@ public class XMLPaletteDefinitionProxyFactory implements XMLPaletteDefinitionVis
 		String id = node.getAttributes().getNamedItem(ID).getNodeValue();
 		PaletteEntry entry = predefinedEntries.get(id);
 
-		if(entry instanceof AspectCreationEntry) {
-			PaletteAspectToolEntryProxy proxy = new PaletteAspectToolEntryProxy((AspectCreationEntry)entry);
+		if (entry instanceof AspectCreationEntry) {
+			PaletteAspectToolEntryProxy proxy = new PaletteAspectToolEntryProxy((AspectCreationEntry) entry);
 			getParentProxy(node).addChild(proxy);
 			registry.put(node, proxy);
 		} else {
@@ -141,7 +142,7 @@ public class XMLPaletteDefinitionProxyFactory implements XMLPaletteDefinitionVis
 
 	/**
 	 * Returns the root proxy for the created element
-	 * 
+	 *
 	 * @return the container proxy
 	 */
 	public PaletteContainerProxy getRootProxy() {

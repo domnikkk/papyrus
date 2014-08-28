@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,15 +30,15 @@ import org.eclipse.uml2.uml.Type;
  */
 public class CustomAssociationCreateCommand extends org.eclipse.papyrus.uml.diagram.profile.edit.commands.AssociationCreateCommand {
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param request
-	 *        the request
+	 *            the request
 	 * @param source
-	 *        the source of the association to create
+	 *            the source of the association to create
 	 * @param target
-	 *        the target of the association to create
+	 *            the target of the association to create
 	 */
 	public CustomAssociationCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request, source, target);
@@ -46,7 +46,7 @@ public class CustomAssociationCreateCommand extends org.eclipse.papyrus.uml.diag
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override

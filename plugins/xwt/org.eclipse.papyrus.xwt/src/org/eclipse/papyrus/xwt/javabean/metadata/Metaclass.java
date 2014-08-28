@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -20,7 +20,7 @@ import org.eclipse.papyrus.xwt.metadata.IMetaclass;
 public class Metaclass extends AbstractMetaclass {
 
 	/**
-	 * 
+	 *
 	 * @param type
 	 * @param superClass
 	 * @param initialize
@@ -30,7 +30,7 @@ public class Metaclass extends AbstractMetaclass {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param type
 	 * @param superClass
 	 * @param initialize
@@ -41,14 +41,14 @@ public class Metaclass extends AbstractMetaclass {
 		this.name = type.getSimpleName();
 		this.superClass = superClass;
 		this.xwtLoader = xwtLoader;
-		if(initialize) {
+		if (initialize) {
 			initialize(type, superClass);
 		}
 	}
 
 	/**
 	 * Default initialize it
-	 * 
+	 *
 	 * @param type
 	 * @param superClass
 	 */
@@ -58,7 +58,7 @@ public class Metaclass extends AbstractMetaclass {
 
 	/**
 	 * Default initialize it
-	 * 
+	 *
 	 * @param type
 	 * @param superClass
 	 */

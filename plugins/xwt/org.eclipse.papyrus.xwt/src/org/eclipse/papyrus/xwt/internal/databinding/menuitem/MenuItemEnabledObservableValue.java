@@ -4,8 +4,8 @@
  * are made available under the terms of the Eclipse Public License v1.0       *
  * which accompanies this distribution, and is available at                    *
  * http://www.eclipse.org/legal/epl-v10.html                                   *
- *                                                                             *  
- * Contributors:                                                               *        
+ *                                                                             *
+ * Contributors:                                                               *
  *     Soyatec - initial API and implementation                                *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt.internal.databinding.menuitem;
@@ -14,7 +14,7 @@ import org.eclipse.core.databinding.observable.Realm;
 import org.eclipse.swt.widgets.MenuItem;
 
 /**
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class MenuItemEnabledObservableValue extends AbstractMenuItemObservableValue {
@@ -36,7 +36,8 @@ public class MenuItemEnabledObservableValue extends AbstractMenuItemObservableVa
 		return Boolean.class;
 	}
 
+	@Override
 	protected void doSetValue(Object value) {
-		getMenuItem().setEnabled((Boolean)value);
+		getMenuItem().setEnabled((Boolean) value);
 	}
 }

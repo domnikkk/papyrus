@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ import org.eclipse.uml2.uml.Package;
 
 /**
  * Return true if the selection is a package
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class UMLPackageSelectionTester extends PropertyTester {
 
@@ -37,22 +37,23 @@ public class UMLPackageSelectionTester extends PropertyTester {
 	public UMLPackageSelectionTester() {
 	}
 
+	@Override
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
 		// Ensure Papyrus is the active editor
 		IEditorPart editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if((editor == null) || (!(editor instanceof IMultiDiagramEditor))) {
+		if ((editor == null) || (!(editor instanceof IMultiDiagramEditor))) {
 			return false;
 		}
 		Object currentValue = null;
-		if(IS_PACKAGE.equals(property)) {
-			if(receiver instanceof StructuredSelection) {
-				StructuredSelection structuredSelection = (StructuredSelection)receiver;
+		if (IS_PACKAGE.equals(property)) {
+			if (receiver instanceof StructuredSelection) {
+				StructuredSelection structuredSelection = (StructuredSelection) receiver;
 				Object obj = structuredSelection.getFirstElement();
 				EObject element = null;
-				if(obj instanceof IAdaptable) {
-					element = (EObject)((IAdaptable)obj).getAdapter(EObject.class);
-					if(element instanceof View) {
-						element = ((View)element).getElement();
+				if (obj instanceof IAdaptable) {
+					element = (EObject) ((IAdaptable) obj).getAdapter(EObject.class);
+					if (element instanceof View) {
+						element = ((View) element).getElement();
 					}
 				}
 				currentValue = element instanceof Package;

@@ -33,7 +33,7 @@ import org.eclipse.ui.dialogs.FilteredItemsSelectionDialog;
 /**
  * Shows a list of registered elements to the user with a text entry field for a string pattern used
  * to filter the list of resources.
- * 
+ *
  * @since 1.9.0
  */
 public class FilteredRegisteredElementsSelectionDialog extends FilteredItemsSelectionDialog {
@@ -64,13 +64,13 @@ public class FilteredRegisteredElementsSelectionDialog extends FilteredItemsSele
 
 	/**
 	 * Creates a new instance of the class
-	 * 
+	 *
 	 * @param shell
-	 *        the parent shell
+	 *            the parent shell
 	 * @param multi
-	 *        the multiple selection flag
+	 *            the multiple selection flag
 	 * @param input
-	 *        the input in which selection is done
+	 *            the input in which selection is done
 	 */
 	public FilteredRegisteredElementsSelectionDialog(Shell shell, boolean multi, Object[] input, Collection<Object> alreadySelected, String title, String extendedAreaTitle) {
 		super(shell, multi);
@@ -93,7 +93,7 @@ public class FilteredRegisteredElementsSelectionDialog extends FilteredItemsSele
 	@Override
 	protected IDialogSettings getDialogSettings() {
 		IDialogSettings settings = Activator.getDefault().getDialogSettings().getSection(DIALOG_SETTINGS);
-		if(settings == null) {
+		if (settings == null) {
 			settings = Activator.getDefault().getDialogSettings().addNewSection(DIALOG_SETTINGS);
 		}
 		return settings;
@@ -156,7 +156,7 @@ public class FilteredRegisteredElementsSelectionDialog extends FilteredItemsSele
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.dialogs.FilteredItemsSelectionDialog#validateItem(java.lang.Object)
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class FilteredRegisteredElementsSelectionDialog extends FilteredItemsSele
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.dialogs.FilteredItemsSelectionDialog#createFilter()
 	 */
 	@Override
@@ -194,17 +194,17 @@ public class FilteredRegisteredElementsSelectionDialog extends FilteredItemsSele
 	 */
 	@Override
 	protected void fillContentProvider(AbstractContentProvider contentProvider, ItemsFilter itemsFilter, IProgressMonitor progressMonitor) throws CoreException {
-		if(progressMonitor != null) {
+		if (progressMonitor != null) {
 			progressMonitor.beginTask("Displaying registered elements", totalInput.length);
 		}
-		for(int i = 0; i < totalInput.length; i++) {
+		for (int i = 0; i < totalInput.length; i++) {
 			Object o = totalInput[i];
-			if(!alreadySelected.contains(o)) {
+			if (!alreadySelected.contains(o)) {
 				contentProvider.add(o, itemsFilter);
 			}
 			progressMonitor.worked(1);
 		}
-		if(progressMonitor != null) {
+		if (progressMonitor != null) {
 			progressMonitor.done();
 		}
 
@@ -220,7 +220,7 @@ public class FilteredRegisteredElementsSelectionDialog extends FilteredItemsSele
 		 */
 		@Override
 		public boolean isConsistentItem(Object item) {
-			if(item instanceof RegisteredElementExtensionPoint) {
+			if (item instanceof RegisteredElementExtensionPoint) {
 				return true;
 			}
 			return false;
@@ -231,7 +231,7 @@ public class FilteredRegisteredElementsSelectionDialog extends FilteredItemsSele
 		 */
 		@Override
 		public boolean matchItem(Object item) {
-			if(!(item instanceof RegisteredElementExtensionPoint)) {
+			if (!(item instanceof RegisteredElementExtensionPoint)) {
 				return false;
 			}
 			return matches(registeredElementsLabelProvider.getText(item));

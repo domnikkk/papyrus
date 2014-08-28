@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -47,16 +47,16 @@ public class ConnectorEditPart extends AbstractElementLinkEditPart {
 	 */
 	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof ConnectorLinkLabelEditPart) {
-			((ConnectorLinkLabelEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
+		if (childEditPart instanceof ConnectorLinkLabelEditPart) {
+			((ConnectorLinkLabelEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
-		if(childEditPart instanceof ConnectorLinkLabelSourceMultiplicityEditPart) {
-			((ConnectorLinkLabelSourceMultiplicityEditPart)childEditPart).setLabel(getPrimaryShape().getSourceMultiplicityLabel());
+		if (childEditPart instanceof ConnectorLinkLabelSourceMultiplicityEditPart) {
+			((ConnectorLinkLabelSourceMultiplicityEditPart) childEditPart).setLabel(getPrimaryShape().getSourceMultiplicityLabel());
 			return true;
 		}
-		if(childEditPart instanceof ConnectorLinkLabelTargetMultiplicityEditPart) {
-			((ConnectorLinkLabelTargetMultiplicityEditPart)childEditPart).setLabel(getPrimaryShape().getTargetMultiplicityLabel());
+		if (childEditPart instanceof ConnectorLinkLabelTargetMultiplicityEditPart) {
+			((ConnectorLinkLabelTargetMultiplicityEditPart) childEditPart).setLabel(getPrimaryShape().getTargetMultiplicityLabel());
 			return true;
 		}
 		return super.addFixedChild(childEditPart);
@@ -67,13 +67,13 @@ public class ConnectorEditPart extends AbstractElementLinkEditPart {
 	 */
 	@Override
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof ConnectorLinkLabelEditPart) {
+		if (childEditPart instanceof ConnectorLinkLabelEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof ConnectorLinkLabelSourceMultiplicityEditPart) {
+		if (childEditPart instanceof ConnectorLinkLabelSourceMultiplicityEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof ConnectorLinkLabelTargetMultiplicityEditPart) {
+		if (childEditPart instanceof ConnectorLinkLabelTargetMultiplicityEditPart) {
 			return true;
 		}
 		return super.removeFixedChild(childEditPart);
@@ -92,17 +92,17 @@ public class ConnectorEditPart extends AbstractElementLinkEditPart {
 	 */
 	@Override
 	public ConnectorEdgeFigure getPrimaryShape() {
-		return (ConnectorEdgeFigure)getFigure();
+		return (ConnectorEdgeFigure) getFigure();
 	}
 
 	@Override
 	protected void refreshLineWidth() {
 		int width = getLineWidth();
-		if(width < 1) {
+		if (width < 1) {
 			width = 1;
 		}
 
-		if(org.eclipse.uml2.uml.util.UMLUtil.getStereotypeApplication((Element)resolveSemanticElement(), BindingConnector.class) != null) {
+		if (org.eclipse.uml2.uml.util.UMLUtil.getStereotypeApplication((Element) resolveSemanticElement(), BindingConnector.class) != null) {
 			setLineWidth(width * 2);
 		} else {
 			setLineWidth(width);

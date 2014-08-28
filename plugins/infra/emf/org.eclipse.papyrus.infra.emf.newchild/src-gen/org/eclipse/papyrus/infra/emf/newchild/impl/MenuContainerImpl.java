@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.emf.newchild.NewchildPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuContainerImpl#getSubmenus <em>Submenus</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuContainerImpl#getSubmenus <em>Submenus</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +37,7 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	 * The cached value of the '{@link #getSubmenus() <em>Submenus</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSubmenus()
 	 * @generated
 	 * @ordered
@@ -46,6 +47,7 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MenuContainerImpl() {
@@ -55,6 +57,7 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -65,6 +68,7 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<MenuItem> getSubmenus() {
@@ -77,13 +81,14 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case NewchildPackage.MENU_CONTAINER__SUBMENUS:
-				return ((InternalEList<?>)getSubmenus()).basicRemove(otherEnd, msgs);
+		case NewchildPackage.MENU_CONTAINER__SUBMENUS:
+			return ((InternalEList<?>) getSubmenus()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -91,13 +96,14 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NewchildPackage.MENU_CONTAINER__SUBMENUS:
-				return getSubmenus();
+		case NewchildPackage.MENU_CONTAINER__SUBMENUS:
+			return getSubmenus();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -105,16 +111,17 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NewchildPackage.MENU_CONTAINER__SUBMENUS:
-				getSubmenus().clear();
-				getSubmenus().addAll((Collection<? extends MenuItem>)newValue);
-				return;
+		case NewchildPackage.MENU_CONTAINER__SUBMENUS:
+			getSubmenus().clear();
+			getSubmenus().addAll((Collection<? extends MenuItem>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -122,14 +129,15 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NewchildPackage.MENU_CONTAINER__SUBMENUS:
-				getSubmenus().clear();
-				return;
+		case NewchildPackage.MENU_CONTAINER__SUBMENUS:
+			getSubmenus().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -137,15 +145,16 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NewchildPackage.MENU_CONTAINER__SUBMENUS:
-				return submenus != null && !submenus.isEmpty();
+		case NewchildPackage.MENU_CONTAINER__SUBMENUS:
+			return submenus != null && !submenus.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //MenuContainerImpl
+} // MenuContainerImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,15 +15,15 @@
 package org.eclipse.papyrus.eclipse.project.editors.interfaces;
 
 /**
- * 
+ *
  * Editor for the build.properties
- * 
+ *
  */
 public interface IBuildEditor extends IFileEditor {
 
 	/**
 	 * key for the bin
-	 * 
+	 *
 	 * @Deprecated The build key should be specified for each IBuildEditor instance
 	 */
 	@Deprecated
@@ -62,9 +62,9 @@ public interface IBuildEditor extends IFileEditor {
 
 	/**
 	 * Returns <code>true</code> if the folder is registered as a Source Folder
-	 * 
+	 *
 	 * @param path
-	 *        the path of a source folder
+	 *            the path of a source folder
 	 * @return
 	 *         <code>true</code> if the folder is registered
 	 */
@@ -72,9 +72,9 @@ public interface IBuildEditor extends IFileEditor {
 
 	/**
 	 * Returns <code>true</code> if the folder is registered as a Bin Folder
-	 * 
+	 *
 	 * @param path
-	 *        the path of a bin folder
+	 *            the path of a bin folder
 	 * @return
 	 *         <code>true</code> if the folder is registered
 	 */
@@ -82,7 +82,7 @@ public interface IBuildEditor extends IFileEditor {
 
 	/**
 	 * Returns all the registered source folders
-	 * 
+	 *
 	 * @return
 	 *         all the registered source folders
 	 */
@@ -90,7 +90,7 @@ public interface IBuildEditor extends IFileEditor {
 
 	/**
 	 * Returns all the files added to the build
-	 * 
+	 *
 	 * @return
 	 *         all the files added to the build
 	 */

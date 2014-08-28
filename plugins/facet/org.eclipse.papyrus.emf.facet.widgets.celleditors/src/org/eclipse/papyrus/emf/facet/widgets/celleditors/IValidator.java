@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ import org.eclipse.core.runtime.IStatus;
 public interface IValidator {
 	/**
 	 * Validates the given value for the cell editor.
-	 * 
+	 *
 	 * @return an {@link IStatus} with a status of {@link IStatus#OK} if the given value is valid,
 	 *         or with a status of {@link IStatus#ERROR} otherwise.
 	 */

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin Integration.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,26 +28,26 @@ import org.eclipse.ui.navigator.ILinkHelper;
 
 /**
  * Link the Papyrus Editor with {@link IPapyrusFile}
- * 
+ *
  * @author tristan.faure@atosorigin.com
- * 
+ *
  */
 public class PapyrusLinkHelper implements ILinkHelper {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.navigator.ILinkHelper#findSelection(org.eclipse.ui.
 	 * IEditorInput)
 	 */
 	public IStructuredSelection findSelection(IEditorInput anInput) {
 		List<Object> select = new ArrayList<Object>();
-		if(anInput instanceof IFileEditorInput) {
-			IFileEditorInput input = (IFileEditorInput)anInput;
+		if (anInput instanceof IFileEditorInput) {
+			IFileEditorInput input = (IFileEditorInput) anInput;
 			IPapyrusFile papy = PapyrusModelHelper.getPapyrusModelFactory().createIPapyrusFile(input.getFile());
 			select.add(papy);
 			IResource res = papy.getMainFile();
-			while(res.getParent() != null) {
+			while (res.getParent() != null) {
 				select.add(0, res.getParent());
 				res = res.getParent();
 			}
@@ -58,16 +58,17 @@ public class PapyrusLinkHelper implements ILinkHelper {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.navigator.ILinkHelper#activateEditor(org.eclipse.ui.
 	 * IWorkbenchPage, org.eclipse.jface.viewers.IStructuredSelection)
 	 */
 	public void activateEditor(IWorkbenchPage page, IStructuredSelection selection) {
-		if(selection == null || selection.isEmpty())
+		if (selection == null || selection.isEmpty()) {
 			return;
+		}
 		Object element = selection.getFirstElement();
 		IEditorPart part = OneFileUtils.isOpenInEditor(element);
-		if(part != null) {
+		if (part != null) {
 			page.bringToTop(part);
 		}
 

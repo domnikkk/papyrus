@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.Leg;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -20,6 +19,7 @@ public class LegImpl extends LocomotionHardwareImpl implements Leg {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LegImpl() {
@@ -29,6 +29,7 @@ public class LegImpl extends LocomotionHardwareImpl implements Leg {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class LegImpl extends LocomotionHardwareImpl implements Leg {
 		return RobotMLPackage.Literals.LEG;
 	}
 
-} //LegImpl
+} // LegImpl

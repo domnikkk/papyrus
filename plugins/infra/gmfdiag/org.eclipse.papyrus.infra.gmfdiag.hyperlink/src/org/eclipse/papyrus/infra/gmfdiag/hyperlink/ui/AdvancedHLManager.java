@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,27 +32,27 @@ import org.eclipse.papyrus.infra.hyperlink.ui.AbstractHyperLinkTab;
 import org.eclipse.papyrus.infra.hyperlink.ui.HyperLinkManagerShell;
 
 /**
- * 
+ *
  * This hyperlink manager can manage default hyperlinks and creation of diagram with heuristic
  */
 public class AdvancedHLManager extends HyperLinkManagerShell {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param editorFactoryRegistry
-	 *        the editor factory registry
+	 *            the editor factory registry
 	 * @param model
-	 *        the model that contains all elements
+	 *            the model that contains all elements
 	 * @param domain
-	 *        the domain in order to execute command
+	 *            the domain in order to execute command
 	 * @param umlElement
-	 *        the uml element linked to the view
+	 *            the uml element linked to the view
 	 * @param aview
-	 *        the view of the uml element
-	 * 
+	 *            the view of the uml element
+	 *
 	 */
 	public AdvancedHLManager(IPageIconsRegistry editorFactoryRegistry, TransactionalEditingDomain domain, EModelElement semanticElement, View aview, HyperLinkHelperFactory hyperHelperFactory) {
 		super(editorFactoryRegistry, domain, semanticElement, aview, hyperHelperFactory);
@@ -60,22 +60,22 @@ public class AdvancedHLManager extends HyperLinkManagerShell {
 
 	/**
 	 * this method parse the command to extract created diagram and construct a list of hyperlinkDiagrams
-	 * 
+	 *
 	 * @param creationcommand
-	 *        a gmf command
+	 *            a gmf command
 	 * @return the list of hyperlinks diagram
 	 */
 	protected ArrayList<HyperLinkEditor> getCreatedHyperlinkDiagramsWithHeuristic(ICommand creationcommand) {
 		ArrayList<Diagram> diagrams = new ArrayList<Diagram>();
-		if(creationcommand instanceof CompositeCommand) {
-			CompositeCommand compositeCommand = (CompositeCommand)creationcommand;
+		if (creationcommand instanceof CompositeCommand) {
+			CompositeCommand compositeCommand = (CompositeCommand) creationcommand;
 			Object value = compositeCommand.getCommandResult().getReturnValue();
-			if(value instanceof ArrayList) {
-				diagrams.addAll((Collection<Diagram>)value);
+			if (value instanceof ArrayList) {
+				diagrams.addAll((Collection<Diagram>) value);
 			}
 		}
 		ArrayList<HyperLinkEditor> hyperLinkDiagrams = new ArrayList<HyperLinkEditor>();
-		for(int i = 0; i < diagrams.size(); i++) {
+		for (int i = 0; i < diagrams.size(); i++) {
 			HyperLinkEditor hyperLinkEditor = new HyperLinkEditor();
 			hyperLinkEditor.setObject(diagrams.get(i));
 			hyperLinkEditor.setIsDefault(true);
@@ -88,22 +88,22 @@ public class AdvancedHLManager extends HyperLinkManagerShell {
 	@Override
 	protected void doAction() {
 		super.doAction();
-		//		defaultTab = getDefaultHyperLinkTab();
+		// defaultTab = getDefaultHyperLinkTab();
 		final LocalDefaultLinkDiagramTab heuristicTab = getHeuristicTab();
 		ArrayList<HyperLinkEditor> defaultdiagramsWithHeuristic = new ArrayList<HyperLinkEditor>();
-		//if the default diagrams is opened, get created default diagrams
-		if(heuristicTab.getDefaultHyperlinkComposite().isVisible()) {
+		// if the default diagrams is opened, get created default diagrams
+		if (heuristicTab.getDefaultHyperlinkComposite().isVisible()) {
 			heuristicTab.okPressed();
 			ICommand creationCommand = heuristicTab.getCommand();
-			//TODO : should be chained with the others command
+			// TODO : should be chained with the others command
 			transactionalEditingDomain.getCommandStack().execute(new GMFtoEMFCommandWrapper(heuristicTab.getCommand()));
 			defaultdiagramsWithHeuristic.addAll(getCreatedHyperlinkDiagramsWithHeuristic(creationCommand));
 		}
 
 
 
-		//add into the list all diagram create by using heuristic
-		for(int i = 0; i < defaultdiagramsWithHeuristic.size(); i++) {
+		// add into the list all diagram create by using heuristic
+		for (int i = 0; i < defaultdiagramsWithHeuristic.size(); i++) {
 			allhypHyperlinkObjects.add(0, defaultdiagramsWithHeuristic.get(i));
 		}
 
@@ -112,9 +112,9 @@ public class AdvancedHLManager extends HyperLinkManagerShell {
 	private LocalDefaultLinkDiagramTab getHeuristicTab() {
 		int i = 0;
 		LocalDefaultLinkDiagramTab tab = null;
-		for(AbstractHyperLinkTab current : tabList) {
-			if(current instanceof LocalDefaultLinkDiagramTab) {
-				tab = (LocalDefaultLinkDiagramTab)current;
+		for (AbstractHyperLinkTab current : tabList) {
+			if (current instanceof LocalDefaultLinkDiagramTab) {
+				tab = (LocalDefaultLinkDiagramTab) current;
 				i++;
 			}
 		}

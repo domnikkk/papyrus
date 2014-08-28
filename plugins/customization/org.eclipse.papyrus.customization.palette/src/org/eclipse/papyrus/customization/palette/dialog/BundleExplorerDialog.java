@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,11 +39,11 @@ public class BundleExplorerDialog extends FilteredItemsSelectionDialog {
 
 	/**
 	 * Creates a new BundleExplorerDialog.
-	 * 
+	 *
 	 * @param shell
-	 *        the parent shell for the dialog
+	 *            the parent shell for the dialog
 	 * @param multi
-	 *        <code>true</code> if multi selection is allowed
+	 *            <code>true</code> if multi selection is allowed
 	 */
 	public BundleExplorerDialog(Shell shell, boolean multi, IPluginModelBase[] models) {
 		super(shell, multi);
@@ -75,7 +75,7 @@ public class BundleExplorerDialog extends FilteredItemsSelectionDialog {
 	 */
 	@Override
 	protected void fillContentProvider(AbstractContentProvider contentProvider, ItemsFilter itemsFilter, IProgressMonitor progressMonitor) throws CoreException {
-		for(int i = 0; i < fModels.length; i++) {
+		for (int i = 0; i < fModels.length; i++) {
 			contentProvider.add(fModels[i], itemsFilter);
 			progressMonitor.worked(1);
 		}
@@ -89,7 +89,7 @@ public class BundleExplorerDialog extends FilteredItemsSelectionDialog {
 	protected IDialogSettings getDialogSettings() {
 		IDialogSettings settings = Activator.getDefault().getDialogSettings().getSection(DIALOG_SETTINGS);
 
-		if(settings == null) {
+		if (settings == null) {
 			settings = Activator.getDefault().getDialogSettings().addNewSection(DIALOG_SETTINGS);
 		}
 
@@ -101,8 +101,8 @@ public class BundleExplorerDialog extends FilteredItemsSelectionDialog {
 	 */
 	@Override
 	public String getElementName(Object item) {
-		if(item instanceof IPluginModelBase) {
-			IPluginModelBase model = (IPluginModelBase)item;
+		if (item instanceof IPluginModelBase) {
+			IPluginModelBase model = (IPluginModelBase) item;
 			return model.getPluginBase().getId();
 		}
 		return null;
@@ -134,8 +134,8 @@ public class BundleExplorerDialog extends FilteredItemsSelectionDialog {
 		@Override
 		public boolean matchItem(Object item) {
 			String id = null;
-			if(item instanceof IPluginModelBase) {
-				IPluginModelBase model = (IPluginModelBase)item;
+			if (item instanceof IPluginModelBase) {
+				IPluginModelBase model = (IPluginModelBase) item;
 				id = model.getPluginBase().getId();
 			}
 
@@ -145,7 +145,7 @@ public class BundleExplorerDialog extends FilteredItemsSelectionDialog {
 		@Override
 		protected boolean matches(String text) {
 			String pattern = patternMatcher.getPattern();
-			if(pattern.indexOf("*") != 0 & pattern.indexOf("?") != 0 & pattern.indexOf(".") != 0) {//$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			if (pattern.indexOf("*") != 0 & pattern.indexOf("?") != 0 & pattern.indexOf(".") != 0) {//$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				pattern = "*" + pattern; //$NON-NLS-1$
 				patternMatcher.setPattern(pattern);
 			}
@@ -159,23 +159,23 @@ public class BundleExplorerDialog extends FilteredItemsSelectionDialog {
 			int id1 = getId(o1);
 			int id2 = getId(o2);
 
-			if(id1 != id2) {
+			if (id1 != id2) {
 				return id1 - id2;
 			}
 			return compareSimilarObjects(o1, o2);
 		}
 
 		private int getId(Object element) {
-			if(element instanceof IPluginModelBase) {
+			if (element instanceof IPluginModelBase) {
 				return 100;
 			}
 			return 0;
 		}
 
 		private int compareSimilarObjects(Object o1, Object o2) {
-			if(o1 instanceof IPluginModelBase && o2 instanceof IPluginModelBase) {
-				IPluginModelBase ipmb1 = (IPluginModelBase)o1;
-				IPluginModelBase ipmb2 = (IPluginModelBase)o2;
+			if (o1 instanceof IPluginModelBase && o2 instanceof IPluginModelBase) {
+				IPluginModelBase ipmb1 = (IPluginModelBase) o1;
+				IPluginModelBase ipmb2 = (IPluginModelBase) o2;
 				return comparePlugins(ipmb1.getPluginBase(), ipmb2.getPluginBase());
 			}
 			return 0;

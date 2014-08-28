@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.tests;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
@@ -16,18 +15,19 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer#addLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression) <em>Add Layer</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Compute Property Value Command</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getPropertiesComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.emf.common.util.EList) <em>Get Properties Compute Property Value Command</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getViewsComputePropertyValueCommand(org.eclipse.emf.common.util.EList, org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Views Compute Property Value Command</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#startAfterCreation() <em>Start After Creation</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#attachLayers() <em>Attach Layers</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#attach() <em>Attach</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#detach() <em>Detach</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#enterAttachedState() <em>Enter Attached State</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#exitAttachedState() <em>Exit Attached State</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer#addLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression) <em>Add Layer</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Compute Property Value Command</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getPropertiesComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.emf.common.util.EList) <em>Get Properties Compute Property Value Command</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getViewsComputePropertyValueCommand(org.eclipse.emf.common.util.EList, org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Views Compute Property Value Command</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#startAfterCreation() <em>Start After Creation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#attachLayers() <em>Attach Layers</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#attach() <em>Attach</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#detach() <em>Detach</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#enterAttachedState() <em>Enter Attached State</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#exitAttachedState() <em>Exit Attached State</em>}</li>
  * </ul>
  * </p>
+ *
  * @generated
  */
 public class LayersStackTest extends TestCase {
@@ -36,6 +36,7 @@ public class LayersStackTest extends TestCase {
 	 * The fixture for this Stack test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LayersStack fixture = null;
@@ -43,6 +44,7 @@ public class LayersStackTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -53,6 +55,7 @@ public class LayersStackTest extends TestCase {
 	 * Constructs a new Stack test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LayersStackTest(String name) {
@@ -63,6 +66,7 @@ public class LayersStackTest extends TestCase {
 	 * Sets the fixture for this Stack test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void setFixture(LayersStack fixture) {
@@ -73,6 +77,7 @@ public class LayersStackTest extends TestCase {
 	 * Returns the fixture for this Stack test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LayersStack getFixture() {
@@ -82,6 +87,7 @@ public class LayersStackTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -93,6 +99,7 @@ public class LayersStackTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -105,6 +112,7 @@ public class LayersStackTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer#addLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression) <em>Add Layer</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer#addLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression)
 	 * @generated
 	 */
@@ -115,9 +123,11 @@ public class LayersStackTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Compute Property Value Command</em>}' operation.
+	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Compute Property Value Command</em>}'
+	 * operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
 	 */
@@ -128,9 +138,11 @@ public class LayersStackTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getPropertiesComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.emf.common.util.EList) <em>Get Properties Compute Property Value Command</em>}' operation.
+	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getPropertiesComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.emf.common.util.EList) <em>Get Properties Compute Property Value Command</em>}'
+	 * operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getPropertiesComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.emf.common.util.EList)
 	 * @generated
 	 */
@@ -141,9 +153,11 @@ public class LayersStackTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getViewsComputePropertyValueCommand(org.eclipse.emf.common.util.EList, org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Views Compute Property Value Command</em>}' operation.
+	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getViewsComputePropertyValueCommand(org.eclipse.emf.common.util.EList, org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Views Compute Property Value Command</em>}'
+	 * operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getViewsComputePropertyValueCommand(org.eclipse.emf.common.util.EList, org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
 	 */
@@ -157,6 +171,7 @@ public class LayersStackTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#startAfterCreation() <em>Start After Creation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#startAfterCreation()
 	 * @generated
 	 */
@@ -170,6 +185,7 @@ public class LayersStackTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#attachLayers() <em>Attach Layers</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#attachLayers()
 	 * @generated
 	 */
@@ -183,6 +199,7 @@ public class LayersStackTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#attach() <em>Attach</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#attach()
 	 * @generated
 	 */
@@ -196,6 +213,7 @@ public class LayersStackTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#detach() <em>Detach</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#detach()
 	 * @generated
 	 */
@@ -209,6 +227,7 @@ public class LayersStackTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#enterAttachedState() <em>Enter Attached State</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#enterAttachedState()
 	 * @generated
 	 */
@@ -222,6 +241,7 @@ public class LayersStackTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#exitAttachedState() <em>Exit Attached State</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#exitAttachedState()
 	 * @generated
 	 */
@@ -231,4 +251,4 @@ public class LayersStackTest extends TestCase {
 		fail();
 	}
 
-} //LayersStackTest
+} // LayersStackTest

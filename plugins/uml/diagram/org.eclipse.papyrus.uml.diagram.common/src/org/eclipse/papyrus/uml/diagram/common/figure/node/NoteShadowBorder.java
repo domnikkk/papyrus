@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.swt.graphics.Color;
 
 /**
  * this class is used to test the shadow for a a note figure
- * 
+ *
  */
 
 public class NoteShadowBorder extends RectangularShadowBorder {
@@ -43,13 +43,14 @@ public class NoteShadowBorder extends RectangularShadowBorder {
 
 	/**
 	 * Returns margin for this border
-	 * 
+	 *
 	 * @return margin as Insets
 	 */
 	public Insets getMargin() {
 		return noteBorder.getMargin();
 	}
 
+	@Override
 	public Insets getInsets(IFigure figure) {
 		return noteBorder.getInsets(figure);
 	}
@@ -78,7 +79,7 @@ public class NoteShadowBorder extends RectangularShadowBorder {
 		plt.addPoint(figureRect.x + figureRect.width + borderwidth, figureRect.y + figureRect.height + borderwidth);
 		plt.addPoint(figureRect.x + figureRect.width + borderwidth, figureRect.y + borderwidth + cornerDim.height + borderwidth);
 		plt.addPoint(figureRect.x + figureRect.width, figureRect.y + borderwidth + cornerDim.height);
-		if(getColor() != null) {
+		if (getColor() != null) {
 			graphics.setBackgroundColor(getColor());
 		} else {
 			graphics.setBackgroundColor(ColorConstants.black);

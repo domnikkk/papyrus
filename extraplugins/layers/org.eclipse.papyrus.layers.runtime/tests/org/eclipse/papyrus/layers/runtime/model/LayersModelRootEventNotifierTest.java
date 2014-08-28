@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -59,7 +59,7 @@ public class LayersModelRootEventNotifierTest {
 		// Do create resources
 		URI uri = URI.createPlatformResourceURI(PROJECT_MODEL_URI, true);
 		mngr.createModels(uri);
-		
+
 		modelSet = mngr;
 	}
 
@@ -77,30 +77,31 @@ public class LayersModelRootEventNotifierTest {
 	@Test
 	public void testModelSetCreation() {
 
-		NotationModel notationModel = (NotationModel)modelSet.getModel(NotationModel.MODEL_ID);
+		NotationModel notationModel = (NotationModel) modelSet.getModel(NotationModel.MODEL_ID);
 		assertNotNull("NotationModel is created", notationModel);
 		// Try to create a Diagram
 		notationModel.addDiagram(NotationFactory.eINSTANCE.createDiagram());
-		// 
+		//
 		assertNotNull("Diagram is in the roots", notationModel.getResource().getContents().get(0));
-		
-		
-		
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+
+
+
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 		assertNotNull("LayerModel is created", layersModel);
 		assertNotNull("LayerStackApplication is created", layersModel.getLayerStackApplication());
 
-		
+
 	}
+
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayersModelEventRootNotifier#LayersModelEventRootNotifier(org.eclipse.gmf.runtime.notation.Diagram)}.
 	 */
 	@Test
 	public void testLayersModelEventRootNotifier() {
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 		LayersModelEventRootNotifier notifier = new LayersModelEventRootNotifier(layersModel);
-		
-		
+
+
 		assertNotNull("notifier created", notifier);
 
 		// dispose
@@ -112,7 +113,7 @@ public class LayersModelRootEventNotifierTest {
 	 */
 	@Test
 	public void testDispose() {
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 		LayersModelEventRootNotifier notifier = new LayersModelEventRootNotifier(layersModel);
 
 		assertNotNull("notifier created", notifier);
@@ -146,21 +147,21 @@ public class LayersModelRootEventNotifierTest {
 	 */
 	@Test
 	public void testFireLayersModelRootAddedEvent() {
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 		LayersModelEventRootNotifier notifier = new LayersModelEventRootNotifier(layersModel);
-		
+
 		TraceLayersModelRootEventListener listener = new TraceLayersModelRootEventListener();
 		notifier.addEventListener(listener);
-		
+
 		// Add root
 		@SuppressWarnings("unused")
 		LayersStackApplication application = layersModel.getLayerStackApplication();
-		
+
 		// Check for event
 		assertTrue("event sent", listener.traces.size() > 0);
 		assertEquals("event found", "layersModelRootAdded", listener.traces.get(0).name);
-		
-		
+
+
 	}
 
 	/**
@@ -168,15 +169,15 @@ public class LayersModelRootEventNotifierTest {
 	 */
 	@Test
 	public void testFireLayersModelRootRemovedEvent() {
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 		LayersModelEventRootNotifier notifier = new LayersModelEventRootNotifier(layersModel);
-		
+
 		TraceLayersModelRootEventListener listener = new TraceLayersModelRootEventListener();
 		notifier.addEventListener(listener);
-		
+
 		// Add root
 		LayersStackApplication application = layersModel.getLayerStackApplication();
-		
+
 		// Check remove
 		listener.traces.clear();
 		layersModel.removeRoot(application);

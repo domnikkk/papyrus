@@ -13,33 +13,33 @@ package org.eclipse.papyrus.emf.facet.efacet.ui.internal.widget;
 import org.eclipse.swt.graphics.Image;
 
 /**
- * 
+ *
  * Each tab in ETypedElementSectionDialog should implements this interface
- * 
+ *
  */
 public interface IETypedElementTabSelectionWidgetInternal extends
 		IETypedElementSelectionWidgetInternal {
 
 	/**
-	 * 
+	 *
 	 * @return the title for the tab
 	 */
 	String getTitle();
 
 	/**
-	 * 
+	 *
 	 * @return the tooltip for the tab
 	 */
 	String getToolTipText();
 
 	/**
-	 * 
+	 *
 	 * @return the image for the tab
 	 */
 	Image getImage();
 
 	/**
-	 * 
+	 *
 	 * @return the id for the tab
 	 */
 	String getTabId();

@@ -13,7 +13,8 @@
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.profile.readonly;
-import java.util.Set;
+
+import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -37,19 +38,19 @@ public class AppliedProfileReadOnlyHandler extends AbstractReadOnlyHandler {
 	}
 
 	public Optional<Boolean> anyReadOnly(Set<ReadOnlyAxis> axes, URI[] uris) {
-		if((getEditingDomain() != null) && axes.contains(ReadOnlyAxis.DISCRETION)) {
+		if ((getEditingDomain() != null) && axes.contains(ReadOnlyAxis.DISCRETION)) {
 			Resource mainUmlResource = null;
-			if(getEditingDomain().getResourceSet() instanceof ModelSet) {
-				UmlModel umlModel = (UmlModel)((ModelSet)getEditingDomain().getResourceSet()).getModel(UmlModel.MODEL_ID);
-				if(umlModel == null) {
+			if (getEditingDomain().getResourceSet() instanceof ModelSet) {
+				UmlModel umlModel = (UmlModel) ((ModelSet) getEditingDomain().getResourceSet()).getModel(UmlModel.MODEL_ID);
+				if (umlModel == null) {
 					return Optional.absent();
 				}
 				mainUmlResource = umlModel.getResource();
 			}
 
-			for(URI uri : uris) {
+			for (URI uri : uris) {
 				Resource resource = getEditingDomain().getResourceSet().getResource(uri.trimFragment(), false);
-				if(isProfileResource(resource) && mainUmlResource != resource) {
+				if (isProfileResource(resource) && mainUmlResource != resource) {
 					return Optional.of(Boolean.TRUE);
 				}
 			}
@@ -59,11 +60,11 @@ public class AppliedProfileReadOnlyHandler extends AbstractReadOnlyHandler {
 	}
 
 	private boolean isProfileResource(Resource resource) {
-		if(resource == null) {
+		if (resource == null) {
 			return false;
 		}
 
-		if(!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Profile) {
+		if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Profile) {
 			return true;
 		}
 
@@ -71,7 +72,7 @@ public class AppliedProfileReadOnlyHandler extends AbstractReadOnlyHandler {
 	}
 
 	public Optional<Boolean> makeWritable(Set<ReadOnlyAxis> axes, URI[] uris) {
-		return Optional.absent(); //Applied profiles should remain read-only
+		return Optional.absent(); // Applied profiles should remain read-only
 	}
 
 }

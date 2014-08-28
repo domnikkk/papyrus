@@ -13,11 +13,12 @@ import org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand#getCmdValue() <em>Get Cmd Value</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance#setValueFromString(java.lang.String) <em>Set Value From String</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance#setValueFromInstance(org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance) <em>Set Value From Instance</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand#getCmdValue() <em>Get Cmd Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance#setValueFromString(java.lang.String) <em>Set Value From String</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance#setValueFromInstance(org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance) <em>Set Value From Instance</em>}</li>
  * </ul>
  * </p>
+ *
  * @generated
  */
 public abstract class TypeInstanceTest extends TestCase {
@@ -26,6 +27,7 @@ public abstract class TypeInstanceTest extends TestCase {
 	 * The fixture for this Type Instance test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TypeInstance fixture = null;
@@ -34,6 +36,7 @@ public abstract class TypeInstanceTest extends TestCase {
 	 * Constructs a new Type Instance test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public TypeInstanceTest(String name) {
@@ -44,6 +47,7 @@ public abstract class TypeInstanceTest extends TestCase {
 	 * Sets the fixture for this Type Instance test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void setFixture(TypeInstance fixture) {
@@ -54,6 +58,7 @@ public abstract class TypeInstanceTest extends TestCase {
 	 * Returns the fixture for this Type Instance test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TypeInstance getFixture() {
@@ -64,6 +69,7 @@ public abstract class TypeInstanceTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand#getCmdValue() <em>Get Cmd Value</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand#getCmdValue()
 	 * @generated
 	 */
@@ -77,6 +83,7 @@ public abstract class TypeInstanceTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance#setValueFromString(java.lang.String) <em>Set Value From String</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance#setValueFromString(java.lang.String)
 	 * @generated
 	 */
@@ -90,6 +97,7 @@ public abstract class TypeInstanceTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance#setValueFromInstance(org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance) <em>Set Value From Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance#setValueFromInstance(org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance)
 	 * @generated
 	 */
@@ -99,4 +107,4 @@ public abstract class TypeInstanceTest extends TestCase {
 		fail();
 	}
 
-} //TypeInstanceTest
+} // TypeInstanceTest

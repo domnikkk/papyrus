@@ -22,8 +22,8 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.EventFunctionClientServerPortInstanceRefImpl#getFunctionClientServerPort <em>Function Client Server Port</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.EventFunctionClientServerPortInstanceRefImpl#getFunctionPrototype <em>Function Prototype</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.EventFunctionClientServerPortInstanceRefImpl#getFunctionClientServerPort <em>Function Client Server Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.EventFunctionClientServerPortInstanceRefImpl#getFunctionPrototype <em>Function Prototype</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,6 +34,7 @@ public class EventFunctionClientServerPortInstanceRefImpl extends InstanceRefImp
 	 * The cached value of the '{@link #getFunctionClientServerPort() <em>Function Client Server Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFunctionClientServerPort()
 	 * @generated
 	 * @ordered
@@ -44,6 +45,7 @@ public class EventFunctionClientServerPortInstanceRefImpl extends InstanceRefImp
 	 * The cached value of the '{@link #getFunctionPrototype() <em>Function Prototype</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFunctionPrototype()
 	 * @generated
 	 * @ordered
@@ -53,6 +55,7 @@ public class EventFunctionClientServerPortInstanceRefImpl extends InstanceRefImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected EventFunctionClientServerPortInstanceRefImpl() {
@@ -62,6 +65,7 @@ public class EventFunctionClientServerPortInstanceRefImpl extends InstanceRefImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,15 +76,18 @@ public class EventFunctionClientServerPortInstanceRefImpl extends InstanceRefImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public FunctionClientServerPort getFunctionClientServerPort() {
 		if (functionClientServerPort != null && functionClientServerPort.eIsProxy()) {
-			InternalEObject oldFunctionClientServerPort = (InternalEObject)functionClientServerPort;
-			functionClientServerPort = (FunctionClientServerPort)eResolveProxy(oldFunctionClientServerPort);
+			InternalEObject oldFunctionClientServerPort = (InternalEObject) functionClientServerPort;
+			functionClientServerPort = (FunctionClientServerPort) eResolveProxy(oldFunctionClientServerPort);
 			if (functionClientServerPort != oldFunctionClientServerPort) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_CLIENT_SERVER_PORT, oldFunctionClientServerPort, functionClientServerPort));
+				}
 			}
 		}
 		return functionClientServerPort;
@@ -89,6 +96,7 @@ public class EventFunctionClientServerPortInstanceRefImpl extends InstanceRefImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public FunctionClientServerPort basicGetFunctionClientServerPort() {
@@ -98,20 +106,25 @@ public class EventFunctionClientServerPortInstanceRefImpl extends InstanceRefImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setFunctionClientServerPort(FunctionClientServerPort newFunctionClientServerPort) {
 		FunctionClientServerPort oldFunctionClientServerPort = functionClientServerPort;
 		functionClientServerPort = newFunctionClientServerPort;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_CLIENT_SERVER_PORT, oldFunctionClientServerPort, functionClientServerPort));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<FunctionPrototype> getFunctionPrototype() {
 		if (functionPrototype == null) {
 			functionPrototype = new EObjectResolvingEList<FunctionPrototype>(FunctionPrototype.class, this, InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_PROTOTYPE);
@@ -122,16 +135,19 @@ public class EventFunctionClientServerPortInstanceRefImpl extends InstanceRefImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_CLIENT_SERVER_PORT:
-				if (resolve) return getFunctionClientServerPort();
-				return basicGetFunctionClientServerPort();
-			case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				return getFunctionPrototype();
+		case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_CLIENT_SERVER_PORT:
+			if (resolve) {
+				return getFunctionClientServerPort();
+			}
+			return basicGetFunctionClientServerPort();
+		case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			return getFunctionPrototype();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -139,19 +155,20 @@ public class EventFunctionClientServerPortInstanceRefImpl extends InstanceRefImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_CLIENT_SERVER_PORT:
-				setFunctionClientServerPort((FunctionClientServerPort)newValue);
-				return;
-			case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				getFunctionPrototype().clear();
-				getFunctionPrototype().addAll((Collection<? extends FunctionPrototype>)newValue);
-				return;
+		case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_CLIENT_SERVER_PORT:
+			setFunctionClientServerPort((FunctionClientServerPort) newValue);
+			return;
+		case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			getFunctionPrototype().clear();
+			getFunctionPrototype().addAll((Collection<? extends FunctionPrototype>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -159,17 +176,18 @@ public class EventFunctionClientServerPortInstanceRefImpl extends InstanceRefImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_CLIENT_SERVER_PORT:
-				setFunctionClientServerPort((FunctionClientServerPort)null);
-				return;
-			case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				getFunctionPrototype().clear();
-				return;
+		case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_CLIENT_SERVER_PORT:
+			setFunctionClientServerPort((FunctionClientServerPort) null);
+			return;
+		case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			getFunctionPrototype().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -177,17 +195,18 @@ public class EventFunctionClientServerPortInstanceRefImpl extends InstanceRefImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_CLIENT_SERVER_PORT:
-				return functionClientServerPort != null;
-			case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				return functionPrototype != null && !functionPrototype.isEmpty();
+		case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_CLIENT_SERVER_PORT:
+			return functionClientServerPort != null;
+		case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			return functionPrototype != null && !functionPrototype.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //EventFunctionClientServerPortInstanceRefImpl
+} // EventFunctionClientServerPortInstanceRefImpl

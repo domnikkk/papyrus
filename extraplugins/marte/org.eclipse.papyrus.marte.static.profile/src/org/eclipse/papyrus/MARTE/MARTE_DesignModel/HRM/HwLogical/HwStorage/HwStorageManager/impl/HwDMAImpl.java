@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,10 +39,10 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwSto
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.impl.HwDMAImpl#getControlledMedias <em>Controlled Medias</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.impl.HwDMAImpl#getNbChannels <em>Nb Channels</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.impl.HwDMAImpl#getTransferWidth <em>Transfer Width</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.impl.HwDMAImpl#getDrivenBy <em>Driven By</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.impl.HwDMAImpl#getControlledMedias <em>Controlled Medias</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.impl.HwDMAImpl#getNbChannels <em>Nb Channels</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.impl.HwDMAImpl#getTransferWidth <em>Transfer Width</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.impl.HwDMAImpl#getDrivenBy <em>Driven By</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,6 +53,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	 * The cached value of the '{@link #getControlledMedias() <em>Controlled Medias</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getControlledMedias()
 	 * @generated
 	 * @ordered
@@ -63,6 +64,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	 * The default value of the '{@link #getNbChannels() <em>Nb Channels</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNbChannels()
 	 * @generated
 	 * @ordered
@@ -73,6 +75,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	 * The cached value of the '{@link #getNbChannels() <em>Nb Channels</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNbChannels()
 	 * @generated
 	 * @ordered
@@ -83,6 +86,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	 * The default value of the '{@link #getTransferWidth() <em>Transfer Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getTransferWidth()
 	 * @generated
 	 * @ordered
@@ -93,6 +97,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	 * The cached value of the '{@link #getTransferWidth() <em>Transfer Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getTransferWidth()
 	 * @generated
 	 * @ordered
@@ -103,6 +108,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	 * The cached value of the '{@link #getDrivenBy() <em>Driven By</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDrivenBy()
 	 * @generated
 	 * @ordered
@@ -112,6 +118,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HwDMAImpl() {
@@ -121,6 +128,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,8 +139,10 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<HwMedia> getControlledMedias() {
 		if (controlledMedias == null) {
 			controlledMedias = new EObjectWithInverseResolvingEList.ManyInverse<HwMedia>(HwMedia.class, this, HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS, HwCommunicationPackage.HW_MEDIA__ARBITERS);
@@ -143,8 +153,10 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getNbChannels() {
 		return nbChannels;
 	}
@@ -152,20 +164,25 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setNbChannels(String newNbChannels) {
 		String oldNbChannels = nbChannels;
 		nbChannels = newNbChannels;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwStorageManagerPackage.HW_DMA__NB_CHANNELS, oldNbChannels, nbChannels));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getTransferWidth() {
 		return transferWidth;
 	}
@@ -173,20 +190,25 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setTransferWidth(String newTransferWidth) {
 		String oldTransferWidth = transferWidth;
 		transferWidth = newTransferWidth;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwStorageManagerPackage.HW_DMA__TRANSFER_WIDTH, oldTransferWidth, transferWidth));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<HwProcessor> getDrivenBy() {
 		if (drivenBy == null) {
 			drivenBy = new EObjectResolvingEList<HwProcessor>(HwProcessor.class, this, HwStorageManagerPackage.HW_DMA__DRIVEN_BY);
@@ -197,14 +219,15 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getControlledMedias()).basicAdd(otherEnd, msgs);
+		case HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getControlledMedias()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -212,13 +235,14 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS:
-				return ((InternalEList<?>)getControlledMedias()).basicRemove(otherEnd, msgs);
+		case HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS:
+			return ((InternalEList<?>) getControlledMedias()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -226,19 +250,20 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS:
-				return getControlledMedias();
-			case HwStorageManagerPackage.HW_DMA__NB_CHANNELS:
-				return getNbChannels();
-			case HwStorageManagerPackage.HW_DMA__TRANSFER_WIDTH:
-				return getTransferWidth();
-			case HwStorageManagerPackage.HW_DMA__DRIVEN_BY:
-				return getDrivenBy();
+		case HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS:
+			return getControlledMedias();
+		case HwStorageManagerPackage.HW_DMA__NB_CHANNELS:
+			return getNbChannels();
+		case HwStorageManagerPackage.HW_DMA__TRANSFER_WIDTH:
+			return getTransferWidth();
+		case HwStorageManagerPackage.HW_DMA__DRIVEN_BY:
+			return getDrivenBy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -246,26 +271,27 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS:
-				getControlledMedias().clear();
-				getControlledMedias().addAll((Collection<? extends HwMedia>)newValue);
-				return;
-			case HwStorageManagerPackage.HW_DMA__NB_CHANNELS:
-				setNbChannels((String)newValue);
-				return;
-			case HwStorageManagerPackage.HW_DMA__TRANSFER_WIDTH:
-				setTransferWidth((String)newValue);
-				return;
-			case HwStorageManagerPackage.HW_DMA__DRIVEN_BY:
-				getDrivenBy().clear();
-				getDrivenBy().addAll((Collection<? extends HwProcessor>)newValue);
-				return;
+		case HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS:
+			getControlledMedias().clear();
+			getControlledMedias().addAll((Collection<? extends HwMedia>) newValue);
+			return;
+		case HwStorageManagerPackage.HW_DMA__NB_CHANNELS:
+			setNbChannels((String) newValue);
+			return;
+		case HwStorageManagerPackage.HW_DMA__TRANSFER_WIDTH:
+			setTransferWidth((String) newValue);
+			return;
+		case HwStorageManagerPackage.HW_DMA__DRIVEN_BY:
+			getDrivenBy().clear();
+			getDrivenBy().addAll((Collection<? extends HwProcessor>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -273,23 +299,24 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS:
-				getControlledMedias().clear();
-				return;
-			case HwStorageManagerPackage.HW_DMA__NB_CHANNELS:
-				setNbChannels(NB_CHANNELS_EDEFAULT);
-				return;
-			case HwStorageManagerPackage.HW_DMA__TRANSFER_WIDTH:
-				setTransferWidth(TRANSFER_WIDTH_EDEFAULT);
-				return;
-			case HwStorageManagerPackage.HW_DMA__DRIVEN_BY:
-				getDrivenBy().clear();
-				return;
+		case HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS:
+			getControlledMedias().clear();
+			return;
+		case HwStorageManagerPackage.HW_DMA__NB_CHANNELS:
+			setNbChannels(NB_CHANNELS_EDEFAULT);
+			return;
+		case HwStorageManagerPackage.HW_DMA__TRANSFER_WIDTH:
+			setTransferWidth(TRANSFER_WIDTH_EDEFAULT);
+			return;
+		case HwStorageManagerPackage.HW_DMA__DRIVEN_BY:
+			getDrivenBy().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -297,19 +324,20 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS:
-				return controlledMedias != null && !controlledMedias.isEmpty();
-			case HwStorageManagerPackage.HW_DMA__NB_CHANNELS:
-				return NB_CHANNELS_EDEFAULT == null ? nbChannels != null : !NB_CHANNELS_EDEFAULT.equals(nbChannels);
-			case HwStorageManagerPackage.HW_DMA__TRANSFER_WIDTH:
-				return TRANSFER_WIDTH_EDEFAULT == null ? transferWidth != null : !TRANSFER_WIDTH_EDEFAULT.equals(transferWidth);
-			case HwStorageManagerPackage.HW_DMA__DRIVEN_BY:
-				return drivenBy != null && !drivenBy.isEmpty();
+		case HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS:
+			return controlledMedias != null && !controlledMedias.isEmpty();
+		case HwStorageManagerPackage.HW_DMA__NB_CHANNELS:
+			return NB_CHANNELS_EDEFAULT == null ? nbChannels != null : !NB_CHANNELS_EDEFAULT.equals(nbChannels);
+		case HwStorageManagerPackage.HW_DMA__TRANSFER_WIDTH:
+			return TRANSFER_WIDTH_EDEFAULT == null ? transferWidth != null : !TRANSFER_WIDTH_EDEFAULT.equals(transferWidth);
+		case HwStorageManagerPackage.HW_DMA__DRIVEN_BY:
+			return drivenBy != null && !drivenBy.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -317,19 +345,23 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == HwCommunicationResource.class) {
 			switch (derivedFeatureID) {
-				default: return -1;
+			default:
+				return -1;
 			}
 		}
 		if (baseClass == HwArbiter.class) {
 			switch (derivedFeatureID) {
-				case HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS: return HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS;
-				default: return -1;
+			case HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS:
+				return HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -338,19 +370,23 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == HwCommunicationResource.class) {
 			switch (baseFeatureID) {
-				default: return -1;
+			default:
+				return -1;
 			}
 		}
 		if (baseClass == HwArbiter.class) {
 			switch (baseFeatureID) {
-				case HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS: return HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS;
-				default: return -1;
+			case HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS:
+				return HwStorageManagerPackage.HW_DMA__CONTROLLED_MEDIAS;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -359,11 +395,14 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nbChannels: ");
@@ -374,4 +413,4 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 		return result.toString();
 	}
 
-} //HwDMAImpl
+} // HwDMAImpl

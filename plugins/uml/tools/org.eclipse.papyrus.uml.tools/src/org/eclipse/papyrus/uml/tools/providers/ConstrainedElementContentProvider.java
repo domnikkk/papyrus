@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ public class ConstrainedElementContentProvider extends UMLContentProvider {
 
 	public static EMFGraphicalContentProvider encapsulateProvider(IStructuredContentProvider provider, EObject editedEObject, EStructuralFeature feature, ResourceSet root) {
 		String historyId;
-		if(editedEObject != null && feature != null) {
+		if (editedEObject != null && feature != null) {
 			historyId = HistoryUtil.getHistoryID(editedEObject, feature);
 		} else {
 			historyId = "DefaultHistory";
@@ -42,8 +42,8 @@ public class ConstrainedElementContentProvider extends UMLContentProvider {
 
 		IStructuredContentProvider contentProvider;
 
-		if(provider instanceof ITreeContentProvider) {
-			contentProvider = getStrategyProvider((ITreeContentProvider)provider);
+		if (provider instanceof ITreeContentProvider) {
+			contentProvider = getStrategyProvider((ITreeContentProvider) provider);
 		} else {
 			contentProvider = provider;
 		}

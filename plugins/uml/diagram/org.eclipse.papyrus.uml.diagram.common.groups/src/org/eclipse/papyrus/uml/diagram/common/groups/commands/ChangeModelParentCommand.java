@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ import org.eclipse.gmf.runtime.emf.type.core.internal.l10n.EMFTypeCoreMessages;
 
 /**
  * This command will change the model parent of child to the IAdaptable parent.
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class ChangeModelParentCommand extends AbstractTransactionalCommand {
 
@@ -47,9 +47,9 @@ public class ChangeModelParentCommand extends AbstractTransactionalCommand {
 	private IAdaptable elementAdapter;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
 	 * @param parentGroupAdapter
 	 * @param chilrendToMove
@@ -61,31 +61,31 @@ public class ChangeModelParentCommand extends AbstractTransactionalCommand {
 		this.chilrendToMove = chilrendToMove;
 		this.elementAdapter = parentGroupAdapter;
 		targetContainer = null;
-		//		if(anyPart != null) {
-		//			this.editPartRegistery = anyPart.getViewer().getEditPartRegistry();
-		//		}
+		// if(anyPart != null) {
+		// this.editPartRegistery = anyPart.getViewer().getEditPartRegistry();
+		// }
 
 	}
 
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor arg0, IAdaptable arg1) throws ExecutionException {
-		if(targetContainer == null) {
+		if (targetContainer == null) {
 			Object group = elementAdapter.getAdapter(EObject.class);
-			if(group instanceof EObject) {
-				targetContainer = (EObject)group;
+			if (group instanceof EObject) {
+				targetContainer = (EObject) group;
 			}
 		}
-		if(targetContainer == null) {
+		if (targetContainer == null) {
 			return CommandResult.newErrorCommandResult("Unable to change the model parent of the object because the system was enable to find the EObject of the parent group");
 		}
 
-		for(Iterator<EObject> i = getElementsToMove().keySet().iterator(); i.hasNext();) {
-			EObject element = (EObject)i.next();
+		for (Iterator<EObject> i = getElementsToMove().keySet().iterator(); i.hasNext();) {
+			EObject element = i.next();
 			EReference feature = getTargetFeature(element);
-			if(feature != null && targetContainer.eClass().getEAllReferences().contains(feature)) {
-				if(feature.isMany()) {
+			if (feature != null && targetContainer.eClass().getEAllReferences().contains(feature)) {
+				if (feature.isMany()) {
 					@SuppressWarnings("rawtypes")
-					Collection coll = (Collection)targetContainer.eGet(feature);
+					Collection coll = (Collection) targetContainer.eGet(feature);
 					coll.add(element);
 				} else {
 					targetContainer.eSet(feature, element);
@@ -103,15 +103,15 @@ public class ChangeModelParentCommand extends AbstractTransactionalCommand {
 	}
 
 	protected EReference getTargetFeature(EObject element) {
-		EReference feature = (EReference)getElementsToMove().get(element);
-		if(feature == null) {
+		EReference feature = getElementsToMove().get(element);
+		if (feature == null) {
 			EReference oldContainmentFeature = element.eContainmentFeature();
-			if(getTargetContainer().eClass().getEAllReferences().contains(oldContainmentFeature)) {
+			if (getTargetContainer().eClass().getEAllReferences().contains(oldContainmentFeature)) {
 				getElementsToMove().put(element, oldContainmentFeature);
 				feature = oldContainmentFeature;
 			}
 		}
-		if(feature == null) {
+		if (feature == null) {
 			feature = PackageUtil.findFeature(getTargetContainer().eClass(), element.eClass());
 			setTargetFeature(element, feature);
 		}

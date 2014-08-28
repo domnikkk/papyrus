@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,15 +48,15 @@ public class ExceptionHandlerTypeParser extends MessageFormatParser implements I
 	}
 
 	public ExceptionHandlerTypeParser() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() });
 	}
 
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -64,11 +64,12 @@ public class ExceptionHandlerTypeParser extends MessageFormatParser implements I
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.uml.diagram.sequence.parsers.AbstractParser#isAffectingEvent
 	 * (java.lang.Object , int)
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		EStructuralFeature feature = getEStructuralFeature(event);
 		return isValidFeature(feature);
@@ -76,18 +77,19 @@ public class ExceptionHandlerTypeParser extends MessageFormatParser implements I
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.parsers.MessageFormatParser#
 	 * getPrintString(org.eclipse .core.runtime.IAdaptable, int)
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		StringBuffer label = new StringBuffer();
 		Object obj = element.getAdapter(EObject.class);
-		if(obj instanceof ExceptionHandler) {
-			EList<Classifier> excTypes = ((ExceptionHandler)obj).getExceptionTypes();
-			for(Classifier type : excTypes) {
-				if(type != null && !"".equals(type.getName()) && type.getName() != null) {
-					if(label.length() > 0) {
+		if (obj instanceof ExceptionHandler) {
+			EList<Classifier> excTypes = ((ExceptionHandler) obj).getExceptionTypes();
+			for (Classifier type : excTypes) {
+				if (type != null && !"".equals(type.getName()) && type.getName() != null) {
+					if (label.length() > 0) {
 						label.append(LINE_BREAK);
 					}
 					label.append(type.getName());
@@ -99,11 +101,12 @@ public class ExceptionHandlerTypeParser extends MessageFormatParser implements I
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * areSemanticElementsAffected (org.eclipse.emf.ecore.EObject,
 	 * java.lang.Object)
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		EStructuralFeature feature = getEStructuralFeature(notification);
 		return isValidFeature(feature);
@@ -111,16 +114,17 @@ public class ExceptionHandlerTypeParser extends MessageFormatParser implements I
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * getSemanticElementsBeingParsed (org.eclipse.emf.ecore.EObject)
 	 */
+	@Override
 	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-		if(element instanceof StructuredActivityNode) {
-			semanticElementsBeingParsed.add((ExceptionHandler)element);
-			EList<Classifier> excTypes = ((ExceptionHandler)element).getExceptionTypes();
-			for(Classifier type : excTypes) {
+		if (element instanceof StructuredActivityNode) {
+			semanticElementsBeingParsed.add((ExceptionHandler) element);
+			EList<Classifier> excTypes = ((ExceptionHandler) element).getExceptionTypes();
+			for (Classifier type : excTypes) {
 				semanticElementsBeingParsed.add(type);
 			}
 		}
@@ -130,9 +134,9 @@ public class ExceptionHandlerTypeParser extends MessageFormatParser implements I
 	/**
 	 * Determines if the given feature has to be taken into account in this
 	 * parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {

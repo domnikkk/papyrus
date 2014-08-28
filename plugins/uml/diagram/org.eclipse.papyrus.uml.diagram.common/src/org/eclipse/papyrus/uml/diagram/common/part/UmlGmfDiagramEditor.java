@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.uml.diagram.common.part;
 
@@ -23,9 +23,9 @@ import org.eclipse.ui.contexts.IContextService;
 /**
  * Common ancestor of GMF based editors for UML. This class allows to declare
  * stuff commons to all this kind of editors.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 
@@ -47,7 +47,7 @@ public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param servicesRegistry
 	 * @param diagram
 	 * @throws ServiceException
@@ -70,25 +70,27 @@ public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 	@Override
 	public void doSetInput(IEditorInput input, boolean releaseEditorContents) throws CoreException {
 		super.doSetInput(input, releaseEditorContents);
-		if(getDiagram() != null && !DiagramVersioningUtils.isOfCurrentPapyrusVersion(getDiagram())) {
+		if (getDiagram() != null && !DiagramVersioningUtils.isOfCurrentPapyrusVersion(getDiagram())) {
 			new ReconcileHelper(getEditingDomain()).reconcileDiagram(getDiagram());
 		}
 	}
 
 	/**
 	 * Dispose services used in this part.
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public void dispose() {
 		this.setUndoContext(new IUndoContext() {
 
+			@Override
 			public String getLabel() {
 				return "Disposed undo context";
 			}
 
+			@Override
 			public boolean matches(IUndoContext context) {
 				return false;
 			}
@@ -115,7 +117,7 @@ public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 
 	@Override
 	public Object getAdapter(Class type) {
-		if(type == ServicesRegistry.class) {
+		if (type == ServicesRegistry.class) {
 			return servicesRegistry;
 		}
 		return super.getAdapter(type);
@@ -127,7 +129,7 @@ public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the backbone service registry. it cannot return null.
 	 */
 	public ServicesRegistry getServicesRegistry() {
@@ -151,9 +153,9 @@ public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor#getKeyHandler()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -167,9 +169,9 @@ public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 	 * A class taking in charge the synchronization of the partName and the
 	 * diagram name. When diagram name change, the other is automatically
 	 * updated.
-	 * 
+	 *
 	 * @author cedric dumoulin
-	 * 
+	 *
 	 */
 	public class PartNameSynchronizer {
 
@@ -180,20 +182,24 @@ public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 		 */
 		private Adapter diagramNameListener = new Adapter() {
 
+			@Override
 			public void notifyChanged(Notification notification) {
-				if(notification.getFeatureID(Diagram.class) == NotationPackage.DIAGRAM__NAME && notification.getNotifier() == diagram) {
+				if (notification.getFeatureID(Diagram.class) == NotationPackage.DIAGRAM__NAME && notification.getNotifier() == diagram) {
 					setPartName(diagram.getName());
 				}
 
 			}
 
+			@Override
 			public Notifier getTarget() {
 				return null;
 			}
 
+			@Override
 			public void setTarget(Notifier newTarget) {
 			}
 
+			@Override
 			public boolean isAdapterForType(Object type) {
 				return false;
 			}
@@ -201,9 +207,9 @@ public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 		};
 
 		/**
-		 * 
+		 *
 		 * Constructor.
-		 * 
+		 *
 		 * @param diagram
 		 */
 		PartNameSynchronizer(Diagram diagram) {
@@ -212,12 +218,12 @@ public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 
 		/**
 		 * Change the associated diagram.
-		 * 
+		 *
 		 * @param diagram
 		 */
 		public void setDiagram(Diagram diagram) {
 			// Remove from old diagram, if any
-			if(this.diagram != null) {
+			if (this.diagram != null) {
 				diagram.eAdapters().remove(diagramNameListener);
 			}
 
@@ -232,7 +238,7 @@ public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 
 	@Override
 	public void createPartControl(Composite parent) {
-		IContextService contextService = (IContextService)getSite().getService(IContextService.class);
+		IContextService contextService = (IContextService) getSite().getService(IContextService.class);
 		// FIXME : before Eclipse Juno, this line was not necessary
 		// see bug 367816 and bug 382218
 		contextService.activateContext("org.eclipse.gmf.runtime.diagram.ui.diagramContext"); //$NON-NLS-1$

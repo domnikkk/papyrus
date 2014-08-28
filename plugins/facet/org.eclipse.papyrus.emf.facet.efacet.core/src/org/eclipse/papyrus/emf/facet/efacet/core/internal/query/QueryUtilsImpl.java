@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2011 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Gregoire Dupe (Mia-Software) - Bug 333553 - The user has not to deal with two files to create a facet
  *  Nicolas Bros (Mia-Software) - Bug 361617 - Deprecation of APIs for the old Facet metamodels
@@ -19,8 +19,8 @@ import org.eclipse.papyrus.emf.facet.efacet.Query;
 import org.eclipse.papyrus.emf.facet.efacet.QuerySet;
 import org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.QuerySetCatalog;
 import org.eclipse.papyrus.emf.facet.efacet.core.query.IQueryUtils;
-import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManager;
 import org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog;
+import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManager;
 
 /**
  * @deprecated This class manipulated the old facet metamodel. With the new eFacet2 metamodel, there
@@ -38,7 +38,7 @@ public class QueryUtilsImpl implements IQueryUtils {
 				querySetCatalogs.add((QuerySetCatalog) catalog);
 			}
 		}
-		
+
 		QuerySet searchedQuerySet = null;
 		for (QuerySetCatalog querySetCatalog : querySetCatalogs) {
 			List<QuerySet> querySets = querySetCatalog.getInstalledQuerySets();

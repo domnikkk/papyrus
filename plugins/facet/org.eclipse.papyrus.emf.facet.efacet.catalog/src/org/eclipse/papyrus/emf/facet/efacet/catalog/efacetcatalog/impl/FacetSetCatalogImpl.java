@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.impl;
 
@@ -29,8 +29,7 @@ import org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.EfacetcatalogP
 import org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.FacetSetCatalog;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Facet Set Catalog</b></em>
- * '. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Facet Set Catalog</b></em> '. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -44,7 +43,7 @@ import org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.FacetSetCatalo
  * <em>Installed Facet Sets</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  * @deprecated cf. https://bugs.eclipse.org/bugs/show_bug.cgi?id=373672
  */
@@ -54,6 +53,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	 * The cached value of the '{@link #getInstalledEntries() <em>Installed Entries</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getInstalledEntries()
 	 * @generated
 	 * @ordered
@@ -63,6 +63,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -72,6 +73,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -81,6 +83,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FacetSetCatalogImpl() {
@@ -90,6 +93,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,6 +104,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<EObject> getInstalledEntries() {
@@ -112,6 +117,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -121,18 +127,21 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(final String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EfacetcatalogPackage.FACET_SET_CATALOG__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	public EList<FacetSet> getInstalledFacetSets() {
@@ -151,17 +160,18 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
-			case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_ENTRIES:
-				return getInstalledEntries();
-			case EfacetcatalogPackage.FACET_SET_CATALOG__NAME:
-				return getName();
-			case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_FACET_SETS:
-				return getInstalledFacetSets();
+		case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_ENTRIES:
+			return getInstalledEntries();
+		case EfacetcatalogPackage.FACET_SET_CATALOG__NAME:
+			return getName();
+		case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_FACET_SETS:
+			return getInstalledFacetSets();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,23 +179,24 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
-			case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_ENTRIES:
-				getInstalledEntries().clear();
-				getInstalledEntries().addAll((Collection<? extends EObject>)newValue);
-				return;
-			case EfacetcatalogPackage.FACET_SET_CATALOG__NAME:
-				setName((String)newValue);
-				return;
-			case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_FACET_SETS:
-				getInstalledFacetSets().clear();
-				getInstalledFacetSets().addAll((Collection<? extends FacetSet>)newValue);
-				return;
+		case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_ENTRIES:
+			getInstalledEntries().clear();
+			getInstalledEntries().addAll((Collection<? extends EObject>) newValue);
+			return;
+		case EfacetcatalogPackage.FACET_SET_CATALOG__NAME:
+			setName((String) newValue);
+			return;
+		case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_FACET_SETS:
+			getInstalledFacetSets().clear();
+			getInstalledFacetSets().addAll((Collection<? extends FacetSet>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -193,20 +204,21 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(final int featureID) {
 		switch (featureID) {
-			case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_ENTRIES:
-				getInstalledEntries().clear();
-				return;
-			case EfacetcatalogPackage.FACET_SET_CATALOG__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_FACET_SETS:
-				getInstalledFacetSets().clear();
-				return;
+		case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_ENTRIES:
+			getInstalledEntries().clear();
+			return;
+		case EfacetcatalogPackage.FACET_SET_CATALOG__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_FACET_SETS:
+			getInstalledFacetSets().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -214,17 +226,18 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
-			case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_ENTRIES:
-				return installedEntries != null && !installedEntries.isEmpty();
-			case EfacetcatalogPackage.FACET_SET_CATALOG__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_FACET_SETS:
-				return !getInstalledFacetSets().isEmpty();
+		case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_ENTRIES:
+			return installedEntries != null && !installedEntries.isEmpty();
+		case EfacetcatalogPackage.FACET_SET_CATALOG__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case EfacetcatalogPackage.FACET_SET_CATALOG__INSTALLED_FACET_SETS:
+			return !getInstalledFacetSets().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -232,11 +245,14 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: "); //$NON-NLS-1$
@@ -245,4 +261,4 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 		return result.toString();
 	}
 
-} //FacetSetCatalogImpl
+} // FacetSetCatalogImpl

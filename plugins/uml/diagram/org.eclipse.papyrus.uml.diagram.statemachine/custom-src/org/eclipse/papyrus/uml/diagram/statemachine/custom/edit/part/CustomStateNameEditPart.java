@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -34,19 +34,19 @@ import org.eclipse.uml2.uml.State;
 
 /*****************************************************************************
  * Copyright (c) 2010-2011 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
- * 
+ *
  * Arthur daussy (Atos) arthur.daussy@atos.net - Bug : 365405: [State Machine Diagram] Behaviours (Entry,exit,do) on states should have their own
  * mechanisms
  * Ansgar Radermacher: Bug 402068: Correct calculation of region height in refresh visuals
- * 
+ *
  *****************************************************************************/
 
 public class CustomStateNameEditPart extends StateNameEditPart {
@@ -74,38 +74,40 @@ public class CustomStateNameEditPart extends StateNameEditPart {
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 
-		StateFigure stateFigure = ((StateEditPart)getParent()).getPrimaryShape();
-		State state = (State)((View)getModel()).getElement();
+		StateFigure stateFigure = ((StateEditPart) getParent()).getPrimaryShape();
+		State state = (State) ((View) getModel()).getElement();
 
-		View stateLabelView = (View)getModel();
-		View stateView = (View)stateLabelView.eContainer();
+		View stateLabelView = (View) getModel();
+		View stateView = (View) stateLabelView.eContainer();
 		if (stateView == null) {
 			return;
 		}
-		View stateCompartView = (View)stateView.getChildren().get(1);
+		View stateCompartView = (View) stateView.getChildren().get(1);
 
-		if(stateCompartView.getChildren().isEmpty())
+		if (stateCompartView.getChildren().isEmpty()) {
 			stateFigure.getStateCompartmentFigure().setVisible(false);
-		else
+		} else {
 			stateFigure.getStateCompartmentFigure().setVisible(true);
+		}
 
 
-		if(state.isSubmachineState()) {
+		if (state.isSubmachineState()) {
 			stateFigure.setSubmachineStateName(state.getName() + " : " + state.getSubmachine().getQualifiedName());
 			stateFigure.setIsSubmachineState(true);
-		} else
+		} else {
 			stateFigure.setIsSubmachineState(false);
+		}
 
 		int width = stateFigure.getBounds().width;
 		// calculate height for labels via position of the rectangle figure after the labels. Layout managers such as the
 		// AutomaticCompartmentLayoutManager add extra space on top of the first label which would not be accounted for
 		// when adding the space for the labels.
 		int height = 0;
-		if(stateCompartView.isVisible() && (stateFigure.getStateCompartmentFigure() != null)) {
+		if (stateCompartView.isVisible() && (stateFigure.getStateCompartmentFigure() != null)) {
 			stateFigure.validate(); // validate the figure, assure that layout manager is called.
 			height = stateFigure.getStateCompartmentFigure().getBounds().y - stateFigure.getBounds().y + 1;
 			// Sanity check
-			if(height < 0) {
+			if (height < 0) {
 				height = 0;
 			}
 		}
@@ -117,10 +119,9 @@ public class CustomStateNameEditPart extends StateNameEditPart {
 		int stateWidth = Zone.getWidth(stateView);
 
 		int stateCompartHeight = Zone.getHeight(stateCompartView);
-		if(stateCompartHeight == 0) {
+		if (stateCompartHeight == 0) {
 			// stateCompartHeight is 0 after creation, get height from figure
 			// stateCompartHeight = stateFigure.getStateCompartmentFigure().getBounds().height;
-			// System.err.println("Set state compartment height from fig.");
 		}
 
 		int dx = width - stateWidth;
@@ -128,7 +129,7 @@ public class CustomStateNameEditPart extends StateNameEditPart {
 		int x = Zone.getX(stateView);
 		int y = Zone.getY(stateView);
 
-		if((stateHeight != -1) && (stateCompartHeight != -1) && (width != 0) && (dy != 0)) {
+		if ((stateHeight != -1) && (stateCompartHeight != -1) && (width != 0) && (dy != 0)) {
 			dx = (dx > 0) ? dx : 0;
 			// a resize request, which we route to the specific ResizeCommand
 			IAdaptable adaptableForState = new SemanticAdapter(null, stateView);
@@ -138,8 +139,8 @@ public class CustomStateNameEditPart extends StateNameEditPart {
 			Rectangle rect = new Rectangle(x, y, stateWidth + dx, stateHeight + dy);
 
 			CustomStateResizeCommand internalResizeCommand =
-				new CustomStateResizeCommand(adaptableForState, getDiagramPreferencesHint(), getEditingDomain(), DiagramUIMessages.CreateCommand_Label,
-					internalResizeRequest, rect, true);
+					new CustomStateResizeCommand(adaptableForState, getDiagramPreferencesHint(), getEditingDomain(), DiagramUIMessages.CreateCommand_Label,
+							internalResizeRequest, rect, true);
 			internalResizeCommand.setOptions(Collections.singletonMap(Transaction.OPTION_UNPROTECTED, Boolean.TRUE));
 
 			try {

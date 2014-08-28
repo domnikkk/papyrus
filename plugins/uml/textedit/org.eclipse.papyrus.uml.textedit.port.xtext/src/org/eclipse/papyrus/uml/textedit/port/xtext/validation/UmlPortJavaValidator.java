@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.xtext.validation.Check;
 
 /**
  * Custom validation rules.
- * 
+ *
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
 public class UmlPortJavaValidator extends org.eclipse.papyrus.uml.textedit.port.xtext.validation.AbstractUmlPortJavaValidator {
@@ -33,7 +33,7 @@ public class UmlPortJavaValidator extends org.eclipse.papyrus.uml.textedit.port.
 
 	/**
 	 * Custom validation for multiplicities. Raises an error in the case where the lower bound is upper than the upper bound.
-	 * 
+	 *
 	 */
 	@Check
 	public void checkMultiplicityRule(MultiplicityRule rule) {
@@ -41,12 +41,12 @@ public class UmlPortJavaValidator extends org.eclipse.papyrus.uml.textedit.port.
 		int upperValue = 0;
 		String errorMessage = "The upper bound of a multiplicity cannot be lower than the lower bound.";
 		try {
-			if(rule.getBounds().size() == 2) {
+			if (rule.getBounds().size() == 2) {
 				lowerValue = rule.getBounds().get(0).getValue().equals("*") ? -1 : Integer.valueOf(rule.getBounds().get(0).getValue());
 				upperValue = rule.getBounds().get(1).getValue().equals("*") ? -1 : Integer.valueOf(rule.getBounds().get(1).getValue());
-				if((lowerValue == -1 && upperValue != -1) || (lowerValue > upperValue && upperValue != -1)) {
+				if ((lowerValue == -1 && upperValue != -1) || (lowerValue > upperValue && upperValue != -1)) {
 					error(errorMessage, UmlPortPackage.eINSTANCE.getBoundSpecification_Value());
-					//error(errorMessage, rule, UmlPropertyPackage.BOUND_SPECIFICATION__VALUE) ;
+					// error(errorMessage, rule, UmlPropertyPackage.BOUND_SPECIFICATION__VALUE) ;
 				}
 			}
 		} catch (Exception e) {
@@ -66,21 +66,22 @@ public class UmlPortJavaValidator extends org.eclipse.papyrus.uml.textedit.port.
 
 			EObject container = rule.eContainer();
 
-			while(container != null && !(container instanceof PortRule)) {
+			while (container != null && !(container instanceof PortRule)) {
 				container = container.eContainer();
 			}
 
-			if(container == null)
+			if (container == null) {
 				return;
+			}
 
-			PortRule propertyRule = (PortRule)container;
+			PortRule propertyRule = (PortRule) container;
 			Classifier typeOfRedefiningProperty = propertyRule.getType().getType();
 			boolean isRedefiningPropertyDerived = propertyRule.getIsDerived() != null && propertyRule.getIsDerived().equals("/");
 
 			boolean valid_RedefinesRule = typeOfRedefiningProperty.conformsTo(redefinedProperty.getType());
-			if(!valid_RedefinesRule) {
+			if (!valid_RedefinesRule) {
 				error(typeErrorMessage, UmlPortPackage.eINSTANCE.getRedefinesRule_Port());
-				//error(typeErrorMessage, rule, UmlPropertyPackage.REDEFINES_RULE__PROPERTY) ;
+				// error(typeErrorMessage, rule, UmlPropertyPackage.REDEFINES_RULE__PROPERTY) ;
 				return;
 			}
 
@@ -90,18 +91,18 @@ public class UmlPortJavaValidator extends org.eclipse.papyrus.uml.textedit.port.
 			int lowerBound = 1;
 			int upperBound = 1;
 
-			if(propertyRule.getMultiplicity() != null) {
-				if(propertyRule.getMultiplicity().getBounds().size() == 1) {
+			if (propertyRule.getMultiplicity() != null) {
+				if (propertyRule.getMultiplicity().getBounds().size() == 1) {
 					lowerBound = propertyRule.getMultiplicity().getBounds().get(0).getValue().equals("*") ? -1 : Integer.valueOf(propertyRule.getMultiplicity().getBounds().get(0).getValue());
 					upperBound = lowerBound;
-				} else if(propertyRule.getMultiplicity().getBounds().size() == 2) {
+				} else if (propertyRule.getMultiplicity().getBounds().size() == 2) {
 					lowerBound = propertyRule.getMultiplicity().getBounds().get(0).getValue().equals("*") ? -1 : Integer.valueOf(propertyRule.getMultiplicity().getBounds().get(0).getValue());
 					upperBound = propertyRule.getMultiplicity().getBounds().get(1).getValue().equals("*") ? -1 : Integer.valueOf(propertyRule.getMultiplicity().getBounds().get(1).getValue());
 				}
 			}
 
 			valid_RedefinesRule = lowerBound >= lowerBoundOfRedefinedProperty;
-			switch(upperBoundOfRedefinedProperty) {
+			switch (upperBoundOfRedefinedProperty) {
 			case -1:
 				break;
 			default:
@@ -109,17 +110,18 @@ public class UmlPortJavaValidator extends org.eclipse.papyrus.uml.textedit.port.
 				break;
 			}
 
-			if(!valid_RedefinesRule) {
+			if (!valid_RedefinesRule) {
 				error(multiplicityErrorMessage, UmlPortPackage.eINSTANCE.getRedefinesRule_Port());
-				//error(multiplicityErrorMessage, rule, UmlPropertyPackage.REDEFINES_RULE__PROPERTY) ;
+				// error(multiplicityErrorMessage, rule, UmlPropertyPackage.REDEFINES_RULE__PROPERTY) ;
 				return;
 			}
 
-			if(redefinedProperty.isDerived() && !isRedefiningPropertyDerived)
+			if (redefinedProperty.isDerived() && !isRedefiningPropertyDerived) {
 				valid_RedefinesRule = false;
-			if(!valid_RedefinesRule) {
+			}
+			if (!valid_RedefinesRule) {
 				error(multiplicityErrorMessage, UmlPortPackage.eINSTANCE.getRedefinesRule_Port());
-				//error(isDerivedErrorMessage, rule, UmlPropertyPackage.REDEFINES_RULE__PROPERTY) ;
+				// error(isDerivedErrorMessage, rule, UmlPropertyPackage.REDEFINES_RULE__PROPERTY) ;
 				return;
 			}
 
@@ -139,20 +141,21 @@ public class UmlPortJavaValidator extends org.eclipse.papyrus.uml.textedit.port.
 
 			EObject container = rule.eContainer();
 
-			while(container != null && !(container instanceof PortRule)) {
+			while (container != null && !(container instanceof PortRule)) {
 				container = container.eContainer();
 			}
 
-			if(container == null)
+			if (container == null) {
 				return;
+			}
 
-			PortRule propertyRule = (PortRule)container;
+			PortRule propertyRule = (PortRule) container;
 			Classifier typeOfSubsettingProperty = propertyRule.getType().getType();
 
 			boolean valid_SubsetsRule = typeOfSubsettingProperty.conformsTo(subsettedProperty.getType());
-			if(!valid_SubsetsRule) {
+			if (!valid_SubsetsRule) {
 				error(multiplicityErrorMessage, UmlPortPackage.eINSTANCE.getSubsetsRule_Port());
-				//error(typeErrorMessage, rule, UmlPropertyPackage.SUBSETS_RULE__PROPERTY) ;
+				// error(typeErrorMessage, rule, UmlPropertyPackage.SUBSETS_RULE__PROPERTY) ;
 				return;
 			}
 
@@ -162,18 +165,18 @@ public class UmlPortJavaValidator extends org.eclipse.papyrus.uml.textedit.port.
 			int lowerBound = 1;
 			int upperBound = 1;
 
-			if(propertyRule.getMultiplicity() != null) {
-				if(propertyRule.getMultiplicity().getBounds().size() == 1) {
+			if (propertyRule.getMultiplicity() != null) {
+				if (propertyRule.getMultiplicity().getBounds().size() == 1) {
 					lowerBound = propertyRule.getMultiplicity().getBounds().get(0).getValue().equals("*") ? -1 : Integer.valueOf(propertyRule.getMultiplicity().getBounds().get(0).getValue());
 					upperBound = lowerBound;
-				} else if(propertyRule.getMultiplicity().getBounds().size() == 2) {
+				} else if (propertyRule.getMultiplicity().getBounds().size() == 2) {
 					lowerBound = propertyRule.getMultiplicity().getBounds().get(0).getValue().equals("*") ? -1 : Integer.valueOf(propertyRule.getMultiplicity().getBounds().get(0).getValue());
 					upperBound = propertyRule.getMultiplicity().getBounds().get(1).getValue().equals("*") ? -1 : Integer.valueOf(propertyRule.getMultiplicity().getBounds().get(1).getValue());
 				}
 			}
 
 			valid_SubsetsRule = lowerBound >= lowerBoundOfRedefinedProperty;
-			switch(upperBoundOfRedefinedProperty) {
+			switch (upperBoundOfRedefinedProperty) {
 			case -1:
 				break;
 			default:
@@ -181,9 +184,9 @@ public class UmlPortJavaValidator extends org.eclipse.papyrus.uml.textedit.port.
 				break;
 			}
 
-			if(!valid_SubsetsRule) {
+			if (!valid_SubsetsRule) {
 				error(multiplicityErrorMessage, UmlPortPackage.eINSTANCE.getSubsetsRule_Port());
-				//error(multiplicityErrorMessage, rule, UmlPropertyPackage.SUBSETS_RULE__PROPERTY) ;
+				// error(multiplicityErrorMessage, rule, UmlPropertyPackage.SUBSETS_RULE__PROPERTY) ;
 				return;
 			}
 

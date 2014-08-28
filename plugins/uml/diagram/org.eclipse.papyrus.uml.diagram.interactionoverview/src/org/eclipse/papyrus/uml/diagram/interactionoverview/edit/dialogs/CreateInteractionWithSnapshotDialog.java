@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,11 +23,11 @@ public class CreateInteractionWithSnapshotDialog extends
 			InvocationAction newAction) {
 		super(shell, owner, newAction);
 	}
-	
+
 	/**
 	 * Get the id of the preference storing whether selection is the default
 	 * choice.
-	 * 
+	 *
 	 * @return preference id
 	 */
 	@Override
@@ -37,7 +37,7 @@ public class CreateInteractionWithSnapshotDialog extends
 
 	/**
 	 * Get the id of the preference storing the last selected owner.
-	 * 
+	 *
 	 * @return preference id
 	 */
 	@Override
@@ -63,7 +63,7 @@ public class CreateInteractionWithSnapshotDialog extends
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getTitle()
 	 */
 	@Override

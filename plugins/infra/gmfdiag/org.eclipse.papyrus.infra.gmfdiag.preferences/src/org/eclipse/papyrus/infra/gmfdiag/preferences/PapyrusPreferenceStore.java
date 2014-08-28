@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,14 +22,14 @@ import org.eclipse.papyrus.infra.tools.preferences.ui.dialog.AbstractApplyValueO
 /**
  * this class is a specific store that is used to look for value of element
  * by taking account the structure of preferences : papyrus editor-> Diagram -> Elements of Diagram
- * 
+ *
  */
 public class PapyrusPreferenceStore extends AbstractPapyrusPreferenceStore {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param context
 	 * @param qualifier
 	 * @param defaultQualifierPath
@@ -40,9 +40,9 @@ public class PapyrusPreferenceStore extends AbstractPapyrusPreferenceStore {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param context
 	 * @param qualifier
 	 */
@@ -52,9 +52,9 @@ public class PapyrusPreferenceStore extends AbstractPapyrusPreferenceStore {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.tools.preferences.AbstractPapyrusPreferenceStore#createPreferenceKeyDialog(java.lang.String[])
-	 * 
+	 *
 	 * @param keys
 	 * @return
 	 */

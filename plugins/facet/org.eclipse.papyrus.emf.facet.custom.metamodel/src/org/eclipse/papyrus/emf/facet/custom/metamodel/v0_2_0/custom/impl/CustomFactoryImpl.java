@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 361794 - [Restructuring] New customization meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
- *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning 
+ *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning
  */
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.impl;
 
@@ -18,12 +18,19 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.*;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomFactory;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementSwitchQuery;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
@@ -31,16 +38,16 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static CustomFactory init() {
 		try {
-			CustomFactory theCustomFactory = (CustomFactory)EPackage.Registry.INSTANCE.getEFactory(CustomPackage.eNS_URI);
+			CustomFactory theCustomFactory = (CustomFactory) EPackage.Registry.INSTANCE.getEFactory(CustomPackage.eNS_URI);
 			if (theCustomFactory != null) {
 				return theCustomFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new CustomFactoryImpl();
@@ -50,6 +57,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public CustomFactoryImpl() {
@@ -59,24 +67,31 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CustomPackage.CUSTOMIZATION: return createCustomization();
-			case CustomPackage.ECLASS_CUSTOMIZATION: return createEClassCustomization();
-			case CustomPackage.FACET_CUSTOMIZATION: return createFacetCustomization();
-			case CustomPackage.ETYPED_ELEMENT_SWITCH_QUERY: return createETypedElementSwitchQuery();
-			case CustomPackage.ETYPED_ELEMENT_CASE: return createETypedElementCase();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case CustomPackage.CUSTOMIZATION:
+			return createCustomization();
+		case CustomPackage.ECLASS_CUSTOMIZATION:
+			return createEClassCustomization();
+		case CustomPackage.FACET_CUSTOMIZATION:
+			return createFacetCustomization();
+		case CustomPackage.ETYPED_ELEMENT_SWITCH_QUERY:
+			return createETypedElementSwitchQuery();
+		case CustomPackage.ETYPED_ELEMENT_CASE:
+			return createETypedElementCase();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Customization createCustomization() {
@@ -87,6 +102,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClassCustomization createEClassCustomization() {
@@ -97,6 +113,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public FacetCustomization createFacetCustomization() {
@@ -107,6 +124,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ETypedElementSwitchQuery createETypedElementSwitchQuery() {
@@ -117,6 +135,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ETypedElementCase createETypedElementCase() {
@@ -127,15 +146,17 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public CustomPackage getCustomPackage() {
-		return (CustomPackage)getEPackage();
+		return (CustomPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -144,4 +165,4 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 		return CustomPackage.eINSTANCE;
 	}
 
-} //CustomFactoryImpl
+} // CustomFactoryImpl

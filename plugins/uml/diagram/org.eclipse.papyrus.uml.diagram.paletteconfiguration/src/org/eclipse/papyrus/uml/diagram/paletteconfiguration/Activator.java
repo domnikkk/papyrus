@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -67,7 +67,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -78,13 +78,13 @@ public class Activator extends AbstractUIPlugin {
 		ImageRegistry registry = getDefault().getImageRegistry();
 		Image image = registry.get(key);
 
-		if(image == null) { // Image not yet in registry
+		if (image == null) { // Image not yet in registry
 			ImageDescriptor desc = AbstractUIPlugin.imageDescriptorFromPlugin(PLUGIN_ID, key);
 			registry.put(key, desc);
 			image = registry.get(key);
 		}
 
-		if((image == null) && !DEFAULT_IMAGE.equals(key)) {
+		if ((image == null) && !DEFAULT_IMAGE.equals(key)) {
 			image = getImage(DEFAULT_IMAGE);
 		}
 
@@ -93,14 +93,14 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * This method returns an <code>org.eclipse.swt.graphics.Image</code> identified by its pluginId and iconPath.<BR>
-	 * 
+	 *
 	 * By default, it returns a default image. This image is the image placed in
 	 * the directory <em>resources/icons/default.gif</em>
-	 * 
+	 *
 	 * @param pluginId
-	 *        id of plugin
+	 *            id of plugin
 	 * @param iconpPath
-	 *        the path of the icon image relative to the plugin
+	 *            the path of the icon image relative to the plugin
 	 * @return the Image
 	 */
 	public static Image getPluginIconImage(String pluginId, String iconPath) {
@@ -108,7 +108,7 @@ public class Activator extends AbstractUIPlugin {
 		ImageRegistry registry = getDefault().getImageRegistry();
 		Image image = registry.get(key);
 
-		if(image == null) {
+		if (image == null) {
 
 			ImageDescriptor desc = AbstractUIPlugin.imageDescriptorFromPlugin(pluginId, iconPath);
 
@@ -116,7 +116,7 @@ public class Activator extends AbstractUIPlugin {
 			image = registry.get(key);
 
 		}
-		if((image == null) && !iconPath.equals(DEFAULT_IMAGE)) {
+		if ((image == null) && !iconPath.equals(DEFAULT_IMAGE)) {
 			image = getImage(DEFAULT_IMAGE);
 		}
 
@@ -126,9 +126,9 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * Returns an image descriptor for the image file at the given plug-in
 	 * relative path.
-	 * 
+	 *
 	 * @param path
-	 *        the path for the image file
+	 *            the path for the image file
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor getImageDescriptor(String path) {
@@ -137,14 +137,14 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * This method returns an <code>org.eclipse.swt.graphics.Image</code> identified by its pluginId and image Descriptor.<BR>
-	 * 
+	 *
 	 * By default, it returns a default image. This image is the image placed in
 	 * the directory <em>resources/icons/default.gif</em>
-	 * 
+	 *
 	 * @param pluginId
-	 *        id of plugin
+	 *            id of plugin
 	 * @param descriptor
-	 *        the image descriptor of the image
+	 *            the image descriptor of the image
 	 * @return the Image
 	 */
 	public static Image getPluginIconImage(String pluginId, ImageDescriptor descriptor) {
@@ -152,7 +152,7 @@ public class Activator extends AbstractUIPlugin {
 		ImageRegistry registry = getDefault().getImageRegistry();
 		Image image = registry.get(key);
 
-		if(image == null) {
+		if (image == null) {
 
 			registry.put(key, descriptor);
 			image = registry.get(key);

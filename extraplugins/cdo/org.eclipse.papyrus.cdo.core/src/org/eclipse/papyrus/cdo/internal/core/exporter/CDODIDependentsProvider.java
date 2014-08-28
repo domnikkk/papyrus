@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,10 +46,11 @@ public class CDODIDependentsProvider implements IModelDependentsProvider {
 		super();
 	}
 
+	@Override
 	public Collection<URI> getDependents(Resource resource, IProgressMonitor monitor) {
-		if(!completedScan) {
-			// TODO Find a more efficient way to determine cross-references than walking the repository.  Don't walk, for now
-			//scanRepository(resource.getResourceSet());
+		if (!completedScan) {
+			// TODO Find a more efficient way to determine cross-references than walking the repository. Don't walk, for now
+			// scanRepository(resource.getResourceSet());
 		}
 
 		Set<URI> result = Sets.newHashSet();
@@ -57,14 +58,14 @@ public class CDODIDependentsProvider implements IModelDependentsProvider {
 		// if it's a DI resource, get its dependencies' dependents and find
 		// their dependents that are unique DIs
 		Resource di = getDIResource(resource);
-		if(di != null) {
+		if (di != null) {
 			// the DI's dependencies are the model components
-			for(Resource component : DependencyAdapter.getDependencies(di)) {
+			for (Resource component : DependencyAdapter.getDependencies(di)) {
 				// the components' dependents in other models are what we are
 				// interested in
-				for(Resource next : DependencyAdapter.getDependents(component)) {
+				for (Resource next : DependencyAdapter.getDependents(component)) {
 					Resource dependentDI = getDIResource(next);
-					if((dependentDI != null) && (dependentDI != di)) {
+					if ((dependentDI != null) && (dependentDI != di)) {
 						result.add(dependentDI.getURI());
 					}
 				}
@@ -74,23 +75,24 @@ public class CDODIDependentsProvider implements IModelDependentsProvider {
 		return result;
 	}
 
+	@Override
 	public Collection<URI> getComponents(Resource diResource, IProgressMonitor monitor) {
 		Collection<URI> result;
 
-		if(!(diResource instanceof CDOResource)) {
+		if (!(diResource instanceof CDOResource)) {
 			result = Collections.emptyList();
 		} else {
 			ImmutableList.Builder<URI> uris = ImmutableList.builder();
-			CDOResource cdo = (CDOResource)diResource;
+			CDOResource cdo = (CDOResource) diResource;
 			CDOView view = cdo.cdoView();
 
 			final URI baseURI = cdo.getURI().trimFileExtension();
 			final CDOResourceFolder folder = cdo.getFolder();
 
 			Iterable<CDOResource> inSameFolder = filter((folder == null) ? view.getRootResource().getContents() : folder.getNodes(), CDOResource.class);
-			for(CDOResource next : inSameFolder) {
+			for (CDOResource next : inSameFolder) {
 				URI uri = next.getURI();
-				if((next != cdo) && uri.trimFileExtension().equals(baseURI)) {
+				if ((next != cdo) && uri.trimFileExtension().equals(baseURI)) {
 					uris.add(next.getURI());
 				}
 			}
@@ -106,16 +108,16 @@ public class CDODIDependentsProvider implements IModelDependentsProvider {
 		completedScan = true;
 
 		TreeIterator<?> repositoryIterator = CDOUtils.getView(resourceSet).getRootResource().eAllContents();
-		while(repositoryIterator.hasNext()) {
-			CDOResourceNode next = (CDOResourceNode)repositoryIterator.next();
-			if(next instanceof CDOResource) {
-				CDOResource resource = (CDOResource)next;
-				if(isDIResource(resource)) {
+		while (repositoryIterator.hasNext()) {
+			CDOResourceNode next = (CDOResourceNode) repositoryIterator.next();
+			if (next instanceof CDOResource) {
+				CDOResource resource = (CDOResource) next;
+				if (isDIResource(resource)) {
 					// it's a Papyrus model. Initialize the dependencies
 					DependencyAdapter.getInstance(resource);
 				}
 				repositoryIterator.prune();
-			} else if(!(next instanceof CDOResourceFolder)) {
+			} else if (!(next instanceof CDOResourceFolder)) {
 				repositoryIterator.prune();
 			}
 		}

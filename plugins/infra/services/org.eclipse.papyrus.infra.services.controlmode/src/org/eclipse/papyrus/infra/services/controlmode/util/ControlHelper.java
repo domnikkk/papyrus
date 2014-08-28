@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * Helper for control command
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class ControlHelper {
 
 	/**
 	 * Return true if the object is an controlled object
-	 * 
+	 *
 	 * @param eObject
 	 * @return
 	 */
 	public static boolean isRootControlledObject(EObject eObject) {
-		if(eObject != null) {
+		if (eObject != null) {
 			Resource resource = eObject.eResource();
-			if(resource != null) {
+			if (resource != null) {
 				return resource.getContents().contains(eObject);
 			}
 		}

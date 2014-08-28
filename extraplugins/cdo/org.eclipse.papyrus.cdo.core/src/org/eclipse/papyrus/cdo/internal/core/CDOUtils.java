@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 422257
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core;
 
@@ -84,20 +84,20 @@ public class CDOUtils {
 	public static <T> T adapt(Object object, Class<? extends T> type) {
 		T result = tryCast(object, type);
 
-		if(result == null) {
-			if(object instanceof IAdaptable) {
-				result = type.cast(((IAdaptable)object).getAdapter(type));
+		if (result == null) {
+			if (object instanceof IAdaptable) {
+				result = type.cast(((IAdaptable) object).getAdapter(type));
 			}
 
-			if((result == null) && (type == CDOObject.class)) {
+			if ((result == null) && (type == CDOObject.class)) {
 				EObject eObject = adapt(object, EObject.class);
-				if(eObject != null) {
+				if (eObject != null) {
 					result = type.cast(getCDOObject(eObject));
 				}
 			}
 
-			if((result == null) && (object instanceof Notifier)) {
-				result = getFirst(filter(((Notifier)object).eAdapters(), type), null);
+			if ((result == null) && (object instanceof Notifier)) {
+				result = getFirst(filter(((Notifier) object).eAdapters(), type), null);
 			}
 		}
 
@@ -107,7 +107,7 @@ public class CDOUtils {
 	public static <T> T tryCast(Object object, Class<? extends T> type) {
 		T result = null;
 
-		if(type.isInstance(object)) {
+		if (type.isInstance(object)) {
 			result = type.cast(object);
 		}
 
@@ -125,21 +125,21 @@ public class CDOUtils {
 	public static ResourceSet getResourceSet(Notifier notifier) {
 		ResourceSet result = null;
 
-		if(notifier instanceof CDOViewSet) {
-			result = ((CDOViewSet)notifier).getResourceSet();
-		} else if(notifier instanceof ResourceSet) {
-			result = (ResourceSet)notifier;
-		} else if(notifier instanceof Resource) {
-			result = ((Resource)notifier).getResourceSet();
-		} else if(notifier instanceof CDOResourceNode) {
+		if (notifier instanceof CDOViewSet) {
+			result = ((CDOViewSet) notifier).getResourceSet();
+		} else if (notifier instanceof ResourceSet) {
+			result = (ResourceSet) notifier;
+		} else if (notifier instanceof Resource) {
+			result = ((Resource) notifier).getResourceSet();
+		} else if (notifier instanceof CDOResourceNode) {
 			// folders (resource nodes that aren't resources) are not in a
 			// resource set, so get the associated view's resource set
-			CDOView view = ((CDOResourceNode)notifier).cdoView();
-			if(view != null) {
+			CDOView view = ((CDOResourceNode) notifier).cdoView();
+			if (view != null) {
 				result = view.getResourceSet();
 			}
-		} else if(notifier instanceof EObject) {
-			result = getResourceSet(((EObject)notifier).eResource());
+		} else if (notifier instanceof EObject) {
+			result = getResourceSet(((EObject) notifier).eResource());
 		}
 
 		return result;
@@ -154,7 +154,7 @@ public class CDOUtils {
 	public static CDOObject getCDOObject(EObject object) {
 		CDOObject result = null;
 
-		if(isCDOObject(object)) {
+		if (isCDOObject(object)) {
 			result = CDOUtil.getCDOObject(object);
 		}
 
@@ -170,9 +170,9 @@ public class CDOUtils {
 		CDOView result = null;
 
 		CDOViewSet viewSet = CDOUtil.getViewSet(resourceSet);
-		if(viewSet != null) {
+		if (viewSet != null) {
 			CDOView[] views = viewSet.getViews();
-			if(views.length > 0) {
+			if (views.length > 0) {
 				result = views[0];
 			}
 		}
@@ -210,12 +210,12 @@ public class CDOUtils {
 		DawnState result = DawnState.CLEAN;
 
 		CDOObject cdo = getCDOObject(object);
-		if(cdo != null) {
-			if(cdo.cdoConflict()) {
+		if (cdo != null) {
+			if (cdo.cdoConflict()) {
 				result = DawnState.CONFLICT;
-			} else if(isLocked(cdo, true)) {
+			} else if (isLocked(cdo, true)) {
 				result = DawnState.LOCKED_REMOTELY;
-			} else if(isLocked(cdo, false)) {
+			} else if (isLocked(cdo, false)) {
 				result = DawnState.LOCKED_LOCALLY;
 			}
 		}
@@ -228,7 +228,7 @@ public class CDOUtils {
 		boolean result = CDOUtils.isLocked(object, true);
 
 		// or if the current user doesn't have permission to write it
-		if(!result) {
+		if (!result) {
 			result = !object.cdoPermission().isWritable();
 		}
 
@@ -243,16 +243,16 @@ public class CDOUtils {
 		Iterable<EStructuralFeature.Setting> result;
 
 		ECrossReferenceAdapter adapter = adapt(object, ECrossReferenceAdapter.class);
-		if(adapter != null) {
+		if (adapter != null) {
 			result = adapter.getInverseReferences(object);
 		} else {
 			EObject tree = EcoreUtil.getRootContainer(object);
 			Resource resource = tree.eResource();
 			ResourceSet rset = (resource == null) ? null : resource.getResourceSet();
 
-			if(rset != null) {
+			if (rset != null) {
 				result = EcoreUtil.UsageCrossReferencer.find(object, rset);
-			} else if(resource != null) {
+			} else if (resource != null) {
 				result = EcoreUtil.UsageCrossReferencer.find(object, resource);
 			} else {
 				result = EcoreUtil.UsageCrossReferencer.find(object, tree);
@@ -266,23 +266,23 @@ public class CDOUtils {
 	 * Obtains an unmodifiable iterator over the values in the specified {@code feature} of an {@code object}. The resulting iterator supplies zero
 	 * or one element for scalar features, according to whether the feature's value is {@code null} or not. In the case of a scalar feature,
 	 * the index of the element as reported by {@link ListIterator#nextIndex()} and {@link ListIterator#previousIndex()} is {@code -1}.
-	 * 
+	 *
 	 * @param object
-	 *        an object
+	 *            an object
 	 * @param feature
-	 *        a feature of the {@code object}
+	 *            a feature of the {@code object}
 	 * @param resolve
-	 *        whether to resolve proxies (in the case of an {@link EReference}
-	 * 
+	 *            whether to resolve proxies (in the case of an {@link EReference}
+	 *
 	 * @return the unmodifiable feature list iterator
 	 */
 	public static <E> FeatureListIterator<E> iterator(EObject object, final EStructuralFeature feature, boolean resolve) {
 		FeatureListIterator<E> result;
 
 		Object value = object.eGet(feature, resolve);
-		if(value instanceof InternalEList<?>) {
+		if (value instanceof InternalEList<?>) {
 			@SuppressWarnings("unchecked")
-			InternalEList<E> list = (InternalEList<E>)value;
+			InternalEList<E> list = (InternalEList<E>) value;
 			final ListIterator<E> delegate = (resolve) ? list.listIterator() : list.basicListIterator();
 
 			class NonEmpty extends UnmodifiableListIterator<E> implements FeatureListIterator<E> {
@@ -321,10 +321,11 @@ public class CDOUtils {
 				public int previousIndex() {
 					return delegate.previousIndex();
 				}
-			};
+			}
+			;
 
 			result = new NonEmpty();
-		} else if(value == null) {
+		} else if (value == null) {
 			class Empty extends UnmodifiableListIterator<E> implements FeatureListIterator<E> {
 
 				@Override
@@ -361,12 +362,13 @@ public class CDOUtils {
 				public int previousIndex() {
 					return -2;
 				}
-			};
+			}
+			;
 
 			result = new Empty();
 		} else {
 			@SuppressWarnings("unchecked")
-			final E onlyValue = (E)value;
+			final E onlyValue = (E) value;
 
 			class Singleton extends UnmodifiableListIterator<E> implements FeatureListIterator<E> {
 
@@ -384,7 +386,7 @@ public class CDOUtils {
 
 				@Override
 				public E next() {
-					if(!hasNext()) {
+					if (!hasNext()) {
 						throw new NoSuchElementException();
 					}
 					index++;
@@ -403,7 +405,7 @@ public class CDOUtils {
 
 				@Override
 				public E previous() {
-					if(!hasPrevious()) {
+					if (!hasPrevious()) {
 						throw new NoSuchElementException();
 					}
 					index--;
@@ -414,7 +416,8 @@ public class CDOUtils {
 				public int previousIndex() {
 					return index - 1;
 				}
-			};
+			}
+			;
 
 			result = new Singleton();
 		}
@@ -424,15 +427,15 @@ public class CDOUtils {
 
 	/**
 	 * <p>
-	 * Runs a code block that broadcasts notification of {@link ResourceSetChangeEvent}s, {@link CDOViewInvalidationEvent}s, etc. to listeners using
-	 * the most appropriate {@linkplain #setBroadcastExecutor() executor} available. This allows a UI-safe execution to be injected if necessary.
+	 * Runs a code block that broadcasts notification of {@link ResourceSetChangeEvent}s, {@link CDOViewInvalidationEvent}s, etc. to listeners using the most appropriate {@linkplain #setBroadcastExecutor() executor} available. This allows a UI-safe execution
+	 * to be injected if necessary.
 	 * </p>
 	 * <p>
 	 * <strong>Note</strong> that there is no assurance that this block will be executed either synchronously or asynchronously.
 	 * </p>
-	 * 
+	 *
 	 * @param broadcastCommand
-	 *        the notification command to execute
+	 *            the notification command to execute
 	 */
 	public static void notify(Runnable broadcastCommand) {
 		broadcastExecutor.execute(broadcastCommand);
@@ -459,19 +462,19 @@ public class CDOUtils {
 
 	/**
 	 * Remove the given {@code listener} if the event it received is a lifecycle deactivation event.
-	 * 
+	 *
 	 * @param listener
-	 *        a listener that received a possible deactivation event
+	 *            a listener that received a possible deactivation event
 	 * @param possibleDeactivation
-	 *        the event that may be a lifecycle deactivation
-	 * 
+	 *            the event that may be a lifecycle deactivation
+	 *
 	 * @return whether the listener was removed because the event was a deactivation
 	 */
 	public static boolean removeListenerFromDeactivatedLifecycle(IListener listener, IEvent possibleDeactivation) {
 		boolean result = false;
 
-		if(possibleDeactivation instanceof LifecycleEvent) {
-			switch(((LifecycleEvent)possibleDeactivation).getKind()) {
+		if (possibleDeactivation instanceof LifecycleEvent) {
+			switch (((LifecycleEvent) possibleDeactivation).getKind()) {
 			case DEACTIVATED:
 				possibleDeactivation.getSource().removeListener(listener);
 				result = true;
@@ -487,24 +490,24 @@ public class CDOUtils {
 
 	/**
 	 * Unloads a {@code cdoObject} (because {@link CDOResource}s don't implement unloading) by clearing its adapters.
-	 * 
+	 *
 	 * @param cdoObject
-	 *        a CDO object to unload
-	 * 
+	 *            a CDO object to unload
+	 *
 	 * @see #unload(CDOView)
 	 */
 	public static void unload(CDOObject cdoObject) {
 		EObject eObject = CDOUtil.getEObject(cdoObject);
-		if(eObject != null) {
+		if (eObject != null) {
 			// Remove all adapters *except* the all-important legacy wrapper!
 			EList<Adapter> adapters = eObject.eAdapters();
-			if(!adapters.isEmpty()) {
+			if (!adapters.isEmpty()) {
 				Adapter legacyWrapper = Iterables.find(eObject.eAdapters(), IS_LEGACY_WRAPPER, null);
 
 				// Don't do anything if the only adapter is the legacy wrapper
-				if((legacyWrapper == null) || (adapters.size() > 1)) {
+				if ((legacyWrapper == null) || (adapters.size() > 1)) {
 					adapters.clear();
-					if(legacyWrapper != null) {
+					if (legacyWrapper != null) {
 						// Restore it, otherwise references to this CDOObject will break
 						adapters.add(0, legacyWrapper);
 					}
@@ -515,17 +518,17 @@ public class CDOUtils {
 
 	/**
 	 * Unloads aall of the objects in a {@code cdoView} (because {@link CDOResource}s don't implement unloading) by clearing thriw adapters.
-	 * 
+	 *
 	 * @param cdoView
-	 *        a view to unload
-	 * 
+	 *            a view to unload
+	 *
 	 * @see #unload(CDOObject)
 	 */
 	public static void unload(CDOView cdoView) {
-		if(cdoView instanceof InternalCDOView) {
-			for(CDOObject next : ((InternalCDOView)cdoView).getObjectsList()) {
+		if (cdoView instanceof InternalCDOView) {
+			for (CDOObject next : ((InternalCDOView) cdoView).getObjectsList()) {
 				// Don't clear adapters of the resource because ECrossReferenceAdapters would try to crawl the contents
-				if(!(next instanceof CDOResourceNode)) {
+				if (!(next instanceof CDOResourceNode)) {
 					CDOUtils.unload(next);
 				}
 			}

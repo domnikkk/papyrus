@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,14 +25,17 @@ import org.eclipse.papyrus.infra.services.validation.Messages;
 
 /**
  * Validate a sub-tree (in the sense of ecore containment hierarchy).
- * 
+ *
  */
 public class ValidateSubtreeCommand extends AbstractValidateCommand {
 
 	/**
 	 * Constructor based on selected element and diagnostician
-	 * @param selectedElement the element from which on a subtree should be validated
-	 * @param diagnostician the diagnostician (e.g. UMLDiagnostician)
+	 *
+	 * @param selectedElement
+	 *            the element from which on a subtree should be validated
+	 * @param diagnostician
+	 *            the diagnostician (e.g. UMLDiagnostician)
 	 */
 	public ValidateSubtreeCommand(EObject selectedElement, IPapyrusDiagnostician diagnostician) {
 		super(Messages.ValidateSubtreeCommand_ValidateSubtree, TransactionUtil.getEditingDomain(selectedElement), selectedElement, diagnostician);

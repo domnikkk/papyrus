@@ -24,7 +24,7 @@ import org.eclipse.papyrus.domaincontextcodegen.ElementTypeBinding;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypeBindingImpl#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ElementTypeBindingImpl extends BindingImpl implements ElementTypeBinding {
@@ -33,7 +33,7 @@ public class ElementTypeBindingImpl extends BindingImpl implements ElementTypeBi
 	 * The cached value of the '{@link #getRef() <em>Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRef()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class ElementTypeBindingImpl extends BindingImpl implements ElementTypeBi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ElementTypeBindingImpl() {
@@ -53,7 +53,7 @@ public class ElementTypeBindingImpl extends BindingImpl implements ElementTypeBi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -64,16 +64,17 @@ public class ElementTypeBindingImpl extends BindingImpl implements ElementTypeBi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementType getRef() {
-		if(ref != null && ref.eIsProxy()) {
-			InternalEObject oldRef = (InternalEObject)ref;
-			ref = (ElementType)eResolveProxy(oldRef);
-			if(ref != oldRef) {
-				if(eNotificationRequired())
+		if (ref != null && ref.eIsProxy()) {
+			InternalEObject oldRef = (InternalEObject) ref;
+			ref = (ElementType) eResolveProxy(oldRef);
+			if (ref != oldRef) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomaincontextcodegenPackage.ELEMENT_TYPE_BINDING__REF, oldRef, ref));
+				}
 			}
 		}
 		return ref;
@@ -82,7 +83,7 @@ public class ElementTypeBindingImpl extends BindingImpl implements ElementTypeBi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementType basicGetRef() {
@@ -92,28 +93,30 @@ public class ElementTypeBindingImpl extends BindingImpl implements ElementTypeBi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRef(ElementType newRef) {
 		ElementType oldRef = ref;
 		ref = newRef;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.ELEMENT_TYPE_BINDING__REF, oldRef, ref));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDING__REF:
-			if(resolve)
+			if (resolve) {
 				return getRef();
+			}
 			return basicGetRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -122,14 +125,14 @@ public class ElementTypeBindingImpl extends BindingImpl implements ElementTypeBi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDING__REF:
-			setRef((ElementType)newValue);
+			setRef((ElementType) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -138,14 +141,14 @@ public class ElementTypeBindingImpl extends BindingImpl implements ElementTypeBi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDING__REF:
-			setRef((ElementType)null);
+			setRef((ElementType) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -154,16 +157,16 @@ public class ElementTypeBindingImpl extends BindingImpl implements ElementTypeBi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDING__REF:
 			return ref != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ElementTypeBindingImpl
+} // ElementTypeBindingImpl

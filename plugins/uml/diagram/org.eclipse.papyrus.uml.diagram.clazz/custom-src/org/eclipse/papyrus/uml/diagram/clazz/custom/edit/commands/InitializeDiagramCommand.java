@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
@@ -55,7 +55,7 @@ import org.eclipse.uml2.uml.PackageableElement;
 
 /**
  * Initialize diagram elements from a semantic model.
- * 
+ *
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  */
 public class InitializeDiagramCommand extends AbstractTransactionalCommand {
@@ -89,6 +89,7 @@ public class InitializeDiagramCommand extends AbstractTransactionalCommand {
 		final Command immutable = SetViewMutabilityCommand.makeImmutable(viewAdapters);
 		PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				immutable.execute();
 			}
@@ -99,7 +100,7 @@ public class InitializeDiagramCommand extends AbstractTransactionalCommand {
 	/**
 	 * Forwards the supplied request to its source if the target is <tt>null</tt>; otherwise it is
 	 * forwarded to the target. Forwards the supplied request to the editpart's <code>host</code>.
-	 * 
+	 *
 	 * @param request
 	 *            a <code>CreareConnecgtorViewRequest</code>
 	 * @return Command to create the views in the request
@@ -116,7 +117,7 @@ public class InitializeDiagramCommand extends AbstractTransactionalCommand {
 			assert request instanceof CreateViewRequest;
 			Iterator<? extends ViewDescriptor> descriptors = ((CreateViewRequest) request).getViewDescriptors().iterator();
 			while (descriptors.hasNext()) {
-				ViewDescriptor descriptor = (ViewDescriptor) descriptors.next();
+				ViewDescriptor descriptor = descriptors.next();
 				ICommand createCommand = getCreateViewCommand(descriptor);
 				cc.compose(createCommand);
 			}
@@ -124,7 +125,7 @@ public class InitializeDiagramCommand extends AbstractTransactionalCommand {
 			cc.compose(new CommandProxy(cmd));
 			Iterator<? extends ViewDescriptor> descriptors = ((CreateViewRequest) request).getViewDescriptors().iterator();
 			while (descriptors.hasNext()) {
-				ViewDescriptor descriptor = (ViewDescriptor) descriptors.next();
+				ViewDescriptor descriptor = descriptors.next();
 				cc.compose(new CommandProxy(SetViewMutabilityCommand.makeMutable(descriptor)));
 			}
 		}
@@ -136,7 +137,7 @@ public class InitializeDiagramCommand extends AbstractTransactionalCommand {
 	 * @return ICommand to create a view given a descriptor
 	 */
 	protected ICommand getCreateViewCommand(ViewDescriptor descriptor) {
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		TransactionalEditingDomain editingDomain = getHost().getEditingDomain();
 		CreateCommand createCommand = new CreateCommand(editingDomain, descriptor, (View) getHost().getModel());
 		CompositeCommand cmd = new CompositeCommand(DiagramUIMessages.AddCommand_Label);
 		cmd.compose(createCommand);
@@ -146,7 +147,7 @@ public class InitializeDiagramCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Return a create view request. The request's location is set to {@link ICanonicalShapeCompartmentLayout#UNDEFINED}.
-	 * 
+	 *
 	 * @param descriptors
 	 *            a {@link CreateViewRequest.ViewDescriptor} list.
 	 * @return a create request
@@ -174,7 +175,7 @@ public class InitializeDiagramCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Convenience method to create a view descriptor. Will call {@link #getViewDescriptor(IAdaptable, Class, String, int)}
-	 * 
+	 *
 	 * @param element
 	 *            semantic element.
 	 * @return view descriptor
@@ -191,7 +192,7 @@ public class InitializeDiagramCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Return a view descriptor.
-	 * 
+	 *
 	 * @param elementAdapter
 	 *            semantic element
 	 * @param viewKind

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -70,15 +70,15 @@ public class StructuredActivityNodeKeywordParser extends MessageFormatParser imp
 	}
 
 	public StructuredActivityNodeKeywordParser() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() });
 	}
 
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -86,11 +86,12 @@ public class StructuredActivityNodeKeywordParser extends MessageFormatParser imp
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.uml.diagram.sequence.parsers.AbstractParser#isAffectingEvent
 	 * (java.lang.Object , int)
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		EStructuralFeature feature = getEStructuralFeature(event);
 		return isValidFeature(feature);
@@ -98,29 +99,30 @@ public class StructuredActivityNodeKeywordParser extends MessageFormatParser imp
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.parsers.MessageFormatParser#
 	 * getPrintString(org.eclipse .core.runtime.IAdaptable, int)
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		Object obj = element.getAdapter(EObject.class);
-		if(obj instanceof StructuredActivityNode) {
-			if(obj instanceof ExpansionRegion) {
-				ExpansionRegion region = (ExpansionRegion)obj;
+		if (obj instanceof StructuredActivityNode) {
+			if (obj instanceof ExpansionRegion) {
+				ExpansionRegion region = (ExpansionRegion) obj;
 				return String.format(KEYWORD_FORMAT, region.getMode().getName());
-			} else if(obj instanceof LoopNode) {
+			} else if (obj instanceof LoopNode) {
 				boolean displayNameName = preferenceStore.getBoolean(IActivityPreferenceConstants.PREF_STRUCTURED_SPECIFIC_KEYWORD_DISPLAY_LOOP_NODE);
-				if(displayNameName) {
+				if (displayNameName) {
 					return String.format(KEYWORD_FORMAT, LOOP_NODE_KEYWORD);
 				}
-			} else if(obj instanceof ConditionalNode) {
+			} else if (obj instanceof ConditionalNode) {
 				boolean displayNameName = preferenceStore.getBoolean(IActivityPreferenceConstants.PREF_STRUCTURED_SPECIFIC_KEYWORD_DISPLAY_CONDITIONAL_NODE);
-				if(displayNameName) {
+				if (displayNameName) {
 					return String.format(KEYWORD_FORMAT, CONDITIONAL_NODE_KEYWORD);
 				}
-			} else if(obj instanceof SequenceNode) {
+			} else if (obj instanceof SequenceNode) {
 				boolean displayNameName = preferenceStore.getBoolean(IActivityPreferenceConstants.PREF_STRUCTURED_SPECIFIC_KEYWORD_DISPLAY_SEQUENCE_NODE);
-				if(displayNameName) {
+				if (displayNameName) {
 					return String.format(KEYWORD_FORMAT, SEQUENCE_NODE_KEYWORD);
 				}
 			}
@@ -131,11 +133,12 @@ public class StructuredActivityNodeKeywordParser extends MessageFormatParser imp
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * areSemanticElementsAffected (org.eclipse.emf.ecore.EObject,
 	 * java.lang.Object)
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		EStructuralFeature feature = getEStructuralFeature(notification);
 		return isValidFeature(feature);
@@ -143,14 +146,15 @@ public class StructuredActivityNodeKeywordParser extends MessageFormatParser imp
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * getSemanticElementsBeingParsed (org.eclipse.emf.ecore.EObject)
 	 */
+	@Override
 	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-		if(element instanceof StructuredActivityNode) {
-			StructuredActivityNode node = (StructuredActivityNode)element;
+		if (element instanceof StructuredActivityNode) {
+			StructuredActivityNode node = (StructuredActivityNode) element;
 			semanticElementsBeingParsed.add(node);
 		}
 		return semanticElementsBeingParsed;
@@ -159,9 +163,9 @@ public class StructuredActivityNodeKeywordParser extends MessageFormatParser imp
 	/**
 	 * Determines if the given feature has to be taken into account in this
 	 * parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {

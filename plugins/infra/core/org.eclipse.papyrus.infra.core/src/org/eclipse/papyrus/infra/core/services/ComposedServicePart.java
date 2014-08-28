@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 LIFL and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,21 +15,21 @@ package org.eclipse.papyrus.infra.core.services;
 
 /**
  * A service that register itself to its associated {@link ComposedService}.
- * 
+ *
  * @param T
- *        The main ComposedService
- * 
+ *            The main ComposedService
+ *
  * @author cedric dumoulin
  * @param T
- *        The type of the ComposedService to which this part will be
- *        registered.
- * 
+ *            The type of the ComposedService to which this part will be
+ *            registered.
+ *
  */
 @SuppressWarnings("rawtypes")
 public abstract class ComposedServicePart<T extends ComposedService> implements IService {
 
 	/**
-	 * 
+	 *
 	 */
 	protected ServicesRegistry servicesRegistry;
 
@@ -49,12 +49,13 @@ public abstract class ComposedServicePart<T extends ComposedService> implements 
 
 	/**
 	 * Initialize the service. Attach itself to the ComposedService
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#init(org.eclipse.papyrus.infra.core.services.ServicesRegistry)
-	 * 
+	 *
 	 * @param servicesRegistry
 	 * @throws ServiceException
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public void init(ServicesRegistry servicesRegistry) throws ServiceException {
 		this.servicesRegistry = servicesRegistry;
@@ -64,19 +65,21 @@ public abstract class ComposedServicePart<T extends ComposedService> implements 
 
 	/**
 	 * Start the service.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#startService()
-	 * 
+	 *
 	 */
+	@Override
 	public void startService() throws ServiceException {
 
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#disposeService()
-	 * 
+	 *
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public void disposeService() {
 		parentService.removeServicePart(this);

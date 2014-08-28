@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,19 +50,20 @@ public class InteractionWithSnapshotFigure extends InteractionUseFigure {
 
 	protected class InteractionLayoutManager extends AbstractLayout {
 
+		@Override
 		public void layout(final IFigure container) {
 			final List childrenList = container.getChildren();
-			for(int i = 0; i < container.getChildren().size(); i++) {
-				final IFigure currentFigure = (IFigure)childrenList.get(i);
-				if(currentFigure.equals(interactionLabelContainer) || currentFigure.equals(imageFigure)) {
-					final Rectangle bound = new Rectangle(((IFigure)childrenList.get(i)).getBounds());
-					bound.setSize(((IFigure)childrenList.get(i)).getPreferredSize());
-					if(i > 0) {
-						bound.y = ((IFigure)childrenList.get(i - 1)).getBounds().getBottomLeft().y + 1;
+			for (int i = 0; i < container.getChildren().size(); i++) {
+				final IFigure currentFigure = (IFigure) childrenList.get(i);
+				if (currentFigure.equals(interactionLabelContainer) || currentFigure.equals(imageFigure)) {
+					final Rectangle bound = new Rectangle(((IFigure) childrenList.get(i)).getBounds());
+					bound.setSize(((IFigure) childrenList.get(i)).getPreferredSize());
+					if (i > 0) {
+						bound.y = ((IFigure) childrenList.get(i - 1)).getBounds().getBottomLeft().y + 1;
 					} else {
 						bound.y = getBounds().y;
 					}
-					((IFigure)childrenList.get(i)).setBounds(bound);
+					((IFigure) childrenList.get(i)).setBounds(bound);
 
 				}
 			}
@@ -87,7 +88,7 @@ public class InteractionWithSnapshotFigure extends InteractionUseFigure {
 
 
 	public void setSnapshot(final Image image) {
-		if(image != null) {
+		if (image != null) {
 			originalSnapshot = image;
 			currentSnapshot = new Image(Display.getDefault(), image, SWT.IMAGE_COPY);
 			imageFigure.setImage(image);
@@ -95,7 +96,7 @@ public class InteractionWithSnapshotFigure extends InteractionUseFigure {
 	}
 
 	public void updateSnapshot(final Rectangle newBounds) {
-		if(originalSnapshot != null) {
+		if (originalSnapshot != null) {
 			final Image newImage = CreateDiagramImage.resize(originalSnapshot, newBounds.width, newBounds.height);
 			imageFigure.setImage(newImage);
 			currentSnapshot.dispose();
@@ -103,8 +104,8 @@ public class InteractionWithSnapshotFigure extends InteractionUseFigure {
 		}
 	}
 
-	//Warning before using this method, a method to set the image has to be use right after
-	//in the case of undoing "update snapshot" command it calls a refresh to act like the editor just opened
+	// Warning before using this method, a method to set the image has to be use right after
+	// in the case of undoing "update snapshot" command it calls a refresh to act like the editor just opened
 	public void resetImage() {
 		imageFigure.setImage(null);
 		originalSnapshot.dispose();

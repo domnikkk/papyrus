@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -247,15 +247,15 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 	private Resource resourceToEdit;
 
 	/** customization manager for the content provider */
-	//TODO: EMFFACET: pb of ResourceSET
-	private ICustomizationManager manager =  ICustomizationManagerFactory.DEFAULT.getOrCreateICustomizationManager(new ResourceSetImpl());
+	// TODO: EMFFACET: pb of ResourceSET
+	private ICustomizationManager manager = ICustomizationManagerFactory.DEFAULT.getOrCreateICustomizationManager(new ResourceSetImpl());
 
 
 	/**
 	 * Creates a new wizard page with the given name, title, and image.
-	 * 
+	 *
 	 * @param part
-	 *        the editor part in which the wizard was created
+	 *            the editor part in which the wizard was created
 	 */
 	public ExtendedPaletteContentPage(IEditorPart part, PaletteCustomizer customizer) {
 		super(Messages.Local_Palette_ContentPage_Name, Messages.Local_Palette_ContentPage_Title, Activator.getImageDescriptor(WIZARD_ICON));
@@ -267,20 +267,20 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 	public void dispose() {
 		super.dispose();
 
-		if(resourceSet != null) {
+		if (resourceSet != null) {
 			EMFHelper.unload(resourceSet);
 		}
 
-		if(manager != null) {
+		if (manager != null) {
 			EMFHelper.unload(manager.getResourceSet());
 		}
 	}
 
 	/**
 	 * Sets the priority of the current edited palette
-	 * 
+	 *
 	 * @param priority
-	 *        the priority of the current edited palette
+	 *            the priority of the current edited palette
 	 */
 	public void setPriority(ProviderPriority priority) {
 		this.priority = priority;
@@ -302,7 +302,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Returns the list of required profiles by this local palette definition
-	 * 
+	 *
 	 * @return the profiles required by this palette
 	 */
 	public Set<String> getRequiredProfiles() {
@@ -372,14 +372,14 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 	 * Creates the composite group that presents information about ascpect actions for aspect tools
 	 */
 	protected void createAspectActionComposite() {
-		aspectActionComposite.createComposite((Composite)getControl(), getAllAppliedProfiles());
+		aspectActionComposite.createComposite((Composite) getControl(), getAllAppliedProfiles());
 	}
 
 	/**
 	 * Creates the composite group that presents information about current selected tool
 	 */
 	protected void createToolDescriptionGroup() {
-		informationComposite.createComposite((Composite)getControl(), getAllAppliedProfiles());
+		informationComposite.createComposite((Composite) getControl(), getAllAppliedProfiles());
 	}
 
 	/**
@@ -390,7 +390,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		storedPreferences = PapyrusPalettePreferences.getHiddenPalettes(editorPart);
 
 		// remove all, but should only remove visible palettes
-		for(String id : storedPreferences) {
+		for (String id : storedPreferences) {
 			PapyrusPalettePreferences.changePaletteVisibility(id, editorPart, true);
 		}
 	}
@@ -400,7 +400,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 	 */
 	public void restorePreferences() {
 		// remove all, but should only remove visible palettes
-		for(String id : storedPreferences) {
+		for (String id : storedPreferences) {
 			PapyrusPalettePreferences.changePaletteVisibility(id, editorPart, false);
 		}
 	}
@@ -409,7 +409,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 	 * creates the palette preview group
 	 */
 	protected void createPalettePreviewGroup() {
-		Composite parent = (Composite)getControl();
+		Composite parent = (Composite) getControl();
 		Composite paletteComposite = new Composite(parent, SWT.NONE);
 
 		GridLayout layout = new GridLayout(2, true);
@@ -455,14 +455,14 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * handle the selection change event for the palette preview
-	 * 
+	 *
 	 * @param event
-	 *        the event that is thrown by the palette viewer
+	 *            the event that is thrown by the palette viewer
 	 */
 	protected void handlePalettePreviewSelectionChanged(SelectionChangedEvent event) {
 		// retrieve current selection
 		Configuration configuration = getSelectedConfiguration();
-		if(configuration != null) {
+		if (configuration != null) {
 			selectedConfiguration = configuration;
 			// update the current selected palette entry proxy
 			informationComposite.setSelectedConfiguration(selectedConfiguration);
@@ -472,12 +472,12 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		}
 
 		// update toolbar
-		if(toolbar != null && !toolbar.isDisposed()) {
-			for(int i = 0; i < toolbar.getItemCount(); i++) {
+		if (toolbar != null && !toolbar.isDisposed()) {
+			for (int i = 0; i < toolbar.getItemCount(); i++) {
 				ToolItem item = toolbar.getItem(i);
 				Object validator = item.getData(VALIDATOR);
-				if(validator instanceof ToolBarItemValidator) {
-					item.setEnabled(((ToolBarItemValidator)validator).isEnable());
+				if (validator instanceof ToolBarItemValidator) {
+					item.setEnabled(((ToolBarItemValidator) validator).isEnable());
 				}
 			}
 		}
@@ -504,7 +504,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 	 */
 	protected void addPalettePreviewDropSupport() {
 		// transfer types
-		Transfer[] transfers = new Transfer[]{ LocalSelectionTransfer.getTransfer() };
+		Transfer[] transfers = new Transfer[] { LocalSelectionTransfer.getTransfer() };
 
 		// drag listener
 		DropTargetListener listener = new TreeDropTargetEffect(paletteTreeViewer.getTree()) {
@@ -515,20 +515,20 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 			@Override
 			public void drop(DropTargetEvent event) {
 				super.drop(event);
-				IStructuredSelection transferedSelection = (IStructuredSelection)LocalSelectionTransfer.getTransfer().nativeToJava(event.currentDataType);
+				IStructuredSelection transferedSelection = (IStructuredSelection) LocalSelectionTransfer.getTransfer().nativeToJava(event.currentDataType);
 				Object objectToTransfer = transferedSelection.getFirstElement();
-				if(!(objectToTransfer instanceof IAdaptable)) {
+				if (!(objectToTransfer instanceof IAdaptable)) {
 					return;
 				}
 				final EObject eobjectToTransfer = EMFHelper.getEObject(objectToTransfer);
 
-				Object targetObject = ((TreeItem)event.item).getData();
-				if(!(targetObject instanceof IAdaptable)) {
+				Object targetObject = ((TreeItem) event.item).getData();
+				if (!(targetObject instanceof IAdaptable)) {
 					return;
 				}
 
-				final EObject targetEObject =EMFHelper.getEObject(targetObject);
-				if(targetEObject == null) {
+				final EObject targetEObject = EMFHelper.getEObject(targetObject);
+				if (targetEObject == null) {
 					return;
 				}
 
@@ -539,10 +539,10 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 					 */
 					@Override
 					public Object caseDrawerConfiguration(DrawerConfiguration drawerConfigurationToMove) {
-						if(targetEObject instanceof DrawerConfiguration) {
+						if (targetEObject instanceof DrawerConfiguration) {
 							// move the drawer before the target drawer configuration
-							PaletteConfiguration paletteConfiguration = (PaletteConfiguration)((DrawerConfiguration)targetEObject).eContainer();
-							PaletteConfigurationUtils.moveDrawerConfiguration(paletteConfiguration, drawerConfigurationToMove, (DrawerConfiguration)targetEObject);
+							PaletteConfiguration paletteConfiguration = (PaletteConfiguration) ((DrawerConfiguration) targetEObject).eContainer();
+							PaletteConfigurationUtils.moveDrawerConfiguration(paletteConfiguration, drawerConfigurationToMove, (DrawerConfiguration) targetEObject);
 
 						}
 						return super.caseDrawerConfiguration(drawerConfigurationToMove);
@@ -553,14 +553,14 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 					 */
 					@Override
 					public Object caseSeparatorConfiguration(SeparatorConfiguration separatorConfigurationToMove) {
-						if(targetEObject instanceof DrawerConfiguration) {
-							PaletteConfigurationUtils.moveSeparatorConfiguration(((DrawerConfiguration)targetEObject), separatorConfigurationToMove);
-						} else if(targetEObject instanceof StackConfiguration) {
-							PaletteConfigurationUtils.moveSeparatorConfiguration(((StackConfiguration)targetEObject), separatorConfigurationToMove);
-						} else if(targetEObject instanceof ToolConfiguration) {
-							PaletteConfigurationUtils.moveSeparatorConfiguration(((ToolConfiguration)targetEObject), separatorConfigurationToMove);
-						} else if(targetEObject instanceof SeparatorConfiguration) {
-							PaletteConfigurationUtils.moveSeparatorConfiguration(((SeparatorConfiguration)targetEObject), separatorConfigurationToMove);
+						if (targetEObject instanceof DrawerConfiguration) {
+							PaletteConfigurationUtils.moveSeparatorConfiguration(((DrawerConfiguration) targetEObject), separatorConfigurationToMove);
+						} else if (targetEObject instanceof StackConfiguration) {
+							PaletteConfigurationUtils.moveSeparatorConfiguration(((StackConfiguration) targetEObject), separatorConfigurationToMove);
+						} else if (targetEObject instanceof ToolConfiguration) {
+							PaletteConfigurationUtils.moveSeparatorConfiguration(((ToolConfiguration) targetEObject), separatorConfigurationToMove);
+						} else if (targetEObject instanceof SeparatorConfiguration) {
+							PaletteConfigurationUtils.moveSeparatorConfiguration(((SeparatorConfiguration) targetEObject), separatorConfigurationToMove);
 						}
 
 						return super.caseSeparatorConfiguration(separatorConfigurationToMove);
@@ -571,14 +571,14 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 					 */
 					@Override
 					public Object caseStackConfiguration(StackConfiguration stackConfigurationToMove) {
-						if(targetEObject instanceof DrawerConfiguration) {
-							PaletteConfigurationUtils.moveStackConfiguration(((DrawerConfiguration)targetEObject), stackConfigurationToMove);
-						} else if(targetEObject instanceof StackConfiguration) {
-							PaletteConfigurationUtils.moveStackConfiguration(((StackConfiguration)targetEObject), stackConfigurationToMove);
-						} else if(targetEObject instanceof ToolConfiguration) {
-							PaletteConfigurationUtils.moveStackConfiguration(((ToolConfiguration)targetEObject), stackConfigurationToMove);
-						} else if(targetEObject instanceof SeparatorConfiguration) {
-							PaletteConfigurationUtils.moveStackConfiguration(((SeparatorConfiguration)targetEObject), stackConfigurationToMove);
+						if (targetEObject instanceof DrawerConfiguration) {
+							PaletteConfigurationUtils.moveStackConfiguration(((DrawerConfiguration) targetEObject), stackConfigurationToMove);
+						} else if (targetEObject instanceof StackConfiguration) {
+							PaletteConfigurationUtils.moveStackConfiguration(((StackConfiguration) targetEObject), stackConfigurationToMove);
+						} else if (targetEObject instanceof ToolConfiguration) {
+							PaletteConfigurationUtils.moveStackConfiguration(((ToolConfiguration) targetEObject), stackConfigurationToMove);
+						} else if (targetEObject instanceof SeparatorConfiguration) {
+							PaletteConfigurationUtils.moveStackConfiguration(((SeparatorConfiguration) targetEObject), stackConfigurationToMove);
 						}
 
 						return super.caseStackConfiguration(stackConfigurationToMove);
@@ -589,14 +589,14 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 					 */
 					@Override
 					public Object caseToolConfiguration(ToolConfiguration toolConfigurationToMove) {
-						if(targetEObject instanceof DrawerConfiguration) {
-							PaletteConfigurationUtils.moveToolConfiguration(((DrawerConfiguration)targetEObject), toolConfigurationToMove);
-						} else if(targetEObject instanceof StackConfiguration) {
-							PaletteConfigurationUtils.moveToolConfiguration(((StackConfiguration)targetEObject), toolConfigurationToMove);
-						} else if(targetEObject instanceof ToolConfiguration) {
-							PaletteConfigurationUtils.moveToolConfiguration(((ToolConfiguration)targetEObject), toolConfigurationToMove);
-						} else if(targetEObject instanceof SeparatorConfiguration) {
-							PaletteConfigurationUtils.moveToolConfiguration(((SeparatorConfiguration)targetEObject), toolConfigurationToMove);
+						if (targetEObject instanceof DrawerConfiguration) {
+							PaletteConfigurationUtils.moveToolConfiguration(((DrawerConfiguration) targetEObject), toolConfigurationToMove);
+						} else if (targetEObject instanceof StackConfiguration) {
+							PaletteConfigurationUtils.moveToolConfiguration(((StackConfiguration) targetEObject), toolConfigurationToMove);
+						} else if (targetEObject instanceof ToolConfiguration) {
+							PaletteConfigurationUtils.moveToolConfiguration(((ToolConfiguration) targetEObject), toolConfigurationToMove);
+						} else if (targetEObject instanceof SeparatorConfiguration) {
+							PaletteConfigurationUtils.moveToolConfiguration(((SeparatorConfiguration) targetEObject), toolConfigurationToMove);
 						}
 
 						return super.caseToolConfiguration(toolConfigurationToMove);
@@ -615,7 +615,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 			public void dragOver(DropTargetEvent event) {
 				super.dragOver(event);
 
-				IStructuredSelection transferedSelection = (IStructuredSelection)LocalSelectionTransfer.getTransfer().nativeToJava(event.currentDataType);
+				IStructuredSelection transferedSelection = (IStructuredSelection) LocalSelectionTransfer.getTransfer().nativeToJava(event.currentDataType);
 				// check selection is compatible for drop target
 
 				TreeItem item = paletteTreeViewer.getTree().getItem(paletteTreeViewer.getTree().toControl(new Point(event.x, event.y)));
@@ -633,7 +633,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 	protected void addPalettePreviewDragSupport() {
 
 		// transfer types
-		Transfer[] transfers = new Transfer[]{ LocalSelectionTransfer.getTransfer() };
+		Transfer[] transfers = new Transfer[] { LocalSelectionTransfer.getTransfer() };
 
 		// drag listener
 		DragSourceListener listener = new DragSourceAdapter() {
@@ -663,33 +663,33 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Checks if the selection can be added to the target widget
-	 * 
+	 *
 	 * @param transferedSelection
-	 *        the selection to be dropped
+	 *            the selection to be dropped
 	 * @param widget
-	 *        the widget where to drop
+	 *            the widget where to drop
 	 */
 	protected void checkSelectionForDrop(IStructuredSelection transferedSelection, TreeItem item, final DropTargetEvent event) {
 		event.detail = DND.DROP_NONE;
 		final Object objectToTransfer = transferedSelection.getFirstElement();
-		if(!(objectToTransfer instanceof IAdaptable)) {
+		if (!(objectToTransfer instanceof IAdaptable)) {
 			return;
 		}
 		final EObject eobjectToTransfer = EMFHelper.getEObject(objectToTransfer);
 		// handle only first selected element
-		if(item == null) {
+		if (item == null) {
 			// adding to the root, should only be a drawer
-			if(eobjectToTransfer instanceof DrawerConfiguration) {
+			if (eobjectToTransfer instanceof DrawerConfiguration) {
 				event.detail = DND.DROP_LINK;
 			}
 		} else {
 			Object targetObject = item.getData();
-			if(!(targetObject instanceof IAdaptable)) {
+			if (!(targetObject instanceof IAdaptable)) {
 				event.detail = DND.DROP_NONE;
 				return;
 			}
 			final EObject targetEObject = EMFHelper.getEObject(targetObject);
-			if(targetEObject == null) {
+			if (targetEObject == null) {
 				event.detail = DND.DROP_NONE;
 				return;
 			}
@@ -701,7 +701,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 				 */
 				@Override
 				public Object caseDrawerConfiguration(DrawerConfiguration object) {
-					if(targetEObject instanceof DrawerConfiguration) {
+					if (targetEObject instanceof DrawerConfiguration) {
 						event.detail = DND.DROP_MOVE;
 						event.feedback = DND.FEEDBACK_INSERT_BEFORE;
 					}
@@ -713,15 +713,15 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 				 */
 				@Override
 				public Object caseSeparatorConfiguration(SeparatorConfiguration object) {
-					if(targetEObject instanceof DrawerConfiguration) {
+					if (targetEObject instanceof DrawerConfiguration) {
 						event.detail = DND.DROP_MOVE;
-					} else if(targetEObject instanceof StackConfiguration) {
-						event.detail = DND.DROP_MOVE;
-						event.feedback = DND.FEEDBACK_INSERT_BEFORE;
-					} else if(targetEObject instanceof ToolConfiguration) {
+					} else if (targetEObject instanceof StackConfiguration) {
 						event.detail = DND.DROP_MOVE;
 						event.feedback = DND.FEEDBACK_INSERT_BEFORE;
-					} else if(targetEObject instanceof SeparatorConfiguration) {
+					} else if (targetEObject instanceof ToolConfiguration) {
+						event.detail = DND.DROP_MOVE;
+						event.feedback = DND.FEEDBACK_INSERT_BEFORE;
+					} else if (targetEObject instanceof SeparatorConfiguration) {
 						event.detail = DND.DROP_MOVE;
 						event.feedback = DND.FEEDBACK_INSERT_BEFORE;
 					}
@@ -734,15 +734,15 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 				 */
 				@Override
 				public Object caseStackConfiguration(StackConfiguration object) {
-					if(targetEObject instanceof DrawerConfiguration) {
+					if (targetEObject instanceof DrawerConfiguration) {
 						event.detail = DND.DROP_MOVE;
-					} else if(targetEObject instanceof StackConfiguration) {
-						event.detail = DND.DROP_MOVE;
-						event.feedback = DND.FEEDBACK_INSERT_BEFORE;
-					} else if(targetEObject instanceof ToolConfiguration) {
+					} else if (targetEObject instanceof StackConfiguration) {
 						event.detail = DND.DROP_MOVE;
 						event.feedback = DND.FEEDBACK_INSERT_BEFORE;
-					} else if(targetEObject instanceof SeparatorConfiguration) {
+					} else if (targetEObject instanceof ToolConfiguration) {
+						event.detail = DND.DROP_MOVE;
+						event.feedback = DND.FEEDBACK_INSERT_BEFORE;
+					} else if (targetEObject instanceof SeparatorConfiguration) {
 						event.detail = DND.DROP_MOVE;
 						event.feedback = DND.FEEDBACK_INSERT_BEFORE;
 					}
@@ -754,14 +754,14 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 				 */
 				@Override
 				public Object caseToolConfiguration(ToolConfiguration object) {
-					if(targetEObject instanceof DrawerConfiguration) {
+					if (targetEObject instanceof DrawerConfiguration) {
 						event.detail = DND.DROP_MOVE;
-					} else if(targetEObject instanceof StackConfiguration) {
+					} else if (targetEObject instanceof StackConfiguration) {
 						event.detail = DND.DROP_MOVE;
-					} else if(targetEObject instanceof ToolConfiguration) {
+					} else if (targetEObject instanceof ToolConfiguration) {
 						event.detail = DND.DROP_MOVE;
 						event.feedback = DND.FEEDBACK_INSERT_BEFORE;
-					} else if(targetEObject instanceof SeparatorConfiguration) {
+					} else if (targetEObject instanceof SeparatorConfiguration) {
 						event.detail = DND.DROP_MOVE;
 						event.feedback = DND.FEEDBACK_INSERT_BEFORE;
 					}
@@ -789,16 +789,16 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Sets the initial content for the palette preview
-	 * 
+	 *
 	 * @param descriptor
-	 *        the descriptor that contains the configuration file to load
+	 *            the descriptor that contains the configuration file to load
 	 */
 	public void initializeContent(PapyrusPaletteService.ExtendedProviderDescriptor descriptor) {
 		resourceSet = createResourceSet();
 		resourceToEdit = getResourceSet().createResource(descriptor.getRedefinitionFileURI());
 
 		// check resource is not null;
-		if(resourceToEdit == null) {
+		if (resourceToEdit == null) {
 			Activator.log.error("No resource has been created for uri :" + descriptor.getRedefinitionFileURI(), null);
 		}
 		try {
@@ -811,7 +811,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Creates and returns the resource set used to modidy the content of the palette configuration
-	 * 
+	 *
 	 * @return the newly created ResourceSet.
 	 */
 	protected ResourceSet createResourceSet() {
@@ -820,9 +820,9 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * populates the preview palette toolbar
-	 * 
+	 *
 	 * @param toolbar
-	 *        the toolbar to populate
+	 *            the toolbar to populate
 	 */
 	protected void populatePalettePreviewToolBar(ToolBar toolbar) {
 		ConfigurationSelectedValidator validator = new ConfigurationSelectedValidator();
@@ -835,7 +835,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Creates the listener for the remove item(s) button
-	 * 
+	 *
 	 * @return the listener for the remove button
 	 */
 	protected Listener createRemoveElementListener() {
@@ -845,18 +845,18 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 			 * {@inheritDoc}
 			 */
 			public void handleEvent(Event event) {
-				IStructuredSelection selection = (IStructuredSelection)paletteTreeViewer.getSelection();
-				if(selection == null || selection.size() < 1) {
+				IStructuredSelection selection = (IStructuredSelection) paletteTreeViewer.getSelection();
+				if (selection == null || selection.size() < 1) {
 					return;
 				}
 
 				Iterator<?> it = selection.iterator();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					Object o = it.next();
-					if(o instanceof IAdaptable) {
+					if (o instanceof IAdaptable) {
 						EObject eobject = EMFHelper.getEObject(o);
-						if(eobject instanceof Configuration) {
-							PaletteConfigurationUtils.removeConfiguration((Configuration)eobject);
+						if (eobject instanceof Configuration) {
+							PaletteConfigurationUtils.removeConfiguration((Configuration) eobject);
 						}
 					}
 				}
@@ -866,7 +866,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Creates the listener for the new drawer tool item
-	 * 
+	 *
 	 * @return the listener created
 	 */
 	protected Listener createNewDrawerListener() {
@@ -876,8 +876,8 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 			 * {@inheritDoc}
 			 */
 			public void handleEvent(Event event) {
-				PaletteConfiguration paletteConfiguration = (PaletteConfiguration)EcoreUtil.getObjectByType(resourceToEdit.getContents(), PaletteconfigurationPackage.eINSTANCE.getPaletteConfiguration());
-				if(paletteConfiguration != null) {
+				PaletteConfiguration paletteConfiguration = (PaletteConfiguration) EcoreUtil.getObjectByType(resourceToEdit.getContents(), PaletteconfigurationPackage.eINSTANCE.getPaletteConfiguration());
+				if (paletteConfiguration != null) {
 					PaletteConfigurationUtils.createDrawer(paletteConfiguration);
 				} else {
 					Activator.log.error("Impossible to find the palette configuration", null);
@@ -890,7 +890,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Creates the listener for the new stack tool item
-	 * 
+	 *
 	 * @return the listener created
 	 */
 	protected Listener createNewStackListener() {
@@ -901,10 +901,10 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 			 */
 			public void handleEvent(Event event) {
 				Configuration selectedConfiguration = getSelectedConfiguration();
-				if(selectedConfiguration instanceof DrawerConfiguration) {
-					PaletteConfigurationUtils.createStack(((DrawerConfiguration)selectedConfiguration));
-				} else if(selectedConfiguration instanceof LeafConfiguration) {
-					PaletteConfigurationUtils.createStack(((LeafConfiguration)selectedConfiguration));
+				if (selectedConfiguration instanceof DrawerConfiguration) {
+					PaletteConfigurationUtils.createStack(((DrawerConfiguration) selectedConfiguration));
+				} else if (selectedConfiguration instanceof LeafConfiguration) {
+					PaletteConfigurationUtils.createStack(((LeafConfiguration) selectedConfiguration));
 				} else {
 					Activator.log.error("Invalid selection to create a Stack: " + selectedConfiguration, null);
 				}
@@ -917,9 +917,9 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Generates the ID for a local element
-	 * 
+	 *
 	 * @param base
-	 *        the begining of the id
+	 *            the begining of the id
 	 * @return the separator id
 	 */
 	protected String generateID(String base) {
@@ -933,7 +933,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Creates the listener for the new separator tool item
-	 * 
+	 *
 	 * @return the listener created
 	 */
 	protected Listener createNewSeparatorListener() {
@@ -944,10 +944,10 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 			 */
 			public void handleEvent(Event event) {
 				Configuration selectedConfiguration = getSelectedConfiguration();
-				if(selectedConfiguration instanceof DrawerConfiguration) {
-					PaletteConfigurationUtils.createSeparator(((DrawerConfiguration)selectedConfiguration));
-				} else if(selectedConfiguration instanceof LeafConfiguration) {
-					PaletteConfigurationUtils.createSeparator(((LeafConfiguration)selectedConfiguration));
+				if (selectedConfiguration instanceof DrawerConfiguration) {
+					PaletteConfigurationUtils.createSeparator(((DrawerConfiguration) selectedConfiguration));
+				} else if (selectedConfiguration instanceof LeafConfiguration) {
+					PaletteConfigurationUtils.createSeparator(((LeafConfiguration) selectedConfiguration));
 				} else {
 					Activator.log.error("Invalid selection to create a separator: " + selectedConfiguration, null);
 				}
@@ -959,22 +959,22 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Returns the current selected configuration
-	 * 
+	 *
 	 * @return the current selected configuration or <code>null</code> if the element is not translatable into a {@link Configuration}
 	 */
 	protected Configuration getSelectedConfiguration() {
 		// retrieve selection
-		if(paletteTreeViewer != null && !paletteTreeViewer.getControl().isDisposed()) {
+		if (paletteTreeViewer != null && !paletteTreeViewer.getControl().isDisposed()) {
 			// retrieve selection. first element should be a drawer
-			IStructuredSelection selection = (IStructuredSelection)paletteTreeViewer.getSelection();
-			if(selection == null) {
+			IStructuredSelection selection = (IStructuredSelection) paletteTreeViewer.getSelection();
+			if (selection == null) {
 				return null;
 			} else {
 				Object object = selection.getFirstElement();
-				if(object instanceof IAdaptable) {
+				if (object instanceof IAdaptable) {
 					EObject eobject = EMFHelper.getEObject(object);
-					if(eobject instanceof Configuration) {
-						return (Configuration)eobject;
+					if (eobject instanceof Configuration) {
+						return (Configuration) eobject;
 					}
 				}
 			}
@@ -984,15 +984,15 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Creates a toolbar item.
-	 * 
+	 *
 	 * @param toolbar
-	 *        the parent toolbar
+	 *            the parent toolbar
 	 * @param itemIcon
-	 *        path for icon
+	 *            path for icon
 	 * @param tooltip
-	 *        tooltip text for the toolbar item
+	 *            tooltip text for the toolbar item
 	 * @param listener
-	 *        listener for tool bar item
+	 *            listener for tool bar item
 	 */
 	protected void createToolBarItem(ToolBar toolbar, String itemIcon, String tooltip, Listener listener, ToolBarItemValidator validator) {
 		ToolItem item = new ToolItem(toolbar, SWT.BORDER);
@@ -1006,7 +1006,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 	 * creates the buttons to add/remove entries
 	 */
 	protected void createAddRemoveButtons() {
-		Composite composite = new Composite((Composite)getControl(), SWT.NONE);
+		Composite composite = new Composite((Composite) getControl(), SWT.NONE);
 		GridLayout layout = new GridLayout(1, true);
 		composite.setLayout(layout);
 
@@ -1030,7 +1030,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * selection listener for the tools viewer , to update the state of the add button
-	 * 
+	 *
 	 * @return the new created selection listener
 	 */
 	protected ISelectionChangedListener createToolsViewerSelectionChangeListener() {
@@ -1043,18 +1043,18 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 				// get source and target selection
 				// check source entry can be added to target entry
-				Object source = ((IStructuredSelection)availableToolsViewer.getSelection()).getFirstElement();
-				Object target = ((IStructuredSelection)paletteTreeViewer.getSelection()).getFirstElement();
+				Object source = ((IStructuredSelection) availableToolsViewer.getSelection()).getFirstElement();
+				Object target = ((IStructuredSelection) paletteTreeViewer.getSelection()).getFirstElement();
 
 				// manage add button
-				if(isAddValidTarget(source, target)) {
+				if (isAddValidTarget(source, target)) {
 					addButton.setEnabled(true);
 				} else {
 					addButton.setEnabled(false);
 				}
 
 				// manage remove button
-				if(isRemoveValidSource(target)) {
+				if (isRemoveValidSource(target)) {
 					removeButton.setEnabled(true);
 				} else {
 					removeButton.setEnabled(false);
@@ -1064,15 +1064,15 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 			/**
 			 * Returns true if the source can be added to the target
-			 * 
+			 *
 			 * @param source
-			 *        the source object
+			 *            the source object
 			 * @param target
-			 *        the target object
+			 *            the target object
 			 * @return <code>true</code> if the source can be added to the target
 			 */
 			protected boolean isAddValidTarget(Object source, Object target) {
-				if(!(source instanceof PaletteEntry)) {
+				if (!(source instanceof PaletteEntry)) {
 					return false;
 				}
 
@@ -1081,21 +1081,21 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 				// case2: source is a palette tool
 				// it can't be added to the root element
 				// it can only be added to a container element (drawer or stack)
-				if(source instanceof PaletteDrawer) {
-					if(target == null) {
+				if (source instanceof PaletteDrawer) {
+					if (target == null) {
 						return true;
 					}
 					return false;
-				} else if(source instanceof ToolEntry) {
-					if(target instanceof PaletteEntryProxy) {
-						//						EntryType type = ((PaletteEntryProxy)target).getType();
-						//						switch(type) {
-						//						case DRAWER:
-						//						case STACK:
-						//							return true;
-						//						default:
-						//							return false;
-						//						}
+				} else if (source instanceof ToolEntry) {
+					if (target instanceof PaletteEntryProxy) {
+						// EntryType type = ((PaletteEntryProxy)target).getType();
+						// switch(type) {
+						// case DRAWER:
+						// case STACK:
+						// return true;
+						// default:
+						// return false;
+						// }
 					}
 					return false;
 				}
@@ -1104,14 +1104,14 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 			/**
 			 * Returns true if the source can be added to the target
-			 * 
+			 *
 			 * @param source
-			 *        the source object
+			 *            the source object
 			 * @return <code>true</code> if the source can be removed (not null and instanceof
 			 *         PaletteEntryProxy)
 			 */
 			protected boolean isRemoveValidSource(Object source) {
-				if(source instanceof PaletteEntryProxy) {
+				if (source instanceof PaletteEntryProxy) {
 					return true;
 				}
 				return false;
@@ -1127,36 +1127,36 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		return new MouseListener() {
 
 			public void mouseUp(MouseEvent e) {
-				//				// add the element selected on the left to the right tree
-				//				// check the selection.
-				//				IStructuredSelection selection = (IStructuredSelection)availableToolsViewer.getSelection();
-				//				if(selection == null || selection.size() < 1) {
-				//					return;
-				//				}
-				//				PaletteEntry entry = (PaletteEntry)selection.getFirstElement();
-				//				if(entry == null) {
-				//					return;
-				//				}
+				// // add the element selected on the left to the right tree
+				// // check the selection.
+				// IStructuredSelection selection = (IStructuredSelection)availableToolsViewer.getSelection();
+				// if(selection == null || selection.size() < 1) {
+				// return;
+				// }
+				// PaletteEntry entry = (PaletteEntry)selection.getFirstElement();
+				// if(entry == null) {
+				// return;
+				// }
 				//
-				//				// find the selection on the right
-				//				selection = (IStructuredSelection)paletteTreeViewer.getSelection();
+				// // find the selection on the right
+				// selection = (IStructuredSelection)paletteTreeViewer.getSelection();
 				//
-				//				PaletteEntryProxy parentNode = (PaletteEntryProxy)selection.getFirstElement();
-				//				// Bugfix: only drawers can be added to root element
-				//				if(parentNode == null && entry instanceof PaletteDrawer) {
-				//					parentNode = (PaletteContainerProxy)paletteTreeViewer.getInput();
-				//				}
+				// PaletteEntryProxy parentNode = (PaletteEntryProxy)selection.getFirstElement();
+				// // Bugfix: only drawers can be added to root element
+				// if(parentNode == null && entry instanceof PaletteDrawer) {
+				// parentNode = (PaletteContainerProxy)paletteTreeViewer.getInput();
+				// }
 				//
-				//				// check we have a containe here
-				//				if(!(parentNode instanceof PaletteContainerProxy)) {
-				//					return;
-				//				}
+				// // check we have a containe here
+				// if(!(parentNode instanceof PaletteContainerProxy)) {
+				// return;
+				// }
 				//
-				//				// create a new entry in the document
-				//				PaletteEntryProxy proxy = createNodeFromEntry(entry);
-				//				((PaletteContainerProxy)parentNode).addChild(proxy);
+				// // create a new entry in the document
+				// PaletteEntryProxy proxy = createNodeFromEntry(entry);
+				// ((PaletteContainerProxy)parentNode).addChild(proxy);
 				//
-				//				paletteTreeViewer.expandToLevel(parentNode, 1);
+				// paletteTreeViewer.expandToLevel(parentNode, 1);
 			}
 
 			/**
@@ -1175,33 +1175,33 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		};
 	}
 
-	//	/**
-	//	 * Creates a node in the xml document from the given entry
-	//	 *
-	//	 * @param entry
-	//	 *        the palette entry from which to create the node
-	//	 * @param parentNode
-	//	 *        the parent node for the newly created node
-	//	 * @return the created entry proxy or <code>null</code>
-	//	 */
-	//	protected PaletteEntryProxy createNodeFromEntry(Object entry) {
-	//		PaletteEntryProxy entryProxy = null;
+	// /**
+	// * Creates a node in the xml document from the given entry
+	// *
+	// * @param entry
+	// * the palette entry from which to create the node
+	// * @param parentNode
+	// * the parent node for the newly created node
+	// * @return the created entry proxy or <code>null</code>
+	// */
+	// protected PaletteEntryProxy createNodeFromEntry(Object entry) {
+	// PaletteEntryProxy entryProxy = null;
 	//
-	//		if(entry instanceof AspectCreationEntry) {
-	//			// should modify id of the element here, otherwise, different elements would have the same id...
-	//			entryProxy = new PaletteAspectToolEntryProxy(((AspectCreationEntry)entry).clone());
-	//		} else if(entry instanceof CombinedTemplateCreationEntry) {
-	//			CombinedTemplateCreationEntry originalEntry = (CombinedTemplateCreationEntry)entry;
-	//			// create a new Aspect entry proxy
-	//			AspectCreationEntry aspectEntry = new AspectCreationEntry(originalEntry.getLabel(), originalEntry.getDescription(), originalEntry.getId() + "_" + System.currentTimeMillis(), originalEntry.getSmallIcon(), originalEntry, new HashMap<Object, Object>());
-	//			entryProxy = new PaletteAspectToolEntryProxy(aspectEntry);
-	//		} else if(entry instanceof PaletteContainer) {
-	//			entryProxy = new PaletteContainerProxy((PaletteContainer)entry);
-	//		} else if(entry instanceof PaletteEntryProxy) {
-	//			entryProxy = ((PaletteEntryProxy)entry);
-	//		}
-	//		return entryProxy;
-	//	}
+	// if(entry instanceof AspectCreationEntry) {
+	// // should modify id of the element here, otherwise, different elements would have the same id...
+	// entryProxy = new PaletteAspectToolEntryProxy(((AspectCreationEntry)entry).clone());
+	// } else if(entry instanceof CombinedTemplateCreationEntry) {
+	// CombinedTemplateCreationEntry originalEntry = (CombinedTemplateCreationEntry)entry;
+	// // create a new Aspect entry proxy
+	// AspectCreationEntry aspectEntry = new AspectCreationEntry(originalEntry.getLabel(), originalEntry.getDescription(), originalEntry.getId() + "_" + System.currentTimeMillis(), originalEntry.getSmallIcon(), originalEntry, new HashMap<Object, Object>());
+	// entryProxy = new PaletteAspectToolEntryProxy(aspectEntry);
+	// } else if(entry instanceof PaletteContainer) {
+	// entryProxy = new PaletteContainerProxy((PaletteContainer)entry);
+	// } else if(entry instanceof PaletteEntryProxy) {
+	// entryProxy = ((PaletteEntryProxy)entry);
+	// }
+	// return entryProxy;
+	// }
 
 	/**
 	 * Creates the add button listener
@@ -1213,12 +1213,12 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 				// remove the element selected on the right
 				// add the element selected on the left to the right tree
 				// check the selection.
-				IStructuredSelection selection = (IStructuredSelection)paletteTreeViewer.getSelection();
-				if(selection == null || selection.size() < 1) {
+				IStructuredSelection selection = (IStructuredSelection) paletteTreeViewer.getSelection();
+				if (selection == null || selection.size() < 1) {
 					return;
 				}
-				PaletteEntryProxy proxyToDelete = (PaletteEntryProxy)selection.getFirstElement();
-				if(proxyToDelete == null) {
+				PaletteEntryProxy proxyToDelete = (PaletteEntryProxy) selection.getFirstElement();
+				if (proxyToDelete == null) {
 					return;
 				}
 
@@ -1248,7 +1248,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 	 * creates the available entries group
 	 */
 	protected void createAvailableToolsGroup() {
-		Composite parent = (Composite)getControl();
+		Composite parent = (Composite) getControl();
 		Composite availableToolsComposite = new Composite(parent, SWT.NONE);
 		GridLayout layout = new GridLayout(2, true);
 		layout.marginHeight = 0;
@@ -1290,9 +1290,9 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 			 */
 			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
-				if(element instanceof PaletteStack && "noteStack".equals(((PaletteStack)element).getId())) {
+				if (element instanceof PaletteStack && "noteStack".equals(((PaletteStack) element).getId())) {
 					return false;
-				} else if(element instanceof PaletteToolbar && "standardGroup".equals(((PaletteToolbar)element).getId())) {
+				} else if (element instanceof PaletteToolbar && "standardGroup".equals(((PaletteToolbar) element).getId())) {
 					return false;
 				}
 				return true;
@@ -1306,9 +1306,9 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Creates the profile combo
-	 * 
+	 *
 	 * @param availableToolsComposite
-	 *        the available tools composite
+	 *            the available tools composite
 	 * @return the created combo
 	 */
 	protected Combo createProfileCombo(Composite availableToolsComposite) {
@@ -1322,11 +1322,11 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		List<Profile> profiles = getAllAppliedProfiles();
 
 		int profileNumber = profiles.size();
-		for(int i = 0; i < profileNumber; i++) {
+		for (int i = 0; i < profileNumber; i++) {
 			profileComboList.add(i, profiles.get(i).getName());
 		}
 		profileComboList.add(UML_TOOLS_LABEL);
-		profileCombo.setItems(profileComboList.toArray(new String[]{}));
+		profileCombo.setItems(profileComboList.toArray(new String[] {}));
 
 		// add selection listener for the combo. selects the "UML tools" item
 		ProfileComboSelectionListener listener = new ProfileComboSelectionListener();
@@ -1339,19 +1339,19 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * returns the list of applied profile for the nearest package of the top element
-	 * 
+	 *
 	 * @return the list of applied profile for the nearest package of the top element or an empty
 	 *         list
 	 */
 	protected List<Profile> getAllAppliedProfiles() {
 		Package topPackage = null;
-		if(editorPart instanceof DiagramEditorWithFlyOutPalette) {
-			EObject element = ((DiagramEditorWithFlyOutPalette)editorPart).getDiagram().getElement();
-			if(element instanceof org.eclipse.uml2.uml.Element) {
-				topPackage = ((org.eclipse.uml2.uml.Element)element).getNearestPackage();
+		if (editorPart instanceof DiagramEditorWithFlyOutPalette) {
+			EObject element = ((DiagramEditorWithFlyOutPalette) editorPart).getDiagram().getElement();
+			if (element instanceof org.eclipse.uml2.uml.Element) {
+				topPackage = ((org.eclipse.uml2.uml.Element) element).getNearestPackage();
 			}
 		}
-		if(topPackage != null) {
+		if (topPackage != null) {
 			return topPackage.getAllAppliedProfiles();
 		}
 		return Collections.emptyList();
@@ -1362,7 +1362,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 	 */
 	protected void addAvailableToolsDragSupport() {
 		// transfer types
-		Transfer[] transfers = new Transfer[]{ LocalSelectionTransfer.getTransfer() };
+		Transfer[] transfers = new Transfer[] { LocalSelectionTransfer.getTransfer() };
 
 		// drag listener
 		DragSourceListener listener = new DragSourceAdapter() {
@@ -1392,9 +1392,9 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Adds elements to the tool bar for available tools viewer
-	 * 
+	 *
 	 * @param toolbar
-	 *        the toolbar to populate
+	 *            the toolbar to populate
 	 */
 	protected void populateAvailableToolsToolBar(ToolBar toolbar) {
 		toggleContentProvider = createCheckToolBarItem(toolbar, SWITCH_CONTENT_PROVIDER_ICON, Messages.Local_Palette_SwitchToolsContentProvider_Tooltip, createSwitchToolsContentProviderListener());
@@ -1405,7 +1405,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Creates the listener for the available tools content provider
-	 * 
+	 *
 	 * @return the listener created
 	 */
 	protected Listener createSwitchToolsContentProviderListener() {
@@ -1415,16 +1415,16 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 			 * {@inheritDoc}
 			 */
 			public void handleEvent(Event event) {
-				if(!(event.widget instanceof ToolItem)) {
+				if (!(event.widget instanceof ToolItem)) {
 					return;
 				}
-				ToolItem item = ((ToolItem)event.widget);
+				ToolItem item = ((ToolItem) event.widget);
 				// retrieve current profile selected in the combo profile
 				int index = profileCombo.getSelectionIndex();
 				Collection<PaletteEntry> standardEntries = getAllVisibleStandardEntries();
 				Profile profile = getAllAppliedProfiles().get(index);
 
-				if(item.getSelection()) {
+				if (item.getSelection()) {
 					availableToolsViewer.setContentProvider(new ProfileToolsStereotypeMetaclassTreeContentProvider(profile, standardEntries));
 					item.setSelection(true);
 				} else {
@@ -1441,7 +1441,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * creates the tool item for drawers visibility listener
-	 * 
+	 *
 	 * @return the listener for the tool button
 	 */
 	protected Listener createShowDrawerListener() {
@@ -1451,11 +1451,11 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 			 * {@inheritDoc}
 			 */
 			public void handleEvent(Event event) {
-				if(!(event.widget instanceof ToolItem)) {
+				if (!(event.widget instanceof ToolItem)) {
 					return;
 				}
-				ToolItem item = ((ToolItem)event.widget);
-				if(item.getSelection()) {
+				ToolItem item = ((ToolItem) event.widget);
+				if (item.getSelection()) {
 					// elements should be hidden
 					availableToolsViewer.addFilter(drawerFilter);
 					item.setSelection(true);
@@ -1469,7 +1469,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * creates the tool item for tools visibility listener
-	 * 
+	 *
 	 * @return the listener for the tool button
 	 */
 	protected Listener createsShowToolListener() {
@@ -1479,11 +1479,11 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 			 * {@inheritDoc}
 			 */
 			public void handleEvent(Event event) {
-				if(!(event.widget instanceof ToolItem)) {
+				if (!(event.widget instanceof ToolItem)) {
 					return;
 				}
-				ToolItem item = ((ToolItem)event.widget);
-				if(item.getSelection()) {
+				ToolItem item = ((ToolItem) event.widget);
+				if (item.getSelection()) {
 					// elements should be hidden
 					availableToolsViewer.addFilter(toolFilter);
 					item.setSelection(true);
@@ -1497,15 +1497,15 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Creates a toolbar item which can be checked.
-	 * 
+	 *
 	 * @param toolbar
-	 *        the parent toolbar
+	 *            the parent toolbar
 	 * @param shownElementsIcon
-	 *        path for shown elements icon
+	 *            path for shown elements icon
 	 * @param listener
-	 *        listener for button action
+	 *            listener for button action
 	 * @param tooltip
-	 *        tooltip text for the toolbar item
+	 *            tooltip text for the toolbar item
 	 */
 	protected ToolItem createCheckToolBarItem(ToolBar toolbar, String shownElementsIcon, String tooltip, Listener listener) {
 		ToolItem item = new ToolItem(toolbar, SWT.CHECK | SWT.BORDER);
@@ -1521,7 +1521,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 	protected boolean validatePage() {
 		boolean valid = true;
 
-		if(valid) {
+		if (valid) {
 			setMessage(null);
 			setErrorMessage(null);
 		}
@@ -1543,9 +1543,9 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 		/**
 		 * Constructor
-		 * 
+		 *
 		 * @param viewer
-		 *        The viewer whose ContentProvider this content provider is
+		 *            The viewer whose ContentProvider this content provider is
 		 */
 		public UMLToolsTreeContentProvider() {
 		}
@@ -1556,15 +1556,15 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		public Object[] getElements(Object inputElement) {
 			Object[] elements = null;
 
-			if(inputElement instanceof Collection<?>) {
-				elements = ((Collection<?>)inputElement).toArray();
-			} else if(inputElement instanceof PaletteRoot) {
+			if (inputElement instanceof Collection<?>) {
+				elements = ((Collection<?>) inputElement).toArray();
+			} else if (inputElement instanceof PaletteRoot) {
 				// paletteUil.getAllEntries(...) to add drawers
 				// if so, uncomment the addFilterbutton for drawers in populate tool bar
-				elements = PaletteUtil.getAllToolEntries(((PaletteRoot)inputElement)).toArray();
+				elements = PaletteUtil.getAllToolEntries(((PaletteRoot) inputElement)).toArray();
 			}
 
-			if(elements == null) {
+			if (elements == null) {
 				elements = new Object[0];
 			}
 			return elements;
@@ -1589,12 +1589,12 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		public Object[] getChildren(Object parentElement) {
 			Object[] elements = null;
 
-			if(parentElement instanceof Collection<?>) {
-				elements = ((Collection<?>)parentElement).toArray();
-			} else if(parentElement instanceof PaletteRoot) {
+			if (parentElement instanceof Collection<?>) {
+				elements = ((Collection<?>) parentElement).toArray();
+			} else if (parentElement instanceof PaletteRoot) {
 				// paletteUil.getAllEntries(...) to add drawers
 				// if so, uncomment the addFilterbutton for drawers in populate tool bar
-				elements = PaletteUtil.getAllToolEntries(((PaletteRoot)parentElement)).toArray();
+				elements = PaletteUtil.getAllToolEntries(((PaletteRoot) parentElement)).toArray();
 			}
 
 			return elements;
@@ -1619,9 +1619,9 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 	 * Label provider for palette tools.
 	 * <P>
 	 * We should be using the Palette label provider from GEF, if it was not with visibility "package"...
-	 * 
+	 *
 	 * @see org.eclipse.gef.ui.palette.customize.PaletteLabelProvider </P>
-	 * 
+	 *
 	 */
 	public class PaletteLabelProvider implements ILabelProvider {
 
@@ -1629,13 +1629,13 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		 * {@inheritDoc}
 		 */
 		public Image getImage(Object element) {
-			if(element instanceof PaletteEntry) {
-				ImageDescriptor descriptor = ((PaletteEntry)element).getSmallIcon();
-				if(descriptor == null) {
+			if (element instanceof PaletteEntry) {
+				ImageDescriptor descriptor = ((PaletteEntry) element).getSmallIcon();
+				if (descriptor == null) {
 					return null;
 				}
 				return Activator.getPluginIconImage(Activator.ID, descriptor);
-			} else if(element instanceof Stereotype) {
+			} else if (element instanceof Stereotype) {
 				return Activator.getPluginIconImage(Activator.ID, "/icons/stereotype.gif");
 			}
 			return null;
@@ -1645,10 +1645,10 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		 * {@inheritDoc}
 		 */
 		public String getText(Object element) {
-			if(element instanceof PaletteEntry) {
-				return ((PaletteEntry)element).getLabel();
-			} else if(element instanceof Stereotype) {
-				return ((Stereotype)element).getName();
+			if (element instanceof PaletteEntry) {
+				return ((PaletteEntry) element).getLabel();
+			} else if (element instanceof Stereotype) {
+				return ((Stereotype) element).getName();
 			}
 			return "unknown element";
 		}
@@ -1687,11 +1687,11 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 	 * Label provider for palette tools.
 	 * <P>
 	 * We should be using the Palette label provider from GEF, if it was not with visibility "package"...
-	 * 
+	 *
 	 * @see org.eclipse.gef.ui.palette.customize.PaletteLabelProvider </P>
-	 * 
+	 *
 	 */
-	public class ExtendedPaletteLabelProvider extends CustomizedLabelProvider{
+	public class ExtendedPaletteLabelProvider extends CustomizedLabelProvider {
 
 		/**
 		 * Constructor.
@@ -1711,7 +1711,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		 */
 		@Override
 		public boolean select(Viewer viewer, Object parentElement, Object element) {
-			if(element instanceof PaletteDrawer) {
+			if (element instanceof PaletteDrawer) {
 				return false;
 			}
 			return true;
@@ -1729,7 +1729,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		 */
 		@Override
 		public boolean select(Viewer viewer, Object parentElement, Object element) {
-			if(element instanceof ToolEntry) {
+			if (element instanceof ToolEntry) {
 				return false;
 			}
 			return true;
@@ -1744,20 +1744,20 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 		private CustomizationCatalogManager catalogManager;
 		private ResourceSet catalogManagerResourceSet;
-		
+
 		/**
 		 * Constructor.
 		 */
 		public ExtendedPaletteContentProvider() {
 			super(manager);
-			//TODO: EMFFACET refactor this code
+			// TODO: EMFFACET refactor this code
 			catalogManagerResourceSet = new ResourceSetImpl();
-			catalogManager=(CustomizationCatalogManager)ICustomizationCatalogManagerFactory.DEFAULT.getOrCreateCustomizationCatalogManager(catalogManagerResourceSet);
-			List<Customization> paletteCustomizations =catalogManager.getCustomizationsByName("PaletteConfiguration");
-			if(paletteCustomizations.size()>0) {
-//				manager.setShowTypeOfLinks(false);
-//				manager.registerCustomization(paletteCustomization);
-//				manager.loadCustomizations();
+			catalogManager = (CustomizationCatalogManager) ICustomizationCatalogManagerFactory.DEFAULT.getOrCreateCustomizationCatalogManager(catalogManagerResourceSet);
+			List<Customization> paletteCustomizations = catalogManager.getCustomizationsByName("PaletteConfiguration");
+			if (paletteCustomizations.size() > 0) {
+				// manager.setShowTypeOfLinks(false);
+				// manager.registerCustomization(paletteCustomization);
+				// manager.loadCustomizations();
 			}
 		}
 
@@ -1765,27 +1765,27 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		public void dispose() {
 			super.dispose();
 
-			if(catalogManagerResourceSet != null) {
+			if (catalogManagerResourceSet != null) {
 				EMFHelper.unload(catalogManagerResourceSet);
 				catalogManagerResourceSet = null;
 			}
 
 			catalogManager = null;
 		}
-		
+
 		/**
 		 * {@inheritDoc}
 		 */
 		@Override
 		public Object[] getRootElements(Object inputElement) {
-			if(inputElement instanceof PaletteConfiguration) {
-				return ((PaletteConfiguration)inputElement).getDrawerConfigurations().toArray();
-			} else if(inputElement instanceof Resource) {
-				List<EObject> roots = ((Resource)inputElement).getContents();
-				if(roots != null && !roots.isEmpty()) {
+			if (inputElement instanceof PaletteConfiguration) {
+				return ((PaletteConfiguration) inputElement).getDrawerConfigurations().toArray();
+			} else if (inputElement instanceof Resource) {
+				List<EObject> roots = ((Resource) inputElement).getContents();
+				if (roots != null && !roots.isEmpty()) {
 					EObject rootObject = roots.get(0);
-					if(rootObject instanceof PaletteConfiguration) {
-						return ((PaletteConfiguration)rootObject).getDrawerConfigurations().toArray();
+					if (rootObject instanceof PaletteConfiguration) {
+						return ((PaletteConfiguration) rootObject).getDrawerConfigurations().toArray();
 					}
 				}
 			}
@@ -1798,10 +1798,10 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		@Override
 		public boolean hasChildren(Object element) {
 			Object[] children = getChildren(element);
-			if(children == null) {
+			if (children == null) {
 				return false;
 			}
-			if(children.length == 0) {
+			if (children.length == 0) {
 				return false;
 			}
 			return true;
@@ -1811,12 +1811,12 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Performs all action on finish
-	 * 
+	 *
 	 * @param id
-	 *        the path for the file
+	 *            the path for the file
 	 */
 	public void performFinish(String path) {
-		if(resourceToEdit != null) {
+		if (resourceToEdit != null) {
 			try {
 				resourceToEdit.save(Collections.emptyMap());
 			} catch (IOException e) {
@@ -1824,186 +1824,186 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 			}
 		}
 
-		//		// creates the document
-		//		Document document = createXMLDocumentFromPalettePreview();
-		//		saveDocument(document, path);
+		// // creates the document
+		// Document document = createXMLDocumentFromPalettePreview();
+		// saveDocument(document, path);
 		// requiredProfiles = collectRequiredProfiles();
 	}
 
-	//	/**
-	//	 * collect the required profiles from all tool provided by the local palette definition
-	//	 */
-	//	protected Set<String> collectRequiredProfiles() {
-	//		Set<String> profiles = new HashSet<String>();
-	//		PaletteContainerProxy rootProxy = (PaletteContainerProxy)paletteTreeViewer.getInput();
-	//		collectRequiredProfiles(rootProxy.getChildren(), profiles);
-	//		return profiles;
-	//	}
+	// /**
+	// * collect the required profiles from all tool provided by the local palette definition
+	// */
+	// protected Set<String> collectRequiredProfiles() {
+	// Set<String> profiles = new HashSet<String>();
+	// PaletteContainerProxy rootProxy = (PaletteContainerProxy)paletteTreeViewer.getInput();
+	// collectRequiredProfiles(rootProxy.getChildren(), profiles);
+	// return profiles;
+	// }
 	//
-	//	/**
-	//	 * collect the required profiles from all tool provided by the local palette definition
-	//	 */
-	//	protected void collectRequiredProfiles(List<PaletteEntryProxy> proxies, Set<String> requiredProfiles) {
-	//		for(PaletteEntryProxy proxy : proxies) {
-	//			// add profile(s) if relevant, check for children
+	// /**
+	// * collect the required profiles from all tool provided by the local palette definition
+	// */
+	// protected void collectRequiredProfiles(List<PaletteEntryProxy> proxies, Set<String> requiredProfiles) {
+	// for(PaletteEntryProxy proxy : proxies) {
+	// // add profile(s) if relevant, check for children
 	//
-	//			if(proxy instanceof PaletteAspectToolEntryProxy) {
-	//				// list of profiles
-	//				for(String stereotypeQN : ((PaletteAspectToolEntryProxy)proxy).getStereotypesQNList()) {
-	//					// retrieve list of profiles from the stereotype QN (only remove last segment
-	//					// ?!)
-	//					String profileName = PaletteUtil.findProfileNameFromStereotypeName(stereotypeQN);
-	//					requiredProfiles.add(profileName);
-	//				}
-	//			}
+	// if(proxy instanceof PaletteAspectToolEntryProxy) {
+	// // list of profiles
+	// for(String stereotypeQN : ((PaletteAspectToolEntryProxy)proxy).getStereotypesQNList()) {
+	// // retrieve list of profiles from the stereotype QN (only remove last segment
+	// // ?!)
+	// String profileName = PaletteUtil.findProfileNameFromStereotypeName(stereotypeQN);
+	// requiredProfiles.add(profileName);
+	// }
+	// }
 	//
-	//			if(proxy.getChildren() != null) {
-	//				collectRequiredProfiles(proxy.getChildren(), requiredProfiles);
-	//			}
-	//		}
-	//	}
+	// if(proxy.getChildren() != null) {
+	// collectRequiredProfiles(proxy.getChildren(), requiredProfiles);
+	// }
+	// }
+	// }
 	//
-	//	/**
-	//	 * Saves the xml document into file
-	//	 *
-	//	 * @param document
-	//	 *        the document to save
-	//	 * @param path
-	//	 *        name of the file
-	//	 * @return the file created or updated
-	//	 */
-	//	protected File saveDocument(Document document, String path) {
-	//		File file = null;
-	//		try {
-	//			// create the file that stores the XML configuration
-	//			file = Activator.getDefault().getStateLocation().append(path).toFile();
-	//			TransformerFactory tranFactory = TransformerFactory.newInstance();
-	//			Transformer aTransformer;
+	// /**
+	// * Saves the xml document into file
+	// *
+	// * @param document
+	// * the document to save
+	// * @param path
+	// * name of the file
+	// * @return the file created or updated
+	// */
+	// protected File saveDocument(Document document, String path) {
+	// File file = null;
+	// try {
+	// // create the file that stores the XML configuration
+	// file = Activator.getDefault().getStateLocation().append(path).toFile();
+	// TransformerFactory tranFactory = TransformerFactory.newInstance();
+	// Transformer aTransformer;
 	//
-	//			aTransformer = tranFactory.newTransformer();
+	// aTransformer = tranFactory.newTransformer();
 	//
-	//			Source src = new DOMSource(document);
-	//			Result dest = new StreamResult(file);
-	//			aTransformer.transform(src, dest);
-	//		} catch (TransformerConfigurationException e) {
-	//			Activator.log.error(e);
-	//		} catch (TransformerException e) {
-	//			Activator.log.error(e);
-	//		}
-	//		return file;
+	// Source src = new DOMSource(document);
+	// Result dest = new StreamResult(file);
+	// aTransformer.transform(src, dest);
+	// } catch (TransformerConfigurationException e) {
+	// Activator.log.error(e);
+	// } catch (TransformerException e) {
+	// Activator.log.error(e);
+	// }
+	// return file;
 	//
-	//	}
+	// }
 	//
-	//	/**
-	//	 * Creates the document from the palette preview
-	//	 *
-	//	 * @return the dom structure of the document
-	//	 */
-	//	protected Document createXMLDocumentFromPalettePreview() {
-	//		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-	//		documentBuilderFactory.setNamespaceAware(true);
-	//		DocumentBuilder documentBuilder;
-	//		try {
-	//			documentBuilder = documentBuilderFactory.newDocumentBuilder();
-	//			document = documentBuilder.newDocument();
-	//			Element paletteDefElement = document.createElement(IPapyrusPaletteConstant.PALETTE_DEFINITION);
-	//			document.appendChild(paletteDefElement);
-	//			Element contentElement = document.createElement(IPapyrusPaletteConstant.CONTENT);
-	//			paletteDefElement.appendChild(contentElement);
+	// /**
+	// * Creates the document from the palette preview
+	// *
+	// * @return the dom structure of the document
+	// */
+	// protected Document createXMLDocumentFromPalettePreview() {
+	// DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+	// documentBuilderFactory.setNamespaceAware(true);
+	// DocumentBuilder documentBuilder;
+	// try {
+	// documentBuilder = documentBuilderFactory.newDocumentBuilder();
+	// document = documentBuilder.newDocument();
+	// Element paletteDefElement = document.createElement(IPapyrusPaletteConstant.PALETTE_DEFINITION);
+	// document.appendChild(paletteDefElement);
+	// Element contentElement = document.createElement(IPapyrusPaletteConstant.CONTENT);
+	// paletteDefElement.appendChild(contentElement);
 	//
-	//			generateXMLPaletteContent(document, contentElement);
-	//			return document;
-	//		} catch (ParserConfigurationException e) {
-	//			Activator.getDefault().logError("impossible to create the palette tree viewer content", e);
-	//		}
-	//		return null;
-	//	}
+	// generateXMLPaletteContent(document, contentElement);
+	// return document;
+	// } catch (ParserConfigurationException e) {
+	// Activator.getDefault().logError("impossible to create the palette tree viewer content", e);
+	// }
+	// return null;
+	// }
 	//
-	//	/**
-	//	 * Generates the xml content for the palette
-	//	 *
-	//	 * @param document
-	//	 *        the document to fill
-	//	 * @param contentElement
-	//	 *        the root for the xml content
-	//	 */
-	//	protected void generateXMLPaletteContent(Document document, Element contentElement) {
-	//		PaletteContainerProxy rootProxy = (PaletteContainerProxy)paletteTreeViewer.getInput();
-	//		for(PaletteEntryProxy proxy : rootProxy.getChildren()) {
-	//			generateXMLPaletteContainerProxy(document, contentElement, proxy);
-	//		}
-	//	}
+	// /**
+	// * Generates the xml content for the palette
+	// *
+	// * @param document
+	// * the document to fill
+	// * @param contentElement
+	// * the root for the xml content
+	// */
+	// protected void generateXMLPaletteContent(Document document, Element contentElement) {
+	// PaletteContainerProxy rootProxy = (PaletteContainerProxy)paletteTreeViewer.getInput();
+	// for(PaletteEntryProxy proxy : rootProxy.getChildren()) {
+	// generateXMLPaletteContainerProxy(document, contentElement, proxy);
+	// }
+	// }
 	//
-	//	/**
-	//	 * Generates the xml content for the given container
-	//	 *
-	//	 * @param document
-	//	 *        the document to fill
-	//	 * @param containerProxy
-	//	 *        the entry proxy
-	//	 */
-	//	protected void generateXMLPaletteContainerProxy(Document document, Element contentElement, PaletteEntryProxy containerProxy) {
+	// /**
+	// * Generates the xml content for the given container
+	// *
+	// * @param document
+	// * the document to fill
+	// * @param containerProxy
+	// * the entry proxy
+	// */
+	// protected void generateXMLPaletteContainerProxy(Document document, Element contentElement, PaletteEntryProxy containerProxy) {
 	//
-	//		Element element = null;
-	//		List<PaletteEntryProxy> children = containerProxy.getChildren();
-	//		// generate the element
-	//		switch(containerProxy.getType()) {
-	//		case DRAWER:
-	//			element = document.createElement(IPapyrusPaletteConstant.DRAWER);
-	//			element.setAttribute(IPapyrusPaletteConstant.NAME, containerProxy.getLabel());
-	//			if(containerProxy instanceof PaletteLocalDrawerProxy) {
-	//				element.setAttribute(IPapyrusPaletteConstant.ICON_PATH, ((PaletteLocalDrawerProxy)containerProxy).getImagePath());
-	//			}
-	//			break;
-	//		case TOOL:
-	//			element = document.createElement(IPapyrusPaletteConstant.TOOL);
-	//			break;
-	//		case SEPARATOR:
-	//			element = document.createElement(IPapyrusPaletteConstant.SEPARATOR);
-	//			break;
-	//		case STACK:
-	//			element = document.createElement(IPapyrusPaletteConstant.STACK);
-	//			break;
-	//		case ASPECT_TOOL:
-	//			element = document.createElement(IPapyrusPaletteConstant.ASPECT_TOOL);
-	//			// try to cast the element into PaletteAspectToolEntryProxy
-	//			if(containerProxy instanceof PaletteAspectToolEntryProxy) {
-	//				PaletteAspectToolEntryProxy aspectEntryProxy = (PaletteAspectToolEntryProxy)containerProxy;
-	//				// element.setAttribute(IPapyrusPaletteConstant.ID, aspectEntryProxy.getId());
-	//				element.setAttribute(IPapyrusPaletteConstant.NAME, aspectEntryProxy.getLabel());
-	//				element.setAttribute(IPapyrusPaletteConstant.DESCRIPTION, aspectEntryProxy.getEntry().getDescription());
-	//				element.setAttribute(IPapyrusPaletteConstant.REF_TOOL_ID, aspectEntryProxy.getReferencedPaletteID());
+	// Element element = null;
+	// List<PaletteEntryProxy> children = containerProxy.getChildren();
+	// // generate the element
+	// switch(containerProxy.getType()) {
+	// case DRAWER:
+	// element = document.createElement(IPapyrusPaletteConstant.DRAWER);
+	// element.setAttribute(IPapyrusPaletteConstant.NAME, containerProxy.getLabel());
+	// if(containerProxy instanceof PaletteLocalDrawerProxy) {
+	// element.setAttribute(IPapyrusPaletteConstant.ICON_PATH, ((PaletteLocalDrawerProxy)containerProxy).getImagePath());
+	// }
+	// break;
+	// case TOOL:
+	// element = document.createElement(IPapyrusPaletteConstant.TOOL);
+	// break;
+	// case SEPARATOR:
+	// element = document.createElement(IPapyrusPaletteConstant.SEPARATOR);
+	// break;
+	// case STACK:
+	// element = document.createElement(IPapyrusPaletteConstant.STACK);
+	// break;
+	// case ASPECT_TOOL:
+	// element = document.createElement(IPapyrusPaletteConstant.ASPECT_TOOL);
+	// // try to cast the element into PaletteAspectToolEntryProxy
+	// if(containerProxy instanceof PaletteAspectToolEntryProxy) {
+	// PaletteAspectToolEntryProxy aspectEntryProxy = (PaletteAspectToolEntryProxy)containerProxy;
+	// // element.setAttribute(IPapyrusPaletteConstant.ID, aspectEntryProxy.getId());
+	// element.setAttribute(IPapyrusPaletteConstant.NAME, aspectEntryProxy.getLabel());
+	// element.setAttribute(IPapyrusPaletteConstant.DESCRIPTION, aspectEntryProxy.getEntry().getDescription());
+	// element.setAttribute(IPapyrusPaletteConstant.REF_TOOL_ID, aspectEntryProxy.getReferencedPaletteID());
 	//
-	//				if(aspectEntryProxy.getImagePath() != null && !aspectEntryProxy.getImagePath().equals("")) {
-	//					element.setAttribute(IPapyrusPaletteConstant.ICON_PATH, aspectEntryProxy.getImagePath());
-	//				}
+	// if(aspectEntryProxy.getImagePath() != null && !aspectEntryProxy.getImagePath().equals("")) {
+	// element.setAttribute(IPapyrusPaletteConstant.ICON_PATH, aspectEntryProxy.getImagePath());
+	// }
 	//
 	//
-	//				// add post action, stereotype list
-	//				for(IAspectAction action : ((PaletteAspectToolEntryProxy)containerProxy).getPostActions()) {
-	//					Element postActionNode = document.createElement(IPapyrusPaletteConstant.POST_ACTION);
-	//					postActionNode.setAttribute(IPapyrusPaletteConstant.ID, action.getFactoryId());
-	//					action.save(postActionNode);
-	//					element.appendChild(postActionNode);
-	//				}
-	//			}
-	//		default:
-	//			break;
-	//		}
+	// // add post action, stereotype list
+	// for(IAspectAction action : ((PaletteAspectToolEntryProxy)containerProxy).getPostActions()) {
+	// Element postActionNode = document.createElement(IPapyrusPaletteConstant.POST_ACTION);
+	// postActionNode.setAttribute(IPapyrusPaletteConstant.ID, action.getFactoryId());
+	// action.save(postActionNode);
+	// element.appendChild(postActionNode);
+	// }
+	// }
+	// default:
+	// break;
+	// }
 	//
-	//		element.setAttribute(IPapyrusPaletteConstant.ID, containerProxy.getId());
-	//		contentElement.appendChild(element);
+	// element.setAttribute(IPapyrusPaletteConstant.ID, containerProxy.getId());
+	// contentElement.appendChild(element);
 	//
-	//		if(children != null) {
-	//			for(PaletteEntryProxy proxy : children) {
-	//				generateXMLPaletteContainerProxy(document, element, proxy);
-	//			}
-	//		}
-	//	}
+	// if(children != null) {
+	// for(PaletteEntryProxy proxy : children) {
+	// generateXMLPaletteContainerProxy(document, element, proxy);
+	// }
+	// }
+	// }
 
-	//	public enum EntryType {
-	//		DRAWER, TOOL, STACK, SEPARATOR, ASPECT_TOOL
-	//	}
+	// public enum EntryType {
+	// DRAWER, TOOL, STACK, SEPARATOR, ASPECT_TOOL
+	// }
 
 
 	/**
@@ -2026,21 +2026,21 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 			String label1 = "";
 			String label2 = "";
 
-			if(e1 instanceof PaletteEntry) {
-				label1 = ((PaletteEntry)e1).getLabel();
-			} else if(e1 instanceof Stereotype) {
-				label1 = ((Stereotype)e1).getName();
+			if (e1 instanceof PaletteEntry) {
+				label1 = ((PaletteEntry) e1).getLabel();
+			} else if (e1 instanceof Stereotype) {
+				label1 = ((Stereotype) e1).getName();
 			}
-			if(e2 instanceof PaletteEntry) {
-				label2 = ((PaletteEntry)e2).getLabel();
-			} else if(e2 instanceof Stereotype) {
-				label2 = ((Stereotype)e2).getName();
+			if (e2 instanceof PaletteEntry) {
+				label2 = ((PaletteEntry) e2).getLabel();
+			} else if (e2 instanceof Stereotype) {
+				label2 = ((Stereotype) e2).getName();
 			}
 
-			if(label1 == null) {
+			if (label1 == null) {
 				return 1;
 			}
-			if(label2 == null) {
+			if (label2 == null) {
 				return -1;
 			}
 
@@ -2079,26 +2079,26 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		 */
 		protected void handleSelectionChanged() {
 			int index = profileCombo.getSelectionIndex();
-			if(index < 0 || index >= profileCombo.getItems().length) {
+			if (index < 0 || index >= profileCombo.getItems().length) {
 				return;
 			}
 			String name = profileComboList.get(index);
 
 			Collection<PaletteEntry> standardEntries = getAllVisibleStandardEntries();
 			// retrieve the profile or uml standards tools to display
-			if(UML_TOOLS_LABEL.equals(name)) {
+			if (UML_TOOLS_LABEL.equals(name)) {
 				// change content provider
 				availableToolsViewer.setContentProvider(new UMLToolsTreeContentProvider());
 				availableToolsViewer.setInput(standardEntries);
 				toggleContentProvider.setEnabled(false);
 			} else {
-				if(toggleContentProvider != null && !toggleContentProvider.isDisposed()) {
+				if (toggleContentProvider != null && !toggleContentProvider.isDisposed()) {
 					toggleContentProvider.setEnabled(true);
 				}
 				// switch content provider
 				// this is a profile in case of uml2 tools
 				Profile profile = getAllAppliedProfiles().get(index);
-				if(toggleContentProvider.getSelection()) {
+				if (toggleContentProvider.getSelection()) {
 					availableToolsViewer.setContentProvider(new ProfileToolsStereotypeMetaclassTreeContentProvider(profile, standardEntries));
 				} else {
 					availableToolsViewer.setContentProvider(new ProfileToolsMetaclassStereotypeTreeContentProvider(profile, standardEntries));
@@ -2121,11 +2121,11 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 		/**
 		 * Creates a new ProfileToolsStereotypeMetaclassTreeContentProvider.
-		 * 
+		 *
 		 * @param profile
-		 *        the profile for which tools are built
+		 *            the profile for which tools are built
 		 * @param standardEntries
-		 *        list of standard uml tools palette entries
+		 *            list of standard uml tools palette entries
 		 */
 		public ProfileToolsStereotypeMetaclassTreeContentProvider(Profile profile, Collection<PaletteEntry> standardEntries) {
 			this.standardEntries = standardEntries;
@@ -2135,29 +2135,30 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		 * {@inheritDoc}
 		 */
 		public Object[] getChildren(Object parentElement) {
-			if(parentElement instanceof Profile) {
-				return ((Profile)parentElement).getOwnedStereotypes().toArray();
-			} else if(parentElement instanceof Stereotype) {
+			if (parentElement instanceof Profile) {
+				return ((Profile) parentElement).getOwnedStereotypes().toArray();
+			} else if (parentElement instanceof Stereotype) {
 				List<PaletteEntry> entries = new ArrayList<PaletteEntry>();
-				Stereotype stereotype = (Stereotype)parentElement;
+				Stereotype stereotype = (Stereotype) parentElement;
 
-				for(PaletteEntry entry : standardEntries) {
+				for (PaletteEntry entry : standardEntries) {
 					// retrieve the element type created by the tool.
-					if(entry instanceof CombinedTemplateCreationEntry) {
+					if (entry instanceof CombinedTemplateCreationEntry) {
 
-						EClass toolMetaclass = PaletteUtil.getToolMetaclass((CombinedTemplateCreationEntry)entry);
-						if(toolMetaclass != null) {
+						EClass toolMetaclass = PaletteUtil.getToolMetaclass((CombinedTemplateCreationEntry) entry);
+						if (toolMetaclass != null) {
 							List<Class> metaclasses = stereotype.getAllExtendedMetaclasses();
-							for(Class stMetaclass : metaclasses) {
+							for (Class stMetaclass : metaclasses) {
 								// get Eclass
 								java.lang.Class<?> metaclassClass = stMetaclass.getClass();
-								if(metaclassClass != null) {
+								if (metaclassClass != null) {
 									EClassifier metaClassifier = UMLPackage.eINSTANCE.getEClassifier(stMetaclass.getName());
-									if(((EClass)metaClassifier).isSuperTypeOf(toolMetaclass)) {
+									if (((EClass) metaClassifier).isSuperTypeOf(toolMetaclass)) {
 										// should create the palette entry
 										Map<Object, Object> properties = new HashMap<Object, Object>();
 										properties.put(IPapyrusPaletteConstant.ASPECT_ACTION_KEY, StereotypeAspectActionProvider.createConfigurationNode(stereotype.getQualifiedName()));
-										AspectCreationEntry aspectEntry = new AspectCreationEntry(stereotype.getName() + " (" + entry.getLabel() + ")", "Create an element with a stereotype", entry.getId() + "_" + System.currentTimeMillis(), entry.getSmallIcon(), (CombinedTemplateCreationEntry)entry, properties);
+										AspectCreationEntry aspectEntry = new AspectCreationEntry(stereotype.getName() + " (" + entry.getLabel() + ")", "Create an element with a stereotype", entry.getId() + "_" + System.currentTimeMillis(),
+												entry.getSmallIcon(), (CombinedTemplateCreationEntry) entry, properties);
 										entries.add(aspectEntry);
 									}
 								}
@@ -2176,8 +2177,8 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		 * {@inheritDoc}
 		 */
 		public Object getParent(Object element) {
-			if(element instanceof Stereotype) {
-				return ((Stereotype)element).getProfile();
+			if (element instanceof Stereotype) {
+				return ((Stereotype) element).getProfile();
 			}
 			return null;
 		}
@@ -2186,9 +2187,9 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		 * {@inheritDoc}
 		 */
 		public boolean hasChildren(Object element) {
-			if(element instanceof Profile) {
+			if (element instanceof Profile) {
 				return true;
-			} else if(element instanceof Stereotype) {
+			} else if (element instanceof Stereotype) {
 				return true;
 			}
 			return false;
@@ -2198,8 +2199,8 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		 * {@inheritDoc}
 		 */
 		public Object[] getElements(Object inputElement) {
-			if(inputElement instanceof Profile) {
-				List<Stereotype> stereotypes = ((Profile)inputElement).getOwnedStereotypes();
+			if (inputElement instanceof Profile) {
+				List<Stereotype> stereotypes = ((Profile) inputElement).getOwnedStereotypes();
 				return stereotypes.toArray();
 			}
 			return new Object[0];
@@ -2234,11 +2235,11 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 		/**
 		 * Creates a new ProfileToolsMetaclassStereotypeTreeContentProvider.
-		 * 
+		 *
 		 * @param profile
-		 *        the profile for which tools are built
+		 *            the profile for which tools are built
 		 * @param standardEntries
-		 *        list of standard uml tools palette entries
+		 *            list of standard uml tools palette entries
 		 */
 		public ProfileToolsMetaclassStereotypeTreeContentProvider(Profile profile, Collection<PaletteEntry> standardEntries) {
 			this.profile = profile;
@@ -2249,28 +2250,29 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		 * {@inheritDoc}
 		 */
 		public Object[] getChildren(Object parentElement) {
-			if(parentElement instanceof Profile) {
+			if (parentElement instanceof Profile) {
 				return standardEntries.toArray();
-			} else if(parentElement instanceof AspectCreationEntry) {
+			} else if (parentElement instanceof AspectCreationEntry) {
 				return new Object[0];
-			} else if(parentElement instanceof PaletteEntry) {
+			} else if (parentElement instanceof PaletteEntry) {
 				List<AspectCreationEntry> entries = new ArrayList<AspectCreationEntry>();
 				// display all stereotypes applicable to the type of element created by this tool
-				if(parentElement instanceof CombinedTemplateCreationEntry) {
-					CombinedTemplateCreationEntry entry = (CombinedTemplateCreationEntry)parentElement;
+				if (parentElement instanceof CombinedTemplateCreationEntry) {
+					CombinedTemplateCreationEntry entry = (CombinedTemplateCreationEntry) parentElement;
 					EClass toolMetaclass = PaletteUtil.getToolMetaclass(entry);
-					if(toolMetaclass != null) {
-						for(Stereotype stereotype : profile.getOwnedStereotypes()) {
+					if (toolMetaclass != null) {
+						for (Stereotype stereotype : profile.getOwnedStereotypes()) {
 							List<Class> metaclasses = stereotype.getAllExtendedMetaclasses();
-							for(Class stMetaclass : metaclasses) {
+							for (Class stMetaclass : metaclasses) {
 								// get Eclass
 								EClassifier metaClassifier = UMLPackage.eINSTANCE.getEClassifier(stMetaclass.getName());
-								if(((EClass)metaClassifier).isSuperTypeOf(toolMetaclass)) {
+								if (((EClass) metaClassifier).isSuperTypeOf(toolMetaclass)) {
 									// should create the palette entry
 									Map<Object, Object> properties = new HashMap<Object, Object>();
 									// ArrayList<String> stereotypesQNToApply = new ArrayList<String>();
 									properties.put(IPapyrusPaletteConstant.ASPECT_ACTION_KEY, StereotypeAspectActionProvider.createConfigurationNode(stereotype.getQualifiedName()));
-									AspectCreationEntry aspectEntry = new AspectCreationEntry(stereotype.getName() + " (" + entry.getLabel() + ")", "Create an element with a stereotype", entry.getId() + "_" + System.currentTimeMillis(), entry.getSmallIcon(), entry, properties);
+									AspectCreationEntry aspectEntry = new AspectCreationEntry(stereotype.getName() + " (" + entry.getLabel() + ")", "Create an element with a stereotype", entry.getId() + "_" + System.currentTimeMillis(), entry.getSmallIcon(),
+											entry, properties);
 									entries.add(aspectEntry);
 								}
 							}
@@ -2287,8 +2289,8 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		 * {@inheritDoc}
 		 */
 		public Object getParent(Object element) {
-			if(element instanceof Stereotype) {
-				return ((Stereotype)element).getProfile();
+			if (element instanceof Stereotype) {
+				return ((Stereotype) element).getProfile();
 			}
 			return null;
 		}
@@ -2297,11 +2299,11 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		 * {@inheritDoc}
 		 */
 		public boolean hasChildren(Object element) {
-			if(element instanceof Profile) {
+			if (element instanceof Profile) {
 				return true;
-			} else if(element instanceof AspectCreationEntry) {
+			} else if (element instanceof AspectCreationEntry) {
 				return false;
-			} else if(element instanceof PaletteEntry) {
+			} else if (element instanceof PaletteEntry) {
 				return true;
 			}
 			return false;
@@ -2311,7 +2313,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		 * {@inheritDoc}
 		 */
 		public Object[] getElements(Object inputElement) {
-			if(inputElement instanceof Profile) {
+			if (inputElement instanceof Profile) {
 				return standardEntries.toArray();
 			}
 			return new Object[0];
@@ -2335,14 +2337,14 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Returns the list of all visible palette entries
-	 * 
+	 *
 	 * @return the list of all visible palette entries
 	 */
 	protected Collection<PaletteEntry> getAllVisibleStandardEntries() {
 		HashSet<PaletteEntry> result = new HashSet<PaletteEntry>();
-		for(PaletteEntry entry : PaletteUtil.getAvailableEntriesSet(editorPart, priority).values()) {
+		for (PaletteEntry entry : PaletteUtil.getAvailableEntriesSet(editorPart, priority).values()) {
 			// the entry is not just a defineOnly entry but a visible one
-			if(getRootParent(entry) != null) {
+			if (getRootParent(entry) != null) {
 				result.add(entry);
 			}
 		}
@@ -2351,16 +2353,16 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 	/**
 	 * Returns the Root element for the palette entry. It searches recursively from parent to parent, until it find the root element
-	 * 
+	 *
 	 * @param entry
-	 *        the palette entry for which root element is searched
+	 *            the palette entry for which root element is searched
 	 * @return the root element or <code>null</code> if none was found
 	 */
 	protected PaletteRoot getRootParent(PaletteEntry entry) {
 		PaletteContainer parent = entry.getParent();
-		if(parent instanceof PaletteRoot) {
-			return (PaletteRoot)parent;
-		} else if(parent != null) {
+		if (parent instanceof PaletteRoot) {
+			return (PaletteRoot) parent;
+		} else if (parent != null) {
 			return getRootParent(parent);
 		} else {
 			return null;
@@ -2374,7 +2376,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 
 		/**
 		 * Checks if the button should be enable or not
-		 * 
+		 *
 		 * @return <code>true</code> if the button should be enable
 		 */
 		public abstract boolean isEnable();

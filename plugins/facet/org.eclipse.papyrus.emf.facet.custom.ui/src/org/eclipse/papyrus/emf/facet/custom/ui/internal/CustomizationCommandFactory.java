@@ -1,11 +1,11 @@
 /**
  *  Copyright (c) 2012 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
  *      Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning
@@ -21,6 +21,13 @@ import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomFactory;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementSwitchQuery;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.exception.CustomizationEditRuntimeException;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.exported.ICustomizationCommandFactory;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.EFacetFactory;
@@ -32,16 +39,9 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Q
 import org.eclipse.papyrus.emf.facet.util.emf.core.command.ICommandFactoryResult;
 import org.eclipse.papyrus.emf.facet.util.emf.core.command.ICommandFactoryResultFactory;
 import org.eclipse.papyrus.emf.facet.util.emf.core.internal.exported.ICommandFactory;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomFactory;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementSwitchQuery;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization;
 
 public class CustomizationCommandFactory implements ICustomizationCommandFactory {
-	
+
 	private static final String CONFORM_ATT_NAME = "isConforming"; //$NON-NLS-1$
 	private final EditingDomain editingDomain;
 	private final ICommandFactory commandFactory;
@@ -71,17 +71,17 @@ public class CustomizationCommandFactory implements ICustomizationCommandFactory
 						eClassCustom,
 						EFacetPackage.eINSTANCE
 								.getFacet_ExtendedMetaclass(),
-								customedEClass);
+						customedEClass);
 		resultCmd.append(linkToEClass);
 		if (conformanceQuery != null) {
 			final ICommandFactoryResult<FacetAttribute> attResult = createConformanceOperation(eClassCustom, conformanceQuery);
 			resultCmd.append(attResult.getCommand());
 		}
-		
+
 		return ICommandFactoryResultFactory.DEFAULT.createCommandFactoryResult(resultCmd, eClassCustom);
 	}
 
-	//TODO Move to FacetCommandFactory
+	// TODO Move to FacetCommandFactory
 	private ICommandFactoryResult<FacetAttribute> createConformanceOperation(final Facet facet, final Query query) {
 		final CompoundCommand resultCmd = new CompoundCommand("Creates a facet conformance attribute"); //$NON-NLS-1$
 		final FacetAttribute conformanceAtt = EFacetFactory.eINSTANCE.createFacetAttribute();
@@ -89,7 +89,7 @@ public class CustomizationCommandFactory implements ICustomizationCommandFactory
 		conformanceAtt.setEType(EcorePackage.eINSTANCE.getEBoolean());
 		conformanceAtt.setQuery(query);
 		conformanceAtt.setDerived(true);
-		
+
 		final Command conformance = this.commandFactory.createSetCommand(this.editingDomain, facet, EFacetPackage.eINSTANCE.getFacet_ConformanceTypedElement(), conformanceAtt);
 		resultCmd.append(conformance);
 		final Command addToFacet = this.commandFactory.createAddCommand(this.editingDomain, facet, EFacetPackage.eINSTANCE.getFacet_FacetElements(), conformanceAtt);
@@ -113,7 +113,7 @@ public class CustomizationCommandFactory implements ICustomizationCommandFactory
 						customization,
 						CustomPackage.eINSTANCE
 								.getFacetCustomization_CustomizedFacet(),
-								customizedFacet);
+						customizedFacet);
 		resultCmd.append(linkToFacet);
 		return ICommandFactoryResultFactory.DEFAULT.createCommandFactoryResult(resultCmd, eFacetCustom);
 	}
@@ -169,13 +169,13 @@ public class CustomizationCommandFactory implements ICustomizationCommandFactory
 		facetOperation.setEType(customProperty.getEType());
 		facetOperation.setLowerBound(customProperty.getLowerBound());
 		facetOperation.setUpperBound(customProperty.getUpperBound());
-		
+
 		// add the "eStructuralFeature" EParameter that every customization operation must have
 		final EParameter eParameter = EcoreFactory.eINSTANCE.createEParameter();
 		eParameter.setName("eStructuralFeature"); //$NON-NLS-1$
 		eParameter.setEType(EcorePackage.eINSTANCE.getETypedElement());
 		facetOperation.getEParameters().add(eParameter);
-		
+
 		final ETypedElementSwitchQuery switchQuery = CustomFactory.eINSTANCE.createETypedElementSwitchQuery();
 		// Link the instance of ETypedElementSwitchQuery to its parent
 		final Command switchToParent = this.commandFactory
@@ -219,7 +219,7 @@ public class CustomizationCommandFactory implements ICustomizationCommandFactory
 			final ETypedElement customizedTElt) {
 		ETypedElementCase caseToModify = null;
 		for (ETypedElementCase casee : switchQuery.getCases()) {
-			//casee has to be null if we want to customize the EObject itself.
+			// casee has to be null if we want to customize the EObject itself.
 			if (casee.getCase() == null) {
 				if (customizedTElt == null) {
 					caseToModify = casee;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,8 +31,8 @@ import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -53,9 +53,10 @@ public class ConstraintPropertyEditHelperAdvice extends AbstractStereotypedEleme
 
 		return new ConfigureElementCommand(request) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				NamedElement element = (NamedElement)request.getElementToConfigure();
-				if(element != null) {
+				NamedElement element = (NamedElement) request.getElementToConfigure();
+				if (element != null) {
 					StereotypeApplicationHelper.INSTANCE.applyStereotype(element, ConstraintsPackage.eINSTANCE.getConstraintProperty());
 
 					// Set default name
@@ -64,7 +65,7 @@ public class ConstraintPropertyEditHelperAdvice extends AbstractStereotypedEleme
 					element.setName(initializedName);
 					// SysML constraint : self.ownedAttribute->forAll(p | p.type.oclIsKindOf(ConstraintBlock) implies p.aggregation = #composite)
 					if (element instanceof Property) {
-						((Property)element).setAggregation(AggregationKind.COMPOSITE_LITERAL);
+						((Property) element).setAggregation(AggregationKind.COMPOSITE_LITERAL);
 					}
 				}
 				return CommandResult.newOKCommandResult(element);
@@ -79,15 +80,15 @@ public class ConstraintPropertyEditHelperAdvice extends AbstractStereotypedEleme
 	protected ICommand getBeforeSetCommand(SetRequest request) {
 
 		// Only allow ConstraintBlock or null as new type
-		if(UMLPackage.eINSTANCE.getTypedElement_Type().equals(request.getFeature())) {
-			if(request.getValue() != null) {
+		if (UMLPackage.eINSTANCE.getTypedElement_Type().equals(request.getFeature())) {
+			if (request.getValue() != null) {
 
-				if(!(request.getValue() instanceof Element)) {
+				if (!(request.getValue() instanceof Element)) {
 					return UnexecutableCommand.INSTANCE;
 				}
 
-				ConstraintBlock constraint = UMLUtil.getStereotypeApplication((Element)request.getValue(), ConstraintBlock.class);
-				if(constraint == null) {
+				ConstraintBlock constraint = UMLUtil.getStereotypeApplication((Element) request.getValue(), ConstraintBlock.class);
+				if (constraint == null) {
 					return UnexecutableCommand.INSTANCE;
 				}
 			}
@@ -107,11 +108,11 @@ public class ConstraintPropertyEditHelperAdvice extends AbstractStereotypedEleme
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				Property sourcePart = (Property)request.getElementToConfigure();
-				if((sourcePart != null) && (sourcePart.eContainer() != null)) {
+				Property sourcePart = (Property) request.getElementToConfigure();
+				if ((sourcePart != null) && (sourcePart.eContainer() != null)) {
 
 					sourcePart.setAggregation(AggregationKind.COMPOSITE_LITERAL);
-					
+
 					// Create association between element owner and element type
 					Type sourceType = resolveTypeContainer(sourcePart);
 					Package associationContainer = sourceType.getNearestPackage();
@@ -143,7 +144,7 @@ public class ConstraintPropertyEditHelperAdvice extends AbstractStereotypedEleme
 					eContainer = ((Property) eContainer).getType();
 				}
 				if (eContainer instanceof Type) {
-					return (Type)eContainer;
+					return (Type) eContainer;
 				}
 				return null;
 			}

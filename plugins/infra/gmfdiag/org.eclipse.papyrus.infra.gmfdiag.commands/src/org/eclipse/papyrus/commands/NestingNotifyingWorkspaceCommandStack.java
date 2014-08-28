@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - adapted for self-nesting behaviour
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.commands;
 
@@ -26,9 +26,9 @@ public class NestingNotifyingWorkspaceCommandStack extends NotifyingWorkspaceCom
 	private NestingNotifyingWorkspaceCommandStack childCommandStack;
 
 	private final boolean nested;
-	
+
 	private boolean executing;
-	
+
 	protected IUndoContext defaultUndoContext;
 
 	public NestingNotifyingWorkspaceCommandStack(IOperationHistory history) {
@@ -60,25 +60,25 @@ public class NestingNotifyingWorkspaceCommandStack extends NotifyingWorkspaceCom
 
 	@Override
 	public IUndoContext getDefaultUndoContext() {
-		if(defaultUndoContext == null) {
+		if (defaultUndoContext == null) {
 			return super.getDefaultUndoContext();
 		}
 		return defaultUndoContext;
 	}
 
 	protected NestingNotifyingWorkspaceCommandStack getTopMostCommandStack() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			return this;
 		}
 		return childCommandStack.getTopMostCommandStack();
 	}
 
 	protected void startNestedTransaction(Command command) {
-		if(childCommandStack != null) {
-			//Forwards to the current stack
+		if (childCommandStack != null) {
+			// Forwards to the current stack
 			childCommandStack.startNestedTransaction(command);
 		} else {
-			//Start a new nested transaction in a new nested Stack
+			// Start a new nested transaction in a new nested Stack
 			childCommandStack = createNestedCommandStack(getOperationHistory());
 			childCommandStack.setEditingDomain(getDomain());
 
@@ -89,22 +89,22 @@ public class NestingNotifyingWorkspaceCommandStack extends NotifyingWorkspaceCom
 	protected NestingNotifyingWorkspaceCommandStack createNestedCommandStack(IOperationHistory history) {
 		return new NestingNotifyingWorkspaceCommandStack(true, history);
 	}
-	
+
 	public void commit() {
-		if(childCommandStack != null) {
+		if (childCommandStack != null) {
 			disposeLastCommandStack();
 		}
 	}
 
 	private boolean disposeLastCommandStack() {
-		if(childCommandStack == null) {
-			//I'm the last command stack
+		if (childCommandStack == null) {
+			// I'm the last command stack
 			dispose();
 			return true;
 		}
 
-		//Propagates
-		if(childCommandStack.disposeLastCommandStack()) {
+		// Propagates
+		if (childCommandStack.disposeLastCommandStack()) {
 			childCommandStack = null;
 		}
 
@@ -112,7 +112,7 @@ public class NestingNotifyingWorkspaceCommandStack extends NotifyingWorkspaceCom
 	}
 
 	public void rollback() {
-		if(childCommandStack != null) {
+		if (childCommandStack != null) {
 			while (canUndo()) {
 				undo();
 			}
@@ -122,8 +122,8 @@ public class NestingNotifyingWorkspaceCommandStack extends NotifyingWorkspaceCom
 
 	@Override
 	public void execute(Command command) {
-		if(childCommandStack == null) {
-			if(!executing) {
+		if (childCommandStack == null) {
+			if (!executing) {
 				executing = true;
 
 				try {
@@ -146,18 +146,18 @@ public class NestingNotifyingWorkspaceCommandStack extends NotifyingWorkspaceCom
 			childCommandStack.execute(command);
 		}
 	}
-	
+
 	@Override
 	protected void handleError(Exception exception) {
 		if (nested && (exception instanceof RollbackException)) {
-			//A nested transaction rolled back
+			// A nested transaction rolled back
 			RollbackException rbe = (RollbackException) exception;
 			if (rbe.getStatus().getSeverity() == IStatus.CANCEL) {
 				// Propagate
 				throw new OperationCanceledException();
 			}
 		}
-		
+
 		if (exception instanceof OperationCanceledException) {
 			rollback();
 		} else {
@@ -167,7 +167,7 @@ public class NestingNotifyingWorkspaceCommandStack extends NotifyingWorkspaceCom
 
 	@Override
 	public Command getMostRecentCommand() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			return super.getMostRecentCommand();
 		} else {
 			return childCommandStack.getMostRecentCommand();
@@ -176,7 +176,7 @@ public class NestingNotifyingWorkspaceCommandStack extends NotifyingWorkspaceCom
 
 	@Override
 	public Command getRedoCommand() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			return super.getRedoCommand();
 		} else {
 			return childCommandStack.getRedoCommand();
@@ -185,7 +185,7 @@ public class NestingNotifyingWorkspaceCommandStack extends NotifyingWorkspaceCom
 
 	@Override
 	public Command getUndoCommand() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			return super.getUndoCommand();
 		} else {
 			return childCommandStack.getUndoCommand();
@@ -194,7 +194,7 @@ public class NestingNotifyingWorkspaceCommandStack extends NotifyingWorkspaceCom
 
 	@Override
 	public void undo() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			super.undo();
 		} else {
 			childCommandStack.undo();
@@ -203,7 +203,7 @@ public class NestingNotifyingWorkspaceCommandStack extends NotifyingWorkspaceCom
 
 	@Override
 	public boolean canUndo() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			return super.canUndo();
 		} else {
 			return childCommandStack.canUndo();
@@ -212,7 +212,7 @@ public class NestingNotifyingWorkspaceCommandStack extends NotifyingWorkspaceCom
 
 	@Override
 	public boolean canRedo() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			return super.canRedo();
 		} else {
 			return childCommandStack.canRedo();
@@ -221,7 +221,7 @@ public class NestingNotifyingWorkspaceCommandStack extends NotifyingWorkspaceCom
 
 	@Override
 	public void redo() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			super.redo();
 		} else {
 			childCommandStack.redo();

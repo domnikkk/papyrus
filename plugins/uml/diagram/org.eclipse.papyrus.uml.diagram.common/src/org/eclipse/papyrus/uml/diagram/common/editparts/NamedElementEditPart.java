@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.NamedElement;
 /**
  * this editpart manage the font and icon of the name label and qualified name
  * label.
- * 
+ *
  */
 public abstract class NamedElementEditPart extends UMLNodeEditPart implements IUMLNamedElementEditPart {
 
@@ -51,12 +51,13 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 		super(view);
 	}
 
+	@Override
 	public NamedElement getNamedElement() {
 		return (NamedElement) getUMLElement();
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -92,12 +93,12 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 
 	protected void refreshLabelDisplay() {
 		View view = getNotationView();
-		//SVGNodePlate can be null!
-		if( svgNodePlate!=null){
-			if(svgNodePlate.hasLabelBounds()){
+		// SVGNodePlate can be null!
+		if (svgNodePlate != null) {
+			if (svgNodePlate.hasLabelBounds()) {
 				getNodeNamedElementFigure().getNameLabel().setTextWrap(true);
 			}
-			else{
+			else {
 				getNodeNamedElementFigure().getNameLabel().setTextWrap(false);
 			}
 		}
@@ -126,7 +127,7 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 	/**
 	 * A method to specify the labels to be update when the font is refreshed.
 	 * Subclasses should call super.refreshLabelsFont(font)
-	 * 
+	 *
 	 * @param font
 	 *            the font to use
 	 */
@@ -150,7 +151,7 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override

@@ -36,11 +36,11 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	@Override
 	public void refreshDisplay() {
 		// calls the helper for this edit Part
-		ConnectionEditPart lp = (ConnectionEditPart)getHost();
+		ConnectionEditPart lp = (ConnectionEditPart) getHost();
 		List<?> children = lp.getChildren();
-		for(Object p : children) {
-			if(p instanceof ICustomMessageLabel) {
-				MessageLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart)p);
+		for (Object p : children) {
+			if (p instanceof ICustomMessageLabel) {
+				MessageLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart) p);
 			}
 		}
 	}
@@ -57,8 +57,8 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	@Override
 	public Message getUMLElement() {
-		if(hostSemanticElement instanceof Message) {
-			return ((Message)hostSemanticElement);
+		if (hostSemanticElement instanceof Message) {
+			return ((Message) hostSemanticElement);
 		}
 		return null;
 	}
@@ -69,36 +69,36 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 		this.defaultValueListener = new DefaultValueListener();
 		Message e = getUMLElement();
 		// check host semantic element is not null
-		if(e == null || e.getSignature() == null) {
+		if (e == null || e.getSignature() == null) {
 			return;
 		}
 		hookMessageSignature(e.getSignature());
 		EList<ValueSpecification> argments = e.getArguments();
-		for(ValueSpecification v : argments) {
-			if(v instanceof EObject) {
+		for (ValueSpecification v : argments) {
+			if (v instanceof EObject) {
 				getDiagramEventBroker().addNotificationListener(v, this);
 			}
 		}
 	}
 
 	private void hookMessageSignature(NamedElement sig) {
-		if(sig == null) {
+		if (sig == null) {
 			return;
 		}
-		if(sig instanceof Operation) {
-			Operation operation = (Operation)sig;
+		if (sig instanceof Operation) {
+			Operation operation = (Operation) sig;
 			getDiagramEventBroker().addNotificationListener(operation, this);
 			// adds a listener to the element itself, and to linked elements, like Type
-			for(Parameter parameter : operation.getOwnedParameters()) {
+			for (Parameter parameter : operation.getOwnedParameters()) {
 				getDiagramEventBroker().addNotificationListener(parameter, this);
 				getDiagramEventBroker().addNotificationListener(parameter.getDefaultValue(), defaultValueListener);
 				// should also add this element as a listener of parameter type
 				getDiagramEventBroker().addNotificationListener(parameter.getType(), this);
 			}
-		} else if(sig instanceof Signal) {
-			Signal signal = (Signal)sig;
+		} else if (sig instanceof Signal) {
+			Signal signal = (Signal) sig;
 			getDiagramEventBroker().addNotificationListener(signal, this);
-			for(Property property : signal.getOwnedAttributes()) {
+			for (Property property : signal.getOwnedAttributes()) {
 				getDiagramEventBroker().addNotificationListener(property, this);
 				getDiagramEventBroker().addNotificationListener(property.getDefaultValue(), defaultValueListener);
 				// should also add this element as a listener of parameter type
@@ -112,35 +112,35 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 		super.removeAdditionalListeners();
 		Message e = getUMLElement();
 		// check host semantic element is not null
-		if(e == null || e.getSignature() == null) {
+		if (e == null || e.getSignature() == null) {
 			return;
 		}
 		unhookMessageSignature(e.getSignature());
 		EList<ValueSpecification> argments = e.getArguments();
-		for(ValueSpecification v : argments) {
-			if(v instanceof EObject) {
+		for (ValueSpecification v : argments) {
+			if (v instanceof EObject) {
 				getDiagramEventBroker().removeNotificationListener(v, this);
 			}
 		}
 	}
 
 	private void unhookMessageSignature(NamedElement sig) {
-		if(sig == null) {
+		if (sig == null) {
 			return;
 		}
-		if(sig instanceof Operation) {
-			Operation operation = (Operation)sig;
+		if (sig instanceof Operation) {
+			Operation operation = (Operation) sig;
 			getDiagramEventBroker().removeNotificationListener(operation, this);
-			for(Parameter parameter : operation.getOwnedParameters()) {
+			for (Parameter parameter : operation.getOwnedParameters()) {
 				getDiagramEventBroker().removeNotificationListener(parameter, this);
 				getDiagramEventBroker().removeNotificationListener(parameter.getDefaultValue(), defaultValueListener);
 				// remove parameter type listener
 				getDiagramEventBroker().removeNotificationListener(parameter.getType(), this);
 			}
-		} else if(sig instanceof Signal) {
-			Signal signal = (Signal)sig;
+		} else if (sig instanceof Signal) {
+			Signal signal = (Signal) sig;
 			getDiagramEventBroker().removeNotificationListener(signal, this);
-			for(Property property : signal.getOwnedAttributes()) {
+			for (Property property : signal.getOwnedAttributes()) {
 				getDiagramEventBroker().removeNotificationListener(property, this);
 				getDiagramEventBroker().removeNotificationListener(property.getDefaultValue(), defaultValueListener);
 				// remove parameter type listener
@@ -155,57 +155,57 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 		final Object object = notification.getNotifier();
 		Message e = getUMLElement();
 		// check host semantic element is not null
-		if(e == null) {
+		if (e == null) {
 			return;
 		}
-		if(UMLPackage.Literals.MESSAGE__ARGUMENT.equals(notification.getFeature())) {
+		if (UMLPackage.Literals.MESSAGE__ARGUMENT.equals(notification.getFeature())) {
 			parameterListChange(notification);
 			return;
-		} else if(e.getArguments().contains(object)) {
+		} else if (e.getArguments().contains(object)) {
 			refreshDisplay();
 			return;
 		}
 		NamedElement sig = e.getSignature();
-		if(sig instanceof Operation) {
-			Operation operation = (Operation)sig;
-			if(object.equals(operation)) {
+		if (sig instanceof Operation) {
+			Operation operation = (Operation) sig;
+			if (object.equals(operation)) {
 				notifyOperationChanged(operation, notification);
-			} else if(isParameter(object, operation)) {
+			} else if (isParameter(object, operation)) {
 				notifyParameterChanged(notification);
-			} else if(isParameterType(object, operation)) {
+			} else if (isParameterType(object, operation)) {
 				notifyTypeChanged(notification);
 			}
-		} else if(sig instanceof Signal) {
-			Signal signal = (Signal)sig;
-			if(object.equals(signal)) {
+		} else if (sig instanceof Signal) {
+			Signal signal = (Signal) sig;
+			if (object.equals(signal)) {
 				notifySignalChanged(signal, notification);
-			} else if(isProperty(object, signal)) {
+			} else if (isProperty(object, signal)) {
 				notifyPropertyChanged(notification);
-			} else if(isPropertyType(object, signal)) {
+			} else if (isPropertyType(object, signal)) {
 				notifyTypeChanged(notification);
-			} else if(object instanceof ValueSpecification) {
-				Element own = ((ValueSpecification)object).getOwner();
-				if(isProperty(own, signal)) {
+			} else if (object instanceof ValueSpecification) {
+				Element own = ((ValueSpecification) object).getOwner();
+				if (isProperty(own, signal)) {
 					refreshDisplay(); // may be default value
 				}
 			}
 		}
-		if(isMaskManagedAnnotation(object)) {
+		if (isMaskManagedAnnotation(object)) {
 			refreshDisplay();
-		} else if(isRemovedMaskManagedLabelAnnotation(object, notification)) {
+		} else if (isRemovedMaskManagedLabelAnnotation(object, notification)) {
 			refreshDisplay();
-		} else if(sig == null && object instanceof Message && notification.getFeature().equals(UMLPackage.eINSTANCE.getNamedElement_Name())) {
+		} else if (sig == null && object instanceof Message && notification.getFeature().equals(UMLPackage.eINSTANCE.getNamedElement_Name())) {
 			refreshDisplay();
 		}
-		//Try to update label when signature of message changed.
-		else if(UMLPackage.eINSTANCE.getMessage_Signature() == notification.getFeature()) {
+		// Try to update label when signature of message changed.
+		else if (UMLPackage.eINSTANCE.getMessage_Signature() == notification.getFeature()) {
 			Object oldValue = notification.getOldValue();
-			if(oldValue instanceof NamedElement) {
-				unhookMessageSignature((NamedElement)oldValue);
+			if (oldValue instanceof NamedElement) {
+				unhookMessageSignature((NamedElement) oldValue);
 			}
 			Object newValue = notification.getNewValue();
-			if(newValue instanceof NamedElement) {
-				hookMessageSignature((NamedElement)newValue);
+			if (newValue instanceof NamedElement) {
+				hookMessageSignature((NamedElement) newValue);
 			}
 			refreshDisplay();
 		}
@@ -220,13 +220,13 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	}
 
 	private void notifyPropertyChanged(Notification notification) {
-		switch(notification.getFeatureID(Property.class)) {
+		switch (notification.getFeatureID(Property.class)) {
 		case UMLPackage.PROPERTY__DEFAULT_VALUE: // set or unset default value
-			if(notification.getOldValue() instanceof EObject) {
-				getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), defaultValueListener);
+			if (notification.getOldValue() instanceof EObject) {
+				getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), defaultValueListener);
 			}
-			if(notification.getNewValue() instanceof EObject) {
-				getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), defaultValueListener);
+			if (notification.getNewValue() instanceof EObject) {
+				getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), defaultValueListener);
 			}
 			refreshDisplay();
 			break;
@@ -249,20 +249,20 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	/**
 	 * notifies that a parameter of the operation has changed.
-	 * 
+	 *
 	 * @param parameter
-	 *        the {@link Parameter} that has changed
+	 *            the {@link Parameter} that has changed
 	 * @param notification
-	 *        the notification send when the element has been changed
+	 *            the notification send when the element has been changed
 	 */
 	protected void notifyParameterChanged(Notification notification) {
-		switch(notification.getFeatureID(Parameter.class)) {
+		switch (notification.getFeatureID(Parameter.class)) {
 		case UMLPackage.PARAMETER__DEFAULT_VALUE:
-			if(notification.getOldValue() instanceof EObject) {
-				getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), defaultValueListener);
+			if (notification.getOldValue() instanceof EObject) {
+				getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), defaultValueListener);
 			}
-			if(notification.getNewValue() instanceof EObject) {
-				getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), defaultValueListener);
+			if (notification.getNewValue() instanceof EObject) {
+				getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), defaultValueListener);
 			}
 			refreshDisplay();
 			break;
@@ -286,34 +286,34 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	}
 
 	protected void parameterListChange(Notification notification) {
-		switch(notification.getEventType()) {
+		switch (notification.getEventType()) {
 		// if it is added => adds listener to the type element
 		case Notification.ADD:
-			getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+			getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 			refreshDisplay();
 			// if it is removed => removes listener from the type element
 			break;
 		case Notification.ADD_MANY:
-			if(notification.getNewValue() instanceof List<?>) {
-				List<?> addedElements = (List<?>)notification.getNewValue();
-				for(Object addedElement : addedElements) {
-					if(addedElement instanceof EObject) {
-						getDiagramEventBroker().addNotificationListener((EObject)addedElement, this);
+			if (notification.getNewValue() instanceof List<?>) {
+				List<?> addedElements = (List<?>) notification.getNewValue();
+				for (Object addedElement : addedElements) {
+					if (addedElement instanceof EObject) {
+						getDiagramEventBroker().addNotificationListener((EObject) addedElement, this);
 					}
 				}
 			}
 			refreshDisplay();
 			break;
 		case Notification.REMOVE:
-			getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+			getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 			refreshDisplay();
 			break;
 		case Notification.REMOVE_MANY:
-			if(notification.getOldValue() instanceof List<?>) {
-				List<?> removedElements = (List<?>)notification.getOldValue();
-				for(Object removedElement : removedElements) {
-					if(removedElement instanceof EObject) {
-						getDiagramEventBroker().removeNotificationListener((EObject)removedElement, this);
+			if (notification.getOldValue() instanceof List<?>) {
+				List<?> removedElements = (List<?>) notification.getOldValue();
+				for (Object removedElement : removedElements) {
+					if (removedElement instanceof EObject) {
+						getDiagramEventBroker().removeNotificationListener((EObject) removedElement, this);
 					}
 				}
 			}
@@ -322,11 +322,11 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 		// if it is set, remove the old one and adds the new one. this is the method use when
 		// the type is set or removed...
 		case Notification.SET:
-			if(notification.getNewValue() != null) {
-				getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+			if (notification.getNewValue() != null) {
+				getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 			}
-			if(notification.getOldValue() != null) {
-				getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+			if (notification.getOldValue() != null) {
+				getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 			}
 			refreshDisplay();
 		default:
@@ -336,15 +336,15 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	/**
 	 * notifies that a parameter of the operation has changed.
-	 * 
+	 *
 	 * @param parameter
-	 *        the {@link Parameter} that has changed
+	 *            the {@link Parameter} that has changed
 	 * @param notification
-	 *        the notification send when the element has been changed
+	 *            the notification send when the element has been changed
 	 */
 	protected void notifyTypeChanged(Notification notification) {
 		// should be type.class, but seems to be a bug if this is put instead.
-		switch(notification.getFeatureID(notification.getNotifier().getClass())) {
+		switch (notification.getFeatureID(notification.getNotifier().getClass())) {
 		case UMLPackage.TYPE__NAME:
 		case UMLPackage.TYPE__TEMPLATE_PARAMETER:
 		case UMLPackage.TYPE__VISIBILITY:
@@ -358,14 +358,14 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	/**
 	 * notifies that the the property has changed.
-	 * 
+	 *
 	 * @param operation
-	 *        the operation that has changed
+	 *            the operation that has changed
 	 * @param notification
-	 *        the notification send when the element has been changed
+	 *            the notification send when the element has been changed
 	 */
 	protected void notifyOperationChanged(Operation operation, Notification notification) {
-		switch(notification.getFeatureID(Operation.class)) {
+		switch (notification.getFeatureID(Operation.class)) {
 		case UMLPackage.OPERATION__NAME:
 		case UMLPackage.OPERATION__VISIBILITY:
 		case UMLPackage.OPERATION__IS_UNIQUE:
@@ -386,7 +386,7 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	}
 
 	private void notifySignalChanged(Signal signal, Notification notification) {
-		switch(notification.getFeatureID(Signal.class)) {
+		switch (notification.getFeatureID(Signal.class)) {
 		case UMLPackage.SIGNAL__NAME:
 		case UMLPackage.SIGNAL__VISIBILITY:
 			refreshDisplay();
@@ -402,19 +402,19 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	/**
 	 * Checks if the given object is one of the parameter type of the operation
-	 * 
+	 *
 	 * @param object
-	 *        the object to test
+	 *            the object to test
 	 * @param operation
 	 * @return <code>true</code> if the object corresponds to the type of a parameter of the
 	 *         operation
 	 */
 	protected boolean isParameterType(Object object, Operation operation) {
-		if(!(object instanceof Type)) {
+		if (!(object instanceof Type)) {
 			return false;
 		}
-		for(Parameter parameter : operation.getOwnedParameters()) {
-			if(object.equals(parameter.getType())) {
+		for (Parameter parameter : operation.getOwnedParameters()) {
+			if (object.equals(parameter.getType())) {
 				return true;
 			}
 		}
@@ -423,25 +423,25 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	/**
 	 * Checks if the given object is one of the parameter of the operation
-	 * 
+	 *
 	 * @param object
-	 *        the object to test
+	 *            the object to test
 	 * @param operation
 	 * @return <code>true</code> if the object is a parameter of the operation
 	 */
 	protected boolean isParameter(Object object, Operation operation) {
-		if(!(object instanceof Parameter)) {
+		if (!(object instanceof Parameter)) {
 			return false;
 		}
 		return operation.getOwnedParameters().contains(object);
 	}
 
 	private boolean isPropertyType(Object object, Signal signal) {
-		if(!(object instanceof Type)) {
+		if (!(object instanceof Type)) {
 			return false;
 		}
-		for(Property property : signal.getOwnedAttributes()) {
-			if(object.equals(property.getType())) {
+		for (Property property : signal.getOwnedAttributes()) {
+			if (object.equals(property.getType())) {
 				return true;
 			}
 		}
@@ -449,7 +449,7 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	}
 
 	private boolean isProperty(Object object, Signal signal) {
-		if(!(object instanceof Property)) {
+		if (!(object instanceof Property)) {
 			return false;
 		}
 		return signal.getOwnedAttributes().contains(object);

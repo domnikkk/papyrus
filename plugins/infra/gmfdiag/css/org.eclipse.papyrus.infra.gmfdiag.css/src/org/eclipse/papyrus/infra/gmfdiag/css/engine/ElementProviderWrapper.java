@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ import org.w3c.dom.Element;
 
 /**
  * Provides an Element for a GMF Notation object.
- * 
+ *
  * @author Camille Letavernier
  */
 @SuppressWarnings("restriction")
@@ -43,12 +43,13 @@ public class ElementProviderWrapper implements IElementProvider {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @param element
-	 *        A GMF View
+	 *            A GMF View
 	 * @param engine
-	 *        An ExtendedCSSEngine
+	 *            An ExtendedCSSEngine
 	 */
+	@Override
 	public Element getElement(Object element, CSSEngine engine) {
 		return delegate.getElement(element, engine);
 	}
@@ -57,13 +58,13 @@ public class ElementProviderWrapper implements IElementProvider {
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_POINT);
 
 
-		//Ordered Factories (Map of Lists to allow equalities)
+		// Ordered Factories (Map of Lists to allow equalities)
 		SortedMap<Integer, List<ICSSElementProviderFactory>> sortedFactories = new TreeMap<Integer, List<ICSSElementProviderFactory>>();
 
-		for(IConfigurationElement e : config) {
+		for (IConfigurationElement e : config) {
 			try {
 				final int order = Integer.parseInt(e.getAttribute("order")); //$NON-NLS-1$
-				final ICSSElementProviderFactory factory = (ICSSElementProviderFactory)e.createExecutableExtension("factory"); //$NON-NLS-1$
+				final ICSSElementProviderFactory factory = (ICSSElementProviderFactory) e.createExecutableExtension("factory"); //$NON-NLS-1$
 
 				getFactories(sortedFactories, order).add(factory);
 			} catch (Exception ex) {
@@ -71,9 +72,9 @@ public class ElementProviderWrapper implements IElementProvider {
 			}
 		}
 
-		//SortedMap to List
+		// SortedMap to List
 		List<ICSSElementProviderFactory> factories = new LinkedList<ICSSElementProviderFactory>();
-		for(List<ICSSElementProviderFactory> factoriesEntry : sortedFactories.values()) {
+		for (List<ICSSElementProviderFactory> factoriesEntry : sortedFactories.values()) {
 			factories.addAll(factoriesEntry);
 		}
 
@@ -81,15 +82,15 @@ public class ElementProviderWrapper implements IElementProvider {
 	}
 
 	private List<ICSSElementProviderFactory> getFactories(Map<Integer, List<ICSSElementProviderFactory>> sortedFactories, int order) {
-		if(!sortedFactories.containsKey(order)) {
+		if (!sortedFactories.containsKey(order)) {
 			sortedFactories.put(order, new LinkedList<ICSSElementProviderFactory>());
 		}
 		return sortedFactories.get(order);
 	}
 
 	private IElementProvider getElementProviderFor(CSSDiagram diagram) {
-		for(ICSSElementProviderFactory providerFactory : getCSSElementProviders()) {
-			if(providerFactory.isProviderFor(diagram)) {
+		for (ICSSElementProviderFactory providerFactory : getCSSElementProviders()) {
+			if (providerFactory.isProviderFor(diagram)) {
 				return providerFactory.createProvider(diagram);
 			}
 		}

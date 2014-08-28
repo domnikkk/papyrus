@@ -18,7 +18,7 @@ package org.eclipse.papyrus.emf.facet.util.core.internal.exported;
  */
 public interface IFilter<T> {
 	// This class has been copied from org.eclipse.papyrus.emf.facet.infra.common.core.internal.utils.IFilter
-	
+
 	/**
 	 * @param object
 	 *            an element to be filtered

@@ -219,5 +219,5 @@ public enum BooleanValue implements Enumerator
   {
     return literal;
   }
-  
+
 } //BooleanValue

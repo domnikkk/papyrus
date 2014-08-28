@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,23 +37,24 @@ import org.eclipse.papyrus.uml.diagram.composite.edit.parts.BehaviorPortLinkEdit
  */
 public class CreateBehaviorPortCommand extends RecordingCommand {
 
-	protected View owner=null; 
+	protected View owner = null;
 	protected View portView;
-	protected Rectangle position=null;
+	protected Rectangle position = null;
+
 	public CreateBehaviorPortCommand(TransactionalEditingDomain domain, View owner, View portView, Rectangle position) {
 		super(domain, "Create Behavior Port");
-		this.owner=owner;
-		this.portView=portView;
-		this.position=position;
+		this.owner = owner;
+		this.portView = portView;
+		this.position = position;
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void doExecute() {
-		//create the node
+		// create the node
 		Node node = NotationFactory.eINSTANCE.createShape();
 		node.setVisible(true);
-		Bounds bounds=NotationFactory.eINSTANCE.createBounds();
+		Bounds bounds = NotationFactory.eINSTANCE.createBounds();
 		bounds.setX(position.x);
 		bounds.setY(position.y);
 		bounds.setWidth(30);
@@ -62,12 +63,12 @@ public class CreateBehaviorPortCommand extends RecordingCommand {
 		TitleStyle ts = NotationFactory.eINSTANCE.createTitleStyle();
 		ts.setShowTitle(true);
 		node.getStyles().add(ts);
-		node.setType(""+BehaviorPortEditPart.VISUAL_ID);
+		node.setType("" + BehaviorPortEditPart.VISUAL_ID);
 		node.setElement(portView.getElement());
 
 		ViewUtil.insertChildView(owner, node, ViewUtil.APPEND, true);
 
-		//create the link
+		// create the link
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
@@ -76,8 +77,8 @@ public class CreateBehaviorPortCommand extends RecordingCommand {
 		points.add(new RelativeBendpoint());
 		bendpoints.setPoints(points);
 		edge.setBendpoints(bendpoints);
-		ViewUtil.insertChildView((View)owner.getDiagram(), edge, -1, true);
-		edge.setType(""+BehaviorPortLinkEditPart.VISUAL_ID);
+		ViewUtil.insertChildView(owner.getDiagram(), edge, -1, true);
+		edge.setType("" + BehaviorPortLinkEditPart.VISUAL_ID);
 		IdentityAnchor anchor = NotationFactory.eINSTANCE.createIdentityAnchor();
 		edge.setSourceAnchor(anchor);
 		anchor = NotationFactory.eINSTANCE.createIdentityAnchor();

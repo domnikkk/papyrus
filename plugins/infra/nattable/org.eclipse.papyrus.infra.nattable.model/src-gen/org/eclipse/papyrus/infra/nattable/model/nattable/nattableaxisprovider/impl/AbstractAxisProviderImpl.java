@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -15,19 +15,13 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.i
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.EModelElementImpl;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.IAxis;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.AbstractAxisProvider;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.NattableaxisproviderPackage;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.NattableconfigurationPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableNamedElement;
 
@@ -38,12 +32,11 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.T
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.impl.AbstractAxisProviderImpl#getDescription <em>Description
- * </em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.impl.AbstractAxisProviderImpl#getDescription <em>Description </em>}</li>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.impl.AbstractAxisProviderImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class AbstractAxisProviderImpl extends EModelElementImpl implements AbstractAxisProvider {
@@ -52,7 +45,7 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -63,7 +56,7 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -74,7 +67,7 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -85,7 +78,7 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -95,7 +88,7 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AbstractAxisProviderImpl() {
@@ -105,7 +98,7 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,9 +109,10 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -126,22 +120,25 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableaxisproviderPackage.ABSTRACT_AXIS_PROVIDER__DESCRIPTION, oldDescription, description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -149,22 +146,25 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableaxisproviderPackage.ABSTRACT_AXIS_PROVIDER__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<IAxis> getAxis() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -174,12 +174,12 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisproviderPackage.ABSTRACT_AXIS_PROVIDER__DESCRIPTION:
 			return getDescription();
 		case NattableaxisproviderPackage.ABSTRACT_AXIS_PROVIDER__NAME:
@@ -191,17 +191,17 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisproviderPackage.ABSTRACT_AXIS_PROVIDER__DESCRIPTION:
-			setDescription((String)newValue);
+			setDescription((String) newValue);
 			return;
 		case NattableaxisproviderPackage.ABSTRACT_AXIS_PROVIDER__NAME:
-			setName((String)newValue);
+			setName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -210,12 +210,12 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisproviderPackage.ABSTRACT_AXIS_PROVIDER__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
@@ -229,12 +229,12 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisproviderPackage.ABSTRACT_AXIS_PROVIDER__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case NattableaxisproviderPackage.ABSTRACT_AXIS_PROVIDER__NAME:
@@ -246,13 +246,13 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if(baseClass == TableNamedElement.class) {
-			switch(derivedFeatureID) {
+		if (baseClass == TableNamedElement.class) {
+			switch (derivedFeatureID) {
 			case NattableaxisproviderPackage.ABSTRACT_AXIS_PROVIDER__DESCRIPTION:
 				return NattableconfigurationPackage.TABLE_NAMED_ELEMENT__DESCRIPTION;
 			case NattableaxisproviderPackage.ABSTRACT_AXIS_PROVIDER__NAME:
@@ -267,13 +267,13 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if(baseClass == TableNamedElement.class) {
-			switch(baseFeatureID) {
+		if (baseClass == TableNamedElement.class) {
+			switch (baseFeatureID) {
 			case NattableconfigurationPackage.TABLE_NAMED_ELEMENT__DESCRIPTION:
 				return NattableaxisproviderPackage.ABSTRACT_AXIS_PROVIDER__DESCRIPTION;
 			case NattableconfigurationPackage.TABLE_NAMED_ELEMENT__NAME:
@@ -288,12 +288,12 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch(operationID) {
+		switch (operationID) {
 		case NattableaxisproviderPackage.ABSTRACT_AXIS_PROVIDER___GET_AXIS:
 			return getAxis();
 		}
@@ -303,13 +303,14 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: "); //$NON-NLS-1$
@@ -320,4 +321,4 @@ public abstract class AbstractAxisProviderImpl extends EModelElementImpl impleme
 		return result.toString();
 	}
 
-} //AbstractAxisProviderImpl
+} // AbstractAxisProviderImpl

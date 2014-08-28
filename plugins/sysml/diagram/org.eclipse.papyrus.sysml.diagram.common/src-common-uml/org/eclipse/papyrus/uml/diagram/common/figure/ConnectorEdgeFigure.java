@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -38,6 +38,7 @@ public class ConnectorEdgeFigure extends NamedElementEdgeFigure {
 	/**
 	 * Creates the contents.
 	 */
+	@Override
 	protected void createContents() {
 		super.createContents();
 
@@ -55,16 +56,17 @@ public class ConnectorEdgeFigure extends NamedElementEdgeFigure {
 
 	/**
 	 * Gets the applied stereotype association label.
-	 * 
+	 *
 	 * @return the applied stereotype association label
 	 */
+	@Override
 	public WrappingLabel getAppliedStereotypeLabel() {
 		return appliedStereotypeLabel;
 	}
 
 	/**
 	 * Gets the multiplicity source label.
-	 * 
+	 *
 	 * @return the multiplicity source label
 	 */
 	public WrappingLabel getSourceMultiplicityLabel() {
@@ -73,7 +75,7 @@ public class ConnectorEdgeFigure extends NamedElementEdgeFigure {
 
 	/**
 	 * Gets the multiplicity target label.
-	 * 
+	 *
 	 * @return the multiplicity target label
 	 */
 	public WrappingLabel getTargetMultiplicityLabel() {

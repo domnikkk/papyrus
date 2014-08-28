@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,9 +33,9 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionFlowPortImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionFlowPortImpl#getDefaultValue <em>Default Value</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionFlowPortImpl#getDirection <em>Direction</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionFlowPortImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionFlowPortImpl#getDefaultValue <em>Default Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionFlowPortImpl#getDirection <em>Direction</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,6 +47,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDefaultValue()
 	 * @generated
 	 * @ordered
@@ -57,6 +58,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -66,6 +68,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -74,6 +77,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FunctionFlowPortImpl() {
@@ -82,18 +86,18 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public EADatatype basicGetType() {
 		EADatatype dataType = null;
 
-		if(getBase_Port() != null) {
+		if (getBase_Port() != null) {
 			Type umlType = getBase_Port().getType();
 
-			
-			if(umlType != null) {
-				dataType = (EADatatype)UMLUtil.getStereotypeApplication(umlType, EADatatype.class);
+
+			if (umlType != null) {
+				dataType = UMLUtil.getStereotypeApplication(umlType, EADatatype.class);
 			}
 		}
 
@@ -103,15 +107,18 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAValue getDefaultValue() {
 		if (defaultValue != null && defaultValue.eIsProxy()) {
-			InternalEObject oldDefaultValue = (InternalEObject)defaultValue;
-			defaultValue = (EAValue)eResolveProxy(oldDefaultValue);
+			InternalEObject oldDefaultValue = (InternalEObject) defaultValue;
+			defaultValue = (EAValue) eResolveProxy(oldDefaultValue);
 			if (defaultValue != oldDefaultValue) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FunctionmodelingPackage.FUNCTION_FLOW_PORT__DEFAULT_VALUE, oldDefaultValue, defaultValue));
+				}
 			}
 		}
 		return defaultValue;
@@ -120,6 +127,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAValue basicGetDefaultValue() {
@@ -129,20 +137,25 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDefaultValue(EAValue newDefaultValue) {
 		EAValue oldDefaultValue = defaultValue;
 		defaultValue = newDefaultValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_FLOW_PORT__DEFAULT_VALUE, oldDefaultValue, defaultValue));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EADirectionKind getDirection() {
 		return direction;
 	}
@@ -150,47 +163,56 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDirection(EADirectionKind newDirection) {
 		EADirectionKind oldDirection = direction;
 		direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_FLOW_PORT__DIRECTION, oldDirection, direction));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FunctionmodelingPackage.FUNCTION_FLOW_PORT__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
-			case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DEFAULT_VALUE:
-				if (resolve) return getDefaultValue();
-				return basicGetDefaultValue();
-			case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DIRECTION:
-				return getDirection();
+		case FunctionmodelingPackage.FUNCTION_FLOW_PORT__TYPE:
+			if (resolve) {
+				return getType();
+			}
+			return basicGetType();
+		case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DEFAULT_VALUE:
+			if (resolve) {
+				return getDefaultValue();
+			}
+			return basicGetDefaultValue();
+		case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DIRECTION:
+			return getDirection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FunctionmodelingPackage.FUNCTION_FLOW_PORT__TYPE:
-				return basicGetType() != null;
-			case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DEFAULT_VALUE:
-				return defaultValue != null;
-			case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DIRECTION:
-				return direction != DIRECTION_EDEFAULT;
+		case FunctionmodelingPackage.FUNCTION_FLOW_PORT__TYPE:
+			return basicGetType() != null;
+		case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DEFAULT_VALUE:
+			return defaultValue != null;
+		case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DIRECTION:
+			return direction != DIRECTION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -198,11 +220,14 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (direction: ");
@@ -213,23 +238,25 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DEFAULT_VALUE:
-				setDefaultValue((EAValue)newValue);
-				return;
-			case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DIRECTION:
-				setDirection((EADirectionKind)newValue);
-				return;
+		case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DEFAULT_VALUE:
+			setDefaultValue((EAValue) newValue);
+			return;
+		case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DIRECTION:
+			setDirection((EADirectionKind) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,17 +267,18 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DEFAULT_VALUE:
-				setDefaultValue((EAValue)null);
-				return;
-			case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DIRECTION:
-				setDirection(DIRECTION_EDEFAULT);
-				return;
+		case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DEFAULT_VALUE:
+			setDefaultValue((EAValue) null);
+			return;
+		case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DIRECTION:
+			setDirection(DIRECTION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -258,25 +286,28 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public String getName() {
 		return getBase_Port().getName();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EADatatype getType() {
 		EADatatype type = basicGetType();
-		return type != null && type.eIsProxy() ? (EADatatype)eResolveProxy((InternalEObject)type) : type;
+		return type != null && type.eIsProxy() ? (EADatatype) eResolveProxy((InternalEObject) type) : type;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public boolean isIsAtomic() {
@@ -287,9 +318,10 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void setName(String newName) {
 	}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.uml2.uml.ExtensionEnd;
 /**
  * An IObservableValue for handling the UML ExtensionEnd#multiplicity
  * The multiplicity can only be either 1 or 0..1
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ExtensionEndMultiplicityObservableValue extends MultiplicityObservableValue {
 
@@ -35,7 +35,7 @@ public class ExtensionEndMultiplicityObservableValue extends MultiplicityObserva
 
 	@Override
 	public Command getCommand(Object value) {
-		if(MultiplicityParser.ONE.equals(value) || MultiplicityParser.OPTIONAL.equals(value)) {
+		if (MultiplicityParser.ONE.equals(value) || MultiplicityParser.OPTIONAL.equals(value)) {
 			return super.getCommand(value);
 		}
 

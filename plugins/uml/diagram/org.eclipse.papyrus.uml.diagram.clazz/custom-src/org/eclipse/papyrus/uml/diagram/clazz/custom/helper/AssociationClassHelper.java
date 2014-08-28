@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -122,7 +122,7 @@ public class AssociationClassHelper extends ElementHelper {
 
 	/**
 	 * Instantiates a new association class helper.
-	 * 
+	 *
 	 * @param editDomain
 	 *            the edit domain
 	 */
@@ -132,7 +132,7 @@ public class AssociationClassHelper extends ElementHelper {
 
 	/**
 	 * Drop association class.
-	 * 
+	 *
 	 * @param associationClass
 	 *            the association class the semantic element
 	 * @param viewer
@@ -143,7 +143,7 @@ public class AssociationClassHelper extends ElementHelper {
 	 *            the location of the drop
 	 * @param containerView
 	 *            the container view that will contain the associationClass views
-	 * 
+	 *
 	 * @return the command
 	 */
 	public Command dropAssociationClass(AssociationClass associationClass, EditPartViewer viewer, PreferencesHint diagramPreferencesHint, Point location, View containerView) {
@@ -229,12 +229,12 @@ public class AssociationClassHelper extends ElementHelper {
 	/**
 	 * This method is used to produce a set of commands in charge of the creation of
 	 * AssociationClass.
-	 * 
+	 *
 	 * @param createConnectionViewAndElementRequest
 	 *            the create connection view and element request
 	 * @param command
 	 *            the command that is used to create the link associationClass
-	 * 
+	 *
 	 * @return the set of command to create an association Class
 	 */
 	public Command getAssociationClassElementCommand(CreateConnectionViewAndElementRequest createConnectionViewAndElementRequest, Command command) {

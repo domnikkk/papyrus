@@ -41,9 +41,9 @@ public class BooleanCheckbox extends AbstractValueEditor {
 	 * value, represented as a Checkbox.
 	 *
 	 * @param parent
-	 *        This editor's parent composite
+	 *            This editor's parent composite
 	 * @param style
-	 *        The style applied to this editor's checkbox
+	 *            The style applied to this editor's checkbox
 	 */
 	public BooleanCheckbox(Composite parent, int style) {
 		this(parent, style, null);
@@ -55,11 +55,11 @@ public class BooleanCheckbox extends AbstractValueEditor {
 	 * value, represented as a Checkbox, with the given label
 	 *
 	 * @param parent
-	 *        This editor's parent composite
+	 *            This editor's parent composite
 	 * @param style
-	 *        The style applied to this editor's checkbox
+	 *            The style applied to this editor's checkbox
 	 * @param label
-	 *        The label for this editor
+	 *            The label for this editor
 	 */
 	public BooleanCheckbox(Composite parent, int style, String label) {
 		super(parent);
@@ -78,12 +78,12 @@ public class BooleanCheckbox extends AbstractValueEditor {
 	public void setModelObservable(IObservableValue modelProperty) {
 		IObservableValue newWidgetObservable;
 
-		if(this.widgetObservable != null) {
+		if (this.widgetObservable != null) {
 			this.widgetObservable.dispose();
 		}
 
-		if(modelProperty instanceof AggregatedObservable) {
-			this.aggregated = (AggregatedObservable)modelProperty;
+		if (modelProperty instanceof AggregatedObservable) {
+			this.aggregated = (AggregatedObservable) modelProperty;
 			newWidgetObservable = new GrayedCheckboxObservableValue(checkbox, aggregated);
 		} else {
 			newWidgetObservable = WidgetProperties.selection().observe(checkbox);
@@ -133,10 +133,10 @@ public class BooleanCheckbox extends AbstractValueEditor {
 	 * Sets this widget's value
 	 *
 	 * @param selected
-	 *        Whether the checkbox should be selected or not
+	 *            Whether the checkbox should be selected or not
 	 */
 	public void setValue(Boolean selected) {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			modelProperty.setValue(selected);
 		}
 		widgetObservable.setValue(selected);

@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 422257
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.tests.qvt;
 
@@ -35,8 +35,8 @@ import org.eclipse.papyrus.customization.properties.generation.generators.IGener
 import org.eclipse.papyrus.customization.properties.generation.generators.ProfileGenerator;
 import org.eclipse.papyrus.customization.properties.model.xwt.resource.XWTResource;
 import org.eclipse.papyrus.customization.properties.tests.Activator;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.junit.utils.ProjectUtils;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.views.properties.contexts.Context;
 import org.eclipse.papyrus.views.properties.root.PropertiesRoot;
 import org.eclipse.papyrus.views.properties.runtime.ConfigurationManager;
@@ -63,7 +63,7 @@ public class TransformationsTests extends AbstractPapyrusTest {
 	private static IProject targetProject;
 
 	private IGenerator generator;
-	
+
 	@BeforeClass
 	public static void init() throws CoreException {
 		targetProject = ProjectUtils.createProject(Activator.PLUGIN_ID + ".testProject");
@@ -82,7 +82,7 @@ public class TransformationsTests extends AbstractPapyrusTest {
 			generator = null;
 		}
 	}
-	
+
 	@Test
 	public void handleXWTFileFromResource() {
 		//From an XWT Resource

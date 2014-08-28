@@ -3,16 +3,15 @@
  */
 package org.eclipse.papyrus.uml.textedit.parameter.xtext.ui;
 
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.ui.internal.UmlParameterActivator;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
-import org.eclipse.papyrus.uml.textedit.parameter.xtext.ui.internal.UmlParameterActivator;
-
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class UmlParameterExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
@@ -20,10 +19,10 @@ public class UmlParameterExecutableExtensionFactory extends AbstractGuiceAwareEx
 	protected Bundle getBundle() {
 		return UmlParameterActivator.getInstance().getBundle();
 	}
-	
+
 	@Override
 	protected Injector getInjector() {
 		return UmlParameterActivator.getInstance().getInjector(UmlParameterActivator.ORG_ECLIPSE_PAPYRUS_UML_TEXTEDIT_PARAMETER_XTEXT_UMLPARAMETER);
 	}
-	
+
 }

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -100,37 +100,38 @@ public class AnimationUtils {
 	 * markers used to enable semantic elements animation at runtime
 	 */
 	public synchronized void removeAllAnimationMarker() {
-		for(EObject animatedObject : eObjectToAnimationMarker.keySet()) {
+		for (EObject animatedObject : eObjectToAnimationMarker.keySet()) {
 			this.removeAnimationMarker(animatedObject);
 		}
 	}
 
 	/**
 	 * Returns an instance of AnimationUtils. Guarantees that AnimationUtils is instantiated only once.
-	 * 
+	 *
 	 * @return An instance of AnimationUtils
 	 */
 	public static AnimationUtils getInstance() {
-		if(eInstance == null)
+		if (eInstance == null) {
 			eInstance = new AnimationUtils();
+		}
 		return eInstance;
 	}
 
 	/**
 	 * Retrieves all diagrams in which the given model element has a graphical representation
-	 * 
+	 *
 	 * @param modelElement
-	 *        The model element for which diagrams where it appears have to be retrieved
+	 *            The model element for which diagrams where it appears have to be retrieved
 	 * @return all diagrams in which the given model element has a graphical representation
 	 */
 	public synchronized List<Diagram> getDiagrams(EObject modelElement) {
 		List<Diagram> matchingDiagrams = eObjectToDiagrams.get(modelElement);
-		if(matchingDiagrams != null) {
+		if (matchingDiagrams != null) {
 			return matchingDiagrams;
 		}
 
 		Resource resource = modelElement.eResource();
-		if(!resource.getURI().isPlatformResource()) {
+		if (!resource.getURI().isPlatformResource()) {
 			matchingDiagrams = new ArrayList<Diagram>();
 			eObjectToDiagrams.put(modelElement, new ArrayList<Diagram>());
 			return matchingDiagrams;
@@ -146,25 +147,25 @@ public class AnimationUtils {
 		Map<EObject, Collection<Setting>> maps = EcoreUtil.UsageCrossReferencer.findAll(matchingObjects, resourceSet);
 		matchingDiagrams = new ArrayList<Diagram>();
 
-		for(Object key : maps.keySet()) {
-			for(Setting setting : maps.get(key)) {
-				if(setting.getEObject() instanceof View) {
-					Diagram diagram = ((View)setting.getEObject()).getDiagram();
-					if(!matchingDiagrams.contains(diagram)) {
+		for (Object key : maps.keySet()) {
+			for (Setting setting : maps.get(key)) {
+				if (setting.getEObject() instanceof View) {
+					Diagram diagram = ((View) setting.getEObject()).getDiagram();
+					if (!matchingDiagrams.contains(diagram)) {
 						matchingDiagrams.add(diagram);
 					}
 					// For optimization purposes,
 					// Add mapping entries for other semantic elements
 					// having a representation in this diagram
-					for(Iterator<EObject> i = diagram.eAllContents(); i.hasNext();) {
+					for (Iterator<EObject> i = diagram.eAllContents(); i.hasNext();) {
 						EObject cddView = i.next();
-						if(cddView instanceof View) {
-							EObject element = ((View)cddView).getElement();
-							if(element != modelElement && element != null) {
+						if (cddView instanceof View) {
+							EObject element = ((View) cddView).getElement();
+							if (element != modelElement && element != null) {
 								List<Diagram> diags = eObjectToDiagrams.get(element);
-								if(diags == null) {
+								if (diags == null) {
 									diags = new ArrayList<Diagram>();
-								} else if(!diags.contains(diagram)) {
+								} else if (!diags.contains(diagram)) {
 									diags.add(diagram);
 								}
 								eObjectToDiagrams.put(element, diags);
@@ -182,7 +183,7 @@ public class AnimationUtils {
 
 	/**
 	 * Returns true if some diagrams with graphical representation of the given model element exist, false otherwise
-	 * 
+	 *
 	 * @param modelElement
 	 * @return true if some diagrams with graphical representation of the given model element exist, false otherwise
 	 */
@@ -193,9 +194,9 @@ public class AnimationUtils {
 	/**
 	 * In the case where the list of diagrams for the given modelElement has already been retrieved,
 	 * resets this list
-	 * 
+	 *
 	 * @param modelElement
-	 *        The model element for which the list of diagrams has to be reset
+	 *            The model element for which the list of diagrams has to be reset
 	 */
 	public void resetDiagrams(EObject modelElement) {
 		eObjectToDiagrams.remove(modelElement);
@@ -207,20 +208,20 @@ public class AnimationUtils {
 	 * openDiagram is called by MokaDebugModelPresentation.addAnnotations(), which is always called after MokaDebugModelPresentation.getEditorInput()
 	 * is called.
 	 * MokaDebugModelPresentation.getEditorInput() returns a FileEditorInput for the .di model to which the given Diagram belongs.
-	 * 
+	 *
 	 * @param diagram
-	 *        The diagram to be opened.
+	 *            The diagram to be opened.
 	 */
 	public void openDiagram(final Diagram diagram, boolean closeOpenedDiagrams) {
 		IEditorPart part = EditorUtils.getEditorPart(diagram);
-		ServicesRegistry servicesRegistry = (ServicesRegistry)part.getAdapter(ServicesRegistry.class);
+		ServicesRegistry servicesRegistry = (ServicesRegistry) part.getAdapter(ServicesRegistry.class);
 		try {
 			final IPageManager pageMngr = ServiceUtils.getInstance().getIPageManager(servicesRegistry);
 			try {
-				if(pageMngr.isOpen(diagram)) {
+				if (pageMngr.isOpen(diagram)) {
 					pageMngr.selectPage(diagram);
 				} else {
-					TransactionalEditingDomain domain = (TransactionalEditingDomain)EMFHelper.resolveEditingDomain(diagram);
+					TransactionalEditingDomain domain = (TransactionalEditingDomain) EMFHelper.resolveEditingDomain(diagram);
 					OpenDiagramCommand updateCommand = new OpenDiagramCommand(diagram, pageMngr, domain);
 					domain.getCommandStack().execute(updateCommand);
 				}
@@ -234,30 +235,32 @@ public class AnimationUtils {
 
 	/**
 	 * A convenience method for retrieving the diagram edit part corresponding to a graphical editor.
-	 * 
+	 *
 	 * @return the diagram edit part corresponding to the given editor
 	 */
 	public RootEditPart getRootEditPart(GraphicalEditor editor) {
-		return (RootEditPart)editor.getAdapter(EditPart.class);
+		return (RootEditPart) editor.getAdapter(EditPart.class);
 	}
 
 	/**
 	 * Adds a "Suspended" marker to the given semantic element
-	 * 
+	 *
 	 * @param semanticElement
-	 *        The semantic element to which a "Suspended" marker has to be attached
+	 *            The semantic element to which a "Suspended" marker has to be attached
 	 * @param thread
-	 *        The context thread in which this marker is attached
+	 *            The context thread in which this marker is attached
 	 */
 	public void addSuspendedMarker(EObject semanticElement) {
-		if(eObjectToSuspendedMarker.get(semanticElement) != null)
+		if (eObjectToSuspendedMarker.get(semanticElement) != null) {
 			// Marker already exists
 			return;
-		if(semanticElement.eIsProxy())
+		}
+		if (semanticElement.eIsProxy()) {
 			semanticElement = resolve(semanticElement);
+		}
 		IResource iresource = MokaBreakpoint.getIResource(semanticElement.eResource());
 		try {
-			if(iresource != null) {
+			if (iresource != null) {
 				String uriOfSemanticElement = EcoreUtil.getURI(semanticElement).toString();
 				IMarker marker = iresource.createMarker(MokaConstants.MOKA_SUSPENDED_MARKER_ID);
 				marker.setAttribute(EValidator.URI_ATTRIBUTE, uriOfSemanticElement);
@@ -270,12 +273,12 @@ public class AnimationUtils {
 
 	/**
 	 * Removes the "Suspended" marker for all semantic elements suspended in the context of the given thread
-	 * 
+	 *
 	 * @param thread
-	 *        The thread for which "Suspend" markers have to be removed from suspended semantic elements
+	 *            The thread for which "Suspend" markers have to be removed from suspended semantic elements
 	 */
 	public void removeSuspendedMarker(IThread thread) {
-		for(EObject key : eObjectToSuspendedMarker.keySet()) {
+		for (EObject key : eObjectToSuspendedMarker.keySet()) {
 			IPapyrusMarker stackFrameMarker = eObjectToSuspendedMarker.get(key);
 			try {
 				stackFrameMarker.delete();
@@ -288,23 +291,25 @@ public class AnimationUtils {
 
 	/**
 	 * Adds an "Animation" marker to the given semantic element
-	 * 
+	 *
 	 * @param semanticElement
-	 *        The semantic element to which an "Animation" marker has to be attached
+	 *            The semantic element to which an "Animation" marker has to be attached
 	 */
 	public void addAnimationMarker(EObject semanticElement) {
-		if(eObjectToAnimationMarker.get(semanticElement) != null)
+		if (eObjectToAnimationMarker.get(semanticElement) != null) {
 			// Marker already exists
 			return;
-		if(semanticElement.eIsProxy())
+		}
+		if (semanticElement.eIsProxy()) {
 			semanticElement = resolve(semanticElement);
+		}
 		IResource iresource = MokaBreakpoint.getIResource(semanticElement.eResource());
 		try {
-			if(iresource != null) {
+			if (iresource != null) {
 				String uriOfSemanticElement = EcoreUtil.getURI(semanticElement).toString();
-				if(MokaConstants.MOKA_OPEN_DIAGRAM_IN_AUTOMATIC_ANIMATION) {
+				if (MokaConstants.MOKA_OPEN_DIAGRAM_IN_AUTOMATIC_ANIMATION) {
 					List<Diagram> diagrams = getDiagrams(semanticElement);
-					for(Diagram d : diagrams) {
+					for (Diagram d : diagrams) {
 						openDiagram(d, false);
 					}
 				}
@@ -319,15 +324,16 @@ public class AnimationUtils {
 
 	/**
 	 * Removes the "Animation" marker associated with the given semantic element, if any
-	 * 
+	 *
 	 * @param semanticElement
-	 *        The semantic element to which an "Animation" marker has to be attached
+	 *            The semantic element to which an "Animation" marker has to be attached
 	 */
 	public void removeAnimationMarker(EObject semanticElement) {
-		if(semanticElement.eIsProxy())
+		if (semanticElement.eIsProxy()) {
 			semanticElement = resolve(semanticElement);
+		}
 		IPapyrusMarker animationFrameMarker = eObjectToAnimationMarker.get(semanticElement);
-		if(animationFrameMarker != null) {
+		if (animationFrameMarker != null) {
 			try {
 				animationFrameMarker.delete();
 				eObjectToAnimationMarker.remove(semanticElement);
@@ -342,16 +348,16 @@ public class AnimationUtils {
 	 * This is supposed to happen only when, in the course of execution,
 	 * the editor for the model being executed is closed.
 	 * This may imply re-creation of a new IEditorPart.
-	 * 
+	 *
 	 * @param semanticElement
-	 *        The semantic element that needs to be resolved
+	 *            The semantic element that needs to be resolved
 	 * @return the resolved semantic element
 	 */
 	public static EObject resolve(EObject semanticElement) {
-		if(semanticElement.eIsProxy()) {
+		if (semanticElement.eIsProxy()) {
 			getInstance().resetDiagrams(semanticElement);
 			IEditorPart part = EditorUtils.getEditorPart(semanticElement);
-			ServicesRegistry registry = (ServicesRegistry)part.getAdapter(ServicesRegistry.class);
+			ServicesRegistry registry = (ServicesRegistry) part.getAdapter(ServicesRegistry.class);
 			ResourceSet resourceSet = null;
 			try {
 				resourceSet = registry.getService(ModelSet.class);
@@ -379,13 +385,13 @@ public class AnimationUtils {
 
 		/**
 		 * Constructor for the OpenDiagramCommand.
-		 * 
+		 *
 		 * @param diagram
-		 *        The diagram to be opened
+		 *            The diagram to be opened
 		 * @param pageMngr
-		 *        The page manager to be used for opening the diagram
+		 *            The page manager to be used for opening the diagram
 		 * @param domain
-		 *        The editing domain in which the command will be executed
+		 *            The editing domain in which the command will be executed
 		 */
 		public OpenDiagramCommand(Diagram diagram, IPageManager pageMngr, TransactionalEditingDomain domain) {
 			super(domain);
@@ -395,7 +401,7 @@ public class AnimationUtils {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor
 		 * , org.eclipse.core.runtime.IAdaptable)

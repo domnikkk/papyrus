@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ import java.util.Set;
 
 /**
  * Constants for the CSS-specific properties
- * 
+ *
  * @author Camille Letavernier
  */
 public interface CSSStyles {
@@ -48,10 +48,10 @@ public interface CSSStyles {
 
 	/**
 	 * The list of reserved CSS Keywords used in GMF NamedStyle
-	 * 
+	 *
 	 * Note: In general, all values prefixed with css* are potentially reserved for the CSS Engine
 	 */
-	public static final Set<String> RESERVED_KEYWORDS = new HashSet<String>(Arrays.asList(new String[]{
+	public static final Set<String> RESERVED_KEYWORDS = new HashSet<String>(Arrays.asList(new String[] {
 			CSS_GMF_ID_KEY,
 			CSS_GMF_CLASS_KEY,
 			CSS_GMF_STYLE_KEY,

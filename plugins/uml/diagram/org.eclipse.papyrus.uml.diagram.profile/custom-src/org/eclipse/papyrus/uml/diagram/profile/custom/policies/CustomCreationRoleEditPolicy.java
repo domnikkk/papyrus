@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -65,9 +65,9 @@ import org.eclipse.uml2.uml.Profile;
  * This class provides a custom creation for the metaclass element.
  * It's needed because with the class creation view, the UMLViewProvider doesn't find the good superClass to create it.
  * (Class and Metaclass are represented by an uml class both and it's a probleme for GMF)
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class CustomCreationRoleEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy {
 	/**
@@ -80,9 +80,9 @@ public class CustomCreationRoleEditPolicy extends org.eclipse.gmf.runtime.diagra
 	private ArrayList<String> metaclassesEP_ID_List = new ArrayList<String>();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public CustomCreationRoleEditPolicy() {
 		super();
@@ -90,7 +90,7 @@ public class CustomCreationRoleEditPolicy extends org.eclipse.gmf.runtime.diagra
 	}
 
 	/**
-	 * 
+	 *
 	 * @param metaclassesID
 	 */
 	private void init(int[] metaclassesID) {
@@ -101,10 +101,10 @@ public class CustomCreationRoleEditPolicy extends org.eclipse.gmf.runtime.diagra
 
 	/**
 	 * custom method for the creation of metaclass element
-	 * 
-	 * 
+	 *
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy#getCreateElementAndViewCommand(org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -174,9 +174,9 @@ public class CustomCreationRoleEditPolicy extends org.eclipse.gmf.runtime.diagra
 
 	/**
 	 * custom method for the CreateViewAndElementRequest (if it's a metaclass)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy#getCommand(org.eclipse.gef.Request)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -201,15 +201,15 @@ public class CustomCreationRoleEditPolicy extends org.eclipse.gmf.runtime.diagra
 
 	/**
 	 * custom method for the metaclass element
-	 * 
+	 *
 	 * Called in response to a <tt>REQ_CREATE</tt> request.
-	 * 
+	 *
 	 * Creates a compound command and populated with the following commands for
 	 * each element to be created: <BR>
 	 * <OL>
 	 * <LI>a {@link CreateCommand}for each of the request's view descriptor.
 	 * </OL>
-	 * 
+	 *
 	 * @param request
 	 *            a create request (understands instances of {@link CreateViewRequest}).
 	 * @param metaclasses
@@ -231,7 +231,7 @@ public class CustomCreationRoleEditPolicy extends org.eclipse.gmf.runtime.diagra
 	/** Return a command to reparent both the semantic and view elements. */
 	/**
 	 * return a command to reparent both the semantic and view elements.
-	 * 
+	 *
 	 * @param request
 	 *            the request
 	 * @return command
@@ -267,7 +267,7 @@ public class CustomCreationRoleEditPolicy extends org.eclipse.gmf.runtime.diagra
 	/**
 	 * Return the command to reparent the supplied editpart's semantic and notation
 	 * elements.
-	 * 
+	 *
 	 * @param gep
 	 *            the editpart being reparented
 	 * @return A CompositeCommand2 that will reparent both the semantic and notation elements.
@@ -287,7 +287,7 @@ public class CustomCreationRoleEditPolicy extends org.eclipse.gmf.runtime.diagra
 
 	/**
 	 * Return the command to reparent the supplied editpart's view only.
-	 * 
+	 *
 	 * @param gep
 	 *            the editpart being reparented
 	 * @return A command to reparent the notation element.
@@ -300,12 +300,12 @@ public class CustomCreationRoleEditPolicy extends org.eclipse.gmf.runtime.diagra
 		CompositeCommand deleteViewCmd = new CompositeCommand("Reparent one metaclass view and delete the others"); //$NON-NLS-1$
 		/*
 		 * If a metaclass (ElementImport) has dropped many times, we need to reparent the selected view and delete the others!
-		 * 
+		 *
 		 * The RemoveOrphanViewEditPolicy can't make it, because it runs too early and short-circuits the AddCommand
 		 */
 		/**
 		 * 1/ get the element
-		 * 
+		 *
 		 */
 		View metaclassView = (View) gep.getModel();
 		EObject element = metaclassView.getElement();

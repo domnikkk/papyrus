@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ import org.eclipse.swt.widgets.Text;
  * as text in general.
  * Displays a field where the user can enter the new values.
  * The field can be multiline or single line
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class StringSelector implements IElementSelector {
 
@@ -56,9 +56,9 @@ public class StringSelector implements IElementSelector {
 
 	/**
 	 * Constructs a String Selector
-	 * 
+	 *
 	 * @param multiline
-	 *        True if the string values can contain more than one line
+	 *            True if the string values can contain more than one line
 	 */
 	public StringSelector(boolean multiline) {
 		this.multiline = multiline;
@@ -66,11 +66,12 @@ public class StringSelector implements IElementSelector {
 
 	/**
 	 * Returns a single-element array containing the current text
-	 * 
+	 *
 	 * {@link IElementSelector#getSelectedElements()}
 	 */
+	@Override
 	public Object[] getSelectedElements() {
-		String[] result = new String[]{ text.getText() };
+		String[] result = new String[] { text.getText() };
 		text.setText(""); //$NON-NLS-1$
 		return result;
 	}
@@ -78,31 +79,35 @@ public class StringSelector implements IElementSelector {
 	/**
 	 * Ignored
 	 */
+	@Override
 	public void setSelectedElements(Object[] elements) {
-		//Nothing
+		// Nothing
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void createControls(Composite parent) {
 		text = new Text(parent, SWT.MULTI | SWT.BORDER);
 		text.addKeyListener(new KeyListener() {
 
+			@Override
 			public void keyPressed(KeyEvent e) {
-				//Nothing
+				// Nothing
 			}
 
+			@Override
 			public void keyReleased(KeyEvent e) {
-				if((e.keyCode == SWT.CR || e.keyCode == SWT.KEYPAD_CR) && ((e.stateMask == SWT.NONE && !multiline) || ((e.stateMask & SWT.CTRL) != 0 && multiline))) {
-					if(!elementSelectionListeners.isEmpty()) {
-						String str = (String)getSelectedElements()[0];
-						if(str.endsWith(LINE_SEPARATOR)) {
+				if ((e.keyCode == SWT.CR || e.keyCode == SWT.KEYPAD_CR) && ((e.stateMask == SWT.NONE && !multiline) || ((e.stateMask & SWT.CTRL) != 0 && multiline))) {
+					if (!elementSelectionListeners.isEmpty()) {
+						String str = (String) getSelectedElements()[0];
+						if (str.endsWith(LINE_SEPARATOR)) {
 							str = str.substring(0, str.length() - LINE_SEPARATOR.length());
 						}
-						if(!"".equals(str)) { //$NON-NLS-1$
-							for(IElementSelectionListener listener : elementSelectionListeners) {
-								listener.addElements(new Object[]{ str });
+						if (!"".equals(str)) { //$NON-NLS-1$
+							for (IElementSelectionListener listener : elementSelectionListeners) {
+								listener.addElements(new Object[] { str });
 							}
 						}
 					}
@@ -114,9 +119,10 @@ public class StringSelector implements IElementSelector {
 
 	/**
 	 * Returns the same value as getSelectedElements
-	 * 
+	 *
 	 * {@link IElementSelector#getAllElements()}
 	 */
+	@Override
 	public Object[] getAllElements() {
 		return getSelectedElements();
 	}
@@ -124,21 +130,25 @@ public class StringSelector implements IElementSelector {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void newObjectCreated(Object newObject) {
-		//Ignored
+		// Ignored
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void clearTemporaryElements() {
-		//Ignored
+		// Ignored
 	}
 
+	@Override
 	public void addElementSelectionListener(IElementSelectionListener listener) {
 		elementSelectionListeners.add(listener);
 	}
 
+	@Override
 	public void removeElementSelectionListener(IElementSelectionListener listener) {
 		elementSelectionListeners.remove(listener);
 	}

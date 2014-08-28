@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -63,7 +63,7 @@ public class ObjectNodeParser extends MessageFormatParser implements ISemanticPa
 	private static final String STATE_SEPARATOR = ", ";
 
 	public ObjectNodeParser() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() });
 	}
 
 	public ObjectNodeParser(EAttribute[] features) {
@@ -76,16 +76,16 @@ public class ObjectNodeParser extends MessageFormatParser implements ISemanticPa
 
 	/**
 	 * Gets the e structural feature.
-	 * 
+	 *
 	 * @param notification
 	 * @return the structural feature
 	 */
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -94,6 +94,7 @@ public class ObjectNodeParser extends MessageFormatParser implements ISemanticPa
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		EStructuralFeature feature = getEStructuralFeature(event);
 		return isValidFeature(feature);
@@ -102,21 +103,22 @@ public class ObjectNodeParser extends MessageFormatParser implements ISemanticPa
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		StringBuffer result = new StringBuffer();
 		Object adapter = element.getAdapter(EObject.class);
-		if(adapter instanceof CentralBufferNode) {
-			if(adapter instanceof DataStoreNode) {
+		if (adapter instanceof CentralBufferNode) {
+			if (adapter instanceof DataStoreNode) {
 				result.append(DATASTORE_PREFIX);
 			} else {
 				result.append(CENTRAL_BUFFER);
 			}
 		}
-		if(adapter instanceof ObjectNode) {
-			ObjectNode objectNode = (ObjectNode)adapter;
+		if (adapter instanceof ObjectNode) {
+			ObjectNode objectNode = (ObjectNode) adapter;
 			String name = objectNode.getName();
 			// manage type
-			if(objectNode.getType() != null) {
+			if (objectNode.getType() != null) {
 				String type = objectNode.getType().getName();
 				result.append(String.format(TYPED_PARAMETER_FORMAT, name, type));
 			} else {
@@ -124,19 +126,19 @@ public class ObjectNodeParser extends MessageFormatParser implements ISemanticPa
 			}
 			// manage states
 			StringBuffer stateLabel = new StringBuffer();
-			for(State state : objectNode.getInStates()) {
+			for (State state : objectNode.getInStates()) {
 				String stateName = state.getName();
-				if(stateName == null) {
+				if (stateName == null) {
 					stateName = "";
 				}
-				if(!"".equals(stateName)) {
-					if(stateLabel.length() > 0) {
+				if (!"".equals(stateName)) {
+					if (stateLabel.length() > 0) {
 						stateLabel.append(STATE_SEPARATOR);
 					}
 					stateLabel.append(stateName);
 				}
 			}
-			if(stateLabel.length() > 0) {
+			if (stateLabel.length() > 0) {
 				result.append(String.format(STATE_FORMAT, stateLabel.toString()));
 			}
 		}
@@ -146,6 +148,7 @@ public class ObjectNodeParser extends MessageFormatParser implements ISemanticPa
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		EStructuralFeature feature = getEStructuralFeature(notification);
 		return isValidFeature(feature);
@@ -154,17 +157,18 @@ public class ObjectNodeParser extends MessageFormatParser implements ISemanticPa
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
 		ObjectNode objectNode = null;
-		if(element instanceof ObjectNode) {
-			objectNode = (ObjectNode)element;
+		if (element instanceof ObjectNode) {
+			objectNode = (ObjectNode) element;
 			semanticElementsBeingParsed.add(objectNode);
-			if(objectNode.getType() != null) {
+			if (objectNode.getType() != null) {
 				semanticElementsBeingParsed.add(objectNode.getType());
 			}
-			if(objectNode.getInStates() != null && !objectNode.getInStates().isEmpty()) {
+			if (objectNode.getInStates() != null && !objectNode.getInStates().isEmpty()) {
 				semanticElementsBeingParsed.addAll(objectNode.getInStates());
 			}
 		}
@@ -174,9 +178,9 @@ public class ObjectNodeParser extends MessageFormatParser implements ISemanticPa
 	/**
 	 * Determines if the given feature has to be taken into account in this
 	 * parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {

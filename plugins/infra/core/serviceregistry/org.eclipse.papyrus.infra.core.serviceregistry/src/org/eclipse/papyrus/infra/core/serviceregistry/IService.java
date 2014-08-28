@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 LIFL and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,16 +25,16 @@ package org.eclipse.papyrus.infra.core.serviceregistry;
  * <li>Service can be used</li>
  * <li>{@link #disposeService()} - service is disposed and should not be used anymore.</li>
  * </ul>
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public interface IService {
 
 	/**
 	 * Init the service and set its associated Registry. The registry can be
 	 * used to retrieve other services.
-	 * 
+	 *
 	 * @param servicesRegistry
 	 */
 	public void init(ServicesRegistry servicesRegistry) throws ServiceException;

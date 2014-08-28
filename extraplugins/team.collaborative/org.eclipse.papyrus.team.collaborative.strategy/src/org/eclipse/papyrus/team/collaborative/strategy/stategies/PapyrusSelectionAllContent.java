@@ -31,7 +31,7 @@ import com.google.common.collect.Sets;
 
 /**
  * Locking strategy that will lock all resources which contains element contained by the selection.
- * 
+ *
  * @author adaussy
  */
 public class PapyrusSelectionAllContent extends AbstractResourceBaseStrategy {
@@ -41,28 +41,30 @@ public class PapyrusSelectionAllContent extends AbstractResourceBaseStrategy {
 	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.strategy.ILockingStrategy#getBusinessObject(java.util.Collection)
 	 */
+	@Override
 	public Set<IExtendedURI> getBusinessObject(Collection<EObject> eOjbects) {
-		if(!eOjbects.isEmpty()) {
+		if (!eOjbects.isEmpty()) {
 			ResourceSet ressourceSet = eOjbects.iterator().next().eResource().getResourceSet();
 			Collection<URI> uris = new HashSet<URI>();
-			for(EObject o : ModelsUtil.getRoots(eOjbects)) {
+			for (EObject o : ModelsUtil.getRoots(eOjbects)) {
 				URI uri = o.eResource().getURI();
-				if(!uris.contains(uri)) {
+				if (!uris.contains(uri)) {
 					uris.add(uri);
 					addExtraResources(ressourceSet, uris, uri);
 				}
 				Predicate<Resource> semanticResourcePredicate = new Predicate<Resource>() {
 
+					@Override
 					public boolean apply(Resource input) {
 						return "uml".equals(input.getURI().fileExtension());
 					}
 				};
-				//Add all resource that contains at least one descendant of a selected resource
-				for(Resource r : Collections2.filter(ressourceSet.getResources(), semanticResourcePredicate)) {
-					for(EObject potentialDescedant : r.getContents()) {
-						if(EcoreUtil.isAncestor(o, potentialDescedant)) {
+				// Add all resource that contains at least one descendant of a selected resource
+				for (Resource r : Collections2.filter(ressourceSet.getResources(), semanticResourcePredicate)) {
+					for (EObject potentialDescedant : r.getContents()) {
+						if (EcoreUtil.isAncestor(o, potentialDescedant)) {
 							URI childResourceURI = r.getURI();
-							if(!uris.contains(childResourceURI)) {
+							if (!uris.contains(childResourceURI)) {
 								uris.add(childResourceURI);
 								addExtraResources(ressourceSet, uris, childResourceURI);
 								continue;

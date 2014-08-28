@@ -4,7 +4,7 @@
 package org.eclipse.papyrus.uml.alf.validation;
 
 /**
- * Custom validation rules. 
+ * Custom validation rules.
  *
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */

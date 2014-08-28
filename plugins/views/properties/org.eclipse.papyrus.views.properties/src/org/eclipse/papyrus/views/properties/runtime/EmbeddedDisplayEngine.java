@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ import org.eclipse.ui.views.properties.tabbed.ISection;
 
 /**
  * A Property View display engine which can be embedded in a composite
- * 
+ *
  * @author Camille Letavernier
  */
 public class EmbeddedDisplayEngine extends DefaultDisplayEngine implements SelectionListener {
@@ -60,12 +60,12 @@ public class EmbeddedDisplayEngine extends DefaultDisplayEngine implements Selec
 	protected Set<ISection> displayedSections = new HashSet<ISection>();
 
 	/**
-	 * 
+	 *
 	 * @param views
 	 * @param parent
 	 * @param selection
 	 * @param style
-	 *        SWT.BOTTOM or SWT.TOP (Tabs' position)
+	 *            SWT.BOTTOM or SWT.TOP (Tabs' position)
 	 */
 	public void display(Set<View> views, Composite parent, ISelection selection, int style) {
 		disposeControls();
@@ -76,8 +76,8 @@ public class EmbeddedDisplayEngine extends DefaultDisplayEngine implements Selec
 
 		final Set<Tab> tabsList = new LinkedHashSet<Tab>();
 
-		for(View view : views) {
-			for(Section section : view.getSections()) {
+		for (View view : views) {
+			for (Section section : view.getSections()) {
 				tabsList.add(section.getTab());
 			}
 		}
@@ -88,39 +88,39 @@ public class EmbeddedDisplayEngine extends DefaultDisplayEngine implements Selec
 
 			/**
 			 * compares two tabs each other
-			 * 
+			 *
 			 * @param tab1
-			 *        first tab to compare
+			 *            first tab to compare
 			 * @param tab2
-			 *        second tab to compare
+			 *            second tab to compare
 			 * @return a negative integer if the first tab should be placed before the second tab
 			 */
 			public int compare(Tab tab1, Tab tab2) {
 				int priority1 = getPriority(tab1);
 				int priority2 = getPriority(tab2);
 
-				if(priority1 < priority2) {
+				if (priority1 < priority2) {
 					return -1;
 				}
 
-				if(priority1 > priority2) {
+				if (priority1 > priority2) {
 					return 1;
 				}
 
-				//p1 == p2
+				// p1 == p2
 
 				priority1 = getXWTTabPriority(tab1);
 				priority2 = getXWTTabPriority(tab2);
 
-				if(priority1 < priority2) {
+				if (priority1 < priority2) {
 					return -1;
 				}
 
-				if(priority1 > priority2) {
+				if (priority1 > priority2) {
 					return 1;
 				}
 
-				//p1 == p2
+				// p1 == p2
 
 				String label1 = tab1.getLabel();
 				String label2 = tab2.getLabel();
@@ -130,7 +130,7 @@ public class EmbeddedDisplayEngine extends DefaultDisplayEngine implements Selec
 
 			private Tab getPreviousTab(Tab tab) {
 				Tab afterTab = tab.getAfterTab();
-				if(tabsList.contains(afterTab)) {
+				if (tabsList.contains(afterTab)) {
 					return afterTab;
 				}
 
@@ -140,7 +140,7 @@ public class EmbeddedDisplayEngine extends DefaultDisplayEngine implements Selec
 
 			private int getPriority(Tab tab) {
 				Tab previousTab = getPreviousTab(tab);
-				if(previousTab != null) {
+				if (previousTab != null) {
 					return getPriority(previousTab) + 1;
 				}
 
@@ -155,19 +155,19 @@ public class EmbeddedDisplayEngine extends DefaultDisplayEngine implements Selec
 
 		Map<Tab, Composite> tabs = new LinkedHashMap<Tab, Composite>();
 
-		if(allTabs.size() > 1) {
+		if (allTabs.size() > 1) {
 			CTabItem selectedTab = null;
 
 			currentFolder = new CTabFolder(self, style);
-			currentFolder.setSelectionBackground(new Color[]{ currentFolder.getDisplay().getSystemColor(SWT.COLOR_WHITE), currentFolder.getBackground() }, new int[]{ 100 }, true);
+			currentFolder.setSelectionBackground(new Color[] { currentFolder.getDisplay().getSystemColor(SWT.COLOR_WHITE), currentFolder.getBackground() }, new int[] { 100 }, true);
 			currentFolder.setLayout(new FillLayout());
-			for(Tab tab : allTabs) {
+			for (Tab tab : allTabs) {
 				CTabItem item = new CTabItem(currentFolder, SWT.NONE);
 				Composite tabControl = new Composite(currentFolder, SWT.NONE);
 				item.setControl(tabControl);
 				item.setText(tab.getLabel());
 				item.setData("id", tab.getId()); //$NON-NLS-1$
-				if(tab.getId().equals(lastTabId)) {
+				if (tab.getId().equals(lastTabId)) {
 					selectedTab = item;
 				}
 				tabs.put(tab, tabControl);
@@ -175,20 +175,20 @@ public class EmbeddedDisplayEngine extends DefaultDisplayEngine implements Selec
 			currentFolder.addSelectionListener(this);
 
 
-			if(selectedTab == null) {
+			if (selectedTab == null) {
 				selectedTab = currentFolder.getItem(0);
 			}
 
 			currentFolder.setSelection(selectedTab);
-		} else if(!allTabs.isEmpty()) {
+		} else if (!allTabs.isEmpty()) {
 			Tab tab = allTabs.get(0);
 			tabs.put(tab, self);
 		} else {
 			return;
 		}
 
-		for(View view : views) {
-			for(Section section : view.getSections()) {
+		for (View view : views) {
+			for (Section section : view.getSections()) {
 				XWTSection xwtSection = new XWTSection(section, view, this);
 
 				xwtSection.createControls(tabs.get(section.getTab()), null);
@@ -205,35 +205,35 @@ public class EmbeddedDisplayEngine extends DefaultDisplayEngine implements Selec
 	@Override
 	protected void disposeControls() {
 		super.disposeControls();
-		if(self != null) {
+		if (self != null) {
 			self.dispose();
 			self = null;
 			currentFolder = null;
 		}
 
-		//		if(currentFolder != null) {
-		//			currentFolder.dispose();
-		//			currentFolder = null;
-		//		}
+		// if(currentFolder != null) {
+		// currentFolder.dispose();
+		// currentFolder = null;
+		// }
 
-		for(ISection section : displayedSections) {
+		for (ISection section : displayedSections) {
 			section.dispose();
 		}
 	}
 
 	public void widgetSelected(SelectionEvent e) {
-		if(e.widget instanceof CTabFolder) {
-			CTabFolder folder = (CTabFolder)e.widget;
+		if (e.widget instanceof CTabFolder) {
+			CTabFolder folder = (CTabFolder) e.widget;
 			CTabItem lastTab = folder.getSelection();
 			Object lastId = lastTab.getData("id"); //$NON-NLS-1$
-			if(lastId != null && lastId instanceof String) {
-				lastTabId = (String)lastId;
+			if (lastId != null && lastId instanceof String) {
+				lastTabId = (String) lastId;
 			}
 		}
 	}
 
 	public void widgetDefaultSelected(SelectionEvent e) {
-		//Nothing
+		// Nothing
 	}
 
 }

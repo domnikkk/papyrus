@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,7 @@ import org.eclipse.ui.IFileEditorInput;
 
 /**
  * A protocol for a provider of pluggable wizard pages and resource creation for
- * the {@link CreateModelWizard}. Implementations are contributed on the
- * <tt>org.eclipse.papyrus.uml.diagram.wizards.newModelStorageProviders</tt>
- * extension point.
+ * the {@link CreateModelWizard}. Implementations are contributed on the <tt>org.eclipse.papyrus.uml.diagram.wizards.newModelStorageProviders</tt> extension point.
  */
 public interface INewModelStorageProvider {
 
@@ -34,11 +32,11 @@ public interface INewModelStorageProvider {
 	 * Queries whether I am an appropriate storage provider for the context
 	 * implied by the specified selection on which the wizard is launched. For
 	 * example, if the selection includes resources stored in my domain.
-	 * 
+	 *
 	 * @param initialSelection
 	 *            the workbench or other selection on which the wizard was
 	 *            launched
-	 * 
+	 *
 	 * @return whether I am appropriate for the selection
 	 */
 	boolean canHandle(IStructuredSelection initialSelection);
@@ -53,10 +51,10 @@ public interface INewModelStorageProvider {
 	 * Create the URI identifying a new model, as indicated by my wizard page
 	 * that (presumably) allowed the user to specify the model's location within
 	 * my storage domain.
-	 * 
+	 *
 	 * @param diagramCategoryID
 	 *            the ID of the diagram category selected in the wizard
-	 * 
+	 *
 	 * @return the URI of the new model's principal resource
 	 */
 	URI createNewModelURI(String diagramCategoryID);
@@ -64,10 +62,10 @@ public interface INewModelStorageProvider {
 	/**
 	 * Create an editor input appropriate for opening the specified URI in my
 	 * storage domain.
-	 * 
+	 *
 	 * @param uri
 	 *            the URI of the principal model resource to open
-	 * 
+	 *
 	 * @return a suitable editor input (must not be {@code null}). If the result
 	 *         is not an {@link IFileEditorInput} or other known input type that
 	 *         correlates to the resource URI, then it is expected that the
@@ -78,7 +76,7 @@ public interface INewModelStorageProvider {
 
 	/**
 	 * Creates a part for the storage provider selection page of the wizard.
-	 * 
+	 *
 	 * @return the storage-provider selection page part, or {@code null} if none
 	 *         is required
 	 */

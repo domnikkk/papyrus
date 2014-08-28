@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,8 +34,8 @@ public class UMLContainmentBrowseStrategy extends ContainmentBrowseStrategy {
 	protected boolean browseElement(Object containerElement) {
 		Object semanticElement = adaptableProvider.getAdaptedValue(containerElement);
 
-		if(semanticElement == UMLPackage.eINSTANCE.getPackageImport_ImportedPackage()) {
-			//FIXME: Only return true for the closest PackageImport
+		if (semanticElement == UMLPackage.eINSTANCE.getPackageImport_ImportedPackage()) {
+			// FIXME: Only return true for the closest PackageImport
 			return true;
 		}
 
@@ -47,15 +47,15 @@ public class UMLContainmentBrowseStrategy extends ContainmentBrowseStrategy {
 	 */
 	@Override
 	public TreePath findPath(Object semanticElement, Object[] rootElements) {
-		//If element is a stereotype application, search for the base element instead
+		// If element is a stereotype application, search for the base element instead
 		EObject source = EMFHelper.getEObject(semanticElement);
 
-		if(source instanceof Element) {
+		if (source instanceof Element) {
 			return super.findPath(semanticElement, rootElements);
 		}
 
 		Element baseElement = UMLUtil.getBaseElement(source);
-		if(baseElement == null) {
+		if (baseElement == null) {
 			return super.findPath(semanticElement, rootElements);
 		}
 
@@ -64,19 +64,19 @@ public class UMLContainmentBrowseStrategy extends ContainmentBrowseStrategy {
 
 	@Override
 	public void revealSemanticElement(List<?> elementsList) {
-		//For stereotypeApplication, we reveal the UML baseElement instead of the stereotypeApplication object
+		// For stereotypeApplication, we reveal the UML baseElement instead of the stereotypeApplication object
 		List<Object> umlElementsList = new LinkedList<Object>();
-		for(Object semanticElement : elementsList) {
+		for (Object semanticElement : elementsList) {
 			EObject source = EMFHelper.getEObject(semanticElement);
 
 			Element baseElement;
-			if(source instanceof Element) {
-				baseElement = (Element)source;
+			if (source instanceof Element) {
+				baseElement = (Element) source;
 			} else {
 				baseElement = UMLUtil.getBaseElement(source);
 			}
 
-			if(baseElement == null) {
+			if (baseElement == null) {
 				umlElementsList.add(semanticElement);
 			} else {
 				umlElementsList.add(baseElement);

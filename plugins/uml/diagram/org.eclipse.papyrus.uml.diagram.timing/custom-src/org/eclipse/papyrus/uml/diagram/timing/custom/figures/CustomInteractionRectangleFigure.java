@@ -45,7 +45,7 @@ public class CustomInteractionRectangleFigure extends InteractionRectangleFigure
 			@Override
 			public Dimension getPreferredSize(final int wHint, final int hHint) {
 				final Dimension preferredSize = super.getPreferredSize(wHint, hHint);
-				if(preferredSize.width == 0) {
+				if (preferredSize.width == 0) {
 					return preferredSize;
 				}
 				return new Dimension(preferredSize.width + 2, preferredSize.height + 2);

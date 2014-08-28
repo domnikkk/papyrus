@@ -20,6 +20,7 @@ public class SwitchLifelineAction implements IObjectActionDelegate {
 
 	public final static String ID = "org.eclipse.papyrus.uml.diagram.timing.custom.SwitchLifelineActionID"; //$NON-NLS-1$
 
+	@Override
 	public void run(final IAction action) {
 		final SwitchLifelineCommand handler = new SwitchLifelineCommand();
 		try {
@@ -30,11 +31,13 @@ public class SwitchLifelineAction implements IObjectActionDelegate {
 
 	}
 
+	@Override
 	public void selectionChanged(final IAction action, final ISelection selection) {
 		// nothing
 
 	}
 
+	@Override
 	public void setActivePart(final IAction action, final IWorkbenchPart targetPart) {
 		// nothing
 	}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,21 +37,21 @@ public class UMLModelExtensionFactory extends FileBasedExtensionFactory {
 	@Override
 	protected Element createExtension(FileBasedCustomizableElement element, PluginEditor editor) {
 		Element extension = super.createExtension(element, editor);
-		UMLModel model = (UMLModel)element;
+		UMLModel model = (UMLModel) element;
 
-		if(model.getDescription() != null) {
+		if (model.getDescription() != null) {
 			extension.setAttribute("description", model.getDescription()); //$NON-NLS-1$
 		}
 
-		if(model.getIconpath() != null) {
+		if (model.getIconpath() != null) {
 			extension.setAttribute("iconpath", model.getIconpath()); //$NON-NLS-1$
 		}
 
-		if(model.getName() != null) {
+		if (model.getName() != null) {
 			extension.setAttribute("name", model.getName()); //$NON-NLS-1$
 		}
 
-		if(model.getProvider() != null) {
+		if (model.getProvider() != null) {
 			extension.setAttribute("provider", model.getProvider()); //$NON-NLS-1$
 		}
 

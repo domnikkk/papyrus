@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,16 +25,16 @@ import org.eclipse.papyrus.uml.diagram.activity.activitygroup.IGroupEditPolicies
 
 /**
  * The aim of the edit policy if to notify changes to the Group Framework for Activities Elements
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class ActivityGroupEditPolicy extends GroupNotifyingOnMoveEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * @param groupDescriptor
-	 *        IContainerNodeDescriptor
+	 *            IContainerNodeDescriptor
 	 */
 	public ActivityGroupEditPolicy(IContainerNodeDescriptor groupDescriptor) {
 		super(groupDescriptor);
@@ -47,21 +47,21 @@ public class ActivityGroupEditPolicy extends GroupNotifyingOnMoveEditPolicy {
 	 */
 	@Override
 	public Command getCommand(Request request) {
-		if(understandsRequest(request)) {
-			if(request instanceof ChangeBoundsRequest) {
-				ChangeBoundsRequest chRq = (ChangeBoundsRequest)request;
+		if (understandsRequest(request)) {
+			if (request instanceof ChangeBoundsRequest) {
+				ChangeBoundsRequest chRq = (ChangeBoundsRequest) request;
 				int compt = 0;
-				if(chRq.getEditParts() != null) {
-					for(Object p : chRq.getEditParts()) {
-						if(p instanceof EditPart) {
-							EditPart part = (EditPart)p;
+				if (chRq.getEditParts() != null) {
+					for (Object p : chRq.getEditParts()) {
+						if (p instanceof EditPart) {
+							EditPart part = (EditPart) p;
 							EditPolicy policy = part.getEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_MOVE_EDIT_POLICY);
-							if(policy instanceof ActivityGroupEditPolicy) {
+							if (policy instanceof ActivityGroupEditPolicy) {
 								compt++;
 							}
 						}
 					}
-					if(compt > 1) {
+					if (compt > 1) {
 						return UnexecutableCommand.INSTANCE;
 					}
 				}
@@ -76,7 +76,7 @@ public class ActivityGroupEditPolicy extends GroupNotifyingOnMoveEditPolicy {
 
 	@Override
 	public boolean understandsRequest(Request req) {
-		if(req instanceof ChangeBoundsRequest) {
+		if (req instanceof ChangeBoundsRequest) {
 			return true;
 		}
 		return false;

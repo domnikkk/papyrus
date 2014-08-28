@@ -9,19 +9,20 @@ public class MessageEndHelper {
 
 	public static void removeConnectionSourceFromMessageEnd(MessageEnd messageEnd, EObject connectionSource) {
 		EAnnotation annotation = messageEnd.getEAnnotation("Connections");
-		if(annotation != null) {
+		if (annotation != null) {
 			annotation.getReferences().remove(connectionSource);
 		}
 	}
 
 	public static void addConnectionSourceToMessageEnd(MessageEnd messageEnd, EObject connectionSource) {
 		EAnnotation annotation = messageEnd.getEAnnotation("Connections");
-		if(annotation == null) {
+		if (annotation == null) {
 			annotation = EcoreFactory.eINSTANCE.createEAnnotation();
 			annotation.setSource("Connections"); //$NON-NLS-1$
 			messageEnd.getEAnnotations().add(annotation);
 		}
-		if(!annotation.getReferences().contains(connectionSource))
+		if (!annotation.getReferences().contains(connectionSource)) {
 			annotation.getReferences().add(connectionSource);
+		}
 	}
 }

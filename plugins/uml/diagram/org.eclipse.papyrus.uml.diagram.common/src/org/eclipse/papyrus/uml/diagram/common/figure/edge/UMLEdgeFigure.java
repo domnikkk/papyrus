@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ public class UMLEdgeFigure extends CommonEdgeFigure implements IPapyrusUMLElemen
 
 	/**
 	 * get the applied stereotype label
-	 * 
+	 *
 	 * @return applied stereotype label
 	 */
 	public WrappingLabel getAppliedStereotypeLabel() {
@@ -76,14 +76,15 @@ public class UMLEdgeFigure extends CommonEdgeFigure implements IPapyrusUMLElemen
 	 * <li>if this is not <code>null</code>, it creates the stereotype label if needed and displays the specified string.</li>
 	 * </ul>
 	 * </p>
-	 * 
+	 *
 	 * @param stereotypes
-	 *        the string representing the stereotypes to be displayed
+	 *            the string representing the stereotypes to be displayed
 	 */
+	@Override
 	public void setStereotypeDisplay(String stereotypes, Image image) {
 
 		// Set stereotype text on figure
-		if(!"".equals(stereotypes)) {
+		if (!"".equals(stereotypes)) {
 			appliedStereotypeLabel.setText(stereotypes);
 		} else {
 			appliedStereotypeLabel.setText("");

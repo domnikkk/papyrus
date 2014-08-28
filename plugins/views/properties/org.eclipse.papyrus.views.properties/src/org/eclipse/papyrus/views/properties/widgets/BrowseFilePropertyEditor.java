@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,9 +43,9 @@ public class BrowseFilePropertyEditor extends AbstractPropertyEditor {
 	 * Instantiates a new browse file property editor.
 	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param style
-	 *        the style
+	 *            the style
 	 */
 	public BrowseFilePropertyEditor(Composite parent, int style) {
 		browseFileEditor = createBrowseFileEditor(parent, style);
@@ -54,9 +54,9 @@ public class BrowseFilePropertyEditor extends AbstractPropertyEditor {
 
 	/**
 	 * Set label to browse button.
-	 * 
+	 *
 	 * @param buttonLabel
-	 *        Label to set
+	 *            Label to set
 	 */
 	public void setButtonLabel(String buttonLabel) {
 		browseFileEditor.setButtonLabel(buttonLabel);
@@ -74,9 +74,9 @@ public class BrowseFilePropertyEditor extends AbstractPropertyEditor {
 	 * Creates the browse file editor.
 	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param style
-	 *        the style
+	 *            the style
 	 * @return the browse file editor
 	 */
 	private BrowseFileEditor createBrowseFileEditor(Composite parent, int style) {
@@ -88,7 +88,7 @@ public class BrowseFilePropertyEditor extends AbstractPropertyEditor {
 	 * Sets the filter extensions.
 	 *
 	 * @param filterExtensions
-	 *        the new filter extensions
+	 *            the new filter extensions
 	 */
 	public void setFilterExtensions(String[] filterExtensions) {
 		this.filterExtensions = filterExtensions;
@@ -108,7 +108,7 @@ public class BrowseFilePropertyEditor extends AbstractPropertyEditor {
 	 * Sets the filter names.
 	 *
 	 * @param filterNames
-	 *        the new filter names
+	 *            the new filter names
 	 */
 	public void setFilterNames(String[] filterNames) {
 		this.filterNames = filterNames;
@@ -128,7 +128,7 @@ public class BrowseFilePropertyEditor extends AbstractPropertyEditor {
 	 * Checks if the filters are valid.
 	 */
 	protected void checkFilters() {
-		if(filterExtensions != null && filterNames != null) {
+		if (filterExtensions != null && filterNames != null) {
 			browseFileEditor.setFilters(filterExtensions, filterNames);
 		}
 	}
@@ -137,7 +137,7 @@ public class BrowseFilePropertyEditor extends AbstractPropertyEditor {
 	 * Indicates whether the editor should allow browsing the workspace or not.
 	 *
 	 * @param allowWorkspace
-	 *        the new allow workspace
+	 *            the new allow workspace
 	 */
 	public void setAllowWorkspace(boolean allowWorkspace) {
 		this.allowWorkspace = allowWorkspace;
@@ -157,7 +157,7 @@ public class BrowseFilePropertyEditor extends AbstractPropertyEditor {
 	 * Indicates whether the editor should allow browsing the file system or not.
 	 *
 	 * @param allowFileSystem
-	 *        the new allow file system
+	 *            the new allow file system
 	 */
 	public void setAllowFileSystem(boolean allowFileSystem) {
 		this.allowFileSystem = allowFileSystem;

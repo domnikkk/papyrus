@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,6 +38,7 @@ import org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPack
  * each class of the model, starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the result of the switch.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage
  * @generated
  */
@@ -46,6 +47,7 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static FeaturemodelingPackage modelPackage;
@@ -53,6 +55,7 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public FeaturemodelingSwitch() {
@@ -65,6 +68,7 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -78,7 +82,7 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>Binding Time</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will
 	 * terminate the switch. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Binding Time</em>'.
@@ -95,7 +99,9 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Context</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -108,7 +114,7 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>Feature</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will
 	 * terminate the switch. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Feature</em>'.
@@ -123,7 +129,9 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>Feature Constraint</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
 	 * terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Feature Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -136,7 +144,9 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>Feature Group</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
 	 * terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Feature Group</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -151,7 +161,9 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -166,7 +178,9 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Packageable Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -179,7 +193,7 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>Feature Link</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will
 	 * terminate the switch. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Feature Link</em>'.
@@ -194,7 +208,9 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>Feature Model</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
 	 * terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Feature Model</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -207,7 +223,9 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>Feature Tree Node</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
 	 * terminate the switch. <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Feature Tree Node</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -222,7 +240,9 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Relationship</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -235,7 +255,7 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will
 	 * terminate the switch, but this is the last case anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
@@ -250,73 +270,125 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 	/**
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case FeaturemodelingPackage.FEATURE_TREE_NODE: {
-				FeatureTreeNode featureTreeNode = (FeatureTreeNode)theEObject;
-				T result = caseFeatureTreeNode(featureTreeNode);
-				if (result == null) result = caseContext(featureTreeNode);
-				if (result == null) result = caseEAPackageableElement(featureTreeNode);
-				if (result == null) result = caseEAElement(featureTreeNode);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+		case FeaturemodelingPackage.FEATURE_TREE_NODE: {
+			FeatureTreeNode featureTreeNode = (FeatureTreeNode) theEObject;
+			T result = caseFeatureTreeNode(featureTreeNode);
+			if (result == null) {
+				result = caseContext(featureTreeNode);
 			}
-			case FeaturemodelingPackage.FEATURE_MODEL: {
-				FeatureModel featureModel = (FeatureModel)theEObject;
-				T result = caseFeatureModel(featureModel);
-				if (result == null) result = caseContext(featureModel);
-				if (result == null) result = caseEAPackageableElement(featureModel);
-				if (result == null) result = caseEAElement(featureModel);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseEAPackageableElement(featureTreeNode);
 			}
-			case FeaturemodelingPackage.FEATURE: {
-				Feature feature = (Feature)theEObject;
-				T result = caseFeature(feature);
-				if (result == null) result = caseFeatureTreeNode(feature);
-				if (result == null) result = caseContext(feature);
-				if (result == null) result = caseEAPackageableElement(feature);
-				if (result == null) result = caseEAElement(feature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseEAElement(featureTreeNode);
 			}
-			case FeaturemodelingPackage.BINDING_TIME: {
-				BindingTime bindingTime = (BindingTime)theEObject;
-				T result = caseBindingTime(bindingTime);
-				if (result == null) result = caseEAElement(bindingTime);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case FeaturemodelingPackage.FEATURE_LINK: {
-				FeatureLink featureLink = (FeatureLink)theEObject;
-				T result = caseFeatureLink(featureLink);
-				if (result == null) result = caseRelationship(featureLink);
-				if (result == null) result = caseEAElement(featureLink);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case FeaturemodelingPackage.FEATURE_MODEL: {
+			FeatureModel featureModel = (FeatureModel) theEObject;
+			T result = caseFeatureModel(featureModel);
+			if (result == null) {
+				result = caseContext(featureModel);
 			}
-			case FeaturemodelingPackage.FEATURE_CONSTRAINT: {
-				FeatureConstraint featureConstraint = (FeatureConstraint)theEObject;
-				T result = caseFeatureConstraint(featureConstraint);
-				if (result == null) result = caseEAElement(featureConstraint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseEAPackageableElement(featureModel);
 			}
-			case FeaturemodelingPackage.FEATURE_GROUP: {
-				FeatureGroup featureGroup = (FeatureGroup)theEObject;
-				T result = caseFeatureGroup(featureGroup);
-				if (result == null) result = caseFeatureTreeNode(featureGroup);
-				if (result == null) result = caseContext(featureGroup);
-				if (result == null) result = caseEAPackageableElement(featureGroup);
-				if (result == null) result = caseEAElement(featureGroup);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseEAElement(featureModel);
 			}
-			default: return defaultCase(theEObject);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case FeaturemodelingPackage.FEATURE: {
+			Feature feature = (Feature) theEObject;
+			T result = caseFeature(feature);
+			if (result == null) {
+				result = caseFeatureTreeNode(feature);
+			}
+			if (result == null) {
+				result = caseContext(feature);
+			}
+			if (result == null) {
+				result = caseEAPackageableElement(feature);
+			}
+			if (result == null) {
+				result = caseEAElement(feature);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case FeaturemodelingPackage.BINDING_TIME: {
+			BindingTime bindingTime = (BindingTime) theEObject;
+			T result = caseBindingTime(bindingTime);
+			if (result == null) {
+				result = caseEAElement(bindingTime);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case FeaturemodelingPackage.FEATURE_LINK: {
+			FeatureLink featureLink = (FeatureLink) theEObject;
+			T result = caseFeatureLink(featureLink);
+			if (result == null) {
+				result = caseRelationship(featureLink);
+			}
+			if (result == null) {
+				result = caseEAElement(featureLink);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case FeaturemodelingPackage.FEATURE_CONSTRAINT: {
+			FeatureConstraint featureConstraint = (FeatureConstraint) theEObject;
+			T result = caseFeatureConstraint(featureConstraint);
+			if (result == null) {
+				result = caseEAElement(featureConstraint);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case FeaturemodelingPackage.FEATURE_GROUP: {
+			FeatureGroup featureGroup = (FeatureGroup) theEObject;
+			T result = caseFeatureGroup(featureGroup);
+			if (result == null) {
+				result = caseFeatureTreeNode(featureGroup);
+			}
+			if (result == null) {
+				result = caseContext(featureGroup);
+			}
+			if (result == null) {
+				result = caseEAPackageableElement(featureGroup);
+			}
+			if (result == null) {
+				result = caseEAElement(featureGroup);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

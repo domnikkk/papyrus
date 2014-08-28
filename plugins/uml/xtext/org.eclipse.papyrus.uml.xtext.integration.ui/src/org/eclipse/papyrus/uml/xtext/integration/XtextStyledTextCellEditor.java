@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	itemis AG - initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.uml.xtext.integration;
 
@@ -37,12 +37,12 @@ import com.google.inject.Injector;
  * This class integrates Xtext features into a {@link CellEditor} and can be
  * used e.g. in jFace {@link StructuredViewer}s or in GMF EditParts via
  * DirectEditManager.
- * 
+ *
  * The current implementation supports, code completion, syntax highlighting and
  * validation
- * 
+ *
  * @see XtextStyledTextProvider
- * 
+ *
  * @author andreas.muelder@itemis.de
  * @author alexander.nyssen@itemis.de
  * @author patrick.koenemann@itemis.de
@@ -50,15 +50,15 @@ import com.google.inject.Injector;
 public class XtextStyledTextCellEditor extends StyledTextCellEditor {
 
 	public static final String GTK = "gtk"; //$NON-NLS-1$
-	
+
 	protected Injector injector;
 	protected StyledTextXtextAdapter xtextAdapter;
 	protected StyledText styledText;
-	
+
 	protected IXtextFakeContextResourcesProvider contextFakeResourceProvider;
 	protected IContextElementProvider provider;
 	protected Shell startingShell;
-	
+
 	public XtextStyledTextCellEditor(int style, Injector injector,
 			IXtextFakeContextResourcesProvider contextFakeResourceProvider) {
 		this(style, injector);
@@ -78,8 +78,7 @@ public class XtextStyledTextCellEditor extends StyledTextCellEditor {
 
 	/**
 	 * Creates an {@link SourceViewer} and returns the {@link StyledText} widget
-	 * of the viewer as the cell editors control. Some code is copied from
-	 * {@link XtextEditor}.
+	 * of the viewer as the cell editors control. Some code is copied from {@link XtextEditor}.
 	 */
 	@Override
 	protected Control createControl(Composite parent) {
@@ -95,7 +94,7 @@ public class XtextStyledTextCellEditor extends StyledTextCellEditor {
 		xtextAdapter.adapt(styledText);
 		// adapt has created a completion proposal adapter. Retrieve this instead of creating a new one.
 		completionProposalAdapter = xtextAdapter.getCompletionProposalAdapter();
-		
+
 		if (provider != null) {
 			xtextAdapter.getFakeResourceContext().getFakeResource().eAdapters()
 					.add(new ContextElementAdapter(provider));
@@ -105,7 +104,7 @@ public class XtextStyledTextCellEditor extends StyledTextCellEditor {
 						xtextAdapter.getFakeResourceContext().getFakeResource());
 			}
 		}
-		
+
 		// This listener notifies the modification, when text is selected via
 		// proposal. A ModifyEvent is not thrown by the StyledText in this case.
 		xtextAdapter.getXtextSourceviewer().addTextListener(new ITextListener() {
@@ -147,6 +146,7 @@ public class XtextStyledTextCellEditor extends StyledTextCellEditor {
 		return styledText;
 	}
 
+	@Override
 	protected void keyReleaseOccured(KeyEvent keyEvent) {
 		if (keyEvent.character == '\u001b') { // ESC
 			return;
@@ -190,7 +190,7 @@ public class XtextStyledTextCellEditor extends StyledTextCellEditor {
 	// in GTK, we need this flag to let one focus lost event pass. See
 	// focusLost() for details.
 	boolean ignoreNextFocusLost = false;
-	
+
 	protected CompletionProposalAdapter completionProposalAdapter;
 
 	/*
@@ -208,9 +208,9 @@ public class XtextStyledTextCellEditor extends StyledTextCellEditor {
 				ignoreNextFocusLost = false;
 				// styledText has lost focus, set it again.
 				Display.getDefault().asyncExec(new Runnable() {
-					
+
 					public void run() {
-						 styledText.setFocus();						
+						styledText.setFocus();
 					}
 				});
 

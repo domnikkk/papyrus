@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Gregoire Dupe (Mia-Software) - Bug 375087 - [Table] ITableWidget.addColumn(List<ETypedElement>, List<FacetSet>)
  *    Gregoire Dupe (Mia-Software) - Bug 372626 - Aggregates
@@ -22,7 +22,7 @@ public interface IResolver {
 	/**
 	 * Return true is the parameter object can be handle by the implementation
 	 * of this interface.
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
@@ -31,7 +31,7 @@ public interface IResolver {
 	/**
 	 * If the parameter 'object' is a proxy, this method returns the
 	 * corresponding a resolved object.
-	 * 
+	 *
 	 * @param object
 	 *            a proxy
 	 * @param aClass
@@ -42,7 +42,7 @@ public interface IResolver {
 	/**
 	 * This method returns the objects that have to be automatically selected
 	 * when the parameter 'selectedObject' is selected.
-	 * 
+	 *
 	 * @param selectedObject
 	 * @param aClass
 	 *            the expected list elements type.
@@ -52,7 +52,7 @@ public interface IResolver {
 	/**
 	 * This method returns the root of the objects that have to be automatically
 	 * selected when the parameter 'selectedObject' is selected.
-	 * 
+	 *
 	 * @param selectedObject
 	 * @param aClass
 	 *            the expected list elements type.

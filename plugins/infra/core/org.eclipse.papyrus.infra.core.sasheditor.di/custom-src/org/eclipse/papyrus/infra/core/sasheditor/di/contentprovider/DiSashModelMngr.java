@@ -28,7 +28,7 @@ import org.eclipse.papyrus.infra.core.sashwindows.di.util.DiUtils;
 
 /**
  * Class used as main entry point to access a sash model build on EMF / di
- * 
+ *
  * @author cedric dumoulin
  */
 public class DiSashModelMngr {
@@ -63,12 +63,12 @@ public class DiSashModelMngr {
 	 *
 	 * @param pageModelFactory
 	 * @param createDefaultSashModel
-	 *        If true, create the default SashModel by calling {@link #createDefaultSashModel()}
+	 *            If true, create the default SashModel by calling {@link #createDefaultSashModel()}
 	 */
 	protected DiSashModelMngr(IPageModelFactory pageModelFactory, boolean createDefaultSashModel) {
 		this.pageModelFactory = pageModelFactory;
 		// Create a SashModel
-		if(createDefaultSashModel) {
+		if (createDefaultSashModel) {
 			sashWindowMngr = createDefaultSashModel();
 		}
 	}
@@ -76,7 +76,7 @@ public class DiSashModelMngr {
 	/**
 	 * Constructor.
 	 * Create a DiSashModelMngr with the specified factory. A SashModel is created but not attached to a resource.
-	 * 
+	 *
 	 * @param pageModelFactory
 	 */
 	public DiSashModelMngr(IPageModelFactory pageModelFactory) {
@@ -89,7 +89,7 @@ public class DiSashModelMngr {
 	 * Constructor.
 	 * Create a DiSashModelMngr with the specified factory. The SashModel is searched in the Resource. If not found,
 	 * create one in the resource.
-	 * 
+	 *
 	 * @param pageModelFactory
 	 * @param diResource
 	 */
@@ -98,7 +98,7 @@ public class DiSashModelMngr {
 
 		// lookup the SashModel
 		sashWindowMngr = lookupSashWindowMngr(diResource);
-		if(sashWindowMngr == null) {
+		if (sashWindowMngr == null) {
 			// Create a default model and attach it to resource.
 			sashWindowMngr = createDefaultSashModel();
 			diResource.getContents().add(sashWindowMngr);
@@ -108,7 +108,7 @@ public class DiSashModelMngr {
 	/**
 	 * Constructor.
 	 * Create a DiSashModelMngr with the specified factory and sashModel.
-	 * 
+	 *
 	 * @param pageModelFactory
 	 * @param sashModel
 	 */
@@ -120,7 +120,7 @@ public class DiSashModelMngr {
 	/**
 	 * Get the internal EMF implementation.
 	 * Intended to be used by tests.
-	 * 
+	 *
 	 * @return the sashWindowMngr
 	 */
 	protected SashWindowsMngr getDiSashWindowsMngr() {
@@ -132,11 +132,11 @@ public class DiSashModelMngr {
 	 * Return the internal implementation of ContentProvider.
 	 * Create if if needed.
 	 * This method should not be subclassed
-	 * 
+	 *
 	 * @return the contentProvider
 	 */
 	protected final DiContentProvider getDiContentProvider() {
-		if(contentProvider == null) {
+		if (contentProvider == null) {
 			contentProvider = new DiContentProvider(sashWindowMngr.getSashModel(), pageModelFactory, getContentChangedEventProvider());
 		}
 		return contentProvider;
@@ -146,11 +146,11 @@ public class DiSashModelMngr {
 	 * Return the internal implementation of PageMngr.
 	 * Create if if needed.
 	 * This method should not be subclassed
-	 * 
+	 *
 	 * @return the PageMngrImpl
 	 */
 	protected final PageManagerImpl getPageMngrImpl() {
-		if(pageMngr == null) {
+		if (pageMngr == null) {
 			pageMngr = new TransactionalPageManagerImpl(sashWindowMngr, getContentChangedEventProvider());
 		}
 
@@ -161,11 +161,11 @@ public class DiSashModelMngr {
 	 * Return the internal implementation of ContentChangedEventProvider.
 	 * Create if if needed.
 	 * This method should not be subclassed
-	 * 
+	 *
 	 * @return the PageMngrImpl
 	 */
 	protected final ContentChangedEventProvider getContentChangedEventProvider() {
-		if(contentChangedEventProvider == null) {
+		if (contentChangedEventProvider == null) {
 			contentChangedEventProvider = new ContentChangedEventProvider(sashWindowMngr);
 		}
 
@@ -174,7 +174,7 @@ public class DiSashModelMngr {
 
 	/**
 	 * Get the IPageMngr providing basic methods to manage Pages in the sash model.
-	 * 
+	 *
 	 * @return
 	 */
 	public IPageManager getIPageMngr() {
@@ -184,7 +184,7 @@ public class DiSashModelMngr {
 	/**
 	 * Get the ContentProvider used by the SashWindows system.
 	 * This class can also be used to accurately manage the sash model.
-	 * 
+	 *
 	 * @return
 	 */
 	public ISashWindowsContentProvider getISashWindowsContentProvider() {
@@ -195,7 +195,7 @@ public class DiSashModelMngr {
 
 	/**
 	 * Get the ContentChangedProvider for the SashModel
-	 * 
+	 *
 	 * @return
 	 */
 	public IContentChangedProvider getSashModelContentChangedProvider() {
@@ -204,7 +204,7 @@ public class DiSashModelMngr {
 
 	/**
 	 * Create a default model with one window and one folder.
-	 * 
+	 *
 	 * @param diResource
 	 * @return
 	 */
@@ -214,7 +214,7 @@ public class DiSashModelMngr {
 
 	/**
 	 * Lookup for the SashModel object in the resource
-	 * 
+	 *
 	 * @param diResource
 	 * @return
 	 */
@@ -226,7 +226,7 @@ public class DiSashModelMngr {
 	/**
 	 * Create an instance of IPageMngr acting on the provided resource.
 	 * This instance is suitable to add, remove, close or open diagrams.
-	 * 
+	 *
 	 * @param diResource
 	 * @return The non transactional version of the IPageMngr
 	 */

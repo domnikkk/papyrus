@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2007 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2007 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Gabriel Merin Cubero (Prodevelop) – Sequence Diagram Implementation
  *
  ******************************************************************************/
@@ -20,17 +20,17 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 // TODO: Auto-generated Javadoc
 /**
  * The Class InteractionFigure.
- * 
+ *
  * @author <a href="mailto:gmerin@prodevelop.es">Gabriel Merin</a>
  */
 public class InteractionFigure extends Shape {
 
 	/**
 	 * Fill shape.
-	 * 
+	 *
 	 * @param graphics
-	 *        the graphics
-	 * 
+	 *            the graphics
+	 *
 	 * @see Shape#fillShape(Graphics)
 	 */
 	@Override
@@ -39,10 +39,10 @@ public class InteractionFigure extends Shape {
 
 	/**
 	 * Outline shape.
-	 * 
+	 *
 	 * @param graphics
-	 *        the graphics
-	 * 
+	 *            the graphics
+	 *
 	 * @see Shape#outlineShape(Graphics)
 	 */
 	@Override
@@ -52,16 +52,17 @@ public class InteractionFigure extends Shape {
 
 		int labelWidth = -1;
 
-		for(Object obj : getChildren()) {
-			if(obj instanceof WrappingLabel) {
-				WrappingLabel wLabel = (WrappingLabel)obj;
+		for (Object obj : getChildren()) {
+			if (obj instanceof WrappingLabel) {
+				WrappingLabel wLabel = (WrappingLabel) obj;
 				labelWidth = Math.max(labelWidth, wLabel.getPreferredSize().width);
 			}
 		}
 
 		// case the size of the label is 0 or -1 (no label)
-		if(labelWidth <= 0)
+		if (labelWidth <= 0) {
 			labelWidth = r.width / 4;
+		}
 
 		PointList points = new PointList();
 

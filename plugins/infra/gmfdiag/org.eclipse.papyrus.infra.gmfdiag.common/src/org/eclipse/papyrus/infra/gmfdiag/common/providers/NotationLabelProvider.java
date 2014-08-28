@@ -22,7 +22,6 @@ import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.emf.providers.EMFLabelProvider;
-import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
 import org.eclipse.papyrus.infra.gmfdiag.common.types.NotationTypesMap;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
@@ -45,15 +44,16 @@ public class NotationLabelProvider extends EMFLabelProvider {
 
 	@Override
 	protected Image getImage(EObject element) {
-		if(element instanceof Diagram) {
-			ViewPrototype proto = DiagramUtils.getPrototype((Diagram)element);
-			if (proto == null)
+		if (element instanceof Diagram) {
+			ViewPrototype proto = DiagramUtils.getPrototype((Diagram) element);
+			if (proto == null) {
 				return null;
+			}
 			return proto.getIcon();
 		}
 
 		// if the element is a compartment
-		if(element instanceof BasicCompartment || element instanceof DecorationNode) {
+		if (element instanceof BasicCompartment || element instanceof DecorationNode) {
 			return org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(Activator.ID, ICON_COMPARTMENT);
 		}
 
@@ -73,19 +73,19 @@ public class NotationLabelProvider extends EMFLabelProvider {
 	 */
 	@Override
 	protected String getText(EObject element) {
-		if(element instanceof Diagram) {
-			return ((Diagram)element).getName();
+		if (element instanceof Diagram) {
+			return ((Diagram) element).getName();
 		}
 
-		if(element instanceof View) { // maybe it is a view of a compartment
-			String humanType = NotationTypesMap.instance.getHumanReadableType((View)element);
-			if(humanType != null) {
+		if (element instanceof View) { // maybe it is a view of a compartment
+			String humanType = NotationTypesMap.instance.getHumanReadableType((View) element);
+			if (humanType != null) {
 				return humanType;
 			}
 
-			EditPart dummyEP = EditPartService.getInstance().createGraphicEditPart((View)element);
-			if(dummyEP instanceof ResizableCompartmentEditPart) {
-				return ((ResizableCompartmentEditPart)dummyEP).getCompartmentName();
+			EditPart dummyEP = EditPartService.getInstance().createGraphicEditPart((View) element);
+			if (dummyEP instanceof ResizableCompartmentEditPart) {
+				return ((ResizableCompartmentEditPart) dummyEP).getCompartmentName();
 			}
 		}
 

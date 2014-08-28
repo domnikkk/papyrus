@@ -4,8 +4,8 @@
  * are made available under the terms of the Eclipse Public License v1.0       *
  * which accompanies this distribution, and is available at                    *
  * http://www.eclipse.org/legal/epl-v10.html                                   *
- *                                                                             *  
- * Contributors:                                                               *        
+ *                                                                             *
+ * Contributors:                                                               *
  *     Soyatec - initial API and implementation                                *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt.javabean.metadata;
@@ -32,7 +32,7 @@ public class TableViewerColumnMetaClass extends Metaclass {
 	@Override
 	public Object newInstance(Object[] parameters) {
 		Object object = doNewInstance(parameters);
-		if(object != null) {
+		if (object != null) {
 			initialize(object);
 		}
 		return object;
@@ -41,20 +41,20 @@ public class TableViewerColumnMetaClass extends Metaclass {
 	@Override
 	public Object doNewInstance(Object[] parameters) {
 		try {
-			if(parameters.length == 1 && parameters[0] instanceof TableViewer) {
+			if (parameters.length == 1 && parameters[0] instanceof TableViewer) {
 				Constructor<?> constructor = getType().getConstructor(TableViewer.class, int.class);
 				return constructor.newInstance(parameters[0], SWT.NONE);
-			} else if(parameters.length == 2) {
-				if(parameters[0] instanceof TableViewer && parameters[1] instanceof Integer) {
+			} else if (parameters.length == 2) {
+				if (parameters[0] instanceof TableViewer && parameters[1] instanceof Integer) {
 					Constructor<?> constructor = getType().getConstructor(TableViewer.class, int.class);
 					return constructor.newInstance(parameters);
-				} else if(parameters[0] instanceof TableViewer && parameters[1] instanceof TableColumn) {
+				} else if (parameters[0] instanceof TableViewer && parameters[1] instanceof TableColumn) {
 					Constructor<?> constructor = getType().getConstructor(TableViewer.class, TableColumn.class);
 					return constructor.newInstance(parameters);
 				}
-			} else if(parameters.length == 3 && parameters[0] instanceof TableViewer && parameters[1] instanceof Integer && parameters[2] instanceof Integer) {
+			} else if (parameters.length == 3 && parameters[0] instanceof TableViewer && parameters[1] instanceof Integer && parameters[2] instanceof Integer) {
 				Constructor<?> constructor = getType().getConstructor(TableViewer.class, int.class, int.class);
-				return constructor.newInstance(parameters[0], ((Integer)parameters[1]).intValue(), ((Integer)parameters[2]).intValue());
+				return constructor.newInstance(parameters[0], ((Integer) parameters[1]).intValue(), ((Integer) parameters[2]).intValue());
 			}
 		} catch (SecurityException e) {
 		} catch (IllegalArgumentException e) {

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,11 +9,10 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 408491
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.modelrepair.handler;
 
-import java.io.IOException;
 import java.util.Set;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -45,37 +44,37 @@ import org.eclipse.uml2.uml.PackageImport;
 
 /**
  * A Handler to switch libraries in general (e.g. Local to Registered version)
- * 
+ *
  */
 public class SwitchResourceHandler extends AbstractHandler {
 
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
 
 		ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
-		if(currentSelection.isEmpty() || !(currentSelection instanceof IStructuredSelection)) {
+		if (currentSelection.isEmpty() || !(currentSelection instanceof IStructuredSelection)) {
 			return null;
 		}
 
-		IStructuredSelection selection = (IStructuredSelection)currentSelection;
+		IStructuredSelection selection = (IStructuredSelection) currentSelection;
 
 		EObject selectedAdapter = EMFHelper.getEObject(selection.getFirstElement());
 
 		final Shell activeShell = HandlerUtil.getActiveShell(event);
-		
-		if(activeShell == null) {
+
+		if (activeShell == null) {
 			return new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Impossible to find the active shell to switch resources");
 		}
 
-		if(selectedAdapter instanceof Package) {
-			final Package selectedPackage = (Package)selectedAdapter;
+		if (selectedAdapter instanceof Package) {
+			final Package selectedPackage = (Package) selectedAdapter;
 
-			//Load the model in background and add a user information
+			// Load the model in background and add a user information
 			Job openDialogJob = new Job("Switch libraries") {
 
 				protected IStatus status = Status.OK_STATUS;
-				
-				protected boolean needsSave = false; 
-				
+
+				protected boolean needsSave = false;
+
 				@Override
 				protected IStatus run(final IProgressMonitor monitor) {
 					monitor.beginTask("Analyzing model", IProgressMonitor.UNKNOWN);
@@ -87,30 +86,30 @@ public class SwitchResourceHandler extends AbstractHandler {
 						final TransactionalEditingDomain editingDomain = modelSet.getTransactionalEditingDomain();
 
 						ISaveAndDirtyService saveAndDirtyService = ServiceUtilsForEObject.getInstance().getService(ISaveAndDirtyService.class, selectedPackage);
-						
-						if(saveAndDirtyService.isDirty()) {
+
+						if (saveAndDirtyService.isDirty()) {
 							needsSave = true;
 							activeShell.getDisplay().syncExec(new Runnable() {
 
 								public void run() {
 									// pop-up a message to check if save should be performed or if action should be cancelled
 									boolean openQuestion = MessageDialog.openQuestion(activeShell, "Switch Library", "Model should be saved before switching libraries. Would you like to save it now? \nOperation will be cancelled if you press no.");
-									if(!openQuestion) {
+									if (!openQuestion) {
 										status = Status.CANCEL_STATUS;
 									}
 								}
 							});
-							
+
 						}
-						
-						if(!status.isOK()) {
+
+						if (!status.isOK()) {
 							return status;
 						}
-						
-						if(needsSave) {
+
+						if (needsSave) {
 							saveAndDirtyService.doSave(monitor);
 						}
-						
+
 						switchLibrariesForModelSet(selectedPackage, modelSet, editingDomain, activeShell, monitor);
 					} catch (ServiceException e) {
 						Activator.log.error(e);
@@ -133,15 +132,15 @@ public class SwitchResourceHandler extends AbstractHandler {
 		monitor.subTask("Resolve all proxies...");
 		EcoreUtil.resolveAll(modelSet);
 		monitor.subTask("Open library management dialog...");
-		
+
 		final Set<PackageImport> allImportedPackages = LibraryHelper.getAllImportedPackages(modelSet);
 
 
-		//Go back to the UI thread and open a dialog
+		// Go back to the UI thread and open a dialog
 		activeShell.getDisplay().asyncExec(new Runnable() {
 
 			public void run() {
-				if(allImportedPackages.isEmpty()) {
+				if (allImportedPackages.isEmpty()) {
 					MessageDialog.openInformation(activeShell, "Switch Libraries", "The selected model has no Libraries.");
 					return;
 				}

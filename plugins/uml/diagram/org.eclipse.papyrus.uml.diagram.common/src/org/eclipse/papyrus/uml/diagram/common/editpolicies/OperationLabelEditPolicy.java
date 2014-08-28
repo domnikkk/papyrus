@@ -48,14 +48,14 @@ public class OperationLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 		super.addAdditionalListeners();
 		Operation operation = getUMLElement();
 		// check host semantic element is not null
-		if(operation == null) {
+		if (operation == null) {
 			return;
 		}
 		// adds a listener to the element itself, and to linked elements, like Type
-		for(Parameter parameter : operation.getOwnedParameters()) {
+		for (Parameter parameter : operation.getOwnedParameters()) {
 			getDiagramEventBroker().addNotificationListener(parameter, this);
 			// should also add this element as a listener of parameter type
-			if(parameter.getType() != null) {
+			if (parameter.getType() != null) {
 				getDiagramEventBroker().addNotificationListener(parameter.getType(), this);
 			}
 		}
@@ -82,8 +82,8 @@ public class OperationLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	 */
 	@Override
 	public Operation getUMLElement() {
-		if(hostSemanticElement instanceof Operation) {
-			return (Operation)hostSemanticElement;
+		if (hostSemanticElement instanceof Operation) {
+			return (Operation) hostSemanticElement;
 		}
 		return null;
 	}
@@ -101,38 +101,38 @@ public class OperationLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 		// - the stereotype application list has changed
 		Object object = notification.getNotifier();
 		Operation operation = getUMLElement();
-		if(object == null) {
+		if (object == null) {
 			return;
 		}
-		if(object.equals(operation)) {
+		if (object.equals(operation)) {
 			notifyOperationChanged(operation, notification);
-		} else if(isParameter(object)) {
+		} else if (isParameter(object)) {
 			notifyParameterChanged(notification);
-		} else if(isParameterType(object)) {
+		} else if (isParameterType(object)) {
 			notifyParameterTypeChanged(notification);
 		}
-		if(isMaskManagedAnnotation(object)) {
+		if (isMaskManagedAnnotation(object)) {
 			refreshDisplay();
 		}
-		if(isRemovedMaskManagedLabelAnnotation(object, notification)) {
+		if (isRemovedMaskManagedLabelAnnotation(object, notification)) {
 			refreshDisplay();
 		}
 	}
 
 	/**
 	 * Checks if the given object is one of the parameter type of the operation
-	 * 
+	 *
 	 * @param object
-	 *        the object to test
+	 *            the object to test
 	 * @return <code>true</code> if the object corresponds to the type of a parameter of the
 	 *         operation
 	 */
 	protected boolean isParameterType(Object object) {
-		if(!(object instanceof Type)) {
+		if (!(object instanceof Type)) {
 			return false;
 		}
-		for(Parameter parameter : getUMLElement().getOwnedParameters()) {
-			if(object.equals(parameter.getType())) {
+		for (Parameter parameter : getUMLElement().getOwnedParameters()) {
+			if (object.equals(parameter.getType())) {
 				return true;
 			}
 		}
@@ -141,13 +141,13 @@ public class OperationLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	/**
 	 * Checks if the given object is one of the parameter of the operation
-	 * 
+	 *
 	 * @param object
-	 *        the object to test
+	 *            the object to test
 	 * @return <code>true</code> if the object is a parameter of the operation
 	 */
 	protected boolean isParameter(Object object) {
-		if(!(object instanceof Parameter)) {
+		if (!(object instanceof Parameter)) {
 			return false;
 		}
 		return getUMLElement().getOwnedParameters().contains(object);
@@ -155,14 +155,14 @@ public class OperationLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	/**
 	 * notifies that a parameter of the operation has changed.
-	 * 
+	 *
 	 * @param parameter
-	 *        the {@link Parameter} that has changed
+	 *            the {@link Parameter} that has changed
 	 * @param notification
-	 *        the notification send when the element has been changed
+	 *            the notification send when the element has been changed
 	 */
 	protected void notifyParameterChanged(Notification notification) {
-		switch(notification.getFeatureID(Parameter.class)) {
+		switch (notification.getFeatureID(Parameter.class)) {
 		case UMLPackage.PARAMETER__NAME:
 		case UMLPackage.PARAMETER__DEFAULT_VALUE:
 		case UMLPackage.PARAMETER__DIRECTION:
@@ -175,34 +175,34 @@ public class OperationLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 			refreshDisplay();
 			break;
 		case UMLPackage.PARAMETER__TYPE:
-			switch(notification.getEventType()) {
+			switch (notification.getEventType()) {
 			// if it is added => adds listener to the type element
 			case Notification.ADD:
-				getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+				getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 				refreshDisplay();
 				// if it is removed => removes listener from the type element
 				break;
 			case Notification.ADD_MANY: // should never happen
-				if(notification.getNewValue() instanceof List<?>) {
-					List<?> addedElements = (List<?>)notification.getNewValue();
-					for(Object addedElement : addedElements) {
-						if(addedElement instanceof EObject) {
-							getDiagramEventBroker().addNotificationListener((EObject)addedElement, this);
+				if (notification.getNewValue() instanceof List<?>) {
+					List<?> addedElements = (List<?>) notification.getNewValue();
+					for (Object addedElement : addedElements) {
+						if (addedElement instanceof EObject) {
+							getDiagramEventBroker().addNotificationListener((EObject) addedElement, this);
 						}
 					}
 				}
 				refreshDisplay();
 				break;
 			case Notification.REMOVE:
-				getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+				getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 				refreshDisplay();
 				break;
 			case Notification.REMOVE_MANY: // should never happen
-				if(notification.getOldValue() instanceof List<?>) {
-					List<?> removedElements = (List<?>)notification.getOldValue();
-					for(Object removedElement : removedElements) {
-						if(removedElement instanceof EObject) {
-							getDiagramEventBroker().removeNotificationListener((EObject)removedElement, this);
+				if (notification.getOldValue() instanceof List<?>) {
+					List<?> removedElements = (List<?>) notification.getOldValue();
+					for (Object removedElement : removedElements) {
+						if (removedElement instanceof EObject) {
+							getDiagramEventBroker().removeNotificationListener((EObject) removedElement, this);
 						}
 					}
 				}
@@ -211,11 +211,11 @@ public class OperationLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 			// if it is set, remove the old one and adds the new one. this is the method use when
 			// the type is set or removed...
 			case Notification.SET:
-				if(notification.getNewValue() != null) {
-					getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+				if (notification.getNewValue() != null) {
+					getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 				}
-				if(notification.getOldValue() != null) {
-					getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+				if (notification.getOldValue() != null) {
+					getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 				}
 				refreshDisplay();
 			default:
@@ -230,15 +230,15 @@ public class OperationLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	/**
 	 * notifies that a parameter of the operation has changed.
-	 * 
+	 *
 	 * @param parameter
-	 *        the {@link Parameter} that has changed
+	 *            the {@link Parameter} that has changed
 	 * @param notification
-	 *        the notification send when the element has been changed
+	 *            the notification send when the element has been changed
 	 */
 	protected void notifyParameterTypeChanged(Notification notification) {
 		// should be type.class, but seems to be a bug if this is put instead.
-		switch(notification.getFeatureID(notification.getNotifier().getClass())) {
+		switch (notification.getFeatureID(notification.getNotifier().getClass())) {
 		case UMLPackage.TYPE__NAME:
 		case UMLPackage.TYPE__TEMPLATE_PARAMETER:
 		case UMLPackage.TYPE__VISIBILITY:
@@ -252,14 +252,14 @@ public class OperationLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	/**
 	 * notifies that the the property has changed.
-	 * 
+	 *
 	 * @param operation
-	 *        the operation that has changed
+	 *            the operation that has changed
 	 * @param notification
-	 *        the notification send when the element has been changed
+	 *            the notification send when the element has been changed
 	 */
 	protected void notifyOperationChanged(Operation operation, Notification notification) {
-		switch(notification.getFeatureID(Operation.class)) {
+		switch (notification.getFeatureID(Operation.class)) {
 		case UMLPackage.OPERATION__NAME:
 		case UMLPackage.OPERATION__VISIBILITY:
 		case UMLPackage.OPERATION__IS_UNIQUE:
@@ -271,34 +271,34 @@ public class OperationLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 			refreshDisplay();
 			break;
 		case UMLPackage.OPERATION__OWNED_PARAMETER:
-			switch(notification.getEventType()) {
+			switch (notification.getEventType()) {
 			// if it is added => adds listener to the type element
 			case Notification.ADD:
-				getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+				getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 				refreshDisplay();
 				// if it is removed => removes listener from the type element
 				break;
 			case Notification.ADD_MANY: // should never happen
-				if(notification.getNewValue() instanceof List<?>) {
-					List<?> addedElements = (List<?>)notification.getNewValue();
-					for(Object addedElement : addedElements) {
-						if(addedElement instanceof EObject) {
-							getDiagramEventBroker().addNotificationListener((EObject)addedElement, this);
+				if (notification.getNewValue() instanceof List<?>) {
+					List<?> addedElements = (List<?>) notification.getNewValue();
+					for (Object addedElement : addedElements) {
+						if (addedElement instanceof EObject) {
+							getDiagramEventBroker().addNotificationListener((EObject) addedElement, this);
 						}
 					}
 				}
 				refreshDisplay();
 				break;
 			case Notification.REMOVE:
-				getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+				getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 				refreshDisplay();
 				break;
 			case Notification.REMOVE_MANY: // should never happen
-				if(notification.getOldValue() instanceof List<?>) {
-					List<?> removedElements = (List<?>)notification.getOldValue();
-					for(Object removedElement : removedElements) {
-						if(removedElement instanceof EObject) {
-							getDiagramEventBroker().removeNotificationListener((EObject)removedElement, this);
+				if (notification.getOldValue() instanceof List<?>) {
+					List<?> removedElements = (List<?>) notification.getOldValue();
+					for (Object removedElement : removedElements) {
+						if (removedElement instanceof EObject) {
+							getDiagramEventBroker().removeNotificationListener((EObject) removedElement, this);
 						}
 					}
 				}
@@ -307,11 +307,11 @@ public class OperationLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 			// if it is set, remove the old one and adds the new one. this is the method use when
 			// the type is set or removed...
 			case Notification.SET:
-				if(notification.getNewValue() != null) {
-					getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+				if (notification.getNewValue() != null) {
+					getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 				}
-				if(notification.getOldValue() != null) {
-					getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+				if (notification.getOldValue() != null) {
+					getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 				}
 				refreshDisplay();
 			default:
@@ -330,7 +330,7 @@ public class OperationLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	@Override
 	public void refreshDisplay() {
 		// calls the helper for this edit Part
-		OperationLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart)getHost());
+		OperationLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart) getHost());
 	}
 
 	/**
@@ -341,13 +341,13 @@ public class OperationLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 		super.removeAdditionalListeners();
 		Operation operation = getUMLElement();
 		// check host semantic element is not null
-		if(operation == null) {
+		if (operation == null) {
 			return;
 		}
-		for(Parameter parameter : operation.getOwnedParameters()) {
+		for (Parameter parameter : operation.getOwnedParameters()) {
 			getDiagramEventBroker().removeNotificationListener(parameter, this);
 			// remove parameter type listener
-			if(parameter.getType() != null) {
+			if (parameter.getType() != null) {
 				getDiagramEventBroker().removeNotificationListener(parameter.getType(), this);
 			}
 		}

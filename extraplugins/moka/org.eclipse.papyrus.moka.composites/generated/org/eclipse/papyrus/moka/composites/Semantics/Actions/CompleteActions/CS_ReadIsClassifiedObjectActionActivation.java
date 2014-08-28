@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,21 +23,22 @@ import org.eclipse.uml2.uml.InterfaceRealization;
 
 public class CS_ReadIsClassifiedObjectActionActivation extends ReadIsClassifiedObjectActionActivation {
 
+	@Override
 	public Boolean checkAllParents(Classifier type, Classifier classifier) {
 		// If the given classifier is not an Interface, behaves like in fUML.
 		// Otherwise, check if the given type (or one of its direct or indirect ancestors)
 		// has an InterfaceRealization relationships with the given classifier.
 		boolean matched = false;
-		if(!(classifier instanceof Interface)) {
+		if (!(classifier instanceof Interface)) {
 			matched = super.checkAllParents(type, classifier);
-		} else if(!(type instanceof Class)) {
+		} else if (!(type instanceof Class)) {
 			matched = false;
-		} else if(this.realizesInterface((Class)type, (Interface)classifier)) {
+		} else if (this.realizesInterface((Class) type, (Interface) classifier)) {
 			matched = true;
 		} else {
 			List<Classifier> directParents = type.getGenerals();
 			int i = 1;
-			while(!matched & i <= directParents.size()) {
+			while (!matched & i <= directParents.size()) {
 				Classifier directParent = directParents.get(i - 1);
 				matched = this.checkAllParents(directParent, classifier);
 				i = i + 1;
@@ -52,12 +53,12 @@ public class CS_ReadIsClassifiedObjectActionActivation extends ReadIsClassifiedO
 		List<InterfaceRealization> realizations = type.getInterfaceRealizations();
 		boolean realized = false;
 		int i = 1;
-		while(i <= realizations.size() && !realized) {
+		while (i <= realizations.size() && !realized) {
 			InterfaceRealization realization = realizations.get(i - 1);
 			Interface contract = realization.getContract();
-			if(contract == interface_) {
+			if (contract == interface_) {
 				realized = true;
-			} else if(this.isDescendant(contract, interface_)) {
+			} else if (this.isDescendant(contract, interface_)) {
 				realized = true;
 			}
 			i = i + 1;
@@ -70,10 +71,10 @@ public class CS_ReadIsClassifiedObjectActionActivation extends ReadIsClassifiedO
 		boolean matched = false;
 		List<Classifier> descendants = contract.getGenerals();
 		int i = 1;
-		while(i <= descendants.size() && !matched) {
-			if(descendants.get(i - 1) instanceof Interface) {
-				Interface descendant = (Interface)descendants.get(i - 1);
-				if(descendant == interface_) {
+		while (i <= descendants.size() && !matched) {
+			if (descendants.get(i - 1) instanceof Interface) {
+				Interface descendant = (Interface) descendants.get(i - 1);
+				if (descendant == interface_) {
 					matched = true;
 				} else {
 					matched = this.isDescendant(descendant, interface_);

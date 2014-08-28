@@ -108,7 +108,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 * Returns the CSS ID of the selected element.
 	 *
 	 * @param sourceElement
-	 *        The source element must be a GMF notation object (View, Style, ...)
+	 *            The source element must be a GMF notation object (View, Style, ...)
 	 * @return
 	 *         The CSS ID associated to the source element, or null if it cannot be found
 	 */
@@ -122,7 +122,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 * all classes, separated with spaces.
 	 *
 	 * @param sourceElement
-	 *        The source element must be a GMF notation object (View, Style, ...)
+	 *            The source element must be a GMF notation object (View, Style, ...)
 	 * @return
 	 *         The CSS Class associated to the source element, or null if it cannot be found
 	 */
@@ -135,7 +135,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 * Returns the source element's local CSS style.
 	 *
 	 * @param sourceElement
-	 *        The source element must be a GMF notation object (View, Style, ...)
+	 *            The source element must be a GMF notation object (View, Style, ...)
 	 * @return
 	 *         the source element's local CSS style.
 	 */
@@ -144,8 +144,8 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	}
 
 	private static String getCSSValue(EObject sourceElement, String key) {
-		StringValueStyle style = (StringValueStyle)findStyle(sourceElement, key, NotationPackage.eINSTANCE.getStringValueStyle());
-		if(style == null) {
+		StringValueStyle style = (StringValueStyle) findStyle(sourceElement, key, NotationPackage.eINSTANCE.getStringValueStyle());
+		if (style == null) {
 			return null;
 		}
 
@@ -154,8 +154,8 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 
 	@SuppressWarnings("unchecked")
 	private static List<String> getCSSValues(EObject sourceElement, String key) {
-		StringListValueStyle style = (StringListValueStyle)findStyle(sourceElement, key, NotationPackage.eINSTANCE.getStringListValueStyle());
-		if(style == null) {
+		StringListValueStyle style = (StringListValueStyle) findStyle(sourceElement, key, NotationPackage.eINSTANCE.getStringListValueStyle());
+		if (style == null) {
 			return Collections.emptyList();
 		}
 
@@ -165,7 +165,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 
 	private static NamedStyle findStyle(EObject sourceElement, String key, EClass type) {
 		View view = findView(sourceElement);
-		if(view == null) {
+		if (view == null) {
 			return null;
 		}
 
@@ -173,12 +173,12 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	}
 
 	private static View findView(EObject sourceElement) {
-		if(sourceElement == null) {
+		if (sourceElement == null) {
 			return null;
 		}
 
-		if(sourceElement instanceof View) {
-			return (View)sourceElement;
+		if (sourceElement instanceof View) {
+			return (View) sourceElement;
 		}
 
 		return findView(sourceElement.eContainer());
@@ -188,15 +188,15 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 * Creates a new GMF Element Adapter for the requested view.
 	 *
 	 * @param view
-	 *        The view to be adapted
+	 *            The view to be adapted
 	 * @param engine
-	 *        The associated CSS Engine
+	 *            The associated CSS Engine
 	 */
 	public GMFElementAdapter(View view, ExtendedCSSEngine engine) {
 		super(view, engine);
 
-		//Bug 431694: Don't instantiate an ElementAdapter for an Orphaned view
-		if(view == null || view.getDiagram() == null) {
+		// Bug 431694: Don't instantiate an ElementAdapter for an Orphaned view
+		if (view == null || view.getDiagram() == null) {
 			throw new IllegalArgumentException("Cannot handle orphaned view : " + view);
 		}
 
@@ -212,7 +212,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 *         The semantic element associated to this adapter
 	 */
 	public EObject getSemanticElement() {
-		if(semanticElement == null) {
+		if (semanticElement == null) {
 			semanticElement = CSSDOMSemanticElementHelper.findSemanticElement(notationElement);
 			computePseudoInstances();
 			listenSemanticElement();
@@ -221,9 +221,9 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	}
 
 	private void computePseudoInstances() {
-		if(CSSDOMSemanticElementHelper.isFloatingLabel(notationElement)) {
+		if (CSSDOMSemanticElementHelper.isFloatingLabel(notationElement)) {
 			String humanType = NotationTypesMap.instance.getHumanReadableType(notationElement);
-			if(humanType == null) {
+			if (humanType == null) {
 				humanType = notationElement.getType();
 			}
 
@@ -232,7 +232,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	}
 
 	private Adapter getStyleListener() {
-		if(styleListener == null) {
+		if (styleListener == null) {
 			styleListener = new StyleListener(this);
 		}
 		return styleListener;
@@ -241,18 +241,18 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	private void listenNotationElement() {
 		notationElement.eAdapters().add(getStyleListener());
 
-		Collection<String> cssStyles = Arrays.asList(new String[]{ CSS_GMF_CLASS_KEY, CSS_GMF_ID_KEY, CSS_GMF_STYLE_KEY, CSS_DIAGRAM_STYLESHEETS_KEY });
+		Collection<String> cssStyles = Arrays.asList(new String[] { CSS_GMF_CLASS_KEY, CSS_GMF_ID_KEY, CSS_GMF_STYLE_KEY, CSS_DIAGRAM_STYLESHEETS_KEY });
 
 		notationElement.eAdapters().add(cssStyleListener = new CustomStyleListener(notationElement, this, cssStyles));
 	}
 
 	private ExtendedCSSEngine getEngine() {
-		return (ExtendedCSSEngine)engine;
+		return (ExtendedCSSEngine) engine;
 	}
 
 	private void listenSemanticElement() {
-		//FIXME: The semantic hierarchy is never refresh (children & parentNode)
-		if(semanticElement != null) {
+		// FIXME: The semantic hierarchy is never refresh (children & parentNode)
+		if (semanticElement != null) {
 			semanticElement.eAdapters().add(getStyleListener());
 		}
 	}
@@ -265,27 +265,27 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 */
 	@Override
 	public Node getParentNode() {
-		if(parentNode == null) {
+		if (parentNode == null) {
 			View gmfElement = notationElement;
-			while(gmfElement != null) {
+			while (gmfElement != null) {
 				EObject semanticElement = CSSDOMSemanticElementHelper.findSemanticElement(gmfElement);
 
-				if(semanticElement != this.getSemanticElement()) {
+				if (semanticElement != this.getSemanticElement()) {
 					break;
 				}
 
 				EObject container = gmfElement.eContainer();
 
-				if(gmfElement == container || !(container instanceof View)) {
+				if (gmfElement == container || !(container instanceof View)) {
 					gmfElement = null;
 					break;
 				}
 
-				gmfElement = (View)container;
+				gmfElement = (View) container;
 			}
 
 			parentNode = engine.getElement(gmfElement);
-			if(parentNode == this) {
+			if (parentNode == this) {
 				return parentNode = null;
 			}
 		}
@@ -306,7 +306,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 */
 	@Override
 	public String getNamespaceURI() {
-		if(namespaceURI == null) {
+		if (namespaceURI == null) {
 			namespaceURI = EMFHelper.getQualifiedName(getSemanticElement().eClass().getEPackage(), ".");
 		}
 		return namespaceURI;
@@ -344,20 +344,20 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 */
 	@Override
 	public String getLocalName() {
-		if(localName == null) {
-			if(getSemanticElement() instanceof Diagram) {
-				Diagram diagram = (Diagram)getSemanticElement();
+		if (localName == null) {
+			if (getSemanticElement() instanceof Diagram) {
+				Diagram diagram = (Diagram) getSemanticElement();
 				String type = diagram.getType();
 
 				String humanType = NotationTypesMap.instance.getHumanReadableType(diagram);
-				if(humanType != null) {
+				if (humanType != null) {
 					localName = humanType;
 				} else {
 					localName = type;
 				}
-			} else if(getNotationElement() instanceof BasicCompartment) {
+			} else if (getNotationElement() instanceof BasicCompartment) {
 				return "Compartment";
-			} else if(CSSDOMSemanticElementHelper.isFloatingLabel(getNotationElement())) {
+			} else if (CSSDOMSemanticElementHelper.isFloatingLabel(getNotationElement())) {
 				return "Label";
 			} else {
 				localName = getSemanticElement().eClass().getName();
@@ -375,7 +375,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	@Override
 	public final String getAttribute(String attr) {
 		String value = doGetAttribute(attr);
-		if(value != null) {
+		if (value != null) {
 			return value;
 		}
 
@@ -390,36 +390,36 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 * Returns null if the attribute is not known
 	 */
 	protected String doGetAttribute(String attr) {
-		if(notationElement instanceof BasicCompartment) {
-			//Compartments can be filtered by type (notation::View::type), or by title (From GmfGen model)
-			//We add the "kind" attribute which is specific to the CSS (More user-friendly)
-			if("kind".equals(attr)) {
+		if (notationElement instanceof BasicCompartment) {
+			// Compartments can be filtered by type (notation::View::type), or by title (From GmfGen model)
+			// We add the "kind" attribute which is specific to the CSS (More user-friendly)
+			if ("kind".equals(attr)) {
 
-				BasicCompartment compartment = (BasicCompartment)notationElement;
+				BasicCompartment compartment = (BasicCompartment) notationElement;
 				String humanType = NotationTypesMap.instance.getHumanReadableType(compartment);
-				if(humanType == null) {
+				if (humanType == null) {
 					return compartment.getType();
 				}
-				return humanType; //7017, 7018, 7019 for Attribute/Operation/Classifier compartments
-				//TODO: Create a mapping list between GMF ID (Type) and user-readable labels
+				return humanType; // 7017, 7018, 7019 for Attribute/Operation/Classifier compartments
+				// TODO: Create a mapping list between GMF ID (Type) and user-readable labels
 			}
 		}
 
 		EStructuralFeature feature = getSemanticElement().eClass().getEStructuralFeature(attr);
 
-		if(feature != null) {
-			if(feature.isMany()) {
-				List<?> values = (List<?>)semanticElement.eGet(feature);
+		if (feature != null) {
+			if (feature.isMany()) {
+				List<?> values = (List<?>) semanticElement.eGet(feature);
 				List<String> cssValues = new LinkedList<String>();
-				for(Object value : values) {
-					if(value != null) {
+				for (Object value : values) {
+					if (value != null) {
 						cssValues.add(getCSSValue(feature, value));
 					}
 				}
 				return ListHelper.deepToString(cssValues, CSS_VALUES_SEPARATOR);
 			} else {
 				Object value = semanticElement.eGet(feature);
-				if(value != null) {
+				if (value != null) {
 					return getCSSValue(feature, value);
 				}
 			}
@@ -439,15 +439,15 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 * @return
 	 */
 	protected String getCSSValue(EStructuralFeature feature, Object value) {
-		if(value == null) {
+		if (value == null) {
 			return null;
 		}
 
-		if(feature instanceof EReference && value instanceof ENamedElement) {
-			return ((ENamedElement)value).getName();
+		if (feature instanceof EReference && value instanceof ENamedElement) {
+			return ((ENamedElement) value).getName();
 		}
 
-		//Standard case. For EObject values, it might be better to return null than a random label...
+		// Standard case. For EObject values, it might be better to return null than a random label...
 		return value.toString();
 	}
 
@@ -463,9 +463,9 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 
 
 
-	/////////////
-	//Node List//
-	/////////////
+	// ///////////
+	// Node List//
+	// ///////////
 
 
 
@@ -486,7 +486,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	}
 
 	protected Node[] getChildren() {
-		if(children == null) {
+		if (children == null) {
 			children = computeChildren(notationElement, engine);
 		}
 
@@ -503,13 +503,13 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	protected static Node[] computeChildren(View notationElement, CSSEngine engine) {
 		EObject semanticElement = CSSDOMSemanticElementHelper.findSemanticElement(notationElement);
 		List<Node> childList = new LinkedList<Node>();
-		for(EObject child : notationElement.eContents()) {
-			if(child instanceof View) {
-				View notationChild = (View)child;
-				if(SemanticElementHelper.findSemanticElement(notationChild) != semanticElement) {
+		for (EObject child : notationElement.eContents()) {
+			if (child instanceof View) {
+				View notationChild = (View) child;
+				if (SemanticElementHelper.findSemanticElement(notationChild) != semanticElement) {
 					childList.add(engine.getElement(notationChild));
 				} else {
-					//This is the same semantic element (e.g. label). Compute indirect children, if any
+					// This is the same semantic element (e.g. label). Compute indirect children, if any
 					childList.addAll(Arrays.asList(computeChildren(notationChild, engine)));
 				}
 			}
@@ -517,29 +517,29 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 
 		/*
 		 * <--------------------
-		 * 
+		 *
 		 * //Allows both notations Class > Property and Class > Compartment > Property
-		 * 
+		 *
 		 * //FIXME: The Tree is computed through "getParentNode". "getChildren" is barely used. Moreover,
 		 * //there is a mapping between Notation element and DOM element, which makes it impossible to associate the same
 		 * //notation element to different DOM elements.
-		 * 
+		 *
 		 * // for(EObject child : notationElement.eContents()) {
 		 * // if(child instanceof BasicCompartment) {
 		 * // //Add the Compartment's children to this' children
 		 * // childList.addAll(Arrays.asList(computeChildren((View)child, engine)));
 		 * // }
 		 * // }
-		 * 
+		 *
 		 * -------------------->
 		 */
 
 		return childList.toArray(new Node[childList.size()]);
 	}
 
-	//////////////////////
-	//	Handle events	//
-	//////////////////////
+	// ////////////////////
+	// Handle events //
+	// ////////////////////
 
 
 	/**
@@ -557,7 +557,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 * Source: styleListener
 	 */
 	public void semanticElementChanged() {
-		if(semanticElement != null && semanticElement != notationElement) {
+		if (semanticElement != null && semanticElement != notationElement) {
 			semanticElement.eAdapters().remove(styleListener);
 			semanticElement = null;
 		}
@@ -573,16 +573,16 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 * Handles a notification for Custom style change.
 	 * Source: cssStyleListener
 	 */
-	//Change incoming from one of the cssCustomStyles (class, id, local style or diagram stylesheets)
+	// Change incoming from one of the cssCustomStyles (class, id, local style or diagram stylesheets)
 	@Override
 	public void handleChange(ChangeEvent event) {
-		if(notationElement instanceof CSSDiagram) {
-			//TODO: Use a finer grained event (We should reset only when the
-			//change occurs on a DiagramStyleSheet)
+		if (notationElement instanceof CSSDiagram) {
+			// TODO: Use a finer grained event (We should reset only when the
+			// change occurs on a DiagramStyleSheet)
 			getEngine().reset();
 		}
 
-		//Notify the CSS Engine
+		// Notify the CSS Engine
 		getEngine().notifyChange(this);
 	}
 
@@ -597,7 +597,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 
 		notationElement.eAdapters().remove(styleListener);
 
-		if(semanticElement != null) {
+		if (semanticElement != null) {
 			semanticElement.eAdapters().remove(styleListener);
 		}
 	}
@@ -607,7 +607,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 * Source : styleListener
 	 */
 	public void notationPropertyChanged() {
-		//Notify the CSSEngine
+		// Notify the CSSEngine
 		getEngine().notifyChange(this);
 	}
 
@@ -616,7 +616,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 * Source : styleListener
 	 */
 	public void semanticPropertyChanged() {
-		//Notify the CSSEngine
+		// Notify the CSSEngine
 		getEngine().notifyChange(this);
 	}
 
@@ -626,7 +626,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	 */
 	public void notationElementDisposed() {
 		dispose();
-		//Notify the CSSEngine
+		// Notify the CSSEngine
 		getEngine().handleDispose(notationElement);
 	}
 
@@ -645,12 +645,12 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 
 		@Override
 		public boolean equals(Object other) {
-			if(other instanceof String) {
-				return ((String)other).equalsIgnoreCase(sourceString);
+			if (other instanceof String) {
+				return ((String) other).equalsIgnoreCase(sourceString);
 			}
 
-			if(other instanceof StringIgnoreCase) {
-				return equals(((StringIgnoreCase)other).sourceString);
+			if (other instanceof StringIgnoreCase) {
+				return equals(((StringIgnoreCase) other).sourceString);
 			}
 
 			return false;
@@ -658,7 +658,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 
 		@Override
 		public int hashCode() {
-			if(sourceStringToLower == null) {
+			if (sourceStringToLower == null) {
 				return 0;
 			}
 
@@ -678,11 +678,11 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	}
 
 
-	//The following methods (Static pseudo instances) are not supported.
+	// The following methods (Static pseudo instances) are not supported.
 
 	@Override
 	public void addStaticPseudoInstance(String pseudo) {
-		//Disable the super implementation. Static pseudo instances are not supported.
+		// Disable the super implementation. Static pseudo instances are not supported.
 		throw new UnsupportedOperationException();
 	}
 
@@ -693,12 +693,12 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.notation.StatefulView#addStates(java.util.Set)
 	 */
 	@Override
 	public void addStates(Set<String> states) {
-		for(String state : states) {
+		for (String state : states) {
 			this.pseudoInstances.add(new StringIgnoreCase(state));
 		}
 		getEngine().notifyChange(this);
@@ -706,12 +706,12 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.notation.StatefulView#removeStates(java.util.Set)
 	 */
 	@Override
 	public void removeStates(Set<String> states) {
-		for(String state : states) {
+		for (String state : states) {
 			this.pseudoInstances.remove(new StringIgnoreCase(state));
 		}
 		getEngine().notifyChange(this);
@@ -720,7 +720,7 @@ public class GMFElementAdapter extends ElementAdapter implements NodeList, IChan
 	@Override
 	public Set<String> getStates() {
 		Set<String> result = new HashSet<String>();
-		for(StringIgnoreCase element : pseudoInstances) {
+		for (StringIgnoreCase element : pseudoInstances) {
 			result.add(element.toString());
 		}
 		return result;

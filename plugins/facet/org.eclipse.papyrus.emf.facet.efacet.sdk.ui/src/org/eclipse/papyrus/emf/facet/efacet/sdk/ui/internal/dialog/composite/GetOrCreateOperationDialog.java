@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -27,13 +27,12 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * Provide a dialog where the user can select an Operation in the existing
- * facets list or create a new one. This class use the specific widget
- * {@link GetOrCreateFiltredOperationWidget} and return the selected element
+ * facets list or create a new one. This class use the specific widget {@link GetOrCreateFiltredOperationWidget} and return the selected element
  * with the method {@link #getFacetOperationSelected()}.</p>
- * 
+ *
  * When the "ok" button is pressed, the parent property is set with the selected
  * element.
- * 
+ *
  * @see GetOrCreateFiltredOperationWidget
  */
 public class GetOrCreateOperationDialog extends
@@ -45,7 +44,7 @@ public class GetOrCreateOperationDialog extends
 
 	/**
 	 * The constructor.
-	 * 
+	 *
 	 * @param callback
 	 *            the callback.
 	 * @param context
@@ -62,7 +61,7 @@ public class GetOrCreateOperationDialog extends
 
 	/**
 	 * Return the operation selected by the user.
-	 * 
+	 *
 	 * @return the operation selected.
 	 */
 	public FacetOperation getFacetOperation() {

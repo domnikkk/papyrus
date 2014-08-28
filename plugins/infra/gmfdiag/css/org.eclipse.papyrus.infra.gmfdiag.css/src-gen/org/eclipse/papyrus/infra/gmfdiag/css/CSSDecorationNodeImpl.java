@@ -23,30 +23,30 @@ public class CSSDecorationNodeImpl extends DecorationNodeImpl implements CustomS
 	private CustomStyle customStyle;
 
 	protected ExtendedCSSEngine getEngine() {
-		if(engine == null) {
-			engine = ((CSSDiagramImpl)getDiagram()).getEngine();
+		if (engine == null) {
+			engine = ((CSSDiagramImpl) getDiagram()).getEngine();
 		}
 		return engine;
 	}
 
 	protected CustomStyle getCustomStyle() {
-		if(customStyle == null) {
+		if (customStyle == null) {
 			customStyle = new CSSCustomStyleDelegate(this, getEngine());
 		}
 		return customStyle;
 	}
 
 	protected CSSView getCSSView() {
-		if(cssView == null) {
+		if (cssView == null) {
 			cssView = new CSSViewDelegate(this, getEngine());
 		}
 		return cssView;
 	}
 
 
-	//////////////////////////////////////////
-	//	Forwards accesses to CSS properties	//
-	//////////////////////////////////////////
+	// ////////////////////////////////////////
+	// Forwards accesses to CSS properties //
+	// ////////////////////////////////////////
 
 	@Override
 	public boolean isVisible() {
@@ -57,7 +57,7 @@ public class CSSDecorationNodeImpl extends DecorationNodeImpl implements CustomS
 	public boolean isCSSVisible() {
 		boolean value = super.isVisible();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getView_Visible(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getView_Visible(), value)) {
 			return value;
 		} else {
 			return getCSSView().isCSSVisible();
@@ -65,9 +65,9 @@ public class CSSDecorationNodeImpl extends DecorationNodeImpl implements CustomS
 	}
 
 
-	////////////////////////////////////////////////
-	//	Implements a setter for each CSS property //
-	////////////////////////////////////////////////
+	// //////////////////////////////////////////////
+	// Implements a setter for each CSS property //
+	// //////////////////////////////////////////////
 
 	@Override
 	public void setVisible(boolean value) {
@@ -78,9 +78,9 @@ public class CSSDecorationNodeImpl extends DecorationNodeImpl implements CustomS
 	}
 
 
-	//////////////////////////////////
-	//	Implements the unset method //
-	//////////////////////////////////
+	// ////////////////////////////////
+	// Implements the unset method //
+	// ////////////////////////////////
 
 	@Override
 	public void eUnset(int featureId) {
@@ -90,9 +90,9 @@ public class CSSDecorationNodeImpl extends DecorationNodeImpl implements CustomS
 		ForceValueHelper.unsetValue(this, feature);
 	}
 
-	///////////////////////////////////
-	//	Implements the custom styles //
-	///////////////////////////////////
+	// /////////////////////////////////
+	// Implements the custom styles //
+	// /////////////////////////////////
 
 	@Override
 	public boolean showElementIcon() {
@@ -109,9 +109,9 @@ public class CSSDecorationNodeImpl extends DecorationNodeImpl implements CustomS
 		return getCustomStyle().showShadow();
 	}
 
-	//////////////////////////////////
-	//	Implements the getNamedStyle //
-	//////////////////////////////////
+	// ////////////////////////////////
+	// Implements the getNamedStyle //
+	// ////////////////////////////////
 
 	@Override
 	public NamedStyle getNamedStyle(EClass eClass, String name) {
@@ -121,7 +121,7 @@ public class CSSDecorationNodeImpl extends DecorationNodeImpl implements CustomS
 	@Override
 	public NamedStyle getCSSNamedStyle(EClass eClass, String name) {
 		NamedStyle userStyle = super.getNamedStyle(eClass, name);
-		if(userStyle != null) {
+		if (userStyle != null) {
 			return userStyle;
 		}
 

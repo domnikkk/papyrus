@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.SensorHardware;
 
@@ -20,6 +19,7 @@ public class SensorHardwareImpl extends HardwareImpl implements SensorHardware {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SensorHardwareImpl() {
@@ -29,6 +29,7 @@ public class SensorHardwareImpl extends HardwareImpl implements SensorHardware {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class SensorHardwareImpl extends HardwareImpl implements SensorHardware {
 		return RobotMLPackage.Literals.SENSOR_HARDWARE;
 	}
 
-} //SensorHardwareImpl
+} // SensorHardwareImpl

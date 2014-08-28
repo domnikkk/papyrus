@@ -52,8 +52,8 @@ public class PapyrusContentProvider extends WorkbenchContentProvider {
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 		super.inputChanged(viewer, oldInput, newInput);
-		if(viewer instanceof CommonViewer) {
-			common = (CommonViewer)viewer;
+		if (viewer instanceof CommonViewer) {
+			common = (CommonViewer) viewer;
 		}
 	}
 
@@ -73,27 +73,27 @@ public class PapyrusContentProvider extends WorkbenchContentProvider {
 
 	@Override
 	public Object[] getElements(Object inputElement) {
-		if(inputElement instanceof IWorkspaceRoot) {
+		if (inputElement instanceof IWorkspaceRoot) {
 			return null;
 		}
 		List<Object> result = new LinkedList<Object>();
 		try {
-			if(isFiltered()) {
-				if(inputElement instanceof IPapyrusFile) {
-					IPapyrusFile file = (IPapyrusFile)inputElement;
-					for(IResource r : file.getAssociatedResources()) {
-						result.add(PapyrusModelHelper.getPapyrusModelFactory().createISubResourceFile(file, (IFile)r));
+			if (isFiltered()) {
+				if (inputElement instanceof IPapyrusFile) {
+					IPapyrusFile file = (IPapyrusFile) inputElement;
+					for (IResource r : file.getAssociatedResources()) {
+						result.add(PapyrusModelHelper.getPapyrusModelFactory().createISubResourceFile(file, (IFile) r));
 					}
 				} else {
 					IResource[] members = null;
-					if(inputElement instanceof IContainer) {
-						members = ((IContainer)inputElement).members();
+					if (inputElement instanceof IContainer) {
+						members = ((IContainer) inputElement).members();
 					}
-					if(members != null) {
-						for(IResource r : members) {
-							if(r instanceof IFile) {
-								if(OneFileUtils.isDi(r)) {
-									IPapyrusFile createIPapyrusFile = PapyrusModelHelper.getPapyrusModelFactory().createIPapyrusFile((IFile)r);
+					if (members != null) {
+						for (IResource r : members) {
+							if (r instanceof IFile) {
+								if (OneFileUtils.isDi(r)) {
+									IPapyrusFile createIPapyrusFile = PapyrusModelHelper.getPapyrusModelFactory().createIPapyrusFile((IFile) r);
 									result.add(createIPapyrusFile);
 								}
 							}
@@ -114,8 +114,8 @@ public class PapyrusContentProvider extends WorkbenchContentProvider {
 
 	@Override
 	public Object getParent(Object element) {
-		if(element instanceof IPapyrusFile) {
-			IPapyrusFile papyFile = (IPapyrusFile)element;
+		if (element instanceof IPapyrusFile) {
+			IPapyrusFile papyFile = (IPapyrusFile) element;
 			return papyFile.getParent();
 		}
 		return null;
@@ -129,11 +129,11 @@ public class PapyrusContentProvider extends WorkbenchContentProvider {
 	@Override
 	protected void processDelta(IResourceDelta delta) {
 		super.processDelta(delta);
-		if(!isFiltered()) {
+		if (!isFiltered()) {
 			return;
 		}
 		Control ctrl = common.getControl();
-		if(ctrl == null || ctrl.isDisposed()) {
+		if (ctrl == null || ctrl.isDisposed()) {
 			return;
 		}
 
@@ -141,22 +141,22 @@ public class PapyrusContentProvider extends WorkbenchContentProvider {
 		final Collection<Runnable> runnables = new ArrayList<Runnable>();
 		processPapyrusDelta(delta, runnables);
 
-		if(runnables.isEmpty()) {
+		if (runnables.isEmpty()) {
 			return;
 		}
 
-		//Are we in the UIThread? If so spin it until we are done
+		// Are we in the UIThread? If so spin it until we are done
 		ctrl.getDisplay().asyncExec(new Runnable() {
 
 			/*
 			 * (non-Javadoc)
-			 * 
+			 *
 			 * @see java.lang.Runnable#run()
 			 */
 			public void run() {
-				//Abort if this happens after disposes
+				// Abort if this happens after disposes
 				Control ctrl = common.getControl();
-				if(ctrl == null || ctrl.isDisposed()) {
+				if (ctrl == null || ctrl.isDisposed()) {
 					return;
 				}
 				runUpdates(runnables);
@@ -167,8 +167,8 @@ public class PapyrusContentProvider extends WorkbenchContentProvider {
 
 	private void runUpdates(Collection<?> runnables) {
 		Iterator<?> runnableIterator = runnables.iterator();
-		while(runnableIterator.hasNext()) {
-			((Runnable)runnableIterator.next()).run();
+		while (runnableIterator.hasNext()) {
+			((Runnable) runnableIterator.next()).run();
 		}
 
 	}
@@ -177,7 +177,7 @@ public class PapyrusContentProvider extends WorkbenchContentProvider {
 		IResourceDelta[] affectedChildren = delta.getAffectedChildren(IResourceDelta.CHANGED);
 
 		// Handle changed children .
-		for(int i = 0; i < affectedChildren.length; i++) {
+		for (int i = 0; i < affectedChildren.length; i++) {
 			processPapyrusDelta(affectedChildren[i], runnables);
 		}
 
@@ -192,9 +192,9 @@ public class PapyrusContentProvider extends WorkbenchContentProvider {
 		// Process additions before removals as to not cause selection
 		// preservation prior to new objects being added
 		// Handle added children. Issue one update for all insertions.
-		if(addedChildren.length > 0) {
+		if (addedChildren.length > 0) {
 			addedObjects = new Object[addedChildren.length];
-			for(int i = 0; i < addedChildren.length; i++) {
+			for (int i = 0; i < addedChildren.length; i++) {
 				addedObjects[i] = addedChildren[i].getResource();
 			}
 		} else {
@@ -203,7 +203,7 @@ public class PapyrusContentProvider extends WorkbenchContentProvider {
 
 		removedObjects = new Object[removedChildren.length];
 		int i = 0;
-		for(IResourceDelta removeDelta : removedChildren) {
+		for (IResourceDelta removeDelta : removedChildren) {
 			removedObjects[i++] = removeDelta.getResource();
 		}
 
@@ -212,7 +212,7 @@ public class PapyrusContentProvider extends WorkbenchContentProvider {
 		Runnable addAndRemove = new Runnable() {
 
 			public void run() {
-				if(common instanceof AbstractTreeViewer && common.getControl() != null && !common.getControl().isDisposed()) {
+				if (common instanceof AbstractTreeViewer && common.getControl() != null && !common.getControl().isDisposed()) {
 					// Disable redraw until the operation is finished so we don't
 					// get a flash of both the new and old item (in the case of
 					// rename)
@@ -220,55 +220,55 @@ public class PapyrusContentProvider extends WorkbenchContentProvider {
 					// rename case)
 
 					// need to handle resource addition
-					if(addedObjects.length > 0) {
+					if (addedObjects.length > 0) {
 						Set<Object> toRefresh = new HashSet<Object>();
 						Set<IPapyrusFile> toAdd = new HashSet<IPapyrusFile>(addedObjects.length);
-						for(Object r : addedObjects) {
-							if(r instanceof IResource) {
-								IResource current = (IResource)r;
-								if(OneFileUtils.diExists(current.getName(), current.getParent())) {
+						for (Object r : addedObjects) {
+							if (r instanceof IResource) {
+								IResource current = (IResource) r;
+								if (OneFileUtils.diExists(current.getName(), current.getParent())) {
 									IPapyrusFile oneFile = PapyrusModelHelper.getPapyrusModelFactory().createIPapyrusFile(OneFileUtils.getDi(current.getName(), current.getParent()));
 									toRefresh.add(oneFile);
 									toRefresh.add(oneFile.getParent());
 								}
 
-								if(OneFileUtils.isDi(current)) {
-									toAdd.add(PapyrusModelHelper.getPapyrusModelFactory().createIPapyrusFile((IFile)current));
+								if (OneFileUtils.isDi(current)) {
+									toAdd.add(PapyrusModelHelper.getPapyrusModelFactory().createIPapyrusFile((IFile) current));
 								}
 							}
 						}
 
-						for(IPapyrusFile o : toAdd) {
+						for (IPapyrusFile o : toAdd) {
 							common.add(o.getParent(), o);
 						}
 
-						for(Object o : toRefresh) {
+						for (Object o : toRefresh) {
 							common.refresh(o);
 						}
 					}
 
-					if(removedObjects.length > 0) {
+					if (removedObjects.length > 0) {
 
 						Set<Object> toRefresh = new HashSet<Object>();
 						Set<Object> toRemove = new HashSet<Object>();
 
-						for(Object r : removedObjects) {
-							if(r instanceof IResource) {
-								IResource current = (IResource)r;
-								if(OneFileUtils.isDi(current)) {
-									toRemove.add(PapyrusModelHelper.getPapyrusModelFactory().createIPapyrusFile((IFile)current));
+						for (Object r : removedObjects) {
+							if (r instanceof IResource) {
+								IResource current = (IResource) r;
+								if (OneFileUtils.isDi(current)) {
+									toRemove.add(PapyrusModelHelper.getPapyrusModelFactory().createIPapyrusFile((IFile) current));
 									toRefresh.add(current.getParent());
-								} else if(OneFileUtils.diExists(current.getName(), current.getParent())) {
+								} else if (OneFileUtils.diExists(current.getName(), current.getParent())) {
 									IPapyrusFile oneFile = PapyrusModelHelper.getPapyrusModelFactory().createIPapyrusFile(OneFileUtils.getDi(current.getName(), current.getParent()));
 									toRefresh.add(oneFile);
-									toRemove.add(PapyrusModelHelper.getPapyrusModelFactory().createISubResourceFile(oneFile, (IFile)current));
+									toRemove.add(PapyrusModelHelper.getPapyrusModelFactory().createISubResourceFile(oneFile, (IFile) current));
 								}
 							}
 						}
 
 						common.remove(toRemove.toArray());
 
-						for(Object o : toRefresh) {
+						for (Object o : toRefresh) {
 							common.refresh(o);
 						}
 					}
@@ -278,27 +278,27 @@ public class PapyrusContentProvider extends WorkbenchContentProvider {
 		runnables.add(addAndRemove);
 	}
 
-	//	@Override
-	//	protected ITreeContentProvider getDelegateContentProvider() {
-	//		if(provider == null) {
-	//			provider = new WorkbenchContentProvider();
-	//		}
-	//		return provider;
-	//	}
+	// @Override
+	// protected ITreeContentProvider getDelegateContentProvider() {
+	// if(provider == null) {
+	// provider = new WorkbenchContentProvider();
+	// }
+	// return provider;
+	// }
 	//
-	//	@Override
-	//	protected String getModelProviderId() {
-	//		return OneFileModelProvider.MODEL_PROVIDER_ID;
-	//	}
+	// @Override
+	// protected String getModelProviderId() {
+	// return OneFileModelProvider.MODEL_PROVIDER_ID;
+	// }
 	//
-	//	@Override
-	//	protected Object getModelRoot() {
-	//		return null;
-	//	}
+	// @Override
+	// protected Object getModelRoot() {
+	// return null;
+	// }
 
-	//	@Override
-	//	protected ResourceTraversal[] getTraversals(ISynchronizationContext context, Object object) {
-	//		return null;
-	//	}
+	// @Override
+	// protected ResourceTraversal[] getTraversals(ISynchronizationContext context, Object object) {
+	// return null;
+	// }
 
 }

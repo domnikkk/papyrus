@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.ConditionalOrExpression;
 import org.eclipse.papyrus.uml.alf.alf.ConditionalTestExpression;
@@ -104,7 +101,11 @@ public class ConditionalTestExpressionImpl extends ExpressionImpl implements Con
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.CONDITIONAL_TEST_EXPRESSION__EXP, oldExp, newExp);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -119,15 +120,20 @@ public class ConditionalTestExpressionImpl extends ExpressionImpl implements Con
     if (newExp != exp)
     {
       NotificationChain msgs = null;
-      if (exp != null)
-        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CONDITIONAL_TEST_EXPRESSION__EXP, null, msgs);
-      if (newExp != null)
-        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CONDITIONAL_TEST_EXPRESSION__EXP, null, msgs);
+      if (exp != null) {
+		msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CONDITIONAL_TEST_EXPRESSION__EXP, null, msgs);
+	}
+      if (newExp != null) {
+		msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CONDITIONAL_TEST_EXPRESSION__EXP, null, msgs);
+	}
       msgs = basicSetExp(newExp, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CONDITIONAL_TEST_EXPRESSION__EXP, newExp, newExp));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CONDITIONAL_TEST_EXPRESSION__EXP, newExp, newExp));
+	}
   }
 
   /**
@@ -152,7 +158,11 @@ public class ConditionalTestExpressionImpl extends ExpressionImpl implements Con
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.CONDITIONAL_TEST_EXPRESSION__WHEN_TRUE, oldWhenTrue, newWhenTrue);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -167,15 +177,20 @@ public class ConditionalTestExpressionImpl extends ExpressionImpl implements Con
     if (newWhenTrue != whenTrue)
     {
       NotificationChain msgs = null;
-      if (whenTrue != null)
-        msgs = ((InternalEObject)whenTrue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CONDITIONAL_TEST_EXPRESSION__WHEN_TRUE, null, msgs);
-      if (newWhenTrue != null)
-        msgs = ((InternalEObject)newWhenTrue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CONDITIONAL_TEST_EXPRESSION__WHEN_TRUE, null, msgs);
+      if (whenTrue != null) {
+		msgs = ((InternalEObject)whenTrue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CONDITIONAL_TEST_EXPRESSION__WHEN_TRUE, null, msgs);
+	}
+      if (newWhenTrue != null) {
+		msgs = ((InternalEObject)newWhenTrue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CONDITIONAL_TEST_EXPRESSION__WHEN_TRUE, null, msgs);
+	}
       msgs = basicSetWhenTrue(newWhenTrue, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CONDITIONAL_TEST_EXPRESSION__WHEN_TRUE, newWhenTrue, newWhenTrue));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CONDITIONAL_TEST_EXPRESSION__WHEN_TRUE, newWhenTrue, newWhenTrue));
+	}
   }
 
   /**
@@ -200,7 +215,11 @@ public class ConditionalTestExpressionImpl extends ExpressionImpl implements Con
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.CONDITIONAL_TEST_EXPRESSION__WHEN_FALSE, oldWhenFalse, newWhenFalse);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -215,15 +234,20 @@ public class ConditionalTestExpressionImpl extends ExpressionImpl implements Con
     if (newWhenFalse != whenFalse)
     {
       NotificationChain msgs = null;
-      if (whenFalse != null)
-        msgs = ((InternalEObject)whenFalse).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CONDITIONAL_TEST_EXPRESSION__WHEN_FALSE, null, msgs);
-      if (newWhenFalse != null)
-        msgs = ((InternalEObject)newWhenFalse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CONDITIONAL_TEST_EXPRESSION__WHEN_FALSE, null, msgs);
+      if (whenFalse != null) {
+		msgs = ((InternalEObject)whenFalse).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CONDITIONAL_TEST_EXPRESSION__WHEN_FALSE, null, msgs);
+	}
+      if (newWhenFalse != null) {
+		msgs = ((InternalEObject)newWhenFalse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CONDITIONAL_TEST_EXPRESSION__WHEN_FALSE, null, msgs);
+	}
       msgs = basicSetWhenFalse(newWhenFalse, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CONDITIONAL_TEST_EXPRESSION__WHEN_FALSE, newWhenFalse, newWhenFalse));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CONDITIONAL_TEST_EXPRESSION__WHEN_FALSE, newWhenFalse, newWhenFalse));
+	}
   }
 
   /**

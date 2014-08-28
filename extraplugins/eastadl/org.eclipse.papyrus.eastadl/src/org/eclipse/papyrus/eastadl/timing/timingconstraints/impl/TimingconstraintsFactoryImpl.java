@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,12 +47,14 @@ import org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPac
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class TimingconstraintsFactoryImpl extends EFactoryImpl implements TimingconstraintsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -65,16 +67,16 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static TimingconstraintsFactory init() {
 		try {
-			TimingconstraintsFactory theTimingconstraintsFactory = (TimingconstraintsFactory)EPackage.Registry.INSTANCE.getEFactory(TimingconstraintsPackage.eNS_URI);
+			TimingconstraintsFactory theTimingconstraintsFactory = (TimingconstraintsFactory) EPackage.Registry.INSTANCE.getEFactory(TimingconstraintsPackage.eNS_URI);
 			if (theTimingconstraintsFactory != null) {
 				return theTimingconstraintsFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new TimingconstraintsFactoryImpl();
@@ -84,6 +86,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public TimingconstraintsFactoryImpl() {
@@ -93,68 +96,90 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case TimingconstraintsPackage.DELAY_CONSTRAINT: return createDelayConstraint();
-			case TimingconstraintsPackage.AGE_CONSTRAINT: return createAgeConstraint();
-			case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT: return createInputSynchronizationConstraint();
-			case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT: return createOutputSynchronizationConstraint();
-			case TimingconstraintsPackage.REACTION_CONSTRAINT: return createReactionConstraint();
-			case TimingconstraintsPackage.SPORADIC_CONSTRAINT: return createSporadicConstraint();
-			case TimingconstraintsPackage.PERIODIC_CONSTRAINT: return createPeriodicConstraint();
-			case TimingconstraintsPackage.PATTERN_CONSTRAINT: return createPatternConstraint();
-			case TimingconstraintsPackage.ARBITRARY_CONSTRAINT: return createArbitraryConstraint();
-			case TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT: return createExecutionTimeConstraint();
-			case TimingconstraintsPackage.BURST_CONSTRAINT: return createBurstConstraint();
-			case TimingconstraintsPackage.COMPARISON_CONSTRAINT: return createComparisonConstraint();
-			case TimingconstraintsPackage.ORDER_CONSTRAINT: return createOrderConstraint();
-			case TimingconstraintsPackage.REPETITION_CONSTRAINT: return createRepetitionConstraint();
-			case TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT: return createStrongDelayConstraint();
-			case TimingconstraintsPackage.STRONG_SYNCHRONIZATION_CONSTRAINT: return createStrongSynchronizationConstraint();
-			case TimingconstraintsPackage.SYNCHRONIZATION_CONSTRAINT: return createSynchronizationConstraint();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case TimingconstraintsPackage.DELAY_CONSTRAINT:
+			return createDelayConstraint();
+		case TimingconstraintsPackage.AGE_CONSTRAINT:
+			return createAgeConstraint();
+		case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT:
+			return createInputSynchronizationConstraint();
+		case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT:
+			return createOutputSynchronizationConstraint();
+		case TimingconstraintsPackage.REACTION_CONSTRAINT:
+			return createReactionConstraint();
+		case TimingconstraintsPackage.SPORADIC_CONSTRAINT:
+			return createSporadicConstraint();
+		case TimingconstraintsPackage.PERIODIC_CONSTRAINT:
+			return createPeriodicConstraint();
+		case TimingconstraintsPackage.PATTERN_CONSTRAINT:
+			return createPatternConstraint();
+		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT:
+			return createArbitraryConstraint();
+		case TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT:
+			return createExecutionTimeConstraint();
+		case TimingconstraintsPackage.BURST_CONSTRAINT:
+			return createBurstConstraint();
+		case TimingconstraintsPackage.COMPARISON_CONSTRAINT:
+			return createComparisonConstraint();
+		case TimingconstraintsPackage.ORDER_CONSTRAINT:
+			return createOrderConstraint();
+		case TimingconstraintsPackage.REPETITION_CONSTRAINT:
+			return createRepetitionConstraint();
+		case TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT:
+			return createStrongDelayConstraint();
+		case TimingconstraintsPackage.STRONG_SYNCHRONIZATION_CONSTRAINT:
+			return createStrongSynchronizationConstraint();
+		case TimingconstraintsPackage.SYNCHRONIZATION_CONSTRAINT:
+			return createSynchronizationConstraint();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case TimingconstraintsPackage.COMPARISON_KIND:
-				return createComparisonKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case TimingconstraintsPackage.COMPARISON_KIND:
+			return createComparisonKindFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case TimingconstraintsPackage.COMPARISON_KIND:
-				return convertComparisonKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case TimingconstraintsPackage.COMPARISON_KIND:
+			return convertComparisonKindToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public DelayConstraint createDelayConstraint() {
 		DelayConstraintImpl delayConstraint = new DelayConstraintImpl();
 		return delayConstraint;
@@ -163,8 +188,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public AgeConstraint createAgeConstraint() {
 		AgeConstraintImpl ageConstraint = new AgeConstraintImpl();
 		return ageConstraint;
@@ -173,8 +200,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public InputSynchronizationConstraint createInputSynchronizationConstraint() {
 		InputSynchronizationConstraintImpl inputSynchronizationConstraint = new InputSynchronizationConstraintImpl();
 		return inputSynchronizationConstraint;
@@ -183,8 +212,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public OutputSynchronizationConstraint createOutputSynchronizationConstraint() {
 		OutputSynchronizationConstraintImpl outputSynchronizationConstraint = new OutputSynchronizationConstraintImpl();
 		return outputSynchronizationConstraint;
@@ -193,8 +224,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ReactionConstraint createReactionConstraint() {
 		ReactionConstraintImpl reactionConstraint = new ReactionConstraintImpl();
 		return reactionConstraint;
@@ -203,8 +236,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public SporadicConstraint createSporadicConstraint() {
 		SporadicConstraintImpl sporadicConstraint = new SporadicConstraintImpl();
 		return sporadicConstraint;
@@ -213,8 +248,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public PeriodicConstraint createPeriodicConstraint() {
 		PeriodicConstraintImpl periodicConstraint = new PeriodicConstraintImpl();
 		return periodicConstraint;
@@ -223,8 +260,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public PatternConstraint createPatternConstraint() {
 		PatternConstraintImpl patternConstraint = new PatternConstraintImpl();
 		return patternConstraint;
@@ -233,8 +272,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ArbitraryConstraint createArbitraryConstraint() {
 		ArbitraryConstraintImpl arbitraryConstraint = new ArbitraryConstraintImpl();
 		return arbitraryConstraint;
@@ -243,8 +284,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ExecutionTimeConstraint createExecutionTimeConstraint() {
 		ExecutionTimeConstraintImpl executionTimeConstraint = new ExecutionTimeConstraintImpl();
 		return executionTimeConstraint;
@@ -253,8 +296,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public BurstConstraint createBurstConstraint() {
 		BurstConstraintImpl burstConstraint = new BurstConstraintImpl();
 		return burstConstraint;
@@ -263,8 +308,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ComparisonConstraint createComparisonConstraint() {
 		ComparisonConstraintImpl comparisonConstraint = new ComparisonConstraintImpl();
 		return comparisonConstraint;
@@ -273,8 +320,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public OrderConstraint createOrderConstraint() {
 		OrderConstraintImpl orderConstraint = new OrderConstraintImpl();
 		return orderConstraint;
@@ -283,8 +332,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public RepetitionConstraint createRepetitionConstraint() {
 		RepetitionConstraintImpl repetitionConstraint = new RepetitionConstraintImpl();
 		return repetitionConstraint;
@@ -293,8 +344,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public StrongDelayConstraint createStrongDelayConstraint() {
 		StrongDelayConstraintImpl strongDelayConstraint = new StrongDelayConstraintImpl();
 		return strongDelayConstraint;
@@ -303,8 +356,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public StrongSynchronizationConstraint createStrongSynchronizationConstraint() {
 		StrongSynchronizationConstraintImpl strongSynchronizationConstraint = new StrongSynchronizationConstraintImpl();
 		return strongSynchronizationConstraint;
@@ -313,8 +368,10 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public SynchronizationConstraint createSynchronizationConstraint() {
 		SynchronizationConstraintImpl synchronizationConstraint = new SynchronizationConstraintImpl();
 		return synchronizationConstraint;
@@ -323,17 +380,21 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ComparisonKind createComparisonKindFromString(EDataType eDataType, String initialValue) {
 		ComparisonKind result = ComparisonKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertComparisonKindToString(EDataType eDataType, Object instanceValue) {
@@ -343,10 +404,12 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimingconstraintsPackage getTimingconstraintsPackage() {
-		return (TimingconstraintsPackage)getEPackage();
+		return (TimingconstraintsPackage) getEPackage();
 	}
 
-} //TimingconstraintsFactoryImpl
+} // TimingconstraintsFactoryImpl

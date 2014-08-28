@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.ImageSensorSystem;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -20,6 +19,7 @@ public class ImageSensorSystemImpl extends SensorSystemImpl implements ImageSens
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ImageSensorSystemImpl() {
@@ -29,6 +29,7 @@ public class ImageSensorSystemImpl extends SensorSystemImpl implements ImageSens
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class ImageSensorSystemImpl extends SensorSystemImpl implements ImageSens
 		return RobotMLPackage.Literals.IMAGE_SENSOR_SYSTEM;
 	}
 
-} //ImageSensorSystemImpl
+} // ImageSensorSystemImpl

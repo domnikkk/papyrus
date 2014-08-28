@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem#getFulfills <em>Fulfills</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem#getHasAn <em>Has An</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem#getHas <em>Has</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem#getFulfills <em>Fulfills</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem#getHasAn <em>Has An</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem#getHas <em>Has</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,10 +45,10 @@ public interface VehicleSystem extends Concept {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.annex.needs.Mission}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Fulfills</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Fulfills</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Fulfills</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getVehicleSystem_Fulfills()
 	 * @model required="true" ordered="false"
@@ -61,10 +61,10 @@ public interface VehicleSystem extends Concept {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.annex.needs.Stakeholder}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Has</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Has</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Has</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getVehicleSystem_Has()
 	 * @model required="true" ordered="false"
@@ -76,10 +76,10 @@ public interface VehicleSystem extends Concept {
 	 * Returns the value of the '<em><b>Has An</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Has An</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Has An</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Has An</em>' reference.
 	 * @see #setHasAn(Architecture)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getVehicleSystem_HasAn()
@@ -92,7 +92,9 @@ public interface VehicleSystem extends Concept {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem#getHasAn <em>Has An</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Has An</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Has An</em>' reference.
 	 * @see #getHasAn()
 	 * @generated
 	 */

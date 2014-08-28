@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The InstanceRef DataType will be used to type attributes of type <<instanceRef>> (FaultFailure, ErrorModelPrototype, etc). 
+ * The InstanceRef DataType will be used to type attributes of type <<instanceRef>> (FaultFailure, ErrorModelPrototype, etc).
  * <!-- end-model-doc -->
  *
  *

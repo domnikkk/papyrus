@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
 /**
  * This class provide customization of the CreationEditPolicy to support the case where
  * a Port or Parameter is created in a Compartment. In such a case the Port (Parameter) should be added to the compartment owner.
- * 
+ *
  */
 public class PortInCompartmentCreationEditPolicy extends CreationEditPolicy {
 	@Override
@@ -53,6 +53,7 @@ public class PortInCompartmentCreationEditPolicy extends CreationEditPolicy {
 		return super.getTargetEditPart(request);
 	}
 
+	@Override
 	protected Command getReparentCommand(ChangeBoundsRequest request) {
 		Iterator<?> editParts = request.getEditParts().iterator();
 		while (editParts.hasNext()) {

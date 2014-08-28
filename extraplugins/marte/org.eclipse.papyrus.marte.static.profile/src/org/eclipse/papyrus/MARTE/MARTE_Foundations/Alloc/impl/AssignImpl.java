@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,12 +37,12 @@ import org.eclipse.uml2.uml.Element;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AssignImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AssignImpl#getNature <em>Nature</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AssignImpl#getImpliedConstraint <em>Implied Constraint</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AssignImpl#getFrom <em>From</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AssignImpl#getTo <em>To</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AssignImpl#getBase_Comment <em>Base Comment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AssignImpl#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AssignImpl#getNature <em>Nature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AssignImpl#getImpliedConstraint <em>Implied Constraint</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AssignImpl#getFrom <em>From</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AssignImpl#getTo <em>To</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AssignImpl#getBase_Comment <em>Base Comment</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,6 +53,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -63,6 +64,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -73,6 +75,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The default value of the '{@link #getNature() <em>Nature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNature()
 	 * @generated
 	 * @ordered
@@ -83,6 +86,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The cached value of the '{@link #getNature() <em>Nature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNature()
 	 * @generated
 	 * @ordered
@@ -93,6 +97,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The cached value of the '{@link #getImpliedConstraint() <em>Implied Constraint</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getImpliedConstraint()
 	 * @generated
 	 * @ordered
@@ -103,6 +108,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFrom()
 	 * @generated
 	 * @ordered
@@ -113,6 +119,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getTo()
 	 * @generated
 	 * @ordered
@@ -123,6 +130,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The cached value of the '{@link #getBase_Comment() <em>Base Comment</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_Comment()
 	 * @generated
 	 * @ordered
@@ -132,6 +140,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected AssignImpl() {
@@ -141,6 +150,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,8 +161,10 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public AssignmentKind getKind() {
 		return kind;
 	}
@@ -160,20 +172,25 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setKind(AssignmentKind newKind) {
 		AssignmentKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AllocPackage.ASSIGN__KIND, oldKind, kind));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public AssignmentNature getNature() {
 		return nature;
 	}
@@ -181,20 +198,25 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setNature(AssignmentNature newNature) {
 		AssignmentNature oldNature = nature;
 		nature = newNature == null ? NATURE_EDEFAULT : newNature;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AllocPackage.ASSIGN__NATURE, oldNature, nature));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<NfpConstraint> getImpliedConstraint() {
 		if (impliedConstraint == null) {
 			impliedConstraint = new EObjectResolvingEList<NfpConstraint>(NfpConstraint.class, this, AllocPackage.ASSIGN__IMPLIED_CONSTRAINT);
@@ -205,8 +227,10 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<Element> getFrom() {
 		if (from == null) {
 			from = new EObjectResolvingEList<Element>(Element.class, this, AllocPackage.ASSIGN__FROM);
@@ -217,8 +241,10 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<Element> getTo() {
 		if (to == null) {
 			to = new EObjectResolvingEList<Element>(Element.class, this, AllocPackage.ASSIGN__TO);
@@ -229,15 +255,18 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Comment getBase_Comment() {
 		if (base_Comment != null && base_Comment.eIsProxy()) {
-			InternalEObject oldBase_Comment = (InternalEObject)base_Comment;
-			base_Comment = (Comment)eResolveProxy(oldBase_Comment);
+			InternalEObject oldBase_Comment = (InternalEObject) base_Comment;
+			base_Comment = (Comment) eResolveProxy(oldBase_Comment);
 			if (base_Comment != oldBase_Comment) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AllocPackage.ASSIGN__BASE_COMMENT, oldBase_Comment, base_Comment));
+				}
 			}
 		}
 		return base_Comment;
@@ -246,6 +275,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Comment basicGetBase_Comment() {
@@ -255,36 +285,42 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_Comment(Comment newBase_Comment) {
 		Comment oldBase_Comment = base_Comment;
 		base_Comment = newBase_Comment;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AllocPackage.ASSIGN__BASE_COMMENT, oldBase_Comment, base_Comment));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AllocPackage.ASSIGN__KIND:
-				return getKind();
-			case AllocPackage.ASSIGN__NATURE:
-				return getNature();
-			case AllocPackage.ASSIGN__IMPLIED_CONSTRAINT:
-				return getImpliedConstraint();
-			case AllocPackage.ASSIGN__FROM:
-				return getFrom();
-			case AllocPackage.ASSIGN__TO:
-				return getTo();
-			case AllocPackage.ASSIGN__BASE_COMMENT:
-				if (resolve) return getBase_Comment();
-				return basicGetBase_Comment();
+		case AllocPackage.ASSIGN__KIND:
+			return getKind();
+		case AllocPackage.ASSIGN__NATURE:
+			return getNature();
+		case AllocPackage.ASSIGN__IMPLIED_CONSTRAINT:
+			return getImpliedConstraint();
+		case AllocPackage.ASSIGN__FROM:
+			return getFrom();
+		case AllocPackage.ASSIGN__TO:
+			return getTo();
+		case AllocPackage.ASSIGN__BASE_COMMENT:
+			if (resolve) {
+				return getBase_Comment();
+			}
+			return basicGetBase_Comment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -292,33 +328,34 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AllocPackage.ASSIGN__KIND:
-				setKind((AssignmentKind)newValue);
-				return;
-			case AllocPackage.ASSIGN__NATURE:
-				setNature((AssignmentNature)newValue);
-				return;
-			case AllocPackage.ASSIGN__IMPLIED_CONSTRAINT:
-				getImpliedConstraint().clear();
-				getImpliedConstraint().addAll((Collection<? extends NfpConstraint>)newValue);
-				return;
-			case AllocPackage.ASSIGN__FROM:
-				getFrom().clear();
-				getFrom().addAll((Collection<? extends Element>)newValue);
-				return;
-			case AllocPackage.ASSIGN__TO:
-				getTo().clear();
-				getTo().addAll((Collection<? extends Element>)newValue);
-				return;
-			case AllocPackage.ASSIGN__BASE_COMMENT:
-				setBase_Comment((Comment)newValue);
-				return;
+		case AllocPackage.ASSIGN__KIND:
+			setKind((AssignmentKind) newValue);
+			return;
+		case AllocPackage.ASSIGN__NATURE:
+			setNature((AssignmentNature) newValue);
+			return;
+		case AllocPackage.ASSIGN__IMPLIED_CONSTRAINT:
+			getImpliedConstraint().clear();
+			getImpliedConstraint().addAll((Collection<? extends NfpConstraint>) newValue);
+			return;
+		case AllocPackage.ASSIGN__FROM:
+			getFrom().clear();
+			getFrom().addAll((Collection<? extends Element>) newValue);
+			return;
+		case AllocPackage.ASSIGN__TO:
+			getTo().clear();
+			getTo().addAll((Collection<? extends Element>) newValue);
+			return;
+		case AllocPackage.ASSIGN__BASE_COMMENT:
+			setBase_Comment((Comment) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -326,29 +363,30 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AllocPackage.ASSIGN__KIND:
-				setKind(KIND_EDEFAULT);
-				return;
-			case AllocPackage.ASSIGN__NATURE:
-				setNature(NATURE_EDEFAULT);
-				return;
-			case AllocPackage.ASSIGN__IMPLIED_CONSTRAINT:
-				getImpliedConstraint().clear();
-				return;
-			case AllocPackage.ASSIGN__FROM:
-				getFrom().clear();
-				return;
-			case AllocPackage.ASSIGN__TO:
-				getTo().clear();
-				return;
-			case AllocPackage.ASSIGN__BASE_COMMENT:
-				setBase_Comment((Comment)null);
-				return;
+		case AllocPackage.ASSIGN__KIND:
+			setKind(KIND_EDEFAULT);
+			return;
+		case AllocPackage.ASSIGN__NATURE:
+			setNature(NATURE_EDEFAULT);
+			return;
+		case AllocPackage.ASSIGN__IMPLIED_CONSTRAINT:
+			getImpliedConstraint().clear();
+			return;
+		case AllocPackage.ASSIGN__FROM:
+			getFrom().clear();
+			return;
+		case AllocPackage.ASSIGN__TO:
+			getTo().clear();
+			return;
+		case AllocPackage.ASSIGN__BASE_COMMENT:
+			setBase_Comment((Comment) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -356,23 +394,24 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AllocPackage.ASSIGN__KIND:
-				return kind != KIND_EDEFAULT;
-			case AllocPackage.ASSIGN__NATURE:
-				return nature != NATURE_EDEFAULT;
-			case AllocPackage.ASSIGN__IMPLIED_CONSTRAINT:
-				return impliedConstraint != null && !impliedConstraint.isEmpty();
-			case AllocPackage.ASSIGN__FROM:
-				return from != null && !from.isEmpty();
-			case AllocPackage.ASSIGN__TO:
-				return to != null && !to.isEmpty();
-			case AllocPackage.ASSIGN__BASE_COMMENT:
-				return base_Comment != null;
+		case AllocPackage.ASSIGN__KIND:
+			return kind != KIND_EDEFAULT;
+		case AllocPackage.ASSIGN__NATURE:
+			return nature != NATURE_EDEFAULT;
+		case AllocPackage.ASSIGN__IMPLIED_CONSTRAINT:
+			return impliedConstraint != null && !impliedConstraint.isEmpty();
+		case AllocPackage.ASSIGN__FROM:
+			return from != null && !from.isEmpty();
+		case AllocPackage.ASSIGN__TO:
+			return to != null && !to.isEmpty();
+		case AllocPackage.ASSIGN__BASE_COMMENT:
+			return base_Comment != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -380,11 +419,14 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (kind: ");
@@ -395,4 +437,4 @@ public class AssignImpl extends EObjectImpl implements Assign {
 		return result.toString();
 	}
 
-} //AssignImpl
+} // AssignImpl

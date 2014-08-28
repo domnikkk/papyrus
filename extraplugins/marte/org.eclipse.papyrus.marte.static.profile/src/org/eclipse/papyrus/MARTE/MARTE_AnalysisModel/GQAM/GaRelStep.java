@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,8 +23,8 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Resource;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRelStep#getRelRes <em>Rel Res</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRelStep#getResUnits <em>Res Units</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRelStep#getRelRes <em>Rel Res</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRelStep#getResUnits <em>Res Units</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,10 +37,10 @@ public interface GaRelStep extends GaStep {
 	 * Returns the value of the '<em><b>Rel Res</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Rel Res</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Rel Res</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Rel Res</em>' reference.
 	 * @see #setRelRes(Resource)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaRelStep_RelRes()
@@ -53,7 +53,9 @@ public interface GaRelStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRelStep#getRelRes <em>Rel Res</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rel Res</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Rel Res</em>' reference.
 	 * @see #getRelRes()
 	 * @generated
 	 */
@@ -64,10 +66,10 @@ public interface GaRelStep extends GaStep {
 	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Res Units</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Res Units</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Res Units</em>' attribute.
 	 * @see #setResUnits(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaRelStep_ResUnits()
@@ -80,7 +82,9 @@ public interface GaRelStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRelStep#getResUnits <em>Res Units</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Res Units</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Res Units</em>' attribute.
 	 * @see #getResUnits()
 	 * @generated
 	 */

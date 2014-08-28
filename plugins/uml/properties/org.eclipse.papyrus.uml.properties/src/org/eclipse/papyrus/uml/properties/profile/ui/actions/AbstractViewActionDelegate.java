@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,9 +49,9 @@ public abstract class AbstractViewActionDelegate implements IViewActionDelegate 
 	/**
 	 * Returns <code>true</code> if the element is a selectableElement, i.e. if the action
 	 * should be enabled
-	 * 
+	 *
 	 * @param element
-	 *        the element to test
+	 *            the element to test
 	 * @return <code>true</code> if the element can be selected
 	 */
 	protected boolean isSelectableElement(Object o) {
@@ -63,20 +63,20 @@ public abstract class AbstractViewActionDelegate implements IViewActionDelegate 
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
 		IStructuredSelection structSelection = null;
-		if(selection instanceof IStructuredSelection) {
-			structSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			structSelection = (IStructuredSelection) selection;
 			// iterate the selection to update the selected element
 			@SuppressWarnings("unchecked")
 			Iterator<Object> it = structSelection.iterator();
-			while(it.hasNext()) {
-				Object o = (Object)it.next();
+			while (it.hasNext()) {
+				Object o = it.next();
 				if (o instanceof IAdaptable) {
-					EObject eObject =EMFHelper.getEObject(o);
+					EObject eObject = EMFHelper.getEObject(o);
 					if (eObject != null) {
 						setSelectedElement(eObject);
 					}
 				}
-				if(isSelectableElement(o)) {
+				if (isSelectableElement(o)) {
 					setSelectedElement(o);
 					return;
 				}
@@ -86,19 +86,19 @@ public abstract class AbstractViewActionDelegate implements IViewActionDelegate 
 
 	/**
 	 * Sets the current selected element
-	 * 
+	 *
 	 * @param selectedElement
-	 *        the new selected element
+	 *            the new selected element
 	 */
 	protected void setSelectedElement(Object selectedElement) {
-		if( selectedElement instanceof Element){
-			this.selectedElement = (Element)selectedElement;
+		if (selectedElement instanceof Element) {
+			this.selectedElement = (Element) selectedElement;
 		}
 	}
 
 	/**
 	 * Returns current selected element
-	 * 
+	 *
 	 * @return current selected element may be null
 	 */
 	protected Element getSelectedElement() {

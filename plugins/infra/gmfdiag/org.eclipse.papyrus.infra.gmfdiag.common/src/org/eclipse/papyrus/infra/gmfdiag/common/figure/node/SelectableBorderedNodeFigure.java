@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -41,12 +41,13 @@ public class SelectableBorderedNodeFigure extends BorderedNodeFigure {
 	 */
 	@Override
 	public IFigure findFigureAt(int x, int y, TreeSearch search) {
-		if(search.prune(this))
+		if (search.prune(this)) {
 			return null;
+		}
 
 		// Start by searching in the borderItemContainer
 		IFigure result = getBorderItemContainer().findFigureAt(x, y, search);
-		if(result != null) {
+		if (result != null) {
 			return result;
 		}
 
@@ -54,18 +55,18 @@ public class SelectableBorderedNodeFigure extends BorderedNodeFigure {
 		Rectangle unselectableArea = new Rectangle(getBounds().getCopy());
 		unselectableArea.x = unselectableArea.x + MARGIN_SIZE;
 		unselectableArea.y = unselectableArea.y + MARGIN_SIZE;
-		unselectableArea.width = unselectableArea.width - 2*MARGIN_SIZE;
-		unselectableArea.height = unselectableArea.height - 2*MARGIN_SIZE;
+		unselectableArea.width = unselectableArea.width - 2 * MARGIN_SIZE;
+		unselectableArea.height = unselectableArea.height - 2 * MARGIN_SIZE;
 
 		Rectangle selectableArea = new Rectangle(getBounds().getCopy());
 
-		if((selectableArea.contains(x, y)) && !(unselectableArea.contains(x, y))) {
+		if ((selectableArea.contains(x, y)) && !(unselectableArea.contains(x, y))) {
 			return this;
 		}
 
 		// Then search in the main figure
 		result = getMainFigure().findFigureAt(x, y, search);
-		if(result != null) {
+		if (result != null) {
 			return result;
 		}
 

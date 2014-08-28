@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ import org.eclipse.papyrus.eclipse.project.editors.file.AbstractFileEditor;
 import org.eclipse.papyrus.eclipse.project.editors.interfaces.IProjectEditor;
 
 /**
- * 
+ *
  * This class provides useful method for project editor
- * 
+ *
  */
 public abstract class AbstractProjectEditor extends AbstractFileEditor implements IProjectEditor {
 
@@ -47,11 +47,11 @@ public abstract class AbstractProjectEditor extends AbstractFileEditor implement
 	private final IProjectDescription description;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param project
-	 *        the eclipse project
+	 *            the eclipse project
 	 * @throws CoreException
 	 */
 	public AbstractProjectEditor(final IProject project) throws CoreException {
@@ -61,9 +61,9 @@ public abstract class AbstractProjectEditor extends AbstractFileEditor implement
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.project.AbstractProjectEditor.plugin.AbstractEditor#exists()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	@Override
@@ -72,9 +72,9 @@ public abstract class AbstractProjectEditor extends AbstractFileEditor implement
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.file.AbstractFileEditor#create()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	@Override
@@ -86,9 +86,9 @@ public abstract class AbstractProjectEditor extends AbstractFileEditor implement
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nature
-	 *        a nature
+	 *            a nature
 	 * @return
 	 *         <code>true</code> if the project has the wanted nature
 	 */
@@ -98,9 +98,9 @@ public abstract class AbstractProjectEditor extends AbstractFileEditor implement
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IProjectEditor#getMissingNature()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	public Set<String> getMissingNature() {
@@ -108,17 +108,17 @@ public abstract class AbstractProjectEditor extends AbstractFileEditor implement
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IProjectEditor#addNatures(java.util.List)
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	public void addNatures(final Set<String> natures) {
 		List<String> existingNatures = new LinkedList<String>(Arrays.asList(this.description.getNatureIds()));
 		Iterator<String> iter = natures.iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			String nature = iter.next();
-			if(!existingNatures.contains(nature)) {
+			if (!existingNatures.contains(nature)) {
 				existingNatures.add(nature);
 			}
 		}
@@ -126,15 +126,15 @@ public abstract class AbstractProjectEditor extends AbstractFileEditor implement
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.project.AbstractProjectEditor#hasBuildCommand(java.lang.String)
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	public boolean hasBuildCommand(final String command) {
 		ICommand[] buildSpec = this.description.getBuildSpec();
-		for(int i = 0; i < buildSpec.length; i++) {
-			if(buildSpec[i].getBuilderName().equals(command)) {
+		for (int i = 0; i < buildSpec.length; i++) {
+			if (buildSpec[i].getBuilderName().equals(command)) {
 				return true;
 			}
 		}
@@ -142,9 +142,9 @@ public abstract class AbstractProjectEditor extends AbstractFileEditor implement
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.project.AbstractProjectEditor#addBuildCommands(java.util.Set)
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	public void addBuildCommands(final Set<String> commands) {
@@ -154,9 +154,9 @@ public abstract class AbstractProjectEditor extends AbstractFileEditor implement
 		buildSpecList.addAll(Arrays.asList(buildSpec));
 
 		Iterator<String> iter = commands.iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			String name = iter.next();
-			if(!hasBuildCommand(name)) {
+			if (!hasBuildCommand(name)) {
 				ICommand cmd = new BuildCommand();
 				cmd.setBuilderName(name);
 				buildSpecList.add(cmd);
@@ -166,14 +166,14 @@ public abstract class AbstractProjectEditor extends AbstractFileEditor implement
 	}
 
 	/**
-	 * 
+	 *
 	 * @throws Throwable
 	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IProjectEditor#save()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	public void save() {
-		if(this.description != null) {
+		if (this.description != null) {
 			try {
 				getProject().setDescription(this.description, null);
 			} catch (CoreException e) {
@@ -183,9 +183,9 @@ public abstract class AbstractProjectEditor extends AbstractFileEditor implement
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IProjectEditor#getMissingBuildCommand()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	public Set<String> getMissingBuildCommand() {

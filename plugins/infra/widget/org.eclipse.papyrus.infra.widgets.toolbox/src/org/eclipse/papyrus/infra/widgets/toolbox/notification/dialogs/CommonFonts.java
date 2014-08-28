@@ -13,6 +13,7 @@ package org.eclipse.papyrus.infra.widgets.toolbox.notification.dialogs;
 
 import java.lang.reflect.Field;
 
+import org.eclipse.jface.resource.FontRegistry;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
@@ -36,7 +37,7 @@ public class CommonFonts {
 	public static boolean HAS_STRIKETHROUGH;
 
 	static {
-		if(Display.getCurrent() != null) {
+		if (Display.getCurrent() != null) {
 			init();
 		} else {
 			Display.getDefault().asyncExec(new Runnable() {
@@ -55,24 +56,24 @@ public class CommonFonts {
 
 		Font defaultFont = JFaceResources.getFontRegistry().get(JFaceResources.DEFAULT_FONT);
 		FontData[] defaultData = defaultFont.getFontData();
-		if(defaultData != null && defaultData.length == 1) {
+		if (defaultData != null && defaultData.length == 1) {
 			FontData data = new FontData(defaultData[0].getName(), defaultData[0].getHeight(), defaultData[0].getStyle());
 
-			if("win32".equals(SWT.getPlatform())) { //$NON-NLS-1$
+			if ("win32".equals(SWT.getPlatform())) { //$NON-NLS-1$
 				// NOTE: Windows only, for: data.data.lfStrikeOut = 1;
 				try {
 					Field dataField = data.getClass().getDeclaredField("data"); //$NON-NLS-1$
 					Object dataObject = dataField.get(data);
 					Class<?> clazz = dataObject.getClass().getSuperclass();
 					Field strikeOutFiled = clazz.getDeclaredField("lfStrikeOut"); //$NON-NLS-1$
-					strikeOutFiled.set(dataObject, (byte)1);
+					strikeOutFiled.set(dataObject, (byte) 1);
 					CommonFonts.STRIKETHROUGH = new Font(Display.getCurrent(), data);
 				} catch (Throwable t) {
 					// ignore
 				}
 			}
 		}
-		if(CommonFonts.STRIKETHROUGH == null) {
+		if (CommonFonts.STRIKETHROUGH == null) {
 			CommonFonts.HAS_STRIKETHROUGH = false;
 			CommonFonts.STRIKETHROUGH = defaultFont;
 		} else {
@@ -84,7 +85,7 @@ public class CommonFonts {
 	 * NOTE: disposal of JFaceResources fonts handled by registry.
 	 */
 	public static void dispose() {
-		if(CommonFonts.STRIKETHROUGH != null && !CommonFonts.STRIKETHROUGH.isDisposed()) {
+		if (CommonFonts.STRIKETHROUGH != null && !CommonFonts.STRIKETHROUGH.isDisposed()) {
 			CommonFonts.STRIKETHROUGH.dispose();
 			CommonFonts.BOLD_ITALIC.dispose();
 		}
@@ -95,7 +96,7 @@ public class CommonFonts {
 	 */
 	private static FontData[] getModifiedFontData(FontData[] baseData, int style) {
 		FontData[] styleData = new FontData[baseData.length];
-		for(int i = 0; i < styleData.length; i++) {
+		for (int i = 0; i < styleData.length; i++) {
 			FontData base = baseData[i];
 			styleData[i] = new FontData(base.getName(), base.getHeight(), base.getStyle() | style);
 		}

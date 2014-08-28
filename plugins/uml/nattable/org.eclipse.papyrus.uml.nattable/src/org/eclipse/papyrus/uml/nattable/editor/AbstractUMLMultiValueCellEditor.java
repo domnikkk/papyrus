@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,11 +41,11 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
- * 
+ *
  * Abstract Cell Editor for MultiValued properties
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCellEditor {
 
@@ -62,13 +62,13 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 	private Object axisElement;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param axisElement
-	 *        the axis element
+	 *            the axis element
 	 * @param elementProvider
-	 *        the table axis element provider
+	 *            the table axis element provider
 	 */
 	protected AbstractUMLMultiValueCellEditor(final Object axisElement, final ITableAxisElementProvider elementProvider) {
 		this.manager = elementProvider;
@@ -76,14 +76,14 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.edit.gui.AbstractDialogCellEditor#open()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public int open() {
-		int result = ((MultipleValueSelectorDialog)this.dialog).open();
+		int result = ((MultipleValueSelectorDialog) this.dialog).open();
 		if (manager instanceof IAdaptable) {
 			NatTable nattable = (NatTable) ((IAdaptable) manager).getAdapter(NatTable.class);
 			if (nattable != null && !nattable.isDisposed()) {
@@ -94,9 +94,9 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.edit.gui.AbstractDialogCellEditor#createDialogInstance()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -109,11 +109,11 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 		column = AxisUtils.getRepresentedElement(column);
 		Element editedElement = null;
 		Object feature = null;
-		if(row instanceof EObject && column == this.axisElement) {
-			editedElement = (Element)row;
+		if (row instanceof EObject && column == this.axisElement) {
+			editedElement = (Element) row;
 			feature = column;
 		} else {
-			editedElement = (Element)column;
+			editedElement = (Element) column;
 			feature = row;
 		}
 
@@ -121,8 +121,8 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 		EObject realEditedObject = null;
 		Stereotype stereotype = null;
 		List<Stereotype> stereotypesWithEditedFeatureAppliedOnElement = null;
-		if(feature instanceof EStructuralFeature) {
-			realFeature = (EStructuralFeature)feature;
+		if (feature instanceof EStructuralFeature) {
+			realFeature = (EStructuralFeature) feature;
 			realEditedObject = editedElement;
 		} else {
 			final String id = AxisUtils.getPropertyId(this.axisElement);
@@ -132,8 +132,8 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 			Property prop = UMLTableUtils.getRealStereotypeProperty(editedElement, id);
 			realFeature = realEditedObject.eClass().getEStructuralFeature(prop.getName());
 		}
-		if(stereotypesWithEditedFeatureAppliedOnElement != null && stereotypesWithEditedFeatureAppliedOnElement.size() > 1) {
-			//TODO : not yet managed
+		if (stereotypesWithEditedFeatureAppliedOnElement != null && stereotypesWithEditedFeatureAppliedOnElement.size() > 1) {
+			// TODO : not yet managed
 		} else {
 			this.dialog = createDialog(realEditedObject, realFeature, stereotype, editedElement.eResource().getResourceSet());
 		}
@@ -141,15 +141,15 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 	}
 
 	/**
-	 * 
+	 *
 	 * @param realEditedObject
-	 *        the real edited object : the stereotype application or the edited Element
+	 *            the real edited object : the stereotype application or the edited Element
 	 * @param realFeature
-	 *        the real edited feature : the feature of the stereotype application or the the feature of the edited Element
+	 *            the real edited feature : the feature of the stereotype application or the the feature of the edited Element
 	 * @param stereotype
-	 *        the stereotype if we are are editing a stereotype application
+	 *            the stereotype if we are are editing a stereotype application
 	 * @param resourceSet
-	 *        the resourceset
+	 *            the resourceset
 	 * @return
 	 *         the dialog to edit the property
 	 */
@@ -168,7 +168,7 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 				super.okPressed();
 				Collection<Object> newValue = new ArrayList<Object>();
 				Object[] result = this.getResult();
-				for(Object object : result) {
+				for (Object object : result) {
 					newValue.add(object);
 
 				}
@@ -179,15 +179,15 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 		};
 		dialog.setContextElement(realEditedObject);
 		dialog.setLabelProvider(new UMLLabelProvider());
-		if(value != null && value instanceof Collection) {
-			Collection<?> coll = (Collection<?>)value;
-			if(!coll.isEmpty()) {
+		if (value != null && value instanceof Collection) {
+			Collection<?> coll = (Collection<?>) value;
+			if (!coll.isEmpty()) {
 				dialog.setInitialSelections(coll.toArray());
 			}
 		}
 
 		ReferenceValueFactory factory = getFactory();
-		if(factory != null) {
+		if (factory != null) {
 			dialog.setFactory(factory);
 		}
 
@@ -195,14 +195,14 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the reference factory used to create to element
 	 */
 	protected abstract ReferenceValueFactory getFactory();
 
 	/**
-	 * 
+	 *
 	 * @param isUnique
 	 * @param labelProvider
 	 * @param contentProvider
@@ -217,9 +217,9 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.edit.gui.AbstractDialogCellEditor#getEditorValue()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -228,9 +228,9 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.edit.gui.AbstractDialogCellEditor#setEditorValue(java.lang.Object)
-	 * 
+	 *
 	 * @param value
 	 */
 	@Override
@@ -238,18 +238,18 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.edit.gui.AbstractDialogCellEditor#close()
-	 * 
+	 *
 	 */
 	@Override
 	public void close() {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.edit.gui.AbstractDialogCellEditor#isClosed()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

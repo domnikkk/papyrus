@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ public class PastePreferenceInitializer extends AbstractPreferenceInitializer {
 	/**
 	 * Initialize default preferences
 	 */
+	@Override
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = getPreferenceStore();
 		store.setDefault(PastePreferencesPage.KEEP_EXTERNAL_REFERENCES, Boolean.TRUE);

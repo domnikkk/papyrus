@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,7 @@ package org.eclipse.papyrus.uml.diagram.menu.actions;
 /*****************************************************************************
  * Copyright (c) 2009-2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,6 +29,7 @@ package org.eclipse.papyrus.uml.diagram.menu.actions;
 
 import java.util.List;
 
+import org.eclipse.draw2d.geometry.PrecisionRectangle;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.papyrus.uml.diagram.common.layout.DistributionConstants;
@@ -61,7 +62,7 @@ abstract public class AbstractDistributeAction {
 
 	/**
 	 * Checks if is horizontal degraded mode.
-	 * 
+	 *
 	 * @return true, if is horizontal degraded mode
 	 */
 	public boolean isHorizontalDegradedMode() {
@@ -70,7 +71,7 @@ abstract public class AbstractDistributeAction {
 
 	/**
 	 * Checks if is vertical degraded mode.
-	 * 
+	 *
 	 * @return true, if is vertical degraded mode
 	 */
 	public boolean isVerticalDegradedMode() {
@@ -80,9 +81,9 @@ abstract public class AbstractDistributeAction {
 
 	/**
 	 * Sets the vertical degraded mode.
-	 * 
+	 *
 	 * @param verticalDegradedMode
-	 *        the new vertical degraded mode
+	 *            the new vertical degraded mode
 	 */
 	public void setVerticalDegradedMode(boolean verticalDegradedMode) {
 		this.verticalDegradedMode = verticalDegradedMode;
@@ -90,9 +91,9 @@ abstract public class AbstractDistributeAction {
 
 	/**
 	 * Sets the horizontal degraded mode.
-	 * 
+	 *
 	 * @param horizontalDegradedMode
-	 *        the new horizontal degraded mode
+	 *            the new horizontal degraded mode
 	 */
 	public void setHorizontalDegradedMode(boolean horizontalDegradedMode) {
 		this.horizontalDegradedMode = horizontalDegradedMode;
@@ -100,7 +101,7 @@ abstract public class AbstractDistributeAction {
 
 	/**
 	 * Gets the distribution.
-	 * 
+	 *
 	 * @return the distribution
 	 */
 	public int getDistribution() {
@@ -109,13 +110,13 @@ abstract public class AbstractDistributeAction {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param distribution
-	 *        the distribution
+	 *            the distribution
 	 * @param selectedElements
-	 *        the selected elements for the action
+	 *            the selected elements for the action
 	 */
 	public AbstractDistributeAction(int distribution, List<IGraphicalEditPart> selectedElements) {
 		this.distribution = distribution;
@@ -125,24 +126,24 @@ abstract public class AbstractDistributeAction {
 
 	/**
 	 * We build the different elements used to do the action
-	 * 
+	 *
 	 * @param elementsForAction
-	 *        the elements on which this action is applied
+	 *            the elements on which this action is applied
 	 */
 	abstract protected void buildAction(List<?> elementsForAction);
 
 	/**
 	 * Return the command to do this action
-	 * 
+	 *
 	 * @return
 	 *         the command to do this action
 	 */
 	abstract public Command getCommand();
 
 	/**
-	 * 
+	 *
 	 * @param selectedElements
-	 *        the element on which the command is applied
+	 *            the element on which the command is applied
 	 * @return
 	 *         <ul>
 	 *         <li> <code>true</code> if the command can be build</li>
@@ -150,24 +151,24 @@ abstract public class AbstractDistributeAction {
 	 *         </ul>
 	 */
 	protected boolean canExistCommand(List<?> selectedElements) {
-		switch(this.distribution) {
+		switch (this.distribution) {
 		case DistributionConstants.DISTRIBUTE_H_CONTAINER_INT:
-			if(selectedElements.size() >= 1) {
+			if (selectedElements.size() >= 1) {
 				return true;
 			}
 			break;
 		case DistributionConstants.DISTRIBUTE_H_NODES_INT:
-			if(selectedElements.size() > 2) {
+			if (selectedElements.size() > 2) {
 				return true;
 			}
 			break;
 		case DistributionConstants.DISTRIBUTE_V_CONTAINER_INT:
-			if(selectedElements.size() >= 1) {
+			if (selectedElements.size() >= 1) {
 				return true;
 			}
 			break;
 		case DistributionConstants.DISTRIBUTE_V_NODES_INT:
-			if(selectedElements.size() > 2) {
+			if (selectedElements.size() > 2) {
 				return true;
 			}
 			break;

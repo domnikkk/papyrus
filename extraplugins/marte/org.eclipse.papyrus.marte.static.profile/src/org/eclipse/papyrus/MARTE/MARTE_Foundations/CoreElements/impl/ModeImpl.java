@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.State;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeImpl#getBase_State <em>Base State</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeImpl#getBase_State <em>Base State</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class ModeImpl extends EObjectImpl implements Mode {
 	 * The cached value of the '{@link #getBase_State() <em>Base State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_State()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class ModeImpl extends EObjectImpl implements Mode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ModeImpl() {
@@ -58,6 +60,7 @@ public class ModeImpl extends EObjectImpl implements Mode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,15 +71,18 @@ public class ModeImpl extends EObjectImpl implements Mode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public State getBase_State() {
 		if (base_State != null && base_State.eIsProxy()) {
-			InternalEObject oldBase_State = (InternalEObject)base_State;
-			base_State = (State)eResolveProxy(oldBase_State);
+			InternalEObject oldBase_State = (InternalEObject) base_State;
+			base_State = (State) eResolveProxy(oldBase_State);
 			if (base_State != oldBase_State) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CoreElementsPackage.MODE__BASE_STATE, oldBase_State, base_State));
+				}
 			}
 		}
 		return base_State;
@@ -85,6 +91,7 @@ public class ModeImpl extends EObjectImpl implements Mode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public State basicGetBase_State() {
@@ -94,26 +101,32 @@ public class ModeImpl extends EObjectImpl implements Mode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_State(State newBase_State) {
 		State oldBase_State = base_State;
 		base_State = newBase_State;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CoreElementsPackage.MODE__BASE_STATE, oldBase_State, base_State));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CoreElementsPackage.MODE__BASE_STATE:
-				if (resolve) return getBase_State();
-				return basicGetBase_State();
+		case CoreElementsPackage.MODE__BASE_STATE:
+			if (resolve) {
+				return getBase_State();
+			}
+			return basicGetBase_State();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,14 +134,15 @@ public class ModeImpl extends EObjectImpl implements Mode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CoreElementsPackage.MODE__BASE_STATE:
-				setBase_State((State)newValue);
-				return;
+		case CoreElementsPackage.MODE__BASE_STATE:
+			setBase_State((State) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -136,14 +150,15 @@ public class ModeImpl extends EObjectImpl implements Mode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CoreElementsPackage.MODE__BASE_STATE:
-				setBase_State((State)null);
-				return;
+		case CoreElementsPackage.MODE__BASE_STATE:
+			setBase_State((State) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -151,15 +166,16 @@ public class ModeImpl extends EObjectImpl implements Mode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CoreElementsPackage.MODE__BASE_STATE:
-				return base_State != null;
+		case CoreElementsPackage.MODE__BASE_STATE:
+			return base_State != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ModeImpl
+} // ModeImpl

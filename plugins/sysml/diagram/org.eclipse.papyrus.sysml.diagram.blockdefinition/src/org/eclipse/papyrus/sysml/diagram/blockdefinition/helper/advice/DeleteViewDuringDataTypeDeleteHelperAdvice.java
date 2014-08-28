@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -42,54 +42,54 @@ public class DeleteViewDuringDataTypeDeleteHelperAdvice extends AbstractEditHelp
 	@Override
 	protected ICommand getBeforeDestroyDependentsCommand(DestroyDependentsRequest request) {
 
-		
+
 		EObject elementToEdit = request.getElementToDestroy();
 		Set<View> viewsToDestroy = new HashSet<View>();
 
 		// Get all Value (property) typed by this deleted DataType
-		Iterator<?> references = EMFCoreUtil.getReferencers(elementToEdit, new EReference[]{UMLPackage.eINSTANCE.getTypedElement_Type()}).iterator();
-		while(references.hasNext()) {
+		Iterator<?> references = EMFCoreUtil.getReferencers(elementToEdit, new EReference[] { UMLPackage.eINSTANCE.getTypedElement_Type() }).iterator();
+		while (references.hasNext()) {
 			Object current = references.next();
-			
-			if (! (current instanceof EObject)) {
+
+			if (!(current instanceof EObject)) {
 				continue;
 			}
-			
+
 			EObject property = (EObject) current;
-			
+
 			// Search inconsistent views if the property is a Value
 			if (((ISpecializationType) SysMLElementTypes.VALUE_PROPERTY).getMatcher().matches(property)) {
 				viewsToDestroy.addAll(getValueViewsToDestroy(property));
 			}
 		}
 
-		if(!(viewsToDestroy.isEmpty())) {
+		if (!(viewsToDestroy.isEmpty())) {
 			DestroyDependentsRequest req = new DestroyDependentsRequest(request.getEditingDomain(), elementToEdit, false);
 			req.setClientContext(request.getClientContext());
 			req.addParameters(request.getParameters());
 			return req.getDestroyDependentsCommand(viewsToDestroy);
 		}
-		
+
 		return super.getBeforeDestroyDependentsCommand(request);
 	}
 
 	/**
 	 * This methods looks for inconsistent Value views to delete.
-	 * 
+	 *
 	 * @param modifiedObject
-	 *        the modified {@link EObject}
+	 *            the modified {@link EObject}
 	 * @return the list of {@link View} to delete
 	 */
 	private Set<View> getValueViewsToDestroy(EObject modifiedObject) {
 		Set<View> viewsToDestroy = new HashSet<View>();
 
 		Iterator<View> viewIt = CrossReferencerUtil.getCrossReferencingViews(modifiedObject, ElementTypes.DIAGRAM_ID).iterator();
-		while(viewIt.hasNext()) {
-			View view = (View)viewIt.next();
+		while (viewIt.hasNext()) {
+			View view = viewIt.next();
 
 			String containerType = ViewUtil.getViewContainer(view) != null ? ViewUtil.getViewContainer(view).getType() : null;
 
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_VALUE_AS_LIST_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_VALUE_AS_LIST_ID.equals(containerType)) {
 				viewsToDestroy.add(view);
 			}
 		}

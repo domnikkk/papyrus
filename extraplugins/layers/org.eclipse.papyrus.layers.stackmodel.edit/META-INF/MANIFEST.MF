@@ -1,22 +1,25 @@
 Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
-Bundle-SymbolicName: org.eclipse.papyrus.layers.stackmodel.edit;singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
-Bundle-Activator: org.eclipse.papyrus.layers.stackmodel.layers.provider.LayersEditPlugin$Implementation
-Bundle-Vendor: %providerName
-Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.eclipse.papyrus.layers.stackmodel.layers.provider,
- org.eclipse.papyrus.layers.stackmodel.layers.provider.custom,
- org.eclipse.papyrus.layers.configmodel.layersconfig.provider
+Export-Package: org.eclipse.papyrus.layers.configmodel.layersconfig.provider,
+ org.eclipse.papyrus.layers.stackmodel.layers.provider,
+ org.eclipse.papyrus.layers.stackmodel.layers.provider.custom
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.papyrus.layers.stackmodel;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.papyrus.layers.stackmodel;bundle-version="1.0.1";visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.gmf.runtime.notation;visibility:=reexport,
  org.eclipse.gmf.runtime.notation.edit;visibility:=reexport,
  org.eclipse.uml2.common.edit;visibility:=reexport
+Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 1.0.1.qualifier
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.eclipse.papyrus.layers.stackmodel.layers.provide
+ r.LayersEditPlugin$Implementation
+Bundle-SymbolicName: org.eclipse.papyrus.layers.stackmodel.edit;single
+ ton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

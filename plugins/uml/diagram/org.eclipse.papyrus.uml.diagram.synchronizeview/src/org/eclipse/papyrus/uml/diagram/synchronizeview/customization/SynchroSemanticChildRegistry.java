@@ -1,7 +1,7 @@
 /*******************************************************************************
  * Copyright (c) 2011 CEA LIST.
  * All rights reserved.
- * This code is the property of CEA LIST, this use is subject to specific 
+ * This code is the property of CEA LIST, this use is subject to specific
  * agreement with the CEA LIST.
  * Contributors:
  *     CEA LIST. - initial API and implementation
@@ -38,7 +38,7 @@ public class SynchroSemanticChildRegistry {
 	 * @return the instance of SynchroSemanticChildRegistry
 	 */
 	public static SynchroSemanticChildRegistry getInstance() {
-		if(eInstance == null) {
+		if (eInstance == null) {
 			eInstance = new SynchroSemanticChildRegistry();
 		}
 		return eInstance;
@@ -54,10 +54,10 @@ public class SynchroSemanticChildRegistry {
 	public void init() {
 		// Reading data from plugins
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(SEMANTICCHILD_EXTENSION_ID);
-		for(int i = 0; i < configElements.length; i++) {
+		for (int i = 0; i < configElements.length; i++) {
 			SemanticChild semanticChild = createSemanticChild(configElements[i]);
-			if(semanticMap.get(semanticChild.getEditPart()) != null) {
-				if(semanticMap.get(semanticChild.getEditPart()).getPriority() <= semanticChild.getPriority()) {
+			if (semanticMap.get(semanticChild.getEditPart()) != null) {
+				if (semanticMap.get(semanticChild.getEditPart()).getPriority() <= semanticChild.getPriority()) {
 					semanticMap.remove(semanticChild.getEditPart());
 					semanticMap.put(semanticChild.getEditPart(), semanticChild);
 				}
@@ -72,9 +72,9 @@ public class SynchroSemanticChildRegistry {
 
 	/**
 	 * Load one semanticChild
-	 * 
+	 *
 	 * @param element
-	 *        the extension point
+	 *            the extension point
 	 */
 	protected SemanticChild createSemanticChild(IConfigurationElement element) {
 		Class<? extends EditPart> editPart = null;
@@ -83,8 +83,8 @@ public class SynchroSemanticChildRegistry {
 		SemanticChild semanticChild = null;
 		try {
 			editPart = LoadExtension(element, element.getAttribute(EDITPART));
-			synchroSemanticChild = (ISynchroSemanticChild)createExtension(element, element.getAttribute(GET_SEMANTIC_CHILDREN));
-			if(element.getAttribute(PRIORITY) != null) {
+			synchroSemanticChild = (ISynchroSemanticChild) createExtension(element, element.getAttribute(GET_SEMANTIC_CHILDREN));
+			if (element.getAttribute(PRIORITY) != null) {
 				priority = Integer.getInteger(element.getAttribute(PRIORITY)).intValue();
 			}
 			semanticChild = new SemanticChild(editPart, synchroSemanticChild, priority);
@@ -97,21 +97,21 @@ public class SynchroSemanticChildRegistry {
 
 	/**
 	 * Load an the class
-	 * 
+	 *
 	 * @param element
-	 *        the extension point
+	 *            the extension point
 	 * @param classAttribute
-	 *        the name of the class to load
+	 *            the name of the class to load
 	 * @return the loaded Class
 	 * @throws Exception
-	 *         if the class is not loaded
+	 *             if the class is not loaded
 	 */
 	@SuppressWarnings("unchecked")
 	protected static Class<? extends EditPart> LoadExtension(final IConfigurationElement element, final String classAttribute) throws Exception {
 		try {
 			Bundle extensionBundle = Platform.getBundle(element.getDeclaringExtension().getNamespaceIdentifier());
 			Class<?> clazz = extensionBundle.loadClass(classAttribute);
-			return ((Class<? extends EditPart>)clazz);
+			return ((Class<? extends EditPart>) clazz);
 		} catch (Exception e) {
 			throw new Exception("unable to create Extension" + e);
 		}
@@ -119,14 +119,14 @@ public class SynchroSemanticChildRegistry {
 
 	/**
 	 * Load an instance of a class
-	 * 
+	 *
 	 * @param element
-	 *        the extension point
+	 *            the extension point
 	 * @param classAttribute
-	 *        the name of the class to load
+	 *            the name of the class to load
 	 * @return the loaded Class
 	 * @throws Exception
-	 *         if the class is not loaded
+	 *             if the class is not loaded
 	 */
 	protected static Object createExtension(final IConfigurationElement element, final String classAttribute) throws Exception {
 		try {
@@ -145,7 +145,7 @@ public class SynchroSemanticChildRegistry {
 	 * @return {@link ISynchroSemanticChild} from a editpart or null
 	 */
 	public ISynchroSemanticChild getSynchroSemanticChild(Class<? extends EditPart> editPart) {
-		if(semanticMap.get(editPart) != null) {
+		if (semanticMap.get(editPart) != null) {
 			return semanticMap.get(editPart).getSynchroSemanticChild();
 		}
 		return null;

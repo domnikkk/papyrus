@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -62,21 +62,21 @@ public class TypeDropHelper extends ElementHelper {
 		ICommand setCommand = null;
 
 		// The dropped object must be a Type and the target a TypedElement
-		Type newType = (request.getObjects().get(0) instanceof Type) ? (Type)request.getObjects().get(0) : null;
-		TypedElement typedElementDropTarget = (getHostEObject(host) instanceof TypedElement) ? (TypedElement)getHostEObject(host) : null;
+		Type newType = (request.getObjects().get(0) instanceof Type) ? (Type) request.getObjects().get(0) : null;
+		TypedElement typedElementDropTarget = (getHostEObject(host) instanceof TypedElement) ? (TypedElement) getHostEObject(host) : null;
 
-		if((newType == null) || (typedElementDropTarget == null)) {
+		if ((newType == null) || (typedElementDropTarget == null)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
-		if(newType == typedElementDropTarget.getType()) {
+		if (newType == typedElementDropTarget.getType()) {
 			setCommand = IdentityCommand.INSTANCE;
 		}
 
 		// Prepare a command to set the new type
 		SetRequest req = new SetRequest(typedElementDropTarget, UMLPackage.eINSTANCE.getTypedElement_Type(), newType);
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(UMLElementTypes.TYPED_ELEMENT);
-		if(provider != null) {
+		if (provider != null) {
 			setCommand = provider.getEditCommand(req);
 		}
 
@@ -89,7 +89,7 @@ public class TypeDropHelper extends ElementHelper {
 		CompoundCommand cc = new CompoundCommand("Create a new Port");
 
 		Object droppedEObject = request.getObjects().get(0);
-		if(!isValidPortType(droppedEObject)) {
+		if (!isValidPortType(droppedEObject)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -100,13 +100,13 @@ public class TypeDropHelper extends ElementHelper {
 		CreateElementRequest createElementRequest = new CreateElementRequest(getEditingDomain(), getHostEObject(host), UMLElementTypes.PORT);
 		createElementRequest.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new ConfigureFeatureCommandFactory(UMLPackage.eINSTANCE.getTypedElement_Type(), request.getObjects().get(0)));
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(getHostEObject(host));
-		if(provider != null) {
+		if (provider != null) {
 			createElementCommand = provider.getEditCommand(createElementRequest);
 		}
 		IAdaptable createElementRequestAdapter = new CreateElementRequestAdapter(createElementRequest);
 
 		// 2. Prepare the drop command
-		ViewDescriptor descriptor = new ViewDescriptor(createElementRequestAdapter, Node.class, /* explicit semantic hint is mandatory */ null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
+		ViewDescriptor descriptor = new ViewDescriptor(createElementRequestAdapter, Node.class, /* explicit semantic hint is mandatory */null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
 		CreateViewRequest createViewRequest = new CreateViewRequest(descriptor);
 		createViewRequest.setLocation(request.getLocation().getCopy());
 		Command viewCreateCommand = host.getCommand(createViewRequest);
@@ -122,19 +122,19 @@ public class TypeDropHelper extends ElementHelper {
 		CompoundCommand cc = new CompoundCommand("Create a new Port");
 
 		Object droppedEObject = request.getObjects().get(0);
-		if(!isValidPortType(droppedEObject)) {
+		if (!isValidPortType(droppedEObject)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		// Verify target nature
 		EObject target = getHostEObject(host);
-		if((!(target instanceof TypedElement)) || (((TypedElement)target).getType() == null)) {
+		if ((!(target instanceof TypedElement)) || (((TypedElement) target).getType() == null)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		// The target type has to be a Block (will hold the created Port)
-		Type targetType = ((TypedElement)target).getType();
-		if(!((ISpecializationType)SysMLElementTypes.BLOCK).getMatcher().matches(targetType)) {
+		Type targetType = ((TypedElement) target).getType();
+		if (!((ISpecializationType) SysMLElementTypes.BLOCK).getMatcher().matches(targetType)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -145,13 +145,13 @@ public class TypeDropHelper extends ElementHelper {
 		CreateElementRequest createElementRequest = new CreateElementRequest(getEditingDomain(), targetType, UMLElementTypes.PORT);
 		createElementRequest.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new ConfigureFeatureCommandFactory(UMLPackage.eINSTANCE.getTypedElement_Type(), request.getObjects().get(0)));
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(targetType);
-		if(provider != null) {
+		if (provider != null) {
 			createElementCommand = provider.getEditCommand(createElementRequest);
 		}
 		IAdaptable createElementRequestAdapter = new CreateElementRequestAdapter(createElementRequest);
 
 		// 2. Prepare the drop command
-		ViewDescriptor descriptor = new ViewDescriptor(createElementRequestAdapter, Node.class, /* explicit semantic hint is mandatory */ null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
+		ViewDescriptor descriptor = new ViewDescriptor(createElementRequestAdapter, Node.class, /* explicit semantic hint is mandatory */null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
 		CreateViewRequest createViewRequest = new CreateViewRequest(descriptor);
 		createViewRequest.setLocation(request.getLocation().getCopy());
 		Command viewCreateCommand = host.getCommand(createViewRequest);
@@ -167,7 +167,7 @@ public class TypeDropHelper extends ElementHelper {
 		CompoundCommand cc = new CompoundCommand("Create a new FlowPort (" + elementType.getDisplayName() + ")");
 
 		Object droppedEObject = request.getObjects().get(0);
-		if(!isValidFlowPortType(droppedEObject, elementType)) {
+		if (!isValidFlowPortType(droppedEObject, elementType)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -178,13 +178,13 @@ public class TypeDropHelper extends ElementHelper {
 		CreateElementRequest createElementRequest = new CreateElementRequest(getEditingDomain(), getHostEObject(host), elementType);
 		createElementRequest.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new ConfigureFeatureCommandFactory(UMLPackage.eINSTANCE.getTypedElement_Type(), request.getObjects().get(0)));
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(getHostEObject(host));
-		if(provider != null) {
+		if (provider != null) {
 			createElementCommand = provider.getEditCommand(createElementRequest);
 		}
 		IAdaptable createElementRequestAdapter = new CreateElementRequestAdapter(createElementRequest);
 
 		// 2. Prepare the drop command
-		ViewDescriptor descriptor = new ViewDescriptor(createElementRequestAdapter, Node.class, /* explicit semantic hint is mandatory */ null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
+		ViewDescriptor descriptor = new ViewDescriptor(createElementRequestAdapter, Node.class, /* explicit semantic hint is mandatory */null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
 		CreateViewRequest createViewRequest = new CreateViewRequest(descriptor);
 		createViewRequest.setLocation(request.getLocation().getCopy());
 		Command viewCreateCommand = host.getCommand(createViewRequest);
@@ -200,19 +200,19 @@ public class TypeDropHelper extends ElementHelper {
 		CompoundCommand cc = new CompoundCommand("Create a new FlowPort (" + elementType.getDisplayName() + ")");
 
 		Object droppedEObject = request.getObjects().get(0);
-		if(!isValidFlowPortType(droppedEObject, elementType)) {
+		if (!isValidFlowPortType(droppedEObject, elementType)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		// Verify target nature
 		EObject target = getHostEObject(host);
-		if((!(target instanceof TypedElement)) || (((TypedElement)target).getType() == null)) {
+		if ((!(target instanceof TypedElement)) || (((TypedElement) target).getType() == null)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		// The target type has to be a Block (will hold the created Port)
-		Type targetType = ((TypedElement)target).getType();
-		if(!((ISpecializationType)SysMLElementTypes.BLOCK).getMatcher().matches(targetType)) {
+		Type targetType = ((TypedElement) target).getType();
+		if (!((ISpecializationType) SysMLElementTypes.BLOCK).getMatcher().matches(targetType)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -223,13 +223,13 @@ public class TypeDropHelper extends ElementHelper {
 		CreateElementRequest createElementRequest = new CreateElementRequest(getEditingDomain(), targetType, elementType);
 		createElementRequest.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new ConfigureFeatureCommandFactory(UMLPackage.eINSTANCE.getTypedElement_Type(), request.getObjects().get(0)));
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(targetType);
-		if(provider != null) {
+		if (provider != null) {
 			createElementCommand = provider.getEditCommand(createElementRequest);
 		}
 		IAdaptable createElementRequestAdapter = new CreateElementRequestAdapter(createElementRequest);
 
 		// 2. Prepare the drop command
-		ViewDescriptor descriptor = new ViewDescriptor(createElementRequestAdapter, Node.class, /* explicit semantic hint is mandatory */ null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
+		ViewDescriptor descriptor = new ViewDescriptor(createElementRequestAdapter, Node.class, /* explicit semantic hint is mandatory */null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
 		CreateViewRequest createViewRequest = new CreateViewRequest(descriptor);
 		createViewRequest.setLocation(request.getLocation().getCopy());
 		Command viewCreateCommand = host.getCommand(createViewRequest);
@@ -244,30 +244,30 @@ public class TypeDropHelper extends ElementHelper {
 	private boolean isValidFlowPortType(Object object, IElementType elementType) {
 		boolean isValid = false;
 
-		if((object != null) && (object instanceof Type)) {
-			Type type = (Type)object;
+		if ((object != null) && (object instanceof Type)) {
+			Type type = (Type) object;
 
 			// Test valid type
-			if(type instanceof DataType) {
+			if (type instanceof DataType) {
 				isValid = true;
 			}
 
-			if(type instanceof Signal) {
+			if (type instanceof Signal) {
 				isValid = true;
 			}
 
-			if(((ISpecializationType)SysMLElementTypes.FLOW_SPECIFICATION).getMatcher().matches(type)) {
+			if (((ISpecializationType) SysMLElementTypes.FLOW_SPECIFICATION).getMatcher().matches(type)) {
 				// Non-atomic flow port, the direction is meaningless in this case
-				if(elementType == SysMLElementTypes.FLOW_PORT) {
+				if (elementType == SysMLElementTypes.FLOW_PORT) {
 					isValid = true;
 				}
 			}
 
-			if(((ISpecializationType)SysMLElementTypes.BLOCK).getMatcher().matches(type)) {
+			if (((ISpecializationType) SysMLElementTypes.BLOCK).getMatcher().matches(type)) {
 				isValid = true;
 			}
 
-			if(((ISpecializationType)SysMLElementTypes.VALUE_TYPE).getMatcher().matches(type)) {
+			if (((ISpecializationType) SysMLElementTypes.VALUE_TYPE).getMatcher().matches(type)) {
 				isValid = true;
 			}
 
@@ -279,7 +279,7 @@ public class TypeDropHelper extends ElementHelper {
 	private boolean isValidPortType(Object object) {
 		boolean isValid = false;
 
-		if((object != null) && (object instanceof Type)) {
+		if ((object != null) && (object instanceof Type)) {
 			isValid = true;
 		}
 
@@ -289,10 +289,10 @@ public class TypeDropHelper extends ElementHelper {
 	/**
 	 * return the host Edit Part's semantic element, if the semantic element
 	 * is <code>null</code> or unresolvable it will return <code>null</code>
-	 * 
+	 *
 	 * @return EObject
 	 */
 	protected EObject getHostEObject(GraphicalEditPart host) {
-		return ViewUtil.resolveSemanticElement((View)host.getModel());
+		return ViewUtil.resolveSemanticElement((View) host.getModel());
 	}
 }

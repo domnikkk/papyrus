@@ -13,7 +13,7 @@ import org.eclipse.uml2.uml.Connector;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.EAConnector#getBase_Connector <em>Base Connector</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.EAConnector#getBase_Connector <em>Base Connector</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,10 +26,10 @@ public interface EAConnector extends EObject {
 	 * Returns the value of the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Connector</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Connector</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Connector</em>' reference.
 	 * @see #setBase_Connector(Connector)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getEAConnector_Base_Connector()
@@ -42,7 +42,9 @@ public interface EAConnector extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.elements.EAConnector#getBase_Connector <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Connector</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Connector</em>' reference.
 	 * @see #getBase_Connector()
 	 * @generated
 	 */

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2013 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Gregoire Dupe (Mia-Software) - Bug 406570 - Handlers to Save and SaveAs EMF resources
  */
@@ -17,13 +17,13 @@ import java.util.Collections;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.dialogs.SaveAsDialog;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallback;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IOkDialog;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IOkDialogFactory;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IWithResultDialogCallback;
-import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Shell;
 
 public final class ResourceUiUtils {
@@ -40,6 +40,7 @@ public final class ResourceUiUtils {
 			ResourceUiUtils.openSaveAsDialog(resource, shell);
 		} catch (IOException e) {
 			final IDialogCallback<Void> callBack = new IDialogCallback<Void>() {
+				@Override
 				public void committed(final Void result2) {
 					// Nothing to do.
 				}
@@ -63,10 +64,12 @@ public final class ResourceUiUtils {
 			final Shell shell) {
 		final IWithResultDialogCallback<String> callBack = new IWithResultDialogCallback<String>() {
 
+			@Override
 			public void commited(final String result) {
 				ResourceUiUtils.saveAs(resource, result, shell);
 			}
 
+			@Override
 			public void canceled(final String result) {
 				// Nothing to do
 			}
@@ -85,6 +88,7 @@ public final class ResourceUiUtils {
 			resource.save(Collections.EMPTY_MAP);
 		} catch (IOException e) {
 			final IDialogCallback<Void> callBack = new IDialogCallback<Void>() {
+				@Override
 				public void committed(final Void result2) {
 					ResourceUiUtils.openSaveAsDialog(resource, shell);
 				}

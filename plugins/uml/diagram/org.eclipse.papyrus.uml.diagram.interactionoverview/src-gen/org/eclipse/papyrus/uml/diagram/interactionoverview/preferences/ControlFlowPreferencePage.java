@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,11 +29,11 @@ public class ControlFlowPreferencePage extends InteractionOverviewDiagramLinkPre
 	/** Static attribute initialization */
 	static {
 		labelDefaultVisibilityMap = new LinkedHashMap<String, Boolean>();
-		labelDefaultVisibilityMap.put("Name", Boolean.TRUE); //$NON-NLS-1$	
-		labelDefaultVisibilityMap.put("Weight", Boolean.TRUE); //$NON-NLS-1$	
-		labelDefaultVisibilityMap.put("Guard", Boolean.TRUE); //$NON-NLS-1$	
-		labelDefaultVisibilityMap.put("Stereotype", Boolean.TRUE); //$NON-NLS-1$	
-		labelDefaultVisibilityMap.put("undefined_role", Boolean.TRUE); //$NON-NLS-1$	
+		labelDefaultVisibilityMap.put("Name", Boolean.TRUE); //$NON-NLS-1$
+		labelDefaultVisibilityMap.put("Weight", Boolean.TRUE); //$NON-NLS-1$
+		labelDefaultVisibilityMap.put("Guard", Boolean.TRUE); //$NON-NLS-1$
+		labelDefaultVisibilityMap.put("Stereotype", Boolean.TRUE); //$NON-NLS-1$
+		labelDefaultVisibilityMap.put("undefined_role", Boolean.TRUE); //$NON-NLS-1$
 
 		// Start of user code custom static initializations
 		// End of user code
@@ -49,15 +49,15 @@ public class ControlFlowPreferencePage extends InteractionOverviewDiagramLinkPre
 
 	/**
 	 * Initialize defaults using a specified {@link IPreferenceStore}
-	 * 
+	 *
 	 * @param store
-	 *        the preference store.
+	 *            the preference store.
 	 */
 	public static void initDefaults(final IPreferenceStore store) {
 		// Start of user code custom default initializations
 		// End of user code
 
-		for(final String labelName : labelDefaultVisibilityMap.keySet()) {
+		for (final String labelName : labelDefaultVisibilityMap.keySet()) {
 			final String showLabelKey = PreferencesConstantsHelper.getCompartmentElementConstant(prefKey, labelName, PreferencesConstantsHelper.LABEL_VISIBILITY);
 			store.setDefault(showLabelKey, labelDefaultVisibilityMap.get(labelName));
 		}
@@ -68,7 +68,7 @@ public class ControlFlowPreferencePage extends InteractionOverviewDiagramLinkPre
 	 */
 	@Override
 	protected void initializeLabelsList() {
-		for(final String name : labelDefaultVisibilityMap.keySet()) {
+		for (final String name : labelDefaultVisibilityMap.keySet()) {
 			this.labelsList.add(name);
 		}
 	}

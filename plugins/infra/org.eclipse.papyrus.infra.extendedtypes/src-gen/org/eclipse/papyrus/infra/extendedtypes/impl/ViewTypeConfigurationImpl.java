@@ -1,23 +1,20 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.infra.extendedtypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
 import org.eclipse.papyrus.infra.extendedtypes.ViewTypeConfiguration;
 
@@ -28,11 +25,10 @@ import org.eclipse.papyrus.infra.extendedtypes.ViewTypeConfiguration;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.extendedtypes.impl.ViewTypeConfigurationImpl#getSpecializedDiagramTypeID <em>Specialized Diagram Type ID</em>}
- * </li>
+ * <li>{@link org.eclipse.papyrus.infra.extendedtypes.impl.ViewTypeConfigurationImpl#getSpecializedDiagramTypeID <em>Specialized Diagram Type ID</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class ViewTypeConfigurationImpl extends ElementTypeConfigurationImpl implements ViewTypeConfiguration {
@@ -41,7 +37,7 @@ public abstract class ViewTypeConfigurationImpl extends ElementTypeConfiguration
 	 * The default value of the '{@link #getSpecializedDiagramTypeID() <em>Specialized Diagram Type ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpecializedDiagramTypeID()
 	 * @generated
 	 * @ordered
@@ -52,7 +48,7 @@ public abstract class ViewTypeConfigurationImpl extends ElementTypeConfiguration
 	 * The cached value of the '{@link #getSpecializedDiagramTypeID() <em>Specialized Diagram Type ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpecializedDiagramTypeID()
 	 * @generated
 	 * @ordered
@@ -62,7 +58,7 @@ public abstract class ViewTypeConfigurationImpl extends ElementTypeConfiguration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ViewTypeConfigurationImpl() {
@@ -72,7 +68,7 @@ public abstract class ViewTypeConfigurationImpl extends ElementTypeConfiguration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +79,7 @@ public abstract class ViewTypeConfigurationImpl extends ElementTypeConfiguration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getSpecializedDiagramTypeID() {
@@ -93,25 +89,26 @@ public abstract class ViewTypeConfigurationImpl extends ElementTypeConfiguration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSpecializedDiagramTypeID(String newSpecializedDiagramTypeID) {
 		String oldSpecializedDiagramTypeID = specializedDiagramTypeID;
 		specializedDiagramTypeID = newSpecializedDiagramTypeID;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ExtendedtypesPackage.VIEW_TYPE_CONFIGURATION__SPECIALIZED_DIAGRAM_TYPE_ID, oldSpecializedDiagramTypeID, specializedDiagramTypeID));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.VIEW_TYPE_CONFIGURATION__SPECIALIZED_DIAGRAM_TYPE_ID:
 			return getSpecializedDiagramTypeID();
 		}
@@ -121,14 +118,14 @@ public abstract class ViewTypeConfigurationImpl extends ElementTypeConfiguration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.VIEW_TYPE_CONFIGURATION__SPECIALIZED_DIAGRAM_TYPE_ID:
-			setSpecializedDiagramTypeID((String)newValue);
+			setSpecializedDiagramTypeID((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -137,12 +134,12 @@ public abstract class ViewTypeConfigurationImpl extends ElementTypeConfiguration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.VIEW_TYPE_CONFIGURATION__SPECIALIZED_DIAGRAM_TYPE_ID:
 			setSpecializedDiagramTypeID(SPECIALIZED_DIAGRAM_TYPE_ID_EDEFAULT);
 			return;
@@ -153,12 +150,12 @@ public abstract class ViewTypeConfigurationImpl extends ElementTypeConfiguration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.VIEW_TYPE_CONFIGURATION__SPECIALIZED_DIAGRAM_TYPE_ID:
 			return SPECIALIZED_DIAGRAM_TYPE_ID_EDEFAULT == null ? specializedDiagramTypeID != null : !SPECIALIZED_DIAGRAM_TYPE_ID_EDEFAULT.equals(specializedDiagramTypeID);
 		}
@@ -168,17 +165,18 @@ public abstract class ViewTypeConfigurationImpl extends ElementTypeConfiguration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (specializedDiagramTypeID: "); //$NON-NLS-1$
 		result.append(specializedDiagramTypeID);
 		result.append(')');
 		return result.toString();
 	}
-} //ViewTypeConfigurationImpl
+} // ViewTypeConfigurationImpl

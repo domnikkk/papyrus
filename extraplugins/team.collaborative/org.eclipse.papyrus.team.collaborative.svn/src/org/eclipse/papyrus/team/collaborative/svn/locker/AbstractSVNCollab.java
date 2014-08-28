@@ -22,8 +22,6 @@ import org.eclipse.papyrus.team.collaborative.core.IExtendedURI;
 import org.eclipse.papyrus.team.collaborative.core.participants.ICollabParticipant;
 import org.eclipse.papyrus.team.collaborative.core.reports.CollabStatus;
 import org.eclipse.papyrus.team.collaborative.svn.AbstractExtendedURIBuilderForFile;
-import org.eclipse.team.svn.core.resource.ILocalResource;
-import org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage;
 
 
 /**
@@ -41,18 +39,18 @@ public abstract class AbstractSVNCollab extends AbstractExtendedURIBuilderForFil
 
 	/**
 	 * Checks if is locked.
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 * @return the i status
 	 */
 	public IStatus isLocked(IExtendedURI uri) {
 		Resource resourceToLock = getResourceSet().getResource(uri.getUri(), false);
 		IFile iResourcesToLock = WorkspaceSynchronizer.getFile(resourceToLock);
-		if(iResourcesToLock != null) {
-			if(iResourcesToLock.exists()) {
+		if (iResourcesToLock != null) {
+			if (iResourcesToLock.exists()) {
 				ILocalResource local = SVNRemoteStorage.instance().asLocalResource(iResourcesToLock);
-				if(local.isLocked()) {
+				if (local.isLocked()) {
 					return Status.OK_STATUS;
 				} else {
 					return NOT_LOCK_STATUS;

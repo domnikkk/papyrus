@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.sysml.allocations.internal.impl;
 
 import java.util.Iterator;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -41,7 +42,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <li>{@link org.eclipse.papyrus.sysml.allocations.internal.impl.AllocatedImpl#getAllocatedTo <em>Allocated To</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class AllocatedImpl extends MinimalEObjectImpl.Container implements Allocated {
@@ -50,7 +51,7 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -59,7 +60,7 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AllocatedImpl() {
@@ -68,7 +69,7 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -77,15 +78,16 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case AllocationsPackage.ALLOCATED__BASE_NAMED_ELEMENT:
-			if(resolve)
+			if (resolve) {
 				return getBase_NamedElement();
+			}
 			return basicGetBase_NamedElement();
 		case AllocationsPackage.ALLOCATED__ALLOCATED_FROM:
 			return getAllocatedFrom();
@@ -97,12 +99,12 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case AllocationsPackage.ALLOCATED__BASE_NAMED_ELEMENT:
 			return base_NamedElement != null;
 		case AllocationsPackage.ALLOCATED__ALLOCATED_FROM:
@@ -115,14 +117,14 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case AllocationsPackage.ALLOCATED__BASE_NAMED_ELEMENT:
-			setBase_NamedElement((NamedElement)newValue);
+			setBase_NamedElement((NamedElement) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,7 +132,7 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,14 +142,14 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case AllocationsPackage.ALLOCATED__BASE_NAMED_ELEMENT:
-			setBase_NamedElement((NamedElement)null);
+			setBase_NamedElement((NamedElement) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -155,7 +157,7 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public EList<NamedElement> getAllocatedFrom() {
@@ -165,20 +167,20 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 		EList<NamedElement> allocatedFrom = new BasicEList<NamedElement>();
 		Allocate currentAllocate = null;
 
-		if(getBase_NamedElement() != null) {
+		if (getBase_NamedElement() != null) {
 			// Find Allocate link
 			Iterator<DirectedRelationship> itDep = getBase_NamedElement().getTargetDirectedRelationships().iterator();
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				DirectedRelationship currentDRelationship = itDep.next();
 				currentAllocate = UMLUtil.getStereotypeApplication(currentDRelationship, Allocate.class);
 
-				if(currentAllocate != null) {
+				if (currentAllocate != null) {
 					EList<Element> targets = currentAllocate.getBase_Abstraction().getSources();
 					Iterator<Element> it = targets.iterator();
-					while(it.hasNext()) {
+					while (it.hasNext()) {
 						Element currentElt = it.next();
-						if(currentElt instanceof NamedElement) {
-							allocatedFrom.add((NamedElement)currentElt);
+						if (currentElt instanceof NamedElement) {
+							allocatedFrom.add((NamedElement) currentElt);
 						}
 					}
 				}
@@ -192,7 +194,7 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement getAllocatedFrom(String name) {
@@ -202,15 +204,17 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement getAllocatedFrom(String name, boolean ignoreCase, EClass eClass) {
-		allocatedFromLoop: for(NamedElement allocatedFrom : getAllocatedFrom()) {
-			if(eClass != null && !eClass.isInstance(allocatedFrom))
+		allocatedFromLoop: for (NamedElement allocatedFrom : getAllocatedFrom()) {
+			if (eClass != null && !eClass.isInstance(allocatedFrom)) {
 				continue allocatedFromLoop;
-			if(name != null && !(ignoreCase ? name.equalsIgnoreCase(allocatedFrom.getName()) : name.equals(allocatedFrom.getName())))
+			}
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(allocatedFrom.getName()) : name.equals(allocatedFrom.getName()))) {
 				continue allocatedFromLoop;
+			}
 			return allocatedFrom;
 		}
 		return null;
@@ -218,7 +222,7 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public EList<NamedElement> getAllocatedTo() {
@@ -228,14 +232,14 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 		EList<NamedElement> allocatedTo = new BasicEList<NamedElement>();
 		Allocate currentAllocate = null;
 
-		if(getBase_NamedElement() != null) {
+		if (getBase_NamedElement() != null) {
 			// Find Allocate link
 			Iterator<Dependency> itDep = getBase_NamedElement().getClientDependencies().iterator();
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				Dependency currentDependency = itDep.next();
 				currentAllocate = UMLUtil.getStereotypeApplication(currentDependency, Allocate.class);
 
-				if(currentAllocate != null) {
+				if (currentAllocate != null) {
 					allocatedTo.addAll(currentAllocate.getBase_Abstraction().getSuppliers());
 				}
 			}
@@ -247,7 +251,7 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement getAllocatedTo(String name) {
@@ -257,15 +261,17 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement getAllocatedTo(String name, boolean ignoreCase, EClass eClass) {
-		allocatedToLoop: for(NamedElement allocatedTo : getAllocatedTo()) {
-			if(eClass != null && !eClass.isInstance(allocatedTo))
+		allocatedToLoop: for (NamedElement allocatedTo : getAllocatedTo()) {
+			if (eClass != null && !eClass.isInstance(allocatedTo)) {
 				continue allocatedToLoop;
-			if(name != null && !(ignoreCase ? name.equalsIgnoreCase(allocatedTo.getName()) : name.equals(allocatedTo.getName())))
+			}
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(allocatedTo.getName()) : name.equals(allocatedTo.getName()))) {
 				continue allocatedToLoop;
+			}
 			return allocatedTo;
 		}
 		return null;
@@ -273,16 +279,17 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement getBase_NamedElement() {
-		if(base_NamedElement != null && base_NamedElement.eIsProxy()) {
-			InternalEObject oldBase_NamedElement = (InternalEObject)base_NamedElement;
-			base_NamedElement = (NamedElement)eResolveProxy(oldBase_NamedElement);
-			if(base_NamedElement != oldBase_NamedElement) {
-				if(eNotificationRequired())
+		if (base_NamedElement != null && base_NamedElement.eIsProxy()) {
+			InternalEObject oldBase_NamedElement = (InternalEObject) base_NamedElement;
+			base_NamedElement = (NamedElement) eResolveProxy(oldBase_NamedElement);
+			if (base_NamedElement != oldBase_NamedElement) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AllocationsPackage.ALLOCATED__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
+				}
 			}
 		}
 		return base_NamedElement;
@@ -290,14 +297,15 @@ public class AllocatedImpl extends MinimalEObjectImpl.Container implements Alloc
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_NamedElement(NamedElement newBase_NamedElement) {
 		NamedElement oldBase_NamedElement = base_NamedElement;
 		base_NamedElement = newBase_NamedElement;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AllocationsPackage.ALLOCATED__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
+		}
 	}
 
 } // AllocatedImpl

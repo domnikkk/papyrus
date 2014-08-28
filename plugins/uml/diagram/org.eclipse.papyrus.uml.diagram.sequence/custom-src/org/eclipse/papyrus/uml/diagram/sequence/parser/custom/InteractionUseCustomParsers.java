@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,15 +43,15 @@ public class InteractionUseCustomParsers extends MessageFormatParser implements 
 	}
 
 	public InteractionUseCustomParsers() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() });
 	}
 
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -59,7 +59,7 @@ public class InteractionUseCustomParsers extends MessageFormatParser implements 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.uml.diagram.sequence.parsers.AbstractParser#isAffectingEvent(java.lang.Object
 	 * , int)
@@ -72,7 +72,7 @@ public class InteractionUseCustomParsers extends MessageFormatParser implements 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.uml.diagram.sequence.parsers.MessageFormatParser#getPrintString(org.eclipse
 	 * .core.runtime.IAdaptable, int)
@@ -81,12 +81,12 @@ public class InteractionUseCustomParsers extends MessageFormatParser implements 
 	public String getPrintString(IAdaptable element, int flags) {
 		Object obj = element.getAdapter(EObject.class);
 		StringBuffer sb = new StringBuffer();
-		if(obj instanceof InteractionUse) {
-			InteractionUse interactionUse = (InteractionUse)obj;
+		if (obj instanceof InteractionUse) {
+			InteractionUse interactionUse = (InteractionUse) obj;
 			Interaction interaction = interactionUse.getRefersTo();
-			if(interaction != null) {
+			if (interaction != null) {
 				String interactionName = interaction.getName();
-				if(interactionName != null) {
+				if (interactionName != null) {
 					sb.append(interaction.getName());
 				}
 			}
@@ -96,11 +96,12 @@ public class InteractionUseCustomParsers extends MessageFormatParser implements 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#areSemanticElementsAffected
 	 * (org.eclipse.emf.ecore.EObject, java.lang.Object)
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		EStructuralFeature feature = getEStructuralFeature(notification);
 		return isValidFeature(feature);
@@ -108,18 +109,19 @@ public class InteractionUseCustomParsers extends MessageFormatParser implements 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#getSemanticElementsBeingParsed
 	 * (org.eclipse.emf.ecore.EObject)
 	 */
+	@Override
 	public List getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-		if(element instanceof InteractionUse) {
-			InteractionUse interactionUse = (InteractionUse)element;
+		if (element instanceof InteractionUse) {
+			InteractionUse interactionUse = (InteractionUse) element;
 			semanticElementsBeingParsed.add(interactionUse);
 			Interaction interaction = interactionUse.getRefersTo();
-			if(interaction != null) {
+			if (interaction != null) {
 				// Add the interaction refered.
 				semanticElementsBeingParsed.add(interaction);
 				// TODO : Collaboration and interactionUse
@@ -130,9 +132,9 @@ public class InteractionUseCustomParsers extends MessageFormatParser implements 
 
 	/**
 	 * Determines if the given feature has to be taken into account in this parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {

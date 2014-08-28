@@ -38,8 +38,8 @@ public abstract class AbstractOpaqueBehaviorExecutionRegistry implements IOpaque
 	protected Map<String, OpaqueBehavior> opaqueBehaviorsMap = null;
 
 	public IOpaqueBehaviorExecutionRegistry init(Object parameters) {
-		if(parameters instanceof EObject) {
-			this.contextEObject = (EObject)parameters;
+		if (parameters instanceof EObject) {
+			this.contextEObject = (EObject) parameters;
 		}
 		return this;
 	}
@@ -52,19 +52,19 @@ public abstract class AbstractOpaqueBehaviorExecutionRegistry implements IOpaque
 		opaqueBehaviorsMap = new HashMap<String, OpaqueBehavior>();
 		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
 		IRegisteredLibrary library = null;
-		for(IRegisteredLibrary l : libraries) {
-			if(l.getName().equals(LIBRARY_NAME)) {
+		for (IRegisteredLibrary l : libraries) {
+			if (l.getName().equals(LIBRARY_NAME)) {
 				library = l;
 			}
 		}
-		if(library != null) {
+		if (library != null) {
 			URI libraryUri = library.getUri();
 			ResourceSet resourceSet = Util.getResourceSet(contextEObject);
 			Resource libraryResource = resourceSet.getResource(libraryUri, true);
-			for(Iterator<EObject> i = libraryResource.getAllContents(); i.hasNext();) {
+			for (Iterator<EObject> i = libraryResource.getAllContents(); i.hasNext();) {
 				EObject cddOpaqueBehavior = i.next();
-				if(cddOpaqueBehavior instanceof OpaqueBehavior) {
-					OpaqueBehavior f = (OpaqueBehavior)cddOpaqueBehavior;
+				if (cddOpaqueBehavior instanceof OpaqueBehavior) {
+					OpaqueBehavior f = (OpaqueBehavior) cddOpaqueBehavior;
 					opaqueBehaviorsMap.put(f.getQualifiedName(), f);
 				}
 			}

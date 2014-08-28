@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 Atos, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -61,9 +61,9 @@ public class CheckedOperationHistory implements IOperationHistory {
 		public int priority;
 
 		public int compareTo(ApproverPriorityPair o) {
-			if(o.priority > priority) {
+			if (o.priority > priority) {
 				return 1;
-			} else if(o.priority < priority) {
+			} else if (o.priority < priority) {
 				return -1;
 			} else {
 				return 0;
@@ -76,11 +76,11 @@ public class CheckedOperationHistory implements IOperationHistory {
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(Activator.PLUGIN_ID, "operationApprover"); //$NON-NLS-1$
 
 		List<ApproverPriorityPair> approverPriorityPairs = new LinkedList<ApproverPriorityPair>();
-		for(IConfigurationElement elem : configElements) {
-			if("operationApprover".equals(elem.getName())) { //$NON-NLS-1$
+		for (IConfigurationElement elem : configElements) {
+			if ("operationApprover".equals(elem.getName())) { //$NON-NLS-1$
 				try {
 					ApproverPriorityPair approverPriorityPair = new ApproverPriorityPair();
-					approverPriorityPair.approver = (IOperationApprover2)elem.createExecutableExtension("class"); //$NON-NLS-1$
+					approverPriorityPair.approver = (IOperationApprover2) elem.createExecutableExtension("class"); //$NON-NLS-1$
 					approverPriorityPair.priority = Integer.parseInt(elem.getAttribute("priority")); //$NON-NLS-1$
 
 					approverPriorityPairs.add(approverPriorityPair);
@@ -94,14 +94,14 @@ public class CheckedOperationHistory implements IOperationHistory {
 
 		approversArray = new IOperationApprover2[approverPriorityPairs.size()];
 
-		for(int i = 0; i < approversArray.length; i++) {
+		for (int i = 0; i < approversArray.length; i++) {
 			approversArray[i] = approverPriorityPairs.get(i).approver;
 		}
 	}
 
 	private CheckedOperationHistory() {
 		history = OperationHistoryFactory.getOperationHistory();
-		
+
 		addRegisteredListeners(history);
 	}
 
@@ -111,9 +111,9 @@ public class CheckedOperationHistory implements IOperationHistory {
 	 */
 	protected IStatus getRedoApproval(IUndoableOperation operation, IAdaptable info) {
 		operation = unwrap(operation);
-		for(int i = 0; i < approversArray.length; i++) {
+		for (int i = 0; i < approversArray.length; i++) {
 			IStatus approval = approversArray[i].proceedRedoing(operation, this, info);
-			if(!approval.isOK()) {
+			if (!approval.isOK()) {
 				return approval;
 			}
 		}
@@ -126,9 +126,9 @@ public class CheckedOperationHistory implements IOperationHistory {
 	 */
 	protected IStatus getUndoApproval(IUndoableOperation operation, IAdaptable info) {
 		operation = unwrap(operation);
-		for(int i = 0; i < approversArray.length; i++) {
+		for (int i = 0; i < approversArray.length; i++) {
 			IStatus approval = approversArray[i].proceedUndoing(operation, this, info);
-			if(!approval.isOK()) {
+			if (!approval.isOK()) {
 				return approval;
 			}
 		}
@@ -138,14 +138,14 @@ public class CheckedOperationHistory implements IOperationHistory {
 	/*
 	 * Consult the IOperationApprovers to see if the proposed execution should
 	 * be allowed.
-	 * 
+	 *
 	 * @since 3.2
 	 */
 	protected IStatus getExecuteApproval(IUndoableOperation operation, IAdaptable info) {
 		operation = unwrap(operation);
-		for(int i = 0; i < approversArray.length; i++) {
+		for (int i = 0; i < approversArray.length; i++) {
 			IStatus approval = approversArray[i].proceedExecuting(operation, this, info);
-			if(!approval.isOK()) {
+			if (!approval.isOK()) {
 				return approval;
 			}
 		}
@@ -156,16 +156,16 @@ public class CheckedOperationHistory implements IOperationHistory {
 	 * the unified command stack wraps ICommand GMFtoEMFCommandWrapper
 	 * which are wrapped in EMFCommandOperation,
 	 * unwrap it before validation
-	 * 
+	 *
 	 * @param operation
 	 * @return
 	 */
 	protected IUndoableOperation unwrap(IUndoableOperation operation) {
-		if(operation instanceof EMFCommandOperation) {
-			Command emfCommand = ((EMFCommandOperation)operation).getCommand();
-			if(emfCommand instanceof GMFtoEMFCommandWrapper) {
-				ICommand gmfCommand = ((GMFtoEMFCommandWrapper)emfCommand).getGMFCommand();
-				if(gmfCommand != null) {
+		if (operation instanceof EMFCommandOperation) {
+			Command emfCommand = ((EMFCommandOperation) operation).getCommand();
+			if (emfCommand instanceof GMFtoEMFCommandWrapper) {
+				ICommand gmfCommand = ((GMFtoEMFCommandWrapper) emfCommand).getGMFCommand();
+				if (gmfCommand != null) {
 					return gmfCommand;
 				}
 			}
@@ -177,7 +177,7 @@ public class CheckedOperationHistory implements IOperationHistory {
 	public IStatus execute(IUndoableOperation operation, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// check with the operation approvers
 		IStatus status = getExecuteApproval(operation, info);
-		if(!status.isOK()) {
+		if (!status.isOK()) {
 			// not approved. No notifications are sent, just return the status.
 			return status;
 		}
@@ -189,13 +189,13 @@ public class CheckedOperationHistory implements IOperationHistory {
 		IUndoableOperation operation = getUndoOperation(context);
 
 		// info if there is no operation
-		if(operation == null) {
+		if (operation == null) {
 			return IOperationHistory.NOTHING_TO_UNDO_STATUS;
 		}
 
 		// check with the operation approvers
 		IStatus status = getUndoApproval(operation, info);
-		if(!status.isOK()) {
+		if (!status.isOK()) {
 			// not approved. No notifications are sent, just return the status.
 			return status;
 		}
@@ -207,13 +207,13 @@ public class CheckedOperationHistory implements IOperationHistory {
 		IUndoableOperation operation = getRedoOperation(context);
 
 		// info if there is no operation
-		if(operation == null) {
+		if (operation == null) {
 			return IOperationHistory.NOTHING_TO_REDO_STATUS;
 		}
 
 		// check with the operation approvers
 		IStatus status = getRedoApproval(operation, info);
-		if(!status.isOK()) {
+		if (!status.isOK()) {
 			// not approved. No notifications are sent, just return the status.
 			return status;
 		}
@@ -223,10 +223,10 @@ public class CheckedOperationHistory implements IOperationHistory {
 	private static void addRegisteredListeners(IOperationHistory history) {
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(Activator.PLUGIN_ID, "historyListeners"); //$NON-NLS-1$
 
-		for(IConfigurationElement elem : configElements) {
-			if("historyListener".equals(elem.getName())) { //$NON-NLS-1$
+		for (IConfigurationElement elem : configElements) {
+			if ("historyListener".equals(elem.getName())) { //$NON-NLS-1$
 				try {
-					IOperationHistoryListener listener = (IOperationHistoryListener)elem.createExecutableExtension("class"); //$NON-NLS-1$
+					IOperationHistoryListener listener = (IOperationHistoryListener) elem.createExecutableExtension("class"); //$NON-NLS-1$
 					history.addOperationHistoryListener(listener);
 				} catch (Exception e) {
 					Activator.log.error("Uncaught exception in instantiation of operation history listener.", e); //$NON-NLS-1$
@@ -234,7 +234,7 @@ public class CheckedOperationHistory implements IOperationHistory {
 			}
 		}
 	}
-	
+
 	// all the following methods are pure delegation
 
 	public IStatus undoOperation(IUndoableOperation operation, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {

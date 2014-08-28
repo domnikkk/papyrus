@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  */
 package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl;
@@ -30,7 +30,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serializatio
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedContainmentReferenceInstanceImpl#getOwnedElement <em>Owned Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedContainmentReferenceInstanceImpl#getOwnedElement <em>Owned Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	 * The cached value of the '{@link #getOwnedElement() <em>Owned Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOwnedElement()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SingleValuedContainmentReferenceInstanceImpl() {
@@ -59,6 +61,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,6 +72,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EObject getOwnedElement() {
@@ -78,6 +82,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOwnedElement(EObject newOwnedElement, NotificationChain msgs) {
@@ -85,7 +90,11 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 		ownedElement = newOwnedElement;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT, oldOwnedElement, newOwnedElement);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -93,32 +102,39 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setOwnedElement(EObject newOwnedElement) {
 		if (newOwnedElement != ownedElement) {
 			NotificationChain msgs = null;
-			if (ownedElement != null)
-				msgs = ((InternalEObject)ownedElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT, null, msgs);
-			if (newOwnedElement != null)
-				msgs = ((InternalEObject)newOwnedElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT, null, msgs);
+			if (ownedElement != null) {
+				msgs = ((InternalEObject) ownedElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT, null, msgs);
+			}
+			if (newOwnedElement != null) {
+				msgs = ((InternalEObject) newOwnedElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT, null, msgs);
+			}
 			msgs = basicSetOwnedElement(newOwnedElement, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT, newOwnedElement, newOwnedElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT:
-				return basicSetOwnedElement(null, msgs);
+		case SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT:
+			return basicSetOwnedElement(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -126,13 +142,14 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT:
-				return getOwnedElement();
+		case SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT:
+			return getOwnedElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -140,14 +157,15 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT:
-				setOwnedElement((EObject)newValue);
-				return;
+		case SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT:
+			setOwnedElement((EObject) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -155,14 +173,15 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT:
-				setOwnedElement((EObject)null);
-				return;
+		case SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT:
+			setOwnedElement((EObject) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -170,15 +189,16 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT:
-				return ownedElement != null;
+		case SerializationPackage.SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT:
+			return ownedElement != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //SingleValuedContainmentReferenceInstanceImpl
+} // SingleValuedContainmentReferenceInstanceImpl

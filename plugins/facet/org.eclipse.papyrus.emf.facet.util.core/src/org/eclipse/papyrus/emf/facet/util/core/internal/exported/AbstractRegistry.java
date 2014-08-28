@@ -18,24 +18,22 @@ import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.papyrus.emf.facet.util.core.internal.Activator;
 import org.eclipse.papyrus.emf.facet.util.core.internal.Messages;
-import org.eclipse.osgi.util.NLS;
 
 /**
- * Provides common functionality for extension registries. Call
- * {@link #initialize()} in a sub-class to read the extension points. Implement
- * {@link #handleRootElement(IConfigurationElement)} to read the root
+ * Provides common functionality for extension registries. Call {@link #initialize()} in a sub-class to read the extension points. Implement {@link #handleRootElement(IConfigurationElement)} to read the root
  * configuration elements of each extension.
+ *
  * @since 0.2
  */
 public abstract class AbstractRegistry {
-// copy of org.eclipse.papyrus.emf.facet.infra.common.core.internal.extensions.AbstractRegistry
+	// copy of org.eclipse.papyrus.emf.facet.infra.common.core.internal.extensions.AbstractRegistry
 	/**
 	 * Initialize the registry by reading the extension point to discover
-	 * extensions. This method calls
-	 * {@link #handleRootElement(IConfigurationElement)} on each root
+	 * extensions. This method calls {@link #handleRootElement(IConfigurationElement)} on each root
 	 * configuration element.
 	 */
 	protected void initialize() {

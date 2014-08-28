@@ -32,16 +32,17 @@ public class MultilineCellEditorLocator implements CellEditorLocator {
 	/**
 	 * @generated
 	 */
+	@Override
 	public void relocate(CellEditor celleditor) {
-		Text text = (Text)celleditor.getControl();
+		Text text = (Text) celleditor.getControl();
 		Rectangle rect = getMultilineEditableFigure().getBounds().getCopy();
 		rect.x = getMultilineEditableFigure().getEditionLocation().x;
 		rect.y = getMultilineEditableFigure().getEditionLocation().y;
 		getMultilineEditableFigure().translateToAbsolute(rect);
-		if(getMultilineEditableFigure().getText().length() > 0) {
+		if (getMultilineEditableFigure().getText().length() > 0) {
 			rect.setSize(new Dimension(text.computeSize(rect.width, SWT.DEFAULT)));
 		}
-		if(!rect.equals(new Rectangle(text.getBounds()))) {
+		if (!rect.equals(new Rectangle(text.getBounds()))) {
 			text.setBounds(rect.x, rect.y, rect.width, rect.height);
 		}
 	}

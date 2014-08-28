@@ -56,20 +56,21 @@ public class CppClassPanel extends CppAbstractPanel {
 	/**
 	 * @return Returns the selectedOperation.
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getSelectedElement() {
 		return selectedClass;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#setSelectedElement(java.lang.Object)
 	 */
 	@Override
 	public void setSelectedElement(Element newElement) {
 		super.setSelectedElement(newElement);
-		if(newElement instanceof Class) {
-			this.selectedClass = (Class)newElement;
+		if (newElement instanceof Class) {
+			this.selectedClass = (Class) newElement;
 		}
 		else {
 			throw new RuntimeException("bad selection: " + newElement + " should be an uml2 Class");
@@ -78,48 +79,49 @@ public class CppClassPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#createContentHI()
 	 */
+	@Override
 	public Control createContent() {
 
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// Create save reset buttons with superclass method
-		///////////////////////////////////////////////////////////////////////    	
+		// /////////////////////////////////////////////////////////////////////
 		createSaveResetButtons();
 
-		/////////////////////////////////////////////////////////////////////////
+		// ///////////////////////////////////////////////////////////////////////
 		// Create a Group for the header include declarations
-		/////////////////////////////////////////////////////////////////////////
+		// ///////////////////////////////////////////////////////////////////////
 		headerDocument = createDocumentC();
 		headerGroup = createGroup(
-			this
-			, "Header include declarations"
-			, buttonSave
-			, null
-			, true
-			, 50
-			, 0
-			, false);
+				this
+				, "Header include declarations"
+				, buttonSave
+				, null
+				, true
+				, 50
+				, 0
+				, false);
 		// Use CDT CEditor coloration
 		headerViewer = createViewerC(headerDocument, headerGroup);
-		/////////////////////////////////////////////////////////////////////////
+		// ///////////////////////////////////////////////////////////////////////
 		// Create a Group for the body include declarations
-		/////////////////////////////////////////////////////////////////////////
+		// ///////////////////////////////////////////////////////////////////////
 		bodyDocument = createDocumentC();
 		bodyGroup = createGroup(
-			this
-			, "Body include declarations"
-			, headerGroup
-			, null
-			, true
-			, 0
-			, 0
-			, true);
+				this
+				, "Body include declarations"
+				, headerGroup
+				, null
+				, true
+				, 0
+				, 0
+				, true);
 		// Use CDT CEditor coloration
 		bodyViewer = createViewerC(bodyDocument, bodyGroup);
 
-		/////////////////////////////////////////////////////////////////////////
+		// ///////////////////////////////////////////////////////////////////////
 
 		return this;
 	}
@@ -127,16 +129,18 @@ public class CppClassPanel extends CppAbstractPanel {
 	/**
 	 * Saves the include declarations for a '<code>Class</code>'
 	 */
+	@Override
 	public void save()
 	{
-		if(selectedClass == null) {
+		if (selectedClass == null) {
 			/* Log.debug("saveBody : selectedOperation is null"); */
 		} else {
 			CommandSupport.exec("C++ header/body save", new Runnable() {
 
+				@Override
 				public void run() {
-					if(headerDocument.get().equals("")
-						&& bodyDocument.get().equals("")) {
+					if (headerDocument.get().equals("")
+							&& bodyDocument.get().equals("")) {
 						StereotypeUtil.unapply(selectedClass, Include.class);
 					} else {
 						Include cppInclude = StereotypeUtil.applyApp(selectedClass, Include.class);
@@ -150,9 +154,10 @@ public class CppClassPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#entryAction()
 	 */
+	@Override
 	public void entryAction() {
 		super.entryAction();
 		reset();
@@ -160,7 +165,7 @@ public class CppClassPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#checkModifications()
 	 */
 	@Override
@@ -169,7 +174,7 @@ public class CppClassPanel extends CppAbstractPanel {
 		String bodyInModel = "";
 
 		Include cppInclude = UMLUtil.getStereotypeApplication(selectedClass, Include.class);
-		if(cppInclude != null) {
+		if (cppInclude != null) {
 			headerInModel = cppInclude.getHeader();
 			bodyInModel = cppInclude.getBody();
 		}
@@ -182,16 +187,16 @@ public class CppClassPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#refreshPanel()
 	 */
 	@Override
 	protected void refreshPanel() {
-		if(selectedClass == null) {
+		if (selectedClass == null) {
 		}
 		else {
 			Include cppInclude = UMLUtil.getStereotypeApplication(selectedClass, Include.class);
-			if(cppInclude != null) {
+			if (cppInclude != null) {
 				// get the text in the tagged value
 				String currentHI = cppInclude.getHeader();
 				headerDocument.set(currentHI);

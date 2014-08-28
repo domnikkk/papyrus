@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,20 +48,22 @@ import org.eclipse.uml2.uml.TypedElement;
 public class TypeFacadeFactory {
 
 	public static TypeFacadeFactory eInstance = new TypeFacadeFactory() ;
-	
+
 	public TypeFacade createTypeFacade(EObject typeObject) {
 		TypeFacade result = new TypeFacade() {
 			@Override
 			public String getLabelWithoutBinding() {
 				try {
-					if (typeObject instanceof Classifier)
+					if (typeObject instanceof Classifier) {
 						return ((Classifier)typeObject).getName() ;
+					}
 					if (typeObject instanceof ElementImport) {
 						ElementImport eImport = (ElementImport)typeObject ;
-						if (eImport.getAlias()!=null )
+						if (eImport.getAlias()!=null ) {
 							return eImport.getAlias() ;
-						else
+						} else {
 							return ((Classifier)eImport.getImportedElement()).getName() ;
+						}
 					}
 					if (typeObject instanceof Parameter) {
 						return ((Parameter)typeObject).getType().getName() ;
@@ -79,18 +81,20 @@ public class TypeFacadeFactory {
 				}
 				return super.getLabel() ;
 			}
-			
+
 			@Override
 			public String getLabel() {
 				try {
-					if (typeObject instanceof Classifier)
+					if (typeObject instanceof Classifier) {
 						return ((Classifier)typeObject).getName() + super.getLabel() ;
+					}
 					if (typeObject instanceof ElementImport) {
 						ElementImport eImport = (ElementImport)typeObject ;
-						if (eImport.getAlias()!=null )
+						if (eImport.getAlias()!=null ) {
 							return eImport.getAlias() + super.getLabel() ;
-						else
+						} else {
 							return ((Classifier)eImport.getImportedElement()).getName() + super.getLabel() ;
+						}
 					}
 					if (typeObject instanceof Parameter) {
 						return ((Parameter)typeObject).getType().getName() + super.getLabel() ;
@@ -102,8 +106,9 @@ public class TypeFacadeFactory {
 						TypeFacade t = TypeFacadeFactory.eInstance.createTypeFacade(typeObject) ;
 						return t.extractActualType().getName() + super.getLabel() ;
 					}
-					if (typeObject == null)
+					if (typeObject == null) {
 						return "any" ;
+					}
 				}
 				catch (NullPointerException e) { // occurs when no type can be derived from typeObject (i.e., typeObject.getType() == null)
 					return "any" ;
@@ -111,13 +116,13 @@ public class TypeFacadeFactory {
 				return super.getLabel() ;
 			}
 		};
-		if (typeObject instanceof Classifier)
+		if (typeObject instanceof Classifier) {
 			result.setTypeObject(typeObject) ;
-		else if (typeObject instanceof ElementImport)
+		} else if (typeObject instanceof ElementImport) {
 			result.setTypeObject(typeObject) ;
-		else if (typeObject instanceof Parameter)
+		} else if (typeObject instanceof Parameter) {
 			result.setTypeObject(typeObject) ;
-		else if (typeObject instanceof LocalNameDeclarationStatement) {
+		} else if (typeObject instanceof LocalNameDeclarationStatement) {
 			LocalNameDeclarationStatement statement = (LocalNameDeclarationStatement)typeObject ;
 			if (statement.getType() != null) {
 				result.setTypeObject(createVoidFacade(statement.getType()).typeObject);
@@ -140,10 +145,11 @@ public class TypeFacadeFactory {
 						}
 					}
 					else {
-						if (_1_2_compatibility > _2_1_compatibility)
+						if (_1_2_compatibility > _2_1_compatibility) {
 							result.setTypeObject(typeOfExpression1.getTypeFacade().typeObject) ;
-						else
+						} else {
 							result.setTypeObject(typeOfExpression2.getTypeFacade().typeObject) ;
+						}
 					}
 				}
 				else {
@@ -159,7 +165,7 @@ public class TypeFacadeFactory {
 		}
 		else if (typeObject instanceof AcceptStatement) {
 			// first extract the accept clause
-			AcceptClause acceptClause = (AcceptClause)((AcceptStatement)typeObject).getClause() ;
+			AcceptClause acceptClause = ((AcceptStatement)typeObject).getClause() ;
 			if (acceptClause.getQualifiedNameList() != null && !(acceptClause.getQualifiedNameList().getQualifiedName().isEmpty())) {
 				// TODO : getQualifiedName is a collection. Should compute the least common ancestor.
 				TypeFacade f = TypeFacadeFactory.eInstance.createVoidFacade(acceptClause.getQualifiedNameList().getQualifiedName().get(0)) ;
@@ -171,7 +177,7 @@ public class TypeFacadeFactory {
 		}
 		return result ;
 	}
-	
+
 	public ErrorTypeFacade createErrorTypeFacade(String message, EObject source, EStructuralFeature structuralFeature) {
 		ErrorTypeFacade result = new ErrorTypeFacade() ;
 		result.setMessage(message) ;
@@ -179,20 +185,22 @@ public class TypeFacadeFactory {
 		result.setStructuralFeature(structuralFeature) ;
 		return result ;
 	}
-	
+
 	public TypeFacade createVoidFacade(Expression exp) {
 		NameExpression actualNameExpression = null ;
 		for (Iterator<EObject> i = exp.eAllContents() ; i.hasNext() && actualNameExpression == null ; ) {
-			EObject o = i.next() ; 
-			if (o instanceof NameExpression)
+			EObject o = i.next() ;
+			if (o instanceof NameExpression) {
 				actualNameExpression = (NameExpression)o ;
+			}
 		}
-		if (actualNameExpression == null)
+		if (actualNameExpression == null) {
 			return createErrorTypeFacade("A type expression is expected", exp, AlfPackage.eINSTANCE.getConditionalTestExpression_Exp()) ;
-		else
+		} else {
 			return createVoidFacade(actualNameExpression) ;
+		}
 	}
-	
+
 	public TypeFacade createVoidFacade(NameExpression exp) {
 		//if (! (exp.eContainer() instanceof ClassificationExpression ||
 		//		exp.eContainer() instanceof SuperInvocationExpression ||
@@ -240,17 +248,18 @@ public class TypeFacadeFactory {
 					return createErrorTypeFacade("A type expression is expected", cddDclStatement, AlfPackage.eINSTANCE.getInvocationOrAssignementOrDeclarationStatement_TypePart_OR_assignedPart_OR_invocationPart()) ;
 				}
 				List<EObject> visibleClassifiers = null ;
-				
-				if (previousPackage == null)
+
+				if (previousPackage == null) {
 					visibleClassifiers = AlfScopeProvider.scopingTool.getVisibleClassifiers(exp).resolveByName(exp.getId()) ;
-				else
+				} else {
 					visibleClassifiers = AlfScopeProvider.scopingTool.getVisibleClassifiers(previousPackage).resolveByName(exp.getId()) ;
-				
+				}
+
 				if (visibleClassifiers.isEmpty()) {
 					return createErrorTypeFacade("Could not resolve classifier " + exp.getId(), exp, AlfPackage.eINSTANCE.getNameExpression_Id()) ;
 				}
 				else if (visibleClassifiers.size() > 1) {
-					return createErrorTypeFacade(exp.getId() + " resolves to multiple classifiers", 
+					return createErrorTypeFacade(exp.getId() + " resolves to multiple classifiers",
 							cddDclStatement, AlfPackage.eINSTANCE.getNameExpression_Id()) ;
 				}
 				return new VoidFacade(createTypeFacade(visibleClassifiers.get(0))) ;
@@ -263,23 +272,24 @@ public class TypeFacadeFactory {
 			// TODO: Not to be handled here => Should not resolve to a type
 		}
 		List<EObject> visibleClassifiers = null ;
-		
-		if (previousPackage == null)
+
+		if (previousPackage == null) {
 			visibleClassifiers = AlfScopeProvider.scopingTool.getVisibleClassifiers(exp).resolveByName(exp.getId()) ;
-		else
+		} else {
 			visibleClassifiers = AlfScopeProvider.scopingTool.getVisibleClassifiers(previousPackage).resolveByName(exp.getId()) ;
-		
+		}
+
 		if (visibleClassifiers.isEmpty()) {
 			return createErrorTypeFacade("Could not resolve classifier " + exp.getId(), exp, AlfPackage.eINSTANCE.getNameExpression_Id()) ;
 		}
 		else if (visibleClassifiers.size() > 1) {
-			return createErrorTypeFacade(exp.getId() + " resolves to multiple classifiers", 
+			return createErrorTypeFacade(exp.getId() + " resolves to multiple classifiers",
 					exp, AlfPackage.eINSTANCE.getNameExpression_Id()) ;
 		}
 		return new VoidFacade(createTypeFacade(visibleClassifiers.get(0))) ;
 	}
 
-	
+
 
 	public TypeFacade createVoidFacade(QualifiedNameWithBinding exp) {
 		QualifiedNameWithBinding remaining = exp ;
@@ -312,23 +322,24 @@ public class TypeFacadeFactory {
 		// At this point, the (potential) path has been validated, can check the final id.
 		// The last remaining.id should resolve to a classifier
 		List<EObject> visibleClassifiers = null ;
-		if (previousPackage != null) 
+		if (previousPackage != null) {
 			visibleClassifiers = AlfScopeProvider.scopingTool.getVisibleClassifiers(previousPackage).resolveByName(remaining.getId()) ;
-		else
+		} else {
 			visibleClassifiers = AlfScopeProvider.scopingTool.getVisibleClassifiers(exp).resolveByName(remaining.getId()) ;
+		}
 		if (visibleClassifiers.isEmpty()) {
-			return createErrorTypeFacade("Could not resolve classifier " + remaining.getId(),remaining,  
+			return createErrorTypeFacade("Could not resolve classifier " + remaining.getId(),remaining,
 					AlfPackage.eINSTANCE.getQualifiedNameWithBinding_Id()) ;
 		}
 		else if (visibleClassifiers.size() > 1) {
 			return createErrorTypeFacade(remaining.getId() + " resolves to multiple classifiers.", remaining,
 					AlfPackage.eINSTANCE.getQualifiedNameWithBinding_Id()) ;
 		}
-		
+
 		// Need to check that potential binding is valid
 		Classifier resolvedClassifier = (Classifier)visibleClassifiers.get(0) ;
 		if (!resolvedClassifier.isTemplate()) {
-			if (remaining.getBinding()!= null) { 
+			if (remaining.getBinding()!= null) {
 				return createErrorTypeFacade(remaining.getId() + " is not a template", remaining,
 						AlfPackage.eINSTANCE.getQualifiedNameWithBinding_Binding()) ;
 			}
@@ -337,7 +348,7 @@ public class TypeFacadeFactory {
 			}
 		}
 		else {
-			if (remaining.getBinding()!= null) { 
+			if (remaining.getBinding()!= null) {
 				// Needs to check that the binding is correct:
 				List<ParameterableElement> orderedListOfParameteredElements = new ArrayList<ParameterableElement>() ;
 				Map<String, ParameterableElement> mapOfParameteredElements = new HashMap<String, ParameterableElement>() ;
@@ -357,16 +368,17 @@ public class TypeFacadeFactory {
 								AlfPackage.eINSTANCE.getNamedTemplateBinding_Formal()) ;
 					}
 					TypeFacade actual = createVoidFacade(ntp.getActual()) ;
-					if (actual instanceof ErrorTypeFacade)
+					if (actual instanceof ErrorTypeFacade) {
 						return actual ;
+					}
 					substitutionsMap.put(formal.getTemplateParameter(), actual.extractActualType()) ;
 				}
 				// Checks the number of specified substitution
 				if (remaining.getBinding().getBindings().size() != orderedListOfParameteredElements.size()) {
 					String errorMessage = "" ;
-					if (remaining.getBinding().getBindings().size() > orderedListOfParameteredElements.size())
+					if (remaining.getBinding().getBindings().size() > orderedListOfParameteredElements.size()) {
 						errorMessage = "Too many template bindings specified for " + remaining.getId()  ;
-					else {
+					} else {
 						errorMessage = "Template bindings are missing for " + remaining.getId()  ;
 					}
 					return createErrorTypeFacade(errorMessage, remaining,
@@ -376,11 +388,11 @@ public class TypeFacadeFactory {
 				VoidFacade boundResolvedClassifier = new VoidFacade(createTypeFacade(visibleClassifiers.get(0))) ;
 //				HashMap<Object, EObject> actualSubsitutionsMap = new HashMap<Object, EObject>() ;
 //				for (ParameterableElement p : orderedListOfParameteredElements) {
-//					actualSubsitutionsMap.put(TemplateBindingUtils.getParameteredElementName(p), 
+//					actualSubsitutionsMap.put(TemplateBindingUtils.getParameteredElementName(p),
 //											  subsitutionsMap.get(p) ) ;
 //				}
 				//boundResolvedClassifier.bindTemplate(substitutionsMap) ;
-				
+
 				return boundResolvedClassifier;
 			}
 			else {
@@ -389,5 +401,5 @@ public class TypeFacadeFactory {
 			}
 		}
 	}
-	
+
 }

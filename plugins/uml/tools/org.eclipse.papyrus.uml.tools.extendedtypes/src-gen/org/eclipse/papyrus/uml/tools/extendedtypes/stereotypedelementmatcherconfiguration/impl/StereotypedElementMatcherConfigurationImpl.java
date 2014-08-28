@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -26,7 +26,7 @@ import org.eclipse.papyrus.uml.tools.extendedtypes.stereotypedelementmatcherconf
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.stereotypedelementmatcherconfiguration.impl.StereotypedElementMatcherConfigurationImpl#getStereotypedQualifiedName <em>Stereotyped Qualified Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.stereotypedelementmatcherconfiguration.impl.StereotypedElementMatcherConfigurationImpl#getStereotypedQualifiedName <em>Stereotyped Qualified Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +37,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	 * The default value of the '{@link #getStereotypedQualifiedName() <em>Stereotyped Qualified Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getStereotypedQualifiedName()
 	 * @generated
 	 * @ordered
@@ -47,6 +48,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	 * The cached value of the '{@link #getStereotypedQualifiedName() <em>Stereotyped Qualified Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getStereotypedQualifiedName()
 	 * @generated
 	 * @ordered
@@ -56,6 +58,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected StereotypedElementMatcherConfigurationImpl() {
@@ -65,6 +68,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,6 +79,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getStereotypedQualifiedName() {
@@ -84,25 +89,28 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setStereotypedQualifiedName(String newStereotypedQualifiedName) {
 		String oldStereotypedQualifiedName = stereotypedQualifiedName;
 		stereotypedQualifiedName = newStereotypedQualifiedName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, StereotypedElementMatcherConfigurationPackage.STEREOTYPED_ELEMENT_MATCHER_CONFIGURATION__STEREOTYPED_QUALIFIED_NAME, oldStereotypedQualifiedName, stereotypedQualifiedName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case StereotypedElementMatcherConfigurationPackage.STEREOTYPED_ELEMENT_MATCHER_CONFIGURATION__STEREOTYPED_QUALIFIED_NAME:
-				return getStereotypedQualifiedName();
+		case StereotypedElementMatcherConfigurationPackage.STEREOTYPED_ELEMENT_MATCHER_CONFIGURATION__STEREOTYPED_QUALIFIED_NAME:
+			return getStereotypedQualifiedName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,14 +118,15 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case StereotypedElementMatcherConfigurationPackage.STEREOTYPED_ELEMENT_MATCHER_CONFIGURATION__STEREOTYPED_QUALIFIED_NAME:
-				setStereotypedQualifiedName((String)newValue);
-				return;
+		case StereotypedElementMatcherConfigurationPackage.STEREOTYPED_ELEMENT_MATCHER_CONFIGURATION__STEREOTYPED_QUALIFIED_NAME:
+			setStereotypedQualifiedName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -125,14 +134,15 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case StereotypedElementMatcherConfigurationPackage.STEREOTYPED_ELEMENT_MATCHER_CONFIGURATION__STEREOTYPED_QUALIFIED_NAME:
-				setStereotypedQualifiedName(STEREOTYPED_QUALIFIED_NAME_EDEFAULT);
-				return;
+		case StereotypedElementMatcherConfigurationPackage.STEREOTYPED_ELEMENT_MATCHER_CONFIGURATION__STEREOTYPED_QUALIFIED_NAME:
+			setStereotypedQualifiedName(STEREOTYPED_QUALIFIED_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,13 +150,14 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case StereotypedElementMatcherConfigurationPackage.STEREOTYPED_ELEMENT_MATCHER_CONFIGURATION__STEREOTYPED_QUALIFIED_NAME:
-				return STEREOTYPED_QUALIFIED_NAME_EDEFAULT == null ? stereotypedQualifiedName != null : !STEREOTYPED_QUALIFIED_NAME_EDEFAULT.equals(stereotypedQualifiedName);
+		case StereotypedElementMatcherConfigurationPackage.STEREOTYPED_ELEMENT_MATCHER_CONFIGURATION__STEREOTYPED_QUALIFIED_NAME:
+			return STEREOTYPED_QUALIFIED_NAME_EDEFAULT == null ? stereotypedQualifiedName != null : !STEREOTYPED_QUALIFIED_NAME_EDEFAULT.equals(stereotypedQualifiedName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,11 +165,14 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (stereotypedQualifiedName: ");
@@ -167,4 +181,4 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 		return result.toString();
 	}
 
-} //StereotypedElementMatcherConfigurationImpl
+} // StereotypedElementMatcherConfigurationImpl

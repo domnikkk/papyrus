@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Interrupt Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getInterruptKind()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum InterruptKind implements Enumerator {
 	 * The '<em><b>Hardware Interruption</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #HARDWARE_INTERRUPTION_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum InterruptKind implements Enumerator {
 	 * The '<em><b>Processor Detected Exception</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #PROCESSOR_DETECTED_EXCEPTION_VALUE
 	 * @generated
 	 * @ordered
@@ -53,6 +56,7 @@ public enum InterruptKind implements Enumerator {
 	 * The '<em><b>Programmed Exception</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #PROGRAMMED_EXCEPTION_VALUE
 	 * @generated
 	 * @ordered
@@ -63,6 +67,7 @@ public enum InterruptKind implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #UNDEF_VALUE
 	 * @generated
 	 * @ordered
@@ -73,6 +78,7 @@ public enum InterruptKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -83,10 +89,10 @@ public enum InterruptKind implements Enumerator {
 	 * The '<em><b>Hardware Interruption</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Hardware Interruption</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Hardware Interruption</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #HARDWARE_INTERRUPTION
 	 * @model name="HardwareInterruption"
 	 * @generated
@@ -98,10 +104,10 @@ public enum InterruptKind implements Enumerator {
 	 * The '<em><b>Processor Detected Exception</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Processor Detected Exception</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Processor Detected Exception</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #PROCESSOR_DETECTED_EXCEPTION
 	 * @model name="ProcessorDetectedException"
 	 * @generated
@@ -113,10 +119,10 @@ public enum InterruptKind implements Enumerator {
 	 * The '<em><b>Programmed Exception</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Programmed Exception</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Programmed Exception</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #PROGRAMMED_EXCEPTION
 	 * @model name="ProgrammedException"
 	 * @generated
@@ -128,10 +134,10 @@ public enum InterruptKind implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #UNDEF
 	 * @model name="Undef"
 	 * @generated
@@ -143,10 +149,10 @@ public enum InterruptKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #OTHER
 	 * @model name="Other"
 	 * @generated
@@ -158,21 +164,23 @@ public enum InterruptKind implements Enumerator {
 	 * An array of all the '<em><b>Interrupt Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static final InterruptKind[] VALUES_ARRAY =
-		new InterruptKind[] {
-			HARDWARE_INTERRUPTION,
-			PROCESSOR_DETECTED_EXCEPTION,
-			PROGRAMMED_EXCEPTION,
-			UNDEF,
-			OTHER,
-		};
+			new InterruptKind[] {
+					HARDWARE_INTERRUPTION,
+					PROCESSOR_DETECTED_EXCEPTION,
+					PROGRAMMED_EXCEPTION,
+					UNDEF,
+					OTHER,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Interrupt Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final List<InterruptKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -181,6 +189,7 @@ public enum InterruptKind implements Enumerator {
 	 * Returns the '<em><b>Interrupt Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static InterruptKind get(String literal) {
@@ -197,6 +206,7 @@ public enum InterruptKind implements Enumerator {
 	 * Returns the '<em><b>Interrupt Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static InterruptKind getByName(String name) {
@@ -213,15 +223,21 @@ public enum InterruptKind implements Enumerator {
 	 * Returns the '<em><b>Interrupt Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static InterruptKind get(int value) {
 		switch (value) {
-			case HARDWARE_INTERRUPTION_VALUE: return HARDWARE_INTERRUPTION;
-			case PROCESSOR_DETECTED_EXCEPTION_VALUE: return PROCESSOR_DETECTED_EXCEPTION;
-			case PROGRAMMED_EXCEPTION_VALUE: return PROGRAMMED_EXCEPTION;
-			case UNDEF_VALUE: return UNDEF;
-			case OTHER_VALUE: return OTHER;
+		case HARDWARE_INTERRUPTION_VALUE:
+			return HARDWARE_INTERRUPTION;
+		case PROCESSOR_DETECTED_EXCEPTION_VALUE:
+			return PROCESSOR_DETECTED_EXCEPTION;
+		case PROGRAMMED_EXCEPTION_VALUE:
+			return PROGRAMMED_EXCEPTION;
+		case UNDEF_VALUE:
+			return UNDEF;
+		case OTHER_VALUE:
+			return OTHER;
 		}
 		return null;
 	}
@@ -229,6 +245,7 @@ public enum InterruptKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -236,6 +253,7 @@ public enum InterruptKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -243,6 +261,7 @@ public enum InterruptKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -251,6 +270,7 @@ public enum InterruptKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private InterruptKind(int value, String name, String literal) {
@@ -262,39 +282,46 @@ public enum InterruptKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //InterruptKind
+
+} // InterruptKind

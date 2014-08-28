@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,14 +23,14 @@ public interface ILabelControler {
 
 	/**
 	 * Returns the figure associated to this FigureControler.
-	 * 
+	 *
 	 * @return the figure associated to this FigureControler
 	 */
 	public abstract IFigure getLabel();
 
 	/**
 	 * Returns the accessors associated to this FigureControler.
-	 * 
+	 *
 	 * @return the accessors associated to this FigureControler
 	 */
 	public abstract PropertyAccessor getPropertyAccessor();

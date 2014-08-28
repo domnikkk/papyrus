@@ -73,7 +73,7 @@ public final class FacetUtils {
 
 	/**
 	 * Find a Facet in a FacetSet
-	 * 
+	 *
 	 * @param facetSet
 	 *            the FacetSet
 	 * @param facetName
@@ -136,7 +136,7 @@ public final class FacetUtils {
 	/**
 	 * Find a FacetSet with the given name among the given list of FacetSets. If several FacetSets have the same name,
 	 * then return the first one.
-	 * 
+	 *
 	 * @param facetSets
 	 *            where to look for
 	 * @param name
@@ -155,7 +155,7 @@ public final class FacetUtils {
 
 	/**
 	 * Find all FacetSets with the given name among the given list of FacetSets.
-	 * 
+	 *
 	 * @param facetSets
 	 *            where to look for
 	 * @param name
@@ -174,7 +174,7 @@ public final class FacetUtils {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param facetSet
 	 *            a facetSet
 	 * @return a set with all the EPackage extended by the facetSet and its
@@ -199,13 +199,12 @@ public final class FacetUtils {
 		}
 		return extendedEPackages;
 	}
-	
+
 	/**
 	 * Find all the FacetSets with the given path among the given list of root
-	 * FacetSets. For example: <code>getFacetSetsByPath("a", "b", "c")</code>
-	 * returns a FacetSet named "c", contained in a FacetSet named "b",
+	 * FacetSets. For example: <code>getFacetSetsByPath("a", "b", "c")</code> returns a FacetSet named "c", contained in a FacetSet named "b",
 	 * contained in a registered FacetSet named "a".
-	 * 
+	 *
 	 * @param path
 	 *            a list of FacetSet names, starting from the root registered
 	 *            FacetSets, and leading to the wanted FacetSet(s)
@@ -248,7 +247,7 @@ public final class FacetUtils {
 
 	/**
 	 * Find a Facet with the given name among the given list of Facets.
-	 * 
+	 *
 	 * @param facets
 	 *            where to look
 	 * @param name
@@ -285,7 +284,7 @@ public final class FacetUtils {
 
 	/**
 	 * This methods returns all the known (registered) eTypedElements.
-	 * 
+	 *
 	 * @param resourceSet
 	 *            the eTypedElement search will be done in/using this resourceSet
 	 * @return all the known (registered) eTypedElements
@@ -385,8 +384,7 @@ public final class FacetUtils {
 				final EPackage ePackage = extendedMetaclass.getEPackage();
 				if (ePackage != null) {
 					if (result != null && !ePackage.equals(result)) {
-						throw new IllegalStateException(
-								"The Facets in a FacetSet must all extend EClasses from the same EPackage"); //$NON-NLS-1$
+						throw new IllegalStateException("The Facets in a FacetSet must all extend EClasses from the same EPackage"); //$NON-NLS-1$
 					}
 					result = ePackage;
 				}
@@ -490,7 +488,7 @@ public final class FacetUtils {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param facetOperation
 	 * @return
 	 * @since 0.2
@@ -505,7 +503,7 @@ public final class FacetUtils {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param facet
 	 * @return
 	 * @since 0.2
@@ -524,13 +522,13 @@ public final class FacetUtils {
 
 	/**
 	 * Find the top level feature in the override chain
-	 * 
+	 *
 	 * @param feature
 	 * @return The top level feature in the override chain or the feature
 	 *         parameter itself if no override
 	 * @throws FacetManagerException
 	 * @since 0.2
-	 * 
+	 *
 	 */
 	// Copied from
 	// org.eclipse.papyrus.emf.facet.efacet.core.internal.FacetManagerContext
@@ -599,7 +597,7 @@ public final class FacetUtils {
 
 	/**
 	 * Return the main facetSet.
-	 * 
+	 *
 	 * @param eObject
 	 *            the element in the model selected.
 	 * @return the main facetSet.
@@ -620,7 +618,7 @@ public final class FacetUtils {
 
 	/**
 	 * Return all the operations of the model.
-	 * 
+	 *
 	 * @param parent
 	 *            the first FacetSet of the model.
 	 * @return the list of operations.
@@ -643,7 +641,7 @@ public final class FacetUtils {
 
 	/**
 	 * Return all the facets of the model.
-	 * 
+	 *
 	 * @param parent
 	 *            the first FacetSet of the model.
 	 * @return the list of facets.
@@ -663,7 +661,7 @@ public final class FacetUtils {
 
 	/**
 	 * Return all the facets of the model.
-	 * 
+	 *
 	 * @param parent
 	 *            the first FacetSet of the model.
 	 * @return the list of facets.

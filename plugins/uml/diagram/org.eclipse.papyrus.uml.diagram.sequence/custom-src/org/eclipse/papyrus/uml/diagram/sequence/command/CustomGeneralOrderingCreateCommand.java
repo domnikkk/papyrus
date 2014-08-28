@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,32 +38,32 @@ public class CustomGeneralOrderingCreateCommand extends GeneralOrderingCreateCom
 
 	/**
 	 * Non generated, completely redefined to find correct ends and correct container
-	 * 
+	 *
 	 * @Override find source and target events and container
 	 */
 	public CustomGeneralOrderingCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request, source, target);
 		// check source occurrence specification
 		List<OccurrenceSpecification> possibleSourceOcc = null;
-		if(getRequest().getParameters().containsKey(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION)) {
+		if (getRequest().getParameters().containsKey(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION)) {
 			Object paramOccurrence1 = getRequest().getParameter(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION);
 			List<OccurrenceSpecification> occ1List = SequenceUtil.getAsOccSpecList(paramOccurrence1);
 			possibleSourceOcc = occ1List;
 		}
 		// check target occurrence specification
 		List<OccurrenceSpecification> possibleTargetOcc = null;
-		if(getRequest().getParameters().containsKey(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2)) {
+		if (getRequest().getParameters().containsKey(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2)) {
 			Object paramOccurrence2 = getRequest().getParameter(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2);
 			List<OccurrenceSpecification> occ2List = SequenceUtil.getAsOccSpecList(paramOccurrence2);
 			possibleTargetOcc = occ2List;
 		}
 		// disable duration constraint on a same event
-		if(possibleSourceOcc != null && !possibleSourceOcc.isEmpty()) {
+		if (possibleSourceOcc != null && !possibleSourceOcc.isEmpty()) {
 			this.source = possibleSourceOcc.get(0);
 		} else {
 			this.source = null;
 		}
-		if(possibleTargetOcc != null && !possibleTargetOcc.isEmpty() && Collections.disjoint(possibleSourceOcc, possibleTargetOcc)) {
+		if (possibleTargetOcc != null && !possibleTargetOcc.isEmpty() && Collections.disjoint(possibleSourceOcc, possibleTargetOcc)) {
 			this.target = possibleTargetOcc.get(0);
 		} else {
 			// set invalid target to disable it (or null to enable in case second end is not defined)
@@ -72,34 +72,38 @@ public class CustomGeneralOrderingCreateCommand extends GeneralOrderingCreateCom
 		container = deduceContainer(source, target);
 	}
 
+	@Override
 	public boolean canExecute() {
-		if(source == null && target == null) {
+		if (source == null && target == null) {
 			return false;
 		}
-		if(source != null && false == source instanceof OccurrenceSpecification) {
+		if (source != null && false == source instanceof OccurrenceSpecification) {
 			return false;
 		}
-		if(target != null && false == target instanceof OccurrenceSpecification) {
+		if (target != null && false == target instanceof OccurrenceSpecification) {
 			return false;
 		}
-		if(getSource() == null) {
+		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		if(getContainer() == null) {
+		if (getContainer() == null) {
 			return false;
 		}
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateGeneralOrdering_4012(getContainer(), getSource(), getTarget());
 	}
 
+	@Override
 	protected OccurrenceSpecification getSource() {
-		return (OccurrenceSpecification)source;
+		return (OccurrenceSpecification) source;
 	}
 
+	@Override
 	protected OccurrenceSpecification getTarget() {
-		return (OccurrenceSpecification)target;
+		return (OccurrenceSpecification) target;
 	}
 
+	@Override
 	public InteractionFragment getContainer() {
 		return container;
 	}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,11 +40,11 @@ import org.eclipse.uml2.uml.UMLPackage;
  * specification will be typed by the dropped classifiers, and a dialog will
  * be opened for the user to select the slots to create in the
  * InstanceSpecification.
- * 
+ *
  * The slots will correspond to the classifier's property.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ClassifierToSlotsDropStrategy extends TransactionalDropStrategy {
 
@@ -71,13 +71,13 @@ public class ClassifierToSlotsDropStrategy extends TransactionalDropStrategy {
 	}
 
 	public void setOptions(Map<String, Object> options) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public Command doGetCommand(Request request, EditPart targetEditPart) {
 
-		if( request instanceof CreateAspectUnspecifiedTypeConnectionRequest){
+		if (request instanceof CreateAspectUnspecifiedTypeConnectionRequest) {
 			return null;
 		}
 		CompositeCommand cc = new CompositeCommand(getLabel());
@@ -86,18 +86,18 @@ public class ClassifierToSlotsDropStrategy extends TransactionalDropStrategy {
 
 		List<EObject> sourceElements = getSourceEObjects(request);
 		List<Classifier> valuesToAdd = new ArrayList<Classifier>(sourceElements.size());
-		for(EObject sourceElement : sourceElements) {
-			if(!(sourceElement instanceof Classifier)) {
+		for (EObject sourceElement : sourceElements) {
+			if (!(sourceElement instanceof Classifier)) {
 				return null;
 			}
-			valuesToAdd.add((Classifier)sourceElement);
+			valuesToAdd.add((Classifier) sourceElement);
 		}
 
-		if(!(semanticElement instanceof InstanceSpecification)) {
+		if (!(semanticElement instanceof InstanceSpecification)) {
 			return null;
 		}
 
-		List<Classifier> currentValues = (List<Classifier>)semanticElement.eGet(feature);
+		List<Classifier> currentValues = (List<Classifier>) semanticElement.eGet(feature);
 
 		List<Classifier> values = new LinkedList<Classifier>();
 		values.addAll(currentValues);
@@ -108,9 +108,9 @@ public class ClassifierToSlotsDropStrategy extends TransactionalDropStrategy {
 
 		cc.add(setClassifiersCommand);
 
-		//Add slots
+		// Add slots
 		ICommand editSlotsCommand = getEditSlotsCommand(valuesToAdd, targetEditPart);
-		if(editSlotsCommand != null) {
+		if (editSlotsCommand != null) {
 			cc.add(editSlotsCommand);
 		}
 
@@ -118,14 +118,14 @@ public class ClassifierToSlotsDropStrategy extends TransactionalDropStrategy {
 	}
 
 	protected ICommand getEditSlotsCommand(List<Classifier> classifiers, EditPart targetEditPart) {
-		for(Classifier classifier : classifiers) {
-			if(!classifier.getAllAttributes().isEmpty()) {
-				//FIXME: This is inconsistent with ClassifierPropertiesContentProvider, 
-				//which doesn't only relies on getAllAttributes()...
-				//When a Class (without any property) implements an Interface (With at least one property),
-				//this will return a null command, while the dialog would have displayed the interface's properties
+		for (Classifier classifier : classifiers) {
+			if (!classifier.getAllAttributes().isEmpty()) {
+				// FIXME: This is inconsistent with ClassifierPropertiesContentProvider,
+				// which doesn't only relies on getAllAttributes()...
+				// When a Class (without any property) implements an Interface (With at least one property),
+				// this will return a null command, while the dialog would have displayed the interface's properties
 
-				//There is at least one property
+				// There is at least one property
 				return new SelectAndCreateSlotsCommand(classifiers, targetEditPart);
 			}
 		}

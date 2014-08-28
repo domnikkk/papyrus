@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,9 +39,9 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  *         TODO : maybe we could improve this action using AbstractDialogCellEditor
  */
 public class UMLDialogComboAction extends AbstractComboAction {
@@ -52,13 +52,13 @@ public class UMLDialogComboAction extends AbstractComboAction {
 	private Object axisElement;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param axisElement
-	 *        the axis element
+	 *            the axis element
 	 * @param dataProvider
-	 *        the combo box data provider. it must be a UMLSingleReferenceComboBoxDataProvider
+	 *            the combo box data provider. it must be a UMLSingleReferenceComboBoxDataProvider
 	 */
 	public UMLDialogComboAction(final Object axisElement, IComboBoxDataProvider dataProvider) {
 		super(dataProvider);
@@ -68,27 +68,27 @@ public class UMLDialogComboAction extends AbstractComboAction {
 
 	@Override
 	public void run() {
-		if(this.dataProvider instanceof UMLSingleReferenceComboBoxDataProvider) {
+		if (this.dataProvider instanceof UMLSingleReferenceComboBoxDataProvider) {
 			final TreeSelectorDialog dialog = new TreeSelectorDialog(Display.getDefault().getActiveShell());
-			final Object rowElement = ((UMLSingleReferenceComboBoxDataProvider)this.dataProvider).getEditedEObject(this.columnIndex, this.rowIndex);
-			final Object columnElement = ((UMLSingleReferenceComboBoxDataProvider)this.dataProvider).getEditedFeature(this.columnIndex, this.rowIndex);
+			final Object rowElement = ((UMLSingleReferenceComboBoxDataProvider) this.dataProvider).getEditedEObject(this.columnIndex, this.rowIndex);
+			final Object columnElement = ((UMLSingleReferenceComboBoxDataProvider) this.dataProvider).getEditedFeature(this.columnIndex, this.rowIndex);
 
 			EObject realEditedObject = null;
 			EStructuralFeature realFeature = null;
 
 			Element editedElement = null;
 			Object feature = this.axisElement;
-			if(rowElement instanceof Element && columnElement == this.axisElement) {
-				editedElement = (Element)rowElement;
-			} else if(rowElement == this.axisElement && columnElement instanceof EObject) {
-				editedElement = (Element)columnElement;
+			if (rowElement instanceof Element && columnElement == this.axisElement) {
+				editedElement = (Element) rowElement;
+			} else if (rowElement == this.axisElement && columnElement instanceof EObject) {
+				editedElement = (Element) columnElement;
 			}
 
 
 			Stereotype stereotype = null;
 			List<Stereotype> stereotypesWithEditedFeatureAppliedOnElement = null;
-			if(feature instanceof EStructuralFeature) {
-				realFeature = (EStructuralFeature)feature;
+			if (feature instanceof EStructuralFeature) {
+				realFeature = (EStructuralFeature) feature;
 				realEditedObject = editedElement;
 			} else {
 				String id = AxisUtils.getPropertyId(feature);
@@ -99,8 +99,8 @@ public class UMLDialogComboAction extends AbstractComboAction {
 				realFeature = realEditedObject.eClass().getEStructuralFeature(prop.getName());
 			}
 
-			if(stereotypesWithEditedFeatureAppliedOnElement != null && stereotypesWithEditedFeatureAppliedOnElement.size() > 1) {
-				//TODO : not yet managed
+			if (stereotypesWithEditedFeatureAppliedOnElement != null && stereotypesWithEditedFeatureAppliedOnElement.size() > 1) {
+				// TODO : not yet managed
 				return;
 			}
 			dialog.setTitle(realFeature.getEType().getName());
@@ -109,16 +109,16 @@ public class UMLDialogComboAction extends AbstractComboAction {
 			int currentIndex = this.combo.getSelectionIndex();
 			List<?> values = this.dataProvider.getValues(this.columnIndex, this.rowIndex);
 			Object initialSelection = null;
-			if(currentIndex != -1) {
+			if (currentIndex != -1) {
 				initialSelection = values.get(currentIndex);
 			}
 			final ITreeContentProvider provider = new UMLContentProvider(realEditedObject, realFeature, stereotype, editedElement.eResource().getResourceSet());
 			dialog.setContentProvider(provider);
-			if(initialSelection != null) {
+			if (initialSelection != null) {
 				dialog.setInitialElementSelections(Collections.singletonList(initialSelection));
 			}
 			int res = dialog.open();
-			if(res == Window.OK) {
+			if (res == Window.OK) {
 				final Object[] result = dialog.getResult();
 				int index = values.indexOf(result[0]);
 				this.combo.select(index);
@@ -127,9 +127,9 @@ public class UMLDialogComboAction extends AbstractComboAction {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param context
-	 *        the context used to find the label provider
+	 *            the context used to find the label provider
 	 * @return
 	 *         the label provider
 	 */

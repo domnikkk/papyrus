@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,10 +40,10 @@ public class ApplyStereotypeRequest extends CreateRequest {
 
 	/**
 	 * Creates a new ApplyStereotypeRequest
-	 * 
+	 *
 	 * @param objects
-	 *        the list of stereotypes to apply, identified by their
-	 *        qualified names
+	 *            the list of stereotypes to apply, identified by their
+	 *            qualified names
 	 */
 	public ApplyStereotypeRequest(IAdaptable viewAdapter, List<String> stereotypes, boolean renameWithFirstStereotype) {
 		super();
@@ -64,7 +64,7 @@ public class ApplyStereotypeRequest extends CreateRequest {
 	/**
 	 * Returns the list of stereotypes to apply, identified by their qualified
 	 * names
-	 * 
+	 *
 	 * @return the list of stereotypes to apply, identified by their qualified
 	 *         names, or an empty list
 	 */
@@ -75,16 +75,16 @@ public class ApplyStereotypeRequest extends CreateRequest {
 	public boolean renameWithFirstStereotype() {
 		return renameWithFirstStereotype;
 	}
-	
+
 	public void setElement(Element elem) {
 		this.element = elem;
 	}
 
 	public Element getElement() {
 		if (element == null && viewAdapter != null) {
-			View view = (View)viewAdapter.getAdapter(View.class);
+			View view = (View) viewAdapter.getAdapter(View.class);
 			if (view != null && view.getElement() instanceof Element) {
-				element = (Element)view.getElement();
+				element = (Element) view.getElement();
 			}
 		}
 		return element;

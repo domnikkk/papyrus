@@ -44,7 +44,7 @@ public interface EReferenceTreeElement extends EStructuralFeatureTreeElement {
 	 * <em>EReference</em>}' reference.
 	 *
 	 * @param value
-	 *        the new value of the '<em>EReference</em>' reference.
+	 *            the new value of the '<em>EReference</em>' reference.
 	 * @see #getEReference()
 	 */
 	void setEReference(EReference value);

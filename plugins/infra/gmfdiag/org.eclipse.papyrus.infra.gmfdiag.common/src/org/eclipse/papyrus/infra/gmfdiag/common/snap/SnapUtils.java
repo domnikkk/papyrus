@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -20,7 +20,7 @@ import org.eclipse.swt.SWT;
 public class SnapUtils {
 
 	private SnapUtils() {
-		//to prevent instanciation
+		// to prevent instanciation
 	}
 
 	/**
@@ -30,7 +30,7 @@ public class SnapUtils {
 	public static final int MODIFIER_CENTERED_RESIZE;
 
 	static {
-		if(Platform.OS_MACOSX.equals(Platform.getOS())) {
+		if (Platform.OS_MACOSX.equals(Platform.getOS())) {
 			MODIFIER_CENTERED_RESIZE = SWT.ALT;
 		} else {
 			MODIFIER_CENTERED_RESIZE = SWT.MOD1;
@@ -41,7 +41,7 @@ public class SnapUtils {
 	 * Key modifier for constrained resizing. It's SHIFT on all platforms.
 	 */
 	public static final int MODIFIER_CONSTRAINED_RESIZE = SWT.SHIFT;
-	
+
 	/**
 	 * Key modifier for ignoring snap while dragging. It's CTRL on Mac, and ALT
 	 * on all other platforms.

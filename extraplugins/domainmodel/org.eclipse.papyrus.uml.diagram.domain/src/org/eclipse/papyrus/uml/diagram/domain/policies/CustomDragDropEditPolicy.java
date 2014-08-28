@@ -14,13 +14,13 @@ import org.eclipse.papyrus.uml.diagram.domain.edit.policy.DomainDiagramDragDropE
 /**
  * <pre>
  * Customization of the DND edit policy for the Package Diagram.
- * 
- * Never use specific drop implemented in ClassDiagram, which are 
+ *
+ * Never use specific drop implemented in ClassDiagram, which are
  * related to elements that are not used currently in PackageDiagram.
  * </pre>
  */
 public class CustomDragDropEditPolicy extends DomainDiagramDragDropEditPolicy {
 
-	
-	
+
+
 }

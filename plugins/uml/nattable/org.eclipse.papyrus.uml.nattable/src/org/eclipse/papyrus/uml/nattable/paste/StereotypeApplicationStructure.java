@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,9 @@ import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * A structure used to store useful informations about stereotype, property, stereotype application, ...
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public final class StereotypeApplicationStructure {
 
@@ -39,17 +39,17 @@ public final class StereotypeApplicationStructure {
 	private final EStructuralFeature feature;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param stereotype
-	 *        the stereotype
+	 *            the stereotype
 	 * @param stereotypeApplication
-	 *        the emf eobject representing the UML stereotype
+	 *            the emf eobject representing the UML stereotype
 	 * @param property
-	 *        a property of this stereotype
+	 *            a property of this stereotype
 	 * @param feature
-	 *        the emf feature representing the UML Property
+	 *            the emf feature representing the UML Property
 	 */
 	public StereotypeApplicationStructure(final Stereotype stereotype, final EObject stereotypeApplication, final Property property, final EStructuralFeature feature) {
 		this.stereotype = stereotype;
@@ -61,7 +61,7 @@ public final class StereotypeApplicationStructure {
 
 	/**
 	 * Gets the stereotype.
-	 * 
+	 *
 	 * @return the stereotype
 	 */
 	public final Stereotype getStereotype() {
@@ -71,7 +71,7 @@ public final class StereotypeApplicationStructure {
 
 	/**
 	 * Gets the property.
-	 * 
+	 *
 	 * @return the property
 	 */
 	public final Property getProperty() {
@@ -81,7 +81,7 @@ public final class StereotypeApplicationStructure {
 
 	/**
 	 * Gets the stereotype application.
-	 * 
+	 *
 	 * @return the stereotype application
 	 */
 	public final EObject getStereotypeApplication() {
@@ -91,7 +91,7 @@ public final class StereotypeApplicationStructure {
 
 	/**
 	 * Gets the feature.
-	 * 
+	 *
 	 * @return the feature
 	 */
 	public final EStructuralFeature getFeature() {

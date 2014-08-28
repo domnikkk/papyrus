@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -34,6 +34,7 @@ public class FontPropertySetterImpl extends PropertySetterImpl implements FontPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	protected FontPropertySetterImpl() {
@@ -44,6 +45,7 @@ public class FontPropertySetterImpl extends PropertySetterImpl implements FontPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -53,6 +55,7 @@ public class FontPropertySetterImpl extends PropertySetterImpl implements FontPr
 
 	/**
 	 * Set the property of the specified view.
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl#setValue(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance)
 	 *
 	 * @param view
@@ -60,28 +63,28 @@ public class FontPropertySetterImpl extends PropertySetterImpl implements FontPr
 	 */
 	@Override
 	public void setValue(View view, TypeInstance value) {
-	
+
 		// Try to get the FontStyle object to modify
 		FontStyle style;
-		if(view instanceof FontStyle) {
+		if (view instanceof FontStyle) {
 			// Try directly (case of Shape ...)
-			style = (FontStyle)view;
-		} 
+			style = (FontStyle) view;
+		}
 		else {
 			// Try as additionnal style
-			style = (FontStyle)view.getStyle(NotationPackage.eINSTANCE.getFontStyle() );
+			style = (FontStyle) view.getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		}
-		
+
 		// Set values
-		if( style != null ) {
-			FontInstance lineValue = (FontInstance)value;
+		if (style != null) {
+			FontInstance lineValue = (FontInstance) value;
 
 			style.setFontColor(lineValue.getFontColor());
 			style.setFontName(lineValue.getFontName());
 			style.setFontHeight(lineValue.getFontHeigh());
 			style.setBold(lineValue.isBold());
 		}
-		
+
 	}
 
-} //FontPropertySetterImpl
+} // FontPropertySetterImpl

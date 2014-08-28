@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,17 +42,17 @@ public class OrderedLabelGroup extends AbstractGroup {
 	private Map<String, String> myRoles = new LinkedHashMap<String, String>();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite
+	 *            the parent composite
 	 * @param preferenceKey
-	 *        the preference key
+	 *            the preference key
 	 * @param dialogPage
-	 *        the dialog page
+	 *            the dialog page
 	 * @param roles
-	 *        the roles for the labels
+	 *            the roles for the labels
 	 */
 	public OrderedLabelGroup(Composite parent, String preferenceKey, DialogPage dialogPage, Map<String, String> roles) {
 		super(parent, preferenceKey, dialogPage);
@@ -61,21 +61,21 @@ public class OrderedLabelGroup extends AbstractGroup {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite
+	 *            the parent composite
 	 * @param preferenceKey
-	 *        the preference key
+	 *            the preference key
 	 * @param dialogPage
-	 *        the dialog page
+	 *            the dialog page
 	 * @param roles
-	 *        the roles for the labels
+	 *            the roles for the labels
 	 */
 	public OrderedLabelGroup(Composite parent, String preferenceKey, DialogPage dialogPage, List<String> roles) {
 		super(parent, preferenceKey, dialogPage);
-		for(String role : roles) {
+		for (String role : roles) {
 			myRoles.put(role, ""); //$NON-NLS-1$
 		}
 		createContent(parent);
@@ -83,19 +83,19 @@ public class OrderedLabelGroup extends AbstractGroup {
 
 	/**
 	 * create the content.
-	 * 
+	 *
 	 * @param parent
-	 *        : the parent composite
+	 *            : the parent composite
 	 */
 	protected void createContent(Composite parent) {
 		Group group = new Group(parent, SWT.NONE);
 		group.setLayout(new GridLayout());
 		group.setText(Messages.LabelGroup_Labels_To_Display);
-		for(String role : myRoles.keySet()) {
+		for (String role : myRoles.keySet()) {
 			String key = PreferencesConstantsHelper.getLabelElementConstant(getKey(), role, PreferencesConstantsHelper.LABEL_VISIBILITY);
 			Image im = null;
 			String iconPath = myRoles.get(role);
-			if(iconPath != null && iconPath != "") { //$NON-NLS-1$
+			if (iconPath != null && iconPath != "") { //$NON-NLS-1$
 				try {
 					im = ImageDescriptor.createFromURL(new URL(iconPath)).createImage();
 				} catch (MalformedURLException e) {

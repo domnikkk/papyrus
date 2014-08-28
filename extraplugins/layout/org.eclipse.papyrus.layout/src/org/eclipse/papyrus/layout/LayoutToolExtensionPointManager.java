@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ public class LayoutToolExtensionPointManager {
 
 	/**
 	 * Gets the single instance of LayoutToolExtensionPointManager.
-	 * 
+	 *
 	 * @return single instance of LayoutToolExtensionPointManager
 	 */
 	public static LayoutToolExtensionPointManager getInstance() {
@@ -52,22 +52,22 @@ public class LayoutToolExtensionPointManager {
 
 	/**
 	 * Gets the layout area creator.
-	 * 
+	 *
 	 * @return layout area creator
 	 */
 	public LayoutToolAreaInterface getLayoutAreaCreator() {
 		try {
-			for(IConfigurationElement e : configurationElementsLayoutTools) {
+			for (IConfigurationElement e : configurationElementsLayoutTools) {
 
 				Class<?> o;
-				LayouttoolInterface interfaceL = (LayouttoolInterface)Platform.getBundle(e.getContributor().getName())
+				LayouttoolInterface interfaceL = (LayouttoolInterface) Platform.getBundle(e.getContributor().getName())
 						.loadClass(e.getAttribute(Constants.EXTENSION_INTERFACE)).newInstance();
 				o = interfaceL.getEditorClass();
 				IWorkbenchPart activeEditor = getActiveEditor();
-				if(activeEditor != null) {
-					if(o.isAssignableFrom(activeEditor.getClass())) {
-						if(e.getAttribute(Constants.EXTENSION_INTERFACE_LAYOUT_AREA) != null) {
-							return (LayoutToolAreaInterface)e
+				if (activeEditor != null) {
+					if (o.isAssignableFrom(activeEditor.getClass())) {
+						if (e.getAttribute(Constants.EXTENSION_INTERFACE_LAYOUT_AREA) != null) {
+							return (LayoutToolAreaInterface) e
 									.createExecutableExtension(Constants.EXTENSION_INTERFACE_LAYOUT_AREA);
 						}
 					}
@@ -89,28 +89,28 @@ public class LayoutToolExtensionPointManager {
 
 	/**
 	 * Gets the sub editor.
-	 * 
+	 *
 	 * @param part
-	 *        the part
-	 * 
+	 *            the part
+	 *
 	 * @return subEditor class
 	 */
 	public LayouttoolInterface getSubEditor(IWorkbenchPart part) {
 		try {
-			for(IConfigurationElement e : configurationElementsLayoutTools) {
+			for (IConfigurationElement e : configurationElementsLayoutTools) {
 				Class<?> o;
-				LayouttoolInterface interfaceL = (LayouttoolInterface)Platform.getBundle(e.getContributor().getName())
+				LayouttoolInterface interfaceL = (LayouttoolInterface) Platform.getBundle(e.getContributor().getName())
 						.loadClass(e.getAttribute(Constants.EXTENSION_INTERFACE)).newInstance();
 				o = interfaceL.getEditorClass();
 				IWorkbenchPart activeEditor = null;
-				if(part != null) {
+				if (part != null) {
 					activeEditor = part;
 				} else {
 					activeEditor = getActiveEditor();
 				}
-				if(activeEditor != null) {
-					if(o.isAssignableFrom(activeEditor.getClass())) {
-						return (LayouttoolInterface)e.createExecutableExtension(Constants.EXTENSION_INTERFACE);
+				if (activeEditor != null) {
+					if (o.isAssignableFrom(activeEditor.getClass())) {
+						return (LayouttoolInterface) e.createExecutableExtension(Constants.EXTENSION_INTERFACE);
 					}
 				}
 			}
@@ -130,7 +130,7 @@ public class LayoutToolExtensionPointManager {
 
 	/**
 	 * Gets the sub editor.
-	 * 
+	 *
 	 * @return subEditor class
 	 */
 	public LayouttoolInterface getSubEditor() {
@@ -139,15 +139,15 @@ public class LayoutToolExtensionPointManager {
 
 	/**
 	 * Gets the active editor.
-	 * 
+	 *
 	 * @return active editor
 	 */
 	public IEditorPart getActiveEditor() {
 		IEditorPart editor = null;
-		if(PlatformUI.getWorkbench() != null) {
-			if(PlatformUI.getWorkbench().getActiveWorkbenchWindow() != null) {
-				if(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage() != null) {
-					if(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor() != null) {
+		if (PlatformUI.getWorkbench() != null) {
+			if (PlatformUI.getWorkbench().getActiveWorkbenchWindow() != null) {
+				if (PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage() != null) {
+					if (PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor() != null) {
 						editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 					}
 				}

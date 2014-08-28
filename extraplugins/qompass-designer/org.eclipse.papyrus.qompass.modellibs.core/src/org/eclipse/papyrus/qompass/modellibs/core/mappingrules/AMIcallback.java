@@ -14,37 +14,39 @@ import org.eclipse.uml2.uml.Type;
 
 public class AMIcallback implements IMappingRule {
 
+	@Override
 	public Interface getProvided(Port p, boolean update) {
 		Type type = p.getBase_Port().getType();
-		if(!(type instanceof Interface))
+		if (!(type instanceof Interface)) {
 			return null;
+		}
 
-		Interface typingInterface = (Interface)type;
+		Interface typingInterface = (Interface) type;
 		Interface derivedInterface = MapUtil.getOrCreateDerivedInterface(p, "_reply_", type, update);
 		if (!update) {
 			return derivedInterface;
 		}
 
-		for(Operation operation : typingInterface.getOwnedOperations()) {
+		for (Operation operation : typingInterface.getOwnedOperations()) {
 			String name = operation.getName();
 
-			if(AMIpoll.hasOutParameters(operation)) {
+			if (AMIpoll.hasOutParameters(operation)) {
 
 				// check whether operation already exists. Create, if not
 				Operation derivedOperation = derivedInterface.getOperation(name, null, null);
-				if(derivedOperation == null) {
+				if (derivedOperation == null) {
 					derivedOperation = derivedInterface.createOwnedOperation(name, null, null);
 				}
 
-				// each non-in parameter is in the poll operation. 
-				for(Parameter parameter : operation.getOwnedParameters()) {
-					if(parameter.getDirection() != ParameterDirectionKind.IN_LITERAL) {
+				// each non-in parameter is in the poll operation.
+				for (Parameter parameter : operation.getOwnedParameters()) {
+					if (parameter.getDirection() != ParameterDirectionKind.IN_LITERAL) {
 
 						String paramName = parameter.getName();
 						Type paramType = parameter.getType();
-						if(derivedOperation.getOwnedParameter(paramName, paramType) == null) {
+						if (derivedOperation.getOwnedParameter(paramName, paramType) == null) {
 							Parameter newParameter =
-								derivedOperation.createOwnedParameter(parameter.getName(), parameter.getType());
+									derivedOperation.createOwnedParameter(parameter.getName(), parameter.getType());
 							newParameter.setDirection(ParameterDirectionKind.IN_LITERAL);
 							newParameter.setLower(parameter.getLower());
 							newParameter.setUpper(parameter.getUpper());
@@ -54,11 +56,11 @@ public class AMIcallback implements IMappingRule {
 
 				// remove those parameters that exist in derived, but not original interface.
 				Iterator<Parameter> derivedParameters = derivedOperation.getOwnedParameters().iterator();
-				while(derivedParameters.hasNext()) {
+				while (derivedParameters.hasNext()) {
 					Parameter parameter = derivedParameters.next();
 					String paramName = parameter.getName();
 					Type paramType = parameter.getType();
-					if(operation.getOwnedParameter(paramName, paramType) == null) {
+					if (operation.getOwnedParameter(paramName, paramType) == null) {
 						// not on in original interface, remove from derived as well
 						derivedParameters.remove();
 					}
@@ -69,13 +71,13 @@ public class AMIcallback implements IMappingRule {
 		// check whether operations in derived interface exist in original interface
 		// (remove, if not)
 		Iterator<Operation> derivedOperations = derivedInterface.getOwnedOperations().iterator();
-		while(derivedOperations.hasNext()) {
+		while (derivedOperations.hasNext()) {
 			Operation derivedOperation = derivedOperations.next();
 			String name = derivedOperation.getName();
-			if(name == null) {
+			if (name == null) {
 				continue;
 			}
-			if(typingInterface.getOperation(name, null, null) == null) {
+			if (typingInterface.getOperation(name, null, null) == null) {
 				// not in typing interface, remove
 				derivedOperations.remove();
 			}
@@ -83,36 +85,38 @@ public class AMIcallback implements IMappingRule {
 		return derivedInterface;
 	}
 
+	@Override
 	public Interface getRequired(Port p, boolean update) {
 		Type type = p.getBase_Port().getType();
-		if(!(type instanceof Interface))
+		if (!(type instanceof Interface)) {
 			return null;
+		}
 
-		Interface typingInterface = (Interface)type;
+		Interface typingInterface = (Interface) type;
 		Interface derivedInterface = MapUtil.getOrCreateDerivedInterface(p, "_req_", type, update); //$NON-NLS-1$
 		if (!update) {
 			return derivedInterface;
 		}
 
-		for(Operation operation : typingInterface.getOwnedOperations()) {
+		for (Operation operation : typingInterface.getOwnedOperations()) {
 			String name = operation.getName();
 
 			// check whether operation already exists. Create, if not
 			Operation derivedOperation = derivedInterface.getOperation(name, null, null);
-			if(derivedOperation == null) {
+			if (derivedOperation == null) {
 				derivedOperation = derivedInterface.createOwnedOperation(name, null, null);
 			}
 
-			// request operation contains only in and inout parameters 
-			for(Parameter parameter : operation.getOwnedParameters()) {
-				if((parameter.getDirection() == ParameterDirectionKind.IN_LITERAL) ||
-					(parameter.getDirection() == ParameterDirectionKind.INOUT_LITERAL)) {
+			// request operation contains only in and inout parameters
+			for (Parameter parameter : operation.getOwnedParameters()) {
+				if ((parameter.getDirection() == ParameterDirectionKind.IN_LITERAL) ||
+						(parameter.getDirection() == ParameterDirectionKind.INOUT_LITERAL)) {
 
 					String paramName = parameter.getName();
 					Type paramType = parameter.getType();
-					if(derivedOperation.getOwnedParameter(paramName, paramType) == null) {
+					if (derivedOperation.getOwnedParameter(paramName, paramType) == null) {
 						Parameter newParameter =
-							derivedOperation.createOwnedParameter(parameter.getName(), parameter.getType());
+								derivedOperation.createOwnedParameter(parameter.getName(), parameter.getType());
 						newParameter.setDirection(parameter.getDirection());
 						newParameter.setLower(parameter.getLower());
 						newParameter.setUpper(parameter.getUpper());
@@ -122,11 +126,11 @@ public class AMIcallback implements IMappingRule {
 
 			// remove those parameters that exist in derived, but not original interface.
 			Iterator<Parameter> derivedParameters = derivedOperation.getOwnedParameters().iterator();
-			while(derivedParameters.hasNext()) {
+			while (derivedParameters.hasNext()) {
 				Parameter parameter = derivedParameters.next();
 				String paramName = parameter.getName();
 				Type paramType = parameter.getType();
-				if(operation.getOwnedParameter(paramName, paramType) == null) {
+				if (operation.getOwnedParameter(paramName, paramType) == null) {
 					// not on in original interface, remove from derived as well
 					derivedParameters.remove();
 				}
@@ -136,13 +140,13 @@ public class AMIcallback implements IMappingRule {
 		// check whether operations in derived interface exist in original interface
 		// (remove, if not)
 		Iterator<Operation> derivedOperations = derivedInterface.getOwnedOperations().iterator();
-		while(derivedOperations.hasNext()) {
+		while (derivedOperations.hasNext()) {
 			Operation derivedOperation = derivedOperations.next();
 			String name = derivedOperation.getName();
-			if(name == null) {
+			if (name == null) {
 				continue;
 			}
-			if(typingInterface.getOperation(name, null, null) == null) {
+			if (typingInterface.getOperation(name, null, null) == null) {
 				// not in typing interface, remove
 				derivedOperations.remove();
 			}
@@ -150,7 +154,8 @@ public class AMIcallback implements IMappingRule {
 
 		return derivedInterface;
 	}
-	
+
+	@Override
 	public boolean needsUpdate(Port p) {
 		// TODO: insufficient condition
 		return (getRequired(p, false) == null) ||

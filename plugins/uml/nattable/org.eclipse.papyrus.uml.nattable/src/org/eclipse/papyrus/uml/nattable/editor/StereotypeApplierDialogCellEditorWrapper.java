@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		 Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -30,13 +30,13 @@ public class StereotypeApplierDialogCellEditorWrapper extends StereotypeApplierC
 
 	/**
 	 * Instantiates a new stereotyped element dialog cell editor wrapper.
-	 * 
+	 *
 	 * @param wrappedCellEditor
-	 *        the wrapped cell editor
+	 *            the wrapped cell editor
 	 * @param axisElement
-	 *        the edited axis
+	 *            the edited axis
 	 * @param elementProvider
-	 *        the axis element provider
+	 *            the axis element provider
 	 */
 	public StereotypeApplierDialogCellEditorWrapper(final AbstractDialogCellEditor wrappedCellEditor, final Object axisElement, final ITableAxisElementProvider elementProvider) {
 		super(wrappedCellEditor, axisElement, elementProvider);
@@ -44,29 +44,29 @@ public class StereotypeApplierDialogCellEditorWrapper extends StereotypeApplierC
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.gui.ICellEditDialog#getCommittedValue()
-	 * 
+	 *
 	 * @return
 	 */
 
 	@Override
 	public Object getCommittedValue() {
-		return ((AbstractDialogCellEditor)this.wrappedCellEditor).getCommittedValue();
+		return ((AbstractDialogCellEditor) this.wrappedCellEditor).getCommittedValue();
 	}
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.gui.ICellEditDialog#getEditType()
-	 * 
+	 *
 	 * @return
 	 */
 
 	@Override
 	public EditTypeEnum getEditType() {
-		return ((AbstractDialogCellEditor)this.wrappedCellEditor).getEditType();
+		return ((AbstractDialogCellEditor) this.wrappedCellEditor).getEditType();
 	}
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.gui.ICellEditDialog#calculateValue(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param currentValue
 	 * @param processValue
 	 * @return
@@ -74,31 +74,31 @@ public class StereotypeApplierDialogCellEditorWrapper extends StereotypeApplierC
 
 	@Override
 	public Object calculateValue(Object currentValue, Object processValue) {
-		return ((AbstractDialogCellEditor)this.wrappedCellEditor).calculateValue(currentValue, processValue);
+		return ((AbstractDialogCellEditor) this.wrappedCellEditor).calculateValue(currentValue, processValue);
 	}
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.gui.ICellEditDialog#open()
-	 * 
+	 *
 	 * @return
 	 */
 
 	@Override
 	public int open() {
-		return ((AbstractDialogCellEditor)this.wrappedCellEditor).open();
+		return ((AbstractDialogCellEditor) this.wrappedCellEditor).open();
 	}
 
 	/**
 	 * Sets the dialog settings.
-	 * 
+	 *
 	 * @param editDialogSettings
-	 *        the edit dialog settings
+	 *            the edit dialog settings
 	 * @see org.eclipse.nebula.widgets.nattable.edit.gui.ICellEditDialog#setDialogSettings(java.util.Map)
 	 */
 
 	@Override
 	public void setDialogSettings(Map<String, Object> editDialogSettings) {
-		((AbstractDialogCellEditor)this.wrappedCellEditor).setDialogSettings(editDialogSettings);
+		((AbstractDialogCellEditor) this.wrappedCellEditor).setDialogSettings(editDialogSettings);
 	}
 
 }

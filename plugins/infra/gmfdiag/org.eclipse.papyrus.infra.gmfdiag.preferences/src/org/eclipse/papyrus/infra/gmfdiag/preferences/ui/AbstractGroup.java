@@ -1,15 +1,15 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr 
- *  Thibault Landre (Atos Origin) 
+ *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr
+ *  Thibault Landre (Atos Origin)
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.preferences.ui;
 
@@ -41,7 +41,7 @@ public abstract class AbstractGroup extends Composite {
 
 	/**
 	 * Gets the dialog page.
-	 * 
+	 *
 	 * @return the dialogPage
 	 */
 	protected DialogPage getDialogPage() {
@@ -53,7 +53,7 @@ public abstract class AbstractGroup extends Composite {
 
 	/**
 	 * Gets the title.
-	 * 
+	 *
 	 * @return the title
 	 */
 	public String getKey() {
@@ -62,9 +62,9 @@ public abstract class AbstractGroup extends Composite {
 
 	/**
 	 * Sets the title.
-	 * 
+	 *
 	 * @param title
-	 *        the title to set
+	 *            the title to set
 	 */
 	protected void setKey(String title) {
 		this.key = title;
@@ -72,13 +72,13 @@ public abstract class AbstractGroup extends Composite {
 
 	/**
 	 * Instantiates a new abstract group.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent of the composite
+	 *            the parent of the composite
 	 * @param String
-	 *        the title of the page
+	 *            the title of the page
 	 * @param dialogPage
-	 *        to set the page in field editor
+	 *            to set the page in field editor
 	 */
 	public AbstractGroup(Composite parent, String key, DialogPage dialogPage) {
 		super(parent, SWT.None);
@@ -90,10 +90,10 @@ public abstract class AbstractGroup extends Composite {
 
 	/**
 	 * Get the specified preference type associated with this preference page.
-	 * 
+	 *
 	 * @param preferenceType
-	 *        an int representing the preference type to retrieve. It must be a value defined in {@link PreferencesConstantsHelper}
-	 * 
+	 *            an int representing the preference type to retrieve. It must be a value defined in {@link PreferencesConstantsHelper}
+	 *
 	 * @return the preference constant used to store the given preference type.
 	 */
 	protected String getPreferenceConstant(int preferenceType) {
@@ -103,10 +103,10 @@ public abstract class AbstractGroup extends Composite {
 	/**
 	 * Gets an encapsulated compo. This composite is used to contain a FieldEditor and to allow
 	 * developers to work with a FieldEditor like Composite element.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
-	 * 
+	 *            the parent
+	 *
 	 * @return the encapsulated compo
 	 */
 	protected final Composite getEncapsulatedCompo(Composite parent) {
@@ -118,9 +118,9 @@ public abstract class AbstractGroup extends Composite {
 	/**
 	 * Register field editor. It will add the fieldEditor to a map that will be used to
 	 * store/load/loadDefault/set the PreferenceStore of contained fieldEditor
-	 * 
+	 *
 	 * @param fieldEditor
-	 *        the fieldEditor to add.
+	 *            the fieldEditor to add.
 	 */
 	protected void addFieldEditor(FieldEditor fieldEditor) {
 		fieldsEditor.add(fieldEditor);
@@ -128,44 +128,44 @@ public abstract class AbstractGroup extends Composite {
 
 	/**
 	 * Load preferences of all registered fieldEditors.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.ui.AbstractGroup#addFieldEditor(FieldEditor)
 	 */
 	public void load() {
-		for(FieldEditor fe : fieldsEditor) {
+		for (FieldEditor fe : fieldsEditor) {
 			fe.load();
 		}
 	}
 
 	/**
 	 * Set the preference store of all registered fieldEditors.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.ui.AbstractGroup#addFieldEditor(FieldEditor)
 	 */
 	public final void setPreferenceStore(IPreferenceStore store) {
-		for(FieldEditor fe : fieldsEditor) {
+		for (FieldEditor fe : fieldsEditor) {
 			fe.setPreferenceStore(store);
 		}
 	}
 
 	/**
 	 * Load default preferences of all registered fieldEditors.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.ui.AbstractGroup#addFieldEditor(FieldEditor)
 	 */
 	public final void loadDefault() {
-		for(FieldEditor fe : fieldsEditor) {
+		for (FieldEditor fe : fieldsEditor) {
 			fe.loadDefault();
 		}
 	}
 
 	/**
 	 * Store preferences of the registered fieldEditors.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.ui.AbstractGroup#addFieldEditor(FieldEditor)
 	 */
 	public final void storePreferences() {
-		for(FieldEditor fe : fieldsEditor) {
+		for (FieldEditor fe : fieldsEditor) {
 			fe.store();
 		}
 	}

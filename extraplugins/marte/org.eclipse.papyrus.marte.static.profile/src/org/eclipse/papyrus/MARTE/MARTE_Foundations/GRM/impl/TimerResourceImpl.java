@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,8 +26,8 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.TimerResource;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.TimerResourceImpl#getDuration <em>Duration</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.TimerResourceImpl#isIsPeriodic <em>Is Periodic</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.TimerResourceImpl#getDuration <em>Duration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.TimerResourceImpl#isIsPeriodic <em>Is Periodic</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +38,7 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	 * The default value of the '{@link #getDuration() <em>Duration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDuration()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	 * The cached value of the '{@link #getDuration() <em>Duration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDuration()
 	 * @generated
 	 * @ordered
@@ -58,6 +60,7 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	 * The default value of the '{@link #isIsPeriodic() <em>Is Periodic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsPeriodic()
 	 * @generated
 	 * @ordered
@@ -68,6 +71,7 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	 * The cached value of the '{@link #isIsPeriodic() <em>Is Periodic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsPeriodic()
 	 * @generated
 	 * @ordered
@@ -77,6 +81,7 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TimerResourceImpl() {
@@ -86,6 +91,7 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,8 +102,10 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getDuration() {
 		return duration;
 	}
@@ -105,20 +113,25 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDuration(String newDuration) {
 		String oldDuration = duration;
 		duration = newDuration;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.TIMER_RESOURCE__DURATION, oldDuration, duration));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isIsPeriodic() {
 		return isPeriodic;
 	}
@@ -126,27 +139,31 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsPeriodic(boolean newIsPeriodic) {
 		boolean oldIsPeriodic = isPeriodic;
 		isPeriodic = newIsPeriodic;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.TIMER_RESOURCE__IS_PERIODIC, oldIsPeriodic, isPeriodic));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GRMPackage.TIMER_RESOURCE__DURATION:
-				return getDuration();
-			case GRMPackage.TIMER_RESOURCE__IS_PERIODIC:
-				return isIsPeriodic();
+		case GRMPackage.TIMER_RESOURCE__DURATION:
+			return getDuration();
+		case GRMPackage.TIMER_RESOURCE__IS_PERIODIC:
+			return isIsPeriodic();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,17 +171,18 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GRMPackage.TIMER_RESOURCE__DURATION:
-				setDuration((String)newValue);
-				return;
-			case GRMPackage.TIMER_RESOURCE__IS_PERIODIC:
-				setIsPeriodic((Boolean)newValue);
-				return;
+		case GRMPackage.TIMER_RESOURCE__DURATION:
+			setDuration((String) newValue);
+			return;
+		case GRMPackage.TIMER_RESOURCE__IS_PERIODIC:
+			setIsPeriodic((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -172,17 +190,18 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GRMPackage.TIMER_RESOURCE__DURATION:
-				setDuration(DURATION_EDEFAULT);
-				return;
-			case GRMPackage.TIMER_RESOURCE__IS_PERIODIC:
-				setIsPeriodic(IS_PERIODIC_EDEFAULT);
-				return;
+		case GRMPackage.TIMER_RESOURCE__DURATION:
+			setDuration(DURATION_EDEFAULT);
+			return;
+		case GRMPackage.TIMER_RESOURCE__IS_PERIODIC:
+			setIsPeriodic(IS_PERIODIC_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -190,15 +209,16 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GRMPackage.TIMER_RESOURCE__DURATION:
-				return DURATION_EDEFAULT == null ? duration != null : !DURATION_EDEFAULT.equals(duration);
-			case GRMPackage.TIMER_RESOURCE__IS_PERIODIC:
-				return isPeriodic != IS_PERIODIC_EDEFAULT;
+		case GRMPackage.TIMER_RESOURCE__DURATION:
+			return DURATION_EDEFAULT == null ? duration != null : !DURATION_EDEFAULT.equals(duration);
+		case GRMPackage.TIMER_RESOURCE__IS_PERIODIC:
+			return isPeriodic != IS_PERIODIC_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -206,11 +226,14 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (duration: ");
@@ -221,4 +244,4 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 		return result.toString();
 	}
 
-} //TimerResourceImpl
+} // TimerResourceImpl

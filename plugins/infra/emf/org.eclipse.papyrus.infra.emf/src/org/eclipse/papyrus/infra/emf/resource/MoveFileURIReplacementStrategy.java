@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,11 +48,11 @@ public class MoveFileURIReplacementStrategy implements IURIReplacementStrategy {
 	 * Instantiates a new move file uri replacement strategy.
 	 *
 	 * @param replacementURIMapping
-	 *        the replacement uri mapping
+	 *            the replacement uri mapping
 	 * @param sourcePath
-	 *        the source path
+	 *            the source path
 	 * @param targetPath
-	 *        the target path
+	 *            the target path
 	 */
 	public MoveFileURIReplacementStrategy(Map<URI, URI> replacementURIMapping, IPath sourcePath, IPath targetPath) {
 		this.replacementURIMapping = replacementURIMapping;
@@ -64,9 +64,9 @@ public class MoveFileURIReplacementStrategy implements IURIReplacementStrategy {
 	 * Instantiates a new move file uri replacement strategy.
 	 *
 	 * @param sourcePath
-	 *        the source path
+	 *            the source path
 	 * @param targetPath
-	 *        the target path
+	 *            the target path
 	 */
 	public MoveFileURIReplacementStrategy(IPath sourcePath, IPath targetPath) {
 		this(new HashMap<URI, URI>(), sourcePath, targetPath);
@@ -76,11 +76,11 @@ public class MoveFileURIReplacementStrategy implements IURIReplacementStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.resource.IURIReplacementStrategy#getReplacementCandidate(org.eclipse.emf.common.util.URI)
 	 */
 	public URI getReplacementCandidate(URI resourceURI) {
-		if(replacementURIMapping.containsKey(resourceURI)) {
+		if (replacementURIMapping.containsKey(resourceURI)) {
 			return replacementURIMapping.get(resourceURI);
 		}
 		URI calculateUri = calculateNewUri(resourceURI);
@@ -93,16 +93,16 @@ public class MoveFileURIReplacementStrategy implements IURIReplacementStrategy {
 	 * Calculate uri.
 	 *
 	 * @param resourceURI
-	 *        the resource uri
+	 *            the resource uri
 	 * @return the uri
 	 */
 	protected URI calculateNewUri(URI resourceURI) {
 		ModelSet modelSet = new ModelSet();
 		URIConverter uriConverter = modelSet.getURIConverter();
 		boolean exists = uriConverter.exists(resourceURI, Collections.EMPTY_MAP);
-		if(!exists) {
+		if (!exists) {
 			URI choseCorrectPath = trySourcePath(sourcePath, targetPath, resourceURI);
-			if(choseCorrectPath != null) {
+			if (choseCorrectPath != null) {
 				return choseCorrectPath;
 			}
 		}
@@ -116,29 +116,29 @@ public class MoveFileURIReplacementStrategy implements IURIReplacementStrategy {
 	 * If the resource is not found in the target location then look in the source location
 	 *
 	 * @param sourcePath
-	 *        the source path
+	 *            the source path
 	 * @param targetPath
-	 *        the target path
+	 *            the target path
 	 * @param resourceURI
-	 *        the resource uri
+	 *            the resource uri
 	 * @return the uri
 	 */
 	protected URI trySourcePath(IPath sourcePath, IPath targetPath, URI resourceURI) {
 		String uriPlatformString = resourceURI.toPlatformString(true);
-		if(uriPlatformString != null) {
+		if (uriPlatformString != null) {
 			Path path = new Path(uriPlatformString);
 			IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 			IFile file = root.getFile(path);
-			if(!file.exists()) {// test file non existence from the target
+			if (!file.exists()) {// test file non existence from the target
 				// calculate a new path from source path
-				URI sourceURI = URI.createPlatformResourceURI(sourcePath.toString()+Path.SEPARATOR, true);
-				URI targetURI = URI.createPlatformResourceURI(targetPath.toString()+Path.SEPARATOR, true);
-				URI resourceDeresolved = resourceURI.deresolve(targetURI);	
+				URI sourceURI = URI.createPlatformResourceURI(sourcePath.toString() + IPath.SEPARATOR, true);
+				URI targetURI = URI.createPlatformResourceURI(targetPath.toString() + IPath.SEPARATOR, true);
+				URI resourceDeresolved = resourceURI.deresolve(targetURI);
 				URI resourceResolved = resourceDeresolved.resolve(sourceURI);
 				return resourceResolved;
 			}
 		}
 		return null;
 	}
-	
+
 }

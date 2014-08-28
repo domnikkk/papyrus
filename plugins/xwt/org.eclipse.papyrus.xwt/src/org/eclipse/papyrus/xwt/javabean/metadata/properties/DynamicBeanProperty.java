@@ -4,8 +4,8 @@
  * are made available under the terms of the Eclipse Public License v1.0       *
  * which accompanies this distribution, and is available at                    *
  * http://www.eclipse.org/legal/epl-v10.html                                   *
- *                                                                             *  
- * Contributors:                                                               *        
+ *                                                                             *
+ * Contributors:                                                               *
  *     Soyatec - initial API and implementation                                *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt.javabean.metadata.properties;
@@ -13,12 +13,12 @@ package org.eclipse.papyrus.xwt.javabean.metadata.properties;
 import java.lang.reflect.InvocationTargetException;
 
 /**
- * 
+ *
  * This is a new type of dynamic properties, some properties, such as texts for TableItem and TreeItem, we used the setText(String[]) and String =
  * getText();
- * 
+ *
  * @author jliu
- * 
+ *
  */
 public class DynamicBeanProperty extends DynamicProperty {
 
@@ -32,7 +32,7 @@ public class DynamicBeanProperty extends DynamicProperty {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.javabean.metadata.properties.DynamicProperty#getValue (java.lang.Object)
 	 */
 	@Override

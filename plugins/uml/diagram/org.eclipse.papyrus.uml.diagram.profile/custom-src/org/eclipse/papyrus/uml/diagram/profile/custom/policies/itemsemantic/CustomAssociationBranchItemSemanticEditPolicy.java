@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,31 +29,31 @@ import org.eclipse.papyrus.uml.diagram.profile.providers.UMLElementTypes;
 public class CustomAssociationBranchItemSemanticEditPolicy extends AssociationBranchItemSemanticEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Association_4001 == req.getElementType()) {
+		if (UMLElementTypes.Association_4001 == req.getElementType()) {
 			return getGEFWrapper(new org.eclipse.papyrus.uml.diagram.profile.custom.commands.CustomAssociationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getCompleteCreateRelationshipCommand(req);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.profile.edit.policies.AssociationBranchItemSemanticEditPolicy#getReorientRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest)
-	 * 
+	 *
 	 * @param req
 	 * @return
 	 */
 	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case AssociationEditPart.VISUAL_ID:
 			return getGEFWrapper(new CustomAssociationReorientCommand(req));
-			//		case DependencyBranchEditPart.VISUAL_ID:
-			//			return getGEFWrapper(new BranchDependenctReorientCommand(req));
+			// case DependencyBranchEditPart.VISUAL_ID:
+			// return getGEFWrapper(new BranchDependenctReorientCommand(req));
 		case AssociationBranchEditPart.VISUAL_ID:
 			return UnexecutableCommand.INSTANCE;
 		}
@@ -61,12 +61,12 @@ public class CustomAssociationBranchItemSemanticEditPolicy extends AssociationBr
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Association_4001 == req.getElementType()) {
+		if (UMLElementTypes.Association_4001 == req.getElementType()) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return super.getStartCreateRelationshipCommand(req);

@@ -60,50 +60,50 @@ import org.eclipse.ui.statushandlers.StatusManager;
 
 /**
  * This class provides utility methods for model loading
- * 
+ *
  * @author vhemery
  */
 public class LoadingUtils {
 
 	/**
 	 * Load corresponding resources in model set for all its existing models.
-	 * 
+	 *
 	 * @param modelSet
-	 *        the model set
+	 *            the model set
 	 * @param uriWithoutFileExtension
-	 *        path of resources to load without file extension
+	 *            path of resources to load without file extension
 	 */
 	public static void loadResourcesInModelSet(final ModelSet modelSet, final URI uriWithoutFileExtension) {
 		final IEditorPart editor = getEditor();
-		if(editor instanceof IMultiDiagramEditor) {
+		if (editor instanceof IMultiDiagramEditor) {
 			// This must be created on the UI thread
 			final NotificationBuilder error = NotificationBuilder.createAsyncPopup(Messages.LoadingUtils_ErrorTitle, String.format(Messages.LoadingUtils_ErrorMessage, uriWithoutFileExtension.toString())).setType(Type.ERROR).setDelay(2000);
-			
+
 			runInEditingDomain(modelSet.getTransactionalEditingDomain(), editor, new IRunnableWithProgress() {
 
 				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
 					try {
-						IMultiDiagramEditor core = (IMultiDiagramEditor)editor;
+						IMultiDiagramEditor core = (IMultiDiagramEditor) editor;
 						try {
 							IPageManager pageMngr = core.getServicesRegistry().getService(IPageManager.class);
 							List<Object> allPages = pageMngr.allPages();
 							// mark progress
 							monitor.beginTask(Messages.LoadingUtils_RefreshPagesTask, allPages.size());
 							// the uri is added after getting all the pages. If it is done before, the eobjects are resolved
-							for(Object o : allPages) {
+							for (Object o : allPages) {
 								// refresh pages to display proxy diagrams
-								if(o instanceof EObject) {
-									EObject eobject = (EObject)o;
-									if(eobject.eIsProxy()) {
-										InternalEObject internal = (InternalEObject)eobject;
+								if (o instanceof EObject) {
+									EObject eobject = (EObject) o;
+									if (eobject.eIsProxy()) {
+										InternalEObject internal = (InternalEObject) eobject;
 										URI uriProxy = internal.eProxyURI();
 										URI trimFragment = uriProxy.trimFragment();
-										if(uriWithoutFileExtension.equals(trimFragment.trimFileExtension())) {
+										if (uriWithoutFileExtension.equals(trimFragment.trimFileExtension())) {
 											try {
 												Resource r = modelSet.getResource(trimFragment, true);
-												if(r != null) {
+												if (r != null) {
 													EObject newEObject = r.getEObject(uriProxy.fragment());
-													if(pageMngr.isOpen(newEObject)) {
+													if (pageMngr.isOpen(newEObject)) {
 														pageMngr.selectPage(newEObject);
 													}
 												} else {
@@ -122,11 +122,11 @@ public class LoadingUtils {
 							Set<String> extensions = getExtensions(modelSet);
 							// mark progress
 							monitor.beginTask(Messages.LoadingUtils_LoadModelsTask, extensions.size());
-							for(String s : extensions) {
+							for (String s : extensions) {
 								try {
 									URI uriToLoad = uriWithoutFileExtension.appendFileExtension(s);
 									Resource r = modelSet.getResource(uriToLoad, true);
-									if(r == null) {
+									if (r == null) {
 										error.run();
 									}
 								} catch (Exception re) {
@@ -150,11 +150,11 @@ public class LoadingUtils {
 
 	/**
 	 * Unload corresponding resources from model set for all its existing models.
-	 * 
+	 *
 	 * @param modelSet
-	 *        the model set
+	 *            the model set
 	 * @param uriWithoutFileExtension
-	 *        path of resources to unload without file extension
+	 *            path of resources to unload without file extension
 	 */
 	public static void unloadResourcesFromModelSet(ModelSet modelSet, URI uriWithoutFileExtension) {
 		unloadResourcesFromModelSet(modelSet, uriWithoutFileExtension, false);
@@ -162,45 +162,45 @@ public class LoadingUtils {
 
 	/**
 	 * Unload corresponding resources from model set for all its existing models.
-	 * 
+	 *
 	 * @param modelSet
-	 *        the model set
+	 *            the model set
 	 * @param uriWithoutFileExtension
-	 *        path of resources to unload without file extension
+	 *            path of resources to unload without file extension
 	 * @param refreshDiagramsWithProxies
-	 *        true if we must refresh necessary diagrams, false to skip it.
+	 *            true if we must refresh necessary diagrams, false to skip it.
 	 */
 	public static void unloadResourcesFromModelSet(final ModelSet modelSet, final URI uriWithoutFileExtension, final boolean refreshDiagramsWithProxies) {
 		final IEditorPart editor = getEditor();
-		if(editor instanceof IMultiDiagramEditor) {
+		if (editor instanceof IMultiDiagramEditor) {
 			runInEditingDomain(modelSet.getTransactionalEditingDomain(), editor, new IRunnableWithProgress() {
 
 				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
 
 					try {
-						IMultiDiagramEditor core = (IMultiDiagramEditor)editor;
+						IMultiDiagramEditor core = (IMultiDiagramEditor) editor;
 						try {
 							IPageManager pageMngr = core.getServicesRegistry().getService(IPageManager.class);
 							List<Object> allPages = pageMngr.allPages();
 							List<URI> pagesURIToOpen = new ArrayList<URI>(allPages.size());
 							List<URI> pagesURIToRefresh = new ArrayList<URI>(allPages.size());
-							if(refreshDiagramsWithProxies) {
+							if (refreshDiagramsWithProxies) {
 								// mark progress
 								monitor.beginTask(Messages.LoadingUtils_RefreshPagesTask, allPages.size());
-								for(Object o : allPages) {
+								for (Object o : allPages) {
 									// refresh pages to cancel display of proxified elements
-									if(o instanceof EObject) {
-										EObject eobject = (EObject)o;
-										if(!eobject.eIsProxy()) {
+									if (o instanceof EObject) {
+										EObject eobject = (EObject) o;
+										if (!eobject.eIsProxy()) {
 											URI trimFragment = eobject.eResource().getURI();
 											String frag = eobject.eResource().getURIFragment(eobject);
-											if(uriWithoutFileExtension.equals(trimFragment.trimFileExtension())) {
+											if (uriWithoutFileExtension.equals(trimFragment.trimFileExtension())) {
 												// diagram was in unloaded resource. Refresh it.
-												if(pageMngr.isOpen(eobject)) {
+												if (pageMngr.isOpen(eobject)) {
 													pageMngr.closePage(eobject);
 													pagesURIToOpen.add(trimFragment.appendFragment(frag));
 												}
-											} else if(pageMngr.isOpen(eobject)) {
+											} else if (pageMngr.isOpen(eobject)) {
 												// diagram is still loaded but may display proxified elements
 												pagesURIToRefresh.add(trimFragment.appendFragment(frag));
 											}
@@ -218,23 +218,23 @@ public class LoadingUtils {
 							// although they point to the same location).
 							// TODO: Use a single detection mechanism in ResourceUpdateService and here
 							String unloadPlatformString;
-							if(uriWithoutFileExtension.isPlatform()) {
+							if (uriWithoutFileExtension.isPlatform()) {
 								unloadPlatformString = uriWithoutFileExtension.toPlatformString(true);
 							} else {
 								unloadPlatformString = URI.decode(uriWithoutFileExtension.toString());
 							}
-							//URIConverter uriConverter = modelSet.getURIConverter();
+							// URIConverter uriConverter = modelSet.getURIConverter();
 							// unload resource
-							for(Resource res : new ArrayList<Resource>(modelSet.getResources())) {
+							for (Resource res : new ArrayList<Resource>(modelSet.getResources())) {
 								URI normalizedURI = res.getURI();
 								String platformString;
-								if(normalizedURI.isPlatform()) {
+								if (normalizedURI.isPlatform()) {
 									platformString = normalizedURI.trimFileExtension().toPlatformString(true);
 								} else {
 									platformString = URI.decode(normalizedURI.trimFileExtension().toString());
 								}
 
-								if((platformString != null) && platformString.equals(unloadPlatformString)) {
+								if ((platformString != null) && platformString.equals(unloadPlatformString)) {
 									// unload this resource
 									res.unload();
 									// there is no need to remove it from the resource set (which inevitably
@@ -244,47 +244,47 @@ public class LoadingUtils {
 								// mark progress
 								monitor.worked(1);
 							}
-							//				// mark progress
-							//				monitor.beginTask("Resolve", 1);
-							//				EcoreUtil.resolveAll(modelSet);
-							//				monitor.worked(1);
+							// // mark progress
+							// monitor.beginTask("Resolve", 1);
+							// EcoreUtil.resolveAll(modelSet);
+							// monitor.worked(1);
 
-							if(refreshDiagramsWithProxies) {
+							if (refreshDiagramsWithProxies) {
 								// mark progress
 								monitor.beginTask(Messages.LoadingUtils_RefreshPagesTask, allPages.size());
 								// reopen pages from proxies and refresh necessary pages
-								for(Object page : allPages) {
-									if(page instanceof EObject) {
-										EObject eobject = (EObject)page;
-										if(eobject.eIsProxy()) {
+								for (Object page : allPages) {
+									if (page instanceof EObject) {
+										EObject eobject = (EObject) page;
+										if (eobject.eIsProxy()) {
 											// reopen page from proxy if needed
-											InternalEObject internal = (InternalEObject)eobject;
+											InternalEObject internal = (InternalEObject) eobject;
 											URI uriProxy = internal.eProxyURI();
-											if(pagesURIToOpen.contains(uriProxy)) {
+											if (pagesURIToOpen.contains(uriProxy)) {
 												pageMngr.openPage(eobject);
 											}
-										} else if(eobject instanceof Diagram) {
+										} else if (eobject instanceof Diagram) {
 											// refresh page's diagram if needed
-											Diagram diag = ((Diagram)eobject);
-											if(pageMngr.isOpen(diag)) {
+											Diagram diag = ((Diagram) eobject);
+											if (pageMngr.isOpen(diag)) {
 
-												IDiagramGraphicalViewer graphicalViewer = (IDiagramGraphicalViewer)core.getAdapter(IDiagramGraphicalViewer.class);
-												if(graphicalViewer == null) {
+												IDiagramGraphicalViewer graphicalViewer = (IDiagramGraphicalViewer) core.getAdapter(IDiagramGraphicalViewer.class);
+												if (graphicalViewer == null) {
 													continue;
 												}
 
 												Object part = graphicalViewer.getEditPartRegistry().get(diag);
-												if(part instanceof GraphicalEditPart) {
+												if (part instanceof GraphicalEditPart) {
 													// refresh nodes
-													for(Object child : EditPartUtilities.getAllChildren((GraphicalEditPart)part)) {
-														if(child instanceof EditPart) {
-															((EditPart)child).refresh();
+													for (Object child : EditPartUtilities.getAllChildren((GraphicalEditPart) part)) {
+														if (child instanceof EditPart) {
+															((EditPart) child).refresh();
 														}
 													}
 													// refresh edges
-													for(Object child : EditPartUtilities.getAllNestedConnectionEditParts((GraphicalEditPart)part)) {
-														if(child instanceof EditPart) {
-															((EditPart)child).refresh();
+													for (Object child : EditPartUtilities.getAllNestedConnectionEditParts((GraphicalEditPart) part)) {
+														if (child instanceof EditPart) {
+															((EditPart) child).refresh();
 														}
 													}
 												}
@@ -308,7 +308,7 @@ public class LoadingUtils {
 	}
 
 	static void runInEditingDomain(TransactionalEditingDomain domain, IEditorPart editorContext, IRunnableWithProgress operation) {
-		final IWorkbenchSiteProgressService progress = (IWorkbenchSiteProgressService)editorContext.getSite().getService(IWorkbenchSiteProgressService.class);
+		final IWorkbenchSiteProgressService progress = (IWorkbenchSiteProgressService) editorContext.getSite().getService(IWorkbenchSiteProgressService.class);
 
 		try {
 			progress.incrementBusy();
@@ -325,7 +325,7 @@ public class LoadingUtils {
 	/**
 	 * Common extensions
 	 * TODO get rid of listing all model's extensions and find a way to deduce them from model set. Then, delete this attribute.
-	 * 
+	 *
 	 * @see #getExtensions(ModelSet)
 	 */
 	private static final Set<String> COMMON_EXTENSIONS = new HashSet<String>();
@@ -337,9 +337,9 @@ public class LoadingUtils {
 
 	/**
 	 * Get list of file extensions existing for this model set
-	 * 
+	 *
 	 * @param modelSet
-	 *        model set to find common extensions for
+	 *            model set to find common extensions for
 	 * @return extensions list to explore
 	 */
 	private static Set<String> getExtensions(ModelSet modelSet) {
@@ -348,17 +348,17 @@ public class LoadingUtils {
 
 	/**
 	 * Get currently opened editor
-	 * 
+	 *
 	 * @return editor
 	 */
 	public static IEditorPart getEditor() {
 		IEditorPart editor = null;
 		IWorkbench workbench = PlatformUI.getWorkbench();
-		if(workbench != null) {
+		if (workbench != null) {
 			IWorkbenchWindow activeWorkbenchWindow = workbench.getActiveWorkbenchWindow();
-			if(activeWorkbenchWindow != null) {
+			if (activeWorkbenchWindow != null) {
 				IWorkbenchPage activePage = activeWorkbenchWindow.getActivePage();
-				if(activePage != null) {
+				if (activePage != null) {
 					editor = activePage.getActiveEditor();
 				}
 			}
@@ -368,14 +368,14 @@ public class LoadingUtils {
 
 	/**
 	 * Get File from a URI
-	 * 
+	 *
 	 * @param uri
-	 *        the URI to transform
+	 *            the URI to transform
 	 * @return the corresponding file
 	 */
 	public static IFile getFile(URI uri) {
 		IPath path = getPath(uri);
-		if(path != null) {
+		if (path != null) {
 			return ResourcesPlugin.getWorkspace().getRoot().getFile(path);
 		}
 		return null;
@@ -383,17 +383,17 @@ public class LoadingUtils {
 
 	/**
 	 * Get Path from a URI
-	 * 
+	 *
 	 * @param uri
-	 *        the URI to transform
+	 *            the URI to transform
 	 * @return the corresponding path
 	 */
 	public static IPath getPath(URI uri) {
 		String scheme = uri.scheme();
 		IPath path = null;
-		if("platform".equals(scheme)) { //$NON-NLS-1$
+		if ("platform".equals(scheme)) { //$NON-NLS-1$
 			path = Path.fromPortableString(uri.toPlatformString(true));
-		} else if("file".equals(scheme)) { //$NON-NLS-1$
+		} else if ("file".equals(scheme)) { //$NON-NLS-1$
 			path = Path.fromPortableString(uri.toFileString());
 		}
 		return path;

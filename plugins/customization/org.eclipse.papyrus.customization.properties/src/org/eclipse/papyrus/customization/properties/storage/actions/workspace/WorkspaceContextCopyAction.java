@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - Factor out workspace storage for pluggable storage providers (CDO)
  *  Christian W. Damus (CEA) - bug 422257
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.storage.actions.workspace;
 
@@ -51,7 +51,7 @@ import org.eclipse.papyrus.views.properties.util.PropertiesUtil;
 
 /**
  * An action to build a new Property view context from an existing one.
- * 
+ *
  * @author Camille Letavernier
  */
 public class WorkspaceContextCopyAction implements IContextCopyAction {
@@ -72,17 +72,17 @@ public class WorkspaceContextCopyAction implements IContextCopyAction {
 	 * To enable the edition of the context, an invisible project is created
 	 * in the workspace. The files are stored in the runtime plugin's preference
 	 * folder.
-	 * 
+	 *
 	 * @param source
-	 *        The source Context to copy
+	 *            The source Context to copy
 	 * @param targetName
-	 *        The name of the new context
+	 *            The name of the new context
 	 * @return
 	 *         The new Context
-	 * 
+	 *
 	 * @throws CoreException
-	 *         If an error occured : the previous context cannot be read, or
-	 *         the new context cannot be created
+	 *             If an error occured : the previous context cannot be read, or
+	 *             the new context cannot be created
 	 */
 	@Override
 	public Context copy(Context source, String targetName, IProgressMonitor monitor) throws CoreException {
@@ -94,22 +94,22 @@ public class WorkspaceContextCopyAction implements IContextCopyAction {
 		try {
 			IPath targetDirectoryPath = org.eclipse.papyrus.views.properties.Activator.getDefault().getPreferencesPath().append("/" + targetName); //$NON-NLS-1$
 			final File targetDirectory = targetDirectoryPath.toFile();
-			if(targetDirectory.exists()) {
+			if (targetDirectory.exists()) {
 				throw new IOException("A context with this name already exists"); //$NON-NLS-1$
 			}
 			URI targetModelUri = URI.createFileURI(targetDirectory.toString() + "/" + targetName + ".ctx"); //$NON-NLS-1$ //$NON-NLS-2$
 
-			Context sourceContext = (Context)EMFHelper.loadEMFModel(resourceSet, source.eResource().getURI());
+			Context sourceContext = (Context) EMFHelper.loadEMFModel(resourceSet, source.eResource().getURI());
 
 			IStatus copyResult = copyAll(sourceContext, new File(targetDirectory, targetName + ".ctx"), sub.newChild(1, SubMonitor.SUPPRESS_NONE)); //$NON-NLS-1$
 
-			if(copyResult.isOK()) {
+			if (copyResult.isOK()) {
 				result = ConfigurationManager.getInstance().getContext(targetModelUri);
 
 				result.setName(targetName);
 				result.setPrototype(source);
 				result.eResource().save(Collections.EMPTY_MAP);
-			} else if(copyResult.getSeverity() != IStatus.CANCEL) {
+			} else if (copyResult.getSeverity() != IStatus.CANCEL) {
 				throw new CoreException(copyResult);
 			}
 		} catch (IOException e) {
@@ -142,10 +142,10 @@ public class WorkspaceContextCopyAction implements IContextCopyAction {
 
 			int filesToCopy = sourceResource.getResourceSet().getResources().size();
 			List<Context> contexts = new LinkedList<Context>();
-			for(Context context : PropertiesUtil.getDependencies(source)) {
-				if(isRelative(sourceResource, context.eResource())) {
+			for (Context context : PropertiesUtil.getDependencies(source)) {
+				if (isRelative(sourceResource, context.eResource())) {
 					contexts.add(context);
-					for(Tab tab : context.getTabs()) {
+					for (Tab tab : context.getTabs()) {
 						filesToCopy += tab.getSections().size();
 					}
 				}
@@ -153,27 +153,27 @@ public class WorkspaceContextCopyAction implements IContextCopyAction {
 
 			monitor.beginTask(Messages.CopyContextAction_Copying + source.getName() + Messages.CopyContextAction_To + targetName, filesToCopy);
 
-			//Copy of the context
+			// Copy of the context
 			copy(sourceResource, target);
 			monitor.worked(1);
 
-			//Copy of the dependent resources which are located in the same folder
-			//(or subfolders)
-			for(Resource resource : source.eResource().getResourceSet().getResources()) {
-				if(monitor.isCanceled()) {
+			// Copy of the dependent resources which are located in the same folder
+			// (or subfolders)
+			for (Resource resource : source.eResource().getResourceSet().getResources()) {
+				if (monitor.isCanceled()) {
 					return Status.CANCEL_STATUS;
 				}
-				if((resource != sourceResource) && isRelative(sourceResource, resource)) {
+				if ((resource != sourceResource) && isRelative(sourceResource, resource)) {
 					copy(resource, targetDirectory, source, targetName);
 				}
 				monitor.worked(1);
 			}
 
-			//Copy the XWT files (they haven't been loaded in the resource set)
-			for(Context context : contexts) {
-				for(Tab tab : context.getTabs()) {
-					for(Section section : tab.getSections()) {
-						if(monitor.isCanceled()) {
+			// Copy the XWT files (they haven't been loaded in the resource set)
+			for (Context context : contexts) {
+				for (Tab tab : context.getTabs()) {
+					for (Section section : tab.getSections()) {
+						if (monitor.isCanceled()) {
 							return Status.CANCEL_STATUS;
 						}
 						copy(section.getSectionFile(), targetDirectory, source);
@@ -196,7 +196,7 @@ public class WorkspaceContextCopyAction implements IContextCopyAction {
 		File target = new File(targetDirectory, xwtFileName);
 		URI sourceURI = URI.createURI(xwtFileName).resolve(source.eResource().getURI());
 		PropertiesURIHandler uriHandler = new PropertiesURIHandler();
-		if(uriHandler.canHandle(sourceURI)) {
+		if (uriHandler.canHandle(sourceURI)) {
 			sourceURI = uriHandler.getConvertedURI(sourceURI);
 		}
 
@@ -216,7 +216,7 @@ public class WorkspaceContextCopyAction implements IContextCopyAction {
 		// TODO: Use resource set's URIConverter to get a stream
 		PropertiesURIHandler uriHandler = new PropertiesURIHandler();
 		URI uri = resource.getURI();
-		if(uriHandler.canHandle(uri)) {
+		if (uriHandler.canHandle(uri)) {
 			uri = uriHandler.getConvertedURI(uri);
 		}
 		copy(new URL(uri.toString()).openStream(), target);
@@ -224,16 +224,16 @@ public class WorkspaceContextCopyAction implements IContextCopyAction {
 
 	private void copy(Resource resource, File directory, EObject source, String targetName) throws IOException {
 		URI relativeURI = resource.getURI().deresolve(source.eResource().getURI());
-		if(relativeURI.toString().equals("")) { //$NON-NLS-1$
+		if (relativeURI.toString().equals("")) { //$NON-NLS-1$
 			relativeURI = URI.createURI(targetName + ".ctx"); //$NON-NLS-1$
 		}
 		File target = new File(directory, relativeURI.toString());
 		copy(resource, target);
 	}
 
-	//Strict copy : we read directly the file, instead of interpreting it as a Model
+	// Strict copy : we read directly the file, instead of interpreting it as a Model
 	private void copy(InputStream source, File target) throws IOException {
-		if(!target.getParentFile().exists()) {
+		if (!target.getParentFile().exists()) {
 			target.getParentFile().mkdirs();
 		}
 
@@ -241,7 +241,7 @@ public class WorkspaceContextCopyAction implements IContextCopyAction {
 		try {
 			int c;
 
-			while((c = source.read()) != -1) {
+			while ((c = source.read()) != -1) {
 				out.write(c);
 			}
 

@@ -13,14 +13,14 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Command Declaration</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.CommandDeclaration#getCommands <em>Commands</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getCommandDeclaration()
  * @model
  * @generated
@@ -35,7 +35,7 @@ public interface CommandDeclaration extends EObject {
 	 * If the meaning of the '<em>Commands</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Commands</em>' containment reference list.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getCommandDeclaration_Commands()
 	 * @model containment="true"

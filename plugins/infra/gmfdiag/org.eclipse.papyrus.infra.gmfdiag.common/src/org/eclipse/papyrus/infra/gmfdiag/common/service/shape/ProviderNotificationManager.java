@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,9 +28,12 @@ public abstract class ProviderNotificationManager {
 	/**
 	 * Creates a new ProviderNotificationManager.
 	 *
-	 * @param diagramEventBroker event broker specific to the diargam displaying the shapes.
-	 * @param view the view from which all elements to listen will be computed.
-	 * @param listener the listener to which notifications will be forwarded. 
+	 * @param diagramEventBroker
+	 *            event broker specific to the diargam displaying the shapes.
+	 * @param view
+	 *            the view from which all elements to listen will be computed.
+	 * @param listener
+	 *            the listener to which notifications will be forwarded.
 	 */
 	public ProviderNotificationManager(DiagramEventBroker diagramEventBroker, EObject view, NotificationListener listener) {
 		this.diagramEventBroker = diagramEventBroker;
@@ -40,10 +43,10 @@ public abstract class ProviderNotificationManager {
 	}
 
 	/**
-	 * Register all the required elements in the diagram event broker. 
+	 * Register all the required elements in the diagram event broker.
 	 */
-	protected abstract void registerListeners() ;
-	
+	protected abstract void registerListeners();
+
 	/**
 	 * Makes the object ready for GC.
 	 */

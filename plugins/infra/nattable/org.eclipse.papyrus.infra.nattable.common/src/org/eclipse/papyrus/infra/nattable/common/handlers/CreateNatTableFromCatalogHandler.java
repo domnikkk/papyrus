@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,6 @@ import java.util.List;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.ecore.EObject;
@@ -47,13 +46,14 @@ public class CreateNatTableFromCatalogHandler extends AbstractHandler {
 
 	/**
 	 * We open the dialog, request the user for the desired configuration
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.common.handlers.AbstractCreateNattableEditorHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		final EObject context = getSelection().get(0);
 		CreateNattableFromCatalogWizard wizard = new CreateNattableFromCatalogWizard(context);
@@ -68,10 +68,10 @@ public class CreateNatTableFromCatalogHandler extends AbstractHandler {
 			return null;
 		}
 
-		if(dialog.open() == Window.OK) {
+		if (dialog.open() == Window.OK) {
 			CompoundCommand compoundCommand = new CompoundCommand("Create tables from Catalog"); //$NON-NLS-1$
 
-			for(TableConfiguration tableConfiguration : wizard.getSelectedConfig().keySet()) {
+			for (TableConfiguration tableConfiguration : wizard.getSelectedConfig().keySet()) {
 				CreateNatTableEditorHandler handler = new CreateNatTableEditorHandler();
 				handler.setType(tableConfiguration.getType());
 
@@ -80,7 +80,7 @@ public class CreateNatTableFromCatalogHandler extends AbstractHandler {
 
 				// Get the chosen name for the tables under this configuration
 				final String tableConfigName = wizard.getTableNames().get(tableConfiguration);
-				for(int i = 0; i < tablesQuantity; i++) {
+				for (int i = 0; i < tablesQuantity; i++) {
 					try {
 						Command cmd = handler.getCreateNattableEditorCommandWithNameInitialization(domain, serviceRegistry, event, tableConfigName + "_" + i);//$NON-NLS-1$
 						compoundCommand.append(cmd);
@@ -89,7 +89,7 @@ public class CreateNatTableFromCatalogHandler extends AbstractHandler {
 					}
 				}
 			}
-			if(!compoundCommand.isEmpty()) {
+			if (!compoundCommand.isEmpty()) {
 				domain.getCommandStack().execute(compoundCommand);
 			}
 
@@ -98,31 +98,32 @@ public class CreateNatTableFromCatalogHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.common.handlers.CreateNatTableEditorHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
+	@Override
 	public void setEnabled(Object evaluationContext) {
 		setBaseEnabled(getSelection().size() == 1);
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	protected List<EObject> getSelection() {
 		final List<EObject> selectedElements = new ArrayList<EObject>();
 		final IWorkbenchWindow ww = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-		if(ww != null) {
+		if (ww != null) {
 			final ISelection selection = ww.getSelectionService().getSelection();
-			if(selection instanceof IStructuredSelection) {
-				final IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+			if (selection instanceof IStructuredSelection) {
+				final IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 				final Iterator<?> it = structuredSelection.iterator();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					final Object object = it.next();
 					final EObject currentEObject = EMFHelper.getEObject(object);
-					if(currentEObject != null) {
+					if (currentEObject != null) {
 						selectedElements.add(currentEObject);
 					}
 				}

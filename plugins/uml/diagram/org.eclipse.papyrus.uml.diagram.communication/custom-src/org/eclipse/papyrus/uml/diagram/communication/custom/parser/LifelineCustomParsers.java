@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,9 +43,9 @@ import org.eclipse.uml2.uml.ValueSpecification;
 public class LifelineCustomParsers extends org.eclipse.papyrus.uml.diagram.communication.parsers.MessageFormatParser implements ISemanticParser {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param features
 	 * @param editableFeatures
 	 */
@@ -54,9 +54,9 @@ public class LifelineCustomParsers extends org.eclipse.papyrus.uml.diagram.commu
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param features
 	 */
 	public LifelineCustomParsers(EAttribute[] features) {
@@ -64,20 +64,20 @@ public class LifelineCustomParsers extends org.eclipse.papyrus.uml.diagram.commu
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public LifelineCustomParsers() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() });
 	}
 
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -91,7 +91,7 @@ public class LifelineCustomParsers extends org.eclipse.papyrus.uml.diagram.commu
 
 	/**
 	 * Information identifying the lifeline displayed inside the rectangle
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.parsers.MessageFormatParser#getPrintString(org.eclipse.core.runtime.IAdaptable, int)
 	 */
 	@Override
@@ -99,43 +99,43 @@ public class LifelineCustomParsers extends org.eclipse.papyrus.uml.diagram.commu
 		Object obj = element.getAdapter(EObject.class);
 		StringBuffer sb = new StringBuffer();
 
-		if(obj instanceof Lifeline) {
-			Lifeline lifeline = (Lifeline)obj;
+		if (obj instanceof Lifeline) {
+			Lifeline lifeline = (Lifeline) obj;
 			ConnectableElement connectableElement = lifeline.getRepresents();
 			ValueSpecification selector = lifeline.getSelector();
 
-			if(connectableElement != null) {
+			if (connectableElement != null) {
 				// Add ConnectableElement Name
 				String connectableElementName = connectableElement.getName();
-				if(connectableElementName != null) {
+				if (connectableElementName != null) {
 					sb.append(connectableElementName);
 				}
 
 				// Add the selector if it is a LiteralSpecification
-				if(selector instanceof LiteralSpecification) {
+				if (selector instanceof LiteralSpecification) {
 					sb.append("[").append(ValueSpecificationUtil.getSpecificationValue(selector)).append("]"); //$NON-NLS-1$ //$NON-NLS-2$
 				}
 
 				// Add the type name
 				Type type = connectableElement.getType();
-				if(type != null && type.getName() != null && type.getName().length() > 0) {
+				if (type != null && type.getName() != null && type.getName().length() > 0) {
 					sb.append(" : ").append(type.getName()); //$NON-NLS-1$
 				}
 			}
 
 			// Add the selector if it is an Expression
-			if(selector instanceof Expression || selector instanceof OpaqueExpression || selector instanceof TimeExpression) {
+			if (selector instanceof Expression || selector instanceof OpaqueExpression || selector instanceof TimeExpression) {
 				String specificationValue = ValueSpecificationUtil.getSpecificationValue(selector);
-				if(specificationValue != null && specificationValue.length() > 0) {
+				if (specificationValue != null && specificationValue.length() > 0) {
 					sb.append("\n").append(specificationValue); //$NON-NLS-1$
 				}
 			}
 
 			// Add the decomposition
 			PartDecomposition partDecomposition = lifeline.getDecomposedAs();
-			if(partDecomposition != null) {
+			if (partDecomposition != null) {
 				Interaction refersTo = partDecomposition.getRefersTo();
-				if(refersTo != null) {
+				if (refersTo != null) {
 					sb.append("\nref ").append(refersTo.getName()); //$NON-NLS-1$
 				}
 			}
@@ -144,7 +144,7 @@ public class LifelineCustomParsers extends org.eclipse.papyrus.uml.diagram.commu
 			// add the name of the
 			// lifeline
 			// This case occurs when creating the lifeline for example
-			if(sb.length() == 0) {
+			if (sb.length() == 0) {
 				sb.append(lifeline.getName());
 			}
 		}
@@ -154,7 +154,7 @@ public class LifelineCustomParsers extends org.eclipse.papyrus.uml.diagram.commu
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * areSemanticElementsAffected (org.eclipse.emf.ecore.EObject,
 	 * java.lang.Object)
@@ -166,38 +166,38 @@ public class LifelineCustomParsers extends org.eclipse.papyrus.uml.diagram.commu
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * getSemanticElementsBeingParsed (org.eclipse.emf.ecore.EObject)
 	 */
 	@SuppressWarnings("rawtypes")
 	public List getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-		if(element instanceof Lifeline) {
-			Lifeline lifeline = (Lifeline)element;
+		if (element instanceof Lifeline) {
+			Lifeline lifeline = (Lifeline) element;
 
 			// Add the lifeline
 			semanticElementsBeingParsed.add(lifeline);
 			// Add the selector
-			if(lifeline.getSelector() != null) {
+			if (lifeline.getSelector() != null) {
 				semanticElementsBeingParsed.add(lifeline.getSelector());
 			}
 
 			// Add the partDecomposition
 			PartDecomposition partDecomposition = lifeline.getDecomposedAs();
-			if(partDecomposition != null) {
+			if (partDecomposition != null) {
 				semanticElementsBeingParsed.add(partDecomposition);
 				// Add the Interaction refered by the partDecomposition
-				if(partDecomposition.getRefersTo() != null) {
+				if (partDecomposition.getRefersTo() != null) {
 					semanticElementsBeingParsed.add(partDecomposition.getRefersTo());
 				}
 			}
 
 			// Add the connectableElement and its type if it has any
 			ConnectableElement connectableElement = lifeline.getRepresents();
-			if(connectableElement != null) {
+			if (connectableElement != null) {
 				semanticElementsBeingParsed.add(connectableElement);
-				if(connectableElement.getType() != null) {
+				if (connectableElement.getType() != null) {
 					semanticElementsBeingParsed.add(connectableElement.getType());
 				}
 			}
@@ -208,12 +208,15 @@ public class LifelineCustomParsers extends org.eclipse.papyrus.uml.diagram.commu
 	/**
 	 * Determines if the given feature has to be taken into account in this
 	 * parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {
-		return UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature) || UMLPackage.eINSTANCE.getTypedElement_Type().equals(feature) || UMLPackage.eINSTANCE.getLiteralInteger_Value().equals(feature) || UMLPackage.eINSTANCE.getLiteralUnlimitedNatural_Value().equals(feature) || UMLPackage.eINSTANCE.getLiteralBoolean_Value().equals(feature) || UMLPackage.eINSTANCE.getLiteralString_Value().equals(feature) || UMLPackage.eINSTANCE.getOpaqueExpression_Body().equals(feature) || UMLPackage.eINSTANCE.getLifeline_Selector().equals(feature) || UMLPackage.eINSTANCE.getLifeline_DecomposedAs().equals(feature) || UMLPackage.eINSTANCE.getLifeline_Represents().equals(feature) || UMLPackage.eINSTANCE.getInteractionUse_RefersTo().equals(feature);
+		return UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature) || UMLPackage.eINSTANCE.getTypedElement_Type().equals(feature) || UMLPackage.eINSTANCE.getLiteralInteger_Value().equals(feature)
+				|| UMLPackage.eINSTANCE.getLiteralUnlimitedNatural_Value().equals(feature) || UMLPackage.eINSTANCE.getLiteralBoolean_Value().equals(feature) || UMLPackage.eINSTANCE.getLiteralString_Value().equals(feature)
+				|| UMLPackage.eINSTANCE.getOpaqueExpression_Body().equals(feature) || UMLPackage.eINSTANCE.getLifeline_Selector().equals(feature) || UMLPackage.eINSTANCE.getLifeline_DecomposedAs().equals(feature)
+				|| UMLPackage.eINSTANCE.getLifeline_Represents().equals(feature) || UMLPackage.eINSTANCE.getInteractionUse_RefersTo().equals(feature);
 	}
 }

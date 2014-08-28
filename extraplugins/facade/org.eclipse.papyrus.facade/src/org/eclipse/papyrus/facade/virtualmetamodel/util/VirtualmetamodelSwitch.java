@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,21 +15,30 @@ package org.eclipse.papyrus.facade.virtualmetamodel.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.facade.virtualmetamodel.*;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualClassifier;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualDatatype;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualEnum;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualLiteral;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualOperation;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualParameter;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
- * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
- * to invoke the <code>caseXXX</code> method for each class of the model,
+ * It supports the call {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object
  * and proceeding up the inheritance hierarchy
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage
  * @generated
  */
@@ -38,6 +47,7 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static VirtualmetamodelPackage modelPackage;
@@ -46,6 +56,7 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public VirtualmetamodelSwitch() {
@@ -58,6 +69,7 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -71,94 +83,148 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL: {
-				VirtualMetamodel virtualMetamodel = (VirtualMetamodel)theEObject;
-				T result = caseVirtualMetamodel(virtualMetamodel);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL: {
+			VirtualMetamodel virtualMetamodel = (VirtualMetamodel) theEObject;
+			T result = caseVirtualMetamodel(virtualMetamodel);
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT: {
-				VirtualElement virtualElement = (VirtualElement)theEObject;
-				T result = caseVirtualElement(virtualElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT: {
+			VirtualElement virtualElement = (VirtualElement) theEObject;
+			T result = caseVirtualElement(virtualElement);
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER: {
-				VirtualClassifier virtualClassifier = (VirtualClassifier)theEObject;
-				T result = caseVirtualClassifier(virtualClassifier);
-				if (result == null) result = caseVirtualElement(virtualClassifier);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER: {
+			VirtualClassifier virtualClassifier = (VirtualClassifier) theEObject;
+			T result = caseVirtualClassifier(virtualClassifier);
+			if (result == null) {
+				result = caseVirtualElement(virtualClassifier);
 			}
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS: {
-				VirtualMetaclass virtualMetaclass = (VirtualMetaclass)theEObject;
-				T result = caseVirtualMetaclass(virtualMetaclass);
-				if (result == null) result = caseVirtualClassifier(virtualMetaclass);
-				if (result == null) result = caseVirtualElement(virtualMetaclass);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case VirtualmetamodelPackage.VIRTUAL_PROPERTY: {
-				VirtualProperty virtualProperty = (VirtualProperty)theEObject;
-				T result = caseVirtualProperty(virtualProperty);
-				if (result == null) result = caseVirtualTypedElement(virtualProperty);
-				if (result == null) result = caseVirtualElement(virtualProperty);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS: {
+			VirtualMetaclass virtualMetaclass = (VirtualMetaclass) theEObject;
+			T result = caseVirtualMetaclass(virtualMetaclass);
+			if (result == null) {
+				result = caseVirtualClassifier(virtualMetaclass);
 			}
-			case VirtualmetamodelPackage.VIRTUAL_OPERATION: {
-				VirtualOperation virtualOperation = (VirtualOperation)theEObject;
-				T result = caseVirtualOperation(virtualOperation);
-				if (result == null) result = caseVirtualTypedElement(virtualOperation);
-				if (result == null) result = caseVirtualElement(virtualOperation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseVirtualElement(virtualMetaclass);
 			}
-			case VirtualmetamodelPackage.VIRTUAL_PARAMETER: {
-				VirtualParameter virtualParameter = (VirtualParameter)theEObject;
-				T result = caseVirtualParameter(virtualParameter);
-				if (result == null) result = caseVirtualTypedElement(virtualParameter);
-				if (result == null) result = caseVirtualElement(virtualParameter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case VirtualmetamodelPackage.VIRTUAL_DATATYPE: {
-				VirtualDatatype virtualDatatype = (VirtualDatatype)theEObject;
-				T result = caseVirtualDatatype(virtualDatatype);
-				if (result == null) result = caseVirtualClassifier(virtualDatatype);
-				if (result == null) result = caseVirtualElement(virtualDatatype);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case VirtualmetamodelPackage.VIRTUAL_PROPERTY: {
+			VirtualProperty virtualProperty = (VirtualProperty) theEObject;
+			T result = caseVirtualProperty(virtualProperty);
+			if (result == null) {
+				result = caseVirtualTypedElement(virtualProperty);
 			}
-			case VirtualmetamodelPackage.VIRTUAL_ENUM: {
-				VirtualEnum virtualEnum = (VirtualEnum)theEObject;
-				T result = caseVirtualEnum(virtualEnum);
-				if (result == null) result = caseVirtualClassifier(virtualEnum);
-				if (result == null) result = caseVirtualElement(virtualEnum);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseVirtualElement(virtualProperty);
 			}
-			case VirtualmetamodelPackage.VIRTUAL_LITERAL: {
-				VirtualLiteral virtualLiteral = (VirtualLiteral)theEObject;
-				T result = caseVirtualLiteral(virtualLiteral);
-				if (result == null) result = caseVirtualElement(virtualLiteral);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case VirtualmetamodelPackage.VIRTUAL_TYPED_ELEMENT: {
-				VirtualTypedElement virtualTypedElement = (VirtualTypedElement)theEObject;
-				T result = caseVirtualTypedElement(virtualTypedElement);
-				if (result == null) result = caseVirtualElement(virtualTypedElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case VirtualmetamodelPackage.VIRTUAL_OPERATION: {
+			VirtualOperation virtualOperation = (VirtualOperation) theEObject;
+			T result = caseVirtualOperation(virtualOperation);
+			if (result == null) {
+				result = caseVirtualTypedElement(virtualOperation);
 			}
-			default: return defaultCase(theEObject);
+			if (result == null) {
+				result = caseVirtualElement(virtualOperation);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case VirtualmetamodelPackage.VIRTUAL_PARAMETER: {
+			VirtualParameter virtualParameter = (VirtualParameter) theEObject;
+			T result = caseVirtualParameter(virtualParameter);
+			if (result == null) {
+				result = caseVirtualTypedElement(virtualParameter);
+			}
+			if (result == null) {
+				result = caseVirtualElement(virtualParameter);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case VirtualmetamodelPackage.VIRTUAL_DATATYPE: {
+			VirtualDatatype virtualDatatype = (VirtualDatatype) theEObject;
+			T result = caseVirtualDatatype(virtualDatatype);
+			if (result == null) {
+				result = caseVirtualClassifier(virtualDatatype);
+			}
+			if (result == null) {
+				result = caseVirtualElement(virtualDatatype);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case VirtualmetamodelPackage.VIRTUAL_ENUM: {
+			VirtualEnum virtualEnum = (VirtualEnum) theEObject;
+			T result = caseVirtualEnum(virtualEnum);
+			if (result == null) {
+				result = caseVirtualClassifier(virtualEnum);
+			}
+			if (result == null) {
+				result = caseVirtualElement(virtualEnum);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case VirtualmetamodelPackage.VIRTUAL_LITERAL: {
+			VirtualLiteral virtualLiteral = (VirtualLiteral) theEObject;
+			T result = caseVirtualLiteral(virtualLiteral);
+			if (result == null) {
+				result = caseVirtualElement(virtualLiteral);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case VirtualmetamodelPackage.VIRTUAL_TYPED_ELEMENT: {
+			VirtualTypedElement virtualTypedElement = (VirtualTypedElement) theEObject;
+			T result = caseVirtualTypedElement(virtualTypedElement);
+			if (result == null) {
+				result = caseVirtualElement(virtualTypedElement);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
@@ -168,7 +234,9 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Virtual Metamodel</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -183,7 +251,9 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Virtual Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -198,7 +268,9 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Virtual Classifier</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -213,7 +285,9 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Virtual Metaclass</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -228,7 +302,9 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Virtual Property</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -243,7 +319,9 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Virtual Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -258,7 +336,9 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Virtual Parameter</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -273,7 +353,9 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Virtual Datatype</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -288,7 +370,9 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Virtual Enum</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -303,7 +387,9 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Virtual Literal</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -318,7 +404,9 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Virtual Typed Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -333,7 +421,9 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -343,4 +433,4 @@ public class VirtualmetamodelSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //VirtualmetamodelSwitch
+} // VirtualmetamodelSwitch

@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Copyright (c) 2013 Soft-Maint.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,7 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * JFace Image Provider
- * 
+ *
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
  * @since 0.4.0
@@ -27,7 +27,7 @@ public interface IImageProvider {
 
 	/**
 	 * Return an image from an Overlay Icon description.
-	 * 
+	 *
 	 * @param imgDescriptor
 	 *            Overlay Icon description
 	 * @return A new image
@@ -36,7 +36,7 @@ public interface IImageProvider {
 
 	/**
 	 * Return an image from its path
-	 * 
+	 *
 	 * @param path
 	 *            The path of the image
 	 * @return A new image
@@ -45,7 +45,7 @@ public interface IImageProvider {
 
 	/**
 	 * Return an image descriptor from its path
-	 * 
+	 *
 	 * @param resourcePath
 	 *            The path from which to create the descriptor
 	 * @return The new image descriptor
@@ -54,7 +54,7 @@ public interface IImageProvider {
 
 	/**
 	 * Return an image from an image descriptor
-	 * 
+	 *
 	 * @param imgDescriptor
 	 *            An image descriptor to create the image
 	 * @return A new image

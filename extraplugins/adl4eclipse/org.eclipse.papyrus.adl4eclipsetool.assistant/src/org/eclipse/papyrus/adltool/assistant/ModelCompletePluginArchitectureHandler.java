@@ -1,8 +1,7 @@
-
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,13 +29,14 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
 
 /**
- *@deprecated 
+ * @deprecated
  *
  */
 
+@Deprecated
 public class ModelCompletePluginArchitectureHandler extends ADLToolAbstractHandler {
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 */
@@ -44,8 +44,8 @@ public class ModelCompletePluginArchitectureHandler extends ADLToolAbstractHandl
 	}
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		Element selectedElement=getSelection();
-		ServicesRegistry registry=null;
+		Element selectedElement = getSelection();
+		ServicesRegistry registry = null;
 		try {
 			registry = ServiceUtilsForHandlers.getInstance().getServiceRegistry(event);
 		} catch (ServiceException e1) {
@@ -57,21 +57,22 @@ public class ModelCompletePluginArchitectureHandler extends ADLToolAbstractHandl
 		} catch (ServiceException e) {
 			throw new ExecutionException("Can't get ModelSet", e);
 		}
-		PluginArchitectureWizard bWizard=new PluginArchitectureWizard(false);
-		WizardDialog wizardDialog = new WizardDialog(new Shell(),bWizard);
+		PluginArchitectureWizard bWizard = new PluginArchitectureWizard(false);
+		WizardDialog wizardDialog = new WizardDialog(new Shell(), bWizard);
 		if (wizardDialog.open() == Window.OK) {
 			TransactionalEditingDomain dom = modelSet.getTransactionalEditingDomain();
-			if( selectedElement instanceof Package){
-				CompletePluginsArchitectureSnapshotCommand comd= new CompletePluginsArchitectureSnapshotCommand(dom, (Package)selectedElement,bWizard.getSelectedBundle());
+			if (selectedElement instanceof Package) {
+				CompletePluginsArchitectureSnapshotCommand comd = new CompletePluginsArchitectureSnapshotCommand(dom, (Package) selectedElement, bWizard.getSelectedBundle());
 				dom.getCommandStack().execute(comd);
 			}
-		} 
+		}
 
 		return null;
 	}
+
 	/**
-	 * 
-	 *{@inheritDoc}
+	 *
+	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean isEnabled() {

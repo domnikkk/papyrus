@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -15,17 +15,12 @@ package org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfigu
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.extendedtypes.impl.SemanticActionConfigurationImpl;
-
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfiguration;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply;
@@ -37,7 +32,7 @@ import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfigur
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationImpl#getStereotypesToApply <em>Stereotypes To Apply</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationImpl#getStereotypesToApply <em>Stereotypes To Apply</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +43,7 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	 * The cached value of the '{@link #getStereotypesToApply() <em>Stereotypes To Apply</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getStereotypesToApply()
 	 * @generated
 	 * @ordered
@@ -57,6 +53,7 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ApplyStereotypeActionConfigurationImpl() {
@@ -66,6 +63,7 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,6 +74,7 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<StereotypeToApply> getStereotypesToApply() {
@@ -88,13 +87,14 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ApplyStereotypeActionConfigurationPackage.APPLY_STEREOTYPE_ACTION_CONFIGURATION__STEREOTYPES_TO_APPLY:
-				return ((InternalEList<?>)getStereotypesToApply()).basicRemove(otherEnd, msgs);
+		case ApplyStereotypeActionConfigurationPackage.APPLY_STEREOTYPE_ACTION_CONFIGURATION__STEREOTYPES_TO_APPLY:
+			return ((InternalEList<?>) getStereotypesToApply()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -102,13 +102,14 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplyStereotypeActionConfigurationPackage.APPLY_STEREOTYPE_ACTION_CONFIGURATION__STEREOTYPES_TO_APPLY:
-				return getStereotypesToApply();
+		case ApplyStereotypeActionConfigurationPackage.APPLY_STEREOTYPE_ACTION_CONFIGURATION__STEREOTYPES_TO_APPLY:
+			return getStereotypesToApply();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,16 +117,17 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplyStereotypeActionConfigurationPackage.APPLY_STEREOTYPE_ACTION_CONFIGURATION__STEREOTYPES_TO_APPLY:
-				getStereotypesToApply().clear();
-				getStereotypesToApply().addAll((Collection<? extends StereotypeToApply>)newValue);
-				return;
+		case ApplyStereotypeActionConfigurationPackage.APPLY_STEREOTYPE_ACTION_CONFIGURATION__STEREOTYPES_TO_APPLY:
+			getStereotypesToApply().clear();
+			getStereotypesToApply().addAll((Collection<? extends StereotypeToApply>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -133,14 +135,15 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplyStereotypeActionConfigurationPackage.APPLY_STEREOTYPE_ACTION_CONFIGURATION__STEREOTYPES_TO_APPLY:
-				getStereotypesToApply().clear();
-				return;
+		case ApplyStereotypeActionConfigurationPackage.APPLY_STEREOTYPE_ACTION_CONFIGURATION__STEREOTYPES_TO_APPLY:
+			getStereotypesToApply().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -148,15 +151,16 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplyStereotypeActionConfigurationPackage.APPLY_STEREOTYPE_ACTION_CONFIGURATION__STEREOTYPES_TO_APPLY:
-				return stereotypesToApply != null && !stereotypesToApply.isEmpty();
+		case ApplyStereotypeActionConfigurationPackage.APPLY_STEREOTYPE_ACTION_CONFIGURATION__STEREOTYPES_TO_APPLY:
+			return stereotypesToApply != null && !stereotypesToApply.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ApplyStereotypeActionConfigurationImpl
+} // ApplyStereotypeActionConfigurationImpl

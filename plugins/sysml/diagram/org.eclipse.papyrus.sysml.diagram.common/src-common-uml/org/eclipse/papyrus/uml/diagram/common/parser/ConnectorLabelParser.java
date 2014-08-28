@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.sysml.diagram.common.preferences.ILabelPreferenceConstants;
+import org.eclipse.papyrus.uml.tools.utils.ICustomAppearance;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -48,32 +49,32 @@ public class ConnectorLabelParser extends NamedElementLabelParser {
 
 		Collection<String> maskValues = getMaskValues(element);
 
-		if(maskValues.isEmpty()) {
+		if (maskValues.isEmpty()) {
 			return MaskedLabel;
 		}
 
 		String result = "";
 		EObject eObject = EMFHelper.getEObject(element);
 
-		if((eObject != null) && (eObject instanceof Connector)) {
+		if ((eObject != null) && (eObject instanceof Connector)) {
 
-			Connector connector = (Connector)eObject;
+			Connector connector = (Connector) eObject;
 
 			// manage name
-			if(maskValues.contains(ILabelPreferenceConstants.DISP_NAME) && (connector.isSetName())) {
+			if (maskValues.contains(ICustomAppearance.DISP_NAME) && (connector.isSetName())) {
 				String name = connector.getName();
 				result = String.format(NAME_FORMAT, name);
 			}
 
 			// manage type
-			if(maskValues.contains(ILabelPreferenceConstants.DISP_TYPE)) {
+			if (maskValues.contains(ICustomAppearance.DISP_TYPE)) {
 				String type = "<Undefined>";
-				if(connector.getType() != null) {
+				if (connector.getType() != null) {
 					type = connector.getType().getName();
 				}
 
 				// If type is undefined only show "<Undefined>" when explicitly asked.
-				if(maskValues.contains(ILabelPreferenceConstants.DISP_UNDEFINED_TYPE) || !"<Undefined>".equals(type)) {
+				if (maskValues.contains(ILabelPreferenceConstants.DISP_UNDEFINED_TYPE) || !"<Undefined>".equals(type)) {
 					result = String.format(TYPE_FORMAT, result, type);
 				}
 			}
@@ -88,9 +89,9 @@ public class ConnectorLabelParser extends NamedElementLabelParser {
 	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 
-		if(event instanceof Notification) {
-			Object feature = ((Notification)event).getFeature();
-			if(feature instanceof EStructuralFeature) {
+		if (event instanceof Notification) {
+			Object feature = ((Notification) event).getFeature();
+			if (feature instanceof EStructuralFeature) {
 				return UMLPackage.eINSTANCE.getTypedElement_Type().equals(feature) || super.isAffectingEvent(event, flags);
 			}
 		}
@@ -105,11 +106,11 @@ public class ConnectorLabelParser extends NamedElementLabelParser {
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = new ArrayList<EObject>();
 
-		if((element != null) && (element instanceof Connector)) {
-			Connector semElement = (Connector)element;
+		if ((element != null) && (element instanceof Connector)) {
+			Connector semElement = (Connector) element;
 
 			semanticElementsBeingParsed.add(semElement);
-			if(semElement.getType() != null) {
+			if (semElement.getType() != null) {
 				semanticElementsBeingParsed.add(semElement.getType());
 			}
 		}
@@ -119,14 +120,14 @@ public class ConnectorLabelParser extends NamedElementLabelParser {
 	@Override
 	public Map<String, String> getMasks() {
 		Map<String, String> masks = new HashMap<String, String>();
-		masks.put(ILabelPreferenceConstants.DISP_NAME, "Name");
-		masks.put(ILabelPreferenceConstants.DISP_TYPE, "Type");
+		masks.put(ICustomAppearance.DISP_NAME, "Name");
+		masks.put(ICustomAppearance.DISP_TYPE, "Type");
 		masks.put(ILabelPreferenceConstants.DISP_UNDEFINED_TYPE, "Show <Undefined> type");
 		return masks;
 	}
 
 	@Override
 	public Collection<String> getDefaultValue(IAdaptable element) {
-		return Arrays.asList(ILabelPreferenceConstants.DISP_NAME, ILabelPreferenceConstants.DISP_TYPE);
+		return Arrays.asList(ICustomAppearance.DISP_NAME, ICustomAppearance.DISP_TYPE);
 	}
 }

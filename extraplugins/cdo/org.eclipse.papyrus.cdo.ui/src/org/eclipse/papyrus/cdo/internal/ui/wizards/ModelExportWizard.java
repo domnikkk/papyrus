@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.wizards;
 
@@ -91,7 +91,7 @@ public class ModelExportWizard extends Wizard implements IWorkbenchWizard {
 		mappingsPage = new ModelExportMappingsPage(bus);
 		addPage(mappingsPage);
 
-		if(initialDestination != null) {
+		if (initialDestination != null) {
 			mappingsPage.setInitialDestination(initialDestination);
 		}
 
@@ -101,7 +101,7 @@ public class ModelExportWizard extends Wizard implements IWorkbenchWizard {
 
 			@Override
 			public void run() {
-				for(DIModel next : getSelection()) {
+				for (DIModel next : getSelection()) {
 					exportConfig.addModelToTransfer(next.getResource().getURI());
 				}
 
@@ -114,25 +114,25 @@ public class ModelExportWizard extends Wizard implements IWorkbenchWizard {
 	Iterable<DIModel> getSelection() {
 		Multimap<IPapyrusRepository, DIModel> result = ArrayListMultimap.create();
 
-		if(selection != null) {
-			for(Object next : selection.toList()) {
+		if (selection != null) {
+			for (Object next : selection.toList()) {
 				DIModel model = CDOUtils.adapt(next, DIModel.class);
 
-				if(model != null) {
+				if (model != null) {
 					URI uri = model.getResource().getURI();
 					IPapyrusRepository repo = PapyrusRepositoryManager.INSTANCE.getRepositoryForURI(uri);
-					if(repository == null) {
+					if (repository == null) {
 						repository = repo;
 					}
 
-					if(repo != null) {
+					if (repo != null) {
 						result.put(repo, model);
 					}
 				}
 			}
 		}
 
-		if(result.keySet().size() > 1) {
+		if (result.keySet().size() > 1) {
 			MessageDialog.openInformation(getShell(), Messages.ModelExportWizard_2, NLS.bind(Messages.ModelExportWizard_3, repository.getName()));
 		}
 
@@ -146,7 +146,7 @@ public class ModelExportWizard extends Wizard implements IWorkbenchWizard {
 		IModelExporter exporter = IModelExporter.Factory.DEFAULT.create();
 		Diagnostic problems = exporter.exportModels(mappingsPage.getMapping());
 
-		if(problems.getSeverity() > Diagnostic.INFO) {
+		if (problems.getSeverity() > Diagnostic.INFO) {
 			StatusManager.getManager().handle(BasicDiagnostic.toIStatus(problems), StatusManager.BLOCK);
 		}
 
@@ -155,7 +155,7 @@ public class ModelExportWizard extends Wizard implements IWorkbenchWizard {
 
 	@Override
 	public void dispose() {
-		if(exportConfig != null) {
+		if (exportConfig != null) {
 			// it actually takes a while to dispose this, unloading all of the
 			// resources potentially covering all of the Papyrus models in the
 			// workspace in order to clean up the UML CacheAdapter
@@ -185,9 +185,9 @@ public class ModelExportWizard extends Wizard implements IWorkbenchWizard {
 	ResourceSet getResourceSet(IStructuredSelection selection) {
 		ResourceSet result = null;
 
-		for(Object next : selection.toList()) {
+		for (Object next : selection.toList()) {
 			CDOResource resource = CDOUtils.adapt(next, CDOResource.class);
-			if(resource != null) {
+			if (resource != null) {
 				result = resource.getResourceSet();
 				break;
 			}

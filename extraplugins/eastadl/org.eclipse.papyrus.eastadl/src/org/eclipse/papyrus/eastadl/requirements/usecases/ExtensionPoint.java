@@ -11,7 +11,7 @@ package org.eclipse.papyrus.eastadl.requirements.usecases;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.ExtensionPoint#getBase_ExtensionPoint <em>Base Extension Point</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.ExtensionPoint#getBase_ExtensionPoint <em>Base Extension Point</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,10 +24,10 @@ public interface ExtensionPoint extends RedefinableElement {
 	 * Returns the value of the '<em><b>Base Extension Point</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Extension Point</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Extension Point</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Extension Point</em>' reference.
 	 * @see #setBase_ExtensionPoint(org.eclipse.uml2.uml.ExtensionPoint)
 	 * @see org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage#getExtensionPoint_Base_ExtensionPoint()
@@ -40,7 +40,9 @@ public interface ExtensionPoint extends RedefinableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.usecases.ExtensionPoint#getBase_ExtensionPoint <em>Base Extension Point</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Extension Point</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Extension Point</em>' reference.
 	 * @see #getBase_ExtensionPoint()
 	 * @generated
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,44 +44,47 @@ public class CAssociationReorientCommand extends AssociationReorientCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof Type && newEnd instanceof Type)) {
+		if (!(oldEnd instanceof Type && newEnd instanceof Type)) {
 			return false;
 		}
 		// if (getLink().getEndTypes().size() != 1) {
-		if(getLink().getEndTypes().size() == 0) {
+		if (getLink().getEndTypes().size() == 0) {
 			return false;
 		}
-		Type target = (Type)getLink().getEndTypes().get(0);
-		if(!(getLink().eContainer() instanceof Package)) {
+		Type target = getLink().getEndTypes().get(0);
+		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
-		Package container = (Package)getLink().eContainer();
+		Package container = (Package) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistAssociation_4001(container, getLink(), getNewSource(), target);
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof Type && newEnd instanceof Type)) {
+		if (!(oldEnd instanceof Type && newEnd instanceof Type)) {
 			return false;
 		}
-		//if getLink().getEndTypes().size() == 1 the source and the target is the same classe
-		if(getLink().getEndTypes().size() == 0) {
+		// if getLink().getEndTypes().size() == 1 the source and the target is the same classe
+		if (getLink().getEndTypes().size() == 0) {
 			return false;
 		}
-		Type source = (Type)getLink().getEndTypes().get(0);
-		if(!(getLink().eContainer() instanceof Package)) {
+		Type source = getLink().getEndTypes().get(0);
+		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
-		Package container = (Package)getLink().eContainer();
+		Package container = (Package) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistAssociation_4001(container, getLink(), source, getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult reorientSource() throws ExecutionException {
 		return AssociationHelper.reconnect(AssociationHelper.source, getLink(), getNewSource());
 	}
@@ -89,6 +92,7 @@ public class CAssociationReorientCommand extends AssociationReorientCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult reorientTarget() throws ExecutionException {
 		return AssociationHelper.reconnect(AssociationHelper.target, getLink(), getNewTarget());
 	}

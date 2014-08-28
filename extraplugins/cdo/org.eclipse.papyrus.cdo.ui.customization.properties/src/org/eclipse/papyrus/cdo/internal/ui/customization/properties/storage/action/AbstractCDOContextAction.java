@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,15 +35,15 @@ public class AbstractCDOContextAction {
 		CDOView view = null;
 
 		Resource resource = object.eResource();
-		if(resource instanceof CDOResource) {
-			view = ((CDOResource)resource).cdoView();
+		if (resource instanceof CDOResource) {
+			view = ((CDOResource) resource).cdoView();
 		} else {
 			view = CDOTextURIHandler.getView(resource.getResourceSet(), resource.getURI());
 		}
 
 		CDOTransaction result = null;
 
-		if(view != null) {
+		if (view != null) {
 			result = view.getSession().openTransaction();
 			CDOTextURIHandler.install(result.getResourceSet());
 		}
@@ -54,11 +54,11 @@ public class AbstractCDOContextAction {
 	@SuppressWarnings("unchecked")
 	protected <T extends EObject> T getDoppelganger(T original, CDOView view) {
 		Resource resource = original.eResource();
-		if(resource instanceof CDOResource) {
+		if (resource instanceof CDOResource) {
 			CDOID oid = CDOUtil.getCDOObject(original).cdoID();
-			return (T)CDOUtil.getEObject(view.getObject(oid));
+			return (T) CDOUtil.getEObject(view.getObject(oid));
 		} else {
-			return (T)view.getResourceSet().getEObject(EcoreUtil.getURI(original), true);
+			return (T) view.getResourceSet().getEObject(EcoreUtil.getURI(original), true);
 		}
 	}
 
@@ -67,13 +67,13 @@ public class AbstractCDOContextAction {
 
 		Resource resource = context.eResource();
 
-		if(resource instanceof CDOResource) {
-			result = ((CDOResource)resource).getFolder();
+		if (resource instanceof CDOResource) {
+			result = ((CDOResource) resource).getFolder();
 		} else {
 			CDOView view = CDOTextURIHandler.getView(resource.getResourceSet(), resource.getURI());
-			if(view != null) {
+			if (view != null) {
 				CDOResourceNode node = view.getResourceNode(URI.decode(CDOURIUtil.extractResourcePath(CDOTextURIHandler.translate(resource.getURI()))));
-				if(node != null) {
+				if (node != null) {
 					result = node.getFolder();
 				}
 			}

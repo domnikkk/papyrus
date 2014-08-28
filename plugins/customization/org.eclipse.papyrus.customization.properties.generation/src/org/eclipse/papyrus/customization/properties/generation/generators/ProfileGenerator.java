@@ -55,7 +55,7 @@ import org.eclipse.uml2.uml.Profile;
  * @author Camille Letavernier
  */
 
-//FIXME warning if all profiles have the same name overwrite the same file
+// FIXME warning if all profiles have the same name overwrite the same file
 public class ProfileGenerator extends AbstractQVTGenerator {
 
 	private FileChooser sourceFileChooser;
@@ -80,7 +80,7 @@ public class ProfileGenerator extends AbstractQVTGenerator {
 		sourceLabel.setLayoutData(data);
 
 		sourceFileChooser = new FileChooser(root, false);
-		sourceFileChooser.setFilterExtensions(new String[]{ "profile.uml" }); //$NON-NLS-1$
+		sourceFileChooser.setFilterExtensions(new String[] { "profile.uml" }); //$NON-NLS-1$
 		sourceFileChooser.addListener(this);
 		listEObject = new ArrayList<EObject>();
 	}
@@ -102,8 +102,8 @@ public class ProfileGenerator extends AbstractQVTGenerator {
 		LinkedList<ModelExtent> result = new LinkedList<ModelExtent>();
 		ModelExtent inPackage = new BasicModelExtent();
 		List<EObject> liste = new ArrayList<EObject>();
-		if(!listEObject.isEmpty()) {
-			for(EObject currentEObject : listEObject) {
+		if (!listEObject.isEmpty()) {
+			for (EObject currentEObject : listEObject) {
 				EObject tempEObject = null;
 				try {
 					tempEObject = loadEMFModel(currentEObject.eResource().getURI());
@@ -122,11 +122,11 @@ public class ProfileGenerator extends AbstractQVTGenerator {
 		URI umlURI = URI.createURI("ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx", true);
 		Context umlContext = null;
 		try {
-			umlContext = (Context)loadEMFModel(umlURI);
+			umlContext = (Context) loadEMFModel(umlURI);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		if(umlContext == null) {
+		if (umlContext == null) {
 			Activator.log.warn("Cannot find the UML Property View configuration");
 		}
 
@@ -154,24 +154,24 @@ public class ProfileGenerator extends AbstractQVTGenerator {
 	 * Package
 	 *
 	 * @param path
-	 *        The list of package and subpackages names, and the classifier
-	 *        name, i.e. the list of segments in the classifier qualified
-	 *        name e.g. : SysML::Blocks::Block : ["SysML", "Blocks",
-	 *        "Block"]
+	 *            The list of package and subpackages names, and the classifier
+	 *            name, i.e. the list of segments in the classifier qualified
+	 *            name e.g. : SysML::Blocks::Block : ["SysML", "Blocks",
+	 *            "Block"]
 	 * @param rootPackage
-	 *        The root Package in which the stereotype should be retrieved
+	 *            The root Package in which the stereotype should be retrieved
 	 * @return The corresponding Classifier, or null if it couldn't be retrieved
 	 */
 	protected Classifier findClassifier(List<String> path, Package rootPackage) {
 		NamedElement element = rootPackage.getOwnedMember(path.get(0));
 		path.remove(0);
-		if(path.size() == 0) {
-			if(element instanceof Classifier) {
-				return (Classifier)element;
+		if (path.size() == 0) {
+			if (element instanceof Classifier) {
+				return (Classifier) element;
 			}
 		} else {
-			if(element instanceof Package) {
-				return findClassifier(path, (Package)element);
+			if (element instanceof Package) {
+				return findClassifier(path, (Package) element);
 			}
 		}
 		return null;
@@ -184,7 +184,7 @@ public class ProfileGenerator extends AbstractQVTGenerator {
 
 	private List<String> getPath(DataContextElement element) {
 		List<String> result;
-		if(element.getPackage() == null) {
+		if (element.getPackage() == null) {
 			result = new LinkedList<String>();
 		} else {
 			result = getPath(element.getPackage());
@@ -205,12 +205,12 @@ public class ProfileGenerator extends AbstractQVTGenerator {
 		List<String> path = getPath(property);
 
 		Package propertyRootPackage = findPackage(path.remove(0));
-		if(propertyRootPackage == null) {
+		if (propertyRootPackage == null) {
 			return null;
 		}
 
 		Classifier classifier = findClassifier(path, propertyRootPackage);
-		if(classifier == null) {
+		if (classifier == null) {
 			return null;
 		}
 
@@ -219,11 +219,11 @@ public class ProfileGenerator extends AbstractQVTGenerator {
 	}
 
 	public Package findPackage(String name) {
-		for(Resource resource : umlProfile.eResource().getResourceSet().getResources()) {
-			for(Object rootElement : resource.getContents()) {
-				if(rootElement instanceof Package) {
-					Package rootPackage = (Package)rootElement;
-					if(name.equals(rootPackage.getName())) {
+		for (Resource resource : umlProfile.eResource().getResourceSet().getResources()) {
+			for (Object rootElement : resource.getContents()) {
+				if (rootElement instanceof Package) {
+					Package rootPackage = (Package) rootElement;
+					if (name.equals(rootPackage.getName())) {
 						return rootPackage;
 					}
 				}
@@ -234,16 +234,16 @@ public class ProfileGenerator extends AbstractQVTGenerator {
 
 	public boolean isSelectedSingle(Property property) {
 		org.eclipse.uml2.uml.Property attribute = getAttribute(property);
-		if(attribute == null) {
+		if (attribute == null) {
 			Activator.log.warn("Cannot find the Property corresponding to " + getPath(property)); //$NON-NLS-1$
 			return false;
 		}
 
-		if(attribute.isDerived()) {
+		if (attribute.isDerived()) {
 			return false;
 		}
 
-		if(attribute.isReadOnly()) {
+		if (attribute.isReadOnly()) {
 			return false;
 		}
 
@@ -251,19 +251,19 @@ public class ProfileGenerator extends AbstractQVTGenerator {
 	}
 
 	public boolean isSelectedMultiple(Property property) {
-		if(!isSelectedSingle(property)) {
+		if (!isSelectedSingle(property)) {
 			return false;
 		}
 
 		org.eclipse.uml2.uml.Property attribute = getAttribute(property);
 
-		Set<String> validDataTypes = new HashSet<String>(Arrays.asList(new String[]{ "Integer", "Boolean", "Float", "Double" })); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		Set<String> validDataTypes = new HashSet<String>(Arrays.asList(new String[] { "Integer", "Boolean", "Float", "Double" })); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 
-		if(attribute.getType() instanceof PrimitiveType) {
-			return validDataTypes.contains(((PrimitiveType)attribute.getType()).getName());
+		if (attribute.getType() instanceof PrimitiveType) {
+			return validDataTypes.contains(((PrimitiveType) attribute.getType()).getName());
 		}
 
-		if(attribute.getType() instanceof Enumeration) {
+		if (attribute.getType() instanceof Enumeration) {
 			return true;
 		}
 
@@ -286,19 +286,19 @@ public class ProfileGenerator extends AbstractQVTGenerator {
 	public List<Object> getExternalReference() {
 		URI packageURI = URI.createPlatformResourceURI(sourceFileChooser.getFilePath(), true);
 		try {
-			umlProfile = (Profile)loadEMFModel(packageURI);
+			umlProfile = (Profile) loadEMFModel(packageURI);
 		} catch (IOException e) {
-			//nothing
+			// nothing
 		}
 		list = new ArrayList<Object>();
 		list.add(umlProfile);
 
 		TreeIterator<EObject> tree = umlProfile.eAllContents();
-		while(tree.hasNext()) {
+		while (tree.hasNext()) {
 			Object obj = tree.next();
-			if(obj instanceof PackageImport) {
-				PackageImport currentPackage = (PackageImport)obj;
-				if(!list.contains(currentPackage.getImportedPackage())) {
+			if (obj instanceof PackageImport) {
+				PackageImport currentPackage = (PackageImport) obj;
+				if (!list.contains(currentPackage.getImportedPackage())) {
 					list.add(currentPackage.getImportedPackage());
 				}
 			}
@@ -311,9 +311,9 @@ public class ProfileGenerator extends AbstractQVTGenerator {
 
 
 	public void addCheckElement(Object obj) {
-		if(obj instanceof EObject) {
-			EObject current = (EObject)obj;
-			if(!listEObject.contains(current)) {
+		if (obj instanceof EObject) {
+			EObject current = (EObject) obj;
+			if (!listEObject.contains(current)) {
 				listEObject.add(current);
 			}
 		}
@@ -328,15 +328,15 @@ public class ProfileGenerator extends AbstractQVTGenerator {
 		try {
 			ModelExtent inProfile = null;
 
-			if(listEObject.get(i) instanceof Package) {
-				Package currentPackage = (Package)listEObject.get(i);
-				umlProfile = (Profile)loadEMFModel(currentPackage.eResource().getURI());
+			if (listEObject.get(i) instanceof Package) {
+				Package currentPackage = (Package) listEObject.get(i);
+				umlProfile = (Profile) loadEMFModel(currentPackage.eResource().getURI());
 				inProfile = new BasicModelExtent(Collections.singletonList(umlProfile));
 
 			}
 			URI umlURI = URI.createURI("ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx", true);
-			Context umlContext = (Context)loadEMFModel(umlURI);
-			if(umlContext == null) {
+			Context umlContext = (Context) loadEMFModel(umlURI);
+			if (umlContext == null) {
 				Activator.log.warn("Cannot find the UML Property View configuration");
 			}
 			ModelExtent inUml = new BasicModelExtent(Collections.singletonList(umlContext));

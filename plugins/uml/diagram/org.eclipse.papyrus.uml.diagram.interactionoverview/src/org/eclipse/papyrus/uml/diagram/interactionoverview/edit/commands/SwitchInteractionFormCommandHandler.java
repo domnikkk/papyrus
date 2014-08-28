@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,22 +34,22 @@ public class SwitchInteractionFormCommandHandler extends GraphicalCommandHandler
 	protected Command getCommand() {
 
 		List<IGraphicalEditPart> elements = getSelectedElements();
-		if(elements.size() == 1 && elements.get(0) instanceof CustomInteractionUseEditPartCN) {
-			CustomInteractionUseEditPartCN callBehaviorActionEditPart = (CustomInteractionUseEditPartCN)elements.get(0);
-			View callBehaviorView = (View)callBehaviorActionEditPart.getModel();
+		if (elements.size() == 1 && elements.get(0) instanceof CustomInteractionUseEditPartCN) {
+			CustomInteractionUseEditPartCN callBehaviorActionEditPart = (CustomInteractionUseEditPartCN) elements.get(0);
+			View callBehaviorView = (View) callBehaviorActionEditPart.getModel();
 			CompoundCommand cc = new CompoundCommand(Messages.SwitchInteractionFormCommandHandler_InteractionUseToInteractionCommandTitle);
 			ChangeInteractionUseToInteraction changeCommand = new ChangeInteractionUseToInteraction(getEditingDomain(), callBehaviorActionEditPart);
-			cc.add(new RefreshCommandForUndo((GraphicalEditPart)callBehaviorActionEditPart.getParent()));
+			cc.add(new RefreshCommandForUndo((GraphicalEditPart) callBehaviorActionEditPart.getParent()));
 			cc.add(new ICommandProxy(changeCommand));
 			cc.add(new ICommandProxy(new DestroyElementCommand(new DestroyElementRequest(callBehaviorView, true))));
-			CreateSnapshotForInteractionFromViewDescriptorCommand snapshotCommand = new CreateSnapshotForInteractionFromViewDescriptorCommand(getEditingDomain(), changeCommand, (GraphicalEditPart)callBehaviorActionEditPart.getParent());
+			CreateSnapshotForInteractionFromViewDescriptorCommand snapshotCommand = new CreateSnapshotForInteractionFromViewDescriptorCommand(getEditingDomain(), changeCommand, (GraphicalEditPart) callBehaviorActionEditPart.getParent());
 			cc.add(new ICommandProxy(snapshotCommand));
 			cc.add(new ICommandProxy(new AddHyperlinkDiagram(changeCommand, snapshotCommand)));
-			cc.add(new RefreshCommandForDo((GraphicalEditPart)callBehaviorActionEditPart.getParent()));
+			cc.add(new RefreshCommandForDo((GraphicalEditPart) callBehaviorActionEditPart.getParent()));
 			return cc;
-		} else if(elements.size() == 1 && elements.get(0) instanceof CallBehaviorActionAsInteractionEditPart) {
-			CallBehaviorActionAsInteractionEditPart callBehaviorActionEditPart = (CallBehaviorActionAsInteractionEditPart)elements.get(0);
-			View callBehaviorView = (View)callBehaviorActionEditPart.getModel();
+		} else if (elements.size() == 1 && elements.get(0) instanceof CallBehaviorActionAsInteractionEditPart) {
+			CallBehaviorActionAsInteractionEditPart callBehaviorActionEditPart = (CallBehaviorActionAsInteractionEditPart) elements.get(0);
+			View callBehaviorView = (View) callBehaviorActionEditPart.getModel();
 			CompoundCommand cc = new CompoundCommand(Messages.SwitchInteractionFormCommandHandler_InteractionToInteractionUseCommandTitle);
 			ChangeInteractionToInteractionUseCommand changeCommand = new ChangeInteractionToInteractionUseCommand(getEditingDomain(), callBehaviorActionEditPart);
 			cc.add(new ICommandProxy(changeCommand));

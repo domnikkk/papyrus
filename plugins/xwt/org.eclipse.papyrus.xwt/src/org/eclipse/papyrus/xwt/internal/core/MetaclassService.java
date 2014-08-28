@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -38,7 +38,7 @@ public class MetaclassService {
 
 	public IMetaclass getMetaclass(ILoadingContext context, String name, String namespace) {
 		MetaclassManager manager = map.get(namespace);
-		if(manager == null) {
+		if (manager == null) {
 			manager = new MetaclassManager(this, map.get(IConstants.XWT_NAMESPACE), xwtLoader);
 			map.put(namespace, manager);
 		}
@@ -47,7 +47,7 @@ public class MetaclassService {
 
 	public IMetaclass findMetaclass(Class<?> type) {
 		MetaclassManager manager = map.get(IConstants.XWT_NAMESPACE);
-		if(manager == null) {
+		if (manager == null) {
 			return null;
 		}
 		return manager.getMetaclass(type);
@@ -55,24 +55,24 @@ public class MetaclassService {
 
 	public IMetaclass getMetaclass(Class<?> type) {
 		MetaclassManager manager = map.get(IConstants.XWT_NAMESPACE);
-		if(manager == null) {
+		if (manager == null) {
 			return null;
 		}
 		IMetaclass metaclass = manager.getMetaclass(type);
-		if(metaclass == null) {
+		if (metaclass == null) {
 			String packageName = "";
 			Package packageObject = type.getPackage();
-			if(packageObject != null) {
+			if (packageObject != null) {
 				packageName = packageObject.getName();
 			}
 			String key = IConstants.XAML_CLR_NAMESPACE_PROTO + ":" + packageName;
 			MetaclassManager childManager = map.get(key);
-			if(childManager == null) {
+			if (childManager == null) {
 				childManager = new MetaclassManager(this, manager, xwtLoader);
 				map.put(key, childManager);
 			}
 			metaclass = childManager.getMetaclass(type);
-			if(metaclass == null) {
+			if (metaclass == null) {
 				childManager.register(type);
 				metaclass = childManager.getMetaclass(type);
 			}
@@ -82,14 +82,14 @@ public class MetaclassService {
 
 	public IMetaclass getMetaclass(Class<?> type, String namespace) {
 		MetaclassManager manager = map.get(namespace);
-		if(manager == null) {
+		if (manager == null) {
 			manager = new MetaclassManager(this, null, xwtLoader);
 			map.put(namespace, manager);
 		}
 		IMetaclass metaclass = manager.getMetaclass(type);
-		if(metaclass == null) {
+		if (metaclass == null) {
 			metaclass = manager.getMetaclass(type);
-			if(metaclass == null) {
+			if (metaclass == null) {
 				manager.register(type);
 				metaclass = manager.getMetaclass(type);
 			}
@@ -99,7 +99,7 @@ public class MetaclassService {
 
 	public IMetaclass register(Class<?> metaclass, String namespace) {
 		MetaclassManager manager = map.get(namespace);
-		if(manager == null) {
+		if (manager == null) {
 			throw new IllegalStateException();
 		}
 		return manager.register(metaclass);
@@ -107,7 +107,7 @@ public class MetaclassService {
 
 	public IMetaclass register(Class<?> metaclass, String namespace, IMetaclass superMetaclass) {
 		MetaclassManager manager = map.get(namespace);
-		if(manager == null) {
+		if (manager == null) {
 			throw new IllegalStateException();
 		}
 		return manager.register(metaclass, superMetaclass);
@@ -115,7 +115,7 @@ public class MetaclassService {
 
 	public void register(IMetaclass metaclass, String namespace) {
 		MetaclassManager manager = map.get(namespace);
-		if(manager == null) {
+		if (manager == null) {
 			manager = new MetaclassManager(this, null, xwtLoader);
 			map.put(namespace, manager);
 		}
@@ -124,7 +124,7 @@ public class MetaclassService {
 
 	public Collection<IMetaclass> getAllMetaclasses(String namespace) {
 		MetaclassManager manager = map.get(namespace);
-		if(manager == null) {
+		if (manager == null) {
 			throw new IllegalStateException();
 		}
 		return manager.getAllMetaclasses();
@@ -139,9 +139,9 @@ public class MetaclassService {
 	}
 
 	public IMetaclassFactory findFactory(Class<?> javaClass) {
-		for(int i = factories.size() - 1; i >= 0; i--) {
+		for (int i = factories.size() - 1; i >= 0; i--) {
 			IMetaclassFactory factory = factories.get(i);
-			if(factory.isFactoryOf(javaClass)) {
+			if (factory.isFactoryOf(javaClass)) {
 				return factory;
 			}
 		}

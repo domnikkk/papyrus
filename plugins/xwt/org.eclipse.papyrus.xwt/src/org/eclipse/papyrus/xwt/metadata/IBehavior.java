@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -12,14 +12,14 @@ package org.eclipse.papyrus.xwt.metadata;
 
 /**
  * Common behavior of Property and event
- * 
+ *
  * @author yyang
  */
 public interface IBehavior {
 
 	/**
 	 * Getter of the property <tt>name</tt>
-	 * 
+	 *
 	 * @return Returns the name.
 	 */
 	public String getName();

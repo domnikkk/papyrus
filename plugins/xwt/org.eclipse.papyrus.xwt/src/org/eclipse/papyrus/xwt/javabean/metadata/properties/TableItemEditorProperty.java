@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
 
 /**
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class TableItemEditorProperty extends AbstractProperty {
@@ -33,11 +33,11 @@ public class TableItemEditorProperty extends AbstractProperty {
 	}
 
 	public void setValue(Object target, Object value) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
-		TableItem tableItem = (TableItem)target;
-		Collection<TableEditor> tableEditors = (Collection<TableEditor>)value;
+		TableItem tableItem = (TableItem) target;
+		Collection<TableEditor> tableEditors = (Collection<TableEditor>) value;
 
-		for(TableEditor tableEditor : tableEditors) {
-			if(tableEditor != null) {
+		for (TableEditor tableEditor : tableEditors) {
+			if (tableEditor != null) {
 				disposeOldEditor(tableEditor.getColumn(), tableItem);
 				tableEditor.setItem(tableItem);
 			}
@@ -46,19 +46,19 @@ public class TableItemEditorProperty extends AbstractProperty {
 
 	/**
 	 * Dispose old Table editors for current tableItem at given column index.
-	 * 
+	 *
 	 * @param column
 	 * @param tableItem
 	 */
 	private void disposeOldEditor(int column, TableItem tableItem) {
 		Table table = tableItem.getParent();
 		Control[] children = table.getChildren();
-		for(Control control : children) {
+		for (Control control : children) {
 			Object editor = control.getData(PropertiesConstants.DATA_CONTROLEDITOR_OF_CONTROL);
-			if(editor == null || !(editor instanceof TableEditor)) {
+			if (editor == null || !(editor instanceof TableEditor)) {
 				continue;
 			}
-			if(column == ((TableEditor)editor).getColumn() && tableItem == ((TableEditor)editor).getItem()) {
+			if (column == ((TableEditor) editor).getColumn() && tableItem == ((TableEditor) editor).getItem()) {
 				control.dispose();
 			}
 		}

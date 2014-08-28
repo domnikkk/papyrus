@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,9 +53,9 @@ public class DashedEdgeFigure extends UMLEdgeFigure {
 
 	/**
 	 * This is the constructor
-	 * 
+	 *
 	 * @param arrow
-	 *        true if the arrow of the edge is displayed
+	 *            true if the arrow of the edge is displayed
 	 */
 	public DashedEdgeFigure(Boolean arrow) {
 		super();
@@ -66,9 +66,9 @@ public class DashedEdgeFigure extends UMLEdgeFigure {
 
 	/**
 	 * use to display the arrow of the edge
-	 * 
+	 *
 	 * @param arrow
-	 *        true if the arrow will be displayed
+	 *            true if the arrow will be displayed
 	 */
 	public void setArrow(Boolean arrow) {
 		this.arrow = arrow;
@@ -106,7 +106,7 @@ public class DashedEdgeFigure extends UMLEdgeFigure {
 		PolylineDecoration dec = new PolylineDecoration();
 		dec.setScale(15, 5);
 		dec.setLineWidth(1);
-		if(arrow) {
+		if (arrow) {
 			this.setTargetDecoration(dec);
 		} else {
 			this.setTargetDecoration(null);
@@ -114,7 +114,7 @@ public class DashedEdgeFigure extends UMLEdgeFigure {
 		this.setLineStyle(Graphics.LINE_CUSTOM); // line drawing style
 
 		// set dashes
-		for(int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++) {
 			dashes[i] = 5;
 		}
 		setLineDash(dashes);

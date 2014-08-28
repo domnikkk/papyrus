@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,17 +26,17 @@ import org.eclipse.papyrus.infra.tools.converter.ConvertedValueContainer;
 
 /**
  * The abstract class for the cell manager
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public abstract class AbstractCellManager implements ICellManager {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#handles(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param columnElement
 	 * @param rowElement
 	 * @return
@@ -47,9 +47,9 @@ public abstract class AbstractCellManager implements ICellManager {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#getValue(java.lang.Object, java.lang.Object, INattableModelManager)
-	 * 
+	 *
 	 * @param columnElement
 	 * @param rowElement
 	 * @param tableManager
@@ -59,9 +59,9 @@ public abstract class AbstractCellManager implements ICellManager {
 	@Override
 	public final Object getValue(final Object columnElement, final Object rowElement, final INattableModelManager tableManager) {
 		final Cell cell = tableManager.getCell(columnElement, rowElement);
-		if(cell != null) {
+		if (cell != null) {
 			final Collection<Problem> problems = cell.getProblems();
-			if(problems.size() != 0) {
+			if (problems.size() != 0) {
 				return problems;
 			}
 		}
@@ -69,15 +69,15 @@ public abstract class AbstractCellManager implements ICellManager {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#getValue(java.lang.Object, java.lang.Object, INattableModelManager)
-	 * 
+	 *
 	 * @param columnElement
-	 *        the column element
+	 *            the column element
 	 * @param rowElement
-	 *        the row element
+	 *            the row element
 	 * @param tableManager
-	 *        the table manager
+	 *            the table manager
 	 * @return
 	 */
 	protected Object doGetValue(final Object columnElement, final Object rowElement, final INattableModelManager tableManager) {
@@ -85,10 +85,9 @@ public abstract class AbstractCellManager implements ICellManager {
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#setValue(org.eclipse.emf.transaction.TransactionalEditingDomain,
-	 *      java.lang.Object, java.lang.Object, java.lang.Object, INattableModelManager)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#setValue(org.eclipse.emf.transaction.TransactionalEditingDomain, java.lang.Object, java.lang.Object, java.lang.Object, INattableModelManager)
+	 *
 	 * @param domain
 	 * @param columnElement
 	 * @param rowElement
@@ -98,15 +97,15 @@ public abstract class AbstractCellManager implements ICellManager {
 	@Override
 	public void setValue(final TransactionalEditingDomain domain, final Object columnElement, final Object rowElement, final Object newValue, final INattableModelManager tableManager) {
 		final Command cmd = getSetValueCommand(domain, columnElement, rowElement, newValue, tableManager);
-		if(cmd != null && cmd.canExecute()) {
+		if (cmd != null && cmd.canExecute()) {
 			domain.getCommandStack().execute(cmd);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#isCellEditable(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param columnElement
 	 * @param rowElement
 	 * @return
@@ -117,10 +116,10 @@ public abstract class AbstractCellManager implements ICellManager {
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#getSetValueCommand(org.eclipse.emf.transaction.TransactionalEditingDomain,
-	 *      java.lang.Object, java.lang.Object, java.lang.Object, org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#getSetValueCommand(org.eclipse.emf.transaction.TransactionalEditingDomain, java.lang.Object, java.lang.Object, java.lang.Object,
+	 *      org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager)
+	 *
 	 * @param domain
 	 * @param columnElement
 	 * @param rowElement
@@ -134,11 +133,10 @@ public abstract class AbstractCellManager implements ICellManager {
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#getSetStringValueCommand(org.eclipse.emf.transaction.TransactionalEditingDomain,
-	 *      java.lang.Object, java.lang.Object, java.lang.String, org.eclipse.papyrus.infra.tools.converter.IStringValueConverter,
-	 *      INattableModelManager)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#getSetStringValueCommand(org.eclipse.emf.transaction.TransactionalEditingDomain, java.lang.Object, java.lang.Object, java.lang.String,
+	 *      org.eclipse.papyrus.infra.tools.converter.IStringValueConverter, INattableModelManager)
+	 *
 	 * @param domain
 	 * @param columnElement
 	 * @param rowElement
@@ -153,25 +151,25 @@ public abstract class AbstractCellManager implements ICellManager {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#getOrCreateStringValueConverterClass(INattableModelManager, Map, String)
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public AbstractStringValueConverter getOrCreateStringValueConverterClass(INattableModelManager tableManager, Map<Class<? extends AbstractStringValueConverter>, AbstractStringValueConverter> existingConverters, String multiValueSeparator) {
 		AbstractStringValueConverter converter = existingConverters.get(this.getClass());
-		if(converter == null) {
+		if (converter == null) {
 			converter = new AbstractStringValueConverter() {
 
 				@Override
 				public void dispose() {
-					//nothing to do
+					// nothing to do
 				}
 
 				@Override
 				protected ConvertedValueContainer<?> doDeduceValueFromString(Object type, String valueAsString) {
-					//nothing to do
+					// nothing to do
 					return null;
 				}
 			};
@@ -181,9 +179,9 @@ public abstract class AbstractCellManager implements ICellManager {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#isCellEditable(java.lang.Object, java.lang.Object, java.util.Map)
-	 * 
+	 *
 	 * @param columnElement
 	 * @param rowElement
 	 * @param sharedMap
@@ -195,11 +193,10 @@ public abstract class AbstractCellManager implements ICellManager {
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#setStringValue(java.lang.Object, java.lang.Object, java.lang.String,
-	 *      org.eclipse.papyrus.infra.tools.converter.AbstractStringValueConverter,
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#setStringValue(java.lang.Object, java.lang.Object, java.lang.String, org.eclipse.papyrus.infra.tools.converter.AbstractStringValueConverter,
 	 *      org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager, java.util.Map)
-	 * 
+	 *
 	 * @param columnElement
 	 * @param rowElement
 	 * @param valueAsString
@@ -209,6 +206,6 @@ public abstract class AbstractCellManager implements ICellManager {
 	 */
 	@Override
 	public void setStringValue(Object columnElement, Object rowElement, String valueAsString, AbstractStringValueConverter valueConverter, INattableModelManager tableManager, Map<?, ?> sharedMap) {
-		//do nothing
+		// do nothing
 	}
 }

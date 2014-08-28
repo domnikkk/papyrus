@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,9 +41,9 @@ public class PaletteAspectToolEntryProxy extends PaletteEntryProxy implements IP
 
 	/**
 	 * Creates a new {@link PaletteAspectToolEntryProxy}
-	 * 
+	 *
 	 * @param entry
-	 *        the proxied entry
+	 *            the proxied entry
 	 */
 	public PaletteAspectToolEntryProxy(AspectCreationEntry entry) {
 		super(entry);
@@ -53,7 +53,7 @@ public class PaletteAspectToolEntryProxy extends PaletteEntryProxy implements IP
 
 	/**
 	 * returns the list of post actions attached to this {@link PaletteAspectToolEntryProxy}
-	 * 
+	 *
 	 * @return the list of post actions attached to this {@link PaletteAspectToolEntryProxy}
 	 */
 	public List<IPostAction> getPostActions() {
@@ -65,9 +65,9 @@ public class PaletteAspectToolEntryProxy extends PaletteEntryProxy implements IP
 	 * <p>
 	 * Warning! This should not be used to initialize the list of action, only move the already existing actions.
 	 * </p>
-	 * 
+	 *
 	 * @param postActions
-	 *        the postActions to set
+	 *            the postActions to set
 	 */
 	public void setPostActions(List<IPostAction> postActions) {
 		this.postActions = postActions;
@@ -75,7 +75,7 @@ public class PaletteAspectToolEntryProxy extends PaletteEntryProxy implements IP
 
 	/**
 	 * returns the list of pre actions attached to this {@link PaletteAspectToolEntryProxy}
-	 * 
+	 *
 	 * @return the list of pre actions attached to this {@link PaletteAspectToolEntryProxy}
 	 */
 	public List<IPreAction> getPreActions() {
@@ -86,9 +86,9 @@ public class PaletteAspectToolEntryProxy extends PaletteEntryProxy implements IP
 	 * Sets the list of pre actions attached to this {@link PaletteAspectToolEntryProxy}
 	 * <p>
 	 * Warning! This should not be used to initialize the list of action, only move the already existing actions.
-	 * 
+	 *
 	 * @param preActions
-	 *        the preActions to set
+	 *            the preActions to set
 	 */
 	protected void setPreActions(List<IPreAction> preActions) {
 		this.preActions = preActions;
@@ -96,7 +96,7 @@ public class PaletteAspectToolEntryProxy extends PaletteEntryProxy implements IP
 
 	/**
 	 * returns the list of aspect actions attached to this {@link PaletteAspectToolEntryProxy}
-	 * 
+	 *
 	 * @return the list of aspect actions attached to this {@link PaletteAspectToolEntryProxy}
 	 */
 	public List<IAspectAction> getAspectActions() {
@@ -111,8 +111,8 @@ public class PaletteAspectToolEntryProxy extends PaletteEntryProxy implements IP
 	 */
 	protected void initAspectActions() {
 		Object value = getEntry().getAspectProperties(IPapyrusPaletteConstant.ASPECT_ACTION_KEY);
-		if(value instanceof NodeList) {
-			PaletteUtil.initAspectActions((NodeList)value, postActions, preActions);
+		if (value instanceof NodeList) {
+			PaletteUtil.initAspectActions((NodeList) value, postActions, preActions);
 		}
 	}
 
@@ -135,12 +135,12 @@ public class PaletteAspectToolEntryProxy extends PaletteEntryProxy implements IP
 
 	/**
 	 * returns the small icon of the cached entry
-	 * 
+	 *
 	 * @return the small icon of the cached entry
 	 */
 	@Override
 	public Image getImage() {
-		if(getImagePath() != null && !getImagePath().equals("")) {
+		if (getImagePath() != null && !getImagePath().equals("")) {
 			return Activator.getPluginIconImage(Activator.ID, getImagePath());
 		}
 		return super.getImage();
@@ -151,12 +151,12 @@ public class PaletteAspectToolEntryProxy extends PaletteEntryProxy implements IP
 	 */
 	@Override
 	public AspectCreationEntry getEntry() {
-		return (AspectCreationEntry)super.getEntry();
+		return (AspectCreationEntry) super.getEntry();
 	}
 
 	/**
 	 * Returns the ID of the referenced entry of the aspect entry
-	 * 
+	 *
 	 * @return the ID of the referenced entry of the aspect entry
 	 */
 	public String getReferencedPaletteID() {
@@ -165,14 +165,14 @@ public class PaletteAspectToolEntryProxy extends PaletteEntryProxy implements IP
 
 	/**
 	 * Returns the list of stereotypes Qualified names to apply
-	 * 
+	 *
 	 * @return the list of stereotypes qualified names to apply
 	 */
 	public List<String> getStereotypesQNList() {
 		List<String> list = new ArrayList<String>();
-		for(IAspectAction action : postActions) {
-			if(action instanceof StereotypePostAction) {
-				list.addAll(((StereotypePostAction)action).getStereotypesToApply());
+		for (IAspectAction action : postActions) {
+			if (action instanceof StereotypePostAction) {
+				list.addAll(((StereotypePostAction) action).getStereotypesToApply());
 			}
 		}
 		return list;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.papyrus.uml.diagram.common.locator.AdvancedBorderItemLocator;
 
 /**
  * This class is used to constrain the position of an Expansion Node
- * 
+ *
  * TODO : The node is not re-sizable
  */
 public class ExpansionNodePositionLocator extends AdvancedBorderItemLocator {
@@ -58,7 +58,7 @@ public class ExpansionNodePositionLocator extends AdvancedBorderItemLocator {
 		// reset bounds of borderItem
 		Dimension size = getSize(borderItem);
 		Rectangle rectSuggested = getConstraint().getCopy();
-		if(rectSuggested.getTopLeft().x == 0 && rectSuggested.getTopLeft().y == 0) {
+		if (rectSuggested.getTopLeft().x == 0 && rectSuggested.getTopLeft().y == 0) {
 			rectSuggested.setLocation(getPreferredLocation(borderItem));
 		} else {
 			// recovered constraint must be translated with the parent location

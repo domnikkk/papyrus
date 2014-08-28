@@ -44,11 +44,11 @@ public abstract class AbstractExtendedURIBuilder implements IExtendedURISuperSet
 
 	/**
 	 * Instantiates a new abstract extended uri builder.
-	 * 
+	 *
 	 * @param uris
-	 *        the uris
+	 *            the uris
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 */
 	public AbstractExtendedURIBuilder(Set<IExtendedURI> uris, ResourceSet resourceSet) {
 		this.uris = uris;
@@ -67,14 +67,14 @@ public abstract class AbstractExtendedURIBuilder implements IExtendedURISuperSet
 
 	/**
 	 * Do build.
-	 * 
+	 *
 	 * @return the sets the
 	 */
 	protected abstract Set<IExtendedURI> doBuild();
 
 	/**
 	 * Gets the uris.
-	 * 
+	 *
 	 * @return the uris
 	 */
 	protected Set<IExtendedURI> getUris() {
@@ -87,6 +87,7 @@ public abstract class AbstractExtendedURIBuilder implements IExtendedURISuperSet
 	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.participants.IExtendedURISuperSet#getResourceSet()
 	 */
+	@Override
 	public ResourceSet getResourceSet() {
 		return resourceSet;
 	}
@@ -97,8 +98,9 @@ public abstract class AbstractExtendedURIBuilder implements IExtendedURISuperSet
 	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.participants.IExtendedURISuperSet#getExtendedSet()
 	 */
+	@Override
 	public Set<IExtendedURI> getExtendedSet() {
-		if(uriToHandle == null) {
+		if (uriToHandle == null) {
 			uriToHandle = new HashSet<IExtendedURI>();
 		}
 		return uriToHandle;
@@ -106,14 +108,14 @@ public abstract class AbstractExtendedURIBuilder implements IExtendedURISuperSet
 
 	/**
 	 * Gets the target resources.
-	 * 
+	 *
 	 * @return the target resources
 	 */
 	protected Set<Resource> getTargetResources() {
 		Set<Resource> resourcesTolock = new HashSet<Resource>();
-		for(IExtendedURI toLock : getExtendedSet()) {
+		for (IExtendedURI toLock : getExtendedSet()) {
 			Resource resource = getResourceSet().getResource(toLock.getUri(), false);
-			if(resource != null) {
+			if (resource != null) {
 				resourcesTolock.add(resource);
 			}
 		}
@@ -122,13 +124,13 @@ public abstract class AbstractExtendedURIBuilder implements IExtendedURISuperSet
 
 	/**
 	 * To resource.
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 * @return the resource
 	 */
 	protected Resource toResource(URI uri) {
-		if(uri != null) {
+		if (uri != null) {
 			return toResouceFunction.apply(uri);
 		}
 		return null;
@@ -139,17 +141,17 @@ public abstract class AbstractExtendedURIBuilder implements IExtendedURISuperSet
 
 	/**
 	 * Gets the resource uri.
-	 * 
+	 *
 	 * @param extendedURI
-	 *        the extended uri
+	 *            the extended uri
 	 * @return the resource uri
 	 */
 	protected IExtendedURI getResourceURI(IExtendedURI extendedURI) {
 		URI uri = extendedURI.getUri();
 		IExtendedURI resourceURI = null;
-		if(URIUtils.isResourceURI(uri, getResourceSet())) {
+		if (URIUtils.isResourceURI(uri, getResourceSet())) {
 			resourceURI = extendedURI;
-		} else if(URIUtils.isEObject(uri, getResourceSet())) {
+		} else if (URIUtils.isEObject(uri, getResourceSet())) {
 			resourceURI = new ExtendedURI(uri.trimFragment()).setContainment(extendedURI.isContainment());
 		}
 		return resourceURI;

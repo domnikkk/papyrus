@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin - CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  <a href="mailto:thomas.szadel@atosorigin.com">Thomas Szadel</a> - Initial API and implementation
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr
- *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Save only modified resources and delete only old version of renamed resources 
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Save only modified resources and delete only old version of renamed resources
  *****************************************************************************/
 package org.eclipse.papyrus.infra.ui.resources.refactoring;
 
@@ -52,6 +52,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.ltk.core.refactoring.resource.RenameResourceChange;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.modelsetquery.IModelSetQueryAdapter;
 import org.eclipse.papyrus.infra.core.modelsetquery.ModelSetQuery;
@@ -73,9 +74,9 @@ import org.eclipse.ui.part.FileEditorInput;
 /**
  * Rename the model.<BR>
  * <b>Note</b>: That change should be called inside a rename operation as it assumes that a {@link RenameResourceChange} occured.
- * 
+ *
  * @author tszadel
- * 
+ *
  */
 public class RenameModelChange extends Change {
 
@@ -99,27 +100,27 @@ public class RenameModelChange extends Change {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param resourceSet
-	 *        The resource set being changed.
+	 *            The resource set being changed.
 	 * @param oldFile
-	 *        The old file.
+	 *            The old file.
 	 * @param newFile
-	 *        The new file.
+	 *            The new file.
 	 * @param impacted
 	 */
 	public RenameModelChange(IFile oldFile, IFile newFile, Collection<? extends IResource> impacted) {
 		this.oldFile = oldFile;
 		this.newFile = newFile;
 		this.impacted = impacted;
-		
+
 		IPath newPathWithoutExt = newFile.getFullPath().removeFileExtension();
 
 		// Create the map of URI that are being modified in the resource set
 		relatedFiles = ModelParticipantHelpers.getRelatedFiles(oldFile);
 		relatedFiles.add(oldFile);
-		
-		for(IResource iResource : relatedFiles) {
+
+		for (IResource iResource : relatedFiles) {
 			IPath path = iResource.getFullPath();
 			URI oldURI = getPlatformURI(path);
 			URI newURI = getPlatformURI(newPathWithoutExt.addFileExtension(path.getFileExtension()));
@@ -129,9 +130,9 @@ public class RenameModelChange extends Change {
 
 	/**
 	 * Overrides getModifiedElement.
-	 * 
+	 *
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ltk.core.refactoring.Change#getModifiedElement()
 	 */
 	@Override
@@ -141,21 +142,21 @@ public class RenameModelChange extends Change {
 
 	/**
 	 * Overrides getName.
-	 * 
+	 *
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ltk.core.refactoring.Change#getName()
 	 */
 	@Override
 	public String getName() {
-		return Messages.bind(Messages.RenameModelChange_Name, oldFile.getName());
+		return NLS.bind(Messages.RenameModelChange_Name, oldFile.getName());
 	}
 
 	/**
 	 * Overrides initializeValidationData.
-	 * 
+	 *
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ltk.core.refactoring.Change#initializeValidationData(org.eclipse.core.runtime.IProgressMonitor)
 	 */
 	@Override
@@ -165,9 +166,9 @@ public class RenameModelChange extends Change {
 
 	/**
 	 * Overrides isValid.
-	 * 
+	 *
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ltk.core.refactoring.Change#isValid(org.eclipse.core.runtime.IProgressMonitor)
 	 */
 	@Override
@@ -184,9 +185,9 @@ public class RenameModelChange extends Change {
 
 			public void run() {
 				IMultiDiagramEditor[] multiEditors = EditorUtils.getRelatedEditors(oldFile);
-				if(multiEditors != null && multiEditors.length > 0) {
-					for(IMultiDiagramEditor editor : multiEditors) {
-						if(editor.isDirty()) {
+				if (multiEditors != null && multiEditors.length > 0) {
+					for (IMultiDiagramEditor editor : multiEditors) {
+						if (editor.isDirty()) {
 							editor.doSave(new NullProgressMonitor());
 						}
 						openedEditors.add(editor);
@@ -204,13 +205,13 @@ public class RenameModelChange extends Change {
 			ModelsReader reader = new ModelsReader();
 			reader.readModel(resourceSet);
 			resourceSet.loadModels(oldFile);
-			for(IResource r : impacted) {
-				if(r instanceof IFile) {
-					IFile file = (IFile)r;
+			for (IResource r : impacted) {
+				if (r instanceof IFile) {
+					IFile file = (IFile) r;
 					try {
 						resourceSet.getResource(URI.createPlatformResourceURI(file.getFullPath().toString(), true), true);
 					} catch (Exception e) {
-						// to avoid load errors 
+						// to avoid load errors
 					}
 				}
 			}
@@ -234,30 +235,30 @@ public class RenameModelChange extends Change {
 
 	/**
 	 * Get a platform resource URI of the given path
-	 * 
+	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @return the uri
 	 */
 	private URI getPlatformURI(IPath path) {
 		return URI.createPlatformResourceURI(path.toString(), true);
 	}
-	
+
 	/**
 	 * Overrides perform.
-	 * 
+	 *
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ltk.core.refactoring.Change#perform(org.eclipse.core.runtime.IProgressMonitor)
 	 */
 	@Override
 	public Change perform(IProgressMonitor pm) throws CoreException {
 
-		String lMsg = Messages.bind(Messages.RenameModelChange_Change, oldFile.getName(), newFile.getName());
+		String lMsg = NLS.bind(Messages.RenameModelChange_Change, oldFile.getName(), newFile.getName());
 		isUndoOperation = oldFile.exists() && !newFile.exists();
 
-		if(!isUndoOperation) {
-			//The file has already been renamed. Undo the rename change, then do the full refactoring in the resource set
+		if (!isUndoOperation) {
+			// The file has already been renamed. Undo the rename change, then do the full refactoring in the resource set
 			newFile.move(oldFile.getFullPath(), true, new SubProgressMonitor(pm, 1));
 		}
 
@@ -268,14 +269,14 @@ public class RenameModelChange extends Change {
 			doRun(pm, resourceSet, domain);
 			// Now, save all the resources
 			pm.subTask(Messages.RenameModelChange_savingResource);
-			for(Resource res : resourceSet.getResources()) {
-				if(res.getURI().isPlatformResource()) {
+			for (Resource res : resourceSet.getResources()) {
+				if (res.getURI().isPlatformResource()) {
 					try {
-						if (res.isModified()){
+						if (res.isModified()) {
 							res.save(ResourceUtils.getSaveOptions());
 						}
 					} catch (Exception e) {
-						log.error(Messages.bind(Messages.RenameModelChange_ErrorLoading, res.getURI()), e);
+						log.error(NLS.bind(Messages.RenameModelChange_ErrorLoading, res.getURI()), e);
 					}
 				}
 			}
@@ -287,16 +288,16 @@ public class RenameModelChange extends Change {
 			pm.worked(1);
 
 			// Now, notify the editor of the change
-			if(!openedEditors.isEmpty()) {
+			if (!openedEditors.isEmpty()) {
 				Display.getDefault().syncExec(new Runnable() {
 
 					public void run() {
 						// Get the DI file as the rename could occur on any model's file.
 						IFile newDiFile = DiModelUtils.getRelatedDiFile(newFile);
-						for(IMultiDiagramEditor editor : openedEditors) {
+						for (IMultiDiagramEditor editor : openedEditors) {
 							try {
 								ModelSet diRes = editor.getServicesRegistry().getService(ModelSet.class);
-								if(diRes != null) {
+								if (diRes != null) {
 									diRes.saveAs(newFile.getFullPath());
 								}
 								editor.setEditorInput(new FileEditorInput(newDiFile));
@@ -313,14 +314,14 @@ public class RenameModelChange extends Change {
 
 			// Then, remove the old model files
 			pm.subTask(Messages.RenameModelChange_RemoveOldFile);
-			for(IResource iResource : relatedFiles) {
-				if(iResource.exists()) {
+			for (IResource iResource : relatedFiles) {
+				if (iResource.exists()) {
 					IPath path = iResource.getFullPath();
 					URI oldURI = getPlatformURI(path);
 					URI newURI = uriMap.get(oldURI);
 					URIConverter uriConverter = resourceSet.getURIConverter();
-					if (uriConverter.exists(newURI, Collections.EMPTY_MAP)){
-						iResource.delete(true, new NullProgressMonitor());						
+					if (uriConverter.exists(newURI, Collections.EMPTY_MAP)) {
+						iResource.delete(true, new NullProgressMonitor());
 					}
 				}
 			}
@@ -328,12 +329,12 @@ public class RenameModelChange extends Change {
 
 			RenameModelChange undoChange = new RenameModelChange(newFile, oldFile, revertImpactedFiles);
 
-			if(isUndoOperation) {
-				//Restore the expected state for the basic rename change
+			if (isUndoOperation) {
+				// Restore the expected state for the basic rename change
 				newFile.move(oldFile.getFullPath(), true, new SubProgressMonitor(pm, 1));
 			}
 
-			//Invert the change
+			// Invert the change
 			return undoChange;
 		} finally {
 			pm.done();
@@ -346,12 +347,12 @@ public class RenameModelChange extends Change {
 		Set<IResource> relatedFiles = ModelParticipantHelpers.getRelatedFiles(oldFile);
 		relatedFiles.add(oldFile);
 
-		for(IResource initialResource : impacted) {
-			if(relatedFiles.contains(initialResource)) {
+		for (IResource initialResource : impacted) {
+			if (relatedFiles.contains(initialResource)) {
 				IResource invertedResource = invertFileName(initialResource);
-				result.add(invertedResource); //Participant model (the file is renamed)
+				result.add(invertedResource); // Participant model (the file is renamed)
 			} else {
-				result.add(initialResource); //Client model (only links are modified)
+				result.add(initialResource); // Client model (only links are modified)
 			}
 		}
 
@@ -380,33 +381,33 @@ public class RenameModelChange extends Change {
 			protected void doExecute() {
 
 				// got though resources, to find if a resources that reference one of uri map is read only
-				for(URI uri : uriMap.keySet()) {
+				for (URI uri : uriMap.keySet()) {
 					Resource r = resourceSet.getResource(uri, false);
 					ECrossReferenceAdapter adapter = ECrossReferenceAdapter.getCrossReferenceAdapter(resourceSet);
-					if(adapter == null) {
+					if (adapter == null) {
 						adapter = new ECrossReferenceAdapter();
 						adapter.setTarget(resourceSet);
 					}
-					if(r != null) {
-						for(Iterator<EObject> i = EcoreUtil.getAllProperContents(r, false); i.hasNext();) {
+					if (r != null) {
+						for (Iterator<EObject> i = EcoreUtil.getAllProperContents(r, false); i.hasNext();) {
 							EObject e = i.next();
 
-							//look for all references where e is playing
+							// look for all references where e is playing
 							Collection<Setting> references = adapter.getInverseReferences(e);
-							for(Setting s : references) {
+							for (Setting s : references) {
 								// get the EObject that play with e
 								EObject eObject = s.getEObject();
 
-								//this is the same resource --> not interesting
-								if((eObject.eResource() != null) && !(eObject.eResource().equals(e.eResource()))) {
-									//this is a external resource that references uri map
-									//if not not interesting
+								// this is the same resource --> not interesting
+								if ((eObject.eResource() != null) && !(eObject.eResource().equals(e.eResource()))) {
+									// this is a external resource that references uri map
+									// if not not interesting
 									EStructuralFeature eFeature = s.getEStructuralFeature();
 
-									if((!eFeature.isDerived()) && (eObject.eClass().getEAllStructuralFeatures().contains(eFeature))) {
-										if(eObject.eResource() != null && EMFHelper.isReadOnly(eObject.eResource(), domain)) {
+									if ((!eFeature.isDerived()) && (eObject.eClass().getEAllStructuralFeatures().contains(eFeature))) {
+										if (eObject.eResource() != null && EMFHelper.isReadOnly(eObject.eResource(), domain)) {
 											boolean isWritable = EMFHelper.canMakeWritable(eObject.eResource(), domain);
-											if(isWritable) {
+											if (isWritable) {
 												readOnlies.add(eObject.eResource());
 											}
 										}
@@ -420,11 +421,11 @@ public class RenameModelChange extends Change {
 
 		});
 		// if read only => error to the user
-		if(!readOnlies.isEmpty()) {
+		if (!readOnlies.isEmpty()) {
 			ReadOnlyManager readOnlyManager = new ReadOnlyManager(domain);
 			Collection<URI> uris = new ArrayList<URI>();
-			for(Iterator<Resource> iterator = readOnlies.iterator(); iterator.hasNext();) {
-				Resource r = (Resource)iterator.next();
+			for (Iterator<Resource> iterator = readOnlies.iterator(); iterator.hasNext();) {
+				Resource r = iterator.next();
 				uris.add(r.getURI());
 			}
 
@@ -443,40 +444,40 @@ public class RenameModelChange extends Change {
 				// TODO change this code when history will be useless
 				URI modifiedURI = URI.createPlatformResourceURI(oldFile.getFullPath().removeFileExtension().toString(), true);
 				IModelSetQueryAdapter controledResourcesAdapter = ModelSetQuery.getExistingTypeCacheAdapter(resourceSet);
-				if(controledResourcesAdapter != null) {
+				if (controledResourcesAdapter != null) {
 					EObject first = null;
-					for(Iterator<Notifier> i = resourceSet.getAllContents(); i.hasNext();) {
+					for (Iterator<Notifier> i = resourceSet.getAllContents(); i.hasNext();) {
 						Notifier n = i.next();
-						if(n instanceof EObject) {
-							first = (EObject)n;
+						if (n instanceof EObject) {
+							first = (EObject) n;
 							break;
 						}
 					}
-					if(first != null) {
+					if (first != null) {
 						Collection<EObject> resources = null;
 						try {
 							resources = controledResourcesAdapter.getReachableObjectsOfType(first, historyPackage.Literals.CONTROLED_RESOURCE);
 						} catch (RuntimeException e) {
-							// in case of errors integrity must be valid 
+							// in case of errors integrity must be valid
 							// even performances are bad
 							resources = new LinkedList<EObject>();
-							for(int i = 0; i < resourceSet.getResources().size(); i++) {
+							for (int i = 0; i < resourceSet.getResources().size(); i++) {
 								Resource r = resourceSet.getResources().get(i);
-								for(Iterator<EObject> it = r.getAllContents(); it.hasNext();) {
+								for (Iterator<EObject> it = r.getAllContents(); it.hasNext();) {
 									EObject tmp = it.next();
-									if(tmp instanceof ControledResource) {
-										ControledResource controled = (ControledResource)tmp;
+									if (tmp instanceof ControledResource) {
+										ControledResource controled = (ControledResource) tmp;
 										resources.add(controled);
 									}
 								}
 							}
 						}
-						for(EObject e : resources) {
-							if(e instanceof ControledResource) {
-								ControledResource controled = (ControledResource)e;
+						for (EObject e : resources) {
+							if (e instanceof ControledResource) {
+								ControledResource controled = (ControledResource) e;
 								URI baseURI = URI.createURI(e.eResource().getURI().trimSegments(1).trimFragment().toString() + "/");
 								URI resolvedURI = URI.createURI(controled.getResourceURL()).resolve(baseURI);
-								if(resolvedURI.trimFileExtension().equals(modifiedURI.trimFileExtension())) {
+								if (resolvedURI.trimFileExtension().equals(modifiedURI.trimFileExtension())) {
 									String ext = resolvedURI.fileExtension();
 									URI newURL = URI.createURI(resolvedURI.trimSegments(1).toString() + "/" + newFile.getFullPath().removeFileExtension().lastSegment().toString() + "." + ext);
 									controled.setResourceURL(newURL.deresolve(baseURI).toString());
@@ -489,12 +490,12 @@ public class RenameModelChange extends Change {
 		});
 		// Change the uri of the files
 		pm.subTask(Messages.RenameModelChange_ModifyURI);
-		for(Resource res : resourceSet.getResources()) {
-			if(res.getURI().isPlatformResource()) {
+		for (Resource res : resourceSet.getResources()) {
+			if (res.getURI().isPlatformResource()) {
 				URI newURI = uriMap.get(res.getURI());
-				if(newURI != null) {
-					if(log.isDebugEnabled()) {
-						log.debug(Messages.bind(Messages.RenameModelChange_6, Arrays.asList(res.getURI(), newURI)));
+				if (newURI != null) {
+					if (log.isDebugEnabled()) {
+						log.debug(NLS.bind(Messages.RenameModelChange_6, Arrays.asList(res.getURI(), newURI)));
 					}
 					res.setURI(newURI);
 				}

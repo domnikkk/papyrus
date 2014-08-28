@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,8 +24,8 @@ import org.eclipse.papyrus.integrationtests.editor.ProgramaticPapyrusEditor;
 
 /**
  * A handler allowing to perform undo and redo through the {@link IOperationHistory}
- * 
- * 
+ *
+ *
  * @author cedric dumoulin
  *
  */
@@ -37,12 +37,12 @@ public class OperationHistoryHandler implements IOperationHistoryHandler {
 	protected IOperationHistory history;
 
 	private IUndoContext papyrusContext;
-	
+
 	/**
 	 * Constructor.
 	 *
 	 * @param papyrusEditor
-	 * @throws ServiceException 
+	 * @throws ServiceException
 	 */
 	public OperationHistoryHandler(ProgramaticPapyrusEditor handler) throws ServiceException {
 		this.papyrusEditor = handler.getEditor();
@@ -55,29 +55,33 @@ public class OperationHistoryHandler implements IOperationHistoryHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public boolean canRedo() {
 		return history.canRedo(papyrusContext);
 	}
+
 	/**
 	 * @see org.eclipse.papyrus.integrationtests.editor.operationhistory.IOperationHistoryHandler#redo()
 	 *
 	 * @throws ExecutionException
 	 */
+	@Override
 	public void redo() throws ExecutionException {
 		try {
 			history.redo(papyrusContext, null, null);
 		} catch (org.eclipse.core.commands.ExecutionException e) {
 			throw new ExecutionException(e);
-		}	
+		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public boolean canUndo() {
 		return history.canUndo(papyrusContext);
 	}
@@ -87,12 +91,13 @@ public class OperationHistoryHandler implements IOperationHistoryHandler {
 	 *
 	 * @throws ExecutionException
 	 */
-	public void undo() throws ExecutionException  {
+	@Override
+	public void undo() throws ExecutionException {
 		try {
 			history.undo(papyrusContext, null, null);
 		} catch (org.eclipse.core.commands.ExecutionException e) {
 			throw new ExecutionException(e);
-		}	
+		}
 	}
 
 }

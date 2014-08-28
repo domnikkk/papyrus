@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,15 +54,15 @@ public class ActivityEdgeWeightParser extends MessageFormatParser implements ISe
 	}
 
 	public ActivityEdgeWeightParser() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() });
 	}
 
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -70,11 +70,12 @@ public class ActivityEdgeWeightParser extends MessageFormatParser implements ISe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.uml.diagram.sequence.parsers.AbstractParser#isAffectingEvent
 	 * (java.lang.Object , int)
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		EStructuralFeature feature = getEStructuralFeature(event);
 		return isValidFeature(feature);
@@ -83,7 +84,7 @@ public class ActivityEdgeWeightParser extends MessageFormatParser implements ISe
 	@Override
 	public String getEditString(IAdaptable adapter, int flags) {
 		String value = getValueString(adapter, flags);
-		if(value != null) {
+		if (value != null) {
 			return value;
 		}
 		return "";
@@ -93,13 +94,13 @@ public class ActivityEdgeWeightParser extends MessageFormatParser implements ISe
 	public ICommand getParseCommand(IAdaptable adapter, String newString, int flags) {
 		Object obj = adapter.getAdapter(EObject.class);
 		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(obj);
-		if(editingDomain == null) {
+		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if(obj instanceof ActivityEdge) {
-			ActivityEdge edge = (ActivityEdge)obj;
+		if (obj instanceof ActivityEdge) {
+			ActivityEdge edge = (ActivityEdge) obj;
 			ValueSpecification valueSpec = edge.getWeight();
-			if(valueSpec != null) {
+			if (valueSpec != null) {
 				CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, "Set Values"); //$NON-NLS-1$
 				command.compose(new CommandProxy(new SetValueSpecificationValueCommand(valueSpec, newString)));
 				return command;
@@ -110,13 +111,14 @@ public class ActivityEdgeWeightParser extends MessageFormatParser implements ISe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.parsers.MessageFormatParser#
 	 * getPrintString(org.eclipse .core.runtime.IAdaptable, int)
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		String label = getValueString(element, flags);
-		if(label == null || label.length() == 0) {
+		if (label == null || label.length() == 0) {
 			label = " ";
 		} else {
 			label = String.format(WEIGHT_FORMAT, label);
@@ -129,12 +131,12 @@ public class ActivityEdgeWeightParser extends MessageFormatParser implements ISe
 	 */
 	private String getValueString(IAdaptable element, int flags) {
 		Object obj = element.getAdapter(EObject.class);
-		if(obj instanceof ActivityEdge) {
-			ActivityEdge edge = (ActivityEdge)obj;
+		if (obj instanceof ActivityEdge) {
+			ActivityEdge edge = (ActivityEdge) obj;
 			ValueSpecification valueSpec = edge.getWeight();
-			if(valueSpec != null) {
+			if (valueSpec != null) {
 				String value = ValueSpecificationUtil.getSpecificationValue(valueSpec);
-				if(value != null) {
+				if (value != null) {
 					return value;
 				}
 			}
@@ -144,11 +146,12 @@ public class ActivityEdgeWeightParser extends MessageFormatParser implements ISe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * areSemanticElementsAffected (org.eclipse.emf.ecore.EObject,
 	 * java.lang.Object)
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		EStructuralFeature feature = getEStructuralFeature(notification);
 		return isValidFeature(feature);
@@ -156,16 +159,17 @@ public class ActivityEdgeWeightParser extends MessageFormatParser implements ISe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * getSemanticElementsBeingParsed (org.eclipse.emf.ecore.EObject)
 	 */
+	@Override
 	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-		if(element instanceof ActivityEdge) {
-			ActivityEdge edge = (ActivityEdge)element;
+		if (element instanceof ActivityEdge) {
+			ActivityEdge edge = (ActivityEdge) element;
 			semanticElementsBeingParsed.add(edge);
-			if(edge.getWeight() != null) {
+			if (edge.getWeight() != null) {
 				semanticElementsBeingParsed.add(edge.getWeight());
 			}
 		}
@@ -175,9 +179,9 @@ public class ActivityEdgeWeightParser extends MessageFormatParser implements ISe
 	/**
 	 * Determines if the given feature has to be taken into account in this
 	 * parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {

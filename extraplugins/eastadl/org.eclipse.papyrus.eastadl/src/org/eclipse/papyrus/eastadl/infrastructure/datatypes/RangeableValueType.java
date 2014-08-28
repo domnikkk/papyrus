@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,23 +23,23 @@ package org.eclipse.papyrus.eastadl.infrastructure.datatypes;
  *
  * <!-- begin-model-doc -->
  * The RangeableValueType is a specific datatype applicable for numerical datatypes. It describes the accuracy, resolution, and the significant digits of the baseRangeable datatypes.
- * 
+ *
  * Semantics:
  * The RangeableValueType adds the ability to describe the accuracy, resolution, and the significant digits of the baseRangeable datatype.
- * 
+ *
  * Notation:
  * The datatype RangeableValueType is denoted using the rectangle symbol with keyword «Datatype RangeableValueType».
- * 
+ *
  * Extension: UML Datatype
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getAccuracy <em>Accuracy</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getResolution <em>Resolution</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getSignificantDigits <em>Significant Digits</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getBaseRangeable <em>Base Rangeable</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getAccuracy <em>Accuracy</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getResolution <em>Resolution</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getSignificantDigits <em>Significant Digits</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getBaseRangeable <em>Base Rangeable</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,10 +52,10 @@ public interface RangeableValueType extends EADatatype {
 	 * Returns the value of the '<em><b>Accuracy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Accuracy</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Accuracy</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Accuracy</em>' attribute.
 	 * @see #setAccuracy(Float)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getRangeableValueType_Accuracy()
@@ -68,10 +68,10 @@ public interface RangeableValueType extends EADatatype {
 	 * Returns the value of the '<em><b>Resolution</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Resolution</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Resolution</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Resolution</em>' attribute.
 	 * @see #setResolution(Float)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getRangeableValueType_Resolution()
@@ -84,10 +84,10 @@ public interface RangeableValueType extends EADatatype {
 	 * Returns the value of the '<em><b>Significant Digits</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Significant Digits</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Significant Digits</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Significant Digits</em>' attribute.
 	 * @see #setSignificantDigits(int)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getRangeableValueType_SignificantDigits()
@@ -100,7 +100,9 @@ public interface RangeableValueType extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getAccuracy <em>Accuracy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Accuracy</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Accuracy</em>' attribute.
 	 * @see #getAccuracy()
 	 * @generated
 	 */
@@ -110,7 +112,9 @@ public interface RangeableValueType extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getResolution <em>Resolution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Resolution</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Resolution</em>' attribute.
 	 * @see #getResolution()
 	 * @generated
 	 */
@@ -120,7 +124,9 @@ public interface RangeableValueType extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getSignificantDigits <em>Significant Digits</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Significant Digits</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Significant Digits</em>' attribute.
 	 * @see #getSignificantDigits()
 	 * @generated
 	 */
@@ -130,10 +136,10 @@ public interface RangeableValueType extends EADatatype {
 	 * Returns the value of the '<em><b>Base Rangeable</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Rangeable</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Rangeable</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Rangeable</em>' reference.
 	 * @see #setBaseRangeable(EANumerical)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getRangeableValueType_BaseRangeable()
@@ -146,7 +152,9 @@ public interface RangeableValueType extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getBaseRangeable <em>Base Rangeable</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Rangeable</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Rangeable</em>' reference.
 	 * @see #getBaseRangeable()
 	 * @generated
 	 */

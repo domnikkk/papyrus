@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -22,6 +22,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.papyrus.gmf.diagram.common.edit.policy.CompartmentSemanticEditPolicy;
 import org.eclipse.papyrus.infra.extendedtypes.types.IExtendedHintedElementType;
 import org.eclipse.papyrus.infra.services.edit.commands.IConfigureCommandFactory;
+import org.eclipse.papyrus.sysml.blocks.Block;
 import org.eclipse.papyrus.sysml.diagram.common.commands.CreateFlowPortWithFlowSpecificationConfigureCommandFactory;
 import org.eclipse.papyrus.sysml.service.types.element.SysMLElementTypes;
 
@@ -38,18 +39,18 @@ public class FlowPortCompartmentSemanticEditPolicy extends CompartmentSemanticEd
 
 		IElementType elementTypeToCreate = req.getElementType();
 		IElementType baseType = elementTypeToCreate;
-		//if extended type, retrieve the sysml closest element element type
-		if(elementTypeToCreate instanceof IExtendedHintedElementType) {
+		// if extended type, retrieve the sysml closest element element type
+		if (elementTypeToCreate instanceof IExtendedHintedElementType) {
 			List<IElementType> superTypes = Arrays.asList(elementTypeToCreate.getAllSuperTypes());
-			if(superTypes.contains(SysMLElementTypes.FLOW_PORT_NA)) {
+			if (superTypes.contains(SysMLElementTypes.FLOW_PORT_NA)) {
 				baseType = SysMLElementTypes.FLOW_PORT_NA;
-			} 
+			}
 		}
-		
-		if(SysMLElementTypes.FLOW_PORT_NA == baseType) {
+
+		if (SysMLElementTypes.FLOW_PORT_NA == baseType) {
 			req.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new CreateFlowPortWithFlowSpecificationConfigureCommandFactory());
 		}
-		
+
 		return super.getCreateCommand(req);
 	}
 }

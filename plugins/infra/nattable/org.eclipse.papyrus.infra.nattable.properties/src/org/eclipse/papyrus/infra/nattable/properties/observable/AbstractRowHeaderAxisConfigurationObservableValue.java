@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,29 +25,29 @@ import org.eclipse.papyrus.infra.nattable.utils.TableEditingDomainUtils;
 
 /**
  * Abstract class for the rowHeaderAxisConfiguration
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public abstract class AbstractRowHeaderAxisConfigurationObservableValue extends AbstractConfigurationElementObservableValue {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param table
-	 *        the managed table
+	 *            the managed table
 	 * @param managedFeature
-	 *        the managed feature
+	 *            the managed feature
 	 */
 	public AbstractRowHeaderAxisConfigurationObservableValue(Table table, EStructuralFeature managedFeature) {
 		super(table, managedFeature);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.properties.observable.AbstractConfigurationElementObservableValue#getEditedEObject()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -56,9 +56,9 @@ public abstract class AbstractRowHeaderAxisConfigurationObservableValue extends 
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doSetValue(java.lang.Object)
-	 * 
+	 *
 	 * @param value
 	 */
 	@Override

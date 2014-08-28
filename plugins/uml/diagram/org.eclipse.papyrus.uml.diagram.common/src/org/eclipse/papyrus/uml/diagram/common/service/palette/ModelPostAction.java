@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,6 +47,7 @@ public abstract class ModelPostAction implements IPostAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public IStatus checkPostCondition() {
 		return Status.OK_STATUS;
 	}
@@ -54,6 +55,7 @@ public abstract class ModelPostAction implements IPostAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public IStatus checkPreCondition() {
 		return Status.OK_STATUS;
 	}
@@ -61,6 +63,7 @@ public abstract class ModelPostAction implements IPostAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public void init(Node configurationNode, IAspectActionProvider factory) {
 		this.factory = factory;
 	}
@@ -68,6 +71,7 @@ public abstract class ModelPostAction implements IPostAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public String getFactoryId() {
 		return factory.getFactoryId();
 	}
@@ -75,6 +79,7 @@ public abstract class ModelPostAction implements IPostAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public Image getImage() {
 		return factory.getImage();
 	}
@@ -82,6 +87,7 @@ public abstract class ModelPostAction implements IPostAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public String getLabel() {
 		return factory.getName();
 	}
@@ -89,38 +95,38 @@ public abstract class ModelPostAction implements IPostAction {
 	/**
 	 * Retrieves the valid type of an object given the structural feature for
 	 * which it gives a value
-	 * 
+	 *
 	 * @param feature
-	 *        the valued feature
+	 *            the valued feature
 	 * @param value
-	 *        value of the feature
+	 *            value of the feature
 	 * @return the same value, but correctly cast.
 	 */
 	protected Object getValue(EStructuralFeature feature, Object value) {
 
-		if(feature instanceof EReference) {
-			//Value is a serialized URI. Here, we don't know the resolution context, so we cannot return the EObject
-			URI uri = URI.createURI((String)value);
+		if (feature instanceof EReference) {
+			// Value is a serialized URI. Here, we don't know the resolution context, so we cannot return the EObject
+			URI uri = URI.createURI((String) value);
 			return uri;
 		}
 
 		EClassifier type = feature.getEType();
-		if(type instanceof EDataType) {
+		if (type instanceof EDataType) {
 			Class<?> iClass = type.getInstanceClass();
-			if(Boolean.TYPE.equals(iClass)) {
-				if(value instanceof Boolean) {
+			if (Boolean.TYPE.equals(iClass)) {
+				if (value instanceof Boolean) {
 					// ok
-				} else if(value instanceof String) {
-					value = Boolean.valueOf((String)value);
+				} else if (value instanceof String) {
+					value = Boolean.valueOf((String) value);
 				} else {
 					Activator.log.error("impossible to parse value " + value, null);
 				}
-			} else if(Character.TYPE.equals(iClass)) {
-				if(value instanceof Character) {
+			} else if (Character.TYPE.equals(iClass)) {
+				if (value instanceof Character) {
 					// ok
-				} else if(value instanceof String) {
-					String s = (String)value;
-					if(s.length() == 0) {
+				} else if (value instanceof String) {
+					String s = (String) value;
+					if (s.length() == 0) {
 						value = null;
 					} else {
 						value = new Character(s.charAt(0));
@@ -128,14 +134,14 @@ public abstract class ModelPostAction implements IPostAction {
 				} else {
 					Activator.log.error("impossible to parse value " + value, null);
 				}
-			} else if(Byte.TYPE.equals(iClass)) {
-				if(value instanceof Byte) {
+			} else if (Byte.TYPE.equals(iClass)) {
+				if (value instanceof Byte) {
 					// ok
-				} else if(value instanceof Number) {
-					value = new Byte(((Number)value).byteValue());
-				} else if(value instanceof String) {
-					String s = (String)value;
-					if(s.length() == 0) {
+				} else if (value instanceof Number) {
+					value = new Byte(((Number) value).byteValue());
+				} else if (value instanceof String) {
+					String s = (String) value;
+					if (s.length() == 0) {
 						value = null;
 					} else {
 						try {
@@ -147,14 +153,14 @@ public abstract class ModelPostAction implements IPostAction {
 				} else {
 					Activator.log.error("impossible to parse value " + value, null);
 				}
-			} else if(Short.TYPE.equals(iClass)) {
-				if(value instanceof Short) {
+			} else if (Short.TYPE.equals(iClass)) {
+				if (value instanceof Short) {
 					// ok
-				} else if(value instanceof Number) {
-					value = new Short(((Number)value).shortValue());
-				} else if(value instanceof String) {
-					String s = (String)value;
-					if(s.length() == 0) {
+				} else if (value instanceof Number) {
+					value = new Short(((Number) value).shortValue());
+				} else if (value instanceof String) {
+					String s = (String) value;
+					if (s.length() == 0) {
 						value = null;
 					} else {
 						try {
@@ -166,14 +172,14 @@ public abstract class ModelPostAction implements IPostAction {
 				} else {
 					Activator.log.error("impossible to parse value " + value, null);
 				}
-			} else if(Integer.TYPE.equals(iClass)) {
-				if(value instanceof Integer) {
+			} else if (Integer.TYPE.equals(iClass)) {
+				if (value instanceof Integer) {
 					// ok
-				} else if(value instanceof Number) {
-					value = new Integer(((Number)value).intValue());
-				} else if(value instanceof String) {
-					String s = (String)value;
-					if(s.length() == 0) {
+				} else if (value instanceof Number) {
+					value = new Integer(((Number) value).intValue());
+				} else if (value instanceof String) {
+					String s = (String) value;
+					if (s.length() == 0) {
 						value = null;
 					} else {
 						try {
@@ -185,14 +191,14 @@ public abstract class ModelPostAction implements IPostAction {
 				} else {
 					Activator.log.error("impossible to parse value " + value, null);
 				}
-			} else if(Long.TYPE.equals(iClass)) {
-				if(value instanceof Long) {
+			} else if (Long.TYPE.equals(iClass)) {
+				if (value instanceof Long) {
 					// ok
-				} else if(value instanceof Number) {
-					value = new Long(((Number)value).longValue());
-				} else if(value instanceof String) {
-					String s = (String)value;
-					if(s.length() == 0) {
+				} else if (value instanceof Number) {
+					value = new Long(((Number) value).longValue());
+				} else if (value instanceof String) {
+					String s = (String) value;
+					if (s.length() == 0) {
 						value = null;
 					} else {
 						try {
@@ -204,14 +210,14 @@ public abstract class ModelPostAction implements IPostAction {
 				} else {
 					Activator.log.error("impossible to parse value " + value, null);
 				}
-			} else if(Float.TYPE.equals(iClass)) {
-				if(value instanceof Float) {
+			} else if (Float.TYPE.equals(iClass)) {
+				if (value instanceof Float) {
 					// ok
-				} else if(value instanceof Number) {
-					value = new Float(((Number)value).floatValue());
-				} else if(value instanceof String) {
-					String s = (String)value;
-					if(s.length() == 0) {
+				} else if (value instanceof Number) {
+					value = new Float(((Number) value).floatValue());
+				} else if (value instanceof String) {
+					String s = (String) value;
+					if (s.length() == 0) {
 						value = null;
 					} else {
 						try {
@@ -223,14 +229,14 @@ public abstract class ModelPostAction implements IPostAction {
 				} else {
 					Activator.log.error("impossible to parse value " + value, null);
 				}
-			} else if(Double.TYPE.equals(iClass)) {
-				if(value instanceof Double) {
+			} else if (Double.TYPE.equals(iClass)) {
+				if (value instanceof Double) {
 					// ok
-				} else if(value instanceof Number) {
-					value = new Double(((Number)value).doubleValue());
-				} else if(value instanceof String) {
-					String s = (String)value;
-					if(s.length() == 0) {
+				} else if (value instanceof Number) {
+					value = new Double(((Number) value).doubleValue());
+				} else if (value instanceof String) {
+					String s = (String) value;
+					if (s.length() == 0) {
 						value = null;
 					} else {
 						try {
@@ -242,10 +248,10 @@ public abstract class ModelPostAction implements IPostAction {
 				} else {
 					Activator.log.error("impossible to parse value " + value, null);
 				}
-			} else if(type instanceof EEnum) {
-				if(value instanceof String) {
-					EEnumLiteral literal = ((EEnum)type).getEEnumLiteralByLiteral((String)value);
-					if(literal == null) {
+			} else if (type instanceof EEnum) {
+				if (value instanceof String) {
+					EEnumLiteral literal = ((EEnum) type).getEEnumLiteralByLiteral((String) value);
+					if (literal == null) {
 						Activator.log.error("impossible to parse null value literal", null);
 					} else {
 						value = literal.getInstance();
@@ -258,24 +264,27 @@ public abstract class ModelPostAction implements IPostAction {
 		return value;
 	}
 
+	@Override
 	public void runInPostCommit(EditPart editPart) {
-		//Nothing
+		// Nothing
 	}
 
+	@Override
 	public boolean needsPostCommitRun() {
 		return false;
 	}
 
+	@Override
 	public void setServicesRegistry(ServicesRegistry registry) {
 		this.registry = registry;
 	}
 
 	protected ServicesRegistry getServicesRegistry() {
-		if(registry == null) {
-			//FIXME: #setServicesRegistry() is not always properly called.
-			//Workaround: We rely on the ActiveEditor to retrieve the services registry, which is dangerous
-			//The initial Palette Customization wizard knows the customization context, but it is lost way before the PostAction is created
-			if(registry == null) {
+		if (registry == null) {
+			// FIXME: #setServicesRegistry() is not always properly called.
+			// Workaround: We rely on the ActiveEditor to retrieve the services registry, which is dangerous
+			// The initial Palette Customization wizard knows the customization context, but it is lost way before the PostAction is created
+			if (registry == null) {
 				try {
 					registry = ServiceUtilsForActionHandlers.getInstance().getServiceRegistry();
 				} catch (ServiceException ex) {

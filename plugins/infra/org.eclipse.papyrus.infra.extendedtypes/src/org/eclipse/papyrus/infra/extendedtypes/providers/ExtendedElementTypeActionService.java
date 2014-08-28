@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,7 +41,7 @@ public class ExtendedElementTypeActionService extends Service {
 	static {
 		instance.configureProviders(Activator.PLUGIN_ID, "extendedElementTypeActionProvider"); //$NON-NLS-1$
 	}
-	
+
 	/**
 	 * Default constructor.
 	 */
@@ -51,7 +51,7 @@ public class ExtendedElementTypeActionService extends Service {
 
 	/**
 	 * Returns the singleton instance of this service
-	 * 
+	 *
 	 * @return the singleton instance of this service
 	 */
 	synchronized public static ExtendedElementTypeActionService getInstance() {
@@ -61,13 +61,14 @@ public class ExtendedElementTypeActionService extends Service {
 	/**
 	 * @see org.eclipse.gmf.runtime.common.core.service.Service#newProviderDescriptor(org.eclipse.core.runtime.IConfigurationElement)
 	 */
+	@Override
 	protected Service.ProviderDescriptor newProviderDescriptor(IConfigurationElement element) {
 		return new ProviderDescriptor(element);
 	}
 
 	/**
 	 * Returns all providers in the service
-	 * 
+	 *
 	 * @return the list of providers found or an empty list.
 	 */
 	public List<IExtendedElementTypeActionProvider> getProviders() {
@@ -78,18 +79,18 @@ public class ExtendedElementTypeActionService extends Service {
 
 	/**
 	 * Returns the provider with the given identifier
-	 * 
+	 *
 	 * @param actionConfiguration
-	 *        the actionConfiguration for the provider to retrieve
+	 *            the actionConfiguration for the provider to retrieve
 	 * @return the provider found or <code>null</code>.
 	 */
 	public IExtendedElementTypeActionProvider getProvider(ActionConfiguration actionConfiguration) {
 		@SuppressWarnings({ "unchecked", "rawtypes" })
-		List<IExtendedElementTypeActionProvider> providers = (List)execute(ExecutionStrategy.REVERSE, new GetExtendedElementTypeActionProviderOperation(actionConfiguration));
+		List<IExtendedElementTypeActionProvider> providers = execute(ExecutionStrategy.REVERSE, new GetExtendedElementTypeActionProviderOperation(actionConfiguration));
 		Iterator<IExtendedElementTypeActionProvider> it = providers.iterator();
-		while(it.hasNext()) {
-			IExtendedElementTypeActionProvider aspectActionProvider = (IExtendedElementTypeActionProvider)it.next();
-			if(aspectActionProvider != null) {
+		while (it.hasNext()) {
+			IExtendedElementTypeActionProvider aspectActionProvider = it.next();
+			if (aspectActionProvider != null) {
 				return aspectActionProvider;
 			}
 		}
@@ -98,39 +99,39 @@ public class ExtendedElementTypeActionService extends Service {
 
 	/**
 	 * Returns the command for the given {@link ActionConfiguration}.
-	 * 
+	 *
 	 * @param elementsToEdit
-	 *        list of elements to edit
-	 * 
+	 *            list of elements to edit
+	 *
 	 * @param configuration
-	 *        the configuration of the action
+	 *            the configuration of the action
 	 * @return the {@link ICommand} configured by the parameter or <code>null</code>.
 	 * @throws ProviderNotFoundException
-	 *         exception thrown when the provider was not found for this configuration
+	 *             exception thrown when the provider was not found for this configuration
 	 */
 	public ICommand getICommand(List<? extends Object> elementsToEdit, ActionConfiguration configuration) throws ProviderNotFoundException {
 		IExtendedElementTypeActionProvider provider = getProvider(configuration);
-		if(provider != null) {
+		if (provider != null) {
 			return provider.getICommand(elementsToEdit, configuration);
 		}
 		throw new ProviderNotFoundException(configuration);
 	}
-	
+
 	/**
 	 * Returns the command for the given {@link ActionConfiguration}.
-	 * 
+	 *
 	 * @param elementsToEdit
-	 *        list of elements to edit
-	 * 
+	 *            list of elements to edit
+	 *
 	 * @param configuration
-	 *        the configuration of the action
+	 *            the configuration of the action
 	 * @return the {@link ICommand} configured by the parameter or <code>null</code>.
 	 * @throws ProviderNotFoundException
-	 *         exception thrown when the provider was not found for this configuration
+	 *             exception thrown when the provider was not found for this configuration
 	 */
 	public ICommand getPreValidationCommand(List<? extends Object> elementsToEdit, ActionConfiguration configuration) throws ProviderNotFoundException {
 		IExtendedElementTypeActionProvider provider = getProvider(configuration);
-		if(provider != null) {
+		if (provider != null) {
 			return provider.getBeforeCreateValidationCommand(elementsToEdit, configuration);
 		}
 		throw new ProviderNotFoundException(configuration);
@@ -147,9 +148,9 @@ public class ExtendedElementTypeActionService extends Service {
 		/**
 		 * Constructs a <code>ISemanticProvider</code> descriptor for
 		 * the specified configuration element.
-		 * 
+		 *
 		 * @param element
-		 *        The configuration element describing the provider.
+		 *            The configuration element describing the provider.
 		 */
 		public ProviderDescriptor(IConfigurationElement element) {
 			super(element);
@@ -160,20 +161,21 @@ public class ExtendedElementTypeActionService extends Service {
 		/**
 		 * @see org.eclipse.gmf.runtime.common.core.service.IProvider#provides(org.eclipse.gmf.runtime.common.core.service.IOperation)
 		 */
+		@Override
 		public boolean provides(IOperation operation) {
-			if(!super.provides(operation)) {
+			if (!super.provides(operation)) {
 				return false;
 			}
-			if(operation instanceof GetAllExtendedElementTypeActionProvidersOperation) {
+			if (operation instanceof GetAllExtendedElementTypeActionProvidersOperation) {
 				return true;
 			}
-			if(operation instanceof GetExtendedElementTypeActionProviderOperation) {
+			if (operation instanceof GetExtendedElementTypeActionProviderOperation) {
 				String providerConfigurationClassName = providerConfiguration.getConfigurationClassName();
-				if(providerConfigurationClassName == null) {
+				if (providerConfigurationClassName == null) {
 					Activator.log.error("Error during the parsing of the action configuration extension point", null);
 					return false;
 				}
-				String configurationClassName = ((GetExtendedElementTypeActionProviderOperation)operation).getActionConfiguration().eClass().getInstanceClassName();
+				String configurationClassName = ((GetExtendedElementTypeActionProviderOperation) operation).getActionConfiguration().eClass().getInstanceClassName();
 				return providerConfigurationClassName.equals(configurationClassName);
 			}
 			return false;
@@ -182,11 +184,12 @@ public class ExtendedElementTypeActionService extends Service {
 		/**
 		 * @see org.eclipse.gmf.runtime.common.core.service.Service.ProviderDescriptor#getProvider()
 		 */
+		@Override
 		public IProvider getProvider() {
-			if(provider == null) {
+			if (provider == null) {
 				IProvider newProvider = super.getProvider();
-				if(provider instanceof IExtendedElementTypeActionProvider) {
-					IExtendedElementTypeActionProvider defaultProvider = (IExtendedElementTypeActionProvider)newProvider;
+				if (provider instanceof IExtendedElementTypeActionProvider) {
+					IExtendedElementTypeActionProvider defaultProvider = (IExtendedElementTypeActionProvider) newProvider;
 					defaultProvider.setConfiguration(getElement());
 				}
 				return newProvider;

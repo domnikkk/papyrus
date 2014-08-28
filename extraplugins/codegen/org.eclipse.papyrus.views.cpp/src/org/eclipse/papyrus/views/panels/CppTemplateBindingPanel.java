@@ -44,7 +44,7 @@ public class CppTemplateBindingPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#getSelectedElement()
 	 */
 	@Override
@@ -54,14 +54,14 @@ public class CppTemplateBindingPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#setSelectedElement(java.lang.Element)
 	 */
 	@Override
 	public void setSelectedElement(Element newElement) {
 		super.setSelectedElement(newElement);
-		if(newElement instanceof TemplateBinding) {
-			this.selectedTB = (TemplateBinding)newElement;
+		if (newElement instanceof TemplateBinding) {
+			this.selectedTB = (TemplateBinding) newElement;
 		}
 		else {
 			throw new RuntimeException("bad selection: " + newElement + " should be an uml2 TemplateBinding");
@@ -70,34 +70,35 @@ public class CppTemplateBindingPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#createContent()
 	 */
+	@Override
 	public Control createContent() {
 
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// Create save reset buttons with superclass method
-		///////////////////////////////////////////////////////////////////////    	
+		// /////////////////////////////////////////////////////////////////////
 		createSaveResetButtons();
 
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// Body
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 
 		docBinding = createDocumentC();
 		groupBinding = createGroup(
-			this
-			, "Binding declaration (<...>)"
-			, groupBinding
-			, null
-			, true
-			, 0
-			, 0
-			, true);
+				this
+				, "Binding declaration (<...>)"
+				, groupBinding
+				, null
+				, true
+				, 0
+				, 0
+				, true);
 		// Use CDT CEditor coloration
 		viewerBinding = createViewerC(docBinding, groupBinding);
 
-		///////////////////////////////////////////////////////////////////////	
+		// /////////////////////////////////////////////////////////////////////
 
 		return this;
 	}
@@ -105,19 +106,21 @@ public class CppTemplateBindingPanel extends CppAbstractPanel {
 	/**
 	 * Saves the body for an '<code>TemplateBinding</code>'
 	 */
+	@Override
 	public void save()
 	{
-		if(selectedTB == null) {
+		if (selectedTB == null) {
 			/* Log.debug("saveBody : selectedTemplateBinding is null"); */
 		}
 		else {
 			CommandSupport.exec("C++ template binding save", new Runnable() {
 
+				@Override
 				public void run()
 				{
 					// Treat Pointer
 					String newB = docBinding.get();
-					if(newB.equals("")) {
+					if (newB.equals("")) {
 						StereotypeUtil.unapply(selectedTB, TemplateBinding.class);
 					} else {
 						org.eclipse.papyrus.C_Cpp.TemplateBinding templateBinding = StereotypeUtil.applyApp(selectedTB, org.eclipse.papyrus.C_Cpp.TemplateBinding.class);
@@ -131,12 +134,12 @@ public class CppTemplateBindingPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#refreshPanel()
 	 */
 	@Override
 	protected void refreshPanel() {
-		if(selectedTB != null) {
+		if (selectedTB != null) {
 			org.eclipse.papyrus.C_Cpp.TemplateBinding templateBinding = UMLUtil.getStereotypeApplication(selectedTB, org.eclipse.papyrus.C_Cpp.TemplateBinding.class);
 			// TODO: use UML template bindings?
 			docBinding.set(templateBinding != null ? templateBinding.getBinding() : "");
@@ -145,7 +148,7 @@ public class CppTemplateBindingPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#entryAction()
 	 */
 	@Override
@@ -156,7 +159,7 @@ public class CppTemplateBindingPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#checkModifications()
 	 */
 	@Override
@@ -164,7 +167,7 @@ public class CppTemplateBindingPanel extends CppAbstractPanel {
 		org.eclipse.papyrus.C_Cpp.TemplateBinding templateBinding = UMLUtil.getStereotypeApplication(selectedTB, org.eclipse.papyrus.C_Cpp.TemplateBinding.class);
 		// TODO: use UML template bindings?
 		String bindingValue = templateBinding != null ? templateBinding.getBinding() : "";
-		if(!docBinding.get().equals(bindingValue)) {
+		if (!docBinding.get().equals(bindingValue)) {
 			return true;
 		}
 		return false;

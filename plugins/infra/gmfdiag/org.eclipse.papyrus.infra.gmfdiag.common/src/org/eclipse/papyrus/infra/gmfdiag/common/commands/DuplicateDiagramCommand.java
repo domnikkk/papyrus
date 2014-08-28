@@ -46,11 +46,11 @@ public class DuplicateDiagramCommand extends DuplicateEObjectsCommand {
 	 * list of EObjects.
 	 *
 	 * @param editingDomain
-	 *        the editing domain through which model changes are made
+	 *            the editing domain through which model changes are made
 	 * @param label
-	 *        The label for the new command.
+	 *            The label for the new command.
 	 * @param diagram
-	 *        <code>Diagram</code> to be duplicated.
+	 *            <code>Diagram</code> to be duplicated.
 	 */
 	public DuplicateDiagramCommand(TransactionalEditingDomain editingDomain, String label, Diagram diagram) {
 		super(editingDomain, label, Collections.singletonList(diagram));
@@ -62,13 +62,13 @@ public class DuplicateDiagramCommand extends DuplicateEObjectsCommand {
 	 * list of EObjects.
 	 *
 	 * @param editingDomain
-	 *        the editing domain through which model changes are made
+	 *            the editing domain through which model changes are made
 	 * @param label
-	 *        The label for the new command.
+	 *            The label for the new command.
 	 * @param diagram
-	 *        <code>Diagram</code> to be duplicated.
+	 *            <code>Diagram</code> to be duplicated.
 	 * @param allDuplicatedObjectsMap
-	 *        An empty map to be populated with the duplicated objects.
+	 *            An empty map to be populated with the duplicated objects.
 	 */
 	public DuplicateDiagramCommand(TransactionalEditingDomain editingDomain, String label, Diagram diagram, Map allDuplicatedObjectsMap) {
 		super(editingDomain, label, Collections.singletonList(diagram), allDuplicatedObjectsMap);
@@ -82,13 +82,13 @@ public class DuplicateDiagramCommand extends DuplicateEObjectsCommand {
 	 * eObject into which the duplicated eObjects will be added.
 	 *
 	 * @param editingDomain
-	 *        the editing domain through which model changes are made
+	 *            the editing domain through which model changes are made
 	 * @param label
-	 *        The label for the new command.
+	 *            The label for the new command.
 	 * @param diagram
-	 *        <code>Diagram</code> to be duplicated.
+	 *            <code>Diagram</code> to be duplicated.
 	 * @param allDuplicatedObjectsMap
-	 *        An empty map to be populated with the duplicated objects.
+	 *            An empty map to be populated with the duplicated objects.
 	 */
 	public DuplicateDiagramCommand(TransactionalEditingDomain editingDomain, String label, Diagram diagram, Map allDuplicatedObjectsMap, EObject targetContainer) {
 		super(editingDomain, label, Collections.singletonList(diagram), allDuplicatedObjectsMap, targetContainer);
@@ -109,14 +109,14 @@ public class DuplicateDiagramCommand extends DuplicateEObjectsCommand {
 		copier.copyReferences();
 
 		EObject duplicateDiagram = copier.get(diagramToDuplicate);
-		Resource targetResource = getNotationResourceForDiagram(((Diagram)duplicateDiagram).getElement(), getEditingDomain());
+		Resource targetResource = getNotationResourceForDiagram(((Diagram) duplicateDiagram).getElement(), getEditingDomain());
 
-		if(targetResource != null) {
+		if (targetResource != null) {
 			targetResource.getContents().add(duplicateDiagram);
 		} else {
 			Activator.log.warn("It was not possible to find the Resource with the target EObject"); //$NON-NLS-1$
 			targetResource = diagramToDuplicate.eResource();
-			if(targetResource != null) {
+			if (targetResource != null) {
 				Activator.log.error("It was not possible to find the Resource with the source diagram", null); //$NON-NLS-1$
 				targetResource.getContents().add(duplicateDiagram);
 			}
@@ -134,34 +134,34 @@ public class DuplicateDiagramCommand extends DuplicateEObjectsCommand {
 	 * Returns the notation resource where to add the new diagram
 	 *
 	 * @param eObject
-	 *        the semantic object linked to the diagram or the diagram itself.
+	 *            the semantic object linked to the diagram or the diagram itself.
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @return the resource where the diagram should be added or <code>null</code> if no resource was found
 	 *         TODO this method should be handled by the resource plugin.
 	 */
 	public Resource getNotationResourceForDiagram(EObject eObject, TransactionalEditingDomain domain) {
 		Object object = BusinessModelResolver.getInstance().getBusinessModel(eObject);
 		EObject semanticObject;
-		if(!(object instanceof EObject)) {
+		if (!(object instanceof EObject)) {
 			semanticObject = eObject;
 		} else {
-			semanticObject = (EObject)object;
+			semanticObject = (EObject) object;
 		}
 
 		Resource containerResource = semanticObject.eResource();
-		if(containerResource == null) {
+		if (containerResource == null) {
 			return null;
 		}
 		// retrieve the model set from the container resource
 		ResourceSet resourceSet = containerResource.getResourceSet();
 
-		if(resourceSet instanceof ModelSet) {
-			ModelSet modelSet = (ModelSet)resourceSet;
+		if (resourceSet instanceof ModelSet) {
+			ModelSet modelSet = (ModelSet) resourceSet;
 			Resource destinationResource = modelSet.getAssociatedResource(semanticObject, NotationModel.NOTATION_FILE_EXTENSION, true);
 			return destinationResource;
 		} else {
-			throw new RuntimeException("Resource Set is not a ModelSet or is null");  //$NON-NLS-1$
+			throw new RuntimeException("Resource Set is not a ModelSet or is null"); //$NON-NLS-1$
 		}
 	}
 
@@ -170,33 +170,33 @@ public class DuplicateDiagramCommand extends DuplicateEObjectsCommand {
 	 * Returns the di resource where to add the new diagram
 	 *
 	 * @param eObject
-	 *        the semantic object linked to the diagram or the diagram itself.
+	 *            the semantic object linked to the diagram or the diagram itself.
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @return the resource where the diagram should be added or <code>null</code> if no resource was found
 	 */
 	public Resource getDiResourceForDiagram(EObject eObject, TransactionalEditingDomain domain) {
 		Object object = BusinessModelResolver.getInstance().getBusinessModel(eObject);
 		EObject semanticObject;
-		if(!(object instanceof EObject)) {
+		if (!(object instanceof EObject)) {
 			semanticObject = eObject;
 		} else {
-			semanticObject = (EObject)object;
+			semanticObject = (EObject) object;
 		}
 
 		Resource containerResource = semanticObject.eResource();
-		if(containerResource == null) {
+		if (containerResource == null) {
 			return null;
 		}
 		// retrieve the model set from the container resource
 		ResourceSet resourceSet = containerResource.getResourceSet();
 
-		if(resourceSet instanceof ModelSet) {
-			ModelSet modelSet = (ModelSet)resourceSet;		
+		if (resourceSet instanceof ModelSet) {
+			ModelSet modelSet = (ModelSet) resourceSet;
 			Resource destinationResource = modelSet.getAssociatedResource(semanticObject, DiModel.MODEL_FILE_EXTENSION, true);
 			return destinationResource;
 		} else {
-			throw new RuntimeException("Resource Set is not a ModelSet or is null");  //$NON-NLS-1$
+			throw new RuntimeException("Resource Set is not a ModelSet or is null"); //$NON-NLS-1$
 		}
 	}
 
@@ -215,7 +215,7 @@ public class DuplicateDiagramCommand extends DuplicateEObjectsCommand {
 		 * Creates a new {@link DiagramCopier}
 		 *
 		 * @param semanticObjects
-		 *        list of semantic objects already copied, to which new views should be related.
+		 *            list of semantic objects already copied, to which new views should be related.
 		 */
 		public DiagramCopier(Map<EObject, EObject> semanticObjects) {
 			this.semanticObjects = semanticObjects;
@@ -229,7 +229,7 @@ public class DuplicateDiagramCommand extends DuplicateEObjectsCommand {
 		@Override
 		public EObject get(Object arg0) {
 			EObject object = super.get(arg0);
-			if(object == null) {
+			if (object == null) {
 				object = semanticObjects.get(arg0);
 			}
 			return object;

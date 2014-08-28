@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ public class RootModel extends AbstractModel {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param child
 	 */
 	public RootModel(AbstractPanelModel child) {
@@ -37,24 +37,27 @@ public class RootModel extends AbstractModel {
 
 	/**
 	 * Return the parent of the model. Can be null in the case of rootModel.
-	 * 
+	 *
 	 * @return the parent
 	 */
+	@Override
 	public AbstractModel getParent() {
 		return null;
 	}
 
 	/**
 	 * @param parent
-	 *        the parent to set
+	 *            the parent to set
 	 */
+	@Override
 	public void setParent(AbstractModel parent) {
 	}
 
 	/**
 	 * Replace the actual child by the new child.
-	 * 
+	 *
 	 */
+	@Override
 	public void replaceChild(AbstractPanelModel oldChild, AbstractPanelModel newChild) {
 
 		assert (child == oldChild);
@@ -64,7 +67,7 @@ public class RootModel extends AbstractModel {
 
 	/**
 	 * Lookup the folder containing the specified tabItem.
-	 * 
+	 *
 	 * @param tabItem
 	 * @return
 	 */

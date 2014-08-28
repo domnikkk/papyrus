@@ -16,7 +16,7 @@ import org.eclipse.papyrus.infra.gmfdiag.css.command.ResetStyleCommand;
 public class ResetStyleHelper {
 
 	public static void resetStyle(IStructuredSelection selection) {
-		if(selection == null || selection.isEmpty()) {
+		if (selection == null || selection.isEmpty()) {
 			return;
 		}
 
@@ -28,7 +28,7 @@ public class ResetStyleHelper {
 	}
 
 	public static void resetStyle(Collection<?> selection) {
-		if(selection == null) {
+		if (selection == null) {
 			return;
 		}
 
@@ -38,7 +38,7 @@ public class ResetStyleHelper {
 	}
 
 	public static void resetStyle(TransactionalEditingDomain domain, Iterator<?> iterator) {
-		if(domain == null || iterator == null || !iterator.hasNext()) {
+		if (domain == null || iterator == null || !iterator.hasNext()) {
 			return;
 		}
 
@@ -47,16 +47,16 @@ public class ResetStyleHelper {
 	}
 
 	private static TransactionalEditingDomain getEditingDomain(Iterator<?> iterator) {
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Object selectedItem = iterator.next();
 			View view = NotationHelper.findView(selectedItem);
-			if(view == null) {
+			if (view == null) {
 				continue;
 			}
 
 			EditingDomain editingDomain = EMFHelper.resolveEditingDomain(view);
-			if(editingDomain instanceof TransactionalEditingDomain) {
-				return (TransactionalEditingDomain)editingDomain;
+			if (editingDomain instanceof TransactionalEditingDomain) {
+				return (TransactionalEditingDomain) editingDomain;
 			}
 			break;
 		}

@@ -35,10 +35,10 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.Style;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.notation.datatype.GradientData;
-import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.appearance.helper.VisualInformationPapyrusConstants;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForHandlers;
@@ -70,7 +70,7 @@ public abstract class AbstractStyleHandler extends AbstractHandler {
 		ISelection selection;
 		try {
 			selection = ServiceUtilsForHandlers.getInstance().getNestedActiveIEditorPart(event).getSite().getSelectionProvider().getSelection();
-			if(selection.isEmpty()) {
+			if (selection.isEmpty()) {
 				return null;
 			}
 		} catch (ServiceException ex) {
@@ -78,22 +78,22 @@ public abstract class AbstractStyleHandler extends AbstractHandler {
 			return null;
 		}
 
-		if(!(selection instanceof IStructuredSelection)) {
+		if (!(selection instanceof IStructuredSelection)) {
 			return null;
 		}
 
-		IStructuredSelection sSelection = (IStructuredSelection)selection;
+		IStructuredSelection sSelection = (IStructuredSelection) selection;
 		Object element = sSelection.getFirstElement();
 
 		View view = NotationHelper.findView(element);
-		if(view == null) {
+		if (view == null) {
 			Activator.log.warn("Cannot create a Style from the selected element ; the element is not a View");
 			return null;
 		}
 
-		Shell parentShell = ((Event)event.getTrigger()).widget.getDisplay().getActiveShell();
+		Shell parentShell = ((Event) event.getTrigger()).widget.getDisplay().getActiveShell();
 
-		if(view.getElement() == null || view instanceof Diagram) {
+		if (view.getElement() == null || view instanceof Diagram) {
 			MessageDialog.open(MessageDialog.WARNING, parentShell, "Style error", "The selected element's style cannot be exported", SWT.NONE);
 			return null;
 		}
@@ -105,20 +105,20 @@ public abstract class AbstractStyleHandler extends AbstractHandler {
 
 		AbstractStyleDialog dialog = createStyleDialog(parentShell, declarations, conditions, selectorName, view);
 
-		if(dialog.open() != Dialog.OK) {
+		if (dialog.open() != Window.OK) {
 			return null;
 		}
 
 		Ruleset ruleset = getRuleset(dialog);
 		SimpleSelector selector = CssFactory.eINSTANCE.createSimpleSelector();
 
-		if(dialog.useSelectorName()) {
+		if (dialog.useSelectorName()) {
 			selector.setElementName(selectorName);
 		} else {
 			selector.setElementName("*"); //$NON-NLS-1$
 		}
 
-		if(dialog.getDiagramRestriction()) {
+		if (dialog.getDiagramRestriction()) {
 			String diagramType = getDiagramType(view.getDiagram());
 			CompositeSelector compositeSelector = CssFactory.eINSTANCE.createCompositeSelector();
 			compositeSelector.setRight(selector);
@@ -132,34 +132,34 @@ public abstract class AbstractStyleHandler extends AbstractHandler {
 			ruleset.getSelectors().add(selector);
 		}
 
-		if(dialog.getCSSClass() != null) {
+		if (dialog.getCSSClass() != null) {
 			String cssClass = dialog.getCSSClass();
 			org.eclipse.papyrus.infra.gmfdiag.css.Class classCondition = CssFactory.eINSTANCE.createClass();
 			classCondition.setClass(cssClass);
 			selector.getCondition().add(classCondition);
 		}
 
-		for(SelectorCondition condition : conditions.keySet()) {
-			if(conditions.get(condition)) {
+		for (SelectorCondition condition : conditions.keySet()) {
+			if (conditions.get(condition)) {
 				selector.getCondition().add(condition);
 			}
 		}
 
-		for(Declaration declaration : declarations.keySet()) {
-			if(declarations.get(declaration)) {
+		for (Declaration declaration : declarations.keySet()) {
+			if (declarations.get(declaration)) {
 				ruleset.getProperties().add(declaration);
 			}
 		}
 
 		Stylesheet xtextStylesheet = getStyleSheet(dialog, view);
 
-		if(xtextStylesheet == null) {
+		if (xtextStylesheet == null) {
 			return null;
 		}
 
 		Resource resource = xtextStylesheet.eResource();
 
-		if(!xtextStylesheet.getContents().contains(ruleset)) {
+		if (!xtextStylesheet.getContents().contains(ruleset)) {
 			xtextStylesheet.getContents().add(ruleset);
 		}
 
@@ -188,17 +188,17 @@ public abstract class AbstractStyleHandler extends AbstractHandler {
 	protected Map<Declaration, Boolean> handleStyles(View view) {
 		Map<Declaration, Boolean> declarations = new LinkedHashMap<Declaration, Boolean>();
 
-		for(Object styleObject : view.getStyles()) {
-			Style style = (Style)styleObject;
+		for (Object styleObject : view.getStyles()) {
+			Style style = (Style) styleObject;
 			declarations.putAll(handleStyle(style));
 		}
 
-		if(view instanceof Style) {
-			declarations.putAll(handleStyle((Style)view));
+		if (view instanceof Style) {
+			declarations.putAll(handleStyle((Style) view));
 		}
 
-		if(view instanceof CustomStyle) {
-			declarations.putAll(handleCustomStyle((CustomStyle)view, view));
+		if (view instanceof CustomStyle) {
+			declarations.putAll(handleCustomStyle((CustomStyle) view, view));
 		}
 
 		return declarations;
@@ -209,8 +209,8 @@ public abstract class AbstractStyleHandler extends AbstractHandler {
 
 		EObject semanticElement = view.getElement();
 
-		for(EStructuralFeature feature : semanticElement.eClass().getEAllStructuralFeatures()) {
-			if(isBoolean(feature) || isInteger(feature) || feature.getEType() instanceof EEnum) {
+		for (EStructuralFeature feature : semanticElement.eClass().getEAllStructuralFeatures()) {
+			if (isBoolean(feature) || isInteger(feature) || feature.getEType() instanceof EEnum) {
 				Attribute attributeCondition = CssFactory.eINSTANCE.createAttribute();
 				attributeCondition.setName(feature.getName());
 
@@ -229,12 +229,12 @@ public abstract class AbstractStyleHandler extends AbstractHandler {
 	}
 
 	protected boolean isBoolean(EStructuralFeature feature) {
-		if(feature.getEType() == EcorePackage.eINSTANCE.getEBoolean() || feature.getEType() == EcorePackage.eINSTANCE.getEBooleanObject()) {
+		if (feature.getEType() == EcorePackage.eINSTANCE.getEBoolean() || feature.getEType() == EcorePackage.eINSTANCE.getEBooleanObject()) {
 			return true;
 		}
 
-		if(feature.getEType() instanceof EDataType) {
-			EDataType datatype = (EDataType)feature.getEType();
+		if (feature.getEType() instanceof EDataType) {
+			EDataType datatype = (EDataType) feature.getEType();
 			return datatype.getName().equals("Boolean");
 		}
 
@@ -246,12 +246,12 @@ public abstract class AbstractStyleHandler extends AbstractHandler {
 	}
 
 	protected boolean isInteger(EStructuralFeature feature) {
-		if(feature.getEType() == EcorePackage.eINSTANCE.getEInt() || feature.getEType() == EcorePackage.eINSTANCE.getEIntegerObject()) {
+		if (feature.getEType() == EcorePackage.eINSTANCE.getEInt() || feature.getEType() == EcorePackage.eINSTANCE.getEIntegerObject()) {
 			return true;
 		}
 
-		if(feature.getEType() instanceof EDataType) {
-			EDataType datatype = (EDataType)feature.getEType();
+		if (feature.getEType() instanceof EDataType) {
+			EDataType datatype = (EDataType) feature.getEType();
 			return datatype.getName().equals("Integer");
 		}
 
@@ -259,14 +259,14 @@ public abstract class AbstractStyleHandler extends AbstractHandler {
 	}
 
 	protected Map<Declaration, Boolean> handleStyle(Style style) {
-		if(style instanceof NamedStyle) {
+		if (style instanceof NamedStyle) {
 			return Collections.emptyMap();
 		}
 
 		Map<Declaration, Boolean> declarations = new LinkedHashMap<Declaration, Boolean>();
 
-		for(EStructuralFeature feature : style.eClass().getEAllStructuralFeatures()) {
-			if(NotationPackage.eINSTANCE.getStyle().isSuperTypeOf(feature.getEContainingClass())) {
+		for (EStructuralFeature feature : style.eClass().getEAllStructuralFeatures()) {
+			if (NotationPackage.eINSTANCE.getStyle().isSuperTypeOf(feature.getEContainingClass())) {
 				Object currentValue = style.eGet(feature);
 				Object defaultValue = feature.getDefaultValue();
 				boolean check = currentValue == null ? currentValue != defaultValue : !currentValue.equals(defaultValue);
@@ -277,8 +277,8 @@ public abstract class AbstractStyleHandler extends AbstractHandler {
 		return declarations;
 	}
 
-	//FIXME: Use constants for the CSS Properties names
-	//FIXME: Use a helper to determine whether the custom styles are computed or forced
+	// FIXME: Use constants for the CSS Properties names
+	// FIXME: Use a helper to determine whether the custom styles are computed or forced
 	protected Map<Declaration, Boolean> handleCustomStyle(CustomStyle customStyle, View view) {
 		Map<Declaration, Boolean> declarations = new LinkedHashMap<Declaration, Boolean>();
 
@@ -306,30 +306,30 @@ public abstract class AbstractStyleHandler extends AbstractHandler {
 
 		GMFToCSSConverter converter = GMFToCSSConverter.instance;
 
-		if(isString(feature)) {
-			declaration.setExpression(converter.convert((String)style.eGet(feature)));
+		if (isString(feature)) {
+			declaration.setExpression(converter.convert((String) style.eGet(feature)));
 		}
 
-		if(isInteger(feature)) {
-			if(feature.getName().endsWith("Color")) {
-				Color color = FigureUtilities.integerToColor((Integer)style.eGet(feature));
+		if (isInteger(feature)) {
+			if (feature.getName().endsWith("Color")) {
+				Color color = FigureUtilities.integerToColor((Integer) style.eGet(feature));
 				declaration.setExpression(converter.convert(color));
 				color.dispose();
 			} else {
-				declaration.setExpression(converter.convert((Integer)style.eGet(feature)));
+				declaration.setExpression(converter.convert((Integer) style.eGet(feature)));
 			}
 		}
 
-		if(feature.getEType() == NotationPackage.eINSTANCE.getGradientData()) {
-			declaration.setExpression(converter.convert((GradientData)style.eGet(feature)));
+		if (feature.getEType() == NotationPackage.eINSTANCE.getGradientData()) {
+			declaration.setExpression(converter.convert((GradientData) style.eGet(feature)));
 		}
 
-		if(feature.getEType() instanceof EEnum) {
-			declaration.setExpression(converter.convert((Enumerator)style.eGet(feature)));
+		if (feature.getEType() instanceof EEnum) {
+			declaration.setExpression(converter.convert((Enumerator) style.eGet(feature)));
 		}
 
-		if(isBoolean(feature)) {
-			declaration.setExpression(converter.convert((Boolean)style.eGet(feature)));
+		if (isBoolean(feature)) {
+			declaration.setExpression(converter.convert((Boolean) style.eGet(feature)));
 		}
 
 		return declaration;

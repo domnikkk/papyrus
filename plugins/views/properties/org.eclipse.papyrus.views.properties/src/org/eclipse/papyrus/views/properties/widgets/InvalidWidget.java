@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,19 +19,19 @@ import org.eclipse.swt.widgets.Composite;
  * A class for displaying invalid widgets without raising Java errors
  * The widget will display an error, and may display the property label
  * if it is available
- * 
+ *
  * @author Camille Letavernier
  */
 public class InvalidWidget extends AbstractPropertyEditor {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        The Composite in which the editor will be created
+	 *            The Composite in which the editor will be created
 	 * @param style
-	 *        The style to apply to the editor
+	 *            The style to apply to the editor
 	 */
 	public InvalidWidget(Composite parent, int style) {
 		super();
@@ -44,11 +44,11 @@ public class InvalidWidget extends AbstractPropertyEditor {
 
 	/**
 	 * Creates the string label.
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 * @return the string label.
 	 */
 	protected StringLabel createStringLabel(Composite parent, int style) {
@@ -57,6 +57,6 @@ public class InvalidWidget extends AbstractPropertyEditor {
 
 	@Override
 	public void doBinding() {
-		//Skip to avoid the binding between the property's value and the CLabel
+		// Skip to avoid the binding between the property's value and the CLabel
 	}
 }

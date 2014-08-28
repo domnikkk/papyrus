@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,11 +44,11 @@ public class ProfileWithDatatypes extends StandardLayoutGenerator {
 
 	@Override
 	protected void sortEditors(List<PropertyEditor> editors) {
-		for(PropertyEditor editor : editors) {
+		for (PropertyEditor editor : editors) {
 			Category category = new TypeCategory(editor.getProperty());
 			getByCategory(category).add(editor);
 
-			if(editor.getWidgetType() == null) {
+			if (editor.getWidgetType() == null) {
 				Activator.log.warn(String.format("Editor for property %s doesn't have a WidgetType", editor.getProperty().getName())); //$NON-NLS-1$
 				continue;
 			}
@@ -59,7 +59,7 @@ public class ProfileWithDatatypes extends StandardLayoutGenerator {
 
 	@Override
 	protected CompositeWidget layoutCategorizedEditors(Category category, List<PropertyEditor> editors) {
-		if(((TypeCategory)category).isDatatype) {
+		if (((TypeCategory) category).isDatatype) {
 			CompositeWidgetType compositeType = ConfigurationManager.getInstance().getDefaultCompositeType();
 
 			CompositeWidget container = UiFactory.eINSTANCE.createCompositeWidget();
@@ -68,7 +68,7 @@ public class ProfileWithDatatypes extends StandardLayoutGenerator {
 			Layout layout = createLayout(category.getNumColumns());
 			container.setLayout(layout);
 
-			for(PropertyEditor editor : editors) {
+			for (PropertyEditor editor : editors) {
 				CompositeWidget group = createDataTypeGroup(editor.getProperty());
 
 				PropertyEditor viewEditor = UiFactory.eINSTANCE.createPropertyEditor();
@@ -91,28 +91,28 @@ public class ProfileWithDatatypes extends StandardLayoutGenerator {
 	}
 
 	protected String getViewName(Property property) {
-		if(!(generator instanceof ProfileGenerator)) {
+		if (!(generator instanceof ProfileGenerator)) {
 			return "";
 		}
 
-		org.eclipse.uml2.uml.Property attribute = ((ProfileGenerator)generator).getAttribute(property);
+		org.eclipse.uml2.uml.Property attribute = ((ProfileGenerator) generator).getAttribute(property);
 
 		Package nearestPackage = attribute.getType().getNearestPackage();
 		Package rootPackage = nearestPackage;
-		while(rootPackage.getNestingPackage() != null) {
+		while (rootPackage.getNestingPackage() != null) {
 			rootPackage = rootPackage.getNestingPackage();
 		}
 
-		//TODO : We're assuming the rootPackage has the same name as the context...
-		//This layout generator is really only compatible with ProfileGenerator
+		// TODO : We're assuming the rootPackage has the same name as the context...
+		// This layout generator is really only compatible with ProfileGenerator
 		return rootPackage.getName() + ":Single " + attribute.getType().getName();
 	}
 
 	protected Context findContext(Property property) {
 		DataContextElement element = property.getContextElement();
-		if(element instanceof DataContextRoot) {
-			//TODO : Add a container reference to Context
-			return (Context)element.eContainer();
+		if (element instanceof DataContextRoot) {
+			// TODO : Add a container reference to Context
+			return (Context) element.eContainer();
 		}
 
 		return findContext(element);
@@ -120,8 +120,8 @@ public class ProfileWithDatatypes extends StandardLayoutGenerator {
 
 	protected Context findContext(DataContextElement element) {
 		DataContextPackage dataContextPackage = element.getPackage();
-		if(dataContextPackage instanceof DataContextRoot) {
-			return (Context)dataContextPackage.eContainer();
+		if (dataContextPackage instanceof DataContextRoot) {
+			return (Context) dataContextPackage.eContainer();
 		}
 		return findContext(dataContextPackage);
 	}
@@ -162,9 +162,9 @@ public class ProfileWithDatatypes extends StandardLayoutGenerator {
 	}
 
 	protected CompositeWidgetType getGroupComposite() {
-		for(Environment environment : ConfigurationManager.getInstance().getPropertiesRoot().getEnvironments()) {
-			for(CompositeWidgetType widgetType : environment.getCompositeWidgetTypes()) {
-				if(widgetType.getNamespace() == null && widgetType.getWidgetClass().equals("Group")) {
+		for (Environment environment : ConfigurationManager.getInstance().getPropertiesRoot().getEnvironments()) {
+			for (CompositeWidgetType widgetType : environment.getCompositeWidgetTypes()) {
+				if (widgetType.getNamespace() == null && widgetType.getWidgetClass().equals("Group")) {
 					return widgetType;
 				}
 			}
@@ -175,9 +175,9 @@ public class ProfileWithDatatypes extends StandardLayoutGenerator {
 	}
 
 	protected PropertyEditorType getViewEditor() {
-		for(Environment environment : ConfigurationManager.getInstance().getPropertiesRoot().getEnvironments()) {
-			for(PropertyEditorType widgetType : environment.getPropertyEditorTypes()) {
-				if(widgetType.getNamespace() != null && "ppe".equals(widgetType.getNamespace().getName()) && widgetType.getWidgetClass().equals("ViewEditor")) {
+		for (Environment environment : ConfigurationManager.getInstance().getPropertiesRoot().getEnvironments()) {
+			for (PropertyEditorType widgetType : environment.getPropertyEditorTypes()) {
+				if (widgetType.getNamespace() != null && "ppe".equals(widgetType.getNamespace().getName()) && widgetType.getWidgetClass().equals("ViewEditor")) {
 					return widgetType;
 				}
 			}
@@ -199,15 +199,15 @@ public class ProfileWithDatatypes extends StandardLayoutGenerator {
 		public TypeCategory(Property property) {
 			super(property);
 			org.eclipse.uml2.uml.Property attribute = resolveProperty(property);
-			if(attribute != null) {
+			if (attribute != null) {
 				isDatatype = attribute.getType().eClass() == UMLPackage.eINSTANCE.getDataType();
 			}
 		}
 
 		protected org.eclipse.uml2.uml.Property resolveProperty(Property property) {
-			//TODO : We should not have to rely on the IGenerator to retrieve the property...
-			if(generator instanceof ProfileGenerator) {
-				ProfileGenerator profileGenerator = (ProfileGenerator)generator;
+			// TODO : We should not have to rely on the IGenerator to retrieve the property...
+			if (generator instanceof ProfileGenerator) {
+				ProfileGenerator profileGenerator = (ProfileGenerator) generator;
 				return profileGenerator.getAttribute(property);
 			}
 
@@ -216,7 +216,7 @@ public class ProfileWithDatatypes extends StandardLayoutGenerator {
 
 		@Override
 		public Integer getNumColumns() {
-			if(isDatatype) {
+			if (isDatatype) {
 				return 1;
 			}
 			return super.getNumColumns();
@@ -233,20 +233,20 @@ public class ProfileWithDatatypes extends StandardLayoutGenerator {
 
 		@Override
 		public boolean equals(Object obj) {
-			if(this == obj) {
+			if (this == obj) {
 				return true;
 			}
-			if(!super.equals(obj)) {
+			if (!super.equals(obj)) {
 				return false;
 			}
-			if(!(obj instanceof TypeCategory)) {
+			if (!(obj instanceof TypeCategory)) {
 				return false;
 			}
-			TypeCategory other = (TypeCategory)obj;
-			if(!getOuterType().equals(other.getOuterType())) {
+			TypeCategory other = (TypeCategory) obj;
+			if (!getOuterType().equals(other.getOuterType())) {
 				return false;
 			}
-			if(isDatatype != other.isDatatype) {
+			if (isDatatype != other.isDatatype) {
 				return false;
 			}
 			return true;
@@ -254,7 +254,7 @@ public class ProfileWithDatatypes extends StandardLayoutGenerator {
 
 		@Override
 		public Integer getTypeIndex() {
-			if(isDatatype) {
+			if (isDatatype) {
 				return orderedTypes.length + 1;
 			}
 			return super.getTypeIndex();

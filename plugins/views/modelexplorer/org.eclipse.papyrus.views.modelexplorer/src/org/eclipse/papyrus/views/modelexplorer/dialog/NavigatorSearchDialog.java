@@ -1,14 +1,14 @@
 /*******************************************************************************
- * Copyright (c) 2009 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2009 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  * 	Francisco Javier Cano Muñoz (Prodevelop) - initial api contribution
  * 	Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Improve the searchText widget
- * 
+ *
  *
  ******************************************************************************/
 package org.eclipse.papyrus.views.modelexplorer.dialog;
@@ -63,13 +63,13 @@ import com.google.common.collect.Lists;
 
 /**
  * A dialog that allows searching elements in the Model navigator by name.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Munoz</a>
- * 
+ *
  * @author cedric dumoulin
  */
-//@Unused
-//The QuickSearch feature is disabled since the new Search feature is available (0.10)
+// @Unused
+// The QuickSearch feature is disabled since the new Search feature is available (0.10)
 public class NavigatorSearchDialog extends TrayDialog {
 
 	private ITreeContentProvider contentProvider = null;
@@ -95,9 +95,9 @@ public class NavigatorSearchDialog extends TrayDialog {
 	private Button caseButton;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param shell
 	 * @param modelNavigator
 	 * @deprecated Use {@link #NavigatorSearchDialog(Shell, TreeViewer)}
@@ -106,20 +106,20 @@ public class NavigatorSearchDialog extends TrayDialog {
 	public NavigatorSearchDialog(Shell shell, CommonNavigator modelNavigator) {
 		super(shell);
 		IContentProvider cprovider = modelNavigator.getCommonViewer().getContentProvider();
-		if(cprovider instanceof ITreeContentProvider) {
-			contentProvider = (ITreeContentProvider)cprovider;
+		if (cprovider instanceof ITreeContentProvider) {
+			contentProvider = (ITreeContentProvider) cprovider;
 		}
 		root = modelNavigator.getCommonViewer().getInput();
 		viewer = modelNavigator.getCommonViewer();
-		labelProvider = (ILabelProvider)modelNavigator.getCommonViewer().getLabelProvider();
+		labelProvider = (ILabelProvider) modelNavigator.getCommonViewer().getLabelProvider();
 
 	}
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param shell
-	 *        Shell used to show this Dialog
+	 *            Shell used to show this Dialog
 	 * @param viewer
 	 * @param contentProvider
 	 * @param labelProvider
@@ -129,8 +129,8 @@ public class NavigatorSearchDialog extends TrayDialog {
 		super(shell);
 		this.viewer = viewer;
 		try {
-			this.labelProvider = (ILabelProvider)viewer.getLabelProvider();
-			this.contentProvider = (ITreeContentProvider)viewer.getContentProvider();
+			this.labelProvider = (ILabelProvider) viewer.getLabelProvider();
+			this.contentProvider = (ITreeContentProvider) viewer.getContentProvider();
 		} catch (ClassCastException e) {
 			// Content or label provider are not of appropriate type.
 			// let them null
@@ -141,9 +141,9 @@ public class NavigatorSearchDialog extends TrayDialog {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param shell
-	 *        Shell used to show this Dialog
+	 *            Shell used to show this Dialog
 	 * @param viewer
 	 * @param contentProvider
 	 * @param labelProvider
@@ -162,36 +162,36 @@ public class NavigatorSearchDialog extends TrayDialog {
 	 * <p>
 	 * Subclasses must implement this method.
 	 * </p>
-	 * 
+	 *
 	 * @param selection
-	 *        the new selection
+	 *            the new selection
 	 * @param reveal
-	 *        <code>true</code> if the selection is to be made
-	 *        visible, and <code>false</code> otherwise
+	 *            <code>true</code> if the selection is to be made
+	 *            visible, and <code>false</code> otherwise
 	 */
 	private void fireSetSelection(ISelection selection, boolean reveal) {
-		// Note : if we want to force reveal, it is possible to check if 
+		// Note : if we want to force reveal, it is possible to check if
 		// selectionProvider instanceof Viewer, and then call selectionProvider.setSelection(selection, true).
 		// By default a TreeViewer reveal the selection.
-		if(viewer instanceof CommonViewer) {
-			if(selection instanceof IStructuredSelection) {
-				IStructuredSelection structured = (IStructuredSelection)selection;
+		if (viewer instanceof CommonViewer) {
+			if (selection instanceof IStructuredSelection) {
+				IStructuredSelection structured = (IStructuredSelection) selection;
 				ModelExplorerView.reveal(Iterables.transform(Lists.newArrayList(structured.iterator()), new Function<Object, EObject>() {
 
 					public EObject apply(Object arg0) {
 						return EMFHelper.getEObject(arg0);
 					}
-				}), (CommonViewer)viewer);
+				}), (CommonViewer) viewer);
 			}
-		} else if(viewer instanceof Viewer) {
-			Viewer view = (Viewer)viewer;
+		} else if (viewer instanceof Viewer) {
+			Viewer view = (Viewer) viewer;
 			view.setSelection(selection, true);
 		}
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.jface.dialogs.Dialog#createDialogArea(org.eclipse.swt.widgets
 	 * .Composite)
@@ -214,7 +214,7 @@ public class NavigatorSearchDialog extends TrayDialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.jface.dialogs.Dialog#createButtonsForButtonBar(org.eclipse
 	 * .swt.widgets.Composite)
@@ -235,7 +235,7 @@ public class NavigatorSearchDialog extends TrayDialog {
 			}
 
 			public void widgetSelected(SelectionEvent e) {
-				if(currentIndex >= matchedObjects.size() - 1) {
+				if (currentIndex >= matchedObjects.size() - 1) {
 					currentIndex = 0;
 				} else {
 					currentIndex++;
@@ -251,7 +251,7 @@ public class NavigatorSearchDialog extends TrayDialog {
 			}
 
 			public void widgetSelected(SelectionEvent e) {
-				if(currentIndex <= 0) {
+				if (currentIndex <= 0) {
 					currentIndex = matchedObjects.size() - 1;
 				} else {
 					currentIndex--;
@@ -312,17 +312,17 @@ public class NavigatorSearchDialog extends TrayDialog {
 	}
 
 	private void updateMatches() {
-		if(contentProvider == null && labelProvider == null) {
+		if (contentProvider == null && labelProvider == null) {
 			return;
 		}
 
-		String pattern = (String)searchText.getValue();
-		if(pattern.length() == 0) {
+		String pattern = (String) searchText.getValue();
+		if (pattern.length() == 0) {
 			clearMatches();
 			return;
 		}
 
-		if(!caseButton.getSelection()) {
+		if (!caseButton.getSelection()) {
 			pattern = pattern.toUpperCase();
 		}
 
@@ -332,7 +332,7 @@ public class NavigatorSearchDialog extends TrayDialog {
 		matchesLabel.setText(matchedObjects.size() + " matches found");
 
 		// Select first match and update buttons
-		if(!matchedObjects.isEmpty()) {
+		if (!matchedObjects.isEmpty()) {
 			fireSetSelection(new StructuredSelection(matchedObjects.get(0)), true);
 			nextButton.setEnabled(true);
 			backButton.setEnabled(true);
@@ -363,7 +363,7 @@ public class NavigatorSearchDialog extends TrayDialog {
 	}
 
 	private List<Object> searchPattern(String pattern, boolean caseSensitive, List<Object> objects, IProgressMonitor monitor) {
-		if(monitor.isCanceled()) {
+		if (monitor.isCanceled()) {
 			return Collections.emptyList();
 		}
 
@@ -372,38 +372,38 @@ public class NavigatorSearchDialog extends TrayDialog {
 		List<Object> children = new ArrayList<Object>();
 		String objectLabel;
 
-		for(Object o : objects) {
+		for (Object o : objects) {
 			// Search matches in this level
-			if(!(o instanceof Diagram)) {
+			if (!(o instanceof Diagram)) {
 				objectLabel = caseSensitive ? labelProvider.getText(o) : labelProvider.getText(o).toUpperCase();
 
-				if(objectLabel.contains(pattern)) {
+				if (objectLabel.contains(pattern)) {
 					matches.add(o);
 				}
 				EObject parentEObj = getAdapter(o, EObject.class);
 
-				for(int i = 0; i < contentProvider.getChildren(o).length; i++) {
+				for (int i = 0; i < contentProvider.getChildren(o).length; i++) {
 					Object child = contentProvider.getChildren(o)[i];
-					//If child can be adapted into a LinkNode, find its referenced EObjects
-					if(getAdapter(child, LinkNode.class) != null) {
-						for(Object referencedObject : contentProvider.getChildren(child)) {
+					// If child can be adapted into a LinkNode, find its referenced EObjects
+					if (getAdapter(child, LinkNode.class) != null) {
+						for (Object referencedObject : contentProvider.getChildren(child)) {
 							EObject referencedEObject = EMFHelper.getEObject(referencedObject);
-							if(referencedEObject != null && (parentEObj == null || parentEObj.equals(referencedEObject.eContainer()))) {
+							if (referencedEObject != null && (parentEObj == null || parentEObj.equals(referencedEObject.eContainer()))) {
 								children.add(referencedObject);
 							}
 						}
 					}
-					//If it is an EObject, add it to the list
+					// If it is an EObject, add it to the list
 					else {
 						EObject eObject = EMFHelper.getEObject(child);
-						if(eObject != null && eObject.eContainer() != null && (parentEObj == null || eObject.eContainer().equals(parentEObj))) {
+						if (eObject != null && eObject.eContainer() != null && (parentEObj == null || eObject.eContainer().equals(parentEObj))) {
 							children.add(child);
 						}
 					}
 				}
 			}
 		}
-		if(!children.isEmpty()) {
+		if (!children.isEmpty()) {
 			matches.addAll(searchPattern(pattern, caseSensitive, children, monitor));
 		}
 
@@ -413,12 +413,12 @@ public class NavigatorSearchDialog extends TrayDialog {
 	@SuppressWarnings("unchecked")
 	public <T> T getAdapter(Object object, Class<? extends T> toAdapt) {
 		T result = null;
-		if(object instanceof IAdaptable) {
-			IAdaptable adaptable = (IAdaptable)object;
-			result = (T)adaptable.getAdapter(toAdapt);
+		if (object instanceof IAdaptable) {
+			IAdaptable adaptable = (IAdaptable) object;
+			result = (T) adaptable.getAdapter(toAdapt);
 		}
-		if(result == null) {
-			result = (T)Platform.getAdapterManager().getAdapter(object, toAdapt);
+		if (result == null) {
+			result = (T) Platform.getAdapterManager().getAdapter(object, toAdapt);
 		}
 		return result;
 	}
@@ -429,8 +429,8 @@ public class NavigatorSearchDialog extends TrayDialog {
 			private String lastValue = "";
 
 			public void commit(AbstractEditor editor) {
-				String newValue = (String)searchText.getValue();
-				if(!lastValue.equals(newValue)) {
+				String newValue = (String) searchText.getValue();
+				if (!lastValue.equals(newValue)) {
 					lastValue = newValue;
 					updateMatches();
 				}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,7 +59,7 @@ public class CleanDiagramHelper {
 	protected DiagramEditPart selectedElement;
 
 	public static CleanDiagramHelper getInstance() {
-		if(cleanDiagramHelper == null) {
+		if (cleanDiagramHelper == null) {
 			cleanDiagramHelper = new CleanDiagramHelper();
 		}
 		return cleanDiagramHelper;
@@ -70,8 +70,8 @@ public class CleanDiagramHelper {
 	 */
 	public void run(DiagramEditPart diagramEditPart) {
 		this.selectedElement = diagramEditPart;
-		OrphanViewPolicy removeOrphanViewPolicy = (OrphanViewPolicy)diagramEditPart.getEditPolicy("RemoveOrphanView");
-		if(removeOrphanViewPolicy != null) {
+		OrphanViewPolicy removeOrphanViewPolicy = (OrphanViewPolicy) diagramEditPart.getEditPolicy("RemoveOrphanView");
+		if (removeOrphanViewPolicy != null) {
 			removeOrphanViewPolicy.forceRefresh();
 		}
 		scan(diagramEditPart);
@@ -83,7 +83,7 @@ public class CleanDiagramHelper {
 	 * Delete unknown views.
 	 */
 	protected void deleteUnknownViews() {
-		for(int i = 0; i < viewToRemove.size(); i++) {
+		for (int i = 0; i < viewToRemove.size(); i++) {
 			Activator.getDefault().logInfo("Remove " + viewToRemove.get(i));
 			executeCommand(getDeleteViewCommand(viewToRemove.get(i)));
 		}
@@ -91,9 +91,9 @@ public class CleanDiagramHelper {
 
 	/**
 	 * comes from {@link OrphanViewPolicy}.
-	 * 
+	 *
 	 * @param cmd
-	 *        the cmd
+	 *            the cmd
 	 */
 	@SuppressWarnings("rawtypes")
 	protected void executeCommand(final Command cmd) {
@@ -106,15 +106,17 @@ public class CleanDiagramHelper {
 		// ConnectionEditPart's
 		// parent will not be a diagram edit part
 		EditPartViewer viewer = ep.getViewer();
-		if(viewer instanceof DiagramGraphicalViewer) {
-			isActivating = ((DiagramGraphicalViewer)viewer).isInitializing();
+		if (viewer instanceof DiagramGraphicalViewer) {
+			isActivating = ((DiagramGraphicalViewer) viewer).isInitializing();
 		}
 
-		if(isActivating || !EditPartUtil.isWriteTransactionInProgress((IGraphicalEditPart)selectedElement, false, false))
+		if (isActivating || !EditPartUtil.isWriteTransactionInProgress(selectedElement, false, false)) {
 			options = Collections.singletonMap(Transaction.OPTION_UNPROTECTED, Boolean.TRUE);
+		}
 
-		AbstractEMFOperation operation = new AbstractEMFOperation(((IGraphicalEditPart)selectedElement).getEditingDomain(), StringStatics.BLANK, options) {
+		AbstractEMFOperation operation = new AbstractEMFOperation(((IGraphicalEditPart) selectedElement).getEditingDomain(), StringStatics.BLANK, options) {
 
+			@Override
 			protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 
 				cmd.execute();
@@ -132,22 +134,22 @@ public class CleanDiagramHelper {
 
 	/**
 	 * Try to construct.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param child
-	 *        the child
-	 * 
+	 *            the child
+	 *
 	 * @return the edits the part
 	 */
 	protected EditPart tryToConstruct(EditPart parent, View child) {
 
-		if(selectedElement.getViewer().getEditPartFactory().createEditPart(parent, child) instanceof DefaultNodeEditPart) {
+		if (selectedElement.getViewer().getEditPartFactory().createEditPart(parent, child) instanceof DefaultNodeEditPart) {
 			viewToRemove.add(child);
 		} else {
 			Object object = selectedElement.getViewer().getEditPartRegistry().get(child);
-			if(object instanceof EditPart) {
-				return ((EditPart)object);
+			if (object instanceof EditPart) {
+				return ((EditPart) object);
 			}
 		}
 		return null;
@@ -155,30 +157,30 @@ public class CleanDiagramHelper {
 
 	/**
 	 * gets a {@link Command} to delete the supplied {@link View}.
-	 * 
+	 *
 	 * @param view
-	 *        view to use
-	 * 
+	 *            view to use
+	 *
 	 * @return command
 	 */
 	protected Command getDeleteViewCommand(View view) {
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)selectedElement).getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) selectedElement).getEditingDomain();
 		return new ICommandProxy(new DeleteCommand(editingDomain, view));
 	}
 
 	/**
 	 * Scan.
-	 * 
+	 *
 	 * @param editPart
-	 *        the edit part
+	 *            the edit part
 	 */
 	protected void scan(EditPart editPart) {
-		View parentView = (View)editPart.getModel();
+		View parentView = (View) editPart.getModel();
 		Iterator<EObject> iterator = parentView.eAllContents();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			EObject currentObject = iterator.next();
-			if(currentObject instanceof View) {
-				tryToConstruct(editPart, (View)currentObject);
+			if (currentObject instanceof View) {
+				tryToConstruct(editPart, (View) currentObject);
 
 			}
 		}

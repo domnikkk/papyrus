@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * Customization of {@link ExceptionHandlerIconEditPart} in order to make it able to handle Specific Label Helper
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class CustomExceptionHandlerIconEditPart extends ExceptionHandlerIconEditPart {
 
@@ -37,7 +37,7 @@ public class CustomExceptionHandlerIconEditPart extends ExceptionHandlerIconEdit
 	 */
 	@Override
 	protected String getLabelTextHelper(IFigure figure) {
-		if(figure instanceof InterruptibleEdgeExternalIconFigure) {
+		if (figure instanceof InterruptibleEdgeExternalIconFigure) {
 			return "";
 		}
 		return super.getLabelTextHelper(figure);
@@ -48,8 +48,8 @@ public class CustomExceptionHandlerIconEditPart extends ExceptionHandlerIconEdit
 	 */
 	@Override
 	protected void setLabelTextHelper(IFigure figure, String text) {
-		if(figure instanceof InterruptibleEdgeExternalIconFigure) {
-			//Label can not be set on this figure
+		if (figure instanceof InterruptibleEdgeExternalIconFigure) {
+			// Label can not be set on this figure
 			return;
 		}
 		super.getLabelTextHelper(figure);
@@ -60,8 +60,8 @@ public class CustomExceptionHandlerIconEditPart extends ExceptionHandlerIconEdit
 	 */
 	@Override
 	protected Image getLabelIconHelper(IFigure figure) {
-		if(figure instanceof InterruptibleEdgeExternalIconFigure) {
-			return ((InterruptibleEdgeExternalIconFigure)figure).getImage();
+		if (figure instanceof InterruptibleEdgeExternalIconFigure) {
+			return ((InterruptibleEdgeExternalIconFigure) figure).getImage();
 		}
 		return super.getLabelIconHelper(figure);
 	}
@@ -71,8 +71,8 @@ public class CustomExceptionHandlerIconEditPart extends ExceptionHandlerIconEdit
 	 */
 	@Override
 	protected void setLabelIconHelper(IFigure figure, Image icon) {
-		if(figure instanceof InterruptibleEdgeExternalIconFigure) {
-			//Icon can not be set on this figure
+		if (figure instanceof InterruptibleEdgeExternalIconFigure) {
+			// Icon can not be set on this figure
 			return;
 		}
 		super.setLabelIconHelper(figure, icon);

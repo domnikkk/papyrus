@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -18,13 +18,13 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 import org.eclipse.papyrus.emf.facet.custom.sdk.core.ICustomizationActions;
 import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManager2;
 import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManagerFactory;
 import org.eclipse.papyrus.emf.facet.util.emf.core.exception.InvalidFacetSetException;
 import org.eclipse.papyrus.emf.facet.util.pde.core.internal.exported.BuildPropertiesUtils;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 
 /**
  * Concrete implementation of {@link ICustomizationActions}.
@@ -35,8 +35,7 @@ public class CustomizationActionsImpl implements ICustomizationActions {
 			final IFile file) throws IOException, InvalidFacetSetException {
 
 		if (customization == null) {
-			throw new IllegalArgumentException(
-					"The given customization cannot be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The given customization cannot be null"); //$NON-NLS-1$
 		}
 		if (file == null) {
 			throw new IllegalArgumentException("The given file cannot be null"); //$NON-NLS-1$

@@ -24,10 +24,10 @@ import org.eclipse.uml2.uml.NamedElement;
 /**
  * Select container rules, either from a list of globally defined rules or from
  * local rules which may be created "on the fly" by this dialog.
- * 
+ *
  * TODO: extend rule application to instances (problematic, since rules
  * transformation is done on type level)
- * 
+ *
  * @author ansgar
  */
 public class TestAcceleoDialog extends SelectionStatusDialog {
@@ -52,13 +52,15 @@ public class TestAcceleoDialog extends SelectionStatusDialog {
 	/**
 	 * @see SelectionStatusDialog#computeResult()
 	 */
+	@Override
 	protected void computeResult() {
 		// nothing to do
 		saveTemplate = fTemplate.getText();
 	}
 
+	@Override
 	public Control createDialogArea(Composite parent) {
-		Composite contents = (Composite)super.createDialogArea(parent);
+		Composite contents = (Composite) super.createDialogArea(parent);
 		// (parent, "Container rules", "Avail. extensions/interceptors");
 
 		createTextAcceleoGroup(contents);
@@ -87,7 +89,7 @@ public class TestAcceleoDialog extends SelectionStatusDialog {
 		descriptionLabel.setText("Template:");
 
 		fTemplate = new Text(instanceConfigurationGroup, SWT.WRAP
-			| SWT.V_SCROLL);
+				| SWT.V_SCROLL);
 		fTemplate.setLayoutData(span2);
 		fTemplate.setText(saveTemplate);
 
@@ -95,9 +97,11 @@ public class TestAcceleoDialog extends SelectionStatusDialog {
 		fApplyAcceleoButton.setText("instantiate template");
 		fApplyAcceleoButton.addKeyListener(new KeyListener() {
 
+			@Override
 			public void keyReleased(KeyEvent e) {
 			}
 
+			@Override
 			public void keyPressed(KeyEvent e) {
 				System.out.println(e);
 			}
@@ -105,6 +109,7 @@ public class TestAcceleoDialog extends SelectionStatusDialog {
 		// fApplyAcceleoButton.setLayoutData(span2);
 		fApplyAcceleoButton.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				try {
 					AcceleoDriver.clearErrors();
@@ -118,6 +123,7 @@ public class TestAcceleoDialog extends SelectionStatusDialog {
 				}
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 		});
@@ -126,12 +132,14 @@ public class TestAcceleoDialog extends SelectionStatusDialog {
 		fResetButton.setText("reset acceleo driver (reread initial scripts)");
 		fResetButton.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				fOutput.setText("");
 				fErr.setText("");
 				AcceleoDriver.init();
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 		});
@@ -140,7 +148,7 @@ public class TestAcceleoDialog extends SelectionStatusDialog {
 		resultLabel.setText("Result:");
 
 		fOutput = new Text(instanceConfigurationGroup, SWT.WRAP
-			| SWT.V_SCROLL | SWT.READ_ONLY);
+				| SWT.V_SCROLL | SWT.READ_ONLY);
 		fOutput.setLayoutData(span2);
 
 		Label errLabel = new Label(instanceConfigurationGroup, SWT.NONE);
@@ -154,7 +162,7 @@ public class TestAcceleoDialog extends SelectionStatusDialog {
 		span3.heightHint = 50;
 
 		fErr = new Text(instanceConfigurationGroup, SWT.WRAP
-			| SWT.V_SCROLL | SWT.READ_ONLY);
+				| SWT.V_SCROLL | SWT.READ_ONLY);
 		fErr.setLayoutData(span3);
 	}
 

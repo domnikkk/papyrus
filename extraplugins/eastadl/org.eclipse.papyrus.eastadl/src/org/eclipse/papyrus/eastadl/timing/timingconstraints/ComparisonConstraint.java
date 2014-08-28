@@ -13,9 +13,9 @@ import org.eclipse.papyrus.eastadl.timing.TimingExpression;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ComparisonConstraint#getRightOperand <em>Right Operand</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ComparisonConstraint#getLeftOperand <em>Left Operand</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ComparisonConstraint#getOperator <em>Operator</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ComparisonConstraint#getRightOperand <em>Right Operand</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ComparisonConstraint#getLeftOperand <em>Left Operand</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ComparisonConstraint#getOperator <em>Operator</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface ComparisonConstraint extends TimingConstraint {
 	 * Returns the value of the '<em><b>Right Operand</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Right Operand</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Right Operand</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Right Operand</em>' reference.
 	 * @see #setRightOperand(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getComparisonConstraint_RightOperand()
@@ -44,7 +44,9 @@ public interface ComparisonConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ComparisonConstraint#getRightOperand <em>Right Operand</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Right Operand</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Right Operand</em>' reference.
 	 * @see #getRightOperand()
 	 * @generated
 	 */
@@ -54,10 +56,10 @@ public interface ComparisonConstraint extends TimingConstraint {
 	 * Returns the value of the '<em><b>Left Operand</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Left Operand</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Left Operand</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Left Operand</em>' reference.
 	 * @see #setLeftOperand(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getComparisonConstraint_LeftOperand()
@@ -70,7 +72,9 @@ public interface ComparisonConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ComparisonConstraint#getLeftOperand <em>Left Operand</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Left Operand</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Left Operand</em>' reference.
 	 * @see #getLeftOperand()
 	 * @generated
 	 */
@@ -81,10 +85,10 @@ public interface ComparisonConstraint extends TimingConstraint {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ComparisonKind}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Operator</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Operator</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.ComparisonKind
 	 * @see #setOperator(ComparisonKind)
@@ -98,7 +102,9 @@ public interface ComparisonConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ComparisonConstraint#getOperator <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Operator</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Operator</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.ComparisonKind
 	 * @see #getOperator()
 	 * @generated

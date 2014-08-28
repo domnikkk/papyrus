@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -202,7 +202,7 @@ public class BlockPropertyCompositeEditPart extends AbstractElementEditPart {
 
 	/**
 	 * <pre>
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -234,7 +234,7 @@ public class BlockPropertyCompositeEditPart extends AbstractElementEditPart {
 
 	/**
 	 * <pre>
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

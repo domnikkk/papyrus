@@ -11,7 +11,7 @@
  *    Gregoire Dupe (Mia-Software) - Bug 386387 - [CustomizedTreeContentProvider] The TreeElements are not preserved between two calls to getElements()
  *    Christian W. Damus (CEA) - bug 430700
  *    Christian W. Damus (CEA) - bug 440795
- *    
+ *
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.custom.ui.internal;
 
@@ -30,14 +30,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypedElement;
-import org.eclipse.papyrus.emf.facet.custom.ui.IContentPropertiesHandler;
-import org.eclipse.papyrus.emf.facet.custom.ui.IContentPropertiesHandlerFactory;
-import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedContentProvider;
-import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedTreeContentProvider;
-import org.eclipse.papyrus.emf.facet.efacet.core.FacetUtils;
-import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
-import org.eclipse.papyrus.emf.facet.efacet.core.exception.FacetManagerException;
-import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.custom.core.exception.CustomizationException;
@@ -46,6 +38,14 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EReferenceTreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.TreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.TreeproxyFactory;
+import org.eclipse.papyrus.emf.facet.custom.ui.IContentPropertiesHandler;
+import org.eclipse.papyrus.emf.facet.custom.ui.IContentPropertiesHandlerFactory;
+import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedContentProvider;
+import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedTreeContentProvider;
+import org.eclipse.papyrus.emf.facet.efacet.core.FacetUtils;
+import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
+import org.eclipse.papyrus.emf.facet.efacet.core.exception.FacetManagerException;
+import org.eclipse.papyrus.emf.facet.util.core.Logger;
 
 @SuppressWarnings("deprecation")
 // @SuppressWarnings("deprecation") : Bug 380229 - [deprecated] ICustomizedContentProvider
@@ -59,10 +59,10 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 
 	private class EObjectCacheElement {
 
-		//Not null
+		// Not null
 		private final EObject element;
 
-		//May be null
+		// May be null
 		private final TreeElement parent;
 
 		public EObjectCacheElement(EObject element, TreeElement parent) {
@@ -82,31 +82,31 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 
 		@Override
 		public boolean equals(Object obj) {
-			if(this == obj) {
+			if (this == obj) {
 				return true;
 			}
-			if(obj == null) {
+			if (obj == null) {
 				return false;
 			}
-			if(!(obj instanceof EObjectCacheElement)) {
+			if (!(obj instanceof EObjectCacheElement)) {
 				return false;
 			}
-			EObjectCacheElement other = (EObjectCacheElement)obj;
-			if(!getOuterType().equals(other.getOuterType())) {
+			EObjectCacheElement other = (EObjectCacheElement) obj;
+			if (!getOuterType().equals(other.getOuterType())) {
 				return false;
 			}
-			if(element == null) {
-				if(other.element != null) {
+			if (element == null) {
+				if (other.element != null) {
 					return false;
 				}
-			} else if(!element.equals(other.element)) {
+			} else if (!element.equals(other.element)) {
 				return false;
 			}
-			if(parent == null) {
-				if(other.parent != null) {
+			if (parent == null) {
+				if (other.parent != null) {
 					return false;
 				}
-			} else if(!parent.equals(other.parent)) {
+			} else if (!parent.equals(other.parent)) {
 				return false;
 			}
 			return true;
@@ -147,11 +147,11 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 
 		// Index the existing elements
 		final Map<Object, Object> index = new IdentityHashMap<Object, Object>(elements.length + 1);
-		if(this.rootElements != null) {
-			for(Object next : this.rootElements) {
-				if(next instanceof EObjectTreeElement) {
+		if (this.rootElements != null) {
+			for (Object next : this.rootElements) {
+				if (next instanceof EObjectTreeElement) {
 					// Maps to its tree-element proxy
-					index.put(((EObjectTreeElement)next).getEObject(), next);
+					index.put(((EObjectTreeElement) next).getEObject(), next);
 				} else {
 					// Maps to itself
 					index.put(next, next);
@@ -159,16 +159,16 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 			}
 		}
 
-		for(final Object element : elements) {
-			if(!isVisible(element, null)) {
+		for (final Object element : elements) {
+			if (!isVisible(element, null)) {
 				continue;
 			}
 
 			Object existing = index.get(element);
-			if(existing != null) {
+			if (existing != null) {
 				// Just add it
 				elementList.add(existing);
-			} else if(element instanceof EObject) {
+			} else if (element instanceof EObject) {
 				final EObjectTreeElement eObjectProxy = getEObjectProxy(element, null);
 				elementList.add(eObjectProxy);
 			} else {
@@ -181,7 +181,7 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 	}
 
 	protected static EObjectTreeElement createEObjectProxy(final Object element, final TreeElement parent) {
-		final EObject eObject = (EObject)element;
+		final EObject eObject = (EObject) element;
 		final EObjectTreeElement eObjectProxy = TreeproxyFactory.eINSTANCE.createEObjectTreeElement();
 		eObjectProxy.setEObject(eObject);
 		eObjectProxy.setParent(parent);
@@ -266,14 +266,14 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 	}
 
 	private TreeElement getSingleValuedReferenceChild(final EReference eReference,
-		final EObject eObject, final EReferenceTreeElement parent) {
+			final EObject eObject, final EReferenceTreeElement parent) {
 		TreeElement child = null;
 		if (parent.getReferedEObjectTE() == null || parent.getReferedEObjectTE().size() == 0) {
 			try {
 				final IFacetManager facetManager = this.customManager
-					.getFacetManager();
+						.getFacetManager();
 				final EObject referedEObject = facetManager.getOrInvoke(
-					eObject, eReference, EObject.class);
+						eObject, eReference, EObject.class);
 				if (referedEObject != null) {
 					child = getEObjectProxy(referedEObject, parent);
 				}
@@ -287,15 +287,15 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 	}
 
 	private List<EObjectTreeElement> getMultiValuedReferenceChildren(
-		final EReference eReference, final EObject eObject,
-		final EReferenceTreeElement parent) {
+			final EReference eReference, final EObject eObject,
+			final EReferenceTreeElement parent) {
 		List<EObjectTreeElement> children = new ArrayList<EObjectTreeElement>();
 		if (parent.getReferedEObjectTE() == null || parent.getReferedEObjectTE().size() == 0) {
 			try {
 				final IFacetManager facetManager = this.customManager
-					.getFacetManager();
+						.getFacetManager();
 				final List<Object> result = facetManager
-					.getOrInvokeMultiValued(eObject, eReference, null);
+						.getOrInvokeMultiValued(eObject, eReference, null);
 				for (final Object object : result) {
 					if (object instanceof EObject) {
 						final EObject childEObject = (EObject) object;
@@ -327,7 +327,7 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 
 
 	public void inputChanged(final Viewer viewer, final Object oldInput, final Object newInput) {
-		if(oldInput != newInput) {
+		if (oldInput != newInput) {
 			cache.clear();
 		}
 	}
@@ -379,14 +379,14 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 
 		Collection<Object> result = new LinkedList<Object>();
 
-		for(EReference reference : allReferences) {
-			if(isVisible(eObject, reference)) {
-				if(collapseLink(eObject, reference)) {
-					if(reference.getUpperBound() != 1) {
+		for (EReference reference : allReferences) {
+			if (isVisible(eObject, reference)) {
+				if (collapseLink(eObject, reference)) {
+					if (reference.getUpperBound() != 1) {
 						result.addAll(getMultiValuedReferenceChildren(reference, eObject, treeElement));
 					} else {
 						Object child = getSingleValuedReferenceChild(reference, eObject, treeElement);
-						if(child != null) {
+						if (child != null) {
 							result.add(child);
 						}
 					}
@@ -414,10 +414,10 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 
 
 		List<TreeElement> result = new LinkedList<TreeElement>();
-		for(EAttribute eAttribute : allAttributes) {
-			if(isVisible(eObject, eAttribute)) {
+		for (EAttribute eAttribute : allAttributes) {
+			if (isVisible(eObject, eAttribute)) {
 				TreeElement eAttributeTreeElement = getEAttributeProxy(eAttribute, treeElement);
-				if(eAttributeTreeElement != null) {
+				if (eAttributeTreeElement != null) {
 					result.add(eAttributeTreeElement);
 				}
 			}
@@ -429,7 +429,7 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 
 	private EReferenceTreeElement createReferenceProxy(final EReference reference, final EObjectTreeElement parent) {
 		final EObject eObject = parent.getEObject();
-		if(isVisible(eObject, reference)) {
+		if (isVisible(eObject, reference)) {
 			final EReferenceTreeElement referenceProxy = TreeproxyFactory.eINSTANCE.createEReferenceTreeElement();
 			referenceProxy.setEReference(reference);
 			referenceProxy.setParent(parent);
@@ -440,7 +440,7 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 
 	private EAttributeTreeElement createAttributeProxy(final EAttribute attribute, final EObjectTreeElement parent) {
 		final EObject eObject = parent.getEObject();
-		if(isVisible(eObject, attribute)) {
+		if (isVisible(eObject, attribute)) {
 			final EAttributeTreeElement attributeProxy = TreeproxyFactory.eINSTANCE.createEAttributeTreeElement();
 			attributeProxy.setEAttribute(attribute);
 			attributeProxy.setParent(parent);
@@ -454,8 +454,8 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 		try {
 			final IFacetManager facetManager = this.customManager.getFacetManager();
 			final Object result = facetManager.getOrInvoke(eObject, eReference, null);
-			if(result instanceof EObject) {
-				final EObject childEObject = (EObject)result;
+			if (result instanceof EObject) {
+				final EObject childEObject = (EObject) result;
 				child = getEObjectProxy(childEObject, parent);
 			}
 		} catch (final FacetManagerException e) {
@@ -469,9 +469,9 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 		try {
 			final IFacetManager facetManager = this.customManager.getFacetManager();
 			final List<Object> result = facetManager.getOrInvokeMultiValued(eObject, eReference, null);
-			for(final Object object : result) {
-				if(object instanceof EObject) {
-					final EObject childEObject = (EObject)object;
+			for (final Object object : result) {
+				if (object instanceof EObject) {
+					final EObject childEObject = (EObject) object;
 					children.add(getEObjectProxy(childEObject, parent));
 				}
 			}
@@ -482,27 +482,27 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 	}
 
 	protected EObjectTreeElement getEObjectProxy(final Object element, final TreeElement parent) {
-		EObjectCacheElement cacheElement = new EObjectCacheElement((EObject)element, parent);
-		if(!(cache.containsKey(cacheElement))) {
+		EObjectCacheElement cacheElement = new EObjectCacheElement((EObject) element, parent);
+		if (!(cache.containsKey(cacheElement))) {
 			cache.put(cacheElement, createEObjectProxy(element, parent));
 		}
-		return (EObjectTreeElement)cache.get(cacheElement);
+		return (EObjectTreeElement) cache.get(cacheElement);
 	}
 
 	protected EAttributeTreeElement getEAttributeProxy(final Object element, final TreeElement parent) {
-		EObjectCacheElement cacheElement = new EObjectCacheElement((EObject)element, parent);
-		if(!(cache.containsKey(cacheElement))) {
-			cache.put(cacheElement, createAttributeProxy((EAttribute)element, (EObjectTreeElement)parent));
+		EObjectCacheElement cacheElement = new EObjectCacheElement((EObject) element, parent);
+		if (!(cache.containsKey(cacheElement))) {
+			cache.put(cacheElement, createAttributeProxy((EAttribute) element, (EObjectTreeElement) parent));
 		}
-		return (EAttributeTreeElement)cache.get(cacheElement);
+		return (EAttributeTreeElement) cache.get(cacheElement);
 	}
 
 	protected EReferenceTreeElement getEReferenceProxy(final Object element, final EObjectTreeElement parent) {
-		EObjectCacheElement cacheElement = new EObjectCacheElement((EObject)element, parent);
-		if(!(cache.containsKey(cacheElement))) {
-			cache.put(cacheElement, createReferenceProxy((EReference)element, parent));
+		EObjectCacheElement cacheElement = new EObjectCacheElement((EObject) element, parent);
+		if (!(cache.containsKey(cacheElement))) {
+			cache.put(cacheElement, createReferenceProxy((EReference) element, parent));
 		}
-		return (EReferenceTreeElement)cache.get(cacheElement);
+		return (EReferenceTreeElement) cache.get(cacheElement);
 	}
 
 	public void dispose() {

@@ -8,17 +8,13 @@ package org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWit
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintRule;
 import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintSpecification;
 import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintWithVSLlPackage;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Type;
 
@@ -29,7 +25,7 @@ import org.eclipse.uml2.uml.Type;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintRuleImpl#getSpecification <em>Specification</em>}</li>
+ * <li>{@link org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintRuleImpl#getSpecification <em>Specification</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +36,7 @@ public class ConstraintRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getSpecification() <em>Specification</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSpecification()
 	 * @generated
 	 * @ordered
@@ -49,6 +46,7 @@ public class ConstraintRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ConstraintRuleImpl() {
@@ -58,6 +56,7 @@ public class ConstraintRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,8 +67,10 @@ public class ConstraintRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ConstraintSpecification getSpecification() {
 		return specification;
 	}
@@ -77,6 +78,7 @@ public class ConstraintRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSpecification(ConstraintSpecification newSpecification, NotificationChain msgs) {
@@ -84,7 +86,11 @@ public class ConstraintRuleImpl extends MinimalEObjectImpl.Container implements 
 		specification = newSpecification;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION, oldSpecification, newSpecification);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -92,50 +98,62 @@ public class ConstraintRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setSpecification(ConstraintSpecification newSpecification) {
 		if (newSpecification != specification) {
 			NotificationChain msgs = null;
-			if (specification != null)
-				msgs = ((InternalEObject)specification).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION, null, msgs);
-			if (newSpecification != null)
-				msgs = ((InternalEObject)newSpecification).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION, null, msgs);
+			if (specification != null) {
+				msgs = ((InternalEObject) specification).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION, null, msgs);
+			}
+			if (newSpecification != null) {
+				msgs = ((InternalEObject) newSpecification).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION, null, msgs);
+			}
 			msgs = basicSetSpecification(newSpecification, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION, newSpecification, newSpecification));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Type getExpectedType() {
-		return org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.validation.ContextUtil.getExpectedType(this) ;
+		return org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.validation.ContextUtil.getExpectedType(this);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Element getContextElement() {
-		return org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.validation.ContextUtil.getContextElement(this) ;
+		return org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.validation.ContextUtil.getContextElement(this);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION:
-				return basicSetSpecification(null, msgs);
+		case ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION:
+			return basicSetSpecification(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -143,13 +161,14 @@ public class ConstraintRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION:
-				return getSpecification();
+		case ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION:
+			return getSpecification();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,14 +176,15 @@ public class ConstraintRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION:
-				setSpecification((ConstraintSpecification)newValue);
-				return;
+		case ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION:
+			setSpecification((ConstraintSpecification) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -172,14 +192,15 @@ public class ConstraintRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION:
-				setSpecification((ConstraintSpecification)null);
-				return;
+		case ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION:
+			setSpecification((ConstraintSpecification) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -187,15 +208,16 @@ public class ConstraintRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION:
-				return specification != null;
+		case ConstraintWithVSLlPackage.CONSTRAINT_RULE__SPECIFICATION:
+			return specification != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ConstraintRuleImpl
+} // ConstraintRuleImpl

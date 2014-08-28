@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,132 +33,142 @@ public class CSSConnectorStyleImpl extends ConnectorStyleImpl implements CSSConn
 	private CSSConnectorStyle connectorStyle;
 
 	protected CSSConnectorStyle getConnectorStyle() {
-		if(connectorStyle == null) {
+		if (connectorStyle == null) {
 			connectorStyle = new CSSConnectorStyleDelegate(this, getEngine());
 		}
 		return connectorStyle;
 	}
 
 	protected ExtendedCSSEngine getEngine() {
-		if(engine == null) {
-			engine = ((CSSDiagramImpl)findView().getDiagram()).getEngine();
+		if (engine == null) {
+			engine = ((CSSDiagramImpl) findView().getDiagram()).getEngine();
 		}
 		return engine;
 	}
 
 	protected View findView() {
 		EObject parent = eContainer();
-		while(!(parent instanceof View) && parent != null) {
+		while (!(parent instanceof View) && parent != null) {
 			parent = parent.eContainer();
 		}
 
-		if(parent != null) {
-			return (View)parent;
+		if (parent != null) {
+			return (View) parent;
 		}
 
 		return null;
 	}
 
 
-	//////////////////////////////////////////
-	//	Forwards accesses to CSS properties	//
-	//////////////////////////////////////////
+	// ////////////////////////////////////////
+	// Forwards accesses to CSS properties //
+	// ////////////////////////////////////////
 
 
+	@Override
 	public int getCSSRoundedBendpointsRadius() {
 		int value = super.getRoundedBendpointsRadius();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoundedCornersStyle_RoundedBendpointsRadius(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoundedCornersStyle_RoundedBendpointsRadius(), value)) {
 			return value;
 		} else {
 			return getConnectorStyle().getCSSRoundedBendpointsRadius();
 		}
 	}
 
+	@Override
 	public Routing getCSSRouting() {
 		Routing value = super.getRouting();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), value)) {
 			return value;
 		} else {
 			return getConnectorStyle().getCSSRouting();
 		}
 	}
 
+	@Override
 	public Smoothness getCSSSmoothness() {
 		Smoothness value = super.getSmoothness();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoutingStyle_Smoothness(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoutingStyle_Smoothness(), value)) {
 			return value;
 		} else {
 			return getConnectorStyle().getCSSSmoothness();
 		}
 	}
 
+	@Override
 	public boolean isCSSAvoidObstructions() {
 		boolean value = super.isAvoidObstructions();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoutingStyle_AvoidObstructions(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoutingStyle_AvoidObstructions(), value)) {
 			return value;
 		} else {
 			return getConnectorStyle().isCSSAvoidObstructions();
 		}
 	}
 
+	@Override
 	public boolean isCSSClosestDistance() {
 		boolean value = super.isClosestDistance();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoutingStyle_ClosestDistance(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoutingStyle_ClosestDistance(), value)) {
 			return value;
 		} else {
 			return getConnectorStyle().isCSSClosestDistance();
 		}
 	}
 
+	@Override
 	public JumpLinkStatus getCSSJumpLinkStatus() {
 		JumpLinkStatus value = super.getJumpLinkStatus();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoutingStyle_JumpLinkStatus(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoutingStyle_JumpLinkStatus(), value)) {
 			return value;
 		} else {
 			return getConnectorStyle().getCSSJumpLinkStatus();
 		}
 	}
 
+	@Override
 	public JumpLinkType getCSSJumpLinkType() {
 		JumpLinkType value = super.getJumpLinkType();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoutingStyle_JumpLinkType(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoutingStyle_JumpLinkType(), value)) {
 			return value;
 		} else {
 			return getConnectorStyle().getCSSJumpLinkType();
 		}
 	}
 
+	@Override
 	public boolean isCSSJumpLinksReverse() {
 		boolean value = super.isJumpLinksReverse();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoutingStyle_JumpLinksReverse(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoutingStyle_JumpLinksReverse(), value)) {
 			return value;
 		} else {
 			return getConnectorStyle().isCSSJumpLinksReverse();
 		}
 	}
 
+	@Override
 	public int getCSSLineColor() {
 		int value = super.getLineColor();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getLineStyle_LineColor(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getLineStyle_LineColor(), value)) {
 			return value;
 		} else {
 			return getConnectorStyle().getCSSLineColor();
 		}
 	}
 
+	@Override
 	public int getCSSLineWidth() {
 		int value = super.getLineWidth();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getLineStyle_LineWidth(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getLineStyle_LineWidth(), value)) {
 			return value;
 		} else {
 			return getConnectorStyle().getCSSLineWidth();
@@ -168,69 +178,69 @@ public class CSSConnectorStyleImpl extends ConnectorStyleImpl implements CSSConn
 
 	@Override
 	public int getRoundedBendpointsRadius() {
-		//return super.getRoundedBendpointsRadius();
+		// return super.getRoundedBendpointsRadius();
 		return getCSSRoundedBendpointsRadius();
 	}
 
 	@Override
 	public Routing getRouting() {
-		//return super.getRouting();
+		// return super.getRouting();
 		return getCSSRouting();
 	}
 
 	@Override
 	public Smoothness getSmoothness() {
-		//return super.getSmoothness();
+		// return super.getSmoothness();
 		return getCSSSmoothness();
 	}
 
 	@Override
 	public boolean isAvoidObstructions() {
-		//return super.isAvoidObstructions();
+		// return super.isAvoidObstructions();
 		return isCSSAvoidObstructions();
 	}
 
 	@Override
 	public boolean isClosestDistance() {
-		//return super.isClosestDistance();
+		// return super.isClosestDistance();
 		return isCSSClosestDistance();
 	}
 
 	@Override
 	public JumpLinkStatus getJumpLinkStatus() {
-		//return super.getJumpLinkStatus();
+		// return super.getJumpLinkStatus();
 		return getCSSJumpLinkStatus();
 	}
 
 	@Override
 	public JumpLinkType getJumpLinkType() {
-		//return super.getJumpLinkType();
+		// return super.getJumpLinkType();
 		return getCSSJumpLinkType();
 	}
 
 	@Override
 	public boolean isJumpLinksReverse() {
-		//return super.isJumpLinksReverse();
+		// return super.isJumpLinksReverse();
 		return isCSSJumpLinksReverse();
 	}
 
 	@Override
 	public int getLineColor() {
-		//return super.getLineColor();
+		// return super.getLineColor();
 		return getCSSLineColor();
 	}
 
 	@Override
 	public int getLineWidth() {
-		//return super.getLineWidth();
+		// return super.getLineWidth();
 		return getCSSLineWidth();
 	}
 
 
 
-	////////////////////////////////////////////////
-	//	Implements a setter for each CSS property //
-	////////////////////////////////////////////////	
+	// //////////////////////////////////////////////
+	// Implements a setter for each CSS property //
+	// //////////////////////////////////////////////
 
 	@Override
 	public void setRoundedBendpointsRadius(int value) {
@@ -312,9 +322,9 @@ public class CSSConnectorStyleImpl extends ConnectorStyleImpl implements CSSConn
 		ForceValueHelper.setValue(findView(), feature, value);
 	}
 
-	//////////////////////////////////
-	//	Implements the unset method //
-	//////////////////////////////////
+	// ////////////////////////////////
+	// Implements the unset method //
+	// ////////////////////////////////
 
 	@Override
 	public void eUnset(int featureId) {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,9 +17,9 @@ import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 /**
- * 
+ *
  * Singleton helper class used to find pattern queries in strings
- * 
+ *
  */
 public class PatternHelper {
 
@@ -31,29 +31,29 @@ public class PatternHelper {
 
 	/**
 	 * Singleton
-	 * 
+	 *
 	 * @return the helper
 	 */
 	public final static PatternHelper getInstance() {
-		
-			synchronized(PatternHelper.class) {
-				if(PatternHelper.instance == null) {
-					PatternHelper.instance = new PatternHelper();
-				}
+
+		synchronized (PatternHelper.class) {
+			if (PatternHelper.instance == null) {
+				PatternHelper.instance = new PatternHelper();
 			}
-		
+		}
+
 		return PatternHelper.instance;
 	}
 
 	/**
 	 * Create a pattern
-	 * 
+	 *
 	 * @param query
-	 *        the query text
+	 *            the query text
 	 * @param isCaseSensitive
-	 *        if it is a case sensitive pattern
+	 *            if it is a case sensitive pattern
 	 * @param isRegularExpression
-	 *        if it i a regular expression pattern
+	 *            if it i a regular expression pattern
 	 * @return
 	 *         the pattern corresponding to the query text and the parameters
 	 * @throws PatternSyntaxException
@@ -61,12 +61,12 @@ public class PatternHelper {
 	public Pattern createPattern(String query, boolean isCaseSensitive, boolean isRegularExpression) throws PatternSyntaxException {
 		int options = Pattern.MULTILINE;
 
-		if(!isRegularExpression) {
+		if (!isRegularExpression) {
 			//			query = ".*" + Pattern.quote(query); //$NON-NLS-1$
-			query = Pattern.quote(query); //$NON-NLS-1$
+			query = Pattern.quote(query);
 		}
 
-		if(!isCaseSensitive) {
+		if (!isCaseSensitive) {
 			options |= Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE;
 		}
 
@@ -75,24 +75,24 @@ public class PatternHelper {
 
 	}
 
-	//	/**
-	//	 * Check whether a string matches a certain pattern in a matcher
-	//	 * 
-	//	 * @param m
-	//	 *        the matcher
-	//	 * @param isRegularExpression
-	//	 *        specify if it is a regular expression pattern
-	//	 * @return
-	//	 *         true if the text matches the pattern, else false
-	//	 */
-	//	public boolean evaluate(Matcher m, boolean isRegularExpression) {
+	// /**
+	// * Check whether a string matches a certain pattern in a matcher
+	// *
+	// * @param m
+	// * the matcher
+	// * @param isRegularExpression
+	// * specify if it is a regular expression pattern
+	// * @return
+	// * true if the text matches the pattern, else false
+	// */
+	// public boolean evaluate(Matcher m, boolean isRegularExpression) {
 	//
 	//
-	//		if(isRegularExpression) {
-	//			return m.matches();
-	//		} else {
-	//			return m.lookingAt();
-	//		}
-	//	}
+	// if(isRegularExpression) {
+	// return m.matches();
+	// } else {
+	// return m.lookingAt();
+	// }
+	// }
 
 }

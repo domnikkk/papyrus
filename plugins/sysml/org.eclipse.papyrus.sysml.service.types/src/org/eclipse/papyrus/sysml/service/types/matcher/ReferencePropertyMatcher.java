@@ -28,15 +28,15 @@ public class ReferencePropertyMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if((eObject instanceof Property) && !(eObject instanceof Port)) {
+		if ((eObject instanceof Property) && !(eObject instanceof Port)) {
 
-			Property element = (Property)eObject;
-			
+			Property element = (Property) eObject;
+
 			// The property is not a composition and has a type
 			if ((element.getType() != null) && (element.getAggregation() != AggregationKind.COMPOSITE_LITERAL)) {
-				
+
 				// Moreover its type has to be a Block
-				if(UMLUtil.getStereotypeApplication(element.getType(), Block.class) != null) {
+				if (UMLUtil.getStereotypeApplication(element.getType(), Block.class) != null) {
 					isMatch = true;
 				}
 			}

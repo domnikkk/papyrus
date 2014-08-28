@@ -52,7 +52,7 @@ public abstract class AbstractDataProvider implements IDataProvider {
 
 	public IObservable observe(Object data, String path, Object elementType, int observeKind) {
 		Object type = null;
-		if(elementType == null) {
+		if (elementType == null) {
 			type = getModelService().toModelType(data);
 		} else {
 			type = elementType;
@@ -60,62 +60,62 @@ public abstract class AbstractDataProvider implements IDataProvider {
 		Object propertyType = getModelService().toModelPropertyType(type, path);
 		Class<?> propertyTypeClass = null;
 
-		if(propertyType instanceof Class<?>) {
-			propertyTypeClass = (Class<?>)propertyType;
-			if(IBinding.class.isAssignableFrom(propertyTypeClass)) {
+		if (propertyType instanceof Class<?>) {
+			propertyTypeClass = (Class<?>) propertyType;
+			if (IBinding.class.isAssignableFrom(propertyTypeClass)) {
 				return null;
 			}
 		}
 
-		switch(observeKind) {
+		switch (observeKind) {
 		case ScopeManager.AUTO:
-			if(propertyTypeClass != null && (propertyTypeClass.isArray() || List.class.isAssignableFrom(propertyTypeClass))) {
-				if(data instanceof IObservableValue) {
-					IObservableValue observable = (IObservableValue)data;
+			if (propertyTypeClass != null && (propertyTypeClass.isArray() || List.class.isAssignableFrom(propertyTypeClass))) {
+				if (data instanceof IObservableValue) {
+					IObservableValue observable = (IObservableValue) data;
 					return observeDetailList(observable, type, path, propertyType);
 				}
 				return observeList(data, path);
-			} else if(propertyTypeClass != null && (Set.class.isAssignableFrom(propertyTypeClass))) {
-				if(data instanceof IObservableValue) {
-					IObservableValue observable = (IObservableValue)data;
+			} else if (propertyTypeClass != null && (Set.class.isAssignableFrom(propertyTypeClass))) {
+				if (data instanceof IObservableValue) {
+					IObservableValue observable = (IObservableValue) data;
 					return observeDetailSet(observable, type, path, propertyType);
 				}
 				return observeSet(data, path);
 			} else {
-				if(data instanceof IObservableValue) {
-					IObservableValue observable = (IObservableValue)data;
+				if (data instanceof IObservableValue) {
+					IObservableValue observable = (IObservableValue) data;
 					return observeDetailValue(observable, type, path, propertyType);
 				}
 				return observeValue(data, path);
 			}
 		case ScopeManager.VALUE:
-			if(data instanceof IObservableValue) {
-				IObservableValue observable = (IObservableValue)data;
+			if (data instanceof IObservableValue) {
+				IObservableValue observable = (IObservableValue) data;
 				return observeDetailValue(observable, type, path, propertyType);
 			}
 			return observeValue(data, path);
 		case ScopeManager.COLLECTION:
-			if(propertyTypeClass != null && Set.class.isAssignableFrom(propertyTypeClass)) {
-				if(data instanceof IObservableValue) {
-					IObservableValue observable = (IObservableValue)data;
+			if (propertyTypeClass != null && Set.class.isAssignableFrom(propertyTypeClass)) {
+				if (data instanceof IObservableValue) {
+					IObservableValue observable = (IObservableValue) data;
 					return observeDetailSet(observable, type, path, propertyType);
 				}
 				return observeSet(data, path);
 			}
-			if(data instanceof IObservableValue) {
-				IObservableValue observable = (IObservableValue)data;
+			if (data instanceof IObservableValue) {
+				IObservableValue observable = (IObservableValue) data;
 				return observeDetailList(observable, type, path, propertyType);
 			}
 			return observeList(data, path);
 		case ScopeManager.SET:
-			if(data instanceof IObservableValue) {
-				IObservableValue observable = (IObservableValue)data;
+			if (data instanceof IObservableValue) {
+				IObservableValue observable = (IObservableValue) data;
 				return observeDetailSet(observable, type, path, propertyType);
 			}
 			return observeSet(data, path);
 		case ScopeManager.LIST:
-			if(data instanceof IObservableValue) {
-				IObservableValue observable = (IObservableValue)data;
+			if (data instanceof IObservableValue) {
+				IObservableValue observable = (IObservableValue) data;
 				return observeDetailList(observable, type, path, propertyType);
 			}
 			return observeList(data, path);

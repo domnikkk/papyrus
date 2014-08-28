@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,26 +29,29 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 public class TransitionRule implements INavigationRule {
 
+	@Override
 	public boolean handle(EObject element) {
 		return element instanceof Transition;
 	}
 
+	@Override
 	public List<NavigableElement> getNextPossibleElements(NavigableElement currentNavElement) {
 		List<NavigableElement> nextPossibleElements = new LinkedList<NavigableElement>();
 
 		EStructuralFeature feature = UMLPackage.Literals.TRANSITION__EFFECT;
 
-		final Transition transition = (Transition)currentNavElement.getElement();
+		final Transition transition = (Transition) currentNavElement.getElement();
 		// two cases here :
 		// if the effect is defined we want the possibility to navigate to it
 		// otherwise we want the possibility to create either an interaction or an activity as an effect
-		if(transition.getEffect() != null) {
+		if (transition.getEffect() != null) {
 			nextPossibleElements.add(new ExistingNavigableElement(transition.getEffect(), feature));
 		} else {
 			UMLRuleHelper.addBehaviorCreatedNavigableElements(nextPossibleElements, currentNavElement, feature, new IModelLinker() {
 
+				@Override
 				public void linkToModel(EObject toLink) {
-					transition.setEffect((Behavior)toLink);
+					transition.setEffect((Behavior) toLink);
 				}
 			});
 		}

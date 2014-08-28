@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -17,9 +17,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -30,7 +28,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
 import org.eclipse.papyrus.infra.extendedtypes.IconEntry;
 
@@ -38,7 +35,7 @@ import org.eclipse.papyrus.infra.extendedtypes.IconEntry;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.extendedtypes.IconEntry} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class IconEntryItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
@@ -47,7 +44,7 @@ public class IconEntryItemProvider extends ItemProviderAdapter implements IEditi
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IconEntryItemProvider(AdapterFactory adapterFactory) {
@@ -58,12 +55,12 @@ public class IconEntryItemProvider extends ItemProviderAdapter implements IEditi
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addIconPathPropertyDescriptor(object);
 			addBundleIdPropertyDescriptor(object);
@@ -75,33 +72,33 @@ public class IconEntryItemProvider extends ItemProviderAdapter implements IEditi
 	 * This adds a property descriptor for the Icon Path feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIconPathPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_IconEntry_iconPath_feature"), //$NON-NLS-1$
-			getString("_UI_PropertyDescriptor_description", "_UI_IconEntry_iconPath_feature", "_UI_IconEntry_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			ExtendedtypesPackage.eINSTANCE.getIconEntry_IconPath(), true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_IconEntry_iconPath_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_IconEntry_iconPath_feature", "_UI_IconEntry_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				ExtendedtypesPackage.eINSTANCE.getIconEntry_IconPath(), true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Bundle Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBundleIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_IconEntry_bundleId_feature"), //$NON-NLS-1$
-			getString("_UI_PropertyDescriptor_description", "_UI_IconEntry_bundleId_feature", "_UI_IconEntry_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			ExtendedtypesPackage.eINSTANCE.getIconEntry_BundleId(), true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_IconEntry_bundleId_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_IconEntry_bundleId_feature", "_UI_IconEntry_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				ExtendedtypesPackage.eINSTANCE.getIconEntry_BundleId(), true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This returns IconEntry.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,14 +110,14 @@ public class IconEntryItemProvider extends ItemProviderAdapter implements IEditi
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((IconEntry)object).getIconPath();
+		String label = ((IconEntry) object).getIconPath();
 		return label == null || label.length() == 0 ? getString("_UI_IconEntry_type") : //$NON-NLS-1$
-		getString("_UI_IconEntry_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_IconEntry_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -128,13 +125,13 @@ public class IconEntryItemProvider extends ItemProviderAdapter implements IEditi
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch(notification.getFeatureID(IconEntry.class)) {
+		switch (notification.getFeatureID(IconEntry.class)) {
 		case ExtendedtypesPackage.ICON_ENTRY__ICON_PATH:
 		case ExtendedtypesPackage.ICON_ENTRY__BUNDLE_ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
@@ -148,7 +145,7 @@ public class IconEntryItemProvider extends ItemProviderAdapter implements IEditi
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +157,7 @@ public class IconEntryItemProvider extends ItemProviderAdapter implements IEditi
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

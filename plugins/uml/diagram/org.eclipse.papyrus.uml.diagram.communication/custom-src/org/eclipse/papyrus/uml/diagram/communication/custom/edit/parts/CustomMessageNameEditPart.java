@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,16 +25,16 @@ import org.eclipse.papyrus.uml.diagram.communication.part.UMLDiagramEditorPlugin
 import org.eclipse.swt.graphics.Image;
 
 /**
- * 
+ *
  * CustomMessageNameEditPart: a custom wrapping label of the MssageEditPart
- * 
+ *
  */
 public class CustomMessageNameEditPart extends MessageNameEditPart {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomMessageNameEditPart(View view) {
@@ -44,9 +44,9 @@ public class CustomMessageNameEditPart extends MessageNameEditPart {
 	static final String PATH = "/icons/arrow.gif"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.communication.edit.parts.MessageNameEditPart#getLabelIcon()
-	 * 
+	 *
 	 * @return the specific icon of the label (an arrow)
 	 */
 	@Override
@@ -56,25 +56,25 @@ public class CustomMessageNameEditPart extends MessageNameEditPart {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.communication.edit.parts.MessageNameEditPart#setLabelTextHelper(org.eclipse.draw2d.IFigure, java.lang.String)
-	 * 
+	 *
 	 * @param figure
 	 * @param text
 	 */
 	@Override
 	public void setLabelTextHelper(IFigure figure, String text) {
-		if(figure instanceof CustomWrappingLabel) {
-			((CustomWrappingLabel)figure).setText(text);
+		if (figure instanceof CustomWrappingLabel) {
+			((CustomWrappingLabel) figure).setText(text);
 			// added to precise the position of the text relative to
 			// the icon
-			((CustomWrappingLabel)figure).setTextPlacement(PositionConstants.NORTH);
-		} else if(figure instanceof ILabelFigure) {
-			((ILabelFigure)figure).setText(text);
+			((CustomWrappingLabel) figure).setTextPlacement(PositionConstants.NORTH);
+		} else if (figure instanceof ILabelFigure) {
+			((ILabelFigure) figure).setText(text);
 		}
 
 		else {
-			((Label)figure).setText(text);
+			((Label) figure).setText(text);
 		}
 	}
 

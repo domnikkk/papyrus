@@ -1,26 +1,23 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.dd.dg.provider;
 
 import java.awt.Color;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -33,17 +30,15 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.GradientStop;
-
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.GradientStop} object.
  * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class GradientStopItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
@@ -51,7 +46,7 @@ public class GradientStopItemProvider extends ItemProviderAdapter implements IEd
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GradientStopItemProvider(AdapterFactory adapterFactory) {
@@ -61,12 +56,12 @@ public class GradientStopItemProvider extends ItemProviderAdapter implements IEd
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addColorPropertyDescriptor(object);
 			addOffsetPropertyDescriptor(object);
@@ -78,37 +73,40 @@ public class GradientStopItemProvider extends ItemProviderAdapter implements IEd
 	/**
 	 * This adds a property descriptor for the Color feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addColorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GradientStop_color_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GradientStop_color_feature", "_UI_GradientStop_type"), DGPackage.Literals.GRADIENT_STOP__COLOR, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GradientStop_color_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_GradientStop_color_feature", "_UI_GradientStop_type"), DGPackage.Literals.GRADIENT_STOP__COLOR, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Offset feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addOffsetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GradientStop_offset_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GradientStop_offset_feature", "_UI_GradientStop_type"), DGPackage.Literals.GRADIENT_STOP__OFFSET, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GradientStop_offset_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_GradientStop_offset_feature", "_UI_GradientStop_type"), DGPackage.Literals.GRADIENT_STOP__OFFSET, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Opacity feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addOpacityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GradientStop_opacity_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GradientStop_opacity_feature", "_UI_GradientStop_type"), DGPackage.Literals.GRADIENT_STOP__OPACITY, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GradientStop_opacity_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_GradientStop_opacity_feature", "_UI_GradientStop_type"), DGPackage.Literals.GRADIENT_STOP__OPACITY, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This returns GradientStop.gif. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,12 +118,12 @@ public class GradientStopItemProvider extends ItemProviderAdapter implements IEd
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		Color labelValue = ((GradientStop)object).getColor();
+		Color labelValue = ((GradientStop) object).getColor();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ? getString("_UI_GradientStop_type") : getString("_UI_GradientStop_type") + " " + label;
 	}
@@ -135,13 +133,13 @@ public class GradientStopItemProvider extends ItemProviderAdapter implements IEd
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch(notification.getFeatureID(GradientStop.class)) {
+		switch (notification.getFeatureID(GradientStop.class)) {
 		case DGPackage.GRADIENT_STOP__COLOR:
 		case DGPackage.GRADIENT_STOP__OFFSET:
 		case DGPackage.GRADIENT_STOP__OPACITY:
@@ -155,7 +153,7 @@ public class GradientStopItemProvider extends ItemProviderAdapter implements IEd
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +164,7 @@ public class GradientStopItemProvider extends ItemProviderAdapter implements IEd
 	/**
 	 * Return the resource locator for this item provider's resources. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

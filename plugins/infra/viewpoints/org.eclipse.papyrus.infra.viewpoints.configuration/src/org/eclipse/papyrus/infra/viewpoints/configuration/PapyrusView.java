@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,13 +25,13 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getIcon <em>Icon</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getParent <em>Parent</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getProfiles <em>Profiles</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getModelRules <em>Model Rules</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getOwningRules <em>Owning Rules</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getImplementationID <em>Implementation ID</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getCategories <em>Categories</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getIcon <em>Icon</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getParent <em>Parent</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getProfiles <em>Profiles</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getModelRules <em>Model Rules</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getOwningRules <em>Owning Rules</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getImplementationID <em>Implementation ID</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getCategories <em>Categories</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,10 +45,10 @@ public interface PapyrusView extends ModelKind {
 	 * Returns the value of the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Icon</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Icon</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Icon</em>' attribute.
 	 * @see #setIcon(String)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusView_Icon()
@@ -61,7 +61,9 @@ public interface PapyrusView extends ModelKind {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getIcon <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Icon</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Icon</em>' attribute.
 	 * @see #getIcon()
 	 * @generated
 	 */
@@ -71,10 +73,10 @@ public interface PapyrusView extends ModelKind {
 	 * Returns the value of the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parent</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Parent</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Parent</em>' reference.
 	 * @see #setParent(PapyrusView)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusView_Parent()
@@ -87,7 +89,9 @@ public interface PapyrusView extends ModelKind {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getParent <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Parent</em>' reference.
 	 * @see #getParent()
 	 * @generated
 	 */
@@ -98,10 +102,10 @@ public interface PapyrusView extends ModelKind {
 	 * The list contents are of type {@link org.eclipse.emf.ecore.EPackage}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Profiles</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Profiles</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Profiles</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusView_Profiles()
 	 * @model
@@ -117,6 +121,7 @@ public interface PapyrusView extends ModelKind {
 	 * <!-- begin-model-doc -->
 	 * These rules determine which model elements can be the semantic element behind this diagram
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Model Rules</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusView_ModelRules()
 	 * @model containment="true" required="true"
@@ -132,6 +137,7 @@ public interface PapyrusView extends ModelKind {
 	 * <!-- begin-model-doc -->
 	 * These rules determine which elements can be the syntactic owner of this diagram
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Owning Rules</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusView_OwningRules()
 	 * @model containment="true" required="true"
@@ -143,10 +149,10 @@ public interface PapyrusView extends ModelKind {
 	 * Returns the value of the '<em><b>Implementation ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Implementation ID</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Implementation ID</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Implementation ID</em>' attribute.
 	 * @see #setImplementationID(String)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusView_ImplementationID()
@@ -159,7 +165,9 @@ public interface PapyrusView extends ModelKind {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getImplementationID <em>Implementation ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Implementation ID</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Implementation ID</em>' attribute.
 	 * @see #getImplementationID()
 	 * @generated
 	 */
@@ -170,10 +178,10 @@ public interface PapyrusView extends ModelKind {
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.viewpoints.configuration.Category}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Categories</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Categories</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Categories</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusView_Categories()
 	 * @model

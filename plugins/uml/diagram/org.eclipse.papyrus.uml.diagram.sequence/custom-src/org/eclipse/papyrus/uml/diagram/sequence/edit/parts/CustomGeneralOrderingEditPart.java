@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,7 +48,7 @@ public class CustomGeneralOrderingEditPart extends GeneralOrderingEditPart imple
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomGeneralOrderingEditPart(View view) {
@@ -68,7 +68,7 @@ public class CustomGeneralOrderingEditPart extends GeneralOrderingEditPart imple
 	protected void handleNotificationEvent(Notification notification) {
 		super.handleNotificationEvent(notification);
 		Object feature = notification.getFeature();
-		if(NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
+		if (NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
 			refreshLineWidth();
 		}
 	}
@@ -80,7 +80,7 @@ public class CustomGeneralOrderingEditPart extends GeneralOrderingEditPart imple
 
 	@Override
 	public CustomGeneralOrderingDescriptor getPrimaryShape() {
-		return (CustomGeneralOrderingDescriptor)getFigure();
+		return (CustomGeneralOrderingDescriptor) getFigure();
 	}
 
 	@Override
@@ -91,17 +91,17 @@ public class CustomGeneralOrderingEditPart extends GeneralOrderingEditPart imple
 	@Override
 	public EditPart getTargetEditPart(Request request) {
 		EditPart ep = super.getTargetEditPart(request);
-		if(ep != null && ep instanceof org.eclipse.gef.ConnectionEditPart) {
-			if(request instanceof ReconnectRequest) {
-				ReconnectRequest rRequest = (ReconnectRequest)request;
+		if (ep != null && ep instanceof org.eclipse.gef.ConnectionEditPart) {
+			if (request instanceof ReconnectRequest) {
+				ReconnectRequest rRequest = (ReconnectRequest) request;
 
 				// If source anchor is moved, the connection's source edit part
 				// should not be taken into account for a cyclic dependency
 				// check so as to avoid false checks. Same goes for the target
 				// anchor. See bugzilla# 417373 -- we do not want to target a
 				// connection that is already connected to us so that we do not
-				// introduce a cyclic connection                
-				if(isCyclicConnectionRequest((org.eclipse.gef.ConnectionEditPart)ep, rRequest.getConnectionEditPart())) {
+				// introduce a cyclic connection
+				if (isCyclicConnectionRequest((org.eclipse.gef.ConnectionEditPart) ep, rRequest.getConnectionEditPart())) {
 					return null;
 				}
 			}
@@ -112,21 +112,21 @@ public class CustomGeneralOrderingEditPart extends GeneralOrderingEditPart imple
 
 	/**
 	 * Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=417373
-	 * 
+	 *
 	 * The ends of GeneralOrderingEditPart are MessageEndEditParts which parent are Message*EditParts, once we move the ends of the messages, we
 	 * should IGNORE to move current GeneralOrdering, otherwise cyclic dependency occur.
-	 * 
+	 *
 	 */
 	private boolean isCyclicConnectionRequest(ConnectionEditPart currentConn, ConnectionEditPart reqConn) {
-		if(currentConn == null || reqConn == null) {
+		if (currentConn == null || reqConn == null) {
 			return false;
 		}
 		EditPart source = currentConn.getSource();
 		EditPart target = currentConn.getTarget();
-		if(reqConn == source || reqConn == target) {
+		if (reqConn == source || reqConn == target) {
 			return true;
 		}
-		if(reqConn == source.getParent() || reqConn == target.getParent()) {
+		if (reqConn == source.getParent() || reqConn == target.getParent()) {
 			return true;
 		}
 		return false;
@@ -141,8 +141,8 @@ public class CustomGeneralOrderingEditPart extends GeneralOrderingEditPart imple
 
 		/**
 		 * Decoration to place in the middle of the connection
-		 * 
-		 * 
+		 *
+		 *
 		 */
 		private RotatableDecoration middleDecoration;
 
@@ -202,7 +202,7 @@ public class CustomGeneralOrderingEditPart extends GeneralOrderingEditPart imple
 
 		/**
 		 * Get the decoration of the middle
-		 * 
+		 *
 		 * @return the middle decoration - possibly null
 		 */
 		protected RotatableDecoration getMiddleDecoration() {
@@ -211,13 +211,13 @@ public class CustomGeneralOrderingEditPart extends GeneralOrderingEditPart imple
 
 		/**
 		 * Set the foreground background
-		 * 
+		 *
 		 * @see org.eclipse.draw2d.IFigure#setForegroundColor(org.eclipse.swt.graphics.Color)
 		 */
 		@Override
 		public void setForegroundColor(Color fg) {
 			super.setForegroundColor(fg);
-			if(getMiddleDecoration() != null) {
+			if (getMiddleDecoration() != null) {
 				getMiddleDecoration().setForegroundColor(fg);
 				getMiddleDecoration().setBackgroundColor(fg);
 			}
@@ -226,38 +226,38 @@ public class CustomGeneralOrderingEditPart extends GeneralOrderingEditPart imple
 		@Override
 		public void setLineWidth(int w) {
 			super.setLineWidth(w);
-			if(getMiddleDecoration() instanceof Shape) {
-				((Shape)getMiddleDecoration()).setLineWidth(w);
+			if (getMiddleDecoration() instanceof Shape) {
+				((Shape) getMiddleDecoration()).setLineWidth(w);
 			}
 		}
 
 		/**
 		 * Set the middle decoration
-		 * 
+		 *
 		 * @see org.eclipse.draw2d.PolylineConnection#setTargetDecoration(org.eclipse.draw2d.RotatableDecoration)
 		 * @generated NOT
 		 */
 		public void setMiddleDecoration(RotatableDecoration dec) {
-			if(getMiddleDecoration() != null) {
+			if (getMiddleDecoration() != null) {
 				remove(getMiddleDecoration());
 			}
 			middleDecoration = dec;
-			if(dec != null) {
+			if (dec != null) {
 				add(dec, new ArrowLocator(this, ConnectionLocator.MIDDLE) {
 
 					/**
 					 * Relocates the passed in figure (which must be a {@link RotatableDecoration}) at the middle of the connection.
-					 * 
+					 *
 					 * @param target
-					 *        The RotatableDecoration to relocate
+					 *            The RotatableDecoration to relocate
 					 */
 					@Override
 					public void relocate(IFigure target) {
 						PointList points = getConnection().getPoints();
-						RotatableDecoration arrow = (RotatableDecoration)target;
+						RotatableDecoration arrow = (RotatableDecoration) target;
 						arrow.setLocation(getLocation(points));
 						Point refPoint;
-						if(points.size() % 2 == 0) {
+						if (points.size() % 2 == 0) {
 							int i = points.size() / 2;
 							refPoint = points.getPoint(i - 1);
 						} else {
@@ -270,9 +270,10 @@ public class CustomGeneralOrderingEditPart extends GeneralOrderingEditPart imple
 			}
 		}
 
+		@Override
 		public void setStereotypeDisplay(String stereotypes, Image image) {
 			// Set stereotype text on figure
-			if(!"".equals(stereotypes)) {
+			if (!"".equals(stereotypes)) {
 				fAppliedStereotypeLabel.setText(stereotypes);
 			} else {
 				fAppliedStereotypeLabel.setText("");

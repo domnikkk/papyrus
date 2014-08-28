@@ -25,12 +25,12 @@ public class FlowPortOutMatcher implements IElementMatcher {
 
 		boolean isFlowPort_OUT = false;
 
-		if(eObject instanceof Port) {
+		if (eObject instanceof Port) {
 
-			Port port = (Port)eObject;
+			Port port = (Port) eObject;
 			FlowPort flowPort = UMLUtil.getStereotypeApplication(port, FlowPort.class);
 
-			if((flowPort != null) && (flowPort.getDirection() == FlowDirection.OUT)) {
+			if ((flowPort != null) && (flowPort.getDirection() == FlowDirection.OUT)) {
 				isFlowPort_OUT = true;
 			}
 		}

@@ -125,18 +125,18 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 		private CommandResult createDiagram() throws ServiceException {
 			Resource modelResource = UmlUtils.getUmlResource(modelSet);
 			Resource notationResource = getNotationResource(modelSet, owner, element);
-			if(notationResource == null) {
+			if (notationResource == null) {
 				return CommandResult.newErrorCommandResult("Cannot create a diagram on the selected element (ReadOnly?)");
 			}
 			Resource diResource = DiModelUtils.getDiResource(modelSet);
 
-			if(owner == null) {
+			if (owner == null) {
 				owner = getRootElement(modelResource);
 				attachModelToResource(owner, modelResource);
 			}
 
 			service = ElementEditServiceUtils.getCommandProvider(owner);
-			if(service == null) {
+			if (service == null) {
 				// Something isn't right ...
 				return null;
 			}
@@ -146,28 +146,28 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 			} catch (ServiceException e) {
 				Activator.log.error(e);
 			}
-			if(clientContext == null) {
+			if (clientContext == null) {
 				// Something isn't right ...
 				return null;
 			}
 
 			rule = PolicyChecker.getCurrent().getOwningRuleFor(prototype, owner);
-			if(rule == null) {
+			if (rule == null) {
 				// Something isn't right ...
 				return null;
 			}
 
 			element = owner;
-			if(rule.getNewModelPath() != null) {
+			if (rule.getNewModelPath() != null) {
 				// We have a path for the root auto-creation
-				for(ModelAutoCreate auto : rule.getNewModelPath()) {
+				for (ModelAutoCreate auto : rule.getNewModelPath()) {
 					EReference ref = auto.getFeature();
 					String type = auto.getCreationType();
-					if(ref.isMany()) {
+					if (ref.isMany()) {
 						element = create(element, ref, type);
 					} else {
-						EObject temp = (EObject)element.eGet(ref);
-						if(temp != null) {
+						EObject temp = (EObject) element.eGet(ref);
+						if (temp != null) {
 							element = temp;
 						} else {
 							element = create(element, ref, type);
@@ -176,17 +176,17 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 				}
 			}
 
-			if(name == null) {
+			if (name == null) {
 				name = openDiagramNameDialog(prototype.isNatural() ? getDefaultDiagramName() : "New" + prototype.getLabel().replace(" ", ""));
 			}
 			// canceled
-			if(name == null) {
+			if (name == null) {
 				return CommandResult.newCancelledCommandResult();
 			}
 
 			Diagram diagram = doCreateDiagram(notationResource, owner, element, prototype, name);
 
-			if(diagram != null) {
+			if (diagram != null) {
 				IPageManager pageManager = ServiceUtilsForResource.getInstance().getIPageManager(diResource);
 				pageManager.addPage(diagram);
 				return CommandResult.newOKCommandResult(diagram);
@@ -205,19 +205,19 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 			} catch (ExecutionException e) {
 				return null;
 			}
-			if(!status.isOK()) {
+			if (!status.isOK()) {
 				return null;
 			}
 			CommandResult result = command.getCommandResult();
-			if(result == null) {
+			if (result == null) {
 				return null;
 			}
-			return (EObject)result.getReturnValue();
+			return (EObject) result.getReturnValue();
 		}
 	}
 
 	protected Resource getNotationResource(ModelSet modelSet, EObject owner, EObject element) {
-		if(element == null) { //If the element is null, the root element of the main model will be used. Return the main notation resource
+		if (element == null) { // If the element is null, the root element of the main model will be used. Return the main notation resource
 			return NotationUtils.getNotationResource(modelSet);
 		}
 		URI uriWithoutExtension = element.eResource().getURI().trimFileExtension();
@@ -225,25 +225,25 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 		URI notationURI = uriWithoutExtension.appendFileExtension(NotationModel.NOTATION_FILE_EXTENSION);
 		Resource notationResource = modelSet.getResource(notationURI, false);
 
-		//The resource doesn't exist. Maybe we're trying to create a
-		//diagram on a pure-UML library. Try to create a new resource
-		if(notationResource == null) {
+		// The resource doesn't exist. Maybe we're trying to create a
+		// diagram on a pure-UML library. Try to create a new resource
+		if (notationResource == null) {
 			notationResource = modelSet.createResource(notationURI);
-			if(notationResource == null) {
+			if (notationResource == null) {
 				modelSet.getResources().remove(notationResource);
 				return null;
 			}
 
 			EditingDomain editingDomain = EMFHelper.resolveEditingDomain(element);
 
-			if(EMFHelper.isReadOnly(notationResource, editingDomain)) {
-				//Check whether the resource can be made writable
+			if (EMFHelper.isReadOnly(notationResource, editingDomain)) {
+				// Check whether the resource can be made writable
 				IReadOnlyHandler2 roHandler = ReadOnlyManager.getReadOnlyHandler(editingDomain);
-				if(roHandler.canMakeWritable(ReadOnlyAxis.anyAxis(), new URI[]{ notationResource.getURI() }).or(false)) {
-					return notationResource; //The read-only manager will eventually ask for a user confirmation
+				if (roHandler.canMakeWritable(ReadOnlyAxis.anyAxis(), new URI[] { notationResource.getURI() }).or(false)) {
+					return notationResource; // The read-only manager will eventually ask for a user confirmation
 				} else {
 					modelSet.getResources().remove(notationResource);
-					return null; //The resource can't be made writable; don't go further
+					return null; // The resource can't be made writable; don't go further
 				}
 			}
 		}
@@ -257,10 +257,10 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 	 */
 	private EObject getRootElement(Resource modelResource) {
 		EObject rootElement = null;
-		if(modelResource != null && modelResource.getContents() != null && modelResource.getContents().size() > 0) {
+		if (modelResource != null && modelResource.getContents() != null && modelResource.getContents().size() > 0) {
 			Object root = modelResource.getContents().get(0);
-			if(root instanceof EObject) {
-				rootElement = (EObject)root;
+			if (root instanceof EObject) {
+				rootElement = (EObject) root;
 			}
 		}
 
@@ -278,20 +278,20 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 	 * Open popup to enter the new diagram name
 	 *
 	 * @param defaultValue
-	 *        the default value
+	 *            the default value
 	 * @return the entered diagram name
 	 */
 	private String openDiagramNameDialog(String defaultValue) {
-		if(defaultValue == null) {
+		if (defaultValue == null) {
 			defaultValue = "";
 		}
 
 		InputDialog inputDialog = new InputDialog(Display.getCurrent().getActiveShell(), Messages.AbstractPapyrusGmfCreateDiagramCommandHandler_SelectNewDiagramName, Messages.AbstractPapyrusGmfCreateDiagramCommandHandler_NewDiagramName, defaultValue, null);
 		int result = inputDialog.open();
 
-		if(result == Window.OK) {
+		if (result == Window.OK) {
 			String name = inputDialog.getValue();
-			if(name == null || name.length() == 0) {
+			if (name == null || name.length() == 0) {
 				name = defaultValue;
 			}
 			return name;
@@ -309,7 +309,7 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 	@Override
 	public final Diagram createDiagram(ModelSet modelSet, EObject owner, String name) {
 		ViewPrototype proto = ViewPrototype.get(getCreatedDiagramType(), owner, owner);
-		if(proto == null) {
+		if (proto == null) {
 			return null;
 		}
 		return createDiagram(modelSet, owner, owner, proto, name);
@@ -332,19 +332,19 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 		try {
 
 			IStatus status = CheckedOperationHistory.getInstance().execute(cmd, new NullProgressMonitor(), null);
-			if(status.isOK()) {
+			if (status.isOK()) {
 				CommandResult result = cmd.getCommandResult();
 				Object returnValue = result.getReturnValue();
 
-				//CompositeCommands should always return a collection
-				if(returnValue instanceof Collection<?>) {
-					for(Object returnElement : (Collection<?>)returnValue) {
-						if(returnElement instanceof Diagram) {
-							return (Diagram)returnElement;
+				// CompositeCommands should always return a collection
+				if (returnValue instanceof Collection<?>) {
+					for (Object returnElement : (Collection<?>) returnValue) {
+						if (returnElement instanceof Diagram) {
+							return (Diagram) returnElement;
 						}
 					}
 				}
-			} else if(status.getSeverity() != IStatus.CANCEL) {
+			} else if (status.getSeverity() != IStatus.CANCEL) {
 				StatusManager.getManager().handle(status, StatusManager.SHOW);
 			}
 		} catch (ExecutionException ex) {
@@ -363,7 +363,7 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 	@Override
 	public final ICommand getCreateDiagramCommand(ModelSet modelSet, EObject owner, String name) {
 		ViewPrototype proto = ViewPrototype.get(getCreatedDiagramType(), owner, owner);
-		if(proto == null) {
+		if (proto == null) {
 			return null;
 		}
 		return getCreateDiagramCommand(modelSet, owner, owner, proto, name);
@@ -383,10 +383,10 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 		final Resource diResource = DiModelUtils.getDiResource(modelSet);
 
 		ArrayList<IFile> modifiedFiles = new ArrayList<IFile>();
-		if(notationResource.getURI().isPlatformResource()) {
+		if (notationResource.getURI().isPlatformResource()) {
 			modifiedFiles.add(ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(notationResource.getURI().toPlatformString(true))));
 		}
-		if(diResource.getURI().isPlatformResource()) {
+		if (diResource.getURI().isPlatformResource()) {
 			modifiedFiles.add(ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(diResource.getURI().toPlatformString(true))));
 		}
 
@@ -403,11 +403,11 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 				Creator creator = new Creator(modelSet, owner, element, prototype, name);
 				try {
 					CommandResult commandResult = creator.createDiagram();
-					if(!commandResult.getStatus().isOK()) {
+					if (!commandResult.getStatus().isOK()) {
 						return commandResult;
 					}
 
-					diagram = (Diagram)commandResult.getReturnValue();
+					diagram = (Diagram) commandResult.getReturnValue();
 					diagramElement = diagram.getElement();
 					diagramOwner = DiagramUtils.getOwner(diagram);
 					return commandResult;
@@ -440,7 +440,7 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.commands.ICreationCommand#getCreatedDiagramType()
 	 */
 	@Override
@@ -450,7 +450,7 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.commands.ICreationCommand#isParentReassignable()
 	 */
 	@Override
@@ -478,25 +478,25 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 	 * Overridable method that effectively create the diagram with the given validated parameters
 	 *
 	 * @param diagramResource
-	 *        the diagram resource
+	 *            the diagram resource
 	 * @param owner
-	 *        the diagram's owner
+	 *            the diagram's owner
 	 * @param element
-	 *        the diagram's model element
+	 *            the diagram's model element
 	 * @param prototype
-	 *        the diagram's prototype
+	 *            the diagram's prototype
 	 * @param name
-	 *        the diagram's name
+	 *            the diagram's name
 	 * @return the created diagram, or <code>null</code> if the creation failed
 	 */
 	protected Diagram doCreateDiagram(Resource diagramResource, EObject owner, EObject element, ViewPrototype prototype, String name) {
 		// create diagram
 		Diagram diagram = ViewService.createDiagram(element, getDiagramNotationID(), getPreferenceHint());
-		if(diagram != null) {
+		if (diagram != null) {
 			diagram.setName(name);
 			diagram.setElement(element);
 			DiagramUtils.setOwner(diagram, owner);
-			if(!prototype.isNatural()) {
+			if (!prototype.isNatural()) {
 				DiagramUtils.setPrototype(diagram, prototype);
 			}
 			initializeDiagram(diagram);
@@ -509,9 +509,9 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 	 * Overridable method for the initialization of create diagrams
 	 *
 	 * @param diagram
-	 *        the created diagram
+	 *            the created diagram
 	 */
 	protected void initializeDiagram(EObject diagram) {
-		//Subclasses may override
+		// Subclasses may override
 	}
 }

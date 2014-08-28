@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 408491
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.tests.tests;
 
@@ -290,7 +290,7 @@ public class DependencyManagementTest extends AbstractEditorTest {
 			domain.dispose();
 			modelSet.unload();
 
-			if (newModelSet != null) {
+			if(newModelSet != null) {
 				ModelUtils.getEditingDomain(newModelSet).dispose();
 				newModelSet.unload();
 			}
@@ -372,7 +372,7 @@ public class DependencyManagementTest extends AbstractEditorTest {
 			domain.dispose();
 			modelSet.unload();
 
-			if (newModelSet != null) {
+			if(newModelSet != null) {
 				ModelUtils.getEditingDomain(newModelSet).dispose();
 				newModelSet.unload();
 			}
@@ -417,7 +417,7 @@ public class DependencyManagementTest extends AbstractEditorTest {
 					}
 				}
 			}
-			
+
 			// Before the transformation, stereotypes from the source profile must be applied
 			checkAppliedProfileAndStereotypes(modelSet, rootModel, sourceProfileURI);
 
@@ -437,7 +437,7 @@ public class DependencyManagementTest extends AbstractEditorTest {
 			newModelSet = ModelUtils.loadModelSet(clientModelDiURI, true);
 
 			rootModel = UMLUtil.load(modelSet, clientModelURI, UMLPackage.eINSTANCE.getModel());
-			
+
 			// All of the stereotype instances must have existed before
 			xml = (XMLResource)rootModel.eResource();
 			for(TreeIterator<EObject> iter = xml.getAllContents(); iter.hasNext();) {
@@ -463,7 +463,7 @@ public class DependencyManagementTest extends AbstractEditorTest {
 			domain.dispose();
 			modelSet.unload();
 
-			if (newModelSet != null) {
+			if(newModelSet != null) {
 				ModelUtils.getEditingDomain(newModelSet).dispose();
 				newModelSet.unload();
 			}
@@ -480,14 +480,14 @@ public class DependencyManagementTest extends AbstractEditorTest {
 		NamedElement class1 = UMLUtil.findNamedElements(rootModel.eResource(), "model::Class1").iterator().next();
 		NamedElement class2 = UMLUtil.findNamedElements(rootModel.eResource(), "model::Class2").iterator().next();
 
-		Stereotype stereotype1 = (Stereotype) UMLUtil.findNamedElements(expectedProfile.eResource(), "Profile::Stereotype1").iterator().next();
-		Stereotype stereotype2 = (Stereotype) UMLUtil.findNamedElements(expectedProfile.eResource(), "Profile::Stereotype2").iterator().next();
+		Stereotype stereotype1 = (Stereotype)UMLUtil.findNamedElements(expectedProfile.eResource(), "Profile::Stereotype1").iterator().next();
+		Stereotype stereotype2 = (Stereotype)UMLUtil.findNamedElements(expectedProfile.eResource(), "Profile::Stereotype2").iterator().next();
 
-		EnumerationLiteral attribute1 = (EnumerationLiteral) class1.getValue(stereotype1, "Attribute1");
+		EnumerationLiteral attribute1 = (EnumerationLiteral)class1.getValue(stereotype1, "Attribute1");
 		Assert.assertNotNull(attribute1);
 		Assert.assertEquals("EnumerationLiteral3", attribute1.getName());
 
-		Operation operation = (Operation) class2.getValue(stereotype2, "operation");
+		Operation operation = (Operation)class2.getValue(stereotype2, "operation");
 		Assert.assertNotNull(operation);
 		Assert.assertEquals("Operation1", operation.getName());
 		Assert.assertSame(class2, operation.getNamespace());
@@ -548,7 +548,7 @@ public class DependencyManagementTest extends AbstractEditorTest {
 			domain.dispose();
 			modelSet.unload();
 
-			if (newModelSet != null) {
+			if(newModelSet != null) {
 				ModelUtils.getEditingDomain(newModelSet).dispose();
 				newModelSet.unload();
 			}
@@ -566,7 +566,7 @@ public class DependencyManagementTest extends AbstractEditorTest {
 		NamedElement class2 = UMLUtil.findNamedElements(rootModel.eResource(), "model::Class2").iterator().next();
 		NamedElement class3 = UMLUtil.findNamedElements(rootModel.eResource(), "model::Class3").iterator().next();
 
-		Stereotype stereotype4 = (Stereotype) UMLUtil.findNamedElements(expectedProfile.eResource(), "Profile::Stereotype4").iterator().next();
+		Stereotype stereotype4 = (Stereotype)UMLUtil.findNamedElements(expectedProfile.eResource(), "Profile::Stereotype4").iterator().next();
 
 		Assert.assertTrue(class1.isStereotypeApplied(stereotype4));
 		Assert.assertTrue(class2.isStereotypeApplied(stereotype4));
@@ -630,7 +630,7 @@ public class DependencyManagementTest extends AbstractEditorTest {
 			domain.dispose();
 			modelSet.unload();
 
-			if (newModelSet != null) {
+			if(newModelSet != null) {
 				ModelUtils.getEditingDomain(newModelSet).dispose();
 				newModelSet.unload();
 			}
@@ -649,14 +649,14 @@ public class DependencyManagementTest extends AbstractEditorTest {
 		Assert.assertNotEquals(0, diagnostics.getChildren().size());
 
 		// The resource has no unrecognized schema content
-		Assert.assertTrue(((XMLResource) rootModel.eResource()).getEObjectToExtensionMap().isEmpty());
+		Assert.assertTrue(((XMLResource)rootModel.eResource()).getEObjectToExtensionMap().isEmpty());
 
 		NamedElement class1 = UMLUtil.findNamedElements(rootModel.eResource(), "model::Class1").iterator().next();
 		NamedElement class2 = UMLUtil.findNamedElements(rootModel.eResource(), "model::Class2").iterator().next();
 		NamedElement class3 = UMLUtil.findNamedElements(rootModel.eResource(), "model::Class3").iterator().next();
 
-		Stereotype stereotype1 = (Stereotype) UMLUtil.findNamedElements(expectedProfile.eResource(), "Profile::Stereotype1").iterator().next();
-		Stereotype stereotype2 = (Stereotype) UMLUtil.findNamedElements(expectedProfile.eResource(), "Profile::Stereotype2").iterator().next();
+		Stereotype stereotype1 = (Stereotype)UMLUtil.findNamedElements(expectedProfile.eResource(), "Profile::Stereotype1").iterator().next();
+		Stereotype stereotype2 = (Stereotype)UMLUtil.findNamedElements(expectedProfile.eResource(), "Profile::Stereotype2").iterator().next();
 
 		Assert.assertTrue(class1.isStereotypeApplied(stereotype1));
 		EObject application = class1.getStereotypeApplication(stereotype1);

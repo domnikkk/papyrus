@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,13 +37,13 @@ public abstract class AbstractPostActionIdsProvider implements IStaticContentPro
 	private INattableModelManager tableManager;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param tableManager
-	 *        the table manager
+	 *            the table manager
 	 * @param isEditingColumn
-	 *        <code>true</code> if we are editing columns
+	 *            <code>true</code> if we are editing columns
 	 */
 	public AbstractPostActionIdsProvider(final INattableModelManager tableManager, final boolean isEditingColumn) {
 		this.tableManager = tableManager;
@@ -51,9 +51,9 @@ public abstract class AbstractPostActionIdsProvider implements IStaticContentPro
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public void dispose() {
@@ -61,16 +61,16 @@ public abstract class AbstractPostActionIdsProvider implements IStaticContentPro
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
-	 * 
+	 *
 	 * @param inputElement
 	 * @return
 	 */
 	@Override
 	public Object[] getElements(Object inputElement) {
-		final PasteEObjectConfiguration conf = (PasteEObjectConfiguration)AxisConfigurationUtils.getIAxisConfigurationUsedInTable(this.tableManager.getTable(), NattableaxisconfigurationPackage.eINSTANCE.getPasteEObjectConfiguration(), isEditingColumn);
-		if(conf != null && conf.getPastedElementId() != null) {
+		final PasteEObjectConfiguration conf = (PasteEObjectConfiguration) AxisConfigurationUtils.getIAxisConfigurationUsedInTable(this.tableManager.getTable(), NattableaxisconfigurationPackage.eINSTANCE.getPasteEObjectConfiguration(), isEditingColumn);
+		if (conf != null && conf.getPastedElementId() != null) {
 			final EClass eClass = ElementTypeRegistry.getInstance().getType(conf.getPastedElementId()).getEClass();
 			return PastePostActionRegistry.INSTANCE.getAvailablePostActionIds(this.tableManager, eClass).toArray();
 		}
@@ -79,22 +79,22 @@ public abstract class AbstractPostActionIdsProvider implements IStaticContentPro
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param viewer
 	 * @param oldInput
 	 * @param newInput
 	 */
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		//nothing to do
+		// nothing to do
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider#getElements()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

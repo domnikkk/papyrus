@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.uml.diagram.component.edit.parts.RectangleInterfaceEd
  */
 public class RectangleToLollipopHandler extends ChangeShapeHandler implements IHandler {
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 */

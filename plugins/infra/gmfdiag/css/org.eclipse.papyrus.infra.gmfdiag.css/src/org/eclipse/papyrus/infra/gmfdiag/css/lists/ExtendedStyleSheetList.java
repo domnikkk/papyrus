@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.w3c.dom.stylesheets.StyleSheetList;
 
 /**
  * More usable implementation for StyleSheetList
- * 
+ *
  * @author Camille Letavernier
  */
 public class ExtendedStyleSheetList extends LinkedList<StyleSheet> implements StyleSheetList {
@@ -38,16 +38,18 @@ public class ExtendedStyleSheetList extends LinkedList<StyleSheet> implements St
 		super(listToCopy);
 	}
 
+	@Override
 	public int getLength() {
 		return size();
 	}
 
+	@Override
 	public StyleSheet item(int index) {
 		return get(index);
 	}
 
 	public void addAll(StyleSheetList styleSheets) {
-		for(int i = 0; i < styleSheets.getLength(); i++) {
+		for (int i = 0; i < styleSheets.getLength(); i++) {
 			add(styleSheets.item(i));
 		}
 	}

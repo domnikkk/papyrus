@@ -41,7 +41,7 @@ public class OperationLabelHelper extends StereotypedElementLabelHelper {
 	 * @return the singleton instance.
 	 */
 	public static OperationLabelHelper getInstance() {
-		if(labelHelper == null) {
+		if (labelHelper == null) {
 			labelHelper = new OperationLabelHelper();
 		}
 		return labelHelper;
@@ -74,8 +74,8 @@ public class OperationLabelHelper extends StereotypedElementLabelHelper {
 	 * edit part.
 	 *
 	 * @param editPart
-	 *        the edit part that controls the {@link Operation} to be
-	 *        displayed
+	 *            the edit part that controls the {@link Operation} to be
+	 *            displayed
 	 * @return the label corresponding to the specific display of the property
 	 *         ("default" display given by preferences or specific display given
 	 *         by eAnnotation).
@@ -84,8 +84,8 @@ public class OperationLabelHelper extends StereotypedElementLabelHelper {
 	protected String elementLabel(GraphicalEditPart editPart) {
 		Collection<String> displayValue = ICustomAppearance.DEFAULT_UML_OPERATION;
 
-		IMaskManagedLabelEditPolicy policy = (IMaskManagedLabelEditPolicy)editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
-		if(policy != null) {
+		IMaskManagedLabelEditPolicy policy = (IMaskManagedLabelEditPolicy) editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
+		if (policy != null) {
 			displayValue = policy.getCurrentDisplayValue();
 		}
 		return OperationUtil.getCustomLabel(getUMLElement(editPart), displayValue);
@@ -105,7 +105,7 @@ public class OperationLabelHelper extends StereotypedElementLabelHelper {
 	 */
 	@Override
 	public Operation getUMLElement(GraphicalEditPart editPart) {
-		return (Operation)((View)editPart.getModel()).getElement();
+		return (Operation) ((View) editPart.getModel()).getElement();
 	}
 
 }

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -36,8 +36,8 @@ public class AssociationLinkViewFactory extends ConnectorViewFactory {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
-	 * Add two EObjectValueStyle in order to store the Properties that are associated with 
+	 *
+	 * Add two EObjectValueStyle in order to store the Properties that are associated with
 	 * the Graphical ends.
 	 * </pre>
 	 */
@@ -59,16 +59,16 @@ public class AssociationLinkViewFactory extends ConnectorViewFactory {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Store {@link Association} semantic ends (Property) in dedicated styles.
 	 * </pre>
 	 */
 	@Override
 	public View createView(IAdaptable semanticAdapter, View containerView, String semanticHint, int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge view = (Edge)super.createView(semanticAdapter, containerView, semanticHint, index, persisted, preferencesHint);
+		Edge view = (Edge) super.createView(semanticAdapter, containerView, semanticHint, index, persisted, preferencesHint);
 
-		if((view != null) && (view.getElement() != null) && (view.getElement() instanceof Association)) {
-			Association association = (Association)view.getElement();
+		if ((view != null) && (view.getElement() != null) && (view.getElement() instanceof Association)) {
+			Association association = (Association) view.getElement();
 
 			assert (association.getMemberEnds().size() == 2);
 

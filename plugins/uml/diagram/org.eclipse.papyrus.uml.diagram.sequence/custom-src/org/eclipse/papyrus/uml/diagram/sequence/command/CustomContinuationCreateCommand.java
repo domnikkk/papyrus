@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ public class CustomContinuationCreateCommand extends ContinuationCreateCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -46,7 +46,7 @@ public class CustomContinuationCreateCommand extends ContinuationCreateCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomContinuationCreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -58,11 +58,11 @@ public class CustomContinuationCreateCommand extends ContinuationCreateCommand {
 	 */
 	@Override
 	public boolean canExecute() {
-		if(getElementToEdit() instanceof InteractionOperand) {
-			InteractionOperand interactionOperand = (InteractionOperand)getElementToEdit();
+		if (getElementToEdit() instanceof InteractionOperand) {
+			InteractionOperand interactionOperand = (InteractionOperand) getElementToEdit();
 			CombinedFragment combinedFragment = getEnclosingCombinedFragment(interactionOperand);
-			if(combinedFragment != null) {
-				if(combinedFragment.getInteractionOperator() == InteractionOperatorKind.ALT_LITERAL) {
+			if (combinedFragment != null) {
+				if (combinedFragment.getInteractionOperator() == InteractionOperatorKind.ALT_LITERAL) {
 					return true;
 				}
 			}
@@ -71,30 +71,30 @@ public class CustomContinuationCreateCommand extends ContinuationCreateCommand {
 	}
 
 	private CombinedFragment getEnclosingCombinedFragment(InteractionFragment interactionFragment) {
-		if(interactionFragment.eContainer() instanceof CombinedFragment) {
-			return (CombinedFragment)interactionFragment.eContainer();
-		} else if(interactionFragment.eContainer() instanceof InteractionFragment) {
-			return getEnclosingCombinedFragment((InteractionFragment)interactionFragment.eContainer());
+		if (interactionFragment.eContainer() instanceof CombinedFragment) {
+			return (CombinedFragment) interactionFragment.eContainer();
+		} else if (interactionFragment.eContainer() instanceof InteractionFragment) {
+			return getEnclosingCombinedFragment((InteractionFragment) interactionFragment.eContainer());
 		}
 		return null;
 	}
 
 	/**
 	 * Generated not to handle the constraint on covered lifelines.
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Continuation newElement = UMLFactory.eINSTANCE.createContinuation();
-		InteractionOperand owner = (InteractionOperand)getElementToEdit();
+		InteractionOperand owner = (InteractionOperand) getElementToEdit();
 		owner.getFragments().add(newElement);
-		// Continuations are always global in the enclosing InteractionFragment 
-		//(e.g., it always covers all Lifelines covered by the enclosing InteractionFragment)
+		// Continuations are always global in the enclosing InteractionFragment
+		// (e.g., it always covers all Lifelines covered by the enclosing InteractionFragment)
 		newElement.getCovereds().addAll(owner.getCovereds());
 		ElementInitializers.getInstance().init_Continuation_3016(newElement);
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 }

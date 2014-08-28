@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -92,11 +92,11 @@ public class PapyrusCDTEditor extends CEditor {
 	protected RevealCurrentOperation reveal;
 
 	protected Adapter gotoListener;
-	
+
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param registry
 	 * @param papyrusTextInstance
 	 */
@@ -110,13 +110,15 @@ public class PapyrusCDTEditor extends CEditor {
 			saveAndDirtyService.registerIsaveablePart(this);
 			ILifeCycleEventsProvider lifeCycleEvents = registry.getService(ILifeCycleEventsProvider.class);
 			ISaveEventListener preSaveEvent = new ISaveEventListener() {
-				
+
+				@Override
 				public void doSaveAs(DoSaveEvent event) {
 					// TODO Auto-generated method stub
 				}
-				
+
+				@Override
 				public void doSave(DoSaveEvent event) {
-					syncCpp.syncCDTtoModel();		
+					syncCpp.syncCDTtoModel();
 				}
 			};
 			lifeCycleEvents.addAboutToDoSaveListener(preSaveEvent);
@@ -124,7 +126,7 @@ public class PapyrusCDTEditor extends CEditor {
 			Activator.log.error(e);
 		}
 	}
-		
+
 	/**
 	 * override method in order to save & restore action bars entries
 	 */
@@ -132,14 +134,14 @@ public class PapyrusCDTEditor extends CEditor {
 	public void createPartControl(Composite parent) {
 		// save Papyrus (GMF) handlers
 		IActionBars actionBars = getEditorSite().getActionBars();
-		if((actionBars != null) && (gmfUndo == null)) {
+		if ((actionBars != null) && (gmfUndo == null)) {
 			gmfUndo = actionBars.getGlobalActionHandler(ITextEditorActionConstants.UNDO);
 			gmfRedo = actionBars.getGlobalActionHandler(ITextEditorActionConstants.REDO);
 		}
 
 		super.createPartControl(parent);
 
-		if(actionBars != null) {
+		if (actionBars != null) {
 			// save CDT (textEditor) handlers
 			textUndo = actionBars.getGlobalActionHandler(ITextEditorActionConstants.UNDO);
 			textRedo = actionBars.getGlobalActionHandler(ITextEditorActionConstants.REDO);
@@ -148,10 +150,11 @@ public class PapyrusCDTEditor extends CEditor {
 			actionBars.setGlobalActionHandler(ITextEditorActionConstants.REDO, gmfRedo);
 			actionBars.updateActionBars();
 		}
-		
+
 		gotoListener = new Adapter() {
 
 			// assure that gotoElement is called, if the element in the model gets updated
+			@Override
 			public void notifyChanged(Notification notification) {
 				if (notification.getEventType() == Notification.SET) {
 					Object newValue = notification.getNewValue();
@@ -162,29 +165,31 @@ public class PapyrusCDTEditor extends CEditor {
 				}
 			}
 
+			@Override
 			public Notifier getTarget() {
 				return null;
 			}
 
+			@Override
 			public void setTarget(Notifier newTarget) {
 			}
 
+			@Override
 			public boolean isAdapterForType(Object type) {
 				return false;
 			}
 		};
-		papyrusTextInstance.eAdapters().add(gotoListener);		
-		
+		papyrusTextInstance.eAdapters().add(gotoListener);
+
 		if (papyrusTextInstance.getSelectedObject() instanceof NamedElement) {
 			gotoElement((NamedElement) papyrusTextInstance.getSelectedObject());
 		}
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.ui.texteditor.AbstractDecoratedTextEditor#createSourceViewer(org.eclipse.swt.widgets.Composite,
-	 *      org.eclipse.jface.text.source.IVerticalRuler, int)
-	 * 
+	 *
+	 * @see org.eclipse.ui.texteditor.AbstractDecoratedTextEditor#createSourceViewer(org.eclipse.swt.widgets.Composite, org.eclipse.jface.text.source.IVerticalRuler, int)
+	 *
 	 * @param parent
 	 * @param ruler
 	 * @param styles
@@ -197,19 +202,20 @@ public class PapyrusCDTEditor extends CEditor {
 		// ISourceViewer viewer = new DelegatingSourceViewer(origViewer, (Classifier)papyrusTextInstance.getEditedObject());
 		focusListener = new FocusListener() {
 
+			@Override
 			public void focusLost(FocusEvent e) {
 				// potential problem for undo/redo!!
-				if(isDirty()) {
+				if (isDirty()) {
 					syncCpp.syncCDTtoModel();
-					Classifier classifier = (Classifier)papyrusTextInstance.getEditedObject();
+					Classifier classifier = (Classifier) papyrusTextInstance.getEditedObject();
 					doSave(new NullProgressMonitor());
 					// regenerate code. TODO: raises update dialog
 					SyncModelToCDT.syncModelToCDT(classifier);
 				}
 				// restore handlers
 				IActionBars actionBars = getEditorSite().getActionBars();
-				if(actionBars != null) {
-					if((gmfUndo != null) && (gmfRedo != null)) {
+				if (actionBars != null) {
+					if ((gmfUndo != null) && (gmfRedo != null)) {
 						actionBars.setGlobalActionHandler(ITextEditorActionConstants.UNDO, gmfUndo);
 						actionBars.setGlobalActionHandler(ITextEditorActionConstants.REDO, gmfRedo);
 						actionBars.updateActionBars();
@@ -217,11 +223,12 @@ public class PapyrusCDTEditor extends CEditor {
 				}
 			}
 
+			@Override
 			public void focusGained(FocusEvent e) {
 				// restore handlers
 				IActionBars actionBars = getEditorSite().getActionBars();
-				if(actionBars != null) {
-					if((textUndo != null) && (textRedo != null)) {
+				if (actionBars != null) {
+					if ((textUndo != null) && (textRedo != null)) {
 						actionBars.setGlobalActionHandler(ITextEditorActionConstants.UNDO, textUndo);
 						actionBars.setGlobalActionHandler(ITextEditorActionConstants.REDO, textRedo);
 						actionBars.updateActionBars();
@@ -232,7 +239,8 @@ public class PapyrusCDTEditor extends CEditor {
 		// register focus listener
 		viewer.getTextWidget().addFocusListener(focusListener);
 		SelectionListener selectionListener = new SelectionListener() {
-			
+
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				IEditorPart ep = getEditorSite().getPage().getActiveEditor();
 				ISelection selection = getSelectionProvider().getSelection();
@@ -243,16 +251,16 @@ public class PapyrusCDTEditor extends CEditor {
 					}
 					IMarker marker;
 					/*
-	                 * create a temporary validation marker on the
-	                 * srcFile file, call the gotoMarker operation of the editor
-	                 * and remove the marker afterwards.
-	                 * TODO: operation activates the model-explorer
-	                 */
+					 * create a temporary validation marker on the
+					 * srcFile file, call the gotoMarker operation of the editor
+					 * and remove the marker afterwards.
+					 * TODO: operation activates the model-explorer
+					 */
 					try {
 						Element element = reveal.obtainSelectedElement((ITextSelection) selection);
 						String modelURI = EcoreUtil.getURI(element).toString();
 						marker = srcFile.createMarker(EValidator.MARKER);
-						marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);	// set severity before URI to avoid marker update without associated icon
+						marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO); // set severity before URI to avoid marker update without associated icon
 						marker.setAttribute(EValidator.URI_ATTRIBUTE, modelURI);
 						IWorkbenchPage wbpage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 						IWorkbenchPart activePart = wbpage.getActivePart();
@@ -266,20 +274,21 @@ public class PapyrusCDTEditor extends CEditor {
 					}
 				}
 			}
-			
+
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 		};
-		
+
 		// TODO: don't add selection listener for the moment. It can cause deadlocks (setting a marker attribute while file is locked, reproducible with cut (^X) on selection)
 		// viewer.getTextWidget().addSelectionListener(selectionListener);
-		
+
 		return viewer;
 	}
 
 	/**
 	 * Goto a specific element within the text editor. Currently, only methods are supported.
-	 * 
+	 *
 	 * @param element
 	 * @throws CoreException
 	 */
@@ -289,25 +298,24 @@ public class PapyrusCDTEditor extends CEditor {
 
 		ICElement ice = CDTUITools.getEditorInputCElement(m_input);
 
-		if(ice instanceof ITranslationUnit) {
+		if (ice instanceof ITranslationUnit) {
 			ITranslationUnit itu = (ITranslationUnit) ice;
 			ICElement icElement = ObtainICElement.getICElement(itu, element);
 			if (icElement instanceof ISourceReference) {
 				try {
-					ISourceRange range = ((ISourceReference)icElement).getSourceRange();
-					
+					ISourceRange range = ((ISourceReference) icElement).getSourceRange();
+
 					ISourceViewer viewer = getSourceViewer();
 					viewer.revealRange(range.getStartPos(), 1);
 					viewer.setSelectedRange(range.getStartPos(), range.getLength());
 					return;
-				}
-				catch (CoreException e) {
+				} catch (CoreException e) {
 					Activator.log.error(e);
 				}
 			}
 		}
 	}
-	
+
 	@Override
 	public boolean isDirty() {
 		boolean isDirty = super.isDirty();
@@ -318,13 +326,13 @@ public class PapyrusCDTEditor extends CEditor {
 		}
 		return isDirty;
 	}
-	
+
 	/**
 	 * We override this method because setInput can't be overriden for TextEditor.
 	 * We replace the default Papyrus input with the CPP file
-	 * 
+	 *
 	 * @see org.eclipse.ui.editors.text.TextEditor#doSetInput(org.eclipse.ui.IEditorInput)
-	 * 
+	 *
 	 * @param input
 	 * @throws CoreException
 	 */
@@ -332,7 +340,7 @@ public class PapyrusCDTEditor extends CEditor {
 	protected void doSetInput(IEditorInput input) throws CoreException {
 
 		URI uri = papyrusTextInstance.eResource().getURI();
-		Classifier classifier = (Classifier)papyrusTextInstance.getEditedObject();
+		Classifier classifier = (Classifier) papyrusTextInstance.getEditedObject();
 		srcFile = SyncModelToCDT.syncModelToCDT(classifier);
 		if (srcFile == null || !srcFile.exists()) {
 			throw new PartInitException("Code generation before editing failed. Please check error log");
@@ -345,15 +353,15 @@ public class PapyrusCDTEditor extends CEditor {
 		syncCpp = new SyncCDTtoModel(newInput, classifier, uri.segment(1));
 		m_input = newInput;
 		reveal = new RevealCurrentOperation(newInput, classifier, uri.segment(1));
-		
+
 		// add the reconciler to get syntax check and completion. (still no full checks)
 		addReconcileListener(new CodanCReconciler());
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.editors.text.TextEditor#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public void dispose() {
@@ -363,7 +371,7 @@ public class PapyrusCDTEditor extends CEditor {
 			papyrusTextInstance.eAdapters().remove(gotoListener);
 		}
 
-		//we remove the listener
+		// we remove the listener
 		StyledText st = getSourceViewer().getTextWidget();
 		st.removeFocusListener(focusListener);
 		super.dispose();
@@ -379,15 +387,14 @@ public class PapyrusCDTEditor extends CEditor {
 
 	// TODO: remove, unused
 	protected IActionBars gmfActionBars, textActionBars;
-	
+
 	protected boolean oldDirty;
-	
+
 	protected ISaveAndDirtyService saveAndDirtyService;
-	
+
 	protected IFile srcFile;
-	
+
 	protected ISelectionProvider sp;
-	
+
 	protected IEditorInput m_input;
 }
- 

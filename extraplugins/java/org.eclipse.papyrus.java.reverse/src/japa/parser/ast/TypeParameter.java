@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2007 Júlio Vilmar Gesser.
- * 
+ *
  * This file is part of Java 1.5 parser and Abstract Syntax Tree.
  *
  * Java 1.5 parser and Abstract Syntax Tree is free software: you can redistribute it and/or modify
@@ -31,7 +31,7 @@ import java.util.List;
  * <p>
  * This class represents the declaration of a genetics argument.
  * </p>
- * 
+ *
  * The TypeParameter is constructed following the syntax:<br>
  * <code>
  * <table>
@@ -42,9 +42,9 @@ import java.util.List;
  *       &lt;IDENTIFIER&gt; ( "extends" {@link ClassOrInterfaceType} ( "&" {@link ClassOrInterfaceType} )* )?
  *   </td>
  * </tr>
- * </table> 
+ * </table>
  * </code>
- * 
+ *
  * @author Julio Vilmar Gesser
  */
 public final class TypeParameter extends Node {
@@ -74,7 +74,7 @@ public final class TypeParameter extends Node {
 
 	/**
 	 * Return the name of the paramenter.
-	 * 
+	 *
 	 * @return the name of the paramenter
 	 */
 	public String getName() {
@@ -84,7 +84,7 @@ public final class TypeParameter extends Node {
 	/**
 	 * Return the list of {@link ClassOrInterfaceType} that this parameter
 	 * extends. Return <code>null</code> null if there are no type.
-	 * 
+	 *
 	 * @return list of types that this paramente extends or <code>null</code>
 	 */
 	public List<ClassOrInterfaceType> getTypeBound() {
@@ -93,9 +93,9 @@ public final class TypeParameter extends Node {
 
 	/**
 	 * Sets the name of this type parameter.
-	 * 
+	 *
 	 * @param name
-	 *        the name to set
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -103,9 +103,9 @@ public final class TypeParameter extends Node {
 
 	/**
 	 * Sets the list o types.
-	 * 
+	 *
 	 * @param typeBound
-	 *        the typeBound to set
+	 *            the typeBound to set
 	 */
 	public void setTypeBound(List<ClassOrInterfaceType> typeBound) {
 		this.typeBound = typeBound;

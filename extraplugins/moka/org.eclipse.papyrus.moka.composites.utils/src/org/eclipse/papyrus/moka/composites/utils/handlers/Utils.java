@@ -62,7 +62,7 @@ public class Utils {
 	 * followed by a CallOperationAction for the default constructor of this class.
 	 *
 	 * @param context
-	 *        The class for which a Factory is requested
+	 *            The class for which a Factory is requested
 	 * @return A factory Activity for the given context Class
 	 */
 	public static Activity getFactory(Class context) {
@@ -71,93 +71,93 @@ public class Utils {
 		// Retrieval is based on name.
 		Activity factory = null;
 		String contextName = context.getName() == null ? "" : context.getName();
-		for(Iterator<Behavior> i = context.getOwnedBehaviors().iterator(); i.hasNext() && factory == null;) {
+		for (Iterator<Behavior> i = context.getOwnedBehaviors().iterator(); i.hasNext() && factory == null;) {
 			Behavior cddFactory = i.next();
 			String cddName = cddFactory.getName() == null ? "" : cddFactory.getName();
-			if(cddFactory instanceof Activity && cddName.equals(contextName + "_Factory")) {
-				factory = (Activity)cddFactory;
+			if (cddFactory instanceof Activity && cddName.equals(contextName + "_Factory")) {
+				factory = (Activity) cddFactory;
 			}
 		}
 
 		Parameter returnParam = null;
 		// if the factory does not exist, then creates it, otherwise "cleans" it
-		if(factory == null) {
-			factory = (Activity)context.createOwnedBehavior(context.getName() + "_Factory", UMLPackage.eINSTANCE.getActivity());
+		if (factory == null) {
+			factory = (Activity) context.createOwnedBehavior(context.getName() + "_Factory", UMLPackage.eINSTANCE.getActivity());
 			returnParam = factory.createOwnedParameter("result", context);
 			returnParam.setDirection(ParameterDirectionKind.RETURN_LITERAL);
 		} else {
 			factory.getNodes().clear();
 			factory.getEdges().clear();
-			for(Iterator<Parameter> i = factory.getOwnedParameters().iterator(); i.hasNext() && returnParam == null;) {
+			for (Iterator<Parameter> i = factory.getOwnedParameters().iterator(); i.hasNext() && returnParam == null;) {
 				Parameter cddReturn = i.next();
-				if(cddReturn.getDirection() == ParameterDirectionKind.RETURN_LITERAL) {
+				if (cddReturn.getDirection() == ParameterDirectionKind.RETURN_LITERAL) {
 					returnParam = cddReturn;
 				}
 			}
-			if(returnParam == null) {
+			if (returnParam == null) {
 				returnParam = factory.createOwnedParameter("result", context);
 				returnParam.setDirection(ParameterDirectionKind.RETURN_LITERAL);
 			}
 		}
 
-		ActivityParameterNode returnParamNode = (ActivityParameterNode)factory.createOwnedNode("resultParameterNode", UMLPackage.eINSTANCE.getActivityParameterNode());
+		ActivityParameterNode returnParamNode = (ActivityParameterNode) factory.createOwnedNode("resultParameterNode", UMLPackage.eINSTANCE.getActivityParameterNode());
 		returnParamNode.setParameter(returnParam);
 		returnParamNode.setType(context);
 		LiteralInteger returnParamNodeUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
-		returnParamNodeUpperBound.setValue(1) ;
-		returnParamNode.setUpperBound(returnParamNodeUpperBound) ;
+		returnParamNodeUpperBound.setValue(1);
+		returnParamNode.setUpperBound(returnParamNodeUpperBound);
 
 		// Retrieves the default constructor of context
 		Operation defaultConstructor = getDefaultConstructor(context);
 
-		CreateObjectAction createObject = (CreateObjectAction)factory.createOwnedNode("createObject", UMLPackage.eINSTANCE.getCreateObjectAction());
+		CreateObjectAction createObject = (CreateObjectAction) factory.createOwnedNode("createObject", UMLPackage.eINSTANCE.getCreateObjectAction());
 		OutputPin createObjectResultPin = createObject.createResult("result", context);
 		LiteralInteger createObjectResultPinUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
-		createObjectResultPinUpperBound.setValue(1) ;
-		createObjectResultPin.setUpperBound(createObjectResultPinUpperBound) ;
+		createObjectResultPinUpperBound.setValue(1);
+		createObjectResultPin.setUpperBound(createObjectResultPinUpperBound);
 		createObject.setClassifier(context);
 
-		CallOperationAction callConstructor = (CallOperationAction)factory.createOwnedNode("callConstructor", UMLPackage.eINSTANCE.getCallOperationAction());
+		CallOperationAction callConstructor = (CallOperationAction) factory.createOwnedNode("callConstructor", UMLPackage.eINSTANCE.getCallOperationAction());
 		callConstructor.setOperation(defaultConstructor);
 		InputPin callConstructorTargetPin = callConstructor.createTarget("target", context);
 		LiteralInteger callConstructorTargetPinUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
-		callConstructorTargetPinUpperBound.setValue(1) ;
-		callConstructorTargetPin.setUpperBound(callConstructorTargetPinUpperBound) ;
+		callConstructorTargetPinUpperBound.setValue(1);
+		callConstructorTargetPin.setUpperBound(callConstructorTargetPinUpperBound);
 		OutputPin callConstructorResultPin = callConstructor.createResult("result", context);
 		LiteralInteger callConstructorResultPinUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
-		callConstructorResultPinUpperBound.setValue(1) ;
-		callConstructorResultPin.setUpperBound(callConstructorResultPinUpperBound) ;
+		callConstructorResultPinUpperBound.setValue(1);
+		callConstructorResultPin.setUpperBound(callConstructorResultPinUpperBound);
 
-		ObjectFlow createObjectAction_callConstructor = (ObjectFlow)factory.createEdge("createObjectAction to callConstructor", UMLPackage.eINSTANCE.getObjectFlow());
+		ObjectFlow createObjectAction_callConstructor = (ObjectFlow) factory.createEdge("createObjectAction to callConstructor", UMLPackage.eINSTANCE.getObjectFlow());
 		createObjectAction_callConstructor.setSource(createObjectResultPin);
 		createObjectAction_callConstructor.setTarget(callConstructorTargetPin);
 
-		ObjectFlow toReturnParamNode = (ObjectFlow)factory.createEdge("callConstructor to returnParamNode", UMLPackage.eINSTANCE.getObjectFlow());
+		ObjectFlow toReturnParamNode = (ObjectFlow) factory.createEdge("callConstructor to returnParamNode", UMLPackage.eINSTANCE.getObjectFlow());
 		toReturnParamNode.setTarget(returnParamNode);
-		if(!context.isActive()) {
+		if (!context.isActive()) {
 			toReturnParamNode.setSource(callConstructorResultPin);
 		} else {
-			StartObjectBehaviorAction startBehavior = (StartObjectBehaviorAction)factory.createOwnedNode("start classifier behavior", UMLPackage.eINSTANCE.getStartObjectBehaviorAction());
+			StartObjectBehaviorAction startBehavior = (StartObjectBehaviorAction) factory.createOwnedNode("start classifier behavior", UMLPackage.eINSTANCE.getStartObjectBehaviorAction());
 			InputPin startBehaviorInputPin = startBehavior.createObject("object", context);
 			LiteralInteger startBehaviorInputPinUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
-			startBehaviorInputPinUpperBound.setValue(1) ;
-			startBehaviorInputPin.setUpperBound(startBehaviorInputPinUpperBound) ;
+			startBehaviorInputPinUpperBound.setValue(1);
+			startBehaviorInputPin.setUpperBound(startBehaviorInputPinUpperBound);
 			/*
-			// 439321: [Moka] The factory generator of oepm.composite.utils is invalid in the case of an Active class
-			// https://bugs.eclipse.org/bugs/show_bug.cgi?id=439321
-			//OutputPin startBehaviorResultPin = startBehavior.createResult("result", context);
-			//LiteralInteger startBehaviorResultPinUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
-			//startBehaviorResultPinUpperBound.setValue(1) ;
-			//startBehaviorResultPin.setUpperBound(startBehaviorResultPinUpperBound) ;
-			//toReturnParamNode.setSource(startBehaviorResultPin);
-			*/
-			ForkNode fork = (ForkNode)factory.createOwnedNode("forkInstanciatedObject", UMLPackage.eINSTANCE.getForkNode()) ;
+			 * // 439321: [Moka] The factory generator of oepm.composite.utils is invalid in the case of an Active class
+			 * // https://bugs.eclipse.org/bugs/show_bug.cgi?id=439321
+			 * //OutputPin startBehaviorResultPin = startBehavior.createResult("result", context);
+			 * //LiteralInteger startBehaviorResultPinUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
+			 * //startBehaviorResultPinUpperBound.setValue(1) ;
+			 * //startBehaviorResultPin.setUpperBound(startBehaviorResultPinUpperBound) ;
+			 * //toReturnParamNode.setSource(startBehaviorResultPin);
+			 */
+			ForkNode fork = (ForkNode) factory.createOwnedNode("forkInstanciatedObject", UMLPackage.eINSTANCE.getForkNode());
 			toReturnParamNode.setSource(fork);
-			ObjectFlow forkToStartBehaviorInputPin = (ObjectFlow)factory.createEdge("fork to startbehavior input pin", UMLPackage.eINSTANCE.getObjectFlow()) ;
-			forkToStartBehaviorInputPin.setSource(fork) ;
-			forkToStartBehaviorInputPin.setTarget(startBehaviorInputPin) ;
+			ObjectFlow forkToStartBehaviorInputPin = (ObjectFlow) factory.createEdge("fork to startbehavior input pin", UMLPackage.eINSTANCE.getObjectFlow());
+			forkToStartBehaviorInputPin.setSource(fork);
+			forkToStartBehaviorInputPin.setTarget(startBehaviorInputPin);
 			//
-			ObjectFlow callConstructor_startBehavior = (ObjectFlow)factory.createEdge("callConstructor to startBehavior", UMLPackage.eINSTANCE.getObjectFlow());
+			ObjectFlow callConstructor_startBehavior = (ObjectFlow) factory.createEdge("callConstructor to startBehavior", UMLPackage.eINSTANCE.getObjectFlow());
 			callConstructor_startBehavior.setSource(callConstructorResultPin);
 			callConstructor_startBehavior.setTarget(fork);
 		}
@@ -175,7 +175,7 @@ public class Utils {
 	 * - a single parameter p such that: p.direction == Return and p.type = context
 	 *
 	 * @param context
-	 *        A UML Class
+	 *            A UML Class
 	 * @return the default constructor Operation for the given context Class
 	 */
 	public static Operation getDefaultConstructor(Class context) {
@@ -184,16 +184,16 @@ public class Utils {
 		Operation createdOp = null;
 
 		// Find operation with "Create" Stereotype
-		for(int i = 0; i < context.getOwnedOperations().size() && createdOp == null; i++) {
+		for (int i = 0; i < context.getOwnedOperations().size() && createdOp == null; i++) {
 			Operation cddOperation = context.getOwnedOperations().get(i);
-			for(int j = 0; j < cddOperation.getAppliedStereotypes().size(); j++) {
+			for (int j = 0; j < cddOperation.getAppliedStereotypes().size(); j++) {
 				Stereotype createStereotype = cddOperation.getAppliedStereotypes().get(j);
-				if(createStereotype.getName().equals("Create")) {
-					if(cddOperation.getName().equals(context.getName())) {
-						if(cddOperation.getOwnedParameters().size() == 1) {
+				if (createStereotype.getName().equals("Create")) {
+					if (cddOperation.getName().equals(context.getName())) {
+						if (cddOperation.getOwnedParameters().size() == 1) {
 							Parameter returnParameter = cddOperation.getOwnedParameters().get(0);
-							if(returnParameter.getDirection().equals(ParameterDirectionKind.RETURN_LITERAL)) {
-								if(returnParameter.getType().getName().equals(context.getName())) {
+							if (returnParameter.getDirection().equals(ParameterDirectionKind.RETURN_LITERAL)) {
+								if (returnParameter.getType().getName().equals(context.getName())) {
 									createdOp = cddOperation;
 								}
 							}
@@ -205,9 +205,9 @@ public class Utils {
 		}
 
 		// No operation with "Create" Stereotype found : => Creation of the operation.
-		if(createdOp == null) {
+		if (createdOp == null) {
 			Stereotype appliedStereotype = null;
-			if(!isStandardProfileApplied(context)) {
+			if (!isStandardProfileApplied(context)) {
 				PackageUtil.applyProfile(context.getModel(), standardProfile, true);
 			}
 
@@ -216,9 +216,9 @@ public class Utils {
 
 
 
-			for(int j = 0; j < createdOp.getApplicableStereotypes().size() && appliedStereotype == null; j++) {
+			for (int j = 0; j < createdOp.getApplicableStereotypes().size() && appliedStereotype == null; j++) {
 				Stereotype cddStereotype = createdOp.getApplicableStereotypes().get(j);
-				if(cddStereotype.getName().equals("Create")) {
+				if (cddStereotype.getName().equals("Create")) {
 					appliedStereotype = cddStereotype;
 				}
 			}
@@ -240,16 +240,16 @@ public class Utils {
 	 * Returns true if the Standard profile is applied on the Model containing the given element
 	 *
 	 * @param element
-	 *        A UML model element
+	 *            A UML model element
 	 * @return true if the Standard profile is applied on the Model containing the given element
 	 */
 	public static boolean isStandardProfileApplied(Element element) {
-		if(standardProfile == null) {
+		if (standardProfile == null) {
 			IRegisteredProfile registeredProfile = RegisteredProfile.getRegisteredProfile(STANDARD_PROFILE_NAME);
 			URI modelUri = registeredProfile.getUri();
 			Resource modelResource = Util.createTemporaryResourceSet().getResource(modelUri, true);
-			if(modelResource.getContents().get(0) instanceof Profile) {
-				standardProfile = (Profile)modelResource.getContents().get(0);
+			if (modelResource.getContents().get(0) instanceof Profile) {
+				standardProfile = (Profile) modelResource.getContents().get(0);
 			}
 		}
 		List<Profile> appliedProfiles = element.getModel().getAppliedProfiles();
@@ -267,17 +267,17 @@ public class Utils {
 		ISelectionService selectionService = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService();
 		ISelection selection = selectionService.getSelection();
 
-		if(selection instanceof IStructuredSelection) {
-			Object selectedobject = ((IStructuredSelection)selection).getFirstElement();
-			if(selectedobject instanceof GraphicalEditPart) {
-				Object graphicalElement = ((GraphicalEditPart)selectedobject).getModel();
-				if((graphicalElement instanceof View) && ((View)graphicalElement).getElement() instanceof org.eclipse.uml2.uml.Element) {
-					selectedElement = (org.eclipse.uml2.uml.Element)((View)graphicalElement).getElement();
+		if (selection instanceof IStructuredSelection) {
+			Object selectedobject = ((IStructuredSelection) selection).getFirstElement();
+			if (selectedobject instanceof GraphicalEditPart) {
+				Object graphicalElement = ((GraphicalEditPart) selectedobject).getModel();
+				if ((graphicalElement instanceof View) && ((View) graphicalElement).getElement() instanceof org.eclipse.uml2.uml.Element) {
+					selectedElement = (org.eclipse.uml2.uml.Element) ((View) graphicalElement).getElement();
 				}
-			} else if(selectedobject instanceof IAdaptable) {
-				EObject selectedEObject = (EObject)((IAdaptable)selectedobject).getAdapter(EObject.class);
-				if(selectedEObject instanceof org.eclipse.uml2.uml.Element) {
-					selectedElement = (Element)selectedEObject;
+			} else if (selectedobject instanceof IAdaptable) {
+				EObject selectedEObject = (EObject) ((IAdaptable) selectedobject).getAdapter(EObject.class);
+				if (selectedEObject instanceof org.eclipse.uml2.uml.Element) {
+					selectedElement = (Element) selectedEObject;
 				}
 			}
 

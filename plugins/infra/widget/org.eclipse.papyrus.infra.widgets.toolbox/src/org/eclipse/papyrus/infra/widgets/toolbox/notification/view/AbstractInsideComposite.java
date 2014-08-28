@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,13 +28,14 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
 
 /**
  * A composite contained in PapyrusNotificationView
- * 
+ *
  * @author tfaure
  */
 public abstract class AbstractInsideComposite extends Composite {
@@ -60,19 +61,19 @@ public abstract class AbstractInsideComposite extends Composite {
 		this.runnables = collection;
 		createContents();
 	}
-	
+
 	/**
 	 * Sets the used notification for recovering when needed (e.g. for removal)
-	 * 
+	 *
 	 * @param notification
-	 *        the used notification
+	 *            the used notification
 	 */
 	public void setINotification(INotification notification) {
 		context.put(IContext.NOTIFICATION_OBJECT, notification);
 	}
 
 	private void createContents() {
-		section = toolkit.createSection(this, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+		section = toolkit.createSection(this, ExpandableComposite.TITLE_BAR | ExpandableComposite.TWISTIE | ExpandableComposite.EXPANDED);
 		section.setText(getSectionName() + " - " + new SimpleDateFormat("HH'h'mm'm'ss's'").format(new Date()));
 		section.setLayout(new FillLayout());
 		Composite compo = toolkit.createComposite(section);
@@ -86,8 +87,8 @@ public abstract class AbstractInsideComposite extends Composite {
 	protected void createHyperLinkSection(Composite compo) {
 		Composite compoHL = toolkit.createComposite(compo);
 		compoHL.setLayout(new FillLayout());
-		if(runnables != null && !runnables.isEmpty()) {
-			for(final NotificationRunnable r : runnables) {
+		if (runnables != null && !runnables.isEmpty()) {
+			for (final NotificationRunnable r : runnables) {
 				Button b = toolkit.createButton(compoHL, r.getLabel() == null ? "run" : r.getLabel(), SWT.NONE);
 				b.addSelectionListener(new SelectionListener() {
 
@@ -128,14 +129,14 @@ public abstract class AbstractInsideComposite extends Composite {
 	}
 
 	public void run(NotificationRunnable r) {
-		if(r != null) {
+		if (r != null) {
 			r.run(context);
 			close();
 		}
 	}
 
 	public void runDefault() {
-		if(runnables != null && !runnables.isEmpty()) {
+		if (runnables != null && !runnables.isEmpty()) {
 			runnables.iterator().next().run(context);
 		}
 		close();

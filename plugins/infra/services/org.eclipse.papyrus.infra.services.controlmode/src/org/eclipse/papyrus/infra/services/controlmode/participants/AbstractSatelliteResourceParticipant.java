@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Arthur Daussy <a href="mailto:arthur.daussy@atos.net"> - initial API and implementation
  ******************************************************************************/
@@ -26,14 +26,15 @@ import org.eclipse.papyrus.infra.services.controlmode.commands.RemoveControlReso
  * Abstract implementation for {@link IControlCommandParticipant} and {@link IUncontrolCommandParticipant} for satellite resources such as notation,
  * di.
  * NOTE : This abstract is not used for now
+ *
  * @author adaussy
- * 
+ *
  */
 public abstract class AbstractSatelliteResourceParticipant implements IControlCommandParticipant, IUncontrolCommandParticipant {
 
 	/**
 	 * Get the satellite resource file extension
-	 * 
+	 *
 	 * @return
 	 */
 	protected abstract String getResourceFileExtension();
@@ -41,7 +42,7 @@ public abstract class AbstractSatelliteResourceParticipant implements IControlCo
 	/**
 	 * Get a correct label of the participant?
 	 * Used for label of commands
-	 * 
+	 *
 	 * @return
 	 */
 	protected abstract String getParticipantLabel();
@@ -63,7 +64,7 @@ public abstract class AbstractSatelliteResourceParticipant implements IControlCo
 
 	/**
 	 * Create a label for composite command
-	 * 
+	 *
 	 * @param type
 	 * @return
 	 */
@@ -73,7 +74,7 @@ public abstract class AbstractSatelliteResourceParticipant implements IControlCo
 
 	/**
 	 * Create a composite command
-	 * 
+	 *
 	 * @param request
 	 * @param type
 	 * @return
@@ -87,12 +88,12 @@ public abstract class AbstractSatelliteResourceParticipant implements IControlCo
 		 * Fill the request with target resource. This is deduce from the request
 		 */
 		boolean result = setSatelliteTargetRequest(request);
-		if(result) {
+		if (result) {
 			CompositeTransactionalCommand cc = createCompositeTransactionalCommand(request, "Pre Uncontrol");
-			for(ICommand cmd : getPreUncontrolCommands(request)) {
+			for (ICommand cmd : getPreUncontrolCommands(request)) {
 				cc.compose(cmd);
 			}
-			if(!cc.isEmpty()) {
+			if (!cc.isEmpty()) {
 				return cc;
 			}
 			return null;
@@ -103,7 +104,7 @@ public abstract class AbstractSatelliteResourceParticipant implements IControlCo
 
 	/**
 	 * Return the list of the {@link ICommand} for Pre Uncontrol command
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -111,13 +112,13 @@ public abstract class AbstractSatelliteResourceParticipant implements IControlCo
 
 	public ICommand getPostUncontrolCommand(ControlModeRequest request) {
 		CompositeTransactionalCommand cc = createCompositeTransactionalCommand(request, "Post Uncontrol");
-		for(ICommand cmd : getPostUncontrolCommands(request)) {
+		for (ICommand cmd : getPostUncontrolCommands(request)) {
 			cc.compose(cmd);
 		}
-		if(deleteOldResource()) {
+		if (deleteOldResource()) {
 			cc.compose(new RemoveControlResourceCommand(request, getResourceFileExtension()));
 		}
-		if(!cc.isEmpty()) {
+		if (!cc.isEmpty()) {
 			return cc;
 		}
 		return null;
@@ -125,7 +126,7 @@ public abstract class AbstractSatelliteResourceParticipant implements IControlCo
 
 	/**
 	 * Return the list of the {@link ICommand} for Post Uncontrol command
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -137,10 +138,10 @@ public abstract class AbstractSatelliteResourceParticipant implements IControlCo
 
 	public ICommand getPreControlCommand(ControlModeRequest request) {
 		CompositeTransactionalCommand cc = createCompositeTransactionalCommand(request, "Pre Control");
-		for(ICommand cmd : getPreControlCommands(request)) {
+		for (ICommand cmd : getPreControlCommands(request)) {
 			cc.compose(cmd);
 		}
-		if(!cc.isEmpty()) {
+		if (!cc.isEmpty()) {
 			return cc;
 		}
 		return null;
@@ -148,7 +149,7 @@ public abstract class AbstractSatelliteResourceParticipant implements IControlCo
 
 	/**
 	 * Return the list of the {@link ICommand} for Pre Control command
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -156,13 +157,13 @@ public abstract class AbstractSatelliteResourceParticipant implements IControlCo
 
 	public ICommand getPostControlCommand(ControlModeRequest request) {
 		CompositeTransactionalCommand cc = createCompositeTransactionalCommand(request, "Post Control");
-		if(createNewResource()) {
+		if (createNewResource()) {
 			cc.compose(new CreateControlResource(request, getResourceFileExtension()));
 		}
-		for(ICommand cmd : getPostControlCommands(request)) {
+		for (ICommand cmd : getPostControlCommands(request)) {
 			cc.compose(cmd);
 		}
-		if(!cc.isEmpty()) {
+		if (!cc.isEmpty()) {
 			return cc;
 		}
 		return null;
@@ -170,7 +171,7 @@ public abstract class AbstractSatelliteResourceParticipant implements IControlCo
 
 	/**
 	 * Return the list of the {@link ICommand} for Post Control command
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -179,18 +180,18 @@ public abstract class AbstractSatelliteResourceParticipant implements IControlCo
 	protected boolean setSatelliteTargetRequest(ControlModeRequest request) {
 		URI satelliteResourceURI = request.getNewURI().trimFileExtension().appendFileExtension(getResourceFileExtension());
 		ModelSet modelSet = request.getModelSet();
-		if(modelSet != null) {
+		if (modelSet != null) {
 			Resource satelliteResource = null;
 			try {
 				satelliteResource = modelSet.getResource(satelliteResourceURI, true);
 			} catch (Exception e) {
 				satelliteResource = null;
 			}
-			if(satelliteResource == null) {
+			if (satelliteResource == null) {
 				return false;
 			}
 			request.setTargetResource(satelliteResource, getResourceFileExtension());
-			//Nothing to do but everything went fine
+			// Nothing to do but everything went fine
 			return true;
 		}
 		return false;

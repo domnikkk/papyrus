@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,13 +27,13 @@ public class PropertyModifierProposal implements ICompletionProposalComputer {
 
 	// vector that keeps modifiers already used (used for completion)
 	/**
-	 * 
+	 *
 	 */
 	public Map<String, Boolean> modifiersUsed;
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return the modifiersUsed
 	 */
 	public Map<String, Boolean> getModifiersUsed() {
@@ -41,10 +41,10 @@ public class PropertyModifierProposal implements ICompletionProposalComputer {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param modifiersUsed
-	 *        the modifiersUsed to set
+	 *            the modifiersUsed to set
 	 */
 	public void setModifiersUsed(Map<String, Boolean> modifiersUsed) {
 		this.modifiersUsed = modifiersUsed;
@@ -62,7 +62,7 @@ public class PropertyModifierProposal implements ICompletionProposalComputer {
 	final static public String[] modifiersStringsInfo = {
 			"ReadOnly property",
 			"Specifies whether the property is derived as\n " + "the union of all of the properties that are\n"
-			+ "constrained to subset it. ", "ordered collection property",
+					+ "constrained to subset it. ", "ordered collection property",
 			"No duplicates allowed in the collection", "Duplicates allowed in the collection", "Property subset",
 			"Property redefinition", };
 
@@ -74,18 +74,18 @@ public class PropertyModifierProposal implements ICompletionProposalComputer {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.classdiagram.parsers.texteditor.completionproposals.ICompletionProposalComputer
 	 * #generateCompletionProposals(int, int, java.lang.String)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param selectionRange
 	 * @param prefix
 	 * @param documentOffset
-	 * 
+	 *
 	 * @return
 	 */
 	public List<ICompletionProposal> generateCompletionProposals(int documentOffset, int selectionRange, String prefix) {
@@ -95,10 +95,10 @@ public class PropertyModifierProposal implements ICompletionProposalComputer {
 		ICompletionProposal proposal = null;
 
 		// adds all standard multiplicities (static strings...)
-		for(int i = 0; i < modifiersStrings.length; i++) {
+		for (int i = 0; i < modifiersStrings.length; i++) {
 			// test if this modifier is valid (already used or othe contrary has alreday been used.
-			if(!modifiersUsed.get(modifiersStrings[i])) {
-				if(modifiersStrings[i].startsWith(prefix)) {
+			if (!modifiersUsed.get(modifiersStrings[i])) {
+				if (modifiersStrings[i].startsWith(prefix)) {
 					proposal = new CompletionProposal(modifiersStrings[i], documentOffset - prefix.length(), prefix
 							.length()
 							+ selectionRange, modifiersStrings[i].length(), null, modifiersStringsName[i], null,

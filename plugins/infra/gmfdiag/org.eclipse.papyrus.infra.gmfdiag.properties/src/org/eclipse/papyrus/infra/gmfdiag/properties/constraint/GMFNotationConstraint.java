@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
  * Retrieves the notation model from the selection,
  * then applies an EMFInstanceOfConstraint on the resulting
  * EObject
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class GMFNotationConstraint extends EMFInstanceOfConstraint {
 
@@ -36,17 +36,17 @@ public class GMFNotationConstraint extends EMFInstanceOfConstraint {
 
 		View view = null;
 
-		if(selection instanceof EditPart) {
-			EditPart part = (EditPart)selection;
+		if (selection instanceof EditPart) {
+			EditPart part = (EditPart) selection;
 			Object model = part.getModel();
-			if(model instanceof View) {
-				view = (View)model;
+			if (model instanceof View) {
+				view = (View) model;
 			}
 		}
 
 		EObject eObject = EMFHelper.getEObject(selection);
-		if(eObject instanceof View) {
-			view = (View)eObject;
+		if (eObject instanceof View) {
+			view = (View) eObject;
 		}
 
 		return view == null ? false : super.match(view);

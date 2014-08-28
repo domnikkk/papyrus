@@ -27,15 +27,15 @@ import org.eclipse.papyrus.infra.core.utils.ServiceUtilsForActionHandlers;
 
 /**
  * Utility function. Allow execution of commands on a transactional command stack
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class CommandSupport {
 
 	/**
 	 * Execute the passed Runnable within a command
-	 * 
+	 *
 	 * @param label
 	 * @param command
 	 */
@@ -50,12 +50,12 @@ public class CommandSupport {
 
 	/**
 	 * Execute the passed Runnable within a command
-	 * 
+	 *
 	 * @param label
 	 * @param command
 	 */
 	public static void exec(TransactionalEditingDomain domain, String label, final Runnable command) {
-		if(domain == null) {
+		if (domain == null) {
 			command.run();
 		}
 		else {
@@ -63,6 +63,7 @@ public class CommandSupport {
 			try {
 				history.execute(new AbstractTransactionalCommand(domain, label, Collections.EMPTY_LIST) {
 
+					@Override
 					public CommandResult doExecuteWithResult(IProgressMonitor dummy, IAdaptable info) {
 						command.run();
 						return CommandResult.newOKCommandResult();

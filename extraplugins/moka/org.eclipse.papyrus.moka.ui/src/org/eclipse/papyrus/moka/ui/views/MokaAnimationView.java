@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,6 +52,7 @@ public class MokaAnimationView extends ViewPart {
 	/**
 	 * Creates the view and initializes it.
 	 */
+	@Override
 	public void createPartControl(Composite parent) {
 		Composite self = new Composite(parent, SWT.BORDER);
 
@@ -130,6 +131,7 @@ public class MokaAnimationView extends ViewPart {
 	/**
 	 * Passing the focus request to the viewer's control.
 	 */
+	@Override
 	public void setFocus() {
 		// Do nothing
 	}

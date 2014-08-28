@@ -51,7 +51,7 @@ public class DoubleClickListener implements IDoubleClickListener {
 	public void doubleClick(DoubleClickEvent event) {
 		ISelection selection = event.getSelection();
 		final IPageManager pageManager;
-		//get the page Manager
+		// get the page Manager
 		try {
 			pageManager = ServiceUtils.getInstance().getIPageManager(servicesRegistry);
 		} catch (Exception e) {
@@ -59,19 +59,19 @@ public class DoubleClickListener implements IDoubleClickListener {
 			return;
 		}
 
-		if(pageManager != null) {
-			if(selection instanceof IStructuredSelection) {
-				Iterator<?> iter = ((IStructuredSelection)selection).iterator();
+		if (pageManager != null) {
+			if (selection instanceof IStructuredSelection) {
+				Iterator<?> iter = ((IStructuredSelection) selection).iterator();
 				final List<EObject> pagesToOpen = new LinkedList<EObject>();
 				EObject pageToSelect = null;
-				while(iter.hasNext()) {
+				while (iter.hasNext()) {
 					Object currentObject = iter.next();
 					EObject diag = EMFHelper.getEObject(currentObject);
 
-					if(isPage(diag, pageManager)) {
-						//Note that Diagram migration is triggered by the Diagram Editor.
-						//Try to open the diagram, even if it is currently invalid. The editor might be able to repair it
-						if(pageManager.isOpen(diag)) {
+					if (isPage(diag, pageManager)) {
+						// Note that Diagram migration is triggered by the Diagram Editor.
+						// Try to open the diagram, even if it is currently invalid. The editor might be able to repair it
+						if (pageManager.isOpen(diag)) {
 							pageToSelect = diag;
 						} else {
 							pagesToOpen.add(diag);
@@ -79,11 +79,11 @@ public class DoubleClickListener implements IDoubleClickListener {
 					}
 				}
 
-				if(!pagesToOpen.isEmpty()) {
-					for(EObject page : pagesToOpen) {
+				if (!pagesToOpen.isEmpty()) {
+					for (EObject page : pagesToOpen) {
 						pageManager.openPage(page);
 					}
-				} else if(pageToSelect != null) {
+				} else if (pageToSelect != null) {
 					pageManager.selectPage(pageToSelect);
 				}
 			}
@@ -92,7 +92,7 @@ public class DoubleClickListener implements IDoubleClickListener {
 	}
 
 	protected boolean isPage(EObject element, IPageManager pageManager) {
-		if(pageManager.allPages().contains(element)) {
+		if (pageManager.allPages().contains(element)) {
 			return true;
 		}
 

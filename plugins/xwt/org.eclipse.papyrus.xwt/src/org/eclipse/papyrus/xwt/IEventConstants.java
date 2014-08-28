@@ -4,8 +4,8 @@
  * are made available under the terms of the Eclipse Public License v1.0       *
  * which accompanies this distribution, and is available at                    *
  * http://www.eclipse.org/legal/epl-v10.html                                   *
- *                                                                             *  
- * Contributors:                                                               *        
+ *                                                                             *
+ * Contributors:                                                               *
  *     Soyatec - initial API and implementation                                *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt;
@@ -24,7 +24,7 @@ public final class IEventConstants {
 
 	public static final String KEY_UP = "KeyUp";
 
-	public static final String[] KEY_GROUP = new String[]{ KEY_DOWN, KEY_UP };
+	public static final String[] KEY_GROUP = new String[] { KEY_DOWN, KEY_UP };
 
 	public static final String XWT_KEY_DOWN = "KeyDown" + SUFFIX;
 
@@ -34,7 +34,7 @@ public final class IEventConstants {
 
 	public static final String MOUSE_UP = "MouseUp";
 
-	public static final String[] MOUSE_GROUP = new String[]{ MOUSE_DOWN, MOUSE_UP };
+	public static final String[] MOUSE_GROUP = new String[] { MOUSE_DOWN, MOUSE_UP };
 
 	public static final String XWT_MOUSE_DOWN = "MouseDown" + SUFFIX;
 
@@ -48,7 +48,7 @@ public final class IEventConstants {
 
 	public static final String MOUSE_HOVER = "MouseHover";
 
-	public static final String[] MOUSE_MOVING_GROUP = new String[]{ MOUSE_ENTER, MOUSE_EXIT };
+	public static final String[] MOUSE_MOVING_GROUP = new String[] { MOUSE_ENTER, MOUSE_EXIT };
 
 	public static final String XWT_MOUSE_MOVE = "MouseMove" + SUFFIX;
 
@@ -90,7 +90,7 @@ public final class IEventConstants {
 
 	public static final String FOCUS_OUT = "FocusOut";
 
-	public static final String[] FOCUS_GROUP = new String[]{ FOCUS_IN, FOCUS_OUT };
+	public static final String[] FOCUS_GROUP = new String[] { FOCUS_IN, FOCUS_OUT };
 
 	public static final String XWT_FOCUS_IN = "FocusIn" + SUFFIX;
 
@@ -100,7 +100,7 @@ public final class IEventConstants {
 
 	public static final String COLLAPSE = "Collapse";
 
-	public static final String[] EXPAND_GROUP = new String[]{ EXPAND, COLLAPSE };
+	public static final String[] EXPAND_GROUP = new String[] { EXPAND, COLLAPSE };
 
 	public static final String XWT_EXPAND = "Expand" + SUFFIX;
 
@@ -116,7 +116,7 @@ public final class IEventConstants {
 
 	public static final String HIDE = "Hide";
 
-	public static final String[] WINDOW_GROUP = new String[]{ ICONIFY, DEICONIFY, CLOSE, SHOW, HIDE };
+	public static final String[] WINDOW_GROUP = new String[] { ICONIFY, DEICONIFY, CLOSE, SHOW, HIDE };
 
 	public static final String XWT_ICONIFY = "Iconify" + SUFFIX;
 
@@ -140,7 +140,7 @@ public final class IEventConstants {
 
 	public static final String DEACTIVATE = "Deactivate";
 
-	public static final String[] ACTIVATION_GROUP = new String[]{ ACTIVATE, DEACTIVATE };
+	public static final String[] ACTIVATION_GROUP = new String[] { ACTIVATE, DEACTIVATE };
 
 	public static final String XWT_ACTIVATE = "Activate" + SUFFIX;
 
@@ -166,7 +166,7 @@ public final class IEventConstants {
 
 	public static final String HARD_KEY_UP = "HardKeyUp";
 
-	public static final String[] HARD_KEY = new String[]{ HARD_KEY_DOWN, HARD_KEY_UP };
+	public static final String[] HARD_KEY = new String[] { HARD_KEY_DOWN, HARD_KEY_UP };
 
 	public static final String XWT_HARD_KEY_DOWN = "HardKeyDown" + SUFFIX;
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,10 +30,10 @@ public class DeferredSetValueCommand extends org.eclipse.gmf.runtime.emf.type.co
 
 	@Override
 	protected EObject getElementToEdit() {
-		if(elementToEdit == null) {
+		if (elementToEdit == null) {
 			Object adapter = request.getElementToSet().getAdapter(EObject.class);
-			if(adapter instanceof EObject) {
-				elementToEdit = (EObject)adapter;
+			if (adapter instanceof EObject) {
+				elementToEdit = (EObject) adapter;
 			}
 		}
 		return elementToEdit;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ public interface ISynchroSemanticChild {
 
 	/**
 	 * return the list of semantic elements that play graphical children foe a given element and a given editpart
-	 * 
+	 *
 	 * @param semanticFromEditPart
 	 * @return list of semantic elements
 	 */

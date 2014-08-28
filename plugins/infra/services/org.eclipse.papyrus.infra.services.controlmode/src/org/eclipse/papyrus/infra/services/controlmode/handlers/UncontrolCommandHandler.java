@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,15 +28,15 @@ import org.eclipse.papyrus.views.modelexplorer.handler.AbstractModelExplorerHand
 
 /**
  * Handler use to uncontrol an element
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class UncontrolCommandHandler extends AbstractModelExplorerHandler {
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		List<EObject> selection = getCurrentSelectionAdaptedToType(event, EObject.class);
-		if(selection == null || selection.isEmpty() || selection.size() > 1) {
+		if (selection == null || selection.isEmpty() || selection.size() > 1) {
 			NotificationBuilder.createInfoPopup("Nothing to Uncontrol").run();
 			return null;
 		}

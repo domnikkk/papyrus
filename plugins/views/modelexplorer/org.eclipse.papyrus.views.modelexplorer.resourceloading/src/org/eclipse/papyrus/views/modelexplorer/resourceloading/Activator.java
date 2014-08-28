@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,7 +44,7 @@ public class Activator extends AbstractUIPlugin implements org.eclipse.ui.IStart
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext
 	 * )
@@ -60,16 +60,16 @@ public class Activator extends AbstractUIPlugin implements org.eclipse.ui.IStart
 
 	/**
 	 * get the image descriptor from a string path
-	 * 
+	 *
 	 * @param pathString
-	 *        path of the image
+	 *            path of the image
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor getImageDescriptor(String pathString) {
 
 		IPath path = new Path(pathString);
 		URL uri = FileLocator.find(Activator.plugin.getBundle(), path, null);
-		if(uri == null) {
+		if (uri == null) {
 			return null;
 		}
 		return ImageDescriptor.createFromURL(uri);
@@ -77,7 +77,7 @@ public class Activator extends AbstractUIPlugin implements org.eclipse.ui.IStart
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext
 	 * )
@@ -90,7 +90,7 @@ public class Activator extends AbstractUIPlugin implements org.eclipse.ui.IStart
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -98,9 +98,9 @@ public class Activator extends AbstractUIPlugin implements org.eclipse.ui.IStart
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.IStartup#earlyStartup()
-	 * 
+	 *
 	 */
 	public void earlyStartup() {
 

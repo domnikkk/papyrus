@@ -22,25 +22,25 @@ import org.eclipse.emf.transaction.impl.InternalTransactionalEditingDomain;
 
 /**
  * This helper can be used to run (safe) transactions outside the CommandStack
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class TransactionHelper {
 
 	public static void run(EditingDomain domain, Runnable writeOperation) throws InterruptedException, RollbackException {
-		if(domain instanceof TransactionalEditingDomain) {
-			run((TransactionalEditingDomain)domain, writeOperation);
+		if (domain instanceof TransactionalEditingDomain) {
+			run((TransactionalEditingDomain) domain, writeOperation);
 		} else {
 			writeOperation.run();
 		}
 	}
 
 	public static void run(TransactionalEditingDomain domain, final Runnable writeOperation) throws InterruptedException, RollbackException {
-		if(domain instanceof InternalTransactionalEditingDomain) {
-			run((InternalTransactionalEditingDomain)domain, writeOperation);
+		if (domain instanceof InternalTransactionalEditingDomain) {
+			run((InternalTransactionalEditingDomain) domain, writeOperation);
 		} else {
-			//Shouldn't happen, as all TransactionalEditingDomain implementations should also implement InternalTransactionalEditingDomain
+			// Shouldn't happen, as all TransactionalEditingDomain implementations should also implement InternalTransactionalEditingDomain
 			domain.getCommandStack().execute(new RecordingCommand(domain) {
 
 				@Override

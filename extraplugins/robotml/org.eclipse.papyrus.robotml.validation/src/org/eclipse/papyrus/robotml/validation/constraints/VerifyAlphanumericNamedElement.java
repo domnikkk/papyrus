@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ public class VerifyAlphanumericNamedElement extends AbstractModelConstraint {
 	public static Pattern ALPHANUMERIC = Pattern.compile("[A-Za-z][A-Za-z0-9_]*");
 
 	public boolean checkAlphaNumeric(String s) {
-		if(s == null) {
+		if (s == null) {
 			return false;
 		} else {
 			Matcher m = ALPHANUMERIC.matcher(s);
@@ -38,13 +38,13 @@ public class VerifyAlphanumericNamedElement extends AbstractModelConstraint {
 	@Override
 	public IStatus validate(IValidationContext ctx) {
 		// TODO Auto-generated method stub
-		NamedElement element = (NamedElement)ctx.getTarget();
-		 	if (ConstraintsUtil.verifyRobotMLApplied(element)){
-		//4. verify that a property has an alphanumeric name that can also contain underscore
-		if(((element instanceof Classifier) || (element instanceof Property) || (element instanceof DataType)) && !checkAlphaNumeric(element.getName())) {
-			return ctx.createFailureStatus("Element should have an alphanumeric name beginning by a letter" + element.getQualifiedName());
+		NamedElement element = (NamedElement) ctx.getTarget();
+		if (ConstraintsUtil.verifyRobotMLApplied(element)) {
+			// 4. verify that a property has an alphanumeric name that can also contain underscore
+			if (((element instanceof Classifier) || (element instanceof Property) || (element instanceof DataType)) && !checkAlphaNumeric(element.getName())) {
+				return ctx.createFailureStatus("Element should have an alphanumeric name beginning by a letter" + element.getQualifiedName());
+			}
 		}
-		 	}
 		return ctx.createSuccessStatus();
 	}
 

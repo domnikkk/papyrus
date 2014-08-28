@@ -48,38 +48,38 @@ public class GradientHelper {
 	 */
 	public static final String GRADIENT_HORIZONTAL = "horizontal";
 
-	//Type 1 :
-	//gradientColor:#ABCDEF;
-	//gradientStyle:vertical;
+	// Type 1 :
+	// gradientColor:#ABCDEF;
+	// gradientStyle:vertical;
 
-	//Type 2 :
-	//(gradient:#FEDCBA #ABCDEF horizontal;) //Currently not supported, as diagrams usually seek for #fillColor()
-	//gradient:#ABCDEF horizontal;
-	//gradient:#ABCDEF
-	//gradient:horizontal
+	// Type 2 :
+	// (gradient:#FEDCBA #ABCDEF horizontal;) //Currently not supported, as diagrams usually seek for #fillColor()
+	// gradient:#ABCDEF horizontal;
+	// gradient:#ABCDEF
+	// gradient:horizontal
 
-	//TODO: The Engine should provide a method to handle complex composite properties.
-	//The base CSS Engine provides such a feature. However, it is not powerful enough.
+	// TODO: The Engine should provide a method to handle complex composite properties.
+	// The base CSS Engine provides such a feature. However, it is not powerful enough.
 	/**
 	 * Returns a GradientData from the CSS "gradient", "gradientColor" and/or
 	 * "gradientStyle" properties
 	 *
 	 * @param engine
-	 *        The engine used to retrieve the gradient
+	 *            The engine used to retrieve the gradient
 	 * @param node
-	 *        The semantic node for which the gradient should be retrieved
-	 *        (Probably a GMF View, FillStyle...)
+	 *            The semantic node for which the gradient should be retrieved
+	 *            (Probably a GMF View, FillStyle...)
 	 * @return
 	 *         The computed GradientData, or the default GMF GradientData
 	 *         if the stylesheet doesn't specify a Gradient
 	 */
 	public static GradientData computeGradient(ExtendedCSSEngine engine, Object node) {
-		//Type 1
+		// Type 1
 		CSSValue gradientColor = engine.retrievePropertyValue(node, "gradientColor");
 		CSSValue gradientStyle = engine.retrievePropertyValue(node, "gradientStyle");
 
-		if(gradientColor != null || gradientStyle != null) {
-			int color1 = (Integer)engine.convert(gradientColor, ColorToGMFConverter.GMFColor, null);
+		if (gradientColor != null || gradientStyle != null) {
+			int color1 = (Integer) engine.convert(gradientColor, ColorToGMFConverter.GMFColor, null);
 			int style = getGradientStyle(gradientStyle.getCssText());
 
 			GradientData gradientData = new GradientData();
@@ -88,13 +88,13 @@ public class GradientHelper {
 			return gradientData;
 		}
 
-		//Type 2
+		// Type 2
 		CSSValue gradient = engine.retrievePropertyValue(node, "gradient");
 
-		if(gradient != null) {
+		if (gradient != null) {
 			String gradientString = gradient.getCssText();
 
-			if(StringHelper.equals(gradientString, "none")) {
+			if (StringHelper.equals(gradientString, "none")) {
 				return null;
 			}
 
@@ -103,8 +103,8 @@ public class GradientHelper {
 			return new GradientData(gradientValues[0], gradientValues[1], gradientValues[2]);
 		}
 
-		//Default
-		return (GradientData)NotationPackage.eINSTANCE.getFillStyle_Gradient().getDefaultValue();
+		// Default
+		return (GradientData) NotationPackage.eINSTANCE.getFillStyle_Gradient().getDefaultValue();
 	}
 
 	/** [color1, color2, style] */
@@ -114,21 +114,21 @@ public class GradientHelper {
 
 		String[] values = ParserHelper.parseValues(engine, gradient);
 
-		if(values.length == 3) {
+		if (values.length == 3) {
 			color1 = values[0];
 			color2 = values[1];
 			style = values[2];
-		} else if(values.length == 2) {
+		} else if (values.length == 2) {
 			color1 = values[0];
 			String value = values[1];
-			if(isGradientStyle(value)) {
+			if (isGradientStyle(value)) {
 				style = value;
 			} else {
 				color2 = value;
 			}
-		} else if(values.length == 1) {
+		} else if (values.length == 1) {
 			String value = values[0];
-			if(isGradientStyle(value)) {
+			if (isGradientStyle(value)) {
 				style = value;
 			} else {
 				color1 = value;
@@ -144,14 +144,14 @@ public class GradientHelper {
 
 		CSSValue cssColor1, cssColor2;
 		try {
-			if(sColor1 != null) {
+			if (sColor1 != null) {
 				cssColor1 = engine.parsePropertyValue(sColor1);
-				color1 = (Integer)engine.convert(cssColor1, ColorToGMFConverter.GMFColor, null);
+				color1 = (Integer) engine.convert(cssColor1, ColorToGMFConverter.GMFColor, null);
 			}
 
-			if(sColor2 != null) {
+			if (sColor2 != null) {
 				cssColor2 = engine.parsePropertyValue(sColor2);
-				color2 = (Integer)engine.convert(cssColor2, ColorToGMFConverter.GMFColor, null); //Unused
+				color2 = (Integer) engine.convert(cssColor2, ColorToGMFConverter.GMFColor, null); // Unused
 			}
 
 			style = getGradientStyle(sStyle);
@@ -159,7 +159,7 @@ public class GradientHelper {
 			engine.handleExceptions(ex);
 		}
 
-		return new int[]{ color1, color2, style };
+		return new int[] { color1, color2, style };
 	}
 
 	private static boolean isGradientStyle(String value) {
@@ -167,13 +167,13 @@ public class GradientHelper {
 	}
 
 	private static int getGradientStyle(String gradientStyle) {
-		if(StringHelper.equals(GRADIENT_VERTICAL, gradientStyle)) {
+		if (StringHelper.equals(GRADIENT_VERTICAL, gradientStyle)) {
 			return GradientStyle.VERTICAL;
-		} else if(StringHelper.equals(GRADIENT_HORIZONTAL, gradientStyle)) {
+		} else if (StringHelper.equals(GRADIENT_HORIZONTAL, gradientStyle)) {
 			return GradientStyle.HORIZONTAL;
 		}
 
-		//Default value
+		// Default value
 		return new GradientData().getGradientStyle();
 	}
 }

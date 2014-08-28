@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * Abstract handler to load axis providers. Contains all execution logic.
- * 
+ *
  */
 public abstract class AbstractLoadAxisProvidersHandler extends AbstractTableHandler {
 
@@ -47,9 +47,9 @@ public abstract class AbstractLoadAxisProvidersHandler extends AbstractTableHand
 
 	/**
 	 * This handler opens the dialog displaying the axis provides, allows to choose one of them and set it as the current axis provider
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
@@ -61,17 +61,17 @@ public abstract class AbstractLoadAxisProvidersHandler extends AbstractTableHand
 		dialog = new LoadCurrentAxisProvidersDialog(Display.getDefault().getActiveShell(), axisProvidersHistory, currentAxisProvider, getConfigRegistry());
 		currentAxisProviderEReference = getCurrentAxisProviderEFeature();
 
-		//TODO We need to provide a proper LabelProvider to display the axis' names in the dialog.
+		// TODO We need to provide a proper LabelProvider to display the axis' names in the dialog.
 
-		//		final LabelProviderService serv = getConfigRegistry().getConfigAttribute(NattableConfigAttributes.LABEL_PROVIDER_SERVICE_CONFIG_ATTRIBUTE, DisplayMode.NORMAL, NattableConfigAttributes.LABEL_PROVIDER_SERVICE_ID);
-		//		final ILabelProvider labelProvider = serv.getLabelProvider();
-		//		dialog.setLabelProvider(labelProvider);
+		// final LabelProviderService serv = getConfigRegistry().getConfigAttribute(NattableConfigAttributes.LABEL_PROVIDER_SERVICE_CONFIG_ATTRIBUTE, DisplayMode.NORMAL, NattableConfigAttributes.LABEL_PROVIDER_SERVICE_ID);
+		// final ILabelProvider labelProvider = serv.getLabelProvider();
+		// dialog.setLabelProvider(labelProvider);
 
-		if(dialog.open() == Window.OK) {
+		if (dialog.open() == Window.OK) {
 			final AbstractAxisProvider selectedAxisProvider = dialog.getSelectedAxisProvider();
-			//Create the transactional command
+			// Create the transactional command
 			final CompositeCommand cmd = new CompositeCommand("SaveCurrentAxisProvidersHandler"); //$NON-NLS-1$
-			final TransactionalEditingDomain domain = (TransactionalEditingDomain)getTableEditingDomain();
+			final TransactionalEditingDomain domain = getTableEditingDomain();
 			final IEditCommandRequest request = new SetRequest(domain, this.getCurrentNattableModelManager().getTable(), currentAxisProviderEReference, selectedAxisProvider);
 			final IElementEditService provider = ElementEditServiceUtils.getCommandProvider(this.getCurrentNattableModelManager().getTable());
 			cmd.add(provider.getEditCommand(request));
@@ -84,11 +84,11 @@ public abstract class AbstractLoadAxisProvidersHandler extends AbstractTableHand
 
 	/**
 	 * Obtain the registry of configurations for the opened table
-	 * 
+	 *
 	 * @return
 	 */
 	public IConfigRegistry getConfigRegistry() {
-		return ((NatTable)((IAdaptable)this.getCurrentNattableModelManager()).getAdapter(NatTable.class)).getConfigRegistry();
+		return ((NatTable) ((IAdaptable) this.getCurrentNattableModelManager()).getAdapter(NatTable.class)).getConfigRegistry();
 	}
 
 	public abstract EList<AbstractAxisProvider> getAxisProvidersHistory();

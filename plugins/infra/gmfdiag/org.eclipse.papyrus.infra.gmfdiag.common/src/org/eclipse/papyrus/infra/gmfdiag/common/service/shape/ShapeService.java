@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -48,7 +48,7 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 
 	/**
 	 * Checks if the given element should display a shape.
-	 * 
+	 *
 	 * @return <code>true</code> if a shape should be displayed
 	 */
 	public boolean hasShapeToDisplay(EObject view) {
@@ -59,17 +59,17 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 
 	/**
 	 * Returns the shape to be displayed
-	 * 
+	 *
 	 * @param view
-	 *        the EObject for which the shape is computed
+	 *            the EObject for which the shape is computed
 	 * @return the shape to be displayed
 	 */
 	public List<RenderedImage> getShapesToDisplay(EObject view) {
 		@SuppressWarnings("unchecked")
 		List<List<RenderedImage>> listOfListOfImages = execute(ExecutionStrategy.REVERSE, new GetShapesForViewOperation(view));
 		List<RenderedImage> images = new ArrayList<RenderedImage>();
-		for(List<RenderedImage> listOfImages : listOfListOfImages) {
-			if(listOfImages != null && !listOfImages.isEmpty()) {
+		for (List<RenderedImage> listOfImages : listOfListOfImages) {
+			if (listOfImages != null && !listOfImages.isEmpty()) {
 				images.addAll(listOfImages);
 			}
 		}
@@ -79,17 +79,17 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 
 	/**
 	 * Returns the shape to be displayed
-	 * 
+	 *
 	 * @param view
-	 *        the EObject for which the shape is computed
+	 *            the EObject for which the shape is computed
 	 * @return the shape to be displayed
 	 */
 	public List<SVGDocument> getSVGDocumentToDisplay(EObject view) {
 		@SuppressWarnings("unchecked")
 		List<List<SVGDocument>> listOfListOfImages = execute(ExecutionStrategy.REVERSE, new GetSVGDocumentForViewOperation(view));
 		List<SVGDocument> images = new ArrayList<SVGDocument>();
-		for(List<SVGDocument> listOfImages : listOfListOfImages) {
-			if(listOfImages != null && !listOfImages.isEmpty()) {
+		for (List<SVGDocument> listOfImages : listOfListOfImages) {
+			if (listOfImages != null && !listOfImages.isEmpty()) {
 				images.addAll(listOfImages);
 			}
 		}
@@ -98,13 +98,13 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 
 	/**
 	 * Ask all the shape providers to add their required notification listeners to the diagram event broker.
-	 * 
+	 *
 	 * @param diagramEventBroker
-	 *        the diagram event broker used to manage notifications
+	 *            the diagram event broker used to manage notifications
 	 * @param view
-	 *        view on which required listened elements are retrieved
+	 *            view on which required listened elements are retrieved
 	 * @param notificationListener
-	 *        notification listener that should be notified when there are modifications susceptible to change the shapes
+	 *            notification listener that should be notified when there are modifications susceptible to change the shapes
 	 */
 	protected List<ProviderNotificationManager> createProviderNotificationManagers(DiagramEventBroker diagramEventBroker, EObject view, NotificationListener notificationListener) {
 		@SuppressWarnings("unchecked")
@@ -114,11 +114,11 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 
 	/**
 	 * gets the singleton instance
-	 * 
+	 *
 	 * @return <code>PaletteService</code>
 	 */
 	public static synchronized ShapeService getInstance() {
-		if(instance == null) {
+		if (instance == null) {
 			instance = new ShapeService();
 			configureProviders();
 		}
@@ -155,13 +155,13 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 	public IShapeProvider getProvider(String id) {
 		@SuppressWarnings("unchecked")
 		List<IShapeProvider> providers = execute(ExecutionStrategy.REVERSE, new GetShapeProviderByIdentifierOperation(id));
-		if(providers == null) {
+		if (providers == null) {
 			return null;
 		}
 		Iterator<IShapeProvider> it = providers.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			IShapeProvider aspectActionProvider = it.next();
-			if(aspectActionProvider != null) {
+			if (aspectActionProvider != null) {
 				return aspectActionProvider;
 			}
 		}
@@ -180,9 +180,9 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 		/**
 		 * Constructs a <code>ISemanticProvider</code> descriptor for the
 		 * specified configuration element.
-		 * 
+		 *
 		 * @param element
-		 *        The configuration element describing the provider.
+		 *            The configuration element describing the provider.
 		 */
 		public ProviderDescriptor(IConfigurationElement element) {
 			super(element);
@@ -195,16 +195,16 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 		 */
 		@Override
 		public boolean provides(IOperation operation) {
-			if(!super.provides(operation)) {
+			if (!super.provides(operation)) {
 				return false;
 			}
 
-			if(!(operation instanceof IShapeProviderOperation)) {
+			if (!(operation instanceof IShapeProviderOperation)) {
 				return false;
 			}
 
-			if(operation instanceof GetShapeProviderByIdentifierOperation) {
-				return providerConfiguration.getId().equals(((GetShapeProviderByIdentifierOperation)operation).getIdentifier());
+			if (operation instanceof GetShapeProviderByIdentifierOperation) {
+				return providerConfiguration.getId().equals(((GetShapeProviderByIdentifierOperation) operation).getIdentifier());
 			}
 			return true;
 		}
@@ -214,10 +214,10 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 		 */
 		@Override
 		public IProvider getProvider() {
-			if(provider == null) {
+			if (provider == null) {
 				IProvider newProvider = super.getProvider();
-				if(provider instanceof IShapeProvider) {
-					IShapeProvider defaultProvider = (IShapeProvider)newProvider;
+				if (provider instanceof IShapeProvider) {
+					IShapeProvider defaultProvider = (IShapeProvider) newProvider;
 					defaultProvider.setConfiguration(getElement());
 				}
 				return newProvider;
@@ -228,13 +228,13 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 
 	/**
 	 * Creates the notification manager, initializes it with all managers provided by the service providers, and returns it for the given view
-	 * 
+	 *
 	 * @param diagramEventBroker
-	 *        event broker on which provider managers register themselves.
+	 *            event broker on which provider managers register themselves.
 	 * @param view
-	 *        the view in charge of the display of the shapes
+	 *            the view in charge of the display of the shapes
 	 * @param notificationListener
-	 *        the listener notified when the event broker fires a notification
+	 *            the listener notified when the event broker fires a notification
 	 * @return the created notification provider
 	 */
 	public NotificationManager createNotificationManager(DiagramEventBroker diagramEventBroker, EObject view, NotificationListener notificationListener) {

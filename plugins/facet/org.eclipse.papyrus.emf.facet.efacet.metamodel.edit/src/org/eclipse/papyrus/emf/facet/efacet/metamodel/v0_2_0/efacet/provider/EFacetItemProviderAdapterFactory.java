@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 366055 - NavigationQuery
  *       Gregoire Dupe (Mia-Software) - Bug 369673 - [Facet] IsOneOfQuery
@@ -44,6 +44,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.util.EFacetA
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -51,6 +52,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -59,6 +61,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -67,6 +70,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -75,6 +79,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EFacetItemProviderAdapterFactory() {
@@ -89,6 +94,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FacetAttributeItemProvider facetAttributeItemProvider;
@@ -97,6 +103,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,6 +119,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetReference} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FacetReferenceItemProvider facetReferenceItemProvider;
@@ -120,6 +128,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetReference}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,6 +144,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FacetOperationItemProvider facetOperationItemProvider;
@@ -143,6 +153,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,6 +169,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FacetSetItemProvider facetSetItemProvider;
@@ -166,6 +178,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,6 +194,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FacetItemProvider facetItemProvider;
@@ -189,6 +203,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,6 +219,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Category} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected CategoryItemProvider categoryItemProvider;
@@ -212,6 +228,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Category}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,6 +244,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.ParameterValue} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ParameterValueItemProvider parameterValueItemProvider;
@@ -235,6 +253,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.ParameterValue}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,6 +269,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DocumentedElement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DocumentedElementItemProvider documentedElementItemProvider;
@@ -258,6 +278,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DocumentedElement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,6 +294,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
@@ -283,6 +305,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
@@ -292,6 +315,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -303,6 +327,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -313,13 +338,14 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -331,6 +357,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void addListener(INotifyChangedListener notifyChangedListener) {
@@ -341,6 +368,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
@@ -351,6 +379,7 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void fireNotifyChanged(Notification notification) {
@@ -362,20 +391,37 @@ public class EFacetItemProviderAdapterFactory extends EFacetAdapterFactory imple
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void dispose() {
-		if (facetAttributeItemProvider != null) facetAttributeItemProvider.dispose();
-		if (facetReferenceItemProvider != null) facetReferenceItemProvider.dispose();
-		if (facetOperationItemProvider != null) facetOperationItemProvider.dispose();
-		if (facetSetItemProvider != null) facetSetItemProvider.dispose();
-		if (facetItemProvider != null) facetItemProvider.dispose();
-		if (categoryItemProvider != null) categoryItemProvider.dispose();
-		if (parameterValueItemProvider != null) parameterValueItemProvider.dispose();
-		if (documentedElementItemProvider != null) documentedElementItemProvider.dispose();
+		if (facetAttributeItemProvider != null) {
+			facetAttributeItemProvider.dispose();
+		}
+		if (facetReferenceItemProvider != null) {
+			facetReferenceItemProvider.dispose();
+		}
+		if (facetOperationItemProvider != null) {
+			facetOperationItemProvider.dispose();
+		}
+		if (facetSetItemProvider != null) {
+			facetSetItemProvider.dispose();
+		}
+		if (facetItemProvider != null) {
+			facetItemProvider.dispose();
+		}
+		if (categoryItemProvider != null) {
+			categoryItemProvider.dispose();
+		}
+		if (parameterValueItemProvider != null) {
+			parameterValueItemProvider.dispose();
+		}
+		if (documentedElementItemProvider != null) {
+			documentedElementItemProvider.dispose();
+		}
 	}
 
 }

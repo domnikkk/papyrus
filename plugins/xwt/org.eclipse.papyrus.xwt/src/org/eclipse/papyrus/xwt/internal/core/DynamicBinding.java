@@ -12,6 +12,7 @@ package org.eclipse.papyrus.xwt.internal.core;
 
 import java.lang.reflect.Method;
 
+import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.papyrus.xwt.IDataProvider;
 import org.eclipse.papyrus.xwt.IXWTLoader;
 import org.eclipse.papyrus.xwt.XWT;
@@ -29,7 +30,7 @@ import org.eclipse.swt.widgets.Widget;
 
 /**
  * Generic Binding definition
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public abstract class DynamicBinding implements IDynamicBinding {
@@ -55,11 +56,11 @@ public abstract class DynamicBinding implements IDynamicBinding {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.core.IDynamicBinding#getContextName()
 	 */
 	public IBindingContext getBindingContext() {
-		if(this.bindingContext == null) {
+		if (this.bindingContext == null) {
 			Object element = (control == null ? host : control);
 			this.bindingContext = XWT.getBindingContext(element);
 		}
@@ -76,7 +77,7 @@ public abstract class DynamicBinding implements IDynamicBinding {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.core.IDynamicBinding#setBindingContext(IBindingContext
 	 * )
@@ -95,7 +96,7 @@ public abstract class DynamicBinding implements IDynamicBinding {
 
 	/**
 	 * @param type
-	 *        the type to set
+	 *            the type to set
 	 */
 	public void setType(String type) {
 		this.type = type;
@@ -122,16 +123,16 @@ public abstract class DynamicBinding implements IDynamicBinding {
 
 	protected Object getDataContextHost() {
 		Object control = getControl();
-		if(control == null) {
+		if (control == null) {
 			return null;
 		}
 		Object data = UserData.getLocalDataContext(control);
-		if(data == null || data == this) {
-			if(data == null && UserData.hasLocalData(control, IUserDataConstants.XWT_DATACONTEXT_KEY)) {
+		if (data == null || data == this) {
+			if (data == null && UserData.hasLocalData(control, IUserDataConstants.XWT_DATACONTEXT_KEY)) {
 				return control;
 			}
 			Widget parent = UserData.getParent(control);
-			if(parent != null) {
+			if (parent != null) {
 				return UserData.getDataContextHost(parent);
 			}
 			return null;
@@ -140,16 +141,16 @@ public abstract class DynamicBinding implements IDynamicBinding {
 	}
 
 	protected Object getDataContext() {
-		if(control != null) {
+		if (control != null) {
 			return UserData.getDataContext(control);
 		}
 		return null;
 	}
 
 	protected IDataProvider getDataProvider(Object dataContext) {
-		if(dataContext != null) {
-			if(dataContext instanceof IDataProvider) {
-				return (IDataProvider)dataContext;
+		if (dataContext != null) {
+			if (dataContext instanceof IDataProvider) {
+				return (IDataProvider) dataContext;
 			} else {
 				return xwtLoader.findDataProvider(dataContext);
 			}
@@ -162,16 +163,16 @@ public abstract class DynamicBinding implements IDynamicBinding {
 	}
 
 	protected Rectangle getControlBounds() {
-		Widget widget = (Widget)getControl();
-		if(widget instanceof Control) {
-			Control control = (Control)widget;
+		Widget widget = (Widget) getControl();
+		if (widget instanceof Control) {
+			Control control = (Control) widget;
 			return control.getBounds();
 		}
 		Method drawMethod = findBoundsMethod(widget.getClass());
-		if(drawMethod != null) {
+		if (drawMethod != null) {
 			try {
 				drawMethod.setAccessible(true);
-				return (Rectangle)drawMethod.invoke(widget);
+				return (Rectangle) drawMethod.invoke(widget);
 			} catch (Exception e) {
 				throw new XWTException(e);
 			}
@@ -181,13 +182,13 @@ public abstract class DynamicBinding implements IDynamicBinding {
 	}
 
 	protected Control findHostControl() {
-		Widget widget = (Widget)getControl();
+		Widget widget = (Widget) getControl();
 		Control host;
-		if(widget instanceof Item) {
-			Item item = (Item)widget;
-			host = (Control)XWT.findParent(item, Control.class);
-		} else if(widget instanceof Control) {
-			host = (Control)widget;
+		if (widget instanceof Item) {
+			Item item = (Item) widget;
+			host = (Control) XWT.findParent(item, Control.class);
+		} else if (widget instanceof Control) {
+			host = (Control) widget;
 		} else {
 			throw new XWTException();
 		}
@@ -195,27 +196,27 @@ public abstract class DynamicBinding implements IDynamicBinding {
 	}
 
 	private Method findBoundsMethod(Class<?> type) {
-		for(Method method : type.getDeclaredMethods()) {
-			if(method.getAnnotation(UIBounds.class) != null && method.getTypeParameters().length == 0 && method.getReturnType() == Rectangle.class) {
+		for (Method method : type.getDeclaredMethods()) {
+			if (method.getAnnotation(UIBounds.class) != null && method.getTypeParameters().length == 0 && method.getReturnType() == Rectangle.class) {
 				return method;
 			}
 		}
 		Class<?> supertype = type.getSuperclass();
-		if(supertype != null && supertype != Widget.class) {
+		if (supertype != null && supertype != Widget.class) {
 			Method method = findBoundsMethod(supertype);
-			if(method != null) {
+			if (method != null) {
 				return method;
 			}
 		}
-		for(Class<?> anInterface : type.getInterfaces()) {
+		for (Class<?> anInterface : type.getInterfaces()) {
 			Method method = findBoundsMethod(anInterface);
-			if(method != null) {
+			if (method != null) {
 				return method;
 			}
 		}
 		try {
 			Method method = type.getDeclaredMethod("getBounds");
-			if(method.getReturnType() == Rectangle.class) {
+			if (method.getReturnType() == Rectangle.class) {
 				return method;
 			}
 		} catch (Exception e) {

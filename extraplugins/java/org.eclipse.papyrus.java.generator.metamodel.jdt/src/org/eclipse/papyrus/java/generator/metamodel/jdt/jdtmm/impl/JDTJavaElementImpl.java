@@ -9,7 +9,7 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
  *****************************************************************************/
@@ -23,17 +23,13 @@
 package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitor;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitorException;
 
@@ -44,11 +40,11 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitor
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTJavaElementImpl#getElementName <em>Element Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTJavaElementImpl#getElementType <em>Element Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTJavaElementImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTJavaElementImpl#isGenerated <em>Generated</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTJavaElementImpl#getParent <em>Parent</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTJavaElementImpl#getElementName <em>Element Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTJavaElementImpl#getElementType <em>Element Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTJavaElementImpl#getComment <em>Comment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTJavaElementImpl#isGenerated <em>Generated</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTJavaElementImpl#getParent <em>Parent</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,6 +56,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The default value of the '{@link #getElementName() <em>Element Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementName()
 	 * @generated
 	 * @ordered
@@ -70,6 +67,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The cached value of the '{@link #getElementName() <em>Element Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementName()
 	 * @generated
 	 * @ordered
@@ -80,6 +78,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The default value of the '{@link #getElementType() <em>Element Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementType()
 	 * @generated
 	 * @ordered
@@ -90,6 +89,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The cached value of the '{@link #getElementType() <em>Element Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementType()
 	 * @generated
 	 * @ordered
@@ -100,6 +100,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getComment()
 	 * @generated
 	 * @ordered
@@ -110,6 +111,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getComment()
 	 * @generated
 	 * @ordered
@@ -120,6 +122,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The default value of the '{@link #isGenerated() <em>Generated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isGenerated()
 	 * @generated
 	 * @ordered
@@ -130,6 +133,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The cached value of the '{@link #isGenerated() <em>Generated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isGenerated()
 	 * @generated
 	 * @ordered
@@ -139,6 +143,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTJavaElementImpl() {
@@ -148,6 +153,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,16 +164,19 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public JDTParent getParent() {
 		JDTParent parent = basicGetParent();
-		return parent != null && parent.eIsProxy() ? (JDTParent)eResolveProxy((InternalEObject)parent) : parent;
+		return parent != null && parent.eIsProxy() ? (JDTParent) eResolveProxy((InternalEObject) parent) : parent;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public JDTParent basicGetParent() {
@@ -180,8 +189,10 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getElementName() {
 		return elementName;
 	}
@@ -189,20 +200,25 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setElementName(String newElementName) {
 		String oldElementName = elementName;
 		elementName = newElementName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_NAME, oldElementName, elementName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getElementType() {
 		return elementType;
 	}
@@ -210,20 +226,25 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setElementType(int newElementType) {
 		int oldElementType = elementType;
 		elementType = newElementType;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_TYPE, oldElementType, elementType));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getComment() {
 		return comment;
 	}
@@ -231,20 +252,25 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setComment(String newComment) {
 		String oldComment = comment;
 		comment = newComment;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JdtmmPackage.JDT_JAVA_ELEMENT__COMMENT, oldComment, comment));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isGenerated() {
 		return generated;
 	}
@@ -252,21 +278,25 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setGenerated(boolean newGenerated) {
 		boolean oldGenerated = generated;
 		generated = newGenerated;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JdtmmPackage.JDT_JAVA_ELEMENT__GENERATED, oldGenerated, generated));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated not
 	 */
+	@Override
 	public String getQualifiedName() {
 		return getElementName();
 	}
@@ -274,10 +304,11 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @throws JDTVisitorException
 	 * @generated NOT
 	 */
+	@Override
 	public void accept(JDTVisitor visitor) throws JDTVisitorException {
 		visitor.visit(this);
 	}
@@ -285,8 +316,10 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getJDTSignature() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -296,22 +329,25 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_NAME:
-				return getElementName();
-			case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_TYPE:
-				return getElementType();
-			case JdtmmPackage.JDT_JAVA_ELEMENT__COMMENT:
-				return getComment();
-			case JdtmmPackage.JDT_JAVA_ELEMENT__GENERATED:
-				return isGenerated();
-			case JdtmmPackage.JDT_JAVA_ELEMENT__PARENT:
-				if (resolve) return getParent();
-				return basicGetParent();
+		case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_NAME:
+			return getElementName();
+		case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_TYPE:
+			return getElementType();
+		case JdtmmPackage.JDT_JAVA_ELEMENT__COMMENT:
+			return getComment();
+		case JdtmmPackage.JDT_JAVA_ELEMENT__GENERATED:
+			return isGenerated();
+		case JdtmmPackage.JDT_JAVA_ELEMENT__PARENT:
+			if (resolve) {
+				return getParent();
+			}
+			return basicGetParent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -319,23 +355,24 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_NAME:
-				setElementName((String)newValue);
-				return;
-			case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_TYPE:
-				setElementType((Integer)newValue);
-				return;
-			case JdtmmPackage.JDT_JAVA_ELEMENT__COMMENT:
-				setComment((String)newValue);
-				return;
-			case JdtmmPackage.JDT_JAVA_ELEMENT__GENERATED:
-				setGenerated((Boolean)newValue);
-				return;
+		case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_NAME:
+			setElementName((String) newValue);
+			return;
+		case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_TYPE:
+			setElementType((Integer) newValue);
+			return;
+		case JdtmmPackage.JDT_JAVA_ELEMENT__COMMENT:
+			setComment((String) newValue);
+			return;
+		case JdtmmPackage.JDT_JAVA_ELEMENT__GENERATED:
+			setGenerated((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -343,23 +380,24 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_NAME:
-				setElementName(ELEMENT_NAME_EDEFAULT);
-				return;
-			case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_TYPE:
-				setElementType(ELEMENT_TYPE_EDEFAULT);
-				return;
-			case JdtmmPackage.JDT_JAVA_ELEMENT__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
-			case JdtmmPackage.JDT_JAVA_ELEMENT__GENERATED:
-				setGenerated(GENERATED_EDEFAULT);
-				return;
+		case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_NAME:
+			setElementName(ELEMENT_NAME_EDEFAULT);
+			return;
+		case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_TYPE:
+			setElementType(ELEMENT_TYPE_EDEFAULT);
+			return;
+		case JdtmmPackage.JDT_JAVA_ELEMENT__COMMENT:
+			setComment(COMMENT_EDEFAULT);
+			return;
+		case JdtmmPackage.JDT_JAVA_ELEMENT__GENERATED:
+			setGenerated(GENERATED_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -367,21 +405,22 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_NAME:
-				return ELEMENT_NAME_EDEFAULT == null ? elementName != null : !ELEMENT_NAME_EDEFAULT.equals(elementName);
-			case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_TYPE:
-				return elementType != ELEMENT_TYPE_EDEFAULT;
-			case JdtmmPackage.JDT_JAVA_ELEMENT__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case JdtmmPackage.JDT_JAVA_ELEMENT__GENERATED:
-				return generated != GENERATED_EDEFAULT;
-			case JdtmmPackage.JDT_JAVA_ELEMENT__PARENT:
-				return basicGetParent() != null;
+		case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_NAME:
+			return ELEMENT_NAME_EDEFAULT == null ? elementName != null : !ELEMENT_NAME_EDEFAULT.equals(elementName);
+		case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_TYPE:
+			return elementType != ELEMENT_TYPE_EDEFAULT;
+		case JdtmmPackage.JDT_JAVA_ELEMENT__COMMENT:
+			return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+		case JdtmmPackage.JDT_JAVA_ELEMENT__GENERATED:
+			return generated != GENERATED_EDEFAULT;
+		case JdtmmPackage.JDT_JAVA_ELEMENT__PARENT:
+			return basicGetParent() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -389,11 +428,14 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (elementName: ");
@@ -408,4 +450,4 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 		return result.toString();
 	}
 
-} //JDTJavaElementImpl
+} // JDTJavaElementImpl

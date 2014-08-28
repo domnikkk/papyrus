@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -62,37 +62,37 @@ public class BlockDropHelper extends ElementHelper {
 
 	public Command getDropAsStructureItemOnPart(DropObjectsRequest request, GraphicalEditPart host, IElementType elementType) {
 		String label = "";
-		if(elementType == SysMLElementTypes.PART_PROPERTY) {
+		if (elementType == SysMLElementTypes.PART_PROPERTY) {
 			label = "Create a new Part";
 		}
-		if(elementType == SysMLElementTypes.REFERENCE_PROPERTY) {
+		if (elementType == SysMLElementTypes.REFERENCE_PROPERTY) {
 			label = "Create a new Reference";
 		}
-		if(elementType == SysMLElementTypes.ACTOR_PART_PROPERTY) {
+		if (elementType == SysMLElementTypes.ACTOR_PART_PROPERTY) {
 			label = "Create a new ActorPart";
 		}
-		if(elementType == SysMLElementTypes.VALUE_PROPERTY) {
+		if (elementType == SysMLElementTypes.VALUE_PROPERTY) {
 			label = "Create a new Value";
 		}
-		if(elementType == UMLElementTypes.PROPERTY) {
+		if (elementType == UMLElementTypes.PROPERTY) {
 			label = "Create a new Property";
 		}
 		CompoundCommand cc = new CompoundCommand(label);
 
 		Object droppedEObject = request.getObjects().get(0);
-		if(!isValidStructureItemType(droppedEObject, elementType)) {
+		if (!isValidStructureItemType(droppedEObject, elementType)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		// Verify target nature
 		EObject target = getHostEObject(host);
-		if((!(target instanceof TypedElement)) || (((TypedElement)target).getType() == null)) {
+		if ((!(target instanceof TypedElement)) || (((TypedElement) target).getType() == null)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		// The target type has to be a Block (will hold the created Port)
-		Type targetType = ((TypedElement)target).getType();
-		if(!((ISpecializationType)SysMLElementTypes.BLOCK).getMatcher().matches(targetType)) {
+		Type targetType = ((TypedElement) target).getType();
+		if (!((ISpecializationType) SysMLElementTypes.BLOCK).getMatcher().matches(targetType)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -103,13 +103,13 @@ public class BlockDropHelper extends ElementHelper {
 		CreateElementRequest createElementRequest = new CreateElementRequest(getEditingDomain(), targetType, elementType);
 		createElementRequest.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new ConfigureFeatureCommandFactory(UMLPackage.eINSTANCE.getTypedElement_Type(), request.getObjects().get(0)));
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(targetType);
-		if(provider != null) {
+		if (provider != null) {
 			createElementCommand = provider.getEditCommand(createElementRequest);
 		}
 		IAdaptable createElementRequestAdapter = new CreateElementRequestAdapter(createElementRequest);
 
 		// 2. Prepare the drop command
-		ViewDescriptor descriptor = new ViewDescriptor(createElementRequestAdapter, Node.class, /* explicit semantic hint is mandatory */ null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
+		ViewDescriptor descriptor = new ViewDescriptor(createElementRequestAdapter, Node.class, /* explicit semantic hint is mandatory */null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
 		CreateViewRequest createViewRequest = new CreateViewRequest(descriptor);
 		createViewRequest.setLocation(request.getLocation().getCopy());
 		Command viewCreateCommand = host.getCommand(createViewRequest);
@@ -119,8 +119,8 @@ public class BlockDropHelper extends ElementHelper {
 		cc.add(viewCreateCommand);
 
 		final Object value = request.getExtendedData().get(PreferencesConstantsHelper.SNAP_TO_GRID_CONSTANT);
-		if(value instanceof Boolean && Boolean.TRUE.equals(value)) {
-			DeferredSnapToGridCommand snapCommand = new DeferredSnapToGridCommand(getEditingDomain(), Collections.singletonList(descriptor),  host);
+		if (value instanceof Boolean && Boolean.TRUE.equals(value)) {
+			DeferredSnapToGridCommand snapCommand = new DeferredSnapToGridCommand(getEditingDomain(), Collections.singletonList(descriptor), host);
 			cc.add(new ICommandProxy(snapCommand));
 		}
 
@@ -129,25 +129,25 @@ public class BlockDropHelper extends ElementHelper {
 
 	public Command getDropAsStructureItem(DropObjectsRequest request, GraphicalEditPart host, IElementType elementType) {
 		String label = "";
-		if(elementType == SysMLElementTypes.PART_PROPERTY) {
+		if (elementType == SysMLElementTypes.PART_PROPERTY) {
 			label = "Create a new Part";
 		}
-		if(elementType == SysMLElementTypes.REFERENCE_PROPERTY) {
+		if (elementType == SysMLElementTypes.REFERENCE_PROPERTY) {
 			label = "Create a new Reference";
 		}
-		if(elementType == SysMLElementTypes.ACTOR_PART_PROPERTY) {
+		if (elementType == SysMLElementTypes.ACTOR_PART_PROPERTY) {
 			label = "Create a new ActorPart";
 		}
-		if(elementType == SysMLElementTypes.VALUE_PROPERTY) {
+		if (elementType == SysMLElementTypes.VALUE_PROPERTY) {
 			label = "Create a new Value";
 		}
-		if(elementType == UMLElementTypes.PROPERTY) {
+		if (elementType == UMLElementTypes.PROPERTY) {
 			label = "Create a new Property";
 		}
 		CompoundCommand cc = new CompoundCommand(label);
 
 		Object droppedEObject = request.getObjects().get(0);
-		if(!isValidStructureItemType(droppedEObject, elementType)) {
+		if (!isValidStructureItemType(droppedEObject, elementType)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -158,25 +158,25 @@ public class BlockDropHelper extends ElementHelper {
 		CreateElementRequest createElementRequest = new CreateElementRequest(getEditingDomain(), getHostEObject(host), elementType);
 		createElementRequest.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new ConfigureFeatureCommandFactory(UMLPackage.eINSTANCE.getTypedElement_Type(), request.getObjects().get(0)));
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(getHostEObject(host));
-		if(provider != null) {
+		if (provider != null) {
 			createElementCommand = provider.getEditCommand(createElementRequest);
 		}
 		IAdaptable createElementRequestAdapter = new CreateElementRequestAdapter(createElementRequest);
 
 		// 2. Prepare the drop command
-		ViewDescriptor descriptor = new ViewDescriptor(createElementRequestAdapter, Node.class, /* explicit semantic hint is mandatory */ null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
+		ViewDescriptor descriptor = new ViewDescriptor(createElementRequestAdapter, Node.class, /* explicit semantic hint is mandatory */null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
 		CreateViewRequest createViewRequest = new CreateViewRequest(descriptor);
 		createViewRequest.setLocation(request.getLocation().getCopy());
 		Command viewCreateCommand = host.getCommand(createViewRequest);
 
-	
+
 		// 3. Create the compound command
 		cc.add(new ICommandProxy(createElementCommand));
 		cc.add(viewCreateCommand);
 
 		final Object value = request.getExtendedData().get(PreferencesConstantsHelper.SNAP_TO_GRID_CONSTANT);
-		if(value instanceof Boolean && Boolean.TRUE.equals(value)) {
-			DeferredSnapToGridCommand snapCommand = new DeferredSnapToGridCommand(getEditingDomain(), Collections.singletonList(descriptor),  host);
+		if (value instanceof Boolean && Boolean.TRUE.equals(value)) {
+			DeferredSnapToGridCommand snapCommand = new DeferredSnapToGridCommand(getEditingDomain(), Collections.singletonList(descriptor), host);
 			cc.add(new ICommandProxy(snapCommand));
 		}
 
@@ -186,29 +186,29 @@ public class BlockDropHelper extends ElementHelper {
 	private boolean isValidStructureItemType(Object object, IElementType elementType) {
 		boolean isValid = false;
 
-		if((object != null) && (object instanceof Type) && !(object instanceof Association)) {
+		if ((object != null) && (object instanceof Type) && !(object instanceof Association)) {
 
-			Type type = (Type)object;
-			if((elementType == SysMLElementTypes.PART_PROPERTY) || (elementType == SysMLElementTypes.REFERENCE_PROPERTY)) {
-				if(((ISpecializationType)SysMLElementTypes.BLOCK).getMatcher().matches(type)) {
+			Type type = (Type) object;
+			if ((elementType == SysMLElementTypes.PART_PROPERTY) || (elementType == SysMLElementTypes.REFERENCE_PROPERTY)) {
+				if (((ISpecializationType) SysMLElementTypes.BLOCK).getMatcher().matches(type)) {
 					isValid = true;
 				}
 			}
-			if(elementType == SysMLElementTypes.ACTOR_PART_PROPERTY) {
-				if(type instanceof Actor) {
+			if (elementType == SysMLElementTypes.ACTOR_PART_PROPERTY) {
+				if (type instanceof Actor) {
 					isValid = true;
 				}
 			}
-			if(elementType == SysMLElementTypes.VALUE_PROPERTY) {
-				if(((ISpecializationType)SysMLElementTypes.VALUE_TYPE).getMatcher().matches(type) || (type instanceof DataType)) {
+			if (elementType == SysMLElementTypes.VALUE_PROPERTY) {
+				if (((ISpecializationType) SysMLElementTypes.VALUE_TYPE).getMatcher().matches(type) || (type instanceof DataType)) {
 					isValid = true;
 				}
 			}
-			if(elementType == UMLElementTypes.PROPERTY) {
-				if(!((ISpecializationType)SysMLElementTypes.BLOCK).getMatcher().matches(type)
-					&& !(type instanceof Actor)
-					&& !(type instanceof DataType)
-					&& !((ISpecializationType)SysMLElementTypes.VALUE_TYPE).getMatcher().matches(type)) {
+			if (elementType == UMLElementTypes.PROPERTY) {
+				if (!((ISpecializationType) SysMLElementTypes.BLOCK).getMatcher().matches(type)
+						&& !(type instanceof Actor)
+						&& !(type instanceof DataType)
+						&& !((ISpecializationType) SysMLElementTypes.VALUE_TYPE).getMatcher().matches(type)) {
 					isValid = true;
 				}
 			}
@@ -220,10 +220,10 @@ public class BlockDropHelper extends ElementHelper {
 	/**
 	 * return the host Edit Part's semantic element, if the semantic element
 	 * is <code>null</code> or unresolvable it will return <code>null</code>
-	 * 
+	 *
 	 * @return EObject
 	 */
 	protected EObject getHostEObject(GraphicalEditPart host) {
-		return ViewUtil.resolveSemanticElement((View)host.getModel());
+		return ViewUtil.resolveSemanticElement((View) host.getModel());
 	}
 }

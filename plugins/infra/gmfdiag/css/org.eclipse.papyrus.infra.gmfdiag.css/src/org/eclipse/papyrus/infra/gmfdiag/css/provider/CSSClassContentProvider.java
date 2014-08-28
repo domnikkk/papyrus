@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,11 +37,11 @@ import org.w3c.dom.css.CSSStyleSheet;
  * A ContentProvider which retrieves the available CSS Classes to be applied
  * on the selected element. The classes are retrieved from the current css
  * engine's stylesheets.
- * 
+ *
  * The resulting classes are sorted alphabetically.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public class CSSClassContentProvider extends AbstractStaticContentProvider {
@@ -51,38 +51,39 @@ public class CSSClassContentProvider extends AbstractStaticContentProvider {
 	private ExtendedCSSEngine engine;
 
 	/**
-	 * 
+	 *
 	 * @param elementName
-	 *        The localName of the element (Typically, the semantic metaclass name or diagram type)
+	 *            The localName of the element (Typically, the semantic metaclass name or diagram type)
 	 * @param engine
-	 *        The stylesheets of this CSS Engine will be used to retrieve compatible CSS Classes
+	 *            The stylesheets of this CSS Engine will be used to retrieve compatible CSS Classes
 	 */
 	public CSSClassContentProvider(String elementName, ExtendedCSSEngine engine) {
 		this.elementName = elementName;
 		this.engine = engine;
 	}
 
+	@Override
 	public Object[] getElements() {
 		return getAvailableClasses().toArray();
 	}
 
 	/**
 	 * Returns a sorted collection of CSS Classes compatible with the element
-	 * 
+	 *
 	 * @return
 	 */
 	public Collection<String> getAvailableClasses() {
 		Set<String> result = new TreeSet<String>(Collator.getInstance());
 
-		for(org.w3c.dom.stylesheets.StyleSheet stylesheet : engine.getAllStylesheets()) {
-			if(stylesheet instanceof CSSStyleSheet) {
-				CSSStyleSheet cssStylesheet = (CSSStyleSheet)stylesheet;
-				for(int i = 0; i < cssStylesheet.getCssRules().getLength(); i++) {
+		for (org.w3c.dom.stylesheets.StyleSheet stylesheet : engine.getAllStylesheets()) {
+			if (stylesheet instanceof CSSStyleSheet) {
+				CSSStyleSheet cssStylesheet = (CSSStyleSheet) stylesheet;
+				for (int i = 0; i < cssStylesheet.getCssRules().getLength(); i++) {
 					CSSRule cssRule = cssStylesheet.getCssRules().item(i);
-					if(cssRule instanceof CSSStyleRuleImpl) {
-						CSSStyleRuleImpl rule = (CSSStyleRuleImpl)cssRule;
+					if (cssRule instanceof CSSStyleRuleImpl) {
+						CSSStyleRuleImpl rule = (CSSStyleRuleImpl) cssRule;
 
-						for(int j = 0; j < rule.getSelectorList().getLength(); j++) {
+						for (int j = 0; j < rule.getSelectorList().getLength(); j++) {
 							Selector selector = rule.getSelectorList().item(j);
 
 							result.addAll(findClassesFromSelector(selector));
@@ -97,14 +98,14 @@ public class CSSClassContentProvider extends AbstractStaticContentProvider {
 
 	private List<String> findClassesFromSelector(Selector selector) {
 		List<String> result = new LinkedList<String>();
-		if(selector instanceof ConditionalSelector) {
-			result.addAll(findClassesFromSelector((ConditionalSelector)selector));
-		} else if(selector instanceof DescendantSelector) { //A B | A > B
-			result.addAll(findClassesFromSelector(((DescendantSelector)selector).getSimpleSelector()));
-			result.addAll(findClassesFromSelector(((DescendantSelector)selector).getAncestorSelector()));
-		} else if(selector instanceof SiblingSelector) { //A + B
-			result.addAll(findClassesFromSelector(((SiblingSelector)selector).getSelector()));
-			result.addAll(findClassesFromSelector(((SiblingSelector)selector).getSiblingSelector()));
+		if (selector instanceof ConditionalSelector) {
+			result.addAll(findClassesFromSelector((ConditionalSelector) selector));
+		} else if (selector instanceof DescendantSelector) { // A B | A > B
+			result.addAll(findClassesFromSelector(((DescendantSelector) selector).getSimpleSelector()));
+			result.addAll(findClassesFromSelector(((DescendantSelector) selector).getAncestorSelector()));
+		} else if (selector instanceof SiblingSelector) { // A + B
+			result.addAll(findClassesFromSelector(((SiblingSelector) selector).getSelector()));
+			result.addAll(findClassesFromSelector(((SiblingSelector) selector).getSiblingSelector()));
 		}
 		return result;
 	}
@@ -114,10 +115,10 @@ public class CSSClassContentProvider extends AbstractStaticContentProvider {
 
 		Selector simpleSelector = selector.getSimpleSelector();
 
-		if(simpleSelector instanceof ElementSelector) {
-			ElementSelector elementSelector = (ElementSelector)simpleSelector;
+		if (simpleSelector instanceof ElementSelector) {
+			ElementSelector elementSelector = (ElementSelector) simpleSelector;
 			String localName = elementSelector.getLocalName();
-			if("*".equals(localName) || "*".equals(elementName) || elementName.equals(localName) || localName == null) {
+			if ("*".equals(localName) || "*".equals(elementName) || elementName.equals(localName) || localName == null) {
 				Condition condition = selector.getCondition();
 				result.addAll(findClassesFromCondition(condition));
 			}
@@ -127,10 +128,10 @@ public class CSSClassContentProvider extends AbstractStaticContentProvider {
 	}
 
 	private List<String> findClassesFromCondition(Condition condition) {
-		if(condition instanceof CSSClassConditionImpl) {
-			return Collections.singletonList(((CSSClassConditionImpl)condition).getValue());
-		} else if(condition instanceof CombinatorCondition) {
-			CombinatorCondition combinatorCondition = (CombinatorCondition)condition;
+		if (condition instanceof CSSClassConditionImpl) {
+			return Collections.singletonList(((CSSClassConditionImpl) condition).getValue());
+		} else if (condition instanceof CombinatorCondition) {
+			CombinatorCondition combinatorCondition = (CombinatorCondition) condition;
 			List<String> result = new LinkedList<String>();
 			result.addAll(findClassesFromCondition(combinatorCondition.getFirstCondition()));
 			result.addAll(findClassesFromCondition(combinatorCondition.getSecondCondition()));

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Nicolas Bros (Mia-Software) - initial API and implementation
  */
@@ -27,55 +27,51 @@ import org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.UnaryRe
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCellEditorPackage {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass modelCellEditorDeclarationsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass abstractModelCellEditorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass basicCellEditorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass unaryReferenceCellEditorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass naryFeatureCellEditorEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
 	 * package package URI value.
 	 * <p>
-	 * Note: the correct way to create the package is via the static factory
-	 * method {@link #init init()}, which also performs initialization of the
-	 * package, or returns the registered package, if one already exists. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.ModelCellEditorPackage#eNS_URI
 	 * @see #init()
@@ -87,7 +83,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -95,14 +91,11 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model,
 	 * and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>
-	 * This method is used to initialize
-	 * {@link ModelCellEditorPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access
-	 * that field to obtain the package. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * This method is used to initialize {@link ModelCellEditorPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -137,7 +130,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getModelCellEditorDeclarations() {
@@ -146,7 +139,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getModelCellEditorDeclarations_ModelCellEditors() {
@@ -155,7 +148,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getAbstractModelCellEditor() {
@@ -164,7 +157,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getAbstractModelCellEditor_CellType() {
@@ -173,7 +166,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getAbstractModelCellEditor_CellId() {
@@ -182,7 +175,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getBasicCellEditor() {
@@ -191,7 +184,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getBasicCellEditor_BasicCellEditorImpl() {
@@ -200,7 +193,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getUnaryReferenceCellEditor() {
@@ -209,7 +202,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getUnaryReferenceCellEditor_UnaryReferenceCellEditorImpl() {
@@ -218,7 +211,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getNaryFeatureCellEditor() {
@@ -227,7 +220,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNaryFeatureCellEditor_NaryFeatureCellEditorImpl() {
@@ -236,7 +229,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelCellEditorFactory getModelCellEditorFactory() {
@@ -245,7 +238,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -254,7 +247,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 	 * Creates the meta-model objects for the package. This method is guarded to
 	 * have no affect on any invocation but its first. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -290,7 +283,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -299,7 +292,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
@@ -325,8 +318,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 		// Initialize classes and features; add operations and parameters
 		initEClass(
 				this.modelCellEditorDeclarationsEClass,
-				ModelCellEditorDeclarations.class,
-				"ModelCellEditorDeclarations", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, //$NON-NLS-1$
+				ModelCellEditorDeclarations.class, "ModelCellEditorDeclarations", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, //$NON-NLS-1$
 				EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModelCellEditorDeclarations_ModelCellEditors(),
 				getAbstractModelCellEditor(), null, "modelCellEditors", null, 0, -1, //$NON-NLS-1$
@@ -337,41 +329,34 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 		initEClass(
 				this.abstractModelCellEditorEClass,
-				AbstractModelCellEditor.class,
-				"AbstractModelCellEditor", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+				AbstractModelCellEditor.class, "AbstractModelCellEditor", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(
 				getAbstractModelCellEditor_CellType(),
 				this.ecorePackage.getEClassifier(),
-				null,
-				"cellType", null, 1, 1, AbstractModelCellEditor.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, //$NON-NLS-1$
+				null, "cellType", null, 1, 1, AbstractModelCellEditor.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, //$NON-NLS-1$
 				EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_COMPOSITE,
 				EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE,
 				EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
 		initEAttribute(
 				getAbstractModelCellEditor_CellId(),
-				this.ecorePackage.getEString(),
-				"cellId", //$NON-NLS-1$
+				this.ecorePackage.getEString(), "cellId", //$NON-NLS-1$
 				null, 1, 1, AbstractModelCellEditor.class, !EPackageImpl.IS_TRANSIENT,
 				!EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE,
 				!EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
 				EPackageImpl.IS_ORDERED);
 
-		addEOperation(this.abstractModelCellEditorEClass, this.ecorePackage.getEString(),
-				"getModelCellEditorImpl", 1, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		addEOperation(this.abstractModelCellEditorEClass, this.ecorePackage.getEString(), "getModelCellEditorImpl", 1, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(this.basicCellEditorEClass, BasicCellEditor.class,
-				"BasicCellEditor", !EPackageImpl.IS_ABSTRACT, //$NON-NLS-1$
+		initEClass(this.basicCellEditorEClass, BasicCellEditor.class, "BasicCellEditor", !EPackageImpl.IS_ABSTRACT, //$NON-NLS-1$
 				!EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(
 				getBasicCellEditor_BasicCellEditorImpl(),
-				this.ecorePackage.getEString(),
-				"basicCellEditorImpl", null, 1, 1, BasicCellEditor.class, !EPackageImpl.IS_TRANSIENT, //$NON-NLS-1$
+				this.ecorePackage.getEString(), "basicCellEditorImpl", null, 1, 1, BasicCellEditor.class, !EPackageImpl.IS_TRANSIENT, //$NON-NLS-1$
 				!EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE,
 				!EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
 				EPackageImpl.IS_ORDERED);
 
-		initEClass(this.unaryReferenceCellEditorEClass, UnaryReferenceCellEditor.class,
-				"UnaryReferenceCellEditor", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, //$NON-NLS-1$
+		initEClass(this.unaryReferenceCellEditorEClass, UnaryReferenceCellEditor.class, "UnaryReferenceCellEditor", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, //$NON-NLS-1$
 				EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnaryReferenceCellEditor_UnaryReferenceCellEditorImpl(),
 				this.ecorePackage.getEString(), "unaryReferenceCellEditorImpl", null, 1, 1, //$NON-NLS-1$
@@ -382,8 +367,7 @@ public class ModelCellEditorPackageImpl extends EPackageImpl implements ModelCel
 
 		initEClass(
 				this.naryFeatureCellEditorEClass,
-				NaryFeatureCellEditor.class,
-				"NaryFeatureCellEditor", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+				NaryFeatureCellEditor.class, "NaryFeatureCellEditor", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getNaryFeatureCellEditor_NaryFeatureCellEditorImpl(),
 				this.ecorePackage.getEString(), "naryFeatureCellEditorImpl", null, 1, 1, //$NON-NLS-1$
 				NaryFeatureCellEditor.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE,

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -83,8 +83,8 @@ public class ExtensionHelper extends ElementHelper {
 	public static int target = 1;
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param metaclass
 	 * @return the command to destroy the metaclass, the metaclass's extension and the stereotype's property
 	 */
@@ -108,7 +108,7 @@ public class ExtensionHelper extends ElementHelper {
 					EList<Extension> extensionList = metaclass.getExtensions();
 					/*
 					 * get the extensions to destroy
-					 * 
+					 *
 					 * All the user's extension are owned by the rootProfile or a sub-profile
 					 */
 					ArrayList<Extension> extensionsToDestroy = new ArrayList<Extension>();
@@ -152,8 +152,8 @@ public class ExtensionHelper extends ElementHelper {
 
 	/**
 	 * This method re-targets the source for an Extension.
-	 * 
-	 * 
+	 *
+	 *
 	 * @param link
 	 * @param newSource
 	 * @return
@@ -232,11 +232,11 @@ public class ExtensionHelper extends ElementHelper {
 
 	/**
 	 * Change the target for an {@link Extension}
-	 * 
+	 *
 	 * @param link
-	 *        the extension to modify
+	 *            the extension to modify
 	 * @param newTarget
-	 *        the new target (metaclass) for this extension
+	 *            the new target (metaclass) for this extension
 	 * @param oldEnd
 	 * @return
 	 */
@@ -272,13 +272,13 @@ public class ExtensionHelper extends ElementHelper {
 
 	/**
 	 * Returns a name for the extension
-	 * 
+	 *
 	 * @param link
-	 *        the extension to name
+	 *            the extension to name
 	 * @param target
-	 *        the target
+	 *            the target
 	 * @param source
-	 *        the source
+	 *            the source
 	 * @return
 	 *         Returns a name for this extension
 	 */
@@ -292,14 +292,14 @@ public class ExtensionHelper extends ElementHelper {
 
 	/**
 	 * Returns the name deduced from the ends of the extension
-	 * 
+	 *
 	 * @param extension
-	 *        the extension
+	 *            the extension
 	 * @return
 	 *         the name deduces from the properties
 	 */
 	public static String deduceExtensionNameFromProperties(Extension extension) {
-		//determine the name, if the user doesn't edit it
+		// determine the name, if the user doesn't edit it
 		String logicName = "E_"; //$NON-NLS-1$
 		String stereotypeName = null;
 		stereotypeName = extension.getStereotype().getName();

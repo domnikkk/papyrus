@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.uml.diagram.communication.custom.figures;
 
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.OrderedLayout;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -23,8 +24,8 @@ import org.eclipse.papyrus.uml.diagram.common.draw2d.LeftToolbarLayout;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure;
 
 /**
- * 
- * 
+ *
+ *
  *
  */
 public class InteractionRectangleFigure extends NodeNamedElementFigure {
@@ -39,7 +40,7 @@ public class InteractionRectangleFigure extends NodeNamedElementFigure {
 
 	/**
 	 * @param marginBorder
-	 * 
+	 *
 	 */
 	public InteractionRectangleFigure() {
 		setLayoutManager(new BorderLayout());
@@ -70,7 +71,7 @@ public class InteractionRectangleFigure extends NodeNamedElementFigure {
 		container.setOutline(false);
 		container.setFill(false);
 		container.setLayoutManager(new ToolbarLayout(false));
-		container.add(interactionLabelContainer, ToolbarLayout.ALIGN_CENTER);
+		container.add(interactionLabelContainer, OrderedLayout.ALIGN_CENTER);
 		return container;
 	}
 
@@ -84,7 +85,7 @@ public class InteractionRectangleFigure extends NodeNamedElementFigure {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the interaction wrapping label
 	 */
 	public WrappingLabel getHeaderLabel() {
@@ -92,7 +93,7 @@ public class InteractionRectangleFigure extends NodeNamedElementFigure {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the interactionContentPane
 	 */
 	public RectangleFigure getCompartmentFigure() {

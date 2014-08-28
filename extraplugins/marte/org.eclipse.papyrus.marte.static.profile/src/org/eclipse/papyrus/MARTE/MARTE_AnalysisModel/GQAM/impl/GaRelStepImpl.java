@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,8 +28,8 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Resource;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaRelStepImpl#getRelRes <em>Rel Res</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaRelStepImpl#getResUnits <em>Res Units</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaRelStepImpl#getRelRes <em>Rel Res</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaRelStepImpl#getResUnits <em>Res Units</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class GaRelStepImpl extends GaStepImpl implements GaRelStep {
 	 * The cached value of the '{@link #getRelRes() <em>Rel Res</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRelRes()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class GaRelStepImpl extends GaStepImpl implements GaRelStep {
 	 * The default value of the '{@link #getResUnits() <em>Res Units</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getResUnits()
 	 * @generated
 	 * @ordered
@@ -60,6 +62,7 @@ public class GaRelStepImpl extends GaStepImpl implements GaRelStep {
 	 * The cached value of the '{@link #getResUnits() <em>Res Units</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getResUnits()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class GaRelStepImpl extends GaStepImpl implements GaRelStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected GaRelStepImpl() {
@@ -78,6 +82,7 @@ public class GaRelStepImpl extends GaStepImpl implements GaRelStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,15 +93,18 @@ public class GaRelStepImpl extends GaStepImpl implements GaRelStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Resource getRelRes() {
 		if (relRes != null && relRes.eIsProxy()) {
-			InternalEObject oldRelRes = (InternalEObject)relRes;
-			relRes = (Resource)eResolveProxy(oldRelRes);
+			InternalEObject oldRelRes = (InternalEObject) relRes;
+			relRes = (Resource) eResolveProxy(oldRelRes);
 			if (relRes != oldRelRes) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_REL_STEP__REL_RES, oldRelRes, relRes));
+				}
 			}
 		}
 		return relRes;
@@ -105,6 +113,7 @@ public class GaRelStepImpl extends GaStepImpl implements GaRelStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Resource basicGetRelRes() {
@@ -114,20 +123,25 @@ public class GaRelStepImpl extends GaStepImpl implements GaRelStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setRelRes(Resource newRelRes) {
 		Resource oldRelRes = relRes;
 		relRes = newRelRes;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_REL_STEP__REL_RES, oldRelRes, relRes));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getResUnits() {
 		return resUnits;
 	}
@@ -135,28 +149,34 @@ public class GaRelStepImpl extends GaStepImpl implements GaRelStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setResUnits(String newResUnits) {
 		String oldResUnits = resUnits;
 		resUnits = newResUnits;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_REL_STEP__RES_UNITS, oldResUnits, resUnits));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GQAMPackage.GA_REL_STEP__REL_RES:
-				if (resolve) return getRelRes();
-				return basicGetRelRes();
-			case GQAMPackage.GA_REL_STEP__RES_UNITS:
-				return getResUnits();
+		case GQAMPackage.GA_REL_STEP__REL_RES:
+			if (resolve) {
+				return getRelRes();
+			}
+			return basicGetRelRes();
+		case GQAMPackage.GA_REL_STEP__RES_UNITS:
+			return getResUnits();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,17 +184,18 @@ public class GaRelStepImpl extends GaStepImpl implements GaRelStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GQAMPackage.GA_REL_STEP__REL_RES:
-				setRelRes((Resource)newValue);
-				return;
-			case GQAMPackage.GA_REL_STEP__RES_UNITS:
-				setResUnits((String)newValue);
-				return;
+		case GQAMPackage.GA_REL_STEP__REL_RES:
+			setRelRes((Resource) newValue);
+			return;
+		case GQAMPackage.GA_REL_STEP__RES_UNITS:
+			setResUnits((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -182,17 +203,18 @@ public class GaRelStepImpl extends GaStepImpl implements GaRelStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_REL_STEP__REL_RES:
-				setRelRes((Resource)null);
-				return;
-			case GQAMPackage.GA_REL_STEP__RES_UNITS:
-				setResUnits(RES_UNITS_EDEFAULT);
-				return;
+		case GQAMPackage.GA_REL_STEP__REL_RES:
+			setRelRes((Resource) null);
+			return;
+		case GQAMPackage.GA_REL_STEP__RES_UNITS:
+			setResUnits(RES_UNITS_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -200,15 +222,16 @@ public class GaRelStepImpl extends GaStepImpl implements GaRelStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_REL_STEP__REL_RES:
-				return relRes != null;
-			case GQAMPackage.GA_REL_STEP__RES_UNITS:
-				return RES_UNITS_EDEFAULT == null ? resUnits != null : !RES_UNITS_EDEFAULT.equals(resUnits);
+		case GQAMPackage.GA_REL_STEP__REL_RES:
+			return relRes != null;
+		case GQAMPackage.GA_REL_STEP__RES_UNITS:
+			return RES_UNITS_EDEFAULT == null ? resUnits != null : !RES_UNITS_EDEFAULT.equals(resUnits);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,11 +239,14 @@ public class GaRelStepImpl extends GaStepImpl implements GaRelStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (resUnits: ");
@@ -229,4 +255,4 @@ public class GaRelStepImpl extends GaStepImpl implements GaRelStep {
 		return result.toString();
 	}
 
-} //GaRelStepImpl
+} // GaRelStepImpl

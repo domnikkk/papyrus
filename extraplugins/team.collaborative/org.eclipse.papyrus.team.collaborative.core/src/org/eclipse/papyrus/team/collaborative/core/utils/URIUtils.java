@@ -34,11 +34,11 @@ public class URIUtils {
 
 	/**
 	 * Checks if is {@link Resource} {@link URI}.
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @return true, if is resource uri
 	 */
 	public static boolean isResourceURI(URI uri, ResourceSet resourceSet) {
@@ -47,11 +47,11 @@ public class URIUtils {
 
 	/**
 	 * Checks if an {@link URI} is an {@link EObject}.
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @return true, if is e object
 	 */
 	public static boolean isEObject(URI uri, ResourceSet resourceSet) {
@@ -61,11 +61,11 @@ public class URIUtils {
 
 	/**
 	 * Gets the satellite resource {@link URI}.
-	 * 
+	 *
 	 * @param uri
-	 *        the base uri
+	 *            the base uri
 	 * @param fileExtension
-	 *        the file extension
+	 *            the file extension
 	 * @return the satelite resource
 	 */
 	public static URI getSateliteResource(URI uri, String fileExtension) {
@@ -77,14 +77,14 @@ public class URIUtils {
 	/**
 	 * Convert EMF URI to Eclipse file
 	 * Copied from org.eclipse.emf.edapt.common.URIUtils
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 * @return the file
 	 */
 	public static IFile getFile(URI uri) {
 		String platformString = uri.toPlatformString(true);
-		if(platformString != null) {
+		if (platformString != null) {
 			Path path = new Path(platformString);
 			return ResourcesPlugin.getWorkspace().getRoot().getFile(path);
 		}
@@ -94,9 +94,9 @@ public class URIUtils {
 	/**
 	 * Convert EMF URI to Eclipse folder
 	 * Copied from org.eclipse.emf.edapt.common.URIUtils
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 * @return the folder
 	 */
 	public static IFolder getFolder(URI uri) {
@@ -107,9 +107,9 @@ public class URIUtils {
 	/**
 	 * Convert Eclipse resource to EMF URI
 	 * Copied from org.eclipse.emf.edapt.common.URIUtils
-	 * 
+	 *
 	 * @param file
-	 *        the file
+	 *            the file
 	 * @return the uri
 	 */
 	public static URI getURI(IResource file) {
@@ -119,9 +119,9 @@ public class URIUtils {
 	/**
 	 * Create an EMF URI from an Eclipse path
 	 * Copied from org.eclipse.emf.edapt.common.URIUtils
-	 * 
+	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @return the uri
 	 */
 	public static URI getURI(IPath path) {
@@ -131,9 +131,9 @@ public class URIUtils {
 	/**
 	 * Convert a file name to an EMF URI
 	 * Copied from org.eclipse.emf.edapt.common.URIUtils
-	 * 
+	 *
 	 * @param fileName
-	 *        the file name
+	 *            the file name
 	 * @return EMF URI
 	 */
 	public static URI getURI(String fileName) {
@@ -143,9 +143,9 @@ public class URIUtils {
 	/**
 	 * Convert a file name to an EMF URI
 	 * Copied from org.eclipse.emf.edapt.common.URIUtils
-	 * 
+	 *
 	 * @param file
-	 *        the file
+	 *            the file
 	 * @return EMF URI
 	 */
 	public static URI getURI(File file) {
@@ -155,9 +155,9 @@ public class URIUtils {
 	/**
 	 * Get Java URL from EMF URI
 	 * Copied from org.eclipse.emf.edapt.common.URIUtils
-	 * 
+	 *
 	 * @param uri
-	 *        EMF URI
+	 *            EMF URI
 	 * @return Java URL
 	 */
 	public static URL getURL(URI uri) {
@@ -172,9 +172,9 @@ public class URIUtils {
 	/**
 	 * Get EMF URI from Java URL
 	 * Copied from org.eclipse.emf.edapt.common.URIUtils
-	 * 
+	 *
 	 * @param url
-	 *        Java URL
+	 *            Java URL
 	 * @return EMF URI
 	 */
 	public static URI getURI(URL url) {
@@ -184,11 +184,11 @@ public class URIUtils {
 	/**
 	 * Replace extension of a file
 	 * Copied from org.eclipse.emf.edapt.common.URIUtils
-	 * 
+	 *
 	 * @param file
-	 *        File
+	 *            File
 	 * @param ext
-	 *        New extension
+	 *            New extension
 	 * @return New file
 	 */
 	public static IFile replaceExtension(IFile file, String ext) {
@@ -199,11 +199,11 @@ public class URIUtils {
 	/**
 	 * Replace extension of a EMF URI
 	 * Copied from org.eclipse.emf.edapt.common.URIUtils
-	 * 
+	 *
 	 * @param uri
-	 *        EMF URI
+	 *            EMF URI
 	 * @param ext
-	 *        New extension
+	 *            New extension
 	 * @return New EMF URI
 	 */
 	public static URI replaceExtension(URI uri, String ext) {
@@ -213,13 +213,13 @@ public class URIUtils {
 	/**
 	 * Get the Java file for a URI
 	 * Copied from org.eclipse.emf.edapt.common.URIUtils
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 * @return Java file
 	 */
 	public static File getJavaFile(URI uri) {
-		if(uri.isPlatform()) {
+		if (uri.isPlatform()) {
 			IFile file = getFile(uri);
 			IPath location = file.getLocation();
 			return location.toFile();
@@ -230,11 +230,11 @@ public class URIUtils {
 	/**
 	 * Get the relative path of a {@link URI} w.r.t. another {@link URI}.
 	 * Copied from org.eclipse.emf.edapt.common.URIUtils
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 * @param relativeTo
-	 *        the relative to
+	 *            the relative to
 	 * @return the relative path
 	 */
 	public static URI getRelativePath(URI uri, URI relativeTo) {

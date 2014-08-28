@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,6 +30,7 @@ public class TimingResourceImpl extends ResourceImpl implements TimingResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TimingResourceImpl() {
@@ -39,6 +40,7 @@ public class TimingResourceImpl extends ResourceImpl implements TimingResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -46,4 +48,4 @@ public class TimingResourceImpl extends ResourceImpl implements TimingResource {
 		return GRMPackage.Literals.TIMING_RESOURCE;
 	}
 
-} //TimingResourceImpl
+} // TimingResourceImpl

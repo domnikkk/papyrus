@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,21 +43,21 @@ public class UnloadHandler extends GraphicalCommandHandler {
 	protected Command getCommand() {
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 		List<IGraphicalEditPart> selection = getSelectedElements();
-		if(editingDomain != null && editingDomain.getResourceSet() instanceof ModelSet && selection.size() > 0) {
-			final ModelSet set = (ModelSet)editingDomain.getResourceSet();
+		if (editingDomain != null && editingDomain.getResourceSet() instanceof ModelSet && selection.size() > 0) {
+			final ModelSet set = (ModelSet) editingDomain.getResourceSet();
 			CompoundCommand command = new CompoundCommand();
 			List<URI> handledURI = new ArrayList<URI>();
 			// ensure main URI is never unloaded
 			URI mainURI = NotationUtils.getNotationModel(set).getResourceURI().trimFileExtension();
 			handledURI.add(mainURI);
-			for(IGraphicalEditPart selPart : selection) {
-				View view = (View)((IAdaptable)selPart).getAdapter(View.class);
-				if(view != null) {
+			for (IGraphicalEditPart selPart : selection) {
+				View view = (View) ((IAdaptable) selPart).getAdapter(View.class);
+				if (view != null) {
 					EObject sel = view.getElement();
 					// note: the element may be null if the View is notational only
-					if(sel != null && !sel.eIsProxy()) {
+					if (sel != null && !sel.eIsProxy()) {
 						final URI uriTrim = sel.eResource().getURI().trimFileExtension();
-						if(!handledURI.contains(uriTrim)) {
+						if (!handledURI.contains(uriTrim)) {
 							handledURI.add(uriTrim);
 							Command cmd = new Command() {
 

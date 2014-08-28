@@ -3,16 +3,15 @@
  */
 package org.eclipse.papyrus.uml.textedit.state.xtext.ui;
 
+import org.eclipse.papyrus.uml.textedit.state.xtext.ui.internal.UmlStateActivator;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
-import org.eclipse.papyrus.uml.textedit.state.xtext.ui.internal.UmlStateActivator;
-
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class UmlStateExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
@@ -20,10 +19,10 @@ public class UmlStateExecutableExtensionFactory extends AbstractGuiceAwareExecut
 	protected Bundle getBundle() {
 		return UmlStateActivator.getInstance().getBundle();
 	}
-	
+
 	@Override
 	protected Injector getInjector() {
 		return UmlStateActivator.getInstance().getInjector(UmlStateActivator.ORG_ECLIPSE_PAPYRUS_UML_TEXTEDIT_STATE_XTEXT_UMLSTATE);
 	}
-	
+
 }

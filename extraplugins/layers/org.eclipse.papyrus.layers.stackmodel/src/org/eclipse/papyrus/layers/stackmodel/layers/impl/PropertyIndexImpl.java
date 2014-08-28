@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -13,13 +13,10 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.Property;
 import org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex;
@@ -31,8 +28,8 @@ import org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyIndexImpl#getProperty <em>Property</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyIndexImpl#getIndex <em>Index</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyIndexImpl#getProperty <em>Property</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyIndexImpl#getIndex <em>Index</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +40,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	 * The cached value of the '{@link #getProperty() <em>Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getProperty()
 	 * @generated
 	 * @ordered
@@ -53,6 +51,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	 * The default value of the '{@link #getIndex() <em>Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIndex()
 	 * @generated
 	 * @ordered
@@ -63,6 +62,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	 * The cached value of the '{@link #getIndex() <em>Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIndex()
 	 * @generated
 	 * @ordered
@@ -72,6 +72,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PropertyIndexImpl() {
@@ -81,6 +82,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,15 +93,18 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Property getProperty() {
 		if (property != null && property.eIsProxy()) {
-			InternalEObject oldProperty = (InternalEObject)property;
-			property = (Property)eResolveProxy(oldProperty);
+			InternalEObject oldProperty = (InternalEObject) property;
+			property = (Property) eResolveProxy(oldProperty);
 			if (property != oldProperty) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LayersPackage.PROPERTY_INDEX__PROPERTY, oldProperty, property));
+				}
 			}
 		}
 		return property;
@@ -108,6 +113,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Property basicGetProperty() {
@@ -117,20 +123,25 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setProperty(Property newProperty) {
 		Property oldProperty = property;
 		property = newProperty;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.PROPERTY_INDEX__PROPERTY, oldProperty, property));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getIndex() {
 		return index;
 	}
@@ -138,28 +149,34 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIndex(int newIndex) {
 		int oldIndex = index;
 		index = newIndex;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.PROPERTY_INDEX__INDEX, oldIndex, index));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersPackage.PROPERTY_INDEX__PROPERTY:
-				if (resolve) return getProperty();
-				return basicGetProperty();
-			case LayersPackage.PROPERTY_INDEX__INDEX:
-				return getIndex();
+		case LayersPackage.PROPERTY_INDEX__PROPERTY:
+			if (resolve) {
+				return getProperty();
+			}
+			return basicGetProperty();
+		case LayersPackage.PROPERTY_INDEX__INDEX:
+			return getIndex();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,17 +184,18 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersPackage.PROPERTY_INDEX__PROPERTY:
-				setProperty((Property)newValue);
-				return;
-			case LayersPackage.PROPERTY_INDEX__INDEX:
-				setIndex((Integer)newValue);
-				return;
+		case LayersPackage.PROPERTY_INDEX__PROPERTY:
+			setProperty((Property) newValue);
+			return;
+		case LayersPackage.PROPERTY_INDEX__INDEX:
+			setIndex((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -185,17 +203,18 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersPackage.PROPERTY_INDEX__PROPERTY:
-				setProperty((Property)null);
-				return;
-			case LayersPackage.PROPERTY_INDEX__INDEX:
-				setIndex(INDEX_EDEFAULT);
-				return;
+		case LayersPackage.PROPERTY_INDEX__PROPERTY:
+			setProperty((Property) null);
+			return;
+		case LayersPackage.PROPERTY_INDEX__INDEX:
+			setIndex(INDEX_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,15 +222,16 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersPackage.PROPERTY_INDEX__PROPERTY:
-				return property != null;
-			case LayersPackage.PROPERTY_INDEX__INDEX:
-				return index != INDEX_EDEFAULT;
+		case LayersPackage.PROPERTY_INDEX__PROPERTY:
+			return property != null;
+		case LayersPackage.PROPERTY_INDEX__INDEX:
+			return index != INDEX_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -219,11 +239,14 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (index: ");
@@ -232,4 +255,4 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 		return result.toString();
 	}
 
-} //PropertyIndexImpl
+} // PropertyIndexImpl

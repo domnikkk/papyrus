@@ -40,9 +40,9 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * [DepPlanUtils?]
  * [but missing: creation, ..., allocation?]
  * Structuration ??
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class DepUtils {
 
@@ -52,40 +52,40 @@ public class DepUtils {
 	 * Requires that setCurrentNode has been called earlier
 	 * TODO: how does that work with connector reification between distributeToNode has been
 	 * called??!
-	 * 
+	 *
 	 * @param implemCandidate
 	 * @return
 	 */
 	public static boolean isImplEligible(Class implemCandidate, EList<InstanceSpecification> nodes) {
-		if(!Utils.isCompImpl(implemCandidate)) {
+		if (!Utils.isCompImpl(implemCandidate)) {
 			return false;
 		}
-		if(nodes != null) {
+		if (nodes != null) {
 			// now check properties
-			if(nodes.size() > 1) {
+			if (nodes.size() > 1) {
 				// indicates distribution
 				InteractionComponent connImpl = UMLUtil.getStereotypeApplication(implemCandidate, InteractionComponent.class);
 				// if a connector implementation, it must support distribution (in case of multiple nodes)
 				// TODO: criteria is not optimal, since a composite may be deployed on multiple nodes,
-				//   but a contained connector might still only connect local parts.
-				if(connImpl != null) {
-					if(!connImpl.isForDistribution()) {
+				// but a contained connector might still only connect local parts.
+				if (connImpl != null) {
+					if (!connImpl.isForDistribution()) {
 						return false;
 					}
 				}
 			}
 			// must fit requirements of all nodes
-			for(InstanceSpecification nodeInstance : nodes) {
+			for (InstanceSpecification nodeInstance : nodes) {
 				Target target = UMLUtil.getStereotypeApplication(nodeInstance, Target.class);
-				if(target == null) {
+				if (target == null) {
 					// no target information on instance => try to get this
 					// information from the node referenced by the instance
 					target = UMLUtil.getStereotypeApplication(DepUtils.getClassifier(nodeInstance), Target.class);
 				}
-				if(target != null) {
+				if (target != null) {
 					ImplementationProperties implProps = UMLUtil.getStereotypeApplication(implemCandidate, ImplementationProperties.class);
-					if(implProps != null) {
-						if(!implProps.getArch().contains(target.getTargetArch())) {
+					if (implProps != null) {
+						if (!implProps.getArch().contains(target.getTargetArch())) {
 							return false;
 						}
 						// TODO: check OS and size as well!
@@ -100,23 +100,23 @@ public class DepUtils {
 	 * Find a sub instance via its name. This is in particular useful for connectors that cannot be
 	 * found via a slot, since UML only supports structural features (a connector is only a feature)
 	 * in the definingFeature attribute of a slot.
-	 * 
+	 *
 	 * @param owningInstance
-	 *        an owning instance
+	 *            an owning instance
 	 * @param name
-	 *        name of the sub-element (unqualified)
+	 *            name of the sub-element (unqualified)
 	 * @return the found sub-instance or null
 	 */
 	public static InstanceSpecification getNamedSubInstance(InstanceSpecification owningInstance, String name) {
 		Element cdp = owningInstance.getOwner();
 		String candidateName = owningInstance.getName() + "." + name; //$NON-NLS-1$
-		if(cdp instanceof Package) {
-			for(PackageableElement instance : ((Package)cdp).getPackagedElements()) {
-				if(instance instanceof InstanceSpecification) {
-					InstanceSpecification candidate = (InstanceSpecification)instance;
+		if (cdp instanceof Package) {
+			for (PackageableElement instance : ((Package) cdp).getPackagedElements()) {
+				if (instance instanceof InstanceSpecification) {
+					InstanceSpecification candidate = (InstanceSpecification) instance;
 
-					if(candidateName != null) {
-						if(candidateName.equals(candidate.getName())) {
+					if (candidateName != null) {
+						if (candidateName.equals(candidate.getName())) {
 							return candidate;
 						}
 					}
@@ -131,10 +131,13 @@ public class DepUtils {
 	 * (1) is already an implementation, simply return it
 	 * (2) is an implementation group, choose the first implementation that fits the requirements
 	 * (3) is a type: choose the first implementation among the heirs that fits the requirements
-	 * 
-	 * @param componentType a component type or implementation (class, optionally abstract)
-	 * @param nodes a set of instance specification representing nodes on which this component will be allocated
-	 * @param interactive boolean indicating whether the choice should be done interactively
+	 *
+	 * @param componentType
+	 *            a component type or implementation (class, optionally abstract)
+	 * @param nodes
+	 *            a set of instance specification representing nodes on which this component will be allocated
+	 * @param interactive
+	 *            boolean indicating whether the choice should be done interactively
 	 * @return a suitable implementation
 	 */
 	public static Class chooseImplementation(Class componentType, EList<InstanceSpecification> nodes, ImplementationChooser chooser) {
@@ -143,49 +146,49 @@ public class DepUtils {
 		// TODO: assumption that implementations are in same package as type;
 
 		EList<Class> implList = new BasicEList<Class>();
-		if(StereotypeUtil.isApplied(componentType, ImplementationGroup.class)) {
-			for(Property groupAttribute : componentType.getAttributes()) {
+		if (StereotypeUtil.isApplied(componentType, ImplementationGroup.class)) {
+			for (Property groupAttribute : componentType.getAttributes()) {
 				Type implClass = groupAttribute.getType();
-				if((implClass instanceof Class) && isImplEligible((Class)implClass, nodes)) {
+				if ((implClass instanceof Class) && isImplEligible((Class) implClass, nodes)) {
 					InteractionComponent connImpl = UMLUtil.getStereotypeApplication(implClass, InteractionComponent.class);
-					if((connImpl != null) && connImpl.isForDistribution()) {
+					if ((connImpl != null) && connImpl.isForDistribution()) {
 						// only add distributed connector, if distributed
-						// don't put check into 
-						if(nodes.size() > 1) {
-							implList.add((Class)implClass);
+						// don't put check into
+						if (nodes.size() > 1) {
+							implList.add((Class) implClass);
 						}
 					}
 					else {
-						implList.add((Class)implClass);
+						implList.add((Class) implClass);
 					}
 				}
 			}
-		} else if(Utils.isCompImpl(componentType)) {
+		} else if (Utils.isCompImpl(componentType)) {
 			// check this after implementation group, since the latter inherits from component implementation
 			return componentType;
-		} else if(Utils.isCompType(componentType)) {
-			for(DirectedRelationship relship : componentType.getTargetDirectedRelationships()) {
-				if(relship instanceof Generalization) {
-					Classifier source = ((Generalization)relship).getSpecific();
-					if(source instanceof Class) {
-						Class implClass = (Class)source;
-						if(isImplEligible(implClass, nodes)) {
+		} else if (Utils.isCompType(componentType)) {
+			for (DirectedRelationship relship : componentType.getTargetDirectedRelationships()) {
+				if (relship instanceof Generalization) {
+					Classifier source = ((Generalization) relship).getSpecific();
+					if (source instanceof Class) {
+						Class implClass = (Class) source;
+						if (isImplEligible(implClass, nodes)) {
 							implList.add(implClass);
 						}
 					}
 				}
 			}
 		}
-		if(implList.size() == 0) {
+		if (implList.size() == 0) {
 			return null;
-		} else if(implList.size() == 1) {
+		} else if (implList.size() == 1) {
 			return implList.get(0);
-		} else if(chooser != null) {
+		} else if (chooser != null) {
 			Class impl = chooser.chooseImplementation(componentType, implList);
 			if (impl != null) {
 				return impl;
 			}
-		} else if(implList.size() > 0) {
+		} else if (implList.size() > 0) {
 			return implList.get(0);
 		}
 		return null;
@@ -194,9 +197,9 @@ public class DepUtils {
 	/**
 	 * return an instance specification for the main instance within
 	 * a package.
-	 * 
+	 *
 	 * @param cdp
-	 *        the deployment plan
+	 *            the deployment plan
 	 */
 	public static InstanceSpecification getMainInstance(Package cdp) {
 		DeploymentPlan dp = UMLUtil.getStereotypeApplication(cdp, DeploymentPlan.class);
@@ -205,11 +208,11 @@ public class DepUtils {
 
 	/**
 	 * Apply the stereotype deployment plan and set the mainInstance value
-	 * 
+	 *
 	 * @param cdp
-	 *        the deployment plan
+	 *            the deployment plan
 	 * @param main
-	 *        instance the top-level instance specification of the plan
+	 *            instance the top-level instance specification of the plan
 	 */
 	public static void setMainInstance(Package cdp, InstanceSpecification mainInstance) {
 		StereotypeUtil.apply(cdp, DeploymentPlan.class);
@@ -220,23 +223,23 @@ public class DepUtils {
 	/**
 	 * return the implementation associated with an instance specification, i.e. a
 	 * Class.
-	 * 
+	 *
 	 * @param instance
 	 * @return
 	 */
 	public static Class getImplementation(InstanceSpecification instance) {
 		Classifier cl = getClassifier(instance);
-		if(cl instanceof Class) {
-			return (Class)cl;
+		if (cl instanceof Class) {
+			return (Class) cl;
 		}
 		return null;
 	}
 
 	/**
 	 * Small helper function
-	 * 
+	 *
 	 * @param instance
-	 *        an instance specification
+	 *            an instance specification
 	 * @return returns true, if the stereotype ConnectorComp
 	 *         is applied to the classifier associated with an instance specification
 	 */
@@ -248,14 +251,14 @@ public class DepUtils {
 	/**
 	 * Return the first classifier referenced by an instance specification. Whereas UML supports
 	 * a set of classifiers, we assume that that an instance specification has only one.
-	 * 
+	 *
 	 * @param instance
-	 *        the instance, for which we are interested in type information
+	 *            the instance, for which we are interested in type information
 	 */
 	public static Classifier getClassifier(InstanceSpecification instance) {
 		Iterator<Classifier> classifierIt = instance.getClassifiers().iterator();
 		// simply return the first element (if there is any)
-		if(classifierIt.hasNext()) {
+		if (classifierIt.hasNext()) {
 			return classifierIt.next();
 		}
 		return null;
@@ -264,18 +267,18 @@ public class DepUtils {
 	/**
 	 * Return the first instance specification within a deployment plan that instantiates a given
 	 * classifier
-	 * 
+	 *
 	 * @param cdp
-	 *        the deployment plan
+	 *            the deployment plan
 	 * @param cl
-	 *        the classifier
+	 *            the classifier
 	 * @return
 	 */
 	public static InstanceSpecification getInstanceForClassifier(Package cdp, Classifier cl) {
-		for(PackageableElement pe : cdp.getPackagedElements()) {
-			if(pe instanceof InstanceSpecification) {
-				InstanceSpecification is = (InstanceSpecification)pe;
-				if(getClassifier(is) == cl) {
+		for (PackageableElement pe : cdp.getPackagedElements()) {
+			if (pe instanceof InstanceSpecification) {
+				InstanceSpecification is = (InstanceSpecification) pe;
+				if (getClassifier(is) == cl) {
 					return is;
 				}
 			}
@@ -290,7 +293,7 @@ public class DepUtils {
 	public static EList<Classifier> getContainedImplementations(InstanceSpecification is) {
 		Iterator<InstanceSpecification> instances = getContainedInstances(is).iterator();
 		EList<Classifier> list = new UniqueEList<Classifier>();
-		while(instances.hasNext()) {
+		while (instances.hasNext()) {
 			Classifier implementation = getClassifier(instances.next());
 			list.add(implementation);
 		}
@@ -299,16 +302,16 @@ public class DepUtils {
 
 	/**
 	 * Return the slot that is associated with a property
-	 * 
+	 *
 	 * @param is
-	 *        an instance specification (of a class having properties)
+	 *            an instance specification (of a class having properties)
 	 * @param property
-	 *        A property of the classifier associated with the passed instance specification
+	 *            A property of the classifier associated with the passed instance specification
 	 * @return the associated slot or null, if it does not exist
 	 */
 	public static Slot getSlot(InstanceSpecification is, Property property) {
 		for (Slot slot : is.getSlots()) {
-			if(slot.getDefiningFeature() == property) {
+			if (slot.getDefiningFeature() == property) {
 				return slot;
 			}
 		}
@@ -318,15 +321,15 @@ public class DepUtils {
 	/**
 	 * Return the instance referenced by a slot value, i.e. the first instance value associated
 	 * with a slot
-	 * 
+	 *
 	 * @param slot
 	 * @return
 	 */
 	public static InstanceSpecification getInstance(Slot slot) {
-		for(ValueSpecification value : slot.getValues()) {
+		for (ValueSpecification value : slot.getValues()) {
 			// instances are accessible via ValueSpecification subclass InstanceValue
-			if(value instanceof InstanceValue) {
-				return ((InstanceValue)value).getInstance();
+			if (value instanceof InstanceValue) {
+				return ((InstanceValue) value).getInstance();
 			}
 		}
 		return null;
@@ -338,9 +341,9 @@ public class DepUtils {
 	 */
 	public static EList<InstanceSpecification> getContainedInstances(InstanceSpecification is) {
 		EList<InstanceSpecification> contained = new BasicEList<InstanceSpecification>();
-		for(Slot slot : is.getSlots()) {
+		for (Slot slot : is.getSlots()) {
 			InstanceSpecification instance = getInstance(slot);
-			if(instance != null) {
+			if (instance != null) {
 				contained.add(instance);
 			}
 		}
@@ -354,30 +357,32 @@ public class DepUtils {
 	 */
 	public static EList<InstanceSpecification> getContainedNonSharedInstances(InstanceSpecification is) {
 		EList<InstanceSpecification> contained = new BasicEList<InstanceSpecification>();
-		for(Slot slot : is.getSlots()) {
+		for (Slot slot : is.getSlots()) {
 			InstanceSpecification instance = getInstance(slot);
-			if((instance != null) && !DepUtils.isShared(slot)) {
+			if ((instance != null) && !DepUtils.isShared(slot)) {
 				contained.add(instance);
 			}
 		}
 		return contained;
 	}
+
 	/**
 	 * return all slots that reference an instance specification
-	 * 
+	 *
 	 * @param is
 	 * @return
 	 */
 	public static EList<Slot> getReferencingSlots(InstanceSpecification is) {
 		EList<Slot> list = new BasicEList<Slot>();
-		for(Setting setting : UML2Util.getNonNavigableInverseReferences(is)) {
+		for (Setting setting : UML2Util.getNonNavigableInverseReferences(is)) {
 			// no trigger is referencing the event any more, delete call event
 			EObject eObj = setting.getEObject();
-			if(eObj instanceof ValueSpecification) {
-				ValueSpecification vs = (ValueSpecification)eObj;
+			if (eObj instanceof ValueSpecification) {
+				ValueSpecification vs = (ValueSpecification) eObj;
 				Element owner = vs.getOwner();
-				if(owner instanceof Slot)
-					list.add((Slot)owner);
+				if (owner instanceof Slot) {
+					list.add((Slot) owner);
+				}
 			}
 		}
 		return list;
@@ -386,16 +391,16 @@ public class DepUtils {
 	/**
 	 * Return a slot for a given instance specification. The slot is the first one in a list of slots
 	 * whose value points to the passed instance.
-	 * 
+	 *
 	 * @param is
-	 *        an instance that is contained within an composite (i.e. that
-	 *        belongs to a part of this composite).
+	 *            an instance that is contained within an composite (i.e. that
+	 *            belongs to a part of this composite).
 	 * @return
 	 */
 	public static Slot getParentSlot(InstanceSpecification is) {
-		for(Slot slot : getReferencingSlots(is)) {
-			if(slot.getDefiningFeature() instanceof Property) {
-				if(((Property)slot.getDefiningFeature()).getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
+		for (Slot slot : getReferencingSlots(is)) {
+			if (slot.getDefiningFeature() instanceof Property) {
+				if (((Property) slot.getDefiningFeature()).getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
 					return slot;
 				}
 			}
@@ -406,15 +411,15 @@ public class DepUtils {
 	/**
 	 * Return an instance specification that refers to the composite in which the
 	 * passed instance is contained
-	 * 
+	 *
 	 * @param is
-	 *        an instance that is contained within an composite (i.e. that
-	 *        belongs to a part of this composite).
+	 *            an instance that is contained within an composite (i.e. that
+	 *            belongs to a part of this composite).
 	 * @return
 	 */
 	public static InstanceSpecification getParentIS(InstanceSpecification is) {
 		Slot parentSlot = getParentSlot(is);
-		if(parentSlot != null) {
+		if (parentSlot != null) {
 			return parentSlot.getOwningInstance();
 		}
 		return null;
@@ -424,15 +429,15 @@ public class DepUtils {
 	 * Return the access path in terms of slots to an instance specification, i.e. the
 	 * set of slots starting with the slot within the main instance that identifies the next
 	 * instance until arriving at the passed instance.
-	 * 
+	 *
 	 * @param is
 	 * @return
 	 */
 	public static Stack<Slot> getAccessPath(InstanceSpecification is) {
 		Stack<Slot> path = new Stack<Slot>();
-		while(is != null) {
+		while (is != null) {
 			Slot parentSlot = getParentSlot(is);
-			if(parentSlot == null) {
+			if (parentSlot == null) {
 				break;
 			}
 			path.insertElementAt(parentSlot, 0);
@@ -443,22 +448,24 @@ public class DepUtils {
 
 	/**
 	 * Return true, if an instance is shared
+	 *
 	 * @param slot
 	 * @return
 	 */
 	public static boolean isShared(Slot slot) {
 		StructuralFeature df = slot.getDefiningFeature();
-		if(df instanceof Property) {
-			return ((Property)df).getAggregation() == AggregationKind.SHARED_LITERAL;
+		if (df instanceof Property) {
+			return ((Property) df).getAggregation() == AggregationKind.SHARED_LITERAL;
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Determine which programming language should be generated for a classifier. The
 	 * stereotype CodeGenOptions (which could be on any owning package) is evaluated.
 	 *
-	 * @param pkg a classifier
+	 * @param pkg
+	 *            a classifier
 	 * @return the programming language
 	 */
 	public static String getLanguageFromPackage(Package pkg) {
@@ -473,30 +480,36 @@ public class DepUtils {
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Get all instances within a package that comply with a filter criterion. Recurse into sub-packages.
-	 * @param pkg Starting package for search
-	 * @param instanceList list of instances
-	 * @param filter filter criterion.
+	 *
+	 * @param pkg
+	 *            Starting package for search
+	 * @param instanceList
+	 *            list of instances
+	 * @param filter
+	 *            filter criterion.
 	 */
 	public static void getAllInstances(Package pkg, EList<InstanceSpecification> instanceList, ElementFilter filter) {
-		for(PackageableElement el : pkg.getPackagedElements()) {
-			if(el instanceof Package) {
-				getAllInstances((Package)el, instanceList, filter);
+		for (PackageableElement el : pkg.getPackagedElements()) {
+			if (el instanceof Package) {
+				getAllInstances((Package) el, instanceList, filter);
 			}
-			else if(el instanceof InstanceSpecification) {
-				InstanceSpecification instance = (InstanceSpecification)el;
-				if (filter.acceptElement(instance)) { 
+			else if (el instanceof InstanceSpecification) {
+				InstanceSpecification instance = (InstanceSpecification) el;
+				if (filter.acceptElement(instance)) {
 					instanceList.add(instance);
 				}
 			}
 		}
 	}
-	
+
 	/**
 	 * Return the first value for a slot.
-	 * @param slot the slot for which the first value should be returned.
+	 *
+	 * @param slot
+	 *            the slot for which the first value should be returned.
 	 * @return
 	 */
 	public static ValueSpecification firstValue(Slot slot) {

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,20 +56,15 @@ import org.eclipse.papyrus.infra.core.listenerservice.IPapyrusListener;
  * Edit Policy in charge of the removal of views that are not linked to semantic
  * elements, when they should be linked to semantic elements.
  * <P>
- * Sometimes, {@link View}s are not linked to semantic elements, like the comment link. This link represents the annotated element feature for a
- * {@link Comment}, but they are not themselves connected to a semantic element. <BR/>
- * Thus, when this policy is created, it reads a table of integer that corresponds to the set of visual IDs, ids linked to views that are never linked
- * to a semantic element.
+ * Sometimes, {@link View}s are not linked to semantic elements, like the comment link. This link represents the annotated element feature for a {@link Comment}, but they are not themselves connected to a semantic element. <BR/>
+ * Thus, when this policy is created, it reads a table of integer that corresponds to the set of visual IDs, ids linked to views that are never linked to a semantic element.
  * </P>
  * <P>
- * This view checks that the host edit part, usually a container edit part, has child views that are not orphaned. It listens for model notifications.
- * As soon as it receives a add or remove event, it checks that the child views are still valid, ie they are connected to a semantic element if they
- * should.<BR/>
- * There is then an invariant: The edit part, by the intermediate of his orphan edit policy, must always know the list of semantic parents of the
- * semantic elements displayed by views children of the view associated to this edit part. So it knows when a child element of this parent is deleted,
- * and then can react to this destruction.<BR/>
- * To respect this condition, the policy keeps a list of parent elements, which is updated as soon as the list receives notification about this parent
- * semantic elements.
+ * This view checks that the host edit part, usually a container edit part, has child views that are not orphaned. It listens for model notifications. As soon as it receives a add or remove event, it checks that the child views are still valid, ie they are
+ * connected to a semantic element if they should.<BR/>
+ * There is then an invariant: The edit part, by the intermediate of his orphan edit policy, must always know the list of semantic parents of the semantic elements displayed by views children of the view associated to this edit part. So it knows when a child
+ * element of this parent is deleted, and then can react to this destruction.<BR/>
+ * To respect this condition, the policy keeps a list of parent elements, which is updated as soon as the list receives notification about this parent semantic elements.
  * </P>
  */
 public class OrphanViewPolicy extends AbstractEditPolicy implements NotificationListener, IPapyrusListener {
@@ -97,7 +92,7 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 	public void activate() {
 
 		// retrieve the view and the element associated to the host edit part
-		final View hostView = (View)getHost().getModel();
+		final View hostView = (View) getHost().getModel();
 		hostSemanticElement = hostView.getElement();
 
 		// adds listener to the event broker, listening for the view and the
@@ -111,13 +106,13 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 		// associated to the view
 		// if dif
 		Iterator<View> it = hostView.getChildren().listIterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			View childView = it.next();
 			addListenerForView(childView);
 		}
 
 		// debug purpose
-		if(log.isDebugEnabled()) {
+		if (log.isDebugEnabled()) {
 			log.debug("Activate: " + prettyPrint(additionalParentToListen));
 		}
 
@@ -127,18 +122,18 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 	/**
 	 * Adds this edit policy as listener for changes to the specified
 	 * semanticParent
-	 * 
+	 *
 	 * @param semanticParent
-	 *        the semantic parent to listen
+	 *            the semantic parent to listen
 	 * @param childView
-	 *        the view that requires this additional listener
+	 *            the view that requires this additional listener
 	 */
 	protected void addAdditionalParentToListen(EObject semanticParent, View childView) {
 		// check if the list already contains the semantic Parent
 		// if it already contains the parent, adds the view to the list of views
 		// responsible of this parent
 		// if not, it creates a new entry in the map
-		if(additionalParentToListen.containsKey(semanticParent)) {
+		if (additionalParentToListen.containsKey(semanticParent)) {
 			List<View> views = additionalParentToListen.get(semanticParent);
 			assert (views != null) : "list should not be null";
 			views.add(childView);
@@ -157,24 +152,24 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 	/**
 	 * Removes this edit policy as listener for changes to the specified
 	 * semanticParent
-	 * 
+	 *
 	 * @param semanticParent
-	 *        the semantic parent to stop listen
+	 *            the semantic parent to stop listen
 	 * @param childView
-	 *        the view that does not requires this additional listener
+	 *            the view that does not requires this additional listener
 	 */
 	protected void removeAdditionalParentToListen(EObject semanticParent, View childView) {
 		// removes the view from the list of views that requires a listener for
 		// the semantic parent
-		if(additionalParentToListen.containsKey(semanticParent)) {
+		if (additionalParentToListen.containsKey(semanticParent)) {
 			List<View> views = additionalParentToListen.get(semanticParent);
 			assert (views != null) : "list should not be null";
 			views.remove(childView);
-			if(views.isEmpty()) {
+			if (views.isEmpty()) {
 				additionalParentToListen.remove(semanticParent);
 				// check this is not the parent semantic element of the host's
 				// semantic element
-				if(!semanticParent.equals(((View)getHost().getModel()).getElement())) {
+				if (!semanticParent.equals(((View) getHost().getModel()).getElement())) {
 					getDiagramEventBroker().removeNotificationListener(semanticParent, this);
 				}
 			}
@@ -187,11 +182,11 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 	@Override
 	public void deactivate() {
 		// retrieve the view and the element associated to the host edit part
-		final View hostView = (View)getHost().getModel();
+		final View hostView = (View) getHost().getModel();
 
 		// removes all notification listeners for the additional parent to
 		// listen
-		for(EObject parent : additionalParentToListen.keySet()) {
+		for (EObject parent : additionalParentToListen.keySet()) {
 			getDiagramEventBroker().removeNotificationListener(parent, this);
 		}
 		additionalParentToListen.clear();
@@ -209,22 +204,22 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 	/**
 	 * Deletes a list of views. The views will be deleted <tt>iff</tt> their
 	 * semantic element has also been deleted.
-	 * 
+	 *
 	 * @param views
-	 *        an iterator on a list of views.
+	 *            an iterator on a list of views.
 	 * @return <tt>true</tt> if the host editpart should be refreshed; either
 	 *         one one of the supplied views was deleted or has been reparented.
 	 */
 	protected final boolean deleteViews(Iterator<View> views) {
 
 		final CompoundCommand cc = new CompoundCommand(DiagramUIMessages.DeleteCommand_Label);
-		while(views.hasNext()) {
-			View view = (View)views.next();
+		while (views.hasNext()) {
+			View view = views.next();
 			cc.add(getDeleteViewCommand(view));
 		}
 
 		boolean doDelete = !cc.isEmpty() && cc.canExecute();
-		if(doDelete) {
+		if (doDelete) {
 			executeCommand(cc);
 		}
 		return doDelete;
@@ -232,9 +227,9 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 
 	/**
 	 * Executes the supplied command inside an <code>unchecked action</code>
-	 * 
+	 *
 	 * @param cmd
-	 *        command that can be executed (i.e., cmd.canExecute() == true)
+	 *            command that can be executed (i.e., cmd.canExecute() == true)
 	 */
 	protected void executeCommand(final Command cmd) {
 		Map<String, Boolean> options = null;
@@ -245,15 +240,17 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 		// ConnectionEditPart's
 		// parent will not be a diagram edit part
 		EditPartViewer viewer = ep.getViewer();
-		if(viewer instanceof DiagramGraphicalViewer) {
-			isActivating = ((DiagramGraphicalViewer)viewer).isInitializing();
+		if (viewer instanceof DiagramGraphicalViewer) {
+			isActivating = ((DiagramGraphicalViewer) viewer).isInitializing();
 		}
 
-		if(isActivating || !EditPartUtil.isWriteTransactionInProgress((IGraphicalEditPart)getHost(), false, false))
+		if (isActivating || !EditPartUtil.isWriteTransactionInProgress((IGraphicalEditPart) getHost(), false, false)) {
 			options = Collections.singletonMap(Transaction.OPTION_UNPROTECTED, Boolean.TRUE);
+		}
 
-		AbstractEMFOperation operation = new AbstractEMFOperation(((IGraphicalEditPart)getHost()).getEditingDomain(), StringStatics.BLANK, options) {
+		AbstractEMFOperation operation = new AbstractEMFOperation(((IGraphicalEditPart) getHost()).getEditingDomain(), StringStatics.BLANK, options) {
 
+			@Override
 			protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 
 				cmd.execute();
@@ -270,18 +267,18 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 
 	/**
 	 * Retrieve the list of orphaned views among the specified list view
-	 * 
+	 *
 	 * @param viewChildrenIterator
-	 *        the iterator on the list of views to check
+	 *            the iterator on the list of views to check
 	 * @return the list of views that are orphaned
 	 */
 	protected List<View> findOrphanView(Iterator<? extends EObject> viewChildrenIterator) {
 		ArrayList<View> orphanView = new ArrayList<View>();
-		while(viewChildrenIterator.hasNext()) {
+		while (viewChildrenIterator.hasNext()) {
 			EObject view = viewChildrenIterator.next();
-			if(view instanceof View) {
-				if(isOrphaned((View)view)) {
-					orphanView.add((View)view);
+			if (view instanceof View) {
+				if (isOrphaned((View) view)) {
+					orphanView.add((View) view);
 				}
 			}
 		}
@@ -290,24 +287,24 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 
 	/**
 	 * Returns a {@link Command} to delete the supplied {@link View}.
-	 * 
+	 *
 	 * @param view
-	 *        view to delete
+	 *            view to delete
 	 * @return the command that destroys the specified view
 	 */
 	protected Command getDeleteViewCommand(View view) {
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		return new ICommandProxy(new DeleteCommand(editingDomain, view));
 	}
 
 	/**
 	 * Gets the diagram event broker from the editing domain.
-	 * 
+	 *
 	 * @return the diagram event broker
 	 */
 	protected DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
-		if(theEditingDomain != null) {
+		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		if (theEditingDomain != null) {
 			return DiagramEventBroker.getInstance(theEditingDomain);
 		}
 		return null;
@@ -316,13 +313,13 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 	/**
 	 * Inits the list of children that should never be attached to a semantic
 	 * element, for example comment links.
-	 * 
+	 *
 	 * @param notOrphanVisualID
-	 *        the list of visual id of views that should never be attached
-	 *        to a semantic element
+	 *            the list of visual id of views that should never be attached
+	 *            to a semantic element
 	 */
 	public void init(int[] notOrphanVisualID) {
-		for(int i = 0; i < notOrphanVisualID.length; i++) {
+		for (int i = 0; i < notOrphanVisualID.length; i++) {
 			notOrphanList.add(new Integer(notOrphanVisualID[i]));
 		}
 	}
@@ -331,19 +328,18 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 	 * Tests if the view is orphaned, i.e. it is still attached to a semantic
 	 * element.
 	 * <P>
-	 * It checks also that it is not a view that is never attached to a semantic element (For example, comment links do not have semantic elements
-	 * attached...)
+	 * It checks also that it is not a view that is never attached to a semantic element (For example, comment links do not have semantic elements attached...)
 	 * <P/>
-	 * 
+	 *
 	 * @param view
-	 *        the view to check
+	 *            the view to check
 	 * @return <code>true</code> if the view is not attached to a semantic
 	 *         element. <code>false</code> if it is still attached to a semantic
 	 *         element or if it should never be attached to a semantic element
 	 */
 	protected boolean isOrphaned(View view) {
 		String semanticHint = view.getType();
-		if(isInteger(semanticHint) && notOrphanList.contains(new Integer(semanticHint))) {
+		if (isInteger(semanticHint) && notOrphanList.contains(new Integer(semanticHint))) {
 			return false;
 		}
 		return !view.isSetElement();
@@ -351,16 +347,16 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 
 	/**
 	 * Checks if the string is an integer.
-	 * 
+	 *
 	 * @param s
-	 *        the specified string
-	 * 
+	 *            the specified string
+	 *
 	 * @return true, if is integer
 	 */
 	public static boolean isInteger(String s) {
 		boolean result = false;
 		Matcher matcher = digit.matcher(s);
-		if(matcher != null) {
+		if (matcher != null) {
 			result = matcher.matches();
 		}
 		return result;
@@ -369,21 +365,22 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 		// something has change. What ? :)
 		// check who is responsible of notification. If this is host edit part
 		// related semantic element, act as standard
 		Object notifier = notification.getNotifier();
 		// View hostView = (View)getHost().getModel();
-		if(notifier.equals(hostSemanticElement)) {
-			if(Notification.REMOVE == notification.getEventType() || Notification.SET == notification.getEventType()) {
+		if (notifier.equals(hostSemanticElement)) {
+			if (Notification.REMOVE == notification.getEventType() || Notification.SET == notification.getEventType()) {
 				refreshViews();
 			}
 		} else {
 			// this is perhaps one of the scoped semantic parent
-			if(notifier instanceof EObject) {
-				if(!(notifier instanceof View)) {
-					if(Notification.REMOVE == notification.getEventType()) {
+			if (notifier instanceof EObject) {
+				if (!(notifier instanceof View)) {
+					if (Notification.REMOVE == notification.getEventType()) {
 
 						// 2 cases... remove or simple move ?
 						// this can be checked with the view, if it is now
@@ -393,9 +390,9 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 						// if not, this was just a move => change listener using
 						// new parent
 						// checks also for whole hierarchy...
-						EObject parentNotifier = (EObject)notifier;
+						EObject parentNotifier = (EObject) notifier;
 
-						if(additionalParentToListen.containsKey(parentNotifier)) {
+						if (additionalParentToListen.containsKey(parentNotifier)) {
 							// this should be one of the elements that are
 							// inside the
 							List<View> views = additionalParentToListen.get(parentNotifier);
@@ -413,16 +410,16 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 					// if remove, remove the list (perhaps) from the views
 					// contributing to the delete action
 					// if add, checks it does not need to be watched
-					if(Notification.REMOVE == notification.getEventType()) {
-						if(notification.getNewValue() instanceof View) {
-							View oldView = (View)notification.getOldValue();
+					if (Notification.REMOVE == notification.getEventType()) {
+						if (notification.getNewValue() instanceof View) {
+							View oldView = (View) notification.getOldValue();
 							removeListenerForView(oldView);
 						}
 
-					} else if(Notification.ADD == notification.getEventType()) {
+					} else if (Notification.ADD == notification.getEventType()) {
 						// check the parent of the associated semantic element
-						if(notification.getNewValue() instanceof View) {
-							View newView = (View)notification.getNewValue();
+						if (notification.getNewValue() instanceof View) {
+							View newView = (View) notification.getNewValue();
 							addListenerForView(newView);
 						}
 					}
@@ -437,23 +434,23 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 	 * <P>
 	 * It has to be added if the parent of the semantic element attached to the view is not the host semantic element.
 	 * </P>
-	 * 
+	 *
 	 * @param newView
-	 *        the new view to check
+	 *            the new view to check
 	 */
 	protected void addListenerForView(View newView) {
 		// get semantic element attached to the host edit part
-		View hostView = (View)getHost().getModel();
+		View hostView = (View) getHost().getModel();
 
 		// get the parent of the new view. if it is the same as current parent,
 		// does not add additional listeners
-		if(newView.getElement() != null) {
+		if (newView.getElement() != null) {
 			EObject semanticParent = newView.getElement().eContainer();
-			if(semanticParent != null) {
-				if(!semanticParent.equals(hostSemanticElement)) {
+			if (semanticParent != null) {
+				if (!semanticParent.equals(hostSemanticElement)) {
 					// add each parent of the semantic parent to the list of
 					// additional listeners
-					for(EObject parent : getElementHierarchy(semanticParent)) {
+					for (EObject parent : getElementHierarchy(semanticParent)) {
 						addAdditionalParentToListen(parent, newView);
 					}
 				}
@@ -463,21 +460,21 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 
 	/**
 	 * Removes a listener for the specified view, if it exists.
-	 * 
+	 *
 	 * @param oldView
-	 *        the old view to check
+	 *            the old view to check
 	 */
 	protected void removeListenerForView(View oldView) {
 		// create a temp list of elements to delete (iterator concurrent
 		// modification..)
 		Map<EObject, List<View>> parentsToDelete = new HashMap<EObject, List<View>>();
 
-		for(EObject parent : additionalParentToListen.keySet()) {
+		for (EObject parent : additionalParentToListen.keySet()) {
 			List<View> parentViews = additionalParentToListen.get(parent);
-			if(parentViews.contains(oldView)) {
+			if (parentViews.contains(oldView)) {
 
 				List<View> views = parentsToDelete.get(parent);
-				if(views == null) {
+				if (views == null) {
 					views = new ArrayList<View>();
 				}
 				views.add(oldView);
@@ -495,13 +492,13 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 		Map<EObject, List<View>> parentsToDelete = new HashMap<EObject, List<View>>();
 
 		// collect the elements to delete
-		for(View view : impactedViews) {
-			for(EObject parent : additionalParentToListen.keySet()) {
+		for (View view : impactedViews) {
+			for (EObject parent : additionalParentToListen.keySet()) {
 				List<View> parentViews = additionalParentToListen.get(parent);
-				if(parentViews.contains(view)) {
+				if (parentViews.contains(view)) {
 
 					List<View> views = parentsToDelete.get(parent);
-					if(views == null) {
+					if (views == null) {
 						views = new ArrayList<View>();
 					}
 					views.add(view);
@@ -511,9 +508,9 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 		}
 
 		// do the job
-		for(EObject object : parentsToDelete.keySet()) {
+		for (EObject object : parentsToDelete.keySet()) {
 			List<View> views = parentsToDelete.get(object);
-			for(View view : views) {
+			for (View view : views) {
 				removeAdditionalParentToListen(object, view);
 			}
 		}
@@ -521,14 +518,14 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 
 	/**
 	 * Returns the list of parent for the specified element
-	 * 
+	 *
 	 * @return the list of parent for the specified element, with the element
 	 *         itself
 	 */
 	public List<EObject> getElementHierarchy(EObject eObject) {
 		List<EObject> list = new ArrayList<EObject>();
 		EObject currentObject = eObject;
-		while(currentObject != null) {
+		while (currentObject != null) {
 			list.add(currentObject);
 			currentObject = currentObject.eContainer();
 		}
@@ -537,12 +534,12 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 
 	/**
 	 * Refresh the child views of the host edit part
-	 * 
+	 *
 	 * @return an empty list?
 	 */
 	protected List refreshViews() {
 		// current connection views
-		Iterator<EObject> viewChildrenIterator = ((EObject)getHost().getModel()).eContents().iterator();
+		Iterator<EObject> viewChildrenIterator = ((EObject) getHost().getModel()).eContents().iterator();
 
 		List<View> orphaned = findOrphanView(viewChildrenIterator);
 		//
@@ -569,26 +566,26 @@ public class OrphanViewPolicy extends AbstractEditPolicy implements Notification
 
 	/**
 	 * Debug method. Displays the additionalParentToListen map correclty
-	 * 
+	 *
 	 * @param additionalParentToListen
-	 *        the map to display
+	 *            the map to display
 	 * @return the pretty - print string
 	 */
 	private String prettyPrint(Map<EObject, List<View>> additionalParentToListen) {
 		StringBuffer buffer = new StringBuffer();
-		if(additionalParentToListen == null) {
+		if (additionalParentToListen == null) {
 			return "Empty listener for " + getHost();
 		}
 		buffer.append("addtionnal listeners for ");
 		buffer.append(getHost());
 		buffer.append("\n");
-		for(EObject object : additionalParentToListen.keySet()) {
+		for (EObject object : additionalParentToListen.keySet()) {
 			buffer.append("\n");
 			buffer.append(object);
 			buffer.append("(");
 			buffer.append(additionalParentToListen.get(object).size());
 			buffer.append("):\n");
-			for(View view : additionalParentToListen.get(object)) {
+			for (View view : additionalParentToListen.get(object)) {
 				buffer.append("- ");
 				buffer.append(view);
 				buffer.append("\n");

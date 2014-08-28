@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,15 +27,16 @@ public class SystemServicesRegistryUtils {
 	};
 
 	public static SystemServicesRegistryUtils getInstance() {
-		if(eInstance == null)
+		if (eInstance == null) {
 			eInstance = new SystemServicesRegistryUtils();
+		}
 		return eInstance;
 	}
 
 	public OpaqueBehavior generateOpaqueBehaviorSignature(Operation operation) {
 		OpaqueBehavior method = UMLFactory.eINSTANCE.createOpaqueBehavior();
 		method.setName(operation.getName() + "Method");
-		for(Parameter p : operation.getOwnedParameters()) {
+		for (Parameter p : operation.getOwnedParameters()) {
 			Parameter behaviorParameter = method.createOwnedParameter(p.getName(), p.getType());
 			behaviorParameter.setDirection(p.getDirection());
 			behaviorParameter.setLower(p.getLower());

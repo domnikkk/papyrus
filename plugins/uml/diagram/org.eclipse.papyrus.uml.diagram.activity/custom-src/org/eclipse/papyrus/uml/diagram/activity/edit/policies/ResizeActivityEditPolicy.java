@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ public class ResizeActivityEditPolicy extends ResizableShapeEditPolicy {
 
 	/**
 	 * Disable moving the activity.
-	 * 
+	 *
 	 * @param request
-	 *        request to change location
+	 *            request to change location
 	 * @return UnexecutableCommand.INSTANCE
 	 */
 	@Override
@@ -41,7 +41,7 @@ public class ResizeActivityEditPolicy extends ResizableShapeEditPolicy {
 	}
 
 	/**
-	 * 
+	 *
 	 * the user can resize the activity
 	 */
 	@Override

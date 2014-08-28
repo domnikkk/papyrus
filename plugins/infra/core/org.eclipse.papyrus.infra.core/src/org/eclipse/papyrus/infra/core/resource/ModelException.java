@@ -1,31 +1,31 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.resource;
 
 /**
  * Root exception for this package.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class ModelException extends Exception {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public ModelException() {
 	}
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param message
 	 */
 	public ModelException(String message) {
@@ -34,7 +34,7 @@ public class ModelException extends Exception {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param cause
 	 */
 	public ModelException(Throwable cause) {
@@ -43,7 +43,7 @@ public class ModelException extends Exception {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param message
 	 * @param cause
 	 */

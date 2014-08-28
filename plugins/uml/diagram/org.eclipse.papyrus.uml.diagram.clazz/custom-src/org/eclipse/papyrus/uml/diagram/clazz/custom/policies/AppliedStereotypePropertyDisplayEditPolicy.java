@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,8 +32,8 @@ public class AppliedStereotypePropertyDisplayEditPolicy extends AbstractAppliedS
 	@Override
 	protected Property getUMLElement() {
 		EObject element = super.getUMLElement();
-		if(element instanceof Property) {
-			return (Property)element;
+		if (element instanceof Property) {
+			return (Property) element;
 		}
 		return null;
 	};
@@ -44,6 +44,6 @@ public class AppliedStereotypePropertyDisplayEditPolicy extends AbstractAppliedS
 	@Override
 	public void refreshDisplay() {
 		// calls the helper for this edit Part
-		PropertyLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart)getHost());
+		PropertyLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart) getHost());
 	}
 }

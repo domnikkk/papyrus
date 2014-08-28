@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * This figure use to display stereotype and properties in brace.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class AppliedStereotypeLabelFigure extends Figure implements ILabelFigure, IPapyrusNodeUMLElementFigure {
@@ -38,7 +38,7 @@ public class AppliedStereotypeLabelFigure extends Figure implements ILabelFigure
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public AppliedStereotypeLabelFigure() {
 		createContents();
@@ -59,13 +59,13 @@ public class AppliedStereotypeLabelFigure extends Figure implements ILabelFigure
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String,
-	 *      org.eclipse.swt.graphics.Image)
-	 * 
+	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String, org.eclipse.swt.graphics.Image)
+	 *
 	 * @param stereotypes
 	 * @param image
 	 */
 
+	@Override
 	public void setStereotypeDisplay(String stereotypes, Image image) {
 		stereotypeLabel.setText(stereotypes);
 		stereotypeLabel.setIcon(image);
@@ -73,18 +73,19 @@ public class AppliedStereotypeLabelFigure extends Figure implements ILabelFigure
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeUMLElementFigure#setStereotypePropertiesInBrace(java.lang.String)
-	 * 
+	 *
 	 * @param stereotypeProperties
 	 */
 
+	@Override
 	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
-		if(stereotypeProperties == null || stereotypeProperties.trim().equals("")) {
-			if(stereotypePropertiesInBraceContent != null) {
+		if (stereotypeProperties == null || stereotypeProperties.trim().equals("")) {
+			if (stereotypePropertiesInBraceContent != null) {
 				remove(stereotypePropertiesInBraceContent);
 			}
 			stereotypePropertiesInBraceContent = null;
 		} else {
-			if(stereotypePropertiesInBraceContent == null) {
+			if (stereotypePropertiesInBraceContent == null) {
 				stereotypePropertiesInBraceContent = new WrappingLabel();
 				stereotypePropertiesInBraceContent.setOpaque(false);
 				this.add(stereotypePropertiesInBraceContent);
@@ -96,60 +97,66 @@ public class AppliedStereotypeLabelFigure extends Figure implements ILabelFigure
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeUMLElementFigure#setStereotypePropertiesInCompartment(java.lang.String)
-	 * 
+	 *
 	 * @param stereotypeProperties
 	 */
 
+	@Override
 	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
 
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeUMLElementFigure#getStereotypesLabel()
-	 * 
+	 *
 	 * @return
 	 */
 
+	@Override
 	public Label getStereotypesLabel() {
 		return stereotypeLabel;
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#setText(java.lang.String)
-	 * 
+	 *
 	 * @param text
 	 */
 
+	@Override
 	public void setText(String text) {
 		stereotypeLabel.setText(text);
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#getText()
-	 * 
+	 *
 	 * @return
 	 */
 
+	@Override
 	public String getText() {
 		return stereotypeLabel.getText();
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#setIcon(org.eclipse.swt.graphics.Image)
-	 * 
+	 *
 	 * @param icon
 	 */
 
+	@Override
 	public void setIcon(Image icon) {
 		stereotypeLabel.setIcon(icon);
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#getIcon()
-	 * 
+	 *
 	 * @return
 	 */
 
+	@Override
 	public Image getIcon() {
 		return stereotypeLabel.getIcon();
 	}

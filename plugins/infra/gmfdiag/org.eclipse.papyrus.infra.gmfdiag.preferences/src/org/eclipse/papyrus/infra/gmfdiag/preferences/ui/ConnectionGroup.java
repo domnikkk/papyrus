@@ -1,15 +1,15 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr 
- *  Thibault Landre (Atos Origin) 
+ *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr
+ *  Thibault Landre (Atos Origin)
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.preferences.ui;
 
@@ -33,13 +33,13 @@ public class ConnectionGroup extends AbstractGroup {
 
 	/**
 	 * Instantiates a new connection group composite.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent of the composite
+	 *            the parent of the composite
 	 * @param String
-	 *        the title of the page
+	 *            the title of the page
 	 * @param dialogPage
-	 *        to set the page in field editor
+	 *            to set the page in field editor
 	 **/
 
 	public ConnectionGroup(Composite parent, String title, DialogPage dialogPage) {
@@ -66,21 +66,21 @@ public class ConnectionGroup extends AbstractGroup {
 	private static final String ROUTING_DISTANCE_POLICY_BOOLEANFIELDEDITOR_LABEL = Messages.AbstractPapyrusLinkPreferencePage_ClosestDistance;
 
 	/** The Constant SMOOTHNESS_COMBOFIELDEDITOR_NAMES_AND_VALUES. */
-	private static final String[][] SMOOTHNESS_COMBOFIELDEDITOR_NAMES_AND_VALUES = { { Messages.AbstractPapyrusLinkPreferencePage_None, "" + Smoothness.NONE }, //$NON-NLS-2$
-	{ Messages.AbstractPapyrusLinkPreferencePage_Less, "" + Smoothness.LESS }, { Messages.AbstractPapyrusLinkPreferencePage_Normal, "" + Smoothness.NORMAL }, { Messages.AbstractPapyrusLinkPreferencePage_More, "" + Smoothness.MORE } }; //$NON-NLS-2$ //$NON-NLS-4$ //$NON-NLS-6$
+	private static final String[][] SMOOTHNESS_COMBOFIELDEDITOR_NAMES_AND_VALUES = { { Messages.AbstractPapyrusLinkPreferencePage_None, "" + Smoothness.NONE },
+			{ Messages.AbstractPapyrusLinkPreferencePage_Less, "" + Smoothness.LESS }, { Messages.AbstractPapyrusLinkPreferencePage_Normal, "" + Smoothness.NORMAL }, { Messages.AbstractPapyrusLinkPreferencePage_More, "" + Smoothness.MORE } }; //$NON-NLS-2$
 
 	/** The Constant JUMPLINK_STATUS_COMBOFIELDEDITOR_NAMES_AND_VALUES. */
-	private static final String[][] JUMPLINK_STATUS_COMBOFIELDEDITOR_NAMES_AND_VALUES = { { Messages.AbstractPapyrusLinkPreferencePage_None, "" + JumpLinkStatus.NONE }, { Messages.AbstractPapyrusLinkPreferencePage_Below, "" + JumpLinkStatus.BELOW }, //$NON-NLS-2$ //$NON-NLS-4$
-	{ Messages.AbstractPapyrusLinkPreferencePage_All, "" + JumpLinkStatus.ALL }, { Messages.AbstractPapyrusLinkPreferencePage_Above, "" + JumpLinkStatus.ABOVE } }; //$NON-NLS-2$ //$NON-NLS-4$
+	private static final String[][] JUMPLINK_STATUS_COMBOFIELDEDITOR_NAMES_AND_VALUES = { { Messages.AbstractPapyrusLinkPreferencePage_None, "" + JumpLinkStatus.NONE }, { Messages.AbstractPapyrusLinkPreferencePage_Below, "" + JumpLinkStatus.BELOW }, //$NON-NLS-2$
+			{ Messages.AbstractPapyrusLinkPreferencePage_All, "" + JumpLinkStatus.ALL }, { Messages.AbstractPapyrusLinkPreferencePage_Above, "" + JumpLinkStatus.ABOVE } }; //$NON-NLS-2$
 
 	/** The Constant JUMPLINK_TYPE_COMBOFIELDEDITOR_NAMES_AND_VALUES. */
-	private static final String[][] JUMPLINK_TYPE_COMBOFIELDEDITOR_NAMES_AND_VALUES = { { Messages.AbstractPapyrusLinkPreferencePage_SemiCircle, "" + JumpLinkType.SEMICIRCLE }, { Messages.AbstractPapyrusLinkPreferencePage_Square, "" + JumpLinkType.SQUARE }, //$NON-NLS-2$ //$NON-NLS-4$
-	{ Messages.AbstractPapyrusLinkPreferencePage_Chamfered, "" + JumpLinkType.CHAMFERED } }; //$NON-NLS-2$
+	private static final String[][] JUMPLINK_TYPE_COMBOFIELDEDITOR_NAMES_AND_VALUES = { { Messages.AbstractPapyrusLinkPreferencePage_SemiCircle, "" + JumpLinkType.SEMICIRCLE }, { Messages.AbstractPapyrusLinkPreferencePage_Square, "" + JumpLinkType.SQUARE }, //$NON-NLS-2$
+			{ Messages.AbstractPapyrusLinkPreferencePage_Chamfered, "" + JumpLinkType.CHAMFERED } };
 
 	// TODO : check if Tree is always a valid possibility
 	/** The Constant ROUTING_STYLES_COMBOFIELDEDITOR_NAMES_AND_VALUES. */
-	private static final String[][] ROUTING_STYLES_COMBOFIELDEDITOR_NAMES_AND_VALUES = { { Messages.AbstractPapyrusLinkPreferencePage_Oblique, "" + Routing.MANUAL }, { Messages.AbstractPapyrusLinkPreferencePage_Rectilinear, "" + Routing.RECTILINEAR }, //$NON-NLS-2$ //$NON-NLS-4$
-	{ Messages.AbstractPapyrusLinkPreferencePage_Tree, "" + Routing.TREE } }; //$NON-NLS-2$
+	private static final String[][] ROUTING_STYLES_COMBOFIELDEDITOR_NAMES_AND_VALUES = { { Messages.AbstractPapyrusLinkPreferencePage_Oblique, "" + Routing.MANUAL }, { Messages.AbstractPapyrusLinkPreferencePage_Rectilinear, "" + Routing.RECTILINEAR }, //$NON-NLS-2$
+			{ Messages.AbstractPapyrusLinkPreferencePage_Tree, "" + Routing.TREE } };
 
 	/** The routing styles combo field editor. */
 	private ComboFieldEditor routingStylesComboFieldEditor;
@@ -102,9 +102,9 @@ public class ConnectionGroup extends AbstractGroup {
 
 	/**
 	 * Creates the content.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	public void createContent(Composite parent) {
 		Group connectionGroup = new Group(parent, 2);
@@ -121,9 +121,9 @@ public class ConnectionGroup extends AbstractGroup {
 
 	/**
 	 * Creates the jump link group.
-	 * 
+	 *
 	 * @param connectionGroup
-	 *        the connection group
+	 *            the connection group
 	 */
 
 	private void createJumpLinkGroup(Group connectionGroup) {
@@ -149,9 +149,9 @@ public class ConnectionGroup extends AbstractGroup {
 
 	/**
 	 * Creates the routing group.
-	 * 
+	 *
 	 * @param connectionGroup
-	 *        the connection group
+	 *            the connection group
 	 */
 	private void createRoutingGroup(Group connectionGroup) {
 		Group routingGroup = new Group(connectionGroup, 2);

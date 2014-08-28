@@ -15,7 +15,7 @@ import org.eclipse.papyrus.emf.facet.efacet.core.internal.exception.DerivedTyped
 /**
  * This exception occurs when something goes wrong during the execution of a
  * query.
- * 
+ *
  * @deprecated replaced by {@link DerivedTypedElementEvaluationException} cf.
  *             https://bugs.eclipse.org/bugs/show_bug.cgi?id=374678
  */

@@ -15,7 +15,7 @@ public class Activator extends AbstractUIPlugin {
 	// The shared instance
 	private static Activator plugin;
 
-//	private CustomizationManager fCustomizationManager;
+	// private CustomizationManager fCustomizationManager;
 
 	public static LogHelper log;
 
@@ -50,41 +50,41 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
 		return plugin;
 	}
 
-//	/**
-//	 * 
-//	 * @return the customization manager in charge to adapt element in modisco
-//	 */
-//	public CustomizationManager getCustomizationManager() {
-//		return org.eclipse.papyrus.infra.emf.Activator.getDefault().getCustomizationManager();
-//		//		if(this.fCustomizationManager == null) {
-//		//			this.fCustomizationManager = new CustomizationManager();
-//		//			init(this.fCustomizationManager);
-//		//		}
-//		//		return this.fCustomizationManager;
-//	}
+	// /**
+	// *
+	// * @return the customization manager in charge to adapt element in modisco
+	// */
+	// public CustomizationManager getCustomizationManager() {
+	// return org.eclipse.papyrus.infra.emf.Activator.getDefault().getCustomizationManager();
+	// // if(this.fCustomizationManager == null) {
+	// // this.fCustomizationManager = new CustomizationManager();
+	// // init(this.fCustomizationManager);
+	// // }
+	// // return this.fCustomizationManager;
+	// }
 
-	//	private void init(final CustomizationManager customizationManager) {
-	//		customizationManager.setShowContainer(false);
-	//		customizationManager.setShowDerivedLinks(false);
-	//		customizationManager.setShowEmptyLinks(false);
+	// private void init(final CustomizationManager customizationManager) {
+	// customizationManager.setShowContainer(false);
+	// customizationManager.setShowDerivedLinks(false);
+	// customizationManager.setShowEmptyLinks(false);
 	//
-	//		try {
-	//			List<MetamodelView> registryDefaultCustomizations = CustomizationsCatalog.getInstance().getRegistryDefaultCustomizations();
-	//			for(MetamodelView metamodelView : registryDefaultCustomizations) {
-	//				customizationManager.registerCustomization(metamodelView);
-	//			}
+	// try {
+	// List<MetamodelView> registryDefaultCustomizations = CustomizationsCatalog.getInstance().getRegistryDefaultCustomizations();
+	// for(MetamodelView metamodelView : registryDefaultCustomizations) {
+	// customizationManager.registerCustomization(metamodelView);
+	// }
 	//
-	//			customizationManager.loadCustomizations();
-	//		} catch (Throwable e) {
+	// customizationManager.loadCustomizations();
+	// } catch (Throwable e) {
 	//			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Error initializing customizations", e)); //$NON-NLS-1$
-	//		}
-	//	}
+	// }
+	// }
 
 }

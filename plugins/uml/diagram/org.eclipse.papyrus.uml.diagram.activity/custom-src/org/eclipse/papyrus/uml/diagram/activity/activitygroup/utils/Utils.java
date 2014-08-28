@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 Atos, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,21 +54,23 @@ public class Utils {
 
 	/**
 	 * Return a iterable of each targeted edit part
-	 * 
+	 *
 	 * @param req
 	 * @return
 	 */
 	public static Iterable<IGraphicalEditPart> getTargetedEditPart(ChangeBoundsRequest req) {
-		if(req != null && req.getEditParts() != null) {
-			return Iterables.transform(Iterables.filter((Iterable<Object>)req.getEditParts(), new Predicate<Object>() {
+		if (req != null && req.getEditParts() != null) {
+			return Iterables.transform(Iterables.filter((Iterable<Object>) req.getEditParts(), new Predicate<Object>() {
 
+				@Override
 				public boolean apply(Object input) {
 					return input instanceof IGraphicalEditPart;
 				}
 			}), new Function<Object, IGraphicalEditPart>() {
 
+				@Override
 				public IGraphicalEditPart apply(Object from) {
-					return (IGraphicalEditPart)from;
+					return (IGraphicalEditPart) from;
 				}
 			});
 		}
@@ -77,7 +79,7 @@ public class Utils {
 
 	/**
 	 * Get the abslotue bounds of a figure after a change bounds request
-	 * 
+	 *
 	 * @param request
 	 * @param host
 	 * @return
@@ -89,9 +91,9 @@ public class Utils {
 
 	/**
 	 * Get the bounds of an edit part
-	 * 
+	 *
 	 * @param part
-	 *        edit part to find bounds
+	 *            edit part to find bounds
 	 * @return part's bounds in absolute coordinates
 	 */
 	public static Rectangle getAbsoluteBounds(IGraphicalEditPart part) {
@@ -100,23 +102,23 @@ public class Utils {
 		part.getFigure().invalidate();
 		part.getFigure().validate();
 		Rectangle bounds = part.getFigure().getBounds().getCopy();
-		if(part.getNotationView() instanceof Node) {
+		if (part.getNotationView() instanceof Node) {
 			// rather update with up to date model bounds
-			Node node = (Node)part.getNotationView();
+			Node node = (Node) part.getNotationView();
 			LayoutConstraint cst = node.getLayoutConstraint();
-			if(cst instanceof Bounds) {
-				Bounds b = (Bounds)cst;
+			if (cst instanceof Bounds) {
+				Bounds b = (Bounds) cst;
 				Point parentLoc = part.getFigure().getParent().getBounds().getLocation();
-				if(b.getX() > 0) {
+				if (b.getX() > 0) {
 					bounds.x = b.getX() + parentLoc.x;
 				}
-				if(b.getY() > 0) {
+				if (b.getY() > 0) {
 					bounds.y = b.getY() + parentLoc.y;
 				}
-				if(b.getHeight() != -1) {
+				if (b.getHeight() != -1) {
 					bounds.height = b.getHeight();
 				}
-				if(b.getWidth() != -1) {
+				if (b.getWidth() != -1) {
 					bounds.width = b.getWidth();
 				}
 			}
@@ -125,48 +127,48 @@ public class Utils {
 		return bounds;
 	}
 
-	//	/**
-	//	 * Get the bounds of an edit part
-	//	 * 
-	//	 * @param part
-	//	 *        edit part to find bounds
-	//	 * @return part's bounds in absolute coordinates
-	//	 */
-	//	public static Rectangle getAbsoluteBounds(Shape s) {
-	//		s.
-	//		// take bounds from figure
-	//		part.getTopGraphicEditPart().refresh();
-	//		Rectangle bounds = part.getFigure().getBounds().getCopy();
+	// /**
+	// * Get the bounds of an edit part
+	// *
+	// * @param part
+	// * edit part to find bounds
+	// * @return part's bounds in absolute coordinates
+	// */
+	// public static Rectangle getAbsoluteBounds(Shape s) {
+	// s.
+	// // take bounds from figure
+	// part.getTopGraphicEditPart().refresh();
+	// Rectangle bounds = part.getFigure().getBounds().getCopy();
 	//
-	//		if(part.getNotationView() instanceof Node) {
-	//			// rather update with up to date model bounds
-	//			Node node = (Node)part.getNotationView();
-	//			LayoutConstraint cst = node.getLayoutConstraint();
-	//			if(cst instanceof Bounds) {
-	//				Bounds b = (Bounds)cst;
-	//				Point parentLoc = part.getFigure().getParent().getBounds().getLocation();
-	//				if(b.getX() > 0) {
-	//					bounds.x = b.getX() + parentLoc.x;
-	//				}
-	//				if(b.getY() > 0) {
-	//					bounds.y = b.getY() + parentLoc.y;
-	//				}
-	//				if(b.getHeight() != -1) {
-	//					bounds.height = b.getHeight();
-	//				}
-	//				if(b.getWidth() != -1) {
-	//					bounds.width = b.getWidth();
-	//				}
-	//			}
-	//		}
+	// if(part.getNotationView() instanceof Node) {
+	// // rather update with up to date model bounds
+	// Node node = (Node)part.getNotationView();
+	// LayoutConstraint cst = node.getLayoutConstraint();
+	// if(cst instanceof Bounds) {
+	// Bounds b = (Bounds)cst;
+	// Point parentLoc = part.getFigure().getParent().getBounds().getLocation();
+	// if(b.getX() > 0) {
+	// bounds.x = b.getX() + parentLoc.x;
+	// }
+	// if(b.getY() > 0) {
+	// bounds.y = b.getY() + parentLoc.y;
+	// }
+	// if(b.getHeight() != -1) {
+	// bounds.height = b.getHeight();
+	// }
+	// if(b.getWidth() != -1) {
+	// bounds.width = b.getWidth();
+	// }
+	// }
+	// }
 	//
-	//		part.getFigure().getParent().translateToAbsolute(bounds);
+	// part.getFigure().getParent().translateToAbsolute(bounds);
 	//
-	//		return bounds;
-	//	}
+	// return bounds;
+	// }
 	/**
 	 * Same as {@link EcoreUtil#filterDescendants(Collection)}
-	 * 
+	 *
 	 * @param all
 	 * @return
 	 */
@@ -177,10 +179,10 @@ public class Utils {
 	static AdapterFactoryLabelProvider factory = new AdapterFactoryLabelProvider(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	public static String getCorrectLabel(Object object) {
-		if(object instanceof EObject) {
+		if (object instanceof EObject) {
 			return factory.getText(object);
-		} else if(object instanceof EReference) {
-			return ((EReference)object).getName();
+		} else if (object instanceof EReference) {
+			return ((EReference) object).getName();
 		} else {
 			return String.valueOf(object); // null safe
 		}
@@ -188,7 +190,7 @@ public class Utils {
 
 	public static String getCorrectLabel(IAdaptable object) {
 		Object view = object.getAdapter(EObject.class);
-		if(view instanceof EObject) {
+		if (view instanceof EObject) {
 			return getCorrectLabel(view);
 		} else {
 			return object.toString();
@@ -197,12 +199,12 @@ public class Utils {
 
 	/**
 	 * Get old parent references {@link EObject} sorted with {@link EReference} as keys
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	public static Multimap<EReference, EObject> getOldParents(IGroupRequest request) {
-		if(request.getNodeDescpitor() != null) {
+		if (request.getNodeDescpitor() != null) {
 			return getReferenceMultimap(request, request.getNodeDescpitor().getParentReferences());
 		}
 		return ArrayListMultimap.create();
@@ -210,12 +212,12 @@ public class Utils {
 
 	/**
 	 * Get old getOldChildren references {@link EObject} sorted with {@link EReference} as keys
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	public static Multimap<EReference, EObject> getOldChildren(IGroupRequest request) {
-		if(request.getNodeDescpitor() != null) {
+		if (request.getNodeDescpitor() != null) {
 			return getReferenceMultimap(request, request.getNodeDescpitor().getChildrenReferences());
 		}
 		return ArrayListMultimap.create();
@@ -223,27 +225,28 @@ public class Utils {
 
 	/**
 	 * Get the the multimap relative a request and a {@link Iterable} of {@link EReference}
-	 * 
+	 *
 	 * @param request
 	 * @param references
 	 * @return
 	 */
 	protected static Multimap<EReference, EObject> getReferenceMultimap(IGroupRequest request, Iterable<EReference> references) {
 		Object elementAdapter = request.getTargetElement().getAdapter(EObject.class);
-		if(elementAdapter instanceof EObject && references != null) {
+		if (elementAdapter instanceof EObject && references != null) {
 			Multimap<EReference, EObject> result = ArrayListMultimap.create();
-			EObject targetElement = (EObject)elementAdapter;
-			if(targetElement != null) {
-				for(EReference ref : references) {
-					if(ref.isMany()) {
-						Collection<EObject> values = (Collection<EObject>)targetElement.eGet(ref);
-						for(EObject v : values) {
+			EObject targetElement = (EObject) elementAdapter;
+			if (targetElement != null) {
+				for (EReference ref : references) {
+					if (ref.isMany()) {
+						Collection<EObject> values = (Collection<EObject>) targetElement.eGet(ref);
+						for (EObject v : values) {
 							result.put(ref, v);
 						}
 					} else {
-						Object value = targetElement.eGet(ref);;
-						if(value instanceof EObject) {
-							result.put(ref, (EObject)value);
+						Object value = targetElement.eGet(ref);
+						;
+						if (value instanceof EObject) {
+							result.put(ref, (EObject) value);
 						}
 					}
 				}
@@ -256,7 +259,7 @@ public class Utils {
 	/**
 	 * Copy a ChangeBoundsRequest.
 	 * Do not copy metadata
-	 * 
+	 *
 	 * @param req
 	 * @param part
 	 * @return

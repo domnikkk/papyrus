@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,21 +21,21 @@ import org.eclipse.papyrus.infra.services.labelprovider.service.IFilteredLabelPr
 
 /**
  * A FilteredLabelProvider for GMF Notation model
- * 
+ *
  * @author Camille Letavernier
  */
 public class NotationFilteredLabelProvider extends NotationLabelProvider implements IFilteredLabelProvider {
 
 
 	public boolean accept(IStructuredSelection selection) {
-		if(selection.isEmpty()) {
+		if (selection.isEmpty()) {
 			return false;
 		}
 
 		Iterator<?> iterator = selection.iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Object element = iterator.next();
-			if(!accept(element)) {
+			if (!accept(element)) {
 				return false;
 			}
 		}
@@ -43,12 +43,13 @@ public class NotationFilteredLabelProvider extends NotationLabelProvider impleme
 		return true;
 	}
 
+	@Override
 	public boolean accept(Object element) {
-		if(element instanceof IStructuredSelection) {
-			return accept((IStructuredSelection)element);
+		if (element instanceof IStructuredSelection) {
+			return accept((IStructuredSelection) element);
 		}
 
-		//Accept elements from the Notation metamodel
+		// Accept elements from the Notation metamodel
 		EObject eObject = EMFHelper.getEObject(element);
 		return eObject != null && eObject.eClass().getEPackage() == NotationPackage.eINSTANCE;
 	}

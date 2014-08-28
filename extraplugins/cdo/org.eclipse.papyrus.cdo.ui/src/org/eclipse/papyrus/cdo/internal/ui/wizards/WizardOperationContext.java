@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,18 +39,20 @@ public class WizardOperationContext implements IModelTransferOperation.Context {
 		this.wizard = wizard;
 	}
 
+	@Override
 	public Diagnostic run(final IModelTransferOperation operation) {
 		final Diagnostic[] result = { Diagnostic.OK_INSTANCE };
 
 		try {
 			getContainer().run(true, false, new IRunnableWithProgress() {
 
+				@Override
 				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
 					result[0] = operation.run(new UISafeProgressMonitor(monitor, display));
 				}
 			});
 		} catch (Exception e) {
-			result[0] = new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, Messages.WizardOperationContext_0, new Object[]{ e });
+			result[0] = new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, Messages.WizardOperationContext_0, new Object[] { e });
 			StatusManager.getManager().handle(BasicDiagnostic.toIStatus(result[0]), StatusManager.SHOW);
 		}
 

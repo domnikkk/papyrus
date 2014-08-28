@@ -16,8 +16,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.uml2.uml.Element;
 
 /**
- * initialize  the emf command  that will add the child element
- * it call the emf command written in the uml plugin. So it called specific code to add nodes into 
+ * initialize the emf command that will add the child element
+ * it call the emf command written in the uml plugin. So it called specific code to add nodes into
  * an Activity
  *
  */
@@ -30,15 +30,16 @@ public abstract class ActivityNodeCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * initialize  the emf command  that will add the child element
+	 * initialize the emf command that will add the child element
+	 *
 	 * @return the created child
 	 */
 	protected Element initAndExecuteEmfCommand(Element newElement) throws ExecutionException {
-		EReference containmentFeature = PackageUtil.findFeature(getElementToEdit().eClass(),newElement.eClass());
-		emfcmd= new CreateChildCommand(getEditingDomain(),getElementToEdit(),  containmentFeature, newElement, Collections.EMPTY_LIST);
+		EReference containmentFeature = PackageUtil.findFeature(getElementToEdit().eClass(), newElement.eClass());
+		emfcmd = new CreateChildCommand(getEditingDomain(), getElementToEdit(), containmentFeature, newElement, Collections.EMPTY_LIST);
 		emfcmd.canExecute();
 		emfcmd.execute();
-		
+
 		return newElement;
 	}
 
@@ -50,8 +51,8 @@ public abstract class ActivityNodeCreateCommand extends EditElementCommand {
 
 	@Override
 	protected IStatus doRedo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		IStatus status= super.doRedo(monitor, info);
+		IStatus status = super.doRedo(monitor, info);
 		emfcmd.redo();
-		 return status;
+		return status;
 	}
 }

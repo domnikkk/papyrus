@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2009 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,7 +48,7 @@ import org.eclipse.swt.widgets.Spinner;
  * <li>Gradient style. The value is GradientStyle.HORIZONTAL or GradientStyle.VERTICAL</li>
  * </ul>
  * The second color of the gradient is set by default at RGB{255,255,255}
- * 
+ *
  * @author tlandre
  */
 public class GradientFieldEditor extends FieldEditor {
@@ -71,11 +71,11 @@ public class GradientFieldEditor extends FieldEditor {
 
 	/**
 	 * create a field to display gradient preference
-	 * 
+	 *
 	 * @param gradientPreferenceName
-	 *        the name of the gradient field
+	 *            the name of the gradient field
 	 * @param parent
-	 *        the parent composite
+	 *            the parent composite
 	 */
 	public GradientFieldEditor(String gradientPreferenceName, Composite parent) {
 		super(gradientPreferenceName, "", parent); //$NON-NLS-1$
@@ -91,9 +91,9 @@ public class GradientFieldEditor extends FieldEditor {
 		super.load();
 		setButtonImage(color1);
 		transparencyValueSpinner.setSelection(transparency);
-		if(style == GradientStyle.HORIZONTAL) {
+		if (style == GradientStyle.HORIZONTAL) {
 			horizontalStyleButton.setSelection(true);
-		} else if(style == GradientStyle.VERTICAL) {
+		} else if (style == GradientStyle.VERTICAL) {
 			verticalStyleButton.setSelection(true);
 		}
 	}
@@ -130,11 +130,11 @@ public class GradientFieldEditor extends FieldEditor {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(!((Button)e.widget).getSelection()) {
+				if (!((Button) e.widget).getSelection()) {
 					// don't react on de-selection
 					return;
 				}
-				if(verticalStyleButton.getSelection()) {
+				if (verticalStyleButton.getSelection()) {
 					style = GradientStyle.VERTICAL;
 				} else {
 					style = GradientStyle.HORIZONTAL;
@@ -195,7 +195,7 @@ public class GradientFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#dispose
 	 * ()
@@ -208,14 +208,14 @@ public class GradientFieldEditor extends FieldEditor {
 
 	/**
 	 * Dispose the image associated with the given button
-	 * 
+	 *
 	 * @param btn
-	 *        the button that contains the image
+	 *            the button that contains the image
 	 */
 	protected void disposeButtonImage() {
-		if(colorButton != null && !colorButton.isDisposed()) {
+		if (colorButton != null && !colorButton.isDisposed()) {
 			Image imageColor1 = colorButton.getImage();
-			if(imageColor1 != null && !imageColor1.isDisposed()) {
+			if (imageColor1 != null && !imageColor1.isDisposed()) {
 				imageColor1.dispose();
 			}
 		}
@@ -227,7 +227,7 @@ public class GradientFieldEditor extends FieldEditor {
 	protected void setButtonImage(RGB rgb) {
 		// First, dispose the current image, if any
 		Image image = colorButton.getImage();
-		if(image != null) {
+		if (image != null) {
 			image.dispose();
 		}
 
@@ -248,9 +248,9 @@ public class GradientFieldEditor extends FieldEditor {
 
 	/**
 	 * Allow user to change the color of the given button.
-	 * 
+	 *
 	 * @param button
-	 *        the button
+	 *            the button
 	 * @return the selected color or null
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ColorPalettePopup
 	 */
@@ -259,7 +259,7 @@ public class GradientFieldEditor extends FieldEditor {
 		Rectangle r = colorButton.getBounds();
 		Point location = colorButton.getParent().toDisplay(r.x, r.y);
 		popup.open(new Point(location.x, location.y + r.height));
-		if(popup.getSelectedColor() == null && !popup.useDefaultColor()) {
+		if (popup.getSelectedColor() == null && !popup.useDefaultColor()) {
 			return null;
 		}
 		RGB rgb = popup.getSelectedColor();
@@ -269,9 +269,9 @@ public class GradientFieldEditor extends FieldEditor {
 
 	/**
 	 * used to set disable this field editor
-	 * 
+	 *
 	 * @param enabled
-	 *        a boolean, ture to edit the field
+	 *            a boolean, ture to edit the field
 	 */
 	public void setEnabled(boolean enabled) {
 		colorButton.setEnabled(enabled);

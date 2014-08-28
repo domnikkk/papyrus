@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,9 +46,9 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * ULM String converter
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class UMLStringValueConverter extends EMFStringValueConverter {
 
@@ -59,22 +59,22 @@ public class UMLStringValueConverter extends EMFStringValueConverter {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param context
-	 *        the context used to resolve the value
+	 *            the context used to resolve the value
 	 * @param multiValueSeparator
-	 *        the string used to seprate values
+	 *            the string used to seprate values
 	 */
 	public UMLStringValueConverter(final EObject context, final String multiValueSeparator) {
 		super(context, multiValueSeparator);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.utils.EMFStringValueConverter#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public void dispose() {
@@ -83,51 +83,51 @@ public class UMLStringValueConverter extends EMFStringValueConverter {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.utils.EMFStringValueConverter#getFeatureUpperBound(java.lang.Object)
-	 * 
+	 *
 	 * @param feature
 	 * @return
 	 */
 	@Override
 	protected int getFeatureUpperBound(Object feature) {
-		if(feature instanceof Property) {
-			return ((Property)feature).getUpper();
+		if (feature instanceof Property) {
+			return ((Property) feature).getUpper();
 		}
 		return super.getFeatureUpperBound(feature);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.utils.EMFStringValueConverter#getFeatureType(java.lang.Object)
-	 * 
+	 *
 	 * @param feature
 	 * @return
 	 */
 	@Override
 	protected EClassifier getFeatureType(Object feature) {
 		final EClassifier featureType;
-		if(feature instanceof Property) {
-			final Type type = ((Property)feature).getType();
-			if(type instanceof PrimitiveType) {
-				final PrimitiveType pType = (PrimitiveType)type;
+		if (feature instanceof Property) {
+			final Type type = ((Property) feature).getType();
+			if (type instanceof PrimitiveType) {
+				final PrimitiveType pType = (PrimitiveType) type;
 				final String name = pType.getName();
-				if(PrimitivesTypesUtils.UML_BOOLEAN.equals(name)) {
+				if (PrimitivesTypesUtils.UML_BOOLEAN.equals(name)) {
 					featureType = EcorePackage.eINSTANCE.getEBoolean();
-				} else if(PrimitivesTypesUtils.UML_INTEGER.equals(name)) {
+				} else if (PrimitivesTypesUtils.UML_INTEGER.equals(name)) {
 					featureType = EcorePackage.eINSTANCE.getEInt();
-				} else if(PrimitivesTypesUtils.UML_REAL.equals(name)) {
+				} else if (PrimitivesTypesUtils.UML_REAL.equals(name)) {
 					featureType = EcorePackage.eINSTANCE.getEDouble();
-				} else if(PrimitivesTypesUtils.UML_STRING.equals(name)) {
+				} else if (PrimitivesTypesUtils.UML_STRING.equals(name)) {
 					featureType = EcorePackage.eINSTANCE.getEString();
-				} else if(PrimitivesTypesUtils.UML_UNLIMITED_NATURAL.equals(name)) {
+				} else if (PrimitivesTypesUtils.UML_UNLIMITED_NATURAL.equals(name)) {
 					featureType = EcorePackage.eINSTANCE.getEInt();
-				} else { //custom PrimitiveType
+				} else { // custom PrimitiveType
 					featureType = EcorePackage.eINSTANCE.getEString();
 				}
-			} else if(type instanceof Enumeration) {
+			} else if (type instanceof Enumeration) {
 				featureType = UMLPackage.eINSTANCE.getEnumeration();
-			} else if(type instanceof DataType) {//FIXME manage the data type
+			} else if (type instanceof DataType) {// FIXME manage the data type
 				featureType = EcorePackage.eINSTANCE.getEString();
 			} else {
 				featureType = type.eClass();
@@ -139,9 +139,9 @@ public class UMLStringValueConverter extends EMFStringValueConverter {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.utils.EMFStringValueConverter#doDeduceValueFromString(java.lang.Object, java.lang.String)
-	 * 
+	 *
 	 * @param feature
 	 * @param valueAsString
 	 * @return
@@ -149,17 +149,16 @@ public class UMLStringValueConverter extends EMFStringValueConverter {
 	@Override
 	protected ConvertedValueContainer<?> doDeduceValueFromString(Object feature, String valueAsString) {
 		final EClassifier featureType = getFeatureType(feature);
-		if(feature instanceof Property) {
+		if (feature instanceof Property) {
 			return deduceValueFromString(feature, featureType, valueAsString);
 		}
 		return super.doDeduceValueFromString(feature, valueAsString);
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.emf.utils.EMFStringValueConverter#deduceValueFromString(java.lang.Object, org.eclipse.emf.ecore.EClassifier,
-	 *      java.lang.String)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.emf.utils.EMFStringValueConverter#deduceValueFromString(java.lang.Object, org.eclipse.emf.ecore.EClassifier, java.lang.String)
+	 *
 	 * @param feature
 	 * @param featureType
 	 * @param valueAsString
@@ -167,11 +166,11 @@ public class UMLStringValueConverter extends EMFStringValueConverter {
 	 */
 	@Override
 	protected ConvertedValueContainer<?> deduceValueFromString(Object feature, EClassifier featureType, String valueAsString) {
-		if(featureType instanceof EClass && feature instanceof Property) {
+		if (featureType instanceof EClass && feature instanceof Property) {
 			final int upperbound = getFeatureUpperBound(feature);
 			boolean isMany = (upperbound > 1 || upperbound == -1);
-			if(PrimitivesTypesUtils.ENUMERATION.equals(featureType.getName())) {
-				return deduceEnumerationLiteralValue(isMany, valueAsString, (Enumeration)((Property)feature).getType());
+			if (PrimitivesTypesUtils.ENUMERATION.equals(featureType.getName())) {
+				return deduceEnumerationLiteralValue(isMany, valueAsString, (Enumeration) ((Property) feature).getType());
 			}
 		}
 		return super.deduceValueFromString(feature, featureType, valueAsString);
@@ -179,10 +178,9 @@ public class UMLStringValueConverter extends EMFStringValueConverter {
 
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.emf.utils.EMFStringValueConverter#deduceEObjectValue(org.eclipse.emf.ecore.EObject, java.lang.Object,
-	 *      org.eclipse.emf.ecore.EClass, boolean, java.lang.String)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.emf.utils.EMFStringValueConverter#deduceEObjectValue(org.eclipse.emf.ecore.EObject, java.lang.Object, org.eclipse.emf.ecore.EClass, boolean, java.lang.String)
+	 *
 	 * @param resolutionContext
 	 * @param feature
 	 * @param featureType
@@ -194,40 +192,40 @@ public class UMLStringValueConverter extends EMFStringValueConverter {
 	@Override
 	protected ConvertedValueContainer<?> deduceEObjectValue(EObject resolutionContext, Object feature, EClass eClass, boolean isMany, String valueAsString) {
 		final Namespace namespace;
-		if(resolutionContext instanceof Namespace) {
-			namespace = (Namespace)resolutionContext;
-		} else if(resolutionContext instanceof Element) {
-			namespace = ((Element)resolutionContext).getNearestPackage();
+		if (resolutionContext instanceof Namespace) {
+			namespace = (Namespace) resolutionContext;
+		} else if (resolutionContext instanceof Element) {
+			namespace = ((Element) resolutionContext).getNearestPackage();
 		} else {
 			namespace = null;
 		}
-		if(valueAsString != null && valueAsString.length() != 0 && namespace != null) {
+		if (valueAsString != null && valueAsString.length() != 0 && namespace != null) {
 			IStatus iStatus = Status.OK_STATUS;
 			final Collection<String> unresolvedValues = new ArrayList<String>();
 			ConvertedValueContainer<?> returnedValue = null;
 			NameResolutionHelper helper = this.nameResolutionHelpers.get(eClass);
-			if(helper == null) {
+			if (helper == null) {
 				helper = new NameResolutionHelper(namespace, eClass);
 				this.nameResolutionHelpers.put(eClass, helper);
 			}
-			if(isMany) {
+			if (isMany) {
 				final Collection<NamedElement> values = new HashSet<NamedElement>();
-				for(final String str : valueAsString.split(this.multiValueSeparator)) {
+				for (final String str : valueAsString.split(this.multiValueSeparator)) {
 					final List<NamedElement> elements = helper.getNamedElements(str);
-					if(elements.size() == 1) {
+					if (elements.size() == 1) {
 						values.add(elements.get(0));
 					} else {
 						unresolvedValues.add(str);
 					}
-					if(!unresolvedValues.isEmpty()) {
+					if (!unresolvedValues.isEmpty()) {
 						iStatus = new StringValueConverterStatus(IStatus.ERROR, Activator.PLUGIN_ID, NLS.bind(SOME_STRING_CANT_BE_RESOLVED_TO_FIND_X, eClass.getName()), unresolvedValues);
 					}
 					returnedValue = new MultiConvertedValueContainer<NamedElement>(values, iStatus);
 				}
 			} else {
 				final List<NamedElement> elements = helper.getNamedElements(valueAsString);
-				if(elements.size() == 1) {
-					//it is OK
+				if (elements.size() == 1) {
+					// it is OK
 					returnedValue = new ConvertedValueContainer<NamedElement>(elements.get(0), iStatus);
 				} else {
 					unresolvedValues.add(valueAsString);
@@ -241,11 +239,11 @@ public class UMLStringValueConverter extends EMFStringValueConverter {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param isMany
-	 *        <code>true</code> if the feature isMany
+	 *            <code>true</code> if the feature isMany
 	 * @param valueAsString
-	 *        the value to parse
+	 *            the value to parse
 	 * @return
 	 *         the result of the parsing
 	 */
@@ -253,23 +251,23 @@ public class UMLStringValueConverter extends EMFStringValueConverter {
 		ConvertedValueContainer<?> returnedValue = null;
 		IStatus iStatus = Status.OK_STATUS;
 		final Collection<String> unresolvedValues = new ArrayList<String>();
-		if(isMany) {
+		if (isMany) {
 			final Collection<EnumerationLiteral> values = new ArrayList<EnumerationLiteral>();
-			for(final String str : valueAsString.split(this.multiValueSeparator)) {
-				final EnumerationLiteral lit = (EnumerationLiteral)enumeration.getMember(str);
-				if(lit != null) {
+			for (final String str : valueAsString.split(this.multiValueSeparator)) {
+				final EnumerationLiteral lit = (EnumerationLiteral) enumeration.getMember(str);
+				if (lit != null) {
 					values.add(lit);
 				} else {
 					unresolvedValues.add(str);
 				}
 			}
-			if(!unresolvedValues.isEmpty()) {
+			if (!unresolvedValues.isEmpty()) {
 				iStatus = new StringValueConverterStatus(IStatus.ERROR, Activator.PLUGIN_ID, NLS.bind(SOME_STRING_ARE_NOT_VALID_TO_CREATE_X, PrimitivesTypesUtils.ENUMERATION_LITERAL), unresolvedValues);
 			}
 			returnedValue = new MultiConvertedValueContainer<EnumerationLiteral>(values, iStatus);
 		} else {
-			final EnumerationLiteral lit = (EnumerationLiteral)enumeration.getMember(valueAsString);
-			if(lit == null) {
+			final EnumerationLiteral lit = (EnumerationLiteral) enumeration.getMember(valueAsString);
+			if (lit == null) {
 				unresolvedValues.add(valueAsString);
 				iStatus = new StringValueConverterStatus(IStatus.ERROR, Activator.PLUGIN_ID, NLS.bind(THE_ENUMERATION_LITERAL_X_CANT_BE_FOUND, valueAsString, PrimitivesTypesUtils.ENUMERATION_LITERAL), unresolvedValues);
 			}

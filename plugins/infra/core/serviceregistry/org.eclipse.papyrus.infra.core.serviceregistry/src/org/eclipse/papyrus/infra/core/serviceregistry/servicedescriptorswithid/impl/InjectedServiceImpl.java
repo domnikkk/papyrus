@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedService;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage;
 
@@ -18,7 +15,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.InjectedServiceImpl#getServiceName <em>Service Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.InjectedServiceImpl#getServiceName <em>Service Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,6 +26,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	 * The default value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getServiceName()
 	 * @generated
 	 * @ordered
@@ -39,6 +37,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	 * The cached value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getServiceName()
 	 * @generated
 	 * @ordered
@@ -48,6 +47,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected InjectedServiceImpl() {
@@ -57,6 +57,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -67,8 +68,10 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getServiceName() {
 		return serviceName;
 	}
@@ -76,25 +79,29 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setServiceName(String newServiceName) {
 		String oldServiceName = serviceName;
 		serviceName = newServiceName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorswithidPackage.INJECTED_SERVICE__SERVICE_NAME, oldServiceName, serviceName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.INJECTED_SERVICE__SERVICE_NAME:
-				return getServiceName();
+		case ServicedescriptorswithidPackage.INJECTED_SERVICE__SERVICE_NAME:
+			return getServiceName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -102,14 +109,15 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.INJECTED_SERVICE__SERVICE_NAME:
-				setServiceName((String)newValue);
-				return;
+		case ServicedescriptorswithidPackage.INJECTED_SERVICE__SERVICE_NAME:
+			setServiceName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -117,14 +125,15 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.INJECTED_SERVICE__SERVICE_NAME:
-				setServiceName(SERVICE_NAME_EDEFAULT);
-				return;
+		case ServicedescriptorswithidPackage.INJECTED_SERVICE__SERVICE_NAME:
+			setServiceName(SERVICE_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -132,13 +141,14 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.INJECTED_SERVICE__SERVICE_NAME:
-				return SERVICE_NAME_EDEFAULT == null ? serviceName != null : !SERVICE_NAME_EDEFAULT.equals(serviceName);
+		case ServicedescriptorswithidPackage.INJECTED_SERVICE__SERVICE_NAME:
+			return SERVICE_NAME_EDEFAULT == null ? serviceName != null : !SERVICE_NAME_EDEFAULT.equals(serviceName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -146,11 +156,14 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (serviceName: ");
@@ -159,4 +172,4 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 		return result.toString();
 	}
 
-} //InjectedServiceImpl
+} // InjectedServiceImpl

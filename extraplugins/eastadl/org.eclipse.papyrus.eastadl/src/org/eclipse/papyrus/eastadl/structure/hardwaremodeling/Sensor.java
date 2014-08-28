@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,11 +22,11 @@ package org.eclipse.papyrus.eastadl.structure.hardwaremodeling;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Sensor represents a hardware entity for digital or analog sensor elements. The Sensor is connected electrically to the electrical entities of the Hardware Design Architecture. 
- * 
+ * Sensor represents a hardware entity for digital or analog sensor elements. The Sensor is connected electrically to the electrical entities of the Hardware Design Architecture.
+ *
  * Semantics:
  * Sensor denotes an electrical sensor. The Sensor represents the physical and electrical aspects of sensor hardware. The logical aspect is represented by an HWFunctionType associated to the Sensor.
- * 
+ *
  * Notation:
  * Sensor is shown as a Circle or oval. The circle contains the name, and its ports or port groups on the perimeter.
  * <!-- end-model-doc -->

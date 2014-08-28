@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -91,40 +91,40 @@ public class ResourceDropAdapter extends ViewerDropAdapter {
 	public boolean performDrop(Object data) {
 		boolean result = false;
 
-		if(data instanceof IResource[]) {
-			data = new StructuredSelection((IResource[])data);
-		} else if((data instanceof PluginTransferData) && "org.eclipse.ui.navigator.PluginDropAction".equals(((PluginTransferData)data).getExtensionId())) { //$NON-NLS-1$
-			String viewerID = new String(((PluginTransferData)data).getData());
+		if (data instanceof IResource[]) {
+			data = new StructuredSelection((IResource[]) data);
+		} else if ((data instanceof PluginTransferData) && "org.eclipse.ui.navigator.PluginDropAction".equals(((PluginTransferData) data).getExtensionId())) { //$NON-NLS-1$
+			String viewerID = new String(((PluginTransferData) data).getData());
 			IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 			IViewPart view = page.findView(viewerID);
-			if(view != null) {
+			if (view != null) {
 				data = view.getSite().getSelectionProvider().getSelection();
 			}
 		}
 
 		CDOResourceNode dropTarget = adaptDropTarget(getCurrentTarget());
-		if(dropTarget != null) {
+		if (dropTarget != null) {
 			Iterable<?> toMove = Collections.emptyList();
 
 			// handle resources to move within the repositories view
-			if(data instanceof IStructuredSelection) {
-				IStructuredSelection selection = (IStructuredSelection)data;
+			if (data instanceof IStructuredSelection) {
+				IStructuredSelection selection = (IStructuredSelection) data;
 				toMove = getResourceNodeAdaptables(selection);
-			} else if(data instanceof PluginTransferData) {
-				PluginTransferData ptData = (PluginTransferData)data;
-				if(ResourceDropActionDelegate.DROP_ACTION_ID.equals(ptData.getExtensionId())) {
+			} else if (data instanceof PluginTransferData) {
+				PluginTransferData ptData = (PluginTransferData) data;
+				if (ResourceDropActionDelegate.DROP_ACTION_ID.equals(ptData.getExtensionId())) {
 					CDOResourceURITransferData uris = CDOResourceURITransferData.deserialize(ptData.getData());
 					toMove = getResourceNodeAdaptables(uris.getURIs());
 				}
 			}
 
-			if(!Iterables.isEmpty(toMove)) {
+			if (!Iterables.isEmpty(toMove)) {
 				result = moveResourceNodes(dropTarget, toMove);
 			} else {
 				// handle resources to import from the workspace
-				if(data instanceof IStructuredSelection) {
-					Iterable<IFile> diFiles = getDIFiles((IStructuredSelection)data);
-					if(!Iterables.isEmpty(diFiles)) {
+				if (data instanceof IStructuredSelection) {
+					Iterable<IFile> diFiles = getDIFiles((IStructuredSelection) data);
+					if (!Iterables.isEmpty(diFiles)) {
 						result = importModels(dropTarget, diFiles);
 					}
 				}
@@ -139,16 +139,16 @@ public class ResourceDropAdapter extends ViewerDropAdapter {
 
 		// validate the move before we attempt to move anything
 		Iterable<? extends CDOResourceNode> nodes = Iterables.transform(resourceNodes, CDOFunctions.adapt(CDOResourceNode.class));
-		for(CDOResourceNode next : nodes) {
+		for (CDOResourceNode next : nodes) {
 			result = true;
 
-			if(contains(dropTarget, next)) {
+			if (contains(dropTarget, next)) {
 				result = false;
 				break;
 			}
 		}
 
-		if(result) {
+		if (result) {
 			new Job(Messages.ResourceDropAdapter_1) {
 
 				{
@@ -169,26 +169,26 @@ public class ResourceDropAdapter extends ViewerDropAdapter {
 		boolean result = false;
 
 		IWorkbenchWindow window = null;
-		for(IWorkbenchWindow next : PlatformUI.getWorkbench().getWorkbenchWindows()) {
-			if(next.getShell() == getViewer().getControl().getShell()) {
+		for (IWorkbenchWindow next : PlatformUI.getWorkbench().getWorkbenchWindows()) {
+			if (next.getShell() == getViewer().getControl().getShell()) {
 				window = next;
 				break;
 			}
 		}
 
-		if(window != null) {
+		if (window != null) {
 			URI uri = dropTarget.getURI();
 			IPapyrusRepository repository = PapyrusRepositoryManager.INSTANCE.getRepositoryForURI(uri);
-			if(repository != null) {
+			if (repository != null) {
 				List<IPapyrusFile> papyrusFiles = Lists.newArrayList();
-				for(IFile next : diFiles) {
+				for (IFile next : diFiles) {
 					IPapyrusFile papyrusFile = PapyrusModelHelper.getPapyrusModelFactory().createIPapyrusFile(next);
-					if(papyrusFile != null) {
+					if (papyrusFile != null) {
 						papyrusFiles.add(papyrusFile);
 					}
 				}
 
-				if(!papyrusFiles.isEmpty()) {
+				if (!papyrusFiles.isEmpty()) {
 					result = true;
 					ImportModelsHandler.importModels(window, new StructuredSelection(papyrusFiles), repository);
 				}
@@ -204,9 +204,9 @@ public class ResourceDropAdapter extends ViewerDropAdapter {
 
 		try {
 			CDOResourceNode newParent = getCorrespondent(destination, transaction);
-			for(Object next : nodeAdaptables) {
-				if(next instanceof DIModel) {
-					for(CDOResourceNode component : getResourceNodes(Arrays.asList(((DIModel)next).getChildren()))) {
+			for (Object next : nodeAdaptables) {
+				if (next instanceof DIModel) {
+					for (CDOResourceNode component : getResourceNodes(Arrays.asList(((DIModel) next).getChildren()))) {
 						moveTo(newParent, getCorrespondent(component, transaction));
 					}
 				} else {
@@ -231,11 +231,11 @@ public class ResourceDropAdapter extends ViewerDropAdapter {
 		CDOResourceNode result;
 
 		try {
-			if(node == null) {
+			if (node == null) {
 				throw new CoreException(error(Messages.ResourceDropAdapter_2));
-			} else if(node instanceof CDOResourceFolder) {
+			} else if (node instanceof CDOResourceFolder) {
 				result = view.getResourceFolder(node.getPath());
-			} else if(node instanceof CDOResource) {
+			} else if (node instanceof CDOResource) {
 				result = view.getResource(node.getPath());
 			} else {
 				throw new CoreException(error(NLS.bind(Messages.ResourceDropAdapter_4, node.getClass().getName())));
@@ -260,9 +260,9 @@ public class ResourceDropAdapter extends ViewerDropAdapter {
 	protected void moveTo(CDOResourceNode newParent, CDOResourceNode node) throws CoreException {
 		String newPath = (node == null) ? null : new Path(newParent.getPath()).append(node.getName()).toString();
 
-		if(node == null) {
+		if (node == null) {
 			throw new CoreException(error(Messages.ResourceDropAdapter_0));
-		} else if(newParent.cdoView().hasResource(newPath)) {
+		} else if (newParent.cdoView().hasResource(newPath)) {
 			throw new CoreException(error(NLS.bind(Messages.ResourceDropAdapter_6, newPath)));
 		} else {
 			// just set the path. The node moves itself
@@ -275,20 +275,20 @@ public class ResourceDropAdapter extends ViewerDropAdapter {
 		boolean result = false;
 
 		LocalSelectionTransfer local = LocalSelectionTransfer.getTransfer();
-		if(local.isSupportedType(transferType) && (local.getSelection() instanceof IStructuredSelection) && isValidResourceContainer(target)) {
-			IStructuredSelection selection = (IStructuredSelection)local.getSelection();
+		if (local.isSupportedType(transferType) && (local.getSelection() instanceof IStructuredSelection) && isValidResourceContainer(target)) {
+			IStructuredSelection selection = (IStructuredSelection) local.getSelection();
 			CDOResourceNode dropTarget = adaptDropTarget(target);
 
 			// handle drag of files from the Project Explorer. If there's any
 			// DI file, that's good enough, because the import wizard handles
 			// mapping to repository paths
-			if((dropTarget != null) && !Iterables.isEmpty(getDIFiles(selection))) {
+			if ((dropTarget != null) && !Iterables.isEmpty(getDIFiles(selection))) {
 				result = true;
 			}
-		} else if(PluginTransfer.getInstance().isSupportedType(transferType) && isValidResourceContainer(target)) {
+		} else if (PluginTransfer.getInstance().isSupportedType(transferType) && isValidResourceContainer(target)) {
 			// assume that intra-repository drag of resource nodes will be OK
 			result = true;
-		} else if(ResourceTransfer.getInstance().isSupportedType(transferType) && isValidResourceContainer(target)) {
+		} else if (ResourceTransfer.getInstance().isSupportedType(transferType) && isValidResourceContainer(target)) {
 			// assume that dragging resources will be OK
 			result = true;
 		}
@@ -303,10 +303,10 @@ public class ResourceDropAdapter extends ViewerDropAdapter {
 	protected CDOResourceNode adaptDropTarget(Object dropTarget) {
 		CDOResourceNode result = CDOFunctions.adapt(CDOResourceNode.class).apply(dropTarget);
 
-		if(result == null) {
+		if (result == null) {
 			// must be a repository
-			CDOView view = ((IInternalPapyrusRepository)dropTarget).getMasterView();
-			if(view != null) {
+			CDOView view = ((IInternalPapyrusRepository) dropTarget).getMasterView();
+			if (view != null) {
 				result = view.getRootResource();
 			}
 		}
@@ -317,12 +317,12 @@ public class ResourceDropAdapter extends ViewerDropAdapter {
 	protected boolean contains(CDOResourceNode parent, CDOResourceNode child) {
 		boolean result = false;
 
-		if(parent instanceof CDOResourceFolder) {
-			CDOResourceFolder folder = (CDOResourceFolder)parent;
+		if (parent instanceof CDOResourceFolder) {
+			CDOResourceFolder folder = (CDOResourceFolder) parent;
 			result = folder.getNodes().contains(child);
-		} else if(parent instanceof CDOResource) {
-			CDOResource resource = (CDOResource)parent;
-			if(resource.isRoot()) {
+		} else if (parent instanceof CDOResource) {
+			CDOResource resource = (CDOResource) parent;
+			if (resource.isRoot()) {
 				result = resource.getContents().contains(child);
 			}
 		}
@@ -331,26 +331,26 @@ public class ResourceDropAdapter extends ViewerDropAdapter {
 	}
 
 	protected Iterable<?> getResourceNodeAdaptables(IStructuredSelection selection) {
-		return Iterables.filter((List<?>)selection.toList(), CDOPredicates.adaptsTo(CDOResourceNode.class));
+		return Iterables.filter((List<?>) selection.toList(), CDOPredicates.adaptsTo(CDOResourceNode.class));
 	}
 
 	protected Iterable<?> getResourceNodeAdaptables(Iterable<URI> uris) {
 		List<Object> result = Lists.newArrayList();
 
-		for(URI next : uris) {
+		for (URI next : uris) {
 			IPapyrusRepository repo = PapyrusRepositoryManager.INSTANCE.getRepositoryForURI(next);
-			if(repo != null) {
-				CDOView view = ((IInternalPapyrusRepository)repo).getMasterView();
-				if(view != null) { // the repository could be disconnected by now
+			if (repo != null) {
+				CDOView view = ((IInternalPapyrusRepository) repo).getMasterView();
+				if (view != null) { // the repository could be disconnected by now
 					String path = CDOURIUtil.extractResourcePath(next);
 					try {
 						CDOResourceNode node = view.getResourceNode(path);
-						if(node instanceof CDOResource) {
-							DIModel diModel = DIModel.getInstance((CDOResource)node, false);
-							if(diModel != null) {
+						if (node instanceof CDOResource) {
+							DIModel diModel = DIModel.getInstance((CDOResource) node, false);
+							if (diModel != null) {
 								result.add(diModel);
 							}
-						} else if(node instanceof CDOResourceNode) {
+						} else if (node instanceof CDOResourceNode) {
 							result.add(node);
 						}
 					} catch (Exception e) {

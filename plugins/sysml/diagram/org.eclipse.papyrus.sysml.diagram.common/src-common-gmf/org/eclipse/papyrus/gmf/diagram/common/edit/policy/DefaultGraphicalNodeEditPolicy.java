@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -67,32 +67,32 @@ public class DefaultGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 		// Add parameter (source and target view to the CreateRelationshipRequest
 		CreateElementRequestAdapter requestAdapter = request.getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
-		CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest)requestAdapter.getAdapter(CreateRelationshipRequest.class);
+		CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest) requestAdapter.getAdapter(CreateRelationshipRequest.class);
 
-		View sourceView = (View)request.getSourceEditPart().getModel();
+		View sourceView = (View) request.getSourceEditPart().getModel();
 		createElementRequest.setParameter(RequestParameterConstants.EDGE_CREATE_REQUEST_SOURCE_VIEW, sourceView);
 
-		View targetView = (View)request.getTargetEditPart().getModel();
+		View targetView = (View) request.getTargetEditPart().getModel();
 		createElementRequest.setParameter(RequestParameterConstants.EDGE_CREATE_REQUEST_TARGET_VIEW, targetView);
 		createElementRequest.setParameter(RequestParameterConstants.EDGE_TARGET_POINT, request.getLocation());
 
-		//see bug 430702: [Diagram] Moving source of a link moves the target too, we need to store in the parameters : 
-		//- the source point
-		//- the target point
-		//- the source figure
-		//- the target figure
+		// see bug 430702: [Diagram] Moving source of a link moves the target too, we need to store in the parameters :
+		// - the source point
+		// - the target point
+		// - the source figure
+		// - the target figure
 		final EditPart sourceEP = request.getSourceEditPart();
-		if(sourceEP instanceof GraphicalEditPart) {
-			createElementRequest.setParameter(RequestParameterConstants.EDGE_SOURCE_FIGURE, ((GraphicalEditPart)sourceEP).getFigure());
+		if (sourceEP instanceof GraphicalEditPart) {
+			createElementRequest.setParameter(RequestParameterConstants.EDGE_SOURCE_FIGURE, ((GraphicalEditPart) sourceEP).getFigure());
 		}
 		final EditPart targetEP = request.getTargetEditPart();
-		if(targetEP instanceof GraphicalEditPart) {
-			createElementRequest.setParameter(RequestParameterConstants.EDGE_TARGET_FIGURE, ((GraphicalEditPart)targetEP).getFigure());
+		if (targetEP instanceof GraphicalEditPart) {
+			createElementRequest.setParameter(RequestParameterConstants.EDGE_TARGET_FIGURE, ((GraphicalEditPart) targetEP).getFigure());
 		}
 
-		final TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+		final TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		final Command defaultCommand = super.getConnectionAndRelationshipCompleteCommand(request);
-		if(defaultCommand != null && defaultCommand.canExecute()) {
+		if (defaultCommand != null && defaultCommand.canExecute()) {
 			final CompoundCommand cc = new CompoundCommand("ConnectionAndRelationshipCompleteCommand");//$NON-NLS-1$
 			cc.add(defaultCommand);
 			final ICommand fixAnchor = new FixEdgeAnchorAfterCreationCommand(editingDomain, request);
@@ -108,23 +108,24 @@ public class DefaultGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	@SuppressWarnings("restriction")
 	@Override
 	protected Command getConnectionCreateCommand(CreateConnectionRequest request) {
-		if(!(request instanceof CreateConnectionViewRequest))
+		if (!(request instanceof CreateConnectionViewRequest)) {
 			return null;
-		CreateConnectionViewRequest req = (CreateConnectionViewRequest)request;
+		}
+		CreateConnectionViewRequest req = (CreateConnectionViewRequest) request;
 		CompositeCommand cc = new CompositeCommand(DiagramUIMessages.Commands_CreateCommand_Connection_Label);
-		Diagram diagramView = ((View)getHost().getModel()).getDiagram();
+		Diagram diagramView = ((View) getHost().getModel()).getDiagram();
 
 		// TransactionalEditingDomain editingDomain = getEditingDomain();
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		CreateCommand createCommand = new CreateViewCommand(editingDomain, req.getConnectionViewDescriptor(), diagramView.getDiagram());
 		//
-		setViewAdapter((IAdaptable)createCommand.getCommandResult().getReturnValue());
-		
-		//see bug 430702: [Diagram] Moving source of a link moves the target too, we need to store the source point to fix this bug.
+		setViewAdapter((IAdaptable) createCommand.getCommandResult().getReturnValue());
+
+		// see bug 430702: [Diagram] Moving source of a link moves the target too, we need to store the source point to fix this bug.
 		@SuppressWarnings("unchecked")
-		Map<Object,Object> parameters = req.getExtendedData();
+		Map<Object, Object> parameters = req.getExtendedData();
 		parameters.put(RequestParameterConstants.EDGE_SOURCE_POINT, request.getLocation());
-		
+
 		SetConnectionEndsCommand sceCommand = new SetConnectionEndsCommand(editingDomain, StringStatics.BLANK);
 		sceCommand.setEdgeAdaptor(getViewAdapter());
 		sceCommand.setNewSourceAdaptor(new EObjectAdapter(getView()));
@@ -144,40 +145,40 @@ public class DefaultGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy#getReconnectSourceCommand(org.eclipse.gef.requests.ReconnectRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	protected Command getReconnectSourceCommand(final ReconnectRequest request) {
 		final Command reconnectCmd = super.getReconnectSourceCommand(request);
-		if(reconnectCmd != null && reconnectCmd.canExecute()) {
+		if (reconnectCmd != null && reconnectCmd.canExecute()) {
 			final CompoundCommand cc = new CompoundCommand();
 			cc.add(reconnectCmd);
-			//see bug 430702: [Diagram] Moving source of a link moves the target too.
-			cc.add(new ICommandProxy(new FixEdgeAnchorsDeferredCommand(getEditingDomain(), (IGraphicalEditPart)getHost(), Collections.singleton(request.getConnectionEditPart()))));
+			// see bug 430702: [Diagram] Moving source of a link moves the target too.
+			cc.add(new ICommandProxy(new FixEdgeAnchorsDeferredCommand(getEditingDomain(), (IGraphicalEditPart) getHost(), Collections.singleton(request.getConnectionEditPart()))));
 			return cc;
 		}
 		return reconnectCmd;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy#getReconnectTargetCommand(org.eclipse.gef.requests.ReconnectRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	protected Command getReconnectTargetCommand(ReconnectRequest request) {
 		final Command reconnectCmd = super.getReconnectTargetCommand(request);
-		if(reconnectCmd != null && reconnectCmd.canExecute()) {
+		if (reconnectCmd != null && reconnectCmd.canExecute()) {
 			final CompoundCommand cc = new CompoundCommand();
 			cc.add(reconnectCmd);
-			//see bug 430702: [Diagram] Moving source of a link moves the target too.
-			cc.add(new ICommandProxy(new FixEdgeAnchorsDeferredCommand(getEditingDomain(), (IGraphicalEditPart)getHost(), Collections.singleton(request.getConnectionEditPart()))));
+			// see bug 430702: [Diagram] Moving source of a link moves the target too.
+			cc.add(new ICommandProxy(new FixEdgeAnchorsDeferredCommand(getEditingDomain(), (IGraphicalEditPart) getHost(), Collections.singleton(request.getConnectionEditPart()))));
 			return cc;
 		}
 		return reconnectCmd;
@@ -186,7 +187,7 @@ public class DefaultGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the editing domain to use
 	 */

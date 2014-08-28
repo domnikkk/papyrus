@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ import org.eclipse.swt.widgets.FileDialog;
 /**
  * A Widget for editing multi-valued Strings with File paths
  * The file paths may be absolute (FileSystem paths) or relative to the workspace (Workspace paths)
- * 
+ *
  * @author Camille Letavernier
  */
 public class MultipleStringFileEditor extends MultipleValueEditor {
@@ -84,7 +84,7 @@ public class MultipleStringFileEditor extends MultipleValueEditor {
 
 	@Override
 	public void setDirectCreation(boolean directCreation) {
-		super.setDirectCreation(true); //Always true
+		super.setDirectCreation(true); // Always true
 	}
 
 	@Override
@@ -107,32 +107,32 @@ public class MultipleStringFileEditor extends MultipleValueEditor {
 
 	/**
 	 * Handle events occuring on controls
-	 * 
+	 *
 	 * @see org.eclipse.swt.events.SelectionListener#widgetSelected(org.eclipse.swt.events.SelectionEvent)
-	 * 
+	 *
 	 * @param e
 	 */
 	@Override
 	public void widgetSelected(SelectionEvent e) {
 		super.widgetSelected(e);
-		if(e.widget == browseFileSystem) {
+		if (e.widget == browseFileSystem) {
 			browseFileSystem();
-		} else if(e.widget == browseWorkspace) {
+		} else if (e.widget == browseWorkspace) {
 			browseWorkspace();
 		}
 	}
 
 	protected void browseFileSystem() {
-		//		File file = FileUtil.getFile(text.getText());
+		// File file = FileUtil.getFile(text.getText());
 
 		FileDialog dialog = new FileDialog(getShell(), SWT.MULTI | SWT.OPEN);
 		dialog.setFilterExtensions(filterExtensions.toArray(new String[filterExtensions.size()]));
 		dialog.setFilterNames(filterNames.toArray(new String[filterNames.size()]));
-		if(dialog.open() != null) {
+		if (dialog.open() != null) {
 			List<String> filePathList = new ArrayList<String>(modelProperty.size() + dialog.getFileNames().length);
 			filePathList.addAll(modelProperty);
 
-			for(String fileName : dialog.getFileNames()) {
+			for (String fileName : dialog.getFileNames()) {
 				filePathList.add(dialog.getFilterPath() + File.separator + fileName);
 			}
 
@@ -156,11 +156,11 @@ public class MultipleStringFileEditor extends MultipleValueEditor {
 		selector.setLabelProvider(labelProvider);
 
 
-		//Prepare the WorkspaceContentProvider and use the right filters
+		// Prepare the WorkspaceContentProvider and use the right filters
 		WorkspaceContentProvider contentProvider = new WorkspaceContentProvider();
 
-		contentProvider.setExtensionFilters(new LinkedHashMap<String, String>()); //Reset the default filters
-		for(int i = 0; i < Math.min(filterNames.size(), filterExtensions.size()); i++) {
+		contentProvider.setExtensionFilters(new LinkedHashMap<String, String>()); // Reset the default filters
+		for (int i = 0; i < Math.min(filterNames.size(), filterExtensions.size()); i++) {
 			contentProvider.addExtensionFilter(filterExtensions.get(i), filterNames.get(i));
 		}
 
@@ -168,7 +168,7 @@ public class MultipleStringFileEditor extends MultipleValueEditor {
 
 
 		MultipleValueSelectorDialog dialog = new MultipleValueSelectorDialog(getShell(), selector);
-		if(labelText != null) {
+		if (labelText != null) {
 			dialog.setTitle(labelText);
 		}
 
@@ -179,14 +179,14 @@ public class MultipleStringFileEditor extends MultipleValueEditor {
 		selector.setUnique(true);
 
 		int code = dialog.open();
-		if(code == Window.OK) {
+		if (code == Window.OK) {
 			Object[] result = dialog.getResult();
-			if(result.length > 0) {
+			if (result.length > 0) {
 				List<String> filePathResult = new ArrayList<String>(result.length + modelProperty.size());
 				filePathResult.addAll(modelProperty);
-				for(Object file : result) {
-					if(file instanceof IFile) {
-						filePathResult.add(FileUtil.getPath((IFile)file, false));
+				for (Object file : result) {
+					if (file instanceof IFile) {
+						filePathResult.add(FileUtil.getPath((IFile) file, false));
 					}
 				}
 				modelProperty.clear();
@@ -197,8 +197,8 @@ public class MultipleStringFileEditor extends MultipleValueEditor {
 	}
 
 	public void setFilters(String[] filterExtensions, String[] filterNames) {
-		if(filterExtensions.length != filterNames.length) {
-			//This is a simple warning. Only valid filters will be retained.
+		if (filterExtensions.length != filterNames.length) {
+			// This is a simple warning. Only valid filters will be retained.
 			Activator.log.warn(Messages.MultipleStringFileEditor_2);
 		}
 
@@ -209,7 +209,7 @@ public class MultipleStringFileEditor extends MultipleValueEditor {
 	protected String[] getFilterLabels(String[] filterNames, String[] filterExtensions) {
 		int size = Math.min(filterNames.length, filterExtensions.length);
 		String[] filters = new String[size];
-		for(int i = 0; i < size; i++) {
+		for (int i = 0; i < size; i++) {
 			filters[i] = filterNames[i] + " (" + filterExtensions[i] + ")"; //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		return filters;

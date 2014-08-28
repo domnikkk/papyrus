@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,12 +23,12 @@ public class DiagramUtils {
 
 	public static void setUUID(final View diagramView, final String uuidDiagram) {
 		EAnnotation annotation = diagramView.getEAnnotation(DIAGRAM_ANNOTATION);
-		if(annotation == null) {
+		if (annotation == null) {
 			annotation = EcoreFactory.eINSTANCE.createEAnnotation();
 			annotation.setSource(DIAGRAM_ANNOTATION);
 			diagramView.getEAnnotations().add(annotation);
 		}
-		if(annotation.getDetails().get(UUID) != null) {
+		if (annotation.getDetails().get(UUID) != null) {
 			annotation.getDetails().clear();
 		}
 		annotation.getDetails().put(UUID, uuidDiagram);
@@ -37,7 +37,7 @@ public class DiagramUtils {
 	public static String getUUIDForSnapshot(final View diagramView) {
 
 		final EAnnotation annotation = diagramView.getEAnnotation(DIAGRAM_ANNOTATION);
-		if(annotation != null) {
+		if (annotation != null) {
 			return annotation.getDetails().get(UUID);
 		}
 		return "";

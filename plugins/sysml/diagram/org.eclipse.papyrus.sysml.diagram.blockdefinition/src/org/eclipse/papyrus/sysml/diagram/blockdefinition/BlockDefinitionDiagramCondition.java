@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *  Laurent Wouters (CEA LIST) laurent.wouters@cea.fr - Viewpoints application
  *
@@ -25,6 +25,7 @@ public class BlockDefinitionDiagramCondition extends PerspectiveContextDependenc
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean create(EObject selectedElement) {
 		return false;
 	}

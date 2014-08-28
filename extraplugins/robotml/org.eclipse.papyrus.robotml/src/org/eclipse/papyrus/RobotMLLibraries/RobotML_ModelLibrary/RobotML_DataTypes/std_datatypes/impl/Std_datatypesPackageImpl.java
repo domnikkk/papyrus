@@ -9,41 +9,23 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
-
 import org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.Actionlib_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.Diagnostic_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.impl.Diagnostic_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.Geometry_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.Oarp1_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Oarp4_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Oarp4_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ByteMultiArray;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32MultiArray;
@@ -61,19 +43,20 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt32MultiArray;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt64MultiArray;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt8MultiArray;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class Std_datatypesPackageImpl extends EPackageImpl implements Std_datatypesPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass headerEClass = null;
@@ -81,6 +64,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass multiArrayDimensionEClass = null;
@@ -88,6 +72,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass multiArrayLayoutEClass = null;
@@ -95,6 +80,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass byteMultiArrayEClass = null;
@@ -102,6 +88,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass colorRGBAEClass = null;
@@ -109,6 +96,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass float32MultiArrayEClass = null;
@@ -116,6 +104,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass int32MultiArrayEClass = null;
@@ -123,6 +112,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass int8MultiArrayEClass = null;
@@ -130,6 +120,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass int16MultiArrayEClass = null;
@@ -137,6 +128,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass int64MultiArrayEClass = null;
@@ -144,6 +136,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass float64MultiArrayEClass = null;
@@ -151,6 +144,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass uInt64MultiArrayEClass = null;
@@ -158,6 +152,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass uIint16MultiArrayEClass = null;
@@ -165,6 +160,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass uInt32MultiArrayEClass = null;
@@ -172,6 +168,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass uInt8MultiArrayEClass = null;
@@ -179,6 +176,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType uInt32EDataType = null;
@@ -186,6 +184,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType timeEDataType = null;
@@ -193,6 +192,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType stringEDataType = null;
@@ -200,6 +200,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType byteEDataType = null;
@@ -207,6 +208,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType float64EDataType = null;
@@ -214,6 +216,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType int8EDataType = null;
@@ -221,6 +224,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType boolEDataType = null;
@@ -228,6 +232,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType uInt8EDataType = null;
@@ -235,6 +240,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType uInt16EDataType = null;
@@ -242,6 +248,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType int32EDataType = null;
@@ -249,6 +256,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType int16EDataType = null;
@@ -256,6 +264,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType charEDataType = null;
@@ -263,6 +272,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType durationEDataType = null;
@@ -270,6 +280,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType int64EDataType = null;
@@ -277,6 +288,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType uInt64EDataType = null;
@@ -284,20 +296,17 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType float32EDataType = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage#eNS_URI
 	 * @see #init()
@@ -310,27 +319,30 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link Std_datatypesPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 *
+	 * <p>
+	 * This method is used to initialize {@link Std_datatypesPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static Std_datatypesPackage init() {
-		if (isInited) return (Std_datatypesPackage)EPackage.Registry.INSTANCE.getEPackage(Std_datatypesPackage.eNS_URI);
+		if (isInited) {
+			return (Std_datatypesPackage) EPackage.Registry.INSTANCE.getEPackage(Std_datatypesPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		Std_datatypesPackageImpl theStd_datatypesPackage = (Std_datatypesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof Std_datatypesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new Std_datatypesPackageImpl());
+		Std_datatypesPackageImpl theStd_datatypesPackage = (Std_datatypesPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof Std_datatypesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new Std_datatypesPackageImpl());
 
 		isInited = true;
 
@@ -338,14 +350,21 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		RobotMLPackageImpl theRobotMLPackage = (RobotMLPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RobotMLPackage.eNS_URI) instanceof RobotMLPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RobotMLPackage.eNS_URI) : RobotMLPackage.eINSTANCE);
-		Diagnostic_datatypesPackageImpl theDiagnostic_datatypesPackage = (Diagnostic_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Diagnostic_datatypesPackage.eNS_URI) instanceof Diagnostic_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Diagnostic_datatypesPackage.eNS_URI) : Diagnostic_datatypesPackage.eINSTANCE);
-		Geometry_datatypesPackageImpl theGeometry_datatypesPackage = (Geometry_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI) instanceof Geometry_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI) : Geometry_datatypesPackage.eINSTANCE);
-		Nav_datatypesPackageImpl theNav_datatypesPackage = (Nav_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Nav_datatypesPackage.eNS_URI) instanceof Nav_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Nav_datatypesPackage.eNS_URI) : Nav_datatypesPackage.eINSTANCE);
-		Sensor_datatypesPackageImpl theSensor_datatypesPackage = (Sensor_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Sensor_datatypesPackage.eNS_URI) instanceof Sensor_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Sensor_datatypesPackage.eNS_URI) : Sensor_datatypesPackage.eINSTANCE);
-		Actionlib_datatypesPackageImpl theActionlib_datatypesPackage = (Actionlib_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Actionlib_datatypesPackage.eNS_URI) instanceof Actionlib_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Actionlib_datatypesPackage.eNS_URI) : Actionlib_datatypesPackage.eINSTANCE);
-		Oarp1_datatypesPackageImpl theOarp1_datatypesPackage = (Oarp1_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Oarp1_datatypesPackage.eNS_URI) instanceof Oarp1_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Oarp1_datatypesPackage.eNS_URI) : Oarp1_datatypesPackage.eINSTANCE);
-		Oarp4_datatypesPackageImpl theOarp4_datatypesPackage = (Oarp4_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Oarp4_datatypesPackage.eNS_URI) instanceof Oarp4_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Oarp4_datatypesPackage.eNS_URI) : Oarp4_datatypesPackage.eINSTANCE);
+		RobotMLPackageImpl theRobotMLPackage = (RobotMLPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(RobotMLPackage.eNS_URI) instanceof RobotMLPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RobotMLPackage.eNS_URI) : RobotMLPackage.eINSTANCE);
+		Diagnostic_datatypesPackageImpl theDiagnostic_datatypesPackage = (Diagnostic_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Diagnostic_datatypesPackage.eNS_URI) instanceof Diagnostic_datatypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(Diagnostic_datatypesPackage.eNS_URI) : Diagnostic_datatypesPackage.eINSTANCE);
+		Geometry_datatypesPackageImpl theGeometry_datatypesPackage = (Geometry_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI) instanceof Geometry_datatypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(Geometry_datatypesPackage.eNS_URI) : Geometry_datatypesPackage.eINSTANCE);
+		Nav_datatypesPackageImpl theNav_datatypesPackage = (Nav_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Nav_datatypesPackage.eNS_URI) instanceof Nav_datatypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(Nav_datatypesPackage.eNS_URI) : Nav_datatypesPackage.eINSTANCE);
+		Sensor_datatypesPackageImpl theSensor_datatypesPackage = (Sensor_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Sensor_datatypesPackage.eNS_URI) instanceof Sensor_datatypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(Sensor_datatypesPackage.eNS_URI) : Sensor_datatypesPackage.eINSTANCE);
+		Actionlib_datatypesPackageImpl theActionlib_datatypesPackage = (Actionlib_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Actionlib_datatypesPackage.eNS_URI) instanceof Actionlib_datatypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(Actionlib_datatypesPackage.eNS_URI) : Actionlib_datatypesPackage.eINSTANCE);
+		Oarp1_datatypesPackageImpl theOarp1_datatypesPackage = (Oarp1_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Oarp1_datatypesPackage.eNS_URI) instanceof Oarp1_datatypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(Oarp1_datatypesPackage.eNS_URI) : Oarp1_datatypesPackage.eINSTANCE);
+		Oarp4_datatypesPackageImpl theOarp4_datatypesPackage = (Oarp4_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Oarp4_datatypesPackage.eNS_URI) instanceof Oarp4_datatypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(Oarp4_datatypesPackage.eNS_URI) : Oarp4_datatypesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theStd_datatypesPackage.createPackageContents();
@@ -372,7 +391,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 		// Mark meta-data to indicate it can't be changed
 		theStd_datatypesPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(Std_datatypesPackage.eNS_URI, theStd_datatypesPackage);
 		return theStd_datatypesPackage;
@@ -381,6 +400,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getHeader() {
@@ -390,33 +410,37 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getHeader_Seq() {
-		return (EAttribute)headerEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) headerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getHeader_Stamp() {
-		return (EAttribute)headerEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) headerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getHeader_Frame_id() {
-		return (EAttribute)headerEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) headerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getMultiArrayDimension() {
@@ -426,33 +450,37 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMultiArrayDimension_Label() {
-		return (EAttribute)multiArrayDimensionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) multiArrayDimensionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMultiArrayDimension_Size() {
-		return (EAttribute)multiArrayDimensionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) multiArrayDimensionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMultiArrayDimension_Stride() {
-		return (EAttribute)multiArrayDimensionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) multiArrayDimensionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getMultiArrayLayout() {
@@ -462,24 +490,27 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMultiArrayLayout_Dim() {
-		return (EReference)multiArrayLayoutEClass.getEStructuralFeatures().get(0);
+		return (EReference) multiArrayLayoutEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMultiArrayLayout_Data_offset() {
-		return (EAttribute)multiArrayLayoutEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) multiArrayLayoutEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getByteMultiArray() {
@@ -489,24 +520,27 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getByteMultiArray_Layout() {
-		return (EReference)byteMultiArrayEClass.getEStructuralFeatures().get(0);
+		return (EReference) byteMultiArrayEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getByteMultiArray_Data() {
-		return (EAttribute)byteMultiArrayEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) byteMultiArrayEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getColorRGBA() {
@@ -516,42 +550,47 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getColorRGBA_R() {
-		return (EAttribute)colorRGBAEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) colorRGBAEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getColorRGBA_G() {
-		return (EAttribute)colorRGBAEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) colorRGBAEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getColorRGBA_B() {
-		return (EAttribute)colorRGBAEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) colorRGBAEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getColorRGBA_A() {
-		return (EAttribute)colorRGBAEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) colorRGBAEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getFloat32MultiArray() {
@@ -561,24 +600,27 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getFloat32MultiArray_Layout() {
-		return (EReference)float32MultiArrayEClass.getEStructuralFeatures().get(0);
+		return (EReference) float32MultiArrayEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getFloat32MultiArray_Data() {
-		return (EAttribute)float32MultiArrayEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) float32MultiArrayEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getInt32MultiArray() {
@@ -588,24 +630,27 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getInt32MultiArray_Layout() {
-		return (EReference)int32MultiArrayEClass.getEStructuralFeatures().get(0);
+		return (EReference) int32MultiArrayEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getInt32MultiArray_Data() {
-		return (EAttribute)int32MultiArrayEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) int32MultiArrayEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getInt8MultiArray() {
@@ -615,24 +660,27 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getInt8MultiArray_Layout() {
-		return (EReference)int8MultiArrayEClass.getEStructuralFeatures().get(0);
+		return (EReference) int8MultiArrayEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getInt8MultiArray_Data() {
-		return (EAttribute)int8MultiArrayEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) int8MultiArrayEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getInt16MultiArray() {
@@ -642,24 +690,27 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getInt16MultiArray_Layout() {
-		return (EReference)int16MultiArrayEClass.getEStructuralFeatures().get(0);
+		return (EReference) int16MultiArrayEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getInt16MultiArray_Data() {
-		return (EAttribute)int16MultiArrayEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) int16MultiArrayEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getInt64MultiArray() {
@@ -669,24 +720,27 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getInt64MultiArray_Layout() {
-		return (EReference)int64MultiArrayEClass.getEStructuralFeatures().get(0);
+		return (EReference) int64MultiArrayEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getInt64MultiArray_Data() {
-		return (EAttribute)int64MultiArrayEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) int64MultiArrayEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getFloat64MultiArray() {
@@ -696,24 +750,27 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getFloat64MultiArray_Layout() {
-		return (EReference)float64MultiArrayEClass.getEStructuralFeatures().get(0);
+		return (EReference) float64MultiArrayEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getFloat64MultiArray_Data() {
-		return (EAttribute)float64MultiArrayEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) float64MultiArrayEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getUInt64MultiArray() {
@@ -723,24 +780,27 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getUInt64MultiArray_Layout() {
-		return (EReference)uInt64MultiArrayEClass.getEStructuralFeatures().get(0);
+		return (EReference) uInt64MultiArrayEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getUInt64MultiArray_Data() {
-		return (EAttribute)uInt64MultiArrayEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) uInt64MultiArrayEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getUIint16MultiArray() {
@@ -750,24 +810,27 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getUIint16MultiArray_Layout() {
-		return (EReference)uIint16MultiArrayEClass.getEStructuralFeatures().get(0);
+		return (EReference) uIint16MultiArrayEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getUIint16MultiArray_Data() {
-		return (EAttribute)uIint16MultiArrayEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) uIint16MultiArrayEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getUInt32MultiArray() {
@@ -777,24 +840,27 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getUInt32MultiArray_Layout() {
-		return (EReference)uInt32MultiArrayEClass.getEStructuralFeatures().get(0);
+		return (EReference) uInt32MultiArrayEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getUInt32MultiArray_Data() {
-		return (EAttribute)uInt32MultiArrayEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) uInt32MultiArrayEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getUInt8MultiArray() {
@@ -804,24 +870,27 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getUInt8MultiArray_Layout() {
-		return (EReference)uInt8MultiArrayEClass.getEStructuralFeatures().get(0);
+		return (EReference) uInt8MultiArrayEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getUInt8MultiArray_Data() {
-		return (EAttribute)uInt8MultiArrayEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) uInt8MultiArrayEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getUInt32() {
@@ -831,6 +900,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getTime() {
@@ -840,6 +910,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getString() {
@@ -849,6 +920,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getByte() {
@@ -858,6 +930,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getFloat64() {
@@ -867,6 +940,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getInt8() {
@@ -876,6 +950,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getBool() {
@@ -885,6 +960,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getUInt8() {
@@ -894,6 +970,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getUInt16() {
@@ -903,6 +980,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getInt32() {
@@ -912,6 +990,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getInt16() {
@@ -921,6 +1000,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getChar() {
@@ -930,6 +1010,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getDuration() {
@@ -939,6 +1020,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getInt64() {
@@ -948,6 +1030,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getUInt64() {
@@ -957,6 +1040,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getFloat32() {
@@ -966,28 +1050,33 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Std_datatypesFactory getStd_datatypesFactory() {
-		return (Std_datatypesFactory)getEFactoryInstance();
+		return (Std_datatypesFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -1077,19 +1166,23 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -1115,7 +1208,8 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 		initEAttribute(getMultiArrayDimension_Stride(), this.getUInt32(), "stride", null, 1, 1, MultiArrayDimension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(multiArrayLayoutEClass, MultiArrayLayout.class, "MultiArrayLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMultiArrayLayout_Dim(), this.getMultiArrayDimension(), null, "dim", null, 0, -1, MultiArrayLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMultiArrayLayout_Dim(), this.getMultiArrayDimension(), null, "dim", null, 0, -1, MultiArrayLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getMultiArrayLayout_Data_offset(), this.getUInt32(), "data_offset", null, 1, 1, MultiArrayLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(byteMultiArrayEClass, ByteMultiArray.class, "ByteMultiArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1129,11 +1223,13 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 		initEAttribute(getColorRGBA_A(), this.getFloat32(), "a", null, 1, 1, ColorRGBA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(float32MultiArrayEClass, Float32MultiArray.class, "Float32MultiArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFloat32MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, Float32MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFloat32MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, Float32MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getFloat32MultiArray_Data(), this.getFloat32(), "data", null, 0, -1, Float32MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(int32MultiArrayEClass, Int32MultiArray.class, "Int32MultiArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInt32MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, Int32MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getInt32MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, Int32MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getInt32MultiArray_Data(), this.getInt32(), "data", null, 0, -1, Int32MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(int8MultiArrayEClass, Int8MultiArray.class, "Int8MultiArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1141,31 +1237,38 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 		initEAttribute(getInt8MultiArray_Data(), this.getInt8(), "data", null, 0, -1, Int8MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(int16MultiArrayEClass, Int16MultiArray.class, "Int16MultiArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInt16MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, Int16MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getInt16MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, Int16MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getInt16MultiArray_Data(), this.getInt16(), "data", null, 0, -1, Int16MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(int64MultiArrayEClass, Int64MultiArray.class, "Int64MultiArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInt64MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, Int64MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getInt64MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, Int64MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getInt64MultiArray_Data(), this.getInt64(), "data", null, 0, -1, Int64MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(float64MultiArrayEClass, Float64MultiArray.class, "Float64MultiArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFloat64MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, Float64MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFloat64MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, Float64MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getFloat64MultiArray_Data(), this.getFloat64(), "data", null, 0, -1, Float64MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(uInt64MultiArrayEClass, UInt64MultiArray.class, "UInt64MultiArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUInt64MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, UInt64MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUInt64MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, UInt64MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getUInt64MultiArray_Data(), this.getUInt64(), "data", null, 0, -1, UInt64MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(uIint16MultiArrayEClass, UIint16MultiArray.class, "UIint16MultiArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUIint16MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, UIint16MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUIint16MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, UIint16MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getUIint16MultiArray_Data(), this.getUInt16(), "data", null, 0, -1, UIint16MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(uInt32MultiArrayEClass, UInt32MultiArray.class, "UInt32MultiArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUInt32MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, UInt32MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUInt32MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, UInt32MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getUInt32MultiArray_Data(), this.getUInt32(), "data", null, 0, -1, UInt32MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(uInt8MultiArrayEClass, UInt8MultiArray.class, "UInt8MultiArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUInt8MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, UInt8MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUInt8MultiArray_Layout(), this.getMultiArrayLayout(), null, "layout", null, 1, 1, UInt8MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getUInt8MultiArray_Data(), this.getUInt8(), "data", null, 0, -1, UInt8MultiArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize data types
@@ -1190,4 +1293,4 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 		createResource(eNS_URI);
 	}
 
-} //Std_datatypesPackageImpl
+} // Std_datatypesPackageImpl

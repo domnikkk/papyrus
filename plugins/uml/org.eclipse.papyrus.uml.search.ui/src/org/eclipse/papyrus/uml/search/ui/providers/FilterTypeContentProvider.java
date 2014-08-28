@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,9 +26,9 @@ import org.eclipse.search.ui.text.AbstractTextSearchResult;
 import org.eclipse.uml2.uml.Element;
 
 /**
- * 
+ *
  * Content provider used by the filter dialog to list available types in a search result
- * 
+ *
  */
 public class FilterTypeContentProvider implements ITreeContentProvider {
 
@@ -43,14 +43,14 @@ public class FilterTypeContentProvider implements ITreeContentProvider {
 	public Object[] getElements(Object inputElement) {
 		Set<Object> results = new HashSet<Object>();
 
-		if(inputElement instanceof AbstractTextSearchResult) {
+		if (inputElement instanceof AbstractTextSearchResult) {
 
-			Collection<AbstractResultEntry> matches = MatchUtils.getMatches((AbstractTextSearchResult)inputElement, Element.class, false);
+			Collection<AbstractResultEntry> matches = MatchUtils.getMatches((AbstractTextSearchResult) inputElement, Element.class, false);
 
-			for(AbstractResultEntry match : matches) {
+			for (AbstractResultEntry match : matches) {
 
-				results.add(((EObject)match.elementToCheckFilterFor()).eClass());
-				results.addAll(((Element)match.elementToCheckFilterFor()).getAppliedStereotypes());
+				results.add(((EObject) match.elementToCheckFilterFor()).eClass());
+				results.addAll(((Element) match.elementToCheckFilterFor()).getAppliedStereotypes());
 
 			}
 		}

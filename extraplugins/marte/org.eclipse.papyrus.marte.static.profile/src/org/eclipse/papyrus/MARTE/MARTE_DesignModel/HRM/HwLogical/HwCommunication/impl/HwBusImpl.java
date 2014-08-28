@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,10 +26,10 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBusImpl#getAdressWidth <em>Adress Width</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBusImpl#getWordWidth <em>Word Width</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBusImpl#getIsSynchronous <em>Is Synchronous</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBusImpl#getIsSerial <em>Is Serial</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBusImpl#getAdressWidth <em>Adress Width</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBusImpl#getWordWidth <em>Word Width</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBusImpl#getIsSynchronous <em>Is Synchronous</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBusImpl#getIsSerial <em>Is Serial</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The default value of the '{@link #getAdressWidth() <em>Adress Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getAdressWidth()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The cached value of the '{@link #getAdressWidth() <em>Adress Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getAdressWidth()
 	 * @generated
 	 * @ordered
@@ -60,6 +62,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The default value of the '{@link #getWordWidth() <em>Word Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getWordWidth()
 	 * @generated
 	 * @ordered
@@ -70,6 +73,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The cached value of the '{@link #getWordWidth() <em>Word Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getWordWidth()
 	 * @generated
 	 * @ordered
@@ -80,6 +84,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The default value of the '{@link #getIsSynchronous() <em>Is Synchronous</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIsSynchronous()
 	 * @generated
 	 * @ordered
@@ -90,6 +95,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The cached value of the '{@link #getIsSynchronous() <em>Is Synchronous</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIsSynchronous()
 	 * @generated
 	 * @ordered
@@ -100,6 +106,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The default value of the '{@link #getIsSerial() <em>Is Serial</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIsSerial()
 	 * @generated
 	 * @ordered
@@ -110,6 +117,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The cached value of the '{@link #getIsSerial() <em>Is Serial</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIsSerial()
 	 * @generated
 	 * @ordered
@@ -119,6 +127,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HwBusImpl() {
@@ -128,6 +137,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,8 +148,10 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getAdressWidth() {
 		return adressWidth;
 	}
@@ -147,20 +159,25 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setAdressWidth(String newAdressWidth) {
 		String oldAdressWidth = adressWidth;
 		adressWidth = newAdressWidth;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwCommunicationPackage.HW_BUS__ADRESS_WIDTH, oldAdressWidth, adressWidth));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getWordWidth() {
 		return wordWidth;
 	}
@@ -168,20 +185,25 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setWordWidth(String newWordWidth) {
 		String oldWordWidth = wordWidth;
 		wordWidth = newWordWidth;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwCommunicationPackage.HW_BUS__WORD_WIDTH, oldWordWidth, wordWidth));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getIsSynchronous() {
 		return isSynchronous;
 	}
@@ -189,20 +211,25 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsSynchronous(String newIsSynchronous) {
 		String oldIsSynchronous = isSynchronous;
 		isSynchronous = newIsSynchronous;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwCommunicationPackage.HW_BUS__IS_SYNCHRONOUS, oldIsSynchronous, isSynchronous));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getIsSerial() {
 		return isSerial;
 	}
@@ -210,31 +237,35 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsSerial(String newIsSerial) {
 		String oldIsSerial = isSerial;
 		isSerial = newIsSerial;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwCommunicationPackage.HW_BUS__IS_SERIAL, oldIsSerial, isSerial));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwCommunicationPackage.HW_BUS__ADRESS_WIDTH:
-				return getAdressWidth();
-			case HwCommunicationPackage.HW_BUS__WORD_WIDTH:
-				return getWordWidth();
-			case HwCommunicationPackage.HW_BUS__IS_SYNCHRONOUS:
-				return getIsSynchronous();
-			case HwCommunicationPackage.HW_BUS__IS_SERIAL:
-				return getIsSerial();
+		case HwCommunicationPackage.HW_BUS__ADRESS_WIDTH:
+			return getAdressWidth();
+		case HwCommunicationPackage.HW_BUS__WORD_WIDTH:
+			return getWordWidth();
+		case HwCommunicationPackage.HW_BUS__IS_SYNCHRONOUS:
+			return getIsSynchronous();
+		case HwCommunicationPackage.HW_BUS__IS_SERIAL:
+			return getIsSerial();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -242,23 +273,24 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwCommunicationPackage.HW_BUS__ADRESS_WIDTH:
-				setAdressWidth((String)newValue);
-				return;
-			case HwCommunicationPackage.HW_BUS__WORD_WIDTH:
-				setWordWidth((String)newValue);
-				return;
-			case HwCommunicationPackage.HW_BUS__IS_SYNCHRONOUS:
-				setIsSynchronous((String)newValue);
-				return;
-			case HwCommunicationPackage.HW_BUS__IS_SERIAL:
-				setIsSerial((String)newValue);
-				return;
+		case HwCommunicationPackage.HW_BUS__ADRESS_WIDTH:
+			setAdressWidth((String) newValue);
+			return;
+		case HwCommunicationPackage.HW_BUS__WORD_WIDTH:
+			setWordWidth((String) newValue);
+			return;
+		case HwCommunicationPackage.HW_BUS__IS_SYNCHRONOUS:
+			setIsSynchronous((String) newValue);
+			return;
+		case HwCommunicationPackage.HW_BUS__IS_SERIAL:
+			setIsSerial((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -266,23 +298,24 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwCommunicationPackage.HW_BUS__ADRESS_WIDTH:
-				setAdressWidth(ADRESS_WIDTH_EDEFAULT);
-				return;
-			case HwCommunicationPackage.HW_BUS__WORD_WIDTH:
-				setWordWidth(WORD_WIDTH_EDEFAULT);
-				return;
-			case HwCommunicationPackage.HW_BUS__IS_SYNCHRONOUS:
-				setIsSynchronous(IS_SYNCHRONOUS_EDEFAULT);
-				return;
-			case HwCommunicationPackage.HW_BUS__IS_SERIAL:
-				setIsSerial(IS_SERIAL_EDEFAULT);
-				return;
+		case HwCommunicationPackage.HW_BUS__ADRESS_WIDTH:
+			setAdressWidth(ADRESS_WIDTH_EDEFAULT);
+			return;
+		case HwCommunicationPackage.HW_BUS__WORD_WIDTH:
+			setWordWidth(WORD_WIDTH_EDEFAULT);
+			return;
+		case HwCommunicationPackage.HW_BUS__IS_SYNCHRONOUS:
+			setIsSynchronous(IS_SYNCHRONOUS_EDEFAULT);
+			return;
+		case HwCommunicationPackage.HW_BUS__IS_SERIAL:
+			setIsSerial(IS_SERIAL_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -290,19 +323,20 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwCommunicationPackage.HW_BUS__ADRESS_WIDTH:
-				return ADRESS_WIDTH_EDEFAULT == null ? adressWidth != null : !ADRESS_WIDTH_EDEFAULT.equals(adressWidth);
-			case HwCommunicationPackage.HW_BUS__WORD_WIDTH:
-				return WORD_WIDTH_EDEFAULT == null ? wordWidth != null : !WORD_WIDTH_EDEFAULT.equals(wordWidth);
-			case HwCommunicationPackage.HW_BUS__IS_SYNCHRONOUS:
-				return IS_SYNCHRONOUS_EDEFAULT == null ? isSynchronous != null : !IS_SYNCHRONOUS_EDEFAULT.equals(isSynchronous);
-			case HwCommunicationPackage.HW_BUS__IS_SERIAL:
-				return IS_SERIAL_EDEFAULT == null ? isSerial != null : !IS_SERIAL_EDEFAULT.equals(isSerial);
+		case HwCommunicationPackage.HW_BUS__ADRESS_WIDTH:
+			return ADRESS_WIDTH_EDEFAULT == null ? adressWidth != null : !ADRESS_WIDTH_EDEFAULT.equals(adressWidth);
+		case HwCommunicationPackage.HW_BUS__WORD_WIDTH:
+			return WORD_WIDTH_EDEFAULT == null ? wordWidth != null : !WORD_WIDTH_EDEFAULT.equals(wordWidth);
+		case HwCommunicationPackage.HW_BUS__IS_SYNCHRONOUS:
+			return IS_SYNCHRONOUS_EDEFAULT == null ? isSynchronous != null : !IS_SYNCHRONOUS_EDEFAULT.equals(isSynchronous);
+		case HwCommunicationPackage.HW_BUS__IS_SERIAL:
+			return IS_SERIAL_EDEFAULT == null ? isSerial != null : !IS_SERIAL_EDEFAULT.equals(isSerial);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -310,11 +344,14 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (adressWidth: ");
@@ -329,4 +366,4 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 		return result.toString();
 	}
 
-} //HwBusImpl
+} // HwBusImpl

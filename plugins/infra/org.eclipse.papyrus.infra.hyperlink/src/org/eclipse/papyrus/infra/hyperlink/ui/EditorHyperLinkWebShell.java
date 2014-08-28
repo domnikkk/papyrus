@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,10 +48,10 @@ public class EditorHyperLinkWebShell extends AbstractEditHyperlinkShell {
 
 		// code use to wait for an action from the user
 		getEditHyperlinkShell().pack();
-		//		getEditHyperlinkShell().setBounds(500, 500, 600, 120);
+		// getEditHyperlinkShell().setBounds(500, 500, 600, 120);
 		getEditHyperlinkShell().open();
-		while(!getEditHyperlinkShell().isDisposed()) {
-			if(!display.readAndDispatch()) {
+		while (!getEditHyperlinkShell().isDisposed()) {
+			if (!display.readAndDispatch()) {
 				display.sleep();
 			}
 		}
@@ -66,7 +66,7 @@ public class EditorHyperLinkWebShell extends AbstractEditHyperlinkShell {
 
 		this.getObjectcLabel().setText(HYPERLINKS_LABEL);
 		// fill information
-		if(hyperLinkWeb != null) {
+		if (hyperLinkWeb != null) {
 			this.getObjectLabeltext().setText(hyperLinkWeb.getHyperLinkWeb());
 			this.getTooltipInputText().setText(hyperLinkWeb.getTooltipText());
 		} else {
@@ -94,7 +94,7 @@ public class EditorHyperLinkWebShell extends AbstractEditHyperlinkShell {
 			}
 
 			public void mouseDown(MouseEvent e) {
-				if(hyperLinkWeb == null) {
+				if (hyperLinkWeb == null) {
 					hyperLinkWeb = new HyperLinkWeb();
 				}
 				hyperLinkWeb.setHyperLinkWeb(getObjectLabeltext().getText().trim());
@@ -108,7 +108,7 @@ public class EditorHyperLinkWebShell extends AbstractEditHyperlinkShell {
 		});
 		// intialize "use default" check box
 		getUseDefaultCheckBox().setSelection(usedefaultTooltip);
-		if(usedefaultTooltip) {
+		if (usedefaultTooltip) {
 			getTooltipInputText().setEditable(false);
 			getTooltipInputText().setText(getObjectLabeltext().getText());
 		}
@@ -117,7 +117,7 @@ public class EditorHyperLinkWebShell extends AbstractEditHyperlinkShell {
 
 			public void mouseUp(MouseEvent e) {
 				usedefaultTooltip = getUseDefaultCheckBox().getSelection();
-				if(usedefaultTooltip) {
+				if (usedefaultTooltip) {
 					getTooltipInputText().setEditable(false);
 					getTooltipInputText().setText(getObjectLabeltext().getText());
 				} else {
@@ -138,7 +138,7 @@ public class EditorHyperLinkWebShell extends AbstractEditHyperlinkShell {
 		getObjectLabeltext().addKeyListener(new KeyListener() {
 
 			public void keyReleased(KeyEvent e) {
-				if(usedefaultTooltip) {
+				if (usedefaultTooltip) {
 					getTooltipInputText().setText(getObjectLabeltext().getText());
 				}
 			}
@@ -150,7 +150,7 @@ public class EditorHyperLinkWebShell extends AbstractEditHyperlinkShell {
 
 	/**
 	 * Gets the hyper link web.
-	 * 
+	 *
 	 * @return the hyperLinkWeb
 	 */
 	public HyperLinkWeb getHyperLinkWeb() {
@@ -159,9 +159,9 @@ public class EditorHyperLinkWebShell extends AbstractEditHyperlinkShell {
 
 	/**
 	 * Sets the hyper link web.
-	 * 
+	 *
 	 * @param hyperLinkWeb
-	 *        the hyperLinkWeb to set
+	 *            the hyperLinkWeb to set
 	 */
 	public void setHyperLinkWeb(HyperLinkWeb hyperLinkWeb) {
 		this.hyperLinkWeb = hyperLinkWeb;

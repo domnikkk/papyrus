@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,25 +29,25 @@ public final class FigureUtils {
 
 	/**
 	 * Returns a child figure of the given type recursively contained in the given parent figure.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent figure
+	 *            the parent figure
 	 * @param childFigureClass
-	 *        the type of the child figure that is looked for
+	 *            the type of the child figure that is looked for
 	 * @return the child figure if found, or <code>null</code> if the parent figure contains no child figure of the
 	 *         given type
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T extends IFigure> T findChildFigureInstance(final IFigure parent, final Class<T> childFigureClass) {
 		final List<IFigure> children = parent.getChildren();
-		for(final IFigure child : children) {
-			if(childFigureClass.isAssignableFrom(child.getClass())) {
-				return (T)child;
+		for (final IFigure child : children) {
+			if (childFigureClass.isAssignableFrom(child.getClass())) {
+				return (T) child;
 			}
 			// look recursively
 			final IFigure subresult = findChildFigureInstance(child, childFigureClass);
-			if(subresult != null) {
-				return (T)subresult;
+			if (subresult != null) {
+				return (T) subresult;
 			}
 		}
 		// not found
@@ -63,9 +63,9 @@ public final class FigureUtils {
 	@SuppressWarnings("unchecked")
 	public static <T extends IFigure> void internalFindChildFigureInstances(final IFigure parent, final List<T> result, final Class<T> childFigureClass) {
 		final List<IFigure> children = parent.getChildren();
-		for(final IFigure child : children) {
-			if(childFigureClass.isAssignableFrom(child.getClass())) {
-				result.add((T)child);
+		for (final IFigure child : children) {
+			if (childFigureClass.isAssignableFrom(child.getClass())) {
+				result.add((T) child);
 			} else {
 				internalFindChildFigureInstances(child, result, childFigureClass);
 			}
@@ -75,20 +75,20 @@ public final class FigureUtils {
 
 	/**
 	 * Returns the first parent figure of the given type recursively containing the given figure.
-	 * 
+	 *
 	 * @param figure
-	 *        the figure
+	 *            the figure
 	 * @param parentFigureClass
-	 *        the type of the parent figure that is looked for
+	 *            the type of the parent figure that is looked for
 	 * @return the parent figure if found, or <code>null</code> if the figure is not contained by any figure of the
 	 *         given type
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T extends IFigure> T findParentFigureInstance(final IFigure figure, final Class<T> parentFigureClass) {
 		IFigure parent = figure.getParent();
-		while(parent != null) {
-			if(parentFigureClass.isAssignableFrom(parent.getClass())) {
-				return (T)parent;
+		while (parent != null) {
+			if (parentFigureClass.isAssignableFrom(parent.getClass())) {
+				return (T) parent;
 			}
 			parent = parent.getParent();
 		}
@@ -99,19 +99,19 @@ public final class FigureUtils {
 	 * Constrain the given bounds (whose presumed purpose is to become the new bounds for the given Figure), so that
 	 * they don't stick out of the bounds of the {@link ResizableCompartmentFigure} in which the given figure is
 	 * contained. Returns the original bounds if the given Figure is not contained in a {@link ResizableCompartmentFigure}.
-	 * 
+	 *
 	 * @param bounds
-	 *        The bounds to constrain (will not be modified)
+	 *            The bounds to constrain (will not be modified)
 	 * @param figure
-	 *        the figure in the containing {@link ResizableCompartmentFigure} of which the bound must be constrained
+	 *            the figure in the containing {@link ResizableCompartmentFigure} of which the bound must be constrained
 	 * @return the bounds, constrained so that they don't stick out of the {@link ResizableCompartmentFigure} in which
 	 *         the Figure is contained
-	 * 
+	 *
 	 */
 	public static Rectangle constrainBoundsWithinContainingCompartment(final Rectangle bounds, final IFigure figure) {
 		final Rectangle result = new Rectangle(bounds);
 		final ResizableCompartmentFigure parentCompartment = FigureUtils.findParentFigureInstance(figure, ResizableCompartmentFigure.class);
-		if(parentCompartment == null) {
+		if (parentCompartment == null) {
 			return result;
 		}
 		final Rectangle parentBounds = parentCompartment.getBounds();

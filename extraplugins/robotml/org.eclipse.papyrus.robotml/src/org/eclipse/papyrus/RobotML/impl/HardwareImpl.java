@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.Hardware;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -20,6 +19,7 @@ public class HardwareImpl extends PhysicalObjectImpl implements Hardware {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HardwareImpl() {
@@ -29,6 +29,7 @@ public class HardwareImpl extends PhysicalObjectImpl implements Hardware {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class HardwareImpl extends PhysicalObjectImpl implements Hardware {
 		return RobotMLPackage.Literals.HARDWARE;
 	}
 
-} //HardwareImpl
+} // HardwareImpl

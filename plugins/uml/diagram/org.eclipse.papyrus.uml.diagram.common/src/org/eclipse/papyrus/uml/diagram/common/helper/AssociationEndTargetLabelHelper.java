@@ -32,7 +32,7 @@ public class AssociationEndTargetLabelHelper extends AssociationEndPropertyLabel
 	private static AssociationEndTargetLabelHelper labelHelper;
 
 	public static AssociationEndTargetLabelHelper getInstance() {
-		if(labelHelper == null) {
+		if (labelHelper == null) {
 			labelHelper = new AssociationEndTargetLabelHelper();
 		}
 		return labelHelper;
@@ -43,40 +43,40 @@ public class AssociationEndTargetLabelHelper extends AssociationEndPropertyLabel
 	 */
 	@Override
 	public Property getUMLElement(GraphicalEditPart editPart) {
-		if((View)editPart.getModel() != null && ((View)editPart.getModel()).eContainer() != null) {
-			EObject container = ((View)editPart.getModel()).eContainer();
-			if(!(container instanceof Edge)) {
-				return null; //Happens e.g. when redoing the suppression of an association's end. The association is contained in a ChangeDescription
+		if ((View) editPart.getModel() != null && ((View) editPart.getModel()).eContainer() != null) {
+			EObject container = ((View) editPart.getModel()).eContainer();
+			if (!(container instanceof Edge)) {
+				return null; // Happens e.g. when redoing the suppression of an association's end. The association is contained in a ChangeDescription
 			}
-			if(((Edge)((View)editPart.getModel()).eContainer()).getTarget() == null) {
+			if (((Edge) ((View) editPart.getModel()).eContainer()).getTarget() == null) {
 				return null;
 			}
-			Classifier target = (Classifier)((Edge)((View)editPart.getModel()).eContainer()).getTarget().getElement();
+			Classifier target = (Classifier) ((Edge) ((View) editPart.getModel()).eContainer()).getTarget().getElement();
 			Property propertyToDisplay = null;
-			if(((View)editPart.getModel()) != null && (((View)editPart.getModel()).getElement() instanceof Association)) {
+			if (((View) editPart.getModel()) != null && (((View) editPart.getModel()).getElement() instanceof Association)) {
 				// look for the property that is typed by the classifier
-				Iterator<Property> propertiesIterator = ((Association)((View)editPart.getModel()).getElement()).getMemberEnds().iterator();
-				//find the last
-				while(propertiesIterator.hasNext()) {
+				Iterator<Property> propertiesIterator = ((Association) ((View) editPart.getModel()).getElement()).getMemberEnds().iterator();
+				// find the last
+				while (propertiesIterator.hasNext()) {
 					Property currentProperty = propertiesIterator.next();
-					if(EcoreUtil.equals(currentProperty.getType(), target)) {
+					if (EcoreUtil.equals(currentProperty.getType(), target)) {
 						propertyToDisplay = currentProperty;
 					}
 				}
 			}
-			if(propertyToDisplay != null) {
+			if (propertyToDisplay != null) {
 				return propertyToDisplay;
 			}
-			///in the case of reorient the property must be not found,
+			// /in the case of reorient the property must be not found,
 			// so we have to find the property that is different from the source.
-			Classifier source = (Classifier)((Edge)((View)editPart.getModel()).eContainer()).getSource().getElement();
-			if(((View)editPart.getModel()) != null && (((View)editPart.getModel()).getElement() instanceof Association)) {
+			Classifier source = (Classifier) ((Edge) ((View) editPart.getModel()).eContainer()).getSource().getElement();
+			if (((View) editPart.getModel()) != null && (((View) editPart.getModel()).getElement() instanceof Association)) {
 				// look for the property that is typed by the classifier
-				Iterator<Property> propertiesIterator = ((Association)((View)editPart.getModel()).getElement()).getMemberEnds().iterator();
-				//find the last
-				while(propertiesIterator.hasNext()) {
+				Iterator<Property> propertiesIterator = ((Association) ((View) editPart.getModel()).getElement()).getMemberEnds().iterator();
+				// find the last
+				while (propertiesIterator.hasNext()) {
 					Property currentProperty = propertiesIterator.next();
-					if(!EcoreUtil.equals(currentProperty.getType(), source)) {
+					if (!EcoreUtil.equals(currentProperty.getType(), source)) {
 						propertyToDisplay = currentProperty;
 					}
 				}

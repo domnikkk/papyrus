@@ -9,7 +9,7 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
  *****************************************************************************/
@@ -33,8 +33,8 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTCompilationUnit#getPackageFragment <em>Package Fragment</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTCompilationUnit#getTypes <em>Types</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTCompilationUnit#getPackageFragment <em>Package Fragment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTCompilationUnit#getTypes <em>Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,7 +50,7 @@ public interface JDTCompilationUnit extends JDTTypeRoot {
 	 * <p>
 	 * This feature redefines the following features:
 	 * <ul>
-	 *   <li>'{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement#getParent() <em>Parent</em>}'</li>
+	 * <li>'{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement#getParent() <em>Parent</em>}'</li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->
@@ -58,6 +58,7 @@ public interface JDTCompilationUnit extends JDTTypeRoot {
 	 * If the meaning of the '<em>Package Fragment</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Package Fragment</em>' container reference.
 	 * @see #setPackageFragment(JDTPackageFragment)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTCompilationUnit_PackageFragment()
@@ -71,7 +72,9 @@ public interface JDTCompilationUnit extends JDTTypeRoot {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTCompilationUnit#getPackageFragment <em>Package Fragment</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Package Fragment</em>' container reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Package Fragment</em>' container reference.
 	 * @see #getPackageFragment()
 	 * @generated
 	 */
@@ -84,7 +87,7 @@ public interface JDTCompilationUnit extends JDTTypeRoot {
 	 * <p>
 	 * This feature subsets the following features:
 	 * <ul>
-	 *   <li>'{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent#getChildren() <em>Children</em>}'</li>
+	 * <li>'{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent#getChildren() <em>Children</em>}'</li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->
@@ -92,6 +95,7 @@ public interface JDTCompilationUnit extends JDTTypeRoot {
 	 * If the meaning of the '<em>Types</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Types</em>' containment reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTCompilationUnit_Types()
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getCompilationUnit

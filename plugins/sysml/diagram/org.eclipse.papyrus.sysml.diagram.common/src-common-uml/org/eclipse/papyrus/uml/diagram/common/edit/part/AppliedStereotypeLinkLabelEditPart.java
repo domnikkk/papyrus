@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -59,6 +59,7 @@ public class AppliedStereotypeLinkLabelEditPart extends AbstractElementLabelEdit
 	/**
 	 * Forbid direct edition on this label.
 	 */
+	@Override
 	public int getDirectEditionType() {
 		// The label is read-only (defined in GMFGen model)
 		return IDirectEdition.NO_DIRECT_EDITION;
@@ -67,6 +68,7 @@ public class AppliedStereotypeLinkLabelEditPart extends AbstractElementLabelEdit
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getLabelRole() {
 		return "Stereotype";//$NON-NLS-1$
 	}
@@ -74,6 +76,7 @@ public class AppliedStereotypeLinkLabelEditPart extends AbstractElementLabelEdit
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getIconPathRole() {
 		return "";//$NON-NLS-1$
 	}

@@ -71,7 +71,7 @@ public class MarkersMonitorService implements IService {
 	 * Sets the services registry.
 	 *
 	 * @param servicesRegistry
-	 *        the new services registry
+	 *            the new services registry
 	 */
 	public void setServicesRegistry(ServicesRegistry servicesRegistry) {
 		this.servicesRegistry = servicesRegistry;
@@ -104,10 +104,10 @@ public class MarkersMonitorService implements IService {
 		IConfigurationElement[] config = registry.getConfigurationElementsFor(IMarkerEventListener.MARKER_EVENT_LISTENER_EXTENSION_POINT_ID);
 		this.registeredMarkerEventListeners = new ArrayList<IMarkerEventListener>();
 		try {
-			for(int i = 0; i < config.length; i++) {
+			for (int i = 0; i < config.length; i++) {
 				Object o = config[i].createExecutableExtension("class");
 				try {
-					this.registeredMarkerEventListeners.add((IMarkerEventListener)servicesRegistry.getService(o.getClass()));
+					this.registeredMarkerEventListeners.add((IMarkerEventListener) servicesRegistry.getService(o.getClass()));
 				} catch (ServiceException e) {
 					e.printStackTrace();
 				}
@@ -126,7 +126,7 @@ public class MarkersMonitorService implements IService {
 	public void startService() throws ServiceException {
 		ModelSet modelSet = ServiceUtils.getInstance().getModelSet(servicesRegistry);
 
-		for(IMarkerMonitor next : monitorExtensions) {
+		for (IMarkerMonitor next : monitorExtensions) {
 			try {
 				next.initialize(modelSet);
 				next.addMarkerEventListener(relay);
@@ -142,7 +142,7 @@ public class MarkersMonitorService implements IService {
 	 * @throws ServiceException
 	 */
 	public void disposeService() throws ServiceException {
-		for(IMarkerMonitor next : monitorExtensions) {
+		for (IMarkerMonitor next : monitorExtensions) {
 			try {
 				next.removeMarkerEventListener(relay);
 				next.dispose();
@@ -161,14 +161,14 @@ public class MarkersMonitorService implements IService {
 			// create a copy of the list, see bug 392194 (avoid concurrent modification exceptions)
 			EList<Resource> resourcesCopy = new BasicEList<Resource>(resources);
 			// loop over all resources (e.g. error markers are on notation, breakpoints on UML model)
-			for(Resource resource : resourcesCopy) {
+			for (Resource resource : resourcesCopy) {
 				try {
 					Collection<? extends IPapyrusMarker> markers = getMarkers(resource, null /* all markers */, true);
-					for(IPapyrusMarker next : markers) {
+					for (IPapyrusMarker next : markers) {
 						EObject eObjectFromMarker = next.getEObject();
-						if(eObjectFromMarker != null && this.registeredMarkerEventListeners != null) {
-							for(IMarkerEventListener listener : this.registeredMarkerEventListeners) {
-								if(listener.isNotifiedOnInitialMarkerCheck()) {
+						if (eObjectFromMarker != null && this.registeredMarkerEventListeners != null) {
+							for (IMarkerEventListener listener : this.registeredMarkerEventListeners) {
+								if (listener.isNotifiedOnInitialMarkerCheck()) {
 									listener.notifyMarkerChange(eObjectFromMarker, next, IMarkerEventListener.MARKER_ADDED);
 								}
 							}
@@ -185,7 +185,7 @@ public class MarkersMonitorService implements IService {
 
 	public Collection<? extends IPapyrusMarker> getMarkers(Resource resource, String type, boolean includeSubtypes) throws CoreException {
 		List<IPapyrusMarker> result = new LinkedList<IPapyrusMarker>();
-		for(IMarkerProvider provider : MarkerListenerUtils.getMarkerProviders(resource)) {
+		for (IMarkerProvider provider : MarkerListenerUtils.getMarkerProviders(resource)) {
 			result.addAll(provider.getMarkers(resource, type, includeSubtypes));
 		}
 		return result;
@@ -196,7 +196,7 @@ public class MarkersMonitorService implements IService {
 
 			public void notifyMarkerChange(EObject eObjectOfMarker, IPapyrusMarker marker, int addedOrRemoved) {
 
-				for(IMarkerEventListener next : registeredMarkerEventListeners) {
+				for (IMarkerEventListener next : registeredMarkerEventListeners) {
 					try {
 						next.notifyMarkerChange(eObjectOfMarker, marker, addedOrRemoved);
 					} catch (Exception e) {

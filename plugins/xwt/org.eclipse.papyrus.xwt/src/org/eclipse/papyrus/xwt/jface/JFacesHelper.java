@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -40,17 +40,19 @@ public class JFacesHelper {
 	}
 
 	public static boolean isViewer(Object obj) {
-		if(JFACES_VIEWER == null || obj == null)
+		if (JFACES_VIEWER == null || obj == null) {
 			return false;
+		}
 		return JFACES_VIEWER.isAssignableFrom(obj.getClass());
 	}
 
 	public static Control getControl(Object obj) {
-		if(!isViewer(obj))
+		if (!isViewer(obj)) {
 			throw new XWTException("Expecting a JFaces viewer:" + obj);
+		}
 		try {
 			Method method = JFACES_VIEWER.getMethod("getControl");
-			return (Control)method.invoke(obj);
+			return (Control) method.invoke(obj);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -66,12 +68,13 @@ public class JFacesHelper {
 		try {
 
 			JFACES_VIEWER = Class.forName("org.eclipse.jface.viewers.Viewer");
-			String[] jfaceClasses = new String[]{ "org.eclipse.jface.viewers.ComboViewer", "org.eclipse.jface.viewers.ListViewer", "org.eclipse.jface.viewers.TreeViewer", "org.eclipse.jface.viewers.TableViewer", "org.eclipse.jface.viewers.TableTreeViewer", "org.eclipse.jface.viewers.CheckboxTableViewer", "org.eclipse.jface.viewers.CheckboxTreeViewer",
-				// Dialogs
-			"org.eclipse.jface.dialogs.TrayDialog", "org.eclipse.jface.dialogs.TitleAreaDialog",
-				// Add CellEditors for JFave Viewers.
-			"org.eclipse.jface.viewers.CellEditor", "org.eclipse.jface.viewers.ComboBoxViewerCellEditor", TextCellEditor.class.getName(), CheckboxCellEditor.class.getName() };
-			for(String clazz : jfaceClasses) {
+			String[] jfaceClasses = new String[] { "org.eclipse.jface.viewers.ComboViewer", "org.eclipse.jface.viewers.ListViewer", "org.eclipse.jface.viewers.TreeViewer", "org.eclipse.jface.viewers.TableViewer", "org.eclipse.jface.viewers.TableTreeViewer",
+					"org.eclipse.jface.viewers.CheckboxTableViewer", "org.eclipse.jface.viewers.CheckboxTreeViewer",
+					// Dialogs
+					"org.eclipse.jface.dialogs.TrayDialog", "org.eclipse.jface.dialogs.TitleAreaDialog",
+					// Add CellEditors for JFave Viewers.
+					"org.eclipse.jface.viewers.CellEditor", "org.eclipse.jface.viewers.ComboBoxViewerCellEditor", TextCellEditor.class.getName(), CheckboxCellEditor.class.getName() };
+			for (String clazz : jfaceClasses) {
 				try {
 					collector.add(Class.forName(clazz));
 				} catch (Throwable e) {
@@ -85,56 +88,56 @@ public class JFacesHelper {
 	}
 
 	public static String[] getViewerProperties(Viewer viewer) {
-		if(viewer instanceof ColumnViewer) {
-			ColumnViewer columnViewer = (ColumnViewer)viewer;
+		if (viewer instanceof ColumnViewer) {
+			ColumnViewer columnViewer = (ColumnViewer) viewer;
 			Object[] properties = columnViewer.getColumnProperties();
 			String[] propertyNames = Core.EMPTY_STRING_ARRAY;
-			if(properties != null) {
+			if (properties != null) {
 				int size = 0;
-				for(int i = 0; i < properties.length; i++) {
-					if(properties[i] != null) {
+				for (int i = 0; i < properties.length; i++) {
+					if (properties[i] != null) {
 						size++;
 					}
 				}
 
 				propertyNames = new String[size];
-				for(int i = 0, j = 0; i < properties.length; i++) {
-					if(properties[i] != null) {
+				for (int i = 0, j = 0; i < properties.length; i++) {
+					if (properties[i] != null) {
 						propertyNames[j++] = properties[i].toString();
 					}
 				}
 			}
-			if(propertyNames.length != 0) {
+			if (propertyNames.length != 0) {
 				return propertyNames;
 			}
 		}
-		String path = (String)UserData.getLocalData(viewer, IUserDataConstants.XWT_PROPERTY_DATA_KEY);
-		if(path != null) {
-			return new String[]{ path };
+		String path = (String) UserData.getLocalData(viewer, IUserDataConstants.XWT_PROPERTY_DATA_KEY);
+		if (path != null) {
+			return new String[] { path };
 		}
 		return Core.EMPTY_STRING_ARRAY;
 	}
 
 	public static Object getColumnObject(Object element, int columnIndex, Object[] properties) {
-		if(element == null) {
+		if (element == null) {
 			return null;
 		}
 		Object dataContext = element;
 
-		if(properties != null && columnIndex < properties.length) {
+		if (properties != null && columnIndex < properties.length) {
 			Object propertyElement = properties[columnIndex];
-			if(propertyElement != null) {
+			if (propertyElement != null) {
 				String propertyName = propertyElement.toString();
-				if(propertyName != null) {
+				if (propertyName != null) {
 					try {
 						IMetaclass metaclass = XWT.getMetaclass(dataContext);
 						IProperty property = metaclass.findProperty(propertyName.toLowerCase());
-						if(property != null) {
+						if (property != null) {
 							dataContext = property.getValue(dataContext);
-							if(dataContext != null) {
+							if (dataContext != null) {
 								Class<?> type = dataContext.getClass();
 								Class<?> propertyType = property.getType();
-								if(propertyType != null && !propertyType.isAssignableFrom(type)) {
+								if (propertyType != null && !propertyType.isAssignableFrom(type)) {
 									dataContext = ObjectUtil.resolveValue(dataContext, type, propertyType, dataContext);
 								}
 							}
@@ -157,28 +160,28 @@ public class JFacesHelper {
 		Object value = getColumnObject(element, columnIndex, properties);
 
 		try {
-			if(viewer instanceof TableViewer) {
-				Table table = ((TableViewer)viewer).getTable();
+			if (viewer instanceof TableViewer) {
+				Table table = ((TableViewer) viewer).getTable();
 				TableColumn[] columns = table.getColumns();
 				TableColumn column = columns[columnIndex];
-				if(UserData.hasLocalData(column, IUserDataConstants.XWT_PROPERTY_ITEM_TEXT_KEY)) {
+				if (UserData.hasLocalData(column, IUserDataConstants.XWT_PROPERTY_ITEM_TEXT_KEY)) {
 					Object userDataValue = UserData.getLocalData(column, IUserDataConstants.XWT_PROPERTY_ITEM_TEXT_KEY);
-					if(userDataValue instanceof IBinding) {
-						IBinding binding = (IBinding)userDataValue;
+					if (userDataValue instanceof IBinding) {
+						IBinding binding = (IBinding) userDataValue;
 						binding.reset();
 						UserData.setDataContext(column, value);
 						value = binding.getValue(null);
 					} else {
 						value = userDataValue;
 					}
-				} else if(UserData.hasLocalData(column, IUserDataConstants.XWT_PROPERTY_ITEM_IMAGE_KEY)) {
+				} else if (UserData.hasLocalData(column, IUserDataConstants.XWT_PROPERTY_ITEM_IMAGE_KEY)) {
 					return null;
 				}
 			}
 		} catch (Exception e) {
 			throw new XWTException(e);
 		}
-		if(value != null) {
+		if (value != null) {
 			return value.toString();
 		}
 		return "";
@@ -191,18 +194,18 @@ public class JFacesHelper {
 
 	public static Image getColumnImage(Viewer viewer, Object element, int columnIndex, Object[] properties) {
 		Object value = getColumnObject(element, columnIndex, properties);
-		if(value == null) {
+		if (value == null) {
 			return null;
 		}
 		try {
-			if(viewer instanceof TableViewer) {
-				Table table = ((TableViewer)viewer).getTable();
+			if (viewer instanceof TableViewer) {
+				Table table = ((TableViewer) viewer).getTable();
 				TableColumn[] columns = table.getColumns();
 				TableColumn column = columns[columnIndex];
-				if(UserData.hasLocalData(column, IUserDataConstants.XWT_PROPERTY_ITEM_IMAGE_KEY)) {
+				if (UserData.hasLocalData(column, IUserDataConstants.XWT_PROPERTY_ITEM_IMAGE_KEY)) {
 					Object userDataValue = UserData.getLocalData(column, IUserDataConstants.XWT_PROPERTY_ITEM_IMAGE_KEY);
-					if(userDataValue instanceof IBinding) {
-						IBinding binding = (IBinding)userDataValue;
+					if (userDataValue instanceof IBinding) {
+						IBinding binding = (IBinding) userDataValue;
 						binding.reset();
 						UserData.setDataContext(column, value);
 						value = binding.getValue(null);
@@ -216,19 +219,19 @@ public class JFacesHelper {
 		} catch (Exception e) {
 			throw new XWTException(e);
 		}
-		if(value instanceof IObservableValue) {
-			IObservableValue observableValue = (IObservableValue)value;
+		if (value instanceof IObservableValue) {
+			IObservableValue observableValue = (IObservableValue) value;
 			value = observableValue.getValue();
 		}
-		if(value instanceof Image) {
-			return (Image)value;
-		} else if(value != null) {
+		if (value instanceof Image) {
+			return (Image) value;
+		} else if (value != null) {
 			value = ObjectUtil.resolveValue(value, Image.class, value);
-			if(value == null) {
+			if (value == null) {
 				return null;
 			}
-			if(value instanceof Image) {
-				return (Image)value;
+			if (value instanceof Image) {
+				return (Image) value;
 			}
 			throw new XWTException("Converter from " + value.getClass() + " to Image is missing.");
 		}

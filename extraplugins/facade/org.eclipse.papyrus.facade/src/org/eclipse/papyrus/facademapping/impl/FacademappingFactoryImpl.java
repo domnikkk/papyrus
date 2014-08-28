@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,17 +17,20 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.facademapping.*;
+import org.eclipse.papyrus.facademapping.ExtensionDefinitionKind;
+import org.eclipse.papyrus.facademapping.FacadeMappping;
+import org.eclipse.papyrus.facademapping.FacademappingFactory;
+import org.eclipse.papyrus.facademapping.FacademappingPackage;
+import org.eclipse.papyrus.facademapping.Mapping;
+import org.eclipse.papyrus.facademapping.StereotypedMapping;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class FacademappingFactoryImpl extends EFactoryImpl implements FacademappingFactory {
@@ -35,16 +38,16 @@ public class FacademappingFactoryImpl extends EFactoryImpl implements Facademapp
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static FacademappingFactory init() {
 		try {
-			FacademappingFactory theFacademappingFactory = (FacademappingFactory)EPackage.Registry.INSTANCE.getEFactory(FacademappingPackage.eNS_URI);
+			FacademappingFactory theFacademappingFactory = (FacademappingFactory) EPackage.Registry.INSTANCE.getEFactory(FacademappingPackage.eNS_URI);
 			if (theFacademappingFactory != null) {
 				return theFacademappingFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new FacademappingFactoryImpl();
@@ -54,6 +57,7 @@ public class FacademappingFactoryImpl extends EFactoryImpl implements Facademapp
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public FacademappingFactoryImpl() {
@@ -63,54 +67,62 @@ public class FacademappingFactoryImpl extends EFactoryImpl implements Facademapp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case FacademappingPackage.MAPPING: return createMapping();
-			case FacademappingPackage.STEREOTYPED_MAPPING: return createStereotypedMapping();
-			case FacademappingPackage.FACADE_MAPPPING: return createFacadeMappping();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case FacademappingPackage.MAPPING:
+			return createMapping();
+		case FacademappingPackage.STEREOTYPED_MAPPING:
+			return createStereotypedMapping();
+		case FacademappingPackage.FACADE_MAPPPING:
+			return createFacadeMappping();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case FacademappingPackage.EXTENSION_DEFINITION_KIND:
-				return createExtensionDefinitionKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case FacademappingPackage.EXTENSION_DEFINITION_KIND:
+			return createExtensionDefinitionKindFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case FacademappingPackage.EXTENSION_DEFINITION_KIND:
-				return convertExtensionDefinitionKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case FacademappingPackage.EXTENSION_DEFINITION_KIND:
+			return convertExtensionDefinitionKindToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Mapping createMapping() {
 		MappingImpl mapping = new MappingImpl();
 		return mapping;
@@ -119,8 +131,10 @@ public class FacademappingFactoryImpl extends EFactoryImpl implements Facademapp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public StereotypedMapping createStereotypedMapping() {
 		StereotypedMappingImpl stereotypedMapping = new StereotypedMappingImpl();
 		return stereotypedMapping;
@@ -129,8 +143,10 @@ public class FacademappingFactoryImpl extends EFactoryImpl implements Facademapp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public FacadeMappping createFacadeMappping() {
 		FacadeMapppingImpl facadeMappping = new FacadeMapppingImpl();
 		return facadeMappping;
@@ -139,17 +155,21 @@ public class FacademappingFactoryImpl extends EFactoryImpl implements Facademapp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ExtensionDefinitionKind createExtensionDefinitionKindFromString(EDataType eDataType, String initialValue) {
 		ExtensionDefinitionKind result = ExtensionDefinitionKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertExtensionDefinitionKindToString(EDataType eDataType, Object instanceValue) {
@@ -159,15 +179,18 @@ public class FacademappingFactoryImpl extends EFactoryImpl implements Facademapp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public FacademappingPackage getFacademappingPackage() {
-		return (FacademappingPackage)getEPackage();
+		return (FacademappingPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -176,4 +199,4 @@ public class FacademappingFactoryImpl extends EFactoryImpl implements Facademapp
 		return FacademappingPackage.eINSTANCE;
 	}
 
-} //FacademappingFactoryImpl
+} // FacademappingFactoryImpl

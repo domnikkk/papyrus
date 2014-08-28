@@ -58,7 +58,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
@@ -66,7 +66,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass expressionEClass = null;
@@ -74,7 +74,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass andOrXorExpressionEClass = null;
@@ -82,7 +82,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass equalityExpressionEClass = null;
@@ -90,7 +90,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass relationalExpressionEClass = null;
@@ -98,7 +98,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass conditionalExpressionEClass = null;
@@ -106,7 +106,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass additiveExpressionEClass = null;
@@ -114,7 +114,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass multiplicativeExpressionEClass = null;
@@ -122,7 +122,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass unaryExpressionEClass = null;
@@ -130,7 +130,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass primaryExpressionEClass = null;
@@ -138,7 +138,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass valueSpecificationEClass = null;
@@ -146,7 +146,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass suffixExpressionEClass = null;
@@ -154,7 +154,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass propertyCallExpressionEClass = null;
@@ -162,7 +162,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass operationCallExpressionEClass = null;
@@ -170,7 +170,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass literalEClass = null;
@@ -178,7 +178,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass nameOrChoiceOrBehaviorCallEClass = null;
@@ -186,7 +186,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass qualifiedNameEClass = null;
@@ -194,7 +194,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass intervalEClass = null;
@@ -202,7 +202,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass collectionOrTupleEClass = null;
@@ -210,7 +210,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass tupleEClass = null;
@@ -218,7 +218,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass listOfValuesEClass = null;
@@ -226,7 +226,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass listOfValueNamePairsEClass = null;
@@ -234,7 +234,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass valueNamePairEClass = null;
@@ -242,7 +242,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass timeExpressionEClass = null;
@@ -250,7 +250,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass instantObsExpressionEClass = null;
@@ -258,7 +258,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass instantObsNameEClass = null;
@@ -266,7 +266,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass durationObsExpressionEClass = null;
@@ -274,7 +274,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass durationObsNameEClass = null;
@@ -282,7 +282,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jitterExpEClass = null;
@@ -290,7 +290,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass variableDeclarationEClass = null;
@@ -298,7 +298,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass dataTypeNameEClass = null;
@@ -306,7 +306,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass numberLiteralRuleEClass = null;
@@ -314,7 +314,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass integerLiteralRuleEClass = null;
@@ -322,7 +322,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass unlimitedLiteralRuleEClass = null;
@@ -330,7 +330,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass realLiteralRuleEClass = null;
@@ -338,7 +338,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass dateTimeLiteralRuleEClass = null;
@@ -346,7 +346,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass booleanLiteralRuleEClass = null;
@@ -354,7 +354,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass nullLiteralRuleEClass = null;
@@ -362,7 +362,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass defaultLiteralRuleEClass = null;
@@ -370,7 +370,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass stringLiteralRuleEClass = null;
@@ -380,9 +380,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	 * package
 	 * package URI value.
 	 * <p>
-	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
-	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#eNS_URI
 	 * @see #init()
@@ -395,30 +394,29 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>
-	 * This method is used to initialize {@link VSLPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead,
-	 * they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This method is used to initialize {@link VSLPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static VSLPackage init() {
-		if(isInited) {
-			return (VSLPackage)EPackage.Registry.INSTANCE.getEPackage(VSLPackage.eNS_URI);
+		if (isInited) {
+			return (VSLPackage) EPackage.Registry.INSTANCE.getEPackage(VSLPackage.eNS_URI);
 		}
 
 		// Obtain or create and register package
-		VSLPackageImpl theVSLPackage = (VSLPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof VSLPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new VSLPackageImpl());
+		VSLPackageImpl theVSLPackage = (VSLPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof VSLPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new VSLPackageImpl());
 
 		isInited = true;
 
@@ -444,9 +442,10 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getExpression() {
 		return expressionEClass;
 	}
@@ -454,19 +453,21 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getExpression_Exp() {
-		return (EReference)expressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) expressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getAndOrXorExpression() {
 		return andOrXorExpressionEClass;
 	}
@@ -474,29 +475,32 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAndOrXorExpression_Exp() {
-		return (EReference)andOrXorExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) andOrXorExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAndOrXorExpression_Op() {
-		return (EAttribute)andOrXorExpressionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) andOrXorExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getEqualityExpression() {
 		return equalityExpressionEClass;
 	}
@@ -504,29 +508,32 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEqualityExpression_Exp() {
-		return (EReference)equalityExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) equalityExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEqualityExpression_Op() {
-		return (EAttribute)equalityExpressionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) equalityExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getRelationalExpression() {
 		return relationalExpressionEClass;
 	}
@@ -534,29 +541,32 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getRelationalExpression_Exp() {
-		return (EReference)relationalExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) relationalExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRelationalExpression_Op() {
-		return (EAttribute)relationalExpressionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) relationalExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getConditionalExpression() {
 		return conditionalExpressionEClass;
 	}
@@ -564,29 +574,32 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getConditionalExpression_Exp() {
-		return (EReference)conditionalExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) conditionalExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConditionalExpression_Op() {
-		return (EAttribute)conditionalExpressionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) conditionalExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getAdditiveExpression() {
 		return additiveExpressionEClass;
 	}
@@ -594,29 +607,32 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAdditiveExpression_Exp() {
-		return (EReference)additiveExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) additiveExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAdditiveExpression_Op() {
-		return (EAttribute)additiveExpressionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) additiveExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getMultiplicativeExpression() {
 		return multiplicativeExpressionEClass;
 	}
@@ -624,29 +640,32 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getMultiplicativeExpression_Exp() {
-		return (EReference)multiplicativeExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) multiplicativeExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMultiplicativeExpression_Op() {
-		return (EAttribute)multiplicativeExpressionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) multiplicativeExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getUnaryExpression() {
 		return unaryExpressionEClass;
 	}
@@ -654,39 +673,43 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getUnaryExpression_Op() {
-		return (EAttribute)unaryExpressionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) unaryExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getUnaryExpression_Unary() {
-		return (EReference)unaryExpressionEClass.getEStructuralFeatures().get(1);
+		return (EReference) unaryExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getUnaryExpression_Exp() {
-		return (EReference)unaryExpressionEClass.getEStructuralFeatures().get(2);
+		return (EReference) unaryExpressionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getPrimaryExpression() {
 		return primaryExpressionEClass;
 	}
@@ -694,29 +717,32 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPrimaryExpression_Prefix() {
-		return (EReference)primaryExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) primaryExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPrimaryExpression_Suffix() {
-		return (EReference)primaryExpressionEClass.getEStructuralFeatures().get(1);
+		return (EReference) primaryExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getValueSpecification() {
 		return valueSpecificationEClass;
 	}
@@ -724,9 +750,10 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getSuffixExpression() {
 		return suffixExpressionEClass;
 	}
@@ -734,19 +761,21 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getSuffixExpression_Suffix() {
-		return (EReference)suffixExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) suffixExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertyCallExpression() {
 		return propertyCallExpressionEClass;
 	}
@@ -754,19 +783,21 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyCallExpression_Property() {
-		return (EReference)propertyCallExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) propertyCallExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getOperationCallExpression() {
 		return operationCallExpressionEClass;
 	}
@@ -774,29 +805,32 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getOperationCallExpression_Operation() {
-		return (EReference)operationCallExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) operationCallExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getOperationCallExpression_Arguments() {
-		return (EReference)operationCallExpressionEClass.getEStructuralFeatures().get(1);
+		return (EReference) operationCallExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLiteral() {
 		return literalEClass;
 	}
@@ -804,19 +838,21 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLiteral_Value() {
-		return (EAttribute)literalEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) literalEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getNameOrChoiceOrBehaviorCall() {
 		return nameOrChoiceOrBehaviorCallEClass;
 	}
@@ -824,39 +860,43 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getNameOrChoiceOrBehaviorCall_Path() {
-		return (EReference)nameOrChoiceOrBehaviorCallEClass.getEStructuralFeatures().get(0);
+		return (EReference) nameOrChoiceOrBehaviorCallEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getNameOrChoiceOrBehaviorCall_Id() {
-		return (EReference)nameOrChoiceOrBehaviorCallEClass.getEStructuralFeatures().get(1);
+		return (EReference) nameOrChoiceOrBehaviorCallEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getNameOrChoiceOrBehaviorCall_Arguments() {
-		return (EReference)nameOrChoiceOrBehaviorCallEClass.getEStructuralFeatures().get(2);
+		return (EReference) nameOrChoiceOrBehaviorCallEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getQualifiedName() {
 		return qualifiedNameEClass;
 	}
@@ -864,29 +904,32 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getQualifiedName_Path() {
-		return (EReference)qualifiedNameEClass.getEStructuralFeatures().get(0);
+		return (EReference) qualifiedNameEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getQualifiedName_Remaining() {
-		return (EReference)qualifiedNameEClass.getEStructuralFeatures().get(1);
+		return (EReference) qualifiedNameEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getInterval() {
 		return intervalEClass;
 	}
@@ -894,49 +937,54 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInterval_IsLowerIncluded() {
-		return (EAttribute)intervalEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) intervalEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getInterval_Lower() {
-		return (EReference)intervalEClass.getEStructuralFeatures().get(1);
+		return (EReference) intervalEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getInterval_Upper() {
-		return (EReference)intervalEClass.getEStructuralFeatures().get(2);
+		return (EReference) intervalEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInterval_IsUpperIncluded() {
-		return (EAttribute)intervalEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) intervalEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getCollectionOrTuple() {
 		return collectionOrTupleEClass;
 	}
@@ -944,19 +992,21 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getCollectionOrTuple_ListOfValues() {
-		return (EReference)collectionOrTupleEClass.getEStructuralFeatures().get(0);
+		return (EReference) collectionOrTupleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getTuple() {
 		return tupleEClass;
 	}
@@ -964,19 +1014,21 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getTuple_ListOfValueNamePairs() {
-		return (EReference)tupleEClass.getEStructuralFeatures().get(0);
+		return (EReference) tupleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getListOfValues() {
 		return listOfValuesEClass;
 	}
@@ -984,19 +1036,21 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getListOfValues_Values() {
-		return (EReference)listOfValuesEClass.getEStructuralFeatures().get(0);
+		return (EReference) listOfValuesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getListOfValueNamePairs() {
 		return listOfValueNamePairsEClass;
 	}
@@ -1004,19 +1058,21 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getListOfValueNamePairs_ValueNamePairs() {
-		return (EReference)listOfValueNamePairsEClass.getEStructuralFeatures().get(0);
+		return (EReference) listOfValueNamePairsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getValueNamePair() {
 		return valueNamePairEClass;
 	}
@@ -1024,29 +1080,32 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getValueNamePair_Property() {
-		return (EReference)valueNamePairEClass.getEStructuralFeatures().get(0);
+		return (EReference) valueNamePairEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getValueNamePair_Value() {
-		return (EReference)valueNamePairEClass.getEStructuralFeatures().get(1);
+		return (EReference) valueNamePairEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getTimeExpression() {
 		return timeExpressionEClass;
 	}
@@ -1054,9 +1113,10 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getInstantObsExpression() {
 		return instantObsExpressionEClass;
 	}
@@ -1064,39 +1124,43 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getInstantObsExpression_Id() {
-		return (EReference)instantObsExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) instantObsExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getInstantObsExpression_Index() {
-		return (EReference)instantObsExpressionEClass.getEStructuralFeatures().get(1);
+		return (EReference) instantObsExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getInstantObsExpression_Condition() {
-		return (EReference)instantObsExpressionEClass.getEStructuralFeatures().get(2);
+		return (EReference) instantObsExpressionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getInstantObsName() {
 		return instantObsNameEClass;
 	}
@@ -1104,29 +1168,32 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getInstantObsName_Path() {
-		return (EReference)instantObsNameEClass.getEStructuralFeatures().get(0);
+		return (EReference) instantObsNameEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getInstantObsName_InstantId() {
-		return (EReference)instantObsNameEClass.getEStructuralFeatures().get(1);
+		return (EReference) instantObsNameEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getDurationObsExpression() {
 		return durationObsExpressionEClass;
 	}
@@ -1134,39 +1201,43 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getDurationObsExpression_Id() {
-		return (EReference)durationObsExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) durationObsExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getDurationObsExpression_Index() {
-		return (EReference)durationObsExpressionEClass.getEStructuralFeatures().get(1);
+		return (EReference) durationObsExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getDurationObsExpression_Condition() {
-		return (EReference)durationObsExpressionEClass.getEStructuralFeatures().get(2);
+		return (EReference) durationObsExpressionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getDurationObsName() {
 		return durationObsNameEClass;
 	}
@@ -1174,29 +1245,32 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getDurationObsName_Path() {
-		return (EReference)durationObsNameEClass.getEStructuralFeatures().get(0);
+		return (EReference) durationObsNameEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getDurationObsName_DurationId() {
-		return (EReference)durationObsNameEClass.getEStructuralFeatures().get(1);
+		return (EReference) durationObsNameEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getJitterExp() {
 		return jitterExpEClass;
 	}
@@ -1204,29 +1278,32 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getJitterExp_FirstInstant() {
-		return (EReference)jitterExpEClass.getEStructuralFeatures().get(0);
+		return (EReference) jitterExpEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getJitterExp_SecondInstant() {
-		return (EReference)jitterExpEClass.getEStructuralFeatures().get(1);
+		return (EReference) jitterExpEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getVariableDeclaration() {
 		return variableDeclarationEClass;
 	}
@@ -1234,49 +1311,54 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVariableDeclaration_VariableDeclaration() {
-		return (EAttribute)variableDeclarationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) variableDeclarationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVariableDeclaration_Name() {
-		return (EAttribute)variableDeclarationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) variableDeclarationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getVariableDeclaration_Type() {
-		return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(2);
+		return (EReference) variableDeclarationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getVariableDeclaration_InitValue() {
-		return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(3);
+		return (EReference) variableDeclarationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getDataTypeName() {
 		return dataTypeNameEClass;
 	}
@@ -1284,29 +1366,32 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getDataTypeName_Path() {
-		return (EReference)dataTypeNameEClass.getEStructuralFeatures().get(0);
+		return (EReference) dataTypeNameEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getDataTypeName_Type() {
-		return (EReference)dataTypeNameEClass.getEStructuralFeatures().get(1);
+		return (EReference) dataTypeNameEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getNumberLiteralRule() {
 		return numberLiteralRuleEClass;
 	}
@@ -1314,9 +1399,10 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getIntegerLiteralRule() {
 		return integerLiteralRuleEClass;
 	}
@@ -1324,9 +1410,10 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getUnlimitedLiteralRule() {
 		return unlimitedLiteralRuleEClass;
 	}
@@ -1334,9 +1421,10 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getRealLiteralRule() {
 		return realLiteralRuleEClass;
 	}
@@ -1344,9 +1432,10 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getDateTimeLiteralRule() {
 		return dateTimeLiteralRuleEClass;
 	}
@@ -1354,9 +1443,10 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getBooleanLiteralRule() {
 		return booleanLiteralRuleEClass;
 	}
@@ -1364,9 +1454,10 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getNullLiteralRule() {
 		return nullLiteralRuleEClass;
 	}
@@ -1374,9 +1465,10 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getDefaultLiteralRule() {
 		return defaultLiteralRuleEClass;
 	}
@@ -1384,9 +1476,10 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getStringLiteralRule() {
 		return stringLiteralRuleEClass;
 	}
@@ -1394,17 +1487,18 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public VSLFactory getVSLFactory() {
-		return (VSLFactory)getEFactoryInstance();
+		return (VSLFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -1414,11 +1508,11 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if(isCreated) {
+		if (isCreated) {
 			return;
 		}
 		isCreated = true;
@@ -1562,7 +1656,7 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -1572,11 +1666,11 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if(isInitialized) {
+		if (isInitialized) {
 			return;
 		}
 		isInitialized = true;
@@ -1587,8 +1681,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage) EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1630,7 +1724,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(expressionEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(andOrXorExpressionEClass, AndOrXorExpression.class, "AndOrXorExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAndOrXorExpression_Exp(), this.getEqualityExpression(), null, "exp", null, 0, -1, AndOrXorExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAndOrXorExpression_Exp(), this.getEqualityExpression(), null, "exp", null, 0, -1, AndOrXorExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getAndOrXorExpression_Op(), theEcorePackage.getEString(), "op", null, 0, -1, AndOrXorExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(andOrXorExpressionEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1641,7 +1736,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(andOrXorExpressionEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(equalityExpressionEClass, EqualityExpression.class, "EqualityExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEqualityExpression_Exp(), this.getRelationalExpression(), null, "exp", null, 0, -1, EqualityExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEqualityExpression_Exp(), this.getRelationalExpression(), null, "exp", null, 0, -1, EqualityExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getEqualityExpression_Op(), theEcorePackage.getEString(), "op", null, 0, -1, EqualityExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(equalityExpressionEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1652,7 +1748,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(equalityExpressionEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(relationalExpressionEClass, RelationalExpression.class, "RelationalExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRelationalExpression_Exp(), this.getConditionalExpression(), null, "exp", null, 0, -1, RelationalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRelationalExpression_Exp(), this.getConditionalExpression(), null, "exp", null, 0, -1, RelationalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getRelationalExpression_Op(), theEcorePackage.getEString(), "op", null, 0, -1, RelationalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(relationalExpressionEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1663,7 +1760,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(relationalExpressionEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(conditionalExpressionEClass, ConditionalExpression.class, "ConditionalExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConditionalExpression_Exp(), this.getAdditiveExpression(), null, "exp", null, 0, -1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditionalExpression_Exp(), this.getAdditiveExpression(), null, "exp", null, 0, -1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getConditionalExpression_Op(), theEcorePackage.getEString(), "op", null, 0, -1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(conditionalExpressionEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1674,7 +1772,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(conditionalExpressionEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(additiveExpressionEClass, AdditiveExpression.class, "AdditiveExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAdditiveExpression_Exp(), this.getMultiplicativeExpression(), null, "exp", null, 0, -1, AdditiveExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAdditiveExpression_Exp(), this.getMultiplicativeExpression(), null, "exp", null, 0, -1, AdditiveExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getAdditiveExpression_Op(), theEcorePackage.getEString(), "op", null, 0, -1, AdditiveExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(additiveExpressionEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1685,7 +1784,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(additiveExpressionEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(multiplicativeExpressionEClass, MultiplicativeExpression.class, "MultiplicativeExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMultiplicativeExpression_Exp(), this.getUnaryExpression(), null, "exp", null, 0, -1, MultiplicativeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMultiplicativeExpression_Exp(), this.getUnaryExpression(), null, "exp", null, 0, -1, MultiplicativeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMultiplicativeExpression_Op(), theEcorePackage.getEString(), "op", null, 0, -1, MultiplicativeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(multiplicativeExpressionEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1708,8 +1808,10 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(unaryExpressionEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(primaryExpressionEClass, PrimaryExpression.class, "PrimaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPrimaryExpression_Prefix(), this.getValueSpecification(), null, "prefix", null, 0, 1, PrimaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPrimaryExpression_Suffix(), this.getSuffixExpression(), null, "suffix", null, 0, 1, PrimaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPrimaryExpression_Prefix(), this.getValueSpecification(), null, "prefix", null, 0, 1, PrimaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getPrimaryExpression_Suffix(), this.getSuffixExpression(), null, "suffix", null, 0, 1, PrimaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		op = addEOperation(primaryExpressionEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClass(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1728,7 +1830,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(valueSpecificationEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(suffixExpressionEClass, SuffixExpression.class, "SuffixExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSuffixExpression_Suffix(), this.getSuffixExpression(), null, "suffix", null, 0, 1, SuffixExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSuffixExpression_Suffix(), this.getSuffixExpression(), null, "suffix", null, 0, 1, SuffixExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		op = addEOperation(suffixExpressionEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClass(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1738,7 +1841,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(suffixExpressionEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(propertyCallExpressionEClass, PropertyCallExpression.class, "PropertyCallExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPropertyCallExpression_Property(), theUMLPackage.getProperty(), null, "property", null, 0, 1, PropertyCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyCallExpression_Property(), theUMLPackage.getProperty(), null, "property", null, 0, 1, PropertyCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(propertyCallExpressionEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClass(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1748,8 +1852,10 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(propertyCallExpressionEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(operationCallExpressionEClass, OperationCallExpression.class, "OperationCallExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOperationCallExpression_Operation(), theUMLPackage.getOperation(), null, "operation", null, 0, 1, OperationCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperationCallExpression_Arguments(), this.getListOfValues(), null, "arguments", null, 0, 1, OperationCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperationCallExpression_Operation(), theUMLPackage.getOperation(), null, "operation", null, 0, 1, OperationCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperationCallExpression_Arguments(), this.getListOfValues(), null, "arguments", null, 0, 1, OperationCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(operationCallExpressionEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClass(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1769,9 +1875,12 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(literalEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(nameOrChoiceOrBehaviorCallEClass, NameOrChoiceOrBehaviorCall.class, "NameOrChoiceOrBehaviorCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNameOrChoiceOrBehaviorCall_Path(), this.getQualifiedName(), null, "path", null, 0, 1, NameOrChoiceOrBehaviorCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNameOrChoiceOrBehaviorCall_Id(), theUMLPackage.getNamedElement(), null, "id", null, 0, 1, NameOrChoiceOrBehaviorCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNameOrChoiceOrBehaviorCall_Arguments(), this.getListOfValues(), null, "arguments", null, 0, 1, NameOrChoiceOrBehaviorCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNameOrChoiceOrBehaviorCall_Path(), this.getQualifiedName(), null, "path", null, 0, 1, NameOrChoiceOrBehaviorCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getNameOrChoiceOrBehaviorCall_Id(), theUMLPackage.getNamedElement(), null, "id", null, 0, 1, NameOrChoiceOrBehaviorCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getNameOrChoiceOrBehaviorCall_Arguments(), this.getListOfValues(), null, "arguments", null, 0, 1, NameOrChoiceOrBehaviorCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(nameOrChoiceOrBehaviorCallEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClass(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1805,7 +1914,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(intervalEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(collectionOrTupleEClass, CollectionOrTuple.class, "CollectionOrTuple", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCollectionOrTuple_ListOfValues(), this.getListOfValues(), null, "listOfValues", null, 0, 1, CollectionOrTuple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCollectionOrTuple_ListOfValues(), this.getListOfValues(), null, "listOfValues", null, 0, 1, CollectionOrTuple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(collectionOrTupleEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClass(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1815,7 +1925,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(collectionOrTupleEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(tupleEClass, Tuple.class, "Tuple", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTuple_ListOfValueNamePairs(), this.getListOfValueNamePairs(), null, "listOfValueNamePairs", null, 0, 1, Tuple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTuple_ListOfValueNamePairs(), this.getListOfValueNamePairs(), null, "listOfValueNamePairs", null, 0, 1, Tuple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(tupleEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClass(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1835,7 +1946,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(listOfValuesEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(listOfValueNamePairsEClass, ListOfValueNamePairs.class, "ListOfValueNamePairs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getListOfValueNamePairs_ValueNamePairs(), this.getValueNamePair(), null, "valueNamePairs", null, 0, -1, ListOfValueNamePairs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getListOfValueNamePairs_ValueNamePairs(), this.getValueNamePair(), null, "valueNamePairs", null, 0, -1, ListOfValueNamePairs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(listOfValueNamePairsEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClass(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1845,7 +1957,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(listOfValueNamePairsEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(valueNamePairEClass, ValueNamePair.class, "ValueNamePair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getValueNamePair_Property(), theUMLPackage.getProperty(), null, "property", null, 0, 1, ValueNamePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getValueNamePair_Property(), theUMLPackage.getProperty(), null, "property", null, 0, 1, ValueNamePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEReference(getValueNamePair_Value(), this.getExpression(), null, "value", null, 0, 1, ValueNamePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(valueNamePairEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1865,9 +1978,12 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(timeExpressionEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(instantObsExpressionEClass, InstantObsExpression.class, "InstantObsExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInstantObsExpression_Id(), this.getInstantObsName(), null, "id", null, 0, 1, InstantObsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInstantObsExpression_Index(), this.getExpression(), null, "index", null, 0, 1, InstantObsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInstantObsExpression_Condition(), this.getExpression(), null, "condition", null, 0, 1, InstantObsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstantObsExpression_Id(), this.getInstantObsName(), null, "id", null, 0, 1, InstantObsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getInstantObsExpression_Index(), this.getExpression(), null, "index", null, 0, 1, InstantObsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getInstantObsExpression_Condition(), this.getExpression(), null, "condition", null, 0, 1, InstantObsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		op = addEOperation(instantObsExpressionEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClass(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1878,7 +1994,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 
 		initEClass(instantObsNameEClass, InstantObsName.class, "InstantObsName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInstantObsName_Path(), this.getQualifiedName(), null, "path", null, 0, 1, InstantObsName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInstantObsName_InstantId(), theUMLPackage.getTimeObservation(), null, "instantId", null, 0, 1, InstantObsName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstantObsName_InstantId(), theUMLPackage.getTimeObservation(), null, "instantId", null, 0, 1, InstantObsName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(instantObsNameEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClass(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1888,9 +2005,12 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(instantObsNameEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(durationObsExpressionEClass, DurationObsExpression.class, "DurationObsExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDurationObsExpression_Id(), this.getDurationObsName(), null, "id", null, 0, 1, DurationObsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDurationObsExpression_Index(), this.getExpression(), null, "index", null, 0, 1, DurationObsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDurationObsExpression_Condition(), this.getExpression(), null, "condition", null, 0, 1, DurationObsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDurationObsExpression_Id(), this.getDurationObsName(), null, "id", null, 0, 1, DurationObsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getDurationObsExpression_Index(), this.getExpression(), null, "index", null, 0, 1, DurationObsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getDurationObsExpression_Condition(), this.getExpression(), null, "condition", null, 0, 1, DurationObsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(durationObsExpressionEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClass(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1901,7 +2021,8 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 
 		initEClass(durationObsNameEClass, DurationObsName.class, "DurationObsName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDurationObsName_Path(), this.getQualifiedName(), null, "path", null, 0, 1, DurationObsName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDurationObsName_DurationId(), theUMLPackage.getDurationObservation(), null, "durationId", null, 0, 1, DurationObsName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDurationObsName_DurationId(), theUMLPackage.getDurationObservation(), null, "durationId", null, 0, 1, DurationObsName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(durationObsNameEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClass(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1911,8 +2032,10 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(durationObsNameEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(jitterExpEClass, JitterExp.class, "JitterExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getJitterExp_FirstInstant(), this.getInstantObsExpression(), null, "firstInstant", null, 0, 1, JitterExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getJitterExp_SecondInstant(), this.getInstantObsExpression(), null, "secondInstant", null, 0, 1, JitterExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJitterExp_FirstInstant(), this.getInstantObsExpression(), null, "firstInstant", null, 0, 1, JitterExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getJitterExp_SecondInstant(), this.getInstantObsExpression(), null, "secondInstant", null, 0, 1, JitterExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		op = addEOperation(jitterExpEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClass(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1922,10 +2045,13 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		addEOperation(jitterExpEClass, theUMLPackage.getElement(), "getContextElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(variableDeclarationEClass, VariableDeclaration.class, "VariableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariableDeclaration_VariableDeclaration(), theEcorePackage.getEString(), "variableDeclaration", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariableDeclaration_VariableDeclaration(), theEcorePackage.getEString(), "variableDeclaration", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getVariableDeclaration_Name(), theEcorePackage.getEString(), "name", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVariableDeclaration_Type(), this.getDataTypeName(), null, "type", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVariableDeclaration_InitValue(), this.getExpression(), null, "initValue", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVariableDeclaration_Type(), this.getDataTypeName(), null, "type", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getVariableDeclaration_InitValue(), this.getExpression(), null, "initValue", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		op = addEOperation(variableDeclarationEClass, theEcorePackage.getEObject(), "getFilteredParentRule", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClass(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2030,4 +2156,4 @@ public class VSLPackageImpl extends EPackageImpl implements VSLPackage {
 		createResource(eNS_URI);
 	}
 
-} //VSLPackageImpl
+} // VSLPackageImpl

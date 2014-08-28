@@ -23,6 +23,7 @@ public class SeparatorConfigurationImpl extends LeafConfigurationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SeparatorConfigurationImpl() {
@@ -32,6 +33,7 @@ public class SeparatorConfigurationImpl extends LeafConfigurationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -39,4 +41,4 @@ public class SeparatorConfigurationImpl extends LeafConfigurationImpl implements
 		return PaletteconfigurationPackage.Literals.SEPARATOR_CONFIGURATION;
 	}
 
-} //SeparatorConfigurationImpl
+} // SeparatorConfigurationImpl

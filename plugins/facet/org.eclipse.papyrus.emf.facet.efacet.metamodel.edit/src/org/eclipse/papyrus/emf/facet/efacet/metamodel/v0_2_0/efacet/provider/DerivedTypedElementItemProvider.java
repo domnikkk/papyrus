@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 366055 - NavigationQuery
  *       Gregoire Dupe (Mia-Software) - Bug 369673 - [Facet] IsOneOfQuery
@@ -40,11 +40,12 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryF
  * This is the item provider adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DerivedTypedElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class DerivedTypedElementItemProvider
-	extends FacetElementItemProvider
-	implements
+		extends FacetElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -54,6 +55,7 @@ public class DerivedTypedElementItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DerivedTypedElementItemProvider(AdapterFactory adapterFactory) {
@@ -64,6 +66,7 @@ public class DerivedTypedElementItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,30 +83,31 @@ public class DerivedTypedElementItemProvider
 	 * This adds a property descriptor for the Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DerivedTypedElement_override_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_DerivedTypedElement_override_feature", "_UI_DerivedTypedElement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 EFacetPackage.Literals.DERIVED_TYPED_ELEMENT__OVERRIDE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_DerivedTypedElement_override_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_DerivedTypedElement_override_feature", "_UI_DerivedTypedElement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						EFacetPackage.Literals.DERIVED_TYPED_ELEMENT__OVERRIDE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,6 +122,7 @@ public class DerivedTypedElementItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,14 +137,15 @@ public class DerivedTypedElementItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DerivedTypedElement)object).getName();
+		String label = ((DerivedTypedElement) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_DerivedTypedElement_type") : //$NON-NLS-1$
-			getString("_UI_DerivedTypedElement_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_DerivedTypedElement_type") : //$NON-NLS-1$
+				getString("_UI_DerivedTypedElement_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -147,6 +153,7 @@ public class DerivedTypedElementItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,9 +161,9 @@ public class DerivedTypedElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DerivedTypedElement.class)) {
-			case EFacetPackage.DERIVED_TYPED_ELEMENT__QUERY:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case EFacetPackage.DERIVED_TYPED_ELEMENT__QUERY:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -166,6 +173,7 @@ public class DerivedTypedElementItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,54 +181,54 @@ public class DerivedTypedElementItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EFacetPackage.Literals.DERIVED_TYPED_ELEMENT__QUERY,
-				 QueryFactory.eINSTANCE.createNavigationQuery()));
+						QueryFactory.eINSTANCE.createNavigationQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EFacetPackage.Literals.DERIVED_TYPED_ELEMENT__QUERY,
-				 QueryFactory.eINSTANCE.createIsOneOfQuery()));
+						QueryFactory.eINSTANCE.createIsOneOfQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EFacetPackage.Literals.DERIVED_TYPED_ELEMENT__QUERY,
-				 QueryFactory.eINSTANCE.createStringLiteralQuery()));
+						QueryFactory.eINSTANCE.createStringLiteralQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EFacetPackage.Literals.DERIVED_TYPED_ELEMENT__QUERY,
-				 QueryFactory.eINSTANCE.createTrueLiteralQuery()));
+						QueryFactory.eINSTANCE.createTrueLiteralQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EFacetPackage.Literals.DERIVED_TYPED_ELEMENT__QUERY,
-				 QueryFactory.eINSTANCE.createFalseLiteralQuery()));
+						QueryFactory.eINSTANCE.createFalseLiteralQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EFacetPackage.Literals.DERIVED_TYPED_ELEMENT__QUERY,
-				 QueryFactory.eINSTANCE.createNullLiteralQuery()));
+						QueryFactory.eINSTANCE.createNullLiteralQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EFacetPackage.Literals.DERIVED_TYPED_ELEMENT__QUERY,
-				 QueryFactory.eINSTANCE.createIntegerLiteralQuery()));
+						QueryFactory.eINSTANCE.createIntegerLiteralQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EFacetPackage.Literals.DERIVED_TYPED_ELEMENT__QUERY,
-				 QueryFactory.eINSTANCE.createFloatLiteralQuery()));
+						QueryFactory.eINSTANCE.createFloatLiteralQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EFacetPackage.Literals.DERIVED_TYPED_ELEMENT__QUERY,
-				 QueryFactory.eINSTANCE.createEObjectLiteralQuery()));
+						QueryFactory.eINSTANCE.createEObjectLiteralQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EFacetPackage.Literals.DERIVED_TYPED_ELEMENT__QUERY,
-				 QueryFactory.eINSTANCE.createOperationCallQuery()));
+						QueryFactory.eINSTANCE.createOperationCallQuery()));
 	}
 
 }

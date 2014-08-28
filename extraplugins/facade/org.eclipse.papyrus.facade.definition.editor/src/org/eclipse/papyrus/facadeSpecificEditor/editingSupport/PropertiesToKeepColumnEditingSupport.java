@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,24 +42,24 @@ public class PropertiesToKeepColumnEditingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#setValue(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @param value
 	 */
 	@Override
 	protected void setValue(Object element, Object value) {
-		if(element instanceof VirtualElement) {
+		if (element instanceof VirtualElement) {
 			boolean canBeUnkept = true;
-			if(element instanceof VirtualProperty) {
-				if(((VirtualElement)element).getRepresentedElement() instanceof EStructuralFeature) {
-					if(((EStructuralFeature)((VirtualElement)element).getRepresentedElement()).getLowerBound() > 0) {
+			if (element instanceof VirtualProperty) {
+				if (((VirtualElement) element).getRepresentedElement() instanceof EStructuralFeature) {
+					if (((EStructuralFeature) ((VirtualElement) element).getRepresentedElement()).getLowerBound() > 0) {
 						canBeUnkept = false;
 						MessageDialog.openWarning(Display.getCurrent().getActiveShell(), Messages.PropertiesToKeepColumnEditingSupport_0, Messages.PropertiesToKeepColumnEditingSupport_1);
 					}
-				} else if(((VirtualElement)element).getRepresentedElement() instanceof Property) {
-					if(((Property)((VirtualElement)element).getRepresentedElement()).getLower() > 0) {
+				} else if (((VirtualElement) element).getRepresentedElement() instanceof Property) {
+					if (((Property) ((VirtualElement) element).getRepresentedElement()).getLower() > 0) {
 						canBeUnkept = false;
 						MessageDialog.openWarning(Display.getCurrent().getActiveShell(), Messages.PropertiesToKeepColumnEditingSupport_2, Messages.PropertiesToKeepColumnEditingSupport_3);
 					}
@@ -67,8 +67,8 @@ public class PropertiesToKeepColumnEditingSupport extends EditingSupport {
 
 			}
 
-			if(canBeUnkept) {
-				SetCommand command = new SetCommand(editingDomain, (VirtualElement)element, VirtualmetamodelPackage.eINSTANCE.getVirtualElement_Kept(), (Boolean)value); //$NON-NLS-1$
+			if (canBeUnkept) {
+				SetCommand command = new SetCommand(editingDomain, (VirtualElement) element, VirtualmetamodelPackage.eINSTANCE.getVirtualElement_Kept(), (Boolean) value);
 				editingDomain.getCommandStack().execute(command);
 				getViewer().refresh();
 			}
@@ -76,24 +76,24 @@ public class PropertiesToKeepColumnEditingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#getValue(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	protected Object getValue(Object element) {
-		if(element instanceof VirtualElement) {
-			return Boolean.valueOf(((VirtualElement)element).isKept());
+		if (element instanceof VirtualElement) {
+			return Boolean.valueOf(((VirtualElement) element).isKept());
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#getCellEditor(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
@@ -103,9 +103,9 @@ public class PropertiesToKeepColumnEditingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#canEdit(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */

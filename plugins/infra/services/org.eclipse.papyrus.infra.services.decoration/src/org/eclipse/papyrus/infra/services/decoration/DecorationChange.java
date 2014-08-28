@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *	Ansgar Radermacher (CEA LIST) - ansgar.radermacher@cea.fr
- *   
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.infra.services.decoration;
@@ -22,7 +22,7 @@ import org.eclipse.papyrus.infra.services.decoration.util.Decoration;
  * all by checking whether an added or removed decoration is "for them" (e.g. views are observers and can detect whether a decoration
  * is associated with the EObject they represent).
  * This greatly enhances performance, see bug 400593
- * 
+ *
  * @author ansgar
  */
 public class DecorationChange {
@@ -30,7 +30,7 @@ public class DecorationChange {
 	public enum DecorationChangeKind {
 		DecorationAdded,
 		DecorationRemoved,
-		RefreshAll, 
+		RefreshAll,
 		DecorationModified
 	};
 

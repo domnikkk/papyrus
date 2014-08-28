@@ -32,9 +32,10 @@ public class ExportDiagramsErrorPage extends WizardPage {
 
 	/**
 	 * Create contents of the wizard.
-	 * 
+	 *
 	 * @param parent
 	 */
+	@Override
 	public void createControl(Composite parent) {
 		Label label = new Label(parent, SWT.NONE);
 		label.setText(Messages.ExportDiagramsErrorPage_3);

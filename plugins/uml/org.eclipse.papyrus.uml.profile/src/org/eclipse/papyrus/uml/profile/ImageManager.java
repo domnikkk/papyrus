@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  * Manager for icons.
- * 
+ *
  * @author Remi SCHNEKENBURGER
  */
 public class ImageManager {
@@ -170,21 +170,21 @@ public class ImageManager {
 	/**
 	 * Returns an {@link org.eclipse.swt.graphics.Image} identified by its key.<BR>
 	 * By default, it returns a default image. This image is the image placed in the directory <em>resources/icons/default.gif</em>
-	 * 
+	 *
 	 * @param key
-	 *        the key of the image
-	 * 
+	 *            the key of the image
+	 *
 	 * @return the Image
 	 */
 	public static Image getImage(String key) {
 		ImageRegistry registry = Activator.getDefault().getImageRegistry();
 		Image image = registry.get(key);
-		if(image == null) {
+		if (image == null) {
 			ImageDescriptor desc = AbstractUIPlugin.imageDescriptorFromPlugin(org.eclipse.papyrus.uml.profile.Activator.PLUGIN_ID, key);
 			registry.put(key, desc);
 			image = registry.get(key);
 		}
-		if((image == null) && !key.equals(DEFAULT_IMAGE)) {
+		if ((image == null) && !key.equals(DEFAULT_IMAGE)) {
 			image = getImage(DEFAULT_IMAGE);
 		}
 

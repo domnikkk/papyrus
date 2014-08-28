@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ import org.eclipse.ui.IPerspectiveFactory;
 
 /**
  * A Factory for instantiating the Customization perspective
- * 
+ *
  * @author Camille Letavernier
  */
 public class CustomizationPerspectiveFactory implements IPerspectiveFactory {
@@ -26,6 +26,7 @@ public class CustomizationPerspectiveFactory implements IPerspectiveFactory {
 
 	private final static String PROJECT_EXPLORER = "org.eclipse.ui.navigator.ProjectExplorer"; //$NON-NLS-1$
 
+	@Override
 	public void createInitialLayout(IPageLayout layout) {
 		layout.addView(PROJECT_EXPLORER, IPageLayout.LEFT, 0.20f, layout.getEditorArea());
 		layout.addView(PROPERTIES, IPageLayout.BOTTOM, 0.7f, layout.getEditorArea());

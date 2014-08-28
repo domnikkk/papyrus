@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -20,51 +20,58 @@ public interface GeneratorPreference {
 
 	/**
 	 * indicate if methods of inherits interfaces must be implement in a class
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean implementMethodsOfIntefaces();
 
 	/**
 	 * indicate if methods of inherit abstract class must be implement in a class
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean implementMethodsOfAbstractClass();
 
 	/**
 	 * indicate if getters must be create
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean generateGetters();
 
 	/**
 	 * indicate if setters must be create
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean generateSetters();
 
 	/**
 	 * indicate if a package must be generate
-	 * 
+	 *
 	 * @param packageQualifiedName
-	 *        package to generate
+	 *            package to generate
 	 * @return
 	 */
 	public boolean isPackageToGenerate(String packageQualifiedName);
 
 	/**
-	 * 
+	 *
 	 * @return generic class to use for the association * (multi-value)
 	 */
 	public String genericClassForMultiValue();
-	
+
 	/**
 	 * Return true if we want to stop on first error, false if we want to continue anyway.
+	 *
 	 * @return
 	 */
 	public boolean stopOnFirstError();
+
+	/**
+	 *
+	 * @return the default source folder name where the generator have to generate Java files and packages.
+	 */
+	public String defaultSourceFolderName();
 
 }

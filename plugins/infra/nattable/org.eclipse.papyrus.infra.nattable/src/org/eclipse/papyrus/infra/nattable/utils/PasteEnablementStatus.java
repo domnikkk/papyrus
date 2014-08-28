@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		 Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -16,9 +16,9 @@ package org.eclipse.papyrus.infra.nattable.utils;
 import org.eclipse.core.runtime.MultiStatus;
 
 /**
- * 
+ *
  * This class is used to store the tests about the paste capability of the table
- * 
+ *
  */
 public class PasteEnablementStatus {
 
@@ -34,13 +34,13 @@ public class PasteEnablementStatus {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param columnStatus
-	 *        the paste column status
+	 *            the paste column status
 	 * @param rowStatus
-	 *        the paste row status
+	 *            the paste row status
 	 */
 	public PasteEnablementStatus(final MultiStatus columnStatus, final MultiStatus rowStatus) {
 		this.rowStatus = rowStatus;
@@ -48,36 +48,36 @@ public class PasteEnablementStatus {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the paste mode according to the row and column status
 	 */
 	public PasteModeEnumeration getPasteMode() {
-		if(this.rowStatus == null && this.columnStatus == null) {
+		if (this.rowStatus == null && this.columnStatus == null) {
 			return PasteModeEnumeration.PASTE_NO_CONFIGURATION;
 		}
-		if(this.rowStatus != null && this.columnStatus != null) {
-			if(this.columnStatus.isOK() && this.rowStatus.isOK()) {
+		if (this.rowStatus != null && this.columnStatus != null) {
+			if (this.columnStatus.isOK() && this.rowStatus.isOK()) {
 				return PasteModeEnumeration.PASTE_EOBJECT_ROW_OR_COLUMN;
 			}
-			if(this.columnStatus.isOK() && !this.rowStatus.isOK()) {
+			if (this.columnStatus.isOK() && !this.rowStatus.isOK()) {
 				return PasteModeEnumeration.PASTE_EOBJECT_COLUMN;
 			}
-			if(!this.columnStatus.isOK() && this.rowStatus.isOK()) {
+			if (!this.columnStatus.isOK() && this.rowStatus.isOK()) {
 				return PasteModeEnumeration.PASTE_EOBJECT_ROW;
 			}
 		}
-		if(this.rowStatus != null && this.rowStatus.isOK() && this.columnStatus == null) {
+		if (this.rowStatus != null && this.rowStatus.isOK() && this.columnStatus == null) {
 			return PasteModeEnumeration.PASTE_EOBJECT_ROW;
 		}
-		if(this.columnStatus != null && this.rowStatus == null && this.columnStatus.isOK()) {
+		if (this.columnStatus != null && this.rowStatus == null && this.columnStatus.isOK()) {
 			return PasteModeEnumeration.PASTE_EOBJECT_COLUMN;
 		}
 		return PasteModeEnumeration.CANT_PASTE;
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the column status
 	 */
@@ -86,7 +86,7 @@ public class PasteEnablementStatus {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the row status
 	 */

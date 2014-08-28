@@ -19,7 +19,7 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 
 /**
  * Defines the profile application preference page.
- * 
+ *
  * @author Gilles Cannenterre
  * @since 27 oct. 06
  */
@@ -42,15 +42,18 @@ public class ProfileApplicationPreferencePage extends FieldEditorPreferencePage 
 	@Override
 	public void createFieldEditors() {
 
-		addField(new RadioGroupFieldEditor(UMLVisualInformationPapyrusConstant.P_STEREOTYPE_NAME_APPEARANCE, "Stereotype Name Display Preferences :", 1, new String[][]{ { "UML Compatibility (force lower case for first letter - default)", UMLVisualInformationPapyrusConstant.P_STEREOTYPE_NAME_DISPLAY_UML_CONFORM }, { "User Controlled (let name as entered by user)", UMLVisualInformationPapyrusConstant.P_STEREOTYPE_NAME_DISPLAY_USER_CONTROLLED } }, getFieldEditorParent()));
+		addField(new RadioGroupFieldEditor(UMLVisualInformationPapyrusConstant.P_STEREOTYPE_NAME_APPEARANCE, "Stereotype Name Display Preferences :", 1, new String[][] {
+				{ "UML Compatibility (force lower case for first letter - default)", UMLVisualInformationPapyrusConstant.P_STEREOTYPE_NAME_DISPLAY_UML_CONFORM },
+				{ "User Controlled (let name as entered by user)", UMLVisualInformationPapyrusConstant.P_STEREOTYPE_NAME_DISPLAY_USER_CONTROLLED } }, getFieldEditorParent()));
 	}
 
 	/**
 	 * Init.
-	 * 
+	 *
 	 * @param workbench
-	 *        the workbench
+	 *            the workbench
 	 */
+	@Override
 	public void init(IWorkbench workbench) {
 	}
 

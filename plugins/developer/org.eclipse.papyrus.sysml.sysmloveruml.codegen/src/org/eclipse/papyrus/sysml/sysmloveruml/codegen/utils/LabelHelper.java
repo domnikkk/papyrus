@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,7 @@ import org.eclipse.papyrus.sysml.sysmloveruml.codegen.SysMLOverUMLGeneratorPlugi
 
 /**
  * Helper to print label during generation.
- * 
+ *
  * @author "Arthur Daussy <a href="mailto:arthur.daussy@atos.net
  *         ">arthur.daussy@atos.net</a>"
  */
@@ -36,7 +36,7 @@ public final class LabelHelper {
 
 	/**
 	 * Get the name of the extension class of the Adapter Factory Class
-	 * 
+	 *
 	 * @param genPackage
 	 * @return
 	 */

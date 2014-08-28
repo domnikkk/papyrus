@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,14 +22,16 @@ public class DiagramOutlineAdapterFactory implements IAdapterFactory {
 
 	private static final Class<?>[] ADAPTERS = { IReloadContextProvider.class };
 
+	@Override
 	@SuppressWarnings("rawtypes")
 	public Class[] getAdapterList() {
 		return ADAPTERS;
 	}
 
+	@Override
 	public Object getAdapter(Object adaptableObject, @SuppressWarnings("rawtypes") Class adapterType) {
-		if(adapterType == IReloadContextProvider.class) {
-			if(DiagramOutlineReloadContextProvider.isDiagramOutline(adaptableObject)) {
+		if (adapterType == IReloadContextProvider.class) {
+			if (DiagramOutlineReloadContextProvider.isDiagramOutline(adaptableObject)) {
 				return new DiagramOutlineReloadContextProvider(adaptableObject);
 			}
 		}

@@ -16,12 +16,12 @@ package org.eclipse.papyrus.uml.diagram.communication.tests.canonical;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.diagram.tests.canonical.TestChildNode;
-import org.eclipse.papyrus.junit.utils.classification.FailingTest;
+import org.eclipse.papyrus.junit.framework.classification.FailingTest;
 import org.eclipse.papyrus.uml.diagram.communication.CreateCommunicationDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.communication.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.communication.tests.ICommunicationDiagramTestsConstants;
+import org.eclipse.papyrus.uml.diagram.tests.canonical.TestChildNode;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.junit.Test;
 

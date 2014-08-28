@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,9 +35,9 @@ public class ProfileElementWithDisplayContentProvider extends ProfileElementCont
 
 	/**
 	 * The Constructor.
-	 * 
+	 *
 	 * @param _diagramElement
-	 *        the _diagram element
+	 *            the _diagram element
 	 */
 	public ProfileElementWithDisplayContentProvider(EModelElement _diagramElement) {
 		super();
@@ -47,10 +47,10 @@ public class ProfileElementWithDisplayContentProvider extends ProfileElementCont
 
 	/**
 	 * Gets the children.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
-	 * 
+	 *            the parent
+	 *
 	 * @return the children
 	 */
 	@Override
@@ -64,26 +64,26 @@ public class ProfileElementWithDisplayContentProvider extends ProfileElementCont
 
 	/**
 	 * Update is display.
-	 * 
+	 *
 	 * @param objects
-	 *        the objects
+	 *            the objects
 	 */
 	private void updateIsDisplay(TreeObject[] objects) {
 
-		for(int i = 0; i < objects.length; i++) {
+		for (int i = 0; i < objects.length; i++) {
 
-			if(objects[i] instanceof AppliedStereotypeTreeObject) {
-				AppliedStereotypeTreeObject currentStTO = (AppliedStereotypeTreeObject)objects[i];
-				if(isInStereotypeDisplay(currentStTO.getStereotype())) {
+			if (objects[i] instanceof AppliedStereotypeTreeObject) {
+				AppliedStereotypeTreeObject currentStTO = (AppliedStereotypeTreeObject) objects[i];
+				if (isInStereotypeDisplay(currentStTO.getStereotype())) {
 					currentStTO.setDisplay(true);
 				} else {
 					currentStTO.setDisplay(false);
 				}
 
-			} else if(objects[i] instanceof AppliedStereotypePropertyTreeObject) {
-				AppliedStereotypePropertyTreeObject currentPropertyTO = (AppliedStereotypePropertyTreeObject)objects[i];
-				AppliedStereotypeTreeObject currentStereotypeTO = (AppliedStereotypeTreeObject)currentPropertyTO.getParent();
-				if(isInStereoPropertyDisplay(currentPropertyTO.getProperty(), currentStereotypeTO.getStereotype())) {
+			} else if (objects[i] instanceof AppliedStereotypePropertyTreeObject) {
+				AppliedStereotypePropertyTreeObject currentPropertyTO = (AppliedStereotypePropertyTreeObject) objects[i];
+				AppliedStereotypeTreeObject currentStereotypeTO = (AppliedStereotypeTreeObject) currentPropertyTO.getParent();
+				if (isInStereoPropertyDisplay(currentPropertyTO.getProperty(), currentStereotypeTO.getStereotype())) {
 					currentPropertyTO.setDisplay(true);
 				} else {
 					currentPropertyTO.setDisplay(false);
@@ -91,8 +91,8 @@ public class ProfileElementWithDisplayContentProvider extends ProfileElementCont
 
 			} // else nothing to do
 		}
-		//		
-		//		
+		//
+		//
 		// // handle display icons
 		// TreeItem[] treeItems = getTree().getItems();
 		// for(int i=0; i<treeItems.length; i++){
@@ -104,7 +104,7 @@ public class ProfileElementWithDisplayContentProvider extends ProfileElementCont
 		// treeItems[i].setImage(ImageManager.IMG_STEREOTYPE);
 		// }
 		// }
-		//			
+		//
 		// // properties display handling
 		// TreeItem[] propItems = treeItems[i].getItems();
 		// for(int j=0; j<propItems.length; j++){
@@ -120,17 +120,17 @@ public class ProfileElementWithDisplayContentProvider extends ProfileElementCont
 
 	/**
 	 * Checks wether the stereotype property is in the display list or not.
-	 * 
+	 *
 	 * @param owner
-	 *        the owner
+	 *            the owner
 	 * @param property
-	 *        to check out
-	 * 
+	 *            to check out
+	 *
 	 * @return true if the stereotype property is in the display list, false otherwise
 	 */
 	private Boolean isInStereoPropertyDisplay(Property property, Stereotype owner) {
 		// bugfix: a selected element is not necessary a diagram element (ex: selection in the outline)
-		if(diagramElement == null) {
+		if (diagramElement == null) {
 			return false;
 		}
 
@@ -149,9 +149,9 @@ public class ProfileElementWithDisplayContentProvider extends ProfileElementCont
 
 	/**
 	 * Sets the diagram element.
-	 * 
+	 *
 	 * @param diagramElement
-	 *        the diagram element
+	 *            the diagram element
 	 */
 	public void setDiagramElement(EModelElement diagramElement) {
 		this.diagramElement = diagramElement;
@@ -159,15 +159,15 @@ public class ProfileElementWithDisplayContentProvider extends ProfileElementCont
 
 	/**
 	 * Checks wether the stereotype is in the display list or not.
-	 * 
+	 *
 	 * @param st
-	 *        to check out
-	 * 
+	 *            to check out
+	 *
 	 * @return true if the stereotype is in the display list, false otherwise
 	 */
 	protected Boolean isInStereotypeDisplay(Stereotype st) {
 		// bugfix: a selected element is not necessary a diagram element (ex: selection in the outline)
-		if(diagramElement == null) {
+		if (diagramElement == null) {
 			return false;
 		}
 

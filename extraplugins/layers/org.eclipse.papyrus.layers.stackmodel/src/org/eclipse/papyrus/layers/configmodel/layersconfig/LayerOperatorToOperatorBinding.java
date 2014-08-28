@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -21,8 +21,8 @@ package org.eclipse.papyrus.layers.configmodel.layersconfig;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorToOperatorBinding#getOperators <em>Operators</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorToOperatorBinding#getLayerOperator <em>Layer Operator</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorToOperatorBinding#getOperators <em>Operators</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorToOperatorBinding#getLayerOperator <em>Layer Operator</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,10 +35,10 @@ public interface LayerOperatorToOperatorBinding extends FolderElement, LayersOpe
 	 * Returns the value of the '<em><b>Operators</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Operators</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Operators</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Operators</em>' reference.
 	 * @see #setOperators(OperatorConfig)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getLayerOperatorToOperatorBinding_Operators()
@@ -51,7 +51,9 @@ public interface LayerOperatorToOperatorBinding extends FolderElement, LayersOpe
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorToOperatorBinding#getOperators <em>Operators</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Operators</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Operators</em>' reference.
 	 * @see #getOperators()
 	 * @generated
 	 */
@@ -61,10 +63,10 @@ public interface LayerOperatorToOperatorBinding extends FolderElement, LayersOpe
 	 * Returns the value of the '<em><b>Layer Operator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Layer Operator</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Layer Operator</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Layer Operator</em>' reference.
 	 * @see #setLayerOperator(LayerOperatorConfig)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getLayerOperatorToOperatorBinding_LayerOperator()
@@ -77,7 +79,9 @@ public interface LayerOperatorToOperatorBinding extends FolderElement, LayersOpe
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorToOperatorBinding#getLayerOperator <em>Layer Operator</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Layer Operator</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Layer Operator</em>' reference.
 	 * @see #getLayerOperator()
 	 * @generated
 	 */

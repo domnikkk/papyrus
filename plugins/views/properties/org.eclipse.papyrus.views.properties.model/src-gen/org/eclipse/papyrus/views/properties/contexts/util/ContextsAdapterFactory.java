@@ -12,7 +12,6 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.constraints.DisplayUnit;
-import org.eclipse.papyrus.views.properties.contexts.*;
 import org.eclipse.papyrus.views.properties.contexts.Context;
 import org.eclipse.papyrus.views.properties.contexts.ContextsPackage;
 import org.eclipse.papyrus.views.properties.contexts.DataContextElement;
@@ -29,6 +28,7 @@ import org.eclipse.papyrus.views.properties.contexts.View;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage
  * @generated
  */
@@ -37,6 +37,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static ContextsPackage modelPackage;
@@ -45,6 +46,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ContextsAdapterFactory() {
@@ -58,6 +60,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -67,7 +70,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -76,71 +79,85 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ContextsSwitch<Adapter> modelSwitch =
-		new ContextsSwitch<Adapter>() {
-			@Override
-			public Adapter caseContext(Context object) {
-				return createContextAdapter();
-			}
-			@Override
-			public Adapter caseTab(Tab object) {
-				return createTabAdapter();
-			}
-			@Override
-			public Adapter caseView(View object) {
-				return createViewAdapter();
-			}
-			@Override
-			public Adapter caseSection(Section object) {
-				return createSectionAdapter();
-			}
-			@Override
-			public Adapter caseDataContextElement(DataContextElement object) {
-				return createDataContextElementAdapter();
-			}
-			@Override
-			public Adapter caseProperty(Property object) {
-				return createPropertyAdapter();
-			}
-			@Override
-			public Adapter caseUnknownProperty(UnknownProperty object) {
-				return createUnknownPropertyAdapter();
-			}
-			@Override
-			public Adapter caseDataContextPackage(DataContextPackage object) {
-				return createDataContextPackageAdapter();
-			}
-			@Override
-			public Adapter caseDataContextRoot(DataContextRoot object) {
-				return createDataContextRootAdapter();
-			}
-			@Override
-			public Adapter caseEModelElement(EModelElement object) {
-				return createEModelElementAdapter();
-			}
-			@Override
-			public Adapter caseDisplayUnit(DisplayUnit object) {
-				return createDisplayUnitAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new ContextsSwitch<Adapter>() {
+				@Override
+				public Adapter caseContext(Context object) {
+					return createContextAdapter();
+				}
+
+				@Override
+				public Adapter caseTab(Tab object) {
+					return createTabAdapter();
+				}
+
+				@Override
+				public Adapter caseView(View object) {
+					return createViewAdapter();
+				}
+
+				@Override
+				public Adapter caseSection(Section object) {
+					return createSectionAdapter();
+				}
+
+				@Override
+				public Adapter caseDataContextElement(DataContextElement object) {
+					return createDataContextElementAdapter();
+				}
+
+				@Override
+				public Adapter caseProperty(Property object) {
+					return createPropertyAdapter();
+				}
+
+				@Override
+				public Adapter caseUnknownProperty(UnknownProperty object) {
+					return createUnknownPropertyAdapter();
+				}
+
+				@Override
+				public Adapter caseDataContextPackage(DataContextPackage object) {
+					return createDataContextPackageAdapter();
+				}
+
+				@Override
+				public Adapter caseDataContextRoot(DataContextRoot object) {
+					return createDataContextRootAdapter();
+				}
+
+				@Override
+				public Adapter caseEModelElement(EModelElement object) {
+					return createEModelElementAdapter();
+				}
+
+				@Override
+				public Adapter caseDisplayUnit(DisplayUnit object) {
+					return createDisplayUnitAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 *
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -150,6 +167,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.views.properties.contexts.Context
 	 * @generated
@@ -164,6 +182,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.views.properties.contexts.Tab
 	 * @generated
@@ -178,6 +197,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.views.properties.contexts.View
 	 * @generated
@@ -192,6 +212,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.views.properties.contexts.Section
 	 * @generated
@@ -206,6 +227,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.views.properties.contexts.DataContextElement
 	 * @generated
@@ -220,6 +242,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.views.properties.contexts.Property
 	 * @generated
@@ -234,6 +257,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.views.properties.contexts.UnknownProperty
 	 * @generated
@@ -248,6 +272,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.views.properties.contexts.DataContextPackage
 	 * @generated
@@ -262,6 +287,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.views.properties.contexts.DataContextRoot
 	 * @generated
@@ -276,6 +302,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.EModelElement
 	 * @generated
@@ -290,6 +317,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.constraints.DisplayUnit
 	 * @generated
@@ -303,6 +331,7 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -310,4 +339,4 @@ public class ContextsAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //ContextsAdapterFactory
+} // ContextsAdapterFactory

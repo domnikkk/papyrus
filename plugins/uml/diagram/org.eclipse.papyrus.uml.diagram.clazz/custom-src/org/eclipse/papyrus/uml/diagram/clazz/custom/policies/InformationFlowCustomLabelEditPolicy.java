@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,8 +21,8 @@ import org.eclipse.uml2.uml.InformationFlow;
 
 /**
  * This class manages the display of the conveyed classifiers by an {@linkInformationFlow}
- * 
- * 
+ *
+ *
  */
 public class InformationFlowCustomLabelEditPolicy extends AbstractCustomLabelEditPolicy {
 
@@ -40,32 +40,35 @@ public class InformationFlowCustomLabelEditPolicy extends AbstractCustomLabelEdi
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected void addAdditionalListeners() {
 		// adds a listener to the element itself, and to linked elements, like Type
-		if(getUMLElement() instanceof InformationFlow) {
+		if (getUMLElement() instanceof InformationFlow) {
 			// adds listener to each Convoyed Classifier
-			EList<Classifier> conveyedClassifiers = ((InformationFlow)getUMLElement()).getConveyeds();
-			for(int i = 0; i < conveyedClassifiers.size(); i++) {
+			EList<Classifier> conveyedClassifiers = ((InformationFlow) getUMLElement()).getConveyeds();
+			for (int i = 0; i < conveyedClassifiers.size(); i++) {
 				getDiagramEventBroker().addNotificationListener(conveyedClassifiers.get(i), this);
 			}
 		}
 	}
 
+	@Override
 	public void refreshDisplay() {
 		refreshNameDisplay();
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected void removeAdditionalListeners() {
-		if(getUMLElement() instanceof InformationFlow) {
-			EList<Classifier> conveyedClassifiers = ((InformationFlow)getUMLElement()).getConveyeds();
-			for(int i = 0; i < conveyedClassifiers.size(); i++) {
+		if (getUMLElement() instanceof InformationFlow) {
+			EList<Classifier> conveyedClassifiers = ((InformationFlow) getUMLElement()).getConveyeds();
+			for (int i = 0; i < conveyedClassifiers.size(); i++) {
 				getDiagramEventBroker().removeNotificationListener(conveyedClassifiers.get(i), this);
 			}
 		}
@@ -73,18 +76,19 @@ public class InformationFlowCustomLabelEditPolicy extends AbstractCustomLabelEdi
 
 	/**
 	 * Refresh the name in the Label
-	 * 
+	 *
 	 */
 	protected void refreshNameDisplay() {
-		if(getHost() instanceof InformationFlowConveyedLabelEditPart) {
-			((InformationFlowConveyedLabelEditPart)getHost()).setLabelText(nameToDisplay());
+		if (getHost() instanceof InformationFlowConveyedLabelEditPart) {
+			((InformationFlowConveyedLabelEditPart) getHost()).setLabelText(nameToDisplay());
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritedDoc}
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 		// change the label of the figure managed by the host edit part (managed by the parent edit
 		// part in general...)
@@ -92,36 +96,36 @@ public class InformationFlowCustomLabelEditPolicy extends AbstractCustomLabelEdi
 		// - a convoyed classifier's name have changed
 		// - add or remove of a convoyed classifier
 		final int eventType = notification.getEventType();
-		if(notification.getNotifier() instanceof InformationFlow) {
-			switch(eventType) {
+		if (notification.getNotifier() instanceof InformationFlow) {
+			switch (eventType) {
 			case ADD_CONVEYED_CLASSIFIER:
-				getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+				getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 				refreshDisplay();
 				break;
 			case REMOVE_CONVEYED_CLASSIFER:
-				getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+				getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 				refreshDisplay();
 				break;
 			default:
 				// Nothing to do
 			}
 		}
-		if(eventType == CHANGE_NAME_OF_A_CONVOYED_CLASSIFIER) {
+		if (eventType == CHANGE_NAME_OF_A_CONVOYED_CLASSIFIER) {
 			refreshDisplay();
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the name to display
 	 */
 	public String nameToDisplay() {
 		String name = "";
-		if(getUMLElement() instanceof InformationFlow) {
-			EList<Classifier> classes = ((InformationFlow)getUMLElement()).getConveyeds();
-			for(int i = 0; i < classes.size(); i++) {
+		if (getUMLElement() instanceof InformationFlow) {
+			EList<Classifier> classes = ((InformationFlow) getUMLElement()).getConveyeds();
+			for (int i = 0; i < classes.size(); i++) {
 				name += classes.get(i).getName();
-				if(i != classes.size() - 1) {
+				if (i != classes.size() - 1) {
 					name += ", ";
 				}
 			}

@@ -9,6 +9,7 @@ import org.eclipse.xtext.generator.IGenerator;
 
 @SuppressWarnings("all")
 public class UmlStateGenerator implements IGenerator {
-  public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
-  }
+	@Override
+	public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
+	}
 }

@@ -96,7 +96,7 @@ public class AcceptEventActionFigure extends ScalablePolygonShape implements IPa
 		CenterLayout layoutLabelRect0 = new CenterLayout();
 		labelRect0.setLayoutManager(layoutLabelRect0);
 		fAcceptEventActionLabel = new CenteredWrappedLabel();
-		//fAcceptEventActionLabel.setBorder(new MarginBorder(5, 5, 5, 5));
+		// fAcceptEventActionLabel.setBorder(new MarginBorder(5, 5, 5, 5));
 		labelRect0.add(fAcceptEventActionLabel);
 	}
 
@@ -129,15 +129,14 @@ public class AcceptEventActionFigure extends ScalablePolygonShape implements IPa
 	 * Sets the stereotypes for this figure.
 	 *
 	 * @param stereotypes
-	 *        the string representing the stereotypes to be displayed
+	 *            the string representing the stereotypes to be displayed
 	 * @param image
-	 *        the image representing the stereotypes to be displayed
-	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String,
-	 *      org.eclipse.swt.graphics.Image)
+	 *            the image representing the stereotypes to be displayed
+	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String, org.eclipse.swt.graphics.Image)
 	 */
 	@Override
 	public void setStereotypeDisplay(String stereotypes, Image image) {
-		if(!isTemplateForAcceptTimeEventActionUsed()) {
+		if (!isTemplateForAcceptTimeEventActionUsed()) {
 			stereotypeHelper.setStereotypeDisplay(stereotypes, image);
 			refreshLayout();
 		}
@@ -153,11 +152,11 @@ public class AcceptEventActionFigure extends ScalablePolygonShape implements IPa
 	 * Sets the stereotypes properties for this figure.
 	 *
 	 * @param stereotypeProperties
-	 *        the string representing the stereotype properties to be displayed
+	 *            the string representing the stereotype properties to be displayed
 	 */
 	@Override
 	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
-		if(!isTemplateForAcceptTimeEventActionUsed()) {
+		if (!isTemplateForAcceptTimeEventActionUsed()) {
 			stereotypeHelper.setStereotypePropertiesInBrace(stereotypeProperties);
 			refreshLayout();
 		}
@@ -172,11 +171,11 @@ public class AcceptEventActionFigure extends ScalablePolygonShape implements IPa
 	 * displays the new string corresponding to the list of stereotypes.
 	 *
 	 * @param stereotypeProperties
-	 *        the string to be displayed.
+	 *            the string to be displayed.
 	 */
 	@Override
 	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
-		if(!isTemplateForAcceptTimeEventActionUsed()) {
+		if (!isTemplateForAcceptTimeEventActionUsed()) {
 			stereotypeHelper.setStereotypePropertiesInCompartment(stereotypeProperties);
 			refreshLayout();
 		}
@@ -194,7 +193,7 @@ public class AcceptEventActionFigure extends ScalablePolygonShape implements IPa
 	@Override
 	@Deprecated
 	public Label getStereotypesLabel() {
-		return null;//fActionStereotypeLabel;
+		return null;// fActionStereotypeLabel;
 	}
 
 	/**
@@ -212,10 +211,10 @@ public class AcceptEventActionFigure extends ScalablePolygonShape implements IPa
 	 * AcceptTimeEventAction
 	 *
 	 * @param useAcceptTimeEventActionTemplate
-	 *        true if the hourglass template must be used, false for default template
+	 *            true if the hourglass template must be used, false for default template
 	 */
 	public void useTemplateForAcceptTimeEventAction(boolean useAcceptTimeEventActionTemplate) {
-		if(useAcceptTimeEventActionTemplate) {
+		if (useAcceptTimeEventActionTemplate) {
 			// erase stereotypes representation in block
 			stereotypeHelper.setStereotypeDisplay(null, null);
 			stereotypeHelper.setStereotypePropertiesInBrace(null);
@@ -255,7 +254,7 @@ public class AcceptEventActionFigure extends ScalablePolygonShape implements IPa
 		graphics.popState();
 		// refresh relative margin
 		Insets newInsets = scaleMargin();
-		if(!newInsets.equals(getBorder().getInsets(this))) {
+		if (!newInsets.equals(getBorder().getInsets(this))) {
 			this.setBorder(new MarginBorder(scaleMargin()));
 		}
 	}
@@ -273,16 +272,16 @@ public class AcceptEventActionFigure extends ScalablePolygonShape implements IPa
 	private Insets scaleMargin() {
 		Rectangle pointsBounds = getTemplateBounds();
 		Rectangle actualBounds = getBounds();
-		float xScale = ((float)actualBounds.width) / pointsBounds.width;
-		float yScale = ((float)actualBounds.height) / pointsBounds.height;
-		if(xScale == 1 && yScale == 1) {
+		float xScale = ((float) actualBounds.width) / pointsBounds.width;
+		float yScale = ((float) actualBounds.height) / pointsBounds.height;
+		if (xScale == 1 && yScale == 1) {
 			return marginTemplate;
 		}
 		Insets scaled = new Insets(marginTemplate);
-		scaled.top = (int)Math.floor(scaled.top * yScale);
-		scaled.left = (int)Math.floor(scaled.left * xScale);
-		scaled.bottom = (int)Math.floor(scaled.bottom * yScale);
-		scaled.right = (int)Math.floor(scaled.right * xScale);
+		scaled.top = (int) Math.floor(scaled.top * yScale);
+		scaled.left = (int) Math.floor(scaled.left * xScale);
+		scaled.bottom = (int) Math.floor(scaled.bottom * yScale);
+		scaled.right = (int) Math.floor(scaled.right * xScale);
 		return scaled;
 	}
 
@@ -290,29 +289,29 @@ public class AcceptEventActionFigure extends ScalablePolygonShape implements IPa
 	 * switch between the two templates
 	 */
 	private Rectangle getTemplateBounds() {
-		if(myTemplateBounds == null) {
+		if (myTemplateBounds == null) {
 			myTemplateBounds = myTemplate.getBounds().getCopy().union(0, 0);
-			//just safety -- we are going to use this as divider
-			if(myTemplateBounds.width < 1) {
+			// just safety -- we are going to use this as divider
+			if (myTemplateBounds.width < 1) {
 				myTemplateBounds.width = 1;
 			}
-			if(myTemplateBounds.height < 1) {
+			if (myTemplateBounds.height < 1) {
 				myTemplateBounds.height = 1;
 			}
 		}
 		// switch between the two templates : create the second template bounds
-		if(myTemplateTimeBounds == null) {
+		if (myTemplateTimeBounds == null) {
 			myTemplateTimeBounds = myTemplateTime.getBounds().getCopy().union(0, 0);
-			//just safety -- we are going to use this as divider
-			if(myTemplateTimeBounds.width < 1) {
+			// just safety -- we are going to use this as divider
+			if (myTemplateTimeBounds.width < 1) {
 				myTemplateTimeBounds.width = 1;
 			}
-			if(myTemplateTimeBounds.height < 1) {
+			if (myTemplateTimeBounds.height < 1) {
 				myTemplateTimeBounds.height = 1;
 			}
 		}
 		// switch between the two templates : choose appropriate one
-		if(useTemplateTime) {
+		if (useTemplateTime) {
 			return myTemplateTimeBounds;
 		} else {
 			return myTemplateBounds;
@@ -322,11 +321,11 @@ public class AcceptEventActionFigure extends ScalablePolygonShape implements IPa
 	private int[] scalePointList() {
 		Rectangle pointsBounds = getTemplateBounds();
 		Rectangle actualBounds = getBounds();
-		float xScale = ((float)actualBounds.width) / pointsBounds.width;
-		float yScale = ((float)actualBounds.height) / pointsBounds.height;
-		if(xScale == 1 && yScale == 1) {
+		float xScale = ((float) actualBounds.width) / pointsBounds.width;
+		float yScale = ((float) actualBounds.height) / pointsBounds.height;
+		if (xScale == 1 && yScale == 1) {
 			// switch between the two templates
-			if(useTemplateTime) {
+			if (useTemplateTime) {
 				return myTemplateTime.toIntArray();
 			} else {
 				return myTemplate.toIntArray();
@@ -334,14 +333,14 @@ public class AcceptEventActionFigure extends ScalablePolygonShape implements IPa
 		}
 		// switch between the two templates
 		int[] scaled;
-		if(useTemplateTime) {
+		if (useTemplateTime) {
 			scaled = myTemplateTime.toIntArray().clone();
 		} else {
 			scaled = myTemplate.toIntArray().clone();
 		}
-		for(int i = 0; i < scaled.length; i += 2) {
-			scaled[i] = (int)Math.floor(scaled[i] * xScale);
-			scaled[i + 1] = (int)Math.floor(scaled[i + 1] * yScale);
+		for (int i = 0; i < scaled.length; i += 2) {
+			scaled[i] = (int) Math.floor(scaled[i] * xScale);
+			scaled[i + 1] = (int) Math.floor(scaled[i + 1] * yScale);
 		}
 		return scaled;
 	}

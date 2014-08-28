@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,12 +16,12 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Activator;
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Reference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Execution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.ValueSpecification;
@@ -42,7 +42,7 @@ public class Executor implements Cloneable {
 		// (in-out, out or return) parameter of the behavior.
 		// The execution instance is destroyed at completion.
 		Execution execution = this.locus.factory.createExecution(behavior, context);
-		for(int i = 0; i < inputs.size(); i++) {
+		for (int i = 0; i < inputs.size(); i++) {
 			execution.setParameterValue(inputs.get(i));
 		}
 		execution.execute();
@@ -73,10 +73,11 @@ public class Executor implements Cloneable {
 		return reference;
 	}
 
+	@Override
 	public Executor clone() {
 		Executor clone = null;
 		try {
-			clone = (Executor)super.clone();
+			clone = (Executor) super.clone();
 		} catch (CloneNotSupportedException e) {
 			// TODO Auto-generated catch block
 			Activator.log.error(e);

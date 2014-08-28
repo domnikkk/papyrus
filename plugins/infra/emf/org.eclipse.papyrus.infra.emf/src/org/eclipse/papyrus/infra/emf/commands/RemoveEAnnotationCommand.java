@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.infra.emf.commands;
 
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 
 /**
@@ -50,13 +51,13 @@ public class RemoveEAnnotationCommand extends org.eclipse.emf.transaction.Record
 
 	/**
 	 * Instantiates a new creates the e annotation command.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param object
-	 *        the object
+	 *            the object
 	 * @param eannotationName
-	 *        the eannotation name
+	 *            the eannotation name
 	 */
 	public RemoveEAnnotationCommand(TransactionalEditingDomain domain, EModelElement object, String eannotationName) {
 		super(domain);

@@ -48,20 +48,20 @@ public class ControlledElementReadOnlyHandler extends AbstractReadOnlyHandler {
 	}
 
 	public Optional<Boolean> anyReadOnly(Set<ReadOnlyAxis> axes, URI[] uris) {
-		if((getEditingDomain() == null) || !axes.contains(ReadOnlyAxis.DISCRETION)) {
+		if ((getEditingDomain() == null) || !axes.contains(ReadOnlyAxis.DISCRETION)) {
 			return Optional.absent();
 		}
 		ResourceSet resourceSet = getEditingDomain().getResourceSet();
-		if(resourceSet != null) {
-			for(URI uri : uris) {
-				if(UmlModel.UML_FILE_EXTENSION.equals(uri.fileExtension())) {
+		if (resourceSet != null) {
+			for (URI uri : uris) {
+				if (UmlModel.UML_FILE_EXTENSION.equals(uri.fileExtension())) {
 					Resource resource = resourceSet.getResource(uri.trimFragment(), false);
-					if(resource != null) {
-						if(!resource.getContents().isEmpty()) {
-							//A sub model can only be writable if the root element is package or if the root is contained by another loaded resource
+					if (resource != null) {
+						if (!resource.getContents().isEmpty()) {
+							// A sub model can only be writable if the root element is package or if the root is contained by another loaded resource
 							EObject root = resource.getContents().get(0);
-							if(!(root instanceof Package) && root instanceof Element) {
-								return Optional.of(((Element)root).getNearestPackage() == null);
+							if (!(root instanceof Package) && root instanceof Element) {
+								return Optional.of(((Element) root).getNearestPackage() == null);
 							}
 						}
 					}
@@ -72,7 +72,7 @@ public class ControlledElementReadOnlyHandler extends AbstractReadOnlyHandler {
 	}
 
 	public Optional<Boolean> makeWritable(Set<ReadOnlyAxis> axes, URI[] uris) {
-		//Never authorize write
+		// Never authorize write
 		NotificationBuilder.createErrorPopup("This model fragment can not be modified independently from the rest of the model").run();
 		return Optional.absent();
 	}

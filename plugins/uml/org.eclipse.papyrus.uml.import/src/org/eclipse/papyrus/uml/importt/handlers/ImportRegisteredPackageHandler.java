@@ -24,7 +24,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
-import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.extensionpoints.Registry;
@@ -50,33 +49,33 @@ public class ImportRegisteredPackageHandler extends AbstractImportHandler {
 	 * Apply the result of the dialog, i.e. it adds package imports to libraries
 	 *
 	 * @param librariesToImport
-	 *        the array of Libraries to import
+	 *            the array of Libraries to import
 	 */
 	protected void importLibraries(IRegisteredLibrary[] librariesToImport) {
 		// create a temporary resource set. Be sure to unload it so that we don't leak models in the CacheAdapter!
 		ResourceSet resourceSet = Util.createTemporaryResourceSet();
 
 		try {
-			for(int i = 0; i < librariesToImport.length; i++) {
+			for (int i = 0; i < librariesToImport.length; i++) {
 				IRegisteredLibrary currentLibrary = (librariesToImport[i]);
 				URI modelUri = currentLibrary.getUri();
 
 				Resource modelResource = resourceSet.getResource(modelUri, true);
-				PackageImportDialog dialog = new PackageImportDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), ((Package)modelResource.getContents().get(0)));
+				PackageImportDialog dialog = new PackageImportDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), ((Package) modelResource.getContents().get(0)));
 
-				if(dialog.open() == Window.OK) {
+				if (dialog.open() == Window.OK) {
 					Collection<ImportSpec<Package>> result = dialog.getResult();
 
-					for(ImportSpec<Package> resultElement : result) {
+					for (ImportSpec<Package> resultElement : result) {
 						Package selectedPackage = resultElement.getElement();
-						switch(resultElement.getAction()) {
+						switch (resultElement.getAction()) {
 						case COPY:
 							handleCopyPackage(selectedPackage);
 							break;
 						case IMPORT:
 							handleImportPackage(selectedPackage);
 							break;
-						default: //Load
+						default: // Load
 							handleLoadPackage(selectedPackage);
 							break;
 						}
@@ -84,7 +83,8 @@ public class ImportRegisteredPackageHandler extends AbstractImportHandler {
 				}
 			}
 		} finally {
-			EMFHelper.unload(resourceSet);;
+			EMFHelper.unload(resourceSet);
+			;
 		}
 	}
 
@@ -99,10 +99,10 @@ public class ImportRegisteredPackageHandler extends AbstractImportHandler {
 	protected IRegisteredLibrary[] getAvailableLibraries() {
 		List<IRegisteredLibrary> libraries = new ArrayList<IRegisteredLibrary>();
 		IRegisteredLibrary[] allLibraries = Registry.getRegisteredLibraries().toArray(new IRegisteredLibrary[0]);
-		for(int i = 0; i < allLibraries.length; i++) {
+		for (int i = 0; i < allLibraries.length; i++) {
 			IRegisteredLibrary registeredLibrary = allLibraries[i];
-			List<String> importedPackageNames = PackageUtil.getImportedPackagesNames((Package)getSelectedElement());
-			if(!(importedPackageNames.contains(registeredLibrary.getName()))) {
+			List<String> importedPackageNames = PackageUtil.getImportedPackagesNames((Package) getSelectedElement());
+			if (!(importedPackageNames.contains(registeredLibrary.getName()))) {
 				libraries.add(registeredLibrary);
 			}
 		}
@@ -120,11 +120,11 @@ public class ImportRegisteredPackageHandler extends AbstractImportHandler {
 	protected Collection<IRegisteredLibrary> getImportedLibraries() {
 		List<IRegisteredLibrary> libraries = new ArrayList<IRegisteredLibrary>();
 		IRegisteredLibrary[] allLibraries = Registry.getRegisteredLibraries().toArray(new IRegisteredLibrary[0]);
-		for(int i = 0; i < allLibraries.length; i++) {
+		for (int i = 0; i < allLibraries.length; i++) {
 			IRegisteredLibrary registeredLibrary = allLibraries[i];
-			List<String> importedPackageNames = PackageUtil.getImportedPackagesNames((Package)getSelectedElement());
+			List<String> importedPackageNames = PackageUtil.getImportedPackagesNames((Package) getSelectedElement());
 			// problem: name of library might be different from name of top-level package
-			if(importedPackageNames.contains(registeredLibrary.getName())) {
+			if (importedPackageNames.contains(registeredLibrary.getName())) {
 				libraries.add(registeredLibrary);
 			}
 		}
@@ -140,13 +140,13 @@ public class ImportRegisteredPackageHandler extends AbstractImportHandler {
 		 * Creates a new ImportLibraryFromRepositoryCommand
 		 *
 		 * @param editingDomain
-		 *        editing domain that manages the changed objects
+		 *            editing domain that manages the changed objects
 		 * @param runnable
-		 *        process that executes the modifications
+		 *            process that executes the modifications
 		 * @param label
-		 *        the label of the command
+		 *            the label of the command
 		 * @param description
-		 *        description of the command
+		 *            description of the command
 		 */
 		public ImportLibraryFromRepositoryCommand() {
 			super(new Runnable() {
@@ -161,7 +161,7 @@ public class ImportRegisteredPackageHandler extends AbstractImportHandler {
 					// Open Registered ModelLibrary selection dialog
 					FilteredRegisteredLibrariesSelectionDialog dialog = new FilteredRegisteredLibrariesSelectionDialog(shell, true, allLibraries, getImportedLibraries());
 					dialog.open();
-					if(Dialog.OK == dialog.getReturnCode()) {
+					if (Window.OK == dialog.getReturnCode()) {
 						// get the result, which is the set of libraries to import
 						List<Object> librariesToImport = Arrays.asList(dialog.getResult());
 						importLibraries(librariesToImport.toArray(new IRegisteredLibrary[librariesToImport.size()]));

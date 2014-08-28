@@ -1,22 +1,18 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Ansgar Radermacher - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.FCM;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 
 /**
@@ -31,8 +27,8 @@ import org.eclipse.uml2.uml.Element;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.FCM.Template#getBase_Element <em>Base Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.Template#getHelper <em>Helper</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.Template#getBase_Element <em>Base Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.Template#getHelper <em>Helper</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,10 +41,10 @@ public interface Template extends EObject {
 	 * Returns the value of the '<em><b>Base Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Element</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Element</em>' reference.
 	 * @see #setBase_Element(Element)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getTemplate_Base_Element()
@@ -61,7 +57,9 @@ public interface Template extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.Template#getBase_Element <em>Base Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Element</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Element</em>' reference.
 	 * @see #getBase_Element()
 	 * @generated
 	 */
@@ -71,10 +69,10 @@ public interface Template extends EObject {
 	 * Returns the value of the '<em><b>Helper</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Helper</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Helper</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Helper</em>' reference.
 	 * @see #setHelper(BindingHelper)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getTemplate_Helper()
@@ -87,7 +85,9 @@ public interface Template extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.Template#getHelper <em>Helper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Helper</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Helper</em>' reference.
 	 * @see #getHelper()
 	 * @generated
 	 */

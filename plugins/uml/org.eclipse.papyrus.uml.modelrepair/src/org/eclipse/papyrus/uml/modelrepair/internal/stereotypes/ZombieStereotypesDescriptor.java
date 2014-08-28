@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -87,20 +87,20 @@ public class ZombieStereotypesDescriptor {
 
 	public void analyze(EObject stereotypeApplication) {
 		EPackage schema = getEPackage(stereotypeApplication);
-		if((schema == null) || !appliedProfileDefinitions.contains(schema)) {
+		if ((schema == null) || !appliedProfileDefinitions.contains(schema)) {
 			// It's a zombie. Determine the profile-application context that covers this stereotype instance
 			ProfileContext context = getProfileContext(stereotypeApplication, schema);
 
 			boolean newContext = !zombies.containsKey(context);
 			zombies.put(context, stereotypeApplication);
 
-			if(newContext && (schema != null)) {
-				if(!suggestedActions.containsKey(schema)) {
+			if (newContext && (schema != null)) {
+				if (!suggestedActions.containsKey(schema)) {
 					suggestedActions.put(schema, computeSuggestedAction(schema));
 				} else {
 					// Already computed the actions previously, but we need to add this new package to the apply-profile action
-					ApplyProfileAction applyProfile = (ApplyProfileAction)getRepairAction(schema, IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION);
-					if(applyProfile != null) {
+					ApplyProfileAction applyProfile = (ApplyProfileAction) getRepairAction(schema, IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION);
+					if (applyProfile != null) {
 						applyProfile.addPackage(context.getApplyingPackage());
 					}
 				}
@@ -127,8 +127,8 @@ public class ZombieStereotypesDescriptor {
 
 	public int getZombieCount(EPackage schema) {
 		int result = 0;
-		for(Map.Entry<ProfileContext, Collection<EObject>> next : zombies.asMap().entrySet()) {
-			if(equal(next.getKey().getSchema(), schema, root)) {
+		for (Map.Entry<ProfileContext, Collection<EObject>> next : zombies.asMap().entrySet()) {
+			if (equal(next.getKey().getSchema(), schema, root)) {
 				result = result + next.getValue().size();
 			}
 		}
@@ -139,8 +139,8 @@ public class ZombieStereotypesDescriptor {
 	public Collection<? extends EObject> getZombies(EPackage schema) {
 		ImmutableList.Builder<EObject> result = ImmutableList.builder();
 
-		for(Map.Entry<ProfileContext, Collection<EObject>> next : zombies.asMap().entrySet()) {
-			if(equal(next.getKey().getSchema(), schema, root)) {
+		for (Map.Entry<ProfileContext, Collection<EObject>> next : zombies.asMap().entrySet()) {
+			if (equal(next.getKey().getSchema(), schema, root)) {
 				result.addAll(next.getValue());
 			}
 		}
@@ -160,7 +160,7 @@ public class ZombieStereotypesDescriptor {
 	protected IRepairAction computeSuggestedAction(EPackage schema) {
 		// Try options in our preferred order
 		IRepairAction result = getRepairAction(schema, IRepairAction.Kind.APPLY_LATEST_PROFILE_DEFINITION);
-		if(result.isNull()) {
+		if (result.isNull()) {
 			// This one is always available
 			result = getRepairAction(schema, IRepairAction.Kind.NO_OP);
 		}
@@ -179,7 +179,7 @@ public class ZombieStereotypesDescriptor {
 		IRepairAction applyProfile;
 		Collection<Package> packages = getContextPackages(schema);
 		Profile profile = findProfile(schema);
-		if(profile == null) {
+		if (profile == null) {
 			applyProfile = new ApplyProfileAction(packages, curry(schema, dynamicProfileSupplier));
 		} else {
 			applyProfile = new ApplyProfileAction(packages, profile, labelProviderService);
@@ -217,7 +217,7 @@ public class ZombieStereotypesDescriptor {
 
 	public IRepairAction getRepairAction(EPackage schema, IRepairAction.Kind kind) {
 		Map<IRepairAction.Kind, IRepairAction> available = repairActions.get(schema);
-		if(available == null) {
+		if (available == null) {
 			available = computeFeasibleRepairActions(schema);
 			repairActions.put(schema, available);
 		}
@@ -237,27 +237,27 @@ public class ZombieStereotypesDescriptor {
 	protected ProfileContext getProfileContext(EObject stereotypeApplication, EPackage schema) {
 		ProfileContext result;
 
-		if(schema == null) {
+		if (schema == null) {
 			// No way to tell which package it was applied to (though this shouldn't happen, as EMF demand-creates a schema)
 			result = new ProfileContext(root, schema);
 		} else {
 			Element base = getBaseElement(stereotypeApplication);
-			if(base == null) {
+			if (base == null) {
 				// Can't make any inference about package context
 				result = new ProfileContext(root, schema);
 			} else {
 				// Find the profile application
 				result = null;
-				for(Package pkg = base.getNearestPackage(); pkg != null; pkg = (pkg.getOwner() == null) ? null : pkg.getOwner().getNearestPackage()) {
-					for(ProfileApplication next : pkg.getProfileApplications()) {
-						if(equal(next.getAppliedDefinition(), schema, root)) {
+				for (Package pkg = base.getNearestPackage(); pkg != null; pkg = (pkg.getOwner() == null) ? null : pkg.getOwner().getNearestPackage()) {
+					for (ProfileApplication next : pkg.getProfileApplications()) {
+						if (equal(next.getAppliedDefinition(), schema, root)) {
 							result = new ProfileContext(schema, next);
 							break;
 						}
 					}
 				}
 
-				if(result == null) {
+				if (result == null) {
 					// Couldn't infer the package context from a matching profile application. Oh, well
 					result = new ProfileContext(root, schema);
 				}
@@ -270,27 +270,27 @@ public class ZombieStereotypesDescriptor {
 	static Element getBaseElement(EObject stereotypeApplication) {
 		Element result = null;
 
-		out: for(EStructuralFeature next : stereotypeApplication.eClass().getEAllStructuralFeatures()) {
-			if((next instanceof EReference) && next.getName().startsWith(Extension.METACLASS_ROLE_PREFIX)) {
+		out: for (EStructuralFeature next : stereotypeApplication.eClass().getEAllStructuralFeatures()) {
+			if ((next instanceof EReference) && next.getName().startsWith(Extension.METACLASS_ROLE_PREFIX)) {
 				Object value = stereotypeApplication.eGet(next);
 
-				if(value instanceof Element) {
-					result = (Element)value;
+				if (value instanceof Element) {
+					result = (Element) value;
 					break out;
 				}
-			} else if(FeatureMapUtil.isFeatureMap(next)) {
+			} else if (FeatureMapUtil.isFeatureMap(next)) {
 				// Handle unknown schema
-				for(FeatureMap.Entry entry : (FeatureMap)stereotypeApplication.eGet(next)) {
-					if(entry.getEStructuralFeature().getName().startsWith(Extension.METACLASS_ROLE_PREFIX)) {
+				for (FeatureMap.Entry entry : (FeatureMap) stereotypeApplication.eGet(next)) {
+					if (entry.getEStructuralFeature().getName().startsWith(Extension.METACLASS_ROLE_PREFIX)) {
 						Object value = entry.getValue();
 
-						if(value instanceof String) {
+						if (value instanceof String) {
 							// Try it as an IDREF
-							value = stereotypeApplication.eResource().getEObject((String)value);
+							value = stereotypeApplication.eResource().getEObject((String) value);
 						}
 
-						if(value instanceof Element) {
-							result = (Element)value;
+						if (value instanceof Element) {
+							result = (Element) value;
 							break out;
 						}
 					}
@@ -304,23 +304,23 @@ public class ZombieStereotypesDescriptor {
 	/**
 	 * Two references to a profile definition equal if they are the same object, or if they are both resolved and have the same namespace URI,
 	 * or if they are both proxies and have the same proxy URI.
-	 * 
+	 *
 	 * @param schema1
-	 *        a schema for stereotype definitions
+	 *            a schema for stereotype definitions
 	 * @param schema2
-	 *        another schema for stereotype definitions
+	 *            another schema for stereotype definitions
 	 * @param context
-	 *        a context in which the comparison is being made, which provides (for example) a {@link Resource} or even a {@link ResourceSet}
-	 * 
+	 *            a context in which the comparison is being made, which provides (for example) a {@link Resource} or even a {@link ResourceSet}
+	 *
 	 * @return whether they appear to be the "same" schema
 	 */
 	static boolean equal(EPackage schema1, EPackage schema2, EObject context) {
 		boolean result = false;
 
 		result = schema1 == schema2;
-		if(!result && (schema1 != null)) { // Implies that schema2 != null, also
+		if (!result && (schema1 != null)) { // Implies that schema2 != null, also
 			result = Objects.equal(schema1.getNsURI(), schema2.getNsURI());
-			if(!result) {
+			if (!result) {
 				// Maybe one is a proxy whose URI is the schema-location of the other (being a demand-created package)
 				URI uri1 = guessURI(schema1);
 				URI uri2 = guessURI(schema2);
@@ -334,13 +334,13 @@ public class ZombieStereotypesDescriptor {
 	static URI guessURI(EPackage schema) {
 		URI result;
 
-		if(schema.eIsProxy()) {
+		if (schema.eIsProxy()) {
 			// Easy. We know the URI because it's an unresolved reference from a profile application annotation
 			result = EcoreUtil.getURI(schema);
-		} else if(schema.eResource() != null) {
+		} else if (schema.eResource() != null) {
 			// Handle the common case of a dynamic profile definition that didn't have a custom namespace URI
 			Matcher m = AUTO_NSURI_PATTERN.matcher(schema.getNsURI());
-			if(m.matches()) {
+			if (m.matches()) {
 				// The demand-created package was looked up from a location URI that turned out unresolved
 				result = schema.eResource().getURI().appendFragment(m.group(1));
 			} else {
@@ -396,11 +396,11 @@ public class ZombieStereotypesDescriptor {
 		public boolean equals(Object obj) {
 			boolean result = false;
 
-			if(obj instanceof ProfileContext) {
-				ProfileContext other = (ProfileContext)obj;
+			if (obj instanceof ProfileContext) {
+				ProfileContext other = (ProfileContext) obj;
 
 				result = other.applyingPackage == this.applyingPackage;
-				if(result) {
+				if (result) {
 					result = equal(other.schema, this.schema, applyingPackage);
 				}
 			}

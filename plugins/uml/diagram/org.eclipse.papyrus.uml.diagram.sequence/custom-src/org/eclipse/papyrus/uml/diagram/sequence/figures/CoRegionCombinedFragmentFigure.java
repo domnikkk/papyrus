@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ public class CoRegionCombinedFragmentFigure extends RectangleFigure {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @generated
 	 */
 	public CoRegionCombinedFragmentFigure() {
@@ -49,7 +49,7 @@ public class CoRegionCombinedFragmentFigure extends RectangleFigure {
 
 	/**
 	 * Draw the vertical bracket
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.Shape#paintFigure(org.eclipse.draw2d.Graphics)
 	 */
 	@Override
@@ -65,7 +65,7 @@ public class CoRegionCombinedFragmentFigure extends RectangleFigure {
 		graphics.drawLine(r.right() - 1, r.bottom() - 1, r.right() - 1, r.bottom() - 1 - BRACKET_HEIGHT);
 		graphics.drawLine(r.x, r.bottom() - 1, r.x, r.bottom() - 1 - BRACKET_HEIGHT);
 		// Refresh the line
-		int endY = r.height + r.y;//fixed a issue on height.
+		int endY = r.height + r.y;// fixed a issue on height.
 		Point pStart = new Point(r.x + r.width / 2, r.y + 1);
 		centralVerticalLine.setSize(1, endY - pStart.y);
 		centralVerticalLine.setLocation(pStart);
@@ -78,33 +78,33 @@ public class CoRegionCombinedFragmentFigure extends RectangleFigure {
 	public boolean containsPoint(int x, int y) {
 		Rectangle rect = getBounds();
 		// check if point is at the topline of the figure
-		if(x > rect.x && x < rect.x + rect.width) {
-			if(y > rect.y - COREGION_HIT_WIDTH && y < rect.y + COREGION_HIT_WIDTH) {
+		if (x > rect.x && x < rect.x + rect.width) {
+			if (y > rect.y - COREGION_HIT_WIDTH && y < rect.y + COREGION_HIT_WIDTH) {
 				return true;
 			}
 		}
 		// check if point is at the bottom line of the figure
-		if(x > rect.x && x < rect.x + rect.width) {
-			if(y > rect.y + rect.height - COREGION_HIT_WIDTH && y < rect.y + rect.height + COREGION_HIT_WIDTH) {
+		if (x > rect.x && x < rect.x + rect.width) {
+			if (y > rect.y + rect.height - COREGION_HIT_WIDTH && y < rect.y + rect.height + COREGION_HIT_WIDTH) {
 				return true;
 			}
 		}
 		// check if point is at the left line of the figure
-		if(x > rect.x - COREGION_HIT_WIDTH && x < rect.x + COREGION_HIT_WIDTH) {
-			if(y > rect.y && y < rect.y + rect.height) {
+		if (x > rect.x - COREGION_HIT_WIDTH && x < rect.x + COREGION_HIT_WIDTH) {
+			if (y > rect.y && y < rect.y + rect.height) {
 				return true;
 			}
 		}
 		// check if point is at the right line of the figure
-		if(x > rect.x + rect.width - COREGION_HIT_WIDTH && x < rect.x + rect.width + COREGION_HIT_WIDTH) {
-			if(y > rect.y && y < rect.y + rect.height) {
+		if (x > rect.x + rect.width - COREGION_HIT_WIDTH && x < rect.x + rect.width + COREGION_HIT_WIDTH) {
+			if (y > rect.y && y < rect.y + rect.height) {
 				return true;
 			}
 		}
-		for(IFigure child : (List<IFigure>)getChildren()) {
+		for (IFigure child : (List<IFigure>) getChildren()) {
 			Point local = new Point(x, y);
 			translateFromParent(local);
-			if(child.containsPoint(local)) {
+			if (child.containsPoint(local)) {
 				return true;
 			}
 		}

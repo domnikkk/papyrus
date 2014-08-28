@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,9 +32,9 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Scheduler;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwComputingResourceImpl#getSpeedFactor <em>Speed Factor</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwComputingResourceImpl#getMainScheduler <em>Main Scheduler</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwComputingResourceImpl#getOp_Frequencies <em>Op Frequencies</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwComputingResourceImpl#getSpeedFactor <em>Speed Factor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwComputingResourceImpl#getMainScheduler <em>Main Scheduler</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwComputingResourceImpl#getOp_Frequencies <em>Op Frequencies</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +45,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	 * The default value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -55,6 +56,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	 * The cached value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -65,6 +67,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	 * The cached value of the '{@link #getMainScheduler() <em>Main Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMainScheduler()
 	 * @generated
 	 * @ordered
@@ -75,6 +78,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	 * The default value of the '{@link #getOp_Frequencies() <em>Op Frequencies</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOp_Frequencies()
 	 * @generated
 	 * @ordered
@@ -85,6 +89,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	 * The cached value of the '{@link #getOp_Frequencies() <em>Op Frequencies</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOp_Frequencies()
 	 * @generated
 	 * @ordered
@@ -94,6 +99,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HwComputingResourceImpl() {
@@ -103,6 +109,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,8 +120,10 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getSpeedFactor() {
 		return speedFactor;
 	}
@@ -122,27 +131,33 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setSpeedFactor(String newSpeedFactor) {
 		String oldSpeedFactor = speedFactor;
 		speedFactor = newSpeedFactor;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwComputingPackage.HW_COMPUTING_RESOURCE__SPEED_FACTOR, oldSpeedFactor, speedFactor));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Scheduler getMainScheduler() {
 		if (mainScheduler != null && mainScheduler.eIsProxy()) {
-			InternalEObject oldMainScheduler = (InternalEObject)mainScheduler;
-			mainScheduler = (Scheduler)eResolveProxy(oldMainScheduler);
+			InternalEObject oldMainScheduler = (InternalEObject) mainScheduler;
+			mainScheduler = (Scheduler) eResolveProxy(oldMainScheduler);
 			if (mainScheduler != oldMainScheduler) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HwComputingPackage.HW_COMPUTING_RESOURCE__MAIN_SCHEDULER, oldMainScheduler, mainScheduler));
+				}
 			}
 		}
 		return mainScheduler;
@@ -151,6 +166,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Scheduler basicGetMainScheduler() {
@@ -160,20 +176,25 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setMainScheduler(Scheduler newMainScheduler) {
 		Scheduler oldMainScheduler = mainScheduler;
 		mainScheduler = newMainScheduler;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwComputingPackage.HW_COMPUTING_RESOURCE__MAIN_SCHEDULER, oldMainScheduler, mainScheduler));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getOp_Frequencies() {
 		return op_Frequencies;
 	}
@@ -181,30 +202,36 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setOp_Frequencies(String newOp_Frequencies) {
 		String oldOp_Frequencies = op_Frequencies;
 		op_Frequencies = newOp_Frequencies;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwComputingPackage.HW_COMPUTING_RESOURCE__OP_FREQUENCIES, oldOp_Frequencies, op_Frequencies));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwComputingPackage.HW_COMPUTING_RESOURCE__SPEED_FACTOR:
-				return getSpeedFactor();
-			case HwComputingPackage.HW_COMPUTING_RESOURCE__MAIN_SCHEDULER:
-				if (resolve) return getMainScheduler();
-				return basicGetMainScheduler();
-			case HwComputingPackage.HW_COMPUTING_RESOURCE__OP_FREQUENCIES:
-				return getOp_Frequencies();
+		case HwComputingPackage.HW_COMPUTING_RESOURCE__SPEED_FACTOR:
+			return getSpeedFactor();
+		case HwComputingPackage.HW_COMPUTING_RESOURCE__MAIN_SCHEDULER:
+			if (resolve) {
+				return getMainScheduler();
+			}
+			return basicGetMainScheduler();
+		case HwComputingPackage.HW_COMPUTING_RESOURCE__OP_FREQUENCIES:
+			return getOp_Frequencies();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,20 +239,21 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwComputingPackage.HW_COMPUTING_RESOURCE__SPEED_FACTOR:
-				setSpeedFactor((String)newValue);
-				return;
-			case HwComputingPackage.HW_COMPUTING_RESOURCE__MAIN_SCHEDULER:
-				setMainScheduler((Scheduler)newValue);
-				return;
-			case HwComputingPackage.HW_COMPUTING_RESOURCE__OP_FREQUENCIES:
-				setOp_Frequencies((String)newValue);
-				return;
+		case HwComputingPackage.HW_COMPUTING_RESOURCE__SPEED_FACTOR:
+			setSpeedFactor((String) newValue);
+			return;
+		case HwComputingPackage.HW_COMPUTING_RESOURCE__MAIN_SCHEDULER:
+			setMainScheduler((Scheduler) newValue);
+			return;
+		case HwComputingPackage.HW_COMPUTING_RESOURCE__OP_FREQUENCIES:
+			setOp_Frequencies((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -233,20 +261,21 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwComputingPackage.HW_COMPUTING_RESOURCE__SPEED_FACTOR:
-				setSpeedFactor(SPEED_FACTOR_EDEFAULT);
-				return;
-			case HwComputingPackage.HW_COMPUTING_RESOURCE__MAIN_SCHEDULER:
-				setMainScheduler((Scheduler)null);
-				return;
-			case HwComputingPackage.HW_COMPUTING_RESOURCE__OP_FREQUENCIES:
-				setOp_Frequencies(OP_FREQUENCIES_EDEFAULT);
-				return;
+		case HwComputingPackage.HW_COMPUTING_RESOURCE__SPEED_FACTOR:
+			setSpeedFactor(SPEED_FACTOR_EDEFAULT);
+			return;
+		case HwComputingPackage.HW_COMPUTING_RESOURCE__MAIN_SCHEDULER:
+			setMainScheduler((Scheduler) null);
+			return;
+		case HwComputingPackage.HW_COMPUTING_RESOURCE__OP_FREQUENCIES:
+			setOp_Frequencies(OP_FREQUENCIES_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -254,17 +283,18 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwComputingPackage.HW_COMPUTING_RESOURCE__SPEED_FACTOR:
-				return SPEED_FACTOR_EDEFAULT == null ? speedFactor != null : !SPEED_FACTOR_EDEFAULT.equals(speedFactor);
-			case HwComputingPackage.HW_COMPUTING_RESOURCE__MAIN_SCHEDULER:
-				return mainScheduler != null;
-			case HwComputingPackage.HW_COMPUTING_RESOURCE__OP_FREQUENCIES:
-				return OP_FREQUENCIES_EDEFAULT == null ? op_Frequencies != null : !OP_FREQUENCIES_EDEFAULT.equals(op_Frequencies);
+		case HwComputingPackage.HW_COMPUTING_RESOURCE__SPEED_FACTOR:
+			return SPEED_FACTOR_EDEFAULT == null ? speedFactor != null : !SPEED_FACTOR_EDEFAULT.equals(speedFactor);
+		case HwComputingPackage.HW_COMPUTING_RESOURCE__MAIN_SCHEDULER:
+			return mainScheduler != null;
+		case HwComputingPackage.HW_COMPUTING_RESOURCE__OP_FREQUENCIES:
+			return OP_FREQUENCIES_EDEFAULT == null ? op_Frequencies != null : !OP_FREQUENCIES_EDEFAULT.equals(op_Frequencies);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -272,20 +302,25 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == ProcessingResource.class) {
 			switch (derivedFeatureID) {
-				case HwComputingPackage.HW_COMPUTING_RESOURCE__SPEED_FACTOR: return GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR;
-				case HwComputingPackage.HW_COMPUTING_RESOURCE__MAIN_SCHEDULER: return GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER;
-				default: return -1;
+			case HwComputingPackage.HW_COMPUTING_RESOURCE__SPEED_FACTOR:
+				return GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR;
+			case HwComputingPackage.HW_COMPUTING_RESOURCE__MAIN_SCHEDULER:
+				return GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER;
+			default:
+				return -1;
 			}
 		}
 		if (baseClass == ComputingResource.class) {
 			switch (derivedFeatureID) {
-				default: return -1;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -294,20 +329,25 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == ProcessingResource.class) {
 			switch (baseFeatureID) {
-				case GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR: return HwComputingPackage.HW_COMPUTING_RESOURCE__SPEED_FACTOR;
-				case GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER: return HwComputingPackage.HW_COMPUTING_RESOURCE__MAIN_SCHEDULER;
-				default: return -1;
+			case GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR:
+				return HwComputingPackage.HW_COMPUTING_RESOURCE__SPEED_FACTOR;
+			case GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER:
+				return HwComputingPackage.HW_COMPUTING_RESOURCE__MAIN_SCHEDULER;
+			default:
+				return -1;
 			}
 		}
 		if (baseClass == ComputingResource.class) {
 			switch (baseFeatureID) {
-				default: return -1;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -316,11 +356,14 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (speedFactor: ");
@@ -331,4 +374,4 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 		return result.toString();
 	}
 
-} //HwComputingResourceImpl
+} // HwComputingResourceImpl

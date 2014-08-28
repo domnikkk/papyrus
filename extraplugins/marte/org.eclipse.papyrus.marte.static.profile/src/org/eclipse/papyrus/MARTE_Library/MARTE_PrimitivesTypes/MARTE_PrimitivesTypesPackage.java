@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,12 +21,13 @@ import org.eclipse.emf.ecore.EPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.MARTE_PrimitivesTypesFactory
  * @model kind="package"
  * @generated
@@ -36,6 +37,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "MARTE_PrimitivesTypes";
@@ -44,6 +46,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http:///MARTE_Library/MARTE_PrimitivesTypes.ecore";
@@ -52,6 +55,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "MARTE_Library.MARTE_PrimitivesTypes";
@@ -60,6 +64,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	MARTE_PrimitivesTypesPackage eINSTANCE = org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.impl.MARTE_PrimitivesTypesPackageImpl.init();
@@ -68,6 +73,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Integer</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.impl.MARTE_PrimitivesTypesPackageImpl#getInteger()
 	 * @generated
 	 */
@@ -77,6 +83,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Boolean</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.impl.MARTE_PrimitivesTypesPackageImpl#getBoolean()
 	 * @generated
 	 */
@@ -86,6 +93,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Unlimited Natural</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.impl.MARTE_PrimitivesTypesPackageImpl#getUnlimitedNatural()
 	 * @generated
@@ -96,6 +104,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * The meta object id for the '<em>String</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.impl.MARTE_PrimitivesTypesPackageImpl#getString()
 	 * @generated
@@ -106,6 +115,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Date Time</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.impl.MARTE_PrimitivesTypesPackageImpl#getDateTime()
 	 * @generated
@@ -116,6 +126,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Real</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.impl.MARTE_PrimitivesTypesPackageImpl#getReal()
 	 * @generated
@@ -127,6 +138,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>Integer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Integer</em>'.
 	 * @model instanceClass="int"
 	 * @generated
@@ -137,6 +149,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>Boolean</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Boolean</em>'.
 	 * @model instanceClass="boolean"
 	 * @generated
@@ -147,6 +160,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Unlimited Natural</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Unlimited Natural</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -158,6 +172,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>String</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -169,6 +184,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Date Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Date Time</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -180,6 +196,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Real</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Real</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -191,6 +208,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -200,12 +218,13 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -213,6 +232,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Integer</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.impl.MARTE_PrimitivesTypesPackageImpl#getInteger()
 		 * @generated
 		 */
@@ -222,6 +242,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Boolean</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.impl.MARTE_PrimitivesTypesPackageImpl#getBoolean()
 		 * @generated
 		 */
@@ -231,6 +252,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Unlimited Natural</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.impl.MARTE_PrimitivesTypesPackageImpl#getUnlimitedNatural()
 		 * @generated
@@ -241,6 +263,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>String</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.impl.MARTE_PrimitivesTypesPackageImpl#getString()
 		 * @generated
@@ -251,6 +274,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Date Time</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.impl.MARTE_PrimitivesTypesPackageImpl#getDateTime()
 		 * @generated
@@ -261,6 +285,7 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Real</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.impl.MARTE_PrimitivesTypesPackageImpl#getReal()
 		 * @generated
@@ -269,4 +294,4 @@ public interface MARTE_PrimitivesTypesPackage extends EPackage {
 
 	}
 
-} //MARTE_PrimitivesTypesPackage
+} // MARTE_PrimitivesTypesPackage

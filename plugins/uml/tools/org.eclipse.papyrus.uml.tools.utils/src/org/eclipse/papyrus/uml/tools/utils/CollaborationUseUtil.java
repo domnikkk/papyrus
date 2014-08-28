@@ -41,7 +41,7 @@ public class CollaborationUseUtil {
 		buffer.append(collaborationUse.getName());
 
 		// type
-		if(collaborationUse.getType() != null) {
+		if (collaborationUse.getType() != null) {
 			buffer.append(": " + collaborationUse.getType().getName());
 		} else {
 			buffer.append(": " + UNDEFINED_TYPE_NAME);
@@ -54,7 +54,7 @@ public class CollaborationUseUtil {
 	 * return the custom label of the CollaborationUse, given UML2 specification and a custom style.
 	 *
 	 * @param style
-	 *        the integer representing the style of the label
+	 *            the integer representing the style of the label
 	 *
 	 * @return the string corresponding to the label of the CollaborationUse
 	 */
@@ -63,19 +63,19 @@ public class CollaborationUseUtil {
 		// visibility
 
 		buffer.append(" ");
-		if(maskValues.contains(ICustomAppearance.DISP_VISIBILITY)) {
+		if (maskValues.contains(ICustomAppearance.DISP_VISIBILITY)) {
 			buffer.append(NamedElementUtil.getVisibilityAsSign(collaborationUse));
 		}
 
 		// name
-		if(maskValues.contains(ICustomAppearance.DISP_NAME)) {
+		if (maskValues.contains(ICustomAppearance.DISP_NAME)) {
 			buffer.append(" ");
 			buffer.append(collaborationUse.getName());
 		}
 
-		if(maskValues.contains(ICustomAppearance.DISP_TYPE)) {
+		if (maskValues.contains(ICustomAppearance.DISP_TYPE)) {
 			// type
-			if(collaborationUse.getType() != null) {
+			if (collaborationUse.getType() != null) {
 				buffer.append(": " + collaborationUse.getType().getName());
 			} else {
 				buffer.append(": " + UNDEFINED_TYPE_NAME);

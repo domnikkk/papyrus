@@ -1,14 +1,14 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Nicolas Guyomar (Mia-Software) - Bug 334615 - Java Query for EMF Facet
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.query.java.javaquery;
 
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.emf.facet.efacet.EFacetPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.emf.facet.query.java.javaquery.JavaqueryFactory
  * @model kind="package"
  * @generated
@@ -40,6 +40,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "javaquery"; //$NON-NLS-1$
@@ -48,6 +49,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/emf/facet/query/java/0.1.incubation"; //$NON-NLS-1$
@@ -56,6 +58,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "javaQuery"; //$NON-NLS-1$
@@ -64,6 +67,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	JavaqueryPackage eINSTANCE = org.eclipse.papyrus.emf.facet.query.java.javaquery.impl.JavaqueryPackageImpl.init();
@@ -72,6 +76,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.query.java.javaquery.impl.JavaQueryImpl <em>Java Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.query.java.javaquery.impl.JavaQueryImpl
 	 * @see org.eclipse.papyrus.emf.facet.query.java.javaquery.impl.JavaqueryPackageImpl#getJavaQuery()
 	 * @generated
@@ -82,6 +87,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -91,6 +97,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -100,6 +107,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -109,6 +117,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -118,6 +127,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,6 +137,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -136,6 +147,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Many</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -145,6 +157,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -154,6 +167,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>EType</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -163,6 +177,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>EGeneric Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -172,6 +187,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Scope</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -181,6 +197,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Has Side Effect</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -190,6 +207,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,6 +217,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -208,6 +227,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Implementation Class Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -217,6 +237,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * The number of structural features of the '<em>Java Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -227,6 +248,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.query.java.javaquery.JavaQuery <em>Java Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Java Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.query.java.javaquery.JavaQuery
 	 * @generated
@@ -237,6 +259,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.query.java.javaquery.JavaQuery#getImplementationClassName <em>Implementation Class Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Implementation Class Name</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.query.java.javaquery.JavaQuery#getImplementationClassName()
 	 * @see #getJavaQuery()
@@ -248,6 +271,7 @@ public interface JavaqueryPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -257,12 +281,13 @@ public interface JavaqueryPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -270,6 +295,7 @@ public interface JavaqueryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.query.java.javaquery.impl.JavaQueryImpl <em>Java Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.query.java.javaquery.impl.JavaQueryImpl
 		 * @see org.eclipse.papyrus.emf.facet.query.java.javaquery.impl.JavaqueryPackageImpl#getJavaQuery()
 		 * @generated
@@ -280,10 +306,11 @@ public interface JavaqueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Implementation Class Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute JAVA_QUERY__IMPLEMENTATION_CLASS_NAME = JavaqueryPackage.eINSTANCE.getJavaQuery_ImplementationClassName();
 
 	}
 
-} //JavaqueryPackage
+} // JavaqueryPackage

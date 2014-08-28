@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,11 +39,11 @@ import com.google.inject.Injector;
 
 /**
  * @author CEA LIST
- * 
+ *
  *         This class is used for contribution to the Papyrus extension point
  *         DirectEditor. It is used for the integration of an xtext generated
  *         editor, for properties of UML classifiers.
- * 
+ *
  */
 public class PropertyXtextDirectEditorConfiguration extends DefaultXtextDirectEditorConfiguration implements ICustomDirectEditorConfiguration {
 
@@ -55,9 +55,9 @@ public class PropertyXtextDirectEditorConfiguration extends DefaultXtextDirectEd
 
 	@Override
 	public ICommand getParseCommand(EObject modelObject, EObject xtextObject) {
-		Property property = (Property)modelObject;
+		Property property = (Property) modelObject;
 		xtextObject = EcoreUtil2.getContainerOfType(xtextObject, PropertyRule.class);
-		PropertyRule propertyRuleObject = (PropertyRule)xtextObject;
+		PropertyRule propertyRuleObject = (PropertyRule) xtextObject;
 
 		// Retrieves the information to be populated in modelObject
 		boolean newIsDerived = propertyRuleObject.getIsDerived() != null && propertyRuleObject.getIsDerived().equals("/");
@@ -67,10 +67,10 @@ public class PropertyXtextDirectEditorConfiguration extends DefaultXtextDirectEd
 		boolean newIsOrdered = false;
 		List<Property> newRedefines = new ArrayList<Property>();
 		List<Property> newSubsets = new ArrayList<Property>();
-		if(propertyRuleObject.getModifiers() != null) {
-			for(ModifierSpecification modifier : propertyRuleObject.getModifiers().getValues()) {
-				if(modifier.getRedefines() == null && modifier.getSubsets() == null) {
-					switch(modifier.getValue()) {
+		if (propertyRuleObject.getModifiers() != null) {
+			for (ModifierSpecification modifier : propertyRuleObject.getModifiers().getValues()) {
+				if (modifier.getRedefines() == null && modifier.getSubsets() == null) {
+					switch (modifier.getValue()) {
 					case ORDERED:
 						newIsOrdered = true;
 						break;
@@ -88,20 +88,20 @@ public class PropertyXtextDirectEditorConfiguration extends DefaultXtextDirectEd
 					}
 				}
 			}
-			for(ModifierSpecification modifier : propertyRuleObject.getModifiers().getValues()) {
-				if(modifier.getRedefines() != null) {
+			for (ModifierSpecification modifier : propertyRuleObject.getModifiers().getValues()) {
+				if (modifier.getRedefines() != null) {
 					newRedefines.add(modifier.getRedefines().getProperty());
-				} else if(modifier.getSubsets() != null) {
+				} else if (modifier.getSubsets() != null) {
 					newSubsets.add(modifier.getSubsets().getProperty());
 				}
 			}
 		}
 		int newLowerBound = 1;
 		int newUpperBound = 1;
-		if(propertyRuleObject.getMultiplicity() != null) {
-			if(propertyRuleObject.getMultiplicity().getBounds().size() == 1) {
+		if (propertyRuleObject.getMultiplicity() != null) {
+			if (propertyRuleObject.getMultiplicity().getBounds().size() == 1) {
 				String tempBound = propertyRuleObject.getMultiplicity().getBounds().get(0).getValue();
-				if(tempBound.equals("*")) {
+				if (tempBound.equals("*")) {
 					newLowerBound = 0;
 					newUpperBound = -1;
 				} else {
@@ -112,7 +112,7 @@ public class PropertyXtextDirectEditorConfiguration extends DefaultXtextDirectEd
 				String tempBound = propertyRuleObject.getMultiplicity().getBounds().get(0).getValue();
 				newLowerBound = new Integer(tempBound).intValue();
 				tempBound = propertyRuleObject.getMultiplicity().getBounds().get(1).getValue();
-				if(tempBound.equals("*")) {
+				if (tempBound.equals("*")) {
 					newUpperBound = -1;
 				} else {
 					newUpperBound = new Integer(tempBound).intValue();
@@ -121,7 +121,7 @@ public class PropertyXtextDirectEditorConfiguration extends DefaultXtextDirectEd
 		}
 
 		String newDefault;
-		if(propertyRuleObject.getDefault() != null) {
+		if (propertyRuleObject.getDefault() != null) {
 			newDefault = propertyRuleObject.getDefault().getDefault();
 		} else {
 			newDefault = null;
@@ -129,7 +129,7 @@ public class PropertyXtextDirectEditorConfiguration extends DefaultXtextDirectEd
 		String newName = ALFIDConverter.IDtoName(propertyRuleObject.getName());
 		Classifier newType;
 		TypeRule typeRule = propertyRuleObject.getType();
-		if(typeRule == null) {
+		if (typeRule == null) {
 			newType = null;
 		} else {
 			newType = typeRule.getType();
@@ -137,7 +137,7 @@ public class PropertyXtextDirectEditorConfiguration extends DefaultXtextDirectEd
 
 		org.eclipse.uml2.uml.VisibilityKind newVisibility = org.eclipse.uml2.uml.VisibilityKind.PUBLIC_LITERAL;
 
-		switch(propertyRuleObject.getVisibility()) {
+		switch (propertyRuleObject.getVisibility()) {
 		case PUBLIC:
 			newVisibility = org.eclipse.uml2.uml.VisibilityKind.PUBLIC_LITERAL;
 			break;
@@ -197,7 +197,7 @@ public class PropertyXtextDirectEditorConfiguration extends DefaultXtextDirectEd
 		ICommand setVisibilityCommand = provider.getEditCommand(setVisibilityRequest);
 		updateCommand.add(setVisibilityCommand);
 
-		if(newDefault == null && property.getDefaultValue() != null) {
+		if (newDefault == null && property.getDefaultValue() != null) {
 			DestroyElementRequest destroyDefaultValueRequest = new DestroyElementRequest(property.getDefaultValue(), false);
 			ICommand destroyDefaultValueCommand = provider.getEditCommand(destroyDefaultValueRequest);
 			updateCommand.add(destroyDefaultValueCommand);
@@ -220,15 +220,15 @@ public class PropertyXtextDirectEditorConfiguration extends DefaultXtextDirectEd
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.infra.gmfdiag.xtext.glue.PopupEditorConfiguration
 	 * #getTextToEdit(java.lang.Object)
 	 */
 	@Override
 	public String getTextToEdit(Object editedObject) {
-		if(editedObject instanceof Property) {
-			return UMLPropertyEditorPropertyUtil.getLabel((Property)editedObject).trim();
+		if (editedObject instanceof Property) {
+			return UMLPropertyEditorPropertyUtil.getLabel((Property) editedObject).trim();
 			// TODO: default values not supported by the grammar
 			// TODO: either complete the grammar, or use another label provider
 		}

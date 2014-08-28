@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -20,7 +20,6 @@ import org.eclipse.gef.requests.ReconnectRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.papyrus.gmf.diagram.common.edit.policy.DefaultSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.commands.DuplicateNamedElementCommand;
 
 public class DiagramSemanticEditPolicy extends PackageSemanticEditPolicy {
@@ -56,16 +55,16 @@ public class DiagramSemanticEditPolicy extends PackageSemanticEditPolicy {
 	protected Command getReorientRefRelationshipTargetCommand(ReconnectRequest request) {
 		return UnexecutableCommand.INSTANCE;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		Diagram currentDiagram = null;
-		if(getHost() instanceof IGraphicalEditPart) {
-			currentDiagram = ((IGraphicalEditPart)getHost()).getNotationView().getDiagram();
+		if (getHost() instanceof IGraphicalEditPart) {
+			currentDiagram = ((IGraphicalEditPart) getHost()).getNotationView().getDiagram();
 		}
 		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req, currentDiagram));
 	}

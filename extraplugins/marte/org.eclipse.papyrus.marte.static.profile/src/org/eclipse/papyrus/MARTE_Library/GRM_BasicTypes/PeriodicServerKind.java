@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Periodic Server Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.GRM_BasicTypesPackage#getPeriodicServerKind()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum PeriodicServerKind implements Enumerator {
 	 * The '<em><b>Sporadic</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #SPORADIC_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum PeriodicServerKind implements Enumerator {
 	 * The '<em><b>Deferrable</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #DEFERRABLE_VALUE
 	 * @generated
 	 * @ordered
@@ -53,6 +56,7 @@ public enum PeriodicServerKind implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #UNDEF_VALUE
 	 * @generated
 	 * @ordered
@@ -63,6 +67,7 @@ public enum PeriodicServerKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -73,10 +78,10 @@ public enum PeriodicServerKind implements Enumerator {
 	 * The '<em><b>Sporadic</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Sporadic</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Sporadic</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #SPORADIC
 	 * @model name="Sporadic"
 	 * @generated
@@ -88,10 +93,10 @@ public enum PeriodicServerKind implements Enumerator {
 	 * The '<em><b>Deferrable</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Deferrable</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Deferrable</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #DEFERRABLE
 	 * @model name="Deferrable"
 	 * @generated
@@ -103,10 +108,10 @@ public enum PeriodicServerKind implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #UNDEF
 	 * @model name="Undef"
 	 * @generated
@@ -118,10 +123,10 @@ public enum PeriodicServerKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #OTHER
 	 * @model name="Other"
 	 * @generated
@@ -133,20 +138,22 @@ public enum PeriodicServerKind implements Enumerator {
 	 * An array of all the '<em><b>Periodic Server Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static final PeriodicServerKind[] VALUES_ARRAY =
-		new PeriodicServerKind[] {
-			SPORADIC,
-			DEFERRABLE,
-			UNDEF,
-			OTHER,
-		};
+			new PeriodicServerKind[] {
+					SPORADIC,
+					DEFERRABLE,
+					UNDEF,
+					OTHER,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Periodic Server Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final List<PeriodicServerKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -155,6 +162,7 @@ public enum PeriodicServerKind implements Enumerator {
 	 * Returns the '<em><b>Periodic Server Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static PeriodicServerKind get(String literal) {
@@ -171,6 +179,7 @@ public enum PeriodicServerKind implements Enumerator {
 	 * Returns the '<em><b>Periodic Server Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static PeriodicServerKind getByName(String name) {
@@ -187,14 +196,19 @@ public enum PeriodicServerKind implements Enumerator {
 	 * Returns the '<em><b>Periodic Server Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static PeriodicServerKind get(int value) {
 		switch (value) {
-			case SPORADIC_VALUE: return SPORADIC;
-			case DEFERRABLE_VALUE: return DEFERRABLE;
-			case UNDEF_VALUE: return UNDEF;
-			case OTHER_VALUE: return OTHER;
+		case SPORADIC_VALUE:
+			return SPORADIC;
+		case DEFERRABLE_VALUE:
+			return DEFERRABLE;
+		case UNDEF_VALUE:
+			return UNDEF;
+		case OTHER_VALUE:
+			return OTHER;
 		}
 		return null;
 	}
@@ -202,6 +216,7 @@ public enum PeriodicServerKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -209,6 +224,7 @@ public enum PeriodicServerKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -216,6 +232,7 @@ public enum PeriodicServerKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -224,6 +241,7 @@ public enum PeriodicServerKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private PeriodicServerKind(int value, String name, String literal) {
@@ -235,39 +253,46 @@ public enum PeriodicServerKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //PeriodicServerKind
+
+} // PeriodicServerKind

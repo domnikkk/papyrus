@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,8 +25,8 @@ import org.eclipse.papyrus.views.properties.contexts.View;
 
 /**
  * A ContentProvider for retrieving the available ConstraintDescriptors
- * 
- * 
+ *
+ *
  * @author Camille Letavernier
  */
 public class ConstraintDescriptorContentProvider extends AbstractContextualContentProvider {
@@ -34,25 +34,26 @@ public class ConstraintDescriptorContentProvider extends AbstractContextualConte
 	private EClass type;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
-	 *        The source Object used to retrieve the available ConstraintDescriptors
+	 *            The source Object used to retrieve the available ConstraintDescriptors
 	 */
 	public ConstraintDescriptorContentProvider(EObject source, EClass type) {
 		super(source);
 		this.type = type;
 	}
 
+	@Override
 	public Object[] getElements() {
 		List<ConstraintDescriptor> result = new LinkedList<ConstraintDescriptor>();
-		for(Context context : contexts) {
-			for(View view : context.getViews()) {
+		for (Context context : contexts) {
+			for (View view : context.getViews()) {
 				result.addAll(getFilteredConstraintsFromDisplayUnit(view));
 			}
-			for(Tab tab : context.getTabs()) {
-				for(Section section : tab.getSections()) {
+			for (Tab tab : context.getTabs()) {
+				for (Section section : tab.getSections()) {
 					result.addAll(getFilteredConstraintsFromDisplayUnit(section));
 				}
 			}
@@ -62,14 +63,15 @@ public class ConstraintDescriptorContentProvider extends AbstractContextualConte
 
 	private List<ConstraintDescriptor> getFilteredConstraintsFromDisplayUnit(DisplayUnit unit) {
 		List<ConstraintDescriptor> result = new LinkedList<ConstraintDescriptor>();
-		for(ConstraintDescriptor constraint : unit.getConstraints()) {
-			if(type.isInstance(constraint)) {
+		for (ConstraintDescriptor constraint : unit.getConstraints()) {
+			if (type.isInstance(constraint)) {
 				result.add(constraint);
 			}
 		}
 		return result;
 	}
 
+	@Override
 	public Object[] getElements(Object inputElement) {
 		return getElements();
 	}

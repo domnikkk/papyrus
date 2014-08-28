@@ -1,5 +1,6 @@
 package org.eclipse.papyrus.infra.services.resourceloading;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.papyrus.infra.core.log.LogHelper;
@@ -26,7 +27,7 @@ public class Activator extends Plugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.Plugins#start(org.osgi.framework.BundleContext)
 	 */
 	@Override
@@ -38,7 +39,7 @@ public class Activator extends Plugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.Plugin#stop(org.osgi.framework.BundleContext)
 	 */
 	@Override
@@ -49,7 +50,7 @@ public class Activator extends Plugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -58,12 +59,12 @@ public class Activator extends Plugin {
 
 	/**
 	 * Log an error
-	 * 
+	 *
 	 * @param e
-	 *        error to log
+	 *            error to log
 	 */
 	public static void logError(Exception e) {
-		Status err = new Status(Status.ERROR, PLUGIN_ID, e.getMessage(), e);
+		Status err = new Status(IStatus.ERROR, PLUGIN_ID, e.getMessage(), e);
 		getDefault().getLog().log(err);
 	}
 

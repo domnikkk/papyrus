@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -118,5 +118,5 @@ public class CreateOrSelectConstraintPropertyTypeDialog extends CreateOrSelectTy
 	protected String getTypeDialogMessage() {
 		return Messages.CreateOrSelectConstraintPropertyTypeDialog_SelectTypeDialogMessage;
 	}
-	
+
 }

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -24,9 +24,9 @@ import org.eclipse.papyrus.uml.service.types.filter.ICommandFilter;
 
 /**
  * Filter for available Sysml commands. Moved from oep.sysml.modelexplorer
- * 
+ *
  * @author JC236769
- * 
+ *
  */
 public class SysmlCommandFilter implements ICommandFilter {
 
@@ -36,13 +36,13 @@ public class SysmlCommandFilter implements ICommandFilter {
 	public static final SysmlCommandFilter INSTANCE = new SysmlCommandFilter();
 
 	private SysmlCommandFilter() {
-		//to prevent instantiation
+		// to prevent instantiation
 	}
 
 	private List<IElementType> visibleCommands;
 
 	public List<IElementType> getVisibleCommands() {
-		if(visibleCommands == null) {
+		if (visibleCommands == null) {
 			List<IElementType> localVisibleCommands = new ArrayList<IElementType>();
 
 			localVisibleCommands = new ArrayList<IElementType>();
@@ -86,7 +86,7 @@ public class SysmlCommandFilter implements ICommandFilter {
 			localVisibleCommands.add(SysMLElementTypes.VIEW);
 			localVisibleCommands.add(SysMLElementTypes.VIEW_POINT);
 
-			// UMLElementTypes.PROPERTY is required by ConstraintBlock Parameter 
+			// UMLElementTypes.PROPERTY is required by ConstraintBlock Parameter
 			localVisibleCommands.add(UMLElementTypes.PROPERTY);
 
 			this.visibleCommands = Collections.unmodifiableList(localVisibleCommands);

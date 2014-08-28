@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.eclipse.uml2.uml.Property;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>Flow Property</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -27,7 +27,7 @@ import org.eclipse.uml2.uml.Property;
  * <li>{@link org.eclipse.papyrus.sysml.portandflows.FlowProperty#getDirection <em>Direction</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.sysml.portandflows.PortandflowsPackage#getFlowProperty()
  * @model
  * @generated
@@ -41,7 +41,7 @@ public interface FlowProperty extends EObject {
 	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.eclipse.papyrus.sysml.portandflows.PortandflowsPackage#getFlowProperty_Base_Property()
@@ -59,7 +59,7 @@ public interface FlowProperty extends EObject {
 	 * If the meaning of the '<em>Direction</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Direction</em>' attribute.
 	 * @see org.eclipse.papyrus.sysml.portandflows.FlowDirection
 	 * @see #setDirection(FlowDirection)
@@ -71,7 +71,7 @@ public interface FlowProperty extends EObject {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -81,9 +81,9 @@ public interface FlowProperty extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.sysml.portandflows.FlowProperty#getBase_Property <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Base Property</em>' reference.
+	 *            the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()
 	 * @generated
 	 */
@@ -93,9 +93,9 @@ public interface FlowProperty extends EObject {
 	 * Sets the value of the ' {@link org.eclipse.papyrus.sysml.portandflows.FlowProperty#getDirection
 	 * <em>Direction</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Direction</em>' attribute.
+	 *            the new value of the '<em>Direction</em>' attribute.
 	 * @see org.eclipse.papyrus.sysml.portandflows.FlowDirection
 	 * @see #getDirection()
 	 * @generated

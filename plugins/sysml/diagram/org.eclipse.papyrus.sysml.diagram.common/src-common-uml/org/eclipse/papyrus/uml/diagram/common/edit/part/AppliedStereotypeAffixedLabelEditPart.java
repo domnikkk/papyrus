@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -46,20 +46,22 @@ public class AppliedStereotypeAffixedLabelEditPart extends AbstractElementLabelE
 		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeExternalNodeEditPolicy());
 	}
 
+	@Override
 	public IBorderItemLocator getBorderItemLocator() {
 		IFigure parentFigure = getFigure().getParent();
-		if(parentFigure != null && parentFigure.getLayoutManager() != null) {
+		if (parentFigure != null && parentFigure.getLayoutManager() != null) {
 			Object constraint = parentFigure.getLayoutManager().getConstraint(getFigure());
-			return (IBorderItemLocator)constraint;
+			return (IBorderItemLocator) constraint;
 		}
 		return null;
 	}
 
+	@Override
 	public void refreshBounds() {
-		int x = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-		int y = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
-		int width = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
-		int height = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
+		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
+		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
 
 		// Update locator constraint
 		IBorderItemLocator locator = getBorderItemLocator();
@@ -83,8 +85,9 @@ public class AppliedStereotypeAffixedLabelEditPart extends AbstractElementLabelE
 		return new AppliedStereotypeWrappingLabelFigure();
 	}
 
+	@Override
 	public IFigure getPrimaryShape() {
-		return (IFigure)getFigure();
+		return getFigure();
 	}
 
 	/**
@@ -106,6 +109,7 @@ public class AppliedStereotypeAffixedLabelEditPart extends AbstractElementLabelE
 	/**
 	 * Forbid direct edition on this label.
 	 */
+	@Override
 	public int getDirectEditionType() {
 		// The label is read-only (defined in GMFGen model)
 		return IDirectEdition.NO_DIRECT_EDITION;
@@ -114,6 +118,7 @@ public class AppliedStereotypeAffixedLabelEditPart extends AbstractElementLabelE
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getLabelRole() {
 		return "Stereotype";//$NON-NLS-1$
 	}
@@ -121,6 +126,7 @@ public class AppliedStereotypeAffixedLabelEditPart extends AbstractElementLabelE
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getIconPathRole() {
 		return "";//$NON-NLS-1$
 	}

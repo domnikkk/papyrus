@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,23 +19,21 @@ import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderSer
 
 /**
  * This class references the keys registered in the ConfigRegistry of the table to facilitate access to these objects
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class NattableConfigAttributes {
 
 	private NattableConfigAttributes() {
-		//to prevent instaciantionF
+		// to prevent instaciantionF
 	}
 
 	/**
 	 * The config attribute used to register the table model manager
-	 * 
+	 *
 	 * <ul>
-	 * <li>To store it :
-	 * <code> configRegistry.registerConfigAttribute(NattableConfigAttributes.NATTABLE_MODEL_MANAGER_CONFIG_ATTRIBUTE, YOUR_NATTABLE_MODEL_MANAGER, DisplayMode.NORMAL, NattableConfigAttributes.NATTABLE_MODEL_MANAGER_ID);</code>
-	 * </li>
+	 * <li>To store it : <code> configRegistry.registerConfigAttribute(NattableConfigAttributes.NATTABLE_MODEL_MANAGER_CONFIG_ATTRIBUTE, YOUR_NATTABLE_MODEL_MANAGER, DisplayMode.NORMAL, NattableConfigAttributes.NATTABLE_MODEL_MANAGER_ID);</code></li>
 	 * <li>To get it : <code></code></li>
 	 * </ul>
 	 */
@@ -43,14 +41,11 @@ public class NattableConfigAttributes {
 
 	/**
 	 * The config attribute used to register the label provider service
-	 * 
+	 *
 	 * <ul>
-	 * <li>To store it :
-	 * <code> configRegistry.registerConfigAttribute(NattableConfigAttributes.LABEL_PROVIDER_SERVICE_CONFIG_ATTRIBUTE, YOUR_LABEL_PROVER_SERVICE, DisplayMode.NORMAL, NattableConfigAttributes.LABEL_PROVIDER_SERVICE_ID);</code>
-	 * </li>
+	 * <li>To store it : <code> configRegistry.registerConfigAttribute(NattableConfigAttributes.LABEL_PROVIDER_SERVICE_CONFIG_ATTRIBUTE, YOUR_LABEL_PROVER_SERVICE, DisplayMode.NORMAL, NattableConfigAttributes.LABEL_PROVIDER_SERVICE_ID);</code></li>
 	 * <li>To get it : <code></code></li>
-	 * LabelProviderService serv = configRegistry.getConfigAttribute(NattableConfigAttributes.LABEL_PROVIDER_SERVICE_CONFIG_ATTRIBUTE,
-	 * DisplayMode.NORMAL, NattableConfigAttributes.LABEL_PROVIDER_SERVICE_ID);
+	 * LabelProviderService serv = configRegistry.getConfigAttribute(NattableConfigAttributes.LABEL_PROVIDER_SERVICE_CONFIG_ATTRIBUTE, DisplayMode.NORMAL, NattableConfigAttributes.LABEL_PROVIDER_SERVICE_ID);
 	 * </ul>
 	 */
 	public static final ConfigAttribute<LabelProviderService> LABEL_PROVIDER_SERVICE_CONFIG_ATTRIBUTE = new ConfigAttribute<LabelProviderService>();

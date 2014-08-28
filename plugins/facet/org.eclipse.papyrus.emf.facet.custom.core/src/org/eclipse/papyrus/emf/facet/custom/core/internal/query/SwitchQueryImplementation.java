@@ -36,7 +36,7 @@ public class SwitchQueryImplementation implements IQueryImplementation {
 	/**
 	 * @param query
 	 * @param query
-	 *        the javaQuery to be evaluated
+	 *            the javaQuery to be evaluated
 	 */
 	public SwitchQueryImplementation(final ETypedElementSwitchQuery query) {
 		this.query = query;
@@ -46,46 +46,46 @@ public class SwitchQueryImplementation implements IQueryImplementation {
 
 		EStructuralFeature sfParam = null;
 		Query subQuery = null;
-		for(final ParameterValue parameterValue : parameterValues) {
-			if(parameterValue.getParameter().getName().equals(PARAM_NAME)) {
-				sfParam = (EStructuralFeature)parameterValue.getValue();
+		for (final ParameterValue parameterValue : parameterValues) {
+			if (parameterValue.getParameter().getName().equals(PARAM_NAME)) {
+				sfParam = (EStructuralFeature) parameterValue.getValue();
 			}
 		}
-		for(ETypedElementCase eTECase : this.query.getCases()) {
-			if(eTECase.getCase() == sfParam) {
+		for (ETypedElementCase eTECase : this.query.getCases()) {
+			if (eTECase.getCase() == sfParam) {
 				subQuery = eTECase.getValue();
-				if(subQuery != null) {
+				if (subQuery != null) {
 					break;
 				}
 			}
 		}
 
-		if(subQuery == null) {
-			//The case is not supported: call super operation if possible (Avoid NPEs for unsupported cases)
-			if(feature instanceof FacetOperation) {
-				FacetOperation operation = (FacetOperation)feature;
+		if (subQuery == null) {
+			// The case is not supported: call super operation if possible (Avoid NPEs for unsupported cases)
+			if (feature instanceof FacetOperation) {
+				FacetOperation operation = (FacetOperation) feature;
 				DerivedTypedElement superOperation = operation.getOverride();
-				if(superOperation == null) {
+				if (superOperation == null) {
 					return null;
 				}
-				if(superOperation instanceof FacetOperation) {
-					FacetOperation superFacetOperation = (FacetOperation)superOperation;
+				if (superOperation instanceof FacetOperation) {
+					FacetOperation superFacetOperation = (FacetOperation) superOperation;
 
-					//We call the super-operation's query
+					// We call the super-operation's query
 					subQuery = superFacetOperation.getQuery();
 				} else {
-					//What does this mean?
+					// What does this mean?
 					throw new UnsupportedOperationException("Overridden typed element is not a FacetOperation");
 				}
 			}
 
-			if(subQuery == null) {
+			if (subQuery == null) {
 				return null;
 			}
 
 		}
 
-		//Evaluate the nestedQuery
+		// Evaluate the nestedQuery
 		return IDerivedTypedElementManager.INSTANCE.evaluate(subQuery, source, parameterValues, facetManager);
 	}
 

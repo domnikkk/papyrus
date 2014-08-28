@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -26,6 +26,7 @@ public class PseudostateJunctionFigure extends PapyrusNodeFigure implements IPap
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected Border getDefaultBorder(Color borderColor) {
 		return null;
 	}
@@ -41,28 +42,30 @@ public class PseudostateJunctionFigure extends PapyrusNodeFigure implements IPap
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Label getStereotypesLabel() {
 		return new Label();
 	}
 
-	//	public PseudostateJunctionFigure() {
-	//		super();
-	//		Dimension dim1 = new Dimension(22, 22);
-	//		this.setPreferredSize(new Dimension(dim1));
-	//		this.setMaximumSize(new Dimension(dim1));
-	//		this.setMinimumSize(new Dimension(dim1));
-	//		this.setSize(dim1);
-	//	}
+	// public PseudostateJunctionFigure() {
+	// super();
+	// Dimension dim1 = new Dimension(22, 22);
+	// this.setPreferredSize(new Dimension(dim1));
+	// this.setMaximumSize(new Dimension(dim1));
+	// this.setMinimumSize(new Dimension(dim1));
+	// this.setSize(dim1);
+	// }
 	//
-	//	protected void fillShape(Graphics graphics) {
-	//		graphics.pushState();
-	//		graphics.setBackgroundColor(ColorConstants.black);
-	//		graphics.fillOval(getBounds());
-	//		graphics.popState();
-	//	}
+	// protected void fillShape(Graphics graphics) {
+	// graphics.pushState();
+	// graphics.setBackgroundColor(ColorConstants.black);
+	// graphics.fillOval(getBounds());
+	// graphics.popState();
+	// }
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void paintFigure(Graphics graphics) {
 		Rectangle r = getBounds().getCopy();
 		graphics.setBackgroundColor(getForegroundColor());
@@ -72,18 +75,21 @@ public class PseudostateJunctionFigure extends PapyrusNodeFigure implements IPap
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypeDisplay(String stereotypes, Image image) {
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
 	}
 }

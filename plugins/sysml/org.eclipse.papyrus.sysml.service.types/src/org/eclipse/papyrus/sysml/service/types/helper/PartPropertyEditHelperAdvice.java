@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -46,9 +46,9 @@ public class PartPropertyEditHelperAdvice extends AbstractPropertyEditHelperAdvi
 
 	/**
 	 * Check if the creation context is a {@link Block}.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.sysml.service.types.helper.AbstractStereotypedElementEditHelperAdvice#approveRequest(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return true if the request is approved
 	 */
@@ -56,17 +56,17 @@ public class PartPropertyEditHelperAdvice extends AbstractPropertyEditHelperAdvi
 	public boolean approveRequest(IEditCommandRequest request) {
 		boolean isApproved = super.approveRequest(request);
 
-		if((request != null) && (request instanceof GetEditContextRequest)) {
+		if ((request != null) && (request instanceof GetEditContextRequest)) {
 
 			// Retrieve the edit context from request
-			GetEditContextRequest editContextRequest = (GetEditContextRequest)request;
+			GetEditContextRequest editContextRequest = (GetEditContextRequest) request;
 
 			// Test if the edit context is a Block
-			if(editContextRequest.getEditContext() instanceof Element) {
-				Element contextElement = (Element)editContextRequest.getEditContext();
+			if (editContextRequest.getEditContext() instanceof Element) {
+				Element contextElement = (Element) editContextRequest.getEditContext();
 
 				IElementMatcher matcher = new BlockMatcher();
-				if(!matcher.matches(contextElement)) {
+				if (!matcher.matches(contextElement)) {
 					isApproved = false;
 				}
 			}
@@ -83,8 +83,8 @@ public class PartPropertyEditHelperAdvice extends AbstractPropertyEditHelperAdvi
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				Property element = (Property)request.getElementToConfigure();
-				if(element != null) {
+				Property element = (Property) request.getElementToConfigure();
+				if (element != null) {
 
 					// Set default name
 					String initializedName = NamedElementHelper.getDefaultNameWithIncrementFromBase("part", element.eContainer().eContents()); //$NON-NLS-1$
@@ -108,12 +108,12 @@ public class PartPropertyEditHelperAdvice extends AbstractPropertyEditHelperAdvi
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				Property sourcePart = (Property)request.getElementToConfigure();
-				if((sourcePart != null) && (sourcePart.getType() != null)) {
+				Property sourcePart = (Property) request.getElementToConfigure();
+				if ((sourcePart != null) && (sourcePart.getType() != null)) {
 
 					// Create association between element owner and element type
 					Type sourceType = sourcePart.getClass_();
-					//Type targetType = sourcePart.getType();
+					// Type targetType = sourcePart.getType();
 					Package associationContainer = sourceType.getNearestPackage();
 
 					// Create targetProperty
@@ -138,24 +138,25 @@ public class PartPropertyEditHelperAdvice extends AbstractPropertyEditHelperAdvi
 			}
 		};
 	}
-	
+
 	/**
 	 * Returns the Part to be duplicated
-	 * 
+	 *
 	 * @return the Part to be duplicated or <code>null</code> if this is not a part
 	 */
+	@Override
 	protected Property getDuplicatedProperty(DuplicateElementsRequest request) {
 		List<Object> elementsToBeDuplicated = request.getElementsToBeDuplicated();
-		if(elementsToBeDuplicated == null || elementsToBeDuplicated.isEmpty()) {
+		if (elementsToBeDuplicated == null || elementsToBeDuplicated.isEmpty()) {
 			return null;
 		}
 		Object firstElement = elementsToBeDuplicated.get(0); // there should be only one element here
-		if(!(firstElement instanceof Property)) {
+		if (!(firstElement instanceof Property)) {
 			return null;
 		}
 		PartPropertyMatcher matcher = new PartPropertyMatcher();
-		return matcher.matches((Property)firstElement) ? (Property)firstElement : null;
+		return matcher.matches((Property) firstElement) ? (Property) firstElement : null;
 	}
 
-	
+
 }

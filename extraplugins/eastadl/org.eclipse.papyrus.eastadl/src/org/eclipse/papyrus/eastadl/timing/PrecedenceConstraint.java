@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,8 +28,8 @@ import org.eclipse.papyrus.eastadl.infrastructure.PrecedenceConstraint_successiv
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint#getPreceding <em>Preceding</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint#getSuccessive <em>Successive</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint#getPreceding <em>Preceding</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint#getSuccessive <em>Successive</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +42,7 @@ public interface PrecedenceConstraint extends TimingConstraint {
 	 * Returns the value of the '<em><b>Preceding</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Preceding</em>' containment reference.
 	 * @see #setPreceding(PrecedenceConstraint_precedingInstanceRef)
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingPackage#getPrecedenceConstraint_Preceding()
@@ -54,7 +55,9 @@ public interface PrecedenceConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint#getPreceding <em>Preceding</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Preceding</em>' containment reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Preceding</em>' containment reference.
 	 * @see #getPreceding()
 	 * @generated
 	 */
@@ -65,6 +68,7 @@ public interface PrecedenceConstraint extends TimingConstraint {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.PrecedenceConstraint_successiveInstanceRef}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Successive</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingPackage#getPrecedenceConstraint_Successive()
 	 * @model containment="true" required="true" ordered="false"

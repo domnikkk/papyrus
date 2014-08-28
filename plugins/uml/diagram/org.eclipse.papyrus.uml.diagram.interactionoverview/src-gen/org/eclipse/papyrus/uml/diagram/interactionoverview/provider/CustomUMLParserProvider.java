@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,14 +19,14 @@ public class CustomUMLParserProvider extends UMLParserProvider {
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.activity.providers.UMLParserProvider#getParser(int)
-	 * 
+	 *
 	 * @param visualID
 	 * @return
 	 */
 
 	@Override
 	protected IParser getParser(final int visualID) {
-		switch(visualID) {
+		switch (visualID) {
 		case CallBehaviorActionNameEditPart.VISUAL_ID:
 			return getCallBehaviorActionLabel_5004Parser();
 		default:
@@ -37,7 +37,7 @@ public class CustomUMLParserProvider extends UMLParserProvider {
 	}
 
 	private IParser getCallBehaviorActionLabel_5004Parser() {
-		if(custom_callBehaviorActionLabel_5004Parser == null) {
+		if (custom_callBehaviorActionLabel_5004Parser == null) {
 			final CustomCallBehaviorActionParser parser = new CustomCallBehaviorActionParser();
 			custom_callBehaviorActionLabel_5004Parser = parser;
 		}

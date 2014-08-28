@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ public interface IStrategyManager {
 	 * Checks if the strategy is active.
 	 *
 	 * @param strategy
-	 *        the strategy
+	 *            the strategy
 	 * @return true, if is active
 	 */
 	boolean isActive(IStrategy strategy);
@@ -33,9 +33,9 @@ public interface IStrategyManager {
 	 * Sets the strategy to isActive.
 	 *
 	 * @param strategy
-	 *        the strategy
+	 *            the strategy
 	 * @param isActive
-	 *        the is active
+	 *            the is active
 	 */
 	void setActive(IStrategy strategy, boolean isActive);
 
@@ -43,7 +43,7 @@ public interface IStrategyManager {
 	 * Find priority of a strategy
 	 *
 	 * @param otherStrategy
-	 *        the other strategy
+	 *            the other strategy
 	 * @return the int
 	 */
 	int findPriority(IStrategy otherStrategy);
@@ -52,9 +52,9 @@ public interface IStrategyManager {
 	 * Sets the priority for a strategy.
 	 *
 	 * @param strategyToMove
-	 *        the strategy to move
+	 *            the strategy to move
 	 * @param newPriority
-	 *        the new priority
+	 *            the new priority
 	 */
 	void setPriority(IStrategy strategyToMove, int newPriority);
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ public class ActivityGroupHelper extends ElementEditHelper {
 
 	@Override
 	protected ICommand getBasicDestroyElementCommand(DestroyElementRequest req) {
-		ICommand result =  new DestroyActivityNode(req);
+		ICommand result = new DestroyActivityNode(req);
 
 		return result;
 	}
@@ -44,42 +44,45 @@ public class ActivityGroupHelper extends ElementEditHelper {
 	 * inner class for the destruction of element
 	 *
 	 */
-	private class DestroyActivityNode extends DestroyElementCommand{
+	private class DestroyActivityNode extends DestroyElementCommand {
 
 
-		private Command emfcmd=null;
+		private Command emfcmd = null;
+
 		public DestroyActivityNode(DestroyElementRequest request) {
 			super(request);
 		}
+
+		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
-			throws ExecutionException {
-			//this code comes from super class and we replace explicitly by a call of the command of UML
+				throws ExecutionException {
+			// this code comes from super class and we replace explicitly by a call of the command of UML
 			// for node specific commands have been done
 			EObject destructee = getElementToDestroy();
 
 			// only destroy attached elements
 			if ((destructee != null) && (destructee.eResource() != null)) {
-				
+
 				// here has been commented because uml commands take all in charge
 				// tear down incoming references
-				//tearDownIncomingReferences(destructee);
+				// tearDownIncomingReferences(destructee);
 
 				// also tear down outgoing references, because we don't want
-				//    reverse-reference lookups to find destroyed objects
-				//tearDownOutgoingReferences(destructee);
+				// reverse-reference lookups to find destroyed objects
+				// tearDownOutgoingReferences(destructee);
 
 				// remove the object from its container
-				emfcmd=DeleteCommand.create(getRequest().getEditingDomain(),getElementToDestroy());
+				emfcmd = DeleteCommand.create(getRequest().getEditingDomain(), getElementToDestroy());
 				if (emfcmd != null && emfcmd.canExecute()) {
 					emfcmd.execute();
 				}
 
-			// here has been commented because uml commands take all in charge	
-			// in case it was cross-resource-contained
-			//	Resource res = destructee.eResource();
-			//	if (res != null) {
-			//res.getContents().remove(destructee);
-			//	}
+				// here has been commented because uml commands take all in charge
+				// in case it was cross-resource-contained
+				// Resource res = destructee.eResource();
+				// if (res != null) {
+				// res.getContents().remove(destructee);
+				// }
 			}
 
 			return CommandResult.newOKCommandResult();
@@ -88,8 +91,8 @@ public class ActivityGroupHelper extends ElementEditHelper {
 
 		@Override
 		protected IStatus doUndo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-			// The undo has to be explicitly called 
-			emfcmd.canUndo();	
+			// The undo has to be explicitly called
+			emfcmd.canUndo();
 			emfcmd.undo();
 
 			return Status.OK_STATUS;
@@ -97,12 +100,12 @@ public class ActivityGroupHelper extends ElementEditHelper {
 
 		@Override
 		protected IStatus doRedo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-			// The redo has to be explicitly called 
-			//IStatus status =super.doRedo(monitor, info);
+			// The redo has to be explicitly called
+			// IStatus status =super.doRedo(monitor, info);
 			// IStatus status =super.doRedo(monitor, info);
 			// emfcmd.canExecute();
 			emfcmd.redo();
-			
+
 			return Status.OK_STATUS;
 		}
 	}

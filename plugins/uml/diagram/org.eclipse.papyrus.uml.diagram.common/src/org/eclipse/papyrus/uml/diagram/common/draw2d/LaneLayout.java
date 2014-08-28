@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2006 Borland Software Corporation
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,7 +56,7 @@ public class LaneLayout extends AbstractHintLayout {
 	}
 
 	public void setLaneOrientation(int orientation) {
-		if(orientation != HORIZONTAL && orientation != VERTICAL) {
+		if (orientation != HORIZONTAL && orientation != VERTICAL) {
 			throw new IllegalArgumentException("Incorrect lane orientation constant: " + orientation); //$NON-NLS-1$
 		}
 		myTransposer.setEnabled(orientation == VERTICAL);
@@ -83,9 +83,9 @@ public class LaneLayout extends AbstractHintLayout {
 		int childHHint = getLaneOrientation() == VERTICAL ? Math.max(0, hHint - insets.getHeight()) : (hHint - insets.getHeight() > 0 ? hHint - insets.getHeight() / children.size() : hHint);
 
 		int height = 0, width = 0;
-		for(int i = 0; i < children.size(); i++) {
-			IFigure child = (IFigure)children.get(i);
-			Rectangle constraint = (Rectangle)getConstraint(child);
+		for (int i = 0; i < children.size(); i++) {
+			IFigure child = (IFigure) children.get(i);
+			Rectangle constraint = (Rectangle) getConstraint(child);
 			Dimension childSize = myTransposer.t(myTransposer.t(constraint).height > -1 ? constraint.getSize() : child.getMinimumSize(childWHint, childHHint));
 			height += childSize.height;
 			width = Math.max(width, childSize.width);
@@ -101,9 +101,9 @@ public class LaneLayout extends AbstractHintLayout {
 		int childHHint = getLaneOrientation() == VERTICAL ? Math.max(0, hHint - insets.getHeight()) : (hHint - insets.getHeight() > 0 ? hHint - insets.getHeight() / children.size() : hHint);
 
 		int height = 0, width = 0;
-		for(int i = 0; i < children.size(); i++) {
-			IFigure child = (IFigure)children.get(i);
-			Rectangle constraint = (Rectangle)getConstraint(child);
+		for (int i = 0; i < children.size(); i++) {
+			IFigure child = (IFigure) children.get(i);
+			Rectangle constraint = (Rectangle) getConstraint(child);
 			Dimension childSize = myTransposer.t(myTransposer.t(constraint).height > -1 ? constraint.getSize() : child.getPreferredSize(childWHint, childHHint));
 			height += childSize.height;
 			width = Math.max(width, childSize.width);
@@ -114,7 +114,7 @@ public class LaneLayout extends AbstractHintLayout {
 	@Override
 	public void setConstraint(IFigure child, Object constraint) {
 		super.setConstraint(child, constraint);
-		if(constraint != null) {
+		if (constraint != null) {
 			myConstraints.put(child, constraint);
 		}
 	}
@@ -130,10 +130,11 @@ public class LaneLayout extends AbstractHintLayout {
 		myConstraints.remove(child);
 	}
 
+	@Override
 	public void layout(IFigure container) {
 		List children = container.getChildren();
 		int numChildren = children.size();
-		if(numChildren > 0) {
+		if (numChildren > 0) {
 			Dimension prefSizes[] = new Dimension[numChildren];
 			Dimension minSizes[] = new Dimension[numChildren];
 
@@ -144,16 +145,16 @@ public class LaneLayout extends AbstractHintLayout {
 			int totalPrefHeight = 0;
 			int nonExpansibleNum = 0;
 
-			for(int i = 0; i < numChildren; i++) {
-				IFigure child = (IFigure)children.get(i);
+			for (int i = 0; i < numChildren; i++) {
+				IFigure child = (IFigure) children.get(i);
 
-				Rectangle constraint = (Rectangle)getConstraint(child);
+				Rectangle constraint = (Rectangle) getConstraint(child);
 				boolean isResizedByUser = myTransposer.t(constraint).height > -1;
 				prefSizes[i] = myTransposer.t(isResizedByUser ? constraint.getSize() : child.getPreferredSize(wHint, hHint));
 				minSizes[i] = myTransposer.t(isResizedByUser ? constraint.getSize() : child.getMinimumSize(wHint, hHint));
 
 				totalPrefHeight += prefSizes[i].height;
-				if(isResizedByUser) {
+				if (isResizedByUser) {
 					nonExpansibleNum++;
 				}
 			}
@@ -163,23 +164,23 @@ public class LaneLayout extends AbstractHintLayout {
 
 			int x = clientArea.x;
 			int y = clientArea.y;
-			for(int i = 0; i < numChildren; i++) {
+			for (int i = 0; i < numChildren; i++) {
 				int prefHeight = prefSizes[i].height;
 				int prefWidth = prefSizes[i].width;
 				int minWidth = minSizes[i].width;
 				Rectangle newBounds = new Rectangle(x, y, prefWidth, prefHeight);
 
-				IFigure child = (IFigure)children.get(i);
-				Rectangle constraint = myTransposer.t((Rectangle)getConstraint(child));
+				IFigure child = (IFigure) children.get(i);
+				Rectangle constraint = myTransposer.t((Rectangle) getConstraint(child));
 				boolean isResizedByUser = constraint.height > -1;
 				newBounds.width = Math.max(minWidth, clientArea.width);
-				if(isResizedByUser) {
+				if (isResizedByUser) {
 					/*
 					 * If all element are resized by user and summary preferred
 					 * heigh is less then client area, last element should cover
 					 * spare space.
 					 */
-					if(numChildren == nonExpansibleNum && totalPrefHeight < clientArea.height && i == numChildren - 1) {
+					if (numChildren == nonExpansibleNum && totalPrefHeight < clientArea.height && i == numChildren - 1) {
 						newBounds.height += clientArea.height - totalPrefHeight;
 					}
 				} else {

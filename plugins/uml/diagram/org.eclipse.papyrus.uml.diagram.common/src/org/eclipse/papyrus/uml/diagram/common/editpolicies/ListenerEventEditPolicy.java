@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.View;
@@ -41,7 +42,7 @@ public abstract class ListenerEventEditPolicy extends AbstractEditPolicy impleme
 
 		/**
 		 * constructor
-		 * 
+		 *
 		 * @param element
 		 * @param hint
 		 */
@@ -51,8 +52,9 @@ public abstract class ListenerEventEditPolicy extends AbstractEditPolicy impleme
 		}
 
 		/** Adds <code>String.class</tt> adaptablity. */
+		@Override
 		public Object getAdapter(Class adapter) {
-			if(adapter.equals(String.class)) {
+			if (adapter.equals(String.class)) {
 				return _hint;
 			}
 			return super.getAdapter(adapter);
@@ -68,7 +70,7 @@ public abstract class ListenerEventEditPolicy extends AbstractEditPolicy impleme
 	 * inserted into it's parent. The position is determined by the position
 	 * of the semantic element. If the semantic element is not found the view
 	 * will be appended to it's parent.
-	 * 
+	 *
 	 * @param semanticChild
 	 * @return position where the view should be inserted
 	 */
@@ -79,25 +81,25 @@ public abstract class ListenerEventEditPolicy extends AbstractEditPolicy impleme
 
 	/**
 	 * Returns the default factory hint.
-	 * 
+	 *
 	 * @return <code>host().getView().getSemanticType()</code>
 	 */
 	protected String getDefaultFactoryHint() {
-		return ((View)host().getModel()).getType();
+		return ((View) host().getModel()).getType();
 	}
 
 
 	/**
 	 * Return a view descriptor.
-	 * 
+	 *
 	 * @param elementAdapter
-	 *        semantic element
+	 *            semantic element
 	 * @param viewKind
-	 *        type of view to create
+	 *            type of view to create
 	 * @param hint
-	 *        factory hint
+	 *            factory hint
 	 * @param index
-	 *        index
+	 *            index
 	 * @return a create <i>non-persisted</i> view descriptor
 	 */
 	protected CreateViewRequest.ViewDescriptor getViewDescriptor(IAdaptable elementAdapter, Class viewKind, String hint, int index) {
@@ -108,37 +110,37 @@ public abstract class ListenerEventEditPolicy extends AbstractEditPolicy impleme
 
 	/**
 	 * Gets the diagram event broker from the editing domain.
-	 * 
+	 *
 	 * @return the diagram event broker
 	 */
 	private DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
-		if(theEditingDomain != null) {
+		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		if (theEditingDomain != null) {
 			return DiagramEventBroker.getInstance(theEditingDomain);
 		}
-		throw new IllegalStateException("EditPolicy unable to retrive the DiagramEventBroker");////$NON-NLS-0$
+		throw new IllegalStateException("EditPolicy unable to retrive the DiagramEventBroker");//
 	}
 
 	/**
 	 * Return the {@link IGraphicalEditPart} host (never null)
-	 * 
+	 *
 	 * @return
 	 */
 	protected IGraphicalEditPart host() {
 		EditPart host = getHost();
-		if(host instanceof IGraphicalEditPart) {
-			return ((IGraphicalEditPart)host);
+		if (host instanceof IGraphicalEditPart) {
+			return ((IGraphicalEditPart) host);
 		}
-		throw new IllegalStateException("The host of this EditPolicy is not an instance of IGraphicalEditPart");////$NON-NLS-0$
+		throw new IllegalStateException("The host of this EditPolicy is not an instance of IGraphicalEditPart");//
 	}
 
 	/**
-	 * 
+	 *
 	 * @return {@link EObject} of the host of this edit Policy or null if error
 	 */
 	protected EObject getSemanticHost() {
 		IGraphicalEditPart host = host();
-		if(host != null) {
+		if (host != null) {
 			return host.resolveSemanticElement();
 		}
 		return null;
@@ -146,12 +148,12 @@ public abstract class ListenerEventEditPolicy extends AbstractEditPolicy impleme
 
 	/**
 	 * Add the listeners corresponding to to the structural feature
-	 * 
+	 *
 	 * @see org.eclipse.gef.editpolicies.AbstractEditPolicy#activate()
 	 */
 	@Override
 	public void activate() {
-		for(EStructuralFeature feature : getEStructuralFeaturesToListen()) {
+		for (EStructuralFeature feature : getEStructuralFeaturesToListen()) {
 			getDiagramEventBroker().addNotificationListener(getSemanticHost(), feature, this);
 		}
 		super.activate();
@@ -159,53 +161,56 @@ public abstract class ListenerEventEditPolicy extends AbstractEditPolicy impleme
 
 	/**
 	 * Add the listeners corresponding to to the structural feature
-	 * 
+	 *
 	 * @see org.eclipse.gef.editpolicies.AbstractEditPolicy#activate()
 	 */
 	@Override
 	public void deactivate() {
-		for(EStructuralFeature feature : getEStructuralFeaturesToListen()) {
+		for (EStructuralFeature feature : getEStructuralFeaturesToListen()) {
 			getDiagramEventBroker().removeNotificationListener(getSemanticHost(), feature, this);
 		}
 		super.deactivate();
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.core.listener.NotificationPreCommitListener#transactionAboutToCommit(org.eclipse.emf.common.notify.Notification)
-	 * 
+	 *
 	 * @param notification
 	 * @return
 	 */
+	@Override
 	public org.eclipse.emf.common.command.Command transactionAboutToCommit(Notification notification) {
 		ICommand result = null;
-		if(getEStructuralFeaturesToListen().contains(notification.getFeature()) && handleNotificationType(notification.getEventType())) {
+		if (getEStructuralFeaturesToListen().contains(notification.getFeature()) && handleNotificationType(notification.getEventType())) {
 			Object newObject = notification.getNewValue();
 			Object oldObject = notification.getOldValue();
 			Object feature = notification.getFeature();
 			int eventType = notification.getEventType();
 			Object notifier = notification.getNotifier();
-			if(isInstaceofOrNull(newObject,EObject.class) && isInstaceofOrNull(oldObject,EObject.class)&& feature instanceof EStructuralFeature && isInstaceofOrNull(notifier,EObject.class)) {
-				result = getCommand((EObject)newObject, (EObject)oldObject, (EStructuralFeature)feature, eventType, (EObject)notifier);
+			if (isInstaceofOrNull(newObject, EObject.class) && isInstaceofOrNull(oldObject, EObject.class) && feature instanceof EStructuralFeature && isInstaceofOrNull(notifier, EObject.class)) {
+				result = getCommand((EObject) newObject, (EObject) oldObject, (EStructuralFeature) feature, eventType, (EObject) notifier);
 			} else {
 				result = getSpecialCommandCommand(notification);
 			}
 		}
 		return (result != null) ? new GMFtoEMFCommandWrapper(result) : null;
 	}
+
 	/**
 	 * Similar to instance but return true if the objet is null
+	 *
 	 * @param o
 	 * @param clazz
 	 * @return
 	 */
-	private boolean isInstaceofOrNull(Object o, Class clazz){
+	private boolean isInstaceofOrNull(Object o, Class clazz) {
 		return o == null || clazz.isInstance(o);
 	}
 
 	/**
 	 * This method could be override by extended class to handle specific notification
-	 * 
+	 *
 	 * @param notification
 	 * @return
 	 */
@@ -217,21 +222,23 @@ public abstract class ListenerEventEditPolicy extends AbstractEditPolicy impleme
 
 	/**
 	 * {@inheritDoc IStructuralFeatureListener}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.editpolicies.IStructuralFeatureListener#handleNotificationType(int)
-	 * 
+	 *
 	 * @param type
 	 * @return
 	 */
+	@Override
 	public abstract boolean handleNotificationType(int type);
 
 	/**
 	 * {@inheritDoc IStructuralFeatureListener}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.editpolicies.IStructuralFeatureListener#getEStructuralFeaturesToListen()
-	 * 
+	 *
 	 * @param type
 	 * @return
 	 */
+	@Override
 	public abstract ImmutableSet<EStructuralFeature> getEStructuralFeaturesToListen();
 }

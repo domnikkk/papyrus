@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Francisco Javier Cano Muñoz (Prodevelop) – Initial implementation.
  *
  ******************************************************************************/
@@ -37,18 +37,16 @@ import org.eclipse.papyrus.uml.diagram.common.Activator;
  * <ul>
  * <li>Each Class simple name must be equal to one of the elements defined in the IExtensionPoint to be parsed.</li>
  * <li>There must be one Class for each one of the elements defined in the IExtensionPoint.</li>
- * <li>Each Class must have one attribute of type String, Boolean or Object for each attribute defined for its matching element in the
- * IExtensionPoint.</li>
- * <li>Each Class must have one attribute of type List for each type of child element it can have as defined in the IExtensionPoint. The name of this
- * List attribute will be equal to the type of elements to be stored in it.</li>
+ * <li>Each Class must have one attribute of type String, Boolean or Object for each attribute defined for its matching element in the IExtensionPoint.</li>
+ * <li>Each Class must have one attribute of type List for each type of child element it can have as defined in the IExtensionPoint. The name of this List attribute will be equal to the type of elements to be stored in it.</li>
  * <li>Use Boolean instead of boolean, this allows that field to be null, indicating it has not been initialized.</li>
  * </ul>
  * <br>
  * The method parseExtensionPoint will return a List of Objects with a data structure similar to the
  * one defined in the IExtensionPoint.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
- * 
+ *
  */
 public class ExtensionPointParser {
 
@@ -69,7 +67,7 @@ public class ExtensionPointParser {
 
 	/**
 	 * Constructor without enclosing <Class>.
-	 * 
+	 *
 	 * @param extensionPointID
 	 * @param classes
 	 */
@@ -80,7 +78,7 @@ public class ExtensionPointParser {
 
 	/**
 	 * Constructor with enclosing <Class>.
-	 * 
+	 *
 	 * @param extensionPointID
 	 * @param classes
 	 * @param enclosingInstance
@@ -101,7 +99,7 @@ public class ExtensionPointParser {
 	}
 
 	public Class getEnclosingClass() {
-		if(getEnclosingInstance() != null) {
+		if (getEnclosingInstance() != null) {
 			return getEnclosingInstance().getClass();
 		}
 		return null;
@@ -117,11 +115,11 @@ public class ExtensionPointParser {
 	 * constructor. Fields with null value in the returned <Object>s have not
 	 * been initialized, as those values were not specified in the
 	 * <IExtensionPoint>.
-	 * 
+	 *
 	 * @return
 	 */
 	public List<Object> parseExtensionPoint() {
-		if(getExtensionPointID() == null || getClasses() == null || getClasses().length <= 0) {
+		if (getExtensionPointID() == null || getClasses() == null || getClasses().length <= 0) {
 			return Collections.EMPTY_LIST;
 		}
 
@@ -129,16 +127,16 @@ public class ExtensionPointParser {
 		IExtensionPoint extensionPoint = extensionRegistry.getExtensionPoint(getExtensionPointID());
 
 		// In case the extension point does not exist, show an error
-		if(extensionPoint == null) {
+		if (extensionPoint == null) {
 			Activator.getDefault().logError("The Extension Point ID provided does not exist", null);
 			return Collections.EMPTY_LIST;
 		}
 
 		// parse every root IConfigurationElement in this IExtensionPoint.
 		List<Object> objects = new ArrayList<Object>();
-		for(IConfigurationElement element : extensionPoint.getConfigurationElements()) {
+		for (IConfigurationElement element : extensionPoint.getConfigurationElements()) {
 			Object object = parseConfigurationElement(element);
-			if(object != null) {
+			if (object != null) {
 				objects.add(object);
 			}
 		}
@@ -149,43 +147,43 @@ public class ExtensionPointParser {
 	/**
 	 * Parse an <IConfigurationElement>, including its attributes and its
 	 * children elements,
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	protected Object parseConfigurationElement(IConfigurationElement element) {
-		if(element == null) {
+		if (element == null) {
 			return null;
 		}
 
 		Object object = createInstance(element);
-		if(object == null) {
+		if (object == null) {
 			return null;
 		}
 
 		// Added by gmerin to store the pluginID that contributed this object
-		if(object instanceof IObjectWithContributorId) {
+		if (object instanceof IObjectWithContributorId) {
 			String pluginID = element.getContributor().getName();
-			((IObjectWithContributorId)object).setContributorId(pluginID);
+			((IObjectWithContributorId) object).setContributorId(pluginID);
 		}
 		// end gmerin
 
-		for(Field field : object.getClass().getDeclaredFields()) {
-			if(field.getType().isAssignableFrom(List.class) && !field.getType().isAssignableFrom(Object.class)) {
+		for (Field field : object.getClass().getDeclaredFields()) {
+			if (field.getType().isAssignableFrom(List.class) && !field.getType().isAssignableFrom(Object.class)) {
 				// List fields are handled later
 				continue;
 			}
 			String attribute = field.getName();
-			if(attribute == null || attribute.contains("$")) {
+			if (attribute == null || attribute.contains("$")) {
 				// a field with "$" is a pointer to the enclosing instance; and
 				// never accessible
 				continue;
 			}
 			Object value = parseAttribute(element, attribute);
-			if(!(value instanceof String)) {
-				if(field.getType().isAssignableFrom(List.class)) {
+			if (!(value instanceof String)) {
+				if (field.getType().isAssignableFrom(List.class)) {
 					try {
-						if(field.get(object) == null) {
+						if (field.get(object) == null) {
 							// if a list without value, set to EMPTY_LIST
 							field.set(object, Collections.EMPTY_LIST);
 						}
@@ -197,9 +195,9 @@ public class ExtensionPointParser {
 				}
 				continue;
 			}
-			String valueString = (String)value;
+			String valueString = (String) value;
 			try {
-				if(field.getType().isAssignableFrom(Object.class)) {
+				if (field.getType().isAssignableFrom(Object.class)) {
 					// an Object field is instantiated
 					Object instantiation = null;
 					try {
@@ -209,7 +207,7 @@ public class ExtensionPointParser {
 						error("Cannot create instance of " + valueString, e);
 						instantiation = null;
 					}
-				} else if(field.getType().isAssignableFrom(Boolean.class)) {
+				} else if (field.getType().isAssignableFrom(Boolean.class)) {
 					// a Boolean field is parsed to its primitive value.
 					field.set(object, Boolean.valueOf(valueString));
 				} else {
@@ -225,9 +223,9 @@ public class ExtensionPointParser {
 		}
 		// parse all children element
 		List<Object> objects = new ArrayList<Object>();
-		for(IConfigurationElement child : element.getChildren()) {
+		for (IConfigurationElement child : element.getChildren()) {
 			Object parsedChild = parseConfigurationElement(child);
-			if(parsedChild != null) {
+			if (parsedChild != null) {
 				objects.add(parsedChild);
 			}
 		}
@@ -239,7 +237,7 @@ public class ExtensionPointParser {
 
 	/**
 	 * Gets an attribute from an <IconfigurationElement>.
-	 * 
+	 *
 	 * @param element
 	 * @param attribute
 	 * @return
@@ -251,22 +249,22 @@ public class ExtensionPointParser {
 	/**
 	 * Adds children instances to the proper <List> attribute of the instance
 	 * parent.
-	 * 
+	 *
 	 * @param instance
 	 * @param children
 	 */
 	protected void addChildrenToInstance(Object instance, List<Object> children) {
-		for(Object child : children) {
+		for (Object child : children) {
 			String name = child.getClass().getSimpleName();
 			try {
 				Field field = instance.getClass().getField(name);
 				Object value = field.get(instance);
-				if(field.getType().isAssignableFrom(List.class)) {
-					if(value == null) {
+				if (field.getType().isAssignableFrom(List.class)) {
+					if (value == null) {
 						value = new ArrayList<Object>();
 						field.set(instance, value);
 					}
-					((List)value).add(child);
+					((List) value).add(child);
 				}
 			} catch (NoSuchFieldException ex) {
 				error("No field named " + name, ex);
@@ -283,25 +281,25 @@ public class ExtensionPointParser {
 	 * simple name. The list of <Class>es to be used are provided in the
 	 * constructor. Internal <Class>es must also provide an enclosing instance
 	 * in the constructor.
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	protected Object createInstance(IConfigurationElement element) {
 		String name = element.getName();
-		for(Class<Object> clazz : getClasses()) {
-			if(clazz.getSimpleName().equals(name)) {
+		for (Class<Object> clazz : getClasses()) {
+			if (clazz.getSimpleName().equals(name)) {
 				try {
 					Class[] parameters = null;
-					if(getEnclosingClass() != null) {
-						parameters = new Class[]{ getEnclosingClass() };
+					if (getEnclosingClass() != null) {
+						parameters = new Class[] { getEnclosingClass() };
 					} else {
 						parameters = new Class[0];
 					}
 					Constructor<Object> constructor = clazz.getConstructor(parameters);
 					Object[] arguments = null;
-					if(getEnclosingInstance() != null) {
-						arguments = new Object[]{ getEnclosingInstance() };
+					if (getEnclosingInstance() != null) {
+						arguments = new Object[] { getEnclosingInstance() };
 					} else {
 						arguments = new Object[0];
 					}

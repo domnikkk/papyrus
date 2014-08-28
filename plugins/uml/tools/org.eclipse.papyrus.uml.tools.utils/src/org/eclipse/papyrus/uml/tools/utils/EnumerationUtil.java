@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 
 /**
- * 
+ *
  * This class provides utilities for Enum
- * 
+ *
  */
 public class EnumerationUtil {
 
@@ -37,16 +37,16 @@ public class EnumerationUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param enumeration
-	 *        the uml enumeration
+	 *            the uml enumeration
 	 * @param enumerator
-	 *        the enumerator to adapt to a uml EnumerationLiteral
+	 *            the enumerator to adapt to a uml EnumerationLiteral
 	 * @return
 	 */
 	public static final EnumerationLiteral findEnumerationLiteral(final Enumeration enumeration, final Enumerator enumerator) {
 		final EnumerationLiteral lit = enumeration.getOwnedLiteral(enumerator.getLiteral());
-		if(lit != null) {
+		if (lit != null) {
 			return lit;
 		}
 		Activator.log.error(NLS.bind("The EnumerationLiteral for {0} has not been found", enumerator), new NullPointerException()); //$NON-NLS-1$
@@ -55,20 +55,20 @@ public class EnumerationUtil {
 
 
 	/**
-	 * 
+	 *
 	 * @param enumeration
-	 *        the uml enumeration
+	 *            the uml enumeration
 	 * @param toAdapt
-	 *        the list of the element to adapt to UML EnumerationLiteral
+	 *            the list of the element to adapt to UML EnumerationLiteral
 	 * @return
 	 */
 	public static final List<EnumerationLiteral> adaptToEnumerationLiteralList(final Enumeration enumeration, final Collection<?> toAdapt) {
 		final List<EnumerationLiteral> returnedValue = new ArrayList<EnumerationLiteral>();
-		for(Object object : toAdapt) {
-			if(object instanceof EnumerationLiteral) {
-				returnedValue.add((EnumerationLiteral)object);
-			} else if(object instanceof Enumerator) {
-				returnedValue.add(EnumerationUtil.findEnumerationLiteral(enumeration, (Enumerator)object));
+		for (Object object : toAdapt) {
+			if (object instanceof EnumerationLiteral) {
+				returnedValue.add((EnumerationLiteral) object);
+			} else if (object instanceof Enumerator) {
+				returnedValue.add(EnumerationUtil.findEnumerationLiteral(enumeration, (Enumerator) object));
 			}
 		}
 		assert returnedValue.size() == toAdapt.size();
@@ -76,20 +76,20 @@ public class EnumerationUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param eenum
-	 *        an eemf enumeration
+	 *            an eemf enumeration
 	 * @param toConvert
-	 *        a list of enumeration literal to convert
+	 *            a list of enumeration literal to convert
 	 * @return
 	 *         the list of the converted element (/!\ in case of fail, the returned list contains less elements than the initial list)
 	 */
 	public static final List<Enumerator> adaptToEnumeratorList(final EEnum eenum, final Collection<?> toConvert) {
 		final List<Enumerator> convertedvalues = new ArrayList<Enumerator>();
-		for(final Object object : toConvert) {
-			if(object instanceof EnumerationLiteral) {
-				final EEnumLiteral literal = eenum.getEEnumLiteral(((EnumerationLiteral)object).getName());
-				if(literal != null) {
+		for (final Object object : toConvert) {
+			if (object instanceof EnumerationLiteral) {
+				final EEnumLiteral literal = eenum.getEEnumLiteral(((EnumerationLiteral) object).getName());
+				if (literal != null) {
 					convertedvalues.add(literal.getInstance());
 				}
 			}
@@ -99,17 +99,17 @@ public class EnumerationUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param eenum
-	 *        an emf enumeration
+	 *            an emf enumeration
 	 * @param umlLiteral
-	 *        a uml literal
+	 *            a uml literal
 	 * @return
 	 *         the enumerator to use for this enumeration literal (/!\ can be null in case of fail)
 	 */
 	public static final Enumerator adaptToEnumerator(final EEnum eenum, final EnumerationLiteral umlLiteral) {
 		final EEnumLiteral literal = eenum.getEEnumLiteral(umlLiteral.getName());
-		if(literal != null) {
+		if (literal != null) {
 			return literal.getInstance();
 		}
 		return null;

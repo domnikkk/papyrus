@@ -9,7 +9,7 @@ public class AbstractCreateEastadlChildMenu extends AbstractCreateMenuFromComman
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public AbstractCreateEastadlChildMenu() {
 		super(SYSML_CREATION_COMMAND_CATEGORY);

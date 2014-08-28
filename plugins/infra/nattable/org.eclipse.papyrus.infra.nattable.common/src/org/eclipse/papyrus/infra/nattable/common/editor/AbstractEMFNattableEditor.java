@@ -12,7 +12,7 @@
  *  Vincent Lorenzo (CEA-LIST) vincent.lorenzo@cea.fr
  *  Christian W. Damus (CEA) - bug 430880
  *  Christian W. Damus (CEA) - bug 437217
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.nattable.common.editor;
 
@@ -55,9 +55,9 @@ import org.eclipse.ui.part.EditorPart;
 
 /**
  * Abstract class for TableEditor
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public abstract class AbstractEMFNattableEditor extends EditorPart implements NavigationTarget {
 
@@ -78,13 +78,13 @@ public abstract class AbstractEMFNattableEditor extends EditorPart implements Na
 	 * the workspace preference store for this table editor
 	 */
 	@SuppressWarnings("unused")
-	//not yet used in the table
+	// not yet used in the table
 	private PreferenceStore workspacePreferenceStore;
 
 	/**
 	 * @param servicesRegistry
 	 * @param rawModel
-	 * 
+	 *
 	 */
 	public AbstractEMFNattableEditor(final ServicesRegistry servicesRegistry, final Table rawModel) {
 		this.servicesRegistry = servicesRegistry;
@@ -95,69 +95,69 @@ public abstract class AbstractEMFNattableEditor extends EditorPart implements Na
 
 	/**
 	 * Returns the workspace viewer <code>PreferenceStore</code>
-	 * 
+	 *
 	 * @return the workspace viewer <code>PreferenceStore</code>
 	 */
 	public PreferenceStore getWorkspaceViewerPreferenceStore() {
-		//not yet used by tables
+		// not yet used by tables
 		return null;
 
-		//		if(this.workspacePreferenceStore != null) {
-		//			return this.workspacePreferenceStore;
-		//		} else {
-		//			// Try to load it
-		//			IPath path = Activator.getDefault().getStateLocation();
-		//			String id = getIdStr(this.tableManager.getTable());
+		// if(this.workspacePreferenceStore != null) {
+		// return this.workspacePreferenceStore;
+		// } else {
+		// // Try to load it
+		// IPath path = Activator.getDefault().getStateLocation();
+		// String id = getIdStr(this.tableManager.getTable());
 		//
 		//			String fileName = path.toString() + "/" + id;//$NON-NLS-1$
-		//			java.io.File file = new File(fileName);
-		//			this.workspacePreferenceStore = new PreferenceStore(fileName);
-		//			if(file.exists()) {
-		//				// Load it
-		//				try {
-		//					this.workspacePreferenceStore.load();
-		//				} catch (Exception e) {
-		//					// Create the default
-		//					addDefaultPreferences();
-		//				}
-		//			} else {
-		//				// Create it
-		//				addDefaultPreferences();
-		//			}
-		//			return this.workspacePreferenceStore;
-		//		}
+		// java.io.File file = new File(fileName);
+		// this.workspacePreferenceStore = new PreferenceStore(fileName);
+		// if(file.exists()) {
+		// // Load it
+		// try {
+		// this.workspacePreferenceStore.load();
+		// } catch (Exception e) {
+		// // Create the default
+		// addDefaultPreferences();
+		// }
+		// } else {
+		// // Create it
+		// addDefaultPreferences();
+		// }
+		// return this.workspacePreferenceStore;
+		// }
 	}
 
-	//	/**
-	//	 * returns the unique GUID of the view
-	//	 * 
-	//	 * @param view
-	//	 *        the view
-	//	 * @return String the GUID of a view (constant)
-	//	 */
-	//	private static String getIdStr(Table table) {
-	//		Resource resource = table.eResource();
-	//		if(resource instanceof XMLResource) {
-	//			String id = ((XMLResource)resource).getID(table);
-	//			if(id != null) {
-	//				return id;
-	//			}
-	//		}
+	// /**
+	// * returns the unique GUID of the view
+	// *
+	// * @param view
+	// * the view
+	// * @return String the GUID of a view (constant)
+	// */
+	// private static String getIdStr(Table table) {
+	// Resource resource = table.eResource();
+	// if(resource instanceof XMLResource) {
+	// String id = ((XMLResource)resource).getID(table);
+	// if(id != null) {
+	// return id;
+	// }
+	// }
 	//
-	//		// Remain compatible with previous behavior.
-	//		return StringStatics.BLANK;
-	//	}
+	// // Remain compatible with previous behavior.
+	// return StringStatics.BLANK;
+	// }
 
 	// not used : add a workspace preference to the table
-	//	private void addDefaultPreferences() {
-	//				final IPreferenceStore globalPreferenceStore = Activator.getDefault().getPreferenceStore();
-	//				String tableKind = this.tableManager.getTable().getTableConfiguration().getType();
-	//	}
+	// private void addDefaultPreferences() {
+	// final IPreferenceStore globalPreferenceStore = Activator.getDefault().getPreferenceStore();
+	// String tableKind = this.tableManager.getTable().getTableConfiguration().getType();
+	// }
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.emf.facet.widgets.nattable.workbench.editor.NatTableEditor#init(org.eclipse.ui.IEditorSite, org.eclipse.ui.IEditorInput)
-	 * 
+	 *
 	 * @param site
 	 * @param input
 	 * @throws PartInitException
@@ -171,9 +171,9 @@ public abstract class AbstractEMFNattableEditor extends EditorPart implements Na
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.emf.facet.widgets.nattable.workbench.editor.NatTableEditor#getEditingDomain()
-	 * 
+	 *
 	 * @return
 	 */
 	public TransactionalEditingDomain getEditingDomain() {
@@ -220,20 +220,20 @@ public abstract class AbstractEMFNattableEditor extends EditorPart implements Na
 
 	@Override
 	public Object getAdapter(@SuppressWarnings("rawtypes") final Class adapter) {
-		if(adapter == INattableModelManager.class) {
+		if (adapter == INattableModelManager.class) {
 			return this.tableManager;
 		}
 
-		//Give direct access to the Table model element
-		//Most actions should be done through the TableManager. 
-		//Be careful when using directly the Table element.
-		if(adapter == Table.class) {
-			if(tableManager != null) {
+		// Give direct access to the Table model element
+		// Most actions should be done through the TableManager.
+		// Be careful when using directly the Table element.
+		if (adapter == Table.class) {
+			if (tableManager != null) {
 				return this.tableManager.getTable();
 			}
 		}
-		
-		if(adapter == IReloadContextProvider.class) {
+
+		if (adapter == IReloadContextProvider.class) {
 			return new NattableReloadContextProvider(this);
 		}
 
@@ -251,8 +251,9 @@ public abstract class AbstractEMFNattableEditor extends EditorPart implements Na
 	protected void saveLocalPreferenceStoreValues() {
 		// Write the settings, if necessary
 		try {
-			if(getWorkspaceViewerPreferenceStore() != null && getWorkspaceViewerPreferenceStore().needsSaving())
+			if (getWorkspaceViewerPreferenceStore() != null && getWorkspaceViewerPreferenceStore().needsSaving()) {
 				getWorkspaceViewerPreferenceStore().save();
+			}
 		} catch (IOException ioe) {
 			Activator.log.warn("Preferences can' be saved"); //$NON-NLS-1$
 		}
@@ -261,8 +262,8 @@ public abstract class AbstractEMFNattableEditor extends EditorPart implements Na
 	/**
 	 * A class taking in charge the synchronization of the partName and the table name.
 	 * When table name change, the other is automatically updated.
-	 * 
-	 * 
+	 *
+	 *
 	 */
 	public class PartNameSynchronizer {
 
@@ -275,23 +276,23 @@ public abstract class AbstractEMFNattableEditor extends EditorPart implements Na
 		private final Adapter tableNameListener = new AdapterImpl() {
 
 			/**
-			 * 
+			 *
 			 * @see org.eclipse.emf.common.notify.Adapter#notifyChanged(org.eclipse.emf.common.notify.Notification)
-			 * 
+			 *
 			 * @param notification
 			 */
 			@Override
 			public void notifyChanged(final Notification notification) {
-				if(notification.getFeature() == NattableconfigurationPackage.eINSTANCE.getTableNamedElement_Name()) {
+				if (notification.getFeature() == NattableconfigurationPackage.eINSTANCE.getTableNamedElement_Name()) {
 					setPartName(PartNameSynchronizer.this.papyrusTable.getName());
 				}
 			}
 		};
 
 		/**
-		 * 
+		 *
 		 * Constructor.
-		 * 
+		 *
 		 * @param diagram
 		 */
 		public PartNameSynchronizer(final Table papyrusTable) {
@@ -305,12 +306,12 @@ public abstract class AbstractEMFNattableEditor extends EditorPart implements Na
 
 		/**
 		 * Change the associated diagram.
-		 * 
+		 *
 		 * @param papyrusTable
 		 */
 		public void setTable(final Table papyrusTable) {
 			// Remove from old table, if any
-			if(this.papyrusTable != null) {
+			if (this.papyrusTable != null) {
 				papyrusTable.eAdapters().remove(this.tableNameListener);
 			}
 			// Set new table
@@ -336,9 +337,9 @@ public abstract class AbstractEMFNattableEditor extends EditorPart implements Na
 				protected Collection<?> extractSelectedObjects(IStructuredSelection structuredSelection) {
 					List<EObject> result = new ArrayList<EObject>(structuredSelection.size());
 
-					for(Iterator<?> iter = structuredSelection.iterator(); iter.hasNext();) {
+					for (Iterator<?> iter = structuredSelection.iterator(); iter.hasNext();) {
 						EObject eObject = EMFHelper.getEObject(iter.next());
-						if(eObject != null) {
+						if (eObject != null) {
 							result.add(eObject);
 						}
 					}
@@ -350,24 +351,26 @@ public abstract class AbstractEMFNattableEditor extends EditorPart implements Na
 	}
 
 	/**
-	 * 
+	 *
 	 * used to link the selection between the model explorer and the table
-	 * 
+	 *
 	 * @param element
 	 */
+	@Override
 	public boolean revealElement(Object element) {
 		return revealElement(Collections.singleton(element));
 	}
 
 	/**
-	 * 
+	 *
 	 * used to link the selection between the model explorer and the table
-	 * 
+	 *
 	 * @param elements
 	 */
+	@Override
 	public boolean revealElement(Collection<?> elements) {
-		if(tableManager instanceof NavigationTarget) {
-			return ((NavigationTarget)tableManager).revealElement(elements);
+		if (tableManager instanceof NavigationTarget) {
+			return ((NavigationTarget) tableManager).revealElement(elements);
 		}
 		return false;
 	}

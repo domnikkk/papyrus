@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.customization.model.customizationplugin.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage;
 import org.eclipse.papyrus.customization.model.customizationplugin.FileBasedCustomizableElement;
 
@@ -18,7 +15,7 @@ import org.eclipse.papyrus.customization.model.customizationplugin.FileBasedCust
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.customization.model.customizationplugin.impl.FileBasedCustomizableElementImpl#getFile <em>File</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.model.customizationplugin.impl.FileBasedCustomizableElementImpl#getFile <em>File</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,6 +26,7 @@ public abstract class FileBasedCustomizableElementImpl extends CustomizableEleme
 	 * The default value of the '{@link #getFile() <em>File</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFile()
 	 * @generated
 	 * @ordered
@@ -39,6 +37,7 @@ public abstract class FileBasedCustomizableElementImpl extends CustomizableEleme
 	 * The cached value of the '{@link #getFile() <em>File</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFile()
 	 * @generated
 	 * @ordered
@@ -48,6 +47,7 @@ public abstract class FileBasedCustomizableElementImpl extends CustomizableEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FileBasedCustomizableElementImpl() {
@@ -57,6 +57,7 @@ public abstract class FileBasedCustomizableElementImpl extends CustomizableEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -67,6 +68,7 @@ public abstract class FileBasedCustomizableElementImpl extends CustomizableEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getFile() {
@@ -76,25 +78,28 @@ public abstract class FileBasedCustomizableElementImpl extends CustomizableEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setFile(String newFile) {
 		String oldFile = file;
 		file = newFile;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CustomizationPluginPackage.FILE_BASED_CUSTOMIZABLE_ELEMENT__FILE, oldFile, file));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CustomizationPluginPackage.FILE_BASED_CUSTOMIZABLE_ELEMENT__FILE:
-				return getFile();
+		case CustomizationPluginPackage.FILE_BASED_CUSTOMIZABLE_ELEMENT__FILE:
+			return getFile();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -102,14 +107,15 @@ public abstract class FileBasedCustomizableElementImpl extends CustomizableEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CustomizationPluginPackage.FILE_BASED_CUSTOMIZABLE_ELEMENT__FILE:
-				setFile((String)newValue);
-				return;
+		case CustomizationPluginPackage.FILE_BASED_CUSTOMIZABLE_ELEMENT__FILE:
+			setFile((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -117,14 +123,15 @@ public abstract class FileBasedCustomizableElementImpl extends CustomizableEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CustomizationPluginPackage.FILE_BASED_CUSTOMIZABLE_ELEMENT__FILE:
-				setFile(FILE_EDEFAULT);
-				return;
+		case CustomizationPluginPackage.FILE_BASED_CUSTOMIZABLE_ELEMENT__FILE:
+			setFile(FILE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -132,13 +139,14 @@ public abstract class FileBasedCustomizableElementImpl extends CustomizableEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CustomizationPluginPackage.FILE_BASED_CUSTOMIZABLE_ELEMENT__FILE:
-				return FILE_EDEFAULT == null ? file != null : !FILE_EDEFAULT.equals(file);
+		case CustomizationPluginPackage.FILE_BASED_CUSTOMIZABLE_ELEMENT__FILE:
+			return FILE_EDEFAULT == null ? file != null : !FILE_EDEFAULT.equals(file);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -146,11 +154,14 @@ public abstract class FileBasedCustomizableElementImpl extends CustomizableEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (file: ");
@@ -159,4 +170,4 @@ public abstract class FileBasedCustomizableElementImpl extends CustomizableEleme
 		return result.toString();
 	}
 
-} //FileBasedCustomizableElementImpl
+} // FileBasedCustomizableElementImpl

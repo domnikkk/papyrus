@@ -1,9 +1,9 @@
 /*******************************************************************************
  * Copyright (c) 2009 CEA LIST.
  * All rights reserved. This program and the accompanying materials
- * are property of the CEA, their use is subject to specific agreement 
+ * are property of the CEA, their use is subject to specific agreement
  * with the CEA.
- * 
+ *
  * Contributors:
  *    CEA LIST - initial API and implementation
  *******************************************************************************/
@@ -81,6 +81,7 @@ public class AddOrUpdateCommentEditParts extends Action {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void run(IAction action) {
 
 		IProgressMonitor monitor = new NullProgressMonitor();
@@ -94,48 +95,48 @@ public class AddOrUpdateCommentEditParts extends Action {
 		// 2. update if existing, or create if necessary
 		// selection should be the gen editor generator (root element)
 		Iterator<EObject> it = getSelectedEObject().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject eObject = it.next();
-			if(eObject instanceof GenEditorGenerator) {
+			if (eObject instanceof GenEditorGenerator) {
 				monitor.beginTask("Retrieve existing comments", IProgressMonitor.UNKNOWN);
-				retrieveTopNodeCommentEditPart((GenEditorGenerator)eObject, monitor);
+				retrieveTopNodeCommentEditPart((GenEditorGenerator) eObject, monitor);
 				monitor.worked(1);
-				retrieveChildNodeCommentEditPart((GenEditorGenerator)eObject, monitor);
+				retrieveChildNodeCommentEditPart((GenEditorGenerator) eObject, monitor);
 				monitor.worked(1);
-				retrieveCommentParser((GenEditorGenerator)eObject, monitor);
+				retrieveCommentParser((GenEditorGenerator) eObject, monitor);
 				monitor.worked(1);
 			}
 
 			// elements have been retrieve. create new ones if necessary
 			// 1. create the parser if necessary
-			if(commentParser == null) {
-				commentParser = createCommentParser((GenEditorGenerator)eObject, monitor);
+			if (commentParser == null) {
+				commentParser = createCommentParser((GenEditorGenerator) eObject, monitor);
 			}
 
 			// 2. create top node
-			if(topNodeComments.isEmpty()) {
+			if (topNodeComments.isEmpty()) {
 				generateTopNode = false;
 				// remove the creation, because it causes problems in the update
 				// createTopNodeComment((GenEditorGenerator)eObject, monitor);
 			}
 
 			// 3. create child node
-			if(childNodeComments.isEmpty()) {
+			if (childNodeComments.isEmpty()) {
 				generateChildNode = false;
 				// createChildNodeComment((GenEditorGenerator)eObject, monitor);
 			}
 
 			// check if updates shall be done or the action should be aborted
-			if(commentParser == null || (topNodeComments.isEmpty() && generateTopNode) || (childNodeComments.isEmpty() && generateChildNode)) {
+			if (commentParser == null || (topNodeComments.isEmpty() && generateTopNode) || (childNodeComments.isEmpty() && generateChildNode)) {
 				return;
 			}
 
 			// do the update
 			updateCommentParser();
-			if(generateTopNode) {
+			if (generateTopNode) {
 				updateTopLevelNodes();
 			}
-			if(generateChildNode) {
+			if (generateChildNode) {
 				updateChildNodes();
 			}
 
@@ -146,7 +147,7 @@ public class AddOrUpdateCommentEditParts extends Action {
 				e.printStackTrace();
 			}
 
-			if(!messages.isEmpty()) {
+			if (!messages.isEmpty()) {
 				MessageDialog.openInformation(Display.getCurrent().getActiveShell(), "Information", messages.toString());
 			}
 		}
@@ -156,7 +157,7 @@ public class AddOrUpdateCommentEditParts extends Action {
 	 * Update the child nodes
 	 */
 	protected void updateChildNodes() {
-		for(GenChildNode childNode : childNodeComments) {
+		for (GenChildNode childNode : childNodeComments) {
 			// set figure view map
 			FigureViewmap figureViewmap = GMFGenFactory.eINSTANCE.createFigureViewmap();
 			figureViewmap.setFigureQualifiedClassName("org.eclipse.papyrus.diagram.common.figure.node.HTMLCornerBentFigure");
@@ -175,16 +176,16 @@ public class AddOrUpdateCommentEditParts extends Action {
 
 	/**
 	 * Removes existing child edit part and creates a new one
-	 * 
+	 *
 	 * @param childNode
-	 *        the child node currently edited
+	 *            the child node currently edited
 	 */
 	protected void updateGenNodeLabel(GenNode childNode) {
 		// save information on existing child nodes and delete them
 		int childVisualID = -1;
 		String editPartClassName = "";
 		String itemSemantic = "";
-		if(childNode.getLabels().size() > 0) {
+		if (childNode.getLabels().size() > 0) {
 			// assume the first one is the child edit part for the body
 			childVisualID = childNode.getLabels().get(0).getVisualID();
 			editPartClassName = childNode.getLabels().get(0).getEditPartClassName();
@@ -196,10 +197,10 @@ public class AddOrUpdateCommentEditParts extends Action {
 		}
 
 		// generate values if wrong
-		if(childVisualID < 1) {
+		if (childVisualID < 1) {
 			childVisualID = SetVisualIDWithUnusedValue.getNewVisualID(childNode.eResource(), childNode.getClass());
 		}
-		if(editPartClassName == null || editPartClassName == "") {
+		if (editPartClassName == null || editPartClassName == "") {
 			String parentEditPartClassName = childNode.getEditPartClassName();
 			String number = parentEditPartClassName.substring("Comment".length(), parentEditPartClassName.length() - "EditPart".length());
 			editPartClassName = "CommentBody" + ((number == null) ? "" : number) + "EditPart";
@@ -214,8 +215,8 @@ public class AddOrUpdateCommentEditParts extends Action {
 		bodyGenNode.setVisualID(childVisualID);
 		GenClass nodeGenClass = findGenClassForNotation(childNode, "Node");
 
-		//		GenModelFactory.eINSTANCE.createGenClass();
-		//		nodeGenClass.setEcoreClass(GMFGenPackage.eINSTANCE.getGenNode());
+		// GenModelFactory.eINSTANCE.createGenClass();
+		// nodeGenClass.setEcoreClass(GMFGenPackage.eINSTANCE.getGenNode());
 		bodyGenNode.setDiagramRunTimeClass(nodeGenClass);
 		bodyGenNode.setElementIcon(false);
 		bodyGenNode.setReadOnly(false);
@@ -245,9 +246,9 @@ public class AddOrUpdateCommentEditParts extends Action {
 
 	/**
 	 * Update Type model facet
-	 * 
+	 *
 	 * @param childNode
-	 *        the child node currently edited
+	 *            the child node currently edited
 	 */
 	protected void updateTypeModelFacet(GenNode childNode) {
 		// set model facet
@@ -286,7 +287,7 @@ public class AddOrUpdateCommentEditParts extends Action {
 		GenFeatureValueSpec featureValueSpec = GMFGenFactory.eINSTANCE.createGenFeatureValueSpec();
 		GenFeature bodyFeature = findGenAttributeForMetaclass(childNode, "Comment", "body");
 		featureValueSpec.setFeature(bodyFeature);
-		// retrieve value expression ('') 
+		// retrieve value expression ('')
 		featureValueSpec.setValue(retrieveValueExpression(childNode));
 		elementInitializer.getInitializers().add(featureValueSpec);
 		typeModelFacet.setModelElementInitializer(elementInitializer);
@@ -295,18 +296,18 @@ public class AddOrUpdateCommentEditParts extends Action {
 
 	/**
 	 * Retrieve value expression ('')
-	 * 
+	 *
 	 * @param childNode
-	 *        the child node currently edited
+	 *            the child node currently edited
 	 * @return
 	 */
 	protected ValueExpression retrieveValueExpression(GenNode childNode) {
 		final String expressionBody = "\' \'";
 		GenExpressionProviderContainer expressionProviderContainer = childNode.getDiagram().getEditorGen().getExpressionProviders();
-		for(GenExpressionProviderBase base : expressionProviderContainer.getProviders()) {
-			if(base instanceof GenExpressionInterpreter) {
-				for(ValueExpression expression : ((GenExpressionInterpreter)base).getExpressions()) {
-					if(expressionBody.equals(expression.getBody())) {
+		for (GenExpressionProviderBase base : expressionProviderContainer.getProviders()) {
+			if (base instanceof GenExpressionInterpreter) {
+				for (ValueExpression expression : ((GenExpressionInterpreter) base).getExpressions()) {
+					if (expressionBody.equals(expression.getBody())) {
 						return expression;
 					}
 				}
@@ -316,12 +317,12 @@ public class AddOrUpdateCommentEditParts extends Action {
 
 		GenExpressionInterpreter base = null;
 		// create a new one if none exists
-		for(GenExpressionProviderBase provider : expressionProviderContainer.getProviders()) {
-			if(provider instanceof GenExpressionInterpreter) {
-				base = (GenExpressionInterpreter)provider;
+		for (GenExpressionProviderBase provider : expressionProviderContainer.getProviders()) {
+			if (provider instanceof GenExpressionInterpreter) {
+				base = (GenExpressionInterpreter) provider;
 			}
 		}
-		if(base == null) {
+		if (base == null) {
 			base = GMFGenFactory.eINSTANCE.createGenExpressionInterpreter();
 			expressionProviderContainer.getProviders().add(base);
 		}
@@ -335,9 +336,9 @@ public class AddOrUpdateCommentEditParts extends Action {
 
 	/**
 	 * Update behaviors for the comment edit part
-	 * 
+	 *
 	 * @param childNode
-	 *        the node currently edited
+	 *            the node currently edited
 	 */
 	protected void updateBehaviours(GenNode childNode) {
 		boolean createOpenDiagramBehaviour = true;
@@ -347,28 +348,28 @@ public class AddOrUpdateCommentEditParts extends Action {
 
 		// retrieve existing behaviours
 		List<Behaviour> behaviours = childNode.getBehaviour();
-		for(Behaviour behaviour : behaviours) {
-			if(behaviour instanceof OpenDiagramBehaviour) {
+		for (Behaviour behaviour : behaviours) {
+			if (behaviour instanceof OpenDiagramBehaviour) {
 				createOpenDiagramBehaviour = false;
-			} else if(behaviour instanceof CustomBehaviour) {
+			} else if (behaviour instanceof CustomBehaviour) {
 				// look for the role
-				if("org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE".equals(((CustomBehaviour)behaviour).getKey())) {
+				if ("org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE".equals(((CustomBehaviour) behaviour).getKey())) {
 					createGraphicalNodeRole = false;
-				} else if("org.eclipse.papyrus.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY".equals(((CustomBehaviour)behaviour).getKey())) {
+				} else if ("org.eclipse.papyrus.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY".equals(((CustomBehaviour) behaviour).getKey())) {
 					createStereotypeBehaviour = false;
 				}
 
 			}
 		}
 
-		//		if(createOpenDiagramBehaviour) {
-		//			OpenDiagramBehaviour diagramBehaviour = GMFGenFactory.eINSTANCE.createOpenDiagramBehaviour();
-		//			diagramBehaviour.setEditPolicyClassName("OpenDiagramEditPolicy");
-		//			diagramBehaviour.setOpenAsEclipseEditor(true);
-		//			childNode.getBehaviour().add(diagramBehaviour);
-		//		}
+		// if(createOpenDiagramBehaviour) {
+		// OpenDiagramBehaviour diagramBehaviour = GMFGenFactory.eINSTANCE.createOpenDiagramBehaviour();
+		// diagramBehaviour.setEditPolicyClassName("OpenDiagramEditPolicy");
+		// diagramBehaviour.setOpenAsEclipseEditor(true);
+		// childNode.getBehaviour().add(diagramBehaviour);
+		// }
 
-		if(createGraphicalNodeRole) {
+		if (createGraphicalNodeRole) {
 			// add a custom edit policy if necessary for graphical node role
 			CustomBehaviour customBehaviour = GMFGenFactory.eINSTANCE.createCustomBehaviour();
 			customBehaviour.setEditPolicyQualifiedClassName("");
@@ -376,7 +377,7 @@ public class AddOrUpdateCommentEditParts extends Action {
 			childNode.getBehaviour().add(customBehaviour);
 		}
 
-		if(createStereotypeBehaviour) {
+		if (createStereotypeBehaviour) {
 			// add a custom edit policy if necessary
 			CustomBehaviour stereotypeBehaviour = GMFGenFactory.eINSTANCE.createCustomBehaviour();
 			stereotypeBehaviour.setEditPolicyQualifiedClassName("org.eclipse.papyrus.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy");
@@ -390,7 +391,7 @@ public class AddOrUpdateCommentEditParts extends Action {
 	 * Update the top nodes
 	 */
 	protected void updateTopLevelNodes() {
-		for(GenTopLevelNode node : topNodeComments) {
+		for (GenTopLevelNode node : topNodeComments) {
 			// set figure view map
 			FigureViewmap figureViewmap = GMFGenFactory.eINSTANCE.createFigureViewmap();
 			figureViewmap.setFigureQualifiedClassName("org.eclipse.papyrus.diagram.common.figure.node.HTMLCornerBentFigure");
@@ -410,11 +411,11 @@ public class AddOrUpdateCommentEditParts extends Action {
 	 * update the comment parser
 	 */
 	protected void updateCommentParser() {
-		if(!"org.eclipse.papyrus.diagram.common.parser.CommentParser".equals(commentParser.getQualifiedName())) {
+		if (!"org.eclipse.papyrus.diagram.common.parser.CommentParser".equals(commentParser.getQualifiedName())) {
 			commentParser.setQualifiedName("org.eclipse.papyrus.diagram.common.parser.CommentParser");
 		}
 
-		if(commentParser.isGenerateBoilerplate()) {
+		if (commentParser.isGenerateBoilerplate()) {
 			commentParser.setGenerateBoilerplate(false);
 		}
 
@@ -422,16 +423,16 @@ public class AddOrUpdateCommentEditParts extends Action {
 
 	/**
 	 * Creates and returns the comment custom parser
-	 * 
+	 *
 	 * @param editorGenerator
-	 *        the root node of the gmfgen
+	 *            the root node of the gmfgen
 	 * @param monitor
-	 *        the progress monitor
+	 *            the progress monitor
 	 * @return the comment custom parser
 	 */
 	protected CustomParser createCommentParser(GenEditorGenerator editorGenerator, IProgressMonitor monitor) {
 		GenParsers parsers = editorGenerator.getLabelParsers();
-		if(parsers == null) {
+		if (parsers == null) {
 			MessageDialog.openError(Display.getCurrent().getActiveShell(), "Impossible to find the parsers associated to this editor", "No parser container was found for this editor. \n\nYou should create the parsers container before running this action");
 		}
 		CustomParser parser = GMFGenFactory.eINSTANCE.createCustomParser();
@@ -441,16 +442,16 @@ public class AddOrUpdateCommentEditParts extends Action {
 
 	/**
 	 * Creates and returns the comment custom parser
-	 * 
+	 *
 	 * @param editorGenerator
-	 *        the root node of the gmfgen
+	 *            the root node of the gmfgen
 	 * @param monitor
-	 *        the progress monitor
+	 *            the progress monitor
 	 * @return the comment custom parser
 	 */
 	protected void createTopNodeComment(GenEditorGenerator editorGenerator, IProgressMonitor monitor) {
 		GenDiagram diagram = editorGenerator.getDiagram();
-		if(diagram == null) {
+		if (diagram == null) {
 			return;
 		}
 
@@ -461,15 +462,15 @@ public class AddOrUpdateCommentEditParts extends Action {
 
 	/**
 	 * Creates and returns the child node comment
-	 * 
+	 *
 	 * @param editorGenerator
-	 *        the root node of the gmfgen
+	 *            the root node of the gmfgen
 	 * @param monitor
-	 *        the progress monitor
+	 *            the progress monitor
 	 */
 	protected void createChildNodeComment(GenEditorGenerator editorGenerator, IProgressMonitor monitor) {
 		GenDiagram diagram = editorGenerator.getDiagram();
-		if(diagram == null) {
+		if (diagram == null) {
 			return;
 		}
 
@@ -480,23 +481,23 @@ public class AddOrUpdateCommentEditParts extends Action {
 
 	/**
 	 * Retrieves the top node comment edit parts
-	 * 
+	 *
 	 * @param editorGenerator
-	 *        the root node of the gmfgen
+	 *            the root node of the gmfgen
 	 * @param monitor
-	 *        the progress monitor
+	 *            the progress monitor
 	 */
 	protected void retrieveTopNodeCommentEditPart(GenEditorGenerator editorGenerator, IProgressMonitor monitor) {
 		GenDiagram diagram = editorGenerator.getDiagram();
-		if(diagram == null) {
+		if (diagram == null) {
 			MessageDialog.openError(Display.getCurrent().getActiveShell(), "Impossible to find the diagram associated to this editor", "No diagram was found for this editor. \n\nYou should create one diagram before running this action");
 		}
 
 		GenClass commentGenClass = findGenClassForMetaclass(editorGenerator, "Comment");
-		for(GenTopLevelNode topLevelNode : diagram.getTopLevelNodes()) {
+		for (GenTopLevelNode topLevelNode : diagram.getTopLevelNodes()) {
 			TypeModelFacet modelFacet = topLevelNode.getModelFacet();
-			if(modelFacet != null && modelFacet.getMetaClass() != null) {
-				if(commentGenClass.equals(modelFacet.getMetaClass())) {
+			if (modelFacet != null && modelFacet.getMetaClass() != null) {
+				if (commentGenClass.equals(modelFacet.getMetaClass())) {
 					topNodeComments.add(topLevelNode);
 				}
 			}
@@ -505,22 +506,22 @@ public class AddOrUpdateCommentEditParts extends Action {
 
 	/**
 	 * Retrieves the child node comment edit parts
-	 * 
+	 *
 	 * @param editorGenerator
-	 *        the root node of the gmfgen
+	 *            the root node of the gmfgen
 	 * @param monitor
-	 *        the progress monitor
+	 *            the progress monitor
 	 */
 	protected void retrieveChildNodeCommentEditPart(GenEditorGenerator editorGenerator, IProgressMonitor monitor) {
 		GenDiagram diagram = editorGenerator.getDiagram();
-		if(diagram == null) {
+		if (diagram == null) {
 			MessageDialog.openError(Display.getCurrent().getActiveShell(), "Impossible to find the diagram associated to this editor", "No diagram was found for this editor. \n\nYou should create one diagram before running this action");
 		}
 		GenClass commentGenClass = findGenClassForMetaclass(editorGenerator, "Comment");
-		for(GenChildNode childNode : diagram.getChildNodes()) {
+		for (GenChildNode childNode : diagram.getChildNodes()) {
 			TypeModelFacet modelFacet = childNode.getModelFacet();
-			if(modelFacet != null && modelFacet.getMetaClass() != null) {
-				if(commentGenClass.equals(modelFacet.getMetaClass())) {
+			if (modelFacet != null && modelFacet.getMetaClass() != null) {
+				if (commentGenClass.equals(modelFacet.getMetaClass())) {
 					childNodeComments.add(childNode);
 				}
 			}
@@ -529,21 +530,21 @@ public class AddOrUpdateCommentEditParts extends Action {
 
 	/**
 	 * Retrieves the child node comment edit parts
-	 * 
+	 *
 	 * @param editorGenerator
-	 *        the root node of the gmfgen
+	 *            the root node of the gmfgen
 	 * @param monitor
-	 *        the progress monitor
+	 *            the progress monitor
 	 */
 	protected void retrieveCommentParser(GenEditorGenerator editorGenerator, IProgressMonitor monitor) {
 		GenParsers parsers = editorGenerator.getLabelParsers();
-		if(parsers == null) {
+		if (parsers == null) {
 			MessageDialog.openError(Display.getCurrent().getActiveShell(), "Impossible to find the parsers associated to this editor", "No parser container was found for this editor. \n\nYou should create the parsers container before running this action");
 		}
-		for(GenParserImplementation parserImplementation : parsers.getImplementations()) {
-			if(parserImplementation instanceof CustomParser) {
-				if("org.eclipse.papyrus.diagram.common.parser.CommentParser".equals(((CustomParser)parserImplementation).getQualifiedName())) {
-					commentParser = ((CustomParser)parserImplementation);
+		for (GenParserImplementation parserImplementation : parsers.getImplementations()) {
+			if (parserImplementation instanceof CustomParser) {
+				if ("org.eclipse.papyrus.diagram.common.parser.CommentParser".equals(((CustomParser) parserImplementation).getQualifiedName())) {
+					commentParser = ((CustomParser) parserImplementation);
 				}
 			}
 		}
@@ -551,7 +552,7 @@ public class AddOrUpdateCommentEditParts extends Action {
 
 
 	/**
-	 * 
+	 *
 	 */
 	protected GenClass findGenClassForMetaclass(EObject eObject, String name) {
 		Resource notation = eObject.eResource().getResourceSet().getResource(uri_UML2, true);
@@ -559,7 +560,7 @@ public class AddOrUpdateCommentEditParts extends Action {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	protected GenClass findGenClassForNotation(EObject eObject, String name) {
 		Resource notation = eObject.eResource().getResourceSet().getResource(uri_notation, true);
@@ -567,7 +568,7 @@ public class AddOrUpdateCommentEditParts extends Action {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	protected GenFeature findGenAttributeForMetaclass(EObject eObject, String genClassName, String genFeatureName) {
 		Resource notation = eObject.eResource().getResourceSet().getResource(uri_UML2, true);

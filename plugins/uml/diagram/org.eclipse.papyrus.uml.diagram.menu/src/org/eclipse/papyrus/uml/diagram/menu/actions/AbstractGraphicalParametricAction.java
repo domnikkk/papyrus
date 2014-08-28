@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,13 +27,13 @@ import org.eclipse.papyrus.uml.diagram.common.Activator;
 public abstract class AbstractGraphicalParametricAction extends AbstractParametricAction {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameter
-	 *        parameter for the action
+	 *            parameter for the action
 	 * @param selectedEditPart
-	 *        the selectedEditPart for the action
+	 *            the selectedEditPart for the action
 	 */
 	public AbstractGraphicalParametricAction(String parameter, List<IGraphicalEditPart> selectedEditPart) {
 		super(parameter, selectedEditPart);
@@ -41,14 +41,14 @@ public abstract class AbstractGraphicalParametricAction extends AbstractParametr
 
 	/**
 	 * Returns the command for this action
-	 * 
+	 *
 	 * @return
 	 *         the command for this action
 	 */
 	public Command getCommand() {
-		if(isEnabled()) {
+		if (isEnabled()) {
 			Command cmd = getBuildedCommand();
-			if(cmd != null && cmd.canExecute()) {
+			if (cmd != null && cmd.canExecute()) {
 				return cmd;
 			}
 		}
@@ -56,7 +56,7 @@ public abstract class AbstractGraphicalParametricAction extends AbstractParametr
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the command for this action
 	 */
@@ -64,7 +64,7 @@ public abstract class AbstractGraphicalParametricAction extends AbstractParametr
 
 	/**
 	 * Returns the {@link TransactionalEditingDomain}
-	 * 
+	 *
 	 * @return the {@link TransactionalEditingDomain} or <code>null</code> if it can not be found
 	 */
 	protected TransactionalEditingDomain getEditingDomain() {

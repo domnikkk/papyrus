@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,9 +50,9 @@ import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 
 /**
- * 
+ *
  * The dialog used to select the link to show hide according to the selected gmf nodes
- * 
+ *
  */
 public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColumnViewerSelectionDialog {
 
@@ -69,7 +69,8 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 	/**
 	 * the titles of the columns
 	 */
-	private static final String[] columnsTitles = new String[]{ Messages.ShowHideRelatedLinkSelectionDialog_LinksToDisplay, Messages.ShowHideRelatedLinkSelectionDialog_LinkKind, Messages.ShowHideRelatedLinkSelectionDialog_Ends, Messages.ShowHideRelatedLinkSelectionDialog_Sources, Messages.ShowHideRelatedLinkSelectionDialog_Targets };
+	private static final String[] columnsTitles = new String[] { Messages.ShowHideRelatedLinkSelectionDialog_LinksToDisplay, Messages.ShowHideRelatedLinkSelectionDialog_LinkKind, Messages.ShowHideRelatedLinkSelectionDialog_Ends,
+			Messages.ShowHideRelatedLinkSelectionDialog_Sources, Messages.ShowHideRelatedLinkSelectionDialog_Targets };
 
 	/**
 	 * the mapping between model links and link end mapper
@@ -98,19 +99,19 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent shell
+	 *            the parent shell
 	 * @param labelProvider
-	 *        the label provider
+	 *            the label provider
 	 * @param contentProvider
-	 *        the content provider
+	 *            the content provider
 	 * @param availableLinks
-	 *        a map linking selected editparts and their available links
+	 *            a map linking selected editparts and their available links
 	 * @param linkEndsMapping
-	 *        a map between the links and their ends
+	 *            a map between the links and their ends
 	 */
 	public ShowHideRelatedLinkSelectionDialog(final Shell parent, final ILabelProvider labelProvider, final ITreeContentProvider contentProvider, final Map<EditPart, Set<EObject>> availableLinks, final Map<EObject, LinkEndsMapper> linkEndsMapping) {
 		super(parent, labelProvider, contentProvider, SWT.CENTER | SWT.BORDER | SWT.FULL_SELECTION, columnsTitles.length);
@@ -122,9 +123,9 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.dialogs.CustomCheckedTreeSelectionDialog#setInitialSelection(java.lang.Object)
-	 * 
+	 *
 	 * @param selection
 	 */
 	public void setInitialSelection(final Collection<EObject> initialSelection) {
@@ -134,7 +135,7 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 
 
 	/**
-	 * 
+	 *
 	 * @param columnIndex
 	 * @return
 	 */
@@ -145,23 +146,23 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 
 	/**
 	 * Initialize the columns Width, the columns Titles and the LabelProvider for the viewer.
-	 * 
+	 *
 	 */
 	protected void init() {
 		setColumnTitles(columnsTitles);
 		int[] columnWidth = new int[columnsTitles.length];
 		columnWidth[0] = FIRST_COLUMN_WIDTH;
-		for(int i = 1; i < columnsTitles.length; i++) {
+		for (int i = 1; i < columnsTitles.length; i++) {
 			columnWidth[i] = OTHERS_COLUMN_WIDTH;
 		}
 		setColumnWidths(columnWidth);
-		setColumnCellLabelProvider(new CellLabelProvider[]{ new EObjectLabelProvider(), new LinkEClassLabelProvider(), new EndsElementLabelProvider(), new SourceElementLabelProvider(), new TargetElementLabelProvider() });
+		setColumnCellLabelProvider(new CellLabelProvider[] { new EObjectLabelProvider(), new LinkEClassLabelProvider(), new EndsElementLabelProvider(), new SourceElementLabelProvider(), new TargetElementLabelProvider() });
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.dialogs.AbstractCheckedTreeColumnViewerSelectionDialog#createDialogArea(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 * @return
 	 */
@@ -183,38 +184,39 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the checkedStateListener to use
 	 */
 	protected ICheckStateListener getOrCreateCheckStateListener() {
-		if(this.checkedStateListener == null) {
+		if (this.checkedStateListener == null) {
 			this.checkedStateListener = new ICheckStateListener() {
 
 				/**
-				 * 
+				 *
 				 * @see org.eclipse.jface.viewers.ICheckStateListener#checkStateChanged(org.eclipse.jface.viewers.CheckStateChangedEvent)
-				 * 
+				 *
 				 * @param event
 				 */
+				@Override
 				public void checkStateChanged(CheckStateChangedEvent event) {
 					final Object currentElement = event.getElement();
 					boolean isChecked = event.getChecked();
-					if(currentElement instanceof EditPart) {
-						//we update the selected element list
-						if(isChecked) {
+					if (currentElement instanceof EditPart) {
+						// we update the selected element list
+						if (isChecked) {
 							selectedElements.addAll(availableLinks.get(currentElement));
 						} else {
 							selectedElements.removeAll(availableLinks.get(currentElement));
 						}
 
-						//in some case, the EditPart can be a link which appears as possible elements of an other selected edit part
-						final View view = (View)((EditPart)currentElement).getAdapter(View.class);
-						if(view instanceof Edge) {
+						// in some case, the EditPart can be a link which appears as possible elements of an other selected edit part
+						final View view = (View) ((EditPart) currentElement).getAdapter(View.class);
+						if (view instanceof Edge) {
 							final EObject element = view.getElement();
-							for(final Set<EObject> currentCol : availableLinks.values()) {
-								if(currentCol.contains(element)) {
-									if(isChecked) {
+							for (final Set<EObject> currentCol : availableLinks.values()) {
+								if (currentCol.contains(element)) {
+									if (isChecked) {
 										selectedElements.add(element);
 									} else {
 										selectedElements.remove(element);
@@ -223,9 +225,9 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 							}
 						}
 					} else {
-						//we update the selected element list
-						if(isChecked) {
-							selectedElements.add((EObject)currentElement);
+						// we update the selected element list
+						if (isChecked) {
+							selectedElements.add((EObject) currentElement);
 						} else {
 							selectedElements.remove(currentElement);
 						}
@@ -238,18 +240,18 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 	}
 
 	/**
-	 * 
+	 *
 	 * @param treeViewer
 	 */
-	//TODO : probably not the best way...
+	// TODO : probably not the best way...
 	protected final void updateTree(final TreeViewer treeViewer) {
-		for(final TreeItem items : getTreeViewer().getTree().getItems()) {
+		for (final TreeItem items : getTreeViewer().getTree().getItems()) {
 			updateTreeItems(getTreeViewer(), items, getOrCreateCheckStateProvider());
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @param treeViewer
 	 * @param item
 	 * @param stateProvider
@@ -259,30 +261,31 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 		boolean isGrayed = stateProvider.isGrayed(item.getData());
 		item.setChecked(isChecked);
 		item.setGrayed(isGrayed);
-		for(final TreeItem child : item.getItems()) {
+		for (final TreeItem child : item.getItems()) {
 			updateTreeItems(treeViewer, child, stateProvider);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the checkedStateProvider to use for this dialog
 	 */
 	protected ICheckStateProvider getOrCreateCheckStateProvider() {
-		if(this.checkedStateProvider == null) {
+		if (this.checkedStateProvider == null) {
 			this.checkedStateProvider = new ICheckStateProvider() {
 
 				/**
-				 * 
+				 *
 				 * @see org.eclipse.jface.viewers.ICheckStateProvider#isGrayed(java.lang.Object)
-				 * 
+				 *
 				 * @param element
 				 * @return
 				 */
+				@Override
 				public boolean isGrayed(Object element) {
 					boolean isGrayed = false;
-					if(element instanceof EditPart) {
+					if (element instanceof EditPart) {
 						Set<EObject> values = availableLinks.get(element);
 						final Collection<EObject> tmp = new ArrayList<EObject>(selectedElements);
 						tmp.retainAll(values);
@@ -292,29 +295,30 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 				}
 
 				/**
-				 * 
+				 *
 				 * @see org.eclipse.jface.viewers.ICheckStateProvider#isChecked(java.lang.Object)
-				 * 
+				 *
 				 * @param element
 				 * @return
 				 */
+				@Override
 				public boolean isChecked(Object element) {
 					boolean isChecked = false;
-					if(element instanceof EditPart) {
+					if (element instanceof EditPart) {
 						final Collection<?> possibleLinks = availableLinks.get(element);
 						Collection<EObject> tmp = new ArrayList<EObject>(selectedElements);
 						tmp.retainAll(possibleLinks);
 						isChecked = tmp.size() > 0;
 
 
-						final View view = (View)((EditPart)element).getAdapter(View.class);
-						if(!isChecked && view instanceof Edge) {//the edge edit part could be selected as grayed because the link is already selected for an another edit part
+						final View view = (View) ((EditPart) element).getAdapter(View.class);
+						if (!isChecked && view instanceof Edge) {// the edge edit part could be selected as grayed because the link is already selected for an another edit part
 							final EObject eobject = view.getElement();
 							isChecked = selectedElements.contains(eobject);
 						}
 
 
-					} else if(element instanceof EObject) {
+					} else if (element instanceof EObject) {
 						isChecked = selectedElements.contains(element);
 					}
 					return isChecked;
@@ -326,7 +330,7 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 
 	/**
 	 * This provider is used by the 2nd column
-	 * 
+	 *
 	 */
 	protected class LinkEClassLabelProvider extends ColumnLabelProvider {
 
@@ -342,10 +346,10 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 		 */
 		@Override
 		public Image getImage(final Object element) {
-			if(element instanceof EdgeWithNoSemanticElementRepresentationImpl) {
+			if (element instanceof EdgeWithNoSemanticElementRepresentationImpl) {
 				return null;
 			}
-			if(element instanceof EObject) {
+			if (element instanceof EObject) {
 				return labelProvider.getImage(element);
 			}
 			return null;
@@ -356,25 +360,25 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 		 */
 		@Override
 		public String getText(final Object element) {
-			if(element instanceof EdgeWithNoSemanticElementRepresentationImpl) {
-				final EObject source = ((EdgeWithNoSemanticElementRepresentationImpl)element).getSource();
-				if(source instanceof Comment) {
+			if (element instanceof EdgeWithNoSemanticElementRepresentationImpl) {
+				final EObject source = ((EdgeWithNoSemanticElementRepresentationImpl) element).getSource();
+				if (source instanceof Comment) {
 					return Messages.ShowHideRelatedLinkSelectionDialog_CommentLink;
 				}
-				if(source instanceof Constraint) {
+				if (source instanceof Constraint) {
 					return Messages.ShowHideRelatedLinkSelectionDialog_ConstraintLink;
 				}
 			}
-			if(element instanceof EObject) {
-				return ((EObject)element).eClass().getName();
+			if (element instanceof EObject) {
+				return ((EObject) element).eClass().getName();
 			}
 			return ""; //$NON-NLS-1$
 		}
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.CellLabelProvider#update(org.eclipse.jface.viewers.ViewerCell)
-		 * 
+		 *
 		 * @param cell
 		 */
 		@Override
@@ -387,7 +391,7 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 
 	/**
 	 * This provider is used by the 2nd column
-	 * 
+	 *
 	 */
 	protected class EObjectLabelProvider extends ColumnLabelProvider {
 
@@ -403,9 +407,9 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 		 */
 		@Override
 		public Image getImage(Object element) {
-			if(element instanceof EdgeWithNoSemanticElementRepresentationImpl) {
-				final EObject source = ((EdgeWithNoSemanticElementRepresentationImpl)element).getSource();
-				if(source instanceof Comment || source instanceof Constraint) {
+			if (element instanceof EdgeWithNoSemanticElementRepresentationImpl) {
+				final EObject source = ((EdgeWithNoSemanticElementRepresentationImpl) element).getSource();
+				if (source instanceof Comment || source instanceof Constraint) {
 					return labelProvider.getImage(source);
 				}
 			}
@@ -417,11 +421,11 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 		 */
 		@Override
 		public String getText(Object element) {
-			if(element instanceof EdgeWithNoSemanticElementRepresentationImpl) {
-				final EObject source = ((EdgeWithNoSemanticElementRepresentationImpl)element).getSource();
-				if(source instanceof Comment) {
+			if (element instanceof EdgeWithNoSemanticElementRepresentationImpl) {
+				final EObject source = ((EdgeWithNoSemanticElementRepresentationImpl) element).getSource();
+				if (source instanceof Comment) {
 					return Messages.ShowHideRelatedLinkSelectionDialog_CommentLink;
-				} else if(source instanceof Constraint) {
+				} else if (source instanceof Constraint) {
 					return Messages.ShowHideRelatedLinkSelectionDialog_ConstraintLink;
 				}
 			}
@@ -430,9 +434,9 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.CellLabelProvider#update(org.eclipse.jface.viewers.ViewerCell)
-		 * 
+		 *
 		 * @param cell
 		 */
 		@Override
@@ -444,14 +448,14 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 
 	/**
 	 * This provider is used by the 2nd column
-	 * 
+	 *
 	 */
 	protected class TargetElementLabelProvider extends AbstractLinkEndColumnsLabelProvider {
 
 		/**
-		 * 
+		 *
 		 * Constructor.
-		 * 
+		 *
 		 * @param labelProvider
 		 */
 		public TargetElementLabelProvider(final ILabelProvider labelProvider) {
@@ -459,25 +463,25 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 		}
 
 		/**
-		 * 
+		 *
 		 * Constructor.
-		 * 
+		 *
 		 */
 		public TargetElementLabelProvider() {
 			super(getLabelProvider());
 		}
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.diagram.menu.dialogs.ShowHideRelatedLinkSelectionDialog.AbstractLinkEndColumnsLabelProvider#getValues(java.lang.Object)
-		 * 
+		 *
 		 * @param element
 		 * @return
 		 */
 		@Override
 		protected Collection<?> getValues(Object element) {
 			final LinkEndsMapper mapper = mapLink.get(element);
-			if(mapper != null) {
+			if (mapper != null) {
 				return mapper.getTargets();
 			}
 			return Collections.emptyList();
@@ -486,14 +490,14 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 
 	/**
 	 * This provider is used by the 2nd column
-	 * 
+	 *
 	 */
 	protected class SourceElementLabelProvider extends AbstractLinkEndColumnsLabelProvider {
 
 		/**
-		 * 
+		 *
 		 * Constructor.
-		 * 
+		 *
 		 * @param labelProvider
 		 */
 		public SourceElementLabelProvider(final ILabelProvider labelProvider) {
@@ -501,23 +505,23 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 		}
 
 		/**
-		 * 
+		 *
 		 * Constructor.
-		 * 
+		 *
 		 */
 		public SourceElementLabelProvider() {
 			super(getLabelProvider());
 		}
 
 		/**
-		 * 
+		 *
 		 * @param element
 		 * @return
 		 */
 		@Override
 		protected Collection<?> getValues(Object element) {
 			final LinkEndsMapper mapper = mapLink.get(element);
-			if(mapper != null) {
+			if (mapper != null) {
 				return mapper.getSources();
 			}
 			return Collections.emptyList();
@@ -541,9 +545,9 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 		private final ILabelProvider labelProvider;
 
 		/**
-		 * 
+		 *
 		 * Constructor.
-		 * 
+		 *
 		 * @param labelProvider
 		 */
 		public AbstractLinkEndColumnsLabelProvider(final ILabelProvider labelProvider) {
@@ -551,9 +555,9 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 		}
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.ColumnLabelProvider#getImage(java.lang.Object)
-		 * 
+		 *
 		 * @param element
 		 * @return
 		 */
@@ -563,9 +567,9 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 		}
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.CellLabelProvider#update(org.eclipse.jface.viewers.ViewerCell)
-		 * 
+		 *
 		 * @param cell
 		 */
 		@Override
@@ -581,16 +585,16 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 		public String getText(Object element) {
 			final StringBuilder builder = new StringBuilder();
 			final Collection<?> ends = getValues(element);
-			if(!ends.isEmpty()) {
+			if (!ends.isEmpty()) {
 				builder.append(START_LIST);
 				final Iterator<?> iter = ends.iterator();
-				while(iter.hasNext()) {
+				while (iter.hasNext()) {
 					final Object current = iter.next();
-					if(current instanceof Comment) {
+					if (current instanceof Comment) {
 						builder.append(Messages.ShowHideRelatedLinkSelectionDialog_Comment_);
 					}
 					builder.append(this.labelProvider.getText(current));
-					if(iter.hasNext()) {
+					if (iter.hasNext()) {
 						builder.append(VALUE_SEPARATOR);
 					}
 				}
@@ -604,14 +608,14 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 
 	/**
 	 * This provider is used by the 2nd column
-	 * 
+	 *
 	 */
 	protected class EndsElementLabelProvider extends AbstractLinkEndColumnsLabelProvider {
 
 		/**
-		 * 
+		 *
 		 * Constructor.
-		 * 
+		 *
 		 * @param labelProvider
 		 */
 		public EndsElementLabelProvider(final ILabelProvider labelProvider) {
@@ -619,25 +623,25 @@ public class ShowHideRelatedLinkSelectionDialog extends AbstractCheckedTreeColum
 		}
 
 		/**
-		 * 
+		 *
 		 * Constructor.
-		 * 
+		 *
 		 */
 		public EndsElementLabelProvider() {
 			super(getLabelProvider());
 		}
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.diagram.menu.dialogs.ShowHideRelatedLinkSelectionDialog.AbstractLinkEndColumnsLabelProvider#getValues(java.lang.Object)
-		 * 
+		 *
 		 * @param element
 		 * @return
 		 */
 		@Override
 		protected Collection<?> getValues(Object element) {
 			final LinkEndsMapper mapper = mapLink.get(element);
-			if(mapper != null) {
+			if (mapper != null) {
 				return mapper.getEnds();
 			}
 			return Collections.emptyList();

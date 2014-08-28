@@ -11,7 +11,7 @@ package org.eclipse.papyrus.RobotML;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotML.Robot#getWidth <em>Width</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.Robot#getWidth <em>Width</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,10 +24,10 @@ public interface Robot extends Agent, org.eclipse.papyrus.RobotML.System {
 	 * Returns the value of the '<em><b>Width</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Width</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Width</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Width</em>' attribute.
 	 * @see #setWidth(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getRobot_Width()
@@ -40,7 +40,9 @@ public interface Robot extends Agent, org.eclipse.papyrus.RobotML.System {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Robot#getWidth <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Width</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Width</em>' attribute.
 	 * @see #getWidth()
 	 * @generated
 	 */

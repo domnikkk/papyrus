@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.OpenLoopControlSystem;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -20,6 +19,7 @@ public class OpenLoopControlSystemImpl extends CyberPhysicalSystemImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected OpenLoopControlSystemImpl() {
@@ -29,6 +29,7 @@ public class OpenLoopControlSystemImpl extends CyberPhysicalSystemImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class OpenLoopControlSystemImpl extends CyberPhysicalSystemImpl implement
 		return RobotMLPackage.Literals.OPEN_LOOP_CONTROL_SYSTEM;
 	}
 
-} //OpenLoopControlSystemImpl
+} // OpenLoopControlSystemImpl

@@ -8,9 +8,9 @@ import org.eclipse.uml2.uml.Element;
 /**
  * {@link EContentAdapter} that listens for modifications outside the xtext cell
  * editor to remove the text comment that stores the invalid string.
- * 
+ *
  * @author muelder
- * 
+ *
  */
 public class InvalidSyntaxAdapter extends EContentAdapter {
 	@Override
@@ -20,8 +20,9 @@ public class InvalidSyntaxAdapter extends EContentAdapter {
 			Element element = (Element) notification.getNotifier();
 			Comment comment = InvalidStringUtil
 					.getTextualRepresentationComment(element);
-			if (comment != null)
+			if (comment != null) {
 				element.getOwnedComments().remove(comment);
+			}
 
 		}
 	}

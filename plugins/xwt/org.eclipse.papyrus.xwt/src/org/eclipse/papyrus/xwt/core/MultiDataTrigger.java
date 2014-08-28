@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -53,17 +53,17 @@ public class MultiDataTrigger extends TriggerBase {
 		}
 
 		public void doHandleChange(boolean update) {
-			for(Condition condition : getConditions()) {
-				if(!condition.evaluate(element)) {
+			for (Condition condition : getConditions()) {
+				if (!condition.evaluate(element)) {
 					restoreValues();
 					return;
 				}
 			}
 
-			for(SetterBase setter : getSetters()) {
+			for (SetterBase setter : getSetters()) {
 				try {
 					Object oldValue = setter.applyTo(element, update);
-					if(oldvalues == null) {
+					if (oldvalues == null) {
 						oldvalues = new HashMap<SetterBase, Object>();
 					}
 					oldvalues.put(setter, oldValue);
@@ -76,23 +76,23 @@ public class MultiDataTrigger extends TriggerBase {
 
 	@Override
 	public void prepare(Object target) {
-		if(getConditions().length == 0) {
+		if (getConditions().length == 0) {
 			return;
 		}
 		Widget widget = UserData.getWidget(target);
-		if(widget == null) {
+		if (widget == null) {
 			return;
 		}
 
 		changeListener = new ValueChangeListener(target);
-		for(Condition condition : getConditions()) {
+		for (Condition condition : getConditions()) {
 			String sourceName = condition.getSourceName();
 
 			IBinding binding = condition.getBinding();
 			Object bindingTarget = null;
-			if(binding != null) {
-				if(binding instanceof IDynamicBinding) {
-					IDynamicBinding dynamicBinding = (IDynamicBinding)binding;
+			if (binding != null) {
+				if (binding instanceof IDynamicBinding) {
+					IDynamicBinding dynamicBinding = (IDynamicBinding) binding;
 					bindingTarget = dynamicBinding.createBoundSource();
 				} else {
 					bindingTarget = binding.getValue(null);
@@ -103,15 +103,16 @@ public class MultiDataTrigger extends TriggerBase {
 				bindingTarget = XWT.getDataContext(sourceWidget);
 			}
 
-			if(!(bindingTarget instanceof IObservableValue)) {
+			if (!(bindingTarget instanceof IObservableValue)) {
 				return;
 			}
-			IObservableValue observableValue = (IObservableValue)bindingTarget;
+			IObservableValue observableValue = (IObservableValue) bindingTarget;
 			observableValue.addChangeListener(changeListener);
 		}
 		changeListener.doHandleChange(false);
 	}
 
+	@Override
 	public void on(Object target) {
 		changeListener.doHandleChange(true);
 	}

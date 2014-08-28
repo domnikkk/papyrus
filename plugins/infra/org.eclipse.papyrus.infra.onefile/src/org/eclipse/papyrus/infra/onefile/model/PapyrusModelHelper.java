@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin Integration.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.osgi.framework.Bundle;
 
 /**
  * Helper class able to get the correct {@link IPapyrusModelFactory}
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 public class PapyrusModelHelper {
 
@@ -68,7 +68,7 @@ public class PapyrusModelHelper {
 
 	/**
 	 * get the {@link IPapyrusModelFactory} in the current platform
-	 * 
+	 *
 	 * @return a {@link IPapyrusModelFactory}
 	 */
 	public static IPapyrusModelFactory getPapyrusModelFactory() {
@@ -84,7 +84,7 @@ public class PapyrusModelHelper {
 
 	/**
 	 * Utility class to save extension point information
-	 * 
+	 *
 	 */
 	private static class Segment {
 		public String className;

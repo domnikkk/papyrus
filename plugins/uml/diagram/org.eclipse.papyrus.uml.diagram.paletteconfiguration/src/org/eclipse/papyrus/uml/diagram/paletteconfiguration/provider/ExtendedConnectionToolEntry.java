@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,34 +30,38 @@ public class ExtendedConnectionToolEntry extends PaletteToolEntry implements IEl
 
 	/** list of element types created by this tool */
 	final private List<IElementType> elementTypes = new ArrayList<IElementType>();
-	
+
 	/** List of Element Descriptors for this tool */
-	private final List<ElementDescriptor> elementDescriptors; 
-	
+	private final List<ElementDescriptor> elementDescriptors;
+
 	/**
 	 * Constructor.
 	 *
-	 * @param label the label of the tool
-	 * @param factory the factory used by the entry to create the tool
-	 * @param id unique identifier of the tool
-	 * @param elementDescriptors list of element descriptors created by the tool
+	 * @param label
+	 *            the label of the tool
+	 * @param factory
+	 *            the factory used by the entry to create the tool
+	 * @param id
+	 *            unique identifier of the tool
+	 * @param elementDescriptors
+	 *            list of element descriptors created by the tool
 	 */
 	public ExtendedConnectionToolEntry(String id, String label, PaletteFactory factory, List<ElementDescriptor> elementDescriptors) {
 		super(id, label, factory);
 		this.elementDescriptors = elementDescriptors;
-		
-		for(ElementDescriptor elementDescriptor : elementDescriptors) {
+
+		for (ElementDescriptor elementDescriptor : elementDescriptors) {
 			elementTypes.add(ElementTypeRegistry.getInstance().getType(elementDescriptor.getElementTypeId()));
 		}
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	public List<IElementType> getElementTypes() {
 		return elementTypes;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,9 +35,9 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
 /**
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public abstract class AbstractNatTableXTextCellEditor extends AbstractPapyrusStyledTextCellEditor {
 
@@ -49,9 +49,9 @@ public abstract class AbstractNatTableXTextCellEditor extends AbstractPapyrusSty
 	protected CellEditor jfaceCellEditor;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param table
 	 * @param axisElement
 	 * @param elementProvider
@@ -64,9 +64,9 @@ public abstract class AbstractNatTableXTextCellEditor extends AbstractPapyrusSty
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param table
 	 * @param axisElement
 	 * @param elementProvider
@@ -77,9 +77,9 @@ public abstract class AbstractNatTableXTextCellEditor extends AbstractPapyrusSty
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param table
 	 * @param axisElement
 	 * @param elementProvider
@@ -89,29 +89,29 @@ public abstract class AbstractNatTableXTextCellEditor extends AbstractPapyrusSty
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the XText DirectEditor Configuration
 	 */
 	protected abstract DefaultXtextDirectEditorConfiguration createXTextEditorConfiguration();
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.celleditor.AbstractStyledTextCellEditor#activateCell(org.eclipse.swt.widgets.Composite,
-	 *      java.lang.Object)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.celleditor.AbstractStyledTextCellEditor#activateCell(org.eclipse.swt.widgets.Composite, java.lang.Object)
+	 *
 	 * @param parent
 	 * @param originalCanonicalValue
 	 * @return
 	 */
+	@Override
 	protected Control activateCell(final Composite parent, final Object originalCanonicalValue) {
-		//we display the full string which have a problem to display it in the Xtext Editor
+		// we display the full string which have a problem to display it in the Xtext Editor
 		Object value = originalCanonicalValue;
-		if(originalCanonicalValue instanceof List<?>) {
-			if(((List<?>)originalCanonicalValue).size() > 0) {
-				final Object firstValue = ((List<?>)originalCanonicalValue).get(0);
-				if(firstValue instanceof StringResolutionProblem) {
-					value = ((StringResolutionProblem)firstValue).getValueAsString();
+		if (originalCanonicalValue instanceof List<?>) {
+			if (((List<?>) originalCanonicalValue).size() > 0) {
+				final Object firstValue = ((List<?>) originalCanonicalValue).get(0);
+				if (firstValue instanceof StringResolutionProblem) {
+					value = ((StringResolutionProblem) firstValue).getValueAsString();
 				}
 			}
 		}
@@ -120,44 +120,46 @@ public abstract class AbstractNatTableXTextCellEditor extends AbstractPapyrusSty
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.celleditor.AbstractStyledTextCellEditor#createStyledText(org.eclipse.swt.widgets.Composite, int)
-	 * 
+	 *
 	 * @param parent
 	 * @param style
 	 * @return
 	 */
 	@Override
 	protected StyledText createStyledText(Composite parent, int style) {
-		//add me as parameter!
+		// add me as parameter!
 		this.xTextConfiguration = createXTextEditorConfiguration();
 
 		final EObject editedObject = getEditedEObject();
 
-		//must be done here!
+		// must be done here!
 		XtextFakeResourceContext context = new XtextFakeResourceContext(xTextConfiguration.getInjector());
 		IContextElementProvider provider = new IContextElementProvider() {
 
+			@Override
 			public EObject getContextObject() {
 				return editedObject;
 			}
 		};
 		context.getFakeResource().eAdapters().add(new ContextElementAdapter(provider));
 		jfaceCellEditor = xTextConfiguration.createCellEditor(parent, editedObject);
-		return (StyledText)jfaceCellEditor.getControl();
+		return (StyledText) jfaceCellEditor.getControl();
 	}
 
 	/**
 	 * Creates the editor control that is wrapped by this ICellEditor.
 	 * Will use the style configurations in ConfigRegistry for styling the control.
-	 * 
+	 *
 	 * @param parent
-	 *        The Composite that will be the parent of the new editor control.
-	 *        Can not be <code>null</code>
+	 *            The Composite that will be the parent of the new editor control.
+	 *            Can not be <code>null</code>
 	 * @param style
-	 *        The SWT style of the text control to create.
+	 *            The SWT style of the text control to create.
 	 * @return The created editor control that is wrapped by this ICellEditor.
 	 */
+	@Override
 	protected StyledText createEditorControl(final Composite parent, int style) {
 		final StyledText textControl = super.createEditorControl(parent, style);
 		textControl.setVisible(true);
@@ -165,21 +167,21 @@ public abstract class AbstractNatTableXTextCellEditor extends AbstractPapyrusSty
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.celleditor.AbstractStyledTextCellEditor#getEditorValue()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public Object getEditorValue() {
-		final IParser parser = ((ICustomDirectEditorConfiguration)xTextConfiguration).createParser(getEditedEObject());
-		final StyledText styledText = ((StyledText)jfaceCellEditor.getControl());
+		final IParser parser = ((ICustomDirectEditorConfiguration) xTextConfiguration).createParser(getEditedEObject());
+		final StyledText styledText = ((StyledText) jfaceCellEditor.getControl());
 		ICommand parseCommand = null;
 		String typedString = "";
-		if(styledText != null) {
+		if (styledText != null) {
 			typedString = styledText.getText();
 			final IParserEditStatus result = parser.isValidEditString(null, typedString);
-			if(result!=null && result.isOK()) {
+			if (result != null && result.isOK()) {
 				parseCommand = parser.getParseCommand(null, typedString, 0);
 			}
 		}

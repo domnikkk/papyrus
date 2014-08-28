@@ -29,12 +29,12 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl#getUseCase <em>Use Case</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl#getRequirementsHierachy <em>Requirements Hierachy</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl#getOperationalSituation <em>Operational Situation</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl#getBase_Package <em>Base Package</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl#getRequirementsRelationshipGroup <em>Requirements Relationship Group</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl#getRequirement <em>Requirement</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl#getUseCase <em>Use Case</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl#getRequirementsHierachy <em>Requirements Hierachy</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl#getOperationalSituation <em>Operational Situation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl#getBase_Package <em>Base Package</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl#getRequirementsRelationshipGroup <em>Requirements Relationship Group</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl#getRequirement <em>Requirement</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +45,7 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -54,6 +55,7 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected RequirementsModelImpl() {
@@ -63,6 +65,7 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,20 +76,22 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<UseCase> getUseCase() {
 		EList<UseCase> results = new BasicEList<UseCase>();
 		UseCase useCase = null;
 
-		if(getBase_NamedElement() != null) {
+		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
 
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				Element current = it.next();
-				useCase = (UseCase)UMLUtil.getStereotypeApplication(current, UseCase.class);
+				useCase = UMLUtil.getStereotypeApplication(current, UseCase.class);
 
-				if(useCase != null) {
+				if (useCase != null) {
 					results.add(useCase);
 				}
 			}
@@ -98,20 +103,22 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<RequirementsHierarchy> getRequirementsHierachy() {
 		EList<RequirementsHierarchy> results = new BasicEList<RequirementsHierarchy>();
 		RequirementsHierarchy requirementsHierarchy = null;
 
-		if(getBase_NamedElement() != null) {
+		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
 
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				Element current = it.next();
-				requirementsHierarchy = (RequirementsHierarchy)UMLUtil.getStereotypeApplication(current, RequirementsHierarchy.class);
+				requirementsHierarchy = UMLUtil.getStereotypeApplication(current, RequirementsHierarchy.class);
 
-				if(requirementsHierarchy != null) {
+				if (requirementsHierarchy != null) {
 					results.add(requirementsHierarchy);
 				}
 			}
@@ -123,37 +130,43 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<OperationalSituation> getOperationalSituation() {
 		EList<OperationalSituation> results = new BasicEList<OperationalSituation>();
 		OperationalSituation adlOperationalSituation = null;
 		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
-			
+
 			while (it.hasNext()) {
 				Element element = it.next();
-				adlOperationalSituation = (OperationalSituation )UMLUtil.getStereotypeApplication(element, OperationalSituation.class);
-				if (adlOperationalSituation != null)
+				adlOperationalSituation = UMLUtil.getStereotypeApplication(element, OperationalSituation.class);
+				if (adlOperationalSituation != null) {
 					results.add(adlOperationalSituation);
+				}
 			}
 		}
-		
+
 		return new BasicInternalEList<OperationalSituation>(OperationalSituation.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Package getBase_Package() {
 		if (base_Package != null && base_Package.eIsProxy()) {
-			InternalEObject oldBase_Package = (InternalEObject)base_Package;
-			base_Package = (org.eclipse.uml2.uml.Package)eResolveProxy(oldBase_Package);
+			InternalEObject oldBase_Package = (InternalEObject) base_Package;
+			base_Package = (org.eclipse.uml2.uml.Package) eResolveProxy(oldBase_Package);
 			if (base_Package != oldBase_Package) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.REQUIREMENTS_MODEL__BASE_PACKAGE, oldBase_Package, base_Package));
+				}
 			}
 		}
 		return base_Package;
@@ -162,6 +175,7 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -171,32 +185,37 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_Package(org.eclipse.uml2.uml.Package newBase_Package) {
 		org.eclipse.uml2.uml.Package oldBase_Package = base_Package;
 		base_Package = newBase_Package;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENTS_MODEL__BASE_PACKAGE, oldBase_Package, base_Package));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<RequirementsRelationshipGroup> getRequirementsRelationshipGroup() {
 		EList<RequirementsRelationshipGroup> results = new BasicEList<RequirementsRelationshipGroup>();
 		RequirementsRelationshipGroup operationalSituation = null;
 
-		if(getBase_NamedElement() != null) {
+		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
 
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				Element current = it.next();
-				operationalSituation = (RequirementsRelationshipGroup)UMLUtil.getStereotypeApplication(current, RequirementsRelationshipGroup.class);
+				operationalSituation = UMLUtil.getStereotypeApplication(current, RequirementsRelationshipGroup.class);
 
-				if(operationalSituation != null) {
+				if (operationalSituation != null) {
 					results.add(operationalSituation);
 				}
 			}
@@ -208,20 +227,22 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<Requirement> getRequirement() {
 		EList<Requirement> results = new BasicEList<Requirement>();
 		Requirement requirement = null;
 
-		if(getBase_NamedElement() != null) {
+		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
 
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				Element current = it.next();
-				requirement = (Requirement)UMLUtil.getStereotypeApplication(current, Requirement.class);
+				requirement = UMLUtil.getStereotypeApplication(current, Requirement.class);
 
-				if(requirement != null) {
+				if (requirement != null) {
 					results.add(requirement);
 				}
 			}
@@ -233,24 +254,27 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RequirementsPackage.REQUIREMENTS_MODEL__USE_CASE:
-				return getUseCase();
-			case RequirementsPackage.REQUIREMENTS_MODEL__REQUIREMENTS_HIERACHY:
-				return getRequirementsHierachy();
-			case RequirementsPackage.REQUIREMENTS_MODEL__OPERATIONAL_SITUATION:
-				return getOperationalSituation();
-			case RequirementsPackage.REQUIREMENTS_MODEL__BASE_PACKAGE:
-				if (resolve) return getBase_Package();
-				return basicGetBase_Package();
-			case RequirementsPackage.REQUIREMENTS_MODEL__REQUIREMENTS_RELATIONSHIP_GROUP:
-				return getRequirementsRelationshipGroup();
-			case RequirementsPackage.REQUIREMENTS_MODEL__REQUIREMENT:
-				return getRequirement();
+		case RequirementsPackage.REQUIREMENTS_MODEL__USE_CASE:
+			return getUseCase();
+		case RequirementsPackage.REQUIREMENTS_MODEL__REQUIREMENTS_HIERACHY:
+			return getRequirementsHierachy();
+		case RequirementsPackage.REQUIREMENTS_MODEL__OPERATIONAL_SITUATION:
+			return getOperationalSituation();
+		case RequirementsPackage.REQUIREMENTS_MODEL__BASE_PACKAGE:
+			if (resolve) {
+				return getBase_Package();
+			}
+			return basicGetBase_Package();
+		case RequirementsPackage.REQUIREMENTS_MODEL__REQUIREMENTS_RELATIONSHIP_GROUP:
+			return getRequirementsRelationshipGroup();
+		case RequirementsPackage.REQUIREMENTS_MODEL__REQUIREMENT:
+			return getRequirement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -258,14 +282,15 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RequirementsPackage.REQUIREMENTS_MODEL__BASE_PACKAGE:
-				setBase_Package((org.eclipse.uml2.uml.Package)newValue);
-				return;
+		case RequirementsPackage.REQUIREMENTS_MODEL__BASE_PACKAGE:
+			setBase_Package((org.eclipse.uml2.uml.Package) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -273,14 +298,15 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RequirementsPackage.REQUIREMENTS_MODEL__BASE_PACKAGE:
-				setBase_Package((org.eclipse.uml2.uml.Package)null);
-				return;
+		case RequirementsPackage.REQUIREMENTS_MODEL__BASE_PACKAGE:
+			setBase_Package((org.eclipse.uml2.uml.Package) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -288,25 +314,26 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RequirementsPackage.REQUIREMENTS_MODEL__USE_CASE:
-				return !getUseCase().isEmpty();
-			case RequirementsPackage.REQUIREMENTS_MODEL__REQUIREMENTS_HIERACHY:
-				return !getRequirementsHierachy().isEmpty();
-			case RequirementsPackage.REQUIREMENTS_MODEL__OPERATIONAL_SITUATION:
-				return !getOperationalSituation().isEmpty();
-			case RequirementsPackage.REQUIREMENTS_MODEL__BASE_PACKAGE:
-				return base_Package != null;
-			case RequirementsPackage.REQUIREMENTS_MODEL__REQUIREMENTS_RELATIONSHIP_GROUP:
-				return !getRequirementsRelationshipGroup().isEmpty();
-			case RequirementsPackage.REQUIREMENTS_MODEL__REQUIREMENT:
-				return !getRequirement().isEmpty();
+		case RequirementsPackage.REQUIREMENTS_MODEL__USE_CASE:
+			return !getUseCase().isEmpty();
+		case RequirementsPackage.REQUIREMENTS_MODEL__REQUIREMENTS_HIERACHY:
+			return !getRequirementsHierachy().isEmpty();
+		case RequirementsPackage.REQUIREMENTS_MODEL__OPERATIONAL_SITUATION:
+			return !getOperationalSituation().isEmpty();
+		case RequirementsPackage.REQUIREMENTS_MODEL__BASE_PACKAGE:
+			return base_Package != null;
+		case RequirementsPackage.REQUIREMENTS_MODEL__REQUIREMENTS_RELATIONSHIP_GROUP:
+			return !getRequirementsRelationshipGroup().isEmpty();
+		case RequirementsPackage.REQUIREMENTS_MODEL__REQUIREMENT:
+			return !getRequirement().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //RequirementsModelImpl
+} // RequirementsModelImpl

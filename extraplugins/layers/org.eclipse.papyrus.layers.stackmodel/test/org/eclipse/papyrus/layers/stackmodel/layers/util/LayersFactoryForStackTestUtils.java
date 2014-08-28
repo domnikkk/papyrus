@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,30 +27,30 @@ import org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperator;
 
 /**
  * Utilities to create programmatically a Tree of layers with the {@link LayersFactoryForStack}
- * 
+ *
  * @author cedric dumoulin
  *
  */
 public class LayersFactoryForStackTestUtils {
 
 	/**
-	 * Application object. 
+	 * Application object.
 	 */
 	protected LayersStackApplication application;
-	
+
 	/**
-	 * Stack object. 
+	 * Stack object.
 	 */
 	protected LayersStack stack;
-	
+
 	/**
-	 * factory object. 
+	 * factory object.
 	 */
 	protected LayersFactoryForStack factory;
-	
+
 	protected Map<String, LayerExpression> createdLayers = new HashMap<String, LayerExpression>();
-	
-	
+
+
 	/**
 	 * Constructor.
 	 *
@@ -66,7 +66,8 @@ public class LayersFactoryForStackTestUtils {
 
 	/**
 	 * Constructor.
-	 *  Use the global factory for {@link LayersFactoryForStack}
+	 * Use the global factory for {@link LayersFactoryForStack}
+	 *
 	 * @param stack
 	 * @param application
 	 */
@@ -92,20 +93,22 @@ public class LayersFactoryForStackTestUtils {
 
 	/**
 	 * Create a TopLayer
+	 *
 	 * @return
-	 * @throws LayersException 
+	 * @throws LayersException
 	 */
 	public TopLayerOperator newTopLayer() throws LayersException {
 		// Create a TopLayer
 		TopLayerOperator layer = factory.createTopLayerOperator(stack, stack, application);
-		
+
 		return layer;
 	}
-	
+
 	/**
 	 * Create a TopLayer
+	 *
 	 * @return
-	 * @throws LayersException 
+	 * @throws LayersException
 	 */
 	public TopLayerOperator newTopLayer(String name) throws LayersException {
 		TopLayerOperator layer = newTopLayer();
@@ -113,53 +116,54 @@ public class LayersFactoryForStackTestUtils {
 		return layer;
 
 	}
-	
+
 	/**
 	 * Create a TopLayer and add the specified sublayers to it.
-	 * Sublayers are initialized with {@link LayersFactoryForStack#initLayer(LayerExpression, org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, LayersStack, LayersStackApplication)} 
-	 * before being added to their parent.
+	 * Sublayers are initialized with {@link LayersFactoryForStack#initLayer(LayerExpression, org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, LayersStack, LayersStackApplication)} before being added to their parent.
+	 *
 	 * @return
-	 * @throws LayersException 
+	 * @throws LayersException
 	 */
-	public TopLayerOperator newTopLayer(String name, LayerExpression ...exprs) throws LayersException {
+	public TopLayerOperator newTopLayer(String name, LayerExpression... exprs) throws LayersException {
 
 		TopLayerOperator layer = newTopLayer(exprs);
 		createdLayers.put(name, layer);
 		return layer;
 	}
-	
+
 	/**
 	 * Create a TopLayer and add the specified sublayers to it.
-	 * Sublayers are initialized with {@link LayersFactoryForStack#initLayer(LayerExpression, org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, LayersStack, LayersStackApplication)} 
-	 * before being added to their parent.
-	 * 
+	 * Sublayers are initialized with {@link LayersFactoryForStack#initLayer(LayerExpression, org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, LayersStack, LayersStackApplication)} before being added to their parent.
+	 *
 	 * @return
-	 * @throws LayersException 
+	 * @throws LayersException
 	 */
-	public TopLayerOperator newTopLayer(LayerExpression ...exprs) throws LayersException {
+	public TopLayerOperator newTopLayer(LayerExpression... exprs) throws LayersException {
 		// Create a TopLayer
 		TopLayerOperator layer = newTopLayer();
-		
-		for( LayerExpression l : exprs) {
+
+		for (LayerExpression l : exprs) {
 			factory.initLayer(l, layer, stack, application);
 		}
-		
+
 		return layer;
 	}
-	
+
 	/**
 	 * Create an uninitialized Layer
+	 *
 	 * @return
 	 */
 	public LayerExpression newLayer() {
 		// Create a TopLayer
 		LayerExpression layer = LayersFactory.eINSTANCE.createLayer();
-		
+
 		return layer;
 	}
-	
+
 	/**
-	 * Create a an uninitialized  Layer and store it in the map of layers under the specified name.
+	 * Create a an uninitialized Layer and store it in the map of layers under the specified name.
+	 *
 	 * @return
 	 */
 	public LayerExpression newLayer(String name) {
@@ -168,6 +172,6 @@ public class LayersFactoryForStackTestUtils {
 		return layer;
 
 	}
-	
+
 
 }

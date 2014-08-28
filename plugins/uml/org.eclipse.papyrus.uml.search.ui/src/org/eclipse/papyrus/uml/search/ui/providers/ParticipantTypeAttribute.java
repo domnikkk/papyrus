@@ -22,6 +22,7 @@ public class ParticipantTypeAttribute extends ParticipantTypeElement {
 		this.parent = parent;
 	}
 
+	@Override
 	public String getText() {
 
 		return super.getText();

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -21,7 +21,7 @@ import org.eclipse.papyrus.uml.diagram.common.utils.UMLGraphicalTypes;
 
 /**
  * View factory for UML Classifier.
- * 
+ *
  * FIXME : NestedClassifier compartment is not yet supported.
  */
 public class ClassifierViewFactory extends ShapeViewFactory {

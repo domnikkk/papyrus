@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -13,10 +13,10 @@
 package org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.dialog;
 
 import org.eclipse.core.commands.Command;
+import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialog;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.ICommandWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.utils.WidgetProperties;
-import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -27,7 +27,7 @@ import org.eclipse.swt.widgets.Shell;
 /**
  * Abstract class representing a dialog. Some methods are implemented to avoid
  * unnecessary duplication code.
- * 
+ *
  * @param <CB>
  *            The type of the callback.
  * @param <P>
@@ -44,7 +44,7 @@ public abstract class AbstractDialog<CB extends Object, W extends ICommandWidget
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param callback
 	 *            the callback
 	 * @param properties
@@ -80,8 +80,7 @@ public abstract class AbstractDialog<CB extends Object, W extends ICommandWidget
 	protected abstract void execute();
 
 	/**
-	 * Check if all the required attributes are setted ({@link #isDialogValid()}
-	 * and call the method {@link #execute()} to get and execute the widget
+	 * Check if all the required attributes are setted ({@link #isDialogValid()} and call the method {@link #execute()} to get and execute the widget
 	 * command. If the dialog is not valid, this method display the errors with
 	 * the method {@link #setErrorMessage(String)}.
 	 */
@@ -117,21 +116,21 @@ public abstract class AbstractDialog<CB extends Object, W extends ICommandWidget
 
 	/**
 	 * Create the associated widget to the dialog.
-	 * 
+	 *
 	 * @return an instance of the widget.
 	 */
 	protected abstract W createWidget();
 
 	/**
 	 * Return the message at the top of the dialog.
-	 * 
+	 *
 	 * @return the message.
 	 */
 	protected abstract String getDialogMessage();
 
 	/**
 	 * Return the title of the dialog.
-	 * 
+	 *
 	 * @return the title.
 	 */
 	protected abstract String getDialogTitle();

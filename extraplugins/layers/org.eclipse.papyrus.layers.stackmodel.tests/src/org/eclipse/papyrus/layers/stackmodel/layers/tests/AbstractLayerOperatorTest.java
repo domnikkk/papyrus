@@ -11,10 +11,11 @@ import org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#isDescriptorSet() <em>Is Descriptor Set</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#resetDescriptor() <em>Reset Descriptor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#isDescriptorSet() <em>Is Descriptor Set</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#resetDescriptor() <em>Reset Descriptor</em>}</li>
  * </ul>
  * </p>
+ *
  * @generated
  */
 public abstract class AbstractLayerOperatorTest extends LayerOperatorTest {
@@ -23,6 +24,7 @@ public abstract class AbstractLayerOperatorTest extends LayerOperatorTest {
 	 * Constructs a new Abstract Layer Operator test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public AbstractLayerOperatorTest(String name) {
@@ -33,17 +35,19 @@ public abstract class AbstractLayerOperatorTest extends LayerOperatorTest {
 	 * Returns the fixture for this Abstract Layer Operator test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	protected AbstractLayerOperator getFixture() {
-		return (AbstractLayerOperator)fixture;
+		return (AbstractLayerOperator) fixture;
 	}
 
 	/**
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#isDescriptorSet() <em>Is Descriptor Set</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#isDescriptorSet()
 	 * @generated
 	 */
@@ -57,6 +61,7 @@ public abstract class AbstractLayerOperatorTest extends LayerOperatorTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#resetDescriptor() <em>Reset Descriptor</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#resetDescriptor()
 	 * @generated
 	 */
@@ -66,4 +71,4 @@ public abstract class AbstractLayerOperatorTest extends LayerOperatorTest {
 		fail();
 	}
 
-} //AbstractLayerOperatorTest
+} // AbstractLayerOperatorTest

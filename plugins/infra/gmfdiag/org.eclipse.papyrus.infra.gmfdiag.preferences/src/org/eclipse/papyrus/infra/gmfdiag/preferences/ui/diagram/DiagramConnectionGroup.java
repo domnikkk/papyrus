@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,17 +20,17 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * this clas is a specialiezation of the connection for the diagram level
- * 
+ *
  */
 public class DiagramConnectionGroup extends ConnectionGroup {
 
 	/**
 	 * constructor
-	 * 
+	 *
 	 * @param parent
-	 *        the composite parent
+	 *            the composite parent
 	 * @param key
-	 *        the preference key the kind of diagram
+	 *            the preference key the kind of diagram
 	 * @param dialogPage
 	 */
 	public DiagramConnectionGroup(Composite parent, String key, DialogPage dialogPage) {
@@ -38,6 +38,7 @@ public class DiagramConnectionGroup extends ConnectionGroup {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
 	protected String getPreferenceConstant(int preferenceType) {
 		return PreferencesConstantsHelper.getDiagramConstant(getKey(), preferenceType);
 	}

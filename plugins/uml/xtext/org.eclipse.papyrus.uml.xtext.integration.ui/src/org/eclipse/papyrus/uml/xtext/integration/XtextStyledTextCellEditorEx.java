@@ -6,22 +6,21 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    IBM Corporation - initial API and implementation 
+ *    IBM Corporation - initial API and implementation
  ****************************************************************************/
 
 package org.eclipse.papyrus.uml.xtext.integration;
 
-import org.eclipse.papyrus.uml.xtext.integration.core.IXtextFakeContextResourcesProvider;
 import org.eclipse.papyrus.uml.xtext.integration.core.ContextElementAdapter.IContextElementProvider;
+import org.eclipse.papyrus.uml.xtext.integration.core.IXtextFakeContextResourcesProvider;
 
 import com.google.inject.Injector;
 
 /**
- * This is a copy of TextCellEditorEx, only the super class has been changed to
- * {@link XtextStyledTextCellEditor}
- * 
+ * This is a copy of TextCellEditorEx, only the super class has been changed to {@link XtextStyledTextCellEditor}
+ *
  * @author andreas muelder
- * 
+ *
  */
 public class XtextStyledTextCellEditorEx extends XtextStyledTextCellEditor {
 
@@ -36,7 +35,7 @@ public class XtextStyledTextCellEditorEx extends XtextStyledTextCellEditor {
 	public XtextStyledTextCellEditorEx(int style, Injector injector) {
 		super(style, injector);
 	}
-	
+
 	public XtextStyledTextCellEditorEx(int style, Injector injector,
 			IContextElementProvider provider) {
 		super(style, injector, provider);
@@ -47,10 +46,10 @@ public class XtextStyledTextCellEditorEx extends XtextStyledTextCellEditor {
 	 * been send. Will call #setValue(Object) but will also call
 	 * editOccured(null) to make sure that the dirty flag is set probably and
 	 * that any listeners are informed about the changed.
-	 * 
+	 *
 	 * @param value
 	 *            Value to set the cell editor to.
-	 * 
+	 *
 	 *            Note: This happens address defect RATLC00522324. For our
 	 *            topgraphical edit parts we delagate the direct edit request to
 	 *            a primary edit part and set focus on that. The issue is that
@@ -74,13 +73,14 @@ public class XtextStyledTextCellEditorEx extends XtextStyledTextCellEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.CellEditor#doSetValue(java.lang.Object)
 	 */
 	@Override
 	protected void doSetValue(Object value) {
-		if (originalValue == null)
+		if (originalValue == null) {
 			originalValue = value;
+		}
 		super.doSetValue(value);
 	}
 
@@ -89,27 +89,29 @@ public class XtextStyledTextCellEditorEx extends XtextStyledTextCellEditor {
 	 *         changed
 	 */
 	public boolean hasValueChanged() {
-		if (getValue() == null)
+		if (getValue() == null) {
 			return originalValue != null;
+		}
 		return !getValue().equals(originalValue);
 	}
 
 	/*
 	 * Runs super deactivate unless it has been locked and otherwise unlocks
 	 * deactivation
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.CellEditor#deactivate()
 	 */
 	@Override
 	public void deactivate() {
-		if (!isDeactivationLocked())
+		if (!isDeactivationLocked()) {
 			super.deactivate();
+		}
 		setDeactivationLock(false);
 	}
 
 	/**
 	 * Returns true if deactivation has been locked
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isDeactivationLocked() {
@@ -119,7 +121,7 @@ public class XtextStyledTextCellEditorEx extends XtextStyledTextCellEditor {
 	/**
 	 * Sets deactivation lock so that the cell editor does not perform
 	 * deactivate
-	 * 
+	 *
 	 * @param deactivationLock
 	 */
 	public void setDeactivationLock(boolean deactivationLock) {

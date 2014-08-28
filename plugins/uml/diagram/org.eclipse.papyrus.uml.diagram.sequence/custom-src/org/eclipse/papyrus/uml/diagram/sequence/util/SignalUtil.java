@@ -21,65 +21,65 @@ public class SignalUtil {
 		StringBuffer buffer = new StringBuffer();
 		// visibility
 		buffer.append(" ");
-		if(displayValue.contains(ICustomAppearance.DISP_VISIBILITY)) {
+		if (displayValue.contains(ICustomAppearance.DISP_VISIBILITY)) {
 			buffer.append(NamedElementUtil.getVisibilityAsSign(property));
 		}
 		// derived property
-		if(displayValue.contains(ICustomAppearance.DISP_DERIVE)) {
-			if(property.isDerived()) {
+		if (displayValue.contains(ICustomAppearance.DISP_DERIVE)) {
+			if (property.isDerived()) {
 				buffer.append("/");
 			}
 		}
 		boolean showEqualMark = false;
 		// name
-		if(displayValue.contains(ICustomAppearance.DISP_PARAMETER_NAME)) {
+		if (displayValue.contains(ICustomAppearance.DISP_PARAMETER_NAME)) {
 			buffer.append(" ");
 			String name = StringHelper.trimToEmpty(property.getName());
-			if(name.trim().length() > 0) {
+			if (name.trim().length() > 0) {
 				showEqualMark = true;
 			}
 			buffer.append(name);
 		}
-		if(displayValue.contains(ICustomAppearance.DISP_PARAMETER_TYPE)) {
+		if (displayValue.contains(ICustomAppearance.DISP_PARAMETER_TYPE)) {
 			// type
-			if(property.getType() != null) {
+			if (property.getType() != null) {
 				buffer.append(": " + StringHelper.trimToEmpty(property.getType().getName()));
 			} else {
 				buffer.append(": " + TypeUtil.UNDEFINED_TYPE_NAME);
 			}
 			showEqualMark = true;
 		}
-		if(displayValue.contains(ICustomAppearance.DISP_MULTIPLICITY)) {
+		if (displayValue.contains(ICustomAppearance.DISP_MULTIPLICITY)) {
 			// multiplicity -> do not display [1]
 			String multiplicity = MultiplicityElementUtil.getMultiplicityAsString(property);
 			buffer.append(multiplicity);
 		}
-		if(displayValue.contains(ICustomAppearance.DISP_DERIVE)) {
+		if (displayValue.contains(ICustomAppearance.DISP_DERIVE)) {
 			String value = getValue(e, property);
-			if(value != null) {
-				if(showEqualMark) {
+			if (value != null) {
+				if (showEqualMark) {
 					buffer.append(" = ");
 				}
 				buffer.append(value);
 			}
-		} else if(displayValue.contains(ICustomAppearance.DISP_PARAMETER_DEFAULT)) {
+		} else if (displayValue.contains(ICustomAppearance.DISP_PARAMETER_DEFAULT)) {
 			// default value
-			if(property.getDefault() != null) {
-				if(showEqualMark) {
+			if (property.getDefault() != null) {
+				if (showEqualMark) {
 					buffer.append(" = ");
 				}
 				buffer.append(property.getDefault());
 			}
 		}
-		if(displayValue.contains(ICustomAppearance.DISP_MODIFIERS)) {
+		if (displayValue.contains(ICustomAppearance.DISP_MODIFIERS)) {
 			boolean multiLine = displayValue.contains(ICustomAppearance.DISP_MULTI_LINE);
 			// property modifiers
 			String modifiers = PropertyUtil.getModifiersAsString(property, multiLine);
-			if(!modifiers.equals("")) {
-				if(multiLine) {
+			if (!modifiers.equals("")) {
+				if (multiLine) {
 					buffer.append("\n");
 				}
-				if(!buffer.toString().endsWith(" ")) {
+				if (!buffer.toString().endsWith(" ")) {
 					buffer.append(" ");
 				}
 				buffer.append(modifiers);
@@ -90,10 +90,10 @@ public class SignalUtil {
 
 	private static String getValue(Message e, Property property) {
 		try {
-			Signal signal = (Signal)property.getOwner();
+			Signal signal = (Signal) property.getOwner();
 			int index = signal.getOwnedAttributes().indexOf(property);
 			EList<ValueSpecification> arguments = e.getArguments();
-			if(arguments.size() > index) {
+			if (arguments.size() > index) {
 				return ValueSpecificationUtil.getSpecificationValue(arguments.get(index));
 			}
 		} catch (Exception e1) {
@@ -107,7 +107,7 @@ public class SignalUtil {
 	 * @param message
 	 *
 	 * @param style
-	 *        the integer representing the style of the label
+	 *            the integer representing the style of the label
 	 *
 	 * @return the string corresponding to the label of the signal
 	 */
@@ -115,11 +115,11 @@ public class SignalUtil {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append(" "); // adds " " first for correct display considerations
 		// visibility
-		if(displayValue.contains(ICustomAppearance.DISP_VISIBILITY)) {
+		if (displayValue.contains(ICustomAppearance.DISP_VISIBILITY)) {
 			buffer.append(NamedElementUtil.getVisibilityAsSign(signal));
 		}
 		// name
-		if(displayValue.contains(ICustomAppearance.DISP_NAME)) {
+		if (displayValue.contains(ICustomAppearance.DISP_NAME)) {
 			buffer.append(" ");
 			buffer.append(StringHelper.trimToEmpty(signal.getName()));
 		}
@@ -139,11 +139,11 @@ public class SignalUtil {
 	private static String getPropertiesAsString(Message e, Signal signal, Collection<String> displayValue) {
 		StringBuffer propertiesString = new StringBuffer();
 		boolean firstProperty = true;
-		for(Property property : signal.getOwnedAttributes()) {
+		for (Property property : signal.getOwnedAttributes()) {
 			// get the label for this property
 			String propertyString = getCustomPropertyLabel(e, property, displayValue).trim();
-			if(!propertyString.equals("")) {
-				if(!firstProperty) {
+			if (!propertyString.equals("")) {
+				if (!firstProperty) {
 					propertiesString.append(", ");
 				}
 				propertiesString.append(propertyString);

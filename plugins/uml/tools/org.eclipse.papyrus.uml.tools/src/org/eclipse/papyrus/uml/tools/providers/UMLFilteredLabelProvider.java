@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,23 +23,23 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 /**
  * The Modisco customizable label provider doesn't handle standard EObjects,
  * while standard EMF label providers don't handle MoDisco elements.
- * 
+ *
  * This label provider aggregates both a MoDisco label provider and an
  * EMF Label Provider.
- * 
+ *
  * @author Camille Letavernier
  */
 public class UMLFilteredLabelProvider extends UMLLabelProvider implements IFilteredLabelProvider {
 
 	public boolean accept(IStructuredSelection selection) {
-		if(selection.isEmpty()) {
+		if (selection.isEmpty()) {
 			return false;
 		}
 
 		Iterator<?> iterator = selection.iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Object element = iterator.next();
-			if(!accept(element)) {
+			if (!accept(element)) {
 				return false;
 			}
 		}
@@ -48,23 +48,23 @@ public class UMLFilteredLabelProvider extends UMLLabelProvider implements IFilte
 	}
 
 	public boolean accept(Object element) {
-		if(element instanceof IStructuredSelection) {
-			return accept((IStructuredSelection)element);
+		if (element instanceof IStructuredSelection) {
+			return accept((IStructuredSelection) element);
 		}
 
-		//The element is a UML Element or can be adapted to an EObject
+		// The element is a UML Element or can be adapted to an EObject
 		EObject eObject = EMFHelper.getEObject(element);
-		if(eObject == null) {
+		if (eObject == null) {
 			return false;
 		}
 
-		//UML Elements
-		if(eObject instanceof Element) {
+		// UML Elements
+		if (eObject instanceof Element) {
 			return true;
 		}
 
-		//Stereotype applications
-		if(UMLUtil.getBaseElement(eObject) != null) {
+		// Stereotype applications
+		if (UMLUtil.getBaseElement(eObject) != null) {
 			return true;
 		}
 

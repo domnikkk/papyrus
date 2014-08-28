@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.tests;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
@@ -16,9 +15,10 @@ import org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator#getComputePropertyValueCommand(org.eclipse.emf.common.util.EList) <em>Get Compute Property Value Command</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator#getComputePropertyValueCommand(org.eclipse.emf.common.util.EList) <em>Get Compute Property Value Command</em>}</li>
  * </ul>
  * </p>
+ *
  * @generated
  */
 public class PropertyOperatorTest extends TestCase {
@@ -27,6 +27,7 @@ public class PropertyOperatorTest extends TestCase {
 	 * The fixture for this Property Operator test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PropertyOperator fixture = null;
@@ -34,6 +35,7 @@ public class PropertyOperatorTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -44,6 +46,7 @@ public class PropertyOperatorTest extends TestCase {
 	 * Constructs a new Property Operator test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PropertyOperatorTest(String name) {
@@ -54,6 +57,7 @@ public class PropertyOperatorTest extends TestCase {
 	 * Sets the fixture for this Property Operator test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void setFixture(PropertyOperator fixture) {
@@ -64,6 +68,7 @@ public class PropertyOperatorTest extends TestCase {
 	 * Returns the fixture for this Property Operator test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PropertyOperator getFixture() {
@@ -73,6 +78,7 @@ public class PropertyOperatorTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -84,6 +90,7 @@ public class PropertyOperatorTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -96,6 +103,7 @@ public class PropertyOperatorTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator#getComputePropertyValueCommand(org.eclipse.emf.common.util.EList) <em>Get Compute Property Value Command</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator#getComputePropertyValueCommand(org.eclipse.emf.common.util.EList)
 	 * @generated
 	 */
@@ -105,4 +113,4 @@ public class PropertyOperatorTest extends TestCase {
 		fail();
 	}
 
-} //PropertyOperatorTest
+} // PropertyOperatorTest

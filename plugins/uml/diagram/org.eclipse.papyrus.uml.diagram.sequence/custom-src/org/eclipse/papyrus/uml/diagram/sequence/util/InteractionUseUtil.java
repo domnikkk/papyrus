@@ -15,10 +15,10 @@ public class InteractionUseUtil {
 	public static Diagram findDiagram(View view, Interaction refInteraction) {
 		Diagram diagram = view.getDiagram();
 		EList<EObject> list = diagram.eResource().getContents();
-		for(EObject o : list) {
-			if(o instanceof Diagram) {
-				Diagram ref = (Diagram)o;
-				if(refInteraction.equals(ref.getElement())) {
+		for (EObject o : list) {
+			if (o instanceof Diagram) {
+				Diagram ref = (Diagram) o;
+				if (refInteraction.equals(ref.getElement())) {
 					return ref;
 				}
 			}
@@ -35,12 +35,12 @@ public class InteractionUseUtil {
 		} catch (Exception e) {
 			return;
 		}
-		if(pageManager != null) {
-			if(pageManager.allPages().contains(diagram)) {
+		if (pageManager != null) {
+			if (pageManager.allPages().contains(diagram)) {
 				/**
 				 * Close the diagram if it was already open
 				 */
-				if(pageManager.isOpen(diagram)) {
+				if (pageManager.isOpen(diagram)) {
 					pageManager.selectPage(diagram);
 				} else {
 					editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain, "Open diagram") {

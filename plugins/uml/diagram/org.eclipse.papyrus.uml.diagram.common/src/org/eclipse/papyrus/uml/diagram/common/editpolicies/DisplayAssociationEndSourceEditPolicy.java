@@ -24,7 +24,7 @@ public class DisplayAssociationEndSourceEditPolicy extends DisplayAssociationEnd
 	public void addAdditionalListeners() {
 		super.addAdditionalListeners();
 		// adds a listener to the element itself, and to linked elements, like Type
-		if(getView().eContainer() != null) {
+		if (getView().eContainer() != null) {
 			getDiagramEventBroker().addNotificationListener(getView().eContainer(), this);
 		}
 	}

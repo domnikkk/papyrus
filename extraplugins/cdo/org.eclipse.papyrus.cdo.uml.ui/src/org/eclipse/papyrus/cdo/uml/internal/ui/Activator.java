@@ -14,7 +14,7 @@ public class Activator extends AbstractUIPlugin {
 
 	// The shared instance
 	private static Activator plugin;
-	
+
 	/** Logging helper */
 	public static LogHelper log = new LogHelper();
 
@@ -25,14 +25,16 @@ public class Activator extends AbstractUIPlugin {
 		super();
 	}
 
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
-		
+
 		// register the log helper
 		log.setPlugin(plugin);
 	}
 
+	@Override
 	public void stop(BundleContext context) throws Exception {
 		log = null;
 		plugin = null;

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin Integration.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,15 +16,15 @@ import org.eclipse.core.resources.IResource;
 
 /**
  * Factory able to create instances of model interfaces
- * 
+ *
  * @author tristan.faure@atosorigin.com
- * 
+ *
  */
 public interface IPapyrusModelFactory {
 
 	/**
 	 * Create an instance of {@link IPapyrusFile} with the given file
-	 * 
+	 *
 	 * @param file
 	 * @return
 	 */
@@ -33,7 +33,7 @@ public interface IPapyrusModelFactory {
 	/**
 	 * Create an instanceof {@link IPapyrusFile} with the given file and the
 	 * given {@link IPapyrusFile}
-	 * 
+	 *
 	 * @param papy
 	 * @param r
 	 * @return
@@ -42,7 +42,7 @@ public interface IPapyrusModelFactory {
 
 	/**
 	 * Determines if the file in parameter is a di
-	 * 
+	 *
 	 * @param file
 	 * @return
 	 */

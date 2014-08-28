@@ -22,7 +22,6 @@ import org.eclipse.papyrus.uml.extensionpoints.Activator;
 import org.eclipse.papyrus.uml.extensionpoints.Registry;
 import org.eclipse.papyrus.uml.extensionpoints.standard.ExtensionIds;
 import org.eclipse.papyrus.uml.extensionpoints.standard.RegisteredElementExtensionPoint;
-import org.eclipse.swt.graphics.Image;
 
 /**
  * Class that manages registered profile extension point
@@ -37,7 +36,7 @@ public class RegisteredProfile extends RegisteredElementExtensionPoint implement
 
 	/**
 	 * Creates a new RegisteredProfile.
-	 * 
+	 *
 	 * @param configElt
 	 * @param ordinal
 	 */
@@ -49,16 +48,16 @@ public class RegisteredProfile extends RegisteredElementExtensionPoint implement
 	public URI getUri() {
 		return super.uri;
 	}
-	
+
 	public String getPath() {
 		return super.path;
 	}
-	
+
 	public String getQualifiedNames() {
-		//?should this field really be defined on the superclass? is it not specific to profiles?
+		// ?should this field really be defined on the superclass? is it not specific to profiles?
 		return super.qualifiednames;
 	}
-	
+
 	// /**
 	// * Creates a new RegisteredProfile.
 	// * @param name the name displayed to users
@@ -81,7 +80,7 @@ public class RegisteredProfile extends RegisteredElementExtensionPoint implement
 	// String description, String provider) {
 	// configElement = null;
 	// ordinal = -1;
-	//		
+	//
 	// name = _name;
 	// path = "undefined";
 	// qualifiednames = qualifiedNamesList;
@@ -89,16 +88,16 @@ public class RegisteredProfile extends RegisteredElementExtensionPoint implement
 	// this.iconPath = iconPath;
 	// this.description = description;
 	// this.provider = provider;
-	//		
+	//
 	// uri = _uri;
 	// }
 
 	/**
 	 * Returns a registered profile using its name. If several profiles are found, the first found
 	 * is returned
-	 * 
+	 *
 	 * @param name
-	 *        the name of the profile to find
+	 *            the name of the profile to find
 	 * @return the RegistredProfile with given name or <code>null</code> if no profile was found.
 	 */
 	public static IRegisteredProfile getRegisteredProfile(String name) {
@@ -108,25 +107,25 @@ public class RegisteredProfile extends RegisteredElementExtensionPoint implement
 	/**
 	 * Returns a registered profile using its name and a given path. If several profiles are found,
 	 * the first found is returned.
-	 * 
+	 *
 	 * @param name
-	 *        the name of the profile to find
+	 *            the name of the profile to find
 	 * @param path
-	 *        the path of the profile file
+	 *            the path of the profile file
 	 * @return the RegistredProfile with given name or <code>null</code> if no profile was found.
 	 */
 	public static IRegisteredProfile getRegisteredProfile(String name, String path) {
 		Assert.isNotNull(name);
 		IRegisteredProfile[] profiles = Registry.getRegisteredProfiles().toArray(new IRegisteredProfile[0]);
-		for(int i = 0; i < profiles.length; i++) {
+		for (int i = 0; i < profiles.length; i++) {
 			IRegisteredProfile profile = profiles[i];
 
 			// name corresponds. is path equal?
-			if(name.equals(profile.getName())) {
+			if (name.equals(profile.getName())) {
 				// no path indicated => first name that corresponds => profile returned
-				if(path == null) {
+				if (path == null) {
 					return profile;
-				} else if(path.equals(profile.getPath())) {
+				} else if (path.equals(profile.getPath())) {
 					return profile;
 				}
 			}
@@ -136,7 +135,7 @@ public class RegisteredProfile extends RegisteredElementExtensionPoint implement
 
 	/**
 	 * Returns the list of registred profiles in the platform, using the papyrus extension point.
-	 * 
+	 *
 	 * @return the list of registred profiles in the platform
 	 */
 	public static List<IRegisteredProfile> getRegisteredProfiles() {
@@ -159,10 +158,10 @@ public class RegisteredProfile extends RegisteredElementExtensionPoint implement
 				ExtensionIds.PROFILE_EXTENSION_ID);
 
 		// Read configuration elements for the current extension
-		for(int j = 0; j < configElements.length; j++) {
+		for (int j = 0; j < configElements.length; j++) {
 			IRegisteredProfile proxy = parseProfileExtension(configElements[j], profiles.size());
 
-			if(proxy != null) {
+			if (proxy != null) {
 				profiles.add(proxy);
 			}
 		} // end of configElements loop
@@ -172,22 +171,22 @@ public class RegisteredProfile extends RegisteredElementExtensionPoint implement
 
 	/**
 	 * Retrieve all information from the configuration element
-	 * 
+	 *
 	 * @param ordinal
-	 *        index in the set of registered profiles
+	 *            index in the set of registered profiles
 	 * @param configElt
-	 *        the configuration element from which to retrieve the registered profile
+	 *            the configuration element from which to retrieve the registered profile
 	 * @return the registered profile
 	 */
 	private static IRegisteredProfile parseProfileExtension(IConfigurationElement configElt, int ordinal) {
-		if(!TAG_PROFILE.equals(configElt.getName())) {
+		if (!TAG_PROFILE.equals(configElt.getName())) {
 			return null;
 		}
 		try {
 			return new RegisteredProfile(configElt, ordinal);
 		} catch (Exception e) {
 			String name = configElt.getAttribute(ExtensionIds.ATT_NAME);
-			if(name == null) {
+			if (name == null) {
 				name = "[missing name attribute]";
 			}
 			String msg = "Failed to load profile named " + name + " in "

@@ -3,9 +3,7 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotML.Arm;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -22,6 +20,7 @@ public class ArmImpl extends MinimalEObjectImpl.Container implements Arm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ArmImpl() {
@@ -31,6 +30,7 @@ public class ArmImpl extends MinimalEObjectImpl.Container implements Arm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -38,4 +38,4 @@ public class ArmImpl extends MinimalEObjectImpl.Container implements Arm {
 		return RobotMLPackage.Literals.ARM;
 	}
 
-} //ArmImpl
+} // ArmImpl

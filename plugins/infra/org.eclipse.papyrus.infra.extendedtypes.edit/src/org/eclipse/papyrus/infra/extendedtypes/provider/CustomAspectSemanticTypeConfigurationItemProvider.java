@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,17 +24,16 @@ import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
 import org.eclipse.papyrus.infra.extendedtypes.IActionConfigurationModelCreation;
 import org.eclipse.papyrus.infra.extendedtypes.IAspectTypeExtensionPoint;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration;
-import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationPackage;
 import org.osgi.framework.Bundle;
 
 /**
- *  Specific Item provider for {@link InvariantSemanticTypeConfiguration} to add new childs given by extension points
- * 
+ * Specific Item provider for {@link InvariantSemanticTypeConfiguration} to add new childs given by extension points
+ *
  */
 public class CustomAspectSemanticTypeConfigurationItemProvider extends AspectSemanticTypeConfigurationItemProvider {
 
 	protected Map<String, IActionConfigurationModelCreation<ActionConfiguration>> configurationToFactory = new HashMap<String, IActionConfigurationModelCreation<ActionConfiguration>>();
-	
+
 	public CustomAspectSemanticTypeConfigurationItemProvider(
 			AdapterFactory adapterFactory) {
 		super(adapterFactory);
@@ -46,7 +45,7 @@ public class CustomAspectSemanticTypeConfigurationItemProvider extends AspectSem
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		addFromExtensionPoints(newChildDescriptors, object);
-		
+
 	}
 
 	/**
@@ -55,23 +54,23 @@ public class CustomAspectSemanticTypeConfigurationItemProvider extends AspectSem
 	 */
 	protected void addFromExtensionPoints(Collection<Object> newChildDescriptors, Object object) {
 		IConfigurationElement[] elements = Platform.getExtensionRegistry().getConfigurationElementsFor(IAspectTypeExtensionPoint.EXTENSION_POINT_ID);
-		// for each element, parses and retrieve the model file. then loads it and returns the root element 
-		for(IConfigurationElement configurationElement : elements) {
-			// contributor will always be the same, but implementation could be different.  
-			
+		// for each element, parses and retrieve the model file. then loads it and returns the root element
+		for (IConfigurationElement configurationElement : elements) {
+			// contributor will always be the same, but implementation could be different.
+
 
 			String configurationModelCreationClassName = configurationElement.getAttribute(IAspectTypeExtensionPoint.CONFIGURATION_MODEL_CREATION);
-			if(configurationModelCreationClassName !=null) {
+			if (configurationModelCreationClassName != null) {
 				String contributorName = configurationElement.getContributor().getName();
 				IActionConfigurationModelCreation<ActionConfiguration> configurationModelCreation = configurationToFactory.get(configurationModelCreationClassName);
-				if(configurationModelCreation == null) {
+				if (configurationModelCreation == null) {
 					Class<IActionConfigurationModelCreation<ActionConfiguration>> configurationClass = null;
 					try {
 						configurationClass = loadAspectActionConfigurationModelCreationClass(configurationModelCreationClassName, contributorName);
 					} catch (ClassNotFoundException e1) {
 						Activator.log.error(e1);
 					}
-					if(configurationClass != null) {
+					if (configurationClass != null) {
 						// instantiate class
 						try {
 							configurationModelCreation = configurationClass.newInstance();
@@ -83,33 +82,33 @@ public class CustomAspectSemanticTypeConfigurationItemProvider extends AspectSem
 						}
 					}
 				}
-				
-				if(configurationModelCreation !=null) {
+
+				if (configurationModelCreation != null) {
 					newChildDescriptors.add(createChildParameter(
-						ExtendedtypesPackage.eINSTANCE.getAspectSemanticTypeConfiguration_ActionConfiguration(),
-						configurationModelCreation.createConfigurationModel()));
-	
+							ExtendedtypesPackage.eINSTANCE.getAspectSemanticTypeConfiguration_ActionConfiguration(),
+							configurationModelCreation.createConfigurationModel()));
+
 				}
 			}
 		}
 	}
 
-	
+
 	@SuppressWarnings("unchecked")
 	protected Class<IActionConfigurationModelCreation<ActionConfiguration>> loadAspectActionConfigurationModelCreationClass(String className, String bundleId) throws ClassNotFoundException {
 		Class<IActionConfigurationModelCreation<ActionConfiguration>> found = null;
 		Bundle bundle = basicGetBundle(bundleId);
-		if (bundle!=null){
-            int state = bundle.getState();
-            if ( state == org.osgi.framework.Bundle.ACTIVE || state == org.osgi.framework.Bundle.STARTING ){
-            	found = (Class<IActionConfigurationModelCreation<ActionConfiguration>>)bundle.loadClass(className);
-            	return found;
-            }
+		if (bundle != null) {
+			int state = bundle.getState();
+			if (state == org.osgi.framework.Bundle.ACTIVE || state == org.osgi.framework.Bundle.STARTING) {
+				found = (Class<IActionConfigurationModelCreation<ActionConfiguration>>) bundle.loadClass(className);
+				return found;
+			}
 		}
 		return null;
 	}
-	
-	 private static Bundle basicGetBundle(String bundleId) {
-	        return Platform.getBundle(bundleId);   
-	    }
+
+	private static Bundle basicGetBundle(String bundleId) {
+		return Platform.getBundle(bundleId);
+	}
 }

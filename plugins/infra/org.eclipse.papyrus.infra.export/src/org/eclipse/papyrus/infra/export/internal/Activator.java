@@ -62,7 +62,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -71,12 +71,12 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the active workbench shell
-	 * 
+	 *
 	 * @return the active workbench shell
 	 */
 	public static Shell getActiveWorkbenchShell() {
 		IWorkbenchWindow workBenchWindow = getActiveWorkbenchWindow();
-		if(workBenchWindow == null) {
+		if (workBenchWindow == null) {
 			return null;
 		}
 		return workBenchWindow.getShell();
@@ -84,12 +84,12 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the active workbench page or <code>null</code> if none.
-	 * 
+	 *
 	 * @return the active workbench page
 	 */
 	public static IWorkbenchPage getActivePage() {
 		IWorkbenchWindow window = getActiveWorkbenchWindow();
-		if(window != null) {
+		if (window != null) {
 			return window.getActivePage();
 		}
 		return null;
@@ -97,15 +97,15 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the active workbench window
-	 * 
+	 *
 	 * @return the active workbench window
 	 */
 	public static IWorkbenchWindow getActiveWorkbenchWindow() {
-		if(getDefault() == null) {
+		if (getDefault() == null) {
 			return null;
 		}
 		IWorkbench workBench = getDefault().getWorkbench();
-		if(workBench == null) {
+		if (workBench == null) {
 			return null;
 		}
 		return workBench.getActiveWorkbenchWindow();
@@ -113,32 +113,35 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Display a dialog box with the specified level
-	 * 
+	 *
 	 * @param title
-	 *        title dialog box
+	 *            title dialog box
 	 * @param message
-	 *        message displayed
+	 *            message displayed
 	 * @param level
-	 *        message level
+	 *            message level
 	 */
 	public static void displayDialog(final String title, final String message, final int level) {
-		if(level == IStatus.INFO) {
+		if (level == IStatus.INFO) {
 			Display.getDefault().asyncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					MessageDialog.openInformation(getActiveWorkbenchShell(), (title == null) ? "Information" : title, (message == null) ? "" : message);
 				}
 			});
-		} else if(level == IStatus.WARNING) {
+		} else if (level == IStatus.WARNING) {
 			Display.getDefault().asyncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					MessageDialog.openWarning(getActiveWorkbenchShell(), (title == null) ? "Warning" : title, (message == null) ? "" : message);
 				}
 			});
-		} else if(level == IStatus.ERROR) {
+		} else if (level == IStatus.ERROR) {
 			Display.getDefault().asyncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					MessageDialog.openError(getActiveWorkbenchShell(), (title == null) ? "Error" : title, (message == null) ? "" : message);
 				}

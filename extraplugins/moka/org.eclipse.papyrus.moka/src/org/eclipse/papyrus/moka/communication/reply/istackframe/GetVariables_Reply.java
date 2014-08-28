@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ public class GetVariables_Reply extends ReplyMessage {
 
 	/**
 	 * Constructs a reply message from an array of Variables
-	 * 
+	 *
 	 * @param variables
-	 *        The variables associated with this reply message
+	 *            The variables associated with this reply message
 	 */
 	public GetVariables_Reply(MokaVariable[] variables) {
 		super();
@@ -42,7 +42,7 @@ public class GetVariables_Reply extends ReplyMessage {
 
 	/**
 	 * Returns the variables associated with this reply message
-	 * 
+	 *
 	 * @return The variables associated with this reply message
 	 */
 	public MokaVariable[] getVariables() {
@@ -51,9 +51,10 @@ public class GetVariables_Reply extends ReplyMessage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.communication.reply.ReplyMessage#marshal()
 	 */
+	@Override
 	public String marshal() {
 		return Marshaller.getInstance().getVariables_reply_marshal(this);
 	}

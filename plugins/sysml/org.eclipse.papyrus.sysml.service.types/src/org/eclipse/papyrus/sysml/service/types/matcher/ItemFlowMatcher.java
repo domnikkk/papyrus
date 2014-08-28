@@ -23,10 +23,10 @@ public class ItemFlowMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if(eObject instanceof InformationFlow) {
+		if (eObject instanceof InformationFlow) {
 
-			InformationFlow element = (InformationFlow)eObject;
-			if(UMLUtil.getStereotypeApplication(element, ItemFlow.class) != null) {
+			InformationFlow element = (InformationFlow) eObject;
+			if (UMLUtil.getStereotypeApplication(element, ItemFlow.class) != null) {
 				isMatch = true;
 			}
 		}

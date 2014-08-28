@@ -1,6 +1,6 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
- * 
+ * Copyright (c) 2011, 2014 CEA LIST and others.
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
@@ -36,16 +38,16 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * A ModelElement for handling stereotypes applied on a UML Element,
  * and profiles on a UML Package
- * 
+ *
  * @author Camille Letavernier
  */
 public class StereotypeApplicationModelElement extends EMFModelElement {
 
-	private Element umlSource;
+	protected Element umlSource;
 
-	private EditingDomain domain;
+	protected EditingDomain domain;
 
-	private EditPart sourceElement;
+	protected EditPart sourceElement;
 
 	/**
 	 * The "stereotypeApplication" pseudo-property for a UML Element
@@ -53,13 +55,13 @@ public class StereotypeApplicationModelElement extends EMFModelElement {
 	public static final String STEREOTYPE_APPLICATION = "stereotypeApplication"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param editPart
-	 *        The selected GMF Edit Part, associated to a UML Element
+	 *            The selected GMF Edit Part, associated to a UML Element
 	 * @param domain
-	 *        The EditingDomain on which the commands will be executed
+	 *            The EditingDomain on which the commands will be executed
 	 */
 	public StereotypeApplicationModelElement(EditPart editPart, EditingDomain domain) {
 		this(UMLUtil.resolveUMLElement(editPart), domain);
@@ -67,13 +69,13 @@ public class StereotypeApplicationModelElement extends EMFModelElement {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param umlSource
-	 *        The UML Element on which the stereotypes or profiles will be applied on unapplied
+	 *            The UML Element on which the stereotypes or profiles will be applied on unapplied
 	 * @param domain
-	 *        The EditingDomain on which the commands will be executed
+	 *            The EditingDomain on which the commands will be executed
 	 */
 	public StereotypeApplicationModelElement(Element umlSource, EditingDomain domain) {
 		super(umlSource, domain);
@@ -87,10 +89,10 @@ public class StereotypeApplicationModelElement extends EMFModelElement {
 	@Override
 	public IObservable doGetObservable(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(propertyPath.equals(STEREOTYPE_APPLICATION)) {
+		if (propertyPath.equals(STEREOTYPE_APPLICATION)) {
 			return new StereotypeApplicationObservableList(umlSource, domain);
-		} else if(feature == UMLPackage.eINSTANCE.getPackage_ProfileApplication()) {
-			return new ProfileApplicationObservableList((Package)umlSource, domain);
+		} else if (feature == UMLPackage.eINSTANCE.getPackage_ProfileApplication()) {
+			return new ProfileApplicationObservableList((Package) umlSource, domain);
 		}
 
 		return null;
@@ -102,8 +104,8 @@ public class StereotypeApplicationModelElement extends EMFModelElement {
 	@Override
 	public ILabelProvider getLabelProvider(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature == UMLPackage.eINSTANCE.getPackage_ProfileApplication() && umlSource instanceof Package) {
-			return new ProfileLabelProvider((Package)umlSource);
+		if (feature == UMLPackage.eINSTANCE.getPackage_ProfileApplication() && umlSource instanceof Package) {
+			return new ProfileLabelProvider((Package) umlSource);
 		}
 		try {
 			return ServiceUtilsForResource.getInstance().getServiceRegistry(umlSource.eResource()).getService(LabelProviderService.class).getLabelProvider();
@@ -142,11 +144,11 @@ public class StereotypeApplicationModelElement extends EMFModelElement {
 	 *         null if the element hasn't been selected with an EditPart
 	 */
 	public EModelElement getGraphicalElement() {
-		if(sourceElement == null) {
+		if (sourceElement == null) {
 			return null;
 		}
 
-		return (EModelElement)sourceElement.getModel();
+		return (EModelElement) sourceElement.getModel();
 	}
 
 	/**

@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.Expression;
 import org.eclipse.papyrus.uml.alf.alf.NonLiteralValueSpecification;
@@ -106,7 +103,11 @@ public class ParenthesizedExpressionImpl extends ValueSpecificationImpl implemen
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.PARENTHESIZED_EXPRESSION__EXP_OR_TYPE_CAST, oldExpOrTypeCast, newExpOrTypeCast);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -121,15 +122,20 @@ public class ParenthesizedExpressionImpl extends ValueSpecificationImpl implemen
     if (newExpOrTypeCast != expOrTypeCast)
     {
       NotificationChain msgs = null;
-      if (expOrTypeCast != null)
-        msgs = ((InternalEObject)expOrTypeCast).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PARENTHESIZED_EXPRESSION__EXP_OR_TYPE_CAST, null, msgs);
-      if (newExpOrTypeCast != null)
-        msgs = ((InternalEObject)newExpOrTypeCast).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PARENTHESIZED_EXPRESSION__EXP_OR_TYPE_CAST, null, msgs);
+      if (expOrTypeCast != null) {
+		msgs = ((InternalEObject)expOrTypeCast).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PARENTHESIZED_EXPRESSION__EXP_OR_TYPE_CAST, null, msgs);
+	}
+      if (newExpOrTypeCast != null) {
+		msgs = ((InternalEObject)newExpOrTypeCast).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PARENTHESIZED_EXPRESSION__EXP_OR_TYPE_CAST, null, msgs);
+	}
       msgs = basicSetExpOrTypeCast(newExpOrTypeCast, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.PARENTHESIZED_EXPRESSION__EXP_OR_TYPE_CAST, newExpOrTypeCast, newExpOrTypeCast));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.PARENTHESIZED_EXPRESSION__EXP_OR_TYPE_CAST, newExpOrTypeCast, newExpOrTypeCast));
+	}
   }
 
   /**
@@ -154,7 +160,11 @@ public class ParenthesizedExpressionImpl extends ValueSpecificationImpl implemen
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.PARENTHESIZED_EXPRESSION__CASTED, oldCasted, newCasted);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -169,15 +179,20 @@ public class ParenthesizedExpressionImpl extends ValueSpecificationImpl implemen
     if (newCasted != casted)
     {
       NotificationChain msgs = null;
-      if (casted != null)
-        msgs = ((InternalEObject)casted).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PARENTHESIZED_EXPRESSION__CASTED, null, msgs);
-      if (newCasted != null)
-        msgs = ((InternalEObject)newCasted).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PARENTHESIZED_EXPRESSION__CASTED, null, msgs);
+      if (casted != null) {
+		msgs = ((InternalEObject)casted).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PARENTHESIZED_EXPRESSION__CASTED, null, msgs);
+	}
+      if (newCasted != null) {
+		msgs = ((InternalEObject)newCasted).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PARENTHESIZED_EXPRESSION__CASTED, null, msgs);
+	}
       msgs = basicSetCasted(newCasted, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.PARENTHESIZED_EXPRESSION__CASTED, newCasted, newCasted));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.PARENTHESIZED_EXPRESSION__CASTED, newCasted, newCasted));
+	}
   }
 
   /**
@@ -202,7 +217,11 @@ public class ParenthesizedExpressionImpl extends ValueSpecificationImpl implemen
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.PARENTHESIZED_EXPRESSION__SUFFIX, oldSuffix, newSuffix);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -217,15 +236,20 @@ public class ParenthesizedExpressionImpl extends ValueSpecificationImpl implemen
     if (newSuffix != suffix)
     {
       NotificationChain msgs = null;
-      if (suffix != null)
-        msgs = ((InternalEObject)suffix).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PARENTHESIZED_EXPRESSION__SUFFIX, null, msgs);
-      if (newSuffix != null)
-        msgs = ((InternalEObject)newSuffix).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PARENTHESIZED_EXPRESSION__SUFFIX, null, msgs);
+      if (suffix != null) {
+		msgs = ((InternalEObject)suffix).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PARENTHESIZED_EXPRESSION__SUFFIX, null, msgs);
+	}
+      if (newSuffix != null) {
+		msgs = ((InternalEObject)newSuffix).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PARENTHESIZED_EXPRESSION__SUFFIX, null, msgs);
+	}
       msgs = basicSetSuffix(newSuffix, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.PARENTHESIZED_EXPRESSION__SUFFIX, newSuffix, newSuffix));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.PARENTHESIZED_EXPRESSION__SUFFIX, newSuffix, newSuffix));
+	}
   }
 
   /**

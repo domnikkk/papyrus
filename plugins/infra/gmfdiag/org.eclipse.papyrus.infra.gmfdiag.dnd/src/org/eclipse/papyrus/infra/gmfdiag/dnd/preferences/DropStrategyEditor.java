@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,7 +44,7 @@ import org.eclipse.swt.widgets.TreeItem;
 
 public class DropStrategyEditor extends MultipleReferenceEditor {
 
-	//	protected Button toggle;
+	// protected Button toggle;
 
 	public static final int ACTIVATION_COLUMN = 0;
 
@@ -77,16 +77,16 @@ public class DropStrategyEditor extends MultipleReferenceEditor {
 
 		treeViewer.refresh();
 
-		//Adds a checkbox for each DropStrategy, to toggle it
+		// Adds a checkbox for each DropStrategy, to toggle it
 		checkboxes = new HashMap<DropStrategy, Button>();
 
-		for(TreeItem item : tree.getItems()) {
-			if(item.getData() instanceof DropStrategy) {
+		for (TreeItem item : tree.getItems()) {
+			if (item.getData() instanceof DropStrategy) {
 				TreeEditor editor = new TreeEditor(tree);
 				final Button button = new Button(tree, SWT.CHECK);
 				final TreeItem currentItem = item;
 
-				final DropStrategy strategy = (DropStrategy)currentItem.getData();
+				final DropStrategy strategy = (DropStrategy) currentItem.getData();
 				button.addSelectionListener(new SelectionListener() {
 
 					public void widgetSelected(SelectionEvent e) {
@@ -95,7 +95,7 @@ public class DropStrategyEditor extends MultipleReferenceEditor {
 					}
 
 					public void widgetDefaultSelected(SelectionEvent e) {
-						//Nothing
+						// Nothing
 					}
 
 				});
@@ -110,22 +110,22 @@ public class DropStrategyEditor extends MultipleReferenceEditor {
 			}
 		}
 
-		//Adds a space-key listener to edit a list of selected checkboxes
+		// Adds a space-key listener to edit a list of selected checkboxes
 		tree.addKeyListener(new KeyListener() {
 
 			public void keyReleased(KeyEvent e) {
-				if(e.keyCode == SWT.SPACE) {
+				if (e.keyCode == SWT.SPACE) {
 					ISelection selection = treeViewer.getSelection();
-					if(selection instanceof IStructuredSelection && !selection.isEmpty()) {
-						IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+					if (selection instanceof IStructuredSelection && !selection.isEmpty()) {
+						IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 
 						Boolean isActive = findIsActive(structuredSelection);
 
 						Iterator<?> iterator = structuredSelection.iterator();
-						while(iterator.hasNext()) {
+						while (iterator.hasNext()) {
 							Object element = iterator.next();
-							if(element instanceof DropStrategy) {
-								DropStrategy strategy = (DropStrategy)element;
+							if (element instanceof DropStrategy) {
+								DropStrategy strategy = (DropStrategy) element;
 								Button button = checkboxes.get(strategy);
 
 								updateStrategy(strategy, button, isActive);
@@ -138,23 +138,23 @@ public class DropStrategyEditor extends MultipleReferenceEditor {
 			}
 
 			public void keyPressed(KeyEvent e) {
-				//Nothing
+				// Nothing
 			}
 		});
 	}
 
-	//Returns the new status of the first DropStrategy in the selection.
-	//Returns null if the selection doesn't contain any DropStrategy
+	// Returns the new status of the first DropStrategy in the selection.
+	// Returns null if the selection doesn't contain any DropStrategy
 	private Boolean findIsActive(IStructuredSelection selection) {
 		Iterator<?> iterator = selection.iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Object element = iterator.next();
-			if(element instanceof DropStrategy) {
-				boolean isActive = DropStrategyManager.instance.isActive((DropStrategy)element); //Current status
-				return !isActive; //New status (Toggle)
+			if (element instanceof DropStrategy) {
+				boolean isActive = DropStrategyManager.instance.isActive((DropStrategy) element); // Current status
+				return !isActive; // New status (Toggle)
 			}
 		}
-		return null; //No DropStrategy found in the selection
+		return null; // No DropStrategy found in the selection
 	}
 
 	private void updateStrategy(DropStrategy strategy, Button button, boolean isActive) {
@@ -176,10 +176,10 @@ public class DropStrategyEditor extends MultipleReferenceEditor {
 		up.dispose();
 		down.dispose();
 
-		//		toggle = new Button(controlsSection, SWT.TOGGLE);
-		//		toggle.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("/icons/Add_12x12.gif"));
-		//		toggle.addSelectionListener(this);
-		//		toggle.setToolTipText("Toggle the selected strategies");
+		// toggle = new Button(controlsSection, SWT.TOGGLE);
+		// toggle.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("/icons/Add_12x12.gif"));
+		// toggle.addSelectionListener(this);
+		// toggle.setToolTipText("Toggle the selected strategies");
 
 		treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
@@ -190,24 +190,24 @@ public class DropStrategyEditor extends MultipleReferenceEditor {
 	}
 
 	protected Object[] getSelectedElements() {
-		IStructuredSelection selection = (IStructuredSelection)treeViewer.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) treeViewer.getSelection();
 		return selection.toArray();
 	}
 
 	@Override
 	public void widgetSelected(SelectionEvent event) {
-		//		if(event.widget == toggle) {
-		//			toggleAction(toggle.getSelection());
-		//		} else {
+		// if(event.widget == toggle) {
+		// toggleAction(toggle.getSelection());
+		// } else {
 		super.widgetSelected(event);
-		//		}
+		// }
 	}
 
 	protected void toggleAction(boolean activate) {
 		Object[] selectedElements = getSelectedElements();
-		for(Object selected : selectedElements) {
-			if(selected instanceof DropStrategy) {
-				DropStrategyManager.instance.setActive((DropStrategy)selected, activate);
+		for (Object selected : selectedElements) {
+			if (selected instanceof DropStrategy) {
+				DropStrategyManager.instance.setActive((DropStrategy) selected, activate);
 			}
 		}
 		treeViewer.refresh();
@@ -215,21 +215,21 @@ public class DropStrategyEditor extends MultipleReferenceEditor {
 
 	@Override
 	protected void updateControls() {
-		//Skip super.updateControls ; this is not configurable. Avoids a widget disposed exception
+		// Skip super.updateControls ; this is not configurable. Avoids a widget disposed exception
 
-		//		boolean activate = false;
+		// boolean activate = false;
 		//
-		//		Object[] selectedElements = getSelectedElements();
-		//		for(Object selected : selectedElements) {
-		//			if(selected instanceof DropStrategy) {
-		//				if(DropStrategyManager.instance.isActive((DropStrategy)selected)) {
-		//					activate = true;
-		//					break;
-		//				}
-		//			}
-		//		}
+		// Object[] selectedElements = getSelectedElements();
+		// for(Object selected : selectedElements) {
+		// if(selected instanceof DropStrategy) {
+		// if(DropStrategyManager.instance.isActive((DropStrategy)selected)) {
+		// activate = true;
+		// break;
+		// }
+		// }
+		// }
 
-		//		toggle.setSelection(activate);
+		// toggle.setSelection(activate);
 	}
 
 	private class DropStrategyObservableList extends WritableList {
@@ -244,9 +244,9 @@ public class DropStrategyEditor extends MultipleReferenceEditor {
 			Object objectToMove = get(oldIndex);
 			Object other = get(newIndex);
 
-			if(objectToMove instanceof DropStrategy && other instanceof DropStrategy) {
-				DropStrategy strategyToMove = (DropStrategy)objectToMove;
-				DropStrategy otherStrategy = (DropStrategy)other;
+			if (objectToMove instanceof DropStrategy && other instanceof DropStrategy) {
+				DropStrategy strategyToMove = (DropStrategy) objectToMove;
+				DropStrategy otherStrategy = (DropStrategy) other;
 
 				int priority = DropStrategyManager.instance.findPriority(otherStrategy);
 				int newPriority = (newIndex > oldIndex) ? priority + 1 : priority - 1;
@@ -262,7 +262,7 @@ public class DropStrategyEditor extends MultipleReferenceEditor {
 	 * Refreshes the widget's contents, based on the DropStrategyManager's current values
 	 */
 	public void refresh() {
-		for(Map.Entry<DropStrategy, Button> entry : checkboxes.entrySet()) {
+		for (Map.Entry<DropStrategy, Button> entry : checkboxes.entrySet()) {
 			boolean isActive = DropStrategyManager.instance.isActive(entry.getKey());
 			updateStrategy(entry.getKey(), entry.getValue(), isActive);
 		}

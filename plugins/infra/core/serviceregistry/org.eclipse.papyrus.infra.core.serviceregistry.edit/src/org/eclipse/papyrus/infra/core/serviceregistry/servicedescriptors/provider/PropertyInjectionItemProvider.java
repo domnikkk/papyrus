@@ -8,9 +8,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -20,7 +18,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.PropertyInjection;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsFactory;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage;
@@ -29,11 +26,12 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.PropertyInjection} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class PropertyInjectionItemProvider
-	extends FeatureInjectionItemProvider
-	implements
+		extends FeatureInjectionItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -43,6 +41,7 @@ public class PropertyInjectionItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PropertyInjectionItemProvider(AdapterFactory adapterFactory) {
@@ -53,6 +52,7 @@ public class PropertyInjectionItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,30 +69,31 @@ public class PropertyInjectionItemProvider
 	 * This adds a property descriptor for the Property Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addPropertyNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PropertyInjection_propertyName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyInjection_propertyName_feature", "_UI_PropertyInjection_type"),
-				 ServicedescriptorsPackage.Literals.PROPERTY_INJECTION__PROPERTY_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_PropertyInjection_propertyName_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PropertyInjection_propertyName_feature", "_UI_PropertyInjection_type"),
+						ServicedescriptorsPackage.Literals.PROPERTY_INJECTION__PROPERTY_NAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,6 +108,7 @@ public class PropertyInjectionItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,6 +123,7 @@ public class PropertyInjectionItemProvider
 	 * This returns PropertyInjection.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,14 +135,15 @@ public class PropertyInjectionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PropertyInjection)object).getPropertyName();
+		String label = ((PropertyInjection) object).getPropertyName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_PropertyInjection_type") :
-			getString("_UI_PropertyInjection_type") + " " + label;
+				getString("_UI_PropertyInjection_type") :
+				getString("_UI_PropertyInjection_type") + " " + label;
 	}
 
 	/**
@@ -147,6 +151,7 @@ public class PropertyInjectionItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,12 +159,12 @@ public class PropertyInjectionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PropertyInjection.class)) {
-			case ServicedescriptorsPackage.PROPERTY_INJECTION__PROPERTY_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ServicedescriptorsPackage.PROPERTY_INJECTION__VALUES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ServicedescriptorsPackage.PROPERTY_INJECTION__PROPERTY_NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ServicedescriptorsPackage.PROPERTY_INJECTION__VALUES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -169,6 +174,7 @@ public class PropertyInjectionItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,14 +182,14 @@ public class PropertyInjectionItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ServicedescriptorsPackage.Literals.PROPERTY_INJECTION__VALUES,
-				 ServicedescriptorsFactory.eINSTANCE.createInjectedService()));
+						ServicedescriptorsFactory.eINSTANCE.createInjectedService()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ServicedescriptorsPackage.Literals.PROPERTY_INJECTION__VALUES,
-				 ServicedescriptorsFactory.eINSTANCE.createOpaqueInjectedValue()));
+						ServicedescriptorsFactory.eINSTANCE.createOpaqueInjectedValue()));
 	}
 
 }

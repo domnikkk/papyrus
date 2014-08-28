@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ public class FillMenuContainer implements FillElement {
 	}
 
 	public void fill(IMenuManager menuManager) {
-		for(MenuItem menuItem : container.getSubmenus()) {
+		for (MenuItem menuItem : container.getSubmenus()) {
 			FillElement filler = FillerFactory.instance.getFiller(menuItem, selectedObject);
 			filler.fill(menuManager);
 		}

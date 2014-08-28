@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,11 +21,11 @@ public class InheritedActivityDiagramEditPartProvider extends CustomUMLEditPartP
 
 	@Override
 	public synchronized boolean provides(final IOperation operation) {
-		if(operation instanceof CreateGraphicEditPartOperation) {
-			final View view = ((IEditPartOperation)operation).getView();
+		if (operation instanceof CreateGraphicEditPartOperation) {
+			final View view = ((IEditPartOperation) operation).getView();
 
 			// Ensure current diagram is a InteractionOverviewDiagram Diagram
-			if(!ElementTypes.DIAGRAM_ID.equals(view.getDiagram().getType())) {
+			if (!ElementTypes.DIAGRAM_ID.equals(view.getDiagram().getType())) {
 				return false;
 			}
 
@@ -33,54 +33,54 @@ public class InheritedActivityDiagramEditPartProvider extends CustomUMLEditPartP
 			final EObject eobject = view.getElement();
 
 			/** Nodes (and ChildLabelNodes) *********** */
-			if(eobject instanceof org.eclipse.uml2.uml.ActivityFinalNode) {
+			if (eobject instanceof org.eclipse.uml2.uml.ActivityFinalNode) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.CallBehaviorAction) {
+			if (eobject instanceof org.eclipse.uml2.uml.CallBehaviorAction) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.Comment) {
+			if (eobject instanceof org.eclipse.uml2.uml.Comment) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.ConditionalNode) {
+			if (eobject instanceof org.eclipse.uml2.uml.ConditionalNode) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.DecisionNode) {
+			if (eobject instanceof org.eclipse.uml2.uml.DecisionNode) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.FlowFinalNode) {
+			if (eobject instanceof org.eclipse.uml2.uml.FlowFinalNode) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.ForkNode) {
+			if (eobject instanceof org.eclipse.uml2.uml.ForkNode) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.InitialNode) {
+			if (eobject instanceof org.eclipse.uml2.uml.InitialNode) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.JoinNode) {
+			if (eobject instanceof org.eclipse.uml2.uml.JoinNode) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.LoopNode) {
+			if (eobject instanceof org.eclipse.uml2.uml.LoopNode) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.MergeNode) {
+			if (eobject instanceof org.eclipse.uml2.uml.MergeNode) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.NamedElement) {
+			if (eobject instanceof org.eclipse.uml2.uml.NamedElement) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.SequenceNode) {
+			if (eobject instanceof org.eclipse.uml2.uml.SequenceNode) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.Constraint) {
+			if (eobject instanceof org.eclipse.uml2.uml.Constraint) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.Parameter) {
+			if (eobject instanceof org.eclipse.uml2.uml.Parameter) {
 				return true;
 			}
 
 			/** Edges *********** */
-			if(eobject instanceof org.eclipse.uml2.uml.ControlFlow) {
+			if (eobject instanceof org.eclipse.uml2.uml.ControlFlow) {
 				return true;
 			}
 
@@ -93,7 +93,7 @@ public class InheritedActivityDiagramEditPartProvider extends CustomUMLEditPartP
 			final String hint = view.getType();
 
 			/** Edges (Feature) : COMMENT_ANNOTATED_ELEMENT *********** */
-			if(ElementTypes.COMMENT_ANNOTATED_ELEMENT.getSemanticHint().equals(hint)) {
+			if (ElementTypes.COMMENT_ANNOTATED_ELEMENT.getSemanticHint().equals(hint)) {
 				return true;
 			}
 

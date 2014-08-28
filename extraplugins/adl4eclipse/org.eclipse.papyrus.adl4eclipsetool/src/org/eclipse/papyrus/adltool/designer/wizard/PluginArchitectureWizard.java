@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,16 +25,18 @@ import org.eclipse.ui.IWorkbench;
 
 /**
  * this wizard is used to display plugin from workspace and the platform
- *@deprecated
+ *
+ * @deprecated
  */
 
-public class PluginArchitectureWizard extends Wizard  implements IImportWizard{
+@Deprecated
+public class PluginArchitectureWizard extends Wizard implements IImportWizard {
 
 	protected BundleSelectionPage bundleSelectionPage;
-	protected boolean onlyWorkspace=true;
+	protected boolean onlyWorkspace = true;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param onlyWorkspace
@@ -42,15 +44,15 @@ public class PluginArchitectureWizard extends Wizard  implements IImportWizard{
 	public PluginArchitectureWizard(boolean onlyWorkspace) {
 		super();
 		setNeedsProgressMonitor(true);
-		this.onlyWorkspace=onlyWorkspace;
+		this.onlyWorkspace = onlyWorkspace;
 	}
 
 	@Override
 	public void addPages() {
-		ArrayList<Object> bundleList= new ArrayList<Object>();
+		ArrayList<Object> bundleList = new ArrayList<Object>();
 		bundleList.addAll(ArchitectureSnapshotDesigner.getWorkspaceBundle());
-		//do not look for loaded plugin in the case of a simple research 
-		if(!onlyWorkspace){
+		// do not look for loaded plugin in the case of a simple research
+		if (!onlyWorkspace) {
 			bundleList.addAll(ArchitectureSnapshotDesigner.getLoadedBundles());
 		}
 		bundleSelectionPage = new BundleSelectionPage(bundleList);
@@ -58,15 +60,16 @@ public class PluginArchitectureWizard extends Wizard  implements IImportWizard{
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the list of selected bundle
 	 */
-	public ArrayList<Object> getSelectedBundle(){
+	public ArrayList<Object> getSelectedBundle() {
 		return bundleSelectionPage.getResult();
 	}
+
 	@Override
 	public boolean performFinish() {
-		if(bundleSelectionPage.getResult().size()>0){
+		if (bundleSelectionPage.getResult().size() > 0) {
 
 			return true;
 		}
@@ -75,6 +78,6 @@ public class PluginArchitectureWizard extends Wizard  implements IImportWizard{
 
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		// TODO Auto-generated method stub
-		
+
 	}
-} 
+}

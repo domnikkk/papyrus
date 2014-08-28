@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.sysml.constraints.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -35,7 +36,7 @@ import org.eclipse.uml2.uml.edit.UMLEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.sysml.constraints.ConstraintBlock} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ConstraintBlockItemProvider extends BlockItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
@@ -46,7 +47,7 @@ public class ConstraintBlockItemProvider extends BlockItemProvider implements IE
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstraintBlockItemProvider(AdapterFactory adapterFactory) {
@@ -57,12 +58,12 @@ public class ConstraintBlockItemProvider extends BlockItemProvider implements IE
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -73,7 +74,7 @@ public class ConstraintBlockItemProvider extends BlockItemProvider implements IE
 	 * This returns ConstraintBlock.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,12 +86,12 @@ public class ConstraintBlockItemProvider extends BlockItemProvider implements IE
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		ConstraintBlock constraintBlock = (ConstraintBlock)object;
+		ConstraintBlock constraintBlock = (ConstraintBlock) object;
 		return getString("_UI_ConstraintBlock_type") + " " + constraintBlock.isEncapsulated();
 	}
 
@@ -99,7 +100,7 @@ public class ConstraintBlockItemProvider extends BlockItemProvider implements IE
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +114,7 @@ public class ConstraintBlockItemProvider extends BlockItemProvider implements IE
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +126,7 @@ public class ConstraintBlockItemProvider extends BlockItemProvider implements IE
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,17 +137,17 @@ public class ConstraintBlockItemProvider extends BlockItemProvider implements IE
 	/**
 	 * Compose the image with specific visibility logo
 	 * Copied from UML implementation
-	 * 
+	 *
 	 * @param object
 	 * @param composedImage
 	 * @return {@link ComposedImage}
 	 */
 	public ComposedImage composeVisibilityImage(Object object, ComposedImage composedImage) {
-		NamedElement namedElement = (NamedElement)object;
+		NamedElement namedElement = (NamedElement) object;
 
-		if(namedElement.isSetVisibility()) {
+		if (namedElement.isSetVisibility()) {
 			composedImage.getImages().add(UMLEditPlugin.INSTANCE.getImage("full/ovr16/VisibilityKind_" //$NON-NLS-1$
-				+ namedElement.getVisibility().getName()));
+					+ namedElement.getVisibility().getName()));
 		}
 
 		return composedImage;

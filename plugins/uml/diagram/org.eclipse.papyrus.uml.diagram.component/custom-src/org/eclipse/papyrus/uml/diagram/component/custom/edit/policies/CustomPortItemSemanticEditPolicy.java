@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,33 +26,34 @@ import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.command.CustomConnectorCreateCommand;
 import org.eclipse.papyrus.uml.diagram.component.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants;
 
 // TODO: Auto-generated Javadoc
 /**
  * <pre>
  * This class provides a custom edit policy used to replace the SEMANTIC_ROLE
  * generated for the Port element (when used in CompositeStructure Diagram)
- * </pre>.
+ * </pre>
+ *
+ * .
  */
 public class CustomPortItemSemanticEditPolicy extends org.eclipse.papyrus.uml.diagram.component.edit.policies.PortItemSemanticEditPolicy {
 
 	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case org.eclipse.papyrus.uml.diagram.component.edit.parts.ConnectorEditPart.VISUAL_ID:
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(req.getRelationship());
-			if(provider == null) {
+			if (provider == null) {
 				return UnexecutableCommand.INSTANCE;
 			}
 
 			// Add graphical new end View in request parameters
-			View targetView = (View)getHost().getModel();
-			req.setParameter(RequestParameterConstants.EDGE_REORIENT_REQUEST_END_VIEW, targetView);
+			View targetView = (View) getHost().getModel();
+			req.setParameter(org.eclipse.papyrus.infra.services.edit.utils.RequestParameterConstants.EDGE_REORIENT_REQUEST_END_VIEW, targetView);
 
 			// Retrieve re-orient command from the Element Edit service
 			ICommand reorientCommand = provider.getEditCommand(req);
-			if(reorientCommand == null) {
+			if (reorientCommand == null) {
 				return UnexecutableCommand.INSTANCE;
 			}
 			return getGEFWrapper(reorientCommand.reduce());
@@ -63,18 +64,18 @@ public class CustomPortItemSemanticEditPolicy extends org.eclipse.papyrus.uml.di
 	/**
 	 * <pre>
 	 * Forbid direct destruction of Port in case the graphical parent is not
-	 * the semantic parent.  
-	 * 
+	 * the semantic parent.
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
 	@Override
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 
-		EObject graphicalParent = ((GraphicalEditPart)getHost().getParent()).resolveSemanticElement();
+		EObject graphicalParent = ((GraphicalEditPart) getHost().getParent()).resolveSemanticElement();
 		EObject semanticParent = req.getElementToDestroy().eContainer();
 
-		if(graphicalParent != semanticParent) {
+		if (graphicalParent != semanticParent) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -84,14 +85,14 @@ public class CustomPortItemSemanticEditPolicy extends org.eclipse.papyrus.uml.di
 	/**
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a Connector connected to a Port
-	 * on its source end. 
-	 * 
+	 * on its source end.
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
 	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Connector_4019 == req.getElementType()) {
+		if (UMLElementTypes.Connector_4019 == req.getElementType()) {
 			return getGEFWrapper(new CustomConnectorCreateCommand(req, req.getSource(), null));
 		}
 		return super.getStartCreateRelationshipCommand(req);
@@ -100,14 +101,14 @@ public class CustomPortItemSemanticEditPolicy extends org.eclipse.papyrus.uml.di
 	/**
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a Connector connected to a Port
-	 * on its target end. 
-	 * 
+	 * on its target end.
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
 	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Connector_4019 == req.getElementType()) {
+		if (UMLElementTypes.Connector_4019 == req.getElementType()) {
 			return getGEFWrapper(new CustomConnectorCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getCompleteCreateRelationshipCommand(req);

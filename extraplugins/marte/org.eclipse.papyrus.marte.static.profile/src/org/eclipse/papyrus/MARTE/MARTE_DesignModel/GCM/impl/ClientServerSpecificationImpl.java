@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.Interface;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.ClientServerSpecificationImpl#getBase_Interface <em>Base Interface</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.ClientServerSpecificationImpl#getBase_Interface <em>Base Interface</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class ClientServerSpecificationImpl extends EObjectImpl implements Client
 	 * The cached value of the '{@link #getBase_Interface() <em>Base Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_Interface()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class ClientServerSpecificationImpl extends EObjectImpl implements Client
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ClientServerSpecificationImpl() {
@@ -58,6 +60,7 @@ public class ClientServerSpecificationImpl extends EObjectImpl implements Client
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,15 +71,18 @@ public class ClientServerSpecificationImpl extends EObjectImpl implements Client
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Interface getBase_Interface() {
 		if (base_Interface != null && base_Interface.eIsProxy()) {
-			InternalEObject oldBase_Interface = (InternalEObject)base_Interface;
-			base_Interface = (Interface)eResolveProxy(oldBase_Interface);
+			InternalEObject oldBase_Interface = (InternalEObject) base_Interface;
+			base_Interface = (Interface) eResolveProxy(oldBase_Interface);
 			if (base_Interface != oldBase_Interface) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GCMPackage.CLIENT_SERVER_SPECIFICATION__BASE_INTERFACE, oldBase_Interface, base_Interface));
+				}
 			}
 		}
 		return base_Interface;
@@ -85,6 +91,7 @@ public class ClientServerSpecificationImpl extends EObjectImpl implements Client
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Interface basicGetBase_Interface() {
@@ -94,26 +101,32 @@ public class ClientServerSpecificationImpl extends EObjectImpl implements Client
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_Interface(Interface newBase_Interface) {
 		Interface oldBase_Interface = base_Interface;
 		base_Interface = newBase_Interface;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GCMPackage.CLIENT_SERVER_SPECIFICATION__BASE_INTERFACE, oldBase_Interface, base_Interface));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GCMPackage.CLIENT_SERVER_SPECIFICATION__BASE_INTERFACE:
-				if (resolve) return getBase_Interface();
-				return basicGetBase_Interface();
+		case GCMPackage.CLIENT_SERVER_SPECIFICATION__BASE_INTERFACE:
+			if (resolve) {
+				return getBase_Interface();
+			}
+			return basicGetBase_Interface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,14 +134,15 @@ public class ClientServerSpecificationImpl extends EObjectImpl implements Client
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GCMPackage.CLIENT_SERVER_SPECIFICATION__BASE_INTERFACE:
-				setBase_Interface((Interface)newValue);
-				return;
+		case GCMPackage.CLIENT_SERVER_SPECIFICATION__BASE_INTERFACE:
+			setBase_Interface((Interface) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -136,14 +150,15 @@ public class ClientServerSpecificationImpl extends EObjectImpl implements Client
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GCMPackage.CLIENT_SERVER_SPECIFICATION__BASE_INTERFACE:
-				setBase_Interface((Interface)null);
-				return;
+		case GCMPackage.CLIENT_SERVER_SPECIFICATION__BASE_INTERFACE:
+			setBase_Interface((Interface) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -151,15 +166,16 @@ public class ClientServerSpecificationImpl extends EObjectImpl implements Client
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GCMPackage.CLIENT_SERVER_SPECIFICATION__BASE_INTERFACE:
-				return base_Interface != null;
+		case GCMPackage.CLIENT_SERVER_SPECIFICATION__BASE_INTERFACE:
+			return base_Interface != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ClientServerSpecificationImpl
+} // ClientServerSpecificationImpl

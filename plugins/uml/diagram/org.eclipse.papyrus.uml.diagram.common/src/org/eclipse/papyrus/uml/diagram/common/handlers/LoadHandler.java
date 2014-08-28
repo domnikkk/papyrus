@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ public class LoadHandler extends GraphicalCommandHandler {
 
 	/**
 	 * Get the command to load resource of selected model object
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.handlers.GraphicalCommandHandler#getCommand()
 	 * @return the load command
 	 * @throws ExecutionException
@@ -49,25 +49,25 @@ public class LoadHandler extends GraphicalCommandHandler {
 	protected Command getCommand() {
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 		List<IGraphicalEditPart> selection = getSelectedElements();
-		if(editingDomain != null && editingDomain.getResourceSet() instanceof ModelSet && selection.size() > 0) {
-			final ModelSet set = (ModelSet)editingDomain.getResourceSet();
+		if (editingDomain != null && editingDomain.getResourceSet() instanceof ModelSet && selection.size() > 0) {
+			final ModelSet set = (ModelSet) editingDomain.getResourceSet();
 			CompoundCommand command = new CompoundCommand();
 			List<URI> handledURI = new ArrayList<URI>();
-			for(IGraphicalEditPart selPart : selection) {
-				View view = (View)((IAdaptable)selPart).getAdapter(View.class);
-				if(view != null) {
+			for (IGraphicalEditPart selPart : selection) {
+				View view = (View) ((IAdaptable) selPart).getAdapter(View.class);
+				if (view != null) {
 					EObject sel = view.getElement();
 					// check for partially not loaded edge
-					if(view instanceof Edge) {
-						View target = ((Edge)view).getTarget();
-						if(target != null && ViewUtil.resolveSemanticElement(target) == null) {
+					if (view instanceof Edge) {
+						View target = ((Edge) view).getTarget();
+						if (target != null && ViewUtil.resolveSemanticElement(target) == null) {
 							// there is a backslash decorator
 							EObject linked = target.getElement();
-							if(linked != null && linked.eIsProxy()) {
-								InternalEObject internal = (InternalEObject)linked;
+							if (linked != null && linked.eIsProxy()) {
+								InternalEObject internal = (InternalEObject) linked;
 								URI uriProxy = internal.eProxyURI();
 								final URI uriTrim = uriProxy.trimFragment().trimFileExtension();
-								if(!handledURI.contains(uriTrim)) {
+								if (!handledURI.contains(uriTrim)) {
 									handledURI.add(uriTrim);
 									Command cmd = new Command() {
 
@@ -91,11 +91,11 @@ public class LoadHandler extends GraphicalCommandHandler {
 							}
 						}
 					}
-					if(sel != null && sel.eIsProxy()) {
-						InternalEObject internal = (InternalEObject)sel;
+					if (sel != null && sel.eIsProxy()) {
+						InternalEObject internal = (InternalEObject) sel;
 						URI uriProxy = internal.eProxyURI();
 						final URI uriTrim = uriProxy.trimFragment().trimFileExtension();
-						if(!handledURI.contains(uriTrim)) {
+						if (!handledURI.contains(uriTrim)) {
 							handledURI.add(uriTrim);
 							Command cmd = new Command() {
 

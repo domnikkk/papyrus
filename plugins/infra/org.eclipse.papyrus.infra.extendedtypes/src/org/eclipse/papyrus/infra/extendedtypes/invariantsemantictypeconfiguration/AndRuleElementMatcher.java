@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ public class AndRuleElementMatcher implements IInvariantElementMatcher<AndRule> 
 	protected List<IElementMatcher> composedMatchers;
 
 	/**
-	 * 
+	 *
 	 */
 	public AndRuleElementMatcher() {
 		// Nothing here
@@ -36,12 +36,12 @@ public class AndRuleElementMatcher implements IInvariantElementMatcher<AndRule> 
 	 * {@inheritDoc}
 	 */
 	public boolean matches(EObject eObject) {
-		// deactivate if list of rules is empty 
-		if(composedMatchers == null || composedMatchers.isEmpty()) {
+		// deactivate if list of rules is empty
+		if (composedMatchers == null || composedMatchers.isEmpty()) {
 			return false;
 		}
-		for(IElementMatcher matcher : composedMatchers) {
-			if(!matcher.matches(eObject)) {
+		for (IElementMatcher matcher : composedMatchers) {
+			if (!matcher.matches(eObject)) {
 				return false;
 			}
 		}
@@ -55,9 +55,9 @@ public class AndRuleElementMatcher implements IInvariantElementMatcher<AndRule> 
 		// for each children configuraton, generates the matcher class and then, the 'matches' method of this matcher will delegate to the matches of the sub rules, and will add all results together
 		// configuration should be a AndRule as declared in the extension point
 		composedMatchers = new ArrayList<IElementMatcher>();
-		for(InvariantRuleConfiguration composedRule : configuration.getComposedRules()) {
+		for (InvariantRuleConfiguration composedRule : configuration.getComposedRules()) {
 			IElementMatcher matcher = RuleConfigurationFactoryRegistry.getInstance().createMatcher(composedRule);
-			if(matcher != null) {
+			if (matcher != null) {
 				composedMatchers.add(matcher);
 			}
 		}

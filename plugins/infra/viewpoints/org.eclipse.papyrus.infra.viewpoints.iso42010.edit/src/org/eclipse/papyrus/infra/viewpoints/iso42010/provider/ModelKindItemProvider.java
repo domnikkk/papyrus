@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *  
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.infra.viewpoints.iso42010.provider;
 
@@ -19,7 +19,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -27,7 +26,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind;
 
@@ -35,11 +33,12 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class ModelKindItemProvider
-	extends ADElementItemProvider
-	implements
+		extends ADElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -49,6 +48,7 @@ public class ModelKindItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ModelKindItemProvider(AdapterFactory adapterFactory) {
@@ -59,6 +59,7 @@ public class ModelKindItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,28 +76,30 @@ public class ModelKindItemProvider
 	 * This adds a property descriptor for the Governs feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addGovernsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelKind_governs_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelKind_governs_feature", "_UI_ModelKind_type"),
-				 Iso42010Package.Literals.MODEL_KIND__GOVERNS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ModelKind_governs_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ModelKind_governs_feature", "_UI_ModelKind_type"),
+						Iso42010Package.Literals.MODEL_KIND__GOVERNS,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns ModelKind.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,14 +111,15 @@ public class ModelKindItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ModelKind)object).getName();
+		String label = ((ModelKind) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ModelKind_type") :
-			getString("_UI_ModelKind_type") + " " + label;
+				getString("_UI_ModelKind_type") :
+				getString("_UI_ModelKind_type") + " " + label;
 	}
 
 	/**
@@ -123,6 +127,7 @@ public class ModelKindItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,6 +141,7 @@ public class ModelKindItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

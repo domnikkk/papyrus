@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,26 +19,26 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
 
 /**
  * Observable value for ElementType Id for the Paste EObject on column
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class ColumnPasteEObjectElementTypeIdObservableValue extends AbstractColumnPasteEObjectConfigurationObservableValue {
 
 	/**
 	 * Instantiates a new column paste e object element type id observable value.
-	 * 
+	 *
 	 * @param table
-	 *        the table manager
+	 *            the table manager
 	 */
 	public ColumnPasteEObjectElementTypeIdObservableValue(final Table table) {
 		super(table, NattableaxisconfigurationPackage.eINSTANCE.getPasteEObjectConfiguration_PastedElementId());
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.IObservableValue#getValueType()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

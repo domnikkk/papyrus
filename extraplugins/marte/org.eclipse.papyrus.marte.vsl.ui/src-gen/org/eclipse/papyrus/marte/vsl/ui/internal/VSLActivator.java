@@ -19,35 +19,35 @@ import com.google.inject.Module;
 
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class VSLActivator extends AbstractUIPlugin {
-	
+
 	public static final String ORG_ECLIPSE_PAPYRUS_MARTE_VSL_VSL = "org.eclipse.papyrus.marte.vsl.VSL";
-	
+
 	private static final Logger logger = Logger.getLogger(VSLActivator.class);
-	
+
 	private static VSLActivator INSTANCE;
-	
+
 	private Map<String, Injector> injectors = Collections.synchronizedMap(Maps.<String, Injector> newHashMapWithExpectedSize(1));
-	
+
 	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		INSTANCE = this;
 	}
-	
+
 	@Override
 	public void stop(BundleContext context) throws Exception {
 		injectors.clear();
 		INSTANCE = null;
 		super.stop(context);
 	}
-	
+
 	public static VSLActivator getInstance() {
 		return INSTANCE;
 	}
-	
+
 	public Injector getInjector(String language) {
 		synchronized (injectors) {
 			Injector injector = injectors.get(language);
@@ -57,7 +57,7 @@ public class VSLActivator extends AbstractUIPlugin {
 			return injector;
 		}
 	}
-	
+
 	protected Injector createInjector(String language) {
 		try {
 			Module runtimeModule = getRuntimeModule(language);
@@ -76,20 +76,20 @@ public class VSLActivator extends AbstractUIPlugin {
 		if (ORG_ECLIPSE_PAPYRUS_MARTE_VSL_VSL.equals(grammar)) {
 			return new org.eclipse.papyrus.marte.vsl.VSLRuntimeModule();
 		}
-		
+
 		throw new IllegalArgumentException(grammar);
 	}
-	
+
 	protected Module getUiModule(String grammar) {
 		if (ORG_ECLIPSE_PAPYRUS_MARTE_VSL_VSL.equals(grammar)) {
 			return new org.eclipse.papyrus.marte.vsl.ui.VSLUiModule(this);
 		}
-		
+
 		throw new IllegalArgumentException(grammar);
 	}
-	
+
 	protected Module getSharedStateModule() {
 		return new SharedStateModule();
 	}
-	
+
 }

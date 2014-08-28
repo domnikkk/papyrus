@@ -30,7 +30,7 @@ public class ConnectorPreferencePage extends ParametricDiagramLinkPreferencePage
 
 	/** Default preferences initializer */
 	public static void initDefaults(IPreferenceStore store) {
-		// Start of user code custom default initializations		
+		// Start of user code custom default initializations
 		// End of user code
 	}
 }

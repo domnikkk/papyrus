@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,10 +29,10 @@ import org.eclipse.uml2.uml.BehavioralFeature;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaCommStepImpl#getDeadline <em>Deadline</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaCommStepImpl#getSpareCap <em>Spare Cap</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaCommStepImpl#getSchSlack <em>Sch Slack</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaCommStepImpl#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaCommStepImpl#getDeadline <em>Deadline</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaCommStepImpl#getSpareCap <em>Spare Cap</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaCommStepImpl#getSchSlack <em>Sch Slack</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaCommStepImpl#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	 * The default value of the '{@link #getDeadline() <em>Deadline</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDeadline()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	 * The cached value of the '{@link #getDeadline() <em>Deadline</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDeadline()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	 * The default value of the '{@link #getSpareCap() <em>Spare Cap</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSpareCap()
 	 * @generated
 	 * @ordered
@@ -73,6 +76,7 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	 * The cached value of the '{@link #getSpareCap() <em>Spare Cap</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSpareCap()
 	 * @generated
 	 * @ordered
@@ -83,6 +87,7 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	 * The default value of the '{@link #getSchSlack() <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSchSlack()
 	 * @generated
 	 * @ordered
@@ -93,6 +98,7 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	 * The cached value of the '{@link #getSchSlack() <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSchSlack()
 	 * @generated
 	 * @ordered
@@ -103,6 +109,7 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	 * The cached value of the '{@link #getBase_BehavioralFeature() <em>Base Behavioral Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_BehavioralFeature()
 	 * @generated
 	 * @ordered
@@ -112,6 +119,7 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SaCommStepImpl() {
@@ -121,6 +129,7 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,8 +140,10 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getDeadline() {
 		return deadline;
 	}
@@ -140,20 +151,25 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDeadline(String newDeadline) {
 		String oldDeadline = deadline;
 		deadline = newDeadline;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SAMPackage.SA_COMM_STEP__DEADLINE, oldDeadline, deadline));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getSpareCap() {
 		return spareCap;
 	}
@@ -161,20 +177,25 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setSpareCap(String newSpareCap) {
 		String oldSpareCap = spareCap;
 		spareCap = newSpareCap;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SAMPackage.SA_COMM_STEP__SPARE_CAP, oldSpareCap, spareCap));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getSchSlack() {
 		return schSlack;
 	}
@@ -182,27 +203,33 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setSchSlack(String newSchSlack) {
 		String oldSchSlack = schSlack;
 		schSlack = newSchSlack;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SAMPackage.SA_COMM_STEP__SCH_SLACK, oldSchSlack, schSlack));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public BehavioralFeature getBase_BehavioralFeature() {
 		if (base_BehavioralFeature != null && base_BehavioralFeature.eIsProxy()) {
-			InternalEObject oldBase_BehavioralFeature = (InternalEObject)base_BehavioralFeature;
-			base_BehavioralFeature = (BehavioralFeature)eResolveProxy(oldBase_BehavioralFeature);
+			InternalEObject oldBase_BehavioralFeature = (InternalEObject) base_BehavioralFeature;
+			base_BehavioralFeature = (BehavioralFeature) eResolveProxy(oldBase_BehavioralFeature);
 			if (base_BehavioralFeature != oldBase_BehavioralFeature) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SAMPackage.SA_COMM_STEP__BASE_BEHAVIORAL_FEATURE, oldBase_BehavioralFeature, base_BehavioralFeature));
+				}
 			}
 		}
 		return base_BehavioralFeature;
@@ -211,6 +238,7 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public BehavioralFeature basicGetBase_BehavioralFeature() {
@@ -220,32 +248,38 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_BehavioralFeature(BehavioralFeature newBase_BehavioralFeature) {
 		BehavioralFeature oldBase_BehavioralFeature = base_BehavioralFeature;
 		base_BehavioralFeature = newBase_BehavioralFeature;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SAMPackage.SA_COMM_STEP__BASE_BEHAVIORAL_FEATURE, oldBase_BehavioralFeature, base_BehavioralFeature));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SAMPackage.SA_COMM_STEP__DEADLINE:
-				return getDeadline();
-			case SAMPackage.SA_COMM_STEP__SPARE_CAP:
-				return getSpareCap();
-			case SAMPackage.SA_COMM_STEP__SCH_SLACK:
-				return getSchSlack();
-			case SAMPackage.SA_COMM_STEP__BASE_BEHAVIORAL_FEATURE:
-				if (resolve) return getBase_BehavioralFeature();
-				return basicGetBase_BehavioralFeature();
+		case SAMPackage.SA_COMM_STEP__DEADLINE:
+			return getDeadline();
+		case SAMPackage.SA_COMM_STEP__SPARE_CAP:
+			return getSpareCap();
+		case SAMPackage.SA_COMM_STEP__SCH_SLACK:
+			return getSchSlack();
+		case SAMPackage.SA_COMM_STEP__BASE_BEHAVIORAL_FEATURE:
+			if (resolve) {
+				return getBase_BehavioralFeature();
+			}
+			return basicGetBase_BehavioralFeature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -253,23 +287,24 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SAMPackage.SA_COMM_STEP__DEADLINE:
-				setDeadline((String)newValue);
-				return;
-			case SAMPackage.SA_COMM_STEP__SPARE_CAP:
-				setSpareCap((String)newValue);
-				return;
-			case SAMPackage.SA_COMM_STEP__SCH_SLACK:
-				setSchSlack((String)newValue);
-				return;
-			case SAMPackage.SA_COMM_STEP__BASE_BEHAVIORAL_FEATURE:
-				setBase_BehavioralFeature((BehavioralFeature)newValue);
-				return;
+		case SAMPackage.SA_COMM_STEP__DEADLINE:
+			setDeadline((String) newValue);
+			return;
+		case SAMPackage.SA_COMM_STEP__SPARE_CAP:
+			setSpareCap((String) newValue);
+			return;
+		case SAMPackage.SA_COMM_STEP__SCH_SLACK:
+			setSchSlack((String) newValue);
+			return;
+		case SAMPackage.SA_COMM_STEP__BASE_BEHAVIORAL_FEATURE:
+			setBase_BehavioralFeature((BehavioralFeature) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -277,23 +312,24 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SAMPackage.SA_COMM_STEP__DEADLINE:
-				setDeadline(DEADLINE_EDEFAULT);
-				return;
-			case SAMPackage.SA_COMM_STEP__SPARE_CAP:
-				setSpareCap(SPARE_CAP_EDEFAULT);
-				return;
-			case SAMPackage.SA_COMM_STEP__SCH_SLACK:
-				setSchSlack(SCH_SLACK_EDEFAULT);
-				return;
-			case SAMPackage.SA_COMM_STEP__BASE_BEHAVIORAL_FEATURE:
-				setBase_BehavioralFeature((BehavioralFeature)null);
-				return;
+		case SAMPackage.SA_COMM_STEP__DEADLINE:
+			setDeadline(DEADLINE_EDEFAULT);
+			return;
+		case SAMPackage.SA_COMM_STEP__SPARE_CAP:
+			setSpareCap(SPARE_CAP_EDEFAULT);
+			return;
+		case SAMPackage.SA_COMM_STEP__SCH_SLACK:
+			setSchSlack(SCH_SLACK_EDEFAULT);
+			return;
+		case SAMPackage.SA_COMM_STEP__BASE_BEHAVIORAL_FEATURE:
+			setBase_BehavioralFeature((BehavioralFeature) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -301,19 +337,20 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SAMPackage.SA_COMM_STEP__DEADLINE:
-				return DEADLINE_EDEFAULT == null ? deadline != null : !DEADLINE_EDEFAULT.equals(deadline);
-			case SAMPackage.SA_COMM_STEP__SPARE_CAP:
-				return SPARE_CAP_EDEFAULT == null ? spareCap != null : !SPARE_CAP_EDEFAULT.equals(spareCap);
-			case SAMPackage.SA_COMM_STEP__SCH_SLACK:
-				return SCH_SLACK_EDEFAULT == null ? schSlack != null : !SCH_SLACK_EDEFAULT.equals(schSlack);
-			case SAMPackage.SA_COMM_STEP__BASE_BEHAVIORAL_FEATURE:
-				return base_BehavioralFeature != null;
+		case SAMPackage.SA_COMM_STEP__DEADLINE:
+			return DEADLINE_EDEFAULT == null ? deadline != null : !DEADLINE_EDEFAULT.equals(deadline);
+		case SAMPackage.SA_COMM_STEP__SPARE_CAP:
+			return SPARE_CAP_EDEFAULT == null ? spareCap != null : !SPARE_CAP_EDEFAULT.equals(spareCap);
+		case SAMPackage.SA_COMM_STEP__SCH_SLACK:
+			return SCH_SLACK_EDEFAULT == null ? schSlack != null : !SCH_SLACK_EDEFAULT.equals(schSlack);
+		case SAMPackage.SA_COMM_STEP__BASE_BEHAVIORAL_FEATURE:
+			return base_BehavioralFeature != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -321,11 +358,14 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (deadline: ");
@@ -338,4 +378,4 @@ public class SaCommStepImpl extends GaCommStepImpl implements SaCommStep {
 		return result.toString();
 	}
 
-} //SaCommStepImpl
+} // SaCommStepImpl

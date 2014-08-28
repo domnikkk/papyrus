@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,14 +14,11 @@
 package org.eclipse.papyrus.facademapping.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.facademapping.FacademappingPackage;
 import org.eclipse.papyrus.facademapping.Mapping;
 
@@ -32,8 +29,8 @@ import org.eclipse.papyrus.facademapping.Mapping;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facademapping.impl.MappingImpl#getUmlElement <em>Uml Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facademapping.impl.MappingImpl#getSpecificDomainElement <em>Specific Domain Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facademapping.impl.MappingImpl#getUmlElement <em>Uml Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facademapping.impl.MappingImpl#getSpecificDomainElement <em>Specific Domain Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +41,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * The cached value of the '{@link #getUmlElement() <em>Uml Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getUmlElement()
 	 * @generated
 	 * @ordered
@@ -54,6 +52,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * The cached value of the '{@link #getSpecificDomainElement() <em>Specific Domain Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSpecificDomainElement()
 	 * @generated
 	 * @ordered
@@ -63,6 +62,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MappingImpl() {
@@ -72,6 +72,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,15 +83,18 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EObject getUmlElement() {
 		if (umlElement != null && umlElement.eIsProxy()) {
-			InternalEObject oldUmlElement = (InternalEObject)umlElement;
+			InternalEObject oldUmlElement = (InternalEObject) umlElement;
 			umlElement = eResolveProxy(oldUmlElement);
 			if (umlElement != oldUmlElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacademappingPackage.MAPPING__UML_ELEMENT, oldUmlElement, umlElement));
+				}
 			}
 		}
 		return umlElement;
@@ -99,6 +103,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EObject basicGetUmlElement() {
@@ -108,27 +113,33 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setUmlElement(EObject newUmlElement) {
 		EObject oldUmlElement = umlElement;
 		umlElement = newUmlElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FacademappingPackage.MAPPING__UML_ELEMENT, oldUmlElement, umlElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EObject getSpecificDomainElement() {
 		if (specificDomainElement != null && specificDomainElement.eIsProxy()) {
-			InternalEObject oldSpecificDomainElement = (InternalEObject)specificDomainElement;
+			InternalEObject oldSpecificDomainElement = (InternalEObject) specificDomainElement;
 			specificDomainElement = eResolveProxy(oldSpecificDomainElement);
 			if (specificDomainElement != oldSpecificDomainElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacademappingPackage.MAPPING__SPECIFIC_DOMAIN_ELEMENT, oldSpecificDomainElement, specificDomainElement));
+				}
 			}
 		}
 		return specificDomainElement;
@@ -137,6 +148,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EObject basicGetSpecificDomainElement() {
@@ -146,29 +158,37 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setSpecificDomainElement(EObject newSpecificDomainElement) {
 		EObject oldSpecificDomainElement = specificDomainElement;
 		specificDomainElement = newSpecificDomainElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FacademappingPackage.MAPPING__SPECIFIC_DOMAIN_ELEMENT, oldSpecificDomainElement, specificDomainElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FacademappingPackage.MAPPING__UML_ELEMENT:
-				if (resolve) return getUmlElement();
-				return basicGetUmlElement();
-			case FacademappingPackage.MAPPING__SPECIFIC_DOMAIN_ELEMENT:
-				if (resolve) return getSpecificDomainElement();
-				return basicGetSpecificDomainElement();
+		case FacademappingPackage.MAPPING__UML_ELEMENT:
+			if (resolve) {
+				return getUmlElement();
+			}
+			return basicGetUmlElement();
+		case FacademappingPackage.MAPPING__SPECIFIC_DOMAIN_ELEMENT:
+			if (resolve) {
+				return getSpecificDomainElement();
+			}
+			return basicGetSpecificDomainElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -176,17 +196,18 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FacademappingPackage.MAPPING__UML_ELEMENT:
-				setUmlElement((EObject)newValue);
-				return;
-			case FacademappingPackage.MAPPING__SPECIFIC_DOMAIN_ELEMENT:
-				setSpecificDomainElement((EObject)newValue);
-				return;
+		case FacademappingPackage.MAPPING__UML_ELEMENT:
+			setUmlElement((EObject) newValue);
+			return;
+		case FacademappingPackage.MAPPING__SPECIFIC_DOMAIN_ELEMENT:
+			setSpecificDomainElement((EObject) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -194,17 +215,18 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FacademappingPackage.MAPPING__UML_ELEMENT:
-				setUmlElement((EObject)null);
-				return;
-			case FacademappingPackage.MAPPING__SPECIFIC_DOMAIN_ELEMENT:
-				setSpecificDomainElement((EObject)null);
-				return;
+		case FacademappingPackage.MAPPING__UML_ELEMENT:
+			setUmlElement((EObject) null);
+			return;
+		case FacademappingPackage.MAPPING__SPECIFIC_DOMAIN_ELEMENT:
+			setSpecificDomainElement((EObject) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -212,17 +234,18 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FacademappingPackage.MAPPING__UML_ELEMENT:
-				return umlElement != null;
-			case FacademappingPackage.MAPPING__SPECIFIC_DOMAIN_ELEMENT:
-				return specificDomainElement != null;
+		case FacademappingPackage.MAPPING__UML_ELEMENT:
+			return umlElement != null;
+		case FacademappingPackage.MAPPING__SPECIFIC_DOMAIN_ELEMENT:
+			return specificDomainElement != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //MappingImpl
+} // MappingImpl

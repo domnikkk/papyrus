@@ -6,18 +6,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizableElement;
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationConfiguration;
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage;
@@ -29,8 +24,8 @@ import org.eclipse.papyrus.customization.model.customizationplugin.Customization
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.customization.model.customizationplugin.impl.CustomizationConfigurationImpl#getPlugin <em>Plugin</em>}</li>
- *   <li>{@link org.eclipse.papyrus.customization.model.customizationplugin.impl.CustomizationConfigurationImpl#getElements <em>Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.model.customizationplugin.impl.CustomizationConfigurationImpl#getPlugin <em>Plugin</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.model.customizationplugin.impl.CustomizationConfigurationImpl#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +36,7 @@ public class CustomizationConfigurationImpl extends EObjectImpl implements Custo
 	 * The default value of the '{@link #getPlugin() <em>Plugin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPlugin()
 	 * @generated
 	 * @ordered
@@ -51,6 +47,7 @@ public class CustomizationConfigurationImpl extends EObjectImpl implements Custo
 	 * The cached value of the '{@link #getPlugin() <em>Plugin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPlugin()
 	 * @generated
 	 * @ordered
@@ -61,6 +58,7 @@ public class CustomizationConfigurationImpl extends EObjectImpl implements Custo
 	 * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElements()
 	 * @generated
 	 * @ordered
@@ -70,6 +68,7 @@ public class CustomizationConfigurationImpl extends EObjectImpl implements Custo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected CustomizationConfigurationImpl() {
@@ -79,6 +78,7 @@ public class CustomizationConfigurationImpl extends EObjectImpl implements Custo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -89,6 +89,7 @@ public class CustomizationConfigurationImpl extends EObjectImpl implements Custo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getPlugin() {
@@ -98,18 +99,21 @@ public class CustomizationConfigurationImpl extends EObjectImpl implements Custo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setPlugin(String newPlugin) {
 		String oldPlugin = plugin;
 		plugin = newPlugin;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__PLUGIN, oldPlugin, plugin));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<CustomizableElement> getElements() {
@@ -122,13 +126,14 @@ public class CustomizationConfigurationImpl extends EObjectImpl implements Custo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__ELEMENTS:
-				return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+		case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__ELEMENTS:
+			return ((InternalEList<?>) getElements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -136,15 +141,16 @@ public class CustomizationConfigurationImpl extends EObjectImpl implements Custo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__PLUGIN:
-				return getPlugin();
-			case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__ELEMENTS:
-				return getElements();
+		case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__PLUGIN:
+			return getPlugin();
+		case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__ELEMENTS:
+			return getElements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -152,19 +158,20 @@ public class CustomizationConfigurationImpl extends EObjectImpl implements Custo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__PLUGIN:
-				setPlugin((String)newValue);
-				return;
-			case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__ELEMENTS:
-				getElements().clear();
-				getElements().addAll((Collection<? extends CustomizableElement>)newValue);
-				return;
+		case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__PLUGIN:
+			setPlugin((String) newValue);
+			return;
+		case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__ELEMENTS:
+			getElements().clear();
+			getElements().addAll((Collection<? extends CustomizableElement>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -172,17 +179,18 @@ public class CustomizationConfigurationImpl extends EObjectImpl implements Custo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__PLUGIN:
-				setPlugin(PLUGIN_EDEFAULT);
-				return;
-			case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__ELEMENTS:
-				getElements().clear();
-				return;
+		case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__PLUGIN:
+			setPlugin(PLUGIN_EDEFAULT);
+			return;
+		case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__ELEMENTS:
+			getElements().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -190,15 +198,16 @@ public class CustomizationConfigurationImpl extends EObjectImpl implements Custo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__PLUGIN:
-				return PLUGIN_EDEFAULT == null ? plugin != null : !PLUGIN_EDEFAULT.equals(plugin);
-			case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__ELEMENTS:
-				return elements != null && !elements.isEmpty();
+		case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__PLUGIN:
+			return PLUGIN_EDEFAULT == null ? plugin != null : !PLUGIN_EDEFAULT.equals(plugin);
+		case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION__ELEMENTS:
+			return elements != null && !elements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -206,11 +215,14 @@ public class CustomizationConfigurationImpl extends EObjectImpl implements Custo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (plugin: ");
@@ -219,4 +231,4 @@ public class CustomizationConfigurationImpl extends EObjectImpl implements Custo
 		return result.toString();
 	}
 
-} //CustomizationConfigurationImpl
+} // CustomizationConfigurationImpl

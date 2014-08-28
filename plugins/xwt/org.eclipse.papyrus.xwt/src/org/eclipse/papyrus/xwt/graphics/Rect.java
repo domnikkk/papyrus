@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -14,7 +14,7 @@ import org.eclipse.swt.graphics.Rectangle;
 
 /**
  * Color consists of four elements: alpha, blue, green and red.
- * 
+ *
  * @author yyang
  */
 public class Rect {
@@ -78,10 +78,10 @@ public class Rect {
 
 	@Override
 	public boolean equals(Object obj) {
-		if(!(obj instanceof Rect)) {
+		if (!(obj instanceof Rect)) {
 			return false;
 		}
-		Rect rect = (Rect)obj;
+		Rect rect = (Rect) obj;
 		return x == rect.getX() && y == rect.getY() && width == rect.getWidth() && height == rect.getHeight();
 	}
 
@@ -93,11 +93,11 @@ public class Rect {
 	/**
 	 * Returns <code>true</code> if the point specified by the arguments is
 	 * inside the area specified by the receiver, and <code>false</code> otherwise.
-	 * 
+	 *
 	 * @param x
-	 *        the x coordinate of the point to test for containment
+	 *            the x coordinate of the point to test for containment
 	 * @param y
-	 *        the y coordinate of the point to test for containment
+	 *            the y coordinate of the point to test for containment
 	 * @return <code>true</code> if the rectangle contains the point and <code>false</code> otherwise
 	 */
 	public boolean contains(double x, double y) {
@@ -107,15 +107,15 @@ public class Rect {
 	/**
 	 * Returns <code>true</code> if the given point is inside the area specified
 	 * by the receiver, and <code>false</code> otherwise.
-	 * 
+	 *
 	 * @param pt
-	 *        the point to test for containment
+	 *            the point to test for containment
 	 * @return <code>true</code> if the rectangle contains the point and <code>false</code> otherwise
-	 * 
+	 *
 	 * @exception IllegalArgumentException
-	 *            <ul>
-	 *            <li>ERROR_NULL_ARGUMENT - if the argument is null</li>
-	 *            </ul>
+	 *                <ul>
+	 *                <li>ERROR_NULL_ARGUMENT - if the argument is null</li>
+	 *                </ul>
 	 */
 	public boolean contains(Point pt) {
 		return contains(pt.getX(), pt.getY());

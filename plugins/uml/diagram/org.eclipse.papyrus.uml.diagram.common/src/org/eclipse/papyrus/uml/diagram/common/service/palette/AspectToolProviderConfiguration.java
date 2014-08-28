@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ public class AspectToolProviderConfiguration extends AbstractProviderConfigurati
 	/**
 	 * Creates and builds a new provider contribution descriptor ( <code>DecoratorProviderConfiguration</code>) by parsing its configuration
 	 * element.
-	 * 
+	 *
 	 * @param configElement
-	 *        A provider XML configuration element
+	 *            A provider XML configuration element
 	 * @return A provider XML contribution descriptor
 	 */
 	public static AspectToolProviderConfiguration parse(IConfigurationElement configElement) {
@@ -42,9 +42,9 @@ public class AspectToolProviderConfiguration extends AbstractProviderConfigurati
 	/**
 	 * Creates a new <code>ProviderContributionDescriptor</code> instance by
 	 * parsing its configuration element.
-	 * 
+	 *
 	 * @param configElement
-	 *        The provider XML configuration element
+	 *            The provider XML configuration element
 	 */
 	protected AspectToolProviderConfiguration(IConfigurationElement configElement) {
 		// retrieve only ID, to test if the factory is the right one before
@@ -55,7 +55,7 @@ public class AspectToolProviderConfiguration extends AbstractProviderConfigurati
 
 	/**
 	 * Returns the ID of the factory configured by this configuration
-	 * 
+	 *
 	 * @return the id of the factory
 	 */
 	public String getId() {

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,6 +43,7 @@ public class ResourceEditorInput extends URIEditorInput {
 		return resource;
 	}
 
+	@Override
 	public boolean exists() {
 		ResourceSet rset = resource.getResourceSet();
 
@@ -51,12 +52,14 @@ public class ResourceEditorInput extends URIEditorInput {
 		return (rset != null) && rset.getURIConverter().exists(resource.getURI(), null);
 	}
 
+	@Override
 	public ImageDescriptor getImageDescriptor() {
 		return null;
 	}
 
+	@Override
 	public String getName() {
-		if(name == null) {
+		if (name == null) {
 			name = resource.getURI().lastSegment();
 		}
 
@@ -66,13 +69,15 @@ public class ResourceEditorInput extends URIEditorInput {
 	/**
 	 * Unlike the superclass, I am not persistable because a {@link Resource} is a transient
 	 * object.
-	 * 
+	 *
 	 * @return {@code false}
 	 */
+	@Override
 	public IPersistableElement getPersistable() {
 		return null;
 	}
 
+	@Override
 	public String getToolTipText() {
 		return resource.getURI().toString();
 	}

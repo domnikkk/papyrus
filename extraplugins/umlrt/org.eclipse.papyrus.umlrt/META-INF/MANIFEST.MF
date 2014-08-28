@@ -1,23 +1,25 @@
 Manifest-Version: 1.0
-Require-Bundle: org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.0.0",
+Require-Bundle: org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.0.1",
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.uml2.types;visibility:=reexport,
  org.eclipse.uml2.uml;bundle-version="4.1.0"
-Bundle-ActivationPolicy: lazy
-Bundle-Vendor: %providerName
-Bundle-Localization: plugin
-Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
-Bundle-Name: %pluginName
-Bundle-ManifestVersion: 2
-Bundle-SymbolicName: org.eclipse.papyrus.umlrt;singleton:=true
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.eclipse.papyrus.umlrt.UMLRealTime,
  org.eclipse.papyrus.umlrt.UMLRealTime.impl,
  org.eclipse.papyrus.umlrt.UMLRealTime.util,
  org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach,
  org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.impl,
  org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.util
-Bundle-Description: Contains uml-rt profile, the uml-rt StateMachine addendum and the Uml-rt ServiceModelLibrary
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 1.0.1.qualifier
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-ManifestVersion: 2
+Bundle-Description: Contains uml-rt profile, the uml-rt StateMachine a
+ ddendum and the Uml-rt ServiceModelLibrary
+Bundle-SymbolicName: org.eclipse.papyrus.umlrt;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

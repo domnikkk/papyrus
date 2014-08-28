@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AcceptClause;
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.QualifiedNameList;
@@ -101,8 +98,9 @@ public class AcceptClauseImpl extends MinimalEObjectImpl.Container implements Ac
   {
     String oldName = name;
     name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_CLAUSE__NAME, oldName, name));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_CLAUSE__NAME, oldName, name));
+	}
   }
 
   /**
@@ -127,7 +125,11 @@ public class AcceptClauseImpl extends MinimalEObjectImpl.Container implements Ac
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_CLAUSE__QUALIFIED_NAME_LIST, oldQualifiedNameList, newQualifiedNameList);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -142,15 +144,20 @@ public class AcceptClauseImpl extends MinimalEObjectImpl.Container implements Ac
     if (newQualifiedNameList != qualifiedNameList)
     {
       NotificationChain msgs = null;
-      if (qualifiedNameList != null)
-        msgs = ((InternalEObject)qualifiedNameList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_CLAUSE__QUALIFIED_NAME_LIST, null, msgs);
-      if (newQualifiedNameList != null)
-        msgs = ((InternalEObject)newQualifiedNameList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_CLAUSE__QUALIFIED_NAME_LIST, null, msgs);
+      if (qualifiedNameList != null) {
+		msgs = ((InternalEObject)qualifiedNameList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_CLAUSE__QUALIFIED_NAME_LIST, null, msgs);
+	}
+      if (newQualifiedNameList != null) {
+		msgs = ((InternalEObject)newQualifiedNameList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_CLAUSE__QUALIFIED_NAME_LIST, null, msgs);
+	}
       msgs = basicSetQualifiedNameList(newQualifiedNameList, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_CLAUSE__QUALIFIED_NAME_LIST, newQualifiedNameList, newQualifiedNameList));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_CLAUSE__QUALIFIED_NAME_LIST, newQualifiedNameList, newQualifiedNameList));
+	}
   }
 
   /**
@@ -253,7 +260,9 @@ public class AcceptClauseImpl extends MinimalEObjectImpl.Container implements Ac
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");

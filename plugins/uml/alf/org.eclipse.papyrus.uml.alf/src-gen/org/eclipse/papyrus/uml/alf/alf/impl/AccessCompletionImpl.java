@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AccessCompletion;
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.Expression;
@@ -83,7 +80,11 @@ public class AccessCompletionImpl extends MinimalEObjectImpl.Container implement
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.ACCESS_COMPLETION__ACCESS_INDEX, oldAccessIndex, newAccessIndex);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -98,15 +99,20 @@ public class AccessCompletionImpl extends MinimalEObjectImpl.Container implement
     if (newAccessIndex != accessIndex)
     {
       NotificationChain msgs = null;
-      if (accessIndex != null)
-        msgs = ((InternalEObject)accessIndex).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCESS_COMPLETION__ACCESS_INDEX, null, msgs);
-      if (newAccessIndex != null)
-        msgs = ((InternalEObject)newAccessIndex).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCESS_COMPLETION__ACCESS_INDEX, null, msgs);
+      if (accessIndex != null) {
+		msgs = ((InternalEObject)accessIndex).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCESS_COMPLETION__ACCESS_INDEX, null, msgs);
+	}
+      if (newAccessIndex != null) {
+		msgs = ((InternalEObject)newAccessIndex).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCESS_COMPLETION__ACCESS_INDEX, null, msgs);
+	}
       msgs = basicSetAccessIndex(newAccessIndex, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCESS_COMPLETION__ACCESS_INDEX, newAccessIndex, newAccessIndex));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCESS_COMPLETION__ACCESS_INDEX, newAccessIndex, newAccessIndex));
+	}
   }
 
   /**

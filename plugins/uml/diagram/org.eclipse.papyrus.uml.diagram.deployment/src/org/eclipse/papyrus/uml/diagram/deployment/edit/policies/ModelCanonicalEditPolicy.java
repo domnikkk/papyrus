@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -34,7 +34,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
-import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
@@ -90,11 +89,12 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void refreshOnActivate() {
 		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
 		List<?> c = getHost().getChildren();
-		for(int i = 0; i < c.size(); i++) {
-			((EditPart)c.get(i)).activate();
+		for (int i = 0; i < c.size(); i++) {
+			((EditPart) c.get(i)).activate();
 		}
 		super.refreshOnActivate();
 	}
@@ -102,8 +102,9 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected Set<EStructuralFeature> getFeaturesToSynchronize() {
-		if(myFeaturesToSynchronize == null) {
+		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getElement_OwnedComment());
@@ -114,11 +115,12 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected List<EObject> getSemanticChildrenList() {
-		View viewObject = (View)getHost().getModel();
+		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getPackage_1000SemanticChildren(viewObject);
-		for(UMLNodeDescriptor d : childDescriptors) {
+		for (UMLNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -127,6 +129,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
 		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
@@ -136,7 +139,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	private boolean isMyDiagramElement(View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
-		switch(visualID) {
+		switch (visualID) {
 		case DependencyNodeEditPart.VISUAL_ID:
 		case ModelEditPart.VISUAL_ID:
 		case PackageEditPart.VISUAL_ID:
@@ -155,33 +158,34 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void refreshSemantic() {
-		if(resolveSemanticElement() == null) {
+		if (resolveSemanticElement() == null) {
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getPackage_1000SemanticChildren((View)getHost().getModel());
+		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getPackage_1000SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
-		for(View v : getViewChildren()) {
-			if(isMyDiagramElement(v)) {
+		for (View v : getViewChildren()) {
+			if (isMyDiagramElement(v)) {
 				knownViewChildren.add(v);
 			}
 		}
 		// alternative to #cleanCanonicalSemanticChildren(getViewChildren(), semanticChildren)
 		//
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
-		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
+		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for(Iterator<UMLNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator.hasNext();) {
+		for (Iterator<UMLNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator.hasNext();) {
 			UMLNodeDescriptor next = descriptorsIterator.next();
 			String hint = UMLVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
-			for(View childView : getViewChildren()) {
+			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
-				if(next.getModelElement().equals(semanticElement)) {
-					if(hint.equals(childView.getType())) {
+				if (next.getModelElement().equals(semanticElement)) {
+					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but
 						// may want to use not the first view but last one as a 'real' match (the way original CEP does
@@ -189,7 +193,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 					}
 				}
 			}
-			if(perfectMatch.size() > 0) {
+			if (perfectMatch.size() > 0) {
 				descriptorsIterator.remove(); // precise match found no need to create anything for the NodeDescriptor
 				// use only one view (first or last?), keep rest as orphaned for further consideration
 				knownViewChildren.remove(perfectMatch.getFirst());
@@ -200,7 +204,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		orphaned.addAll(knownViewChildren);
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(childDescriptors.size());
-		for(UMLNodeDescriptor next : childDescriptors) {
+		for (UMLNodeDescriptor next : childDescriptors) {
 			String hint = UMLVisualIDRegistry.getType(next.getVisualID());
 			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
 			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter, Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
@@ -211,20 +215,20 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		//
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
-		if(cmd != null && cmd.canExecute()) {
+		if (cmd != null && cmd.canExecute()) {
 			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
-			List<IAdaptable> nl = (List<IAdaptable>)request.getNewObject();
+			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
-		if(changed || createdViews.size() > 0) {
+		if (changed || createdViews.size() > 0) {
 			postProcessRefreshSemantic(createdViews);
 		}
 
 		Collection<IAdaptable> createdConnectionViews = refreshConnections();
 
-		if(createdViews.size() > 1) {
+		if (createdViews.size() > 1) {
 			// perform a layout of the container
 			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews, host());
 			executeCommand(new ICommandProxy(layoutCmd));
@@ -242,17 +246,17 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
 		Collection<UMLLinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
 		List<View> edges = new ArrayList<View>();
-		for(Object edge : getDiagram().getEdges()) {
-			if(edge instanceof View) {
-				edges.add((View)edge);
+		for (Object edge : getDiagram().getEdges()) {
+			if (edge instanceof View) {
+				edges.add((View) edge);
 			}
 		}
 		Collection<View> existingLinks = new LinkedList<View>(edges);
-		for(Iterator<View> linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
-			Edge nextDiagramLink = (Edge)linksIterator.next();
+		for (Iterator<View> linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
+			Edge nextDiagramLink = (Edge) linksIterator.next();
 			int diagramLinkVisualID = UMLVisualIDRegistry.getVisualID(nextDiagramLink);
-			if(diagramLinkVisualID == -1 || diagramLinkVisualID == LinkDescriptorEditPart.VISUAL_ID) {
-				if(nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
+			if (diagramLinkVisualID == -1 || diagramLinkVisualID == LinkDescriptorEditPart.VISUAL_ID) {
+				if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
 					linksIterator.remove();
 				}
 				continue;
@@ -260,9 +264,9 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 			EObject diagramLinkObject = nextDiagramLink.getElement();
 			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
 			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-			for(Iterator<UMLLinkDescriptor> linkDescriptorsIterator = linkDescriptors.iterator(); linkDescriptorsIterator.hasNext();) {
+			for (Iterator<UMLLinkDescriptor> linkDescriptorsIterator = linkDescriptors.iterator(); linkDescriptorsIterator.hasNext();) {
 				UMLLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
-				if(diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination() && diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
+				if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination() && diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
 					linksIterator.remove();
 					linkDescriptorsIterator.remove();
 					break;
@@ -277,249 +281,220 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	private Collection<UMLLinkDescriptor> collectAllLinks(View view, Domain2Notation domain2NotationMap) {
-		if(!DeploymentDiagramEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(view))) {
+		if (!DeploymentDiagramEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(view))) {
 			return Collections.emptyList();
 		}
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
-		switch(UMLVisualIDRegistry.getVisualID(view)) {
-		case DeploymentDiagramEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		switch (UMLVisualIDRegistry.getVisualID(view)) {
+		case DeploymentDiagramEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getPackage_1000ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case DependencyNodeEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case DependencyNodeEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getDependency_2011ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ModelEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case ModelEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getModel_2010ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case PackageEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case PackageEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getPackage_2009ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ConstraintEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case ConstraintEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getConstraint_2005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case CommentEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case CommentEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getComment_2001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ExecutionEnvironmentEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case ExecutionEnvironmentEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getExecutionEnvironment_2002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case DeviceEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case DeviceEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getDevice_2003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ArtifactEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case ArtifactEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getArtifact_2006ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case NodeEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case NodeEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getNode_2008ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case DefaultNamedElementEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case DefaultNamedElementEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getNamedElement_2012ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ModelEditPartCN.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case ModelEditPartCN.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getModel_49ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case PackageEditPartCN.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case PackageEditPartCN.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getPackage_36ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case DeviceEditPartCN.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case DeviceEditPartCN.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getDevice_16ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case NestedDeviceEditPartCN.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case NestedDeviceEditPartCN.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getDevice_44ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ExecutionEnvironmentEditPartCN.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case ExecutionEnvironmentEditPartCN.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getExecutionEnvironment_21ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case NestedExecutionEnvironmentEditPartCN.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case NestedExecutionEnvironmentEditPartCN.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getExecutionEnvironment_46ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case NodeEditPartCN.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case NodeEditPartCN.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getNode_23ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case NestedNodeEditPartCN.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case NestedNodeEditPartCN.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getNode_42ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ArtifactEditPartCN.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case ArtifactEditPartCN.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getArtifact_25ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ArtifactEditPartACN.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case ArtifactEditPartACN.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getArtifact_28ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case NestedArtifactNodeEditPartCN.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case NestedArtifactNodeEditPartCN.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getArtifact_40ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case CommentEditPartCN.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case CommentEditPartCN.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getComment_54ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ConstraintEditPartCN.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case ConstraintEditPartCN.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getConstraint_56ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case DeploymentEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case DeploymentEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getDeployment_4001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ManifestationEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case ManifestationEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getManifestation_4002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case GeneralizationEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case GeneralizationEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getGeneralization_4003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case DependencyEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case DependencyEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getDependency_4004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case DependencyBranchEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
+		case DependencyBranchEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.INSTANCE.getDependency_4010ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		}
-		for(Iterator<?> children = view.getChildren().iterator(); children.hasNext();) {
-			result.addAll(collectAllLinks((View)children.next(), domain2NotationMap));
+		for (Iterator<?> children = view.getChildren().iterator(); children.hasNext();) {
+			result.addAll(collectAllLinks((View) children.next(), domain2NotationMap));
 		}
-		for(Iterator<?> edges = view.getSourceEdges().iterator(); edges.hasNext();) {
-			result.addAll(collectAllLinks((View)edges.next(), domain2NotationMap));
+		for (Iterator<?> edges = view.getSourceEdges().iterator(); edges.hasNext();) {
+			result.addAll(collectAllLinks((View) edges.next(), domain2NotationMap));
 		}
 		return result;
 	}
@@ -529,24 +504,25 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	private Collection<IAdaptable> createConnections(Collection<UMLLinkDescriptor> linkDescriptors, Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
-		for(UMLLinkDescriptor nextLinkDescriptor : linkDescriptors) {
+		for (UMLLinkDescriptor nextLinkDescriptor : linkDescriptors) {
 			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
 			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap);
-			if(sourceEditPart == null || targetEditPart == null) {
+			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
-			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(), UMLVisualIDRegistry.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND, false, ((IGraphicalEditPart)getHost()).getDiagramPreferencesHint());
+			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(), UMLVisualIDRegistry.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND,
+					false, ((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
 			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
-			ccr.setType(RequestConstants.REQ_CONNECTION_START);
+			ccr.setType(org.eclipse.gef.RequestConstants.REQ_CONNECTION_START);
 			ccr.setSourceEditPart(sourceEditPart);
 			sourceEditPart.getCommand(ccr);
 			ccr.setTargetEditPart(targetEditPart);
-			ccr.setType(RequestConstants.REQ_CONNECTION_END);
+			ccr.setType(org.eclipse.gef.RequestConstants.REQ_CONNECTION_END);
 			Command cmd = targetEditPart.getCommand(ccr);
-			if(cmd != null && cmd.canExecute()) {
+			if (cmd != null && cmd.canExecute()) {
 				executeCommand(cmd);
-				IAdaptable viewAdapter = (IAdaptable)ccr.getNewObject();
-				if(viewAdapter != null) {
+				IAdaptable viewAdapter = (IAdaptable) ccr.getNewObject();
+				if (viewAdapter != null) {
 					adapters.add(viewAdapter);
 				}
 			}
@@ -558,9 +534,9 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	private EditPart getEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap) {
-		View view = (View)domain2NotationMap.get(domainModelElement);
-		if(view != null) {
-			return (EditPart)getHost().getViewer().getEditPartRegistry().get(view);
+		View view = domain2NotationMap.get(domainModelElement);
+		if (view != null) {
+			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
 	}
@@ -569,7 +545,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	private Diagram getDiagram() {
-		return ((View)getHost().getModel()).getDiagram();
+		return ((View) getHost().getModel()).getDiagram();
 	}
 
 	/**
@@ -590,9 +566,9 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap, int hintVisualId) {
-		View view = (View)domain2NotationMap.getHinted(domainModelElement, UMLVisualIDRegistry.getType(hintVisualId));
-		if(view != null) {
-			return (EditPart)getHost().getViewer().getEditPartRegistry().get(view);
+		View view = domain2NotationMap.getHinted(domainModelElement, UMLVisualIDRegistry.getType(hintVisualId));
+		if (view != null) {
+			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
 	}
@@ -621,7 +597,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		 * @generated
 		 */
 		public void putView(EObject domainElement, View view) {
-			if(!containsKey(view.getElement())) {
+			if (!containsKey(view.getElement())) {
 				this.put(domainElement, view);
 			}
 		}

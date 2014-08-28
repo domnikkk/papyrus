@@ -45,12 +45,12 @@ public class StringFileSelectorEMF extends StringFileSelector {
 		notifyChange();
 	}
 
-	//	@Override
+	// @Override
 	protected IFile getIFile(String path) {
 		return EMFFileUtil.getIFile(path);
 	}
 
-	//	@Override
+	// @Override
 	protected File getFile(String path) {
 		return EMFFileUtil.getFile(path);
 	}

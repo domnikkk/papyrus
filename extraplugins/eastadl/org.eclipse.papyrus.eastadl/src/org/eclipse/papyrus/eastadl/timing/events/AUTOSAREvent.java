@@ -13,7 +13,7 @@ import org.eclipse.uml2.uml.TimeEvent;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.events.AUTOSAREvent#getRef <em>Ref</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.events.AUTOSAREvent#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,10 +27,10 @@ public interface AUTOSAREvent extends Event {
 	 * Returns the value of the '<em><b>Ref</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ref</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Ref</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Ref</em>' reference.
 	 * @see #setRef(TimeEvent)
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getAUTOSAREvent_Ref()
@@ -43,7 +43,9 @@ public interface AUTOSAREvent extends Event {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.events.AUTOSAREvent#getRef <em>Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ref</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Ref</em>' reference.
 	 * @see #getRef()
 	 * @generated
 	 */

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.uml.diagram.internal.ui.wizards;
 
@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.operation.IRunnableContext;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.IWizardPage;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.cdo.core.IPapyrusRepository;
 import org.eclipse.papyrus.cdo.internal.core.CDOUtils;
 import org.eclipse.papyrus.cdo.internal.core.PapyrusRepositoryManager;
@@ -60,8 +61,8 @@ public class CDONewModelStorageProvider extends AbstractNewModelStorageProvider 
 	public boolean canHandle(IStructuredSelection initialSelection) {
 		boolean result = false;
 
-		for(Object next : initialSelection.toList()) {
-			if(CDOUtils.isCDOObject(adapt(next, EObject.class))) {
+		for (Object next : initialSelection.toList()) {
+			if (CDOUtils.isCDOObject(adapt(next, EObject.class))) {
 				result = true;
 				break;
 			}
@@ -79,37 +80,37 @@ public class CDONewModelStorageProvider extends AbstractNewModelStorageProvider 
 		createSelectProviderPart();
 
 		IPapyrusRepository repo = getRepository(selection);
-		if(repo != null) {
+		if (repo != null) {
 			bus.post(repo);
 		}
 	}
 
 	/**
 	 * Gets the contextual repository, if any, from a selection.
-	 * 
+	 *
 	 * @param selection
-	 *        a selection
-	 * 
+	 *            a selection
+	 *
 	 * @return the repository that is or contains the {@code selection}
 	 */
 	static IPapyrusRepository getRepository(IStructuredSelection selection) {
 		IPapyrusRepository result = null;
 
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 			result = adapt(selection.getFirstElement(), IPapyrusRepository.class);
-			if(result == null) {
+			if (result == null) {
 				CDOResourceNode node = adapt(selection.getFirstElement(), CDOResourceNode.class);
-				if(node == null) {
+				if (node == null) {
 					EObject object = adapt(selection.getFirstElement(), EObject.class);
-					if(object != null) {
+					if (object != null) {
 						CDOObject cdo = CDOUtils.getCDOObject(object);
-						if(cdo != null) {
+						if (cdo != null) {
 							node = cdo.cdoResource();
 						}
 					}
 				}
 
-				if(node != null) {
+				if (node != null) {
 					result = PapyrusRepositoryManager.INSTANCE.getRepositoryForURI(node.getURI());
 				}
 			}
@@ -120,7 +121,7 @@ public class CDONewModelStorageProvider extends AbstractNewModelStorageProvider 
 
 	@Override
 	public List<? extends IWizardPage> createPages() {
-		if(newModelPage == null) {
+		if (newModelPage == null) {
 			return Collections.emptyList();
 		}
 
@@ -129,9 +130,9 @@ public class CDONewModelStorageProvider extends AbstractNewModelStorageProvider 
 
 	@Override
 	public IStatus validateDiagramCategories(String... newCategories) {
-		if(newModelPage != null) {
+		if (newModelPage != null) {
 			String firstCategory = newCategories.length > 0 ? newCategories[0] : null;
-			if(newCategories.length > 0) {
+			if (newCategories.length > 0) {
 				// 316943 - [Wizard] Wrong suffix for file name when creating a
 				// profile model
 				return newModelPage.diagramExtensionChanged(wizard.getDiagramFileExtension(firstCategory));
@@ -143,21 +144,21 @@ public class CDONewModelStorageProvider extends AbstractNewModelStorageProvider 
 
 	/**
 	 * Creates the new model page, if required.
-	 * 
+	 *
 	 * @param selection
-	 *        the selection
-	 * 
+	 *            the selection
+	 *
 	 * @return the new model page, or {@code null} if none
 	 */
 	protected NewModelPage createNewModelPage(IStructuredSelection selection) {
-		if(wizard.isCreateProjectWizard() || wizard.isCreateMultipleModelsWizard()) {
+		if (wizard.isCreateProjectWizard() || wizard.isCreateMultipleModelsWizard()) {
 
 			return null;
 		}
 
-		if(isCreateFromExistingDomainModel()) {
+		if (isCreateFromExistingDomainModel()) {
 			URI uri = getSelectedResourceURI(selection);
-			if(uri != null) {
+			if (uri != null) {
 				uri = uri.trimFileExtension().appendFileExtension(wizard.getDiagramFileExtension(null));
 				return new NewDiagramForExistingModelPage(selection, wizard.getModelKindName(), bus, uri.lastSegment());
 			}
@@ -167,7 +168,7 @@ public class CDONewModelStorageProvider extends AbstractNewModelStorageProvider 
 	}
 
 	protected boolean isCreateFromExistingDomainModel() {
-		return wizard.isInitModelWizard() && ((InitModelWizard)wizard).isCreateFromExistingDomainModel();
+		return wizard.isInitModelWizard() && ((InitModelWizard) wizard).isCreateFromExistingDomainModel();
 	}
 
 	@Override
@@ -177,7 +178,7 @@ public class CDONewModelStorageProvider extends AbstractNewModelStorageProvider 
 
 	@Override
 	public ISelectProviderPart createSelectProviderPart() {
-		if(selectProviderPart == null) {
+		if (selectProviderPart == null) {
 			selectProviderPart = new RepositorySelectionPart(PapyrusRepositoryManager.INSTANCE, bus, new Supplier<IRunnableContext>() {
 
 				@Override
@@ -204,16 +205,16 @@ public class CDONewModelStorageProvider extends AbstractNewModelStorageProvider 
 
 		/**
 		 * Instantiates a new new diagram for existing model page.
-		 * 
+		 *
 		 * @param selection
-		 *        the selection
+		 *            the selection
 		 * @param modelKindName
-		 *        the user-presentable (translatable) name of the kind of
-		 *        model to create
+		 *            the user-presentable (translatable) name of the kind of
+		 *            model to create
 		 * @param bus
-		 *        an event bus for posting events
+		 *            an event bus for posting events
 		 * @param defaultResourceName
-		 *        the default resource name
+		 *            the default resource name
 		 */
 		public NewDiagramForExistingModelPage(IStructuredSelection selection, String modelKindName, EventBus bus, String defaultResourceName) {
 
@@ -235,9 +236,9 @@ public class CDONewModelStorageProvider extends AbstractNewModelStorageProvider 
 		protected void validatePage() {
 			super.validatePage();
 
-			if(getMessageType() < ERROR) {
-				if(!myDiagramResourceName.equals(getNewResourceName())) {
-					setMessage(org.eclipse.papyrus.uml.diagram.wizards.Messages.bind(org.eclipse.papyrus.uml.diagram.wizards.Messages.InitModelWizard_diagram_name_is_different_from_domain_model, myDiagramResourceName), ERROR);
+			if (getMessageType() < ERROR) {
+				if (!myDiagramResourceName.equals(getNewResourceName())) {
+					setMessage(NLS.bind(org.eclipse.papyrus.uml.diagram.wizards.Messages.InitModelWizard_diagram_name_is_different_from_domain_model, myDiagramResourceName), ERROR);
 					setPageComplete(false);
 				}
 			}

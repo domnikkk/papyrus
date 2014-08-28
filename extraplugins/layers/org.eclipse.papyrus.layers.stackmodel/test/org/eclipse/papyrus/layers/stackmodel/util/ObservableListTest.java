@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,7 +14,11 @@
 
 package org.eclipse.papyrus.layers.stackmodel.util;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -51,11 +55,11 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testObservableList() {
-		
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple");
-		
+
+		List<String> list = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple");
+
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
-		
+
 		assertNotNull("Object created", notyfyingList);
 	}
 
@@ -64,11 +68,11 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testDelegate() {
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple");
-		
+		List<String> list = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple");
+
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
-		
-		assertSame("delegate is set", list, notyfyingList.delegate() );
+
+		assertSame("delegate is set", list, notyfyingList.delegate());
 	}
 
 	/**
@@ -76,11 +80,11 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testGetEventBus() {
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple");
-		
+		List<String> list = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple");
+
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
-		
-		assertNotNull("eventBus found", notyfyingList.getEventBus() );
+
+		assertNotNull("eventBus found", notyfyingList.getEventBus());
 	}
 
 	/**
@@ -88,28 +92,28 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testAddE() {
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple");
+		List<String> list = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple");
 		String addedElement = "purple";
 		int listSizeBefore = list.size();
-		int expectedListSizeAfter = listSizeBefore+1;
+		int expectedListSizeAfter = listSizeBefore + 1;
 
 		FakeObservableListListener<String> notifyingListListener = new FakeObservableListListener<String>();
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
-		
-		notyfyingList.getEventBus().register(notifyingListListener );
-		
+
+		notyfyingList.getEventBus().register(notifyingListListener);
+
 		// Action
 		notyfyingList.add(addedElement);
-		
+
 		// Assertions
 		assertSame("event propagated", 1, notifyingListListener.traces.size());
 		assertTrue("event addedElement is correct", notifyingListListener.traces.get(0).notifier.getAddedElements().contains(addedElement));
 
 		Collection<? extends String> eventAddedElements = notifyingListListener.traces.get(0).notifier.getAddedElements();
-		assertEquals("event elements size", 1 , eventAddedElements.size());
-		
-		assertEquals("result list size", expectedListSizeAfter , notyfyingList.size());
-		assertEquals("result list size", expectedListSizeAfter , list.size());
+		assertEquals("event elements size", 1, eventAddedElements.size());
+
+		assertEquals("result list size", expectedListSizeAfter, notyfyingList.size());
+		assertEquals("result list size", expectedListSizeAfter, list.size());
 	}
 
 	/**
@@ -117,26 +121,26 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testAddAllCollectionOfQextendsE() {
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow");
-		List<String> addedElements = Lists.newArrayList( "green", "blue",  "purple");
+		List<String> list = Lists.newArrayList("red", "orange", "yellow");
+		List<String> addedElements = Lists.newArrayList("green", "blue", "purple");
 		int listSizeBefore = list.size();
-		int expectedListSizeAfter = listSizeBefore+addedElements.size();
-		
+		int expectedListSizeAfter = listSizeBefore + addedElements.size();
+
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
 		FakeObservableListListener<String> notifyingListListener = new FakeObservableListListener<String>();
-		
-		notyfyingList.getEventBus().register(notifyingListListener );
-		
+
+		notyfyingList.getEventBus().register(notifyingListListener);
+
 		// Action
 		notyfyingList.addAll(addedElements);
-		
+
 		assertSame("event propagated", 1, notifyingListListener.traces.size());
-		
+
 		Collection<? extends String> eventAddedElements = notifyingListListener.traces.get(0).notifier.getAddedElements();
-		assertEquals("event elements size", addedElements.size() , eventAddedElements.size());
-		
-		assertEquals("result list size", expectedListSizeAfter , notyfyingList.size());
-		assertEquals("result list size", expectedListSizeAfter , list.size());
+		assertEquals("event elements size", addedElements.size(), eventAddedElements.size());
+
+		assertEquals("result list size", expectedListSizeAfter, notyfyingList.size());
+		assertEquals("result list size", expectedListSizeAfter, list.size());
 	}
 
 	/**
@@ -144,28 +148,28 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testAddIntE() {
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple");
+		List<String> list = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple");
 		String addedElement = "purple";
 		int listSizeBefore = list.size();
-		int expectedListSizeAfter = listSizeBefore+1;
+		int expectedListSizeAfter = listSizeBefore + 1;
 
 		FakeObservableListListener<String> notifyingListListener = new FakeObservableListListener<String>();
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
-		
-		notyfyingList.getEventBus().register(notifyingListListener );
-		
+
+		notyfyingList.getEventBus().register(notifyingListListener);
+
 		// Action
 		notyfyingList.add(3, addedElement);
-		
+
 		// Assertions
 		assertSame("event propagated", 1, notifyingListListener.traces.size());
 		assertTrue("event addedElement is correct", notifyingListListener.traces.get(0).notifier.getAddedElements().contains(addedElement));
 
 		Collection<? extends String> eventAddedElements = notifyingListListener.traces.get(0).notifier.getAddedElements();
-		assertEquals("event elements size", 1 , eventAddedElements.size());
-		
-		assertEquals("result list size", expectedListSizeAfter , notyfyingList.size());
-		assertEquals("result list size", expectedListSizeAfter , list.size());
+		assertEquals("event elements size", 1, eventAddedElements.size());
+
+		assertEquals("result list size", expectedListSizeAfter, notyfyingList.size());
+		assertEquals("result list size", expectedListSizeAfter, list.size());
 	}
 
 	/**
@@ -173,26 +177,26 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testAddAllIntCollectionOfQextendsE() {
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow");
-		List<String> addedElements = Lists.newArrayList( "green", "blue",  "purple");
+		List<String> list = Lists.newArrayList("red", "orange", "yellow");
+		List<String> addedElements = Lists.newArrayList("green", "blue", "purple");
 		int listSizeBefore = list.size();
-		int expectedListSizeAfter = listSizeBefore+addedElements.size();
-		
+		int expectedListSizeAfter = listSizeBefore + addedElements.size();
+
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
 		FakeObservableListListener<String> notifyingListListener = new FakeObservableListListener<String>();
-		
-		notyfyingList.getEventBus().register(notifyingListListener );
-		
+
+		notyfyingList.getEventBus().register(notifyingListListener);
+
 		// Action
 		notyfyingList.addAll(2, addedElements);
-		
+
 		assertSame("event propagated", 1, notifyingListListener.traces.size());
-		
+
 		Collection<? extends String> eventAddedElements = notifyingListListener.traces.get(0).notifier.getAddedElements();
-		assertEquals("event elements size", addedElements.size() , eventAddedElements.size());
-		
-		assertEquals("result list size", expectedListSizeAfter , notyfyingList.size());
-		assertEquals("result list size", expectedListSizeAfter , list.size());
+		assertEquals("event elements size", addedElements.size(), eventAddedElements.size());
+
+		assertEquals("result list size", expectedListSizeAfter, notyfyingList.size());
+		assertEquals("result list size", expectedListSizeAfter, list.size());
 	}
 
 	/**
@@ -200,29 +204,29 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testRemoveInt() {
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple");
+		List<String> list = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple");
 		String removedElement = "purple";
 		int listSizeBefore = list.size();
-		int expectedListSizeAfter = listSizeBefore-1;
+		int expectedListSizeAfter = listSizeBefore - 1;
 
 		FakeObservableListListener<String> notifyingListListener = new FakeObservableListListener<String>();
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
-		
-		notyfyingList.getEventBus().register(notifyingListListener );
-		
+
+		notyfyingList.getEventBus().register(notifyingListListener);
+
 		// Action
-		notyfyingList.remove( removedElement);
-		
+		notyfyingList.remove(removedElement);
+
 		// Assertions
 		assertSame("event propagated", 1, notifyingListListener.traces.size());
 		ObservableListView<String>.ObservableListEvent event = notifyingListListener.traces.get(0).notifier;
 		assertTrue("event removesElement is correct", event.getRemovedElements().contains(removedElement));
-		
-		assertEquals("addedElement size", 0, event.getAddedElements().size() );
-		assertEquals("removedElement size", 1, event.getRemovedElements().size() );
-		
-		assertEquals("result list size", expectedListSizeAfter , notyfyingList.size());
-		assertEquals("result list size", expectedListSizeAfter , list.size());
+
+		assertEquals("addedElement size", 0, event.getAddedElements().size());
+		assertEquals("removedElement size", 1, event.getRemovedElements().size());
+
+		assertEquals("result list size", expectedListSizeAfter, notyfyingList.size());
+		assertEquals("result list size", expectedListSizeAfter, list.size());
 	}
 
 	/**
@@ -230,30 +234,30 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testRemoveObject() {
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple");
+		List<String> list = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple");
 		int removedIndex = 3;
 		String removedElement = list.get(removedIndex);
 		int listSizeBefore = list.size();
-		int expectedListSizeAfter = listSizeBefore-1;
+		int expectedListSizeAfter = listSizeBefore - 1;
 
 		FakeObservableListListener<String> notifyingListListener = new FakeObservableListListener<String>();
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
-		
-		notyfyingList.getEventBus().register(notifyingListListener );
-		
+
+		notyfyingList.getEventBus().register(notifyingListListener);
+
 		// Action
-		notyfyingList.remove( removedIndex);
-		
+		notyfyingList.remove(removedIndex);
+
 		// Assertions
 		assertSame("event propagated", 1, notifyingListListener.traces.size());
 		ObservableListView<String>.ObservableListEvent event = notifyingListListener.traces.get(0).notifier;
 		assertTrue("event removesElement is correct", event.getRemovedElements().contains(removedElement));
-		
-		assertEquals("addedElement size", 0, event.getAddedElements().size() );
-		assertEquals("removedElement size", 1, event.getRemovedElements().size() );
-		
-		assertEquals("result list size", expectedListSizeAfter , notyfyingList.size());
-		assertEquals("result list size", expectedListSizeAfter , list.size());
+
+		assertEquals("addedElement size", 0, event.getAddedElements().size());
+		assertEquals("removedElement size", 1, event.getRemovedElements().size());
+
+		assertEquals("result list size", expectedListSizeAfter, notyfyingList.size());
+		assertEquals("result list size", expectedListSizeAfter, list.size());
 	}
 
 	/**
@@ -261,31 +265,31 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testRemoveAllCollectionOfQ() {
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple");
-		List<String> elementsToRemove = Lists.newArrayList( "orange", "green",  "purple");
+		List<String> list = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple");
+		List<String> elementsToRemove = Lists.newArrayList("orange", "green", "purple");
 		int listSizeBefore = list.size();
 		int removedElementsCount = elementsToRemove.size();
-		int expectedListSizeAfter = listSizeBefore-removedElementsCount;
+		int expectedListSizeAfter = listSizeBefore - removedElementsCount;
 
 		FakeObservableListListener<String> notifyingListListener = new FakeObservableListListener<String>();
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
-		
-		notyfyingList.getEventBus().register(notifyingListListener );
-		
+
+		notyfyingList.getEventBus().register(notifyingListListener);
+
 		// Action
-		notyfyingList.removeAll( elementsToRemove);
-		
+		notyfyingList.removeAll(elementsToRemove);
+
 		// Assertions
 		assertSame("event propagated", 1, notifyingListListener.traces.size());
-		
+
 		ObservableListView<String>.ObservableListEvent event = notifyingListListener.traces.get(0).notifier;
 		assertTrue("event removesElement is correct", event.getRemovedElements().containsAll(elementsToRemove));
-		
-		assertEquals("addedElement size", 0, event.getAddedElements().size() );
-		assertEquals("removedElement size", removedElementsCount, event.getRemovedElements().size() );
-		
-		assertEquals("result list size", expectedListSizeAfter , notyfyingList.size());
-		assertEquals("result list size", expectedListSizeAfter , list.size());
+
+		assertEquals("addedElement size", 0, event.getAddedElements().size());
+		assertEquals("removedElement size", removedElementsCount, event.getRemovedElements().size());
+
+		assertEquals("result list size", expectedListSizeAfter, notyfyingList.size());
+		assertEquals("result list size", expectedListSizeAfter, list.size());
 	}
 
 	/**
@@ -293,32 +297,32 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testRemoveAllCollectionOfQWithTooMuchElements() {
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple");
-		List<String> elementsToRemove = Lists.newArrayList( "orange", "falseColor1", "green",  "purple", "falseColor");
+		List<String> list = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple");
+		List<String> elementsToRemove = Lists.newArrayList("orange", "falseColor1", "green", "purple", "falseColor");
 		int listSizeBefore = list.size();
-		int removedElementsCount = elementsToRemove.size()-2; // 2 = falseColors
-		int expectedListSizeAfter = listSizeBefore-removedElementsCount;
+		int removedElementsCount = elementsToRemove.size() - 2; // 2 = falseColors
+		int expectedListSizeAfter = listSizeBefore - removedElementsCount;
 
 		FakeObservableListListener<String> notifyingListListener = new FakeObservableListListener<String>();
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
-		
-		notyfyingList.getEventBus().register(notifyingListListener );
-		
+
+		notyfyingList.getEventBus().register(notifyingListListener);
+
 		// Action
-		notyfyingList.removeAll( elementsToRemove);
-		
+		notyfyingList.removeAll(elementsToRemove);
+
 		// Assertions
 		assertSame("event propagated", 1, notifyingListListener.traces.size());
-		
+
 		ObservableListView<String>.ObservableListEvent event = notifyingListListener.traces.get(0).notifier;
-//		assertTrue("event removesElement is correct", event.getRemovedElements().containsAll(elementsToRemove));
+		// assertTrue("event removesElement is correct", event.getRemovedElements().containsAll(elementsToRemove));
 		assertTrue("removed elements are from the required list", elementsToRemove.containsAll(event.getRemovedElements()));
-		
-		assertEquals("addedElement size", 0, event.getAddedElements().size() );
-		assertEquals("removedElement size", removedElementsCount, event.getRemovedElements().size() );
-		
-		assertEquals("result list size", expectedListSizeAfter , notyfyingList.size());
-		assertEquals("result list size", expectedListSizeAfter , list.size());
+
+		assertEquals("addedElement size", 0, event.getAddedElements().size());
+		assertEquals("removedElement size", removedElementsCount, event.getRemovedElements().size());
+
+		assertEquals("result list size", expectedListSizeAfter, notyfyingList.size());
+		assertEquals("result list size", expectedListSizeAfter, list.size());
 	}
 
 	/**
@@ -326,29 +330,29 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testResetTo() {
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple");
-		
-		List<String> listToReset = Lists.newArrayList( "orange", "green",  "purple", "falseColor");
-		List<String> expectedRemovedElement = Lists.newArrayList( "red", "yellow", "blue");
-		List<String> expectedAddedElement = Lists.newArrayList( "falseColor");
-		
+		List<String> list = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple");
+
+		List<String> listToReset = Lists.newArrayList("orange", "green", "purple", "falseColor");
+		List<String> expectedRemovedElement = Lists.newArrayList("red", "yellow", "blue");
+		List<String> expectedAddedElement = Lists.newArrayList("falseColor");
+
 		int expectedEventCount = 1;
 
 		FakeObservableListListener<String> notifyingListListener = new FakeObservableListListener<String>();
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
-		
-		notyfyingList.getEventBus().register(notifyingListListener );
-		
+
+		notyfyingList.getEventBus().register(notifyingListListener);
+
 		// Action
 		notyfyingList.resetTo(listToReset);
-		
+
 		// Assertions
 		assertSame("event propagated", expectedEventCount, notifyingListListener.traces.size());
 		assertArrayEquals("List equals", listToReset.toArray(), notyfyingList.toArray());
-		
+
 		ObservableListView<String>.ObservableListEvent event = notifyingListListener.traces.get(0).notifier;
 		assertArrayEquals("Removed list ok", expectedRemovedElement.toArray(), event.getRemovedElements().toArray());
-		assertArrayEquals("Added list ok", expectedAddedElement.toArray(), event.getAddedElements().toArray());	
+		assertArrayEquals("Added list ok", expectedAddedElement.toArray(), event.getAddedElements().toArray());
 	}
 
 	/**
@@ -356,29 +360,29 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testResetToNoAdded() {
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple");
-		
-		List<String> listToReset = Lists.newArrayList( "orange", "green",  "purple");
-		List<String> expectedRemovedElement = Lists.newArrayList( "red", "yellow", "blue");
+		List<String> list = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple");
+
+		List<String> listToReset = Lists.newArrayList("orange", "green", "purple");
+		List<String> expectedRemovedElement = Lists.newArrayList("red", "yellow", "blue");
 		List<String> expectedAddedElement = Collections.emptyList();
-		
+
 		int expectedEventCount = 1;
 
 		FakeObservableListListener<String> notifyingListListener = new FakeObservableListListener<String>();
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
-		
-		notyfyingList.getEventBus().register(notifyingListListener );
-		
+
+		notyfyingList.getEventBus().register(notifyingListListener);
+
 		// Action
 		notyfyingList.resetTo(listToReset);
-		
+
 		// Assertions
 		assertSame("event propagated", expectedEventCount, notifyingListListener.traces.size());
 		assertArrayEquals("List equals", listToReset.toArray(), notyfyingList.toArray());
-		
+
 		ObservableListView<String>.ObservableListEvent event = notifyingListListener.traces.get(0).notifier;
 		assertArrayEquals("Removed list ok", expectedRemovedElement.toArray(), event.getRemovedElements().toArray());
-		assertArrayEquals("Added list ok", expectedAddedElement.toArray(), event.getAddedElements().toArray());	
+		assertArrayEquals("Added list ok", expectedAddedElement.toArray(), event.getAddedElements().toArray());
 	}
 
 	/**
@@ -386,29 +390,29 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testResetToWithAddition() {
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple");
-		
-		List<String> listToReset = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple", "falseColor");
+		List<String> list = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple");
+
+		List<String> listToReset = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple", "falseColor");
 		List<String> expectedRemovedElement = Collections.emptyList();
-		List<String> expectedAddedElement = Lists.newArrayList( "falseColor");
-		
+		List<String> expectedAddedElement = Lists.newArrayList("falseColor");
+
 		int expectedEventCount = 1;
 
 		FakeObservableListListener<String> notifyingListListener = new FakeObservableListListener<String>();
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
-		
-		notyfyingList.getEventBus().register(notifyingListListener );
-		
+
+		notyfyingList.getEventBus().register(notifyingListListener);
+
 		// Action
 		notyfyingList.resetTo(listToReset);
-		
+
 		// Assertions
 		assertSame("event propagated", expectedEventCount, notifyingListListener.traces.size());
 		assertArrayEquals("List equals", listToReset.toArray(), notyfyingList.toArray());
-		
+
 		ObservableListView<String>.ObservableListEvent event = notifyingListListener.traces.get(0).notifier;
 		assertArrayEquals("Removed list ok", expectedRemovedElement.toArray(), event.getRemovedElements().toArray());
-		assertArrayEquals("Added list ok", expectedAddedElement.toArray(), event.getAddedElements().toArray());	
+		assertArrayEquals("Added list ok", expectedAddedElement.toArray(), event.getAddedElements().toArray());
 	}
 
 	/**
@@ -416,30 +420,30 @@ public class ObservableListTest {
 	 */
 	@Test
 	public void testResetToNoChanges() {
-		List<String> list = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple");
-		
-		List<String> listToReset = Lists.newArrayList( "red", "orange", "yellow", "green", "blue",  "purple");
+		List<String> list = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple");
+
+		List<String> listToReset = Lists.newArrayList("red", "orange", "yellow", "green", "blue", "purple");
 		List<String> expectedRemovedElement = Collections.emptyList();
 		List<String> expectedAddedElement = Collections.emptyList();
-		
+
 		// No change, no events
 		int expectedEventCount = 0;
 
 		FakeObservableListListener<String> notifyingListListener = new FakeObservableListListener<String>();
 		ObservableListView<String> notyfyingList = new ObservableListView<String>(list);
-		
-		notyfyingList.getEventBus().register(notifyingListListener );
-		
+
+		notyfyingList.getEventBus().register(notifyingListListener);
+
 		// Action
 		notyfyingList.resetTo(listToReset);
-		
+
 		// Assertions
 		assertSame("event propagated", expectedEventCount, notifyingListListener.traces.size());
 		assertArrayEquals("List equals", listToReset.toArray(), notyfyingList.toArray());
-		
-//		ObservableList<String>.NotifyingListEvent event = notifyingListListener.traces.get(0).notifier;
-//		assertArrayEquals("Removed list ok", expectedRemovedElement.toArray(), event.getRemovedElements().toArray());
-//		assertArrayEquals("Added list ok", expectedAddedElement.toArray(), event.getAddedElements().toArray());	
+
+		// ObservableList<String>.NotifyingListEvent event = notifyingListListener.traces.get(0).notifier;
+		// assertArrayEquals("Removed list ok", expectedRemovedElement.toArray(), event.getRemovedElements().toArray());
+		// assertArrayEquals("Added list ok", expectedAddedElement.toArray(), event.getAddedElements().toArray());
 	}
 
 

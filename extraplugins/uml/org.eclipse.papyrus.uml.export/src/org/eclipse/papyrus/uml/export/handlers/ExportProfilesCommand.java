@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,9 +38,9 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.ui.util.DisplayUtils;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
-import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.eclipse.project.editors.file.ManifestEditor;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.NotFoundException;
@@ -83,13 +83,13 @@ public class ExportProfilesCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Instantiates a new export profiles command.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param label
-	 *        the label
+	 *            the label
 	 * @param affectedFiles
-	 *        the affected files
+	 *            the affected files
 	 */
 	public ExportProfilesCommand(TransactionalEditingDomain domain, String label, @SuppressWarnings("rawtypes") List affectedFiles) {
 		super(domain, label, affectedFiles);
@@ -115,23 +115,22 @@ public class ExportProfilesCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Do execute with result.
-	 * 
+	 *
 	 * @param monitor
-	 *        the monitor
+	 *            the monitor
 	 * @param info
-	 *        the info
+	 *            the info
 	 * @return the command result
 	 * @throws ExecutionException
-	 *         the execution exception
+	 *             the execution exception
 	 * @see org.eclipse.core.commands.operations.AbstractOperation#canExecute()
 	 */
 
 
 
 	/**
-	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+	 *
 	 * @param monitor
 	 * @param info
 	 * @return
@@ -143,8 +142,8 @@ public class ExportProfilesCommand extends AbstractTransactionalCommand {
 		UmlModel openedModel;
 
 		try {
-			openedModel = (UmlModel)((ModelSet)getEditingDomain().getResourceSet()).getModel(UmlModel.MODEL_ID);
-			if(openedModel != null) {
+			openedModel = (UmlModel) ((ModelSet) getEditingDomain().getResourceSet()).getModel(UmlModel.MODEL_ID);
+			if (openedModel != null) {
 
 				EObject root = openedModel.lookupRoot();
 
@@ -156,24 +155,24 @@ public class ExportProfilesCommand extends AbstractTransactionalCommand {
 				ProfilesToExportSelectionDialog dialog = new ProfilesToExportSelectionDialog(shell, true, ProfileUtil.getAppliedProfilesFromWS(root), Messages.ExportProfilesCommand_6);
 
 				dialog.open();
-				if(Dialog.OK == dialog.getReturnCode()) {
-					// get the result, which is the set of libraries to export 
-					//then export the result
-					//launch a window to set the user specified export parameters:
+				if (Window.OK == dialog.getReturnCode()) {
+					// get the result, which is the set of libraries to export
+					// then export the result
+					// launch a window to set the user specified export parameters:
 					// * name of the plugin that will contain the exported profiles and will be installed in the environement
 					// * version of the plugin
 					// * Provider of the plugin
-					// * Execution Environment						
+					// * Execution Environment
 
 
 					Object[] profiles = dialog.getResult();
-					for(int i = 0; i < profiles.length; i++) {
-						pluginToInstallName += ((Profile)profiles[i]).getName();
+					for (int i = 0; i < profiles.length; i++) {
+						pluginToInstallName += ((Profile) profiles[i]).getName();
 
 					}
 					ExportProfilesParametersDialog paramDialog = new ExportProfilesParametersDialog(DisplayUtils.getDefaultShell(), pluginToInstallName, pluginProvider, pluginVersion, execEnvironment, dialog.getResult());
 
-					if(paramDialog.open() == Dialog.OK) {
+					if (paramDialog.open() == Window.OK) {
 						ExportProfilesUserParameters param = new ExportProfilesUserParameters(paramDialog.getPluginName(), paramDialog.getPluginProvider(), paramDialog.getPluginVersion(), paramDialog.getPluginExecEnvironment());
 
 						exportProfiles(shell, dialog.getResult(), param, paramDialog.getProfilesIcons());
@@ -216,22 +215,22 @@ public class ExportProfilesCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Export profiles.
-	 * 
+	 *
 	 * @param shell
-	 *        the shell
+	 *            the shell
 	 * @param appliedProfilesFromWS
-	 *        the applied profiles from ws
+	 *            the applied profiles from ws
 	 * @param param
-	 *        User defined paprameters for the generation
+	 *            User defined paprameters for the generation
 	 * @param profilesIcons
 	 * @throws ParserConfigurationException
-	 *         the parser configuration exception
+	 *             the parser configuration exception
 	 * @throws SAXException
-	 *         the sAX exception
+	 *             the sAX exception
 	 * @throws IOException
-	 *         Signals that an I/O exception has occurred.
+	 *             Signals that an I/O exception has occurred.
 	 * @throws CoreException
-	 *         the core exception
+	 *             the core exception
 	 */
 	protected void exportProfiles(final Shell shell, final Object[] appliedProfilesFromWS, final ExportProfilesUserParameters param, final String[] profilesIcons) throws ParserConfigurationException, SAXException, IOException, CoreException {
 
@@ -241,104 +240,105 @@ public class ExportProfilesCommand extends AbstractTransactionalCommand {
 			monitordialog.run(true, true, new IRunnableWithProgress() {
 
 
+				@Override
 				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
 
-					//Construct the profile
+					// Construct the profile
 					String profilesConcatName = ""; //$NON-NLS-1$
 
-					for(int i = 0; i < appliedProfilesFromWS.length; i++) {
+					for (int i = 0; i < appliedProfilesFromWS.length; i++) {
 
-						profilesConcatName += ((Profile)appliedProfilesFromWS[i]).getName();
+						profilesConcatName += ((Profile) appliedProfilesFromWS[i]).getName();
 					}
 
 					String localPluginName = param.getPluginName();
 
-					//this variable will store the imported libraries from WS, it will be used for the extensions generation in the manifest
+					// this variable will store the imported libraries from WS, it will be used for the extensions generation in the manifest
 					ArrayList<ImportedLibrary> importedLibrariesFromWS = new ArrayList<ImportedLibrary>();
 
 					IProject project = null;
 					final PluginExportUtil pluginCreator = new PluginExportUtil();
 					monitor.beginTask(Messages.ExportProfilesCommand_10, 100);
 
-					//****************************************************************
-					//1. Generating a Plugin in the WS that encapsulated the applied profiles
-					//****************************************************************
+					// ****************************************************************
+					// 1. Generating a Plugin in the WS that encapsulated the applied profiles
+					// ****************************************************************
 					monitor.subTask(Messages.ExportProfilesCommand_11);
 					project = pluginCreator.createPlugin(monitor, param.getPluginName(), param.getPluginExecEnvironment(), param.getPluginVersion(), param.getPluginProvider());
 					monitor.worked(1);
 					try {
 						monitor.subTask(Messages.ExportProfilesCommand_12);
-						//****************************************************************
-						//1.0 Plugin customization: adding dependencies to Manifest
-						//****************************************************************
+						// ****************************************************************
+						// 1.0 Plugin customization: adding dependencies to Manifest
+						// ****************************************************************
 						ManifestEditor editor = new ManifestEditor(project);
 						editor.init();
-						editor.setSingleton(true);//we are going to add extensions to manifest, singleton must be set to true			
+						editor.setSingleton(true);// we are going to add extensions to manifest, singleton must be set to true
 						editor.save();
 
 
 
 
-						//***********************************************************************************
+						// ***********************************************************************************
 						// 1.1 Plugin customization: adding model directory and copying the profiles resources
-						//************************************************************************************
+						// ************************************************************************************
 
-						for(int i = 0; i < appliedProfilesFromWS.length; i++) {
-
-
+						for (int i = 0; i < appliedProfilesFromWS.length; i++) {
 
 
-							ModelSet modelset = ServiceUtilsForResource.getInstance().getModelSet(((Profile)appliedProfilesFromWS[i]).eResource());
-							String umlFileName = WSFileUtil.getFileName((Profile)appliedProfilesFromWS[i], "uml"); //$NON-NLS-1$
-
-							Resource umlProfile = modelset.getAssociatedResource((Profile)appliedProfilesFromWS[i], "uml"); //$NON-NLS-1$
 
 
-							//Visits all proxies in the model set and tries to resolve them.
+							ModelSet modelset = ServiceUtilsForResource.getInstance().getModelSet(((Profile) appliedProfilesFromWS[i]).eResource());
+							String umlFileName = WSFileUtil.getFileName((Profile) appliedProfilesFromWS[i], "uml"); //$NON-NLS-1$
+
+							Resource umlProfile = modelset.getAssociatedResource((Profile) appliedProfilesFromWS[i], "uml"); //$NON-NLS-1$
+
+
+							// Visits all proxies in the model set and tries to resolve them.
 							EcoreUtil.resolveAll(modelset);
 
 
 
 
 
-							//copy the uml profile in the created plugin (xmi ids will be copied)
+							// copy the uml profile in the created plugin (xmi ids will be copied)
 							URI umlFilenewURI = URI.createPlatformResourceURI(localPluginName + resourcesFolderName + umlFileName, true);
 							URI umlFileoldURI = umlProfile.getURI();
 							umlProfile.setURI(umlFilenewURI);
 							umlProfile.save(null);
 
-							//resave the resource with the original uri
+							// resave the resource with the original uri
 							umlProfile.setURI(umlFileoldURI);
 							umlProfile.save(null);
 
 							ResourceSet resourceSet = new ResourceSetImpl();
 							Resource newUmlProfileResource = resourceSet.getResource(umlFilenewURI, true);
 							EcoreUtil.resolveAll(resourceSet);
-							//Verify that the uml model does not import packages. If it is the case, create the imported resources in the generated plugin and export them as well
-							for(EObject obj : newUmlProfileResource.getContents()) {
-								if(obj instanceof Profile) {
+							// Verify that the uml model does not import packages. If it is the case, create the imported resources in the generated plugin and export them as well
+							for (EObject obj : newUmlProfileResource.getContents()) {
+								if (obj instanceof Profile) {
 
-									EList<Package> importedPackages = ((Profile)obj).getImportedPackages();
-									for(Package pack : importedPackages) {
+									EList<Package> importedPackages = ((Profile) obj).getImportedPackages();
+									for (Package pack : importedPackages) {
 
-										//if the package is stored in the workspace, export it in the resource directory of the created profile plugin 
-										if(pack.eResource() != null) {
-											if(pack.eResource().getURI().isPlatformResource()) {
+										// if the package is stored in the workspace, export it in the resource directory of the created profile plugin
+										if (pack.eResource() != null) {
+											if (pack.eResource().getURI().isPlatformResource()) {
 												String umlPackageFileName = WSFileUtil.getFileName(pack, "uml"); //$NON-NLS-1$
 
-												//Create the uml file that contain the library 
+												// Create the uml file that contain the library
 												URI uri = pack.eResource().getURI();
 												URI newURI = URI.createPlatformResourceURI(localPluginName + resourcesFolderName + umlPackageFileName, true);
 												pack.eResource().setURI(newURI);
 												pack.eResource().save(null);
 
 
-												//set the uri to the platform/plugin URI
+												// set the uri to the platform/plugin URI
 												pack.eResource().setURI(URI.createURI("platform:/plugin/" + localPluginName + resourcesFolderName + umlPackageFileName)); //$NON-NLS-1$
-												//redefine the profile
-												((Profile)obj).define();
+												// redefine the profile
+												((Profile) obj).define();
 
-												//The variable importedLibrariesFromWS is used to store the libraries that will be declared in the extensions of plugin.xml 
+												// The variable importedLibrariesFromWS is used to store the libraries that will be declared in the extensions of plugin.xml
 												importedLibrariesFromWS.add(new ImportedLibrary(pack, "platform:/plugin/" + localPluginName + resourcesFolderName + umlPackageFileName, uri, pack.getName())); //$NON-NLS-1$
 
 
@@ -354,14 +354,14 @@ public class ExportProfilesCommand extends AbstractTransactionalCommand {
 
 
 
-						//****************************************************************
-						//1.2 Plugin customization: adding extension points in plugin.xml
-						//****************************************************************
+						// ****************************************************************
+						// 1.2 Plugin customization: adding extension points in plugin.xml
+						// ****************************************************************
 						final WorkspacePluginModelBase model = new WorkspacePluginModel(project.getProject().getFile("plugin.xml"), false); //$NON-NLS-1$
 						IPluginBase base = model.getPluginBase();
-						//****************************************************************
-						//1.2.1 Adding extension "org.eclipse.emf.ecore.uri_mapping"
-						//****************************************************************
+						// ****************************************************************
+						// 1.2.1 Adding extension "org.eclipse.emf.ecore.uri_mapping"
+						// ****************************************************************
 						IPluginExtension uri_mapping_ext = model.createExtension();
 						base.add(uri_mapping_ext);
 						uri_mapping_ext.setPoint("org.eclipse.emf.ecore.uri_mapping"); //$NON-NLS-1$
@@ -374,11 +374,11 @@ public class ExportProfilesCommand extends AbstractTransactionalCommand {
 						uri_mapping_elem.setAttribute("target", "platform:/plugin/" + localPluginName + resourcesFolderName); //$NON-NLS-1$ //$NON-NLS-2$
 						model.setDirty(true);
 						model.save();
-						//**********************************************************************
-						//1.2.2Adding Extension "org.eclipse.papyrus.uml.extensionpoints.UMLProfile"
-						//**********************************************************************
+						// **********************************************************************
+						// 1.2.2Adding Extension "org.eclipse.papyrus.uml.extensionpoints.UMLProfile"
+						// **********************************************************************
 						final List<InstalledProfileURI> installedProfilesUri = new ArrayList<InstalledProfileURI>();
-						for(int i1 = 0; i1 < appliedProfilesFromWS.length; i1++) {
+						for (int i1 = 0; i1 < appliedProfilesFromWS.length; i1++) {
 
 							IPluginExtension ext = model.createExtension();
 							base.add(ext);
@@ -386,21 +386,21 @@ public class ExportProfilesCommand extends AbstractTransactionalCommand {
 							IPluginElement elem = model.createElement(ext);
 							ext.add(elem);
 
-							Profile profile = (Profile)appliedProfilesFromWS[i1];
+							Profile profile = (Profile) appliedProfilesFromWS[i1];
 
 							String umlFileName = WSFileUtil.getFileName(profile, "uml"); //$NON-NLS-1$
 							elem.setName("profile"); //$NON-NLS-1$
-							//mandatory attributes
+							// mandatory attributes
 							elem.setAttribute("name", profile.getName()); //$NON-NLS-1$
 							elem.setAttribute("path", "platform:/plugin/" + localPluginName + resourcesFolderName + umlFileName); //$NON-NLS-1$ //$NON-NLS-2$
-							//optional attributes
+							// optional attributes
 							elem.setAttribute("description", "UML Profile " + profile.getName()); //$NON-NLS-1$ //$NON-NLS-2$
-							elem.setAttribute("provider", param.getPluginProvider()); //$NON-NLS-1$ 
-							if(!(profilesIcons[i1] == null) && !(profilesIcons[i1].length() == 0)) {
+							elem.setAttribute("provider", param.getPluginProvider()); //$NON-NLS-1$
+							if (!(profilesIcons[i1] == null) && !(profilesIcons[i1].length() == 0)) {
 								File icon = FileUtil.getFile(profilesIcons[i1]);
 								String iconName = getFSFileName(icon.getAbsolutePath());
 								elem.setAttribute("iconpath", "icons/" + iconName);
-								//copying icon file into created project
+								// copying icon file into created project
 								WSFileUtil.copyFile(project, icon, "icons/", iconName);
 
 							}
@@ -412,11 +412,11 @@ public class ExportProfilesCommand extends AbstractTransactionalCommand {
 							model.setDirty(true);
 							model.save();
 						}
-						//**********************************************************************
-						//1.2.3 Adding Extension "org.eclipse.papyrus.uml.extensionpoints.UMLLibrary"
-						//**********************************************************************
-						if(!importedLibrariesFromWS.isEmpty()) {
-							for(ImportedLibrary importedLibrary : importedLibrariesFromWS) {
+						// **********************************************************************
+						// 1.2.3 Adding Extension "org.eclipse.papyrus.uml.extensionpoints.UMLLibrary"
+						// **********************************************************************
+						if (!importedLibrariesFromWS.isEmpty()) {
+							for (ImportedLibrary importedLibrary : importedLibrariesFromWS) {
 								IPluginExtension ext = model.createExtension();
 								base.add(ext);
 								ext.setPoint("org.eclipse.papyrus.uml.extensionpoints.UMLLibrary"); //$NON-NLS-1$
@@ -424,12 +424,12 @@ public class ExportProfilesCommand extends AbstractTransactionalCommand {
 								ext.add(elem);
 
 								elem.setName("library"); //$NON-NLS-1$
-								//mandatory attributes
+								// mandatory attributes
 								elem.setAttribute("name", importedLibrary.getName()); //$NON-NLS-1$
 								elem.setAttribute("path", importedLibrary.getUri()); //$NON-NLS-1$
-								//optional attributes
+								// optional attributes
 								elem.setAttribute("description", "UML Library " + importedLibrary.getName()); //$NON-NLS-1$ //$NON-NLS-2$
-								elem.setAttribute("provider", param.getPluginProvider()); //$NON-NLS-1$ 
+								elem.setAttribute("provider", param.getPluginProvider()); //$NON-NLS-1$
 
 								model.setDirty(true);
 								model.save();
@@ -443,22 +443,23 @@ public class ExportProfilesCommand extends AbstractTransactionalCommand {
 
 						monitor.worked(1);
 
-						//****************************************************************
-						//1.3 Plugin customization: adding build properties to Manifest
-						//****************************************************************
+						// ****************************************************************
+						// 1.3 Plugin customization: adding build properties to Manifest
+						// ****************************************************************
 						monitor.subTask("Plugin customization: adding build properties to Manifest ..."); //$NON-NLS-1$
 						BuildProperties buildproperties = new BuildProperties(project);
 						buildproperties.addBuildEntry("bin.includes", "META-INF/,.,plugin.xml,build.properties,model/,icons/"); //$NON-NLS-1$ //$NON-NLS-2$
 						monitor.worked(1);
-						//****************************************************************
-						//2. Export the plugin and install it
-						//****************************************************************
+						// ****************************************************************
+						// 2. Export the plugin and install it
+						// ****************************************************************
 						monitor.subTask(Messages.ExportProfilesCommand_5);
 						final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 
 						final IPluginModel pluginModel = PluginExportUtil.getPluginModelForProject(project);
 						Display.getDefault().asyncExec(new Runnable() {
 
+							@Override
 							public void run() {
 
 								pluginCreator.exportProfilePlugin(shell, pluginModel, root.getLocation().toString() + "/.metadata/.plugins/org.eclipse.pde.core/install/", installedProfilesUri); //$NON-NLS-1$
@@ -509,15 +510,15 @@ public class ExportProfilesCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Gets the fS file name.
-	 * 
+	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @return the fS file name
 	 */
 	public static String getFSFileName(String path) {
 
 		String fileName;
-		if(path.indexOf("\\") < 0) { //$NON-NLS-1$
+		if (path.indexOf("\\") < 0) { //$NON-NLS-1$
 			fileName = path;
 		} else {
 			fileName = path.substring(path.lastIndexOf("\\") + 1, path.length()); //$NON-NLS-1$

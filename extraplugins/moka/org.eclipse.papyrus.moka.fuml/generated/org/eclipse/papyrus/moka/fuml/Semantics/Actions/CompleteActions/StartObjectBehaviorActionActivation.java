@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,6 +29,7 @@ import org.eclipse.uml2.uml.StartObjectBehaviorAction;
 
 public class StartObjectBehaviorActionActivation extends InvocationActionActivation {
 
+	@Override
 	public void doAction() {
 		// Get the value on the object input pin. If it is not a reference, then
 		// do nothing.
@@ -37,27 +38,27 @@ public class StartObjectBehaviorActionActivation extends InvocationActionActivat
 		// the argument input pins.
 		// If the object input pin has no type, then start the classifier
 		// behaviors of all types of the referent object.
-		StartObjectBehaviorAction action = (StartObjectBehaviorAction)(this.node);
+		StartObjectBehaviorAction action = (StartObjectBehaviorAction) (this.node);
 		Value object = this.takeTokens(action.getObject()).get(0);
-		if(object instanceof Reference) {
-			Class type = (Class)(action.getObject().getType());
+		if (object instanceof Reference) {
+			Class type = (Class) (action.getObject().getType());
 			List<InputPin> argumentPins = action.getArguments();
 			List<ParameterValue> inputs = new ArrayList<ParameterValue>();
-			if(type != null) {
+			if (type != null) {
 				Behavior behavior;
-				if(type instanceof Behavior) {
-					behavior = (Behavior)type;
+				if (type instanceof Behavior) {
+					behavior = (Behavior) type;
 				} else {
 					behavior = type.getClassifierBehavior();
 				}
-				if(behavior != null) {
+				if (behavior != null) {
 					List<Parameter> parameters = behavior.getOwnedParameters();
 					int pinNumber = 1;
 					int i = 1;
-					while(i <= parameters.size()) {
+					while (i <= parameters.size()) {
 						Parameter parameter = parameters.get(i - 1);
 						int j = pinNumber;
-						if(parameter.getDirection() == ParameterDirectionKind.IN_LITERAL | parameter.getDirection() == ParameterDirectionKind.INOUT_LITERAL) {
+						if (parameter.getDirection() == ParameterDirectionKind.IN_LITERAL | parameter.getDirection() == ParameterDirectionKind.INOUT_LITERAL) {
 							ParameterValue parameterValue = new ParameterValue();
 							parameterValue.parameter = parameter;
 							parameterValue.values = this.takeTokens(argumentPins.get(j - 1));
@@ -69,7 +70,7 @@ public class StartObjectBehaviorActionActivation extends InvocationActionActivat
 					}
 				}
 			}
-			((Reference)object).startBehavior(type, inputs);
+			((Reference) object).startBehavior(type, inputs);
 		}
 	}
 }

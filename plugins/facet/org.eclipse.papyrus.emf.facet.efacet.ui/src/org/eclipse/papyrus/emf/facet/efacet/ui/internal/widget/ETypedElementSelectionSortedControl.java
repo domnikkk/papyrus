@@ -23,6 +23,9 @@ import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.ETypedElement;
+import org.eclipse.jface.viewers.IContentProvider;
+import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.efacet.core.FacetUtils;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
@@ -30,16 +33,13 @@ import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.utils.ImageProvider;
 import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.papyrus.emf.facet.util.core.internal.exported.IFilter;
-import org.eclipse.jface.viewers.IContentProvider;
-import org.eclipse.osgi.util.NLS;
-import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 
 /**
  * A control that displays a tree of ETypedElements under a list of containers
  * (EPackages for example), with a filter text field.
- * 
+ *
  * the result should be : Ecore - FacetSet/Custom/... UML - FacetSet/Custom/...
  * Aggregate - FacetSet/Custom/...
  */
@@ -57,7 +57,7 @@ public class ETypedElementSelectionSortedControl extends
 	public static final String TOOLTIP = Messages.ETypedElementSelectionSortedControl_toolTip;
 
 	/**
-	 * 
+	 *
 	 * @param parentComposite
 	 * @param selectionMaxSize
 	 * @param allowEmptySelection
@@ -99,15 +99,15 @@ public class ETypedElementSelectionSortedControl extends
 		}
 	}
 
-	
+
 	/**
 	 * Add a container to the groupByMap
-	 * 
+	 *
 	 * @param container
 	 *            a container to add
 	 */
 	private void addContainer(final EObject container) {
-		if (container instanceof FacetSet) { //we show only FacetSet in this view
+		if (container instanceof FacetSet) { // we show only FacetSet in this view
 			final FacetSet facetSet = (FacetSet) container;
 			final Set<EPackage> packs = FacetUtils
 					.getAllExtendedEPackage(facetSet);
@@ -120,9 +120,9 @@ public class ETypedElementSelectionSortedControl extends
 			}
 		}
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param pack
 	 *            an EPackage
 	 * @return the values associated to the EPackage
@@ -134,7 +134,7 @@ public class ETypedElementSelectionSortedControl extends
 		}
 		return this.groupByMap.get(pack);
 	}
-	
+
 	@Override
 	protected IContentProvider createContentProvider() {
 		return new SortedContentProvider(new IFilter<EObject>() {
@@ -168,7 +168,7 @@ public class ETypedElementSelectionSortedControl extends
 		return this.groupByMap
 				.get(parentElement);
 	}
-	
+
 	private class SortedContentProvider extends
 			ETypedElementSelectionControlContentProvider {
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecificatio
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.impl.TraceableSpecificationImpl#getNote <em>Note</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.impl.TraceableSpecificationImpl#getNote <em>Note</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	 * The default value of the '{@link #getNote() <em>Note</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNote()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	 * The cached value of the '{@link #getNote() <em>Note</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNote()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TraceableSpecificationImpl() {
@@ -68,13 +71,14 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ElementsPackage.TRACEABLE_SPECIFICATION__NOTE:
-				return getNote();
+		case ElementsPackage.TRACEABLE_SPECIFICATION__NOTE:
+			return getNote();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -82,13 +86,14 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ElementsPackage.TRACEABLE_SPECIFICATION__NOTE:
-				return NOTE_EDEFAULT == null ? note != null : !NOTE_EDEFAULT.equals(note);
+		case ElementsPackage.TRACEABLE_SPECIFICATION__NOTE:
+			return NOTE_EDEFAULT == null ? note != null : !NOTE_EDEFAULT.equals(note);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -96,14 +101,15 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ElementsPackage.TRACEABLE_SPECIFICATION__NOTE:
-				setNote((String)newValue);
-				return;
+		case ElementsPackage.TRACEABLE_SPECIFICATION__NOTE:
+			setNote((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -111,6 +117,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,14 +128,15 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ElementsPackage.TRACEABLE_SPECIFICATION__NOTE:
-				setNote(NOTE_EDEFAULT);
-				return;
+		case ElementsPackage.TRACEABLE_SPECIFICATION__NOTE:
+			setNote(NOTE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -136,8 +144,10 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getNote() {
 		return note;
 	}
@@ -145,23 +155,29 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setNote(String newNote) {
 		String oldNote = note;
 		note = newNote;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementsPackage.TRACEABLE_SPECIFICATION__NOTE, oldNote, note));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (note: ");
@@ -170,4 +186,4 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 		return result.toString();
 	}
 
-} //TraceableSpecificationImpl
+} // TraceableSpecificationImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ public class CustomCompactStateInvariantNameEditPart extends CompactStateInvaria
 
 	@Override
 	public void performRequest(final Request request) {
-		if(request.getType() == REQ_OPEN) {
+		if (request.getType() == REQ_OPEN) {
 			// double-click on the label is handled by the parent (to cut the CompactStateInvariant)
 			getParent().performRequest(request);
 		} else {
@@ -36,7 +36,7 @@ public class CustomCompactStateInvariantNameEditPart extends CompactStateInvaria
 
 	@Override
 	public IParser getParser() {
-		if(this.parser == null) {
+		if (this.parser == null) {
 			this.parser = new CompactStateInvariantNameParser();
 		}
 		return this.parser;

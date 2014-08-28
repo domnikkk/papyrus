@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,13 +21,13 @@ import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 
 /**
  * this class is used to forbid the creation of a dependency branch on a dependency branch.
- * 
+ *
  */
 public class CustomDependencyBranchSemanticEditPolicy extends DependencyBranchSemanticEditPolicy {
 
 	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Dependency_4018 == req.getElementType()) {
+		if (UMLElementTypes.Dependency_4018 == req.getElementType()) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return super.getStartCreateRelationshipCommand(req);

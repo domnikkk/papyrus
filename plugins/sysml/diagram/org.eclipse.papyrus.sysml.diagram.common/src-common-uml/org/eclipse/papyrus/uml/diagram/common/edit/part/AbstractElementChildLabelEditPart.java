@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -40,7 +40,6 @@ import org.eclipse.gmf.runtime.common.core.util.Log;
 import org.eclipse.gmf.runtime.common.core.util.Trace;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
@@ -134,10 +133,10 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 
 	@Override
 	public DragTracker getDragTracker(Request request) {
-		if(request instanceof SelectionRequest && ((SelectionRequest)request).getLastButtonPressed() == 3) {
+		if (request instanceof SelectionRequest && ((SelectionRequest) request).getLastButtonPressed() == 3) {
 			return null;
 		}
-		//return new DragEditPartsTrackerEx(this);
+		// return new DragEditPartsTrackerEx(this);
 		// Disable current child label DnD as this is not correctly handled by Papyrus.
 		return new SelectEditPartTracker(this);
 	}
@@ -154,42 +153,42 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	}
 
 	protected String getLabelTextHelper(IFigure figure) {
-		if(figure instanceof WrappingLabel) {
-			return ((WrappingLabel)figure).getText();
-		} else if(figure instanceof ILabelFigure) {
-			return ((ILabelFigure)figure).getText();
+		if (figure instanceof WrappingLabel) {
+			return ((WrappingLabel) figure).getText();
+		} else if (figure instanceof ILabelFigure) {
+			return ((ILabelFigure) figure).getText();
 		} else {
-			return ((Label)figure).getText();
+			return ((Label) figure).getText();
 		}
 	}
 
 	protected void setLabelTextHelper(IFigure figure, String text) {
-		if(figure instanceof WrappingLabel) {
-			((WrappingLabel)figure).setText(text);
-		} else if(figure instanceof ILabelFigure) {
-			((ILabelFigure)figure).setText(text);
+		if (figure instanceof WrappingLabel) {
+			((WrappingLabel) figure).setText(text);
+		} else if (figure instanceof ILabelFigure) {
+			((ILabelFigure) figure).setText(text);
 		} else {
-			((Label)figure).setText(text);
+			((Label) figure).setText(text);
 		}
 	}
 
 	protected Image getLabelIconHelper(IFigure figure) {
-		if(figure instanceof WrappingLabel) {
-			return ((WrappingLabel)figure).getIcon();
-		} else if(figure instanceof ILabelFigure) {
-			return ((ILabelFigure)figure).getIcon();
+		if (figure instanceof WrappingLabel) {
+			return ((WrappingLabel) figure).getIcon();
+		} else if (figure instanceof ILabelFigure) {
+			return ((ILabelFigure) figure).getIcon();
 		} else {
-			return ((Label)figure).getIcon();
+			return ((Label) figure).getIcon();
 		}
 	}
 
 	protected void setLabelIconHelper(IFigure figure, Image icon) {
-		if(figure instanceof WrappingLabel) {
-			((WrappingLabel)figure).setIcon(icon);
-		} else if(figure instanceof ILabelFigure) {
-			((ILabelFigure)figure).setIcon(icon);
+		if (figure instanceof WrappingLabel) {
+			((WrappingLabel) figure).setIcon(icon);
+		} else if (figure instanceof ILabelFigure) {
+			((ILabelFigure) figure).setIcon(icon);
 		} else {
-			((Label)figure).setIcon(icon);
+			((Label) figure).setIcon(icon);
 		}
 	}
 
@@ -211,19 +210,20 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 		return null;
 	}
 
+	@Override
 	public EObject getParserElement() {
 		return resolveSemanticElement();
 	}
 
 	protected Image getLabelIcon() {
 		EObject parserElement = getParserElement();
-		if(parserElement == null) {
+		if (parserElement == null) {
 			return null;
 		}
 
 		List<View> views = DiagramEditPartsUtil.findViews(parserElement, getViewer());
-		for(View view : views) {
-			if(NameLabelIconHelper.showLabelIcon(view)) {
+		for (View view : views) {
+			if (NameLabelIconHelper.showLabelIcon(view)) {
 				return Activator.getInstance().getLabelProvider().getImage(parserElement);
 			}
 		}
@@ -234,29 +234,31 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	protected String getLabelText() {
 		String text = null;
 		EObject parserElement = getParserElement();
-		if(parserElement != null && getParser() != null) {
+		if (parserElement != null && getParser() != null) {
 			text = getParser().getPrintString(new SemanticAdapter(parserElement, getNotationView()), getParserOptions().intValue());
 		}
-		if(text == null || text.length() == 0) {
+		if (text == null || text.length() == 0) {
 			text = defaultText;
 		}
 		return text;
 	}
 
+	@Override
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if(pdEditPolicy instanceof TextSelectionEditPolicy) {
-			((TextSelectionEditPolicy)pdEditPolicy).refreshFeedback();
+		if (pdEditPolicy instanceof TextSelectionEditPolicy) {
+			((TextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
 		}
 		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if(sfEditPolicy instanceof TextSelectionEditPolicy) {
-			((TextSelectionEditPolicy)sfEditPolicy).refreshFeedback();
+		if (sfEditPolicy instanceof TextSelectionEditPolicy) {
+			((TextSelectionEditPolicy) sfEditPolicy).refreshFeedback();
 		}
 	}
 
+	@Override
 	public String getEditText() {
-		if(getParserElement() == null || getParser() == null) {
+		if (getParserElement() == null || getParser() == null) {
 			return ""; //$NON-NLS-1$
 		}
 		return getParser().getEditString(new EObjectAdapter(getParserElement()), getParserOptions().intValue());
@@ -266,21 +268,24 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 		return getParser() != null;
 	}
 
+	@Override
 	public ICellEditorValidator getEditTextValidator() {
 		return new ICellEditorValidator() {
 
+			@Override
 			public String isValid(final Object value) {
-				if(value instanceof String) {
+				if (value instanceof String) {
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus)getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
+							@Override
 							public void run() {
-								setResult(parser.isValidEditString(new EObjectAdapter(element), (String)value));
+								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
 							}
 						});
-						return valid.getCode() == ParserEditStatus.EDITABLE ? null : valid.getMessage();
+						return valid.getCode() == IParserEditStatus.EDITABLE ? null : valid.getMessage();
 					} catch (InterruptedException ie) {
 						ie.printStackTrace();
 					}
@@ -292,22 +297,24 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 		};
 	}
 
+	@Override
 	public IContentAssistProcessor getCompletionProcessor() {
-		if(getParserElement() == null || getParser() == null) {
+		if (getParserElement() == null || getParser() == null) {
 			return null;
 		}
 		return getParser().getCompletionProcessor(new EObjectAdapter(getParserElement()));
 	}
 
+	@Override
 	public ParserOptions getParserOptions() {
-		if(getNotationView() == null || getNotationView().getDiagram() == null) {
+		if (getNotationView() == null || getNotationView().getDiagram() == null) {
 			return ParserOptions.NONE;
 		}
 
-		//		int displayOptions = AppearanceHelper.getLabelDisplay(getNotationView());
+		// int displayOptions = AppearanceHelper.getLabelDisplay(getNotationView());
 
 		EAnnotation display = getNotationView().getEAnnotation(VisualInformationPapyrusConstants.CUSTOM_APPEARENCE_ANNOTATION);
-		if(display == null) {
+		if (display == null) {
 			return getDefaultParserOptions();
 		}
 
@@ -316,30 +323,32 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 		return new ParserOptions(displayOptions);
 	}
 
+	@Override
 	public ParserOptions getDefaultParserOptions() {
 
-		if(getNotationView() == null || getNotationView().getDiagram() == null) {
+		if (getNotationView() == null || getNotationView().getDiagram() == null) {
 			return ParserOptions.NONE;
 		}
 
 		IPreferenceStore store = org.eclipse.papyrus.infra.gmfdiag.preferences.Activator.getDefault().getPreferenceStore();
 		int displayOptions = store.getInt(LabelPreferenceHelper.getPreferenceConstant(getLabelPreferenceKey(), ILabelPreferenceConstants.LABEL_DISPLAY_PREFERENCE));
-		if(displayOptions == 0) {
+		if (displayOptions == 0) {
 			return ParserOptions.NONE;
 		}
 
 		return new ParserOptions(displayOptions);
 	}
 
+	@Override
 	public IParser getParser() {
-		if(parser == null) {
+		if (parser == null) {
 			parser = ParserService.getInstance().getParser(new DefaultParserHintAdapter(getNotationView().getDiagram(), resolveSemanticElement(), getNotationView().getType()));
 		}
 		return parser;
 	}
 
 	protected DirectEditManager getManager() {
-		if(manager == null) {
+		if (manager == null) {
 			setManager(new MultilineLabelDirectEditManager(this, MultilineLabelDirectEditManager.getTextCellEditorClass(this), CellEditorLocatorUtil.getTextCellEditorLocator(this)));
 		}
 		return manager;
@@ -363,8 +372,8 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	 * @generated
 	 */
 	protected void performDirectEdit(Point eventLocation) {
-		if(getManager() instanceof TextDirectEditManager) {
-			((TextDirectEditManager)getManager()).show(eventLocation.getSWTPoint());
+		if (getManager() instanceof TextDirectEditManager) {
+			((TextDirectEditManager) getManager()).show(eventLocation.getSWTPoint());
 		}
 	}
 
@@ -372,8 +381,8 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	 * @generated
 	 */
 	private void performDirectEdit(char initialCharacter) {
-		if(getManager() instanceof TextDirectEditManager) {
-			((TextDirectEditManager)getManager()).show(initialCharacter);
+		if (getManager() instanceof TextDirectEditManager) {
+			((TextDirectEditManager) getManager()).show(initialCharacter);
 		} else {
 			performDirectEdit();
 		}
@@ -387,40 +396,40 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 
 		final Request theRequest = request;
 
-		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
+		if (IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
 			directEditionMode = getDirectEditionType();
 		}
-		switch(directEditionMode) {
+		switch (directEditionMode) {
 		case IDirectEdition.NO_DIRECT_EDITION:
 			// no direct edition mode => does nothing
 			return;
 		case IDirectEdition.EXTENDED_DIRECT_EDITOR:
 			updateExtendedEditorConfiguration();
-			if(configuration == null || configuration.getLanguage() == null) {
+			if (configuration == null || configuration.getLanguage() == null) {
 				performDefaultDirectEditorEdit(theRequest);
 			} else {
 				configuration.preEditAction(resolveSemanticElement());
 				Dialog dialog = null;
-				if(configuration instanceof IPopupEditorConfiguration) {
-					IPopupEditorHelper helper = ((IPopupEditorConfiguration)configuration).createPopupEditorHelper(this);
+				if (configuration instanceof IPopupEditorConfiguration) {
+					IPopupEditorHelper helper = ((IPopupEditorConfiguration) configuration).createPopupEditorHelper(this);
 					helper.showEditor();
 					return;
-				} else if(configuration instanceof IAdvancedEditorConfiguration) {
-					dialog = ((IAdvancedEditorConfiguration)configuration).createDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()));
-				} else if(configuration instanceof IDirectEditorConfiguration) {
+				} else if (configuration instanceof IAdvancedEditorConfiguration) {
+					dialog = ((IAdvancedEditorConfiguration) configuration).createDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()));
+				} else if (configuration instanceof IDirectEditorConfiguration) {
 					dialog = new ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()), configuration);
 				} else {
 					return;
 				}
 				final Dialog finalDialog = dialog;
 
-				if(Window.OK == dialog.open()) {
+				if (Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
 					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
 
 						@Override
 						protected void doExecute() {
-							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
+							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog) finalDialog).getValue());
 
 						}
 					};
@@ -434,13 +443,14 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 			try {
 				getEditingDomain().runExclusive(new Runnable() {
 
+					@Override
 					public void run() {
-						if(isActive() && isEditable()) {
-							if(theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
-								Character initialChar = (Character)theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+						if (isActive() && isEditable()) {
+							if (theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
+								Character initialChar = (Character) theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 								performDirectEdit(initialChar.charValue());
-							} else if((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
-								DirectEditRequest editRequest = (DirectEditRequest)theRequest;
+							} else if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
+								DirectEditRequest editRequest = (DirectEditRequest) theRequest;
 								performDirectEdit(editRequest.getLocation());
 							} else {
 								performDirectEdit();
@@ -473,33 +483,33 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 		setLabelIconHelper(getFigure(), getLabelIcon());
 
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if(pdEditPolicy instanceof TextSelectionEditPolicy) {
-			((TextSelectionEditPolicy)pdEditPolicy).refreshFeedback();
+		if (pdEditPolicy instanceof TextSelectionEditPolicy) {
+			((TextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
 		}
 		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if(sfEditPolicy instanceof TextSelectionEditPolicy) {
-			((TextSelectionEditPolicy)sfEditPolicy).refreshFeedback();
+		if (sfEditPolicy instanceof TextSelectionEditPolicy) {
+			((TextSelectionEditPolicy) sfEditPolicy).refreshFeedback();
 		}
 	}
 
 	protected void refreshUnderline() {
-		FontStyle style = (FontStyle)getView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
-		if(style != null && getFigure() instanceof WrappingLabel) {
-			((WrappingLabel)getFigure()).setTextUnderline(style.isUnderline());
+		FontStyle style = (FontStyle) getView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
+		if (style != null && getFigure() instanceof WrappingLabel) {
+			((WrappingLabel) getFigure()).setTextUnderline(style.isUnderline());
 		}
 	}
 
 	protected void refreshStrikeThrough() {
-		FontStyle style = (FontStyle)getView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
-		if(style != null && getFigure() instanceof WrappingLabel) {
-			((WrappingLabel)getFigure()).setTextStrikeThrough(style.isStrikeThrough());
+		FontStyle style = (FontStyle) getView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
+		if (style != null && getFigure() instanceof WrappingLabel) {
+			((WrappingLabel) getFigure()).setTextStrikeThrough(style.isStrikeThrough());
 		}
 	}
 
 	@Override
 	protected void refreshFont() {
-		FontStyle style = (FontStyle)getView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
-		if(style != null) {
+		FontStyle style = (FontStyle) getView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
+		if (style != null) {
 			FontData fontData = new FontData(style.getFontName(), style.getFontHeight(), (style.isBold() ? SWT.BOLD : SWT.NORMAL) | (style.isItalic() ? SWT.ITALIC : SWT.NORMAL));
 			setFont(fontData);
 		}
@@ -512,11 +522,11 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 
 	@Override
 	protected void addSemanticListeners() {
-		if(getParser() instanceof ISemanticParser) {
+		if (getParser() instanceof ISemanticParser) {
 			EObject element = resolveSemanticElement();
-			parserElements = ((ISemanticParser)getParser()).getSemanticElementsBeingParsed(element);
-			for(int i = 0; i < parserElements.size(); i++) {
-				addListenerFilter("SemanticModel" + i, this, (EObject)parserElements.get(i)); //$NON-NLS-1$
+			parserElements = ((ISemanticParser) getParser()).getSemanticElementsBeingParsed(element);
+			for (int i = 0; i < parserElements.size(); i++) {
+				addListenerFilter("SemanticModel" + i, this, (EObject) parserElements.get(i)); //$NON-NLS-1$
 			}
 		} else {
 			super.addSemanticListeners();
@@ -525,8 +535,8 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 
 	@Override
 	protected void removeSemanticListeners() {
-		if(parserElements != null) {
-			for(int i = 0; i < parserElements.size(); i++) {
+		if (parserElements != null) {
+			for (int i = 0; i < parserElements.size(); i++) {
 				removeListenerFilter("SemanticModel" + i); //$NON-NLS-1$
 			}
 		} else {
@@ -536,7 +546,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 
 	@Override
 	protected AccessibleEditPart getAccessibleEditPart() {
-		if(accessibleEP == null) {
+		if (accessibleEP == null) {
 			accessibleEP = new AccessibleGraphicalEditPart() {
 
 				@Override
@@ -549,15 +559,15 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	}
 
 	private View getView() {
-		return (View)getModel();
+		return (View) getModel();
 	}
 
 	public int getDirectEditionType() {
-		if(checkExtendedEditor()) {
+		if (checkExtendedEditor()) {
 			initExtendedEditorConfiguration();
 			return IDirectEdition.EXTENDED_DIRECT_EDITOR;
 		}
-		if(checkDefaultEdition()) {
+		if (checkDefaultEdition()) {
 			return IDirectEdition.DEFAULT_DIRECT_EDITOR;
 		}
 
@@ -566,7 +576,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	}
 
 	protected boolean checkExtendedEditor() {
-		if(resolveSemanticElement() != null) {
+		if (resolveSemanticElement() != null) {
 			return DirectEditorsUtil.hasSpecificEditorConfiguration(resolveSemanticElement().eClass().getInstanceClassName());
 		}
 		return false;
@@ -577,9 +587,9 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	}
 
 	protected void initExtendedEditorConfiguration() {
-		if(configuration == null) {
+		if (configuration == null) {
 			final String languagePreferred = Activator.getInstance().getPreferenceStore().getString(IDirectEditorsIds.EDITOR_FOR_ELEMENT + resolveSemanticElement().eClass().getInstanceClassName());
-			if(languagePreferred != null && !languagePreferred.equals("")) {
+			if (languagePreferred != null && !languagePreferred.equals("")) {
 				configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, resolveSemanticElement().eClass().getInstanceClassName());
 			} else {
 				configuration = DirectEditorsUtil.findEditorConfiguration(IDirectEditorsIds.UML_LANGUAGE, resolveSemanticElement().eClass().getInstanceClassName());
@@ -589,9 +599,9 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 
 	protected void updateExtendedEditorConfiguration() {
 		String languagePreferred = Activator.getInstance().getPreferenceStore().getString(IDirectEditorsIds.EDITOR_FOR_ELEMENT + resolveSemanticElement().eClass().getInstanceClassName());
-		if(languagePreferred != null && !languagePreferred.equals("") && languagePreferred != configuration.getLanguage()) {
+		if (languagePreferred != null && !languagePreferred.equals("") && languagePreferred != configuration.getLanguage()) {
 			configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, resolveSemanticElement().eClass().getInstanceClassName());
-		} else if(IDirectEditorsIds.SIMPLE_DIRECT_EDITOR.equals(languagePreferred)) {
+		} else if (IDirectEditorsIds.SIMPLE_DIRECT_EDITOR.equals(languagePreferred)) {
 			configuration = null;
 		}
 	}
@@ -601,13 +611,14 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 		try {
 			getEditingDomain().runExclusive(new Runnable() {
 
+				@Override
 				public void run() {
-					if(isActive() && isEditable()) {
-						if(theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
-							Character initialChar = (Character)theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+					if (isActive() && isEditable()) {
+						if (theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
+							Character initialChar = (Character) theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 							performDirectEdit(initialChar.charValue());
-						} else if((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
-							DirectEditRequest editRequest = (DirectEditRequest)theRequest;
+						} else if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
+							DirectEditRequest editRequest = (DirectEditRequest) theRequest;
 							performDirectEdit(editRequest.getLocation());
 						} else {
 							performDirectEdit();
@@ -635,28 +646,29 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		Object feature = event.getFeature();
-		if(NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
-			Integer c = (Integer)event.getNewValue();
+		if (NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
+			Integer c = (Integer) event.getNewValue();
 			setFontColor(DiagramColorRegistry.getInstance().getColor(c));
-		} else if(NotationPackage.eINSTANCE.getFontStyle_Underline().equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getFontStyle_Underline().equals(feature)) {
 			refreshUnderline();
-		} else if(NotationPackage.eINSTANCE.getFontStyle_StrikeThrough().equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getFontStyle_StrikeThrough().equals(feature)) {
 			refreshStrikeThrough();
-		} else if(NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature)
+				|| NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature)) {
 			refreshFont();
-		} else if(NotationPackage.eINSTANCE.getView_SourceEdges().equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getView_SourceEdges().equals(feature)) {
 			refreshSourceConnections();
-		} else if(NotationPackage.eINSTANCE.getView_TargetEdges().equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getView_TargetEdges().equals(feature)) {
 			refreshTargetConnections();
 		} else {
-			if(getParser() != null && getParser().isAffectingEvent(event, getParserOptions().intValue())) {
+			if (getParser() != null && getParser().isAffectingEvent(event, getParserOptions().intValue())) {
 				refreshLabel();
 			}
-			if(getParser() instanceof ISemanticParser) {
-				ISemanticParser modelParser = (ISemanticParser)getParser();
-				if(modelParser.areSemanticElementsAffected(null, event)) {
+			if (getParser() instanceof ISemanticParser) {
+				ISemanticParser modelParser = (ISemanticParser) getParser();
+				if (modelParser.areSemanticElementsAffected(null, event)) {
 					removeSemanticListeners();
-					if(resolveSemanticElement() != null) {
+					if (resolveSemanticElement() != null) {
 						addSemanticListeners();
 					}
 					refreshLabel();
@@ -701,7 +713,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	 */
 	@Override
 	protected List getModelSourceConnections() {
-		return ViewUtil.getSourceConnectionsConnectingVisibleViews((View)getModel());
+		return ViewUtil.getSourceConnectionsConnectingVisibleViews((View) getModel());
 	}
 
 	/*
@@ -712,7 +724,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	 */
 	@Override
 	protected List getModelTargetConnections() {
-		return ViewUtil.getTargetConnectionsConnectingVisibleViews((View)getModel());
+		return ViewUtil.getTargetConnectionsConnectingVisibleViews((View) getModel());
 	}
 
 
@@ -722,16 +734,18 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	 *
 	 * @see org.eclipse.gef.NodeEditPart#getSourceConnectionAnchor(org.eclipse.gef.ConnectionEditPart)
 	 */
+	@Override
 	public ConnectionAnchor getSourceConnectionAnchor(org.eclipse.gef.ConnectionEditPart connEditPart) {
-		final org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart connection = (org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart)connEditPart;
+		final org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart connection = (org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart) connEditPart;
 		String t = ""; //$NON-NLS-1$
 		try {
-			t = (String)getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+			t = (String) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
+				@Override
 				public void run() {
-					Anchor a = ((Edge)connection.getModel()).getSourceAnchor();
-					if(a instanceof IdentityAnchor) {
-						setResult(((IdentityAnchor)a).getId());
+					Anchor a = ((Edge) connection.getModel()).getSourceAnchor();
+					if (a instanceof IdentityAnchor) {
+						setResult(((IdentityAnchor) a).getId());
 					} else {
 						setResult(""); //$NON-NLS-1$
 					}
@@ -752,8 +766,8 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	 */
 	protected IAnchorableFigure getAnchorableFigure() {
 		IFigure myFigure = getFigure();
-		if(myFigure instanceof IAnchorableFigure) {
-			return (IAnchorableFigure)myFigure;
+		if (myFigure instanceof IAnchorableFigure) {
+			return (IAnchorableFigure) myFigure;
 		}
 		throw new RuntimeException("The figure of this element should be an IAnchorable Figure");//
 	}
@@ -765,15 +779,16 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	 *
 	 * @see org.eclipse.gef.NodeEditPart#getSourceConnectionAnchor(org.eclipse.gef.Request)
 	 */
+	@Override
 	public ConnectionAnchor getSourceConnectionAnchor(Request request) {
-		if(request instanceof ReconnectRequest) {
-			if(((DropRequest)request).getLocation() == null) {
+		if (request instanceof ReconnectRequest) {
+			if (((DropRequest) request).getLocation() == null) {
 				return getAnchorableFigure().getSourceConnectionAnchorAt(null);
 			}
-			Point pt = ((DropRequest)request).getLocation().getCopy();
+			Point pt = ((DropRequest) request).getLocation().getCopy();
 			return getAnchorableFigure().getSourceConnectionAnchorAt(pt);
-		} else if(request instanceof DropRequest) {
-			return getAnchorableFigure().getSourceConnectionAnchorAt(((DropRequest)request).getLocation());
+		} else if (request instanceof DropRequest) {
+			return getAnchorableFigure().getSourceConnectionAnchorAt(((DropRequest) request).getLocation());
 		}
 		return getAnchorableFigure().getSourceConnectionAnchorAt(null);
 	}
@@ -785,17 +800,19 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	 *
 	 * @see org.eclipse.gef.NodeEditPart#getTargetConnectionAnchor(org.eclipse.gef.ConnectionEditPart)
 	 */
+	@Override
 	public ConnectionAnchor getTargetConnectionAnchor(org.eclipse.gef.ConnectionEditPart connEditPart) {
-		final org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart connection = (org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart)connEditPart;
+		final org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart connection = (org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart) connEditPart;
 
 		String t = ""; //$NON-NLS-1$
 		try {
-			t = (String)getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+			t = (String) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
+				@Override
 				public void run() {
-					Anchor a = ((Edge)connection.getModel()).getTargetAnchor();
-					if(a instanceof IdentityAnchor) {
-						setResult(((IdentityAnchor)a).getId());
+					Anchor a = ((Edge) connection.getModel()).getTargetAnchor();
+					if (a instanceof IdentityAnchor) {
+						setResult(((IdentityAnchor) a).getId());
 					} else {
 						setResult(""); //$NON-NLS-1$
 					}
@@ -818,15 +835,16 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	 *
 	 * @see org.eclipse.gef.NodeEditPart#getTargetConnectionAnchor(org.eclipse.gef.Request)
 	 */
+	@Override
 	public ConnectionAnchor getTargetConnectionAnchor(Request request) {
-		if(request instanceof ReconnectRequest) {
-			if(((DropRequest)request).getLocation() == null) {
+		if (request instanceof ReconnectRequest) {
+			if (((DropRequest) request).getLocation() == null) {
 				return getAnchorableFigure().getTargetConnectionAnchorAt(null);
 			}
-			Point pt = ((DropRequest)request).getLocation().getCopy();
+			Point pt = ((DropRequest) request).getLocation().getCopy();
 			return getAnchorableFigure().getTargetConnectionAnchorAt(pt);
-		} else if(request instanceof DropRequest) {
-			return getAnchorableFigure().getTargetConnectionAnchorAt(((DropRequest)request).getLocation());
+		} else if (request instanceof DropRequest) {
+			return getAnchorableFigure().getTargetConnectionAnchorAt(((DropRequest) request).getLocation());
 		}
 		return getAnchorableFigure().getTargetConnectionAnchorAt(null);
 	}
@@ -838,6 +856,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.INodeEditPart#mapConnectionAnchorToTerminal(org.eclipse.draw2d.ConnectionAnchor)
 	 */
+	@Override
 	final public String mapConnectionAnchorToTerminal(ConnectionAnchor c) {
 		return getAnchorableFigure().getConnectionAnchorTerminal(c);
 	}
@@ -848,6 +867,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.INodeEditPart#mapTerminalToConnectionAnchor(java.lang.String)
 	 */
+	@Override
 	final public ConnectionAnchor mapTerminalToConnectionAnchor(String terminal) {
 		return getAnchorableFigure().getConnectionAnchor(terminal);
 	}
@@ -859,6 +879,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.INotableEditPart#canAttachNote()
 	 * Copied from @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#canAttachNote()
 	 */
+	@Override
 	public boolean canAttachNote() {
 		return true;
 	}

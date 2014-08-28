@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,74 +32,78 @@ import org.eclipse.xtext.scoping.impl.SimpleScope;
 
 /**
  * This class contains custom scoping description.
- * 
+ *
  * see : http://www.eclipse.org/Xtext/documentation/latest/xtext.html#scoping
- * on how and when to use it 
+ * on how and when to use it
  *
  */
 public class UMLConnectionPointReferenceScopeProvider extends AbstractDeclarativeScopeProvider {
-	
+
 	/**
 	 * Rule for computing the scope of entry references
+	 *
 	 * @param ctx
 	 * @param ref
 	 * @return
 	 */
 	public IScope scope_ConnectionPointReferenceRule_entry(ConnectionPointReferenceRule ctx, EReference ref) {
-		
-		List<Pseudostate> allPseudostates = getConnectionPoints(ctx, PseudostateKind.ENTRY_POINT_LITERAL) ;
-		
+
+		List<Pseudostate> allPseudostates = getConnectionPoints(ctx, PseudostateKind.ENTRY_POINT_LITERAL);
+
 		// builds the nested scope base on hierarchy and then inheritance
 		SimpleScope resultScope = null;
-		
-		Iterable<IEObjectDescription> iterableIEobjectDescriptions ;
-		iterableIEobjectDescriptions = Scopes.scopedElementsFor(allPseudostates) ;
-		resultScope = new SimpleScope(iterableIEobjectDescriptions) ;
-		
-		return resultScope ;
+
+		Iterable<IEObjectDescription> iterableIEobjectDescriptions;
+		iterableIEobjectDescriptions = Scopes.scopedElementsFor(allPseudostates);
+		resultScope = new SimpleScope(iterableIEobjectDescriptions);
+
+		return resultScope;
 	}
-	
+
 	/**
 	 * Rule for computing the scope of exit references
+	 *
 	 * @param ctx
 	 * @param ref
 	 * @return
 	 */
 	public IScope scope_ConnectionPointReferenceRule_exit(ConnectionPointReferenceRule ctx, EReference ref) {
-		List<Pseudostate> allPseudostates = getConnectionPoints(ctx, PseudostateKind.EXIT_POINT_LITERAL) ;
-		
+		List<Pseudostate> allPseudostates = getConnectionPoints(ctx, PseudostateKind.EXIT_POINT_LITERAL);
+
 		// builds the nested scope base on hierarchy and then inheritance
 		SimpleScope resultScope = null;
-		
-		Iterable<IEObjectDescription> iterableIEobjectDescriptions ;
-		iterableIEobjectDescriptions = Scopes.scopedElementsFor(allPseudostates) ;
-		resultScope = new SimpleScope(iterableIEobjectDescriptions) ;
-		
-		return resultScope ;
+
+		Iterable<IEObjectDescription> iterableIEobjectDescriptions;
+		iterableIEobjectDescriptions = Scopes.scopedElementsFor(allPseudostates);
+		resultScope = new SimpleScope(iterableIEobjectDescriptions);
+
+		return resultScope;
 	}
-	
-	private List<Pseudostate> getConnectionPoints (ConnectionPointReferenceRule ctx, PseudostateKind kind) {
-		List<Pseudostate> allPseudostates = new ArrayList<Pseudostate>() ;
-		
+
+	private List<Pseudostate> getConnectionPoints(ConnectionPointReferenceRule ctx, PseudostateKind kind) {
+		List<Pseudostate> allPseudostates = new ArrayList<Pseudostate>();
+
 		if (UMLConnectionPointReferenceJavaValidator.getContextElement() == null ||
-				!(UMLConnectionPointReferenceJavaValidator.getContextElement() instanceof ConnectionPointReference))
-			return allPseudostates ;
+				!(UMLConnectionPointReferenceJavaValidator.getContextElement() instanceof ConnectionPointReference)) {
+			return allPseudostates;
+		}
 
-		ConnectionPointReference connectionPoint = (ConnectionPointReference)UMLConnectionPointReferenceJavaValidator.getContextElement() ;
+		ConnectionPointReference connectionPoint = (ConnectionPointReference) UMLConnectionPointReferenceJavaValidator.getContextElement();
 
-		State contextState = connectionPoint.getState() ;
-		StateMachine subMachine = contextState != null ? contextState.getSubmachine() : null ;
+		State contextState = connectionPoint.getState();
+		StateMachine subMachine = contextState != null ? contextState.getSubmachine() : null;
 
-		if (subMachine == null)
-			return allPseudostates ;
+		if (subMachine == null) {
+			return allPseudostates;
+		}
 
 		for (Pseudostate p : subMachine.getConnectionPoints()) {
 			if (p.getKind() == kind) {
-				allPseudostates.add(p) ;
+				allPseudostates.add(p);
 			}
 		}
 
-		return allPseudostates ;
+		return allPseudostates;
 	}
-	
+
 }

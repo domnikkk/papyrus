@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ import org.eclipse.ui.services.IServiceLocator;
 
 /**
  * this class is used to collection all information about menu, cool bar, statusline...
- * 
+ *
  */
 public class CustomizeActionBars implements IActionBarConfigurer2, IActionBars2 {
 
@@ -44,7 +44,7 @@ public class CustomizeActionBars implements IActionBarConfigurer2, IActionBars2 
 
 	/**
 	 * get the list of action set
-	 * 
+	 *
 	 * @return
 	 */
 	public List<IActionSetDescriptor> getActionSet() {
@@ -53,7 +53,7 @@ public class CustomizeActionBars implements IActionBarConfigurer2, IActionBars2 
 
 	/**
 	 * set the list of action Set
-	 * 
+	 *
 	 * @param actionSet
 	 */
 	public void setActionSet(List<IActionSetDescriptor> actionSet) {
@@ -70,9 +70,9 @@ public class CustomizeActionBars implements IActionBarConfigurer2, IActionBars2 
 
 	/**
 	 * Create a new instance of this class.
-	 * 
+	 *
 	 * @param configurer
-	 *        the configurer
+	 *            the configurer
 	 */
 	public CustomizeActionBars(IWorkbenchWindowConfigurer configurer) {
 	}

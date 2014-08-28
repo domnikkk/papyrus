@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ public class CustomBehaviorExecutionSpecificationCreateCommand extends BehaviorE
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -44,7 +44,7 @@ public class CustomBehaviorExecutionSpecificationCreateCommand extends BehaviorE
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomBehaviorExecutionSpecificationCreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -53,17 +53,17 @@ public class CustomBehaviorExecutionSpecificationCreateCommand extends BehaviorE
 
 	/**
 	 * To add the lifeline to the attribute covered of the AES
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// Get the model container
-		Object modelContainer = ((CreateElementRequest)getRequest()).getParameters().get(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER);
+		Object modelContainer = ((CreateElementRequest) getRequest()).getParameters().get(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER);
 		// Configure the BehaviorExecutionSpecification
-		BehaviorExecutionSpecification bes = (BehaviorExecutionSpecification)CommandHelper.doCreateExecutionSpecification(UMLFactory.eINSTANCE.createBehaviorExecutionSpecification(), (Lifeline)getElementToEdit(), modelContainer);
+		BehaviorExecutionSpecification bes = (BehaviorExecutionSpecification) CommandHelper.doCreateExecutionSpecification(UMLFactory.eINSTANCE.createBehaviorExecutionSpecification(), (Lifeline) getElementToEdit(), modelContainer);
 		doConfigure(bes, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(bes);
+		((CreateElementRequest) getRequest()).setNewElement(bes);
 		return CommandResult.newOKCommandResult(bes);
 	}
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,16 +44,16 @@ public class PluginGenerator {
 
 		editor = new PluginEditor(project);
 
-		//editor.addNature("org.eclipse.jdt.core.javanature");
+		// editor.addNature("org.eclipse.jdt.core.javanature");
 
 		Set<String> natures = new HashSet<String>();
 		natures.add(PLUGIN_NATURE_ID);
 		editor.addNatures(natures);
 		editor.setSingleton(true);
 
-		for(CustomizableElement element : configuration.getElements()) {
+		for (CustomizableElement element : configuration.getElements()) {
 			ExtensionFactory factory = getFactory(element);
-			if(factory != null) {
+			if (factory != null) {
 				factory.addElement(element, editor);
 			} else {
 				Activator.log.warn(Messages.PluginGenerator_factoryNotFound + element.eClass());
@@ -63,7 +63,7 @@ public class PluginGenerator {
 		editor.save();
 
 
-		if(editor.getPluginEditor().exists()) {
+		if (editor.getPluginEditor().exists()) {
 			editor.getBuildEditor().addToBuild(IPluginProjectEditor.PLUGIN_XML_FILE);
 			editor.getBuildEditor().save();
 		}
@@ -71,7 +71,7 @@ public class PluginGenerator {
 		String pluginId = configuration.getPlugin();
 		Resource resource = configuration.eResource();
 		URI uri = URI.createPlatformResourceURI(pluginId + "/customizationConfiguration.xmi", true); //$NON-NLS-1$
-		if(resource == null) {
+		if (resource == null) {
 			ResourceSet resourceSet = new ResourceSetImpl();
 			resource = resourceSet.createResource(uri);
 			resource.getContents().add(configuration);

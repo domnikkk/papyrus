@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.properties.modelelement;
 
@@ -29,14 +29,14 @@ import org.eclipse.papyrus.views.properties.modelelement.AbstractModelElement;
 
 /**
  * A ModelElement for manipulating GradientData
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class GradientDataModelElement extends AbstractModelElement {
 
 	private static final String PROPERTY_PATH = "gradientStyle"; //$NON-NLS-1$
-	
+
 	/**
 	 * The source GradientData
 	 */
@@ -46,14 +46,14 @@ public class GradientDataModelElement extends AbstractModelElement {
 	 * The notation style element that owns the {@link GradientData}.
 	 */
 	protected EObject owner;
-	
+
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param sourceElement
-	 *        the source GradientData
+	 *            the source GradientData
 	 * @param owner
-	 *        the owner of the gradient data (may be {@code null})
+	 *            the owner of the gradient data (may be {@code null})
 	 */
 	public GradientDataModelElement(GradientData sourceElement, EObject owner) {
 		this.sourceElement = sourceElement;
@@ -61,11 +61,11 @@ public class GradientDataModelElement extends AbstractModelElement {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param sourceElement
-	 *        the source GradientData
+	 *            the source GradientData
 	 */
 	public GradientDataModelElement(GradientData sourceElement) {
 		this(sourceElement, null);
@@ -86,14 +86,14 @@ public class GradientDataModelElement extends AbstractModelElement {
 		// Let owner be null for compatibility with plain GradientData objects that we don't know their owners
 		return (owner == null) || !EMFHelper.isReadOnly(owner);
 	}
-	
+
 	@Override
 	public IStaticContentProvider getContentProvider(String propertyPath) {
-		if(propertyPath.equals(PROPERTY_PATH)) {
+		if (propertyPath.equals(PROPERTY_PATH)) {
 			return new AbstractStaticContentProvider() {
 
 				public Object[] getElements() {
-					return new Integer[]{ 0, 1 };
+					return new Integer[] { 0, 1 };
 				}
 
 			};
@@ -104,14 +104,14 @@ public class GradientDataModelElement extends AbstractModelElement {
 
 	@Override
 	public ILabelProvider getLabelProvider(String propertyPath) {
-		if(propertyPath.equals(PROPERTY_PATH)) {
+		if (propertyPath.equals(PROPERTY_PATH)) {
 			return new LabelProvider() {
 
 				@Override
 				public String getText(Object element) {
-					if(element instanceof Integer) {
-						int value = (Integer)element;
-						if(value == 0) {
+					if (element instanceof Integer) {
+						int value = (Integer) element;
+						if (value == 0) {
 							return Messages.GradientDataModelElement_Vertical;
 						} else {
 							return Messages.GradientDataModelElement_Horizontal;
@@ -129,7 +129,7 @@ public class GradientDataModelElement extends AbstractModelElement {
 	@Override
 	public Object getDefaultValue(String propertyPath) {
 		GradientProperty property = GradientProperty.valueOf(propertyPath);
-		switch(property) {
+		switch (property) {
 		case activate:
 			return false;
 		case gradientColor1:

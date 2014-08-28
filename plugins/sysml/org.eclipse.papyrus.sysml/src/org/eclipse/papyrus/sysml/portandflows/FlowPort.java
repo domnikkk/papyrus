@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.eclipse.uml2.uml.Port;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>Flow Port</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.Port;
  * <li>{@link org.eclipse.papyrus.sysml.portandflows.FlowPort#getDirection <em>Direction</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.sysml.portandflows.PortandflowsPackage#getFlowPort()
  * @model
  * @generated
@@ -43,7 +43,7 @@ public interface FlowPort extends EObject {
 	 * If the meaning of the '<em>Base Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Port</em>' reference.
 	 * @see #setBase_Port(Port)
 	 * @see org.eclipse.papyrus.sysml.portandflows.PortandflowsPackage#getFlowPort_Base_Port()
@@ -61,7 +61,7 @@ public interface FlowPort extends EObject {
 	 * If the meaning of the '<em>Direction</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Direction</em>' attribute.
 	 * @see org.eclipse.papyrus.sysml.portandflows.FlowDirection
 	 * @see #setDirection(FlowDirection)
@@ -73,7 +73,7 @@ public interface FlowPort extends EObject {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -83,9 +83,9 @@ public interface FlowPort extends EObject {
 	 * Sets the value of the ' {@link org.eclipse.papyrus.sysml.portandflows.FlowPort#getBase_Port
 	 * <em>Base Port</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Base Port</em>' reference.
+	 *            the new value of the '<em>Base Port</em>' reference.
 	 * @see #getBase_Port()
 	 * @generated
 	 */
@@ -99,7 +99,7 @@ public interface FlowPort extends EObject {
 	 * If the meaning of the '<em>Is Atomic</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Atomic</em>' attribute.
 	 * @see org.eclipse.papyrus.sysml.portandflows.PortandflowsPackage#getFlowPort_IsAtomic()
 	 * @model default="false" unique="false" dataType="org.eclipse.uml2.types.Boolean" required="true" transient="true" changeable="false"
@@ -115,7 +115,7 @@ public interface FlowPort extends EObject {
 	 * If the meaning of the '<em>Is Conjugated</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Conjugated</em>' attribute.
 	 * @see #setIsConjugated(boolean)
 	 * @see org.eclipse.papyrus.sysml.portandflows.PortandflowsPackage#getFlowPort_IsConjugated()
@@ -128,9 +128,9 @@ public interface FlowPort extends EObject {
 	 * Sets the value of the ' {@link org.eclipse.papyrus.sysml.portandflows.FlowPort#getDirection
 	 * <em>Direction</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Direction</em>' attribute.
+	 *            the new value of the '<em>Direction</em>' attribute.
 	 * @see org.eclipse.papyrus.sysml.portandflows.FlowDirection
 	 * @see #getDirection()
 	 * @generated
@@ -141,9 +141,9 @@ public interface FlowPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.sysml.portandflows.FlowPort#isConjugated <em>Is Conjugated</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Is Conjugated</em>' attribute.
+	 *            the new value of the '<em>Is Conjugated</em>' attribute.
 	 * @see #isConjugated()
 	 * @generated
 	 */

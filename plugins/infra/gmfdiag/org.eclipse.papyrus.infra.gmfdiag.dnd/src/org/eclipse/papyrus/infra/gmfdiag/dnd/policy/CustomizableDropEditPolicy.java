@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest;
-import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.Bounds;
 import org.eclipse.gmf.runtime.notation.LayoutConstraint;
@@ -51,9 +50,9 @@ import org.eclipse.ui.PlatformUI;
  * An EditPolicy to handle Drop in Papyrus diagrams.
  * This edit policy can be customized from an extension point. If a customization
  * is not available, it will delegate the behavior to the default Drop edit policy
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class CustomizableDropEditPolicy extends DragDropEditPolicy {
 
@@ -65,20 +64,20 @@ public class CustomizableDropEditPolicy extends DragDropEditPolicy {
 
 	protected DropStrategy defaultDropStrategy;
 
-	//FIXME: This comes from oep.uml.diagram.common.listener.DropTargetListener
-	//This should be merged to oep.infra.gmfdiag.common, as this is not specific to UML
+	// FIXME: This comes from oep.uml.diagram.common.listener.DropTargetListener
+	// This should be merged to oep.infra.gmfdiag.common, as this is not specific to UML
 	public static final String EVENT_DETAIL = "EVENT_DETAIL";
 
 	@Override
 	public void activate() {
-		//Nothing
+		// Nothing
 	}
 
 	/**
 	 * Instantiates a new CustomizableDropEditPolicy
-	 * 
+	 *
 	 * @param defaultEditPolicy
-	 *        The default editPolicy, to be called when no custom Drop strategy is available
+	 *            The default editPolicy, to be called when no custom Drop strategy is available
 	 */
 	public CustomizableDropEditPolicy(EditPolicy defaultDropEditPolicy, EditPolicy defaultCreationEditPolicy) {
 		this.defaultDropEditPolicy = defaultDropEditPolicy;
@@ -90,22 +89,22 @@ public class CustomizableDropEditPolicy extends DragDropEditPolicy {
 	public Command getCommand(final Request request) {
 		Command command;
 
-		if(super.understandsRequest(request)) {
-			//Drag & Drop request
+		if (super.understandsRequest(request)) {
+			// Drag & Drop request
 			try {
-				command = super.getCommand(request); //Will call this.getDropObjectsCommand() eventually
+				command = super.getCommand(request); // Will call this.getDropObjectsCommand() eventually
 			} catch (Exception ex) {
 				command = getCustomCommand(request);
 			}
-		} else if(this.understands(request)) {
-			//Add request
+		} else if (this.understands(request)) {
+			// Add request
 			command = getCreationCommand(request);
-		} else if(defaultCreationEditPolicy != null) {
-			//Creation request
-			if(defaultCreationEditPolicy.understandsRequest(request)) {
+		} else if (defaultCreationEditPolicy != null) {
+			// Creation request
+			if (defaultCreationEditPolicy.understandsRequest(request)) {
 				EditPart defaultTargetEditPart = defaultCreationEditPolicy.getTargetEditPart(request);
 				EditPart myTargetEditPart = super.getTargetEditPart(request);
-				if(defaultTargetEditPart != myTargetEditPart) {
+				if (defaultTargetEditPart != myTargetEditPart) {
 					command = defaultTargetEditPart.getCommand(request);
 				} else {
 					command = defaultCreationEditPolicy.getCommand(request);
@@ -117,7 +116,7 @@ public class CustomizableDropEditPolicy extends DragDropEditPolicy {
 			command = null;
 		}
 
-		if(command == null) {
+		if (command == null) {
 			return null;
 		}
 
@@ -130,7 +129,7 @@ public class CustomizableDropEditPolicy extends DragDropEditPolicy {
 	}
 
 	protected boolean understands(Request request) {
-		return RequestConstants.REQ_ADD.equals(request.getType());
+		return org.eclipse.gef.RequestConstants.REQ_ADD.equals(request.getType());
 	}
 
 	protected boolean isCustomRequest(Request request) {
@@ -148,7 +147,7 @@ public class CustomizableDropEditPolicy extends DragDropEditPolicy {
 	protected Command getDropObjectsCommand(DropObjectsRequest request) {
 		Command dropCommand = getCustomCommand(request);
 
-		if(dropCommand != null && dropCommand.canExecute() && request.getObjects().size() > 1) {
+		if (dropCommand != null && dropCommand.canExecute() && request.getObjects().size() > 1) {
 			return layoutDroppedObjects(dropCommand);
 		}
 
@@ -156,27 +155,27 @@ public class CustomizableDropEditPolicy extends DragDropEditPolicy {
 	}
 
 	protected Command layoutDroppedObjects(final Command dropCommand) {
-		AbstractTransactionalCommand spacingCommand = new AbstractTransactionalCommand((TransactionalEditingDomain)EMFHelper.resolveEditingDomain(getHost()), "Spacing elements", Collections.EMPTY_LIST) {
+		AbstractTransactionalCommand spacingCommand = new AbstractTransactionalCommand((TransactionalEditingDomain) EMFHelper.resolveEditingDomain(getHost()), "Spacing elements", Collections.EMPTY_LIST) {
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				if(dropCommand instanceof ICommandProxy) {
-					ICommand gmfCommand = ((ICommandProxy)dropCommand).getICommand();
+				if (dropCommand instanceof ICommandProxy) {
+					ICommand gmfCommand = ((ICommandProxy) dropCommand).getICommand();
 					CommandResult previousCommandResult = gmfCommand.getCommandResult();
-					if(previousCommandResult != null) {
+					if (previousCommandResult != null) {
 						Object returnValue = previousCommandResult.getReturnValue();
-						if(returnValue instanceof List<?>) {
-							List<?> returnedElements = (List<?>)returnValue;
+						if (returnValue instanceof List<?>) {
+							List<?> returnedElements = (List<?>) returnValue;
 
 							int i = 0;
-							for(Object returnedElement : returnedElements) {
-								if(returnedElement instanceof CreateViewRequest.ViewDescriptor) {
-									CreateViewRequest.ViewDescriptor newViewDescriptor = (CreateViewRequest.ViewDescriptor)returnedElement;
-									Shape newShape = (Shape)newViewDescriptor.getAdapter(Shape.class);
-									if(newShape != null) {
+							for (Object returnedElement : returnedElements) {
+								if (returnedElement instanceof CreateViewRequest.ViewDescriptor) {
+									CreateViewRequest.ViewDescriptor newViewDescriptor = (CreateViewRequest.ViewDescriptor) returnedElement;
+									Shape newShape = (Shape) newViewDescriptor.getAdapter(Shape.class);
+									if (newShape != null) {
 										LayoutConstraint constraint = newShape.getLayoutConstraint();
-										if(constraint instanceof Bounds) {
-											Bounds bounds = (Bounds)constraint;
+										if (constraint instanceof Bounds) {
+											Bounds bounds = (Bounds) constraint;
 											updateBounds(bounds, i);
 											i++;
 										}
@@ -203,47 +202,47 @@ public class CustomizableDropEditPolicy extends DragDropEditPolicy {
 
 	/**
 	 * Returns the command from a Custom DropStrategy
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	protected Command getCustomCommand(Request request) {
 		final Map<DropStrategy, Command> matchingStrategies = findStrategies(request);
 
-		//Only one strategy: return the associated command
-		if(matchingStrategies.size() == 1) {
+		// Only one strategy: return the associated command
+		if (matchingStrategies.size() == 1) {
 			return matchingStrategies.values().iterator().next();
 		}
 
-		//More than one strategy
-		if(matchingStrategies.size() > 1) {
+		// More than one strategy
+		if (matchingStrategies.size() > 1) {
 			boolean useDefault = true;
 
-			//FIXME: What's the exact semantic of EVENT_DETAIL=DND_COPY in Papyrus?
-			//Currently, DND_COPY corresponds to Ctrl + Drag/Drop
-			if(request.getExtendedData().containsKey(EVENT_DETAIL)) {
-				int eventDetailValue = (Integer)request.getExtendedData().get(EVENT_DETAIL);
-				if((eventDetailValue & DND.DROP_COPY) != 0) {
+			// FIXME: What's the exact semantic of EVENT_DETAIL=DND_COPY in Papyrus?
+			// Currently, DND_COPY corresponds to Ctrl + Drag/Drop
+			if (request.getExtendedData().containsKey(EVENT_DETAIL)) {
+				int eventDetailValue = (Integer) request.getExtendedData().get(EVENT_DETAIL);
+				if ((eventDetailValue & DND.DROP_COPY) != 0) {
 					useDefault = false;
 				}
 			}
 
-			//Search for a default strategy
-			if(useDefault) {
+			// Search for a default strategy
+			if (useDefault) {
 				DropStrategy defaultStrategy = DropStrategyManager.instance.getDefaultDropStrategy(matchingStrategies.keySet());
-				if(defaultStrategy != null) {
+				if (defaultStrategy != null) {
 					return matchingStrategies.get(defaultStrategy);
 				}
 			}
 
-			//If there is no default choice, ask user (Open a choice List)
+			// If there is no default choice, ask user (Open a choice List)
 			Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 
 			DefaultActionHandler handler = new DefaultActionHandler() {
 
 				public void defaultActionSelected(Command defaultCommand) {
 					DropStrategy defaultStrategy = findStrategy(matchingStrategies, defaultCommand);
-					if(defaultStrategy != null) {
+					if (defaultStrategy != null) {
 						DropStrategyManager.instance.setDefaultDropStrategy(matchingStrategies.keySet(), defaultStrategy);
 					}
 				}
@@ -257,13 +256,13 @@ public class CustomizableDropEditPolicy extends DragDropEditPolicy {
 			return new ICommandProxy(command);
 		}
 
-		//No matching strategy
+		// No matching strategy
 		return null;
 	}
 
 	private static DropStrategy findStrategy(Map<DropStrategy, Command> matchingStrategies, Command command) {
-		for(Map.Entry<DropStrategy, Command> entry : matchingStrategies.entrySet()) {
-			if(entry.getValue() == command) {
+		for (Map.Entry<DropStrategy, Command> entry : matchingStrategies.entrySet()) {
+			if (entry.getValue() == command) {
 				return entry.getKey();
 			}
 		}
@@ -273,22 +272,22 @@ public class CustomizableDropEditPolicy extends DragDropEditPolicy {
 	/**
 	 * Returns a map of DropStrategy / Command, for each Strategy which can handle
 	 * the given request. All the returned commands are executable. The map may be empty.
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	protected Map<DropStrategy, Command> findStrategies(Request request) {
 		Map<DropStrategy, Command> matchingStrategies = new LinkedHashMap<DropStrategy, Command>();
 
-		for(DropStrategy strategy : DropStrategyManager.instance.getActiveStrategies()) {
+		for (DropStrategy strategy : DropStrategyManager.instance.getActiveStrategies()) {
 			Command command = strategy.getCommand(request, getHost());
-			if(command != null && command.canExecute()) {
+			if (command != null && command.canExecute()) {
 				matchingStrategies.put(strategy, command);
 			}
 		}
 
 		Command command = defaultDropStrategy.getCommand(request, getHost());
-		if(command != null && command.canExecute()) {
+		if (command != null && command.canExecute()) {
 			matchingStrategies.put(defaultDropStrategy, command);
 		}
 
@@ -300,44 +299,44 @@ public class CustomizableDropEditPolicy extends DragDropEditPolicy {
 	 */
 	@Override
 	public void showTargetFeedback(Request request) {
-		if(defaultCreationEditPolicy != null && defaultCreationEditPolicy.understandsRequest(request)) {
+		if (defaultCreationEditPolicy != null && defaultCreationEditPolicy.understandsRequest(request)) {
 			defaultCreationEditPolicy.showTargetFeedback(request);
 		}
 
-		if(!(getHost() instanceof DiagramEditPart)) {
+		if (!(getHost() instanceof DiagramEditPart)) {
 			super.showTargetFeedback(request);
 		}
 	}
 
 	@Override
 	public void eraseTargetFeedback(Request request) {
-		if(defaultCreationEditPolicy != null) {
+		if (defaultCreationEditPolicy != null) {
 			defaultCreationEditPolicy.eraseTargetFeedback(request);
 		}
 
-		if(!(getHost() instanceof DiagramEditPart)) {
+		if (!(getHost() instanceof DiagramEditPart)) {
 			super.eraseTargetFeedback(request);
 		}
 	}
 
 	@Override
 	public void showSourceFeedback(Request request) {
-		if(defaultCreationEditPolicy != null && defaultCreationEditPolicy.understandsRequest(request)) {
+		if (defaultCreationEditPolicy != null && defaultCreationEditPolicy.understandsRequest(request)) {
 			defaultCreationEditPolicy.showSourceFeedback(request);
 		}
 
-		if(!(getHost() instanceof DiagramEditPart)) {
+		if (!(getHost() instanceof DiagramEditPart)) {
 			super.showSourceFeedback(request);
 		}
 	}
 
 	@Override
 	public void eraseSourceFeedback(Request request) {
-		if(defaultCreationEditPolicy != null) {
+		if (defaultCreationEditPolicy != null) {
 			defaultCreationEditPolicy.showSourceFeedback(request);
 		}
 
-		if(!(getHost() instanceof DiagramEditPart)) {
+		if (!(getHost() instanceof DiagramEditPart)) {
 			super.eraseSourceFeedback(request);
 		}
 	}
@@ -349,7 +348,7 @@ public class CustomizableDropEditPolicy extends DragDropEditPolicy {
 	@Override
 	public EditPart getTargetEditPart(Request request) {
 		// when default creation edit policy is not overriden and request is a creation request, target edit part should be computed by the default edit policy itself
-		if(!super.understandsRequest(request) && !this.understands(request) && (defaultCreationEditPolicy != null && defaultCreationEditPolicy.understandsRequest(request))) {
+		if (!super.understandsRequest(request) && !this.understands(request) && (defaultCreationEditPolicy != null && defaultCreationEditPolicy.understandsRequest(request))) {
 			return defaultCreationEditPolicy.getTargetEditPart(request);
 		}
 		return super.getTargetEditPart(request);

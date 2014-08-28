@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -19,15 +19,10 @@ import java.util.List;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.edit.command.CommandParameter;
-
 import org.eclipse.emf.edit.domain.EditingDomain;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -40,14 +35,10 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedElementTypeSet;
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
-
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationFactory;
-
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.util.InvariantSemanticTypeConfigurationAdapterFactory;
-
 import org.eclipse.papyrus.infra.extendedtypes.util.ExtendedtypesSwitch;
 
 /**
@@ -57,6 +48,7 @@ import org.eclipse.papyrus.infra.extendedtypes.util.ExtendedtypesSwitch;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extends InvariantSemanticTypeConfigurationAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -64,6 +56,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -72,6 +65,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -80,6 +74,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -88,6 +83,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public InvariantSemanticTypeConfigurationItemProviderAdapterFactory() {
@@ -102,6 +98,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected InvariantSemanticTypeConfigurationItemProvider invariantSemanticTypeConfigurationItemProvider;
@@ -110,6 +107,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,6 +123,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.AndRule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected AndRuleItemProvider andRuleItemProvider;
@@ -133,6 +132,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.AndRule}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,6 +148,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.OrRule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected OrRuleItemProvider orRuleItemProvider;
@@ -156,6 +157,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.OrRule}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,6 +173,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
@@ -181,6 +184,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
@@ -190,6 +194,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,6 +206,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,13 +217,14 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -229,6 +236,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void addListener(INotifyChangedListener notifyChangedListener) {
@@ -239,6 +247,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
@@ -249,6 +258,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void fireNotifyChanged(Notification notification) {
@@ -260,21 +270,29 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void dispose() {
-		if (invariantSemanticTypeConfigurationItemProvider != null) invariantSemanticTypeConfigurationItemProvider.dispose();
-		if (andRuleItemProvider != null) andRuleItemProvider.dispose();
-		if (orRuleItemProvider != null) orRuleItemProvider.dispose();
+		if (invariantSemanticTypeConfigurationItemProvider != null) {
+			invariantSemanticTypeConfigurationItemProvider.dispose();
+		}
+		if (andRuleItemProvider != null) {
+			andRuleItemProvider.dispose();
+		}
+		if (orRuleItemProvider != null) {
+			orRuleItemProvider.dispose();
+		}
 	}
 
 	/**
 	 * A child creation extender for the {@link ExtendedtypesPackage}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static class ExtendedtypesChildCreationExtender implements IChildCreationExtender {
@@ -282,6 +300,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 		 * The switch for creating child descriptors specific to each extended class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		protected static class CreationSwitch extends ExtendedtypesSwitch<Object> {
@@ -289,6 +308,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 			 * The child descriptors being populated.
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
+			 *
 			 * @generated
 			 */
 			protected List<Object> newChildDescriptors;
@@ -297,6 +317,7 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 			 * The domain in which to create the children.
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
+			 *
 			 * @generated
 			 */
 			protected EditingDomain editingDomain;
@@ -305,30 +326,34 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 			 * Creates the a switch for populating child descriptors in the given domain.
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
+			 *
 			 * @generated
 			 */
 			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
 				this.newChildDescriptors = newChildDescriptors;
 				this.editingDomain = editingDomain;
 			}
+
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
+			 *
 			 * @generated
 			 */
 			@Override
 			public Object caseExtendedElementTypeSet(ExtendedElementTypeSet object) {
 				newChildDescriptors.add
-					(createChildParameter
+						(createChildParameter
 						(ExtendedtypesPackage.eINSTANCE.getExtendedElementTypeSet_ElementType(),
-						 InvariantSemanticTypeConfigurationFactory.eINSTANCE.createInvariantSemanticTypeConfiguration()));
+								InvariantSemanticTypeConfigurationFactory.eINSTANCE.createInvariantSemanticTypeConfiguration()));
 
 				return null;
 			}
- 
+
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
+			 *
 			 * @generated
 			 */
 			protected CommandParameter createChildParameter(Object feature, Object child) {
@@ -340,17 +365,19 @@ public class InvariantSemanticTypeConfigurationItemProviderAdapterFactory extend
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 			ArrayList<Object> result = new ArrayList<Object>();
-			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			new CreationSwitch(result, editingDomain).doSwitch((EObject) object);
 			return result;
 		}
 
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		public ResourceLocator getResourceLocator() {

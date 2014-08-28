@@ -35,12 +35,14 @@ import org.eclipse.papyrus.views.properties.ui.impl.UiPackageImpl;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass environmentEClass = null;
@@ -48,6 +50,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass propertyEditorTypeEClass = null;
@@ -55,6 +58,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass widgetTypeEClass = null;
@@ -62,6 +66,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass compositeWidgetTypeEClass = null;
@@ -69,6 +74,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layoutTypeEClass = null;
@@ -76,6 +82,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass modelElementFactoryDescriptorEClass = null;
@@ -83,6 +90,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass standardWidgetTypeEClass = null;
@@ -90,6 +98,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass namespaceEClass = null;
@@ -97,6 +106,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass miscClassEClass = null;
@@ -104,20 +114,17 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EEnum typeEEnum = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.views.properties.environment.EnvironmentPackage#eNS_URI
 	 * @see #init()
@@ -130,27 +137,29 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link EnvironmentPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 *
+	 * <p>
+	 * This method is used to initialize {@link EnvironmentPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static EnvironmentPackage init() {
-		if (isInited) return (EnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI);
+		if (isInited) {
+			return (EnvironmentPackage) EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new EnvironmentPackageImpl());
+		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new EnvironmentPackageImpl());
 
 		isInited = true;
 
@@ -159,8 +168,9 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		ContextsPackageImpl theContextsPackage = (ContextsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ContextsPackage.eNS_URI) instanceof ContextsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ContextsPackage.eNS_URI) : ContextsPackage.eINSTANCE);
-		UiPackageImpl theUiPackage = (UiPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UiPackage.eNS_URI) instanceof UiPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UiPackage.eNS_URI) : UiPackage.eINSTANCE);
+		ContextsPackageImpl theContextsPackage = (ContextsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ContextsPackage.eNS_URI) instanceof ContextsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ContextsPackage.eNS_URI)
+				: ContextsPackage.eINSTANCE);
+		UiPackageImpl theUiPackage = (UiPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(UiPackage.eNS_URI) instanceof UiPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UiPackage.eNS_URI) : UiPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theEnvironmentPackage.createPackageContents();
@@ -175,7 +185,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		// Mark meta-data to indicate it can't be changed
 		theEnvironmentPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(EnvironmentPackage.eNS_URI, theEnvironmentPackage);
 		return theEnvironmentPackage;
@@ -184,8 +194,10 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getEnvironment() {
 		return environmentEClass;
 	}
@@ -193,71 +205,87 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEnvironment_ModelElementFactories() {
-		return (EReference)environmentEClass.getEStructuralFeatures().get(0);
+		return (EReference) environmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEnvironment_WidgetTypes() {
-		return (EReference)environmentEClass.getEStructuralFeatures().get(1);
+		return (EReference) environmentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEnvironment_PropertyEditorTypes() {
-		return (EReference)environmentEClass.getEStructuralFeatures().get(2);
+		return (EReference) environmentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEnvironment_CompositeWidgetTypes() {
-		return (EReference)environmentEClass.getEStructuralFeatures().get(3);
+		return (EReference) environmentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEnvironment_LayoutTypes() {
-		return (EReference)environmentEClass.getEStructuralFeatures().get(4);
+		return (EReference) environmentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEnvironment_Namespaces() {
-		return (EReference)environmentEClass.getEStructuralFeatures().get(5);
+		return (EReference) environmentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEnvironment_MiscClasses() {
-		return (EReference)environmentEClass.getEStructuralFeatures().get(6);
+		return (EReference) environmentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertyEditorType() {
 		return propertyEditorTypeEClass;
 	}
@@ -265,26 +293,32 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPropertyEditorType_Type() {
-		return (EAttribute)propertyEditorTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) propertyEditorTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPropertyEditorType_Multiplicity() {
-		return (EAttribute)propertyEditorTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) propertyEditorTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getWidgetType() {
 		return widgetTypeEClass;
 	}
@@ -292,35 +326,43 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getWidgetType_Label() {
-		return (EAttribute)widgetTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) widgetTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getWidgetType_WidgetClass() {
-		return (EAttribute)widgetTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) widgetTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getWidgetType_Namespace() {
-		return (EReference)widgetTypeEClass.getEStructuralFeatures().get(2);
+		return (EReference) widgetTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getCompositeWidgetType() {
 		return compositeWidgetTypeEClass;
 	}
@@ -328,8 +370,10 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayoutType() {
 		return layoutTypeEClass;
 	}
@@ -337,8 +381,10 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getModelElementFactoryDescriptor() {
 		return modelElementFactoryDescriptorEClass;
 	}
@@ -346,26 +392,32 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getModelElementFactoryDescriptor_Name() {
-		return (EAttribute)modelElementFactoryDescriptorEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) modelElementFactoryDescriptorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getModelElementFactoryDescriptor_FactoryClass() {
-		return (EAttribute)modelElementFactoryDescriptorEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) modelElementFactoryDescriptorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getStandardWidgetType() {
 		return standardWidgetTypeEClass;
 	}
@@ -373,8 +425,10 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getNamespace() {
 		return namespaceEClass;
 	}
@@ -382,35 +436,43 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNamespace_Prefix() {
-		return (EAttribute)namespaceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) namespaceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNamespace_Name() {
-		return (EAttribute)namespaceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) namespaceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNamespace_Value() {
-		return (EAttribute)namespaceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) namespaceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getMiscClass() {
 		return miscClassEClass;
 	}
@@ -418,35 +480,43 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMiscClass_Label() {
-		return (EAttribute)miscClassEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) miscClassEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMiscClass_Class() {
-		return (EAttribute)miscClassEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) miscClassEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getMiscClass_Namespace() {
-		return (EReference)miscClassEClass.getEStructuralFeatures().get(2);
+		return (EReference) miscClassEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EEnum getType() {
 		return typeEEnum;
 	}
@@ -454,28 +524,34 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EnvironmentFactory getEnvironmentFactory() {
-		return (EnvironmentFactory)getEFactoryInstance();
+		return (EnvironmentFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -524,19 +600,23 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -545,7 +625,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		org.eclipse.papyrus.infra.constraints.environment.EnvironmentPackage theEnvironmentPackage_1 = (org.eclipse.papyrus.infra.constraints.environment.EnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.infra.constraints.environment.EnvironmentPackage.eNS_URI);
+		org.eclipse.papyrus.infra.constraints.environment.EnvironmentPackage theEnvironmentPackage_1 = (org.eclipse.papyrus.infra.constraints.environment.EnvironmentPackage) EPackage.Registry.INSTANCE
+				.getEPackage(org.eclipse.papyrus.infra.constraints.environment.EnvironmentPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -560,10 +641,14 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(environmentEClass, Environment.class, "Environment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEnvironment_ModelElementFactories(), this.getModelElementFactoryDescriptor(), null, "modelElementFactories", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnvironment_WidgetTypes(), this.getStandardWidgetType(), null, "widgetTypes", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnvironment_PropertyEditorTypes(), this.getPropertyEditorType(), null, "propertyEditorTypes", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnvironment_CompositeWidgetTypes(), this.getCompositeWidgetType(), null, "compositeWidgetTypes", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnvironment_ModelElementFactories(), this.getModelElementFactoryDescriptor(), null, "modelElementFactories", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnvironment_WidgetTypes(), this.getStandardWidgetType(), null, "widgetTypes", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getEnvironment_PropertyEditorTypes(), this.getPropertyEditorType(), null, "propertyEditorTypes", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getEnvironment_CompositeWidgetTypes(), this.getCompositeWidgetType(), null, "compositeWidgetTypes", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnvironment_LayoutTypes(), this.getLayoutType(), null, "layoutTypes", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnvironment_Namespaces(), this.getNamespace(), null, "namespaces", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnvironment_MiscClasses(), this.getMiscClass(), null, "miscClasses", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -583,7 +668,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 
 		initEClass(modelElementFactoryDescriptorEClass, ModelElementFactoryDescriptor.class, "ModelElementFactoryDescriptor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getModelElementFactoryDescriptor_Name(), ecorePackage.getEString(), "name", null, 1, 1, ModelElementFactoryDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelElementFactoryDescriptor_FactoryClass(), ecorePackage.getEString(), "factoryClass", null, 1, 1, ModelElementFactoryDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModelElementFactoryDescriptor_FactoryClass(), ecorePackage.getEString(), "factoryClass", null, 1, 1, ModelElementFactoryDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(standardWidgetTypeEClass, StandardWidgetType.class, "StandardWidgetType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -610,4 +696,4 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		createResource(eNS_URI);
 	}
 
-} //EnvironmentPackageImpl
+} // EnvironmentPackageImpl

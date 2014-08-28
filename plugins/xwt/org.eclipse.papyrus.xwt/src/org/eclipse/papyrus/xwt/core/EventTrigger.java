@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -30,7 +30,7 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Widget;
 
 /**
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class EventTrigger extends TriggerBase {
@@ -69,12 +69,12 @@ public class EventTrigger extends TriggerBase {
 	@Override
 	public void prepare(Object target) {
 		String routedEvent = getRoutedEvent();
-		if(routedEvent != null) {
+		if (routedEvent != null) {
 			Object source = getElementByName(target, getSourceName());
 			IMetaclass metaclass = XWT.getMetaclass(source);
 			IEvent event = metaclass.findEvent(ModelUtils.normalizeEventName(routedEvent));
-			if(event == null) {
-				if(routedEvent != null && !routedEvent.toLowerCase().endsWith(IEventConstants.SUFFIX_KEY)) {
+			if (event == null) {
+				if (routedEvent != null && !routedEvent.toLowerCase().endsWith(IEventConstants.SUFFIX_KEY)) {
 					LoggerManager.log("Event " + routedEvent + " is not found in " + source.getClass().getName() + ". Please add a suffix \"Event\"!");
 				} else {
 					LoggerManager.log("Event " + routedEvent + " is not found in " + source.getClass().getName());
@@ -82,12 +82,12 @@ public class EventTrigger extends TriggerBase {
 				return;
 			}
 
-			for(TriggerAction triggerAction : getActions()) {
+			for (TriggerAction triggerAction : getActions()) {
 				triggerAction.initialize(target);
 			}
 
 			String name = event.getName();
-			if("loadedevent".equalsIgnoreCase(name)) {
+			if ("loadedevent".equalsIgnoreCase(name)) {
 				Widget widget = UserData.getWidget(source);
 				IEventController eventController = UserData.updateEventController(source);
 				RunablePaintAction paintRunnable = createPaintRunnable(source);
@@ -108,6 +108,7 @@ public class EventTrigger extends TriggerBase {
 		}
 	}
 
+	@Override
 	public void on(Object target) {
 	}
 
@@ -128,7 +129,7 @@ public class EventTrigger extends TriggerBase {
 		}
 
 		public void run(Object object, Event event) {
-			for(TriggerAction triggerAction : EventTrigger.this.getActions()) {
+			for (TriggerAction triggerAction : EventTrigger.this.getActions()) {
 				triggerAction.run(event, target, null);
 			}
 		}
@@ -154,22 +155,22 @@ public class EventTrigger extends TriggerBase {
 
 		public void run() {
 			count--;
-			if(count == 0 && !event.widget.isDisposed()) {
+			if (count == 0 && !event.widget.isDisposed()) {
 				final Display display = event.widget.getDisplay();
 				display.syncExec(new Runnable() {
 
 					public void run() {
-						if(transition) {
-							for(TriggerAction triggerAction : getActions()) {
+						if (transition) {
+							for (TriggerAction triggerAction : getActions()) {
 								triggerAction.initialize(target);
 							}
 						} else {
-							for(TriggerAction triggerAction : getActions()) {
+							for (TriggerAction triggerAction : getActions()) {
 								triggerAction.endFinalize(target);
 							}
 						}
 						display.removeFilter(eventType, RunableAction.this);
-						if(!event.widget.isDisposed()) {
+						if (!event.widget.isDisposed()) {
 							event.widget.notifyListeners(eventType, event);
 							display.addFilter(eventType, RunableAction.this);
 						}
@@ -183,7 +184,7 @@ public class EventTrigger extends TriggerBase {
 			Widget widget = UserData.getWidget(target);
 			String name = event.getName();
 			this.eventType = Controller.getEventTypeByName(name);
-			if(this.eventType != SWT.None) {
+			if (this.eventType != SWT.None) {
 				widget.getDisplay().addFilter(this.eventType, this);
 				transition = (this.eventType == XWTMaps.getEvent("swt.move") || this.eventType == XWTMaps.getEvent("swt.resize"));
 			}
@@ -191,10 +192,10 @@ public class EventTrigger extends TriggerBase {
 
 		public void handleEvent(Event event) {
 			Widget widget = UserData.getWidget(target);
-			if(event.widget != widget || widget.isDisposed()) {
+			if (event.widget != widget || widget.isDisposed()) {
 				return;
 			}
-			if(started) {
+			if (started) {
 				event.type = SWT.NONE;
 				return;
 			}
@@ -205,13 +206,13 @@ public class EventTrigger extends TriggerBase {
 			try {
 				this.event = Controller.copy(event);
 
-				if(!transition) {
-					for(TriggerAction triggerAction : getActions()) {
+				if (!transition) {
+					for (TriggerAction triggerAction : getActions()) {
 						triggerAction.initialize(target);
 					}
 				}
 
-				for(TriggerAction triggerAction : EventTrigger.this.getActions()) {
+				for (TriggerAction triggerAction : EventTrigger.this.getActions()) {
 					triggerAction.run(event, target, this);
 				}
 			} catch (Exception e) {

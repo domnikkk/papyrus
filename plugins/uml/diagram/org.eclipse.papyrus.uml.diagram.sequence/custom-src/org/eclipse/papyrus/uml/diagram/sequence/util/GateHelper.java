@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -72,22 +72,22 @@ public class GateHelper {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	private GateHelper() {
 	}
 
 	/**
 	 * Create and add View for Gate.
-	 * 
+	 *
 	 * @param containerView
 	 * @param gate
 	 * @param innerGate
-	 *        for CombinedFragment.
+	 *            for CombinedFragment.
 	 * @return
 	 */
 	public static View createView(View containerView, Gate gate) {
-		if(containerView == null || gate == null) {
+		if (containerView == null || gate == null) {
 			return null;
 		}
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -95,10 +95,10 @@ public class GateHelper {
 		node.setElement(gate);
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		ViewUtil.insertChildView(containerView, node, ViewUtil.APPEND, true);
-		//label
+		// label
 		DecorationNode label = NotationFactory.eINSTANCE.createDecorationNode();
 		label.setType(GateNameEditPart.GATE_NAME_TYPE);
-		//Add possible to move the label.
+		// Add possible to move the label.
 		label.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		ViewUtil.insertChildView(node, label, ViewUtil.APPEND, true);
 		return node;
@@ -112,28 +112,28 @@ public class GateHelper {
 	 * from/to the CombinedFragment on its outside.
 	 */
 	public static Gate createGate(Element parent, boolean createInnerCFGate) {
-		if(parent == null) {
+		if (parent == null) {
 			return null;
 		}
 		String name = generateGateName(parent, "gate");
 		Gate gate = null;
-		if(parent instanceof Interaction) {
-			gate = ((Interaction)parent).getFormalGate(name, false, true);
-		} else if(parent instanceof CombinedFragment) {
-			gate = ((CombinedFragment)parent).getCfragmentGate(name, false, true);
-			if(createInnerCFGate) {
-				Gate innerGate = ((CombinedFragment)parent).createCfragmentGate(generateGateName(parent, "gate"));
+		if (parent instanceof Interaction) {
+			gate = ((Interaction) parent).getFormalGate(name, false, true);
+		} else if (parent instanceof CombinedFragment) {
+			gate = ((CombinedFragment) parent).getCfragmentGate(name, false, true);
+			if (createInnerCFGate) {
+				Gate innerGate = ((CombinedFragment) parent).createCfragmentGate(generateGateName(parent, "gate"));
 				EAnnotation ann = innerGate.createEAnnotation(CF_GATE_DATA);
 				ann.getDetails().put(CF_GATE_OUTSIDE, getIdentification(gate));
 				ann = gate.createEAnnotation(CF_GATE_DATA);
 				ann.getDetails().put(CF_GATE_INSIDE, getIdentification(innerGate));
-				//				setVolatile(innerGate, true);
+				// setVolatile(innerGate, true);
 			}
-			//			setVolatile(gate, true);
-		} else if(parent instanceof InteractionUse) {
-			InteractionUse interactionUse = (InteractionUse)parent;
+			// setVolatile(gate, true);
+		} else if (parent instanceof InteractionUse) {
+			InteractionUse interactionUse = (InteractionUse) parent;
 			Interaction refersTo = interactionUse.getRefersTo();
-			if(refersTo != null) {
+			if (refersTo != null) {
 				refersTo.getFormalGate(name, false, true);
 			}
 			gate = interactionUse.getActualGate(name, false, true);
@@ -142,10 +142,10 @@ public class GateHelper {
 	}
 
 	protected static String getIdentification(Gate gate) {
-		if(gate == null) {
+		if (gate == null) {
 			return null;
 		}
-		if(gate.eResource() != null) {
+		if (gate.eResource() != null) {
 			return gate.eResource().getURIFragment(gate);
 		} else {
 			return gate.getName();
@@ -153,25 +153,25 @@ public class GateHelper {
 	}
 
 	protected static Gate findGate(CombinedFragment cf, String identification) {
-		if(cf == null || identification == null) {
+		if (cf == null || identification == null) {
 			return null;
 		}
-		if(cf.eResource() != null) {
+		if (cf.eResource() != null) {
 			EObject eObject = cf.eResource().getEObject(identification);
-			if(eObject instanceof Gate) {
-				return (Gate)eObject;
+			if (eObject instanceof Gate) {
+				return (Gate) eObject;
 			}
 		}
 		return cf.getCfragmentGate(identification);
 	}
 
 	public static Gate getInnerCFGate(Gate outerGate) {
-		if(outerGate == null || !(outerGate.eContainer() instanceof CombinedFragment)) {
+		if (outerGate == null || !(outerGate.eContainer() instanceof CombinedFragment)) {
 			return null;
 		}
-		CombinedFragment cf = (CombinedFragment)outerGate.eContainer();
+		CombinedFragment cf = (CombinedFragment) outerGate.eContainer();
 		EAnnotation ann = outerGate.getEAnnotation(CF_GATE_DATA);
-		if(ann != null) {
+		if (ann != null) {
 			String name = ann.getDetails().get(CF_GATE_INSIDE);
 			return findGate(cf, name);
 		}
@@ -179,12 +179,12 @@ public class GateHelper {
 	}
 
 	public static Gate getOuterCFGate(Gate innerGate) {
-		if(innerGate == null || !(innerGate.eContainer() instanceof CombinedFragment)) {
+		if (innerGate == null || !(innerGate.eContainer() instanceof CombinedFragment)) {
 			return null;
 		}
-		CombinedFragment cf = (CombinedFragment)innerGate.eContainer();
+		CombinedFragment cf = (CombinedFragment) innerGate.eContainer();
 		EAnnotation ann = innerGate.getEAnnotation(CF_GATE_DATA);
-		if(ann != null) {
+		if (ann != null) {
 			String name = ann.getDetails().get(CF_GATE_OUTSIDE);
 			return findGate(cf, name);
 		}
@@ -192,12 +192,12 @@ public class GateHelper {
 	}
 
 	public static boolean isInnerCFGate(Gate gate) {
-		if(gate == null || !(gate.eContainer() instanceof CombinedFragment)) {
+		if (gate == null || !(gate.eContainer() instanceof CombinedFragment)) {
 			return false;
 		}
-		CombinedFragment cf = (CombinedFragment)gate.eContainer();
+		CombinedFragment cf = (CombinedFragment) gate.eContainer();
 		EAnnotation ann = gate.getEAnnotation(CF_GATE_DATA);
-		if(ann != null) {
+		if (ann != null) {
 			String name = ann.getDetails().get(CF_GATE_OUTSIDE);
 			return findGate(cf, name) != null;
 		}
@@ -205,28 +205,28 @@ public class GateHelper {
 	}
 
 	public static Message getOuterCFMessage(Message message) {
-		if(message == null) {
+		if (message == null) {
 			return null;
 		}
 		MessageEnd sendEvent = message.getSendEvent();
-		if(sendEvent instanceof Gate) {
-			Gate gate = (Gate)sendEvent;
-			if(!isInnerCFGate(gate)) {
+		if (sendEvent instanceof Gate) {
+			Gate gate = (Gate) sendEvent;
+			if (!isInnerCFGate(gate)) {
 				return null;
 			}
 			Gate outerGate = getOuterCFGate(gate);
-			if(outerGate != null) {
+			if (outerGate != null) {
 				return outerGate.getMessage();
 			}
 		}
 		MessageEnd receiveEvent = message.getReceiveEvent();
-		if(receiveEvent instanceof Gate) {
-			Gate gate = (Gate)receiveEvent;
-			if(!isInnerCFGate(gate)) {
+		if (receiveEvent instanceof Gate) {
+			Gate gate = (Gate) receiveEvent;
+			if (!isInnerCFGate(gate)) {
 				return null;
 			}
 			Gate outerGate = getOuterCFGate(gate);
-			if(outerGate != null) {
+			if (outerGate != null) {
 				return outerGate.getMessage();
 			}
 		}
@@ -234,14 +234,14 @@ public class GateHelper {
 	}
 
 	public static Gate getActualGate(Gate gate) {
-		if(gate == null || !(gate.eContainer() instanceof Interaction)) {
+		if (gate == null || !(gate.eContainer() instanceof Interaction)) {
 			return null;
 		}
-		Interaction interaction = (Interaction)gate.eContainer();
+		Interaction interaction = (Interaction) gate.eContainer();
 		List<InteractionUse> refersToBy = findRefersToBy(interaction);
-		for(InteractionUse interactionUse : refersToBy) {
+		for (InteractionUse interactionUse : refersToBy) {
 			Gate actualGate = interactionUse.getActualGate(gate.getName());
-			if(actualGate != null) {
+			if (actualGate != null) {
 				return actualGate;
 			}
 		}
@@ -249,41 +249,41 @@ public class GateHelper {
 	}
 
 	public static List<InteractionUse> findRefersToBy(Interaction interaction) {
-		if(interaction == null) {
+		if (interaction == null) {
 			return Collections.emptyList();
 		}
 		List<InteractionUse> refersToBy = new ArrayList<InteractionUse>();
 		Resource eResource = interaction.eResource();
-		if(eResource != null) {
+		if (eResource != null) {
 			ResourceSet resourceSet = eResource.getResourceSet();
-			if(resourceSet != null) {
+			if (resourceSet != null) {
 				EList<Resource> resources = resourceSet.getResources();
-				for(Resource resource : resources) {
+				for (Resource resource : resources) {
 					TreeIterator<EObject> contents = resource.getAllContents();
-					while(contents.hasNext()) {
+					while (contents.hasNext()) {
 						EObject next = contents.next();
-						if(next instanceof InteractionUse && interaction == ((InteractionUse)next).getRefersTo()) {
-							refersToBy.add((InteractionUse)next);
+						if (next instanceof InteractionUse && interaction == ((InteractionUse) next).getRefersTo()) {
+							refersToBy.add((InteractionUse) next);
 						}
 					}
 				}
 			} else {
 				TreeIterator<EObject> contents = eResource.getAllContents();
-				while(contents.hasNext()) {
+				while (contents.hasNext()) {
 					EObject next = contents.next();
-					if(next instanceof InteractionUse && interaction == ((InteractionUse)next).getRefersTo()) {
-						refersToBy.add((InteractionUse)next);
+					if (next instanceof InteractionUse && interaction == ((InteractionUse) next).getRefersTo()) {
+						refersToBy.add((InteractionUse) next);
 					}
 				}
 			}
 		} else {
 			EList<InteractionFragment> fragments = interaction.getFragments();
-			for(InteractionFragment fragment : fragments) {
-				if(!(fragment instanceof InteractionUse)) {
+			for (InteractionFragment fragment : fragments) {
+				if (!(fragment instanceof InteractionUse)) {
 					continue;
 				}
-				if(interaction == ((InteractionUse)fragment).getRefersTo()) {
-					refersToBy.add(((InteractionUse)fragment));
+				if (interaction == ((InteractionUse) fragment).getRefersTo()) {
+					refersToBy.add(((InteractionUse) fragment));
 				}
 			}
 		}
@@ -292,43 +292,43 @@ public class GateHelper {
 
 	/**
 	 * Generate name for Gate.
-	 * 
+	 *
 	 * @param container
 	 * @param object
 	 * @param direction
 	 * @return
 	 */
 	public static String generateGateName(EObject container, String suffix) {
-		//Update gate name to hold a global sequence number.
+		// Update gate name to hold a global sequence number.
 		int index = getTotalGatesNumber(container);
 		String name = suffix;
-		if(container instanceof Interaction) {
-			Interaction interaction = (Interaction)container;
-			if(!"gate".equals(suffix) && interaction.getFormalGate(suffix) == null) {
+		if (container instanceof Interaction) {
+			Interaction interaction = (Interaction) container;
+			if (!"gate".equals(suffix) && interaction.getFormalGate(suffix) == null) {
 				return suffix;
 			}
 			String gateName = name + index;
-			while(interaction.getFormalGate(gateName = name + index) != null) {
+			while (interaction.getFormalGate(gateName = name + index) != null) {
 				index++;
 			}
 			name = gateName;
-		} else if(container instanceof InteractionUse) {
-			InteractionUse iUse = (InteractionUse)container;
-			if(!"gate".equals(suffix) && iUse.getActualGate(suffix) == null) {
+		} else if (container instanceof InteractionUse) {
+			InteractionUse iUse = (InteractionUse) container;
+			if (!"gate".equals(suffix) && iUse.getActualGate(suffix) == null) {
 				return suffix;
 			}
 			String gateName = name + index;
-			while(iUse.getActualGate(gateName = name + index) != null) {
+			while (iUse.getActualGate(gateName = name + index) != null) {
 				index++;
 			}
 			name = gateName;
-		} else if(container instanceof CombinedFragment) {
-			CombinedFragment cf = (CombinedFragment)container;
-			if(!"gate".equals(suffix) && cf.getCfragmentGate(suffix) == null) {
+		} else if (container instanceof CombinedFragment) {
+			CombinedFragment cf = (CombinedFragment) container;
+			if (!"gate".equals(suffix) && cf.getCfragmentGate(suffix) == null) {
 				return suffix;
 			}
 			String gateName = name + index;
-			while(cf.getCfragmentGate(gateName = name + index) != null) {
+			while (cf.getCfragmentGate(gateName = name + index) != null) {
 				index++;
 			}
 			name = gateName;
@@ -337,15 +337,15 @@ public class GateHelper {
 	}
 
 	private static int getTotalGatesNumber(EObject parent) {
-		//fixed bug: start count for each Interaction.
+		// fixed bug: start count for each Interaction.
 		Interaction interaction = getRootInteraction(parent);
-		if(interaction == null) {
+		if (interaction == null) {
 			return 0;
 		}
 		int size = 0;
 		TreeIterator<EObject> allContents = interaction.eAllContents();
-		while(allContents.hasNext()) {
-			if(allContents.next() instanceof Gate) {
+		while (allContents.hasNext()) {
+			if (allContents.next() instanceof Gate) {
 				size++;
 			}
 		}
@@ -353,16 +353,16 @@ public class GateHelper {
 	}
 
 	private static Interaction getRootInteraction(EObject eObj) {
-		if(eObj == null) {
+		if (eObj == null) {
 			return null;
-		} else if(eObj instanceof Interaction) {
-			return (Interaction)eObj;
+		} else if (eObj instanceof Interaction) {
+			return (Interaction) eObj;
 		}
 		return getRootInteraction(eObj.eContainer());
 	}
 
 	public static Point computeGateLocation(Point pt, IFigure hostFigure, IFigure gateFigure) {
-		if(pt == null || hostFigure == null) {
+		if (pt == null || hostFigure == null) {
 			return pt;
 		}
 		Point location = pt.getCopy();
@@ -374,13 +374,13 @@ public class GateHelper {
 	}
 
 	public static void updateGateName(TransactionalEditingDomain editingDomain, final Gate gate, final String newName) {
-		if(gate == null) {
+		if (gate == null) {
 			return;
 		}
 		String name = gate.getName();
-		if(name == null && newName == null) {
+		if (name == null && newName == null) {
 			return;
-		} else if(name != null && name.equals(newName)) {
+		} else if (name != null && name.equals(newName)) {
 			return;
 		} else {
 			AbstractTransactionalCommand cmd = new AbstractTransactionalCommand(editingDomain, "", null) {
@@ -393,9 +393,9 @@ public class GateHelper {
 			};
 			CommandStack commandStack = editingDomain.getCommandStack();
 			GMFtoEMFCommandWrapper command = new GMFtoEMFCommandWrapper(cmd);
-			if(commandStack instanceof TransactionalCommandStack) {
+			if (commandStack instanceof TransactionalCommandStack) {
 				try {
-					((TransactionalCommandStack)commandStack).execute(command, Collections.singletonMap(Transaction.OPTION_UNPROTECTED, Boolean.TRUE));
+					((TransactionalCommandStack) commandStack).execute(command, Collections.singletonMap(Transaction.OPTION_UNPROTECTED, Boolean.TRUE));
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				} catch (RollbackException e) {
@@ -409,15 +409,15 @@ public class GateHelper {
 
 	public static String getGateLabel(Gate gate) {
 		Message message = gate.getMessage();
-		if(message != null) {
+		if (message != null) {
 			MessageDirection direction = null;
 			EObject parent = gate.eContainer();
-			if(parent instanceof CombinedFragment) {
-				CombinedFragment cf = ((CombinedFragment)parent);
-				if(gate == message.getSendEvent()) {
+			if (parent instanceof CombinedFragment) {
+				CombinedFragment cf = ((CombinedFragment) parent);
+				if (gate == message.getSendEvent()) {
 					MessageEnd receiveEvent = message.getReceiveEvent();
 					Lifeline lifeline = getCoveredBy(receiveEvent);
-					if(!cf.getCovereds().contains(lifeline)) {
+					if (!cf.getCovereds().contains(lifeline)) {
 						direction = MessageDirection.OUT;
 					} else {
 						direction = MessageDirection.IN;
@@ -425,27 +425,27 @@ public class GateHelper {
 				} else {
 					MessageEnd sendEvent = message.getSendEvent();
 					Lifeline coveredBy = getCoveredBy(sendEvent);
-					if(!cf.getCovereds().contains(coveredBy)) {
+					if (!cf.getCovereds().contains(coveredBy)) {
 						direction = MessageDirection.IN;
 					} else {
 						direction = MessageDirection.OUT;
 					}
 				}
-			} else if(parent instanceof Interaction) {
-				if(gate == message.getSendEvent()) {
+			} else if (parent instanceof Interaction) {
+				if (gate == message.getSendEvent()) {
 					direction = MessageDirection.IN;
-				} else if(gate == message.getReceiveEvent()) {
+				} else if (gate == message.getReceiveEvent()) {
 					direction = MessageDirection.OUT;
 				}
 			}
-			if(direction == null) {
-				if(gate == message.getSendEvent()) {
+			if (direction == null) {
+				if (gate == message.getSendEvent()) {
 					direction = MessageDirection.OUT;
-				} else if(gate == message.getReceiveEvent()) {
+				} else if (gate == message.getReceiveEvent()) {
 					direction = MessageDirection.IN;
 				}
 			}
-			if(direction != null) {
+			if (direction != null) {
 				StringBuffer buf = new StringBuffer();
 				buf.append(direction.getName() + "_");
 				buf.append(message.getName());
@@ -456,46 +456,46 @@ public class GateHelper {
 	}
 
 	private static Lifeline getCoveredBy(MessageEnd messageEnd) {
-		if(messageEnd == null) {
+		if (messageEnd == null) {
 			return null;
 		}
-		if(messageEnd instanceof OccurrenceSpecification) {
-			return ((OccurrenceSpecification)messageEnd).getCovered();
+		if (messageEnd instanceof OccurrenceSpecification) {
+			return ((OccurrenceSpecification) messageEnd).getCovered();
 		}
 		return null;
 	}
 
 	public static void setVolatile(Gate gate, boolean value) {
-		if(gate == null) {
+		if (gate == null) {
 			return;
 		}
 		EAnnotation annotation = gate.getEAnnotation(GATE_NAME_VOLATILE);
-		if(true == value) {
-			if(annotation == null) {
+		if (true == value) {
+			if (annotation == null) {
 				annotation = gate.createEAnnotation(GATE_NAME_VOLATILE);
 			}
 			annotation.getDetails().put(GATE_NAME_VOLATILE, Boolean.toString(value));
-		} else if(annotation != null) {
+		} else if (annotation != null) {
 			gate.getEAnnotations().remove(annotation);
 		}
-		if(gate.eContainer() instanceof InteractionUse) {
-			Interaction refersTo = ((InteractionUse)gate.eContainer()).getRefersTo();
-			if(refersTo != null) {
+		if (gate.eContainer() instanceof InteractionUse) {
+			Interaction refersTo = ((InteractionUse) gate.eContainer()).getRefersTo();
+			if (refersTo != null) {
 				Gate formalGate = refersTo.getFormalGate(gate.getName());
-				if(formalGate != null) {
+				if (formalGate != null) {
 					setVolatile(formalGate, value);
 				}
 			}
-		} else if(!GateHelper.isInnerCFGate(gate)) {
+		} else if (!GateHelper.isInnerCFGate(gate)) {
 			Gate innerGate = GateHelper.getInnerCFGate(gate);
-			if(innerGate != null) {
+			if (innerGate != null) {
 				setVolatile(innerGate, value);
 			}
 		}
 	}
 
 	public static boolean isVolatile(Gate gate) {
-		if(gate == null) {
+		if (gate == null) {
 			return false;
 		}
 		EAnnotation ann = gate.getEAnnotation(GATE_NAME_VOLATILE);
@@ -503,55 +503,55 @@ public class GateHelper {
 	}
 
 	public static void updateGateWithMessage(Message message, boolean force) {
-		if(message == null) {
+		if (message == null) {
 			return;
 		}
 		MessageEnd sendEvent = message.getSendEvent();
 		MessageEnd receiveEvent = message.getReceiveEvent();
-		//Suggest a name for gate with message.
-		if(sendEvent instanceof Gate) {
-			Gate gate = (Gate)sendEvent;
+		// Suggest a name for gate with message.
+		if (sendEvent instanceof Gate) {
+			Gate gate = (Gate) sendEvent;
 			updateGateName(gate, force);
 		}
-		if(receiveEvent instanceof Gate) {
-			Gate gate = (Gate)receiveEvent;
+		if (receiveEvent instanceof Gate) {
+			Gate gate = (Gate) receiveEvent;
 			updateGateName(gate, force);
 		}
 	}
 
 	protected static void updateGateName(Gate gate, boolean force) {
-		if(gate == null) {
+		if (gate == null) {
 			return;
 		}
-		if(gate.eContainer() instanceof InteractionUse) {
-			Interaction refersTo = ((InteractionUse)gate.eContainer()).getRefersTo();
-			if(refersTo != null) {
+		if (gate.eContainer() instanceof InteractionUse) {
+			Interaction refersTo = ((InteractionUse) gate.eContainer()).getRefersTo();
+			if (refersTo != null) {
 				Gate formalGate = refersTo.getFormalGate(gate.getName());
-				if(formalGate != null && isVolatile(formalGate)) {
+				if (formalGate != null && isVolatile(formalGate)) {
 					formalGate.setName(GateHelper.getGateLabel(gate));
-					if(force) {
+					if (force) {
 						setVolatile(formalGate, false);
 					}
 				}
-			} else if(isVolatile(gate)) {
+			} else if (isVolatile(gate)) {
 				gate.setName(GateHelper.getGateLabel(gate));
-				if(force) {
+				if (force) {
 					setVolatile(gate, false);
 				}
 			}
-		} else if(!GateHelper.isInnerCFGate(gate)) {
+		} else if (!GateHelper.isInnerCFGate(gate)) {
 			String newName = GateHelper.getGateLabel(gate);
-			if(isVolatile(gate)) {
+			if (isVolatile(gate)) {
 				gate.setName(newName);
 			}
 			Gate innerGate = GateHelper.getInnerCFGate(gate);
-			if(innerGate != null && (isVolatile(innerGate))) {
+			if (innerGate != null && (isVolatile(innerGate))) {
 				innerGate.setName(newName);
-				if(force) {
+				if (force) {
 					setVolatile(innerGate, false);
 				}
 			}
-			if(force) {
+			if (force) {
 				setVolatile(gate, false);
 			}
 		}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ import org.eclipse.uml2.uml.Classifier;
 
 /**
  * specific command to create a subject
- * 
+ *
  */
 public class CustomSubjectClassifierCreateCommandTN extends EditElementCommand {
 
@@ -59,46 +59,49 @@ public class CustomSubjectClassifierCreateCommandTN extends EditElementCommand {
 		super(req.getLabel(), null, req);
 	}
 
+	@Override
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest)getRequest()).getContainer();
-		if(container instanceof View) {
-			container = ((View)container).getElement();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
+		if (container instanceof View) {
+			container = ((View) container).getElement();
 		}
-		if(container != null) {
+		if (container != null) {
 			return container;
 		}
 		return eObject;
 	}
 
+	@Override
 	public boolean canExecute() {
 		return true;
 	}
 
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		SubjectSelectionDialog dialog = new SubjectSelectionDialog(new Shell(), possibleSubject, SWT.NATIVE);
 		dialog.open();
 		Classifier newElement = null;
 		IHintedType htype = dialog.getSelectedMetaclass();
-		EObject element = ((CreateElementRequest)getRequest()).getContainer();
+		EObject element = ((CreateElementRequest) getRequest()).getContainer();
 		CreateElementRequest createElementRequest = new CreateElementRequest(element, htype);
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(element);
-		if(provider != null) {
+		if (provider != null) {
 			// Retrieve delete command from the Element Edit service
 			ICommand createCommand = provider.getEditCommand(createElementRequest);
 			createCommand.execute(new NullProgressMonitor(), null);
 			createCommand.getCommandResult().getReturnValue();
-			newElement = (Classifier)createCommand.getCommandResult().getReturnValue();
+			newElement = (Classifier) createCommand.getCommandResult().getReturnValue();
 		}
 		return CommandResult.newOKCommandResult(newElement);
 	}
 
 	protected void doConfigure(Classifier newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest)getRequest()).getElementType();
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest)getRequest()).getClientContext());
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
 		ICommand configureCommand = elementType.getEditCommand(configureRequest);
-		if(configureCommand != null && configureCommand.canExecute()) {
+		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
 	}

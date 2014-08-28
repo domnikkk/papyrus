@@ -16,9 +16,9 @@ package org.eclipse.papyrus.emf.facet.custom.ui.internal;
 
 import java.net.URL;
 
-import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
@@ -67,7 +67,7 @@ public final class ImageProvider {
 
 	/**
 	 * Create an image descriptor from a resource
-	 * 
+	 *
 	 * @param resourcePath
 	 *            the path of the resource (in the bundle)
 	 * @return the image descriptor

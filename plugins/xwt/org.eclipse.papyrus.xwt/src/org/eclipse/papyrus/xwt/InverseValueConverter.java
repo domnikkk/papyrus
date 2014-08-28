@@ -12,9 +12,9 @@ package org.eclipse.papyrus.xwt;
 
 /**
  * The operation to inverse the converter direction.
- * 
+ *
  * @author yyang
- * 
+ *
  */
 public class InverseValueConverter implements IValueConverter {
 

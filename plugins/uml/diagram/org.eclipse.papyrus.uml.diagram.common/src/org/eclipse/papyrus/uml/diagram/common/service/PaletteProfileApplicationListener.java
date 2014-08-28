@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,23 +37,24 @@ public class PaletteProfileApplicationListener implements IPapyrusListener {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 		// check notification is relevant for us
 		// notifier shoud be instance of profileApplication. In this case,
 		// reload the palette
-		if(notification.getNotifier() instanceof ProfileApplication) {
-			if(Notification.SET == notification.getEventType()) {
+		if (notification.getNotifier() instanceof ProfileApplication) {
+			if (Notification.SET == notification.getEventType()) {
 				try {
-					ProfileApplication profileApplication = (ProfileApplication)notification.getNotifier();
+					ProfileApplication profileApplication = (ProfileApplication) notification.getNotifier();
 					IEditorPart editor = ServiceUtilsForEObject.getInstance().getNestedActiveIEditorPart(profileApplication);
-					if(editor == null) {
+					if (editor == null) {
 						return;
 					}
 					PapyrusPaletteService.getInstance().providerChanged(new ProviderChangeEvent(PapyrusPaletteService.getInstance()));
 				} catch (ServiceException ex) {
-					//Nothing to do. The ServiceRegistry is not available or there is no active editor. Don't update the palette
+					// Nothing to do. The ServiceRegistry is not available or there is no active editor. Don't update the palette
 				} catch (Exception ex) {
-					//Bug 407849: If a listener throws an exception, the operation is rolled back. In this case, we simply want to update the palettes and exceptions should only be logged
+					// Bug 407849: If a listener throws an exception, the operation is rolled back. In this case, we simply want to update the palettes and exceptions should only be logged
 					Activator.log.error(ex);
 				}
 			}

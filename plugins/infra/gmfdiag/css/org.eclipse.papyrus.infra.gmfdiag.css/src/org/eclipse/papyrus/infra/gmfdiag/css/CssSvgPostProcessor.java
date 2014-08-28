@@ -53,8 +53,8 @@ import org.w3c.dom.svg.SVGDocument;
  *
  * @author Laurent Wouters
  */
-//TODO: This post processor doesn't depend on the GMF/CSS integration. It could be possible to apply styles to SVG images
-//without having the GMF/CSS integration. This class might be moved to gmfdiag.common
+// TODO: This post processor doesn't depend on the GMF/CSS integration. It could be possible to apply styles to SVG images
+// without having the GMF/CSS integration. This class might be moved to gmfdiag.common
 @SuppressWarnings("restriction")
 public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPart {
 
@@ -108,6 +108,7 @@ public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPar
 	/**
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.handler.IRefreshHandlerPart#refresh(org.eclipse.ui.IEditorPart)
 	 */
+	@Override
 	public void refresh(IEditorPart editorPart) {
 		relativePaths.clear();
 		loadedSheets.clear();
@@ -117,21 +118,21 @@ public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPar
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.service.shape.SVGPostProcessor#postProcess(org.eclipse.emf.ecore.EObject,
-	 *      org.w3c.dom.svg.SVGDocument)
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.service.shape.SVGPostProcessor#postProcess(org.eclipse.emf.ecore.EObject, org.w3c.dom.svg.SVGDocument)
 	 */
+	@Override
 	public void postProcess(EObject view, SVGDocument document) {
-		if(view instanceof org.eclipse.gmf.runtime.notation.Node) {
-			View shape = (View)view;
+		if (view instanceof org.eclipse.gmf.runtime.notation.Node) {
+			View shape = (View) view;
 			// Retrieve the applied CSS stylesheet if necessary
-			StringValueStyle nsURI = (StringValueStyle)shape.getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), CSS_PROPERTY_SVG_STYLESHEET);
-			if(nsURI != null) {
+			StringValueStyle nsURI = (StringValueStyle) shape.getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), CSS_PROPERTY_SVG_STYLESHEET);
+			if (nsURI != null) {
 				loadStylesheet(getCanonicalURI(shape.getElement(), nsURI.getStringValue()));
 			}
 			// Retrieve the applied CSS class
-			StringValueStyle nsClassName = (StringValueStyle)shape.getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), CSS_PROPERTY_SVG_CLASS);
+			StringValueStyle nsClassName = (StringValueStyle) shape.getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), CSS_PROPERTY_SVG_CLASS);
 			String className = "";
-			if(nsClassName != null) {
+			if (nsClassName != null) {
 				className = nsClassName.getStringValue();
 			}
 			// Apply the style
@@ -144,16 +145,16 @@ public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPar
 	 * Loads the stylesheet at the given URI into the CSS engine
 	 *
 	 * @param uri
-	 *        The URI to load the stylesheet from
+	 *            The URI to load the stylesheet from
 	 */
 	private void loadStylesheet(URI uri) {
-		if(uri == null || uri.isEmpty()) {
+		if (uri == null || uri.isEmpty()) {
 			return;
 		}
-		if(loadedSheets.contains(uri)) {
+		if (loadedSheets.contains(uri)) {
 			return;
 		}
-		if(failedSheets.contains(uri)) {
+		if (failedSheets.contains(uri)) {
 			return;
 		}
 		InputStream stream;
@@ -176,7 +177,7 @@ public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPar
 			} catch (IOException e) {
 			}
 		}
-		if(sheet != null) {
+		if (sheet != null) {
 			loadedSheets.add(uri);
 		}
 	}
@@ -186,33 +187,33 @@ public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPar
 	 * The URI may be relative to the currently edited EMF resource
 	 *
 	 * @param model
-	 *        The model element used to retrieve the EMF resource that is currently edited
+	 *            The model element used to retrieve the EMF resource that is currently edited
 	 * @param uri
-	 *        The potentially relative URI of a stylesheet
+	 *            The potentially relative URI of a stylesheet
 	 * @return The canonical URI of the resource
 	 */
 	private URI getCanonicalURI(EObject model, String uri) {
-		if(uri.startsWith("platform:/")) {
+		if (uri.startsWith("platform:/")) {
 			return URI.createURI(uri);
 		}
 
 		Map<String, URI> resMap = relativePaths.get(model.eResource());
-		if(resMap == null) {
+		if (resMap == null) {
 			resMap = new HashMap<String, URI>();
 			relativePaths.put(model.eResource(), resMap);
 		}
 		URI canonical = resMap.get(uri);
-		if(canonical != null) {
+		if (canonical != null) {
 			return canonical;
 		}
 
 		URI resURI = model.eResource().getURI();
-		if(!resURI.isPlatform()) {
+		if (!resURI.isPlatform()) {
 			return null;
 		}
 		StringBuilder builder = new StringBuilder("platform:/");
 		String[] segments = resURI.segments();
-		for(int i = 0; i < segments.length - 1; i++) {
+		for (int i = 0; i < segments.length - 1; i++) {
 			builder.append(segments[i]);
 			builder.append("/");
 		}
@@ -227,12 +228,12 @@ public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPar
 	 * Applies the CSS styles to the given SVG document
 	 *
 	 * @param document
-	 *        The SVG document
+	 *            The SVG document
 	 */
 	private void applyStyles(SVGDocument document) {
 		List<CSSStyleRule> rules = getAllRulesIn(engine.getDocumentCSS());
 		Map<Element, Map<String, String>> originals = styledDocuments.get(document);
-		if(originals == null) {
+		if (originals == null) {
 			originals = new HashMap<Element, Map<String, String>>();
 			styledDocuments.put(document, originals);
 		}
@@ -243,24 +244,24 @@ public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPar
 	 * Recursively applies the CSS rule on this SVG element
 	 *
 	 * @param element
-	 *        The SVG element
+	 *            The SVG element
 	 * @param rules
-	 *        The CSS rules in effect
+	 *            The CSS rules in effect
 	 * @param originals
-	 *        The original styling properties of the elements
+	 *            The original styling properties of the elements
 	 */
 	private void applyStyles(Element element, List<CSSStyleRule> rules, Map<Element, Map<String, String>> originals) {
 		// recursively apply to DOM elements
-		for(int i = 0; i != element.getChildNodes().getLength(); i++) {
+		for (int i = 0; i != element.getChildNodes().getLength(); i++) {
 			Node child = element.getChildNodes().item(i);
-			if(child instanceof Element) {
-				applyStyles((Element)child, rules, originals);
+			if (child instanceof Element) {
+				applyStyles((Element) child, rules, originals);
 			}
 		}
 
 		// make a copy of the original styling properties
 		Map<String, String> style = originals.get(element);
-		if(style == null) {
+		if (style == null) {
 			style = getBaseStyle(element);
 			originals.put(element, style);
 		}
@@ -269,15 +270,15 @@ public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPar
 		// get the applicable CSS rules
 		List<CSSStyleRule> applicable = getApplicableRules(element, rules);
 		// apply the CSS rules to the styling properties
-		for(CSSStyleRule rule : applicable) {
+		for (CSSStyleRule rule : applicable) {
 			applyRuleTo(rule, style);
 		}
 
 		// serialize the result and put it back into the DOM
 		StringBuilder builder = new StringBuilder();
 		int count = 0;
-		for(Entry<String, String> entry : style.entrySet()) {
-			if(count != 0) {
+		for (Entry<String, String> entry : style.entrySet()) {
+			if (count != 0) {
 				builder.append(";");
 			}
 			builder.append(entry.getKey());
@@ -292,19 +293,19 @@ public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPar
 	 * Builds a list of the CSS style rules for the given CSS document
 	 *
 	 * @param css
-	 *        The CSS document
+	 *            The CSS document
 	 * @return The CSS style rules
 	 */
 	private List<CSSStyleRule> getAllRulesIn(DocumentCSS css) {
 		List<CSSStyleRule> result = new ArrayList<CSSStyleRule>();
-		for(int i = 0; i != css.getStyleSheets().getLength(); i++) {
+		for (int i = 0; i != css.getStyleSheets().getLength(); i++) {
 			StyleSheet ss = css.getStyleSheets().item(i);
-			if(ss instanceof CSSStyleSheet) {
-				CSSStyleSheet cs = (CSSStyleSheet)ss;
-				for(int j = 0; j != cs.getCssRules().getLength(); j++) {
+			if (ss instanceof CSSStyleSheet) {
+				CSSStyleSheet cs = (CSSStyleSheet) ss;
+				for (int j = 0; j != cs.getCssRules().getLength(); j++) {
 					CSSRule rule = cs.getCssRules().item(j);
-					if(rule.getType() == CSSRule.STYLE_RULE) {
-						result.add((CSSStyleRule)rule);
+					if (rule.getType() == CSSRule.STYLE_RULE) {
+						result.add((CSSStyleRule) rule);
 					}
 				}
 			}
@@ -316,43 +317,43 @@ public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPar
 	 * Filters the CSS rules that applies for the given SVG element
 	 *
 	 * @param svgElement
-	 *        A SVG element
+	 *            A SVG element
 	 * @param rules
-	 *        The set of active rules
+	 *            The set of active rules
 	 * @return The matching rules
 	 */
 	private List<CSSStyleRule> getApplicableRules(Element svgElement, List<CSSStyleRule> rules) {
 		List<CSSStyleRule> matching = new ArrayList<CSSStyleRule>();
 
 		// Matches the rules using the selectors
-		for(CSSStyleRule rule : rules) {
-			SelectorList selectors = ((CSSStyleRuleImpl)rule).getSelectorList();
+		for (CSSStyleRule rule : rules) {
+			SelectorList selectors = ((CSSStyleRuleImpl) rule).getSelectorList();
 			boolean match = true;
-			for(int i = 0; i != selectors.getLength(); i++) {
-				ExtendedSelector xs = (ExtendedSelector)selectors.item(i);
-				if(!xs.match(svgElement, null)) {
+			for (int i = 0; i != selectors.getLength(); i++) {
+				ExtendedSelector xs = (ExtendedSelector) selectors.item(i);
+				if (!xs.match(svgElement, null)) {
 					match = false;
 					break;
 				}
 			}
-			if(match) {
+			if (match) {
 				matching.add(rule);
 			}
 		}
 
 		// No match => stop
-		if(matching.isEmpty()) {
+		if (matching.isEmpty()) {
 			return matching;
 		}
 
 		// Remove the parent rules
 		boolean[] available = new boolean[matching.size()];
 		Arrays.fill(available, 0, available.length, true);
-		for(int i = 0; i != matching.size(); i++) {
+		for (int i = 0; i != matching.size(); i++) {
 			CSSStyleRule rule = matching.get(i);
-			if(rule != null && rule.getParentRule() != null) {
-				for(int j = 0; j != matching.size(); j++) {
-					if(matching.get(i) == rule.getParentRule()) {
+			if (rule != null && rule.getParentRule() != null) {
+				for (int j = 0; j != matching.size(); j++) {
+					if (matching.get(i) == rule.getParentRule()) {
 						available[i] = false;
 						break;
 					}
@@ -360,8 +361,8 @@ public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPar
 			}
 		}
 		List<CSSStyleRule> result = new ArrayList<CSSStyleRule>();
-		for(int i = 0; i != matching.size(); i++) {
-			if(available[i]) {
+		for (int i = 0; i != matching.size(); i++) {
+			if (available[i]) {
 				result.add(matching.get(i));
 			}
 		}
@@ -372,21 +373,21 @@ public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPar
 	 * Loads the styling properties of a SVG element from the DOM
 	 *
 	 * @param element
-	 *        The SVG element
+	 *            The SVG element
 	 * @return The styling properties in the DOM
 	 */
 	private Map<String, String> getBaseStyle(Element element) {
 		HashMap<String, String> result = new HashMap<String, String>();
 		String styleValue = element.getAttribute("style");
-		if(styleValue != null && !styleValue.isEmpty()) {
+		if (styleValue != null && !styleValue.isEmpty()) {
 			String[] props = styleValue.split(";");
-			for(int i = 0; i != props.length; i++) {
+			for (int i = 0; i != props.length; i++) {
 				String[] temp = props[i].split(":");
-				if(temp.length == 2) {
+				if (temp.length == 2) {
 					result.put(temp[0], temp[1]);
-				} else if(temp.length > 2) {
+				} else if (temp.length > 2) {
 					StringBuilder builder = new StringBuilder(temp[1]);
-					for(int j = 2; j != temp.length; j++) {
+					for (int j = 2; j != temp.length; j++) {
 						builder.append(":");
 						builder.append(temp[j]);
 					}
@@ -401,15 +402,15 @@ public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPar
 	 * Recursively applies the given CSS rule and its parent on the map of properties
 	 *
 	 * @param rule
-	 *        The CSS rule to apply
+	 *            The CSS rule to apply
 	 * @param properties
-	 *        The map of CSS properties to build
+	 *            The map of CSS properties to build
 	 */
 	private void applyRuleTo(CSSStyleRule rule, Map<String, String> properties) {
-		if(rule.getParentRule() != null) {
-			applyRuleTo((CSSStyleRule)rule.getParentRule(), properties);
+		if (rule.getParentRule() != null) {
+			applyRuleTo((CSSStyleRule) rule.getParentRule(), properties);
 		}
-		for(int i = 0; i != rule.getStyle().getLength(); i++) {
+		for (int i = 0; i != rule.getStyle().getLength(); i++) {
 			String name = rule.getStyle().item(i);
 			String value = rule.getStyle().getPropertyCSSValue(name).getCssText();
 			properties.put(name, value);

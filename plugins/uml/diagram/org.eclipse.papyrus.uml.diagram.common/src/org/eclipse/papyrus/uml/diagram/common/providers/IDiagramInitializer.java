@@ -16,16 +16,16 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 // TODO: Auto-generated Javadoc
 /**
  * The Interface IDiagramInitializer.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  */
 public interface IDiagramInitializer {
 
 	/**
 	 * Inits the <Diagram>.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 */
 	void init(Diagram diagram);
 }

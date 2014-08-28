@@ -16,10 +16,10 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
 
 /**
  * A dialog to let the user select facet sets to load.
- * 
+ *
  * @param <T>
  *            the type of a pre-commit dialog
- * 
+ *
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
  * @since 0.2.0
@@ -31,7 +31,7 @@ public interface IFacetSetSelectionDialog<T> {
 
 	/**
 	 * Emulate a press on the OK button
-	 * 
+	 *
 	 * @return a pre-commit dialog, or <code>null</code> if no pre-commit dialog was opened
 	 */
 	T pressOk();

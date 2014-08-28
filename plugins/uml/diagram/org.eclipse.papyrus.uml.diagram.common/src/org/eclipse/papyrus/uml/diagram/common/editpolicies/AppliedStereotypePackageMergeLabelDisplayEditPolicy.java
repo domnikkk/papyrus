@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,12 +14,12 @@
 package org.eclipse.papyrus.uml.diagram.common.editpolicies;
 
 import org.eclipse.papyrus.uml.diagram.common.Messages;
+import org.eclipse.uml2.uml.PackageMerge;
 
 /**
  * Edit Policy for Applied Stereotype Label for {@link PackageMerge}.
  * <p>
- * It simply adds a tag "use" to the label. Thanks to GMF, it is not possible to call a cTor with a parameter. So it calls super cTor with the "merge"
- * parameter
+ * It simply adds a tag "use" to the label. Thanks to GMF, it is not possible to call a cTor with a parameter. So it calls super cTor with the "merge" parameter
  * </p>
  */
 public class AppliedStereotypePackageMergeLabelDisplayEditPolicy extends AppliedStereotypeLinkLabelDisplayEditPolicy {

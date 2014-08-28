@@ -33,11 +33,12 @@ import org.eclipse.papyrus.views.properties.environment.provider.PropertiesEditP
  * This is the item provider adapter for a {@link org.eclipse.papyrus.views.properties.contexts.DataContextElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class DataContextElementItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -47,6 +48,7 @@ public class DataContextElementItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DataContextElementItemProvider(AdapterFactory adapterFactory) {
@@ -57,6 +59,7 @@ public class DataContextElementItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,52 +77,54 @@ public class DataContextElementItemProvider
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DataContextElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataContextElement_name_feature", "_UI_DataContextElement_type"),
-				 ContextsPackage.Literals.DATA_CONTEXT_ELEMENT__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_DataContextElement_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DataContextElement_name_feature", "_UI_DataContextElement_type"),
+						ContextsPackage.Literals.DATA_CONTEXT_ELEMENT__NAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Supertypes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addSupertypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DataContextElement_supertypes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataContextElement_supertypes_feature", "_UI_DataContextElement_type"),
-				 ContextsPackage.Literals.DATA_CONTEXT_ELEMENT__SUPERTYPES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_DataContextElement_supertypes_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DataContextElement_supertypes_feature", "_UI_DataContextElement_type"),
+						ContextsPackage.Literals.DATA_CONTEXT_ELEMENT__SUPERTYPES,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,6 +139,7 @@ public class DataContextElementItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,6 +154,7 @@ public class DataContextElementItemProvider
 	 * This returns DataContextElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,14 +166,15 @@ public class DataContextElementItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DataContextElement)object).getName();
+		String label = ((DataContextElement) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_DataContextElement_type") :
-			getString("_UI_DataContextElement_type") + " " + label;
+				getString("_UI_DataContextElement_type") :
+				getString("_UI_DataContextElement_type") + " " + label;
 	}
 
 	/**
@@ -174,6 +182,7 @@ public class DataContextElementItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,12 +190,12 @@ public class DataContextElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DataContextElement.class)) {
-			case ContextsPackage.DATA_CONTEXT_ELEMENT__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ContextsPackage.DATA_CONTEXT_ELEMENT__PROPERTIES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ContextsPackage.DATA_CONTEXT_ELEMENT__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ContextsPackage.DATA_CONTEXT_ELEMENT__PROPERTIES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -196,6 +205,7 @@ public class DataContextElementItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,20 +213,21 @@ public class DataContextElementItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ContextsPackage.Literals.DATA_CONTEXT_ELEMENT__PROPERTIES,
-				 ContextsFactory.eINSTANCE.createProperty()));
+						ContextsFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ContextsPackage.Literals.DATA_CONTEXT_ELEMENT__PROPERTIES,
-				 ContextsFactory.eINSTANCE.createUnknownProperty()));
+						ContextsFactory.eINSTANCE.createUnknownProperty()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

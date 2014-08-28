@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,15 +27,14 @@ import org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer;
 import org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>EProblems Container</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>EProblems Container</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.cdo.validation.problems.impl.EProblemsContainerImpl#getProblems <em>Problems</em>}</li>
- *   <li>{@link org.eclipse.papyrus.cdo.validation.problems.impl.EProblemsContainerImpl#getSubjects <em>Subjects</em>}</li>
- *   <li>{@link org.eclipse.papyrus.cdo.validation.problems.impl.EProblemsContainerImpl#getSubcontainers <em>Subcontainers</em>}</li>
- *   <li>{@link org.eclipse.papyrus.cdo.validation.problems.impl.EProblemsContainerImpl#getContainer <em>Container</em>}</li>
+ * <li>{@link org.eclipse.papyrus.cdo.validation.problems.impl.EProblemsContainerImpl#getProblems <em>Problems</em>}</li>
+ * <li>{@link org.eclipse.papyrus.cdo.validation.problems.impl.EProblemsContainerImpl#getSubjects <em>Subjects</em>}</li>
+ * <li>{@link org.eclipse.papyrus.cdo.validation.problems.impl.EProblemsContainerImpl#getSubcontainers <em>Subcontainers</em>}</li>
+ * <li>{@link org.eclipse.papyrus.cdo.validation.problems.impl.EProblemsContainerImpl#getContainer <em>Container</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +44,7 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected EProblemsContainerImpl() {
@@ -53,6 +53,7 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -62,6 +63,7 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,61 +73,73 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public EList<EProblem> getProblems() {
-		return (EList<EProblem>)eGet(ProblemsPackage.Literals.EPROBLEMS_CONTAINER__PROBLEMS, true);
+		return (EList<EProblem>) eGet(ProblemsPackage.Literals.EPROBLEMS_CONTAINER__PROBLEMS, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public EList<EObject> getSubjects() {
-		return (EList<EObject>)eGet(ProblemsPackage.Literals.EPROBLEMS_CONTAINER__SUBJECTS, true);
+		return (EList<EObject>) eGet(ProblemsPackage.Literals.EPROBLEMS_CONTAINER__SUBJECTS, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public EList<EProblemsContainer> getSubcontainers() {
-		return (EList<EProblemsContainer>)eGet(ProblemsPackage.Literals.EPROBLEMS_CONTAINER__SUBCONTAINERS, true);
+		return (EList<EProblemsContainer>) eGet(ProblemsPackage.Literals.EPROBLEMS_CONTAINER__SUBCONTAINERS, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EProblemsContainer getContainer() {
-		return (EProblemsContainer)eGet(ProblemsPackage.Literals.EPROBLEMS_CONTAINER__CONTAINER, true);
+		return (EProblemsContainer) eGet(ProblemsPackage.Literals.EPROBLEMS_CONTAINER__CONTAINER, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setContainer(EProblemsContainer newContainer) {
 		eSet(ProblemsPackage.Literals.EPROBLEMS_CONTAINER__CONTAINER, newContainer);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public Iterator<EProblem> allProblems() {
 		return new EProblemsIterator(eAllContents());
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public Iterator<EProblem> allProblems(final EObject element) {
 		return new EProblemsIterator(eAllContents()) {
 
@@ -138,13 +152,14 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<Diagnostic> allDiagnostics() {
 		List<Diagnostic> result = new java.util.ArrayList<Diagnostic>();
 
-		for(Iterator<EProblem> allProblems = allProblems(); allProblems.hasNext();) {
+		for (Iterator<EProblem> allProblems = allProblems(); allProblems.hasNext();) {
 			result.add(allProblems.next().toDiagnostic());
 		}
 
@@ -153,13 +168,14 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<Diagnostic> allDiagnostics(EObject element) {
 		List<Diagnostic> result = new java.util.ArrayList<Diagnostic>();
 
-		for(Iterator<EProblem> allProblems = allProblems(element); allProblems.hasNext();) {
+		for (Iterator<EProblem> allProblems = allProblems(element); allProblems.hasNext();) {
 			result.add(allProblems.next().toDiagnostic());
 		}
 
@@ -168,17 +184,18 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EProblem getWorstProblem(EObject element) {
 		EProblem result = null;
 
-		for(Iterator<EProblem> problems = allProblems(element); problems.hasNext();) {
+		for (Iterator<EProblem> problems = allProblems(element); problems.hasNext();) {
 			EProblem next = problems.next();
-			if(result == null) {
+			if (result == null) {
 				result = next;
-			} else if(next.getSeverity().compareTo(result.getSeverity()) > 0) {
+			} else if (next.getSeverity().compareTo(result.getSeverity()) > 0) {
 				result = next;
 			}
 		}
@@ -188,21 +205,22 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch(operationID) {
+		switch (operationID) {
 		case ProblemsPackage.EPROBLEMS_CONTAINER___ALL_PROBLEMS:
 			return allProblems();
 		case ProblemsPackage.EPROBLEMS_CONTAINER___ALL_PROBLEMS__EOBJECT:
-			return allProblems((EObject)arguments.get(0));
+			return allProblems((EObject) arguments.get(0));
 		case ProblemsPackage.EPROBLEMS_CONTAINER___ALL_DIAGNOSTICS:
 			return allDiagnostics();
 		case ProblemsPackage.EPROBLEMS_CONTAINER___ALL_DIAGNOSTICS__EOBJECT:
-			return allDiagnostics((EObject)arguments.get(0));
+			return allDiagnostics((EObject) arguments.get(0));
 		case ProblemsPackage.EPROBLEMS_CONTAINER___GET_WORST_PROBLEM__EOBJECT:
-			return getWorstProblem((EObject)arguments.get(0));
+			return getWorstProblem((EObject) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -217,13 +235,14 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 			this.delegate = delegate;
 		}
 
+		@Override
 		public boolean hasNext() {
-			if(preparedNext == null) {
-				while(delegate.hasNext()) {
+			if (preparedNext == null) {
+				while (delegate.hasNext()) {
 					Object next = delegate.next();
-					if(next instanceof EProblem) {
-						EProblem problem = (EProblem)next;
-						if(accept(problem)) {
+					if (next instanceof EProblem) {
+						EProblem problem = (EProblem) next;
+						if (accept(problem)) {
 							preparedNext = problem;
 							break;
 						}
@@ -238,8 +257,9 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 			return true;
 		}
 
+		@Override
 		public EProblem next() {
-			if(!hasNext()) {
+			if (!hasNext()) {
 				throw new NoSuchElementException();
 			}
 
@@ -248,6 +268,7 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 			return result;
 		}
 
+		@Override
 		public void remove() {
 			throw new UnsupportedOperationException("remove"); //$NON-NLS-1$
 		}

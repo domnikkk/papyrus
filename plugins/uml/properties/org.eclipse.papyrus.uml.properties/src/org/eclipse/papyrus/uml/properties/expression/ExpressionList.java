@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,16 +29,16 @@ import org.eclipse.papyrus.infra.widgets.editors.ICommitListener;
 
 /**
  * An IObservableList for handling Expressions
- * 
+ *
  * An Expression has a Language and a Body
- * 
+ *
  * The UML low-level implementation maintains two lists of Strings (One for the
  * languages, and another one for the bodies), which should be synchronized
  * (1-1 mapping, with a few specific cases when the mapping is not strict)
- * 
+ *
  * This class simplifies this mapping by maintaining a single list of
  * Expressions, each of which containing a Body and a Language.
- * 
+ *
  * @author Camille Letavernier
  */
 public class ExpressionList extends WritableList implements IChangeListener, ICommitListener, IObserving {
@@ -52,17 +52,17 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 	private boolean ignoreChanges = false;
 
 	private IChangeListener nestedChangeListener;
-	
+
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param languages
-	 *        The IObservableList containing Languages
+	 *            The IObservableList containing Languages
 	 * @param bodies
-	 *        The IObservableList containing Bodies
+	 *            The IObservableList containing Bodies
 	 * @param nestedChangeListener
-	 *        Execute listener.
+	 *            Execute listener.
 	 */
 	public ExpressionList(IObservableList languages, IObservableList bodies, IChangeListener nestedChangeListener) {
 		super(new LinkedList<Expression>(), Expression.class);
@@ -79,25 +79,25 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param languages
-	 *        The IObservableList containing Languages
+	 *            The IObservableList containing Languages
 	 * @param bodies
-	 *        The IObservableList containing Bodies
+	 *            The IObservableList containing Bodies
 	 */
 	public ExpressionList(IObservableList languages, IObservableList bodies) {
 		this(languages, bodies, null);
 	}
-	
+
 	private void UMLToExpression() {
 		int maxSize = Math.max(languages.size(), bodies.size());
 
 		Iterator<?> languageIterator = languages.iterator();
 		Iterator<?> bodyIterator = bodies.iterator();
 
-		for(int i = 0; i < maxSize; i++) {			
+		for (int i = 0; i < maxSize; i++) {
 			Expression expression;
 			if (i < expressions.size()) {
 				expression = expressions.get(i);
@@ -110,12 +110,12 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 				expressions.add(expression);
 			}
 
-			if(languageIterator.hasNext()) {
-				expression.setLanguage((String)languageIterator.next());
+			if (languageIterator.hasNext()) {
+				expression.setLanguage((String) languageIterator.next());
 			}
 
-			if(bodyIterator.hasNext()) {
-				expression.setBody((String)bodyIterator.next());
+			if (bodyIterator.hasNext()) {
+				expression.setBody((String) bodyIterator.next());
 			}
 		}
 		// remove additional entries in expressions list that are not in the UML list
@@ -125,8 +125,8 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 	}
 
 	public void handleChange(ChangeEvent event) {
-		//A change occurs on languages or bodies
-		if(!ignoreChanges) {
+		// A change occurs on languages or bodies
+		if (!ignoreChanges) {
 			UMLToExpression();
 		}
 	}
@@ -134,49 +134,49 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 	public void commit(AbstractEditor editor) {
 		ignoreChanges = true;
 		expressionToUML();
-		if(languages instanceof ICommitListener) {
-			((ICommitListener)languages).commit(editor);
+		if (languages instanceof ICommitListener) {
+			((ICommitListener) languages).commit(editor);
 		}
 
-		if(bodies instanceof ICommitListener) {
-			((ICommitListener)bodies).commit(editor);
+		if (bodies instanceof ICommitListener) {
+			((ICommitListener) bodies).commit(editor);
 		}
 		ignoreChanges = false;
 	}
 
-	void expressionToUML() { //Executes two commands, one on languages, and another one on bodies
+	void expressionToUML() { // Executes two commands, one on languages, and another one on bodies
 		int fillLanguage = 0, fillBody = 0;
 
 		languages.clear();
 		bodies.clear();
 
 		Iterator<Expression> iterator = expressions.iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Expression expression = iterator.next();
-			if(expression == null) {
+			if (expression == null) {
 				iterator.remove();
 				continue;
 			}
 
 			String language = expression.getLanguage();
 			String body = expression.getBody();
-			if(language == null && body == null) {
+			if (language == null && body == null) {
 				iterator.remove();
 				continue;
 			}
 
-			if(language != null && body != null) {
+			if (language != null && body != null) {
 				addLanguage(language, fillLanguage);
 				addBody(body, fillBody);
 
 				fillBody = fillLanguage = 0;
 			}
 
-			if(language == null) {
+			if (language == null) {
 				fillLanguage++;
 				addBody(body, fillBody);
 				fillBody = 0;
-			} else if(body == null) {
+			} else if (body == null) {
 				fillBody++;
 				addLanguage(language, fillLanguage);
 				fillLanguage = 0;
@@ -185,7 +185,7 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 	}
 
 	private void addBody(String body, int fillBody) {
-		for(int i = 0; i < fillBody; i++) {
+		for (int i = 0; i < fillBody; i++) {
 			bodies.add(""); //$NON-NLS-1$
 		}
 
@@ -193,24 +193,24 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 	}
 
 	private void addLanguage(String language, int fillLanguage) {
-		for(int i = 0; i < fillLanguage; i++) {
+		for (int i = 0; i < fillLanguage; i++) {
 			languages.add(""); //$NON-NLS-1$
 		}
 
 		languages.add(language);
 	}
-	
+
 	public Object getObserved() {
 		return //
-		(languages instanceof IObserving) ? ((IObserving)languages).getObserved() : //
-		(bodies instanceof IObserving) ? ((IObserving)bodies).getObserved() : //
-		null;
+		(languages instanceof IObserving) ? ((IObserving) languages).getObserved() : //
+				(bodies instanceof IObserving) ? ((IObserving) bodies).getObserved() : //
+						null;
 	}
 
 	/**
 	 * A helper class to aggregate the expression body and language in a single
 	 * object
-	 * 
+	 *
 	 * @author Camille Letavernier, Ansgar Radermacher (made observable for handling bug 433647,
 	 *         update expression editor, if UML expression changes)
 	 */
@@ -240,11 +240,11 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 
 		/**
 		 * Sets this Expression's language
-		 * 
+		 *
 		 * @param language
 		 */
 		public void setLanguage(String language) {
-			if(language != this.language) {
+			if (language != this.language) {
 				this.language = language;
 				fireChange();
 			}
@@ -252,7 +252,7 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 
 		/**
 		 * Sets this Expression's body
-		 * 
+		 *
 		 * @param body
 		 */
 		public void setBody(String body) {
@@ -274,12 +274,12 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 
 		@Override
 		public boolean equals(Object other) {
-			if(!(other instanceof Expression)) {
+			if (!(other instanceof Expression)) {
 				return false;
 			}
 
-			Expression otherExpression = (Expression)other;
-			if(otherExpression.getLanguage() == null) {
+			Expression otherExpression = (Expression) other;
+			if (otherExpression.getLanguage() == null) {
 				return getLanguage() == null;
 			}
 

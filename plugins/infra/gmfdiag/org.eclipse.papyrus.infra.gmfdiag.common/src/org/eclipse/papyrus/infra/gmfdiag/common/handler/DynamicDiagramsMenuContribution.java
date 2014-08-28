@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,42 +28,47 @@ import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 
 /**
  * Represents the dynamic contribution of a policy to menus
+ *
  * @author Laurent Wouters
  */
 public class DynamicDiagramsMenuContribution extends DynamicContribution {
 	/**
 	 * Constructor.
 	 */
-	public DynamicDiagramsMenuContribution() { }
+	public DynamicDiagramsMenuContribution() {
+	}
 
 	/**
 	 * Constructor.
+	 *
 	 * @param id
 	 */
 	public DynamicDiagramsMenuContribution(String id) {
 		super(id);
 	}
-	
+
 	/**
 	 * @see org.eclipse.ui.actions.CompoundContributionItem#getContributionItems()
 	 */
 	@Override
 	protected IContributionItem[] getContributionItems() {
 		final EObject selection = getSelection();
-		if (selection == null)
+		if (selection == null) {
 			return new IContributionItem[0];
-		
+		}
+
 		// build a list of all the available prototypes
 		List<ViewPrototype> data = new ArrayList<ViewPrototype>();
 		for (final ViewPrototype proto : PolicyChecker.getCurrent().getPrototypesFor(selection)) {
-			if (!(proto.getConfiguration() instanceof PapyrusDiagram))
+			if (!(proto.getConfiguration() instanceof PapyrusDiagram)) {
 				continue;
+			}
 			data.add(proto);
 		}
-		
+
 		// sort them
 		Collections.sort(data, new ViewPrototype.Comp());
-		
+
 		// build the full labels
 		List<String> labels = new ArrayList<String>(data.size());
 		String last = null;

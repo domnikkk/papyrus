@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,7 +50,7 @@ public class InputDialogMessage extends InputDialog {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 */
 	protected InputDialogMessage(Shell parentShell, String dialogTitle, String errorMessage, String initialValue, IInputValidator validator) {
@@ -59,9 +59,9 @@ public class InputDialogMessage extends InputDialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#okPressed()
-	 * 
+	 *
 	 */
 	@Override
 	protected void okPressed() {
@@ -70,37 +70,38 @@ public class InputDialogMessage extends InputDialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#createButtonsForButtonBar(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 */
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
 		super.createButtonsForButtonBar(parent);
 		text.setFocus();
-		if(getValue() != null) {
+		if (getValue() != null) {
 			text.setText(getValue());
 			text.selectAll();
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.ui.dialogs.InputDialog#createDialogArea(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 * @return
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
 		// create composite
-		Composite composite = (Composite)super.createDialogArea(parent);
+		Composite composite = (Composite) super.createDialogArea(parent);
 
 		text = new Text(composite, getInputTextStyle());
 		text.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
 		text.addModifyListener(new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
 				validateInput();
 			}
@@ -118,7 +119,7 @@ public class InputDialogMessage extends InputDialog {
 
 	/**
 	 * Returns the text area.
-	 * 
+	 *
 	 * @return the text area
 	 */
 	protected Text getText() {
@@ -127,7 +128,7 @@ public class InputDialogMessage extends InputDialog {
 
 	/**
 	 * Returns the validator.
-	 * 
+	 *
 	 * @return the validator
 	 */
 	protected IInputValidator getValidator() {
@@ -137,13 +138,13 @@ public class InputDialogMessage extends InputDialog {
 	/**
 	 * Validates the input.
 	 * <p>
-	 * The default implementation of this framework method delegates the request to the supplied input validator object; if it finds the input
-	 * invalid, the error message is displayed in the dialog's message line. This hook method is called whenever the text changes in the input field.
+	 * The default implementation of this framework method delegates the request to the supplied input validator object; if it finds the input invalid, the error message is displayed in the dialog's message line. This hook method is called whenever the text
+	 * changes in the input field.
 	 * </p>
 	 */
 	protected void validateInput() {
 		String errorMessage = null;
-		if(validator != null) {
+		if (validator != null) {
 			errorMessage = validator.isValid(text.getText());
 		}
 		// Bug 16256: important not to treat "" (blank error) the same as null
@@ -153,12 +154,12 @@ public class InputDialogMessage extends InputDialog {
 
 	/**
 	 * Set the warning message
-	 * 
+	 *
 	 * @param errorMessage
 	 */
 	public void setWarningMessage(String errorMessage) {
 		this.warningMessage = errorMessage;
-		if((warningMessageText != null) && !warningMessageText.isDisposed()) {
+		if ((warningMessageText != null) && !warningMessageText.isDisposed()) {
 			Image errorImage = Activator.getPluginIconImage(Activator.ID, ICON_WARNING);
 			warningMessageText.setImage(errorMessage == null ? null : errorImage);
 			warningMessageText.setText(errorMessage == null ? "" : errorMessage); //$NON-NLS-1$
@@ -177,10 +178,10 @@ public class InputDialogMessage extends InputDialog {
 	/**
 	 * Returns the style bits that should be used for the input text field.
 	 * Defaults to a single line entry. Subclasses may override.
-	 * 
+	 *
 	 * @return the integer style bits that should be used when creating the
 	 *         input text
-	 * 
+	 *
 	 * @since 3.4
 	 */
 	protected int getInputTextStyle() {

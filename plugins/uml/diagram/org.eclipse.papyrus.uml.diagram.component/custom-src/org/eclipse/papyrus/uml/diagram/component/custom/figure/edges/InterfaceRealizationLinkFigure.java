@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -20,24 +20,24 @@ import org.eclipse.papyrus.uml.diagram.common.figure.edge.InterfaceRealizationFi
 
 /**
  * this class has to option to display it:
- * normal with the UML view or as a link to display lollipop 
+ * normal with the UML view or as a link to display lollipop
  *
  */
-public class InterfaceRealizationLinkFigure extends InterfaceRealizationFigure  {
-	
+public class InterfaceRealizationLinkFigure extends InterfaceRealizationFigure {
+
 	/**
 	 * display the link as line
 	 */
-	public void displayAsAlink(){
+	public void displayAsAlink() {
 		setTargetDecoration(null);
 		this.setLineStyle(Graphics.LINE_SOLID); // line drawing style
-		
+
 	}
-	
+
 	/**
 	 * display it as the UML representation with tis decoration
 	 */
-	public void displayAsUMLShape(){
+	public void displayAsUMLShape() {
 		PolygonDecoration dec = new PolygonDecoration();
 		dec.setScale(15, 5);
 		dec.setBackgroundColor(ColorConstants.white);
@@ -47,6 +47,6 @@ public class InterfaceRealizationLinkFigure extends InterfaceRealizationFigure  
 		setForegroundColor(ColorConstants.black);
 
 		this.setLineStyle(Graphics.LINE_CUSTOM); // line drawing style
-		
+
 	}
 }

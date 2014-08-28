@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,6 +56,7 @@ abstract public class CustomPopupDialog extends PopupDialog {
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public ImageDescriptor getImageDescriptor() {
 			return PlatformUI.getWorkbench().getSharedImages().getImageDescriptor(ISharedImages.IMG_TOOL_DELETE);
 		}
@@ -63,6 +64,7 @@ abstract public class CustomPopupDialog extends PopupDialog {
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void run() {
 			close();
 		}
@@ -70,13 +72,13 @@ abstract public class CustomPopupDialog extends PopupDialog {
 
 	/**
 	 * Instantiates a new custom popup dialog.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param point
-	 *        the point
+	 *            the point
 	 * @param title
-	 *        the title
+	 *            the title
 	 */
 	public CustomPopupDialog(Shell parent, Point point, String title) {
 		super(parent, SWT.NONE, true, true, false, false, false, null, null);
@@ -88,6 +90,7 @@ abstract public class CustomPopupDialog extends PopupDialog {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
 	}
@@ -95,6 +98,7 @@ abstract public class CustomPopupDialog extends PopupDialog {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected Control createContents(Composite parent) {
 		getShell().setBackground(getShell().getDisplay().getSystemColor(SWT.COLOR_DARK_GRAY));
 		initializeBounds();
@@ -104,8 +108,9 @@ abstract public class CustomPopupDialog extends PopupDialog {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected Control createDialogArea(Composite parent) {
-		this.composite = (Composite)super.createDialogArea(parent);
+		this.composite = (Composite) super.createDialogArea(parent);
 		composite.setLayout(new FillLayout());
 		formHead = toolkit.createScrolledForm(composite);
 		toolkit.decorateFormHeading(formHead.getForm());
@@ -116,7 +121,7 @@ abstract public class CustomPopupDialog extends PopupDialog {
 		// add a Close button to the toolbar
 
 		Collection<Action> actions = getActions();
-		for(Action action : actions) {
+		for (Action action : actions) {
 			formHead.getToolBarManager().add(action);
 		}
 		formHead.getToolBarManager().add(new CloseAction());
@@ -134,7 +139,7 @@ abstract public class CustomPopupDialog extends PopupDialog {
 
 	/**
 	 * Gets the actions.
-	 * 
+	 *
 	 * @return the actions
 	 */
 	abstract protected Collection<Action> getActions();
@@ -147,16 +152,17 @@ abstract public class CustomPopupDialog extends PopupDialog {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected Point getInitialLocation(Point size) {
-		if(fAnchor == null) {
+		if (fAnchor == null) {
 			return super.getInitialLocation(size);
 		}
 		Point point = fAnchor;
 		Rectangle monitor = getShell().getMonitor().getClientArea();
-		if(monitor.width < point.x + size.x) {
+		if (monitor.width < point.x + size.x) {
 			point.x = Math.max(0, point.x - size.x);
 		}
-		if(monitor.height < point.y + size.y) {
+		if (monitor.height < point.y + size.y) {
 			point.y = Math.max(0, point.y - size.y);
 		}
 		return point;
@@ -165,9 +171,11 @@ abstract public class CustomPopupDialog extends PopupDialog {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean close() {
-		if(toolkit != null)
+		if (toolkit != null) {
 			toolkit.dispose();
+		}
 		toolkit = null;
 		return super.close();
 	}
@@ -175,6 +183,7 @@ abstract public class CustomPopupDialog extends PopupDialog {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected Control getFocusControl() {
 		return this.composite;
 	}

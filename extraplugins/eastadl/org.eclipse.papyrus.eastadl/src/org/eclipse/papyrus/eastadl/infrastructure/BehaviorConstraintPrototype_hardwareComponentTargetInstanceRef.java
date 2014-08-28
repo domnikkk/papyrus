@@ -13,8 +13,8 @@ import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentP
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef#getHardwareComponentProtype_target <em>Hardware Component Protype target</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef#getHardwareComponentPrototype_context <em>Hardware Component Prototype context</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef#getHardwareComponentProtype_target <em>Hardware Component Protype target</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef#getHardwareComponentPrototype_context <em>Hardware Component Prototype context</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,10 +27,10 @@ public interface BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef 
 	 * Returns the value of the '<em><b>Hardware Component Protype target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Hardware Component Protype target</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Hardware Component Protype target</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Hardware Component Protype target</em>' reference.
 	 * @see #setHardwareComponentProtype_target(HardwareComponentPrototype)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef_HardwareComponentProtype_target()
@@ -43,7 +43,9 @@ public interface BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef 
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef#getHardwareComponentProtype_target <em>Hardware Component Protype target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Hardware Component Protype target</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Hardware Component Protype target</em>' reference.
 	 * @see #getHardwareComponentProtype_target()
 	 * @generated
 	 */
@@ -54,10 +56,10 @@ public interface BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef 
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentPrototype}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Hardware Component Prototype context</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Hardware Component Prototype context</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Hardware Component Prototype context</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef_HardwareComponentPrototype_context()
 	 * @model ordered="false"

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,7 +45,7 @@ class PaletteViewerReloadContextProvider implements IReloadContextProvider {
 	public static IReloadContextProvider getInstance(PaletteViewer palette) {
 		IReloadContextProvider result = AdapterUtils.adapt(palette, IReloadContextProvider.class, null);
 
-		if(result == null) {
+		if (result == null) {
 			result = new PaletteViewerReloadContextProvider(palette);
 		}
 
@@ -62,7 +62,7 @@ class PaletteViewerReloadContextProvider implements IReloadContextProvider {
 
 	@Override
 	public void restore(Object reloadContext) {
-		IMemento memento = (IMemento)reloadContext;
+		IMemento memento = (IMemento) reloadContext;
 		palette.restoreState(memento);
 		restoreMoreState(palette.getPaletteRoot(), memento);
 	}
@@ -71,19 +71,19 @@ class PaletteViewerReloadContextProvider implements IReloadContextProvider {
 	 * The palette's own memento doesn't record which tool of a stack is the stack's active tool.
 	 */
 	void saveMoreState(PaletteEntry entry, IMemento memento) {
-		if(entry instanceof PaletteStack) {
-			PaletteStack stack = (PaletteStack)entry;
+		if (entry instanceof PaletteStack) {
+			PaletteStack stack = (PaletteStack) entry;
 			memento.putInteger(MEMENTO_ACTIVE_ENTRY, stack.getChildren().indexOf(stack.getActiveEntry()));
 		}
 
-		if(entry instanceof PaletteContainer) {
-			PaletteContainer container = (PaletteContainer)entry;
+		if (entry instanceof PaletteContainer) {
+			PaletteContainer container = (PaletteContainer) entry;
 			List<?> children = container.getChildren();
 			IMemento[] mementos = memento.getChildren();
 
 			int max = Math.min(children.size(), mementos.length);
-			for(int i = 0; i < max; i++) {
-				saveMoreState((PaletteEntry)children.get(i), mementos[i]);
+			for (int i = 0; i < max; i++) {
+				saveMoreState((PaletteEntry) children.get(i), mementos[i]);
 			}
 		}
 	}
@@ -92,24 +92,24 @@ class PaletteViewerReloadContextProvider implements IReloadContextProvider {
 	 * @see #saveMoreState(PaletteEntry, IMemento)
 	 */
 	void restoreMoreState(PaletteEntry entry, IMemento memento) {
-		if(entry instanceof PaletteStack) {
-			PaletteStack stack = (PaletteStack)entry;
+		if (entry instanceof PaletteStack) {
+			PaletteStack stack = (PaletteStack) entry;
 			List<?> children = stack.getChildren();
 
 			int activeIndex = memento.getInteger(MEMENTO_ACTIVE_ENTRY);
-			if((activeIndex >= 0) && (activeIndex < children.size())) {
-				stack.setActiveEntry((PaletteEntry)children.get(activeIndex));
+			if ((activeIndex >= 0) && (activeIndex < children.size())) {
+				stack.setActiveEntry((PaletteEntry) children.get(activeIndex));
 			}
 		}
 
-		if(entry instanceof PaletteContainer) {
-			PaletteContainer container = (PaletteContainer)entry;
+		if (entry instanceof PaletteContainer) {
+			PaletteContainer container = (PaletteContainer) entry;
 			List<?> children = container.getChildren();
 			IMemento[] mementos = memento.getChildren();
 
 			int max = Math.min(children.size(), mementos.length);
-			for(int i = 0; i < max; i++) {
-				restoreMoreState((PaletteEntry)children.get(i), mementos[i]);
+			for (int i = 0; i < max; i++) {
+				restoreMoreState((PaletteEntry) children.get(i), mementos[i]);
 			}
 		}
 	}

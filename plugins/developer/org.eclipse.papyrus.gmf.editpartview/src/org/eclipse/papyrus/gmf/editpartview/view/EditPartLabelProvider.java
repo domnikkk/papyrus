@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * This is the label provider to display edit parts
- * 
+ *
  */
 public class EditPartLabelProvider implements ITableLabelProvider, ITableColorProvider {
 
@@ -35,30 +35,35 @@ public class EditPartLabelProvider implements ITableLabelProvider, ITableColorPr
 
 	protected Color customizableDropEditPolicyColor = new Color(Display.getDefault(), 0, 38, 255);
 
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 	}
 
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
 
+	@Override
 	public void dispose() {
 	}
 
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 	}
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
-		if(element instanceof GraphicalEditPart) {
-			GraphicalEditPart editPart = (GraphicalEditPart)element;
+		if (element instanceof GraphicalEditPart) {
+			GraphicalEditPart editPart = (GraphicalEditPart) element;
 			IFigure figure = editPart.getContentPane();
 			Object model = editPart.getAdapter(EObject.class);
-			switch(columnIndex) {
+			switch (columnIndex) {
 			case 0:
 				return editPart.getClass().getSimpleName();
 			case 1:
-				if(model instanceof NamedElement) {
-					return ((NamedElement)model).getName();
+				if (model instanceof NamedElement) {
+					return ((NamedElement) model).getName();
 				}
 				return "not a named element";
 			case 2:
@@ -70,15 +75,18 @@ public class EditPartLabelProvider implements ITableLabelProvider, ITableColorPr
 		return "cannot display it: " + element;
 	}
 
+	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
 		return null;
 	}
 
+	@Override
 	public Color getForeground(Object element, int columnIndex) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
 	public Color getBackground(Object element, int columnIndex) {
 		// TODO Auto-generated method stub
 		return null;

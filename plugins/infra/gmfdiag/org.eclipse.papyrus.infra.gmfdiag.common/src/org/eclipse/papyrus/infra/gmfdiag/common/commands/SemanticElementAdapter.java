@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.core.util.PackageUtil;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
+import org.eclipse.gmf.runtime.notation.View;
 
 /**
  * An adapter for {@link IElementType}, {@link EObject} or {@link View}.
@@ -50,25 +51,25 @@ public class SemanticElementAdapter extends SemanticAdapter implements ISemantic
 	@SuppressWarnings("rawtypes")
 	@Override
 	public Object getAdapter(Class adapter) {
-		if(adapter.equals(IHintedType.class)) {
-			if(elementType instanceof IHintedType) {
+		if (adapter.equals(IHintedType.class)) {
+			if (elementType instanceof IHintedType) {
 				return elementType;
 			}
 		}
-		
-		if(adapter.equals(IElementType.class)) {
+
+		if (adapter.equals(IElementType.class)) {
 			return elementType;
 		}
 		return super.getAdapter(adapter);
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public Object getProxyClassID() {
-		if(elementType !=null) {
-			return PackageUtil.getID(((IElementType)elementType).getEClass());
+		if (elementType != null) {
+			return PackageUtil.getID(((IElementType) elementType).getEClass());
 		}
 		return super.getProxyClassID();
 	}
@@ -76,9 +77,10 @@ public class SemanticElementAdapter extends SemanticAdapter implements ISemantic
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getSemanticHint() {
-		if(elementType instanceof IHintedType) {
-			return ((IHintedType)elementType).getSemanticHint();
+		if (elementType instanceof IHintedType) {
+			return ((IHintedType) elementType).getSemanticHint();
 		}
 		return null;
 	}

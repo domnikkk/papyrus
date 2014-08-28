@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -16,17 +16,12 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.extendedtypes.ElementTypeConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedElementTypeSet;
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
@@ -42,7 +37,7 @@ import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
  * <li>{@link org.eclipse.papyrus.infra.extendedtypes.impl.ExtendedElementTypeSetImpl#isExtensible <em>Extensible</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ExtendedElementTypeSetImpl extends ConfigurationElementImpl implements ExtendedElementTypeSet {
@@ -51,7 +46,7 @@ public class ExtendedElementTypeSetImpl extends ConfigurationElementImpl impleme
 	 * The cached value of the '{@link #getElementType() <em>Element Type</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementType()
 	 * @generated
 	 * @ordered
@@ -62,7 +57,7 @@ public class ExtendedElementTypeSetImpl extends ConfigurationElementImpl impleme
 	 * The default value of the '{@link #isExtensible() <em>Extensible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isExtensible()
 	 * @generated
 	 * @ordered
@@ -73,7 +68,7 @@ public class ExtendedElementTypeSetImpl extends ConfigurationElementImpl impleme
 	 * The cached value of the '{@link #isExtensible() <em>Extensible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isExtensible()
 	 * @generated
 	 * @ordered
@@ -83,7 +78,7 @@ public class ExtendedElementTypeSetImpl extends ConfigurationElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExtendedElementTypeSetImpl() {
@@ -93,7 +88,7 @@ public class ExtendedElementTypeSetImpl extends ConfigurationElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,11 +99,11 @@ public class ExtendedElementTypeSetImpl extends ConfigurationElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ElementTypeConfiguration> getElementType() {
-		if(elementType == null) {
+		if (elementType == null) {
 			elementType = new EObjectContainmentEList<ElementTypeConfiguration>(ElementTypeConfiguration.class, this, ExtendedtypesPackage.EXTENDED_ELEMENT_TYPE_SET__ELEMENT_TYPE);
 		}
 		return elementType;
@@ -117,7 +112,7 @@ public class ExtendedElementTypeSetImpl extends ConfigurationElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isExtensible() {
@@ -127,27 +122,28 @@ public class ExtendedElementTypeSetImpl extends ConfigurationElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setExtensible(boolean newExtensible) {
 		boolean oldExtensible = extensible;
 		extensible = newExtensible;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ExtendedtypesPackage.EXTENDED_ELEMENT_TYPE_SET__EXTENSIBLE, oldExtensible, extensible));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.EXTENDED_ELEMENT_TYPE_SET__ELEMENT_TYPE:
-			return ((InternalEList<?>)getElementType()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getElementType()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -155,12 +151,12 @@ public class ExtendedElementTypeSetImpl extends ConfigurationElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.EXTENDED_ELEMENT_TYPE_SET__ELEMENT_TYPE:
 			return getElementType();
 		case ExtendedtypesPackage.EXTENDED_ELEMENT_TYPE_SET__EXTENSIBLE:
@@ -172,19 +168,19 @@ public class ExtendedElementTypeSetImpl extends ConfigurationElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.EXTENDED_ELEMENT_TYPE_SET__ELEMENT_TYPE:
 			getElementType().clear();
-			getElementType().addAll((Collection<? extends ElementTypeConfiguration>)newValue);
+			getElementType().addAll((Collection<? extends ElementTypeConfiguration>) newValue);
 			return;
 		case ExtendedtypesPackage.EXTENDED_ELEMENT_TYPE_SET__EXTENSIBLE:
-			setExtensible((Boolean)newValue);
+			setExtensible((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -193,12 +189,12 @@ public class ExtendedElementTypeSetImpl extends ConfigurationElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.EXTENDED_ELEMENT_TYPE_SET__ELEMENT_TYPE:
 			getElementType().clear();
 			return;
@@ -212,12 +208,12 @@ public class ExtendedElementTypeSetImpl extends ConfigurationElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.EXTENDED_ELEMENT_TYPE_SET__ELEMENT_TYPE:
 			return elementType != null && !elementType.isEmpty();
 		case ExtendedtypesPackage.EXTENDED_ELEMENT_TYPE_SET__EXTENSIBLE:
@@ -229,17 +225,18 @@ public class ExtendedElementTypeSetImpl extends ConfigurationElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (extensible: "); //$NON-NLS-1$
 		result.append(extensible);
 		result.append(')');
 		return result.toString();
 	}
-} //ExtendedElementTypeSetImpl
+} // ExtendedElementTypeSetImpl

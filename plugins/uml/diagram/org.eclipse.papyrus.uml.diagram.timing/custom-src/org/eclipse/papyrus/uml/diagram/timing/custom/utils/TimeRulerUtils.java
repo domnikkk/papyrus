@@ -38,24 +38,24 @@ public final class TimeRulerUtils {
 
 	/**
 	 * @param createViewCommand
-	 * 
+	 *
 	 * @param editPart
 	 * @param visible
 	 * @return
 	 */
 	/**
 	 * @param createViewCommand
-	 *        the command that creates a Lifeline or Interaction View
+	 *            the command that creates a Lifeline or Interaction View
 	 * @param editingDomain
-	 *        an editing domain
+	 *            an editing domain
 	 * @param visible
-	 *        whether the time ruler should be visible initially
+	 *            whether the time ruler should be visible initially
 	 * @return the time ruler creation command
 	 */
 	public static ICommand getCreateFreeTimeRulerCommand(final Command createViewCommand, final TransactionalEditingDomain editingDomain, final boolean visible) {
-		final CommandResult superCommandResult = ((ICommandProxy)createViewCommand).getICommand().getCommandResult();
+		final CommandResult superCommandResult = ((ICommandProxy) createViewCommand).getICommand().getCommandResult();
 		// final Interaction interaction = (Interaction) superCommandResult.getElement();
-		if(editingDomain == null) {
+		if (editingDomain == null) {
 			throw new IllegalStateException("no editing domain"); //$NON-NLS-1$
 		}
 
@@ -64,8 +64,8 @@ public final class TimeRulerUtils {
 			@Override
 			protected CommandResult doExecuteWithResult(final IProgressMonitor monitor, final IAdaptable info) throws ExecutionException {
 				// the result from the super command that creates the view
-				final ViewDescriptor viewDescriptor = (ViewDescriptor)superCommandResult.getReturnValue();
-				final View view = (View)viewDescriptor.getAdapter(View.class);
+				final ViewDescriptor viewDescriptor = (ViewDescriptor) superCommandResult.getReturnValue();
+				final View view = (View) viewDescriptor.getAdapter(View.class);
 				final Node freeTimeRulerNode = createFreeTimeRuler(view);
 				final View timeRulerCompartmentView = ViewUtils.findTimeRulerCompartmentView(view);
 				timeRulerCompartmentView.setVisible(visible);
@@ -87,19 +87,19 @@ public final class TimeRulerUtils {
 	 * Interaction's time ruler.
 	 */
 	public static IGraphicalEditPart findClosestTimeRuler(final IGraphicalEditPart editPart) {
-		IGraphicalEditPart lifelineEditPart = (IGraphicalEditPart)EditPartUtils.findParentEditPartWithId(editPart, CompactLifelineEditPartCN.VISUAL_ID);
-		if(lifelineEditPart == null) {
-			lifelineEditPart = (IGraphicalEditPart)EditPartUtils.findParentEditPartWithId(editPart, FullLifelineEditPartCN.VISUAL_ID);
+		IGraphicalEditPart lifelineEditPart = (IGraphicalEditPart) EditPartUtils.findParentEditPartWithId(editPart, CompactLifelineEditPartCN.VISUAL_ID);
+		if (lifelineEditPart == null) {
+			lifelineEditPart = (IGraphicalEditPart) EditPartUtils.findParentEditPartWithId(editPart, FullLifelineEditPartCN.VISUAL_ID);
 		}
-		if(lifelineEditPart != null) {
-			IGraphicalEditPart tickContainerEditPart = (IGraphicalEditPart)EditPartUtils.findFirstChildEditPartWithId(lifelineEditPart, FreeTimeRulerCompartmentEditPart.VISUAL_ID);
-			if(tickContainerEditPart == null) {
+		if (lifelineEditPart != null) {
+			IGraphicalEditPart tickContainerEditPart = (IGraphicalEditPart) EditPartUtils.findFirstChildEditPartWithId(lifelineEditPart, FreeTimeRulerCompartmentEditPart.VISUAL_ID);
+			if (tickContainerEditPart == null) {
 				// then tickContainer is in the Interaction
-				final IGraphicalEditPart interactionEditPart = (IGraphicalEditPart)EditPartUtils.findParentEditPartWithId(lifelineEditPart, InteractionEditPartTN.VISUAL_ID);
-				if(interactionEditPart != null) {
-					final IGraphicalEditPart interactionTimeRulerCompartmentEditPart = (IGraphicalEditPart)EditPartUtils.findFirstChildEditPartWithId(interactionEditPart, TimeRulerCompartmentEditPartCN.VISUAL_ID);
-					if(interactionTimeRulerCompartmentEditPart != null) {
-						tickContainerEditPart = (IGraphicalEditPart)EditPartUtils.findFirstChildEditPartWithId(interactionTimeRulerCompartmentEditPart, FreeTimeRulerCompartmentEditPart.VISUAL_ID);
+				final IGraphicalEditPart interactionEditPart = (IGraphicalEditPart) EditPartUtils.findParentEditPartWithId(lifelineEditPart, InteractionEditPartTN.VISUAL_ID);
+				if (interactionEditPart != null) {
+					final IGraphicalEditPart interactionTimeRulerCompartmentEditPart = (IGraphicalEditPart) EditPartUtils.findFirstChildEditPartWithId(interactionEditPart, TimeRulerCompartmentEditPartCN.VISUAL_ID);
+					if (interactionTimeRulerCompartmentEditPart != null) {
+						tickContainerEditPart = (IGraphicalEditPart) EditPartUtils.findFirstChildEditPartWithId(interactionTimeRulerCompartmentEditPart, FreeTimeRulerCompartmentEditPart.VISUAL_ID);
 					}
 				}
 			}

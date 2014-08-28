@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,16 +48,16 @@ public class CallBehaviorUtil {
 
 	/**
 	 * Get the type of the given lifeline
-	 * 
+	 *
 	 * @param callBehaviorAction
-	 *        the lifeline whose type to get
+	 *            the lifeline whose type to get
 	 * @return the type
 	 */
 	public static CallBehaviorActionType getCallBehaviorType(final CallBehaviorAction callBehaviorAction) {
 		final EAnnotation eAnnotation = callBehaviorAction.getEAnnotation(CALL_BEHAVIOR_ACTION_ANNOTATION);
-		if(eAnnotation != null) {
+		if (eAnnotation != null) {
 			final String type = eAnnotation.getDetails().get(CALL_BEHAVIOR_ACTION_TYPE);
-			if(type != null) {
+			if (type != null) {
 				return CallBehaviorActionType.valueOf(type);
 			}
 		}
@@ -67,7 +67,7 @@ public class CallBehaviorUtil {
 
 	public static void setCallBehaviorActionType(final CallBehaviorAction callBehaviorAction, final CallBehaviorActionType callBehaviorActionType) {
 		EAnnotation eAnnotation = callBehaviorAction.getEAnnotation(CALL_BEHAVIOR_ACTION_ANNOTATION);
-		if(eAnnotation == null) {
+		if (eAnnotation == null) {
 			eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 			eAnnotation.setSource(CALL_BEHAVIOR_ACTION_ANNOTATION);
 			callBehaviorAction.getEAnnotations().add(eAnnotation);
@@ -85,7 +85,7 @@ public class CallBehaviorUtil {
 
 	public static boolean isCallBehaviorActionView(final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
-		if(visualID == -1) {
+		if (visualID == -1) {
 			visualID = UMLVisualIDRegistry.getVisualID(view);
 		}
 		return isCallBehaviorActionEditPart(visualID);
@@ -96,7 +96,7 @@ public class CallBehaviorUtil {
 	public static String getDiagramLinked(final View callBehaviorActionView) {
 
 		final EAnnotation annotation = callBehaviorActionView.getEAnnotation(CALL_BEHAVIOR_ACTION_ANNOTATION);
-		if(annotation != null) {
+		if (annotation != null) {
 			return annotation.getDetails().get(DIAGRAM_UUID_AS_INTERACTION_SNAPSHOT);
 		}
 		return "";
@@ -105,17 +105,17 @@ public class CallBehaviorUtil {
 	public static void setDiagramLinked(final View callBehaviorActionView, final View diagramView) {
 
 		EAnnotation annotation = callBehaviorActionView.getEAnnotation(CALL_BEHAVIOR_ACTION_ANNOTATION);
-		if(annotation == null) {
+		if (annotation == null) {
 			annotation = EcoreFactory.eINSTANCE.createEAnnotation();
 			annotation.setSource(CALL_BEHAVIOR_ACTION_ANNOTATION);
 			callBehaviorActionView.getEAnnotations().add(annotation);
 		}
-		if(annotation.getDetails().get(DIAGRAM_UUID_AS_INTERACTION_SNAPSHOT) != null) {
+		if (annotation.getDetails().get(DIAGRAM_UUID_AS_INTERACTION_SNAPSHOT) != null) {
 			annotation.getDetails().clear();
 		}
 
 		String uuidDiagram = DiagramUtils.getUUIDForSnapshot(diagramView);
-		if(uuidDiagram == null || uuidDiagram.equals("")) {
+		if (uuidDiagram == null || uuidDiagram.equals("")) {
 			uuidDiagram = EcoreUtil.generateUUID();
 			DiagramUtils.setUUID(diagramView, uuidDiagram);
 		}
@@ -124,7 +124,7 @@ public class CallBehaviorUtil {
 
 	public static List<String> getRemovedLifelinesQualifiedNames(final View callBehaviorActionView) {
 		final EAnnotation eAnnotation = callBehaviorActionView.getEAnnotation(LIFELINE_QUALIFIED_NAME);
-		if(eAnnotation != null) {
+		if (eAnnotation != null) {
 			return new ArrayList<String>(eAnnotation.getDetails().keySet());
 		}
 		return new ArrayList<String>();
@@ -132,7 +132,7 @@ public class CallBehaviorUtil {
 
 	public static void addLifelineQualifiedNames(final View callBehaviorActionView, final String qualifiedName) {
 		EAnnotation eAnnotation = callBehaviorActionView.getEAnnotation(LIFELINE_QUALIFIED_NAME);
-		if(eAnnotation == null) {
+		if (eAnnotation == null) {
 			eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 			eAnnotation.setSource(LIFELINE_QUALIFIED_NAME);
 			callBehaviorActionView.getEAnnotations().add(eAnnotation);
@@ -146,7 +146,7 @@ public class CallBehaviorUtil {
 
 	public static void setBehaviorAsNonNew(final View callBehaviorActionView) {
 		EAnnotation eAnnotation = callBehaviorActionView.getEAnnotation(IS_BEHAVIOR_NEW);
-		if(eAnnotation == null) {
+		if (eAnnotation == null) {
 			eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 			eAnnotation.setSource(IS_BEHAVIOR_NEW);
 			callBehaviorActionView.getEAnnotations().add(eAnnotation);
@@ -155,15 +155,15 @@ public class CallBehaviorUtil {
 
 	public static void resetSnapshotEannotation(final View callBehaviorActionView) {
 		final EAnnotation annotationDiagramUUID = callBehaviorActionView.getEAnnotation(CALL_BEHAVIOR_ACTION_ANNOTATION);
-		if(annotationDiagramUUID != null) {
+		if (annotationDiagramUUID != null) {
 			EcoreUtil.delete(annotationDiagramUUID);
 		}
 		final EAnnotation eAnnotationLifelines = callBehaviorActionView.getEAnnotation(LIFELINE_QUALIFIED_NAME);
-		if(eAnnotationLifelines != null) {
+		if (eAnnotationLifelines != null) {
 			EcoreUtil.delete(eAnnotationLifelines);
 		}
 		final EAnnotation eAnnotationIsNew = callBehaviorActionView.getEAnnotation(IS_BEHAVIOR_NEW);
-		if(eAnnotationIsNew != null) {
+		if (eAnnotationIsNew != null) {
 			EcoreUtil.delete(eAnnotationIsNew);
 		}
 	}

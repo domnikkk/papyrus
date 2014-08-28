@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    CEA LIST - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.C_Cpp;
 
@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>EStorage Class</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getEStorageClass()
  * @model
  * @generated
@@ -32,6 +33,7 @@ public enum EStorageClass implements Enumerator {
 	 * The '<em><b>Volatile</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #VOLATILE_VALUE
 	 * @generated
 	 * @ordered
@@ -42,6 +44,7 @@ public enum EStorageClass implements Enumerator {
 	 * The '<em><b>Register</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #REGISTER_VALUE
 	 * @generated
 	 * @ordered
@@ -52,6 +55,7 @@ public enum EStorageClass implements Enumerator {
 	 * The '<em><b>Extern</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #EXTERN_VALUE
 	 * @generated
 	 * @ordered
@@ -62,10 +66,10 @@ public enum EStorageClass implements Enumerator {
 	 * The '<em><b>Volatile</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Volatile</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Volatile</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #VOLATILE
 	 * @model name="volatile"
 	 * @generated
@@ -77,10 +81,10 @@ public enum EStorageClass implements Enumerator {
 	 * The '<em><b>Register</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Register</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Register</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #REGISTER
 	 * @model name="register"
 	 * @generated
@@ -92,10 +96,10 @@ public enum EStorageClass implements Enumerator {
 	 * The '<em><b>Extern</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Extern</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Extern</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #EXTERN
 	 * @model name="extern"
 	 * @generated
@@ -107,19 +111,21 @@ public enum EStorageClass implements Enumerator {
 	 * An array of all the '<em><b>EStorage Class</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static final EStorageClass[] VALUES_ARRAY =
-		new EStorageClass[] {
-			VOLATILE,
-			REGISTER,
-			EXTERN,
-		};
+			new EStorageClass[] {
+					VOLATILE,
+					REGISTER,
+					EXTERN,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>EStorage Class</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final List<EStorageClass> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -128,6 +134,7 @@ public enum EStorageClass implements Enumerator {
 	 * Returns the '<em><b>EStorage Class</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static EStorageClass get(String literal) {
@@ -144,6 +151,7 @@ public enum EStorageClass implements Enumerator {
 	 * Returns the '<em><b>EStorage Class</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static EStorageClass getByName(String name) {
@@ -160,13 +168,17 @@ public enum EStorageClass implements Enumerator {
 	 * Returns the '<em><b>EStorage Class</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static EStorageClass get(int value) {
 		switch (value) {
-			case VOLATILE_VALUE: return VOLATILE;
-			case REGISTER_VALUE: return REGISTER;
-			case EXTERN_VALUE: return EXTERN;
+		case VOLATILE_VALUE:
+			return VOLATILE;
+		case REGISTER_VALUE:
+			return REGISTER;
+		case EXTERN_VALUE:
+			return EXTERN;
 		}
 		return null;
 	}
@@ -174,6 +186,7 @@ public enum EStorageClass implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -181,6 +194,7 @@ public enum EStorageClass implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -188,6 +202,7 @@ public enum EStorageClass implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -196,6 +211,7 @@ public enum EStorageClass implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EStorageClass(int value, String name, String literal) {
@@ -207,39 +223,46 @@ public enum EStorageClass implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //EStorageClass
+
+} // EStorageClass

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ public class DiagramViewState extends State {
 		CommonNavigator navigator = DiagramViewHandler.getCommonNavigator();
 		CommonViewer viewer = (navigator == null) ? null : navigator.getCommonViewer();
 
-		if(viewer != null) {
+		if (viewer != null) {
 			INavigatorContentService navigatorContent = viewer.getNavigatorContentService();
 			result = navigatorContent.isActive(DiagramViewHandler.DIAGRAM_CONTENTS);
 		} else {

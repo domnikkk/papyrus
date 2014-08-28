@@ -78,12 +78,12 @@ public class ProjectSetImporter {
 	/**
 	 * Imports a psf file based on a file content. This may be used when psf
 	 * file is imported from any other location that local filesystem.
-	 * 
+	 *
 	 * @param psfContents
-	 *        the content of the psf file.
+	 *            the content of the psf file.
 	 * @param filename
-	 *        the name of the source file. This is included in case the
-	 *        provider needs to deduce relative paths
+	 *            the name of the source file. This is included in case the
+	 *            provider needs to deduce relative paths
 	 * @param shell
 	 * @param monitor
 	 * @return list of new projects
@@ -96,7 +96,7 @@ public class ProjectSetImporter {
 
 	/**
 	 * Imports a psf file.
-	 * 
+	 *
 	 * @param filename
 	 * @param shell
 	 * @param monitor
@@ -110,7 +110,7 @@ public class ProjectSetImporter {
 
 	/**
 	 * Differences with the base implementation:
-	 * 
+	 *
 	 * - User can select the projects to import
 	 * - Projects are imported one by one (Instead of being imported provider by provider). The workspace is not locked during the import
 	 * - Exceptions are caught and stored. They do not break the import
@@ -123,7 +123,7 @@ public class ProjectSetImporter {
 
 		Map<String, List<String>> providersToProjects = filterProjects(xmlMemento, shell);
 
-		if(providersToProjects == null) {
+		if (providersToProjects == null) {
 			mainMonitor.setCanceled(true);
 			return result;
 		}
@@ -133,11 +133,11 @@ public class ProjectSetImporter {
 			String version = xmlMemento.getString("version"); //$NON-NLS-1$
 
 			final List<IProject> newProjects = new ArrayList<IProject>();
-			if(version.equals("1.0")) { //$NON-NLS-1$
+			if (version.equals("1.0")) { //$NON-NLS-1$
 				IProjectSetSerializer serializer = Team.getProjectSetSerializer("versionOneSerializer"); //$NON-NLS-1$
-				if(serializer != null) {
+				if (serializer != null) {
 					IProject[] projects = serializer.addToWorkspace(new String[0], filename, shell, new NullProgressMonitor());
-					if(projects != null) {
+					if (projects != null) {
 						newProjects.addAll(Arrays.asList(projects));
 					}
 				}
@@ -146,7 +146,7 @@ public class ProjectSetImporter {
 
 				int nbProjects = 0;
 
-				for(List<String> projects : providersToProjects.values()) {
+				for (List<String> projects : providersToProjects.values()) {
 					nbProjects += projects.size();
 				}
 
@@ -156,8 +156,8 @@ public class ProjectSetImporter {
 
 				mainMonitor.beginTask(String.format("Importing %s projects", nbProjects), totalWork);
 
-				for(Map.Entry<String, List<String>> providerToProjects : providersToProjects.entrySet()) {
-					if(mainMonitor.isCanceled()) {
+				for (Map.Entry<String, List<String>> providerToProjects : providersToProjects.entrySet()) {
+					if (mainMonitor.isCanceled()) {
 						return result;
 					}
 
@@ -166,12 +166,12 @@ public class ProjectSetImporter {
 
 					TeamCapabilityHelper.getInstance().processRepositoryId(id, PlatformUI.getWorkbench().getActivitySupport());
 					RepositoryProviderType providerType = RepositoryProviderType.getProviderType(id);
-					if(providerType == null) {
+					if (providerType == null) {
 						// The provider type is absent. Perhaps there is another provider that can import this type
 						providerType = TeamPlugin.getAliasType(id);
 					}
 
-					if(providerType == null) {
+					if (providerType == null) {
 						diagnostic.add(new Status(IStatus.ERROR, Activator.PLUGIN_ID, String.format("Unknown team provider: %s", id)));
 						mainMonitor.worked(projects.size());
 						continue;
@@ -180,10 +180,10 @@ public class ProjectSetImporter {
 					final ProjectSetCapability serializer = providerType.getProjectSetCapability();
 					ProjectSetCapability.ensureBackwardsCompatible(providerType, serializer);
 
-					if(serializer != null) {
-						for(final String ref : projects) {
+					if (serializer != null) {
+						for (final String ref : projects) {
 
-							if(mainMonitor.isCanceled()) {
+							if (mainMonitor.isCanceled()) {
 								return result;
 							}
 
@@ -201,9 +201,9 @@ public class ProjectSetImporter {
 									@Override
 									protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
 										try {
-											IProject[] allProjects = serializer.addToWorkspace(new String[]{ ref }, context, monitor);
+											IProject[] allProjects = serializer.addToWorkspace(new String[] { ref }, context, monitor);
 
-											if(allProjects != null) {
+											if (allProjects != null) {
 												importedProjects.addAll(Arrays.asList(allProjects));
 											}
 										} catch (Exception ex) {
@@ -214,17 +214,17 @@ public class ProjectSetImporter {
 
 								operation.run(monitor);
 
-								//Refresh the new projects
-								for(IProject project : importedProjects) {
-									if(project == null) {
+								// Refresh the new projects
+								for (IProject project : importedProjects) {
+									if (project == null) {
 										continue;
 									}
 									try {
 										project.refreshLocal(IResource.DEPTH_INFINITE, null);
 									} catch (CoreException ex) {
-										Activator.log.error(ex); //Not directly related to the import.
+										Activator.log.error(ex); // Not directly related to the import.
 									} catch (OperationCanceledException ex) {
-										//Ignore: The refresh workspace is cancel
+										// Ignore: The refresh workspace is cancel
 									}
 								}
 
@@ -239,7 +239,7 @@ public class ProjectSetImporter {
 					}
 				}
 
-				//try working sets
+				// try working sets
 				IMemento[] sets = xmlMemento.getChildren("workingSets"); //$NON-NLS-1$
 				IWorkingSetManager wsManager = TeamUIPlugin.getPlugin().getWorkbench().getWorkingSetManager();
 				boolean replaceAll = false;
@@ -248,25 +248,26 @@ public class ProjectSetImporter {
 
 				mainMonitor.setTaskName(String.format("Creating %s working sets...", nbWorkingSets));
 
-				for(IMemento set : sets) {
-					if(mainMonitor.isCanceled()) {
+				for (IMemento set : sets) {
+					if (mainMonitor.isCanceled()) {
 						return result;
 					}
 					mainMonitor.subTask(String.format("Working set %s", set.getString("label")));
 					IWorkingSet newWs = wsManager.createWorkingSet(set);
-					if(newWs != null) {
+					if (newWs != null) {
 						IWorkingSet oldWs = wsManager.getWorkingSet(newWs.getName());
-						if(oldWs == null) {
+						if (oldWs == null) {
 							wsManager.addWorkingSet(newWs);
-						} else if(replaceAll) {
+						} else if (replaceAll) {
 							replaceWorkingSet(wsManager, newWs, oldWs);
-						} else if(mergeAll) {
+						} else if (mergeAll) {
 							mergeWorkingSets(newWs, oldWs);
-						} else if(!skipAll) {
+						} else if (!skipAll) {
 							// a working set with the same name has been found
 							String title = TeamUIMessages.ImportProjectSetDialog_duplicatedWorkingSet_title;
 							String msg = NLS.bind(TeamUIMessages.ImportProjectSetDialog_duplicatedWorkingSet_message, newWs.getName());
-							String[] buttons = new String[]{ TeamUIMessages.ImportProjectSetDialog_duplicatedWorkingSet_replace, TeamUIMessages.ImportProjectSetDialog_duplicatedWorkingSet_merge, TeamUIMessages.ImportProjectSetDialog_duplicatedWorkingSet_skip, IDialogConstants.CANCEL_LABEL };
+							String[] buttons = new String[] { TeamUIMessages.ImportProjectSetDialog_duplicatedWorkingSet_replace, TeamUIMessages.ImportProjectSetDialog_duplicatedWorkingSet_merge,
+									TeamUIMessages.ImportProjectSetDialog_duplicatedWorkingSet_skip, IDialogConstants.CANCEL_LABEL };
 							final AdviceDialog dialog = new AdviceDialog(shell, title, null, msg, MessageDialog.QUESTION, buttons, 0);
 
 							shell.getDisplay().syncExec(new Runnable() {
@@ -276,7 +277,7 @@ public class ProjectSetImporter {
 								}
 							});
 
-							switch(dialog.getReturnCode()) {
+							switch (dialog.getReturnCode()) {
 							case 0: // overwrite
 								replaceWorkingSet(wsManager, newWs, oldWs);
 								replaceAll = dialog.applyToAll;
@@ -311,12 +312,12 @@ public class ProjectSetImporter {
 		Map<String, List<String>> providersToProjects = new LinkedHashMap<String, List<String>>();
 
 		IMemento[] providers = xmlMemento.getChildren("provider"); //$NON-NLS-1$
-		for(IMemento provider : providers) {
+		for (IMemento provider : providers) {
 			IMemento[] projects = provider.getChildren("project"); //$NON-NLS-1$
 
 			List<String> references = getReferences(providersToProjects, provider.getString("id")); //$NON-NLS-1$
 
-			for(IMemento project : projects) {
+			for (IMemento project : projects) {
 				references.add(project.getString("reference")); //$NON-NLS-1$
 			}
 		}
@@ -330,17 +331,17 @@ public class ProjectSetImporter {
 
 		});
 
-		if(dialog.getReturnCode() == Window.OK) {
+		if (dialog.getReturnCode() == Window.OK) {
 			return dialog.getFilteredProjects();
 		} else {
 			return null;
 		}
 
-		//return providersToProjects;
+		// return providersToProjects;
 	}
 
 	private static List<String> getReferences(Map<String, List<String>> providersToReferences, String provider) {
-		if(!providersToReferences.containsKey(provider)) {
+		if (!providersToReferences.containsKey(provider)) {
 			providersToReferences.put(provider, new LinkedList<String>());
 		}
 		return providersToReferences.get(provider);
@@ -348,9 +349,9 @@ public class ProjectSetImporter {
 
 	private static String getProjectName(ProjectSetCapability serializer, String ref) {
 		String projectName = serializer.getProject(ref);
-		if(projectName == null) {
+		if (projectName == null) {
 			int lastIndex = Math.max(ref.lastIndexOf('/'), Math.max(ref.lastIndexOf(','), ref.lastIndexOf('\\')));
-			if(lastIndex == -1) {
+			if (lastIndex == -1) {
 				return ref;
 			}
 			return ref.substring(lastIndex + 1);
@@ -371,7 +372,7 @@ public class ProjectSetImporter {
 		} catch (WorkbenchException e) {
 			throw new InvocationTargetException(e);
 		} finally {
-			if(reader != null) {
+			if (reader != null) {
 				try {
 					reader.close();
 				} catch (IOException e) {
@@ -389,7 +390,7 @@ public class ProjectSetImporter {
 		} catch (WorkbenchException e) {
 			throw new InvocationTargetException(e);
 		} finally {
-			if(reader != null) {
+			if (reader != null) {
 				reader.close();
 			}
 		}
@@ -397,7 +398,7 @@ public class ProjectSetImporter {
 
 	/**
 	 * Check if given file is a valid psf file
-	 * 
+	 *
 	 * @param filename
 	 * @return <code>true</code> is file is a valid psf file
 	 */
@@ -411,12 +412,12 @@ public class ProjectSetImporter {
 
 	/**
 	 * Check if given string is a valid project set
-	 * 
+	 *
 	 * @param psfContent
 	 * @return <code>true</code> if psfContent is a valid project set
 	 */
 	public static boolean isValidProjectSetString(String psfContent) {
-		if(psfContent == null) {
+		if (psfContent == null) {
 			return false;
 		}
 		try {
@@ -438,7 +439,7 @@ public class ProjectSetImporter {
 	}
 
 	private static void replaceWorkingSet(IWorkingSetManager wsManager, IWorkingSet newWs, IWorkingSet oldWs) {
-		if(oldWs != null) {
+		if (oldWs != null) {
 			wsManager.removeWorkingSet(oldWs);
 		}
 		wsManager.addWorkingSet(newWs);

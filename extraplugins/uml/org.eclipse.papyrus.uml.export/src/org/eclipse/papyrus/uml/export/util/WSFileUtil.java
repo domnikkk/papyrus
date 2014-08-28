@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,14 +46,14 @@ public class WSFileUtil {
 
 	/**
 	 * Gets the file name.
-	 * 
+	 *
 	 * @param model
-	 *        the model
+	 *            the model
 	 * @param extension
-	 *        the extension
+	 *            the extension
 	 * @return the file name
 	 * @throws ServiceException
-	 *         the service exception
+	 *             the service exception
 	 */
 	public static String getFileName(EObject model, String extension) throws ServiceException {
 
@@ -66,21 +66,21 @@ public class WSFileUtil {
 
 	/**
 	 * Load resource.
-	 * 
+	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @return the resource
 	 */
 	@SuppressWarnings("deprecation")
 	public static Resource loadResource(String path, ResourceSet resourceSet) {
-		//java.net.URL templateURL = Platform.getBundle(myPluginId).getResource(path);
-		//String fullUri = templateURL.getPath();
+		// java.net.URL templateURL = Platform.getBundle(myPluginId).getResource(path);
+		// String fullUri = templateURL.getPath();
 		URI uri = URI.createPlatformResourceURI(path);
 		try {
 			Resource resource = resourceSet.getResource(uri, true);
-			if(resource.isLoaded()) {
+			if (resource.isLoaded()) {
 				return resource;
 			}
 		} catch (WrappedException ex) {
@@ -93,29 +93,29 @@ public class WSFileUtil {
 
 	/**
 	 * Search for a specific string in an xmi file and replace all its occurences by the new string.
-	 * 
+	 *
 	 * @param oldString
-	 *        the old uri
+	 *            the old uri
 	 * @param newString
-	 *        the new uri
+	 *            the new uri
 	 * @param adapter
-	 *        the adapter
+	 *            the adapter
 	 * @param doc
-	 *        the doc
+	 *            the doc
 	 * @param offset
-	 *        the offset
+	 *            the offset
 	 * @param multiEdit
-	 *        the multi text edit
+	 *            the multi text edit
 	 * @throws BadLocationException
-	 *         the bad location exception
+	 *             the bad location exception
 	 */
 	public static void replaceString(String oldString, String newString, FindReplaceDocumentAdapter adapter, IDocument doc, int offset, MultiTextEdit multiEdit) throws BadLocationException {
 		IRegion region = adapter.find(offset, oldString, true, true, false, true);
 
-		if(region != null) {
+		if (region != null) {
 			multiEdit.addChild(new ReplaceEdit(region.getOffset(), region.getLength(), newString));
 			replaceString(oldString, newString, adapter, doc, region.getOffset() + region.getLength(), multiEdit);
-			//return new ReplaceEdit(region.getOffset(), region.getLength(), installedURI);
+			// return new ReplaceEdit(region.getOffset(), region.getLength(), installedURI);
 		}
 
 
@@ -124,16 +124,16 @@ public class WSFileUtil {
 
 	/**
 	 * Copy.
-	 * 
+	 *
 	 * @param source
-	 *        the source
+	 *            the source
 	 * @param target
-	 *        the target
+	 *            the target
 	 * @throws IOException
-	 *         Signals that an I/O exception has occurred.
+	 *             Signals that an I/O exception has occurred.
 	 */
 	public static void copy(InputStream source, File target) throws IOException {
-		if(!target.getParentFile().exists()) {
+		if (!target.getParentFile().exists()) {
 			target.getParentFile().mkdirs();
 		}
 
@@ -145,7 +145,7 @@ public class WSFileUtil {
 
 		int len;
 		try {
-			while((len = source.read(buf)) > 0) {
+			while ((len = source.read(buf)) > 0) {
 
 				out.write(buf, 0, len);
 
@@ -166,7 +166,7 @@ public class WSFileUtil {
 		// TODO Auto-generated method stub
 		File targetIconFile = FileUtil.getWorkspaceFile("/" + project.getName() + "/" + destinationDir + "/" + destFileName);
 
-		if(!targetIconFile.getParentFile().exists()) {
+		if (!targetIconFile.getParentFile().exists()) {
 			targetIconFile.getParentFile().mkdirs();
 
 		}

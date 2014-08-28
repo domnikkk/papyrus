@@ -31,9 +31,9 @@ import org.eclipse.swt.graphics.Image;
  * that this label provider uses for display. Clients may customize by
  * subclassing and overriding {@link #getColumnText(Object, int)}, {@link #getColumnImage(Object, int)}, for tables or trees with columns, or by
  * implementing additional mixin interfaces for colors, fonts etc.
- * 
+ *
  * @since 1.1
- * 
+ *
  */
 public class ObservableMapLabelProvider extends LabelProvider implements ILabelProvider, ITableLabelProvider {
 
@@ -56,38 +56,41 @@ public class ObservableMapLabelProvider extends LabelProvider implements ILabelP
 	public ObservableMapLabelProvider(Viewer viewer, IObservableSet domain, String[] propertyNames) {
 		textMaps = new XWTObservableWrapper[propertyNames.length];
 
-		for(int i = 0; i < textMaps.length; i++) {
+		for (int i = 0; i < textMaps.length; i++) {
 			textMaps[i] = new XWTObservableWrapper(domain, viewer, propertyNames[i]);
 			textMaps[i].addMapChangeListener(mapChangeListener);
 		}
 		this.viewer = viewer;
 	}
 
+	@Override
 	public void dispose() {
-		for(int i = 0; i < textMaps.length; i++) {
+		for (int i = 0; i < textMaps.length; i++) {
 			textMaps[i].removeMapChangeListener(mapChangeListener);
 		}
 		super.dispose();
 	}
 
+	@Override
 	public Image getImage(Object element) {
 		return getColumnImage(element, 0);
 	}
 
 	public Image getColumnImage(Object element, int columnIndex) {
-		if(columnIndex < textMaps.length) {
+		if (columnIndex < textMaps.length) {
 			Object result = textMaps[columnIndex].get(element);
 			return JFacesHelper.getColumnImage(viewer, result, columnIndex);
 		}
 		return null;
 	}
 
+	@Override
 	public String getText(Object element) {
 		return getColumnText(element, 0);
 	}
 
 	public String getColumnText(Object element, int columnIndex) {
-		if(columnIndex < textMaps.length) {
+		if (columnIndex < textMaps.length) {
 			Object result = textMaps[columnIndex].get(element);
 			return JFacesHelper.getColumnText(viewer, result, columnIndex);
 		}

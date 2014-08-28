@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * this is a label that can be etited as multiline
- * 
+ *
  */
 public class EditingFlowPage extends FlowPage implements ILabelFigure, IMultilineEditableFigure {
 
@@ -37,7 +37,7 @@ public class EditingFlowPage extends FlowPage implements ILabelFigure, IMultilin
 
 
 	/**
-	 * 
+	 *
 	 * @return the textflow of the constraint that contain the string of the specification
 	 */
 	public TextFlowEx getTextFlow() {
@@ -45,7 +45,7 @@ public class EditingFlowPage extends FlowPage implements ILabelFigure, IMultilin
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the container of the text flow
 	 */
 	public FlowPage getPageFlow() {
@@ -53,20 +53,22 @@ public class EditingFlowPage extends FlowPage implements ILabelFigure, IMultilin
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#getText()
-	 * 
+	 *
 	 * @return the display string that represents the specification
 	 */
+	@Override
 	public String getText() {
 		return textFlow.getText();
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#setText(java.lang.String)
-	 * 
+	 *
 	 * @param text
 	 */
+	@Override
 	public void setText(String text) {
 		// generates new ones
 		textFlow.setText(text);
@@ -78,30 +80,33 @@ public class EditingFlowPage extends FlowPage implements ILabelFigure, IMultilin
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#setIcon(org.eclipse.swt.graphics.Image)
-	 * 
+	 *
 	 */
+	@Override
 	public void setIcon(Image icon) {
 		// TODO Auto-generated method stub
 
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#getIcon()
-	 * 
+	 *
 	 */
+	@Override
 	public Image getIcon() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IMultilineEditableFigure#getEditionLocation()
-	 * 
+	 *
 	 */
+	@Override
 	public Point getEditionLocation() {
 		return this.getLocation();
 	}

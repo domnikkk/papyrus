@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -23,9 +23,7 @@ import java.util.Iterator;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.editparts.AbstractConnectionEditPart;
@@ -36,11 +34,11 @@ import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
 
 
 /**
- * 
+ *
  * see bug 430702: [Diagram] Moving source of a link moves the target too.
- * 
+ *
  * This class allows to fix the anchors for a collection of connection edit part
- * 
+ *
  */
 public class FixEdgeAnchorsDeferredCommand extends AbstractFixEdgeAnchorDeferredCommand {
 
@@ -50,15 +48,15 @@ public class FixEdgeAnchorsDeferredCommand extends AbstractFixEdgeAnchorDeferred
 	private Collection<?> connectionsEditPartToRefresh;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param editingDomain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param request
-	 *        the creation request
+	 *            the creation request
 	 * @param containerEP
-	 *        the diagram edit part
+	 *            the diagram edit part
 	 */
 	public FixEdgeAnchorsDeferredCommand(final TransactionalEditingDomain editingDomain, final IGraphicalEditPart containerEP, final Collection<?> connectionsEditPartToRefresh) {
 		super(editingDomain, "Fix Edge Anchors", containerEP); //$NON-NLS-1$
@@ -68,20 +66,21 @@ public class FixEdgeAnchorsDeferredCommand extends AbstractFixEdgeAnchorDeferred
 
 	/**
 	 * Executes a fix anchor command for the created edge
-	 * 
+	 *
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
-		final RefreshConnectionElementsRunnable refreshRunnable = new RefreshConnectionElementsRunnable(this.connectionsEditPartToRefresh,  getContainerEP());
-		
+		final RefreshConnectionElementsRunnable refreshRunnable = new RefreshConnectionElementsRunnable(this.connectionsEditPartToRefresh, getContainerEP());
+
 		EditPartUtil.synchronizeRunnableToMainThread(getContainerEP(), refreshRunnable);
 		final Collection<AbstractConnectionEditPart> toRefresh = refreshRunnable.getResult();
 		final Iterator<AbstractConnectionEditPart> iter = toRefresh.iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			final CompoundCommand cc = new CompoundCommand("Fix connections anchors"); //$NON-NLS-1$
 			final AbstractConnectionEditPart current = iter.next();
 			addFixAnchorCommand(current, cc);
-			if(cc.canExecute()) {
+			if (cc.canExecute()) {
 				cc.execute();
 			} else {
 				Activator.log.warn("Command to fix the anchors is null"); //$NON-NLS-1$
@@ -91,10 +90,11 @@ public class FixEdgeAnchorsDeferredCommand extends AbstractFixEdgeAnchorDeferred
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#cleanup()
-	 * 
+	 *
 	 */
+	@Override
 	protected void cleanup() {
 		super.cleanup();
 		this.connectionsEditPartToRefresh.clear();
@@ -108,11 +108,11 @@ public class FixEdgeAnchorsDeferredCommand extends AbstractFixEdgeAnchorDeferred
 		private Collection<?> connectionsEditPartToRefresh;
 
 		/**
-		 * 
+		 *
 		 * Constructor.
-		 * 
+		 *
 		 * @param connectionsEditPartToRefresh
-		 *        the list of the connection edit part to refresh
+		 *            the list of the connection edit part to refresh
 		 * @param containerEP
 		 */
 		public RefreshConnectionElementsRunnable(final Collection<?> connectionsEditPartToRefresh, final IGraphicalEditPart containerEP) {
@@ -121,24 +121,25 @@ public class FixEdgeAnchorsDeferredCommand extends AbstractFixEdgeAnchorDeferred
 		}
 
 		/**
-		 * 
+		 *
 		 * @see java.lang.Runnable#run()
-		 * 
+		 *
 		 */
+		@Override
 		public void run() {
 			getContainerEditPart().refresh();
 
-			// We update the figure world 
+			// We update the figure world
 			getContainerFigure().invalidate();
 			getContainerFigure().validate();
 			final Iterator<?> iter = connectionsEditPartToRefresh.iterator();
 			final Collection<AbstractConnectionEditPart> connectionsEP = new HashSet<AbstractConnectionEditPart>();
 			setResult(connectionsEP);
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 				final Object object = iter.next();
-				if(object instanceof AbstractConnectionEditPart) {
-					connectionsEP.add((AbstractConnectionEditPart)object);
-					refreshConnection((AbstractConnectionEditPart)object);
+				if (object instanceof AbstractConnectionEditPart) {
+					connectionsEP.add((AbstractConnectionEditPart) object);
+					refreshConnection((AbstractConnectionEditPart) object);
 				}
 			}
 			setStatus(Status.OK_STATUS);

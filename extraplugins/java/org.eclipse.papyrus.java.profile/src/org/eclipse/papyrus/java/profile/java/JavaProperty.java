@@ -19,15 +19,15 @@ import org.eclipse.uml2.uml.Property;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isAbstract <em>Is Abstract</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isFinal <em>Is Final</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getBase_Property <em>Base Property</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isTransient <em>Is Transient</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getGenerateGetter <em>Generate Getter</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getGenerateSetter <em>Generate Setter</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isStatic <em>Is Static</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getExplicitPlainTextRequiredImports <em>Explicit Plain Text Required Imports</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getExplicitRequiredImports <em>Explicit Required Imports</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isAbstract <em>Is Abstract</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isFinal <em>Is Final</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getBase_Property <em>Base Property</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isTransient <em>Is Transient</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getGenerateGetter <em>Generate Getter</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getGenerateSetter <em>Generate Setter</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isStatic <em>Is Static</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getExplicitPlainTextRequiredImports <em>Explicit Plain Text Required Imports</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getExplicitRequiredImports <em>Explicit Required Imports</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,10 +40,10 @@ public interface JavaProperty extends JavaNamedElement {
 	 * Returns the value of the '<em><b>Is Abstract</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Abstract</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Abstract</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Is Abstract</em>' attribute.
 	 * @see #setIsAbstract(boolean)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaProperty_IsAbstract()
@@ -56,7 +56,9 @@ public interface JavaProperty extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isAbstract <em>Is Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Abstract</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Is Abstract</em>' attribute.
 	 * @see #isAbstract()
 	 * @generated
 	 */
@@ -66,10 +68,10 @@ public interface JavaProperty extends JavaNamedElement {
 	 * Returns the value of the '<em><b>Is Final</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Final</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Final</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Is Final</em>' attribute.
 	 * @see #setIsFinal(boolean)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaProperty_IsFinal()
@@ -82,7 +84,9 @@ public interface JavaProperty extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isFinal <em>Is Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Final</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Is Final</em>' attribute.
 	 * @see #isFinal()
 	 * @generated
 	 */
@@ -92,10 +96,10 @@ public interface JavaProperty extends JavaNamedElement {
 	 * Returns the value of the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Property</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaProperty_Base_Property()
@@ -108,7 +112,9 @@ public interface JavaProperty extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getBase_Property <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Property</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()
 	 * @generated
 	 */
@@ -118,10 +124,10 @@ public interface JavaProperty extends JavaNamedElement {
 	 * Returns the value of the '<em><b>Is Transient</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Transient</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Transient</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Is Transient</em>' attribute.
 	 * @see #setIsTransient(boolean)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaProperty_IsTransient()
@@ -134,7 +140,9 @@ public interface JavaProperty extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isTransient <em>Is Transient</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Transient</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Is Transient</em>' attribute.
 	 * @see #isTransient()
 	 * @generated
 	 */
@@ -146,10 +154,10 @@ public interface JavaProperty extends JavaNamedElement {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.java.profile.java.TrueFalseDefault}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Generate Getter</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Generate Getter</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Generate Getter</em>' attribute.
 	 * @see org.eclipse.papyrus.java.profile.java.TrueFalseDefault
 	 * @see #setGenerateGetter(TrueFalseDefault)
@@ -163,7 +171,9 @@ public interface JavaProperty extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getGenerateGetter <em>Generate Getter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Generate Getter</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Generate Getter</em>' attribute.
 	 * @see org.eclipse.papyrus.java.profile.java.TrueFalseDefault
 	 * @see #getGenerateGetter()
 	 * @generated
@@ -176,10 +186,10 @@ public interface JavaProperty extends JavaNamedElement {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.java.profile.java.TrueFalseDefault}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Generate Setter</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Generate Setter</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Generate Setter</em>' attribute.
 	 * @see org.eclipse.papyrus.java.profile.java.TrueFalseDefault
 	 * @see #setGenerateSetter(TrueFalseDefault)
@@ -193,7 +203,9 @@ public interface JavaProperty extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getGenerateSetter <em>Generate Setter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Generate Setter</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Generate Setter</em>' attribute.
 	 * @see org.eclipse.papyrus.java.profile.java.TrueFalseDefault
 	 * @see #getGenerateSetter()
 	 * @generated
@@ -204,10 +216,10 @@ public interface JavaProperty extends JavaNamedElement {
 	 * Returns the value of the '<em><b>Is Static</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Static</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Static</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Is Static</em>' attribute.
 	 * @see #setIsStatic(boolean)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaProperty_IsStatic()
@@ -220,7 +232,9 @@ public interface JavaProperty extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isStatic <em>Is Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Static</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Is Static</em>' attribute.
 	 * @see #isStatic()
 	 * @generated
 	 */
@@ -231,10 +245,10 @@ public interface JavaProperty extends JavaNamedElement {
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Explicit Plain Text Required Imports</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Explicit Plain Text Required Imports</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Explicit Plain Text Required Imports</em>' attribute list.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaProperty_ExplicitPlainTextRequiredImports()
 	 * @model unique="false" ordered="false"
@@ -247,10 +261,10 @@ public interface JavaProperty extends JavaNamedElement {
 	 * The list contents are of type {@link org.eclipse.uml2.uml.Classifier}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Explicit Required Imports</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Explicit Required Imports</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Explicit Required Imports</em>' reference list.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaProperty_ExplicitRequiredImports()
 	 * @model ordered="false"
@@ -262,7 +276,9 @@ public interface JavaProperty extends JavaNamedElement {
 	 * Retrieves the first {@link org.eclipse.uml2.uml.Classifier} with the specified '<em><b>Name</b></em>' from the '<em><b>Explicit Required Imports</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.Classifier} to retrieve, or <code>null</code>.
+	 *
+	 * @param name
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.Classifier} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.Classifier} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getExplicitRequiredImports()
 	 * @generated
@@ -273,9 +289,13 @@ public interface JavaProperty extends JavaNamedElement {
 	 * Retrieves the first {@link org.eclipse.uml2.uml.Classifier} with the specified '<em><b>Name</b></em>' from the '<em><b>Explicit Required Imports</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.Classifier} to retrieve, or <code>null</code>.
-	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
-	 * @param eClass The Ecore class of the {@link org.eclipse.uml2.uml.Classifier} to retrieve, or <code>null</code>.
+	 *
+	 * @param name
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.Classifier} to retrieve, or <code>null</code>.
+	 * @param ignoreCase
+	 *            Whether to ignore case in {@link java.lang.String} comparisons.
+	 * @param eClass
+	 *            The Ecore class of the {@link org.eclipse.uml2.uml.Classifier} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.Classifier} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getExplicitRequiredImports()
 	 * @generated

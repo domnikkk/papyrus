@@ -21,7 +21,7 @@ import org.osgi.framework.Bundle;
 /**
  * This factory allows the user to create a {@link IQueryEvaluator} conforming to the EMF Facet
  * framework.
- * 
+ *
  * @deprecated use {@link IQueryImplementationFactory} with the new eFacet2 metamodel (https://bugs.eclipse.org/bugs/show_bug.cgi?id=381229)
  */
 @Deprecated
@@ -35,7 +35,7 @@ public interface IQueryEvaluatorFactory {
 
 	/**
 	 * Return the type of query this evaluator can evaluate.
-	 * 
+	 *
 	 * @return the type of query this evaluator can evaluate.
 	 */
 	public EClass getManagedQueryType();

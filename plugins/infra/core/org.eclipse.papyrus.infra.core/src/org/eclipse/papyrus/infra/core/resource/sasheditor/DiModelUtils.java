@@ -22,17 +22,17 @@ public class DiModelUtils {
 	 * reasons. It should be removed asap.
 	 *
 	 * @param file
-	 *        A file (di, model or notation).
+	 *            A file (di, model or notation).
 	 * @return The associated DI file.
 	 * @deprecated No replacement.
 	 */
 	@Deprecated
 	public static IFile getRelatedDiFile(IFile file) {
-		if(file == null) {
+		if (file == null) {
 			return null;
 		}
 		IFile diFile;
-		if(DiModel.MODEL_FILE_EXTENSION.equalsIgnoreCase(file.getFileExtension())) {
+		if (DiModel.MODEL_FILE_EXTENSION.equalsIgnoreCase(file.getFileExtension())) {
 			diFile = file;
 		} else {
 			// Find the correct file
@@ -50,8 +50,8 @@ public class DiModelUtils {
 	 */
 	public static Resource getDiResource(ModelSet modelSet) {
 		IModel diModel = modelSet.getModel(SashModel.MODEL_ID);
-		if(diModel instanceof SashModel) {
-			return ((SashModel)diModel).getResource();
+		if (diModel instanceof SashModel) {
+			return ((SashModel) diModel).getResource();
 		}
 		return null;
 	}

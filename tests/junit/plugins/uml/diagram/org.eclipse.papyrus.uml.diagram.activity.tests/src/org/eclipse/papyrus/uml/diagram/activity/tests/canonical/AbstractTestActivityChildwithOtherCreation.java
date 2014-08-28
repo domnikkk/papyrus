@@ -45,7 +45,7 @@ import org.junit.Before;
  * @use {@link AbstractTestActivityChildNode}
  */
 @Deprecated
-public abstract class AbstractTestActivityChildwithOtherCreation extends org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase {
+public abstract class AbstractTestActivityChildwithOtherCreation extends org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase {
 
 	/** The root compartment. */
 	protected ShapeCompartmentEditPart rootCompartment = null;

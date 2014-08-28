@@ -26,14 +26,14 @@ public class ParametricDiagramPreferenceInitializer extends AbstractPreferenceIn
 	@Override
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = getPreferenceStore();
-		
-		org.eclipse.papyrus.sysml.diagram.parametric.preferences.ConstraintPreferencePage.initDefaults(store);			
-		org.eclipse.papyrus.sysml.diagram.parametric.preferences.CommentPreferencePage.initDefaults(store);			
+
+		org.eclipse.papyrus.sysml.diagram.parametric.preferences.ConstraintPreferencePage.initDefaults(store);
+		org.eclipse.papyrus.sysml.diagram.parametric.preferences.CommentPreferencePage.initDefaults(store);
 		org.eclipse.papyrus.sysml.diagram.parametric.preferences.CommentAnnotatedElementPreferencePage.initDefaults(store);
 		BlockCompositePreferencePage.initDefaults(store);
 		BlockPropertyCompositePreferencePage.initDefaults(store);
 		ConnectorPreferencePage.initDefaults(store);
 		DependencyPreferencePage.initDefaults(store);
-		
+
 	}
 }

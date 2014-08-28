@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class AppliedStereotypeDisplaySection extends AbstractPropertySection {
 	private EModelElement diagramElement;
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -50,7 +50,7 @@ public class AppliedStereotypeDisplaySection extends AbstractPropertySection {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -59,18 +59,18 @@ public class AppliedStereotypeDisplaySection extends AbstractPropertySection {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
-		if(selection instanceof IStructuredSelection) {
-			Object input = ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			Object input = ((IStructuredSelection) selection).getFirstElement();
 
 			diagramElement = NotationHelper.findView(input);
 			Element semanticElement = UMLUtil.resolveUMLElement(input);
-			if(diagramElement != null && semanticElement != null) {
+			if (diagramElement != null && semanticElement != null) {
 				appearanceForAppliedStereotype.setSelection(selection);
 
 				appearanceForAppliedStereotype.setElement(semanticElement);
@@ -88,16 +88,16 @@ public class AppliedStereotypeDisplaySection extends AbstractPropertySection {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.core.ui.properties.tabbed.PropertyViewSection#dispose()
 	 */
 	/**
-	 * 
+	 *
 	 */
 	@Override
 	public void dispose() {
 		super.dispose();
-		if(appearanceForAppliedStereotype != null) {
+		if (appearanceForAppliedStereotype != null) {
 			appearanceForAppliedStereotype.disposeListeners();
 		}
 	}

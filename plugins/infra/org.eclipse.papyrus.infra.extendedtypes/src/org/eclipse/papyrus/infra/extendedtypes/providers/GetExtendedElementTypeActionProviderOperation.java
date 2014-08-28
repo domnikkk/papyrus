@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,9 +26,9 @@ public class GetExtendedElementTypeActionProviderOperation implements IOperation
 
 	/**
 	 * Creates a new {@link GetExtendedElementTypeActionProviderOperation}.
-	 * 
+	 *
 	 * @param actionConfiguration
-	 *        action configuration for the provider to find
+	 *            action configuration for the provider to find
 	 */
 	public GetExtendedElementTypeActionProviderOperation(ActionConfiguration actionConfiguration) {
 		this.actionConfiguration = actionConfiguration;
@@ -43,7 +43,7 @@ public class GetExtendedElementTypeActionProviderOperation implements IOperation
 
 	/**
 	 * Returns the action configuration for this operation
-	 * 
+	 *
 	 * @return the action configuration for this operation
 	 */
 	public ActionConfiguration getActionConfiguration() {

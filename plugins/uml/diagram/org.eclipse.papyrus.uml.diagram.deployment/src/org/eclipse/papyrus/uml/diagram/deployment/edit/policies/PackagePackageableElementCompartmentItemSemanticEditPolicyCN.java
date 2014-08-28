@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -39,44 +39,45 @@ public class PackagePackageableElementCompartmentItemSemanticEditPolicyCN extend
 	/**
 	 * @generated
 	 */
+	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
 		IElementType requestElementType = req.getElementType();
-		if(requestElementType == null) {
+		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
 
 
-		if(UMLElementTypes.Package_36 == requestElementType) {
+		if (UMLElementTypes.Package_36 == requestElementType) {
 
 			return getGEFWrapper(new PackageCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 
 		}
-		if(UMLElementTypes.Artifact_40 == requestElementType) {
+		if (UMLElementTypes.Artifact_40 == requestElementType) {
 
 			return getGEFWrapper(new NestedArtifactNodeCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 
 		}
-		if(UMLElementTypes.Device_44 == requestElementType) {
+		if (UMLElementTypes.Device_44 == requestElementType) {
 
 			return getGEFWrapper(new NestedDeviceCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 
 		}
-		if(UMLElementTypes.ExecutionEnvironment_46 == requestElementType) {
+		if (UMLElementTypes.ExecutionEnvironment_46 == requestElementType) {
 
 			return getGEFWrapper(new NestedExecutionEnvironmentCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 
 		}
-		if(UMLElementTypes.Node_42 == requestElementType) {
+		if (UMLElementTypes.Node_42 == requestElementType) {
 
 			return getGEFWrapper(new NestedNodeCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 
 		}
-		if(UMLElementTypes.Comment_54 == requestElementType) {
+		if (UMLElementTypes.Comment_54 == requestElementType) {
 
 			return getGEFWrapper(new CommentCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 
 		}
-		if(UMLElementTypes.Constraint_56 == requestElementType) {
+		if (UMLElementTypes.Constraint_56 == requestElementType) {
 
 			return getGEFWrapper(new ConstraintCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 

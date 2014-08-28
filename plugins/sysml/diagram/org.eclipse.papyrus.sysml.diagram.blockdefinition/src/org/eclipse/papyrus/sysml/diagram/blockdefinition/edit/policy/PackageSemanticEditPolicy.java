@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -23,29 +23,31 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 import org.eclipse.papyrus.gmf.diagram.common.edit.policy.DefaultSemanticEditPolicy;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
+
 /**
  * this editpolicy allow the move command between semantic element
  *
  */
 
 public class PackageSemanticEditPolicy extends DefaultSemanticEditPolicy {
-	
+
 	/**
 	 * allow the move command between elements
 	 */
-		protected Command getMoveCommand(MoveRequest req) {
-			EObject targetCEObject = req.getTargetContainer();
-			if(targetCEObject != null) {
-				IElementEditService provider = ElementEditServiceUtils.getCommandProvider(targetCEObject);
-				if(provider != null) {
-					ICommand moveCommand = provider.getEditCommand(req);
-					if(moveCommand != null) {
-						return new ICommandProxy(moveCommand);
-					}
+	@Override
+	protected Command getMoveCommand(MoveRequest req) {
+		EObject targetCEObject = req.getTargetContainer();
+		if (targetCEObject != null) {
+			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(targetCEObject);
+			if (provider != null) {
+				ICommand moveCommand = provider.getEditCommand(req);
+				if (moveCommand != null) {
+					return new ICommandProxy(moveCommand);
 				}
-				return UnexecutableCommand.INSTANCE;
-			} else {
-				return getGEFWrapper(new MoveElementsCommand(req));
 			}
+			return UnexecutableCommand.INSTANCE;
+		} else {
+			return getGEFWrapper(new MoveElementsCommand(req));
 		}
+	}
 }

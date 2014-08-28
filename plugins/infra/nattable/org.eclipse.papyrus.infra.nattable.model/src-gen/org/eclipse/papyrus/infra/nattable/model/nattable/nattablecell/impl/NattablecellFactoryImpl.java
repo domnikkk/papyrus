@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -15,18 +15,19 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.*;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Cell;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.EObjectAxisWrapper;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.IdAxisWrapper;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.NattablecellFactory;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.NattablecellPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NattablecellFactoryImpl extends EFactoryImpl implements NattablecellFactory {
@@ -35,13 +36,13 @@ public class NattablecellFactoryImpl extends EFactoryImpl implements Nattablecel
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NattablecellFactory init() {
 		try {
-			NattablecellFactory theNattablecellFactory = (NattablecellFactory)EPackage.Registry.INSTANCE.getEFactory(NattablecellPackage.eNS_URI);
-			if(theNattablecellFactory != null) {
+			NattablecellFactory theNattablecellFactory = (NattablecellFactory) EPackage.Registry.INSTANCE.getEFactory(NattablecellPackage.eNS_URI);
+			if (theNattablecellFactory != null) {
 				return theNattablecellFactory;
 			}
 		} catch (Exception exception) {
@@ -54,7 +55,7 @@ public class NattablecellFactoryImpl extends EFactoryImpl implements Nattablecel
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NattablecellFactoryImpl() {
@@ -64,12 +65,12 @@ public class NattablecellFactoryImpl extends EFactoryImpl implements Nattablecel
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case NattablecellPackage.CELL:
 			return createCell();
 		case NattablecellPackage.EOBJECT_AXIS_WRAPPER:
@@ -84,9 +85,10 @@ public class NattablecellFactoryImpl extends EFactoryImpl implements Nattablecel
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public Cell createCell() {
 		CellImpl cell = new CellImpl();
 		return cell;
@@ -95,9 +97,10 @@ public class NattablecellFactoryImpl extends EFactoryImpl implements Nattablecel
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EObjectAxisWrapper createEObjectAxisWrapper() {
 		EObjectAxisWrapperImpl eObjectAxisWrapper = new EObjectAxisWrapperImpl();
 		return eObjectAxisWrapper;
@@ -106,9 +109,10 @@ public class NattablecellFactoryImpl extends EFactoryImpl implements Nattablecel
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public IdAxisWrapper createIdAxisWrapper() {
 		IdAxisWrapperImpl idAxisWrapper = new IdAxisWrapperImpl();
 		return idAxisWrapper;
@@ -117,17 +121,18 @@ public class NattablecellFactoryImpl extends EFactoryImpl implements Nattablecel
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public NattablecellPackage getNattablecellPackage() {
-		return (NattablecellPackage)getEPackage();
+		return (NattablecellPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -136,4 +141,4 @@ public class NattablecellFactoryImpl extends EFactoryImpl implements Nattablecel
 		return NattablecellPackage.eINSTANCE;
 	}
 
-} //NattablecellFactoryImpl
+} // NattablecellFactoryImpl

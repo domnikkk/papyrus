@@ -28,7 +28,7 @@ import org.eclipse.ui.PlatformUI;
 public class WorkbenchPartHelper {
 
 	private WorkbenchPartHelper() {
-		//nothing to do
+		// nothing to do
 	}
 
 	/**
@@ -38,11 +38,11 @@ public class WorkbenchPartHelper {
 	 */
 	public static final IWorkbenchPart getCurrentActiveWorkbenchPart() {
 		final IWorkbench workbench = PlatformUI.getWorkbench();
-		if(workbench != null) {
+		if (workbench != null) {
 			final IWorkbenchWindow activeWorkbench = workbench.getActiveWorkbenchWindow();
-			if(activeWorkbench != null) {
+			if (activeWorkbench != null) {
 				final IWorkbenchPage activePage = activeWorkbench.getActivePage();
-				if(activePage != null) {
+				if (activePage != null) {
 					return activePage.getActivePart();
 				}
 			}
@@ -57,11 +57,11 @@ public class WorkbenchPartHelper {
 	 */
 	public static final IEditorPart getCurrentActiveEditorPart() {
 		final IWorkbench workbench = PlatformUI.getWorkbench();
-		if(workbench != null) {
+		if (workbench != null) {
 			final IWorkbenchWindow activeWorkbench = workbench.getActiveWorkbenchWindow();
-			if(activeWorkbench != null) {
+			if (activeWorkbench != null) {
 				final IWorkbenchPage activePage = activeWorkbench.getActivePage();
-				if(activePage != null) {
+				if (activePage != null) {
 					return activePage.getActiveEditor();
 				}
 			}

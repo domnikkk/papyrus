@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,18 +15,27 @@ package org.eclipse.papyrus.facade.virtualmetamodel.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.papyrus.facade.virtualmetamodel.*;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualClassifier;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualDatatype;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualEnum;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualLiteral;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualOperation;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualParameter;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage
  * @generated
  */
@@ -35,6 +44,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static VirtualmetamodelPackage modelPackage;
@@ -43,6 +53,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public VirtualmetamodelAdapterFactory() {
@@ -56,6 +67,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -65,7 +77,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -74,71 +86,85 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected VirtualmetamodelSwitch<Adapter> modelSwitch =
-		new VirtualmetamodelSwitch<Adapter>() {
-			@Override
-			public Adapter caseVirtualMetamodel(VirtualMetamodel object) {
-				return createVirtualMetamodelAdapter();
-			}
-			@Override
-			public Adapter caseVirtualElement(VirtualElement object) {
-				return createVirtualElementAdapter();
-			}
-			@Override
-			public Adapter caseVirtualClassifier(VirtualClassifier object) {
-				return createVirtualClassifierAdapter();
-			}
-			@Override
-			public Adapter caseVirtualMetaclass(VirtualMetaclass object) {
-				return createVirtualMetaclassAdapter();
-			}
-			@Override
-			public Adapter caseVirtualProperty(VirtualProperty object) {
-				return createVirtualPropertyAdapter();
-			}
-			@Override
-			public Adapter caseVirtualOperation(VirtualOperation object) {
-				return createVirtualOperationAdapter();
-			}
-			@Override
-			public Adapter caseVirtualParameter(VirtualParameter object) {
-				return createVirtualParameterAdapter();
-			}
-			@Override
-			public Adapter caseVirtualDatatype(VirtualDatatype object) {
-				return createVirtualDatatypeAdapter();
-			}
-			@Override
-			public Adapter caseVirtualEnum(VirtualEnum object) {
-				return createVirtualEnumAdapter();
-			}
-			@Override
-			public Adapter caseVirtualLiteral(VirtualLiteral object) {
-				return createVirtualLiteralAdapter();
-			}
-			@Override
-			public Adapter caseVirtualTypedElement(VirtualTypedElement object) {
-				return createVirtualTypedElementAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new VirtualmetamodelSwitch<Adapter>() {
+				@Override
+				public Adapter caseVirtualMetamodel(VirtualMetamodel object) {
+					return createVirtualMetamodelAdapter();
+				}
+
+				@Override
+				public Adapter caseVirtualElement(VirtualElement object) {
+					return createVirtualElementAdapter();
+				}
+
+				@Override
+				public Adapter caseVirtualClassifier(VirtualClassifier object) {
+					return createVirtualClassifierAdapter();
+				}
+
+				@Override
+				public Adapter caseVirtualMetaclass(VirtualMetaclass object) {
+					return createVirtualMetaclassAdapter();
+				}
+
+				@Override
+				public Adapter caseVirtualProperty(VirtualProperty object) {
+					return createVirtualPropertyAdapter();
+				}
+
+				@Override
+				public Adapter caseVirtualOperation(VirtualOperation object) {
+					return createVirtualOperationAdapter();
+				}
+
+				@Override
+				public Adapter caseVirtualParameter(VirtualParameter object) {
+					return createVirtualParameterAdapter();
+				}
+
+				@Override
+				public Adapter caseVirtualDatatype(VirtualDatatype object) {
+					return createVirtualDatatypeAdapter();
+				}
+
+				@Override
+				public Adapter caseVirtualEnum(VirtualEnum object) {
+					return createVirtualEnumAdapter();
+				}
+
+				@Override
+				public Adapter caseVirtualLiteral(VirtualLiteral object) {
+					return createVirtualLiteralAdapter();
+				}
+
+				@Override
+				public Adapter caseVirtualTypedElement(VirtualTypedElement object) {
+					return createVirtualTypedElementAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 *
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -148,6 +174,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel
 	 * @generated
@@ -162,6 +189,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement
 	 * @generated
@@ -176,6 +204,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualClassifier
 	 * @generated
@@ -190,6 +219,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass
 	 * @generated
@@ -204,6 +234,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty
 	 * @generated
@@ -218,6 +249,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualOperation
 	 * @generated
@@ -232,6 +264,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualParameter
 	 * @generated
@@ -246,6 +279,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualDatatype
 	 * @generated
@@ -260,6 +294,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualEnum
 	 * @generated
@@ -274,6 +309,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualLiteral
 	 * @generated
@@ -288,6 +324,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement
 	 * @generated
@@ -301,6 +338,7 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -308,4 +346,4 @@ public class VirtualmetamodelAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //VirtualmetamodelAdapterFactory
+} // VirtualmetamodelAdapterFactory

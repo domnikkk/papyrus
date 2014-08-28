@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,7 +55,7 @@ public class GateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param elementType
 	 */
 	public GateItemSemanticEditPolicy() {
@@ -64,38 +64,39 @@ public class GateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.SemanticEditPolicy#getSemanticCommand(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	protected Command getSemanticCommand(IEditCommandRequest request) {
-		if(request instanceof CreateRelationshipRequest) {
-			return getCreateRelationshipCommand((CreateRelationshipRequest)request);
-		} else if(request instanceof ReorientReferenceRelationshipRequest) {
-			return getReorientReferenceRelationshipCommand((ReorientReferenceRelationshipRequest)request);
-		} else if(request instanceof ReorientRelationshipRequest) {
-			return getReorientRelationshipCommand((ReorientRelationshipRequest)request);
+		if (request instanceof CreateRelationshipRequest) {
+			return getCreateRelationshipCommand((CreateRelationshipRequest) request);
+		} else if (request instanceof ReorientReferenceRelationshipRequest) {
+			return getReorientReferenceRelationshipCommand((ReorientReferenceRelationshipRequest) request);
+		} else if (request instanceof ReorientRelationshipRequest) {
+			return getReorientRelationshipCommand((ReorientRelationshipRequest) request);
 		}
 		IEditCommandRequest completedRequest = completeRequest(request);
 		Command semanticCommand = getSemanticCommandSwitch(completedRequest);
-		if(completedRequest instanceof DestroyRequest) {
-			DestroyRequest destroyRequest = (DestroyRequest)completedRequest;
+		if (completedRequest instanceof DestroyRequest) {
+			DestroyRequest destroyRequest = (DestroyRequest) completedRequest;
 			return shouldProceed(destroyRequest) ? addDeleteViewCommand(semanticCommand, destroyRequest) : null;
 		}
 		return semanticCommand;
 	}
 
+	@Override
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		EObject selectedEObject = req.getElementToDestroy();
-		if(selectedEObject instanceof Gate && ((Gate)selectedEObject).getMessage() != null) {
+		if (selectedEObject instanceof Gate && ((Gate) selectedEObject).getMessage() != null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(selectedEObject);
-		if(provider != null) {
+		if (provider != null) {
 			// Retrieve delete command from the Element Edit service
 			ICommand deleteCommand = provider.getEditCommand(req);
-			if(deleteCommand != null) {
+			if (deleteCommand != null) {
 				return new ICommandProxy(deleteCommand);
 			}
 		}
@@ -106,8 +107,9 @@ public class GateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 	 * @param request
 	 * @return
 	 */
+	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case MessageEditPart.VISUAL_ID:
 			return getGEFWrapper(new CustomMessageReorientCommand(req));
 		case Message2EditPart.VISUAL_ID:
@@ -130,6 +132,7 @@ public class GateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 	 * @param request
 	 * @return
 	 */
+	@Override
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest request) {
 		return super.getReorientReferenceRelationshipCommand(request);
 	}
@@ -138,14 +141,15 @@ public class GateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 	 * @param request
 	 * @return
 	 */
+	@Override
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Message_4004 == req.getElementType()) {
+		if (UMLElementTypes.Message_4004 == req.getElementType()) {
 			return new ICommandProxy(new CustomMessage2CreateCommand(req, req.getSource(), req.getTarget()));
-		} else if(UMLElementTypes.Message_4005 == req.getElementType()) {
+		} else if (UMLElementTypes.Message_4005 == req.getElementType()) {
 			return new ICommandProxy(new CustomMessage3CreateCommand(req, req.getSource(), req.getTarget()));
-		} else if(UMLElementTypes.Message_4008 == req.getElementType()) {
+		} else if (UMLElementTypes.Message_4008 == req.getElementType()) {
 			return new ICommandProxy(new CustomMessage6CreateCommand(req, req.getSource(), req.getTarget()));
-		} else if(UMLElementTypes.Message_4009 == req.getElementType()) {
+		} else if (UMLElementTypes.Message_4009 == req.getElementType()) {
 			return new ICommandProxy(new CustomMessage7CreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getCreateRelationshipCommand(req);

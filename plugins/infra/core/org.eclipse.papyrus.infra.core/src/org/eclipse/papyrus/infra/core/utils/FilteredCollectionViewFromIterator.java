@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import java.util.NoSuchElementException;
 /**
  * A unmodifiable view on a specified list from its iterator. The view filters
  * the original list according to the provided filter.
- * 
+ *
  * @param <E>
- *        the type of objects in the filtered collection
+ *            the type of objects in the filtered collection
  */
 public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E> implements Collection<E> {
 
@@ -34,7 +34,7 @@ public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E>
 	private IteratorProvider<E> iter;
 
 	/**
-	 * 
+	 *
 	 */
 	private IFilter filter;
 
@@ -45,11 +45,11 @@ public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E>
 	private int size = -1;
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param filter
 	 * @param list
-	 *        *
+	 *            *
 	 * @param iter
 	 */
 	public FilteredCollectionViewFromIterator(IteratorProvider<E> iter, IFilter filter) {
@@ -59,17 +59,17 @@ public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E>
 
 	/**
 	 * Sets the value of the list property.
-	 * 
+	 *
 	 * @param iter
-	 *        the new value of the list property
+	 *            the new value of the list property
 	 */
 	public void setBackupCollection(IteratorProvider<E> iter) {
 		this.iter = iter;
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
 	Iterator<E> getBackupIterator() {
@@ -78,9 +78,9 @@ public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E>
 
 	/**
 	 * Sets the value of the filter property.
-	 * 
+	 *
 	 * @param aFilter
-	 *        the new value of the filter property
+	 *            the new value of the filter property
 	 */
 	public void setFilter(IFilter aFilter) {
 		filter = aFilter;
@@ -88,7 +88,7 @@ public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E>
 
 	/**
 	 * Sets the value of the filter property.
-	 * 
+	 *
 	 * @return the new value of the filter property
 	 */
 	public IFilter getFilter() {
@@ -97,15 +97,15 @@ public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E>
 
 	/**
 	 * size.
-	 * 
+	 *
 	 * @return int
 	 */
 	@Override
 	public int size() {
-		if(size == -1) { // compute the size
+		if (size == -1) { // compute the size
 			size = 0;
 			Iterator<E> i = iterator();
-			while(i.hasNext()) {
+			while (i.hasNext()) {
 				size++;
 				i.next();
 			}
@@ -120,18 +120,18 @@ public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E>
 	 * Returns <tt>true</tt> if the collection contained the specified element
 	 * (or equivalently, if the collection changed as a result of the call).
 	 * <p>
-	 * 
+	 *
 	 * This implementation call the remove method on the underlying collection.
 	 * <p>
-	 * 
+	 *
 	 * @param o
-	 *        element to be removed from this collection, if present.
-	 * 
+	 *            element to be removed from this collection, if present.
+	 *
 	 * @return <tt>true</tt> if the collection contained the specified element.
-	 * 
+	 *
 	 * @throws UnsupportedOperationException
-	 *         if the <tt>remove</tt> method is not supported by this
-	 *         collection.
+	 *             if the <tt>remove</tt> method is not supported by this
+	 *             collection.
 	 */
 	@Override
 	public boolean remove(Object o) {
@@ -143,11 +143,11 @@ public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E>
 	 * Return the value to be returned by the iterator.next() method. This
 	 * method can be overloaded by subclasses in order to return another value
 	 * than the objects belonging to the underlying list.
-	 * 
+	 *
 	 * @param ele
-	 *        The iterated object. This is the object iterated inside the
-	 *        underlying list.
-	 * 
+	 *            The iterated object. This is the object iterated inside the
+	 *            underlying list.
+	 *
 	 * @return
 	 */
 	protected E returnedValue(E ele) {
@@ -156,10 +156,10 @@ public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E>
 
 	/**
 	 * listIterator.
-	 * 
+	 *
 	 * @param index
-	 *        int
-	 * 
+	 *            int
+	 *
 	 * @return ListIterator
 	 */
 	@Override
@@ -168,22 +168,22 @@ public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E>
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	private class FilteredIterator implements Iterator<E> {
 
 		/**
-		 * 
+		 *
 		 */
 		E next;
 
 		/**
-		 * 
+		 *
 		 */
 		Iterator<E> listIterator;
 
 		/**
-		 * 
+		 *
 		 */
 		public FilteredIterator() {
 			listIterator = getBackupIterator();
@@ -193,19 +193,20 @@ public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E>
 		/**
 		 * remove.
 		 */
+		@Override
 		public void remove() {
 			throw new UnsupportedOperationException();
 		}
 
 		/**
-		 * 
-		 * 
+		 *
+		 *
 		 * @return
 		 */
 		protected E nextFilteredObject() {
-			while(listIterator.hasNext()) {
+			while (listIterator.hasNext()) {
 				E ele = listIterator.next();
-				if(filter.isAllowed(ele)) {
+				if (filter.isAllowed(ele)) {
 					return returnedValue(ele);
 				}
 			} // end loop
@@ -214,9 +215,10 @@ public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E>
 
 		/**
 		 * hasNext.
-		 * 
+		 *
 		 * @return boolean
 		 */
+		@Override
 		public boolean hasNext() {
 			return next != null;
 		}
@@ -224,11 +226,12 @@ public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E>
 		/**
 		 * Compute the next field (null or next value), and return the previous
 		 * value of the next field.
-		 * 
+		 *
 		 * @return Object
 		 */
+		@Override
 		public E next() {
-			if(next == null) {
+			if (next == null) {
 				throw new NoSuchElementException();
 			}
 			E ele = next;
@@ -246,7 +249,7 @@ public class FilteredCollectionViewFromIterator<E> extends AbstractCollection<E>
 
 		/**
 		 * provide a new iterator over the list.
-		 * 
+		 *
 		 * @return
 		 */
 		Iterator<E> iterator();

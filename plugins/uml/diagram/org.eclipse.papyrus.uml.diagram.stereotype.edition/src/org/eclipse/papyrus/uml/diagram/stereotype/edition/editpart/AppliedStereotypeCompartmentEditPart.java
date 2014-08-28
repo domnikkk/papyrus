@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.uml.diagram.stereotype.edition.editpart;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.OrderedLayout;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPolicy;
@@ -55,7 +56,7 @@ public class AppliedStereotypeCompartmentEditPart extends ResizeableListCompartm
 	public String getCompartmentName() {
 
 		Stereotype stereotype = UMLUtil.getStereotype(this.resolveSemanticElement());
-		if(stereotype != null) {
+		if (stereotype != null) {
 			return "" + String.valueOf("\u00AB") + stereotype.getName() + String.valueOf("\u00BB");
 		}
 		return "bad compartement stereotype";
@@ -65,32 +66,32 @@ public class AppliedStereotypeCompartmentEditPart extends ResizeableListCompartm
 	/**
 	 * this method has bee rewritten in order to add its wn figure to ensure to mange it
 	 * in papyrus Figure.
-	 * 
+	 *
 	 * Adds a constrained flow layout algorithm to the content pane of compartment figure
-	 * 
+	 *
 	 * @see org.eclipse.gef.editparts.AbstractGraphicalEditPart#createFigure()
 	 */
 	@Override
 	public IFigure createFigure() {
 		ResizableCompartmentFigure rcf;
-		if(getParent() == getTopGraphicEditPart()) {
-			//replace ResizableCompartmentFigure by it own figure in order to manage it.
+		if (getParent() == getTopGraphicEditPart()) {
+			// replace ResizableCompartmentFigure by it own figure in order to manage it.
 			rcf = new AppliedStereotypeCompartmentFigure(getCompartmentName(), getMapMode());
 		} else {
 			rcf = new NestedResizableCompartmentFigure(getMapMode());
 
 		}
-		if(this.getParent() instanceof AppliedStereotypesCommentEditPart) {
+		if (this.getParent() instanceof AppliedStereotypesCommentEditPart) {
 			rcf.setBorder(null);
-			if(rcf.getTextPane().getChildren().size() > 0 && rcf.getTextPane().getChildren().get(0) instanceof WrappingLabel) {
-				WrappingLabel label = (WrappingLabel)rcf.getTextPane().getChildren().get(0);
+			if (rcf.getTextPane().getChildren().size() > 0 && rcf.getTextPane().getChildren().get(0) instanceof WrappingLabel) {
+				WrappingLabel label = (WrappingLabel) rcf.getTextPane().getChildren().get(0);
 				label.setAlignment(PositionConstants.LEFT);
 			}
 		}
 		ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
 		layout.setStretchMajorAxis(false);
 		layout.setStretchMinorAxis(false);
-		layout.setMinorAlignment(ConstrainedToolbarLayout.ALIGN_TOPLEFT);
+		layout.setMinorAlignment(OrderedLayout.ALIGN_TOPLEFT);
 		rcf.getContentPane().setLayoutManager(layout);
 
 
@@ -99,9 +100,9 @@ public class AppliedStereotypeCompartmentEditPart extends ResizeableListCompartm
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart#createDefaultEditPolicies()
-	 * 
+	 *
 	 */
 	@Override
 	protected void createDefaultEditPolicies() {
@@ -115,50 +116,50 @@ public class AppliedStereotypeCompartmentEditPart extends ResizeableListCompartm
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ResizableCompartmentEditPart#setRatio(java.lang.Double)
-	 * 
+	 *
 	 * @param ratio
 	 */
 	@Override
 	protected void setRatio(Double ratio) {
-		if(getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
+		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.editpart.ResizeableListCompartmentEditPart#handleNotificationEvent(org.eclipse.emf.common.notify.Notification)
-	 * 
+	 *
 	 * @param notification
 	 */
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
 		Object feature = notification.getFeature();
-		if(NotationPackage.eINSTANCE.getSize_Width().equals(feature) || NotationPackage.eINSTANCE.getSize_Height().equals(feature) || NotationPackage.eINSTANCE.getLocation_X().equals(feature) || NotationPackage.eINSTANCE.getLocation_Y().equals(feature)) {
+		if (NotationPackage.eINSTANCE.getSize_Width().equals(feature) || NotationPackage.eINSTANCE.getSize_Height().equals(feature) || NotationPackage.eINSTANCE.getLocation_X().equals(feature) || NotationPackage.eINSTANCE.getLocation_Y().equals(feature)) {
 			refreshBounds();
 		}
-		
-		// before to be suppressed by its owner, the associate EObject can be UNSET, so refresh is prevented 
-		if(resolveSemanticElement()!=null){
+
+		// before to be suppressed by its owner, the associate EObject can be UNSET, so refresh is prevented
+		if (resolveSemanticElement() != null) {
 			super.handleNotificationEvent(notification);
 		}
 	}
 
 	@Override
 	protected void refreshBounds() {
-		//int width = ((GraphicalEditPart)getParent()).getFigure().getBounds().getSize().width;
-		//int height = 20;
-		//Dimension size = new Dimension(width, height);
-		//Point loc = new Point(10, 10);
-		//((GraphicalEditPart)getParent()).setLayoutConstraint(this, getFigure(), new Rectangle(loc, size));
+		// int width = ((GraphicalEditPart)getParent()).getFigure().getBounds().getSize().width;
+		// int height = 20;
+		// Dimension size = new Dimension(width, height);
+		// Point loc = new Point(10, 10);
+		// ((GraphicalEditPart)getParent()).setLayoutConstraint(this, getFigure(), new Rectangle(loc, size));
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.editpart.ResizeableListCompartmentEditPart#refreshVisuals()
-	 * 
+	 *
 	 */
 	@Override
 	protected void refreshVisuals() {

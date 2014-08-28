@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ public class CustomCreateElementRequestAdapter extends org.eclipse.gmf.runtime.d
 
 	/**
 	 * Constructs a new adapter.
-	 * 
+	 *
 	 * @param createElementRequest
 	 *            the request to create a new element.
 	 */
@@ -46,7 +46,7 @@ public class CustomCreateElementRequestAdapter extends org.eclipse.gmf.runtime.d
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
 	 */
 	public Object getAdapter(java.lang.Class<?> adapter, int i) {
@@ -68,7 +68,7 @@ public class CustomCreateElementRequestAdapter extends org.eclipse.gmf.runtime.d
 
 	/**
 	 * Gets the new element that has been created in response to this request.
-	 * 
+	 *
 	 * @return the new element
 	 */
 	private EObject getNewElement(int i) {
@@ -81,7 +81,7 @@ public class CustomCreateElementRequestAdapter extends org.eclipse.gmf.runtime.d
 
 	/**
 	 * Gets the element type for the new element.
-	 * 
+	 *
 	 * @return the element type
 	 */
 	private IElementType getElementType(int i) {
@@ -90,7 +90,7 @@ public class CustomCreateElementRequestAdapter extends org.eclipse.gmf.runtime.d
 
 	/**
 	 * Sets the new element that has been created in response to this request.
-	 * 
+	 *
 	 * @param newElement
 	 *            the new element
 	 */
@@ -108,7 +108,7 @@ public class CustomCreateElementRequestAdapter extends org.eclipse.gmf.runtime.d
 
 	/**
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.core.internal.util.IProxyEObject#getProxyClassID()
 	 */
 	public Object getProxyClassID(int i) {
@@ -117,7 +117,7 @@ public class CustomCreateElementRequestAdapter extends org.eclipse.gmf.runtime.d
 
 	/**
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.core.internal.util.IProxyEObject#resolve()
 	 */
 	public EObject resolve(int i) {
@@ -125,7 +125,7 @@ public class CustomCreateElementRequestAdapter extends org.eclipse.gmf.runtime.d
 	}
 
 	/**
-	 * 
+	 *
 	 * @param i
 	 * @return the request adapter or null
 	 */
@@ -141,7 +141,7 @@ public class CustomCreateElementRequestAdapter extends org.eclipse.gmf.runtime.d
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the list of the requestAdapter
 	 */
 	public ArrayList<CreateElementRequestAdapter> getRequestAdapters() {

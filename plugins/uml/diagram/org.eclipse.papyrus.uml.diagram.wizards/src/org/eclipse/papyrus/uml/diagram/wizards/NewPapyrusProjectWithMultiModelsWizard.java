@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,11 +26,11 @@ public class NewPapyrusProjectWithMultiModelsWizard extends NewPapyrusProjectWiz
 
 	/** The my do not create model for no diagrams. */
 	private boolean myDoNotCreateModelForNoDiagrams;
-	
+
 	/** The Constant WIZARD_ID. */
 	public static final String WIZARD_ID = "org.eclipse.papyrus.uml.diagram.wizards.1createproject.several"; //$NON-NLS-1$
 
-	
+
 	/**
 	 * Instantiates a new new papyrus project with multi models wizard.
 	 */
@@ -41,18 +41,21 @@ public class NewPapyrusProjectWithMultiModelsWizard extends NewPapyrusProjectWiz
 	/**
 	 * Instantiates a new new papyrus project with multi models wizard.
 	 *
-	 * @param doNotCreateModelForNoDiagrams the do not create model for no diagrams
+	 * @param doNotCreateModelForNoDiagrams
+	 *            the do not create model for no diagrams
 	 */
 	public NewPapyrusProjectWithMultiModelsWizard(boolean doNotCreateModelForNoDiagrams) {
 		myDoNotCreateModelForNoDiagrams = doNotCreateModelForNoDiagrams;
 	}
-	
+
 	@Override
 	public boolean isCreateMultipleModelsWizard() {
 		return true;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.wizards.CreateModelWizard#createSelectDiagramCategoryPage()
 	 */
 	@Override
@@ -63,8 +66,7 @@ public class NewPapyrusProjectWithMultiModelsWizard extends NewPapyrusProjectWiz
 	/**
 	 * Perform finish.
 	 *
-	 * @return true, if successful
-	 * {@inheritDoc}
+	 * @return true, if successful {@inheritDoc}
 	 */
 	@Override
 	public boolean performFinish() {
@@ -78,8 +80,8 @@ public class NewPapyrusProjectWithMultiModelsWizard extends NewPapyrusProjectWiz
 		if (newProjectHandle == null) {
 			return false;
 		}
-		for (String category: getDiagramCategoryIds()) {
-			if (myDoNotCreateModelForNoDiagrams && getPrototypesFor(category).isEmpty()){
+		for (String category : getDiagramCategoryIds()) {
+			if (myDoNotCreateModelForNoDiagrams && getPrototypesFor(category).isEmpty()) {
 				// don't create model
 				continue;
 			}

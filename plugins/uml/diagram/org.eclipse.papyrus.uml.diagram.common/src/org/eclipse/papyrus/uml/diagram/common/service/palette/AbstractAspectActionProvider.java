@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,12 +30,12 @@ public abstract class AbstractAspectActionProvider extends AbstractProvider impl
 
 	/** field for identifier */
 	protected static final String ID = "id";
-	
+
 	/** field for description */
 	protected static final String DESCRIPTION = "description";
 
 	/** field for Activator ID */
-	protected String bundleId ;
+	protected String bundleId;
 
 	/** name for the factory */
 	protected String name;
@@ -52,6 +52,7 @@ public abstract class AbstractAspectActionProvider extends AbstractProvider impl
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public boolean provides(IOperation operation) {
 		return (operation instanceof GetAllAspectToolProvidersOperation || operation instanceof GetAspectToolProviderOperation);
 	}
@@ -59,6 +60,7 @@ public abstract class AbstractAspectActionProvider extends AbstractProvider impl
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public String getFactoryId() {
 		return id;
 	}
@@ -66,6 +68,7 @@ public abstract class AbstractAspectActionProvider extends AbstractProvider impl
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public Image getImage() {
 		return Activator.getPluginIconImage(bundleId, iconPath);
 	}
@@ -73,6 +76,7 @@ public abstract class AbstractAspectActionProvider extends AbstractProvider impl
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -80,6 +84,7 @@ public abstract class AbstractAspectActionProvider extends AbstractProvider impl
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public void setConfiguration(IConfigurationElement configElement) {
 		// retrieve name
 		name = configElement.getAttribute(NAME);

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,9 +36,9 @@ import org.eclipse.uml2.uml.ActivityEdge;
  * This common is deferred this mean that the command will be created and executed in the doExecuteCommand.
  * This can prevent undo however this way drag and drop works
  * In order to make this command to work the target EditPart has to implement {@link InterruptibleEdge}
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class DeferredInterruptibleEdgeCommand extends AbstractTransactionalCommand {
 
@@ -64,14 +64,14 @@ public class DeferredInterruptibleEdgeCommand extends AbstractTransactionalComma
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Object connectionEditPart = hostEditPart.getViewer().getEditPartRegistry().get(descriptor.getAdapter(View.class));
-		if(connectionEditPart instanceof IGraphicalEditPart && connectionEditPart instanceof InterruptibleEdge) {
+		if (connectionEditPart instanceof IGraphicalEditPart && connectionEditPart instanceof InterruptibleEdge) {
 			InterruptibleEdgeRequest request = new InterruptibleEdgeRequest();
 			request.setType(InterruptibleEdgeRequest.SET_INTERRUPTIBLE_EDGE);
-			Command cmd = ((IGraphicalEditPart)connectionEditPart).getCommand(request);
-			if(cmd != null && cmd.canExecute()) {
+			Command cmd = ((IGraphicalEditPart) connectionEditPart).getCommand(request);
+			if (cmd != null && cmd.canExecute()) {
 				cmd.execute();
 			} else {
-				return CommandResult.newErrorCommandResult("Unable to the the target Editpart as Interruptible Edge");////$NON-NLS-0$
+				return CommandResult.newErrorCommandResult("Unable to the the target Editpart as Interruptible Edge");//
 			}
 		}
 		return CommandResult.newOKCommandResult();

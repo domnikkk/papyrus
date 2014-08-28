@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -52,7 +52,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * Allocate elements in a deployment plan to a node or thread
- * 
+ *
  */
 public class AllocationDialog extends SelectionStatusDialog {
 
@@ -74,7 +74,8 @@ public class AllocationDialog extends SelectionStatusDialog {
 		nodeOrThreadList = new BasicEList<InstanceSpecification>();
 		nodeOrThreadList.add(null); // dummy entry for no allocation
 		DepUtils.getAllInstances(cdp.getModel(), nodeOrThreadList, new ElementFilter() {
-			
+
+			@Override
 			public boolean acceptElement(Element element) {
 				if (element instanceof InstanceSpecification) {
 					InstanceSpecification instance = (InstanceSpecification) element;
@@ -83,8 +84,8 @@ public class AllocationDialog extends SelectionStatusDialog {
 						return false;
 					}
 					Classifier cl = DepUtils.getClassifier(instance);
-					if(cl instanceof Class) {
-						if(StereotypeUtil.isApplied(cl, SwSchedulableResource.class)) {
+					if (cl instanceof Class) {
+						if (StereotypeUtil.isApplied(cl, SwSchedulableResource.class)) {
 							// threads are valid allocation targets. Therefore, threads are always added to
 							// list, even if within a deployment plan.
 							return true;
@@ -104,12 +105,14 @@ public class AllocationDialog extends SelectionStatusDialog {
 	/**
 	 * @see SelectionStatusDialog#computeResult()
 	 */
+	@Override
 	protected void computeResult() {
 		// nothing to do
 	}
 
+	@Override
 	public Control createDialogArea(Composite parent) {
-		Composite contents = (Composite)super.createDialogArea(parent);
+		Composite contents = (Composite) super.createDialogArea(parent);
 		// (parent, "Container rules", "Avail. extensions/interceptors");
 
 		fTree = new Tree(contents, SWT.H_SCROLL | SWT.BORDER);
@@ -141,7 +144,7 @@ public class AllocationDialog extends SelectionStatusDialog {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(fTree.getSelection().length > 0) {
+				if (fTree.getSelection().length > 0) {
 					selectInstance(fTree.getSelection()[0]);
 				}
 			}
@@ -157,13 +160,13 @@ public class AllocationDialog extends SelectionStatusDialog {
 
 	/**
 	 * Helper method to fill a tree with data
-	 * 
+	 *
 	 * @param tree
-	 *        the tree to fill
+	 *            the tree to fill
 	 */
 	private void fillTree(Tree tree, TreeItem treeItem, InstanceSpecification is) {
 		TreeItem item;
-		if(treeItem != null) {
+		if (treeItem != null) {
 			item = new TreeItem(treeItem, SWT.NONE);
 		} else {
 			item = new TreeItem(tree, SWT.NONE);
@@ -172,7 +175,7 @@ public class AllocationDialog extends SelectionStatusDialog {
 		setTextFromData(item);
 
 		// create children
-		for(InstanceSpecification subIS : DepUtils.getContainedNonSharedInstances(is)) {
+		for (InstanceSpecification subIS : DepUtils.getContainedNonSharedInstances(is)) {
 			fillTree(tree, item, subIS);
 		}
 	}
@@ -180,50 +183,50 @@ public class AllocationDialog extends SelectionStatusDialog {
 	// obtain name and explicit/implicit node Allocation
 	protected void setTextFromData(TreeItem ti) {
 		Object data = ti.getData();
-		if(data instanceof InstanceSpecification) {
-			InstanceSpecification is = (InstanceSpecification)data;
+		if (data instanceof InstanceSpecification) {
+			InstanceSpecification is = (InstanceSpecification) data;
 
 			String name = is.getName();
 			int index = name.lastIndexOf("."); //$NON-NLS-1$
-			if(index != -1) {
+			if (index != -1) {
 				name = name.substring(index + 1);
 			}
 			InstanceSpecification explicitNodeOrThread = AllocUtils.getNodeOrThread(is);
 			Classifier cl = DepUtils.getClassifier(is);
 			String nodeName;
-			if(explicitNodeOrThread == null) {
+			if (explicitNodeOrThread == null) {
 				nodeName = "-"; //$NON-NLS-1$
 			} else {
 				nodeName = getAllocName(explicitNodeOrThread);
 			}
-			if(cl instanceof Class) {
-				if(BootLoaderGen.hasUnconnectedStartRoutine(null, (Class)cl, null)) {
+			if (cl instanceof Class) {
+				if (BootLoaderGen.hasUnconnectedStartRoutine(null, (Class) cl, null)) {
 					nodeName += " (main)"; //$NON-NLS-1$
 				}
 			}
 			EList<InstanceSpecification> implicitNodes = AllocUtils.getAllNodesOrThreadsParent(is);
 			implicitNodes.addAll(AllocUtils.getAllNodesOrThreadsParent(is));
 			String list = ""; //$NON-NLS-1$
-			for(InstanceSpecification node : implicitNodes) {
-				if(list.equals("")) { //$NON-NLS-1$
+			for (InstanceSpecification node : implicitNodes) {
+				if (list.equals("")) { //$NON-NLS-1$
 					list = getAllocName(node);
 				} else {
 					list += ", " + getAllocName(node); //$NON-NLS-1$
 				}
 			}
-			ti.setText(new String[]{ name, nodeName, "[" + list + "]" });  //$NON-NLS-1$//$NON-NLS-2$
+			ti.setText(new String[] { name, nodeName, "[" + list + "]" }); //$NON-NLS-1$//$NON-NLS-2$
 		}
 	}
 
 	protected void refreshTree(TreeItem ti) {
 		setTextFromData(ti);
-		for(TreeItem subItem : ti.getItems()) {
+		for (TreeItem subItem : ti.getItems()) {
 			refreshTree(subItem);
 		}
 	}
 
 	private String getAllocName(InstanceSpecification nodeOrThread) {
-		if(nodeOrThread == null) {
+		if (nodeOrThread == null) {
 			return "no explicit allocation";
 		} else {
 			String name = nodeOrThread.getName();
@@ -235,21 +238,22 @@ public class AllocationDialog extends SelectionStatusDialog {
 	protected void createAllocInfo(Composite parent) {
 		// create extension kind combo
 		fAlloc = DialogUtils.createComboWithText(parent, "Alloc to node:",
-			SWT.DROP_DOWN | SWT.READ_ONLY, SWT.NONE);
+				SWT.DROP_DOWN | SWT.READ_ONLY, SWT.NONE);
 
 		String items[] = new String[nodeOrThreadList.size()];
 		int i = 0;
-		for(InstanceSpecification nodeOrThread : nodeOrThreadList) {
+		for (InstanceSpecification nodeOrThread : nodeOrThreadList) {
 			items[i++] = getAllocName(nodeOrThread);
 		}
 		fAlloc.setItems(items);
 		fAlloc.addSelectionListener(new SelectionAdapter() {
 
+			@Override
 			public void widgetSelected(SelectionEvent event) {
-				if(currentIS != null) {
+				if (currentIS != null) {
 					updateAllocation(currentIS, fAlloc.getSelectionIndex());
 					// selectionCount should always be 1
-					for(TreeItem ti : fTree.getSelection()) {
+					for (TreeItem ti : fTree.getSelection()) {
 						refreshTree(ti);
 					}
 				}
@@ -261,21 +265,21 @@ public class AllocationDialog extends SelectionStatusDialog {
 
 	/**
 	 * Select a rule, i.e. update the visual representation from the rule
-	 * 
+	 *
 	 * @param rule
 	 */
 	protected void selectInstance(TreeItem item) {
 		// for (Port port : rule.getPortSet ()) {
-		//	fPorts.setSelection()
+		// fPorts.setSelection()
 		// }
-		currentIS = (InstanceSpecification)item.getData();
+		currentIS = (InstanceSpecification) item.getData();
 		fLabel.setText(currentIS.getName());
 
 		fAlloc.setEnabled(true);
 		InstanceSpecification nodeOrThread = AllocUtils.getNodeOrThread(currentIS);
 
-		for(int i = 0; i < nodeOrThreadList.size(); i++) {
-			if(nodeOrThreadList.get(i) == nodeOrThread) {
+		for (int i = 0; i < nodeOrThreadList.size(); i++) {
+			if (nodeOrThreadList.get(i) == nodeOrThread) {
 				fAlloc.select(i);
 			}
 		}
@@ -285,16 +289,16 @@ public class AllocationDialog extends SelectionStatusDialog {
 		InstanceSpecification oldNode = AllocUtils.getNodeOrThread(is);
 		InstanceSpecification newNode = nodeOrThreadList.get(index);
 
-		if(oldNode == newNode) {
+		if (oldNode == newNode) {
 			return;
 		}
 
 		// add or update
-		if(oldNode == null) {
-			if(!AllocUtils.allocate(is, newNode)) {
+		if (oldNode == null) {
+			if (!AllocUtils.allocate(is, newNode)) {
 				Shell shell = new Shell();
-				if(MessageDialog.openQuestion(shell, "Error",
-					"Stereotype application failed. The profile MARTE::Allocation is probably not applied. Try to apply it?")) {
+				if (MessageDialog.openQuestion(shell, "Error",
+						"Stereotype application failed. The profile MARTE::Allocation is probably not applied. Try to apply it?")) {
 					AbstractEMFOperation applyProfile = new AddMarteAndFcmProfile(Utils.getTop(is), AddMarteAndFcmProfile.APPLY_ALLOC, TransactionUtil.getEditingDomain(is));
 					CommandSupport.exec(applyProfile);
 					AllocUtils.allocate(is, newNode);

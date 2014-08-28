@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -41,8 +41,8 @@ public class ConnectorLabelViewFactory extends AbstractLabelViewFactory {
 
 		super.initializeFromPreferences(view);
 
-		IPreferenceStore store = (IPreferenceStore)getPreferencesHint().getPreferenceStore();
-		if(store == null) {
+		IPreferenceStore store = (IPreferenceStore) getPreferencesHint().getPreferenceStore();
+		if (store == null) {
 			return;
 		}
 

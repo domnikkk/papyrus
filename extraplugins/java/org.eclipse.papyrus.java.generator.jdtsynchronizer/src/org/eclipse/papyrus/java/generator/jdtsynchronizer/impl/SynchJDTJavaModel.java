@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -30,9 +30,9 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitor
 
 /**
  * Allow to generate Code thanks to a JDT model
- * 
+ *
  * @author Deblock Nicolas & Manuel Giles
- * 
+ *
  */
 public class SynchJDTJavaModel implements JDTVisitor {
 
@@ -40,22 +40,24 @@ public class SynchJDTJavaModel implements JDTVisitor {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param modelJDT
-	 *        the model JDT to generate
+	 *            the model JDT to generate
 	 */
 	public SynchJDTJavaModel(GeneratorPreference preference) {
 		this.preference = preference;
 	}
 
+	@Override
 	public void visit(JDTJavaElement element) throws JDTVisitorException {
 		// if element can't be generated, we stop all
-		//if(!element.isGenerated()) return ;
+		// if(!element.isGenerated()) return ;
 
-		if(!(element instanceof JDTJavaModel))
+		if (!(element instanceof JDTJavaModel)) {
 			return;
+		}
 		// cast element to JDTJavaModel
-		JDTJavaModel model = (JDTJavaModel)element;
+		JDTJavaModel model = (JDTJavaModel) element;
 
 		// research the IJavaModel
 		IWorkspaceRoot iroot = ResourcesPlugin.getWorkspace().getRoot();
@@ -64,7 +66,7 @@ public class SynchJDTJavaModel implements JDTVisitor {
 
 		// browse all JDTJavaProject and call the visit
 		JDTVisitor visitor = new SynchJDTJavaProject(ijm, iroot, preference);
-		for(JDTJavaProject root : model.getJavaProject()) {
+		for (JDTJavaProject root : model.getJavaProject()) {
 			root.accept(visitor);
 		}
 	}

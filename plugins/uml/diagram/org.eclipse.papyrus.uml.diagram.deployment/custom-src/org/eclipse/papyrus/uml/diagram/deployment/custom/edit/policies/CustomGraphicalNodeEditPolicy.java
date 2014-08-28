@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,36 +26,37 @@ import org.eclipse.papyrus.uml.diagram.deployment.providers.UMLElementTypes;
 
 /**
  * This class is used to launch command to create associationClass
- * 
+ *
  * @author Patrick Tessier
  */
 public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Command getCommand(Request request) {
 
 		// we have to distinguish the case where this is an association class
-		if(REQ_CONNECTION_END.equals(request.getType())) {
-			if(request instanceof CreateConnectionViewAndElementRequest) {
+		if (REQ_CONNECTION_END.equals(request.getType())) {
+			if (request instanceof CreateConnectionViewAndElementRequest) {
 				// default behavior
-				Command c = getConnectionAndRelationshipCompleteCommand((CreateConnectionViewAndElementRequest)request);
+				Command c = getConnectionAndRelationshipCompleteCommand((CreateConnectionViewAndElementRequest) request);
 
 				// case of associationClass
-				CreateElementRequestAdapter requestAdapter = ((CreateConnectionViewAndElementRequest)request).getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
-				CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest)requestAdapter.getAdapter(CreateRelationshipRequest.class);
+				CreateElementRequestAdapter requestAdapter = ((CreateConnectionViewAndElementRequest) request).getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
+				CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest) requestAdapter.getAdapter(CreateRelationshipRequest.class);
 
-				if(UMLElementTypes.Dependency_4010.equals(createElementRequest.getElementType())) {
+				if (UMLElementTypes.Dependency_4010.equals(createElementRequest.getElementType())) {
 					MultiDependencyHelper multiDependencyHelper = new MultiDependencyHelper(getEditingDomain());
-					return multiDependencyHelper.getCommand(((CreateConnectionViewAndElementRequest)request), c);
+					return multiDependencyHelper.getCommand(((CreateConnectionViewAndElementRequest) request), c);
 
 				} else {
 					return c;
 				}
-			} else if(request instanceof CreateUnspecifiedTypeConnectionRequest) {
-				return getUnspecifiedConnectionCompleteCommand((CreateUnspecifiedTypeConnectionRequest)request);
+			} else if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
+				return getUnspecifiedConnectionCompleteCommand((CreateUnspecifiedTypeConnectionRequest) request);
 			}
 		}
 
@@ -64,10 +65,10 @@ public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
 	 * used to obtain the transactional edit domain
-	 * 
+	 *
 	 * @return the current transactional edit domain
 	 */
 	private TransactionalEditingDomain getEditingDomain() {
-		return ((IGraphicalEditPart)getHost()).getEditingDomain();
+		return ((IGraphicalEditPart) getHost()).getEditingDomain();
 	}
 }

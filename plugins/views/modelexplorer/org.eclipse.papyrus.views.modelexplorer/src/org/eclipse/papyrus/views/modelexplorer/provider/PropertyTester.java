@@ -53,7 +53,7 @@ public class PropertyTester extends org.eclipse.core.expressions.PropertyTester 
 
 	/** Queries whether the element is an instance of the specified EClass */
 	public static final String ECLASS = "eClass";//$NON-NLS-1$
-	
+
 	private static final Pattern QNAME_SEPARATOR = Pattern.compile("\\.|::"); //$NON-NLS-1$
 
 	/**
@@ -67,17 +67,17 @@ public class PropertyTester extends org.eclipse.core.expressions.PropertyTester 
 	 * @return
 	 */
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
-		if(IS_EOBJECT.equals(property) && receiver instanceof IStructuredSelection) {
-			boolean answer = isObject((IStructuredSelection)receiver);
+		if (IS_EOBJECT.equals(property) && receiver instanceof IStructuredSelection) {
+			boolean answer = isObject((IStructuredSelection) receiver);
 			return Boolean.valueOf(answer).equals(expectedValue);
-		} else if(IS_MODEL_EXPLORER.equals(property) && receiver instanceof IWorkbenchPart) {
-			boolean answer = isModelExplorer((IWorkbenchPart)receiver);
+		} else if (IS_MODEL_EXPLORER.equals(property) && receiver instanceof IWorkbenchPart) {
+			boolean answer = isModelExplorer((IWorkbenchPart) receiver);
 			return Boolean.valueOf(answer).equals(expectedValue);
-		} else if(IS_PAGE.equals(property) && receiver instanceof IStructuredSelection) {
-			boolean answer = isPage((IStructuredSelection)receiver);
+		} else if (IS_PAGE.equals(property) && receiver instanceof IStructuredSelection) {
+			boolean answer = isPage((IStructuredSelection) receiver);
 			return Boolean.valueOf(answer).equals(expectedValue);
-		} else if(ECLASS.equals(property) && (receiver instanceof IStructuredSelection) && (expectedValue instanceof String)) {
-			return hasEClass((IStructuredSelection)receiver, (String)expectedValue);
+		} else if (ECLASS.equals(property) && (receiver instanceof IStructuredSelection) && (expectedValue instanceof String)) {
+			return hasEClass((IStructuredSelection) receiver, (String) expectedValue);
 		}
 		return false;
 	}
@@ -85,18 +85,18 @@ public class PropertyTester extends org.eclipse.core.expressions.PropertyTester 
 	/**
 	 *
 	 * @param selection
-	 *        the current selection
+	 *            the current selection
 	 * @return
 	 *         <code>true</code> if all selected elements are pages
 	 */
 	private boolean isPage(IStructuredSelection selection) {
 		IPageManager pageManager = getPageManager(selection);
-		if(pageManager != null) {
-			if(!selection.isEmpty()) {
+		if (pageManager != null) {
+			if (!selection.isEmpty()) {
 				Iterator<?> iter = selection.iterator();
-				while(iter.hasNext()) {
+				while (iter.hasNext()) {
 					EObject current = EMFHelper.getEObject(iter.next());
-					if(!isPage(current, pageManager)) {
+					if (!isPage(current, pageManager)) {
 						return false;
 					}
 				}
@@ -108,11 +108,11 @@ public class PropertyTester extends org.eclipse.core.expressions.PropertyTester 
 	}
 
 	protected boolean isPage(EObject element, IPageManager pageManager) {
-		if(element == null) {
+		if (element == null) {
 			return false;
 		}
 
-		if(pageManager.allPages().contains(element)) {
+		if (pageManager.allPages().contains(element)) {
 			return true;
 		}
 
@@ -130,13 +130,13 @@ public class PropertyTester extends org.eclipse.core.expressions.PropertyTester 
 		IPageManager pageMngr = null;
 		try {
 			ServiceUtilsForSelection instance = ServiceUtilsForSelection.getInstance();
-			if(instance != null) {
+			if (instance != null) {
 				pageMngr = instance.getIPageManager(selection);
 			}
 		} catch (NullPointerException npe) {
-			//We cannot find the page manager. Just return null.
+			// We cannot find the page manager. Just return null.
 		} catch (ServiceException e) {
-			//We cannot find the page manager. Just return null.
+			// We cannot find the page manager. Just return null.
 		}
 		return pageMngr;
 	}
@@ -158,9 +158,9 @@ public class PropertyTester extends org.eclipse.core.expressions.PropertyTester 
 	 * @return
 	 */
 	private boolean isObject(IStructuredSelection selection) {
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 			Iterator<?> iter = selection.iterator();
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 				EObject current = EMFHelper.getEObject(iter.next());
 				return current != null;
 			}
@@ -169,42 +169,42 @@ public class PropertyTester extends org.eclipse.core.expressions.PropertyTester 
 	}
 
 	protected boolean hasEClass(IStructuredSelection selection, String eClassQName) {
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 			// Resolve the EClass in the context of the first element. If we can't resolve it
 			// in this context, then that element necessarily isn't an instance of that EClass,
-			// so not all of the selection is an instance of that class.  Thus, it doesn't
+			// so not all of the selection is an instance of that class. Thus, it doesn't
 			// matter that we choose the first element to resolve the EClass
 			EClassifier eClassifier = resolveEClass(EMFHelper.getEObject(selection.getFirstElement()), eClassQName);
 
-			if(eClassifier != null) {
+			if (eClassifier != null) {
 				boolean result = true;
-				for(Iterator<?> iter = selection.iterator(); result && iter.hasNext();) {
+				for (Iterator<?> iter = selection.iterator(); result && iter.hasNext();) {
 					EObject next = EMFHelper.getEObject(iter.next());
 					result = (next != null) && eClassifier.isInstance(next);
 				}
-				
+
 				return result;
 			}
 		}
 		return false;
 	}
-	
+
 	protected EClassifier resolveEClass(Object context, String eClassQName) {
 		EClassifier result = null;
 
-		if(context instanceof EObject) {
-			EClass contextClass = ((EObject)context).eClass();
+		if (context instanceof EObject) {
+			EClass contextClass = ((EObject) context).eClass();
 			String[] segments = QNAME_SEPARATOR.split(eClassQName);
-			if(segments.length > 1) { // must have at least epackage and eclass names
+			if (segments.length > 1) { // must have at least epackage and eclass names
 				String basePackageName = segments[0];
 				EPackage basePackage = resolvePackage(contextClass, basePackageName);
-				if(basePackage != null) {
+				if (basePackage != null) {
 					EPackage ePackage = basePackage;
 					int lastPackage = segments.length - 1;
-					for(int i = 1; (ePackage != null) && (i < lastPackage); i++) {
+					for (int i = 1; (ePackage != null) && (i < lastPackage); i++) {
 						ePackage = getSubPackage(ePackage, segments[i]);
 					}
-					if(ePackage != null) {
+					if (ePackage != null) {
 						result = ePackage.getEClassifier(segments[segments.length - 1]);
 					}
 				}
@@ -213,17 +213,17 @@ public class PropertyTester extends org.eclipse.core.expressions.PropertyTester 
 
 		return result;
 	}
-	
+
 	static EPackage resolvePackage(EClass contextEClass, String name) {
 		EPackage result = null;
 
-		if(name.equals(contextEClass.getEPackage().getName())) {
+		if (name.equals(contextEClass.getEPackage().getName())) {
 			// the easy case
 			result = contextEClass.getEPackage();
 		} else {
 			// search the superclass hierarchy for a matching package
-			for(EClass next : contextEClass.getEAllSuperTypes()) {
-				if(name.equals(next.getEPackage().getName())) {
+			for (EClass next : contextEClass.getEAllSuperTypes()) {
+				if (name.equals(next.getEPackage().getName())) {
 					result = next.getEPackage();
 					break;
 				}
@@ -232,12 +232,12 @@ public class PropertyTester extends org.eclipse.core.expressions.PropertyTester 
 
 		return result;
 	}
-	
+
 	static EPackage getSubPackage(EPackage superPackage, String name) {
 		EPackage result = null;
 
-		for(EPackage next : superPackage.getESubpackages()) {
-			if(name.equals(next.getName())) {
+		for (EPackage next : superPackage.getESubpackages()) {
+			if (name.equals(next.getName())) {
 				result = next;
 				break;
 			}
@@ -245,5 +245,5 @@ public class PropertyTester extends org.eclipse.core.expressions.PropertyTester 
 
 		return result;
 	}
-	
+
 }

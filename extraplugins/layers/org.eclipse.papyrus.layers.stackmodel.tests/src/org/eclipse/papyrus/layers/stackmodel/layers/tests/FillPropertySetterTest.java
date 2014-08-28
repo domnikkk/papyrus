@@ -11,6 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Fill Property Setter</b></em>'.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class FillPropertySetterTest extends PropertySetterTest {
@@ -18,6 +19,7 @@ public class FillPropertySetterTest extends PropertySetterTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class FillPropertySetterTest extends PropertySetterTest {
 	 * Constructs a new Fill Property Setter test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public FillPropertySetterTest(String name) {
@@ -38,16 +41,18 @@ public class FillPropertySetterTest extends PropertySetterTest {
 	 * Returns the fixture for this Fill Property Setter test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	protected FillPropertySetter getFixture() {
-		return (FillPropertySetter)fixture;
+		return (FillPropertySetter) fixture;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -59,6 +64,7 @@ public class FillPropertySetterTest extends PropertySetterTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -67,4 +73,4 @@ public class FillPropertySetterTest extends PropertySetterTest {
 		setFixture(null);
 	}
 
-} //FillPropertySetterTest
+} // FillPropertySetterTest

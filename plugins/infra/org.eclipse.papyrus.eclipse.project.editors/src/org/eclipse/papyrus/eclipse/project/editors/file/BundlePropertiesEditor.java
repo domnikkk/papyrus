@@ -31,7 +31,7 @@ public class BundlePropertiesEditor extends AbstractFileEditor {
 	@Override
 	public void init() {
 		this.bundleFile = getBundleProperties();
-		//		if(this.bundleFile != null && this.bundleFile.exists()) {
+		// if(this.bundleFile != null && this.bundleFile.exists()) {
 		try {
 			this.bundleConfig.load(new FileInputStream(this.bundleFile));
 		} catch (FileNotFoundException e) {
@@ -39,7 +39,7 @@ public class BundlePropertiesEditor extends AbstractFileEditor {
 		} catch (IOException e) {
 			Activator.log.error(e);
 		}
-		//		}
+		// }
 	}
 
 	public void createFiles(Set<String> files) {

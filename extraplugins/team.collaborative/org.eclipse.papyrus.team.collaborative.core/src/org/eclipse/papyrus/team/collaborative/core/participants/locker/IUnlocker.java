@@ -18,15 +18,15 @@ import org.eclipse.papyrus.team.collaborative.core.participants.IExtendedURISupe
 
 /**
  * Object used to unlock Object.
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public interface IUnlocker extends IExtendedURISuperSet {
 
 	/**
 	 * Unlock element in {@link IExtendedURISuperSet#getExtendedSet()}
-	 * 
+	 *
 	 * @return A success status is everything went well
 	 * @throws CollabException
 	 */
@@ -34,7 +34,7 @@ public interface IUnlocker extends IExtendedURISuperSet {
 
 	/**
 	 * Return true is at least one of {@link ExtendedURI} is locked
-	 * 
+	 *
 	 * @return
 	 */
 	IStatus isLocked(IExtendedURI uri);

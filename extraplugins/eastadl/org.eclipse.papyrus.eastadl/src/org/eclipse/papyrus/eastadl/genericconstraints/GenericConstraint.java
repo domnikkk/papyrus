@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,26 +30,27 @@ import org.eclipse.uml2.uml.NamedElement;
  *
  * <!-- begin-model-doc -->
  * The GenericConstraint denotes a property, requirement, or a validation result for the identified element of the model. The kind of GenericConstraint is described as one of the GenericConstraintKind literals.
- * 
+ *
  * Example: If the attribute genericConstraintType is cableLength, the genericConstraintValue could be "5 meters" (value of a numerical datatype with unit "meters").
- * 
+ *
  * Semantics:
- * The GenericConstraint does not describe what is classically referred to as a design constraint but has the role of a property, requirement, or a validation result. It is a requirement if this GenericConstraint refines a Requirement (by the Refine relationship). The GenericConstraint is a validation result if it realizes a VVActualOutcome, it is an intended validation result if it realizes a VVIntendedOutcome, and in other cases it denotes a property.
- * 
- * 
- * 
+ * The GenericConstraint does not describe what is classically referred to as a design constraint but has the role of a property, requirement, or a validation result. It is a requirement if this GenericConstraint refines a Requirement (by the Refine
+ * relationship). The GenericConstraint is a validation result if it realizes a VVActualOutcome, it is an intended validation result if it realizes a VVIntendedOutcome, and in other cases it denotes a property.
+ *
+ *
+ *
  * Extension: Class, Constraint
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getKind <em>Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getBase_Constraint <em>Base Constraint</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getBase_Class <em>Base Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getTarget <em>Target</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getMode <em>Mode</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getBase_Constraint <em>Base Constraint</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getTarget <em>Target</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getMode <em>Mode</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,10 +64,10 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintKind}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Kind</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintKind
 	 * @see #setKind(GenericConstraintKind)
@@ -80,7 +81,9 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Kind</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintKind
 	 * @see #getKind()
 	 * @generated
@@ -92,10 +95,10 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.behavior.Mode}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Mode</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Mode</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Mode</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage#getGenericConstraint_Mode()
 	 * @model ordered="false"
@@ -107,10 +110,10 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * Returns the value of the '<em><b>Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Value</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Value</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Value</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage#getGenericConstraint_Value()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -123,10 +126,10 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * The list contents are of type {@link org.eclipse.uml2.uml.NamedElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Target</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Target</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Target</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage#getGenericConstraint_Target()
 	 * @model ordered="false"
@@ -138,10 +141,10 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * Returns the value of the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Constraint</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Constraint</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Constraint</em>' reference.
 	 * @see #setBase_Constraint(Constraint)
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage#getGenericConstraint_Base_Constraint()
@@ -154,7 +157,9 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getBase_Constraint <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Constraint</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Constraint</em>' reference.
 	 * @see #getBase_Constraint()
 	 * @generated
 	 */
@@ -164,10 +169,10 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * Returns the value of the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Class</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage#getGenericConstraint_Base_Class()
@@ -180,7 +185,9 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Class</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */

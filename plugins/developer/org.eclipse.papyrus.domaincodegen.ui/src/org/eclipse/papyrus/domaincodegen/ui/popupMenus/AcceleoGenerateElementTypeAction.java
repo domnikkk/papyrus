@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
@@ -46,36 +46,38 @@ public class AcceleoGenerateElementTypeAction extends ActionDelegate implements 
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ui.actions.ActionDelegate#selectionChanged(org.eclipse.jface.action.IAction, org.eclipse.jface.viewers.ISelection)
 	 * @generated
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public void selectionChanged(IAction action, ISelection selection) {
-		if(selection instanceof IStructuredSelection) {
-			files = ((IStructuredSelection)selection).toList();
+		if (selection instanceof IStructuredSelection) {
+			files = ((IStructuredSelection) selection).toList();
 		}
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ui.actions.ActionDelegate#run(org.eclipse.jface.action.IAction)
 	 * @generated
 	 */
+	@Override
 	public void run(IAction action) {
-		if(files != null) {
+		if (files != null) {
 			IRunnableWithProgress operation = new IRunnableWithProgress() {
 
 				public void run(IProgressMonitor monitor) {
 					try {
 						Iterator<IFile> filesIt = files.iterator();
-						while(filesIt.hasNext()) {
-							IFile model = (IFile)filesIt.next();
+						while (filesIt.hasNext()) {
+							IFile model = filesIt.next();
 							URI modelURI = URI.createPlatformResourceURI(model.getFullPath().toString(), true);
 							try {
 
-								//IContainer target = model.getProject().getFolder("src-gen");
+								// IContainer target = model.getProject().getFolder("src-gen");
 								IContainer target = model.getProject().getParent(); // target = Workspace location
 								GenerateTypes generator = new GenerateTypes(modelURI, target.getLocation().toFile(), getArguments());
 								generator.doGenerate(monitor);
@@ -106,7 +108,7 @@ public class AcceleoGenerateElementTypeAction extends ActionDelegate implements 
 
 	/**
 	 * Computes the arguments of the generator.
-	 * 
+	 *
 	 * @return the arguments
 	 * @generated
 	 */

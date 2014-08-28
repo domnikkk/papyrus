@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2009 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2009 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Francisco Javier Cano Muñoz (Prodevelop) – Initial implementation
  *
  ******************************************************************************/
@@ -18,7 +18,7 @@ import java.util.Collection;
  * label to be shown in the filtering dialog. <br>
  * Having information about the parent figure allows the creation of hierarchical structures of
  * ViewInfo elements.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  * @NOT-generated
  */
@@ -51,98 +51,98 @@ public interface ViewInfo {
 
 	/**
 	 * Gets the type.
-	 * 
+	 *
 	 * @return the type
 	 */
 	int getType();
 
 	/**
 	 * Gets the visual id.
-	 * 
+	 *
 	 * @return the visual id
 	 */
 	int getVisualID();
 
 	/**
 	 * Gets the children.
-	 * 
+	 *
 	 * @return the children
 	 */
 	Collection<ViewInfo> getChildren();
 
 	/**
 	 * Gets the label.
-	 * 
+	 *
 	 * @return the label
 	 */
 	String getLabel();
 
 	/**
 	 * Gets the parent.
-	 * 
+	 *
 	 * @return the parent
 	 */
 	ViewInfo getParent();
 
 	/**
 	 * Sets the type.
-	 * 
+	 *
 	 * @param type
-	 *        the new type
+	 *            the new type
 	 */
 	// @unused
 	void setType(int type);
 
 	/**
 	 * Sets the visual id.
-	 * 
+	 *
 	 * @param visualID
-	 *        the new visual id
+	 *            the new visual id
 	 */
 	// @unused
 	void setVisualID(int visualID);
 
 	/**
 	 * Sets the children.
-	 * 
+	 *
 	 * @param children
-	 *        the new children
+	 *            the new children
 	 */
 	// @unused
 	void setChildren(Collection<ViewInfo> children);
 
 	/**
 	 * Sets the label.
-	 * 
+	 *
 	 * @param label
-	 *        the new label
+	 *            the new label
 	 */
 	// @unused
 	void setLabel(String label);
 
 	/**
 	 * Sets the parent.
-	 * 
+	 *
 	 * @param parent
-	 *        the new parent
+	 *            the new parent
 	 */
 	void setParent(ViewInfo parent);
 
 	/**
 	 * Adds the node.
-	 * 
+	 *
 	 * @param parentVisualID
-	 *        the parent visual id
+	 *            the parent visual id
 	 * @param info
-	 *        the info
-	 * 
+	 *            the info
+	 *
 	 * @return true, if successful
 	 */
 	boolean addNode(int parentVisualID, ViewInfo info);
 
 	/**
 	 * True if this view info can be selected to be filtered.
-	 * 
+	 *
 	 * @return
 	 */
 	// @unused

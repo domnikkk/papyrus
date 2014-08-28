@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -37,59 +37,59 @@ public class BeanProperty extends AbstractProperty {
 		this.descriptor = descriptor;
 
 		Method readMethod = descriptor.getReadMethod();
-		if(readMethod != null) {
+		if (readMethod != null) {
 			Annotation annotation = readMethod.getAnnotation(Containment.class);
-			if(annotation != null) {
+			if (annotation != null) {
 				containment = true;
 			}
 		}
 		Method writeMethod = descriptor.getWriteMethod();
-		if(writeMethod != null) {
+		if (writeMethod != null) {
 			Annotation annotation = writeMethod.getAnnotation(Containment.class);
-			if(annotation != null) {
+			if (annotation != null) {
 				containment = true;
 			}
 		}
 	}
 
 	public void setValue(Object target, Object value) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
-		if(descriptor != null && descriptor.getWriteMethod() != null) {
+		if (descriptor != null && descriptor.getWriteMethod() != null) {
 			Method writeMethod = descriptor.getWriteMethod();
 			// Bug of invoke boolean value.
 			Class<?>[] parameterTypes = writeMethod.getParameterTypes();
-			if(parameterTypes.length == 1) {
+			if (parameterTypes.length == 1) {
 				Class<?> type = parameterTypes[0];
 				Class<?> propertyType = getType();
-				if(propertyType != Object.class) {
+				if (propertyType != Object.class) {
 					type = propertyType;
 				}
-				if(!ObjectUtil.isAssignableFrom(IBinding.class, propertyType)) {
-					if(value != null && type != value.getClass()) {
+				if (!ObjectUtil.isAssignableFrom(IBinding.class, propertyType)) {
+					if (value != null && type != value.getClass()) {
 						value = ObjectUtil.resolveValue(value, type, value);
 					}
 				}
 
 				Object oldValue = null;
 				Method readMethod = descriptor.getReadMethod();
-				if(readMethod != null) {
+				if (readMethod != null) {
 					oldValue = readMethod.invoke(target);
 				}
 
-				if(value == null && type != null && UserData.getWidget(target) != null) {
-					if(type == String.class) {
+				if (value == null && type != null && UserData.getWidget(target) != null) {
+					if (type == String.class) {
 						value = "";
-					} else if(type == Boolean.class) {
+					} else if (type == Boolean.class) {
 						value = false;
 					}
 				}
 
-				if(oldValue != value) {
+				if (oldValue != value) {
 					writeMethod.setAccessible(true);
 					try {
 						writeMethod.invoke(target, value);
 						fireSetPostAction(target, this, value);
 					} catch (IllegalArgumentException e) {
-						if(value == null) {
+						if (value == null) {
 							throw new XWTException("Property type " + getName() + " of " + target.getClass().getName() + " cannot be null.", e);
 						}
 						throw new XWTException("Property type " + getName() + " of " + target.getClass().getName() + " is mismatch with " + value.getClass().getName() + " expected type is " + parameterTypes[0].getName(), e);
@@ -102,7 +102,7 @@ public class BeanProperty extends AbstractProperty {
 	}
 
 	public Object getValue(Object target) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
-		if(descriptor != null && descriptor.getReadMethod() != null) {
+		if (descriptor != null && descriptor.getReadMethod() != null) {
 			Method readMethod = descriptor.getReadMethod();
 			readMethod.setAccessible(true);
 			return readMethod.invoke(target);
@@ -115,10 +115,12 @@ public class BeanProperty extends AbstractProperty {
 		return true;
 	}
 
+	@Override
 	public boolean isContainement() {
 		return containment;
 	}
 
+	@Override
 	public boolean isReadOnly() {
 		return descriptor.getWriteMethod() == null;
 	}

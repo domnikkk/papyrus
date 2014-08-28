@@ -20,9 +20,9 @@ import com.google.common.base.Function;
 /**
  * The Class IFileToFile.
  * Function used to convert {@link IResource} to {@link File}
- * 
+ *
  * @param <T>
- *        the generic type
+ *            the generic type
  */
 public class IFileToFile<T extends IResource> implements Function<T, File> {
 

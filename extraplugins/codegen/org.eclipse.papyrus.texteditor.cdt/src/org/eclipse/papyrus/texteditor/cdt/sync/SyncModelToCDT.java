@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.Classifier;
  * Main listener for model changes (registered via plugin.xml). It will delegate
  * to the sub-listeners for specific sub-elements (type, operation, port, ...) that
  * can be found in this package
- * 
+ *
  */
 public class SyncModelToCDT {
 
@@ -38,12 +38,12 @@ public class SyncModelToCDT {
 	public static boolean syncFromEditor;
 
 	public static IFile syncModelToCDT(Classifier classifier) {
-		if((classifier == null) || (classifier.eResource() == null)) {
+		if ((classifier == null) || (classifier.eResource() == null)) {
 			return null;
 		}
 
 		IProject modelProject = LocateCppProject.getTargetProject(classifier, false);
-		if(modelProject == null) {
+		if (modelProject == null) {
 			return null;
 		}
 
@@ -57,24 +57,22 @@ public class SyncModelToCDT {
 			ModelElementsCreator mec = new CppModelElementsCreator(modelProject);
 			srcPkg = mec.getContainer(classifier);
 			mec.createPackageableElement(srcPkg, null, classifier, false); // need listener for sync in both directions!
-		
-			cppFile = srcPkg.getFile(new Path(name + ".cpp"));	// TODO: extension is configurable! //$NON-NLS-1$
-	
+
+			cppFile = srcPkg.getFile(new Path(name + ".cpp")); // TODO: extension is configurable! //$NON-NLS-1$
+
 			// IStorage storage = new TextStorage(string);
-		}
-		catch (CoreException e) {
+		} catch (CoreException e) {
 			Activator.log.error(e);
-		}
-		finally {
-			// Refresh the container for the newly created files.  This needs to be done even
-				// during error because of the possibility for partial results.
+		} finally {
+			// Refresh the container for the newly created files. This needs to be done even
+			// during error because of the possibility for partial results.
 			try {
 				if (srcPkg != null) {
 					srcPkg.refreshLocal(IResource.DEPTH_INFINITE, null);
 				}
-			} catch(CoreException e) {
+			} catch (CoreException e) {
 				Activator.log.error(e);
- 			}
+			}
 		}
 		return cppFile;
 	}

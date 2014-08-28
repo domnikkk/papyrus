@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.papyrus.uml.diagram.timing.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Interaction;
@@ -57,14 +58,15 @@ public class MessageFoundReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(false == getElementToEdit() instanceof Message) {
+		if (false == getElementToEdit() instanceof Message) {
 			return false;
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -74,14 +76,14 @@ public class MessageFoundReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof Element && newEnd instanceof Element)) {
+		if (!(oldEnd instanceof Element && newEnd instanceof Element)) {
 			return false;
 		}
 		MessageEnd target = getLink().getSendEvent();
-		if(!(getLink().eContainer() instanceof Interaction)) {
+		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
-		Interaction container = (Interaction)getLink().eContainer();
+		Interaction container = (Interaction) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_53(container, getLink(), getNewSource(), target);
 	}
 
@@ -89,28 +91,29 @@ public class MessageFoundReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof MessageEnd && newEnd instanceof MessageEnd)) {
+		if (!(oldEnd instanceof MessageEnd && newEnd instanceof MessageEnd)) {
 			return false;
 		}
 		Element source = getLink().getOwner();
-		if(!(getLink().eContainer() instanceof Interaction)) {
+		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
-		Interaction container = (Interaction)getLink().eContainer();
+		Interaction container = (Interaction) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_53(container, getLink(), source, getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -135,34 +138,34 @@ public class MessageFoundReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected Message getLink() {
-		return (Message)getElementToEdit();
+		return (Message) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Element getOldSource() {
-		return (Element)oldEnd;
+		return (Element) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Element getNewSource() {
-		return (Element)newEnd;
+		return (Element) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected MessageEnd getOldTarget() {
-		return (MessageEnd)oldEnd;
+		return (MessageEnd) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected MessageEnd getNewTarget() {
-		return (MessageEnd)newEnd;
+		return (MessageEnd) newEnd;
 	}
 }

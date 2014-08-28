@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,23 +49,23 @@ public class CUMLBaseItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		public static boolean canExistExtension_1013(Package container, Stereotype source, Class target) {
 			try {
 
-				//This tests can't be executed in UMLBaseItemSemanticEditPolicy, because the source is a Stereotype and not a Property
+				// This tests can't be executed in UMLBaseItemSemanticEditPolicy, because the source is a Stereotype and not a Property
 
 				/**
 				 * UML doesn't allows to extend the Stereotype metaclass (UML Superstructure Specification, v2.2, p.656)
 				 */
-				//ExtensionSource
-				if(!(source instanceof org.eclipse.uml2.uml.Stereotype)) {
+				// ExtensionSource
+				if (!(source instanceof org.eclipse.uml2.uml.Stereotype)) {
 					return false;
 				}
 
-				//ExtensionTarget
-				if(target != null) {
-					if(!(target instanceof org.eclipse.uml2.uml.Class)) {
+				// ExtensionTarget
+				if (target != null) {
+					if (!(target instanceof org.eclipse.uml2.uml.Class)) {
 						return false;
 					}
 					String metaclassQName = target.getQualifiedName();
-					if(metaclassQName.equals("uml::Stereotype")) { //$NON-NLS-1$
+					if (metaclassQName.equals("uml::Stereotype")) { //$NON-NLS-1$
 						return false;
 					}
 				}

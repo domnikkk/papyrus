@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>View Point</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.papyrus.sysml.modelelements.ViewPoint#getMethods <em>Methods</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.sysml.modelelements.ModelelementsPackage#getViewPoint()
  * @model
  * @generated
@@ -44,7 +44,7 @@ public interface ViewPoint extends EObject {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.sysml.modelelements.ModelelementsPackage#getViewPoint_Base_Class()
@@ -62,7 +62,7 @@ public interface ViewPoint extends EObject {
 	 * If the meaning of the '<em>Concerns</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Concerns</em>' attribute list.
 	 * @see org.eclipse.papyrus.sysml.modelelements.ModelelementsPackage#getViewPoint_Concerns()
 	 * @model unique="false" dataType="org.eclipse.uml2.types.String" ordered="false"
@@ -79,7 +79,7 @@ public interface ViewPoint extends EObject {
 	 * If the meaning of the '<em>Languages</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Languages</em>' attribute list.
 	 * @see org.eclipse.papyrus.sysml.modelelements.ModelelementsPackage#getViewPoint_Languages()
 	 * @model unique="false" dataType="org.eclipse.uml2.types.String" ordered="false"
@@ -96,7 +96,7 @@ public interface ViewPoint extends EObject {
 	 * If the meaning of the '<em>Methods</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Methods</em>' attribute list.
 	 * @see org.eclipse.papyrus.sysml.modelelements.ModelelementsPackage#getViewPoint_Methods()
 	 * @model unique="false" dataType="org.eclipse.uml2.types.String" ordered="false"
@@ -111,7 +111,7 @@ public interface ViewPoint extends EObject {
 	 * If the meaning of the '<em>Purpose</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Purpose</em>' attribute.
 	 * @see #setPurpose(String)
 	 * @see org.eclipse.papyrus.sysml.modelelements.ModelelementsPackage#getViewPoint_Purpose()
@@ -128,7 +128,7 @@ public interface ViewPoint extends EObject {
 	 * If the meaning of the '<em>Stake Holders</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stake Holders</em>' attribute list.
 	 * @see org.eclipse.papyrus.sysml.modelelements.ModelelementsPackage#getViewPoint_StakeHolders()
 	 * @model unique="false" ordered="false"
@@ -140,9 +140,9 @@ public interface ViewPoint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.sysml.modelelements.ViewPoint#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Base Class</em>' reference.
+	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
@@ -152,9 +152,9 @@ public interface ViewPoint extends EObject {
 	 * Sets the value of the ' {@link org.eclipse.papyrus.sysml.modelelements.ViewPoint#getPurpose
 	 * <em>Purpose</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Purpose</em>' attribute.
+	 *            the new value of the '<em>Purpose</em>' attribute.
 	 * @see #getPurpose()
 	 * @generated
 	 */

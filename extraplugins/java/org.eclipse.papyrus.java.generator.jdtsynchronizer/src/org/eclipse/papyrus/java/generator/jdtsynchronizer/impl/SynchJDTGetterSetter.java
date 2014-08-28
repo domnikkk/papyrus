@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -44,9 +44,9 @@ public class SynchJDTGetterSetter extends SynchJDTMethod {
 
 	@Override
 	public void visit(JDTJavaElement element) throws JDTVisitorException {
-		this.field = (JDTField)element;
+		this.field = (JDTField) element;
 		// error if field.getType() == null. indicate in console only
-		if(field.getType() == null) {
+		if (field.getType() == null) {
 			System.err.println("l31 SunchJDTGetterSetter : field.getType() est null pour " + field.getElementName() + " dans " + field.getOwner().getElementName());
 			return;
 		}
@@ -57,14 +57,14 @@ public class SynchJDTGetterSetter extends SynchJDTMethod {
 			String fieldNameCap = field.getElementName().replaceFirst(".", (field.getElementName().charAt(0) + "").toUpperCase());
 
 			// generate getter
-			if(field.getGenerateGetter() == TrueFalseDefault.TRUE || // user demand generate getter
-			field.getGenerateGetter() == TrueFalseDefault.DEFAULT && preference.generateGetters()) { // or no demand, look at preferences
+			if (field.getGenerateGetter() == TrueFalseDefault.TRUE || // user demand generate getter
+					field.getGenerateGetter() == TrueFalseDefault.DEFAULT && preference.generateGetters()) { // or no demand, look at preferences
 				StringBuffer bufferGet = new StringBuffer();
 
 				bufferGet.append("public ");
 
 				// handle MultiValued
-				if(field.isMultiValued()) {
+				if (field.isMultiValued()) {
 					bufferGet.append(SynchTools.getMultiValued(itype, field.getType().getElementName(), preference));
 				} else {
 					bufferGet.append(field.getType().getElementName());
@@ -78,7 +78,7 @@ public class SynchJDTGetterSetter extends SynchJDTMethod {
 
 
 				IMethod imethod = SynchTools.searchIJavaElement(itype.getMethods(), "get" + fieldNameCap);
-				if(imethod == null) {
+				if (imethod == null) {
 					IMethod methodGet = itype.createMethod(bufferGet.toString(), null, true, null);
 					createJavaDocFor(methodGet, itype.getCompilationUnit(), "Getter of " + field.getElementName(), "");
 				}
@@ -86,14 +86,14 @@ public class SynchJDTGetterSetter extends SynchJDTMethod {
 
 
 			// generate setter
-			if(field.getGenerateSetter() == TrueFalseDefault.TRUE || // user demand generate setter
-			field.getGenerateSetter() == TrueFalseDefault.DEFAULT && preference.generateSetters()) { // or no demand, look at preferences				
+			if (field.getGenerateSetter() == TrueFalseDefault.TRUE || // user demand generate setter
+					field.getGenerateSetter() == TrueFalseDefault.DEFAULT && preference.generateSetters()) { // or no demand, look at preferences
 				StringBuffer bufferSet = new StringBuffer();
 
 				bufferSet.append("public void set" + fieldNameCap + "(");
 
 				// handle MultiValued
-				if(field.isMultiValued()) {
+				if (field.isMultiValued()) {
 					bufferSet.append(SynchTools.getMultiValued(itype, field.getType().getElementName(), preference));
 				} else {
 					bufferSet.append(field.getType().getElementName());
@@ -106,7 +106,7 @@ public class SynchJDTGetterSetter extends SynchJDTMethod {
 
 
 				IMethod imethod = SynchTools.searchIJavaElement(itype.getMethods(), "set" + fieldNameCap);
-				if(imethod == null) {
+				if (imethod == null) {
 					IMethod methodSet = itype.createMethod(bufferSet.toString(), null, true, null);
 					createJavaDocFor(methodSet, itype.getCompilationUnit(), "Setter of " + field.getElementName(), "");
 				}
@@ -127,16 +127,16 @@ public class SynchJDTGetterSetter extends SynchJDTMethod {
 			IJavaElement method) {
 
 		// search Itype parent
-		if(method.getParent() instanceof IType) {
-			IType itype = (IType)method.getParent();
+		if (method.getParent() instanceof IType) {
+			IType itype = (IType) method.getParent();
 			// find the good type
-			TypeDeclaration type = searchType((TypeDeclaration)cu.types().get(0), itype.getElementName());
+			TypeDeclaration type = searchType((TypeDeclaration) cu.types().get(0), itype.getElementName());
 
 			// search the method. Fortunately, there are no method getSignature() for the type MethodDeclaration.
 			// So, we search manually
-			for(MethodDeclaration m : type.getMethods())
-				if(m.getName().toString().equals(method.getElementName())) {
-					// verify the signature	
+			for (MethodDeclaration m : type.getMethods()) {
+				if (m.getName().toString().equals(method.getElementName())) {
+					// verify the signature
 					return m;
 					/*
 					 * TODO
@@ -150,7 +150,7 @@ public class SynchJDTGetterSetter extends SynchJDTMethod {
 					 * SingleVariableDeclaration param = (SingleVariableDeclaration) paramObj;
 					 * if(!param.getType().toString().equals(this.method.getParameters().get(numParam).getType().getElementName()))
 					 * goodSignature = false;
-					 * 
+					 *
 					 * numParam++;
 					 * }
 					 * }
@@ -159,6 +159,7 @@ public class SynchJDTGetterSetter extends SynchJDTMethod {
 					 * }
 					 */
 				}
+			}
 		}
 
 		return null;

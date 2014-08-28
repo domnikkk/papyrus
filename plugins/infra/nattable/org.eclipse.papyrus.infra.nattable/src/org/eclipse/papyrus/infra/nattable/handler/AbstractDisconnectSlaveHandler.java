@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,16 +29,16 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
  * Abstract handler used to change the value of the property IMasterAxisProvider#disconnectSlave
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public abstract class AbstractDisconnectSlaveHandler extends AbstractTableHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
@@ -46,9 +46,9 @@ public abstract class AbstractDisconnectSlaveHandler extends AbstractTableHandle
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		final AbstractAxisProvider axisProvider = getAxisProviderToEdit();
-		if(axisProvider instanceof MasterObjectAxisProvider) {
+		if (axisProvider instanceof MasterObjectAxisProvider) {
 			boolean newState = !HandlerUtil.toggleCommandState(event.getCommand());
-			final TransactionalEditingDomain domain = (TransactionalEditingDomain)getTableEditingDomain();
+			final TransactionalEditingDomain domain = getTableEditingDomain();
 			final IEditCommandRequest request = new SetRequest(domain, axisProvider, NattableaxisproviderPackage.eINSTANCE.getIMasterAxisProvider_DisconnectSlave(), newState);
 			final IElementEditService provider = ElementEditServiceUtils.getCommandProvider(axisProvider);
 			final ICommand cmd = provider.getEditCommand(request);
@@ -58,16 +58,16 @@ public abstract class AbstractDisconnectSlaveHandler extends AbstractTableHandle
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the axis provider to edit
 	 */
 	protected abstract AbstractAxisProvider getAxisProviderToEdit();
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
 	@Override

@@ -28,6 +28,7 @@ public class ConstraintConstrainedElementEditPart extends ConnectionEditPart imp
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ConstraintConstrainedElementItemSemanticEditPolicy());
@@ -35,12 +36,13 @@ public class ConstraintConstrainedElementEditPart extends ConnectionEditPart imp
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected Connection createConnectionFigure() {
 		return new LinkFigure();
 	}
@@ -48,7 +50,8 @@ public class ConstraintConstrainedElementEditPart extends ConnectionEditPart imp
 	/**
 	 * @generated
 	 */
+	@Override
 	public LinkFigure getPrimaryShape() {
-		return (LinkFigure)getFigure();
+		return (LinkFigure) getFigure();
 	}
 }

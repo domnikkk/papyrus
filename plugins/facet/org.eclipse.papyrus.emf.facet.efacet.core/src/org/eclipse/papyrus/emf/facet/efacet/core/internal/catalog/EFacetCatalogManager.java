@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2011 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Gregoire Dupe (Mia-Software) - Bug 333553 - The user has not to deal with two files to create a facet
  *  Nicolas Guyomar (Mia-Software) - Bug 333553 - The user has not to deal with two files to create a facet
@@ -20,8 +20,8 @@ import org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.EfacetcatalogF
 import org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.FacetSetCatalog;
 import org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.QuerySetCatalog;
 import org.eclipse.papyrus.emf.facet.efacet.core.internal.Messages;
-import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogManager;
 import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet;
+import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogManager;
 
 /** @deprecated replaced by {@link EFacetCatalogManager2} for the new eFacet2 metamodel */
 @Deprecated

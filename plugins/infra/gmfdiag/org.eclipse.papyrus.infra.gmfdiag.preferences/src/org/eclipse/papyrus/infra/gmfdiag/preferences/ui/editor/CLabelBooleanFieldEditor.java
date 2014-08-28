@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,16 +59,16 @@ public class CLabelBooleanFieldEditor extends BooleanFieldEditor {
 
 	/**
 	 * Creates a boolean field editor in the given style.
-	 * 
+	 *
 	 * @param preferenceKey
-	 *        the name of the preference this field editor works on
+	 *            the name of the preference this field editor works on
 	 * @param labelText
-	 *        the label text of the field editor
+	 *            the label text of the field editor
 	 * @param style
-	 *        the style, either <code>SWT.LEFT</code> or <code>SWT.RIGHT</code>. If style value is different, we use <code>SWT.RIGHT</code> The style
-	 *        allows to define if the label is on the left side or in the right side
+	 *            the style, either <code>SWT.LEFT</code> or <code>SWT.RIGHT</code>. If style value is different, we use <code>SWT.RIGHT</code> The style
+	 *            allows to define if the label is on the left side or in the right side
 	 * @param parent
-	 *        the parent of the field editor's control
+	 *            the parent of the field editor's control
 	 */
 	public CLabelBooleanFieldEditor(String preferenceKey, String labelText, int style, Image im, Composite parent) {
 		this.image = im;
@@ -79,33 +79,33 @@ public class CLabelBooleanFieldEditor extends BooleanFieldEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor. This constructor build a CLabelFieldEditor with the label in the right of the checkbox.
-	 * 
+	 *
 	 * @param preferenceKey
-	 *        the key for the preference
+	 *            the key for the preference
 	 * @param labelText
-	 *        the label text
+	 *            the label text
 	 * @param im
-	 *        an image to illustrate the preference
+	 *            an image to illustrate the preference
 	 * @param parent
-	 *        the composite parent
+	 *            the composite parent
 	 */
 	public CLabelBooleanFieldEditor(String preferenceKey, String labelText, Image im, Composite parent) {
 		this(preferenceKey, labelText, SWT.RIGHT, im, parent);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.BooleanFieldEditor#doFillIntoGrid(org.eclipse.swt.widgets.Composite, int)
-	 * 
+	 *
 	 * @param parent
 	 * @param numColumns
 	 */
 	@Override
 	protected void doFillIntoGrid(Composite parent, int numColumns) {
 		GridData gd = new GridData();
-		switch(this.style) {
+		switch (this.style) {
 		case SWT.LEFT:
 			getCLabelControl(parent);
 			checkBox = getChangeControl(parent);
@@ -123,7 +123,7 @@ public class CLabelBooleanFieldEditor extends BooleanFieldEditor {
 
 	/**
 	 * Returns the label control.
-	 * 
+	 *
 	 * @return the label control, or <code>null</code> if no label control has been created
 	 */
 	protected CLabel getCLabelControl() {
@@ -135,21 +135,21 @@ public class CLabelBooleanFieldEditor extends BooleanFieldEditor {
 	 * <p>
 	 * The label is created if it does not already exist
 	 * </p>
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @return the label control
 	 */
 	public CLabel getCLabelControl(Composite parent) {
-		if(cLabel == null) {
+		if (cLabel == null) {
 			cLabel = new CLabel(parent, SWT.LEFT);
 			cLabel.setFont(parent.getFont());
 
-			if(image != null) {
+			if (image != null) {
 				cLabel.setImage(image);
 			}
 			String text = getLabelText();
-			if(text != null) {
+			if (text != null) {
 				cLabel.setText(text);
 			}
 			cLabel.addDisposeListener(new DisposeListener() {
@@ -171,49 +171,49 @@ public class CLabelBooleanFieldEditor extends BooleanFieldEditor {
 		super.setLabelText(text);
 		Assert.isNotNull(text);
 		cLabel = getCLabelControl();
-		if(cLabel == null && checkBox != null) {
+		if (cLabel == null && checkBox != null) {
 			checkBox.setText(text);
 		}
 	}
 
 	/*
-	 * 
+	 *
 	 * The following methods are duplicated from BooleanFieldEditor, because, we need the style value before the end of the constructor execution!
 	 */
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.BooleanFieldEditor#adjustForNumColumns(int)
-	 * 
+	 *
 	 * @param numColumns
 	 */
 	@Override
 	protected void adjustForNumColumns(int numColumns) {
-		//		if(style == SEPARATE_LABEL) {
-		//			numColumns--;
-		//		}
-		//		((GridData)checkBox.getLayoutData()).horizontalSpan = numColumns;
+		// if(style == SEPARATE_LABEL) {
+		// numColumns--;
+		// }
+		// ((GridData)checkBox.getLayoutData()).horizontalSpan = numColumns;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.BooleanFieldEditor#getDescriptionControl(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 * @return
 	 */
 	@Override
 	public Control getDescriptionControl(Composite parent) {
-		if(style == SEPARATE_LABEL) {
+		if (style == SEPARATE_LABEL) {
 			return getLabelControl(parent);
 		}
 		return getChangeControl(parent);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.BooleanFieldEditor#getNumberOfControls()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -222,9 +222,9 @@ public class CLabelBooleanFieldEditor extends BooleanFieldEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.BooleanFieldEditor#setEnabled(boolean, org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param enabled
 	 * @param parent
 	 */

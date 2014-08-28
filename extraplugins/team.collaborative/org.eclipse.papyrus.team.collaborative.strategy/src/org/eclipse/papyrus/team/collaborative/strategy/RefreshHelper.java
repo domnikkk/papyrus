@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Olivier Melois <a href="mailto:olivier.melois@atos.net"> - initial API and implementation
  ******************************************************************************/
@@ -31,9 +31,9 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * Helper used to store method for refreshin model explorer view
- * 
+ *
  * @author omelois
- * 
+ *
  */
 public final class RefreshHelper {
 
@@ -44,9 +44,9 @@ public final class RefreshHelper {
 
 	/**
 	 * Runnable that will be used to refresh the model explorer view
-	 * 
+	 *
 	 * @author adaussy
-	 * 
+	 *
 	 */
 	public static final class RefreshModelExplorerRunnable implements Runnable {
 
@@ -56,12 +56,13 @@ public final class RefreshHelper {
 
 		/**
 		 * @param elementsToRefresh
-		 *        Element to Refresh
+		 *            Element to Refresh
 		 */
 		public RefreshModelExplorerRunnable(Collection<EObject> elementsToRefresh) {
 			this.elementsToRefresh = elementsToRefresh;
 		}
 
+		@Override
 		public void run() {
 
 			try {
@@ -70,28 +71,28 @@ public final class RefreshHelper {
 				e.printStackTrace();
 			}
 
-			if(elementsToRefresh != null) {
+			if (elementsToRefresh != null) {
 				IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-				if(activePage != null) {
+				if (activePage != null) {
 					IViewReference viewRef = activePage.findViewReference(ModelExplorerPageBookView.VIEW_ID);
-					if(viewRef != null && viewRef.getView(false) instanceof ModelExplorerView) {
-						ModelExplorerView modelExplorerView = (ModelExplorerView)viewRef.getView(false);
+					if (viewRef != null && viewRef.getView(false) instanceof ModelExplorerView) {
+						ModelExplorerView modelExplorerView = (ModelExplorerView) viewRef.getView(false);
 						modelExplorerView.refresh();
-//						Set<Object> alreadyRefreshed = new HashSet<Object>();
-//						if(view != null) {
-//							for(EObject elementToRefresh : elementsToRefresh) {
-//								
-//								view.refreshObject(elementToRefresh, alreadyRefreshed);
-//								alreadyRefreshed.add(elementToRefresh);
-//							}
-//						}
+						// Set<Object> alreadyRefreshed = new HashSet<Object>();
+						// if(view != null) {
+						// for(EObject elementToRefresh : elementsToRefresh) {
+						//
+						// view.refreshObject(elementToRefresh, alreadyRefreshed);
+						// alreadyRefreshed.add(elementToRefresh);
+						// }
+						// }
 					}
 				}
-//				IViewReference[] viewReferences = activePage.getViewReferences();
-//				for(IViewReference viewRef : viewReferences) {
-//					if(viewRef.getId().equals(ModelExplorerPageBookView.VIEW_ID));
-//				}
-				
+				// IViewReference[] viewReferences = activePage.getViewReferences();
+				// for(IViewReference viewRef : viewReferences) {
+				// if(viewRef.getId().equals(ModelExplorerPageBookView.VIEW_ID));
+				// }
+
 			}
 		}
 	}
@@ -100,9 +101,9 @@ public final class RefreshHelper {
 
 	/**
 	 * Get the model explorer refresh command
-	 * 
+	 *
 	 * @param request
-	 *        IEditCommandRequest which implies refresh
+	 *            IEditCommandRequest which implies refresh
 	 * @return
 	 */
 	public static ICommand getRefreshCommand(final IEditCommandRequest request) {
@@ -131,51 +132,51 @@ public final class RefreshHelper {
 
 	/**
 	 * Function to asynchronously refresh the model explorer after moving a breakdown element.
-	 * 
+	 *
 	 * @param request
 	 */
 	private static void refreshPostMove(final IEditCommandRequest request) {
 		@SuppressWarnings("unchecked")
-		final Set<EObject> elementsToRefresh = (Set<EObject>)request.getParameter(ELEMENTS_TO_REFRESH_KEY);
+		final Set<EObject> elementsToRefresh = (Set<EObject>) request.getParameter(ELEMENTS_TO_REFRESH_KEY);
 
 		refreshModelExplorer(elementsToRefresh);
 	}
 
 	public static void refreshModelExplorer(Collection<EObject> elementsToRefresh) {
-		if(elementsToRefresh != null && !(elementsToRefresh.isEmpty())) {
+		if (elementsToRefresh != null && !(elementsToRefresh.isEmpty())) {
 			Display.getDefault().asyncExec(new RefreshModelExplorerRunnable(elementsToRefresh));
 		}
 	}
 
 	/**
 	 * Adds an element to the list of elements that should be refreshed, in the request.
-	 * 
+	 *
 	 * @param element
-	 *        Element you want to refresh
+	 *            Element you want to refresh
 	 * @param request
-	 *        Request in which the information about a refresh will be added
+	 *            Request in which the information about a refresh will be added
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void addElementToRefresh(EObject element, IEditCommandRequest request) {
 		Object elementsToRefresh = request.getParameter(ELEMENTS_TO_REFRESH_KEY);
-		if(elementsToRefresh == null) {
+		if (elementsToRefresh == null) {
 			elementsToRefresh = new HashSet<EObject>();
 			request.getParameters().put(ELEMENTS_TO_REFRESH_KEY, elementsToRefresh);
 		}
-		if(elementsToRefresh instanceof Set<?>) {
-			((Set)elementsToRefresh).add(element);
+		if (elementsToRefresh instanceof Set<?>) {
+			((Set) elementsToRefresh).add(element);
 		}
 	}
 
 	/**
 	 * Checks whether a request has elements to refresh;
-	 * 
+	 *
 	 * @param request
-	 *        Request in which the information about a refresh will be added
+	 *            Request in which the information about a refresh will be added
 	 * @return
 	 */
 	public static boolean hasElementsToRefresh(IEditCommandRequest request) {
 		Object elementsToRefresh = request.getParameter(ELEMENTS_TO_REFRESH_KEY);
-		return elementsToRefresh instanceof Set<?> && (!((Set<?>)elementsToRefresh).isEmpty());
+		return elementsToRefresh instanceof Set<?> && (!((Set<?>) elementsToRefresh).isEmpty());
 	}
 }

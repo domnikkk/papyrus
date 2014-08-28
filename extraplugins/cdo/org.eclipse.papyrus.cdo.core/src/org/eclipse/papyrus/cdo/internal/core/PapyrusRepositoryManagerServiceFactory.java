@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,32 +24,36 @@ public class PapyrusRepositoryManagerServiceFactory
 		implements IServiceFactory {
 
 	private IPapyrusRepositoryManager service;
-	
+
 	public PapyrusRepositoryManagerServiceFactory() {
 		super();
 	}
 
+	@Override
 	public void init(ServicesRegistry servicesRegistry)
 			throws ServiceException {
-		
+
 		// pass
 	}
 
+	@Override
 	public void startService()
 			throws ServiceException {
-		
+
 		// pass
 	}
 
+	@Override
 	public void disposeService()
 			throws ServiceException {
-		
+
 		// nothing to dispose (the repository manager is a shared instance)
 	}
 
+	@Override
 	public Object createServiceInstance()
 			throws ServiceException {
-		
+
 		service = PapyrusRepositoryManager.INSTANCE;
 		return service;
 	}

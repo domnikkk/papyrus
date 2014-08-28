@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -57,10 +57,10 @@ import org.eclipse.swt.widgets.Display;
  */
 public class DefaultDiagramPasteCommand extends AbstractTransactionalCommand {
 
-	//TODO: should be provided configurable in prefs
+	// TODO: should be provided configurable in prefs
 	private static final int DEFAULT_AVOID_SUPERPOSITION_Y = 10;
 
-	//TODO: should be provided configurable in prefs
+	// TODO: should be provided configurable in prefs
 	private static final int DEFAULT_AVOID_SUPERPOSITION_X = 10;
 
 	/** the new container for the shape */
@@ -80,7 +80,7 @@ public class DefaultDiagramPasteCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param editingDomain
 	 * @param label
 	 * @param papyrusClipboard
@@ -89,34 +89,34 @@ public class DefaultDiagramPasteCommand extends AbstractTransactionalCommand {
 	 */
 	public DefaultDiagramPasteCommand(TransactionalEditingDomain editingDomain, String label, PapyrusClipboard<Object> papyrusClipboard, GraphicalEditPart targetEditPart) {
 		super(editingDomain, label, null);
-		this.container = (View)targetEditPart.getModel();
+		this.container = (View) targetEditPart.getModel();
 		this.targetEditPart = targetEditPart;
-		
+
 		EcoreUtil.Copier copier = new EcoreUtil.Copier();
 
 		List<EObject> rootElementInClipboard = EcoreUtil.filterDescendants(filterEObject(papyrusClipboard));
 		copier.copyAll(rootElementInClipboard);
 		copier.copyReferences();
 		viewList.addAll(EcoreUtil.filterDescendants(copier.values()));
-		for(Object eObject : rootElementInClipboard) {
-			if(!(eObject instanceof View)) {
+		for (Object eObject : rootElementInClipboard) {
+			if (!(eObject instanceof View)) {
 				viewList.remove(copier.get(eObject));
 				semanticList.add(copier.get(eObject));
 			}
 		}
-		
-		// Inform the clipboard of the element created (used by strategies)	
+
+		// Inform the clipboard of the element created (used by strategies)
 		Map<Object, EObject> transtypeCopier = transtypeCopier(copier);
 		papyrusClipboard.addAllInternalToTargetCopy(transtypeCopier);
 		List<EObject> semanticRootList = EcoreUtil.filterDescendants(semanticList);
 		MoveRequest moveRequest = new MoveRequest(container.getElement(), semanticRootList);
-		
+
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(container.getElement());
-		if(provider != null) {	
+		if (provider != null) {
 			editCommand = provider.getEditCommand(moveRequest);
 		}
-		if (!papyrusClipboard.getContainerType().equals(targetEditPart.getNotationView().getType()) || viewList.isEmpty()){
-			this.objectToDrop =  semanticRootList;
+		if (!papyrusClipboard.getContainerType().equals(targetEditPart.getNotationView().getType()) || viewList.isEmpty()) {
+			this.objectToDrop = semanticRootList;
 		}
 	}
 
@@ -126,60 +126,62 @@ public class DefaultDiagramPasteCommand extends AbstractTransactionalCommand {
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 		editCommand.execute(progressMonitor, info);
-		if (this.objectToDrop != null){ // try to drop the views
+		if (this.objectToDrop != null) { // try to drop the views
 			constructDropRequest(targetEditPart, this.objectToDrop);
 			if (allDropCommand != null && !allDropCommand.isEmpty()) {
 				allDropCommand.execute();
 			}
-		} else if (viewList !=null && !viewList.isEmpty()){
+		} else if (viewList != null && !viewList.isEmpty()) {
 			shiftLayoutList(container, viewList);
 		}
 		return editCommand.getCommandResult();
-	}	
-	
-	
+	}
+
+
 	/**
 	 * Construct the drop request
+	 *
 	 * @param targetEditPart
 	 * @param objectToDrop
 	 */
 	protected void constructDropRequest(GraphicalEditPart targetEditPart, List<EObject> objectToDrop) {
-		DropObjectsRequest dropObjectsRequest = new DropObjectsRequest();		
-		if (container instanceof Diagram) { 
+		DropObjectsRequest dropObjectsRequest = new DropObjectsRequest();
+		if (container instanceof Diagram) {
 			Point cursorPosition = getCursorPosition(targetEditPart);
 			allDropCommand = new CompoundCommand("Drop all semantics elements on diagram"); //$NON-NLS-1$
-			for(EObject eObject : objectToDrop) {
+			for (EObject eObject : objectToDrop) {
 				dropObjectsRequest.setObjects(Collections.singletonList(eObject));
 				dropObjectsRequest.setLocation(cursorPosition);
 				Command command = targetEditPart.getCommand(dropObjectsRequest);
 				allDropCommand.add(command);
 				cursorPosition = shiftLayout(cursorPosition);
 			}
-		} else if (!(container instanceof Diagram)){
+		} else if (!(container instanceof Diagram)) {
 			Rectangle bounds = targetEditPart.getFigure().getBounds();
 			Point center = bounds.getCenter();
 			allDropCommand = new CompoundCommand("Drop all semantics elements on a view"); //$NON-NLS-1$
 			dropObjectsRequest.setObjects(objectToDrop);
 			dropObjectsRequest.setLocation(center);
 			Command command = targetEditPart.getCommand(dropObjectsRequest);
-			if (command == null){
+			if (command == null) {
 				command = lookForCommandInSubContainer(targetEditPart, objectToDrop);
 			}
 			allDropCommand.add(command);
-		} 
+		}
 	}
 
-	
+
 	/**
 	 * Look in sub container for a dropcommand
+	 *
 	 * @param targetEditPart
 	 * @param objectToDrop
 	 * @return
 	 */
-	protected Command lookForCommandInSubContainer(GraphicalEditPart targetEditPart, List<EObject> objectToDrop) {	
+	protected Command lookForCommandInSubContainer(GraphicalEditPart targetEditPart, List<EObject> objectToDrop) {
 		List children = targetEditPart.getChildren();
 		DropObjectsRequest dropObjectsRequest = new DropObjectsRequest();
-		for(Object object : children) {
+		for (Object object : children) {
 			if (object instanceof GraphicalEditPart) {
 				GraphicalEditPart graphicalEditPart = (GraphicalEditPart) object;
 				Point center = graphicalEditPart.getFigure().getBounds().getCenter();
@@ -199,49 +201,50 @@ public class DefaultDiagramPasteCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Shift the layout of all duplicate Views
-	 * 
+	 *
 	 * @param values
 	 */
-	// TODO : move it in a View utility class 
+	// TODO : move it in a View utility class
 	private void shiftLayoutList(View container, Collection<EObject> values) {
-		//Collection values = duplicatedObject.values();
+		// Collection values = duplicatedObject.values();
 		Iterator<EObject> iterator = values.iterator();
-		// for each view, a container is set if it is null 
+		// for each view, a container is set if it is null
 		// if this is a shape a new position is set in order to avoid overlap
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Object object = iterator.next();
-			if(object instanceof View) {
-				View duplicatedView = (View)object;
-				if(object instanceof Shape) {
-					LayoutConstraint layoutConstraint = ((Shape)object).getLayoutConstraint();
-					if(layoutConstraint instanceof Bounds) {
-						((Bounds)layoutConstraint).setX(((Bounds)layoutConstraint).getX() + DEFAULT_AVOID_SUPERPOSITION_X);
-						((Bounds)layoutConstraint).setY(((Bounds)layoutConstraint).getY() + DEFAULT_AVOID_SUPERPOSITION_Y);
+			if (object instanceof View) {
+				View duplicatedView = (View) object;
+				if (object instanceof Shape) {
+					LayoutConstraint layoutConstraint = ((Shape) object).getLayoutConstraint();
+					if (layoutConstraint instanceof Bounds) {
+						((Bounds) layoutConstraint).setX(((Bounds) layoutConstraint).getX() + DEFAULT_AVOID_SUPERPOSITION_X);
+						((Bounds) layoutConstraint).setY(((Bounds) layoutConstraint).getY() + DEFAULT_AVOID_SUPERPOSITION_Y);
 					}
 				}
-				if(duplicatedView.eContainer() == null && container != null) {
+				if (duplicatedView.eContainer() == null && container != null) {
 					ViewUtil.insertChildView(container, duplicatedView, ViewUtil.APPEND, true);
 				}
 			}
 		}
 	}
-	
-	
-	// TODO : move it in a View utility class 
+
+
+	// TODO : move it in a View utility class
 	/**
 	 * Shift position to avoid overlap
+	 *
 	 * @param point
 	 * @return
 	 */
-	protected Point shiftLayout(Point point){
-		return new Point(point.x+DEFAULT_AVOID_SUPERPOSITION_X, point.y+DEFAULT_AVOID_SUPERPOSITION_Y);
+	protected Point shiftLayout(Point point) {
+		return new Point(point.x + DEFAULT_AVOID_SUPERPOSITION_X, point.y + DEFAULT_AVOID_SUPERPOSITION_Y);
 	}
-	
+
 	/**
 	 * @param targetEditPart
 	 * @return
 	 */
-	// TODO : move it in utility class 
+	// TODO : move it in utility class
 	protected Point getCursorPosition(GraphicalEditPart targetEditPart) {
 		Display display = Display.getDefault();
 		org.eclipse.swt.graphics.Point cursorLocation = display.getCursorLocation();
@@ -252,37 +255,37 @@ public class DefaultDiagramPasteCommand extends AbstractTransactionalCommand {
 		Point location = figureCanvas.getViewport().getViewLocation();
 		return new Point(point.x + location.x, point.y + location.y);
 	}
-	
-	
+
+
 	/**
 	 * @param collection
 	 * @return
 	 */
-	// TODO : move it in utility class 
-	protected Collection<EObject> filterEObject(Collection<Object> collection){
+	// TODO : move it in utility class
+	protected Collection<EObject> filterEObject(Collection<Object> collection) {
 		List<EObject> eobjectList = new ArrayList<EObject>();
-		for(Object object : collection) {
-			if (object instanceof EObject){
-				eobjectList.add((EObject)object);
+		for (Object object : collection) {
+			if (object instanceof EObject) {
+				eobjectList.add((EObject) object);
 			}
 		}
 		return eobjectList;
 	}
-	
-	
+
+
 	/**
 	 * @param copier
 	 * @return
 	 */
-	// TODO : move it in utility class 
+	// TODO : move it in utility class
 	protected Map<Object, EObject> transtypeCopier(EcoreUtil.Copier copier) {
 		Map<Object, EObject> map = new HashMap<Object, EObject>();
 		Set<Entry<EObject, EObject>> entrySet = copier.entrySet();
-		for(Entry<EObject, EObject> entry : entrySet) {
+		for (Entry<EObject, EObject> entry : entrySet) {
 			map.put(entry.getKey(), entry.getValue());
 		}
 		return map;
 	}
-	
-	
+
+
 }

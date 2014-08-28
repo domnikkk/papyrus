@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,22 +32,22 @@ public class HistoryRoutingUtils {
 
 	/**
 	 * Retrieves all the URIs of the controlled resources of the initial resource uri
-	 * 
+	 *
 	 * @param model
-	 *        , the history model
+	 *            , the history model
 	 * @param initialURI
-	 *        , the uri to check
+	 *            , the uri to check
 	 * @return
 	 */
 	public static Set<String> getAllControledURIs(ModelSet set, HistoryModel model, URI initialURI, boolean loadCorrespondantDI) {
 		Set<String> result = new HashSet<String>();
 		String path = HistoryUtils.getURIFullPath(SashModelUtils.getInitialURI(set)).toString();
-		if(model != null && initialURI != null) {
+		if (model != null && initialURI != null) {
 			ControledResourceAdapter adapter = getControledResourceAdapter(set);
 			set.getResource(URI.createURI(path.concat(initialURI.trimFragment().trimFileExtension().appendFileExtension(SashModel.MODEL_FILE_EXTENSION).toString())), loadCorrespondantDI);
 			List<ControledResource> elements = adapter.getControledResource(initialURI.toString());
-			for(ControledResource c : elements) {
-				for(ControledResource child : c.getChildren()) {
+			for (ControledResource c : elements) {
+				for (ControledResource child : c.getChildren()) {
 					URI childURI = URI.createURI(child.getResourceURL());
 					result.add(childURI.toString());
 					result.addAll(getAllControledURIs(set, model, childURI, loadCorrespondantDI));
@@ -59,18 +59,18 @@ public class HistoryRoutingUtils {
 
 	/**
 	 * get the controled resource adapter from the given {@link ModelSet} if it is not found it is installed
-	 * 
+	 *
 	 * @param set
 	 * @return
 	 */
 	public static ControledResourceAdapter getControledResourceAdapter(ModelSet set) {
 		ControledResourceAdapter adapter = null;
-		for(Adapter a : set.eAdapters()) {
-			if(a instanceof ControledResourceAdapter) {
-				adapter = (ControledResourceAdapter)a;
+		for (Adapter a : set.eAdapters()) {
+			if (a instanceof ControledResourceAdapter) {
+				adapter = (ControledResourceAdapter) a;
 			}
 		}
-		if(adapter == null) {
+		if (adapter == null) {
 			adapter = new ControledResourceAdapter(set);
 		}
 		return adapter;

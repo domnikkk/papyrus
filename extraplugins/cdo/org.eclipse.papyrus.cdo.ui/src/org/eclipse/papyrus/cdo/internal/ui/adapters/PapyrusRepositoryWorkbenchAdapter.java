@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,25 +30,28 @@ public class PapyrusRepositoryWorkbenchAdapter
 		super();
 	}
 
+	@Override
 	public Object[] getChildren(Object o) {
 		return (o instanceof IContainer<?>)
-			? ((IContainer<?>) o).getElements()
-			: NOTHING;
+				? ((IContainer<?>) o).getElements()
+				: NOTHING;
 	}
 
+	@Override
 	public ImageDescriptor getImageDescriptor(Object object) {
 		ImageDescriptor result = null;
 
 		if (object instanceof IPapyrusRepository) {
 			boolean open = ((IPapyrusRepository) object).isConnected();
 			result = Activator.getIcon(open
-				? Activator.ICON_OPEN_REPOSITORY
-				: Activator.ICON_CLOSED_REPOSITORY);
+					? Activator.ICON_OPEN_REPOSITORY
+					: Activator.ICON_CLOSED_REPOSITORY);
 		}
 
 		return result;
 	}
 
+	@Override
 	public String getLabel(Object o) {
 		String result = null;
 
@@ -59,6 +62,7 @@ public class PapyrusRepositoryWorkbenchAdapter
 		return result;
 	}
 
+	@Override
 	public Object getParent(Object o) {
 		return null;
 	}
@@ -66,13 +70,14 @@ public class PapyrusRepositoryWorkbenchAdapter
 	//
 	// Nested types
 	//
-	
+
 	@SuppressWarnings("rawtypes")
 	public static class Factory
 			implements IAdapterFactory {
 
-		private final Class[] supported = {IWorkbenchAdapter.class};
+		private final Class[] supported = { IWorkbenchAdapter.class };
 
+		@Override
 		public Object getAdapter(Object adaptableObject, Class adapterType) {
 			Object result = null;
 
@@ -83,6 +88,7 @@ public class PapyrusRepositoryWorkbenchAdapter
 			return result;
 		}
 
+		@Override
 		public Class[] getAdapterList() {
 			return supported;
 		}

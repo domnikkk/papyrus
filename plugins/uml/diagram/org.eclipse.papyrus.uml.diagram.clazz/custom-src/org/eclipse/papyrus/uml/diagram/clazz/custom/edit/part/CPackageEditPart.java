@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,6 +35,7 @@ public class CPackageEditPart extends PackageEditPart {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new PackageNodePlateFigure(200, 100);
 		return result;
@@ -43,10 +44,11 @@ public class CPackageEditPart extends PackageEditPart {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof ContainmentCircleEditPart) {
+		if (childEditPart instanceof ContainmentCircleEditPart) {
 			IBorderItemLocator locator = new ContainmentCircleOnPackageLocator(getMainFigure());
-			getBorderedFigure().getBorderItemContainer().add(((ContainmentCircleEditPart)childEditPart).getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((ContainmentCircleEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		return super.addFixedChild(childEditPart);

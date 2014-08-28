@@ -16,20 +16,21 @@ package org.eclipse.papyrus.uml.diagram.common.command.wrappers;
  * A GEF Command that wraps an EMF command. Each method is redirected to the EMF
  * one. <br>
  * Adapts an {@link org.eclipse.emf.common.command.Command EMF Command} to be a {@link org.eclipse.gef.commands.Command GEF Command}.
- * 
+ *
  * Creation : 21 fev. 2006
- * 
+ *
  * @deprecated use {@link org.eclipse.papyrus.commands.wrappers.EMFtoGEFCommandWrapper} instead
  * @author aarong, <a href="mailto:jacques.lescot@anyware-tech.com">Jacques
  *         LESCOT</a>
  */
+@Deprecated
 public class EMFtoGEFCommandWrapper extends org.eclipse.papyrus.commands.wrappers.EMFtoGEFCommandWrapper {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param command
-	 *        the wrapped EMF command
+	 *            the wrapped EMF command
 	 */
 	public EMFtoGEFCommandWrapper(final org.eclipse.emf.common.command.Command command) {
 		super(command);

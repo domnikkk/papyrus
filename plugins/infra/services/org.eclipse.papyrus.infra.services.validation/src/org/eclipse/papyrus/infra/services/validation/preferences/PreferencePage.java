@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,21 +34,22 @@ public class PreferencePage extends FieldEditorPreferencePage implements IWorkbe
 		super(GRID);
 	}
 
+	@Override
 	public void createFieldEditors() {
 
-		String selection[][] = new String[][]{
-				{ "&No", "NO" },  //$NON-NLS-1$//$NON-NLS-2$
+		String selection[][] = new String[][] {
+				{ "&No", "NO" }, //$NON-NLS-1$//$NON-NLS-2$
 				{ "&Direct parent", "DIRECT" }, //$NON-NLS-1$//$NON-NLS-2$
 				{ "&All parents", "ALL" } //$NON-NLS-1$//$NON-NLS-2$
 		};
 		addField(new RadioGroupFieldEditor(PreferenceConstants.HIERARCHICAL_MARKERS, Messages.PreferencePage_MarkParents,
-			1, selection, getFieldEditorParent()));
+				1, selection, getFieldEditorParent()));
 
 		addField(new BooleanFieldEditor(PreferenceConstants.AUTO_SHOW_VALIDATION_VIEW, Messages.PreferencePage_AutoOpenValidationView,
-			getFieldEditorParent()));
+				getFieldEditorParent()));
 		// stringField1 = new StringFieldEditor("MySTRING1",
-		//		"A &text preference:", getFieldEditorParent());
-		//addField(stringField1);
+		// "A &text preference:", getFieldEditorParent());
+		// addField(stringField1);
 	}
 
 	@Override
@@ -78,9 +79,9 @@ public class PreferencePage extends FieldEditorPreferencePage implements IWorkbe
 	protected void triggerRedraw() {
 		// get references to all Papyrus editors, send the notification to each
 		IMultiDiagramEditor papyrusEditors[] = EditorUtils.getMultiDiagramEditors();
-		for(IMultiDiagramEditor papyrusEditor : papyrusEditors) {
+		for (IMultiDiagramEditor papyrusEditor : papyrusEditors) {
 			ServicesRegistry serviceRegistry = papyrusEditor.getServicesRegistry();
-			if(serviceRegistry != null) {
+			if (serviceRegistry != null) {
 				try {
 					ModelSet modelSet = serviceRegistry.getService(ModelSet.class);
 					modelSet.eNotify(new NotificationImpl(Notification.SET, new Object(), null));

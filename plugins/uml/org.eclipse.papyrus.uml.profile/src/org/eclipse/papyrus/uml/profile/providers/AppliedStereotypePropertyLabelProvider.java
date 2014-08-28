@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ public class AppliedStereotypePropertyLabelProvider extends UMLLabelProvider {
 	@Override
 	public String getText(Object element) {
 		AppliedStereotypeProperty stereotypeProperty = resolveAppliedStereotypeProperty(element);
-		if(stereotypeProperty != null) {
+		if (stereotypeProperty != null) {
 			return super.getText(stereotypeProperty.getStereotypeProperty());
 		}
 
@@ -33,7 +33,7 @@ public class AppliedStereotypePropertyLabelProvider extends UMLLabelProvider {
 	@Override
 	public Image getImage(Object element) {
 		AppliedStereotypeProperty stereotypeProperty = resolveAppliedStereotypeProperty(element);
-		if(stereotypeProperty != null) {
+		if (stereotypeProperty != null) {
 			return super.getImage(stereotypeProperty.getStereotypeProperty());
 		}
 
@@ -43,18 +43,18 @@ public class AppliedStereotypePropertyLabelProvider extends UMLLabelProvider {
 
 	/**
 	 * Tries to adapt the given element to an AppliedStereotypeProperty, and returns it
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 *         The adapted AppliedStereotypeProperty, or null
 	 */
 	protected AppliedStereotypeProperty resolveAppliedStereotypeProperty(Object element) {
-		if(element instanceof AppliedStereotypeProperty) {
-			return (AppliedStereotypeProperty)element;
+		if (element instanceof AppliedStereotypeProperty) {
+			return (AppliedStereotypeProperty) element;
 		}
 
-		if(element instanceof IAdaptable) {
-			return (AppliedStereotypeProperty)((IAdaptable)element).getAdapter(AppliedStereotypeProperty.class);
+		if (element instanceof IAdaptable) {
+			return (AppliedStereotypeProperty) ((IAdaptable) element).getAdapter(AppliedStereotypeProperty.class);
 		}
 
 		return null;

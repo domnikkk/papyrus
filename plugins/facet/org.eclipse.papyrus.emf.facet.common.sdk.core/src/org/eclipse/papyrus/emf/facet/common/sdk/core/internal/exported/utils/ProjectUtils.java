@@ -34,9 +34,6 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.papyrus.emf.facet.util.core.Logger;
-import org.eclipse.papyrus.emf.facet.util.core.internal.exported.FileUtils;
-import org.eclipse.papyrus.emf.facet.util.core.internal.exported.FolderUtils;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaConventions;
@@ -46,12 +43,15 @@ import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.papyrus.emf.facet.common.sdk.core.internal.Activator;
 import org.eclipse.papyrus.emf.facet.common.sdk.core.internal.Messages;
 import org.eclipse.papyrus.emf.facet.common.sdk.core.internal.exported.CommonConstants;
+import org.eclipse.papyrus.emf.facet.util.core.Logger;
+import org.eclipse.papyrus.emf.facet.util.core.internal.exported.FileUtils;
+import org.eclipse.papyrus.emf.facet.util.core.internal.exported.FolderUtils;
 
 import com.ibm.icu.lang.UCharacter;
 
 /**
  * @author Gregoire Dupe (Mia-Software), Fabien Giquel (Mia-Software)
- * 
+ *
  */
 public final class ProjectUtils {
 
@@ -286,10 +286,10 @@ public final class ProjectUtils {
 
 	/**
 	 * Create an EMF Facet project
-	 * 
+	 *
 	 * @param project
 	 *            a reference to the project to create (it must not already exist)
-	 * @param projectLocation 
+	 * @param projectLocation
 	 * @param monitor
 	 *            a progress monitor
 	 * @throws CoreException

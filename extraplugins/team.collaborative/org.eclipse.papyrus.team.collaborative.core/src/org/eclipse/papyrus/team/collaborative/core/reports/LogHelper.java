@@ -33,7 +33,7 @@ public class LogHelper {
 
 	/**
 	 * Gets the single instance of LogHelper.
-	 * 
+	 *
 	 * @return single instance of LogHelper
 	 */
 	public static LogHelper getInstance() {
@@ -42,11 +42,11 @@ public class LogHelper {
 
 	/**
 	 * Log info.
-	 * 
+	 *
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @param bundleId
-	 *        the bundle id
+	 *            the bundle id
 	 */
 	public void logInfo(String message, String bundleId) {
 		getLogger().log(createWarningStatus(bundleId, message));
@@ -54,26 +54,26 @@ public class LogHelper {
 
 	/**
 	 * Creates the warning status.
-	 * 
+	 *
 	 * @param bundleId
-	 *        the bundle id
+	 *            the bundle id
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @return the i status
 	 */
 	protected IStatus createWarningStatus(String bundleId, String message) {
-		return createStatus(Status.WARNING, bundleId, message);
+		return createStatus(IStatus.WARNING, bundleId, message);
 	}
 
 	/**
 	 * Log error.
-	 * 
+	 *
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @param bundleId
-	 *        the bundle id
+	 *            the bundle id
 	 * @param e
-	 *        the e
+	 *            the e
 	 */
 	public void logError(String message, String bundleId, Throwable e) {
 		getLogger().log(createErrorStatus(bundleId, message, e));
@@ -81,11 +81,11 @@ public class LogHelper {
 
 	/**
 	 * Log error.
-	 * 
+	 *
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @param bundleId
-	 *        the bundle id
+	 *            the bundle id
 	 */
 	public void logError(String message, String bundleId) {
 		getLogger().log(createErrorStatus(bundleId, message));
@@ -93,7 +93,7 @@ public class LogHelper {
 
 	/**
 	 * Gets the logger.
-	 * 
+	 *
 	 * @return the logger
 	 */
 	protected ILog getLogger() {
@@ -102,43 +102,43 @@ public class LogHelper {
 
 	/**
 	 * Creates the error status.
-	 * 
+	 *
 	 * @param pluginId
-	 *        the plugin id
+	 *            the plugin id
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @return the i status
 	 */
 	protected IStatus createErrorStatus(String pluginId, String message) {
-		return createStatus(Status.ERROR, pluginId, message);
+		return createStatus(IStatus.ERROR, pluginId, message);
 	}
 
 	/**
 	 * Creates the error status.
-	 * 
+	 *
 	 * @param pluginId
-	 *        the plugin id
+	 *            the plugin id
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @param e
-	 *        the e
+	 *            the e
 	 * @return the i status
 	 */
 	protected IStatus createErrorStatus(String pluginId, String message, Throwable e) {
-		return createStatus(Status.ERROR, pluginId, message, e);
+		return createStatus(IStatus.ERROR, pluginId, message, e);
 	}
 
 	/**
 	 * Creates the status.
-	 * 
+	 *
 	 * @param severity
-	 *        the severity
+	 *            the severity
 	 * @param pluginId
-	 *        the plugin id
+	 *            the plugin id
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @param e
-	 *        the e
+	 *            the e
 	 * @return the i status
 	 */
 	protected IStatus createStatus(int severity, String pluginId, String message, Throwable e) {
@@ -147,13 +147,13 @@ public class LogHelper {
 
 	/**
 	 * Creates the status.
-	 * 
+	 *
 	 * @param severity
-	 *        the severity
+	 *            the severity
 	 * @param pluginId
-	 *        the plugin id
+	 *            the plugin id
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @return the i status
 	 */
 	protected IStatus createStatus(int severity, String pluginId, String message) {

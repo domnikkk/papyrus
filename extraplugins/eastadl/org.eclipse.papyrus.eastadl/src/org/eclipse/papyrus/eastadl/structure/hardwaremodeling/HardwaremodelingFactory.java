@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage
  * @generated
  */
@@ -30,6 +31,7 @@ public interface HardwaremodelingFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	HardwaremodelingFactory eINSTANCE = org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingFactoryImpl.init();
@@ -38,6 +40,7 @@ public interface HardwaremodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Actuator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Actuator</em>'.
 	 * @generated
 	 */
@@ -47,6 +50,7 @@ public interface HardwaremodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Communication Hardware Pin</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Communication Hardware Pin</em>'.
 	 * @generated
 	 */
@@ -56,6 +60,7 @@ public interface HardwaremodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Hardware Component Prototype</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Hardware Component Prototype</em>'.
 	 * @generated
 	 */
@@ -65,6 +70,7 @@ public interface HardwaremodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Hardware Port Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Hardware Port Connector</em>'.
 	 * @generated
 	 */
@@ -74,6 +80,7 @@ public interface HardwaremodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Hardware Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Hardware Port</em>'.
 	 * @generated
 	 */
@@ -83,6 +90,7 @@ public interface HardwaremodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>IO Hardware Pin</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>IO Hardware Pin</em>'.
 	 * @generated
 	 */
@@ -92,6 +100,7 @@ public interface HardwaremodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Hardware Component Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Hardware Component Type</em>'.
 	 * @generated
 	 */
@@ -101,6 +110,7 @@ public interface HardwaremodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Hardware Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Hardware Connector</em>'.
 	 * @generated
 	 */
@@ -110,6 +120,7 @@ public interface HardwaremodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Node</em>'.
 	 * @generated
 	 */
@@ -119,6 +130,7 @@ public interface HardwaremodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Electrical Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Electrical Component</em>'.
 	 * @generated
 	 */
@@ -128,6 +140,7 @@ public interface HardwaremodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Power Hardware Pin</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Power Hardware Pin</em>'.
 	 * @generated
 	 */
@@ -137,6 +150,7 @@ public interface HardwaremodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Sensor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Sensor</em>'.
 	 * @generated
 	 */
@@ -146,9 +160,10 @@ public interface HardwaremodelingFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
 	HardwaremodelingPackage getHardwaremodelingPackage();
 
-} //HardwaremodelingFactory
+} // HardwaremodelingFactory

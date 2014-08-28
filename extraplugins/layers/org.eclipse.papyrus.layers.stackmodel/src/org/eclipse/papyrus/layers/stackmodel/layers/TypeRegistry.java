@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.TypeRegistry#getTypes <em>Types</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.TypeRegistry#getTypes <em>Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,10 +38,10 @@ public interface TypeRegistry extends EObject {
 	 * and the value is of type {@link org.eclipse.papyrus.layers.stackmodel.layers.Type},
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Types</em>' map isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Types</em>' map isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Types</em>' map.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getTypeRegistry_Types()
 	 * @model mapType="org.eclipse.papyrus.layers.stackmodel.layers.StringToTypeMap<org.eclipse.papyrus.layers.stackmodel.layers.String, org.eclipse.papyrus.layers.stackmodel.layers.Type>" ordered="false"

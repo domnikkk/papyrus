@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,18 +37,19 @@ import org.eclipse.ui.PlatformUI;
  * This handler allows to rename element in the Diagram. It works with the
  * org.eclipse.ui.edit.rename command. It is created to replace the initial
  * keybinding done by GMF. see bug 317424
- * 
+ *
  */
 public class RenamedElementHandler extends AbstractHandler {
 
 	/**
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
 	 */
 
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		List<IGraphicalEditPart> selection = getSelectedElements();
 		selection.get(0).performRequest(new Request(RequestConstants.REQ_DIRECT_EDIT));
@@ -56,19 +57,19 @@ public class RenamedElementHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#isEnabled()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public boolean isEnabled() {
 		List<IGraphicalEditPart> selection = getSelectedElements();
-		if(selection.size() == 1) {
+		if (selection.size() == 1) {
 			IGraphicalEditPart editpart = selection.get(0);
 			DiagramEditPart diagramEP = DiagramEditPartsUtil.getDiagramEditPart(editpart);
 			EObject modelElement = EMFHelper.getEObject(editpart);
-				
+
 			// we don't rename the diagram nor read-only objects
 			return (editpart != diagramEP) && ((modelElement == null) || !EMFHelper.isReadOnly(modelElement));
 		}
@@ -77,26 +78,26 @@ public class RenamedElementHandler extends AbstractHandler {
 
 	/**
 	 * Iterate over current selection and build a list of the {@link IGraphicalEditPart} contained in the selection.
-	 * 
+	 *
 	 * @return the currently selected {@link IGraphicalEditPart}
 	 */
 	protected List<IGraphicalEditPart> getSelectedElements() {
 		List<IGraphicalEditPart> editparts = new ArrayList<IGraphicalEditPart>();
 		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-		if (activeWorkbenchWindow!=null){
+		if (activeWorkbenchWindow != null) {
 			ISelection selection = activeWorkbenchWindow.getSelectionService().getSelection();
-			if(selection instanceof IStructuredSelection) {
-				IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+			if (selection instanceof IStructuredSelection) {
+				IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 				Iterator<?> it = structuredSelection.iterator();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					Object object = it.next();
-					if(object instanceof IGraphicalEditPart) {
-						editparts.add((IGraphicalEditPart)object);
+					if (object instanceof IGraphicalEditPart) {
+						editparts.add((IGraphicalEditPart) object);
 					}
 				}
-			} else if(selection instanceof IGraphicalEditPart) {
-				editparts.add((IGraphicalEditPart)selection);
-			}			
+			} else if (selection instanceof IGraphicalEditPart) {
+				editparts.add((IGraphicalEditPart) selection);
+			}
 		}
 		return editparts;
 	}

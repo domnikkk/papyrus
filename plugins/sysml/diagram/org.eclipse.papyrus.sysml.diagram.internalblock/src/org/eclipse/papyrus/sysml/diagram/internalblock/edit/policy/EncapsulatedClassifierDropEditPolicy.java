@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -51,40 +51,40 @@ public class EncapsulatedClassifierDropEditPolicy extends CustomDragDropEditPoli
 		TypeDropHelper helper = new TypeDropHelper(getEditingDomain());
 
 		// Single drop management possible drop action list can be proposed
-		if(dropRequest.getObjects().size() == 1) {
+		if (dropRequest.getObjects().size() == 1) {
 
 			// List of available drop commands
 			final List<Command> commandChoice = new ArrayList<Command>();
 
 			// 1. Try to create a Port typed by the dropped object
-			Command dropAsTypedPort = helper.getDropAsTypedPort(dropRequest, (GraphicalEditPart)getHost());
-			if((dropAsTypedPort != null) && (dropAsTypedPort.canExecute())) {
+			Command dropAsTypedPort = helper.getDropAsTypedPort(dropRequest, (GraphicalEditPart) getHost());
+			if ((dropAsTypedPort != null) && (dropAsTypedPort.canExecute())) {
 				commandChoice.add(dropAsTypedPort);
 			}
 
-			// 2. Try to create a FlowPort (In - Out - InOut) typed by the dropped object 
-			Command dropAsTypedFlowPort_In = helper.getDropAsTypedFlowPort(dropRequest, (GraphicalEditPart)getHost(), SysMLElementTypes.FLOW_PORT);
-			if((dropAsTypedFlowPort_In != null) && (dropAsTypedFlowPort_In.canExecute())) {
+			// 2. Try to create a FlowPort (In - Out - InOut) typed by the dropped object
+			Command dropAsTypedFlowPort_In = helper.getDropAsTypedFlowPort(dropRequest, (GraphicalEditPart) getHost(), SysMLElementTypes.FLOW_PORT);
+			if ((dropAsTypedFlowPort_In != null) && (dropAsTypedFlowPort_In.canExecute())) {
 				commandChoice.add(dropAsTypedFlowPort_In);
 			}
-			Command dropAsTypedFlowPort_Out = helper.getDropAsTypedFlowPort(dropRequest, (GraphicalEditPart)getHost(), SysMLElementTypes.FLOW_PORT_IN);
-			if((dropAsTypedFlowPort_Out != null) && (dropAsTypedFlowPort_Out.canExecute())) {
+			Command dropAsTypedFlowPort_Out = helper.getDropAsTypedFlowPort(dropRequest, (GraphicalEditPart) getHost(), SysMLElementTypes.FLOW_PORT_IN);
+			if ((dropAsTypedFlowPort_Out != null) && (dropAsTypedFlowPort_Out.canExecute())) {
 				commandChoice.add(dropAsTypedFlowPort_Out);
 			}
-			Command dropAsTypedFlowPort_InOut = helper.getDropAsTypedFlowPort(dropRequest, (GraphicalEditPart)getHost(), SysMLElementTypes.FLOW_PORT_OUT);
-			if((dropAsTypedFlowPort_InOut != null) && (dropAsTypedFlowPort_InOut.canExecute())) {
+			Command dropAsTypedFlowPort_InOut = helper.getDropAsTypedFlowPort(dropRequest, (GraphicalEditPart) getHost(), SysMLElementTypes.FLOW_PORT_OUT);
+			if ((dropAsTypedFlowPort_InOut != null) && (dropAsTypedFlowPort_InOut.canExecute())) {
 				commandChoice.add(dropAsTypedFlowPort_InOut);
 			}
 
 			// 3. Build default drop command (show view of the dropped object)
 			Command defaultDropCommand = super.getDropObjectsCommand(dropRequest);
 			defaultDropCommand.setLabel("Default drop (Show dropped object in diagram)");
-			if((defaultDropCommand != null) && (defaultDropCommand.canExecute())) {
+			if ((defaultDropCommand != null) && (defaultDropCommand.canExecute())) {
 				commandChoice.add(defaultDropCommand);
 			}
 
 			// Prepare the selection command (if several command are available) or return the drop command
-			if(commandChoice.size() > 1) {
+			if (commandChoice.size() > 1) {
 				RunnableWithResult<ICommand> runnable;
 				Display.getDefault().syncExec(runnable = new RunnableWithResult.Impl<ICommand>() {
 
@@ -97,7 +97,7 @@ public class EncapsulatedClassifierDropEditPolicy extends CustomDragDropEditPoli
 
 				return new ICommandProxy(selectCommand);
 
-			} else if(commandChoice.size() == 1) {
+			} else if (commandChoice.size() == 1) {
 				return commandChoice.get(0);
 			}
 

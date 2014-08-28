@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2014 LIFL, CEA LIST, and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,7 +12,7 @@
  *  Yann Tanguy yann.tanguy@cea.fr - Adapted from Class Diagram
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Adapted from composite structure diagram
  *  Christian W. Damus (CEA) - bug 392301
- *  
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.uml.diagram.profile;
@@ -65,13 +65,13 @@ public class UmlProfileDiagramForMultiEditor extends UMLDiagramEditor {
 	private Composite splitter;
 
 	private Image titleImage;
-	
+
 	/**
 	 * Constructor. Context and required objects are retrieved from the ServiceRegistry.
-	 * 
+	 *
 	 * @throws BackboneException
 	 * @throws ServiceException
-	 * 
+	 *
 	 */
 	public UmlProfileDiagramForMultiEditor(ServicesRegistry servicesRegistry, Diagram diagram) throws BackboneException, ServiceException {
 		super(servicesRegistry, diagram);
@@ -82,9 +82,9 @@ public class UmlProfileDiagramForMultiEditor extends UMLDiagramEditor {
 	 * Returns an editing domain id used to retrive an editing domain from the editing domain
 	 * registry. Clients should override this if they wish to use a shared editing domain for this
 	 * editor. If null is returned then a new editing domain will be created per editor instance.
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor#getEditingDomainID()
-	 * 
+	 *
 	 */
 	@Override
 	public String getEditingDomainID() {
@@ -103,7 +103,7 @@ public class UmlProfileDiagramForMultiEditor extends UMLDiagramEditor {
 
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -117,18 +117,18 @@ public class UmlProfileDiagramForMultiEditor extends UMLDiagramEditor {
 
 	@Override
 	public void dispose() {
-		if(titleImage != null) {
+		if (titleImage != null) {
 			titleImage.dispose();
 			titleImage = null;
 		}
-		
+
 		super.dispose();
 	}
 
 
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override

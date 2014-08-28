@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,29 +24,29 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * Axis Manager for Allocate
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class AllocateAxisManager extends AbstractStereotypedElementUMLSynchronizedOnFeatureAxisManager<Allocate> {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#canCreateAxisElement(java.lang.String)
-	 * 
+	 *
 	 * @param elementId
 	 * @return
 	 */
 	@Override
 	public boolean canCreateAxisElement(final String elementId) {
-		return ((ISpecializationType)SysMLElementTypes.ALLOCATE).getId().equals(elementId);
+		return ((ISpecializationType) SysMLElementTypes.ALLOCATE).getId().equals(elementId);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.nattable.manager.axis.AbstractStereotypedElementUMLSynchronizedOnFeatureAxisManager#isInstanceOfRequiredStereotypeApplication(java.lang.Object)
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
@@ -57,9 +57,9 @@ public class AllocateAxisManager extends AbstractStereotypedElementUMLSynchroniz
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.nattable.manager.axis.AbstractStereotypedElementUMLSynchronizedOnFeatureAxisManager#getStereotypeApplication(org.eclipse.uml2.uml.Element)
-	 * 
+	 *
 	 * @param el
 	 * @return
 	 */
@@ -69,9 +69,9 @@ public class AllocateAxisManager extends AbstractStereotypedElementUMLSynchroniz
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.nattable.manager.axis.AbstractStereotypedElementUMLSynchronizedOnFeatureAxisManager#getStereotypeBaseElement(org.eclipse.emf.ecore.EObject)
-	 * 
+	 *
 	 * @param stereotypeApplication
 	 * @return
 	 */
@@ -82,9 +82,9 @@ public class AllocateAxisManager extends AbstractStereotypedElementUMLSynchroniz
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.nattable.manager.axis.AbstractStereotypedElementUMLSynchronizedOnFeatureAxisManager#getStereotypeApplicationBasePropertyName()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -93,9 +93,9 @@ public class AllocateAxisManager extends AbstractStereotypedElementUMLSynchroniz
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.nattable.manager.axis.AbstractStereotypedElementUMLSynchronizedOnFeatureAxisManager#isAllowedAsBaseElement(org.eclipse.uml2.uml.Element)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */

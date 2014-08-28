@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -21,7 +21,7 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * Synchronized class for safe run.
- * 
+ *
  * @see AbstractGetMetaclassWidget
  * @since 0.3
  */
@@ -31,7 +31,7 @@ public class SynchronizedSelectETypeWizard<T extends EClassifier> extends
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param object
 	 *            the to synchronized.
 	 * @param display
@@ -42,6 +42,7 @@ public class SynchronizedSelectETypeWizard<T extends EClassifier> extends
 		super(object, display);
 	}
 
+	@Override
 	public T getSelectedEClassifier() {
 		return this.safeSyncExec(new AbstractExceptionFreeRunnable<T>() {
 			@Override

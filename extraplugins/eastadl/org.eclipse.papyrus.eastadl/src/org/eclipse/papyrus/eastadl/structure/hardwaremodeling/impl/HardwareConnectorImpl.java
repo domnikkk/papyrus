@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,6 +16,7 @@
 package org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -38,8 +39,8 @@ import org.eclipse.uml2.uml.Connector;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareConnectorImpl#getBase_Connector <em>Base Connector</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareConnectorImpl#getPin <em>Pin</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareConnectorImpl#getBase_Connector <em>Base Connector</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareConnectorImpl#getPin <em>Pin</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +52,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	 * The cached value of the '{@link #getBase_Connector() <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_Connector()
 	 * @generated
 	 * @ordered
@@ -60,13 +62,16 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	 * The cached value of the '{@link #getPin() <em>Pin</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPin()
 	 * @generated
 	 * @ordered
 	 */
 	protected EList<HardwareConnectorInstanceRef> pin;
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HardwareConnectorImpl() {
@@ -75,31 +80,35 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR:
-				if (resolve) return getBase_Connector();
-				return basicGetBase_Connector();
-			case HardwaremodelingPackage.HARDWARE_CONNECTOR__PIN:
-				return getPin();
+		case HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR:
+			if (resolve) {
+				return getBase_Connector();
+			}
+			return basicGetBase_Connector();
+		case HardwaremodelingPackage.HARDWARE_CONNECTOR__PIN:
+			return getPin();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR:
-				return base_Connector != null;
-			case HardwaremodelingPackage.HARDWARE_CONNECTOR__PIN:
-				return pin != null && !pin.isEmpty();
+		case HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR:
+			return base_Connector != null;
+		case HardwaremodelingPackage.HARDWARE_CONNECTOR__PIN:
+			return pin != null && !pin.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -107,14 +116,17 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == EAConnector.class) {
 			switch (derivedFeatureID) {
-				case HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR: return ElementsPackage.EA_CONNECTOR__BASE_CONNECTOR;
-				default: return -1;
+			case HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR:
+				return ElementsPackage.EA_CONNECTOR__BASE_CONNECTOR;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -123,14 +135,17 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == EAConnector.class) {
 			switch (baseFeatureID) {
-				case ElementsPackage.EA_CONNECTOR__BASE_CONNECTOR: return HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR;
-				default: return -1;
+			case ElementsPackage.EA_CONNECTOR__BASE_CONNECTOR:
+				return HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -138,25 +153,27 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR:
-				setBase_Connector((Connector)newValue);
-				return;
-			case HardwaremodelingPackage.HARDWARE_CONNECTOR__PIN:
-				getPin().clear();
-				getPin().addAll((Collection<? extends HardwareConnectorInstanceRef>)newValue);
-				return;
+		case HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR:
+			setBase_Connector((Connector) newValue);
+			return;
+		case HardwaremodelingPackage.HARDWARE_CONNECTOR__PIN:
+			getPin().clear();
+			getPin().addAll((Collection<? extends HardwareConnectorInstanceRef>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,15 +184,18 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Connector getBase_Connector() {
 		if (base_Connector != null && base_Connector.eIsProxy()) {
-			InternalEObject oldBase_Connector = (InternalEObject)base_Connector;
-			base_Connector = (Connector)eResolveProxy(oldBase_Connector);
+			InternalEObject oldBase_Connector = (InternalEObject) base_Connector;
+			base_Connector = (Connector) eResolveProxy(oldBase_Connector);
 			if (base_Connector != oldBase_Connector) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR, oldBase_Connector, base_Connector));
+				}
 			}
 		}
 		return base_Connector;
@@ -184,6 +204,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Connector basicGetBase_Connector() {
@@ -193,36 +214,42 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_Connector(Connector newBase_Connector) {
 		Connector oldBase_Connector = base_Connector;
 		base_Connector = newBase_Connector;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR, oldBase_Connector, base_Connector));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR:
-				setBase_Connector((Connector)null);
-				return;
-			case HardwaremodelingPackage.HARDWARE_CONNECTOR__PIN:
-				getPin().clear();
-				return;
+		case HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR:
+			setBase_Connector((Connector) null);
+			return;
+		case HardwaremodelingPackage.HARDWARE_CONNECTOR__PIN:
+			getPin().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<HardwareConnectorInstanceRef> getPin() {
 		if (pin == null) {
 			pin = new EObjectContainmentEList<HardwareConnectorInstanceRef>(HardwareConnectorInstanceRef.class, this, HardwaremodelingPackage.HARDWARE_CONNECTOR__PIN);
@@ -233,15 +260,16 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case HardwaremodelingPackage.HARDWARE_CONNECTOR__PIN:
-				return ((InternalEList<?>)getPin()).basicRemove(otherEnd, msgs);
+		case HardwaremodelingPackage.HARDWARE_CONNECTOR__PIN:
+			return ((InternalEList<?>) getPin()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}	
+	}
 
 } // HardwareConnectorImpl

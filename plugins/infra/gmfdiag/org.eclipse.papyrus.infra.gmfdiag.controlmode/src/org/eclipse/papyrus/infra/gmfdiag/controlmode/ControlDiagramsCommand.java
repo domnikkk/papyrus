@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Arthur Daussy <a href="mailto:arthur.daussy@atos.net"> - initial API and implementation
  ******************************************************************************/
@@ -32,9 +32,9 @@ import org.eclipse.papyrus.infra.services.controlmode.commands.AbstractControlCo
 
 /**
  * Command handling control/uncontrol of diagram in new resource
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class ControlDiagramsCommand extends AbstractControlCommand {
 
@@ -55,12 +55,13 @@ public class ControlDiagramsCommand extends AbstractControlCommand {
 
 	/**
 	 * Reference the diagram about to be moved into the request in order to be used by other particpants
+	 *
 	 * @param diags
 	 */
 	@SuppressWarnings("unchecked")
 	protected void addMovedDiagramToRequest(List<Diagram> diags) {
-		Collection<EObject> openables = (Collection<EObject>)getRequest().getParameter(ControlModeRequestParameters.MOVED_OPENABLES);
-		if(openables == null) {
+		Collection<EObject> openables = (Collection<EObject>) getRequest().getParameter(ControlModeRequestParameters.MOVED_OPENABLES);
+		if (openables == null) {
 			openables = new ArrayList<EObject>();
 		}
 		openables.addAll(diags);
@@ -71,13 +72,13 @@ public class ControlDiagramsCommand extends AbstractControlCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		EObject objectTOControl = getRequest().getTargetObject();
 		EMFHelper.getUsages(objectTOControl);
-		//Retrieve new notation resource created previously
+		// Retrieve new notation resource created previously
 		Resource newNotationResource = getRequest().getTargetResource(NotationModel.NOTATION_FILE_EXTENSION);
-		if(newNotationResource == null) {
+		if (newNotationResource == null) {
 			return CommandResult.newErrorCommandResult("The notation model has not been created");
 		}
 		List<Diagram> diagrams = getDiagrams();
-		if(!diagrams.isEmpty()) {
+		if (!diagrams.isEmpty()) {
 			newNotationResource.getContents().addAll(diagrams);
 			addMovedDiagramToRequest(diagrams);
 		}
@@ -86,6 +87,7 @@ public class ControlDiagramsCommand extends AbstractControlCommand {
 
 	/**
 	 * Get the list of all the diagrams to move
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */
@@ -96,7 +98,7 @@ public class ControlDiagramsCommand extends AbstractControlCommand {
 		} catch (Exception e) {
 			notationResource = null;
 		}
-		if(notationResource == null) {
+		if (notationResource == null) {
 			throw new ExecutionException("unable to retrieve old notation resource");
 		}
 		return NotationUtils.getDiagrams(notationResource, getRequest().getTargetObject());
@@ -104,12 +106,13 @@ public class ControlDiagramsCommand extends AbstractControlCommand {
 
 	/**
 	 * Get the old notation URI for request
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */
 	protected URI getOldNotationURI() throws ExecutionException {
 		URI uri = getRequest().getSourceURI();
-		if(uri != null) {
+		if (uri != null) {
 			return uri.trimFileExtension().appendFileExtension(NotationModel.NOTATION_FILE_EXTENSION);
 		}
 		throw new ExecutionException("Unable to retreive URI of the old notation model");

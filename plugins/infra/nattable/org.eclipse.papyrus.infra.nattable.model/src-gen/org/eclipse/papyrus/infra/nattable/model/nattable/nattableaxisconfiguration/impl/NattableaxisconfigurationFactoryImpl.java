@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -16,18 +16,25 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.*;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisIndexStyle;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.EStructuralFeatureValueFillingConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.FeatureAxisConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IPasteConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.LocalTableHeaderAxisConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationFactory;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.PasteEObjectConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TableHeaderAxisConfiguration;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implements NattableaxisconfigurationFactory {
@@ -36,13 +43,13 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NattableaxisconfigurationFactory init() {
 		try {
-			NattableaxisconfigurationFactory theNattableaxisconfigurationFactory = (NattableaxisconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory(NattableaxisconfigurationPackage.eNS_URI);
-			if(theNattableaxisconfigurationFactory != null) {
+			NattableaxisconfigurationFactory theNattableaxisconfigurationFactory = (NattableaxisconfigurationFactory) EPackage.Registry.INSTANCE.getEFactory(NattableaxisconfigurationPackage.eNS_URI);
+			if (theNattableaxisconfigurationFactory != null) {
 				return theNattableaxisconfigurationFactory;
 			}
 		} catch (Exception exception) {
@@ -55,7 +62,7 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NattableaxisconfigurationFactoryImpl() {
@@ -65,12 +72,12 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case NattableaxisconfigurationPackage.AXIS_MANAGER_REPRESENTATION:
 			return createAxisManagerRepresentation();
 		case NattableaxisconfigurationPackage.AXIS_MANAGER_CONFIGURATION:
@@ -95,12 +102,12 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case NattableaxisconfigurationPackage.AXIS_INDEX_STYLE:
 			return createAxisIndexStyleFromString(eDataType, initialValue);
 		default:
@@ -111,12 +118,12 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case NattableaxisconfigurationPackage.AXIS_INDEX_STYLE:
 			return convertAxisIndexStyleToString(eDataType, instanceValue);
 		default:
@@ -127,9 +134,10 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public AxisManagerRepresentation createAxisManagerRepresentation() {
 		AxisManagerRepresentationImpl axisManagerRepresentation = new AxisManagerRepresentationImpl();
 		return axisManagerRepresentation;
@@ -138,9 +146,10 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public AxisManagerConfiguration createAxisManagerConfiguration() {
 		AxisManagerConfigurationImpl axisManagerConfiguration = new AxisManagerConfigurationImpl();
 		return axisManagerConfiguration;
@@ -149,9 +158,10 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public TableHeaderAxisConfiguration createTableHeaderAxisConfiguration() {
 		TableHeaderAxisConfigurationImpl tableHeaderAxisConfiguration = new TableHeaderAxisConfigurationImpl();
 		return tableHeaderAxisConfiguration;
@@ -160,9 +170,10 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public LocalTableHeaderAxisConfiguration createLocalTableHeaderAxisConfiguration() {
 		LocalTableHeaderAxisConfigurationImpl localTableHeaderAxisConfiguration = new LocalTableHeaderAxisConfigurationImpl();
 		return localTableHeaderAxisConfiguration;
@@ -171,9 +182,10 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public FeatureAxisConfiguration createFeatureAxisConfiguration() {
 		FeatureAxisConfigurationImpl featureAxisConfiguration = new FeatureAxisConfigurationImpl();
 		return featureAxisConfiguration;
@@ -182,9 +194,10 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EStructuralFeatureValueFillingConfiguration createEStructuralFeatureValueFillingConfiguration() {
 		EStructuralFeatureValueFillingConfigurationImpl eStructuralFeatureValueFillingConfiguration = new EStructuralFeatureValueFillingConfigurationImpl();
 		return eStructuralFeatureValueFillingConfiguration;
@@ -193,9 +206,10 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public IPasteConfiguration createIPasteConfiguration() {
 		IPasteConfigurationImpl iPasteConfiguration = new IPasteConfigurationImpl();
 		return iPasteConfiguration;
@@ -204,9 +218,10 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public PasteEObjectConfiguration createPasteEObjectConfiguration() {
 		PasteEObjectConfigurationImpl pasteEObjectConfiguration = new PasteEObjectConfigurationImpl();
 		return pasteEObjectConfiguration;
@@ -215,20 +230,22 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AxisIndexStyle createAxisIndexStyleFromString(EDataType eDataType, String initialValue) {
 		AxisIndexStyle result = AxisIndexStyle.get(initialValue);
-		if(result == null)
+		if (result == null)
+		{
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertAxisIndexStyleToString(EDataType eDataType, Object instanceValue) {
@@ -238,17 +255,18 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public NattableaxisconfigurationPackage getNattableaxisconfigurationPackage() {
-		return (NattableaxisconfigurationPackage)getEPackage();
+		return (NattableaxisconfigurationPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -257,4 +275,4 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 		return NattableaxisconfigurationPackage.eINSTANCE;
 	}
 
-} //NattableaxisconfigurationFactoryImpl
+} // NattableaxisconfigurationFactoryImpl

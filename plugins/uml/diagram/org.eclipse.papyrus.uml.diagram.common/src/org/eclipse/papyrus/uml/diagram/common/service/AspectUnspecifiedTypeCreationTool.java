@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -86,9 +86,9 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 
 	/**
 	 * Creates an AspectUnspecifiedTypeCreationTool
-	 * 
+	 *
 	 * @param elementTypes
-	 *        List of element types of which one will be created (of type <code>IElementType</code>).
+	 *            List of element types of which one will be created (of type <code>IElementType</code>).
 	 */
 	public AspectUnspecifiedTypeCreationTool(List<IElementType> elementTypes) {
 		super(elementTypes);
@@ -104,12 +104,12 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 		antiScroll = true;
 		boolean requiresPostCommitRun = requiresPostCommitRun();
 		// EObject to listen
-		View eObject = (View)getTargetEditPart().getAdapter(View.class);
+		View eObject = (View) getTargetEditPart().getAdapter(View.class);
 		DiagramEventBroker eventBroker = null;
 		NotificationListener listener = null;
 		final EditPartViewer currentViewer = getCurrentViewer();
 
-		if(requiresPostCommitRun) {
+		if (requiresPostCommitRun) {
 			// register a listener to have information about element creation
 			// retrieves editing domain
 			TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(eObject);
@@ -117,26 +117,27 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 
 			listener = new NotificationListener() {
 
+				@Override
 				public void notifyChanged(Notification notification) {
 					Object newValue = notification.getNewValue();
-					if(currentViewer != null) {
-						EditPart editPart = (EditPart)currentViewer.getEditPartRegistry().get(newValue);
+					if (currentViewer != null) {
+						EditPart editPart = (EditPart) currentViewer.getEditPartRegistry().get(newValue);
 
-						for(IPostAction action : postActions) {
+						for (IPostAction action : postActions) {
 							action.runInPostCommit(editPart);
 						}
 					}
 				}
 			};
 
-			if(eventBroker != null) {
+			if (eventBroker != null) {
 				eventBroker.addNotificationListener(eObject, listener);
 			}
 		}
 
 		Command command = getCurrentCommand();
 
-		if(command != null) {
+		if (command != null) {
 			Command completeCommand = getCompleteCommand(command);
 
 			setCurrentCommand(completeCommand);
@@ -144,7 +145,7 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 			executeCurrentCommand();
 		}
 
-		if(requiresPostCommitRun && eventBroker != null) {
+		if (requiresPostCommitRun && eventBroker != null) {
 			eventBroker.removeNotificationListener(eObject, listener);
 		}
 
@@ -152,11 +153,11 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 		Collection<?> selectableEditParts = new LinkedList<Object>(DiagramCommandStack.getReturnValues(command));
 		Iterator<?> editPartsIterator = selectableEditParts.iterator();
 
-		while(editPartsIterator.hasNext()) {
+		while (editPartsIterator.hasNext()) {
 			Object editPartObject = editPartsIterator.next();
-			if(editPartObject instanceof IAdaptable) {
-				EditPart editPart = (EditPart)currentViewer.getEditPartRegistry().get(((IAdaptable)editPartObject).getAdapter(View.class));
-				if(editPart == null || !editPart.isSelectable()) {
+			if (editPartObject instanceof IAdaptable) {
+				EditPart editPart = (EditPart) currentViewer.getEditPartRegistry().get(((IAdaptable) editPartObject).getAdapter(View.class));
+				if (editPart == null || !editPart.isSelectable()) {
 					editPartsIterator.remove();
 				}
 			}
@@ -170,11 +171,11 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 	protected Command getCompleteCommand(Command createCommand) {
 		CompoundCommand compositeCmd = new CompoundCommand("Create Element");
 
-		for(IPreAction preAction : preActions) {
+		for (IPreAction preAction : preActions) {
 			Object context = getTargetEditPart().getModel();
-			if(context instanceof View) {
-				ICommand cmd = preAction.getNodePreCommand((View)context);
-				if(cmd != null) {
+			if (context instanceof View) {
+				ICommand cmd = preAction.getNodePreCommand((View) context);
+				if (cmd != null) {
 					compositeCmd.add(new ICommandProxy(cmd));
 				}
 			}
@@ -185,9 +186,9 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 		CreateUnspecifiedAdapter viewAdapter = new CreateUnspecifiedAdapter();
 		viewAdapter.add(getCreateRequest());
 
-		for(IPostAction action : postActions) {
+		for (IPostAction action : postActions) {
 			ICommand cmd = action.getPostCommand(viewAdapter);
-			if(cmd != null) {
+			if (cmd != null) {
 				compositeCmd.add(new ICommandProxy(cmd));
 			}
 		}
@@ -197,12 +198,12 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 
 	/**
 	 * checks if this tool needs a post commit run
-	 * 
+	 *
 	 * @return <code>true</code> if post actions need a post commit run
 	 */
 	protected boolean requiresPostCommitRun() {
-		for(IPostAction action : postActions) {
-			if(action.needsPostCommitRun()) {
+		for (IPostAction action : postActions) {
+			if (action.needsPostCommitRun()) {
 				return true;
 			}
 		}
@@ -214,11 +215,11 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 	 */
 	@Override
 	protected void applyProperty(Object key, Object value) {
-		if(IPapyrusPaletteConstant.ASPECT_ACTION_KEY.equals(key)) {
+		if (IPapyrusPaletteConstant.ASPECT_ACTION_KEY.equals(key)) {
 			// initialize the pre and post actions
 			// the value should be a NodeList
-			if(value instanceof NodeList) {
-				PaletteUtil.initAspectActions((NodeList)value, postActions, preActions);
+			if (value instanceof NodeList) {
+				PaletteUtil.initAspectActions((NodeList) value, postActions, preActions);
 			}
 		} else {
 			super.applyProperty(key, value);
@@ -227,7 +228,7 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 
 	/**
 	 * Returns the list of element types
-	 * 
+	 *
 	 * @return the list of element types
 	 */
 	public List<IElementType> getElementTypes() {
@@ -246,19 +247,19 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 
 	@SuppressWarnings("unchecked")
 	public static List<IAspectAction> getAspectActions(Request request) {
-		return (List<IAspectAction>)(request == null ? Collections.emptyList() : getAspectActions(request.getExtendedData()));
+		return (List<IAspectAction>) (request == null ? Collections.emptyList() : getAspectActions(request.getExtendedData()));
 	}
 
 	@SuppressWarnings("unchecked")
 	public static List<IAspectAction> getAspectActions(Map map) {
-		return (List<IAspectAction>)(map == null ? Collections.emptyList() : map.get(ID_ASPECT_ACTION));
+		return (List<IAspectAction>) (map == null ? Collections.emptyList() : map.get(ID_ASPECT_ACTION));
 	}
 
 	public class CreateAspectUnspecifiedTypeRequest extends CreateUnspecifiedTypeRequest {
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param elementTypes
 		 * @param preferencesHint
 		 */
@@ -272,13 +273,13 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 		 */
 		@Override
 		protected void createRequests() {
-			for(IElementType elementType : (List<IElementType>)getElementTypes()) {
+			for (IElementType elementType : (List<IElementType>) getElementTypes()) {
 				Request request = null;
-				if(elementType instanceof INotationType) {
-					ViewDescriptor viewDescriptor = new ViewDescriptor(null, Node.class, ((INotationType)elementType).getSemanticHint(), getPreferencesHint());
+				if (elementType instanceof INotationType) {
+					ViewDescriptor viewDescriptor = new ViewDescriptor(null, Node.class, ((INotationType) elementType).getSemanticHint(), getPreferencesHint());
 					request = new CreateViewRequest(viewDescriptor);
-				} else if(elementType instanceof IHintedType) {
-					ViewAndElementDescriptor viewDescriptor = new ViewAndElementDescriptor(new CreateElementRequestAdapter(new CreateElementRequest(elementType)), Node.class, getGraphicalHint((IHintedType)elementType), getPreferencesHint());
+				} else if (elementType instanceof IHintedType) {
+					ViewAndElementDescriptor viewDescriptor = new ViewAndElementDescriptor(new CreateElementRequestAdapter(new CreateElementRequest(elementType)), Node.class, getGraphicalHint((IHintedType) elementType), getPreferencesHint());
 					request = new CreateViewAndElementRequest(viewDescriptor);
 					request.setExtendedData(getExtendedData());
 				} else {
@@ -286,9 +287,9 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 					request = new CreateViewAndElementRequest(viewDescriptor);
 					request.setExtendedData(getExtendedData());
 				}
-				if(request instanceof CreateRequest) {
-					//see bug 427129: Figures newly created via the palette should be snapped to grid if "snap to grid" is activated
-					((CreateRequest)request).setSnapToEnabled(!getCurrentInput().isModKeyDown(MODIFIER_NO_SNAPPING));
+				if (request instanceof CreateRequest) {
+					// see bug 427129: Figures newly created via the palette should be snapped to grid if "snap to grid" is activated
+					((CreateRequest) request).setSnapToEnabled(!getCurrentInput().isModKeyDown(MODIFIER_NO_SNAPPING));
 				}
 				request.setType(getType());
 				requests.put(elementType, request);
@@ -298,9 +299,9 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 		/**
 		 * Returns the semantic hint for the given type. In case of extended
 		 * type, it returns the hint of the super type
-		 * 
+		 *
 		 * @param elementType
-		 *        the hinted element type from which hint is retrieved
+		 *            the hinted element type from which hint is retrieved
 		 * @return
 		 */
 		protected String getGraphicalHint(IHintedType elementType) {
@@ -325,41 +326,42 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 	static final int MODIFIER_NO_SNAPPING;
 
 	static {
-		if(Platform.OS_MACOSX.equals(Platform.getOS())) {
+		if (Platform.OS_MACOSX.equals(Platform.getOS())) {
 			MODIFIER_NO_SNAPPING = SWT.CTRL;
 		} else {
 			MODIFIER_NO_SNAPPING = SWT.ALT;
 		}
 	}
 
-	/**a string used as key to register the initial position for creation in the parameters map of the CreateRequest*/
+	/** a string used as key to register the initial position for creation in the parameters map of the CreateRequest */
 	public static final String INITIAL_MOUSE_LOCATION_FOR_CREATION = "initialMouseLocationForCreation";
-	
+
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.CreationTool#updateTargetRequest()
 	 *
 	 */
+	@Override
 	protected void updateTargetRequest() {
 		super.updateTargetRequest();
 		CreateRequest createRequest = getCreateRequest();
-		
-		//in some case with snap to grid, we need to know the real location (for affixed child node for example)
+
+		// in some case with snap to grid, we need to know the real location (for affixed child node for example)
 		@SuppressWarnings("unchecked")
 		Map<Object, Object> params = createRequest.getExtendedData();
 		params.put(INITIAL_MOUSE_LOCATION_FOR_CREATION, getLocation());
-		
-		//see bug 427129: Figures newly created via the palette should be snapped to grid if "snap to grid" is activated
-		if(!isInState(STATE_DRAG_IN_PROGRESS) && !getCurrentInput().isModKeyDown(MODIFIER_NO_SNAPPING)) {
-			//allow to do a snap to grid for creation with one click
-			if(getTargetEditPart() != null) {
-				SnapToHelper helper = (SnapToHelper)getTargetEditPart().getAdapter(SnapToHelper.class);
+
+		// see bug 427129: Figures newly created via the palette should be snapped to grid if "snap to grid" is activated
+		if (!isInState(STATE_DRAG_IN_PROGRESS) && !getCurrentInput().isModKeyDown(MODIFIER_NO_SNAPPING)) {
+			// allow to do a snap to grid for creation with one click
+			if (getTargetEditPart() != null) {
+				SnapToHelper helper = (SnapToHelper) getTargetEditPart().getAdapter(SnapToHelper.class);
 				Point loq = getLocation();
 				Rectangle bounds = new Rectangle(loq, loq);
 				createRequest.setSnapToEnabled(!getCurrentInput().isModKeyDown(MODIFIER_NO_SNAPPING));
 				createRequest.setLocation(bounds.getLocation());
-				if(helper != null && createRequest.isSnapToEnabled()) {
-					
+				if (helper != null && createRequest.isSnapToEnabled()) {
+
 					PrecisionRectangle baseRect = new PrecisionRectangle(bounds);
 					PrecisionRectangle result = baseRect.getPreciseCopy();
 					helper.snapRectangle(createRequest, PositionConstants.NORTH_WEST, baseRect, result);

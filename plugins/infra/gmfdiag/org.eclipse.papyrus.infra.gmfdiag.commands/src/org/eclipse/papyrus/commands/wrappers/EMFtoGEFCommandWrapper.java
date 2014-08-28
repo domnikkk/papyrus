@@ -9,7 +9,7 @@
  *    David Sciamma (Anyware Technologies), Mathieu Garcia (Anyware Technologies),
  *    Jacques Lescot (Anyware Technologies) - initial API and implementation
  *    Christian W. Damus (CEA) - bug 430701
- *    
+ *
  *******************************************************************************/
 package org.eclipse.papyrus.commands.wrappers;
 
@@ -21,9 +21,9 @@ import org.eclipse.papyrus.commands.INonDirtying;
 /**
  * A GEF Command that wraps an EMF command. Each method is redirected to the EMF one. <br>
  * Adapts an {@link org.eclipse.emf.common.command.Command EMF Command} to be a {@link org.eclipse.gef.commands.Command GEF Command}.
- * 
+ *
  * Creation : 21 fev. 2006
- * 
+ *
  * @author aarong, <a href="mailto:jacques.lescot@anyware-tech.com">Jacques LESCOT</a>
  */
 public class EMFtoGEFCommandWrapper extends Command {
@@ -36,24 +36,24 @@ public class EMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param command
-	 *        the wrapped EMF command
+	 *            the wrapped EMF command
 	 */
 	public EMFtoGEFCommandWrapper(final org.eclipse.emf.common.command.Command command) {
 		super(command.getLabel());
 		emfCommand = command;
 	}
-	
+
 	/**
 	 * Wraps the given {@code command}, accounting for possible non-dirty state.
-	 * 
+	 *
 	 * @param command
-	 *        a command to wrap
+	 *            a command to wrap
 	 * @return the best wrapper for the {@code command}
 	 */
 	public static Command wrap(org.eclipse.emf.common.command.Command command) {
-		if(command instanceof AbstractCommand.NonDirtying) {
+		if (command instanceof AbstractCommand.NonDirtying) {
 			return new NonDirtying(command);
 		}
 		return new EMFtoGEFCommandWrapper(command);
@@ -61,7 +61,7 @@ public class EMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Returns the wrapped EMF command.
-	 * 
+	 *
 	 * @return the EMF command
 	 */
 	// @unused
@@ -71,7 +71,7 @@ public class EMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Dispose.
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#dispose()
 	 */
 	@Override
@@ -81,9 +81,9 @@ public class EMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Can execute.
-	 * 
+	 *
 	 * @return true, if can execute
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#canExecute()
 	 */
 	@Override
@@ -93,9 +93,9 @@ public class EMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Can undo.
-	 * 
+	 *
 	 * @return true, if can undo
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#canUndo()
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class EMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Execute.
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#execute()
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class EMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Redo.
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#redo()
 	 */
 	@Override
@@ -125,18 +125,18 @@ public class EMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Undo.
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#undo()
 	 */
 	@Override
 	public void undo() {
 		emfCommand.undo();
 	}
-	
+
 	//
 	// Nested types
 	//
-	
+
 	/**
 	 * A non-dirtying wrapper for non-dirtying commands.
 	 */
@@ -145,10 +145,10 @@ public class EMFtoGEFCommandWrapper extends Command {
 		public NonDirtying(org.eclipse.emf.common.command.Command command) {
 			super(command);
 
-			if(!(command instanceof org.eclipse.emf.common.command.AbstractCommand.NonDirtying)) {
+			if (!(command instanceof org.eclipse.emf.common.command.AbstractCommand.NonDirtying)) {
 				throw new IllegalArgumentException("Wrapped command is not non-dirtying"); //$NON-NLS-1$
 			}
 		}
-		
+
 	}
 }

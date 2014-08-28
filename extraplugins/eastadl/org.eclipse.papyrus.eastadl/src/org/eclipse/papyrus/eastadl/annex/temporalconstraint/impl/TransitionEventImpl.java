@@ -23,11 +23,11 @@ import org.eclipse.papyrus.eastadl.timing.Event;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionEventImpl#getOccurredFeatureFlaw <em>Occurred Feature Flaw</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionEventImpl#getOccurredHazardousEvent <em>Occurred Hazardous Event</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionEventImpl#getOccurredFaultFailure <em>Occurred Fault Failure</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionEventImpl#getOccurredExecutionEvent <em>Occurred Execution Event</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionEventImpl#getOccurredLogicalEvent <em>Occurred Logical Event</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionEventImpl#getOccurredFeatureFlaw <em>Occurred Feature Flaw</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionEventImpl#getOccurredHazardousEvent <em>Occurred Hazardous Event</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionEventImpl#getOccurredFaultFailure <em>Occurred Fault Failure</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionEventImpl#getOccurredExecutionEvent <em>Occurred Execution Event</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionEventImpl#getOccurredLogicalEvent <em>Occurred Logical Event</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +38,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	 * The cached value of the '{@link #getOccurredFeatureFlaw() <em>Occurred Feature Flaw</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOccurredFeatureFlaw()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	 * The cached value of the '{@link #getOccurredHazardousEvent() <em>Occurred Hazardous Event</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOccurredHazardousEvent()
 	 * @generated
 	 * @ordered
@@ -58,6 +60,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	 * The cached value of the '{@link #getOccurredFaultFailure() <em>Occurred Fault Failure</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOccurredFaultFailure()
 	 * @generated
 	 * @ordered
@@ -68,6 +71,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	 * The cached value of the '{@link #getOccurredExecutionEvent() <em>Occurred Execution Event</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOccurredExecutionEvent()
 	 * @generated
 	 * @ordered
@@ -78,6 +82,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	 * The cached value of the '{@link #getOccurredLogicalEvent() <em>Occurred Logical Event</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOccurredLogicalEvent()
 	 * @generated
 	 * @ordered
@@ -87,6 +92,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TransitionEventImpl() {
@@ -96,6 +102,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,8 +113,10 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<FeatureFlaw> getOccurredFeatureFlaw() {
 		if (occurredFeatureFlaw == null) {
 			occurredFeatureFlaw = new EObjectResolvingEList<FeatureFlaw>(FeatureFlaw.class, this, TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FEATURE_FLAW);
@@ -118,8 +127,10 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<HazardousEvent> getOccurredHazardousEvent() {
 		if (occurredHazardousEvent == null) {
 			occurredHazardousEvent = new EObjectResolvingEList<HazardousEvent>(HazardousEvent.class, this, TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_HAZARDOUS_EVENT);
@@ -130,8 +141,10 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<FaultFailure> getOccurredFaultFailure() {
 		if (occurredFaultFailure == null) {
 			occurredFaultFailure = new EObjectResolvingEList<FaultFailure>(FaultFailure.class, this, TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FAULT_FAILURE);
@@ -142,8 +155,10 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<Event> getOccurredExecutionEvent() {
 		if (occurredExecutionEvent == null) {
 			occurredExecutionEvent = new EObjectResolvingEList<Event>(Event.class, this, TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_EXECUTION_EVENT);
@@ -154,8 +169,10 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<LogicalEvent> getOccurredLogicalEvent() {
 		if (occurredLogicalEvent == null) {
 			occurredLogicalEvent = new EObjectResolvingEList<LogicalEvent>(LogicalEvent.class, this, TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_LOGICAL_EVENT);
@@ -166,21 +183,22 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FEATURE_FLAW:
-				return getOccurredFeatureFlaw();
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_HAZARDOUS_EVENT:
-				return getOccurredHazardousEvent();
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FAULT_FAILURE:
-				return getOccurredFaultFailure();
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_EXECUTION_EVENT:
-				return getOccurredExecutionEvent();
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_LOGICAL_EVENT:
-				return getOccurredLogicalEvent();
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FEATURE_FLAW:
+			return getOccurredFeatureFlaw();
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_HAZARDOUS_EVENT:
+			return getOccurredHazardousEvent();
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FAULT_FAILURE:
+			return getOccurredFaultFailure();
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_EXECUTION_EVENT:
+			return getOccurredExecutionEvent();
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_LOGICAL_EVENT:
+			return getOccurredLogicalEvent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -188,32 +206,33 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FEATURE_FLAW:
-				getOccurredFeatureFlaw().clear();
-				getOccurredFeatureFlaw().addAll((Collection<? extends FeatureFlaw>)newValue);
-				return;
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_HAZARDOUS_EVENT:
-				getOccurredHazardousEvent().clear();
-				getOccurredHazardousEvent().addAll((Collection<? extends HazardousEvent>)newValue);
-				return;
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FAULT_FAILURE:
-				getOccurredFaultFailure().clear();
-				getOccurredFaultFailure().addAll((Collection<? extends FaultFailure>)newValue);
-				return;
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_EXECUTION_EVENT:
-				getOccurredExecutionEvent().clear();
-				getOccurredExecutionEvent().addAll((Collection<? extends Event>)newValue);
-				return;
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_LOGICAL_EVENT:
-				getOccurredLogicalEvent().clear();
-				getOccurredLogicalEvent().addAll((Collection<? extends LogicalEvent>)newValue);
-				return;
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FEATURE_FLAW:
+			getOccurredFeatureFlaw().clear();
+			getOccurredFeatureFlaw().addAll((Collection<? extends FeatureFlaw>) newValue);
+			return;
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_HAZARDOUS_EVENT:
+			getOccurredHazardousEvent().clear();
+			getOccurredHazardousEvent().addAll((Collection<? extends HazardousEvent>) newValue);
+			return;
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FAULT_FAILURE:
+			getOccurredFaultFailure().clear();
+			getOccurredFaultFailure().addAll((Collection<? extends FaultFailure>) newValue);
+			return;
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_EXECUTION_EVENT:
+			getOccurredExecutionEvent().clear();
+			getOccurredExecutionEvent().addAll((Collection<? extends Event>) newValue);
+			return;
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_LOGICAL_EVENT:
+			getOccurredLogicalEvent().clear();
+			getOccurredLogicalEvent().addAll((Collection<? extends LogicalEvent>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -221,26 +240,27 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FEATURE_FLAW:
-				getOccurredFeatureFlaw().clear();
-				return;
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_HAZARDOUS_EVENT:
-				getOccurredHazardousEvent().clear();
-				return;
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FAULT_FAILURE:
-				getOccurredFaultFailure().clear();
-				return;
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_EXECUTION_EVENT:
-				getOccurredExecutionEvent().clear();
-				return;
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_LOGICAL_EVENT:
-				getOccurredLogicalEvent().clear();
-				return;
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FEATURE_FLAW:
+			getOccurredFeatureFlaw().clear();
+			return;
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_HAZARDOUS_EVENT:
+			getOccurredHazardousEvent().clear();
+			return;
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FAULT_FAILURE:
+			getOccurredFaultFailure().clear();
+			return;
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_EXECUTION_EVENT:
+			getOccurredExecutionEvent().clear();
+			return;
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_LOGICAL_EVENT:
+			getOccurredLogicalEvent().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -248,23 +268,24 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FEATURE_FLAW:
-				return occurredFeatureFlaw != null && !occurredFeatureFlaw.isEmpty();
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_HAZARDOUS_EVENT:
-				return occurredHazardousEvent != null && !occurredHazardousEvent.isEmpty();
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FAULT_FAILURE:
-				return occurredFaultFailure != null && !occurredFaultFailure.isEmpty();
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_EXECUTION_EVENT:
-				return occurredExecutionEvent != null && !occurredExecutionEvent.isEmpty();
-			case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_LOGICAL_EVENT:
-				return occurredLogicalEvent != null && !occurredLogicalEvent.isEmpty();
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FEATURE_FLAW:
+			return occurredFeatureFlaw != null && !occurredFeatureFlaw.isEmpty();
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_HAZARDOUS_EVENT:
+			return occurredHazardousEvent != null && !occurredHazardousEvent.isEmpty();
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_FAULT_FAILURE:
+			return occurredFaultFailure != null && !occurredFaultFailure.isEmpty();
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_EXECUTION_EVENT:
+			return occurredExecutionEvent != null && !occurredExecutionEvent.isEmpty();
+		case TemporalconstraintPackage.TRANSITION_EVENT__OCCURRED_LOGICAL_EVENT:
+			return occurredLogicalEvent != null && !occurredLogicalEvent.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //TransitionEventImpl
+} // TransitionEventImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,21 +23,21 @@ import org.eclipse.papyrus.uml.diagram.communication.edit.policies.InteractionCo
 import org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes;
 
 /**
- * 
- * 
+ *
+ *
  * this a specialization to manage creation of TimeObservation and
  * DurationObservation
- * 
- * 
+ *
+ *
  */
 public class CustomInteractionCompartmentSemanticEditPolicy extends InteractionCompartmentItemSemanticEditPolicy {
 
 	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if(UMLElementTypes.TimeObservation_8006 == req.getElementType()) {
+		if (UMLElementTypes.TimeObservation_8006 == req.getElementType()) {
 			return getGEFWrapper(new CustomTimeObservationCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.DurationObservation_8007 == req.getElementType()) {
+		if (UMLElementTypes.DurationObservation_8007 == req.getElementType()) {
 			return getGEFWrapper(new CustomDurationObservationCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		return super.getCreateCommand(req);
@@ -45,7 +45,7 @@ public class CustomInteractionCompartmentSemanticEditPolicy extends InteractionC
 
 	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		//System.err.println("getReorientRelationshipCommand VisualID of element to reorient" + getVisualID(req));
+		// System.err.println("getReorientRelationshipCommand VisualID of element to reorient" + getVisualID(req));
 		return super.getReorientRelationshipCommand(req);
 	}
 }

@@ -21,8 +21,8 @@ import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentP
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl#getHardwareComponentProtype_target <em>Hardware Component Protype target</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl#getHardwareComponentPrototype_context <em>Hardware Component Prototype context</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl#getHardwareComponentProtype_target <em>Hardware Component Protype target</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl#getHardwareComponentPrototype_context <em>Hardware Component Prototype context</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +33,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	 * The cached value of the '{@link #getHardwareComponentProtype_target() <em>Hardware Component Protype target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getHardwareComponentProtype_target()
 	 * @generated
 	 * @ordered
@@ -43,6 +44,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	 * The cached value of the '{@link #getHardwareComponentPrototype_context() <em>Hardware Component Prototype context</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getHardwareComponentPrototype_context()
 	 * @generated
 	 * @ordered
@@ -52,6 +54,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl() {
@@ -61,6 +64,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,15 +75,19 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public HardwareComponentPrototype getHardwareComponentProtype_target() {
 		if (hardwareComponentProtype_target != null && hardwareComponentProtype_target.eIsProxy()) {
-			InternalEObject oldHardwareComponentProtype_target = (InternalEObject)hardwareComponentProtype_target;
-			hardwareComponentProtype_target = (HardwareComponentPrototype)eResolveProxy(oldHardwareComponentProtype_target);
+			InternalEObject oldHardwareComponentProtype_target = (InternalEObject) hardwareComponentProtype_target;
+			hardwareComponentProtype_target = (HardwareComponentPrototype) eResolveProxy(oldHardwareComponentProtype_target);
 			if (hardwareComponentProtype_target != oldHardwareComponentProtype_target) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET, oldHardwareComponentProtype_target, hardwareComponentProtype_target));
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET, oldHardwareComponentProtype_target,
+							hardwareComponentProtype_target));
+				}
 			}
 		}
 		return hardwareComponentProtype_target;
@@ -88,6 +96,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public HardwareComponentPrototype basicGetHardwareComponentProtype_target() {
@@ -97,23 +106,30 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setHardwareComponentProtype_target(HardwareComponentPrototype newHardwareComponentProtype_target) {
 		HardwareComponentPrototype oldHardwareComponentProtype_target = hardwareComponentProtype_target;
 		hardwareComponentProtype_target = newHardwareComponentProtype_target;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET, oldHardwareComponentProtype_target, hardwareComponentProtype_target));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET, oldHardwareComponentProtype_target,
+					hardwareComponentProtype_target));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<HardwareComponentPrototype> getHardwareComponentPrototype_context() {
 		if (hardwareComponentPrototype_context == null) {
-			hardwareComponentPrototype_context = new EObjectResolvingEList<HardwareComponentPrototype>(HardwareComponentPrototype.class, this, InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE_CONTEXT);
+			hardwareComponentPrototype_context = new EObjectResolvingEList<HardwareComponentPrototype>(HardwareComponentPrototype.class, this,
+					InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE_CONTEXT);
 		}
 		return hardwareComponentPrototype_context;
 	}
@@ -121,16 +137,19 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET:
-				if (resolve) return getHardwareComponentProtype_target();
-				return basicGetHardwareComponentProtype_target();
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE_CONTEXT:
-				return getHardwareComponentPrototype_context();
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET:
+			if (resolve) {
+				return getHardwareComponentProtype_target();
+			}
+			return basicGetHardwareComponentProtype_target();
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE_CONTEXT:
+			return getHardwareComponentPrototype_context();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -138,19 +157,20 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET:
-				setHardwareComponentProtype_target((HardwareComponentPrototype)newValue);
-				return;
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE_CONTEXT:
-				getHardwareComponentPrototype_context().clear();
-				getHardwareComponentPrototype_context().addAll((Collection<? extends HardwareComponentPrototype>)newValue);
-				return;
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET:
+			setHardwareComponentProtype_target((HardwareComponentPrototype) newValue);
+			return;
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE_CONTEXT:
+			getHardwareComponentPrototype_context().clear();
+			getHardwareComponentPrototype_context().addAll((Collection<? extends HardwareComponentPrototype>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -158,17 +178,18 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET:
-				setHardwareComponentProtype_target((HardwareComponentPrototype)null);
-				return;
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE_CONTEXT:
-				getHardwareComponentPrototype_context().clear();
-				return;
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET:
+			setHardwareComponentProtype_target((HardwareComponentPrototype) null);
+			return;
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE_CONTEXT:
+			getHardwareComponentPrototype_context().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -176,17 +197,18 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET:
-				return hardwareComponentProtype_target != null;
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE_CONTEXT:
-				return hardwareComponentPrototype_context != null && !hardwareComponentPrototype_context.isEmpty();
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET:
+			return hardwareComponentProtype_target != null;
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE_CONTEXT:
+			return hardwareComponentPrototype_context != null && !hardwareComponentPrototype_context.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl
+} // BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl

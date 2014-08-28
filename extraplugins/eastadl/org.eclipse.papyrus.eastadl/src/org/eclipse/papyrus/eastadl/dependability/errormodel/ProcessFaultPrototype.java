@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,11 +23,11 @@ import org.eclipse.uml2.uml.Event;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The ProcessFaultPrototype metaclass represents the anomalies that the target component/system can have due to design or implementation flaws (e.g., incorrect requirements, buffer size configuration, scheduling, etc.). 
- * 
- * Semantics: 
  * The ProcessFaultPrototype metaclass represents the anomalies that the target component/system can have due to design or implementation flaws (e.g., incorrect requirements, buffer size configuration, scheduling, etc.).
- * 
+ *
+ * Semantics:
+ * The ProcessFaultPrototype metaclass represents the anomalies that the target component/system can have due to design or implementation flaws (e.g., incorrect requirements, buffer size configuration, scheduling, etc.).
+ *
  * Extension:
  * UML::Part / UML::Event
  * <!-- end-model-doc -->
@@ -35,7 +35,7 @@ import org.eclipse.uml2.uml.Event;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ProcessFaultPrototype#getBase_Event <em>Base Event</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ProcessFaultPrototype#getBase_Event <em>Base Event</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,10 +48,10 @@ public interface ProcessFaultPrototype extends Anomaly {
 	 * Returns the value of the '<em><b>Base Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Event</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Event</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Event</em>' reference.
 	 * @see #setBase_Event(Event)
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getProcessFaultPrototype_Base_Event()
@@ -64,7 +64,9 @@ public interface ProcessFaultPrototype extends Anomaly {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ProcessFaultPrototype#getBase_Event <em>Base Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Event</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Event</em>' reference.
 	 * @see #getBase_Event()
 	 * @generated
 	 */

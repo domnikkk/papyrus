@@ -24,10 +24,14 @@ public interface IEmbeddingRule {
 	// TODO: application order?
 	/**
 	 * configure an instance (within a container)
-	 * @param executorIS the instance specification of the component that is used as basis for configuring the instance
-	 * @param instance the instance of an element of the container.
-	 * @param port the port within a container transformation for which the instance is used as an interceptor.
-	 *    Is null for "normal" connectors or container extensions is configured.
+	 *
+	 * @param executorIS
+	 *            the instance specification of the component that is used as basis for configuring the instance
+	 * @param instance
+	 *            the instance of an element of the container.
+	 * @param port
+	 *            the port within a container transformation for which the instance is used as an interceptor.
+	 *            Is null for "normal" connectors or container extensions is configured.
 	 */
 	public void embeddExtension(InstanceSpecification executorIS, InstanceSpecification instance, Port port);
 }

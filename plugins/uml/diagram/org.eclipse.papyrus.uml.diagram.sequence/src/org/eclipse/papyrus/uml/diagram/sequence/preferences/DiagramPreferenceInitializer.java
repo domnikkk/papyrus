@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,10 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 
 	/**
 	 * Add the diagram preference page to the initialization
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = getPreferenceStore();
 		InteractionPreferencePage.initDefaults(store);

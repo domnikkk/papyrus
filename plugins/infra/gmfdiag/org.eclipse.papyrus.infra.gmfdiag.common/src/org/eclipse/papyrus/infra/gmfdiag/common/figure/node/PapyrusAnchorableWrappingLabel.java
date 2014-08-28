@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,16 +26,16 @@ import org.eclipse.gmf.runtime.gef.ui.figures.SlidableAnchor;
 
 /**
  * Create a papyrus wrapping label that can be targeted by a connection.
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel implements IAnchorableFigure {
 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createDefaultAnchor()
 	 */
@@ -45,7 +45,7 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#szAnchor()
 	 */
@@ -53,20 +53,21 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#getConnectionAnchor()
 	 */
+	@Override
 	public ConnectionAnchor getConnectionAnchor(String terminal) {
 
-		ConnectionAnchor connectAnchor = (ConnectionAnchor)getConnectionAnchors().get(terminal);
-		if(connectAnchor == null) {
-			if(terminal.equals(szAnchor)) {
+		ConnectionAnchor connectAnchor = (ConnectionAnchor) getConnectionAnchors().get(terminal);
+		if (connectAnchor == null) {
+			if (terminal.equals(szAnchor)) {
 				// get a new one - this figure doesn't support static anchors
 				connectAnchor = createDefaultAnchor();
 				getConnectionAnchors().put(terminal, connectAnchor);
 			} else {
-				connectAnchor = createAnchor(SlidableAnchor.parseTerminalString(terminal));
+				connectAnchor = createAnchor(BaseSlidableAnchor.parseTerminalString(terminal));
 			}
 		}
 
@@ -75,34 +76,36 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createAnchor()
 	 */
 	protected ConnectionAnchor createAnchor(PrecisionPoint p) {
-		if(p == null)
+		if (p == null) {
 			// If the old terminal for the connection anchor cannot be resolved (by SlidableAnchor) a null
 			// PrecisionPoint will passed in - this is handled here
 			return createDefaultAnchor();
+		}
 		return new SlidableAnchor(this, p);
 	}
 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#getConnectionAnchors()
 	 */
 	protected Hashtable getConnectionAnchors() {
-		if(connectionAnchors == null)
+		if (connectionAnchors == null) {
 			connectionAnchors = new Hashtable(1);
+		}
 		return connectionAnchors;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#connectionAnchors()
 	 */
@@ -110,21 +113,23 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#getConnectionAnchorTerminal()
 	 */
+	@Override
 	public String getConnectionAnchorTerminal(ConnectionAnchor c) {
-		if(c instanceof SlidableAnchor) {
-			return ((SlidableAnchor)c).getTerminal();
+		if (c instanceof SlidableAnchor) {
+			return ((SlidableAnchor) c).getTerminal();
 		}
-		if(getConnectionAnchors().containsValue(c)) {
+		if (getConnectionAnchors().containsValue(c)) {
 			Iterator iter = getConnectionAnchors().keySet().iterator();
 			String key;
-			while(iter.hasNext()) {
-				key = (String)iter.next();
-				if(getConnectionAnchors().get(key).equals(c))
+			while (iter.hasNext()) {
+				key = (String) iter.next();
+				if (getConnectionAnchors().get(key).equals(c)) {
 					return key;
+				}
 			}
 		}
 		getConnectionAnchor(szAnchor);
@@ -134,46 +139,49 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#getSourceConnectionAnchorAt()
 	 */
+	@Override
 	public ConnectionAnchor getSourceConnectionAnchorAt(Point p) {
 		return createConnectionAnchor(p);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#getTargetConnectionAnchorAt()
 	 */
+	@Override
 	public ConnectionAnchor getTargetConnectionAnchorAt(Point p) {
 		return createConnectionAnchor(p);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createConnectionAnchor()
 	 */
 	protected ConnectionAnchor createConnectionAnchor(Point p) {
-		if(p == null) {
+		if (p == null) {
 			return getConnectionAnchor(szAnchor);
 		} else {
 			Point temp = p.getCopy();
 			translateToRelative(temp);
 			PrecisionPoint pt = BaseSlidableAnchor.getAnchorRelativeLocation(temp, getBounds());
-			if(isDefaultAnchorArea(pt))
+			if (isDefaultAnchorArea(pt)) {
 				return getConnectionAnchor(szAnchor);
+			}
 			return createAnchor(pt);
 		}
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#isDefaultAnchorArea()
 	 */
@@ -183,7 +191,7 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#getSlidableAnchorArea()
 	 */

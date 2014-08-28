@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,14 +29,14 @@ public class CreateRobotmlModelCommand extends ModelCreationCommandBase {
 
 	public static final String ROBOTML_PROFILE_URI = PROFILES_PATHMAP + "RobotMLProfile.profile.uml"; //$NON-NLS-1$
 
-	//public static final String FCM_PROFILE_URI = "pathmap://FCM_PROFILES/FCM.profile.uml";
+	// public static final String FCM_PROFILE_URI = "pathmap://FCM_PROFILES/FCM.profile.uml";
 
 	//public static final String ROBOTML_PROFILE_URI = PROFILES_PATHMAP + "RobotML.profile.uml"; //$NON-NLS-1$
 
 
 	/**
 	 * @see org.eclipse.papyrus.core.extension.commands.ModelCreationCommandBase#createRootElement()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -47,27 +47,27 @@ public class CreateRobotmlModelCommand extends ModelCreationCommandBase {
 
 	/**
 	 * @see org.eclipse.papyrus.core.extension.commands.ModelCreationCommandBase#initializeModel(org.eclipse.emf.ecore.EObject)
-	 * 
+	 *
 	 * @param owner
 	 */
 
 	@Override
 	protected void initializeModel(EObject owner) {
 		super.initializeModel(owner);
-		((org.eclipse.uml2.uml.Package)owner).setName(getModelName());
+		((org.eclipse.uml2.uml.Package) owner).setName(getModelName());
 
 		// Retrieve robotml profile and apply with Sub-profile
 		org.eclipse.uml2.uml.Package robotml = PackageUtil.loadPackage(URI.createURI(ROBOTML_PROFILE_URI), owner.eResource().getResourceSet());
-		//org.eclipse.uml2.uml.Package fcm = PackageUtil.loadPackage(URI.createURI(FCM_PROFILE_URI), owner.eResource().getResourceSet());
-		if((robotml != null) && (robotml instanceof Profile)) {
-			PackageUtil.applyProfile(((org.eclipse.uml2.uml.Package)owner), (org.eclipse.uml2.uml.Profile)robotml, true);
-			//PackageUtil.applyProfile(((org.eclipse.uml2.uml.Package)owner), (org.eclipse.uml2.uml.Profile) fcm, true);
+		// org.eclipse.uml2.uml.Package fcm = PackageUtil.loadPackage(URI.createURI(FCM_PROFILE_URI), owner.eResource().getResourceSet());
+		if ((robotml != null) && (robotml instanceof Profile)) {
+			PackageUtil.applyProfile(((org.eclipse.uml2.uml.Package) owner), (org.eclipse.uml2.uml.Profile) robotml, true);
+			// PackageUtil.applyProfile(((org.eclipse.uml2.uml.Package)owner), (org.eclipse.uml2.uml.Profile) fcm, true);
 		}
 	}
 
 	/**
 	 * Gets the model name.
-	 * 
+	 *
 	 * @return the model name
 	 */
 	protected String getModelName() {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ public class CustomDurationObservationAppliedStereotypeEditPart extends Duration
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomDurationObservationAppliedStereotypeEditPart(View view) {
@@ -39,19 +39,21 @@ public class CustomDurationObservationAppliedStereotypeEditPart extends Duration
 	/**
 	 * @Override
 	 */
+	@Override
 	public IFigure getPrimaryShape() {
 		return getFigure();
 	}
 
+	@Override
 	protected void refreshLabel() {
-		//We do NOT want to update label with the Parser.
+		// We do NOT want to update label with the Parser.
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if(pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy)pdEditPolicy).refreshFeedback();
+		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
+			((UMLTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
 		}
 		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if(sfEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy)sfEditPolicy).refreshFeedback();
+		if (sfEditPolicy instanceof UMLTextSelectionEditPolicy) {
+			((UMLTextSelectionEditPolicy) sfEditPolicy).refreshFeedback();
 		}
 	}
 
@@ -61,8 +63,8 @@ public class CustomDurationObservationAppliedStereotypeEditPart extends Duration
 		removeEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY);
 		View view = getPrimaryView();
 		View stereotypeChangedView = view;
-		if(view != null) {
-			//			stereotypeChangedView = ViewUtil.getChildBySemanticHint(view, UMLVisualIDRegistry.getType(DurationObservationLabelEditPart.VISUAL_ID));
+		if (view != null) {
+			// stereotypeChangedView = ViewUtil.getChildBySemanticHint(view, UMLVisualIDRegistry.getType(DurationObservationLabelEditPart.VISUAL_ID));
 		}
 		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeExternalNodeLabelEditPolicy(stereotypeChangedView));
 	}

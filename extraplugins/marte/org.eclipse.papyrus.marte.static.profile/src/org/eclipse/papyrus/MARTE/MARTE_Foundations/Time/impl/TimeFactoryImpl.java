@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.*;
 import org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock;
 import org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint;
 import org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType;
@@ -36,6 +35,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedValueSpecification;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
@@ -43,16 +43,16 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static TimeFactory init() {
 		try {
-			TimeFactory theTimeFactory = (TimeFactory)EPackage.Registry.INSTANCE.getEFactory(TimePackage.eNS_URI);
+			TimeFactory theTimeFactory = (TimeFactory) EPackage.Registry.INSTANCE.getEFactory(TimePackage.eNS_URI);
 			if (theTimeFactory != null) {
 				return theTimeFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new TimeFactoryImpl();
@@ -62,6 +62,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public TimeFactoryImpl() {
@@ -71,31 +72,44 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case TimePackage.TIMED_DOMAIN: return createTimedDomain();
-			case TimePackage.CLOCK: return createClock();
-			case TimePackage.CLOCK_TYPE: return createClockType();
-			case TimePackage.TIMED_VALUE_SPECIFICATION: return createTimedValueSpecification();
-			case TimePackage.TIMED_CONSTRAINT: return createTimedConstraint();
-			case TimePackage.CLOCK_CONSTRAINT: return createClockConstraint();
-			case TimePackage.TIMED_INSTANT_OBSERVATION: return createTimedInstantObservation();
-			case TimePackage.TIMED_DURATION_OBSERVATION: return createTimedDurationObservation();
-			case TimePackage.TIMED_EVENT: return createTimedEvent();
-			case TimePackage.TIMED_PROCESSING: return createTimedProcessing();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case TimePackage.TIMED_DOMAIN:
+			return createTimedDomain();
+		case TimePackage.CLOCK:
+			return createClock();
+		case TimePackage.CLOCK_TYPE:
+			return createClockType();
+		case TimePackage.TIMED_VALUE_SPECIFICATION:
+			return createTimedValueSpecification();
+		case TimePackage.TIMED_CONSTRAINT:
+			return createTimedConstraint();
+		case TimePackage.CLOCK_CONSTRAINT:
+			return createClockConstraint();
+		case TimePackage.TIMED_INSTANT_OBSERVATION:
+			return createTimedInstantObservation();
+		case TimePackage.TIMED_DURATION_OBSERVATION:
+			return createTimedDurationObservation();
+		case TimePackage.TIMED_EVENT:
+			return createTimedEvent();
+		case TimePackage.TIMED_PROCESSING:
+			return createTimedProcessing();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimedDomain createTimedDomain() {
 		TimedDomainImpl timedDomain = new TimedDomainImpl();
 		return timedDomain;
@@ -104,8 +118,10 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Clock createClock() {
 		ClockImpl clock = new ClockImpl();
 		return clock;
@@ -114,8 +130,10 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ClockType createClockType() {
 		ClockTypeImpl clockType = new ClockTypeImpl();
 		return clockType;
@@ -124,8 +142,10 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimedValueSpecification createTimedValueSpecification() {
 		TimedValueSpecificationImpl timedValueSpecification = new TimedValueSpecificationImpl();
 		return timedValueSpecification;
@@ -134,8 +154,10 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimedConstraint createTimedConstraint() {
 		TimedConstraintImpl timedConstraint = new TimedConstraintImpl();
 		return timedConstraint;
@@ -144,8 +166,10 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ClockConstraint createClockConstraint() {
 		ClockConstraintImpl clockConstraint = new ClockConstraintImpl();
 		return clockConstraint;
@@ -154,8 +178,10 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimedInstantObservation createTimedInstantObservation() {
 		TimedInstantObservationImpl timedInstantObservation = new TimedInstantObservationImpl();
 		return timedInstantObservation;
@@ -164,8 +190,10 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimedDurationObservation createTimedDurationObservation() {
 		TimedDurationObservationImpl timedDurationObservation = new TimedDurationObservationImpl();
 		return timedDurationObservation;
@@ -174,8 +202,10 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimedEvent createTimedEvent() {
 		TimedEventImpl timedEvent = new TimedEventImpl();
 		return timedEvent;
@@ -184,8 +214,10 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimedProcessing createTimedProcessing() {
 		TimedProcessingImpl timedProcessing = new TimedProcessingImpl();
 		return timedProcessing;
@@ -194,15 +226,18 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimePackage getTimePackage() {
-		return (TimePackage)getEPackage();
+		return (TimePackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -211,4 +246,4 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 		return TimePackage.eINSTANCE;
 	}
 
-} //TimeFactoryImpl
+} // TimeFactoryImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ import org.eclipse.papyrus.uml.diagram.common.figure.edge.UMLEdgeFigure;
 
 /**
  * Basic figure for Activity Edge figure
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class ActivityEdgeFigure extends UMLEdgeFigure {
 
@@ -58,6 +58,7 @@ public class ActivityEdgeFigure extends UMLEdgeFigure {
 	/**
 	 * create the content
 	 */
+	@Override
 	protected void createContents() {
 		super.createContents();
 	}
@@ -85,7 +86,7 @@ public class ActivityEdgeFigure extends UMLEdgeFigure {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public WrappedLabel getEdgeName() {
 		return fEdgeName;
@@ -101,6 +102,7 @@ public class ActivityEdgeFigure extends UMLEdgeFigure {
 	/**
 	 * Get the stereotype label of super class
 	 */
+	@Override
 	public WrappingLabel getAppliedStereotypeLabel() {
 		return super.getAppliedStereotypeLabel();
 	}

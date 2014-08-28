@@ -10,10 +10,10 @@ package org.eclipse.papyrus.eastadl.structure.hardwaremodeling;
  *
  * <!-- begin-model-doc -->
  * Electrical component represents a hardware element as e.g. relays, batteries, capacitors and other non-computational, non-interactional (with plant) elements.
- * 
+ *
  * Semantics:
  * Electrical component may be active (e.g., a battery) or passive (main relay).
- * 
+ *
  * Notation:
  * ElectricalComponentis shown as a solid-outline rectangle. The rectangle contains the name, and its ports or port groups on the perimeter.
  * <!-- end-model-doc -->
@@ -21,7 +21,7 @@ package org.eclipse.papyrus.eastadl.structure.hardwaremodeling;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.ElectricalComponent#isIsActive <em>Is Active</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.ElectricalComponent#isIsActive <em>Is Active</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +37,7 @@ public interface ElectricalComponent extends HardwareComponentType {
 	 * <!-- begin-model-doc -->
 	 * Indicates if the PowerSupply is active or passive.
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Is Active</em>' attribute.
 	 * @see #setIsActive(boolean)
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getElectricalComponent_IsActive()
@@ -49,7 +50,9 @@ public interface ElectricalComponent extends HardwareComponentType {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.ElectricalComponent#isIsActive <em>Is Active</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Active</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Is Active</em>' attribute.
 	 * @see #isIsActive()
 	 * @generated
 	 */

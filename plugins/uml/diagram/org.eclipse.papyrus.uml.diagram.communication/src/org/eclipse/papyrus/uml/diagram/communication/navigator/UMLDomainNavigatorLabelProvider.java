@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -39,8 +39,8 @@ public class UMLDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	 * @generated
 	 */
 	public Image getImage(Object element) {
-		if(element instanceof UMLDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider.getImage(((UMLDomainNavigatorItem)element).getEObject());
+		if (element instanceof UMLDomainNavigatorItem) {
+			return myAdapterFactoryLabelProvider.getImage(((UMLDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}
@@ -49,8 +49,8 @@ public class UMLDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if(element instanceof UMLDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider.getText(((UMLDomainNavigatorItem)element).getEObject());
+		if (element instanceof UMLDomainNavigatorItem) {
+			return myAdapterFactoryLabelProvider.getText(((UMLDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}

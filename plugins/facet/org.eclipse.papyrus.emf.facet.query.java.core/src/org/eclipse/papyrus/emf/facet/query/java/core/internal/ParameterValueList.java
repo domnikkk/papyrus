@@ -36,7 +36,7 @@ public class ParameterValueList extends ArrayList<ParameterValue> implements
 
 	/**
 	 * Return the value of the parameter with the specified name.
-	 * 
+	 *
 	 * @param name
 	 *            the name of the parameter
 	 * @return the value, or <code>null</code> if there is no parameter with
@@ -52,7 +52,7 @@ public class ParameterValueList extends ArrayList<ParameterValue> implements
 
 	/**
 	 * Return the parameter with the specified name.
-	 * 
+	 *
 	 * @param name
 	 *            the name of the parameter
 	 * @return the parameter, or <code>null</code> if there is no parameter with
@@ -79,7 +79,7 @@ public class ParameterValueList extends ArrayList<ParameterValue> implements
 
 	/**
 	 * Return the parameter corresponding to the given parameter declaration.
-	 * 
+	 *
 	 * @param parameter
 	 *            the parameter declaration
 	 * @return the parameter, or <code>null</code> if the given parameter
@@ -96,7 +96,7 @@ public class ParameterValueList extends ArrayList<ParameterValue> implements
 
 	/**
 	 * Return the value of a parameter
-	 * 
+	 *
 	 * @param parameter
 	 *            the parameter
 	 * @return the value of the parameter

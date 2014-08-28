@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,17 +33,17 @@ import org.eclipse.ui.navigator.INavigatorContentService;
 public class DiagramViewHandler extends AbstractHandler {
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return the common navigator
 	 */
 	protected static CommonNavigator getCommonNavigator() {
 		IViewPart part = org.eclipse.papyrus.views.modelexplorer.NavigatorUtils.findViewPart(ModelExplorerPageBookView.VIEW_ID);
 		// the part is only a book, retrieving correct page
-		if(part instanceof ModelExplorerPageBookView) {
-			IViewPart page = ((ModelExplorerPageBookView)part).getActiveView();
-			if(page instanceof CommonNavigator) {
-				return ((CommonNavigator)page);
+		if (part instanceof ModelExplorerPageBookView) {
+			IViewPart page = ((ModelExplorerPageBookView) part).getActiveView();
+			if (page instanceof CommonNavigator) {
+				return ((CommonNavigator) page);
 			}
 		}
 		return null;
@@ -57,8 +57,8 @@ public class DiagramViewHandler extends AbstractHandler {
 	 * {@inheritDoc}
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		if(getCommonNavigator() == null || getCommonNavigator().getCommonViewer() == null) {
-			return null; //The model explorer is not displayed (The editor is closed?)
+		if (getCommonNavigator() == null || getCommonNavigator().getCommonViewer() == null) {
+			return null; // The model explorer is not displayed (The editor is closed?)
 		}
 
 		CommonViewer viewer = getCommonNavigator().getCommonViewer();
@@ -67,26 +67,26 @@ public class DiagramViewHandler extends AbstractHandler {
 
 		Object trigger = event.getTrigger();
 
-		if(trigger instanceof Event) {
-			//State based on the widget
-			Event triggerEvent = (Event)trigger;
-			if(triggerEvent.widget instanceof ToolItem) {
-				if(((ToolItem)triggerEvent.widget).getSelection()) {
-					newContents = new String[]{ DIAGRAM_CONTENTS };
+		if (trigger instanceof Event) {
+			// State based on the widget
+			Event triggerEvent = (Event) trigger;
+			if (triggerEvent.widget instanceof ToolItem) {
+				if (((ToolItem) triggerEvent.widget).getSelection()) {
+					newContents = new String[] { DIAGRAM_CONTENTS };
 				} else {
-					newContents = new String[]{ UML_MODEL_CONTENTS };
+					newContents = new String[] { UML_MODEL_CONTENTS };
 				}
 			}
 		}
 
-		if(newContents == null) {
-			//Revert the current state
+		if (newContents == null) {
+			// Revert the current state
 			INavigatorContentService navigatorContent = viewer.getNavigatorContentService();
 
-			if(navigatorContent.isActive(DIAGRAM_CONTENTS)) {
-				newContents = new String[]{ UML_MODEL_CONTENTS };
+			if (navigatorContent.isActive(DIAGRAM_CONTENTS)) {
+				newContents = new String[] { UML_MODEL_CONTENTS };
 			} else {
-				newContents = new String[]{ DIAGRAM_CONTENTS };
+				newContents = new String[] { DIAGRAM_CONTENTS };
 			}
 		}
 

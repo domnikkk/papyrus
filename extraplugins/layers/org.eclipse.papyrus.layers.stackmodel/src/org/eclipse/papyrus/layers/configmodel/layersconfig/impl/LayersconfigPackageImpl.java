@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -40,12 +40,14 @@ import org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class LayersconfigPackageImpl extends EPackageImpl implements LayersconfigPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass folderEClass = null;
@@ -53,6 +55,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass folderElementEClass = null;
@@ -60,6 +63,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layerOperatorConfigEClass = null;
@@ -67,6 +71,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass instanciableElementEClass = null;
@@ -74,6 +79,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass operatorConfigEClass = null;
@@ -81,6 +87,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass propertyIdEClass = null;
@@ -88,6 +95,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass typeConfigEClass = null;
@@ -95,6 +103,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layerOperatorMultipleBindingEClass = null;
@@ -102,6 +111,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass operatorBindingEClass = null;
@@ -109,6 +119,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EEnum classnameKindEEnum = null;
@@ -116,6 +127,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType stringEDataType = null;
@@ -123,6 +135,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType instanciationExceptionEDataType = null;
@@ -130,6 +143,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType layerOperatorDescriptorEDataType = null;
@@ -137,20 +151,17 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType propertyOperatorEDataType = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#eNS_URI
 	 * @see #init()
@@ -163,27 +174,30 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link LayersconfigPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 *
+	 * <p>
+	 * This method is used to initialize {@link LayersconfigPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static LayersconfigPackage init() {
-		if (isInited) return (LayersconfigPackage)EPackage.Registry.INSTANCE.getEPackage(LayersconfigPackage.eNS_URI);
+		if (isInited) {
+			return (LayersconfigPackage) EPackage.Registry.INSTANCE.getEPackage(LayersconfigPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		LayersconfigPackageImpl theLayersconfigPackage = (LayersconfigPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof LayersconfigPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new LayersconfigPackageImpl());
+		LayersconfigPackageImpl theLayersconfigPackage = (LayersconfigPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof LayersconfigPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new LayersconfigPackageImpl());
 
 		isInited = true;
 
@@ -196,7 +210,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 		// Mark meta-data to indicate it can't be changed
 		theLayersconfigPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(LayersconfigPackage.eNS_URI, theLayersconfigPackage);
 		return theLayersconfigPackage;
@@ -205,8 +219,10 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFolder() {
 		return folderEClass;
 	}
@@ -214,17 +230,21 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFolder_FolderElements() {
-		return (EReference)folderEClass.getEStructuralFeatures().get(0);
+		return (EReference) folderEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFolderElement() {
 		return folderElementEClass;
 	}
@@ -232,17 +252,21 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFolderElement_Name() {
-		return (EAttribute)folderElementEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) folderElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayerOperatorConfig() {
 		return layerOperatorConfigEClass;
 	}
@@ -250,8 +274,10 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerOperatorConfig__CreateLayersOperatorDescriptor() {
 		return layerOperatorConfigEClass.getEOperations().get(0);
 	}
@@ -259,8 +285,10 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getInstanciableElement() {
 		return instanciableElementEClass;
 	}
@@ -268,53 +296,65 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInstanciableElement_Classname() {
-		return (EAttribute)instanciableElementEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) instanciableElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInstanciableElement_BundleID() {
-		return (EAttribute)instanciableElementEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) instanciableElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInstanciableElement_DisplayName() {
-		return (EAttribute)instanciableElementEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) instanciableElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInstanciableElement_IconPath() {
-		return (EAttribute)instanciableElementEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) instanciableElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInstanciableElement_ClassnameKind() {
-		return (EAttribute)instanciableElementEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) instanciableElementEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getOperatorConfig() {
 		return operatorConfigEClass;
 	}
@@ -322,8 +362,10 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getOperatorConfig__CreateOperatorDescriptor() {
 		return operatorConfigEClass.getEOperations().get(0);
 	}
@@ -331,8 +373,10 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertyId() {
 		return propertyIdEClass;
 	}
@@ -340,17 +384,21 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyId_Type() {
-		return (EReference)propertyIdEClass.getEStructuralFeatures().get(0);
+		return (EReference) propertyIdEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getTypeConfig() {
 		return typeConfigEClass;
 	}
@@ -358,8 +406,10 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayerOperatorMultipleBinding() {
 		return layerOperatorMultipleBindingEClass;
 	}
@@ -367,26 +417,32 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayerOperatorMultipleBinding_LayerOperatorConfig() {
-		return (EReference)layerOperatorMultipleBindingEClass.getEStructuralFeatures().get(0);
+		return (EReference) layerOperatorMultipleBindingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayerOperatorMultipleBinding_Bindings() {
-		return (EReference)layerOperatorMultipleBindingEClass.getEStructuralFeatures().get(1);
+		return (EReference) layerOperatorMultipleBindingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getOperatorBinding() {
 		return operatorBindingEClass;
 	}
@@ -394,44 +450,54 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getOperatorBinding_Operator() {
-		return (EReference)operatorBindingEClass.getEStructuralFeatures().get(0);
+		return (EReference) operatorBindingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getOperatorBinding_LayerOperatorConfig() {
-		return (EReference)operatorBindingEClass.getEStructuralFeatures().get(1);
+		return (EReference) operatorBindingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getOperatorBinding_PropertyId() {
-		return (EReference)operatorBindingEClass.getEStructuralFeatures().get(2);
+		return (EReference) operatorBindingEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getOperatorBinding_Owner() {
-		return (EReference)operatorBindingEClass.getEStructuralFeatures().get(3);
+		return (EReference) operatorBindingEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EEnum getClassnameKind() {
 		return classnameKindEEnum;
 	}
@@ -439,8 +505,10 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getString() {
 		return stringEDataType;
 	}
@@ -448,8 +516,10 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getInstanciationException() {
 		return instanciationExceptionEDataType;
 	}
@@ -457,8 +527,10 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getLayerOperatorDescriptor() {
 		return layerOperatorDescriptorEDataType;
 	}
@@ -466,8 +538,10 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getPropertyOperator() {
 		return propertyOperatorEDataType;
 	}
@@ -475,28 +549,34 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public LayersconfigFactory getLayersconfigFactory() {
-		return (LayersconfigFactory)getEFactoryInstance();
+		return (LayersconfigFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -547,19 +627,23 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -610,14 +694,20 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 		initEClass(typeConfigEClass, TypeConfig.class, "TypeConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(layerOperatorMultipleBindingEClass, LayerOperatorMultipleBinding.class, "LayerOperatorMultipleBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLayerOperatorMultipleBinding_LayerOperatorConfig(), this.getLayerOperatorConfig(), null, "layerOperatorConfig", null, 1, 1, LayerOperatorMultipleBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLayerOperatorMultipleBinding_Bindings(), this.getOperatorBinding(), this.getOperatorBinding_Owner(), "bindings", null, 0, -1, LayerOperatorMultipleBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayerOperatorMultipleBinding_LayerOperatorConfig(), this.getLayerOperatorConfig(), null, "layerOperatorConfig", null, 1, 1, LayerOperatorMultipleBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayerOperatorMultipleBinding_Bindings(), this.getOperatorBinding(), this.getOperatorBinding_Owner(), "bindings", null, 0, -1, LayerOperatorMultipleBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(operatorBindingEClass, OperatorBinding.class, "OperatorBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOperatorBinding_Operator(), this.getOperatorConfig(), null, "operator", null, 1, 1, OperatorBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getOperatorBinding_LayerOperatorConfig(), this.getLayerOperatorConfig(), null, "layerOperatorConfig", null, 1, 1, OperatorBinding.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getOperatorBinding_PropertyId(), this.getPropertyId(), null, "propertyId", null, 1, 1, OperatorBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getOperatorBinding_Owner(), this.getLayerOperatorMultipleBinding(), this.getLayerOperatorMultipleBinding_Bindings(), "owner", null, 1, 1, OperatorBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getOperatorBinding_Operator(), this.getOperatorConfig(), null, "operator", null, 1, 1, OperatorBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
+		initEReference(getOperatorBinding_LayerOperatorConfig(), this.getLayerOperatorConfig(), null, "layerOperatorConfig", null, 1, 1, OperatorBinding.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getOperatorBinding_PropertyId(), this.getPropertyId(), null, "propertyId", null, 1, 1, OperatorBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
+		initEReference(getOperatorBinding_Owner(), this.getLayerOperatorMultipleBinding(), this.getLayerOperatorMultipleBinding_Bindings(), "owner", null, 1, 1, OperatorBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(classnameKindEEnum, ClassnameKind.class, "ClassnameKind");
@@ -636,4 +726,4 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 		createResource(eNS_URI);
 	}
 
-} //LayersconfigPackageImpl
+} // LayersconfigPackageImpl

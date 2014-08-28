@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,30 +23,30 @@ import org.eclipse.papyrus.infra.nattable.manager.table.NattableModelManager;
 
 public class ColumnEditAliasHeaderHandler extends AbstractTableHandler {
 
-	//TODO : this attribute must be removed when we introduce the dependency on e4.
+	// TODO : this attribute must be removed when we introduce the dependency on e4.
 	private NatEventData eventData;
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		if(this.eventData != null) {
-			AbstractNattableWidgetManager manager = (AbstractNattableWidgetManager)getCurrentNattableModelManager();
+		if (this.eventData != null) {
+			AbstractNattableWidgetManager manager = (AbstractNattableWidgetManager) getCurrentNattableModelManager();
 			manager.openEditColumnAliasDialog(this.eventData);
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
 	@Override
-	public void setEnabled(Object evaluationContext) {//it must be the nattable selection event
+	public void setEnabled(Object evaluationContext) {// it must be the nattable selection event
 		final NatEventData eventData = getNatEventData(evaluationContext);
 		this.eventData = eventData;
-		final NattableModelManager manager = (NattableModelManager)getCurrentNattableModelManager();
-		if(eventData != null && manager != null) {
+		final NattableModelManager manager = (NattableModelManager) getCurrentNattableModelManager();
+		if (eventData != null && manager != null) {
 			setBaseEnabled(manager.canEditColumnHeader(eventData));
 		} else {
 			setBaseEnabled(false);

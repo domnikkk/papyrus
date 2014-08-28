@@ -1506,7 +1506,7 @@
 <extension
       point="org.eclipse.ui.handlers">
    <handler
-         class="org.eclipse.papyrus.uml.diagram.composite.custom.actions.ManageProvidedInterfacesHandler"
+         class="org.eclipse.papyrus.uml.diagram.common.actions.handlers.ManagePortInterfacesHandler"
          commandId="org.eclipse.papyrus.uml.diagram.composite.command.manage.interfaces">
       <activeWhen>
          <and>

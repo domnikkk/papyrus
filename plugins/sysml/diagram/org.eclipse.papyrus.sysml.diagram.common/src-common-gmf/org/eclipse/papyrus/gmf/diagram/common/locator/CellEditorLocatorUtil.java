@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -25,12 +25,12 @@ import org.eclipse.papyrus.uml.diagram.common.figure.node.IMultilineEditableFigu
 public class CellEditorLocatorUtil {
 
 	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
-		if(source.getFigure() instanceof IMultilineEditableFigure)
-			return new MultilineCellEditorLocator((IMultilineEditableFigure)source.getFigure());
-		else if(source.getFigure() instanceof WrappingLabel)
-			return new TextCellEditorLocator((WrappingLabel)source.getFigure());
-		else {
-			return new LabelCellEditorLocator((Label)source.getFigure());
+		if (source.getFigure() instanceof IMultilineEditableFigure) {
+			return new MultilineCellEditorLocator((IMultilineEditableFigure) source.getFigure());
+		} else if (source.getFigure() instanceof WrappingLabel) {
+			return new TextCellEditorLocator((WrappingLabel) source.getFigure());
+		} else {
+			return new LabelCellEditorLocator((Label) source.getFigure());
 		}
 	}
 }

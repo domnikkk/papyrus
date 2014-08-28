@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ public class DestructionOccurrenceUtil {
 	public static void reorderDestructionOccurrence(List<InteractionFragment> reorderedFragments) {
 		int size = reorderedFragments.size();
 		List<InteractionFragment> destructionOccurrenceList = new ArrayList<InteractionFragment>(size);
-		for(int i = 0; i < size; i++) {
+		for (int i = 0; i < size; i++) {
 			InteractionFragment o = reorderedFragments.get(i);
-			if(o instanceof DestructionOccurrenceSpecification) {
+			if (o instanceof DestructionOccurrenceSpecification) {
 				destructionOccurrenceList.add(o);
 			}
 		}
@@ -40,30 +40,33 @@ public class DestructionOccurrenceUtil {
 	}
 
 	public static void constraintDestructionOccurrence(Message mess, List<InteractionFragment> constraint) {
-		if(mess.getMessageSort() != MessageSort.DELETE_MESSAGE_LITERAL)
+		if (mess.getMessageSort() != MessageSort.DELETE_MESSAGE_LITERAL) {
 			return;
+		}
 		addDestructionOccurrenceConstraint(mess.getReceiveEvent(), constraint);
 		addDestructionOccurrenceConstraint(mess.getSendEvent(), constraint);
 	}
 
 	public static void addDestructionOccurrenceConstraint(MessageEnd end, List<InteractionFragment> constraint) {
-		if(end instanceof InteractionFragment) {
-			InteractionFragment frag = (InteractionFragment)end;
-			if(frag.getCovereds().size() > 0) {
-				Lifeline lifeline = ((InteractionFragment)frag).getCovereds().get(0);
+		if (end instanceof InteractionFragment) {
+			InteractionFragment frag = (InteractionFragment) end;
+			if (frag.getCovereds().size() > 0) {
+				Lifeline lifeline = frag.getCovereds().get(0);
 				DestructionOccurrenceSpecification d = findDestructionOccurrence(lifeline);
-				if(d != null)
+				if (d != null) {
 					constraint.add(d);
+				}
 			}
 		}
 	}
 
 	public static DestructionOccurrenceSpecification findDestructionOccurrence(Lifeline lifeline) {
 		EList<InteractionFragment> list = lifeline.getCoveredBys();
-		for(InteractionFragment f : list)
-			if(f instanceof DestructionOccurrenceSpecification) {
-				return (DestructionOccurrenceSpecification)f;
+		for (InteractionFragment f : list) {
+			if (f instanceof DestructionOccurrenceSpecification) {
+				return (DestructionOccurrenceSpecification) f;
 			}
+		}
 		return null;
 	}
 }

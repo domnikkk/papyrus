@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -26,11 +26,11 @@ import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl#getClassname <em>Classname</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl#getBundleID <em>Bundle ID</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl#getDisplayName <em>Display Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl#getIconPath <em>Icon Path</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl#getClassnameKind <em>Classname Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl#getClassname <em>Classname</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl#getBundleID <em>Bundle ID</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl#getDisplayName <em>Display Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl#getIconPath <em>Icon Path</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl#getClassnameKind <em>Classname Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The default value of the '{@link #getClassname() <em>Classname</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getClassname()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The cached value of the '{@link #getClassname() <em>Classname</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getClassname()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The default value of the '{@link #getBundleID() <em>Bundle ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBundleID()
 	 * @generated
 	 * @ordered
@@ -71,6 +74,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The cached value of the '{@link #getBundleID() <em>Bundle ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBundleID()
 	 * @generated
 	 * @ordered
@@ -81,6 +85,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The default value of the '{@link #getDisplayName() <em>Display Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDisplayName()
 	 * @generated
 	 * @ordered
@@ -91,6 +96,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The cached value of the '{@link #getDisplayName() <em>Display Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDisplayName()
 	 * @generated
 	 * @ordered
@@ -101,6 +107,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The default value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIconPath()
 	 * @generated
 	 * @ordered
@@ -111,6 +118,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The cached value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIconPath()
 	 * @generated
 	 * @ordered
@@ -121,6 +129,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The default value of the '{@link #getClassnameKind() <em>Classname Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getClassnameKind()
 	 * @generated
 	 * @ordered
@@ -131,6 +140,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The cached value of the '{@link #getClassnameKind() <em>Classname Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getClassnameKind()
 	 * @generated
 	 * @ordered
@@ -140,6 +150,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected InstanciableElementImpl() {
@@ -149,6 +160,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,8 +171,10 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getClassname() {
 		return classname;
 	}
@@ -168,20 +182,25 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setClassname(String newClassname) {
 		String oldClassname = classname;
 		classname = newClassname;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME, oldClassname, classname));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getBundleID() {
 		return bundleID;
 	}
@@ -189,20 +208,25 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBundleID(String newBundleID) {
 		String oldBundleID = bundleID;
 		bundleID = newBundleID;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersconfigPackage.INSTANCIABLE_ELEMENT__BUNDLE_ID, oldBundleID, bundleID));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getDisplayName() {
 		return displayName;
 	}
@@ -210,20 +234,25 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDisplayName(String newDisplayName) {
 		String oldDisplayName = displayName;
 		displayName = newDisplayName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersconfigPackage.INSTANCIABLE_ELEMENT__DISPLAY_NAME, oldDisplayName, displayName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getIconPath() {
 		return iconPath;
 	}
@@ -231,20 +260,25 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIconPath(String newIconPath) {
 		String oldIconPath = iconPath;
 		iconPath = newIconPath;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersconfigPackage.INSTANCIABLE_ELEMENT__ICON_PATH, oldIconPath, iconPath));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ClassnameKind getClassnameKind() {
 		return classnameKind;
 	}
@@ -252,33 +286,37 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setClassnameKind(ClassnameKind newClassnameKind) {
 		ClassnameKind oldClassnameKind = classnameKind;
 		classnameKind = newClassnameKind == null ? CLASSNAME_KIND_EDEFAULT : newClassnameKind;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME_KIND, oldClassnameKind, classnameKind));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME:
-				return getClassname();
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__BUNDLE_ID:
-				return getBundleID();
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__DISPLAY_NAME:
-				return getDisplayName();
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__ICON_PATH:
-				return getIconPath();
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME_KIND:
-				return getClassnameKind();
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME:
+			return getClassname();
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__BUNDLE_ID:
+			return getBundleID();
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__DISPLAY_NAME:
+			return getDisplayName();
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__ICON_PATH:
+			return getIconPath();
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME_KIND:
+			return getClassnameKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -286,26 +324,27 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME:
-				setClassname((String)newValue);
-				return;
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__BUNDLE_ID:
-				setBundleID((String)newValue);
-				return;
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__DISPLAY_NAME:
-				setDisplayName((String)newValue);
-				return;
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__ICON_PATH:
-				setIconPath((String)newValue);
-				return;
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME_KIND:
-				setClassnameKind((ClassnameKind)newValue);
-				return;
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME:
+			setClassname((String) newValue);
+			return;
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__BUNDLE_ID:
+			setBundleID((String) newValue);
+			return;
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__DISPLAY_NAME:
+			setDisplayName((String) newValue);
+			return;
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__ICON_PATH:
+			setIconPath((String) newValue);
+			return;
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME_KIND:
+			setClassnameKind((ClassnameKind) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -313,26 +352,27 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME:
-				setClassname(CLASSNAME_EDEFAULT);
-				return;
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__BUNDLE_ID:
-				setBundleID(BUNDLE_ID_EDEFAULT);
-				return;
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__DISPLAY_NAME:
-				setDisplayName(DISPLAY_NAME_EDEFAULT);
-				return;
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__ICON_PATH:
-				setIconPath(ICON_PATH_EDEFAULT);
-				return;
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME_KIND:
-				setClassnameKind(CLASSNAME_KIND_EDEFAULT);
-				return;
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME:
+			setClassname(CLASSNAME_EDEFAULT);
+			return;
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__BUNDLE_ID:
+			setBundleID(BUNDLE_ID_EDEFAULT);
+			return;
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__DISPLAY_NAME:
+			setDisplayName(DISPLAY_NAME_EDEFAULT);
+			return;
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__ICON_PATH:
+			setIconPath(ICON_PATH_EDEFAULT);
+			return;
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME_KIND:
+			setClassnameKind(CLASSNAME_KIND_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -340,21 +380,22 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME:
-				return CLASSNAME_EDEFAULT == null ? classname != null : !CLASSNAME_EDEFAULT.equals(classname);
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__BUNDLE_ID:
-				return BUNDLE_ID_EDEFAULT == null ? bundleID != null : !BUNDLE_ID_EDEFAULT.equals(bundleID);
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__DISPLAY_NAME:
-				return DISPLAY_NAME_EDEFAULT == null ? displayName != null : !DISPLAY_NAME_EDEFAULT.equals(displayName);
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__ICON_PATH:
-				return ICON_PATH_EDEFAULT == null ? iconPath != null : !ICON_PATH_EDEFAULT.equals(iconPath);
-			case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME_KIND:
-				return classnameKind != CLASSNAME_KIND_EDEFAULT;
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME:
+			return CLASSNAME_EDEFAULT == null ? classname != null : !CLASSNAME_EDEFAULT.equals(classname);
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__BUNDLE_ID:
+			return BUNDLE_ID_EDEFAULT == null ? bundleID != null : !BUNDLE_ID_EDEFAULT.equals(bundleID);
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__DISPLAY_NAME:
+			return DISPLAY_NAME_EDEFAULT == null ? displayName != null : !DISPLAY_NAME_EDEFAULT.equals(displayName);
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__ICON_PATH:
+			return ICON_PATH_EDEFAULT == null ? iconPath != null : !ICON_PATH_EDEFAULT.equals(iconPath);
+		case LayersconfigPackage.INSTANCIABLE_ELEMENT__CLASSNAME_KIND:
+			return classnameKind != CLASSNAME_KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -362,11 +403,14 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (classname: ");
@@ -383,4 +427,4 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 		return result.toString();
 	}
 
-} //InstanciableElementImpl
+} // InstanciableElementImpl

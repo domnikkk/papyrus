@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ public class PreferencesObservableValue extends AbstractObservableValue implemen
 
 	@Override
 	protected Object doGetValue() {
-		if(store.contains(key)) {
+		if (store.contains(key)) {
 			return store.getString(key);
 		}
 		return null;
@@ -44,13 +44,13 @@ public class PreferencesObservableValue extends AbstractObservableValue implemen
 
 	@Override
 	protected void doSetValue(Object value) {
-		if(value instanceof String) {
-			store.setValue(key, (String)value);
+		if (value instanceof String) {
+			store.setValue(key, (String) value);
 		}
 	}
 
 	public void propertyChange(PropertyChangeEvent event) {
-		if(event.getProperty().equals(key)) {
+		if (event.getProperty().equals(key)) {
 			fireValueChange(Diffs.createValueDiff(event.getOldValue(), event.getNewValue()));
 		}
 	}

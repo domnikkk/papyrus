@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,12 +32,12 @@ public class ConnectorEndHelperAdvice extends AbstractEditHelperAdvice {
 	@Override
 	protected ICommand getBeforeDestroyDependentsCommand(DestroyDependentsRequest request) {
 
-		if(request.getElementToDestroy() instanceof ConnectorEnd) {
-			ConnectorEnd endToDelete = (ConnectorEnd)request.getElementToDestroy();
-			Connector connector = (Connector)endToDelete.getOwner();
+		if (request.getElementToDestroy() instanceof ConnectorEnd) {
+			ConnectorEnd endToDelete = (ConnectorEnd) request.getElementToDestroy();
+			Connector connector = (Connector) endToDelete.getOwner();
 
-			if(connector.getEnds().size() <= 2) {
-				//return the command to destroy the Connector
+			if (connector.getEnds().size() <= 2) {
+				// return the command to destroy the Connector
 				return request.getDestroyDependentCommand(connector);
 			}
 		}

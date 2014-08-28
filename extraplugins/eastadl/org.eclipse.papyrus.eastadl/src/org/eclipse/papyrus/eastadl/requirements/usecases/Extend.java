@@ -13,9 +13,9 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.Relationship;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.Extend#getBase_Extend <em>Base Extend</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.Extend#getExtensionLocation <em>Extension Location</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.Extend#getExtendedCase <em>Extended Case</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.Extend#getBase_Extend <em>Base Extend</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.Extend#getExtensionLocation <em>Extension Location</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.Extend#getExtendedCase <em>Extended Case</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface Extend extends Relationship {
 	 * Returns the value of the '<em><b>Base Extend</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Extend</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Extend</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Extend</em>' reference.
 	 * @see #setBase_Extend(org.eclipse.uml2.uml.Extend)
 	 * @see org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage#getExtend_Base_Extend()
@@ -44,7 +44,9 @@ public interface Extend extends Relationship {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.usecases.Extend#getBase_Extend <em>Base Extend</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Extend</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Extend</em>' reference.
 	 * @see #getBase_Extend()
 	 * @generated
 	 */
@@ -55,10 +57,10 @@ public interface Extend extends Relationship {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.requirements.usecases.ExtensionPoint}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Extension Location</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Extension Location</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Extension Location</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage#getExtend_ExtensionLocation()
 	 * @model required="true" ordered="false"
@@ -70,10 +72,10 @@ public interface Extend extends Relationship {
 	 * Returns the value of the '<em><b>Extended Case</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Extended Case</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Extended Case</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Extended Case</em>' reference.
 	 * @see #setExtendedCase(UseCase)
 	 * @see org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage#getExtend_ExtendedCase()
@@ -86,7 +88,9 @@ public interface Extend extends Relationship {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.usecases.Extend#getExtendedCase <em>Extended Case</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Extended Case</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Extended Case</em>' reference.
 	 * @see #getExtendedCase()
 	 * @generated
 	 */

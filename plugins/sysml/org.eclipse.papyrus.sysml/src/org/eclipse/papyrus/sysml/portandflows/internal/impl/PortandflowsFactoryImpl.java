@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,14 +30,14 @@ import org.eclipse.papyrus.sysml.portandflows.PortandflowsPackage;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class PortandflowsFactoryImpl extends EFactoryImpl implements PortandflowsFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -50,13 +50,13 @@ public class PortandflowsFactoryImpl extends EFactoryImpl implements Portandflow
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static PortandflowsFactory init() {
 		try {
-			PortandflowsFactory thePortandflowsFactory = (PortandflowsFactory)EPackage.Registry.INSTANCE.getEFactory(PortandflowsPackage.eNS_URI);
-			if(thePortandflowsFactory != null) {
+			PortandflowsFactory thePortandflowsFactory = (PortandflowsFactory) EPackage.Registry.INSTANCE.getEFactory(PortandflowsPackage.eNS_URI);
+			if (thePortandflowsFactory != null) {
 				return thePortandflowsFactory;
 			}
 		} catch (Exception exception) {
@@ -69,7 +69,7 @@ public class PortandflowsFactoryImpl extends EFactoryImpl implements Portandflow
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PortandflowsFactoryImpl() {
@@ -78,7 +78,7 @@ public class PortandflowsFactoryImpl extends EFactoryImpl implements Portandflow
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertFlowDirectionToString(EDataType eDataType, Object instanceValue) {
@@ -87,12 +87,12 @@ public class PortandflowsFactoryImpl extends EFactoryImpl implements Portandflow
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case PortandflowsPackage.FLOW_DIRECTION:
 			return convertFlowDirectionToString(eDataType, instanceValue);
 		default:
@@ -102,12 +102,12 @@ public class PortandflowsFactoryImpl extends EFactoryImpl implements Portandflow
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case PortandflowsPackage.FLOW_PORT:
 			return createFlowPort();
 		case PortandflowsPackage.FLOW_PROPERTY:
@@ -123,19 +123,20 @@ public class PortandflowsFactoryImpl extends EFactoryImpl implements Portandflow
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FlowDirection createFlowDirectionFromString(EDataType eDataType, String initialValue) {
 		FlowDirection result = FlowDirection.get(initialValue);
-		if(result == null)
+		if (result == null) {
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FlowPort createFlowPort() {
@@ -145,7 +146,7 @@ public class PortandflowsFactoryImpl extends EFactoryImpl implements Portandflow
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FlowProperty createFlowProperty() {
@@ -155,7 +156,7 @@ public class PortandflowsFactoryImpl extends EFactoryImpl implements Portandflow
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FlowSpecification createFlowSpecification() {
@@ -165,12 +166,12 @@ public class PortandflowsFactoryImpl extends EFactoryImpl implements Portandflow
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case PortandflowsPackage.FLOW_DIRECTION:
 			return createFlowDirectionFromString(eDataType, initialValue);
 		default:
@@ -180,7 +181,7 @@ public class PortandflowsFactoryImpl extends EFactoryImpl implements Portandflow
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ItemFlow createItemFlow() {
@@ -190,11 +191,11 @@ public class PortandflowsFactoryImpl extends EFactoryImpl implements Portandflow
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PortandflowsPackage getPortandflowsPackage() {
-		return (PortandflowsPackage)getEPackage();
+		return (PortandflowsPackage) getEPackage();
 	}
 
 } // PortandflowsFactoryImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.uml2.uml.Namespace;
 
 /**
  * use to construct the instance specification link between two instance
- * 
+ *
  */
 public class CustomContextLinkCreateCommand extends ContextLinkCreateCommand {
 
@@ -31,25 +31,25 @@ public class CustomContextLinkCreateCommand extends ContextLinkCreateCommand {
 
 	@Override
 	public boolean canExecute() {
-		if(source == null && target == null) {
+		if (source == null && target == null) {
 			return false;
 		}
-		if(source != null && false == source instanceof Constraint) {
+		if (source != null && false == source instanceof Constraint) {
 			return false;
 		}
-		if(target != null && false == target instanceof Namespace) {
+		if (target != null && false == target instanceof Namespace) {
 			return false;
 		}
-		if(getSource() == null) {
+		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
-		if(getSource() != null) {
+		if (getSource() != null) {
 			// the context is already set
-			if(getSource().getContext() != null && target != null && getSource().getContext() != target) {
+			if (getSource().getContext() != null && target != null && getSource().getContext() != target) {
 				return false;
 			}
 		}
-		if(getTarget() != null && (getTarget().getOwnedRules().contains(getTarget()))) {
+		if (getTarget() != null && (getTarget().getOwnedRules().contains(getTarget()))) {
 			return false;
 		}
 		return true;

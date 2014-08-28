@@ -28,9 +28,8 @@ import org.eclipse.papyrus.emf.facet.efacet.core.internal.incubatingapi.IFacetAc
 import org.eclipse.papyrus.emf.facet.util.emf.core.exception.InvalidFacetSetException;
 
 /**
- * This interface contains methods declaration to deal with {@link Facet} and
- * {@link FacetSet}.
- * 
+ * This interface contains methods declaration to deal with {@link Facet} and {@link FacetSet}.
+ *
  * @since 0.1
  * @noimplement
  * @noextend

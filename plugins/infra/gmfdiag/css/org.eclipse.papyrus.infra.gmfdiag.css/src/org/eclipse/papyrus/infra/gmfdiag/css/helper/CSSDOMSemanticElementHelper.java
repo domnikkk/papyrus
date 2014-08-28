@@ -43,42 +43,42 @@ public class CSSDOMSemanticElementHelper {
 	 * @return
 	 */
 	public static EObject findSemanticElement(EObject notationElement) {
-		if(notationElement == null) {
+		if (notationElement == null) {
 			return null;
 		}
 
-		//Add diagrams to the DOM model
-		if(notationElement instanceof Diagram) {
+		// Add diagrams to the DOM model
+		if (notationElement instanceof Diagram) {
 			return notationElement;
 		}
 
-		//Add compartments to the DOM model
-		if(notationElement instanceof BasicCompartment) {
+		// Add compartments to the DOM model
+		if (notationElement instanceof BasicCompartment) {
 			return notationElement;
 		}
 
-		//Add floating labels to the DOM model
-		if(isFloatingLabel(notationElement)) {
+		// Add floating labels to the DOM model
+		if (isFloatingLabel(notationElement)) {
 			return notationElement;
 		}
 
-		//Copied from the generic Semantic Element Helper
-		if(notationElement instanceof View) {
-			View view = (View)notationElement;
+		// Copied from the generic Semantic Element Helper
+		if (notationElement instanceof View) {
+			View view = (View) notationElement;
 			EObject semanticElement = view.getElement();
-			if(semanticElement != null) {
+			if (semanticElement != null) {
 				return semanticElement;
 			}
 
-			//The graphical element isn't related to a Semantic Element. The view becomes the semantic element.
-			//e.g. : Links in UML
+			// The graphical element isn't related to a Semantic Element. The view becomes the semantic element.
+			// e.g. : Links in UML
 			return view;
 		}
 
 		EObject currentElement = notationElement.eContainer();
 
-		while(currentElement != null) {
-			if(currentElement instanceof View) {
+		while (currentElement != null) {
+			if (currentElement instanceof View) {
 				return findSemanticElement(currentElement);
 			}
 			currentElement = currentElement.eContainer();
@@ -95,7 +95,7 @@ public class CSSDOMSemanticElementHelper {
 		 *
 		 * See Bug 430534
 		 */
-		//Activator.log.warn("Cannot find a valid source for " + notationElement);
+		// Activator.log.warn("Cannot find a valid source for " + notationElement);
 		return notationElement;
 	}
 
@@ -122,23 +122,23 @@ public class CSSDOMSemanticElementHelper {
 	public static View findTopView(EObject notationElement) {
 		EObject semanticElement = findSemanticElement(notationElement);
 
-		if(semanticElement == notationElement) {
-			return (View)notationElement;
+		if (semanticElement == notationElement) {
+			return (View) notationElement;
 		}
 
 		EObject lastNotationElement = notationElement;
-		while(notationElement != null) {
+		while (notationElement != null) {
 			notationElement = notationElement.eContainer();
-			if(findSemanticElement(notationElement) != semanticElement) {
-				return (View)lastNotationElement;
+			if (findSemanticElement(notationElement) != semanticElement) {
+				return (View) lastNotationElement;
 			}
 
-			if(notationElement != null) {
+			if (notationElement != null) {
 				lastNotationElement = notationElement;
 			}
 		}
 
-		return (View)lastNotationElement;
+		return (View) lastNotationElement;
 	}
 
 	/**
@@ -149,22 +149,22 @@ public class CSSDOMSemanticElementHelper {
 	 *         True if this is a Floating Label
 	 */
 	public static boolean isFloatingLabel(EObject notationElement) {
-		if(!(notationElement instanceof DecorationNode)) {
+		if (!(notationElement instanceof DecorationNode)) {
 			return false;
 		}
 
-		DecorationNode node = (DecorationNode)notationElement;
+		DecorationNode node = (DecorationNode) notationElement;
 
-		if(node instanceof BasicCompartment) {
+		if (node instanceof BasicCompartment) {
 			return false;
 		}
 
-		if(node.eContainer() instanceof Connector) {
+		if (node.eContainer() instanceof Connector) {
 			return true;
 		}
 
-		if(node.eContainer() instanceof Shape) {
-			if(node.getLayoutConstraint() != null) {
+		if (node.eContainer() instanceof Shape) {
+			if (node.getLayoutConstraint() != null) {
 				return true;
 			}
 		}

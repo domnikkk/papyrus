@@ -29,7 +29,7 @@ public class CompositeStructuresExecutionEngine extends FUMLExecutionEngineForMo
 	// Starts the execution of the given behavior
 	@Override
 	public void start(Behavior behavior) {
-		if(behavior != null) {
+		if (behavior != null) {
 
 			main = behavior;
 

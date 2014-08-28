@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -61,7 +61,7 @@ public class ActivityAsInteractionFigure extends ActivityFigure {
 			@Override
 			public Dimension getPreferredSize(final int wHint, final int hHint) {
 				final Dimension preferredSize = super.getPreferredSize(wHint, hHint);
-				if(preferredSize.width == 0) {
+				if (preferredSize.width == 0) {
 					return preferredSize;
 				}
 				return new Dimension(preferredSize.width + 2, preferredSize.height + 2);
@@ -96,20 +96,20 @@ public class ActivityAsInteractionFigure extends ActivityFigure {
 
 	/**
 	 * get the gmf container figure of the package
-	 * 
+	 *
 	 * @return the gmf container
 	 */
 	@Override
 	public ShapeCompartmentFigure getGMFContentContainer() {
-		if(interactionContentPane.getChildren().size() > 0) {
-			return (ShapeCompartmentFigure)interactionContentPane.getChildren().get(0);
+		if (interactionContentPane.getChildren().size() > 0) {
+			return (ShapeCompartmentFigure) interactionContentPane.getChildren().get(0);
 		}
 		return null;
 	}
 
 	/**
 	 * this is the layout manager in charge to place element in the enumeration
-	 * 
+	 *
 	 */
 	private class ActivityLayoutManager extends AbstractLayout {
 
@@ -122,7 +122,7 @@ public class ActivityAsInteractionFigure extends ActivityFigure {
 		 * |--------------------------------------------------| |parameter | |
 		 * |----------- | | activity content |
 		 * ----------------------------------------------------
-		 * 
+		 *
 		 * {@inheritDoc}
 		 */
 		@Override
@@ -130,20 +130,20 @@ public class ActivityAsInteractionFigure extends ActivityFigure {
 			int minimumWith = 0;
 			int minimumHeight = 0;
 			// take in account the content of the figure activity
-			if((getContentFigure().getChildren().size() > 0)) {
-				final IFigure content = (IFigure)getContentFigure().getChildren().get(0);
+			if ((getContentFigure().getChildren().size() > 0)) {
+				final IFigure content = (IFigure) getContentFigure().getChildren().get(0);
 				minimumWith = content.getPreferredSize().width + 50;
 				minimumHeight = content.getPreferredSize().height + 50;
 			}
 			// display name
-			if(getNameLabel() != null) {
-				if(getNameLabel().getPreferredSize().width > minimumWith) {
+			if (getNameLabel() != null) {
+				if (getNameLabel().getPreferredSize().width > minimumWith) {
 					minimumWith = getNameLabel().getPreferredSize().width;
 				}
 				minimumHeight += getNameLabel().getPreferredSize().height;
 			}
-			if(getHeaderSingleExecution() != null) {
-				if(getHeaderSingleExecution().getBounds().getTopRight().x > minimumWith) {
+			if (getHeaderSingleExecution() != null) {
+				if (getHeaderSingleExecution().getBounds().getTopRight().x > minimumWith) {
 					minimumWith = getHeaderSingleExecution().getBounds().getTopRight().x;
 				}
 			}
@@ -151,24 +151,25 @@ public class ActivityAsInteractionFigure extends ActivityFigure {
 		}
 
 		/**
-		 * 
+		 *
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void layout(final IFigure container) {
 			final List childrenList = container.getChildren();
-			for(int i = 0; i < container.getChildren().size(); i++) {
-				final IFigure currentFigure = (IFigure)childrenList.get(i);
-				if(currentFigure.equals(getLabelContainer()) || currentFigure.equals(getContentFigure())) {
-					final Rectangle bound = new Rectangle(((IFigure)childrenList.get(i)).getBounds());
-					bound.setSize(((IFigure)childrenList.get(i)).getPreferredSize());
-					if(i > 0) {
-						bound.y = ((IFigure)childrenList.get(i - 1)).getBounds().getBottomLeft().y + 1;
+			for (int i = 0; i < container.getChildren().size(); i++) {
+				final IFigure currentFigure = (IFigure) childrenList.get(i);
+				if (currentFigure.equals(getLabelContainer()) || currentFigure.equals(getContentFigure())) {
+					final Rectangle bound = new Rectangle(((IFigure) childrenList.get(i)).getBounds());
+					bound.setSize(((IFigure) childrenList.get(i)).getPreferredSize());
+					if (i > 0) {
+						bound.y = ((IFigure) childrenList.get(i - 1)).getBounds().getBottomLeft().y + 1;
 						// bound.x = getBounds().x + GAP_X;
 					} else {
 						// bound.x = getBounds().x + GAP_X;
 						bound.y = getBounds().y + GAP_Y;
 					}
-					((IFigure)childrenList.get(i)).setBounds(bound);
+					((IFigure) childrenList.get(i)).setBounds(bound);
 				}
 			}
 			// container
@@ -177,15 +178,16 @@ public class ActivityAsInteractionFigure extends ActivityFigure {
 			lastRectangle.x = container.getBounds().x;
 			lastRectangle.width = getBounds().width;
 			getContentFigure().setBounds(lastRectangle);
-			if(getGMFContentContainer() != null) {
+			if (getGMFContentContainer() != null) {
 				getGMFContentContainer().setBounds(lastRectangle);
 			}
 
 			// replace compartment stereotype properties
-			if(getStereotypePropertiesContent() != null) {
+			if (getStereotypePropertiesContent() != null) {
 				final Rectangle pscontainer = getStereotypePropertiesContent().getBounds().getCopy();
-				if(getPostconditionFigure().getBounds().y + getPostconditionFigure().getBounds().height + GAP_Y > pscontainer.y)
+				if (getPostconditionFigure().getBounds().y + getPostconditionFigure().getBounds().height + GAP_Y > pscontainer.y) {
 					pscontainer.y = getPostconditionFigure().getBounds().y + getPostconditionFigure().getBounds().height + GAP_Y;
+				}
 				getStereotypePropertiesContent().setBounds(pscontainer);
 			}
 		}

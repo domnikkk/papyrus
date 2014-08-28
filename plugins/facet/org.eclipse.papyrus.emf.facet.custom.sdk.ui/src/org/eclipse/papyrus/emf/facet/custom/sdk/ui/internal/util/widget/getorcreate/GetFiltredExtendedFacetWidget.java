@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -20,14 +20,14 @@ import java.util.Map;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationPropertiesCatalogManager;
+import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationPropertiesCatalogManagerFactory;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.util.EditingUtil;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialog;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.AbstractGetOrCreateFilteredElementCommandWidget;
-import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationPropertiesCatalogManager;
-import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationPropertiesCatalogManagerFactory;
 import org.eclipse.swt.widgets.Composite;
 
 /**
@@ -38,9 +38,8 @@ import org.eclipse.swt.widgets.Composite;
  * a [New...] button can be displayed. Here, no button is displayed because we
  * only select the extended facet into the existing facet.
  * <p/>
- * 
- * The selection window will be full up with the customization properties
- * returned by {@link ICustomizationPropertiesCatalogManager}.
+ *
+ * The selection window will be full up with the customization properties returned by {@link ICustomizationPropertiesCatalogManager}.
  */
 public class GetFiltredExtendedFacetWidget extends
 		AbstractGetOrCreateFilteredElementCommandWidget<Facet, Object> {
@@ -56,7 +55,7 @@ public class GetFiltredExtendedFacetWidget extends
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of this composite.
 	 * @param properties

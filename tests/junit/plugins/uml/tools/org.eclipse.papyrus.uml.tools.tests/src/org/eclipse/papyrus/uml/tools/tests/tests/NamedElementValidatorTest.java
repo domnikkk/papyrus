@@ -19,10 +19,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.rules.PluginResource;
 import org.eclipse.papyrus.junit.utils.rules.ResourceSetFixture;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.tools.databinding.NamedElementValidator;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Operation;

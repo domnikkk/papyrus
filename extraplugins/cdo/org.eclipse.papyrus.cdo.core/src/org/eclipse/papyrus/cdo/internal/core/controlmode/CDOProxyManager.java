@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,9 +54,9 @@ public class CDOProxyManager {
 
 		EClassifier resolvedType = typeRef.resolve(resourceSet.getPackageRegistry());
 
-		if(resolvedType instanceof EClass) {
-			EClass actualType = (EClass)resolvedType;
-			result = (InternalEObject)EcoreUtil.create(actualType);
+		if (resolvedType instanceof EClass) {
+			EClass actualType = (EClass) resolvedType;
+			result = (InternalEObject) EcoreUtil.create(actualType);
 
 			StringBuilder fragment = new StringBuilder();
 			CDOIDUtil.write(fragment, CDOIDUtil.createLong(oid));
@@ -70,7 +70,7 @@ public class CDOProxyManager {
 	public static boolean isCDOProxyURI(URI uri) {
 		boolean result = uri.hasFragment() && URI_SCHEME.equals(uri.scheme());
 
-		if(result) {
+		if (result) {
 			CDOID oid = CDOIDUtil.read(uri.fragment());
 			result = oid instanceof CDOClassifierRef.Provider;
 		}
@@ -99,7 +99,7 @@ public class CDOProxyManager {
 		String result = null;
 
 		CDOID oid = CDOIDUtil.read(proxyURI.fragment());
-		if(oid.isObject()) {
+		if (oid.isObject()) {
 			StringBuilder buf = new StringBuilder();
 			CDOIDUtil.write(buf, CDOIDUtil.createLong(CDOIDUtil.getLong(oid)));
 			result = buf.toString();
@@ -120,15 +120,15 @@ public class CDOProxyManager {
 			long oid = CDOIDUtil.getLong(CDOIDUtil.read(proxyURI.fragment()));
 			final int hashCode = hashCode(oid);
 
-			for(Entry<InternalEObject> entry = getEntry(hashCode); (entry != null) && (result == null); entry = entry.getNextEntry()) {
+			for (Entry<InternalEObject> entry = getEntry(hashCode); (entry != null) && (result == null); entry = entry.getNextEntry()) {
 				result = entry.get();
 
-				if((result != null) && getOID(result) != oid) {
+				if ((result != null) && getOID(result) != oid) {
 					result = null;
 				}
 			}
 
-			if(result == null) {
+			if (result == null) {
 				result = createProxy(proxyURI);
 				addEntry(createEntry(result, hashCode));
 			}
@@ -139,7 +139,7 @@ public class CDOProxyManager {
 		private long getOID(InternalEObject object) {
 			long result;
 
-			if(object.eIsProxy()) {
+			if (object.eIsProxy()) {
 				result = CDOIDUtil.getLong(CDOIDUtil.read(object.eProxyURI().fragment()));
 			} else {
 				result = CDOIDUtil.getLong(CDOUtils.getCDOID(object));
@@ -154,7 +154,7 @@ public class CDOProxyManager {
 		}
 
 		int hashCode(long oid) {
-			return (int)(oid & 0xFFFFFFFF);
+			return (int) (oid & 0xFFFFFFFF);
 		}
 	}
 

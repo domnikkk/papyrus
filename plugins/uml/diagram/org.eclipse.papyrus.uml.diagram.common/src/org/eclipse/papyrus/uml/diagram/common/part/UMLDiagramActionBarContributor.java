@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,6 +28,7 @@ public class UMLDiagramActionBarContributor extends DiagramActionBarContributor 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected Class getEditorClass() {
 		return DiagramDocumentEditor.class;
 	}
@@ -35,6 +36,7 @@ public class UMLDiagramActionBarContributor extends DiagramActionBarContributor 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected String getEditorId() {
 		return "org.eclipse.papyrus.UMLDiagramEditorID";
 	}
@@ -42,12 +44,13 @@ public class UMLDiagramActionBarContributor extends DiagramActionBarContributor 
 	/**
 	 * @generated
 	 */
+	@Override
 	public void init(IActionBars bars, IWorkbenchPage page) {
 		super.init(bars, page);
 		IMenuManager fileMenu = bars.getMenuManager();
 
 		IContributionItem undoAction = bars.getMenuManager().findMenuUsingPath("undoGroup");
-		if(undoAction != null) {
+		if (undoAction != null) {
 			fileMenu.remove(undoAction);
 		}
 		// print preview

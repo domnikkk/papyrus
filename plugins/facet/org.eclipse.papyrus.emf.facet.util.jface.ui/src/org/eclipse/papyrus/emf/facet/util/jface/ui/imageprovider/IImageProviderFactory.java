@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Copyright (c) 2013 Soft-Maint.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,7 +16,7 @@ import org.eclipse.papyrus.emf.facet.util.jface.ui.internal.imageprovider.ImageP
 
 /**
  * JFace Image Provider Factory
- * 
+ *
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
  * @since 0.4.0
@@ -28,7 +28,7 @@ public interface IImageProviderFactory {
 	/**
 	 * Create a new Image Provider Factory. Factories are cached with plugin
 	 * instances.
-	 * 
+	 *
 	 * @param plugin
 	 *            Current plugin which wants an image provider
 	 * @return An image provider factory

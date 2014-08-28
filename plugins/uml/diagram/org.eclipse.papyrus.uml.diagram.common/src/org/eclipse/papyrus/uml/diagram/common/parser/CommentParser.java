@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,6 +59,7 @@ public class CommentParser implements IParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
@@ -66,9 +67,10 @@ public class CommentParser implements IParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		Comment comment = doAdapt(element);
-		if(comment == null) {
+		if (comment == null) {
 			return "<NULL COMMENT>"; //$NON-NLS-1$
 		}
 		try {
@@ -82,13 +84,14 @@ public class CommentParser implements IParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		Comment comment = doAdapt(element);
-		if(comment == null) {
+		if (comment == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(comment);
-		if(editingDomain == null) {
+		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, "Set Body"); //$NON-NLS-1$
@@ -100,15 +103,16 @@ public class CommentParser implements IParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		Comment comment = doAdapt(element);
-		if(comment == null) {
+		if (comment == null) {
 			return "<NULL COMMENT>"; //$NON-NLS-1$
 		}
 
 		// remove all "<***>" characters, replace &gt;, etc...
 		String roughBody = comment.getBody();
-		if(roughBody == null || roughBody.length() == 0) {
+		if (roughBody == null || roughBody.length() == 0) {
 			return "";//$NON-NLS-1$
 		}
 
@@ -126,10 +130,11 @@ public class CommentParser implements IParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
-		if(event instanceof org.eclipse.emf.common.notify.Notification) {
-			Object source = ((org.eclipse.emf.common.notify.Notification)event).getFeature();
-			if(UMLPackage.eINSTANCE.getComment_Body().equals(source)) {
+		if (event instanceof org.eclipse.emf.common.notify.Notification) {
+			Object source = ((org.eclipse.emf.common.notify.Notification) event).getFeature();
+			if (UMLPackage.eINSTANCE.getComment_Body().equals(source)) {
 				return true;
 			}
 		}
@@ -139,6 +144,7 @@ public class CommentParser implements IParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
@@ -146,15 +152,15 @@ public class CommentParser implements IParser {
 	/**
 	 * Get the property associated with the given IAdaptable and the
 	 * memberEndIndex .
-	 * 
+	 *
 	 * @param element
-	 *        the given IAdaptable
+	 *            the given IAdaptable
 	 * @return the property associated or null if it can't be found.
 	 */
 	protected Comment doAdapt(IAdaptable element) {
 		Object obj = EMFHelper.getEObject(element);
-		if(obj instanceof Comment) {
-			return (Comment)obj;
+		if (obj instanceof Comment) {
+			return (Comment) obj;
 		}
 		return null;
 	}

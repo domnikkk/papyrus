@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.ui.navigator.CommonNavigator;
 
 /**
  * A factory for creating Action objects from org.eclipse.jface.action
- * 
+ *
  * @deprecated The actions should be written using the Eclipse Framework (org.eclipse.ui.menu, org.eclipse.ui.handler, org.eclipse.ui.command)
  */
 @Deprecated
@@ -31,42 +31,42 @@ public interface IActionHandlerFactory {
 
 	/**
 	 * Creates a new IActionHandler object.
-	 * 
+	 *
 	 * @param editingDomain
-	 *        the editing domain
-	 * 
+	 *            the editing domain
+	 *
 	 * @return the list of created actions
 	 */
 	List<Action> createActions(EditingDomain editingDomain);
 
 	/**
 	 * Gets the actions.
-	 * 
+	 *
 	 * @return the actions list
 	 */
 	List<Action> getActions();
 
 	/**
 	 * Activate the action.
-	 * 
+	 *
 	 * @param activeViewPart
-	 *        the active view part
+	 *            the active view part
 	 */
 	void activate(CommonNavigator activeViewPart);
 
 	/**
 	 * Deactivate the action.
-	 * 
+	 *
 	 * @param activeViewPart
-	 *        the active view part
+	 *            the active view part
 	 */
 	void deactivate(CommonNavigator activeViewPart);
 
 	/**
 	 * Update action from the selection
-	 * 
+	 *
 	 * @param structuredSelection
-	 *        the structured selection
+	 *            the structured selection
 	 */
 	void update(IStructuredSelection structuredSelection);
 
@@ -76,9 +76,9 @@ public interface IActionHandlerFactory {
 	 * <p>
 	 * The default implementation does nothing.
 	 * </p>
-	 * 
+	 *
 	 * @param actionBars
-	 *        the part's action bars
+	 *            the part's action bars
 	 */
 	void fillActionBars(IActionBars actionBars);
 

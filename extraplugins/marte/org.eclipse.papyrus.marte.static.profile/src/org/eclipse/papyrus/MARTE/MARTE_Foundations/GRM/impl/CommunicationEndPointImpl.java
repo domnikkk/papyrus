@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.CommunicationEndPointImpl#getPacketSize <em>Packet Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.CommunicationEndPointImpl#getPacketSize <em>Packet Size</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +37,7 @@ public class CommunicationEndPointImpl extends ResourceImpl implements Communica
 	 * The default value of the '{@link #getPacketSize() <em>Packet Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPacketSize()
 	 * @generated
 	 * @ordered
@@ -47,6 +48,7 @@ public class CommunicationEndPointImpl extends ResourceImpl implements Communica
 	 * The cached value of the '{@link #getPacketSize() <em>Packet Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPacketSize()
 	 * @generated
 	 * @ordered
@@ -56,6 +58,7 @@ public class CommunicationEndPointImpl extends ResourceImpl implements Communica
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected CommunicationEndPointImpl() {
@@ -65,6 +68,7 @@ public class CommunicationEndPointImpl extends ResourceImpl implements Communica
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,8 +79,10 @@ public class CommunicationEndPointImpl extends ResourceImpl implements Communica
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getPacketSize() {
 		return packetSize;
 	}
@@ -84,25 +90,29 @@ public class CommunicationEndPointImpl extends ResourceImpl implements Communica
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setPacketSize(String newPacketSize) {
 		String oldPacketSize = packetSize;
 		packetSize = newPacketSize;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.COMMUNICATION_END_POINT__PACKET_SIZE, oldPacketSize, packetSize));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GRMPackage.COMMUNICATION_END_POINT__PACKET_SIZE:
-				return getPacketSize();
+		case GRMPackage.COMMUNICATION_END_POINT__PACKET_SIZE:
+			return getPacketSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,14 +120,15 @@ public class CommunicationEndPointImpl extends ResourceImpl implements Communica
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GRMPackage.COMMUNICATION_END_POINT__PACKET_SIZE:
-				setPacketSize((String)newValue);
-				return;
+		case GRMPackage.COMMUNICATION_END_POINT__PACKET_SIZE:
+			setPacketSize((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -125,14 +136,15 @@ public class CommunicationEndPointImpl extends ResourceImpl implements Communica
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GRMPackage.COMMUNICATION_END_POINT__PACKET_SIZE:
-				setPacketSize(PACKET_SIZE_EDEFAULT);
-				return;
+		case GRMPackage.COMMUNICATION_END_POINT__PACKET_SIZE:
+			setPacketSize(PACKET_SIZE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,13 +152,14 @@ public class CommunicationEndPointImpl extends ResourceImpl implements Communica
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GRMPackage.COMMUNICATION_END_POINT__PACKET_SIZE:
-				return PACKET_SIZE_EDEFAULT == null ? packetSize != null : !PACKET_SIZE_EDEFAULT.equals(packetSize);
+		case GRMPackage.COMMUNICATION_END_POINT__PACKET_SIZE:
+			return PACKET_SIZE_EDEFAULT == null ? packetSize != null : !PACKET_SIZE_EDEFAULT.equals(packetSize);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,11 +167,14 @@ public class CommunicationEndPointImpl extends ResourceImpl implements Communica
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (packetSize: ");
@@ -167,4 +183,4 @@ public class CommunicationEndPointImpl extends ResourceImpl implements Communica
 		return result.toString();
 	}
 
-} //CommunicationEndPointImpl
+} // CommunicationEndPointImpl

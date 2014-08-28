@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,17 +32,17 @@ import org.eclipse.ui.PlatformUI;
 /**
  * Fixed bug about displaying diagram assistant handles.
  * In GMF DiagramAssistantEditPolicy, isDiagramPartActive() is only available for IDiagramWorkbenchPart, but we use PapyrusMultiDiagramEditor.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class SequenceConnectionHandleEditPolicy extends ConnectionHandleEditPolicy {
 
 	@Override
 	protected boolean shouldShowDiagramAssistant() {
-		if(!(getHost().isActive() && isPreferenceOn() && isHostEditable() && isHostResolvable() && isDiagramPartActive())) {
+		if (!(getHost().isActive() && isPreferenceOn() && isHostEditable() && isHostResolvable() && isDiagramPartActive())) {
 			return false;
 		}
-		if(hasHandles() || !isSelectionToolActive()) {
+		if (hasHandles() || !isSelectionToolActive()) {
 			return false;
 		}
 		return true;
@@ -64,9 +64,9 @@ public class SequenceConnectionHandleEditPolicy extends ConnectionHandleEditPoli
 
 	private boolean isSelectionToolActive() {
 		// getViewer calls getParent so check for null
-		if(getHost().getParent() != null) {
+		if (getHost().getParent() != null) {
 			Tool theTool = getHost().getViewer().getEditDomain().getActiveTool();
-			if((theTool != null) && theTool instanceof SelectionTool) {
+			if ((theTool != null) && theTool instanceof SelectionTool) {
 				return true;
 			}
 		}
@@ -75,25 +75,25 @@ public class SequenceConnectionHandleEditPolicy extends ConnectionHandleEditPoli
 
 	/**
 	 * Checks if the diagram part is active.
-	 * 
+	 *
 	 * @return True if the diagram part is active; false otherwise.
 	 */
 	private boolean isDiagramPartActive() {
 		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-		if(window != null) {
+		if (window != null) {
 			IWorkbenchPage page = window.getActivePage();
-			if(page != null) {
+			if (page != null) {
 				IWorkbenchPart activePart = page.getActivePart();
 				IDiagramWorkbenchPart editorPart = null;
-				if(activePart instanceof IDiagramWorkbenchPart) {
-					editorPart = (IDiagramWorkbenchPart)activePart;
-				} else if(activePart instanceof IAdaptable) {
-					editorPart = (IDiagramWorkbenchPart)((IAdaptable)activePart).getAdapter(IDiagramWorkbenchPart.class);
+				if (activePart instanceof IDiagramWorkbenchPart) {
+					editorPart = (IDiagramWorkbenchPart) activePart;
+				} else if (activePart instanceof IAdaptable) {
+					editorPart = (IDiagramWorkbenchPart) ((IAdaptable) activePart).getAdapter(IDiagramWorkbenchPart.class);
 				}
-				if(editorPart == null) {
+				if (editorPart == null) {
 					return false;
 				}
-				return editorPart.getDiagramEditPart().getRoot().equals(((IGraphicalEditPart)getHost()).getRoot());
+				return editorPart.getDiagramEditPart().getRoot().equals(((IGraphicalEditPart) getHost()).getRoot());
 			}
 		}
 		return false;
@@ -101,26 +101,26 @@ public class SequenceConnectionHandleEditPolicy extends ConnectionHandleEditPoli
 
 	/**
 	 * Checks if the host editpart is editable.
-	 * 
+	 *
 	 * @return True if the host is editable; false otherwise.
 	 */
 	private boolean isHostEditable() {
-		if(getHost() instanceof GraphicalEditPart) {
-			return ((GraphicalEditPart)getHost()).isEditModeEnabled();
+		if (getHost() instanceof GraphicalEditPart) {
+			return ((GraphicalEditPart) getHost()).isEditModeEnabled();
 		}
 		return true;
 	}
 
 	/**
 	 * Is the host's semantic reference resolvable (if applicable)?
-	 * 
+	 *
 	 * @return true if the semantic reference is resolvable, true if there is no
 	 *         semantic reference, and false otherwise
 	 */
 	private boolean isHostResolvable() {
-		final View view = (View)getHost().getModel();
+		final View view = (View) getHost().getModel();
 		EObject element = view.getElement();
-		if(element != null) {
+		if (element != null) {
 			return !element.eIsProxy();
 		}
 		return true;

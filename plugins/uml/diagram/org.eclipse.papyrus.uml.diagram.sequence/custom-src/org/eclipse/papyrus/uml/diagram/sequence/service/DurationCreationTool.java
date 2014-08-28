@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,6 +16,7 @@ package org.eclipse.papyrus.uml.diagram.sequence.service;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.draw2d.Cursors;
 import org.eclipse.draw2d.FigureCanvas;
 import org.eclipse.draw2d.Viewport;
 import org.eclipse.draw2d.geometry.Rectangle;
@@ -25,6 +26,8 @@ import org.eclipse.gef.EditPartViewer;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.SharedCursors;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.tools.AbstractConnectionCreationTool;
+import org.eclipse.gef.tools.AbstractTool;
 import org.eclipse.gef.tools.TargetingTool;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
@@ -88,14 +91,14 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 
 	/**
 	 * Constructor of the creation tool.
-	 * 
+	 *
 	 * @param elementTypes
-	 *        element types the tool can create
+	 *            element types the tool can create
 	 */
 	public DurationCreationTool(List<IElementType> elementTypes) {
 		super(elementTypes);
 		setDefaultCursor(SharedCursors.CURSOR_PLUG);
-		setDisabledCursor(SharedCursors.NO);
+		setDisabledCursor(Cursors.NO);
 	}
 
 	/**
@@ -103,7 +106,7 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 	 */
 	@Override
 	protected boolean handleDrag() {
-		if(isInState(STATE_CONNECTION_STARTED)) {
+		if (isInState(STATE_CONNECTION_STARTED)) {
 			return handleMove();
 		}
 		return false;
@@ -114,12 +117,12 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 	 */
 	@Override
 	protected boolean handleDragInProgress() {
-		if(isInState(STATE_ACCESSIBLE_DRAG_IN_PROGRESS)) {
+		if (isInState(STATE_ACCESSIBLE_DRAG_IN_PROGRESS)) {
 			return handleMove();
 		}
 
 		{ // ----------- add for drag creation size -----
-			if(isInState(STATE_DRAG_IN_PROGRESS)) {
+			if (isInState(STATE_DRAG_IN_PROGRESS)) {
 				updateTargetRequest();
 				setCurrentCommand(getCommand());
 				showTargetFeedback();
@@ -134,7 +137,7 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 	 */
 	@Override
 	protected String getDebugNameForState(int s) {
-		if(s == STATE_CONNECTION_STARTED || s == STATE_ACCESSIBLE_DRAG_IN_PROGRESS) {
+		if (s == STATE_CONNECTION_STARTED || s == STATE_ACCESSIBLE_DRAG_IN_PROGRESS) {
 			return "Connection Started";//$NON-NLS-1$
 		}
 		return super.getDebugNameForState(s);
@@ -142,26 +145,26 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 
 	/**
 	 * Sets the location of the request.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.TargetingTool#updateTargetRequest()
 	 */
 	@Override
 	protected void updateTargetRequest() {
-		//		CreateRequest req = getCreateRequest();
-		//		req.setLocation(getLocation());
-		super.updateTargetRequest(); // ----------- add for drag creation size 
+		// CreateRequest req = getCreateRequest();
+		// req.setLocation(getLocation());
+		super.updateTargetRequest(); // ----------- add for drag creation size
 	}
 
 	/**
 	 * Sets the target request. This method is typically not called; subclasses normally override {@link #createTargetRequest()}.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.TargetingTool#setTargetRequest(org.eclipse.gef.Request)
 	 * @param req
-	 *        the target request
+	 *            the target request
 	 */
 	@Override
 	protected void setTargetRequest(Request req) {
-		if(req == null && connectionSource != null) {
+		if (req == null && connectionSource != null) {
 			// do not erase the request when target changes (behavior inherited from CreationTool)
 			return;
 		}
@@ -184,7 +187,7 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 	 * Subclasses may extend or override this method to do additional creation setup, such as
 	 * prompting the user to choose an option about the connection being created. Returns <code>true</code> to indicate that the connection creation
 	 * succeeded.
-	 * 
+	 *
 	 * @return <code>true</code> if the connection creation was performed
 	 */
 	protected boolean handleCreateConnection() {
@@ -209,31 +212,32 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 	 * When the button is first pressed, the source node and its command contribution are
 	 * determined and locked in. After that time, the tool will be looking for the target
 	 * node to complete the connection
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#handleButtonDown(int)
 	 * @param button
-	 *        which button is pressed
+	 *            which button is pressed
 	 * @return <code>true</code> if the button down was processed
 	 */
 	@Override
 	protected boolean handleButtonDown(int button) {
-		if(button == 1 && stateTransition(STATE_CONNECTION_STARTED, STATE_TERMINAL)) {
+		if (button == 1 && stateTransition(STATE_CONNECTION_STARTED, STATE_TERMINAL)) {
 			return handleCreateConnection();
 		}
-		if(isInState(STATE_INITIAL) && button == 1) {
+		if (isInState(STATE_INITIAL) && button == 1) {
 			updateTargetRequest();
 			updateTargetUnderMouse();
 			setConnectionSource(getTargetEditPart());
 
-			{ // ----------- add for drag creation size 
-				if(getTargetEditPart() instanceof InteractionInteractionCompartmentEditPart)
+			{ // ----------- add for drag creation size
+				if (getTargetEditPart() instanceof InteractionInteractionCompartmentEditPart) {
 					return super.handleButtonDown(button);
+				}
 			}
 
 			Command command = getCommand();
 			Request request = getTargetRequest();
-			//target elements of request have been set
-			if(command != null) {
+			// target elements of request have been set
+			if (command != null) {
 				setState(STATE_CONNECTION_STARTED);
 				setCurrentCommand(command);
 				viewer = getCurrentViewer();
@@ -243,12 +247,12 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 				extendedData.put(SequenceRequestConstant.OCCURRENCE_SPECIFICATION_LOCATION_2, null);
 			}
 		}
-		if(isInState(STATE_INITIAL) && button != 1) {
+		if (isInState(STATE_INITIAL) && button != 1) {
 			setState(STATE_INVALID);
 			handleInvalidInput();
 		}
-		if(isInState(STATE_CONNECTION_STARTED)) {
-			//Fake a drag to cause feedback to be displayed immediately on mouse down.
+		if (isInState(STATE_CONNECTION_STARTED)) {
+			// Fake a drag to cause feedback to be displayed immediately on mouse down.
 			handleDrag();
 		}
 		return true;
@@ -259,17 +263,17 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 	 */
 	@Override
 	protected boolean handleMove() {
-		if(isInState(STATE_CONNECTION_STARTED) && viewer != getCurrentViewer()) {
+		if (isInState(STATE_CONNECTION_STARTED) && viewer != getCurrentViewer()) {
 			return false;
 		}
-		if(isInState(STATE_CONNECTION_STARTED | STATE_INITIAL | STATE_ACCESSIBLE_DRAG_IN_PROGRESS)) {
+		if (isInState(STATE_CONNECTION_STARTED | STATE_INITIAL | STATE_ACCESSIBLE_DRAG_IN_PROGRESS)) {
 			updateTargetRequest();
 			updateTargetUnderMouse();
 			showSourceFeedback();
 			showTargetFeedback();
 			setCurrentCommand(getCommand());
 		}
-		if(isInState(STATE_CONNECTION_STARTED)) {
+		if (isInState(STATE_CONNECTION_STARTED)) {
 			// Expose the diagram as the user scrolls in the area handled by the
 			// autoexpose helper.
 			updateAutoexposeHelper();
@@ -279,23 +283,23 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 
 	/**
 	 * Sets the source editpart for the creation
-	 * 
+	 *
 	 * @param source
-	 *        the source editpart node
+	 *            the source editpart node
 	 */
 	protected void setConnectionSource(EditPart source) {
-		if(connectionSource != null) {
+		if (connectionSource != null) {
 			connectionSource.removeEditPartListener(deactivationListener);
 		}
 		connectionSource = source;
-		if(connectionSource != null) {
+		if (connectionSource != null) {
 			connectionSource.addEditPartListener(deactivationListener);
 		}
 	}
 
 	/**
 	 * Returns <code>true</code> if feedback is being shown.
-	 * 
+	 *
 	 * @return <code>true</code> if showing source feedback
 	 */
 	protected boolean isShowingSourceFeedback() {
@@ -306,11 +310,11 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 	 * Asks the source editpart to erase connection creation feedback.
 	 */
 	protected void eraseSourceFeedback() {
-		if(!isShowingSourceFeedback()) {
+		if (!isShowingSourceFeedback()) {
 			return;
 		}
 		setFlag(FLAG_SOURCE_FEEDBACK, false);
-		if(connectionSource != null) {
+		if (connectionSource != null) {
 			connectionSource.eraseSourceFeedback(getSourceRequest());
 		}
 	}
@@ -318,12 +322,12 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 	/**
 	 * Scrolling can happen either in the {@link AbstractTool#STATE_INITIAL initial} state or
 	 * once the source of the connection has been {@link AbstractConnectionCreationTool#STATE_CONNECTION_STARTED identified}.
-	 * 
+	 *
 	 * @see org.eclipse.gef.Tool#mouseWheelScrolled(org.eclipse.swt.widgets.Event, org.eclipse.gef.EditPartViewer)
 	 */
 	@Override
 	public void mouseWheelScrolled(Event event, EditPartViewer viewer) {
-		if(isInState(STATE_INITIAL | STATE_CONNECTION_STARTED)) {
+		if (isInState(STATE_INITIAL | STATE_CONNECTION_STARTED)) {
 			performViewerMouseWheel(event, viewer);
 		}
 	}
@@ -332,7 +336,7 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 	 * Returns the request sent to the source node. The source node receives the same request
 	 * that is used with the target node. The only difference is that at that time the
 	 * request will be typed as {@link RequestConstants#REQ_CONNECTION_START}.
-	 * 
+	 *
 	 * @return the request used with the source node editpart
 	 */
 	protected Request getSourceRequest() {
@@ -343,7 +347,7 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 	 * Sends a show feedback request to the source editpart and sets the feedback flag.
 	 */
 	protected void showSourceFeedback() {
-		if(connectionSource != null) {
+		if (connectionSource != null) {
 			connectionSource.showSourceFeedback(getSourceRequest());
 		}
 		setFlag(FLAG_SOURCE_FEEDBACK, true);
@@ -351,24 +355,24 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 
 	/**
 	 * Unloads or resets the tool if the state is in the terminal or invalid state.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#handleButtonUp(int)
 	 */
 	@Override
 	protected boolean handleButtonUp(int button) {
-		if(isInState(STATE_CONNECTION_STARTED)) {
+		if (isInState(STATE_CONNECTION_STARTED)) {
 			handleCreateConnection();
 		}
 
 		{ // ----------- add for drag creation size ------
-			if(stateTransition(STATE_DRAG | STATE_DRAG_IN_PROGRESS, STATE_TERMINAL)) {
+			if (stateTransition(STATE_DRAG | STATE_DRAG_IN_PROGRESS, STATE_TERMINAL)) {
 				eraseTargetFeedback();
 				unlockTargetEditPart();
 				performCreation(button);
 			}
 		}
 		setState(STATE_TERMINAL);
-		if(isInState(STATE_TERMINAL | STATE_INVALID)) {
+		if (isInState(STATE_TERMINAL | STATE_INVALID)) {
 			handleFinished();
 		}
 		return true;
@@ -379,8 +383,8 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 	 */
 	@Override
 	protected boolean handleCommandStackChanged() {
-		if(!isInState(STATE_INITIAL)) {
-			if(getCurrentInput().isMouseButtonDown(1)) {
+		if (!isInState(STATE_INITIAL)) {
+			if (getCurrentInput().isMouseButtonDown(1)) {
 				setState(STATE_INVALID);
 			} else {
 				setState(STATE_INITIAL);
@@ -405,28 +409,28 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 
 	/**
 	 * Calculate the cursor to display
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractConnectionCreationTool#calculateCursor()
 	 */
 	@Override
 	protected Cursor calculateCursor() {
-		if(isInState(STATE_CONNECTION_STARTED)) {
+		if (isInState(STATE_CONNECTION_STARTED)) {
 			// Give some feedback so the user knows the area where autoscrolling
 			// will occur.
-			if(getAutoexposeHelper() != null) {
-				return SharedCursors.HAND;
+			if (getAutoexposeHelper() != null) {
+				return Cursors.HAND;
 			} else {
 				// Give some feedback so the user knows that they can't drag
 				// outside the viewport.
-				if(getCurrentViewer() != null) {
+				if (getCurrentViewer() != null) {
 					Control control = getCurrentViewer().getControl();
-					if(control instanceof FigureCanvas) {
-						Viewport viewport = ((FigureCanvas)control).getViewport();
+					if (control instanceof FigureCanvas) {
+						Viewport viewport = ((FigureCanvas) control).getViewport();
 						Rectangle rect = Rectangle.SINGLETON;
 						viewport.getClientArea(rect);
 						viewport.translateToParent(rect);
 						viewport.translateToAbsolute(rect);
-						if(!rect.contains(getLocation())) {
+						if (!rect.contains(getLocation())) {
 							return getDisabledCursor();
 						}
 					}
@@ -434,9 +438,9 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 			}
 		}
 		Command command = getCurrentCommand();
-		if(command != null && command.canExecute()) {
+		if (command != null && command.canExecute()) {
 			EditPart ep = getTargetEditPart();
-			if(ep instanceof DiagramEditPart || ep instanceof CompartmentEditPart) {
+			if (ep instanceof DiagramEditPart || ep instanceof CompartmentEditPart) {
 				return CURSOR_TARGET_MENU;
 			}
 		}
@@ -445,16 +449,16 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 
 	/**
 	 * Get the command to execute
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.tools.CreationTool#getCommand()
-	 * 
+	 *
 	 * @return the command
 	 */
 	@Override
 	protected Command getCommand() {
-		if(!antiScroll) {
+		if (!antiScroll) {
 			EditPart targetPart = getTargetEditPart();
-			if(targetPart == null) {
+			if (targetPart == null) {
 				return null;
 			}
 			Request req = getTargetRequest();
@@ -499,10 +503,11 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 			 * }
 			 * }
 			 */
-			if(targetPart instanceof InteractionInteractionCompartmentEditPart || targetPart instanceof ConnectionNodeEditPart)
+			if (targetPart instanceof InteractionInteractionCompartmentEditPart || targetPart instanceof ConnectionNodeEditPart) {
 				return targetPart.getCommand(req);
+			}
 			targetPart = getInteractionEditPart(targetPart);
-			if(targetPart != null) {
+			if (targetPart != null) {
 				return targetPart.getCommand(req);
 			}
 		}
@@ -510,10 +515,10 @@ public class DurationCreationTool extends AspectUnspecifiedTypeCreationTool {
 	}
 
 	private EditPart getInteractionEditPart(EditPart editPart) {
-		if(editPart == null) {
+		if (editPart == null) {
 			return null;
 		}
-		if(editPart instanceof InteractionInteractionCompartmentEditPart) {
+		if (editPart instanceof InteractionInteractionCompartmentEditPart) {
 			return editPart;
 		}
 		return getInteractionEditPart(editPart.getParent());

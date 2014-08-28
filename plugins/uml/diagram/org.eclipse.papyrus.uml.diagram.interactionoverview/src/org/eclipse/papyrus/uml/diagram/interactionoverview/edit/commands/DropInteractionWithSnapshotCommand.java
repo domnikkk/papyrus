@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,34 +33,36 @@ public class DropInteractionWithSnapshotCommand extends
 		AbstractTransactionalCommand {
 
 	protected IGraphicalEditPart parentEditPart;
-	
+
 	protected CallBehaviorAction callBehaviorAction;
-	
+
 	public DropInteractionWithSnapshotCommand(final TransactionalEditingDomain domain, final IGraphicalEditPart parentEditPart, CallBehaviorAction callBehaviorAction, final String commandLabel) {
 		super(domain, commandLabel, Collections.EMPTY_LIST);
 		this.parentEditPart = parentEditPart;
 		this.callBehaviorAction = callBehaviorAction;
 	}
-	
+
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
 		// creation of the node
-		final View containerView = (View)parentEditPart.getModel();
+		final View containerView = (View) parentEditPart.getModel();
 		final Node callBehaviorActionNode = createTargetCallBehaviorView(callBehaviorAction, containerView, -1);
-		/*// copy all EAnnotations
-		final Iterator<EAnnotation> iter = this.callBehaviorActionEditPart.getNotationView().getEAnnotations().iterator();
-		while(iter.hasNext()) {
-			final EAnnotation annotation = EcoreUtil.copy(iter.next());
-			callBehaviorActionNode.getEAnnotations().add(annotation);
-		}*/
+		/*
+		 * // copy all EAnnotations
+		 * final Iterator<EAnnotation> iter = this.callBehaviorActionEditPart.getNotationView().getEAnnotations().iterator();
+		 * while(iter.hasNext()) {
+		 * final EAnnotation annotation = EcoreUtil.copy(iter.next());
+		 * callBehaviorActionNode.getEAnnotations().add(annotation);
+		 * }
+		 */
 		CallBehaviorUtil.setCallBehaviorActionType(callBehaviorAction, getTargetCallBehaviorType());
 
 		// select the new callBehaviorAction View
 		parentEditPart.refresh();
 		ViewUtils.selectInViewer(callBehaviorActionNode, parentEditPart.getViewer());
 		EditPartViewer viewer = parentEditPart.getViewer();
-		GraphicalEditPart newEditPart = (GraphicalEditPart)viewer.getEditPartRegistry().get(callBehaviorActionNode);
+		GraphicalEditPart newEditPart = (GraphicalEditPart) viewer.getEditPartRegistry().get(callBehaviorActionNode);
 		return CommandResult.newOKCommandResult(callBehaviorActionNode);
 	}
 
@@ -69,7 +71,7 @@ public class DropInteractionWithSnapshotCommand extends
 		CustomViewProvider viewProvider = new CustomViewProvider();
 		return viewProvider.createCallBehaviorAction_5000(callBehaviorAction, containerView, index, true, this.parentEditPart.getDiagramPreferencesHint());
 	}
-	
+
 	protected CallBehaviorActionType getTargetCallBehaviorType() {
 		return CallBehaviorActionType.snapshot;
 	}

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -34,7 +34,7 @@ public class DefaultParserHintAdapter extends ParserHintAdapter {
 	@Override
 	public Object getAdapter(Class adapter) {
 
-		if(adapter.equals(Diagram.class)) {
+		if (adapter.equals(Diagram.class)) {
 			return diagram;
 		}
 

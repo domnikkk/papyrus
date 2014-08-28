@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
- *  Christian W. Damus (CEA LIST) - Replace workspace IResource dependency with URI for CDO compatibility 
+ *  Christian W. Damus (CEA LIST) - Replace workspace IResource dependency with URI for CDO compatibility
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.search.ui.results;
@@ -48,7 +48,6 @@ import org.eclipse.search.ui.text.IFileMatchAdapter;
 import org.eclipse.search.ui.text.Match;
 import org.eclipse.search.ui.text.MatchFilter;
 import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.ide.ResourceUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Property;
@@ -111,10 +110,10 @@ public class PapyrusSearchResult extends AbstractTextSearchResult implements IEd
 		Set<Match> results = new HashSet<Match>();
 
 		Set<AbstractResultEntry> allMatches = MatchUtils.getMatches(result, true);
-		for(AbstractResultEntry modelMatch : allMatches) {
+		for (AbstractResultEntry modelMatch : allMatches) {
 			Object element = modelMatch.getElement();
-			if(element instanceof ScopeEntry) {
-				if(file.equals(getWorkspaceResource((ScopeEntry) element))) {
+			if (element instanceof ScopeEntry) {
+				if (file.equals(getWorkspaceResource((ScopeEntry) element))) {
 					results.add(modelMatch);
 				}
 			}
@@ -128,29 +127,29 @@ public class PapyrusSearchResult extends AbstractTextSearchResult implements IEd
 		IResource result = null;
 
 		URI uri = scopeEntry.getResourceURI();
-		if((uri != null) && uri.isPlatformResource()) {
+		if ((uri != null) && uri.isPlatformResource()) {
 			String path = uri.toPlatformString(true);
 			result = ResourcesPlugin.getWorkspace().getRoot().findMember(path);
 		}
 
 		return result;
 	}
-	
+
 	public IFile getFile(Object element) {
-		if(element instanceof ScopeEntry) {
+		if (element instanceof ScopeEntry) {
 			IResource resource = getWorkspaceResource((ScopeEntry) element);
-			if(resource instanceof IFile) {
-				return (IFile)resource;
+			if (resource instanceof IFile) {
+				return (IFile) resource;
 			}
 		}
 		return null;
 	}
 
 	public boolean isShownInEditor(Match match, IEditorPart editor) {
-		if(match instanceof AbstractResultEntry) {
+		if (match instanceof AbstractResultEntry) {
 			Object element = match.getElement();
-			if(element instanceof ScopeEntry) {
-				if(Objects.equal(EditorUtils.getResourceURI(editor), ((ScopeEntry) element).getResourceURI())) {
+			if (element instanceof ScopeEntry) {
+				if (Objects.equal(EditorUtils.getResourceURI(editor), ((ScopeEntry) element).getResourceURI())) {
 					return true;
 				}
 			}
@@ -165,91 +164,91 @@ public class PapyrusSearchResult extends AbstractTextSearchResult implements IEd
 		Match[] matchList = super.getMatches(element);
 		Set<Match> matchToKeep = new HashSet<Match>();
 		List<Object> sourceList = new ArrayList<Object>();
-		// Get matches which are still true 
-		for(Match match : matchList) {
-			if(match instanceof AbstractResultEntry) {
-				if(((AbstractResultEntry)match).getSource() != null) {
-					if(match instanceof AttributeMatch) {
-						Object attribute = ((AttributeMatch)match).getMetaAttribute();
+		// Get matches which are still true
+		for (Match match : matchList) {
+			if (match instanceof AbstractResultEntry) {
+				if (((AbstractResultEntry) match).getSource() != null) {
+					if (match instanceof AttributeMatch) {
+						Object attribute = ((AttributeMatch) match).getMetaAttribute();
 						String value = null;
-						EObject target = (EObject)((AbstractResultEntry)match).getSource();
-						if(attribute instanceof EAttribute) {
+						EObject target = (EObject) ((AbstractResultEntry) match).getSource();
+						if (attribute instanceof EAttribute) {
 
-							value = String.valueOf(target.eGet((EStructuralFeature)attribute));
-						} else if(attribute instanceof Property) {
+							value = String.valueOf(target.eGet((EStructuralFeature) attribute));
+						} else if (attribute instanceof Property) {
 
-							value = getStringValueOfProperty((Element)((AbstractResultEntry)match).getSource(), ((AttributeMatch)match).getStereotype(), ((Property)attribute));
+							value = getStringValueOfProperty((Element) ((AbstractResultEntry) match).getSource(), ((AttributeMatch) match).getStereotype(), ((Property) attribute));
 
 
 						}
-						if(value != null && !this.getQuery().isRegularExpression()) {
-							if(value.length() >= match.getLength() - match.getOffset()) {
+						if (value != null && !this.getQuery().isRegularExpression()) {
+							if (value.length() >= match.getLength() - match.getOffset()) {
 								int end = match.getOffset() + match.getLength();
 								value = value.substring(match.getOffset(), end);
-								if(this.searchQuery.isCaseSensitive()) {
-									if(value.equals(this.searchQuery.getSearchQueryText())) {
-										((AbstractResultEntry)match).recursiveHierarchy((AbstractResultEntry)((AbstractResultEntry)match).getParent());
+								if (this.searchQuery.isCaseSensitive()) {
+									if (value.equals(this.searchQuery.getSearchQueryText())) {
+										((AbstractResultEntry) match).recursiveHierarchy((AbstractResultEntry) ((AbstractResultEntry) match).getParent());
 										matchToKeep.add(match);
-										sourceList.add(((AbstractResultEntry)match).getSource());
+										sourceList.add(((AbstractResultEntry) match).getSource());
 									}
 								} else {
-									if(value.equalsIgnoreCase(this.searchQuery.getSearchQueryText())) {
+									if (value.equalsIgnoreCase(this.searchQuery.getSearchQueryText())) {
 
-										((AbstractResultEntry)match).recursiveHierarchy((AbstractResultEntry)((AbstractResultEntry)match).getParent());
+										((AbstractResultEntry) match).recursiveHierarchy((AbstractResultEntry) ((AbstractResultEntry) match).getParent());
 
 										matchToKeep.add(match);
-										sourceList.add(((AbstractResultEntry)match).getSource());
+										sourceList.add(((AbstractResultEntry) match).getSource());
 									}
 								}
 							}
-						} else if(this.getQuery().isRegularExpression()) {
-							if(this.getQuery().getSearchQueryText() != null) {
+						} else if (this.getQuery().isRegularExpression()) {
+							if (this.getQuery().getSearchQueryText() != null) {
 
 
 								Pattern pattern = PatternHelper.getInstance().createPattern(this.getQuery().getSearchQueryText(), false, true);
 								Matcher m = pattern.matcher(value);
-								if(m.matches()) {
+								if (m.matches()) {
 									int start = m.start();
 									int end = m.end();
-									if(start == match.getOffset() && end == match.getOffset() + match.getLength()) {
+									if (start == match.getOffset() && end == match.getOffset() + match.getLength()) {
 										matchToKeep.add(match);
-										sourceList.add(((AbstractResultEntry)match).getSource());
+										sourceList.add(((AbstractResultEntry) match).getSource());
 									}
 								}
 							}
 						}
-					} else if(match instanceof ModelElementMatch) {
-						((AbstractResultEntry)match).recursiveHierarchy((AbstractResultEntry)match);
+					} else if (match instanceof ModelElementMatch) {
+						((AbstractResultEntry) match).recursiveHierarchy((AbstractResultEntry) match);
 
 						matchToKeep.add(match);
-						sourceList.add(((AbstractResultEntry)match).getSource());
+						sourceList.add(((AbstractResultEntry) match).getSource());
 					}
 				}
 			}
 		}
 		// Now get Viewer
-		for(Match match : matchList) {
-			if(match instanceof ViewerMatch) {
-				Object source = ((ViewerMatch)match).getSemanticElement();
-				if(sourceList.contains(source)) {
+		for (Match match : matchList) {
+			if (match instanceof ViewerMatch) {
+				Object source = ((ViewerMatch) match).getSemanticElement();
+				if (sourceList.contains(source)) {
 					matchToKeep.add(match);
 				}
 			}
 
 		}
 
-		return (Match[])matchToKeep.toArray(new Match[matchToKeep.size()]);
-		//		return ((PapyrusQuery)searchQuery).getfResults().toArray(new Match[matchToKeep.size()]);
+		return matchToKeep.toArray(new Match[matchToKeep.size()]);
+		// return ((PapyrusQuery)searchQuery).getfResults().toArray(new Match[matchToKeep.size()]);
 		//
 	}
 
 	public Match[] computeContainedMatches(AbstractTextSearchResult result, IEditorPart editor) {
 		Set<Object> results = new HashSet<Object>();
 		Set<AbstractResultEntry> allMatches = MatchUtils.getMatches(result, true);
-		for(AbstractResultEntry modelMatch : allMatches) {
+		for (AbstractResultEntry modelMatch : allMatches) {
 			Object element = modelMatch.getElement();
-			if(element instanceof ScopeEntry) {
-				if(((ScopeEntry)element).getResourceURI().equals(EditorUtils.getResourceURI(editor))) {
+			if (element instanceof ScopeEntry) {
+				if (((ScopeEntry) element).getResourceURI().equals(EditorUtils.getResourceURI(editor))) {
 					results.add(modelMatch);
 				}
 			}
@@ -265,11 +264,12 @@ public class PapyrusSearchResult extends AbstractTextSearchResult implements IEd
 
 		List<Object> elementList = Arrays.asList(this.getElements());
 		int count = 0;
-		for(Object element : elementList) {
+		for (Object element : elementList) {
 
-			for(Match match : this.getMatches(element)) {
-				if(match instanceof ModelMatch || match instanceof ViewerMatch)
+			for (Match match : this.getMatches(element)) {
+				if (match instanceof ModelMatch || match instanceof ViewerMatch) {
 					count++;
+				}
 			}
 
 		}
@@ -278,10 +278,10 @@ public class PapyrusSearchResult extends AbstractTextSearchResult implements IEd
 
 	private String getStringValueOfProperty(Element element, Stereotype stereotype, Property property) {
 		Object value = element.getValue(stereotype, property.getName());
-		if(value instanceof String) {
-			return (String)value;
-		} else if(value instanceof EnumerationLiteral) {
-			return ((EnumerationLiteral)value).getName();
+		if (value instanceof String) {
+			return (String) value;
+		} else if (value instanceof EnumerationLiteral) {
+			return ((EnumerationLiteral) value).getName();
 		} else {
 			return String.valueOf(value);
 		}

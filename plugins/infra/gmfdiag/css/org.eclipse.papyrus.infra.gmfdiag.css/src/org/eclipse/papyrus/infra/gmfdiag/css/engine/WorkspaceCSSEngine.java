@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,13 +28,13 @@ import org.w3c.dom.Element;
 /**
  * A Singleton CSSEngine, handling the CSS stylesheets applied to the whole
  * workspace.
- * 
+ *
  * This Engine is a child of the BaseCSSEngine.
- * 
+ *
  * It should not be used directly.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  * @see DiagramCSSEngine
  */
 @SuppressWarnings("restriction")
@@ -50,16 +50,16 @@ public class WorkspaceCSSEngine extends ExtendedCSSEngineImpl {
 	protected void reloadStyleSheets() {
 		styleSheetURLs.clear();
 		styleSheets.clear();
-		for(StyleSheet styleSheet : ThemeManager.instance.getWorkspaceStyleSheets()) {
+		for (StyleSheet styleSheet : ThemeManager.instance.getWorkspaceStyleSheets()) {
 
-			if(styleSheet instanceof StyleSheetReference) {
-				IFile iFile = FileUtil.getIFile(((StyleSheetReference)styleSheet).getPath());
-				if(iFile != null) {
+			if (styleSheet instanceof StyleSheetReference) {
+				IFile iFile = FileUtil.getIFile(((StyleSheetReference) styleSheet).getPath());
+				if (iFile != null) {
 					styleSheets.add(styleSheet);
 				} else {
 					try {
 
-						URL styleSheetURL = new URL(((StyleSheetReference)styleSheet).getPath());
+						URL styleSheetURL = new URL(((StyleSheetReference) styleSheet).getPath());
 						styleSheetURLs.add(styleSheetURL);
 					} catch (MalformedURLException e) {
 						Activator.log.error(e);
@@ -73,7 +73,7 @@ public class WorkspaceCSSEngine extends ExtendedCSSEngineImpl {
 		}
 	}
 
-	//Unsupported operations. The WorkspaceCSSEngine should never be used directly.
+	// Unsupported operations. The WorkspaceCSSEngine should never be used directly.
 
 	@Override
 	public Element getElement(Object node) {

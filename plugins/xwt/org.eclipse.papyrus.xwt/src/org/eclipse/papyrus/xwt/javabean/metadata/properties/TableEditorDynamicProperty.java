@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -35,7 +35,7 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 
 /**
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class TableEditorDynamicProperty extends AbstractProperty {
@@ -60,21 +60,21 @@ public class TableEditorDynamicProperty extends AbstractProperty {
 	 */
 	public void setValue(Object target, Object value) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
 
-		Boolean isDynamic = (Boolean)value;
-		TableEditor tableEditor = (TableEditor)target;
+		Boolean isDynamic = (Boolean) value;
+		TableEditor tableEditor = (TableEditor) target;
 		final Control control = tableEditor.getEditor();
 		Table tableParent = null;
 		Composite parent = control.getParent();
-		if(parent instanceof Table) {
-			tableParent = (Table)parent;
-		} else if(tableEditor.getItem() != null) {
+		if (parent instanceof Table) {
+			tableParent = (Table) parent;
+		} else if (tableEditor.getItem() != null) {
 			tableParent = tableEditor.getItem().getParent();
 		}
-		if(tableParent == null) {
+		if (tableParent == null) {
 			return;
 		}
 		final Table table = tableParent;
-		if(isDynamic) {
+		if (isDynamic) {
 			control.setVisible(false);
 			control.addFocusListener(new FocusAdapter() {
 
@@ -88,14 +88,14 @@ public class TableEditorDynamicProperty extends AbstractProperty {
 
 				@Override
 				public void keyPressed(KeyEvent e) {
-					if(e.character == SWT.CR && control.isFocusControl()) {
+					if (e.character == SWT.CR && control.isFocusControl()) {
 						table.notifyListeners(SWT.DefaultSelection, new Event());
 					}
 				}
 			});
 
 			Object mouseHander = table.getData(PropertiesConstants.DATA_TABLE_UTIL);
-			if(mouseHander == null) {
+			if (mouseHander == null) {
 				TableUtil tableUtil = new TableUtil(table);
 				table.setData(PropertiesConstants.DATA_TABLE_UTIL, tableUtil);
 			}
@@ -117,10 +117,10 @@ public class TableEditorDynamicProperty extends AbstractProperty {
 
 		public void widgetDefaultSelected(SelectionEvent e) {
 			Control editor = tableEditor.getEditor();
-			if(editor.isDisposed()) {
+			if (editor.isDisposed()) {
 				return;
 			}
-			if(editor.isFocusControl()) {
+			if (editor.isFocusControl()) {
 				editor.setVisible(false);
 			} else {
 				editor.setFocus();
@@ -129,14 +129,14 @@ public class TableEditorDynamicProperty extends AbstractProperty {
 
 		public void widgetSelected(SelectionEvent e) {
 			Control editor = tableEditor.getEditor();
-			if(editor.isDisposed()) {
+			if (editor.isDisposed()) {
 				return;
 			}
-			TableUtil tableUtil = (TableUtil)table.getData(PropertiesConstants.DATA_TABLE_UTIL);
+			TableUtil tableUtil = (TableUtil) table.getData(PropertiesConstants.DATA_TABLE_UTIL);
 			TableItem item = tableUtil.getItem();
 			int column = tableUtil.getColumn();
 
-			if(item == tableEditor.getItem() && column == tableEditor.getColumn()) {
+			if (item == tableEditor.getItem() && column == tableEditor.getColumn()) {
 				editor.setVisible(true);
 			} else {
 				editor.setVisible(false);
@@ -160,8 +160,9 @@ public class TableEditorDynamicProperty extends AbstractProperty {
 
 		@Override
 		public void mouseDown(MouseEvent e) {
-			if(table.isDisposed() || !table.isVisible())
+			if (table.isDisposed() || !table.isVisible()) {
 				return;
+			}
 			Point pt = new Point(e.x, e.y);
 			int lineWidth = table.getLinesVisible() ? table.getGridLineWidth() : 0;
 			TableItem item = table.getItem(pt);
@@ -169,44 +170,48 @@ public class TableEditorDynamicProperty extends AbstractProperty {
 			int start = item != null ? table.indexOf(item) : table.getTopIndex();
 			int end = table.getItemCount();
 			Rectangle clientRect = table.getClientArea();
-			for(int i = start; i < end; i++) {
+			for (int i = start; i < end; i++) {
 				TableItem nextItem = table.getItem(i);
 				Rectangle rect = nextItem.getBounds(0);
-				if(pt.y >= rect.y && pt.y < rect.y + rect.height + lineWidth) {
+				if (pt.y >= rect.y && pt.y < rect.y + rect.height + lineWidth) {
 					item = nextItem;
 					break;
 				}
-				if(rect.y > clientRect.y + clientRect.height)
+				if (rect.y > clientRect.y + clientRect.height) {
 					return;
+				}
 			}
-			if(item == null)
+			if (item == null) {
 				return;
+			}
 
 			this.item = item;
 
 			TableColumn newColumn = null;
 			int columnCount = table.getColumnCount();
-			if(columnCount == 0) {
-				if((table.getStyle() & SWT.FULL_SELECTION) == 0) {
+			if (columnCount == 0) {
+				if ((table.getStyle() & SWT.FULL_SELECTION) == 0) {
 					Rectangle rect = item.getBounds(0);
 					rect.width += lineWidth;
 					rect.height += lineWidth;
-					if(!rect.contains(pt))
+					if (!rect.contains(pt)) {
 						return;
+					}
 				}
 			} else {
-				for(int i = 0; i < columnCount; i++) {
+				for (int i = 0; i < columnCount; i++) {
 					Rectangle rect = item.getBounds(i);
 					rect.width += lineWidth;
 					rect.height += lineWidth;
-					if(rect.contains(pt)) {
+					if (rect.contains(pt)) {
 						newColumn = table.getColumn(i);
 						break;
 					}
 				}
-				if(newColumn == null) {
-					if((table.getStyle() & SWT.FULL_SELECTION) == 0)
+				if (newColumn == null) {
+					if ((table.getStyle() & SWT.FULL_SELECTION) == 0) {
 						return;
+					}
 					newColumn = table.getColumn(0);
 				}
 			}
@@ -224,7 +229,7 @@ public class TableEditorDynamicProperty extends AbstractProperty {
 		}
 
 		public void setRow(int rowIndex) {
-			if(rowIndex >= 0 && rowIndex < table.getItemCount()) {
+			if (rowIndex >= 0 && rowIndex < table.getItemCount()) {
 				item = table.getItem(rowIndex);
 			} else {
 				item = null;
@@ -236,7 +241,7 @@ public class TableEditorDynamicProperty extends AbstractProperty {
 		}
 
 		public void setColumn(int columnIndex) {
-			if(columnIndex >= 0 && columnIndex < table.getColumnCount()) {
+			if (columnIndex >= 0 && columnIndex < table.getColumnCount()) {
 				column = table.getColumn(columnIndex);
 			} else {
 				column = null;
@@ -247,7 +252,7 @@ public class TableEditorDynamicProperty extends AbstractProperty {
 			int rowIndex = getRow();
 			int columnIndex = column == null ? 0 : table.indexOf(column);
 
-			switch(event.keyCode) {
+			switch (event.keyCode) {
 			case SWT.ARROW_UP:
 				setRow(Math.max(0, rowIndex - 1));
 				break;
@@ -257,19 +262,22 @@ public class TableEditorDynamicProperty extends AbstractProperty {
 			case SWT.ARROW_LEFT:
 			case SWT.ARROW_RIGHT:
 				int columnCount = table.getColumnCount();
-				if(columnCount == 0)
+				if (columnCount == 0) {
 					break;
+				}
 				int[] order = table.getColumnOrder();
 				int index = 0;
-				while(index < order.length) {
-					if(order[index] == columnIndex)
+				while (index < order.length) {
+					if (order[index] == columnIndex) {
 						break;
+					}
 					index++;
 				}
-				if(index == order.length)
+				if (index == order.length) {
 					index = 0;
+				}
 				int leadKey = (XWTMaps.getStyle("SWT.RIGHT_TO_LEFT") != SWT.NONE) ? ((table.getStyle() & XWTMaps.getStyle("SWT.RIGHT_TO_LEFT")) != 0 ? SWT.ARROW_RIGHT : SWT.ARROW_LEFT) : SWT.ARROW_LEFT;
-				if(event.keyCode == leadKey) {
+				if (event.keyCode == leadKey) {
 					setColumn(order[Math.max(0, index - 1)]);
 				} else {
 					setColumn(order[Math.min(columnCount - 1, index + 1)]);
@@ -286,7 +294,7 @@ public class TableEditorDynamicProperty extends AbstractProperty {
 				break;
 			case SWT.PAGE_UP:
 				int topIndex = table.getTopIndex();
-				if(topIndex == rowIndex) {
+				if (topIndex == rowIndex) {
 					Rectangle rect = table.getClientArea();
 					TableItem item = table.getItem(topIndex);
 					Rectangle itemRect = item.getBounds(0);
@@ -308,7 +316,7 @@ public class TableEditorDynamicProperty extends AbstractProperty {
 				int page = Math.max(1, rect.height / height);
 				int end = table.getItemCount() - 1;
 				downIndex = Math.min(end, downIndex + page - 1);
-				if(downIndex == rowIndex) {
+				if (downIndex == rowIndex) {
 					downIndex = Math.min(end, downIndex + page - 1);
 				}
 				setRow(downIndex);

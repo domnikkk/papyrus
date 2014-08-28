@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -17,7 +17,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -29,7 +28,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.dd.dc.util.DCAdapterFactory;
 
 /**
@@ -39,7 +37,7 @@ import org.eclipse.papyrus.dd.dc.util.DCAdapterFactory;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DCItemProviderAdapterFactory extends DCAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -47,7 +45,7 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -55,7 +53,7 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	/**
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -64,7 +62,7 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -72,7 +70,7 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	/**
 	 * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DCItemProviderAdapterFactory() {
@@ -87,7 +85,7 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dc.Point} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PointItemProvider pointItemProvider;
@@ -95,12 +93,12 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dc.Point}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createPointAdapter() {
-		if(pointItemProvider == null) {
+		if (pointItemProvider == null) {
 			pointItemProvider = new PointItemProvider(this);
 		}
 		return pointItemProvider;
@@ -109,7 +107,7 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dc.Dimension} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DimensionItemProvider dimensionItemProvider;
@@ -117,12 +115,12 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dc.Dimension}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createDimensionAdapter() {
-		if(dimensionItemProvider == null) {
+		if (dimensionItemProvider == null) {
 			dimensionItemProvider = new DimensionItemProvider(this);
 		}
 		return dimensionItemProvider;
@@ -132,7 +130,7 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dc.Bounds} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BoundsItemProvider boundsItemProvider;
@@ -140,12 +138,12 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dc.Bounds}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createBoundsAdapter() {
-		if(boundsItemProvider == null) {
+		if (boundsItemProvider == null) {
 			boundsItemProvider = new BoundsItemProvider(this);
 		}
 		return boundsItemProvider;
@@ -154,9 +152,10 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	/**
 	 * This returns the root adapter factory that contains this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -164,16 +163,17 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	/**
 	 * This sets the composed adapter factory that contains this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	/**
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,14 +194,14 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if(isFactoryForType(type)) {
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if(!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -211,9 +211,10 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	/**
 	 * This adds a listener.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -221,9 +222,10 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	/**
 	 * This removes a listener.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -231,12 +233,13 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	/**
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
-		if(parentAdapterFactory != null) {
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -244,15 +247,19 @@ public class DCItemProviderAdapterFactory extends DCAdapterFactory implements Co
 	/**
 	 * This disposes all of the item providers created by this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if(pointItemProvider != null)
+		if (pointItemProvider != null) {
 			pointItemProvider.dispose();
-		if(dimensionItemProvider != null)
+		}
+		if (dimensionItemProvider != null) {
 			dimensionItemProvider.dispose();
-		if(boundsItemProvider != null)
+		}
+		if (boundsItemProvider != null) {
 			boundsItemProvider.dispose();
+		}
 	}
 }

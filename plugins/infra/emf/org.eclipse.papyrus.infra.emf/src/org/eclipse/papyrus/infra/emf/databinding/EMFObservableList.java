@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 402525
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.databinding;
 
@@ -40,7 +40,7 @@ import org.eclipse.papyrus.infra.widgets.editors.ICommitListener;
  * The commands are executed when the {@link #commit(AbstractEditor)} method is called.
  * However, the read operations (such as get, size, ...) return up-to-date
  * results, even when {@link #commit(AbstractEditor)} hasn't been called.
- * 
+ *
  * @author Camille Letavernier
  */
 @SuppressWarnings({ "unchecked", "rawtypes" })
@@ -72,17 +72,17 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 	protected List<?> concreteList;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param wrappedList
-	 *        The list to be edited when #commit() is called
+	 *            The list to be edited when #commit() is called
 	 * @param domain
-	 *        The editing domain on which the commands will be executed
+	 *            The editing domain on which the commands will be executed
 	 * @param source
-	 *        The EObject from which the list will be retrieved
+	 *            The EObject from which the list will be retrieved
 	 * @param feature
-	 *        The feature from which the list will be retrieved
+	 *            The feature from which the list will be retrieved
 	 */
 	public EMFObservableList(List<?> wrappedList, EditingDomain domain, EObject source, EStructuralFeature feature) {
 		super(new LinkedList<Object>(wrappedList), Object.class);
@@ -91,20 +91,20 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 		this.source = source;
 		this.feature = feature;
 
-		if(concreteList instanceof IObservableList) {
-			((IObservableList)concreteList).addChangeListener(this);
+		if (concreteList instanceof IObservableList) {
+			((IObservableList) concreteList).addChangeListener(this);
 		}
 	}
 
 	protected boolean isCommitting;
 
 	public void handleChange(ChangeEvent event) {
-		if(isCommitting) {
-			return; //We're modifying the wrapped Observable list, which sends us change events. Ignore them.
+		if (isCommitting) {
+			return; // We're modifying the wrapped Observable list, which sends us change events. Ignore them.
 		}
 
-		//Refresh if we don't have pending changes
-		if(commands.isEmpty()) {
+		// Refresh if we don't have pending changes
+		if (commands.isEmpty()) {
 			refreshCacheList();
 		}
 	}
@@ -112,11 +112,11 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 	public Object getObserved() {
 		return source;
 	}
-	
+
 	@Override
 	public synchronized void dispose() {
-		if(concreteList instanceof IObservableList) {
-			((IObservableList)concreteList).removeChangeListener(this);
+		if (concreteList instanceof IObservableList) {
+			((IObservableList) concreteList).removeChangeListener(this);
 		}
 		super.dispose();
 	}
@@ -124,15 +124,15 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 	/**
 	 * Forces this list to commit all the pending commands. Only one composite command will
 	 * be executed, and can be undone in a single operation.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.editors.ICommitListener#commit(AbstractEditor)
-	 * 
+	 *
 	 */
 	public synchronized void commit(AbstractEditor editor) {
 
 		isCommitting = true;
 
-		if(commands.isEmpty()) {
+		if (commands.isEmpty()) {
 			return;
 		}
 
@@ -158,19 +158,19 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 
 			@Override
 			protected boolean prepare() {
-				if(commandList.isEmpty()) {
+				if (commandList.isEmpty()) {
 					return false;
 				} else {
-					//We only test the first command, as the following ones might depend
-					//on the first command's execution. StrictCompoundCommands don't seem
-					//to be compatible with emf transaction (execute() is called by 
-					//canExecute(), before the transaction is started)
+					// We only test the first command, as the following ones might depend
+					// on the first command's execution. StrictCompoundCommands don't seem
+					// to be compatible with emf transaction (execute() is called by
+					// canExecute(), before the transaction is started)
 					return commandList.get(0).canExecute();
 				}
 			}
 		};
 
-		for(Command cmd : commands) {
+		for (Command cmd : commands) {
 			compoundCommand.append(cmd);
 		}
 
@@ -185,12 +185,12 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 	 * Refresh the cached list by copying the real list
 	 */
 	protected void refreshCacheList() {
-		if(isDisposed()) {
-			//This observable can be disposed, but the commands might still be
-			//in the command stack. Undo() or Redo() will call this method, which
-			//should be ignored. The command should probably not call refresh directly ;
-			//we should have listeners on the concrete list... but it is not necessarily
-			//observable
+		if (isDisposed()) {
+			// This observable can be disposed, but the commands might still be
+			// in the command stack. Undo() or Redo() will call this method, which
+			// should be ignored. The command should probably not call refresh directly ;
+			// we should have listeners on the concrete list... but it is not necessarily
+			// observable
 			return;
 		}
 		wrappedList.clear();
@@ -303,7 +303,7 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 	@Override
 	public Object remove(int index) {
 		Object value = get(index);
-		if(value != null) {
+		if (value != null) {
 			Command command = getRemoveCommand(index);
 			commands.add(command);
 		}
@@ -340,8 +340,8 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 
 	public Command getRemoveCommand(Object value) {
 		Command cmd = RemoveCommand.create(editingDomain, source, feature, value);
-		if(value instanceof EObject && feature instanceof EReference && ((EReference)feature).isContainment()) {
-			addDestroyCommand(cmd, (EObject)value);
+		if (value instanceof EObject && feature instanceof EReference && ((EReference) feature).isContainment()) {
+			addDestroyCommand(cmd, (EObject) value);
 		}
 		return cmd;
 	}
@@ -349,10 +349,10 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 	public Command getRemoveAllCommand(Collection<?> values) {
 		CompoundCommand cc = new CompoundCommand("Edit list");
 
-		if(feature instanceof EReference && ((EReference)feature).isContainment() && values != null) {
-			for(Object o : values) {
-				if(o instanceof EObject) {
-					addDestroyCommand(cc, (EObject)o);
+		if (feature instanceof EReference && ((EReference) feature).isContainment() && values != null) {
+			for (Object o : values) {
+				if (o instanceof EObject) {
+					addDestroyCommand(cc, (EObject) o);
 				}
 			}
 		}
@@ -371,12 +371,12 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 
 	public Command getRetainAllCommand(Collection<?> values) {
 		List<Object> objectsToRemove = new LinkedList<Object>();
-		for(Object object : values) {
-			if(!contains(object)) {
+		for (Object object : values) {
+			if (!contains(object)) {
 				objectsToRemove.add(object);
 			}
 		}
-		if(!objectsToRemove.isEmpty()) {
+		if (!objectsToRemove.isEmpty()) {
 			return getRemoveAllCommand(objectsToRemove);
 		} else {
 			return null;
@@ -386,8 +386,8 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 	public Command getSetCommand(int index, Object value) {
 		Object oldValue = get(index);
 		Command command = SetCommand.create(editingDomain, source, feature, value, index);
-		if(oldValue instanceof EObject && feature instanceof EReference && ((EReference)feature).isContainment()) {
-			addDestroyCommand(command, (EObject)oldValue);
+		if (oldValue instanceof EObject && feature instanceof EReference && ((EReference) feature).isContainment()) {
+			addDestroyCommand(command, (EObject) oldValue);
 		}
 		return command;
 	}
@@ -395,8 +395,8 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 	protected void addDestroyCommand(Command cmd, EObject objToDestroy) {
 		Command destroyCmd = DeleteCommand.create(editingDomain, objToDestroy);
 
-		if(cmd instanceof CompoundCommand) {
-			((CompoundCommand)cmd).append(destroyCmd);
+		if (cmd instanceof CompoundCommand) {
+			((CompoundCommand) cmd).append(destroyCmd);
 		} else {
 			cmd.chain(destroyCmd);
 		}

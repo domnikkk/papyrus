@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,11 +42,11 @@ public class CollaborationUseLabelColorProvider implements ICollaborationUseLabe
 
 	/**
 	 * Get singleton instance
-	 * 
+	 *
 	 * @return the default instance
 	 */
 	public static CollaborationUseLabelColorProvider getDefault() {
-		if(instance == null) {
+		if (instance == null) {
 			instance = new CollaborationUseLabelColorProvider();
 		}
 		return instance;
@@ -57,9 +57,9 @@ public class CollaborationUseLabelColorProvider implements ICollaborationUseLabe
 
 	/**
 	 * Set default colors in given preference store.
-	 * 
+	 *
 	 * @param aStore
-	 *        the preference store
+	 *            the preference store
 	 */
 	public static void initializeDefaults(IPreferenceStore aStore) {
 		PreferenceConverter.setDefault(aStore, IPreferencesConstants.COLOR_DEFAULT,
@@ -75,23 +75,23 @@ public class CollaborationUseLabelColorProvider implements ICollaborationUseLabe
 	/**
 	 * Returns specified color that is stored in the color table. If color not found in color table
 	 * then a new instance is created from according preferences value and stored in color table.
-	 * 
+	 *
 	 * @param aName
-	 *        the name of the color
-	 * 
+	 *            the name of the color
+	 *
 	 * @return the color instance
 	 */
 	public Color getColor(String aName) {
 
 		Color color = fColorTable.get(aName);
-		if(color == null) {
+		if (color == null) {
 			IPreferenceStore store = PapyrusParsersPlugin.getDefault().getPreferenceStore();
 
 			PreferenceConverter.setValue(store, IPreferencesConstants.COLOR_SYMBOL,
 					ICollaborationUseLabelColorConstants.RGB_SYMBOL);
 
 			RGB rgb = PreferenceConverter.getColor(store, IPreferencesConstants.PREFIX_COLOR + aName);
-			if(rgb != null) {
+			if (rgb != null) {
 				color = new Color(Display.getCurrent(), rgb);
 			} else {
 				color = Display.getCurrent().getSystemColor(SWT.COLOR_LIST_FOREGROUND);
@@ -107,7 +107,7 @@ public class CollaborationUseLabelColorProvider implements ICollaborationUseLabe
 	 */
 	public void dispose() {
 		Iterator<Color> colors = fColorTable.values().iterator();
-		while(colors.hasNext()) {
+		while (colors.hasNext()) {
 			colors.next().dispose();
 		}
 	}

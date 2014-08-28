@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,11 +29,11 @@ import org.eclipse.uml2.uml.Property;
 public abstract class AbstractAssociationBranchEditPart extends ConnectionNodeEditPart {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
-	 *        the view
+	 *            the view
 	 */
 	public AbstractAssociationBranchEditPart(View view) {
 		super(view);
@@ -50,13 +50,13 @@ public abstract class AbstractAssociationBranchEditPart extends ConnectionNodeEd
 	}
 
 	/**
-	 * 
+	 *
 	 * add listener
 	 */
 	protected void addAssociationEndListeners() {
-		if(resolveSemanticElement() instanceof Association) {
-			Property targetEnd = MultiAssociationHelper.getPropertyToListen(((Edge)getModel()), (Association)resolveSemanticElement());
-			if(targetEnd != null) {
+		if (resolveSemanticElement() instanceof Association) {
+			Property targetEnd = MultiAssociationHelper.getPropertyToListen(((Edge) getModel()), (Association) resolveSemanticElement());
+			if (targetEnd != null) {
 				addListenerFilter("AssociationEndListenersTarget", this, targetEnd); //$NON-NLS-1$
 
 			}
@@ -79,7 +79,7 @@ public abstract class AbstractAssociationBranchEditPart extends ConnectionNodeEd
 	public abstract AssociationFigure getPrimaryShape();
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 
@@ -88,38 +88,38 @@ public abstract class AbstractAssociationBranchEditPart extends ConnectionNodeEd
 		super.handleNotificationEvent(event);
 
 		// set the good ends for the association figure
-		if(((View)getModel()).isSetElement()) {
+		if (((View) getModel()).isSetElement()) {
 
 			refreshVisuals();
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected void refreshVisuals() {
-		if(resolveSemanticElement() != null) {
-			if(resolveSemanticElement() instanceof Association) {
-				Property target = MultiAssociationHelper.getPropertyToListen(((Edge)getModel()), (Association)resolveSemanticElement());
-				if(target != null && target.getOwner() != null) {
+		if (resolveSemanticElement() != null) {
+			if (resolveSemanticElement() instanceof Association) {
+				Property target = MultiAssociationHelper.getPropertyToListen(((Edge) getModel()), (Association) resolveSemanticElement());
+				if (target != null && target.getOwner() != null) {
 					int sourceType = 0;
 					int targetType = 0;
 					// owned?
-					if(target.getOwner().equals(resolveSemanticElement())) {
+					if (target.getOwner().equals(resolveSemanticElement())) {
 						targetType += AssociationFigure.owned;
 					}
 					// aggregation?
-					if(target.getAggregation() == AggregationKind.SHARED_LITERAL) {
+					if (target.getAggregation() == AggregationKind.SHARED_LITERAL) {
 						targetType += AssociationFigure.aggregation;
 					}
 					// composite?
-					if(target.getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
+					if (target.getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
 						targetType += AssociationFigure.composition;
 					}
 					// navigable?
-					if(target.isNavigable()) {
+					if (target.isNavigable()) {
 						targetType += AssociationFigure.navigable;
 					}
 					getPrimaryShape().setEnd(sourceType, targetType);

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.*;
 import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMFactory;
 import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage;
 import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAcqStep;
@@ -45,6 +44,7 @@ import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.LaxityKind;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
@@ -52,16 +52,16 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static GQAMFactory init() {
 		try {
-			GQAMFactory theGQAMFactory = (GQAMFactory)EPackage.Registry.INSTANCE.getEFactory(GQAMPackage.eNS_URI);
+			GQAMFactory theGQAMFactory = (GQAMFactory) EPackage.Registry.INSTANCE.getEFactory(GQAMPackage.eNS_URI);
 			if (theGQAMFactory != null) {
 				return theGQAMFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new GQAMFactoryImpl();
@@ -71,6 +71,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public GQAMFactoryImpl() {
@@ -80,68 +81,90 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case GQAMPackage.GA_WORKLOAD_GENERATOR: return createGaWorkloadGenerator();
-			case GQAMPackage.GA_EVENT_TRACE: return createGaEventTrace();
-			case GQAMPackage.GA_WORKLOAD_EVENT: return createGaWorkloadEvent();
-			case GQAMPackage.GA_SCENARIO: return createGaScenario();
-			case GQAMPackage.GA_STEP: return createGaStep();
-			case GQAMPackage.GA_EXEC_HOST: return createGaExecHost();
-			case GQAMPackage.GA_REQUESTED_SERVICE: return createGaRequestedService();
-			case GQAMPackage.GA_TIMED_OBS: return createGaTimedObs();
-			case GQAMPackage.GA_COMM_STEP: return createGaCommStep();
-			case GQAMPackage.GA_ACQ_STEP: return createGaAcqStep();
-			case GQAMPackage.GA_REL_STEP: return createGaRelStep();
-			case GQAMPackage.GA_LATENCY_OBS: return createGaLatencyObs();
-			case GQAMPackage.GA_COMM_HOST: return createGaCommHost();
-			case GQAMPackage.GA_COMM_CHANNEL: return createGaCommChannel();
-			case GQAMPackage.GA_WORKLOAD_BEHAVIOR: return createGaWorkloadBehavior();
-			case GQAMPackage.GA_ANALYSIS_CONTEXT: return createGaAnalysisContext();
-			case GQAMPackage.GA_RESOURCES_PLATFORM: return createGaResourcesPlatform();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case GQAMPackage.GA_WORKLOAD_GENERATOR:
+			return createGaWorkloadGenerator();
+		case GQAMPackage.GA_EVENT_TRACE:
+			return createGaEventTrace();
+		case GQAMPackage.GA_WORKLOAD_EVENT:
+			return createGaWorkloadEvent();
+		case GQAMPackage.GA_SCENARIO:
+			return createGaScenario();
+		case GQAMPackage.GA_STEP:
+			return createGaStep();
+		case GQAMPackage.GA_EXEC_HOST:
+			return createGaExecHost();
+		case GQAMPackage.GA_REQUESTED_SERVICE:
+			return createGaRequestedService();
+		case GQAMPackage.GA_TIMED_OBS:
+			return createGaTimedObs();
+		case GQAMPackage.GA_COMM_STEP:
+			return createGaCommStep();
+		case GQAMPackage.GA_ACQ_STEP:
+			return createGaAcqStep();
+		case GQAMPackage.GA_REL_STEP:
+			return createGaRelStep();
+		case GQAMPackage.GA_LATENCY_OBS:
+			return createGaLatencyObs();
+		case GQAMPackage.GA_COMM_HOST:
+			return createGaCommHost();
+		case GQAMPackage.GA_COMM_CHANNEL:
+			return createGaCommChannel();
+		case GQAMPackage.GA_WORKLOAD_BEHAVIOR:
+			return createGaWorkloadBehavior();
+		case GQAMPackage.GA_ANALYSIS_CONTEXT:
+			return createGaAnalysisContext();
+		case GQAMPackage.GA_RESOURCES_PLATFORM:
+			return createGaResourcesPlatform();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case GQAMPackage.LAXITY_KIND:
-				return createLaxityKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case GQAMPackage.LAXITY_KIND:
+			return createLaxityKindFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case GQAMPackage.LAXITY_KIND:
-				return convertLaxityKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case GQAMPackage.LAXITY_KIND:
+			return convertLaxityKindToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaWorkloadGenerator createGaWorkloadGenerator() {
 		GaWorkloadGeneratorImpl gaWorkloadGenerator = new GaWorkloadGeneratorImpl();
 		return gaWorkloadGenerator;
@@ -150,8 +173,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaEventTrace createGaEventTrace() {
 		GaEventTraceImpl gaEventTrace = new GaEventTraceImpl();
 		return gaEventTrace;
@@ -160,8 +185,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaWorkloadEvent createGaWorkloadEvent() {
 		GaWorkloadEventImpl gaWorkloadEvent = new GaWorkloadEventImpl();
 		return gaWorkloadEvent;
@@ -170,8 +197,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaScenario createGaScenario() {
 		GaScenarioImpl gaScenario = new GaScenarioImpl();
 		return gaScenario;
@@ -180,8 +209,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaStep createGaStep() {
 		GaStepImpl gaStep = new GaStepImpl();
 		return gaStep;
@@ -190,8 +221,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaExecHost createGaExecHost() {
 		GaExecHostImpl gaExecHost = new GaExecHostImpl();
 		return gaExecHost;
@@ -200,8 +233,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaRequestedService createGaRequestedService() {
 		GaRequestedServiceImpl gaRequestedService = new GaRequestedServiceImpl();
 		return gaRequestedService;
@@ -210,8 +245,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaTimedObs createGaTimedObs() {
 		GaTimedObsImpl gaTimedObs = new GaTimedObsImpl();
 		return gaTimedObs;
@@ -220,8 +257,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaCommStep createGaCommStep() {
 		GaCommStepImpl gaCommStep = new GaCommStepImpl();
 		return gaCommStep;
@@ -230,8 +269,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaAcqStep createGaAcqStep() {
 		GaAcqStepImpl gaAcqStep = new GaAcqStepImpl();
 		return gaAcqStep;
@@ -240,8 +281,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaRelStep createGaRelStep() {
 		GaRelStepImpl gaRelStep = new GaRelStepImpl();
 		return gaRelStep;
@@ -250,8 +293,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaLatencyObs createGaLatencyObs() {
 		GaLatencyObsImpl gaLatencyObs = new GaLatencyObsImpl();
 		return gaLatencyObs;
@@ -260,8 +305,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaCommHost createGaCommHost() {
 		GaCommHostImpl gaCommHost = new GaCommHostImpl();
 		return gaCommHost;
@@ -270,8 +317,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaCommChannel createGaCommChannel() {
 		GaCommChannelImpl gaCommChannel = new GaCommChannelImpl();
 		return gaCommChannel;
@@ -280,8 +329,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaWorkloadBehavior createGaWorkloadBehavior() {
 		GaWorkloadBehaviorImpl gaWorkloadBehavior = new GaWorkloadBehaviorImpl();
 		return gaWorkloadBehavior;
@@ -290,8 +341,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaAnalysisContext createGaAnalysisContext() {
 		GaAnalysisContextImpl gaAnalysisContext = new GaAnalysisContextImpl();
 		return gaAnalysisContext;
@@ -300,8 +353,10 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaResourcesPlatform createGaResourcesPlatform() {
 		GaResourcesPlatformImpl gaResourcesPlatform = new GaResourcesPlatformImpl();
 		return gaResourcesPlatform;
@@ -310,17 +365,21 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LaxityKind createLaxityKindFromString(EDataType eDataType, String initialValue) {
 		LaxityKind result = LaxityKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertLaxityKindToString(EDataType eDataType, Object instanceValue) {
@@ -330,15 +389,18 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GQAMPackage getGQAMPackage() {
-		return (GQAMPackage)getEPackage();
+		return (GQAMPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -347,4 +409,4 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 		return GQAMPackage.eINSTANCE;
 	}
 
-} //GQAMFactoryImpl
+} // GQAMFactoryImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,26 +43,27 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
  * Abstract class used to change label configuration
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public abstract class AbstractChangeLabelConfigurationValueHandler extends AbstractTableHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		final CompositeCommand cmd = new CompositeCommand("ChangeLabelConfigurationValueCommand"); //$NON-NLS-1$
-		TransactionalEditingDomain domain = (TransactionalEditingDomain)getTableEditingDomain();
+		TransactionalEditingDomain domain = getTableEditingDomain();
 		ILabelProviderConfiguration labelConf = getLabelProviderConfiguration();
 		ILabelProviderConfiguration editedLabelConf;
-		if(labelConf.eContainer() instanceof TableHeaderAxisConfiguration) {
+		if (labelConf.eContainer() instanceof TableHeaderAxisConfiguration) {
 			editedLabelConf = EcoreUtil.copy(labelConf);
 			cmd.add(getRegisterLocalLabelConfigurationCommand(labelConf, editedLabelConf));
 		} else {
@@ -78,63 +79,63 @@ public abstract class AbstractChangeLabelConfigurationValueHandler extends Abstr
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the edited label configuration
 	 */
 	protected abstract ILabelProviderConfiguration getLabelProviderConfiguration();
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the edited feature
 	 */
 	protected abstract EStructuralFeature getEditedFeature();
 
 	/**
-	 * 
+	 *
 	 * @param conf
-	 * 
+	 *
 	 */
 	protected ICommand getRegisterLocalLabelConfigurationCommand(ILabelProviderConfiguration tableLabelConfiguration, ILabelProviderConfiguration localTableLabelConfiguration) {
-		TransactionalEditingDomain domain = (TransactionalEditingDomain)getTableEditingDomain();
+		TransactionalEditingDomain domain = getTableEditingDomain();
 		final CompositeCommand cmd = new CompositeCommand("ChangeHeaderLabelConfigurationCommand"); //$NON-NLS-1$
 		final Table table = getCurrentNattableModelManager().getTable();
 
-		//1. we must get or create the required LocalTableHeaderAxisConfiguration
+		// 1. we must get or create the required LocalTableHeaderAxisConfiguration
 		AbstractHeaderAxisConfiguration configuration = getHeaderAxisConfiguration();
 		LocalTableHeaderAxisConfiguration localConfig = null;
-		if(configuration instanceof LocalTableHeaderAxisConfiguration) {
-			localConfig = (LocalTableHeaderAxisConfiguration)configuration;
-		} else if(configuration instanceof TableHeaderAxisConfiguration) {
-			//we can't edit it, because it's comes from the initial configuration
-			configuration = HeaderAxisConfigurationManagementUtils.transformToLocalHeaderConfiguration((TableHeaderAxisConfiguration)configuration);
-			localConfig = (LocalTableHeaderAxisConfiguration)configuration;
+		if (configuration instanceof LocalTableHeaderAxisConfiguration) {
+			localConfig = (LocalTableHeaderAxisConfiguration) configuration;
+		} else if (configuration instanceof TableHeaderAxisConfiguration) {
+			// we can't edit it, because it's comes from the initial configuration
+			configuration = HeaderAxisConfigurationManagementUtils.transformToLocalHeaderConfiguration((TableHeaderAxisConfiguration) configuration);
+			localConfig = (LocalTableHeaderAxisConfiguration) configuration;
 			final IEditCommandRequest request = new SetRequest(domain, table, getLocalHeaderAxisConfigurationFeature(), configuration);
 			final IElementEditService provider = ElementEditServiceUtils.getCommandProvider(table);
 			cmd.add(provider.getEditCommand(request));
 		}
 
-		//2. this one must store the new label configuration
+		// 2. this one must store the new label configuration
 		final IEditCommandRequest request = new SetRequest(domain, configuration, NattableaxisconfigurationPackage.eINSTANCE.getAbstractHeaderAxisConfiguration_OwnedLabelConfigurations(), localTableLabelConfiguration);
 		final IElementEditService provider = ElementEditServiceUtils.getCommandProvider(configuration);
 		cmd.add(provider.getEditCommand(request));
 
-		//3. we must get or create the AxisManagerConfiguration(s)
+		// 3. we must get or create the AxisManagerConfiguration(s)
 		final TableHeaderAxisConfiguration headerAxisConfig = getTableHeaderAxisConfiguration();
 
 		final List<AxisManagerConfiguration> axisManagerConfiguration = new ArrayList<AxisManagerConfiguration>();
-		for(final AxisManagerRepresentation current : headerAxisConfig.getAxisManagers()) {
-			//we look for defined axis manager which uses the labelconfiguration defined in the table config
-			if(current.getHeaderLabelConfiguration() == tableLabelConfiguration) {
+		for (final AxisManagerRepresentation current : headerAxisConfig.getAxisManagers()) {
+			// we look for defined axis manager which uses the labelconfiguration defined in the table config
+			if (current.getHeaderLabelConfiguration() == tableLabelConfiguration) {
 				AxisManagerConfiguration currentConf = null;
-				//we look for an axis manager configuration mapped in this axis manager representation
-				for(final AxisManagerConfiguration axisConf : localConfig.getAxisManagerConfigurations()) {
-					if(axisConf.getAxisManager() == current) {
+				// we look for an axis manager configuration mapped in this axis manager representation
+				for (final AxisManagerConfiguration axisConf : localConfig.getAxisManagerConfigurations()) {
+					if (axisConf.getAxisManager() == current) {
 						currentConf = axisConf;
 					}
 				}
-				if(currentConf == null) {
+				if (currentConf == null) {
 					currentConf = NattableaxisconfigurationFactory.eINSTANCE.createAxisManagerConfiguration();
 					currentConf.setAxisManager(current);
 					final IEditCommandRequest request2 = new SetRequest(domain, localConfig, NattableaxisconfigurationPackage.eINSTANCE.getLocalTableHeaderAxisConfiguration_AxisManagerConfigurations(), currentConf);
@@ -145,8 +146,8 @@ public abstract class AbstractChangeLabelConfigurationValueHandler extends Abstr
 			}
 		}
 
-		//4. these one must reference the LabelConfiguration
-		for(final AxisManagerConfiguration current : axisManagerConfiguration) {
+		// 4. these one must reference the LabelConfiguration
+		for (final AxisManagerConfiguration current : axisManagerConfiguration) {
 			final IEditCommandRequest request2 = new SetRequest(domain, current, NattableaxisconfigurationPackage.eINSTANCE.getAxisManagerConfiguration_LocalHeaderLabelConfiguration(), localTableLabelConfiguration);
 			final IElementEditService provider2 = ElementEditServiceUtils.getCommandProvider(current);
 			cmd.add(provider2.getEditCommand(request2));
@@ -155,21 +156,21 @@ public abstract class AbstractChangeLabelConfigurationValueHandler extends Abstr
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the feature to use to edit the local header axis configuration
 	 */
 	protected abstract EStructuralFeature getLocalHeaderAxisConfigurationFeature();
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the edited axis configuration
 	 */
 	protected abstract AbstractHeaderAxisConfiguration getHeaderAxisConfiguration();
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the table header axis defined in the TableConfiguration and used for edited label axis configuration
 	 */

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,43 +36,43 @@ public abstract class ResourceAdapter extends AdapterImpl {
 	@Override
 	public void setTarget(Notifier newTarget) {
 		// Don't need to track resources as targets (there are multiple)
-		if(newTarget instanceof ResourceSet) {
+		if (newTarget instanceof ResourceSet) {
 			super.setTarget(newTarget);
 		}
 	}
 
 	protected ResourceSet getResourceSet() {
-		return (ResourceSet)getTarget();
+		return (ResourceSet) getTarget();
 	}
 
 	@Override
 	public void notifyChanged(Notification msg) {
 		Object notifier = msg.getNotifier();
 
-		if(!msg.isTouch()) {
-			if(notifier instanceof ResourceSet) {
-				if(msg.getFeatureID(ResourceSet.class) == ResourceSet.RESOURCE_SET__RESOURCES) {
+		if (!msg.isTouch()) {
+			if (notifier instanceof ResourceSet) {
+				if (msg.getFeatureID(ResourceSet.class) == ResourceSet.RESOURCE_SET__RESOURCES) {
 					handleResourceSetResources(msg);
 				}
-			} else if(notifier instanceof Resource) {
-				switch(msg.getFeatureID(Resource.class)) {
+			} else if (notifier instanceof Resource) {
+				switch (msg.getFeatureID(Resource.class)) {
 				case Resource.RESOURCE__IS_LOADED:
-					switch(msg.getEventType()) {
+					switch (msg.getEventType()) {
 					case Notification.SET:
 					case Notification.UNSET:
-						if(msg.getNewBooleanValue()) {
-							handleResourceLoaded((Resource)notifier);
+						if (msg.getNewBooleanValue()) {
+							handleResourceLoaded((Resource) notifier);
 						} else {
-							handleResourceUnloaded((Resource)notifier);
+							handleResourceUnloaded((Resource) notifier);
 						}
 						break;
 					}
 					break;
 				case Resource.RESOURCE__URI:
-					switch(msg.getEventType()) {
+					switch (msg.getEventType()) {
 					case Notification.SET:
 					case Notification.UNSET:
-						handleResourceURI((Resource)notifier, (URI)msg.getOldValue(), (URI)msg.getNewValue());
+						handleResourceURI((Resource) notifier, (URI) msg.getOldValue(), (URI) msg.getNewValue());
 						break;
 					}
 					break;
@@ -86,7 +86,7 @@ public abstract class ResourceAdapter extends AdapterImpl {
 
 	protected void addAdapter(Notifier notifier) {
 		EList<Adapter> adapters = notifier.eAdapters();
-		if(!adapters.contains(this)) {
+		if (!adapters.contains(this)) {
 			adapters.add(this);
 		}
 	}
@@ -96,24 +96,22 @@ public abstract class ResourceAdapter extends AdapterImpl {
 	}
 
 	protected void handleResourceSetResources(Notification msg) {
-		switch(msg.getEventType()) {
-		case Notification.ADD:
-		{
-			Resource resource = (Resource)msg.getNewValue();
+		switch (msg.getEventType()) {
+		case Notification.ADD: {
+			Resource resource = (Resource) msg.getNewValue();
 			addAdapter(resource);
 			handleResourceAdded(resource);
 		}
 			break;
 		case Notification.ADD_MANY:
-			for(Object next : (Iterable<?>)msg.getNewValue()) {
-				Resource resource = (Resource)next;
+			for (Object next : (Iterable<?>) msg.getNewValue()) {
+				Resource resource = (Resource) next;
 				addAdapter(resource);
 				handleResourceAdded(resource);
 			}
 			break;
-		case Notification.REMOVE:
-		{
-			Resource resource = (Resource)msg.getOldValue();
+		case Notification.REMOVE: {
+			Resource resource = (Resource) msg.getOldValue();
 			try {
 				handleResourceRemoved(resource);
 			} finally {
@@ -122,8 +120,8 @@ public abstract class ResourceAdapter extends AdapterImpl {
 			break;
 		}
 		case Notification.REMOVE_MANY:
-			for(Object next : (Iterable<?>)msg.getOldValue()) {
-				Resource resource = (Resource)next;
+			for (Object next : (Iterable<?>) msg.getOldValue()) {
+				Resource resource = (Resource) next;
 				try {
 					handleResourceRemoved(resource);
 				} finally {
@@ -131,16 +129,15 @@ public abstract class ResourceAdapter extends AdapterImpl {
 				}
 			}
 			break;
-		case Notification.SET:
-		{
-			Resource oldResource = (Resource)msg.getOldValue();
+		case Notification.SET: {
+			Resource oldResource = (Resource) msg.getOldValue();
 			try {
 				handleResourceRemoved(oldResource);
 			} finally {
 				removeAdapter(oldResource);
 			}
 
-			Resource newResource = (Resource)msg.getOldValue();
+			Resource newResource = (Resource) msg.getOldValue();
 			addAdapter(newResource);
 			handleResourceAdded(newResource);
 			break;
@@ -149,31 +146,31 @@ public abstract class ResourceAdapter extends AdapterImpl {
 	}
 
 	protected void handleResourceContents(Notification msg) {
-		Resource.Internal resource = (Resource.Internal)msg.getNotifier();
+		Resource.Internal resource = (Resource.Internal) msg.getNotifier();
 
 		// Don't report addition of roots when loading nor removal of roots when unloading
 		// because loading and unloading are semantically more significant events
-		if(resource.isLoaded() && !resource.isLoading()) {
-			switch(msg.getEventType()) {
+		if (resource.isLoaded() && !resource.isLoading()) {
+			switch (msg.getEventType()) {
 			case Notification.ADD:
-				handleRootAdded(resource, (EObject)msg.getNewValue());
+				handleRootAdded(resource, (EObject) msg.getNewValue());
 				break;
 			case Notification.ADD_MANY:
-				for(Object next : (Iterable<?>)msg.getNewValue()) {
-					handleRootAdded(resource, (EObject)next);
+				for (Object next : (Iterable<?>) msg.getNewValue()) {
+					handleRootAdded(resource, (EObject) next);
 				}
 				break;
 			case Notification.REMOVE:
-				handleRootRemoved(resource, (EObject)msg.getOldValue());
+				handleRootRemoved(resource, (EObject) msg.getOldValue());
 				break;
 			case Notification.REMOVE_MANY:
-				for(Object next : (Iterable<?>)msg.getOldValue()) {
-					handleRootRemoved(resource, (EObject)next);
+				for (Object next : (Iterable<?>) msg.getOldValue()) {
+					handleRootRemoved(resource, (EObject) next);
 				}
 				break;
 			case Notification.SET:
-				handleRootRemoved(resource, (EObject)msg.getOldValue());
-				handleRootAdded(resource, (EObject)msg.getNewValue());
+				handleRootRemoved(resource, (EObject) msg.getOldValue());
+				handleRootAdded(resource, (EObject) msg.getNewValue());
 				break;
 			}
 		}

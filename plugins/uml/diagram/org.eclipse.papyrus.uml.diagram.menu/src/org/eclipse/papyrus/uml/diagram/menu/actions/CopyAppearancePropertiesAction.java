@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,40 +29,40 @@ import org.eclipse.gmf.runtime.notation.View;
 public class CopyAppearancePropertiesAction extends AbstractGraphicalParametricAction {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param selectedElements
-	 *        the selected elements
+	 *            the selected elements
 	 */
 	public CopyAppearancePropertiesAction(List<IGraphicalEditPart> selectedElements) {
 		super(null, selectedElements);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.menu.actions.AbstractGraphicalParametricAction#getBuildedCommand()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected Command getBuildedCommand() {
 		ApplyAppearancePropertiesRequest request = new ApplyAppearancePropertiesRequest();
-		if(!getSelection().isEmpty()) {
-			//the behavior provided by GMF for this action is to copy the appearance provided by the FIRST selected element
+		if (!getSelection().isEmpty()) {
+			// the behavior provided by GMF for this action is to copy the appearance provided by the FIRST selected element
 			// for all other GMF action, the behavior used the last selected element
 			int reference = 0;
 
-			//we choose to apply the same behavior for each action!
+			// we choose to apply the same behavior for each action!
 			reference = getSelection().size() - 1;
 			View notationView = getSelection().get(reference).getNotationView();
 			request.setViewToCopyFrom(notationView);
 		}
 
 		CompoundCommand cmd = new CompoundCommand(""); //$NON-NLS-1$
-		for(IGraphicalEditPart current : getSelection()) {
+		for (IGraphicalEditPart current : getSelection()) {
 			Command tmp = current.getCommand(request);
-			if(tmp != null && tmp.canExecute()) {
+			if (tmp != null && tmp.canExecute()) {
 				cmd.add(tmp);
 			}
 

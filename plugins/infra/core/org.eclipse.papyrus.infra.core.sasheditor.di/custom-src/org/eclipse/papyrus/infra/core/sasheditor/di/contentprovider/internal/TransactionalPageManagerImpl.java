@@ -19,9 +19,9 @@ import org.eclipse.papyrus.infra.core.sashwindows.di.SashWindowsMngr;
 
 /**
  * Transactional implementation of the PageManager.
- * 
+ *
  * It runs all commands in write transactions on the editing domain, without using the CommandStack
- * 
+ *
  * @author Camille Letavernier
  *
  */
@@ -38,7 +38,7 @@ public class TransactionalPageManagerImpl extends PageManagerImpl {
 	}
 
 	protected EditingDomain getEditingDomain() {
-		if(editingDomain == null) {
+		if (editingDomain == null) {
 			editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(diSashModel);
 		}
 

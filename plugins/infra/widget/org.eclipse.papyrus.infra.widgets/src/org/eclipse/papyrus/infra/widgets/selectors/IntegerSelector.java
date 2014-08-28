@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,9 +14,9 @@ package org.eclipse.papyrus.infra.widgets.selectors;
 
 /**
  * A Selector for Integer values
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class IntegerSelector extends StringSelector {
 
@@ -34,7 +34,7 @@ public class IntegerSelector extends StringSelector {
 	public Integer[] getSelectedElements() {
 		Integer[] result;
 		try {
-			result = new Integer[]{ Integer.parseInt(text.getText()) };
+			result = new Integer[] { Integer.parseInt(text.getText()) };
 			text.setText(""); //$NON-NLS-1$
 		} catch (NumberFormatException ex) {
 			result = new Integer[0];

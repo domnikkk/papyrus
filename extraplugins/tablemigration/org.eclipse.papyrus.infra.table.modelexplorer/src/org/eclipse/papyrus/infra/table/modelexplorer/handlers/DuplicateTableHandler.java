@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,16 +28,16 @@ import org.eclipse.papyrus.infra.table.modelexplorer.messages.Messages;
 
 /**
  * This handler provides the duplicate action for the tables
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class DuplicateTableHandler extends AbstractTableModelExplorerHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -46,9 +46,9 @@ public class DuplicateTableHandler extends AbstractTableModelExplorerHandler {
 		final IPageManager pageManager = getPageManager();
 		List<PapyrusTableInstance> tables = getSelectedTables();
 
-		if(editingDomain != null && pageManager != null && !tables.isEmpty()) {
+		if (editingDomain != null && pageManager != null && !tables.isEmpty()) {
 			CompoundCommand command = new CompoundCommand();
-			for(PapyrusTableInstance table : tables) {
+			for (PapyrusTableInstance table : tables) {
 
 				// Clone the current table
 				final PapyrusTableInstance newTable = EcoreUtil.copy(table);
@@ -56,11 +56,11 @@ public class DuplicateTableHandler extends AbstractTableModelExplorerHandler {
 				// Give a new name
 				newTable.setName(Messages.DuplicateTableHandler_CopyOf + newTable.getName());
 
-				//we duplicate parameters and rename the new table!
+				// we duplicate parameters and rename the new table!
 
 
 				Command addGmfDiagramCmd = new AddCommand(editingDomain, table.eResource().getContents(), newTable);
-				//				EMFCommandOperation operation = new EMFCommandOperation(editingDomain, addGmfDiagramCmd);
+				// EMFCommandOperation operation = new EMFCommandOperation(editingDomain, addGmfDiagramCmd);
 
 				Command sashOpenCmd = new RecordingCommand(editingDomain, "Open duplicated table") {
 
@@ -70,8 +70,8 @@ public class DuplicateTableHandler extends AbstractTableModelExplorerHandler {
 					}
 				};
 				//
-				//				// TODO : synchronize with Cedric
-				//				command.append(operation.getCommand());
+				// // TODO : synchronize with Cedric
+				// command.append(operation.getCommand());
 				command.append(addGmfDiagramCmd);
 				command.append(sashOpenCmd);
 			}

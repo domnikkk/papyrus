@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -64,7 +64,7 @@ public class FacetCommandFactoryImpl implements IFacetCommandFactory {
 
 	/**
 	 * Create an {@link AddCommand} to add the element to the owner.
-	 * 
+	 *
 	 * @param owner
 	 *            the owner.
 	 * @param element
@@ -78,8 +78,7 @@ public class FacetCommandFactoryImpl implements IFacetCommandFactory {
 		}
 
 		if (element == null) {
-			throw new IllegalArgumentException(
-					"The given element cannot be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The given element cannot be null"); //$NON-NLS-1$
 		}
 
 		return AddCommand.create(this.editingDomain, owner,
@@ -88,7 +87,7 @@ public class FacetCommandFactoryImpl implements IFacetCommandFactory {
 
 	/**
 	 * Create an {@link SetCommand} to add the element to the owner.
-	 * 
+	 *
 	 * @param initialObject
 	 *            the owner.
 	 * @param newObject
@@ -103,13 +102,11 @@ public class FacetCommandFactoryImpl implements IFacetCommandFactory {
 		}
 
 		if (feature == null) {
-			throw new IllegalArgumentException(
-					"The given feature cannot be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The given feature cannot be null"); //$NON-NLS-1$
 		}
 
 		if (newValue == null) {
-			throw new IllegalArgumentException(
-					"The given newValue cannot be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The given newValue cannot be null"); //$NON-NLS-1$
 		}
 
 		return SetCommand.create(this.editingDomain, initialObject, feature,
@@ -118,7 +115,7 @@ public class FacetCommandFactoryImpl implements IFacetCommandFactory {
 
 	/**
 	 * Return the {@link EStructuralFeature} for a given element.
-	 * 
+	 *
 	 * @param element
 	 *            the element.
 	 * @return the eStructuralFeature for the element.
@@ -157,8 +154,7 @@ public class FacetCommandFactoryImpl implements IFacetCommandFactory {
 			final boolean change, final boolean derived,
 			final boolean transientt) {
 		if (feature == null) {
-			throw new IllegalArgumentException(
-					"The parameter facetOperation must not be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The parameter facetOperation must not be null"); //$NON-NLS-1$
 		}
 		final List<Command> commands = new ArrayList<Command>();
 		if (feature.eContainer() != container) {
@@ -202,8 +198,7 @@ public class FacetCommandFactoryImpl implements IFacetCommandFactory {
 		}
 		commands.add(createEditDerivedTypeElementCommand(feature,
 				name, lowerBound, upperBound, type, ordered, unique, query));
-		return EmfCommandUtils.createResult(commands,
-				"edit facet structural feature"); //$NON-NLS-1$
+		return EmfCommandUtils.createResult(commands, "edit facet structural feature"); //$NON-NLS-1$
 	}
 
 	public Command createAddOperationInFacetCommand(final Facet parent,
@@ -224,12 +219,10 @@ public class FacetCommandFactoryImpl implements IFacetCommandFactory {
 	public Command createChangeOwnerCommand(final Object element,
 			final Object newOwner) {
 		if (element == null) {
-			throw new IllegalArgumentException(
-					"The given element cannot be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The given element cannot be null"); //$NON-NLS-1$
 		}
 		if (newOwner == null) {
-			throw new IllegalArgumentException(
-					"The given element cannot be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The given element cannot be null"); //$NON-NLS-1$
 		}
 		return createAddCommand(newOwner, element);
 	}
@@ -237,8 +230,7 @@ public class FacetCommandFactoryImpl implements IFacetCommandFactory {
 	public Command createEditFacetSetCommand(final FacetSet editedFacetSet,
 			final FacetSet container, final String name) {
 		if (editedFacetSet == null) {
-			throw new IllegalArgumentException(
-					"The parameter 'editedFacetSet' must not be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The parameter 'editedFacetSet' must not be null"); //$NON-NLS-1$
 		}
 		final List<Command> commands = new ArrayList<Command>();
 		commands.add(createEditENamedElementcommand(editedFacetSet, name));
@@ -291,8 +283,7 @@ public class FacetCommandFactoryImpl implements IFacetCommandFactory {
 	private Command createEditENamedElementcommand(
 			final ENamedElement namedElement, final String name) {
 		if (namedElement == null) {
-			throw new IllegalArgumentException(
-					"The parameter 'editedFacetSet' must not be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The parameter 'editedFacetSet' must not be null"); //$NON-NLS-1$
 		}
 		final List<Command> commands = new ArrayList<Command>();
 		if (namedElement.getName() != name) {
@@ -351,8 +342,7 @@ public class FacetCommandFactoryImpl implements IFacetCommandFactory {
 			final EClassifier type, final boolean ordered,
 			final boolean unique, final Query query) {
 		if (facetOperation == null) {
-			throw new IllegalArgumentException(
-					"The parameter facetOperation must not be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The parameter facetOperation must not be null"); //$NON-NLS-1$
 		}
 		final List<Command> commands = new ArrayList<Command>();
 		if (facetOperation.eContainer() != container) {
@@ -372,8 +362,7 @@ public class FacetCommandFactoryImpl implements IFacetCommandFactory {
 			final int lowerBound, final int upperBound, final EClassifier type,
 			final boolean ordered, final boolean unique, final Query query) {
 		if (dte == null) {
-			throw new IllegalArgumentException(
-					"The parameter facetOperation must not be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The parameter facetOperation must not be null"); //$NON-NLS-1$
 		}
 		final List<Command> commands = new ArrayList<Command>();
 		commands.add(createEditETypedElementCommand(dte, name, lowerBound,
@@ -384,8 +373,7 @@ public class FacetCommandFactoryImpl implements IFacetCommandFactory {
 					query);
 			commands.add(command);
 		}
-		return EmfCommandUtils.createResult(commands,
-				"Edit derived typed element"); //$NON-NLS-1$
+		return EmfCommandUtils.createResult(commands, "Edit derived typed element"); //$NON-NLS-1$
 	}
 
 	private Command createEditETypedElementCommand(
@@ -436,14 +424,12 @@ public class FacetCommandFactoryImpl implements IFacetCommandFactory {
 			final String name, final int lowerBound, final int upperBound,
 			final EClassifier type, final boolean ordered, final boolean unique) {
 		if (parameter == null) {
-			throw new IllegalArgumentException(
-					"The parameter parameter must not be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The parameter parameter must not be null"); //$NON-NLS-1$
 		}
 		final List<Command> commands = new ArrayList<Command>();
 		commands.add(createEditETypedElementCommand(parameter, name,
 				lowerBound, upperBound, type, ordered, unique));
-		return EmfCommandUtils.createResult(commands,
-				"Edit operation parameter"); //$NON-NLS-1$
+		return EmfCommandUtils.createResult(commands, "Edit operation parameter"); //$NON-NLS-1$
 	}
 
 	private void setEStructuralFeatureAttributes(

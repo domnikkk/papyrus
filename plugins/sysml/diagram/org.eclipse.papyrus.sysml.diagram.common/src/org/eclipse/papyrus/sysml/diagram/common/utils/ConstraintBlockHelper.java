@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -26,12 +26,12 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 public class ConstraintBlockHelper extends ElementHelper {
 
 	public static boolean couldBeConstraintParameter(EObject possibleContraintParameter, EObject ownerConstraintBlock) {
-		if (!(ownerConstraintBlock instanceof org.eclipse.uml2.uml.Class && UMLUtil.getStereotypeApplication((Element)ownerConstraintBlock, ConstraintBlock.class) != null)) {
+		if (!(ownerConstraintBlock instanceof org.eclipse.uml2.uml.Class && UMLUtil.getStereotypeApplication((Element) ownerConstraintBlock, ConstraintBlock.class) != null)) {
 			return false;
 		}
-		return UMLUtil.getStereotypeApplication((Element)possibleContraintParameter, ConstraintProperty.class) == null;
+		return UMLUtil.getStereotypeApplication((Element) possibleContraintParameter, ConstraintProperty.class) == null;
 	}
-	
+
 	public static boolean isConstraintParameter(Element element, View view) {
 		if (element instanceof Property) {
 			Property constraintProperty = (Property) element;
@@ -40,17 +40,17 @@ public class ConstraintBlockHelper extends ElementHelper {
 				// check for graphics : owned by a constraintProperty
 				if (view != null) {
 					View containerView = ViewUtil.getContainerView(view);
-					Element containerElement = (Element)containerView.getElement();
+					Element containerElement = (Element) containerView.getElement();
 					// Owned by a ConstraintProperty
-					if (containerElement instanceof Property 
-							&& UMLUtil.getStereotypeApplication(containerElement, ConstraintProperty.class) != null 
-							&& ((Property)containerElement).getType() == ownerConstraintBlock) { 
+					if (containerElement instanceof Property
+							&& UMLUtil.getStereotypeApplication(containerElement, ConstraintProperty.class) != null
+							&& ((Property) containerElement).getType() == ownerConstraintBlock) {
 						return true;
 					}
 					// Owned by a ConstraintBlock
-					if (containerElement instanceof org.eclipse.uml2.uml.Class 
-							&& UMLUtil.getStereotypeApplication(containerElement, ConstraintBlock.class) != null 
-							&& containerElement == ownerConstraintBlock) { 
+					if (containerElement instanceof org.eclipse.uml2.uml.Class
+							&& UMLUtil.getStereotypeApplication(containerElement, ConstraintBlock.class) != null
+							&& containerElement == ownerConstraintBlock) {
 						return true;
 					}
 				}
@@ -58,5 +58,5 @@ public class ConstraintBlockHelper extends ElementHelper {
 		}
 		return false;
 	}
-	
+
 }

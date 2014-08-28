@@ -48,9 +48,9 @@ public class TestReport {
 
 	@Override
 	public String toString() {
-		String contextName = context == null ? "NULL" : (context.getQualifiedName() == null ? "NULL" : context.getQualifiedName()) ;
-		String s = "[TEST] " + this.label + " in " + contextName + " => " + verdict.toString() ;
+		String contextName = context == null ? "NULL" : (context.getQualifiedName() == null ? "NULL" : context.getQualifiedName());
+		String s = "[TEST] " + this.label + " in " + contextName + " => " + verdict.toString();
 		return s;
 	}
-	
+
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 
 /**
  * A Listener for notation and semantic properties changes
- * 
+ *
  * @author Camille Letavernier
  */
 public class StyleListener extends AdapterImpl {
@@ -26,9 +26,9 @@ public class StyleListener extends AdapterImpl {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param elementAdapter
-	 *        The GMFElementAdapter to listen to
+	 *            The GMFElementAdapter to listen to
 	 */
 	public StyleListener(GMFElementAdapter elementAdapter) {
 		this.elementAdapter = elementAdapter;
@@ -36,12 +36,12 @@ public class StyleListener extends AdapterImpl {
 
 	@Override
 	public void notifyChanged(Notification notification) {
-		if(notification.isTouch()) {
+		if (notification.isTouch()) {
 			return;
 		}
 
-		if(notification.getFeature() == NotationPackage.eINSTANCE.getView_Element()) {
-			if(notification.getNewValue() == null) {
+		if (notification.getFeature() == NotationPackage.eINSTANCE.getView_Element()) {
+			if (notification.getNewValue() == null) {
 				elementAdapter.notationElementDisposed();
 			} else {
 				elementAdapter.semanticElementChanged();
@@ -49,12 +49,12 @@ public class StyleListener extends AdapterImpl {
 			return;
 		}
 
-		if(notification.getNotifier() == elementAdapter.getNotationElement()) {
+		if (notification.getNotifier() == elementAdapter.getNotationElement()) {
 			elementAdapter.notationPropertyChanged();
 			return;
 		}
 
-		if(notification.getNotifier() == elementAdapter.getSemanticElement()) {
+		if (notification.getNotifier() == elementAdapter.getSemanticElement()) {
 			elementAdapter.semanticPropertyChanged();
 			return;
 		}

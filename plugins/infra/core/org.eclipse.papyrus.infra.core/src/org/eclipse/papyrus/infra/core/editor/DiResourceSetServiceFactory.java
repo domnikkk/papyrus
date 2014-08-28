@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.editor;
 
@@ -11,9 +11,9 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 /**
  * A service factory to create the {@link ModelSet} service. This provide a
  * nickname for {@link ModelSet} service. This serviceFactory depends on {@link ModelSet} service.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class DiResourceSetServiceFactory implements IServiceFactory {
 
@@ -24,10 +24,11 @@ public class DiResourceSetServiceFactory implements IServiceFactory {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#init(org.eclipse.papyrus.infra.core.services.ServicesRegistry)
-	 * 
+	 *
 	 * @param servicesRegistry
 	 * @throws ServiceException
 	 */
+	@Override
 	public void init(ServicesRegistry servicesRegistry) throws ServiceException {
 		// Get required services
 		modelSet = servicesRegistry.getService(ModelSet.class);
@@ -36,26 +37,29 @@ public class DiResourceSetServiceFactory implements IServiceFactory {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#startService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
+	@Override
 	public void startService() throws ServiceException {
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#disposeService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
+	@Override
 	public void disposeService() throws ServiceException {
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IServiceFactory#createServiceInstance()
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Override
 	public Object createServiceInstance() throws ServiceException {
 		return modelSet;
 	}

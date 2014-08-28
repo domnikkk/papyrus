@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -37,8 +37,8 @@ import org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorImpl#getPropertyOperators <em>Property Operators</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorImpl#getPropertyOperators <em>Property Operators</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,6 +50,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getPropertyOperators() <em>Property Operators</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPropertyOperators()
 	 * @generated
 	 * @ordered
@@ -60,6 +61,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -70,6 +72,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -79,6 +82,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LayerOperatorDescriptorImpl() {
@@ -88,6 +92,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,8 +103,10 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<PropertyOperator> getPropertyOperators() {
 		if (propertyOperators == null) {
 			propertyOperators = new EObjectResolvingEList<PropertyOperator>(PropertyOperator.class, this, LayersPackage.LAYER_OPERATOR_DESCRIPTOR__PROPERTY_OPERATORS) {
@@ -117,8 +124,10 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -126,25 +135,30 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.LAYER_OPERATOR_DESCRIPTOR__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public PropertyOperator getPropertyOperator(Property property) throws NotFoundException {
 		try {
 			return getPropertyOperators().get(property.getIndex());
 		} catch (IndexOutOfBoundsException e) {
-			throw new NotFoundException("Can't find operator for property '" + property.getName()+ "' at index " + property.getIndex());
+			throw new NotFoundException("Can't find operator for property '" + property.getName() + "' at index " + property.getIndex());
 		}
 	}
 
@@ -152,8 +166,10 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	 * Set the operator at the property's index.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void setPropertyOperator(Property property, PropertyOperator operator) {
 
 		// Set the operator at the property's index.
@@ -163,8 +179,10 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public AbstractLayerOperator createLayerOperator() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -176,20 +194,22 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	 * Increase the actual list in order that they can contains the specified number of properties.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void setPropertyCollectionSize(int size, DefaultPropertyOperator defaultPropertyOperator) {
 
 		List<PropertyOperator> operators = getPropertyOperators();
 		int actualSize = operators.size();
 		// Check if we need to increase the size.
-		if( actualSize>=size) {
+		if (actualSize >= size) {
 			// do nothing
 			return;
 		}
 
 		// Add missing elements
-		for (int i=actualSize; i<size; i++) {
+		for (int i = actualSize; i < size; i++) {
 			operators.add(defaultPropertyOperator);
 		}
 	}
@@ -197,15 +217,16 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__PROPERTY_OPERATORS:
-				return getPropertyOperators();
-			case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__NAME:
-				return getName();
+		case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__PROPERTY_OPERATORS:
+			return getPropertyOperators();
+		case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,19 +234,20 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__PROPERTY_OPERATORS:
-				getPropertyOperators().clear();
-				getPropertyOperators().addAll((Collection<? extends PropertyOperator>)newValue);
-				return;
-			case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__NAME:
-				setName((String)newValue);
-				return;
+		case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__PROPERTY_OPERATORS:
+			getPropertyOperators().clear();
+			getPropertyOperators().addAll((Collection<? extends PropertyOperator>) newValue);
+			return;
+		case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -233,17 +255,18 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__PROPERTY_OPERATORS:
-				getPropertyOperators().clear();
-				return;
-			case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__PROPERTY_OPERATORS:
+			getPropertyOperators().clear();
+			return;
+		case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -251,15 +274,16 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__PROPERTY_OPERATORS:
-				return propertyOperators != null && !propertyOperators.isEmpty();
-			case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__PROPERTY_OPERATORS:
+			return propertyOperators != null && !propertyOperators.isEmpty();
+		case LayersPackage.LAYER_OPERATOR_DESCRIPTOR__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,26 +291,26 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case LayersPackage.LAYER_OPERATOR_DESCRIPTOR___GET_PROPERTY_OPERATOR__PROPERTY:
-				try {
-					return getPropertyOperator((Property)arguments.get(0));
-				}
-				catch (Throwable throwable) {
-					throw new InvocationTargetException(throwable);
-				}
-			case LayersPackage.LAYER_OPERATOR_DESCRIPTOR___SET_PROPERTY_OPERATOR__PROPERTY_PROPERTYOPERATOR:
-				setPropertyOperator((Property)arguments.get(0), (PropertyOperator)arguments.get(1));
-				return null;
-			case LayersPackage.LAYER_OPERATOR_DESCRIPTOR___CREATE_LAYER_OPERATOR:
-				return createLayerOperator();
-			case LayersPackage.LAYER_OPERATOR_DESCRIPTOR___SET_PROPERTY_COLLECTION_SIZE__INT_DEFAULTPROPERTYOPERATOR:
-				setPropertyCollectionSize((Integer)arguments.get(0), (DefaultPropertyOperator)arguments.get(1));
-				return null;
+		case LayersPackage.LAYER_OPERATOR_DESCRIPTOR___GET_PROPERTY_OPERATOR__PROPERTY:
+			try {
+				return getPropertyOperator((Property) arguments.get(0));
+			} catch (Throwable throwable) {
+				throw new InvocationTargetException(throwable);
+			}
+		case LayersPackage.LAYER_OPERATOR_DESCRIPTOR___SET_PROPERTY_OPERATOR__PROPERTY_PROPERTYOPERATOR:
+			setPropertyOperator((Property) arguments.get(0), (PropertyOperator) arguments.get(1));
+			return null;
+		case LayersPackage.LAYER_OPERATOR_DESCRIPTOR___CREATE_LAYER_OPERATOR:
+			return createLayerOperator();
+		case LayersPackage.LAYER_OPERATOR_DESCRIPTOR___SET_PROPERTY_COLLECTION_SIZE__INT_DEFAULTPROPERTYOPERATOR:
+			setPropertyCollectionSize((Integer) arguments.get(0), (DefaultPropertyOperator) arguments.get(1));
+			return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -294,11 +318,14 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -307,4 +334,4 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 		return result.toString();
 	}
 
-} //LayerOperatorDescriptorImpl
+} // LayerOperatorDescriptorImpl

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.ETypedElement;
+import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.papyrus.emf.facet.util.core.DebugUtils;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Messages;
@@ -25,7 +26,6 @@ import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.util.composit
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.util.wizard.page.exception.SelectedEClassifierRuntimeException;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.wizard.page.ISelectEClassifierWizardPage;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.wizard.page.ISelectEPackageWizardPage;
-import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionEvent;
@@ -84,6 +84,7 @@ public class SelectEClassifierWizardPage<T extends EClassifier> extends
 		this.eClassSelection.updateList(this.metamodelNsUri);
 	}
 
+	@Override
 	public void createControl(final Composite parent) {
 		this.eClassSelection = new EClassifierSelectionControl<T>(parent,
 				this.metamodelNsUri, this.eTypeOption);
@@ -91,6 +92,7 @@ public class SelectEClassifierWizardPage<T extends EClassifier> extends
 				.getFilteredList();
 
 		filteredList.addSelectionListener(new SelectionListener() {
+			@Override
 			public void widgetSelected(final SelectionEvent event) {
 				if (event.item != null) {
 					updateButton();
@@ -98,6 +100,7 @@ public class SelectEClassifierWizardPage<T extends EClassifier> extends
 				}
 			}
 
+			@Override
 			public void widgetDefaultSelected(final SelectionEvent event) {
 				if (getWizard().canFinish()) {
 					getWizard().performFinish();
@@ -111,6 +114,7 @@ public class SelectEClassifierWizardPage<T extends EClassifier> extends
 		this.eClassSelection.getFilterText().addModifyListener(
 				new ModifyListener() {
 
+					@Override
 					public void modifyText(final ModifyEvent event) {
 						updateButton();
 					}
@@ -133,16 +137,18 @@ public class SelectEClassifierWizardPage<T extends EClassifier> extends
 		}
 	}
 
+	@Override
 	public T getSelectedEClassifier() {
 		return this.eClassSelection.getSelectedEClassifier();
 	}
 
 	/**
 	 * Select the <code>eclassifierName</code> into the list.
-	 * 
+	 *
 	 * @param eclassifierName
 	 *            the name of the classifier to select.
 	 */
+	@Override
 	public void selectEClassifier(final String eclassifierName) {
 		DebugUtils.debug(DEBUG);
 		boolean doItNow = true;
@@ -168,6 +174,7 @@ public class SelectEClassifierWizardPage<T extends EClassifier> extends
 
 	private void asyncSelectionClassifier(final String eclassifierName) {
 		Display.getDefault().asyncExec(new Runnable() {
+			@Override
 			public void run() {
 				selectEClassifier(eclassifierName);
 			}

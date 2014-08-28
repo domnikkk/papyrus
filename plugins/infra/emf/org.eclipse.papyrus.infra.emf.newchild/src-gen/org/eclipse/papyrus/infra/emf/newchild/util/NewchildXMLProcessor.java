@@ -17,6 +17,7 @@ import org.eclipse.papyrus.infra.emf.newchild.NewchildPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class NewchildXMLProcessor extends XMLProcessor {
@@ -25,17 +26,19 @@ public class NewchildXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NewchildXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		NewchildPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the NewchildResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -48,4 +51,4 @@ public class NewchildXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //NewchildXMLProcessor
+} // NewchildXMLProcessor

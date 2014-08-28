@@ -12,6 +12,7 @@ import org.eclipse.gef.DragTracker;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.uml.diagram.timing.custom.edit.policies.ExternalLabelPrimaryDragRoleEditPolicy;
 import org.eclipse.papyrus.uml.diagram.timing.custom.edit.policies.LayoutEditPolicyForLabel;
 import org.eclipse.papyrus.uml.diagram.timing.custom.parts.NoScrollNoBorderDragEditPartsTracker;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.DurationObservationEditPartCN;
@@ -25,7 +26,7 @@ public class CustomDurationObservationEditPart extends DurationObservationEditPa
 
 	/**
 	 * The drag tracker has been specialized in order to constrain movement inside its container without scroll bar
-	 * 
+	 *
 	 * @see http://wiki.eclipse.org/Papyrus_Developer_Guide/NoScrollbar
 	 */
 	@Override

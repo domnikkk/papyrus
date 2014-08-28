@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ import org.eclipse.swt.widgets.TableColumn;
 
 /**
  * Wizard page (unique) to select the desired table configurations.
- * 
+ *
  */
 public class ChooseNattableConfigWizardPage extends WizardPage {
 
@@ -58,9 +58,9 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 	private static final Image UNCHECKED = org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("org.eclipse.papyrus.infra.nattable.common", "icons/unchecked.gif"); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param pageName
 	 * @param context
 	 */
@@ -70,11 +70,12 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 */
+	@Override
 	public void createControl(Composite parent) {
 		setPageComplete(false);
 		Composite container = new Composite(parent, SWT.NULL);
@@ -90,7 +91,7 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 
 	/**
 	 * Create the table to display the catalog of existing configurations
-	 * 
+	 *
 	 * @param container
 	 */
 	public void createTableViewer(final Composite container) {
@@ -109,7 +110,7 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 
 			@Override
 			public Image getImage(Object element) {
-				if(selectedConfigs.containsKey(element)) {
+				if (selectedConfigs.containsKey(element)) {
 					return CHECKED;
 				} else {
 					return UNCHECKED;
@@ -123,8 +124,8 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 
 			@Override
 			protected void setValue(Object element, Object value) {
-				if(checkboxCellEditor.getValue() == Boolean.TRUE) {
-					selectedConfigs.put((TableConfiguration)element, 1);
+				if (checkboxCellEditor.getValue() == Boolean.TRUE) {
+					selectedConfigs.put((TableConfiguration) element, 1);
 				} else {
 					selectedConfigs.remove(element);
 				}
@@ -152,13 +153,13 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 
 			@Override
 			public String getText(Object element) {
-				TableConfiguration tc = (TableConfiguration)element;
+				TableConfiguration tc = (TableConfiguration) element;
 				return tc.getType();
 			}
 
 			@Override
 			public Image getImage(Object element) {
-				TableConfiguration tc = (TableConfiguration)element;
+				TableConfiguration tc = (TableConfiguration) element;
 				Image image = org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(tc.getIconPath());
 				return image;
 			}
@@ -171,13 +172,13 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 
 			@Override
 			protected void setValue(Object element, Object value) {
-				tableNames.put((TableConfiguration)element, (String)value);
+				tableNames.put((TableConfiguration) element, (String) value);
 				viewer.update(element, null);
 			}
 
 			@Override
 			protected Object getValue(Object element) {
-				if(tableNames.containsKey(element)) {
+				if (tableNames.containsKey(element)) {
 					return tableNames.get(element);
 				}
 				return ""; //$NON-NLS-1$
@@ -206,13 +207,13 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 
 			@Override
 			protected void setValue(Object element, Object value) {
-				selectedConfigs.put((TableConfiguration)element, Integer.parseInt((String)value));
+				selectedConfigs.put((TableConfiguration) element, Integer.parseInt((String) value));
 				viewer.update(element, null);
 			}
 
 			@Override
 			protected Object getValue(Object element) {
-				if(selectedConfigs.containsKey(element)) {
+				if (selectedConfigs.containsKey(element)) {
 					return selectedConfigs.get(element).toString();
 				}
 				return "0"; //$NON-NLS-1$
@@ -223,8 +224,9 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 				TextCellEditor textCellEditor = new TextCellEditor(viewer.getTable());
 				textCellEditor.setValidator(new ICellEditorValidator() {
 
+					@Override
 					public String isValid(Object value) {
-						if(!(value instanceof Integer)) {
+						if (!(value instanceof Integer)) {
 							return null;
 						}
 						return value.toString();
@@ -242,7 +244,7 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 
 			@Override
 			public String getText(Object element) {
-				if(selectedConfigs.containsKey(element)) {
+				if (selectedConfigs.containsKey(element)) {
 					return selectedConfigs.get(element).toString();
 				}
 				return ""; //$NON-NLS-1$
@@ -254,15 +256,16 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 
 			@Override
 			public String getText(Object element) {
-				TableConfiguration tc = (TableConfiguration)element;
+				TableConfiguration tc = (TableConfiguration) element;
 				return tc.getDescription();
 			}
 
 		});
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				if(selectedConfigs.size() > 0) {
+				if (selectedConfigs.size() > 0) {
 					setPageComplete(true);
 				} else {
 					setPageComplete(false);
@@ -281,7 +284,7 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param title
 	 * @param bound
 	 * @param viewer
@@ -299,16 +302,16 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 
 	/**
 	 * Get configurations from the configuration registry with their default names
-	 * 
+	 *
 	 * @return
 	 */
 	public Collection<TableConfiguration> loadConfigs() {
 		Collection<TableConfiguration> tableConfigurations = new ArrayList<TableConfiguration>(NattableConfigurationRegistry.INSTANCE.getTableConfigurations());
 
 		final ArrayList<TableConfiguration> tableConfigurationsToRemove = new ArrayList<TableConfiguration>();
-		for(TableConfiguration tableConfiguration : tableConfigurations) {
+		for (TableConfiguration tableConfiguration : tableConfigurations) {
 
-			if(NattableConfigurationRegistry.INSTANCE.canCreateTable(tableConfiguration.getType(), context).isOK()) {
+			if (NattableConfigurationRegistry.INSTANCE.canCreateTable(tableConfiguration.getType(), context).isOK()) {
 
 				tableNames.put(tableConfiguration, tableConfiguration.getName());
 			} else {
@@ -322,7 +325,7 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 
 	/**
 	 * Getter for selected table configurations
-	 * 
+	 *
 	 * @return
 	 */
 	public Map<TableConfiguration, Integer> getSelectedConfigs() {
@@ -332,7 +335,7 @@ public class ChooseNattableConfigWizardPage extends WizardPage {
 
 	/**
 	 * Getter for the selected table names
-	 * 
+	 *
 	 * @return
 	 */
 	public Map<TableConfiguration, String> getTableNames() {

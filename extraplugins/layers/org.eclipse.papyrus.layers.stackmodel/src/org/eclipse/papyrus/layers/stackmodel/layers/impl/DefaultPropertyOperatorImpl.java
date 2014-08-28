@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -29,6 +29,7 @@ public class DefaultPropertyOperatorImpl extends PropertyOperatorImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DefaultPropertyOperatorImpl() {
@@ -38,6 +39,7 @@ public class DefaultPropertyOperatorImpl extends PropertyOperatorImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -45,4 +47,4 @@ public class DefaultPropertyOperatorImpl extends PropertyOperatorImpl implements
 		return LayersPackage.Literals.DEFAULT_PROPERTY_OPERATOR;
 	}
 
-} //DefaultPropertyOperatorImpl
+} // DefaultPropertyOperatorImpl

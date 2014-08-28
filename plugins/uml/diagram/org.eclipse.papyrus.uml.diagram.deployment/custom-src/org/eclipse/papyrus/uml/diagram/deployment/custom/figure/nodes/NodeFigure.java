@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -69,7 +69,7 @@ public class NodeFigure extends NodeNamedElementFigure {
 	/**
 	 * this method is used to display a symbol image for an element Node as
 	 * triangle for the model
-	 * 
+	 *
 	 * @param image
 	 */
 	public void setTagIcon(Image image) {
@@ -81,12 +81,12 @@ public class NodeFigure extends NodeNamedElementFigure {
 
 	/**
 	 * get the gmf container figure of the Node
-	 * 
+	 *
 	 * @return the gmf container
 	 */
 	public ShapeCompartmentFigure getGMFCompositeContainer() {
-		if(shapeCompartment.getChildren().size() > 0) {
-			return (ShapeCompartmentFigure)shapeCompartment.getChildren().get(0);
+		if (shapeCompartment.getChildren().size() > 0) {
+			return (ShapeCompartmentFigure) shapeCompartment.getChildren().get(0);
 		}
 		return null;
 	}
@@ -120,12 +120,12 @@ public class NodeFigure extends NodeNamedElementFigure {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected void paintBackground(Graphics graphics, Rectangle rectangle) {
-		if(isUsingGradient()) {
+		if (isUsingGradient()) {
 			applyTransparency(graphics);
 			graphics.setBackgroundColor(ColorRegistry.getInstance().getColor(getGradientColor2()));
 			boolean isVertical = (getGradientStyle() == GradientStyle.VERTICAL) ? true : false;

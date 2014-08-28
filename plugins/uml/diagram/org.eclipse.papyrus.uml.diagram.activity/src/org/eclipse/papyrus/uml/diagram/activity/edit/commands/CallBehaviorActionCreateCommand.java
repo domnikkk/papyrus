@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin and CEA LIST
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -75,15 +75,16 @@ public class CallBehaviorActionCreateCommand extends ActivityNodeCreateCommand {
 
 	/**
 	 * FIXME: replace with setElementToEdit()
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest)getRequest()).getContainer();
-		if(container instanceof View) {
-			container = ((View)container).getElement();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
+		if (container instanceof View) {
+			container = ((View) container).getElement();
 		}
-		if(container != null) {
+		if (container != null) {
 			return container;
 		}
 		return eObject;
@@ -92,31 +93,33 @@ public class CallBehaviorActionCreateCommand extends ActivityNodeCreateCommand {
 	/**
 	 * @generated NOT check that there is a correct model container.
 	 */
+	@Override
 	public boolean canExecute() {
-		//check that there is a correct model container
+		// check that there is a correct model container
 		return CreateCommandUtil.canCreateNode(getRequest(), getElementToEdit());
 	}
 
 	/**
 	 * @generated NOT use the initialization popup, set appropriate parents
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// get the activity containing the new element
 		Activity parentActivity = null;
 		EObject parent = getElementToEdit();
-		while(parent != null && parentActivity == null) {
-			if(parent instanceof Activity) {
-				parentActivity = (Activity)parent;
+		while (parent != null && parentActivity == null) {
+			if (parent instanceof Activity) {
+				parentActivity = (Activity) parent;
 			}
 			parent = parent.eContainer();
 		}
 		CallBehaviorAction newElement = UMLFactory.eINSTANCE.createCallBehaviorAction();
 		CreateCallBehaviorActionDialog dialog = new CreateCallBehaviorActionDialog(Display.getDefault().getActiveShell(), parentActivity, newElement);
-		if(IDialogConstants.OK_ID == dialog.open()) {
+		if (IDialogConstants.OK_ID == dialog.open()) {
 			// initialize the invoked element (no need to use a command, since action is being created)
 			EObject behavior = dialog.getSelectedInvoked();
-			if(behavior instanceof Behavior) {
-				newElement.setBehavior((Behavior)behavior);
+			if (behavior instanceof Behavior) {
+				newElement.setBehavior((Behavior) behavior);
 			}
 			// initialize synchronous
 			newElement.setIsSynchronous(dialog.getIsSynchronous());
@@ -124,11 +127,11 @@ public class CallBehaviorActionCreateCommand extends ActivityNodeCreateCommand {
 			return CommandResult.newCancelledCommandResult();
 		}
 		initAndExecuteEmfCommand(newElement);
-		//		Activity owner = (Activity)getElementToEdit();
-		//		owner.getNodes().add(newElement);
+		// Activity owner = (Activity)getElementToEdit();
+		// owner.getNodes().add(newElement);
 		ElementInitializers.getInstance().init_CallBehaviorAction_3008(newElement);
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 
@@ -136,12 +139,12 @@ public class CallBehaviorActionCreateCommand extends ActivityNodeCreateCommand {
 	 * @generated
 	 */
 	protected void doConfigure(CallBehaviorAction newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest)getRequest()).getElementType();
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest)getRequest()).getClientContext());
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
 		ICommand configureCommand = elementType.getEditCommand(configureRequest);
-		if(configureCommand != null && configureCommand.canExecute()) {
+		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
 	}

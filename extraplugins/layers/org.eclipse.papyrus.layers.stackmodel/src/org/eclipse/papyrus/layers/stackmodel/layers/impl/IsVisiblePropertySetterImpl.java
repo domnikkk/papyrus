@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -34,6 +34,7 @@ public class IsVisiblePropertySetterImpl extends PropertySetterImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	protected IsVisiblePropertySetterImpl() {
@@ -44,6 +45,7 @@ public class IsVisiblePropertySetterImpl extends PropertySetterImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -53,6 +55,7 @@ public class IsVisiblePropertySetterImpl extends PropertySetterImpl implements I
 
 	/**
 	 * Set the property of the specified view.
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl#setValue(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance)
 	 *
 	 * @param view
@@ -60,15 +63,15 @@ public class IsVisiblePropertySetterImpl extends PropertySetterImpl implements I
 	 */
 	@Override
 	public void setValue(View view, TypeInstance value) {
-	
-	
-		BooleanInstance boolValue = (BooleanInstance)value;
-		
-		if(view instanceof Shape || view instanceof Connector) {
+
+
+		BooleanInstance boolValue = (BooleanInstance) value;
+
+		if (view instanceof Shape || view instanceof Connector) {
 			// We restrict to Shape and Connector
 			view.setVisible(boolValue.isValue());
 		}
-		
+
 	}
 
-} //IsVisiblePropertySetterImpl
+} // IsVisiblePropertySetterImpl

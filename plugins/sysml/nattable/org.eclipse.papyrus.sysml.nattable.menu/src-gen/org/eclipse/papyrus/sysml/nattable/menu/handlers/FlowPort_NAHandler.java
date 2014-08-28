@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ import org.eclipse.papyrus.sysml.diagram.common.commands.CreateFlowPortWithFlowS
 /**
  * <pre>
  * Command handler for FlowPort non atomic creation
- * 
+ *
  * </pre>
- * 
+ *
  * @generated
  */
 public class FlowPort_NAHandler extends FlowPortHandler {
@@ -38,7 +38,7 @@ public class FlowPort_NAHandler extends FlowPortHandler {
 	@Override
 	protected Command buildCommand() {
 
-		if(getCommandContext() == null) {
+		if (getCommandContext() == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -46,12 +46,12 @@ public class FlowPort_NAHandler extends FlowPortHandler {
 		EReference reference = getCommandContext().getReference();
 
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(container);
-		if(provider == null) {
+		if (provider == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		CreateElementRequest createRequest = null;
-		if(reference == null) {
+		if (reference == null) {
 			createRequest = new CreateElementRequest(container, getElementTypeToCreate());
 		} else {
 			createRequest = new CreateElementRequest(container, getElementTypeToCreate(), reference);
@@ -60,7 +60,7 @@ public class FlowPort_NAHandler extends FlowPortHandler {
 
 		// Retrieve create command from the Element Edit service
 		ICommand createGMFCommand = provider.getEditCommand(createRequest);
-		if(createGMFCommand != null) {
+		if (createGMFCommand != null) {
 			Command emfCommand = new org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper(createGMFCommand);
 			return emfCommand;
 		}

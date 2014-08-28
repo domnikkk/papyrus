@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,9 +45,9 @@ import org.eclipse.swt.widgets.TableColumn;
 
 /**
  * This dialog is used to ask to the user if he wants create a new instance of a link, or show an existing link on the diagram
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class CreateOrShowExistingLinkDialog extends MessageDialog {
 
@@ -127,24 +127,24 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 	private EObject result = null;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param dialogTitle
-	 *        the title for the dialog
+	 *            the title for the dialog
 	 * @param dialogMessage
-	 *        the message for the dialog
+	 *            the message for the dialog
 	 * @param elements
-	 *        the list of the possible elements
+	 *            the list of the possible elements
 	 */
 	public CreateOrShowExistingLinkDialog(final String dialogTitle, final String dialogMessage, final List<EdgeEndsMapper> elements) {
-		super(Display.getDefault().getActiveShell(), dialogTitle, null, dialogMessage, MessageDialog.QUESTION, new String[]{ CREATE_STRING, RESTORE_SELECTION, CANCEL_STRING }, RESTORE_SELECTED_LINK);
+		super(Display.getDefault().getActiveShell(), dialogTitle, null, dialogMessage, MessageDialog.QUESTION, new String[] { CREATE_STRING, RESTORE_SELECTION, CANCEL_STRING }, RESTORE_SELECTED_LINK);
 		this.existingLinks = elements;
 	}
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param title
 	 * @param bound
 	 * @param viewer
@@ -161,7 +161,7 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.MessageDialog#createCustomArea(org.eclipse.swt.widgets.Composite)
 	 *
 	 * @param parent
@@ -185,7 +185,7 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 
 			@Override
 			public Image getImage(Object element) {
-				if(existingLinks.get(selectedElementIndex) == element) {
+				if (existingLinks.get(selectedElementIndex) == element) {
 					return Activator.getDefault().getImage(org.eclipse.papyrus.uml.diagram.common.Activator.ID, CHECKED_ICON_PATH);
 				}
 				return Activator.getDefault().getImage(org.eclipse.papyrus.uml.diagram.common.Activator.ID, UNCHECKED_ICON_PATH);
@@ -198,10 +198,10 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 
 			@Override
 			protected void setValue(Object element, Object value) {
-				if(checkboxCellEditor.getValue() == Boolean.TRUE) {
+				if (checkboxCellEditor.getValue() == Boolean.TRUE) {
 					selectedElementIndex = existingLinks.indexOf(element);
 				}
-				for(final EdgeEndsMapper current : existingLinks) {
+				for (final EdgeEndsMapper current : existingLinks) {
 					viewer.update(current, null);
 				}
 			}
@@ -228,10 +228,10 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 
 			@Override
 			public String getText(Object element) {
-				if(element instanceof EdgeEndsMapper) {
-					return labelProvider.getText(((EdgeEndsMapper)element).getLink());
+				if (element instanceof EdgeEndsMapper) {
+					return labelProvider.getText(((EdgeEndsMapper) element).getLink());
 				}
-				//not possible
+				// not possible
 				return NOT_AVAILABLE;
 			}
 
@@ -249,8 +249,8 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 
 			@Override
 			public String getText(Object element) {
-				if(element instanceof EdgeEndsMapper) {
-					return getLabel(((EdgeEndsMapper)element).getEnds());
+				if (element instanceof EdgeEndsMapper) {
+					return getLabel(((EdgeEndsMapper) element).getEnds());
 				}
 				return NOT_AVAILABLE;
 			}
@@ -263,8 +263,8 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 
 			@Override
 			public String getText(Object element) {
-				if(element instanceof EdgeEndsMapper) {
-					return getLabel(((EdgeEndsMapper)element).getSources());
+				if (element instanceof EdgeEndsMapper) {
+					return getLabel(((EdgeEndsMapper) element).getSources());
 				}
 				return NOT_AVAILABLE;
 			}
@@ -276,8 +276,8 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 
 			@Override
 			public String getText(Object element) {
-				if(element instanceof EdgeEndsMapper) {
-					return getLabel(((EdgeEndsMapper)element).getTargets());
+				if (element instanceof EdgeEndsMapper) {
+					return getLabel(((EdgeEndsMapper) element).getTargets());
 				}
 				return NOT_AVAILABLE;
 			}
@@ -297,16 +297,16 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 
 	@Override
 	protected void buttonPressed(int buttonId) {
-		if(buttonId == RESTORE_SELECTED_LINK && this.existingLinks.size() >= this.selectedElementIndex) {
+		if (buttonId == RESTORE_SELECTED_LINK && this.existingLinks.size() >= this.selectedElementIndex) {
 			this.result = this.existingLinks.get(this.selectedElementIndex).getLink();
 		}
 		super.buttonPressed(buttonId);
 	}
 
 	/**
-	 * 
+	 *
 	 * @param viewerColumn
-	 *        the viewerColumn to configure
+	 *            the viewerColumn to configure
 	 */
 	protected void configureColumn(final TableViewerColumn viewerColumn) {
 		viewerColumn.getColumn().setMoveable(true);
@@ -314,19 +314,19 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param list
-	 *        the list of the elements for which we want the label
+	 *            the list of the elements for which we want the label
 	 * @return
 	 *         the string to display for this list
 	 */
 	private String getLabel(final Collection<?> list) {
-		if(list != null) {
+		if (list != null) {
 			final StringBuilder builder = new StringBuilder();
 			final Iterator<?> iter = list.iterator();
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 				builder.append(labelProvider.getText(iter.next()));
-				if(iter.hasNext()) {
+				if (iter.hasNext()) {
 					builder.append(","); //$NON-NLS-1$
 				}
 			}
@@ -336,7 +336,7 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the selected link
 	 */

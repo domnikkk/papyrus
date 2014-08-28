@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,7 +8,7 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
- *   
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.uml.tools.providers;
@@ -69,11 +69,11 @@ public class DelegatingItemLabelProvider implements IItemLabelProvider {
 
 	/**
 	 * Initializes me with my delegate factory and a bit-mask of which label components to allow.
-	 * 
+	 *
 	 * @param itemAdapterFactory
-	 *        my delegate factory
+	 *            my delegate factory
 	 * @param style
-	 *        mask of {@linkplain #SHOW_LABEL style bits} indicating which components of the label to allow
+	 *            mask of {@linkplain #SHOW_LABEL style bits} indicating which components of the label to allow
 	 */
 	public DelegatingItemLabelProvider(AdapterFactory itemAdapterFactory, int style) {
 		super();
@@ -84,9 +84,9 @@ public class DelegatingItemLabelProvider implements IItemLabelProvider {
 
 	/**
 	 * Initializes me with my delegate factory. I do not suppress any components of the label.
-	 * 
+	 *
 	 * @param itemAdapterFactory
-	 *        my delegate factory
+	 *            my delegate factory
 	 */
 	public DelegatingItemLabelProvider(AdapterFactory itemAdapterFactory) {
 		this(itemAdapterFactory, SHOW_LABEL | SHOW_METACLASS | SHOW_STEREOTYPES);
@@ -95,9 +95,9 @@ public class DelegatingItemLabelProvider implements IItemLabelProvider {
 	/**
 	 * Initializes me with my plug-in's {@linkplain Activator#getItemProviderAdapterFactory() shared adapter factory} as my delegate factory and a
 	 * bit-mask of which label components to allow. <em>Note</em> that the shared adapter factory does not need to be disposed.
-	 * 
+	 *
 	 * @param style
-	 *        mask of {@linkplain #SHOW_LABEL style bits} indicating which components of the label to allow
+	 *            mask of {@linkplain #SHOW_LABEL style bits} indicating which components of the label to allow
 	 */
 	public DelegatingItemLabelProvider(int style) {
 		this(Activator.getDefault().getItemProviderAdapterFactory(), style);
@@ -113,7 +113,7 @@ public class DelegatingItemLabelProvider implements IItemLabelProvider {
 
 	public String getText(Object object) {
 		EObject element = EMFHelper.getEObject(object);
-		if(element == null) {
+		if (element == null) {
 			return null;
 		}
 
@@ -121,29 +121,29 @@ public class DelegatingItemLabelProvider implements IItemLabelProvider {
 		IItemLabelProvider provider = getDelegate(element);
 		String result = (provider == null) ? ModelUtils.getDefaultName(element) : provider.getText(element);
 
-		if(result != null) {
+		if (result != null) {
 			// Rewrite the stereotype list and strip the metaclass qualifier, unless there is no label, in which
 			// case we leave the metaclass qualifier
 			Matcher m = UML2_LABEL_PATTERN.matcher(result);
-			if(m.matches()) {
+			if (m.matches()) {
 				StringBuilder buf = new StringBuilder();
 
 				String keywords = m.group(1);
-				if(isShowStereotypes() && (keywords != null)) {
+				if (isShowStereotypes() && (keywords != null)) {
 					buf.append(ST_LEFT).append(keywords).append(ST_RIGHT);
 				}
 
 				final String label = m.group(3);
-				if(isShowMetaclass() && (UML2Util.isEmpty(label) || shouldShowMetaclass(element))) {
+				if (isShowMetaclass() && (UML2Util.isEmpty(label) || shouldShowMetaclass(element))) {
 					// Use the metaclass qualifier
-					if(buf.length() > 0) {
+					if (buf.length() > 0) {
 						buf.append(' ');
 					}
 					buf.append(m.group(2));
 				}
 
-				if(isShowLabel() && !UML2Util.isEmpty(label)) {
-					if(buf.length() > 0) {
+				if (isShowLabel() && !UML2Util.isEmpty(label)) {
+					if (buf.length() > 0) {
 						buf.append(' ');
 					}
 					buf.append(label);
@@ -158,7 +158,7 @@ public class DelegatingItemLabelProvider implements IItemLabelProvider {
 
 	public Object getImage(Object object) {
 		EObject element = EMFHelper.getEObject(object);
-		if(element == null) {
+		if (element == null) {
 			return null;
 		}
 
@@ -180,7 +180,7 @@ public class DelegatingItemLabelProvider implements IItemLabelProvider {
 	}
 
 	protected IItemLabelProvider getDelegate(EObject object) {
-		return (IItemLabelProvider)itemAdapterFactory.adapt(object, IItemLabelProvider.class);
+		return (IItemLabelProvider) itemAdapterFactory.adapt(object, IItemLabelProvider.class);
 	}
 
 	protected boolean shouldShowMetaclass(EObject object) {

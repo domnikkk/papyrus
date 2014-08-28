@@ -17,9 +17,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.emf.facet.util.core.internal.exported.IFilter;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.papyrus.emf.facet.util.core.internal.exported.IFilter;
 
 public class ETypedElementSelectionControlContentProvider implements ITreeContentProvider {
 

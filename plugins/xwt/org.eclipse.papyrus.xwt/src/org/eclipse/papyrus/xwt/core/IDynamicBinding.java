@@ -10,10 +10,11 @@
  *******************************************************************************/
 package org.eclipse.papyrus.xwt.core;
 
+import org.eclipse.papyrus.xwt.databinding.BindingContext;
 import org.eclipse.papyrus.xwt.databinding.IBindingContext;
 
 /**
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public interface IDynamicBinding extends IBinding {
@@ -37,14 +38,14 @@ public interface IDynamicBinding extends IBinding {
 
 	/**
 	 * Returns the {@link BindingContext} associated with this binding
-	 * 
+	 *
 	 * @return the {@link BindingContext}
 	 */
 	IBindingContext getBindingContext();
 
 	/**
 	 * Sets the {@link BindingContext} this binding is associated with
-	 * 
+	 *
 	 * @param dataBindingContext
 	 */
 	void setBindingContext(IBindingContext dataBindingContext);

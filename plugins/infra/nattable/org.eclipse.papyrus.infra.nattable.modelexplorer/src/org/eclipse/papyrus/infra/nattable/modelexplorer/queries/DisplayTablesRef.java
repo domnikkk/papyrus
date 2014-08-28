@@ -1,14 +1,14 @@
 /**
  *  Copyright (c) 2011 Atos.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Atos - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.infra.nattable.modelexplorer.queries;
 
@@ -33,8 +33,9 @@ public class DisplayTablesRef extends AbstractEditorContainerQuery implements IJ
 	 * Return true if the element is a Table Container and the the Ereference is diagrams
 	 */
 
+	@Override
 	public Boolean evaluate(EObject source, IParameterValueList2 parameterValues, IFacetManager facetManager) throws DerivedTypedElementException {
-		ParameterValue parameterValue = (ParameterValue) parameterValues.getParameterValueByName("eStructuralFeature");
+		ParameterValue parameterValue = parameterValues.getParameterValueByName("eStructuralFeature");
 		EStructuralFeature eStructuralFeature = (EStructuralFeature) parameterValue.getValue();
 		if ((eStructuralFeature instanceof FacetReference) && ("tables".equals((eStructuralFeature).getName()))) {
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,9 +50,9 @@ public class FlowPropertyEditHelperAdvice extends AbstractStereotypedElementEdit
 
 	/**
 	 * Check if the creation context is a FlowSpecification.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.sysml.service.types.helper.AbstractStereotypedElementEditHelperAdvice#approveRequest(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return true if the request is approved
 	 */
@@ -60,18 +60,18 @@ public class FlowPropertyEditHelperAdvice extends AbstractStereotypedElementEdit
 	public boolean approveRequest(IEditCommandRequest request) {
 		boolean isApproved = super.approveRequest(request);
 
-		if((request != null) && (request instanceof GetEditContextRequest)) {
+		if ((request != null) && (request instanceof GetEditContextRequest)) {
 
 			// Retrieve the edit context from request
-			GetEditContextRequest editContextRequest = (GetEditContextRequest)request;
+			GetEditContextRequest editContextRequest = (GetEditContextRequest) request;
 
 			// Test if the edit context is a FlowSpecification
-			if(editContextRequest.getEditContext() instanceof Element) {
-				Element contextElement = (Element)editContextRequest.getEditContext();
+			if (editContextRequest.getEditContext() instanceof Element) {
+				Element contextElement = (Element) editContextRequest.getEditContext();
 
 				IElementMatcher matcher = new FlowSpecificationMatcher();
 				IElementMatcher blockMatcher = new BlockMatcher();
-				if(!matcher.matches(contextElement) && !blockMatcher.matches(contextElement)) {
+				if (!matcher.matches(contextElement) && !blockMatcher.matches(contextElement)) {
 					isApproved = false;
 				}
 			}
@@ -86,9 +86,10 @@ public class FlowPropertyEditHelperAdvice extends AbstractStereotypedElementEdit
 
 		return new ConfigureElementCommand(request) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				NamedElement element = (NamedElement)request.getElementToConfigure();
-				if(element != null) {
+				NamedElement element = (NamedElement) request.getElementToConfigure();
+				if (element != null) {
 					StereotypeApplicationHelper.INSTANCE.applyStereotype(element, PortandflowsPackage.eINSTANCE.getFlowProperty());
 
 					// Set default name
@@ -108,22 +109,22 @@ public class FlowPropertyEditHelperAdvice extends AbstractStereotypedElementEdit
 	protected ICommand getBeforeSetCommand(SetRequest request) {
 
 		// Only allow null, FlowSpecification, Block, Signal, DataType or ValueType as new type.
-		if(UMLPackage.eINSTANCE.getTypedElement_Type().equals(request.getFeature())) {
-			if(request.getValue() != null) {
+		if (UMLPackage.eINSTANCE.getTypedElement_Type().equals(request.getFeature())) {
+			if (request.getValue() != null) {
 
-				if(!(request.getValue() instanceof Element)) {
+				if (!(request.getValue() instanceof Element)) {
 					return UnexecutableCommand.INSTANCE; // Should not happen
 				}
 
-				Element value = (Element)request.getValue();
-				if((value instanceof DataType) || (value instanceof Signal)) {
+				Element value = (Element) request.getValue();
+				if ((value instanceof DataType) || (value instanceof Signal)) {
 					return null; // accept these types
 				}
 
 				ValueType valueType = UMLUtil.getStereotypeApplication(value, ValueType.class);
 				Block block = UMLUtil.getStereotypeApplication(value, Block.class);
 
-				if((block != null) || (valueType != null)) {
+				if ((block != null) || (valueType != null)) {
 					return null; // accept these types
 				}
 

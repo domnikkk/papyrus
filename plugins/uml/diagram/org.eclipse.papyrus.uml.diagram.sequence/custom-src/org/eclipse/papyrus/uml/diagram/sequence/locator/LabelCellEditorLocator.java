@@ -33,15 +33,16 @@ public class LabelCellEditorLocator implements CellEditorLocator {
 	/**
 	 * @generated
 	 */
+	@Override
 	public void relocate(CellEditor celleditor) {
-		Text text = (Text)celleditor.getControl();
+		Text text = (Text) celleditor.getControl();
 		Rectangle rect = getLabel().getTextBounds().getCopy();
 		getLabel().translateToAbsolute(rect);
-		if(!text.getFont().isDisposed()) {
+		if (!text.getFont().isDisposed()) {
 			int avr = FigureUtilities.getFontMetrics(text.getFont()).getAverageCharWidth();
 			rect.setSize(new Dimension(text.computeSize(SWT.DEFAULT, SWT.DEFAULT)).expand(avr * 2, 0));
 		}
-		if(!rect.equals(new Rectangle(text.getBounds()))) {
+		if (!rect.equals(new Rectangle(text.getBounds()))) {
 			text.setBounds(rect.x, rect.y, rect.width, rect.height);
 		}
 	}

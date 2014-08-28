@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ public class ElementUtil {
 	 * some dependencies propagated by UMLUtils (jface...). Current UMLUtils
 	 * plug-in should probably be separated into two parts one depending on UML2
 	 * plug-in only, and the other bringing ui related features;
-	 * 
+	 *
 	 * @deprecated prefer using {@link UMLUtil#getStereotypeApplication(Element, Class)}
 	 */
 	@Deprecated
@@ -39,7 +39,7 @@ public class ElementUtil {
 	/**
 	 * Convenient method to retrieve the StereotypeApplication by passing an
 	 * element of the static profile.
-	 * 
+	 *
 	 * @deprecated prefer using {@link UMLUtil#getStereotypeApplication(Element, Class)}
 	 */
 	@Deprecated

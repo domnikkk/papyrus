@@ -25,11 +25,11 @@ public class ParametricDiagramEditPartProvider extends AbstractEditPartProvider 
 
 	@Override
 	public boolean provides(IOperation operation) {
-		if(operation instanceof CreateGraphicEditPartOperation) {
-			View view = ((IEditPartOperation)operation).getView();
+		if (operation instanceof CreateGraphicEditPartOperation) {
+			View view = ((IEditPartOperation) operation).getView();
 
 			// Ensure current diagram is Parametric Diagram
-			if(ElementTypes.DIAGRAM_ID.equals(view.getType())) {
+			if (ElementTypes.DIAGRAM_ID.equals(view.getType())) {
 				return true;
 			}
 		}
@@ -39,7 +39,7 @@ public class ParametricDiagramEditPartProvider extends AbstractEditPartProvider 
 
 	@Override
 	protected Class<?> getDiagramEditPartClass(View view) {
-		if(ElementTypes.DIAGRAM_ID.equals(view.getType())) {
+		if (ElementTypes.DIAGRAM_ID.equals(view.getType())) {
 			return ParametricDiagramEditPart.class;
 		}
 

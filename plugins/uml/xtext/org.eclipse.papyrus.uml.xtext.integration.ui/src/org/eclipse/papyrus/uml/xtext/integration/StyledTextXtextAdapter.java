@@ -1,16 +1,16 @@
 /*****************************************************************************
-* Copyright (c) 2010 CEA LIST.
-*
-* 
+ * Copyright (c) 2010 CEA LIST.
+ *
+ *
  * All rights reserved. This program and the accompanying materials
-* are made available under the terms of the Eclipse Public License v1.0
-* which accompanies this distribution, and is available at
-* http://www.eclipse.org/legal/epl-v10.html
-*
-* Contributors:
-*  Itemis - Initial API and implementation
-*
-*****************************************************************************/ 
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Itemis - Initial API and implementation
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.uml.xtext.integration;
 
 import java.io.IOException;
@@ -64,11 +64,11 @@ import com.google.inject.Injector;
 import com.google.inject.Provider;
 
 /**
- * 
+ *
  * @author andreas.muelder@itemis.de
  * @author alexander.nyssen@itemis.de
  * @author patrick.koenemann@itemis.de
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public class StyledTextXtextAdapter {
@@ -104,7 +104,7 @@ public class StyledTextXtextAdapter {
 	protected ControlDecoration decoration;
 
 	protected CompletionProposalAdapter completionProposalAdapter;
-	
+
 	public StyledTextXtextAdapter(Injector injector, IXtextFakeContextResourcesProvider contextFakeResourceProvider) {
 		this.contextFakeResourceProvider = contextFakeResourceProvider;
 		injector.injectMembers(this);
@@ -179,7 +179,7 @@ public class StyledTextXtextAdapter {
 	public CompletionProposalAdapter getCompletionProposalAdapter() {
 		return completionProposalAdapter;
 	}
-	
+
 	private void createContentAssistDecoration(StyledText styledText) {
 		decoration = new ControlDecoration(styledText, SWT.TOP | SWT.LEFT);
 		decoration.setShowHover(true);
@@ -226,9 +226,8 @@ public class StyledTextXtextAdapter {
 
 	/**
 	 * Creates decoration support for the sourceViewer. code is entirely copied
-	 * from {@link XtextEditor} and its super class
-	 * {@link AbstractDecoratedTextEditor}.
-	 * 
+	 * from {@link XtextEditor} and its super class {@link AbstractDecoratedTextEditor}.
+	 *
 	 */
 	protected void configureSourceViewerDecorationSupport(SourceViewerDecorationSupport support) {
 		MarkerAnnotationPreferences annotationPreferences = new MarkerAnnotationPreferences();

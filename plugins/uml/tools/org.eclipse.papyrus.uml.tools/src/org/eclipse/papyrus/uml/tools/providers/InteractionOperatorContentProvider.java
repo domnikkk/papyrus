@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,12 +23,12 @@ import org.eclipse.uml2.uml.InteractionOperatorKind;
 
 /**
  * Specific ContentProvider for filtering the acceptable values on CombinedFragment#interactionOperator
- * 
+ *
  * See 383401: [Sequence Diagram] Interaction operator
  * https://bugs.eclipse.org/bugs/show_bug.cgi?id=383401
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class InteractionOperatorContentProvider extends EMFEnumeratorContentProvider {
 
@@ -41,9 +41,9 @@ public class InteractionOperatorContentProvider extends EMFEnumeratorContentProv
 
 	@Override
 	public Object[] getElements() {
-		if(editedEObject instanceof ConsiderIgnoreFragment) {
-			return new Object[]{ InteractionOperatorKind.CONSIDER_LITERAL, InteractionOperatorKind.IGNORE_LITERAL };
-		} else if(editedEObject instanceof CombinedFragment) {
+		if (editedEObject instanceof ConsiderIgnoreFragment) {
+			return new Object[] { InteractionOperatorKind.CONSIDER_LITERAL, InteractionOperatorKind.IGNORE_LITERAL };
+		} else if (editedEObject instanceof CombinedFragment) {
 			List<Object> elements = ListHelper.asList(super.getElements());
 			elements.remove(InteractionOperatorKind.CONSIDER_LITERAL);
 			elements.remove(InteractionOperatorKind.IGNORE_LITERAL);

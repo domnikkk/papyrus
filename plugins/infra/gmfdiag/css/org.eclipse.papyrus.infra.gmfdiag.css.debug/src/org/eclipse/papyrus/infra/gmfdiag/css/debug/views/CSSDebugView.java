@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 392301
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.debug.views;
 
@@ -74,13 +74,13 @@ import org.w3c.dom.Element;
 /**
  * A View to help debugging CSS elements. The view updates itself according to the current selection
  * (when the selection is css-compatible). The following features are currently supported:
- * 
+ *
  * - Filters the selected items and displays the css-compatible ones
  * - For each css-compatible item, lists its styleable properties
  * - For each styleable property, indicates whether the value has been forced by the user or computed by the CSS engine
- * 
- * 
- * 
+ *
+ *
+ *
  * @author Camille Letavernier
  */
 /*
@@ -105,7 +105,7 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 	private TableViewer notationProperties;
 
 	public CSSDebugView() {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
@@ -175,15 +175,15 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 
 	@Override
 	public void setFocus() {
-		//Nothing
+		// Nothing
 	}
 
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 
 			List<Object> supportedElements = getElementsWithCSSSupport(structuredSelection);
-			if(supportedElements.isEmpty()) {
+			if (supportedElements.isEmpty()) {
 				return;
 			}
 
@@ -203,9 +203,9 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 
 		List<Object> result = new LinkedList<Object>();
 
-		while(selectionIterator.hasNext()) {
+		while (selectionIterator.hasNext()) {
 			Object selectedElement = selectionIterator.next();
-			if(supportsCSS(selectedElement)) {
+			if (supportsCSS(selectedElement)) {
 				result.add(selectedElement);
 			}
 		}
@@ -224,8 +224,8 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 	}
 
 	private void debug(List<Object> supportedElements) {
-		if(supportedElements.isEmpty()) {
-			return; //Do not change the state of the debug view if the selection isn't interesting
+		if (supportedElements.isEmpty()) {
+			return; // Do not change the state of the debug view if the selection isn't interesting
 		}
 
 		treeViewer.setInput(supportedElements);
@@ -235,12 +235,12 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 	private View getView(Object fromElement) {
 		View view = null;
 
-		if(fromElement instanceof View) {
-			view = (View)fromElement;
+		if (fromElement instanceof View) {
+			view = (View) fromElement;
 		}
 
-		if(fromElement instanceof IAdaptable) {
-			view = (View)((IAdaptable)fromElement).getAdapter(View.class);
+		if (fromElement instanceof IAdaptable) {
+			view = (View) ((IAdaptable) fromElement).getAdapter(View.class);
 		}
 
 		return view;
@@ -248,16 +248,16 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 
 	public void selectionChanged(SelectionChangedEvent event) {
 		ISelection selection = event.getSelection();
-		if(selection.isEmpty()) {
+		if (selection.isEmpty()) {
 			clean();
 			return;
 		}
 
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			Object selectedElement = structuredSelection.getFirstElement();
 			View view = getView(selectedElement);
-			if(view != null) {
+			if (view != null) {
 				debugView(view);
 			}
 		}
@@ -273,7 +273,7 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 	}
 
 	private void clean(Composite composite) {
-		for(Control control : composite.getChildren()) {
+		for (Control control : composite.getChildren()) {
 			control.dispose();
 		}
 	}
@@ -283,8 +283,8 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 
 		Diagram diagram = view.getDiagram();
 		ExtendedCSSEngine engine;
-		if(diagram instanceof CSSDiagram) {
-			engine = ((CSSDiagram)diagram).getEngine();
+		if (diagram instanceof CSSDiagram) {
+			engine = ((CSSDiagram) diagram).getEngine();
 		} else {
 			return;
 		}
@@ -292,8 +292,8 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 		@SuppressWarnings("restriction")
 		Element cssElement = engine.getElement(view);
 		GMFElementAdapter gmfCssElement;
-		if(cssElement instanceof GMFElementAdapter) {
-			gmfCssElement = (GMFElementAdapter)cssElement;
+		if (cssElement instanceof GMFElementAdapter) {
+			gmfCssElement = (GMFElementAdapter) cssElement;
 		} else {
 			return;
 		}
@@ -335,15 +335,15 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 	private void fillSemanticProperties(View view, GMFElementAdapter cssElement) {
 		EObject semanticElement = cssElement.getSemanticElement();
 
-		if(semanticElement == null) {
+		if (semanticElement == null) {
 			semanticProperties.setInput("");
 			return;
 		}
 
 		Set<EStructuralFeature> semanticFeatures = new HashSet<EStructuralFeature>();
 
-		for(EStructuralFeature semanticFeature : semanticElement.eClass().getEAllStructuralFeatures()) {
-			if(isPrimitive(semanticFeature)) {
+		for (EStructuralFeature semanticFeature : semanticElement.eClass().getEAllStructuralFeatures()) {
+			if (isPrimitive(semanticFeature)) {
 				semanticFeatures.add(semanticFeature);
 			}
 		}
@@ -367,8 +367,8 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 		allFeatures.addAll(view.eClass().getEAllStructuralFeatures());
 
 		List<EStructuralFeature> styleFeatures = new LinkedList<EStructuralFeature>();
-		for(EStructuralFeature feature : allFeatures) {
-			if(EMFHelper.isSubclass(feature.getEContainingClass(), NotationPackage.eINSTANCE.getStyle())) {
+		for (EStructuralFeature feature : allFeatures) {
+			if (EMFHelper.isSubclass(feature.getEContainingClass(), NotationPackage.eINSTANCE.getStyle())) {
 				styleFeatures.add(feature);
 			}
 		}
@@ -399,15 +399,15 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 		@Override
 		public void update(ViewerCell cell) {
 			Object element = cell.getElement();
-			if(!(element instanceof EStructuralFeature)) {
+			if (!(element instanceof EStructuralFeature)) {
 				return;
 			}
 
-			EStructuralFeature feature = (EStructuralFeature)element;
+			EStructuralFeature feature = (EStructuralFeature) element;
 
 			try {
 
-				switch(cell.getColumnIndex()) {
+				switch (cell.getColumnIndex()) {
 				case 0:
 					updateProperty(cell, feature);
 					break;
@@ -433,15 +433,15 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 
 			boolean forced;
 
-			if(equals(value, feature.getDefaultValue())) {
+			if (equals(value, feature.getDefaultValue())) {
 				boolean isSet = ForceValueHelper.isSet(cssElement.getNotationElement(), feature, value);
 				forced = isSet;
-				//				cell.setText(isSet ? "Forced value" : "Computed value");
-				//				cell.setText("Default value " + isSet);
+				// cell.setText(isSet ? "Forced value" : "Computed value");
+				// cell.setText("Default value " + isSet);
 			} else {
 				boolean isSet = cssElement.getNotationElement().eIsSet(feature);
 				forced = isSet;
-				//				cell.setText(isSet ? "Forced value" : "Computed value");
+				// cell.setText(isSet ? "Forced value" : "Computed value");
 			}
 
 			cell.setText(forced ? "Forced value" : "Computed value");
@@ -450,11 +450,11 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 		}
 
 		private boolean equals(Object value1, Object value2) {
-			if(value1 == value2) {
+			if (value1 == value2) {
 				return true;
 			}
 
-			if(value1 == null) {
+			if (value1 == null) {
 				return value2.equals(value1);
 			}
 
@@ -465,18 +465,18 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 			Object value = cssElement.getNotationElement().eGet(feature);
 			String text = getValueAsText(feature, value);
 			cell.setText(text);
-			if(feature.getName().endsWith("Color") && value instanceof Integer) {
-				Color color = ColorRegistry.getInstance().getColor((Integer)value);
+			if (feature.getName().endsWith("Color") && value instanceof Integer) {
+				Color color = ColorRegistry.getInstance().getColor((Integer) value);
 				cell.setBackground(color);
 				int lightness = getLightness(color);
-				//Use a white font when the color is dark
+				// Use a white font when the color is dark
 				int systemColor = lightness < 130 ? systemColor = SWT.COLOR_WHITE : SWT.COLOR_BLACK;
 				cell.setForeground(Display.getDefault().getSystemColor(systemColor));
 			}
 		}
 
 		private int getLightness(Color color) {
-			//Computes the lightness of the color
+			// Computes the lightness of the color
 			int M = Math.max(color.getGreen(), Math.max(color.getRed(), color.getBlue()));
 			int m = Math.min(color.getGreen(), Math.min(color.getRed(), color.getBlue()));
 			int L = (M + m) / 2;
@@ -484,13 +484,13 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 		}
 
 		private String getValueAsText(EStructuralFeature feature, Object value) {
-			if(value instanceof GradientData) {
-				GradientData gradient = (GradientData)value;
+			if (value instanceof GradientData) {
+				GradientData gradient = (GradientData) value;
 				return getLabel(GMFToCSSConverter.instance.convert(gradient));
 			}
 
-			if(feature.getName().endsWith("Color") && value instanceof Integer) {
-				Color color = FigureUtilities.integerToColor((Integer)value);
+			if (feature.getName().endsWith("Color") && value instanceof Integer) {
+				Color color = FigureUtilities.integerToColor((Integer) value);
 				String result = getLabel(GMFToCSSConverter.instance.convert(color));
 				color.dispose();
 				return result;
@@ -501,12 +501,12 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 	}
 
 	protected String getLabel(Expression expression) {
-		if(expression == null) {
+		if (expression == null) {
 			return "";
 		}
 		String label = getLabel(expression.getTerms());
-		for(Subterm subTerm : expression.getSubterms()) {
-			if(subTerm.getOperator() != null) {
+		for (Subterm subTerm : expression.getSubterms()) {
+			if (subTerm.getOperator() != null) {
 				label += subTerm.getOperator();
 			}
 			label += " " + getLabel(subTerm.getTerm());
@@ -535,7 +535,7 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 			@Override
 			public String caseNumber(Number term) {
 				String label = "";
-				if(term.getOp() != null) {
+				if (term.getOp() != null) {
 					label += term.getOp().getOperator();
 				}
 				label += term.getValue();
@@ -555,15 +555,15 @@ public class CSSDebugView extends ViewPart implements ISelectionListener, ISelec
 		@Override
 		public void update(ViewerCell cell) {
 			Object element = cell.getElement();
-			if(!(element instanceof EStructuralFeature)) {
+			if (!(element instanceof EStructuralFeature)) {
 				return;
 			}
 
-			EStructuralFeature feature = (EStructuralFeature)element;
+			EStructuralFeature feature = (EStructuralFeature) element;
 
 			try {
 
-				switch(cell.getColumnIndex()) {
+				switch (cell.getColumnIndex()) {
 				case 0:
 					updateProperty(cell, feature);
 					break;

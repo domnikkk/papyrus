@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.papyrus.eclipse.project.editors.Activator;
 import org.eclipse.papyrus.eclipse.project.editors.interfaces.IFileEditor;
 
 /**
- * 
+ *
  * An abstract class for File Editor
- * 
+ *
  */
 public abstract class AbstractFileEditor implements IFileEditor {
 
@@ -35,18 +35,18 @@ public abstract class AbstractFileEditor implements IFileEditor {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param project
-	 *        the eclipse project
+	 *            the eclipse project
 	 */
 	public AbstractFileEditor(final IProject project) {
 		this.project = project;
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the eclipse project
 	 */
@@ -55,9 +55,9 @@ public abstract class AbstractFileEditor implements IFileEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.project.AbstractProjectEditor#init()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	public void init() {
@@ -65,9 +65,9 @@ public abstract class AbstractFileEditor implements IFileEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IProjectEditor#getMissingFiles()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	public Set<String> getMissingFiles() {
@@ -75,14 +75,14 @@ public abstract class AbstractFileEditor implements IFileEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param text
-	 *        the initial text
+	 *            the initial text
 	 * @return
 	 *         an input stream
 	 */
 	protected InputStream getInputStream(final String text) {
-		if(text == null) {
+		if (text == null) {
 			Activator.log.warn("Cannot open an input stream for a null text"); //$NON-NLS-1$
 			return null;
 		}
@@ -100,9 +100,9 @@ public abstract class AbstractFileEditor implements IFileEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.project.AbstractProjectEditor.plugin.AbstractEditor#exists()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	public boolean exists() {
@@ -110,9 +110,9 @@ public abstract class AbstractFileEditor implements IFileEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IFileEditor#create()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	public void create() {

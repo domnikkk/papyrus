@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - support adapter instead of custom resource impl for CSS (CDO)
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.notation;
 
@@ -36,7 +36,7 @@ import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 
 /**
  * Default implementation for CSSDiagram
- * 
+ *
  * @author Camille letavernier
  */
 @SuppressWarnings("restriction")
@@ -46,8 +46,9 @@ public class CSSDiagramImpl extends DiagramImpl implements CSSDiagram {
 
 	private Adapter disposeListener;
 
+	@Override
 	public ExtendedCSSEngine getEngine() {
-		if(engine == null) {
+		if (engine == null) {
 			engine = new DiagramCSSEngine(getModelEngine(), this);
 			eResource().eAdapters().add(disposeListener = new DiagramDisposeListener());
 		}
@@ -55,10 +56,10 @@ public class CSSDiagramImpl extends DiagramImpl implements CSSDiagram {
 	}
 
 	private void disposeEngine(Object notifier) {
-		if(engine != null) {
+		if (engine != null) {
 			engine.dispose();
 			engine = null;
-			((Resource)notifier).eAdapters().remove(disposeListener);
+			((Resource) notifier).eAdapters().remove(disposeListener);
 		}
 	}
 
@@ -66,22 +67,23 @@ public class CSSDiagramImpl extends DiagramImpl implements CSSDiagram {
 		return CSSNotationResource.getEngine(eResource());
 	}
 
+	@Override
 	public List<StyleSheet> getStyleSheets() {
 		List<StyleSheet> result = new LinkedList<StyleSheet>();
 
-		for(Object styleObject : getStyles()) {
-			if(styleObject instanceof NamedStyle) {
+		for (Object styleObject : getStyles()) {
+			if (styleObject instanceof NamedStyle) {
 
-				NamedStyle style = (NamedStyle)styleObject;
+				NamedStyle style = (NamedStyle) styleObject;
 
-				if(CSSStyles.CSS_DIAGRAM_STYLESHEETS_KEY.equals(style.getName())) {
-					if(style instanceof EObjectListValueStyle) {
+				if (CSSStyles.CSS_DIAGRAM_STYLESHEETS_KEY.equals(style.getName())) {
+					if (style instanceof EObjectListValueStyle) {
 
-						EObjectListValueStyle stylesheetsStyle = (EObjectListValueStyle)style;
+						EObjectListValueStyle stylesheetsStyle = (EObjectListValueStyle) style;
 
-						for(Object eObjectValue : stylesheetsStyle.getEObjectListValue()) {
-							if(eObjectValue instanceof StyleSheet) {
-								result.add((StyleSheet)eObjectValue);
+						for (Object eObjectValue : stylesheetsStyle.getEObjectListValue()) {
+							if (eObjectValue instanceof StyleSheet) {
+								result.add((StyleSheet) eObjectValue);
 							}
 						}
 					}
@@ -90,8 +92,9 @@ public class CSSDiagramImpl extends DiagramImpl implements CSSDiagram {
 		}
 
 		StyleSheet s = getViewpointDefinedStylesheet();
-		if (s != null)
+		if (s != null) {
 			result.add(s);
+		}
 
 		return result;
 	}
@@ -118,15 +121,15 @@ public class CSSDiagramImpl extends DiagramImpl implements CSSDiagram {
 
 		@Override
 		public void notifyChanged(Notification notification) {
-			switch(notification.getEventType()) {
+			switch (notification.getEventType()) {
 			case Notification.REMOVE:
-				if(notification.getOldValue() == CSSDiagramImpl.this) {
+				if (notification.getOldValue() == CSSDiagramImpl.this) {
 					disposeEngine(notification.getNotifier());
 				}
 				break;
 			case Notification.REMOVE_MANY:
-				for(Object object : (Collection<?>)notification.getOldValue()) {
-					if(object == CSSDiagramImpl.this) {
+				for (Object object : (Collection<?>) notification.getOldValue()) {
+					if (object == CSSDiagramImpl.this) {
 						disposeEngine(notification.getNotifier());
 					}
 				}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,87 +22,93 @@ import org.eclipse.papyrus.uml.diagram.composite.part.UMLDiagramEditorPlugin;
 /**
  * This class is used to constrain the position of Port when they are added on a Property or a
  * StructuredClassifier
- * 
+ *
  * <pre>
  * 	 +-------------------+
  * 	 |    [Class]        |
  * 	 +-------------------+
  * 	 |                   |
  * 	 |                   |
- * 	 |                  +-+ - Expected position of Port 
+ * 	 |                  +-+ - Expected position of Port
  * 	 |                  +-+
  * 	 |                   |
  * 	 +-------------------+
- * 
+ *
  * </pre>
- * 
+ *
  * <pre>
  * TODO  : The port is not re-sizable
- * 
+ *
  */
 public class PortPositionLocator implements IBorderItemLocator {
 
-	protected org.eclipse.papyrus.uml.diagram.common.locator.PortPositionLocator currentLocator= null;
-	protected  IFigure parentFigure;
+	protected org.eclipse.papyrus.uml.diagram.common.locator.PortPositionLocator currentLocator = null;
+	protected IFigure parentFigure;
 	protected int preferredSide;
 
 	/** Constructor **/
 	public PortPositionLocator(IFigure parentFigure, int preferredSide) {
-		currentLocator= new ExternalPortPositionLocator(parentFigure, preferredSide);
-		this.parentFigure= parentFigure;
-		this.preferredSide= preferredSide;
+		currentLocator = new ExternalPortPositionLocator(parentFigure, preferredSide);
+		this.parentFigure = parentFigure;
+		this.preferredSide = preferredSide;
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getValidLocation(org.eclipse.draw2d.geometry.Rectangle,
-	 *      org.eclipse.draw2d.IFigure)
-	 * 
+	 *
+	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getValidLocation(org.eclipse.draw2d.geometry.Rectangle, org.eclipse.draw2d.IFigure)
+	 *
 	 * @param proposedLocation
 	 * @param borderItem
 	 * @return a valid location
 	 */
+	@Override
 	public Rectangle getValidLocation(Rectangle proposedLocation, IFigure borderItem) {
 		updateLocator();
 		return currentLocator.getValidLocation(proposedLocation, borderItem);
 	}
 
+	@Override
 	public void setConstraint(Rectangle constraint) {
 		updateLocator();
 		currentLocator.setConstraint(constraint);
 
 	}
 
+	@Override
 	public int getCurrentSideOfParent() {
 		updateLocator();
 		return currentLocator.getCurrentSideOfParent();
 	}
 
+	@Override
 	public void relocate(IFigure target) {
 		updateLocator();
 		currentLocator.relocate(target);
 
 	}
+
 	public Rectangle getPreferredLocation(Rectangle proposedLocation) {
 		return currentLocator.getPreferredLocation(proposedLocation);
 	}
 
-	public void setInternal(){
-		if(currentLocator instanceof ExternalPortPositionLocator){
-			currentLocator= new InternalPortPositionLocator(parentFigure, preferredSide);
+	public void setInternal() {
+		if (currentLocator instanceof ExternalPortPositionLocator) {
+			currentLocator = new InternalPortPositionLocator(parentFigure, preferredSide);
 		}
 	}
-	public void setExternal(){
-		if(currentLocator instanceof InternalPortPositionLocator){
-			currentLocator= new ExternalPortPositionLocator(parentFigure, preferredSide);
+
+	public void setExternal() {
+		if (currentLocator instanceof InternalPortPositionLocator) {
+			currentLocator = new ExternalPortPositionLocator(parentFigure, preferredSide);
 		}
 	}
-	protected void updateLocator(){
-		boolean isInside=UMLDiagramEditorPlugin.getInstance().getPreferenceStore().getBoolean(CustomDiagramPreferencePage.IS_INSIDE_COMPOSITE_COMPOSITE_DIAGRAM);
-		if(isInside){
+
+	protected void updateLocator() {
+		boolean isInside = UMLDiagramEditorPlugin.getInstance().getPreferenceStore().getBoolean(CustomDiagramPreferencePage.IS_INSIDE_COMPOSITE_COMPOSITE_DIAGRAM);
+		if (isInside) {
 			setInternal();
 		}
-		else{
+		else {
 			setExternal();
 		}
 

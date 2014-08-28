@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,22 +27,25 @@ public abstract class UMLAbstractNavigatorItem extends PlatformObject {
 	 * @generated
 	 */
 	static {
-		final Class[] supportedTypes = new Class[]{ ITabbedPropertySheetPageContributor.class };
+		final Class[] supportedTypes = new Class[] { ITabbedPropertySheetPageContributor.class };
 		final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
 
+			@Override
 			public String getContributorId() {
 				return "org.eclipse.papyrus.uml.diagram.sequence"; //$NON-NLS-1$
 			}
 		};
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
+			@Override
 			public Object getAdapter(Object adaptableObject, Class adapterType) {
-				if(adaptableObject instanceof org.eclipse.papyrus.uml.diagram.sequence.navigator.UMLAbstractNavigatorItem && adapterType == ITabbedPropertySheetPageContributor.class) {
+				if (adaptableObject instanceof org.eclipse.papyrus.uml.diagram.sequence.navigator.UMLAbstractNavigatorItem && adapterType == ITabbedPropertySheetPageContributor.class) {
 					return propertySheetPageContributor;
 				}
 				return null;
 			}
 
+			@Override
 			public Class[] getAdapterList() {
 				return supportedTypes;
 			}

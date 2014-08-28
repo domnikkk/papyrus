@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.AbsoluteTimeEventRule;
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage;
 
@@ -18,25 +17,27 @@ import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransi
  */
 public class AbsoluteTimeEventRuleImpl extends TimeEventRuleImpl implements AbsoluteTimeEventRule
 {
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected AbsoluteTimeEventRuleImpl()
-  {
-    super();
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected AbsoluteTimeEventRuleImpl()
+	{
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return UmlTransitionPackage.Literals.ABSOLUTE_TIME_EVENT_RULE;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass()
+	{
+		return UmlTransitionPackage.Literals.ABSOLUTE_TIME_EVENT_RULE;
+	}
 
-} //AbsoluteTimeEventRuleImpl
+} // AbsoluteTimeEventRuleImpl

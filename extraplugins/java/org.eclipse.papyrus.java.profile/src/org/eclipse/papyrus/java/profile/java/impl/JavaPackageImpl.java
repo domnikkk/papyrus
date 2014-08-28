@@ -11,9 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.java.profile.java.JavaClass;
 import org.eclipse.papyrus.java.profile.java.JavaFactory;
 import org.eclipse.papyrus.java.profile.java.JavaGen;
@@ -27,19 +25,20 @@ import org.eclipse.papyrus.java.profile.java.JavaProperty;
 import org.eclipse.papyrus.java.profile.java.JavaSrcFolder;
 import org.eclipse.papyrus.java.profile.java.PrimitiveType;
 import org.eclipse.papyrus.java.profile.java.TrueFalseDefault;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass javaClassEClass = null;
@@ -47,6 +46,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass javaGenEClass = null;
@@ -54,6 +54,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass javaNamedElementEClass = null;
@@ -61,6 +62,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass javaPackage_EClass = null;
@@ -68,6 +70,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass javaMethodEClass = null;
@@ -75,6 +78,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass javaParameterEClass = null;
@@ -82,6 +86,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass javaPropertyEClass = null;
@@ -89,6 +94,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass primitiveTypeEClass = null;
@@ -96,6 +102,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass javaProjectEClass = null;
@@ -103,6 +110,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass javaSrcFolderEClass = null;
@@ -110,20 +118,17 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EEnum trueFalseDefaultEEnum = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#eNS_URI
 	 * @see #init()
@@ -136,27 +141,29 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link JavaPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 *
+	 * <p>
+	 * This method is used to initialize {@link JavaPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static JavaPackage init() {
-		if (isInited) return (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
+		if (isInited) {
+			return (JavaPackage) EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		JavaPackageImpl theJavaPackage = (JavaPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof JavaPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new JavaPackageImpl());
+		JavaPackageImpl theJavaPackage = (JavaPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof JavaPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new JavaPackageImpl());
 
 		isInited = true;
 
@@ -172,7 +179,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 		// Mark meta-data to indicate it can't be changed
 		theJavaPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(JavaPackage.eNS_URI, theJavaPackage);
 		return theJavaPackage;
@@ -181,8 +188,10 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaClass() {
 		return javaClassEClass;
 	}
@@ -190,62 +199,76 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getJavaClass_Base_Classifier() {
-		return (EReference)javaClassEClass.getEStructuralFeatures().get(0);
+		return (EReference) javaClassEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaClass_IsFinal() {
-		return (EAttribute)javaClassEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) javaClassEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaClass_IsAbstract() {
-		return (EAttribute)javaClassEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) javaClassEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaClass_IsStatic() {
-		return (EAttribute)javaClassEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) javaClassEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaClass_ExplicitPlainTextRequiredImports() {
-		return (EAttribute)javaClassEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) javaClassEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getJavaClass_ExplicitRequiredImports() {
-		return (EReference)javaClassEClass.getEStructuralFeatures().get(5);
+		return (EReference) javaClassEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaGen() {
 		return javaGenEClass;
 	}
@@ -253,26 +276,32 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaGen_SrcName() {
-		return (EAttribute)javaGenEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) javaGenEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaGen_ProjectName() {
-		return (EAttribute)javaGenEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) javaGenEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaNamedElement() {
 		return javaNamedElementEClass;
 	}
@@ -280,53 +309,65 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaNamedElement_Name() {
-		return (EAttribute)javaNamedElementEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) javaNamedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaNamedElement_Author() {
-		return (EAttribute)javaNamedElementEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) javaNamedElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaNamedElement_Version() {
-		return (EAttribute)javaNamedElementEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) javaNamedElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaNamedElement_Comment() {
-		return (EAttribute)javaNamedElementEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) javaNamedElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaNamedElement_IsGenerated() {
-		return (EAttribute)javaNamedElementEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) javaNamedElementEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaPackage_() {
 		return javaPackage_EClass;
 	}
@@ -334,26 +375,32 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaPackage__PackageName() {
-		return (EAttribute)javaPackage_EClass.getEStructuralFeatures().get(0);
+		return (EAttribute) javaPackage_EClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getJavaPackage__Base_Package() {
-		return (EReference)javaPackage_EClass.getEStructuralFeatures().get(1);
+		return (EReference) javaPackage_EClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaMethod() {
 		return javaMethodEClass;
 	}
@@ -361,89 +408,109 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaMethod_IsStatic() {
-		return (EAttribute)javaMethodEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) javaMethodEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaMethod_IsFinal() {
-		return (EAttribute)javaMethodEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) javaMethodEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaMethod_IsAbstract() {
-		return (EAttribute)javaMethodEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) javaMethodEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaMethod_IsNative() {
-		return (EAttribute)javaMethodEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) javaMethodEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaMethod_IsSynchronized() {
-		return (EAttribute)javaMethodEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) javaMethodEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaMethod_IsConstructor() {
-		return (EAttribute)javaMethodEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) javaMethodEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getJavaMethod_Base_Operation() {
-		return (EReference)javaMethodEClass.getEStructuralFeatures().get(6);
+		return (EReference) javaMethodEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaMethod_ExplicitPlainTextRequiredImports() {
-		return (EAttribute)javaMethodEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) javaMethodEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getJavaMethod_ExplicitRequiredImports() {
-		return (EReference)javaMethodEClass.getEStructuralFeatures().get(8);
+		return (EReference) javaMethodEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaParameter() {
 		return javaParameterEClass;
 	}
@@ -451,26 +518,32 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaParameter_IsFinal() {
-		return (EAttribute)javaParameterEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) javaParameterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getJavaParameter_Base_Parameter() {
-		return (EReference)javaParameterEClass.getEStructuralFeatures().get(1);
+		return (EReference) javaParameterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaProperty() {
 		return javaPropertyEClass;
 	}
@@ -478,89 +551,109 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaProperty_IsAbstract() {
-		return (EAttribute)javaPropertyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) javaPropertyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaProperty_IsFinal() {
-		return (EAttribute)javaPropertyEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) javaPropertyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getJavaProperty_Base_Property() {
-		return (EReference)javaPropertyEClass.getEStructuralFeatures().get(2);
+		return (EReference) javaPropertyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaProperty_IsTransient() {
-		return (EAttribute)javaPropertyEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) javaPropertyEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaProperty_GenerateGetter() {
-		return (EAttribute)javaPropertyEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) javaPropertyEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaProperty_GenerateSetter() {
-		return (EAttribute)javaPropertyEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) javaPropertyEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaProperty_IsStatic() {
-		return (EAttribute)javaPropertyEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) javaPropertyEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJavaProperty_ExplicitPlainTextRequiredImports() {
-		return (EAttribute)javaPropertyEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) javaPropertyEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getJavaProperty_ExplicitRequiredImports() {
-		return (EReference)javaPropertyEClass.getEStructuralFeatures().get(8);
+		return (EReference) javaPropertyEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getPrimitiveType() {
 		return primitiveTypeEClass;
 	}
@@ -568,35 +661,43 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPrimitiveType_ImplementationClass() {
-		return (EAttribute)primitiveTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) primitiveTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPrimitiveType_Base_PrimitiveType() {
-		return (EReference)primitiveTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference) primitiveTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPrimitiveType_CollectionImplementationClass() {
-		return (EAttribute)primitiveTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) primitiveTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaProject() {
 		return javaProjectEClass;
 	}
@@ -604,17 +705,21 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getJavaProject_Base_Package() {
-		return (EReference)javaProjectEClass.getEStructuralFeatures().get(0);
+		return (EReference) javaProjectEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaSrcFolder() {
 		return javaSrcFolderEClass;
 	}
@@ -622,17 +727,21 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getJavaSrcFolder_Base_Package() {
-		return (EReference)javaSrcFolderEClass.getEStructuralFeatures().get(0);
+		return (EReference) javaSrcFolderEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EEnum getTrueFalseDefault() {
 		return trueFalseDefaultEEnum;
 	}
@@ -640,28 +749,34 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public JavaFactory getJavaFactory() {
-		return (JavaFactory)getEFactoryInstance();
+		return (JavaFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -732,19 +847,23 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -753,7 +872,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage) EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -772,12 +891,15 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(javaClassEClass, JavaClass.class, "JavaClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getJavaClass_Base_Classifier(), theUMLPackage.getClassifier(), null, "base_Classifier", null, 1, 1, JavaClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getJavaClass_Base_Classifier(), theUMLPackage.getClassifier(), null, "base_Classifier", null, 1, 1, JavaClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getJavaClass_IsFinal(), ecorePackage.getEBoolean(), "isFinal", null, 1, 1, JavaClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getJavaClass_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", null, 1, 1, JavaClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getJavaClass_IsStatic(), ecorePackage.getEBoolean(), "isStatic", null, 1, 1, JavaClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getJavaClass_ExplicitPlainTextRequiredImports(), ecorePackage.getEString(), "explicitPlainTextRequiredImports", null, 0, -1, JavaClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getJavaClass_ExplicitRequiredImports(), theUMLPackage.getClassifier(), null, "explicitRequiredImports", null, 0, -1, JavaClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getJavaClass_ExplicitPlainTextRequiredImports(), ecorePackage.getEString(), "explicitPlainTextRequiredImports", null, 0, -1, JavaClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
+		initEReference(getJavaClass_ExplicitRequiredImports(), theUMLPackage.getClassifier(), null, "explicitRequiredImports", null, 0, -1, JavaClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(javaGenEClass, JavaGen.class, "JavaGen", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJavaGen_SrcName(), ecorePackage.getEString(), "srcName", null, 1, 1, JavaGen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -792,7 +914,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 
 		initEClass(javaPackage_EClass, JavaPackage_.class, "JavaPackage_", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJavaPackage__PackageName(), ecorePackage.getEString(), "packageName", null, 1, 1, JavaPackage_.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getJavaPackage__Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 1, 1, JavaPackage_.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getJavaPackage__Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 1, 1, JavaPackage_.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 
 		initEClass(javaMethodEClass, JavaMethod.class, "JavaMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJavaMethod_IsStatic(), ecorePackage.getEBoolean(), "isStatic", null, 1, 1, JavaMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -801,35 +924,46 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 		initEAttribute(getJavaMethod_IsNative(), ecorePackage.getEBoolean(), "isNative", null, 1, 1, JavaMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getJavaMethod_IsSynchronized(), ecorePackage.getEBoolean(), "isSynchronized", null, 1, 1, JavaMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getJavaMethod_IsConstructor(), ecorePackage.getEBoolean(), "isConstructor", null, 1, 1, JavaMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getJavaMethod_Base_Operation(), theUMLPackage.getOperation(), null, "base_Operation", null, 1, 1, JavaMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getJavaMethod_ExplicitPlainTextRequiredImports(), ecorePackage.getEString(), "explicitPlainTextRequiredImports", null, 0, -1, JavaMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getJavaMethod_ExplicitRequiredImports(), theUMLPackage.getClassifier(), null, "explicitRequiredImports", null, 0, -1, JavaMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getJavaMethod_Base_Operation(), theUMLPackage.getOperation(), null, "base_Operation", null, 1, 1, JavaMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
+		initEAttribute(getJavaMethod_ExplicitPlainTextRequiredImports(), ecorePackage.getEString(), "explicitPlainTextRequiredImports", null, 0, -1, JavaMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
+		initEReference(getJavaMethod_ExplicitRequiredImports(), theUMLPackage.getClassifier(), null, "explicitRequiredImports", null, 0, -1, JavaMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(javaParameterEClass, JavaParameter.class, "JavaParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJavaParameter_IsFinal(), ecorePackage.getEBoolean(), "isFinal", null, 1, 1, JavaParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getJavaParameter_Base_Parameter(), theUMLPackage.getParameter(), null, "base_Parameter", null, 1, 1, JavaParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getJavaParameter_Base_Parameter(), theUMLPackage.getParameter(), null, "base_Parameter", null, 1, 1, JavaParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
 
 		initEClass(javaPropertyEClass, JavaProperty.class, "JavaProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJavaProperty_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", null, 1, 1, JavaProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getJavaProperty_IsFinal(), ecorePackage.getEBoolean(), "isFinal", null, 1, 1, JavaProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getJavaProperty_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, JavaProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getJavaProperty_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, JavaProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getJavaProperty_IsTransient(), ecorePackage.getEBoolean(), "isTransient", null, 1, 1, JavaProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getJavaProperty_GenerateGetter(), this.getTrueFalseDefault(), "generateGetter", "default", 1, 1, JavaProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getJavaProperty_GenerateSetter(), this.getTrueFalseDefault(), "generateSetter", "default", 1, 1, JavaProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getJavaProperty_IsStatic(), ecorePackage.getEBoolean(), "isStatic", null, 1, 1, JavaProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getJavaProperty_ExplicitPlainTextRequiredImports(), ecorePackage.getEString(), "explicitPlainTextRequiredImports", null, 0, -1, JavaProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getJavaProperty_ExplicitRequiredImports(), theUMLPackage.getClassifier(), null, "explicitRequiredImports", null, 0, -1, JavaProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getJavaProperty_ExplicitPlainTextRequiredImports(), ecorePackage.getEString(), "explicitPlainTextRequiredImports", null, 0, -1, JavaProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
+		initEReference(getJavaProperty_ExplicitRequiredImports(), theUMLPackage.getClassifier(), null, "explicitRequiredImports", null, 0, -1, JavaProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(primitiveTypeEClass, PrimitiveType.class, "PrimitiveType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPrimitiveType_ImplementationClass(), ecorePackage.getEString(), "implementationClass", null, 1, 1, PrimitiveType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getPrimitiveType_Base_PrimitiveType(), theUMLPackage.getPrimitiveType(), null, "base_PrimitiveType", null, 1, 1, PrimitiveType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getPrimitiveType_CollectionImplementationClass(), ecorePackage.getEString(), "collectionImplementationClass", null, 1, 1, PrimitiveType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPrimitiveType_Base_PrimitiveType(), theUMLPackage.getPrimitiveType(), null, "base_PrimitiveType", null, 1, 1, PrimitiveType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getPrimitiveType_CollectionImplementationClass(), ecorePackage.getEString(), "collectionImplementationClass", null, 1, 1, PrimitiveType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 
 		initEClass(javaProjectEClass, JavaProject.class, "JavaProject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getJavaProject_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 1, 1, JavaProject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getJavaProject_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 1, 1, JavaProject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 
 		initEClass(javaSrcFolderEClass, JavaSrcFolder.class, "JavaSrcFolder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getJavaSrcFolder_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 1, 1, JavaSrcFolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getJavaSrcFolder_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 1, 1, JavaSrcFolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(trueFalseDefaultEEnum, TrueFalseDefault.class, "TrueFalseDefault");
@@ -841,4 +975,4 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 		createResource(eNS_URI);
 	}
 
-} //JavaPackageImpl
+} // JavaPackageImpl

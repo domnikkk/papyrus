@@ -13,10 +13,10 @@ package org.eclipse.papyrus.uml.diagram.statemachine.tests.canonical;
 
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.diagram.tests.canonical.TestLink;
 import org.eclipse.papyrus.uml.diagram.statemachine.CreateStateMachineDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.statemachine.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.statemachine.tests.IStateMachineDiagramTestsConstants;
+import org.eclipse.papyrus.uml.diagram.tests.canonical.TestLink;
 
 
 /**

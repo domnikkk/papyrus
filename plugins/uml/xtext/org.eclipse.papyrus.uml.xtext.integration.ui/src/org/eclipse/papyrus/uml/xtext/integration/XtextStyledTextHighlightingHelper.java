@@ -106,7 +106,7 @@ class XtextStyledTextHighlightingHelper implements IPropertyChangeListener {
 
 	/**
 	 * Returns this hightlighter's reconciler.
-	 * 
+	 *
 	 * @return the highlighter reconciler or <code>null</code> if none
 	 */
 	public XtextStyledTextHighlightingReconciler getReconciler() {

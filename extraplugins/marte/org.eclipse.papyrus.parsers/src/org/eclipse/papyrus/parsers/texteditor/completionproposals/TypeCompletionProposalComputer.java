@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ import org.eclipse.uml2.uml.TemplateableElement;
 import org.eclipse.uml2.uml.Type;
 
 /**
- * 
+ *
  */
 public class TypeCompletionProposalComputer implements ICompletionProposalComputer {
 
@@ -57,9 +57,11 @@ public class TypeCompletionProposalComputer implements ICompletionProposalComput
 
 	/**
 	 * Instantiates a new type completion proposal computer with active filter on property
-	 * 
-	 * @param completionFilter the i completion filter
-	 * @param propertyType the property type
+	 *
+	 * @param completionFilter
+	 *            the i completion filter
+	 * @param propertyType
+	 *            the property type
 	 */
 	public TypeCompletionProposalComputer(ICompletionFilter completionFilter, int propertyType) {
 		this.completionFilter = completionFilter == null ? new CompletionFilterSourceViewerConfiguration.NullCompletionFilter()
@@ -68,8 +70,8 @@ public class TypeCompletionProposalComputer implements ICompletionProposalComput
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return the element
 	 */
 	public Element getElement() {
@@ -77,8 +79,8 @@ public class TypeCompletionProposalComputer implements ICompletionProposalComput
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param element
 	 *            the element to set
 	 */
@@ -87,12 +89,12 @@ public class TypeCompletionProposalComputer implements ICompletionProposalComput
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param selectionRange
 	 * @param prefix
 	 * @param documentOffset
-	 * 
+	 *
 	 * @return
 	 */
 	public List<ICompletionProposal> generateCompletionProposals(int documentOffset, int selectionRange, String prefix) {
@@ -131,10 +133,10 @@ public class TypeCompletionProposalComputer implements ICompletionProposalComput
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param element
-	 * 
+	 *
 	 * @return
 	 */
 	public Set<Type> computeAccessibleTypeList(Element element) {
@@ -163,11 +165,11 @@ public class TypeCompletionProposalComputer implements ICompletionProposalComput
 	private class TypeNameComparator implements Comparator<Type> {
 
 		/**
-		 * 
-		 * 
+		 *
+		 *
 		 * @param o2
 		 * @param o1
-		 * 
+		 *
 		 * @return
 		 */
 		public int compare(Type o1, Type o2) {

@@ -44,8 +44,7 @@ public class JavaQueryEvaluatorFactory implements IQueryEvaluatorFactory {
 			JavaQuery javaQuery = (JavaQuery) query;
 			String className = javaQuery.getImplementationClassName();
 			if (className == null || className.length() == 0) {
-				throw new QueryExecutionException(
-						"implementationClassName is empty"); //$NON-NLS-1$
+				throw new QueryExecutionException("implementationClassName is empty"); //$NON-NLS-1$
 			}
 			Class<?> javaQueryClass = bundle.loadClass(className);
 			if (!IJavaQuery.class.isAssignableFrom(javaQueryClass)) {

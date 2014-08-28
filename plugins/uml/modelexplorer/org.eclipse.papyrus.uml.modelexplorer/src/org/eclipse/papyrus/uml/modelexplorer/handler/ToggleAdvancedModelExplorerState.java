@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,11 +23,11 @@ import org.eclipse.papyrus.views.modelexplorer.Activator;
 
 /**
  * State for the AdvancedModelExplorer toggle action
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  * @see {@link ToggleAdvancedModelExplorerHandler}
- * 
+ *
  */
 public class ToggleAdvancedModelExplorerState extends State {
 
@@ -37,15 +37,15 @@ public class ToggleAdvancedModelExplorerState extends State {
 		ICustomizationCatalogManager customCatalog = ICustomizationCatalogManagerFactory.DEFAULT.getOrCreateCustomizationCatalogManager(customizationManager.getResourceSet());
 		Customization simpleUMLCustomization = null;
 
-		//look for SIMPLE UML Customization
-		for(Customization customization : customCatalog.getRegisteredCustomizations()) {
-			if(ToggleAdvancedModelExplorerHandler.SIMPLE_UML_CUSTOMIZATION.equals(customization.getName())){
-				simpleUMLCustomization=	customization;
+		// look for SIMPLE UML Customization
+		for (Customization customization : customCatalog.getRegisteredCustomizations()) {
+			if (ToggleAdvancedModelExplorerHandler.SIMPLE_UML_CUSTOMIZATION.equals(customization.getName())) {
+				simpleUMLCustomization = customization;
 			}
 		}
 
-		if(simpleUMLCustomization == null) {
-			//The SimpleUML Customization doesn't exist. The advanced mode is activated
+		if (simpleUMLCustomization == null) {
+			// The SimpleUML Customization doesn't exist. The advanced mode is activated
 			return true;
 		}
 

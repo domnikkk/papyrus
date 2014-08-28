@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,13 +21,13 @@ import org.eclipse.papyrus.uml.diagram.timing.custom.utils.Constants;
 
 /**
  * @author vgillet
- * 
+ *
  */
 public class CompactLifelineFigure extends LifelineFigure {
 
 	/**
 	 * Get the rectangle which contains all labels
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure#getDefaultLabelsContainer()
 	 * @return lifeline labels rectangle
 	 */
@@ -55,14 +55,15 @@ public class CompactLifelineFigure extends LifelineFigure {
 		};
 		this.lifelineDataContainerFigure.setLayoutManager(new AbstractLayout() {
 
+			@Override
 			public void layout(final IFigure container) {
 				final Rectangle clientArea = container.getClientArea();
 				final List<?> children = container.getChildren();
-				for(int i = 0; i < children.size(); i++) {
-					final IFigure child = (IFigure)children.get(i);
-					if(child == getTimelineContainerFigure()) {
+				for (int i = 0; i < children.size(); i++) {
+					final IFigure child = (IFigure) children.get(i);
+					if (child == getTimelineContainerFigure()) {
 						child.setBounds(new Rectangle(clientArea.x, clientArea.y, clientArea.width, clientArea.height - Constants.TIME_RULER_HEIGHT));
-					} else if(child == getTimeRulerContainerFigure()) {
+					} else if (child == getTimeRulerContainerFigure()) {
 						child.setBounds(new Rectangle(clientArea.x, clientArea.y + clientArea.height - Constants.TIME_RULER_HEIGHT, clientArea.width, Constants.TIME_RULER_HEIGHT));
 					}
 				}

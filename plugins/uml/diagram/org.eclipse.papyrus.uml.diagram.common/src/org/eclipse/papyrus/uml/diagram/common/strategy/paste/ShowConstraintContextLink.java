@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,11 +34,11 @@ import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramEditPartsUtil;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Namespace;
-	
+
 
 /**
  * Show the <<context>> link between a constraint and its context
- * 
+ *
  * @author bmaggi
  */
 public class ShowConstraintContextLink extends AbstractTransactionalCommand {
@@ -51,7 +51,7 @@ public class ShowConstraintContextLink extends AbstractTransactionalCommand {
 
 	/**
 	 * Show the <<context>> link between a constraint and its context
-	 * 
+	 *
 	 * @param domain
 	 * @param targetEditPart
 	 * @param constraintView
@@ -59,32 +59,32 @@ public class ShowConstraintContextLink extends AbstractTransactionalCommand {
 	public ShowConstraintContextLink(TransactionalEditingDomain domain, GraphicalEditPart targetEditPart, View constraintView) {
 		super(domain, "Show Constraint Context Link", null);
 		this.diagramEP = DiagramEditPartsUtil.getDiagramEditPart(targetEditPart);
-		this.constraint = (Constraint)constraintView.getElement();
+		this.constraint = (Constraint) constraintView.getElement();
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
 	 * org.eclipse.core.runtime.IAdaptable)
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(diagramEP != null && getEditingDomain() != null) {
+		if (diagramEP != null && getEditingDomain() != null) {
 			diagramEP.refresh();
 			Namespace context = constraint.getContext();
 			Collection<EditPart> allTopSemanticEditPart = DiagramEditPartsUtil.getAllTopSemanticEditPart(diagramEP);
 			EditPart constraintEditPart = getEditPart(constraint, allTopSemanticEditPart);
 			EditPart contextEditPart = getEditPart(context, allTopSemanticEditPart);
 
-			if(constraintEditPart != null && contextEditPart != null) {
+			if (constraintEditPart != null && contextEditPart != null) {
 				Collection<EditPart> constraintAndContext = new ArrayList<EditPart>();
 				constraintAndContext.add(constraintEditPart);
 				constraintAndContext.add(contextEditPart);
 				final Request request = new ShowHideRelatedLinkRequest(constraintAndContext, ShowHideKind.SHOW_ALL_LINK_BETWEEN_SELECTED_ELEMENT);
 				final Command cmd = diagramEP.getCommand(request);
-				if(cmd != null) {
+				if (cmd != null) {
 					cmd.execute();
 				}
 			}
@@ -94,18 +94,18 @@ public class ShowConstraintContextLink extends AbstractTransactionalCommand {
 
 	/**
 	 * Return the correct edit of a specific namedElement from an editPartCollection
-	 * 
+	 *
 	 * @param namedElement
 	 * @param editPartCollection
 	 * @return
 	 */
 	protected EditPart getEditPart(NamedElement namedElement, Collection<EditPart> editPartCollection) {
-		for(EditPart editPart : editPartCollection) {
+		for (EditPart editPart : editPartCollection) {
 			Object model = editPart.getModel();
-			if(model instanceof View) {
-				View view = (View)model;
+			if (model instanceof View) {
+				View view = (View) model;
 				EObject element = view.getElement();
-				if(namedElement.equals(element)) {
+				if (namedElement.equals(element)) {
 					return editPart;
 				}
 			}

@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011, 2012 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 366055 - NavigationQuery
  *       Gregoire Dupe (Mia-Software) - Bug 369673 - [Facet] IsOneOfQuery
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.Runt
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.impl.ETypedElementPrimitiveTypeResultImpl#getResult <em>Result</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.impl.ETypedElementPrimitiveTypeResultImpl#getResult <em>Result</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	 * The cached value of the '{@link #getResult() <em>Result</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getResult()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ETypedElementPrimitiveTypeResultImpl() {
@@ -61,6 +63,7 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,6 +74,7 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public T getResult() {
@@ -80,25 +84,28 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setResult(T newResult) {
 		T oldResult = result;
 		result = newResult;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.ETYPED_ELEMENT_PRIMITIVE_TYPE_RESULT__RESULT, oldResult, result));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RuntimePackage.ETYPED_ELEMENT_PRIMITIVE_TYPE_RESULT__RESULT:
-				return getResult();
+		case RuntimePackage.ETYPED_ELEMENT_PRIMITIVE_TYPE_RESULT__RESULT:
+			return getResult();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,15 +113,16 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RuntimePackage.ETYPED_ELEMENT_PRIMITIVE_TYPE_RESULT__RESULT:
-				setResult((T)newValue);
-				return;
+		case RuntimePackage.ETYPED_ELEMENT_PRIMITIVE_TYPE_RESULT__RESULT:
+			setResult((T) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -122,14 +130,15 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.ETYPED_ELEMENT_PRIMITIVE_TYPE_RESULT__RESULT:
-				setResult((T)null);
-				return;
+		case RuntimePackage.ETYPED_ELEMENT_PRIMITIVE_TYPE_RESULT__RESULT:
+			setResult((T) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -137,13 +146,14 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.ETYPED_ELEMENT_PRIMITIVE_TYPE_RESULT__RESULT:
-				return result != null;
+		case RuntimePackage.ETYPED_ELEMENT_PRIMITIVE_TYPE_RESULT__RESULT:
+			return result != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -151,11 +161,14 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (result: "); //$NON-NLS-1$
@@ -164,4 +177,4 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 		return result.toString();
 	}
 
-} //ETypedElementPrimitiveTypeResultImpl
+} // ETypedElementPrimitiveTypeResultImpl

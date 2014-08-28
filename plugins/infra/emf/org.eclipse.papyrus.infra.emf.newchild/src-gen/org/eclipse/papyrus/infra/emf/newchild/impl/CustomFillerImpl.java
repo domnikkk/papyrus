@@ -19,7 +19,7 @@ import org.eclipse.papyrus.infra.emf.newchild.NewchildPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.CustomFillerImpl#getClassName <em>Class Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.CustomFillerImpl#getClassName <em>Class Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,6 +30,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	 * The default value of the '{@link #getClassName() <em>Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getClassName()
 	 * @generated
 	 * @ordered
@@ -40,6 +41,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	 * The cached value of the '{@link #getClassName() <em>Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getClassName()
 	 * @generated
 	 * @ordered
@@ -49,6 +51,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected CustomFillerImpl() {
@@ -58,6 +61,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,6 +72,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getClassName() {
@@ -77,25 +82,28 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setClassName(String newClassName) {
 		String oldClassName = className;
 		className = newClassName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NewchildPackage.CUSTOM_FILLER__CLASS_NAME, oldClassName, className));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NewchildPackage.CUSTOM_FILLER__CLASS_NAME:
-				return getClassName();
+		case NewchildPackage.CUSTOM_FILLER__CLASS_NAME:
+			return getClassName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -103,14 +111,15 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NewchildPackage.CUSTOM_FILLER__CLASS_NAME:
-				setClassName((String)newValue);
-				return;
+		case NewchildPackage.CUSTOM_FILLER__CLASS_NAME:
+			setClassName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -118,14 +127,15 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NewchildPackage.CUSTOM_FILLER__CLASS_NAME:
-				setClassName(CLASS_NAME_EDEFAULT);
-				return;
+		case NewchildPackage.CUSTOM_FILLER__CLASS_NAME:
+			setClassName(CLASS_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -133,13 +143,14 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NewchildPackage.CUSTOM_FILLER__CLASS_NAME:
-				return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
+		case NewchildPackage.CUSTOM_FILLER__CLASS_NAME:
+			return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -147,11 +158,14 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (className: ");
@@ -160,4 +174,4 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 		return result.toString();
 	}
 
-} //CustomFillerImpl
+} // CustomFillerImpl

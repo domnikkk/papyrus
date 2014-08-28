@@ -9,10 +9,10 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
- *****************************************************************************/ 
+ *****************************************************************************/
 
 /**
  * <copyright>
@@ -28,9 +28,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -40,7 +38,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmFactory;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
@@ -49,11 +46,12 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class JDTMethodItemProvider
-	extends JDTMemberItemProvider
-	implements
+		extends JDTMemberItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -63,6 +61,7 @@ public class JDTMethodItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public JDTMethodItemProvider(AdapterFactory adapterFactory) {
@@ -73,6 +72,7 @@ public class JDTMethodItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,140 +94,146 @@ public class JDTMethodItemProvider
 	 * This adds a property descriptor for the Abstract feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addAbstractPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JDTMethod_abstract_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JDTMethod_abstract_feature", "_UI_JDTMethod_type"),
-				 JdtmmPackage.Literals.JDT_METHOD__ABSTRACT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JDTMethod_abstract_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JDTMethod_abstract_feature", "_UI_JDTMethod_type"),
+						JdtmmPackage.Literals.JDT_METHOD__ABSTRACT,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Final feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addFinalPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JDTMethod_final_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JDTMethod_final_feature", "_UI_JDTMethod_type"),
-				 JdtmmPackage.Literals.JDT_METHOD__FINAL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JDTMethod_final_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JDTMethod_final_feature", "_UI_JDTMethod_type"),
+						JdtmmPackage.Literals.JDT_METHOD__FINAL,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Static feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addStaticPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JDTMethod_static_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JDTMethod_static_feature", "_UI_JDTMethod_type"),
-				 JdtmmPackage.Literals.JDT_METHOD__STATIC,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JDTMethod_static_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JDTMethod_static_feature", "_UI_JDTMethod_type"),
+						JdtmmPackage.Literals.JDT_METHOD__STATIC,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Exceptions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addExceptionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JDTMethod_exceptions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JDTMethod_exceptions_feature", "_UI_JDTMethod_type"),
-				 JdtmmPackage.Literals.JDT_METHOD__EXCEPTIONS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JDTMethod_exceptions_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JDTMethod_exceptions_feature", "_UI_JDTMethod_type"),
+						JdtmmPackage.Literals.JDT_METHOD__EXCEPTIONS,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Synchronized feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addSynchronizedPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JDTMethod_synchronized_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JDTMethod_synchronized_feature", "_UI_JDTMethod_type"),
-				 JdtmmPackage.Literals.JDT_METHOD__SYNCHRONIZED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JDTMethod_synchronized_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JDTMethod_synchronized_feature", "_UI_JDTMethod_type"),
+						JdtmmPackage.Literals.JDT_METHOD__SYNCHRONIZED,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Constructor feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addConstructorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JDTMethod_constructor_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JDTMethod_constructor_feature", "_UI_JDTMethod_type"),
-				 JdtmmPackage.Literals.JDT_METHOD__CONSTRUCTOR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JDTMethod_constructor_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JDTMethod_constructor_feature", "_UI_JDTMethod_type"),
+						JdtmmPackage.Literals.JDT_METHOD__CONSTRUCTOR,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,6 +250,7 @@ public class JDTMethodItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,6 +265,7 @@ public class JDTMethodItemProvider
 	 * This returns JDTMethod.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,14 +277,15 @@ public class JDTMethodItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((JDTMethod)object).getElementName();
+		String label = ((JDTMethod) object).getElementName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_JDTMethod_type") :
-			getString("_UI_JDTMethod_type") + " " + label;
+				getString("_UI_JDTMethod_type") :
+				getString("_UI_JDTMethod_type") + " " + label;
 	}
 
 	/**
@@ -284,6 +293,7 @@ public class JDTMethodItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,18 +301,18 @@ public class JDTMethodItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(JDTMethod.class)) {
-			case JdtmmPackage.JDT_METHOD__ABSTRACT:
-			case JdtmmPackage.JDT_METHOD__FINAL:
-			case JdtmmPackage.JDT_METHOD__STATIC:
-			case JdtmmPackage.JDT_METHOD__SYNCHRONIZED:
-			case JdtmmPackage.JDT_METHOD__CONSTRUCTOR:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case JdtmmPackage.JDT_METHOD__RETURN_TYPE:
-			case JdtmmPackage.JDT_METHOD__PARAMETERS:
-			case JdtmmPackage.JDT_METHOD__BODIES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case JdtmmPackage.JDT_METHOD__ABSTRACT:
+		case JdtmmPackage.JDT_METHOD__FINAL:
+		case JdtmmPackage.JDT_METHOD__STATIC:
+		case JdtmmPackage.JDT_METHOD__SYNCHRONIZED:
+		case JdtmmPackage.JDT_METHOD__CONSTRUCTOR:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case JdtmmPackage.JDT_METHOD__RETURN_TYPE:
+		case JdtmmPackage.JDT_METHOD__PARAMETERS:
+		case JdtmmPackage.JDT_METHOD__BODIES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -312,6 +322,7 @@ public class JDTMethodItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -319,25 +330,26 @@ public class JDTMethodItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(JdtmmPackage.Literals.JDT_METHOD__RETURN_TYPE,
-				 JdtmmFactory.eINSTANCE.createJDTParameter()));
+						JdtmmFactory.eINSTANCE.createJDTParameter()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(JdtmmPackage.Literals.JDT_METHOD__PARAMETERS,
-				 JdtmmFactory.eINSTANCE.createJDTParameter()));
+						JdtmmFactory.eINSTANCE.createJDTParameter()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(JdtmmPackage.Literals.JDT_METHOD__BODIES,
-				 JdtmmFactory.eINSTANCE.createJDTOpaqueBody()));
+						JdtmmFactory.eINSTANCE.createJDTOpaqueBody()));
 	}
 
 	/**
 	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -346,13 +358,12 @@ public class JDTMethodItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == JdtmmPackage.Literals.JDT_METHOD__RETURN_TYPE ||
-			childFeature == JdtmmPackage.Literals.JDT_METHOD__PARAMETERS;
+				childFeature == JdtmmPackage.Literals.JDT_METHOD__RETURN_TYPE ||
+						childFeature == JdtmmPackage.Literals.JDT_METHOD__PARAMETERS;
 
 		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}

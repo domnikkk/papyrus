@@ -5,9 +5,9 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.papyrus.uml.tools.Activator;
 
-public abstract class AbstractUMLValidator implements IValidator{
+public abstract class AbstractUMLValidator implements IValidator {
 
-	
+
 	protected String pluginId;
 
 
@@ -16,13 +16,13 @@ public abstract class AbstractUMLValidator implements IValidator{
 	}
 
 	public String getPluginId() {
-		if(pluginId == null) {
+		if (pluginId == null) {
 			return Activator.PLUGIN_ID;
 		} else {
 			return pluginId;
 		}
 	}
-	
+
 	protected IStatus warning(String message) {
 		return new Status(IStatus.WARNING, getPluginId(), message);
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderSer
 
 /**
  * Abstract class for axis comparator
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public abstract class AbstractAxisComparator implements Comparator<Object> {
 
@@ -64,15 +64,15 @@ public abstract class AbstractAxisComparator implements Comparator<Object> {
 	protected final Object selectedColumn;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param selectedColumn
 	 * @param direction
 	 * @param tableManager
 	 */
 	public AbstractAxisComparator(final Object selectedColumn, final SortDirectionEnum direction, final INattableModelManager tableManager) {
-		this.configRegistry = ((NatTable)((IAdaptable)tableManager).getAdapter(NatTable.class)).getConfigRegistry();
+		this.configRegistry = ((NatTable) ((IAdaptable) tableManager).getAdapter(NatTable.class)).getConfigRegistry();
 		this.tableManager = tableManager;
 		this.direction = direction;
 		this.selectedColumn = selectedColumn;

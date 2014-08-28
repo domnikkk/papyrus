@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * Listener for stereotypes application/deapplication
- * 
+ *
  * @author remi.schnekenburger@cea.fr
  */
 public class PapyrusStereotypeListener implements IPapyrusListener {
@@ -35,7 +35,7 @@ public class PapyrusStereotypeListener implements IPapyrusListener {
 	/**
 	 * An {@link Notification#getEventType event type} indicating that a
 	 * stereotype has been applied to the notifier
-	 * 
+	 *
 	 * @see Notification#getEventType
 	 */
 	public static final int APPLIED_STEREOTYPE = 20;
@@ -43,7 +43,7 @@ public class PapyrusStereotypeListener implements IPapyrusListener {
 	/**
 	 * An {@link Notification#getEventType event type} indicating that a
 	 * stereotype has been unapplied to the notifier
-	 * 
+	 *
 	 * @see Notification#getEventType
 	 */
 	public static final int UNAPPLIED_STEREOTYPE = 21;
@@ -51,7 +51,7 @@ public class PapyrusStereotypeListener implements IPapyrusListener {
 	/**
 	 * An {@link Notification#getEventType event type} indicating that a
 	 * stereotype has been unapplied to the notifier
-	 * 
+	 *
 	 * @see Notification#getEventType
 	 */
 	public static final int MODIFIED_STEREOTYPE = 22;
@@ -71,21 +71,21 @@ public class PapyrusStereotypeListener implements IPapyrusListener {
 		// something else ?!
 		final EStructuralFeature feature;
 
-		if(!(notification.getFeature() instanceof EStructuralFeature)) {
+		if (!(notification.getFeature() instanceof EStructuralFeature)) {
 			return;
 		}
 
-		feature = (EStructuralFeature)notification.getFeature();
+		feature = (EStructuralFeature) notification.getFeature();
 
-		if(!isBaseElementChanged(feature)) {
+		if (!isBaseElementChanged(feature)) {
 			// stereotype itself has changed.
 			EObject notifier = EMFHelper.asEMFModelElement(notification.getNotifier());
 			// notifier may be the stereotype application
 			if (notifier != null) {
-				EObject baseElement = UMLUtil.getBaseElement((EObject) notifier);
+				EObject baseElement = UMLUtil.getBaseElement(notifier);
 				if (baseElement instanceof Element) {
 					// notifier listeners for the base element
-					StereotypeCustomNotification newNotification = new StereotypeCustomNotification((ElementImpl)baseElement, MODIFIED_STEREOTYPE, feature.getFeatureID(), null, notification.getNotifier());
+					StereotypeCustomNotification newNotification = new StereotypeCustomNotification((ElementImpl) baseElement, MODIFIED_STEREOTYPE, feature.getFeatureID(), null, notification.getNotifier());
 					baseElement.eNotify(newNotification);
 				}
 			}
@@ -94,7 +94,7 @@ public class PapyrusStereotypeListener implements IPapyrusListener {
 
 		// check the SET base Element for stereotype elements.... if this is
 		// this kind of element
-		if(Notification.SET != notification.getEventType()) {
+		if (Notification.SET != notification.getEventType()) {
 			return;
 		}
 
@@ -104,12 +104,12 @@ public class PapyrusStereotypeListener implements IPapyrusListener {
 		int notificationValue;
 		Object value = notification.getNewValue(); // this should be the
 													// stereotyped element
-		if(value instanceof Element) {
+		if (value instanceof Element) {
 			// check the notifier (stereotype application) is in the list of
 			// stereotypes for the
 			// element
-			boolean isStereoApplication = ((Element)value).getStereotypeApplications().contains(notification.getNotifier());
-			if(!isStereoApplication) {
+			boolean isStereoApplication = ((Element) value).getStereotypeApplications().contains(notification.getNotifier());
+			if (!isStereoApplication) {
 				return;
 			}
 			// we are sure this is a new stereotype application
@@ -123,23 +123,23 @@ public class PapyrusStereotypeListener implements IPapyrusListener {
 			// check that the notifier (stereotype application) is NOT in the
 			// list of stereotypes for the
 			// element
-			boolean isStereoApplication = ((Element)value).getStereotypeApplications().contains(notification.getNotifier());
-			if(isStereoApplication) {
+			boolean isStereoApplication = ((Element) value).getStereotypeApplications().contains(notification.getNotifier());
+			if (isStereoApplication) {
 				return;
 			}
 			// element is no longer applied.
 			notificationValue = UNAPPLIED_STEREOTYPE;
 		}
-	
+
 		// emit notification, so its edit parts can react
-		StereotypeCustomNotification newNotification = new StereotypeCustomNotification((ElementImpl)value, notificationValue, feature.getFeatureID(), null, notification.getNotifier());
-		((Element)value).eNotify(newNotification);
+		StereotypeCustomNotification newNotification = new StereotypeCustomNotification((ElementImpl) value, notificationValue, feature.getFeatureID(), null, notification.getNotifier());
+		((Element) value).eNotify(newNotification);
 	}
 
 	/**
 	 * checks if the notifier modified feature is the feature modified by
 	 * stereotype applications
-	 * 
+	 *
 	 * @return <code>true</code> if the feature of the notification is the
 	 *         "base_XXX" feature, else return <code>false</code>.
 	 */
@@ -152,25 +152,24 @@ public class PapyrusStereotypeListener implements IPapyrusListener {
 	/**
 	 * Specific notification handled by this listener.
 	 * <p>
-	 * It implements the {@link ENotificationImpl} notification, as it is filtered bye GMF. It should be possible to further inspect how notification
-	 * are filtered, and so, do not use hidden APIs.
+	 * It implements the {@link ENotificationImpl} notification, as it is filtered bye GMF. It should be possible to further inspect how notification are filtered, and so, do not use hidden APIs.
 	 * </p>
 	 */
 	public class StereotypeCustomNotification extends ENotificationImpl {
 
 		/**
 		 * Creates a new StereotypeCustomeNotification
-		 * 
+		 *
 		 * @param notifier
-		 *        the notifier that sends this notification
+		 *            the notifier that sends this notification
 		 * @param eventType
-		 *        the type of event
+		 *            the type of event
 		 * @param featureID
-		 *        the kind of feature modified that caused this modification
+		 *            the kind of feature modified that caused this modification
 		 * @param oldValue
-		 *        the old value of the modified feature
+		 *            the old value of the modified feature
 		 * @param newValue
-		 *        the new value of the modified feature
+		 *            the new value of the modified feature
 		 */
 		public StereotypeCustomNotification(ElementImpl notifier, int eventType, int featureID, Object oldValue, Object newValue) {
 			super(notifier, eventType, featureID, oldValue, newValue);

@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2007 Júlio Vilmar Gesser.
- * 
+ *
  * This file is part of Java 1.5 parser and Abstract Syntax Tree.
  *
  * Java 1.5 parser and Abstract Syntax Tree is free software: you can redistribute it and/or modify
@@ -109,7 +109,7 @@ public interface VoidVisitor<A> {
 
 	public void visit(Node n, A arg);
 
-	//- Compilation Unit ----------------------------------
+	// - Compilation Unit ----------------------------------
 
 	public void visit(CompilationUnit n, A arg);
 
@@ -123,7 +123,7 @@ public interface VoidVisitor<A> {
 
 	public void visit(BlockComment n, A arg);
 
-	//- Body ----------------------------------------------
+	// - Body ----------------------------------------------
 
 	public void visit(ClassOrInterfaceDeclaration n, A arg);
 
@@ -155,7 +155,7 @@ public interface VoidVisitor<A> {
 
 	public void visit(JavadocComment n, A arg);
 
-	//- Type ----------------------------------------------
+	// - Type ----------------------------------------------
 
 	public void visit(ClassOrInterfaceType n, A arg);
 
@@ -167,7 +167,7 @@ public interface VoidVisitor<A> {
 
 	public void visit(WildcardType n, A arg);
 
-	//- Expression ----------------------------------------
+	// - Expression ----------------------------------------
 
 	public void visit(ArrayAccessExpr n, A arg);
 
@@ -233,7 +233,7 @@ public interface VoidVisitor<A> {
 
 	public void visit(MemberValuePair n, A arg);
 
-	//- Statements ----------------------------------------
+	// - Statements ----------------------------------------
 
 	public void visit(ExplicitConstructorInvocationStmt n, A arg);
 

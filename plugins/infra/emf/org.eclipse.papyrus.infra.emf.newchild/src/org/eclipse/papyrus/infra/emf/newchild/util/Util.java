@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.papyrus.infra.emf.newchild.Menu;
 public class Util {
 
 	public static ImageDescriptor getImage(Menu menu) {
-		if(menu.getIcon() != null && !menu.getIcon().equals("")) {
+		if (menu.getIcon() != null && !menu.getIcon().equals("")) {
 			String iconPath = menu.getIcon();
 			URI uri = URI.createPlatformPluginURI(iconPath, false);
 			try {

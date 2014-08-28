@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,10 +33,10 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockConstraintImpl#getOn <em>On</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockConstraintImpl#isIsCoincidenceBased <em>Is Coincidence Based</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockConstraintImpl#isIsPrecedenceBased <em>Is Precedence Based</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockConstraintImpl#isIsChronometricBased <em>Is Chronometric Based</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockConstraintImpl#getOn <em>On</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockConstraintImpl#isIsCoincidenceBased <em>Is Coincidence Based</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockConstraintImpl#isIsPrecedenceBased <em>Is Precedence Based</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockConstraintImpl#isIsChronometricBased <em>Is Chronometric Based</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,6 +47,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	 * The cached value of the '{@link #getOn() <em>On</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOn()
 	 * @generated
 	 * @ordered
@@ -57,6 +58,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	 * The default value of the '{@link #isIsCoincidenceBased() <em>Is Coincidence Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsCoincidenceBased()
 	 * @generated
 	 * @ordered
@@ -67,6 +69,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	 * The cached value of the '{@link #isIsCoincidenceBased() <em>Is Coincidence Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsCoincidenceBased()
 	 * @generated
 	 * @ordered
@@ -77,6 +80,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	 * The default value of the '{@link #isIsPrecedenceBased() <em>Is Precedence Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsPrecedenceBased()
 	 * @generated
 	 * @ordered
@@ -87,6 +91,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	 * The cached value of the '{@link #isIsPrecedenceBased() <em>Is Precedence Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsPrecedenceBased()
 	 * @generated
 	 * @ordered
@@ -97,6 +102,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	 * The default value of the '{@link #isIsChronometricBased() <em>Is Chronometric Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsChronometricBased()
 	 * @generated
 	 * @ordered
@@ -107,6 +113,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	 * The cached value of the '{@link #isIsChronometricBased() <em>Is Chronometric Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsChronometricBased()
 	 * @generated
 	 * @ordered
@@ -116,6 +123,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ClockConstraintImpl() {
@@ -125,6 +133,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,8 +144,10 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<Clock> getOn() {
 		if (on == null) {
 			on = new EObjectResolvingEList<Clock>(Clock.class, this, TimePackage.CLOCK_CONSTRAINT__ON);
@@ -147,8 +158,10 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isIsCoincidenceBased() {
 		return isCoincidenceBased;
 	}
@@ -156,20 +169,25 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsCoincidenceBased(boolean newIsCoincidenceBased) {
 		boolean oldIsCoincidenceBased = isCoincidenceBased;
 		isCoincidenceBased = newIsCoincidenceBased;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimePackage.CLOCK_CONSTRAINT__IS_COINCIDENCE_BASED, oldIsCoincidenceBased, isCoincidenceBased));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isIsPrecedenceBased() {
 		return isPrecedenceBased;
 	}
@@ -177,20 +195,25 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsPrecedenceBased(boolean newIsPrecedenceBased) {
 		boolean oldIsPrecedenceBased = isPrecedenceBased;
 		isPrecedenceBased = newIsPrecedenceBased;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimePackage.CLOCK_CONSTRAINT__IS_PRECEDENCE_BASED, oldIsPrecedenceBased, isPrecedenceBased));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isIsChronometricBased() {
 		return isChronometricBased;
 	}
@@ -198,31 +221,35 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsChronometricBased(boolean newIsChronometricBased) {
 		boolean oldIsChronometricBased = isChronometricBased;
 		isChronometricBased = newIsChronometricBased;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimePackage.CLOCK_CONSTRAINT__IS_CHRONOMETRIC_BASED, oldIsChronometricBased, isChronometricBased));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TimePackage.CLOCK_CONSTRAINT__ON:
-				return getOn();
-			case TimePackage.CLOCK_CONSTRAINT__IS_COINCIDENCE_BASED:
-				return isIsCoincidenceBased();
-			case TimePackage.CLOCK_CONSTRAINT__IS_PRECEDENCE_BASED:
-				return isIsPrecedenceBased();
-			case TimePackage.CLOCK_CONSTRAINT__IS_CHRONOMETRIC_BASED:
-				return isIsChronometricBased();
+		case TimePackage.CLOCK_CONSTRAINT__ON:
+			return getOn();
+		case TimePackage.CLOCK_CONSTRAINT__IS_COINCIDENCE_BASED:
+			return isIsCoincidenceBased();
+		case TimePackage.CLOCK_CONSTRAINT__IS_PRECEDENCE_BASED:
+			return isIsPrecedenceBased();
+		case TimePackage.CLOCK_CONSTRAINT__IS_CHRONOMETRIC_BASED:
+			return isIsChronometricBased();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -230,25 +257,26 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TimePackage.CLOCK_CONSTRAINT__ON:
-				getOn().clear();
-				getOn().addAll((Collection<? extends Clock>)newValue);
-				return;
-			case TimePackage.CLOCK_CONSTRAINT__IS_COINCIDENCE_BASED:
-				setIsCoincidenceBased((Boolean)newValue);
-				return;
-			case TimePackage.CLOCK_CONSTRAINT__IS_PRECEDENCE_BASED:
-				setIsPrecedenceBased((Boolean)newValue);
-				return;
-			case TimePackage.CLOCK_CONSTRAINT__IS_CHRONOMETRIC_BASED:
-				setIsChronometricBased((Boolean)newValue);
-				return;
+		case TimePackage.CLOCK_CONSTRAINT__ON:
+			getOn().clear();
+			getOn().addAll((Collection<? extends Clock>) newValue);
+			return;
+		case TimePackage.CLOCK_CONSTRAINT__IS_COINCIDENCE_BASED:
+			setIsCoincidenceBased((Boolean) newValue);
+			return;
+		case TimePackage.CLOCK_CONSTRAINT__IS_PRECEDENCE_BASED:
+			setIsPrecedenceBased((Boolean) newValue);
+			return;
+		case TimePackage.CLOCK_CONSTRAINT__IS_CHRONOMETRIC_BASED:
+			setIsChronometricBased((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -256,23 +284,24 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TimePackage.CLOCK_CONSTRAINT__ON:
-				getOn().clear();
-				return;
-			case TimePackage.CLOCK_CONSTRAINT__IS_COINCIDENCE_BASED:
-				setIsCoincidenceBased(IS_COINCIDENCE_BASED_EDEFAULT);
-				return;
-			case TimePackage.CLOCK_CONSTRAINT__IS_PRECEDENCE_BASED:
-				setIsPrecedenceBased(IS_PRECEDENCE_BASED_EDEFAULT);
-				return;
-			case TimePackage.CLOCK_CONSTRAINT__IS_CHRONOMETRIC_BASED:
-				setIsChronometricBased(IS_CHRONOMETRIC_BASED_EDEFAULT);
-				return;
+		case TimePackage.CLOCK_CONSTRAINT__ON:
+			getOn().clear();
+			return;
+		case TimePackage.CLOCK_CONSTRAINT__IS_COINCIDENCE_BASED:
+			setIsCoincidenceBased(IS_COINCIDENCE_BASED_EDEFAULT);
+			return;
+		case TimePackage.CLOCK_CONSTRAINT__IS_PRECEDENCE_BASED:
+			setIsPrecedenceBased(IS_PRECEDENCE_BASED_EDEFAULT);
+			return;
+		case TimePackage.CLOCK_CONSTRAINT__IS_CHRONOMETRIC_BASED:
+			setIsChronometricBased(IS_CHRONOMETRIC_BASED_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -280,19 +309,20 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TimePackage.CLOCK_CONSTRAINT__ON:
-				return on != null && !on.isEmpty();
-			case TimePackage.CLOCK_CONSTRAINT__IS_COINCIDENCE_BASED:
-				return isCoincidenceBased != IS_COINCIDENCE_BASED_EDEFAULT;
-			case TimePackage.CLOCK_CONSTRAINT__IS_PRECEDENCE_BASED:
-				return isPrecedenceBased != IS_PRECEDENCE_BASED_EDEFAULT;
-			case TimePackage.CLOCK_CONSTRAINT__IS_CHRONOMETRIC_BASED:
-				return isChronometricBased != IS_CHRONOMETRIC_BASED_EDEFAULT;
+		case TimePackage.CLOCK_CONSTRAINT__ON:
+			return on != null && !on.isEmpty();
+		case TimePackage.CLOCK_CONSTRAINT__IS_COINCIDENCE_BASED:
+			return isCoincidenceBased != IS_COINCIDENCE_BASED_EDEFAULT;
+		case TimePackage.CLOCK_CONSTRAINT__IS_PRECEDENCE_BASED:
+			return isPrecedenceBased != IS_PRECEDENCE_BASED_EDEFAULT;
+		case TimePackage.CLOCK_CONSTRAINT__IS_CHRONOMETRIC_BASED:
+			return isChronometricBased != IS_CHRONOMETRIC_BASED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -300,14 +330,17 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == TimedElement.class) {
 			switch (derivedFeatureID) {
-				case TimePackage.CLOCK_CONSTRAINT__ON: return TimePackage.TIMED_ELEMENT__ON;
-				default: return -1;
+			case TimePackage.CLOCK_CONSTRAINT__ON:
+				return TimePackage.TIMED_ELEMENT__ON;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -316,14 +349,17 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == TimedElement.class) {
 			switch (baseFeatureID) {
-				case TimePackage.TIMED_ELEMENT__ON: return TimePackage.CLOCK_CONSTRAINT__ON;
-				default: return -1;
+			case TimePackage.TIMED_ELEMENT__ON:
+				return TimePackage.CLOCK_CONSTRAINT__ON;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -332,11 +368,14 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isCoincidenceBased: ");
@@ -349,4 +388,4 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 		return result.toString();
 	}
 
-} //ClockConstraintImpl
+} // ClockConstraintImpl

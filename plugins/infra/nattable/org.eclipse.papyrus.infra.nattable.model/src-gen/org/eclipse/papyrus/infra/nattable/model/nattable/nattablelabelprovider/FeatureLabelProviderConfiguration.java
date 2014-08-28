@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -17,7 +17,7 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Feature Label Provider Configuration</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
  * LabelProviderConfiguration for Feature. In case of Feature. we have two display options :
  * <ul>
@@ -29,21 +29,17 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider;
  * <li>display the name of the feature</li>
  * </ul>
  * <!-- end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayIsDerived <em>Display
- * Is Derived</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayType <em>Display Type
- * </em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayMultiplicity <em>
- * Display Multiplicity</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayName <em>Display Name
- * </em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayIsDerived <em>Display Is Derived</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayType <em>Display Type </em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayMultiplicity <em> Display Multiplicity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayName <em>Display Name </em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.NattablelabelproviderPackage#getFeatureLabelProviderConfiguration()
  * @model
  * @generated
@@ -58,7 +54,7 @@ public interface FeatureLabelProviderConfiguration extends ObjectLabelProviderCo
 	 * <!-- begin-model-doc -->
 	 * If true, we will display the '/' for isDerived
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Display Is Derived</em>' attribute.
 	 * @see #setDisplayIsDerived(boolean)
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.NattablelabelproviderPackage#getFeatureLabelProviderConfiguration_DisplayIsDerived()
@@ -68,14 +64,13 @@ public interface FeatureLabelProviderConfiguration extends ObjectLabelProviderCo
 	boolean isDisplayIsDerived();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayIsDerived
+	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayIsDerived
 	 * <em>Display Is Derived</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Display Is Derived</em>' attribute.
+	 *            the new value of the '<em>Display Is Derived</em>' attribute.
 	 * @see #isDisplayIsDerived()
 	 * @generated
 	 */
@@ -89,7 +84,7 @@ public interface FeatureLabelProviderConfiguration extends ObjectLabelProviderCo
 	 * <!-- begin-model-doc -->
 	 * If true, we will display the typeof the feature
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Display Type</em>' attribute.
 	 * @see #setDisplayType(boolean)
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.NattablelabelproviderPackage#getFeatureLabelProviderConfiguration_DisplayType()
@@ -99,14 +94,13 @@ public interface FeatureLabelProviderConfiguration extends ObjectLabelProviderCo
 	boolean isDisplayType();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayType
+	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayType
 	 * <em>Display Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Display Type</em>' attribute.
+	 *            the new value of the '<em>Display Type</em>' attribute.
 	 * @see #isDisplayType()
 	 * @generated
 	 */
@@ -120,7 +114,7 @@ public interface FeatureLabelProviderConfiguration extends ObjectLabelProviderCo
 	 * <!-- begin-model-doc -->
 	 * If true, we will display the multiplicity of the feature
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Display Multiplicity</em>' attribute.
 	 * @see #setDisplayMultiplicity(boolean)
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.NattablelabelproviderPackage#getFeatureLabelProviderConfiguration_DisplayMultiplicity()
@@ -130,14 +124,13 @@ public interface FeatureLabelProviderConfiguration extends ObjectLabelProviderCo
 	boolean isDisplayMultiplicity();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayMultiplicity
+	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayMultiplicity
 	 * <em>Display Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Display Multiplicity</em>' attribute.
+	 *            the new value of the '<em>Display Multiplicity</em>' attribute.
 	 * @see #isDisplayMultiplicity()
 	 * @generated
 	 */
@@ -151,7 +144,7 @@ public interface FeatureLabelProviderConfiguration extends ObjectLabelProviderCo
 	 * <!-- begin-model-doc -->
 	 * If true, we will display the name of the feature
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Display Name</em>' attribute.
 	 * @see #setDisplayName(boolean)
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.NattablelabelproviderPackage#getFeatureLabelProviderConfiguration_DisplayName()
@@ -161,14 +154,13 @@ public interface FeatureLabelProviderConfiguration extends ObjectLabelProviderCo
 	boolean isDisplayName();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayName
+	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayName
 	 * <em>Display Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Display Name</em>' attribute.
+	 *            the new value of the '<em>Display Name</em>' attribute.
 	 * @see #isDisplayName()
 	 * @generated
 	 */

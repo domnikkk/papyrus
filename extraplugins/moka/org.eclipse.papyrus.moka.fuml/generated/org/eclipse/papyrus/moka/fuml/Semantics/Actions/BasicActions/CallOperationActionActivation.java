@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,14 +20,15 @@ import org.eclipse.uml2.uml.CallOperationAction;
 
 public class CallOperationActionActivation extends CallActionActivation {
 
+	@Override
 	public Execution getCallExecution() {
 		// If the value on the target input pin is a reference, dispatch the
 		// operation to it and return the resulting execution object.
-		CallOperationAction action = (CallOperationAction)(this.node);
+		CallOperationAction action = (CallOperationAction) (this.node);
 		Value target = this.takeTokens(action.getTarget()).get(0);
 		Execution execution;
-		if(target instanceof Reference) {
-			execution = ((Reference)target).dispatch(action.getOperation());
+		if (target instanceof Reference) {
+			execution = ((Reference) target).dispatch(action.getOperation());
 		} else {
 			execution = null;
 		}

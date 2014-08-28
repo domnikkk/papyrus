@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,11 +48,11 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl#getBase_Class <em>Base Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl#isIsElementary <em>Is Elementary</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl#getPort <em>Port</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl#getPortGroup <em>Port Group</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl#getConnector <em>Connector</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl#isIsElementary <em>Is Elementary</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl#getPort <em>Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl#getPortGroup <em>Port Group</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl#getConnector <em>Connector</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,7 +63,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 	/**
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 	/**
 	 * The default value of the '{@link #isIsElementary() <em>Is Elementary</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsElementary()
 	 * @generated
 	 * @ordered
@@ -82,6 +82,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FunctionTypeImpl() {
@@ -90,6 +91,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -98,14 +100,17 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == EAType.class) {
 			switch (derivedFeatureID) {
-				case FunctionmodelingPackage.FUNCTION_TYPE__BASE_CLASS: return ElementsPackage.EA_TYPE__BASE_CLASS;
-				default: return -1;
+			case FunctionmodelingPackage.FUNCTION_TYPE__BASE_CLASS:
+				return ElementsPackage.EA_TYPE__BASE_CLASS;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -113,14 +118,17 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == EAType.class) {
 			switch (baseFeatureID) {
-				case ElementsPackage.EA_TYPE__BASE_CLASS: return FunctionmodelingPackage.FUNCTION_TYPE__BASE_CLASS;
-				default: return -1;
+			case ElementsPackage.EA_TYPE__BASE_CLASS:
+				return FunctionmodelingPackage.FUNCTION_TYPE__BASE_CLASS;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -129,76 +137,83 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case FunctionmodelingPackage.FUNCTION_TYPE___GET_ICON:
-				return getIcon();
+		case FunctionmodelingPackage.FUNCTION_TYPE___GET_ICON:
+			return getIcon();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FunctionmodelingPackage.FUNCTION_TYPE__BASE_CLASS:
-				if (resolve) return getBase_Class();
-				return basicGetBase_Class();
-			case FunctionmodelingPackage.FUNCTION_TYPE__IS_ELEMENTARY:
-				return isIsElementary();
-			case FunctionmodelingPackage.FUNCTION_TYPE__PORT:
-				return getPort();
-			case FunctionmodelingPackage.FUNCTION_TYPE__PORT_GROUP:
-				return getPortGroup();
-			case FunctionmodelingPackage.FUNCTION_TYPE__CONNECTOR:
-				return getConnector();
+		case FunctionmodelingPackage.FUNCTION_TYPE__BASE_CLASS:
+			if (resolve) {
+				return getBase_Class();
+			}
+			return basicGetBase_Class();
+		case FunctionmodelingPackage.FUNCTION_TYPE__IS_ELEMENTARY:
+			return isIsElementary();
+		case FunctionmodelingPackage.FUNCTION_TYPE__PORT:
+			return getPort();
+		case FunctionmodelingPackage.FUNCTION_TYPE__PORT_GROUP:
+			return getPortGroup();
+		case FunctionmodelingPackage.FUNCTION_TYPE__CONNECTOR:
+			return getConnector();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FunctionmodelingPackage.FUNCTION_TYPE__BASE_CLASS:
-				return base_Class != null;
-			case FunctionmodelingPackage.FUNCTION_TYPE__IS_ELEMENTARY:
-				return isIsElementary() != IS_ELEMENTARY_EDEFAULT;
-			case FunctionmodelingPackage.FUNCTION_TYPE__PORT:
-				return !getPort().isEmpty();
-			case FunctionmodelingPackage.FUNCTION_TYPE__PORT_GROUP:
-				return !getPortGroup().isEmpty();
-			case FunctionmodelingPackage.FUNCTION_TYPE__CONNECTOR:
-				return !getConnector().isEmpty();
+		case FunctionmodelingPackage.FUNCTION_TYPE__BASE_CLASS:
+			return base_Class != null;
+		case FunctionmodelingPackage.FUNCTION_TYPE__IS_ELEMENTARY:
+			return isIsElementary() != IS_ELEMENTARY_EDEFAULT;
+		case FunctionmodelingPackage.FUNCTION_TYPE__PORT:
+			return !getPort().isEmpty();
+		case FunctionmodelingPackage.FUNCTION_TYPE__PORT_GROUP:
+			return !getPortGroup().isEmpty();
+		case FunctionmodelingPackage.FUNCTION_TYPE__CONNECTOR:
+			return !getConnector().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FunctionmodelingPackage.FUNCTION_TYPE__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
-				return;
+		case FunctionmodelingPackage.FUNCTION_TYPE__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,29 +223,33 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FunctionmodelingPackage.FUNCTION_TYPE__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)null);
-				return;
+		case FunctionmodelingPackage.FUNCTION_TYPE__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FunctionmodelingPackage.FUNCTION_TYPE__BASE_CLASS, oldBase_Class, base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -238,25 +257,26 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<FunctionConnector> getConnector() {
 
 		EList<FunctionConnector> connectors = new BasicEList<FunctionConnector>();
 		FunctionConnector currentConnectorPrototype;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			// Parse owned Connectors
 			Iterator<Connector> itDep = getBase_Class().getOwnedConnectors().iterator();
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				Connector currentConnector = itDep.next();
 
 				// Test if currentProperty is stereotyped ADLFunctionPrototype
-				currentConnectorPrototype = (FunctionConnector)UMLUtil.getStereotypeApplication(currentConnector,
-					FunctionConnector.class);
+				currentConnectorPrototype = UMLUtil.getStereotypeApplication(currentConnector,
+						FunctionConnector.class);
 
-				if(currentConnectorPrototype != null) {
+				if (currentConnectorPrototype != null) {
 					connectors.add(currentConnectorPrototype);
 				}
 			}
@@ -264,21 +284,22 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 		// Convert to InternalEList<?>
 		return new BasicInternalEList<FunctionConnector>(FunctionConnector.class, connectors.size(), connectors
-			.toArray());
+				.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public Image getIcon() {
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			Stereotype st = getBase_Class().getAppliedStereotype(EASTResource.FUNCTIONTYPE_ID);
 			EList<Image> images = st.getIcons();
 
-			if(isIsElementary()) {
+			if (isIsElementary()) {
 				return images.get(1);
 			} else {
 				return images.get(0);
@@ -290,25 +311,26 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<FunctionPort> getPort() {
 
 		EList<FunctionPort> groupedPorts = new BasicEList<FunctionPort>();
 		FunctionPort currentADLFlowPort;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			// Parse owned Ports
 			Iterator<Port> itDep = getBase_Class().getOwnedPorts().iterator();
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				Port currentPort = itDep.next();
 
 				// Test if currentPort is stereotyped FlowPort
-				currentADLFlowPort = (FunctionPort)UMLUtil.getStereotypeApplication(currentPort,
-					FunctionPort.class);
+				currentADLFlowPort = UMLUtil.getStereotypeApplication(currentPort,
+						FunctionPort.class);
 
-				if(currentADLFlowPort != null) {
+				if (currentADLFlowPort != null) {
 					groupedPorts.add(currentADLFlowPort);
 				}
 			}
@@ -320,25 +342,26 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<PortGroup> getPortGroup() {
 
 		EList<PortGroup> portGroups = new BasicEList<PortGroup>();
 		PortGroup currentADLPortGroup;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			// Parse owned Ports
 			Iterator<Classifier> itDep = getBase_Class().getNestedClassifiers().iterator();
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				Classifier currentClass = itDep.next();
 
 				// Test if currentPort is stereotyped ADLFlowPort
-				currentADLPortGroup = (PortGroup)UMLUtil.getStereotypeApplication(currentClass,
-					PortGroup.class);
+				currentADLPortGroup = UMLUtil.getStereotypeApplication(currentClass,
+						PortGroup.class);
 
-				if(currentADLPortGroup != null) {
+				if (currentADLPortGroup != null) {
 					portGroups.add(currentADLPortGroup);
 				}
 			}
@@ -350,22 +373,26 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public boolean isIsElementary() {
 		return false;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_TYPE__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 } // FunctionTypeImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,18 +24,18 @@ import org.eclipse.papyrus.infra.nattable.handler.TransactionalEditCellCommandHa
 
 /**
  * This grid layer ovverride the default edition behavior
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class PapyrusGridLayer extends GridLayer {
 
 	private final TransactionalEditingDomain domain;
-	
+
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param bodyLayer
 	 * @param columnHeaderLayer
 	 * @param rowHeaderLayer
@@ -43,14 +43,14 @@ public class PapyrusGridLayer extends GridLayer {
 	 */
 	public PapyrusGridLayer(TransactionalEditingDomain domain, ILayer bodyLayer, ILayer columnHeaderLayer, ILayer rowHeaderLayer, ILayer cornerLayer) {
 		super(bodyLayer, columnHeaderLayer, rowHeaderLayer, cornerLayer);
-		
+
 		this.domain = domain;
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param bodyLayer
 	 * @param columnHeaderLayer
 	 * @param rowHeaderLayer
@@ -59,19 +59,19 @@ public class PapyrusGridLayer extends GridLayer {
 	 */
 	public PapyrusGridLayer(TransactionalEditingDomain domain, ILayer bodyLayer, ILayer columnHeaderLayer, ILayer rowHeaderLayer, ILayer cornerLayer, boolean useDefaultConfiguration) {
 		super(bodyLayer, columnHeaderLayer, rowHeaderLayer, cornerLayer, useDefaultConfiguration);
-		
+
 		this.domain = domain;
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param useDefaultConfiguration
 	 */
 	public PapyrusGridLayer(TransactionalEditingDomain domain, boolean useDefaultConfiguration) {
 		super(useDefaultConfiguration);
-		
+
 		this.domain = domain;
 	}
 
@@ -79,7 +79,7 @@ public class PapyrusGridLayer extends GridLayer {
 	protected void init(boolean useDefaultConfiguration) {
 		registerCommandHandlers();
 
-		if(useDefaultConfiguration) {
+		if (useDefaultConfiguration) {
 			addConfiguration(new PapyrusGridLayerConfiguration(this));
 		}
 	}
@@ -87,7 +87,7 @@ public class PapyrusGridLayer extends GridLayer {
 	@Override
 	public void registerCommandHandler(ILayerCommandHandler<?> commandHandler) {
 		// Override the default edit handler
-		if(commandHandler.getCommandClass() == EditCellCommand.class) {
+		if (commandHandler.getCommandClass() == EditCellCommand.class) {
 			commandHandler = new TransactionalEditCellCommandHandler(domain);
 		}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,31 +39,32 @@ public class PapyrusCreationEditPolicy extends CreationEditPolicy {
 
 	/**
 	 * Method getCreateElementAndViewCommand.
-	 * 
+	 *
 	 * @param request
 	 * @return Command Which creates the sematnic and the view command for the
 	 *         given CreateViewAndElementRequest
 	 */
+	@Override
 	protected Command getCreateElementAndViewCommand(CreateViewAndElementRequest request) {
 		// get the element descriptor
 		CreateElementRequestAdapter requestAdapter = request.getViewAndElementDescriptor().getCreateElementRequestAdapter();
 
 		// get the semantic request
-		CreateElementRequest createElementRequest = (CreateElementRequest)requestAdapter.getAdapter(CreateElementRequest.class);
+		CreateElementRequest createElementRequest = (CreateElementRequest) requestAdapter.getAdapter(CreateElementRequest.class);
 
-		if(createElementRequest.getContainer() == null) {
+		if (createElementRequest.getContainer() == null) {
 			// complete the semantic request by filling in the host's semantic
 			// element as the context
-			View view = (View)getHost().getModel();
+			View view = (View) getHost().getModel();
 			EObject hostElement = ViewUtil.resolveSemanticElement(view);
 
-			if(hostElement == null && view.getElement() == null) {
+			if (hostElement == null && view.getElement() == null) {
 				hostElement = view;
 			}
 
 			// Returns null if host is unresolvable so that trying to create a
 			// new element in an unresolved shape will not be allowed.
-			if(hostElement == null) {
+			if (hostElement == null) {
 				return null;
 			}
 			createElementRequest.setContainer(hostElement);
@@ -71,32 +72,32 @@ public class PapyrusCreationEditPolicy extends CreationEditPolicy {
 
 		// get the create element command based on the elementdescriptor's
 		// request
-		Command createElementCommand = getHost().getCommand(new EditCommandRequestWrapper((CreateElementRequest)requestAdapter.getAdapter(CreateElementRequest.class), request.getExtendedData()));
+		Command createElementCommand = getHost().getCommand(new EditCommandRequestWrapper((CreateElementRequest) requestAdapter.getAdapter(CreateElementRequest.class), request.getExtendedData()));
 
-		if(createElementCommand == null) {
+		if (createElementCommand == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if(!createElementCommand.canExecute()) {
+		if (!createElementCommand.canExecute()) {
 			return createElementCommand;
 		}
 		// create the semantic create wrapper command
 		SemanticCreateCommand semanticCommand = new SemanticCreateCommand(requestAdapter, createElementCommand);
 		Command viewCommand = getCreateCommand(request);
 
-		if(viewCommand == null) {
+		if (viewCommand == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if(!viewCommand.canExecute()) {
+		if (!viewCommand.canExecute()) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
-		Command refreshConnectionCommand = getHost().getCommand(new RefreshConnectionsRequest(((List)request.getNewObject())));
+		Command refreshConnectionCommand = getHost().getCommand(new RefreshConnectionsRequest(((List) request.getNewObject())));
 
 		// form the compound command and return
 		CompositeCommand cc = new CompositeCommand(semanticCommand.getLabel());
 		cc.compose(semanticCommand);
 		cc.compose(new CommandProxy(viewCommand));
-		if(refreshConnectionCommand != null) {
+		if (refreshConnectionCommand != null) {
 			cc.compose(new CommandProxy(refreshConnectionCommand));
 		}
 

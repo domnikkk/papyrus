@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ public class RemoveBreakpoint_Request extends RequestMessage {
 
 	/**
 	 * Constructs a request message from the given breakpoint
-	 * 
+	 *
 	 * @param breakpoint
-	 *        The breakpoint associated with this request message
+	 *            The breakpoint associated with this request message
 	 */
 	public RemoveBreakpoint_Request(MokaBreakpoint breakpoint) {
 		this.breakpoint = breakpoint;
@@ -41,16 +41,17 @@ public class RemoveBreakpoint_Request extends RequestMessage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
+	@Override
 	public String marshall() {
 		return Marshaller.getInstance().removeBreakpoint_request_marshal(this);
 	}
 
 	/**
 	 * Returns the breakpoint associated with this request message
-	 * 
+	 *
 	 * @return The breakpoint associated with this request message
 	 */
 	public MokaBreakpoint getBreakpoint() {

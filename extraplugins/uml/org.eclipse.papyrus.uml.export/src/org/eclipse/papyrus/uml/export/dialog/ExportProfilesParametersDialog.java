@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,17 +62,17 @@ public class ExportProfilesParametersDialog extends TrayDialog {
 
 	/**
 	 * Instantiates a new export profiles parameters dialog.
-	 * 
+	 *
 	 * @param shell
-	 *        the shell
+	 *            the shell
 	 * @param pluginName
-	 *        the plugin name
+	 *            the plugin name
 	 * @param pluginProvider
-	 *        the plugin provider
+	 *            the plugin provider
 	 * @param pluginVersion
-	 *        the plugin version
+	 *            the plugin version
 	 * @param execEnvironment
-	 *        the exec environment
+	 *            the exec environment
 	 */
 	public ExportProfilesParametersDialog(Shell shell, String pluginName, String pluginProvider, String pluginVersion, String execEnvironment, Object[] profiles) {
 		super(shell);
@@ -87,7 +87,7 @@ public class ExportProfilesParametersDialog extends TrayDialog {
 
 	/**
 	 * @see org.eclipse.jface.dialogs.Dialog#create()
-	 * 
+	 *
 	 */
 
 	@Override
@@ -108,7 +108,7 @@ public class ExportProfilesParametersDialog extends TrayDialog {
 		data.horizontalSpan = 2;
 
 
-		Composite parent = (Composite)getDialogArea();
+		Composite parent = (Composite) getDialogArea();
 
 
 		this.pluginNameEditor = new StringEditor(parent, SWT.NONE, Messages.ExportProfilesParametersDialog_0);
@@ -133,15 +133,15 @@ public class ExportProfilesParametersDialog extends TrayDialog {
 		this.pluginExecEnvironmentEditor.setLayoutData(data);
 		this.pluginExecEnvironmentEditor.setToolTipText(Messages.ExportProfilesParametersDialog_11);
 
-		for(int i = 0; i < this.profiles.length; i++) {
+		for (int i = 0; i < this.profiles.length; i++) {
 			this.profileIconEditors[i] = new StringFileSelector(parent, SWT.BORDER);
 			this.profileIconEditors[i].setLayoutData(data);
-			this.profileIconEditors[i].setLabel("Icon for " + ((Profile)this.profiles[i]).getName());
+			this.profileIconEditors[i].setLabel("Icon for " + ((Profile) this.profiles[i]).getName());
 			this.profileIconEditors[i].setToolTipText("Enter the profile icon");
 		}
 
 
-		//Configure the shell
+		// Configure the shell
 		getShell().setSize(800, 350);
 
 		getShell().setText(Messages.ExportProfilesParametersDialog_12);
@@ -154,24 +154,24 @@ public class ExportProfilesParametersDialog extends TrayDialog {
 
 	/**
 	 * Ok pressed.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#okPressed()
 	 */
 
 	@Override
 	protected void okPressed() {
 
-		loop: for(int i = 0; i < this.profileIconEditors.length; i++) {
-			if(this.profileIconEditors[i] != null) {
-				this.profilesIcons[i] = (String)this.profileIconEditors[i].getValue();
+		loop: for (int i = 0; i < this.profileIconEditors.length; i++) {
+			if (this.profileIconEditors[i] != null) {
+				this.profilesIcons[i] = (String) this.profileIconEditors[i].getValue();
 			} else {
 				break loop;
 			}
 		}
-		this.pluginExecEnvironment = (String)this.pluginExecEnvironmentEditor.getValue();
-		this.pluginName = (String)this.pluginNameEditor.getValue();
-		this.pluginProvider = (String)this.pluginProviderEditor.getValue();
-		this.pluginVersion = (String)this.pluginVersionEditor.getValue();
+		this.pluginExecEnvironment = (String) this.pluginExecEnvironmentEditor.getValue();
+		this.pluginName = (String) this.pluginNameEditor.getValue();
+		this.pluginProvider = (String) this.pluginProviderEditor.getValue();
+		this.pluginVersion = (String) this.pluginVersionEditor.getValue();
 
 
 		super.okPressed();
@@ -179,7 +179,7 @@ public class ExportProfilesParametersDialog extends TrayDialog {
 
 	/**
 	 * Gets the plugin name.
-	 * 
+	 *
 	 * @return the plugin name
 	 */
 	public String getPluginName() {
@@ -188,9 +188,9 @@ public class ExportProfilesParametersDialog extends TrayDialog {
 
 	/**
 	 * Sets the plugin name.
-	 * 
+	 *
 	 * @param pluginName
-	 *        the new plugin name
+	 *            the new plugin name
 	 */
 	private void setPluginName(String pluginName) {
 		this.pluginName = pluginName;
@@ -198,7 +198,7 @@ public class ExportProfilesParametersDialog extends TrayDialog {
 
 	/**
 	 * Gets the plugin provider.
-	 * 
+	 *
 	 * @return the plugin provider
 	 */
 	public String getPluginProvider() {
@@ -207,9 +207,9 @@ public class ExportProfilesParametersDialog extends TrayDialog {
 
 	/**
 	 * Sets the plugin provider.
-	 * 
+	 *
 	 * @param pluginProvider
-	 *        the new plugin provider
+	 *            the new plugin provider
 	 */
 	private void setPluginProvider(String pluginProvider) {
 		this.pluginProvider = pluginProvider;
@@ -217,7 +217,7 @@ public class ExportProfilesParametersDialog extends TrayDialog {
 
 	/**
 	 * Gets the plugin version.
-	 * 
+	 *
 	 * @return the plugin version
 	 */
 	public String getPluginVersion() {
@@ -226,9 +226,9 @@ public class ExportProfilesParametersDialog extends TrayDialog {
 
 	/**
 	 * Sets the plugin version.
-	 * 
+	 *
 	 * @param pluginVersion
-	 *        the new plugin version
+	 *            the new plugin version
 	 */
 	private void setPluginVersion(String pluginVersion) {
 		this.pluginVersion = pluginVersion;
@@ -236,7 +236,7 @@ public class ExportProfilesParametersDialog extends TrayDialog {
 
 	/**
 	 * Gets the plugin exec environment.
-	 * 
+	 *
 	 * @return the plugin exec environment
 	 */
 	public String getPluginExecEnvironment() {
@@ -245,9 +245,9 @@ public class ExportProfilesParametersDialog extends TrayDialog {
 
 	/**
 	 * Sets the plugin exec environment.
-	 * 
+	 *
 	 * @param execEnvironment
-	 *        the new plugin exec environment
+	 *            the new plugin exec environment
 	 */
 	private void setPluginExecEnvironment(String execEnvironment) {
 		this.pluginExecEnvironment = execEnvironment;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,13 +18,14 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.uml2.uml.CallAction;
 
 /**
  * Abstract handler to launch a Synchronization of pins on {@link CallAction}
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public abstract class AbstractSynchronizePinsAndParameters extends AbstractHandler {
 
@@ -41,13 +42,13 @@ public abstract class AbstractSynchronizePinsAndParameters extends AbstractHandl
 
 	/**
 	 * Get the icon which represent the action of manual synchronization of pins
-	 * 
+	 *
 	 * @return
 	 */
 	protected static Image getIcon() {
 		Image result = UMLDiagramEditorPlugin.getInstance().getImageRegistry().get(REFRESH_PIN_ICON);
-		if(result == null) {
-			ImageDescriptor image = UMLDiagramEditorPlugin.imageDescriptorFromPlugin(UMLDiagramEditorPlugin.ID, REFRESH_PIN_ICON);
+		if (result == null) {
+			ImageDescriptor image = AbstractUIPlugin.imageDescriptorFromPlugin(UMLDiagramEditorPlugin.ID, REFRESH_PIN_ICON);
 			UMLDiagramEditorPlugin.getInstance().getImageRegistry().put(REFRESH_PIN_ICON, image);
 			result = UMLDiagramEditorPlugin.getInstance().getImageRegistry().get(REFRESH_PIN_ICON);
 		}

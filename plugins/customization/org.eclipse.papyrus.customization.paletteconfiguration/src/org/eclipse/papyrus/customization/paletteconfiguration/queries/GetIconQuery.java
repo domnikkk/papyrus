@@ -14,14 +14,14 @@ public class GetIconQuery implements IJavaQuery2<Configuration, String> {
 	public String evaluate(Configuration source, IParameterValueList2 parameterValues, IFacetManager facetManager) throws DerivedTypedElementException {
 		// retrieves icon descriptor
 		IconDescriptor descriptor = source.getIcon();
-		if(descriptor == null) {
+		if (descriptor == null) {
 			return "";
 		}
 
 		String bundleID = descriptor.getPluginID();
 		String iconPath = descriptor.getIconPath();
 
-		if(bundleID == null || iconPath == null) {
+		if (bundleID == null || iconPath == null) {
 			return "";
 		}
 

@@ -13,6 +13,7 @@ package org.eclipse.papyrus.emf.facet.efacet.core.internal.exception;
 /**
  * This exception is raised when an object cannot be extended by a facet because the class of the object does not correspond
  * to the extended metaclass of the facet.
+ *
  * @since 0.2
  */
 public class NonApplicableFacetException extends Exception {

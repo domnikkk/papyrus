@@ -34,7 +34,7 @@ public interface VisualInformationPapyrusConstants {
 
 	/**
 	 * key for the appearance of properties or other specific display
-	 * 
+	 *
 	 * @deprecated Use a StringListValueStyle instead. See {{@link #CUSTOM_MASK_LABEL}
 	 */
 	@Deprecated
@@ -56,7 +56,7 @@ public interface VisualInformationPapyrusConstants {
 
 	/**
 	 * key for the appearance of properties or other specific display
-	 * 
+	 *
 	 * @deprecated Use a StringListValueStyle instead. See {{@link #CUSTOM_MASK_LABEL}
 	 */
 	@Deprecated

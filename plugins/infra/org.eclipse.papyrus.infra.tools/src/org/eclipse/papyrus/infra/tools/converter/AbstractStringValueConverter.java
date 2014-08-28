@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,9 @@ import org.eclipse.papyrus.infra.tools.messages.Messages;
 
 /**
  * Abstract class for Stringvakue Container
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public abstract class AbstractStringValueConverter implements IStringValueConverter {
 
@@ -40,16 +40,16 @@ public abstract class AbstractStringValueConverter implements IStringValueConver
 	protected static final String NO_X_REPRESENTED_BY_Y_HAVE_BEEN_FOUND = Messages.AbstractStringValueConverter_NoXReprensentedByYHaveBeenFound;
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.tools.converter.IStringValueConverter#deduceValueFromString(java.lang.Object, java.lang.String)
-	 * 
+	 *
 	 * @param type
 	 * @param valueAsString
 	 * @return
 	 */
 	public final ConvertedValueContainer<?> deduceValueFromString(final Object type, final String valueAsString) {
 		ConvertedValueContainer<?> result = doDeduceValueFromString(type, valueAsString);
-		if(result == null) {
+		if (result == null) {
 			final IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, NLS.bind(THE_STRING_VALUE_X_CANT_BE_RESOLVED, valueAsString));
 			result = new ConvertedValueContainer<Object>(null, status);
 		}
@@ -57,11 +57,11 @@ public abstract class AbstractStringValueConverter implements IStringValueConver
 	}
 
 	/**
-	 * 
+	 *
 	 * @param type
-	 *        the type of the object
+	 *            the type of the object
 	 * @param valueAsString
-	 *        the string to resolve
+	 *            the string to resolve
 	 * @return
 	 *         a {@link ConvertedValueContainer} with the resolved values and a status
 	 */

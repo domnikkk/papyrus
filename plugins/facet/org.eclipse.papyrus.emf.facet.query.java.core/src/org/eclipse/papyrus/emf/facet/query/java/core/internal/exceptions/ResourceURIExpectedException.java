@@ -12,6 +12,7 @@ package org.eclipse.papyrus.emf.facet.query.java.core.internal.exceptions;
 
 /**
  * This exception is raised whenever an URI is not a resource URI as expected
+ *
  * @since 0.2
  */
 public class ResourceURIExpectedException extends Exception {

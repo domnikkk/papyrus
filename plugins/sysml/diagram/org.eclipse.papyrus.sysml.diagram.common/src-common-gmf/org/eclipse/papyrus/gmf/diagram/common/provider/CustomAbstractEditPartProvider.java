@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -32,10 +32,10 @@ public abstract class CustomAbstractEditPartProvider extends AbstractEditPartPro
 	 */
 	@Override
 	public boolean provides(IOperation operation) {
-		if(operation instanceof CreateGraphicEditPartOperation) {
-			String currentDiagramType = ((IEditPartOperation)operation).getView().getDiagram().getType();
+		if (operation instanceof CreateGraphicEditPartOperation) {
+			String currentDiagramType = ((IEditPartOperation) operation).getView().getDiagram().getType();
 
-			if((diagramType == null) || (!diagramType.equals(currentDiagramType))) {
+			if ((diagramType == null) || (!diagramType.equals(currentDiagramType))) {
 				return false;
 			}
 		}

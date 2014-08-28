@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,7 +52,7 @@ public class DiscoveryComponent {
 					MessageDialog.openError(window.getShell(), Messages.DiscoveryComponent_CannotConnectToSource_title, Messages.DiscoveryComponent_CannotConnectToSource_label);
 					throw new RuntimeException(e);
 				}
-				return (DiscoveryDefinition)res.getContents().get(0);
+				return (DiscoveryDefinition) res.getContents().get(0);
 			}
 
 			/**

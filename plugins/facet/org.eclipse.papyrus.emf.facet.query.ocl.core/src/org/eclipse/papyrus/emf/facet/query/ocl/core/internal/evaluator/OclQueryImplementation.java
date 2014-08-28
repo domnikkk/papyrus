@@ -46,11 +46,11 @@ public class OclQueryImplementation implements IQueryImplementation {
 
 	@Override
 	public Object getValue(final Query query, final DerivedTypedElement feature, final EObject source, final List<ParameterValue> parameterValues, final IFacetManager facetManager) throws DerivedTypedElementException {
-		if(!(query instanceof OclQuery)) {
+		if (!(query instanceof OclQuery)) {
 			throw new IllegalArgumentException("The given DerivedTypedElement does not have a OclQuery"); //$NON-NLS-1$
 		}
 		try {
-			return executeOclQuery(source, parameterValues, (OclQuery)query);
+			return executeOclQuery(source, parameterValues, (OclQuery) query);
 		} catch (Exception e) {
 			throw new DerivedTypedElementException(e);
 		}
@@ -61,32 +61,32 @@ public class OclQueryImplementation implements IQueryImplementation {
 
 		final EClassifier context = oclQuery.getContext();
 
-		if(oclExpression == null) {
+		if (oclExpression == null) {
 			String stringExpression = oclQuery.getOclExpression();
 
 			// We replace all the occurrence of the parameters in the query by the
 			// corresponding value.
-			//		if (stringExpression != null) {
-			//			if (parameterValues != null) {
-			//				for (final ParameterValue paramValue : parameterValues) {
-			//					final String tmp = stringExpression;
-			//					final String name = paramValue.getParameter().getName();
-			//					final Object value = paramValue.getValue();
-			//					String string;
-			//					if (value == null) {
+			// if (stringExpression != null) {
+			// if (parameterValues != null) {
+			// for (final ParameterValue paramValue : parameterValues) {
+			// final String tmp = stringExpression;
+			// final String name = paramValue.getParameter().getName();
+			// final Object value = paramValue.getValue();
+			// String string;
+			// if (value == null) {
 			//						string = "null"; //$NON-NLS-1$
-			//					} else {
-			//						string = value.toString();
-			//					}
-			//					stringExpression = tmp.replaceAll(name, string);
-			//				}
-			//			}
-			//		}
+			// } else {
+			// string = value.toString();
+			// }
+			// stringExpression = tmp.replaceAll(name, string);
+			// }
+			// }
+			// }
 
 			oclExpression = OclQueryUtil.createOCLExpression(context, stringExpression);
 		}
 
-		if(oclExpression != null) {
+		if (oclExpression != null) {
 			evaluateQuery = OclQueryUtil.evaluateQuery(context, oclExpression, source);
 		}
 		return evaluateQuery;

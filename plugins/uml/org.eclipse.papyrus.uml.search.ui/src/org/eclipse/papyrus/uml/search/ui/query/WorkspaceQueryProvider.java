@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA LIST) - Extracted portions of the PapyrusSearchPage code.
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.search.ui.query;
 
@@ -51,15 +51,15 @@ public class WorkspaceQueryProvider implements IPapyrusQueryProvider {
 
 	public AbstractPapyrusQuery createAdvancedSearchQuery(QueryInfo queryInfo) {
 		Collection<ScopeEntry> scopeEntries = createScopeEntries(queryInfo.getScope());
-		return new PapyrusAdvancedQuery(queryInfo.getQueryText(), queryInfo.isCaseSensitive(), queryInfo.isRegularExpression(), scopeEntries, queryInfo.getParticipantTypes().toArray(),queryInfo.isSearchForAllSter());
+		return new PapyrusAdvancedQuery(queryInfo.getQueryText(), queryInfo.isCaseSensitive(), queryInfo.isRegularExpression(), scopeEntries, queryInfo.getParticipantTypes().toArray(), queryInfo.isSearchForAllSter());
 	}
 
 
 	private void initMetaClasses() {
 		// the UML metamodel doesn't change once we have scraped it
-		if(umlMetaClasses.isEmpty()) {
-			for(EClassifier eClassifier : UMLPackage.eINSTANCE.getEClassifiers()) {
-				if(eClassifier instanceof EClass) {
+		if (umlMetaClasses.isEmpty()) {
+			for (EClassifier eClassifier : UMLPackage.eINSTANCE.getEClassifiers()) {
+				if (eClassifier instanceof EClass) {
 					umlMetaClasses.add(eClassifier);
 				}
 			}
@@ -68,14 +68,14 @@ public class WorkspaceQueryProvider implements IPapyrusQueryProvider {
 
 	/**
 	 * Create scopeEntries based on URIs.
-	 * 
+	 *
 	 * @return the created scopeEntries
 	 */
 	public static Collection<ScopeEntry> createScopeEntries(Collection<URI> scope) {
 		IServiceRegistryTracker tracker = createServiceRegistryTracker();
 		Collection<ScopeEntry> results = new HashSet<ScopeEntry>();
 
-		for(URI uri : scope) {
+		for (URI uri : scope) {
 
 			ScopeEntry scopeEntry = new ScopeEntry(uri, tracker);
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,18 +35,19 @@ public abstract class ModelCreationCommandBase implements IModelCreationCommand 
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.extension.commands.IModelCreationCommand#createModel(org.eclipse.papyrus.infra.core.utils.DiResourceSet)
-	 * 
+	 *
 	 * @param diResourceSet
 	 */
+	@Override
 	public void createModel(final ModelSet modelSet) {
 		runAsTransaction(modelSet);
 	}
 
 	/**
 	 * Run as transaction.
-	 * 
+	 *
 	 * @param diResourceSet
-	 *        the di resource set
+	 *            the di resource set
 	 */
 	protected void runAsTransaction(final ModelSet modelSet) {
 		// Get the uml element to which the newly created diagram will be
@@ -72,9 +73,9 @@ public abstract class ModelCreationCommandBase implements IModelCreationCommand 
 
 	/**
 	 * Initialize model.
-	 * 
+	 *
 	 * @param owner
-	 *        the owner
+	 *            the owner
 	 */
 	protected void initializeModel(EObject owner) {
 
@@ -82,17 +83,17 @@ public abstract class ModelCreationCommandBase implements IModelCreationCommand 
 
 	/**
 	 * Get the root element associated with canvas.
-	 * 
+	 *
 	 * @param modelResource
-	 *        the model resource
+	 *            the model resource
 	 * @return the root element
 	 */
 	protected EObject getRootElement(Resource modelResource) {
 		EObject rootElement = null;
-		if(modelResource != null && modelResource.getContents() != null && modelResource.getContents().size() > 0) {
+		if (modelResource != null && modelResource.getContents() != null && modelResource.getContents().size() > 0) {
 			Object root = modelResource.getContents().get(0);
-			if(root instanceof EObject) {
-				rootElement = (EObject)root;
+			if (root instanceof EObject) {
+				rootElement = (EObject) root;
 			}
 		} else {
 			rootElement = createRootElement();
@@ -109,7 +110,7 @@ public abstract class ModelCreationCommandBase implements IModelCreationCommand 
 
 	/**
 	 * Create the root element of an EMF model
-	 * 
+	 *
 	 * @return the root element
 	 */
 	protected abstract EObject createRootElement();

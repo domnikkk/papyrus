@@ -37,7 +37,7 @@ public class BooleanCombo extends AbstractValueEditor {
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The Composite widget in which this editor will be displayed
+	 *            The Composite widget in which this editor will be displayed
 	 */
 	public BooleanCombo(Composite parent) {
 		this(parent, SWT.NONE, null);
@@ -48,11 +48,11 @@ public class BooleanCombo extends AbstractValueEditor {
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The Composite widget in which this editor will be displayed
+	 *            The Composite widget in which this editor will be displayed
 	 * @param style
-	 *        The style of this editor's CCombo
+	 *            The style of this editor's CCombo
 	 * @param label
-	 *        This editor's label
+	 *            This editor's label
 	 */
 	public BooleanCombo(Composite parent, int style, String label) {
 		super(parent, style, label);
@@ -66,7 +66,7 @@ public class BooleanCombo extends AbstractValueEditor {
 
 			@Override
 			public Object[] getElements() {
-				return new Boolean[]{ Boolean.TRUE, Boolean.FALSE };
+				return new Boolean[] { Boolean.TRUE, Boolean.FALSE };
 			}
 		}));
 
@@ -82,7 +82,7 @@ public class BooleanCombo extends AbstractValueEditor {
 	 * Creates the combo viewer
 	 *
 	 * @param combo
-	 *        The parent combo
+	 *            The parent combo
 	 * @return the combo viewer.
 	 */
 	protected ComboViewer createComboViewer(CCombo combo) {
@@ -94,9 +94,9 @@ public class BooleanCombo extends AbstractValueEditor {
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The Composite widget in which this editor will be displayed
+	 *            The Composite widget in which this editor will be displayed
 	 * @param style
-	 *        The style of this editor's CCombo
+	 *            The style of this editor's CCombo
 	 */
 	public BooleanCombo(Composite parent, int style) {
 		this(parent, style, null);
@@ -107,9 +107,9 @@ public class BooleanCombo extends AbstractValueEditor {
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The Composite widget in which this editor will be displayed
+	 *            The Composite widget in which this editor will be displayed
 	 * @param label
-	 *        This editor's label
+	 *            This editor's label
 	 */
 	public BooleanCombo(Composite parent, String label) {
 		this(parent, SWT.NONE, label);
@@ -117,7 +117,7 @@ public class BooleanCombo extends AbstractValueEditor {
 
 	@Override
 	public Object getValue() {
-		return ((StructuredSelection)viewer.getSelection()).getFirstElement();
+		return ((StructuredSelection) viewer.getSelection()).getFirstElement();
 	}
 
 	@Override

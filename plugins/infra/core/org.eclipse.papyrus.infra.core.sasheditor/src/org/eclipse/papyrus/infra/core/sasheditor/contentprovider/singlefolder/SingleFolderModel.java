@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel
 
 /**
  * Basic implementation allowing to add item to be shown.
- * 
+ *
  * @author dumoulin
- * 
+ *
  */
 public class SingleFolderModel implements ITabFolderModel {
 
@@ -46,8 +46,9 @@ public class SingleFolderModel implements ITabFolderModel {
 	}
 
 	/**
-	 * 
+	 *
 	 */
+	@Override
 	public List<?> getChildren() {
 		return itemModels;
 	}
@@ -55,14 +56,15 @@ public class SingleFolderModel implements ITabFolderModel {
 	/**
 	 * This default implementation return directly the child which is already of the appropriate type.
 	 */
+	@Override
 	public IPageModel createChildSashModel(Object child) {
 		// In this default implementation, the child is already of the appropriate type.
-		return (IPageModel)child;
+		return (IPageModel) child;
 	}
 
 	/**
 	 * Add a new model.
-	 * 
+	 *
 	 * @param newModel
 	 */
 	public void addItem(IPageModel newModel) {
@@ -72,7 +74,7 @@ public class SingleFolderModel implements ITabFolderModel {
 
 	/**
 	 * Add a model at the specified position.
-	 * 
+	 *
 	 * @param index
 	 * @param newModel
 	 */
@@ -83,7 +85,7 @@ public class SingleFolderModel implements ITabFolderModel {
 
 	/**
 	 * Remove the specified tab.
-	 * 
+	 *
 	 * @param index
 	 * @return
 	 */
@@ -96,7 +98,7 @@ public class SingleFolderModel implements ITabFolderModel {
 
 	/**
 	 * Remove the specified tab.
-	 * 
+	 *
 	 * @param tabItem
 	 */
 	public void removeTab(IPageModel tabItem) {
@@ -107,27 +109,29 @@ public class SingleFolderModel implements ITabFolderModel {
 	/**
 	 * Move a tab inside the folder.
 	 * Moves the tab from the old position to the new position.
-	 * 
+	 *
 	 * @param oldIndex
-	 *        the position of the tab before the move.
+	 *            the position of the tab before the move.
 	 * @param newIndex
-	 *        the position of the tab after the move.
+	 *            the position of the tab after the move.
 	 */
 	public void moveTab(int oldIndex, int newIndex) {
 
 		int listSize = itemModels.size();
-		if(newIndex >= listSize) {
+		if (newIndex >= listSize) {
 			newIndex = listSize - 1;
 		}
-		if(newIndex < 0) {
+		if (newIndex < 0) {
 			newIndex = 0;
 		}
 
-		if(oldIndex == newIndex)
+		if (oldIndex == newIndex) {
 			return;
+		}
 
-		if(listSize == 0)
+		if (listSize == 0) {
 			return;
+		}
 
 
 		// Move

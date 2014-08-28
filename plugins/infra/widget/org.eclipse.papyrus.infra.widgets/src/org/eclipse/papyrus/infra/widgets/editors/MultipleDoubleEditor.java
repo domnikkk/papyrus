@@ -23,9 +23,9 @@ public class MultipleDoubleEditor extends MultipleStringEditor {
 	 * and remove values.
 	 *
 	 * @param parent
-	 *        The Composite in which this editor is created
+	 *            The Composite in which this editor is created
 	 * @param style
-	 *        The List's style
+	 *            The List's style
 	 */
 	public MultipleDoubleEditor(Composite parent, int style) {
 		super(parent, style, new RealSelector());
@@ -37,11 +37,11 @@ public class MultipleDoubleEditor extends MultipleStringEditor {
 	 * and remove values.
 	 *
 	 * @param parent
-	 *        The Composite in which this editor is created
+	 *            The Composite in which this editor is created
 	 * @param style
-	 *        The List's style
+	 *            The List's style
 	 * @param label
-	 *        The editor's label
+	 *            The editor's label
 	 */
 	public MultipleDoubleEditor(Composite parent, int style, String label) {
 		super(parent, style, new RealSelector(), label);
@@ -53,15 +53,15 @@ public class MultipleDoubleEditor extends MultipleStringEditor {
 	 * and remove values.
 	 *
 	 * @param parent
-	 *        The Composite in which this editor is created
+	 *            The Composite in which this editor is created
 	 * @param style
-	 *        The List's style
+	 *            The List's style
 	 * @param ordered
-	 *        Indicates if the values should be ordered. If true, the up/down controls will be activated
+	 *            Indicates if the values should be ordered. If true, the up/down controls will be activated
 	 * @param unique
-	 *        Indicates if the values should be unique.
+	 *            Indicates if the values should be unique.
 	 * @param label
-	 *        The editor's label
+	 *            The editor's label
 	 */
 	public MultipleDoubleEditor(Composite parent, int style, boolean ordered, boolean unique, String label) {
 		super(parent, style, new RealSelector(), ordered, unique, label);

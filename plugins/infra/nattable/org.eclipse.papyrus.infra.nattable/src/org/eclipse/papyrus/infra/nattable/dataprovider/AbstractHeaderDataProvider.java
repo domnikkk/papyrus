@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ import org.eclipse.papyrus.infra.tools.util.IntegerAndSpreadsheetNumberConverter
 
 /**
  * Abstract class for the header data provider
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public abstract class AbstractHeaderDataProvider extends AbstractDataProvider {
 
@@ -60,12 +60,12 @@ public abstract class AbstractHeaderDataProvider extends AbstractDataProvider {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param tableModelManager
 	 */
-	public AbstractHeaderDataProvider(INattableModelManager tableModelManager) {//TODO : we don't manage the remove of the axis configuration (possible when we return to the initial configuration
+	public AbstractHeaderDataProvider(INattableModelManager tableModelManager) {// TODO : we don't manage the remove of the axis configuration (possible when we return to the initial configuration
 		super(tableModelManager);
 		this.listenAxisConfiguration = getAxisConfiguration();
 		initListeners();
@@ -83,17 +83,17 @@ public abstract class AbstractHeaderDataProvider extends AbstractDataProvider {
 			@Override
 			public void notifyChanged(Notification msg) {
 				final Object feature = msg.getFeature();
-				if(feature != null) {
-					if(feature.equals(NattableaxisconfigurationPackage.eINSTANCE.getAbstractHeaderAxisConfiguration_DisplayFilter())) {
+				if (feature != null) {
+					if (feature.equals(NattableaxisconfigurationPackage.eINSTANCE.getAbstractHeaderAxisConfiguration_DisplayFilter())) {
 						AbstractHeaderDataProvider.this.displayFilter = msg.getNewBooleanValue();
 						updateAxisCount();
-					} else if(feature.equals(NattableaxisconfigurationPackage.eINSTANCE.getAbstractHeaderAxisConfiguration_DisplayIndex())) {
+					} else if (feature.equals(NattableaxisconfigurationPackage.eINSTANCE.getAbstractHeaderAxisConfiguration_DisplayIndex())) {
 						AbstractHeaderDataProvider.this.displayIndex = msg.getNewBooleanValue();
 						updateAxisCount();
-					} else if(feature.equals(NattableaxisconfigurationPackage.eINSTANCE.getAbstractHeaderAxisConfiguration_DisplayLabel())) {
+					} else if (feature.equals(NattableaxisconfigurationPackage.eINSTANCE.getAbstractHeaderAxisConfiguration_DisplayLabel())) {
 						AbstractHeaderDataProvider.this.displayLabel = msg.getNewBooleanValue();
 						updateAxisCount();
-					} else if(feature.equals(NattableaxisconfigurationPackage.eINSTANCE.getAbstractHeaderAxisConfiguration_IndexStyle())) {
+					} else if (feature.equals(NattableaxisconfigurationPackage.eINSTANCE.getAbstractHeaderAxisConfiguration_IndexStyle())) {
 						AbstractHeaderDataProvider.this.style = AxisIndexStyle.get(msg.getNewStringValue());
 						updateAxisCount();
 					}
@@ -104,10 +104,10 @@ public abstract class AbstractHeaderDataProvider extends AbstractDataProvider {
 
 			@Override
 			public void notifyChanged(Notification msg) {
-				if(msg.getFeature() == NattablePackage.eINSTANCE.getTable_InvertAxis()) {
+				if (msg.getFeature() == NattablePackage.eINSTANCE.getTable_InvertAxis()) {
 					final Object oldValue = msg.getOldValue();
 					final Object newValue = msg.getNewValue();
-					if(oldValue != null && newValue != null) {
+					if (oldValue != null && newValue != null) {
 						initFields();
 					}
 				}
@@ -118,7 +118,7 @@ public abstract class AbstractHeaderDataProvider extends AbstractDataProvider {
 
 			@Override
 			public void notifyChanged(Notification msg) {
-				if(msg.getFeature() == NattablePackage.eINSTANCE.getTable_LocalColumnHeaderAxisConfiguration() || msg.getFeature() == NattablePackage.eINSTANCE.getTable_LocalRowHeaderAxisConfiguration()) {
+				if (msg.getFeature() == NattablePackage.eINSTANCE.getTable_LocalColumnHeaderAxisConfiguration() || msg.getFeature() == NattablePackage.eINSTANCE.getTable_LocalRowHeaderAxisConfiguration()) {
 					initFields();
 				}
 			}
@@ -129,13 +129,13 @@ public abstract class AbstractHeaderDataProvider extends AbstractDataProvider {
 	 * init the field value, and update the listen axis if required
 	 */
 	private void initFields() {
-		if(this.listenAxisConfiguration != getAxisConfiguration() && this.listenAxisConfiguration != null) {
+		if (this.listenAxisConfiguration != getAxisConfiguration() && this.listenAxisConfiguration != null) {
 			this.listenAxisConfiguration.eAdapters().remove(this.axisListener);
 		}
 		this.listenAxisConfiguration = getAxisConfiguration();
-		if(this.listenAxisConfiguration != null) {
+		if (this.listenAxisConfiguration != null) {
 			this.listenAxisConfiguration.eAdapters().add(this.axisListener);
-			if(this.listenAxisConfiguration instanceof AbstractHeaderAxisConfiguration) {
+			if (this.listenAxisConfiguration instanceof AbstractHeaderAxisConfiguration) {
 				AbstractHeaderAxisConfiguration config = this.listenAxisConfiguration;
 				this.style = config.getIndexStyle();
 				this.displayFilter = config.isDisplayFilter();
@@ -152,16 +152,16 @@ public abstract class AbstractHeaderDataProvider extends AbstractDataProvider {
 	protected abstract void updateAxisCount();
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the axis configuration to listen
 	 */
 	protected abstract AbstractHeaderAxisConfiguration getAxisConfiguration();
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.services.IDisposable#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public void dispose() {
@@ -174,7 +174,7 @@ public abstract class AbstractHeaderDataProvider extends AbstractDataProvider {
 	 * remove the listener
 	 */
 	protected void removeListeners() {
-		if(this.listenAxisConfiguration != null) {
+		if (this.listenAxisConfiguration != null) {
 			this.listenAxisConfiguration.eAdapters().remove(this.axisListener);
 		}
 		this.manager.getTable().eAdapters().remove(this.invertedListener);
@@ -182,15 +182,15 @@ public abstract class AbstractHeaderDataProvider extends AbstractDataProvider {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param axisIndex
-	 *        the index of the axis
+	 *            the index of the axis
 	 * @return
 	 *         the index to display according to the index style
 	 */
 	protected Object getAxisIndex(int axisIndex) {
-		if(axisIndex > -1) {
-			switch(this.style) {
+		if (axisIndex > -1) {
+			switch (this.style) {
 			case ALPHABETIC:
 				return IntegerAndSpreadsheetNumberConverter.toString(axisIndex + 1);
 			case NUMERIC:

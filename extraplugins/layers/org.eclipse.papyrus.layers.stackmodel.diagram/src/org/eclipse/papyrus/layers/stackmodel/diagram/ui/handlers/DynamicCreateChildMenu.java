@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -22,7 +22,7 @@ import org.eclipse.ui.menus.CommandContributionItem;
 /**
  * This class is responsible to create the dynamic menu allowing to create
  * child elements of a Layer Model.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -35,15 +35,15 @@ public class DynamicCreateChildMenu extends CompoundContributionItem {
 	 */
 	@Override
 	protected IContributionItem[] getContributionItems() {
-//		System.err.println("getContributionItems()");
+		// System.err.println("getContributionItems()");
 		IContributionItem[] items = new IContributionItem[1];
-		
-	    Map<String, String> parms = new HashMap<String, String>();
-	    parms.put("groupBy", "Severity");
-	    items[0] = new CommandContributionItem(PlatformUI.getWorkbench().getActiveWorkbenchWindow(), null,
-	            "org.eclipse.ui.views.problems.grouping",
-	            parms, null, null, null, "Severity", null,
-	            null, CommandContributionItem.STYLE_PUSH);
+
+		Map<String, String> parms = new HashMap<String, String>();
+		parms.put("groupBy", "Severity");
+		items[0] = new CommandContributionItem(PlatformUI.getWorkbench().getActiveWorkbenchWindow(), null,
+				"org.eclipse.ui.views.problems.grouping",
+				parms, null, null, null, "Severity", null,
+				null, CommandContributionItem.STYLE_PUSH);
 		return items;
 	}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 LIFL, CEA LIST, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,7 +11,7 @@
  *  Cedric Dumoulin (LIFL) cedric.dumoulin@lifl.fr - Initial API and implementation
  *  Vincent Lorenzo (CEA-LIST) vincent.lorenzo@cea.fr
  *  Christian W. Damus (CEA) - bug 392301
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.nattable.common.factory;
 
@@ -34,20 +34,20 @@ import org.eclipse.ui.part.EditorActionBarContributor;
 
 /**
  * Abstract factory for the NattableEditor
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public abstract class AbstractNattableEditorFactory extends AbstractEditorFactory {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param editorClass
-	 *        the editor class
+	 *            the editor class
 	 * @param editorType
-	 *        the type of editor
+	 *            the type of editor
 	 */
 	public AbstractNattableEditorFactory(Class<?> editorClass, String editorType) {
 		super(editorClass, editorType);
@@ -55,35 +55,37 @@ public abstract class AbstractNattableEditorFactory extends AbstractEditorFactor
 
 	/**
 	 * Create the IPageModel that is used by the SashWindows to manage the editor.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.editorsfactory.IEditorFactory#createIPageModel(java.lang.Object)
-	 * 
+	 *
 	 * @param pageIdentifier
-	 *        The model pushed in the sashmodel by the creation command
+	 *            The model pushed in the sashmodel by the creation command
 	 * @return A model implementing the IPageModel
 	 */
+	@Override
 	public IPageModel createIPageModel(Object pageIdentifier) {
 		return new NattableEditorModel(pageIdentifier, getServiceRegistry());
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.editorsfactory.IEditorFactory#isPageModelFactoryFor(java.lang.Object)
-	 * 
+	 *
 	 * @param pageIdentifier
 	 * @return
 	 */
+	@Override
 	public boolean isPageModelFactoryFor(Object pageIdentifier) {
-		if(pageIdentifier instanceof Table) {
-			return getExpectedType().equals(((Table)pageIdentifier).getTableConfiguration().getType().trim());
+		if (pageIdentifier instanceof Table) {
+			return getExpectedType().equals(((Table) pageIdentifier).getTableConfiguration().getType().trim());
 		}
 		return false;
 	}
 
 	/**
 	 * IEditorModel used internally by the SashContainer. This model know how to handle IEditor creation.
-	 * 
+	 *
 	 * @author cedric dumoulin
-	 * 
+	 *
 	 */
 	class NattableEditorModel implements IEditorModel {
 
@@ -102,32 +104,33 @@ public abstract class AbstractNattableEditorFactory extends AbstractEditorFactor
 		 * The raw model stored in the SashProvider.
 		 */
 		private Table rawModel;
-		
+
 		private Image tabIcon;
 
 		/**
-		 * 
+		 *
 		 * Constructor.
 		 */
 		public NattableEditorModel(Object pageIdentifier, ServicesRegistry servicesRegistry) {
-			this.rawModel = (Table)pageIdentifier;
+			this.rawModel = (Table) pageIdentifier;
 			this.servicesRegistry = servicesRegistry;
 		}
 
 		/**
 		 * Create the IEditor for the diagram.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IEditorModel#createIEditorPart()
 		 * @return
 		 * @throws PartInitException
-		 * 
+		 *
 		 */
+		@Override
 		public IEditorPart createIEditorPart() throws PartInitException {
 			try {
 
 				Constructor<?> c = getDiagramClass().getConstructor(ServicesRegistry.class, Table.class);
-				IEditorPart newEditor = (IEditorPart)c.newInstance(this.servicesRegistry, this.rawModel);
-				//	IEditorPart newEditor = new DefaultNattableEditor(getServiceRegistry(), rawModel);
+				IEditorPart newEditor = (IEditorPart) c.newInstance(this.servicesRegistry, this.rawModel);
+				// IEditorPart newEditor = new DefaultNattableEditor(getServiceRegistry(), rawModel);
 				this.editor = newEditor;
 				return this.editor;
 
@@ -141,17 +144,18 @@ public abstract class AbstractNattableEditorFactory extends AbstractEditorFactor
 
 		/**
 		 * Get the action bar requested by the Editor.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IEditorModel#getActionBarContributor()
 		 * @return
-		 * 
+		 *
 		 */
+		@Override
 		public EditorActionBarContributor getActionBarContributor() {
 
 			String actionBarId = AbstractNattableEditorFactory.this.editorDescriptor.getActionBarContributorId();
 
 			// Do nothing if no EditorActionBarContributor is specify.
-			if(actionBarId == null || actionBarId.length() == 0) {
+			if (actionBarId == null || actionBarId.length() == 0) {
 				return null;
 			}
 
@@ -178,46 +182,50 @@ public abstract class AbstractNattableEditorFactory extends AbstractEditorFactor
 
 		/**
 		 * Get the underlying RawModel. Return the Diagram.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageModel#getRawModel()
 		 * @return
-		 * 
+		 *
 		 */
+		@Override
 		public Object getRawModel() {
 			return this.rawModel;
 		}
 
 		/**
 		 * Get the icon to be shown by Tabs
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageModel#getTabIcon()
 		 * @return
-		 * 
+		 *
 		 */
+		@Override
 		public Image getTabIcon() {
-			if(tabIcon == null) {
+			if (tabIcon == null) {
 				ImageDescriptor imageDescriptor = getEditorDescriptor().getIcon();
-				if(imageDescriptor != null) {
+				if (imageDescriptor != null) {
 					tabIcon = imageDescriptor.createImage();
 				}
 			}
-			
+
 			return tabIcon;
 		}
 
 		/**
 		 * Get the title of the Diagram.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageModel#getTabTitle()
 		 * @return
-		 * 
+		 *
 		 */
+		@Override
 		public String getTabTitle() {
 			return this.rawModel.getName();
 		}
 
+		@Override
 		public void dispose() {
-			if(tabIcon != null) {
+			if (tabIcon != null) {
 				tabIcon.dispose();
 				tabIcon = null;
 			}

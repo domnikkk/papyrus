@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,6 +35,7 @@ public class CDOObjectPropertyTester
 		super();
 	}
 
+	@Override
 	public boolean test(Object receiver, String property, Object[] args,
 			Object expectedValue) {
 
@@ -62,7 +63,7 @@ public class CDOObjectPropertyTester
 		if (result) {
 			DawnState state = CDOStateAdapter.getState(object);
 			result = (state != DawnState.LOCKED_LOCALLY)
-				&& (state != DawnState.LOCKED_REMOTELY);
+					&& (state != DawnState.LOCKED_REMOTELY);
 		}
 
 		return result;

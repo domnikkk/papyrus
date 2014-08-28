@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ import org.eclipse.papyrus.views.properties.runtime.preferences.PreferencesPacka
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class PreferencesFactoryImpl extends EFactoryImpl implements PreferencesFactory {
@@ -35,13 +35,13 @@ public class PreferencesFactoryImpl extends EFactoryImpl implements PreferencesF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static PreferencesFactory init() {
 		try {
-			PreferencesFactory thePreferencesFactory = (PreferencesFactory)EPackage.Registry.INSTANCE.getEFactory(PreferencesPackage.eNS_URI);
-			if(thePreferencesFactory != null) {
+			PreferencesFactory thePreferencesFactory = (PreferencesFactory) EPackage.Registry.INSTANCE.getEFactory(PreferencesPackage.eNS_URI);
+			if (thePreferencesFactory != null) {
 				return thePreferencesFactory;
 			}
 		} catch (Exception exception) {
@@ -54,7 +54,7 @@ public class PreferencesFactoryImpl extends EFactoryImpl implements PreferencesF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PreferencesFactoryImpl() {
@@ -64,12 +64,12 @@ public class PreferencesFactoryImpl extends EFactoryImpl implements PreferencesF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case PreferencesPackage.CONTEXT_DESCRIPTOR:
 			return createContextDescriptor();
 		case PreferencesPackage.PREFERENCES:
@@ -82,7 +82,7 @@ public class PreferencesFactoryImpl extends EFactoryImpl implements PreferencesF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ContextDescriptor createContextDescriptor() {
@@ -93,7 +93,7 @@ public class PreferencesFactoryImpl extends EFactoryImpl implements PreferencesF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Preferences createPreferences() {
@@ -104,17 +104,17 @@ public class PreferencesFactoryImpl extends EFactoryImpl implements PreferencesF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PreferencesPackage getPreferencesPackage() {
-		return (PreferencesPackage)getEPackage();
+		return (PreferencesPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -123,4 +123,4 @@ public class PreferencesFactoryImpl extends EFactoryImpl implements PreferencesF
 		return PreferencesPackage.eINSTANCE;
 	}
 
-} //PreferencesFactoryImpl
+} // PreferencesFactoryImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.ResourceImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaLogicalResourceImpl#getUtilization <em>Utilization</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaLogicalResourceImpl#getThroughput <em>Throughput</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaLogicalResourceImpl#getPoolSize <em>Pool Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaLogicalResourceImpl#getUtilization <em>Utilization</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaLogicalResourceImpl#getThroughput <em>Throughput</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaLogicalResourceImpl#getPoolSize <em>Pool Size</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	 * The default value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getUtilization()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	 * The cached value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getUtilization()
 	 * @generated
 	 * @ordered
@@ -60,6 +62,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	 * The default value of the '{@link #getThroughput() <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -70,6 +73,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	 * The cached value of the '{@link #getThroughput() <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -80,6 +84,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	 * The default value of the '{@link #getPoolSize() <em>Pool Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPoolSize()
 	 * @generated
 	 * @ordered
@@ -90,6 +95,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	 * The cached value of the '{@link #getPoolSize() <em>Pool Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPoolSize()
 	 * @generated
 	 * @ordered
@@ -99,6 +105,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PaLogicalResourceImpl() {
@@ -108,6 +115,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,8 +126,10 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getUtilization() {
 		return utilization;
 	}
@@ -127,20 +137,25 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setUtilization(String newUtilization) {
 		String oldUtilization = utilization;
 		utilization = newUtilization;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PAMPackage.PA_LOGICAL_RESOURCE__UTILIZATION, oldUtilization, utilization));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getThroughput() {
 		return throughput;
 	}
@@ -148,20 +163,25 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setThroughput(String newThroughput) {
 		String oldThroughput = throughput;
 		throughput = newThroughput;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PAMPackage.PA_LOGICAL_RESOURCE__THROUGHPUT, oldThroughput, throughput));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getPoolSize() {
 		return poolSize;
 	}
@@ -169,29 +189,33 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setPoolSize(String newPoolSize) {
 		String oldPoolSize = poolSize;
 		poolSize = newPoolSize;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PAMPackage.PA_LOGICAL_RESOURCE__POOL_SIZE, oldPoolSize, poolSize));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PAMPackage.PA_LOGICAL_RESOURCE__UTILIZATION:
-				return getUtilization();
-			case PAMPackage.PA_LOGICAL_RESOURCE__THROUGHPUT:
-				return getThroughput();
-			case PAMPackage.PA_LOGICAL_RESOURCE__POOL_SIZE:
-				return getPoolSize();
+		case PAMPackage.PA_LOGICAL_RESOURCE__UTILIZATION:
+			return getUtilization();
+		case PAMPackage.PA_LOGICAL_RESOURCE__THROUGHPUT:
+			return getThroughput();
+		case PAMPackage.PA_LOGICAL_RESOURCE__POOL_SIZE:
+			return getPoolSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -199,20 +223,21 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PAMPackage.PA_LOGICAL_RESOURCE__UTILIZATION:
-				setUtilization((String)newValue);
-				return;
-			case PAMPackage.PA_LOGICAL_RESOURCE__THROUGHPUT:
-				setThroughput((String)newValue);
-				return;
-			case PAMPackage.PA_LOGICAL_RESOURCE__POOL_SIZE:
-				setPoolSize((String)newValue);
-				return;
+		case PAMPackage.PA_LOGICAL_RESOURCE__UTILIZATION:
+			setUtilization((String) newValue);
+			return;
+		case PAMPackage.PA_LOGICAL_RESOURCE__THROUGHPUT:
+			setThroughput((String) newValue);
+			return;
+		case PAMPackage.PA_LOGICAL_RESOURCE__POOL_SIZE:
+			setPoolSize((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -220,20 +245,21 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PAMPackage.PA_LOGICAL_RESOURCE__UTILIZATION:
-				setUtilization(UTILIZATION_EDEFAULT);
-				return;
-			case PAMPackage.PA_LOGICAL_RESOURCE__THROUGHPUT:
-				setThroughput(THROUGHPUT_EDEFAULT);
-				return;
-			case PAMPackage.PA_LOGICAL_RESOURCE__POOL_SIZE:
-				setPoolSize(POOL_SIZE_EDEFAULT);
-				return;
+		case PAMPackage.PA_LOGICAL_RESOURCE__UTILIZATION:
+			setUtilization(UTILIZATION_EDEFAULT);
+			return;
+		case PAMPackage.PA_LOGICAL_RESOURCE__THROUGHPUT:
+			setThroughput(THROUGHPUT_EDEFAULT);
+			return;
+		case PAMPackage.PA_LOGICAL_RESOURCE__POOL_SIZE:
+			setPoolSize(POOL_SIZE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -241,17 +267,18 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PAMPackage.PA_LOGICAL_RESOURCE__UTILIZATION:
-				return UTILIZATION_EDEFAULT == null ? utilization != null : !UTILIZATION_EDEFAULT.equals(utilization);
-			case PAMPackage.PA_LOGICAL_RESOURCE__THROUGHPUT:
-				return THROUGHPUT_EDEFAULT == null ? throughput != null : !THROUGHPUT_EDEFAULT.equals(throughput);
-			case PAMPackage.PA_LOGICAL_RESOURCE__POOL_SIZE:
-				return POOL_SIZE_EDEFAULT == null ? poolSize != null : !POOL_SIZE_EDEFAULT.equals(poolSize);
+		case PAMPackage.PA_LOGICAL_RESOURCE__UTILIZATION:
+			return UTILIZATION_EDEFAULT == null ? utilization != null : !UTILIZATION_EDEFAULT.equals(utilization);
+		case PAMPackage.PA_LOGICAL_RESOURCE__THROUGHPUT:
+			return THROUGHPUT_EDEFAULT == null ? throughput != null : !THROUGHPUT_EDEFAULT.equals(throughput);
+		case PAMPackage.PA_LOGICAL_RESOURCE__POOL_SIZE:
+			return POOL_SIZE_EDEFAULT == null ? poolSize != null : !POOL_SIZE_EDEFAULT.equals(poolSize);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -259,11 +286,14 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (utilization: ");
@@ -276,4 +306,4 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 		return result.toString();
 	}
 
-} //PaLogicalResourceImpl
+} // PaLogicalResourceImpl

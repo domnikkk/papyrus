@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -59,17 +59,17 @@ public class AssociationEditPart extends AbstractElementLinkEditPart {
 	 */
 	protected void addAssociationEndListeners() {
 		EObject semanticElement = resolveSemanticElement();
-		if(semanticElement instanceof Association) {
+		if (semanticElement instanceof Association) {
 
-			Association association = (Association)semanticElement;
+			Association association = (Association) semanticElement;
 
-			if(association.getMemberEnds().size() >= 2) {
+			if (association.getMemberEnds().size() >= 2) {
 
 				EObject sourceEnd = AssociationViewUtils.getSourceSemanticEnd(getNotationView());
 				EObject targetEnd = AssociationViewUtils.getTargetSemanticEnd(getNotationView());
 
-				addListenerFilter(ASSOCIATION_END_LISTENERS_SOURCE, this, sourceEnd); //$NON-NLS-1$
-				addListenerFilter(ASSOCIATION_END_LISTENERS_TARGET, this, targetEnd); //$NON-NLS-1$
+				addListenerFilter(ASSOCIATION_END_LISTENERS_SOURCE, this, sourceEnd);
+				addListenerFilter(ASSOCIATION_END_LISTENERS_TARGET, this, targetEnd);
 
 			}
 		}
@@ -92,7 +92,7 @@ public class AssociationEditPart extends AbstractElementLinkEditPart {
 		super.handleNotificationEvent(event);
 
 		// Set association ends appearance (aggregation diamond, navigable arrow, etc...)
-		if(resolveSemanticElement() != null) {
+		if (resolveSemanticElement() != null) {
 			refreshVisuals();
 		}
 	}
@@ -104,64 +104,66 @@ public class AssociationEditPart extends AbstractElementLinkEditPart {
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 
-		if(resolveSemanticElement() != null) {
-			if(getSource() == null || getTarget() == null) {
+		if (resolveSemanticElement() != null) {
+			if (getSource() == null || getTarget() == null) {
 				return;
 			}
-			if(((GraphicalEditPart)getSource()).resolveSemanticElement() == null || ((GraphicalEditPart)getTarget()).resolveSemanticElement() == null) {
+			if (((GraphicalEditPart) getSource()).resolveSemanticElement() == null || ((GraphicalEditPart) getTarget()).resolveSemanticElement() == null) {
 				return;
 			}
 
 			Property source = AssociationViewUtils.getSourceSemanticEnd(getNotationView());
 			Property target = AssociationViewUtils.getTargetSemanticEnd(getNotationView());
-			if(source == null || target == null) {
+			if (source == null || target == null) {
 				return;
 			}
-			
+
 			// Get the association
 			Element umlElement = getUMLElement();
-			if(umlElement instanceof Association) {
-				Association association = (Association)getUMLElement();
+			if (umlElement instanceof Association) {
+				Association association = (Association) getUMLElement();
 
 				// Show navigable arrow if either source or target is navigable
 				// not when both are navigable.
-				if(isNavigable(association, source) && isNavigable(association, target)) {
+				if (isNavigable(association, source) && isNavigable(association, target)) {
 
 					// No navigable mark shown on figure.
-					if(source.getAggregation() == AggregationKind.NONE_LITERAL) {
+					if (source.getAggregation() == AggregationKind.NONE_LITERAL) {
 						setArrowSource(getArrowDecoration(EdgeDecorationType.NONE));
 					}
-					if(target.getAggregation() == AggregationKind.NONE_LITERAL) {
+					if (target.getAggregation() == AggregationKind.NONE_LITERAL) {
 						setArrowTarget(getArrowDecoration(EdgeDecorationType.NONE));
 					}
 
 				} else {
 
-					if(isNavigable(association, source)) {
+					if (isNavigable(association, source)) {
 						setArrowTarget(getArrowDecoration(EdgeDecorationType.OPEN_ARROW));
-						if(source.getAggregation() == AggregationKind.NONE_LITERAL) {
+						if (source.getAggregation() == AggregationKind.NONE_LITERAL) {
 							setArrowSource(getArrowDecoration(EdgeDecorationType.NONE));
-						}					}
+						}
+					}
 
-					if(isNavigable(association, target)) {
+					if (isNavigable(association, target)) {
 						setArrowSource(getArrowDecoration(EdgeDecorationType.OPEN_ARROW));
-						if(target.getAggregation() == AggregationKind.NONE_LITERAL) {
+						if (target.getAggregation() == AggregationKind.NONE_LITERAL) {
 							setArrowTarget(getArrowDecoration(EdgeDecorationType.NONE));
-						}					}
+						}
+					}
 
 				}
-				
-				if(source.getAggregation() == AggregationKind.SHARED_LITERAL) {
+
+				if (source.getAggregation() == AggregationKind.SHARED_LITERAL) {
 					setArrowSource(getArrowDecoration(EdgeDecorationType.SOLID_DIAMOND_EMPTY));
 				}
-				if(target.getAggregation() == AggregationKind.SHARED_LITERAL) {
+				if (target.getAggregation() == AggregationKind.SHARED_LITERAL) {
 					setArrowTarget(getArrowDecoration(EdgeDecorationType.SOLID_DIAMOND_EMPTY));
 				}
 
-				if(source.getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
+				if (source.getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
 					setArrowSource(getArrowDecoration(EdgeDecorationType.SOLID_DIAMOND_FILLED));
 				}
-				if(target.getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
+				if (target.getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
 					setArrowTarget(getArrowDecoration(EdgeDecorationType.SOLID_DIAMOND_FILLED));
 				}
 
@@ -171,14 +173,14 @@ public class AssociationEditPart extends AbstractElementLinkEditPart {
 
 	/**
 	 * SysML implementation for isNavigable.
-	 * 
+	 *
 	 * @param end
 	 * @return
 	 */
 	private boolean isNavigable(Association association, Property end) {
 		boolean isNavigable = false;
 
-		if(association.getOwnedEnds().contains(end)) {
+		if (association.getOwnedEnds().contains(end)) {
 			isNavigable = false;
 		} else {
 			isNavigable = true;
@@ -209,7 +211,7 @@ public class AssociationEditPart extends AbstractElementLinkEditPart {
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DefaultSemanticEditPolicy());
-		// Start of user code custom policies	
+		// Start of user code custom policies
 		// End of user code
 	}
 
@@ -218,24 +220,24 @@ public class AssociationEditPart extends AbstractElementLinkEditPart {
 	 */
 	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof NamedElementLinkLabelNameEditPart) {
-			((NamedElementLinkLabelNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
+		if (childEditPart instanceof NamedElementLinkLabelNameEditPart) {
+			((NamedElementLinkLabelNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
-		if(childEditPart instanceof AssociationLinkLabelSourceRoleEditPart) {
-			((AssociationLinkLabelSourceRoleEditPart)childEditPart).setLabel(getPrimaryShape().getSourceRoleLabel());
+		if (childEditPart instanceof AssociationLinkLabelSourceRoleEditPart) {
+			((AssociationLinkLabelSourceRoleEditPart) childEditPart).setLabel(getPrimaryShape().getSourceRoleLabel());
 			return true;
 		}
-		if(childEditPart instanceof AssociationLinkLabelSourceMultiplicityEditPart) {
-			((AssociationLinkLabelSourceMultiplicityEditPart)childEditPart).setLabel(getPrimaryShape().getSourceMultiplicityLabel());
+		if (childEditPart instanceof AssociationLinkLabelSourceMultiplicityEditPart) {
+			((AssociationLinkLabelSourceMultiplicityEditPart) childEditPart).setLabel(getPrimaryShape().getSourceMultiplicityLabel());
 			return true;
 		}
-		if(childEditPart instanceof AssociationLinkLabelTargetRoleEditPart) {
-			((AssociationLinkLabelTargetRoleEditPart)childEditPart).setLabel(getPrimaryShape().getTargetRoleLabel());
+		if (childEditPart instanceof AssociationLinkLabelTargetRoleEditPart) {
+			((AssociationLinkLabelTargetRoleEditPart) childEditPart).setLabel(getPrimaryShape().getTargetRoleLabel());
 			return true;
 		}
-		if(childEditPart instanceof AssociationLinkLabelTargetMultiplicityEditPart) {
-			((AssociationLinkLabelTargetMultiplicityEditPart)childEditPart).setLabel(getPrimaryShape().getTargetMultiplicityLabel());
+		if (childEditPart instanceof AssociationLinkLabelTargetMultiplicityEditPart) {
+			((AssociationLinkLabelTargetMultiplicityEditPart) childEditPart).setLabel(getPrimaryShape().getTargetMultiplicityLabel());
 			return true;
 		}
 		return super.addFixedChild(childEditPart);
@@ -246,19 +248,19 @@ public class AssociationEditPart extends AbstractElementLinkEditPart {
 	 */
 	@Override
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof NamedElementLinkLabelNameEditPart) {
+		if (childEditPart instanceof NamedElementLinkLabelNameEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof AssociationLinkLabelSourceRoleEditPart) {
+		if (childEditPart instanceof AssociationLinkLabelSourceRoleEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof AssociationLinkLabelSourceMultiplicityEditPart) {
+		if (childEditPart instanceof AssociationLinkLabelSourceMultiplicityEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof AssociationLinkLabelTargetRoleEditPart) {
+		if (childEditPart instanceof AssociationLinkLabelTargetRoleEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof AssociationLinkLabelTargetMultiplicityEditPart) {
+		if (childEditPart instanceof AssociationLinkLabelTargetMultiplicityEditPart) {
 			return true;
 		}
 		return super.removeFixedChild(childEditPart);
@@ -267,6 +269,7 @@ public class AssociationEditPart extends AbstractElementLinkEditPart {
 	/**
 	 * Creates figure for this edit part.
 	 */
+	@Override
 	protected Connection createConnectionFigure() {
 		return new AssociationFigure();
 	}
@@ -274,8 +277,9 @@ public class AssociationEditPart extends AbstractElementLinkEditPart {
 	/**
 	 * Creates primary shape for this edit part.
 	 */
+	@Override
 	public AssociationFigure getPrimaryShape() {
-		return (AssociationFigure)getFigure();
+		return (AssociationFigure) getFigure();
 	}
 
 	/**

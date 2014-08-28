@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,11 +38,11 @@ public class ConverterRegistry {
 
 	/**
 	 * Returns the single instance of this registry
-	 * 
+	 *
 	 * @return the single instance of this registry
 	 */
 	public static synchronized ConverterRegistry getSingleton() {
-		if(instance == null) {
+		if (instance == null) {
 			instance = new ConverterRegistry();
 			instance.initializeRegistry();
 		}
@@ -62,10 +62,10 @@ public class ConverterRegistry {
 
 	/**
 	 * Returns the converter for the convenient type, from an {@link Object}
-	 * 
+	 *
 	 * @param toType
-	 *        the class into which the element should be transformed
-	 * 
+	 *            the class into which the element should be transformed
+	 *
 	 * @return the converter for the convenient type
 	 */
 	public IConverter getConverter(Class<?> toType) {
@@ -76,78 +76,78 @@ public class ConverterRegistry {
 		// retrieve the converter
 		IConverter converter = getConverter(parameterType);
 
-		if(converter != null) {
+		if (converter != null) {
 			return converter.convert(valueInstance);
 		} else {
 			throw new ConverterNotfoundException(parameterType, valueInstance);
 		}
 	}
 
-//	/**
-//	 * Converts a parameter value into a list of values
-//	 * 
-//	 * @param context
-//	 *        the context of the evaluation of the query
-//	 * @param parameterType
-//	 *        the type of the list
-//	 * @param parameterValue
-//	 *        the parameter value to transform into a list
-//	 * @return the list of values contained by the parameter value
-//	 */
-//	public List<?> convertToList(final EObject context, final Class<?> parameterType, final ParameterValue parameterValue) {
-//		return new ConfigurationSwitch<List<?>>() {
-//			
-//			/**
-//			 * {@inheritDoc}
-//			 */
-//			@Override
-//			public java.util.List<?> caseConstantParameterValue(ConstantParameterValue constantParameterValue) {
-//				IConverter converter = getConverter(parameterType);
-//
-//				if(converter != null) {
-//					return Arrays.asList(converter.convert(constantParameterValue.getValueInstance()));
-//				} else {
-//					Activator.log.error("Impossible to find a converter for type: " + parameterType, null);
-//					return Collections.emptyList();
-//				}
-//			};
-//
-//			/**
-//			 * {@inheritDoc}
-//			 */
-//			@Override
-//			public java.util.List<?> caseQueryExecutionValue(QueryExecutionValue queryExecutionValue) {
-//				// if query returns a list, returns it, else creates an array of one element
-//				QueryConfiguration queryConfiguration = queryExecutionValue.getConfiguration();
-//				if(!(queryConfiguration instanceof ModiscoQueryConfiguration)) {
-//					throw new RuntimeException("List conversion not implemented for this type of configuration. " + queryConfiguration.eClass().getName());
-//				}
-//				Object executionResult = null;
-//				try {
-//					executionResult = QueryUtil.evaluateBooleanQuery(context, queryConfiguration);
-//				} catch (Exception e) {
-//					Activator.log.error(e);
-//				}
-//				int upperBound = ((ModiscoQueryConfiguration)queryConfiguration).getQuery().getUpperBound();
-//				if(upperBound == 1) {
-//					return Arrays.asList(executionResult);
-//				} else {
-//					return (List<?>)executionResult;
-//				}
-//			};
-//
-//			/**
-//			 * {@inheritDoc}
-//			 */
-//			@Override
-//			public java.util.List<?> caseListParameterValue(ListParameterValue listParameterValue) {
-//				List<Object> values = new ArrayList<Object>();
-//				for(ParameterValue parameterValue : listParameterValue.getValues()) {
-//					values.addAll(convertToList(context, parameterType, parameterValue));
-//				}
-//				return values;
-//			};
-//
-//		}.doSwitch(parameterValue);
-//	}
+	// /**
+	// * Converts a parameter value into a list of values
+	// *
+	// * @param context
+	// * the context of the evaluation of the query
+	// * @param parameterType
+	// * the type of the list
+	// * @param parameterValue
+	// * the parameter value to transform into a list
+	// * @return the list of values contained by the parameter value
+	// */
+	// public List<?> convertToList(final EObject context, final Class<?> parameterType, final ParameterValue parameterValue) {
+	// return new ConfigurationSwitch<List<?>>() {
+	//
+	// /**
+	// * {@inheritDoc}
+	// */
+	// @Override
+	// public java.util.List<?> caseConstantParameterValue(ConstantParameterValue constantParameterValue) {
+	// IConverter converter = getConverter(parameterType);
+	//
+	// if(converter != null) {
+	// return Arrays.asList(converter.convert(constantParameterValue.getValueInstance()));
+	// } else {
+	// Activator.log.error("Impossible to find a converter for type: " + parameterType, null);
+	// return Collections.emptyList();
+	// }
+	// };
+	//
+	// /**
+	// * {@inheritDoc}
+	// */
+	// @Override
+	// public java.util.List<?> caseQueryExecutionValue(QueryExecutionValue queryExecutionValue) {
+	// // if query returns a list, returns it, else creates an array of one element
+	// QueryConfiguration queryConfiguration = queryExecutionValue.getConfiguration();
+	// if(!(queryConfiguration instanceof ModiscoQueryConfiguration)) {
+	// throw new RuntimeException("List conversion not implemented for this type of configuration. " + queryConfiguration.eClass().getName());
+	// }
+	// Object executionResult = null;
+	// try {
+	// executionResult = QueryUtil.evaluateBooleanQuery(context, queryConfiguration);
+	// } catch (Exception e) {
+	// Activator.log.error(e);
+	// }
+	// int upperBound = ((ModiscoQueryConfiguration)queryConfiguration).getQuery().getUpperBound();
+	// if(upperBound == 1) {
+	// return Arrays.asList(executionResult);
+	// } else {
+	// return (List<?>)executionResult;
+	// }
+	// };
+	//
+	// /**
+	// * {@inheritDoc}
+	// */
+	// @Override
+	// public java.util.List<?> caseListParameterValue(ListParameterValue listParameterValue) {
+	// List<Object> values = new ArrayList<Object>();
+	// for(ParameterValue parameterValue : listParameterValue.getValues()) {
+	// values.addAll(convertToList(context, parameterType, parameterValue));
+	// }
+	// return values;
+	// };
+	//
+	// }.doSwitch(parameterValue);
+	// }
 }

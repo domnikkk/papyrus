@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    CEA LIST - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.C_Cpp.impl;
 
@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.Element;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.C_Cpp.impl.NoCodeGenImpl#getBase_element <em>Base element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.C_Cpp.impl.NoCodeGenImpl#getBase_element <em>Base element</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +39,7 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	 * The cached value of the '{@link #getBase_element() <em>Base element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_element()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected NoCodeGenImpl() {
@@ -57,6 +59,7 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -67,15 +70,18 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Element getBase_element() {
 		if (base_element != null && base_element.eIsProxy()) {
-			InternalEObject oldBase_element = (InternalEObject)base_element;
-			base_element = (Element)eResolveProxy(oldBase_element);
+			InternalEObject oldBase_element = (InternalEObject) base_element;
+			base_element = (Element) eResolveProxy(oldBase_element);
 			if (base_element != oldBase_element) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, C_CppPackage.NO_CODE_GEN__BASE_ELEMENT, oldBase_element, base_element));
+				}
 			}
 		}
 		return base_element;
@@ -84,6 +90,7 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Element basicGetBase_element() {
@@ -93,26 +100,32 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_element(Element newBase_element) {
 		Element oldBase_element = base_element;
 		base_element = newBase_element;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, C_CppPackage.NO_CODE_GEN__BASE_ELEMENT, oldBase_element, base_element));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case C_CppPackage.NO_CODE_GEN__BASE_ELEMENT:
-				if (resolve) return getBase_element();
-				return basicGetBase_element();
+		case C_CppPackage.NO_CODE_GEN__BASE_ELEMENT:
+			if (resolve) {
+				return getBase_element();
+			}
+			return basicGetBase_element();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,14 +133,15 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case C_CppPackage.NO_CODE_GEN__BASE_ELEMENT:
-				setBase_element((Element)newValue);
-				return;
+		case C_CppPackage.NO_CODE_GEN__BASE_ELEMENT:
+			setBase_element((Element) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -135,14 +149,15 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case C_CppPackage.NO_CODE_GEN__BASE_ELEMENT:
-				setBase_element((Element)null);
-				return;
+		case C_CppPackage.NO_CODE_GEN__BASE_ELEMENT:
+			setBase_element((Element) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -150,15 +165,16 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case C_CppPackage.NO_CODE_GEN__BASE_ELEMENT:
-				return base_element != null;
+		case C_CppPackage.NO_CODE_GEN__BASE_ELEMENT:
+			return base_element != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //NoCodeGenImpl
+} // NoCodeGenImpl

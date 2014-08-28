@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.modelelement;
 
@@ -65,7 +67,7 @@ import org.eclipse.papyrus.views.properties.ui.PropertyEditor;
  */
 public class CustomizationModelElement extends AbstractModelElement {
 
-	private EMFModelElement delegate;
+	protected EMFModelElement delegate;
 
 	private static Map<EClassifier, IStaticContentProvider> providers;
 
@@ -73,12 +75,12 @@ public class CustomizationModelElement extends AbstractModelElement {
 	 * Constructs a new ModelElement.
 	 *
 	 * @param delegate
-	 *        If this model element cannot handle a given property, it will
-	 *        delegate the call to a standard EMF ModelElement
+	 *            If this model element cannot handle a given property, it will
+	 *            delegate the call to a standard EMF ModelElement
 	 */
 	public CustomizationModelElement(EMFModelElement delegate) {
 		this.delegate = delegate;
-		if(providers == null) {
+		if (providers == null) {
 			initializeProviders();
 		}
 	}
@@ -97,7 +99,7 @@ public class CustomizationModelElement extends AbstractModelElement {
 	@Override
 	public IObservable doGetObservable(String propertyPath) {
 		EStructuralFeature feature = delegate.getFeature(propertyPath);
-		if(ContextsPackage.eINSTANCE.getSection_Name() == feature) {
+		if (ContextsPackage.eINSTANCE.getSection_Name() == feature) {
 			return new SectionNameObservableValue(delegate.getSource(), feature, delegate.getDomain());
 		}
 		return delegate.getObservable(propertyPath);
@@ -106,21 +108,21 @@ public class CustomizationModelElement extends AbstractModelElement {
 	@Override
 	public IStaticContentProvider getContentProvider(String propertyPath) {
 		EStructuralFeature feature = delegate.getFeature(propertyPath);
-		if(feature == null) {
+		if (feature == null) {
 			return EmptyContentProvider.instance;
 		}
 
 		IStaticContentProvider provider = findProvider(feature);
 
-		if(provider == null) {
+		if (provider == null) {
 			return delegate.getContentProvider(propertyPath);
 		}
 
-		if(provider instanceof ITreeContentProvider) {
-			IStrategyBasedContentProvider strategyProvider = getStrategyProvider((ITreeContentProvider)provider);
+		if (provider instanceof ITreeContentProvider) {
+			IStrategyBasedContentProvider strategyProvider = getStrategyProvider((ITreeContentProvider) provider);
 
-			if(feature.getEType() == EnvironmentPackage.eINSTANCE.getPropertyEditorType()) {
-				return new PropertyEditorTypeContentProvider(strategyProvider, (PropertyEditor)delegate.getSource());
+			if (feature.getEType() == EnvironmentPackage.eINSTANCE.getPropertyEditorType()) {
+				return new PropertyEditorTypeContentProvider(strategyProvider, (PropertyEditor) delegate.getSource());
 			} else {
 				return new EMFGraphicalContentProvider(strategyProvider, ConfigurationManager.getInstance().getResourceSet(), "history_" + feature.getName());
 			}
@@ -137,32 +139,32 @@ public class CustomizationModelElement extends AbstractModelElement {
 
 	protected IStaticContentProvider findProvider(EStructuralFeature feature) {
 		EClassifier classifier = feature.getEType();
-		if(providers.containsKey(classifier)) {
+		if (providers.containsKey(classifier)) {
 			return providers.get(classifier);
-		} else if(classifier == ContextsPackage.eINSTANCE.getProperty()) {
+		} else if (classifier == ContextsPackage.eINSTANCE.getProperty()) {
 			return new PropertyContentProvider(delegate.getSource());
-		} else if(classifier == ContextsPackage.eINSTANCE.getTab()) {
-			//Sections can only be moved to tabs from non-plugin contexts
+		} else if (classifier == ContextsPackage.eINSTANCE.getTab()) {
+			// Sections can only be moved to tabs from non-plugin contexts
 			boolean editableTabsOnly = delegate.getSource() instanceof Section;
 			return new TabContentProvider(delegate.getSource(), editableTabsOnly);
-		} else if(classifier instanceof EClass && EMFHelper.isSubclass((EClass)classifier, ConstraintsPackage.eINSTANCE.getConstraintDescriptor())) {
-			return new ConstraintDescriptorContentProvider(delegate.getSource(), (EClass)classifier);
-		} else if(isDataContextElement(classifier)) {
-			return new DataContextElementContentProvider((DataContextElement)delegate.getSource());
-		} else if(classifier == ContextsPackage.eINSTANCE.getContext()) {
-			return new DependencyContentProvider((Context)delegate.getSource());
+		} else if (classifier instanceof EClass && EMFHelper.isSubclass((EClass) classifier, ConstraintsPackage.eINSTANCE.getConstraintDescriptor())) {
+			return new ConstraintDescriptorContentProvider(delegate.getSource(), (EClass) classifier);
+		} else if (isDataContextElement(classifier)) {
+			return new DataContextElementContentProvider((DataContextElement) delegate.getSource());
+		} else if (classifier == ContextsPackage.eINSTANCE.getContext()) {
+			return new DependencyContentProvider((Context) delegate.getSource());
 		}
 
 		return null;
 	}
 
 	private boolean isDataContextElement(EClassifier classifier) {
-		if(classifier == ContextsPackage.eINSTANCE.getDataContextElement()) {
+		if (classifier == ContextsPackage.eINSTANCE.getDataContextElement()) {
 			return true;
 		}
 
-		if(classifier instanceof EClass) {
-			EClass eClass = (EClass)classifier;
+		if (classifier instanceof EClass) {
+			EClass eClass = (EClass) classifier;
 			return eClass.getEAllSuperTypes().contains(ContextsPackage.eINSTANCE.getDataContextElement());
 		}
 
@@ -191,7 +193,7 @@ public class CustomizationModelElement extends AbstractModelElement {
 
 	@Override
 	public boolean isEditable(String propertyPath) {
-		if(delegate.getFeature(propertyPath) == ContextsPackage.eINSTANCE.getSection_SectionFile()) {
+		if (delegate.getFeature(propertyPath) == ContextsPackage.eINSTANCE.getSection_SectionFile()) {
 			return false;
 		}
 		return delegate.isEditable(propertyPath);

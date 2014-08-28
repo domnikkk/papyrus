@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,20 +59,20 @@ import org.eclipse.swt.widgets.Table;
 /**
  * This providers adds a text-filter and an History to EMF-based content providers
  */
-//TODO : Extend (Abstract)FilteredContentProvider
+// TODO : Extend (Abstract)FilteredContentProvider
 public class EMFGraphicalContentProvider extends EncapsulatedContentProvider implements ISelectionChangedListener {
 
 	private static final String DIALOG_SETTINGS = EMFGraphicalContentProvider.class.getName();
 
 	protected String historyId;
 
-	//Unused (yet)
-	//TODO : Add a preference or a collapsible composite for this feature (Or both)
+	// Unused (yet)
+	// TODO : Add a preference or a collapsible composite for this feature (Or both)
 	//
-	//	/**
-	//	 * The current metaclass viewer filter
-	//	 */ 
-	//	protected ViewerFilter currentMetaclassViewerFilter;
+	// /**
+	// * The current metaclass viewer filter
+	// */
+	// protected ViewerFilter currentMetaclassViewerFilter;
 
 	protected ViewerFilter patternFilter;
 
@@ -124,21 +124,21 @@ public class EMFGraphicalContentProvider extends EncapsulatedContentProvider imp
 		editor.setValidateOnDelay(true);
 		patternFilter = new PatternViewerFilter();
 		currentFilterPattern = ""; //$NON-NLS-1$
-		((PatternViewerFilter)patternFilter).setPattern(currentFilterPattern);
+		((PatternViewerFilter) patternFilter).setPattern(currentFilterPattern);
 
 		editor.addCommitListener(new ICommitListener() {
 
 			public void commit(AbstractEditor editor) {
-				String filterPattern = (String)((StringEditor)editor).getValue();
-				((PatternViewerFilter)patternFilter).setPattern(filterPattern);
+				String filterPattern = (String) ((StringEditor) editor).getValue();
+				((PatternViewerFilter) patternFilter).setPattern(filterPattern);
 				viewer.refresh();
-				if(!("".equals(filterPattern) || currentFilterPattern.equals(filterPattern))) {
+				if (!("".equals(filterPattern) || currentFilterPattern.equals(filterPattern))) {
 
-					//FIXME: The reveal first match algorithm is not compatible with infinite trees and had bad performances
-					//Object firstMatch = getFirstMatchingElement(null);
-					//if(firstMatch != null) {
-					//		revealSemanticElement(Collections.singletonList(firstMatch));
-					//}
+					// FIXME: The reveal first match algorithm is not compatible with infinite trees and had bad performances
+					// Object firstMatch = getFirstMatchingElement(null);
+					// if(firstMatch != null) {
+					// revealSemanticElement(Collections.singletonList(firstMatch));
+					// }
 
 					currentFilterPattern = filterPattern;
 				}
@@ -153,41 +153,41 @@ public class EMFGraphicalContentProvider extends EncapsulatedContentProvider imp
 
 	/**
 	 * Returns the first (encapsulated) element matching the current filters
-	 * 
+	 *
 	 * @return
 	 */
 	protected Object getFirstMatchingElement(Object parent) {
-		//Browse from the root element
-		if(parent == null) {
-			for(Object parentElement : getElements(viewer.getInput())) {
+		// Browse from the root element
+		if (parent == null) {
+			for (Object parentElement : getElements(viewer.getInput())) {
 				Object firstMatch = getFirstMatchingElement(parentElement);
-				if(firstMatch != null) {
+				if (firstMatch != null) {
 					return firstMatch;
 				}
 			}
 			return null;
 		}
 
-		for(ViewerFilter filter : viewer.getFilters()) {
-			if(!filter.select(viewer, getParent(parent), parent)) {
+		for (ViewerFilter filter : viewer.getFilters()) {
+			if (!filter.select(viewer, getParent(parent), parent)) {
 				return null;
 			}
 		}
 
-		//Test the current element
-		if(isValidValue(parent)) {
+		// Test the current element
+		if (isValidValue(parent)) {
 			return parent;
 		}
 
-		//Browse the child elements
-		for(Object childElement : getChildren(parent)) {
+		// Browse the child elements
+		for (Object childElement : getChildren(parent)) {
 			Object firstMatch = getFirstMatchingElement(childElement);
-			if(firstMatch != null) {
+			if (firstMatch != null) {
 				return firstMatch;
 			}
 		}
 
-		//No match found
+		// No match found
 		return null;
 	}
 
@@ -197,16 +197,16 @@ public class EMFGraphicalContentProvider extends EncapsulatedContentProvider imp
 	@Override
 	public void createAfter(Composite parent) {
 		parent.setLayout(new GridLayout(1, false));
-		//		createMetaclassFilter(parent); //Disabled
+		// createMetaclassFilter(parent); //Disabled
 		createHistory(parent);
 		createDetailArea(parent);
 	}
 
 	/**
 	 * Creates a widget referencing the recently selected elements
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be created
+	 *            The composite in which the widget will be created
 	 */
 	protected void createHistory(Composite parent) {
 		initSelectionHistory();
@@ -231,10 +231,10 @@ public class EMFGraphicalContentProvider extends EncapsulatedContentProvider imp
 			 * {@inheritDoc}
 			 */
 			public void selectionChanged(SelectionChangedEvent event) {
-				IStructuredSelection selection = (IStructuredSelection)historyViewer.getSelection();
+				IStructuredSelection selection = (IStructuredSelection) historyViewer.getSelection();
 				Object selectedObject = selection.getFirstElement();
-				if(selectedObject instanceof EObject) {
-					EObject eObject = ((EObject)selectedObject);
+				if (selectedObject instanceof EObject) {
+					EObject eObject = ((EObject) selectedObject);
 					revealSemanticElement(Collections.singletonList(eObject));
 				}
 			}
@@ -248,18 +248,18 @@ public class EMFGraphicalContentProvider extends EncapsulatedContentProvider imp
 		selectionHistory = new ArrayList<EObject>(HISTORY_MAX_SIZE + 1);
 
 		IDialogSettings historySettings = getDialogSettings().getSection(HISTORY_SETTINGS);
-		if(historySettings != null && resourceSet != null) {
+		if (historySettings != null && resourceSet != null) {
 			String[] uriHistory = historySettings.getArray(PREVIOUS_SELECTION);
 			// for each element in the list, try to get the EObject by its URI
-			if(uriHistory != null) {
-				for(String uri : uriHistory) {
+			if (uriHistory != null) {
+				for (String uri : uriHistory) {
 					try {
 						EObject object = resourceSet.getEObject(URI.createURI(uri), true);
-						if(object != null && !selectionHistory.contains(object)) {
+						if (object != null && !selectionHistory.contains(object)) {
 							selectionHistory.add(object);
 						}
 					} catch (Exception ex) {
-						//Ignore : if the resource doesn't exist anymore, we just skip it
+						// Ignore : if the resource doesn't exist anymore, we just skip it
 					}
 				}
 			}
@@ -269,75 +269,75 @@ public class EMFGraphicalContentProvider extends EncapsulatedContentProvider imp
 	/**
 	 * Creates a widget to filter the tree according to the selected
 	 * metaclass.
-	 * 
+	 *
 	 * @param parent
-	 *        The Composite in which the widgets will be created
+	 *            The Composite in which the widgets will be created
 	 * @deprecated
 	 */
 	@Deprecated
 	protected void createMetaclassFilter(Composite parent) {
-		//		if(semanticRoot == null) {
-		//			return;
-		//		}
+		// if(semanticRoot == null) {
+		// return;
+		// }
 		//
-		//		Composite container = new Composite(parent, SWT.NONE);
-		//		container.setLayout(new GridLayout(2, false));
-		//		container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+		// Composite container = new Composite(parent, SWT.NONE);
+		// container.setLayout(new GridLayout(2, false));
+		// container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 		//
-		//		ResourceSet resourceSet = semanticRoot.eResource().getResourceSet();
-		//		EcoreUtil.resolveAll(resourceSet);
+		// ResourceSet resourceSet = semanticRoot.eResource().getResourceSet();
+		// EcoreUtil.resolveAll(resourceSet);
 		//
-		//		Label metamodelLabel = new Label(container, SWT.NONE);
-		//		metamodelLabel.setText("Metamodel:");
+		// Label metamodelLabel = new Label(container, SWT.NONE);
+		// metamodelLabel.setText("Metamodel:");
 		//
-		//		ComboViewer metamodelViewer = new ComboViewer(container);
-		//		metamodelViewer.setContentProvider(getMetamodelContentProvider());
-		//		metamodelViewer.setLabelProvider(new EMFLabelProvider());
-		//		metamodelViewer.setInput(semanticRoot);
-		//		metamodelViewer.getCombo().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+		// ComboViewer metamodelViewer = new ComboViewer(container);
+		// metamodelViewer.setContentProvider(getMetamodelContentProvider());
+		// metamodelViewer.setLabelProvider(new EMFLabelProvider());
+		// metamodelViewer.setInput(semanticRoot);
+		// metamodelViewer.getCombo().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 		//
-		//		Label metaclassLabel = new Label(container, SWT.NONE);
-		//		metaclassLabel.setText("Metaclass:");
+		// Label metaclassLabel = new Label(container, SWT.NONE);
+		// metaclassLabel.setText("Metaclass:");
 		//
-		//		final ComboViewer metaclassViewer = new ComboViewer(container);
-		//		IStructuredContentProvider metaclassProvider = getMetaclassContentProvider();
-		//		metaclassViewer.setContentProvider(metaclassProvider);
-		//		metaclassViewer.setLabelProvider(new EMFLabelProvider());
-		//		metaclassViewer.getCombo().setEnabled(false);
-		//		metaclassViewer.getCombo().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+		// final ComboViewer metaclassViewer = new ComboViewer(container);
+		// IStructuredContentProvider metaclassProvider = getMetaclassContentProvider();
+		// metaclassViewer.setContentProvider(metaclassProvider);
+		// metaclassViewer.setLabelProvider(new EMFLabelProvider());
+		// metaclassViewer.getCombo().setEnabled(false);
+		// metaclassViewer.getCombo().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 		//
-		//		metamodelViewer.setFilters(new ViewerFilter[]{ new MetamodelContentFilter(metaclassProvider) });
+		// metamodelViewer.setFilters(new ViewerFilter[]{ new MetamodelContentFilter(metaclassProvider) });
 		//
-		//		metamodelViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+		// metamodelViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 		//
-		//			public void selectionChanged(SelectionChangedEvent event) {
-		//				metaclassViewer.setInput(((IStructuredSelection)event.getSelection()).getFirstElement());
-		//				metaclassViewer.getCombo().setEnabled(true);
-		//			}
-		//		});
+		// public void selectionChanged(SelectionChangedEvent event) {
+		// metaclassViewer.setInput(((IStructuredSelection)event.getSelection()).getFirstElement());
+		// metaclassViewer.getCombo().setEnabled(true);
+		// }
+		// });
 		//
-		//		metaclassViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+		// metaclassViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 		//
-		//			public void selectionChanged(SelectionChangedEvent event) {
-		//				if(!event.getSelection().isEmpty()) {
-		//					Object selectedObject = ((IStructuredSelection)event.getSelection()).getFirstElement();
-		//					List<ViewerFilter> filters = new LinkedList<ViewerFilter>(Arrays.asList(viewer.getFilters()));
-		//					filters.remove(currentMetaclassViewerFilter);
-		//					currentMetaclassViewerFilter = getMetaclassViewerFilter(selectedObject);
-		//					filters.add(currentMetaclassViewerFilter);
-		//					viewer.setFilters(filters.toArray(new ViewerFilter[filters.size()]));
-		//					viewer.refresh();
-		//				}
-		//			}
-		//		});
+		// public void selectionChanged(SelectionChangedEvent event) {
+		// if(!event.getSelection().isEmpty()) {
+		// Object selectedObject = ((IStructuredSelection)event.getSelection()).getFirstElement();
+		// List<ViewerFilter> filters = new LinkedList<ViewerFilter>(Arrays.asList(viewer.getFilters()));
+		// filters.remove(currentMetaclassViewerFilter);
+		// currentMetaclassViewerFilter = getMetaclassViewerFilter(selectedObject);
+		// filters.add(currentMetaclassViewerFilter);
+		// viewer.setFilters(filters.toArray(new ViewerFilter[filters.size()]));
+		// viewer.refresh();
+		// }
+		// }
+		// });
 	}
 
 	/**
 	 * Creates a label widget to display detailed information on the
 	 * current value (Such as fully qualified name, ...)
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be created
+	 *            The composite in which the widget will be created
 	 */
 	protected void createDetailArea(Composite parent) {
 		detailLabel = new CLabel(parent, SWT.BORDER);
@@ -345,34 +345,34 @@ public class EMFGraphicalContentProvider extends EncapsulatedContentProvider imp
 		updateDetailLabel();
 	}
 
-	//	@Deprecated
-	//	protected IStructuredContentProvider getMetamodelContentProvider() {
-	//		return new MetamodelContentProvider();
-	//	}
+	// @Deprecated
+	// protected IStructuredContentProvider getMetamodelContentProvider() {
+	// return new MetamodelContentProvider();
+	// }
 	//
-	//	@Deprecated
-	//	protected IStructuredContentProvider getMetaclassContentProvider() {
-	//		return new MetaclassContentProvider((EClass)this.metaClassWanted, this.metaClassNotWantedList);
-	//	}
+	// @Deprecated
+	// protected IStructuredContentProvider getMetaclassContentProvider() {
+	// return new MetaclassContentProvider((EClass)this.metaClassWanted, this.metaClassNotWantedList);
+	// }
 	//
-	//	@Deprecated
-	//	protected ILabelProvider getLabelProvider() {
-	//		return new EMFObjectLabelProvider();
-	//	}
+	// @Deprecated
+	// protected ILabelProvider getLabelProvider() {
+	// return new EMFObjectLabelProvider();
+	// }
 	//
-	//	@Deprecated
-	//	protected ViewerFilter getMetaclassViewerFilter(Object selectedMetaClass) {
-	//		return new MetaclassViewerFilter(selectedMetaClass);
-	//	}
+	// @Deprecated
+	// protected ViewerFilter getMetaclassViewerFilter(Object selectedMetaClass) {
+	// return new MetaclassViewerFilter(selectedMetaClass);
+	// }
 
 	/**
 	 * Returns the dialog settings. Returned object can't be null.
-	 * 
+	 *
 	 * @return dialog settings for this dialog
 	 */
 	protected IDialogSettings getDialogSettings() {
 		IDialogSettings settings = Activator.getDefault().getDialogSettings().getSection(getDialogSettingsIdentifier());
-		if(settings == null) {
+		if (settings == null) {
 			settings = Activator.getDefault().getDialogSettings().addNewSection(getDialogSettingsIdentifier());
 		}
 		return settings;
@@ -384,30 +384,30 @@ public class EMFGraphicalContentProvider extends EncapsulatedContentProvider imp
 
 	/**
 	 * Stores dialog settings.
-	 * 
+	 *
 	 * @param settings
-	 *        settings used to store dialog
+	 *            settings used to store dialog
 	 */
 	protected void storeDialog(IDialogSettings settings, Collection<EObject> newValues) {
 		selectionHistory.removeAll(newValues);
 
 		selectionHistory.addAll(0, newValues);
 
-		//Truncate the history: only keep a sublist of size HISTORY_MAX_SIZE
-		if(selectionHistory.size() > HISTORY_MAX_SIZE) {
+		// Truncate the history: only keep a sublist of size HISTORY_MAX_SIZE
+		if (selectionHistory.size() > HISTORY_MAX_SIZE) {
 			selectionHistory = selectionHistory.subList(0, HISTORY_MAX_SIZE);
 		}
 
 		List<String> uriList = new ArrayList<String>();
 
 		// convert list of EObject into URI string list
-		for(EObject object : selectionHistory) {
+		for (EObject object : selectionHistory) {
 			URI uri = EcoreUtil.getURI(object);
 			uriList.add(uri.toString());
 		}
 
 		IDialogSettings historySettings = settings.getSection(HISTORY_SETTINGS);
-		if(historySettings == null) {
+		if (historySettings == null) {
 			historySettings = settings.addNewSection(HISTORY_SETTINGS);
 		}
 		historySettings.put(PREVIOUS_SELECTION, uriList.toArray(new String[uriList.size()]));
@@ -419,9 +419,9 @@ public class EMFGraphicalContentProvider extends EncapsulatedContentProvider imp
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 		encapsulated.inputChanged(viewer, oldInput, newInput);
 
-		if(viewer instanceof StructuredViewer) {
-			this.viewer = (StructuredViewer)viewer;
-			if(newInput != null && viewer.getControl() != null && !viewer.getControl().isDisposed()) {
+		if (viewer instanceof StructuredViewer) {
+			this.viewer = (StructuredViewer) viewer;
+			if (newInput != null && viewer.getControl() != null && !viewer.getControl().isDisposed()) {
 				this.viewer.addSelectionChangedListener(this);
 			}
 		} else {
@@ -430,22 +430,22 @@ public class EMFGraphicalContentProvider extends EncapsulatedContentProvider imp
 	}
 
 	public void selectionChanged(SelectionChangedEvent event) {
-		selectedObject = ((IStructuredSelection)event.getSelection()).getFirstElement();
+		selectedObject = ((IStructuredSelection) event.getSelection()).getFirstElement();
 		updateDetailLabel();
 	}
 
 	private void updateDetailLabel() {
-		if(detailLabel == null || detailLabel.isDisposed()) {
+		if (detailLabel == null || detailLabel.isDisposed()) {
 			return;
 		}
-		if(selectedObject == null) {
+		if (selectedObject == null) {
 			detailLabel.setText("");
 			detailLabel.setImage(null);
 		} else {
-			ILabelProvider labelProvider = (ILabelProvider)viewer.getLabelProvider();
+			ILabelProvider labelProvider = (ILabelProvider) viewer.getLabelProvider();
 			String description;
-			if(labelProvider instanceof IDetailLabelProvider) {
-				description = ((IDetailLabelProvider)labelProvider).getDetail(selectedObject);
+			if (labelProvider instanceof IDetailLabelProvider) {
+				description = ((IDetailLabelProvider) labelProvider).getDetail(selectedObject);
 			} else {
 				description = labelProvider.getText(selectedObject);
 			}
@@ -457,19 +457,19 @@ public class EMFGraphicalContentProvider extends EncapsulatedContentProvider imp
 
 	@Override
 	public void commit(AbstractEditor editor) {
-		Iterator<?> selectionIterator = ((IStructuredSelection)viewer.getSelection()).iterator();
+		Iterator<?> selectionIterator = ((IStructuredSelection) viewer.getSelection()).iterator();
 		Set<EObject> eObjectsToStore = new LinkedHashSet<EObject>();
-		while(selectionIterator.hasNext()) {
+		while (selectionIterator.hasNext()) {
 			Object selectedElement = selectionIterator.next();
-			if(isValidValue(selectedElement)) {
+			if (isValidValue(selectedElement)) {
 				Object semanticObject = getAdaptedValue(selectedElement);
-				if(semanticObject instanceof EObject) {
-					eObjectsToStore.add((EObject)semanticObject);
+				if (semanticObject instanceof EObject) {
+					eObjectsToStore.add((EObject) semanticObject);
 				}
 			}
 		}
 
-		if(!eObjectsToStore.isEmpty()) {
+		if (!eObjectsToStore.isEmpty()) {
 			storeDialog(getDialogSettings(), eObjectsToStore);
 		}
 	}

@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -34,7 +34,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 public class PreTemplateInstantiationListener implements PreCopyListener {
 
 	public static PreTemplateInstantiationListener getInstance() {
-		if(preTemplateInstantiationListener == null) {
+		if (preTemplateInstantiationListener == null) {
 			preTemplateInstantiationListener = new PreTemplateInstantiationListener();
 			preTemplateInstantiationListener.treatTemplate = false;
 		}
@@ -51,8 +51,9 @@ public class PreTemplateInstantiationListener implements PreCopyListener {
 
 	private static PreTemplateInstantiationListener preTemplateInstantiationListener;
 
+	@Override
 	public EObject preCopyEObject(LazyCopier copy, EObject sourceEObj) {
-		if(treatTemplate) {
+		if (treatTemplate) {
 			return sourceEObj;
 		}
 		treatTemplate = true;
@@ -62,25 +63,25 @@ public class PreTemplateInstantiationListener implements PreCopyListener {
 	}
 
 	protected EObject checkEObject(LazyCopier copy, EObject sourceEObj) {
-			
+
 		// Specific treatment of OpaqueBehaviors: Template instantiations are typically managed
 		// by the associated operation which instantiates operation and behavior. In this case, the
 		// behavior should not be instantiated.
-		if(sourceEObj instanceof OpaqueBehavior) {
-			OpaqueBehavior behavior = (OpaqueBehavior)sourceEObj;
+		if (sourceEObj instanceof OpaqueBehavior) {
+			OpaqueBehavior behavior = (OpaqueBehavior) sourceEObj;
 			BehavioralFeature bf = behavior.getSpecification();
-			if(bf != null) {
+			if (bf != null) {
 				Template template = UMLUtil.getStereotypeApplication(bf, Template.class);
-				if(template != null) {
+				if (template != null) {
 					return null;
 				}
 			}
 		}
-		
-		if(sourceEObj instanceof Element) {
-		
-			Template template = UMLUtil.getStereotypeApplication((Element)sourceEObj, Template.class);
-			if((template != null)) {
+
+		if (sourceEObj instanceof Element) {
+
+			Template template = UMLUtil.getStereotypeApplication((Element) sourceEObj, Template.class);
+			if ((template != null)) {
 				BindingHelper helper = template.getHelper();
 				if (helper != null) {
 					return BindingHelperExt.applyPreHelper(helper, copy, binding, sourceEObj);

@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.Property;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.CapsulePartImpl#getBase_Property <em>Base Property</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.CapsulePartImpl#getBase_Property <em>Base Property</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +39,7 @@ public class CapsulePartImpl extends MinimalEObjectImpl.Container implements Cap
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public class CapsulePartImpl extends MinimalEObjectImpl.Container implements Cap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CapsulePartImpl() {
@@ -57,6 +59,7 @@ public class CapsulePartImpl extends MinimalEObjectImpl.Container implements Cap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -67,15 +70,18 @@ public class CapsulePartImpl extends MinimalEObjectImpl.Container implements Cap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Property getBase_Property() {
 		if (base_Property != null && base_Property.eIsProxy()) {
-			InternalEObject oldBase_Property = (InternalEObject)base_Property;
-			base_Property = (Property)eResolveProxy(oldBase_Property);
+			InternalEObject oldBase_Property = (InternalEObject) base_Property;
+			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UMLRealTimePackage.CAPSULE_PART__BASE_PROPERTY, oldBase_Property, base_Property));
+				}
 			}
 		}
 		return base_Property;
@@ -84,6 +90,7 @@ public class CapsulePartImpl extends MinimalEObjectImpl.Container implements Cap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -93,26 +100,32 @@ public class CapsulePartImpl extends MinimalEObjectImpl.Container implements Cap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLRealTimePackage.CAPSULE_PART__BASE_PROPERTY, oldBase_Property, base_Property));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UMLRealTimePackage.CAPSULE_PART__BASE_PROPERTY:
-				if (resolve) return getBase_Property();
-				return basicGetBase_Property();
+		case UMLRealTimePackage.CAPSULE_PART__BASE_PROPERTY:
+			if (resolve) {
+				return getBase_Property();
+			}
+			return basicGetBase_Property();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,14 +133,15 @@ public class CapsulePartImpl extends MinimalEObjectImpl.Container implements Cap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UMLRealTimePackage.CAPSULE_PART__BASE_PROPERTY:
-				setBase_Property((Property)newValue);
-				return;
+		case UMLRealTimePackage.CAPSULE_PART__BASE_PROPERTY:
+			setBase_Property((Property) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -135,14 +149,15 @@ public class CapsulePartImpl extends MinimalEObjectImpl.Container implements Cap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UMLRealTimePackage.CAPSULE_PART__BASE_PROPERTY:
-				setBase_Property((Property)null);
-				return;
+		case UMLRealTimePackage.CAPSULE_PART__BASE_PROPERTY:
+			setBase_Property((Property) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -150,15 +165,16 @@ public class CapsulePartImpl extends MinimalEObjectImpl.Container implements Cap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UMLRealTimePackage.CAPSULE_PART__BASE_PROPERTY:
-				return base_Property != null;
+		case UMLRealTimePackage.CAPSULE_PART__BASE_PROPERTY:
+			return base_Property != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //CapsulePartImpl
+} // CapsulePartImpl

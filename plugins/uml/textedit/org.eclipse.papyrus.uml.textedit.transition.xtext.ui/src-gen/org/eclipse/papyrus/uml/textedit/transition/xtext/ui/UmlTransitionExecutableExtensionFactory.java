@@ -3,16 +3,15 @@
  */
 package org.eclipse.papyrus.uml.textedit.transition.xtext.ui;
 
+import org.eclipse.papyrus.uml.textedit.transition.xtext.ui.internal.UmlTransitionActivator;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
-import org.eclipse.papyrus.uml.textedit.transition.xtext.ui.internal.UmlTransitionActivator;
-
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class UmlTransitionExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
@@ -20,10 +19,10 @@ public class UmlTransitionExecutableExtensionFactory extends AbstractGuiceAwareE
 	protected Bundle getBundle() {
 		return UmlTransitionActivator.getInstance().getBundle();
 	}
-	
+
 	@Override
 	protected Injector getInjector() {
 		return UmlTransitionActivator.getInstance().getInjector(UmlTransitionActivator.ORG_ECLIPSE_PAPYRUS_UML_TEXTEDIT_TRANSITION_XTEXT_UMLTRANSITION);
 	}
-	
+
 }

@@ -13,5 +13,5 @@ package org.eclipse.papyrus.uml.extensionpoints.library;
 import org.eclipse.papyrus.uml.extensionpoints.IRegisteredItem;
 
 public interface IRegisteredLibrary extends IRegisteredItem {
-	
+
 }

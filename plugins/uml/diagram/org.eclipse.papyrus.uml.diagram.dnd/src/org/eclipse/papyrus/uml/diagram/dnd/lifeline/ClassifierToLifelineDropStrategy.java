@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,11 +30,11 @@ import org.eclipse.uml2.uml.Type;
  * Drop a classifier on a Lifeline to type it.
  * This will create a new Property in the interaction, typed by the dropped classifier.
  * The Lifeline will represent this property.
- * 
+ *
  * It is also possible to drop directly an already existing Property to the Lifeline.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ClassifierToLifelineDropStrategy extends TransactionalDropStrategy {
 
@@ -43,7 +43,8 @@ public class ClassifierToLifelineDropStrategy extends TransactionalDropStrategy 
 	}
 
 	public String getDescription() {
-		return "Drop a classifier on a Lifeline to type it. This will create a new Property in the interaction, typed by the dropped classifier. The Lifeline will represent this property." + "It is also possible to drop directly an already existing Property to the lifeline.";
+		return "Drop a classifier on a Lifeline to type it. This will create a new Property in the interaction, typed by the dropped classifier. The Lifeline will represent this property."
+				+ "It is also possible to drop directly an already existing Property to the lifeline.";
 	}
 
 	public Image getImage() {
@@ -63,28 +64,28 @@ public class ClassifierToLifelineDropStrategy extends TransactionalDropStrategy 
 	protected Command doGetCommand(Request request, EditPart targetEditPart) {
 		EObject targetElement = getTargetSemanticElement(targetEditPart);
 
-		if(!(targetElement instanceof Lifeline)) {
+		if (!(targetElement instanceof Lifeline)) {
 			return null;
 		}
 
 
-		final Lifeline targetLifeline = (Lifeline)targetElement;
+		final Lifeline targetLifeline = (Lifeline) targetElement;
 
 		final Interaction interaction = targetLifeline.getInteraction();
-		if(interaction == null) {
+		if (interaction == null) {
 			return null;
 		}
 
 		List<EObject> sourceElements = getSourceEObjects(request);
 
-		//The only supported case is "Drop a single Type on a single Lifeline"
-		if(sourceElements.size() != 1) {
+		// The only supported case is "Drop a single Type on a single Lifeline"
+		if (sourceElements.size() != 1) {
 			return null;
 		}
 
 		EObject sourceElement = sourceElements.get(0);
-		if(sourceElement instanceof Type) {
-			final Type sourceType = (Type)sourceElement;
+		if (sourceElement instanceof Type) {
+			final Type sourceType = (Type) sourceElement;
 
 			Command resultCommand = new Command(getLabel()) {
 
@@ -96,8 +97,8 @@ public class ClassifierToLifelineDropStrategy extends TransactionalDropStrategy 
 			};
 
 			return resultCommand;
-		} else if(sourceElement instanceof Property) {
-			final Property property = (Property)sourceElement;
+		} else if (sourceElement instanceof Property) {
+			final Property property = (Property) sourceElement;
 			Command resultCommand = new Command(getLabel()) {
 
 				@Override

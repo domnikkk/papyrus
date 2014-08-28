@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,7 +50,7 @@ public class IsPossibleColumnEditingSupport extends EditingSupport {
 
 	/**
 	 * Change IsPossible in the model to impossible
-	 * 
+	 *
 	 * @param element
 	 */
 	protected void transformPossibleIntoImpossible(BaseMetaclass element) {
@@ -61,7 +61,7 @@ public class IsPossibleColumnEditingSupport extends EditingSupport {
 
 	/**
 	 * Change IsPossible in the model to possible
-	 * 
+	 *
 	 * @param element
 	 */
 	protected void transformImpossibleIntoPossible(BaseMetaclass element) {
@@ -73,23 +73,24 @@ public class IsPossibleColumnEditingSupport extends EditingSupport {
 
 	/**
 	 * Change IsPossible in the model to impossible and propagate to children and generals
-	 * 
+	 *
 	 * @param element
 	 */
 	protected void transformAllPossibleIntoImpossible(BaseMetaclass element) {
-		Facade facade = ((BaseMetaclass)element).getExtensionDefinition().getFacade();
-		transformPossibleIntoImpossible((BaseMetaclass)element);
+		Facade facade = element.getExtensionDefinition().getFacade();
+		transformPossibleIntoImpossible(element);
 
 		// All children and generals must be set to Impossible as well
-		HashSet<Stereotype> siblings = ProfileUtils.getSiblings(((BaseMetaclass)element).getExtensionDefinition().getStereotype());
+		HashSet<Stereotype> siblings = ProfileUtils.getSiblings(element.getExtensionDefinition().getStereotype());
 
-		for(ExtensionDefinition extensionDefinition : facade.getExtensionDefinitions()) {
-			if(extensionDefinition.getExtension() == ((BaseMetaclass)element).getExtensionDefinition().getExtension()) {
-				if(siblings.contains(extensionDefinition.getStereotype())) {
-					for(BaseMetaclass baseMetaclass : extensionDefinition.getBaseMetaclasses())
-						if(baseMetaclass.getBase() == ((BaseMetaclass)element).getBase()) {
+		for (ExtensionDefinition extensionDefinition : facade.getExtensionDefinitions()) {
+			if (extensionDefinition.getExtension() == element.getExtensionDefinition().getExtension()) {
+				if (siblings.contains(extensionDefinition.getStereotype())) {
+					for (BaseMetaclass baseMetaclass : extensionDefinition.getBaseMetaclasses()) {
+						if (baseMetaclass.getBase() == element.getBase()) {
 							transformPossibleIntoImpossible(baseMetaclass);
 						}
+					}
 				}
 			}
 		}
@@ -97,40 +98,41 @@ public class IsPossibleColumnEditingSupport extends EditingSupport {
 
 	/**
 	 * Change IsPossible in the model to possible and propagate to children and generals
-	 * 
+	 *
 	 * @param element
 	 */
 	protected void transformAllImpossibleIntoPossible(BaseMetaclass element) {
-		Facade facade = ((BaseMetaclass)element).getExtensionDefinition().getFacade();
-		transformImpossibleIntoPossible((BaseMetaclass)element);
+		Facade facade = element.getExtensionDefinition().getFacade();
+		transformImpossibleIntoPossible(element);
 
 		// All children and generals must be set to Possible as well
-		HashSet<Stereotype> siblings = ProfileUtils.getSiblings(((BaseMetaclass)element).getExtensionDefinition().getStereotype());
+		HashSet<Stereotype> siblings = ProfileUtils.getSiblings(element.getExtensionDefinition().getStereotype());
 
-		for(ExtensionDefinition extensionDefinition : facade.getExtensionDefinitions()) {
-			if(extensionDefinition.getExtension() == ((BaseMetaclass)element).getExtensionDefinition().getExtension()) {
-				if(siblings.contains(extensionDefinition.getStereotype())) {
-					for(BaseMetaclass baseMetaclass : extensionDefinition.getBaseMetaclasses())
-						if(baseMetaclass.getBase() == ((BaseMetaclass)element).getBase()) {
+		for (ExtensionDefinition extensionDefinition : facade.getExtensionDefinitions()) {
+			if (extensionDefinition.getExtension() == element.getExtensionDefinition().getExtension()) {
+				if (siblings.contains(extensionDefinition.getStereotype())) {
+					for (BaseMetaclass baseMetaclass : extensionDefinition.getBaseMetaclasses()) {
+						if (baseMetaclass.getBase() == element.getBase()) {
 							transformImpossibleIntoPossible(baseMetaclass);
 						}
+					}
 				}
 			}
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#setValue(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @param value
 	 */
 	@Override
 	protected void setValue(final Object element, final Object value) {
-		if(element instanceof BaseMetaclass) {
+		if (element instanceof BaseMetaclass) {
 
-			if(EditionUtils.hasARequiredCombination((BaseMetaclass)element)) {
+			if (EditionUtils.hasARequiredCombination((BaseMetaclass) element)) {
 				MessageDialog.openInformation(Display.getCurrent().getActiveShell(), Messages.IsPossibleColumnEditingSupport_0, Messages.IsPossibleColumnEditingSupport_1);
 
 			} else {
@@ -139,17 +141,18 @@ public class IsPossibleColumnEditingSupport extends EditingSupport {
 				try {
 					dialog.run(false, false, new IRunnableWithProgress() {
 
+						@Override
 						public void run(IProgressMonitor monitor) {
 							monitor.beginTask(Messages.IsPossibleColumnEditingSupport_2, IProgressMonitor.UNKNOWN);
 
-							if((Boolean)value == true) {
-								transformAllImpossibleIntoPossible((BaseMetaclass)element);
+							if ((Boolean) value == true) {
+								transformAllImpossibleIntoPossible((BaseMetaclass) element);
 							} else {
-								transformAllPossibleIntoImpossible((BaseMetaclass)element);
+								transformAllPossibleIntoImpossible((BaseMetaclass) element);
 
 							}
 
-							Facade facade = ((BaseMetaclass)element).getExtensionDefinition().getFacade();
+							Facade facade = ((BaseMetaclass) element).getExtensionDefinition().getFacade();
 
 							// Clear incompatibilities that don't exist anymore
 							EditionUtils.clearAllStereotypeCombinations(facade, editingDomain);
@@ -172,16 +175,16 @@ public class IsPossibleColumnEditingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#getCellEditor(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	protected CellEditor getCellEditor(Object element) {
-		if(element instanceof BaseMetaclass) {
-			if(!((BaseMetaclass)element).getExtensionDefinition().getExtension().isRequired()) {
+		if (element instanceof BaseMetaclass) {
+			if (!((BaseMetaclass) element).getExtensionDefinition().getExtension().isRequired()) {
 				return new CheckboxCellEditor(parent);
 			}
 		}
@@ -189,9 +192,9 @@ public class IsPossibleColumnEditingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#canEdit(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
@@ -201,16 +204,16 @@ public class IsPossibleColumnEditingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#getValue(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	protected Object getValue(Object element) {
-		if(element instanceof BaseMetaclass) {
-			return Boolean.valueOf(((BaseMetaclass)element).isPossible());
+		if (element instanceof BaseMetaclass) {
+			return Boolean.valueOf(((BaseMetaclass) element).isPossible());
 		}
 		return null;
 	}

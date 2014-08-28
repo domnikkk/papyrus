@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,20 +31,19 @@ public class ExportAppliedProfileHandler extends AbstractCommandHandler {
 
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Command getCommand() {
 
-		if(canExecute()) {
+		if (canExecute()) {
 
 			AbstractTransactionalCommand cmd = new ExportProfilesCommand(getEditingDomain(), Messages.ExportAppliedProfileHandler_0, null);
 			return new org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper(cmd);
-		}
-
-		else
+		} else {
 			return UnexecutableCommand.INSTANCE;
+		}
 	}
 
 
@@ -53,11 +52,11 @@ public class ExportAppliedProfileHandler extends AbstractCommandHandler {
 
 	/**
 	 * Can execute.
-	 * 
+	 *
 	 * @return true, if successful
 	 */
 	public boolean canExecute() {
-		if(getSelectedElements().size() == 1) {
+		if (getSelectedElements().size() == 1) {
 			return (getSelectedElement() instanceof Package);
 		}
 		return false;

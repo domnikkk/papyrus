@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,22 +32,24 @@ import org.eclipse.swt.widgets.Display;
 /**
  * the goal of this class is to allow changing the aspect of an element by
  * taking in account its stereotype
- * 
+ *
  */
 public class ActivityDiagramChangeStereotypedShapeEditpolicy extends ChangeStereotypedShapeEditPolicy {
 
 	@Override
 	public void transformIntoShape(final EditPart part) {
 		try {
-			((IGraphicalEditPart)getHost()).getEditingDomain().runExclusive(new Runnable() {
+			((IGraphicalEditPart) getHost()).getEditingDomain().runExclusive(new Runnable() {
 
+				@Override
 				public void run() {
 					Display.getCurrent().asyncExec(new Runnable() {
 
+						@Override
 						public void run() {
-							if(part instanceof GraphicalEditPart) {
-								GraphicalEditPart gmfparent = (GraphicalEditPart)part.getParent();
-								GraphicalEditPart gmfpart = (GraphicalEditPart)part;
+							if (part instanceof GraphicalEditPart) {
+								GraphicalEditPart gmfparent = (GraphicalEditPart) part.getParent();
+								GraphicalEditPart gmfpart = (GraphicalEditPart) part;
 								org.eclipse.papyrus.uml.diagram.activity.edit.commands.ElementToStereotypedShape command = new ElementToStereotypedShape(gmfpart.getEditingDomain(), gmfpart);
 								gmfpart.getEditingDomain().getCommandStack().execute(command);
 								ArrayList<EObject> elementToDrop = getAllSemanticLink(gmfpart);
@@ -68,15 +70,17 @@ public class ActivityDiagramChangeStereotypedShapeEditpolicy extends ChangeStere
 	@Override
 	public void transformIntoNormalShape(final EditPart part) {
 		try {
-			((IGraphicalEditPart)getHost()).getEditingDomain().runExclusive(new Runnable() {
+			((IGraphicalEditPart) getHost()).getEditingDomain().runExclusive(new Runnable() {
 
+				@Override
 				public void run() {
 					Display.getCurrent().asyncExec(new Runnable() {
 
+						@Override
 						public void run() {
-							if(part instanceof GraphicalEditPart) {
-								GraphicalEditPart gmfparent = (GraphicalEditPart)part.getParent();
-								GraphicalEditPart gmfpart = (GraphicalEditPart)part;
+							if (part instanceof GraphicalEditPart) {
+								GraphicalEditPart gmfparent = (GraphicalEditPart) part.getParent();
+								GraphicalEditPart gmfpart = (GraphicalEditPart) part;
 								DropObjectsRequest dropObjectsRequest = new DropObjectsRequest();
 								ArrayList<EObject> list = new ArrayList<EObject>();
 								list.add(gmfpart.resolveSemanticElement());

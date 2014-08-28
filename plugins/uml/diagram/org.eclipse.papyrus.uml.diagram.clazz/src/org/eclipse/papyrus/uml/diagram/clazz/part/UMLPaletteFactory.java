@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -26,9 +26,9 @@ import org.eclipse.papyrus.uml.diagram.common.service.AspectUnspecifiedTypeCreat
  */
 public class UMLPaletteFactory extends PaletteFactory.Adapter {
 
-	//RS: New Palette generation
-	//Generates the ID for the tool elements
-	//Generate the tool factory (if(ID) createtool...)
+	// RS: New Palette generation
+	// Generates the ID for the tool elements
+	// Generate the tool factory (if(ID) createtool...)
 	/**
 	 * @generated
 	 */
@@ -187,6 +187,11 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	private final static String CREATECONTEXTLINK6CREATIONTOOL = "createContextLink6CreationTool";//$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private final static String CLAZZ_TOOL_DEPENDENCY = "clazz.tool.dependency";//$NON-NLS-1$
 
 	/**
@@ -267,161 +272,157 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private final static String CREATECONTEXTLINK22CREATIONTOOL = "createContextLink22CreationTool";//$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
 	public UMLPaletteFactory() {
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	public Tool createTool(String toolId) {
-		if(toolId.equals(CLAZZ_TOOL_CLASS)) {
+		if (toolId.equals(CLAZZ_TOOL_CLASS)) {
 			return createClass1CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_CLASSIFIERTEMPLATEPARAMETER)) {
+		if (toolId.equals(CLAZZ_TOOL_CLASSIFIERTEMPLATEPARAMETER)) {
 			return createClassifierTemplateParameter2CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_COMMENT)) {
+		if (toolId.equals(CLAZZ_TOOL_COMMENT)) {
 			return createComment5CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_COMPONENT)) {
+		if (toolId.equals(CLAZZ_TOOL_COMPONENT)) {
 			return createComponent4CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_CONSTRAINT)) {
+		if (toolId.equals(CLAZZ_TOOL_CONSTRAINT)) {
 			return createConstraint5CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_DATATYPE)) {
+		if (toolId.equals(CLAZZ_TOOL_DATATYPE)) {
 			return createDataType6CreationTool();
 		}
-		if(toolId.equals(CREATEDURATIONOBSERVATION7CREATIONTOOL)) {
+		if (toolId.equals(CREATEDURATIONOBSERVATION7CREATIONTOOL)) {
 			return createDurationObservation7CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_ENUMERATION)) {
+		if (toolId.equals(CLAZZ_TOOL_ENUMERATION)) {
 			return createEnumeration8CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_ENUMERATIONLITERAL)) {
+		if (toolId.equals(CLAZZ_TOOL_ENUMERATIONLITERAL)) {
 			return createEnumerationliteral9CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_INTERFACE)) {
+		if (toolId.equals(CLAZZ_TOOL_INTERFACE)) {
 			return createInterface10CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_INSTANCESPECIFICATION)) {
+		if (toolId.equals(CLAZZ_TOOL_INSTANCESPECIFICATION)) {
 			return createInstanceSpecification11CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_INFORMATIONITEM)) {
+		if (toolId.equals(CLAZZ_TOOL_INFORMATIONITEM)) {
 			return createInformationItem12CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_PRIMITIVETYPE)) {
+		if (toolId.equals(CLAZZ_TOOL_PRIMITIVETYPE)) {
 			return createPrimitiveType13CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_MODEL)) {
+		if (toolId.equals(CLAZZ_TOOL_MODEL)) {
 			return createModel14CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_OPERATION)) {
+		if (toolId.equals(CLAZZ_TOOL_OPERATION)) {
 			return createOperation15CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_OPERATIONTEMPLATEPARAMETER)) {
+		if (toolId.equals(CLAZZ_TOOL_OPERATIONTEMPLATEPARAMETER)) {
 			return createOperationTemplateParameterCreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_PACKAGE)) {
+		if (toolId.equals(CLAZZ_TOOL_PACKAGE)) {
 			return createPackage17CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_PROPERTY)) {
+		if (toolId.equals(CLAZZ_TOOL_PROPERTY)) {
 			return createProperty18CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_RECEPTION)) {
+		if (toolId.equals(CLAZZ_TOOL_RECEPTION)) {
 			return createReception19CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_REDEFINABLETEMPLATESIGNATURE)) {
+		if (toolId.equals(CLAZZ_TOOL_REDEFINABLETEMPLATESIGNATURE)) {
 			return createRedefinableTemplateSignature20CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_SIGNAL)) {
+		if (toolId.equals(CLAZZ_TOOL_SIGNAL)) {
 			return createSignal21CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_SLOT)) {
+		if (toolId.equals(CLAZZ_TOOL_SLOT)) {
 			return createSlot22CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_TEMPLATEPARAMETER)) {
+		if (toolId.equals(CLAZZ_TOOL_TEMPLATEPARAMETER)) {
 			return createTemplateParameter23CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_TEMPLATESIGNATURE)) {
+		if (toolId.equals(CLAZZ_TOOL_TEMPLATESIGNATURE)) {
 			return createTemplateSignatureCreationTool();
 		}
-		if(toolId.equals(CREATETIMEOBSERVATION22CREATIONTOOL)) {
+		if (toolId.equals(CREATETIMEOBSERVATION22CREATIONTOOL)) {
 			return createTimeObservation22CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_CONNECTABLEELEMENTTEMPLATEPARAMETER)) {
+		if (toolId.equals(CLAZZ_TOOL_CONNECTABLEELEMENTTEMPLATEPARAMETER)) {
 			return createConnectableElementTemplateParameter26CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_ABSTRACTION)) {
+		if (toolId.equals(CLAZZ_TOOL_ABSTRACTION)) {
 			return createAbstraction1CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_ASSOCIATION)) {
+		if (toolId.equals(CLAZZ_TOOL_ASSOCIATION)) {
 			return createAssociation2CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_ASSOCIATIONBRANCH)) {
+		if (toolId.equals(CLAZZ_TOOL_ASSOCIATIONBRANCH)) {
 			return createAssociationBranch3CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_ASSOCIATIONCLASS)) {
+		if (toolId.equals(CLAZZ_TOOL_ASSOCIATIONCLASS)) {
 			return createAssociationClass4CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_CONTAINMENTLINK)) {
+		if (toolId.equals(CLAZZ_TOOL_CONTAINMENTLINK)) {
 			return createContainmentLink5CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_DEPENDENCY)) {
-			return createDependency6CreationTool();
+		if (toolId.equals(CREATECONTEXTLINK6CREATIONTOOL)) {
+			return createContextLink6CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_DEPENDENCYBRANCH)) {
-			return createDependencyBranch7CreationTool();
+		if (toolId.equals(CLAZZ_TOOL_DEPENDENCY)) {
+			return createDependency7CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_ELEMENTIMPORT)) {
-			return createElementImport8CreationTool();
+		if (toolId.equals(CLAZZ_TOOL_DEPENDENCYBRANCH)) {
+			return createDependencyBranch8CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_GENERALIZATION)) {
-			return createGeneralization9CreationTool();
+		if (toolId.equals(CLAZZ_TOOL_ELEMENTIMPORT)) {
+			return createElementImport9CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_GENERALIZATIONSET)) {
-			return createGeneralizationSet10CreationTool();
+		if (toolId.equals(CLAZZ_TOOL_GENERALIZATION)) {
+			return createGeneralization10CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_INFORMATIONFLOWLINK)) {
+		if (toolId.equals(CLAZZ_TOOL_GENERALIZATIONSET)) {
+			return createGeneralizationSet11CreationTool();
+		}
+		if (toolId.equals(CLAZZ_TOOL_INFORMATIONFLOWLINK)) {
 			return createInformationFlowLinkCreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_INSTANCESPECIFICATIONLINK)) {
+		if (toolId.equals(CLAZZ_TOOL_INSTANCESPECIFICATIONLINK)) {
 			return createInstanceSpecificationLinkCreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_INTERFACEREALIZATION)) {
-			return createInterfaceRealization13CreationTool();
+		if (toolId.equals(CLAZZ_TOOL_INTERFACEREALIZATION)) {
+			return createInterfaceRealization14CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_LINK)) {
-			return createLink14CreationTool();
+		if (toolId.equals(CLAZZ_TOOL_LINK)) {
+			return createLink15CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_PACKAGEIMPORT)) {
-			return createPackageImport15CreationTool();
+		if (toolId.equals(CLAZZ_TOOL_PACKAGEIMPORT)) {
+			return createPackageImport16CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_PACKAGEMERGE)) {
-			return createPackageMerge16CreationTool();
+		if (toolId.equals(CLAZZ_TOOL_PACKAGEMERGE)) {
+			return createPackageMerge17CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_PROFILEAPPLICATION)) {
-			return createProfileApplication17CreationTool();
+		if (toolId.equals(CLAZZ_TOOL_PROFILEAPPLICATION)) {
+			return createProfileApplication18CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_REALIZATION)) {
-			return createRealization18CreationTool();
+		if (toolId.equals(CLAZZ_TOOL_REALIZATION)) {
+			return createRealization19CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_SUBSTITUTION)) {
-			return createSubstitution19CreationTool();
+		if (toolId.equals(CLAZZ_TOOL_SUBSTITUTION)) {
+			return createSubstitution20CreationTool();
 		}
-		if(toolId.equals(CLAZZ_TOOL_USAGE)) {
-			return createUsage20CreationTool();
-		}
-		if(toolId.equals(CLAZZ_TOOL_TEMPLATEBINDING)) {
+		if (toolId.equals(CLAZZ_TOOL_TEMPLATEBINDING)) {
 			return createTemplateBinding21CreationTool();
 		}
-		if(toolId.equals(CREATECONTEXTLINK22CREATIONTOOL)) {
-			return createContextLink22CreationTool();
+		if (toolId.equals(CLAZZ_TOOL_USAGE)) {
+			return createUsage22CreationTool();
 		}
 		// default return: null
 		return null;
@@ -430,6 +431,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Object getTemplate(String templateId) {
 		// default return: null
 		return null;
@@ -789,7 +791,17 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createDependency6CreationTool() {
+	private Tool createContextLink6CreationTool() {
+		List<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(UMLElementTypes.ConstraintContext_8500);
+		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
+		return tool;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Tool createDependency7CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.Dependency_4008);
 		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
@@ -799,7 +811,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createDependencyBranch7CreationTool() {
+	private Tool createDependencyBranch8CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.Dependency_4018);
 		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
@@ -809,7 +821,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createElementImport8CreationTool() {
+	private Tool createElementImport9CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.ElementImport_4009);
 		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
@@ -819,7 +831,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createGeneralization9CreationTool() {
+	private Tool createGeneralization10CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.Generalization_4002);
 		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
@@ -829,7 +841,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createGeneralizationSet10CreationTool() {
+	private Tool createGeneralizationSet11CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.GeneralizationSet_4020);
 		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
@@ -859,7 +871,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createInterfaceRealization13CreationTool() {
+	private Tool createInterfaceRealization14CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.InterfaceRealization_4003);
 		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
@@ -869,7 +881,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createLink14CreationTool() {
+	private Tool createLink15CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(4);
 		types.add(UMLElementTypes.CommentAnnotatedElement_4013);
 		types.add(UMLElementTypes.TimeObservationEvent_4024);
@@ -882,7 +894,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createPackageImport15CreationTool() {
+	private Tool createPackageImport16CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.PackageImport_4010);
 		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
@@ -892,7 +904,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createPackageMerge16CreationTool() {
+	private Tool createPackageMerge17CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.PackageMerge_4011);
 		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
@@ -902,7 +914,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createProfileApplication17CreationTool() {
+	private Tool createProfileApplication18CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.ProfileApplication_4012);
 		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
@@ -912,7 +924,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createRealization18CreationTool() {
+	private Tool createRealization19CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.Realization_4005);
 		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
@@ -922,19 +934,9 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createSubstitution19CreationTool() {
+	private Tool createSubstitution20CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.Substitution_4004);
-		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
-		return tool;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Tool createUsage20CreationTool() {
-		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(UMLElementTypes.Usage_4007);
 		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
 		return tool;
 	}
@@ -952,9 +954,9 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private Tool createContextLink22CreationTool() {
+	private Tool createUsage22CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(UMLElementTypes.ConstraintContext_8500);
+		types.add(UMLElementTypes.Usage_4007);
 		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
 		return tool;
 	}

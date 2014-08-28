@@ -19,12 +19,13 @@ import org.eclipse.papyrus.infra.emf.newchild.NewchildPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyFactory
  * @model kind="package"
  * @generated
@@ -34,6 +35,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "ncpolicy";
@@ -42,6 +44,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/newchild/policy";
@@ -50,6 +53,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "ncpolicy";
@@ -58,6 +62,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	NcpolicyPackage eINSTANCE = org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl.init();
@@ -66,6 +71,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewEMFChildMenuImpl <em>New EMF Child Menu</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewEMFChildMenuImpl
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getNewEMFChildMenu()
 	 * @generated
@@ -76,6 +82,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Submenus</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -85,6 +92,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -94,6 +102,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -103,6 +112,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -112,6 +122,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Create In</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -121,6 +132,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Layout</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -130,6 +142,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Groups</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -139,6 +152,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The number of structural features of the '<em>New EMF Child Menu</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -148,6 +162,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewChildPolicySetImpl <em>New Child Policy Set</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewChildPolicySetImpl
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getNewChildPolicySet()
 	 * @generated
@@ -158,6 +173,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -167,6 +183,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Multiplicity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -176,6 +193,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -185,6 +203,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Policies</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -194,6 +213,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The number of structural features of the '<em>New Child Policy Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -203,6 +223,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewChildPolicyImpl <em>New Child Policy</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewChildPolicyImpl
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getNewChildPolicy()
 	 * @generated
@@ -213,6 +234,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Roles</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -222,6 +244,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>EClasses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -231,6 +254,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -240,6 +264,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The number of structural features of the '<em>New Child Policy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -249,6 +274,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.FilterPolicyImpl <em>Filter Policy</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.FilterPolicyImpl
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getFilterPolicy()
 	 * @generated
@@ -259,6 +285,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Roles</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -268,6 +295,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>EClasses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -277,6 +305,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -286,6 +315,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The number of structural features of the '<em>Filter Policy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -295,6 +325,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.ReplacePolicyImpl <em>Replace Policy</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.ReplacePolicyImpl
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getReplacePolicy()
 	 * @generated
@@ -305,6 +336,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Roles</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -314,6 +346,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>EClasses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -323,6 +356,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -332,6 +366,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Replace With</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -341,6 +376,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The number of structural features of the '<em>Replace Policy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -350,6 +386,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.CustomPolicyImpl <em>Custom Policy</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.CustomPolicyImpl
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getCustomPolicy()
 	 * @generated
@@ -360,6 +397,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Roles</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -369,6 +407,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>EClasses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -378,6 +417,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -387,6 +427,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -396,6 +437,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The number of structural features of the '<em>Custom Policy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -405,6 +447,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CreateIn <em>Create In</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CreateIn
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getCreateIn()
 	 * @generated
@@ -415,6 +458,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.Layout <em>Layout</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.Layout
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getLayout()
 	 * @generated
@@ -426,6 +470,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu <em>New EMF Child Menu</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>New EMF Child Menu</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu
 	 * @generated
@@ -436,6 +481,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getCreateIn <em>Create In</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Create In</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getCreateIn()
 	 * @see #getNewEMFChildMenu()
@@ -447,6 +493,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getLayout <em>Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Layout</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getLayout()
 	 * @see #getNewEMFChildMenu()
@@ -458,6 +505,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getGroups <em>Groups</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Groups</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getGroups()
 	 * @see #getNewEMFChildMenu()
@@ -469,6 +517,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicySet <em>New Child Policy Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>New Child Policy Set</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicySet
 	 * @generated
@@ -479,6 +528,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicySet#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicySet#getName()
 	 * @see #getNewChildPolicySet()
@@ -490,6 +540,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicySet#getPolicies <em>Policies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Policies</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicySet#getPolicies()
 	 * @see #getNewChildPolicySet()
@@ -501,6 +552,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicy <em>New Child Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>New Child Policy</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicy
 	 * @generated
@@ -511,6 +563,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicy#getRoles <em>Roles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Roles</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicy#getRoles()
 	 * @see #getNewChildPolicy()
@@ -522,6 +575,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicy#getEClasses <em>EClasses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>EClasses</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicy#getEClasses()
 	 * @see #getNewChildPolicy()
@@ -533,6 +587,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicy#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicy#getName()
 	 * @see #getNewChildPolicy()
@@ -544,6 +599,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.FilterPolicy <em>Filter Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Filter Policy</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.FilterPolicy
 	 * @generated
@@ -554,6 +610,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.ReplacePolicy <em>Replace Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Replace Policy</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.ReplacePolicy
 	 * @generated
@@ -564,6 +621,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.ReplacePolicy#getReplaceWith <em>Replace With</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Replace With</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.ReplacePolicy#getReplaceWith()
 	 * @see #getReplacePolicy()
@@ -575,6 +633,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CustomPolicy <em>Custom Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Custom Policy</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CustomPolicy
 	 * @generated
@@ -585,6 +644,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CustomPolicy#getClassName <em>Class Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Class Name</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CustomPolicy#getClassName()
 	 * @see #getCustomPolicy()
@@ -596,6 +656,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CreateIn <em>Create In</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Create In</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CreateIn
 	 * @generated
@@ -606,6 +667,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.Layout <em>Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Layout</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.Layout
 	 * @generated
@@ -616,6 +678,7 @@ public interface NcpolicyPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -625,12 +688,13 @@ public interface NcpolicyPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -638,6 +702,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewEMFChildMenuImpl <em>New EMF Child Menu</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewEMFChildMenuImpl
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getNewEMFChildMenu()
 		 * @generated
@@ -648,6 +713,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Create In</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute NEW_EMF_CHILD_MENU__CREATE_IN = eINSTANCE.getNewEMFChildMenu_CreateIn();
@@ -656,6 +722,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layout</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute NEW_EMF_CHILD_MENU__LAYOUT = eINSTANCE.getNewEMFChildMenu_Layout();
@@ -664,6 +731,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Groups</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference NEW_EMF_CHILD_MENU__GROUPS = eINSTANCE.getNewEMFChildMenu_Groups();
@@ -672,6 +740,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewChildPolicySetImpl <em>New Child Policy Set</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewChildPolicySetImpl
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getNewChildPolicySet()
 		 * @generated
@@ -682,6 +751,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute NEW_CHILD_POLICY_SET__NAME = eINSTANCE.getNewChildPolicySet_Name();
@@ -690,6 +760,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Policies</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference NEW_CHILD_POLICY_SET__POLICIES = eINSTANCE.getNewChildPolicySet_Policies();
@@ -698,6 +769,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewChildPolicyImpl <em>New Child Policy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewChildPolicyImpl
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getNewChildPolicy()
 		 * @generated
@@ -708,6 +780,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Roles</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute NEW_CHILD_POLICY__ROLES = eINSTANCE.getNewChildPolicy_Roles();
@@ -716,6 +789,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>EClasses</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference NEW_CHILD_POLICY__ECLASSES = eINSTANCE.getNewChildPolicy_EClasses();
@@ -724,6 +798,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute NEW_CHILD_POLICY__NAME = eINSTANCE.getNewChildPolicy_Name();
@@ -732,6 +807,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.FilterPolicyImpl <em>Filter Policy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.FilterPolicyImpl
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getFilterPolicy()
 		 * @generated
@@ -742,6 +818,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.ReplacePolicyImpl <em>Replace Policy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.ReplacePolicyImpl
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getReplacePolicy()
 		 * @generated
@@ -752,6 +829,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Replace With</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference REPLACE_POLICY__REPLACE_WITH = eINSTANCE.getReplacePolicy_ReplaceWith();
@@ -760,6 +838,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.CustomPolicyImpl <em>Custom Policy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.CustomPolicyImpl
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getCustomPolicy()
 		 * @generated
@@ -770,6 +849,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Class Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute CUSTOM_POLICY__CLASS_NAME = eINSTANCE.getCustomPolicy_ClassName();
@@ -778,6 +858,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CreateIn <em>Create In</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CreateIn
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getCreateIn()
 		 * @generated
@@ -788,6 +869,7 @@ public interface NcpolicyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.Layout <em>Layout</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.Layout
 		 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyPackageImpl#getLayout()
 		 * @generated
@@ -796,4 +878,4 @@ public interface NcpolicyPackage extends EPackage {
 
 	}
 
-} //NcpolicyPackage
+} // NcpolicyPackage

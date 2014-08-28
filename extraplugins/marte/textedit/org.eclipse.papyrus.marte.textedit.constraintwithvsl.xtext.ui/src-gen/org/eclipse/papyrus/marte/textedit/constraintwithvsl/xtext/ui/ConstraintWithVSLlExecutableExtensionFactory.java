@@ -3,16 +3,15 @@
  */
 package org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui;
 
+import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.internal.ConstraintWithVSLlActivator;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
-import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.internal.ConstraintWithVSLlActivator;
-
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class ConstraintWithVSLlExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
@@ -20,10 +19,10 @@ public class ConstraintWithVSLlExecutableExtensionFactory extends AbstractGuiceA
 	protected Bundle getBundle() {
 		return ConstraintWithVSLlActivator.getInstance().getBundle();
 	}
-	
+
 	@Override
 	protected Injector getInjector() {
 		return ConstraintWithVSLlActivator.getInstance().getInjector(ConstraintWithVSLlActivator.ORG_ECLIPSE_PAPYRUS_MARTE_TEXTEDIT_CONSTRAINTWITHVSL_XTEXT_CONSTRAINTWITHVSLL);
 	}
-	
+
 }

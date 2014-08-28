@@ -62,7 +62,7 @@ public class OpenHandler extends AbstractModelExplorerHandler implements IExecut
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		final IPageManager pageManager = getPageManager();
-		if(pageManager == null) {
+		if (pageManager == null) {
 			return null;
 		}
 
@@ -70,7 +70,7 @@ public class OpenHandler extends AbstractModelExplorerHandler implements IExecut
 		// There is no common type for object representing an editor. So,
 		// We try to get the EObject, and try to close it as an Editor.
 		List<EObject> selectedProperties = getCurrentSelectionAdaptedToType(event, EObject.class);
-		if(selectedProperties == null) {
+		if (selectedProperties == null) {
 			// nothing to do
 			return null;
 		}
@@ -78,9 +78,10 @@ public class OpenHandler extends AbstractModelExplorerHandler implements IExecut
 		// Check each selected object
 		final List<EObject> pagesToOpen = new LinkedList<EObject>();
 		List<EObject> pagesToSelect = new LinkedList<EObject>();
-		for(EObject selected : selectedProperties) {
-			if (!canOpenByPolicy(selected))
+		for (EObject selected : selectedProperties) {
+			if (!canOpenByPolicy(selected)) {
 				continue;
+			}
 			if (!pageManager.isOpen(selected) || isDuplicateDiagramAllowed) {
 				pagesToOpen.add(selected);
 			} else {
@@ -88,13 +89,13 @@ public class OpenHandler extends AbstractModelExplorerHandler implements IExecut
 			}
 		}
 
-		if(!pagesToOpen.isEmpty()) {
-			for(EObject page : pagesToOpen) {
+		if (!pagesToOpen.isEmpty()) {
+			for (EObject page : pagesToOpen) {
 				pageManager.openPage(page);
 			}
 		}
 
-		for(EObject page : pagesToSelect) {
+		for (EObject page : pagesToSelect) {
 			pageManager.selectPage(page);
 		}
 
@@ -103,22 +104,23 @@ public class OpenHandler extends AbstractModelExplorerHandler implements IExecut
 
 	/**
 	 * Determines whether the current policy allows this object to be opened
-	 * @param selection The object to open
+	 *
+	 * @param selection
+	 *            The object to open
 	 * @return <code>true</code> if the object can be opened
 	 */
 	private boolean canOpenByPolicy(EObject selection) {
 		if (selection instanceof Diagram) {
-			Diagram diagram = (Diagram)selection;
+			Diagram diagram = (Diagram) selection;
 			ViewPrototype proto = DiagramUtils.getPrototype(diagram);
 			return (proto != ViewPrototype.UNAVAILABLE_VIEW && proto != ViewPrototype.UNAVAILABLE_DIAGRAM);
 		}
 		return true;
 	}
-	
+
 	/**
-	 * 
-	 * @see org.eclipse.core.runtime.IExecutableExtension#setInitializationData(org.eclipse.core.runtime.IConfigurationElement, java.lang.String,
-	 *      java.lang.Object)
+	 *
+	 * @see org.eclipse.core.runtime.IExecutableExtension#setInitializationData(org.eclipse.core.runtime.IConfigurationElement, java.lang.String, java.lang.Object)
 	 *
 	 * @param config
 	 * @param propertyName
@@ -126,15 +128,15 @@ public class OpenHandler extends AbstractModelExplorerHandler implements IExecut
 	 * @throws CoreException
 	 */
 	public void setInitializationData(IConfigurationElement config, String propertyName, Object data) throws CoreException {
-		if(!(data instanceof Hashtable)) {
+		if (!(data instanceof Hashtable)) {
 			return;
 		}
 
 		@SuppressWarnings("rawtypes")
-		Hashtable map = (Hashtable)data;
+		Hashtable map = (Hashtable) data;
 
 		try {
-			isDuplicateDiagramAllowed = Boolean.parseBoolean((String)map.get(IS_DUPLICATE_EDITOR_ALLOWED_PARAMETER));
+			isDuplicateDiagramAllowed = Boolean.parseBoolean((String) map.get(IS_DUPLICATE_EDITOR_ALLOWED_PARAMETER));
 		} catch (Exception e) {
 			// silently fail;
 		}

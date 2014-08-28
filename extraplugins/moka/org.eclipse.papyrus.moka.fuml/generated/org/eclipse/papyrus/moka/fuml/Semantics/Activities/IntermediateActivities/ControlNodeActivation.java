@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,9 +19,10 @@ import org.eclipse.papyrus.moka.fuml.debug.Debug;
 
 public abstract class ControlNodeActivation extends ActivityNodeActivation {
 
+	@Override
 	public void fire(List<Token> incomingTokens) {
 		// By default, offer all tokens on all outgoing edges.
-		if(this.node != null) {
+		if (this.node != null) {
 			Debug.println("[fire] Control node " + this.node.getName() + "...");
 		}
 		this.sendOffers(incomingTokens);

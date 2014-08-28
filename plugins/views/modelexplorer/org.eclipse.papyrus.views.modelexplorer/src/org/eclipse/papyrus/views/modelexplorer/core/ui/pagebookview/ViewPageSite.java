@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 LIFL & CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,14 +19,14 @@ import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.ui.IKeyBindingService;
 import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.part.IPageSite;
 import org.eclipse.ui.part.PageSite;
 
 
 /**
  * A Site implementing {@link IViewSite} and {@link IPageSite}.
- * This site is used by the {@link MultiViewPageBookView} to provide suitable Site to a 
- * {@link ViewPartPage} and its Viewer.
- * 
+ * This site is used by the {@link MultiViewPageBookView} to provide suitable Site to a {@link ViewPartPage} and its Viewer.
+ *
  * @author cedric dumoulin
  *
  */
@@ -92,6 +92,7 @@ public class ViewPageSite extends PageSite implements IViewSite {
 	 * @return
 	 * @deprecated
 	 */
+	@Deprecated
 	public IKeyBindingService getKeyBindingService() {
 		// TODO Auto-generated method stub
 		return parentViewSite.getKeyBindingService();

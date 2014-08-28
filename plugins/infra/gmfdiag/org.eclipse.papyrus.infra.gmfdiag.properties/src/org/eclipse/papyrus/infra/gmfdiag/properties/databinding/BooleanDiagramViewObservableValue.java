@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -18,31 +18,31 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.preference.IPreferenceStore;
 
 /**
- * 
+ *
  * Class used to edit boolean preference
- * 
+ *
  */
 public class BooleanDiagramViewObservableValue extends AbstractDiagramPreferencesObservableValue {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param diagram
-	 *        the edited diagram
+	 *            the edited diagram
 	 * @param preferenceName
-	 *        the edited preference
+	 *            the edited preference
 	 * @param preferenceStore
-	 *        the edited preference store
+	 *            the edited preference store
 	 */
 	public BooleanDiagramViewObservableValue(final Diagram diagram, final String preferenceName, IPreferenceStore preferenceStore) {
 		super(diagram, preferenceName, preferenceStore);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.IObservableValue#getValueType()
-	 * 
+	 *
 	 * @return
 	 */
 	public final Object getValueType() {
@@ -50,9 +50,9 @@ public class BooleanDiagramViewObservableValue extends AbstractDiagramPreference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doGetValue()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -62,16 +62,16 @@ public class BooleanDiagramViewObservableValue extends AbstractDiagramPreference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doSetValue(java.lang.Object)
-	 * 
+	 *
 	 * @param value
 	 */
 	@Override
 	protected void doSetValue(Object value) {
-		if(value instanceof Boolean) {
+		if (value instanceof Boolean) {
 			final IPreferenceStore wsPreferenceStore = getEditedPreferenceStore();
-			wsPreferenceStore.setValue(getEditedPreference(), ((Boolean)value).booleanValue());
+			wsPreferenceStore.setValue(getEditedPreference(), ((Boolean) value).booleanValue());
 		}
 	}
 

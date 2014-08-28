@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.jface.text.contentassist.ICompletionProposal;
 public class MultiplicityCompletionProposal implements ICompletionProposalComputer {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final String EMPTY_MULTIPLICITY = "[]";
 
@@ -47,18 +47,18 @@ public class MultiplicityCompletionProposal implements ICompletionProposalComput
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.classdiagram.parsers.texteditor.completionproposals.ICompletionProposalComputer
 	 * #generateCompletionProposals(int, int, java.lang.String)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param selectionRange
 	 * @param prefix
 	 * @param documentOffset
-	 * 
+	 *
 	 * @return
 	 */
 	public List<ICompletionProposal> generateCompletionProposals(int documentOffset, int selectionRange, String prefix) {
@@ -68,15 +68,15 @@ public class MultiplicityCompletionProposal implements ICompletionProposalComput
 		ICompletionProposal proposal = null;
 
 		// first, add [] ans set the cursor after left curly
-		if(EMPTY_MULTIPLICITY.startsWith(prefix)) {
+		if (EMPTY_MULTIPLICITY.startsWith(prefix)) {
 			proposal = new CompletionProposal(EMPTY_MULTIPLICITY, documentOffset - prefix.length(), prefix.length()
 					+ selectionRange, 1, null, "[m..n]", null, "Multiplicity");
 			v.add(proposal);
 		}
 
 		// adds all standard multiplicities (static strings...)
-		for(int i = 0; i < multiplicityStrings.length; i++) {
-			if(multiplicityStrings[i].startsWith(prefix)) {
+		for (int i = 0; i < multiplicityStrings.length; i++) {
+			if (multiplicityStrings[i].startsWith(prefix)) {
 				proposal = new CompletionProposal(multiplicityStrings[i], documentOffset - prefix.length(), prefix
 						.length()
 						+ selectionRange, multiplicityStrings[i].length(), null, multiplicityStringName[i], null,

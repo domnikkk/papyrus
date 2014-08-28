@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,8 +22,8 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.customization.palette.Messages;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.pde.core.plugin.IPluginModel;
@@ -85,9 +85,9 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 
 	/**
 	 * Creates a new Icon Bundle Explorer Dialog
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell for the dialog
+	 *            the parent shell for the dialog
 	 */
 	public BundleIconExplorerDialog(Shell parentShell, boolean allowMultiple, String initialValue, String bundle) {
 		super(parentShell);
@@ -101,9 +101,9 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 
 	/**
 	 * Creates a new Icon Bundle Explorer Dialog
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell for the dialog
+	 *            the parent shell for the dialog
 	 */
 	public BundleIconExplorerDialog(Shell parentShell, String initialValue) {
 		this(parentShell, false, initialValue, retrieveBundleId(initialValue));
@@ -111,13 +111,13 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 
 	/**
 	 * Retrieves the bundle from which the
-	 * 
+	 *
 	 * @param initialValue
-	 *        the initial value from which the bundle has to be retrieved
+	 *            the initial value from which the bundle has to be retrieved
 	 * @return the bundle id
 	 */
 	protected static String retrieveBundleId(String initialValue) {
-		if(initialValue.startsWith(PLUGIN_PROTOCOL)) {
+		if (initialValue.startsWith(PLUGIN_PROTOCOL)) {
 			String tmp = initialValue.substring(PLUGIN_PROTOCOL.length());
 			int bundleIdEndIndex = tmp.indexOf("/");
 			return tmp.substring(0, bundleIdEndIndex);
@@ -130,7 +130,7 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite composite = (Composite)super.createDialogArea(parent);
+		Composite composite = (Composite) super.createDialogArea(parent);
 		initializeDialogUnits(composite);
 
 		// creates the message area, as defined in the super class
@@ -152,22 +152,22 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 		// check selection
 		currentBundleName = text.getText().trim();
 		Bundle bundle = Platform.getBundle(currentBundleName);
-		if(bundle == null) {
+		if (bundle == null) {
 			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.ID, "impossible to find bundle with id: " + currentBundleName));
 			return;
 		}
 		Enumeration<URL> e = bundle.findEntries("", "*" + GIF_EXTENSION, true); //$NON-NLS-1$ //$NON-NLS-2$
 		List<ImageProxy> selectedProxy = new ArrayList<ImageProxy>();
 		List<ImageProxy> images = new ArrayList<ImageProxy>();
-		if(e == null) {
+		if (e == null) {
 			return;
 		}
-		while(e.hasMoreElements()) {
+		while (e.hasMoreElements()) {
 			ImageProxy proxy = new ImageProxy(e.nextElement());
-			if(proxy.isDisplayed()) {
+			if (proxy.isDisplayed()) {
 				images.add(proxy);
 				// check if the proxy corresponds to the initialValue
-				if(proxy.isInitial()) {
+				if (proxy.isInitial()) {
 					selectedProxy.add(proxy);
 				}
 			}
@@ -175,7 +175,7 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 		filteredList.setElements(images.toArray());
 
 		// select objects
-		if(!selectedProxy.isEmpty()) {
+		if (!selectedProxy.isEmpty()) {
 			filteredList.setSelection(selectedProxy.toArray());
 		}
 
@@ -183,9 +183,9 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 
 	/**
 	 * Creates an area where users can select bundles where icons should be selected
-	 * 
+	 *
 	 * @param composite
-	 *        the parent composite of the controls created in this area
+	 *            the parent composite of the controls created in this area
 	 */
 	protected void createComboArea(Composite composite) {
 		Composite parent = new Composite(composite, SWT.NONE);
@@ -246,8 +246,8 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 	protected void handleManageBundlesButtonPressed() {
 		// open a dialog
 		BundleExplorerDialog dialog = new BundleExplorerDialog(getParentShell(), false, PluginRegistry.getActiveModels(true));
-		if(Dialog.OK == dialog.open()) {
-			text.setText(((IPluginModel)dialog.getFirstResult()).getPlugin().getId());
+		if (Window.OK == dialog.open()) {
+			text.setText(((IPluginModel) dialog.getFirstResult()).getPlugin().getId());
 			refreshList();
 		}
 	}
@@ -259,8 +259,8 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 	protected void computeResult() {
 		List<Object> proxies = Arrays.asList(getSelectedElements());
 		List<String> results = new ArrayList<String>(proxies.size());
-		for(Object proxy : proxies) {
-			results.add(((ImageProxy)proxy).getPluginPath());
+		for (Object proxy : proxies) {
+			results.add(((ImageProxy) proxy).getPluginPath());
 		}
 		setResult(results);
 	}
@@ -268,7 +268,7 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 	/**
 	 * Returns an array of the currently selected elements.
 	 * To be called within or after open().
-	 * 
+	 *
 	 * @return returns an array of the currently selected elements.
 	 */
 	protected Object[] getSelectedElements() {
@@ -278,9 +278,9 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 
 	/**
 	 * Creates an area where a filter can be entered. This filter will restrict the list of available icons.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite where to create the filter text
+	 *            the parent composite where to create the filter text
 	 * @return the created text area
 	 */
 	protected Text createFilterText(Composite parent) {
@@ -307,7 +307,7 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 		text.addKeyListener(new KeyListener() {
 
 			public void keyPressed(KeyEvent e) {
-				if(e.keyCode == SWT.ARROW_DOWN) {
+				if (e.keyCode == SWT.ARROW_DOWN) {
 					filteredList.setFocus();
 				}
 			}
@@ -323,9 +323,9 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 
 	/**
 	 * Creates a filtered list.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite.
+	 *            the parent composite.
 	 * @return returns the filtered list widget.
 	 */
 	protected FilteredList createFilteredList(Composite parent) {
@@ -350,7 +350,7 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 
 	/**
 	 * Returns the bundle identifier for the current image
-	 * 
+	 *
 	 * @return the bundle identifier for the current image
 	 */
 	public String getCurrentBundleName() {
@@ -359,13 +359,13 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 
 	/**
 	 * Returns the path to the icon in the bundle
-	 * 
+	 *
 	 * @return the path to the icon in the bundle
 	 */
 	public String getIconPath() {
 		List<Object> proxies = Arrays.asList(getSelectedElements());
-		if(proxies.size() == 1) {
-			return ((ImageProxy)proxies.get(0)).getLocalPath();
+		if (proxies.size() == 1) {
+			return ((ImageProxy) proxies.get(0)).getLocalPath();
 		}
 
 		return "";
@@ -388,11 +388,11 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 		 */
 		@Override
 		public Image getImage(Object element) {
-			if(element instanceof ImageProxy) {
+			if (element instanceof ImageProxy) {
 				// int index = ((String)element).indexOf(currentBundleName);
 				// String path = ((String)element).substring(index+currentBundleName.length());
 				// return Activator.getImage(currentBundleName, path);
-				return ((ImageProxy)element).getImage();
+				return ((ImageProxy) element).getImage();
 			}
 			return super.getImage(element);
 		}
@@ -402,8 +402,8 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 		 */
 		@Override
 		public String getText(Object element) {
-			if(element instanceof ImageProxy) {
-				return ((ImageProxy)element).getText();
+			if (element instanceof ImageProxy) {
+				return ((ImageProxy) element).getText();
 			}
 			return super.getText(element);
 		}
@@ -428,16 +428,16 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 
 		/**
 		 * Creates an Image Proxy
-		 * 
+		 *
 		 * @param url
-		 *        the url of the image to proxy
+		 *            the url of the image to proxy
 		 */
 		public ImageProxy(URL url) {
 			localPath = url.getPath();
 			path = PLUGIN_PROTOCOL + getCurrentBundleName() + localPath;
 			image = org.eclipse.papyrus.uml.diagram.common.Activator.getImage(path, ""); //$NON-NLS-1$
 			int index = localPath.lastIndexOf('/');
-			if(index > 0 && index < localPath.length()) {
+			if (index > 0 && index < localPath.length()) {
 				fileName = localPath.substring(index + 1, localPath.length() - GIF_EXTENSION_LENGTH);
 			} else {
 				fileName = Messages.BundleIconExplorerDialog_UnknownFileName;
@@ -446,7 +446,7 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 
 		/**
 		 * Checks if this proxy corresponds to the initial value
-		 * 
+		 *
 		 * @return <code>true</code> if this is the initial value proxy
 		 */
 		public boolean isInitial() {
@@ -455,7 +455,7 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 
 		/**
 		 * Returns the real image
-		 * 
+		 *
 		 * @return the real image
 		 */
 		public Image getImage() {
@@ -464,12 +464,12 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 
 		/**
 		 * Returns <code>true</code> if this image is correct
-		 * 
+		 *
 		 * @return <code>true</code> if this image is correct
 		 */
 		public boolean isDisplayed() {
 			Rectangle bounds = image.getBounds();
-			if(bounds.height == 16 && bounds.width == 16) {
+			if (bounds.height == 16 && bounds.width == 16) {
 				return true;
 			}
 			return false;
@@ -477,7 +477,7 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 
 		/**
 		 * Returns the text to display
-		 * 
+		 *
 		 * @return the text to display
 		 */
 		public String getText() {
@@ -491,7 +491,7 @@ public class BundleIconExplorerDialog extends SelectionStatusDialog {
 
 		/**
 		 * Returns the path to the icon in the bundle
-		 * 
+		 *
 		 * @return the path to the icon in the bundle
 		 */
 		public String getLocalPath() {

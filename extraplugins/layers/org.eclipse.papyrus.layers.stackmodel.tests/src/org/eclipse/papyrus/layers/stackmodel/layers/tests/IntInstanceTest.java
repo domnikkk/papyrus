@@ -11,6 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Int Instance</b></em>'.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class IntInstanceTest extends TypeInstanceTest {
@@ -18,6 +19,7 @@ public class IntInstanceTest extends TypeInstanceTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class IntInstanceTest extends TypeInstanceTest {
 	 * Constructs a new Int Instance test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public IntInstanceTest(String name) {
@@ -38,16 +41,18 @@ public class IntInstanceTest extends TypeInstanceTest {
 	 * Returns the fixture for this Int Instance test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	protected IntInstance getFixture() {
-		return (IntInstance)fixture;
+		return (IntInstance) fixture;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -59,6 +64,7 @@ public class IntInstanceTest extends TypeInstanceTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -67,4 +73,4 @@ public class IntInstanceTest extends TypeInstanceTest {
 		setFixture(null);
 	}
 
-} //IntInstanceTest
+} // IntInstanceTest

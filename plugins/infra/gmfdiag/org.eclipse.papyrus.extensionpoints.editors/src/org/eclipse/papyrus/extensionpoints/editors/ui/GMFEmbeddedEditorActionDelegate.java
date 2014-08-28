@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,13 +41,13 @@ public class GMFEmbeddedEditorActionDelegate extends OpenEmbeddedTextEditorObjec
 	@Override
 	protected Control getControl() {
 		IDiagramGraphicalViewer viewer = null;
-		if(part instanceof IDiagramGraphicalViewer) {
-			viewer = (IDiagramGraphicalViewer)part;
-		} else if(part instanceof IAdaptable) {
-			viewer = (IDiagramGraphicalViewer)((IAdaptable)part).getAdapter(IDiagramGraphicalViewer.class);
+		if (part instanceof IDiagramGraphicalViewer) {
+			viewer = (IDiagramGraphicalViewer) part;
+		} else if (part instanceof IAdaptable) {
+			viewer = (IDiagramGraphicalViewer) ((IAdaptable) part).getAdapter(IDiagramGraphicalViewer.class);
 		}
 
-		if(viewer != null) {
+		if (viewer != null) {
 			return viewer.getControl();
 		}
 		return null;
@@ -59,14 +59,14 @@ public class GMFEmbeddedEditorActionDelegate extends OpenEmbeddedTextEditorObjec
 	@Override
 	protected EObject getEditedObject() {
 		// should never happened, but...
-		if(selectedElement == null) {
+		if (selectedElement == null) {
 			throw new RuntimeException("Impossible to get an element from no selection.");
 		}
 
 		// retrieves the current model element associated to the graphical selected edit part
 		Object model = selectedElement.getModel();
-		if(model instanceof View) {
-			return ((View)model).getElement();
+		if (model instanceof View) {
+			return ((View) model).getElement();
 		}
 
 		// nothing was found. throw an exception
@@ -90,7 +90,7 @@ public class GMFEmbeddedEditorActionDelegate extends OpenEmbeddedTextEditorObjec
 
 	/**
 	 * Returns the viewer position
-	 * 
+	 *
 	 * @return the GMF viewer position
 	 */
 	protected Point getViewerPosition() {
@@ -99,11 +99,11 @@ public class GMFEmbeddedEditorActionDelegate extends OpenEmbeddedTextEditorObjec
 		// get the position of this control in its parent
 		Composite parent = viewerControl.getParent();
 		Point selectionPoint = new Point(0, 0);
-		while(parent.getParent() != null) {
+		while (parent.getParent() != null) {
 			selectionPoint.x += parent.getLocation().x;
 			selectionPoint.y += parent.getLocation().y;
 			parent = parent.getParent();
-			if(parent.getParent() == null) {
+			if (parent.getParent() == null) {
 				// this is the display
 				selectionPoint.x += parent.getDisplay().getActiveShell().getLocation().x;
 				selectionPoint.y += parent.getDisplay().getActiveShell().getLocation().y;
@@ -116,10 +116,10 @@ public class GMFEmbeddedEditorActionDelegate extends OpenEmbeddedTextEditorObjec
 	 * {@inheritDoc}
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
-		if(selection instanceof IStructuredSelection) {
-			Object o = ((IStructuredSelection)selection).getFirstElement();
-			if(o instanceof IGraphicalEditPart) {
-				selectedElement = ((IGraphicalEditPart)o);
+		if (selection instanceof IStructuredSelection) {
+			Object o = ((IStructuredSelection) selection).getFirstElement();
+			if (o instanceof IGraphicalEditPart) {
+				selectedElement = ((IGraphicalEditPart) o);
 			}
 		}
 	}
@@ -129,7 +129,7 @@ public class GMFEmbeddedEditorActionDelegate extends OpenEmbeddedTextEditorObjec
 	 */
 	@Override
 	protected Composite getParentComposite() {
-		Composite parentComposite = (Composite)selectedElement.getViewer().getControl();
+		Composite parentComposite = (Composite) selectedElement.getViewer().getControl();
 		return new Composite(parentComposite, SWT.BORDER);
 	}
 

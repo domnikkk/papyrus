@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,21 +31,21 @@ public class StereotypeContentProvider extends MetaclassContentProvider {
 
 	@Override
 	public Object[] getElements(Object inputElement) {
-		if(inputElement instanceof EPackage) {
+		if (inputElement instanceof EPackage) {
 			return super.getElements(inputElement);
 		}
 
-		if(type == null) {
+		if (type == null) {
 			return new Object[0];
 		}
-		//Type : Stereotype or EClass
-		if(!(type instanceof Stereotype || type instanceof EClass)) {
+		// Type : Stereotype or EClass
+		if (!(type instanceof Stereotype || type instanceof EClass)) {
 			return new Object[0];
 		}
 
 		Profile profile;
-		if(inputElement instanceof Profile) {
-			profile = (Profile)inputElement;
+		if (inputElement instanceof Profile) {
+			profile = (Profile) inputElement;
 		} else {
 			return new Object[0];
 		}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ public class ProfileUtil {
 
 	/**
 	 * Gets the applied profiles from ws.
-	 * 
+	 *
 	 * @param openedModel
-	 *        the opened model
+	 *            the opened model
 	 * @return the applied profiles from ws
 	 */
 	public static Object[] getAppliedProfilesFromWS(EObject openedModel) {
@@ -40,12 +40,12 @@ public class ProfileUtil {
 
 
 
-		//the list of root profiles, we will export only the root profiles and profiles that are applied from local workspace plugins
+		// the list of root profiles, we will export only the root profiles and profiles that are applied from local workspace plugins
 		// use of set to not having duplicate elements
 		Set<EObject> rootProfiles = new HashSet<EObject>();
 
 
-		for(Profile p : ((org.eclipse.uml2.uml.Package)openedModel).getAllAppliedProfiles()) {
+		for (Profile p : ((org.eclipse.uml2.uml.Package) openedModel).getAllAppliedProfiles()) {
 
 			rootProfiles.add(getRootLocalProfile(p));
 
@@ -61,25 +61,28 @@ public class ProfileUtil {
 
 	/**
 	 * Gets the root local profile.
-	 * 
+	 *
 	 * @param p
-	 *        the p
+	 *            the p
 	 * @return the root local profile
 	 */
 	public static EObject getRootLocalProfile(EObject p) {
-		if(p.eContainer() == null) {
+		if (p.eContainer() == null) {
 			Resource eResource = p.eResource();
-			if(eResource != null) {
+			if (eResource != null) {
 				URI eUri = eResource.getURI();
-				if(eUri.isPlatformResource()) {
+				if (eUri.isPlatformResource()) {
 					return p;
-				} else
+				} else {
 					return null;
-			} else
+				}
+			} else {
 				return null;
+			}
 
-		} else
+		} else {
 			return getRootLocalProfile(p.eContainer());
+		}
 
 
 	}

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -36,10 +36,11 @@ public class CreateOrSelectBlockPropertyTypeDialog extends CreateOrSelectTypeDia
 	public CreateOrSelectBlockPropertyTypeDialog(Shell shell, NamedElement owner) {
 		super(shell, owner, SysMLElementTypes.BLOCK, UMLPackage.eINSTANCE.getTypedElement_Type(), BlocksPackage.eINSTANCE.getBlock(), UMLElementTypes.PACKAGE, UMLPackage.eINSTANCE.getPackage_PackagedElement(), null, getConstraintBlockAsStereotype());
 	}
-	
+
 	/**
 	 * If we create a Part type by a ConstraintBlock, thisPart will become a ConstraintProperty and representation will immediately disappear.
-	 * So we filter ConstraintBlock type => Only strict Block are allowed 
+	 * So we filter ConstraintBlock type => Only strict Block are allowed
+	 *
 	 * @return
 	 */
 	@SuppressWarnings("deprecation")

@@ -21,9 +21,9 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.infra.core.resource.EditingDomainServiceFactory;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceDescriptor;
+import org.eclipse.papyrus.infra.core.services.ServiceDescriptor.ServiceTypeKind;
 import org.eclipse.papyrus.infra.core.services.ServiceStartKind;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
-import org.eclipse.papyrus.infra.core.services.ServiceDescriptor.ServiceTypeKind;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
 import org.junit.runner.Description;
 

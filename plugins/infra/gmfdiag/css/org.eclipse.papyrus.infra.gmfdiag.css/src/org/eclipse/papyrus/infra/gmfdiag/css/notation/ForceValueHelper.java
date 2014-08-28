@@ -46,26 +46,26 @@ import org.eclipse.papyrus.infra.gmfdiag.css.resource.CSSNotationResource;
  *
  * @author Camille Letavernier
  */
-//FIXME: The default behavior when undoing a setValue() is set(previous),
-//which may result in set(null) or set(default), instead of unset()
-//Thus, undoing a modification on a View may result in unexpected behavior
-//(e.g., GMF default appearance instead of CSS style)
-//Workaround: Use the "reset style" button to retrieve the correct CSS style
+// FIXME: The default behavior when undoing a setValue() is set(previous),
+// which may result in set(null) or set(default), instead of unset()
+// Thus, undoing a modification on a View may result in unexpected behavior
+// (e.g., GMF default appearance instead of CSS style)
+// Workaround: Use the "reset style" button to retrieve the correct CSS style
 public class ForceValueHelper {
 
 	public static void setValue(View view, EStructuralFeature feature, Object value) {
-		if(!isCSSView(view)) {
-			//Do not contaminate non-Papyrus models
+		if (!isCSSView(view)) {
+			// Do not contaminate non-Papyrus models
 			return;
 		}
 
-		//Adds the annotation which indicates that the value has been forced, if needed
+		// Adds the annotation which indicates that the value has been forced, if needed
 
-		if(equals(value, feature.getDefaultValue())) {
-			//			System.out.println("Forcing default value for " + view);
+		if (equals(value, feature.getDefaultValue())) {
+			// System.out.println("Forcing default value for " + view);
 			String annotationKey = feature.getName();
 			EAnnotation eAnnotation = view.getEAnnotation(CSSAnnotations.CSS_FORCE_VALUE);
-			if(eAnnotation == null) {
+			if (eAnnotation == null) {
 				eAnnotation = EcorePackage.eINSTANCE.getEcoreFactory().createEAnnotation();
 				eAnnotation.setEModelElement(view);
 				eAnnotation.setSource(CSSAnnotations.CSS_FORCE_VALUE);
@@ -77,37 +77,37 @@ public class ForceValueHelper {
 	}
 
 	private static boolean isCSSView(View view) {
-		//Bug 435478: In some (invalid) cases, the view can be outside a diagram.
-		//In this case, we cannot use the CSS support. We should exclude the views
-		//which are not associated to a diagram
+		// Bug 435478: In some (invalid) cases, the view can be outside a diagram.
+		// In this case, we cannot use the CSS support. We should exclude the views
+		// which are not associated to a diagram
 		return view != null && view.getDiagram() != null && CSSNotationResource.isCSSEnabled(view.eResource());
 	}
 
 	private static boolean equals(Object value1, Object value2) {
-		if(value1 == null) {
+		if (value1 == null) {
 			return value2 == null;
 		}
 		return value1.equals(value2);
 	}
 
 	public static void unsetValue(View view, EStructuralFeature feature) {
-		if(feature == null) {
+		if (feature == null) {
 			return;
 		}
 
-		if(!isCSSView(view)) {
-			//Do not contaminate non-Papyrus models
+		if (!isCSSView(view)) {
+			// Do not contaminate non-Papyrus models
 			return;
 		}
 
-		//Remove the annotation which forces the value, if needed
+		// Remove the annotation which forces the value, if needed
 
 		String annotationKey = feature.getName();
 		EAnnotation eAnnotation = view.getEAnnotation(CSSAnnotations.CSS_FORCE_VALUE);
-		if(eAnnotation != null) {
+		if (eAnnotation != null) {
 			EMap<String, String> details = eAnnotation.getDetails();
 			details.remove(annotationKey);
-			if(details.isEmpty()) {
+			if (details.isEmpty()) {
 				view.getEAnnotations().remove(eAnnotation);
 			}
 		}
@@ -118,16 +118,16 @@ public class ForceValueHelper {
 	}
 
 	public static boolean isSet(View annotationContext, EObject style, EStructuralFeature feature, Object value) {
-		if(!isCSSView(annotationContext)) {
-			//Do not contaminate non-Papyrus models
+		if (!isCSSView(annotationContext)) {
+			// Do not contaminate non-Papyrus models
 			return true;
 		}
 
-		//		return false;
+		// return false;
 
-		if(equals(value, feature.getDefaultValue())) {
+		if (equals(value, feature.getDefaultValue())) {
 			EAnnotation eAnnotation = annotationContext.getEAnnotation(CSSAnnotations.CSS_FORCE_VALUE);
-			if(eAnnotation == null) {
+			if (eAnnotation == null) {
 				return false;
 			}
 

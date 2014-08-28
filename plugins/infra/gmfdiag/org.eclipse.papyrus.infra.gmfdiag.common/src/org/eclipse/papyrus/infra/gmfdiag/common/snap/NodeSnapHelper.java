@@ -32,9 +32,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.internal.ruler.SnapToHelperUtil;
 
 /**
- * 
+ *
  * this class allows to determine the best location for a node on the grid
- * 
+ *
  * Adapted code from DragEditPartsTrackerEx
  * TODO : PapyrusDragEditPartTracker should use me
  */
@@ -72,38 +72,38 @@ public class NodeSnapHelper {
 	private Rectangle compoundSourceRectangle;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param helper
-	 *        the snap helper
+	 *            the snap helper
 	 * @param figureToSnapBounds
-	 *        the bounds of the figure to snap
-	 * 
+	 *            the bounds of the figure to snap
+	 *
 	 */
 	public NodeSnapHelper(final SnapToHelper helper, final Rectangle figureToSnapBounds) {
 		this(helper, figureToSnapBounds, figureToSnapBounds);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param helper
-	 *        the snap helper
+	 *            the snap helper
 	 * @param figureToSnapBounds
-	 *        the bounds of the figure to snap
+	 *            the bounds of the figure to snap
 	 * @param compoundSourceRectangle
-	 *        see {@link DragEditPartsTracker} for further informations
+	 *            see {@link DragEditPartsTracker} for further informations
 	 */
 	public NodeSnapHelper(final SnapToHelper helper, final Rectangle figureToSnapBounds, final Rectangle compoundSourceRectangle) {
 		this(helper, figureToSnapBounds, compoundSourceRectangle, true, false, false);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param helper
 	 * @param figureToSnapBounds
 	 * @param snapOnCorners
@@ -115,9 +115,9 @@ public class NodeSnapHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param helper
 	 * @param figureToSnapBounds
 	 * @param compoundSourceRectangle
@@ -137,22 +137,22 @@ public class NodeSnapHelper {
 	/**
 	 * This method can be overridden by clients to customize the snapping
 	 * behavior.
-	 * 
+	 *
 	 * @param request
-	 *        the <code>ChangeBoundsRequest</code> from which the move delta
-	 *        can be extracted and updated
-	 *        We use <code>ChangeBoundsRequest</code> to be compatible with snap edit part tracker!
+	 *            the <code>ChangeBoundsRequest</code> from which the move delta
+	 *            can be extracted and updated
+	 *            We use <code>ChangeBoundsRequest</code> to be compatible with snap edit part tracker!
 	 */
 	@SuppressWarnings({ "unchecked" })
 	public void snapPoint(ChangeBoundsRequest request) {
-		if(getSnapToHelper() != null && request.isSnapToEnabled()) {
+		if (getSnapToHelper() != null && request.isSnapToEnabled()) {
 
-			//test to know if we are moving using keyboard
-			//TODO not useful here
-			//			if(!getCurrentInput().isAnyButtonDown()) {
-			//				calculateSnapPointFromArrowKey(request);
-			//				return;
-			//			}
+			// test to know if we are moving using keyboard
+			// TODO not useful here
+			// if(!getCurrentInput().isAnyButtonDown()) {
+			// calculateSnapPointFromArrowKey(request);
+			// return;
+			// }
 			int restrictedDirection = 0;
 			restrictedDirection = restrictedDirection | PositionConstants.EAST;
 			restrictedDirection = restrictedDirection | PositionConstants.WEST;
@@ -161,22 +161,22 @@ public class NodeSnapHelper {
 			request.getExtendedData().put(SnapToHelperUtil.RESTRICTED_DIRECTIONS, restrictedDirection);
 
 			final Map<Double, PrecisionPoint> distVSPoint = new HashMap<Double, PrecisionPoint>();
-			if(this.snapOnCorners) {
+			if (this.snapOnCorners) {
 				distVSPoint.putAll(getCornerDistances(request));
 			}
 
-			if(this.snapOnMiddles) {
+			if (this.snapOnMiddles) {
 				distVSPoint.putAll(getMiddleDistances(request));
 			}
 
-			if(this.snapOnCenter) {
+			if (this.snapOnCenter) {
 				distVSPoint.putAll(getCenterDistances(request));
 			}
 
 			final List<Double> distances = new ArrayList<Double>(distVSPoint.keySet());
-			if(distances.size() > 0) {
+			if (distances.size() > 0) {
 				double min = distances.get(0);
-				for(int i = 1; i < distances.size() - 1; i++) {
+				for (int i = 1; i < distances.size() - 1; i++) {
 					min = Math.min(min, distances.get(i));
 				}
 				request.setMoveDelta(distVSPoint.get(min));
@@ -185,28 +185,28 @@ public class NodeSnapHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param request
-	 *        a move request
+	 *            a move request
 	 * @return
 	 *         the restricted direction for the request
 	 */
 	protected final int getRestrictedDirection(final ChangeBoundsRequest request) {
 		int restrictedDirection = 0;
 		final Point delta = request.getMoveDelta();
-		if(delta.x > 0) {
+		if (delta.x > 0) {
 			restrictedDirection = restrictedDirection | PositionConstants.EAST;
 			restrictedDirection = restrictedDirection | PositionConstants.WEST;
 		}
-		if(delta.x < 0) {
+		if (delta.x < 0) {
 			restrictedDirection = restrictedDirection | PositionConstants.EAST;
 			restrictedDirection = restrictedDirection | PositionConstants.WEST;
 		}
-		if(delta.y > 0) {
+		if (delta.y > 0) {
 			restrictedDirection = restrictedDirection | PositionConstants.SOUTH;
 			restrictedDirection = restrictedDirection | PositionConstants.NORTH;
 		}
-		if(delta.y < 0) {
+		if (delta.y < 0) {
 			restrictedDirection = restrictedDirection | PositionConstants.SOUTH;
 			restrictedDirection = restrictedDirection | PositionConstants.NORTH;
 		}
@@ -214,71 +214,71 @@ public class NodeSnapHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param request
-	 *        the move request
+	 *            the move request
 	 */
 	@SuppressWarnings("unchecked")
 	protected void calculateSnapPointFromArrowKey(final ChangeBoundsRequest request) {
-		if(request.getEditParts().size() == 0) {
+		if (request.getEditParts().size() == 0) {
 			return;
 		}
 		final Object ep = request.getEditParts().get(0);
-		if(!(ep instanceof IGraphicalEditPart)) {
+		if (!(ep instanceof IGraphicalEditPart)) {
 			return;
 		}
-		final RootEditPart root = ((IGraphicalEditPart)ep).getRoot();
-		if(!(root instanceof DiagramRootEditPart)) {
+		final RootEditPart root = ((IGraphicalEditPart) ep).getRoot();
+		if (!(root instanceof DiagramRootEditPart)) {
 			return;
 		}
-		final double gridSpacing = ((DiagramRootEditPart)root).getGridSpacing();
-		int max = (int)(1 + gridSpacing);
+		final double gridSpacing = ((DiagramRootEditPart) root).getGridSpacing();
+		int max = (int) (1 + gridSpacing);
 		int restrictedDirection = getRestrictedDirection(request);
 		final Point delta = request.getMoveDelta();
 		final Point newDelta = new Point(0, 0);
 		int newMove = 0;
-		while(newMove < max) {
+		while (newMove < max) {
 			newMove++;
-			if(delta.x > 0) {
-				newDelta.x = (int)newMove + delta.x;
+			if (delta.x > 0) {
+				newDelta.x = newMove + delta.x;
 			}
-			if(delta.x < 0) {
+			if (delta.x < 0) {
 				newDelta.x = (-newMove) + delta.x;
 			}
-			if(delta.y > 0) {
+			if (delta.y > 0) {
 				newDelta.y = newMove + delta.y;
 			}
-			if(delta.y < 0) {
+			if (delta.y < 0) {
 				newDelta.y = (-newMove) + delta.y;
 			}
 			request.setMoveDelta(newDelta);
 			request.getExtendedData().put(SnapToHelperUtil.RESTRICTED_DIRECTIONS, restrictedDirection);
 
 			final Map<Double, PrecisionPoint> distVSPoint = new HashMap<Double, PrecisionPoint>();
-			if(this.snapOnCorners) {
+			if (this.snapOnCorners) {
 				distVSPoint.putAll(getCornerDistances(request));
 			}
 
-			if(this.snapOnMiddles) {
+			if (this.snapOnMiddles) {
 				distVSPoint.putAll(getMiddleDistances(request));
 			}
 
-			if(this.snapOnCenter) {
+			if (this.snapOnCenter) {
 				distVSPoint.putAll(getCenterDistances(request));
 			}
 
 			final List<Double> distances = new ArrayList<Double>(distVSPoint.keySet());
-			if(distances.size() > 0) {
+			if (distances.size() > 0) {
 				double min = distances.get(0);
-				//We look for the minus distance
-				for(int i = 1; i < distances.size() - 1; i++) {
+				// We look for the minus distance
+				for (int i = 1; i < distances.size() - 1; i++) {
 					min = Math.min(min, distances.get(i));
 				}
 				final Point minPoint = distVSPoint.get(min);
-				//the distance can't be null
-				if(minPoint.x != 0 || minPoint.y != 0) {
-					//the calculate move must be in the same direction than the keyboard move 
-					if(Integer.signum(minPoint.x) == Integer.signum(delta.x) && Integer.signum(minPoint.y) == Integer.signum(delta.y)) {
+				// the distance can't be null
+				if (minPoint.x != 0 || minPoint.y != 0) {
+					// the calculate move must be in the same direction than the keyboard move
+					if (Integer.signum(minPoint.x) == Integer.signum(delta.x) && Integer.signum(minPoint.y) == Integer.signum(delta.y)) {
 						request.setMoveDelta(distVSPoint.get(min));
 						return;
 					}
@@ -288,95 +288,95 @@ public class NodeSnapHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 *         a map with the couple distance and delta point to anchor by the corner of the figure
 	 */
 	protected Map<Double, PrecisionPoint> getCornerDistances(final ChangeBoundsRequest request) {
 		final Map<Double, PrecisionPoint> distVSPoints = new HashMap<Double, PrecisionPoint>();
-		if(getSnapToHelper() != null && request.isSnapToEnabled()) {
+		if (getSnapToHelper() != null && request.isSnapToEnabled()) {
 			final Point moveDelta = request.getMoveDelta();
 			PrecisionRectangle jointRect = getCompoundSourceRectangle();
 			jointRect.translate(moveDelta);
 
-			//calculate the delta to anchor on the top left corner
+			// calculate the delta to anchor on the top left corner
 			final PrecisionPoint topLeftCornerDelta = new PrecisionPoint(moveDelta);
 			final PrecisionRectangle baseRectTopLeft = getSourceRectangle();
 			baseRectTopLeft.translate(moveDelta);
-			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[]{ baseRectTopLeft, jointRect }, topLeftCornerDelta);
+			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[] { baseRectTopLeft, jointRect }, topLeftCornerDelta);
 
-			//calculate the delta to anchor on the top right corner
+			// calculate the delta to anchor on the top right corner
 			final PrecisionPoint topRightCornerDelta = new PrecisionPoint(moveDelta);
 			final PrecisionRectangle baseRectTopRight = getSourceRectangle();
 			baseRectTopRight.setX(baseRectTopRight.x + baseRectTopRight.width);
 			baseRectTopRight.translate(moveDelta);
-			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[]{ baseRectTopRight, jointRect }, topRightCornerDelta);
+			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[] { baseRectTopRight, jointRect }, topRightCornerDelta);
 
-			//calculate the delta to anchor on the bottom left corner
+			// calculate the delta to anchor on the bottom left corner
 			final PrecisionPoint bottomLeftCornerDelta = new PrecisionPoint(moveDelta);
 			final PrecisionRectangle baseRectBottomLeft = getSourceRectangle();
 			baseRectBottomLeft.setY(baseRectBottomLeft.y + baseRectBottomLeft.height);
 			baseRectBottomLeft.translate(moveDelta);
-			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[]{ baseRectBottomLeft, jointRect }, bottomLeftCornerDelta);
+			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[] { baseRectBottomLeft, jointRect }, bottomLeftCornerDelta);
 
-			//calculate the delta to anchor on the bottom right corner
+			// calculate the delta to anchor on the bottom right corner
 			final PrecisionPoint bottomRightCornerDelta = new PrecisionPoint(moveDelta);
 			final PrecisionRectangle baseRectBottomRight = getSourceRectangle();
 			baseRectBottomRight.setX(baseRectBottomRight.x + baseRectBottomRight.width);
 			baseRectBottomRight.setY(baseRectBottomRight.y + baseRectBottomRight.height);
 			baseRectBottomRight.translate(moveDelta);
-			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[]{ baseRectBottomRight, jointRect }, bottomRightCornerDelta);
+			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[] { baseRectBottomRight, jointRect }, bottomRightCornerDelta);
 
 			final Point ref = baseRectTopLeft.getTopLeft();
 			distVSPoints.put(distance(ref, topLeftCornerDelta), topLeftCornerDelta);
-			//			distVSPoints.put(distance(ref, topRightCornerDelta), topRightCornerDelta);
-			//			distVSPoints.put(distance(ref, bottomLeftCornerDelta), bottomLeftCornerDelta);
-			//			distVSPoints.put(distance(ref, bottomRightCornerDelta), bottomRightCornerDelta);
+			// distVSPoints.put(distance(ref, topRightCornerDelta), topRightCornerDelta);
+			// distVSPoints.put(distance(ref, bottomLeftCornerDelta), bottomLeftCornerDelta);
+			// distVSPoints.put(distance(ref, bottomRightCornerDelta), bottomRightCornerDelta);
 		}
 		return distVSPoints;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 *         a map with the couple distance and delta point to anchor by the middle of each side of the figure
 	 */
 	protected Map<Double, PrecisionPoint> getMiddleDistances(final ChangeBoundsRequest request) {
 		final Map<Double, PrecisionPoint> distVSPoints = new HashMap<Double, PrecisionPoint>();
-		if(getSnapToHelper() != null && request.isSnapToEnabled()) {
+		if (getSnapToHelper() != null && request.isSnapToEnabled()) {
 			final Point moveDelta = request.getMoveDelta();
 
 			PrecisionRectangle jointRect = getCompoundSourceRectangle();
 			jointRect.translate(moveDelta);
-			//calculate the delta to anchor on the middle top point
+			// calculate the delta to anchor on the middle top point
 			final PrecisionPoint middleTopDelta = new PrecisionPoint(moveDelta);
 			final PrecisionRectangle baseRectMiddleTop = getSourceRectangle();
 			baseRectMiddleTop.setPreciseLocation(baseRectMiddleTop.preciseX() + (baseRectMiddleTop.preciseWidth() / 2), baseRectMiddleTop.preciseY());
 			baseRectMiddleTop.translate(moveDelta);
-			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[]{ baseRectMiddleTop, jointRect }, middleTopDelta);
+			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[] { baseRectMiddleTop, jointRect }, middleTopDelta);
 
-			//calculate the delta to anchor on the middle left point
+			// calculate the delta to anchor on the middle left point
 			final PrecisionPoint middleLeftDelta = new PrecisionPoint(moveDelta);
 			final PrecisionRectangle baseRectMiddleLeft = getSourceRectangle();
 			baseRectMiddleLeft.setPreciseLocation(baseRectMiddleLeft.preciseX(), baseRectMiddleLeft.preciseY() + (baseRectMiddleLeft.preciseWidth() / 2));
 			baseRectMiddleLeft.translate(moveDelta);
-			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[]{ baseRectMiddleLeft, jointRect }, middleLeftDelta);
+			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[] { baseRectMiddleLeft, jointRect }, middleLeftDelta);
 
-			//calculate the delta to anchor on the middle right point
+			// calculate the delta to anchor on the middle right point
 			final PrecisionPoint middleRightDelta = new PrecisionPoint(moveDelta);
 			final PrecisionRectangle baseRectMiddleRight = getSourceRectangle();
 			baseRectMiddleRight.setPreciseLocation(baseRectMiddleRight.preciseX() + baseRectMiddleRight.preciseWidth(), baseRectMiddleRight.preciseY() + (baseRectMiddleRight.preciseHeight() / 2));
 			baseRectMiddleRight.translate(moveDelta);
-			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[]{ baseRectMiddleRight, jointRect }, middleRightDelta);
+			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[] { baseRectMiddleRight, jointRect }, middleRightDelta);
 
-			//calculate the delta to anchor on the middle bottom
+			// calculate the delta to anchor on the middle bottom
 			final PrecisionPoint middleBottomDelta = new PrecisionPoint(moveDelta);
 			final PrecisionRectangle baseRectMiddleBottom = getSourceRectangle();
 			baseRectMiddleBottom.setPreciseLocation(baseRectMiddleBottom.preciseX() + (baseRectMiddleBottom.preciseWidth() / 2), baseRectMiddleBottom.preciseY() + baseRectMiddleBottom.preciseHeight());
 			baseRectMiddleBottom.translate(moveDelta);
-			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[]{ baseRectMiddleBottom, jointRect }, middleBottomDelta);
+			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[] { baseRectMiddleBottom, jointRect }, middleBottomDelta);
 
 			final Point ref = baseRectMiddleTop.getTopLeft();
 			distVSPoints.put(distance(ref, middleTopDelta), middleTopDelta);
@@ -389,24 +389,24 @@ public class NodeSnapHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 *         a map with the couple distance and delta point to anchor by the center of the figure
 	 */
 	protected Map<Double, PrecisionPoint> getCenterDistances(final ChangeBoundsRequest request) {
 		final Map<Double, PrecisionPoint> distVSPoints = new HashMap<Double, PrecisionPoint>();
-		if(getSnapToHelper() != null && request.isSnapToEnabled()) {
+		if (getSnapToHelper() != null && request.isSnapToEnabled()) {
 			final Point moveDelta = request.getMoveDelta();
 
 			PrecisionRectangle jointRect = getCompoundSourceRectangle();
 			jointRect.translate(moveDelta);
-			//calculate the delta to anchor on the middle top point
+			// calculate the delta to anchor on the middle top point
 			final PrecisionPoint centerDelta = new PrecisionPoint(moveDelta);
 			final PrecisionRectangle baseRectCenter = getSourceRectangle();
 			baseRectCenter.setPreciseLocation(baseRectCenter.preciseX() + (baseRectCenter.preciseWidth() / 2), baseRectCenter.preciseY() + (baseRectCenter.preciseHeight() / 2));
 			baseRectCenter.translate(moveDelta);
-			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[]{ baseRectCenter, jointRect }, centerDelta);
+			getSnapToHelper().snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[] { baseRectCenter, jointRect }, centerDelta);
 
 			final Point ref = baseRectCenter.getTopLeft();
 			distVSPoints.put(distance(ref, centerDelta), centerDelta);
@@ -416,7 +416,7 @@ public class NodeSnapHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the compoundSourceRectangle
 	 */
@@ -425,7 +425,7 @@ public class NodeSnapHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the source rectangle
 	 */
@@ -434,11 +434,11 @@ public class NodeSnapHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param pt1
-	 *        a first point
+	 *            a first point
 	 * @param pt2
-	 *        the second point
+	 *            the second point
 	 * @return
 	 *         the distance between the two points
 	 */
@@ -449,7 +449,7 @@ public class NodeSnapHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the snap helper
 	 */

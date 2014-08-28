@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -18,13 +18,13 @@ import org.eclipse.gmf.runtime.notation.ArrowType;
 /**
  * <pre>
  * The class provides a list of predefined ids to create edge decorations.
- * 
+ *
  * Also see : org.eclipse.papyrus.uml.diagram.common.edit.part.AbstractElementLinkEditPart#getArrowDecoration().
  * </pre>
  */
 public final class EdgeDecorationType {
 
-	public static final int NONE = ArrowType.NONE; //0
+	public static final int NONE = ArrowType.NONE; // 0
 
 	public static final int OPEN_ARROW = ArrowType.OPEN_ARROW; // 1
 

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -38,6 +38,7 @@ public class TopLayerOperatorImpl extends AbstractLayerOperatorImpl implements T
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TopLayerOperatorImpl() {
@@ -47,6 +48,7 @@ public class TopLayerOperatorImpl extends AbstractLayerOperatorImpl implements T
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -57,7 +59,7 @@ public class TopLayerOperatorImpl extends AbstractLayerOperatorImpl implements T
 	/**
 	 * Get the command to compute the required property value.
 	 * Walk all layers and return the first cmd that is not null for specified view and proerty.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl#getComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 *
 	 * @param view
@@ -67,23 +69,23 @@ public class TopLayerOperatorImpl extends AbstractLayerOperatorImpl implements T
 	 */
 	@Override
 	public ComputePropertyValueCommand getComputePropertyValueCommand(View view, Property property) throws LayersException {
-		
+
 		// Walk all layers and return the first cmd that is not null for specified view and proerty.
-		for( LayerExpression layer : getLayers()) {
-			
+		for (LayerExpression layer : getLayers()) {
+
 			ComputePropertyValueCommand cmd = layer.getComputePropertyValueCommand(view, property);
-			if( cmd != null) {
+			if (cmd != null) {
 				return cmd;
 			}
 		}
 		// Nothing found
 		return null;
-	
+
 	}
-	
+
 	/**
 	 * For each property, add the first property value in the list of result.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl#getPropertiesComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, java.util.List)
 	 *
 	 * @param view
@@ -100,35 +102,35 @@ public class TopLayerOperatorImpl extends AbstractLayerOperatorImpl implements T
 		// the result list
 		EList<ComputePropertyValueCommand> resCmds = new BasicEList<ComputePropertyValueCommand>(properties.size());
 		boolean isCmdFound = false;
-		
-		for( Property property : properties) {
-			if( property == null) {
+
+		for (Property property : properties) {
+			if (property == null) {
 				resCmds.add(null);
 				continue;
 			}
-			
+
 			ComputePropertyValueCommand cmd = getComputePropertyValueCommand(view, property);
-			if( cmd != null) {
+			if (cmd != null) {
 				isCmdFound = true;
 			}
 			resCmds.add(cmd);
 
-				
+
 		}
 		// Return appropriate result
-		if( isCmdFound) {
+		if (isCmdFound) {
 			return resCmds;
 		}
 		else {
-			// No command ==> null 
+			// No command ==> null
 			return null;
 		}
 	}
-	
+
 	/**
 	 * For each view, add the first property value in the list of result.
-	 * 
-	 * 
+	 *
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl#getViewsComputePropertyValueCommand(java.util.List, org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 *
 	 * @param view
@@ -141,31 +143,31 @@ public class TopLayerOperatorImpl extends AbstractLayerOperatorImpl implements T
 
 		// Simple implementation
 		// TODO Check if we can optimize
-		
+
 		// the result list
 		EList<ComputePropertyValueCommand> resCmds = new BasicEList<ComputePropertyValueCommand>(views.size());
 		boolean isCmdFound = false;
-		
-		for( View view : views) {
-			if( view == null) {
+
+		for (View view : views) {
+			if (view == null) {
 				resCmds.add(null);
 				continue;
 			}
-			
+
 			ComputePropertyValueCommand cmd = getComputePropertyValueCommand(view, property);
-			if( cmd != null) {
+			if (cmd != null) {
 				isCmdFound = true;
 			}
 			resCmds.add(cmd);
 		}
-				
+
 		// Return appropriate result
-		if( isCmdFound) {
+		if (isCmdFound) {
 			return resCmds;
 		}
 		else {
-			// No command ==> null 
+			// No command ==> null
 			return null;
 		}
 	}
-} //TopLayerOperatorImpl
+} // TopLayerOperatorImpl

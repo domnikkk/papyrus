@@ -36,16 +36,16 @@ public class IsUMLDatatypeInstance extends AbstractConstraint {
 	protected boolean match(Object selection) {
 		EObject selectedElement = EMFHelper.getEObject(selection);
 
-		if(selectedElement == null) {
+		if (selectedElement == null) {
 			return false;
 		}
 
-		//FIXME: Minor issue. Bug 427419: During the creation of the DataType instance,
-		//the instance is not yet attached to its resource/resource set. For statically-defined
-		//profiles, #isDataTypeInstance needs a resource/resource set to load the profile and
-		//determine whether this is a UML DataType.
-		//For dynamic profiles, this works fine because it verifies an EAnnotation on the EClassifier
-		//(There is no need for a Resource/Resource set)
+		// FIXME: Minor issue. Bug 427419: During the creation of the DataType instance,
+		// the instance is not yet attached to its resource/resource set. For statically-defined
+		// profiles, #isDataTypeInstance needs a resource/resource set to load the profile and
+		// determine whether this is a UML DataType.
+		// For dynamic profiles, this works fine because it verifies an EAnnotation on the EClassifier
+		// (There is no need for a Resource/Resource set)
 		return DataTypeUtil.isDataTypeInstance(selectedElement);
 	}
 

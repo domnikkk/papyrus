@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 	/**
 	 * The model element represented by this moka stack frame.
 	 * For example, this can be a node or edge in a UML Activity
-	 * 
+	 *
 	 */
 	protected EObject modelElement;
 
@@ -40,9 +40,9 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/**
 	 * Sets the model element represented by this stack frame
-	 * 
+	 *
 	 * @param modelElement
-	 *        the model element represented by this stack frame
+	 *            the model element represented by this stack frame
 	 */
 	public void setModelElement(EObject modelElement) {
 		this.modelElement = modelElement;
@@ -50,16 +50,16 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/**
 	 * Returns the model element represented by this stack frame
-	 * 
+	 *
 	 * @return the model element represented by this stack frame
 	 */
 	public EObject getModelElement() {
 		return this.modelElement;
 	}
 
-	////////////////////////////////
+	// //////////////////////////////
 	// Implementation of IStackFrame
-	////////////////////////////////
+	// //////////////////////////////
 
 	/**
 	 * The thread this stack frame is contained in
@@ -83,7 +83,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#getThread()
 	 */
 	public IThread getThread() {
@@ -92,9 +92,9 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/**
 	 * A Convenience method for setting the thread containing this stack frame
-	 * 
+	 *
 	 * @param thread
-	 *        The thread containing this stack frame
+	 *            The thread containing this stack frame
 	 */
 	public void setThread(MokaThread thread) {
 		this.thread = thread;
@@ -102,12 +102,13 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#getVariables()
 	 */
 	public IVariable[] getVariables() throws DebugException {
-		if(this.variables != null)
+		if (this.variables != null) {
 			return this.variables;
+		}
 		// Delegates retrieval of variables to the owning debug target
 		this.variables = this.debugTarget.getVariables(this);
 		return this.variables;
@@ -115,20 +116,21 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/**
 	 * A convenience method for setting the visible variables of this stack frame
-	 * 
+	 *
 	 * @param variables
-	 *        The visible variables of this stack frame
+	 *            The visible variables of this stack frame
 	 */
 	public void setVariables(MokaVariable[] variables) {
-		if(variables != null)
+		if (variables != null) {
 			this.variables = variables;
-		else
-			this.variables = new MokaVariable[]{};
+		} else {
+			this.variables = new MokaVariable[] {};
+		}
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#hasVariables()
 	 */
 	public boolean hasVariables() throws DebugException {
@@ -137,62 +139,63 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#getLineNumber()
 	 */
 	public int getLineNumber() throws DebugException {
-		// line number information is not available / does not make sense in the context of a model 
+		// line number information is not available / does not make sense in the context of a model
 		return -1;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#getCharStart()
 	 */
 	public int getCharStart() throws DebugException {
-		// char start information is not available / does not make sense in the context of a model 
+		// char start information is not available / does not make sense in the context of a model
 		return -1;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#getCharEnd()
 	 */
 	public int getCharEnd() throws DebugException {
-		// char end information is not available / does not make sense in the context of a model 
+		// char end information is not available / does not make sense in the context of a model
 		return -1;
 	}
 
-	//	/* (non-Javadoc)
-	//	 * @see org.eclipse.debug.core.model.IStackFrame#getName()
-	//	 */
-	//	public String getName() throws DebugException {
-	//		if (this.name != null)
-	//			return this.name ;
-	//		// Delegates to the owning debug target retrieval of this stack frame name
-	//		this.name = this.debugTarget.getName(this) ;
-	//		return this.name ;
-	//	}
+	// /* (non-Javadoc)
+	// * @see org.eclipse.debug.core.model.IStackFrame#getName()
+	// */
+	// public String getName() throws DebugException {
+	// if (this.name != null)
+	// return this.name ;
+	// // Delegates to the owning debug target retrieval of this stack frame name
+	// this.name = this.debugTarget.getName(this) ;
+	// return this.name ;
+	// }
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#getName()
 	 */
 	public String getName() throws DebugException {
-		if(this.name != null)
+		if (this.name != null) {
 			return this.name;
+		}
 		// Delegates to the owning debug target retrieval of this stack frame name
 		return "";
 	}
 
 	/**
 	 * A convenience method for setting the name of this stack frame
-	 * 
+	 *
 	 * @param name
-	 *        The new name for this stack frame
+	 *            The new name for this stack frame
 	 */
 	public void setName(String name) {
 		this.name = name != null ? name : "";
@@ -200,12 +203,13 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#getRegisterGroups()
 	 */
 	public IRegisterGroup[] getRegisterGroups() throws DebugException {
-		if(this.registerGroups != null)
+		if (this.registerGroups != null) {
 			return this.registerGroups;
+		}
 		// Delegates retrieval of register groups to the owning debug target
 		this.registerGroups = this.debugTarget.getRegisterGroups(this);
 		return this.registerGroups;
@@ -213,33 +217,34 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/**
 	 * A convenience method for setting the register groups of a stack frame
-	 * 
+	 *
 	 * @param registerGroups
-	 *        The register groups of this stack frame
+	 *            The register groups of this stack frame
 	 */
 	public void setRegisterGroups(IRegisterGroup[] registerGroups) {
-		if(registerGroups != null)
+		if (registerGroups != null) {
 			this.registerGroups = registerGroups;
-		else
-			this.registerGroups = new IRegisterGroup[]{};
+		} else {
+			this.registerGroups = new IRegisterGroup[] {};
+		}
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#hasRegisterGroups()
 	 */
 	public boolean hasRegisterGroups() throws DebugException {
 		return this.getRegisterGroups().length > 0;
 	}
 
-	//////////////////////////
+	// ////////////////////////
 	// Implementation of IStep
-	//////////////////////////
+	// ////////////////////////
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStep#canStepInto()
 	 */
 	public boolean canStepInto() {
@@ -249,7 +254,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStep#canStepOver()
 	 */
 	public boolean canStepOver() {
@@ -259,7 +264,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStep#canStepReturn()
 	 */
 	public boolean canStepReturn() {
@@ -269,7 +274,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStep#isStepping()
 	 */
 	public boolean isStepping() {
@@ -279,7 +284,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStep#stepInto()
 	 */
 	public void stepInto() throws DebugException {
@@ -289,7 +294,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStep#stepOver()
 	 */
 	public void stepOver() throws DebugException {
@@ -299,7 +304,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStep#stepReturn()
 	 */
 	public void stepReturn() throws DebugException {
@@ -307,13 +312,13 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 		this.getThread().stepReturn();
 	}
 
-	///////////////////////////////////
+	// /////////////////////////////////
 	// Implementation of ISuspendResume
-	///////////////////////////////////
+	// /////////////////////////////////
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#canResume()
 	 */
 	public boolean canResume() {
@@ -323,7 +328,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#canSuspend()
 	 */
 	public boolean canSuspend() {
@@ -333,7 +338,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#isSuspended()
 	 */
 	public boolean isSuspended() {
@@ -343,7 +348,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#resume()
 	 */
 	public void resume() throws DebugException {
@@ -353,7 +358,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#suspend()
 	 */
 	public void suspend() throws DebugException {
@@ -361,13 +366,13 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 		this.getThread().suspend();
 	}
 
-	///////////////////////////////
+	// /////////////////////////////
 	// Implementation of ITerminate
-	///////////////////////////////
+	// /////////////////////////////
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ITerminate#canTerminate()
 	 */
 	public boolean canTerminate() {
@@ -377,7 +382,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ITerminate#isTerminated()
 	 */
 	public boolean isTerminated() {
@@ -387,7 +392,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ITerminate#terminate()
 	 */
 	public void terminate() throws DebugException {

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -36,9 +36,9 @@ import org.eclipse.ui.PartInitException;
 
 /**
  * Editor used in multitabs editor.
- * 
+ *
  * @author Emilien Perico
- * 
+ *
  */
 public class UmlStateMachineDiagramForMultiEditor extends UMLDiagramEditor {
 	/**
@@ -56,10 +56,10 @@ public class UmlStateMachineDiagramForMultiEditor extends UMLDiagramEditor {
 	/**
 	 * Constructor for SashSystem v2. Context and required objects are retrieved
 	 * from the ServiceRegistry.
-	 * 
+	 *
 	 * @throws BackboneException
 	 * @throws ServiceException
-	 * 
+	 *
 	 */
 	public UmlStateMachineDiagramForMultiEditor(ServicesRegistry servicesRegistry, Diagram diagram) throws BackboneException, ServiceException {
 		super(servicesRegistry, diagram);

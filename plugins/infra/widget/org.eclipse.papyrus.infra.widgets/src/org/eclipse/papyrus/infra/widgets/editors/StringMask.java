@@ -67,9 +67,9 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 
 	public Collection<String> getValue() {
 		Set<String> values = new HashSet<String>();
-		for(Button button : checkboxes) {
-			if(button.getSelection()) {
-				String value = (String)button.getData(DATA_KEY);
+		for (Button button : checkboxes) {
+			if (button.getSelection()) {
+				String value = (String) button.getData(DATA_KEY);
 				values.add(value);
 			}
 		}
@@ -78,7 +78,7 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 
 	@Override
 	public void dispose() {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			modelProperty.removeChangeListener(this);
 		}
 		super.dispose();
@@ -92,7 +92,7 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 	@Override
 	public void setReadOnly(final boolean readOnly) {
 		this.isReadOnly = readOnly;
-		for(Button button : checkboxes) {
+		for (Button button : checkboxes) {
 			button.setEnabled(!readOnly);
 		}
 	}
@@ -103,14 +103,14 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 	}
 
 	public void setMasks(final Map<String, String> values) {
-		if(checkboxes != null) {
+		if (checkboxes != null) {
 			disposeCheckboxes();
 		}
 
 		checkboxes = new Button[values.size()];
 
 		int i = 0;
-		for(Entry<String, String> mask : values.entrySet()) {
+		for (Entry<String, String> mask : values.entrySet()) {
 			String stringValue = mask.getKey();
 			String label = mask.getValue();
 
@@ -124,14 +124,14 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 	}
 
 	protected void disposeCheckboxes() {
-		for(Button button : checkboxes) {
+		for (Button button : checkboxes) {
 			button.removeSelectionListener(this);
 			button.dispose();
 		}
 	}
 
 	public void setNumColumns(final int numColumns) {
-		((GridLayout)checkboxContainer.getLayout()).numColumns = numColumns;
+		((GridLayout) checkboxContainer.getLayout()).numColumns = numColumns;
 		checkboxContainer.layout();
 		layout();
 	}
@@ -145,13 +145,13 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 	}
 
 	protected void refreshCheckboxes() {
-		if(!refreshCheckboxes) {
+		if (!refreshCheckboxes) {
 			return;
 		}
 
 		Collection<String> values = getCurrentValue();
-		for(Button button : checkboxes) {
-			String value = (String)button.getData(DATA_KEY);
+		for (Button button : checkboxes) {
+			String value = (String) button.getData(DATA_KEY);
 			button.setSelection(values.contains(value));
 		}
 	}
@@ -163,10 +163,10 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 
 	@Override
 	public void widgetSelected(final SelectionEvent e) {
-		Button button = (Button)e.widget;
-		String value = (String)button.getData(DATA_KEY);
+		Button button = (Button) e.widget;
+		String value = (String) button.getData(DATA_KEY);
 		Collection<String> values = new HashSet<String>(getCurrentValue());
-		if(button.getSelection()) {
+		if (button.getSelection()) {
 			values.add(value);
 		} else {
 			values.remove(value);
@@ -175,7 +175,7 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 	}
 
 	protected void setCurrentValue(final Collection<String> values) {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			refreshCheckboxes = false;
 			modelProperty.clear();
 			modelProperty.addAll(values);
@@ -187,7 +187,7 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 	}
 
 	protected Collection<String> getCurrentValue() {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			return modelProperty;
 		} else {
 			return currentValue;
@@ -200,7 +200,7 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 	}
 
 	public int getNumColumns() {
-		return ((GridLayout)checkboxContainer.getLayout()).numColumns;
+		return ((GridLayout) checkboxContainer.getLayout()).numColumns;
 	}
 
 	@Override

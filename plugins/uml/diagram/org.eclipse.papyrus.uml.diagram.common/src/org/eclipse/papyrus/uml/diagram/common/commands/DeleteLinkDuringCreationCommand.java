@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,14 +36,14 @@ import org.eclipse.papyrus.uml.diagram.common.editparts.UMLConnectionNodeEditPar
  * link that is the source or the target of the new link. during the delete,
  * several listener has trigger (a cycle is created) and finally the active tool
  * close the transaction
- * 
+ *
  * In order to avoid the raise of the listener, one of editpartlisteners is
  * removed in the connectioneditpart before doing the deletion This listener is
  * created by the active tool. In this class, the listener editpart of
  * AbstractConnectionCreationTool is removed. in order to remove the editpart
  * listener the editpart must implements IEditpartListenerAccess
- * 
- * 
+ *
+ *
  */
 
 public class DeleteLinkDuringCreationCommand extends DeleteCommand {
@@ -55,15 +55,15 @@ public class DeleteLinkDuringCreationCommand extends DeleteCommand {
 	protected EditPartViewer viewer = null;
 
 	/**
-	 * 
+	 *
 	 * Constructor
-	 * 
+	 *
 	 * @param editingDomain
-	 *        in order to run this command
+	 *            in order to run this command
 	 * @param view
-	 *        has not to be null
+	 *            has not to be null
 	 * @param viewer
-	 *        has not to be null
+	 *            has not to be null
 	 */
 	public DeleteLinkDuringCreationCommand(TransactionalEditingDomain editingDomain, Edge view, EditPartViewer viewer) {
 		super(editingDomain, view);
@@ -84,11 +84,11 @@ public class DeleteLinkDuringCreationCommand extends DeleteCommand {
 		// the listener to remove
 		EditPartListener listenerToRemove = null;
 		// the graphical editpart to delete
-		IGraphicalEditPart editPart = (IGraphicalEditPart)epRegistry.get(edge);
+		IGraphicalEditPart editPart = (IGraphicalEditPart) epRegistry.get(edge);
 
-		if(editPart instanceof IEditpartListenerAccess) {
-			Iterator iterlistener = ((UMLConnectionNodeEditPart)editPart).getEventListenerIterator(EditPartListener.class);
-			while(iterlistener.hasNext()) {
+		if (editPart instanceof IEditpartListenerAccess) {
+			Iterator iterlistener = ((UMLConnectionNodeEditPart) editPart).getEventListenerIterator(EditPartListener.class);
+			while (iterlistener.hasNext()) {
 				Object currentObject = iterlistener.next();
 
 				Class classobject = currentObject.getClass();
@@ -98,12 +98,12 @@ public class DeleteLinkDuringCreationCommand extends DeleteCommand {
 				// compare the name of the listener.
 				// because it was a inner class private we cannot test the type
 				// or access to it
-				if(classobject.getName().contains(activeToolClassName)) {
-					listenerToRemove = (EditPartListener)currentObject;
+				if (classobject.getName().contains(activeToolClassName)) {
+					listenerToRemove = (EditPartListener) currentObject;
 				}
 			}
 		}
-		if(listenerToRemove!=null){
+		if (listenerToRemove != null) {
 			// Finally we remove the listener
 			editPart.removeEditPartListener(listenerToRemove);
 		}

@@ -53,16 +53,16 @@ public class SplitEllipseLayout extends GravityConstrainedFlowLayout {
 		double cos45 = sin45;
 		double diagx = a * sin45;
 		double diagy = b * cos45;
-		int newxmargin = (int)(a - diagx);
-		int newymargin = (int)(b - diagy);
-		if(newxmargin != myXMargin || newymargin != myYMargin) {
+		int newxmargin = (int) (a - diagx);
+		int newymargin = (int) (b - diagy);
+		if (newxmargin != myXMargin || newymargin != myYMargin) {
 			myXMargin = newxmargin;
 			myYMargin = newymargin;
 			container.setBorder(new MarginBorder(myYMargin, myXMargin, myYMargin, myXMargin));
 		}
 		IFigure parent = container;
 		// code from super, except for one line
-		if(!parent.isVisible()) {
+		if (!parent.isVisible()) {
 			return;
 		}
 		List<?> children = getChildren(parent);
@@ -83,7 +83,7 @@ public class SplitEllipseLayout extends GravityConstrainedFlowLayout {
 		// figure when getting their preferred size.
 		int wHint = -1;
 		int hHint = -1;
-		if(isHorizontal()) {
+		if (isHorizontal()) {
 			hHint = parent.getClientArea(Rectangle.SINGLETON).height;
 		} else {
 			wHint = parent.getClientArea(Rectangle.SINGLETON).width;
@@ -93,7 +93,7 @@ public class SplitEllipseLayout extends GravityConstrainedFlowLayout {
 		 * Calculate sum of preferred heights of all children(totalHeight).
 		 * Calculate sum of minimum heights of all children(minHeight). Cache
 		 * Preferred Sizes and Minimum Sizes of all children.
-		 * 
+		 *
 		 * totalHeight is the sum of the preferred heights of all children
 		 * totalMinHeight is the sum of the minimum heights of all children
 		 * prefMinSumHeight is the sum of the difference between all children's
@@ -107,16 +107,16 @@ public class SplitEllipseLayout extends GravityConstrainedFlowLayout {
 		int prefMinSumHeight = 0;
 		double prefMaxSumHeight = 0;
 
-		for(int i = 0; i < numChildren; i++) {
-			child = (IFigure)children.get(i);
+		for (int i = 0; i < numChildren; i++) {
+			child = (IFigure) children.get(i);
 
 			prefSizes[i] = transposer.t(child.getPreferredSize(wHint, hHint));
 			minSizes[i] = transposer.t(child.getMinimumSize(wHint, hHint));
 			maxSizes[i] = transposer.t(child.getMaximumSize());
 
-			if(getConstraint(child) != null) {
-				double ratio = ((Double)getConstraint(child)).doubleValue();
-				int prefHeight = (int)(ratio * availableHeight);
+			if (getConstraint(child) != null) {
+				double ratio = ((Double) getConstraint(child)).doubleValue();
+				int prefHeight = (int) (ratio * availableHeight);
 				prefHeight = Math.max(prefHeight, minSizes[i].height);
 				prefHeight = Math.min(prefHeight, maxSizes[i].height);
 				prefSizes[i].height = prefHeight;
@@ -136,14 +136,14 @@ public class SplitEllipseLayout extends GravityConstrainedFlowLayout {
 		 * The total amount that the children must be shrunk is the sum of the
 		 * preferred Heights of the children minus Max(the available area and
 		 * the sum of the minimum heights of the children).
-		 * 
+		 *
 		 * amntShrinkHeight is the combined amount that the children must shrink
 		 * amntShrinkCurrentHeight is the amount each child will shrink
 		 * respectively
 		 */
 		int amntShrinkHeight = totalHeight - Math.max(availableHeight, totalMinHeight);
 
-		for(int i = 0; i < numChildren; i++) {
+		for (int i = 0; i < numChildren; i++) {
 			int amntShrinkCurrentHeight = 0;
 			int prefHeight = prefSizes[i].height;
 			int minHeight = minSizes[i].height;
@@ -153,27 +153,27 @@ public class SplitEllipseLayout extends GravityConstrainedFlowLayout {
 			int maxWidth = maxSizes[i].width;
 			Rectangle newBounds = new Rectangle(x, y, prefWidth, prefHeight);
 
-			child = (IFigure)children.get(i);
+			child = (IFigure) children.get(i);
 			// only difference with super : stretch the last item, whatever the
 			// policy.
 			// this enables to draw scrollbars for the last compartment.
-			if(getStretchMajorAxis() || i == numChildren - 1) {
-				if(amntShrinkHeight > 0 && prefMinSumHeight != 0) {
-					amntShrinkCurrentHeight = (int)((long)(prefHeight - minHeight) * amntShrinkHeight / (prefMinSumHeight));
-				} else if(amntShrinkHeight < 0 && totalHeight != 0) {
-					amntShrinkCurrentHeight = (int)(((maxHeight - prefHeight) / prefMaxSumHeight) * amntShrinkHeight);
+			if (getStretchMajorAxis() || i == numChildren - 1) {
+				if (amntShrinkHeight > 0 && prefMinSumHeight != 0) {
+					amntShrinkCurrentHeight = (int) ((long) (prefHeight - minHeight) * amntShrinkHeight / (prefMinSumHeight));
+				} else if (amntShrinkHeight < 0 && totalHeight != 0) {
+					amntShrinkCurrentHeight = (int) (((maxHeight - prefHeight) / prefMaxSumHeight) * amntShrinkHeight);
 				}
 			}
 
 			int width = Math.min(prefWidth, maxWidth);
-			if(matchWidth) {
+			if (matchWidth) {
 				width = maxWidth;
 			}
 			width = Math.max(minWidth, Math.min(clientArea.width, width));
 			newBounds.width = width;
 
 			int adjust = clientArea.width - width;
-			switch(minorAlignment) {
+			switch (minorAlignment) {
 			case ALIGN_TOPLEFT:
 				adjust = 0;
 				break;
@@ -184,7 +184,7 @@ public class SplitEllipseLayout extends GravityConstrainedFlowLayout {
 				break;
 			}
 			newBounds.x += adjust;
-			if(newBounds.height - amntShrinkCurrentHeight > maxHeight) {
+			if (newBounds.height - amntShrinkCurrentHeight > maxHeight) {
 				amntShrinkCurrentHeight = newBounds.height - maxHeight;
 			}
 			newBounds.height -= amntShrinkCurrentHeight;
@@ -196,29 +196,29 @@ public class SplitEllipseLayout extends GravityConstrainedFlowLayout {
 			totalHeight -= prefHeight;
 			y += newBounds.height + spacing;
 		}
-		if(minorAlignment == ALIGN_CENTER) {
+		if (minorAlignment == ALIGN_CENTER) {
 			alignVerticalCenter(totalMinHeight, totalHeight, container);
 		}
 
 	}
 
 	private void alignVerticalCenter(int minHeight, int totalHeight, IFigure container) {
-		//calculus of space for y
+		// calculus of space for y
 		int containerHeight = container.getBounds().height;
 		int heightContent = 0;
 		Iterator iter = container.getChildren().iterator();
-		while(iter.hasNext()) {
-			IFigure f = (IFigure)iter.next();
+		while (iter.hasNext()) {
+			IFigure f = (IFigure) iter.next();
 			Dimension dim = f.getPreferredSize();
 			heightContent = heightContent + dim.height;
 		}
 
 
 		int spaceY = (containerHeight - heightContent) / 3;
-		if(spaceY > 0) {
+		if (spaceY > 0) {
 			iter = container.getChildren().iterator();
-			while(iter.hasNext()) {
-				IFigure f = (IFigure)iter.next();
+			while (iter.hasNext()) {
+				IFigure f = (IFigure) iter.next();
 				f.invalidate();
 				Dimension dim = f.getPreferredSize();
 				Rectangle rec = f.getBounds();
@@ -226,7 +226,7 @@ public class SplitEllipseLayout extends GravityConstrainedFlowLayout {
 				rec.height = dim.height;
 				f.setBounds(rec);
 
-				//System.err.println(f);
+				// System.err.println(f);
 			}
 		}
 
@@ -239,16 +239,16 @@ public class SplitEllipseLayout extends GravityConstrainedFlowLayout {
 	 */
 	private List getChildren(IFigure container) {
 		List children = new ArrayList(container.getChildren());
-		if(getIgnoreInvisibleChildren()) {
+		if (getIgnoreInvisibleChildren()) {
 			Iterator iter = children.iterator();
-			while(iter.hasNext()) {
-				IFigure f = (IFigure)iter.next();
-				if(!f.isVisible()) {
+			while (iter.hasNext()) {
+				IFigure f = (IFigure) iter.next();
+				if (!f.isVisible()) {
 					iter.remove();
 				}
 			}
 		}
-		if(isReversed()) {
+		if (isReversed()) {
 			Collections.reverse(children);
 		}
 		return children;

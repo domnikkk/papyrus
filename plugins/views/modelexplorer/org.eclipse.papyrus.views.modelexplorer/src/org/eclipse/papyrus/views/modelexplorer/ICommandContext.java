@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -23,14 +23,14 @@ public interface ICommandContext {
 
 	/**
 	 * Get the container of the created element.
-	 * 
+	 *
 	 * @return the container.
 	 */
 	public EObject getContainer();
 
 	/**
 	 * Get the reference the created element relates.
-	 * 
+	 *
 	 * @return the EReference.
 	 */
 	public EReference getReference();

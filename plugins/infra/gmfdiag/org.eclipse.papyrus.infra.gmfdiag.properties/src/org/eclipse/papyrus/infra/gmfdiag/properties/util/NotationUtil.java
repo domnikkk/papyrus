@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -21,19 +21,19 @@ public class NotationUtil {
 
 	/**
 	 * Retrieve the IGraphicalEditPart from the given Object
-	 * 
+	 *
 	 * @param source
-	 *        The object to resolve
+	 *            The object to resolve
 	 * @return
 	 *         The IGraphicalEditPart, or null if it couldn't be resolved
 	 */
 	public static IGraphicalEditPart resolveEditPart(Object source) {
-		if(source instanceof IGraphicalEditPart) {
-			return (IGraphicalEditPart)source;
+		if (source instanceof IGraphicalEditPart) {
+			return (IGraphicalEditPart) source;
 		}
 
-		if(source instanceof IAdaptable) {
-			return (IGraphicalEditPart)((IAdaptable)source).getAdapter(IGraphicalEditPart.class);
+		if (source instanceof IAdaptable) {
+			return (IGraphicalEditPart) ((IAdaptable) source).getAdapter(IGraphicalEditPart.class);
 		}
 
 		return null;

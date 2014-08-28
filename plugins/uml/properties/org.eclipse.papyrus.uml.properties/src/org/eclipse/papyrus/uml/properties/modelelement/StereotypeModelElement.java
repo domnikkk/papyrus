@@ -32,7 +32,7 @@ import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * A Model Element for manipulating Stereotype properties
- * 
+ *
  * @author Camille Letavernier
  */
 public class StereotypeModelElement extends EMFModelElement {
@@ -44,14 +44,14 @@ public class StereotypeModelElement extends EMFModelElement {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param stereotypeApplication
-	 *        The StereotypeApplication being edited
+	 *            The StereotypeApplication being edited
 	 * @param stereotype
-	 *        The Stereotype element
+	 *            The Stereotype element
 	 * @param domain
-	 *        The Editing domain on which the commands will be called
-	 * 
+	 *            The Editing domain on which the commands will be called
+	 *
 	 */
 	public StereotypeModelElement(EObject stereotypeApplication, Stereotype stereotype, EditingDomain domain) {
 		super(stereotypeApplication, domain);
@@ -65,21 +65,21 @@ public class StereotypeModelElement extends EMFModelElement {
 	public IObservable doGetObservable(String propertyPath) {
 		FeaturePath featurePath = getFeaturePath(propertyPath);
 		EStructuralFeature feature = getFeature(featurePath);
-		if(feature == null) {
+		if (feature == null) {
 			return super.doGetObservable(propertyPath);
 		}
 
-		if(feature.getEType() instanceof EDataType && !(feature.getEType() instanceof EEnum)) {
-			if(feature.getUpperBound() == 1) {
-				//Single-valued DataType
-				if(DataTypeProvider.instance.canHandle((EDataType)feature.getEType())) {
-					return new StructuredDataTypeObservableValue(source, feature, domain, (EDataType)feature.getEType());
+		if (feature.getEType() instanceof EDataType && !(feature.getEType() instanceof EEnum)) {
+			if (feature.getUpperBound() == 1) {
+				// Single-valued DataType
+				if (DataTypeProvider.instance.canHandle((EDataType) feature.getEType())) {
+					return new StructuredDataTypeObservableValue(source, feature, domain, (EDataType) feature.getEType());
 				}
-				//TODO : Multi-valued DataTypes
+				// TODO : Multi-valued DataTypes
 			}
 		}
 
-		if(feature.getUpperBound() != 1) {
+		if (feature.getUpperBound() != 1) {
 			return new PapyrusObservableList(EMFProperties.list(featurePath).observe(source), domain, getSource(featurePath), feature);
 		}
 
@@ -92,10 +92,10 @@ public class StereotypeModelElement extends EMFModelElement {
 	@Override
 	public ILabelProvider getLabelProvider(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature == null) {
+		if (feature == null) {
 			return super.getLabelProvider(propertyPath);
 		}
-		if(feature.getEType() instanceof EEnum) {
+		if (feature.getEType() instanceof EEnum) {
 			return super.getLabelProvider(propertyPath);
 		}
 		return new UMLFilteredLabelProvider();
@@ -108,7 +108,7 @@ public class StereotypeModelElement extends EMFModelElement {
 	public IStaticContentProvider getContentProvider(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
 
-		if(feature == null) {
+		if (feature == null) {
 			return super.getContentProvider(propertyPath);
 		}
 

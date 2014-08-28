@@ -13,7 +13,7 @@ package org.eclipse.papyrus.infra.export;
 
 /**
  * Exception raised during an image export
- * 
+ *
  * @author <a href="david.sciamma@anyware-tech.com">David Sciamma</a>
  */
 public class ExportException extends Exception {
@@ -32,7 +32,7 @@ public class ExportException extends Exception {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param message
 	 */
 	public ExportException(String message) {
@@ -41,7 +41,7 @@ public class ExportException extends Exception {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param cause
 	 */
 	public ExportException(Throwable cause) {
@@ -50,7 +50,7 @@ public class ExportException extends Exception {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param message
 	 * @param cause
 	 */

@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet;
 
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.ETypedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.TypedElementRef#getTypedElement <em>Typed Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.TypedElementRef#getTypedElement <em>Typed Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,10 +43,10 @@ public interface TypedElementRef extends Query {
 	 * Returns the value of the '<em><b>Typed Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Typed Element</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Typed Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Typed Element</em>' reference.
 	 * @see #setTypedElement(ETypedElement)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getTypedElementRef_TypedElement()
@@ -61,7 +61,9 @@ public interface TypedElementRef extends Query {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.TypedElementRef#getTypedElement <em>Typed Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Typed Element</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Typed Element</em>' reference.
 	 * @see #getTypedElement()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel

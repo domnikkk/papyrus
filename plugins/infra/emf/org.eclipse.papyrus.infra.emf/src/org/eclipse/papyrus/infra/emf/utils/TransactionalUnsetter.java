@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,9 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.infra.emf.commands.UnsetCommand;
 
 /**
- * 
+ *
  * This class allows to do unset on a feature using a command
- * 
+ *
  */
 public class TransactionalUnsetter {
 
@@ -39,17 +39,17 @@ public class TransactionalUnsetter {
 	private final TransactionalEditingDomain domain;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
-	 *        the eobject to modify
+	 *            the eobject to modify
 	 * @param feature
-	 *        the feature on which we want to do an unset
+	 *            the feature on which we want to do an unset
 	 */
 	public TransactionalUnsetter(final EObject source, final EStructuralFeature feature) {
-		domain = (TransactionalEditingDomain)EMFHelper.resolveEditingDomain(source);
-		cmd = new UnsetCommand((TransactionalEditingDomain)domain, source, feature);
+		domain = (TransactionalEditingDomain) EMFHelper.resolveEditingDomain(source);
+		cmd = new UnsetCommand(domain, source, feature);
 	}
 
 	/**

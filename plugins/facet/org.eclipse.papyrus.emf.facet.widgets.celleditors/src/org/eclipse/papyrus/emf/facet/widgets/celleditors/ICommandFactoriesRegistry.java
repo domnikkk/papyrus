@@ -21,8 +21,7 @@ import org.eclipse.papyrus.emf.facet.widgets.celleditors.internal.CommandFactori
  * Registry for the "commandFactories" extension point. It is used to create EMF {@link Command}s
  * compatible with a given {@link EditingDomain}.
  * <p>
- * For example, a <code>TransactionalEditingDomain</code> doesn't work with the usual EMF commands,
- * and the model must be manipulated with {@link Command}s that use transactions.
+ * For example, a <code>TransactionalEditingDomain</code> doesn't work with the usual EMF commands, and the model must be manipulated with {@link Command}s that use transactions.
  */
 public interface ICommandFactoriesRegistry {
 
@@ -33,8 +32,7 @@ public interface ICommandFactoriesRegistry {
 	List<ICommandFactory> getCommandFactories();
 
 	/**
-	 * @return a command factory compatible with the given {@link EditingDomain}, or
-	 *         <code>null</code> if none is found
+	 * @return a command factory compatible with the given {@link EditingDomain}, or <code>null</code> if none is found
 	 */
 	ICommandFactory getCommandFactoryFor(final EditingDomain editingDomain);
 }

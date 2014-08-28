@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -29,7 +29,7 @@ public class ComponentRealizationReorientCommand extends DependencyReorientComma
 	/**
 	 * <pre>
 	 * Constructor.
-	 * 
+	 *
 	 * @param request the re-orient relationship request.
 	 * </pre>
 	 */
@@ -40,44 +40,48 @@ public class ComponentRealizationReorientCommand extends DependencyReorientComma
 	/**
 	 * <pre>
 	 * @see org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand#canExecute()
-	 * 
+	 *
 	 * @return true if the command is executable.
 	 * </pre>
 	 */
+	@Override
 	public boolean canExecute() {
-		if(! (getElementToEdit() instanceof ComponentRealization)) {
+		if (!(getElementToEdit() instanceof ComponentRealization)) {
 			return false;
 		}
-		
+
 		return super.canExecute();
 	}
 
+	@Override
 	protected boolean canReorientSource() {
-		if(!(newEnd instanceof Classifier)) {
+		if (!(newEnd instanceof Classifier)) {
 			return false;
 		}
 
 		if (newEnd == getLink().getAbstraction()) {
 			return false;
 		}
-		
+
 		return true;
 	}
 
+	@Override
 	protected boolean canReorientTarget() {
-		if(!(newEnd instanceof Component)) {
+		if (!(newEnd instanceof Component)) {
 			return false;
 		}
 
 		if (getLink().getRealizingClassifiers().contains(newEnd)) {
 			return false;
 		}
-		
+
 		return true;
 	}
 
+	@Override
 	protected ComponentRealization getLink() {
-		return (ComponentRealization)getElementToEdit();
+		return (ComponentRealization) getElementToEdit();
 	}
 
 }

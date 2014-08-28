@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -49,7 +49,7 @@ public class ResourceManager {
 
 	public Color getColor(String colorStr) {
 		Color color = key2Colors.get(colorStr);
-		if(color == null || color.isDisposed()) {
+		if (color == null || color.isDisposed()) {
 			key2Colors.put(colorStr, color = ColorTool.getColor(colorStr));
 		}
 		return color;
@@ -57,14 +57,14 @@ public class ResourceManager {
 
 	public Font getFont(String fontStr) {
 		Font font = key2Fonts.get(fontStr);
-		if(font == null || font.isDisposed()) {
+		if (font == null || font.isDisposed()) {
 			key2Fonts.put(fontStr, font = FontTool.getFont(fontStr));
 		}
 		return font;
 	}
 
 	public Image getImage(String imagePath) {
-		if(imagePath == null) {
+		if (imagePath == null) {
 			return null;
 		}
 		try {
@@ -77,7 +77,7 @@ public class ResourceManager {
 	public Image getImage(URL file) {
 		String key = file.toString();
 		Image image = key2Images.get(key);
-		if(image == null || image.isDisposed()) {
+		if (image == null || image.isDisposed()) {
 			key2Images.put(key, image = ImageTool.getImage(file));
 		}
 		return image;
@@ -86,8 +86,8 @@ public class ResourceManager {
 	public synchronized void dispose() {
 		// dispose colors.
 		Collection<Color> colors = key2Colors.values();
-		for(Color color : colors) {
-			if(color != null) {
+		for (Color color : colors) {
+			if (color != null) {
 				color.dispose();
 			}
 		}
@@ -95,8 +95,8 @@ public class ResourceManager {
 
 		// dispose fonts.
 		Collection<Font> fonts = key2Fonts.values();
-		for(Font font : fonts) {
-			if(font != null) {
+		for (Font font : fonts) {
+			if (font != null) {
 				font.dispose();
 			}
 		}
@@ -104,8 +104,8 @@ public class ResourceManager {
 
 		// dispose images
 		Collection<Image> images = key2Images.values();
-		for(Image image : images) {
-			if(image != null) {
+		for (Image image : images) {
+			if (image != null) {
 				image.dispose();
 			}
 		}
@@ -114,25 +114,25 @@ public class ResourceManager {
 	static class ColorTool {
 
 		static Color getColor(String colorStr) {
-			if(NamedColorsUtil.hasColor(colorStr)) {
+			if (NamedColorsUtil.hasColor(colorStr)) {
 				return NamedColorsUtil.getColor(colorStr);
 			}
-			if(colorStr.toLowerCase().startsWith("swt.")) {
+			if (colorStr.toLowerCase().startsWith("swt.")) {
 				return getSWTColor(colorStr);
-			} else if(colorStr.startsWith("#")) {
+			} else if (colorStr.startsWith("#")) {
 				try {
 					int rgb = Integer.parseInt(colorStr.substring(1), 16);
 					return getColor(rgb);
 				} catch (NumberFormatException e) {
 					return null;
 				}
-			} else if(colorStr.indexOf(",") != -1) {
+			} else if (colorStr.indexOf(",") != -1) {
 				List<String> rgbs = new ArrayList<String>();
 				StringTokenizer stk = new StringTokenizer(colorStr, ",");
-				while(stk.hasMoreTokens()) {
+				while (stk.hasMoreTokens()) {
 					rgbs.add(stk.nextToken());
 				}
-				if(rgbs.size() == 3) {
+				if (rgbs.size() == 3) {
 					try {
 						int r = Integer.parseInt(rgbs.get(0).trim());
 						int g = Integer.parseInt(rgbs.get(1).trim());
@@ -147,7 +147,7 @@ public class ResourceManager {
 		}
 
 		static Color getColor(int red, int green, int blue) {
-			if(red > 255 || green > 255 || blue > 255 || red < 0 || green < 0 || blue < 0) {
+			if (red > 255 || green > 255 || blue > 255 || red < 0 || green < 0 || blue < 0) {
 				return null;
 			}
 			return new Color(Display.getCurrent(), red, green, blue);
@@ -162,8 +162,8 @@ public class ResourceManager {
 		}
 
 		static Color getSWTColor(String colorStr) {
-			if(!(colorStr.toLowerCase().startsWith("swt."))) {
-				if(!(colorStr.toLowerCase().startsWith("color_"))) {
+			if (!(colorStr.toLowerCase().startsWith("swt."))) {
+				if (!(colorStr.toLowerCase().startsWith("color_"))) {
 					colorStr = "COLOR_" + colorStr;
 				}
 				colorStr = "SWT." + colorStr;
@@ -180,16 +180,16 @@ public class ResourceManager {
 	static class FontTool {
 
 		static Font getFont(String fontStr) {
-			if(fontStr.indexOf(",") != -1) {
+			if (fontStr.indexOf(",") != -1) {
 				StringTokenizer stk = new StringTokenizer(fontStr, ",");
 				String name = null;
 				int height = 0;
 				int style = SWT.NORMAL;
-				while(stk.hasMoreTokens()) {
+				while (stk.hasMoreTokens()) {
 					String token = stk.nextToken().trim();
-					if(token.equalsIgnoreCase("normal") || token.equalsIgnoreCase("bold") || token.equalsIgnoreCase("italic") || token.contains("|")) {
-						style = (Integer)ObjectUtil.resolveValue(token, Integer.class, style);
-					} else if(isInt(token)) {
+					if (token.equalsIgnoreCase("normal") || token.equalsIgnoreCase("bold") || token.equalsIgnoreCase("italic") || token.contains("|")) {
+						style = (Integer) ObjectUtil.resolveValue(token, Integer.class, style);
+					} else if (isInt(token)) {
 						height = Integer.parseInt(token);
 					} else {
 						name = token;
@@ -210,7 +210,7 @@ public class ResourceManager {
 		}
 
 		static Font getFont(String name, int height, int style) {
-			if(name == null) {
+			if (name == null) {
 				return null;
 			}
 			return new Font(Display.getCurrent(), name, height, style);
@@ -228,7 +228,7 @@ public class ResourceManager {
 		}
 
 		static Image getImage(URL url) {
-			if(url == null) {
+			if (url == null) {
 				return null;
 			}
 			try {

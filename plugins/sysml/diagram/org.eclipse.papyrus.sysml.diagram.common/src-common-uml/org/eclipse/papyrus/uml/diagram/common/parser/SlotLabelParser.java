@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -41,6 +41,7 @@ public class SlotLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		return getPrintString(element, flags);
 	}
@@ -48,6 +49,7 @@ public class SlotLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.UNEDITABLE_STATUS;
 	}
@@ -55,6 +57,7 @@ public class SlotLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		return UnexecutableCommand.INSTANCE;
 	}
@@ -62,34 +65,35 @@ public class SlotLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		String result = "";
-		EObject eObject =EMFHelper.getEObject(element);
+		EObject eObject = EMFHelper.getEObject(element);
 
-		if(eObject instanceof Slot) {
-			Slot slot = (Slot)eObject;
+		if (eObject instanceof Slot) {
+			Slot slot = (Slot) eObject;
 			result = "<UNDEFINED>";
 
-			if(slot.getDefiningFeature() != null) {
+			if (slot.getDefiningFeature() != null) {
 
 				// Add defining feature
 				result = slot.getDefiningFeature().getName();
 
 				// Add values
-				if(!slot.getValues().isEmpty()) {
+				if (!slot.getValues().isEmpty()) {
 
 					String values = "";
 					Iterator<ValueSpecification> iter = slot.getValues().iterator();
-					while(iter.hasNext()) {
+					while (iter.hasNext()) {
 						ValueSpecification currentSpecification = iter.next();
 
 						String currentValue = currentSpecification.stringValue();
-						if((currentSpecification instanceof InstanceValue) && ((InstanceValue)currentSpecification).getInstance() != null) {
-							currentValue = ((InstanceValue)currentSpecification).getInstance().getName();
+						if ((currentSpecification instanceof InstanceValue) && ((InstanceValue) currentSpecification).getInstance() != null) {
+							currentValue = ((InstanceValue) currentSpecification).getInstance().getName();
 						}
 
 						values = values + currentValue;
-						if(iter.hasNext()) {
+						if (iter.hasNext()) {
 							result = result + ", ";
 						}
 					}
@@ -105,10 +109,11 @@ public class SlotLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
-		if(event instanceof Notification) {
-			Object feature = ((Notification)event).getFeature();
-			if(feature instanceof EStructuralFeature) {
+		if (event instanceof Notification) {
+			Object feature = ((Notification) event).getFeature();
+			if (feature instanceof EStructuralFeature) {
 				return UMLPackage.eINSTANCE.getSlot_DefiningFeature().equals(feature);
 			}
 		}
@@ -119,6 +124,7 @@ public class SlotLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
@@ -126,6 +132,7 @@ public class SlotLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = new ArrayList<EObject>();
 		semanticElementsBeingParsed.add(element);
@@ -136,6 +143,7 @@ public class SlotLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		return true;
 	}

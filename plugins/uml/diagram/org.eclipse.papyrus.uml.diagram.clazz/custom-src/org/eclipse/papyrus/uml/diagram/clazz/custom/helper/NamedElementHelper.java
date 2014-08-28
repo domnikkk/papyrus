@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,8 +20,8 @@ import org.eclipse.uml2.uml.Element;
 
 /**
  * This singleton is used to find a new name of element
- * 
- * 
+ *
+ *
  * @deprecated Use the {@link NamedElementUtil} API, instead.
  */
 @Deprecated
@@ -40,10 +40,10 @@ public class NamedElementHelper {
 
 	/**
 	 * Generic method that returns a new unique name within a namespace.
-	 * 
+	 *
 	 * @param umlParent
-	 *        the parent of the element to create
-	 * 
+	 *            the parent of the element to create
+	 *
 	 * @return a distinguisable name within the namespace of the umlParent
 	 */
 	public String getNewUMLElementName(Element umlParent, EClass eclass) {
@@ -53,9 +53,9 @@ public class NamedElementHelper {
 
 	/**
 	 * set the base string for the name
-	 * 
+	 *
 	 * @param baseString
-	 *        a string that is the prefix
+	 *            a string that is the prefix
 	 */
 	public void setBaseString(String baseString) {
 		this.baseString = baseString;

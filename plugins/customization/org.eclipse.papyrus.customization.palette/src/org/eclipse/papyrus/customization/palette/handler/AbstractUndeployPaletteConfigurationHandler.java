@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ import org.eclipse.ui.statushandlers.StatusManager;
 public abstract class AbstractUndeployPaletteConfigurationHandler extends AbstractHandler {
 
 	/**
-	 * 
+	 *
 	 */
 	public AbstractUndeployPaletteConfigurationHandler() {
 		super();
@@ -51,62 +51,62 @@ public abstract class AbstractUndeployPaletteConfigurationHandler extends Abstra
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
-		if(!(currentSelection instanceof IStructuredSelection) || currentSelection.isEmpty()) {
+		if (!(currentSelection instanceof IStructuredSelection) || currentSelection.isEmpty()) {
 			return null;
 		}
-	
-		final IStructuredSelection selection = (IStructuredSelection)currentSelection;
-	
+
+		final IStructuredSelection selection = (IStructuredSelection) currentSelection;
+
 		final Shell activeShell = HandlerUtil.getActiveShell(event);
-	
-		
-		doExecute(selection,activeShell, new NullProgressMonitor());
+
+
+		doExecute(selection, activeShell, new NullProgressMonitor());
 		return null;
 	}
 
 	protected void doExecute(IStructuredSelection selection, Shell activeShell, IProgressMonitor monitor) {
 		Iterator<?> selectionIterator = selection.iterator();
-	
+
 		MultiStatus result = new MultiStatus(Activator.ID, IStatus.OK, "The palette configuration has been successfully deactivated and undeployed", null);
-	
-		while(selectionIterator.hasNext()) {
+
+		while (selectionIterator.hasNext()) {
 			Object selectedElement = selectionIterator.next();
-			if(selectedElement instanceof IAdaptable) {
-				IFile selectedFile = (IFile)((IAdaptable)selectedElement).getAdapter(IFile.class);
-				if(selectedFile == null) {
+			if (selectedElement instanceof IAdaptable) {
+				IFile selectedFile = (IFile) ((IAdaptable) selectedElement).getAdapter(IFile.class);
+				if (selectedFile == null) {
 					monitor.worked(1);
 					result.add(new Status(IStatus.ERROR, Activator.ID, "The selected element is not a file"));
 					continue;
 				}
-	
-				
+
+
 				String fileName = selectedFile.getFullPath().removeFileExtension().lastSegment();
 				monitor.subTask("Undeploy " + fileName);
-	
+
 				// do not delete.
 				// PapyrusPalettePreferences.deleteWorkspacePalette(fileName);
-				
+
 				// if not deploy, do nothing and onlyh warn
 				String editorId = getEditorID(fileName);
-				if(editorId == null) {
+				if (editorId == null) {
 					// not deployed: cancel the undeploy action
 					MessageDialog.openInformation(activeShell, "Not deployed", "This palette is currently not deployed");
-					result.add(new Status(IStatus.ERROR, Activator.ID, "The palette configuration "+fileName+" was not undeployed already"));
+					result.add(new Status(IStatus.ERROR, Activator.ID, "The palette configuration " + fileName + " was not undeployed already"));
 				} else {
 					result.add(deactivatePalette(fileName, editorId));
 				}
-				
+
 			}
 		}
-	
-		if(result.getChildren().length == 1) {
-			if(result.isOK()) {
+
+		if (result.getChildren().length == 1) {
+			if (result.isOK()) {
 				MessageDialog.openInformation(activeShell, "Success", result.getMessage());
-			} else if(result.getSeverity() < IStatus.ERROR) { //Errors are already logged
+			} else if (result.getSeverity() < IStatus.ERROR) { // Errors are already logged
 				StatusManager.getManager().handle(result, StatusManager.SHOW);
 			}
-		} else { //Merge the result and specify an appropriate message based on the result
-			if(result.isOK()) {
+		} else { // Merge the result and specify an appropriate message based on the result
+			if (result.isOK()) {
 				MessageDialog.openInformation(activeShell, "Success", result.getMessage());
 			} else {
 				MultiStatus actualResult = new MultiStatus(Activator.ID, result.getCode(), "Some errors occurred during the deployment", result.getException());
@@ -124,7 +124,7 @@ public abstract class AbstractUndeployPaletteConfigurationHandler extends Abstra
 	 * @param fileName
 	 * @return
 	 */
-	protected abstract IStatus deactivatePalette(String identifier, String editorId); 
+	protected abstract IStatus deactivatePalette(String identifier, String editorId);
 
 	/**
 	 * @param identifier

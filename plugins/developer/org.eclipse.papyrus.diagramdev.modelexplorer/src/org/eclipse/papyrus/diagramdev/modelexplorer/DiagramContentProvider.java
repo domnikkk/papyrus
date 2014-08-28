@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,12 +22,13 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.emf.providers.MoDiscoContentProvider;
 
 /**
- * 
+ *
  * this content provider is used to display diagrams and their content
  *
  */
-public class DiagramContentProvider extends MoDiscoContentProvider{
+public class DiagramContentProvider extends MoDiscoContentProvider {
 
+	@Override
 	public Object[] getChildren(final Object parentElement) {
 		ArrayList<Object> result = new ArrayList<Object>();
 
@@ -43,28 +44,29 @@ public class DiagramContentProvider extends MoDiscoContentProvider{
 	}
 
 
+	@Override
 	public EObject[] getRootElements(Object inputElement) {
 
 		try {
-			if(! (inputElement instanceof ServicesRegistry) )
+			if (!(inputElement instanceof ServicesRegistry))
 			{
 				return null;
 			}
 
-			ServicesRegistry servicesRegistry = (ServicesRegistry)inputElement;
+			ServicesRegistry servicesRegistry = (ServicesRegistry) inputElement;
 
 			modelSet = ModelUtils.getModelSetChecked(servicesRegistry);
 			pageMngr = servicesRegistry.getService(DiSashModelMngr.class).getIPageMngr();
 
-			ArrayList<EObject> result= new ArrayList<EObject>();
-			for (int i=0; i< pageMngr.allPages().size();i++){
-				if( pageMngr.allPages().get(i) instanceof EObject){
-					result.add((EObject)pageMngr.allPages().get(i));
+			ArrayList<EObject> result = new ArrayList<EObject>();
+			for (int i = 0; i < pageMngr.allPages().size(); i++) {
+				if (pageMngr.allPages().get(i) instanceof EObject) {
+					result.add((EObject) pageMngr.allPages().get(i));
 				}
 			}
 
-			EObject[] eObject= new EObject[result.size()];
-			return  result.toArray(eObject);
+			EObject[] eObject = new EObject[result.size()];
+			return result.toArray(eObject);
 
 		} catch (Exception e) {
 			System.err.println(e);

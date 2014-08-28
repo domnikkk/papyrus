@@ -36,13 +36,13 @@ public class HyperLinkSpecificObject extends HyperLinkObject {
 	}
 
 	public HyperLinkSpecificObject() {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void executeEditMousePressed(List<HyperLinkObject> list, EObject amodel) {
 		// TODO Auto-generated method stub
-		//Edit the hyperlink
+		// Edit the hyperlink
 	}
 
 	public void setTargetElement(EObject targetElement) {
@@ -56,15 +56,15 @@ public class HyperLinkSpecificObject extends HyperLinkObject {
 
 	@Override
 	public void openLink() {
-		if(targetElement == null) {
+		if (targetElement == null) {
 			return;
 		}
 
 		OpenElementService openElementService;
-		//IMultiDiagramEditor editor;
+		// IMultiDiagramEditor editor;
 		try {
 			openElementService = ServiceUtilsForEObject.getInstance().getService(OpenElementService.class, targetElement);
-			//editor = ServiceUtilsForEObject.getInstance().getService(IMultiDiagramEditor.class, targetElement);
+			// editor = ServiceUtilsForEObject.getInstance().getService(IMultiDiagramEditor.class, targetElement);
 		} catch (ServiceException ex) {
 			Activator.log.error(ex);
 			return;

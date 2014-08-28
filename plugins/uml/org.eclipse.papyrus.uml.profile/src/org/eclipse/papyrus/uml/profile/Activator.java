@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
 	/**
-	 * 
+	 *
 	 */
 	public static final String PLUGIN_ID = "org.eclipse.papyrus.uml.profile";
 
@@ -35,7 +35,7 @@ public class Activator extends AbstractUIPlugin {
 
 	// The shared instance
 	/**
-	 * 
+	 *
 	 */
 	private static Activator plugin;
 
@@ -48,14 +48,14 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param context
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	@Override
@@ -66,14 +66,14 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param context
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance.
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -93,9 +93,9 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Logs an error into the plugin's log
-	 * 
+	 *
 	 * @param string
-	 *        the message of the error
+	 *            the message of the error
 	 */
 	public static void logWarning(String string) {
 		getDefault().getLog().log(new Status(IStatus.WARNING, PLUGIN_ID, string));
@@ -103,9 +103,9 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Logs an error into the plugin's log
-	 * 
+	 *
 	 * @param string
-	 *        the message of the error
+	 *            the message of the error
 	 */
 	public static void logError(String string) {
 		getDefault().getLog().log(new Status(IStatus.ERROR, PLUGIN_ID, string));
@@ -113,9 +113,9 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Logs an exception into the plugin's log
-	 * 
+	 *
 	 * @param exception
-	 *        the exception to log
+	 *            the exception to log
 	 */
 	public static void logException(Exception exception) {
 		getDefault().getLog().log(new Status(IStatus.ERROR, PLUGIN_ID, exception.getLocalizedMessage(), exception));
@@ -123,11 +123,11 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Logs an exception into the plugin's log
-	 * 
+	 *
 	 * @param exception
-	 *        the exception to log
+	 *            the exception to log
 	 * @param message
-	 *        the message for the error
+	 *            the message for the error
 	 */
 	public static void logException(Exception exception, String message) {
 		getDefault().getLog().log(new Status(IStatus.ERROR, PLUGIN_ID, message, exception));

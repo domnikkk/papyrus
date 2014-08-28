@@ -30,9 +30,9 @@ import org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicySet;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.NewchildConfigurationImpl#getRoots <em>Roots</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.NewchildConfigurationImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.NewchildConfigurationImpl#getNewChildPolicies <em>New Child Policies</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.NewchildConfigurationImpl#getRoots <em>Roots</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.NewchildConfigurationImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.NewchildConfigurationImpl#getNewChildPolicies <em>New Child Policies</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	 * The cached value of the '{@link #getRoots() <em>Roots</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRoots()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -73,6 +76,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	 * The cached value of the '{@link #getNewChildPolicies() <em>New Child Policies</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNewChildPolicies()
 	 * @generated
 	 * @ordered
@@ -82,6 +86,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected NewchildConfigurationImpl() {
@@ -91,6 +96,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,6 +107,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<MenuRoot> getRoots() {
@@ -113,6 +120,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -122,18 +130,21 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NewchildPackage.NEWCHILD_CONFIGURATION__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<NewChildPolicySet> getNewChildPolicies() {
@@ -146,15 +157,16 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case NewchildPackage.NEWCHILD_CONFIGURATION__ROOTS:
-				return ((InternalEList<?>)getRoots()).basicRemove(otherEnd, msgs);
-			case NewchildPackage.NEWCHILD_CONFIGURATION__NEW_CHILD_POLICIES:
-				return ((InternalEList<?>)getNewChildPolicies()).basicRemove(otherEnd, msgs);
+		case NewchildPackage.NEWCHILD_CONFIGURATION__ROOTS:
+			return ((InternalEList<?>) getRoots()).basicRemove(otherEnd, msgs);
+		case NewchildPackage.NEWCHILD_CONFIGURATION__NEW_CHILD_POLICIES:
+			return ((InternalEList<?>) getNewChildPolicies()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -162,17 +174,18 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NewchildPackage.NEWCHILD_CONFIGURATION__ROOTS:
-				return getRoots();
-			case NewchildPackage.NEWCHILD_CONFIGURATION__NAME:
-				return getName();
-			case NewchildPackage.NEWCHILD_CONFIGURATION__NEW_CHILD_POLICIES:
-				return getNewChildPolicies();
+		case NewchildPackage.NEWCHILD_CONFIGURATION__ROOTS:
+			return getRoots();
+		case NewchildPackage.NEWCHILD_CONFIGURATION__NAME:
+			return getName();
+		case NewchildPackage.NEWCHILD_CONFIGURATION__NEW_CHILD_POLICIES:
+			return getNewChildPolicies();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -180,23 +193,24 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NewchildPackage.NEWCHILD_CONFIGURATION__ROOTS:
-				getRoots().clear();
-				getRoots().addAll((Collection<? extends MenuRoot>)newValue);
-				return;
-			case NewchildPackage.NEWCHILD_CONFIGURATION__NAME:
-				setName((String)newValue);
-				return;
-			case NewchildPackage.NEWCHILD_CONFIGURATION__NEW_CHILD_POLICIES:
-				getNewChildPolicies().clear();
-				getNewChildPolicies().addAll((Collection<? extends NewChildPolicySet>)newValue);
-				return;
+		case NewchildPackage.NEWCHILD_CONFIGURATION__ROOTS:
+			getRoots().clear();
+			getRoots().addAll((Collection<? extends MenuRoot>) newValue);
+			return;
+		case NewchildPackage.NEWCHILD_CONFIGURATION__NAME:
+			setName((String) newValue);
+			return;
+		case NewchildPackage.NEWCHILD_CONFIGURATION__NEW_CHILD_POLICIES:
+			getNewChildPolicies().clear();
+			getNewChildPolicies().addAll((Collection<? extends NewChildPolicySet>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -204,20 +218,21 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NewchildPackage.NEWCHILD_CONFIGURATION__ROOTS:
-				getRoots().clear();
-				return;
-			case NewchildPackage.NEWCHILD_CONFIGURATION__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case NewchildPackage.NEWCHILD_CONFIGURATION__NEW_CHILD_POLICIES:
-				getNewChildPolicies().clear();
-				return;
+		case NewchildPackage.NEWCHILD_CONFIGURATION__ROOTS:
+			getRoots().clear();
+			return;
+		case NewchildPackage.NEWCHILD_CONFIGURATION__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case NewchildPackage.NEWCHILD_CONFIGURATION__NEW_CHILD_POLICIES:
+			getNewChildPolicies().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -225,17 +240,18 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NewchildPackage.NEWCHILD_CONFIGURATION__ROOTS:
-				return roots != null && !roots.isEmpty();
-			case NewchildPackage.NEWCHILD_CONFIGURATION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case NewchildPackage.NEWCHILD_CONFIGURATION__NEW_CHILD_POLICIES:
-				return newChildPolicies != null && !newChildPolicies.isEmpty();
+		case NewchildPackage.NEWCHILD_CONFIGURATION__ROOTS:
+			return roots != null && !roots.isEmpty();
+		case NewchildPackage.NEWCHILD_CONFIGURATION__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case NewchildPackage.NEWCHILD_CONFIGURATION__NEW_CHILD_POLICIES:
+			return newChildPolicies != null && !newChildPolicies.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -243,11 +259,14 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -256,4 +275,4 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 		return result.toString();
 	}
 
-} //NewchildConfigurationImpl
+} // NewchildConfigurationImpl

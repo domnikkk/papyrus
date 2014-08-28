@@ -79,8 +79,7 @@ public class FacetActionImpl implements IFacetAction {
 			throw new IllegalArgumentException("The given FacetAttribute cannot be null"); //$NON-NLS-1$
 		}
 		if (facetAttribute.eResource() != null || facetAttribute.eContainer() != null) {
-			throw new IllegalArgumentException(
-					"The given FacetAttribute cannot be contained by a resource"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The given FacetAttribute cannot be contained by a resource"); //$NON-NLS-1$
 		}
 		if (editingDomain == null) {
 			throw new IllegalArgumentException("The given EditingDomain cannot be null"); //$NON-NLS-1$
@@ -100,8 +99,7 @@ public class FacetActionImpl implements IFacetAction {
 			throw new IllegalArgumentException("The given FacetReference cannot be null"); //$NON-NLS-1$
 		}
 		if (facetReference.eResource() != null || facetReference.eContainer() != null) {
-			throw new IllegalArgumentException(
-					"The given FacetReference cannot be contained by a resource"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The given FacetReference cannot be contained by a resource"); //$NON-NLS-1$
 		}
 		if (editingDomain == null) {
 			throw new IllegalArgumentException("The given EditingDomain cannot be null."); //$NON-NLS-1$
@@ -121,8 +119,7 @@ public class FacetActionImpl implements IFacetAction {
 			throw new IllegalArgumentException("The given FacetOperation cannot be null"); //$NON-NLS-1$
 		}
 		if (facetOperation.eResource() != null || facetOperation.eContainer() != null) {
-			throw new IllegalArgumentException(
-					"The given FacetOperation cannot be contained by a resource"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The given FacetOperation cannot be contained by a resource"); //$NON-NLS-1$
 		}
 		if (facet == null) {
 			throw new IllegalArgumentException("The given Facet cannot be null"); //$NON-NLS-1$
@@ -155,8 +152,7 @@ public class FacetActionImpl implements IFacetAction {
 			throw new IllegalArgumentException("The given EParameter cannot be null"); //$NON-NLS-1$
 		}
 		if (parameter.eResource() != null || parameter.eContainer() != null) {
-			throw new IllegalArgumentException(
-					"The given EParameter cannot be contained by a resource"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The given EParameter cannot be contained by a resource"); //$NON-NLS-1$
 		}
 		if (editingDomain == null) {
 			throw new IllegalArgumentException("The given EditingDomain cannot be null"); //$NON-NLS-1$

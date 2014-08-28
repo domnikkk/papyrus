@@ -11,7 +11,7 @@
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.sysml.diagram.parametric.provider; 
+package org.eclipse.papyrus.sysml.diagram.parametric.provider;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -62,32 +62,32 @@ public class CustomEditPartProvider extends CustomAbstractEditPartProvider {
 		diagramType = ElementTypes.DIAGRAM_ID;
 
 		// Nodes
-		nodeMap.put(SysMLGraphicalTypes.SHAPE_SYSML_CONSTRAINTBLOCKPROPERTY_AS_COMPOSITE_ID, CustomConstraintBlockPropertyCompositeEditPart.class);	
-		nodeMap.put(SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID, CustomBlockPropertyCompositeEditPart.class);	
-		nodeMap.put(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID, CustomBlockCompositeEditPartTN.class);	
-		nodeMap.put(SysMLGraphicalTypes.SHAPE_SYSML_FLOWPORT_AS_AFFIXED_ID, FlowPortAffixedNodeEditPart.class);	
-		nodeMap.put(UMLGraphicalTypes.SHAPE_UML_PORT_AS_AFFIXED_ID, PortAffixedNodeEditPart.class);	
+		nodeMap.put(SysMLGraphicalTypes.SHAPE_SYSML_CONSTRAINTBLOCKPROPERTY_AS_COMPOSITE_ID, CustomConstraintBlockPropertyCompositeEditPart.class);
+		nodeMap.put(SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID, CustomBlockPropertyCompositeEditPart.class);
+		nodeMap.put(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID, CustomBlockCompositeEditPartTN.class);
+		nodeMap.put(SysMLGraphicalTypes.SHAPE_SYSML_FLOWPORT_AS_AFFIXED_ID, FlowPortAffixedNodeEditPart.class);
+		nodeMap.put(UMLGraphicalTypes.SHAPE_UML_PORT_AS_AFFIXED_ID, PortAffixedNodeEditPart.class);
 		nodeMap.put(UMLGraphicalTypes.SHAPE_UML_PROPERTY_AS_AFFIXED_ID, CustomConstraintParameterAffixedNodeEditPart.class);
-		
-		// Decorations
-		nodeMap.put(SysMLGraphicalTypes.AFFIXEDLABEL_SYSML_FLOWPORT_LABEL_ID, FlowPortAffixedLabelNameEditPart.class);	
-		nodeMap.put(SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID, BlockPropertyStructureCompartmentEditPart.class);	
-		nodeMap.put(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID, StructureCompartmentEditPart.class);	
-		nodeMap.put(SysMLGraphicalTypes.LABEL_SYSML_BLOCK_NAME_ID, CustomBlockLabelNameEditPart.class); // TODO : change for multi FlowText 
-		nodeMap.put(UMLGraphicalTypes.AFFIXEDLABEL_UML_APPLIEDSTEREOTYPE_ID, AppliedStereotypeAffixedLabelEditPart.class);	
-		nodeMap.put(UMLGraphicalTypes.AFFIXEDLABEL_UML_PORT_LABEL_ID, PortAffixedLabelNameEditPart.class);	
-		nodeMap.put(UMLGraphicalTypes.LABEL_UML_PROPERTY_LABEL_ID, PropertyNodeLabelEditPart.class);	
-		nodeMap.put(UMLGraphicalTypes.SHAPE_UML_CONSTRAINT_AS_LABEL_ID, ConstraintNodeLabelEditPart.class);	
-		nodeMap.put(UMLGraphicalTypes.LINKLABEL_UML_APPLIEDSTEREOTYPE_ID, AppliedStereotypeLinkLabelEditPart.class);	
-		nodeMap.put(UMLGraphicalTypes.LINKLABEL_UML_CONNECTOR_LABEL_ID, ConnectorLinkLabelEditPart.class);	
-		nodeMap.put(UMLGraphicalTypes.LINKLABEL_UML_CONNECTOR_SOURCE_MULTIPLICITY_ID, ConnectorLinkLabelSourceMultiplicityEditPart.class);	
-		nodeMap.put(UMLGraphicalTypes.LINKLABEL_UML_CONNECTOR_TARGET_MULTIPLICITY_ID, ConnectorLinkLabelTargetMultiplicityEditPart.class);	
-		nodeMap.put(UMLGraphicalTypes.LINKLABEL_UML_NAMEDELEMENT_NAME_ID, NamedElementLinkLabelNameEditPart.class);	
 
-		
+		// Decorations
+		nodeMap.put(SysMLGraphicalTypes.AFFIXEDLABEL_SYSML_FLOWPORT_LABEL_ID, FlowPortAffixedLabelNameEditPart.class);
+		nodeMap.put(SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID, BlockPropertyStructureCompartmentEditPart.class);
+		nodeMap.put(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID, StructureCompartmentEditPart.class);
+		nodeMap.put(SysMLGraphicalTypes.LABEL_SYSML_BLOCK_NAME_ID, CustomBlockLabelNameEditPart.class); // TODO : change for multi FlowText
+		nodeMap.put(UMLGraphicalTypes.AFFIXEDLABEL_UML_APPLIEDSTEREOTYPE_ID, AppliedStereotypeAffixedLabelEditPart.class);
+		nodeMap.put(UMLGraphicalTypes.AFFIXEDLABEL_UML_PORT_LABEL_ID, PortAffixedLabelNameEditPart.class);
+		nodeMap.put(UMLGraphicalTypes.LABEL_UML_PROPERTY_LABEL_ID, PropertyNodeLabelEditPart.class);
+		nodeMap.put(UMLGraphicalTypes.SHAPE_UML_CONSTRAINT_AS_LABEL_ID, ConstraintNodeLabelEditPart.class);
+		nodeMap.put(UMLGraphicalTypes.LINKLABEL_UML_APPLIEDSTEREOTYPE_ID, AppliedStereotypeLinkLabelEditPart.class);
+		nodeMap.put(UMLGraphicalTypes.LINKLABEL_UML_CONNECTOR_LABEL_ID, ConnectorLinkLabelEditPart.class);
+		nodeMap.put(UMLGraphicalTypes.LINKLABEL_UML_CONNECTOR_SOURCE_MULTIPLICITY_ID, ConnectorLinkLabelSourceMultiplicityEditPart.class);
+		nodeMap.put(UMLGraphicalTypes.LINKLABEL_UML_CONNECTOR_TARGET_MULTIPLICITY_ID, ConnectorLinkLabelTargetMultiplicityEditPart.class);
+		nodeMap.put(UMLGraphicalTypes.LINKLABEL_UML_NAMEDELEMENT_NAME_ID, NamedElementLinkLabelNameEditPart.class);
+
+
 		// Edges
-		edgeMap.put(UMLGraphicalTypes.LINK_UML_CONNECTOR_ID, ConnectorEditPart.class);	
-		edgeMap.put(UMLGraphicalTypes.LINK_UML_DEPENDENCY_ID, DependencyEditPart.class);	
+		edgeMap.put(UMLGraphicalTypes.LINK_UML_CONNECTOR_ID, ConnectorEditPart.class);
+		edgeMap.put(UMLGraphicalTypes.LINK_UML_DEPENDENCY_ID, DependencyEditPart.class);
 	}
 
 	/**
@@ -95,19 +95,19 @@ public class CustomEditPartProvider extends CustomAbstractEditPartProvider {
 	 */
 	@Override
 	public boolean provides(IOperation operation) {
-		if(operation instanceof CreateGraphicEditPartOperation) {
-			View newView = ((IEditPartOperation)operation).getView();
+		if (operation instanceof CreateGraphicEditPartOperation) {
+			View newView = ((IEditPartOperation) operation).getView();
 			if (newView == null) {
 				return false;
 			}
-			
+
 			String graphicalType = newView.getType();
 
-			if((newView instanceof Node) && (!nodeMap.containsKey(graphicalType))) {
+			if ((newView instanceof Node) && (!nodeMap.containsKey(graphicalType))) {
 				return false;
 			}
-			
-			if((newView instanceof Edge) && (!edgeMap.containsKey(graphicalType))) {
+
+			if ((newView instanceof Edge) && (!edgeMap.containsKey(graphicalType))) {
 				return false;
 			}
 		}
@@ -122,7 +122,7 @@ public class CustomEditPartProvider extends CustomAbstractEditPartProvider {
 	protected Class<?> getNodeEditPartClass(View view) {
 		return nodeMap.get(view.getType());
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

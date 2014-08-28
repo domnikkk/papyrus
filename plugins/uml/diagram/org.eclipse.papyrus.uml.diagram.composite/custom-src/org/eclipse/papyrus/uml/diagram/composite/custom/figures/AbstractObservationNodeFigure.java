@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,12 +39,12 @@ public class AbstractObservationNodeFigure extends NodeNamedElementFigure {
 
 	/**
 	 * Figure layout manager
-	 * 
+	 *
 	 */
 	protected class AbstractObservationLayoutManager extends AbstractLayout {
 
 		/**
-		 * 
+		 *
 		 * {@inheritDoc}
 		 */
 		@Override
@@ -69,9 +69,10 @@ public class AbstractObservationNodeFigure extends NodeNamedElementFigure {
 		}
 
 		/**
-		 * 
+		 *
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void layout(IFigure container) {
 			List<?> childrenList = container.getChildren();
 
@@ -117,7 +118,7 @@ public class AbstractObservationNodeFigure extends NodeNamedElementFigure {
 
 	/**
 	 * Get the figure icon container
-	 * 
+	 *
 	 * @return the icon label
 	 */
 	public WrappingLabel getIconContainer() {
@@ -127,7 +128,7 @@ public class AbstractObservationNodeFigure extends NodeNamedElementFigure {
 
 	/**
 	 * Set the icon in the figure
-	 * 
+	 *
 	 * @param image
 	 */
 	public void setIcon(Image image) {

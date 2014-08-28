@@ -9,10 +9,10 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
- *****************************************************************************/ 
+ *****************************************************************************/
 
 /**
  * <copyright>
@@ -28,7 +28,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -40,7 +39,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.util.JdtmmAdapterFactory;
 
 /**
@@ -50,6 +48,7 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.util.JdtmmAdapterF
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -57,6 +56,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -65,6 +65,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -73,6 +74,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -81,6 +83,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public JdtmmItemProviderAdapterFactory() {
@@ -95,6 +98,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeParameter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTTypeParameterItemProvider jdtTypeParameterItemProvider;
@@ -103,6 +107,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeParameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,6 +123,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTFieldItemProvider jdtFieldItemProvider;
@@ -126,6 +132,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,6 +148,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTMethodItemProvider jdtMethodItemProvider;
@@ -149,6 +157,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,6 +173,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTParameterItemProvider jdtParameterItemProvider;
@@ -172,6 +182,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,6 +198,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTCompilationUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTCompilationUnitItemProvider jdtCompilationUnitItemProvider;
@@ -195,6 +207,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTCompilationUnit}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,6 +223,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragment} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTPackageFragmentItemProvider jdtPackageFragmentItemProvider;
@@ -218,6 +232,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragment}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,6 +248,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragmentRoot} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTPackageFragmentRootItemProvider jdtPackageFragmentRootItemProvider;
@@ -241,6 +257,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragmentRoot}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,6 +273,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaProject} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTJavaProjectItemProvider jdtJavaProjectItemProvider;
@@ -264,6 +282,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaProject}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,6 +298,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaModel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTJavaModelItemProvider jdtJavaModelItemProvider;
@@ -287,6 +307,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaModel}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,6 +323,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTClass} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTClassItemProvider jdtClassItemProvider;
@@ -310,6 +332,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTClass}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -325,6 +348,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTInterface} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTInterfaceItemProvider jdtInterfaceItemProvider;
@@ -333,6 +357,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTInterface}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -348,6 +373,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTEnum} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTEnumItemProvider jdtEnumItemProvider;
@@ -356,6 +382,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTEnum}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -371,6 +398,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTImportDeclaration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTImportDeclarationItemProvider jdtImportDeclarationItemProvider;
@@ -379,6 +407,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTImportDeclaration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -394,6 +423,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTImportContainer} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTImportContainerItemProvider jdtImportContainerItemProvider;
@@ -402,6 +432,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTImportContainer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -417,6 +448,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTException} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTExceptionItemProvider jdtExceptionItemProvider;
@@ -425,6 +457,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTException}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -440,6 +473,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTOpaqueBody} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTOpaqueBodyItemProvider jdtOpaqueBodyItemProvider;
@@ -448,6 +482,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTOpaqueBody}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -463,8 +498,10 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -473,8 +510,10 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -482,6 +521,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -493,6 +533,7 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -503,13 +544,14 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -521,8 +563,10 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -531,8 +575,10 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -541,8 +587,10 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -552,28 +600,62 @@ public class JdtmmItemProviderAdapterFactory extends JdtmmAdapterFactory impleme
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if (jdtMethodItemProvider != null) jdtMethodItemProvider.dispose();
-		if (jdtTypeParameterItemProvider != null) jdtTypeParameterItemProvider.dispose();
-		if (jdtFieldItemProvider != null) jdtFieldItemProvider.dispose();
-		if (jdtCompilationUnitItemProvider != null) jdtCompilationUnitItemProvider.dispose();
-		if (jdtPackageFragmentItemProvider != null) jdtPackageFragmentItemProvider.dispose();
-		if (jdtPackageFragmentRootItemProvider != null) jdtPackageFragmentRootItemProvider.dispose();
-		if (jdtJavaProjectItemProvider != null) jdtJavaProjectItemProvider.dispose();
-		if (jdtJavaModelItemProvider != null) jdtJavaModelItemProvider.dispose();
-		if (jdtParameterItemProvider != null) jdtParameterItemProvider.dispose();
-		if (jdtClassItemProvider != null) jdtClassItemProvider.dispose();
-		if (jdtInterfaceItemProvider != null) jdtInterfaceItemProvider.dispose();
-		if (jdtEnumItemProvider != null) jdtEnumItemProvider.dispose();
-		if (jdtImportDeclarationItemProvider != null) jdtImportDeclarationItemProvider.dispose();
-		if (jdtImportContainerItemProvider != null) jdtImportContainerItemProvider.dispose();
-		if (jdtExceptionItemProvider != null) jdtExceptionItemProvider.dispose();
-		if (jdtOpaqueBodyItemProvider != null) jdtOpaqueBodyItemProvider.dispose();
+		if (jdtMethodItemProvider != null) {
+			jdtMethodItemProvider.dispose();
+		}
+		if (jdtTypeParameterItemProvider != null) {
+			jdtTypeParameterItemProvider.dispose();
+		}
+		if (jdtFieldItemProvider != null) {
+			jdtFieldItemProvider.dispose();
+		}
+		if (jdtCompilationUnitItemProvider != null) {
+			jdtCompilationUnitItemProvider.dispose();
+		}
+		if (jdtPackageFragmentItemProvider != null) {
+			jdtPackageFragmentItemProvider.dispose();
+		}
+		if (jdtPackageFragmentRootItemProvider != null) {
+			jdtPackageFragmentRootItemProvider.dispose();
+		}
+		if (jdtJavaProjectItemProvider != null) {
+			jdtJavaProjectItemProvider.dispose();
+		}
+		if (jdtJavaModelItemProvider != null) {
+			jdtJavaModelItemProvider.dispose();
+		}
+		if (jdtParameterItemProvider != null) {
+			jdtParameterItemProvider.dispose();
+		}
+		if (jdtClassItemProvider != null) {
+			jdtClassItemProvider.dispose();
+		}
+		if (jdtInterfaceItemProvider != null) {
+			jdtInterfaceItemProvider.dispose();
+		}
+		if (jdtEnumItemProvider != null) {
+			jdtEnumItemProvider.dispose();
+		}
+		if (jdtImportDeclarationItemProvider != null) {
+			jdtImportDeclarationItemProvider.dispose();
+		}
+		if (jdtImportContainerItemProvider != null) {
+			jdtImportContainerItemProvider.dispose();
+		}
+		if (jdtExceptionItemProvider != null) {
+			jdtExceptionItemProvider.dispose();
+		}
+		if (jdtOpaqueBodyItemProvider != null) {
+			jdtOpaqueBodyItemProvider.dispose();
+		}
 	}
 
 }

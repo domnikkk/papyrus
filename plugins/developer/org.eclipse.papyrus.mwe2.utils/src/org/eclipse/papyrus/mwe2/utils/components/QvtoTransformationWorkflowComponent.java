@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Juan Cadavid <juan.cadavid@cea.fr> implementation
  ******************************************************************************/
@@ -35,15 +35,15 @@ import org.eclipse.papyrus.mwe2.utils.messages.Messages;
  * MWE Component to execute QVTO transformations. An example of use is:
  * <blockquote>
  * component = org.eclipse.papyrus.mwe.utils.components.QvtoTransformationWorkflowComponent {
-		inputSlots = 'inputGmfgen'
-		inputSlots = 'gmfgenUmlMetamodel'
-		transformationURI = 'platform:/resource/org.eclipse.papyrus.tests.framework/qvto/gmfgen2uml.qvto'
-		outputSlot = 'inputGmfgenUml'
-	}
-	</blockquote>
- * where the multi-valued input slots are the input parameters for the transformation; 
+ * inputSlots = 'inputGmfgen'
+ * inputSlots = 'gmfgenUmlMetamodel'
+ * transformationURI = 'platform:/resource/org.eclipse.papyrus.tests.framework/qvto/gmfgen2uml.qvto'
+ * outputSlot = 'inputGmfgenUml'
+ * }
+ * </blockquote>
+ * where the multi-valued input slots are the input parameters for the transformation;
  * there should be as many as there are declared in the qvto file;
- * transformationURI is the location of the .qvto file and outputSlot the slot where 
+ * transformationURI is the location of the .qvto file and outputSlot the slot where
  * the list of resulting eObjects of the transformation will be placed.
  *
  */
@@ -78,7 +78,7 @@ public class QvtoTransformationWorkflowComponent extends
 	public ExecutionDiagnostic generate(List<? extends EObject> inObjects,
 			URI transformationURI, WorkflowContext ctx, Issues issues)
 			throws IOException {
-		//resolveProxies(inObjects);
+		// resolveProxies(inObjects);
 		TransformationExecutor executor = new TransformationExecutor(
 				transformationURI);
 		Diagnostic loadTransformationDiagnostic = executor.loadTransformation();
@@ -118,11 +118,11 @@ public class QvtoTransformationWorkflowComponent extends
 		for (String inputSlot : inputSlots) {
 
 			Object inputObject = ctx.get(inputSlot);
-			if(inputObject instanceof EObject){
+			if (inputObject instanceof EObject) {
 				inObjects.add((EObject) inputObject);
-			}else if(inputObject instanceof List<?>){
+			} else if (inputObject instanceof List<?>) {
 				List<EObject> list = (List<EObject>) inputObject;
-				inObjects.add((EObject) list.get(0));
+				inObjects.add(list.get(0));
 			}
 		}
 		try {
@@ -140,7 +140,7 @@ public class QvtoTransformationWorkflowComponent extends
 			issues.addError(Messages.QvtoTransformationWorkflowComponent_5);
 		}
 	}
-	
-	
+
+
 
 }

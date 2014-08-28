@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,15 +46,15 @@ public class CallBehaviorActionParser extends MessageFormatParser implements ISe
 	}
 
 	public CallBehaviorActionParser() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() });
 	}
 
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -62,11 +62,12 @@ public class CallBehaviorActionParser extends MessageFormatParser implements ISe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.uml.diagram.sequence.parsers.AbstractParser#isAffectingEvent
 	 * (java.lang.Object , int)
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		EStructuralFeature feature = getEStructuralFeature(event);
 		return isValidFeature(feature);
@@ -74,24 +75,25 @@ public class CallBehaviorActionParser extends MessageFormatParser implements ISe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.parsers.MessageFormatParser#
 	 * getPrintString(org.eclipse .core.runtime.IAdaptable, int)
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		Object obj = element.getAdapter(EObject.class);
-		if(obj instanceof CallBehaviorAction) {
-			CallBehaviorAction action = (CallBehaviorAction)obj;
+		if (obj instanceof CallBehaviorAction) {
+			CallBehaviorAction action = (CallBehaviorAction) obj;
 			String actionName = "";
-			if(action.getName() != null) {
+			if (action.getName() != null) {
 				actionName = action.getName();
 			}
 			String behaviorName = "";
-			if(action.getBehavior() != null && action.getBehavior().getName() != null) {
+			if (action.getBehavior() != null && action.getBehavior().getName() != null) {
 				behaviorName = action.getBehavior().getName();
 			}
 			// display behavior name alone if name is not specified differently
-			if("".equals(actionName) || actionName.equals(behaviorName)) {
+			if ("".equals(actionName) || actionName.equals(behaviorName)) {
 				return behaviorName;
 			} else {
 				return String.format(CALLBEHAVIORACTION_LABEL_FORMAT, actionName, behaviorName);
@@ -102,11 +104,12 @@ public class CallBehaviorActionParser extends MessageFormatParser implements ISe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * areSemanticElementsAffected (org.eclipse.emf.ecore.EObject,
 	 * java.lang.Object)
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		EStructuralFeature feature = getEStructuralFeature(notification);
 		return isValidFeature(feature);
@@ -114,17 +117,18 @@ public class CallBehaviorActionParser extends MessageFormatParser implements ISe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * getSemanticElementsBeingParsed (org.eclipse.emf.ecore.EObject)
 	 */
+	@Override
 	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-		if(element instanceof CallBehaviorAction) {
-			CallBehaviorAction action = (CallBehaviorAction)element;
+		if (element instanceof CallBehaviorAction) {
+			CallBehaviorAction action = (CallBehaviorAction) element;
 			semanticElementsBeingParsed.add(action);
 			Behavior behavior = action.getBehavior();
-			if(behavior != null) {
+			if (behavior != null) {
 				semanticElementsBeingParsed.add(behavior);
 			}
 		}
@@ -134,9 +138,9 @@ public class CallBehaviorActionParser extends MessageFormatParser implements ISe
 	/**
 	 * Determines if the given feature has to be taken into account in this
 	 * parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.menu.handlers;
 
@@ -41,7 +41,7 @@ import org.eclipse.swt.widgets.Text;
 public class CutInDiagramHandler extends AbstractGraphicalCommandHandler {
 
 	private static final String ACTIVE_SHELL = "activeShell"; //$NON-NLS-1$
-	private static final String ACTIVE_FOCUS_CONTROL = "activeFocusControl";  //$NON-NLS-1$
+	private static final String ACTIVE_FOCUS_CONTROL = "activeFocusControl"; //$NON-NLS-1$
 
 	@Override
 	protected Command getCommand() {
@@ -55,19 +55,20 @@ public class CutInDiagramHandler extends AbstractGraphicalCommandHandler {
 
 	/**
 	 * Construct a delete command with the cut selection
+	 *
 	 * @return the delete command
-	 */	
+	 */
 	protected Command buildDeleteCommand() {
 
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 
-		if(editingDomain == null) {
+		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		// Retrieve currently selected IGraphicalEditPart(s)
 		List<IGraphicalEditPart> editParts = getSelectedElements();
-		if(editParts.isEmpty()) {
+		if (editParts.isEmpty()) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -77,19 +78,19 @@ public class CutInDiagramHandler extends AbstractGraphicalCommandHandler {
 		CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, "Delete From Model"); //$NON-NLS-1$
 
 		Iterator<IGraphicalEditPart> it = editParts.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			IGraphicalEditPart editPart = it.next();
 
-			if(!(editPart instanceof DiagramEditPart)) {
+			if (!(editPart instanceof DiagramEditPart)) {
 				// Look for the GMF deletion command
 				Command curCommand = editPart.getCommand(new EditCommandRequestWrapper(new DestroyElementRequest(false)));
-				if(curCommand != null) {
+				if (curCommand != null) {
 					command.compose(new CommandProxy(curCommand));
 				}
 			}
 		}
 
-		if(command.isEmpty()) {
+		if (command.isEmpty()) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -98,25 +99,25 @@ public class CutInDiagramHandler extends AbstractGraphicalCommandHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.menu.handlers.
 	 * AbstractGraphicalCommandHandler#setEnabled(java.lang.Object)
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
-		if(evaluationContext instanceof IEvaluationContext) {
-			IEvaluationContext iEvaluationContext = (IEvaluationContext)evaluationContext;
-			Object activeFocusControl = iEvaluationContext.getVariable(ACTIVE_FOCUS_CONTROL); 
+		if (evaluationContext instanceof IEvaluationContext) {
+			IEvaluationContext iEvaluationContext = (IEvaluationContext) evaluationContext;
+			Object activeFocusControl = iEvaluationContext.getVariable(ACTIVE_FOCUS_CONTROL);
 			Object activeShell = iEvaluationContext.getVariable(ACTIVE_SHELL);
 			Control focusControl = null;
-			if(activeShell instanceof Shell) {
-				Shell shell = (Shell)activeShell;
+			if (activeShell instanceof Shell) {
+				Shell shell = (Shell) activeShell;
 				Display display = shell.getDisplay();
-				if(display != null) {
+				if (display != null) {
 					focusControl = display.getFocusControl();
 				}
 			}
-			if(activeFocusControl instanceof StyledText || focusControl instanceof Text) { // true if the focus is
+			if (activeFocusControl instanceof StyledText || focusControl instanceof Text) { // true if the focus is
 																							// on an internal xtext
 																							// editor or a text edit
 				setBaseEnabled(false);

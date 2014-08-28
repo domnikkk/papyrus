@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,9 +28,9 @@ import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * This class allows to change the extensionName if the stereotype's name is changed
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class ChangeExtensionNameCommand extends AbstractTransactionalCommand {
 
@@ -60,8 +60,9 @@ public class ChangeExtensionNameCommand extends AbstractTransactionalCommand {
 	@Override
 	public boolean canExecute() {
 		boolean rep = false;
-		if(extension != null && stereotype != null)
+		if (extension != null && stereotype != null) {
 			rep = super.canExecute();
+		}
 		return rep;
 	}
 

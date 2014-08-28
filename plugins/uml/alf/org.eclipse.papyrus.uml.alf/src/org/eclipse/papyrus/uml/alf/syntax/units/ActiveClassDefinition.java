@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,13 +19,14 @@ public class ActiveClassDefinition extends ClassDefinition {
 	public ActivityDefinition classifierBehavior ;
 
 	// Helper Operations
-	
+
 	/*
 	 * Returns true if the given unit definition matches this active class definition considered as a class
 	 * 	definition and the subunit is for an active class definition.
 	 */
+	@Override
 	public boolean matchForStub(UnitDefinition unit) {
 		return false ;
 	}
-	
+
 }

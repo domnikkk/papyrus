@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,22 +35,23 @@ public class VSL_Tuple_CompletionProposal implements ICompletionProposalComputer
 	}
 
 	/**
-	 * 
+	 *
 	 * @return returns the string containing properties of the data type for completion
 	 */
 	public static String computeTVL_Tuple_String() {
 		String tupleString = "(";
 		tupleTypeString = "(";
 		// if datatype is defined
-		if(dataType != null) {
-			if(dataType.getOwnedAttributes().size() > 0) {
+		if (dataType != null) {
+			if (dataType.getOwnedAttributes().size() > 0) {
 				Iterator<Property> propIter = dataType.getAllAttributes().iterator();
-				while(propIter.hasNext()) {
+				while (propIter.hasNext()) {
 					Property prop = propIter.next();
-					DataType propType = (DataType)prop.getType();
+					DataType propType = (DataType) prop.getType();
 					tupleString += prop.getName() + "=";
-					if(prop.getDefault() != null)
+					if (prop.getDefault() != null) {
 						tupleString += prop.getDefault();
+					}
 					tupleString += " , ";
 					tupleTypeString += prop.getName() + ": " + propType.getName() + ", ";
 				}
@@ -79,7 +80,7 @@ public class VSL_Tuple_CompletionProposal implements ICompletionProposalComputer
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.classdiagram.parsers.texteditor.completionproposals.ICompletionProposalComputer
 	 * #generateCompletionProposals(int, int, java.lang.String)
@@ -90,7 +91,7 @@ public class VSL_Tuple_CompletionProposal implements ICompletionProposalComputer
 		// adds each Completion proposal
 		ICompletionProposal proposal = null;
 		String tupleString = computeTVL_Tuple_String();
-		if(tupleString.startsWith(prefix)) {
+		if (tupleString.startsWith(prefix)) {
 			proposal = new CompletionProposal(tupleString, documentOffset - prefix.length(), prefix.length()
 					+ selectionRange, tupleString.length() - 1, null, tupleTypeString, null, TVL_Tuple_StringsInfo[0]);
 			v.add(proposal);

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,41 +31,45 @@ import org.eclipse.uml2.uml.UMLPackage;
  * this is a specific class to display stereotype label for accept event action, it is only display if the event is a TimeEvent
  *
  */
-public class AcceptTimeEventActionStereotypeExternalNodeEditPolicy extends AppliedStereotypeExternalNodeEditPolicy{
+public class AcceptTimeEventActionStereotypeExternalNodeEditPolicy extends AppliedStereotypeExternalNodeEditPolicy {
 
 	/**
-	 * add a specific test about TimeEvent 
+	 * add a specific test about TimeEvent
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy#refreshStereotypeDisplay()
 	 *
 	 */
+	@Override
 	protected void refreshStereotypeDisplay() {
-		if(getHost() instanceof IPapyrusEditPart) {
-			IFigure figure = ((IPapyrusEditPart)getHost()).getPrimaryShape();
+		if (getHost() instanceof IPapyrusEditPart) {
+			IFigure figure = ((IPapyrusEditPart) getHost()).getPrimaryShape();
 
-			if( getUMLElement() instanceof AcceptEventAction){
-				if( ((AcceptEventAction)getUMLElement()).getTriggers().size()>0 
-					&&( ((AcceptEventAction)getUMLElement()).getTriggers().get(0).getEvent() instanceof TimeEvent)){
-					if(figure instanceof IPapyrusUMLElementFigure) {
+			if (getUMLElement() instanceof AcceptEventAction) {
+				if (((AcceptEventAction) getUMLElement()).getTriggers().size() > 0
+						&& (((AcceptEventAction) getUMLElement()).getTriggers().get(0).getEvent() instanceof TimeEvent)) {
+					if (figure instanceof IPapyrusUMLElementFigure) {
 						// calculate text
 						// and icon to display
 						final String stereotypesToDisplay = stereotypesToDisplay();
-						((IPapyrusUMLElementFigure)figure).setStereotypeDisplay(tag + (stereotypesToDisplay), null);
+						((IPapyrusUMLElementFigure) figure).setStereotypeDisplay(tag + (stereotypesToDisplay), null);
 					}
 				}
-				else{
-					((IPapyrusUMLElementFigure)figure).setStereotypeDisplay("", null);
+				else {
+					((IPapyrusUMLElementFigure) figure).setStereotypeDisplay("", null);
 				}
 			}
 		}
 
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * do not pary attention if this compartment or brace due to shape change
+	 *
 	 * @return the list of stereotypes to display with properties if there are
 	 *         selected to be displayed
 	 */
+	@Override
 	public String stereotypesToDisplay() {
 
 		// retrieve all stereotypes to be displayed
@@ -91,23 +95,23 @@ public class AcceptTimeEventActionStereotypeExternalNodeEditPolicy extends Appli
 
 		// check the presentation kind. if only icon => do not display
 		// stereotype, only values
-		if(UMLVisualInformationPapyrusConstant.ICON_STEREOTYPE_PRESENTATION.equals(stereotypespresentationKind)) {
+		if (UMLVisualInformationPapyrusConstant.ICON_STEREOTYPE_PRESENTATION.equals(stereotypespresentationKind)) {
 			return StereotypeUtil.getPropertiesValuesInBrace(stereotypesPropertiesToDisplay, getUMLElement());
 		}
 		String display = "";
-		if(!UMLVisualInformationPapyrusConstant.STEREOTYPE_COMMENT_LOCATION.equals(stereotypespresentationLocation)) {
+		if (!UMLVisualInformationPapyrusConstant.STEREOTYPE_COMMENT_LOCATION.equals(stereotypespresentationLocation)) {
 			String stereotypesToDisplayWithQN = AppliedStereotypeHelper.getStereotypesQNToDisplay(parentView);
 
-			if(UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION.equals(stereotypespresentationKind)) {
+			if (UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION.equals(stereotypespresentationKind)) {
 				display += stereotypesAndPropertiesToDisplay("\n", stereotypesToDisplay, stereotypesToDisplayWithQN, stereotypesPropertiesToDisplay);
 			} else {
 				final String st = stereotypesToDisplay(", ", stereotypesToDisplay, stereotypesToDisplayWithQN);
-				if(st != null && !st.equals("")) {
+				if (st != null && !st.equals("")) {
 					display += Activator.ST_LEFT + st + Activator.ST_RIGHT;
 				}
 				final String propSt = StereotypeUtil.getPropertiesValuesInBrace(stereotypesPropertiesToDisplay, getUMLElement());
-				if(propSt != null && !propSt.equals("")) {
-					if(st != null && !st.equals("")) {
+				if (propSt != null && !propSt.equals("")) {
+					if (st != null && !st.equals("")) {
 						display += "\n";
 					}
 					display += "{" + propSt + "}";
@@ -116,9 +120,10 @@ public class AcceptTimeEventActionStereotypeExternalNodeEditPolicy extends Appli
 		}
 		return display;
 	}
-	
+
 	/**
 	 * add notification about trigger
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.editpolicies.AbstractAppliedStereotypeDisplayEditPolicy#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param notification
@@ -127,9 +132,9 @@ public class AcceptTimeEventActionStereotypeExternalNodeEditPolicy extends Appli
 	public void notifyChanged(Notification notification) {
 		// TODO Auto-generated method stub
 		super.notifyChanged(notification);
-		 if(UMLPackage.eINSTANCE.getAcceptEventAction_Trigger().equals(notification.getFeature())){
-			 refreshStereotypeDisplay();
-		 }
+		if (UMLPackage.eINSTANCE.getAcceptEventAction_Trigger().equals(notification.getFeature())) {
+			refreshStereotypeDisplay();
+		}
 	}
 
 }

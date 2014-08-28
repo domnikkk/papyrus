@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -167,8 +167,7 @@ public abstract class DDEditor extends FormEditor implements
 	protected ISelectionChangedListener selectionChangedListener;
 
 	/**
-	 * This keeps track of all the
-	 * {@link org.eclipse.jface.viewers.ISelectionChangedListener}s that are
+	 * This keeps track of all the {@link org.eclipse.jface.viewers.ISelectionChangedListener}s that are
 	 * listening to this editor.
 	 */
 	protected Collection<ISelectionChangedListener> selectionChangedListeners = new ArrayList<ISelectionChangedListener>();
@@ -279,6 +278,7 @@ public abstract class DDEditor extends FormEditor implements
 						getSite().getShell().getDisplay()
 								.asyncExec(new Runnable() {
 
+									@Override
 									public void run() {
 										updateProblemIndication();
 									}
@@ -304,6 +304,7 @@ public abstract class DDEditor extends FormEditor implements
 			if (updateProblemIndication) {
 				getSite().getShell().getDisplay().asyncExec(new Runnable() {
 
+					@Override
 					public void run() {
 						updateProblemIndication();
 					}
@@ -403,7 +404,7 @@ public abstract class DDEditor extends FormEditor implements
 
 	/**
 	 * Gets the currently active editor page
-	 * 
+	 *
 	 * @return DDEditorPage
 	 */
 	protected DDEditorPage getActiveDDFormPage() {
@@ -639,10 +640,8 @@ public abstract class DDEditor extends FormEditor implements
 	}
 
 	/**
-	 * This returns the editing domain as required by the
-	 * {@link IEditingDomainProvider} interface. This is important for
-	 * implementing the static methods of {@link AdapterFactoryEditingDomain}
-	 * and for supporting {@link org.eclipse.emf.edit.ui.action.CommandAction}.
+	 * This returns the editing domain as required by the {@link IEditingDomainProvider} interface. This is important for
+	 * implementing the static methods of {@link AdapterFactoryEditingDomain} and for supporting {@link org.eclipse.emf.edit.ui.action.CommandAction}.
 	 */
 	@Override
 	public EditingDomain getEditingDomain() {
@@ -729,8 +728,7 @@ public abstract class DDEditor extends FormEditor implements
 	}
 
 	/**
-	 * This returns the viewer as required by the {@link IViewerProvider}
-	 * interface.
+	 * This returns the viewer as required by the {@link IViewerProvider} interface.
 	 */
 	@Override
 	public Viewer getViewer() {
@@ -1008,8 +1006,9 @@ public abstract class DDEditor extends FormEditor implements
 	 */
 	public void handleContentOutlineSelection(ISelection selection) {
 		if (getActiveDDFormPage() != null && !selection.isEmpty()
-				&& selection instanceof IStructuredSelection)
+				&& selection instanceof IStructuredSelection) {
 			getActiveDDFormPage().selectReveal(selection);
+		}
 	}
 
 	/**
@@ -1139,6 +1138,7 @@ public abstract class DDEditor extends FormEditor implements
 		doSave(progressMonitor);
 	}
 
+	@Override
 	public void gotoMarker(IMarker marker) {
 		List<?> targetObjects = markerHelper.getTargetObjects(editingDomain,
 				marker);
@@ -1161,6 +1161,7 @@ public abstract class DDEditor extends FormEditor implements
 	/**
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionProvider}.
 	 */
+	@Override
 	public void addSelectionChangedListener(ISelectionChangedListener listener) {
 		selectionChangedListeners.add(listener);
 	}
@@ -1168,6 +1169,7 @@ public abstract class DDEditor extends FormEditor implements
 	/**
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionProvider}.
 	 */
+	@Override
 	public void removeSelectionChangedListener(
 			ISelectionChangedListener listener) {
 		selectionChangedListeners.remove(listener);
@@ -1177,6 +1179,7 @@ public abstract class DDEditor extends FormEditor implements
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionProvider} to
 	 * return this editor's overall selection.
 	 */
+	@Override
 	public ISelection getSelection() {
 		return editorSelection;
 	}
@@ -1186,6 +1189,7 @@ public abstract class DDEditor extends FormEditor implements
 	 * set this editor's overall selection. Calling this result will notify the
 	 * listeners.
 	 */
+	@Override
 	public void setSelection(ISelection selection) {
 		editorSelection = selection;
 
@@ -1249,6 +1253,7 @@ public abstract class DDEditor extends FormEditor implements
 	 * This implements {@link org.eclipse.jface.action.IMenuListener} to help
 	 * fill the context menus with contributions from the Edit menu.
 	 */
+	@Override
 	public void menuAboutToShow(IMenuManager menuManager) {
 		((IMenuListener) getEditorSite().getActionBarContributor())
 				.menuAboutToShow(menuManager);

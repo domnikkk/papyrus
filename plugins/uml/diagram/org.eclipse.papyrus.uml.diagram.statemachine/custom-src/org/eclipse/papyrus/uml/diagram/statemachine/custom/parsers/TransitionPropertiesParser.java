@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -18,6 +18,7 @@ import java.util.List;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -68,14 +69,17 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 	public static final String PARAM_DOTS = "(...)"; //$NON-NLS-1$
 	protected Constraint guardConstraint = null;
 
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		return EMPTY_STRING;
 	}
 
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		final Transition transition = ((Transition) ((EObjectAdapter) element).getRealObject());
 		final String result = newString;
@@ -89,6 +93,7 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				SafeRunnable.run(new SafeRunnable() {
+					@Override
 					public void run() {
 						RecordingCommand rc = new RecordingCommand(getEditingDomain()) {
 							@Override
@@ -122,6 +127,7 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 		return tc;
 	}
 
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		String label = getValueString(element, flags);
 		if (label == null || label.length() == 0) {
@@ -130,6 +136,7 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 		return label;
 	}
 
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		if (event instanceof Notification) {
 			int notificationType = ((Notification) event).getEventType();
@@ -173,7 +180,7 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 
 	/**
 	 * get the text concerning guard
-	 * 
+	 *
 	 * @param trans
 	 * @return
 	 */
@@ -190,7 +197,7 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 
 	/**
 	 * get the text concerning Effects
-	 * 
+	 *
 	 * @param trans
 	 * @return
 	 */
@@ -216,7 +223,7 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 
 	/**
 	 * Get the text concerning Trigger
-	 * 
+	 *
 	 * @param trans
 	 * @return
 	 */
@@ -289,10 +296,12 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 		return result.toString();
 	}
 
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
-		return new ParserEditStatus(org.eclipse.papyrus.uml.diagram.statemachine.part.UMLDiagramEditorPlugin.ID, IParserEditStatus.OK, ""); //$NON-NLS-1$
+		return new ParserEditStatus(org.eclipse.papyrus.uml.diagram.statemachine.part.UMLDiagramEditorPlugin.ID, IStatus.OK, ""); //$NON-NLS-1$
 	}
 
+	@Override
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		Element umlElement = (Element) element;
 		List<EObject> result = new LinkedList<EObject>();
@@ -335,6 +344,7 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 		return result;
 	}
 
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		return true;
 	}
@@ -342,7 +352,7 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 	/**
 	 * Return the body of an expression. Retrieve the "Natural Language" body with priority,
 	 * i.e. return this body if it exists, otherwise return the first body.
-	 * 
+	 *
 	 * @param exp
 	 *            an opaque expression
 	 * @return the associated body
@@ -358,7 +368,7 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 	/**
 	 * Return the body of an opaque behavior. Retrieve the "Natural Language" body with priority,
 	 * i.e. return this body if it exists, otherwise return the first body.
-	 * 
+	 *
 	 * @param exp
 	 *            an opaque expression
 	 * @return the associated body
@@ -373,7 +383,7 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 
 	/**
 	 * Cut a body string after a predefined number of lines (taken from preference store).
-	 * 
+	 *
 	 * @param body
 	 *            the body string
 	 * @return
@@ -412,7 +422,7 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return true, if the presence of parameters should be indicated by (...)
 	 */
 	public static boolean displayParamDots() {
@@ -421,7 +431,7 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return true, if the presence of parameters should be indicated by (...)
 	 */
 	public static boolean lineBreakBeforeEffect() {

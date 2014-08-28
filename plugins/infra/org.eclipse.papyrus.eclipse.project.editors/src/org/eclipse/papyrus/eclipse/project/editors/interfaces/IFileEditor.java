@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,9 +18,9 @@ import java.util.Set;
 import org.eclipse.core.resources.IProject;
 
 /**
- * 
+ *
  * Interface to edit file
- * 
+ *
  */
 public interface IFileEditor {
 
@@ -38,26 +38,26 @@ public interface IFileEditor {
 	public abstract void init();
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the missing files for the project
 	 */
 	public Set<String> getMissingFiles();
 
 	/**
-	 * 
+	 *
 	 * @param files
-	 *        create the required files
+	 *            create the required files
 	 */
 	public void createFiles(final Set<String> files);
 
 
-	//TODO : Remove that "Throwable" exception...
+	// TODO : Remove that "Throwable" exception...
 	/** save the modification on the editor */
 	public void save();
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the eclipse project
 	 */

@@ -6,7 +6,7 @@ import java.util.Map;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.presentation.NattableproblemEditor;
 import org.eclipse.papyrus.infra.nattable.model.nattable.presentation.NattableEditorPlugin;
@@ -20,7 +20,7 @@ public class CustomNattableproblemEditor extends NattableproblemEditor {
 	 * This is for implementing {@link IEditorPart} and simply saves the model file.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -30,7 +30,7 @@ public class CustomNattableproblemEditor extends NattableproblemEditor {
 		final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
 		saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
 		saveOptions.put(Resource.OPTION_LINE_DELIMITER, Resource.OPTION_LINE_DELIMITER_UNSPECIFIED);
-		saveOptions.put(XMIResource.OPTION_SAVE_TYPE_INFORMATION, true);
+		saveOptions.put(XMLResource.OPTION_SAVE_TYPE_INFORMATION, true);
 		// Do the work within an operation because this is a long running activity that modifies the workbench.
 		//
 		WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
@@ -42,12 +42,12 @@ public class CustomNattableproblemEditor extends NattableproblemEditor {
 				// Save the resources to the file system.
 				//
 				boolean first = true;
-				for(Resource resource : getEditingDomain().getResourceSet().getResources()) {
-					if((first || !resource.getContents().isEmpty() || isPersisted(resource)) && !getEditingDomain().isReadOnly(resource)) {
+				for (Resource resource : getEditingDomain().getResourceSet().getResources()) {
+					if ((first || !resource.getContents().isEmpty() || isPersisted(resource)) && !getEditingDomain().isReadOnly(resource)) {
 						try {
 							long timeStamp = resource.getTimeStamp();
 							resource.save(saveOptions);
-							if(resource.getTimeStamp() != timeStamp) {
+							if (resource.getTimeStamp() != timeStamp) {
 								savedResources.add(resource);
 							}
 						} catch (Exception exception) {
@@ -67,7 +67,7 @@ public class CustomNattableproblemEditor extends NattableproblemEditor {
 
 			// Refresh the necessary state.
 			//
-			((BasicCommandStack)this.editingDomain.getCommandStack()).saveIsDone();
+			((BasicCommandStack) this.editingDomain.getCommandStack()).saveIsDone();
 			firePropertyChange(IEditorPart.PROP_DIRTY);
 		} catch (Exception exception) {
 			// Something went wrong that shouldn't.

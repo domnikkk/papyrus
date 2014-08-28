@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,13 +13,17 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.viewpoints.policy;
 
+import java.util.Collection;
+import java.util.Collections;
+
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.infra.viewpoints.configuration.Category;
 
 
 /**
  * Represents a view prototype that is not available in the current viewpoints configuration
- * 
+ *
  * @author Laurent Wouters
  */
 public class UnavailableViewPrototype extends ViewPrototype {
@@ -131,5 +135,15 @@ public class UnavailableViewPrototype extends ViewPrototype {
 	@Override
 	public EObject getRootOf(EObject view) {
 		return null;
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype#getCategories()
+	 *
+	 * @return
+	 */
+	@Override
+	public Collection<Category> getCategories() {
+		return Collections.emptyList();
 	}
 }

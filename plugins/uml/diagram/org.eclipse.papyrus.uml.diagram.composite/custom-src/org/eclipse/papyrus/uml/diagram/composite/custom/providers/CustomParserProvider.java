@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,8 +23,9 @@ import org.eclipse.papyrus.uml.diagram.composite.providers.UMLParserProvider;
 
 public class CustomParserProvider extends UMLParserProvider {
 
+	@Override
 	protected IParser getParser(int visualID) {
-		switch(visualID) {
+		switch (visualID) {
 		case ConnectorMultiplicitySourceEditPart.VISUAL_ID:
 		case ConnectorMultiplicityTargetEditPart.VISUAL_ID:
 			return getMultiplicityFormatParser();

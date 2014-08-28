@@ -1,26 +1,26 @@
 /**
  * Copyright (c) 2011 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Nicolas Guyomar (Mia-Software) - Bug 349546 - EMF Facet facetSet editor
  */
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal.handlers;
 
 import org.eclipse.core.expressions.PropertyTester;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.papyrus.emf.facet.efacet.Facet;
 import org.eclipse.papyrus.emf.facet.efacet.FacetAttribute;
 import org.eclipse.papyrus.emf.facet.efacet.FacetOperation;
 import org.eclipse.papyrus.emf.facet.efacet.FacetReference;
 import org.eclipse.papyrus.emf.facet.efacet.FacetSet;
-import org.eclipse.jface.viewers.StructuredSelection;
 
 @Deprecated
-//TODO @Deprecated must be removed after a refactoring planed by https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601
+// TODO @Deprecated must be removed after a refactoring planed by https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601
 public class FacetPropertyTester extends PropertyTester {
 
 	private static final String IS_FACET = "isFacet"; //$NON-NLS-1$

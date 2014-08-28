@@ -1,22 +1,23 @@
 Manifest-Version: 1.0
+Export-Package: org.eclipse.papyrus.java.generator.metamodel.jdt.gener
+ atoroptionsmm.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- org.eclipse.papyrus.java.generator.metamodel.jdt.edit;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.papyrus.java.generator.metamodel.jdt.edit;bundle-version="1.0.1";visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport
-Export-Package: org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm
- .presentation
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.0.0.qualifier
-Bundle-Localization: plugin
+Bundle-Version: 1.0.1.qualifier
 Bundle-Name: %pluginName
-Bundle-Activator: org.eclipse.papyrus.java.generator.metamodel.jdt.jdt
- mm.presentation.JdtmmEditorPlugin$Implementation
+Bundle-Localization: plugin
 Bundle-ManifestVersion: 2
+Bundle-Activator: org.eclipse.papyrus.java.generator.metamodel.jdt.gen
+ eratoroptionsmm.presentation.GeneratoroptionsmmEditorPlugin$Implement
+ ation
 Bundle-SymbolicName: org.eclipse.papyrus.java.generator.metamodel.jdt.
  editor;singleton:=true
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 

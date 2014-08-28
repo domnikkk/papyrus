@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,9 +56,9 @@ public class CompositeFigure extends CompartmentFigure {
 
 	/**
 	 * Create a new Classifier figure with the given tag.
-	 * 
+	 *
 	 * @param tagLabel
-	 *        a String that will be displayed at the top of the figure
+	 *            a String that will be displayed at the top of the figure
 	 */
 	public CompositeFigure(String tagLabel) {
 		super(COMPARTMENT, tagLabel);
@@ -66,7 +66,7 @@ public class CompositeFigure extends CompartmentFigure {
 
 	/**
 	 * Get the attribute's compartment figure.
-	 * 
+	 *
 	 * @return the composite compartment figure
 	 */
 	public IFigure getCompositeCompartmentFigure() {
@@ -75,7 +75,7 @@ public class CompositeFigure extends CompartmentFigure {
 
 	/**
 	 * Checks if is active.
-	 * 
+	 *
 	 * @return true, if is active
 	 */
 	// @unused
@@ -85,7 +85,7 @@ public class CompositeFigure extends CompartmentFigure {
 
 	/**
 	 * Set the active
-	 * 
+	 *
 	 * @param active
 	 */
 	public void setActive(boolean active) {

@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia Dhouib saadia.dhouib@cea.fr  
+ *  Saadia Dhouib saadia.dhouib@cea.fr
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.communication.custom.policies.itemsemantic;
@@ -41,25 +41,26 @@ public class CustomMessageNameItemSemanticEditPolicy extends UMLBaseItemSemantic
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.communication.edit.policies.UMLBaseItemSemanticEditPolicy#getDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest)
-	 * 
+	 *
 	 * @param req
 	 * @return
 	 */
+	@Override
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		EObject elementToDestroy = req.getElementToDestroy();
 		List<EObject> elementsToDestroy = new ArrayList<EObject>();
-		//A. Find the elements to destroy
-		if(elementToDestroy instanceof Message) {
-			Message message = (Message)elementToDestroy;
-			//Add the message to the list of elements to destroy
+		// A. Find the elements to destroy
+		if (elementToDestroy instanceof Message) {
+			Message message = (Message) elementToDestroy;
+			// Add the message to the list of elements to destroy
 			elementsToDestroy.add(message);
 		}
-		//B. Build the command to destroy all the semantic elements
-		for(EObject selectedEObject : elementsToDestroy) {
+		// B. Build the command to destroy all the semantic elements
+		for (EObject selectedEObject : elementsToDestroy) {
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(selectedEObject);
-			if(provider == null) {
+			if (provider == null) {
 				continue;
 			}
 			// Retrieve delete command from the Element Edit service
@@ -68,13 +69,13 @@ public class CustomMessageNameItemSemanticEditPolicy extends UMLBaseItemSemantic
 			// Add current EObject destroy command to the global command
 			cmd.add(deleteCommand);
 		}
-		//C. Build the command to destroy all the views associated to the message
+		// C. Build the command to destroy all the views associated to the message
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(elementToDestroy);
-		if(provider == null) {
+		if (provider == null) {
 			return org.eclipse.gef.commands.UnexecutableCommand.INSTANCE;
 		}
 		ICommand destroyViewsCommand = provider.getEditCommand(req);
-		if(destroyViewsCommand == null) {
+		if (destroyViewsCommand == null) {
 			return org.eclipse.gef.commands.UnexecutableCommand.INSTANCE;
 		}
 		cmd.add(destroyViewsCommand);

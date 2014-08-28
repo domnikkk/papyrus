@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,32 +29,32 @@ import org.eclipse.papyrus.uml.diagram.profile.edit.policies.MetaclassItemSemant
 import org.eclipse.papyrus.uml.diagram.profile.providers.UMLElementTypes;
 
 /**
- * 
+ *
  * This class provides a custom Item Semantic for the metaclass
  * <ul>
  * <li>allow the creation of the Extension link</li>
  * <li>retarget an extension link</li>
  * <li>manage the deletion of a metaclass figure in the diagram</li>
  * </ul>
- * 
+ *
  */
 public class CustomMetaclassItemSemanticEditPolicyCN extends MetaclassItemSemanticEditPolicyCN {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.profile.edit.policies.MetaclassItemSemanticEditPolicyCN#getCompleteCreateRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest)
-	 * 
+	 *
 	 * @param req
 	 * @return
 	 */
 	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 
-		if(UMLElementTypes.Extension_1013 == req.getElementType()) {
+		if (UMLElementTypes.Extension_1013 == req.getElementType()) {
 			return getGEFWrapper(new CustomExtensionCreateCommand(req, req.getSource(), req.getTarget()));
-		} else if(UMLElementTypes.Association_4001 == req.getElementType()) {
+		} else if (UMLElementTypes.Association_4001 == req.getElementType()) {
 			return getGEFWrapper(new CustomAssociationCreateCommand(req, req.getSource(), req.getTarget()));
-		} else if(UMLElementTypes.Association_4019 == req.getElementType()) {
+		} else if (UMLElementTypes.Association_4019 == req.getElementType()) {
 			return getGEFWrapper(new AssociationBranchCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
@@ -66,11 +66,11 @@ public class CustomMetaclassItemSemanticEditPolicyCN extends MetaclassItemSemant
 	 * - the ElementImport associated with the metaclass
 	 * - the metaclass's extensions
 	 * - the property in the stereotype
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.profile.edit.policies.MetaclassItemSemanticEditPolicy#getDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest)
-	 * 
+	 *
 	 * @param req
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -79,24 +79,24 @@ public class CustomMetaclassItemSemanticEditPolicyCN extends MetaclassItemSemant
 		CompoundCommand cc = new CompoundCommand("Destroy Element Import"); //$NON-NLS-1$
 
 		EObject elementToDestroy = req.getElementToDestroy();
-		if(elementToDestroy instanceof org.eclipse.uml2.uml.Class) {
+		if (elementToDestroy instanceof org.eclipse.uml2.uml.Class) {
 			EObject parentProfile = MetaclassHelper.getParentProfile(this.getHost().getParent());
-			cc.add(MetaclassHelper.getDestroyMetaclassCommand((org.eclipse.uml2.uml.Class)elementToDestroy, parentProfile));
+			cc.add(MetaclassHelper.getDestroyMetaclassCommand((org.eclipse.uml2.uml.Class) elementToDestroy, parentProfile));
 		}
 
 		return cc;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.profile.edit.policies.MetaclassItemSemanticEditPolicy#getReorientRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest)
-	 * 
+	 *
 	 * @param req
 	 * @return
 	 */
 	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case ExtensionEditPart.VISUAL_ID:
 			return getGEFWrapper(new CustomExtensionReorientCommand(req));
 		default:

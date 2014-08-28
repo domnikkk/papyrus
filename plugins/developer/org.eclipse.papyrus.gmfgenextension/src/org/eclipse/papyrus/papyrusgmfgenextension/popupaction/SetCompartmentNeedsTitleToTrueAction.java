@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,34 +30,35 @@ import org.eclipse.jface.action.IAction;
 
 /**
  * This action allows to set the field Needs Title in the Selected Compartments to true
- * 
+ *
  * This action was created for the bug 343092.
- * 
+ *
  */
 public class SetCompartmentNeedsTitleToTrueAction extends Action {
 
 
+	@Override
 	public void run(IAction action) {
 
 		CompoundCommand command = new CompoundCommand();
 		List<EObject> selection = getSelectedEObject();
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 			EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(selection.get(0));
 			Assert.isNotNull(domain);
 			Iterator<EObject> iter = selection.iterator();
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 				Object current = iter.next();
-				if(current instanceof GenCompartment) {
-					GenCompartment compartment = (GenCompartment)current;
-					//we set that the compartment needs to have a Title
+				if (current instanceof GenCompartment) {
+					GenCompartment compartment = (GenCompartment) current;
+					// we set that the compartment needs to have a Title
 					Command cmd = SetCommand.create(domain, compartment, GMFGenPackage.eINSTANCE.getGenCompartment_NeedsTitle(), true);
-					if(cmd.canExecute()) {
+					if (cmd.canExecute()) {
 						command.append(cmd);
 					}
 				}
 			}
 
-			if(command.canExecute()) {
+			if (command.canExecute()) {
 				domain.getCommandStack().execute(command);
 			}
 		}

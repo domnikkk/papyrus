@@ -49,13 +49,13 @@ public class CustomParametricContextLinkCreateCommand extends
 	 */
 	@Override
 	public boolean canExecute() {
-		if(source == null && target == null) {
+		if (source == null && target == null) {
 			return false;
 		}
-		if(source != null && !(source instanceof Constraint)) {
+		if (source != null && !(source instanceof Constraint)) {
 			return false;
 		}
-		if(target != null && !(target instanceof Namespace)) {
+		if (target != null && !(target instanceof Namespace)) {
 			if (target instanceof Property) {
 				if (!(((Property) target).getType() instanceof Namespace)) {
 					// not a Part / Reference / ConstraintProperty => could not create context link
@@ -67,57 +67,57 @@ public class CustomParametricContextLinkCreateCommand extends
 				return false;
 			}
 		}
-		if(getSource() == null) {
+		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		View viewSource = findView(source);
-		
+
 		// Only one context link per Constraint
-		if(viewSource != null && source instanceof Constraint) {
+		if (viewSource != null && source instanceof Constraint) {
 			List<?> sourceConnections = ViewUtil.getSourceConnections(viewSource);
 			if (!sourceConnections.isEmpty()) {
 				return false;
 			}
-		}		
+		}
 		return true;
 	}
-	
+
 	/**
 	 * Set the Constraint context and update Constraint name with new owner ownedRules if necessary
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 		Namespace context = getTarget();
-		if(getSource() != null && context != null) {
+		if (getSource() != null && context != null) {
 			getSource().setContext(context);
 			String defaultNameWithIncrementFromBase = NamedElementHelper.getDefaultNameWithIncrementFromBase(Constraint.class.getSimpleName(), context.getOwnedRules(), getSource());
 			getSource().setName(defaultNameWithIncrementFromBase);
 			return CommandResult.newOKCommandResult();
-		}		
+		}
 		else {
-			return CommandResult.newErrorCommandResult("Try to define Constraint context to a non Namespace element");			
+			return CommandResult.newErrorCommandResult("Try to define Constraint context to a non Namespace element");
 		}
 	}
 
 	private View findView(EObject element) {
-		if(element == null) {
+		if (element == null) {
 			return null;
 		}
 		Collection<Setting> settings = CacheAdapter.getInstance().getNonNavigableInverseReferences(element);
-		for(Setting ref : settings) {
-			if(NotationPackage.eINSTANCE.getView_Element().equals(ref.getEStructuralFeature())) {
-				View view = (View)ref.getEObject();
-				if(view != null) {
+		for (Setting ref : settings) {
+			if (NotationPackage.eINSTANCE.getView_Element().equals(ref.getEStructuralFeature())) {
+				View view = (View) ref.getEObject();
+				if (view != null) {
 					return view;
 				}
 			}
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Get the property Namespace in case of property typed by a Namespace
 	 */
@@ -130,8 +130,8 @@ public class CustomParametricContextLinkCreateCommand extends
 		else {
 			targetNamespace = target;
 		}
-		if (targetNamespace instanceof Namespace) {		
-			return (Namespace)targetNamespace;
+		if (targetNamespace instanceof Namespace) {
+			return (Namespace) targetNamespace;
 		}
 		else {
 			return null;

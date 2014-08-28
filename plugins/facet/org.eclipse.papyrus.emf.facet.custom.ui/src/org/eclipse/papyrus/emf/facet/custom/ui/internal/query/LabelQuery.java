@@ -48,14 +48,14 @@ public class LabelQuery implements IJavaQuery2<EObject, String> {
 		if (sfParam == null) {
 			final ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(
 					ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
-			
+
 			try {
-				final IItemLabelProvider itemLabelProvider = (IItemLabelProvider)adapterFactory.adapt(source, IItemLabelProvider.class);
+				final IItemLabelProvider itemLabelProvider = (IItemLabelProvider) adapterFactory.adapt(source, IItemLabelProvider.class);
 				// We don't want to use a ReflectiveItemProvider because it provides
 				// a string prefixed with the eObject's meta-class name.
-				if(itemLabelProvider instanceof ReflectiveItemProvider) {
+				if (itemLabelProvider instanceof ReflectiveItemProvider) {
 					result = LabelQuery.getDefaultName(source);
-				} else if(itemLabelProvider == null) {
+				} else if (itemLabelProvider == null) {
 					result = ModelUtils.getDefaultName(source);
 				} else {
 					result = itemLabelProvider.getText(source);
@@ -94,8 +94,7 @@ public class LabelQuery implements IJavaQuery2<EObject, String> {
 	}
 
 	/**
-	 * @return a default name based on a string feature of the given
-	 *         {@link EObject}
+	 * @return a default name based on a string feature of the given {@link EObject}
 	 */
 	// from org.eclipse.papyrus.emf.facet.infra.common.core.internal.utils.ModelUtils
 	public static String getDefaultName(final EObject eObject) {

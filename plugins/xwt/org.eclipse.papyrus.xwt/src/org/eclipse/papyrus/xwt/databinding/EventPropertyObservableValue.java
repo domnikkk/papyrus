@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -26,13 +26,13 @@ public class EventPropertyObservableValue extends XWTObservableValue {
 		super(Boolean.class, observed, property.getName());
 		this.property = property;
 		IEventController controller = UserData.findEventController(observed);
-		if(controller == null) {
+		if (controller == null) {
 			controller = UserData.updateEventController(observed);
 		}
 		IEvent event = property.getEvent();
 
 		IObservableValueListener manager = UserData.getObservableValueManager(observed);
-		if(manager == null) {
+		if (manager == null) {
 			manager = new ObservableValueManager(observed);
 			UserData.setObservableValueManager(observed, manager);
 		}
@@ -50,6 +50,7 @@ public class EventPropertyObservableValue extends XWTObservableValue {
 		UserData.setLocalData(getObserved(), property.getName(), value);
 	}
 
+	@Override
 	protected Object doGetValue() {
 		return UserData.getLocalData(getObserved(), property.getName());
 	}

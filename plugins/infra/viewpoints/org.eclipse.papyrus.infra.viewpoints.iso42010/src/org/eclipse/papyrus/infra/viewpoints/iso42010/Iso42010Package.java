@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *  
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.infra.viewpoints.iso42010;
 
@@ -23,13 +23,14 @@ import org.eclipse.emf.ecore.EReference;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each operation of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Factory
  * @model kind="package"
  * @generated
@@ -39,6 +40,7 @@ public interface Iso42010Package extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "iso42010";
@@ -47,6 +49,7 @@ public interface Iso42010Package extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/infra/viewpoints/iso42010";
@@ -55,6 +58,7 @@ public interface Iso42010Package extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "iso42010";
@@ -63,6 +67,7 @@ public interface Iso42010Package extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	Iso42010Package eINSTANCE = org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl.init();
@@ -71,6 +76,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ADElementImpl <em>AD Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ADElementImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getADElement()
 	 * @generated
@@ -81,6 +87,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -90,6 +97,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Affected By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -99,6 +107,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>AD Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -108,6 +117,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>AD Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,6 +127,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDescriptionImpl <em>Architecture Description</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDescriptionImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitectureDescription()
 	 * @generated
@@ -127,6 +138,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Stakeholders</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -136,6 +148,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Concerns</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -145,6 +158,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Viewpoints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -154,6 +168,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Views</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -163,6 +178,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>System</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -172,6 +188,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Expresses</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -181,6 +198,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Rationales</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -190,6 +208,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Correspondences</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,6 +218,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -208,6 +228,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Decisions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -217,6 +238,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>Architecture Description</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -226,6 +248,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>Architecture Description</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -235,6 +258,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.StakeholderImpl <em>Stakeholder</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.StakeholderImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getStakeholder()
 	 * @generated
@@ -245,6 +269,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -254,6 +279,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Affected By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -263,6 +289,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Concerns</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -272,6 +299,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Viewpoints</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -281,6 +309,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Has Interest In</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -290,6 +319,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>Stakeholder</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -299,6 +329,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>Stakeholder</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -308,6 +339,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewpointImpl <em>Architecture Viewpoint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewpointImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitectureViewpoint()
 	 * @generated
@@ -318,6 +350,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -327,6 +360,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Affected By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -336,6 +370,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Model Kinds</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -345,6 +380,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Governs</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -354,6 +390,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Frames</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -363,6 +400,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>Architecture Viewpoint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -372,6 +410,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>Architecture Viewpoint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -381,6 +420,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ModelKindImpl <em>Model Kind</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ModelKindImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getModelKind()
 	 * @generated
@@ -391,6 +431,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -400,6 +441,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Affected By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -409,6 +451,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Governs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -418,6 +461,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Viewpoint</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -427,6 +471,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>Model Kind</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -436,6 +481,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>Model Kind</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -445,6 +491,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureModelImpl <em>Architecture Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureModelImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitectureModel()
 	 * @generated
@@ -455,6 +502,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -464,6 +512,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Affected By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -473,6 +522,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Governed By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -482,6 +532,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>View</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -491,6 +542,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>Architecture Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -500,6 +552,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>Architecture Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -509,6 +562,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewImpl <em>Architecture View</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitectureView()
 	 * @generated
@@ -519,6 +573,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -528,6 +583,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Affected By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -537,6 +593,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Governed By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -546,6 +603,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Models</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -555,6 +613,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Addresses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -564,6 +623,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>Architecture View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -573,6 +633,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>Architecture View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -582,6 +643,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ConcernImpl <em>Concern</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ConcernImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getConcern()
 	 * @generated
@@ -592,6 +654,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -601,6 +664,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Affected By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -610,6 +674,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Framed By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -619,6 +684,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Addressed By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -628,6 +694,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Stakeholders</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -637,6 +704,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Raised By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -646,6 +714,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Decisions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -655,6 +724,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>Concern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -664,6 +734,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>Concern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -673,6 +744,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.SystemImpl <em>System</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.SystemImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getSystem()
 	 * @generated
@@ -683,6 +755,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -692,6 +765,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Stakeholders</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -701,6 +775,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Exhibits</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -710,6 +785,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -719,6 +795,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -728,6 +805,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureImpl <em>Architecture</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitecture()
 	 * @generated
@@ -738,6 +816,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Exhibited In</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -747,6 +826,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>Architecture</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -756,6 +836,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>Architecture</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -765,6 +846,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureRationaleImpl <em>Architecture Rationale</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureRationaleImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitectureRationale()
 	 * @generated
@@ -775,6 +857,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -784,6 +867,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Affected By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -793,6 +877,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Justifies</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -802,6 +887,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>Architecture Rationale</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -811,6 +897,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>Architecture Rationale</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -820,6 +907,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.CorrespondenceImpl <em>Correspondence</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.CorrespondenceImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getCorrespondence()
 	 * @generated
@@ -830,6 +918,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Governed By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -839,6 +928,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Relates</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -848,6 +938,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>Correspondence</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -857,6 +948,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>Correspondence</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -866,6 +958,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.CorrespondenceRuleImpl <em>Correspondence Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.CorrespondenceRuleImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getCorrespondenceRule()
 	 * @generated
@@ -876,6 +969,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Governs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -885,6 +979,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>Correspondence Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -894,6 +989,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>Correspondence Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -903,6 +999,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl <em>Architecture Decision</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitectureDecision()
 	 * @generated
@@ -913,6 +1010,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -922,6 +1020,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Affected By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -931,6 +1030,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Justified By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -940,6 +1040,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Depends Upon</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -949,6 +1050,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Dependents</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -958,6 +1060,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Raises</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -967,6 +1070,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Pertains To</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -976,6 +1080,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Affects</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -985,6 +1090,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>Architecture Decision</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -994,6 +1100,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>Architecture Decision</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1003,6 +1110,7 @@ public interface Iso42010Package extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureFrameworkImpl <em>Architecture Framework</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureFrameworkImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitectureFramework()
 	 * @generated
@@ -1013,6 +1121,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Stakeholders</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1022,6 +1131,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Viewpoints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1031,6 +1141,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1040,6 +1151,7 @@ public interface Iso42010Package extends EPackage {
 	 * The feature id for the '<em><b>Concerns</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1049,6 +1161,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of structural features of the '<em>Architecture Framework</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1058,6 +1171,7 @@ public interface Iso42010Package extends EPackage {
 	 * The number of operations of the '<em>Architecture Framework</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1068,6 +1182,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ADElement <em>AD Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>AD Element</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ADElement
 	 * @generated
@@ -1078,6 +1193,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ADElement#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ADElement#getName()
 	 * @see #getADElement()
@@ -1089,6 +1205,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ADElement#getAffectedBy <em>Affected By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Affected By</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ADElement#getAffectedBy()
 	 * @see #getADElement()
@@ -1100,6 +1217,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription <em>Architecture Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Architecture Description</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription
 	 * @generated
@@ -1110,6 +1228,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getStakeholders <em>Stakeholders</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Stakeholders</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getStakeholders()
 	 * @see #getArchitectureDescription()
@@ -1121,6 +1240,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getConcerns <em>Concerns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Concerns</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getConcerns()
 	 * @see #getArchitectureDescription()
@@ -1132,6 +1252,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getViewpoints <em>Viewpoints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Viewpoints</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getViewpoints()
 	 * @see #getArchitectureDescription()
@@ -1143,6 +1264,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getViews <em>Views</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Views</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getViews()
 	 * @see #getArchitectureDescription()
@@ -1154,6 +1276,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getSystem <em>System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference '<em>System</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getSystem()
 	 * @see #getArchitectureDescription()
@@ -1165,6 +1288,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getExpresses <em>Expresses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference '<em>Expresses</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getExpresses()
 	 * @see #getArchitectureDescription()
@@ -1176,6 +1300,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getRationales <em>Rationales</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Rationales</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getRationales()
 	 * @see #getArchitectureDescription()
@@ -1187,6 +1312,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getCorrespondences <em>Correspondences</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Correspondences</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getCorrespondences()
 	 * @see #getArchitectureDescription()
@@ -1198,6 +1324,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getRules <em>Rules</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Rules</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getRules()
 	 * @see #getArchitectureDescription()
@@ -1209,6 +1336,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getDecisions <em>Decisions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Decisions</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getDecisions()
 	 * @see #getArchitectureDescription()
@@ -1220,6 +1348,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder <em>Stakeholder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Stakeholder</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder
 	 * @generated
@@ -1230,6 +1359,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder#getConcerns <em>Concerns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Concerns</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder#getConcerns()
 	 * @see #getStakeholder()
@@ -1241,6 +1371,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder#getViewpoints <em>Viewpoints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Viewpoints</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder#getViewpoints()
 	 * @see #getStakeholder()
@@ -1252,6 +1383,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder#getHasInterestIn <em>Has Interest In</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Has Interest In</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder#getHasInterestIn()
 	 * @see #getStakeholder()
@@ -1263,6 +1395,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint <em>Architecture Viewpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Architecture Viewpoint</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint
 	 * @generated
@@ -1273,6 +1406,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint#getModelKinds <em>Model Kinds</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Model Kinds</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint#getModelKinds()
 	 * @see #getArchitectureViewpoint()
@@ -1284,6 +1418,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint#getGoverns <em>Governs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Governs</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint#getGoverns()
 	 * @see #getArchitectureViewpoint()
@@ -1295,6 +1430,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint#getFrames <em>Frames</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Frames</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint#getFrames()
 	 * @see #getArchitectureViewpoint()
@@ -1306,6 +1442,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind <em>Model Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Model Kind</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind
 	 * @generated
@@ -1316,6 +1453,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind#getGoverns <em>Governs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Governs</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind#getGoverns()
 	 * @see #getModelKind()
@@ -1327,6 +1465,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind#getViewpoint <em>Viewpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the container reference '<em>Viewpoint</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind#getViewpoint()
 	 * @see #getModelKind()
@@ -1338,6 +1477,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel <em>Architecture Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Architecture Model</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel
 	 * @generated
@@ -1348,6 +1488,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel#getGovernedBy <em>Governed By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Governed By</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel#getGovernedBy()
 	 * @see #getArchitectureModel()
@@ -1359,6 +1500,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel#getView <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the container reference '<em>View</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel#getView()
 	 * @see #getArchitectureModel()
@@ -1370,6 +1512,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView <em>Architecture View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Architecture View</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView
 	 * @generated
@@ -1380,6 +1523,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView#getGovernedBy <em>Governed By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Governed By</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView#getGovernedBy()
 	 * @see #getArchitectureView()
@@ -1391,6 +1535,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView#getModels <em>Models</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Models</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView#getModels()
 	 * @see #getArchitectureView()
@@ -1402,6 +1547,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView#getAddresses <em>Addresses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Addresses</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView#getAddresses()
 	 * @see #getArchitectureView()
@@ -1413,6 +1559,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Concern <em>Concern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Concern</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Concern
 	 * @generated
@@ -1423,6 +1570,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Concern#getFramedBy <em>Framed By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Framed By</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Concern#getFramedBy()
 	 * @see #getConcern()
@@ -1434,6 +1582,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Concern#getAddressedBy <em>Addressed By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Addressed By</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Concern#getAddressedBy()
 	 * @see #getConcern()
@@ -1445,6 +1594,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Concern#getStakeholders <em>Stakeholders</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Stakeholders</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Concern#getStakeholders()
 	 * @see #getConcern()
@@ -1456,6 +1606,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Concern#getRaisedBy <em>Raised By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Raised By</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Concern#getRaisedBy()
 	 * @see #getConcern()
@@ -1467,6 +1618,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Concern#getDecisions <em>Decisions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Decisions</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Concern#getDecisions()
 	 * @see #getConcern()
@@ -1478,6 +1630,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.System <em>System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>System</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.System
 	 * @generated
@@ -1488,6 +1641,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.System#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.System#getName()
 	 * @see #getSystem()
@@ -1499,6 +1653,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.System#getStakeholders <em>Stakeholders</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Stakeholders</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.System#getStakeholders()
 	 * @see #getSystem()
@@ -1510,6 +1665,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.System#getExhibits <em>Exhibits</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Exhibits</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.System#getExhibits()
 	 * @see #getSystem()
@@ -1521,6 +1677,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Architecture <em>Architecture</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Architecture</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Architecture
 	 * @generated
@@ -1531,6 +1688,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Architecture#getExhibitedIn <em>Exhibited In</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Exhibited In</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Architecture#getExhibitedIn()
 	 * @see #getArchitecture()
@@ -1542,6 +1700,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureRationale <em>Architecture Rationale</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Architecture Rationale</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureRationale
 	 * @generated
@@ -1552,6 +1711,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureRationale#getJustifies <em>Justifies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Justifies</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureRationale#getJustifies()
 	 * @see #getArchitectureRationale()
@@ -1563,6 +1723,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Correspondence <em>Correspondence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Correspondence</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Correspondence
 	 * @generated
@@ -1573,6 +1734,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Correspondence#getGovernedBy <em>Governed By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Governed By</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Correspondence#getGovernedBy()
 	 * @see #getCorrespondence()
@@ -1584,6 +1746,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Correspondence#getRelates <em>Relates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Relates</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Correspondence#getRelates()
 	 * @see #getCorrespondence()
@@ -1595,6 +1758,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.CorrespondenceRule <em>Correspondence Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Correspondence Rule</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.CorrespondenceRule
 	 * @generated
@@ -1605,6 +1769,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.CorrespondenceRule#getGoverns <em>Governs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Governs</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.CorrespondenceRule#getGoverns()
 	 * @see #getCorrespondenceRule()
@@ -1616,6 +1781,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision <em>Architecture Decision</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Architecture Decision</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision
 	 * @generated
@@ -1626,6 +1792,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getJustifiedBy <em>Justified By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Justified By</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getJustifiedBy()
 	 * @see #getArchitectureDecision()
@@ -1637,6 +1804,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getDependsUpon <em>Depends Upon</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Depends Upon</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getDependsUpon()
 	 * @see #getArchitectureDecision()
@@ -1648,6 +1816,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getDependents <em>Dependents</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Dependents</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getDependents()
 	 * @see #getArchitectureDecision()
@@ -1659,6 +1828,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getRaises <em>Raises</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Raises</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getRaises()
 	 * @see #getArchitectureDecision()
@@ -1670,6 +1840,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getPertainsTo <em>Pertains To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Pertains To</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getPertainsTo()
 	 * @see #getArchitectureDecision()
@@ -1681,6 +1852,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getAffects <em>Affects</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Affects</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getAffects()
 	 * @see #getArchitectureDecision()
@@ -1692,6 +1864,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework <em>Architecture Framework</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Architecture Framework</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework
 	 * @generated
@@ -1702,6 +1875,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework#getStakeholders <em>Stakeholders</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Stakeholders</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework#getStakeholders()
 	 * @see #getArchitectureFramework()
@@ -1713,6 +1887,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework#getViewpoints <em>Viewpoints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Viewpoints</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework#getViewpoints()
 	 * @see #getArchitectureFramework()
@@ -1724,6 +1899,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework#getRules <em>Rules</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Rules</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework#getRules()
 	 * @see #getArchitectureFramework()
@@ -1735,6 +1911,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework#getConcerns <em>Concerns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Concerns</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework#getConcerns()
 	 * @see #getArchitectureFramework()
@@ -1746,6 +1923,7 @@ public interface Iso42010Package extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1755,13 +1933,14 @@ public interface Iso42010Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each operation of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -1769,6 +1948,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ADElementImpl <em>AD Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ADElementImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getADElement()
 		 * @generated
@@ -1779,6 +1959,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute AD_ELEMENT__NAME = eINSTANCE.getADElement_Name();
@@ -1787,6 +1968,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Affected By</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference AD_ELEMENT__AFFECTED_BY = eINSTANCE.getADElement_AffectedBy();
@@ -1795,6 +1977,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDescriptionImpl <em>Architecture Description</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDescriptionImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitectureDescription()
 		 * @generated
@@ -1805,6 +1988,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Stakeholders</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DESCRIPTION__STAKEHOLDERS = eINSTANCE.getArchitectureDescription_Stakeholders();
@@ -1813,6 +1997,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Concerns</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DESCRIPTION__CONCERNS = eINSTANCE.getArchitectureDescription_Concerns();
@@ -1821,6 +2006,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Viewpoints</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DESCRIPTION__VIEWPOINTS = eINSTANCE.getArchitectureDescription_Viewpoints();
@@ -1829,6 +2015,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Views</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DESCRIPTION__VIEWS = eINSTANCE.getArchitectureDescription_Views();
@@ -1837,6 +2024,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>System</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DESCRIPTION__SYSTEM = eINSTANCE.getArchitectureDescription_System();
@@ -1845,6 +2033,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Expresses</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DESCRIPTION__EXPRESSES = eINSTANCE.getArchitectureDescription_Expresses();
@@ -1853,6 +2042,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Rationales</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DESCRIPTION__RATIONALES = eINSTANCE.getArchitectureDescription_Rationales();
@@ -1861,6 +2051,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Correspondences</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DESCRIPTION__CORRESPONDENCES = eINSTANCE.getArchitectureDescription_Correspondences();
@@ -1869,6 +2060,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DESCRIPTION__RULES = eINSTANCE.getArchitectureDescription_Rules();
@@ -1877,6 +2069,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Decisions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DESCRIPTION__DECISIONS = eINSTANCE.getArchitectureDescription_Decisions();
@@ -1885,6 +2078,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.StakeholderImpl <em>Stakeholder</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.StakeholderImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getStakeholder()
 		 * @generated
@@ -1895,6 +2089,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Concerns</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference STAKEHOLDER__CONCERNS = eINSTANCE.getStakeholder_Concerns();
@@ -1903,6 +2098,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Viewpoints</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference STAKEHOLDER__VIEWPOINTS = eINSTANCE.getStakeholder_Viewpoints();
@@ -1911,6 +2107,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Has Interest In</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference STAKEHOLDER__HAS_INTEREST_IN = eINSTANCE.getStakeholder_HasInterestIn();
@@ -1919,6 +2116,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewpointImpl <em>Architecture Viewpoint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewpointImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitectureViewpoint()
 		 * @generated
@@ -1929,6 +2127,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Model Kinds</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_VIEWPOINT__MODEL_KINDS = eINSTANCE.getArchitectureViewpoint_ModelKinds();
@@ -1937,6 +2136,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Governs</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_VIEWPOINT__GOVERNS = eINSTANCE.getArchitectureViewpoint_Governs();
@@ -1945,6 +2145,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Frames</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_VIEWPOINT__FRAMES = eINSTANCE.getArchitectureViewpoint_Frames();
@@ -1953,6 +2154,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ModelKindImpl <em>Model Kind</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ModelKindImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getModelKind()
 		 * @generated
@@ -1963,6 +2165,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Governs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference MODEL_KIND__GOVERNS = eINSTANCE.getModelKind_Governs();
@@ -1971,6 +2174,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Viewpoint</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference MODEL_KIND__VIEWPOINT = eINSTANCE.getModelKind_Viewpoint();
@@ -1979,6 +2183,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureModelImpl <em>Architecture Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureModelImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitectureModel()
 		 * @generated
@@ -1989,6 +2194,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Governed By</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_MODEL__GOVERNED_BY = eINSTANCE.getArchitectureModel_GovernedBy();
@@ -1997,6 +2203,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>View</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_MODEL__VIEW = eINSTANCE.getArchitectureModel_View();
@@ -2005,6 +2212,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewImpl <em>Architecture View</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitectureView()
 		 * @generated
@@ -2015,6 +2223,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Governed By</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_VIEW__GOVERNED_BY = eINSTANCE.getArchitectureView_GovernedBy();
@@ -2023,6 +2232,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Models</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_VIEW__MODELS = eINSTANCE.getArchitectureView_Models();
@@ -2031,6 +2241,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Addresses</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_VIEW__ADDRESSES = eINSTANCE.getArchitectureView_Addresses();
@@ -2039,6 +2250,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ConcernImpl <em>Concern</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ConcernImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getConcern()
 		 * @generated
@@ -2049,6 +2261,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Framed By</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference CONCERN__FRAMED_BY = eINSTANCE.getConcern_FramedBy();
@@ -2057,6 +2270,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Addressed By</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference CONCERN__ADDRESSED_BY = eINSTANCE.getConcern_AddressedBy();
@@ -2065,6 +2279,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Stakeholders</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference CONCERN__STAKEHOLDERS = eINSTANCE.getConcern_Stakeholders();
@@ -2073,6 +2288,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Raised By</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference CONCERN__RAISED_BY = eINSTANCE.getConcern_RaisedBy();
@@ -2081,6 +2297,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Decisions</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference CONCERN__DECISIONS = eINSTANCE.getConcern_Decisions();
@@ -2089,6 +2306,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.SystemImpl <em>System</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.SystemImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getSystem()
 		 * @generated
@@ -2099,6 +2317,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute SYSTEM__NAME = eINSTANCE.getSystem_Name();
@@ -2107,6 +2326,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Stakeholders</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference SYSTEM__STAKEHOLDERS = eINSTANCE.getSystem_Stakeholders();
@@ -2115,6 +2335,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Exhibits</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference SYSTEM__EXHIBITS = eINSTANCE.getSystem_Exhibits();
@@ -2123,6 +2344,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureImpl <em>Architecture</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitecture()
 		 * @generated
@@ -2133,6 +2355,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Exhibited In</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE__EXHIBITED_IN = eINSTANCE.getArchitecture_ExhibitedIn();
@@ -2141,6 +2364,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureRationaleImpl <em>Architecture Rationale</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureRationaleImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitectureRationale()
 		 * @generated
@@ -2151,6 +2375,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Justifies</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_RATIONALE__JUSTIFIES = eINSTANCE.getArchitectureRationale_Justifies();
@@ -2159,6 +2384,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.CorrespondenceImpl <em>Correspondence</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.CorrespondenceImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getCorrespondence()
 		 * @generated
@@ -2169,6 +2395,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Governed By</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference CORRESPONDENCE__GOVERNED_BY = eINSTANCE.getCorrespondence_GovernedBy();
@@ -2177,6 +2404,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Relates</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference CORRESPONDENCE__RELATES = eINSTANCE.getCorrespondence_Relates();
@@ -2185,6 +2413,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.CorrespondenceRuleImpl <em>Correspondence Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.CorrespondenceRuleImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getCorrespondenceRule()
 		 * @generated
@@ -2195,6 +2424,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Governs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference CORRESPONDENCE_RULE__GOVERNS = eINSTANCE.getCorrespondenceRule_Governs();
@@ -2203,6 +2433,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl <em>Architecture Decision</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitectureDecision()
 		 * @generated
@@ -2213,6 +2444,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Justified By</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DECISION__JUSTIFIED_BY = eINSTANCE.getArchitectureDecision_JustifiedBy();
@@ -2221,6 +2453,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Depends Upon</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DECISION__DEPENDS_UPON = eINSTANCE.getArchitectureDecision_DependsUpon();
@@ -2229,6 +2462,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Dependents</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DECISION__DEPENDENTS = eINSTANCE.getArchitectureDecision_Dependents();
@@ -2237,6 +2471,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Raises</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DECISION__RAISES = eINSTANCE.getArchitectureDecision_Raises();
@@ -2245,6 +2480,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Pertains To</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DECISION__PERTAINS_TO = eINSTANCE.getArchitectureDecision_PertainsTo();
@@ -2253,6 +2489,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Affects</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_DECISION__AFFECTS = eINSTANCE.getArchitectureDecision_Affects();
@@ -2261,6 +2498,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureFrameworkImpl <em>Architecture Framework</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureFrameworkImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.impl.Iso42010PackageImpl#getArchitectureFramework()
 		 * @generated
@@ -2271,6 +2509,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Stakeholders</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_FRAMEWORK__STAKEHOLDERS = eINSTANCE.getArchitectureFramework_Stakeholders();
@@ -2279,6 +2518,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Viewpoints</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_FRAMEWORK__VIEWPOINTS = eINSTANCE.getArchitectureFramework_Viewpoints();
@@ -2287,6 +2527,7 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_FRAMEWORK__RULES = eINSTANCE.getArchitectureFramework_Rules();
@@ -2295,10 +2536,11 @@ public interface Iso42010Package extends EPackage {
 		 * The meta object literal for the '<em><b>Concerns</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARCHITECTURE_FRAMEWORK__CONCERNS = eINSTANCE.getArchitectureFramework_Concerns();
 
 	}
 
-} //Iso42010Package
+} // Iso42010Package

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,6 +30,7 @@ public class DisplayAppliedStereotypePropertiesInCompartmentAspectActionProvider
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public IAspectAction createAction(Node configurationNode) {
 		DisplayAppliedStereotypePropertiesInCompartmentPostAction action = new DisplayAppliedStereotypePropertiesInCompartmentPostAction();
 		action.init(configurationNode, this);
@@ -39,6 +40,7 @@ public class DisplayAppliedStereotypePropertiesInCompartmentAspectActionProvider
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public boolean isEnable(IPaletteEntryProxy entryProxy) {
 		return true;
 	}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,9 +42,9 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 
 /**
- * 
+ *
  * This class is used to aggregate information about the resource that contains the element that raised a match
- * 
+ *
  */
 public class ScopeEntry {
 	/**
@@ -75,7 +75,7 @@ public class ScopeEntry {
 
 	public ScopeEntry(URI resourceURI, IServiceRegistryTracker serviceRegistryTracker) {
 		super();
-		
+
 		this.serviceRegistryTracker = serviceRegistryTracker;
 		this.resourceURI = resourceURI;
 		this.modelSet = getModelSet();
@@ -84,7 +84,7 @@ public class ScopeEntry {
 
 	public ScopeEntry(URI resourceURI, ServicesRegistry servicesRegistry) {
 		super();
-		
+
 		this.serviceRegistryTracker = null;
 		this.resourceURI = resourceURI;
 		this.servicesRegistry = servicesRegistry;
@@ -94,11 +94,11 @@ public class ScopeEntry {
 	private Collection<IEditorPart> getEditors() {
 		Collection<IEditorPart> results = new HashSet<IEditorPart>();
 		IWorkbenchWindow[] windows = PlatformUI.getWorkbench().getWorkbenchWindows();
-		for(IWorkbenchWindow iWorkbenchWindow : windows) {
+		for (IWorkbenchWindow iWorkbenchWindow : windows) {
 			IWorkbenchPage[] pages = iWorkbenchWindow.getPages();
-			for(IWorkbenchPage iWorkbenchPage : pages) {
+			for (IWorkbenchPage iWorkbenchPage : pages) {
 				IEditorReference[] references = iWorkbenchPage.getEditorReferences();
-				for(IEditorReference ref : references) {
+				for (IEditorReference ref : references) {
 					IEditorPart editor = ref.getEditor(true);
 					results.add(editor);
 				}
@@ -114,17 +114,17 @@ public class ScopeEntry {
 			ServicesRegistry serviceRegistry = new ServicesRegistry();
 			serviceRegistry.add(LabelProviderService.class, 10, new LabelProviderServiceImpl());
 			serviceRegistry.add(OpenElementService.class, 10, new OpenElementServiceImpl());
-			//			PageIconRegistryServiceFactory factory = new PageIconRegistryServiceFactory();
-			//			Object instance = factory.createServiceInstance();
-			//			serviceRegistry.add(IPageIconsRegistry.class, 10, instance);
-			//			serviceRegistry.add(IPageIconsRegistry.class, 10, new PageIconRegistryServiceFactory());
+			// PageIconRegistryServiceFactory factory = new PageIconRegistryServiceFactory();
+			// Object instance = factory.createServiceInstance();
+			// serviceRegistry.add(IPageIconsRegistry.class, 10, instance);
+			// serviceRegistry.add(IPageIconsRegistry.class, 10, new PageIconRegistryServiceFactory());
 			serviceRegistry.startRegistry();
 
-			if(serviceRegistryTracker != null) {
+			if (serviceRegistryTracker != null) {
 				// register this service registry for automatic shut-down when it is no longer needed
 				serviceRegistryTracker.track(this, serviceRegistry);
 			}
-			
+
 			return serviceRegistry;
 		} catch (ServiceException e) {
 			Activator.log.error(Messages.ScopeEntry_0, e);
@@ -133,12 +133,12 @@ public class ScopeEntry {
 	}
 
 	public ModelSet getModelSet() {
-		//If null, try to find one or create one
-		if(modelSet == null) {
+		// If null, try to find one or create one
+		if (modelSet == null) {
 			try {
 				modelSet = ServiceUtils.getInstance().getModelSet(getServicesRegistry());
 			} catch (ServiceException e) {
-				//Create one
+				// Create one
 				try {
 
 					modelSet = ModelUtils.openResource(getResourceURI());
@@ -159,10 +159,10 @@ public class ScopeEntry {
 	private IEditorPart editorOnResource() {
 		Collection<IEditorPart> editors = getEditors();
 
-		for(IEditorPart editor : editors) {
+		for (IEditorPart editor : editors) {
 
-			if(editor != null) {
-				if(getResourceURI().equals(EditorUtils.getResourceURI(editor))) {
+			if (editor != null) {
+				if (getResourceURI().equals(EditorUtils.getResourceURI(editor))) {
 					return editor;
 				}
 			}
@@ -173,9 +173,9 @@ public class ScopeEntry {
 
 	private ServicesRegistry getUpdatedServiceRegistry() {
 		IEditorPart editor = editorOnResource();
-		if(editor != null) {
+		if (editor != null) {
 
-			ServicesRegistry registry = (ServicesRegistry)editor.getAdapter(ServicesRegistry.class);
+			ServicesRegistry registry = (ServicesRegistry) editor.getAdapter(ServicesRegistry.class);
 
 			return registry;
 
@@ -186,11 +186,11 @@ public class ScopeEntry {
 
 	public ServicesRegistry getServicesRegistry() {
 
-		if(servicesRegistry == null) {
-			//Try to find existing
+		if (servicesRegistry == null) {
+			// Try to find existing
 			ServicesRegistry registry = getUpdatedServiceRegistry();
-			if(registry != null) {
-				//If the OpenElementService is no yet available, we must start it
+			if (registry != null) {
+				// If the OpenElementService is no yet available, we must start it
 				try {
 					registry.getService(OpenElementService.class);
 				} catch (ServiceException e) {
@@ -210,7 +210,7 @@ public class ScopeEntry {
 	public URI getResourceURI() {
 		return resourceURI;
 	}
-	
+
 	public void setResourceURI(URI resourceURI) {
 		this.resourceURI = resourceURI;
 	}

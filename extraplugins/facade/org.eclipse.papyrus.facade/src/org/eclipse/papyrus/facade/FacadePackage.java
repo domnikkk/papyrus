@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,13 +22,14 @@ import org.eclipse.emf.ecore.EReference;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each operation of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.facade.FacadeFactory
  * @model kind="package"
  * @generated
@@ -38,6 +39,7 @@ public interface FacadePackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "facade";
@@ -46,6 +48,7 @@ public interface FacadePackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/facade";
@@ -54,6 +57,7 @@ public interface FacadePackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "facade";
@@ -62,6 +66,7 @@ public interface FacadePackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	FacadePackage eINSTANCE = org.eclipse.papyrus.facade.impl.FacadePackageImpl.init();
@@ -70,6 +75,7 @@ public interface FacadePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.impl.FacadeImpl <em>Facade</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.facade.impl.FacadeImpl
 	 * @see org.eclipse.papyrus.facade.impl.FacadePackageImpl#getFacade()
 	 * @generated
@@ -80,6 +86,7 @@ public interface FacadePackage extends EPackage {
 	 * The feature id for the '<em><b>Extension Definitions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -89,6 +96,7 @@ public interface FacadePackage extends EPackage {
 	 * The feature id for the '<em><b>Virtualmetamodel</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,6 +106,7 @@ public interface FacadePackage extends EPackage {
 	 * The number of structural features of the '<em>Facade</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,6 +116,7 @@ public interface FacadePackage extends EPackage {
 	 * The number of operations of the '<em>Facade</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,6 +127,7 @@ public interface FacadePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.Facade <em>Facade</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Facade</em>'.
 	 * @see org.eclipse.papyrus.facade.Facade
 	 * @generated
@@ -127,6 +138,7 @@ public interface FacadePackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.facade.Facade#getExtensionDefinitions <em>Extension Definitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Extension Definitions</em>'.
 	 * @see org.eclipse.papyrus.facade.Facade#getExtensionDefinitions()
 	 * @see #getFacade()
@@ -138,6 +150,7 @@ public interface FacadePackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.facade.Facade#getVirtualmetamodel <em>Virtualmetamodel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference '<em>Virtualmetamodel</em>'.
 	 * @see org.eclipse.papyrus.facade.Facade#getVirtualmetamodel()
 	 * @see #getFacade()
@@ -149,6 +162,7 @@ public interface FacadePackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -158,13 +172,14 @@ public interface FacadePackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each operation of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -172,6 +187,7 @@ public interface FacadePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.impl.FacadeImpl <em>Facade</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.facade.impl.FacadeImpl
 		 * @see org.eclipse.papyrus.facade.impl.FacadePackageImpl#getFacade()
 		 * @generated
@@ -182,6 +198,7 @@ public interface FacadePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Extension Definitions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference FACADE__EXTENSION_DEFINITIONS = eINSTANCE.getFacade_ExtensionDefinitions();
@@ -190,10 +207,11 @@ public interface FacadePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Virtualmetamodel</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference FACADE__VIRTUALMETAMODEL = eINSTANCE.getFacade_Virtualmetamodel();
 
 	}
 
-} //FacadePackage
+} // FacadePackage

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -57,7 +57,7 @@ public class CustomTimeConstraintEditPart extends TimeConstraintEditPart {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomTimeConstraintEditPart(View view) {
@@ -82,15 +82,15 @@ public class CustomTimeConstraintEditPart extends TimeConstraintEditPart {
 
 			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				View childView = (View)child.getModel();
-				switch(UMLVisualIDRegistry.getVisualID(childView)) {
+				View childView = (View) child.getModel();
+				switch (UMLVisualIDRegistry.getVisualID(childView)) {
 				case TimeConstraintLabelEditPart.VISUAL_ID:
 				case TimeConstraintAppliedStereotypeEditPart.VISUAL_ID:
 					// use ExternalLabelPrimaryDragRoleEditPolicy
 					return new ExternalLabelPrimaryDragRoleEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
@@ -111,9 +111,9 @@ public class CustomTimeConstraintEditPart extends TimeConstraintEditPart {
 
 	/**
 	 * This method creates a specific edit policy for time realted elements
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart#getPrimaryDragEditPolicy()
-	 * 
+	 *
 	 * @return <code>EditPolicy</code>
 	 * @Override
 	 */
@@ -127,8 +127,8 @@ public class CustomTimeConstraintEditPart extends TimeConstraintEditPart {
 	 */
 	@Override
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if(borderItemEditPart instanceof TimeConstraintLabelEditPart || borderItemEditPart instanceof TimeConstraintAppliedStereotypeEditPart) {
-			//use ExternalLabelPositionLocator
+		if (borderItemEditPart instanceof TimeConstraintLabelEditPart || borderItemEditPart instanceof TimeConstraintAppliedStereotypeEditPart) {
+			// use ExternalLabelPositionLocator
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
@@ -147,12 +147,12 @@ public class CustomTimeConstraintEditPart extends TimeConstraintEditPart {
 		 * Instead, we shall use the correct default size.
 		 */
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(TimeConstraintFigure.TIME_MARK_LENGTH, 1);
-		//String prefElementId = "TimeConstraint";
-		//IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
-		//String preferenceConstantWitdh = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.WIDTH);
-		//String preferenceConstantHeight = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.HEIGHT);
-		//DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(store.getInt(preferenceConstantWitdh), store.getInt(preferenceConstantHeight));
-		//FIXME: workaround for #154536
+		// String prefElementId = "TimeConstraint";
+		// IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
+		// String preferenceConstantWitdh = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.WIDTH);
+		// String preferenceConstantHeight = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.HEIGHT);
+		// DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(store.getInt(preferenceConstantWitdh), store.getInt(preferenceConstantHeight));
+		// FIXME: workaround for #154536
 		result.getBounds().setSize(result.getPreferredSize());
 		return result;
 	}
@@ -162,7 +162,7 @@ public class CustomTimeConstraintEditPart extends TimeConstraintEditPart {
 	 */
 	@Override
 	public Command getCommand(Request request) {
-		if(request instanceof CreateUnspecifiedTypeRequest) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
 			return getParent().getCommand(request);
 		}
 		return super.getCommand(request);
@@ -173,7 +173,7 @@ public class CustomTimeConstraintEditPart extends TimeConstraintEditPart {
 	 */
 	@Override
 	public void showSourceFeedback(Request request) {
-		if(request instanceof CreateUnspecifiedTypeRequest) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
 			getParent().showSourceFeedback(request);
 		}
 		super.showSourceFeedback(request);
@@ -184,7 +184,7 @@ public class CustomTimeConstraintEditPart extends TimeConstraintEditPart {
 	 */
 	@Override
 	public void eraseSourceFeedback(Request request) {
-		if(request instanceof CreateUnspecifiedTypeRequest) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
 			getParent().eraseSourceFeedback(request);
 		}
 		super.eraseSourceFeedback(request);
@@ -192,7 +192,7 @@ public class CustomTimeConstraintEditPart extends TimeConstraintEditPart {
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.TimeConstraintEditPart#createNodeShape()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -202,54 +202,54 @@ public class CustomTimeConstraintEditPart extends TimeConstraintEditPart {
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.TimeConstraintEditPart#getPrimaryShape()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public TimeConstraintFigure getPrimaryShape() {
-		return (TimeConstraintFigure)primaryShape;
+		return (TimeConstraintFigure) primaryShape;
 	}
 
 	public class TimeConstraintFigure extends TimeMarkElementFigure {
 
 		/**
 		 * the length of the time mark
-		 * 
+		 *
 		 */
 		private static final int TIME_MARK_LENGTH = 20;
 
 		/**
 		 * The side where the figure currently is
-		 * 
+		 *
 		 */
 		private int sideOfFigure = PositionConstants.NONE;
 
 		/**
 		 * Update the side of the lifeline where the figure lies
-		 * 
+		 *
 		 * @param side
-		 *        side where the figure must be
+		 *            side where the figure must be
 		 * @param newLocation
-		 *        the new location rectangle
+		 *            the new location rectangle
 		 * @generated NOT
 		 */
 		public void setCurrentSideOfFigure(int side, Rectangle newLocation) {
 			// no effect if side has not changed
-			if(sideOfFigure != side && !(PositionConstants.NONE == sideOfFigure && side == PositionConstants.EAST)) {
+			if (sideOfFigure != side && !(PositionConstants.NONE == sideOfFigure && side == PositionConstants.EAST)) {
 				// mirror the label too
 				IGraphicalEditPart labelChild = getChildBySemanticHint(UMLVisualIDRegistry.getType(TimeConstraintLabelEditPart.VISUAL_ID));
-				if(labelChild instanceof TimeConstraintLabelEditPart) {
-					TimeConstraintLabelEditPart label = (TimeConstraintLabelEditPart)labelChild;
+				if (labelChild instanceof TimeConstraintLabelEditPart) {
+					TimeConstraintLabelEditPart label = (TimeConstraintLabelEditPart) labelChild;
 					int labelWidth = label.getFigure().getMinimumSize().width;
-					if(label.getNotationView() instanceof Node) {
-						LayoutConstraint constraint = ((Node)label.getNotationView()).getLayoutConstraint();
+					if (label.getNotationView() instanceof Node) {
+						LayoutConstraint constraint = ((Node) label.getNotationView()).getLayoutConstraint();
 						// update model location constraint for persisting the mirror effect
-						if(constraint instanceof Location) {
-							int xLocation = ((Location)constraint).getX();
+						if (constraint instanceof Location) {
+							int xLocation = ((Location) constraint).getX();
 							int mirroredLocation = -xLocation - labelWidth;
 							TransactionalEditingDomain dom = getEditingDomain();
 							org.eclipse.emf.common.command.Command setCmd = SetCommand.create(dom, constraint, NotationPackage.eINSTANCE.getLocation_X(), mirroredLocation);
-							TransactionalCommandStack stack = (TransactionalCommandStack)dom.getCommandStack();
+							TransactionalCommandStack stack = (TransactionalCommandStack) dom.getCommandStack();
 							Map<String, Boolean> options = new HashMap<String, Boolean>();
 							options.put(Transaction.OPTION_NO_NOTIFICATIONS, true);
 							options.put(Transaction.OPTION_NO_UNDO, true);
@@ -258,7 +258,7 @@ public class CustomTimeConstraintEditPart extends TimeConstraintEditPart {
 								stack.execute(setCmd, options);
 								// then, update graphically for short time effect
 								IBorderItemLocator locator = label.getBorderItemLocator();
-								Rectangle constrRect = ((ExternalLabelPositionLocator)locator).getConstraint();
+								Rectangle constrRect = ((ExternalLabelPositionLocator) locator).getConstraint();
 								constrRect.x = mirroredLocation;
 								locator.relocate(label.getFigure());
 							} catch (InterruptedException e) {

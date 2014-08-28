@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ public abstract class MessageFigure extends UMLEdgeFigure {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public MessageFigure() {
 		this(null);
@@ -61,31 +61,33 @@ public abstract class MessageFigure extends UMLEdgeFigure {
 		setTargetDecoration(createTargetDecoration());
 	}
 
+	@Override
 	public void setLineWidth(int w) {
 		super.setLineWidth(w);
-		if(getSourceDecoration() instanceof Shape) {
-			((Shape)getSourceDecoration()).setLineWidth(w);
+		if (getSourceDecoration() instanceof Shape) {
+			((Shape) getSourceDecoration()).setLineWidth(w);
 		}
-		if(getTargetDecoration() instanceof Shape) {
-			((Shape)getTargetDecoration()).setLineWidth(w);
+		if (getTargetDecoration() instanceof Shape) {
+			((Shape) getTargetDecoration()).setLineWidth(w);
 		}
 	}
 
 	@Override
 	public void setForegroundColor(Color c) {
 		super.setForegroundColor(c);
-		if(getSourceDecoration() instanceof Shape) {
-			((Shape)getSourceDecoration()).setForegroundColor(c);
-			((Shape)getSourceDecoration()).setBackgroundColor(c);
+		if (getSourceDecoration() instanceof Shape) {
+			((Shape) getSourceDecoration()).setForegroundColor(c);
+			((Shape) getSourceDecoration()).setBackgroundColor(c);
 		}
-		if(getTargetDecoration() instanceof Shape) {
-			((Shape)getTargetDecoration()).setForegroundColor(c);
-			((Shape)getTargetDecoration()).setBackgroundColor(c);
+		if (getTargetDecoration() instanceof Shape) {
+			((Shape) getTargetDecoration()).setForegroundColor(c);
+			((Shape) getTargetDecoration()).setBackgroundColor(c);
 		}
 	}
 
 	protected abstract RotatableDecoration createTargetDecoration();
 
+	@Override
 	protected void createContents() {
 		super.createContents();
 		messageLabelFigure = new WrappingLabel();
@@ -103,7 +105,7 @@ public abstract class MessageFigure extends UMLEdgeFigure {
 	}
 
 	public IMapMode getMapMode() {
-		if(mapMode != null) {
+		if (mapMode != null) {
 			return mapMode;
 		}
 		return MapModeUtil.getMapMode();
@@ -118,7 +120,7 @@ public abstract class MessageFigure extends UMLEdgeFigure {
 
 	/**
 	 * @param selection
-	 *        the selection to set
+	 *            the selection to set
 	 */
 	public void setSelection(boolean selection) {
 		this.selection = selection;
@@ -134,12 +136,12 @@ public abstract class MessageFigure extends UMLEdgeFigure {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx#getCursor()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public Cursor getCursor() {
-		if(customCursor != null) {
+		if (customCursor != null) {
 			return customCursor;
 		}
 		return super.getCursor();
@@ -147,7 +149,7 @@ public abstract class MessageFigure extends UMLEdgeFigure {
 
 	/**
 	 * @param customCursor
-	 *        the customCursor to set
+	 *            the customCursor to set
 	 */
 	public void setCustomCursor(Cursor customCursor) {
 		this.customCursor = customCursor;
@@ -155,7 +157,7 @@ public abstract class MessageFigure extends UMLEdgeFigure {
 
 	/**
 	 * @param mapMode
-	 *        the mapMode to set
+	 *            the mapMode to set
 	 */
 	public void setMapMode(IMapMode mapMode) {
 		this.mapMode = mapMode;

@@ -106,7 +106,7 @@ import org.eclipse.papyrus.infra.gmfdiag.css.notation.CSSDiagramImpl;
  * @see {@link org.eclipse.papyrus.infra.gmfdiag.css.helper.CSSHelper#installCSSSupport(org.eclipse.emf.ecore.resource.ResourceSet)}
  *
  * @author Camille Letavernier
- * 
+ *
  */
 public class CSSNotationFactory extends NotationFactoryImpl {
 

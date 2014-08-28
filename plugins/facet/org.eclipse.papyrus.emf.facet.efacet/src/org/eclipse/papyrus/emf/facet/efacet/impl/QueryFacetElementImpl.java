@@ -1,26 +1,23 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.emf.facet.efacet.EFacetPackage;
 import org.eclipse.papyrus.emf.facet.efacet.Query;
 import org.eclipse.papyrus.emf.facet.efacet.QueryFacetElement;
@@ -32,7 +29,7 @@ import org.eclipse.papyrus.emf.facet.efacet.QueryFacetElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryFacetElementImpl#getQuery <em>Query</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryFacetElementImpl#getQuery <em>Query</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +43,7 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 	 * The cached value of the '{@link #getQuery() <em>Query</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getQuery()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -57,6 +55,7 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -68,6 +67,7 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -80,6 +80,7 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -91,6 +92,7 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -112,6 +114,7 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -120,10 +123,10 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 		if (newQuery != this.query) {
 			NotificationChain msgs = null;
 			if (this.query != null) {
-				msgs = ((InternalEObject)this.query).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EFacetPackage.QUERY_FACET_ELEMENT__QUERY, null, msgs);
+				msgs = ((InternalEObject) this.query).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EFacetPackage.QUERY_FACET_ELEMENT__QUERY, null, msgs);
 			}
 			if (newQuery != null) {
-				msgs = ((InternalEObject)newQuery).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EFacetPackage.QUERY_FACET_ELEMENT__QUERY, null, msgs);
+				msgs = ((InternalEObject) newQuery).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EFacetPackage.QUERY_FACET_ELEMENT__QUERY, null, msgs);
 			}
 			msgs = basicSetQuery(newQuery, msgs);
 			if (msgs != null) {
@@ -138,6 +141,7 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -154,6 +158,7 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -170,6 +175,7 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -178,7 +184,7 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case EFacetPackage.QUERY_FACET_ELEMENT__QUERY:
-			setQuery((Query)newValue);
+			setQuery((Query) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,6 +193,7 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -195,7 +202,7 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case EFacetPackage.QUERY_FACET_ELEMENT__QUERY:
-			setQuery((Query)null);
+			setQuery((Query) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -204,6 +211,7 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -217,4 +225,4 @@ public abstract class QueryFacetElementImpl extends FacetElementImpl implements 
 		return super.eIsSet(featureID);
 	}
 
-} //QueryFacetElementImpl
+} // QueryFacetElementImpl

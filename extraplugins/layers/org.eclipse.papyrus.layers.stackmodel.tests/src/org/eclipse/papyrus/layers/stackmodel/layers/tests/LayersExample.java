@@ -7,18 +7,12 @@ import java.io.IOException;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
 import org.eclipse.emf.ecore.util.Diagnostician;
-
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerNamedStyle;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
@@ -27,6 +21,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
  * <!-- begin-user-doc -->
  * A sample utility for the '<em><b>layers</b></em>' package.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class LayersExample {
@@ -34,26 +29,28 @@ public class LayersExample {
 	 * <!-- begin-user-doc -->
 	 * Load all the argument file paths or URIs as instances of the model.
 	 * <!-- end-user-doc -->
-	 * @param args the file paths or URIs.
+	 *
+	 * @param args
+	 *            the file paths or URIs.
 	 * @generated
 	 */
 	public static void main(String[] args) {
 		// Create a resource set to hold the resources.
 		//
 		ResourceSet resourceSet = new ResourceSetImpl();
-		
+
 		// Register the appropriate resource factory to handle all file extensions.
 		//
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put
-			(Resource.Factory.Registry.DEFAULT_EXTENSION, 
-			 new XMIResourceFactoryImpl());
+				(Resource.Factory.Registry.DEFAULT_EXTENSION,
+						new XMIResourceFactoryImpl());
 
 		// Register the package to ensure it is available during loading.
 		//
 		resourceSet.getPackageRegistry().put
-			(LayersPackage.eNS_URI, 
-			 LayersPackage.eINSTANCE);
-        
+				(LayersPackage.eNS_URI,
+						LayersPackage.eINSTANCE);
+
 		// If there are no arguments, emit an appropriate usage message.
 		//
 		if (args.length == 0) {
@@ -63,8 +60,7 @@ public class LayersExample {
 				LayerNamedStyle root = LayersFactory.eINSTANCE.createLayerNamedStyle();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
-			}
-			catch (IOException exception) {
+			} catch (IOException exception) {
 				exception.printStackTrace();
 			}
 		}
@@ -77,7 +73,7 @@ public class LayersExample {
 				// Otherwise, it's directly treated as a URL.
 				//
 				File file = new File(args[i]);
-				URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()): URI.createURI(args[i]);
+				URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()) : URI.createURI(args[i]);
 
 				try {
 					// Demand load resource for this file.
@@ -93,21 +89,23 @@ public class LayersExample {
 							printDiagnostic(diagnostic, "");
 						}
 					}
-				}
-				catch (RuntimeException exception) {
+				} catch (RuntimeException exception) {
 					System.out.println("Problem loading " + uri);
 					exception.printStackTrace();
 				}
 			}
 		}
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * Prints diagnostics with indentation.
 	 * <!-- end-user-doc -->
-	 * @param diagnostic the diagnostic to print.
-	 * @param indent the indentation for printing.
+	 *
+	 * @param diagnostic
+	 *            the diagnostic to print.
+	 * @param indent
+	 *            the indentation for printing.
 	 * @generated
 	 */
 	protected static void printDiagnostic(Diagnostic diagnostic, String indent) {
@@ -118,4 +116,4 @@ public class LayersExample {
 		}
 	}
 
-} //LayersExample
+} // LayersExample

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2014 CEA LIST, Atos Origin, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,7 +51,7 @@ public class PapyrusNodeFigure extends NodeFigure implements IPapyrusNodeFigure 
 
 	/** Get custom dash values */
 	public int[] getCustomDash() {
-		if(customDash == null) {
+		if (customDash == null) {
 			// Initialize dash property for dashed border representation.
 			customDash = DEFAULT_CUSTOM_DASH;
 		}
@@ -86,7 +86,7 @@ public class PapyrusNodeFigure extends NodeFigure implements IPapyrusNodeFigure 
 	 * Get the figure on which the border must be drawn. Children should
 	 * override and implement this method in case the border must not be drawn
 	 * on the overall figure. The returned figure shall be created in the method {@link #createCompositeFigureStructure()}.
-	 * 
+	 *
 	 * @return the figure to draw the border on
 	 * @see #createCompositeFigureStructure()
 	 */
@@ -98,29 +98,31 @@ public class PapyrusNodeFigure extends NodeFigure implements IPapyrusNodeFigure 
 	/**
 	 * Sets the border to the bordered figure. This method is not intended to be
 	 * overridden. Override {@link #getBorderedFigure()} instead.
-	 * 
+	 *
 	 * @param borderedFigure
-	 *        the figure on which the border shall be drawn (or null for
-	 *        this figure)
+	 *            the figure on which the border shall be drawn (or null for
+	 *            this figure)
 	 * @param border
-	 *        The new border
+	 *            The new border
 	 * @see IFigure#setBorder(Border)
 	 */
 	protected void setBorder(IFigure borderedFigure, Border border) {
-		if(borderedFigure == null) {
+		if (borderedFigure == null) {
 			super.setBorder(border);
 		} else {
 			borderedFigure.setBorder(border);
 		}
 	}
 
+	@Override
 	public boolean isShadow() {
 		return shadow;
 	}
 
+	@Override
 	public void setShadow(boolean shadow) {
 		this.shadow = shadow;
-		if(shadow == true) {
+		if (shadow == true) {
 			setBorder(getBorderedFigure(), shadowborder);
 		} else {
 			setBorder(getBorderedFigure(), getDefaultBorder(null));
@@ -129,10 +131,11 @@ public class PapyrusNodeFigure extends NodeFigure implements IPapyrusNodeFigure 
 
 	/**
 	 * Sets the border color.
-	 * 
+	 *
 	 * @param borderColor
-	 *        the border color
+	 *            the border color
 	 */
+	@Override
 	public void setBorderColor(Color borderColor) {
 		this.borderColor = borderColor;
 		setBorder(getBorderedFigure(), getDefaultBorder(borderColor));
@@ -142,16 +145,16 @@ public class PapyrusNodeFigure extends NodeFigure implements IPapyrusNodeFigure 
 	 * Get the default non shadow border to use. Children can override and
 	 * implement this method if necessary, taking care not to fail if
 	 * borderColor is null
-	 * 
+	 *
 	 * @param borderColor
-	 *        the color of the border to take if possible or null
+	 *            the color of the border to take if possible or null
 	 * @return a non shadow border
 	 */
 	protected Border getDefaultBorder(Color borderColor) {
 
 		// Default border is line border
 		LineBorder lineBorder = null;
-		if(borderColor != null) {
+		if (borderColor != null) {
 			lineBorder = new LineBorder(borderColor);
 		} else {
 			lineBorder = new LineBorder();
@@ -166,18 +169,19 @@ public class PapyrusNodeFigure extends NodeFigure implements IPapyrusNodeFigure 
 
 	/**
 	 * Gets the border color.
-	 * 
+	 *
 	 * @return the border color
 	 */
+	@Override
 	public Color getBorderColor() {
 		return this.borderColor;
 	}
 
 	/**
 	 * Paint figure.
-	 * 
+	 *
 	 * @param graphics
-	 *        the graphics
+	 *            the graphics
 	 */
 	@Override
 	public void paintFigure(Graphics graphics) {
@@ -193,14 +197,14 @@ public class PapyrusNodeFigure extends NodeFigure implements IPapyrusNodeFigure 
 	 * Paint the background of the figure. If this figure uses gradient, then it
 	 * will paint the background with the gradient informations. Otherwise it
 	 * will use the background color.
-	 * 
+	 *
 	 * @param graphics
-	 *        the graphics
+	 *            the graphics
 	 * @param rectangle
-	 *        the rectangle where the background needs to be fill.
+	 *            the rectangle where the background needs to be fill.
 	 */
 	protected void paintBackground(Graphics graphics, Rectangle rectangle) {
-		if(isUsingGradient()) {
+		if (isUsingGradient()) {
 			applyTransparency(graphics);
 			boolean isVertical = (getGradientStyle() == GradientStyle.VERTICAL) ? true : false;
 			graphics.setBackgroundColor(ColorRegistry.getInstance().getColor(getGradientColor1()));
@@ -216,14 +220,14 @@ public class PapyrusNodeFigure extends NodeFigure implements IPapyrusNodeFigure 
 	/**
 	 * <pre>
 	 * This figure manages the border representation with custom dashes.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
 	@Override
 	protected void paintBorder(Graphics graphics) {
 
-		if(getLineStyle() == Graphics.LINE_CUSTOM) {
+		if (getLineStyle() == Graphics.LINE_CUSTOM) {
 			graphics.setLineDash(getCustomDash());
 		}
 		super.paintBorder(graphics);
@@ -232,17 +236,17 @@ public class PapyrusNodeFigure extends NodeFigure implements IPapyrusNodeFigure 
 	/**
 	 * <pre>
 	 * This method propagates the new line style to the border
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#setLineStyle(int)
 	 * </pre>
-	 * 
+	 *
 	 * @param s
-	 *        the new line style value
+	 *            the new line style value
 	 */
 	@Override
 	public void setLineStyle(int s) {
-		if((getBorder() != null) && (getBorder() instanceof LineBorder)) {
-			((LineBorder)getBorder()).setStyle(s);
+		if ((getBorder() != null) && (getBorder() instanceof LineBorder)) {
+			((LineBorder) getBorder()).setStyle(s);
 		}
 
 		super.setLineStyle(s);
@@ -251,17 +255,17 @@ public class PapyrusNodeFigure extends NodeFigure implements IPapyrusNodeFigure 
 	/**
 	 * <pre>
 	 * This method propagates the new line width to the border
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#setLineWidth(int)
 	 * </pre>
-	 * 
+	 *
 	 * @param w
-	 *        the new line width value
+	 *            the new line width value
 	 */
 	@Override
 	public void setLineWidth(int w) {
-		if((getBorder() != null) && (getBorder() instanceof LineBorder)) {
-			((LineBorder)getBorder()).setWidth(w);
+		if ((getBorder() != null) && (getBorder() instanceof LineBorder)) {
+			((LineBorder) getBorder()).setWidth(w);
 		}
 
 		super.setLineWidth(w);

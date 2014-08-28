@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -28,32 +28,34 @@ import org.eclipse.papyrus.uml.diagram.common.part.UmlGmfDiagramEditor;
 
 public class ValidationDecoratorProvider extends org.eclipse.papyrus.uml.diagram.common.providers.ValidationDecoratorProvider implements IDecoratorProvider {
 
+	@Override
 	public void createDecorators(IDecoratorTarget decoratorTarget) {
-		EditPart editPart = (EditPart)decoratorTarget.getAdapter(EditPart.class);
-		if(editPart instanceof GraphicalEditPart || editPart instanceof AbstractConnectionEditPart) {
+		EditPart editPart = (EditPart) decoratorTarget.getAdapter(EditPart.class);
+		if (editPart instanceof GraphicalEditPart || editPart instanceof AbstractConnectionEditPart) {
 			Object model = editPart.getModel();
-			if((model instanceof View)) {
-				View view = (View)model;
-				if(!(view instanceof Edge) && !view.isSetElement()) {
+			if ((model instanceof View)) {
+				View view = (View) model;
+				if (!(view instanceof Edge) && !view.isSetElement()) {
 					return;
 				}
 			}
 			EditDomain ed = editPart.getViewer().getEditDomain();
-			if(!(ed instanceof DiagramEditDomain)) {
+			if (!(ed instanceof DiagramEditDomain)) {
 				return;
 			}
-			if(((DiagramEditDomain)ed).getEditorPart() instanceof UmlGmfDiagramEditor) {
+			if (((DiagramEditDomain) ed).getEditorPart() instanceof UmlGmfDiagramEditor) {
 				decoratorTarget.installDecorator(KEY, new StatusDecorator(decoratorTarget));
 			}
 		}
 	}
 
+	@Override
 	public boolean provides(IOperation operation) {
-		if(!(operation instanceof CreateDecoratorsOperation)) {
+		if (!(operation instanceof CreateDecoratorsOperation)) {
 			return false;
 		}
-		IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation)operation).getDecoratorTarget();
-		View view = (View)decoratorTarget.getAdapter(View.class);
+		IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation) operation).getDecoratorTarget();
+		View view = (View) decoratorTarget.getAdapter(View.class);
 		return view != null && ElementTypes.DIAGRAM_ID.equals(view.getDiagram().getType());
 	}
 

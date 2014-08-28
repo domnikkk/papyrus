@@ -13,7 +13,7 @@ import org.eclipse.papyrus.eastadl.timing.Event;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.events.EventFeatureFlaw#getFeatureFlaw <em>Feature Flaw</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.events.EventFeatureFlaw#getFeatureFlaw <em>Feature Flaw</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,10 +26,10 @@ public interface EventFeatureFlaw extends Event {
 	 * Returns the value of the '<em><b>Feature Flaw</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Feature Flaw</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Feature Flaw</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Feature Flaw</em>' reference.
 	 * @see #setFeatureFlaw(FeatureFlaw)
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getEventFeatureFlaw_FeatureFlaw()
@@ -42,7 +42,9 @@ public interface EventFeatureFlaw extends Event {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.events.EventFeatureFlaw#getFeatureFlaw <em>Feature Flaw</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Feature Flaw</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Feature Flaw</em>' reference.
 	 * @see #getFeatureFlaw()
 	 * @generated
 	 */

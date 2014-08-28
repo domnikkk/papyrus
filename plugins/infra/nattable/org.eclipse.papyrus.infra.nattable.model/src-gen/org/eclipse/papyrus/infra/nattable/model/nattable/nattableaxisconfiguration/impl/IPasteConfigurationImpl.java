@@ -1,25 +1,24 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
 package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IPasteConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
@@ -31,13 +30,11 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.IPasteConfigurationImpl#getPostActions <em>Post Actions
- * </em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.IPasteConfigurationImpl#isDetachedMode <em>Detached
- * Mode</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.IPasteConfigurationImpl#getPostActions <em>Post Actions </em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.IPasteConfigurationImpl#isDetachedMode <em>Detached Mode</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class IPasteConfigurationImpl extends MinimalEObjectImpl.Container implements IPasteConfiguration {
@@ -46,7 +43,7 @@ public class IPasteConfigurationImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getPostActions() <em>Post Actions</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPostActions()
 	 * @generated
 	 * @ordered
@@ -57,7 +54,7 @@ public class IPasteConfigurationImpl extends MinimalEObjectImpl.Container implem
 	 * The default value of the '{@link #isDetachedMode() <em>Detached Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDetachedMode()
 	 * @generated
 	 * @ordered
@@ -68,7 +65,7 @@ public class IPasteConfigurationImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #isDetachedMode() <em>Detached Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDetachedMode()
 	 * @generated
 	 * @ordered
@@ -78,7 +75,7 @@ public class IPasteConfigurationImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IPasteConfigurationImpl() {
@@ -88,7 +85,7 @@ public class IPasteConfigurationImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,11 +96,12 @@ public class IPasteConfigurationImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<String> getPostActions() {
-		if(postActions == null) {
+		if (postActions == null) {
 			postActions = new EDataTypeUniqueEList<String>(String.class, this, NattableaxisconfigurationPackage.IPASTE_CONFIGURATION__POST_ACTIONS);
 		}
 		return postActions;
@@ -112,9 +110,10 @@ public class IPasteConfigurationImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isDetachedMode() {
 		return detachedMode;
 	}
@@ -122,25 +121,27 @@ public class IPasteConfigurationImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDetachedMode(boolean newDetachedMode) {
 		boolean oldDetachedMode = detachedMode;
 		detachedMode = newDetachedMode;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableaxisconfigurationPackage.IPASTE_CONFIGURATION__DETACHED_MODE, oldDetachedMode, detachedMode));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisconfigurationPackage.IPASTE_CONFIGURATION__POST_ACTIONS:
 			return getPostActions();
 		case NattableaxisconfigurationPackage.IPASTE_CONFIGURATION__DETACHED_MODE:
@@ -152,19 +153,19 @@ public class IPasteConfigurationImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisconfigurationPackage.IPASTE_CONFIGURATION__POST_ACTIONS:
 			getPostActions().clear();
-			getPostActions().addAll((Collection<? extends String>)newValue);
+			getPostActions().addAll((Collection<? extends String>) newValue);
 			return;
 		case NattableaxisconfigurationPackage.IPASTE_CONFIGURATION__DETACHED_MODE:
-			setDetachedMode((Boolean)newValue);
+			setDetachedMode((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -173,12 +174,12 @@ public class IPasteConfigurationImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisconfigurationPackage.IPASTE_CONFIGURATION__POST_ACTIONS:
 			getPostActions().clear();
 			return;
@@ -192,12 +193,12 @@ public class IPasteConfigurationImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisconfigurationPackage.IPASTE_CONFIGURATION__POST_ACTIONS:
 			return postActions != null && !postActions.isEmpty();
 		case NattableaxisconfigurationPackage.IPASTE_CONFIGURATION__DETACHED_MODE:
@@ -209,13 +210,14 @@ public class IPasteConfigurationImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (postActions: "); //$NON-NLS-1$
@@ -226,4 +228,4 @@ public class IPasteConfigurationImpl extends MinimalEObjectImpl.Container implem
 		return result.toString();
 	}
 
-} //IPasteConfigurationImpl
+} // IPasteConfigurationImpl

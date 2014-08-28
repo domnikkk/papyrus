@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,9 +38,9 @@ public class SpecificViewContentProvider implements IHierarchicContentProvider {
 		try {
 			IPageManager pageManager = context.getService(IPageManager.class);
 			List<Diagram> result = new LinkedList<Diagram>();
-			for(Object page : pageManager.allPages()) {
-				if(page instanceof Diagram) {
-					result.add((Diagram)page);
+			for (Object page : pageManager.allPages()) {
+				if (page instanceof Diagram) {
+					result.add((Diagram) page);
 				}
 			}
 			return result.toArray(new Diagram[result.size()]);
@@ -51,10 +51,10 @@ public class SpecificViewContentProvider implements IHierarchicContentProvider {
 	}
 
 	public Object[] getElements(Object inputElement) {
-		if(roots == null) {
-			if(inputElement instanceof EObject) {
+		if (roots == null) {
+			if (inputElement instanceof EObject) {
 				try {
-					ServicesRegistry registry = ServiceUtilsForEObject.getInstance().getServiceRegistry((EObject)inputElement);
+					ServicesRegistry registry = ServiceUtilsForEObject.getInstance().getServiceRegistry((EObject) inputElement);
 					roots = getRoots(registry);
 				} catch (ServiceException ex) {
 					Activator.log.error(ex);
@@ -65,13 +65,13 @@ public class SpecificViewContentProvider implements IHierarchicContentProvider {
 	}
 
 	public Object[] getChildren(Object parentElement) {
-		if(parentElement instanceof EObject) {
+		if (parentElement instanceof EObject) {
 			List<Object> validChildren = new LinkedList<Object>();
-			for(Object childElement : ((EObject)parentElement).eContents()) {
-				if(isValidValue(childElement)) {
+			for (Object childElement : ((EObject) parentElement).eContents()) {
+				if (isValidValue(childElement)) {
 					validChildren.add(childElement);
 				} else {
-					//Go deeper, to find e.g. TopView(Class)::AttributeCompartment(Class)::TopView(Property)
+					// Go deeper, to find e.g. TopView(Class)::AttributeCompartment(Class)::TopView(Property)
 					validChildren.addAll(Arrays.asList(getChildren(childElement)));
 				}
 			}
@@ -82,8 +82,8 @@ public class SpecificViewContentProvider implements IHierarchicContentProvider {
 	}
 
 	public Object getParent(Object element) {
-		if(element instanceof EObject) {
-			return ((EObject)element).eContainer();
+		if (element instanceof EObject) {
+			return ((EObject) element).eContainer();
 		}
 		return null;
 	}
@@ -93,17 +93,17 @@ public class SpecificViewContentProvider implements IHierarchicContentProvider {
 	}
 
 	public void dispose() {
-		//Nothing
+		// Nothing
 	}
 
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		//Ignored
+		// Ignored
 	}
 
 	public boolean isValidValue(Object element) {
-		if(element instanceof View && ((View)element).getElement() == null) {
+		if (element instanceof View && ((View) element).getElement() == null) {
 			return false;
 		}
-		return element instanceof View && SemanticElementHelper.findTopView((View)element) == element;
+		return element instanceof View && SemanticElementHelper.findTopView((View) element) == element;
 	}
 }

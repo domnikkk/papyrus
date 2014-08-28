@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,7 @@ package org.eclipse.papyrus.uml.diagram.wizards.template;
 
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ITableLabelProvider;
-import org.eclipse.papyrus.uml.diagram.wizards.Messages;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.graphics.Image;
 
 /**
@@ -26,8 +26,10 @@ public class ModelTemplatesLabelProvider implements ITableLabelProvider {
 	/**
 	 * Gets the column image.
 	 *
-	 * @param element the element
-	 * @param columnIndex the column index
+	 * @param element
+	 *            the element
+	 * @param columnIndex
+	 *            the column index
 	 * @return the column image
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnImage(java.lang.Object, int)
 	 */
@@ -38,15 +40,17 @@ public class ModelTemplatesLabelProvider implements ITableLabelProvider {
 	/**
 	 * Gets the column text.
 	 *
-	 * @param element the element
-	 * @param columnIndex the column index
+	 * @param element
+	 *            the element
+	 * @param columnIndex
+	 *            the column index
 	 * @return the column text
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnText(java.lang.Object, int)
 	 */
 	public String getColumnText(Object element, int columnIndex) {
-		if(element instanceof ModelTemplateDescription) {
-			ModelTemplateDescription modelTemplate = (ModelTemplateDescription)element;
-			return Messages.bind(org.eclipse.papyrus.uml.diagram.wizards.Messages.ModelTemplatesLabelProvider_model_template_description_text, modelTemplate.getName(), modelTemplate.getFileName());
+		if (element instanceof ModelTemplateDescription) {
+			ModelTemplateDescription modelTemplate = (ModelTemplateDescription) element;
+			return NLS.bind(org.eclipse.papyrus.uml.diagram.wizards.Messages.ModelTemplatesLabelProvider_model_template_description_text, modelTemplate.getName(), modelTemplate.getFileName());
 		}
 		return null;
 	}
@@ -54,7 +58,8 @@ public class ModelTemplatesLabelProvider implements ITableLabelProvider {
 	/**
 	 * Adds the listener.
 	 *
-	 * @param listener the listener
+	 * @param listener
+	 *            the listener
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
 	 */
 	public void addListener(ILabelProviderListener listener) {
@@ -73,8 +78,10 @@ public class ModelTemplatesLabelProvider implements ITableLabelProvider {
 	/**
 	 * Checks if is label property.
 	 *
-	 * @param element the element
-	 * @param property the property
+	 * @param element
+	 *            the element
+	 * @param property
+	 *            the property
 	 * @return true, if is label property
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#isLabelProperty(java.lang.Object, java.lang.String)
 	 */
@@ -86,7 +93,8 @@ public class ModelTemplatesLabelProvider implements ITableLabelProvider {
 	/**
 	 * Removes the listener.
 	 *
-	 * @param listener the listener
+	 * @param listener
+	 *            the listener
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#removeListener(org.eclipse.jface.viewers.ILabelProviderListener)
 	 */
 	public void removeListener(ILabelProviderListener listener) {

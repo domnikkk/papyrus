@@ -25,7 +25,7 @@ import org.eclipse.papyrus.uml.diagram.paletteconfiguration.Paletteconfiguration
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.impl.DrawerConfigurationImpl#getOwnedConfigurations <em>Owned Configurations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.impl.DrawerConfigurationImpl#getOwnedConfigurations <em>Owned Configurations</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +36,7 @@ public class DrawerConfigurationImpl extends ConfigurationImpl implements Drawer
 	 * The cached value of the '{@link #getOwnedConfigurations() <em>Owned Configurations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOwnedConfigurations()
 	 * @generated
 	 * @ordered
@@ -45,6 +46,7 @@ public class DrawerConfigurationImpl extends ConfigurationImpl implements Drawer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DrawerConfigurationImpl() {
@@ -54,6 +56,7 @@ public class DrawerConfigurationImpl extends ConfigurationImpl implements Drawer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -64,6 +67,7 @@ public class DrawerConfigurationImpl extends ConfigurationImpl implements Drawer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<ChildConfiguration> getOwnedConfigurations() {
@@ -76,13 +80,14 @@ public class DrawerConfigurationImpl extends ConfigurationImpl implements Drawer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PaletteconfigurationPackage.DRAWER_CONFIGURATION__OWNED_CONFIGURATIONS:
-				return ((InternalEList<?>)getOwnedConfigurations()).basicRemove(otherEnd, msgs);
+		case PaletteconfigurationPackage.DRAWER_CONFIGURATION__OWNED_CONFIGURATIONS:
+			return ((InternalEList<?>) getOwnedConfigurations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -90,13 +95,14 @@ public class DrawerConfigurationImpl extends ConfigurationImpl implements Drawer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaletteconfigurationPackage.DRAWER_CONFIGURATION__OWNED_CONFIGURATIONS:
-				return getOwnedConfigurations();
+		case PaletteconfigurationPackage.DRAWER_CONFIGURATION__OWNED_CONFIGURATIONS:
+			return getOwnedConfigurations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -104,16 +110,17 @@ public class DrawerConfigurationImpl extends ConfigurationImpl implements Drawer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaletteconfigurationPackage.DRAWER_CONFIGURATION__OWNED_CONFIGURATIONS:
-				getOwnedConfigurations().clear();
-				getOwnedConfigurations().addAll((Collection<? extends ChildConfiguration>)newValue);
-				return;
+		case PaletteconfigurationPackage.DRAWER_CONFIGURATION__OWNED_CONFIGURATIONS:
+			getOwnedConfigurations().clear();
+			getOwnedConfigurations().addAll((Collection<? extends ChildConfiguration>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -121,14 +128,15 @@ public class DrawerConfigurationImpl extends ConfigurationImpl implements Drawer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaletteconfigurationPackage.DRAWER_CONFIGURATION__OWNED_CONFIGURATIONS:
-				getOwnedConfigurations().clear();
-				return;
+		case PaletteconfigurationPackage.DRAWER_CONFIGURATION__OWNED_CONFIGURATIONS:
+			getOwnedConfigurations().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -136,15 +144,16 @@ public class DrawerConfigurationImpl extends ConfigurationImpl implements Drawer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaletteconfigurationPackage.DRAWER_CONFIGURATION__OWNED_CONFIGURATIONS:
-				return ownedConfigurations != null && !ownedConfigurations.isEmpty();
+		case PaletteconfigurationPackage.DRAWER_CONFIGURATION__OWNED_CONFIGURATIONS:
+			return ownedConfigurations != null && !ownedConfigurations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //DrawerConfigurationImpl
+} // DrawerConfigurationImpl

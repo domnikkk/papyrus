@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,9 +32,9 @@ public class AndRuleEditHelperAdvice extends AbstractEditHelperAdvice implements
 	public void init(AndRule ruleConfiguration) {
 		// configuration should be a AndRule as declared in the extension point
 		composedEditHelperAdvices = new ArrayList<IInvariantEditHelperAdvice<InvariantRuleConfiguration>>();
-		for(InvariantRuleConfiguration composedRule : ruleConfiguration.getComposedRules()) {
+		for (InvariantRuleConfiguration composedRule : ruleConfiguration.getComposedRules()) {
 			IInvariantEditHelperAdvice<InvariantRuleConfiguration> editHelperAdvice = RuleConfigurationFactoryRegistry.getInstance().createEditHelperAdvice(composedRule);
-			if(editHelperAdvice != null) {
+			if (editHelperAdvice != null) {
 				composedEditHelperAdvices.add(editHelperAdvice);
 			}
 		}
@@ -46,8 +46,8 @@ public class AndRuleEditHelperAdvice extends AbstractEditHelperAdvice implements
 	@Override
 	public boolean approveRequest(IEditCommandRequest request) {
 		// to approve the request, all the composed edit helper advices should approve it
-		for(IEditHelperAdvice advice : composedEditHelperAdvices) {
-			if(!advice.approveRequest(request)) {
+		for (IEditHelperAdvice advice : composedEditHelperAdvices) {
+			if (!advice.approveRequest(request)) {
 				return false;
 			}
 		}

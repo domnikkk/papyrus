@@ -17,11 +17,11 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.AbstractSelection#getElement <em>Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.AbstractSelection#getKind <em>Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.AbstractSelection#getSelectionRef <em>Selection Ref</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.AbstractSelection#isSubTypes <em>Sub Types</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.AbstractSelection#getStereotypedBy <em>Stereotyped By</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.AbstractSelection#getElement <em>Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.AbstractSelection#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.AbstractSelection#getSelectionRef <em>Selection Ref</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.AbstractSelection#isSubTypes <em>Sub Types</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.AbstractSelection#getStereotypedBy <em>Stereotyped By</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,10 +34,10 @@ public interface AbstractSelection extends EObject {
 	 * Returns the value of the '<em><b>Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Element</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Element</em>' reference.
 	 * @see #setElement(EObject)
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#getAbstractSelection_Element()
@@ -50,7 +50,9 @@ public interface AbstractSelection extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.diagramtemplate.AbstractSelection#getElement <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Element</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Element</em>' reference.
 	 * @see #getElement()
 	 * @generated
 	 */
@@ -61,10 +63,10 @@ public interface AbstractSelection extends EObject {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.diagramtemplate.SelectionKind}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Kind</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.diagramtemplate.SelectionKind
 	 * @see #setKind(SelectionKind)
@@ -78,7 +80,9 @@ public interface AbstractSelection extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.diagramtemplate.AbstractSelection#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Kind</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.diagramtemplate.SelectionKind
 	 * @see #getKind()
 	 * @generated
@@ -90,10 +94,10 @@ public interface AbstractSelection extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.diagramtemplate.SelectionRef}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Selection Ref</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Selection Ref</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Selection Ref</em>' containment reference list.
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#getAbstractSelection_SelectionRef()
 	 * @model containment="true"
@@ -105,10 +109,10 @@ public interface AbstractSelection extends EObject {
 	 * Returns the value of the '<em><b>Sub Types</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Sub Types</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Sub Types</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Sub Types</em>' attribute.
 	 * @see #setSubTypes(boolean)
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#getAbstractSelection_SubTypes()
@@ -121,7 +125,9 @@ public interface AbstractSelection extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.diagramtemplate.AbstractSelection#isSubTypes <em>Sub Types</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sub Types</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Sub Types</em>' attribute.
 	 * @see #isSubTypes()
 	 * @generated
 	 */
@@ -131,10 +137,10 @@ public interface AbstractSelection extends EObject {
 	 * Returns the value of the '<em><b>Stereotyped By</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Stereotyped By</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Stereotyped By</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Stereotyped By</em>' attribute.
 	 * @see #setStereotypedBy(String)
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#getAbstractSelection_StereotypedBy()
@@ -147,7 +153,9 @@ public interface AbstractSelection extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.diagramtemplate.AbstractSelection#getStereotypedBy <em>Stereotyped By</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Stereotyped By</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Stereotyped By</em>' attribute.
 	 * @see #getStereotypedBy()
 	 * @generated
 	 */

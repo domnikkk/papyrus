@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,9 +36,9 @@ public class ContainmentDragDropHelper extends ContainmentHelper {
 
 	/**
 	 * Instantiates a new containment drag drop helper.
-	 * 
+	 *
 	 * @param editDomain
-	 *        the edit domain
+	 *            the edit domain
 	 */
 	public ContainmentDragDropHelper(TransactionalEditingDomain editDomain) {
 		super(editDomain);
@@ -46,23 +46,23 @@ public class ContainmentDragDropHelper extends ContainmentHelper {
 
 	/**
 	 * Gets the drop with containment command.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param hostView
-	 *        the host view
+	 *            the host view
 	 * @param movedView
-	 *        the moved view
+	 *            the moved view
 	 * @return the drop with containment command
 	 */
 	public Command getDropWithContainmentCommand(View hostView, View movedView) {
-		if(isMoveToParent(hostView, movedView)) {
+		if (isMoveToParent(hostView, movedView)) {
 			return moveToParent(hostView, movedView);
-		} else if(isMoveToChild(hostView, movedView)) {
+		} else if (isMoveToChild(hostView, movedView)) {
 			return moveToChild(hostView, movedView);
-		} else if(hasIncomingContainmentLink(movedView)) {
+		} else if (hasIncomingContainmentLink(movedView)) {
 			return moveWithIncomingContainmentLink(hostView, movedView);
-		} else if(ContainmentHelper.hasOutgoingContainmentLink(movedView)) {
+		} else if (ContainmentHelper.hasOutgoingContainmentLink(movedView)) {
 			return moveWithOutgoingContainmentLink();
 		}
 		return null;
@@ -75,8 +75,8 @@ public class ContainmentDragDropHelper extends ContainmentHelper {
 
 	private Command moveWithIncomingContainmentLink(View hostView, View movedView) {
 		CompositeCommand cmd = new CompositeCommand("Move Element");
-		Element parent = (Element)hostView.getElement();
-		Element child = (Element)movedView.getElement();
+		Element parent = (Element) hostView.getElement();
+		Element child = (Element) movedView.getElement();
 		cmd.add(new MoveElementCommand(parent, child));
 		cmd.add(new AddCommand(getEditingDomain(), new EObjectAdapter(hostView), new EObjectAdapter(movedView)));
 		deleteIncomingContainmentLinksFor(cmd, movedView);
@@ -85,9 +85,9 @@ public class ContainmentDragDropHelper extends ContainmentHelper {
 
 	private Command moveToChild(View hostView, View movedView) {
 		CompositeCommand cmd = new CompositeCommand("Move Element");
-		Element parent = (Element)ViewUtil.resolveSemanticElement((View)hostView.eContainer().eContainer());
-		Element child1 = (Element)hostView.getElement();
-		Element child2 = (Element)ViewUtil.resolveSemanticElement(movedView);
+		Element parent = (Element) ViewUtil.resolveSemanticElement((View) hostView.eContainer().eContainer());
+		Element child1 = (Element) hostView.getElement();
+		Element child2 = (Element) ViewUtil.resolveSemanticElement(movedView);
 		cmd.add(new MoveElementCommand(parent, child1));
 		cmd.add(new MoveElementCommand(child1, child2));
 		cmd.add(new AddCommand(getEditingDomain(), new EObjectAdapter(hostView), new EObjectAdapter(movedView)));
@@ -108,7 +108,7 @@ public class ContainmentDragDropHelper extends ContainmentHelper {
 
 	private boolean isMoveToParent(View hostView, View movedElementView) {
 		return hostView.getElement().equals(movedElementView.getElement().eContainer());
-		//		return EcoreUtil.isAncestor(hostView.getElement(), movedElementView.getElement());
+		// return EcoreUtil.isAncestor(hostView.getElement(), movedElementView.getElement());
 	}
 
 	private class MoveElementCommand extends AbstractTransactionalCommand {

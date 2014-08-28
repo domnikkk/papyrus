@@ -1,23 +1,23 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
 package org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.wizard;
 
+import org.eclipse.jface.dialogs.IDialogSettings;
+import org.eclipse.jface.wizard.IWizardContainer;
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.AbstractExceptionFreeRunnable;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.AbstractVoidExceptionFreeRunnable;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.SynchronizedObject;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.wizard.IExtendedWizard;
-import org.eclipse.jface.dialogs.IDialogSettings;
-import org.eclipse.jface.wizard.IWizardContainer;
-import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Composite;
@@ -25,7 +25,7 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * Synchronized class for safe run.
- * 
+ *
  * @see WizardFactoryImpl
  * @since 0.3
  */
@@ -34,7 +34,7 @@ public class SynchronizedWizard<T extends IExtendedWizard> extends
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param object
 	 *            the to synchronized.
 	 * @param display

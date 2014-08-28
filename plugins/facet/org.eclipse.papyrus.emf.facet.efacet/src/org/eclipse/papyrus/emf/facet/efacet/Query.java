@@ -1,20 +1,19 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.ETypedElement;
 
@@ -30,10 +29,10 @@ import org.eclipse.emf.ecore.ETypedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.Query#getScope <em>Scope</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.Query#isHasSideEffect <em>Has Side Effect</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.Query#isCanBeCached <em>Can Be Cached</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.Query#getParameters <em>Parameters</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.Query#getScope <em>Scope</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.Query#isHasSideEffect <em>Has Side Effect</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.Query#isCanBeCached <em>Can Be Cached</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.Query#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,6 +51,7 @@ public interface Query extends ETypedElement {
 	 * <!-- begin-model-doc -->
 	 * The query's scope defines the type of model elements a query can be applied on.
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Scope</em>' reference.
 	 * @see #setScope(EClass)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQuery_Scope()
@@ -66,7 +66,9 @@ public interface Query extends ETypedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.Query#getScope <em>Scope</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scope</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Scope</em>' reference.
 	 * @see #getScope()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -82,6 +84,7 @@ public interface Query extends ETypedElement {
 	 * <!-- begin-model-doc -->
 	 * This attribute has to be true if the query modify the model.
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Has Side Effect</em>' attribute.
 	 * @see #setHasSideEffect(boolean)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQuery_HasSideEffect()
@@ -96,7 +99,9 @@ public interface Query extends ETypedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.Query#isHasSideEffect <em>Has Side Effect</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Has Side Effect</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Has Side Effect</em>' attribute.
 	 * @see #isHasSideEffect()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -112,6 +117,7 @@ public interface Query extends ETypedElement {
 	 * <!-- begin-model-doc -->
 	 * The attribute "canBeCached" has to be true if calling a query on the same model element will always return the same result.
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Can Be Cached</em>' attribute.
 	 * @see #setCanBeCached(boolean)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQuery_CanBeCached()
@@ -126,7 +132,9 @@ public interface Query extends ETypedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.Query#isCanBeCached <em>Can Be Cached</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Can Be Cached</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Can Be Cached</em>' attribute.
 	 * @see #isCanBeCached()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -139,10 +147,10 @@ public interface Query extends ETypedElement {
 	 * The list contents are of type {@link org.eclipse.papyrus.emf.facet.efacet.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQuery_Parameters()
 	 * @model containment="true"

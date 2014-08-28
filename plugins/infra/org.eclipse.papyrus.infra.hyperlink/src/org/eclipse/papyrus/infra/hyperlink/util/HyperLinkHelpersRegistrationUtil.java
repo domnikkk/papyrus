@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,9 +26,9 @@ import org.eclipse.papyrus.infra.hyperlink.helper.AbstractHyperLinkHelper;
 import org.eclipse.papyrus.infra.hyperlink.messages.Messages;
 
 /**
- * 
+ *
  * This class allows to get all registered helpers
- * 
+ *
  */
 public class HyperLinkHelpersRegistrationUtil {
 
@@ -57,48 +57,48 @@ public class HyperLinkHelpersRegistrationUtil {
 	public static final HyperLinkHelpersRegistrationUtil INSTANCE = new HyperLinkHelpersRegistrationUtil();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	private HyperLinkHelpersRegistrationUtil() {
-		//nothing to do 
+		// nothing to do
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the list of registered helpers
 	 */
 	public Collection<AbstractHyperLinkHelper> getAllRegisteredHyperLinkHelper() {
-		if(map == null) {
+		if (map == null) {
 			getHelperWithPosition();
 		}
 		return map.values();
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         a map owning the registered helpers, sorted by position
 	 */
 	public Map<Integer, AbstractHyperLinkHelper> getHelperWithPosition() {
-		if(map == null) {
+		if (map == null) {
 			map = new TreeMap<Integer, AbstractHyperLinkHelper>();
 			IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(HYPERLINK_REGISTRATION_ID);
-			for(IConfigurationElement e : config) {
+			for (IConfigurationElement e : config) {
 				AbstractHyperLinkHelper helper = null;
 				try {
 					final Object h = e.createExecutableExtension(HELPER);
-					if(h instanceof AbstractHyperLinkHelper) {
-						helper = (AbstractHyperLinkHelper)h;
+					if (h instanceof AbstractHyperLinkHelper) {
+						helper = (AbstractHyperLinkHelper) h;
 						String o = e.getAttribute(POSITION);
 						Integer order = Integer.valueOf(o);
 						String tabId = e.getAttribute(TAB_ID);
 						helper.setTabId(tabId);
 						map.put(order, helper);
 					} else {
-						Activator.log.info(NLS.bind(Messages.HyperLinkTabRegistrationUtil_NotAnInstanceOf, new Object[]{ h, AbstractHyperLinkHelper.class }));
+						Activator.log.info(NLS.bind(Messages.HyperLinkTabRegistrationUtil_NotAnInstanceOf, new Object[] { h, AbstractHyperLinkHelper.class }));
 					}
 				} catch (NumberFormatException exception) {
 					Activator.log.error(NLS.bind(Messages.HyperLinkHelpersRegistrationUtil_TheHelperWillBeIgnored, helper), exception);

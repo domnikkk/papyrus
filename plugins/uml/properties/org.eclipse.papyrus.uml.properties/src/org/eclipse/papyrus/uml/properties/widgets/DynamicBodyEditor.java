@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,9 +33,9 @@ import org.eclipse.swt.widgets.Listener;
  * An editor to edit an expression body.
  * Depending on the matching language, a different widget will be used to edit
  * the expression body.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class DynamicBodyEditor extends AbstractValueEditor implements Listener {
 
@@ -50,13 +50,13 @@ public class DynamicBodyEditor extends AbstractValueEditor implements Listener {
 	private ModelElement context = null;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The widget's composite style
+	 *            The widget's composite style
 	 */
 	public DynamicBodyEditor(Composite parent, int style) {
 		super(parent, style);
@@ -72,18 +72,18 @@ public class DynamicBodyEditor extends AbstractValueEditor implements Listener {
 	/**
 	 * Sets the {@link Expression} to edit.
 	 * This will refresh the widget used to edit the expression body.
-	 * 
+	 *
 	 * @param expression
-	 *        the expression to edit
+	 *            the expression to edit
 	 */
 	public void display(Expression expression) {
-		if(currentEditor != null) {
+		if (currentEditor != null) {
 			disposeBodyEditor();
 		}
 
 		BodyEditor editor;
 
-		if(expression == null) {
+		if (expression == null) {
 			editor = new NullBodyEditor();
 			editor.createWidget(bodyEditorContainer, SWT.NONE);
 			bodyEditorContainer.layout();
@@ -95,7 +95,7 @@ public class DynamicBodyEditor extends AbstractValueEditor implements Listener {
 
 		editor = getEditor(language);
 		editor.createWidget(bodyEditorContainer, SWT.NONE);
-		if(context != null) {
+		if (context != null) {
 			editor.setContext(context);
 		}
 
@@ -112,17 +112,17 @@ public class DynamicBodyEditor extends AbstractValueEditor implements Listener {
 	/**
 	 * Adds a listener to this object
 	 * Events will be fired when the body has changed
-	 * 
+	 *
 	 * @param listener
 	 */
-	//TODO : isn't it simply a commit listener ?
+	// TODO : isn't it simply a commit listener ?
 	public void addChangeListener(Listener listener) {
 		changeListeners.add(listener);
 	}
 
 	/**
 	 * Removes a listener from this object
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeChangeListener(Listener listener) {
@@ -136,14 +136,14 @@ public class DynamicBodyEditor extends AbstractValueEditor implements Listener {
 	private void disposeBodyEditor() {
 		currentEditor.removeChangeListener(this);
 		currentEditor.dispose();
-		for(Control control : bodyEditorContainer.getChildren()) {
+		for (Control control : bodyEditorContainer.getChildren()) {
 			control.dispose();
 		}
 	}
 
 	@Override
 	public String getValue() {
-		if(currentEditor != null) {
+		if (currentEditor != null) {
 			return currentEditor.getValue();
 		}
 		return null;
@@ -156,7 +156,7 @@ public class DynamicBodyEditor extends AbstractValueEditor implements Listener {
 
 	@Override
 	public void setReadOnly(boolean readOnly) {
-		if(currentEditor != null) {
+		if (currentEditor != null) {
 			currentEditor.setReadOnly(readOnly);
 		}
 
@@ -174,7 +174,7 @@ public class DynamicBodyEditor extends AbstractValueEditor implements Listener {
 	}
 
 	public void handleEvent(Event event) {
-		for(Listener listener : changeListeners) {
+		for (Listener listener : changeListeners) {
 			listener.handleEvent(event);
 		}
 	}
@@ -188,12 +188,12 @@ public class DynamicBodyEditor extends AbstractValueEditor implements Listener {
 
 	/**
 	 * Sets the ModelElement used by this editor
-	 * 
+	 *
 	 * @param modelElement
 	 */
 	public void setContext(ModelElement modelElement) {
 		this.context = modelElement;
-		if(currentEditor != null) {
+		if (currentEditor != null) {
 			currentEditor.setContext(context);
 		}
 	}
@@ -207,6 +207,6 @@ public class DynamicBodyEditor extends AbstractValueEditor implements Listener {
 	@Override
 	public void changeColorField() {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

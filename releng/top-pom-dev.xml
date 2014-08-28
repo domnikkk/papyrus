@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.eclipse.papyrus</groupId>
 	<artifactId>org.eclipse.papyrus</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>../features/papyrus-dev-features/org.eclipse.papyrus.dev.feature</module>
@@ -133,6 +133,9 @@
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<defaultP2Metadata>false</defaultP2Metadata>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

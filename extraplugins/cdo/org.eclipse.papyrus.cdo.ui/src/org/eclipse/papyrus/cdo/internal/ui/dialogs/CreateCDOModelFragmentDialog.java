@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -64,7 +64,7 @@ public class CreateCDOModelFragmentDialog extends Dialog {
 	public CreateCDOModelFragmentDialog(Shell parentShell, Resource parentUnit, String defaultUnitName) {
 		super(parentShell);
 
-		this.view = ((CDOResource)parentUnit).cdoView();
+		this.view = ((CDOResource) parentUnit).cdoView();
 		this.uriConverter = parentUnit.getResourceSet().getURIConverter();
 
 		URI parentURI = parentUnit.getURI();
@@ -80,7 +80,7 @@ public class CreateCDOModelFragmentDialog extends Dialog {
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite result = (Composite)super.createDialogArea(parent);
+		Composite result = (Composite) super.createDialogArea(parent);
 
 		result.setLayout(new GridLayout(2, false));
 
@@ -96,12 +96,13 @@ public class CreateCDOModelFragmentDialog extends Dialog {
 		ld.widthHint = convertWidthInCharsToPixels(50);
 		uriText.setLayoutData(ld);
 
-		if(selectedURI != null) {
+		if (selectedURI != null) {
 			uriText.setText(selectedURI);
 		}
 
 		uriText.addModifyListener(new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
 				validateURI(uriText.getText());
 			}
@@ -118,7 +119,7 @@ public class CreateCDOModelFragmentDialog extends Dialog {
 		super.createButtonsForButtonBar(parent);
 
 		// now that the OK button exists, determine initial enablement
-		if(selectedURI == null) {
+		if (selectedURI == null) {
 			getButton(IDialogConstants.OK_ID).setEnabled(false);
 		} else {
 			validateURI(selectedURI);
@@ -149,24 +150,24 @@ public class CreateCDOModelFragmentDialog extends Dialog {
 		dlg.setAllowOverwrite(false);
 
 		String initialURI = uriText.getText().trim();
-		if(!Strings.isNullOrEmpty(initialURI)) {
+		if (!Strings.isNullOrEmpty(initialURI)) {
 			try {
 				dlg.setInitialURI(URI.createURI(initialURI, true));
 			} catch (Exception e) {
-				// OK, it's not a valid input.  That's fine.  Use the last valid selection
-				if(selectedURI != null) {
+				// OK, it's not a valid input. That's fine. Use the last valid selection
+				if (selectedURI != null) {
 					dlg.setInitialURI(URI.createURI(selectedURI, true));
 				}
 			}
 		}
 
-		if(dlg.open() == Window.OK) {
+		if (dlg.open() == Window.OK) {
 			uriText.setText(dlg.getSelectedURI().toString());
 		}
 	}
 
 	private void setError(String error) {
-		if(error == null) {
+		if (error == null) {
 			errorLabel.setText(""); //$NON-NLS-1$
 		} else {
 			errorLabel.setText(error);
@@ -177,24 +178,24 @@ public class CreateCDOModelFragmentDialog extends Dialog {
 
 	private void validateURI(String uri) {
 		uri = uri.trim();
-		if(uri.length() == 0) {
+		if (uri.length() == 0) {
 			getButton(IDialogConstants.OK_ID).setEnabled(false);
 		} else {
 			try {
 				URI parsed = URI.createURI(uri, true);
 
-				if(parsed.hasFragment()) {
+				if (parsed.hasFragment()) {
 					throw new IllegalArgumentException(Messages.CreateCDOFragDlg_hasFragmentError);
-				} else if(uriConverter.exists(parsed, null)) {
+				} else if (uriConverter.exists(parsed, null)) {
 					throw new IllegalArgumentException(Messages.CreateCDOFragDlg_existsError);
 				} else {
 					// an empty folder name indicates a resource at the root; the root always exists
 					String folder = CDOURIUtil.extractResourceFolderAndName(parsed)[0];
-					if(!Strings.isNullOrEmpty(folder)) {
-						if(!view.hasResource(folder)) {
+					if (!Strings.isNullOrEmpty(folder)) {
+						if (!view.hasResource(folder)) {
 							throw new IllegalArgumentException(NLS.bind(Messages.CreateCDOFragDlg_noSuchFolderError, folder));
 						}
-						if(!(view.getResourceNode(folder) instanceof CDOResourceFolder)) {
+						if (!(view.getResourceNode(folder) instanceof CDOResourceFolder)) {
 							throw new IllegalArgumentException(NLS.bind(Messages.CreateCDOFragDlg_notFolderError, folder));
 						}
 					}
@@ -216,12 +217,14 @@ public class CreateCDOModelFragmentDialog extends Dialog {
 
 	public static class Provider implements IControlModeFragmentDialogProvider {
 
+		@Override
 		public Dialog createDialog(Shell shell, Resource parentUnit, String defaultUnitURI) {
 			return (parentUnit instanceof CDOResource) ? new CreateCDOModelFragmentDialog(shell, parentUnit, defaultUnitURI) : DEFAULT.createDialog(shell, parentUnit, defaultUnitURI);
 		}
 
+		@Override
 		public URI getSelectedURI(Dialog dialog) {
-			return (dialog instanceof CreateCDOModelFragmentDialog) ? ((CreateCDOModelFragmentDialog)dialog).getSelectedURI() : DEFAULT.getSelectedURI(dialog);
+			return (dialog instanceof CreateCDOModelFragmentDialog) ? ((CreateCDOModelFragmentDialog) dialog).getSelectedURI() : DEFAULT.getSelectedURI(dialog);
 		}
 	}
 
@@ -229,16 +232,18 @@ public class CreateCDOModelFragmentDialog extends Dialog {
 
 		private static final Class<?>[] ADAPTERS = { IControlModeFragmentDialogProvider.class };
 
+		@Override
 		@SuppressWarnings("rawtypes")
 		public Class[] getAdapterList() {
 			return ADAPTERS;
 		}
 
+		@Override
 		public Object getAdapter(Object adaptableObject, @SuppressWarnings("rawtypes") Class adapterType) {
 			Object result = null;
 
-			if(adapterType == IControlModeFragmentDialogProvider.class) {
-				if(adaptableObject instanceof CDOAwareModelSet) {
+			if (adapterType == IControlModeFragmentDialogProvider.class) {
+				if (adaptableObject instanceof CDOAwareModelSet) {
 					result = new Provider();
 				}
 			}

@@ -18,9 +18,9 @@ import org.eclipse.papyrus.infra.emf.newchild.MenuGroup;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getCreateIn <em>Create In</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getLayout <em>Layout</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getGroups <em>Groups</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getCreateIn <em>Create In</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getLayout <em>Layout</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getGroups <em>Groups</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,10 +35,10 @@ public interface NewEMFChildMenu extends Menu {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CreateIn}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Create In</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Create In</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Create In</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CreateIn
 	 * @see #setCreateIn(CreateIn)
@@ -52,7 +52,9 @@ public interface NewEMFChildMenu extends Menu {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getCreateIn <em>Create In</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Create In</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Create In</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CreateIn
 	 * @see #getCreateIn()
 	 * @generated
@@ -65,10 +67,10 @@ public interface NewEMFChildMenu extends Menu {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.Layout}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Layout</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Layout</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Layout</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.Layout
 	 * @see #setLayout(Layout)
@@ -82,7 +84,9 @@ public interface NewEMFChildMenu extends Menu {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getLayout <em>Layout</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Layout</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Layout</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.Layout
 	 * @see #getLayout()
 	 * @generated
@@ -94,10 +98,10 @@ public interface NewEMFChildMenu extends Menu {
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.emf.newchild.MenuGroup}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Groups</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Groups</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Groups</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyPackage#getNewEMFChildMenu_Groups()
 	 * @model containment="true"

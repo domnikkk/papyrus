@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ public class CustomConstraint2EditPart extends Constraint2EditPart {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomConstraint2EditPart(View view) {
@@ -35,8 +35,8 @@ public class CustomConstraint2EditPart extends Constraint2EditPart {
 
 	@Override
 	protected void setLabelIconHelper(IFigure figure, Image icon) {
-		if(figure instanceof ConstraintFigure) {
-			((ConstraintFigure)figure).setAppliedStereotypeIcon(icon);
+		if (figure instanceof ConstraintFigure) {
+			((ConstraintFigure) figure).setAppliedStereotypeIcon(icon);
 		}
 		super.setLabelIconHelper(figure, icon);
 	}

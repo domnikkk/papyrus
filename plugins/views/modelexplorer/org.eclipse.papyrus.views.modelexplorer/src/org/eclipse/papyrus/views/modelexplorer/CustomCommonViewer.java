@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,47 +34,48 @@ import org.eclipse.ui.internal.navigator.dnd.NavigatorDnDService;
 import org.eclipse.ui.navigator.CommonDragAdapter;
 import org.eclipse.ui.navigator.CommonDropAdapter;
 import org.eclipse.ui.navigator.CommonViewer;
+
 /**
- * this class was created in order to access to the drop adapter 
+ * this class was created in order to access to the drop adapter
  *
  */
 @SuppressWarnings("restriction")
 public class CustomCommonViewer extends CommonViewer {
-	protected CommonDropAdapter dropAdapter;	
-	
+	protected CommonDropAdapter dropAdapter;
+
 	public CustomCommonViewer(String aViewerId, Composite aParent, int aStyle) {
 		super(aViewerId, aParent, aStyle);
 		// TODO Auto-generated constructor stub
 		setComparer(new IElementComparer() {
 
 			public int hashCode(Object element) {
-				if(element instanceof EObjectTreeElement) {
-					EObject eObject = ((EObjectTreeElement)element).getEObject();
+				if (element instanceof EObjectTreeElement) {
+					EObject eObject = ((EObjectTreeElement) element).getEObject();
 					return HashCodeCalculus.getHashCode(eObject);
 				}
-				
-				if(element instanceof EReferenceTreeElement) {
-					EObject eParent=((EReferenceTreeElement) element).getParent().getEObject();
-					EReference eref=((EReferenceTreeElement) element).getEReference();
+
+				if (element instanceof EReferenceTreeElement) {
+					EObject eParent = ((EReferenceTreeElement) element).getParent().getEObject();
+					EReference eref = ((EReferenceTreeElement) element).getEReference();
 					return HashCodeCalculus.getHashCode(eParent, eref);
 				}
-				if(element instanceof IReferencable) {
-					IReferencable ref = (IReferencable)element;
+				if (element instanceof IReferencable) {
+					IReferencable ref = (IReferencable) element;
 					return ref.getElementBehind().hashCode();
 				}
-				if(element instanceof IMatchingItem) {
-					IMatchingItem matchItem = (IMatchingItem)element;
+				if (element instanceof IMatchingItem) {
+					IMatchingItem matchItem = (IMatchingItem) element;
 					return matchItem.matchingItemHashcode();
 				}
 				return element.hashCode();
 			}
 
 			public boolean equals(Object a, Object b) {
-				if(a instanceof IMatchingItem) {
-					return ((IMatchingItem)a).matchingItemEquals(b);
+				if (a instanceof IMatchingItem) {
+					return ((IMatchingItem) a).matchingItemEquals(b);
 				}
 
-				if(b != null) {
+				if (b != null) {
 					return b.equals(a);
 				}
 				return false;
@@ -85,6 +86,7 @@ public class CustomCommonViewer extends CommonViewer {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected void initDragAndDrop() {
 		dropAdapter = null;
 		int operations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
@@ -94,13 +96,13 @@ public class CustomCommonViewer extends CommonViewer {
 		dropAdapter = createDropAdapter();
 		addDropSupport(operations, dropAdapter.getSupportedDropTransfers(), dropAdapter);
 
-		NavigatorDnDService dnd = (NavigatorDnDService)getNavigatorContentService().getDnDService();
+		NavigatorDnDService dnd = (NavigatorDnDService) getNavigatorContentService().getDnDService();
 		dnd.setDropAdaptor(dropAdapter);
 	}
 
 	/**
 	 * get the listener in order to parameterize during the runtime the drop
-	 * 
+	 *
 	 * @return the dropadapter
 	 */
 	public CommonDropAdapter getDropAdapter() {
@@ -115,13 +117,13 @@ public class CustomCommonViewer extends CommonViewer {
 		// instantiate abstract focus cell high-lighter as dummy object for focus manager. The sub class
 		// FocusCellOwnerDrawHighlighter would break multi-selections in Papyrus, see bug 419591.
 		// (but we need to create a high-lighter, since the focus cell manager does not accept null pointer. The
-		// TreeViewerEditor could work without focusCellManager, but would ignore keyboard events in this case.) 
+		// TreeViewerEditor could work without focusCellManager, but would ignore keyboard events in this case.)
 		FocusCellHighlighter fch = new FocusCellHighlighter(this) {
 		};
 		TreeViewerFocusCellManager focusCellManager = new TreeViewerFocusCellManager(
-			this, fch);
-		
-		TreeViewerEditor.create(this, focusCellManager, new ColumnViewerEditorActivationStrategy(this){
+				this, fch);
+
+		TreeViewerEditor.create(this, focusCellManager, new ColumnViewerEditorActivationStrategy(this) {
 			@Override
 			protected boolean isEditorActivationEvent(
 					ColumnViewerEditorActivationEvent event) {

@@ -31,10 +31,8 @@ import org.eclipse.swt.widgets.Display;
  * EditPartViewer. This target is then asked for the <code>Command</code> that
  * performs the given request. The target is also asked to show target feedback.
  * <P>
- * TargetingTool also provides support for auto-expose (a.k.a. auto-scrolling). Subclasses that wish to commence auto-expose can do so by calling
- * {@link #updateAutoexposeHelper()}. An an AutoExposeHelper is found, auto-scrolling begins. Whenever that helper scrolls the diagram of performs any
- * other change, <code>handleMove</code> will be called as if the mouse had moved. This is because the target has probably moved, but there is no
- * input event to trigger an update of the operation.
+ * TargetingTool also provides support for auto-expose (a.k.a. auto-scrolling). Subclasses that wish to commence auto-expose can do so by calling {@link #updateAutoexposeHelper()}. An an AutoExposeHelper is found, auto-scrolling begins. Whenever that helper
+ * scrolls the diagram of performs any other change, <code>handleMove</code> will be called as if the mouse had moved. This is because the target has probably moved, but there is no input event to trigger an update of the operation.
  */
 public abstract class TargetingTool extends AbstractTool {
 
@@ -56,7 +54,7 @@ public abstract class TargetingTool extends AbstractTool {
 	/**
 	 * Creates the target request that will be used with the target editpart.
 	 * This request will be cached and updated as needed.
-	 * 
+	 *
 	 * @see #getTargetRequest()
 	 * @return the new target request
 	 */
@@ -69,9 +67,11 @@ public abstract class TargetingTool extends AbstractTool {
 	/**
 	 * @see org.eclipse.gef.Tool#deactivate()
 	 */
+	@Override
 	public void deactivate() {
-		if(isHoverActive())
+		if (isHoverActive()) {
 			resetHover();
+		}
 		eraseTargetFeedback();
 		targetEditPart = null;
 		targetRequest = null;
@@ -87,13 +87,15 @@ public abstract class TargetingTool extends AbstractTool {
 	 * the step().
 	 */
 	protected void doAutoexpose() {
-		if(exposeHelper == null)
+		if (exposeHelper == null) {
 			return;
-		if(exposeHelper.step(getLocation())) {
+		}
+		if (exposeHelper.step(getLocation())) {
 			handleAutoexpose();
 			Display.getCurrent().asyncExec(new QueuedAutoexpose());
-		} else
+		} else {
 			setAutoexposeHelper(null);
+		}
 	}
 
 	/**
@@ -104,28 +106,32 @@ public abstract class TargetingTool extends AbstractTool {
 	 * methods should rarely be overridden.
 	 */
 	protected void eraseTargetFeedback() {
-		if(!isShowingTargetFeedback())
+		if (!isShowingTargetFeedback()) {
 			return;
+		}
 		setFlag(FLAG_TARGET_FEEDBACK, false);
-		if(getTargetEditPart() != null)
+		if (getTargetEditPart() != null) {
 			getTargetEditPart().eraseTargetFeedback(getTargetRequest());
+		}
 	}
 
 	/**
 	 * Queries the target editpart for a command.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#getCommand()
 	 */
+	@Override
 	protected Command getCommand() {
-		if(getTargetEditPart() == null)
+		if (getTargetEditPart() == null) {
 			return null;
+		}
 		return getTargetEditPart().getCommand(getTargetRequest());
 	}
 
 	/**
 	 * Returns a List of objects that should be excluded as potential targets
 	 * for the operation.
-	 * 
+	 *
 	 * @return the list of objects to be excluded as targets
 	 */
 	protected Collection getExclusionSet() {
@@ -138,13 +144,14 @@ public abstract class TargetingTool extends AbstractTool {
 	 * whether an editpart at the current mouse location indicates a target for
 	 * the operation's request, using {@link EditPart#getTargetEditPart(Request)}. If <code>null</code> is
 	 * returned, then the conditional fails, and the search continues.
-	 * 
+	 *
 	 * @see EditPartViewer#findObjectAtExcluding(Point, Collection, EditPartViewer.Conditional)
 	 * @return the targeting conditional
 	 */
 	protected EditPartViewer.Conditional getTargetingConditional() {
 		return new EditPartViewer.Conditional() {
 
+			@Override
 			public boolean evaluate(EditPart editpart) {
 				return editpart.getTargetEditPart(getTargetRequest()) != null;
 			}
@@ -153,7 +160,7 @@ public abstract class TargetingTool extends AbstractTool {
 
 	/**
 	 * Returns <code>null</code> or the current target editpart.
-	 * 
+	 *
 	 * @return <code>null</code> or a target part
 	 */
 	protected EditPart getTargetEditPart() {
@@ -163,12 +170,13 @@ public abstract class TargetingTool extends AbstractTool {
 	/**
 	 * Lazily creates and returns the request used when communicating with the
 	 * target editpart.
-	 * 
+	 *
 	 * @return the target request
 	 */
 	protected Request getTargetRequest() {
-		if(targetRequest == null)
+		if (targetRequest == null) {
 			setTargetRequest(createTargetRequest());
+		}
 		return targetRequest;
 	}
 
@@ -186,7 +194,7 @@ public abstract class TargetingTool extends AbstractTool {
 	 * Called whenever the target editpart has changed. By default, the target
 	 * request is updated, and the new target is asked to show feedback.
 	 * Subclasses may extend this method if needed.
-	 * 
+	 *
 	 * @return <code>true</code>
 	 */
 	protected boolean handleEnteredEditPart() {
@@ -199,7 +207,7 @@ public abstract class TargetingTool extends AbstractTool {
 	 * Called whenever the target editpart is about to change. By default, hover
 	 * is reset, in the case that a hover was showing something, and the target
 	 * being exited is asked to erase its feedback.
-	 * 
+	 *
 	 * @return <code>true</code>
 	 */
 	protected boolean handleExitingEditPart() {
@@ -212,7 +220,7 @@ public abstract class TargetingTool extends AbstractTool {
 	 * Called from resetHover() iff hover is active. Subclasses may extend this
 	 * method to handle the hover stop event. Returns <code>true</code> if
 	 * something was done in response to the call.
-	 * 
+	 *
 	 * @see AbstractTool#isHoverActive()
 	 * @return <code>true</code> if the hover stop is processed in some way
 	 */
@@ -224,9 +232,10 @@ public abstract class TargetingTool extends AbstractTool {
 	 * Called when invalid input is encountered. By default, feedback is erased,
 	 * and the current command is set to the unexecutable command. The state
 	 * does not change, so the caller must set the state to {@link AbstractTool#STATE_INVALID}.
-	 * 
+	 *
 	 * @return <code>true</code>
 	 */
+	@Override
 	protected boolean handleInvalidInput() {
 		eraseTargetFeedback();
 		setCurrentCommand(UnexecutableCommand.INSTANCE);
@@ -236,18 +245,19 @@ public abstract class TargetingTool extends AbstractTool {
 	/**
 	 * An archaic method name that has been left here to force use of the new
 	 * name.
-	 * 
+	 *
 	 * @throws Exception
-	 *         exc
+	 *             exc
 	 */
 	protected final void handleLeavingEditPart() throws Exception {
 	}
 
 	/**
 	 * Sets the target to <code>null</code>.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#handleViewerExited()
 	 */
+	@Override
 	protected boolean handleViewerExited() {
 		setTargetEditPart(null);
 		return true;
@@ -255,7 +265,7 @@ public abstract class TargetingTool extends AbstractTool {
 
 	/**
 	 * Returns <code>true</code> if target feedback is being shown.
-	 * 
+	 *
 	 * @return <code>true</code> if showing target feedback
 	 */
 	protected boolean isShowingTargetFeedback() {
@@ -264,7 +274,7 @@ public abstract class TargetingTool extends AbstractTool {
 
 	/**
 	 * Return <code>true</code> if the current target is locked.
-	 * 
+	 *
 	 * @see #lockTargetEditPart(EditPart)
 	 * @return <code>true</code> if the target is locked
 	 */
@@ -275,12 +285,12 @@ public abstract class TargetingTool extends AbstractTool {
 	/**
 	 * Locks-in the given editpart as the target. Updating of the target will
 	 * not occur until {@link #unlockTargetEditPart()} is called.
-	 * 
+	 *
 	 * @param editpart
-	 *        the target to be locked-in
+	 *            the target to be locked-in
 	 */
 	protected void lockTargetEditPart(EditPart editpart) {
-		if(editpart == null) {
+		if (editpart == null) {
 			unlockTargetEditPart();
 			return;
 		}
@@ -290,10 +300,11 @@ public abstract class TargetingTool extends AbstractTool {
 
 	/**
 	 * Extended to reset the target lock flag.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#resetFlags()
 	 * @see #lockTargetEditPart(EditPart)
 	 */
+	@Override
 	protected void resetFlags() {
 		setFlag(FLAG_LOCK_TARGET, false);
 		super.resetFlags();
@@ -301,20 +312,23 @@ public abstract class TargetingTool extends AbstractTool {
 
 	/**
 	 * Resets hovering to inactive.
-	 * 
+	 *
 	 * @since 3.4
 	 */
 	protected void resetHover() {
-		if(isHoverActive())
+		if (isHoverActive()) {
 			handleHoverStop();
+		}
 		setHoverActive(false);
 	}
 
 	class QueuedAutoexpose implements Runnable {
 
+		@Override
 		public void run() {
-			if(exposeHelper != null)
+			if (exposeHelper != null) {
 				doAutoexpose();
+			}
 		}
 	}
 
@@ -322,14 +336,15 @@ public abstract class TargetingTool extends AbstractTool {
 	 * Sets the active autoexpose helper to the given helper, or <code>null</code>. If the helper is not <code>null</code>, a runnable is
 	 * queued on the event thread that will trigger a subsequent {@link #doAutoexpose()}. The helper is typically updated only on a hover
 	 * event.
-	 * 
+	 *
 	 * @param helper
-	 *        the new autoexpose helper or <code>null</code>
+	 *            the new autoexpose helper or <code>null</code>
 	 */
 	protected void setAutoexposeHelper(AutoexposeHelper helper) {
 		exposeHelper = helper;
-		if(exposeHelper == null)
+		if (exposeHelper == null) {
 			return;
+		}
 		Display.getCurrent().asyncExec(new QueuedAutoexpose());
 	}
 
@@ -337,17 +352,19 @@ public abstract class TargetingTool extends AbstractTool {
 	 * Sets the target editpart. If the target editpart is changing, this method
 	 * will call {@link #handleExitingEditPart()} for the previous target if not <code>null</code>, and {@link #handleEnteredEditPart()} for the new
 	 * target, if not <code>null</code>.
-	 * 
+	 *
 	 * @param editpart
-	 *        the new target
+	 *            the new target
 	 */
 	protected void setTargetEditPart(EditPart editpart) {
-		if(editpart != targetEditPart) {
-			if(targetEditPart != null)
+		if (editpart != targetEditPart) {
+			if (targetEditPart != null) {
 				handleExitingEditPart();
+			}
 			targetEditPart = editpart;
-			if(getTargetRequest() instanceof TargetRequest)
-				((TargetRequest)getTargetRequest()).setTargetEditPart(targetEditPart);
+			if (getTargetRequest() instanceof TargetRequest) {
+				((TargetRequest) getTargetRequest()).setTargetEditPart(targetEditPart);
+			}
 			handleEnteredEditPart();
 		}
 	}
@@ -355,9 +372,9 @@ public abstract class TargetingTool extends AbstractTool {
 	/**
 	 * Sets the target request. This method is typically not called; subclasses
 	 * normally override {@link #createTargetRequest()}.
-	 * 
+	 *
 	 * @param req
-	 *        the target request
+	 *            the target request
 	 */
 	protected void setTargetRequest(Request req) {
 		targetRequest = req;
@@ -368,8 +385,9 @@ public abstract class TargetingTool extends AbstractTool {
 	 * feedback flag.
 	 */
 	protected void showTargetFeedback() {
-		if(getTargetEditPart() != null)
+		if (getTargetEditPart() != null) {
 			getTargetEditPart().showTargetFeedback(getTargetRequest());
+		}
 		setFlag(FLAG_TARGET_FEEDBACK, true);
 	}
 
@@ -384,12 +402,12 @@ public abstract class TargetingTool extends AbstractTool {
 
 	/**
 	 * Updates the active {@link AutoexposeHelper}. Does nothing if there is
-	 * still an active helper. Otherwise, obtains a new helper (possible <code>null</code>) at the current mouse location and calls
-	 * {@link #setAutoexposeHelper(AutoexposeHelper)}.
+	 * still an active helper. Otherwise, obtains a new helper (possible <code>null</code>) at the current mouse location and calls {@link #setAutoexposeHelper(AutoexposeHelper)}.
 	 */
 	protected void updateAutoexposeHelper() {
-		if(exposeHelper != null)
+		if (exposeHelper != null) {
 			return;
+		}
 		AutoexposeHelper.Search search;
 		search = new AutoexposeHelper.Search(getLocation());
 		getCurrentViewer().findObjectAtExcluding(getLocation(), Collections.EMPTY_LIST, search);
@@ -407,26 +425,29 @@ public abstract class TargetingTool extends AbstractTool {
 	 * changes. The target is updated by using the target conditional and the
 	 * target request. If the target has been locked, this method does nothing
 	 * and returns <code>false</code>.
-	 * 
+	 *
 	 * @return <code>true</code> if the target was changed
 	 */
 	protected boolean updateTargetUnderMouse() {
-		if(!isTargetLocked()) {
+		if (!isTargetLocked()) {
 			EditPart editPart = null;
-			if(getCurrentViewer() != null)
+			if (getCurrentViewer() != null) {
 				editPart = getCurrentViewer().findObjectAtExcluding(getLocation(), getExclusionSet(), getTargetingConditional());
-			if(editPart != null)
+			}
+			if (editPart != null) {
 				editPart = editPart.getTargetEditPart(getTargetRequest());
+			}
 			boolean changed = getTargetEditPart() != editPart;
 			setTargetEditPart(editPart);
 			return changed;
-		} else
+		} else {
 			return false;
+		}
 	}
 
 	/**
 	 * Returns <code>null</code> or the current autoexpose helper.
-	 * 
+	 *
 	 * @return null or a helper
 	 */
 	protected AutoexposeHelper getAutoexposeHelper() {

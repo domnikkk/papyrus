@@ -30,7 +30,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.sourcelookup.ISourceLookupDirector#initializeParticipants()
 	 */
 	public void initializeParticipants() {
@@ -39,19 +39,19 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 		// Nevertheless, this code is kept there since the MokaSourceLookupParticipant could be used to account for additional information in the launch configuration.
 		// For example, these information may include a list of di files where graphical representations have to be taken from a given semantic element.
 		// This may be removed if we confirm that this mechanism only makes sense for text file resources.
-		ISourceLookupParticipant[] participants = new ISourceLookupParticipant[]{ new MokaSourceLookupParticipant() };
+		ISourceLookupParticipant[] participants = new ISourceLookupParticipant[] { new MokaSourceLookupParticipant() };
 		this.addParticipants(participants);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector#getSourceElement(java.lang.Object)
 	 */
 	@Override
 	public Object getSourceElement(Object element) {
 		EObject sourceElement = null;
-		MokaStackFrame stackFrame = (MokaStackFrame)element;
+		MokaStackFrame stackFrame = (MokaStackFrame) element;
 		sourceElement = stackFrame.getModelElement();
 		return sourceElement;
 	}
@@ -65,7 +65,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * org.eclipse.debug.core.sourcelookup.ISourceLookupParticipant#sourceContainersChanged(org.eclipse.debug.core.sourcelookup.ISourceLookupDirector
 		 * )
@@ -75,7 +75,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.debug.core.sourcelookup.ISourceLookupParticipant#init(org.eclipse.debug.core.sourcelookup.ISourceLookupDirector)
 		 */
 		public void init(ISourceLookupDirector director) {
@@ -83,7 +83,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.debug.core.sourcelookup.ISourceLookupParticipant#getSourceName(java.lang.Object)
 		 */
 		public String getSourceName(Object object) throws CoreException {
@@ -92,7 +92,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.debug.core.sourcelookup.ISourceLookupParticipant#findSourceElements(java.lang.Object)
 		 */
 		public Object[] findSourceElements(Object object) throws CoreException {
@@ -101,7 +101,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.debug.core.sourcelookup.ISourceLookupParticipant#dispose()
 		 */
 		public void dispose() {

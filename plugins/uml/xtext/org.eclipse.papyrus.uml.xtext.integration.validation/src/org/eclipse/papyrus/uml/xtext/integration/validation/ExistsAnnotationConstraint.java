@@ -11,10 +11,10 @@ import org.eclipse.uml2.uml.Element;
 /**
  * Creates an error if a model element has an annotation. If an annotation exist
  * the xtext string couldn't be parsed and is out of sync with the UML model.
- * 
- * 
+ *
+ *
  * @author Markus M�hlbrandt
- * 
+ *
  */
 public class ExistsAnnotationConstraint extends AbstractModelConstraint {
 

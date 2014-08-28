@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -17,7 +17,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -31,7 +30,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.umldi.util.UMLDIAdapterFactory;
 
 /**
@@ -41,7 +39,7 @@ import org.eclipse.papyrus.umldi.util.UMLDIAdapterFactory;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -50,7 +48,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -59,7 +57,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -68,7 +66,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -77,7 +75,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UMLDIItemProviderAdapterFactory() {
@@ -94,7 +92,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.umldi.UmlDiagram} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UmlDiagramItemProvider umlDiagramItemProvider;
@@ -103,12 +101,12 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.umldi.UmlDiagram}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createUmlDiagramAdapter() {
-		if(umlDiagramItemProvider == null) {
+		if (umlDiagramItemProvider == null) {
 			umlDiagramItemProvider = new UmlDiagramItemProvider(this);
 		}
 		return umlDiagramItemProvider;
@@ -118,7 +116,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.umldi.UmlShape} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UmlShapeItemProvider umlShapeItemProvider;
@@ -127,12 +125,12 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.umldi.UmlShape}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createUmlShapeAdapter() {
-		if(umlShapeItemProvider == null) {
+		if (umlShapeItemProvider == null) {
 			umlShapeItemProvider = new UmlShapeItemProvider(this);
 		}
 		return umlShapeItemProvider;
@@ -142,7 +140,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.umldi.UmlStyle} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UmlStyleItemProvider umlStyleItemProvider;
@@ -151,12 +149,12 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.umldi.UmlStyle}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createUmlStyleAdapter() {
-		if(umlStyleItemProvider == null) {
+		if (umlStyleItemProvider == null) {
 			umlStyleItemProvider = new UmlStyleItemProvider(this);
 		}
 		return umlStyleItemProvider;
@@ -166,7 +164,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.umldi.UmlEdge} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UmlEdgeItemProvider umlEdgeItemProvider;
@@ -175,12 +173,12 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.umldi.UmlEdge}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createUmlEdgeAdapter() {
-		if(umlEdgeItemProvider == null) {
+		if (umlEdgeItemProvider == null) {
 			umlEdgeItemProvider = new UmlEdgeItemProvider(this);
 		}
 		return umlEdgeItemProvider;
@@ -190,7 +188,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.umldi.UmlCompartment} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UmlCompartmentItemProvider umlCompartmentItemProvider;
@@ -199,12 +197,12 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.umldi.UmlCompartment}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createUmlCompartmentAdapter() {
-		if(umlCompartmentItemProvider == null) {
+		if (umlCompartmentItemProvider == null) {
 			umlCompartmentItemProvider = new UmlCompartmentItemProvider(this);
 		}
 		return umlCompartmentItemProvider;
@@ -214,7 +212,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.umldi.UmlLabel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UmlLabelItemProvider umlLabelItemProvider;
@@ -223,12 +221,12 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.umldi.UmlLabel}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createUmlLabelAdapter() {
-		if(umlLabelItemProvider == null) {
+		if (umlLabelItemProvider == null) {
 			umlLabelItemProvider = new UmlLabelItemProvider(this);
 		}
 		return umlLabelItemProvider;
@@ -238,9 +236,10 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -249,9 +248,10 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -259,7 +259,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,14 +282,14 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if(isFactoryForType(type)) {
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if(!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -300,9 +300,10 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -311,9 +312,10 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -322,12 +324,13 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
-		if(parentAdapterFactory != null) {
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -336,21 +339,28 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if(umlDiagramItemProvider != null)
+		if (umlDiagramItemProvider != null) {
 			umlDiagramItemProvider.dispose();
-		if(umlShapeItemProvider != null)
+		}
+		if (umlShapeItemProvider != null) {
 			umlShapeItemProvider.dispose();
-		if(umlStyleItemProvider != null)
+		}
+		if (umlStyleItemProvider != null) {
 			umlStyleItemProvider.dispose();
-		if(umlEdgeItemProvider != null)
+		}
+		if (umlEdgeItemProvider != null) {
 			umlEdgeItemProvider.dispose();
-		if(umlCompartmentItemProvider != null)
+		}
+		if (umlCompartmentItemProvider != null) {
 			umlCompartmentItemProvider.dispose();
-		if(umlLabelItemProvider != null)
+		}
+		if (umlLabelItemProvider != null) {
 			umlLabelItemProvider.dispose();
+		}
 	}
 }

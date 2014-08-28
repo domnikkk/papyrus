@@ -11,11 +11,11 @@ package org.eclipse.papyrus.RobotML;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotML.Software#isIsPeriodic <em>Is Periodic</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.Software#getPeriod <em>Period</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.Software#getPriority <em>Priority</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.Software#getDeadline <em>Deadline</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.Software#getWcet <em>Wcet</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.Software#isIsPeriodic <em>Is Periodic</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.Software#getPeriod <em>Period</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.Software#getPriority <em>Priority</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.Software#getDeadline <em>Deadline</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.Software#getWcet <em>Wcet</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface Software extends org.eclipse.papyrus.RobotML.System {
 	 * Returns the value of the '<em><b>Is Periodic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Periodic</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Periodic</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Is Periodic</em>' attribute.
 	 * @see #setIsPeriodic(boolean)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSoftware_IsPeriodic()
@@ -44,7 +44,9 @@ public interface Software extends org.eclipse.papyrus.RobotML.System {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Software#isIsPeriodic <em>Is Periodic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Periodic</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Is Periodic</em>' attribute.
 	 * @see #isIsPeriodic()
 	 * @generated
 	 */
@@ -54,10 +56,10 @@ public interface Software extends org.eclipse.papyrus.RobotML.System {
 	 * Returns the value of the '<em><b>Period</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Period</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Period</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Period</em>' attribute.
 	 * @see #setPeriod(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSoftware_Period()
@@ -70,7 +72,9 @@ public interface Software extends org.eclipse.papyrus.RobotML.System {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Software#getPeriod <em>Period</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Period</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Period</em>' attribute.
 	 * @see #getPeriod()
 	 * @generated
 	 */
@@ -80,10 +84,10 @@ public interface Software extends org.eclipse.papyrus.RobotML.System {
 	 * Returns the value of the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Priority</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Priority</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Priority</em>' attribute.
 	 * @see #setPriority(char)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSoftware_Priority()
@@ -96,7 +100,9 @@ public interface Software extends org.eclipse.papyrus.RobotML.System {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Software#getPriority <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Priority</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Priority</em>' attribute.
 	 * @see #getPriority()
 	 * @generated
 	 */
@@ -106,10 +112,10 @@ public interface Software extends org.eclipse.papyrus.RobotML.System {
 	 * Returns the value of the '<em><b>Deadline</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Deadline</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Deadline</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Deadline</em>' attribute.
 	 * @see #setDeadline(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSoftware_Deadline()
@@ -122,7 +128,9 @@ public interface Software extends org.eclipse.papyrus.RobotML.System {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Software#getDeadline <em>Deadline</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Deadline</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Deadline</em>' attribute.
 	 * @see #getDeadline()
 	 * @generated
 	 */
@@ -132,10 +140,10 @@ public interface Software extends org.eclipse.papyrus.RobotML.System {
 	 * Returns the value of the '<em><b>Wcet</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Wcet</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Wcet</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Wcet</em>' attribute.
 	 * @see #setWcet(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSoftware_Wcet()
@@ -148,7 +156,9 @@ public interface Software extends org.eclipse.papyrus.RobotML.System {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Software#getWcet <em>Wcet</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Wcet</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Wcet</em>' attribute.
 	 * @see #getWcet()
 	 * @generated
 	 */

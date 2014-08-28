@@ -29,13 +29,13 @@ import org.eclipse.papyrus.diagramtemplate.Selection;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.impl.DiagramDefinitionImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.impl.DiagramDefinitionImpl#getFromRoot <em>From Root</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.impl.DiagramDefinitionImpl#getSelection <em>Selection</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.impl.DiagramDefinitionImpl#getDiagramKind <em>Diagram Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.impl.DiagramDefinitionImpl#getLayoutToApply <em>Layout To Apply</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.impl.DiagramDefinitionImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.impl.DiagramDefinitionImpl#getPrefix <em>Prefix</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.impl.DiagramDefinitionImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.impl.DiagramDefinitionImpl#getFromRoot <em>From Root</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.impl.DiagramDefinitionImpl#getSelection <em>Selection</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.impl.DiagramDefinitionImpl#getDiagramKind <em>Diagram Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.impl.DiagramDefinitionImpl#getLayoutToApply <em>Layout To Apply</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.impl.DiagramDefinitionImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.impl.DiagramDefinitionImpl#getPrefix <em>Prefix</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +46,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -56,6 +57,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -66,6 +68,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The cached value of the '{@link #getFromRoot() <em>From Root</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFromRoot()
 	 * @generated
 	 * @ordered
@@ -76,6 +79,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSelection()
 	 * @generated
 	 * @ordered
@@ -86,6 +90,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The default value of the '{@link #getDiagramKind() <em>Diagram Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDiagramKind()
 	 * @generated
 	 * @ordered
@@ -96,6 +101,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The cached value of the '{@link #getDiagramKind() <em>Diagram Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDiagramKind()
 	 * @generated
 	 * @ordered
@@ -106,6 +112,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The default value of the '{@link #getLayoutToApply() <em>Layout To Apply</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLayoutToApply()
 	 * @generated
 	 * @ordered
@@ -116,6 +123,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The cached value of the '{@link #getLayoutToApply() <em>Layout To Apply</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLayoutToApply()
 	 * @generated
 	 * @ordered
@@ -126,6 +134,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -136,6 +145,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -146,6 +156,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPrefix()
 	 * @generated
 	 * @ordered
@@ -156,6 +167,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPrefix()
 	 * @generated
 	 * @ordered
@@ -165,6 +177,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DiagramDefinitionImpl() {
@@ -174,6 +187,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,6 +198,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -193,27 +208,31 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiagramTemplatePackage.DIAGRAM_DEFINITION__DESCRIPTION, oldDescription, description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EObject getFromRoot() {
 		if (fromRoot != null && fromRoot.eIsProxy()) {
-			InternalEObject oldFromRoot = (InternalEObject)fromRoot;
+			InternalEObject oldFromRoot = (InternalEObject) fromRoot;
 			fromRoot = eResolveProxy(oldFromRoot);
 			if (fromRoot != oldFromRoot) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DiagramTemplatePackage.DIAGRAM_DEFINITION__FROM_ROOT, oldFromRoot, fromRoot));
+				}
 			}
 		}
 		return fromRoot;
@@ -222,6 +241,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EObject basicGetFromRoot() {
@@ -231,18 +251,21 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setFromRoot(EObject newFromRoot) {
 		EObject oldFromRoot = fromRoot;
 		fromRoot = newFromRoot;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiagramTemplatePackage.DIAGRAM_DEFINITION__FROM_ROOT, oldFromRoot, fromRoot));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<Selection> getSelection() {
@@ -255,6 +278,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDiagramKind() {
@@ -264,18 +288,21 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDiagramKind(String newDiagramKind) {
 		String oldDiagramKind = diagramKind;
 		diagramKind = newDiagramKind;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiagramTemplatePackage.DIAGRAM_DEFINITION__DIAGRAM_KIND, oldDiagramKind, diagramKind));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getLayoutToApply() {
@@ -285,18 +312,21 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setLayoutToApply(String newLayoutToApply) {
 		String oldLayoutToApply = layoutToApply;
 		layoutToApply = newLayoutToApply;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiagramTemplatePackage.DIAGRAM_DEFINITION__LAYOUT_TO_APPLY, oldLayoutToApply, layoutToApply));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -306,18 +336,21 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiagramTemplatePackage.DIAGRAM_DEFINITION__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getPrefix() {
@@ -327,25 +360,28 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setPrefix(String newPrefix) {
 		String oldPrefix = prefix;
 		prefix = newPrefix;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiagramTemplatePackage.DIAGRAM_DEFINITION__PREFIX, oldPrefix, prefix));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__SELECTION:
-				return ((InternalEList<?>)getSelection()).basicRemove(otherEnd, msgs);
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__SELECTION:
+			return ((InternalEList<?>) getSelection()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -353,26 +389,29 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__DESCRIPTION:
-				return getDescription();
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__FROM_ROOT:
-				if (resolve) return getFromRoot();
-				return basicGetFromRoot();
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__SELECTION:
-				return getSelection();
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__DIAGRAM_KIND:
-				return getDiagramKind();
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__LAYOUT_TO_APPLY:
-				return getLayoutToApply();
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__NAME:
-				return getName();
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__PREFIX:
-				return getPrefix();
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__DESCRIPTION:
+			return getDescription();
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__FROM_ROOT:
+			if (resolve) {
+				return getFromRoot();
+			}
+			return basicGetFromRoot();
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__SELECTION:
+			return getSelection();
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__DIAGRAM_KIND:
+			return getDiagramKind();
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__LAYOUT_TO_APPLY:
+			return getLayoutToApply();
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__NAME:
+			return getName();
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__PREFIX:
+			return getPrefix();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -380,34 +419,35 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__FROM_ROOT:
-				setFromRoot((EObject)newValue);
-				return;
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__SELECTION:
-				getSelection().clear();
-				getSelection().addAll((Collection<? extends Selection>)newValue);
-				return;
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__DIAGRAM_KIND:
-				setDiagramKind((String)newValue);
-				return;
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__LAYOUT_TO_APPLY:
-				setLayoutToApply((String)newValue);
-				return;
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__NAME:
-				setName((String)newValue);
-				return;
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__PREFIX:
-				setPrefix((String)newValue);
-				return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__FROM_ROOT:
+			setFromRoot((EObject) newValue);
+			return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__SELECTION:
+			getSelection().clear();
+			getSelection().addAll((Collection<? extends Selection>) newValue);
+			return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__DIAGRAM_KIND:
+			setDiagramKind((String) newValue);
+			return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__LAYOUT_TO_APPLY:
+			setLayoutToApply((String) newValue);
+			return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__NAME:
+			setName((String) newValue);
+			return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__PREFIX:
+			setPrefix((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -415,32 +455,33 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__FROM_ROOT:
-				setFromRoot((EObject)null);
-				return;
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__SELECTION:
-				getSelection().clear();
-				return;
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__DIAGRAM_KIND:
-				setDiagramKind(DIAGRAM_KIND_EDEFAULT);
-				return;
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__LAYOUT_TO_APPLY:
-				setLayoutToApply(LAYOUT_TO_APPLY_EDEFAULT);
-				return;
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__PREFIX:
-				setPrefix(PREFIX_EDEFAULT);
-				return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__FROM_ROOT:
+			setFromRoot((EObject) null);
+			return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__SELECTION:
+			getSelection().clear();
+			return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__DIAGRAM_KIND:
+			setDiagramKind(DIAGRAM_KIND_EDEFAULT);
+			return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__LAYOUT_TO_APPLY:
+			setLayoutToApply(LAYOUT_TO_APPLY_EDEFAULT);
+			return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__PREFIX:
+			setPrefix(PREFIX_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -448,25 +489,26 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__FROM_ROOT:
-				return fromRoot != null;
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__SELECTION:
-				return selection != null && !selection.isEmpty();
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__DIAGRAM_KIND:
-				return DIAGRAM_KIND_EDEFAULT == null ? diagramKind != null : !DIAGRAM_KIND_EDEFAULT.equals(diagramKind);
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__LAYOUT_TO_APPLY:
-				return LAYOUT_TO_APPLY_EDEFAULT == null ? layoutToApply != null : !LAYOUT_TO_APPLY_EDEFAULT.equals(layoutToApply);
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__PREFIX:
-				return PREFIX_EDEFAULT == null ? prefix != null : !PREFIX_EDEFAULT.equals(prefix);
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__FROM_ROOT:
+			return fromRoot != null;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__SELECTION:
+			return selection != null && !selection.isEmpty();
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__DIAGRAM_KIND:
+			return DIAGRAM_KIND_EDEFAULT == null ? diagramKind != null : !DIAGRAM_KIND_EDEFAULT.equals(diagramKind);
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__LAYOUT_TO_APPLY:
+			return LAYOUT_TO_APPLY_EDEFAULT == null ? layoutToApply != null : !LAYOUT_TO_APPLY_EDEFAULT.equals(layoutToApply);
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__PREFIX:
+			return PREFIX_EDEFAULT == null ? prefix != null : !PREFIX_EDEFAULT.equals(prefix);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -474,11 +516,14 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: ");
@@ -495,4 +540,4 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 		return result.toString();
 	}
 
-} //DiagramDefinitionImpl
+} // DiagramDefinitionImpl

@@ -70,14 +70,14 @@ public class AssociationBranchDeletion implements IObjectActionDelegate {
 		TransactionalEditingDomain domain = selectedElement.getEditingDomain();
 		GraphicalEditPart associationNodeEditPart = null;
 		// 1. Semantic deletion
-		GraphicalEditPart branchSource = (GraphicalEditPart)selectedElement.getSource();
+		GraphicalEditPart branchSource = (GraphicalEditPart) selectedElement.getSource();
 		EStructuralFeature feature = null;
 		ArrayList<NamedElement> newValue = new ArrayList<NamedElement>();
 		// target is the association end of the association branch
-		association = (Association)branchSource.resolveSemanticElement();
+		association = (Association) branchSource.resolveSemanticElement();
 		associationNodeEditPart = branchSource;
 		newValue.addAll(association.getMemberEnds());
-		newValue.remove(MultiAssociationHelper.getPropertyToListen((Edge)selectedElement.getModel(), association));
+		newValue.remove(MultiAssociationHelper.getPropertyToListen((Edge) selectedElement.getModel(), association));
 		feature = UMLPackage.eINSTANCE.getAssociation_OwnedEnd();
 		SetRequest setRequest = new SetRequest(association, feature, newValue);
 		SetValueCommand setValueCommand = new SetValueCommand(setRequest);
@@ -87,7 +87,7 @@ public class AssociationBranchDeletion implements IObjectActionDelegate {
 		command.add(new ICommandProxy(new DeleteCommand(domain, associationBranchView)));
 		// 3. test if it exists more than 2 branches
 		int branchNumber = associationNodeEditPart.getSourceConnections().size() + associationNodeEditPart.getTargetConnections().size();
-		if(branchNumber == 3) {
+		if (branchNumber == 3) {
 			// 4. Graphical deletion of the node
 			command.add(new ICommandProxy(new DeleteCommand(domain, associationNodeEditPart.getNotationView())));
 			// 5. Graphical creation of the binary dependency
@@ -96,22 +96,23 @@ public class AssociationBranchDeletion implements IObjectActionDelegate {
 			ArrayList<EditPart> sourceList = new ArrayList<EditPart>();
 			ArrayList<EditPart> targetList = new ArrayList<EditPart>();
 			List<?> sourceConnections = associationNodeEditPart.getSourceConnections();
-			for(Object object : sourceConnections) {
-				if(object instanceof EditPart) {
-					sourceList.add((EditPart)object);
+			for (Object object : sourceConnections) {
+				if (object instanceof EditPart) {
+					sourceList.add((EditPart) object);
 				}
 			}
 			List<?> targetConnections = associationNodeEditPart.getTargetConnections();
-			for(Object object : targetConnections) {
-				if(object instanceof EditPart) {
-					targetList.add((EditPart)object);
+			for (Object object : targetConnections) {
+				if (object instanceof EditPart) {
+					targetList.add((EditPart) object);
 				}
 			}
 			sourceList.remove(selectedElement);
 			targetList.remove(selectedElement);
-			PreferencesHint preferencesHint = ((GraphicalEditPart)((ConnectionEditPart)(sourceList.get(0))).getTarget()).getDiagramPreferencesHint();
-			ConnectionViewDescriptor viewDescriptor = new ConnectionViewDescriptor(UMLElementTypes.Association_4001, ((IHintedType)UMLElementTypes.Association_4001).getSemanticHint(), preferencesHint);
-			CustomDeferredCreateConnectionViewCommand binaryCommand = new CustomDeferredCreateConnectionViewCommand(domain, ((IHintedType)UMLElementTypes.Association_4001).getSemanticHint(), new SemanticAdapter(null, (((ConnectionEditPart)(sourceList.get(0))).getTarget()).getModel()), new SemanticAdapter(null, (((ConnectionEditPart)(sourceList.get(1))).getTarget()).getModel()), sourceList.get(0).getViewer(), preferencesHint, viewDescriptor, null);
+			PreferencesHint preferencesHint = ((GraphicalEditPart) ((ConnectionEditPart) (sourceList.get(0))).getTarget()).getDiagramPreferencesHint();
+			ConnectionViewDescriptor viewDescriptor = new ConnectionViewDescriptor(UMLElementTypes.Association_4001, ((IHintedType) UMLElementTypes.Association_4001).getSemanticHint(), preferencesHint);
+			CustomDeferredCreateConnectionViewCommand binaryCommand = new CustomDeferredCreateConnectionViewCommand(domain, ((IHintedType) UMLElementTypes.Association_4001).getSemanticHint(), new SemanticAdapter(null,
+					(((ConnectionEditPart) (sourceList.get(0))).getTarget()).getModel()), new SemanticAdapter(null, (((ConnectionEditPart) (sourceList.get(1))).getTarget()).getModel()), sourceList.get(0).getViewer(), preferencesHint, viewDescriptor, null);
 			binaryCommand.setElement(association);
 			command.add(new ICommandProxy(binaryCommand));
 		}
@@ -124,10 +125,10 @@ public class AssociationBranchDeletion implements IObjectActionDelegate {
 	 * {@inheritedDoc}
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
-		if(selection instanceof IStructuredSelection) {
-			Object selectedobject = ((IStructuredSelection)selection).getFirstElement();
-			if(selectedobject instanceof AssociationBranchEditPart) {
-				selectedElement = (AssociationBranchEditPart)selectedobject;
+		if (selection instanceof IStructuredSelection) {
+			Object selectedobject = ((IStructuredSelection) selection).getFirstElement();
+			if (selectedobject instanceof AssociationBranchEditPart) {
+				selectedElement = (AssociationBranchEditPart) selectedobject;
 			}
 		}
 	}

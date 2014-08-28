@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,15 +9,15 @@
  *
  * Contributors:
  *   Atos Origin - Initial API and implementation
- *	
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.activity.draw2d;
 
 /**
  * Constraint used for FlowAdvancedLayout
- * 
+ *
  * @author Arthur Daussy - arthur.daussy@atosorigin.com
- * 
+ *
  */
 public class FlowLayoutAdvancedConstraint {
 
@@ -39,7 +39,7 @@ public class FlowLayoutAdvancedConstraint {
 	private boolean hasMinsize;
 
 	/**
-	 * 
+	 *
 	 * Constructor. Init all contants to false
 	 */
 	public FlowLayoutAdvancedConstraint() {
@@ -51,11 +51,11 @@ public class FlowLayoutAdvancedConstraint {
 
 	/**
 	 * {@link #fill}
-	 * 
+	 *
 	 * @param fill
 	 */
 	public void setFill(boolean fill) {
-		if(fill) {
+		if (fill) {
 			full = false;
 		}
 		this.fill = fill;
@@ -63,7 +63,7 @@ public class FlowLayoutAdvancedConstraint {
 
 	/**
 	 * {@link #fill}
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isFull() {
@@ -72,11 +72,11 @@ public class FlowLayoutAdvancedConstraint {
 
 	/**
 	 * {@link #full}
-	 * 
+	 *
 	 * @param full
 	 */
 	public void setFull(boolean full) {
-		if(full) {
+		if (full) {
 			fill = false;
 		}
 		this.full = full;
@@ -84,7 +84,7 @@ public class FlowLayoutAdvancedConstraint {
 
 	/**
 	 * {@link #full}
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isFill() {
@@ -93,7 +93,7 @@ public class FlowLayoutAdvancedConstraint {
 
 	/**
 	 * {@link #hasMinsize}
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isHasMinsize() {
@@ -102,7 +102,7 @@ public class FlowLayoutAdvancedConstraint {
 
 	/**
 	 * {@link #hasMinsize}
-	 * 
+	 *
 	 * @param hasMinsize
 	 */
 	public void setHasMinsize(boolean hasMinsize) {

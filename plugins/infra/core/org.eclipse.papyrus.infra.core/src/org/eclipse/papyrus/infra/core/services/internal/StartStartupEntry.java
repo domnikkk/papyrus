@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,21 +13,22 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.services.internal;
 
+import org.eclipse.papyrus.infra.core.services.IService;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 
 /**
  * An ServiceEntry managing {@link IService} that should be started when the
  * registry is started.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class StartStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param serviceDescriptor
 	 * @param registry
 	 */
@@ -37,9 +38,9 @@ public class StartStartupEntry extends ServiceStartupEntry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.internal.ServiceStartupEntry#getServiceInstance()
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
 	 */
@@ -51,7 +52,7 @@ public class StartStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * Do nothing
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -61,7 +62,7 @@ public class StartStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * Do nothing
-	 * 
+	 *
 	 * @param servicesRegistry
 	 * @throws ServiceException
 	 */
@@ -72,7 +73,7 @@ public class StartStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * Do nothing.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -82,7 +83,7 @@ public class StartStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.AbstractServiceEntry#disposeService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override

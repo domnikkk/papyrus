@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -63,13 +63,13 @@ public class DeleteModelAction extends AsyncEditAction<DIModel> {
 	protected boolean gatherInput(DIModel selection) {
 		boolean result = false;
 
-		if(MessageDialog.openQuestion(part.getSite().getShell(), Messages.DeleteModelAction_1, NLS.bind(Messages.DeleteModelAction_2, selection.getName()))) {
+		if (MessageDialog.openQuestion(part.getSite().getShell(), Messages.DeleteModelAction_1, NLS.bind(Messages.DeleteModelAction_2, selection.getName()))) {
 
 			IWorkbenchPage page = part.getSite().getPage();
 			URI uri = selection.getResource().getURI();
 			PapyrusCDOEditorInput input = new PapyrusCDOEditorInput(uri);
 			IEditorPart openEditor = page.findEditor(input);
-			if(openEditor != null) {
+			if (openEditor != null) {
 				page.closeEditor(openEditor, false);
 			}
 
@@ -83,13 +83,13 @@ public class DeleteModelAction extends AsyncEditAction<DIModel> {
 	protected void doRun(DIModel selection, CDOTransaction transaction, IProgressMonitor monitor) throws CoreException {
 
 		List<IStatus> failures = Lists.newArrayListWithExpectedSize(1);
-		for(Object next : selection.getChildren()) {
-			if(next instanceof CDOResource) {
+		for (Object next : selection.getChildren()) {
+			if (next instanceof CDOResource) {
 				// get the resource local to this transaction
 
-				CDOID oid = ((CDOResource)next).cdoID();
-				CDOResource toDelete = (CDOResource)transaction.getObject(oid);
-				if(toDelete != null) {
+				CDOID oid = ((CDOResource) next).cdoID();
+				CDOResource toDelete = (CDOResource) transaction.getObject(oid);
+				if (toDelete != null) {
 					try {
 						toDelete.delete(null);
 					} catch (Exception e) {
@@ -99,7 +99,7 @@ public class DeleteModelAction extends AsyncEditAction<DIModel> {
 			}
 		}
 
-		if(!failures.isEmpty()) {
+		if (!failures.isEmpty()) {
 			throw new CoreException(wrap(failures, "Errors occurred in deleting model.")); //$NON-NLS-1$
 		}
 	}
@@ -108,11 +108,11 @@ public class DeleteModelAction extends AsyncEditAction<DIModel> {
 	protected boolean updateSelection(IStructuredSelection selection) {
 		boolean result = super.updateSelection(selection);
 
-		if(result) {
+		if (result) {
 			// must also be able to modify the containing folder/resource
 			CDOObject toDelete = getSelectedCDOObject();
 			EObject container = toDelete.eContainer();
-			if(container != null) {
+			if (container != null) {
 				CDOObject cdoContainer = CDOUtils.getCDOObject(container);
 				result = (cdoContainer == null) || cdoContainer.cdoPermission().isWritable();
 			}

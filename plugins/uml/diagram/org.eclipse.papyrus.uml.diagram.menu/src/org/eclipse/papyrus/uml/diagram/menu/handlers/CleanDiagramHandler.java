@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,39 +33,40 @@ public class CleanDiagramHandler extends AbstractHandler {
 	private DiagramEditPart selectedElement;
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		if(this.selectedElement != null) {
+		if (this.selectedElement != null) {
 			CleanDiagramHelper.getInstance().run(selectedElement);
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
 		this.selectedElement = null;
-		if(evaluationContext instanceof IEvaluationContext) {
-			Object defaultVariable = ((IEvaluationContext)evaluationContext).getDefaultVariable();
-			if(defaultVariable instanceof Collection<?>) {
-				int size = ((Collection<?>)defaultVariable).size();
-				if(size != 0) {
-					final Iterator<?> iter = ((Collection<?>)defaultVariable).iterator();
-					while(iter.hasNext() && this.selectedElement == null) {
+		if (evaluationContext instanceof IEvaluationContext) {
+			Object defaultVariable = ((IEvaluationContext) evaluationContext).getDefaultVariable();
+			if (defaultVariable instanceof Collection<?>) {
+				int size = ((Collection<?>) defaultVariable).size();
+				if (size != 0) {
+					final Iterator<?> iter = ((Collection<?>) defaultVariable).iterator();
+					while (iter.hasNext() && this.selectedElement == null) {
 						Object current = iter.next();
-						if(current instanceof EditPart)
-							this.selectedElement = DiagramEditPartsUtil.getDiagramEditPart((EditPart)current);
+						if (current instanceof EditPart) {
+							this.selectedElement = DiagramEditPartsUtil.getDiagramEditPart((EditPart) current);
+						}
 					}
 				}
 			}

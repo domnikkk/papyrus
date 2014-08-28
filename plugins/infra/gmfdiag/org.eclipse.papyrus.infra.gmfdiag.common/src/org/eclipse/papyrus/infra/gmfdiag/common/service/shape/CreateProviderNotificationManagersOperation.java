@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -37,9 +37,11 @@ public class CreateProviderNotificationManagersOperation implements IOperation, 
 	/**
 	 * Creates a new AddNotificationListenersOperation.
 	 *
-	 * @param diagramEventBroker diagram event broker that dispatches the notifications to interested elements 
-	 * @param view view from which objects to listen are retrieved 
-	 * @param notificationListener 
+	 * @param diagramEventBroker
+	 *            diagram event broker that dispatches the notifications to interested elements
+	 * @param view
+	 *            view from which objects to listen are retrieved
+	 * @param notificationListener
 	 */
 	public CreateProviderNotificationManagersOperation(DiagramEventBroker diagramEventBroker, EObject view, NotificationListener notificationListener) {
 		this.diagramEventBroker = diagramEventBroker;
@@ -50,9 +52,10 @@ public class CreateProviderNotificationManagersOperation implements IOperation, 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object execute(IProvider provider) {
-		if(provider instanceof IShapeProvider) {
-			return ((IShapeProvider)provider).createProviderNotificationManager(getDiagramEventBroker(), getView(), getNotificationListener());	
+		if (provider instanceof IShapeProvider) {
+			return ((IShapeProvider) provider).createProviderNotificationManager(getDiagramEventBroker(), getView(), getNotificationListener());
 		}
 		return null;
 	}
@@ -64,7 +67,7 @@ public class CreateProviderNotificationManagersOperation implements IOperation, 
 	protected DiagramEventBroker getDiagramEventBroker() {
 		return diagramEventBroker;
 	}
-	
+
 	protected NotificationListener getNotificationListener() {
 		return notificationListener;
 	}

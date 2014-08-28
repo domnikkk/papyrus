@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -21,19 +21,20 @@ import java.util.List;
 
 import org.eclipse.jdt.internal.ui.preferences.TypeFilterInputDialog;
 import org.eclipse.jface.preference.ListEditor;
+import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Composite;
 
 /**
- * 
+ *
  * Used to select packages from the dialog.
- * 
+ *
  * @author DEBLOCK Nicolas and GILES Manuel
  */
 public class PackageListEditor extends ListEditor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param name
 	 * @param labelText
 	 * @param parent
@@ -48,7 +49,7 @@ public class PackageListEditor extends ListEditor {
 	 * Shows a browser dialog to select a file and returns that file.
 	 */
 	protected String getNewInputObject() {
-		//Dialog p = new JDialog();
+		// Dialog p = new JDialog();
 		List<String> l = new LinkedList<String>();
 
 
@@ -56,21 +57,26 @@ public class PackageListEditor extends ListEditor {
 		d.open();
 		Object pack = d.getResult();
 
+		// Return null if user clicked on "cancel" button, to not add ampty package on the list
+		if (d.getReturnCode() == Window.CANCEL) {
+			return null;
+		}
 		return pack.toString();
 	}
 
 	@Override
 	protected String createList(String[] items) {
 		StringBuffer str = new StringBuffer();
-		for(String item : items)
+		for (String item : items) {
 			str.append(item + ";");
+		}
 		return str.toString();
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * initialize list of items
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.ListEditor#parseString(java.lang.String)
 	 */
 	@Override

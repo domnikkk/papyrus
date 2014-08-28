@@ -78,19 +78,19 @@ public class SizeAction {
 	 * Constructor.
 	 *
 	 * @param parameter
-	 *        the parameter for this action
+	 *            the parameter for this action
 	 * @param selectedElements
-	 *        the selected elements for this action
+	 *            the selected elements for this action
 	 */
 	public SizeAction(String parameter, List<IGraphicalEditPart> selectedElements) {
 		this.selectedElements = selectedElements;
-		if(PARAMETER_AUTOSIZE.equals(parameter)) {
+		if (PARAMETER_AUTOSIZE.equals(parameter)) {
 			this.sizeActionType = AUTOSIZE;
-		} else if(PARAMETER_BOTH.equals(parameter)) {
+		} else if (PARAMETER_BOTH.equals(parameter)) {
 			this.sizeActionType = BOTH;
-		} else if(PARAMETER_HEIGHT.equals(parameter)) {
+		} else if (PARAMETER_HEIGHT.equals(parameter)) {
 			this.sizeActionType = HEIGHT;
-		} else if(PARAMETER_WIDTH.equals(parameter)) {
+		} else if (PARAMETER_WIDTH.equals(parameter)) {
 			this.sizeActionType = WIDTH;
 		}
 	}
@@ -102,7 +102,7 @@ public class SizeAction {
 	 *         The command for this Action
 	 */
 	public Command getCommand() {
-		switch(this.sizeActionType) {
+		switch (this.sizeActionType) {
 		case AUTOSIZE:
 			return getAutoSizeCommand();
 		case BOTH:
@@ -126,7 +126,7 @@ public class SizeAction {
 	 */
 	protected Command getAutoSizeCommand() {
 		// check if the element is selected
-		if(this.selectedElements.isEmpty()) {
+		if (this.selectedElements.isEmpty()) {
 			return UnexecutableCommand.INSTANCE;
 		} else {
 			boolean foundNonAutosizedPart = false;
@@ -134,22 +134,22 @@ public class SizeAction {
 
 			CompoundCommand command = new CompoundCommand("AutoSize Command"); //$NON-NLS-1$
 
-			for(IGraphicalEditPart editPart : selectedElements) {
-				//Local variables
+			for (IGraphicalEditPart editPart : selectedElements) {
+				// Local variables
 				int posRightParent = 0;
 				int posDownParent = 0;
 				Dimension delta;
 				double[] zoomMargin = { 0, 0, 0, 0, 0, 0, 1.5, 2.5, 3.5, 4.5, 13.5 };
 
-				//check if the editpart is autosized
-				if(editPart instanceof GraphicalEditPart) {
-					GraphicalEditPart graphicalEditPart = (GraphicalEditPart)editPart;
+				// check if the editpart is autosized
+				if (editPart instanceof GraphicalEditPart) {
+					GraphicalEditPart graphicalEditPart = (GraphicalEditPart) editPart;
 
-					Integer containerWidth = (Integer)graphicalEditPart.getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width());
-					Integer containerHeight = (Integer)graphicalEditPart.getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height());
+					Integer containerWidth = (Integer) graphicalEditPart.getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width());
+					Integer containerHeight = (Integer) graphicalEditPart.getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height());
 
 					List<?> listept = editPart.getChildren();
-					if(containerWidth.intValue() != -1 || containerHeight.intValue() != -1 || !(listept.isEmpty())) {
+					if (containerWidth.intValue() != -1 || containerHeight.intValue() != -1 || !(listept.isEmpty())) {
 						foundNonAutosizedPart = true;
 						PrecisionRectangle boundsEditPart = LayoutUtils.getAbsolutePosition(graphicalEditPart);
 
@@ -164,11 +164,11 @@ public class SizeAction {
 				// Function find editpart
 				Dimension d = findSizeChildren(editPart);
 
-				if(d.height > 0 && d.width > 0) {
-					//Detected zoom
+				if (d.height > 0 && d.width > 0) {
+					// Detected zoom
 					ZoomAction zoomAction = new ZoomAction("Zoom", operationSet);
 					ZoomManager zoomMngr = zoomAction.getZoomManager();
-					if(zoomMngr == null) {
+					if (zoomMngr == null) {
 						return null;
 					}
 					double[] zoomLevel = zoomMngr.getZoomLevels();
@@ -177,13 +177,13 @@ public class SizeAction {
 
 					int index = findIndex(currentZoomLevel, zoomLevel);
 					double cstZoom = 0;
-					if(index != -1) {
+					if (index != -1) {
 						cstZoom = zoomMargin[index];
 					}
 
 
-					int newW = (int)((posRightParent - d.width) - LayoutUtils.scrollBarSize - cstZoom);
-					int newH = (int)((posDownParent - d.height) - LayoutUtils.scrollBarSize - cstZoom);
+					int newW = (int) ((posRightParent - d.width) - LayoutUtils.scrollBarSize - cstZoom);
+					int newH = (int) ((posDownParent - d.height) - LayoutUtils.scrollBarSize - cstZoom);
 
 					delta = new Dimension(-(newW), -(newH));
 
@@ -191,7 +191,7 @@ public class SizeAction {
 					ChangeBoundsRequest bRequest = new ChangeBoundsRequest();
 
 					bRequest.setSizeDelta(delta);
-					bRequest.setType(RequestConstants.REQ_RESIZE);
+					bRequest.setType(org.eclipse.gef.RequestConstants.REQ_RESIZE);
 					Command resizeCommand = editPart.getCommand(bRequest);
 					command.add(resizeCommand);
 
@@ -207,7 +207,7 @@ public class SizeAction {
 
 			}
 
-			return command.isEmpty() || command.size() != (operationSet.size()) || !foundNonAutosizedPart ? UnexecutableCommand.INSTANCE : (Command)command;
+			return command.isEmpty() || command.size() != (operationSet.size()) || !foundNonAutosizedPart ? UnexecutableCommand.INSTANCE : (Command) command;
 
 		}
 	}
@@ -217,21 +217,21 @@ public class SizeAction {
 		int maxRight = 0;
 		int maxDown = 0;
 
-		//Contents of Edit Part selected
+		// Contents of Edit Part selected
 		List<EditPart> contents = editPart.getChildren();
 
-		for(int index = 0; index < contents.size(); index++) {
+		for (int index = 0; index < contents.size(); index++) {
 			EditPart editPartCompar = contents.get(index);
 			List<?> editPartChild = editPartCompar.getChildren();
 
-			if(!editPartChild.isEmpty()) {
+			if (!editPartChild.isEmpty()) {
 
-				for(int index2 = 0; index2 < editPartChild.size(); index2++) {
-					if(editPartChild.get(index2) != null) {
+				for (int index2 = 0; index2 < editPartChild.size(); index2++) {
+					if (editPartChild.get(index2) != null) {
 
-						GraphicalEditPart graphicalEditPart = (GraphicalEditPart)editPartChild.get(index2);
+						GraphicalEditPart graphicalEditPart = (GraphicalEditPart) editPartChild.get(index2);
 
-						if(graphicalEditPart.getChildren().size() > 1 && !(editPartChild instanceof AffixedChildNodeRepresentation)) {
+						if (graphicalEditPart.getChildren().size() > 1 && !(editPartChild instanceof AffixedChildNodeRepresentation)) {
 							PrecisionRectangle rectEditPartChild = LayoutUtils.getAbsolutePosition(graphicalEditPart);
 
 							maxRight = (rectEditPartChild.right() > maxRight) ? rectEditPartChild.right() : maxRight;
@@ -256,19 +256,19 @@ public class SizeAction {
 	 * Find index.
 	 *
 	 * @param currentZoomLevel
-	 *        the current zoom level
+	 *            the current zoom level
 	 * @param zoomLevel
-	 *        the zoom level
+	 *            the zoom level
 	 * @return the int
 	 */
 	private int findIndex(double currentZoomLevel, double[] zoomLevel) {
-		for(int i = 0; i <= zoomLevel.length; i++) {
-			if(zoomLevel[i] == currentZoomLevel) {
+		for (int i = 0; i <= zoomLevel.length; i++) {
+			if (zoomLevel[i] == currentZoomLevel) {
 				return i;
 			}
 		}
 
-		return -1; //element not found
+		return -1; // element not found
 	}
 
 	/**
@@ -278,7 +278,7 @@ public class SizeAction {
 	 *         Return the command for the Same Height and Width Action
 	 */
 	protected Command getBothCommand() {
-		if(!(this.selectedElements.size() > 1)) {
+		if (!(this.selectedElements.size() > 1)) {
 			return UnexecutableCommand.INSTANCE;
 		} else {
 			// Create a compound command to hold the resize commands
@@ -290,29 +290,29 @@ public class SizeAction {
 			// Get the Primary Selection
 			int last = selectedElements.size() - 1;
 			IGraphicalEditPart primary = selectedElements.get(last);
-			View primaryView = (View)primary.getModel();
-			Integer width = (Integer)ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Width());
-			Integer height = (Integer)ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Height());
+			View primaryView = (View) primary.getModel();
+			Integer width = (Integer) ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Width());
+			Integer height = (Integer) ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Height());
 
 			Dimension primarySize;
-			if(width.intValue() == -1 || height.intValue() == -1) {
+			if (width.intValue() == -1 || height.intValue() == -1) {
 				primarySize = primary.getFigure().getSize().getCopy();
 			} else {
 				primarySize = new Dimension(width.intValue(), height.intValue());
 			}
 
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 
 				// For each figure in the selection (to be resize) a request is created for resize to new bounds in the south-east direction.
 				// The command for this resize is contributed by the edit part for the resize request.
 
 				IGraphicalEditPart toResize = iter.next();
-				View resizeView = (View)toResize.getModel();
-				Integer previousWidth = (Integer)ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Width());
-				Integer previousHeight = (Integer)ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Height());
+				View resizeView = (View) toResize.getModel();
+				Integer previousWidth = (Integer) ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Width());
+				Integer previousHeight = (Integer) ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Height());
 
 				Dimension previousSize;
-				if(previousWidth.intValue() == -1 || previousHeight.intValue() == -1) {
+				if (previousWidth.intValue() == -1 || previousHeight.intValue() == -1) {
 					previousSize = toResize.getFigure().getSize().getCopy();
 				} else {
 					previousSize = new Dimension(previousWidth.intValue(), previousHeight.intValue());
@@ -325,7 +325,7 @@ public class SizeAction {
 				ChangeBoundsRequest bRequest = new ChangeBoundsRequest();
 				bRequest.setResizeDirection(PositionConstants.SOUTH_EAST);
 				bRequest.setSizeDelta(delta);
-				bRequest.setType(RequestConstants.REQ_RESIZE);
+				bRequest.setType(org.eclipse.gef.RequestConstants.REQ_RESIZE);
 
 				Command resizeCommand = toResize.getCommand(bRequest);
 
@@ -348,7 +348,7 @@ public class SizeAction {
 	 *         Return the command for the Same Height Action
 	 */
 	protected Command getHeightCommand() {
-		if(!(this.selectedElements.size() > 1)) {
+		if (!(this.selectedElements.size() > 1)) {
 			return UnexecutableCommand.INSTANCE;
 		} else {
 			// Create a compound command to hold the resize commands
@@ -360,29 +360,29 @@ public class SizeAction {
 			// Get the Primary Selection
 			int last = selectedElements.size() - 1;
 			IGraphicalEditPart primary = selectedElements.get(last);
-			View primaryView = (View)primary.getModel();
-			Integer width = (Integer)ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Width());
-			Integer height = (Integer)ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Height());
+			View primaryView = (View) primary.getModel();
+			Integer width = (Integer) ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Width());
+			Integer height = (Integer) ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Height());
 
 			Dimension primarySize;
-			if(width.intValue() == -1 || height.intValue() == -1) {
+			if (width.intValue() == -1 || height.intValue() == -1) {
 				primarySize = primary.getFigure().getSize().getCopy();
 			} else {
 				primarySize = new Dimension(width.intValue(), height.intValue());
 			}
 
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 
 				// For each figure in the selection (to be resize) a request is created for resize to new bounds in the south-east direction.
 				// The command for this resize is contributed by the edit part for the resize request.
 
 				IGraphicalEditPart toResize = iter.next();
-				View resizeView = (View)toResize.getModel();
-				Integer previousWidth = (Integer)ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Width());
-				Integer previousHeight = (Integer)ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Height());
+				View resizeView = (View) toResize.getModel();
+				Integer previousWidth = (Integer) ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Width());
+				Integer previousHeight = (Integer) ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Height());
 
 				Dimension previousSize;
-				if(previousWidth.intValue() == -1 || previousHeight.intValue() == -1) {
+				if (previousWidth.intValue() == -1 || previousHeight.intValue() == -1) {
 					previousSize = toResize.getFigure().getSize().getCopy();
 				} else {
 					previousSize = new Dimension(previousWidth.intValue(), previousHeight.intValue());
@@ -395,7 +395,7 @@ public class SizeAction {
 				ChangeBoundsRequest bRequest = new ChangeBoundsRequest();
 				bRequest.setResizeDirection(PositionConstants.SOUTH);
 				bRequest.setSizeDelta(delta);
-				bRequest.setType(RequestConstants.REQ_RESIZE);
+				bRequest.setType(org.eclipse.gef.RequestConstants.REQ_RESIZE);
 
 				Command resizeCommand = toResize.getCommand(bRequest);
 
@@ -419,7 +419,7 @@ public class SizeAction {
 	 *         the command for the Same Width Action
 	 */
 	protected Command getWidthCommand() {
-		if(!(this.selectedElements.size() > 1)) {
+		if (!(this.selectedElements.size() > 1)) {
 			return UnexecutableCommand.INSTANCE;
 		} else {
 			// Create a compound command to hold the resize commands
@@ -431,29 +431,29 @@ public class SizeAction {
 			// Get the Primary Selection
 			int last = selectedElements.size() - 1;
 			IGraphicalEditPart primary = selectedElements.get(last);
-			View primaryView = (View)primary.getModel();
-			Integer width = (Integer)ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Width());
-			Integer height = (Integer)ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Height());
+			View primaryView = (View) primary.getModel();
+			Integer width = (Integer) ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Width());
+			Integer height = (Integer) ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Height());
 
 			Dimension primarySize;
-			if(width.intValue() == -1 || height.intValue() == -1) {
+			if (width.intValue() == -1 || height.intValue() == -1) {
 				primarySize = primary.getFigure().getSize().getCopy();
 			} else {
 				primarySize = new Dimension(width.intValue(), height.intValue());
 			}
 
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 
 				// For each figure in the selection (to be resize) a request is created for resize to new bounds in the south-east direction.
 				// The command for this resize is contributed by the edit part for the resize request.
 
 				IGraphicalEditPart toResize = iter.next();
-				View resizeView = (View)toResize.getModel();
-				Integer previousWidth = (Integer)ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Width());
-				Integer previousHeight = (Integer)ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Height());
+				View resizeView = (View) toResize.getModel();
+				Integer previousWidth = (Integer) ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Width());
+				Integer previousHeight = (Integer) ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Height());
 
 				Dimension previousSize;
-				if(previousWidth.intValue() == -1 || previousHeight.intValue() == -1) {
+				if (previousWidth.intValue() == -1 || previousHeight.intValue() == -1) {
 					previousSize = toResize.getFigure().getSize().getCopy();
 				} else {
 					previousSize = new Dimension(previousWidth.intValue(), previousHeight.intValue());
@@ -466,7 +466,7 @@ public class SizeAction {
 				ChangeBoundsRequest bRequest = new ChangeBoundsRequest();
 				bRequest.setResizeDirection(PositionConstants.EAST);
 				bRequest.setSizeDelta(delta);
-				bRequest.setType(RequestConstants.REQ_RESIZE);
+				bRequest.setType(org.eclipse.gef.RequestConstants.REQ_RESIZE);
 
 				Command resizeCommand = toResize.getCommand(bRequest);
 

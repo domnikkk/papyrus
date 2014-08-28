@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *      Christian W. Damus (CEA) - bug 323802
  *
@@ -36,7 +36,7 @@ import org.eclipse.papyrus.views.properties.modelelement.AbstractModelElement;
  * Model element for the decorated view in GMF. This is not a model element, as the properties to search are non-EMF Properties
  */
 public class DecoratedModelElement extends AbstractModelElement {
- 
+
 	private final static Map<Object, String> labels = new HashMap<Object, String>();
 	static {
 		labels.put(0, Messages.DecoratedModelElement_NORTH_WEST);
@@ -49,7 +49,7 @@ public class DecoratedModelElement extends AbstractModelElement {
 		labels.put(7, Messages.DecoratedModelElement_SOUTH);
 		labels.put(8, Messages.DecoratedModelElement_SOUTH_EAST);
 	}
-	
+
 	/**
 	 * The EObject manipulated by this ModelElement
 	 */
@@ -61,9 +61,9 @@ public class DecoratedModelElement extends AbstractModelElement {
 	protected EditingDomain domain;
 
 	/**
-	 * 
+	 *
 	 * Constructs a new EMFModelElement for the given EObject
-	 * 
+	 *
 	 * @param source
 	 */
 	public DecoratedModelElement(EObject source) {
@@ -71,9 +71,9 @@ public class DecoratedModelElement extends AbstractModelElement {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructs a new EMFModelElement for the given EObject and Editing Domain
-	 * 
+	 *
 	 * @param source
 	 * @param domain
 	 */
@@ -95,18 +95,18 @@ public class DecoratedModelElement extends AbstractModelElement {
 	public EObject getSource() {
 		return source;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected IObservable doGetObservable(String propertyPath) {
-		if(ShapeDecorator.SHAPE_DECORATOR_VISIBILITY.equals(propertyPath)) {
-			return new CustomBooleanStyleObservableValue((View)source, domain, ShapeDecorator.SHAPE_DECORATOR_VISIBILITY);
+		if (ShapeDecorator.SHAPE_DECORATOR_VISIBILITY.equals(propertyPath)) {
+			return new CustomBooleanStyleObservableValue((View) source, domain, ShapeDecorator.SHAPE_DECORATOR_VISIBILITY);
 		}
 
-		if(ShapeDecorator.SHAPE_DECORATOR_DIRECTION.equals(propertyPath)) {
-			return new CustomIntStyleObservableValue((View)source, domain, ShapeDecorator.SHAPE_DECORATOR_DIRECTION);
+		if (ShapeDecorator.SHAPE_DECORATOR_DIRECTION.equals(propertyPath)) {
+			return new CustomIntStyleObservableValue((View) source, domain, ShapeDecorator.SHAPE_DECORATOR_DIRECTION);
 		}
 		return super.getObservable(propertyPath);
 	}
@@ -116,7 +116,7 @@ public class DecoratedModelElement extends AbstractModelElement {
 	 */
 	@Override
 	public boolean isEditable(String propertyPath) {
-		if(ShapeDecorator.SHAPE_DECORATOR_DIRECTION.equals(propertyPath) || ShapeDecorator.SHAPE_DECORATOR_VISIBILITY.equals(propertyPath)) {
+		if (ShapeDecorator.SHAPE_DECORATOR_DIRECTION.equals(propertyPath) || ShapeDecorator.SHAPE_DECORATOR_VISIBILITY.equals(propertyPath)) {
 			return !EMFHelper.isReadOnly(source);
 		}
 
@@ -128,7 +128,7 @@ public class DecoratedModelElement extends AbstractModelElement {
 	 */
 	@Override
 	public ILabelProvider getLabelProvider(String propertyPath) {
-		if(ShapeDecorator.SHAPE_DECORATOR_DIRECTION.equals(propertyPath)) {
+		if (ShapeDecorator.SHAPE_DECORATOR_DIRECTION.equals(propertyPath)) {
 			return new MapLabelProvider(labels);
 		}
 		return super.getLabelProvider(propertyPath);
@@ -139,7 +139,7 @@ public class DecoratedModelElement extends AbstractModelElement {
 	 */
 	@Override
 	public IStaticContentProvider getContentProvider(String propertyPath) {
-		if(ShapeDecorator.SHAPE_DECORATOR_DIRECTION.equals(propertyPath)) {
+		if (ShapeDecorator.SHAPE_DECORATOR_DIRECTION.equals(propertyPath)) {
 			return new AbstractStaticContentProvider() {
 
 				/**

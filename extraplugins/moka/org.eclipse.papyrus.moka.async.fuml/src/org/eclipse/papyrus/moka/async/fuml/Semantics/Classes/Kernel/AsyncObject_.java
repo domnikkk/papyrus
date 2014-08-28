@@ -42,24 +42,24 @@ public class AsyncObject_ extends CS_Object {
 	 */
 	@Override
 	public void startBehavior(Class classifier, List<ParameterValue> inputs) {
-		if(this.objectActivation == null) {
+		if (this.objectActivation == null) {
 			this.objectActivation = new AsyncObjectActivation(classifier, inputs);
 			this.objectActivation.object = this;
 		}
 		/* 1. Create Thread Name */
 		String threadName = "Thread_";
 		Iterator<Class> classes = this.types.iterator();
-		while(classes.hasNext()) {
+		while (classes.hasNext()) {
 			threadName += classes.next().getName();
-			if(classes.hasNext()) {
+			if (classes.hasNext()) {
 				threadName += "|";
 			}
 		}
 		/* 2. Pattern to start the Runnable corresponding to the AsyncObjectActivation */
-		//Thread objectactivationThread = new Thread((AsyncObjectActivation)this.objectActivation, threadName);
-		objectactivationThread = new Thread((AsyncObjectActivation)this.objectActivation, threadName);
+		// Thread objectactivationThread = new Thread((AsyncObjectActivation)this.objectActivation, threadName);
+		objectactivationThread = new Thread((AsyncObjectActivation) this.objectActivation, threadName);
 
-		((AsyncControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()).registerObjectActivation(this.objectActivation, threadName); // Added for connection with debug api
+		((AsyncControlDelegate) FUMLExecutionEngine.eInstance.getControlDelegate()).registerObjectActivation(this.objectActivation, threadName); // Added for connection with debug api
 
 		objectactivationThread.start();
 

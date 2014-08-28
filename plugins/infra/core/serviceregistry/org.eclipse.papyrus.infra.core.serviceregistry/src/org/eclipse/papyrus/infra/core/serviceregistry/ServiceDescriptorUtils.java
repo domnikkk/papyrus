@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
 
 /**
  * Utilities used as bridge between {@link ServiceDescriptor} and {@link AbstractServiceIdDesc}.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -33,58 +33,61 @@ public class ServiceDescriptorUtils {
 
 	/**
 	 * Create a {@link ServiceDescriptor} from a {@link AbstractServiceIdDesc}.
+	 *
 	 * @param idDesc
 	 * @return
 	 */
 	public static ServiceDescriptor toServiceDescriptor(AbstractServiceIdDesc idDesc) {
-		
-		
-		if( idDesc instanceof ServiceIdDesc ) {
-			return toServiceDescriptor((ServiceIdDesc)idDesc);
+
+
+		if (idDesc instanceof ServiceIdDesc) {
+			return toServiceDescriptor((ServiceIdDesc) idDesc);
 		}
-		else if(idDesc instanceof AliasIdDesc ) {
-			return toServiceDescriptor((AliasIdDesc)idDesc);
+		else if (idDesc instanceof AliasIdDesc) {
+			return toServiceDescriptor((AliasIdDesc) idDesc);
 		}
-		
+
 		// Should not happen
 		throw new UnsupportedOperationException("Don't know how to transform '" + idDesc.getClass().getName() + "'."); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * Create a {@link ServiceDescriptor} from a {@link AbstractServiceIdDesc}.
+	 *
 	 * @param serviceDesc
 	 * @return
 	 */
 	public static ServiceDescriptor toServiceDescriptor(AbstractServiceDesc serviceDesc) {
-		if( serviceDesc instanceof ServiceDesc ) {
-			return toServiceDescriptor((ServiceDesc)serviceDesc);
+		if (serviceDesc instanceof ServiceDesc) {
+			return toServiceDescriptor((ServiceDesc) serviceDesc);
 		}
-		else if(serviceDesc instanceof AliasDesc ) {
-			return toServiceDescriptor((AliasDesc)serviceDesc);
+		else if (serviceDesc instanceof AliasDesc) {
+			return toServiceDescriptor((AliasDesc) serviceDesc);
 		}
-		
+
 		// Should not happen
 		throw new UnsupportedOperationException("Don't know how to transform '" + serviceDesc.getClass().getName() + "'."); //$NON-NLS-1$ //$NON-NLS-2$
 	}
-		
+
 	/**
 	 * Create a {@link ServiceDescriptor} from a {@link AbstractServiceIdDesc}.
+	 *
 	 * @param serviceIdDesc
 	 * @return
 	 */
 	public static ServiceDescriptor toServiceDescriptor(ServiceIdDesc serviceIdDesc) {
-		
-		ServiceStartKind serviceStartKind = transformToServiceStartKind(serviceIdDesc.getStartKind()); 
+
+		ServiceStartKind serviceStartKind = transformToServiceStartKind(serviceIdDesc.getStartKind());
 		return new ServiceDescriptor(serviceIdDesc.getName(), serviceIdDesc.getClassname(), serviceStartKind, serviceIdDesc.getPriority(), serviceIdDesc.getDependsOn());
 	}
-		
+
 	/**
-	 * 
+	 *
 	 * @param startKind
 	 * @return
 	 */
 	private static ServiceStartKind transformToServiceStartKind(StartupKind startKind) {
-		switch( startKind) {
+		switch (startKind) {
 		case STARTUP:
 			return ServiceStartKind.STARTUP;
 		case LAZY:
@@ -96,32 +99,34 @@ public class ServiceDescriptorUtils {
 
 	/**
 	 * Create a {@link ServiceDescriptor} from a {@link AbstractServiceIdDesc}.
+	 *
 	 * @param serviceDesc
 	 * @return
 	 */
 	public static ServiceDescriptor toServiceDescriptor(AliasIdDesc serviceDesc) {
-		
+
 		return new AliasDescriptor(serviceDesc.getName(), serviceDesc.getAliasedService(), serviceDesc.getPriority());
 	}
 
 	/**
 	 * Create a {@link ServiceDescriptor} from a {@link AbstractServiceIdDesc}.
+	 *
 	 * @param serviceIdDesc
 	 * @return
 	 */
 	public static ServiceDescriptor toServiceDescriptor(ServiceDesc serviceIdDesc) {
-		
-		ServiceStartKind serviceStartKind = transformToServiceStartKind(serviceIdDesc.getStartKind()); 
+
+		ServiceStartKind serviceStartKind = transformToServiceStartKind(serviceIdDesc.getStartKind());
 		return new ServiceDescriptor(serviceIdDesc.getName(), serviceIdDesc.getClassname(), serviceStartKind, serviceIdDesc.getPriority(), serviceIdDesc.getDependsOnIds());
 	}
-		
+
 	/**
-	 * 
+	 *
 	 * @param startKind
 	 * @return
 	 */
 	private static ServiceStartKind transformToServiceStartKind(org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.StartupKind startKind) {
-		switch( startKind) {
+		switch (startKind) {
 		case STARTUP:
 			return ServiceStartKind.STARTUP;
 		case LAZY:
@@ -133,11 +138,12 @@ public class ServiceDescriptorUtils {
 
 	/**
 	 * Create a {@link ServiceDescriptor} from a {@link AbstractServiceIdDesc}.
+	 *
 	 * @param serviceDesc
 	 * @return
 	 */
 	public static ServiceDescriptor toServiceDescriptor(AliasDesc serviceDesc) {
-		
+
 		return new AliasDescriptor(serviceDesc.getName(), serviceDesc.getAliasedServiceId(), serviceDesc.getPriority());
 	}
 

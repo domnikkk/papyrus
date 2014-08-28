@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		 Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -33,9 +33,9 @@ import org.eclipse.swt.widgets.Text;
 
 /**
  * The page to configure the separator used in the CSV file
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class ImportCSVConfigurationPage extends WizardPage {
 
@@ -55,17 +55,17 @@ public class ImportCSVConfigurationPage extends WizardPage {
 	private char[] textChar = null;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param pageName
-	 *        the name of the import page
+	 *            the name of the import page
 	 * @param title
-	 *        the title of the page
+	 *            the title of the page
 	 * @param titleImage
-	 *        the image for this page
+	 *            the image for this page
 	 * @param tableManager
-	 *        the table manager where the import will be done
+	 *            the table manager where the import will be done
 	 */
 	public ImportCSVConfigurationPage(final String pageName, final String title, final ImageDescriptor titleImage, final PasteSeparator defaultSeparator, final TextDelimiter defaultDelimiter) {
 		super(pageName, title, titleImage);
@@ -75,9 +75,9 @@ public class ImportCSVConfigurationPage extends WizardPage {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 */
 	@Override
@@ -89,14 +89,14 @@ public class ImportCSVConfigurationPage extends WizardPage {
 		separatorGroup.setText(Messages.ImportCSVConfigurationPage_Separators);
 		separatorGroup.setLayout(new GridLayout(2, false));
 
-		for(final PasteSeparator current : PasteSeparator.values()) {
+		for (final PasteSeparator current : PasteSeparator.values()) {
 			final Button button = new Button(separatorGroup, SWT.RADIO);
 			button.setText(current.getName());
 			button.addSelectionListener(new SelectionListener() {
 
 				@Override
 				public void widgetSelected(SelectionEvent e) {
-					if(button.isEnabled()) {
+					if (button.isEnabled()) {
 						separator = current;
 					}
 					setPageComplete(validate());
@@ -104,12 +104,12 @@ public class ImportCSVConfigurationPage extends WizardPage {
 
 				@Override
 				public void widgetDefaultSelected(SelectionEvent e) {
-					//nothing to do
+					// nothing to do
 				}
 			});
 			button.setSelection(current == separator);
 			final GridData data = new GridData();
-			if(current == PasteSeparator.OTHER) {
+			if (current == PasteSeparator.OTHER) {
 				final Text text = new Text(separatorGroup, SWT.BORDER);
 				text.addKeyListener(new org.eclipse.swt.events.KeyListener() {
 
@@ -121,7 +121,7 @@ public class ImportCSVConfigurationPage extends WizardPage {
 
 					@Override
 					public void keyPressed(KeyEvent e) {
-						//nothing to do
+						// nothing to do
 					}
 				});
 				button.addSelectionListener(new SelectionListener() {
@@ -150,10 +150,10 @@ public class ImportCSVConfigurationPage extends WizardPage {
 		label2.setText(Messages.ImportCSVConfigurationPage_SelectTheTextDelimiter);
 		final Combo combo = new Combo(textDelimiterComp, SWT.DROP_DOWN | SWT.READ_ONLY);
 
-		for(int i = 0; i < TextDelimiter.values().length; i++) {
+		for (int i = 0; i < TextDelimiter.values().length; i++) {
 			final TextDelimiter current = TextDelimiter.values()[i];
 			combo.add(String.valueOf(current.getDelimiter()), i);
-			if(this.textDelimiter == current) {
+			if (this.textDelimiter == current) {
 				combo.select(i);
 			}
 		}
@@ -167,7 +167,7 @@ public class ImportCSVConfigurationPage extends WizardPage {
 
 			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
-				//nothing to do
+				// nothing to do
 			}
 		});
 
@@ -175,15 +175,15 @@ public class ImportCSVConfigurationPage extends WizardPage {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	private boolean validate() {
-		if(this.separator == PasteSeparator.OTHER) {
-			if(this.textChar == null || this.textChar.length == 0) {
+		if (this.separator == PasteSeparator.OTHER) {
+			if (this.textChar == null || this.textChar.length == 0) {
 				setErrorMessage(Messages.ImportCSVConfigurationPage_TheCellSeparatorIsNotDefined);
 				return false;
-			} else if(this.textChar.length > 1) {
+			} else if (this.textChar.length > 1) {
 				setErrorMessage(Messages.ImportCSVConfigurationPage_TheCellSeparatorMustBeExcatlyOneChar);
 				return false;
 			}
@@ -193,19 +193,19 @@ public class ImportCSVConfigurationPage extends WizardPage {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the selected separator
 	 */
 	public char getSeparator() {
-		if(this.separator == PasteSeparator.OTHER) {
+		if (this.separator == PasteSeparator.OTHER) {
 			return textChar[0];
 		}
 		return this.separator.getSeparator();
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the selected text delimiter
 	 */

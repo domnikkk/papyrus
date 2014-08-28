@@ -34,7 +34,7 @@ public class SashModelUtils {
 	public static SashModel getSashModel() {
 
 		try {
-			return (SashModel)ServiceUtilsForActionHandlers.getInstance().getModelSet().getModel(SashModel.MODEL_ID);
+			return (SashModel) ServiceUtilsForActionHandlers.getInstance().getModelSet().getModel(SashModel.MODEL_ID);
 		} catch (ServiceException e) {
 			return null;
 		}
@@ -51,34 +51,34 @@ public class SashModelUtils {
 	 * @return The {@link SashModel} of the current editor, or null if not
 	 *         found.
 	 * @throws ServiceException
-	 *         If an error occurs while getting or starting the service.
+	 *             If an error occurs while getting or starting the service.
 	 * @deprecated Use {@link #getSashModelChecked(ServicesRegistry)} instead
 	 */
 	@Deprecated
 	public static SashModel getSashModelChecked() throws ServiceException {
 
-		return (SashModel)ServiceUtilsForActionHandlers.getInstance().getModelSet().getModel(SashModel.MODEL_ID);
+		return (SashModel) ServiceUtilsForActionHandlers.getInstance().getModelSet().getModel(SashModel.MODEL_ID);
 	}
 
 	/**
 	 * Gets the SashModel from the {@link ModelSet}. <br>
 	 *
 	 * @param modelsManager
-	 *        The modelManager containing the requested model.
+	 *            The modelManager containing the requested model.
 	 *
 	 * @return The {@link SashModel} registered in modelManager, or null if not
 	 *         found.
 	 */
 	public static SashModel getSashModel(ModelSet modelsManager) {
 
-		return (SashModel)modelsManager.getModel(SashModel.MODEL_ID);
+		return (SashModel) modelsManager.getModel(SashModel.MODEL_ID);
 	}
 
 	/**
 	 * Gets the SashModel from the {@link ModelSet}. <br>
 	 *
 	 * @param ServicesRegistry
-	 *        The servie registry under which the ModelSet is registered.
+	 *            The servie registry under which the ModelSet is registered.
 	 *
 	 * @return The {@link SashModel} registered in modelManager, or null if not
 	 *         found.
@@ -86,7 +86,7 @@ public class SashModelUtils {
 	public static SashModel getSashModel(ServicesRegistry servicesRegistry) {
 
 		try {
-			return (SashModel)ModelUtils.getModelSetChecked(servicesRegistry).getModel(SashModel.MODEL_ID);
+			return (SashModel) ModelUtils.getModelSetChecked(servicesRegistry).getModel(SashModel.MODEL_ID);
 		} catch (ServiceException e) {
 			return null;
 		}
@@ -96,16 +96,16 @@ public class SashModelUtils {
 	 * Gets the SashModel from the {@link ModelSet}. <br>
 	 *
 	 * @param ServicesRegistry
-	 *        The servie registry under which the ModelSet is registered.
+	 *            The servie registry under which the ModelSet is registered.
 	 *
 	 * @return The {@link SashModel} registered in modelManager, or null if not
 	 *         found.
 	 * @throws ServiceException
-	 *         If the service can't be returned.
+	 *             If the service can't be returned.
 	 */
 	public static SashModel getSashModelChecked(ServicesRegistry servicesRegistry) throws ServiceException {
 
-		return (SashModel)ModelUtils.getModelSetChecked(servicesRegistry).getModel(SashModel.MODEL_ID);
+		return (SashModel) ModelUtils.getModelSetChecked(servicesRegistry).getModel(SashModel.MODEL_ID);
 	}
 
 	/**

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -30,9 +30,9 @@ public class ConstraintConstrainedElementPreferencePage extends DomainDiagramLin
 
 	/**
 	 * Initialize defaults using a specified {@link IPreferenceStore}
-	 * 
+	 *
 	 * @param store
-	 *        the preference store.
+	 *            the preference store.
 	 */
 	public static void initDefaults(IPreferenceStore store) {
 		// Start of user code custom default initializations

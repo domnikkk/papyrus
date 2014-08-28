@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,22 +22,24 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 /**
  * Insert a table with the specified owner
  */
-public class InsertTableCommand extends RecordingCommand{
+public class InsertTableCommand extends RecordingCommand {
 
 	/** FIXME the domain of Recording command should be accessible */
 	protected TransactionalEditingDomain transactionalEditingDomain;
-	
+
 	/** table to be inserted */
 	protected Table table;
-	
+
 	/** owner of the table */
 	protected EObject owner;
 
 	/**
 	 * @param transactionalEditingDomain
 	 * @param label
-	 * @param table to be inserted
-	 * @param owner of the table
+	 * @param table
+	 *            to be inserted
+	 * @param owner
+	 *            of the table
 	 */
 	public InsertTableCommand(TransactionalEditingDomain transactionalEditingDomain, String label, Table table, EObject owner) {
 		super(transactionalEditingDomain, label);
@@ -46,15 +48,17 @@ public class InsertTableCommand extends RecordingCommand{
 		this.table = table;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.emf.transaction.RecordingCommand#doExecute()
 	 */
 	@Override
 	protected void doExecute() {
 		Resource targetResource = NotationUtils.getNotationResourceForDiagram(owner, transactionalEditingDomain);
-		table.setOwner(owner); 
-		if(targetResource != null) {
+		table.setOwner(owner);
+		if (targetResource != null) {
 			targetResource.getContents().add(table);
-		} 	
-	}	
+		}
+	}
 }

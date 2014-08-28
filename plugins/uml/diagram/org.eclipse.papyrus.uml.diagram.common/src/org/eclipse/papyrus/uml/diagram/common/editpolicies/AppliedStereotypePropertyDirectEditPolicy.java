@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.uml.diagram.common.editpolicies;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.editpolicies.DirectEditPolicy;
 import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
@@ -30,33 +31,36 @@ public class AppliedStereotypePropertyDirectEditPolicy extends LabelDirectEditPo
 	/**
 	 * @see DirectEditPolicy#getDirectEditCommand(DirectEditRequest)
 	 */
+	@Override
 	protected Command getDirectEditCommand(DirectEditRequest edit) {
-		if (edit.getCellEditor() instanceof TextCellEditorEx)
-			if (!((TextCellEditorEx) edit.getCellEditor()).hasValueChanged())
+		if (edit.getCellEditor() instanceof TextCellEditorEx) {
+			if (!((TextCellEditorEx) edit.getCellEditor()).hasValueChanged()) {
 				return null;
-			
+			}
+		}
+
 		String labelText = (String) edit.getCellEditor().getValue();
-		
-		//for CellEditor, null is always returned for invalid values
+
+		// for CellEditor, null is always returned for invalid values
 		if (labelText == null) {
 			return null;
 		}
-		
+
 		ITextAwareEditPart compartment = (ITextAwareEditPart) getHost();
-		EObject model = (EObject)compartment.getModel();
-		SemanticAdapter elementAdapter = null ;
+		EObject model = (EObject) compartment.getModel();
+		SemanticAdapter elementAdapter = null;
 		if (model instanceof View) {
-            View view = (View)model;
-			elementAdapter =new SemanticAdapter(((View)model).getElement(), model);
-        }
-		else
-			elementAdapter = new SemanticAdapter(((View)model).getElement(), model);
+			View view = (View) model;
+			elementAdapter = new SemanticAdapter(((View) model).getElement(), model);
+		} else {
+			elementAdapter = new SemanticAdapter(((View) model).getElement(), model);
+		}
 		// check to make sure an edit has occurred before returning a command.
 		String prevText = compartment.getParser().getEditString(elementAdapter,
-			compartment.getParserOptions().intValue());
+				compartment.getParserOptions().intValue());
 		if (!prevText.equals(labelText)) {
-			ICommand iCommand = 
-				compartment.getParser().getParseCommand(elementAdapter, labelText, 0);
+			ICommand iCommand =
+					compartment.getParser().getParseCommand(elementAdapter, labelText, 0);
 			return new ICommandProxy(iCommand);
 		}
 

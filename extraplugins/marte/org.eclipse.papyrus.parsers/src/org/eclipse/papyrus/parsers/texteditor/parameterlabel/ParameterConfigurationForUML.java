@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,6 +41,7 @@ public class ParameterConfigurationForUML extends DefaultDirectEditorConfigurati
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public SourceViewerConfiguration getSourceViewerConfiguration() {
 		return configuration;
 	}
@@ -48,9 +49,10 @@ public class ParameterConfigurationForUML extends DefaultDirectEditorConfigurati
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getTextToEdit(Object editedObject) {
-		if(editedObject instanceof Parameter) {
-			return ParameterUtil.getLabel((Parameter)editedObject);
+		if (editedObject instanceof Parameter) {
+			return ParameterUtil.getLabel((Parameter) editedObject);
 		}
 		return "not a Parameter";
 	}
@@ -60,8 +62,8 @@ public class ParameterConfigurationForUML extends DefaultDirectEditorConfigurati
 	 */
 	@Override
 	public Object preEditAction(Object objectToEdit) {
-		if(objectToEdit instanceof Parameter) {
-			configuration.setParameter((Parameter)objectToEdit);
+		if (objectToEdit instanceof Parameter) {
+			configuration.setParameter((Parameter) objectToEdit);
 		}
 		return super.preEditAction(objectToEdit);
 	}
@@ -69,11 +71,12 @@ public class ParameterConfigurationForUML extends DefaultDirectEditorConfigurati
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object postEditAction(Object editedObject, String text) {
 		// Should undo the various creations done in the property edition
 		// (template binding, etc...)
-		if(editedObject instanceof Parameter) {
-			ParameterGenerator generator = new ParameterGenerator(((Parameter)editedObject));
+		if (editedObject instanceof Parameter) {
+			ParameterGenerator generator = new ParameterGenerator(((Parameter) editedObject));
 			generator.parseAndModifyParameter(text);
 		}
 		return null;
@@ -87,8 +90,8 @@ public class ParameterConfigurationForUML extends DefaultDirectEditorConfigurati
 		return new IInputValidator() {
 
 			public String isValid(String newText) {
-				if(getObjectToEdit() instanceof Parameter) {
-					ParameterGenerator generator = new ParameterGenerator(((Parameter)getObjectToEdit()));
+				if (getObjectToEdit() instanceof Parameter) {
+					ParameterGenerator generator = new ParameterGenerator(((Parameter) getObjectToEdit()));
 					return generator.parseAndValidateParameter(newText);
 				}
 				return null;
@@ -101,8 +104,8 @@ public class ParameterConfigurationForUML extends DefaultDirectEditorConfigurati
 	 */
 	@Override
 	public Selection getTextSelection(String value, Object editedObject) {
-		if(editedObject instanceof Parameter) {
-			Parameter parameter = (Parameter)editedObject;
+		if (editedObject instanceof Parameter) {
+			Parameter parameter = (Parameter) editedObject;
 			String name = NamedElementUtil.getName(parameter);
 			int start = value.indexOf(name);
 			int length = name.length();

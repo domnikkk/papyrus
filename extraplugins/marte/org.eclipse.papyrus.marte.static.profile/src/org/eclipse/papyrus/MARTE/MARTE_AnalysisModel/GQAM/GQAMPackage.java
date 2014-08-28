@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,12 +27,13 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NFPsPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMFactory
  * @model kind="package"
  * @generated
@@ -42,6 +43,7 @@ public interface GQAMPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "GQAM";
@@ -50,6 +52,7 @@ public interface GQAMPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/GQAM/1";
@@ -58,6 +61,7 @@ public interface GQAMPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "GQAM";
@@ -66,6 +70,7 @@ public interface GQAMPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	GQAMPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl.init();
@@ -74,6 +79,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadGeneratorImpl <em>Ga Workload Generator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadGeneratorImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaWorkloadGenerator()
 	 * @generated
@@ -84,6 +90,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Pop</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -93,6 +100,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -102,6 +110,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Workload Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -111,6 +120,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaEventTraceImpl <em>Ga Event Trace</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaEventTraceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaEventTrace()
 	 * @generated
@@ -121,6 +131,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -130,6 +141,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -139,6 +151,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -148,6 +161,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -157,6 +171,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Event Trace</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -166,6 +181,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl <em>Ga Workload Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaWorkloadEvent()
 	 * @generated
@@ -176,6 +192,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Pattern</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -185,6 +202,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -194,6 +212,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Trace</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -203,6 +222,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Effect</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -212,6 +232,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Timed Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -221,6 +242,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -230,6 +252,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Workload Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -239,6 +262,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl <em>Ga Scenario</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaScenario()
 	 * @generated
@@ -249,6 +273,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Exec Time</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -258,6 +283,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Allocated Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -267,6 +293,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -276,6 +303,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Power Peak</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -285,6 +313,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Energy</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -294,6 +323,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -303,6 +333,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Sub Usage</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -312,6 +343,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -321,6 +353,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Msg Size</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -330,6 +363,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -339,6 +373,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -348,6 +383,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -357,6 +393,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -366,6 +403,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Duration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -375,6 +413,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -384,6 +423,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Finish</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -393,6 +433,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Cause</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -402,6 +443,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -411,6 +453,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand Ops</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -420,6 +463,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Inter Occ T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -429,6 +473,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -438,6 +483,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Resp T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -447,6 +493,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -456,6 +503,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization On Host</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -465,6 +513,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Root</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -474,6 +523,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Steps</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -483,6 +533,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -492,6 +543,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Timing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -501,6 +553,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -510,6 +563,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl <em>Ga Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaStep()
 	 * @generated
@@ -520,6 +574,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Exec Time</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -529,6 +584,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Allocated Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -538,6 +594,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -547,6 +604,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Power Peak</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -556,6 +614,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Energy</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -565,6 +624,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -574,6 +634,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Sub Usage</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -583,6 +644,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -592,6 +654,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Msg Size</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -601,6 +664,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -610,6 +674,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -619,6 +684,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -628,6 +694,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -637,6 +704,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Duration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -646,6 +714,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -655,6 +724,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Finish</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -664,6 +734,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Cause</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -673,6 +744,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -682,6 +754,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand Ops</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -691,6 +764,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Inter Occ T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -700,6 +774,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -709,6 +784,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Resp T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -718,6 +794,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -727,6 +804,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization On Host</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -736,6 +814,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Root</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -745,6 +824,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Steps</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -754,6 +834,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -763,6 +844,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Timing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -772,6 +854,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -781,6 +864,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -790,6 +874,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Rep</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -799,6 +884,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Prob</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -808,6 +894,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -817,6 +904,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -826,6 +914,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -835,6 +924,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Demand</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -844,6 +934,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -853,6 +944,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Self Delay</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -862,6 +954,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -871,6 +964,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -880,6 +974,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -889,6 +984,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaExecHostImpl <em>Ga Exec Host</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaExecHostImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaExecHost()
 	 * @generated
@@ -899,6 +995,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -908,6 +1005,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -917,6 +1015,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -926,6 +1025,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -935,6 +1035,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -944,6 +1045,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -953,6 +1055,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -962,6 +1065,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -971,6 +1075,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Preemptible</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -980,6 +1085,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Sched Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -989,6 +1095,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Other Sched Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -998,6 +1105,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Schedule</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1007,6 +1115,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Processing Units</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1016,6 +1125,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1025,6 +1135,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Protected Shared Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1034,6 +1145,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Schedulable Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1043,6 +1155,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1052,6 +1165,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Main Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1061,6 +1175,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Comm Tx Ovh</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1070,6 +1185,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Comm Rcv Ovh</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1079,6 +1195,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Cntxt Sw T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1088,6 +1205,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Clock Ovh</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1097,6 +1215,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Sched Pri Range</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1106,6 +1225,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Mem Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1115,6 +1235,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1124,6 +1245,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1133,6 +1255,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Exec Host</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1142,6 +1265,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaRequestedServiceImpl <em>Ga Requested Service</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaRequestedServiceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaRequestedService()
 	 * @generated
@@ -1152,6 +1276,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Exec Time</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1161,6 +1286,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Allocated Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1170,6 +1296,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1179,6 +1306,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Power Peak</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1188,6 +1316,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Energy</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1197,6 +1326,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1206,6 +1336,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Sub Usage</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1215,6 +1346,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1224,6 +1356,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Msg Size</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1233,6 +1366,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1242,6 +1376,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1251,6 +1386,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1260,6 +1396,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1269,6 +1406,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Duration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1278,6 +1416,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1287,6 +1426,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Finish</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1296,6 +1436,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Cause</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1305,6 +1446,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1314,6 +1456,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand Ops</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1323,6 +1466,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Inter Occ T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1332,6 +1476,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1341,6 +1486,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Resp T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1350,6 +1496,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1359,6 +1506,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization On Host</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1368,6 +1516,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Root</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1377,6 +1526,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Steps</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1386,6 +1536,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1395,6 +1546,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Timing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1404,6 +1556,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1413,6 +1566,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1422,6 +1576,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Rep</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1431,6 +1586,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Prob</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1440,6 +1596,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1449,6 +1606,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1458,6 +1616,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1467,6 +1626,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Demand</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1476,6 +1636,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1485,6 +1646,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Self Delay</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1494,6 +1656,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1503,6 +1666,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1512,6 +1676,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Operation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1521,6 +1686,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Requested Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1530,6 +1696,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaTimedObsImpl <em>Ga Timed Obs</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaTimedObsImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaTimedObs()
 	 * @generated
@@ -1540,6 +1707,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1549,6 +1717,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1558,6 +1727,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Mode</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1567,6 +1737,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Laxity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1576,6 +1747,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Start Obs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1585,6 +1757,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>End Obs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1594,6 +1767,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Timed Obs</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1603,6 +1777,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommStepImpl <em>Ga Comm Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommStepImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaCommStep()
 	 * @generated
@@ -1613,6 +1788,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Exec Time</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1622,6 +1798,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Allocated Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1631,6 +1808,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1640,6 +1818,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Power Peak</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1649,6 +1828,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Energy</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1658,6 +1838,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1667,6 +1848,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Sub Usage</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1676,6 +1858,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1685,6 +1868,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Msg Size</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1694,6 +1878,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1703,6 +1888,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1712,6 +1898,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1721,6 +1908,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1730,6 +1918,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Duration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1739,6 +1928,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1748,6 +1938,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Finish</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1757,6 +1948,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Cause</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1766,6 +1958,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1775,6 +1968,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand Ops</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1784,6 +1978,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Inter Occ T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1793,6 +1988,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1802,6 +1998,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Resp T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1811,6 +2008,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1820,6 +2018,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization On Host</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1829,6 +2028,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Root</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1838,6 +2038,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Steps</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1847,6 +2048,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1856,6 +2058,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Timing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1865,6 +2068,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1874,6 +2078,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1883,6 +2088,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Rep</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1892,6 +2098,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Prob</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1901,6 +2108,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1910,6 +2118,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1919,6 +2128,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1928,6 +2138,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Demand</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1937,6 +2148,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1946,6 +2158,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Self Delay</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1955,6 +2168,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1964,6 +2178,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1973,6 +2188,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Comm Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1982,6 +2198,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaAcqStepImpl <em>Ga Acq Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaAcqStepImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaAcqStep()
 	 * @generated
@@ -1992,6 +2209,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Exec Time</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2001,6 +2219,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Allocated Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2010,6 +2229,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2019,6 +2239,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Power Peak</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2028,6 +2249,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Energy</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2037,6 +2259,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2046,6 +2269,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Sub Usage</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2055,6 +2279,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2064,6 +2289,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Msg Size</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2073,6 +2299,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2082,6 +2309,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2091,6 +2319,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2100,6 +2329,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2109,6 +2339,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Duration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2118,6 +2349,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2127,6 +2359,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Finish</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2136,6 +2369,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Cause</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2145,6 +2379,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2154,6 +2389,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand Ops</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2163,6 +2399,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Inter Occ T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2172,6 +2409,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2181,6 +2419,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Resp T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2190,6 +2429,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2199,6 +2439,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization On Host</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2208,6 +2449,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Root</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2217,6 +2459,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Steps</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2226,6 +2469,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2235,6 +2479,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Timing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2244,6 +2489,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2253,6 +2499,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2262,6 +2509,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Rep</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2271,6 +2519,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Prob</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2280,6 +2529,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2289,6 +2539,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2298,6 +2549,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2307,6 +2559,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Demand</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2316,6 +2569,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2325,6 +2579,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Self Delay</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2334,6 +2589,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2343,6 +2599,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2352,6 +2609,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Acq Res</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2361,6 +2619,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Units</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2370,6 +2629,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Acq Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2379,6 +2639,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaRelStepImpl <em>Ga Rel Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaRelStepImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaRelStep()
 	 * @generated
@@ -2389,6 +2650,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Exec Time</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2398,6 +2660,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Allocated Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2407,6 +2670,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2416,6 +2680,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Power Peak</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2425,6 +2690,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Energy</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2434,6 +2700,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2443,6 +2710,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Sub Usage</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2452,6 +2720,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2461,6 +2730,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Msg Size</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2470,6 +2740,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2479,6 +2750,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2488,6 +2760,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2497,6 +2770,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2506,6 +2780,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Duration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2515,6 +2790,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2524,6 +2800,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Finish</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2533,6 +2810,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Cause</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2542,6 +2820,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2551,6 +2830,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand Ops</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2560,6 +2840,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Inter Occ T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2569,6 +2850,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2578,6 +2860,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Resp T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2587,6 +2870,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2596,6 +2880,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization On Host</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2605,6 +2890,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Root</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2614,6 +2900,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Steps</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2623,6 +2910,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2632,6 +2920,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Timing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2641,6 +2930,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2650,6 +2940,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2659,6 +2950,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Rep</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2668,6 +2960,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Prob</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2677,6 +2970,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2686,6 +2980,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2695,6 +2990,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2704,6 +3000,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Demand</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2713,6 +3010,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2722,6 +3020,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Self Delay</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2731,6 +3030,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2740,6 +3040,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2749,6 +3050,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Rel Res</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2758,6 +3060,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Units</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2767,6 +3070,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Rel Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2776,6 +3080,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaLatencyObsImpl <em>Ga Latency Obs</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaLatencyObsImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaLatencyObs()
 	 * @generated
@@ -2786,6 +3091,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2795,6 +3101,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2804,6 +3111,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Mode</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2813,6 +3121,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Laxity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2822,6 +3131,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Start Obs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2831,6 +3141,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>End Obs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2840,6 +3151,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Latency</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2849,6 +3161,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Miss</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2858,6 +3171,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utility</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2867,6 +3181,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Max Jitter</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2876,6 +3191,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Latency Obs</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2885,6 +3201,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommHostImpl <em>Ga Comm Host</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommHostImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaCommHost()
 	 * @generated
@@ -2895,6 +3212,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2904,6 +3222,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2913,6 +3232,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2922,6 +3242,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2931,6 +3252,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2940,6 +3262,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2949,6 +3272,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2958,6 +3282,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2967,6 +3292,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2976,6 +3302,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Main Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2985,6 +3312,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2994,6 +3322,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3003,6 +3332,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Transm Mode</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3012,6 +3342,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3021,6 +3352,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Packet T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3030,6 +3362,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Capacity</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3039,6 +3372,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Preemptible</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3048,6 +3382,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Sched Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3057,6 +3392,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Other Sched Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3066,6 +3402,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Schedule</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3075,6 +3412,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Processing Units</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3084,6 +3422,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3093,6 +3432,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Protected Shared Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3102,6 +3442,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Schedulable Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3111,6 +3452,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3120,6 +3462,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3129,6 +3472,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Comm Host</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3138,6 +3482,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommChannelImpl <em>Ga Comm Channel</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommChannelImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaCommChannel()
 	 * @generated
@@ -3148,6 +3493,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3157,6 +3503,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3166,6 +3513,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3175,6 +3523,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3184,6 +3533,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3193,6 +3543,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3202,6 +3553,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3211,6 +3563,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3220,6 +3573,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Sched Params</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3229,6 +3583,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Dependent Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3238,6 +3593,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3247,6 +3603,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3256,6 +3613,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3265,6 +3623,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Comm Channel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3274,6 +3633,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadBehaviorImpl <em>Ga Workload Behavior</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadBehaviorImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaWorkloadBehavior()
 	 * @generated
@@ -3284,6 +3644,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3293,6 +3654,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Demand</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3302,6 +3664,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3311,6 +3674,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Workload Behavior</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3320,6 +3684,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaAnalysisContextImpl <em>Ga Analysis Context</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaAnalysisContextImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaAnalysisContext()
 	 * @generated
@@ -3330,6 +3695,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Structured Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3339,6 +3705,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3348,6 +3715,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Mode</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3357,6 +3725,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3366,6 +3735,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Context</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3375,6 +3745,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Workload</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3384,6 +3755,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Platform</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3393,6 +3765,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Analysis Context</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3402,6 +3775,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaResourcesPlatformImpl <em>Ga Resources Platform</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaResourcesPlatformImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaResourcesPlatform()
 	 * @generated
@@ -3412,6 +3786,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3421,6 +3796,7 @@ public interface GQAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3430,6 +3806,7 @@ public interface GQAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Ga Resources Platform</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3439,6 +3816,7 @@ public interface GQAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.LaxityKind <em>Laxity Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.LaxityKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getLaxityKind()
 	 * @generated
@@ -3450,6 +3828,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadGenerator <em>Ga Workload Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Workload Generator</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadGenerator
 	 * @generated
@@ -3460,6 +3839,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadGenerator#getPop <em>Pop</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Pop</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadGenerator#getPop()
 	 * @see #getGaWorkloadGenerator()
@@ -3471,6 +3851,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadGenerator#getBase_Behavior <em>Base Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Behavior</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadGenerator#getBase_Behavior()
 	 * @see #getGaWorkloadGenerator()
@@ -3482,6 +3863,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaEventTrace <em>Ga Event Trace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Event Trace</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaEventTrace
 	 * @generated
@@ -3492,6 +3874,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaEventTrace#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Content</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaEventTrace#getContent()
 	 * @see #getGaEventTrace()
@@ -3503,6 +3886,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaEventTrace#getFormat <em>Format</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Format</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaEventTrace#getFormat()
 	 * @see #getGaEventTrace()
@@ -3514,6 +3898,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaEventTrace#getLocation <em>Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Location</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaEventTrace#getLocation()
 	 * @see #getGaEventTrace()
@@ -3525,6 +3910,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaEventTrace#getBase_NamedElement <em>Base Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Named Element</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaEventTrace#getBase_NamedElement()
 	 * @see #getGaEventTrace()
@@ -3536,6 +3922,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent <em>Ga Workload Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Workload Event</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent
 	 * @generated
@@ -3546,6 +3933,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getPattern <em>Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Pattern</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getPattern()
 	 * @see #getGaWorkloadEvent()
@@ -3557,6 +3945,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getGenerator <em>Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Generator</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getGenerator()
 	 * @see #getGaWorkloadEvent()
@@ -3568,6 +3957,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getTrace <em>Trace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Trace</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getTrace()
 	 * @see #getGaWorkloadEvent()
@@ -3579,6 +3969,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getEffect <em>Effect</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Effect</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getEffect()
 	 * @see #getGaWorkloadEvent()
@@ -3590,6 +3981,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getTimedEvent <em>Timed Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Timed Event</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getTimedEvent()
 	 * @see #getGaWorkloadEvent()
@@ -3601,6 +3993,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getBase_NamedElement <em>Base Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Named Element</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getBase_NamedElement()
 	 * @see #getGaWorkloadEvent()
@@ -3612,6 +4005,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario <em>Ga Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Scenario</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario
 	 * @generated
@@ -3622,6 +4016,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getCause <em>Cause</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Cause</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getCause()
 	 * @see #getGaScenario()
@@ -3633,6 +4028,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getHostDemand <em>Host Demand</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Host Demand</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getHostDemand()
 	 * @see #getGaScenario()
@@ -3644,6 +4040,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getHostDemandOps <em>Host Demand Ops</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Host Demand Ops</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getHostDemandOps()
 	 * @see #getGaScenario()
@@ -3655,6 +4052,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getInterOccT <em>Inter Occ T</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Inter Occ T</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getInterOccT()
 	 * @see #getGaScenario()
@@ -3666,6 +4064,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getThroughput <em>Throughput</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Throughput</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getThroughput()
 	 * @see #getGaScenario()
@@ -3677,6 +4076,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getRespT <em>Resp T</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Resp T</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getRespT()
 	 * @see #getGaScenario()
@@ -3688,6 +4088,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getUtilization <em>Utilization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Utilization</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getUtilization()
 	 * @see #getGaScenario()
@@ -3699,6 +4100,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getUtilizationOnHost <em>Utilization On Host</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Utilization On Host</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getUtilizationOnHost()
 	 * @see #getGaScenario()
@@ -3710,6 +4112,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getRoot <em>Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Root</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getRoot()
 	 * @see #getGaScenario()
@@ -3721,6 +4124,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getSteps <em>Steps</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Steps</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getSteps()
 	 * @see #getGaScenario()
@@ -3732,6 +4136,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getParentStep <em>Parent Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Parent Step</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getParentStep()
 	 * @see #getGaScenario()
@@ -3743,6 +4148,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getTiming <em>Timing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Timing</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getTiming()
 	 * @see #getGaScenario()
@@ -3754,6 +4160,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep <em>Ga Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Step</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep
 	 * @generated
@@ -3764,6 +4171,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getIsAtomic <em>Is Atomic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Is Atomic</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getIsAtomic()
 	 * @see #getGaStep()
@@ -3775,6 +4183,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getBlockT <em>Block T</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Block T</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getBlockT()
 	 * @see #getGaStep()
@@ -3786,6 +4195,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getRep <em>Rep</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Rep</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getRep()
 	 * @see #getGaStep()
@@ -3797,6 +4207,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getProb <em>Prob</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Prob</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getProb()
 	 * @see #getGaStep()
@@ -3808,6 +4219,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getPriority <em>Priority</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Priority</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getPriority()
 	 * @see #getGaStep()
@@ -3819,6 +4231,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getConcurRes <em>Concur Res</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Concur Res</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getConcurRes()
 	 * @see #getGaStep()
@@ -3830,6 +4243,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getHost <em>Host</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Host</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getHost()
 	 * @see #getGaStep()
@@ -3841,6 +4255,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getServDemand <em>Serv Demand</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Serv Demand</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getServDemand()
 	 * @see #getGaStep()
@@ -3852,6 +4267,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getServCount <em>Serv Count</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Serv Count</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getServCount()
 	 * @see #getGaStep()
@@ -3863,6 +4279,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getSelfDelay <em>Self Delay</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Self Delay</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getSelfDelay()
 	 * @see #getGaStep()
@@ -3874,6 +4291,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getScenario <em>Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Scenario</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getScenario()
 	 * @see #getGaStep()
@@ -3885,6 +4303,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getChildScenario <em>Child Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Child Scenario</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getChildScenario()
 	 * @see #getGaStep()
@@ -3896,6 +4315,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost <em>Ga Exec Host</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Exec Host</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost
 	 * @generated
@@ -3906,6 +4326,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCommTxOvh <em>Comm Tx Ovh</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Comm Tx Ovh</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCommTxOvh()
 	 * @see #getGaExecHost()
@@ -3917,6 +4338,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCommRcvOvh <em>Comm Rcv Ovh</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Comm Rcv Ovh</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCommRcvOvh()
 	 * @see #getGaExecHost()
@@ -3928,6 +4350,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCntxtSwT <em>Cntxt Sw T</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Cntxt Sw T</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCntxtSwT()
 	 * @see #getGaExecHost()
@@ -3939,6 +4362,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getClockOvh <em>Clock Ovh</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Clock Ovh</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getClockOvh()
 	 * @see #getGaExecHost()
@@ -3950,6 +4374,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getSchedPriRange <em>Sched Pri Range</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Sched Pri Range</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getSchedPriRange()
 	 * @see #getGaExecHost()
@@ -3961,6 +4386,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getMemSize <em>Mem Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Mem Size</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getMemSize()
 	 * @see #getGaExecHost()
@@ -3972,6 +4398,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getUtilization <em>Utilization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Utilization</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getUtilization()
 	 * @see #getGaExecHost()
@@ -3983,6 +4410,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getThroughput <em>Throughput</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Throughput</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getThroughput()
 	 * @see #getGaExecHost()
@@ -3994,6 +4422,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRequestedService <em>Ga Requested Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Requested Service</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRequestedService
 	 * @generated
@@ -4004,6 +4433,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRequestedService#getBase_Operation <em>Base Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Operation</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRequestedService#getBase_Operation()
 	 * @see #getGaRequestedService()
@@ -4015,6 +4445,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs <em>Ga Timed Obs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Timed Obs</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs
 	 * @generated
@@ -4025,6 +4456,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs#getLaxity <em>Laxity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Laxity</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs#getLaxity()
 	 * @see #getGaTimedObs()
@@ -4036,6 +4468,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs#getStartObs <em>Start Obs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Start Obs</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs#getStartObs()
 	 * @see #getGaTimedObs()
@@ -4047,6 +4480,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs#getEndObs <em>End Obs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>End Obs</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs#getEndObs()
 	 * @see #getGaTimedObs()
@@ -4058,6 +4492,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommStep <em>Ga Comm Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Comm Step</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommStep
 	 * @generated
@@ -4068,6 +4503,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAcqStep <em>Ga Acq Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Acq Step</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAcqStep
 	 * @generated
@@ -4078,6 +4514,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAcqStep#getAcqRes <em>Acq Res</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Acq Res</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAcqStep#getAcqRes()
 	 * @see #getGaAcqStep()
@@ -4089,6 +4526,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAcqStep#getResUnits <em>Res Units</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Res Units</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAcqStep#getResUnits()
 	 * @see #getGaAcqStep()
@@ -4100,6 +4538,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRelStep <em>Ga Rel Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Rel Step</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRelStep
 	 * @generated
@@ -4110,6 +4549,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRelStep#getRelRes <em>Rel Res</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Rel Res</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRelStep#getRelRes()
 	 * @see #getGaRelStep()
@@ -4121,6 +4561,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRelStep#getResUnits <em>Res Units</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Res Units</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaRelStep#getResUnits()
 	 * @see #getGaRelStep()
@@ -4132,6 +4573,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaLatencyObs <em>Ga Latency Obs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Latency Obs</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaLatencyObs
 	 * @generated
@@ -4142,6 +4584,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaLatencyObs#getLatency <em>Latency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Latency</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaLatencyObs#getLatency()
 	 * @see #getGaLatencyObs()
@@ -4153,6 +4596,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaLatencyObs#getMiss <em>Miss</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Miss</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaLatencyObs#getMiss()
 	 * @see #getGaLatencyObs()
@@ -4164,6 +4608,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaLatencyObs#getUtility <em>Utility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Utility</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaLatencyObs#getUtility()
 	 * @see #getGaLatencyObs()
@@ -4175,6 +4620,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaLatencyObs#getMaxJitter <em>Max Jitter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Max Jitter</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaLatencyObs#getMaxJitter()
 	 * @see #getGaLatencyObs()
@@ -4186,6 +4632,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommHost <em>Ga Comm Host</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Comm Host</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommHost
 	 * @generated
@@ -4196,6 +4643,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommHost#getThroughput <em>Throughput</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Throughput</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommHost#getThroughput()
 	 * @see #getGaCommHost()
@@ -4207,6 +4655,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommHost#getUtilization <em>Utilization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Utilization</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommHost#getUtilization()
 	 * @see #getGaCommHost()
@@ -4218,6 +4667,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommChannel <em>Ga Comm Channel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Comm Channel</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommChannel
 	 * @generated
@@ -4228,6 +4678,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommChannel#getPacketSize <em>Packet Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Packet Size</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommChannel#getPacketSize()
 	 * @see #getGaCommChannel()
@@ -4239,6 +4690,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommChannel#getUtilization <em>Utilization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Utilization</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommChannel#getUtilization()
 	 * @see #getGaCommChannel()
@@ -4250,6 +4702,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadBehavior <em>Ga Workload Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Workload Behavior</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadBehavior
 	 * @generated
@@ -4260,6 +4713,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadBehavior#getBehavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Behavior</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadBehavior#getBehavior()
 	 * @see #getGaWorkloadBehavior()
@@ -4271,6 +4725,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadBehavior#getDemand <em>Demand</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Demand</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadBehavior#getDemand()
 	 * @see #getGaWorkloadBehavior()
@@ -4282,6 +4737,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadBehavior#getBase_NamedElement <em>Base Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Named Element</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadBehavior#getBase_NamedElement()
 	 * @see #getGaWorkloadBehavior()
@@ -4293,6 +4749,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAnalysisContext <em>Ga Analysis Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Analysis Context</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAnalysisContext
 	 * @generated
@@ -4303,6 +4760,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAnalysisContext#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Context</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAnalysisContext#getContext()
 	 * @see #getGaAnalysisContext()
@@ -4314,6 +4772,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAnalysisContext#getWorkload <em>Workload</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Workload</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAnalysisContext#getWorkload()
 	 * @see #getGaAnalysisContext()
@@ -4325,6 +4784,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAnalysisContext#getPlatform <em>Platform</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Platform</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAnalysisContext#getPlatform()
 	 * @see #getGaAnalysisContext()
@@ -4336,6 +4796,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaResourcesPlatform <em>Ga Resources Platform</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ga Resources Platform</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaResourcesPlatform
 	 * @generated
@@ -4346,6 +4807,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaResourcesPlatform#getResources <em>Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Resources</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaResourcesPlatform#getResources()
 	 * @see #getGaResourcesPlatform()
@@ -4357,6 +4819,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaResourcesPlatform#getBase_Classifier <em>Base Classifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Classifier</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaResourcesPlatform#getBase_Classifier()
 	 * @see #getGaResourcesPlatform()
@@ -4368,6 +4831,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.LaxityKind <em>Laxity Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Laxity Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.LaxityKind
 	 * @generated
@@ -4378,6 +4842,7 @@ public interface GQAMPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -4387,12 +4852,13 @@ public interface GQAMPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -4400,6 +4866,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadGeneratorImpl <em>Ga Workload Generator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadGeneratorImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaWorkloadGenerator()
 		 * @generated
@@ -4410,6 +4877,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Pop</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_WORKLOAD_GENERATOR__POP = eINSTANCE.getGaWorkloadGenerator_Pop();
@@ -4418,6 +4886,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Behavior</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_WORKLOAD_GENERATOR__BASE_BEHAVIOR = eINSTANCE.getGaWorkloadGenerator_Base_Behavior();
@@ -4426,6 +4895,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaEventTraceImpl <em>Ga Event Trace</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaEventTraceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaEventTrace()
 		 * @generated
@@ -4436,6 +4906,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_EVENT_TRACE__CONTENT = eINSTANCE.getGaEventTrace_Content();
@@ -4444,6 +4915,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_EVENT_TRACE__FORMAT = eINSTANCE.getGaEventTrace_Format();
@@ -4452,6 +4924,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Location</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_EVENT_TRACE__LOCATION = eINSTANCE.getGaEventTrace_Location();
@@ -4460,6 +4933,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Named Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_EVENT_TRACE__BASE_NAMED_ELEMENT = eINSTANCE.getGaEventTrace_Base_NamedElement();
@@ -4468,6 +4942,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl <em>Ga Workload Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaWorkloadEvent()
 		 * @generated
@@ -4478,6 +4953,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Pattern</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_WORKLOAD_EVENT__PATTERN = eINSTANCE.getGaWorkloadEvent_Pattern();
@@ -4486,6 +4962,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Generator</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_WORKLOAD_EVENT__GENERATOR = eINSTANCE.getGaWorkloadEvent_Generator();
@@ -4494,6 +4971,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Trace</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_WORKLOAD_EVENT__TRACE = eINSTANCE.getGaWorkloadEvent_Trace();
@@ -4502,6 +4980,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Effect</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_WORKLOAD_EVENT__EFFECT = eINSTANCE.getGaWorkloadEvent_Effect();
@@ -4510,6 +4989,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Timed Event</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_WORKLOAD_EVENT__TIMED_EVENT = eINSTANCE.getGaWorkloadEvent_TimedEvent();
@@ -4518,6 +4998,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Named Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_WORKLOAD_EVENT__BASE_NAMED_ELEMENT = eINSTANCE.getGaWorkloadEvent_Base_NamedElement();
@@ -4526,6 +5007,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl <em>Ga Scenario</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaScenario()
 		 * @generated
@@ -4536,6 +5018,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Cause</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_SCENARIO__CAUSE = eINSTANCE.getGaScenario_Cause();
@@ -4544,6 +5027,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Host Demand</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_SCENARIO__HOST_DEMAND = eINSTANCE.getGaScenario_HostDemand();
@@ -4552,6 +5036,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Host Demand Ops</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_SCENARIO__HOST_DEMAND_OPS = eINSTANCE.getGaScenario_HostDemandOps();
@@ -4560,6 +5045,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Inter Occ T</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_SCENARIO__INTER_OCC_T = eINSTANCE.getGaScenario_InterOccT();
@@ -4568,6 +5054,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Throughput</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_SCENARIO__THROUGHPUT = eINSTANCE.getGaScenario_Throughput();
@@ -4576,6 +5063,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Resp T</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_SCENARIO__RESP_T = eINSTANCE.getGaScenario_RespT();
@@ -4584,6 +5072,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Utilization</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_SCENARIO__UTILIZATION = eINSTANCE.getGaScenario_Utilization();
@@ -4592,6 +5081,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Utilization On Host</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_SCENARIO__UTILIZATION_ON_HOST = eINSTANCE.getGaScenario_UtilizationOnHost();
@@ -4600,6 +5090,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Root</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_SCENARIO__ROOT = eINSTANCE.getGaScenario_Root();
@@ -4608,6 +5099,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Steps</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_SCENARIO__STEPS = eINSTANCE.getGaScenario_Steps();
@@ -4616,6 +5108,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parent Step</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_SCENARIO__PARENT_STEP = eINSTANCE.getGaScenario_ParentStep();
@@ -4624,6 +5117,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Timing</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_SCENARIO__TIMING = eINSTANCE.getGaScenario_Timing();
@@ -4632,6 +5126,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl <em>Ga Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaStep()
 		 * @generated
@@ -4642,6 +5137,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Atomic</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_STEP__IS_ATOMIC = eINSTANCE.getGaStep_IsAtomic();
@@ -4650,6 +5146,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Block T</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_STEP__BLOCK_T = eINSTANCE.getGaStep_BlockT();
@@ -4658,6 +5155,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Rep</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_STEP__REP = eINSTANCE.getGaStep_Rep();
@@ -4666,6 +5164,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Prob</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_STEP__PROB = eINSTANCE.getGaStep_Prob();
@@ -4674,6 +5173,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_STEP__PRIORITY = eINSTANCE.getGaStep_Priority();
@@ -4682,6 +5182,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Concur Res</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_STEP__CONCUR_RES = eINSTANCE.getGaStep_ConcurRes();
@@ -4690,6 +5191,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Host</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_STEP__HOST = eINSTANCE.getGaStep_Host();
@@ -4698,6 +5200,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Serv Demand</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_STEP__SERV_DEMAND = eINSTANCE.getGaStep_ServDemand();
@@ -4706,6 +5209,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Serv Count</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_STEP__SERV_COUNT = eINSTANCE.getGaStep_ServCount();
@@ -4714,6 +5218,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Self Delay</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_STEP__SELF_DELAY = eINSTANCE.getGaStep_SelfDelay();
@@ -4722,6 +5227,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Scenario</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_STEP__SCENARIO = eINSTANCE.getGaStep_Scenario();
@@ -4730,6 +5236,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Child Scenario</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_STEP__CHILD_SCENARIO = eINSTANCE.getGaStep_ChildScenario();
@@ -4738,6 +5245,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaExecHostImpl <em>Ga Exec Host</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaExecHostImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaExecHost()
 		 * @generated
@@ -4748,6 +5256,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Comm Tx Ovh</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_EXEC_HOST__COMM_TX_OVH = eINSTANCE.getGaExecHost_CommTxOvh();
@@ -4756,6 +5265,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Comm Rcv Ovh</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_EXEC_HOST__COMM_RCV_OVH = eINSTANCE.getGaExecHost_CommRcvOvh();
@@ -4764,6 +5274,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Cntxt Sw T</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_EXEC_HOST__CNTXT_SW_T = eINSTANCE.getGaExecHost_CntxtSwT();
@@ -4772,6 +5283,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Clock Ovh</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_EXEC_HOST__CLOCK_OVH = eINSTANCE.getGaExecHost_ClockOvh();
@@ -4780,6 +5292,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Sched Pri Range</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_EXEC_HOST__SCHED_PRI_RANGE = eINSTANCE.getGaExecHost_SchedPriRange();
@@ -4788,6 +5301,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mem Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_EXEC_HOST__MEM_SIZE = eINSTANCE.getGaExecHost_MemSize();
@@ -4796,6 +5310,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Utilization</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_EXEC_HOST__UTILIZATION = eINSTANCE.getGaExecHost_Utilization();
@@ -4804,6 +5319,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Throughput</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_EXEC_HOST__THROUGHPUT = eINSTANCE.getGaExecHost_Throughput();
@@ -4812,6 +5328,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaRequestedServiceImpl <em>Ga Requested Service</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaRequestedServiceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaRequestedService()
 		 * @generated
@@ -4822,6 +5339,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Operation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_REQUESTED_SERVICE__BASE_OPERATION = eINSTANCE.getGaRequestedService_Base_Operation();
@@ -4830,6 +5348,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaTimedObsImpl <em>Ga Timed Obs</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaTimedObsImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaTimedObs()
 		 * @generated
@@ -4840,6 +5359,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Laxity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_TIMED_OBS__LAXITY = eINSTANCE.getGaTimedObs_Laxity();
@@ -4848,6 +5368,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Start Obs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_TIMED_OBS__START_OBS = eINSTANCE.getGaTimedObs_StartObs();
@@ -4856,6 +5377,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>End Obs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_TIMED_OBS__END_OBS = eINSTANCE.getGaTimedObs_EndObs();
@@ -4864,6 +5386,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommStepImpl <em>Ga Comm Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommStepImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaCommStep()
 		 * @generated
@@ -4874,6 +5397,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaAcqStepImpl <em>Ga Acq Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaAcqStepImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaAcqStep()
 		 * @generated
@@ -4884,6 +5408,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Acq Res</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_ACQ_STEP__ACQ_RES = eINSTANCE.getGaAcqStep_AcqRes();
@@ -4892,6 +5417,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Res Units</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_ACQ_STEP__RES_UNITS = eINSTANCE.getGaAcqStep_ResUnits();
@@ -4900,6 +5426,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaRelStepImpl <em>Ga Rel Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaRelStepImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaRelStep()
 		 * @generated
@@ -4910,6 +5437,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Rel Res</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_REL_STEP__REL_RES = eINSTANCE.getGaRelStep_RelRes();
@@ -4918,6 +5446,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Res Units</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_REL_STEP__RES_UNITS = eINSTANCE.getGaRelStep_ResUnits();
@@ -4926,6 +5455,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaLatencyObsImpl <em>Ga Latency Obs</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaLatencyObsImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaLatencyObs()
 		 * @generated
@@ -4936,6 +5466,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Latency</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_LATENCY_OBS__LATENCY = eINSTANCE.getGaLatencyObs_Latency();
@@ -4944,6 +5475,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Miss</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_LATENCY_OBS__MISS = eINSTANCE.getGaLatencyObs_Miss();
@@ -4952,6 +5484,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Utility</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_LATENCY_OBS__UTILITY = eINSTANCE.getGaLatencyObs_Utility();
@@ -4960,6 +5493,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Max Jitter</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_LATENCY_OBS__MAX_JITTER = eINSTANCE.getGaLatencyObs_MaxJitter();
@@ -4968,6 +5502,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommHostImpl <em>Ga Comm Host</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommHostImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaCommHost()
 		 * @generated
@@ -4978,6 +5513,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Throughput</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_COMM_HOST__THROUGHPUT = eINSTANCE.getGaCommHost_Throughput();
@@ -4986,6 +5522,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Utilization</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_COMM_HOST__UTILIZATION = eINSTANCE.getGaCommHost_Utilization();
@@ -4994,6 +5531,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommChannelImpl <em>Ga Comm Channel</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommChannelImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaCommChannel()
 		 * @generated
@@ -5004,6 +5542,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Packet Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_COMM_CHANNEL__PACKET_SIZE = eINSTANCE.getGaCommChannel_PacketSize();
@@ -5012,6 +5551,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Utilization</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_COMM_CHANNEL__UTILIZATION = eINSTANCE.getGaCommChannel_Utilization();
@@ -5020,6 +5560,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadBehaviorImpl <em>Ga Workload Behavior</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadBehaviorImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaWorkloadBehavior()
 		 * @generated
@@ -5030,6 +5571,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Behavior</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_WORKLOAD_BEHAVIOR__BEHAVIOR = eINSTANCE.getGaWorkloadBehavior_Behavior();
@@ -5038,6 +5580,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Demand</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_WORKLOAD_BEHAVIOR__DEMAND = eINSTANCE.getGaWorkloadBehavior_Demand();
@@ -5046,6 +5589,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Named Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_WORKLOAD_BEHAVIOR__BASE_NAMED_ELEMENT = eINSTANCE.getGaWorkloadBehavior_Base_NamedElement();
@@ -5054,6 +5598,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaAnalysisContextImpl <em>Ga Analysis Context</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaAnalysisContextImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaAnalysisContext()
 		 * @generated
@@ -5064,6 +5609,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Context</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute GA_ANALYSIS_CONTEXT__CONTEXT = eINSTANCE.getGaAnalysisContext_Context();
@@ -5072,6 +5618,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Workload</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_ANALYSIS_CONTEXT__WORKLOAD = eINSTANCE.getGaAnalysisContext_Workload();
@@ -5080,6 +5627,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Platform</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_ANALYSIS_CONTEXT__PLATFORM = eINSTANCE.getGaAnalysisContext_Platform();
@@ -5088,6 +5636,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaResourcesPlatformImpl <em>Ga Resources Platform</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaResourcesPlatformImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getGaResourcesPlatform()
 		 * @generated
@@ -5098,6 +5647,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Resources</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_RESOURCES_PLATFORM__RESOURCES = eINSTANCE.getGaResourcesPlatform_Resources();
@@ -5106,6 +5656,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Classifier</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference GA_RESOURCES_PLATFORM__BASE_CLASSIFIER = eINSTANCE.getGaResourcesPlatform_Base_Classifier();
@@ -5114,6 +5665,7 @@ public interface GQAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.LaxityKind <em>Laxity Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.LaxityKind
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMPackageImpl#getLaxityKind()
 		 * @generated
@@ -5122,4 +5674,4 @@ public interface GQAMPackage extends EPackage {
 
 	}
 
-} //GQAMPackage
+} // GQAMPackage

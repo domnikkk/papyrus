@@ -19,7 +19,7 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * Utility class for handling {@link Image}s.
- * 
+ *
  * @author Gregoire Dupe
  */
 public final class ImageUtils {
@@ -33,7 +33,7 @@ public final class ImageUtils {
 	/**
 	 * Returns an image for the given model element from the EMF global
 	 * registry.
-	 * 
+	 *
 	 * @param object
 	 *            an {@link EObject} for which an {@link Image} is required
 	 * @return an image or <code>null</code> if none was found for the given

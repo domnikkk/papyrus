@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 AtoS.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ public class Tool {
 
 	private String id;
 	private String name;
-	private ICreator creator  ;
+	private ICreator creator;
 	private String description;
-	
+
 	public String getDescription() {
 		return description;
 	}
@@ -33,22 +33,23 @@ public class Tool {
 	{
 		this.creator = wizard;
 	}
-	
+
 	public String getName()
 	{
-		return name ;
+		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public ICreator getCreator ()
+
+	public ICreator getCreator()
 	{
-		return creator ;
+		return creator;
 	}
-	
-	public String toString ()
+
+	@Override
+	public String toString()
 	{
 		return getName();
 	}
@@ -56,7 +57,7 @@ public class Tool {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	public boolean isEnabled(IPaletteEntryProxy entryProxy)
 	{
 		return creator.isEnabled(entryProxy);

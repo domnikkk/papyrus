@@ -42,7 +42,7 @@ import org.eclipse.ui.PartInitException;
  * This is the action bar contributor for the Domaincontextcodegen model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DomaincontextcodegenActionBarContributor extends EditingDomainActionBarContributor implements ISelectionChangedListener {
@@ -51,7 +51,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * This keeps track of the active editor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IEditorPart activeEditorPart;
@@ -60,7 +60,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * This keeps track of the current selection provider.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ISelectionProvider selectionProvider;
@@ -69,7 +69,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * This action opens the Properties view.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IAction showPropertiesViewAction = new Action(DomainContextEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) {
@@ -89,7 +89,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * implements {@link org.eclipse.emf.common.ui.viewer.IViewerProvider}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IAction refreshViewerAction = new Action(DomainContextEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
@@ -101,9 +101,9 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 
 		@Override
 		public void run() {
-			if(activeEditorPart instanceof IViewerProvider) {
-				Viewer viewer = ((IViewerProvider)activeEditorPart).getViewer();
-				if(viewer != null) {
+			if (activeEditorPart instanceof IViewerProvider) {
+				Viewer viewer = ((IViewerProvider) activeEditorPart).getViewer();
+				if (viewer != null) {
 					viewer.refresh();
 				}
 			}
@@ -115,7 +115,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * generated for the current selection by the item provider.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<IAction> createChildActions;
@@ -124,7 +124,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * This is the menu manager into which menu contribution items should be added for CreateChild actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IMenuManager createChildMenuManager;
@@ -134,7 +134,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * generated for the current selection by the item provider.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<IAction> createSiblingActions;
@@ -143,7 +143,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * This is the menu manager into which menu contribution items should be added for CreateSibling actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IMenuManager createSiblingMenuManager;
@@ -152,7 +152,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * This creates an instance of the contributor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DomaincontextcodegenActionBarContributor() {
@@ -166,7 +166,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * This adds Separators for editor additions to the tool bar.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +180,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * as well as the sub-menus for object creation items.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * When the active editor changes, this remembers the change and registers with it as a selection provider.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,10 +230,10 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 
 		// Switch to the new selection provider.
 		//
-		if(selectionProvider != null) {
+		if (selectionProvider != null) {
 			selectionProvider.removeSelectionChangedListener(this);
 		}
-		if(part == null) {
+		if (part == null) {
 			selectionProvider = null;
 		} else {
 			selectionProvider = part.getSite().getSelectionProvider();
@@ -241,7 +241,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 
 			// Fake a selection changed event to update the menus.
 			//
-			if(selectionProvider.getSelection() != null) {
+			if (selectionProvider.getSelection() != null) {
 				selectionChanged(new SelectionChangedEvent(selectionProvider, selectionProvider.getSelection()));
 			}
 		}
@@ -253,16 +253,16 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * that can be added to the selected object and updating the menus accordingly.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void selectionChanged(SelectionChangedEvent event) {
 		// Remove any menu items for old selection.
 		//
-		if(createChildMenuManager != null) {
+		if (createChildMenuManager != null) {
 			depopulateManager(createChildMenuManager, createChildActions);
 		}
-		if(createSiblingMenuManager != null) {
+		if (createSiblingMenuManager != null) {
 			depopulateManager(createSiblingMenuManager, createSiblingActions);
 		}
 
@@ -272,10 +272,10 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 		Collection<?> newSiblingDescriptors = null;
 
 		ISelection selection = event.getSelection();
-		if(selection instanceof IStructuredSelection && ((IStructuredSelection)selection).size() == 1) {
-			Object object = ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection && ((IStructuredSelection) selection).size() == 1) {
+			Object object = ((IStructuredSelection) selection).getFirstElement();
 
-			EditingDomain domain = ((IEditingDomainProvider)activeEditorPart).getEditingDomain();
+			EditingDomain domain = ((IEditingDomainProvider) activeEditorPart).getEditingDomain();
 
 			newChildDescriptors = domain.getNewChildDescriptors(object, null);
 			newSiblingDescriptors = domain.getNewChildDescriptors(null, object);
@@ -286,11 +286,11 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 		createChildActions = generateCreateChildActions(newChildDescriptors, selection);
 		createSiblingActions = generateCreateSiblingActions(newSiblingDescriptors, selection);
 
-		if(createChildMenuManager != null) {
+		if (createChildMenuManager != null) {
 			populateManager(createChildMenuManager, createChildActions, null);
 			createChildMenuManager.update(true);
 		}
-		if(createSiblingMenuManager != null) {
+		if (createSiblingMenuManager != null) {
 			populateManager(createSiblingMenuManager, createSiblingActions, null);
 			createSiblingMenuManager.update(true);
 		}
@@ -301,13 +301,13 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * and returns the collection of these actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<IAction> generateCreateChildActions(Collection<?> descriptors, ISelection selection) {
 		Collection<IAction> actions = new ArrayList<IAction>();
-		if(descriptors != null) {
-			for(Object descriptor : descriptors) {
+		if (descriptors != null) {
+			for (Object descriptor : descriptors) {
 				actions.add(new CreateChildAction(activeEditorPart, selection, descriptor));
 			}
 		}
@@ -319,13 +319,13 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * and returns the collection of these actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<IAction> generateCreateSiblingActions(Collection<?> descriptors, ISelection selection) {
 		Collection<IAction> actions = new ArrayList<IAction>();
-		if(descriptors != null) {
-			for(Object descriptor : descriptors) {
+		if (descriptors != null) {
+			for (Object descriptor : descriptors) {
 				actions.add(new CreateSiblingAction(activeEditorPart, selection, descriptor));
 			}
 		}
@@ -339,13 +339,13 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * If <code>contributionID</code> is <code>null</code>, they are simply added.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void populateManager(IContributionManager manager, Collection<? extends IAction> actions, String contributionID) {
-		if(actions != null) {
-			for(IAction action : actions) {
-				if(contributionID != null) {
+		if (actions != null) {
+			for (IAction action : actions) {
+				if (contributionID != null) {
 					manager.insertBefore(contributionID, action);
 				} else {
 					manager.add(action);
@@ -359,25 +359,25 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * based on the {@link org.eclipse.jface.action.IAction}s contained in the <code>actions</code> collection.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void depopulateManager(IContributionManager manager, Collection<? extends IAction> actions) {
-		if(actions != null) {
+		if (actions != null) {
 			IContributionItem[] items = manager.getItems();
-			for(int i = 0; i < items.length; i++) {
+			for (int i = 0; i < items.length; i++) {
 				// Look into SubContributionItems
 				//
 				IContributionItem contributionItem = items[i];
-				while(contributionItem instanceof SubContributionItem) {
-					contributionItem = ((SubContributionItem)contributionItem).getInnerItem();
+				while (contributionItem instanceof SubContributionItem) {
+					contributionItem = ((SubContributionItem) contributionItem).getInnerItem();
 				}
 
 				// Delete the ActionContributionItems with matching action.
 				//
-				if(contributionItem instanceof ActionContributionItem) {
-					IAction action = ((ActionContributionItem)contributionItem).getAction();
-					if(actions.contains(action)) {
+				if (contributionItem instanceof ActionContributionItem) {
+					IAction action = ((ActionContributionItem) contributionItem).getAction();
+					if (actions.contains(action)) {
 						manager.remove(contributionItem);
 					}
 				}
@@ -389,7 +389,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * This populates the pop-up menu before it appears.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -410,7 +410,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * This inserts global actions before the "additions-end" separator.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +428,7 @@ public class DomaincontextcodegenActionBarContributor extends EditingDomainActio
 	 * This ensures that a delete action will clean up all references to deleted objects.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

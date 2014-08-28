@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ListValue#getValues <em>Values</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ListValue#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,10 +26,10 @@ public interface ListValue extends FeatureValue {
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.FeatureValue}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Values</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Values</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Values</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationPackage#getListValue_Values()
 	 * @model containment="true"

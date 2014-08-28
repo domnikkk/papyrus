@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.TreeColumn;
 import org.eclipse.swt.widgets.TreeItem;
 
-// TODO : make drag&dropEditor extends it 
+// TODO : make drag&dropEditor extends it
 public class StrategyEditor extends MultipleReferenceEditor {
 
 	private static final String STRATEGIES = "Strategies"; //$NON-NLS-1$
@@ -49,19 +49,19 @@ public class StrategyEditor extends MultipleReferenceEditor {
 
 	public static final int LABEL_COLUMN = 1;
 
-	protected /*final*/ Map<IStrategy, Button> checkboxes;
+	protected/* final */Map<IStrategy, Button> checkboxes;
 
 	protected IStrategyManager instance;
-	
-	
+
+
 	public StrategyEditor(Composite parent, int style, IStrategyManager instance2) {
 		this(parent, style, instance2, STRATEGIES);
 	}
-	
+
 	public StrategyEditor(Composite parent, int style, IStrategyManager instance2, String label) {
 		super(parent, style, true, true, label);
 		instance = instance2;
-		
+
 		List<IStrategy> values = getStrategyManager().getAllStrategies();
 
 		IStaticContentProvider provider = new StaticContentProvider(values.toArray());
@@ -84,25 +84,27 @@ public class StrategyEditor extends MultipleReferenceEditor {
 
 		treeViewer.refresh();
 
-		//Adds a checkbox for each PasteStrategy, to toggle it
+		// Adds a checkbox for each PasteStrategy, to toggle it
 		checkboxes = new HashMap<IStrategy, Button>();
 
-		for(TreeItem item : tree.getItems()) {
-			if(item.getData() instanceof IStrategy) {
+		for (TreeItem item : tree.getItems()) {
+			if (item.getData() instanceof IStrategy) {
 				TreeEditor editor = new TreeEditor(tree);
 				final Button button = new Button(tree, SWT.CHECK);
 				final TreeItem currentItem = item;
 
-				final IStrategy strategy = (IStrategy)currentItem.getData();
+				final IStrategy strategy = (IStrategy) currentItem.getData();
 				button.addSelectionListener(new SelectionListener() {
 
+					@Override
 					public void widgetSelected(SelectionEvent e) {
 						updateStrategy(strategy, button);
 						treeViewer.refresh();
 					}
 
+					@Override
 					public void widgetDefaultSelected(SelectionEvent e) {
-						//Nothing
+						// Nothing
 					}
 
 				});
@@ -117,22 +119,23 @@ public class StrategyEditor extends MultipleReferenceEditor {
 			}
 		}
 
-		//Adds a space-key listener to edit a list of selected checkboxes
+		// Adds a space-key listener to edit a list of selected checkboxes
 		tree.addKeyListener(new KeyListener() {
 
+			@Override
 			public void keyReleased(KeyEvent e) {
-				if(e.keyCode == SWT.SPACE) {
+				if (e.keyCode == SWT.SPACE) {
 					ISelection selection = treeViewer.getSelection();
-					if(selection instanceof IStructuredSelection && !selection.isEmpty()) {
-						IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+					if (selection instanceof IStructuredSelection && !selection.isEmpty()) {
+						IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 
 						Boolean isActive = findIsActive(structuredSelection);
 
 						Iterator<?> iterator = structuredSelection.iterator();
-						while(iterator.hasNext()) {
+						while (iterator.hasNext()) {
 							Object element = iterator.next();
-							if(element instanceof IStrategy) {
-								IStrategy strategy = (IStrategy)element;
+							if (element instanceof IStrategy) {
+								IStrategy strategy = (IStrategy) element;
 								Button button = checkboxes.get(strategy);
 
 								updateStrategy(strategy, button, isActive);
@@ -144,33 +147,34 @@ public class StrategyEditor extends MultipleReferenceEditor {
 				}
 			}
 
+			@Override
 			public void keyPressed(KeyEvent e) {
-				//Nothing
+				// Nothing
 			}
 		});
 	}
 
 
-	public IStrategyManager getStrategyManager()	{
+	public IStrategyManager getStrategyManager() {
 		return instance;
 	}
 
-	//Returns the new status of the first PasteStrategy in the selection.
-	//Returns null if the selection doesn't contain any PasteStrategy
+	// Returns the new status of the first PasteStrategy in the selection.
+	// Returns null if the selection doesn't contain any PasteStrategy
 	private Boolean findIsActive(IStructuredSelection selection) {
 		Iterator<?> iterator = selection.iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Object element = iterator.next();
-			if(element instanceof IStrategy) {
-				boolean isActive = getStrategyManager().isActive((IStrategy)element); //Current status
-				return !isActive; //New status (Toggle)
+			if (element instanceof IStrategy) {
+				boolean isActive = getStrategyManager().isActive((IStrategy) element); // Current status
+				return !isActive; // New status (Toggle)
 			}
 		}
-		return null; //No PasteStrategy found in the selection
+		return null; // No PasteStrategy found in the selection
 	}
 
 	protected void updateStrategy(IStrategy strategy, Button button, boolean isActive) {
-		getStrategyManager().setActive((IStrategy) strategy, isActive);
+		getStrategyManager().setActive(strategy, isActive);
 		button.setSelection(isActive);
 	}
 
@@ -188,13 +192,14 @@ public class StrategyEditor extends MultipleReferenceEditor {
 		up.dispose();
 		down.dispose();
 
-		//		toggle = new Button(controlsSection, SWT.TOGGLE);
-		//		toggle.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("/icons/Add_12x12.gif"));
-		//		toggle.addSelectionListener(this);
-		//		toggle.setToolTipText("Toggle the selected strategies");
+		// toggle = new Button(controlsSection, SWT.TOGGLE);
+		// toggle.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("/icons/Add_12x12.gif"));
+		// toggle.addSelectionListener(this);
+		// toggle.setToolTipText("Toggle the selected strategies");
 
 		treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				updateControls();
 			}
@@ -202,24 +207,24 @@ public class StrategyEditor extends MultipleReferenceEditor {
 	}
 
 	protected Object[] getSelectedElements() {
-		IStructuredSelection selection = (IStructuredSelection)treeViewer.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) treeViewer.getSelection();
 		return selection.toArray();
 	}
 
 	@Override
 	public void widgetSelected(SelectionEvent event) {
-		//		if(event.widget == toggle) {
-		//			toggleAction(toggle.getSelection());
-		//		} else {
+		// if(event.widget == toggle) {
+		// toggleAction(toggle.getSelection());
+		// } else {
 		super.widgetSelected(event);
-		//		}
+		// }
 	}
 
 	protected void toggleAction(boolean activate) {
 		Object[] selectedElements = getSelectedElements();
-		for(Object selected : selectedElements) {
-			if(selected instanceof IStrategy) {
-				getStrategyManager().setActive((IStrategy)selected, activate);
+		for (Object selected : selectedElements) {
+			if (selected instanceof IStrategy) {
+				getStrategyManager().setActive((IStrategy) selected, activate);
 			}
 		}
 		treeViewer.refresh();
@@ -227,7 +232,7 @@ public class StrategyEditor extends MultipleReferenceEditor {
 
 	@Override
 	protected void updateControls() {
-		//Skip super.updateControls ; this is not configurable. Avoids a widget disposed exception
+		// Skip super.updateControls ; this is not configurable. Avoids a widget disposed exception
 
 	}
 
@@ -237,14 +242,14 @@ public class StrategyEditor extends MultipleReferenceEditor {
 	 * Refreshes the widget's contents, based on the PasteStrategyManager's current values
 	 */
 	public void refresh() {
-		for(Map.Entry<IStrategy, Button> entry : checkboxes.entrySet()) {
+		for (Map.Entry<IStrategy, Button> entry : checkboxes.entrySet()) {
 			boolean isActive = getStrategyManager().isActive(entry.getKey());
 			updateStrategy(entry.getKey(), entry.getValue(), isActive);
 		}
 		treeViewer.refresh();
 	}
-	
-	
+
+
 	private class StrategyObservableList extends WritableList {
 
 		public StrategyObservableList(List<IStrategy> values) {
@@ -257,9 +262,9 @@ public class StrategyEditor extends MultipleReferenceEditor {
 			Object objectToMove = get(oldIndex);
 			Object other = get(newIndex);
 
-			if(objectToMove instanceof IStrategy && other instanceof IStrategy) {
-				IStrategy strategyToMove = (IStrategy)objectToMove;
-				IStrategy otherStrategy = (IStrategy)other;
+			if (objectToMove instanceof IStrategy && other instanceof IStrategy) {
+				IStrategy strategyToMove = (IStrategy) objectToMove;
+				IStrategy otherStrategy = (IStrategy) other;
 
 				int priority = getStrategyManager().findPriority(otherStrategy);
 				int newPriority = (newIndex > oldIndex) ? priority + 1 : priority - 1;
@@ -270,7 +275,7 @@ public class StrategyEditor extends MultipleReferenceEditor {
 			return super.move(oldIndex, newIndex);
 		}
 
-	}	
-	
-	
+	}
+
+
 }

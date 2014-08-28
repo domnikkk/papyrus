@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2006 Borland Software Corporation
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,8 +34,8 @@ public class ReferencePropertyDescriptor extends EMFCompositeSourcePropertyDescr
 
 	@Override
 	protected CellEditor doCreateEditor(Composite composite) {
-		final EStructuralFeature feature = (EStructuralFeature)getFeature();
-		UMLElementChooserDialog dialog = new ReferenceElementChooserDialog(composite.getShell(), myItemProvidersAdapterFactory, (EObject)object, feature) {
+		final EStructuralFeature feature = (EStructuralFeature) getFeature();
+		UMLElementChooserDialog dialog = new ReferenceElementChooserDialog(composite.getShell(), myItemProvidersAdapterFactory, (EObject) object, feature) {
 
 			@Override
 			protected boolean isValid(EObject selectedElement) {

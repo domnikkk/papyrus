@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * this class allows to have a list to choose one element!
- * 
+ *
  */
 public class ComboInputDialog extends InputDialog {
 
@@ -43,7 +43,7 @@ public class ComboInputDialog extends InputDialog {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 */
 	protected ComboInputDialog(Shell parentShell, String title, String message, String initialValue, String[] elementsList) {
@@ -62,19 +62,19 @@ public class ComboInputDialog extends InputDialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.ui.dialogs.InputDialog#createDialogArea(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 * @return
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite comp = (Composite)super.createDialogArea(parent);
+		Composite comp = (Composite) super.createDialogArea(parent);
 		combo = new Combo(comp, SWT.READ_ONLY);// with READ_ONLY, we can't edit
 												// the selection!
-		if(elementsList == null) {
-			combo.setItems(new String[]{ "" }); //$NON-NLS-1$
+		if (elementsList == null) {
+			combo.setItems(new String[] { "" }); //$NON-NLS-1$
 		} else {
 			combo.setItems(elementsList);
 		}
@@ -86,7 +86,7 @@ public class ComboInputDialog extends InputDialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return indexOfSelection
 	 */
 	public int getIndexOfSelection() {
@@ -94,7 +94,7 @@ public class ComboInputDialog extends InputDialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	protected String[] getElementList() {

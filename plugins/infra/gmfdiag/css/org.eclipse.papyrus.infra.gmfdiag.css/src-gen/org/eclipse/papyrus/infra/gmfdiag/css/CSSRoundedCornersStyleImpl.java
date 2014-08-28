@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,42 +29,43 @@ public class CSSRoundedCornersStyleImpl extends RoundedCornersStyleImpl implemen
 	private CSSRoundedCornersStyle roundedCornersStyle;
 
 	protected CSSRoundedCornersStyle getRoundedCornersStyle() {
-		if(roundedCornersStyle == null) {
+		if (roundedCornersStyle == null) {
 			roundedCornersStyle = new CSSRoundedCornersStyleDelegate(this, getEngine());
 		}
 		return roundedCornersStyle;
 	}
 
 	protected ExtendedCSSEngine getEngine() {
-		if(engine == null) {
-			engine = ((CSSDiagramImpl)findView().getDiagram()).getEngine();
+		if (engine == null) {
+			engine = ((CSSDiagramImpl) findView().getDiagram()).getEngine();
 		}
 		return engine;
 	}
 
 	protected View findView() {
 		EObject parent = eContainer();
-		while(!(parent instanceof View) && parent != null) {
+		while (!(parent instanceof View) && parent != null) {
 			parent = parent.eContainer();
 		}
 
-		if(parent != null) {
-			return (View)parent;
+		if (parent != null) {
+			return (View) parent;
 		}
 
 		return null;
 	}
 
 
-	//////////////////////////////////////////
-	//	Forwards accesses to CSS properties	//
-	//////////////////////////////////////////
+	// ////////////////////////////////////////
+	// Forwards accesses to CSS properties //
+	// ////////////////////////////////////////
 
 
+	@Override
 	public int getCSSRoundedBendpointsRadius() {
 		int value = super.getRoundedBendpointsRadius();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoundedCornersStyle_RoundedBendpointsRadius(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getRoundedCornersStyle_RoundedBendpointsRadius(), value)) {
 			return value;
 		} else {
 			return getRoundedCornersStyle().getCSSRoundedBendpointsRadius();
@@ -74,15 +75,15 @@ public class CSSRoundedCornersStyleImpl extends RoundedCornersStyleImpl implemen
 
 	@Override
 	public int getRoundedBendpointsRadius() {
-		//return super.getRoundedBendpointsRadius();
+		// return super.getRoundedBendpointsRadius();
 		return getCSSRoundedBendpointsRadius();
 	}
 
 
 
-	////////////////////////////////////////////////
-	//	Implements a setter for each CSS property //
-	////////////////////////////////////////////////	
+	// //////////////////////////////////////////////
+	// Implements a setter for each CSS property //
+	// //////////////////////////////////////////////
 
 	@Override
 	public void setRoundedBendpointsRadius(int value) {
@@ -92,9 +93,9 @@ public class CSSRoundedCornersStyleImpl extends RoundedCornersStyleImpl implemen
 		ForceValueHelper.setValue(findView(), feature, value);
 	}
 
-	//////////////////////////////////
-	//	Implements the unset method //
-	//////////////////////////////////
+	// ////////////////////////////////
+	// Implements the unset method //
+	// ////////////////////////////////
 
 	@Override
 	public void eUnset(int featureId) {

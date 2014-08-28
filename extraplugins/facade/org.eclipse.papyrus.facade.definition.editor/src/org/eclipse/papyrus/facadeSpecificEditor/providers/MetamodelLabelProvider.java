@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,72 +44,77 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 
 	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
-	 * 
+	 *
 	 * @param listener
 	 */
 
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 
 	}
 
 	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#dispose()
-	 * 
+	 *
 	 */
 
+	@Override
 	public void dispose() {
 
 	}
 
 	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#isLabelProperty(java.lang.Object, java.lang.String)
-	 * 
+	 *
 	 * @param element
 	 * @param property
 	 * @return
 	 */
 
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
 
 	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#removeListener(org.eclipse.jface.viewers.ILabelProviderListener)
-	 * 
+	 *
 	 * @param listener
 	 */
 
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 
 	}
 
 	/**
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnImage(java.lang.Object, int)
-	 * 
+	 *
 	 * @param element
 	 * @param columnIndex
 	 * @return
 	 */
 
+	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case 0:
-			if(element instanceof VirtualMetaclass) {
-				if(((VirtualMetaclass)element).isStereotypeInterface()) {
+			if (element instanceof VirtualMetaclass) {
+				if (((VirtualMetaclass) element).isStereotypeInterface()) {
 					return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/virtualmetamodel/StereotypeInterface.gif"); //$NON-NLS-1$
 				} else {
 					return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/virtualmetamodel/VirtualMetaclass.gif"); //$NON-NLS-1$
 				}
-			} else if(element instanceof VirtualDatatype) {
+			} else if (element instanceof VirtualDatatype) {
 				return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/virtualmetamodel/VirtualDatatype.gif"); //$NON-NLS-1$
-			} else if(element instanceof VirtualEnum) {
+			} else if (element instanceof VirtualEnum) {
 				return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/virtualmetamodel/VirtualEnum.gif"); //$NON-NLS-1$
 			}
 
 			break;
 		case 1:
-			if(element instanceof VirtualElement) {
-				if(((VirtualElement)element).isKept()) {
+			if (element instanceof VirtualElement) {
+				if (((VirtualElement) element).isKept()) {
 					return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/checked.gif"); //$NON-NLS-1$
 				} else {
 					return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/unchecked.gif"); //$NON-NLS-1$
@@ -121,9 +126,9 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 			break;
 
 		case 3:
-			if(element instanceof VirtualMetaclass) {
-				if(MetamodelUtils.canBeAbstract((VirtualMetaclass)element)) {
-					if(((VirtualMetaclass)element).isAbstract()) {
+			if (element instanceof VirtualMetaclass) {
+				if (MetamodelUtils.canBeAbstract((VirtualMetaclass) element)) {
+					if (((VirtualMetaclass) element).isAbstract()) {
 						return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/checked.gif"); //$NON-NLS-1$
 					} else {
 						return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/unchecked.gif"); //$NON-NLS-1$
@@ -133,9 +138,9 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 			break;
 
 		case 4:
-			if(element instanceof VirtualElement) {
+			if (element instanceof VirtualElement) {
 
-				if(((VirtualElement)element).isUseRepresented()) {
+				if (((VirtualElement) element).isUseRepresented()) {
 					return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/checked.gif"); //$NON-NLS-1$
 				} else {
 					return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/unchecked.gif"); //$NON-NLS-1$
@@ -152,32 +157,33 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 
 	/**
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnText(java.lang.Object, int)
-	 * 
+	 *
 	 * @param element
 	 * @param columnIndex
 	 * @return
 	 */
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case 0:
 			String result = Messages.MetamodelLabelProvider_8;
-			if(element instanceof VirtualElement) {
-				if(((VirtualElement)element).getRepresentedElement() instanceof ENamedElement) {
-					result = ((ENamedElement)((VirtualElement)element).getRepresentedElement()).getName();
-				} else if(((VirtualElement)element).getRepresentedElement() instanceof NamedElement) {
-					result = ((NamedElement)((VirtualElement)element).getRepresentedElement()).getName();
+			if (element instanceof VirtualElement) {
+				if (((VirtualElement) element).getRepresentedElement() instanceof ENamedElement) {
+					result = ((ENamedElement) ((VirtualElement) element).getRepresentedElement()).getName();
+				} else if (((VirtualElement) element).getRepresentedElement() instanceof NamedElement) {
+					result = ((NamedElement) ((VirtualElement) element).getRepresentedElement()).getName();
 				}
 
-				if(element instanceof VirtualMetaclass) {
-					if(!((VirtualMetaclass)element).getAppliedStereotypes().isEmpty()) {
+				if (element instanceof VirtualMetaclass) {
+					if (!((VirtualMetaclass) element).getAppliedStereotypes().isEmpty()) {
 						result += " ("; //$NON-NLS-1$
-						result += ((VirtualMetaclass)element).getAppliedStereotypes().get(0).getExtensionDefinition().getStereotype().getName();
+						result += ((VirtualMetaclass) element).getAppliedStereotypes().get(0).getExtensionDefinition().getStereotype().getName();
 
-						if(((VirtualMetaclass)element).getAppliedStereotypes().size() > 1) {
-							for(int i = 1; i < ((VirtualMetaclass)element).getAppliedStereotypes().size(); i++) {
+						if (((VirtualMetaclass) element).getAppliedStereotypes().size() > 1) {
+							for (int i = 1; i < ((VirtualMetaclass) element).getAppliedStereotypes().size(); i++) {
 								result += ", "; //$NON-NLS-1$
-								result += ((VirtualMetaclass)element).getAppliedStereotypes().get(i).getExtensionDefinition().getStereotype().getName();
+								result += ((VirtualMetaclass) element).getAppliedStereotypes().get(i).getExtensionDefinition().getStereotype().getName();
 							}
 
 						}
@@ -192,8 +198,8 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 			break;
 
 		case 2:
-			if(element instanceof VirtualElement) {
-				return ((VirtualElement)element).getAliasName();
+			if (element instanceof VirtualElement) {
+				return ((VirtualElement) element).getAliasName();
 			}
 			break;
 
@@ -209,22 +215,24 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 
 	/**
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 
+	@Override
 	public Image getImage(Object element) {
 		return null;
 	}
 
 	/**
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getText(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 
+	@Override
 	public String getText(Object element) {
 		return getColumnText(element, 0) + getColumnText(element, 2);
 
@@ -232,15 +240,16 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 
 	/**
 	 * @see org.eclipse.jface.viewers.IFontProvider#getFont(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 
+	@Override
 	public Font getFont(Object element) {
-		if(element instanceof VirtualMetaclass) {
+		if (element instanceof VirtualMetaclass) {
 
-			if(((VirtualMetaclass)element).isAbstract()) {
+			if (((VirtualMetaclass) element).isAbstract()) {
 				return JFaceResources.getFontRegistry().getItalic(JFaceResources.DEFAULT_FONT);
 			}
 		}
@@ -250,14 +259,15 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 
 	/**
 	 * @see org.eclipse.jface.viewers.IColorProvider#getForeground(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 
+	@Override
 	public Color getForeground(Object element) {
-		if(element instanceof VirtualElement) {
-			if(!((VirtualElement)element).isKept()) {
+		if (element instanceof VirtualElement) {
+			if (!((VirtualElement) element).isKept()) {
 				return Display.getDefault().getSystemColor(SWT.COLOR_GRAY);
 			}
 		}
@@ -266,11 +276,12 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 
 	/**
 	 * @see org.eclipse.jface.viewers.IColorProvider#getBackground(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 
+	@Override
 	public Color getBackground(Object element) {
 
 		return null;

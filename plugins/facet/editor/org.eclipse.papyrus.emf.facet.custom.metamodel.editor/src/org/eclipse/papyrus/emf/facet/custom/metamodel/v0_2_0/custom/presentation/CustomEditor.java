@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 361794 - [Restructuring] New customization meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
- *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning 
+ *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning
  */
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.presentation;
 
@@ -22,12 +22,10 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.EventObject;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
@@ -57,7 +55,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EValidator;
@@ -164,11 +161,12 @@ import org.eclipse.ui.views.properties.PropertySheetPage;
  * This is an example of a Custom model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class CustomEditor
-extends EditorPart
-implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvider, IViewerProvider {
+		extends EditorPart
+		implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvider, IViewerProvider {
 
 	protected Customization mainCustomization;
 
@@ -180,6 +178,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * Resources that have been changed since last activation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected Collection<Resource> changedResources = new ArrayList<Resource>();
@@ -188,6 +187,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * Resources that have been saved.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected Collection<Resource> savedResources = new ArrayList<Resource>();
@@ -196,6 +196,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * Resources that have been removed since last activation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected Collection<Resource> removedResources = new ArrayList<Resource>();
@@ -204,6 +205,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This keeps track of the selection of the editor as a whole.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ISelection editorSelection = StructuredSelection.EMPTY;
@@ -212,6 +214,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This listens to which ever viewer is active.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ISelectionChangedListener selectionChangedListener;
@@ -220,6 +223,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This keeps track of all the {@link org.eclipse.jface.viewers.ISelectionChangedListener}s that are listening to this editor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected Collection<ISelectionChangedListener> selectionChangedListeners = new ArrayList<ISelectionChangedListener>();
@@ -228,6 +232,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * Controls whether the problem indication should be updated.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected boolean updateProblemIndication = true;
@@ -236,6 +241,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This is the content outline page's viewer.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TreeViewer contentOutlineViewer;
@@ -244,6 +250,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This is a kludge...
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected IStatusLineManager contentOutlineStatusLineManager;
@@ -252,6 +259,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * Map to store the diagnostic associated with a resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected Map<Resource, Diagnostic> resourceToDiagnosticMap = new LinkedHashMap<Resource, Diagnostic>();
@@ -261,6 +269,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * in Eclipse's Problems View.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MarkerHelper markerHelper = new EditUIMarkerHelper();
@@ -269,6 +278,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This is the property sheet page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PropertySheetPage propertySheetPage;
@@ -277,6 +287,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This is the content outline page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected IContentOutlinePage contentOutlinePage;
@@ -314,6 +325,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This sets up the editing domain for the model editor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void initializeEditingDomain() {
@@ -337,26 +349,26 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 		// Add a listener to set the most recent command's affected objects to be the selection of the viewer with focus.
 		//
 		commandStack.addCommandStackListener
-		(new CommandStackListener() {
-			public void commandStackChanged(final EventObject event) {
-				getSite().getShell().getDisplay().asyncExec
-				(new Runnable() {
-					public void run() {
-						firePropertyChange(IEditorPart.PROP_DIRTY);
-						//setDirty(commandStack.isSaveNeeded());
-						// Try to select the affected objects.
-						//
-						Command mostRecentCommand = ((CommandStack)event.getSource()).getMostRecentCommand();
-						if (mostRecentCommand != null) {
-							setSelectionToViewer(mostRecentCommand.getAffectedObjects());
-						}
-						if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {
-							propertySheetPage.refresh();
-						}
+				(new CommandStackListener() {
+					public void commandStackChanged(final EventObject event) {
+						getSite().getShell().getDisplay().asyncExec
+								(new Runnable() {
+									public void run() {
+										firePropertyChange(IEditorPart.PROP_DIRTY);
+										// setDirty(commandStack.isSaveNeeded());
+										// Try to select the affected objects.
+										//
+										Command mostRecentCommand = ((CommandStack) event.getSource()).getMostRecentCommand();
+										if (mostRecentCommand != null) {
+											setSelectionToViewer(mostRecentCommand.getAffectedObjects());
+										}
+										if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {
+											propertySheetPage.refresh();
+										}
+									}
+								});
 					}
 				});
-			}
-		});
 
 		// Create the editing domain with a special command stack.
 		//
@@ -377,6 +389,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This sets the selection into whichever viewer is active.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setSelectionToViewer(Collection<?> collection) {
@@ -386,14 +399,14 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 		if (theSelection != null && !theSelection.isEmpty()) {
 			Runnable runnable =
 					new Runnable() {
-				public void run() {
-					// Try to select the items in the current content viewer of the editor.
-					//
-					if (selectionViewer != null) {
-						selectionViewer.setSelection(new StructuredSelection(theSelection.toArray()), true);
-					}
-				}
-			};
+						public void run() {
+							// Try to select the items in the current content viewer of the editor.
+							//
+							if (selectionViewer != null) {
+								selectionViewer.setSelection(new StructuredSelection(theSelection.toArray()), true);
+							}
+						}
+					};
 			getSite().getShell().getDisplay().asyncExec(runnable);
 		}
 	}
@@ -436,7 +449,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 
 		this.selectionViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			public void selectionChanged(final SelectionChangedEvent event) {
-				if(listenerCounter == 0){
+				if (listenerCounter == 0) {
 					ISelection eventSelection = event.getSelection();
 					setSelection(eventSelection);
 					final ITreeSelection selection = (ITreeSelection) CustomEditor.this.selectionViewer
@@ -445,11 +458,11 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 					CustomEditor.this.handleSelectionViewerSelectionChanged(selection.getFirstElement());
 					listenerCounter = 0;
 					CustomEditor.this.customizationViewer.getViewer().getControl()
-					.setRedraw(false);
+							.setRedraw(false);
 					CustomEditor.this.customizationViewer.getViewer().expandAll();
 					CustomEditor.this.customizationViewer.getViewer().getControl()
-					.setRedraw(true);
-				}else {
+							.setRedraw(true);
+				} else {
 					listenerCounter = 0;
 				}
 			}
@@ -465,8 +478,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 			// Load the resource through the editing domain.
 			//
 			resource = editingDomain.getResourceSet().getResource(resourceURI, true);
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			exception = e;
 			resource = editingDomain.getResourceSet().getResource(resourceURI, false);
 		}
@@ -488,74 +500,74 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	protected IResourceChangeListener resourceChangeListener =
 			new IResourceChangeListener() {
 
-		public void resourceChanged(IResourceChangeEvent event) {
-			IResourceDelta delta = event.getDelta();
-			try {
-				class ResourceDeltaVisitor implements IResourceDeltaVisitor {
-					protected ResourceSet resourceSet = editingDomain.getResourceSet();
-					protected Collection<Resource> changedResources = new ArrayList<Resource>();
-					protected Collection<Resource> removedResources = new ArrayList<Resource>();
+				public void resourceChanged(IResourceChangeEvent event) {
+					IResourceDelta delta = event.getDelta();
+					try {
+						class ResourceDeltaVisitor implements IResourceDeltaVisitor {
+							protected ResourceSet resourceSet = editingDomain.getResourceSet();
+							protected Collection<Resource> changedResources = new ArrayList<Resource>();
+							protected Collection<Resource> removedResources = new ArrayList<Resource>();
 
-					public boolean visit(IResourceDelta delta) {
-						if (delta.getResource().getType() == IResource.FILE) {
-							if (delta.getKind() == IResourceDelta.REMOVED ||
-									delta.getKind() == IResourceDelta.CHANGED && delta.getFlags() != IResourceDelta.MARKERS) {
-								Resource resource = resourceSet.getResource(URI.createPlatformResourceURI(delta.getFullPath().toString(), true), false);
-								if (resource != null) {
-									if (delta.getKind() == IResourceDelta.REMOVED) {
-										removedResources.add(resource);
-									}
-									else if (!savedResources.remove(resource)) {
-										changedResources.add(resource);
+							public boolean visit(IResourceDelta delta) {
+								if (delta.getResource().getType() == IResource.FILE) {
+									if (delta.getKind() == IResourceDelta.REMOVED ||
+											delta.getKind() == IResourceDelta.CHANGED && delta.getFlags() != IResourceDelta.MARKERS) {
+										Resource resource = resourceSet.getResource(URI.createPlatformResourceURI(delta.getFullPath().toString(), true), false);
+										if (resource != null) {
+											if (delta.getKind() == IResourceDelta.REMOVED) {
+												removedResources.add(resource);
+											}
+											else if (!savedResources.remove(resource)) {
+												changedResources.add(resource);
+											}
+										}
 									}
 								}
+
+								return true;
+							}
+
+							public Collection<Resource> getChangedResources() {
+								return changedResources;
+							}
+
+							public Collection<Resource> getRemovedResources() {
+								return removedResources;
 							}
 						}
 
-						return true;
-					}
+						final ResourceDeltaVisitor visitor = new ResourceDeltaVisitor();
+						delta.accept(visitor);
 
-					public Collection<Resource> getChangedResources() {
-						return changedResources;
-					}
-
-					public Collection<Resource> getRemovedResources() {
-						return removedResources;
-					}
-				}
-
-				final ResourceDeltaVisitor visitor = new ResourceDeltaVisitor();
-				delta.accept(visitor);
-
-				if (!visitor.getRemovedResources().isEmpty()) {
-					getSite().getShell().getDisplay().asyncExec
-					(new Runnable() {
-						public void run() {
-							removedResources.addAll(visitor.getRemovedResources());
-							if (!isDirty()) {
-								getSite().getPage().closeEditor(CustomEditor.this, false);
-							}
+						if (!visitor.getRemovedResources().isEmpty()) {
+							getSite().getShell().getDisplay().asyncExec
+									(new Runnable() {
+										public void run() {
+											removedResources.addAll(visitor.getRemovedResources());
+											if (!isDirty()) {
+												getSite().getPage().closeEditor(CustomEditor.this, false);
+											}
+										}
+									});
 						}
-					});
-				}
 
-				if (!visitor.getChangedResources().isEmpty()) {
-					getSite().getShell().getDisplay().asyncExec
-					(new Runnable() {
-						public void run() {
-							changedResources.addAll(visitor.getChangedResources());
-							if (getSite().getPage().getActiveEditor() == CustomEditor.this) {
-								handleActivate();
-							}
+						if (!visitor.getChangedResources().isEmpty()) {
+							getSite().getShell().getDisplay().asyncExec
+									(new Runnable() {
+										public void run() {
+											changedResources.addAll(visitor.getChangedResources());
+											if (getSite().getPage().getActiveEditor() == CustomEditor.this) {
+												handleActivate();
+											}
+										}
+									});
 						}
-					});
+					}
+					catch (CoreException exception) {
+						CustomEditorPlugin.INSTANCE.log(exception);
+					}
 				}
-			}
-			catch (CoreException exception) {
-				CustomEditorPlugin.INSTANCE.log(exception);
-			}
-		}
-	};
+			};
 
 	private Composite rightPaneComposite;
 
@@ -569,7 +581,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 		};
 
 		sashForm.setWeights(new int[] { CustomEditor.LEFT_PANE_SASH_WEIGHT,
-				CustomEditor.RIGHT_PANE_SASH_WEIGHT 
+				CustomEditor.RIGHT_PANE_SASH_WEIGHT
 		});
 		sashForm.setSashWidth(5);
 
@@ -577,19 +589,19 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	}
 
 	private void createLeftPane(final Composite parent) {
-		
+
 		ViewerPane viewerPane =
 				new ViewerPane(getSite().getPage(), CustomEditor.this) {
-			@Override
-			public Viewer createViewer(Composite composite) {
-				Tree tree = new Tree(composite, SWT.MULTI);
-				TreeViewer newTreeViewer = new TreeViewer(tree);
-				return newTreeViewer;
-			}
-		};
+					@Override
+					public Viewer createViewer(Composite composite) {
+						Tree tree = new Tree(composite, SWT.MULTI);
+						TreeViewer newTreeViewer = new TreeViewer(tree);
+						return newTreeViewer;
+					}
+				};
 		viewerPane.createControl(parent);
 
-		selectionViewer = (TreeViewer)viewerPane.getViewer();
+		selectionViewer = (TreeViewer) viewerPane.getViewer();
 		selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
 
 		selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
@@ -625,23 +637,23 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 		middle.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		this.customizationViewer = new CustomViewer(middle);
 		this.customizationViewer.getViewer().getControl()
-		.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+				.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		final Composite optionsPane = this.toolkit.createComposite(middle);
 		optionsPane.setLayout(new GridLayout());
 		optionsPane.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
-		
+
 		this.customizationViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			public void selectionChanged(final SelectionChangedEvent event) {
-				if(listenerCounter == 0){
-				ISelection eventSelection = event.getSelection();
-				setSelection(eventSelection);
-				final ITreeSelection selection = (ITreeSelection) CustomEditor.this.customizationViewer
-						.getSelection();
-				CustomEditor.this.handleCustomzizationViewerSelectionChanged(selection.getFirstElement());
-				listenerCounter++;
-			}else{
-				listenerCounter = 0;
-			}
+				if (listenerCounter == 0) {
+					ISelection eventSelection = event.getSelection();
+					setSelection(eventSelection);
+					final ITreeSelection selection = (ITreeSelection) CustomEditor.this.customizationViewer
+							.getSelection();
+					CustomEditor.this.handleCustomzizationViewerSelectionChanged(selection.getFirstElement());
+					listenerCounter++;
+				} else {
+					listenerCounter = 0;
+				}
 			}
 		});
 
@@ -655,7 +667,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 		customizationViewerGridData.horizontalAlignment = SWT.FILL;
 		customizationViewerGridData.verticalAlignment = SWT.FILL;
 		this.customizationViewer.getViewer().getControl()
-		.setLayoutData(customizationViewerGridData);
+				.setLayoutData(customizationViewerGridData);
 
 		if (!this.readOnly) {
 			createButtonsPane(rightPaneComposite);
@@ -664,19 +676,19 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 
 		return rightPaneComposite;
 	}
-	
-	private void setInputInCustomizationTreeviewer(Facet facet){
+
+	private void setInputInCustomizationTreeviewer(Facet facet) {
 		List<DerivedTypedElement> inputs = new ArrayList<DerivedTypedElement>();
 		inputs.addAll(facet.getFacetOperations());
 		EList<EStructuralFeature> facetElements = facet.getFacetElements();
 		for (EStructuralFeature eStructuralFeature : facetElements) {
-			if(eStructuralFeature instanceof DerivedTypedElement){
+			if (eStructuralFeature instanceof DerivedTypedElement) {
 				inputs.add((DerivedTypedElement) eStructuralFeature);
 			}
 		}
 		this.customizationViewer.setInput(inputs);
 	}
-	
+
 	private void handleSelectionViewerSelectionChanged(final Object selectedElement) {
 		if (selectedElement instanceof EClassCustomization || selectedElement instanceof FacetCustomization) {
 			final Facet facet = (Facet) selectedElement;
@@ -686,70 +698,70 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 			buttonsPaneComposite.dispose();
 			createButtonsPaneWhenFacetIsSelected(rightPaneComposite);
 			rightPaneComposite.layout();
-		}else if(selectedElement instanceof Customization){
+		} else if (selectedElement instanceof Customization) {
 			buttonsPaneComposite.dispose();
 			createButtonsPaneWhenCustomizationIsSelected(rightPaneComposite);
 			rightPaneComposite.layout();
 		}
-		else if(selectedElement instanceof DerivedTypedElement){
+		else if (selectedElement instanceof DerivedTypedElement) {
 			buttonsPaneComposite.dispose();
 			createButtonsPaneWhenDerivedIsSelected(rightPaneComposite);
 			rightPaneComposite.layout();
-			
 
-			//Update customViewer input
-			DerivedTypedElement derivedTypeElement = (DerivedTypedElement)selectedElement;
-			Facet facet = (Facet)derivedTypeElement.eContainer();
+
+			// Update customViewer input
+			DerivedTypedElement derivedTypeElement = (DerivedTypedElement) selectedElement;
+			Facet facet = (Facet) derivedTypeElement.eContainer();
 			List<DerivedTypedElement> inputs = new ArrayList<DerivedTypedElement>();
 			inputs.addAll(facet.getFacetOperations());
 			EList<EStructuralFeature> facetElements = facet.getFacetElements();
 			for (EStructuralFeature eStructuralFeature : facetElements) {
-				if(eStructuralFeature instanceof DerivedTypedElement){
+				if (eStructuralFeature instanceof DerivedTypedElement) {
 					inputs.add((DerivedTypedElement) eStructuralFeature);
 				}
 			}
 			this.customizationViewer.setInput(inputs);
 			this.customizationViewer.getViewer().setSelection(getSelection(), true);
-			
-			
+
+
 		}
 	}
-	
+
 	private void handleCustomzizationViewerSelectionChanged(final Object selectedElement) {
 		setSelection(this.customizationViewer.getViewer().getSelection());
-		
-		if (selectedElement instanceof FacetOperation|| selectedElement instanceof FacetElement) {
+
+		if (selectedElement instanceof FacetOperation || selectedElement instanceof FacetElement) {
 			buttonsPaneComposite.dispose();
 			createButtonsPaneWhenDerivedIsSelected(rightPaneComposite);
 			rightPaneComposite.layout();
 		}
 	}
-	
+
 	private void btnEditClicked() {
 		if (this.readOnly) {
 			return;
 		}
 		final Object selectedElement = getSelection();
-		if(selectedElement instanceof TreeSelection){
-			final Object selectedObject = ((TreeSelection)selectedElement).getFirstElement();
-			if(selectedObject != null){
+		if (selectedElement instanceof TreeSelection) {
+			final Object selectedObject = ((TreeSelection) selectedElement).getFirstElement();
+			if (selectedObject != null) {
 				if (selectedObject instanceof Facet) {
 					IFacetDialogFactory.INSTANCE.openEditFacetDialog();
-				}else if(selectedObject instanceof FacetAttribute){
+				} else if (selectedObject instanceof FacetAttribute) {
 					IFacetDialogFactory.INSTANCE.openEditFacetAttributeDialog();
-				}else if(selectedObject instanceof FacetOperation){
+				} else if (selectedObject instanceof FacetOperation) {
 					IFacetDialogFactory.INSTANCE.openEditFacetOperationDialog();
-				}else if(selectedObject instanceof FacetReference){
+				} else if (selectedObject instanceof FacetReference) {
 					IFacetDialogFactory.INSTANCE.openEditFacetReferenceDialog();
-				}else if(selectedObject instanceof DerivedTypedElement){
+				} else if (selectedObject instanceof DerivedTypedElement) {
 					IFacetDialogFactory.INSTANCE.openEditFacetOperationParameterDialog();
-				}else if(selectedObject instanceof Customization){
+				} else if (selectedObject instanceof Customization) {
 					ICustomizationDialogFactory.DEFAULT.openAddCustomizationPropertyDialog(getSite().getShell().getDisplay(), editingDomain);
 				}
 			}
 		}
 	}
-	
+
 	@Override
 	public void doSave(final IProgressMonitor monitor) {
 		// Save only resources that have actually changed.
@@ -761,30 +773,30 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 		//
 		WorkspaceModifyOperation operation =
 				new WorkspaceModifyOperation() {
-			// This is the method that gets invoked when the operation runs.
-			//
-			@Override
-			public void execute(IProgressMonitor monitor) {
-				// Save the resources to the file system.
-				//
-				boolean first = true;
-				for (Resource resource : editingDomain.getResourceSet().getResources()) {
-					if ((first || !resource.getContents().isEmpty() || isPersisted(resource)) && !editingDomain.isReadOnly(resource)) {
-						try {
-							long timeStamp = resource.getTimeStamp();
-							resource.save(saveOptions);
-							if (resource.getTimeStamp() != timeStamp) {
-								savedResources.add(resource);
+					// This is the method that gets invoked when the operation runs.
+					//
+					@Override
+					public void execute(IProgressMonitor monitor) {
+						// Save the resources to the file system.
+						//
+						boolean first = true;
+						for (Resource resource : editingDomain.getResourceSet().getResources()) {
+							if ((first || !resource.getContents().isEmpty() || isPersisted(resource)) && !editingDomain.isReadOnly(resource)) {
+								try {
+									long timeStamp = resource.getTimeStamp();
+									resource.save(saveOptions);
+									if (resource.getTimeStamp() != timeStamp) {
+										savedResources.add(resource);
+									}
+								}
+								catch (Exception exception) {
+									resourceToDiagnosticMap.put(resource, analyzeResourceProblems(resource, exception));
+								}
+								first = false;
 							}
 						}
-						catch (Exception exception) {
-							resourceToDiagnosticMap.put(resource, analyzeResourceProblems(resource, exception));
-						}
-						first = false;
 					}
-				}
-			}
-		};
+				};
 
 		updateProblemIndication = false;
 		try {
@@ -794,10 +806,9 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 
 			// Refresh the necessary state.
 			//
-			((BasicCommandStack)editingDomain.getCommandStack()).saveIsDone();
+			((BasicCommandStack) editingDomain.getCommandStack()).saveIsDone();
 			firePropertyChange(IEditorPart.PROP_DIRTY);
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			// Something went wrong that shouldn't.
 			//
 			CustomEditorPlugin.INSTANCE.log(exception);
@@ -808,9 +819,10 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 
 	/**
 	 * This returns whether something has been persisted to the URI of the specified resource.
-	 * The implementation uses the URI converter from the editor's resource set to try to open an input stream. 
+	 * The implementation uses the URI converter from the editor's resource set to try to open an input stream.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected boolean isPersisted(Resource resource) {
@@ -821,8 +833,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 				result = true;
 				stream.close();
 			}
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			// Ignore
 		}
 		return result;
@@ -832,6 +843,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This accesses a cached version of the content outliner.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public IContentOutlinePage getContentOutlinePage() {
@@ -880,13 +892,13 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 			// Listen to selection so that we can handle it is a special way.
 			//
 			contentOutlinePage.addSelectionChangedListener
-			(new ISelectionChangedListener() {
-				// This ensures that we handle selections correctly.
-				//
-				public void selectionChanged(SelectionChangedEvent event) {
-					handleContentOutlineSelection(event.getSelection());
-				}
-			});
+					(new ISelectionChangedListener() {
+						// This ensures that we handle selections correctly.
+						//
+						public void selectionChanged(SelectionChangedEvent event) {
+							handleContentOutlineSelection(event.getSelection());
+						}
+					});
 		}
 
 		return contentOutlinePage;
@@ -896,24 +908,25 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This accesses a cached version of the property sheet.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public IPropertySheetPage getPropertySheetPage() {
 		if (propertySheetPage == null) {
 			propertySheetPage =
 					new ExtendedPropertySheetPage(editingDomain) {
-				@Override
-				public void setSelectionToViewer(List<?> selection) {
-					CustomEditor.this.setSelectionToViewer(selection);
-					CustomEditor.this.setFocus();
-				}
+						@Override
+						public void setSelectionToViewer(List<?> selection) {
+							CustomEditor.this.setSelectionToViewer(selection);
+							CustomEditor.this.setFocus();
+						}
 
-				@Override
-				public void setActionBars(IActionBars actionBars) {
-					super.setActionBars(actionBars);
-					getActionBarContributor().shareGlobalActions(this, actionBars);
-				}
-			};
+						@Override
+						public void setActionBars(IActionBars actionBars) {
+							super.setActionBars(actionBars);
+							getActionBarContributor().shareGlobalActions(this, actionBars);
+						}
+					};
 			propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(adapterFactory));
 		}
 
@@ -924,6 +937,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This is how the framework determines which interfaces we implement.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("rawtypes")
@@ -947,6 +961,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * Returns whether the outline view should be presented to the user.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected boolean showOutlineView() {
@@ -957,11 +972,12 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This deals with how we want selection in the outliner to affect the other views.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void handleContentOutlineSelection(ISelection selection) {
 		if (!selection.isEmpty() && selection instanceof IStructuredSelection) {
-			Iterator<?> selectedElements = ((IStructuredSelection)selection).iterator();
+			Iterator<?> selectedElements = ((IStructuredSelection) selection).iterator();
 			if (selectedElements.hasNext()) {
 				// Get the first selected element.
 				//
@@ -986,6 +1002,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void doSaveAs(URI uri, IEditorInput editorInput) {
@@ -995,25 +1012,28 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 		IProgressMonitor progressMonitor =
 				getActionBars().getStatusLineManager() != null ?
 						getActionBars().getStatusLineManager().getProgressMonitor() :
-							new NullProgressMonitor();
-						doSave(progressMonitor);
+						new NullProgressMonitor();
+		doSave(progressMonitor);
 	}
+
 	//
 	/**
 	 * This is for implementing {@link IEditorPart} and simply tests the command stack.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean isDirty() {
-		return ((BasicCommandStack)editingDomain.getCommandStack()).isSaveNeeded();
+		return ((BasicCommandStack) editingDomain.getCommandStack()).isSaveNeeded();
 	}
 
 	@Override
 	public boolean isSaveAsAllowed() {
 		return false;
 	}
+
 	//
 	@Override
 	public void setFocus() {
@@ -1044,10 +1064,11 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 
 		super.dispose();
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void gotoMarker(IMarker marker) {
@@ -1062,71 +1083,75 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 					}
 				}
 			}
-		}
-		catch (CoreException exception) {
+		} catch (CoreException exception) {
 			CustomEditorPlugin.INSTANCE.log(exception);
 		}
 	}
-	//
-	private final IPartListener partListener = 
-			new IPartListener() {
-		public void partActivated(IWorkbenchPart p) {
-			if (p instanceof ContentOutline) {
-				if (((ContentOutline)p).getCurrentPage() == contentOutlinePage) {
-					getActionBarContributor().setActiveEditor(CustomEditor.this);
 
-					if (selectionChangedListener == null) {
-						// Create the listener on demand.
-						//
-						selectionChangedListener =
-								new ISelectionChangedListener() {
-							// This just notifies those things that are affected by the section.
-							//
-							public void selectionChanged(SelectionChangedEvent selectionChangedEvent) {
-								setSelection(selectionChangedEvent.getSelection());
+	//
+	private final IPartListener partListener =
+			new IPartListener() {
+				public void partActivated(IWorkbenchPart p) {
+					if (p instanceof ContentOutline) {
+						if (((ContentOutline) p).getCurrentPage() == contentOutlinePage) {
+							getActionBarContributor().setActiveEditor(CustomEditor.this);
+
+							if (selectionChangedListener == null) {
+								// Create the listener on demand.
+								//
+								selectionChangedListener =
+										new ISelectionChangedListener() {
+											// This just notifies those things that are affected by the section.
+											//
+											public void selectionChanged(SelectionChangedEvent selectionChangedEvent) {
+												setSelection(selectionChangedEvent.getSelection());
+											}
+										};
 							}
-						};
-					}
-					setSelection(selectionViewer == null ? StructuredSelection.EMPTY : selectionViewer.getSelection());
-				}
-			}
-			else if (p instanceof PropertySheet) {
-				if (((PropertySheet)p).getCurrentPage() == propertySheetPage) {
-					getActionBarContributor().setActiveEditor(CustomEditor.this);
-					handleActivate();
-				}
-			}
-			else if (p == CustomEditor.this) {
-				handleActivate();
-				if (selectionChangedListener == null) {
-					// Create the listener on demand.
-					//
-					selectionChangedListener =
-							new ISelectionChangedListener() {
-						// This just notifies those things that are affected by the section.
-						//
-						public void selectionChanged(SelectionChangedEvent selectionChangedEvent) {
-							setSelection(selectionChangedEvent.getSelection());
+							setSelection(selectionViewer == null ? StructuredSelection.EMPTY : selectionViewer.getSelection());
 						}
-					};
+					}
+					else if (p instanceof PropertySheet) {
+						if (((PropertySheet) p).getCurrentPage() == propertySheetPage) {
+							getActionBarContributor().setActiveEditor(CustomEditor.this);
+							handleActivate();
+						}
+					}
+					else if (p == CustomEditor.this) {
+						handleActivate();
+						if (selectionChangedListener == null) {
+							// Create the listener on demand.
+							//
+							selectionChangedListener =
+									new ISelectionChangedListener() {
+										// This just notifies those things that are affected by the section.
+										//
+										public void selectionChanged(SelectionChangedEvent selectionChangedEvent) {
+											setSelection(selectionChangedEvent.getSelection());
+										}
+									};
+						}
+						selectionViewer.addSelectionChangedListener(selectionChangedListener);
+						setSelection(selectionViewer.getSelection());
+					}
 				}
-				selectionViewer.addSelectionChangedListener(selectionChangedListener);
-				setSelection(selectionViewer.getSelection());
-			}
-		}
-		public void partBroughtToTop(IWorkbenchPart p) {
-			// Ignore.
-		}
-		public void partClosed(IWorkbenchPart p) {
-			// Ignore.
-		}
-		public void partDeactivated(IWorkbenchPart p) {
-			// Ignore.
-		}
-		public void partOpened(IWorkbenchPart p) {
-			// Ignore.
-		}
-	};
+
+				public void partBroughtToTop(IWorkbenchPart p) {
+					// Ignore.
+				}
+
+				public void partClosed(IWorkbenchPart p) {
+					// Ignore.
+				}
+
+				public void partDeactivated(IWorkbenchPart p) {
+					// Ignore.
+				}
+
+				public void partOpened(IWorkbenchPart p) {
+					// Ignore.
+				}
+			};
 
 	private Button btnAddFacetSet;
 
@@ -1148,6 +1173,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionProvider} to return this editor's overall selection.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ISelection getSelection() {
@@ -1157,15 +1183,17 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EditingDomainActionBarContributor getActionBarContributor() {
-		return (EditingDomainActionBarContributor)getEditorSite().getActionBarContributor();
+		return (EditingDomainActionBarContributor) getEditorSite().getActionBarContributor();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public IActionBars getActionBars() {
@@ -1175,6 +1203,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setStatusLineManager(ISelection selection) {
@@ -1183,7 +1212,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 
 		if (statusLineManager != null) {
 			if (selection instanceof IStructuredSelection) {
-				Collection<?> collection = ((IStructuredSelection)selection).toList();
+				Collection<?> collection = ((IStructuredSelection) selection).toList();
 				switch (collection.size()) {
 				case 0: {
 					statusLineManager.setMessage(getString("_UI_NoObjectSelected"));
@@ -1211,6 +1240,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * Calling this result will notify the listeners.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setSelection(ISelection selection) {
@@ -1227,6 +1257,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * and the specified exception (if any).
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
@@ -1237,18 +1268,16 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 							"org.eclipse.papyrus.emf.facet.custom.metamodel.editor",
 							0,
 							getString("_UI_CreateModelError_message", resource.getURI()),
-							new Object [] { exception == null ? (Object)resource : exception });
+							new Object[] { exception == null ? (Object) resource : exception });
 			basicDiagnostic.merge(EcoreUtil.computeDiagnostic(resource, true));
 			return basicDiagnostic;
 		}
 		else if (exception != null) {
-			return
-					new BasicDiagnostic
-					(Diagnostic.ERROR,
-							"org.eclipse.papyrus.emf.facet.custom.metamodel.editor",
-							0,
-							getString("_UI_CreateModelError_message", resource.getURI()),
-							new Object[] { exception });
+			return new BasicDiagnostic(Diagnostic.ERROR,
+					"org.eclipse.papyrus.emf.facet.custom.metamodel.editor",
+					0,
+					getString("_UI_CreateModelError_message", resource.getURI()),
+					new Object[] { exception });
 		}
 		else {
 			return Diagnostic.OK_INSTANCE;
@@ -1298,6 +1327,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * Updates the problems indication with the information described in the specified diagnostic.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void updateProblemIndication() {
@@ -1308,7 +1338,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 							"org.eclipse.papyrus.emf.facet.custom.metamodel.editor",
 							0,
 							null,
-							new Object [] { editingDomain.getResourceSet() });
+							new Object[] { editingDomain.getResourceSet() });
 			for (Diagnostic childDiagnostic : resourceToDiagnosticMap.values()) {
 				if (childDiagnostic.getSeverity() != Diagnostic.OK) {
 					diagnostic.add(childDiagnostic);
@@ -1326,8 +1356,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 				if (diagnostic.getSeverity() != Diagnostic.OK) {
 					try {
 						markerHelper.createMarkers(diagnostic);
-					}
-					catch (CoreException exception) {
+					} catch (CoreException exception) {
 						CustomEditorPlugin.INSTANCE.log(exception);
 					}
 				}
@@ -1349,8 +1378,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 					resource.unload();
 					try {
 						resource.load(Collections.EMPTY_MAP);
-					}
-					catch (IOException exception) {
+					} catch (IOException exception) {
 						if (!resourceToDiagnosticMap.containsKey(resource)) {
 							resourceToDiagnosticMap.put(resource, analyzeResourceProblems(resource, exception));
 						}
@@ -1371,6 +1399,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionProvider}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void addSelectionChangedListener(ISelectionChangedListener listener) {
@@ -1381,6 +1410,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionProvider}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void removeSelectionChangedListener(ISelectionChangedListener listener) {
@@ -1391,6 +1421,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This looks up a string in the plugin's plugin.properties file.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static String getString(String key) {
@@ -1401,16 +1432,18 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This looks up a string in plugin.properties, making a substitution.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static String getString(String key, Object s1) {
-		return CustomEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
+		return CustomEditorPlugin.INSTANCE.getString(key, new Object[] { s1 });
 	}
 
 	/**
 	 * This creates a context menu for the viewer and adds a listener as well registering the menu for extension.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void createContextMenuFor(StructuredViewer viewer) {
@@ -1418,7 +1451,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 		contextMenu.add(new Separator("additions"));
 		contextMenu.setRemoveAllWhenShown(true);
 		contextMenu.addMenuListener(this);
-		Menu menu= contextMenu.createContextMenu(viewer.getControl());
+		Menu menu = contextMenu.createContextMenu(viewer.getControl());
 		viewer.getControl().setMenu(menu);
 		getSite().registerContextMenu(contextMenu, new UnwrappingSelectionProvider(viewer));
 
@@ -1432,10 +1465,11 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This implements {@link org.eclipse.jface.action.IMenuListener} to help fill the context menus with contributions from the Edit menu.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void menuAboutToShow(IMenuManager menuManager) {
-		((IMenuListener)getEditorSite().getActionBarContributor()).menuAboutToShow(menuManager);
+		((IMenuListener) getEditorSite().getActionBarContributor()).menuAboutToShow(menuManager);
 	}
 
 	private Object buttonsGridData() {
@@ -1447,7 +1481,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 		return buttonsGridData;
 	}
 
-	private Composite createButtonsPane(final Composite parent){
+	private Composite createButtonsPane(final Composite parent) {
 		return createButtonsPaneWhenCustomizationIsSelected(parent);
 	}
 
@@ -1522,53 +1556,53 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 		if (this.readOnly) {
 			return;
 		}
-		final TreeSelection selectedElement = (TreeSelection)getSelection();
+		final TreeSelection selectedElement = (TreeSelection) getSelection();
 		final Object selectedObject = selectedElement.getFirstElement();
 		if (selectedObject instanceof EObject) {
 			final EObject eObject = (EObject) selectedObject;
 			final EObject eContainer = eObject.eContainer();
-			
-			if(eContainer instanceof Customization){
-				
-					Command command = RemoveCommand.create(this.editingDomain,
-							eContainer,
-							EcorePackage.eINSTANCE.getEPackage_EClassifiers(),
-							eObject);
-					this.editingDomain.getCommandStack().execute(command);
-				//refresh();
-			}else if(eContainer instanceof Facet){
-				if(selectedObject instanceof FacetOperation){
-					Command command = RemoveCommand.create(this.editingDomain,
-								eContainer,
-								EFacetPackage.eINSTANCE.getFacet_FacetOperations(),
-								eObject);
-						this.editingDomain.getCommandStack().execute(command);
 
-						setInputInCustomizationTreeviewer((Facet)eContainer);
-						this.customizationViewer.getViewer().refresh();
-					
-				}else if(selectedObject instanceof FacetAttribute || selectedObject instanceof FacetReference){
-					Command command = RemoveCommand.create(this.editingDomain,
-								eContainer,
-								EFacetPackage.eINSTANCE.getFacet_FacetElements(),
-								eObject);
-						this.editingDomain.getCommandStack().execute(command);
+			if (eContainer instanceof Customization) {
 
-						setInputInCustomizationTreeviewer((Facet)eContainer);
-						this.customizationViewer.getViewer().refresh();
-				}
-			}else if(eContainer instanceof FacetOperation){
 				Command command = RemoveCommand.create(this.editingDomain,
+						eContainer,
+						EcorePackage.eINSTANCE.getEPackage_EClassifiers(),
+						eObject);
+				this.editingDomain.getCommandStack().execute(command);
+				// refresh();
+			} else if (eContainer instanceof Facet) {
+				if (selectedObject instanceof FacetOperation) {
+					Command command = RemoveCommand.create(this.editingDomain,
 							eContainer,
-							EcorePackage.eINSTANCE.getEOperation_EParameters(),
+							EFacetPackage.eINSTANCE.getFacet_FacetOperations(),
 							eObject);
 					this.editingDomain.getCommandStack().execute(command);
 
-					setInputInCustomizationTreeviewer((Facet)eContainer);
+					setInputInCustomizationTreeviewer((Facet) eContainer);
 					this.customizationViewer.getViewer().refresh();
-				
+
+				} else if (selectedObject instanceof FacetAttribute || selectedObject instanceof FacetReference) {
+					Command command = RemoveCommand.create(this.editingDomain,
+							eContainer,
+							EFacetPackage.eINSTANCE.getFacet_FacetElements(),
+							eObject);
+					this.editingDomain.getCommandStack().execute(command);
+
+					setInputInCustomizationTreeviewer((Facet) eContainer);
+					this.customizationViewer.getViewer().refresh();
+				}
+			} else if (eContainer instanceof FacetOperation) {
+				Command command = RemoveCommand.create(this.editingDomain,
+						eContainer,
+						EcorePackage.eINSTANCE.getEOperation_EParameters(),
+						eObject);
+				this.editingDomain.getCommandStack().execute(command);
+
+				setInputInCustomizationTreeviewer((Facet) eContainer);
+				this.customizationViewer.getViewer().refresh();
+
 			}
-			
+
 		}
 	}
 
@@ -1576,14 +1610,14 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 		if (this.readOnly) {
 			return;
 		}
-		final TreeSelection selectedElement = (TreeSelection)getSelection();
+		final TreeSelection selectedElement = (TreeSelection) getSelection();
 		final Object selectedObject = selectedElement.getFirstElement();
 		if (selectedObject instanceof EObject) {
 			final EObject eObject = (EObject) selectedObject;
 			final EObject eContainer = eObject.eContainer();
-			
-			if(eContainer instanceof Customization){
-				EList<EClassifier>list = ((Customization)eContainer).getEClassifiers();
+
+			if (eContainer instanceof Customization) {
+				EList<EClassifier> list = ((Customization) eContainer).getEClassifiers();
 				final int index = list.indexOf(eObject);
 				if (index + 1 < list.size()) {
 					Command command = MoveCommand.create(this.editingDomain,
@@ -1592,10 +1626,10 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 							list.get(index), index + 1);
 					this.editingDomain.getCommandStack().execute(command);
 				}
-				//refresh();
-			}else if(eContainer instanceof Facet){
-				if(selectedObject instanceof FacetOperation){
-					EList<FacetOperation>list = ((Facet)eContainer).getFacetOperations();
+				// refresh();
+			} else if (eContainer instanceof Facet) {
+				if (selectedObject instanceof FacetOperation) {
+					EList<FacetOperation> list = ((Facet) eContainer).getFacetOperations();
 					final int index = list.indexOf(eObject);
 					if (index + 1 < list.size()) {
 						Command command = MoveCommand.create(this.editingDomain,
@@ -1604,11 +1638,11 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 								list.get(index), index + 1);
 						this.editingDomain.getCommandStack().execute(command);
 
-						setInputInCustomizationTreeviewer((Facet)eContainer);
+						setInputInCustomizationTreeviewer((Facet) eContainer);
 						this.customizationViewer.getViewer().refresh();
 					}
-				}else if(selectedObject instanceof FacetAttribute || selectedObject instanceof FacetReference){
-					EList<EStructuralFeature>list = ((Facet)eContainer).getFacetElements();
+				} else if (selectedObject instanceof FacetAttribute || selectedObject instanceof FacetReference) {
+					EList<EStructuralFeature> list = ((Facet) eContainer).getFacetElements();
 					final int index = list.indexOf(eObject);
 					if (index + 1 < list.size()) {
 						Command command = MoveCommand.create(this.editingDomain,
@@ -1617,12 +1651,12 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 								list.get(index), index + 1);
 						this.editingDomain.getCommandStack().execute(command);
 
-						setInputInCustomizationTreeviewer((Facet)eContainer);
+						setInputInCustomizationTreeviewer((Facet) eContainer);
 						this.customizationViewer.getViewer().refresh();
 					}
 				}
-			}else if(eContainer instanceof FacetOperation){
-				EList<EParameter>list = ((FacetOperation)eContainer).getEParameters();
+			} else if (eContainer instanceof FacetOperation) {
+				EList<EParameter> list = ((FacetOperation) eContainer).getEParameters();
 				final int index = list.indexOf(eObject);
 				if (index + 1 < list.size()) {
 					Command command = MoveCommand.create(this.editingDomain,
@@ -1631,11 +1665,11 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 							list.get(index), index + 1);
 					this.editingDomain.getCommandStack().execute(command);
 
-					setInputInCustomizationTreeviewer((Facet)eContainer);
+					setInputInCustomizationTreeviewer((Facet) eContainer);
 					this.customizationViewer.getViewer().refresh();
 				}
 			}
-			
+
 		}
 	}
 
@@ -1643,14 +1677,14 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 		if (this.readOnly) {
 			return;
 		}
-		final TreeSelection selectedElement = (TreeSelection)getSelection();
+		final TreeSelection selectedElement = (TreeSelection) getSelection();
 		final Object selectedObject = selectedElement.getFirstElement();
 		if (selectedObject instanceof EObject) {
 			final EObject eObject = (EObject) selectedObject;
 			final EObject eContainer = eObject.eContainer();
-			
-			if(eContainer instanceof Customization){
-				EList<EClassifier>list = ((Customization)eContainer).getEClassifiers();
+
+			if (eContainer instanceof Customization) {
+				EList<EClassifier> list = ((Customization) eContainer).getEClassifiers();
 				final int index = list.indexOf(eObject);
 				if (index - 1 >= 0) {
 					Command command = MoveCommand.create(this.editingDomain,
@@ -1659,10 +1693,10 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 							list.get(index), index - 1);
 					this.editingDomain.getCommandStack().execute(command);
 				}
-				//refresh();
-			}else if(eContainer instanceof Facet){
-				if(selectedObject instanceof FacetOperation){
-					EList<FacetOperation>list = ((Facet)eContainer).getFacetOperations();
+				// refresh();
+			} else if (eContainer instanceof Facet) {
+				if (selectedObject instanceof FacetOperation) {
+					EList<FacetOperation> list = ((Facet) eContainer).getFacetOperations();
 					final int index = list.indexOf(eObject);
 					if (index - 1 >= 0) {
 						Command command = MoveCommand.create(this.editingDomain,
@@ -1671,11 +1705,11 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 								list.get(index), index - 1);
 						this.editingDomain.getCommandStack().execute(command);
 
-						setInputInCustomizationTreeviewer((Facet)eContainer);
+						setInputInCustomizationTreeviewer((Facet) eContainer);
 						this.customizationViewer.getViewer().refresh();
 					}
-				}else if(selectedObject instanceof FacetAttribute || selectedObject instanceof FacetReference){
-					EList<EStructuralFeature>list = ((Facet)eContainer).getFacetElements();
+				} else if (selectedObject instanceof FacetAttribute || selectedObject instanceof FacetReference) {
+					EList<EStructuralFeature> list = ((Facet) eContainer).getFacetElements();
 					final int index = list.indexOf(eObject);
 					if (index - 1 >= 0) {
 						Command command = MoveCommand.create(this.editingDomain,
@@ -1684,12 +1718,12 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 								list.get(index), index - 1);
 						this.editingDomain.getCommandStack().execute(command);
 
-						setInputInCustomizationTreeviewer((Facet)eContainer);
+						setInputInCustomizationTreeviewer((Facet) eContainer);
 						this.customizationViewer.getViewer().refresh();
 					}
 				}
-			}else if(eContainer instanceof FacetOperation){
-				EList<EParameter>list = ((FacetOperation)eContainer).getEParameters();
+			} else if (eContainer instanceof FacetOperation) {
+				EList<EParameter> list = ((FacetOperation) eContainer).getEParameters();
 				final int index = list.indexOf(eObject);
 				if (index - 1 >= 0) {
 					Command command = MoveCommand.create(this.editingDomain,
@@ -1698,13 +1732,13 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 							list.get(index), index - 1);
 					this.editingDomain.getCommandStack().execute(command);
 
-					setInputInCustomizationTreeviewer((Facet)eContainer);
+					setInputInCustomizationTreeviewer((Facet) eContainer);
 					this.customizationViewer.getViewer().refresh();
 				}
 			}
-			
+
 		}
-		
+
 	}
 
 	protected void btnAddFacetCustomClicked() {
@@ -1712,7 +1746,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 			return;
 		}
 		final Object selectedElement = getSelection();
-		if (((TreeSelection)selectedElement).getFirstElement() instanceof Customization) {
+		if (((TreeSelection) selectedElement).getFirstElement() instanceof Customization) {
 			ICustomizationDialogFactory.DEFAULT.openCreateFacetCustomizationDialog(getSite().getShell().getDisplay(), editingDomain);
 		}
 
@@ -1723,7 +1757,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 			return;
 		}
 		final Object selectedElement = getSelection();
-		if (((TreeSelection)selectedElement).getFirstElement() instanceof Customization) {
+		if (((TreeSelection) selectedElement).getFirstElement() instanceof Customization) {
 			ICustomizationDialogFactory.DEFAULT.openCreateEClassCustomizationDialog(getSite().getShell().getDisplay(), editingDomain);
 		}
 
@@ -1734,7 +1768,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 			return;
 		}
 		final Object selectedElement = getSelection();
-		if (((TreeSelection)selectedElement).getFirstElement() instanceof Customization) {
+		if (((TreeSelection) selectedElement).getFirstElement() instanceof Customization) {
 			IFacetDialogFactory.INSTANCE.openCreateFacetInFacetSetDialog();
 		}
 	}
@@ -1744,7 +1778,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 			return;
 		}
 		final Object selectedElement = getSelection();
-		if (((TreeSelection)selectedElement).getFirstElement() instanceof Customization) {
+		if (((TreeSelection) selectedElement).getFirstElement() instanceof Customization) {
 			IFacetDialogFactory.INSTANCE.openCreateFacetSetInFacetSetDialog();
 		}
 	}
@@ -1859,7 +1893,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 			return;
 		}
 		final Object selectedElement = getSelection();
-		if (((TreeSelection)selectedElement).getFirstElement() instanceof Facet) {
+		if (((TreeSelection) selectedElement).getFirstElement() instanceof Facet) {
 			IFacetDialogFactory.INSTANCE.openAddOperationInFacetDialog();
 		}
 
@@ -1870,7 +1904,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 			return;
 		}
 		final Object selectedElement = getSelection();
-		if (((TreeSelection)selectedElement).getFirstElement() instanceof Facet) {
+		if (((TreeSelection) selectedElement).getFirstElement() instanceof Facet) {
 			IFacetDialogFactory.INSTANCE.openAddReferenceInFacetDialog();
 		}
 	}
@@ -1880,7 +1914,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 			return;
 		}
 		final Object selectedElement = getSelection();
-		if (((TreeSelection)selectedElement).getFirstElement() instanceof Facet) {
+		if (((TreeSelection) selectedElement).getFirstElement() instanceof Facet) {
 			IFacetDialogFactory.INSTANCE.openAddAttributeInFacetDialog();
 		}
 	}
@@ -1918,10 +1952,10 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 				btnAddParameterClicked();
 			}
 		});
-		
-		if(!(((TreeSelection)getSelection()).getFirstElement() instanceof FacetOperation)){
+
+		if (!(((TreeSelection) getSelection()).getFirstElement() instanceof FacetOperation)) {
 			this.btnAddFacetParam.setEnabled(false);
-		}else{
+		} else {
 			this.btnAddFacetParam.setEnabled(true);
 		}
 
@@ -1981,8 +2015,8 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 			return;
 		}
 		final Object selectedElement = getSelection();
-		if(selectedElement instanceof TreeSelection){
-			final Object selectedObject = ((TreeSelection)selectedElement).getFirstElement();
+		if (selectedElement instanceof TreeSelection) {
+			final Object selectedObject = ((TreeSelection) selectedElement).getFirstElement();
 			if (selectedObject instanceof FacetOperation) {
 				IFacetDialogFactory.INSTANCE.openAddParameterInOperationDialog();
 			}
@@ -2001,6 +2035,7 @@ implements IGotoMarker, ISelectionProvider, IMenuListener, IEditingDomainProvide
 	 * This also changes the editor's input.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

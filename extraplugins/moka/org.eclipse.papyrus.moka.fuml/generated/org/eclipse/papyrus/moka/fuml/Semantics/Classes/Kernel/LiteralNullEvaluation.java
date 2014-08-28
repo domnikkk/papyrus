@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel;
 
 public class LiteralNullEvaluation extends LiteralEvaluation {
 
+	@Override
 	public Value evaluate() {
 		// Evaluate a literal null, returning nothing (since a null represents
 		// an "absence of any value").

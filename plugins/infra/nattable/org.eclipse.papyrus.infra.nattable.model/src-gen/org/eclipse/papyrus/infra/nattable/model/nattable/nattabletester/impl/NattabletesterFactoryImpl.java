@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -15,18 +15,17 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.*;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.JavaTableTester;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.NattabletesterFactory;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.NattabletesterPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NattabletesterFactoryImpl extends EFactoryImpl implements NattabletesterFactory {
@@ -35,13 +34,13 @@ public class NattabletesterFactoryImpl extends EFactoryImpl implements Nattablet
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NattabletesterFactory init() {
 		try {
-			NattabletesterFactory theNattabletesterFactory = (NattabletesterFactory)EPackage.Registry.INSTANCE.getEFactory(NattabletesterPackage.eNS_URI);
-			if(theNattabletesterFactory != null) {
+			NattabletesterFactory theNattabletesterFactory = (NattabletesterFactory) EPackage.Registry.INSTANCE.getEFactory(NattabletesterPackage.eNS_URI);
+			if (theNattabletesterFactory != null) {
 				return theNattabletesterFactory;
 			}
 		} catch (Exception exception) {
@@ -54,7 +53,7 @@ public class NattabletesterFactoryImpl extends EFactoryImpl implements Nattablet
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NattabletesterFactoryImpl() {
@@ -64,12 +63,12 @@ public class NattabletesterFactoryImpl extends EFactoryImpl implements Nattablet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case NattabletesterPackage.JAVA_TABLE_TESTER:
 			return createJavaTableTester();
 		default:
@@ -80,9 +79,10 @@ public class NattabletesterFactoryImpl extends EFactoryImpl implements Nattablet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public JavaTableTester createJavaTableTester() {
 		JavaTableTesterImpl javaTableTester = new JavaTableTesterImpl();
 		return javaTableTester;
@@ -91,17 +91,18 @@ public class NattabletesterFactoryImpl extends EFactoryImpl implements Nattablet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public NattabletesterPackage getNattabletesterPackage() {
-		return (NattabletesterPackage)getEPackage();
+		return (NattabletesterPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -110,4 +111,4 @@ public class NattabletesterFactoryImpl extends EFactoryImpl implements Nattablet
 		return NattabletesterPackage.eINSTANCE;
 	}
 
-} //NattabletesterFactoryImpl
+} // NattabletesterFactoryImpl

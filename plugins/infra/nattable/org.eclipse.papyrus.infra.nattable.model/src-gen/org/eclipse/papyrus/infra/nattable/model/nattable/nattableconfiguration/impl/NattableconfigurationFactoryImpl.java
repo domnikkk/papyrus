@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -16,18 +16,18 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.*;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.CellEditorDeclaration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.NattableconfigurationFactory;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.NattableconfigurationPackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableConfiguration;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NattableconfigurationFactoryImpl extends EFactoryImpl implements NattableconfigurationFactory {
@@ -36,13 +36,13 @@ public class NattableconfigurationFactoryImpl extends EFactoryImpl implements Na
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NattableconfigurationFactory init() {
 		try {
-			NattableconfigurationFactory theNattableconfigurationFactory = (NattableconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory(NattableconfigurationPackage.eNS_URI);
-			if(theNattableconfigurationFactory != null) {
+			NattableconfigurationFactory theNattableconfigurationFactory = (NattableconfigurationFactory) EPackage.Registry.INSTANCE.getEFactory(NattableconfigurationPackage.eNS_URI);
+			if (theNattableconfigurationFactory != null) {
 				return theNattableconfigurationFactory;
 			}
 		} catch (Exception exception) {
@@ -55,7 +55,7 @@ public class NattableconfigurationFactoryImpl extends EFactoryImpl implements Na
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NattableconfigurationFactoryImpl() {
@@ -65,12 +65,12 @@ public class NattableconfigurationFactoryImpl extends EFactoryImpl implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case NattableconfigurationPackage.TABLE_CONFIGURATION:
 			return createTableConfiguration();
 		default:
@@ -81,12 +81,12 @@ public class NattableconfigurationFactoryImpl extends EFactoryImpl implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case NattableconfigurationPackage.CELL_EDITOR_DECLARATION:
 			return createCellEditorDeclarationFromString(eDataType, initialValue);
 		default:
@@ -97,12 +97,12 @@ public class NattableconfigurationFactoryImpl extends EFactoryImpl implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case NattableconfigurationPackage.CELL_EDITOR_DECLARATION:
 			return convertCellEditorDeclarationToString(eDataType, instanceValue);
 		default:
@@ -113,9 +113,10 @@ public class NattableconfigurationFactoryImpl extends EFactoryImpl implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public TableConfiguration createTableConfiguration() {
 		TableConfigurationImpl tableConfiguration = new TableConfigurationImpl();
 		return tableConfiguration;
@@ -124,20 +125,22 @@ public class NattableconfigurationFactoryImpl extends EFactoryImpl implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CellEditorDeclaration createCellEditorDeclarationFromString(EDataType eDataType, String initialValue) {
 		CellEditorDeclaration result = CellEditorDeclaration.get(initialValue);
-		if(result == null)
+		if (result == null)
+		{
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertCellEditorDeclarationToString(EDataType eDataType, Object instanceValue) {
@@ -147,17 +150,18 @@ public class NattableconfigurationFactoryImpl extends EFactoryImpl implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public NattableconfigurationPackage getNattableconfigurationPackage() {
-		return (NattableconfigurationPackage)getEPackage();
+		return (NattableconfigurationPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -166,4 +170,4 @@ public class NattableconfigurationFactoryImpl extends EFactoryImpl implements Na
 		return NattableconfigurationPackage.eINSTANCE;
 	}
 
-} //NattableconfigurationFactoryImpl
+} // NattableconfigurationFactoryImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,9 +49,9 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPartSite;
 
 /**
- * 
+ *
  * Abstract class for the show/hide related links actions
- * 
+ *
  */
 public class ShowHideRelatedLinkHandler extends AbstractHandler implements IExecutableExtension {
 
@@ -69,24 +69,24 @@ public class ShowHideRelatedLinkHandler extends AbstractHandler implements IExec
 	private ShowHideKind kind;
 
 	/**
-	 * 
+	 *
 	 * @param config
 	 * @param propertyName
 	 * @param data
 	 * @throws CoreException
 	 */
 	public void setInitializationData(IConfigurationElement config, String propertyName, Object data) throws CoreException {
-		if(data instanceof Hashtable<?, ?> && this.parameterID != null) {
-			this.kind = ShowHideKind.valueOf((String)((Hashtable<?, ?>)data).get(this.parameterID));
+		if (data instanceof Hashtable<?, ?> && this.parameterID != null) {
+			this.kind = ShowHideKind.valueOf((String) ((Hashtable<?, ?>) data).get(this.parameterID));
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @param ep
-	 *        an editPart
+	 *            an editPart
 	 * @param editPolicyRole
-	 *        the wanted edit policy identifier
+	 *            the wanted edit policy identifier
 	 * @return
 	 */
 	protected boolean hasRequiredEditPolicy(final EditPart ep, final String editPolicyRole) {
@@ -94,9 +94,9 @@ public class ShowHideRelatedLinkHandler extends AbstractHandler implements IExec
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
@@ -105,7 +105,7 @@ public class ShowHideRelatedLinkHandler extends AbstractHandler implements IExec
 		final Request request = buildRequest();
 		final DiagramEditPart diagramEP = DiagramEditPartsUtil.getDiagramEditPart(this.selection.get(0));
 		final TransactionalEditingDomain domain = getEditingDomain();
-		if(diagramEP != null && domain != null) {
+		if (diagramEP != null && domain != null) {
 			final Command cmd = diagramEP.getCommand(request);
 			domain.getCommandStack().execute(new GEFtoEMFCommandWrapper(cmd));
 		}
@@ -113,12 +113,12 @@ public class ShowHideRelatedLinkHandler extends AbstractHandler implements IExec
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the request required to do the action
 	 */
 	protected Request buildRequest() {
-		switch(this.kind) {
+		switch (this.kind) {
 		case SHOW_ALL_LINK_IN_DIAGRAM:
 			return new ShowHideRelatedLinkRequest(getAllTopSemanticEditParts(), this.kind);
 		default:
@@ -128,7 +128,7 @@ public class ShowHideRelatedLinkHandler extends AbstractHandler implements IExec
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the list of all top semantic edit part in the diagram
 	 */
@@ -138,16 +138,16 @@ public class ShowHideRelatedLinkHandler extends AbstractHandler implements IExec
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
 		buildSelection();
 		final DiagramEditPart diagramEP = DiagramEditPartsUtil.getDiagramEditPart(this.selection.get(0));
-		if(this.kind.equals(ShowHideKind.SHOW_ALL_LINK_IN_DIAGRAM)) {
+		if (this.kind.equals(ShowHideKind.SHOW_ALL_LINK_IN_DIAGRAM)) {
 			setBaseEnabled(!getAllTopSemanticEditParts().isEmpty() && hasRequiredEditPolicy(diagramEP, AbstractShowHideRelatedLinkEditPolicy.SHOW_HIDE_RELATED_LINK_ROLE));
 		} else {
 			setBaseEnabled(!this.selection.isEmpty() && hasRequiredEditPolicy(diagramEP, AbstractShowHideRelatedLinkEditPolicy.SHOW_HIDE_RELATED_LINK_ROLE));
@@ -160,17 +160,17 @@ public class ShowHideRelatedLinkHandler extends AbstractHandler implements IExec
 	protected void buildSelection() {
 		this.selection.clear();
 		final ISelection selection = getSelectionInCurrentEditor();
-		if(selection instanceof IStructuredSelection) {
+		if (selection instanceof IStructuredSelection) {
 			final Collection<EObject> eobjectsAlreadyManaged = new ArrayList<EObject>();
-			final Iterator<?> iter = ((IStructuredSelection)selection).iterator();
-			while(iter.hasNext()) {
+			final Iterator<?> iter = ((IStructuredSelection) selection).iterator();
+			while (iter.hasNext()) {
 				final Object current = iter.next();
-				if(current instanceof EditPart) {
-					final EditPart top = DiagramEditPartsUtil.getTopSemanticEditPart((EditPart)current);
-					if(top instanceof IGraphicalEditPart) {
+				if (current instanceof EditPart) {
+					final EditPart top = DiagramEditPartsUtil.getTopSemanticEditPart((EditPart) current);
+					if (top instanceof IGraphicalEditPart) {
 						final EObject currentEObject = EMFHelper.getEObject(top);
-						if(!eobjectsAlreadyManaged.contains(currentEObject)) {//to avoid duplicated semantic element
-							this.selection.add((IGraphicalEditPart)top);
+						if (!eobjectsAlreadyManaged.contains(currentEObject)) {// to avoid duplicated semantic element
+							this.selection.add(top);
 							eobjectsAlreadyManaged.add(currentEObject);
 						}
 					}
@@ -180,17 +180,17 @@ public class ShowHideRelatedLinkHandler extends AbstractHandler implements IExec
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the selection for the current editor
 	 */
 	public static final ISelection getSelectionInCurrentEditor() {
 		final IEditorPart editorPart = EditorHelper.getCurrentEditor();
-		if(editorPart != null) {
+		if (editorPart != null) {
 			final IWorkbenchPartSite site = editorPart.getSite();
-			if(site != null) {
+			if (site != null) {
 				final ISelectionProvider selectionProvider = site.getSelectionProvider();
-				if(selectionProvider != null) {
+				if (selectionProvider != null) {
 					return selectionProvider.getSelection();
 				}
 			}
@@ -199,12 +199,12 @@ public class ShowHideRelatedLinkHandler extends AbstractHandler implements IExec
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the editing domain to use or <code>null</code> if not found
 	 */
 	protected TransactionalEditingDomain getEditingDomain() {
-		if(!this.selection.isEmpty()) {
+		if (!this.selection.isEmpty()) {
 			try {
 				return ServiceUtilsForEditPart.getInstance().getTransactionalEditingDomain(this.selection.get(0));
 			} catch (ServiceException e) {

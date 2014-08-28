@@ -15,12 +15,12 @@ package org.eclipse.papyrus.RobotML;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotML.EngineSystem#getVehicleTraction <em>Vehicle Traction</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.EngineSystem#getMaxEngineForce <em>Max Engine Force</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.EngineSystem#getMaxBreakingForce <em>Max Breaking Force</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.EngineSystem#getMaxAllowedSteering <em>Max Allowed Steering</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.EngineSystem#getMaxAllowedVelocity <em>Max Allowed Velocity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.EngineSystem#getGear_ration <em>Gear ration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.EngineSystem#getVehicleTraction <em>Vehicle Traction</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.EngineSystem#getMaxEngineForce <em>Max Engine Force</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.EngineSystem#getMaxBreakingForce <em>Max Breaking Force</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.EngineSystem#getMaxAllowedSteering <em>Max Allowed Steering</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.EngineSystem#getMaxAllowedVelocity <em>Max Allowed Velocity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.EngineSystem#getGear_ration <em>Gear ration</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,10 +33,10 @@ public interface EngineSystem extends ActuatorSystem {
 	 * Returns the value of the '<em><b>Vehicle Traction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Vehicle Traction</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Vehicle Traction</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Vehicle Traction</em>' attribute.
 	 * @see #setVehicleTraction(String)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getEngineSystem_VehicleTraction()
@@ -49,7 +49,9 @@ public interface EngineSystem extends ActuatorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.EngineSystem#getVehicleTraction <em>Vehicle Traction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Vehicle Traction</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Vehicle Traction</em>' attribute.
 	 * @see #getVehicleTraction()
 	 * @generated
 	 */
@@ -59,10 +61,10 @@ public interface EngineSystem extends ActuatorSystem {
 	 * Returns the value of the '<em><b>Max Engine Force</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Max Engine Force</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Max Engine Force</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Max Engine Force</em>' attribute.
 	 * @see #setMaxEngineForce(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getEngineSystem_MaxEngineForce()
@@ -75,7 +77,9 @@ public interface EngineSystem extends ActuatorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.EngineSystem#getMaxEngineForce <em>Max Engine Force</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Max Engine Force</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Max Engine Force</em>' attribute.
 	 * @see #getMaxEngineForce()
 	 * @generated
 	 */
@@ -85,10 +89,10 @@ public interface EngineSystem extends ActuatorSystem {
 	 * Returns the value of the '<em><b>Max Breaking Force</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Max Breaking Force</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Max Breaking Force</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Max Breaking Force</em>' attribute.
 	 * @see #setMaxBreakingForce(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getEngineSystem_MaxBreakingForce()
@@ -101,7 +105,9 @@ public interface EngineSystem extends ActuatorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.EngineSystem#getMaxBreakingForce <em>Max Breaking Force</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Max Breaking Force</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Max Breaking Force</em>' attribute.
 	 * @see #getMaxBreakingForce()
 	 * @generated
 	 */
@@ -111,10 +117,10 @@ public interface EngineSystem extends ActuatorSystem {
 	 * Returns the value of the '<em><b>Max Allowed Steering</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Max Allowed Steering</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Max Allowed Steering</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Max Allowed Steering</em>' attribute.
 	 * @see #setMaxAllowedSteering(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getEngineSystem_MaxAllowedSteering()
@@ -127,7 +133,9 @@ public interface EngineSystem extends ActuatorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.EngineSystem#getMaxAllowedSteering <em>Max Allowed Steering</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Max Allowed Steering</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Max Allowed Steering</em>' attribute.
 	 * @see #getMaxAllowedSteering()
 	 * @generated
 	 */
@@ -137,10 +145,10 @@ public interface EngineSystem extends ActuatorSystem {
 	 * Returns the value of the '<em><b>Max Allowed Velocity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Max Allowed Velocity</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Max Allowed Velocity</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Max Allowed Velocity</em>' attribute.
 	 * @see #setMaxAllowedVelocity(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getEngineSystem_MaxAllowedVelocity()
@@ -153,7 +161,9 @@ public interface EngineSystem extends ActuatorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.EngineSystem#getMaxAllowedVelocity <em>Max Allowed Velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Max Allowed Velocity</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Max Allowed Velocity</em>' attribute.
 	 * @see #getMaxAllowedVelocity()
 	 * @generated
 	 */
@@ -163,10 +173,10 @@ public interface EngineSystem extends ActuatorSystem {
 	 * Returns the value of the '<em><b>Gear ration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Gear ration</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Gear ration</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Gear ration</em>' attribute.
 	 * @see #setGear_ration(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getEngineSystem_Gear_ration()
@@ -179,7 +189,9 @@ public interface EngineSystem extends ActuatorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.EngineSystem#getGear_ration <em>Gear ration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gear ration</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Gear ration</em>' attribute.
 	 * @see #getGear_ration()
 	 * @generated
 	 */

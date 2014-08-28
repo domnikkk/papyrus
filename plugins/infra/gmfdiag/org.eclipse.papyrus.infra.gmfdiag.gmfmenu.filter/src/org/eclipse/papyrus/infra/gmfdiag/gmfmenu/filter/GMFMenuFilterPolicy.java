@@ -27,16 +27,16 @@ import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForSelection;
 public class GMFMenuFilterPolicy implements IPopupMenuContributionPolicy {
 
 	public boolean appliesTo(ISelection selection, IConfigurationElement configuration) {
-		if(selection.isEmpty()) {
+		if (selection.isEmpty()) {
 			return false;
 		}
 
 		try {
 			return ServiceUtilsForSelection.getInstance().getServiceRegistry(selection) != null;
 		} catch (ServiceException ex) {
-			return false; //If there is no ServiceRegistry, then this is probably not a Papyrus diagram
+			return false; // If there is no ServiceRegistry, then this is probably not a Papyrus diagram
 		} catch (Exception ex) {
-			return false; //This contribution can be called in any GMF Context (Including non-Papyrus). Let's be safe
+			return false; // This contribution can be called in any GMF Context (Including non-Papyrus). Let's be safe
 		}
 	}
 

@@ -33,7 +33,7 @@ import org.eclipse.papyrus.infra.services.controlmode.mm.history.historyPackage;
  * <li>{@link org.eclipse.papyrus.infra.services.controlmode.mm.history.impl.ControledResourceImpl#getResourceURL <em>Resource URL</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ControledResourceImpl extends EObjectImpl implements ControledResource {
@@ -42,7 +42,7 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	 * The default value of the '{@link #getResourceURL() <em>Resource URL</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResourceURL()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	 * The cached value of the '{@link #getResourceURL() <em>Resource URL</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResourceURL()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ControledResourceImpl() {
@@ -84,7 +84,7 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,11 +95,12 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<ControledResource> getChildren() {
-		if(children == null) {
+		if (children == null) {
 			children = new EObjectContainmentWithInverseEList<ControledResource>(ControledResource.class, this, historyPackage.CONTROLED_RESOURCE__CHILDREN, historyPackage.CONTROLED_RESOURCE__PARENT);
 		}
 		return children;
@@ -108,54 +109,63 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public ControledResource getParent() {
-		if(eContainerFeatureID() != historyPackage.CONTROLED_RESOURCE__PARENT)
+		if (eContainerFeatureID() != historyPackage.CONTROLED_RESOURCE__PARENT) {
 			return null;
-		return (ControledResource)eContainer();
+		}
+		return (ControledResource) eContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetParent(ControledResource newParent, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newParent, historyPackage.CONTROLED_RESOURCE__PARENT, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newParent, historyPackage.CONTROLED_RESOURCE__PARENT, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setParent(ControledResource newParent) {
-		if(newParent != eInternalContainer() || (eContainerFeatureID() != historyPackage.CONTROLED_RESOURCE__PARENT && newParent != null)) {
-			if(EcoreUtil.isAncestor(this, newParent))
+		if (newParent != eInternalContainer() || (eContainerFeatureID() != historyPackage.CONTROLED_RESOURCE__PARENT && newParent != null)) {
+			if (EcoreUtil.isAncestor(this, newParent)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if(eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if(newParent != null)
-				msgs = ((InternalEObject)newParent).eInverseAdd(this, historyPackage.CONTROLED_RESOURCE__CHILDREN, ControledResource.class, msgs);
+			}
+			if (newParent != null) {
+				msgs = ((InternalEObject) newParent).eInverseAdd(this, historyPackage.CONTROLED_RESOURCE__CHILDREN, ControledResource.class, msgs);
+			}
 			msgs = basicSetParent(newParent, msgs);
-			if(msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if(eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, historyPackage.CONTROLED_RESOURCE__PARENT, newParent, newParent));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getResourceURL() {
 		return resourceURL;
 	}
@@ -163,32 +173,35 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setResourceURL(String newResourceURL) {
 		String oldResourceURL = resourceURL;
 		resourceURL = newResourceURL;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, historyPackage.CONTROLED_RESOURCE__RESOURCE_URL, oldResourceURL, resourceURL));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case historyPackage.CONTROLED_RESOURCE__CHILDREN:
-			return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildren()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getChildren()).basicAdd(otherEnd, msgs);
 		case historyPackage.CONTROLED_RESOURCE__PARENT:
-			if(eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetParent((ControledResource)otherEnd, msgs);
+			}
+			return basicSetParent((ControledResource) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -196,14 +209,14 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case historyPackage.CONTROLED_RESOURCE__CHILDREN:
-			return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getChildren()).basicRemove(otherEnd, msgs);
 		case historyPackage.CONTROLED_RESOURCE__PARENT:
 			return basicSetParent(null, msgs);
 		}
@@ -213,12 +226,12 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch(eContainerFeatureID()) {
+		switch (eContainerFeatureID()) {
 		case historyPackage.CONTROLED_RESOURCE__PARENT:
 			return eInternalContainer().eInverseRemove(this, historyPackage.CONTROLED_RESOURCE__CHILDREN, ControledResource.class, msgs);
 		}
@@ -228,12 +241,12 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case historyPackage.CONTROLED_RESOURCE__CHILDREN:
 			return getChildren();
 		case historyPackage.CONTROLED_RESOURCE__PARENT:
@@ -247,22 +260,22 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case historyPackage.CONTROLED_RESOURCE__CHILDREN:
 			getChildren().clear();
-			getChildren().addAll((Collection<? extends ControledResource>)newValue);
+			getChildren().addAll((Collection<? extends ControledResource>) newValue);
 			return;
 		case historyPackage.CONTROLED_RESOURCE__PARENT:
-			setParent((ControledResource)newValue);
+			setParent((ControledResource) newValue);
 			return;
 		case historyPackage.CONTROLED_RESOURCE__RESOURCE_URL:
-			setResourceURL((String)newValue);
+			setResourceURL((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -271,17 +284,17 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case historyPackage.CONTROLED_RESOURCE__CHILDREN:
 			getChildren().clear();
 			return;
 		case historyPackage.CONTROLED_RESOURCE__PARENT:
-			setParent((ControledResource)null);
+			setParent((ControledResource) null);
 			return;
 		case historyPackage.CONTROLED_RESOURCE__RESOURCE_URL:
 			setResourceURL(RESOURCE_URL_EDEFAULT);
@@ -293,12 +306,12 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case historyPackage.CONTROLED_RESOURCE__CHILDREN:
 			return children != null && !children.isEmpty();
 		case historyPackage.CONTROLED_RESOURCE__PARENT:
@@ -312,13 +325,14 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (resourceURL: ");
@@ -327,4 +341,4 @@ public class ControledResourceImpl extends EObjectImpl implements ControledResou
 		return result.toString();
 	}
 
-} //ControledResourceImpl
+} // ControledResourceImpl

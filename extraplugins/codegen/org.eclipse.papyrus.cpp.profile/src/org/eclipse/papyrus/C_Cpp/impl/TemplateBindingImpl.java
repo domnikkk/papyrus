@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    CEA LIST - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.C_Cpp.impl;
 
@@ -27,8 +27,8 @@ import org.eclipse.papyrus.C_Cpp.TemplateBinding;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.C_Cpp.impl.TemplateBindingImpl#getBinding <em>Binding</em>}</li>
- *   <li>{@link org.eclipse.papyrus.C_Cpp.impl.TemplateBindingImpl#getBase_templatebinding <em>Base templatebinding</em>}</li>
+ * <li>{@link org.eclipse.papyrus.C_Cpp.impl.TemplateBindingImpl#getBinding <em>Binding</em>}</li>
+ * <li>{@link org.eclipse.papyrus.C_Cpp.impl.TemplateBindingImpl#getBase_templatebinding <em>Base templatebinding</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +39,7 @@ public class TemplateBindingImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getBinding() <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBinding()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class TemplateBindingImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getBinding() <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBinding()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class TemplateBindingImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getBase_templatebinding() <em>Base templatebinding</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_templatebinding()
 	 * @generated
 	 * @ordered
@@ -68,6 +71,7 @@ public class TemplateBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TemplateBindingImpl() {
@@ -77,6 +81,7 @@ public class TemplateBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,8 +92,10 @@ public class TemplateBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getBinding() {
 		return binding;
 	}
@@ -96,27 +103,33 @@ public class TemplateBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBinding(String newBinding) {
 		String oldBinding = binding;
 		binding = newBinding;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, C_CppPackage.TEMPLATE_BINDING__BINDING, oldBinding, binding));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.TemplateBinding getBase_templatebinding() {
 		if (base_templatebinding != null && base_templatebinding.eIsProxy()) {
-			InternalEObject oldBase_templatebinding = (InternalEObject)base_templatebinding;
-			base_templatebinding = (org.eclipse.uml2.uml.TemplateBinding)eResolveProxy(oldBase_templatebinding);
+			InternalEObject oldBase_templatebinding = (InternalEObject) base_templatebinding;
+			base_templatebinding = (org.eclipse.uml2.uml.TemplateBinding) eResolveProxy(oldBase_templatebinding);
 			if (base_templatebinding != oldBase_templatebinding) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, C_CppPackage.TEMPLATE_BINDING__BASE_TEMPLATEBINDING, oldBase_templatebinding, base_templatebinding));
+				}
 			}
 		}
 		return base_templatebinding;
@@ -125,6 +138,7 @@ public class TemplateBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.TemplateBinding basicGetBase_templatebinding() {
@@ -134,28 +148,34 @@ public class TemplateBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_templatebinding(org.eclipse.uml2.uml.TemplateBinding newBase_templatebinding) {
 		org.eclipse.uml2.uml.TemplateBinding oldBase_templatebinding = base_templatebinding;
 		base_templatebinding = newBase_templatebinding;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, C_CppPackage.TEMPLATE_BINDING__BASE_TEMPLATEBINDING, oldBase_templatebinding, base_templatebinding));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case C_CppPackage.TEMPLATE_BINDING__BINDING:
-				return getBinding();
-			case C_CppPackage.TEMPLATE_BINDING__BASE_TEMPLATEBINDING:
-				if (resolve) return getBase_templatebinding();
-				return basicGetBase_templatebinding();
+		case C_CppPackage.TEMPLATE_BINDING__BINDING:
+			return getBinding();
+		case C_CppPackage.TEMPLATE_BINDING__BASE_TEMPLATEBINDING:
+			if (resolve) {
+				return getBase_templatebinding();
+			}
+			return basicGetBase_templatebinding();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -163,17 +183,18 @@ public class TemplateBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case C_CppPackage.TEMPLATE_BINDING__BINDING:
-				setBinding((String)newValue);
-				return;
-			case C_CppPackage.TEMPLATE_BINDING__BASE_TEMPLATEBINDING:
-				setBase_templatebinding((org.eclipse.uml2.uml.TemplateBinding)newValue);
-				return;
+		case C_CppPackage.TEMPLATE_BINDING__BINDING:
+			setBinding((String) newValue);
+			return;
+		case C_CppPackage.TEMPLATE_BINDING__BASE_TEMPLATEBINDING:
+			setBase_templatebinding((org.eclipse.uml2.uml.TemplateBinding) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -181,17 +202,18 @@ public class TemplateBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case C_CppPackage.TEMPLATE_BINDING__BINDING:
-				setBinding(BINDING_EDEFAULT);
-				return;
-			case C_CppPackage.TEMPLATE_BINDING__BASE_TEMPLATEBINDING:
-				setBase_templatebinding((org.eclipse.uml2.uml.TemplateBinding)null);
-				return;
+		case C_CppPackage.TEMPLATE_BINDING__BINDING:
+			setBinding(BINDING_EDEFAULT);
+			return;
+		case C_CppPackage.TEMPLATE_BINDING__BASE_TEMPLATEBINDING:
+			setBase_templatebinding((org.eclipse.uml2.uml.TemplateBinding) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,15 +221,16 @@ public class TemplateBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case C_CppPackage.TEMPLATE_BINDING__BINDING:
-				return BINDING_EDEFAULT == null ? binding != null : !BINDING_EDEFAULT.equals(binding);
-			case C_CppPackage.TEMPLATE_BINDING__BASE_TEMPLATEBINDING:
-				return base_templatebinding != null;
+		case C_CppPackage.TEMPLATE_BINDING__BINDING:
+			return BINDING_EDEFAULT == null ? binding != null : !BINDING_EDEFAULT.equals(binding);
+		case C_CppPackage.TEMPLATE_BINDING__BASE_TEMPLATEBINDING:
+			return base_templatebinding != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -215,11 +238,14 @@ public class TemplateBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (binding: "); //$NON-NLS-1$
@@ -228,4 +254,4 @@ public class TemplateBindingImpl extends MinimalEObjectImpl.Container implements
 		return result.toString();
 	}
 
-} //TemplateBindingImpl
+} // TemplateBindingImpl

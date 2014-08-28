@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,22 +44,22 @@ public class ExistingStyleContentProvider implements IHierarchicContentProvider 
 
 	public Object[] getElements(Object inputElement) {
 		Collection<StyleSheet> stylesheets = getStyleSheets();
-		if(stylesheets.isEmpty()) {
-			//Display a message to let the user know why he cannot edit a stylesheet
-			return new Object[]{ "No stylesheet available" };
+		if (stylesheets.isEmpty()) {
+			// Display a message to let the user know why he cannot edit a stylesheet
+			return new Object[] { "No stylesheet available" };
 		}
 		return stylesheets.toArray();
 	}
 
 	public Object[] getChildren(Object parentElement) {
-		if(parentElement instanceof StyleSheet) {
+		if (parentElement instanceof StyleSheet) {
 			Stylesheet xtextStylesheet = stylesheets.get(parentElement);
 
 			List<Ruleset> result = new LinkedList<Ruleset>();
 
-			for(Content stylesheetElement : xtextStylesheet.getContents()) {
-				if(stylesheetElement instanceof Ruleset) {
-					result.add((Ruleset)stylesheetElement);
+			for (Content stylesheetElement : xtextStylesheet.getContents()) {
+				if (stylesheetElement instanceof Ruleset) {
+					result.add((Ruleset) stylesheetElement);
 				}
 			}
 
@@ -70,12 +70,12 @@ public class ExistingStyleContentProvider implements IHierarchicContentProvider 
 	}
 
 	public Object getParent(Object element) {
-		if(element instanceof Stylesheet) {
+		if (element instanceof Stylesheet) {
 			return null;
 		}
 
-		if(element instanceof Ruleset) {
-			return ((Ruleset)element).eContainer();
+		if (element instanceof Ruleset) {
+			return ((Ruleset) element).eContainer();
 		}
 
 		return null;
@@ -98,10 +98,10 @@ public class ExistingStyleContentProvider implements IHierarchicContentProvider 
 	}
 
 	protected Collection<StyleSheet> getStyleSheets() {
-		if(stylesheets == null) {
+		if (stylesheets == null) {
 			stylesheets = new LinkedHashMap<StyleSheet, Stylesheet>();
-			if(context.getDiagram() instanceof CSSDiagram) {
-				CSSDiagram diagram = (CSSDiagram)context.getDiagram();
+			if (context.getDiagram() instanceof CSSDiagram) {
+				CSSDiagram diagram = (CSSDiagram) context.getDiagram();
 				parseStyleSheets(diagram.getStyleSheets());
 			}
 		}
@@ -109,24 +109,24 @@ public class ExistingStyleContentProvider implements IHierarchicContentProvider 
 	}
 
 	protected void parseStyleSheets(List<StyleSheet> appliedStylesheets) {
-		for(StyleSheet stylesheet : appliedStylesheets) {
-			if(stylesheet instanceof StyleSheetReference) {
-				parseStyleSheet((StyleSheetReference)stylesheet);
-			} else if(stylesheet instanceof EmbeddedStyleSheet) {
-				//Unsupported yet
+		for (StyleSheet stylesheet : appliedStylesheets) {
+			if (stylesheet instanceof StyleSheetReference) {
+				parseStyleSheet((StyleSheetReference) stylesheet);
+			} else if (stylesheet instanceof EmbeddedStyleSheet) {
+				// Unsupported yet
 			}
 		}
 	}
 
 	protected void parseStyleSheet(StyleSheetReference stylesheet) {
 		Resource resource = XtextStylesheetHelper.loadStylesheet(stylesheet, null, context, null);
-		if(resource.getContents().isEmpty()) {
+		if (resource.getContents().isEmpty()) {
 			return;
 		}
 
-		for(EObject rootElement : resource.getContents()) {
-			if(rootElement instanceof Stylesheet) {
-				stylesheets.put(stylesheet, (Stylesheet)rootElement);
+		for (EObject rootElement : resource.getContents()) {
+			if (rootElement instanceof Stylesheet) {
+				stylesheets.put(stylesheet, (Stylesheet) rootElement);
 			}
 		}
 	}

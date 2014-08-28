@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -18,7 +18,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -30,7 +29,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.layers.configmodel.layersconfig.util.LayersconfigAdapterFactory;
 
 /**
@@ -40,6 +38,7 @@ import org.eclipse.papyrus.layers.configmodel.layersconfig.util.LayersconfigAdap
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -47,6 +46,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -55,6 +55,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -63,6 +64,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -71,6 +73,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LayersconfigItemProviderAdapterFactory() {
@@ -85,6 +88,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.configmodel.layersconfig.Folder} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FolderItemProvider folderItemProvider;
@@ -93,6 +97,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.configmodel.layersconfig.Folder}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,6 +113,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorConfig} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LayerOperatorConfigItemProvider layerOperatorConfigItemProvider;
@@ -116,6 +122,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorConfig}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,6 +138,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorConfig} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected OperatorConfigItemProvider operatorConfigItemProvider;
@@ -139,6 +147,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorConfig}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,6 +163,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.configmodel.layersconfig.PropertyId} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PropertyIdItemProvider propertyIdItemProvider;
@@ -162,6 +172,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.configmodel.layersconfig.PropertyId}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,6 +188,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.configmodel.layersconfig.TypeConfig} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TypeConfigItemProvider typeConfigItemProvider;
@@ -185,6 +197,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.configmodel.layersconfig.TypeConfig}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,6 +213,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorMultipleBinding} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LayerOperatorMultipleBindingItemProvider layerOperatorMultipleBindingItemProvider;
@@ -208,6 +222,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorMultipleBinding}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,6 +238,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected OperatorBindingItemProvider operatorBindingItemProvider;
@@ -231,6 +247,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,8 +263,10 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -256,8 +275,10 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -265,6 +286,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,6 +298,7 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,13 +309,14 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -304,8 +328,10 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -314,8 +340,10 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -324,8 +352,10 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -335,19 +365,35 @@ public class LayersconfigItemProviderAdapterFactory extends LayersconfigAdapterF
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if (folderItemProvider != null) folderItemProvider.dispose();
-		if (layerOperatorConfigItemProvider != null) layerOperatorConfigItemProvider.dispose();
-		if (operatorConfigItemProvider != null) operatorConfigItemProvider.dispose();
-		if (propertyIdItemProvider != null) propertyIdItemProvider.dispose();
-		if (typeConfigItemProvider != null) typeConfigItemProvider.dispose();
-		if (layerOperatorMultipleBindingItemProvider != null) layerOperatorMultipleBindingItemProvider.dispose();
-		if (operatorBindingItemProvider != null) operatorBindingItemProvider.dispose();
+		if (folderItemProvider != null) {
+			folderItemProvider.dispose();
+		}
+		if (layerOperatorConfigItemProvider != null) {
+			layerOperatorConfigItemProvider.dispose();
+		}
+		if (operatorConfigItemProvider != null) {
+			operatorConfigItemProvider.dispose();
+		}
+		if (propertyIdItemProvider != null) {
+			propertyIdItemProvider.dispose();
+		}
+		if (typeConfigItemProvider != null) {
+			typeConfigItemProvider.dispose();
+		}
+		if (layerOperatorMultipleBindingItemProvider != null) {
+			layerOperatorMultipleBindingItemProvider.dispose();
+		}
+		if (operatorBindingItemProvider != null) {
+			operatorBindingItemProvider.dispose();
+		}
 	}
 
 }

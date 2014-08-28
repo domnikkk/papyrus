@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,12 +29,13 @@ public abstract class PapyrusCompartmentEditPart extends CompartmentEditPart {
 
 	/**
 	 * Provide access to isSelectable operation from super class, allows sub-classes to restore original behavior
+	 *
 	 * @return original method of superclass
 	 */
 	public boolean isSelectableOrig() {
 		return super.isSelectable();
 	}
-	
+
 	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();

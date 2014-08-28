@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import com.google.common.base.Predicate;
 
 /**
  * A Predicate used to filter {@link View} allowed by {@link Layer}.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -35,10 +35,10 @@ public class LayerDiagramViewPredicate implements Predicate<View> {
 	 * Singleton instnace.
 	 */
 	public static final LayerDiagramViewPredicate instance = new LayerDiagramViewPredicate();
-	
+
 	/**
 	 * Return true if the view is allowed by Layers.
-	 * 
+	 *
 	 * @see com.google.common.base.Predicate#apply(java.lang.Object)
 	 *
 	 * @param view
@@ -46,15 +46,15 @@ public class LayerDiagramViewPredicate implements Predicate<View> {
 	 */
 	@Override
 	public boolean apply(View view) {
-		
+
 		// View should be Shape or Edge
-		if( ! (view instanceof Shape || view instanceof Edge ) ) {
+		if (!(view instanceof Shape || view instanceof Edge)) {
 			return false;
 		}
 
 		// Domain element should be set and should be NamedElement
 		EObject ele = view.getElement();
-		if( ele == null || !(ele instanceof NamedElement) ) {
+		if (ele == null || !(ele instanceof NamedElement)) {
 			return false;
 		}
 		// ok

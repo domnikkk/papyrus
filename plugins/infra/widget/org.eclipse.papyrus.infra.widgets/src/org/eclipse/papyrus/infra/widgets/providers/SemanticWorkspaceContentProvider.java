@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import com.ibm.icu.text.Collator;
 
 /**
  * A ContentProvider for resources located in the current workspace
- * 
+ *
  * @author Camille Letavernier
  */
 public class SemanticWorkspaceContentProvider extends AbstractStaticContentProvider implements IHierarchicContentProvider {
@@ -43,6 +43,7 @@ public class SemanticWorkspaceContentProvider extends AbstractStaticContentProvi
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object[] getElements() {
 		try {
 			return filterAccessibleElements(ResourcesPlugin.getWorkspace().getRoot().members());
@@ -56,9 +57,9 @@ public class SemanticWorkspaceContentProvider extends AbstractStaticContentProvi
 		List<IResource> accessibleElements = ListHelper.asList(members);
 
 		Iterator<IResource> resourceIterator = accessibleElements.iterator();
-		while(resourceIterator.hasNext()) {
+		while (resourceIterator.hasNext()) {
 			IResource resource = resourceIterator.next();
-			if(!resource.isAccessible()) {
+			if (!resource.isAccessible()) {
 				resourceIterator.remove();
 			}
 		}
@@ -71,10 +72,11 @@ public class SemanticWorkspaceContentProvider extends AbstractStaticContentProvi
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object[] getChildren(Object parentElement) {
-		if(parentElement instanceof IContainer) {
+		if (parentElement instanceof IContainer) {
 			try {
-				IResource[] members = ((IContainer)parentElement).members();
+				IResource[] members = ((IContainer) parentElement).members();
 
 				return filterAccessibleElements(members);
 			} catch (CoreException ex) {
@@ -87,9 +89,10 @@ public class SemanticWorkspaceContentProvider extends AbstractStaticContentProvi
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object getParent(Object element) {
-		if(element instanceof IContainer) {
-			return ((IContainer)element).getParent();
+		if (element instanceof IContainer) {
+			return ((IContainer) element).getParent();
 		}
 		return null;
 	}
@@ -97,6 +100,7 @@ public class SemanticWorkspaceContentProvider extends AbstractStaticContentProvi
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean hasChildren(Object element) {
 		return getChildren(element).length > 0;
 	}
@@ -104,6 +108,7 @@ public class SemanticWorkspaceContentProvider extends AbstractStaticContentProvi
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isValidValue(Object element) {
 		return !(element instanceof IWorkspaceRoot);
 	}
@@ -117,19 +122,20 @@ public class SemanticWorkspaceContentProvider extends AbstractStaticContentProvi
 		final int folderTypes = IResource.FOLDER | IResource.PROJECT | IResource.ROOT;
 		return new Comparator<IResource>() {
 
+			@Override
 			public int compare(IResource resource1, IResource resource2) {
 				int typeCompare = compareType(resource1, resource2);
-				if(typeCompare == 0) {
+				if (typeCompare == 0) {
 					return compareName(resource1, resource2);
 				}
 				return typeCompare;
 			}
 
 			private int compareType(IResource resource1, IResource resource2) {
-				if(resource1.getType() == resource2.getType()) {
+				if (resource1.getType() == resource2.getType()) {
 					return 0;
 				}
-				if((resource1.getType() & folderTypes) > (resource2.getType() & folderTypes)) {
+				if ((resource1.getType() & folderTypes) > (resource2.getType() & folderTypes)) {
 					return -1;
 				} else {
 					return 1;

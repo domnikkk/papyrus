@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,6 +27,7 @@ import org.eclipse.papyrus.eastadl.environment.EnvironmentPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class EnvironmentXMLProcessor extends XMLProcessor {
@@ -35,17 +36,19 @@ public class EnvironmentXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EnvironmentXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		EnvironmentPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the EnvironmentResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -58,4 +61,4 @@ public class EnvironmentXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //EnvironmentXMLProcessor
+} // EnvironmentXMLProcessor

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,12 +53,12 @@ public class NamespaceHelperAdvice extends AbstractEditHelperAdvice {
 			Map<?, ?> elemsToMove = request.getElementsToMove();
 			Edge edgeToDestroy = null;
 			for (Iterator<?> value = elemsToMove.keySet().iterator(); value.hasNext();) {
-				Object object = (Object) value.next();
+				Object object = value.next();
 				if (object instanceof Constraint) {
 					if (UMLPackage.eINSTANCE.getNamespace_OwnedRule().equals(elemsToMove.get(object))) {
 						Constraint constraint = (Constraint) object;
 						View viewConstraint = findView(constraint);
-						if (viewConstraint != null){	
+						if (viewConstraint != null) {
 							List<?> sourceConnections = ViewUtil.getSourceConnections(viewConstraint);
 							for (Object connector : sourceConnections) {
 								if (!(connector instanceof Edge)) {

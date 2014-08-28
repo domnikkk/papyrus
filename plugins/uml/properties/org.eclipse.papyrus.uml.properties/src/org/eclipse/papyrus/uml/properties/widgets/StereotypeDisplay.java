@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,10 +40,10 @@ public class StereotypeDisplay extends AbstractPropertyEditor {
 		// No Databinding here ; the AppearanceForAppliedStereotypeComposite is responsible
 		// for editing the data
 		ModelElement element = input.getModelElement(propertyPath);
-		if(element instanceof UMLNotationModelElement) {
-			View diagramElement = (View)((UMLNotationModelElement)element).getEModelElement();
-			EditPart editPart = ((UMLNotationModelElement)element).getEditPart();
-			Element umlElement = (Element)diagramElement.getElement();
+		if (element instanceof UMLNotationModelElement) {
+			View diagramElement = (View) ((UMLNotationModelElement) element).getEModelElement();
+			EditPart editPart = ((UMLNotationModelElement) element).getEditPart();
+			Element umlElement = (Element) diagramElement.getElement();
 
 			composite.setSelection(new StructuredSelection(Collections.singletonList(editPart)));
 			composite.setElement(umlElement);

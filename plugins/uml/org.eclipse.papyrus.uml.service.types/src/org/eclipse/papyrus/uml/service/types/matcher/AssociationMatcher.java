@@ -23,7 +23,7 @@ import org.eclipse.uml2.uml.Element;
  * - distinguish between UML and SysML expected behavior for {@link Association}.
  * - decide whether and {@link Association} can be dropped and used in a specific diagram.
  * - select the property view to use.
- * 
+ *
  * Existing Associations (created in previous Papyrus version and which have no nature set)
  * are treated as UML Associations.
  * </pre>
@@ -35,20 +35,20 @@ public class AssociationMatcher implements IElementMatcher {
 		boolean isMatch = false;
 
 		if (eObject instanceof Association) {
-		
+
 			Association association = (Association) eObject;
 			if (hasValidNature(association) || hasNoNature(association)) {
 				isMatch = true;
 			}
 		}
-		
+
 		return isMatch;
 	}
-	
+
 	private boolean hasValidNature(Element element) {
 		return ElementUtil.hasNature(element, UMLElementTypes.UML_NATURE);
 	}
-	
+
 	private boolean hasNoNature(Element element) {
 		return (ElementUtil.getNature(element) == null);
 	}

@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -16,7 +16,7 @@ package org.eclipse.papyrus.qompass.designer.core.sync;
 
 import java.util.Iterator;
 
-import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -54,17 +54,17 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * double entries which can be resolved via delegation)
  * (2) It can use interface that are required by the component ports. These changes are reflected in the
  * context object, but are currently not propagated on an implementation level.
- * 
+ *
  * The first aspect may be triggered by
  * (a) modification of the port (name, kind or type)
  * (b) modification due to changes of the interface: rename the interface itself or add, remove or rename operations
  * and add, remove or rename parameters.
- * 
+ *
  * InterfaceRealizations are implemented by means of stereotyped generalizations. This has the advantage
  * that the operation itself is inherited and does not have to be synchronized.
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class CompImplSync {
 
@@ -76,19 +76,19 @@ public class CompImplSync {
 	 * Delegate a synchronization operation to one or more implementations when an interface
 	 * (which may have changed) is given. I.e. this operation is called when an operation
 	 * of an implemented interface is added, removed or modified.
-	 * 
+	 *
 	 * @param an
-	 *        interface which may be implemented by a set of component implementations.
+	 *            interface which may be implemented by a set of component implementations.
 	 * @param port
 	 */
 	public static void syncViaInterface(Interface intf, BehavioralFeature toBeRemoved) {
 		// find all implementations of this interface
-		for(DirectedRelationship relationship : intf.getTargetDirectedRelationships(UMLPackage.eINSTANCE.getInterfaceRealization())) {
-			InterfaceRealization ir = (InterfaceRealization)relationship;
+		for (DirectedRelationship relationship : intf.getTargetDirectedRelationships(UMLPackage.eINSTANCE.getInterfaceRealization())) {
+			InterfaceRealization ir = (InterfaceRealization) relationship;
 			Classifier cl = ir.getImplementingClassifier();
-			if(cl instanceof Class) {
-				Log.log(Status.INFO, Log.TRAFO_SYNC, String.format(Messages.CompImplSync_InfoSyncIntf, cl.getName()));
-				Class implementation = (Class)cl;
+			if (cl instanceof Class) {
+				Log.log(IStatus.INFO, Log.TRAFO_SYNC, String.format(Messages.CompImplSync_InfoSyncIntf, cl.getName()));
+				Class implementation = (Class) cl;
 				// syncRealizations (implementation);
 				CompImplSync.interfaceModifications(implementation, toBeRemoved);
 			}
@@ -101,25 +101,25 @@ public class CompImplSync {
 	 * The function will in particular handle realization operations due to provided
 	 * ports and the behaviors associated with it (e.g. opaque-behaviors implementing the provided
 	 * operations of a component)
-	 * 
+	 *
 	 * @param a
-	 *        component type or a realized interface
+	 *            component type or a realized interface
 	 * @param port
 	 */
 	public static boolean syncViaType(Class compType, boolean addOnly) {
 		// find all implementations ...
 		boolean foundGeneralization = false;
-		for(DirectedRelationship relationship : compType.getTargetDirectedRelationships(UMLPackage.eINSTANCE.getGeneralization())) {
-			if(relationship instanceof Generalization) {
+		for (DirectedRelationship relationship : compType.getTargetDirectedRelationships(UMLPackage.eINSTANCE.getGeneralization())) {
+			if (relationship instanceof Generalization) {
 				foundGeneralization = true;
-				Classifier cl = ((Generalization)relationship).getSpecific();
-				if(cl instanceof Class) {
-					Log.log(Status.INFO, Log.TRAFO_SYNC, String.format(Messages.CompImplSync_InfoSyncViaType, cl.getName()));
-					Class implementation = (Class)cl;
+				Classifier cl = ((Generalization) relationship).getSpecific();
+				if (cl instanceof Class) {
+					Log.log(IStatus.INFO, Log.TRAFO_SYNC, String.format(Messages.CompImplSync_InfoSyncViaType, cl.getName()));
+					Class implementation = (Class) cl;
 					updatePorts(implementation);
-					if(Utils.isCompImpl(cl)) {
+					if (Utils.isCompImpl(cl)) {
 						// add realization relationship only for implementations
-						if(addOnly) {
+						if (addOnly) {
 							addRealizations(implementation);
 							// syncContextOps (implementation, false);
 						} else {
@@ -152,7 +152,7 @@ public class CompImplSync {
 
 	/**
 	 * Update the ports of a class, i.e. recalculate its derived interfaces
-	 * 
+	 *
 	 * @param component
 	 * @param port
 	 */
@@ -167,16 +167,16 @@ public class CompImplSync {
 
 	/**
 	 * Add an interface realization relationship from an implementation (Class) towards an interface
-	 * 
+	 *
 	 * @param implementation
-	 *        A component implementation
+	 *            A component implementation
 	 * @param providedIntf
-	 *        The interface that is provided at one of its port
+	 *            The interface that is provided at one of its port
 	 */
 	protected static void addRealization(final Class implementation, final Interface providedIntf) {
-		if(!hasRealization(implementation, providedIntf)) {
+		if (!hasRealization(implementation, providedIntf)) {
 			InterfaceRealization ir =
-				implementation.createInterfaceRealization(calcRealizationName(providedIntf), providedIntf);
+					implementation.createInterfaceRealization(calcRealizationName(providedIntf), providedIntf);
 			ir.getClients().add(implementation);
 			ir.getSuppliers().add(providedIntf);
 		}
@@ -185,14 +185,14 @@ public class CompImplSync {
 	/**
 	 * Calculate the name of an interface realization towards an interface that is
 	 * provided at one of its ports
-	 * 
+	 *
 	 * @param providedIntf
-	 *        an interface provided by a component
+	 *            an interface provided by a component
 	 * @return the calculated name
 	 */
 	protected static String calcRealizationName(Interface providedIntf) {
 		String name = providedIntf.getName();
-		if(name == null) {
+		if (name == null) {
 			name = "undefined"; //$NON-NLS-1$
 		}
 		return "derived realization of " + name; //$NON-NLS-1$
@@ -200,7 +200,7 @@ public class CompImplSync {
 
 	/**
 	 * return existing interface-realization relationship
-	 * 
+	 *
 	 * @param implementation
 	 * @param intf
 	 * @return
@@ -211,7 +211,7 @@ public class CompImplSync {
 
 	/**
 	 * check, whether an interface-realization relationship already exists
-	 * 
+	 *
 	 * @param implementation
 	 * @param intf
 	 * @return
@@ -222,7 +222,7 @@ public class CompImplSync {
 
 	/**
 	 * Synchronize realization (generalization) relationship.
-	 * 
+	 *
 	 * @param implementation
 	 * @param port
 	 */
@@ -234,14 +234,14 @@ public class CompImplSync {
 	/**
 	 * add derived realization relationships of a component implementation
 	 * due to provided interfaces of its ports
-	 * 
+	 *
 	 * @param implementation
 	 */
 	public static EList<Interface> addRealizations(Class implementation) {
 		// create a list of all provided interfaces and check whether realization relationship
 		// exists. If not, create
 		EList<Interface> providedIntfs = new BasicEList<Interface>();
-		for(PortInfo portInfo : PortUtils.flattenExtendedPorts(PortUtils.getAllPorts2(implementation))) {
+		for (PortInfo portInfo : PortUtils.flattenExtendedPorts(PortUtils.getAllPorts2(implementation))) {
 			Interface providedIntf = portInfo.getProvided();
 			// check, if there is a getter already. In this case, we assume that we should not synchronize
 			// operations
@@ -251,20 +251,20 @@ public class CompImplSync {
 			}
 			ConnectorEnd connEnd = ConnectorUtil.getDelegation(implementation, portInfo.getPort());
 			// check that there is no delegation to a part which in turn has to implement the operations.
-			if((providedIntf != null) && (connEnd == null)) {
-				if(providedIntfs.contains(providedIntf)) {
+			if ((providedIntf != null) && (connEnd == null)) {
+				if (providedIntfs.contains(providedIntf)) {
 					// emit warning that more than one provider for same interface
-					Log.log(Status.WARNING, Log.TRAFO_SYNC, "The interface " + providedIntf.getName() +   //$NON-NLS-1$
-						" is provided by more than one port of class <" + implementation.getQualifiedName() +   //$NON-NLS-1$
-						">, inputs would therefore be undistinguishable");   //$NON-NLS-1$
+					Log.log(IStatus.WARNING, Log.TRAFO_SYNC, "The interface " + providedIntf.getName() + //$NON-NLS-1$
+							" is provided by more than one port of class <" + implementation.getQualifiedName() + //$NON-NLS-1$
+							">, inputs would therefore be undistinguishable"); //$NON-NLS-1$
 				}
 				providedIntfs.add(providedIntf);
 				InterfaceRealization ir = getRealization(implementation, providedIntf);
-				if(ir == null) {
+				if (ir == null) {
 					addRealization(implementation, providedIntf);
 				} else {
 					String name = calcRealizationName(providedIntf);
-					if(!name.equals(ir.getName())) {
+					if (!name.equals(ir.getName())) {
 						ir.setName(name);
 					}
 				}
@@ -277,31 +277,32 @@ public class CompImplSync {
 	 * remove derived realization relationships of a component implementation
 	 * due to provided interfaces of its ports, i.e. remove those for which the
 	 * port no longer provides the interface.
-	 * 
+	 *
 	 * @param implementation
 	 */
 	private static void removeRealizations(EList<Interface> providedIntfs, final Class implementation) {
 		// now loop through all interface realization relations and remove those that are not
 		// related to a provided port.
 		final EList<InterfaceRealization> toBeRemoved = new BasicEList<InterfaceRealization>();
-		for(InterfaceRealization ir : implementation.getInterfaceRealizations()) {
+		for (InterfaceRealization ir : implementation.getInterfaceRealizations()) {
 			String name = ir.getName();
 			// automatically added interface realization is identified via its name (simpler
 			// compared to use of stereotype)
-			if((name != null) && name.startsWith("derived")) { //$NON-NLS-1$
+			if ((name != null) && name.startsWith("derived")) { //$NON-NLS-1$
 				Interface inheritedIntf = ir.getContract();
-				if(!providedIntfs.contains(inheritedIntf)) {
+				if (!providedIntfs.contains(inheritedIntf)) {
 					toBeRemoved.add(ir);
 				}
 			}
 		}
-		if(toBeRemoved.size() > 0) {
+		if (toBeRemoved.size() > 0) {
 			// remove InterfaceRealization, since not part of provided interfaces
 			CommandSupport.exec(TransactionUtil.getEditingDomain(implementation), Messages.CompImplSync_InfoSyncViaImpl, new Runnable() {
 
+				@Override
 				public void run() {
 					// implCopy = implementation;
-					for(InterfaceRealization ir : toBeRemoved) {
+					for (InterfaceRealization ir : toBeRemoved) {
 						ir.destroy();
 					}
 				}
@@ -312,7 +313,7 @@ public class CompImplSync {
 	/**
 	 * The interface that types a port has been modified. Subsequently, the names of
 	 * methods have to be adapted accordingly, methods have to be removed or added
-	 * 
+	 *
 	 * @param implementation
 	 * @param port
 	 * @param newName
@@ -323,20 +324,20 @@ public class CompImplSync {
 		EList<Operation> ownedOperations = implementation.getOwnedOperations();
 		// loop through all methods, adapt name according to specification name.
 		Iterator<Behavior> behaviors = implementation.getOwnedBehaviors().iterator();
-		while(behaviors.hasNext()) {
+		while (behaviors.hasNext()) {
 			Behavior behavior = behaviors.next();
 			BehavioralFeature bf = behavior.getSpecification();
-			if((bf != null) && ownedOperations.contains(bf)) {
+			if ((bf != null) && ownedOperations.contains(bf)) {
 				BehavioralFeature sourceBf = (BehavioralFeature)
-					UpdateUtils.getSource(bf);
+						UpdateUtils.getSource(bf);
 
 				// if an operation is scheduled for deletion, it still exists at this
 				// point (This operation is called by an InterfaceListener which gets called
 				// before the deletion takes place) and the specification of associated behaviors
 				// still point to it. Therefore the check toBeRemoved is added.
-				if(sourceBf != toBeRemoved) {
+				if (sourceBf != toBeRemoved) {
 					String name = calcBehaviorName(sourceBf, implementation);
-					if(!name.equals(behavior.getName())) {
+					if (!name.equals(behavior.getName())) {
 						behavior.setName(name);
 					}
 				}
@@ -351,35 +352,35 @@ public class CompImplSync {
 		// implementation.getInterfaceRealizations returns wrong value??
 
 		EList<Operation> ownedOperations = implementation.getOwnedOperations();
-		for(InterfaceRealization ir : implementation.getInterfaceRealizations()) {
+		for (InterfaceRealization ir : implementation.getInterfaceRealizations()) {
 			/*
 			 * for (DirectedRelationship relShip : relShips)
 			 * if (relShip instanceof InterfaceRealization) {
 			 * InterfaceRealization ir = (InterfaceRealization) relShip;
 			 */
 			Interface intf = ir.getContract();
-			if(intf == null) {
+			if (intf == null) {
 				// should not happen?
 				continue;
 			}
 			realizedInterfaces.add(intf);
 
-			for(Operation operation : intf.getAllOperations()) {
+			for (Operation operation : intf.getAllOperations()) {
 				Operation copiedOperation = (Operation)
-					UpdateUtils.getDerivedElement(ownedOperations, operation);
-				if(copiedOperation == null) {
-					// no owned operation derived from the interface operation found. 
+						UpdateUtils.getDerivedElement(ownedOperations, operation);
+				if (copiedOperation == null) {
+					// no owned operation derived from the interface operation found.
 					// Would indicate normally that there is no suitable owned operation.
 					// However: stereotype values may not be available during model load, check
 					// whether there is an identical operation, before copying one.
 					copiedOperation = OperationUtils.getSameOperation(operation, implementation);
-					if(copiedOperation == null) {
+					if (copiedOperation == null) {
 						copiedOperation = implementation.createOwnedOperation(operation.getName(), null, null);
 						OperationUtils.syncOperation(operation, copiedOperation);
 						copiedOperation.setIsAbstract(false);
 					}
 					UpdateUtils.setSource(copiedOperation, operation);
-				} else if(!OperationUtils.isSameOperation(operation, copiedOperation)) {
+				} else if (!OperationUtils.isSameOperation(operation, copiedOperation)) {
 					OperationUtils.syncOperation(operation, copiedOperation);
 					copiedOperation.setIsAbstract(false);
 				}
@@ -392,28 +393,28 @@ public class CompImplSync {
 		// remove operations that are no longer provided via an interface of a port (and
 		// that are derived elements, i.e. have a source attribute)
 		Iterator<Operation> ownedOpsIter = ownedOperations.iterator();
-		while(ownedOpsIter.hasNext()) {
+		while (ownedOpsIter.hasNext()) {
 			Operation ownedOp = ownedOpsIter.next();
 
 			DerivedElement de = UMLUtil.getStereotypeApplication(ownedOp, DerivedElement.class);
-			if(de != null) {
-				if(de.getSource() instanceof Operation) {
+			if (de != null) {
+				if (de.getSource() instanceof Operation) {
 
-					Operation sourceOp = (Operation)de.getSource();
+					Operation sourceOp = (Operation) de.getSource();
 					// check, whether sourceOp is offered by one of the realized interfaces
 					boolean contains = false;
-					for(Interface realizedIntf : realizedInterfaces) {
-						if(realizedIntf.getAllOperations().contains(sourceOp)) {
+					for (Interface realizedIntf : realizedInterfaces) {
+						if (realizedIntf.getAllOperations().contains(sourceOp)) {
 							contains = true;
 						}
 					}
-					if(!contains) {
+					if (!contains) {
 						// operation belongs to an interface which is not implemented => remove
 						ownedOpsIter.remove();
 						ownedOp.destroy();
 					}
 				}
-				else if(de.getSource() == null) {
+				else if (de.getSource() == null) {
 					// source element does not exist => remove
 					ownedOpsIter.remove();
 					ownedOp.destroy();
@@ -427,7 +428,7 @@ public class CompImplSync {
 	/**
 	 * Calculate the name of a behavior for a given operation
 	 * TODO better handling of overloading (better representation of signature)
-	 * 
+	 *
 	 * @param operation
 	 * @return
 	 */

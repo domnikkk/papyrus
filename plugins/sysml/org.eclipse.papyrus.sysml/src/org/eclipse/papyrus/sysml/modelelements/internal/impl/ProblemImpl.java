@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.Comment;
  * <li>{@link org.eclipse.papyrus.sysml.modelelements.internal.impl.ProblemImpl#getBase_Comment <em>Base Comment</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ProblemImpl extends MinimalEObjectImpl.Container implements Problem {
@@ -38,7 +38,7 @@ public class ProblemImpl extends MinimalEObjectImpl.Container implements Problem
 	/**
 	 * The cached value of the '{@link #getBase_Comment() <em>Base Comment</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Comment()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public class ProblemImpl extends MinimalEObjectImpl.Container implements Problem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ProblemImpl() {
@@ -56,7 +56,7 @@ public class ProblemImpl extends MinimalEObjectImpl.Container implements Problem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Comment basicGetBase_Comment() {
@@ -65,15 +65,16 @@ public class ProblemImpl extends MinimalEObjectImpl.Container implements Problem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case ModelelementsPackage.PROBLEM__BASE_COMMENT:
-			if(resolve)
+			if (resolve) {
 				return getBase_Comment();
+			}
 			return basicGetBase_Comment();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -81,12 +82,12 @@ public class ProblemImpl extends MinimalEObjectImpl.Container implements Problem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ModelelementsPackage.PROBLEM__BASE_COMMENT:
 			return base_Comment != null;
 		}
@@ -95,14 +96,14 @@ public class ProblemImpl extends MinimalEObjectImpl.Container implements Problem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case ModelelementsPackage.PROBLEM__BASE_COMMENT:
-			setBase_Comment((Comment)newValue);
+			setBase_Comment((Comment) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -110,7 +111,7 @@ public class ProblemImpl extends MinimalEObjectImpl.Container implements Problem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,14 +121,14 @@ public class ProblemImpl extends MinimalEObjectImpl.Container implements Problem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ModelelementsPackage.PROBLEM__BASE_COMMENT:
-			setBase_Comment((Comment)null);
+			setBase_Comment((Comment) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -135,16 +136,17 @@ public class ProblemImpl extends MinimalEObjectImpl.Container implements Problem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Comment getBase_Comment() {
-		if(base_Comment != null && base_Comment.eIsProxy()) {
-			InternalEObject oldBase_Comment = (InternalEObject)base_Comment;
-			base_Comment = (Comment)eResolveProxy(oldBase_Comment);
-			if(base_Comment != oldBase_Comment) {
-				if(eNotificationRequired())
+		if (base_Comment != null && base_Comment.eIsProxy()) {
+			InternalEObject oldBase_Comment = (InternalEObject) base_Comment;
+			base_Comment = (Comment) eResolveProxy(oldBase_Comment);
+			if (base_Comment != oldBase_Comment) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelelementsPackage.PROBLEM__BASE_COMMENT, oldBase_Comment, base_Comment));
+				}
 			}
 		}
 		return base_Comment;
@@ -152,14 +154,15 @@ public class ProblemImpl extends MinimalEObjectImpl.Container implements Problem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Comment(Comment newBase_Comment) {
 		Comment oldBase_Comment = base_Comment;
 		base_Comment = newBase_Comment;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelelementsPackage.PROBLEM__BASE_COMMENT, oldBase_Comment, base_Comment));
+		}
 	}
 
 } // ProblemImpl

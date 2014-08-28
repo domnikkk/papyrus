@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,7 +47,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
 	 */
 	public void addListener(ILabelProviderListener listener) {
@@ -56,7 +56,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#dispose()
 	 */
 	public void dispose() {
@@ -65,7 +65,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#isLabelProperty(java.lang.Object, java.lang.String)
 	 */
 	public boolean isLabelProperty(Object element, String property) {
@@ -75,7 +75,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#removeListener(org.eclipse.jface.viewers.ILabelProviderListener)
 	 */
 	public void removeListener(ILabelProviderListener listener) {
@@ -84,17 +84,17 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.ISourcePresentation#getEditorInput(java.lang.Object)
 	 */
 	public IEditorInput getEditorInput(Object element) {
 		EObject modelElement = null;
-		if(element instanceof MokaBreakpoint) {
-			modelElement = ((MokaBreakpoint)element).getModelElement();
-		} else if(element instanceof EObject) {
-			modelElement = (EObject)element;
+		if (element instanceof MokaBreakpoint) {
+			modelElement = ((MokaBreakpoint) element).getModelElement();
+		} else if (element instanceof EObject) {
+			modelElement = (EObject) element;
 		}
-		if(modelElement == null) {
+		if (modelElement == null) {
 			return null;
 		}
 		FileEditorInput input = EditorUtils.getFileEditorInput(modelElement);
@@ -103,7 +103,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.ISourcePresentation#getEditorId(org.eclipse.ui.IEditorInput, java.lang.Object)
 	 */
 	public String getEditorId(IEditorInput input, Object element) {
@@ -112,7 +112,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.IDebugModelPresentation#setAttribute(java.lang.String, java.lang.Object)
 	 */
 	public void setAttribute(String attribute, Object value) {
@@ -121,40 +121,40 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.IDebugModelPresentation#getImage(java.lang.Object)
 	 */
 	public Image getImage(Object element) {
-		if(element instanceof IPresentation) {
-			return ((IPresentation)element).getImage();
+		if (element instanceof IPresentation) {
+			return ((IPresentation) element).getImage();
 		}
 		return null;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.IDebugModelPresentation#getText(java.lang.Object)
 	 */
 	public String getText(Object element) {
-		if(element instanceof IPresentation) {
-			return ((IPresentation)element).getLabel();
+		if (element instanceof IPresentation) {
+			return ((IPresentation) element).getLabel();
 		}
-		if(element instanceof MokaBreakpoint) {
-			return ((MokaBreakpoint)element).getLabel();
+		if (element instanceof MokaBreakpoint) {
+			return ((MokaBreakpoint) element).getLabel();
 		}
 		return null;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.IDebugModelPresentation#computeDetail(org.eclipse.debug.core.model.IValue, org.eclipse.debug.ui.IValueDetailListener)
 	 */
 	public void computeDetail(IValue value, IValueDetailListener listener) {
-		if(value instanceof IPresentation) {
-			String detail = ((IPresentation)value).getDetails();
-			if(detail != null) {
+		if (value instanceof IPresentation) {
+			String detail = ((IPresentation) value).getDetails();
+			if (detail != null) {
 				listener.detailComputed(value, detail);
 			}
 		}
@@ -162,16 +162,16 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.IDebugEditorPresentation#addAnnotations(org.eclipse.ui.IEditorPart, org.eclipse.debug.core.model.IStackFrame)
 	 */
 	public boolean addAnnotations(IEditorPart editorPart, IStackFrame frame) {
-		if(frame instanceof MokaStackFrame) {
-			MokaStackFrame stackFrame = (MokaStackFrame)frame;
+		if (frame instanceof MokaStackFrame) {
+			MokaStackFrame stackFrame = (MokaStackFrame) frame;
 			EObject modelElement = stackFrame.getModelElement();
-			if(modelElement.eIsProxy()) {
+			if (modelElement.eIsProxy()) {
 				AnimationUtils.getInstance().resetDiagrams(modelElement);
-				ServicesRegistry servicesRegistry = (ServicesRegistry)editorPart.getAdapter(ServicesRegistry.class);
+				ServicesRegistry servicesRegistry = (ServicesRegistry) editorPart.getAdapter(ServicesRegistry.class);
 				ResourceSet resourceSet = null;
 				try {
 					resourceSet = servicesRegistry.getService(ModelSet.class);
@@ -181,7 +181,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 				modelElement = (EcoreUtil.resolve(modelElement, resourceSet));
 			}
 			List<Diagram> diagrams = AnimationUtils.getInstance().getDiagrams(modelElement);
-			for(Diagram diagram : diagrams) {
+			for (Diagram diagram : diagrams) {
 				AnimationUtils.getInstance().openDiagram(diagram, false);
 			}
 			AnimationUtils.getInstance().addSuspendedMarker(modelElement);
@@ -192,7 +192,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.IDebugEditorPresentation#removeAnnotations(org.eclipse.ui.IEditorPart, org.eclipse.debug.core.model.IThread)
 	 */
 	public void removeAnnotations(IEditorPart editorPart, IThread thread) {

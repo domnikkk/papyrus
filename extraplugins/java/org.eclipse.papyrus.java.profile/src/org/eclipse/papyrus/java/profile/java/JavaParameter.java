@@ -16,8 +16,8 @@ import org.eclipse.uml2.uml.Parameter;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.JavaParameter#isFinal <em>Is Final</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.JavaParameter#getBase_Parameter <em>Base Parameter</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.JavaParameter#isFinal <em>Is Final</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.JavaParameter#getBase_Parameter <em>Base Parameter</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,10 +30,10 @@ public interface JavaParameter extends JavaNamedElement {
 	 * Returns the value of the '<em><b>Is Final</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Final</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Final</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Is Final</em>' attribute.
 	 * @see #setIsFinal(boolean)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaParameter_IsFinal()
@@ -46,7 +46,9 @@ public interface JavaParameter extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaParameter#isFinal <em>Is Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Final</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Is Final</em>' attribute.
 	 * @see #isFinal()
 	 * @generated
 	 */
@@ -56,10 +58,10 @@ public interface JavaParameter extends JavaNamedElement {
 	 * Returns the value of the '<em><b>Base Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Parameter</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Parameter</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Parameter</em>' reference.
 	 * @see #setBase_Parameter(Parameter)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaParameter_Base_Parameter()
@@ -72,7 +74,9 @@ public interface JavaParameter extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaParameter#getBase_Parameter <em>Base Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Parameter</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Parameter</em>' reference.
 	 * @see #getBase_Parameter()
 	 * @generated
 	 */

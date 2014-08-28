@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,37 +26,41 @@ import org.eclipse.uml2.uml.TemplateParameter;
 
 public class ClassifierTemplateParameterParser implements IParser {
 
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		return getPrintString(element, flags);
 	}
 
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		// TODO Auto-generated method stub
 		return org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE;
 	}
 
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
-		if(element instanceof EObjectAdapter) {
-			final TemplateParameter templateParam = ((TemplateParameter)((EObjectAdapter)element).getRealObject());
-			if(templateParam.getOwnedParameteredElement() == null) {
+		if (element instanceof EObjectAdapter) {
+			final TemplateParameter templateParam = ((TemplateParameter) ((EObjectAdapter) element).getRealObject());
+			if (templateParam.getOwnedParameteredElement() == null) {
 				return "<UNDEFINED>";
 			}
 			String out = "";
-			if(templateParam.getOwnedParameteredElement() instanceof Classifier) {
-				Classifier namedElement = (Classifier)templateParam.getOwnedParameteredElement();
+			if (templateParam.getOwnedParameteredElement() instanceof Classifier) {
+				Classifier namedElement = (Classifier) templateParam.getOwnedParameteredElement();
 				out = out + namedElement.getName() + ": " + namedElement.eClass().getName();
 			}
-			if(templateParam instanceof ClassifierTemplateParameter) {
-				if(!((ClassifierTemplateParameter)templateParam).getConstrainingClassifiers().isEmpty()) {
+			if (templateParam instanceof ClassifierTemplateParameter) {
+				if (!((ClassifierTemplateParameter) templateParam).getConstrainingClassifiers().isEmpty()) {
 					out = out + ">";
-					for(int i = 0; i < ((ClassifierTemplateParameter)templateParam).getConstrainingClassifiers().size(); i++) {
-						out = out + ((ClassifierTemplateParameter)templateParam).getConstrainingClassifiers().get(i).getName();
-						if(i < ((ClassifierTemplateParameter)templateParam).getConstrainingClassifiers().size() - 1) {
+					for (int i = 0; i < ((ClassifierTemplateParameter) templateParam).getConstrainingClassifiers().size(); i++) {
+						out = out + ((ClassifierTemplateParameter) templateParam).getConstrainingClassifiers().get(i).getName();
+						if (i < ((ClassifierTemplateParameter) templateParam).getConstrainingClassifiers().size() - 1) {
 							out = out + ", ";
 						}
 					}
@@ -67,10 +71,12 @@ public class ClassifierTemplateParameterParser implements IParser {
 		return "<UNDEFINED>";
 	}
 
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		return false;
 	}
 
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}

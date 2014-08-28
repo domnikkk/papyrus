@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -58,7 +58,7 @@ public class EnumerationEditPart extends AbstractElementEditPart {
 			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
@@ -79,14 +79,14 @@ public class EnumerationEditPart extends AbstractElementEditPart {
 
 	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof NamedElementNodeLabelNameEditPart) {
-			((NamedElementNodeLabelNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
+		if (childEditPart instanceof NamedElementNodeLabelNameEditPart) {
+			((NamedElementNodeLabelNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
-		if(childEditPart instanceof EnumerationLiteralCompartmentEditPart) {
+		if (childEditPart instanceof EnumerationLiteralCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getEnumerationLiteralCompartmentFigure();
 			setupContentPane(pane);
-			pane.add(((EnumerationLiteralCompartmentEditPart)childEditPart).getFigure());
+			pane.add(((EnumerationLiteralCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -94,13 +94,13 @@ public class EnumerationEditPart extends AbstractElementEditPart {
 
 	@Override
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof NamedElementNodeLabelNameEditPart) {
+		if (childEditPart instanceof NamedElementNodeLabelNameEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof EnumerationLiteralCompartmentEditPart) {
+		if (childEditPart instanceof EnumerationLiteralCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getEnumerationLiteralCompartmentFigure();
 			setupContentPane(pane);
-			pane.remove(((EnumerationLiteralCompartmentEditPart)childEditPart).getFigure());
+			pane.remove(((EnumerationLiteralCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -108,22 +108,22 @@ public class EnumerationEditPart extends AbstractElementEditPart {
 
 	@Override
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if(editPart instanceof EnumerationLiteralCompartmentEditPart) {
+		if (editPart instanceof EnumerationLiteralCompartmentEditPart) {
 			return getPrimaryShape().getEnumerationLiteralCompartmentFigure();
 		}
 		return getContentPane();
 	}
 
-	//	public EditPart getTargetEditPart(Request request) {
-	//		if(request instanceof CreateViewAndElementRequest) {
-	//			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest)request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
-	//			IElementType type = (IElementType)adapter.getAdapter(IElementType.class);
-	//			if(type == CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_CLN) {
-	//				return getChildBySemanticHint(CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_COMPARTMENT_HINT);
-	//			}
-	//		}
-	//		return super.getTargetEditPart(request);
-	//	}
+	// public EditPart getTargetEditPart(Request request) {
+	// if(request instanceof CreateViewAndElementRequest) {
+	// CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest)request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
+	// IElementType type = (IElementType)adapter.getAdapter(IElementType.class);
+	// if(type == CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_CLN) {
+	// return getChildBySemanticHint(CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_COMPARTMENT_HINT);
+	// }
+	// }
+	// return super.getTargetEditPart(request);
+	// }
 	@Override
 	protected IFigure createNodeShape() {
 		return primaryShape = new EnumerationFigure();
@@ -131,7 +131,7 @@ public class EnumerationEditPart extends AbstractElementEditPart {
 
 	@Override
 	public EnumerationFigure getPrimaryShape() {
-		return (EnumerationFigure)primaryShape;
+		return (EnumerationFigure) primaryShape;
 	}
 
 	@Override

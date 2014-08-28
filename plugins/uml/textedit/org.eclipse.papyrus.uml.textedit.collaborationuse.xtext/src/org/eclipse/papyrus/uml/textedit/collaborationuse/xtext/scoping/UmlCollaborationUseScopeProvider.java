@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,17 +21,17 @@ import org.eclipse.xtext.scoping.IScope;
 
 /**
  * This class contains custom scoping description.
- * 
+ *
  * see : http://www.eclipse.org/Xtext/documentation/latest/xtext.html#scoping
  * on how and when to use it
- * 
+ *
  */
 public class UmlCollaborationUseScopeProvider extends UmlCommonScopeProvider {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public UmlCollaborationUseScopeProvider() {
 		super();
@@ -39,9 +39,9 @@ public class UmlCollaborationUseScopeProvider extends UmlCommonScopeProvider {
 
 	/**
 	 * Rule for computing the scope of PropertyRule
-	 * 
+	 *
 	 * @param ctx
-	 * 
+	 *
 	 * @param ref
 	 * @return
 	 */
@@ -50,9 +50,9 @@ public class UmlCollaborationUseScopeProvider extends UmlCommonScopeProvider {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.common.xtext.scoping.UmlCommonScopeProvider#isWantedType(org.eclipse.uml2.uml.Element)
-	 * 
+	 *
 	 * @param e
 	 * @return
 	 */

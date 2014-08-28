@@ -15,6 +15,7 @@ import org.eclipse.papyrus.eastadl.requirements.RequirementsPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class RequirementsFactoryImpl extends EFactoryImpl implements RequirementsFactory {
@@ -22,16 +23,16 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static RequirementsFactory init() {
 		try {
-			RequirementsFactory theRequirementsFactory = (RequirementsFactory)EPackage.Registry.INSTANCE.getEFactory(RequirementsPackage.eNS_URI);
+			RequirementsFactory theRequirementsFactory = (RequirementsFactory) EPackage.Registry.INSTANCE.getEFactory(RequirementsPackage.eNS_URI);
 			if (theRequirementsFactory != null) {
 				return theRequirementsFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new RequirementsFactoryImpl();
@@ -41,6 +42,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public RequirementsFactoryImpl() {
@@ -50,58 +52,63 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case RequirementsPackage.DUMMY:
-				return createDummyFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case RequirementsPackage.DUMMY:
+			return createDummyFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case RequirementsPackage.DUMMY:
-				return convertDummyToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case RequirementsPackage.DUMMY:
+			return convertDummyToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String createDummyFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+		return (String) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertDummyToString(EDataType eDataType, Object instanceValue) {
@@ -111,15 +118,18 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public RequirementsPackage getRequirementsPackage() {
-		return (RequirementsPackage)getEPackage();
+		return (RequirementsPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -128,4 +138,4 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 		return RequirementsPackage.eINSTANCE;
 	}
 
-} //RequirementsFactoryImpl
+} // RequirementsFactoryImpl

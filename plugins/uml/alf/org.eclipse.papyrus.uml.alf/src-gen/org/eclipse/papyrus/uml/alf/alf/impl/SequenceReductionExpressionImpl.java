@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.QualifiedNameWithBinding;
 import org.eclipse.papyrus.uml.alf.alf.SequenceReductionExpression;
@@ -112,8 +109,9 @@ public class SequenceReductionExpressionImpl extends SuffixExpressionImpl implem
   {
     boolean oldIsOrdered = isOrdered;
     isOrdered = newIsOrdered;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__IS_ORDERED, oldIsOrdered, isOrdered));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__IS_ORDERED, oldIsOrdered, isOrdered));
+	}
   }
 
   /**
@@ -138,7 +136,11 @@ public class SequenceReductionExpressionImpl extends SuffixExpressionImpl implem
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__BEHAVIOR, oldBehavior, newBehavior);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -153,15 +155,20 @@ public class SequenceReductionExpressionImpl extends SuffixExpressionImpl implem
     if (newBehavior != behavior)
     {
       NotificationChain msgs = null;
-      if (behavior != null)
-        msgs = ((InternalEObject)behavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__BEHAVIOR, null, msgs);
-      if (newBehavior != null)
-        msgs = ((InternalEObject)newBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__BEHAVIOR, null, msgs);
+      if (behavior != null) {
+		msgs = ((InternalEObject)behavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__BEHAVIOR, null, msgs);
+	}
+      if (newBehavior != null) {
+		msgs = ((InternalEObject)newBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__BEHAVIOR, null, msgs);
+	}
       msgs = basicSetBehavior(newBehavior, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__BEHAVIOR, newBehavior, newBehavior));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__BEHAVIOR, newBehavior, newBehavior));
+	}
   }
 
   /**
@@ -186,7 +193,11 @@ public class SequenceReductionExpressionImpl extends SuffixExpressionImpl implem
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__SUFFIX, oldSuffix, newSuffix);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -201,15 +212,20 @@ public class SequenceReductionExpressionImpl extends SuffixExpressionImpl implem
     if (newSuffix != suffix)
     {
       NotificationChain msgs = null;
-      if (suffix != null)
-        msgs = ((InternalEObject)suffix).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__SUFFIX, null, msgs);
-      if (newSuffix != null)
-        msgs = ((InternalEObject)newSuffix).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__SUFFIX, null, msgs);
+      if (suffix != null) {
+		msgs = ((InternalEObject)suffix).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__SUFFIX, null, msgs);
+	}
+      if (newSuffix != null) {
+		msgs = ((InternalEObject)newSuffix).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__SUFFIX, null, msgs);
+	}
       msgs = basicSetSuffix(newSuffix, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__SUFFIX, newSuffix, newSuffix));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_REDUCTION_EXPRESSION__SUFFIX, newSuffix, newSuffix));
+	}
   }
 
   /**
@@ -324,7 +340,9 @@ public class SequenceReductionExpressionImpl extends SuffixExpressionImpl implem
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (isOrdered: ");

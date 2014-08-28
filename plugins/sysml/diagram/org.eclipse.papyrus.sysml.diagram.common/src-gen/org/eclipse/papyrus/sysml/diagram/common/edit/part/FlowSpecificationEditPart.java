@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -59,7 +59,7 @@ public class FlowSpecificationEditPart extends AbstractElementEditPart {
 			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
@@ -80,14 +80,14 @@ public class FlowSpecificationEditPart extends AbstractElementEditPart {
 
 	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof FlowSpecificationLabelNameEditPart) {
-			((FlowSpecificationLabelNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
+		if (childEditPart instanceof FlowSpecificationLabelNameEditPart) {
+			((FlowSpecificationLabelNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
-		if(childEditPart instanceof FlowPropertyCompartmentEditPart) {
+		if (childEditPart instanceof FlowPropertyCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFlowPropertyCompartmentFigure();
 			setupContentPane(pane);
-			pane.add(((FlowPropertyCompartmentEditPart)childEditPart).getFigure());
+			pane.add(((FlowPropertyCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -95,13 +95,13 @@ public class FlowSpecificationEditPart extends AbstractElementEditPart {
 
 	@Override
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof FlowSpecificationLabelNameEditPart) {
+		if (childEditPart instanceof FlowSpecificationLabelNameEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof FlowPropertyCompartmentEditPart) {
+		if (childEditPart instanceof FlowPropertyCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFlowPropertyCompartmentFigure();
 			setupContentPane(pane);
-			pane.remove(((FlowPropertyCompartmentEditPart)childEditPart).getFigure());
+			pane.remove(((FlowPropertyCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -109,22 +109,22 @@ public class FlowSpecificationEditPart extends AbstractElementEditPart {
 
 	@Override
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if(editPart instanceof FlowPropertyCompartmentEditPart) {
+		if (editPart instanceof FlowPropertyCompartmentEditPart) {
 			return getPrimaryShape().getFlowPropertyCompartmentFigure();
 		}
 		return getContentPane();
 	}
 
-	//	public EditPart getTargetEditPart(Request request) {
-	//		if(request instanceof CreateViewAndElementRequest) {
-	//			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest)request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
-	//			IElementType type = (IElementType)adapter.getAdapter(IElementType.class);
-	//			if(type == CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_CLN) {
-	//				return getChildBySemanticHint(CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_COMPARTMENT_HINT);
-	//			}
-	//		}
-	//		return super.getTargetEditPart(request);
-	//	}
+	// public EditPart getTargetEditPart(Request request) {
+	// if(request instanceof CreateViewAndElementRequest) {
+	// CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest)request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
+	// IElementType type = (IElementType)adapter.getAdapter(IElementType.class);
+	// if(type == CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_CLN) {
+	// return getChildBySemanticHint(CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_COMPARTMENT_HINT);
+	// }
+	// }
+	// return super.getTargetEditPart(request);
+	// }
 	@Override
 	protected IFigure createNodeShape() {
 		return primaryShape = new FlowSpecificationFigure();
@@ -132,7 +132,7 @@ public class FlowSpecificationEditPart extends AbstractElementEditPart {
 
 	@Override
 	public FlowSpecificationFigure getPrimaryShape() {
-		return (FlowSpecificationFigure)primaryShape;
+		return (FlowSpecificationFigure) primaryShape;
 	}
 
 	@Override

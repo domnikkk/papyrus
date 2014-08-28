@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -83,7 +83,7 @@ public abstract class StringComposite<T> extends AbstractCellEditorComposite<T> 
 		final Listener clickListener = new Listener() {
 			/*
 			 * (non-Javadoc)
-			 * 
+			 *
 			 * @see org.eclipse.swt.widgets.Listener#handleEvent(org.eclipse.swt. widgets.Event)
 			 */
 			public void handleEvent(final Event event) {
@@ -105,7 +105,7 @@ public abstract class StringComposite<T> extends AbstractCellEditorComposite<T> 
 				Display.getDefault().removeFilter(SWT.MouseDown, clickListener);
 			}
 		});
-		
+
 		this.textField.addModifyListener(new ModifyListener() {
 			public void modifyText(final ModifyEvent e) {
 				fireChanged();
@@ -130,7 +130,7 @@ public abstract class StringComposite<T> extends AbstractCellEditorComposite<T> 
 		this.textField.setEnabled(enabled);
 		super.setEnabled(enabled);
 	}
-	
+
 	public boolean getEditable() {
 		return this.textField.getEditable();
 	}

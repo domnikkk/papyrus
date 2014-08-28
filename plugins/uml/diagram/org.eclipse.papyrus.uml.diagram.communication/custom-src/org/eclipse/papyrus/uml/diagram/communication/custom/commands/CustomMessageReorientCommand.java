@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,9 +45,9 @@ public class CustomMessageReorientCommand extends MessageReorientCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
-	 *        the req
+	 *            the req
 	 */
 	public CustomMessageReorientCommand(ReorientRelationshipRequest req) {
 		super(req);
@@ -58,65 +58,65 @@ public class CustomMessageReorientCommand extends MessageReorientCommand {
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.communication.edit.commands.MessageReorientCommand#canReorientSource()
-	 * 
+	 *
 	 * @return
 	 */
 
 	@Override
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof Element && newEnd instanceof Element)) {
+		if (!(oldEnd instanceof Element && newEnd instanceof Element)) {
 			return false;
 		}
-		if(!(getLink().eContainer() instanceof Interaction)) {
+		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
-		Interaction container = (Interaction)getLink().eContainer();
+		Interaction container = (Interaction) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_8009(container, getLink(), getNewSource(), getOldTarget());
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.communication.edit.commands.MessageReorientCommand#canReorientTarget()
-	 * 
+	 *
 	 * @return
 	 */
 
 	@Override
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof Element && newEnd instanceof Element)) {
+		if (!(oldEnd instanceof Element && newEnd instanceof Element)) {
 			return false;
 		}
 
-		if(!(getLink().eContainer() instanceof Interaction)) {
+		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
-		Interaction container = (Interaction)getLink().eContainer();
+		Interaction container = (Interaction) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_8009(container, getLink(), getOldSource(), getNewTarget());
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.communication.edit.commands.MessageReorientCommand#reorientSource()
-	 * 
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */
 
 	@Override
 	protected CommandResult reorientSource() throws ExecutionException {
-		//System.out.println("ReorientSource");
+		// System.out.println("ReorientSource");
 		ReconnectMessageHelper.updateMessageEnd(getLink().getSendEvent(), getOldSource(), getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.communication.edit.commands.MessageReorientCommand#reorientTarget()
-	 * 
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */
 
 	@Override
 	protected CommandResult reorientTarget() throws ExecutionException {
-		//System.out.println("ReorientTarget");
+		// System.out.println("ReorientTarget");
 		ReconnectMessageHelper.updateMessageEnd(getLink().getReceiveEvent(), getOldTarget(), getNewTarget());
 		ReconnectMessageHelper.updateMessage(getLink());
 		return CommandResult.newOKCommandResult(getLink());

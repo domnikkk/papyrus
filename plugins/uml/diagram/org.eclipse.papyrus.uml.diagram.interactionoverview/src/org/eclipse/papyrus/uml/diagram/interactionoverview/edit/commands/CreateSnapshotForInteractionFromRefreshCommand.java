@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -60,7 +60,7 @@ public class CreateSnapshotForInteractionFromRefreshCommand extends AbstractTran
 	public CreateSnapshotForInteractionFromRefreshCommand(final TransactionalEditingDomain editingDomain, final View callBehaviorActionView, final GraphicalEditPart host) {
 		super(editingDomain, Messages.CreateSnapshotForInteractionFromRefreshCommand_CreateSnapshotForRefresh, null);
 		this.callBehaviorView = callBehaviorActionView;
-		this.callBehaviorAction = (CallBehaviorAction)callBehaviorActionView.getElement();
+		this.callBehaviorAction = (CallBehaviorAction) callBehaviorActionView.getElement();
 		this.host = host;
 		isOverrideImage = false;
 	}
@@ -87,32 +87,32 @@ public class CreateSnapshotForInteractionFromRefreshCommand extends AbstractTran
 			newResource = resourceSet.createResource(org.eclipse.emf.common.util.URI.createURI(URIUtils.getTimestampedURI()));
 
 			final Copier copier = new Copier(true, true);
-			cloneDiagram = (Diagram)copier.copy(diagram);
+			cloneDiagram = (Diagram) copier.copy(diagram);
 			copier.copyReferences();
-			if(cloneDiagram != null) {
+			if (cloneDiagram != null) {
 				newResource.getContents().add(cloneDiagram);
 			}
 			final GraphicalEditPart behaviorEditPart = findBehaviorEditPart(host, callBehaviorAction);
 			final IFigure borderedNodeImage = behaviorEditPart.getFigure();
 			final IFigure callActionBehaviorImage = findInteractionWithSnapshotInFigure(borderedNodeImage);
-			if(callActionBehaviorImage instanceof InteractionWithSnapshotFigure) {
+			if (callActionBehaviorImage instanceof InteractionWithSnapshotFigure) {
 
-				final ImageFigure imageFigure = ((InteractionWithSnapshotFigure)callActionBehaviorImage).getImageFigure();
-				if(isOverrideImage || imageFigure.getImage() == null) {
-					///test sur le bound
+				final ImageFigure imageFigure = ((InteractionWithSnapshotFigure) callActionBehaviorImage).getImageFigure();
+				if (isOverrideImage || imageFigure.getImage() == null) {
+					// /test sur le bound
 					final PreferencesHint preferenceHint = getReferenceHint(diagram.getType());
 					final Image image = CreateDiagramImage.getDiagramImage(cloneDiagram, preferenceHint, imageFigure, callBehaviorView);
 
 
-					((InteractionWithSnapshotFigure)callActionBehaviorImage).setSnapshot(image);
+					((InteractionWithSnapshotFigure) callActionBehaviorImage).setSnapshot(image);
 					CallBehaviorUtil.setDiagramLinked(callBehaviorView, diagram);
 				}
 			}
 		} finally {
-			if(newResource != null) {
+			if (newResource != null) {
 				resourceSet.getResources().remove(newResource);
 			}
-			if(cloneDiagram != null) {
+			if (cloneDiagram != null) {
 				cloneDiagram.unsetElement();
 				EcoreUtil.delete(cloneDiagram, true);
 			}
@@ -122,23 +122,23 @@ public class CreateSnapshotForInteractionFromRefreshCommand extends AbstractTran
 	}
 
 	protected PreferencesHint getReferenceHint(final String type) {
-		if(PackageEditPart.MODEL_ID.equals(type)) {
+		if (PackageEditPart.MODEL_ID.equals(type)) {
 			return UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
-		} else if(TimingDiagramEditPart.MODEL_ID.equals(type)) {
+		} else if (TimingDiagramEditPart.MODEL_ID.equals(type)) {
 			return org.eclipse.papyrus.uml.diagram.timing.part.UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
-		} else if(InteractionOverviewDiagramEditPart.MODEL_ID.equals(type)) {
+		} else if (InteractionOverviewDiagramEditPart.MODEL_ID.equals(type)) {
 			return Activator.DIAGRAM_PREFERENCES_HINT;
-		} else if(ModelEditPart.MODEL_ID.equals(type)) {
+		} else if (ModelEditPart.MODEL_ID.equals(type)) {
 			return org.eclipse.papyrus.uml.diagram.communication.part.UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 		}
 		return null;
 	}
 
 	protected GraphicalEditPart findBehaviorEditPart(final EditPart parentEditPart, final CallBehaviorAction callBehaviorAction) {
-		for(final Object child : parentEditPart.getChildren()) {
-			if(child instanceof GraphicalEditPart) {
-				final GraphicalEditPart editPartChild = (GraphicalEditPart)child;
-				if(editPartChild.resolveSemanticElement() == callBehaviorAction) {
+		for (final Object child : parentEditPart.getChildren()) {
+			if (child instanceof GraphicalEditPart) {
+				final GraphicalEditPart editPartChild = (GraphicalEditPart) child;
+				if (editPartChild.resolveSemanticElement() == callBehaviorAction) {
 					return editPartChild;
 				}
 			}
@@ -147,13 +147,13 @@ public class CreateSnapshotForInteractionFromRefreshCommand extends AbstractTran
 	}
 
 	protected IFigure findInteractionWithSnapshotInFigure(final IFigure containerFigure) {
-		for(final Object childFigureAsObject : containerFigure.getChildren()) {
-			if(childFigureAsObject instanceof IFigure) {
-				final IFigure childFigure = (IFigure)childFigureAsObject;
-				if(childFigure instanceof InteractionWithSnapshotFigure) {
+		for (final Object childFigureAsObject : containerFigure.getChildren()) {
+			if (childFigureAsObject instanceof IFigure) {
+				final IFigure childFigure = (IFigure) childFigureAsObject;
+				if (childFigure instanceof InteractionWithSnapshotFigure) {
 					return childFigure;
 				} else {
-					if(!childFigure.getChildren().isEmpty()) {
+					if (!childFigure.getChildren().isEmpty()) {
 						return findInteractionWithSnapshotInFigure(childFigure);
 					}
 				}
@@ -164,14 +164,14 @@ public class CreateSnapshotForInteractionFromRefreshCommand extends AbstractTran
 
 	protected Diagram findSequenceDiagram() {
 		final String uuidDiagram = CallBehaviorUtil.getDiagramLinked(callBehaviorView);
-		if(uuidDiagram != null && !uuidDiagram.equals("")) {
+		if (uuidDiagram != null && !uuidDiagram.equals("")) {
 			final ResourceSet resourceSet = callBehaviorAction.eResource().getResourceSet();
 			final Iterator<?> ite = resourceSet.getAllContents();
-			while(ite.hasNext()) {
+			while (ite.hasNext()) {
 				final Object eObject = ite.next();
-				if(eObject instanceof Diagram) {
-					final Diagram diagram = (Diagram)eObject;
-					if(uuidDiagram.equals(DiagramUtils.getUUIDForSnapshot(diagram))) {
+				if (eObject instanceof Diagram) {
+					final Diagram diagram = (Diagram) eObject;
+					if (uuidDiagram.equals(DiagramUtils.getUUIDForSnapshot(diagram))) {
 						return diagram;
 					}
 				}

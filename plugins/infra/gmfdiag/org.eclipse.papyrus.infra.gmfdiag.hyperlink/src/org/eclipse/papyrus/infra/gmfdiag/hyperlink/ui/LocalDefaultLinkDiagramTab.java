@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,7 +56,7 @@ import org.eclipse.swt.widgets.Text;
 /**
  * this is the tab in charge to display the hyperlink diagram created by using heuristic for the property default
  * the code was extract from {@link NavigationCreateDiagramDialog}
- * 
+ *
  */
 public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 
@@ -95,8 +95,8 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 
 		@Override
 		public boolean equals(Object obj) {
-			if(obj instanceof NavigableGroupKey) {
-				NavigableGroupKey grpKey = (NavigableGroupKey)obj;
+			if (obj instanceof NavigableGroupKey) {
+				NavigableGroupKey grpKey = (NavigableGroupKey) obj;
 				return grpKey.ancestor == ancestor && grpKey.feature == feature;
 			}
 			return false;
@@ -114,20 +114,20 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param tabFolder
-	 *        the parent tabfolder
+	 *            the parent tabfolder
 	 * @param semanticElement
-	 *        the element from which diagram can be created
+	 *            the element from which diagram can be created
 	 */
 	@Deprecated
 	public LocalDefaultLinkDiagramTab(CTabFolder tabFolder, EObject semanticElement) {
 		this.semanticElement = semanticElement;
-		//init list of descriptor to fill the table
+		// init list of descriptor to fill the table
 		initLocalNavigableElement();
-		//associate the composite to the tabfolder
+		// associate the composite to the tabfolder
 		CTabItem tbtmDefaultsHyperlinks = new CTabItem(tabFolder, SWT.NONE);
 		tbtmDefaultsHyperlinks.setText("Hyperlink diagram with Heuristic");
 		defaultHyperlinkComposite = new Composite(tabFolder, SWT.NONE);
@@ -144,9 +144,9 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 	public void init(CTabFolder tabFolder, List<HyperLinkObject> hyperlinkObjects, EObject element) {
 		super.init(tabFolder, hyperlinkObjects, element);
 		this.semanticElement = element;
-		//init list of descriptor to fill the table
+		// init list of descriptor to fill the table
 		initLocalNavigableElement();
-		//associate the composite to the tabfolder
+		// associate the composite to the tabfolder
 		CTabItem tbtmDefaultsHyperlinks = new CTabItem(tabFolder, SWT.NONE);
 		tbtmDefaultsHyperlinks.setText("Hyperlink diagram with Heuristic");
 		defaultHyperlinkComposite = new Composite(tabFolder, SWT.NONE);
@@ -158,7 +158,7 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 
 	/**
 	 * get the command to create diagrams from the selection done into the table
-	 * 
+	 *
 	 * @return the command in charge of the creation of the diagrams
 	 * **/
 	public ICommand getCommand() {
@@ -180,20 +180,20 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 
 		CompositeCommand compositeCommand = new CompositeCommand("Create diagrams");
 
-		for(TableItem tableItem : table.getItems()) {
+		for (TableItem tableItem : table.getItems()) {
 			try {
-				CCombo elementTypeCombo = (CCombo)tableItem.getData(ELEMENT_TYPE_COMBO_KEY);
+				CCombo elementTypeCombo = (CCombo) tableItem.getData(ELEMENT_TYPE_COMBO_KEY);
 				int elementTypeSelectionIndex = elementTypeCombo.getSelectionIndex();
-				CCombo diagramTypeCombo = (CCombo)tableItem.getData(DIAGRAM_TYPE_COMBO_KEY);
+				CCombo diagramTypeCombo = (CCombo) tableItem.getData(DIAGRAM_TYPE_COMBO_KEY);
 				int diagramTypeSelectionIndex = diagramTypeCombo.getSelectionIndex();
 
-				if(tableItem.getChecked() && elementTypeSelectionIndex != -1 && diagramTypeSelectionIndex != -1) {
-					List<NavigableElement> possibleElements = (List<NavigableElement>)tableItem.getData(CREATION_ENTRY_KEY);
+				if (tableItem.getChecked() && elementTypeSelectionIndex != -1 && diagramTypeSelectionIndex != -1) {
+					List<NavigableElement> possibleElements = (List<NavigableElement>) tableItem.getData(CREATION_ENTRY_KEY);
 					NavigableElement navElement = possibleElements.get(elementTypeSelectionIndex);
 
 					CreationCommandDescriptor desc = possibleCreations.get(navElement).get(diagramTypeSelectionIndex);
 
-					Text diagramNameText = (Text)tableItem.getData(DIAGRAM_NAME_TEXT_KEY);
+					Text diagramNameText = (Text) tableItem.getData(DIAGRAM_NAME_TEXT_KEY);
 
 					compositeCommand.add(NavigationHelper.getLinkCreateAndOpenNavigableDiagramCommand(navElement, desc.getCommand(), diagramNameText.getText(), modelSet));
 				}
@@ -208,9 +208,9 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 
 	/**
 	 * construction the ui
-	 * 
+	 *
 	 * @param parent
-	 *        the composite that contains table.
+	 *            the composite that contains table.
 	 * @return the table contained in the composite
 	 */
 	protected Control createArea(Composite parent) {
@@ -219,9 +219,9 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 		table.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
 		table.setHeaderVisible(true);
 		table.setLinesVisible(true);
-		//		table.setBounds(10, 20, 650, 170);
+		// table.setBounds(10, 20, 650, 170);
 
-		for(int i = 0; i < COLUMN_NAMES.length; i++) {
+		for (int i = 0; i < COLUMN_NAMES.length; i++) {
 			TableColumn col = new TableColumn(table, SWT.NONE);
 			col.setText(COLUMN_NAMES[i]);
 			col.setWidth(COLUMN_WIDTHS[i]);
@@ -231,7 +231,7 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 		// regroup CreatedNavigableElement which has same ancestor and use the same feature of this ancestor
 		Map<NavigableGroupKey, List<NavigableElement>> successorsMap = new HashMap<NavigableGroupKey, List<NavigableElement>>();
 
-		for(Entry<NavigableElement, List<CreationCommandDescriptor>> possibleCreationEntry : possibleCreations.entrySet()) {
+		for (Entry<NavigableElement, List<CreationCommandDescriptor>> possibleCreationEntry : possibleCreations.entrySet()) {
 			NavigableElement navElement = possibleCreationEntry.getKey();
 
 			NavigableGroupKey groupKey = new NavigableGroupKey();
@@ -239,16 +239,16 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 			// ignore containing feature if we are on the root element
 			// because it is a direct diagram creation
 			// => the feature has no meaning in this case
-			if(!semanticElement.equals(navElement.getElement())) {
+			if (!semanticElement.equals(navElement.getElement())) {
 				groupKey.feature = navElement.getFeature();
 			}
 
-			if(navElement instanceof CreatedNavigableElement) {
-				groupKey.ancestor = ((CreatedNavigableElement)navElement).getPreviousNavigableElement();
+			if (navElement instanceof CreatedNavigableElement) {
+				groupKey.ancestor = ((CreatedNavigableElement) navElement).getPreviousNavigableElement();
 			}
 
 			List<NavigableElement> successors = successorsMap.get(groupKey);
-			if(successors == null) {
+			if (successors == null) {
 				successors = new LinkedList<NavigableElement>();
 				successorsMap.put(groupKey, successors);
 			}
@@ -256,7 +256,7 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 		}
 
 		// handle group
-		for(Entry<NavigableGroupKey, List<NavigableElement>> successorsEntry : successorsMap.entrySet()) {
+		for (Entry<NavigableGroupKey, List<NavigableElement>> successorsEntry : successorsMap.entrySet()) {
 			NavigableGroupKey groupKey = successorsEntry.getKey();
 			List<NavigableElement> successors = successorsEntry.getValue();
 
@@ -265,13 +265,13 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 			tableItem.setChecked(false);
 			tableItem.setData(CREATION_ENTRY_KEY, successors);
 
-			//////FIXME///////
-			//tableItem.setText(0, UMLNavigationHelper.getNavigationTypeFromFeature(groupKey.feature)); //Remove this dependency to UML. LabelProviderService?
+			// ////FIXME///////
+			// tableItem.setText(0, UMLNavigationHelper.getNavigationTypeFromFeature(groupKey.feature)); //Remove this dependency to UML. LabelProviderService?
 			tableItem.setText(0, "Unknown");
-			//////////////////
+			// ////////////////
 
 			String featureString = "";
-			if(groupKey.feature != null) {
+			if (groupKey.feature != null) {
 				featureString = groupKey.feature.getName();
 			}
 			tableItem.setText(1, featureString);
@@ -284,7 +284,7 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 
 			TableEditor elementTypeEditor = new TableEditor(table);
 			final CCombo elementTypeCombo = new CCombo(table, SWT.NONE);
-			for(NavigableElement successor : successors) {
+			for (NavigableElement successor : successors) {
 				String typeName = successor.getElement().eClass().getName();
 				elementTypeCombo.add(typeName);
 				elementTypeCombo.setData(typeName, successor);
@@ -295,13 +295,13 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 			elementTypeCombo.addModifyListener(new ModifyListener() {
 
 				public void modifyText(ModifyEvent e) {
-					String currentTypeName = ((CCombo)e.widget).getText();
+					String currentTypeName = ((CCombo) e.widget).getText();
 
-					NavigableElement successor = (NavigableElement)elementTypeCombo.getData(currentTypeName);
+					NavigableElement successor = (NavigableElement) elementTypeCombo.getData(currentTypeName);
 
 					diagramTypeCombo.clearSelection();
 					diagramTypeCombo.removeAll();
-					for(CreationCommandDescriptor desc : possibleCreations.get(successor)) {
+					for (CreationCommandDescriptor desc : possibleCreations.get(successor)) {
 						diagramTypeCombo.add(desc.getLabel());
 					}
 					diagramTypeCombo.select(0);
@@ -330,16 +330,16 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 		List<NavigableElement> navElements = NavigationHelper.getInstance().getAllNavigableElements(semanticElement);
 		possibleCreations = new HashMap<NavigableElement, List<CreationCommandDescriptor>>();
 
-		for(NavigableElement navElement : navElements) {
+		for (NavigableElement navElement : navElements) {
 			final EObject element = navElement.getElement();
 
 			List<CreationCommandDescriptor> possibleCommandDescs = new LinkedList<CreationCommandDescriptor>();
-			for(final CreationCommandDescriptor desc : getCreationCommandRegistry().getCommandDescriptors()) {
-				if(desc.getCondition() == null || desc.getCondition().create(element)) {
+			for (final CreationCommandDescriptor desc : getCreationCommandRegistry().getCommandDescriptors()) {
+				if (desc.getCondition() == null || desc.getCondition().create(element)) {
 					possibleCommandDescs.add(desc);
 				}
 			}
-			if(!possibleCommandDescs.isEmpty()) {
+			if (!possibleCommandDescs.isEmpty()) {
 				possibleCreations.put(navElement, possibleCommandDescs);
 			}
 		}
@@ -354,7 +354,7 @@ public class LocalDefaultLinkDiagramTab extends AbstractHyperLinkTab {
 
 	@Override
 	public void setInput(List<HyperLinkObject> hyperLinkObjectList) {
-		//nothing to do here?
+		// nothing to do here?
 	}
 
 }

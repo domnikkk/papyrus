@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,20 +37,20 @@ public class ModelTemplateExtensionFactory extends FileBasedExtensionFactory {
 	@Override
 	protected Element createExtension(FileBasedCustomizableElement customizableElement, PluginEditor editor) {
 		Element extension = super.createExtension(customizableElement, editor);
-		if(customizableElement instanceof ModelTemplate) {
-			ModelTemplate element = (ModelTemplate)customizableElement;
+		if (customizableElement instanceof ModelTemplate) {
+			ModelTemplate element = (ModelTemplate) customizableElement;
 
 			extension.setAttribute("id", element.getId()); //$NON-NLS-1$
 
-			if(element.getName() != null) {
+			if (element.getName() != null) {
 				extension.setAttribute("name", element.getName()); //$NON-NLS-1$
 			}
 
-			if(element.getLanguage() != null) {
+			if (element.getLanguage() != null) {
 				extension.setAttribute("language", element.getLanguage()); //$NON-NLS-1$
 			}
 
-			//TODO: Papyrus now handles *.di and *.notation files
+			// TODO: Papyrus now handles *.di and *.notation files
 		}
 
 		return extension;

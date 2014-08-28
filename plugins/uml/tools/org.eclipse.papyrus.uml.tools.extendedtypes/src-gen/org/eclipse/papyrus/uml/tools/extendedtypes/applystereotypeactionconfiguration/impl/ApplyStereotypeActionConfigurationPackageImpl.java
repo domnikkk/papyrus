@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -17,11 +17,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
-
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfiguration;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationFactory;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage;
@@ -32,19 +29,20 @@ import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfigur
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ListValue;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.QueryExecutionValue;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl implements ApplyStereotypeActionConfigurationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass applyStereotypeActionConfigurationEClass = null;
@@ -52,6 +50,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass stereotypeToApplyEClass = null;
@@ -59,6 +58,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass featureToSetEClass = null;
@@ -66,6 +66,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass featureValueEClass = null;
@@ -73,6 +74,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass listValueEClass = null;
@@ -80,6 +82,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass constantValueEClass = null;
@@ -87,6 +90,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass dynamicValueEClass = null;
@@ -94,20 +98,17 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass queryExecutionValueEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage#eNS_URI
 	 * @see #init()
@@ -120,27 +121,31 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link ApplyStereotypeActionConfigurationPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 *
+	 * <p>
+	 * This method is used to initialize {@link ApplyStereotypeActionConfigurationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static ApplyStereotypeActionConfigurationPackage init() {
-		if (isInited) return (ApplyStereotypeActionConfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ApplyStereotypeActionConfigurationPackage.eNS_URI);
+		if (isInited) {
+			return (ApplyStereotypeActionConfigurationPackage) EPackage.Registry.INSTANCE.getEPackage(ApplyStereotypeActionConfigurationPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		ApplyStereotypeActionConfigurationPackageImpl theApplyStereotypeActionConfigurationPackage = (ApplyStereotypeActionConfigurationPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ApplyStereotypeActionConfigurationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ApplyStereotypeActionConfigurationPackageImpl());
+		ApplyStereotypeActionConfigurationPackageImpl theApplyStereotypeActionConfigurationPackage = (ApplyStereotypeActionConfigurationPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ApplyStereotypeActionConfigurationPackageImpl ? EPackage.Registry.INSTANCE
+				.get(eNS_URI) : new ApplyStereotypeActionConfigurationPackageImpl());
 
 		isInited = true;
 
@@ -157,7 +162,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 		// Mark meta-data to indicate it can't be changed
 		theApplyStereotypeActionConfigurationPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ApplyStereotypeActionConfigurationPackage.eNS_URI, theApplyStereotypeActionConfigurationPackage);
 		return theApplyStereotypeActionConfigurationPackage;
@@ -166,6 +171,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getApplyStereotypeActionConfiguration() {
@@ -175,15 +181,17 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getApplyStereotypeActionConfiguration_StereotypesToApply() {
-		return (EReference)applyStereotypeActionConfigurationEClass.getEStructuralFeatures().get(0);
+		return (EReference) applyStereotypeActionConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getStereotypeToApply() {
@@ -193,42 +201,47 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getStereotypeToApply_StereotypeQualifiedName() {
-		return (EAttribute)stereotypeToApplyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) stereotypeToApplyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getStereotypeToApply_UpdateName() {
-		return (EAttribute)stereotypeToApplyEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) stereotypeToApplyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getStereotypeToApply_RequiredProfiles() {
-		return (EAttribute)stereotypeToApplyEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) stereotypeToApplyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getStereotypeToApply_FeaturesToSet() {
-		return (EReference)stereotypeToApplyEClass.getEStructuralFeatures().get(3);
+		return (EReference) stereotypeToApplyEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getFeatureToSet() {
@@ -238,24 +251,27 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getFeatureToSet_FeatureName() {
-		return (EAttribute)featureToSetEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) featureToSetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getFeatureToSet_Value() {
-		return (EReference)featureToSetEClass.getEStructuralFeatures().get(1);
+		return (EReference) featureToSetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getFeatureValue() {
@@ -265,6 +281,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getListValue() {
@@ -274,15 +291,17 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getListValue_Values() {
-		return (EReference)listValueEClass.getEStructuralFeatures().get(0);
+		return (EReference) listValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getConstantValue() {
@@ -292,15 +311,17 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getConstantValue_ValueInstance() {
-		return (EReference)constantValueEClass.getEStructuralFeatures().get(0);
+		return (EReference) constantValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getDynamicValue() {
@@ -310,6 +331,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getQueryExecutionValue() {
@@ -319,28 +341,33 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ApplyStereotypeActionConfigurationFactory getApplyStereotypeActionConfigurationFactory() {
-		return (ApplyStereotypeActionConfigurationFactory)getEFactoryInstance();
+		return (ApplyStereotypeActionConfigurationFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -373,19 +400,23 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -394,9 +425,9 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ExtendedtypesPackage theExtendedtypesPackage = (ExtendedtypesPackage)EPackage.Registry.INSTANCE.getEPackage(ExtendedtypesPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		ExtendedtypesPackage theExtendedtypesPackage = (ExtendedtypesPackage) EPackage.Registry.INSTANCE.getEPackage(ExtendedtypesPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage) EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -411,13 +442,16 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(applyStereotypeActionConfigurationEClass, ApplyStereotypeActionConfiguration.class, "ApplyStereotypeActionConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getApplyStereotypeActionConfiguration_StereotypesToApply(), this.getStereotypeToApply(), null, "stereotypesToApply", null, 0, -1, ApplyStereotypeActionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplyStereotypeActionConfiguration_StereotypesToApply(), this.getStereotypeToApply(), null, "stereotypesToApply", null, 0, -1, ApplyStereotypeActionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stereotypeToApplyEClass, StereotypeToApply.class, "StereotypeToApply", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStereotypeToApply_StereotypeQualifiedName(), ecorePackage.getEString(), "stereotypeQualifiedName", null, 0, 1, StereotypeToApply.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStereotypeToApply_StereotypeQualifiedName(), ecorePackage.getEString(), "stereotypeQualifiedName", null, 0, 1, StereotypeToApply.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getStereotypeToApply_UpdateName(), ecorePackage.getEBoolean(), "updateName", null, 0, 1, StereotypeToApply.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStereotypeToApply_RequiredProfiles(), theEcorePackage.getEString(), "requiredProfiles", null, 1, -1, StereotypeToApply.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStereotypeToApply_FeaturesToSet(), this.getFeatureToSet(), null, "featuresToSet", null, 0, -1, StereotypeToApply.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStereotypeToApply_FeaturesToSet(), this.getFeatureToSet(), null, "featuresToSet", null, 0, -1, StereotypeToApply.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureToSetEClass, FeatureToSet.class, "FeatureToSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFeatureToSet_FeatureName(), ecorePackage.getEString(), "featureName", null, 1, 1, FeatureToSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -429,7 +463,8 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 		initEReference(getListValue_Values(), this.getFeatureValue(), null, "values", null, 0, -1, ListValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constantValueEClass, ConstantValue.class, "ConstantValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConstantValue_ValueInstance(), theUMLPackage.getValueSpecification(), null, "valueInstance", null, 0, 1, ConstantValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConstantValue_ValueInstance(), theUMLPackage.getValueSpecification(), null, "valueInstance", null, 0, 1, ConstantValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(dynamicValueEClass, DynamicValue.class, "DynamicValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -439,4 +474,4 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 		createResource(eNS_URI);
 	}
 
-} //ApplyStereotypeActionConfigurationPackageImpl
+} // ApplyStereotypeActionConfigurationPackageImpl

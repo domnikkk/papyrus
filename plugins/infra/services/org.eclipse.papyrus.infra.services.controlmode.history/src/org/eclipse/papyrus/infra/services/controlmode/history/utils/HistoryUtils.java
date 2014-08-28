@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.services.controlmode.history.utils;
 
@@ -21,9 +21,9 @@ import org.eclipse.papyrus.infra.services.controlmode.mm.history.ControledResour
 
 /**
  * Set of utility methods linked to Trace for ControlMode
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class HistoryUtils {
 
@@ -31,14 +31,14 @@ public class HistoryUtils {
 	/**
 	 * Gets the HistoryModel for the currently selected editor. <br>
 	 * Warning: this method can return null if called during the MultiEditor initialization.
-	 * 
-	 * 
+	 *
+	 *
 	 * @return The {@link HistoryModel} of the current editor, or null if not found.
 	 */
 	public static HistoryModel getHistoryModel() {
 
 		try {
-			return (HistoryModel)ModelUtils.getModelSetChecked().getModel(HistoryModel.MODEL_ID);
+			return (HistoryModel) ModelUtils.getModelSetChecked().getModel(HistoryModel.MODEL_ID);
 		} catch (ServiceException e) {
 			return null;
 		}
@@ -47,42 +47,42 @@ public class HistoryUtils {
 	/**
 	 * Gets the HistoryModel for the currently selected editor. <br>
 	 * Warning: this method can return null if called during the MultiEditor initialization.
-	 * 
-	 * 
+	 *
+	 *
 	 * @return The {@link HistoryModel} of the current editor, or null if not found.
 	 * @throws ServiceException
-	 *         If an error occurs while getting or starting the service.
+	 *             If an error occurs while getting or starting the service.
 	 */
 	public static HistoryModel getHistoryModelChecked() throws ServiceException {
 
-		return (HistoryModel)ModelUtils.getModelSetChecked().getModel(HistoryModel.MODEL_ID);
+		return (HistoryModel) ModelUtils.getModelSetChecked().getModel(HistoryModel.MODEL_ID);
 	}
 
 	/**
 	 * Gets the HistoryModel from the {@link ModelSet}. <br>
-	 * 
+	 *
 	 * @param modelsManager
-	 *        The modelManager containing the requested model.
-	 * 
+	 *            The modelManager containing the requested model.
+	 *
 	 * @return The {@link HistoryModel} registered in modelManager, or null if not found.
 	 */
 	public static HistoryModel getHistoryModel(ModelSet modelsManager) {
 
-		return (HistoryModel)modelsManager.getModel(HistoryModel.MODEL_ID);
+		return (HistoryModel) modelsManager.getModel(HistoryModel.MODEL_ID);
 	}
 
 	/**
 	 * Gets the HistoryModel from the {@link ServicesRegistry}. <br>
-	 * 
+	 *
 	 * @param ServicesRegistry
-	 *        The servie registry under which the ModelSet is registered.
-	 * 
+	 *            The servie registry under which the ModelSet is registered.
+	 *
 	 * @return The {@link SashModel} registered in modelManager, or null if not found.
 	 */
 	public static HistoryModel getHistoryModel(ServicesRegistry servicesRegistry) {
 
 		try {
-			return (HistoryModel)ModelUtils.getModelSetChecked(servicesRegistry).getModel(HistoryModel.MODEL_ID);
+			return (HistoryModel) ModelUtils.getModelSetChecked(servicesRegistry).getModel(HistoryModel.MODEL_ID);
 		} catch (ServiceException e) {
 			return null;
 		}
@@ -90,22 +90,22 @@ public class HistoryUtils {
 
 	/**
 	 * Gets the HistoryModel from the {@link ServicesRegistry}. <br>
-	 * 
+	 *
 	 * @param ServicesRegistry
-	 *        The servie registry under which the ModelSet is registered.
-	 * 
+	 *            The servie registry under which the ModelSet is registered.
+	 *
 	 * @return The {@link SashModel} registered in modelManager, or null if not found.
 	 * @throws ServiceException
-	 *         If the service can't be returned.
+	 *             If the service can't be returned.
 	 */
 	public static HistoryModel getHistoryModelChecked(ServicesRegistry servicesRegistry) throws ServiceException {
 
-		return (HistoryModel)ModelUtils.getModelSetChecked(servicesRegistry).getModel(HistoryModel.MODEL_ID);
+		return (HistoryModel) ModelUtils.getModelSetChecked(servicesRegistry).getModel(HistoryModel.MODEL_ID);
 	}
 
 	/**
 	 * Returns from a string the corresponding uri without the file name
-	 * 
+	 *
 	 * @param uri
 	 * @return an {@link URI} corresponding of the full path of the string
 	 */
@@ -115,7 +115,7 @@ public class HistoryUtils {
 
 	/**
 	 * Returns the uri without the file name
-	 * 
+	 *
 	 * @param createURI
 	 * @return the {@link URI} without the file name
 	 */
@@ -125,7 +125,7 @@ public class HistoryUtils {
 
 	/**
 	 * Resolve the current URL according to the uri path
-	 * 
+	 *
 	 * @param uriPath
 	 * @param currentURL
 	 * @return the
@@ -137,7 +137,7 @@ public class HistoryUtils {
 
 	/**
 	 * Return an absolute URI to a relative according to the uri path
-	 * 
+	 *
 	 * @param uriPath
 	 * @param currentURI
 	 * @return
@@ -148,21 +148,21 @@ public class HistoryUtils {
 
 	/**
 	 * Get all the controlled resource in the Model Set with the corresponding url
-	 * 
+	 *
 	 * @param set
 	 * @param url
 	 * @return a list of ControledResource
 	 */
 	public static List<ControledResource> getControledResourcesForURL(ModelSet set, String url) {
-		if(url == null || set == null) {
+		if (url == null || set == null) {
 			return Collections.emptyList();
 		}
 		List<ControledResource> result = new LinkedList<ControledResource>();
-		for(Resource r : set.getResources()) {
-			if(SashModel.MODEL_FILE_EXTENSION.equals(r.getURI().fileExtension())) {
-				for(EObject e : r.getContents()) {
-					if(e instanceof ControledResource) {
-						addControled(url, (ControledResource)e, result);
+		for (Resource r : set.getResources()) {
+			if (SashModel.MODEL_FILE_EXTENSION.equals(r.getURI().fileExtension())) {
+				for (EObject e : r.getContents()) {
+					if (e instanceof ControledResource) {
+						addControled(url, (ControledResource) e, result);
 					}
 				}
 			}
@@ -172,19 +172,19 @@ public class HistoryUtils {
 
 	/**
 	 * Add to the result list the found controledResource corresponding to the given url
-	 * 
+	 *
 	 * @param url
-	 *        , the searched url
+	 *            , the searched url
 	 * @param controled
-	 *        , the controled resource to start with
+	 *            , the controled resource to start with
 	 * @param result
-	 *        , the list to fill
+	 *            , the list to fill
 	 */
 	private static void addControled(String url, ControledResource controled, List<ControledResource> result) {
-		if(url != null && url.equals(controled.getResourceURL())) {
+		if (url != null && url.equals(controled.getResourceURL())) {
 			result.add(controled);
 		}
-		for(ControledResource c : controled.getChildren()) {
+		for (ControledResource c : controled.getChildren()) {
 			addControled(url, c, result);
 		}
 	}

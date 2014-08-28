@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -40,24 +40,25 @@ public class LayerStackSynchronizerTest {
 	 * ModelSet created for each test
 	 */
 	protected ModelSet modelSet;
+
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
-//		// Create ModelSet and Model
-//		ModelSet mngr = new ModelSet();
-//		// LayersModel
-//		LayersModel layersModel = new LayersModel();
-//		mngr.registerModel(layersModel);
-//		// Notation model
-//		NotationModel notationModel = new NotationModel();
-//		mngr.registerModel(notationModel);
-//		// Do create resources
-//		URI uri = URI.createPlatformResourceURI(PROJECT_MODEL_URI, true);
-//		mngr.createModels(uri);
-//		
-//		modelSet = mngr;
+		// // Create ModelSet and Model
+		// ModelSet mngr = new ModelSet();
+		// // LayersModel
+		// LayersModel layersModel = new LayersModel();
+		// mngr.registerModel(layersModel);
+		// // Notation model
+		// NotationModel notationModel = new NotationModel();
+		// mngr.registerModel(notationModel);
+		// // Do create resources
+		// URI uri = URI.createPlatformResourceURI(PROJECT_MODEL_URI, true);
+		// mngr.createModels(uri);
+		//
+		// modelSet = mngr;
 	}
 
 	/**
@@ -65,8 +66,8 @@ public class LayerStackSynchronizerTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-//		modelSet.unload();
-		
+		// modelSet.unload();
+
 	}
 
 	/**
@@ -78,11 +79,11 @@ public class LayerStackSynchronizerTest {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		LayersStack stack = LayersFactory.eINSTANCE.createLayersStack();
 		stack.setDiagram(diagram);
-		
+
 
 		// Create the stack
 		LayerStackSynchronizer synchronizer = new LayerStackSynchronizer(stack);
-		
+
 		// Check creation
 		assertNotNull("object created", synchronizer);
 	}
@@ -96,11 +97,11 @@ public class LayerStackSynchronizerTest {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		LayersStack stack = LayersFactory.eINSTANCE.createLayersStack();
 		stack.setDiagram(diagram);
-		
+
 
 		// Create the stack
 		LayerStackSynchronizer synchronizer = new LayerStackSynchronizer(stack);
-		
+
 		// Check creation
 		assertNotNull("getDiagram", synchronizer.getDiagram());
 		assertSame("getDiagram", diagram, synchronizer.getDiagram());
@@ -115,11 +116,11 @@ public class LayerStackSynchronizerTest {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		LayersStack stack = LayersFactory.eINSTANCE.createLayersStack();
 		stack.setDiagram(diagram);
-		
+
 
 		// Create the stack
 		LayerStackSynchronizer synchronizer = new LayerStackSynchronizer(stack);
-		
+
 		// Check creation
 		assertNotNull("getLayersStack", synchronizer.getLayersStack());
 		assertSame("getLayersStack", stack, synchronizer.getLayersStack());

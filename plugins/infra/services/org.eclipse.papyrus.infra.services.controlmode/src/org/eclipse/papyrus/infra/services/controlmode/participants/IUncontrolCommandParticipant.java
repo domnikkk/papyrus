@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,15 +18,15 @@ import org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest;
 
 /**
  * Define a participant for complete the uncontrol command for specific use
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public interface IUncontrolCommandParticipant extends IControlModeParticipant {
 
 	/**
 	 * The participant return true if it should handle this request
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -34,7 +34,7 @@ public interface IUncontrolCommandParticipant extends IControlModeParticipant {
 
 	/**
 	 * Ask the participant for command that will be executed before the control/uncontrol command
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -42,7 +42,7 @@ public interface IUncontrolCommandParticipant extends IControlModeParticipant {
 
 	/**
 	 * Ask the participant for command that will be executed after the control/uncontrol command
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */

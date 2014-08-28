@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -31,13 +31,12 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.commands.CommentAnnotatedEleme
 import org.eclipse.papyrus.uml.diagram.clazz.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.commands.ConstraintConstrainedElementReorientCommand;
 import org.eclipse.papyrus.uml.diagram.common.helper.CreateOrShowExistingElementHelper;
-import org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <pre>
  * Custom semantic edit policy that replace DefaultSemanticEditPolicy
- * in order to manage Class Diagram specific elements (reference 
+ * in order to manage Class Diagram specific elements (reference
  * relationships COMMENT_ANNOTATED_ELEMENT and CONSTRAINT_CONSTRAINED_ELEMENT).
  * </pre>
  */
@@ -50,42 +49,43 @@ public class CustomDefaultSemanticEditPolicy extends DefaultSemanticEditPolicy {
 	private IGraphicalTypeRegistry inheritedRegistry = new GraphicalTypeRegistry();
 
 	private CreateOrShowExistingElementHelper existingElementHelper = new SysMLCreateOrShowExistingElementHelper();
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 
-		if(ElementTypes.COMMENT_ANNOTATED_ELEMENT == req.getElementType()) {
+		if (ElementTypes.COMMENT_ANNOTATED_ELEMENT == req.getElementType()) {
 			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
-		if(ElementTypes.CONSTRAINT_CONSTRAINED_ELEMENT == req.getElementType()) {
+		if (ElementTypes.CONSTRAINT_CONSTRAINED_ELEMENT == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
 		String newEdgeGraphicalType = registry.getEdgeGraphicalType(req.getElementType());
 
-		if(inheritedRegistry.isKnownEdgeType(newEdgeGraphicalType)) {
+		if (inheritedRegistry.isKnownEdgeType(newEdgeGraphicalType)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
-		if(!registry.isKnownEdgeType(newEdgeGraphicalType)) {
+		if (!registry.isKnownEdgeType(newEdgeGraphicalType)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		final Command defaultCommand = super.getCreateRelationshipCommand(req);
-		if(defaultCommand.canExecute()  && req.getSource()!=null && req.getTarget()!=null) {
+		if (defaultCommand.canExecute() && req.getSource() != null && req.getTarget() != null) {
 			final EClass eClass = req.getElementType().getEClass();
 			final IElementType elementType = req.getElementType();
-			if(UMLPackage.eINSTANCE.getInterfaceRealization()==eClass){
-				return this.existingElementHelper.getCreateOrRestoreElementCommand(req, defaultCommand,elementType);
-			}else if(elementType.getEClass() == UMLPackage.eINSTANCE.getAssociation()) {
+			if (UMLPackage.eINSTANCE.getInterfaceRealization() == eClass) {
 				return this.existingElementHelper.getCreateOrRestoreElementCommand(req, defaultCommand, elementType);
-			} else if(eClass == UMLPackage.eINSTANCE.getDependency()) {
+			} else if (elementType.getEClass() == UMLPackage.eINSTANCE.getAssociation()) {
 				return this.existingElementHelper.getCreateOrRestoreElementCommand(req, defaultCommand, elementType);
-			} else if(eClass == UMLPackage.eINSTANCE.getGeneralization()) {
+			} else if (eClass == UMLPackage.eINSTANCE.getDependency()) {
 				return this.existingElementHelper.getCreateOrRestoreElementCommand(req, defaultCommand, elementType);
-			} else if(eClass == UMLPackage.eINSTANCE.getUsage()) {
+			} else if (eClass == UMLPackage.eINSTANCE.getGeneralization()) {
+				return this.existingElementHelper.getCreateOrRestoreElementCommand(req, defaultCommand, elementType);
+			} else if (eClass == UMLPackage.eINSTANCE.getUsage()) {
 				return this.existingElementHelper.getCreateOrRestoreElementCommand(req, defaultCommand, elementType);
 			}
 		}
@@ -98,14 +98,14 @@ public class CustomDefaultSemanticEditPolicy extends DefaultSemanticEditPolicy {
 	@Override
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 
-		View reconnectedView = (View)req.getParameter(RequestParameterConstants.GRAPHICAL_RECONNECTED_EDGE);
-		String reconnectedViewType = (reconnectedView != null) ? reconnectedView.getType() : IGraphicalTypeRegistry.UNDEFINED_TYPE;
+		View reconnectedView = (View) req.getParameter(org.eclipse.papyrus.infra.services.edit.utils.RequestParameterConstants.GRAPHICAL_RECONNECTED_EDGE);
+		String reconnectedViewType = (reconnectedView != null) ? reconnectedView.getType() : org.eclipse.papyrus.infra.gmfdiag.common.providers.IGraphicalTypeRegistry.UNDEFINED_TYPE;
 
-		if(ElementTypes.COMMENT_ANNOTATED_ELEMENT.getSemanticHint().equals(reconnectedViewType)) {
+		if (ElementTypes.COMMENT_ANNOTATED_ELEMENT.getSemanticHint().equals(reconnectedViewType)) {
 			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
 		}
 
-		if(ElementTypes.CONSTRAINT_CONSTRAINED_ELEMENT.getSemanticHint().equals(reconnectedViewType)) {
+		if (ElementTypes.CONSTRAINT_CONSTRAINED_ELEMENT.getSemanticHint().equals(reconnectedViewType)) {
 			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
 		}
 

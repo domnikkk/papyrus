@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -103,7 +103,7 @@ public class AbstractEditHyperlinkDocumentShell {
 		editHyperlinkShell.setToolTipText(Messages.AbstractEditHyperlinkDocumentShell_EditionOfAHyperLink);
 		editHyperlinkShell.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
 		editHyperlinkShell.setLayout(gridLayout);
-		//		editHyperlinkShell.setSize(new Point(625, 119));
+		// editHyperlinkShell.setSize(new Point(625, 119));
 		ObjectcLabel = new CLabel(editHyperlinkShell, SWT.NONE);
 		ObjectcLabel.setText(Messages.AbstractEditHyperlinkDocumentShell_Document);
 		ObjectcLabel.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
@@ -143,7 +143,7 @@ public class AbstractEditHyperlinkDocumentShell {
 
 	/**
 	 * Gets the edit hyperlink shell.
-	 * 
+	 *
 	 * @return the editHyperlinkShell
 	 */
 	protected Shell getEditHyperlinkShell() {
@@ -152,7 +152,7 @@ public class AbstractEditHyperlinkDocumentShell {
 
 	/**
 	 * Gets the ok button.
-	 * 
+	 *
 	 * @return the okButton
 	 */
 	protected Button getOkButton() {
@@ -161,7 +161,7 @@ public class AbstractEditHyperlinkDocumentShell {
 
 	/**
 	 * Gets the cancel button.
-	 * 
+	 *
 	 * @return the cancelButton
 	 */
 	protected Button getCancelButton() {
@@ -170,7 +170,7 @@ public class AbstractEditHyperlinkDocumentShell {
 
 	/**
 	 * Gets the tooltip input text.
-	 * 
+	 *
 	 * @return the tooltipInputText
 	 */
 	protected Text getTooltipInputText() {
@@ -179,7 +179,7 @@ public class AbstractEditHyperlinkDocumentShell {
 
 	/**
 	 * Gets the object labeltext.
-	 * 
+	 *
 	 * @return the objectLabeltext
 	 */
 	protected Text getObjectLabeltext() {
@@ -188,7 +188,7 @@ public class AbstractEditHyperlinkDocumentShell {
 
 	/**
 	 * Gets the choose diagram button.
-	 * 
+	 *
 	 * @return the chooseDiagramButton
 	 */
 	protected Button getChooseDiagramButton() {
@@ -197,7 +197,7 @@ public class AbstractEditHyperlinkDocumentShell {
 
 	/**
 	 * Gets the tooltip input label.
-	 * 
+	 *
 	 * @return the tooltipInputLabel
 	 */
 	// @unused
@@ -207,7 +207,7 @@ public class AbstractEditHyperlinkDocumentShell {
 
 	/**
 	 * Gets the objectc label.
-	 * 
+	 *
 	 * @return the objectcLabel
 	 */
 	protected CLabel getObjectcLabel() {
@@ -216,7 +216,7 @@ public class AbstractEditHyperlinkDocumentShell {
 
 	/**
 	 * Gets the use default check box.
-	 * 
+	 *
 	 * @return the useDefaultcheckBox
 	 */
 	protected Button getUseDefaultCheckBox() {
@@ -225,9 +225,9 @@ public class AbstractEditHyperlinkDocumentShell {
 
 	/**
 	 * Sets the cancel button.
-	 * 
+	 *
 	 * @param cancelButton
-	 *        the cancelButton to set
+	 *            the cancelButton to set
 	 */
 	// @unused
 	protected void setCancelButton(Button cancelButton) {

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2013 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Gregoire Dupe (Mia-Software) - Bug 406570 - Handlers to Save and SaveAs EMF resources
  */
@@ -20,9 +20,9 @@ import org.eclipse.core.commands.IHandler;
 import org.eclipse.core.commands.IHandlerListener;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.ResourceUiUtils;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.ResourceUiUtils;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbench;
@@ -32,14 +32,17 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 public class SaveAsHandler implements IHandler {
 
+	@Override
 	public void addHandlerListener(final IHandlerListener handlerListener) {
 		// Nothing to do
 	}
 
+	@Override
 	public void dispose() {
 		// Nothing to do
 	}
 
+	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
 		final Shell shell = HandlerUtil.getActiveShell(event);
 		for (Object object : getSelection()) {
@@ -58,14 +61,17 @@ public class SaveAsHandler implements IHandler {
 		return null;
 	}
 
+	@Override
 	public boolean isEnabled() {
 		return true;
 	}
 
+	@Override
 	public boolean isHandled() {
 		return isEnabled();
 	}
 
+	@Override
 	public void removeHandlerListener(final IHandlerListener handlerListener) {
 		// Nothing to do
 	}

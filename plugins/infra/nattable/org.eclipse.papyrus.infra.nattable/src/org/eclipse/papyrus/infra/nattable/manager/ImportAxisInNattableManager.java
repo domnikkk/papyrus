@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ public class ImportAxisInNattableManager extends AbstractPasteImportInNattableMa
 	private File file;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param tableManager
 	 * @param pasteHelper
 	 * @param fileToImport
@@ -44,9 +44,9 @@ public class ImportAxisInNattableManager extends AbstractPasteImportInNattableMa
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.AbstractPasteImportInNattableManager#createReader()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -61,9 +61,9 @@ public class ImportAxisInNattableManager extends AbstractPasteImportInNattableMa
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.AbstractPasteImportInNattableManager#getDataSize()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

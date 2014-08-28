@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,9 @@ import org.eclipse.papyrus.uml.diagram.component.edit.parts.DependencyNodeEditPa
  * this a specific editpart used to overload the method createNodePlate
  */
 public class CustomDependencyBranchEditPart extends DependencyBranchEditPart {
-	
+
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param view
@@ -32,10 +32,11 @@ public class CustomDependencyBranchEditPart extends DependencyBranchEditPart {
 		super(view);
 	}
 
+	@Override
 	protected void refreshVisuals() {
-		if(getTarget() instanceof DependencyNodeEditPart) {
-			if(getPrimaryShape() instanceof DashedEdgeFigure) {
-				((DashedEdgeFigure)getPrimaryShape()).setArrow(false);
+		if (getTarget() instanceof DependencyNodeEditPart) {
+			if (getPrimaryShape() instanceof DashedEdgeFigure) {
+				getPrimaryShape().setArrow(false);
 			}
 			super.refreshVisuals();
 		}

@@ -26,7 +26,7 @@ import org.eclipse.swt.widgets.Display;
  * <p>
  * Note: Copied from FormColors of UI Forms.
  * </p>
- * 
+ *
  * @author Benjamin Pasero (initial contribution from RSSOwl, see bug 177974)
  * @author Mik Kersten
  */

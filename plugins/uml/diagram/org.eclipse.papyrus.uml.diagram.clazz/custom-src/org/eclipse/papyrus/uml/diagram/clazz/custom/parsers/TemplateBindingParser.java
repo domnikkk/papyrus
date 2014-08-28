@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.uml.diagram.clazz.custom.parsers;
 import java.util.Iterator;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
@@ -30,46 +31,50 @@ import org.eclipse.uml2.uml.TemplateParameterSubstitution;
 
 /**
  * this is a parser for binding substitution
- * 
+ *
  */
 public class TemplateBindingParser implements IParser {
 
 	final ILabelProvider labelProvider = new AdapterFactoryLabelProvider(org.eclipse.papyrus.uml.diagram.clazz.part.UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getEditString(org.eclipse.core.runtime.IAdaptable, int)
-	 * 
+	 *
 	 */
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		return getPrintString(element, flags);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#isValidEditString(org.eclipse.core.runtime.IAdaptable, java.lang.String)
-	 * 
+	 *
 	 */
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		// TODO Auto-generated method stub
-		return new ParserEditStatus(UMLDiagramEditorPlugin.ID, IParserEditStatus.OK, "");
+		return new ParserEditStatus(UMLDiagramEditorPlugin.ID, IStatus.OK, "");
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getParseCommand(org.eclipse.core.runtime.IAdaptable, java.lang.String, int)
-	 * 
+	 *
 	 */
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		// TODO Auto-generated method stub
 		return org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getPrintString(org.eclipse.core.runtime.IAdaptable, int)
-	 * 
+	 *
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		String out = "";
 		if (element instanceof EObjectAdapter) {
@@ -92,20 +97,22 @@ public class TemplateBindingParser implements IParser {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#isAffectingEvent(java.lang.Object, int)
-	 * 
+	 *
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		// TODO Auto-generated method stub
 		return true;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getCompletionProcessor(org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 *
 	 */
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		// TODO Auto-generated method stub
 		return null;

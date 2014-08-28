@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,8 +25,8 @@ import org.eclipse.uml2.uml.DurationObservation;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDurationObservation#getObsKind <em>Obs Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDurationObservation#getBase_DurationObservation <em>Base Duration Observation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDurationObservation#getObsKind <em>Obs Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDurationObservation#getBase_DurationObservation <em>Base Duration Observation</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,10 +41,10 @@ public interface TimedDurationObservation extends TimedElement {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.EventKind}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Obs Kind</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Obs Kind</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Obs Kind</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.EventKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getTimedDurationObservation_ObsKind()
@@ -57,10 +57,10 @@ public interface TimedDurationObservation extends TimedElement {
 	 * Returns the value of the '<em><b>Base Duration Observation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Duration Observation</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Duration Observation</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Duration Observation</em>' reference.
 	 * @see #setBase_DurationObservation(DurationObservation)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getTimedDurationObservation_Base_DurationObservation()
@@ -73,7 +73,9 @@ public interface TimedDurationObservation extends TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDurationObservation#getBase_DurationObservation <em>Base Duration Observation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Duration Observation</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Duration Observation</em>' reference.
 	 * @see #getBase_DurationObservation()
 	 * @generated
 	 */

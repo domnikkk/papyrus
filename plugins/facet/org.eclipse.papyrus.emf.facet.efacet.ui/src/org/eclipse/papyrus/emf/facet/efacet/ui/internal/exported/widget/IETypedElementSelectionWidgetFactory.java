@@ -16,13 +16,13 @@ package org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.widget;
 import java.util.Collection;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.widget.ETypedElementSelectionWidgetFactory;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.widget.ETypedElementSelectionWidgetFactory;
 import org.eclipse.swt.widgets.Composite;
 
 /**
  * Factory for {@link IETypedElementSelectionWidget}
- * 
+ *
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
  * @since 0.2.0
@@ -33,7 +33,7 @@ public interface IETypedElementSelectionWidgetFactory {
 
 	/**
 	 * Open a dialog to let the user select ETypedElements
-	 * 
+	 *
 	 * @param selectionMaxSize
 	 *            the maximum number of typed elements that the user can select.
 	 * @param allowEmpty

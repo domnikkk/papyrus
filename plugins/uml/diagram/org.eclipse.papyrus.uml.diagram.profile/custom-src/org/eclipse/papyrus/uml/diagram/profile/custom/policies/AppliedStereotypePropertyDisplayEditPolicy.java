@@ -32,10 +32,10 @@ public class AppliedStereotypePropertyDisplayEditPolicy extends AbstractAppliedS
 	protected Property getUMLElement() {
 		Element element = super.getUMLElement();
 
-		//The element may be a Classifier, when the notation model is not in sync with the UML model (e.g. The Property has been deleted)
-		//In this case, the edit policy activation will do nothing (See AbstractAppliedStereotypeDisplayEditPolicy#activate)
-		if(element instanceof Property) {
-			return (Property)element;
+		// The element may be a Classifier, when the notation model is not in sync with the UML model (e.g. The Property has been deleted)
+		// In this case, the edit policy activation will do nothing (See AbstractAppliedStereotypeDisplayEditPolicy#activate)
+		if (element instanceof Property) {
+			return (Property) element;
 		}
 
 		return null;
@@ -47,7 +47,7 @@ public class AppliedStereotypePropertyDisplayEditPolicy extends AbstractAppliedS
 	@Override
 	public void refreshDisplay() {
 		// calls the helper for this edit Part
-		PropertyLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart)getHost());
+		PropertyLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart) getHost());
 	}
 
 }

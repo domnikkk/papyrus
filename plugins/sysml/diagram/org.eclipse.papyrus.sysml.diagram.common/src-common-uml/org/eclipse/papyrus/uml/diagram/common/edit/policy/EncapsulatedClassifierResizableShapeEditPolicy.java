@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -31,7 +31,7 @@ public class EncapsulatedClassifierResizableShapeEditPolicy extends org.eclipse.
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Forbid AutoSize for elements that can hold Port, it currently
 	 * leads to Port (FlowPort) with incorrect location stored in notation,
 	 * and possible incorrect visual representation (FlowPort).

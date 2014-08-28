@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,11 +9,10 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 408491
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.modelrepair.handler;
 
-import java.io.IOException;
 import java.util.Set;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -45,7 +44,7 @@ import org.eclipse.uml2.uml.PackageImport;
 
 /**
  * A Handler to switch libraries referenced by Package imports (e.g. Local to Registered version)
- * 
+ *
  */
 public class SwitchPackageImportHandler extends AbstractHandler {
 
@@ -73,7 +72,7 @@ public class SwitchPackageImportHandler extends AbstractHandler {
 			Job openDialogJob = new Job("Switch package imports") {
 
 				protected IStatus status = Status.OK_STATUS;
-				
+
 				protected boolean needSave = false;
 
 				@Override
@@ -107,8 +106,8 @@ public class SwitchPackageImportHandler extends AbstractHandler {
 						if (!status.isOK()) {
 							return status;
 						}
-						
-						if(needSave) {
+
+						if (needSave) {
 							saveAndDirtyService.doSave(monitor);
 						}
 

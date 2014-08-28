@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,9 +39,9 @@ import org.eclipse.papyrus.views.modelexplorer.Activator;
 
 /**
  * An edit policy to use the {@link NavigationService} on GMF Diagrams
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class NavigationEditPolicy extends GraphicalEditPolicy {
 
@@ -54,19 +54,19 @@ public class NavigationEditPolicy extends GraphicalEditPolicy {
 		super.activate();
 		initViewerContext();
 
-		if(viewerContext == null) {
+		if (viewerContext == null) {
 			return;
 		}
 	}
 
 	private void initViewerContext() {
-		if(getHost() == getRoot()) {
+		if (getHost() == getRoot()) {
 			EditPartViewer viewer = getHost().getViewer();
 			viewerContext = new ViewerContext(viewer);
 		} else {
 			EditPolicy rootNavigationEditPolicy = getRoot().getEditPolicy(EDIT_POLICY_ID);
-			if(rootNavigationEditPolicy instanceof NavigationEditPolicy) {
-				this.viewerContext = ((NavigationEditPolicy)rootNavigationEditPolicy).viewerContext;
+			if (rootNavigationEditPolicy instanceof NavigationEditPolicy) {
+				this.viewerContext = ((NavigationEditPolicy) rootNavigationEditPolicy).viewerContext;
 			}
 		}
 	}
@@ -75,25 +75,25 @@ public class NavigationEditPolicy extends GraphicalEditPolicy {
 	public void showTargetFeedback(Request request) {
 		super.showTargetFeedback(request);
 
-		if(viewerContext == null) {
+		if (viewerContext == null) {
 			return;
 		}
 
-		//Do not install navigation on the root
-		if(getRoot() == getHost()) {
+		// Do not install navigation on the root
+		if (getRoot() == getHost()) {
 			return;
 		}
 
-		if(request instanceof SelectionRequest) {
-			SelectionRequest selectionRequest = (SelectionRequest)request;
+		if (request instanceof SelectionRequest) {
+			SelectionRequest selectionRequest = (SelectionRequest) request;
 			viewerContext.handleRequest(selectionRequest);
 		}
 	}
 
 	@Override
 	public Command getCommand(Request request) {
-		if(request instanceof SelectionRequest && viewerContext != null) {
-			return viewerContext.navigate((SelectionRequest)request);
+		if (request instanceof SelectionRequest && viewerContext != null) {
+			return viewerContext.navigate((SelectionRequest) request);
 		}
 		return super.getCommand(request);
 	}
@@ -103,7 +103,7 @@ public class NavigationEditPolicy extends GraphicalEditPolicy {
 		return rootEditPart.getContents();
 	}
 
-	//A Single ViewerContext for each diagram (Root EditPartViewer)
+	// A Single ViewerContext for each diagram (Root EditPartViewer)
 	private class ViewerContext {
 
 		private EditPartViewer editPartViewer;
@@ -117,22 +117,22 @@ public class NavigationEditPolicy extends GraphicalEditPolicy {
 		private WrappingLabel lastWrappingLabel;
 
 		public void handleRequest(SelectionRequest request) {
-			if(isExitState(request)) {
+			if (isExitState(request)) {
 				exitItem();
 			}
 
-			if(isEnterState(request)) {
+			if (isEnterState(request)) {
 				enterItem(currentModel, request);
 			}
 		}
 
 		public Command navigate(final SelectionRequest request) {
-			if(!isAlt(request)) {
+			if (!isAlt(request)) {
 				return null;
 			}
 
 			final NavigableElement element = getElementToNavigate(request);
-			if(element == null) {
+			if (element == null) {
 				return null;
 			}
 
@@ -153,17 +153,17 @@ public class NavigationEditPolicy extends GraphicalEditPolicy {
 		private NavigableElement getElementToNavigate(SelectionRequest request) {
 			try {
 				List<NavigableElement> navigableElements = getNavigationService(request).getNavigableElements(getEditPart(request));
-				if(navigableElements.isEmpty()) {
+				if (navigableElements.isEmpty()) {
 					return null;
 				}
 
-				for(NavigableElement element : navigableElements) {
-					if(element.isEnabled()) {
+				for (NavigableElement element : navigableElements) {
+					if (element.isEnabled()) {
 						return element;
 					}
 				}
 			} catch (ServiceException ex) {
-				//Ignore: the service is not available, do nothing
+				// Ignore: the service is not available, do nothing
 			}
 			return null;
 		}
@@ -177,20 +177,20 @@ public class NavigationEditPolicy extends GraphicalEditPolicy {
 		}
 
 		private boolean isExitState(SelectionRequest request) {
-			if(currentModel == null) {
+			if (currentModel == null) {
 				return false;
 			}
 
 			EObject newModel = getModel(request);
-			if(newModel == null) {
+			if (newModel == null) {
 				return true;
 			}
 
-			if(newModel != currentModel) {
+			if (newModel != currentModel) {
 				return true;
 			}
 
-			if(!isAlt(request)) {
+			if (!isAlt(request)) {
 				return true;
 			}
 
@@ -199,15 +199,15 @@ public class NavigationEditPolicy extends GraphicalEditPolicy {
 
 		private boolean isEnterState(SelectionRequest request) {
 			EObject model = getModel(request);
-			if(model == currentModel) {
+			if (model == currentModel) {
 				return false;
 			}
 
-			if(model == null) {
+			if (model == null) {
 				return false;
 			}
 
-			if(!isAlt(request)) {
+			if (!isAlt(request)) {
 				return false;
 			}
 
@@ -230,14 +230,14 @@ public class NavigationEditPolicy extends GraphicalEditPolicy {
 		}
 
 		private void disposeCurrentMenu() {
-			if(selectionMenu != null) {
+			if (selectionMenu != null) {
 				selectionMenu.dispose();
 				selectionMenu = null;
 			}
 		}
 
 		private void exitItem() {
-			if(lastWrappingLabel != null) {
+			if (lastWrappingLabel != null) {
 				lastWrappingLabel.setTextUnderline(wasUnderlined);
 			}
 			wasUnderlined = false;
@@ -253,16 +253,16 @@ public class NavigationEditPolicy extends GraphicalEditPolicy {
 				final NavigationService navigation = getServicesRegistry().getService(NavigationService.class);
 				disposeCurrentMenu();
 				selectionMenu = navigation.createNavigationList(targetEditPart, editPartViewer.getControl());
-				if(selectionMenu == null) {
+				if (selectionMenu == null) {
 					return;
 				}
 
 				wasUnderlined = false;
-				if(targetEditPart instanceof IGraphicalEditPart) {
-					IGraphicalEditPart graphicalEditPart = (IGraphicalEditPart)targetEditPart;
+				if (targetEditPart instanceof IGraphicalEditPart) {
+					IGraphicalEditPart graphicalEditPart = (IGraphicalEditPart) targetEditPart;
 					IFigure figure = graphicalEditPart.getFigure();
-					if(figure instanceof WrappingLabel) {
-						lastWrappingLabel = ((WrappingLabel)figure);
+					if (figure instanceof WrappingLabel) {
+						lastWrappingLabel = ((WrappingLabel) figure);
 						wasUnderlined = lastWrappingLabel.isTextUnderlined();
 						lastWrappingLabel.setTextUnderline(!wasUnderlined);
 					}
@@ -271,12 +271,12 @@ public class NavigationEditPolicy extends GraphicalEditPolicy {
 				selectionMenu.addSelectionChangedListener(new ISelectionChangedListener() {
 
 					public void selectionChanged(SelectionChangedEvent event) {
-						if(event.getSelection().isEmpty()) {
+						if (event.getSelection().isEmpty()) {
 							return;
 						}
-						Object selectedElement = ((IStructuredSelection)event.getSelection()).getFirstElement();
-						if(selectedElement instanceof NavigableElement) {
-							NavigableElement navigableElement = (NavigableElement)selectedElement;
+						Object selectedElement = ((IStructuredSelection) event.getSelection()).getFirstElement();
+						if (selectedElement instanceof NavigableElement) {
+							NavigableElement navigableElement = (NavigableElement) selectedElement;
 							navigate(navigableElement, navigation);
 						}
 					}

@@ -48,7 +48,7 @@ public class ExtensivePartitionNameLabelProvider implements IFontProvider, IColo
 	 * Instantiates a new extensive label provider.
 	 *
 	 * @param predicate
-	 *        the predicate
+	 *            the predicate
 	 */
 	public ExtensivePartitionNameLabelProvider(Predicate<EObject> predicate, ILabelProvider internal) {
 		super();
@@ -67,7 +67,7 @@ public class ExtensivePartitionNameLabelProvider implements IFontProvider, IColo
 	 * Sets the color.
 	 *
 	 * @param color
-	 *        the new color
+	 *            the new color
 	 */
 	public void setColor(Color color) {
 		this.color = color;
@@ -78,7 +78,7 @@ public class ExtensivePartitionNameLabelProvider implements IFontProvider, IColo
 	 * Sets the font.
 	 *
 	 * @param font
-	 *        the new font
+	 *            the new font
 	 */
 	public void setFont(Font font) {
 		this.font = font;
@@ -93,9 +93,9 @@ public class ExtensivePartitionNameLabelProvider implements IFontProvider, IColo
 	public String getText(Object element) {
 		String superText = internal.getText(element);
 		EObject eObject = EMFHelper.getEObject(element);
-		if(eObject != null) {
+		if (eObject != null) {
 			String partitionName = getPartitionName(eObject);
-			if(partitionName != null) {
+			if (partitionName != null) {
 				StringBuilder stringBuilder = new StringBuilder();
 				stringBuilder.append(partitionName);
 				stringBuilder.append(superText);
@@ -114,12 +114,12 @@ public class ExtensivePartitionNameLabelProvider implements IFontProvider, IColo
 	 * Gets the partition name.
 	 *
 	 * @param eObject
-	 *        the e object
+	 *            the e object
 	 * @return the partition name
 	 */
 	protected String getPartitionName(EObject eObject) {
 		Resource resource = eObject.eResource();
-		if(resource != null) {
+		if (resource != null) {
 			URI uri = resource.getURI().trimFileExtension();
 			String partitionName = uri.segment(uri.segmentCount() - 1);
 			StringBuilder builder = new StringBuilder(OPEN_BRACKET);
@@ -138,18 +138,18 @@ public class ExtensivePartitionNameLabelProvider implements IFontProvider, IColo
 	 */
 	@Override
 	public Font getFont(Object element) {
-		if(predicate != null) {
+		if (predicate != null) {
 			EObject eObject = EMFHelper.getEObject(element);
-			if(eObject != null) {
-				if(font != null) {
-					if(predicate.apply(eObject)) {
+			if (eObject != null) {
+				if (font != null) {
+					if (predicate.apply(eObject)) {
 						return font;
 					}
 				}
 			}
 		}
-		if(internal instanceof IFontProvider) {
-			return ((IFontProvider)internal).getFont(element);
+		if (internal instanceof IFontProvider) {
+			return ((IFontProvider) internal).getFont(element);
 		}
 		return null;
 	}
@@ -161,18 +161,18 @@ public class ExtensivePartitionNameLabelProvider implements IFontProvider, IColo
 	 */
 	@Override
 	public Color getForeground(Object element) {
-		if(predicate != null) {
+		if (predicate != null) {
 			EObject eObject = EMFHelper.getEObject(element);
-			if(eObject != null) {
-				if(color != null) {
-					if(predicate.apply(eObject)) {
+			if (eObject != null) {
+				if (color != null) {
+					if (predicate.apply(eObject)) {
 						return color;
 					}
 				}
 			}
 		}
-		if(internal instanceof IColorProvider) {
-			return ((IColorProvider)internal).getForeground(element);
+		if (internal instanceof IColorProvider) {
+			return ((IColorProvider) internal).getForeground(element);
 		}
 		return null;
 	}
@@ -213,8 +213,8 @@ public class ExtensivePartitionNameLabelProvider implements IFontProvider, IColo
 
 	@Override
 	public Color getBackground(Object element) {
-		if(internal instanceof IColorProvider) {
-			return ((IColorProvider)internal).getBackground(element);
+		if (internal instanceof IColorProvider) {
+			return ((IColorProvider) internal).getBackground(element);
 		}
 		return null;
 	}

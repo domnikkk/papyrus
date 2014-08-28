@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.papyrus.uml.diagram.menu.actions.LineStyleAction;
 
 /**
  * Handler for the Line Style Action
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class LineStyleHandler extends AbstractGraphicalCommandHandler {
 
@@ -33,9 +33,9 @@ public class LineStyleHandler extends AbstractGraphicalCommandHandler {
 	public static final String parameterID = "line_style_parameter"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameterID
 	 */
 	public LineStyleHandler(String parameter) {
@@ -43,18 +43,18 @@ public class LineStyleHandler extends AbstractGraphicalCommandHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public LineStyleHandler() {
 		super(parameterID);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.menu.actions.handlers.AbstractGraphicalCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */
@@ -65,9 +65,9 @@ public class LineStyleHandler extends AbstractGraphicalCommandHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.menu.actions.handlers.AbstractGraphicalCommandHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
@@ -79,7 +79,7 @@ public class LineStyleHandler extends AbstractGraphicalCommandHandler {
 		IDiagramGraphicalViewer viewer = getDiagramGraphicalViewer();
 		ISelection tmp = viewer.getSelection();
 
-		//trick to force easily the change the toggle status of the line style handler
+		// trick to force easily the change the toggle status of the line style handler
 		viewer.setSelection(new StructuredSelection());
 		viewer.setSelection(tmp);
 		return null;

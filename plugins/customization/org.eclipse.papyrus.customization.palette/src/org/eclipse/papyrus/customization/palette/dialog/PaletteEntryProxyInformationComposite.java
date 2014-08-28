@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,7 +16,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.gef.palette.CombinedTemplateCreationEntry;
 import org.eclipse.gef.palette.PaletteEntry;
-import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.customization.palette.dialog.LocalPaletteContentPage.EntryType;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.Messages;
@@ -62,11 +62,11 @@ public class PaletteEntryProxyInformationComposite {
 
 	/**
 	 * Creates the content of the information composite
-	 * 
+	 *
 	 * @param parent
-	 *        the composite where to add created controls
+	 *            the composite where to add created controls
 	 * @param appliedProfiles
-	 *        the list of applied profiles
+	 *            the list of applied profiles
 	 * @return the newly created composite
 	 */
 	public Composite createComposite(final Composite parent, List<Profile> appliedProfiles) {
@@ -137,16 +137,16 @@ public class PaletteEntryProxyInformationComposite {
 			 */
 			public void mouseUp(MouseEvent e) {
 				BundleIconExplorerDialog dialog = new BundleIconExplorerDialog(parent.getShell(), iconText.getText());
-				if(Dialog.OK == dialog.open()) {
+				if (Window.OK == dialog.open()) {
 					Object[] values = dialog.getResult();
-					if(values.length != 1) {
+					if (values.length != 1) {
 						Activator.log.error("Waiting one icon path, but found " + values.length, null);
 					} else {
 						iconText.setText(values[0].toString());
 						selectedEntryProxy.getEntry().setSmallIcon(Activator.getImageDescriptor(iconText.getText().trim()));
 						selectedEntryProxy.getEntry().setLargeIcon(Activator.getImageDescriptor(iconText.getText().trim()));
-						if(selectedEntryProxy instanceof PaletteAspectToolEntryProxy) {
-							((PaletteAspectToolEntryProxy)selectedEntryProxy).setIcon(iconText.getText().trim());
+						if (selectedEntryProxy instanceof PaletteAspectToolEntryProxy) {
+							((PaletteAspectToolEntryProxy) selectedEntryProxy).setIcon(iconText.getText().trim());
 						}
 					}
 				}
@@ -173,7 +173,7 @@ public class PaletteEntryProxyInformationComposite {
 	 */
 	protected void updateNameEntryField() {
 		EntryType type = selectedEntryProxy.getType();
-		switch(type) {
+		switch (type) {
 		case STACK:
 		case SEPARATOR:
 			nameText.setText("");
@@ -194,14 +194,14 @@ public class PaletteEntryProxyInformationComposite {
 	 * Updates the reference field in the information area
 	 */
 	protected void updateReferencedEntryField() {
-		if(selectedEntryProxy instanceof PaletteAspectToolEntryProxy) {
-			CombinedTemplateCreationEntry entry = ((PaletteAspectToolEntryProxy)selectedEntryProxy).getEntry().getReferencedEntry();
+		if (selectedEntryProxy instanceof PaletteAspectToolEntryProxy) {
+			CombinedTemplateCreationEntry entry = ((PaletteAspectToolEntryProxy) selectedEntryProxy).getEntry().getReferencedEntry();
 			EClass eClass = PaletteUtil.getToolMetaclass(entry);
 			referencedText.setText((eClass != null) ? eClass.getInstanceTypeName() : "");
-		} else if(selectedEntryProxy instanceof PaletteEntryProxy) {
+		} else if (selectedEntryProxy instanceof PaletteEntryProxy) {
 			PaletteEntry entry = selectedEntryProxy.getEntry();
-			if(entry instanceof CombinedTemplateCreationEntry) {
-				EClass eClass = PaletteUtil.getToolMetaclass((CombinedTemplateCreationEntry)entry);
+			if (entry instanceof CombinedTemplateCreationEntry) {
+				EClass eClass = PaletteUtil.getToolMetaclass((CombinedTemplateCreationEntry) entry);
 				referencedText.setText((eClass != null) ? eClass.getInstanceTypeName() : "");
 			} else {
 				referencedText.setText("");
@@ -217,7 +217,7 @@ public class PaletteEntryProxyInformationComposite {
 	 */
 	protected void updateDescriptionEntryField() {
 		EntryType type = selectedEntryProxy.getType();
-		switch(type) {
+		switch (type) {
 		case STACK:
 		case SEPARATOR:
 		case DRAWER:
@@ -239,7 +239,7 @@ public class PaletteEntryProxyInformationComposite {
 	 */
 	protected void updateIconEntryField() {
 		EntryType type = selectedEntryProxy.getType();
-		switch(type) {
+		switch (type) {
 		case STACK:
 		case SEPARATOR:
 		case TOOL:
@@ -265,9 +265,9 @@ public class PaletteEntryProxyInformationComposite {
 
 	/**
 	 * Sets the new Selected entry
-	 * 
+	 *
 	 * @param selectedEntryProxy
-	 *        the selectedEntryProxy to set
+	 *            the selectedEntryProxy to set
 	 */
 	public void setSelectedEntryProxy(PaletteEntryProxy selectedEntryProxy) {
 		this.selectedEntryProxy = selectedEntryProxy;
@@ -293,7 +293,7 @@ public class PaletteEntryProxyInformationComposite {
 		 * @{inheritDoc
 		 */
 		public void focusLost(FocusEvent e) {
-			if(selectedEntryProxy != null) {
+			if (selectedEntryProxy != null) {
 				selectedEntryProxy.setLabel(nameText.getText().trim());
 			}
 		}
@@ -315,7 +315,7 @@ public class PaletteEntryProxyInformationComposite {
 		 * @{inheritDoc
 		 */
 		public void focusLost(FocusEvent e) {
-			if(selectedEntryProxy != null && selectedEntryProxy.getEntry() != null) {
+			if (selectedEntryProxy != null && selectedEntryProxy.getEntry() != null) {
 				selectedEntryProxy.setDescription(descriptionText.getText().trim());
 			}
 		}
@@ -336,11 +336,11 @@ public class PaletteEntryProxyInformationComposite {
 		 * @{inheritDoc
 		 */
 		public void focusLost(FocusEvent e) {
-			if(selectedEntryProxy != null && iconText.getText() != null && !iconText.getText().equals("")) {
+			if (selectedEntryProxy != null && iconText.getText() != null && !iconText.getText().equals("")) {
 				selectedEntryProxy.getEntry().setSmallIcon(Activator.getImageDescriptor(iconText.getText().trim()));
 				selectedEntryProxy.getEntry().setLargeIcon(Activator.getImageDescriptor(iconText.getText().trim()));
-				if(selectedEntryProxy instanceof PaletteAspectToolEntryProxy) {
-					((PaletteAspectToolEntryProxy)selectedEntryProxy).setIcon(iconText.getText().trim());
+				if (selectedEntryProxy instanceof PaletteAspectToolEntryProxy) {
+					((PaletteAspectToolEntryProxy) selectedEntryProxy).setIcon(iconText.getText().trim());
 				}
 			}
 		}

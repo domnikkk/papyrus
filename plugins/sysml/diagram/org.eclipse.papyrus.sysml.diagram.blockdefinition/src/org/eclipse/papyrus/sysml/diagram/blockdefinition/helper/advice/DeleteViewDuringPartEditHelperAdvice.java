@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -45,29 +45,29 @@ public class DeleteViewDuringPartEditHelperAdvice extends AbstractEditHelperAdvi
 
 	@Override
 	protected ICommand getBeforeSetCommand(SetRequest request) {
-		
+
 		ICommand setCommand = super.getBeforeSetCommand(request);
 
 		Set<View> viewsToDestroy = new HashSet<View>();
 
 		// Get modified object and retrieve inconsistent view
 		EObject modifiedObject = request.getElementToEdit();
-		if ((modifiedObject != null) && (modifiedObject instanceof Property) 
-			&& (request.getFeature() == UMLPackage.eINSTANCE.getProperty_Aggregation()) 
-			&& (request.getValue() != AggregationKind.COMPOSITE_LITERAL)) {
-			
+		if ((modifiedObject != null) && (modifiedObject instanceof Property)
+				&& (request.getFeature() == UMLPackage.eINSTANCE.getProperty_Aggregation())
+				&& (request.getValue() != AggregationKind.COMPOSITE_LITERAL)) {
+
 			viewsToDestroy.addAll(getViewsToDestroy(modifiedObject));
 		}
 
-		if ((modifiedObject != null) && (modifiedObject instanceof Property) 
-			&& (request.getFeature() == UMLPackage.eINSTANCE.getTypedElement_Type())
-			 && (request.getValue() instanceof Type)
-			 && !((ISpecializationType) SysMLElementTypes.BLOCK).getMatcher().matches((Type) request.getValue())) {
-			
+		if ((modifiedObject != null) && (modifiedObject instanceof Property)
+				&& (request.getFeature() == UMLPackage.eINSTANCE.getTypedElement_Type())
+				&& (request.getValue() instanceof Type)
+				&& !((ISpecializationType) SysMLElementTypes.BLOCK).getMatcher().matches((Type) request.getValue())) {
+
 			viewsToDestroy.addAll(getViewsToDestroy(modifiedObject));
 		}
 
-		if(!viewsToDestroy.isEmpty()) {
+		if (!viewsToDestroy.isEmpty()) {
 			DestroyDependentsRequest ddr = new DestroyDependentsRequest(request.getEditingDomain(), request.getElementToEdit(), false);
 			ddr.setClientContext(request.getClientContext());
 			ddr.addParameters(request.getParameters());
@@ -80,21 +80,21 @@ public class DeleteViewDuringPartEditHelperAdvice extends AbstractEditHelperAdvi
 
 	/**
 	 * This methods looks for inconsistent views to delete in case a Part aggregation kind changes.
-	 * 
+	 *
 	 * @param modifiedObject
-	 *        the modified {@link EObject}
+	 *            the modified {@link EObject}
 	 * @return the list of {@link View} to delete
 	 */
 	protected Set<View> getViewsToDestroy(EObject modifiedObject) {
 		Set<View> viewsToDestroy = new HashSet<View>();
 
 		Iterator<View> viewIt = CrossReferencerUtil.getCrossReferencingViews(modifiedObject, ElementTypes.DIAGRAM_ID).iterator();
-		while(viewIt.hasNext()) {
-			View view = (View)viewIt.next();
+		while (viewIt.hasNext()) {
+			View view = viewIt.next();
 
 			String containerType = ViewUtil.getViewContainer(view) != null ? ViewUtil.getViewContainer(view).getType() : null;
 
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_PART_AS_LIST_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_PART_AS_LIST_ID.equals(containerType)) {
 				viewsToDestroy.add(view);
 			}
 		}

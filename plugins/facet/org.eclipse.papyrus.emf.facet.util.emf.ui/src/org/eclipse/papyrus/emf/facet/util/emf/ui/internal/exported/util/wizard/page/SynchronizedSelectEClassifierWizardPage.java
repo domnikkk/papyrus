@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -21,9 +21,9 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * Synchronized class for safe run.
- * 
+ *
  * @since 0.3
- * 
+ *
  */
 public class SynchronizedSelectEClassifierWizardPage extends
 		SynchronizedWizardPage<ISelectEClassifierWizardPage> implements
@@ -34,7 +34,7 @@ public class SynchronizedSelectEClassifierWizardPage extends
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param object
 	 *            the to synchronized.
 	 * @param display
@@ -45,6 +45,7 @@ public class SynchronizedSelectEClassifierWizardPage extends
 		super(object, display);
 	}
 
+	@Override
 	public EClassifier getSelectedEClassifier() {
 		return this
 				.safeSyncExec(new AbstractExceptionFreeRunnable<EClassifier>() {
@@ -57,6 +58,7 @@ public class SynchronizedSelectEClassifierWizardPage extends
 				});
 	}
 
+	@Override
 	public void selectEClassifier(final String selection) {
 		this.voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override

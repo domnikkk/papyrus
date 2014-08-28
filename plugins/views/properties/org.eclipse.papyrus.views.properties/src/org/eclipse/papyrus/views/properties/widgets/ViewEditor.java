@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ import org.eclipse.swt.widgets.Control;
 /**
  * An Editor for displaying a whole property {@link View} on a sub-object.
  * If the property is a list, there will be one view per element in the list.
- * 
+ *
  * The view's tabs will be ignored : the sections are embedded in the caller's
  * tab.
  */
@@ -53,11 +53,11 @@ public class ViewEditor extends AbstractPropertyEditor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 */
 	public ViewEditor(Composite parent, int style) {
 		self = new Composite(parent, SWT.NONE);
@@ -69,7 +69,7 @@ public class ViewEditor extends AbstractPropertyEditor {
 
 	@Override
 	public void checkInput() {
-		if(propertyPath != null && input != null && viewPath != null) {
+		if (propertyPath != null && input != null && viewPath != null) {
 			display();
 		}
 	}
@@ -78,18 +78,18 @@ public class ViewEditor extends AbstractPropertyEditor {
 	 * Sets the number of columns for this editor. If the property is a list,
 	 * there will be one view per element in the list : these views will be
 	 * distributed in the given number of columns.
-	 * 
+	 *
 	 * @param numColumns
 	 */
 	public void setNumColumns(int numColumns) {
-		((PropertiesLayout)self.getLayout()).numColumns = numColumns;
+		((PropertiesLayout) self.getLayout()).numColumns = numColumns;
 	}
 
 	/**
 	 * @return the number of columns for this editor.
 	 */
 	public int getNumColumns() {
-		return ((PropertiesLayout)self.getLayout()).numColumns;
+		return ((PropertiesLayout) self.getLayout()).numColumns;
 	}
 
 	/**
@@ -97,9 +97,9 @@ public class ViewEditor extends AbstractPropertyEditor {
 	 * of form ContextName:ViewName
 	 * e.g. : UML:Class
 	 * The Context should be registered in the ConfigurationManager
-	 * 
+	 *
 	 * @param viewPath
-	 *        The path of the view used to display the given property
+	 *            The path of the view used to display the given property
 	 */
 	public void setView(String viewPath) {
 		this.viewPath = viewPath;
@@ -117,8 +117,8 @@ public class ViewEditor extends AbstractPropertyEditor {
 		String contextName = viewPath.substring(0, viewPath.indexOf(":")); //$NON-NLS-1$
 		String viewName = viewPath.substring(viewPath.indexOf(":") + 1); //$NON-NLS-1$
 		Context context = ConfigurationManager.getInstance().getContext(contextName);
-		for(View view : context.getViews()) {
-			if(view.getName().equals(viewName)) {
+		for (View view : context.getViews()) {
+			if (view.getName().equals(viewName)) {
 				return view;
 			}
 		}
@@ -128,13 +128,13 @@ public class ViewEditor extends AbstractPropertyEditor {
 	private void display() {
 		View view = resolveView();
 
-		if(view == null) {
+		if (view == null) {
 			Activator.log.warn("Unabled to resolve view : " + viewPath); //$NON-NLS-1$
 			return;
 		}
 
 		IObservable observable = getInputObservable();
-		if(observable == null) {
+		if (observable == null) {
 			return;
 		}
 
@@ -142,18 +142,18 @@ public class ViewEditor extends AbstractPropertyEditor {
 
 		sections = new LinkedList<XWTSection>();
 
-		if(observable instanceof IObservableValue) {
-			IObservableValue observableValue = (IObservableValue)observable;
-			if(observableValue instanceof MultipleObservableValue) {
-				MultipleObservableValue multipleObservable = (MultipleObservableValue)observableValue;
+		if (observable instanceof IObservableValue) {
+			IObservableValue observableValue = (IObservableValue) observable;
+			if (observableValue instanceof MultipleObservableValue) {
+				MultipleObservableValue multipleObservable = (MultipleObservableValue) observableValue;
 				display(display, multipleObservable.getObservedValues(), view);
 			} else {
 				Object value = observableValue.getValue();
 				display(display, value, view);
 			}
-		} else if(observable instanceof IObservableList) {
-			IObservableList observableList = (IObservableList)observable;
-			for(Object value : observableList) {
+		} else if (observable instanceof IObservableList) {
+			IObservableList observableList = (IObservableList) observable;
+			for (Object value : observableList) {
 				display(display, value, view);
 			}
 		}
@@ -163,15 +163,15 @@ public class ViewEditor extends AbstractPropertyEditor {
 
 	/**
 	 * Displays the given view in the display engine, with the given object.
-	 * 
+	 *
 	 * @param display
-	 *        The Display engine used to display the view. It should allow duplication,
-	 *        as for list properties, the same section will be displayed for each element
-	 *        in the list.
+	 *            The Display engine used to display the view. It should allow duplication,
+	 *            as for list properties, the same section will be displayed for each element
+	 *            in the list.
 	 * @param data
-	 *        The raw object for which we are displaying the view.
+	 *            The raw object for which we are displaying the view.
 	 * @param view
-	 *        The view to display
+	 *            The view to display
 	 */
 	protected void display(DisplayEngine display, Object data, View view) {
 		display(display, Collections.singletonList(data), view);
@@ -179,18 +179,18 @@ public class ViewEditor extends AbstractPropertyEditor {
 
 	/**
 	 * Displays the given view in the display engine, with the given object.
-	 * 
+	 *
 	 * @param display
-	 *        The Display engine used to display the view. It should allow duplication,
-	 *        as for list properties, the same section will be displayed for each element
-	 *        in the list.
+	 *            The Display engine used to display the view. It should allow duplication,
+	 *            as for list properties, the same section will be displayed for each element
+	 *            in the list.
 	 * @param selectedElements
-	 *        The list of objects for which we are displaying the view
+	 *            The list of objects for which we are displaying the view
 	 * @param view
-	 *        The view to display
+	 *            The view to display
 	 */
 	protected void display(DisplayEngine display, List<Object> selectedElements, View view) {
-		for(Section section : view.getSections()) {
+		for (Section section : view.getSections()) {
 			XWTSection xwtSection = new XWTSection(section, view, display);
 			sections.add(xwtSection);
 
@@ -206,12 +206,12 @@ public class ViewEditor extends AbstractPropertyEditor {
 	 * Updates the displayed widgets to mark them as readOnly if needed.
 	 */
 	protected void updateControls() {
-		for(Control container : self.getChildren()) {
-			//TODO : Browse recursively ?
-			if(container instanceof Composite) {
-				for(Control control : ((Composite)container).getChildren()) {
-					if(control instanceof AbstractEditor) {
-						AbstractEditor editor = (AbstractEditor)control;
+		for (Control container : self.getChildren()) {
+			// TODO : Browse recursively ?
+			if (container instanceof Composite) {
+				for (Control control : ((Composite) container).getChildren()) {
+					if (control instanceof AbstractEditor) {
+						AbstractEditor editor = (AbstractEditor) control;
 						editor.setReadOnly(getReadOnly() || editor.isReadOnly());
 					}
 				}
@@ -223,7 +223,7 @@ public class ViewEditor extends AbstractPropertyEditor {
 
 	@Override
 	protected IObservable getInputObservable() {
-		//Override the generic behavior: ViewEditor doesn't rely on an AbstractEditor
+		// Override the generic behavior: ViewEditor doesn't rely on an AbstractEditor
 		return input.getObservable(propertyPath);
 	}
 
@@ -235,7 +235,7 @@ public class ViewEditor extends AbstractPropertyEditor {
 
 	@Override
 	protected void doBinding() {
-		//Nothing to do here
+		// Nothing to do here
 	}
 
 	@Override

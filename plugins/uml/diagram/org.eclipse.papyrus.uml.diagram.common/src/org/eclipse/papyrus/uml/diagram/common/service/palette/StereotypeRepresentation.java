@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,9 +18,9 @@ import java.util.ArrayList;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
- * 
+ *
  * This class is used to represent a {@link org.eclipse.uml2.uml.Stereotype}
- * 
+ *
  */
 public class StereotypeRepresentation {
 
@@ -40,9 +40,9 @@ public class StereotypeRepresentation {
 	private Stereotype stereotype;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param qualifiedName
 	 */
 	public StereotypeRepresentation(String qualifiedName) {
@@ -52,11 +52,11 @@ public class StereotypeRepresentation {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor. Note : the properties are neither copied nor duplicated
-	 * 
+	 *
 	 * @param ste
-	 *        the {@link StereotypeRepresentation} uses to instantiate a new {@link StereotypeRepresentation}
+	 *            the {@link StereotypeRepresentation} uses to instantiate a new {@link StereotypeRepresentation}
 	 */
 	public StereotypeRepresentation(StereotypeRepresentation ste) {
 		this.stereotypeQualifiedName = ste.getStereotypeQualifiedName();
@@ -66,9 +66,9 @@ public class StereotypeRepresentation {
 
 	/**
 	 * Adds a property to this stereotype This method fills the field {@link StereotypeRepresentation} in the property
-	 * 
+	 *
 	 * @param property
-	 *        the property to add
+	 *            the property to add
 	 */
 	public void addProperty(PropertyRepresentation property) {
 		property.setStereotype(this);
@@ -77,7 +77,7 @@ public class StereotypeRepresentation {
 
 	/**
 	 * Returns all the {@link PropertyRepresentation} owned by this stereotype
-	 * 
+	 *
 	 * @return all the {@link PropertyRepresentation} owned by this stereotype
 	 */
 	public ArrayList<PropertyRepresentation> getPropertyRepresentations() {
@@ -86,13 +86,13 @@ public class StereotypeRepresentation {
 
 	/**
 	 * Returns all the properties containing values owned by this stereotype
-	 * 
+	 *
 	 * @return all the properties containing values owned by this stereotype
 	 */
 	public ArrayList<PropertyRepresentation> getPropertiesWithValues() {
 		ArrayList<PropertyRepresentation> propertiesToSave = new ArrayList<PropertyRepresentation>();
-		for(PropertyRepresentation prop : properties) {
-			if(prop.hasValues()) {
+		for (PropertyRepresentation prop : properties) {
+			if (prop.hasValues()) {
 				propertiesToSave.add(prop);
 			}
 		}
@@ -101,7 +101,7 @@ public class StereotypeRepresentation {
 
 	/**
 	 * Setter for {@link #stereotypeQualifiedName}
-	 * 
+	 *
 	 * @return the stereotype qualified name
 	 */
 	public String getStereotypeQualifiedName() {
@@ -110,19 +110,19 @@ public class StereotypeRepresentation {
 
 	/**
 	 * Returns the {@link PropertyRepresentation} corresponding the parameters
-	 * 
+	 *
 	 * @param stereotypeQualifiedName
-	 *        the stereotype qualified name
+	 *            the stereotype qualified name
 	 * @param propertyQualifiedName
-	 *        the property qualified name
+	 *            the property qualified name
 	 * @return <ul>
 	 *         <li>the corresponding {@link PropertyRepresentation}</li>
 	 *         <li>{@code null} if the corresponding property was not found</li>
 	 *         </ul>
 	 */
 	public PropertyRepresentation getPropertyRepresentation(String stereotypeQualifiedName, String propertyQualifiedName) {
-		for(PropertyRepresentation prop : properties) {
-			if(prop.getPropertyId().equals(stereotypeQualifiedName + PropertyRepresentation.separator + propertyQualifiedName)) {
+		for (PropertyRepresentation prop : properties) {
+			if (prop.getPropertyId().equals(stereotypeQualifiedName + PropertyRepresentation.separator + propertyQualifiedName)) {
 				return prop;
 			}
 		}
@@ -132,14 +132,14 @@ public class StereotypeRepresentation {
 	/**
 	 * Returns the {@link PropertyRepresentation} which need to be defined at
 	 * runtime
-	 * 
+	 *
 	 * @return the {@link PropertyRepresentation} which need to be defined at
 	 *         runtime
 	 */
 	public ArrayList<PropertyRepresentation> getRuntimeProperties() {
 		ArrayList<PropertyRepresentation> propertiesToSave = new ArrayList<PropertyRepresentation>();
-		for(PropertyRepresentation prop : properties) {
-			if(prop.isRuntime()) {
+		for (PropertyRepresentation prop : properties) {
+			if (prop.isRuntime()) {
 				propertiesToSave.add(prop);
 			}
 		}
@@ -148,7 +148,7 @@ public class StereotypeRepresentation {
 
 	/**
 	 * Setter for {@link #stereotype}
-	 * 
+	 *
 	 * @param stereotype
 	 */
 	public void setUMLStereotype(Stereotype stereotype) {
@@ -157,7 +157,7 @@ public class StereotypeRepresentation {
 
 	/**
 	 * Getter for {@link #stereotype}
-	 * 
+	 *
 	 * @return {@link #stereotype}
 	 */
 	public Stereotype getUMLStereotype() {
@@ -167,15 +167,15 @@ public class StereotypeRepresentation {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return <ul>
 	 *         <li>  {@code true} if there is runtime properties in this stereotype
 	 *         <li> {@code false} if not</li>
 	 *         </ul>
 	 */
 	public boolean hasRuntimeProperties() {
-		for(PropertyRepresentation prop : properties) {
-			if(prop.isRuntime()) {
+		for (PropertyRepresentation prop : properties) {
+			if (prop.isRuntime()) {
 				return true;
 			}
 		}

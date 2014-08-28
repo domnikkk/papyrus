@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,7 +62,7 @@ public class GenerateFacadeHandler extends AbstractHandler {
 
 	/**
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
@@ -77,17 +77,17 @@ public class GenerateFacadeHandler extends AbstractHandler {
 		// set selection service
 		ISelectionService service = window.getSelectionService();
 		// set structured selection
-		IStructuredSelection structured = (IStructuredSelection)service.getSelection();
+		IStructuredSelection structured = (IStructuredSelection) service.getSelection();
 
-		if(structured != null) {
-			for(Object selectedElement : structured.toList()) {
-				if(selectedElement instanceof GenModel) {
-					emfGenModels.add((GenModel)selectedElement);
+		if (structured != null) {
+			for (Object selectedElement : structured.toList()) {
+				if (selectedElement instanceof GenModel) {
+					emfGenModels.add((GenModel) selectedElement);
 				}
 			}
 		}
 
-		if(emfGenModels != null) {
+		if (emfGenModels != null) {
 			final Workflow flow = initEMFGenFlow(emfGenModels);
 			flow.prepare();
 			Job job = new Job(Messages.GenerateCodeAction_0) {
@@ -109,51 +109,52 @@ public class GenerateFacadeHandler extends AbstractHandler {
 
 	/**
 	 * Inits the emf gen flow.
-	 * 
+	 *
 	 * @param emfGenModels
-	 *        the emf Genmodels to generate the facade for
+	 *            the emf Genmodels to generate the facade for
 	 * @return the workflow
 	 */
 	protected Workflow initEMFGenFlow(List<GenModel> emfGenModels) {
 		final Workflow flow = new Workflow(Messages.GenerateFacadeAction_0, Display.getCurrent().getActiveShell());
-		for(final org.eclipse.emf.codegen.ecore.genmodel.GenModel emfGenModel : emfGenModels) {
+		for (final org.eclipse.emf.codegen.ecore.genmodel.GenModel emfGenModel : emfGenModels) {
 			String s2 = Messages.GenerateFacadeAction_1 + emfGenModel.eResource().getURI().toString();
 			flow.addStep(s2, new Step("FACADE MODEL") { //$NON-NLS-1$
 
-				@Override
-				public IStatus execute(IProgressMonitor monitor) {
-					// create the model project
-					IProject modelProject = getProjectFromStringPath(emfGenModel.getModelProjectDirectory());
-					if(modelProject == null) {
-						return Status.OK_STATUS;
-					}
-					List<IProject> referencedProjects = new UniqueEList<IProject>();
-					if(!workspace.getRoot().exists(modelProject.getFullPath())) {
-						if(modelProject.getLocation().toFile().exists()) {
-							modelProject.getLocation().toFile().delete();
+						@Override
+						public IStatus execute(IProgressMonitor monitor) {
+							// create the model project
+							IProject modelProject = getProjectFromStringPath(emfGenModel.getModelProjectDirectory());
+							if (modelProject == null) {
+								return Status.OK_STATUS;
+							}
+							List<IProject> referencedProjects = new UniqueEList<IProject>();
+							if (!workspace.getRoot().exists(modelProject.getFullPath())) {
+								if (modelProject.getLocation().toFile().exists()) {
+									modelProject.getLocation().toFile().delete();
+								}
+								modelProject = Generator.createEMFProject(new Path(emfGenModel.getModelDirectory()), modelProject.getLocation(), referencedProjects, new SubProgressMonitor(monitor, IProgressMonitor.UNKNOWN), Generator.EMF_MODEL_PROJECT_STYLE
+										| Generator.EMF_PLUGIN_PROJECT_STYLE);
+							} else if (!modelProject.isAccessible()) {
+								try {
+									modelProject.open(monitor);
+								} catch (CoreException e) {
+									return new Status(IStatus.ERROR, FacadeCodeGenPlugin.PLUGIN_ID, e.getMessage(), e);
+								}
+							}
+							// generate using acceleo
+							List<String> args = new ArrayList<String>();
+							File modelDirectory = modelProject.getLocation().toFile();
+							try {
+								GenFacade generator = new GenFacade(emfGenModel, modelDirectory, args);
+								generator.doGenerate(BasicMonitor.toMonitor(new SubProgressMonitor(monitor, IProgressMonitor.UNKNOWN)));
+							} catch (IOException e) {
+								return new Status(IStatus.ERROR, FacadeCodeGenPlugin.PLUGIN_ID, e.getMessage(), e);
+							}
+							return Status.OK_STATUS;
 						}
-						modelProject = Generator.createEMFProject(new Path(emfGenModel.getModelDirectory()), modelProject.getLocation(), referencedProjects, new SubProgressMonitor(monitor, IProgressMonitor.UNKNOWN), Generator.EMF_MODEL_PROJECT_STYLE | Generator.EMF_PLUGIN_PROJECT_STYLE);
-					} else if(!modelProject.isAccessible()) {
-						try {
-							modelProject.open(monitor);
-						} catch (CoreException e) {
-							return new Status(IStatus.ERROR, FacadeCodeGenPlugin.PLUGIN_ID, e.getMessage(), e);
-						}
-					}
-					// generate using acceleo
-					List<String> args = new ArrayList<String>();
-					File modelDirectory = modelProject.getLocation().toFile();
-					try {
-						GenFacade generator = new GenFacade(emfGenModel, modelDirectory, args);
-						generator.doGenerate(BasicMonitor.toMonitor(new SubProgressMonitor(monitor, IProgressMonitor.UNKNOWN)));
-					} catch (IOException e) {
-						return new Status(IStatus.ERROR, FacadeCodeGenPlugin.PLUGIN_ID, e.getMessage(), e);
-					}
-					return Status.OK_STATUS;
-				}
-			});
+					});
 
-			if(emfGenModel.isCodeFormatting()) {
+			if (emfGenModel.isCodeFormatting()) {
 				refresh(emfGenModel, flow);
 
 				String s2prime = Messages.GenerateFacadeAction_5;
@@ -175,34 +176,34 @@ public class GenerateFacadeHandler extends AbstractHandler {
 
 	/**
 	 * Refresh.
-	 * 
+	 *
 	 * @param emfGenModel
-	 *        the emf GenModel that is used to generate facade code for
+	 *            the emf GenModel that is used to generate facade code for
 	 * @param flow
-	 *        the flow
+	 *            the flow
 	 */
 	protected void refresh(final org.eclipse.emf.codegen.ecore.genmodel.GenModel emfGenModel, Workflow flow) {
 		String s3 = Messages.GenerateFacadeAction_6 + emfGenModel.eResource().getURI().toString();
 		flow.addStep(s3, new Step("REFRESH") { //$NON-NLS-1$
 
-			@Override
-			public IStatus execute(IProgressMonitor monitor) {
-				// refresh model project
-				IProject modelProject = getProjectFromStringPath(emfGenModel.getModelProjectDirectory());
-				if(modelProject == null) {
-					return Status.OK_STATUS;
-				}
-				try {
-					if(!modelProject.isOpen()) {
-						modelProject.open(monitor);
+					@Override
+					public IStatus execute(IProgressMonitor monitor) {
+						// refresh model project
+						IProject modelProject = getProjectFromStringPath(emfGenModel.getModelProjectDirectory());
+						if (modelProject == null) {
+							return Status.OK_STATUS;
+						}
+						try {
+							if (!modelProject.isOpen()) {
+								modelProject.open(monitor);
+							}
+							modelProject.refreshLocal(IResource.DEPTH_INFINITE, monitor);
+						} catch (CoreException e) {
+							return new Status(IStatus.ERROR, FacadeCodeGenPlugin.PLUGIN_ID, e.getMessage(), e);
+						}
+						return Status.OK_STATUS;
 					}
-					modelProject.refreshLocal(IResource.DEPTH_INFINITE, monitor);
-				} catch (CoreException e) {
-					return new Status(IStatus.ERROR, FacadeCodeGenPlugin.PLUGIN_ID, e.getMessage(), e);
-				}
-				return Status.OK_STATUS;
-			}
-		});
+				});
 	}
 
 
@@ -211,14 +212,14 @@ public class GenerateFacadeHandler extends AbstractHandler {
 
 	/**
 	 * Extract project.
-	 * 
+	 *
 	 * @param stringPath
-	 *        the path to the project encoded as a string
+	 *            the path to the project encoded as a string
 	 * @return the corresponding project
 	 */
 	protected IProject getProjectFromStringPath(String stringPath) {
 		IPath path = new Path(stringPath);
-		if(path.isEmpty()) {
+		if (path.isEmpty()) {
 			return null;
 		}
 		return workspace.getRoot().getProject(path.segment(0));

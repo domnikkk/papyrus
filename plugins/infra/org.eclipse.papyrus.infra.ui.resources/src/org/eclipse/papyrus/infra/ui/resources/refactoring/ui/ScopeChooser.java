@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.ui.ide.IDE;
 
 /**
  * Default Implementation of {@link IScopeChooser}
- * 
+ *
  * @author tfaure
  */
 public abstract class ScopeChooser implements IScopeChooser {
@@ -60,9 +60,9 @@ public abstract class ScopeChooser implements IScopeChooser {
 		private List<IFile> files = new LinkedList<IFile>();
 
 		public boolean visit(IResource resource) throws CoreException {
-			if(resource instanceof IFile) {
-				IFile file = (IFile)resource;
-				if(isXMI(file)) {
+			if (resource instanceof IFile) {
+				IFile file = (IFile) resource;
+				if (isXMI(file)) {
 					files.add(file);
 				}
 				return false;
@@ -72,7 +72,7 @@ public abstract class ScopeChooser implements IScopeChooser {
 
 		/**
 		 * Determine if the given file is an XMI some specific code has been set for notation and di
-		 * 
+		 *
 		 * @param f
 		 * @return
 		 */

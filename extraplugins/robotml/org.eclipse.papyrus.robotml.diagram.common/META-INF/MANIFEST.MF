@@ -2,28 +2,28 @@ Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.robotml.diagram.common.commands,
  org.eclipse.papyrus.robotml.diagram.common.editpolicies
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.core;bundle-version="1.0.1",
  org.eclipse.uml2.uml;bundle-version="4.1.0",
- org.eclipse.papyrus.uml.tools.utils;bundle-version="1.0.0",
+ org.eclipse.papyrus.uml.tools.utils;bundle-version="1.0.1",
  org.eclipse.core.expressions,
- org.eclipse.papyrus.robotml;bundle-version="1.0.0",
- org.eclipse.papyrus.uml.properties;bundle-version="1.0.0",
- org.eclipse.papyrus.uml.diagram.common;bundle-version="1.0.0",
+ org.eclipse.papyrus.robotml;bundle-version="1.0.1",
+ org.eclipse.papyrus.uml.properties;bundle-version="1.0.1",
+ org.eclipse.papyrus.uml.diagram.common;bundle-version="1.0.1",
  org.eclipse.gmf.runtime.gef.ui;bundle-version="1.4.1",
- org.eclipse.papyrus.infra.viewpoints.policy;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.gmfdiag.common;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.viewpoints.policy;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.gmfdiag.common;bundle-version="1.0.1",
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.7.0",
- org.eclipse.papyrus.uml.diagram.composite;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.core.log;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.emf;bundle-version="1.0.0",
- org.eclipse.papyrus.uml.tools;bundle-version="1.0.0",
- org.eclipse.papyrus.uml.diagram.communication;bundle-version="1.0.0",
+ org.eclipse.papyrus.uml.diagram.composite;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.emf;bundle-version="1.0.1",
+ org.eclipse.papyrus.uml.tools;bundle-version="1.0.1",
+ org.eclipse.papyrus.uml.diagram.communication;bundle-version="1.0.1",
  org.eclipse.ui.ide;bundle-version="3.9.0",
  org.eclipse.gmf.runtime.notation.edit,
- org.eclipse.papyrus.uml.diagram.clazz;bundle-version="1.0.0"
+ org.eclipse.papyrus.uml.diagram.clazz;bundle-version="1.0.1"
 Bundle-Vendor: %Bundle-Vendor
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %Bundle-Name
 Bundle-Activator: org.eclipse.papyrus.robotml.diagram.common.Activator

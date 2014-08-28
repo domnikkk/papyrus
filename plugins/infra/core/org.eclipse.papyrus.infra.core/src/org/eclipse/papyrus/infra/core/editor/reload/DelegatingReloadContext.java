@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,15 +29,15 @@ public class DelegatingReloadContext implements IDisposableReloadContext, IAdapt
 		super();
 
 		IReloadContextProvider provider = AdapterUtils.adapt(reloadContextProvider, IReloadContextProvider.class, null);
-		if(provider != null) {
+		if (provider != null) {
 			delegate = provider.createReloadContext();
 		}
 	}
 
 	@Override
 	public void dispose() {
-		if(delegate instanceof IDisposableReloadContext) {
-			((IDisposableReloadContext)delegate).dispose();
+		if (delegate instanceof IDisposableReloadContext) {
+			((IDisposableReloadContext) delegate).dispose();
 		}
 
 		delegate = null;
@@ -46,11 +46,11 @@ public class DelegatingReloadContext implements IDisposableReloadContext, IAdapt
 	public Object getDelegate() {
 		return delegate;
 	}
-	
+
 	public void restore(Object reloadContextProvider) {
-		if(delegate != null) {
+		if (delegate != null) {
 			IReloadContextProvider provider = AdapterUtils.adapt(reloadContextProvider, IReloadContextProvider.class, null);
-			if(provider != null) {
+			if (provider != null) {
 				provider.restore(delegate);
 			}
 		}
@@ -64,7 +64,7 @@ public class DelegatingReloadContext implements IDisposableReloadContext, IAdapt
 	private IInternalEMFSelectionContext getEMFContext() {
 		IInternalEMFSelectionContext result = null;
 
-		if((delegate != null) && (AdapterUtils.adapt(delegate, IInternalEMFSelectionContext.class, null) != null)) {
+		if ((delegate != null) && (AdapterUtils.adapt(delegate, IInternalEMFSelectionContext.class, null) != null)) {
 			// We need the adapter
 			result = new IInternalEMFSelectionContext.Delegating(this);
 		}

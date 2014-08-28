@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,40 +35,40 @@ import org.eclipse.uml2.uml.NamedElement;
 /**
  * This class enables to open a dialog to ask the user to confirm he wants to
  * update a Parameter and associated Pins
- * 
+ *
  */
 public class ConfirmPinAndParameterSyncDialog extends MessageDialog {
 
 	/**
 	 * Protected constructor. Use {@link #openConfirmFromParameter(Shell)} or {@link #openConfirmFromPin(Shell)}
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell
+	 *            the parent shell
 	 * @param dialogMessage
-	 *        the message
+	 *            the message
 	 */
 	protected ConfirmPinAndParameterSyncDialog(Shell parentShell, String dialogMessage) {
-		super(parentShell, CustomMessages.ConfirmPinAndParameterSync_Title, null, dialogMessage, CONFIRM, new String[]{ IDialogConstants.OK_LABEL, IDialogConstants.CANCEL_LABEL }, 0);
+		super(parentShell, CustomMessages.ConfirmPinAndParameterSync_Title, null, dialogMessage, CONFIRM, new String[] { IDialogConstants.OK_LABEL, IDialogConstants.CANCEL_LABEL }, 0);
 	}
 
 	/**
 	 * Open a confirmation dialog for a modification from a parameter
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell
+	 *            the parent shell
 	 * @param listOfActions
-	 *        the list of impacted actions
+	 *            the list of impacted actions
 	 * @param labelprovider
-	 *        the label provider to read actions
+	 *            the label provider to read actions
 	 * @return the user confirmation
 	 */
 	public static boolean openConfirmFromParameter(Shell parentShell, List<? extends NamedElement> listOfActions, ILabelProvider labelprovider) {
 		// consult preferences before opening the popups
 		final IPreferenceStore prefStore = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
 		boolean showPopup = prefStore.getBoolean(IActivityPreferenceConstants.PREF_CONFIRM_PIN_SYNC_FROM_PARAMETER);
-		if(showPopup) {
+		if (showPopup) {
 			StringBuffer parsedList = new StringBuffer();
-			for(NamedElement element : listOfActions) {
+			for (NamedElement element : listOfActions) {
 				parsedList.append(labelprovider.getText(element));
 				parsedList.append(System.getProperty("line.separator"));
 			}
@@ -82,11 +82,11 @@ public class ConfirmPinAndParameterSyncDialog extends MessageDialog {
 
 	/**
 	 * Create a checkbox for not displaying the popup again
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.MessageDialog#createCustomArea(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
-	 *        parent composite
+	 *            parent composite
 	 * @return checkbox
 	 */
 	@Override
@@ -97,8 +97,8 @@ public class ConfirmPinAndParameterSyncDialog extends MessageDialog {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(e.getSource() instanceof Button) {
-					boolean doNotShow = ((Button)e.getSource()).getSelection();
+				if (e.getSource() instanceof Button) {
+					boolean doNotShow = ((Button) e.getSource()).getSelection();
 					final IPreferenceStore prefStore = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
 					prefStore.putValue(IActivityPreferenceConstants.PREF_CONFIRM_PIN_SYNC_FROM_PARAMETER, Boolean.toString(!doNotShow));
 				}

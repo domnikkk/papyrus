@@ -69,9 +69,9 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The composite in which this editor should be displayed
+	 *            The composite in which this editor should be displayed
 	 * @param style
-	 *        The style for this editor's text box
+	 *            The style for this editor's text box
 	 */
 	public StringEditor(Composite parent, int style) {
 		this(parent, style, null, DEFAULT_HEIGHT_HINT, DEFAULT_WIDTH_HINT);
@@ -83,11 +83,11 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The composite in which this editor should be displayed
+	 *            The composite in which this editor should be displayed
 	 * @param style
-	 *        The style for this editor's text box
+	 *            The style for this editor's text box
 	 * @param label
-	 *        The label for this editor
+	 *            The label for this editor
 	 */
 	public StringEditor(Composite parent, int style, String label) {
 		this(parent, style, label, DEFAULT_HEIGHT_HINT, DEFAULT_WIDTH_HINT);
@@ -98,13 +98,13 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The composite in which this editor should be displayed
+	 *            The composite in which this editor should be displayed
 	 * @param style
-	 *        The style for this editor's text box
+	 *            The style for this editor's text box
 	 * @param heighHint
-	 *        Height hint of the text area in multiline mode
+	 *            Height hint of the text area in multiline mode
 	 * @param widthHint
-	 *        Width hint of the text area in multiline mode
+	 *            Width hint of the text area in multiline mode
 	 */
 	public StringEditor(Composite parent, int style, int heighHint, int widthHint) {
 		this(parent, style, null, heighHint, widthHint);
@@ -115,15 +115,15 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The composite in which this editor should be displayed
+	 *            The composite in which this editor should be displayed
 	 * @param style
-	 *        The style for this editor's text box
+	 *            The style for this editor's text box
 	 * @param label
-	 *        The label for this editor
+	 *            The label for this editor
 	 * @param heighHint
-	 *        Height hint of the text area in multiline mode
+	 *            Height hint of the text area in multiline mode
 	 * @param widthHint
-	 *        Width hint of the text area in multiline mode
+	 *            Width hint of the text area in multiline mode
 	 */
 	public StringEditor(Composite parent, int style, String label, int heighHint, int widthHint) {
 		super(parent, label);
@@ -133,7 +133,7 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 		data.grabExcessHorizontalSpace = true;
 		data.verticalAlignment = SWT.FILL;
 
-		if((style & SWT.MULTI) != 0) {
+		if ((style & SWT.MULTI) != 0) {
 			data.minimumHeight = heighHint;
 			data.minimumWidth = widthHint;
 			style = style | SWT.V_SCROLL;
@@ -142,7 +142,7 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 		text = factory.createText(this, null, style);
 		text.setLayoutData(data);
 
-		if(label != null) {
+		if (label != null) {
 			super.label.setLayoutData(getLabelLayoutData());
 
 		}
@@ -159,8 +159,8 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 	@Override
 	protected GridData getLabelLayoutData() {
 		GridData result = super.getLabelLayoutData();
-		if(text != null) {
-			if((text.getStyle() & SWT.MULTI) != 0) {
+		if (text != null) {
+			if ((text.getStyle() & SWT.MULTI) != 0) {
 				result.verticalAlignment = SWT.BEGINNING;
 			}
 		}
@@ -192,15 +192,15 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 	public void keyReleased(KeyEvent e) {
 		// We listen on Carriage Return or Ctrl+ Carriage return, depending on
 		// whether the editor is single- or multi-line
-		if(e.keyCode == SWT.CR || e.keyCode == SWT.KEYPAD_CR) {
-			if((text.getStyle() & SWT.MULTI) == 0) { // Single-line : Enter
-				if(e.stateMask == SWT.NONE) {
+		if (e.keyCode == SWT.CR || e.keyCode == SWT.KEYPAD_CR) {
+			if ((text.getStyle() & SWT.MULTI) == 0) { // Single-line : Enter
+				if (e.stateMask == SWT.NONE) {
 					notifyChange();
 				}
 			} else { // Multi-line : Ctrl+Enter
-				if(e.stateMask == SWT.CTRL) {
+				if (e.stateMask == SWT.CTRL) {
 					String str = text.getText();
-					if(str.endsWith(StringSelector.LINE_SEPARATOR)) {
+					if (str.endsWith(StringSelector.LINE_SEPARATOR)) {
 						int newLength = str.length() - StringSelector.LINE_SEPARATOR.length();
 						text.setText(str.substring(0, newLength));
 						text.setSelection(newLength);
@@ -265,8 +265,8 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 	 * @param value
 	 */
 	public void setValue(Object value) {
-		if(value instanceof String) {
-			this.text.setText((String)value);
+		if (value instanceof String) {
+			this.text.setText((String) value);
 		} else {
 			this.text.setText(""); //$NON-NLS-1$;
 		}
@@ -281,7 +281,7 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 	public void setValidateOnDelay(boolean validateOnDelay) {
 		this.validateOnDelay = validateOnDelay;
 
-		if(validateOnDelay) {
+		if (validateOnDelay) {
 			text.addModifyListener(this);
 		} else {
 			text.removeModifyListener(this);
@@ -294,19 +294,19 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 	 * given timer
 	 *
 	 * @param millis
-	 *        The delay after which the editor should be automatically
-	 *        validated, in milliseconds. The default is 600ms
+	 *            The delay after which the editor should be automatically
+	 *            validated, in milliseconds. The default is 600ms
 	 */
 	public void setValidateOnDelay(int millis) {
 		this.delay = millis;
 		setValidateOnDelay(true);
-		if(delay == 0) {
+		if (delay == 0) {
 			cancelCurrentTask();
 		}
 	}
 
 	private void cancelCurrentTask() {
-		if(currentValidateTask != null) {
+		if (currentValidateTask != null) {
 			currentValidateTask.cancel();
 			currentValidateTask = null;
 		}
@@ -320,15 +320,15 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 	public void modifyText(ModifyEvent e) {
 
 		// SWT Thread
-		if(validateOnDelay) {
-			if(delay == 0) {
+		if (validateOnDelay) {
+			if (delay == 0) {
 				commit(); // Direct commit on edition, to avoid creating useless
 				// threads
 
 				return;
 			}
 
-			if(timer == null) {
+			if (timer == null) {
 				timer = new Timer(true);
 			}
 
@@ -351,27 +351,27 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 			};
 			timer.schedule(currentValidateTask, delay);
 		}
-		if(targetValidator != null) {
+		if (targetValidator != null) {
 			IStatus status = targetValidator.validate(text.getText());
 			updateStatus(status);
 		}
-		if(modelValidator != null) {
+		if (modelValidator != null) {
 			IStatus status = modelValidator.validate(text.getText());
 			updateStatus(status);
-			if(binding == null) {
+			if (binding == null) {
 				update();
 			}
 		}
 
-		if(modelProperty != null) { //Bug 433169: The widget may be used without an Observable Value (setValue + getValue)
-			if(modelProperty.getValue() != null) {
-				if(!isReadOnly() && !modelProperty.getValue().toString().equals(text.getText())) {
+		if (modelProperty != null) { // Bug 433169: The widget may be used without an Observable Value (setValue + getValue)
+			if (modelProperty.getValue() != null) {
+				if (!isReadOnly() && !modelProperty.getValue().toString().equals(text.getText())) {
 					text.setBackground(EDIT);
 				} else {
 					text.setBackground(DEFAULT);
 				}
 			} else {
-				if(text.getText().equals("")) {
+				if (text.getText().equals("")) {
 					text.setBackground(DEFAULT);
 				} else {
 					text.setBackground(EDIT);
@@ -384,7 +384,7 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 	public void dispose() {
 		cancelCurrentTask();
 		cancelChangeColorTask();
-		if(timer != null) {
+		if (timer != null) {
 			timer.cancel();
 			timer = null;
 		}
@@ -397,7 +397,7 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 
 	@Override
 	public void updateStatus(IStatus status) {
-		switch(status.getSeverity()) {
+		switch (status.getSeverity()) {
 		case IStatus.OK:
 			controlDecoration.hide();
 			break;
@@ -424,9 +424,9 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 
 	@Override
 	public void changeColorField() {
-		if(binding != null) {
+		if (binding != null) {
 
-			if(timer == null) {
+			if (timer == null) {
 				timer = new Timer(true);
 			}
 
@@ -435,7 +435,7 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 
 				@Override
 				public void run() {
-					if(StringEditor.this.isDisposed()) {
+					if (StringEditor.this.isDisposed()) {
 						return;
 					}
 					StringEditor.this.getDisplay().syncExec(new Runnable() {
@@ -448,12 +448,12 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 					});
 				}
 			};
-			if(errorBinding) {
+			if (errorBinding) {
 				text.setBackground(ERROR);
 				text.update();
 			} else {
-				IStatus status = (IStatus)binding.getValidationStatus().getValue();
-				switch(status.getSeverity()) {
+				IStatus status = (IStatus) binding.getValidationStatus().getValue();
+				switch (status.getSeverity()) {
 				case IStatus.OK:
 				case IStatus.WARNING:
 					timer.schedule(changeColorTask, 600);
@@ -471,7 +471,7 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 	}
 
 	private void cancelChangeColorTask() {
-		if(changeColorTask != null) {
+		if (changeColorTask != null) {
 			changeColorTask.cancel();
 			changeColorTask = null;
 		}

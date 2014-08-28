@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,22 +24,23 @@ import org.eclipse.papyrus.infra.gmfdiag.css.helper.CSSHelper;
 
 /**
  * An a provide which installs EventListenerEditPolicy on EditPart which support CSS Styling
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
-//TODO: Currently this provider is not plugged. Performance improvements are required
+// TODO: Currently this provider is not plugged. Performance improvements are required
 public class EventListenerEditPolicyProvider extends AbstractProvider implements IEditPolicyProvider {
 
+	@Override
 	public boolean provides(IOperation operation) {
-		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
 		EditPart editPart = epOperation.getEditPart();
-		if(!(editPart instanceof GraphicalEditPart)) {
+		if (!(editPart instanceof GraphicalEditPart)) {
 			return false;
 		}
 
 		EditingDomain domain = EMFHelper.resolveEditingDomain(editPart);
-		if(domain == null) {
+		if (domain == null) {
 			return false;
 		}
 
@@ -47,6 +48,7 @@ public class EventListenerEditPolicyProvider extends AbstractProvider implements
 		return CSSHelper.isCSSSupported(resourceSet);
 	}
 
+	@Override
 	public void createEditPolicies(EditPart editPart) {
 		editPart.installEditPolicy(EventListenerEditPolicy.ROLE, new EventListenerEditPolicy());
 	}

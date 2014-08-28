@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,12 +25,13 @@ import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NFPsFactory
  * @model kind="package"
  * @generated
@@ -40,6 +41,7 @@ public interface NFPsPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "NFPs";
@@ -48,6 +50,7 @@ public interface NFPsPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/NFPs/1";
@@ -56,6 +59,7 @@ public interface NFPsPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "NFPs";
@@ -64,6 +68,7 @@ public interface NFPsPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	NFPsPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NFPsPackageImpl.init();
@@ -72,6 +77,7 @@ public interface NFPsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpImpl <em>Nfp</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NFPsPackageImpl#getNfp()
 	 * @generated
@@ -82,6 +88,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -91,6 +98,7 @@ public interface NFPsPackage extends EPackage {
 	 * The number of structural features of the '<em>Nfp</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -100,6 +108,7 @@ public interface NFPsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.UnitImpl <em>Unit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.UnitImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NFPsPackageImpl#getUnit()
 	 * @generated
@@ -110,6 +119,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Conv Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -119,6 +129,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Conv Offset</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -128,6 +139,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Unit</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -137,6 +149,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Enumeration Literal</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -146,6 +159,7 @@ public interface NFPsPackage extends EPackage {
 	 * The number of structural features of the '<em>Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -155,6 +169,7 @@ public interface NFPsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpConstraintImpl <em>Nfp Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpConstraintImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NFPsPackageImpl#getNfpConstraint()
 	 * @generated
@@ -165,6 +180,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -174,6 +190,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -183,6 +200,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Mode</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -192,6 +210,7 @@ public interface NFPsPackage extends EPackage {
 	 * The number of structural features of the '<em>Nfp Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -201,6 +220,7 @@ public interface NFPsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpTypeImpl <em>Nfp Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpTypeImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NFPsPackageImpl#getNfpType()
 	 * @generated
@@ -211,6 +231,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Tuple Attrib</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -220,6 +241,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -229,6 +251,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Value Attrib</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -238,6 +261,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Unit Attrib</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -247,6 +271,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Expr Attrib</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -256,6 +281,7 @@ public interface NFPsPackage extends EPackage {
 	 * The number of structural features of the '<em>Nfp Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -265,6 +291,7 @@ public interface NFPsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.DimensionImpl <em>Dimension</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.DimensionImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NFPsPackageImpl#getDimension()
 	 * @generated
@@ -275,6 +302,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -284,6 +312,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Dimension</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -293,6 +322,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Exponent</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -302,6 +332,7 @@ public interface NFPsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Enumeration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -311,6 +342,7 @@ public interface NFPsPackage extends EPackage {
 	 * The number of structural features of the '<em>Dimension</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -320,6 +352,7 @@ public interface NFPsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.ConstraintKind <em>Constraint Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.ConstraintKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NFPsPackageImpl#getConstraintKind()
 	 * @generated
@@ -331,6 +364,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Nfp <em>Nfp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Nfp</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Nfp
 	 * @generated
@@ -341,6 +375,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Nfp#getBase_Property <em>Base Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Nfp#getBase_Property()
 	 * @see #getNfp()
@@ -352,6 +387,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Unit</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit
 	 * @generated
@@ -362,6 +398,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit#getConvFactor <em>Conv Factor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Conv Factor</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit#getConvFactor()
 	 * @see #getUnit()
@@ -373,6 +410,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit#getConvOffset <em>Conv Offset</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Conv Offset</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit#getConvOffset()
 	 * @see #getUnit()
@@ -384,6 +422,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit#getBaseUnit <em>Base Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Unit</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit#getBaseUnit()
 	 * @see #getUnit()
@@ -395,6 +434,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit#getBase_EnumerationLiteral <em>Base Enumeration Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Enumeration Literal</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit#getBase_EnumerationLiteral()
 	 * @see #getUnit()
@@ -406,6 +446,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpConstraint <em>Nfp Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Nfp Constraint</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpConstraint
 	 * @generated
@@ -416,6 +457,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpConstraint#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpConstraint#getKind()
 	 * @see #getNfpConstraint()
@@ -427,6 +469,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpConstraint#getBase_Constraint <em>Base Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Constraint</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpConstraint#getBase_Constraint()
 	 * @see #getNfpConstraint()
@@ -438,6 +481,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpConstraint#getMode <em>Mode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Mode</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpConstraint#getMode()
 	 * @see #getNfpConstraint()
@@ -449,6 +493,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpType <em>Nfp Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Nfp Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpType
 	 * @generated
@@ -459,6 +504,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpType#getValueAttrib <em>Value Attrib</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Value Attrib</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpType#getValueAttrib()
 	 * @see #getNfpType()
@@ -470,6 +516,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpType#getUnitAttrib <em>Unit Attrib</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Unit Attrib</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpType#getUnitAttrib()
 	 * @see #getNfpType()
@@ -481,6 +528,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpType#getExprAttrib <em>Expr Attrib</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Expr Attrib</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpType#getExprAttrib()
 	 * @see #getNfpType()
@@ -492,6 +540,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Dimension <em>Dimension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Dimension</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Dimension
 	 * @generated
@@ -502,6 +551,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Dimension#getSymbol <em>Symbol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Symbol</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Dimension#getSymbol()
 	 * @see #getDimension()
@@ -513,6 +563,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Dimension#getBaseDimension <em>Base Dimension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Base Dimension</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Dimension#getBaseDimension()
 	 * @see #getDimension()
@@ -524,6 +575,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Dimension#getBaseExponent <em>Base Exponent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Base Exponent</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Dimension#getBaseExponent()
 	 * @see #getDimension()
@@ -535,6 +587,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Dimension#getBase_Enumeration <em>Base Enumeration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Enumeration</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Dimension#getBase_Enumeration()
 	 * @see #getDimension()
@@ -546,6 +599,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.ConstraintKind <em>Constraint Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Constraint Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.ConstraintKind
 	 * @generated
@@ -556,6 +610,7 @@ public interface NFPsPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -565,12 +620,13 @@ public interface NFPsPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -578,6 +634,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpImpl <em>Nfp</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NFPsPackageImpl#getNfp()
 		 * @generated
@@ -588,6 +645,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference NFP__BASE_PROPERTY = eINSTANCE.getNfp_Base_Property();
@@ -596,6 +654,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.UnitImpl <em>Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.UnitImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NFPsPackageImpl#getUnit()
 		 * @generated
@@ -606,6 +665,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Conv Factor</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute UNIT__CONV_FACTOR = eINSTANCE.getUnit_ConvFactor();
@@ -614,6 +674,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Conv Offset</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute UNIT__CONV_OFFSET = eINSTANCE.getUnit_ConvOffset();
@@ -622,6 +683,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Unit</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference UNIT__BASE_UNIT = eINSTANCE.getUnit_BaseUnit();
@@ -630,6 +692,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Enumeration Literal</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference UNIT__BASE_ENUMERATION_LITERAL = eINSTANCE.getUnit_Base_EnumerationLiteral();
@@ -638,6 +701,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpConstraintImpl <em>Nfp Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpConstraintImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NFPsPackageImpl#getNfpConstraint()
 		 * @generated
@@ -648,6 +712,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute NFP_CONSTRAINT__KIND = eINSTANCE.getNfpConstraint_Kind();
@@ -656,6 +721,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Constraint</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference NFP_CONSTRAINT__BASE_CONSTRAINT = eINSTANCE.getNfpConstraint_Base_Constraint();
@@ -664,6 +730,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mode</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference NFP_CONSTRAINT__MODE = eINSTANCE.getNfpConstraint_Mode();
@@ -672,6 +739,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpTypeImpl <em>Nfp Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpTypeImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NFPsPackageImpl#getNfpType()
 		 * @generated
@@ -682,6 +750,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value Attrib</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference NFP_TYPE__VALUE_ATTRIB = eINSTANCE.getNfpType_ValueAttrib();
@@ -690,6 +759,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Unit Attrib</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference NFP_TYPE__UNIT_ATTRIB = eINSTANCE.getNfpType_UnitAttrib();
@@ -698,6 +768,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Expr Attrib</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference NFP_TYPE__EXPR_ATTRIB = eINSTANCE.getNfpType_ExprAttrib();
@@ -706,6 +777,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.DimensionImpl <em>Dimension</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.DimensionImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NFPsPackageImpl#getDimension()
 		 * @generated
@@ -716,6 +788,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute DIMENSION__SYMBOL = eINSTANCE.getDimension_Symbol();
@@ -724,6 +797,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Dimension</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference DIMENSION__BASE_DIMENSION = eINSTANCE.getDimension_BaseDimension();
@@ -732,6 +806,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Exponent</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute DIMENSION__BASE_EXPONENT = eINSTANCE.getDimension_BaseExponent();
@@ -740,6 +815,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Enumeration</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference DIMENSION__BASE_ENUMERATION = eINSTANCE.getDimension_Base_Enumeration();
@@ -748,6 +824,7 @@ public interface NFPsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.ConstraintKind <em>Constraint Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.ConstraintKind
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NFPsPackageImpl#getConstraintKind()
 		 * @generated
@@ -756,4 +833,4 @@ public interface NFPsPackage extends EPackage {
 
 	}
 
-} //NFPsPackage
+} // NFPsPackage

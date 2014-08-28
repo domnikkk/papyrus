@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class ProfileSwitchContext {
 	private final Package package_;
 	private final Collection<Profile> appliedProfiles;
 	private final Shell shell;
-	
+
 	public ProfileSwitchContext(Shell shell, ModelSet modelSet, TransactionalEditingDomain editingDomain, Package package_, Collection<Profile> appliedProfiles) {
 		super();
 		this.shell = shell;

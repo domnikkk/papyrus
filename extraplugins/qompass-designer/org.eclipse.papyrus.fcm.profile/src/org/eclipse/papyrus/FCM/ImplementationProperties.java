@@ -1,19 +1,18 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Ansgar Radermacher - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.FCM;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -24,12 +23,12 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.FCM.ImplementationProperties#getSizeRAM <em>Size RAM</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.ImplementationProperties#getSupportedOS <em>Supported OS</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.ImplementationProperties#getArch <em>Arch</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.ImplementationProperties#getBase_Class <em>Base Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.ImplementationProperties#getSizeROM <em>Size ROM</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.ImplementationProperties#getSupportedTargetArch <em>Supported Target Arch</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.ImplementationProperties#getSizeRAM <em>Size RAM</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.ImplementationProperties#getSupportedOS <em>Supported OS</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.ImplementationProperties#getArch <em>Arch</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.ImplementationProperties#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.ImplementationProperties#getSizeROM <em>Size ROM</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.ImplementationProperties#getSupportedTargetArch <em>Supported Target Arch</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,10 +41,10 @@ public interface ImplementationProperties extends EObject {
 	 * Returns the value of the '<em><b>Size RAM</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Size RAM</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Size RAM</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Size RAM</em>' attribute.
 	 * @see #setSizeRAM(int)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getImplementationProperties_SizeRAM()
@@ -58,7 +57,9 @@ public interface ImplementationProperties extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.ImplementationProperties#getSizeRAM <em>Size RAM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Size RAM</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Size RAM</em>' attribute.
 	 * @see #getSizeRAM()
 	 * @generated
 	 */
@@ -69,10 +70,10 @@ public interface ImplementationProperties extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.FCM.OperatingSystem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Supported OS</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Supported OS</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Supported OS</em>' reference list.
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getImplementationProperties_SupportedOS()
 	 * @model ordered="false"
@@ -85,10 +86,10 @@ public interface ImplementationProperties extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.FCM.TargetArchitecture}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Arch</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Arch</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Arch</em>' reference list.
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getImplementationProperties_Arch()
 	 * @model ordered="false"
@@ -100,10 +101,10 @@ public interface ImplementationProperties extends EObject {
 	 * Returns the value of the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Class</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getImplementationProperties_Base_Class()
@@ -116,7 +117,9 @@ public interface ImplementationProperties extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.ImplementationProperties#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Class</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
@@ -126,10 +129,10 @@ public interface ImplementationProperties extends EObject {
 	 * Returns the value of the '<em><b>Size ROM</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Size ROM</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Size ROM</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Size ROM</em>' attribute.
 	 * @see #setSizeROM(int)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getImplementationProperties_SizeROM()
@@ -142,7 +145,9 @@ public interface ImplementationProperties extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.ImplementationProperties#getSizeROM <em>Size ROM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Size ROM</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Size ROM</em>' attribute.
 	 * @see #getSizeROM()
 	 * @generated
 	 */
@@ -152,10 +157,10 @@ public interface ImplementationProperties extends EObject {
 	 * Returns the value of the '<em><b>Supported Target Arch</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Supported Target Arch</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Supported Target Arch</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Supported Target Arch</em>' reference.
 	 * @see #setSupportedTargetArch(TargetArchitecture)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getImplementationProperties_SupportedTargetArch()
@@ -168,7 +173,9 @@ public interface ImplementationProperties extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.ImplementationProperties#getSupportedTargetArch <em>Supported Target Arch</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Supported Target Arch</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Supported Target Arch</em>' reference.
 	 * @see #getSupportedTargetArch()
 	 * @generated
 	 */

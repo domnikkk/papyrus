@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ import org.eclipse.swt.widgets.Display;
 /**
  * An action to delete an existing context. This action cannot be undone.
  * If you simply want to disable an existing context, see {@link ConfigurationManager#disableContext(Context)}
- * 
+ *
  * @author Camille Letavernier
  */
 public class RemoveContextAction {
@@ -42,12 +42,12 @@ public class RemoveContextAction {
 
 	/**
 	 * Deletes the given context.
-	 * 
+	 *
 	 * @param sourceContext
-	 *        The context to delete
+	 *            The context to delete
 	 */
 	public void removeContext(final Context sourceContext) {
-		//TODO : Close editors for the context being deleted
+		// TODO : Close editors for the context being deleted
 		ProgressMonitorDialog dialog = new ProgressMonitorDialog(Display.getCurrent().getActiveShell());
 		try {
 			dialog.run(false, false, new IRunnableWithProgress() {

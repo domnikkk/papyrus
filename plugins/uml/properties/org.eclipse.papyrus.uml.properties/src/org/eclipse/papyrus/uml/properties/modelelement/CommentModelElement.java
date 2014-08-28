@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,16 +9,20 @@
  * Contributors:
  *  Sebastien Poissonnet (CEA LIST) sebastien.poissonnet@cea.fr
  *  Christian W. Damus (CEA) - bug 323802
- *  
+ *  Gabriel Pascual (ALL4TEC) - Bug 441228
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
 import org.eclipse.core.databinding.observable.IObservable;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.infra.widgets.creation.ReferenceValueFactory;
 import org.eclipse.papyrus.uml.properties.databinding.AppliedCommentsObservableList;
+import org.eclipse.papyrus.uml.properties.databinding.OwnedCommentsObservableList;
 import org.eclipse.papyrus.views.properties.modelelement.EMFModelElement;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.UMLPackage;
 
 public class CommentModelElement extends EMFModelElement {
 
@@ -30,7 +34,7 @@ public class CommentModelElement extends EMFModelElement {
 
 	@Override
 	public boolean isOrdered(String propertyPath) {
-		if(APPLIED_COMMENTS_PROPERTY.equals(propertyPath)) {
+		if (APPLIED_COMMENTS_PROPERTY.equals(propertyPath)) {
 			return false;
 		}
 		return super.isOrdered(propertyPath);
@@ -38,7 +42,7 @@ public class CommentModelElement extends EMFModelElement {
 
 	@Override
 	public boolean isUnique(String propertyPath) {
-		if(APPLIED_COMMENTS_PROPERTY.equals(propertyPath)) {
+		if (APPLIED_COMMENTS_PROPERTY.equals(propertyPath)) {
 			return true;
 		}
 		return super.isUnique(propertyPath);
@@ -46,15 +50,24 @@ public class CommentModelElement extends EMFModelElement {
 
 	@Override
 	protected IObservable doGetObservable(String propertyPath) {
-		if(APPLIED_COMMENTS_PROPERTY.equals(propertyPath)) {
-			return new AppliedCommentsObservableList(domain, (Element)source);
+		if (APPLIED_COMMENTS_PROPERTY.equals(propertyPath)) {
+			return new AppliedCommentsObservableList(domain, (Element) source);
+		}
+
+		EStructuralFeature feature = getFeature(propertyPath);
+		if (feature == null) {
+			return null;
+		}
+
+		if (UMLPackage.eINSTANCE.getElement_OwnedComment().equals(feature)) {
+			return new OwnedCommentsObservableList(domain, source);
 		}
 		return super.doGetObservable(propertyPath);
 	}
 
 	@Override
 	public ReferenceValueFactory getValueFactory(String propertyPath) {
-		if(APPLIED_COMMENTS_PROPERTY.equals(propertyPath)) {
+		if (APPLIED_COMMENTS_PROPERTY.equals(propertyPath)) {
 			return super.getValueFactory("ownedComment");
 		}
 
@@ -63,7 +76,7 @@ public class CommentModelElement extends EMFModelElement {
 
 	@Override
 	public boolean getDirectCreation(String propertyPath) {
-		if(APPLIED_COMMENTS_PROPERTY.equals(propertyPath)) {
+		if (APPLIED_COMMENTS_PROPERTY.equals(propertyPath)) {
 			return true;
 		}
 		return super.getDirectCreation(propertyPath);
@@ -71,7 +84,7 @@ public class CommentModelElement extends EMFModelElement {
 
 	@Override
 	protected boolean isFeatureEditable(String propertyPath) {
-		if(APPLIED_COMMENTS_PROPERTY.equals(propertyPath)) {
+		if (APPLIED_COMMENTS_PROPERTY.equals(propertyPath)) {
 			return true;
 		}
 		return super.isFeatureEditable(propertyPath);

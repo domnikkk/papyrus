@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,7 +53,7 @@ import org.eclipse.swt.graphics.FontData;
 /**
  * this is an helper that contains method use to initialize font color etc in
  * the view provider
- * 
+ *
  */
 public class PreferenceInitializerForElementHelper {
 
@@ -67,16 +67,16 @@ public class PreferenceInitializerForElementHelper {
 
 	/**
 	 * initialize the background for a graphical element
-	 * 
+	 *
 	 * @param view
-	 *        the element to initialize
+	 *            the element to initialize
 	 * @param store
-	 *        the preference store
+	 *            the preference store
 	 * @param elementName
-	 *        the name to the element
+	 *            the name to the element
 	 */
 	public static void initBackgroundFromPrefs(View view, final IPreferenceStore store, String elementName) {
-		if(!usePreferenceInitializer(view)) {
+		if (!usePreferenceInitializer(view)) {
 			return;
 		}
 
@@ -90,32 +90,32 @@ public class PreferenceInitializerForElementHelper {
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(store, fillColorConstant);
 		ViewUtil.setStructuralFeatureValue(view, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 
-		FillStyle fillStyle = (FillStyle)view.getStyle(NotationPackage.Literals.FILL_STYLE);
+		FillStyle fillStyle = (FillStyle) view.getStyle(NotationPackage.Literals.FILL_STYLE);
 		fillStyle.setFillColor(FigureUtilities.RGBToInteger(fillRGB).intValue());
 
-		if(store.getBoolean(gradientPolicyConstant)) {
+		if (store.getBoolean(gradientPolicyConstant)) {
 			GradientPreferenceConverter gradientPreferenceConverter = new GradientPreferenceConverter(store.getString(gradientColorConstant));
 			fillStyle.setGradient(gradientPreferenceConverter.getGradientData());
 			fillStyle.setTransparency(gradientPreferenceConverter.getTransparency());
 		}
 
 		EditingDomain domain = EMFHelper.resolveEditingDomain(view);
-		if(domain instanceof TransactionalEditingDomain) {
-			TransactionalEditingDomain editingDomain = (TransactionalEditingDomain)domain;
+		if (domain instanceof TransactionalEditingDomain) {
+			TransactionalEditingDomain editingDomain = (TransactionalEditingDomain) domain;
 			// shadow
 			RecordingCommand shadowcommand = AnnotationStyleProvider.getSetShadowCommand(editingDomain, view, store.getBoolean(shadowConstant));
-			if(shadowcommand.canExecute()) {
+			if (shadowcommand.canExecute()) {
 				shadowcommand.execute();
 			}
 			// icon label
 			RecordingCommand namelabelIconCommand = AnnotationStyleProvider.getSetElementIconCommand(editingDomain, view, store.getBoolean(elementIcon));
-			if(namelabelIconCommand.canExecute()) {
+			if (namelabelIconCommand.canExecute()) {
 				namelabelIconCommand.execute();
 			}
 			// qualified name
-			if(!store.getBoolean(qualifiedName)) {
+			if (!store.getBoolean(qualifiedName)) {
 				RecordingCommand qualifiedNameCommand = AnnotationStyleProvider.getSetQualifiedNameDepthCommand(editingDomain, view, 1000);
-				if(qualifiedNameCommand.canExecute()) {
+				if (qualifiedNameCommand.canExecute()) {
 					qualifiedNameCommand.execute();
 				}
 			}
@@ -124,24 +124,24 @@ public class PreferenceInitializerForElementHelper {
 
 	/**
 	 * initialize the font for a graphical element
-	 * 
+	 *
 	 * @param view
-	 *        the element to initialize
+	 *            the element to initialize
 	 * @param store
-	 *        the preference store
+	 *            the preference store
 	 * @param elementName
-	 *        the name to the element
+	 *            the name to the element
 	 */
 	public static void initFontStyleFromPrefs(View view, final IPreferenceStore store, String elementName) {
-		if(!usePreferenceInitializer(view)) {
+		if (!usePreferenceInitializer(view)) {
 			return;
 		}
 
 		String fontConstant = getpreferenceKey(view, elementName, PreferencesConstantsHelper.FONT);
 		String fontColorConstant = getpreferenceKey(view, elementName, PreferencesConstantsHelper.COLOR_FONT);
 
-		FontStyle viewFontStyle = (FontStyle)view.getStyle(NotationPackage.Literals.FONT_STYLE);
-		if(viewFontStyle != null) {
+		FontStyle viewFontStyle = (FontStyle) view.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (viewFontStyle != null) {
 			FontData fontData = PreferenceConverter.getFontData(store, fontConstant);
 			viewFontStyle.setFontName(fontData.getName());
 			viewFontStyle.setFontHeight(fontData.getHeight());
@@ -155,16 +155,16 @@ public class PreferenceInitializerForElementHelper {
 
 	/**
 	 * initialize the foreground for a graphical element
-	 * 
+	 *
 	 * @param view
-	 *        the element to initialize
+	 *            the element to initialize
 	 * @param store
-	 *        the preference store
+	 *            the preference store
 	 * @param elementName
-	 *        the name to the element
+	 *            the name to the element
 	 */
 	public static void initForegroundFromPrefs(View view, final IPreferenceStore store, String elementName) {
-		if(!usePreferenceInitializer(view)) {
+		if (!usePreferenceInitializer(view)) {
 			return;
 		}
 
@@ -175,19 +175,19 @@ public class PreferenceInitializerForElementHelper {
 
 	/**
 	 * initialize the routing for a graphical element
-	 * 
+	 *
 	 * @param view
-	 *        the element to initialize
+	 *            the element to initialize
 	 * @param store
-	 *        the preference store
+	 *            the preference store
 	 * @param elementName
-	 *        the name to the element
-	 * 
+	 *            the name to the element
+	 *
 	 * @deprecated call {@link PreferenceInitializerForElementHelper#initRoutingFromPrefs(View, IPreferenceStore, String)} instead.
 	 */
 	@Deprecated
 	public static void initRountingFromPrefs(View view, final IPreferenceStore store, String elementName) {
-		if(!usePreferenceInitializer(view)) {
+		if (!usePreferenceInitializer(view)) {
 			return;
 		}
 		initRoutingFromPrefs(view, store, elementName);
@@ -195,34 +195,34 @@ public class PreferenceInitializerForElementHelper {
 
 	/**
 	 * initialize the routing for a graphical element
-	 * 
+	 *
 	 * @param view
-	 *        the element to initialize
+	 *            the element to initialize
 	 * @param store
-	 *        the preference store
+	 *            the preference store
 	 * @param elementName
-	 *        the name to the element
+	 *            the name to the element
 	 */
 	public static void initRoutingFromPrefs(View view, final IPreferenceStore store, String elementName) {
-		if(!usePreferenceInitializer(view)) {
+		if (!usePreferenceInitializer(view)) {
 			return;
 		}
 
 		Routing routing = Routing.get(store.getInt(getpreferenceKey(view, elementName, PreferencesConstantsHelper.ROUTING_STYLE)));
-		if(routing != null) {
+		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(view, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
 		}
 		Smoothness smoothness = Smoothness.get(store.getInt(getpreferenceKey(view, elementName, PreferencesConstantsHelper.SMOOTHNESS)));
-		if(routing != null) {
+		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(view, NotationPackage.eINSTANCE.getRoutingStyle_Smoothness(), smoothness);
 		}
 		JumpLinkStatus jumpLinkStatus = JumpLinkStatus.get(getpreferenceKey(view, elementName, PreferencesConstantsHelper.JUMPLINK_STATUS));
-		if(routing != null) {
+		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(view, NotationPackage.eINSTANCE.getRoutingStyle_JumpLinkStatus(), jumpLinkStatus);
 		}
 
 		JumpLinkType jumpLinkType = JumpLinkType.get(getpreferenceKey(view, elementName, PreferencesConstantsHelper.JUMPLINK_TYPE));
-		if(routing != null) {
+		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(view, NotationPackage.eINSTANCE.getRoutingStyle_JumpLinkType(), jumpLinkType);
 		}
 		boolean jumpLinksReverse = store.getBoolean(getpreferenceKey(view, elementName, PreferencesConstantsHelper.JUMPLINK_REVERSE));
@@ -237,46 +237,46 @@ public class PreferenceInitializerForElementHelper {
 
 	/**
 	 * initialize the status of the compartment for the node (Showed or hidden)
-	 * 
+	 *
 	 * @param view
-	 *        the element to initialize
+	 *            the element to initialize
 	 * @param store
-	 *        the preference store
+	 *            the preference store
 	 * @param elementName
-	 *        the name to the element
+	 *            the name to the element
 	 */
 	public static void initCompartmentsStatusFromPrefs(View view, final IPreferenceStore store, String elementName) {
-		if(!ThemeInitializerManager.instance.usePreferenceInitializer(view)) {
+		if (!ThemeInitializerManager.instance.usePreferenceInitializer(view)) {
 			return;
 		}
 
 		EList<?> children = view.getPersistedChildren();
-		if(children != null) {
-			for(Object object : children) {
+		if (children != null) {
+			for (Object object : children) {
 
 				// we look for the name of the compartment for this view
-				EditPart dummyEP = EditPartService.getInstance().createGraphicEditPart((View)object);
-				IGraphicalEditPart epp = (IGraphicalEditPart)dummyEP;
+				EditPart dummyEP = EditPartService.getInstance().createGraphicEditPart((View) object);
+				IGraphicalEditPart epp = (IGraphicalEditPart) dummyEP;
 				IFigure fig1 = epp.getFigure();
 
-				if(fig1 instanceof ResizableCompartmentFigure) {
-					String compartmentName = ((ResizableCompartmentFigure)fig1).getCompartmentTitle();
-					if(compartmentName != null) {
+				if (fig1 instanceof ResizableCompartmentFigure) {
+					String compartmentName = ((ResizableCompartmentFigure) fig1).getCompartmentTitle();
+					if (compartmentName != null) {
 						String diagramKind = view.getDiagram().getType();
 						String preferenceKey = PreferencesConstantsHelper.getCompartmentElementConstant(diagramKind + "_" + elementName, compartmentName, PreferencesConstantsHelper.COMPARTMENT_VISIBILITY); //$NON-NLS-1$
 						boolean value = store.getBoolean(preferenceKey);
 
-						if(!value) {// the default value is true : nothing to
-									// do
+						if (!value) {// the default value is true : nothing to
+										// do
 							ENamedElement namedElement = PackageUtil.getElement("notation.View.visible"); //$NON-NLS-1$
-							ViewUtil.setStructuralFeatureValue((View)object, (EStructuralFeature)namedElement, value);
+							ViewUtil.setStructuralFeatureValue((View) object, (EStructuralFeature) namedElement, value);
 						}
 
 						String compartmentNameVisibilityPreference = PreferencesConstantsHelper.getCompartmentElementConstant(diagramKind + "_" + elementName, compartmentName, PreferencesConstantsHelper.COMPARTMENT_NAME_VISIBILITY); //$NON-NLS-1$
 						boolean showCompartmentName = store.getBoolean(compartmentNameVisibilityPreference);
-						View childView = (View)object;
-						TitleStyle style = (TitleStyle)childView.getStyle(NotationPackage.eINSTANCE.getTitleStyle());
-						if(style != null) {
+						View childView = (View) object;
+						TitleStyle style = (TitleStyle) childView.getStyle(NotationPackage.eINSTANCE.getTitleStyle());
+						if (style != null) {
 							style.setShowTitle(showCompartmentName);
 						}
 					}
@@ -289,30 +289,30 @@ public class PreferenceInitializerForElementHelper {
 	/**
 	 * initialize the status of each label for the node or for the link (Showed
 	 * or hidden)
-	 * 
+	 *
 	 * @param view
-	 *        the element to initialize
+	 *            the element to initialize
 	 * @param store
-	 *        the preference store
+	 *            the preference store
 	 * @param elementName
-	 *        the name to the element
+	 *            the name to the element
 	 */
 	public static void initLabelVisibilityFromPrefs(View view, final IPreferenceStore store, String elementName) {
-		if(!ThemeInitializerManager.instance.usePreferenceInitializer(view)) {
+		if (!ThemeInitializerManager.instance.usePreferenceInitializer(view)) {
 			return;
 		}
 
 		EList<?> children = view.getPersistedChildren();
-		if(children != null) {
-			for(Object object : children) {
+		if (children != null) {
+			for (Object object : children) {
 
 				// we look for the name of the label for this view
-				EditPart dummyEP = EditPartService.getInstance().createGraphicEditPart((View)object);
-				if(dummyEP instanceof ILabelRoleProvider) {
-					String role = ((ILabelRoleProvider)dummyEP).getLabelRole();
+				EditPart dummyEP = EditPartService.getInstance().createGraphicEditPart((View) object);
+				if (dummyEP instanceof ILabelRoleProvider) {
+					String role = ((ILabelRoleProvider) dummyEP).getLabelRole();
 					String diagramKind = view.getDiagram().getType();
 					String key = PreferencesConstantsHelper.getLabelElementConstant(diagramKind + "_" + elementName, role, PreferencesConstantsHelper.LABEL_VISIBILITY); //$NON-NLS-1$
-					((View)object).setVisible(store.getBoolean(key));
+					((View) object).setVisible(store.getBoolean(key));
 				}
 				dummyEP = null;
 			}
@@ -321,13 +321,13 @@ public class PreferenceInitializerForElementHelper {
 
 	/**
 	 * initialize node dimension.
-	 * 
+	 *
 	 * @param view
-	 *        the element to initialize
+	 *            the element to initialize
 	 * @param store
-	 *        the preference store
+	 *            the preference store
 	 * @param elementName
-	 *        the name to the element
+	 *            the name to the element
 	 */
 	public static Dimension getDimensionFromPref(View view, final IPreferenceStore store, String elementName) {
 		Dimension dim = new Dimension();
@@ -339,19 +339,19 @@ public class PreferenceInitializerForElementHelper {
 
 	/**
 	 * initialize label location.
-	 * 
+	 *
 	 * @param view
-	 *        the element to initialize
+	 *            the element to initialize
 	 * @param store
-	 *        the preference store
+	 *            the preference store
 	 * @param elementName
-	 *        the name to the element
+	 *            the name to the element
 	 */
 	public static void initLabelLocationFromPrefs(View view, final IPreferenceStore store, String elementName) {
 		assert (view instanceof Node);
 
-		Node label = (Node)view;
-		Location location = (Location)label.getLayoutConstraint();
+		Node label = (Node) view;
+		Location location = (Location) label.getLayoutConstraint();
 
 		String xKey = getpreferenceKey(view, elementName, PreferencesConstantsHelper.LOCATION_X);
 		String yKey = getpreferenceKey(view, elementName, PreferencesConstantsHelper.LOCATION_Y);

@@ -19,7 +19,7 @@ import org.eclipse.papyrus.sysml.diagram.requirement.test.IRequirementDiagramTes
 /**
  * The Class AbstractPapyrusTestCase.
  */
-public abstract class AbstractPapyrusTestCase extends org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase {
+public abstract class AbstractPapyrusTestCase extends org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase {
 
 	@Override
 	protected ICreationCommand getDiagramCommandCreation() {

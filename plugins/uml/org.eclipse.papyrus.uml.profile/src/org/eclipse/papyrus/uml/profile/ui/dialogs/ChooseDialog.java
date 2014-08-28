@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -67,9 +67,9 @@ public class ChooseDialog extends Dialog {
 
 	/**
 	 * The Constructor.
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell
+	 *            the parent shell
 	 */
 	public ChooseDialog(Shell parentShell) {
 		super(parentShell);
@@ -77,17 +77,17 @@ public class ChooseDialog extends Dialog {
 
 	/**
 	 * Creates the dialog area.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
-	 * 
+	 *            the parent
+	 *
 	 * @return the control
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite comp = (Composite)super.createDialogArea(parent);
+		Composite comp = (Composite) super.createDialogArea(parent);
 
-		GridLayout layout = (GridLayout)comp.getLayout();
+		GridLayout layout = (GridLayout) comp.getLayout();
 		layout.numColumns = 2;
 		Label elementlabel = new Label(comp, SWT.RIGHT | SWT.SINGLE);
 		elementlabel.setText(announce);
@@ -101,9 +101,9 @@ public class ChooseDialog extends Dialog {
 
 	/**
 	 * Creates the buttons for button bar.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
@@ -113,9 +113,9 @@ public class ChooseDialog extends Dialog {
 
 	/**
 	 * Button pressed.
-	 * 
+	 *
 	 * @param buttonId
-	 *        the button id
+	 *            the button id
 	 */
 	@Override
 	protected void buttonPressed(int buttonId) {
@@ -133,7 +133,7 @@ public class ChooseDialog extends Dialog {
 
 	/**
 	 * Gets the value.
-	 * 
+	 *
 	 * @return the value
 	 */
 	public Object getValue() {

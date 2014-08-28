@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,13 +16,9 @@ package org.eclipse.papyrus.facade.extensiondefinition.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass;
 import org.eclipse.papyrus.facade.extensiondefinition.Combination;
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage;
@@ -34,7 +30,7 @@ import org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.CombinationImpl#getMembers <em>Members</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.CombinationImpl#getMembers <em>Members</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +41,7 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	 * The cached value of the '{@link #getMembers() <em>Members</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMembers()
 	 * @generated
 	 * @ordered
@@ -54,6 +51,7 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected CombinationImpl() {
@@ -63,6 +61,7 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,8 +72,10 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<BaseMetaclass> getMembers() {
 		if (members == null) {
 			members = new EObjectResolvingEList<BaseMetaclass>(BaseMetaclass.class, this, ExtensiondefinitionPackage.COMBINATION__MEMBERS);
@@ -85,13 +86,14 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.COMBINATION__MEMBERS:
-				return getMembers();
+		case ExtensiondefinitionPackage.COMBINATION__MEMBERS:
+			return getMembers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -99,16 +101,17 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.COMBINATION__MEMBERS:
-				getMembers().clear();
-				getMembers().addAll((Collection<? extends BaseMetaclass>)newValue);
-				return;
+		case ExtensiondefinitionPackage.COMBINATION__MEMBERS:
+			getMembers().clear();
+			getMembers().addAll((Collection<? extends BaseMetaclass>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -116,14 +119,15 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.COMBINATION__MEMBERS:
-				getMembers().clear();
-				return;
+		case ExtensiondefinitionPackage.COMBINATION__MEMBERS:
+			getMembers().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -131,15 +135,16 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.COMBINATION__MEMBERS:
-				return members != null && !members.isEmpty();
+		case ExtensiondefinitionPackage.COMBINATION__MEMBERS:
+			return members != null && !members.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //CombinationImpl
+} // CombinationImpl

@@ -37,20 +37,20 @@ public class UnlimitedNaturalValidator extends AbstractValidator {
 	 *         invalid
 	 */
 	public String isValid(String newText) {
-		if(INFINITE_STAR.equals(newText) || INFINITE_MINUS_ONE.equals(newText)) {
+		if (INFINITE_STAR.equals(newText) || INFINITE_MINUS_ONE.equals(newText)) {
 			return null;
 		}
 		boolean isValid = true;
 		try {
 			Integer myUnlimitedNatural = Integer.valueOf(newText);
-			if(myUnlimitedNatural < -1) {
+			if (myUnlimitedNatural < -1) {
 				isValid = false;
 			}
 		} catch (NumberFormatException e) {
 			isValid = false;
 		}
 
-		if(!isValid) {
+		if (!isValid) {
 			return Messages.UnlimitedNaturalInputValidator_NotAnUnlimitedNaturalMessage;
 		}
 		return null;
@@ -64,31 +64,31 @@ public class UnlimitedNaturalValidator extends AbstractValidator {
 	 */
 	@Override
 	public IStatus validate(Object newValue) {
-		if(newValue instanceof Integer) {
-			int value = (Integer)newValue;
-			if(value == -1 || value >= 0) {
+		if (newValue instanceof Integer) {
+			int value = (Integer) newValue;
+			if (value == -1 || value >= 0) {
 				return Status.OK_STATUS;
 			}
 		}
 
-		if(newValue instanceof String) {
-			String newText = (String)newValue;
+		if (newValue instanceof String) {
+			String newText = (String) newValue;
 
-			if(INFINITE_STAR.equals(newText) || INFINITE_MINUS_ONE.equals(newText)) {
+			if (INFINITE_STAR.equals(newText) || INFINITE_MINUS_ONE.equals(newText)) {
 				return Status.OK_STATUS;
 			}
 
 			boolean isValid = true;
 			try {
 				Integer myUnlimitedNatural = Integer.parseInt(newText);
-				if(myUnlimitedNatural < -1) {
+				if (myUnlimitedNatural < -1) {
 					isValid = false;
 				}
 			} catch (NumberFormatException e) {
 				isValid = false;
 			}
 
-			if(isValid) {
+			if (isValid) {
 				return Status.OK_STATUS;
 			}
 		}

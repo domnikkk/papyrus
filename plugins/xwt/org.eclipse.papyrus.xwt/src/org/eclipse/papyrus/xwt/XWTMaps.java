@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -34,7 +34,7 @@ public class XWTMaps {
 	}
 
 	private static void checkAndInit() {
-		if(styles.isEmpty() || colors.isEmpty() || events.isEmpty() || accelerators.isEmpty()) {
+		if (styles.isEmpty() || colors.isEmpty() || events.isEmpty() || accelerators.isEmpty()) {
 			init();
 		}
 	}
@@ -272,12 +272,12 @@ public class XWTMaps {
 	}
 
 	public static int getStyle(String key) {
-		if(key == null) {
+		if (key == null) {
 			return SWT.NONE;
 		}
 		checkAndInit();
 		String mapKey = key.toUpperCase();
-		if(!mapKey.startsWith("SWT.")) {
+		if (!mapKey.startsWith("SWT.")) {
 			mapKey = "SWT." + mapKey;
 		}
 		Integer style = styles.get(mapKey);
@@ -290,12 +290,12 @@ public class XWTMaps {
 	}
 
 	public static int getColor(String key) {
-		if(key == null || key.equals("")) {
+		if (key == null || key.equals("")) {
 			return SWT.NONE;
 		}
 		checkAndInit();
 		String mapKey = key.toUpperCase();
-		if(!mapKey.startsWith("SWT.")) {
+		if (!mapKey.startsWith("SWT.")) {
 			mapKey = "SWT." + mapKey;
 		}
 		Integer color = colors.get(mapKey);
@@ -308,12 +308,12 @@ public class XWTMaps {
 	}
 
 	public static int getEvent(String key) {
-		if(key == null || key.equals("")) {
+		if (key == null || key.equals("")) {
 			return SWT.None;
 		}
 		checkAndInit();
 		String mapKey = key.toLowerCase();
-		if(!mapKey.startsWith("swt.")) {
+		if (!mapKey.startsWith("swt.")) {
 			mapKey = "swt." + mapKey;
 		}
 		Integer event = events.get(mapKey);
@@ -327,32 +327,32 @@ public class XWTMaps {
 
 	public static int getAccelerator(String key) {
 		char letter;
-		if(key == null || key.equals("")) {
+		if (key == null || key.equals("")) {
 			return SWT.NONE;
 		}
 		checkAndInit();
-		if(key.equals("BS")) {
+		if (key.equals("BS")) {
 			Integer accelerator = Integer.valueOf(SWT.BS);
 			return accelerator == null ? SWT.NONE : accelerator;
-		} else if(key.equals("ENTER")) {
+		} else if (key.equals("ENTER")) {
 			Integer accelerator = Integer.valueOf(SWT.CR);
 			return accelerator == null ? SWT.NONE : accelerator;
-		} else if(key.equals("DEL")) {
+		} else if (key.equals("DEL")) {
 			Integer accelerator = Integer.valueOf(SWT.DEL);
 			return accelerator == null ? SWT.NONE : accelerator;
-		} else if(key.equals("SPACE")) {
+		} else if (key.equals("SPACE")) {
 			Integer accelerator = Integer.valueOf(' ');
 			return accelerator == null ? SWT.NONE : accelerator;
-		} else if(key.length() == 1) {
+		} else if (key.length() == 1) {
 			letter = key.charAt(0);
-			if(letter >= 'A' && letter <= 'Z' || letter >= 'a' && letter <= 'z') {
+			if (letter >= 'A' && letter <= 'Z' || letter >= 'a' && letter <= 'z') {
 				Integer accelerator = Integer.valueOf(letter);
 				return accelerator == null ? SWT.NONE : accelerator;
 			}
 		}
 
 		String mapKey = key.toUpperCase();
-		if(!mapKey.startsWith("SWT.")) {
+		if (!mapKey.startsWith("SWT.")) {
 			mapKey = "SWT." + mapKey;
 		}
 
@@ -362,314 +362,314 @@ public class XWTMaps {
 
 	public static int getValue(String key) {
 		int value = getStyle(key);
-		if(value == SWT.NONE) {
+		if (value == SWT.NONE) {
 			value = getColor(key);
 		}
-		if(value == SWT.NONE) {
+		if (value == SWT.NONE) {
 			value = getEvent(key);
 		}
-		if(value == SWT.NONE) {
+		if (value == SWT.NONE) {
 			value = getAccelerator(key);
 		}
 		return value;
 	}
 
 	public static String getCombAccelerator(String content) {
-		if(content.equals("Alt0")) {
+		if (content.equals("Alt0")) {
 			return "SWT.ALT | SWT.KEYPAD_0";
-		} else if(content.equals("Alt1")) {
+		} else if (content.equals("Alt1")) {
 			return "SWT.ALT | SWT.KEYPAD_1";
-		} else if(content.equals("Alt2")) {
+		} else if (content.equals("Alt2")) {
 			return "SWT.ALT | SWT.KEYPAD_2";
-		} else if(content.equals("Alt3")) {
+		} else if (content.equals("Alt3")) {
 			return "SWT.ALT | SWT.KEYPAD_3";
-		} else if(content.equals("Alt4")) {
+		} else if (content.equals("Alt4")) {
 			return "SWT.ALT | SWT.KEYPAD_4";
-		} else if(content.equals("Alt5")) {
+		} else if (content.equals("Alt5")) {
 			return "SWT.ALT | SWT.KEYPAD_5";
-		} else if(content.equals("Alt6")) {
+		} else if (content.equals("Alt6")) {
 			return "SWT.ALT | SWT.KEYPAD_6";
-		} else if(content.equals("Alt7")) {
+		} else if (content.equals("Alt7")) {
 			return "SWT.ALT | SWT.KEYPAD_7";
-		} else if(content.equals("Alt8")) {
+		} else if (content.equals("Alt8")) {
 			return "SWT.ALT | SWT.KEYPAD_8";
-		} else if(content.equals("Alt9")) {
+		} else if (content.equals("Alt9")) {
 			return "SWT.ALT | SWT.KEYPAD_9";
-		} else if(content.equals("AltBksp")) {
+		} else if (content.equals("AltBksp")) {
 			return "SWT.ALT | BS";
-		} else if(content.equals("AltDownArrow")) {
+		} else if (content.equals("AltDownArrow")) {
 			return "SWT.ALT | SWT.ARROW_DOWN";
-		} else if(content.equals("AltF1")) {
+		} else if (content.equals("AltF1")) {
 			return "SWT.ALT | SWT.F1";
-		} else if(content.equals("AltF10")) {
+		} else if (content.equals("AltF10")) {
 			return "SWT.ALT | SWT.F10";
-		} else if(content.equals("AltF11")) {
+		} else if (content.equals("AltF11")) {
 			return "SWT.ALT | SWT.F11";
-		} else if(content.equals("AltF12")) {
+		} else if (content.equals("AltF12")) {
 			return "SWT.ALT | SWT.F12";
-		} else if(content.equals("AltF2")) {
+		} else if (content.equals("AltF2")) {
 			return "SWT.ALT | SWT.F2";
-		} else if(content.equals("AltF3")) {
+		} else if (content.equals("AltF3")) {
 			return "SWT.ALT | SWT.F3";
-		} else if(content.equals("AltF4")) {
+		} else if (content.equals("AltF4")) {
 			return "SWT.ALT | SWT.F4";
-		} else if(content.equals("AltF5")) {
+		} else if (content.equals("AltF5")) {
 			return "SWT.ALT | SWT.F5";
-		} else if(content.equals("AltF6")) {
+		} else if (content.equals("AltF6")) {
 			return "SWT.ALT | SWT.F6";
-		} else if(content.equals("AltF7")) {
+		} else if (content.equals("AltF7")) {
 			return "SWT.ALT | SWT.F7";
-		} else if(content.equals("AltF8")) {
+		} else if (content.equals("AltF8")) {
 			return "SWT.ALT | SWT.F8";
-		} else if(content.equals("AltF9")) {
+		} else if (content.equals("AltF9")) {
 			return "SWT.ALT | SWT.F9";
-		} else if(content.equals("AltLeftArrow")) {
+		} else if (content.equals("AltLeftArrow")) {
 			return "SWT.ALT | SWT.ARROW_LEFT";
-		} else if(content.equals("AltRightArrow")) {
+		} else if (content.equals("AltRightArrow")) {
 			return "SWT.ALT | SWT.ARROW_RIGHT";
-		} else if(content.equals("AltUpArrow")) {
+		} else if (content.equals("AltUpArrow")) {
 			return "SWT.ALT | SWT.ARROW_UP";
-		} else if(content.equals("AltEnter")) {
+		} else if (content.equals("AltEnter")) {
 			return "SWT.ALT | Enter";
-		} else if(content.equals("AltSpace")) {
+		} else if (content.equals("AltSpace")) {
 			return "SWT.ALT | Space";
-		} else if(content.equals("Ctrl0")) {
+		} else if (content.equals("Ctrl0")) {
 			return "SWT.CTRL | SWT.KEYPAD_0";
-		} else if(content.equals("Ctrl1")) {
+		} else if (content.equals("Ctrl1")) {
 			return "SWT.CTRL | SWT.KEYPAD_1";
-		} else if(content.equals("Ctrl2")) {
+		} else if (content.equals("Ctrl2")) {
 			return "SWT.CTRL | SWT.KEYPAD_2";
-		} else if(content.equals("Ctrl3")) {
+		} else if (content.equals("Ctrl3")) {
 			return "SWT.CTRL | SWT.KEYPAD_3";
-		} else if(content.equals("Ctrl4")) {
+		} else if (content.equals("Ctrl4")) {
 			return "SWT.CTRL | SWT.KEYPAD_4";
-		} else if(content.equals("Ctrl5")) {
+		} else if (content.equals("Ctrl5")) {
 			return "SWT.CTRL | SWT.KEYPAD_5";
-		} else if(content.equals("Ctrl6")) {
+		} else if (content.equals("Ctrl6")) {
 			return "SWT.CTRL | SWT.KEYPAD_6";
-		} else if(content.equals("Ctrl7")) {
+		} else if (content.equals("Ctrl7")) {
 			return "SWT.CTRL | SWT.KEYPAD_7";
-		} else if(content.equals("Ctrl8")) {
+		} else if (content.equals("Ctrl8")) {
 			return "SWT.CTRL | SWT.KEYPAD_8";
-		} else if(content.equals("Ctrl9")) {
+		} else if (content.equals("Ctrl9")) {
 			return "SWT.CTRL | SWT.KEYPAD_9";
-		} else if(content.equals("CtrlA")) {
+		} else if (content.equals("CtrlA")) {
 			return "SWT.CTRL | A";
-		} else if(content.equals("CtrlB")) {
+		} else if (content.equals("CtrlB")) {
 			return "SWT.CTRL | B";
-		} else if(content.equals("CtrlC")) {
+		} else if (content.equals("CtrlC")) {
 			return "SWT.CTRL | C";
-		} else if(content.equals("CtrlD")) {
+		} else if (content.equals("CtrlD")) {
 			return "SWT.CTRL | D";
-		} else if(content.equals("CtrlDel")) {
+		} else if (content.equals("CtrlDel")) {
 			return "SWT.CTRL | DEL";
-		} else if(content.equals("CtrlEnter")) {
+		} else if (content.equals("CtrlEnter")) {
 			return "SWT.CTRL | Enter";
-		} else if(content.equals("CtrlSpace")) {
+		} else if (content.equals("CtrlSpace")) {
 			return "SWT.CTRL | Space";
-		} else if(content.equals("CtrlE")) {
+		} else if (content.equals("CtrlE")) {
 			return "SWT.CTRL | E";
-		} else if(content.equals("CtrlF")) {
+		} else if (content.equals("CtrlF")) {
 			return "SWT.CTRL | F";
-		} else if(content.equals("CtrlF1")) {
+		} else if (content.equals("CtrlF1")) {
 			return "SWT.CTRL | SWT.F1";
-		} else if(content.equals("CtrlF10")) {
+		} else if (content.equals("CtrlF10")) {
 			return "SWT.CTRL | SWT.F10";
-		} else if(content.equals("CtrlF11")) {
+		} else if (content.equals("CtrlF11")) {
 			return "SWT.CTRL | SWT.F11";
-		} else if(content.equals("CtrlF12")) {
+		} else if (content.equals("CtrlF12")) {
 			return "SWT.CTRL | SWT.F12";
-		} else if(content.equals("CtrlF2")) {
+		} else if (content.equals("CtrlF2")) {
 			return "SWT.CTRL | SWT.F2";
-		} else if(content.equals("CtrlF3")) {
+		} else if (content.equals("CtrlF3")) {
 			return "SWT.CTRL | SWT.F3";
-		} else if(content.equals("CtrlF4")) {
+		} else if (content.equals("CtrlF4")) {
 			return "SWT.CTRL | SWT.F4";
-		} else if(content.equals("CtrlF5")) {
+		} else if (content.equals("CtrlF5")) {
 			return "SWT.CTRL | SWT.F5";
-		} else if(content.equals("CtrlF6")) {
+		} else if (content.equals("CtrlF6")) {
 			return "SWT.CTRL | SWT.F6";
-		} else if(content.equals("CtrlF7")) {
+		} else if (content.equals("CtrlF7")) {
 			return "SWT.CTRL | SWT.F7";
-		} else if(content.equals("CtrlF8")) {
+		} else if (content.equals("CtrlF8")) {
 			return "SWT.CTRL | SWT.F8";
-		} else if(content.equals("CtrlF9")) {
+		} else if (content.equals("CtrlF9")) {
 			return "SWT.CTRL | SWT.F9";
-		} else if(content.equals("CtrlG")) {
+		} else if (content.equals("CtrlG")) {
 			return "SWT.CTRL | G";
-		} else if(content.equals("CtrlH")) {
+		} else if (content.equals("CtrlH")) {
 			return "SWT.CTRL | H";
-		} else if(content.equals("CtrlI")) {
+		} else if (content.equals("CtrlI")) {
 			return "SWT.CTRL | I";
-		} else if(content.equals("CtrlIns")) {
+		} else if (content.equals("CtrlIns")) {
 			return "SWT.CTRL | SWT.INSERT";
-		} else if(content.equals("CtrlJ")) {
+		} else if (content.equals("CtrlJ")) {
 			return "SWT.CTRL | J";
-		} else if(content.equals("CtrlK")) {
+		} else if (content.equals("CtrlK")) {
 			return "SWT.CTRL | K";
-		} else if(content.equals("CtrlL")) {
+		} else if (content.equals("CtrlL")) {
 			return "SWT.CTRL | L";
-		} else if(content.equals("CtrlM")) {
+		} else if (content.equals("CtrlM")) {
 			return "SWT.CTRL | M";
-		} else if(content.equals("CtrlN")) {
+		} else if (content.equals("CtrlN")) {
 			return "SWT.CTRL | N";
-		} else if(content.equals("CtrlO")) {
+		} else if (content.equals("CtrlO")) {
 			return "SWT.CTRL | O";
-		} else if(content.equals("CtrlP")) {
+		} else if (content.equals("CtrlP")) {
 			return "SWT.CTRL | P";
-		} else if(content.equals("CtrlQ")) {
+		} else if (content.equals("CtrlQ")) {
 			return "SWT.CTRL | Q";
-		} else if(content.equals("CtrlR")) {
+		} else if (content.equals("CtrlR")) {
 			return "SWT.CTRL | R";
-		} else if(content.equals("CtrlS")) {
+		} else if (content.equals("CtrlS")) {
 			return "SWT.CTRL | S";
-		} else if(content.equals("CtrlShift0")) {
+		} else if (content.equals("CtrlShift0")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.KEYPAD_0";
-		} else if(content.equals("CtrlShift1")) {
+		} else if (content.equals("CtrlShift1")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.KEYPAD_1";
-		} else if(content.equals("CtrlShift2")) {
+		} else if (content.equals("CtrlShift2")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.KEYPAD_2";
-		} else if(content.equals("CtrlShift3")) {
+		} else if (content.equals("CtrlShift3")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.KEYPAD_3";
-		} else if(content.equals("CtrlShift4")) {
+		} else if (content.equals("CtrlShift4")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.KEYPAD_4";
-		} else if(content.equals("CtrlShift5")) {
+		} else if (content.equals("CtrlShift5")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.KEYPAD_5";
-		} else if(content.equals("CtrlShift6")) {
+		} else if (content.equals("CtrlShift6")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.KEYPAD_6";
-		} else if(content.equals("CtrlShift7")) {
+		} else if (content.equals("CtrlShift7")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.KEYPAD_7";
-		} else if(content.equals("CtrlShift8")) {
+		} else if (content.equals("CtrlShift8")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.KEYPAD_8";
-		} else if(content.equals("CtrlShift9")) {
+		} else if (content.equals("CtrlShift9")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.KEYPAD_9";
-		} else if(content.equals("CtrlShiftA")) {
+		} else if (content.equals("CtrlShiftA")) {
 			return "SWT.CTRL | SWT.SHIFT | A";
-		} else if(content.equals("CtrlShiftB")) {
+		} else if (content.equals("CtrlShiftB")) {
 			return "SWT.CTRL | SWT.SHIFT | B";
-		} else if(content.equals("CtrlShiftC")) {
+		} else if (content.equals("CtrlShiftC")) {
 			return "SWT.CTRL | SWT.SHIFT | C";
-		} else if(content.equals("CtrlShiftD")) {
+		} else if (content.equals("CtrlShiftD")) {
 			return "SWT.CTRL | SWT.SHIFT | D";
-		} else if(content.equals("CtrlShiftE")) {
+		} else if (content.equals("CtrlShiftE")) {
 			return "SWT.CTRL | SWT.SHIFT | E";
-		} else if(content.equals("CtrlShiftF")) {
+		} else if (content.equals("CtrlShiftF")) {
 			return "SWT.CTRL | SWT.SHIFT | F";
-		} else if(content.equals("CtrlShiftF1")) {
+		} else if (content.equals("CtrlShiftF1")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.F1";
-		} else if(content.equals("CtrlShiftF10")) {
+		} else if (content.equals("CtrlShiftF10")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.F10";
-		} else if(content.equals("CtrlShiftF11")) {
+		} else if (content.equals("CtrlShiftF11")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.F11";
-		} else if(content.equals("CtrlShiftF12")) {
+		} else if (content.equals("CtrlShiftF12")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.F12";
-		} else if(content.equals("CtrlShiftF2")) {
+		} else if (content.equals("CtrlShiftF2")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.F2";
-		} else if(content.equals("CtrlShiftF3")) {
+		} else if (content.equals("CtrlShiftF3")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.F3";
-		} else if(content.equals("CtrlShiftF4")) {
+		} else if (content.equals("CtrlShiftF4")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.F4";
-		} else if(content.equals("CtrlShiftF5")) {
+		} else if (content.equals("CtrlShiftF5")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.F5";
-		} else if(content.equals("CtrlShiftF6")) {
+		} else if (content.equals("CtrlShiftF6")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.F6";
-		} else if(content.equals("CtrlShiftF7")) {
+		} else if (content.equals("CtrlShiftF7")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.F7";
-		} else if(content.equals("CtrlShiftF8")) {
+		} else if (content.equals("CtrlShiftF8")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.F8";
-		} else if(content.equals("CtrlShiftF9")) {
+		} else if (content.equals("CtrlShiftF9")) {
 			return "SWT.CTRL | SWT.SHIFT | SWT.F9";
-		} else if(content.equals("CtrlShiftH")) {
+		} else if (content.equals("CtrlShiftH")) {
 			return "SWT.CTRL | SWT.SHIFT | H";
-		} else if(content.equals("CtrlShiftI")) {
+		} else if (content.equals("CtrlShiftI")) {
 			return "SWT.CTRL | SWT.SHIFT | I";
-		} else if(content.equals("CtrlShiftJ")) {
+		} else if (content.equals("CtrlShiftJ")) {
 			return "SWT.CTRL | SWT.SHIFT | J";
-		} else if(content.equals("CtrlShiftK")) {
+		} else if (content.equals("CtrlShiftK")) {
 			return "SWT.CTRL | SWT.SHIFT | K";
-		} else if(content.equals("CtrlShiftL")) {
+		} else if (content.equals("CtrlShiftL")) {
 			return "SWT.CTRL | SWT.SHIFT | L";
-		} else if(content.equals("CtrlShiftM")) {
+		} else if (content.equals("CtrlShiftM")) {
 			return "SWT.CTRL | SWT.SHIFT | M";
-		} else if(content.equals("CtrlShiftN")) {
+		} else if (content.equals("CtrlShiftN")) {
 			return "SWT.CTRL | SWT.SHIFT | N";
-		} else if(content.equals("CtrlShiftO")) {
+		} else if (content.equals("CtrlShiftO")) {
 			return "SWT.CTRL | SWT.SHIFT | O";
-		} else if(content.equals("CtrlShiftP")) {
+		} else if (content.equals("CtrlShiftP")) {
 			return "SWT.CTRL | SWT.SHIFT | P";
-		} else if(content.equals("CtrlShiftQ")) {
+		} else if (content.equals("CtrlShiftQ")) {
 			return "SWT.CTRL | SWT.SHIFT | Q";
-		} else if(content.equals("CtrlShiftR")) {
+		} else if (content.equals("CtrlShiftR")) {
 			return "SWT.CTRL | SWT.SHIFT | R";
-		} else if(content.equals("CtrlShiftS")) {
+		} else if (content.equals("CtrlShiftS")) {
 			return "SWT.CTRL | SWT.SHIFT | S";
-		} else if(content.equals("CtrlShiftT")) {
+		} else if (content.equals("CtrlShiftT")) {
 			return "SWT.CTRL | SWT.SHIFT | T";
-		} else if(content.equals("CtrlShiftU")) {
+		} else if (content.equals("CtrlShiftU")) {
 			return "SWT.CTRL | SWT.SHIFT | U";
-		} else if(content.equals("CtrlShiftV")) {
+		} else if (content.equals("CtrlShiftV")) {
 			return "SWT.CTRL | SWT.SHIFT | V";
-		} else if(content.equals("CtrlShiftW")) {
+		} else if (content.equals("CtrlShiftW")) {
 			return "SWT.CTRL | SWT.SHIFT | W";
-		} else if(content.equals("CtrlShiftX")) {
+		} else if (content.equals("CtrlShiftX")) {
 			return "SWT.CTRL | SWT.SHIFT | X";
-		} else if(content.equals("CtrlShiftY")) {
+		} else if (content.equals("CtrlShiftY")) {
 			return "SWT.CTRL | SWT.SHIFT | Y";
-		} else if(content.equals("CtrlShiftZ")) {
+		} else if (content.equals("CtrlShiftZ")) {
 			return "SWT.CTRL | SWT.SHIFT | Z";
-		} else if(content.equals("CtrlShiftEnter")) {
+		} else if (content.equals("CtrlShiftEnter")) {
 			return "SWT.CTRL | SWT.SHIFT | Enter";
-		} else if(content.equals("CtrlShiftSpace")) {
+		} else if (content.equals("CtrlShiftSpace")) {
 			return "SWT.CTRL | SWT.SHIFT | Space";
-		} else if(content.equals("CtrlT")) {
+		} else if (content.equals("CtrlT")) {
 			return "SWT.CTRL | T";
-		} else if(content.equals("CtrlU")) {
+		} else if (content.equals("CtrlU")) {
 			return "SWT.CTRL | U";
-		} else if(content.equals("CtrlV")) {
+		} else if (content.equals("CtrlV")) {
 			return "SWT.CTRL | V";
-		} else if(content.equals("CtrlW")) {
+		} else if (content.equals("CtrlW")) {
 			return "SWT.CTRL | W";
-		} else if(content.equals("CtrlX")) {
+		} else if (content.equals("CtrlX")) {
 			return "SWT.CTRL | X";
-		} else if(content.equals("CtrlY")) {
+		} else if (content.equals("CtrlY")) {
 			return "SWT.CTRL | Y";
-		} else if(content.equals("CtrlZ")) {
+		} else if (content.equals("CtrlZ")) {
 			return "SWT.CTRL | Z";
-		} else if(content.equals("ShiftDel")) {
+		} else if (content.equals("ShiftDel")) {
 			return "SWT.SHIFT | DEL";
-		} else if(content.equals("ShiftF1")) {
+		} else if (content.equals("ShiftF1")) {
 			return "SWT.SHIFT | SWT.F1";
-		} else if(content.equals("ShiftF10")) {
+		} else if (content.equals("ShiftF10")) {
 			return "SWT.SHIFT | SWT.F10";
-		} else if(content.equals("ShiftF11")) {
+		} else if (content.equals("ShiftF11")) {
 			return "SWT.SHIFT | SWT.F11";
-		} else if(content.equals("ShiftF12")) {
+		} else if (content.equals("ShiftF12")) {
 			return "SWT.SHIFT | SWT.F12";
-		} else if(content.equals("ShiftF3")) {
+		} else if (content.equals("ShiftF3")) {
 			return "SWT.SHIFT | SWT.F2";
-		} else if(content.equals("ShiftF3")) {
+		} else if (content.equals("ShiftF3")) {
 			return "SWT.SHIFT | SWT.F3";
-		} else if(content.equals("ShiftF4")) {
+		} else if (content.equals("ShiftF4")) {
 			return "SWT.SHIFT | SWT.F4";
-		} else if(content.equals("ShiftF5")) {
+		} else if (content.equals("ShiftF5")) {
 			return "SWT.SHIFT | SWT.F5";
-		} else if(content.equals("ShiftF6")) {
+		} else if (content.equals("ShiftF6")) {
 			return "SWT.SHIFT | SWT.F6";
-		} else if(content.equals("ShiftF7")) {
+		} else if (content.equals("ShiftF7")) {
 			return "SWT.SHIFT | SWT.F7";
-		} else if(content.equals("ShiftF8")) {
+		} else if (content.equals("ShiftF8")) {
 			return "SWT.SHIFT | SWT.F8";
-		} else if(content.equals("ShiftF9")) {
+		} else if (content.equals("ShiftF9")) {
 			return "SWT.SHIFT | SWT.F9";
-		} else if(content.equals("ShiftIns")) {
+		} else if (content.equals("ShiftIns")) {
 			return "SWT.SHIFT | SWT.INSERT";
-		} else if(content.equals("ShiftEnter")) {
+		} else if (content.equals("ShiftEnter")) {
 			return "SWT.SHIFT | Enter";
-		} else if(content.equals("ShiftSpace")) {
+		} else if (content.equals("ShiftSpace")) {
 			return "SWT.SHIFT | Space";
-		} else if(content.equals("Enter")) {
+		} else if (content.equals("Enter")) {
 			return "Enter";
-		} else if(content.equals("Space")) {
+		} else if (content.equals("Space")) {
 			return "Space";
 		} else {
 			return content;

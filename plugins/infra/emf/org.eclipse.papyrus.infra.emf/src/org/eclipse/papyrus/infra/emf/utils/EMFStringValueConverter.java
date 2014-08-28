@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,11 +36,11 @@ import org.eclipse.papyrus.infra.tools.util.TypesConstants;
 
 /**
  * Value solver for EMF
- * 
+ *
  * WARNING : incomplete implementations
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 
 public class EMFStringValueConverter extends AbstractStringValueConverter {
@@ -58,11 +58,11 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 	protected final String multiValueSeparator;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param resolutionContext
-	 *        the context used for the resolution of the string
+	 *            the context used for the resolution of the string
 	 */
 	public EMFStringValueConverter(final EObject resolutionContext, final String multiValueSeparator) {
 		this.resolutionContext = resolutionContext;
@@ -71,7 +71,7 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the context to use for the resolution
 	 */
@@ -80,36 +80,36 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.services.IDisposable#dispose()
-	 * 
+	 *
 	 */
 	public void dispose() {
 		this.resolutionContext = null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param resolutionContext
-	 *        the table context
+	 *            the table context
 	 * @param feature
-	 *        the feature
+	 *            the feature
 	 * @param valueAsString
-	 *        the pasted string for this feature
+	 *            the pasted string for this feature
 	 * @return
 	 *         the value for the pasted string or <code>null</code> if not found
 	 */
 	@Override
 	protected ConvertedValueContainer<?> doDeduceValueFromString(final Object feature, final String valueAsString) {
 		final EClassifier featureType = getFeatureType(feature);
-		if(feature instanceof EStructuralFeature) {
+		if (feature instanceof EStructuralFeature) {
 			return deduceValueFromString(feature, featureType, valueAsString);
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param feature
 	 * @param featureType
 	 * @param valueAsString
@@ -117,53 +117,53 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 	 */
 	protected ConvertedValueContainer<?> deduceValueFromString(final Object feature, final EClassifier featureType, final String valueAsString) {
 		ConvertedValueContainer<?> realValue = null;
-		//		if(feature instanceof EStructuralFeature) {
+		// if(feature instanceof EStructuralFeature) {
 		final int upperbound = getFeatureUpperBound(feature);
 		boolean isMany = (upperbound > 1 || upperbound == -1);
-		if(featureType instanceof EDataType) {
-			if(featureType instanceof EEnum) {
-				realValue = deduceEEnumLiteralValue((EEnum)featureType, isMany, valueAsString);
+		if (featureType instanceof EDataType) {
+			if (featureType instanceof EEnum) {
+				realValue = deduceEEnumLiteralValue((EEnum) featureType, isMany, valueAsString);
 			}
 			final String typeName = featureType.getName();
-			if(TypesConstants.STRING.equals(typeName) || EMFContants.ESTRING.equals(typeName)) {
+			if (TypesConstants.STRING.equals(typeName) || EMFContants.ESTRING.equals(typeName)) {
 				realValue = deduceStringValue(isMany, valueAsString);
-			} else if(EMFContants.EBOOLEAN.equals(typeName) || TypesConstants.BOOLEAN.equals(typeName)) {
+			} else if (EMFContants.EBOOLEAN.equals(typeName) || TypesConstants.BOOLEAN.equals(typeName)) {
 				realValue = deduceBooleanValue(isMany, valueAsString);
-			} else if(EMFContants.EINT.equals(typeName) || TypesConstants.INTEGER.equals(typeName)) {
+			} else if (EMFContants.EINT.equals(typeName) || TypesConstants.INTEGER.equals(typeName)) {
 				realValue = deduceIntValue(isMany, valueAsString);
-			} else if(EMFContants.EDOUBLE.equals(typeName)) {
+			} else if (EMFContants.EDOUBLE.equals(typeName)) {
 				realValue = deduceDoubleValue(isMany, valueAsString);
 			}
-		} else if(featureType instanceof EClass) {
-			realValue = deduceEObjectValue((EObject)getResolutionContext(), feature, (EClass)featureType, isMany, valueAsString);
+		} else if (featureType instanceof EClass) {
+			realValue = deduceEObjectValue(getResolutionContext(), feature, (EClass) featureType, isMany, valueAsString);
 		}
 		return realValue;
 	}
 
 	protected int getFeatureUpperBound(final Object feature) {
-		return ((EStructuralFeature)feature).getUpperBound();
+		return ((EStructuralFeature) feature).getUpperBound();
 	}
 
 
 
 	/**
-	 * 
+	 *
 	 * @param resolutionContext
-	 *        the context used for the resolution
+	 *            the context used for the resolution
 	 * @param feature
-	 *        the feature
+	 *            the feature
 	 * @param featureType
-	 *        the type of the feature
+	 *            the type of the feature
 	 * @param isMany
-	 *        <code>true</code> if the feature isMany
+	 *            <code>true</code> if the feature isMany
 	 * @param valueAsString
-	 *        the string value to resolve
+	 *            the string value to resolve
 	 * @return
 	 *         a value container referencing the eobject represented by the string
 	 * @throws StringValueSolverException
 	 */
 	protected ConvertedValueContainer<?> deduceEObjectValue(EObject resolutionContext, Object feature, EClass featureType, boolean isMany, String valueAsString) {
-		if(valueAsString == null || valueAsString.equals("")) {
+		if (valueAsString == null || valueAsString.equals("")) {
 			return new ConvertedValueContainer<EObject>(null, Status.OK_STATUS);
 		}
 		final IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, NLS.bind(THE_STRING_VALUE_X_CANT_BE_RESOLVED, valueAsString));
@@ -171,16 +171,16 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param feature
-	 *        an object representing a feature
+	 *            an object representing a feature
 	 * @return
 	 *         the type of the feature
 	 */
 	protected EClassifier getFeatureType(final Object feature) {
 		final EClassifier featureType;
-		if(feature instanceof EStructuralFeature) {
-			return ((EStructuralFeature)feature).getEType();
+		if (feature instanceof EStructuralFeature) {
+			return ((EStructuralFeature) feature).getEType();
 		} else {
 			featureType = null;
 		}
@@ -188,13 +188,13 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param eenum
-	 *        the enumeration
+	 *            the enumeration
 	 * @param isMany
-	 *        <code>true</code> if the feature is many
+	 *            <code>true</code> if the feature is many
 	 * @param valueAsString
-	 *        the value to convert
+	 *            the value to convert
 	 * @return
 	 *         the converted value
 	 */
@@ -202,23 +202,23 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 		ConvertedValueContainer<?> returnedValue = null;
 		IStatus iStatus = Status.OK_STATUS;
 		final Collection<String> unresolvedValues = new ArrayList<String>();
-		if(isMany) {
+		if (isMany) {
 			final Collection<EEnumLiteral> values = new ArrayList<EEnumLiteral>();
-			for(final String str : valueAsString.split(this.multiValueSeparator)) {
+			for (final String str : valueAsString.split(this.multiValueSeparator)) {
 				final EEnumLiteral literal = eenum.getEEnumLiteral(str);
-				if(literal != null) {
+				if (literal != null) {
 					values.add(literal);
 				} else {
 					unresolvedValues.add(str);
 				}
 			}
-			if(!unresolvedValues.isEmpty()) {
+			if (!unresolvedValues.isEmpty()) {
 				iStatus = new StringValueConverterStatus(IStatus.ERROR, Activator.PLUGIN_ID, NLS.bind(SOME_STRING_ARE_NOT_VALID_TO_CREATE_X, EMFContants.EENUM_LITERAL), unresolvedValues);
 			}
 			returnedValue = new MultiConvertedValueContainer<EEnumLiteral>(values, iStatus);
 		} else {
 			final EEnumLiteral literal = eenum.getEEnumLiteral(valueAsString);
-			if(literal != null) {
+			if (literal != null) {
 				returnedValue = new ConvertedValueContainer<EEnumLiteral>(literal, iStatus);
 			} else {
 				unresolvedValues.add(valueAsString);
@@ -230,11 +230,11 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param isMany
-	 *        <code>true</code> if the feature isMany
+	 *            <code>true</code> if the feature isMany
 	 * @param valueAsString
-	 *        the value to parse
+	 *            the value to parse
 	 * @return
 	 *         the result of the parsing
 	 */
@@ -242,21 +242,21 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 		ConvertedValueContainer<?> returnedValue = null;
 		IStatus iStatus = Status.OK_STATUS;
 		final Collection<String> unresolvedValues = new ArrayList<String>();
-		if(isMany) {
+		if (isMany) {
 			final Collection<Boolean> values = new ArrayList<Boolean>();
-			for(final String str : valueAsString.split(this.multiValueSeparator)) {
-				if(BooleanHelper.isBoolean(str)) {
+			for (final String str : valueAsString.split(this.multiValueSeparator)) {
+				if (BooleanHelper.isBoolean(str)) {
 					values.add(Boolean.valueOf(valueAsString));
 				} else {
 					unresolvedValues.add(str);
 				}
 			}
-			if(!unresolvedValues.isEmpty()) {
+			if (!unresolvedValues.isEmpty()) {
 				iStatus = new StringValueConverterStatus(IStatus.ERROR, Activator.PLUGIN_ID, NLS.bind(SOME_STRING_ARE_NOT_VALID_TO_CREATE_X, TypesConstants.BOOLEAN), unresolvedValues);
 			}
 			returnedValue = new MultiConvertedValueContainer<Boolean>(values, iStatus);
 		} else {
-			if(BooleanHelper.isBoolean(valueAsString)) {
+			if (BooleanHelper.isBoolean(valueAsString)) {
 				returnedValue = new ConvertedValueContainer<Boolean>(Boolean.valueOf(valueAsString), iStatus);
 			} else {
 				unresolvedValues.add(valueAsString);
@@ -268,11 +268,11 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param isMany
-	 *        <code>true</code> if the feature isMany
+	 *            <code>true</code> if the feature isMany
 	 * @param valueAsString
-	 *        the value to parse
+	 *            the value to parse
 	 * @return
 	 *         the result of the parsing
 	 */
@@ -280,17 +280,17 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 		ConvertedValueContainer<?> returnedValue = null;
 		IStatus iStatus = Status.OK_STATUS;
 		final Collection<String> unresolvedValues = new ArrayList<String>();
-		if(isMany) {
+		if (isMany) {
 			final Collection<Double> values = new ArrayList<Double>();
-			for(final String str : valueAsString.split(this.multiValueSeparator)) {
+			for (final String str : valueAsString.split(this.multiValueSeparator)) {
 				final Double value = Double.valueOf(str);
-				if(value != null) {
+				if (value != null) {
 					values.add(value);
 				} else {
 					unresolvedValues.add(str);
 				}
 			}
-			if(!unresolvedValues.isEmpty()) {
+			if (!unresolvedValues.isEmpty()) {
 				iStatus = new StringValueConverterStatus(IStatus.ERROR, Activator.PLUGIN_ID, NLS.bind(SOME_STRING_ARE_NOT_VALID_TO_CREATE_X, TypesConstants.DOUBLE), unresolvedValues);
 			}
 			returnedValue = new MultiConvertedValueContainer<Double>(values, iStatus);
@@ -307,11 +307,11 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param isMany
-	 *        <code>true</code> if the feature isMany
+	 *            <code>true</code> if the feature isMany
 	 * @param valueAsString
-	 *        the value to parse
+	 *            the value to parse
 	 * @return
 	 *         the result of the parsing
 	 */
@@ -319,16 +319,16 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 		ConvertedValueContainer<?> returnedValue = null;
 		IStatus iStatus = Status.OK_STATUS;
 		final Collection<String> unresolvedValues = new ArrayList<String>();
-		if(isMany) {
+		if (isMany) {
 			final Collection<Integer> values = new ArrayList<Integer>();
-			for(final String str : valueAsString.split(this.multiValueSeparator)) {
+			for (final String str : valueAsString.split(this.multiValueSeparator)) {
 				try {
 					values.add(Integer.valueOf(str));
 				} catch (final NumberFormatException e) {
 					unresolvedValues.add(str);
 				}
 			}
-			if(!unresolvedValues.isEmpty()) {
+			if (!unresolvedValues.isEmpty()) {
 				iStatus = new StringValueConverterStatus(IStatus.ERROR, Activator.PLUGIN_ID, NLS.bind(SOME_STRING_ARE_NOT_VALID_TO_CREATE_X, TypesConstants.INTEGER), unresolvedValues);
 			}
 			returnedValue = new MultiConvertedValueContainer<Integer>(values, iStatus);
@@ -346,20 +346,20 @@ public class EMFStringValueConverter extends AbstractStringValueConverter {
 
 
 	/**
-	 * 
+	 *
 	 * @param isMany
-	 *        <code>true</code> if the feature is many
+	 *            <code>true</code> if the feature is many
 	 * @param valueAsString
-	 *        the value as string
+	 *            the value as string
 	 * @return
 	 *         the value container with the real value(s)
 	 */
 	protected ConvertedValueContainer<?> deduceStringValue(final boolean isMany, final String valueAsString) {
 		ConvertedValueContainer<?> returnedValue = null;
 		final IStatus iStatus = Status.OK_STATUS;
-		if(isMany) {
+		if (isMany) {
 			final Collection<String> values = new ArrayList<String>();
-			for(final String str : valueAsString.split(this.multiValueSeparator)) {
+			for (final String str : valueAsString.split(this.multiValueSeparator)) {
 				values.add(str);
 			}
 			returnedValue = new MultiConvertedValueContainer<String>(values, iStatus);

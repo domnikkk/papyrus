@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ public class LifelineVerticalLabel extends VerticalLabel implements ILabelFigure
 
 	@Override
 	public Color getBackgroundColor() {
-		if(this.selected) {
+		if (this.selected) {
 			return Display.getDefault().getSystemColor(SWT.COLOR_LIST_SELECTION);
 		}
 		// the transparency color for the label
@@ -35,7 +35,7 @@ public class LifelineVerticalLabel extends VerticalLabel implements ILabelFigure
 
 	@Override
 	public Color getForegroundColor() {
-		if(this.selected) {
+		if (this.selected) {
 			return Display.getDefault().getSystemColor(SWT.COLOR_LIST_SELECTION_TEXT);
 		}
 		return super.getForegroundColor();
@@ -48,10 +48,12 @@ public class LifelineVerticalLabel extends VerticalLabel implements ILabelFigure
 		return text == null || "".equals(text) ? " " : text; //$NON-NLS-1$//$NON-NLS-2$
 	}
 
+	@Override
 	public void setIcon(final Image icon) {
 		// no icon
 	}
 
+	@Override
 	public Image getIcon() {
 		return null;
 	}
@@ -71,7 +73,7 @@ public class LifelineVerticalLabel extends VerticalLabel implements ILabelFigure
 	@Override
 	protected void paintFigure(final Graphics graphics) {
 		super.paintFigure(graphics);
-		if(this.focus) {
+		if (this.focus) {
 			graphics.drawFocus(getBounds().getResized(-1, -1));
 		}
 	}

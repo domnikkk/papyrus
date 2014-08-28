@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -64,27 +64,30 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getLabel()
 	 */
+	@Override
 	public String getLabel() {
 		return "partPasteStrategy"; //$NON-NLS-1$
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getID()
 	 */
+	@Override
 	public String getID() {
 		return Activator.ID + ".partPasteStrategy"; //$NON-NLS-1$
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getDescription()
 	 */
+	@Override
 	public String getDescription() {
 		return "Paste part elements with association"; //$NON-NLS-1$
 	}
@@ -109,9 +112,10 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getImage()
 	 */
+	@Override
 	@Deprecated
 	public Image getImage() {
 		return null;
@@ -119,9 +123,10 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getPriority()
 	 */
+	@Override
 	@Deprecated
 	public int getPriority() {
 		return 1;
@@ -131,65 +136,65 @@ public class PartPasteStrategy implements IPasteStrategy {
 	 * Sets the options.
 	 *
 	 * @param options
-	 *        the options
+	 *            the options
 	 */
 	public void setOptions(Map<String, Object> options) {
-		//Nothing
+		// Nothing
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getSemanticCommand(org.eclipse.emf.edit.domain.EditingDomain,
 	 * org.eclipse.emf.ecore.EObject, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
 	@Override
 	public org.eclipse.emf.common.command.Command getSemanticCommand(EditingDomain domain, EObject targetOwner, PapyrusClipboard<Object> papyrusClipboard) {
-		if(targetOwner instanceof Classifier || targetOwner instanceof Package) { // test if block or package
+		if (targetOwner instanceof Classifier || targetOwner instanceof Package) { // test if block or package
 			// get affiliate AdditionnalData
 			Map<Object, ?> additionalDataMap = papyrusClipboard.getAdditionalDataForStrategy(getID());
-			if(additionalDataMap != null) {
+			if (additionalDataMap != null) {
 				CompoundCommand compoundCommand = new CompoundCommand("Copy associations for parts"); //$NON-NLS-1$
-				for(Iterator<Object> iterator = papyrusClipboard.iterator(); iterator.hasNext();) {
+				for (Iterator<Object> iterator = papyrusClipboard.iterator(); iterator.hasNext();) {
 					Object object = iterator.next();
 					EObject target = papyrusClipboard.getTragetCopyFromInternalClipboardCopy(object);
 					Object additionnalData = additionalDataMap.get(object);
 					EList<Association> listDuplicatedAssociation = new BasicEList<Association>();
 					EObject associationContainer = null;
-					if(target != null && target instanceof Property && targetOwner instanceof Classifier && additionnalData instanceof PartAdditionalData) { // test if it is a part
-						Classifier block = (Classifier)targetOwner;
-						Property property = (Property)target;
-						PartAdditionalData partAdditionalData = (PartAdditionalData)additionnalData;
+					if (target != null && target instanceof Property && targetOwner instanceof Classifier && additionnalData instanceof PartAdditionalData) { // test if it is a part
+						Classifier block = (Classifier) targetOwner;
+						Property property = (Property) target;
+						PartAdditionalData partAdditionalData = (PartAdditionalData) additionnalData;
 						Association newAssociation = partAdditionalData.getDuplicatedAssociation();
 						restoreAssociationPartContext(block, property, newAssociation);
 						listDuplicatedAssociation.add(newAssociation);
 						associationContainer = block.eContainer();
-					} else if(target != null && target instanceof Classifier && targetOwner instanceof Package && additionnalData instanceof PartBlockAdditionalData) { // test if it is a block
-						Classifier classifier = (Classifier)target;
+					} else if (target != null && target instanceof Classifier && targetOwner instanceof Package && additionnalData instanceof PartBlockAdditionalData) { // test if it is a block
+						Classifier classifier = (Classifier) target;
 						EList<Property> allAttributes = classifier.getAllAttributes();
-						PartBlockAdditionalData partBlockAdditionalData = (PartBlockAdditionalData)additionnalData;
-						for(Property property : allAttributes) {
+						PartBlockAdditionalData partBlockAdditionalData = (PartBlockAdditionalData) additionnalData;
+						for (Property property : allAttributes) {
 							Association duplicatedAssociation = partBlockAdditionalData.getDuplicatedAssociationByPropertyName(property.getName());
-							if (duplicatedAssociation != null){
+							if (duplicatedAssociation != null) {
 								restoreAssociationPartContext(classifier, property, duplicatedAssociation);
-								listDuplicatedAssociation.add(duplicatedAssociation);								
+								listDuplicatedAssociation.add(duplicatedAssociation);
 							}
 						}
 						associationContainer = targetOwner;
 					}
-					if(associationContainer != null && !listDuplicatedAssociation.isEmpty()) {
-						// add associations to the nearest container	
+					if (associationContainer != null && !listDuplicatedAssociation.isEmpty()) {
+						// add associations to the nearest container
 						MoveRequest moveRequest = new MoveRequest(associationContainer, listDuplicatedAssociation);
 						IElementEditService provider = ElementEditServiceUtils.getCommandProvider(targetOwner);
-						if(provider != null) {
+						if (provider != null) {
 							ICommand editCommand = provider.getEditCommand(moveRequest);
 							GMFtoEMFCommandWrapper gmFtoEMFCommandWrapper = new GMFtoEMFCommandWrapper(editCommand);
 							compoundCommand.append(gmFtoEMFCommandWrapper);
 						}
 					}
 				}
-				// An empty command can't be executed 
-				if(compoundCommand.getCommandList().isEmpty()) {
+				// An empty command can't be executed
+				if (compoundCommand.getCommandList().isEmpty()) {
 					return null;
 				}
 				return compoundCommand;
@@ -204,16 +209,16 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getGraphicalCommand(org.eclipse.emf.edit.domain.EditingDomain,
 	 * org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
 	@Override
 	public Command getGraphicalCommand(EditingDomain domain, org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart targetEditPart, PapyrusClipboard<Object> papyrusClipboard) {
-		View targetView = (View)targetEditPart.getModel();
-		EObject targetOwner = (EObject)targetView.getElement();
+		View targetView = (View) targetEditPart.getModel();
+		EObject targetOwner = targetView.getElement();
 		org.eclipse.emf.common.command.Command semanticCommand = getSemanticCommand(domain, targetOwner, papyrusClipboard);
-		if(semanticCommand != null) {
+		if (semanticCommand != null) {
 			org.eclipse.gef.commands.CompoundCommand compoundCommand = new org.eclipse.gef.commands.CompoundCommand("Association Part Semantic And Graphical paste"); //$NON-NLS-1$
 			EMFtoGEFCommandWrapper emFtoGEFCommandWrapper = new EMFtoGEFCommandWrapper(semanticCommand);
 			compoundCommand.add(emFtoGEFCommandWrapper);
@@ -224,7 +229,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#dependsOn()
 	 */
 	@Override
@@ -235,28 +240,28 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#prepare(org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
 	@Override
 	public void prepare(PapyrusClipboard<Object> papyrusClipboard, Collection<EObject> selection) {
 		Map<Object, IClipboardAdditionalData> mapCopyPartData = new HashMap<Object, IClipboardAdditionalData>();
-		for(Iterator<EObject> iterator = papyrusClipboard.iterateOnSource(); iterator.hasNext();) {
+		for (Iterator<EObject> iterator = papyrusClipboard.iterateOnSource(); iterator.hasNext();) {
 			EObject eObjectSource = iterator.next();
-			if(eObjectSource instanceof Element) {
-				Element elementSource = (Element)eObjectSource;
+			if (eObjectSource instanceof Element) {
+				Element elementSource = (Element) eObjectSource;
 				IClipboardAdditionalData clipboardAdditionalData = null;
-				if(elementSource instanceof Property && UMLUtil.getStereotypeApplication(elementSource.getOwner(), Block.class) != null) { // is part 
-					Property propertySource = (Property)elementSource;
+				if (elementSource instanceof Property && UMLUtil.getStereotypeApplication(elementSource.getOwner(), Block.class) != null) { // is part
+					Property propertySource = (Property) elementSource;
 					Association association = propertySource.getAssociation();
-					if (association != null){
+					if (association != null) {
 						clipboardAdditionalData = new PartAdditionalData(association);
 					}
-				} else if(elementSource instanceof Classifier && UMLUtil.getStereotypeApplication(elementSource, Block.class) != null) {// is Block
-					Classifier block = (Classifier)elementSource;
+				} else if (elementSource instanceof Classifier && UMLUtil.getStereotypeApplication(elementSource, Block.class) != null) {// is Block
+					Classifier block = (Classifier) elementSource;
 					clipboardAdditionalData = new PartBlockAdditionalData(block);
 				}
-				if(clipboardAdditionalData != null) {
+				if (clipboardAdditionalData != null) {
 					Object copy = papyrusClipboard.getCopyFromSource(eObjectSource);
 					mapCopyPartData.put(copy, clipboardAdditionalData);
 				}
@@ -269,6 +274,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/**
 	 * Duplicate the association
+	 *
 	 * @param association
 	 * @return
 	 */
@@ -276,18 +282,19 @@ public class PartPasteStrategy implements IPasteStrategy {
 		EcoreUtil.Copier copier = new EcoreUtil.Copier();
 		copier.copy(association);
 		EObject eObject = copier.get(association);
-		return (Association)eObject;
+		return (Association) eObject;
 	}
 
 	/**
 	 * Init the association in the new context
+	 *
 	 * @param classifier
 	 * @param property
 	 * @param association
 	 */
 	protected void restoreAssociationPartContext(Classifier classifier, Property property, Association association) {
 		EList<Property> memberEnds = association.getMemberEnds(); // should have only one element
-		if (memberEnds != null && !memberEnds.isEmpty()){
+		if (memberEnds != null && !memberEnds.isEmpty()) {
 			Property blockProperty = memberEnds.get(0);
 			blockProperty.setType(classifier);
 		}
@@ -333,7 +340,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 		public PartBlockAdditionalData(Classifier block) {
 			this.mapPropertyNameToAssociation = new HashMap<String, Association>();
 			EList<Property> allAttributes = block.getAllAttributes();
-			for(Property property : allAttributes) {
+			for (Property property : allAttributes) {
 				Association association = property.getAssociation();
 				Association newAssociation = duplicateAssociation(association);
 				mapPropertyNameToAssociation.put(property.getName(), newAssociation);
@@ -343,7 +350,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 		/**
 		 * @param propertyName
-		 * @return  a copy of the association
+		 * @return a copy of the association
 		 */
 		public Association getDuplicatedAssociationByPropertyName(String propertyName) {
 			Association association = mapPropertyNameToAssociation.get(propertyName);

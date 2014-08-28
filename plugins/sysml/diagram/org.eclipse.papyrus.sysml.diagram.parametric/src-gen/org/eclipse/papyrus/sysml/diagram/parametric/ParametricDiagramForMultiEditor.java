@@ -33,7 +33,7 @@ import org.eclipse.ui.PartInitException;
 
 /**
  * An editor to be used in multitabs editor. This editor extends the original UML Diagram.
- * 
+ *
  */
 public class ParametricDiagramForMultiEditor extends ParametricDiagramEditor {
 
@@ -49,16 +49,16 @@ public class ParametricDiagramForMultiEditor extends ParametricDiagramEditor {
 
 	/** The editor splitter. */
 	private Composite splitter;
-	
+
 	private Image titleImage;
 
 	/**
 	 * Constructor for SashSystem v2. Context and required objects are retrieved from the
 	 * ServiceRegistry.
-	 * 
+	 *
 	 * @throws BackboneException
 	 * @throws ServiceException
-	 * 
+	 *
 	 */
 	public ParametricDiagramForMultiEditor(ServicesRegistry servicesRegistry, Diagram diagram) throws BackboneException, ServiceException {
 		super(servicesRegistry, diagram);
@@ -77,11 +77,11 @@ public class ParametricDiagramForMultiEditor extends ParametricDiagramEditor {
 
 	@Override
 	public void dispose() {
-		if(titleImage != null) {
+		if (titleImage != null) {
 			titleImage.dispose();
 			titleImage = null;
 		}
-		
+
 		super.dispose();
 	}
 

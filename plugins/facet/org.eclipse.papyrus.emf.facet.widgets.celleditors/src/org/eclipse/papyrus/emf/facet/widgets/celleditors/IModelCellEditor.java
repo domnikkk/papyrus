@@ -21,7 +21,7 @@ public interface IModelCellEditor {
 	/**
 	 * Initialize a cell for edition. This method must create a control inside
 	 * the given parent to let the user edit the value.
-	 * 
+	 *
 	 * @param parent
 	 *            the SWT control that must contain the cell editor
 	 * @param originalValue
@@ -35,7 +35,7 @@ public interface IModelCellEditor {
 	 *            the model feature for which the value is edited
 	 * @param source
 	 *            the object containing the attribute or reference
-	 * 
+	 *
 	 * @return the SWT {@link Control} to be used for capturing the new cell
 	 *         value
 	 */
@@ -44,8 +44,7 @@ public interface IModelCellEditor {
 
 	/**
 	 * @return the value currently in the control. This is the value that will
-	 *         be set on the model element when
-	 *         {@link IModelCellEditHandler#commit()} is called.
+	 *         be set on the model element when {@link IModelCellEditHandler#commit()} is called.
 	 */
 	Object getValue();
 }

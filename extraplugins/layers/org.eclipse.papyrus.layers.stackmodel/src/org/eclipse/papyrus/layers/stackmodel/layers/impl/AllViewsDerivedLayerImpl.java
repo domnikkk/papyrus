@@ -2,12 +2,13 @@
  */
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
+import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.papyrus.layers.stackmodel.layers.AllViewsDerivedLayer;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
 import org.eclipse.papyrus.layers.stackmodel.util.DiagramViewToListSynchronizer;
-import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,16 +20,17 @@ import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
  * @generated
  */
 public class AllViewsDerivedLayerImpl extends AbstractLayerImpl implements AllViewsDerivedLayer {
-	
+
 	/**
 	 * Object used to synchronize a list with the diagram's views.
-	 * 
+	 *
 	 */
 	protected DiagramViewToListSynchronizer viewsListSynchronizer;
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	protected AllViewsDerivedLayerImpl() {
@@ -40,6 +42,7 @@ public class AllViewsDerivedLayerImpl extends AbstractLayerImpl implements AllVi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -51,7 +54,7 @@ public class AllViewsDerivedLayerImpl extends AbstractLayerImpl implements AllVi
 	 * This layer has just been added to a LayerStack.
 	 * Set the root of the expression.
 	 * Set the views to match the result of the expression.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl#initLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayersStack)
 	 *
 	 * @param owningLayersStack
@@ -59,12 +62,12 @@ public class AllViewsDerivedLayerImpl extends AbstractLayerImpl implements AllVi
 	@Override
 	public void initLayer(LayersStack owningLayersStack) {
 		super.initLayer(owningLayersStack);
-		
-		if(log.isDebugEnabled()) {
+
+		if (log.isDebugEnabled()) {
 			log.debug(this.getClass().getSimpleName() + ".initLayer(" + owningLayersStack + ")");
 		}
 
 		// Set the diagram associated to this tree of layers
 		viewsListSynchronizer.setDiagram(owningLayersStack.getDiagram());
 	}
-} //AllViewsDerivedLayerImpl
+} // AllViewsDerivedLayerImpl

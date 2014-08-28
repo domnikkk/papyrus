@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012-2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,9 +12,7 @@
 package org.eclipse.papyrus.infra.gmfdiag.css.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.CssPackage;
 import org.eclipse.papyrus.infra.gmfdiag.css.Selector;
 
@@ -29,25 +27,27 @@ import org.eclipse.papyrus.infra.gmfdiag.css.Selector;
  */
 public class SelectorImpl extends MinimalEObjectImpl.Container implements Selector
 {
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected SelectorImpl()
-  {
-    super();
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected SelectorImpl()
+	{
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return CssPackage.Literals.SELECTOR;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass()
+	{
+		return CssPackage.Literals.SELECTOR;
+	}
 
-} //SelectorImpl
+} // SelectorImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,14 +32,14 @@ import org.eclipse.papyrus.sysml.activities.Rate;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -52,13 +52,13 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ActivitiesFactory init() {
 		try {
-			ActivitiesFactory theActivitiesFactory = (ActivitiesFactory)EPackage.Registry.INSTANCE.getEFactory(ActivitiesPackage.eNS_URI);
-			if(theActivitiesFactory != null) {
+			ActivitiesFactory theActivitiesFactory = (ActivitiesFactory) EPackage.Registry.INSTANCE.getEFactory(ActivitiesPackage.eNS_URI);
+			if (theActivitiesFactory != null) {
 				return theActivitiesFactory;
 			}
 		} catch (Exception exception) {
@@ -71,7 +71,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ActivitiesFactoryImpl() {
@@ -80,12 +80,12 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case ActivitiesPackage.OPTIONAL:
 			return createOptional();
 		case ActivitiesPackage.RATE:
@@ -109,7 +109,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Optional createOptional() {
@@ -119,7 +119,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Continuous createContinuous() {
@@ -129,7 +129,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ControlOperator createControlOperator() {
@@ -139,7 +139,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Discrete createDiscrete() {
@@ -149,7 +149,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NoBuffer createNoBuffer() {
@@ -159,7 +159,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Overwrite createOverwrite() {
@@ -169,7 +169,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Probability createProbability() {
@@ -179,7 +179,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Rate createRate() {
@@ -189,11 +189,11 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ActivitiesPackage getActivitiesPackage() {
-		return (ActivitiesPackage)getEPackage();
+		return (ActivitiesPackage) getEPackage();
 	}
 
 } // ActivitiesFactoryImpl

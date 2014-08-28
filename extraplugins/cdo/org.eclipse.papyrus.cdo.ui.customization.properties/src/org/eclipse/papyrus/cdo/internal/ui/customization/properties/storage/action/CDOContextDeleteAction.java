@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,10 +28,12 @@ import org.eclipse.papyrus.views.properties.contexts.Context;
  */
 public class CDOContextDeleteAction extends AbstractCDOContextAction implements IContextDeleteAction {
 
+	@Override
 	public String getToolTip() {
 		return Messages.CDOContextDeleteAction_0;
 	}
 
+	@Override
 	public void delete(Context context, IProgressMonitor monitor) throws CoreException {
 		SubMonitor sub = SubMonitor.convert(monitor, NLS.bind(Messages.CDOContextDeleteAction_1, context.getName()), IProgressMonitor.UNKNOWN);
 

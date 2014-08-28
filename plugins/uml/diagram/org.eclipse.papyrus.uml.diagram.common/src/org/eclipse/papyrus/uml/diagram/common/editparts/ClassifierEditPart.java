@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2009 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Classifier edit part.
- * 
+ *
  * @author tlandre
  */
 public abstract class ClassifierEditPart extends NamedElementEditPart {
@@ -36,7 +36,7 @@ public abstract class ClassifierEditPart extends NamedElementEditPart {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param view
 	 */
 	public ClassifierEditPart(View view) {
@@ -51,9 +51,9 @@ public abstract class ClassifierEditPart extends NamedElementEditPart {
 	protected void handleNotificationEvent(Notification notification) {
 		super.handleNotificationEvent(notification);
 		Object feature = notification.getFeature();
-		if(resolveSemanticElement() != null) {
+		if (resolveSemanticElement() != null) {
 			// Manage isAbstract
-			if(UMLPackage.eINSTANCE.getClassifier_IsAbstract().equals(feature)) {
+			if (UMLPackage.eINSTANCE.getClassifier_IsAbstract().equals(feature)) {
 				isAbstract = notification.getNewBooleanValue();
 				refreshFont();
 			}
@@ -63,23 +63,23 @@ public abstract class ClassifierEditPart extends NamedElementEditPart {
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
-		if(getPrimaryShape() != null && resolveSemanticElement() != null) {
+		if (getPrimaryShape() != null && resolveSemanticElement() != null) {
 			refreshAbstract();
 			refreshIsActive();
 		}
 	}
 
 	protected void refreshIsActive() {
-		if(getUMLElement() instanceof org.eclipse.uml2.uml.Class) {
-			if(getPrimaryShape() instanceof ClassifierFigure) {
-				((ClassifierFigure)getPrimaryShape()).setActive(((org.eclipse.uml2.uml.Class)getUMLElement()).isActive());
+		if (getUMLElement() instanceof org.eclipse.uml2.uml.Class) {
+			if (getPrimaryShape() instanceof ClassifierFigure) {
+				((ClassifierFigure) getPrimaryShape()).setActive(((org.eclipse.uml2.uml.Class) getUMLElement()).isActive());
 			}
 		}
 	}
 
 	protected void refreshAbstract() {
-		if(getUMLElement() instanceof Classifier) {
-			isAbstract = ((Classifier)getUMLElement()).isAbstract();
+		if (getUMLElement() instanceof Classifier) {
+			isAbstract = ((Classifier) getUMLElement()).isAbstract();
 			refreshFont();
 
 		}
@@ -92,10 +92,10 @@ public abstract class ClassifierEditPart extends NamedElementEditPart {
 	@Override
 	protected FontData getFontData(FontStyle style) {
 		FontData data = super.getFontData(style);
-		if(isAbstract) {
-			data.setStyle(data.getStyle() | SWT.ITALIC); //Force the Italic flag
+		if (isAbstract) {
+			data.setStyle(data.getStyle() | SWT.ITALIC); // Force the Italic flag
 		} else {
-			data.setStyle(data.getStyle() & ~SWT.ITALIC); //Remove the Italic flag
+			data.setStyle(data.getStyle() & ~SWT.ITALIC); // Remove the Italic flag
 		}
 		return data;
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,9 +54,9 @@ public class NavigationServicePreferencesPage extends PreferencePage implements 
 	private NavigationServiceImpl navigation = new NavigationServiceImpl();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public NavigationServicePreferencesPage() {
 		super("Navigation Services", org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImageDescriptor("/icons/papyrus.png"));
@@ -92,7 +92,7 @@ public class NavigationServicePreferencesPage extends PreferencePage implements 
 
 			@Override
 			public void update(ViewerCell cell) {
-				if(cell.getColumnIndex() == 1) {
+				if (cell.getColumnIndex() == 1) {
 					super.update(cell);
 				} else {
 					return;
@@ -101,15 +101,15 @@ public class NavigationServicePreferencesPage extends PreferencePage implements 
 
 			@Override
 			public String getToolTipText(Object element) {
-				if(element instanceof NavigationContributorDescriptor) {
-					return ((NavigationContributorDescriptor)element).getDescription();
+				if (element instanceof NavigationContributorDescriptor) {
+					return ((NavigationContributorDescriptor) element).getDescription();
 				}
 				return super.getToolTipText(element);
 			}
 
 			@Override
 			public Image getImage(Object element) {
-				if(element instanceof NavigationContributorDescriptor) {
+				if (element instanceof NavigationContributorDescriptor) {
 					return null;
 				}
 
@@ -118,8 +118,8 @@ public class NavigationServicePreferencesPage extends PreferencePage implements 
 
 			@Override
 			public String getText(Object element) {
-				if(element instanceof NavigationContributorDescriptor) {
-					return ((NavigationContributorDescriptor)element).getLabel();
+				if (element instanceof NavigationContributorDescriptor) {
+					return ((NavigationContributorDescriptor) element).getLabel();
 				}
 				return super.getText(element);
 			}
@@ -141,14 +141,14 @@ public class NavigationServicePreferencesPage extends PreferencePage implements 
 		// Adds a checkbox for each service navigation, to toggle it
 		checkboxes = new HashMap<NavigationContributorDescriptor, Button>();
 
-		for(TableItem item : tableViewer.getTable().getItems()) {
-			if(item.getData() instanceof NavigationContributorDescriptor) {
+		for (TableItem item : tableViewer.getTable().getItems()) {
+			if (item.getData() instanceof NavigationContributorDescriptor) {
 				TableEditor editor = new TableEditor(tableViewer.getTable());
 
 				final Button button = new Button(tableViewer.getTable(), SWT.CHECK);
 				final TableItem currentItem = item;
 
-				final NavigationContributorDescriptor strategy = (NavigationContributorDescriptor)currentItem.getData();
+				final NavigationContributorDescriptor strategy = (NavigationContributorDescriptor) currentItem.getData();
 
 				checkboxes.put(strategy, button);
 
@@ -174,7 +174,7 @@ public class NavigationServicePreferencesPage extends PreferencePage implements 
 	protected void performApply() {
 		IPreferenceStore preferences = Activator.getDefault().getPreferenceStore();
 
-		for(Map.Entry<NavigationContributorDescriptor, Button> entry : checkboxes.entrySet()) {
+		for (Map.Entry<NavigationContributorDescriptor, Button> entry : checkboxes.entrySet()) {
 			boolean checked = entry.getValue().getSelection();
 			String isActiveKey = NavigationContributorDescriptor.getIsActiveKey(entry.getKey());
 			preferences.setValue(isActiveKey, checked);
@@ -201,7 +201,7 @@ public class NavigationServicePreferencesPage extends PreferencePage implements 
 	public void restoreDefaults() {
 		IPreferenceStore preferences = Activator.getDefault().getPreferenceStore();
 
-		for(Map.Entry<NavigationContributorDescriptor, Button> entry : checkboxes.entrySet()) {
+		for (Map.Entry<NavigationContributorDescriptor, Button> entry : checkboxes.entrySet()) {
 			String isActiveKey = NavigationContributorDescriptor.getIsActiveKey(entry.getKey());
 			boolean selected = preferences.getDefaultBoolean(isActiveKey);
 

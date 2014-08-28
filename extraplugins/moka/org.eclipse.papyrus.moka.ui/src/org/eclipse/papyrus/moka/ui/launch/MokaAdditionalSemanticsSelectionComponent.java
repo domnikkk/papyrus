@@ -33,10 +33,10 @@ public class MokaAdditionalSemanticsSelectionComponent extends MokaGroupComponen
 		this.registeredLibraries = new MokaLibrariesComboBox(this.group, SWT.NONE);
 		this.registeredLibraries.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
-		for(IRegisteredLibrary lib : libraries) {
+		for (IRegisteredLibrary lib : libraries) {
 			this.registeredLibraries.add(lib);
 		}
-		if(this.registeredLibraries.getItemCount() > 0) {
+		if (this.registeredLibraries.getItemCount() > 0) {
 			this.registeredLibraries.select(1);
 		}
 	}

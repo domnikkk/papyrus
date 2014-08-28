@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,14 +28,14 @@ import org.eclipse.jface.text.rules.Token;
  * <li>Multi line comment</li>
  * </ul>
  * .
- * 
+ *
  * @author Remi SCHNEKENBURGER
  * @see org.eclipse.jface.text.rules.RuleBasedPartitionScanner
  */
 public class ParameterLabelPartitionScanner extends RuleBasedPartitionScanner {
 
 	/**
-	 * 
+	 *
 	 */
 	public static final String PARAMETER_MODIFIERS_STRING = "_rt_action_string";
 
@@ -45,7 +45,7 @@ public class ParameterLabelPartitionScanner extends RuleBasedPartitionScanner {
 	public ParameterLabelPartitionScanner() {
 		IToken tagString = new Token(PARAMETER_MODIFIERS_STRING);
 		IPredicateRule[] rules = new IPredicateRule[1];
-		rules[0] = new MultiLineRule("{", "}", tagString, (char)0, true);
+		rules[0] = new MultiLineRule("{", "}", tagString, (char) 0, true);
 		setPredicateRules(rules);
 	}
 

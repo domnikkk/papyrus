@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,27 +34,30 @@ import org.eclipse.uml2.uml.Lifeline;
 /** Used to get and set the name of a StateDefinition when editing a StateDefinition's label */
 public class StateDefinitionParser implements IParser {
 
+	@Override
 	public String getEditString(final IAdaptable adaptable, final int flags) {
-		final View stateDefinitionLabelView = (View)adaptable.getAdapter(View.class);
-		final View stateDefinitionView = (View)stateDefinitionLabelView.eContainer();
+		final View stateDefinitionLabelView = (View) adaptable.getAdapter(View.class);
+		final View stateDefinitionView = (View) stateDefinitionLabelView.eContainer();
 		final String name = StateDefinitionUtils.getStateDefinitionName(stateDefinitionView);
-		if(name == null) {
+		if (name == null) {
 			return ""; //$NON-NLS-1$
 		}
 		return name;
 	}
 
+	@Override
 	public IParserEditStatus isValidEditString(final IAdaptable element, final String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
+	@Override
 	public ICommand getParseCommand(final IAdaptable adaptable, final String newString, final int flags) {
-		final View stateDefinitionLabelView = (View)adaptable.getAdapter(View.class);
-		final View stateDefinitionView = (View)stateDefinitionLabelView.eContainer();
+		final View stateDefinitionLabelView = (View) adaptable.getAdapter(View.class);
+		final View stateDefinitionView = (View) stateDefinitionLabelView.eContainer();
 		final View lifelineView = ViewUtils.findSuperViewWithId(stateDefinitionView, FullLifelineEditPartCN.VISUAL_ID);
-		final Lifeline lifeline = (Lifeline)lifelineView.getElement();
+		final Lifeline lifeline = (Lifeline) lifelineView.getElement();
 		final TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(lifeline);
-		if(editingDomain == null) {
+		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -69,20 +72,23 @@ public class StateDefinitionParser implements IParser {
 		};
 	}
 
+	@Override
 	public String getPrintString(final IAdaptable adaptable, final int flags) {
-		final View stateDefinitionLabelView = (View)adaptable.getAdapter(View.class);
-		final View stateDefinitionView = (View)stateDefinitionLabelView.eContainer();
+		final View stateDefinitionLabelView = (View) adaptable.getAdapter(View.class);
+		final View stateDefinitionView = (View) stateDefinitionLabelView.eContainer();
 		final String name = StateDefinitionUtils.getStateDefinitionName(stateDefinitionView);
-		if(name == null || name.length() == 0) {
+		if (name == null || name.length() == 0) {
 			return Messages.StateDefinitionParser_Unnamed;
 		}
 		return name;
 	}
 
+	@Override
 	public boolean isAffectingEvent(final Object event, final int flags) {
 		return true;
 	}
 
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(final IAdaptable element) {
 		return null;
 	}

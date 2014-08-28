@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,23 +18,24 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 
 /**
- * 
+ *
  * Handler for the print table action
- * 
+ *
  */
 public class PrintTableHandler extends AbstractTableHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
 	 */
+	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
 		final INattableModelManager manager = getCurrentNattableModelManager();
-		if(manager != null) {
+		if (manager != null) {
 			manager.print();
 		}
 		return null;

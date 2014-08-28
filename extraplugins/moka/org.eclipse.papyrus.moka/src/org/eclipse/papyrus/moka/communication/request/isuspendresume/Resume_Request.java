@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,11 +38,11 @@ public class Resume_Request extends RequestMessage {
 	 * Constructs a request message from the given debug element and resume details.
 	 * debugElement represents the element from which the execution engine shall resume execution
 	 * resumeDetail provides information about the reason for resuming (e.g. Resume, step over, step into, etc.)
-	 * 
+	 *
 	 * @param debugElement
-	 *        The element from which the execution engine shall resume execution
+	 *            The element from which the execution engine shall resume execution
 	 * @param resumeDetail
-	 *        The reason for resuming (e.g. Resume, step over, step into, etc.)
+	 *            The reason for resuming (e.g. Resume, step over, step into, etc.)
 	 */
 	public Resume_Request(IDebugElement debugElement, int resumeDetail) {
 		this.debugElement = debugElement;
@@ -51,7 +51,7 @@ public class Resume_Request extends RequestMessage {
 
 	/**
 	 * Returns the element from which the execution engine shall resume execution
-	 * 
+	 *
 	 * @return The element from which the execution engine shall resume execution
 	 */
 	public IDebugElement getDebugElement() {
@@ -60,7 +60,7 @@ public class Resume_Request extends RequestMessage {
 
 	/**
 	 * Returns the reason for resuming (e.g. Resume, step over, step into, etc.)
-	 * 
+	 *
 	 * @return The reason for resuming (e.g. Resume, step over, step into, etc.)
 	 */
 	public int getResumeDetail() {
@@ -69,9 +69,10 @@ public class Resume_Request extends RequestMessage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
+	@Override
 	public String marshall() {
 		return Marshaller.getInstance().resume_request_marshal(this);
 	}

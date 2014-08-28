@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,7 +56,7 @@ import org.eclipse.uml2.uml.Property;
 public class ConnectorHelper extends ElementHelper {
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param editDomain
 	 *            the editing domain
 	 */
@@ -67,7 +67,7 @@ public class ConnectorHelper extends ElementHelper {
 
 	/**
 	 * This method returns the drop command to use for Connector links. Mainly based on
-	 * 
+	 *
 	 * @param connector
 	 *            the connector to drop
 	 * @param linkVisualID
@@ -181,7 +181,7 @@ public class ConnectorHelper extends ElementHelper {
 
 	/**
 	 * This method resolve the EditPart of the GraphicalElement attached to a ConnectorEnd.
-	 * 
+	 *
 	 * @param role
 	 *            the role of the considered ConnectorEnd
 	 * @param partWithPort

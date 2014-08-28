@@ -16,9 +16,9 @@ import org.eclipse.papyrus.emf.facet.efacet.ui.internal.view.NavigationViewFacto
 
 /**
  * This interface allows to get an instance of the {@link INavigationView} interface
- * 
+ *
  * @author Gregoire Dupe
- * 
+ *
  */
 public interface INavigationViewFactory {
 
@@ -29,8 +29,9 @@ public interface INavigationViewFactory {
 
 	/**
 	 * This method is the only way to open and access the navigation view.
-	 * @param editingDomain 
-	 * 
+	 *
+	 * @param editingDomain
+	 *
 	 * @return an instance of {@link INavigationView}
 	 */
 	INavigationView openNavigationView(EditingDomain editingDomain);

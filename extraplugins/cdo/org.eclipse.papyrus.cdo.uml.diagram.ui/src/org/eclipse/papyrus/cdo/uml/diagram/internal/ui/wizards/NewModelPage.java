@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -73,9 +73,9 @@ public class NewModelPage extends WizardPage {
 		setTitle(NLS.bind(Messages.NewModelPage_0, modelKindName));
 		setDescription(NLS.bind(Messages.NewModelPage_1, modelKindName));
 
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 			selectedNode = adapt(selection.getFirstElement(), CDOResourceNode.class);
-			if((selectedNode != null) && !(selectedNode instanceof CDOResourceFolder)) {
+			if ((selectedNode != null) && !(selectedNode instanceof CDOResourceFolder)) {
 				selectedNode = selectedNode.getFolder();
 			}
 		}
@@ -83,6 +83,7 @@ public class NewModelPage extends WizardPage {
 		bus.register(this);
 	}
 
+	@Override
 	public void createControl(Composite parent) {
 		Composite myComposite = new Composite(parent, SWT.NONE);
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(myComposite);
@@ -102,10 +103,10 @@ public class NewModelPage extends WizardPage {
 		foldersTree.setContentProvider(itemProvider);
 		foldersTree.setLabelProvider(new DecoratingLabelProvider(itemProvider, PlatformUI.getWorkbench().getDecoratorManager().getLabelDecorator()));
 		foldersTree.setSorter(itemProvider);
-		if(getRepository() != null) {
+		if (getRepository() != null) {
 			foldersTree.setInput(getRepository());
 		}
-		if(selectedNode != null) {
+		if (selectedNode != null) {
 			foldersTree.setSelection(new StructuredSelection(selectedNode));
 		}
 
@@ -119,6 +120,7 @@ public class NewModelPage extends WizardPage {
 
 		folderText.addModifyListener(new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
 				findFolderSelection();
 				validatePage();
@@ -127,8 +129,9 @@ public class NewModelPage extends WizardPage {
 
 		foldersTree.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				IStructuredSelection selection = (IStructuredSelection)event.getSelection();
+				IStructuredSelection selection = (IStructuredSelection) event.getSelection();
 				selectedNode = selection.isEmpty() ? null : adapt(selection.getFirstElement(), CDOResourceNode.class);
 				updateFolderSelection();
 				validatePage();
@@ -137,6 +140,7 @@ public class NewModelPage extends WizardPage {
 
 		nameText.addModifyListener(new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
 				validatePage();
 			}
@@ -149,7 +153,7 @@ public class NewModelPage extends WizardPage {
 	public void setRepository(IPapyrusRepository repository) {
 		this.repository = repository;
 
-		if(foldersTree != null) {
+		if (foldersTree != null) {
 			foldersTree.setInput(repository);
 		}
 
@@ -157,7 +161,7 @@ public class NewModelPage extends WizardPage {
 	}
 
 	private IInternalPapyrusRepository getRepository() {
-		return ((IInternalPapyrusRepository)repository);
+		return ((IInternalPapyrusRepository) repository);
 	}
 
 	CDOView getView() {
@@ -172,17 +176,18 @@ public class NewModelPage extends WizardPage {
 	void updateFolderSelection() {
 		whileSynchronizingFolderSelection(new Runnable() {
 
+			@Override
 			public void run() {
 				CDOResourceFolder selected = null;
-				if(selectedNode instanceof CDOResourceFolder) {
-					selected = (CDOResourceFolder)selectedNode;
-				} else if(selectedNode != null) {
+				if (selectedNode instanceof CDOResourceFolder) {
+					selected = (CDOResourceFolder) selectedNode;
+				} else if (selectedNode != null) {
 					// will be null if the selectedNode is contained by the root
 					// resource
 					selected = selectedNode.getFolder();
 				}
 
-				if(selected == null) {
+				if (selected == null) {
 					folderText.setText(""); //$NON-NLS-1$
 				} else {
 					folderText.setText(selected.getPath());
@@ -194,11 +199,12 @@ public class NewModelPage extends WizardPage {
 	void findFolderSelection() {
 		whileSynchronizingFolderSelection(new Runnable() {
 
+			@Override
 			public void run() {
 				String folder = folderText.getText().trim();
 				CDOView view = getView();
-				if(view != null) {
-					if(folder.equals("")) { //$NON-NLS-1$
+				if (view != null) {
+					if (folder.equals("")) { //$NON-NLS-1$
 						foldersTree.setSelection(StructuredSelection.EMPTY);
 					} else {
 						try {
@@ -213,7 +219,7 @@ public class NewModelPage extends WizardPage {
 	}
 
 	private void whileSynchronizingFolderSelection(Runnable runnable) {
-		if(!synchronizingFolderSelection) {
+		if (!synchronizingFolderSelection) {
 			synchronizingFolderSelection = true;
 
 			try {
@@ -228,9 +234,9 @@ public class NewModelPage extends WizardPage {
 		String result = String.format("%s.%s", baseName, extension); //$NON-NLS-1$
 		CDOView view = getView();
 
-		if(view != null) {
-			for(int i = 1;; i++) {
-				if(!view.hasResource(getNewResourcePath(result))) {
+		if (view != null) {
+			for (int i = 1;; i++) {
+				if (!view.hasResource(getNewResourcePath(result))) {
 					break;
 				} else {
 					// use %s instead of %d to avoid any thousands separators
@@ -247,17 +253,17 @@ public class NewModelPage extends WizardPage {
 		String result = null;
 		String path = getSelectedFolderPath();
 
-		if(path.equals("")) { //$NON-NLS-1$
+		if (path.equals("")) { //$NON-NLS-1$
 			// it's a resource in the root
 			result = "/" + name; //$NON-NLS-1$
 		} else {
 			StringBuilder buf = new StringBuilder();
 
-			if(!path.startsWith("/")) { //$NON-NLS-1$
+			if (!path.startsWith("/")) { //$NON-NLS-1$
 				buf.append("/"); //$NON-NLS-1$
 			}
 			buf.append(path);
-			if(!path.endsWith("/")) { //$NON-NLS-1$
+			if (!path.endsWith("/")) { //$NON-NLS-1$
 				buf.append("/"); //$NON-NLS-1$
 			}
 			buf.append(name);
@@ -284,12 +290,12 @@ public class NewModelPage extends WizardPage {
 		String result = null;
 		String name = getNewResourceName();
 
-		if(name != null) {
+		if (name != null) {
 			// the proper extension is whatever follows the *last* '.',
 			// but for our purposes we need e.g. "profile.uml" to be
 			// an extension
 			int dot = name.indexOf('.');
-			if(dot >= 0) {
+			if (dot >= 0) {
 				result = name.substring(dot + 1);
 			}
 		}
@@ -299,18 +305,18 @@ public class NewModelPage extends WizardPage {
 
 	/**
 	 * Diagram extension changed.
-	 * 
+	 *
 	 * @param newExtension
-	 *        the new extension
+	 *            the new extension
 	 * @return result of validation of the new extension
 	 */
 	public IStatus diagramExtensionChanged(String newExtension) {
 		String currentExtension = getExtension();
-		if(!newExtension.equals(currentExtension)) {
+		if (!newExtension.equals(currentExtension)) {
 
 			String oldFileName = getNewResourceName();
 			String base = oldFileName;
-			if(currentExtension != null) {
+			if (currentExtension != null) {
 				// take one off for the '.'
 				base = base.substring(0, base.length() - currentExtension.length() - 1);
 			}
@@ -319,13 +325,13 @@ public class NewModelPage extends WizardPage {
 			setNewResourceName(newFileName);
 
 			String message1 = org.eclipse.papyrus.uml.diagram.wizards.Messages.NewModelFilePage_new_diagram_category_needs_specific_extension;
-			String message2 = org.eclipse.papyrus.uml.diagram.wizards.Messages.bind(org.eclipse.papyrus.uml.diagram.wizards.Messages.NewModelFilePage_diagram_file_was_renamed, oldFileName, newFileName);
+			String message2 = NLS.bind(org.eclipse.papyrus.uml.diagram.wizards.Messages.NewModelFilePage_diagram_file_was_renamed, oldFileName, newFileName);
 			String message = message1 + message2;
-			Status resultStatus = new Status(Status.INFO, Activator.PLUGIN_ID, message);
+			Status resultStatus = new Status(IStatus.INFO, Activator.PLUGIN_ID, message);
 
 			String errorMessage = getErrorMessage();
-			if(errorMessage != null) {
-				resultStatus = new Status(Status.ERROR, Activator.PLUGIN_ID, errorMessage);
+			if (errorMessage != null) {
+				resultStatus = new Status(IStatus.ERROR, Activator.PLUGIN_ID, errorMessage);
 			}
 			return resultStatus;
 		}
@@ -337,22 +343,22 @@ public class NewModelPage extends WizardPage {
 		setPageComplete(true);
 
 		String name = getNewResourceName();
-		if(getView() == null) {
+		if (getView() == null) {
 			setMessage(Messages.NewModelPage_16, ERROR);
 			setPageComplete(false);
-		} else if(Strings.isNullOrEmpty(name)) {
+		} else if (Strings.isNullOrEmpty(name)) {
 			setMessage(Messages.NewModelPage_17, ERROR);
 			setPageComplete(false);
 		} else {
 			String path = getNewResourcePath(name);
-			if(getView().hasResource(path)) {
+			if (getView().hasResource(path)) {
 				setMessage(NLS.bind(Messages.NewModelPage_18, path), ERROR);
 				setPageComplete(false);
 			} else {
 				// check existence of folder (if any)
 				String folderPath = getSelectedFolderPath();
-				if(!Strings.isNullOrEmpty(folderPath)) {
-					if(!getView().hasResource(folderPath)) {
+				if (!Strings.isNullOrEmpty(folderPath)) {
+					if (!getView().hasResource(folderPath)) {
 						setMessage(Messages.NewModelPage_19, WARNING);
 					}
 				}

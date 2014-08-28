@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -15,6 +15,9 @@ package org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.widget.command
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomFactory;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
 import org.eclipse.papyrus.emf.facet.custom.sdk.core.ICustomizationCommandFactory;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.widget.getorcreate.GetExtendedFacetWidget;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.widget.getorcreate.GetOrCreateCustomizationWidget;
@@ -23,9 +26,6 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.AbstractCommandWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.utils.PropertyElement;
 import org.eclipse.papyrus.emf.facet.util.ui.utils.PropertyElement2;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomFactory;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
 import org.eclipse.swt.widgets.Composite;
 
 /**
@@ -33,16 +33,14 @@ import org.eclipse.swt.widgets.Composite;
  * a command ( {@link #getCommand()} for the creation of the element into the
  * model.
  * <p/>
- * 
+ *
  * This widget uses 3 others:
  * <p/>
  * <li> {@link GetOrCreateCustomizationWidget} for the selection of the parent.</li>
  * <p/>
- * <li> {@link GetExtendedMetaclassWidget} for the selection of the extended
- * meta-class</li>
+ * <li> {@link GetExtendedMetaclassWidget} for the selection of the extended meta-class</li>
  * <p/>
- * <li> {@link GetExtendedFacetWidget} for the selection of the extended
- * {@link Facet}</li>
+ * <li> {@link GetExtendedFacetWidget} for the selection of the extended {@link Facet}</li>
  */
 public class CreateEClassCustomizationWidget extends AbstractCommandWidget {
 
@@ -58,7 +56,7 @@ public class CreateEClassCustomizationWidget extends AbstractCommandWidget {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of this composite.
 	 * @param properties

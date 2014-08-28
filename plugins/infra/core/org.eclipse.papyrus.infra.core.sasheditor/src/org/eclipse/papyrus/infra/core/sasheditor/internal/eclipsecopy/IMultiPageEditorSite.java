@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,11 +20,11 @@ import org.eclipse.ui.IEditorSite;
 /**
  * Interface implemented by site used by nested editors of MultiPageEditor.
  * This interface add the dispose() method.
- * This interface is added in order to allow different implementation of the site, 
+ * This interface is added in order to allow different implementation of the site,
  * mainly to have a version for 3.8 and 4.x.
- * 
+ *
  * @since 0.9
- * 
+ *
  * @author cedric dumoulin
  *
  */

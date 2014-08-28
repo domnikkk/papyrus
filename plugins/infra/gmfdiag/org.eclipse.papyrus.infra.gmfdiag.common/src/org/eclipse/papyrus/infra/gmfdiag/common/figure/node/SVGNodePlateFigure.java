@@ -64,13 +64,13 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 		 * Initializes this transformation
 		 *
 		 * @param scaleX
-		 *        Scale on the X axis
+		 *            Scale on the X axis
 		 * @param scaleY
-		 *        Scale on the Y axis
+		 *            Scale on the Y axis
 		 * @param translationX
-		 *        Translation on the X axis
+		 *            Translation on the X axis
 		 * @param translationY
-		 *        Translation on the Y axis
+		 *            Translation on the Y axis
 		 */
 		public SvgToDraw2DTransform(double scaleX, double scaleY, double translationX, double translationY) {
 			this.scaleX = scaleX;
@@ -83,7 +83,7 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 		 * Transforms the given points in the target frame of reference
 		 *
 		 * @param point
-		 *        The point to transform
+		 *            The point to transform
 		 * @return The transformed point in the target frame of reference
 		 */
 		public PrecisionPoint transform(PrecisionPoint point) {
@@ -94,7 +94,7 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 		 * Transforms the given rectangle in the target frame of reference
 		 *
 		 * @param rectangle
-		 *        The rectangle to transform
+		 *            The rectangle to transform
 		 * @return The transformed rectangle in the target frame of reference
 		 */
 		public PrecisionRectangle transform(PrecisionRectangle rectangle) {
@@ -119,9 +119,9 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 * Initializes the figure.
 	 *
 	 * @param width
-	 *        The figure's original width
+	 *            The figure's original width
 	 * @param height
-	 *        The figure's original height
+	 *            The figure's original height
 	 */
 	public SVGNodePlateFigure(int width, int height) {
 		super(width, height);
@@ -132,20 +132,20 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 * Associates the given SVG document to this figure
 	 *
 	 * @param svgDocument
-	 *        the SVG document
+	 *            the SVG document
 	 */
 	public void setSVGDocument(SVGDocument svgDocument) {
 		this.svgDocument = svgDocument;
-		if(svgDocument != null) {
+		if (svgDocument != null) {
 			this.svgDimension = getSvgDimension(svgDocument);
 			Element element = svgDocument.getElementById("PapyrusPath");
-			if(element != null) {
-				outlinePoints = toDraw2DPoints(((SVGPathElement)element).getPathSegList());
+			if (element != null) {
+				outlinePoints = toDraw2DPoints(((SVGPathElement) element).getPathSegList());
 				outlineDimension = getDimensionOf(outlinePoints);
 			}
 			element = svgDocument.getElementById("PapyrusLabel");
-			if(element != null) {
-				labelBounds = toDraw2DRectangle((SVGRectElement)element);
+			if (element != null) {
+				labelBounds = toDraw2DRectangle((SVGRectElement) element);
 			}
 		} else {
 			this.svgDimension = null;
@@ -159,15 +159,15 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 * Transforms the given SVG animated length to a base value, assuming the units in the SVG are pixels
 	 *
 	 * @param length
-	 *        The SVG length
+	 *            The SVG length
 	 * @return The base value as a double
 	 */
 	private double getValueOf(SVGAnimatedLength length) {
-		if(length == null) {
+		if (length == null) {
 			return 0;
 		}
 		SVGLength base = length.getBaseVal();
-		if(base == null) {
+		if (base == null) {
 			return 0;
 		}
 		return base.getValue();
@@ -177,14 +177,14 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 * Gets the dimension of the SVG document, assuming the units in the SVG are pixels
 	 *
 	 * @param svgDocument
-	 *        The SVG document
+	 *            The SVG document
 	 * @return The equivalent Draw2D dimension
 	 */
 	private PrecisionDimension getSvgDimension(SVGDocument svgDocument) {
 		double svgWidth = 0;
 		double svgHeight = 0;
 		SVGSVGElement svgElement = svgDocument.getRootElement();
-		if(svgElement != null) {
+		if (svgElement != null) {
 			svgWidth = getValueOf(svgElement.getWidth());
 			svgHeight = getValueOf(svgElement.getHeight());
 		}
@@ -195,7 +195,7 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 * Transforms the given SVG path to a list of Draw2D precision points, assuming the units in the SVG are pixels
 	 *
 	 * @param segments
-	 *        The SVG path as a list of segments
+	 *            The SVG path as a list of segments
 	 * @return The list of the corresponding Draw2D points
 	 */
 	private List<PrecisionPoint> toDraw2DPoints(SVGPathSegList segments) {
@@ -204,26 +204,26 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 		// current coordinates
 		double currentX = 0;
 		double currentY = 0;
-		for(int i = 0; i < segments.getNumberOfItems(); i++) {
+		for (int i = 0; i < segments.getNumberOfItems(); i++) {
 			SVGPathSeg seg = segments.getItem(i);
-			if(seg instanceof SVGPathSegMovetoLinetoItem) {
-				SVGPathSegMovetoLinetoItem linetoItem = (SVGPathSegMovetoLinetoItem)seg;
+			if (seg instanceof SVGPathSegMovetoLinetoItem) {
+				SVGPathSegMovetoLinetoItem linetoItem = (SVGPathSegMovetoLinetoItem) seg;
 				String letter = linetoItem.getPathSegTypeAsLetter();
 				double x = linetoItem.getX();
 				double y = linetoItem.getY();
-				if(letter.equals("M")) {
+				if (letter.equals("M")) {
 					currentX = x;
 					currentY = y;
 					pointList.add(new PrecisionPoint(currentX, currentY));
-				} else if(letter.equals("m")) {
+				} else if (letter.equals("m")) {
 					currentX = currentX + x;
 					currentY = currentY + y;
 					pointList.add(new PrecisionPoint(currentX, currentY));
-				} else if(letter.equals("L")) {
+				} else if (letter.equals("L")) {
 					currentX = x;
 					currentY = y;
 					pointList.add(new PrecisionPoint(currentX, currentY));
-				} else if(letter.equals("l")) {
+				} else if (letter.equals("l")) {
 					currentX = currentX + x;
 					currentY = currentY + y;
 					pointList.add(new PrecisionPoint(currentX, currentY));
@@ -240,13 +240,13 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 * Gets the dimension of the given collection of points
 	 *
 	 * @param points
-	 *        A list of points
+	 *            A list of points
 	 * @return The dimension of the points
 	 */
 	private PrecisionDimension getDimensionOf(Collection<PrecisionPoint> points) {
 		double maxWidth = 0;
 		double maxHeight = 0;
-		for(PrecisionPoint point : points) {
+		for (PrecisionPoint point : points) {
 			maxWidth = Math.max(maxWidth, point.preciseX());
 			maxHeight = Math.max(maxHeight, point.preciseY());
 		}
@@ -257,15 +257,15 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 * Transforms the given SVG rectangle to a Draw2D rectangle, assuming the units in the SVG are pixels
 	 *
 	 * @param element
-	 *        The SVG rectangle
+	 *            The SVG rectangle
 	 * @return The equivalent Draw2D rectangle
 	 */
 	private PrecisionRectangle toDraw2DRectangle(SVGRectElement element) {
 		return new PrecisionRectangle(
-			getValueOf(element.getX()),
-			getValueOf(element.getY()),
-			getValueOf(element.getWidth()),
-			getValueOf(element.getHeight()));
+				getValueOf(element.getX()),
+				getValueOf(element.getY()),
+				getValueOf(element.getWidth()),
+				getValueOf(element.getHeight()));
 	}
 
 
@@ -276,12 +276,12 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 * @param defaultNodePlate
 	 */
 	public void setDefaultNodePlate(IFigure defaultNodePlate) {
-		if(defaultNodePlate instanceof DefaultSizeNodeFigure) {
-			this.defaultNodePlate = (DefaultSizeNodeFigure)defaultNodePlate;
-			this.setDefaultSize(((DefaultSizeNodeFigure)defaultNodePlate).getDefaultSize());
+		if (defaultNodePlate instanceof DefaultSizeNodeFigure) {
+			this.defaultNodePlate = (DefaultSizeNodeFigure) defaultNodePlate;
+			this.setDefaultSize(((DefaultSizeNodeFigure) defaultNodePlate).getDefaultSize());
 		}
-		if(defaultNodePlate instanceof ICustomNodePlate) {
-			((ICustomNodePlate)this.defaultNodePlate).setSVGNodePlateContainer(this);
+		if (defaultNodePlate instanceof ICustomNodePlate) {
+			((ICustomNodePlate) this.defaultNodePlate).setSVGNodePlateContainer(this);
 		}
 	}
 
@@ -289,20 +289,20 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 * Gets the transformation from SVG to Draw2D positions
 	 *
 	 * @param innerWidth
-	 *        Maximum width of the elements to transform
+	 *            Maximum width of the elements to transform
 	 * @param innerHeight
-	 *        Maximum height of the elements to transform
+	 *            Maximum height of the elements to transform
 	 * @param anchor
-	 *        The Draw2D rectangle anchoring the SVG figure
+	 *            The Draw2D rectangle anchoring the SVG figure
 	 * @return The transformation
 	 */
 	private SvgToDraw2DTransform getTransform(double innerWidth, double innerHeight, Rectangle anchor) {
 		PrecisionDimension maxDim = new PrecisionDimension(Math.max(svgDimension.preciseWidth(), innerWidth), Math.max(svgDimension.preciseHeight(), innerHeight));
 		return new SvgToDraw2DTransform(
-			anchor.width / maxDim.preciseWidth(),
-			anchor.height / maxDim.preciseHeight(),
-			anchor.x,
-			anchor.y);
+				anchor.width / maxDim.preciseWidth(),
+				anchor.height / maxDim.preciseHeight(),
+				anchor.x,
+				anchor.y);
 	}
 
 	/**
@@ -311,11 +311,11 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 * @return The Draw2D anchor as a Rectangle
 	 */
 	private Rectangle getDraw2DAnchor() {
-		if(this.getChildren().size() > 0 && this.getChildren().get(0) instanceof IFigure) {
-			IFigure primaryShape = (IFigure)this.getChildren().get(0);
-			for(Object subFigure : primaryShape.getChildren()) {
-				if(subFigure instanceof ScalableCompartmentFigure) {
-					return ((IFigure)subFigure).getBounds();
+		if (this.getChildren().size() > 0 && this.getChildren().get(0) instanceof IFigure) {
+			IFigure primaryShape = (IFigure) this.getChildren().get(0);
+			for (Object subFigure : primaryShape.getChildren()) {
+				if (subFigure instanceof ScalableCompartmentFigure) {
+					return ((IFigure) subFigure).getBounds();
 				}
 			}
 		}
@@ -323,14 +323,17 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	}
 
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createAnchor(org.eclipse.draw2d.geometry.PrecisionPoint)
 	 */
+	@Override
 	protected ConnectionAnchor createAnchor(PrecisionPoint p) {
-		if(this.outlinePoints == null) {
-			if(defaultNodePlate instanceof IOvalAnchorableFigure) {
+		if (this.outlinePoints == null) {
+			if (defaultNodePlate instanceof IOvalAnchorableFigure) {
 				defaultNodePlate.setBounds(this.getBounds());
-				if (p!=null){
+				if (p != null) {
 					// If the old terminal for the connection anchor cannot be resolved (by SlidableAnchor) a null
 					// PrecisionPoint will passed in - this is handled here
 					return new SlidableEllipseAnchor(this, p);
@@ -342,12 +345,15 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 		return super.createAnchor(p);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createDefaultAnchor()
 	 */
+	@Override
 	protected ConnectionAnchor createDefaultAnchor() {
-		if(this.outlinePoints == null) {
-			if(defaultNodePlate instanceof IOvalAnchorableFigure) {
+		if (this.outlinePoints == null) {
+			if (defaultNodePlate instanceof IOvalAnchorableFigure) {
 				defaultNodePlate.setBounds(this.getBounds());
 				return new SlidableEllipseAnchor(this);
 			}
@@ -361,8 +367,8 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 */
 	@Override
 	public PointList getPolygonPoints() {
-		if(this.outlinePoints == null) {
-			if(defaultNodePlate != null) {
+		if (this.outlinePoints == null) {
+			if (defaultNodePlate != null) {
 				defaultNodePlate.setBounds(this.getBounds());
 				return defaultNodePlate.getPolygonPoints();
 			}
@@ -371,7 +377,7 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 
 		SvgToDraw2DTransform transform = getTransform(outlineDimension.preciseWidth(), outlineDimension.preciseHeight(), getDraw2DAnchor());
 		PointList points = new PointList(5);
-		for(PrecisionPoint point : outlinePoints) {
+		for (PrecisionPoint point : outlinePoints) {
 			points.addPoint(transform.transform(point));
 		}
 		return points;
@@ -390,11 +396,11 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 * Gets the bounds of the label, if they are defined
 	 *
 	 * @param anchor
-	 *        The Draw2D rectangle anchoring the SVG figure
+	 *            The Draw2D rectangle anchoring the SVG figure
 	 * @return The label's bounds, or <code>null</code> if they are not defined
 	 */
 	public Rectangle getLabelBounds(Rectangle anchor) {
-		if(labelBounds == null) {
+		if (labelBounds == null) {
 			return null;
 		}
 		SvgToDraw2DTransform transform = getTransform(labelBounds.preciseRight(), labelBounds.preciseBottom(), anchor);

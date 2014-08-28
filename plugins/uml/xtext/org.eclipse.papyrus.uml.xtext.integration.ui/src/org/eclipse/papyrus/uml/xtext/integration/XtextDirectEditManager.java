@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    IBM Corporation - initial API and implementation 
+ *    IBM Corporation - initial API and implementation
  *    Dmitry Stadnik (Borland) - contribution for bugzilla 135694
  ****************************************************************************/
 
@@ -39,7 +39,6 @@ import org.eclipse.gmf.runtime.diagram.ui.internal.DiagramUIPlugin;
 import org.eclipse.gmf.runtime.diagram.ui.internal.DiagramUIStatusCodes;
 import org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramGraphicalViewer;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.draw2d.ui.mapmode.MapModeUtil;
 import org.eclipse.gmf.runtime.gef.ui.internal.parts.TextCellEditorEx;
@@ -74,7 +73,7 @@ import com.google.inject.Injector;
 
 /**
  * Full copy of the TextDirectEditManager for a StyledText
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public class XtextDirectEditManager extends DirectEditManagerEx {
@@ -117,7 +116,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 	 * store used parser to enable activation, if required
 	 * */
 	protected IParser parser;
-	
+
 	/**
 	 * The superclass only relocates the cell editor when the location of the
 	 * editpart's figure moves, but we need to also relocate the cell editor
@@ -141,11 +140,10 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 
 	/**
 	 * constructor
-	 * 
+	 *
 	 * @param source
 	 *            <code>GraphicalEditPart</code> to support direct edit of. The
-	 *            figure of the <code>source</code> edit part must be of type
-	 *            <code>WrapLabel</code>.
+	 *            figure of the <code>source</code> edit part must be of type <code>WrapLabel</code>.
 	 */
 	public XtextDirectEditManager(ITextAwareEditPart source, Injector injector,
 			int style) {
@@ -171,7 +169,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 		this(source, null, getTextCellEditorLocator(source), injector, style);
 		this.contextProvider = provider;
 	}
-	
+
 	/**
 	 * @param source
 	 * @param editorType
@@ -209,8 +207,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 						// if there is no text, let's assume a default size
 						// of one character because it looks silly when the cell
 						// editor is tiny.
-						rect.setSize(TextUtilities.INSTANCE.getTextExtents(
-								"a", text.getFont())); //$NON-NLS-1$
+						rect.setSize(TextUtilities.INSTANCE.getTextExtents("a", text.getFont())); //$NON-NLS-1$
 
 						if (label.isTextWrapOn()) {
 							// adjust the location of the cell editor based on
@@ -241,7 +238,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 							// see the text shifting down even in a label on a
 							// GEF
 							// logic diagram when zoomed into 400%.
-							int charHeight = FigureUtilities.getFontMetrics(
+							int charHeight = org.eclipse.draw2d.FigureUtilities.getFontMetrics(
 									text.getFont()).getHeight();
 							rect.resize(0, charHeight / 2);
 						} else {
@@ -254,7 +251,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 							// character disappears upon entering the second
 							// character. This should be investigated and an
 							// SWT bug logged.
-							int avr = FigureUtilities.getFontMetrics(
+							int avr = org.eclipse.draw2d.FigureUtilities.getFontMetrics(
 									text.getFont()).getAverageCharWidth();
 							rect.setSize(new Dimension(text.computeSize(
 									SWT.DEFAULT, SWT.DEFAULT)).expand(avr * 2,
@@ -274,24 +271,24 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 		}
 
 		// return a default figure locator
-				return new CellEditorLocator() {
-					public void relocate(CellEditor celleditor) {
-						StyledText text = (StyledText) celleditor.getControl();
-						Rectangle rect = source.getFigure().getBounds().getCopy();
-						// Added min width because it looks silly if the label has a
-						// width of 0
-						rect.width = Math.max(rect.width, LABEL_MIN_WIDTH);
-						if (!text.isDisposed() && text.getFont() != null && !text.getFont().isDisposed()) {
-							Dimension fontMetrics = TextUtilities.INSTANCE.getTextExtents("a", text.getFont()).getCopy();
-							source.getFigure().translateToRelative(fontMetrics);
-							rect.height = Math.max(rect.height, fontMetrics.height);
-						}
-						source.getFigure().translateToAbsolute(rect);
-						if (!rect.equals(new Rectangle(text.getBounds()))) {
-							text.setBounds(rect.x, rect.y, rect.width, rect.height);
-						}
-					}
-				};
+		return new CellEditorLocator() {
+			public void relocate(CellEditor celleditor) {
+				StyledText text = (StyledText) celleditor.getControl();
+				Rectangle rect = source.getFigure().getBounds().getCopy();
+				// Added min width because it looks silly if the label has a
+				// width of 0
+				rect.width = Math.max(rect.width, LABEL_MIN_WIDTH);
+				if (!text.isDisposed() && text.getFont() != null && !text.getFont().isDisposed()) {
+					Dimension fontMetrics = TextUtilities.INSTANCE.getTextExtents("a", text.getFont()).getCopy();
+					source.getFigure().translateToRelative(fontMetrics);
+					rect.height = Math.max(rect.height, fontMetrics.height);
+				}
+				source.getFigure().translateToAbsolute(rect);
+				if (!rect.equals(new Rectangle(text.getBounds()))) {
+					text.setBounds(rect.x, rect.y, rect.width, rect.height);
+				}
+			}
+		};
 	}
 
 	/**
@@ -299,9 +296,10 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 	 * the style needs to be passed into the editor class when it is created. It
 	 * will default to the super behavior if an <code>editorType</code> was
 	 * passed into the constructor.
-	 * 
+	 *
 	 * @since 2.1
 	 */
+	@Override
 	protected CellEditor createCellEditorOn(Composite composite) {
 
 		// ((ICleanupAfterDirectEdit) getEditPart()).setParser(parser);
@@ -338,7 +336,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 	 * mapmode. This will typically be used by direct edit cell editors that
 	 * need to display independent of the zoom or any coordinate mapping that is
 	 * taking place on the drawing surface.
-	 * 
+	 *
 	 * @param label
 	 *            the label to use for the font calculation
 	 * @return the <code>Font</code> that is scaled to the screen coordinates.
@@ -352,8 +350,9 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 				.DPtoLP(data.getHeight()));
 		label.translateToAbsolute(fontSize);
 
-		if (Math.abs(data.getHeight() - fontSize.height) < 2)
+		if (Math.abs(data.getHeight() - fontSize.height) < 2) {
 			fontSize.height = data.getHeight();
+		}
 
 		try {
 			FontDescriptor fontDescriptor = FontDescriptor.createFrom(data);
@@ -361,15 +360,14 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 			return getResourceManager().createFont(fontDescriptor);
 		} catch (DeviceResourceException e) {
 			Trace.catching(DiagramUIPlugin.getInstance(),
-					DiagramUIDebugOptions.EXCEPTIONS_CATCHING, getClass(),
-					"getScaledFont", e); //$NON-NLS-1$
+					DiagramUIDebugOptions.EXCEPTIONS_CATCHING, getClass(), "getScaledFont", e); //$NON-NLS-1$
 			Log.error(DiagramUIPlugin.getInstance(),
-					DiagramUIStatusCodes.IGNORED_EXCEPTION_WARNING,
-					"getScaledFont", e); //$NON-NLS-1$
+					DiagramUIStatusCodes.IGNORED_EXCEPTION_WARNING, "getScaledFont", e); //$NON-NLS-1$
 		}
 		return JFaceResources.getDefaultFont();
 	}
 
+	@Override
 	protected void initCellEditor() {
 		committed = false;
 
@@ -398,6 +396,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 	/**
 	 * @see org.eclipse.gef.tools.DirectEditManager#commit()
 	 */
+	@Override
 	protected void commit() {
 		Shell activeShell = Display.getCurrent().getActiveShell();
 		if (activeShell != null
@@ -430,7 +429,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 		super.commit();
 		resetDefaultParser();
 		getEditPart().refresh();
-		
+
 	}
 
 	/**
@@ -441,7 +440,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 			((IControlParserForDirectEdit) getEditPart()).setParser(parser);
 		}
 	}
-	
+
 	/**
 	 * reset to default parser
 	 */
@@ -450,10 +449,11 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 			((IControlParserForDirectEdit) getEditPart()).setParser(null);
 		}
 	}
-	
+
 	/**
 	 * @see org.eclipse.gef.tools.DirectEditManager#bringDown()
 	 */
+	@Override
 	protected void bringDown() {
 		if (proposalPopupForegroundColor != null) {
 			proposalPopupForegroundColor.dispose();
@@ -480,7 +480,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 
 		for (Iterator<FontDescriptor> iter = cachedFontDescriptors.iterator(); iter
 				.hasNext();) {
-			getResourceManager().destroyFont((FontDescriptor) iter.next());
+			getResourceManager().destroyFont(iter.next());
 		}
 		cachedFontDescriptors.clear();
 
@@ -497,7 +497,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 
 	/**
 	 * This method is used to set the cell editors text
-	 * 
+	 *
 	 * @param toEdit
 	 *            String to be set in the cell editor
 	 */
@@ -513,7 +513,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 		}
 
 		// Get the Text Compartment Edit Part
-		ITextAwareEditPart textEP = (ITextAwareEditPart) getEditPart();
+		ITextAwareEditPart textEP = getEditPart();
 
 		// Get the Text control
 		StyledText textControl = (StyledText) cellEditor.getControl();
@@ -536,15 +536,15 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 	/**
 	 * Performs show and sets the edit string to be the initial character or
 	 * string
-	 * 
+	 *
 	 * @param initialChar
 	 */
 	public void show(char initialChar) {
 		initialString = initialString.append(initialChar);
-		
+
 		((IControlParserForDirectEdit) getEditPart()).setParser(parser);
 		show();
-		if (SWT.getPlatform() != "carbon") { //$NON-NLS-1$ 
+		if (SWT.getPlatform() != "carbon") { //$NON-NLS-1$
 			// Set the cell editor text to the initial character
 			setEditText(initialString.toString());
 		}
@@ -555,7 +555,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 	/**
 	 * This method obtains the fonts that are being used by the figure at its
 	 * zoom level.
-	 * 
+	 *
 	 * @param gep
 	 *            the associated <code>GraphicalEditPart</code> of the figure
 	 * @param actualFont
@@ -571,8 +571,9 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 		if (zoom != null) {
 			double zoomLevel = ((ZoomManager) zoom).getZoom();
 
-			if (zoomLevel == 1.0f)
+			if (zoomLevel == 1.0f) {
 				return actualFont;
+			}
 
 			FontData[] fd = new FontData[actualFont.getFontData().length];
 			FontData tempFD = null;
@@ -591,18 +592,18 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 				return getResourceManager().createFont(fontDescriptor);
 			} catch (DeviceResourceException e) {
 				Trace.catching(DiagramUIPlugin.getInstance(),
-						DiagramUIDebugOptions.EXCEPTIONS_CATCHING, getClass(),
-						"getZoomLevelFonts", e); //$NON-NLS-1$
+						DiagramUIDebugOptions.EXCEPTIONS_CATCHING, getClass(), "getZoomLevelFonts", e); //$NON-NLS-1$
 				Log.error(DiagramUIPlugin.getInstance(),
-						DiagramUIStatusCodes.IGNORED_EXCEPTION_WARNING,
-						"getZoomLevelFonts", e); //$NON-NLS-1$
+						DiagramUIStatusCodes.IGNORED_EXCEPTION_WARNING, "getZoomLevelFonts", e); //$NON-NLS-1$
 
 				return actualFont;
 			}
-		} else
+		} else {
 			return actualFont;
+		}
 	}
 
+	@Override
 	public void show() {
 		super.show();
 
@@ -621,13 +622,13 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 	}
 
 	/**
-	 * 
+	 *
 	 * Performs show and sends an extra mouse click to the point location so
 	 * that cursor appears at the mouse click point
-	 * 
+	 *
 	 * The Text control does not allow for the cursor to appear at point
 	 * location but at a character location
-	 * 
+	 *
 	 * @param location
 	 */
 	public void show(Point location) {
@@ -640,15 +641,16 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 		getCellEditor().getControl().setCapture(true);
 
 		if (getCellEditor() != null
-				&& getCellEditor().getControl().getBounds().contains(location))
+				&& getCellEditor().getControl().getBounds().contains(location)) {
 			sendMouseClick(location);
+		}
 	}
 
 	/**
-	 * 
+	 *
 	 * Sends a SWT MouseUp and MouseDown event to the point location to the
 	 * current Display
-	 * 
+	 *
 	 * @param location
 	 */
 	private void sendMouseClick(final Point location) {
@@ -669,6 +671,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 		});
 	}
 
+	@Override
 	protected void hookListeners() {
 		super.hookListeners();
 
@@ -682,6 +685,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 
 			textFigureListener = new AncestorListener.Stub() {
 
+				@Override
 				public void ancestorMoved(IFigure ancestor) {
 					getLocator().relocate(getCellEditor());
 				}
@@ -697,6 +701,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 	 * method prevents unhooking listeners twice if the UI thread is blocked.
 	 * For example, a validation dialog may block the thread
 	 */
+	@Override
 	protected void unhookListeners() {
 		if (listenersAttached) {
 			listenersAttached = false;
@@ -716,6 +721,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 	/*
 	 * Sets the listeners attached flag if the cell editor exists
 	 */
+	@Override
 	protected void setCellEditor(CellEditor editor) {
 		super.setCellEditor(editor);
 		if (editor != null) {
@@ -723,6 +729,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 		}
 	}
 
+	@Override
 	public void showFeedback() {
 		try {
 			getEditPart().getRoot();
@@ -735,6 +742,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 	/**
 	 * Overridden to enlarge the cell editor frame for a control decorator
 	 */
+	@Override
 	protected IFigure getCellEditorFrame() {
 		IFigure cellEditorFrame = super.getCellEditorFrame();
 		cellEditorFrame.setBorder(new CompoundBorder(new MarginBorder(
@@ -751,7 +759,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 	 * Gets the resource manager to remember the resources allocated for this
 	 * graphical viewer. All resources will be disposed when the graphical
 	 * viewer is closed if they have not already been disposed.
-	 * 
+	 *
 	 * @return
 	 */
 	protected ResourceManager getResourceManager() {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,14 +19,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
 /**
- * 
+ *
  * This class looks like CreateViewAndElementRequest
- * 
+ *
  * This class was created to use the CustomCreateElementRequestAdapter (used in the CustomCreateViewRequest)
  */
 public class CustomCreateViewAndElementRequest extends CustomCreateViewRequest {
@@ -36,7 +35,7 @@ public class CustomCreateViewAndElementRequest extends CustomCreateViewRequest {
 	public static class ViewAndElementDescriptor extends ViewDescriptor {
 		/**
 		 * Constructor for ViewAndElementDescriptor.
-		 * 
+		 *
 		 * @param requestAdapter
 		 * @param preferencesHint
 		 *            The preference hint that is to be used to find the appropriate
@@ -50,7 +49,7 @@ public class CustomCreateViewAndElementRequest extends CustomCreateViewRequest {
 
 		/**
 		 * Constructor for ViewAndElementDescriptor.
-		 * 
+		 *
 		 * @param requestAdapter
 		 * @param viewkind
 		 */
@@ -60,7 +59,7 @@ public class CustomCreateViewAndElementRequest extends CustomCreateViewRequest {
 
 		/**
 		 * Constructor for ViewAndElementDescriptor.
-		 * 
+		 *
 		 * @param requestAdapter
 		 * @param viewkind
 		 * @param semanticHint
@@ -71,7 +70,7 @@ public class CustomCreateViewAndElementRequest extends CustomCreateViewRequest {
 
 		/**
 		 * Constructor for ViewAndElementDescriptor.
-		 * 
+		 *
 		 * @param requestAdapter
 		 * @param viewKind
 		 * @param semanticHint
@@ -83,7 +82,7 @@ public class CustomCreateViewAndElementRequest extends CustomCreateViewRequest {
 
 		/**
 		 * Method getElementDescriptor.
-		 * 
+		 *
 		 * @return ElementDescriptor
 		 */
 		public CustomCreateElementRequestAdapter getCreateElementRequestAdapter() {
@@ -93,16 +92,16 @@ public class CustomCreateViewAndElementRequest extends CustomCreateViewRequest {
 
 	/**
 	 * Constructor for CreateViewAndElementRequest.
-	 * 
+	 *
 	 * @param viewAndElementDescriptor
 	 */
 	public CustomCreateViewAndElementRequest(ViewDescriptor viewAndElementDescriptor) {
-		super(RequestConstants.REQ_CREATE, viewAndElementDescriptor);
+		super(org.eclipse.gef.RequestConstants.REQ_CREATE, viewAndElementDescriptor);
 	}
 
 	/**
 	 * Constructor for CreateViewAndElementRequest.
-	 * 
+	 *
 	 * @param type
 	 * @param preferencesHint
 	 *            The preference hint that is to be used to find the appropriate
@@ -116,7 +115,7 @@ public class CustomCreateViewAndElementRequest extends CustomCreateViewRequest {
 
 	/**
 	 * Constructor for CreateViewAndElementRequest.
-	 * 
+	 *
 	 * @param type
 	 * @param context
 	 * @param preferencesHint
@@ -131,7 +130,7 @@ public class CustomCreateViewAndElementRequest extends CustomCreateViewRequest {
 
 	/**
 	 * Method getViewAndElementDescriptor.
-	 * 
+	 *
 	 * @return ViewAndElementDescriptor
 	 */
 	public ViewAndElementDescriptor getViewAndElementDescriptor() {

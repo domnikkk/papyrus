@@ -23,10 +23,10 @@ public class ConstraintPropertyMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if(eObject instanceof Property) {
+		if (eObject instanceof Property) {
 
 			Property element = (Property) eObject;
-			if(UMLUtil.getStereotypeApplication(element, ConstraintProperty.class) != null) {
+			if (UMLUtil.getStereotypeApplication(element, ConstraintProperty.class) != null) {
 				isMatch = true;
 			}
 		}

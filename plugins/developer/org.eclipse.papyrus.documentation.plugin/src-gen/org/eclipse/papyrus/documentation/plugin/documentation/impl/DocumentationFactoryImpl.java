@@ -9,17 +9,21 @@ package org.eclipse.papyrus.documentation.plugin.documentation.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.documentation.plugin.documentation.*;
+import org.eclipse.papyrus.documentation.plugin.documentation.Comment;
+import org.eclipse.papyrus.documentation.plugin.documentation.Dependency;
+import org.eclipse.papyrus.documentation.plugin.documentation.Documentation;
+import org.eclipse.papyrus.documentation.plugin.documentation.DocumentationFactory;
+import org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage;
+import org.eclipse.papyrus.documentation.plugin.documentation.FileDependency;
+import org.eclipse.papyrus.documentation.plugin.documentation.Person;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class DocumentationFactoryImpl extends EFactoryImpl implements DocumentationFactory {
@@ -27,16 +31,16 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static DocumentationFactory init() {
 		try {
-			DocumentationFactory theDocumentationFactory = (DocumentationFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/documentation/plugin/documentation"); 
+			DocumentationFactory theDocumentationFactory = (DocumentationFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/documentation/plugin/documentation");
 			if (theDocumentationFactory != null) {
 				return theDocumentationFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DocumentationFactoryImpl();
@@ -46,6 +50,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DocumentationFactoryImpl() {
@@ -55,24 +60,31 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case DocumentationPackage.DOCUMENTATION: return createDocumentation();
-			case DocumentationPackage.DEPENDENCY: return createDependency();
-			case DocumentationPackage.FILE_DEPENDENCY: return createFileDependency();
-			case DocumentationPackage.PERSON: return createPerson();
-			case DocumentationPackage.COMMENT: return createComment();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case DocumentationPackage.DOCUMENTATION:
+			return createDocumentation();
+		case DocumentationPackage.DEPENDENCY:
+			return createDependency();
+		case DocumentationPackage.FILE_DEPENDENCY:
+			return createFileDependency();
+		case DocumentationPackage.PERSON:
+			return createPerson();
+		case DocumentationPackage.COMMENT:
+			return createComment();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Documentation createDocumentation() {
@@ -83,6 +95,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Dependency createDependency() {
@@ -93,6 +106,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public FileDependency createFileDependency() {
@@ -103,6 +117,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Person createPerson() {
@@ -113,6 +128,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Comment createComment() {
@@ -123,15 +139,17 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DocumentationPackage getDocumentationPackage() {
-		return (DocumentationPackage)getEPackage();
+		return (DocumentationPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -140,4 +158,4 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 		return DocumentationPackage.eINSTANCE;
 	}
 
-} //DocumentationFactoryImpl
+} // DocumentationFactoryImpl

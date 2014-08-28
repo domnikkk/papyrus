@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,21 +22,21 @@ import org.eclipse.papyrus.views.search.results.AbstractResultEntry;
 import org.eclipse.search.ui.text.AbstractTextSearchResult;
 
 /**
- * 
+ *
  * Interface of the ResultContentProvider extension point that contributors must implement
- * 
+ *
  */
 public interface IResultContentProvider {
 
 	/**
 	 * Based on inputElement, add content to the resultHierarchy. Contributors must read the results to identify the elements they can process and add
 	 * the corresponding content to the hierarchy
-	 * 
+	 *
 	 * @param inputElement
-	 *        the results
-	 * 
+	 *            the results
+	 *
 	 * @param resultHierarchy
-	 *        the hierarchy to contribute to
+	 *            the hierarchy to contribute to
 	 */
 	public void getHierarchy(AbstractTextSearchResult inputElement, Set<AbstractResultEntry> resultHierarchy);
 

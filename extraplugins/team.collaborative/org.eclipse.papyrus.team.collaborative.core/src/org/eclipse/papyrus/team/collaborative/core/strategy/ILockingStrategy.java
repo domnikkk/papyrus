@@ -25,18 +25,18 @@ public interface ILockingStrategy {
 
 	/**
 	 * Get the business object define by this strategy
-	 * 
+	 *
 	 * @param eOjbect
-	 *        the e ojbect
+	 *            the e ojbect
 	 * @return the object to lock
 	 */
 	Set<IExtendedURI> getBusinessObject(Collection<EObject> eOjbect);
 
 	/**
 	 * Return true if this strategy apply on the selected objects
-	 * 
+	 *
 	 * @param target
-	 *        the target
+	 *            the target
 	 * @return true, if successful
 	 */
 	public boolean applyOn(Collection<EObject> target);
@@ -55,7 +55,7 @@ public interface ILockingStrategy {
 
 		/**
 		 * Gets the strategy.
-		 * 
+		 *
 		 * @return the strategy
 		 */
 		public ILockingStrategy getStrategy() {
@@ -65,7 +65,7 @@ public interface ILockingStrategy {
 
 		/**
 		 * Gets the name.
-		 * 
+		 *
 		 * @return the name
 		 */
 		public String getName() {
@@ -75,11 +75,11 @@ public interface ILockingStrategy {
 
 		/**
 		 * Instantiates a new descriptor.
-		 * 
+		 *
 		 * @param strategy
-		 *        the strategy
+		 *            the strategy
 		 * @param name
-		 *        the name
+		 *            the name
 		 */
 		public Descriptor(ILockingStrategy strategy, String name) {
 			super();

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,8 +28,8 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Scheduler;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.ProcessingResourceImpl#getSpeedFactor <em>Speed Factor</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.ProcessingResourceImpl#getMainScheduler <em>Main Scheduler</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.ProcessingResourceImpl#getSpeedFactor <em>Speed Factor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.ProcessingResourceImpl#getMainScheduler <em>Main Scheduler</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	 * The default value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	 * The cached value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -60,6 +62,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	 * The cached value of the '{@link #getMainScheduler() <em>Main Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMainScheduler()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ProcessingResourceImpl() {
@@ -78,6 +82,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,8 +93,10 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getSpeedFactor() {
 		return speedFactor;
 	}
@@ -97,27 +104,33 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setSpeedFactor(String newSpeedFactor) {
 		String oldSpeedFactor = speedFactor;
 		speedFactor = newSpeedFactor;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR, oldSpeedFactor, speedFactor));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Scheduler getMainScheduler() {
 		if (mainScheduler != null && mainScheduler.eIsProxy()) {
-			InternalEObject oldMainScheduler = (InternalEObject)mainScheduler;
-			mainScheduler = (Scheduler)eResolveProxy(oldMainScheduler);
+			InternalEObject oldMainScheduler = (InternalEObject) mainScheduler;
+			mainScheduler = (Scheduler) eResolveProxy(oldMainScheduler);
 			if (mainScheduler != oldMainScheduler) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER, oldMainScheduler, mainScheduler));
+				}
 			}
 		}
 		return mainScheduler;
@@ -126,6 +139,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Scheduler basicGetMainScheduler() {
@@ -135,28 +149,34 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setMainScheduler(Scheduler newMainScheduler) {
 		Scheduler oldMainScheduler = mainScheduler;
 		mainScheduler = newMainScheduler;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER, oldMainScheduler, mainScheduler));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR:
-				return getSpeedFactor();
-			case GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER:
-				if (resolve) return getMainScheduler();
-				return basicGetMainScheduler();
+		case GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR:
+			return getSpeedFactor();
+		case GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER:
+			if (resolve) {
+				return getMainScheduler();
+			}
+			return basicGetMainScheduler();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,17 +184,18 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR:
-				setSpeedFactor((String)newValue);
-				return;
-			case GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER:
-				setMainScheduler((Scheduler)newValue);
-				return;
+		case GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR:
+			setSpeedFactor((String) newValue);
+			return;
+		case GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER:
+			setMainScheduler((Scheduler) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -182,17 +203,18 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR:
-				setSpeedFactor(SPEED_FACTOR_EDEFAULT);
-				return;
-			case GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER:
-				setMainScheduler((Scheduler)null);
-				return;
+		case GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR:
+			setSpeedFactor(SPEED_FACTOR_EDEFAULT);
+			return;
+		case GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER:
+			setMainScheduler((Scheduler) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -200,15 +222,16 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR:
-				return SPEED_FACTOR_EDEFAULT == null ? speedFactor != null : !SPEED_FACTOR_EDEFAULT.equals(speedFactor);
-			case GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER:
-				return mainScheduler != null;
+		case GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR:
+			return SPEED_FACTOR_EDEFAULT == null ? speedFactor != null : !SPEED_FACTOR_EDEFAULT.equals(speedFactor);
+		case GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER:
+			return mainScheduler != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,11 +239,14 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (speedFactor: ");
@@ -229,4 +255,4 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 		return result.toString();
 	}
 
-} //ProcessingResourceImpl
+} // ProcessingResourceImpl

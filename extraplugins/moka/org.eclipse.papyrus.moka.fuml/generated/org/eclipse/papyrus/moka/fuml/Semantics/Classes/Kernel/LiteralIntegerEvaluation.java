@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,9 +17,10 @@ import org.eclipse.uml2.uml.LiteralInteger;
 
 public class LiteralIntegerEvaluation extends LiteralEvaluation {
 
+	@Override
 	public Value evaluate() {
 		// Evaluate a literal integer, producing an integer value.
-		LiteralInteger literal = (LiteralInteger)specification;
+		LiteralInteger literal = (LiteralInteger) specification;
 		IntegerValue integerValue = new IntegerValue();
 		integerValue.type = this.getType("Integer");
 		integerValue.value = literal.integerValue();

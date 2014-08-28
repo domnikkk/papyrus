@@ -66,7 +66,7 @@ public abstract class AbstractTwoPointCreationTool extends AspectUnspecifiedType
 
 	@Override
 	protected boolean handleButtonDown(final int button) {
-		if(button != 1) {
+		if (button != 1) {
 			setState(STATE_INVALID);
 			handleInvalidInput();
 		}
@@ -74,13 +74,13 @@ public abstract class AbstractTwoPointCreationTool extends AspectUnspecifiedType
 		final Command command = getCommand();
 		final EditPart targetEditPart = getTargetEditPart();
 
-		if(isInState(STATE_INITIAL) && command.canExecute()) {
+		if (isInState(STATE_INITIAL) && command.canExecute()) {
 			this.first = targetEditPart;
 			setState(STATE_FIRST);
 			// make it possible to double-click so that the first and second elements are the same
 			handleMove();
 			firstElementSelected();
-		} else if(isInState(STATE_FIRST) && command.canExecute()) {
+		} else if (isInState(STATE_FIRST) && command.canExecute()) {
 			this.second = targetEditPart;
 			eraseTargetFeedback();
 			// update the request and command with the second edit part
@@ -100,14 +100,14 @@ public abstract class AbstractTwoPointCreationTool extends AspectUnspecifiedType
 			@SuppressWarnings("unchecked")
 			@Override
 			protected void createRequests() {
-				final IElementType elementType = (IElementType)getElementTypes().get(0);
+				final IElementType elementType = (IElementType) getElementTypes().get(0);
 				// set the first and second edit parts on the CreateElementRequest that will be received
 				// by the create command
 				final CreateElementRequest createElementRequest = new CreateElementRequest(elementType);
 				createElementRequest.setParameter(FIRST_TARGET, AbstractTwoPointCreationTool.this.first);
 				createElementRequest.setParameter(SECOND_TARGET, AbstractTwoPointCreationTool.this.second);
 
-				final ViewAndElementDescriptor viewDescriptor = new ViewAndElementDescriptor(new CreateElementRequestAdapter(createElementRequest), Node.class, getGraphicalHint((IHintedType)elementType), getPreferencesHint());
+				final ViewAndElementDescriptor viewDescriptor = new ViewAndElementDescriptor(new CreateElementRequestAdapter(createElementRequest), Node.class, getGraphicalHint((IHintedType) elementType), getPreferencesHint());
 				final Request request = new CreateViewAndElementRequest(viewDescriptor);
 				request.setExtendedData(getExtendedData());
 				request.setType(getType());
@@ -154,7 +154,7 @@ public abstract class AbstractTwoPointCreationTool extends AspectUnspecifiedType
 		final Request request = getTargetRequest();
 		final EditPart firstTarget;
 		final EditPart secondTarget;
-		if(isInState(STATE_INITIAL)) {
+		if (isInState(STATE_INITIAL)) {
 			firstTarget = getTargetEditPart();
 			secondTarget = null;
 		} else {
@@ -162,11 +162,11 @@ public abstract class AbstractTwoPointCreationTool extends AspectUnspecifiedType
 			secondTarget = getTargetEditPart();
 		}
 
-		if(!validateFirstTarget(firstTarget)) {
+		if (!validateFirstTarget(firstTarget)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
-		if(isInState(STATE_INITIAL)) {
+		if (isInState(STATE_INITIAL)) {
 			// dummy executable command (to accept a creation in progress)
 			return new Command() {
 
@@ -177,7 +177,7 @@ public abstract class AbstractTwoPointCreationTool extends AspectUnspecifiedType
 			};
 		}
 
-		if(!validateSecondTarget(firstTarget, secondTarget)) {
+		if (!validateSecondTarget(firstTarget, secondTarget)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return getCommand(firstTarget, secondTarget, request);
@@ -185,33 +185,33 @@ public abstract class AbstractTwoPointCreationTool extends AspectUnspecifiedType
 
 	/**
 	 * Return the creation command that should be executed after clicking the second node.
-	 * 
+	 *
 	 * @param firstTarget
-	 *        the first node that was clicked
+	 *            the first node that was clicked
 	 * @param secondTarget
-	 *        the second node that was clicked
+	 *            the second node that was clicked
 	 * @param request
-	 *        the request for which a creation command should be returned
+	 *            the request for which a creation command should be returned
 	 * @return the creation command
 	 */
 	protected abstract Command getCommand(EditPart firstTarget, EditPart secondTarget, Request request);
 
 	/**
 	 * Validate the first selection
-	 * 
+	 *
 	 * @param firstTarget
-	 *        the first selected element
+	 *            the first selected element
 	 * @return whether the first selected element is valid
 	 */
 	protected abstract boolean validateFirstTarget(final EditPart firstTarget);
 
 	/**
 	 * Validate the second selection
-	 * 
+	 *
 	 * @param firstTarget
-	 *        the first selected element
+	 *            the first selected element
 	 * @param secondTarget
-	 *        the second selected element
+	 *            the second selected element
 	 * @return whether the second selected element is valid
 	 */
 	protected abstract boolean validateSecondTarget(final EditPart firstTarget, final EditPart secondTarget);
@@ -224,9 +224,9 @@ public abstract class AbstractTwoPointCreationTool extends AspectUnspecifiedType
 
 	/**
 	 * Set a help message in the status bar.
-	 * 
+	 *
 	 * @param message
-	 *        a message that should help the user using the tool
+	 *            a message that should help the user using the tool
 	 */
 	protected static void setStatusMessage(final String message) {
 		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor().getEditorSite().getActionBars().getStatusLineManager().setMessage(message);
@@ -234,15 +234,15 @@ public abstract class AbstractTwoPointCreationTool extends AspectUnspecifiedType
 
 	/** Does the View for the first EditPart appear before the View for the second EditPart in their container? */
 	protected static boolean ordered(final EditPart first, final EditPart second) {
-		if(!(first.getModel() instanceof View) || !(second.getModel() instanceof View)) {
+		if (!(first.getModel() instanceof View) || !(second.getModel() instanceof View)) {
 			return false;
 		}
-		final View firstView = (View)first.getModel();
-		final View secondView = (View)second.getModel();
-		if(firstView.eContainer() != secondView.eContainer()) {
+		final View firstView = (View) first.getModel();
+		final View secondView = (View) second.getModel();
+		if (firstView.eContainer() != secondView.eContainer()) {
 			return false;
 		}
-		final View compartment = (View)firstView.eContainer();
+		final View compartment = (View) firstView.eContainer();
 		final int firstIndex = compartment.getChildren().indexOf(firstView);
 		final int secondIndex = compartment.getChildren().indexOf(secondView);
 		return firstIndex <= secondIndex;

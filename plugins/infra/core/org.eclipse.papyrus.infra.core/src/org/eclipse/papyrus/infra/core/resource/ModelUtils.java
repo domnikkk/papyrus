@@ -22,9 +22,9 @@ import com.google.common.collect.Collections2;
 
 /**
  * Set of utility methods to get the current {@link ModelSet}.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class ModelUtils {
 
@@ -32,10 +32,10 @@ public class ModelUtils {
 	 * Gets the {@link ModelSet} for the currently selected editor. <br>
 	 * Warning: This method is designed to be call from ui.handlers. It is not
 	 * designed to be call from Editors. This method can return null.
-	 * 
+	 *
 	 * @see ServiceUtilsForActionHandlers.getInstance().getModelSet()
-	 * 
-	 * 
+	 *
+	 *
 	 * @return The {@link TraceModel} of the current editor, or null if not
 	 *         found.
 	 * @deprecated Use ServiceUtilsForActionHandlers.getInstance().getModelSet()
@@ -54,13 +54,13 @@ public class ModelUtils {
 	 * Warning: This method is designed to be call from ui.handlers. It is not
 	 * designed to be call from Editors. This method can return null if called
 	 * during the MultiEditor initialization.
-	 * 
+	 *
 	 * @see ServiceUtilsForActionHandlers.getInstance().getModelSet() Warning:
-	 * 
-	 * 
+	 *
+	 *
 	 * @return The {@link TraceModel} of the current editor.
 	 * @throws ServiceException
-	 *         If an error occurs while getting or starting the service.
+	 *             If an error occurs while getting or starting the service.
 	 * @deprecated Use ServiceUtilsForActionHandlers.getInstance().getModelSet()
 	 */
 	@Deprecated
@@ -70,7 +70,7 @@ public class ModelUtils {
 
 	/**
 	 * Gets the ModelSet from the {@link ServicesRegistry}.
-	 * 
+	 *
 	 * @return ServicesRegistry The service registry under which the ModelSet is
 	 *         registered.
 	 */
@@ -84,11 +84,11 @@ public class ModelUtils {
 
 	/**
 	 * Gets the ModelSet from the {@link ServicesRegistry}.
-	 * 
+	 *
 	 * @return ServicesRegistry The service registry under which the ModelSet is
 	 *         registered.
 	 * @throws ServiceException
-	 *         If the service can't be returned.
+	 *             If the service can't be returned.
 	 */
 	public static ModelSet getModelSetChecked(ServicesRegistry servicesRegistry) throws ServiceException {
 		return servicesRegistry.getService(ModelSet.class);
@@ -96,7 +96,7 @@ public class ModelUtils {
 
 	/**
 	 * Determine if a throwable can be managed in degraded mode
-	 * 
+	 *
 	 * @param t
 	 */
 	public static boolean isDegradedModeAllowed(Throwable t) {
@@ -104,38 +104,38 @@ public class ModelUtils {
 	}
 
 	public static boolean resourceFailedOnLoad(Resource r) {
-		//If the resource failed on load, but the contents is not empty, then we may try to save it
-		//(e.g. the resource didn't exist, but we'll create it during save, if possible)
+		// If the resource failed on load, but the contents is not empty, then we may try to save it
+		// (e.g. the resource didn't exist, but we'll create it during save, if possible)
 		return !r.getErrors().isEmpty() && r.getContents().isEmpty();
 	}
 
 	/**
 	 * Returns the models to be loaded, in order according to their dependencies
-	 * 
+	 *
 	 * @return the models to be loaded, in order according to their dependencies
 	 */
 	protected static List<IModel> getOrderedModelsForLoading(final Map<String, IModel> models) {
-		//		L <= Empty list that will contain the sorted nodes
-		//		while there are unmarked nodes do
-		//		    select an unmarked node n
-		//		    visit(n)
-		//		function visit(node n)
-		//		    if n has a temporary mark then stop (not a DAG)
-		//		    if n is not marked (i.e. has not been visited yet) then
-		//		        mark n temporarily
-		//		        for each node m with an edge from n to m do
-		//		            visit(m)
-		//		        mark n permanently
-		//		        add n to head of L
+		// L <= Empty list that will contain the sorted nodes
+		// while there are unmarked nodes do
+		// select an unmarked node n
+		// visit(n)
+		// function visit(node n)
+		// if n has a temporary mark then stop (not a DAG)
+		// if n is not marked (i.e. has not been visited yet) then
+		// mark n temporarily
+		// for each node m with an edge from n to m do
+		// visit(m)
+		// mark n permanently
+		// add n to head of L
 		List<IModel> modelsToLoad = new ArrayList<IModel>(models.values());
 		List<IModel> orderedModels = new ArrayList<IModel>();
 		do {
 			List<IModel> skippedModels = new ArrayList<IModel>();
-			for(IModel model : modelsToLoad) {
+			for (IModel model : modelsToLoad) {
 
 				List<String> dependencies = model.getAfterLoadModelIdentifiers();
 				// no dependency => start
-				if(dependencies == null) {
+				if (dependencies == null) {
 					orderedModels.add(model);
 				} else {
 					// model has dependencies. Check if the dependencies are already inserted in the ordered list
@@ -146,7 +146,7 @@ public class ModelUtils {
 							return models.get(arg0);
 						}
 					});
-					if(orderedModels.containsAll(startedModels)) {
+					if (orderedModels.containsAll(startedModels)) {
 						orderedModels.add(model);
 					} else {
 						skippedModels.add(model);
@@ -154,14 +154,14 @@ public class ModelUtils {
 				}
 			}
 
-			//  implement here a safeguard in case no models has been added to orderedModels
-			if(!skippedModels.isEmpty() && skippedModels.size() == modelsToLoad.size()) {
+			// implement here a safeguard in case no models has been added to orderedModels
+			if (!skippedModels.isEmpty() && skippedModels.size() == modelsToLoad.size()) {
 				Activator.log.error("Impossible to load models. Cycles in dependency graph for the following set of models: " + modelsToLoad, null);
 				break;
 			} else {
 				modelsToLoad = skippedModels;
 			}
-		} while(!modelsToLoad.isEmpty());
+		} while (!modelsToLoad.isEmpty());
 
 		return orderedModels;
 	}
@@ -171,20 +171,20 @@ public class ModelUtils {
 	 * will load it. If it is already present, it will not load it.
 	 *
 	 * @param modelSet
-	 *        model set in which the resource should be
+	 *            model set in which the resource should be
 	 * @param loadAfterCreation
-	 *        <code>true</code> if the resource should be load if it has been created
+	 *            <code>true</code> if the resource should be load if it has been created
 	 * @param resourceURI
-	 *        the uri of the resource
+	 *            the uri of the resource
 	 * @param contentType
-	 *        the content type identifier of the resource if it has to be created.
+	 *            the content type identifier of the resource if it has to be created.
 	 * @return the resource found or created
 	 */
 	public static Resource getOrCreateResource(ModelSet modelSet, boolean loadAfterCreation, URI resourceURI, String contentType) {
 		Resource resource = modelSet.getResource(resourceURI, false);
-		if(resource == null) {
+		if (resource == null) {
 			resource = modelSet.createResource(resourceURI, contentType);
-			if(loadAfterCreation) {
+			if (loadAfterCreation) {
 				try {
 					resource.load(modelSet.getLoadOptions());
 				} catch (IOException e) {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ public class GetStackFrames_Request extends RequestMessage {
 
 	/**
 	 * Constructs a request message from the given thread.
-	 * 
+	 *
 	 * @param thread
-	 *        The thread for which available stack frames are requested
+	 *            The thread for which available stack frames are requested
 	 */
 	public GetStackFrames_Request(IThread thread) {
 		this.thread = thread;
@@ -41,7 +41,7 @@ public class GetStackFrames_Request extends RequestMessage {
 
 	/**
 	 * Returns the thread for which available stack frames are requested
-	 * 
+	 *
 	 * @return The thread for which available stack frames are requested
 	 */
 	public IThread getThread() {
@@ -50,9 +50,10 @@ public class GetStackFrames_Request extends RequestMessage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
+	@Override
 	public String marshall() {
 		return Marshaller.getInstance().getStackFrames_request_marshal(this);
 	}

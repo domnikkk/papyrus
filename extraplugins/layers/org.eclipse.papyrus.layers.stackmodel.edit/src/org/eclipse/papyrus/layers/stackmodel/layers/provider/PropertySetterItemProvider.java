@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -18,9 +18,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -30,7 +28,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter;
@@ -39,11 +36,12 @@ import org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class PropertySetterItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -53,6 +51,7 @@ public class PropertySetterItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PropertySetterItemProvider(AdapterFactory adapterFactory) {
@@ -63,6 +62,7 @@ public class PropertySetterItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,50 +80,53 @@ public class PropertySetterItemProvider
 	 * This adds a property descriptor for the Property feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addPropertyPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PropertySetter_property_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertySetter_property_feature", "_UI_PropertySetter_type"),
-				 LayersPackage.Literals.PROPERTY_SETTER__PROPERTY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_PropertySetter_property_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PropertySetter_property_feature", "_UI_PropertySetter_type"),
+						LayersPackage.Literals.PROPERTY_SETTER__PROPERTY,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Property Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addPropertyNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PropertySetter_propertyName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertySetter_propertyName_feature", "_UI_PropertySetter_type"),
-				 LayersPackage.Literals.PROPERTY_SETTER__PROPERTY_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_PropertySetter_propertyName_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PropertySetter_propertyName_feature", "_UI_PropertySetter_type"),
+						LayersPackage.Literals.PROPERTY_SETTER__PROPERTY_NAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns PropertySetter.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,14 +138,15 @@ public class PropertySetterItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PropertySetter)object).getPropertyName();
+		String label = ((PropertySetter) object).getPropertyName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_PropertySetter_type") :
-			getString("_UI_PropertySetter_type") + " " + label;
+				getString("_UI_PropertySetter_type") :
+				getString("_UI_PropertySetter_type") + " " + label;
 	}
 
 	/**
@@ -150,6 +154,7 @@ public class PropertySetterItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,9 +162,9 @@ public class PropertySetterItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PropertySetter.class)) {
-			case LayersPackage.PROPERTY_SETTER__PROPERTY_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case LayersPackage.PROPERTY_SETTER__PROPERTY_NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -169,6 +174,7 @@ public class PropertySetterItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,6 +186,7 @@ public class PropertySetterItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

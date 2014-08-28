@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,18 +38,20 @@ public class AppliedStereotypeLinkLabelDisplayEditPolicy extends AppliedStereoty
 
 	@Override
 	public String stereotypesToDisplay() {
-		//if the display is not as Brace location the properties of the stereotype is not display 
-		String stereotypespresentationLocation = AppliedStereotypeHelper.getAppliedStereotypesPropertiesLocalization(((View)getHost().getModel()));
-		if(UMLVisualInformationPapyrusConstant.STEREOTYPE_BRACE_LOCATION.equals(stereotypespresentationLocation)) {
+		// if the display is not as Brace location the properties of the stereotype is not display
+		String stereotypespresentationLocation = AppliedStereotypeHelper.getAppliedStereotypesPropertiesLocalization(((View) getHost().getModel()));
+		if (UMLVisualInformationPapyrusConstant.STEREOTYPE_BRACE_LOCATION.equals(stereotypespresentationLocation)) {
 			return super.stereotypesToDisplay();
 		}
 		return "";
 	}
+
 	/**
 	 * Refreshes the stereotype display
 	 */
+	@Override
 	protected void refreshStereotypeDisplay() {
-		IFigure figure = ((GraphicalEditPart)getHost()).getFigure();
+		IFigure figure = ((GraphicalEditPart) getHost()).getFigure();
 		// View view = (View) getHost().getModel();
 
 		// calculate text and icon to display
@@ -60,8 +62,8 @@ public class AppliedStereotypeLinkLabelDisplayEditPolicy extends AppliedStereoty
 		// if the string is not empty, then, the figure has to display it. Else,
 		// it displays nothing
 		// if (stereotypesToDisplay != "" || imageToDisplay != null) {
-		if(figure instanceof IPapyrusUMLElementFigure) {
-			((IPapyrusUMLElementFigure)figure).setStereotypeDisplay(tag + (stereotypesToDisplay.equals("") ? stereotypesToDisplay : "\n" + stereotypesToDisplay), imageToDisplay);
+		if (figure instanceof IPapyrusUMLElementFigure) {
+			((IPapyrusUMLElementFigure) figure).setStereotypeDisplay(tag + (stereotypesToDisplay.equals("") ? stereotypesToDisplay : "\n" + stereotypesToDisplay), imageToDisplay);
 		}
 	}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 
 /**
- * 
+ *
  * An abstract class to remove eannotation
- * 
+ *
  */
 public abstract class AbstractDeleteHyperLinkCommand extends RecordingCommand {
 
@@ -34,13 +34,13 @@ public abstract class AbstractDeleteHyperLinkCommand extends RecordingCommand {
 	private final EModelElement object;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
-	 *        the editing domain for this command
+	 *            the editing domain for this command
 	 * @param object
-	 *        the edited EModelElement
+	 *            the edited EModelElement
 	 */
 	public AbstractDeleteHyperLinkCommand(final TransactionalEditingDomain domain, final EModelElement object) {
 		super(domain);
@@ -48,21 +48,21 @@ public abstract class AbstractDeleteHyperLinkCommand extends RecordingCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.emf.transaction.RecordingCommand#doExecute()
-	 * 
+	 *
 	 */
 	@Override
 	protected void doExecute() {
 		// remove annotations
-		for(EAnnotation current : getEAnnotationsToRemove()) {
+		for (EAnnotation current : getEAnnotationsToRemove()) {
 			this.object.getEAnnotations().remove(current);
 		}
 
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the list of the EAnnotation to remove
 	 */
@@ -73,7 +73,7 @@ public abstract class AbstractDeleteHyperLinkCommand extends RecordingCommand {
 
 	/**
 	 * Getter for {@link this#object}
-	 * 
+	 *
 	 * @return
 	 */
 	protected EModelElement getObject() {

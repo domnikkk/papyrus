@@ -156,7 +156,7 @@ import org.eclipse.swt.widgets.TreeItem;
 
 /**
  * Default XWT loader
- * 
+ *
  * @author yyang (yves.yang@soyatec.com) jliu (jin.liu@soyatec.com)
  */
 public class XWTLoader implements IXWTLoader {
@@ -177,29 +177,29 @@ public class XWTLoader implements IXWTLoader {
 	}
 
 	public boolean applyProfile(Object profile) {
-		if(profile instanceof Core) {
-			if(cores.peek() == profile) {
+		if (profile instanceof Core) {
+			if (cores.peek() == profile) {
 				return false;
 			}
-			cores.push((Core)profile);
+			cores.push((Core) profile);
 			return true;
 		}
 		throw new XWTException("Wrong UI Profile.");
 	}
 
 	public Object restoreProfile() {
-		if(cores.size() > 1) {
+		if (cores.size() > 1) {
 			return cores.pop();
 		}
 		throw new XWTException("No user-defined UI Profile.");
 	}
 
 	public Realm getRealm() {
-		if(realm != null) {
+		if (realm != null) {
 			return realm;
 		}
 		Display display = Display.getCurrent();
-		if(display == null) {
+		if (display == null) {
 			display = Display.getDefault();
 		}
 		return SWTObservables.getRealm(display);
@@ -211,7 +211,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getLogger()
 	 */
 	public ILogger getLogger() {
@@ -220,7 +220,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#setLogger(org.eclipse.papyrus.xwt.ILogger)
 	 */
 	public void setLogger(ILogger log) {
@@ -229,7 +229,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/**
 	 * Get the dynamic property value
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	public Object getPropertyValue(Object uiElement, IProperty property) {
@@ -238,7 +238,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/**
 	 * Set the dynamic property value
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	public void setPropertyValue(Object uiElement, IProperty property, Object value) {
@@ -247,7 +247,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/**
 	 * Remove the dynamic property value
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	public void removePropertyValue(Object uiElement, IProperty property) {
@@ -256,7 +256,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/**
 	 * Remove the dynamic property value
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	public boolean hasPropertyValue(Object uiElement, IProperty property) {
@@ -266,7 +266,7 @@ public class XWTLoader implements IXWTLoader {
 	/**
 	 * Register an Observable IChangeListener for a given UI element. The second
 	 * registration of the same listener on the same UI Element has no effect.
-	 * 
+	 *
 	 * @param context
 	 * @param listener
 	 * @return <code>true</code> the listener is added, <code>false</code> if
@@ -274,7 +274,7 @@ public class XWTLoader implements IXWTLoader {
 	 */
 	public boolean addObservableChangeListener(Object control, IChangeListener listener) {
 		ScopeKeeper scope = UserData.findScopeKeeper(control);
-		if(scope != null) {
+		if (scope != null) {
 			return scope.addChangeListener(listener);
 		}
 		return false;
@@ -283,19 +283,19 @@ public class XWTLoader implements IXWTLoader {
 	/**
 	 * Undo the registration of the Observable IChangeListener for a given UI
 	 * element.
-	 * 
+	 *
 	 * @param context
 	 * @param listener
 	 */
 	public void removeObservableChangeListener(Object control, IChangeListener listener) {
 		ScopeKeeper scope = UserData.findScopeKeeper(control);
-		if(scope != null) {
+		if (scope != null) {
 			scope.removeChangeListener(listener);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
@@ -304,7 +304,7 @@ public class XWTLoader implements IXWTLoader {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
@@ -313,7 +313,7 @@ public class XWTLoader implements IXWTLoader {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
@@ -322,7 +322,7 @@ public class XWTLoader implements IXWTLoader {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
@@ -331,7 +331,7 @@ public class XWTLoader implements IXWTLoader {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
@@ -340,7 +340,7 @@ public class XWTLoader implements IXWTLoader {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
@@ -349,7 +349,7 @@ public class XWTLoader implements IXWTLoader {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public Object findResource(Object object, String key) {
 		return UserData.findResource(object, key);
@@ -360,7 +360,7 @@ public class XWTLoader implements IXWTLoader {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 * @param handler
 	 */
@@ -369,7 +369,7 @@ public class XWTLoader implements IXWTLoader {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 */
 	public void unregisterNamespaceHandler(String nsmapace) {
@@ -377,15 +377,15 @@ public class XWTLoader implements IXWTLoader {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
 	public INamespaceHandler getNamespaceHandler(String nsmapace) {
-		for(int i = cores.size() - 1; i >= 0; i--) {
+		for (int i = cores.size() - 1; i >= 0; i--) {
 			Core core = cores.get(i);
 			INamespaceHandler handler = core.getNamespaceHandler(nsmapace);
-			if(handler != null) {
+			if (handler != null) {
 				return handler;
 			}
 		}
@@ -394,15 +394,15 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getNamespace(java.lang.Class)
 	 */
 	public String getNamespace(Class<?> javaclass) {
-		if(getMetaclass(javaclass) != null) {
+		if (getMetaclass(javaclass) != null) {
 			return IConstants.XWT_NAMESPACE;
 		}
 		Package javaPackage = javaclass.getPackage();
-		if(javaPackage == null) {
+		if (javaPackage == null) {
 			return IConstants.XAML_CLR_NAMESPACE_PROTO;
 		}
 		return IConstants.XAML_CLR_NAMESPACE_PROTO + javaclass.getPackage().getName();
@@ -410,7 +410,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getElementName(java.lang.Object)
 	 */
 	public String getElementName(Object object) {
@@ -419,7 +419,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#findElementByName(org.eclipse.swt.widgets
 	 * .Widget, java.lang.String)
@@ -430,24 +430,24 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#getDataBindingContext(java.lang.Object,
 	 * java.lang.String)
 	 */
 	public IBindingContext getBindingContext(Object element) {
 		IBindingContext dataBindingContext = UserData.getBindingContext(element);
-		if(dataBindingContext == null) {
+		if (dataBindingContext == null) {
 			dataBindingContext = UserData.createBindingContext(element);
 		}
 		return dataBindingContext;
 	}
 
 	public ICLRFactory getCLRFactory() {
-		for(int i = cores.size() - 1; i >= 0; i--) {
+		for (int i = cores.size() - 1; i >= 0; i--) {
 			Core core = cores.get(i);
 			ICLRFactory factory = core.getCLRFactory();
-			if(factory != null) {
+			if (factory != null) {
 				return factory;
 			}
 		}
@@ -460,7 +460,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#getDataContext(org.eclipse.swt.widgets.
 	 * Widget)
@@ -471,7 +471,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#getDataContext(org.eclipse.swt.widgets.
 	 * Widget)
@@ -482,7 +482,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#setDataBindingContext(java.lang.Object,
 	 * java.lang.Object)
@@ -493,7 +493,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#setDataContext(org.eclipse.swt.widgets.
 	 * Widget, java.lang.Object)
@@ -504,7 +504,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/**
 	 * Get the Triggers of given element
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -514,7 +514,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#findCompositeParent(org.eclipse.swt.widgets
 	 * .Widget)
@@ -525,26 +525,26 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getMetaclass(java.lang.Object)
 	 */
 	public IMetaclass getMetaclass(Object object) {
-		for(int i = cores.size() - 1; i >= 0; i--) {
+		for (int i = cores.size() - 1; i >= 0; i--) {
 			Core core = cores.get(i);
 			IMetaclass metaclass = core.findMetaclass(object);
-			if(metaclass != null) {
+			if (metaclass != null) {
 				return metaclass;
 			}
 		}
 		Class<?> javaClass = null;
-		if(object instanceof Class<?>) {
-			javaClass = (Class<?>)object;
+		if (object instanceof Class<?>) {
+			javaClass = (Class<?>) object;
 		} else {
 			javaClass = object.getClass();
 		}
 		Class<?> superclass = javaClass.getSuperclass();
 		IMetaclass superMetaclass = null;
-		if(superclass != null) {
+		if (superclass != null) {
 			superMetaclass = getMetaclass(superclass);
 		}
 		return getCurrentCore().registerMetaclass(javaClass, IConstants.XWT_NAMESPACE, superMetaclass);
@@ -552,7 +552,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#load(java.net.URL)
 	 */
 	public Object load(URL file) throws Exception {
@@ -561,7 +561,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#load(java.net.URL, java.lang.Object)
 	 */
 	public Object load(URL file, Object dataContext) throws Exception {
@@ -574,7 +574,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#load(org.eclipse.swt.widgets.Composite,
 	 * java.net.URL)
@@ -593,7 +593,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#load(org.eclipse.swt.widgets.Composite,
 	 * java.net.URL, java.lang.Object)
@@ -613,7 +613,7 @@ public class XWTLoader implements IXWTLoader {
 	}
 
 	public Object load(Object parent, IUIResource resource, Map<String, Object> options) throws Exception {
-		if(options.isEmpty()) {
+		if (options.isEmpty()) {
 			options = new HashMap<String, Object>();
 		}
 		options.put(CONTAINER_PROPERTY, parent);
@@ -622,7 +622,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#load(org.eclipse.swt.widgets.Composite,
 	 * java.lang.Class, java.lang.Object)
@@ -635,25 +635,25 @@ public class XWTLoader implements IXWTLoader {
 	}
 
 	protected Map<String, Object> prepareOptions(Map<String, Object> options, URL url) {
-		Boolean disabledStyle = (Boolean)options.get(DISABLE_STYLES_PROPERTY);
-		if(!Boolean.TRUE.equals(disabledStyle)) {
+		Boolean disabledStyle = (Boolean) options.get(DISABLE_STYLES_PROPERTY);
+		if (!Boolean.TRUE.equals(disabledStyle)) {
 			Collection<IStyle> defaultStyles = getDefaultStyles();
 			Object styles = options.get(DEFAULT_STYLES_PROPERTY);
-			if(styles != null) {
-				if(styles instanceof IStyle) {
-					defaultStyles.add((IStyle)styles);
-				} else if(styles instanceof Collection) {
-					for(Object element : (Collection<?>)styles) {
-						if(element instanceof IStyle) {
-							defaultStyles.add((IStyle)element);
+			if (styles != null) {
+				if (styles instanceof IStyle) {
+					defaultStyles.add((IStyle) styles);
+				} else if (styles instanceof Collection) {
+					for (Object element : (Collection<?>) styles) {
+						if (element instanceof IStyle) {
+							defaultStyles.add((IStyle) element);
 						} else {
 							throw new XWTException("IStyle is expected in [styles] parameters.");
 						}
 					}
-				} else if(styles instanceof Object[]) {
-					for(Object element : (Object[])styles) {
-						if(element instanceof IStyle) {
-							defaultStyles.add((IStyle)element);
+				} else if (styles instanceof Object[]) {
+					for (Object element : (Object[]) styles) {
+						if (element instanceof IStyle) {
+							defaultStyles.add((IStyle) element);
 						} else {
 							throw new XWTException("IStyle is expected in [styles] parameters.");
 						}
@@ -661,11 +661,11 @@ public class XWTLoader implements IXWTLoader {
 				}
 				options.remove(DEFAULT_STYLES_PROPERTY);
 			}
-			if(!defaultStyles.isEmpty()) {
-				ResourceDictionary dictionary = (ResourceDictionary)options.get(RESOURCE_DICTIONARY_PROPERTY);
-				if(dictionary == null) {
+			if (!defaultStyles.isEmpty()) {
+				ResourceDictionary dictionary = (ResourceDictionary) options.get(RESOURCE_DICTIONARY_PROPERTY);
+				if (dictionary == null) {
 					dictionary = new ResourceDictionary();
-					if(options == Collections.EMPTY_MAP) {
+					if (options == Collections.EMPTY_MAP) {
 						options = new HashMap<String, Object>();
 					}
 					options.put(RESOURCE_DICTIONARY_PROPERTY, dictionary);
@@ -674,7 +674,7 @@ public class XWTLoader implements IXWTLoader {
 			}
 		}
 		// Register URL property
-		if(options == Collections.EMPTY_MAP) {
+		if (options == Collections.EMPTY_MAP) {
 			options = new HashMap<String, Object>();
 		}
 		options.put(URL_PROPERTY, url);
@@ -683,7 +683,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#loadWithOptions(java.lang.Class,
 	 * java.util.Map)
 	 */
@@ -700,7 +700,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#open(java.lang.Class)
 	 */
 	public void open(Class<?> type) throws Exception {
@@ -709,7 +709,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#open(java.net.URL)
 	 */
 	public void open(URL url) throws Exception {
@@ -722,7 +722,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#load(org.eclipse.swt.widgets.Composite,
 	 * java.io.InputStream, java.net.URL, java.lang.Object)
@@ -752,7 +752,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#open(java.net.URL, java.lang.Object)
 	 */
 	public void open(URL url, Object dataContext) throws Exception {
@@ -769,7 +769,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#open(java.lang.Class,
 	 * java.lang.Object)
 	 */
@@ -779,38 +779,38 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#open(java.net.URL, java.util.Map)
 	 */
 	public void open(final URL url, final Map<String, Object> options) throws Exception {
-		if(SWT.getPlatform().startsWith("win")) {
-			if(Display.getCurrent() == null) {
+		if (SWT.getPlatform().startsWith("win")) {
+			if (Display.getCurrent() == null) {
 				new Display();
 			}
 			Realm.runWithDefault(getRealm(), new Runnable() {
 
 				public void run() {
 					try {
-						if(url == null) {
+						if (url == null) {
 							throw new XWTException("UI Resource is not found.");
 						}
 						Object element = loadWithOptions(url, options);
 						Shell shell = XWT.findShell(element);
-						if(shell == null) {
+						if (shell == null) {
 							throw new XWTException("Root element must be a control.");
 						}
 						shell.addDisposeListener(new DisposeListener() {
 
 							public void widgetDisposed(DisposeEvent e) {
 								Shell[] shells = Display.getCurrent().getShells();
-								if(shells.length == 0) {
+								if (shells.length == 0) {
 									ResourceManager.resources.dispose();
 								}
 							}
 						});
 						shell.open();
-						while(!shell.isDisposed()) {
-							if(!shell.getDisplay().readAndDispatch()) {
+						while (!shell.isDisposed()) {
+							if (!shell.getDisplay().readAndDispatch()) {
 								shell.getDisplay().sleep();
 							}
 						}
@@ -822,27 +822,27 @@ public class XWTLoader implements IXWTLoader {
 			return;
 		}
 		Display defaultDisplay = Display.getDefault();
-		if(Thread.currentThread() == defaultDisplay.getThread()) {
+		if (Thread.currentThread() == defaultDisplay.getThread()) {
 			Realm.runWithDefault(getRealm(), new Runnable() {
 
 				public void run() {
 					try {
-						if(url == null) {
+						if (url == null) {
 							throw new XWTException("UI Resource is not found.");
 						}
 						Object element = loadWithOptions(url, options);
 						Shell shell = XWT.findShell(element);
 						shell.open();
 						long startTime = -1;
-						while(true) {
-							if(!Display.getDefault().readAndDispatch()) {
+						while (true) {
+							if (!Display.getDefault().readAndDispatch()) {
 								Display.getDefault().sleep();
 							}
 							Shell[] shells = Display.getDefault().getShells();
-							if(shells.length == 0) {
-								if(startTime == -1) {
+							if (shells.length == 0) {
+								if (startTime == -1) {
 									startTime = System.currentTimeMillis();
-								} else if((System.currentTimeMillis() - startTime) > 1000) {
+								} else if ((System.currentTimeMillis() - startTime) > 1000) {
 									break;
 								}
 							} else {
@@ -862,12 +862,12 @@ public class XWTLoader implements IXWTLoader {
 
 						public void run() {
 							try {
-								if(url == null) {
+								if (url == null) {
 									throw new XWTException("UI Resource is not found.");
 								}
 								Object element = loadWithOptions(url, options);
 								Shell shell = XWT.findShell(element);
-								if(shell == null) {
+								if (shell == null) {
 									throw new XWTException("Root element must be a control.");
 								}
 								shell.open();
@@ -882,8 +882,8 @@ public class XWTLoader implements IXWTLoader {
 	}
 
 	public void open(final IUIResource resource, final Map<String, Object> options) throws Exception {
-		if(SWT.getPlatform().startsWith("win")) {
-			if(Display.getCurrent() == null) {
+		if (SWT.getPlatform().startsWith("win")) {
+			if (Display.getCurrent() == null) {
 				new Display();
 			}
 			Realm.runWithDefault(getRealm(), new Runnable() {
@@ -892,21 +892,21 @@ public class XWTLoader implements IXWTLoader {
 					try {
 						Object element = loadWithOptions(resource, options);
 						Shell shell = XWT.findShell(element);
-						if(shell == null) {
+						if (shell == null) {
 							throw new XWTException("Root element must be a control.");
 						}
 						shell.addDisposeListener(new DisposeListener() {
 
 							public void widgetDisposed(DisposeEvent e) {
 								Shell[] shells = Display.getCurrent().getShells();
-								if(shells.length == 0) {
+								if (shells.length == 0) {
 									ResourceManager.resources.dispose();
 								}
 							}
 						});
 						shell.open();
-						while(!shell.isDisposed()) {
-							if(!shell.getDisplay().readAndDispatch()) {
+						while (!shell.isDisposed()) {
+							if (!shell.getDisplay().readAndDispatch()) {
 								shell.getDisplay().sleep();
 							}
 						}
@@ -918,27 +918,27 @@ public class XWTLoader implements IXWTLoader {
 			return;
 		}
 		Display defaultDisplay = Display.getDefault();
-		if(Thread.currentThread() == defaultDisplay.getThread()) {
+		if (Thread.currentThread() == defaultDisplay.getThread()) {
 			Realm.runWithDefault(getRealm(), new Runnable() {
 
 				public void run() {
 					try {
 						Object element = loadWithOptions(resource, options);
 						Shell shell = XWT.findShell(element);
-						if(shell == null) {
+						if (shell == null) {
 							throw new XWTException("Root element must be a control.");
 						}
 						shell.open();
 						long startTime = -1;
-						while(true) {
-							if(!Display.getDefault().readAndDispatch()) {
+						while (true) {
+							if (!Display.getDefault().readAndDispatch()) {
 								Display.getDefault().sleep();
 							}
 							Shell[] shells = Display.getDefault().getShells();
-							if(shells.length == 0) {
-								if(startTime == -1) {
+							if (shells.length == 0) {
+								if (startTime == -1) {
 									startTime = System.currentTimeMillis();
-								} else if((System.currentTimeMillis() - startTime) > 1000) {
+								} else if ((System.currentTimeMillis() - startTime) > 1000) {
 									break;
 								}
 							} else {
@@ -960,7 +960,7 @@ public class XWTLoader implements IXWTLoader {
 							try {
 								Object element = loadWithOptions(resource, options);
 								Shell shell = XWT.findShell(element);
-								if(shell == null) {
+								if (shell == null) {
 									throw new XWTException("Root element must be a control.");
 								}
 								shell.open();
@@ -976,7 +976,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#convertFrom(org.eclipse.papyrus.xwt.metadata
 	 * .IMetaclass, java.lang.String)
@@ -988,19 +988,19 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#convertFrom(java.lang.Class,
 	 * java.lang.String)
 	 */
 	public Object convertFrom(Class<?> targetType, String string) {
-		if(targetType == String.class) {
+		if (targetType == String.class) {
 			return string;
 		}
 		IConverter converter = findConvertor(String.class, targetType);
-		if(converter != null) {
+		if (converter != null) {
 			return converter.convert(string);
 		}
-		if(targetType == Object.class) {
+		if (targetType == Object.class) {
 			return string;
 		}
 		throw new XWTException("Converter is missing of type: " + targetType.getName() + " from String");
@@ -1008,15 +1008,15 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#loadWithOptions(java.net.URL,
 	 * java.util.Map)
 	 */
 	public Object loadWithOptions(URL url, Map<String, Object> options) throws Exception {
-		if(url == null) {
+		if (url == null) {
 			throw new XWTException("UI Resource is not found.");
 		}
-		Composite object = (Composite)options.get(CONTAINER_PROPERTY);
+		Composite object = (Composite) options.get(CONTAINER_PROPERTY);
 		ILoadingContext loadingContext = (object != null ? getLoadingContext(object) : getLoadingContext());
 		options = prepareOptions(options, url);
 		Object visualObject = getCurrentCore().load(loadingContext, url, options);
@@ -1024,7 +1024,7 @@ public class XWTLoader implements IXWTLoader {
 	}
 
 	public Object loadWithOptions(IUIResource resource, Map<String, Object> options) throws Exception {
-		UIResource uiResource = (UIResource)resource;
+		UIResource uiResource = (UIResource) resource;
 		Object object = options.get(CONTAINER_PROPERTY);
 		ILoadingContext loadingContext = (object != null ? getLoadingContext(object) : getLoadingContext());
 		options = prepareOptions(options, uiResource.getURL());
@@ -1034,7 +1034,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#load(java.io.InputStream,
 	 * java.net.URL)
 	 */
@@ -1048,12 +1048,12 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#loadWithOptions(java.io.InputStream,
 	 * java.net.URL, java.util.Map)
 	 */
 	public Object loadWithOptions(InputStream stream, URL base, Map<String, Object> options) throws Exception {
-		Composite object = (Composite)options.get(CONTAINER_PROPERTY);
+		Composite object = (Composite) options.get(CONTAINER_PROPERTY);
 		ILoadingContext loadingContext = (object != null ? getLoadingContext(object) : getLoadingContext());
 		options = prepareOptions(options, base);
 		Control visualObject = getCurrentCore().load(loadingContext, stream, base, options);
@@ -1062,12 +1062,12 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getAllMetaclasses()
 	 */
 	public IMetaclass[] getAllMetaclasses() {
 		Collection<IMetaclass> collector = new ArrayList<IMetaclass>();
-		for(int i = cores.size() - 1; i >= 0; i--) {
+		for (int i = cores.size() - 1; i >= 0; i--) {
 			Core core = cores.get(i);
 			Collection<IMetaclass> metaclasses = core.getAllMetaclasses(IConstants.XWT_NAMESPACE);
 			collector.addAll(metaclasses);
@@ -1077,15 +1077,15 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getMetaclass(java.lang.String,
 	 * java.lang.String)
 	 */
 	public IMetaclass getMetaclass(String tagName, String ns) {
-		for(int i = cores.size() - 1; i >= 0; i--) {
+		for (int i = cores.size() - 1; i >= 0; i--) {
 			Core core = cores.get(i);
 			IMetaclass metaclass = core.getMetaclass(getLoadingContext(), tagName, ns);
-			if(metaclass != null) {
+			if (metaclass != null) {
 				return metaclass;
 			}
 		}
@@ -1094,7 +1094,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#registerMetaclass(java.lang.Class)
 	 */
 	public IMetaclass registerMetaclass(Class<?> type) {
@@ -1103,7 +1103,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#registerMetaclass(java.lang.Class)
 	 */
 	public void registerMetaclass(IMetaclass type) {
@@ -1112,7 +1112,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#registerMetaclassFactory(org.eclipse.e4
 	 * .xwt.IMetaclassFactory)
@@ -1123,17 +1123,17 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#findConvertor(java.lang.Class,
 	 * java.lang.Class)
 	 */
 	public IConverter findConvertor(Class<?> source, Class<?> target) {
 		source = ObjectUtil.normalizedType(source);
 		target = ObjectUtil.normalizedType(target);
-		for(int i = cores.size() - 1; i >= 0; i--) {
+		for (int i = cores.size() - 1; i >= 0; i--) {
 			Core core = cores.get(i);
 			IConverter converter = core.findConvertor(source, target);
-			if(converter != null) {
+			if (converter != null) {
 				return converter;
 			}
 		}
@@ -1142,7 +1142,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#registerConvertor(org.eclipse.core.databinding
 	 * .conversion.IConverter)
@@ -1169,7 +1169,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#addTracking(org.eclipse.papyrus.xwt.Tracking)
 	 */
@@ -1179,7 +1179,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#isTracking(org.eclipse.papyrus.xwt.Tracking)
 	 */
@@ -1189,7 +1189,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getTrackings()
 	 */
 	public Set<Tracking> getTrackings() {
@@ -1198,7 +1198,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#removeTracking(org.eclipse.papyrus.xwt.Tracking)
 	 */
@@ -1208,7 +1208,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#registerCommand(java.lang.String,
 	 * org.eclipse.papyrus.xwt.input.ICommand)
 	 */
@@ -1218,14 +1218,14 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getCommand(java.lang.String)
 	 */
 	public ICommand getCommand(String name) {
-		for(int i = cores.size() - 1; i >= 0; i--) {
+		for (int i = cores.size() - 1; i >= 0; i--) {
 			Core core = cores.get(i);
 			ICommand command = core.getCommand(name);
-			if(command != null) {
+			if (command != null) {
 				return command;
 			}
 		}
@@ -1234,15 +1234,15 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getCommands()
 	 */
 	public Map<String, ICommand> getCommands() {
 		HashMap<String, ICommand> collector = new HashMap<String, ICommand>();
-		for(int i = cores.size() - 1; i >= 0; i--) {
+		for (int i = cores.size() - 1; i >= 0; i--) {
 			Core core = cores.get(i);
 			Map<String, ICommand> map = core.getCommands();
-			if(map != null) {
+			if (map != null) {
 				collector.putAll(map);
 			}
 		}
@@ -1251,7 +1251,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#unregisterCommand(java.lang.String)
 	 */
 	public void unregisterCommand(String name) {
@@ -1260,7 +1260,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/**
 	 * Register a command to a name
-	 * 
+	 *
 	 * @param name
 	 * @param command
 	 */
@@ -1271,7 +1271,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#addDefaultStyle(org.eclipse.papyrus.xwt.IStyle)
 	 */
@@ -1281,7 +1281,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#removeDefaultStyle(org.eclipse.papyrus.xwt.IStyle
 	 * )
@@ -1292,7 +1292,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getDefaultStyles()
 	 */
 	public Collection<IStyle> getDefaultStyles() {
@@ -1301,7 +1301,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#addDataProviderFactory(org.eclipse.papyrus.xwt
 	 * .IDataProviderFactory)
@@ -1313,7 +1313,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#removeDataProviderFactory(org.eclipse.e4
 	 * .xwt.IDataProviderFactory)
@@ -1324,7 +1324,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#removeDataProviderFactory(org.eclipse.e4
 	 * .xwt.IDataProviderFactory)
@@ -1335,15 +1335,15 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getDataProviderFactories()
 	 */
 	public Collection<IDataProviderFactory> getDataProviderFactories() {
 		ArrayList<IDataProviderFactory> collector = new ArrayList<IDataProviderFactory>();
-		for(int i = cores.size() - 1; i >= 0; i--) {
+		for (int i = cores.size() - 1; i >= 0; i--) {
 			Core core = cores.get(i);
 			Collection<IDataProviderFactory> factories = core.getDataProviderFactories();
-			if(factories != null) {
+			if (factories != null) {
 				collector.addAll(factories);
 			}
 		}
@@ -1352,14 +1352,14 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#findDataProvider(java.lang.Object)
 	 */
 	public IDataProvider findDataProvider(Object dataContext) {
-		for(int i = cores.size() - 1; i >= 0; i--) {
+		for (int i = cores.size() - 1; i >= 0; i--) {
 			Core core = cores.get(i);
 			IDataProvider provider = core.findDataProvider(dataContext);
-			if(provider != null) {
+			if (provider != null) {
 				return provider;
 			}
 		}
@@ -1430,13 +1430,13 @@ public class XWTLoader implements IXWTLoader {
 		registerConvertor(SetToIObservableCollection.instance);
 		registerConvertor(ObjectToISelection.instance);
 		registerConvertor(ListToSet.instance);
-		//		registerConvertor(StringToKeyTime.instance);
-		//		registerConvertor(StringToKeySpline.instance);
+		// registerConvertor(StringToKeyTime.instance);
+		// registerConvertor(StringToKeySpline.instance);
 
 		registerConvertor(IStatusToString.instance);
 		registerConvertor(IStatusToBoolean.instance);
 
-		ValueConvertorRegister convertorRegister = (ValueConvertorRegister)core.getService(ValueConvertorRegister.class);
+		ValueConvertorRegister convertorRegister = (ValueConvertorRegister) core.getService(ValueConvertorRegister.class);
 		convertorRegister.register(String.class, float.class, StringToNumberConverter.toFloat(true));
 		convertorRegister.register(String.class, int.class, StringToInteger.instance);
 
@@ -1477,8 +1477,8 @@ public class XWTLoader implements IXWTLoader {
 		IProperty drawingProperty = new AbstractProperty(IUserDataConstants.XWT_DRAWING_KEY, Drawing.class) {
 
 			public void setValue(Object target, Object value) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
-				if(!ObjectUtil.isAssignableFrom(IBinding.class, getType())) {
-					if(value != null) {
+				if (!ObjectUtil.isAssignableFrom(IBinding.class, getType())) {
+					if (value != null) {
 						value = ObjectUtil.resolveValue(value, getType(), value);
 					}
 				}
@@ -1491,7 +1491,7 @@ public class XWTLoader implements IXWTLoader {
 		metaclass.addProperty(drawingProperty);
 		IProperty dataContextProperty = new DataProperty(IConstants.XAML_DATA_CONTEXT, IUserDataConstants.XWT_DATACONTEXT_KEY);
 		metaclass.addProperty(dataContextProperty);
-		ILoadingType loadingType = new DefaultLoadingType(IValueLoading.PostChildren, new IProperty[]{ dataContextProperty });
+		ILoadingType loadingType = new DefaultLoadingType(IValueLoading.PostChildren, new IProperty[] { dataContextProperty });
 
 		metaclass.addProperty(new DataProperty(IConstants.XAML_BINDING_CONTEXT, IUserDataConstants.XWT_BINDING_CONTEXT_KEY));
 		metaclass.addProperty(new TriggersProperty(loadingType));
@@ -1516,7 +1516,7 @@ public class XWTLoader implements IXWTLoader {
 		registerMetaclass(org.eclipse.swt.widgets.Canvas.class);
 		registerMetaclass(org.eclipse.swt.widgets.Caret.class);
 		metaclass = registerMetaclass(org.eclipse.swt.widgets.Combo.class);
-		if(metaclass != null) {
+		if (metaclass != null) {
 			IProperty property = metaclass.findProperty("text");
 			IProperty inputProperty = new DelegateProperty(property, loadingType);
 			metaclass.addProperty(inputProperty);
@@ -1583,7 +1583,7 @@ public class XWTLoader implements IXWTLoader {
 		registerMetaclass(type);
 		metaclass = registerMetaclass(type);
 		metaclass.addProperty(new DynamicBeanProperty(TreeItem.class, String[].class, PropertiesConstants.PROPERTY_TEXTS, PropertiesConstants.PROPERTY_TEXT));
-		if(metaclass != null) {
+		if (metaclass != null) {
 			IProperty property = metaclass.findProperty("expanded");
 			IProperty expandedProperty = new DelegateProperty(property, loadingType);
 			metaclass.addProperty(expandedProperty);
@@ -1602,7 +1602,7 @@ public class XWTLoader implements IXWTLoader {
 
 		registerMetaclass(org.eclipse.swt.custom.CLabel.class);
 		metaclass = registerMetaclass(org.eclipse.swt.custom.CCombo.class);
-		if(metaclass != null) {
+		if (metaclass != null) {
 			IProperty property = metaclass.findProperty("text");
 			IProperty inputProperty = new DelegateProperty(property, loadingType);
 			metaclass.addProperty(inputProperty);
@@ -1610,7 +1610,7 @@ public class XWTLoader implements IXWTLoader {
 		registerMetaclass(org.eclipse.swt.custom.CTabFolder.class);
 		registerMetaclass(org.eclipse.swt.custom.CTabItem.class);
 		metaclass = registerMetaclass(org.eclipse.swt.custom.SashForm.class);
-		if(metaclass != null) {
+		if (metaclass != null) {
 			IProperty property = metaclass.findProperty("weights");
 			IProperty inputProperty = new DelegateProperty(property, loadingType);
 			metaclass.addProperty(inputProperty);
@@ -1625,7 +1625,7 @@ public class XWTLoader implements IXWTLoader {
 
 		type = org.eclipse.jface.viewers.Viewer.class;
 		metaclass = core.getMetaclass(type, IConstants.XWT_NAMESPACE);
-		if(metaclass != null) {
+		if (metaclass != null) {
 			IProperty property = metaclass.findProperty("Input");
 			IProperty inputProperty = new InputBeanProperty(property, loadingType);
 			metaclass.addProperty(inputProperty);
@@ -1636,34 +1636,34 @@ public class XWTLoader implements IXWTLoader {
 			metaclass.addProperty(new DataProperty(PropertiesConstants.PROPERTY_BINDING_PATH, IUserDataConstants.XWT_PROPERTY_DATA_KEY, String.class));
 			metaclass.addProperty(new DataProperty(PropertiesConstants.PROPERTY_ITEM_TEXT, IUserDataConstants.XWT_PROPERTY_ITEM_TEXT_KEY, IBinding.class));
 			metaclass.addProperty(new DataProperty(PropertiesConstants.PROPERTY_ITEM_IMAGE, IUserDataConstants.XWT_PROPERTY_ITEM_IMAGE_KEY, IBinding.class));
-			ILoadingType inputLoadingType = new DefaultLoadingType(IValueLoading.PostChildren, new IProperty[]{ inputProperty });
+			ILoadingType inputLoadingType = new DefaultLoadingType(IValueLoading.PostChildren, new IProperty[] { inputProperty });
 			metaclass.addProperty(new SingleSelectionBeanProperty(PropertiesConstants.PROPERTY_SINGLE_SELECTION, inputLoadingType));
 			metaclass.addProperty(new MultiSelectionBeanProperty(PropertiesConstants.PROPERTY_MULTI_SELECTION, inputLoadingType));
 		}
 
 		type = org.eclipse.jface.viewers.AbstractListViewer.class;
 		metaclass = core.getMetaclass(type, IConstants.XWT_NAMESPACE);
-		if(metaclass != null) {
+		if (metaclass != null) {
 			metaclass.addInitializer(new JFaceInitializer());
 		}
 
 		type = org.eclipse.jface.viewers.ColumnViewer.class;
 		metaclass = core.getMetaclass(type, IConstants.XWT_NAMESPACE);
-		if(metaclass != null) {
+		if (metaclass != null) {
 			metaclass.addProperty(new DynamicBeanProperty(type, String[].class, PropertiesConstants.PROPERTY_COLUMN_PROPERTIES));
 			metaclass.addProperty(new ColumnViewerColumnsProperty());
 
 			metaclass.addInitializer(new JFaceInitializer());
 		}
 
-		for(Class<?> cls : JFacesHelper.getSupportedElements()) {
+		for (Class<?> cls : JFacesHelper.getSupportedElements()) {
 			registerMetaclass(cls);
 		}
 		type = org.eclipse.jface.viewers.TableViewer.class;
 		metaclass = core.getMetaclass(type, IConstants.XWT_NAMESPACE);
 		IProperty property = metaclass.findProperty("table");
-		if(property instanceof AbstractProperty) {
-			AbstractProperty abstractProperty = (AbstractProperty)property;
+		if (property instanceof AbstractProperty) {
+			AbstractProperty abstractProperty = (AbstractProperty) property;
 			abstractProperty.setValueAsParent(true);
 		}
 
@@ -1701,9 +1701,9 @@ public class XWTLoader implements IXWTLoader {
 		registerMetaclass(MultiDataTrigger.class);
 		registerMetaclass(Condition.class);
 
-		//		registerConvertor(StringToDuration.instance);
-		//		registerConvertor(StringToTimeSpan.instance);
-		//		registerConvertor(StringToRepeatBehavior.instance);
+		// registerConvertor(StringToDuration.instance);
+		// registerConvertor(StringToTimeSpan.instance);
+		// registerConvertor(StringToRepeatBehavior.instance);
 
 		registerMetaclass(CollectionViewSource.class);
 
@@ -1717,14 +1717,14 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#findLoadingContext(java.lang.Object)
 	 */
 	public ILoadingContext findLoadingContext(Object container) {
-		for(int i = cores.size() - 1; i >= 0; i--) {
+		for (int i = cores.size() - 1; i >= 0; i--) {
 			Core core = cores.get(i);
 			ILoadingContext context = core.findLoadingContext(container);
-			if(context != null) {
+			if (context != null) {
 				return context;
 			}
 		}
@@ -1733,7 +1733,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#getLoadingContext(org.eclipse.swt.widgets
 	 * .Composite)
@@ -1744,7 +1744,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getLoadingContext()
 	 */
 	public ILoadingContext getLoadingContext() {
@@ -1753,7 +1753,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.e4.xwt.IXWTLoader#setLoadingContext(org.eclipse.papyrus.xwt.
 	 * ILoadingContext)
 	 */
@@ -1763,9 +1763,9 @@ public class XWTLoader implements IXWTLoader {
 
 	/**
 	 * Check if the value of a property is to resolve.
-	 * 
+	 *
 	 * @param type
-	 *        type of property
+	 *            type of property
 	 * @return
 	 */
 	public boolean isFileResolveType(Class<?> type) {
@@ -1774,9 +1774,9 @@ public class XWTLoader implements IXWTLoader {
 
 	/**
 	 * Register the value of a property is to resolve.
-	 * 
+	 *
 	 * @param type
-	 *        type of property
+	 *            type of property
 	 * @return
 	 */
 	public void registerFileResolveType(Class<?> type) {
@@ -1785,9 +1785,9 @@ public class XWTLoader implements IXWTLoader {
 
 	/**
 	 * Register the value of a property is to resolve.
-	 * 
+	 *
 	 * @param type
-	 *        type of property
+	 *            type of property
 	 * @return
 	 */
 	public void unregisterFileResolveType(Class<?> type) {

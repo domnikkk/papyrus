@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -101,14 +101,14 @@ public class FacadeCodegenUtils {
 	/**
 	 * Find the mapping model from a genModel. Basically, the mapping model must be in the same folder as the ecoremodel underlying the GenModel and
 	 * named with the same filename but the file extension.
-	 * 
+	 *
 	 * @param genModel
-	 *        the GenModel that will be used to try to find the mapping model
+	 *            the GenModel that will be used to try to find the mapping model
 	 * @return the string
 	 */
 	public static String findMappingModel(GenModel genModel) {
 
-		if(!genModel.getForeignModel().isEmpty()) {
+		if (!genModel.getForeignModel().isEmpty()) {
 			String metamodel = genModel.getForeignModel().get(0);
 			metamodel = metamodel.replaceAll(".ecore", ".facademapping"); //$NON-NLS-1$ //$NON-NLS-2$
 
@@ -124,17 +124,17 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets the UML element of a mapping.
-	 * 
+	 *
 	 * @param mapping
-	 *        the mapping to find the UML element for
+	 *            the mapping to find the UML element for
 	 * @return the UML element mapped in the mapping
 	 */
 	protected static EObject getUMLElement(Mapping mapping) {
 
-		if(mapping instanceof StereotypedMapping) {
-			if(((StereotypedMapping)mapping).getKind() == ExtensionDefinitionKind.ASSOCIATION) {
-				EList<EObject> appliedStereotypes = ((StereotypedMapping)mapping).getAppliedStereotypes();
-				if(appliedStereotypes.size() != 1) {
+		if (mapping instanceof StereotypedMapping) {
+			if (((StereotypedMapping) mapping).getKind() == ExtensionDefinitionKind.ASSOCIATION) {
+				EList<EObject> appliedStereotypes = ((StereotypedMapping) mapping).getAppliedStereotypes();
+				if (appliedStereotypes.size() != 1) {
 					return null;
 				} else {
 					return appliedStereotypes.get(0);
@@ -150,31 +150,31 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets the all the mappings based on a GenModel of a facade
-	 * 
+	 *
 	 * @param facadeGenModel
-	 *        the GenModel of a facade
+	 *            the GenModel of a facade
 	 * @return all the mappings corresponding to a facade GenModel
 	 */
 	protected static synchronized List<Mapping> getAllMappings(GenModel facadeGenModel) {
 
-		if(!allMappingsCache.containsKey(facadeGenModel)) {
+		if (!allMappingsCache.containsKey(facadeGenModel)) {
 
 			List<Mapping> allMappings = new ArrayList<Mapping>();
 
 			String mappingModel = findMappingModel(facadeGenModel);
-			if(mappingModel != null) {
-				if(facadeGenModel.eResource() != null) {
-					if(facadeGenModel.eResource().getResourceSet() != null) {
+			if (mappingModel != null) {
+				if (facadeGenModel.eResource() != null) {
+					if (facadeGenModel.eResource().getResourceSet() != null) {
 						ResourceSet resourceSet = facadeGenModel.eResource().getResourceSet();
 						Resource res = resourceSet.getResource(URI.createURI(mappingModel, true), true);
-						if(res != null) {
-							if(!res.getContents().isEmpty()) {
+						if (res != null) {
+							if (!res.getContents().isEmpty()) {
 								EObject root = res.getContents().get(0);
 
-								if(root instanceof FacadeMappping) {
-									FacadeMappping facadeMappping = (FacadeMappping)root;
+								if (root instanceof FacadeMappping) {
+									FacadeMappping facadeMappping = (FacadeMappping) root;
 
-									for(Mapping mapping : facadeMappping.getMappings()) {
+									for (Mapping mapping : facadeMappping.getMappings()) {
 										allMappings.add(mapping);
 									}
 								}
@@ -193,11 +193,11 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Get the stereotype qualifiedNames that are applied on the UML element represented by the facadeMetaElement
-	 * 
+	 *
 	 * @param facadeMetaElement
-	 *        the facade metaelement
+	 *            the facade metaelement
 	 * @param facadeGenModel
-	 *        the facade GenModel
+	 *            the facade GenModel
 	 * @return the stereotype qualifiedNames
 	 */
 	public static String getAllStereotypeQualifiedNames(EObject facadeMetaElement, GenModel facadeGenModel) {
@@ -205,27 +205,27 @@ public class FacadeCodegenUtils {
 		Set<String> result = new HashSet<String>();
 
 
-		for(Mapping mapping : getAllMappings(facadeGenModel)) {
-			if(EcoreUtil.equals(mapping.getSpecificDomainElement(), facadeMetaElement)) {
-				if(mapping instanceof StereotypedMapping) {
+		for (Mapping mapping : getAllMappings(facadeGenModel)) {
+			if (EcoreUtil.equals(mapping.getSpecificDomainElement(), facadeMetaElement)) {
+				if (mapping instanceof StereotypedMapping) {
 
-					for(EObject stereotype : ((StereotypedMapping)mapping).getAppliedStereotypes()) {
-						if(stereotype instanceof Stereotype) {
-							result.add("\"" + ((Stereotype)stereotype).getQualifiedName() + "\""); //$NON-NLS-1$ //$NON-NLS-2$
+					for (EObject stereotype : ((StereotypedMapping) mapping).getAppliedStereotypes()) {
+						if (stereotype instanceof Stereotype) {
+							result.add("\"" + ((Stereotype) stereotype).getQualifiedName() + "\""); //$NON-NLS-1$ //$NON-NLS-2$
 						}
 					}
 				}
 			}
 		}
 
-		if(!result.isEmpty()) {
+		if (!result.isEmpty()) {
 			StringBuilder sb = new StringBuilder();
 
-			for(String s : result) {
+			for (String s : result) {
 				sb.append(s).append(',');
 			}
 
-			sb.deleteCharAt(sb.length() - 1); //delete last comma
+			sb.deleteCharAt(sb.length() - 1); // delete last comma
 
 			return sb.toString();
 		}
@@ -236,11 +236,11 @@ public class FacadeCodegenUtils {
 	/**
 	 * Get the stereotype qualifiedNames that are applied on the UML element represented by the facadeMetaElement but that are not association kind of
 	 * mapping
-	 * 
+	 *
 	 * @param facadeMetaElement
-	 *        the facade metaelement
+	 *            the facade metaelement
 	 * @param facadeGenModel
-	 *        the facade GenModel
+	 *            the facade GenModel
 	 * @return the stereotype qualifiedNames
 	 */
 	public static String getNonAssociationStereotypeQualifiedNames(EObject facadeMetaElement, GenModel facadeGenModel) {
@@ -248,14 +248,14 @@ public class FacadeCodegenUtils {
 		Set<String> result = new HashSet<String>();
 
 
-		for(Mapping mapping : getAllMappings(facadeGenModel)) {
-			if(EcoreUtil.equals(mapping.getSpecificDomainElement(), facadeMetaElement)) {
-				if(mapping instanceof StereotypedMapping) {
+		for (Mapping mapping : getAllMappings(facadeGenModel)) {
+			if (EcoreUtil.equals(mapping.getSpecificDomainElement(), facadeMetaElement)) {
+				if (mapping instanceof StereotypedMapping) {
 
-					if(((StereotypedMapping)mapping).getKind() != ExtensionDefinitionKind.ASSOCIATION) {
-						for(EObject stereotype : ((StereotypedMapping)mapping).getAppliedStereotypes()) {
-							if(stereotype instanceof Stereotype) {
-								result.add("\"" + ((Stereotype)stereotype).getQualifiedName() + "\""); //$NON-NLS-1$ //$NON-NLS-2$
+					if (((StereotypedMapping) mapping).getKind() != ExtensionDefinitionKind.ASSOCIATION) {
+						for (EObject stereotype : ((StereotypedMapping) mapping).getAppliedStereotypes()) {
+							if (stereotype instanceof Stereotype) {
+								result.add("\"" + ((Stereotype) stereotype).getQualifiedName() + "\""); //$NON-NLS-1$ //$NON-NLS-2$
 							}
 						}
 					}
@@ -263,14 +263,14 @@ public class FacadeCodegenUtils {
 			}
 		}
 
-		if(!result.isEmpty()) {
+		if (!result.isEmpty()) {
 			StringBuilder sb = new StringBuilder();
 
-			for(String s : result) {
+			for (String s : result) {
 				sb.append(s).append(',');
 			}
 
-			sb.deleteCharAt(sb.length() - 1); //delete last comma
+			sb.deleteCharAt(sb.length() - 1); // delete last comma
 
 			return sb.toString();
 		}
@@ -280,42 +280,42 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Find UML getAccessor.
-	 * 
+	 *
 	 * @param facadeMetaFeature
-	 *        the facade metafeature
+	 *            the facade metafeature
 	 * @param facadeGenModel
-	 *        the facade GenModel
+	 *            the facade GenModel
 	 * @return the getAccessor
 	 */
 	public static String findUMLGetAccessor(EObject facadeMetaFeature, GenModel facadeGenModel) {
 
 		EObject umlMetaElement = findUMLMetaElement(facadeMetaFeature, facadeGenModel);
 
-		if(umlMetaElement != null) {
-			if(umlMetaElement instanceof ETypedElement) {
+		if (umlMetaElement != null) {
+			if (umlMetaElement instanceof ETypedElement) {
 				ResourceSet resourceSet = new ResourceSetImpl();
 				EObject umlGenModel = resourceSet.getResource(URI.createURI(UML_GEN_MODEL, true), true).getContents().get(0);
 
-				if(umlGenModel != null) {
-					if(umlGenModel instanceof org.eclipse.uml2.codegen.ecore.genmodel.GenModel) {
+				if (umlGenModel != null) {
+					if (umlGenModel instanceof org.eclipse.uml2.codegen.ecore.genmodel.GenModel) {
 
-						if(umlMetaElement instanceof EStructuralFeature) {
-							return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel)umlGenModel).findGenFeature((EStructuralFeature)umlMetaElement).getGetAccessor();
-						} else if(umlMetaElement instanceof EOperation) {
-							return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel)umlGenModel).findGenOperation((EOperation)umlMetaElement).getName();
+						if (umlMetaElement instanceof EStructuralFeature) {
+							return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel) umlGenModel).findGenFeature((EStructuralFeature) umlMetaElement).getGetAccessor();
+						} else if (umlMetaElement instanceof EOperation) {
+							return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel) umlGenModel).findGenOperation((EOperation) umlMetaElement).getName();
 						}
 					}
 				}
-			} else if(umlMetaElement instanceof Property) {
-				if(umlMetaElement.eResource() != null) {
-					if(!umlMetaElement.eResource().getContents().isEmpty()) {
+			} else if (umlMetaElement instanceof Property) {
+				if (umlMetaElement.eResource() != null) {
+					if (!umlMetaElement.eResource().getContents().isEmpty()) {
 						EObject root = umlMetaElement.eResource().getContents().get(0);
-						if(root instanceof Profile) {
+						if (root instanceof Profile) {
 
 							GenModel profileGen = getGenModel(umlMetaElement);
-							EObject umlMetaFeatureDefinition = ((Profile)root).getDefinition((NamedElement)umlMetaElement);
-							if(umlMetaFeatureDefinition instanceof EStructuralFeature) {
-								return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel)profileGen).findGenFeature((EStructuralFeature)umlMetaFeatureDefinition).getGetAccessor();
+							EObject umlMetaFeatureDefinition = ((Profile) root).getDefinition((NamedElement) umlMetaElement);
+							if (umlMetaFeatureDefinition instanceof EStructuralFeature) {
+								return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel) profileGen).findGenFeature((EStructuralFeature) umlMetaFeatureDefinition).getGetAccessor();
 							}
 						}
 					}
@@ -328,9 +328,9 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Try to get the GenModel from an eObject
-	 * 
+	 *
 	 * @param metaElement
-	 *        the metaElement to find the GenMdoel for
+	 *            the metaElement to find the GenMdoel for
 	 * @return the GenModel
 	 */
 	protected static GenModel getGenModel(EObject metaElement) {
@@ -338,22 +338,22 @@ public class FacadeCodegenUtils {
 
 
 
-		if(metaElement.eResource() != null) {
-			if(!metaElement.eResource().getContents().isEmpty()) {
+		if (metaElement.eResource() != null) {
+			if (!metaElement.eResource().getContents().isEmpty()) {
 				EObject root = metaElement.eResource().getContents().get(0);
-				if(root instanceof Profile) {
-					Stereotype ePackageStereotype = ((Profile)root).getAppliedStereotype("Ecore::EPackage"); //$NON-NLS-1$
-					if(ePackageStereotype != null) {
-						Object nsURI = ((Profile)root).getValue(ePackageStereotype, "nsURI"); //$NON-NLS-1$
-						if(nsURI instanceof String) {
+				if (root instanceof Profile) {
+					Stereotype ePackageStereotype = ((Profile) root).getAppliedStereotype("Ecore::EPackage"); //$NON-NLS-1$
+					if (ePackageStereotype != null) {
+						Object nsURI = ((Profile) root).getValue(ePackageStereotype, "nsURI"); //$NON-NLS-1$
+						if (nsURI instanceof String) {
 							URI genModelURI = nsURIToGenModelsMap.get(nsURI);
 							String paltformstring = genModelURI.toPlatformString(true);
 							URI pluginURI = URI.createPlatformPluginURI(paltformstring, true);
-							if(pluginURI != null) {
+							if (pluginURI != null) {
 								ResourceSet resourceSet = new ResourceSetImpl();
 								EObject genModel = resourceSet.getResource(pluginURI, true).getContents().get(0);
-								if(genModel instanceof GenModel) {
-									return (GenModel)genModel;
+								if (genModel instanceof GenModel) {
+									return (GenModel) genModel;
 								}
 							}
 						}
@@ -368,27 +368,27 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Find UML accessorName of a facade metaFeature.
-	 * 
+	 *
 	 * @param facadeMetaFeature
-	 *        the facade metafeature
+	 *            the facade metafeature
 	 * @param facadeGenModel
-	 *        the facade GenModel
+	 *            the facade GenModel
 	 * @return the string
 	 */
 	public static String findUMLAccessorName(EObject facadeMetaFeature, GenModel facadeGenModel) {
 		EObject umlMetaFeature = findUMLMetaElement(facadeMetaFeature, facadeGenModel);
 
-		if(umlMetaFeature instanceof NamedElement) {
+		if (umlMetaFeature instanceof NamedElement) {
 
-			if(umlMetaFeature.eResource() != null) {
-				if(!umlMetaFeature.eResource().getContents().isEmpty()) {
+			if (umlMetaFeature.eResource() != null) {
+				if (!umlMetaFeature.eResource().getContents().isEmpty()) {
 					EObject root = umlMetaFeature.eResource().getContents().get(0);
-					if(root instanceof Profile) {
+					if (root instanceof Profile) {
 
 						GenModel profileGen = getGenModel(umlMetaFeature);
-						EObject umlMetaFeatureDefinition = ((Profile)root).getDefinition((NamedElement)umlMetaFeature);
-						if(umlMetaFeatureDefinition instanceof EStructuralFeature) {
-							return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel)profileGen).findGenFeature((EStructuralFeature)umlMetaFeatureDefinition).getAccessorName();
+						EObject umlMetaFeatureDefinition = ((Profile) root).getDefinition((NamedElement) umlMetaFeature);
+						if (umlMetaFeatureDefinition instanceof EStructuralFeature) {
+							return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel) profileGen).findGenFeature((EStructuralFeature) umlMetaFeatureDefinition).getAccessorName();
 						}
 
 					}
@@ -396,15 +396,15 @@ public class FacadeCodegenUtils {
 			}
 		} else {
 
-			if(umlMetaFeature != null) {
-				if(umlMetaFeature instanceof EStructuralFeature) {
+			if (umlMetaFeature != null) {
+				if (umlMetaFeature instanceof EStructuralFeature) {
 					ResourceSet resourceSet = new ResourceSetImpl();
 					EObject umlGenModel = resourceSet.getResource(URI.createURI(UML_GEN_MODEL, true), true).getContents().get(0);
 
-					if(umlGenModel != null) {
-						if(umlGenModel instanceof org.eclipse.uml2.codegen.ecore.genmodel.GenModel) {
+					if (umlGenModel != null) {
+						if (umlGenModel instanceof org.eclipse.uml2.codegen.ecore.genmodel.GenModel) {
 
-							return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel)umlGenModel).findGenFeature((EStructuralFeature)umlMetaFeature).getAccessorName();
+							return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel) umlGenModel).findGenFeature((EStructuralFeature) umlMetaFeature).getAccessorName();
 						}
 					}
 				}
@@ -416,24 +416,25 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets all the metaclass mappings.
-	 * 
+	 *
 	 * @param facadeGenModel
-	 *        the facade GenModel
+	 *            the facade GenModel
 	 * @return all mappings that map a metaclass
 	 */
 	public static synchronized List<? extends Mapping> getAllMetaclassMappings(GenModel facadeGenModel) {
 
-		if(!allMetaclassMappingsCache.containsKey(facadeGenModel)) {
+		if (!allMetaclassMappingsCache.containsKey(facadeGenModel)) {
 
 			List<Mapping> allMetaclassMappings = new ArrayList<Mapping>();
 
-			for(Mapping mapping : getAllMappings(facadeGenModel)) {
-				if(!(mapping instanceof StereotypedMapping)) {
-					if(mapping.getSpecificDomainElement() instanceof EClassifier) {
-						if(mapping.getUmlElement() != TypesPackage.eINSTANCE.getBoolean() && mapping.getUmlElement() != TypesPackage.eINSTANCE.getString() && mapping.getUmlElement() != TypesPackage.eINSTANCE.getReal() && mapping.getUmlElement() != TypesPackage.eINSTANCE.getInteger() && mapping.getUmlElement() != TypesPackage.eINSTANCE.getUnlimitedNatural()) {
-							if(!(mapping.getUmlElement() instanceof Stereotype)) {
-								if(mapping.getSpecificDomainElement() instanceof EClass) {
-									if(!((EClass)mapping.getSpecificDomainElement()).isAbstract()) {
+			for (Mapping mapping : getAllMappings(facadeGenModel)) {
+				if (!(mapping instanceof StereotypedMapping)) {
+					if (mapping.getSpecificDomainElement() instanceof EClassifier) {
+						if (mapping.getUmlElement() != TypesPackage.eINSTANCE.getBoolean() && mapping.getUmlElement() != TypesPackage.eINSTANCE.getString() && mapping.getUmlElement() != TypesPackage.eINSTANCE.getReal()
+								&& mapping.getUmlElement() != TypesPackage.eINSTANCE.getInteger() && mapping.getUmlElement() != TypesPackage.eINSTANCE.getUnlimitedNatural()) {
+							if (!(mapping.getUmlElement() instanceof Stereotype)) {
+								if (mapping.getSpecificDomainElement() instanceof EClass) {
+									if (!((EClass) mapping.getSpecificDomainElement()).isAbstract()) {
 										allMetaclassMappings.add(mapping);
 									}
 								} else {
@@ -443,7 +444,7 @@ public class FacadeCodegenUtils {
 						}
 					}
 				} else {
-					if(((StereotypedMapping)mapping).getKind() == ExtensionDefinitionKind.ASSOCIATION) {
+					if (((StereotypedMapping) mapping).getKind() == ExtensionDefinitionKind.ASSOCIATION) {
 						allMetaclassMappings.add(mapping);
 					}
 				}
@@ -468,20 +469,21 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets all the enumLiteral mappings.
-	 * 
+	 *
 	 * @param facadeGenModel
-	 *        the facade GenModel
+	 *            the facade GenModel
 	 * @return all mappings that map an enumLiteral
 	 */
 	public static synchronized List<? extends Mapping> getAllEnumLiteralMappings(GenModel facadeGenModel) {
 
-		if(!enumLiteralMappingsCache.containsKey(facadeGenModel)) {
+		if (!enumLiteralMappingsCache.containsKey(facadeGenModel)) {
 			List<Mapping> enumLiteralMappings = new ArrayList<Mapping>();
-			synchronized(enumLiteralMappings) {
+			synchronized (enumLiteralMappings) {
 
-				for(Mapping mapping : getAllMappings(facadeGenModel)) {
-					if(mapping.getSpecificDomainElement() instanceof EEnumLiteral) {
-						if(mapping.getUmlElement() != TypesPackage.eINSTANCE.getBoolean() && mapping.getUmlElement() != TypesPackage.eINSTANCE.getString() && mapping.getUmlElement() != TypesPackage.eINSTANCE.getReal() && mapping.getUmlElement() != TypesPackage.eINSTANCE.getInteger() && mapping.getUmlElement() != TypesPackage.eINSTANCE.getUnlimitedNatural()) {
+				for (Mapping mapping : getAllMappings(facadeGenModel)) {
+					if (mapping.getSpecificDomainElement() instanceof EEnumLiteral) {
+						if (mapping.getUmlElement() != TypesPackage.eINSTANCE.getBoolean() && mapping.getUmlElement() != TypesPackage.eINSTANCE.getString() && mapping.getUmlElement() != TypesPackage.eINSTANCE.getReal()
+								&& mapping.getUmlElement() != TypesPackage.eINSTANCE.getInteger() && mapping.getUmlElement() != TypesPackage.eINSTANCE.getUnlimitedNatural()) {
 							enumLiteralMappings.add(mapping);
 						}
 					}
@@ -495,26 +497,26 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets all the feature mappings.
-	 * 
+	 *
 	 * @param facadeGenModel
-	 *        the facade GenModel
+	 *            the facade GenModel
 	 * @return all mappings that map a feature
 	 */
 	public static synchronized List<? extends Mapping> getAllFeatureMappings(GenModel facadeGenModel) {
 
-		if(!featureMappingsCache.containsKey(facadeGenModel)) {
+		if (!featureMappingsCache.containsKey(facadeGenModel)) {
 
 			List<Mapping> featureMappings = new ArrayList<Mapping>();
 
-			for(Mapping mapping : getAllMappings(facadeGenModel)) {
-				if(!isExtensionStereotypePropertyFromFacade(mapping.getSpecificDomainElement(), facadeGenModel)) {
-					if(mapping.getSpecificDomainElement() instanceof EStructuralFeature) {
+			for (Mapping mapping : getAllMappings(facadeGenModel)) {
+				if (!isExtensionStereotypePropertyFromFacade(mapping.getSpecificDomainElement(), facadeGenModel)) {
+					if (mapping.getSpecificDomainElement() instanceof EStructuralFeature) {
 
 						featureMappings.add(mapping);
 					}
-					if(mapping.getSpecificDomainElement() instanceof Property) {
+					if (mapping.getSpecificDomainElement() instanceof Property) {
 
-						if(((Property)mapping.getSpecificDomainElement()).getClass_() instanceof Stereotype) {
+						if (((Property) mapping.getSpecificDomainElement()).getClass_() instanceof Stereotype) {
 							featureMappings.add(mapping);
 						}
 					}
@@ -529,27 +531,27 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Find UML metaElement.
-	 * 
+	 *
 	 * @param facadeMetaElement
-	 *        the facade metaElement
+	 *            the facade metaElement
 	 * @param genModel
-	 *        the GenModel
+	 *            the GenModel
 	 * @return the UML metaElement
 	 */
 	public static EObject findUMLMetaElement(EObject facadeMetaElement, GenModel genModel) {
 		String mappingModel = findMappingModel(genModel);
-		if(mappingModel != null) {
+		if (mappingModel != null) {
 
-			if(genModel.eResource() != null) {
-				if(genModel.eResource().getResourceSet() != null) {
+			if (genModel.eResource() != null) {
+				if (genModel.eResource().getResourceSet() != null) {
 					ResourceSet resourceSet = genModel.eResource().getResourceSet();
 					EObject root = resourceSet.getResource(URI.createURI(mappingModel, true), true).getContents().get(0);
 
-					if(root != null) {
-						if(root instanceof FacadeMappping) {
-							FacadeMappping facadeMappping = (FacadeMappping)root;
-							for(Mapping mapping : facadeMappping.getMappings()) {
-								if(EcoreUtil.equals(mapping.getSpecificDomainElement(), facadeMetaElement)) {
+					if (root != null) {
+						if (root instanceof FacadeMappping) {
+							FacadeMappping facadeMappping = (FacadeMappping) root;
+							for (Mapping mapping : facadeMappping.getMappings()) {
+								if (EcoreUtil.equals(mapping.getSpecificDomainElement(), facadeMetaElement)) {
 
 									return getUMLElement(mapping);
 
@@ -570,27 +572,27 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets the FeatureAccessorName of a the UML feature from a mapping.
-	 * 
+	 *
 	 * @param mapping
-	 *        the mapping
+	 *            the mapping
 	 * @param genModel
-	 *        the GenModel
+	 *            the GenModel
 	 * @return the UML feature from mapping
 	 */
 	public static String getUMLFeatureFromMapping(Mapping mapping, GenModel genModel) {
 		EObject UMLMetaElement = mapping.getUmlElement();
 
-		if(UMLMetaElement instanceof NamedElement) {
+		if (UMLMetaElement instanceof NamedElement) {
 
-			if(UMLMetaElement.eResource() != null) {
-				if(!UMLMetaElement.eResource().getContents().isEmpty()) {
+			if (UMLMetaElement.eResource() != null) {
+				if (!UMLMetaElement.eResource().getContents().isEmpty()) {
 					EObject root = UMLMetaElement.eResource().getContents().get(0);
-					if(root instanceof Profile) {
+					if (root instanceof Profile) {
 
 						GenModel profileGen = getGenModel(UMLMetaElement);
-						EObject umlMetaFeatureDefinition = ((Profile)root).getDefinition((NamedElement)UMLMetaElement);
-						if(umlMetaFeatureDefinition instanceof EStructuralFeature) {
-							return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel)profileGen).findGenFeature((EStructuralFeature)umlMetaFeatureDefinition).getFeatureAccessorName();
+						EObject umlMetaFeatureDefinition = ((Profile) root).getDefinition((NamedElement) UMLMetaElement);
+						if (umlMetaFeatureDefinition instanceof EStructuralFeature) {
+							return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel) profileGen).findGenFeature((EStructuralFeature) umlMetaFeatureDefinition).getFeatureAccessorName();
 						}
 
 					}
@@ -600,15 +602,15 @@ public class FacadeCodegenUtils {
 
 		} else {
 
-			if(UMLMetaElement instanceof EStructuralFeature) {
-				if(UMLMetaElement != null) {
+			if (UMLMetaElement instanceof EStructuralFeature) {
+				if (UMLMetaElement != null) {
 					ResourceSet resourceSet = new ResourceSetImpl();
 					EObject umlGenModel = resourceSet.getResource(URI.createURI(UML_GEN_MODEL, true), true).getContents().get(0);
 
-					if(umlGenModel != null) {
-						if(umlGenModel instanceof org.eclipse.uml2.codegen.ecore.genmodel.GenModel) {
+					if (umlGenModel != null) {
+						if (umlGenModel instanceof org.eclipse.uml2.codegen.ecore.genmodel.GenModel) {
 
-							return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel)umlGenModel).findGenFeature((EStructuralFeature)UMLMetaElement).getFeatureAccessorName();
+							return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel) umlGenModel).findGenFeature((EStructuralFeature) UMLMetaElement).getFeatureAccessorName();
 						}
 					}
 				}
@@ -621,9 +623,9 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets the package path from mapping.
-	 * 
+	 *
 	 * @param mapping
-	 *        the mapping
+	 *            the mapping
 	 * @return the package path from mapping
 	 */
 	public static String getPackagePathFromMapping(Mapping mapping) {
@@ -634,21 +636,21 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets the EPackage path from UML element mapped by a mapping.
-	 * 
+	 *
 	 * @param UMLMetaElement
-	 *        the UML metaElement
+	 *            the UML metaElement
 	 * @return the EPackage path from UML
 	 */
 	public static String getPackagePathFromUML(EObject UMLMetaElement) {
 
 		EObject root = UMLMetaElement.eResource().getContents().get(0);
-		if(root instanceof Profile) {
-			Stereotype ePackageStereotype = ((Profile)root).getAppliedStereotype("Ecore::EPackage"); //$NON-NLS-1$
-			if(ePackageStereotype != null) {
-				Object packageName = ((Profile)root).getValue(ePackageStereotype, "packageName"); //$NON-NLS-1$
-				Object basePackage = ((Profile)root).getValue(ePackageStereotype, "basePackage"); //$NON-NLS-1$
-				if(packageName instanceof String && basePackage instanceof String) {
-					if(UMLMetaElement instanceof NamedElement) {
+		if (root instanceof Profile) {
+			Stereotype ePackageStereotype = ((Profile) root).getAppliedStereotype("Ecore::EPackage"); //$NON-NLS-1$
+			if (ePackageStereotype != null) {
+				Object packageName = ((Profile) root).getValue(ePackageStereotype, "packageName"); //$NON-NLS-1$
+				Object basePackage = ((Profile) root).getValue(ePackageStereotype, "basePackage"); //$NON-NLS-1$
+				if (packageName instanceof String && basePackage instanceof String) {
+					if (UMLMetaElement instanceof NamedElement) {
 						return basePackage + "." + packageName; //$NON-NLS-1$
 					}
 				}
@@ -665,9 +667,9 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets the full EPackage path from a mapping.
-	 * 
+	 *
 	 * @param mapping
-	 *        the mapping
+	 *            the mapping
 	 * @return the Epackage path
 	 */
 	public static String getUMLPackageName(Mapping mapping) {
@@ -675,12 +677,12 @@ public class FacadeCodegenUtils {
 		EObject UMLMetaElement = getUMLElement(mapping);
 
 		EObject root = UMLMetaElement.eResource().getContents().get(0);
-		if(root instanceof Profile) {
-			Stereotype ePackageStereotype = ((Profile)root).getAppliedStereotype("Ecore::EPackage"); //$NON-NLS-1$
-			if(ePackageStereotype != null) {
-				Object packageName = ((Profile)root).getValue(ePackageStereotype, "packageName"); //$NON-NLS-1$
-				if(packageName instanceof String) {
-					if(UMLMetaElement instanceof NamedElement) {
+		if (root instanceof Profile) {
+			Stereotype ePackageStereotype = ((Profile) root).getAppliedStereotype("Ecore::EPackage"); //$NON-NLS-1$
+			if (ePackageStereotype != null) {
+				Object packageName = ((Profile) root).getValue(ePackageStereotype, "packageName"); //$NON-NLS-1$
+				if (packageName instanceof String) {
+					if (UMLMetaElement instanceof NamedElement) {
 						return getPackagePathFromMapping(mapping) + "." + packageName + "Package"; //$NON-NLS-1$ //$NON-NLS-2$
 					}
 				}
@@ -698,11 +700,11 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets the UML accessorName from a mapping.
-	 * 
+	 *
 	 * @param mapping
-	 *        the mapping
+	 *            the mapping
 	 * @param genModel
-	 *        the GenModel
+	 *            the GenModel
 	 * @return the UML accessorName
 	 */
 	public static String getUMLAccessorName(Mapping mapping, GenModel genModel) {
@@ -710,23 +712,23 @@ public class FacadeCodegenUtils {
 		EObject UMLMetaElement = getUMLElement(mapping);
 
 		EObject root = UMLMetaElement.eResource().getContents().get(0);
-		if(root instanceof Profile) {
+		if (root instanceof Profile) {
 
-			if(UMLMetaElement instanceof NamedElement) {
-				return ((NamedElement)UMLMetaElement).getName();
+			if (UMLMetaElement instanceof NamedElement) {
+				return ((NamedElement) UMLMetaElement).getName();
 			}
 
 		} else {
 
-			if(UMLMetaElement instanceof EClassifier) {
+			if (UMLMetaElement instanceof EClassifier) {
 
 				ResourceSet resourceSet = new ResourceSetImpl();
 				EObject umlGenModel = resourceSet.getResource(URI.createURI(UML_GEN_MODEL, true), true).getContents().get(0);
 
-				if(umlGenModel != null) {
-					if(umlGenModel instanceof org.eclipse.uml2.codegen.ecore.genmodel.GenModel) {
+				if (umlGenModel != null) {
+					if (umlGenModel instanceof org.eclipse.uml2.codegen.ecore.genmodel.GenModel) {
 
-						return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel)umlGenModel).findGenClassifier((EClassifier)UMLMetaElement).getClassifierAccessorName();
+						return ((org.eclipse.uml2.codegen.ecore.genmodel.GenModel) umlGenModel).findGenClassifier((EClassifier) UMLMetaElement).getClassifierAccessorName();
 					}
 				}
 
@@ -738,49 +740,49 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets the ClassifierAccessorName from a mapping.
-	 * 
+	 *
 	 * @param genModel
-	 *        the GenModel
+	 *            the GenModel
 	 * @param mapping
-	 *        the mapping
+	 *            the mapping
 	 * @return the ClassifierAccessorName
 	 */
 	public static String getClassifierAccessorName(GenModel genModel, Mapping mapping) {
-		return genModel.findGenClassifier((EClassifier)mapping.getSpecificDomainElement()).getClassifierAccessorName();
+		return genModel.findGenClassifier((EClassifier) mapping.getSpecificDomainElement()).getClassifierAccessorName();
 	}
 
 	/**
 	 * Gets the FeatureAccessorName from a mapping.
-	 * 
+	 *
 	 * @param genModel
-	 *        the GenModel
+	 *            the GenModel
 	 * @param mapping
-	 *        the mapping
+	 *            the mapping
 	 * @return the FeatureAccessorName
 	 */
 	public static String getFeatureAccessorName(GenModel genModel, Mapping mapping) {
-		return genModel.findGenFeature((EStructuralFeature)mapping.getSpecificDomainElement()).getFeatureAccessorName();
+		return genModel.findGenFeature((EStructuralFeature) mapping.getSpecificDomainElement()).getFeatureAccessorName();
 	}
 
 	/**
 	 * Gets the UML meta element mapped to a facadeElement.
-	 * 
+	 *
 	 * @param facadeMetaElement
-	 *        the facade meta element
+	 *            the facade meta element
 	 * @param genModel
-	 *        the GenModel
+	 *            the GenModel
 	 * @return the UML meta element
 	 */
 	public static String getUMLMetaElement(EObject facadeMetaElement, GenModel genModel) {
 
-		for(Mapping mapping : getAllMappings(genModel)) {
-			if(EcoreUtil.equals(mapping.getSpecificDomainElement(), facadeMetaElement)) {
+		for (Mapping mapping : getAllMappings(genModel)) {
+			if (EcoreUtil.equals(mapping.getSpecificDomainElement(), facadeMetaElement)) {
 				EObject UMLMetaElement = getUMLElement(mapping);
 
-				if(UMLMetaElement instanceof ENamedElement) {
-					return ((ENamedElement)UMLMetaElement).getName();
-				} else if(UMLMetaElement instanceof NamedElement) {
-					return ((NamedElement)UMLMetaElement).getName();
+				if (UMLMetaElement instanceof ENamedElement) {
+					return ((ENamedElement) UMLMetaElement).getName();
+				} else if (UMLMetaElement instanceof NamedElement) {
+					return ((NamedElement) UMLMetaElement).getName();
 				}
 
 			}
@@ -792,28 +794,28 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets the UML factory.
-	 * 
+	 *
 	 * @param facadeMetaElement
-	 *        the facade meta element
+	 *            the facade meta element
 	 * @param genModel
-	 *        the GenModel
+	 *            the GenModel
 	 * @return the UML factory
 	 */
 	public static String getUMLFactory(EObject facadeMetaElement, GenModel genModel) {
 
-		for(Mapping mapping : getAllMappings(genModel)) {
-			if(EcoreUtil.equals(mapping.getSpecificDomainElement(), facadeMetaElement)) {
+		for (Mapping mapping : getAllMappings(genModel)) {
+			if (EcoreUtil.equals(mapping.getSpecificDomainElement(), facadeMetaElement)) {
 
 				EObject UMLMetaElement = getUMLElement(mapping);
 
-				if(UMLMetaElement != null) {
+				if (UMLMetaElement != null) {
 					EObject root = UMLMetaElement.eResource().getContents().get(0);
-					if(root instanceof Profile) {
-						Stereotype ePackageStereotype = ((Profile)root).getAppliedStereotype("Ecore::EPackage"); //$NON-NLS-1$
-						if(ePackageStereotype != null) {
-							Object packageName = ((Profile)root).getValue(ePackageStereotype, "packageName"); //$NON-NLS-1$
-							if(packageName instanceof String) {
-								if(UMLMetaElement instanceof NamedElement) {
+					if (root instanceof Profile) {
+						Stereotype ePackageStereotype = ((Profile) root).getAppliedStereotype("Ecore::EPackage"); //$NON-NLS-1$
+						if (ePackageStereotype != null) {
+							Object packageName = ((Profile) root).getValue(ePackageStereotype, "packageName"); //$NON-NLS-1$
+							if (packageName instanceof String) {
+								if (UMLMetaElement instanceof NamedElement) {
 									return getPackagePathFromUML(UMLMetaElement) + "." + packageName + "Factory"; //$NON-NLS-1$ //$NON-NLS-2$
 								}
 							}
@@ -834,19 +836,19 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets the appropriate qualified type name.
-	 * 
+	 *
 	 * @param genClassifier
-	 *        a genClassifier
+	 *            a genClassifier
 	 * @return the qualifiedType name
 	 */
 	public static String getAppropriateQualifiedTypeName(GenClassifier genClassifier) {
-		if(genClassifier instanceof GenClass) {
+		if (genClassifier instanceof GenClass) {
 
-			return ((GenClass)genClassifier).getQualifiedInterfaceName();
+			return ((GenClass) genClassifier).getQualifiedInterfaceName();
 
-		} else if(genClassifier instanceof GenDataType) {
+		} else if (genClassifier instanceof GenDataType) {
 
-			return ((GenDataType)genClassifier).getQualifiedInstanceClassName();
+			return ((GenDataType) genClassifier).getQualifiedInstanceClassName();
 
 		} else {
 
@@ -856,16 +858,16 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets the UML enum element from mapping.
-	 * 
+	 *
 	 * @param mapping
-	 *        the mapping
+	 *            the mapping
 	 * @return the UML enum element from mapping
 	 */
 	public static String getUMLEnumElementFromMapping(Mapping mapping) {
-		if(mapping.getUmlElement() instanceof EEnumLiteral) {
-			return ((EEnumLiteral)mapping.getUmlElement()).getEEnum().getName() + ".get(" + ((EEnumLiteral)mapping.getUmlElement()).getValue() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
-		} else if(mapping.getUmlElement() instanceof EnumerationLiteral) {
-			return ((EnumerationLiteral)mapping.getUmlElement()).getEnumeration().getName() + ".get(\"" + ((EnumerationLiteral)mapping.getUmlElement()).getName() + "\")"; //$NON-NLS-1$ //$NON-NLS-2$
+		if (mapping.getUmlElement() instanceof EEnumLiteral) {
+			return ((EEnumLiteral) mapping.getUmlElement()).getEEnum().getName() + ".get(" + ((EEnumLiteral) mapping.getUmlElement()).getValue() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
+		} else if (mapping.getUmlElement() instanceof EnumerationLiteral) {
+			return ((EnumerationLiteral) mapping.getUmlElement()).getEnumeration().getName() + ".get(\"" + ((EnumerationLiteral) mapping.getUmlElement()).getName() + "\")"; //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
 		return "FAILED_TO_FIND_MAPPED_UML_ENUM_ELEMENT"; //$NON-NLS-1$
@@ -873,16 +875,16 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets the facade enum element from mapping.
-	 * 
+	 *
 	 * @param mapping
-	 *        the mapping
+	 *            the mapping
 	 * @return the facade enum element from the mapping
 	 */
 	public static String getFacadeEnumElementFromMapping(Mapping mapping) {
-		if(mapping.getUmlElement() instanceof EEnumLiteral) {
-			return ((EEnumLiteral)mapping.getUmlElement()).getEEnum().getName() + ".get(" + ((EEnumLiteral)mapping.getUmlElement()).getValue() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
-		} else if(mapping.getUmlElement() instanceof EnumerationLiteral) {
-			return ((EnumerationLiteral)mapping.getUmlElement()).getEnumeration().getName() + ".get(\"" + ((EnumerationLiteral)mapping.getUmlElement()).getName() + "\")"; //$NON-NLS-1$ //$NON-NLS-2$
+		if (mapping.getUmlElement() instanceof EEnumLiteral) {
+			return ((EEnumLiteral) mapping.getUmlElement()).getEEnum().getName() + ".get(" + ((EEnumLiteral) mapping.getUmlElement()).getValue() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
+		} else if (mapping.getUmlElement() instanceof EnumerationLiteral) {
+			return ((EnumerationLiteral) mapping.getUmlElement()).getEnumeration().getName() + ".get(\"" + ((EnumerationLiteral) mapping.getUmlElement()).getName() + "\")"; //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
 		return "FAILED_TO_FIND_MAPPED_FACADE_ENUM_ELEMENT"; //$NON-NLS-1$
@@ -890,19 +892,19 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Checks if facade element represents a stereotype role for an extension
-	 * 
+	 *
 	 * @param facadeElement
-	 *        the facade element
+	 *            the facade element
 	 * @param genModel
-	 *        the GenModel
+	 *            the GenModel
 	 * @return true, if facade element represents a stereotype role for an extension
 	 */
 	protected static boolean isExtensionStereotypePropertyFromFacade(EObject facadeElement, GenModel genModel) {
 		EObject umlElement = findUMLMetaElement(facadeElement, genModel);
 
-		if(umlElement instanceof Property) {
-			if(((Property)umlElement).getAssociation() instanceof Extension) {
-				if(((Property)umlElement).getName().startsWith(Extension.STEREOTYPE_ROLE_PREFIX)) {
+		if (umlElement instanceof Property) {
+			if (((Property) umlElement).getAssociation() instanceof Extension) {
+				if (((Property) umlElement).getName().startsWith(Extension.STEREOTYPE_ROLE_PREFIX)) {
 					return Boolean.TRUE;
 				}
 
@@ -913,9 +915,9 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Checks if is extention stereotype property.
-	 * 
+	 *
 	 * @param genFeature
-	 *        the gen feature
+	 *            the gen feature
 	 * @return true, if is extention stereotype property
 	 */
 	public static boolean isExtentionStereotypeProperty(GenFeature genFeature) {
@@ -923,9 +925,9 @@ public class FacadeCodegenUtils {
 
 		EObject umlElement = findUMLMetaElement(genFeature.getEcoreFeature(), genFeature.getGenModel());
 
-		if(umlElement instanceof Property) {
-			if(((Property)umlElement).getAssociation() instanceof Extension) {
-				if(((Property)umlElement).getName().startsWith(Extension.STEREOTYPE_ROLE_PREFIX)) {
+		if (umlElement instanceof Property) {
+			if (((Property) umlElement).getAssociation() instanceof Extension) {
+				if (((Property) umlElement).getName().startsWith(Extension.STEREOTYPE_ROLE_PREFIX)) {
 					return Boolean.TRUE;
 				}
 
@@ -936,16 +938,16 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Checks if is extension property.
-	 * 
+	 *
 	 * @param genFeature
-	 *        the gen feature
+	 *            the gen feature
 	 * @return true, if is extension property
 	 */
 	public static boolean isExtensionProperty(GenFeature genFeature) {
 		EObject umlElement = findUMLMetaElement(genFeature.getEcoreFeature(), genFeature.getGenModel());
 
-		if(umlElement instanceof Property) {
-			if(((Property)umlElement).getAssociation() instanceof Extension) {
+		if (umlElement instanceof Property) {
+			if (((Property) umlElement).getAssociation() instanceof Extension) {
 
 				return Boolean.TRUE;
 			}
@@ -955,31 +957,31 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Checks if is stereotype property.
-	 * 
+	 *
 	 * @param genFeature
-	 *        the gen feature
+	 *            the gen feature
 	 * @return true, if is stereotype property
 	 */
 	public static boolean isStereotypeProperty(GenFeature genFeature) {
 		EClass ecoreClass = genFeature.getGenClass().getEcoreClass();
 
 		boolean isAppropriateMapping = false;
-		for(Mapping mapping : getAllMappings(genFeature.getGenModel())) {
-			if(EcoreUtil.equals(ecoreClass, mapping.getSpecificDomainElement())) {
-				if(mapping instanceof StereotypedMapping) {
-					if(((StereotypedMapping)mapping).getKind() != ExtensionDefinitionKind.ASSOCIATION) {
+		for (Mapping mapping : getAllMappings(genFeature.getGenModel())) {
+			if (EcoreUtil.equals(ecoreClass, mapping.getSpecificDomainElement())) {
+				if (mapping instanceof StereotypedMapping) {
+					if (((StereotypedMapping) mapping).getKind() != ExtensionDefinitionKind.ASSOCIATION) {
 						isAppropriateMapping = true;
 					}
 				}
 			}
 		}
 
-		if(isAppropriateMapping) {
+		if (isAppropriateMapping) {
 			EObject umlElement = findUMLMetaElement(genFeature.getEcoreFeature(), genFeature.getGenModel());
 
-			if(umlElement instanceof Property) {
-				if(((Property)umlElement).getClass_() instanceof Stereotype) {
-					if(!isExtensionProperty(genFeature)) {
+			if (umlElement instanceof Property) {
+				if (((Property) umlElement).getClass_() instanceof Stereotype) {
+					if (!isExtensionProperty(genFeature)) {
 						return Boolean.TRUE;
 					}
 				}
@@ -990,17 +992,17 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets the stereotype qualified name.
-	 * 
+	 *
 	 * @param genFeature
-	 *        the gen feature
+	 *            the gen feature
 	 * @return the stereotype qualified name
 	 */
 	public static String getStereotypeQualifiedName(GenFeature genFeature) {
 		EObject umlElement = findUMLMetaElement(genFeature.getEcoreFeature(), genFeature.getGenModel());
 
-		if(umlElement instanceof Property) {
-			if(((Property)umlElement).getClass_() instanceof Stereotype) {
-				return ((Property)umlElement).getClass_().getQualifiedName();
+		if (umlElement instanceof Property) {
+			if (((Property) umlElement).getClass_() instanceof Stereotype) {
+				return ((Property) umlElement).getClass_().getQualifiedName();
 			}
 		}
 		return "FAILED_TO_FIND_STEREOTYPE_QUALIFIEDNAME"; //$NON-NLS-1$
@@ -1010,19 +1012,19 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Gets the stereotyped mappings.
-	 * 
+	 *
 	 * @param genModel
-	 *        the GenModel
+	 *            the GenModel
 	 * @return the stereotyped mappings
 	 */
 	public static synchronized List<StereotypedMapping> getStereotypedMappings(GenModel genModel) {
 
-		if(!stereotypedMappingsCache.containsKey(genModel)) {
+		if (!stereotypedMappingsCache.containsKey(genModel)) {
 
 			List<StereotypedMapping> stereotypedMappings = new ArrayList<StereotypedMapping>();
-			for(Mapping mapping : getAllMappings(genModel)) {
-				if(mapping instanceof StereotypedMapping) {
-					stereotypedMappings.add((StereotypedMapping)mapping);
+			for (Mapping mapping : getAllMappings(genModel)) {
+				if (mapping instanceof StereotypedMapping) {
+					stereotypedMappings.add((StereotypedMapping) mapping);
 				}
 			}
 
@@ -1034,86 +1036,87 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Generate the wrapper for a mapping considering possible application of stereotype combinations
-	 * 
+	 *
 	 * @param mapping
-	 *        the mapping
+	 *            the mapping
 	 * @param genModel
-	 *        the GenModel
+	 *            the GenModel
 	 * @param genPackage
-	 *        the gen package
+	 *            the gen package
 	 * @return the corresponding stereotype mapping
 	 */
 	public static String getCorrespondingStereotypeMapping(org.eclipse.papyrus.facademapping.Mapping mapping, GenModel genModel, GenPackage genPackage) {
 		String result = ""; //$NON-NLS-1$
 
-		if(!(mapping instanceof StereotypedMapping)) {
+		if (!(mapping instanceof StereotypedMapping)) {
 
 			List<StereotypedMapping> correspondingStereotypeMappings = new ArrayList<StereotypedMapping>();
 			List<StereotypedMapping> correspondingAssocationStereotypeMappings = new ArrayList<StereotypedMapping>();
 
-			for(Mapping toProcessMapping : getStereotypedMappings(genModel)) {
+			for (Mapping toProcessMapping : getStereotypedMappings(genModel)) {
 
-				if(mapping != toProcessMapping) {
+				if (mapping != toProcessMapping) {
 
 					boolean isAbstract = false;
-					EList<EObject> stereos = ((StereotypedMapping)toProcessMapping).getAppliedStereotypes();
-					for(EObject stereo : stereos) {
-						if(stereo instanceof Stereotype) {
-							if(((Stereotype)stereo).isAbstract()) {
+					EList<EObject> stereos = ((StereotypedMapping) toProcessMapping).getAppliedStereotypes();
+					for (EObject stereo : stereos) {
+						if (stereo instanceof Stereotype) {
+							if (((Stereotype) stereo).isAbstract()) {
 								isAbstract = true;
 							}
 						}
 					}
-					if(!isAbstract) {
+					if (!isAbstract) {
 
-						if(((StereotypedMapping)toProcessMapping).getKind() == ExtensionDefinitionKind.GENERALIZATION || ((StereotypedMapping)toProcessMapping).getKind() == ExtensionDefinitionKind.MULTI_GENERALIZATION) {
-							if(toProcessMapping.getUmlElement() == mapping.getUmlElement()) {
-								correspondingStereotypeMappings.add((StereotypedMapping)toProcessMapping);
+						if (((StereotypedMapping) toProcessMapping).getKind() == ExtensionDefinitionKind.GENERALIZATION || ((StereotypedMapping) toProcessMapping).getKind() == ExtensionDefinitionKind.MULTI_GENERALIZATION) {
+							if (toProcessMapping.getUmlElement() == mapping.getUmlElement()) {
+								correspondingStereotypeMappings.add((StereotypedMapping) toProcessMapping);
 							}
 						} else {
-							if(mapping.getUmlElement() instanceof EClass) {
+							if (mapping.getUmlElement() instanceof EClass) {
 								List<EObject> candidates = new ArrayList<EObject>();
-								candidates.add((EClass)mapping.getUmlElement());
-								candidates.addAll(((EClass)mapping.getUmlElement()).getEAllSuperTypes());
+								candidates.add(mapping.getUmlElement());
+								candidates.addAll(((EClass) mapping.getUmlElement()).getEAllSuperTypes());
 
-								if(candidates.contains(toProcessMapping.getUmlElement()))
-									correspondingAssocationStereotypeMappings.add((StereotypedMapping)toProcessMapping);
+								if (candidates.contains(toProcessMapping.getUmlElement())) {
+									correspondingAssocationStereotypeMappings.add((StereotypedMapping) toProcessMapping);
+								}
 							}
 						}
 					}
 				}
 			}
 
-			for(StereotypedMapping correspondingStereotypeMapping : correspondingStereotypeMappings) {
-				if(correspondingStereotypeMapping.getSpecificDomainElement() instanceof ENamedElement) {
+			for (StereotypedMapping correspondingStereotypeMapping : correspondingStereotypeMappings) {
+				if (correspondingStereotypeMapping.getSpecificDomainElement() instanceof ENamedElement) {
 
-					String name = ((ENamedElement)correspondingStereotypeMapping.getSpecificDomainElement()).getName().toLowerCase();
+					String name = ((ENamedElement) correspondingStereotypeMapping.getSpecificDomainElement()).getName().toLowerCase();
 
-					//Single stereotype
+					// Single stereotype
 					List<Stereotype> combination = new ArrayList<Stereotype>();
-					combination.addAll((Collection<? extends Stereotype>)correspondingStereotypeMapping.getAppliedStereotypes());
+					combination.addAll((Collection<? extends Stereotype>) correspondingStereotypeMapping.getAppliedStereotypes());
 					result += addWrappingStereotypeMapping(combination, name, genPackage, genModel, correspondingStereotypeMapping);
 
-					//Create combination with association stereo
-					if(!correspondingAssocationStereotypeMappings.isEmpty()) {
+					// Create combination with association stereo
+					if (!correspondingAssocationStereotypeMappings.isEmpty()) {
 
-						for(int k = 1; k <= correspondingAssocationStereotypeMappings.size(); k++) {
+						for (int k = 1; k <= correspondingAssocationStereotypeMappings.size(); k++) {
 							CombinationGenerator combinaisonGenerator = new CombinationGenerator(correspondingAssocationStereotypeMappings.size(), k);
 
-							//Process each combination
-							while(combinaisonGenerator.hasMore()) {
+							// Process each combination
+							while (combinaisonGenerator.hasMore()) {
 								int[] indices = combinaisonGenerator.getNext();
 
-								//Single stereotype first
+								// Single stereotype first
 								combination = new ArrayList<Stereotype>();
-								combination.addAll((Collection<? extends Stereotype>)correspondingStereotypeMapping.getAppliedStereotypes());
-								name = ((ENamedElement)correspondingStereotypeMapping.getSpecificDomainElement()).getName().toLowerCase();
+								combination.addAll((Collection<? extends Stereotype>) correspondingStereotypeMapping.getAppliedStereotypes());
+								name = ((ENamedElement) correspondingStereotypeMapping.getSpecificDomainElement()).getName().toLowerCase();
 
-								for(int i = 0; i < indices.length; i++) {
-									combination.addAll((Collection<? extends Stereotype>)correspondingAssocationStereotypeMappings.get(indices[i]).getAppliedStereotypes());
+								for (int i = 0; i < indices.length; i++) {
+									combination.addAll((Collection<? extends Stereotype>) correspondingAssocationStereotypeMappings.get(indices[i]).getAppliedStereotypes());
 
-									if(correspondingAssocationStereotypeMappings.get(indices[i]).getSpecificDomainElement() instanceof ENamedElement) {
-										name += "_" + ((ENamedElement)correspondingAssocationStereotypeMappings.get(indices[i]).getSpecificDomainElement()).getName().toLowerCase(); //$NON-NLS-1$
+									if (correspondingAssocationStereotypeMappings.get(indices[i]).getSpecificDomainElement() instanceof ENamedElement) {
+										name += "_" + ((ENamedElement) correspondingAssocationStereotypeMappings.get(indices[i]).getSpecificDomainElement()).getName().toLowerCase(); //$NON-NLS-1$
 									} else {
 										FacadeCodeGenPlugin.log.warn(Messages.FacadeCodegenUtils_48 + correspondingAssocationStereotypeMappings.get(indices[i]).getSpecificDomainElement());
 									}
@@ -1137,17 +1140,17 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Generate the actual text for a wrapping of a combination of stereotype application
-	 * 
+	 *
 	 * @param combination
-	 *        the combination
+	 *            the combination
 	 * @param name
-	 *        the name
+	 *            the name
 	 * @param genPackage
-	 *        the gen package
+	 *            the gen package
 	 * @param genModel
-	 *        the GenModel
+	 *            the GenModel
 	 * @param correspondingStereotypeMapping
-	 *        the corresponding stereotype mapping
+	 *            the corresponding stereotype mapping
 	 * @return the string
 	 */
 	protected static String addWrappingStereotypeMapping(List<Stereotype> combination, String name, GenPackage genPackage, GenModel genModel, StereotypedMapping correspondingStereotypeMapping) {
@@ -1162,7 +1165,7 @@ public class FacadeCodegenUtils {
 		result += "return " + genPackage.getImportedPackageInterfaceName() + ".eINSTANCE.get" + getClassifierAccessorName(genModel, correspondingStereotypeMapping) + "();\n"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		result += "}\n"; //$NON-NLS-1$
 		result += "}\n"; //$NON-NLS-1$
-		for(int i = 0; i < combination.size(); i++) {
+		for (int i = 0; i < combination.size(); i++) {
 			result += "}\n"; //$NON-NLS-1$
 		}
 
@@ -1172,20 +1175,20 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Generate the text for the combination of stereotype application
-	 * 
+	 *
 	 * @param combination
-	 *        the combination
+	 *            the combination
 	 * @param name
-	 *        the name
+	 *            the name
 	 * @return the string
 	 */
 	protected static String addStereotypes(List<Stereotype> combination, String name) {
 		String result = ""; //$NON-NLS-1$
 
-		for(EObject stereotype : combination) {
-			if(stereotype instanceof Stereotype) {
-				result += "if(((org.eclipse.uml2.uml.Element)umlElement).getApplicableStereotype(\"" + ((Stereotype)stereotype).getQualifiedName() + "\") != null) {\n"; //$NON-NLS-1$ //$NON-NLS-2$
-				result += name + "_Stereotypes.add(((org.eclipse.uml2.uml.Element)umlElement).getApplicableStereotype(\"" + ((Stereotype)stereotype).getQualifiedName() + "\"));\n"; //$NON-NLS-1$ //$NON-NLS-2$
+		for (EObject stereotype : combination) {
+			if (stereotype instanceof Stereotype) {
+				result += "if(((org.eclipse.uml2.uml.Element)umlElement).getApplicableStereotype(\"" + ((Stereotype) stereotype).getQualifiedName() + "\") != null) {\n"; //$NON-NLS-1$ //$NON-NLS-2$
+				result += name + "_Stereotypes.add(((org.eclipse.uml2.uml.Element)umlElement).getApplicableStereotype(\"" + ((Stereotype) stereotype).getQualifiedName() + "\"));\n"; //$NON-NLS-1$ //$NON-NLS-2$
 
 			}
 		}
@@ -1195,13 +1198,13 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Checks if is a list of primitive types.
-	 * 
+	 *
 	 * @param genFeature
-	 *        the genFeature
+	 *            the genFeature
 	 * @return true, if is list of primitive types
 	 */
 	public static boolean isPrimtiveList(GenTypedElement genTypedElement) {
-		if(CodeGenUtil.isJavaDefaultType(genTypedElement.getListItemType())) {
+		if (CodeGenUtil.isJavaDefaultType(genTypedElement.getListItemType())) {
 			return Boolean.TRUE;
 		}
 
@@ -1210,21 +1213,21 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Checks if is primitive type.
-	 * 
+	 *
 	 * @param genFeature
-	 *        the genFeature
+	 *            the genFeature
 	 * @return true, if is primitive type
 	 */
 	public static boolean isPrimitive(GenTypedElement genTypedElement) {
-		if(isJavaDefaultType(genTypedElement.getType())) {
+		if (isJavaDefaultType(genTypedElement.getType())) {
 			return Boolean.TRUE;
 		}
 
-		if(isEcoreDefaultType(genTypedElement.getType())) {
+		if (isEcoreDefaultType(genTypedElement.getType())) {
 			return Boolean.TRUE;
 		}
 
-		if(genTypedElement.getType().startsWith("java.util.Map<")) {
+		if (genTypedElement.getType().startsWith("java.util.Map<")) {
 			return Boolean.TRUE;
 		}
 
@@ -1249,7 +1252,7 @@ public class FacadeCodegenUtils {
 	 * Returns the names of the ecore types
 	 */
 	public static synchronized Set<String> getEcoreDefaultTypes() {
-		if(ecoreDefaultTypes == null) {
+		if (ecoreDefaultTypes == null) {
 			Set<String> result = new HashSet<String>(100);
 			result.add("org.eclipse.emf.ecore.EAnnotation");
 			result.add("org.eclipse.emf.ecore.EAttribute");
@@ -1275,7 +1278,7 @@ public class FacadeCodegenUtils {
 			result.add("org.eclipse.emf.ecore.EValidator");
 			result.add("org.eclipse.emf.ecore.InternalEObject");
 
-			//ypes not directly EMF but used by EMF
+			// ypes not directly EMF but used by EMF
 			result.add("org.eclipse.emf.common.util.DiagnosticChain");
 
 
@@ -1288,7 +1291,7 @@ public class FacadeCodegenUtils {
 	 * Returns the names of the primitives and types
 	 */
 	public static synchronized Set<String> getJavaDefaultTypes() {
-		if(javaDefaultTypes == null) {
+		if (javaDefaultTypes == null) {
 			Set<String> result = new HashSet<String>(100);
 			result.add("java.lang.AbstractMethodError");
 			result.add("java.lang.ArithmeticException");
@@ -1388,25 +1391,25 @@ public class FacadeCodegenUtils {
 
 	/**
 	 * Copy the original ecore metamodel in the impl source package
-	 * 
+	 *
 	 * @param genPackage
-	 *        the gen package
+	 *            the gen package
 	 */
 	public static void copyEcore(GenPackage genPackage) {
 
 
 		GenModel genModel = genPackage.getGenModel();
 		EModelElement ecoreModelElement = genPackage.getEcoreModelElement();
-		if(ecoreModelElement != null) {
+		if (ecoreModelElement != null) {
 
 			URI originalURI = ecoreModelElement.eResource().getURI();
 			String modelDirectory = genModel.getModelDirectory();
 			String implPackage = genPackage.getClassPackageName().replaceAll("\\.", "/"); //$NON-NLS-1$ //$NON-NLS-2$
-			if(!implPackage.startsWith("/") && !modelDirectory.endsWith("/")) { //$NON-NLS-1$ //$NON-NLS-2$
+			if (!implPackage.startsWith("/") && !modelDirectory.endsWith("/")) { //$NON-NLS-1$ //$NON-NLS-2$
 				implPackage = "/" + implPackage; //$NON-NLS-1$
 			}
 			String filePath = modelDirectory + implPackage;
-			if(!filePath.endsWith("/")) { //$NON-NLS-1$
+			if (!filePath.endsWith("/")) { //$NON-NLS-1$
 				filePath += "/"; //$NON-NLS-1$
 			}
 			filePath += originalURI.lastSegment();
@@ -1415,13 +1418,13 @@ public class FacadeCodegenUtils {
 
 			try {
 
-				if(originalURI.isPlatformResource()) {
+				if (originalURI.isPlatformResource()) {
 					String platformString = originalURI.toPlatformString(true);
 					IResource resource = ResourcesPlugin.getWorkspace().getRoot().findMember(platformString);
-					if(resource instanceof IFile) {
+					if (resource instanceof IFile) {
 
 						IPath destPath = new Path(dest);
-						if(destPath.segmentCount() >= 2) {
+						if (destPath.segmentCount() >= 2) {
 							IFile destFolder = resource.getProject().getFile(destPath.removeLastSegments(1).removeFirstSegments(1));
 							IFile destFile = resource.getProject().getFile(destPath.removeFirstSegments(1));
 

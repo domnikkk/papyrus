@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,12 +20,12 @@ import org.eclipse.xtext.ui.editor.contentassist.XtextContentAssistProcessor;
 
 public class VSLContentAssistProcessor extends XtextContentAssistProcessor {
 
-	//@Inject(optional = true)
-	//private IContentProposalProvider contentProposalProvider;
-	
+	// @Inject(optional = true)
+	// private IContentProposalProvider contentProposalProvider;
+
 	@Override
 	public ICompletionProposal[] computeCompletionProposals(ITextViewer viewer, int offset) {
-		return super.computeCompletionProposals(viewer, offset) ;
+		return super.computeCompletionProposals(viewer, offset);
 	}
-	
+
 }

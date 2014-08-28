@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,6 +26,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 public class ResolveConflictsHandler
 		extends AbstractHandler {
 
+	@Override
 	public Object execute(ExecutionEvent event)
 			throws ExecutionException {
 		IDawnEditor activeEditor = Activator.getActiveDawnEditor();
@@ -34,13 +35,13 @@ public class ResolveConflictsHandler
 			// TODO: Implement real conflict resolution
 
 			if (MessageDialog
-				.openQuestion(HandlerUtil.getActiveShellChecked(event),
-					Messages.ResolveConflictsHandler_0,
-					Messages.ResolveConflictsHandler_1)) {
+					.openQuestion(HandlerUtil.getActiveShellChecked(event),
+							Messages.ResolveConflictsHandler_0,
+							Messages.ResolveConflictsHandler_1)) {
 				activeEditor.getDawnEditorSupport().rollback();
 			}
 		}
-		
+
 		return null;
 	}
 }

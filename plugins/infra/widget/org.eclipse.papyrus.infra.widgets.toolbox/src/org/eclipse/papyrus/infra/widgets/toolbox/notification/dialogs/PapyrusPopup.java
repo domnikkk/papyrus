@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,9 +38,9 @@ import org.eclipse.ui.forms.widgets.Section;
 
 /**
  * A papyrus Popup
- * 
+ *
  * @author tristan faure
- * 
+ *
  */
 public abstract class PapyrusPopup extends Dialog {
 
@@ -71,7 +71,7 @@ public abstract class PapyrusPopup extends Dialog {
 	protected Control createDialogArea(Composite parent) {
 		getShell().setText(title == null ? "" : title);
 		getShell().setImage(PapyrusImageUtils.getDefaultIcon());
-		Composite c = (Composite)super.createDialogArea(parent);
+		Composite c = (Composite) super.createDialogArea(parent);
 		c.setLayout(new FillLayout());
 		createForm(c);
 		return c;
@@ -81,13 +81,13 @@ public abstract class PapyrusPopup extends Dialog {
 	/**
 	 * Creates a form and a section
 	 * override this method to avoid form creation
-	 * 
+	 *
 	 * @param c
-	 *        , the composite container
+	 *            , the composite container
 	 */
 	protected void createForm(Composite c) {
 		ScrolledForm form = toolkit.createScrolledForm(c);
-		//		form.getBody().setLayoutData(new GridData(GridData.FILL_BOTH));
+		// form.getBody().setLayoutData(new GridData(GridData.FILL_BOTH));
 		form.getBody().setLayout(new GridLayout());
 		toolkit.decorateFormHeading(form.getForm());
 		createSection(c, form);
@@ -96,27 +96,27 @@ public abstract class PapyrusPopup extends Dialog {
 
 	/**
 	 * Sets the used notification for recovering when needed (e.g. for removal)
-	 * 
+	 *
 	 * @param notification
-	 *        the used notification
+	 *            the used notification
 	 */
 	public void setINotification(INotification notification) {
 		context.put(IContext.NOTIFICATION_OBJECT, notification);
 	}
-	
+
 	/**
 	 * Creates a section
 	 * override this method to avoid section creation
-	 * 
+	 *
 	 * @param c
-	 *        , the composite container of the form
+	 *            , the composite container of the form
 	 * @param form
-	 *        , the form container
+	 *            , the form container
 	 */
 	protected void createSection(Composite c, ScrolledForm form) {
 		Section section = toolkit.createSection(form.getBody(), PapyrusToolkit.DEFAULT_STYLE);
 		section.setText("Papyrus");
-		if(creator != null && c instanceof Composite) {
+		if (creator != null && c instanceof Composite) {
 			Composite createComposite = creator.createComposite(section, toolkit);
 			section.setClient(createComposite);
 			context.put(IContext.COMPOSITE_CREATED, createComposite);
@@ -137,9 +137,9 @@ public abstract class PapyrusPopup extends Dialog {
 
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
-		if(runnables != null && !runnables.isEmpty()) {
+		if (runnables != null && !runnables.isEmpty()) {
 			int START_AFTER_CANCEL = 2;
-			for(final NotificationRunnable r : runnables) {
+			for (final NotificationRunnable r : runnables) {
 				createButton(parent, START_AFTER_CANCEL, r.getLabel(), START_AFTER_CANCEL == 2);
 				mapForIds.put(START_AFTER_CANCEL, r);
 				START_AFTER_CANCEL++;
@@ -153,16 +153,16 @@ public abstract class PapyrusPopup extends Dialog {
 
 	@Override
 	protected void buttonPressed(int buttonId) {
-		if(buttonId != IDialogConstants.OK_ID && buttonId != IDialogConstants.CANCEL_ID) {
+		if (buttonId != IDialogConstants.OK_ID && buttonId != IDialogConstants.CANCEL_ID) {
 			NotificationRunnable run = mapForIds.get(buttonId);
-			if(run == null) {
+			if (run == null) {
 				super.buttonPressed(buttonId);
 			} else {
 				run.run(context);
 				// retrieve the return code according to the context if it is set
 				Object contextCode = context.get(IContext.ACTION_ID);
-				if(contextCode != null && contextCode instanceof Integer) {
-					setReturnCode((Integer)contextCode);
+				if (contextCode != null && contextCode instanceof Integer) {
+					setReturnCode((Integer) contextCode);
 				}
 			}
 		} else {
@@ -190,7 +190,7 @@ public abstract class PapyrusPopup extends Dialog {
 
 	/**
 	 * Gets the bounds.
-	 * 
+	 *
 	 * @return the bounds
 	 */
 	public static Rectangle getBounds() {
@@ -202,12 +202,12 @@ public abstract class PapyrusPopup extends Dialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.window.Window#getConstrainedShellBounds(org.eclipse.swt.graphics.Rectangle)
 	 */
 	@Override
 	protected Rectangle getConstrainedShellBounds(Rectangle preferredSize) {
-		//		return getBounds();
+		// return getBounds();
 		return super.getConstrainedShellBounds(preferredSize);
 	}
 

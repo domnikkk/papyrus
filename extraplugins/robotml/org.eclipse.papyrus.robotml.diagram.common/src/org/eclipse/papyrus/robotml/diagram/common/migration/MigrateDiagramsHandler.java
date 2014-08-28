@@ -35,11 +35,11 @@ public class MigrateDiagramsHandler extends AbstractHandler {
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
-		if(currentSelection.isEmpty() || !(currentSelection instanceof IStructuredSelection)) {
+		if (currentSelection.isEmpty() || !(currentSelection instanceof IStructuredSelection)) {
 			return null;
 		}
 
-		IStructuredSelection selection = (IStructuredSelection)currentSelection;
+		IStructuredSelection selection = (IStructuredSelection) currentSelection;
 
 		Object selectedElement = selection.getFirstElement();
 
@@ -47,10 +47,10 @@ public class MigrateDiagramsHandler extends AbstractHandler {
 
 
 
-		if(selectedAdapter instanceof IFile) {
-			final IFile selectedFile = (IFile)selectedAdapter;
+		if (selectedAdapter instanceof IFile) {
+			final IFile selectedFile = (IFile) selectedAdapter;
 
-			//Load the model in background and add a user information
+			// Load the model in background and add a user information
 			Job openDialogJob = new Job("Switch profile") {
 
 				@Override
@@ -69,15 +69,15 @@ public class MigrateDiagramsHandler extends AbstractHandler {
 					ViewPrototype protoDatatypeDef = null;
 					ViewPrototype protoInterfaceDef = null;
 					ViewPrototype protoComponentDef = null;
-					for(ViewPrototype proto : PolicyChecker.getCurrent().getAllPrototypes()) {
-						if(proto.getLabel().contains("RobotML Architecture")) {
+					for (ViewPrototype proto : PolicyChecker.getCurrent().getAllPrototypes()) {
+						if (proto.getLabel().contains("RobotML Architecture")) {
 							protoArchitecture = proto;
-						} else if(proto.getLabel().contains("RobotML Component")) {
+						} else if (proto.getLabel().contains("RobotML Component")) {
 							protoComponentDef = proto;
-						} else if(proto.getLabel().contains("RobotML Interface")) {
+						} else if (proto.getLabel().contains("RobotML Interface")) {
 							protoInterfaceDef = proto;
 
-						} else if(proto.getLabel().contains("RobotML Datatype")) {
+						} else if (proto.getLabel().contains("RobotML Datatype")) {
 							protoDatatypeDef = proto;
 						}
 					}
@@ -85,45 +85,45 @@ public class MigrateDiagramsHandler extends AbstractHandler {
 
 					try {
 						modelSet.loadModels(workspaceURI);
-						//do the diagrams migration
-						NotationModel notationModel = (NotationModel)modelSet.getModel(NotationModel.MODEL_ID);
-						if(notationModel != null) {
+						// do the diagrams migration
+						NotationModel notationModel = (NotationModel) modelSet.getModel(NotationModel.MODEL_ID);
+						if (notationModel != null) {
 							Resource mainNotationResource = notationModel.getResource();
 
 							Iterator<EObject> allContents = mainNotationResource.getAllContents();
 
-							while(allContents.hasNext()) {
+							while (allContents.hasNext()) {
 								EObject currentElement = allContents.next();
 
-								if(currentElement instanceof Diagram) {
+								if (currentElement instanceof Diagram) {
 									// 1. Changing the type of the diagram
-									//System.err.println(currentElement);
-									if(((Diagram)currentElement).getType().equalsIgnoreCase("architecture")) {
-										((Diagram)currentElement).setType(CompositeStructureDiagramEditPart.MODEL_ID);
-										DiagramUtils.setPrototype((Diagram)currentElement, protoArchitecture);
-										DiagramUtils.setOwner(((Diagram)currentElement), ((Diagram)currentElement).getElement());
+									// System.err.println(currentElement);
+									if (((Diagram) currentElement).getType().equalsIgnoreCase("architecture")) {
+										((Diagram) currentElement).setType(CompositeStructureDiagramEditPart.MODEL_ID);
+										DiagramUtils.setPrototype((Diagram) currentElement, protoArchitecture);
+										DiagramUtils.setOwner(((Diagram) currentElement), ((Diagram) currentElement).getElement());
 
-									} else if(((Diagram)currentElement).getType().equalsIgnoreCase("componentdef")) {
-										((Diagram)currentElement).setType(CompositeStructureDiagramEditPart.MODEL_ID);
-										DiagramUtils.setPrototype((Diagram)currentElement, protoComponentDef);
-										DiagramUtils.setOwner(((Diagram)currentElement), ((Diagram)currentElement).getElement());
+									} else if (((Diagram) currentElement).getType().equalsIgnoreCase("componentdef")) {
+										((Diagram) currentElement).setType(CompositeStructureDiagramEditPart.MODEL_ID);
+										DiagramUtils.setPrototype((Diagram) currentElement, protoComponentDef);
+										DiagramUtils.setOwner(((Diagram) currentElement), ((Diagram) currentElement).getElement());
 									}
 
-									else if(((Diagram)currentElement).getType().equalsIgnoreCase("datatypedef")) {
-										((Diagram)currentElement).setType(ModelEditPart.MODEL_ID);
-										DiagramUtils.setPrototype((Diagram)currentElement, protoDatatypeDef);
-										DiagramUtils.setOwner(((Diagram)currentElement), ((Diagram)currentElement).getElement());
+									else if (((Diagram) currentElement).getType().equalsIgnoreCase("datatypedef")) {
+										((Diagram) currentElement).setType(ModelEditPart.MODEL_ID);
+										DiagramUtils.setPrototype((Diagram) currentElement, protoDatatypeDef);
+										DiagramUtils.setOwner(((Diagram) currentElement), ((Diagram) currentElement).getElement());
 
-									} else if(((Diagram)currentElement).getType().equalsIgnoreCase("interfacedef")) {
-										((Diagram)currentElement).setType(ModelEditPart.MODEL_ID);
-										DiagramUtils.setPrototype((Diagram)currentElement, protoInterfaceDef);
-										DiagramUtils.setOwner(((Diagram)currentElement), ((Diagram)currentElement).getElement());
+									} else if (((Diagram) currentElement).getType().equalsIgnoreCase("interfacedef")) {
+										((Diagram) currentElement).setType(ModelEditPart.MODEL_ID);
+										DiagramUtils.setPrototype((Diagram) currentElement, protoInterfaceDef);
+										DiagramUtils.setOwner(((Diagram) currentElement), ((Diagram) currentElement).getElement());
 									}
 
 								}
 
 
-							}//end while
+							}// end while
 							mainNotationResource.save(null);
 
 						}

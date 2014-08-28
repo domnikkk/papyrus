@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.layers.configmodel.layersconfig.impl;
 
 import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -37,6 +38,7 @@ public class LayerOperatorConfigImpl extends InstanciableElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LayerOperatorConfigImpl() {
@@ -46,6 +48,7 @@ public class LayerOperatorConfigImpl extends InstanciableElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -55,11 +58,11 @@ public class LayerOperatorConfigImpl extends InstanciableElementImpl implements 
 
 	/**
 	 * Create the requested descriptor
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl#createLayersOperatorDescriptor()
 	 *
 	 * @return
-	 * @throws NotFoundException 
+	 * @throws NotFoundException
 	 * @generated NOT
 	 */
 	@Override
@@ -67,33 +70,33 @@ public class LayerOperatorConfigImpl extends InstanciableElementImpl implements 
 
 		// Create instance of layer
 		EClassifier classifier = LayersPackage.eINSTANCE.getEClassifier(getClassname());
-		if(classifier == null) {
+		if (classifier == null) {
 			throw new InstanciationException("Can't create LayerOperatorDescriptor for name '" + getClassname() + "'");
 		}
-		LayerOperatorDescriptor res = (LayerOperatorDescriptor)LayersFactory.eINSTANCE.create((EClass)classifier);
+		LayerOperatorDescriptor res = (LayerOperatorDescriptor) LayersFactory.eINSTANCE.create((EClass) classifier);
 
 		// Set values
 		res.setName(getName());
-		
+
 		return res;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case LayersconfigPackage.LAYER_OPERATOR_CONFIG___CREATE_LAYERS_OPERATOR_DESCRIPTOR:
-				try {
-					return createLayersOperatorDescriptor();
-				}
-				catch (Throwable throwable) {
-					throw new InvocationTargetException(throwable);
-				}
+		case LayersconfigPackage.LAYER_OPERATOR_CONFIG___CREATE_LAYERS_OPERATOR_DESCRIPTOR:
+			try {
+				return createLayersOperatorDescriptor();
+			} catch (Throwable throwable) {
+				throw new InvocationTargetException(throwable);
+			}
 		}
 		return super.eInvoke(operationID, arguments);
 	}
-} //LayerOperatorConfigImpl
+} // LayerOperatorConfigImpl

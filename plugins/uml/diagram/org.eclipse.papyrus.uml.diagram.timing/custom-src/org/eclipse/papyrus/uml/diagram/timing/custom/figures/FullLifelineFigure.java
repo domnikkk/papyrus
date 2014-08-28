@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,14 +47,15 @@ public class FullLifelineFigure extends LifelineFigure {
 		};
 		this.lifelineDataContainerFigure.setLayoutManager(new AbstractLayout() {
 
+			@Override
 			public void layout(final IFigure container) {
 				final Rectangle clientArea = container.getClientArea();
 				final List<?> children = container.getChildren();
-				for(int i = 0; i < children.size(); i++) {
-					final IFigure child = (IFigure)children.get(i);
-					if(child == getChronogramContainerFigure()) {
+				for (int i = 0; i < children.size(); i++) {
+					final IFigure child = (IFigure) children.get(i);
+					if (child == getChronogramContainerFigure()) {
 						child.setBounds(new Rectangle(clientArea.x, clientArea.y, clientArea.width, clientArea.height - Constants.TIME_RULER_HEIGHT));
-					} else if(child == getTimeRulerContainerFigure()) {
+					} else if (child == getTimeRulerContainerFigure()) {
 						child.setBounds(new Rectangle(clientArea.x, clientArea.y + clientArea.height - Constants.TIME_RULER_HEIGHT, clientArea.width, Constants.TIME_RULER_HEIGHT));
 					}
 				}
@@ -80,14 +81,15 @@ public class FullLifelineFigure extends LifelineFigure {
 		this.lifelineDataContainerFigure.add(this.chronogramContainerFigure);
 		this.chronogramContainerFigure.setLayoutManager(new AbstractLayout() {
 
+			@Override
 			public void layout(final IFigure container) {
 				final Rectangle clientArea = container.getClientArea();
 				final List<?> children = container.getChildren();
-				for(int i = 0; i < children.size(); i++) {
-					final IFigure child = (IFigure)children.get(i);
-					if(child == getStateDefinitionContainerFigure()) {
+				for (int i = 0; i < children.size(); i++) {
+					final IFigure child = (IFigure) children.get(i);
+					if (child == getStateDefinitionContainerFigure()) {
 						child.setBounds(new Rectangle(clientArea.x, clientArea.y, Constants.STATE_DEFINITIONS_WIDTH, clientArea.height));
-					} else if(child == getTimelineContainerFigure()) {
+					} else if (child == getTimelineContainerFigure()) {
 						child.setBounds(new Rectangle(clientArea.x + Constants.STATE_DEFINITIONS_WIDTH, clientArea.y, clientArea.width - Constants.STATE_DEFINITIONS_WIDTH, clientArea.height));
 					}
 				}

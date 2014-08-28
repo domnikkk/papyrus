@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @author tfaure
- * 
+ *
  */
 public class ObjectFlowListener extends AbstractPapyrusModifcationTriggerListener {
 
@@ -44,16 +44,16 @@ public class ObjectFlowListener extends AbstractPapyrusModifcationTriggerListene
 	@Override
 	protected CompositeCommand getModificationCommand(Notification notif) {
 		CompositeCommand cc = null;
-		if(notif.getNewValue() instanceof ObjectFlow && notif.getFeature() instanceof EReference && ((EReference)notif.getFeature()).isContainment()) {
+		if (notif.getNewValue() instanceof ObjectFlow && notif.getFeature() instanceof EReference && ((EReference) notif.getFeature()).isContainment()) {
 			cc = new CompositeCommand("Modify Flow");
-			final ObjectFlow object = (ObjectFlow)notif.getNewValue();
-			TransactionalEditingDomain domain = (TransactionalEditingDomain)AdapterFactoryEditingDomain.getEditingDomainFor(object);
-			if(object.getGuard() == null) {
+			final ObjectFlow object = (ObjectFlow) notif.getNewValue();
+			TransactionalEditingDomain domain = (TransactionalEditingDomain) AdapterFactoryEditingDomain.getEditingDomainFor(object);
+			if (object.getGuard() == null) {
 				LiteralBoolean bool = UMLFactory.eINSTANCE.createLiteralBoolean();
 				bool.setValue(true);
 				cc.compose(new EMFtoGMFCommandWrapper(SetCommand.create(domain, object, UMLPackage.Literals.ACTIVITY_EDGE__GUARD, bool)));
 			}
-			if(object.getWeight() == null) {
+			if (object.getWeight() == null) {
 				LiteralInteger literalInteger = UMLFactory.eINSTANCE.createLiteralInteger();
 				literalInteger.setValue(1);
 				cc.compose(new EMFtoGMFCommandWrapper(SetCommand.create(domain, object, UMLPackage.Literals.ACTIVITY_EDGE__WEIGHT, literalInteger)));

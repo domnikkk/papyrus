@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * An extensible LabelProvider for the Properties View header. It is based
  * on the papyrus {@link LabelProviderService}
- * 
+ *
  * @author Camille Letavernier
  */
 public class PropertiesHeaderLabelProvider extends LabelProvider {

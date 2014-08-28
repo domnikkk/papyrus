@@ -71,7 +71,7 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordAbstractPanel#getSelectedElement()
 	 */
 	@Override
@@ -81,14 +81,14 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordAbstractPanel#setSelectedElement(java.lang.Element)
 	 */
 	@Override
 	public void setSelectedElement(Element newElement) {
 		super.setSelectedElement(newElement);
-		if(newElement instanceof Parameter) {
-			this.selectedParameter = (Parameter)newElement;
+		if (newElement instanceof Parameter) {
+			this.selectedParameter = (Parameter) newElement;
 		}
 		else {
 			throw new RuntimeException("bad selection: " + newElement + " should be an uml2 Parameter");
@@ -97,96 +97,97 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#createContent()
 	 */
+	@Override
 	public Control createContent() {
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// Create save reset buttons with superclass method
-		///////////////////////////////////////////////////////////////////////    	
+		// /////////////////////////////////////////////////////////////////////
 		createSaveResetButtons();
 
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// Create checkboxes
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		isConst = createButton("isConst", this, null);
 
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// Add checkboxes listeners
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		addStereotypeSelectionListener(isConst, "Const");
 
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 		// Pointer declaration
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 		docPtr = createDocument();
 		groupPtr = createGroup(
-			this
-			, "Pointer declaration"
-			, buttonSave
-			, null
-			, false
-			, 0
-			, 25
-			, false);
+				this
+				, "Pointer declaration"
+				, buttonSave
+				, null
+				, false
+				, 0
+				, 25
+				, false);
 
 		// Use CDT CEditor coloration
 		viewerPtr = createViewer(docPtr, groupPtr);
 
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 		// Pointer declaration
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 		docRef = createDocument();
 		groupRef = createGroup(
-			this
-			, "Reference declaration"
-			, buttonSave
-			, groupPtr
-			, false
-			, 0
-			, 50
-			, false);
+				this
+				, "Reference declaration"
+				, buttonSave
+				, groupPtr
+				, false
+				, 0
+				, 50
+				, false);
 
 		// Use CDT CEditor coloration
 		viewerRef = createViewer(docRef, groupRef);
 
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 		// Pointer declaration
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 		docDefault = createDocument();
 		groupDefault = createGroup(
-			this
-			, "Default value"
-			, buttonSave
-			, groupRef
-			, false
-			, 0
-			, 75
-			, false);
+				this
+				, "Default value"
+				, buttonSave
+				, groupRef
+				, false
+				, 0
+				, 75
+				, false);
 
 		// Use CDT CEditor coloration
 		viewerDefault = createViewer(docDefault, groupDefault);
 
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 		// Pointer declaration
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 		docArray = createDocument();
 		groupArray = createGroup(
-			this
-			, "Array value ([...])"
-			, buttonSave
-			, groupDefault
-			, true
-			, 0
-			, 0
-			, false);
+				this
+				, "Array value ([...])"
+				, buttonSave
+				, groupDefault
+				, true
+				, 0
+				, 0
+				, false);
 
 		// Use CDT CEditor coloration
 		viewerArray = createViewer(docArray, groupArray);
 
-		///////////////////////////////////////////////////////////////////////			
+		// /////////////////////////////////////////////////////////////////////
 		// Return control
-		///////////////////////////////////////////////////////////////////////	
+		// /////////////////////////////////////////////////////////////////////
 
 		return this;
 	}
@@ -194,19 +195,21 @@ public class CppParameterPanel extends CppAbstractPanel {
 	/**
 	 * Saves the body for an '<code>Parameter</code>'
 	 */
+	@Override
 	public void save()
 	{
-		if(selectedParameter == null) {
+		if (selectedParameter == null) {
 			/* Log.debug("saveBody : selectedParameter is null"); */
 		}
 		else {
 			CommandSupport.exec("C++ parameter save", new Runnable() {
 
+				@Override
 				public void run()
 				{
 					// Treat Pointer
 					String newPtr = docPtr.get();
-					if(newPtr.equals("")) {
+					if (newPtr.equals("")) {
 						StereotypeUtil.unapply(selectedParameter, Ptr.class);
 					}
 					else {
@@ -215,7 +218,7 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 					// Treat Reference
 					String newRef = docRef.get();
-					if(newRef.equals("")) {
+					if (newRef.equals("")) {
 						StereotypeUtil.unapply(selectedParameter, Ref.class);
 					}
 					else {
@@ -228,7 +231,7 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 					// Treat Array
 					String newArray = docArray.get();
-					if(newArray.equals("")) {
+					if (newArray.equals("")) {
 						StereotypeUtil.unapply(selectedParameter, Array.class);
 					}
 					else {
@@ -242,12 +245,12 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordAbstractPanel#refreshPanel()
 	 */
 	@Override
 	protected void refreshPanel() {
-		if(selectedParameter != null) {
+		if (selectedParameter != null) {
 			// Const
 
 			isConst.setSelection(StereotypeUtil.isApplied(selectedParameter, Const.class));
@@ -269,12 +272,12 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 		boolean boxState = isConst.getSelection();
 
-		if(boxState) {
-			if(!StereotypeUtil.isApplied(selectedParameter, Const.class)) {
+		if (boxState) {
+			if (!StereotypeUtil.isApplied(selectedParameter, Const.class)) {
 				StereotypeUtil.apply(selectedParameter, Const.class);
 			}
 		} else {
-			if(StereotypeUtil.isApplied(selectedParameter, Const.class)) {
+			if (StereotypeUtil.isApplied(selectedParameter, Const.class)) {
 				StereotypeUtil.unapply(selectedParameter, Const.class);
 			}
 		}
@@ -282,9 +285,10 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#entryAction()
 	 */
+	@Override
 	public void entryAction() {
 		super.entryAction();
 		reset();
@@ -292,33 +296,33 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordAbstractPanel#checkModifications()
 	 */
 	@Override
 	public boolean checkModifications() {
 		String ptrValue = StereotypeUtil.isApplied(selectedParameter, Ptr.class) ? "*" : "";
-		if(!docPtr.get().equals(ptrValue)) {
+		if (!docPtr.get().equals(ptrValue)) {
 			return true;
 		}
 
 		String refValue = StereotypeUtil.isApplied(selectedParameter, Ref.class) ? "&" : "";
-		if(!docRef.get().equals(refValue)) {
+		if (!docRef.get().equals(refValue)) {
 			return true;
 		}
 
 		String defaultValue = selectedParameter.getDefault();
-		if(defaultValue == null) {
-			if(!docDefault.get().equals("")) {
+		if (defaultValue == null) {
+			if (!docDefault.get().equals("")) {
 				return true;
 			}
 		}
-		else if(!docDefault.get().equals(defaultValue)) {
+		else if (!docDefault.get().equals(defaultValue)) {
 			return true;
 		}
 
 		String arrayValue = StereotypeUtil.isApplied(selectedParameter, Array.class) ? "[]" : "";
-		if(!docArray.get().equals(arrayValue)) {
+		if (!docArray.get().equals(arrayValue)) {
 			return true;
 		}
 		return false;
@@ -330,6 +334,7 @@ public class CppParameterPanel extends CppAbstractPanel {
 		// Check button changes
 		CommandSupport.exec("C++ parameter update", new Runnable() {
 
+			@Override
 			public void run()
 			{
 				checkConst();

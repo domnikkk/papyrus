@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Generalization;
 
@@ -28,7 +29,7 @@ import org.eclipse.uml2.uml.Generalization;
  * This re-orient command is adapted from re-orient command generated
  * for {@link Generalization} in the Composite Structure Diagram.
  * </pre>
- * 
+ *
  * @generated
  */
 public class GeneralizationReorientCommand extends EditElementCommand {
@@ -61,17 +62,18 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(!(getElementToEdit() instanceof Generalization)) {
+		if (!(getElementToEdit() instanceof Generalization)) {
 			return false;
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
-		
+
 		return false;
 	}
 
@@ -79,16 +81,16 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		
-		if(!(newEnd instanceof Classifier)) {
+
+		if (!(newEnd instanceof Classifier)) {
 			return false;
 		}
-		
+
 		if (newEnd == getLink().getGeneral()) {
 			return false;
 		}
-		
-		if(!(getLink().eContainer() instanceof Classifier)) {
+
+		if (!(getLink().eContainer() instanceof Classifier)) {
 			return false;
 		}
 		return true;
@@ -98,33 +100,34 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		
-		if(!(newEnd instanceof Classifier)) {
+
+		if (!(newEnd instanceof Classifier)) {
 			return false;
 		}
-		
+
 		if (newEnd == getLink().getSpecific()) {
 			return false;
 		}
-		
-		if(!(getLink().eContainer() instanceof Classifier)) {
+
+		if (!(getLink().eContainer() instanceof Classifier)) {
 			return false;
 		}
-		
+
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -150,34 +153,34 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected Generalization getLink() {
-		return (Generalization)getElementToEdit();
+		return (Generalization) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Classifier getOldSource() {
-		return (Classifier)oldEnd;
+		return (Classifier) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Classifier getNewSource() {
-		return (Classifier)newEnd;
+		return (Classifier) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Classifier getOldTarget() {
-		return (Classifier)oldEnd;
+		return (Classifier) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Classifier getNewTarget() {
-		return (Classifier)newEnd;
+		return (Classifier) newEnd;
 	}
 }

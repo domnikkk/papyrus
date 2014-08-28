@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *  CEA LIST - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 434993
  *
@@ -23,8 +23,8 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.sysml.diagram.parametric.Activator;
 import org.eclipse.papyrus.sysml.diagram.parametric.tests.utils.Constants;
 import org.eclipse.papyrus.sysml.diagram.parametric.tests.utils.EditorUtils;

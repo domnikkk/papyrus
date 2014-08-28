@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
  * <!-- begin-user-doc -->
  * The <b>Resource </b> associated with the package.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.util.OperatorsResourceFactoryImpl
  * @generated
  */
@@ -21,11 +22,13 @@ public class OperatorsResourceImpl extends XMLResourceImpl {
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param uri the URI of the new resource.
+	 *
+	 * @param uri
+	 *            the URI of the new resource.
 	 * @generated
 	 */
 	public OperatorsResourceImpl(URI uri) {
 		super(uri);
 	}
 
-} //OperatorsResourceImpl
+} // OperatorsResourceImpl

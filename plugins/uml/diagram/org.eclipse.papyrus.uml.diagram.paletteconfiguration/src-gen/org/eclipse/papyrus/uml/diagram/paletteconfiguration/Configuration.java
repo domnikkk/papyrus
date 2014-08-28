@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration#getId <em>Id</em>}</li>
- *   <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration#getLabel <em>Label</em>}</li>
- *   <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration#getIcon <em>Icon</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration#getId <em>Id</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration#getLabel <em>Label</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration#getIcon <em>Icon</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,6 +35,7 @@ public interface Configuration extends EObject {
 	 * <!-- begin-model-doc -->
 	 * unique identifier of the configuration, used by the tool to retrieve the configuration
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(String)
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getConfiguration_Id()
@@ -47,7 +48,9 @@ public interface Configuration extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Id</em>' attribute.
 	 * @see #getId()
 	 * @generated
 	 */
@@ -60,6 +63,7 @@ public interface Configuration extends EObject {
 	 * <!-- begin-model-doc -->
 	 * label of the configuration, used only for display
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Label</em>' attribute.
 	 * @see #setLabel(String)
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getConfiguration_Label()
@@ -72,7 +76,9 @@ public interface Configuration extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration#getLabel <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Label</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Label</em>' attribute.
 	 * @see #getLabel()
 	 * @generated
 	 */
@@ -85,6 +91,7 @@ public interface Configuration extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Description of the configuration.
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getConfiguration_Description()
@@ -97,7 +104,9 @@ public interface Configuration extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -107,10 +116,10 @@ public interface Configuration extends EObject {
 	 * Returns the value of the '<em><b>Icon</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Icon</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Icon</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Icon</em>' containment reference.
 	 * @see #setIcon(IconDescriptor)
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getConfiguration_Icon()
@@ -123,7 +132,9 @@ public interface Configuration extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration#getIcon <em>Icon</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Icon</em>' containment reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Icon</em>' containment reference.
 	 * @see #getIcon()
 	 * @generated
 	 */

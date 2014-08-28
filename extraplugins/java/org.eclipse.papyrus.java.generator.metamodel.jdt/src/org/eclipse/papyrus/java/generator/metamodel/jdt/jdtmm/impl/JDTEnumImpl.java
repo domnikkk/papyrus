@@ -9,7 +9,7 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
  *****************************************************************************/
@@ -23,7 +23,6 @@
 package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTEnum;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
 
@@ -41,6 +40,7 @@ public class JDTEnumImpl extends JDTTypeImpl implements JDTEnum {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTEnumImpl() {
@@ -50,6 +50,7 @@ public class JDTEnumImpl extends JDTTypeImpl implements JDTEnum {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -57,4 +58,4 @@ public class JDTEnumImpl extends JDTTypeImpl implements JDTEnum {
 		return JdtmmPackage.Literals.JDT_ENUM;
 	}
 
-} //JDTEnumImpl
+} // JDTEnumImpl

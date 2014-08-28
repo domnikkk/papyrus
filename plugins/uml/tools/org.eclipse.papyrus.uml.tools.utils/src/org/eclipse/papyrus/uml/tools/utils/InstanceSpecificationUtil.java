@@ -20,38 +20,38 @@ import org.eclipse.uml2.uml.InstanceSpecification;
 
 /**
  * util class to display name of instancespecification
- * 
+ *
  */
 public class InstanceSpecificationUtil {
 
 	/**
 	 * return the custom label of the operation, given UML2 specification and a custom style.
-	 * 
+	 *
 	 * @param style
-	 *        the integer representing the style of the label
-	 * 
+	 *            the integer representing the style of the label
+	 *
 	 * @return the string corresponding to the label of the operation
 	 */
 	public static String getCustomLabel(InstanceSpecification instance, Collection<String> maskValues) {
 		StringBuffer buffer = new StringBuffer();
 
 		// name
-		if(maskValues.contains(ICustomAppearance.DISP_NAME)) {
+		if (maskValues.contains(ICustomAppearance.DISP_NAME)) {
 			buffer.append(NamedElementUtil.getName(instance));
 		}
 
 		// classifier
-		if(maskValues.contains(ICustomAppearance.DISP_TYPE)) {
-			if(!getTypesAsString(instance).equals("")) {
+		if (maskValues.contains(ICustomAppearance.DISP_TYPE)) {
+			if (!getTypesAsString(instance).equals("")) {
 				buffer.append(": ");
 				buffer.append(getTypesAsString(instance));
 			}
 		}
 
-		//Workaround: empty label leads to invalid layout.
-		//FIXME: Fix the layout instead
-		if(buffer.length() == 0) {
-			buffer.append(" "); //Add a whitespace to avoid layout issues
+		// Workaround: empty label leads to invalid layout.
+		// FIXME: Fix the layout instead
+		if (buffer.length() == 0) {
+			buffer.append(" "); // Add a whitespace to avoid layout issues
 		}
 		//
 
@@ -60,20 +60,20 @@ public class InstanceSpecificationUtil {
 
 	/**
 	 * Returns the list of classifier for an instance specification as a string
-	 * 
+	 *
 	 * @return a string containing all classifier separated by commas
 	 */
 	private static String getTypesAsString(InstanceSpecification instance) {
 		StringBuffer typeString = new StringBuffer();
 		Iterator<Classifier> classifierIterator = instance.getClassifiers().iterator();
 		boolean firstParameter = true;
-		while(classifierIterator.hasNext()) {
+		while (classifierIterator.hasNext()) {
 			Classifier classifier = classifierIterator.next();
 
 			// get the label for this Classifier
 			String classifierName = NamedElementUtil.getName(classifier);
-			if(!classifierName.trim().equals("")) {
-				if(!firstParameter) {
+			if (!classifierName.trim().equals("")) {
+				if (!firstParameter) {
 					typeString.append(", ");
 				}
 				typeString.append(classifierName);

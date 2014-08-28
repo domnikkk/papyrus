@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -72,7 +72,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 /**
  * Select container rules, either from a list of globally defined rules or from
  * local rules which may be created "on the fly" by this dialog.
- * 
+ *
  * TODO: extend rule application to instances (problematic, since rules
  * transformation is done on type level)
  */
@@ -119,7 +119,7 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 		m_instance = null;
 		m_feature = null;
 		m_model = PackageUtil.getUserModel(from);
-		if(m_model == null) {
+		if (m_model == null) {
 			return false;
 		}
 		return checkAndGetInstances();
@@ -140,17 +140,17 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 		m_feature = feature;
 		m_model = PackageUtil.getUserModel(from);
 		m_instance = null;
-		if(feature instanceof Connector) {
+		if (feature instanceof Connector) {
 			org.eclipse.papyrus.FCM.Connector fcmConn = UMLUtil.getStereotypeApplication(feature,
-				org.eclipse.papyrus.FCM.Connector.class);
-			if((fcmConn != null) && (fcmConn.getIc() != null)) {
+					org.eclipse.papyrus.FCM.Connector.class);
+			if ((fcmConn != null) && (fcmConn.getIc() != null)) {
 				m_component = fcmConn.getIc().getBase_Class();
 				return checkAndGetInstances();
 			}
-		} else if(feature instanceof Property) {
-			Type type = ((Property)feature).getType();
-			if(type instanceof Class) {
-				m_component = (Class)type;
+		} else if (feature instanceof Property) {
+			Type type = ((Property) feature).getType();
+			if (type instanceof Class) {
+				m_component = (Class) type;
 				return checkAndGetInstances();
 			}
 		}
@@ -161,48 +161,49 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 	 * A filter class that selects instances associated with the selected feature or component
 	 */
 	class InstanceFilter implements ElementFilter {
-				
+
 		private String featureCandidateName;
-		
+
+		@Override
 		public boolean acceptElement(Element element) {
-			if(element instanceof InstanceSpecification) {
-				InstanceSpecification instance = (InstanceSpecification)element;
-				if(m_feature instanceof Property) {
+			if (element instanceof InstanceSpecification) {
+				InstanceSpecification instance = (InstanceSpecification) element;
+				if (m_feature instanceof Property) {
 					EList<Slot> slots = DepUtils.getReferencingSlots(instance);
 					for (Slot slot : slots) {
-						if(slot.getDefiningFeature() == m_feature) {
+						if (slot.getDefiningFeature() == m_feature) {
 							return true;
 						}
 					}
 				}
-				else if(m_feature instanceof Connector) {
+				else if (m_feature instanceof Connector) {
 					// Connector instances cannot be found via a slot. Since a connector is not a structural feature,
 					// it cannot be referenced via the "definingFeature" property of a slot. Therefore, the deployment
 					// plan creation (@see DepCreation.createDepPlan) simply omits slots, but still creates instances
 					// for the interaction components referenced by an FCM connector.
 					// TODO: the following code relies on specific order of instances and might not always work.
 					Element owner = m_feature.getOwner();
-					if(DepUtils.getImplementation(instance) == owner) {
+					if (DepUtils.getImplementation(instance) == owner) {
 						// instance is for owner of feature: examine name
 						featureCandidateName = instance.getName() + "." + m_feature.getName(); //$NON-NLS-1$
 					}
-					else if(featureCandidateName != null) {
-						if(featureCandidateName.equals(instance.getName())) {
+					else if (featureCandidateName != null) {
+						if (featureCandidateName.equals(instance.getName())) {
 							return true;
 						}
 					}
-				} else if(DepUtils.getImplementation(instance) == m_component) {
+				} else if (DepUtils.getImplementation(instance) == m_component) {
 					return true;
 				}
 			}
 			return false;
 		}
 	}
-	
-	
+
+
 	/**
 	 * retrieve the instance list. Returns false, if no deployment plan could be found.
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean checkAndGetInstances() {
@@ -210,24 +211,27 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 		m_instanceList = new BasicEList<InstanceSpecification>();
 
 		ElementFilter filter = new InstanceFilter();
-		DepUtils.getAllInstances(m_model, m_instanceList, filter);		
-		
-		if(m_instanceList.size() == 0) {
+		DepUtils.getAllInstances(m_model, m_instanceList, filter);
+
+		if (m_instanceList.size() == 0) {
 			Shell shell = new Shell();
-			if(DepPlanUtils.getAllDepPlans(m_model).size() == 0) {
+			if (DepPlanUtils.getAllDepPlans(m_model).size() == 0) {
 				MessageDialog.openInformation(shell, "Instance configuration",
-					"No deployment plans are defined. Create a deployment plan before configuring instances");
+						"No deployment plans are defined. Create a deployment plan before configuring instances");
 				return false;
 			}
-			else if(MessageDialog.openConfirm(shell, "Instance configuration",
-				"The list of available instances is empty. Synchronize deployment plans?")) {
+			else if (MessageDialog.openConfirm(shell, "Instance configuration",
+					"The list of available instances is empty. Synchronize deployment plans?")) {
 				DepPlanSync.syncAllDepPlans(m_model);
 				visitedPackages = new BasicEList<Package>();
 				DepUtils.getAllInstances(m_model, m_instanceList, filter);
-				
-				if(m_instanceList.size() == 0) {
-					MessageDialog.openInformation(shell, "Instance configuration",
-						"There are still no instances available\n. Check whether you created already a deployment plan for your system. Check as well, if the parts in your a composite use \"composite\" as aggregation kind. (Results of deployment plan synchronizations will be unrolled)");
+
+				if (m_instanceList.size() == 0) {
+					MessageDialog
+							.openInformation(
+									shell,
+									"Instance configuration",
+									"There are still no instances available\n. Check whether you created already a deployment plan for your system. Check as well, if the parts in your a composite use \"composite\" as aggregation kind. (Results of deployment plan synchronizations will be unrolled)");
 					return false;
 				}
 			}
@@ -238,12 +242,14 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 	/**
 	 * @see SelectionStatusDialog#computeResult()
 	 */
+	@Override
 	protected void computeResult() {
 		// nothing to do
 	}
 
+	@Override
 	public Control createDialogArea(Composite parent) {
-		Composite contents = (Composite)super.createDialogArea(parent);
+		Composite contents = (Composite) super.createDialogArea(parent);
 		// (parent, "Container rules", "Avail. extensions/interceptors");
 
 		createInstanceSelectionGroup(contents);
@@ -288,27 +294,33 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 		fInstanceList.setLabelProvider(new InstanceLabelProvider());
 		fInstanceList.setContentProvider(new ITreeContentProvider() {
 
+			@Override
 			public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 			}
 
+			@Override
 			public void dispose() {
 			}
 
+			@Override
 			public boolean hasChildren(Object element) {
 				return getChildren(element).length > 0;
 			}
 
+			@Override
 			public Object getParent(Object element) {
 				return null;
 			}
 
+			@Override
 			public Object[] getElements(Object inputElement) {
-				return (Object[])inputElement;
+				return (Object[]) inputElement;
 			}
 
+			@Override
 			public Object[] getChildren(Object parentElement) {
-				if(parentElement instanceof InstanceSpecification) {
-					return DepUtils.getContainedInstances((InstanceSpecification)parentElement).toArray();
+				if (parentElement instanceof InstanceSpecification) {
+					return DepUtils.getContainedInstances((InstanceSpecification) parentElement).toArray();
 				}
 				return new Object[0];
 			}
@@ -317,14 +329,15 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 		fInstanceList.setInput(m_instanceList.toArray());
 		fInstanceList.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				ISelection selection = fInstanceList.getSelection();
-				if(selection instanceof StructuredSelection) {
-					Object[] selected = ((StructuredSelection)selection)
-						.toArray();
-					if((selected.length == 1)
-						&& (selected[0] instanceof InstanceSpecification)) {
-						m_instance = (InstanceSpecification)selected[0];
+				if (selection instanceof StructuredSelection) {
+					Object[] selected = ((StructuredSelection) selection)
+							.toArray();
+					if ((selected.length == 1)
+							&& (selected[0] instanceof InstanceSpecification)) {
+						m_instance = (InstanceSpecification) selected[0];
 						Classifier cl = DepUtils.getClassifier(m_instance);
 						fPropertyList.setInput(getConfigAttributes(cl).toArray());
 						selectProperty(m_currentAttribute);
@@ -332,9 +345,9 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 				}
 			}
 		});
-		if(m_instance != null) {
+		if (m_instance != null) {
 			int index = m_instanceList.indexOf(m_instance);
-			if(index != -1) {
+			if (index != -1) {
 				TreeItem treeItem = fInstanceList.getTree().getItem(index);
 				fInstanceList.getTree().setSelection(treeItem);
 			}
@@ -360,20 +373,21 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 		fPropertyList.setContentProvider(new ArrayContentProvider());
 		fPropertyList.setInput(getConfigAttributes(m_component).toArray());
 		fPropertyList
-			.addSelectionChangedListener(new ISelectionChangedListener() {
+				.addSelectionChangedListener(new ISelectionChangedListener() {
 
-				public void selectionChanged(SelectionChangedEvent event) {
-					ISelection selection = fPropertyList.getSelection();
-					if(selection instanceof StructuredSelection) {
-						Object[] selected = ((StructuredSelection)selection)
-							.toArray();
-						if((selected.length == 1)
-							&& (selected[0] instanceof Property)) {
-							selectProperty((Property)selected[0]);
+					@Override
+					public void selectionChanged(SelectionChangedEvent event) {
+						ISelection selection = fPropertyList.getSelection();
+						if (selection instanceof StructuredSelection) {
+							Object[] selected = ((StructuredSelection) selection)
+									.toArray();
+							if ((selected.length == 1)
+									&& (selected[0] instanceof Property)) {
+								selectProperty((Property) selected[0]);
+							}
 						}
 					}
-				}
-			});
+				});
 
 		fValueLabel = new Label(instanceConfigurationGroup, SWT.NONE);
 
@@ -390,39 +404,41 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 		fValue.setLayoutData(span2);
 		fValue.addFocusListener(new FocusListener() {
 
+			@Override
 			public void focusLost(FocusEvent e) {
 				// store value, once focus is lost (different element is
 				// selected)
 				String valueStr = fValue.getText();
 				Slot valueSlot = null;
-				if(m_instance == null) {
+				if (m_instance == null) {
 					// no instance has been selected
 					// (field should be inactive, if not selected)
 					return;
 				}
-				for(Slot slot : m_instance.getSlots()) {
-					if(slot.getDefiningFeature() == m_currentAttribute) {
+				for (Slot slot : m_instance.getSlots()) {
+					if (slot.getDefiningFeature() == m_currentAttribute) {
 						valueSlot = slot;
 					}
 				}
-				if(valueSlot == null) {
+				if (valueSlot == null) {
 					// slot does not exist yet, create
 					valueSlot = DepCreation.createSlotForConfigProp(m_instance,
-						m_currentAttribute);
+							m_currentAttribute);
 				}
-				for(ValueSpecification value : valueSlot.getValues()) {
-					if(value instanceof LiteralString) {
-						((LiteralString)value).setValue(valueStr);
-					} else if(value instanceof LiteralInteger) {
-						((LiteralInteger)value).setValue(Integer
-							.parseInt(valueStr));
-					} else if(value instanceof LiteralBoolean) {
-						((LiteralBoolean)value).setValue(Boolean
-							.parseBoolean(valueStr));
+				for (ValueSpecification value : valueSlot.getValues()) {
+					if (value instanceof LiteralString) {
+						((LiteralString) value).setValue(valueStr);
+					} else if (value instanceof LiteralInteger) {
+						((LiteralInteger) value).setValue(Integer
+								.parseInt(valueStr));
+					} else if (value instanceof LiteralBoolean) {
+						((LiteralBoolean) value).setValue(Boolean
+								.parseBoolean(valueStr));
 					}
 				}
 			}
 
+			@Override
 			public void focusGained(FocusEvent e) {
 			}
 		});
@@ -439,7 +455,7 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 		span2.heightHint = 80;
 
 		fDescription = new Text(instanceConfigurationGroup, SWT.NONE | SWT.WRAP
-			| SWT.V_SCROLL | SWT.READ_ONLY);
+				| SWT.V_SCROLL | SWT.READ_ONLY);
 		fDescription.setLayoutData(span2);
 		// createMessageArea (ruleInfoGroup);
 		instanceConfigurationGroup.pack();
@@ -448,33 +464,33 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 
 	/**
 	 * Select a rule, i.e. update the visual representation from the rule
-	 * 
+	 *
 	 * @param rule
 	 */
 	protected void selectProperty(Property attribute) {
 		m_currentAttribute = attribute;
-		if((attribute == null) || (fValue == null)) {
+		if ((attribute == null) || (fValue == null)) {
 			setEnabled(false);
 			return;
 		}
 		setEnabled(true);
 		fDescription.setText(Description.getDescription(attribute, "not available"));
 		fValueLabel.setText(getValueLabel(attribute));
-		for(Slot slot : m_instance.getSlots()) {
-			if(slot.getDefiningFeature() == m_currentAttribute) {
-				for(ValueSpecification value : slot.getValues()) {
-					if(value instanceof LiteralInteger) {
-						Integer intVal = ((LiteralInteger)value).getValue();
+		for (Slot slot : m_instance.getSlots()) {
+			if (slot.getDefiningFeature() == m_currentAttribute) {
+				for (ValueSpecification value : slot.getValues()) {
+					if (value instanceof LiteralInteger) {
+						Integer intVal = ((LiteralInteger) value).getValue();
 						fValue.setText(intVal.toString());
 						return;
 					}
-					else if(value instanceof LiteralBoolean) {
-						Boolean boolVal = ((LiteralBoolean)value).booleanValue();
+					else if (value instanceof LiteralBoolean) {
+						Boolean boolVal = ((LiteralBoolean) value).booleanValue();
 						fValue.setText(boolVal.toString());
 						return;
 					}
-					else if(value instanceof LiteralString) {
-						fValue.setText(((LiteralString)value).getValue());
+					else if (value instanceof LiteralString) {
+						fValue.setText(((LiteralString) value).getValue());
 						return;
 					}
 				}
@@ -488,7 +504,7 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 		fDescription.setEnabled(enabled);
 		fValueLabel.setEnabled(enabled);
 		fValue.setEnabled(enabled);
-		if(!enabled) {
+		if (!enabled) {
 			fValue.setText(""); //$NON-NLS-1$
 			fDescription.setText(""); //$NON-NLS-1$
 			fValueLabel.setText(valueLabelPrefix);
@@ -497,7 +513,7 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 
 	private String getValueLabel(Property attribute) {
 		String label = valueLabelPrefix;
-		if(attribute.getDefault() != null) {
+		if (attribute.getDefault() != null) {
 			return label + " " + String.format("(default = %s)", attribute.getDefault()); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		return label;
@@ -510,10 +526,10 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 		// now add properties of container rules
 		// TODO: is it possible that multiple container extensions of the same
 		// type exist, and if yes, how do we configure these?
-		if(component instanceof Class) {
-			EList<ContainerRule> rules = Utils.getRules((Class)component);
-			if(rules != null) {
-				for(ContainerRule aRule : rules) {
+		if (component instanceof Class) {
+			EList<ContainerRule> rules = Utils.getRules((Class) component);
+			if (rules != null) {
+				for (ContainerRule aRule : rules) {
 					// (many, in case of a composite rule)
 					try {
 						list.addAll(ConfigUtils.getConfigAttributes(aRule));
@@ -527,11 +543,11 @@ public class ConfigureInstanceDialog extends SelectionStatusDialog {
 
 	/**
 	 * Add a space before and after
-	 * 
+	 *
 	 * @param text
 	 * @return
 	 */
 	public static String addSpaces(String text) {
-		return " " + text + " "; //$NON-NLS-1$ //$NON-NLS-2$	
+		return " " + text + " "; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 }

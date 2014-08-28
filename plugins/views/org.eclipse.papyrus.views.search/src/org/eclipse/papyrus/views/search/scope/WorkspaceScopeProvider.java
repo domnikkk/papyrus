@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA LIST) - Extracted some of the ScopeCollector implementation.
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.views.search.scope;
 
@@ -43,7 +43,7 @@ public class WorkspaceScopeProvider implements IScopeProvider {
 	}
 
 	public Collection<URI> getScope() {
-		//Go through the workspace root
+		// Go through the workspace root
 		IResource root = ResourcesPlugin.getWorkspace().getRoot();
 
 		return findPapyrusModels(root);
@@ -52,21 +52,21 @@ public class WorkspaceScopeProvider implements IScopeProvider {
 	public Collection<URI> getScope(Object object) {
 		Collection<URI> results;
 
-		if(object instanceof IPapyrusFile) {
-			results = findPapyrusModels(((IPapyrusFile)object).getMainFile());
-		} else if(object instanceof IResource) {
-			results = findPapyrusModels((IResource)object);
+		if (object instanceof IPapyrusFile) {
+			results = findPapyrusModels(((IPapyrusFile) object).getMainFile());
+		} else if (object instanceof IResource) {
+			results = findPapyrusModels((IResource) object);
 		} else {
 			Object element = BusinessModelResolver.getInstance().getBusinessModel(object);
-			if(element instanceof EObject) {
+			if (element instanceof EObject) {
 				// CDO resource *are* EObjects
-				Resource eResource = (element instanceof Resource) ? (Resource) element : ((EObject)element).eResource();
-				if(eResource != null) {
+				Resource eResource = (element instanceof Resource) ? (Resource) element : ((EObject) element).eResource();
+				if (eResource != null) {
 					ModelSet modelSet = null;
-					
+
 					try {
 						modelSet = ModelUtils.openResource(eResource.getURI());
-						SashModel sashModel = (SashModel)modelSet.getModelChecked(SashModel.MODEL_ID);
+						SashModel sashModel = (SashModel) modelSet.getModelChecked(SashModel.MODEL_ID);
 						Resource diResource = sashModel.getResource();
 						if (diResource != null) {
 							results = Collections.singletonList(diResource.getURI());
@@ -86,7 +86,7 @@ public class WorkspaceScopeProvider implements IScopeProvider {
 							}
 						}
 					}
-					
+
 				} else {
 					results = Collections.emptyList();
 				}
@@ -96,15 +96,15 @@ public class WorkspaceScopeProvider implements IScopeProvider {
 			}
 
 		}
-		
+
 		return results;
 	}
 
 	/**
 	 * Find all Papyrus models from a specific root
-	 * 
+	 *
 	 * @param res
-	 *        the root
+	 *            the root
 	 * @return
 	 *         the found Papyrus models
 	 */

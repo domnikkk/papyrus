@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,15 +40,15 @@ abstract class AbstractModelImportMapping extends AbstractModelTransferMapping i
 		boolean result = true;
 
 		IPath mapping = getMapping(node);
-		if(mapping == null) {
-			diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, NLS.bind(Messages.AbstractModelImportMapping_0, node.getName()), new Object[]{ node }));
+		if (mapping == null) {
+			diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, NLS.bind(Messages.AbstractModelImportMapping_0, node.getName()), new Object[] { node }));
 			result = false;
 		} else {
-			for(URI next : node.getResourceURIs()) {
+			for (URI next : node.getResourceURIs()) {
 				String resourcePath = mapping.removeFileExtension().addFileExtension(next.fileExtension()).toString();
 
-				if(getView().hasResource(resourcePath)) {
-					diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, NLS.bind(Messages.AbstractModelImportMapping_1, mapping, node.getName()), new Object[]{ node }));
+				if (getView().hasResource(resourcePath)) {
+					diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, NLS.bind(Messages.AbstractModelImportMapping_1, mapping, node.getName()), new Object[] { node }));
 					result = false;
 					break;
 				}
@@ -59,15 +59,15 @@ abstract class AbstractModelImportMapping extends AbstractModelTransferMapping i
 	}
 
 	protected CDOView getView() {
-		IInternalPapyrusRepository repo = (IInternalPapyrusRepository)getRepository();
+		IInternalPapyrusRepository repo = (IInternalPapyrusRepository) getRepository();
 
 		return (repo == null) ? null : repo.getMasterView();
 	}
 
 	@Override
 	protected void computeDefaultMappings(IModelTransferConfiguration configuration) {
-		for(IModelTransferNode next : configuration.getModelsToTransfer()) {
-			if(getMapping(next) == null) {
+		for (IModelTransferNode next : configuration.getModelsToTransfer()) {
+			if (getMapping(next) == null) {
 				mapTo(next, new Path(next.getName()));
 			}
 		}

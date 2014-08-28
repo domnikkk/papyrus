@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ import org.eclipse.uml2.uml.Element;
  * overload the Generic decoration service to take in account validation on stereotyped element
  *
  * CAVEAT: this class is currently unused, since the validation mechanism already replaces a stereotype application
- *         by its base element (see org.eclipse.papyurs.uml.service.validation.StereotypeValidatorAdaptor)
+ * by its base element (see org.eclipse.papyurs.uml.service.validation.StereotypeValidatorAdaptor)
  */
 @Deprecated
 public class UMLDecorationUtils extends DecorationUtils {
@@ -42,30 +42,31 @@ public class UMLDecorationUtils extends DecorationUtils {
 		super(object);
 	}
 
-	
+
 	/**
 	 * Returns a list of decorations for a given UML element. It is a list, since there might be
 	 * more than one decoration (e.g. a validation marker and a tracepoint) for this element.
-	 * 
+	 *
 	 * If current element is a folder or link-item, decorations from childs are propagated.
-	 * 
+	 *
 	 * @param decorationService
-	 *        the decoration service
+	 *            the decoration service
 	 * @param navigateToParents
-	 *        the navigate to parents
+	 *            the navigate to parents
 	 * @return the decoration severity
 	 */
+	@Override
 	public EList<IPapyrusDecoration> getDecorations(DecorationService decorationService, boolean navigateToParents) {
 		Map<String, Decoration> decorations = getDecorations(decorationService);
 		// child decorations are organized in a map indexed by the decoration type
 		EList<IPapyrusDecoration> foundDecorations = new BasicEList<IPapyrusDecoration>();
 		Map<String, EList<IPapyrusDecoration>> childDecorationMap = new HashMap<String, EList<IPapyrusDecoration>>();
-		if(decorations != null) {
-			for(Decoration decoration : decorations.values()) {
+		if (decorations != null) {
+			for (Decoration decoration : decorations.values()) {
 				EObject eObjectOfDecorator = decoration.getElement();
-				if(getEObjects().contains(eObjectOfDecorator)) {
+				if (getEObjects().contains(eObjectOfDecorator)) {
 					// decoration is for this element
-					if(decoration.getMessage() == null) {
+					if (decoration.getMessage() == null) {
 						decoration.setMessage(""); //$NON-NLS-1$
 					}
 					foundDecorations.add(decoration);
@@ -77,7 +78,7 @@ public class UMLDecorationUtils extends DecorationUtils {
 						for (EObject sterepApplication : ((Element) eObj).getStereotypeApplications()) {
 							if (eObjectOfDecorator == sterepApplication) {
 								foundDecorations.add(decoration);
-							}                       
+							}
 						}
 					}
 				}
@@ -87,16 +88,16 @@ public class UMLDecorationUtils extends DecorationUtils {
 				IDecorationSpecificFunctions decoUtil = DecorationSpecificFunctions.getDecorationInterface(decoration.getType());
 
 
-				if(navigateToParents && (decoUtil != null) && decoUtil.supportsMarkerPropagation() != MarkChildren.NO) {
+				if (navigateToParents && (decoUtil != null) && decoUtil.supportsMarkerPropagation() != MarkChildren.NO) {
 					MarkChildren markChildren = decoUtil.supportsMarkerPropagation();
 					boolean first = true;
 
 					eObjectOfDecorator = eObjectOfDecorator.eContainer();
-					while(eObjectOfDecorator != null) {
-						if(getEObjects().contains(eObjectOfDecorator)) {
+					while (eObjectOfDecorator != null) {
+						if (getEObjects().contains(eObjectOfDecorator)) {
 							String type = decoration.getType();
 							EList<IPapyrusDecoration> childDecorations = childDecorationMap.get(type);
-							if(childDecorations == null) {
+							if (childDecorations == null) {
 								// does not exist yet => create
 								childDecorations = new BasicEList<IPapyrusDecoration>();
 								childDecorationMap.put(type, childDecorations);
@@ -105,8 +106,8 @@ public class UMLDecorationUtils extends DecorationUtils {
 						}
 						// navigate to parents, since parent folder is concerned by error as well
 						eObjectOfDecorator = eObjectOfDecorator.eContainer();
-						if(markChildren != MarkChildren.ALL) {
-							if(!first) {
+						if (markChildren != MarkChildren.ALL) {
+							if (!first) {
 								break;
 							}
 						}
@@ -117,12 +118,12 @@ public class UMLDecorationUtils extends DecorationUtils {
 		}
 
 		// now process map of children
-		for(String type : childDecorationMap.keySet()) {
+		for (String type : childDecorationMap.keySet()) {
 			EList<IPapyrusDecoration> childDecorations = childDecorationMap.get(type);
-			if(childDecorations != null) {
+			if (childDecorations != null) {
 				IDecorationSpecificFunctions decoUtil = DecorationSpecificFunctions.getDecorationInterface(type);
 				IPapyrusDecoration propagatedDecoration = decoUtil.markerPropagation(childDecorations);
-				if(propagatedDecoration != null) {
+				if (propagatedDecoration != null) {
 					foundDecorations.add(propagatedDecoration);
 				}
 			}

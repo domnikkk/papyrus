@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,17 +28,17 @@ public class CrossReferencerUtil {
 
 	/**
 	 * Returns the {@link CrossReferenceAdapter} corresponding to an {@link EObject}
-	 * 
+	 *
 	 * @param element
-	 *        the {@link EObject} element
+	 *            the {@link EObject} element
 	 * @return the {@link CrossReferenceAdapter} corresponding to element
 	 */
 	public static CrossReferenceAdapter getCrossReferenceAdapter(EObject element) {
 
 		CrossReferenceAdapter crossReferenceAdapter = CrossReferenceAdapter.getExistingCrossReferenceAdapter(element);
-		if(crossReferenceAdapter == null) {
+		if (crossReferenceAdapter == null) {
 			TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(element);
-			if(domain != null) {
+			if (domain != null) {
 				crossReferenceAdapter = CrossReferenceAdapter.getCrossReferenceAdapter(domain.getResourceSet());
 			}
 		}
@@ -51,11 +51,11 @@ public class CrossReferencerUtil {
 	 * This method looks for any views (possibly filtered by a kind of diagram) that are currently
 	 * referencing the referencedObject.
 	 * </pre>
-	 * 
+	 *
 	 * @param referencedObject
 	 * @param diagramType
-	 *        type of diagram containing the list of {@link View} (may be
-	 *        null)
+	 *            type of diagram containing the list of {@link View} (may be
+	 *            null)
 	 * @return the list of {@link View} referencing the referencedObject
 	 */
 	public static Set<View> getCrossReferencingViews(EObject referencedObject, String diagramType) {
@@ -63,19 +63,19 @@ public class CrossReferencerUtil {
 		Set<View> referencingObjects = new HashSet<View>();
 
 		CrossReferenceAdapter crossReferenceAdapter = CrossReferencerUtil.getCrossReferenceAdapter(referencedObject);
-		if(crossReferenceAdapter != null) {
+		if (crossReferenceAdapter != null) {
 
 			// Retrieve all views referencing the referencedObject
 			Iterator<?> views = crossReferenceAdapter.getInverseReferencers(referencedObject, NotationPackage.eINSTANCE.getView_Element(), NotationPackage.eINSTANCE.getView()).iterator();
-			while(views.hasNext()) {
+			while (views.hasNext()) {
 
-				View view = (View)views.next();
-				if(diagramType != null) { // Filter to get only view from this
+				View view = (View) views.next();
+				if (diagramType != null) { // Filter to get only view from this
 											// kind of diagram
 
 					// Check if current view is owned by a diagram which type
 					// conforms to diagramType
-					if(diagramType.equals(view.getDiagram().getType())) {
+					if (diagramType.equals(view.getDiagram().getType())) {
 						referencingObjects.add(view);
 					}
 
@@ -92,11 +92,11 @@ public class CrossReferencerUtil {
 	 * This method looks for any views (possibly filtered by a kind of diagram) that are currently
 	 * referencing the referencedObject.
 	 * </pre>
-	 * 
+	 *
 	 * @param referencedObject
 	 * @param diagram
-	 *        diagram instance containing the list of {@link View} (may be
-	 *        null)
+	 *            diagram instance containing the list of {@link View} (may be
+	 *            null)
 	 * @return the list of {@link View} referencing the referencedObject
 	 */
 	public static Set<View> getCrossReferencingViewsInDiagram(final EObject referencedObject, final Diagram diagram) {
@@ -104,19 +104,19 @@ public class CrossReferencerUtil {
 		Set<View> referencingObjects = new HashSet<View>();
 
 		CrossReferenceAdapter crossReferenceAdapter = CrossReferencerUtil.getCrossReferenceAdapter(referencedObject);
-		if(crossReferenceAdapter != null) {
+		if (crossReferenceAdapter != null) {
 
 			// Retrieve all views referencing the referencedObject
 			Iterator<?> views = crossReferenceAdapter.getInverseReferencers(referencedObject, NotationPackage.eINSTANCE.getView_Element(), NotationPackage.eINSTANCE.getView()).iterator();
-			while(views.hasNext()) {
+			while (views.hasNext()) {
 
-				View view = (View)views.next();
-				if(diagram != null) { // Filter to get only view from this
+				View view = (View) views.next();
+				if (diagram != null) { // Filter to get only view from this
 										// kind of diagram
 
 					// Check if current view is owned by a diagram which type
 					// conforms to diagramType
-					if(diagram == view.getDiagram()) {
+					if (diagram == view.getDiagram()) {
 						referencingObjects.add(view);
 					}
 

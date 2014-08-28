@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ import org.eclipse.papyrus.uml.diagram.common.Activator;
 
 /**
  * this edit part has in charge to display the name of a diagram for a short cut
- * 
+ *
  */
 public abstract class AbstractShortcutDiagramNameEditPart extends PapyrusLabelEditPart implements Adapter {
 
@@ -33,9 +33,9 @@ public abstract class AbstractShortcutDiagramNameEditPart extends PapyrusLabelEd
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#activate()
-	 * 
+	 *
 	 */
 	@Override
 	public void activate() {
@@ -58,9 +58,9 @@ public abstract class AbstractShortcutDiagramNameEditPart extends PapyrusLabelEd
 	private Notifier target;
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#notifyChanged(org.eclipse.emf.common.notify.Notification)
-	 * 
+	 *
 	 * @param notification
 	 */
 	@Override
@@ -71,9 +71,9 @@ public abstract class AbstractShortcutDiagramNameEditPart extends PapyrusLabelEd
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#deactivate()
-	 * 
+	 *
 	 */
 	@Override
 	public void deactivate() {
@@ -83,28 +83,31 @@ public abstract class AbstractShortcutDiagramNameEditPart extends PapyrusLabelEd
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.Adapter#setTarget(org.eclipse.emf.common.notify.Notifier)
-	 * 
+	 *
 	 */
+	@Override
 	public void setTarget(Notifier target) {
 		this.target = target;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.Adapter#getTarget()
-	 * 
+	 *
 	 */
+	@Override
 	public Notifier getTarget() {
 		return target;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.Adapter#isAdapterForType(java.lang.Object)
-	 * 
+	 *
 	 */
+	@Override
 	public boolean isAdapterForType(Object type) {
 		Activator.log.debug(type.toString());
 		return (getModel().getClass() == type);

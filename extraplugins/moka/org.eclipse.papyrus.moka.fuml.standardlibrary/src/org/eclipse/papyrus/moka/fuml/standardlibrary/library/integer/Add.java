@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,11 +28,11 @@ public class Add extends OpaqueBehaviorExecution {
 	@Override
 	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
 		try {
-			Integer x = ((IntegerValue)inputParameters.get(0).values.get(0)).value;
-			Integer y = ((IntegerValue)inputParameters.get(1).values.get(0)).value;
+			Integer x = ((IntegerValue) inputParameters.get(0).values.get(0)).value;
+			Integer y = ((IntegerValue) inputParameters.get(1).values.get(0)).value;
 			IntegerValue result = new IntegerValue();
 			result.value = x + y;
-			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("Integer"); // ADDED
+			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Integer"); // ADDED
 			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;

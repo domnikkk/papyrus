@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.swt.graphics.Image;
 /**
  * This class provides a more comfortable usage
  * to access to properties from NotificationBuilder map
- * 
+ *
  * @author tristan faure
- * 
+ *
  */
 public class PropertyWrapper {
 
@@ -54,33 +54,33 @@ public class PropertyWrapper {
 
 	/**
 	 * The class analyses the map and set the fields of the objects according to the values of the map.
-	 * 
+	 *
 	 * @param properties
-	 *        the map from Notification Builder
+	 *            the map from Notification Builder
 	 */
 	@SuppressWarnings("unchecked")
 	public PropertyWrapper(Map<String, Object> properties) {
-		for(String s : properties.keySet()) {
-			if(NotificationBuilder.ASYNCHRONOUS.equals(s)) {
-				asynchronous = (Boolean)properties.get(s);
-			} else if(NotificationBuilder.COMPOSITE.equals(s)) {
-				composite = (ICompositeCreator)properties.get(s);
-			} else if(NotificationBuilder.MESSAGE.equals(s)) {
-				message = (String)properties.get(s);
-			} else if(NotificationBuilder.ACTION.equals(s)) {
-				actions = (Collection<NotificationRunnable>)properties.get(s);
-			} else if(NotificationBuilder.DELAY.equals(s)) {
-				delay = (Long)properties.get(s);
-			} else if(NotificationBuilder.HTML.equals(s)) {
-				html = (Boolean)properties.get(s);
-			} else if(NotificationBuilder.TEMPORARY.equals(s)) {
-				temporary = (Boolean)properties.get(s);
-			} else if(NotificationBuilder.TITLE.equals(s)) {
-				title = (String)properties.get(s);
-			} else if(NotificationBuilder.TYPE.equals(s)) {
-				type = (Type)properties.get(s);
-			} else if(NotificationBuilder.IMAGE.equals(s)) {
-				image = (Image)properties.get(s);
+		for (String s : properties.keySet()) {
+			if (NotificationBuilder.ASYNCHRONOUS.equals(s)) {
+				asynchronous = (Boolean) properties.get(s);
+			} else if (NotificationBuilder.COMPOSITE.equals(s)) {
+				composite = (ICompositeCreator) properties.get(s);
+			} else if (NotificationBuilder.MESSAGE.equals(s)) {
+				message = (String) properties.get(s);
+			} else if (NotificationBuilder.ACTION.equals(s)) {
+				actions = (Collection<NotificationRunnable>) properties.get(s);
+			} else if (NotificationBuilder.DELAY.equals(s)) {
+				delay = (Long) properties.get(s);
+			} else if (NotificationBuilder.HTML.equals(s)) {
+				html = (Boolean) properties.get(s);
+			} else if (NotificationBuilder.TEMPORARY.equals(s)) {
+				temporary = (Boolean) properties.get(s);
+			} else if (NotificationBuilder.TITLE.equals(s)) {
+				title = (String) properties.get(s);
+			} else if (NotificationBuilder.TYPE.equals(s)) {
+				type = (Type) properties.get(s);
+			} else if (NotificationBuilder.IMAGE.equals(s)) {
+				image = (Image) properties.get(s);
 			} else {
 				others.put(s, properties.get(s));
 			}
@@ -89,7 +89,7 @@ public class PropertyWrapper {
 
 	/**
 	 * Checks if is asynchronous.
-	 * 
+	 *
 	 * @return true, if is asynchronous
 	 */
 	public boolean isAsynchronous() {
@@ -98,7 +98,7 @@ public class PropertyWrapper {
 
 	/**
 	 * Gets the message.
-	 * 
+	 *
 	 * @return the message
 	 */
 	public String getMessage() {
@@ -107,7 +107,7 @@ public class PropertyWrapper {
 
 	/**
 	 * Gets the composite.
-	 * 
+	 *
 	 * @return the composite
 	 */
 	public ICompositeCreator getComposite() {
@@ -116,7 +116,7 @@ public class PropertyWrapper {
 
 	/**
 	 * Gets the actions.
-	 * 
+	 *
 	 * @return the actions
 	 */
 	public Collection<NotificationRunnable> getActions() {
@@ -125,7 +125,7 @@ public class PropertyWrapper {
 
 	/**
 	 * Gets the delay.
-	 * 
+	 *
 	 * @return the delay
 	 */
 	public Long getDelay() {
@@ -134,7 +134,7 @@ public class PropertyWrapper {
 
 	/**
 	 * Checks if is temporary.
-	 * 
+	 *
 	 * @return true, if is temporary
 	 */
 	public boolean isTemporary() {
@@ -143,7 +143,7 @@ public class PropertyWrapper {
 
 	/**
 	 * Gets the title.
-	 * 
+	 *
 	 * @return the title
 	 */
 	public String getTitle() {
@@ -152,7 +152,7 @@ public class PropertyWrapper {
 
 	/**
 	 * Checks if is html.
-	 * 
+	 *
 	 * @return true, if is html
 	 */
 	public boolean isHtml() {
@@ -161,7 +161,7 @@ public class PropertyWrapper {
 
 	/**
 	 * Gets the type.
-	 * 
+	 *
 	 * @return the type
 	 */
 	public Type getType() {
@@ -170,7 +170,7 @@ public class PropertyWrapper {
 
 	/**
 	 * Gets the image.
-	 * 
+	 *
 	 * @return the image
 	 */
 	public Image getImage() {
@@ -179,7 +179,7 @@ public class PropertyWrapper {
 
 	/**
 	 * Get the map containing parameters not predefined
-	 * 
+	 *
 	 * @return the map
 	 */
 	public Map<String, Object> getCustomParameters() {

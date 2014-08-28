@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -16,6 +16,7 @@ package org.eclipse.papyrus.layers.stackmodel.layers.provider;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -37,11 +38,12 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
  * This is the item provider adapter for a {@link java.util.Map.Entry} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class StringToTypeInstanceMapItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -51,6 +53,7 @@ public class StringToTypeInstanceMapItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public StringToTypeInstanceMapItemProvider(AdapterFactory adapterFactory) {
@@ -61,6 +64,7 @@ public class StringToTypeInstanceMapItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,30 +81,31 @@ public class StringToTypeInstanceMapItemProvider
 	 * This adds a property descriptor for the Key feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addKeyPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StringToTypeInstanceMap_key_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StringToTypeInstanceMap_key_feature", "_UI_StringToTypeInstanceMap_type"),
-				 LayersPackage.Literals.STRING_TO_TYPE_INSTANCE_MAP__KEY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_StringToTypeInstanceMap_key_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_StringToTypeInstanceMap_key_feature", "_UI_StringToTypeInstanceMap_type"),
+						LayersPackage.Literals.STRING_TO_TYPE_INSTANCE_MAP__KEY,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,6 +120,7 @@ public class StringToTypeInstanceMapItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,6 +135,7 @@ public class StringToTypeInstanceMapItemProvider
 	 * This returns StringToTypeInstanceMap.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,15 +147,16 @@ public class StringToTypeInstanceMapItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		Map.Entry<?, ?> stringToTypeInstanceMap = (Map.Entry<?, ?>)object;
-//		return "" + stringToTypeInstanceMap.getKey() + " -> " + stringToTypeInstanceMap.getValue();
-		
-//		TypeInstance instance = (TypeInstance)stringToTypeInstanceMap.getValue();
-		
+		Map.Entry<?, ?> stringToTypeInstanceMap = (Map.Entry<?, ?>) object;
+		// return "" + stringToTypeInstanceMap.getKey() + " -> " + stringToTypeInstanceMap.getValue();
+
+		// TypeInstance instance = (TypeInstance)stringToTypeInstanceMap.getValue();
+
 		return "Property '" + stringToTypeInstanceMap.getKey() + "'";
 	}
 
@@ -157,6 +165,7 @@ public class StringToTypeInstanceMapItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,12 +173,12 @@ public class StringToTypeInstanceMapItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Map.Entry.class)) {
-			case LayersPackage.STRING_TO_TYPE_INSTANCE_MAP__KEY:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case LayersPackage.STRING_TO_TYPE_INSTANCE_MAP__VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case LayersPackage.STRING_TO_TYPE_INSTANCE_MAP__KEY:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case LayersPackage.STRING_TO_TYPE_INSTANCE_MAP__VALUE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -179,6 +188,7 @@ public class StringToTypeInstanceMapItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,50 +196,51 @@ public class StringToTypeInstanceMapItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.STRING_TO_TYPE_INSTANCE_MAP__VALUE,
-				 LayersFactory.eINSTANCE.createIntInstance()));
+						LayersFactory.eINSTANCE.createIntInstance()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.STRING_TO_TYPE_INSTANCE_MAP__VALUE,
-				 LayersFactory.eINSTANCE.createBooleanInstance()));
+						LayersFactory.eINSTANCE.createBooleanInstance()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.STRING_TO_TYPE_INSTANCE_MAP__VALUE,
-				 LayersFactory.eINSTANCE.createStringInstance()));
+						LayersFactory.eINSTANCE.createStringInstance()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.STRING_TO_TYPE_INSTANCE_MAP__VALUE,
-				 LayersFactory.eINSTANCE.createNullInstance()));
+						LayersFactory.eINSTANCE.createNullInstance()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.STRING_TO_TYPE_INSTANCE_MAP__VALUE,
-				 LayersFactory.eINSTANCE.createColorInstance()));
+						LayersFactory.eINSTANCE.createColorInstance()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.STRING_TO_TYPE_INSTANCE_MAP__VALUE,
-				 LayersFactory.eINSTANCE.createFillInstance()));
+						LayersFactory.eINSTANCE.createFillInstance()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.STRING_TO_TYPE_INSTANCE_MAP__VALUE,
-				 LayersFactory.eINSTANCE.createLineInstance()));
+						LayersFactory.eINSTANCE.createLineInstance()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.STRING_TO_TYPE_INSTANCE_MAP__VALUE,
-				 LayersFactory.eINSTANCE.createFontInstance()));
+						LayersFactory.eINSTANCE.createFontInstance()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

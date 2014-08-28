@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ import java.util.List;
  * A NavigationContributor is used to contribute navigation actions
  * to the navigation service. Each contributor can be enabled/disabled
  * from the preferences. It is used to group related NavigableElements
- * 
+ *
  * @author Camille Letavernier
  */
 public interface NavigationContributor {

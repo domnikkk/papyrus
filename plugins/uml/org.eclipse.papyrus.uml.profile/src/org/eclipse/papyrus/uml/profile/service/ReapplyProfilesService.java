@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,10 +45,10 @@ import org.eclipse.uml2.uml.Profile;
  * If a local profile is applied on this model, and this profile has been
  * redefined recently, the user will be asked whether the profile should
  * be reapplied.
- * 
- * 
+ *
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ReapplyProfilesService implements IService, EditorLifecycleEventListener {
 
@@ -73,7 +73,7 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 			EditorLifecycleManager lifecyleManager = servicesRegistry.getService(EditorLifecycleManager.class);
 			lifecyleManager.addEditorLifecycleEventsListener(this);
 		} catch (ServiceException ex) {
-			return; //If the EditorLifecycleManager is not present, do nothing
+			return; // If the EditorLifecycleManager is not present, do nothing
 		}
 
 		try {
@@ -91,14 +91,14 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 			return;
 		}
 
-		UmlModel umlModel = (UmlModel)modelSet.getModel(UmlModel.MODEL_ID);
-		if(umlModel == null) {
+		UmlModel umlModel = (UmlModel) modelSet.getModel(UmlModel.MODEL_ID);
+		if (umlModel == null) {
 			return;
 		}
 
 		rootPackage = getRootPackage(umlModel);
 
-		if(rootPackage == null) {
+		if (rootPackage == null) {
 			return;
 		}
 
@@ -108,24 +108,24 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 	protected Package getRootPackage(UmlModel umlModel) {
 		try {
 			EObject root = umlModel.lookupRoot();
-			if(root instanceof Package) {
-				return (Package)root;
+			if (root instanceof Package) {
+				return (Package) root;
 			}
 		} catch (NotFoundException ex) {
-			//Ignore the exception: On diagram creation, the root isn't defined yet. 
-			//There's not profile application, and nothing to do.
-			//Activator.log.error(ex);
+			// Ignore the exception: On diagram creation, the root isn't defined yet.
+			// There's not profile application, and nothing to do.
+			// Activator.log.error(ex);
 		}
 		return null;
 	}
 
 	protected boolean checkAndRefreshProfiles(Package currentPackage, IMultiDiagramEditor editor) {
-		if(Display.getCurrent() == null) {
+		if (Display.getCurrent() == null) {
 			return false;
 		}
 
-		for(Profile profile : currentPackage.getAppliedProfiles()) {
-			if(ProfileUtil.isDirty(currentPackage, profile)) {
+		for (Profile profile : currentPackage.getAppliedProfiles()) {
+			if (ProfileUtil.isDirty(currentPackage, profile)) {
 				RefreshProfileDialog dialog = new RefreshProfileDialog(editor.getSite().getShell(), this.rootPackage);
 				dialog.setCallback(getCallback(dialog));
 				dialog.open();
@@ -133,8 +133,8 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 			}
 		}
 
-		for(Package nestedPackage : currentPackage.getNestedPackages()) {
-			if(checkAndRefreshProfiles(nestedPackage, editor)) {
+		for (Package nestedPackage : currentPackage.getNestedPackages()) {
+			if (checkAndRefreshProfiles(nestedPackage, editor)) {
 				return true;
 			}
 		}
@@ -149,19 +149,19 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 				Map<Package, Collection<Profile>> profilesToReapply = dialog.getProfilesToReapply();
 				EditingDomain domain = EMFHelper.resolveEditingDomain(rootPackage);
 
-				if(domain instanceof TransactionalEditingDomain) {
+				if (domain instanceof TransactionalEditingDomain) {
 
-					//Create a flat list of profiles, for validation
+					// Create a flat list of profiles, for validation
 					Collection<Profile> allProfiles = new LinkedList<Profile>();
-					for(Collection<Profile> profiles : profilesToReapply.values()) {
+					for (Collection<Profile> profiles : profilesToReapply.values()) {
 						allProfiles.addAll(profiles);
 					}
 
-					//Validate and apply
-					if(ProfileValidationHelper.checkApplicableProfiles(Display.getCurrent().getActiveShell(), allProfiles)) {
+					// Validate and apply
+					if (ProfileValidationHelper.checkApplicableProfiles(Display.getCurrent().getActiveShell(), allProfiles)) {
 						CompoundCommand command = new CompoundCommand();
-						for(Map.Entry<Package, Collection<Profile>> profiles : profilesToReapply.entrySet()) {
-							command.append(new ApplyProfileCommand(profiles.getKey(), profiles.getValue(), (TransactionalEditingDomain)domain));
+						for (Map.Entry<Package, Collection<Profile>> profiles : profilesToReapply.entrySet()) {
+							command.append(new ApplyProfileCommand(profiles.getKey(), profiles.getValue(), (TransactionalEditingDomain) domain));
 						}
 
 						domain.getCommandStack().execute(command);
@@ -186,11 +186,11 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 	}
 
 	public void postInit(IMultiDiagramEditor editor) {
-		//Nothing
+		// Nothing
 	}
 
 	public void postDisplay(final IMultiDiagramEditor editor) {
-		if(stereotypeRepairService == null) {
+		if (stereotypeRepairService == null) {
 			// Just check profiles, now
 			checkProfiles(editor);
 		} else {
@@ -205,7 +205,7 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 	}
 
 	public void beforeClose(IMultiDiagramEditor editor) {
-		//Nothing
+		// Nothing
 	}
 
 }

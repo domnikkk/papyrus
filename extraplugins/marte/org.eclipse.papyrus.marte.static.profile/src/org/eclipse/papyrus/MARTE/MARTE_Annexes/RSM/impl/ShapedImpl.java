@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,8 +29,8 @@ import org.eclipse.uml2.uml.MultiplicityElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ShapedImpl#getShape <em>Shape</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ShapedImpl#getBase_MultiplicityElement <em>Base Multiplicity Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ShapedImpl#getShape <em>Shape</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ShapedImpl#getBase_MultiplicityElement <em>Base Multiplicity Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class ShapedImpl extends EObjectImpl implements Shaped {
 	 * The default value of the '{@link #getShape() <em>Shape</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getShape()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class ShapedImpl extends EObjectImpl implements Shaped {
 	 * The cached value of the '{@link #getShape() <em>Shape</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getShape()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public class ShapedImpl extends EObjectImpl implements Shaped {
 	 * The cached value of the '{@link #getBase_MultiplicityElement() <em>Base Multiplicity Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_MultiplicityElement()
 	 * @generated
 	 * @ordered
@@ -70,6 +73,7 @@ public class ShapedImpl extends EObjectImpl implements Shaped {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ShapedImpl() {
@@ -79,6 +83,7 @@ public class ShapedImpl extends EObjectImpl implements Shaped {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -89,8 +94,10 @@ public class ShapedImpl extends EObjectImpl implements Shaped {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getShape() {
 		return shape;
 	}
@@ -98,27 +105,33 @@ public class ShapedImpl extends EObjectImpl implements Shaped {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setShape(String newShape) {
 		String oldShape = shape;
 		shape = newShape;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.SHAPED__SHAPE, oldShape, shape));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public MultiplicityElement getBase_MultiplicityElement() {
 		if (base_MultiplicityElement != null && base_MultiplicityElement.eIsProxy()) {
-			InternalEObject oldBase_MultiplicityElement = (InternalEObject)base_MultiplicityElement;
-			base_MultiplicityElement = (MultiplicityElement)eResolveProxy(oldBase_MultiplicityElement);
+			InternalEObject oldBase_MultiplicityElement = (InternalEObject) base_MultiplicityElement;
+			base_MultiplicityElement = (MultiplicityElement) eResolveProxy(oldBase_MultiplicityElement);
 			if (base_MultiplicityElement != oldBase_MultiplicityElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RSMPackage.SHAPED__BASE_MULTIPLICITY_ELEMENT, oldBase_MultiplicityElement, base_MultiplicityElement));
+				}
 			}
 		}
 		return base_MultiplicityElement;
@@ -127,6 +140,7 @@ public class ShapedImpl extends EObjectImpl implements Shaped {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MultiplicityElement basicGetBase_MultiplicityElement() {
@@ -136,28 +150,34 @@ public class ShapedImpl extends EObjectImpl implements Shaped {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_MultiplicityElement(MultiplicityElement newBase_MultiplicityElement) {
 		MultiplicityElement oldBase_MultiplicityElement = base_MultiplicityElement;
 		base_MultiplicityElement = newBase_MultiplicityElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.SHAPED__BASE_MULTIPLICITY_ELEMENT, oldBase_MultiplicityElement, base_MultiplicityElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RSMPackage.SHAPED__SHAPE:
-				return getShape();
-			case RSMPackage.SHAPED__BASE_MULTIPLICITY_ELEMENT:
-				if (resolve) return getBase_MultiplicityElement();
-				return basicGetBase_MultiplicityElement();
+		case RSMPackage.SHAPED__SHAPE:
+			return getShape();
+		case RSMPackage.SHAPED__BASE_MULTIPLICITY_ELEMENT:
+			if (resolve) {
+				return getBase_MultiplicityElement();
+			}
+			return basicGetBase_MultiplicityElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,17 +185,18 @@ public class ShapedImpl extends EObjectImpl implements Shaped {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RSMPackage.SHAPED__SHAPE:
-				setShape((String)newValue);
-				return;
-			case RSMPackage.SHAPED__BASE_MULTIPLICITY_ELEMENT:
-				setBase_MultiplicityElement((MultiplicityElement)newValue);
-				return;
+		case RSMPackage.SHAPED__SHAPE:
+			setShape((String) newValue);
+			return;
+		case RSMPackage.SHAPED__BASE_MULTIPLICITY_ELEMENT:
+			setBase_MultiplicityElement((MultiplicityElement) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,17 +204,18 @@ public class ShapedImpl extends EObjectImpl implements Shaped {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RSMPackage.SHAPED__SHAPE:
-				setShape(SHAPE_EDEFAULT);
-				return;
-			case RSMPackage.SHAPED__BASE_MULTIPLICITY_ELEMENT:
-				setBase_MultiplicityElement((MultiplicityElement)null);
-				return;
+		case RSMPackage.SHAPED__SHAPE:
+			setShape(SHAPE_EDEFAULT);
+			return;
+		case RSMPackage.SHAPED__BASE_MULTIPLICITY_ELEMENT:
+			setBase_MultiplicityElement((MultiplicityElement) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -201,15 +223,16 @@ public class ShapedImpl extends EObjectImpl implements Shaped {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RSMPackage.SHAPED__SHAPE:
-				return SHAPE_EDEFAULT == null ? shape != null : !SHAPE_EDEFAULT.equals(shape);
-			case RSMPackage.SHAPED__BASE_MULTIPLICITY_ELEMENT:
-				return base_MultiplicityElement != null;
+		case RSMPackage.SHAPED__SHAPE:
+			return SHAPE_EDEFAULT == null ? shape != null : !SHAPE_EDEFAULT.equals(shape);
+		case RSMPackage.SHAPED__BASE_MULTIPLICITY_ELEMENT:
+			return base_MultiplicityElement != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -217,11 +240,14 @@ public class ShapedImpl extends EObjectImpl implements Shaped {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (shape: ");
@@ -230,4 +256,4 @@ public class ShapedImpl extends EObjectImpl implements Shaped {
 		return result.toString();
 	}
 
-} //ShapedImpl
+} // ShapedImpl

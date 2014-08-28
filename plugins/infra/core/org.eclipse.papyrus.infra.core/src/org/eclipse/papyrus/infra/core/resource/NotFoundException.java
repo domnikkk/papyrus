@@ -1,31 +1,31 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.resource;
 
 /**
  * Exception indicating that something is not found.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class NotFoundException extends ModelException {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public NotFoundException() {
 	}
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param message
 	 */
 	public NotFoundException(String message) {
@@ -34,7 +34,7 @@ public class NotFoundException extends ModelException {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param cause
 	 */
 	public NotFoundException(Throwable cause) {
@@ -43,7 +43,7 @@ public class NotFoundException extends ModelException {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param message
 	 * @param cause
 	 */

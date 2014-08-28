@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -51,25 +51,25 @@ public class StereotypedElementShapeProvider extends AbstractShapeProvider {
 	 */
 	@Override
 	public List<RenderedImage> getShapes(EObject view) {
-		if(!(view instanceof View)) {
+		if (!(view instanceof View)) {
 			return null;
 		}
-		EObject element = ((View)view).getElement();
-		if(element instanceof Element) {
+		EObject element = ((View) view).getElement();
+		if (element instanceof Element) {
 			List<RenderedImage> images = new ArrayList<RenderedImage>();
-			// it has already been checked that 
+			// it has already been checked that
 
-			String stereotypesToDisplay = AppliedStereotypeHelper.getStereotypesToDisplay((View)view);
+			String stereotypesToDisplay = AppliedStereotypeHelper.getStereotypesToDisplay((View) view);
 			StringTokenizer tokenizer = new StringTokenizer(stereotypesToDisplay, ",");
-			while(tokenizer.hasMoreTokens()) {
+			while (tokenizer.hasMoreTokens()) {
 				try {
 					String stereotypeName = tokenizer.nextToken();
-					Stereotype stereotype = ((Element)element).getAppliedStereotype(stereotypeName);
-					org.eclipse.uml2.uml.Image icon = ElementUtil.getStereotypeImage(((Element)element), stereotype, SHAPE_CONSTANT);
-					if(icon != null) {
-						if(!"".equals(icon.getLocation()) && icon.getLocation() != null) {
+					Stereotype stereotype = ((Element) element).getAppliedStereotype(stereotypeName);
+					org.eclipse.uml2.uml.Image icon = ElementUtil.getStereotypeImage(((Element) element), stereotype, SHAPE_CONSTANT);
+					if (icon != null) {
+						if (!"".equals(icon.getLocation()) && icon.getLocation() != null) {
 							SVGDocument document = getSVGDocument(icon.getLocation());
-							if(document != null) {
+							if (document != null) {
 								images.add(renderSVGDocument(view, document));
 							} else {
 								URL url = new URL(icon.getLocation());
@@ -93,22 +93,22 @@ public class StereotypedElementShapeProvider extends AbstractShapeProvider {
 	 */
 	@Override
 	public boolean providesShapes(EObject view) {
-		if(!(view instanceof View)) {
+		if (!(view instanceof View)) {
 			return false;
 		}
 
-		EObject element = ((View)view).getElement();
-		if(element instanceof Element) {
+		EObject element = ((View) view).getElement();
+		if (element instanceof Element) {
 
 			// This is an element. does it have stereotypes ? If yes, do the stereotypes have shapes associated ?
-			String stereotypesToDisplay = AppliedStereotypeHelper.getStereotypesToDisplay((View)view);
+			String stereotypesToDisplay = AppliedStereotypeHelper.getStereotypesToDisplay((View) view);
 			StringTokenizer tokenizer = new StringTokenizer(stereotypesToDisplay, ",");
-			if(tokenizer.hasMoreTokens()) {
+			if (tokenizer.hasMoreTokens()) {
 				String firstStereotypeName = tokenizer.nextToken();
-				Stereotype stereotype = ((Element)element).getAppliedStereotype(firstStereotypeName);
-				org.eclipse.uml2.uml.Image icon = ElementUtil.getStereotypeImage(((Element)element), stereotype, SHAPE_CONSTANT);
-				if(icon != null) {
-					if(icon.getLocation() != "" && icon.getLocation() != null) {
+				Stereotype stereotype = ((Element) element).getAppliedStereotype(firstStereotypeName);
+				org.eclipse.uml2.uml.Image icon = ElementUtil.getStereotypeImage(((Element) element), stereotype, SHAPE_CONSTANT);
+				if (icon != null) {
+					if (icon.getLocation() != "" && icon.getLocation() != null) {
 						return true;
 					}
 				}
@@ -120,27 +120,27 @@ public class StereotypedElementShapeProvider extends AbstractShapeProvider {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 */
 	@Override
 	public List<SVGDocument> getSVGDocument(EObject view) {
-		if(!(view instanceof View)) {
+		if (!(view instanceof View)) {
 			return null;
 		}
-		EObject element = ((View)view).getElement();
-		if(element instanceof Element) {
+		EObject element = ((View) view).getElement();
+		if (element instanceof Element) {
 			List<SVGDocument> images = new ArrayList<SVGDocument>();
-			// it has already been checked that 
-			String stereotypesToDisplay = AppliedStereotypeHelper.getStereotypesToDisplay((View)view);
+			// it has already been checked that
+			String stereotypesToDisplay = AppliedStereotypeHelper.getStereotypesToDisplay((View) view);
 			StringTokenizer tokenizer = new StringTokenizer(stereotypesToDisplay, ",");
-			while(tokenizer.hasMoreTokens()) {
+			while (tokenizer.hasMoreTokens()) {
 				String stereotypeName = tokenizer.nextToken();
-				Stereotype stereotype = ((Element)element).getAppliedStereotype(stereotypeName);
-				org.eclipse.uml2.uml.Image icon = ElementUtil.getStereotypeImage(((Element)element), stereotype, SHAPE_CONSTANT);
-				if(icon != null) {
-					if(icon.getLocation() != "" && icon.getLocation() != null) {
+				Stereotype stereotype = ((Element) element).getAppliedStereotype(stereotypeName);
+				org.eclipse.uml2.uml.Image icon = ElementUtil.getStereotypeImage(((Element) element), stereotype, SHAPE_CONSTANT);
+				if (icon != null) {
+					if (icon.getLocation() != "" && icon.getLocation() != null) {
 						SVGDocument document = getSVGDocument(icon.getLocation());
-						if(document != null) {
+						if (document != null) {
 							images.add(document);
 						}
 					}
@@ -158,7 +158,7 @@ public class StereotypedElementShapeProvider extends AbstractShapeProvider {
 	@Override
 	public ProviderNotificationManager createProviderNotificationManager(DiagramEventBroker diagramEventBroker, EObject view, NotificationListener listener) {
 		// retrieve semantic element from the view and add a notification listener on the Type feature if the semantic element is a TypedElement
-		if(view == null || !(view instanceof View)) {
+		if (view == null || !(view instanceof View)) {
 			return null;
 		}
 
@@ -173,13 +173,13 @@ public class StereotypedElementShapeProvider extends AbstractShapeProvider {
 
 		/**
 		 * Creates a new StereotypedElementShapeProviderNotificationManager.
-		 * 
+		 *
 		 * @param diagramEventBroker
-		 *        event broker specific to the diargam displaying the shapes.
+		 *            event broker specific to the diargam displaying the shapes.
 		 * @param view
-		 *        the view from which all elements to listen will be computed.
+		 *            the view from which all elements to listen will be computed.
 		 * @param listener
-		 *        the listener to which notifications will be forwarded.
+		 *            the listener to which notifications will be forwarded.
 		 */
 		public StereotypedElementShapeProviderNotificationManager(DiagramEventBroker diagramEventBroker, EObject view, NotificationListener listener) {
 			super(diagramEventBroker, view, listener);
@@ -190,7 +190,7 @@ public class StereotypedElementShapeProvider extends AbstractShapeProvider {
 		 */
 		@Override
 		protected void registerListeners() {
-			if(view == null || !(view instanceof View)) {
+			if (view == null || !(view instanceof View)) {
 				return;
 			}
 			diagramEventBroker.addNotificationListener(view, this);
@@ -201,7 +201,7 @@ public class StereotypedElementShapeProvider extends AbstractShapeProvider {
 		 */
 		@Override
 		public void dispose() {
-			if(view == null || !(view instanceof View)) {
+			if (view == null || !(view instanceof View)) {
 				return;
 			}
 			diagramEventBroker.removeNotificationListener(view, this);
@@ -213,12 +213,12 @@ public class StereotypedElementShapeProvider extends AbstractShapeProvider {
 		 */
 		@Override
 		public void notifyChanged(Notification notification) {
-			if(listener == null) {
+			if (listener == null) {
 				return;
 			}
-			if(EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(notification.getFeature())) {
+			if (EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(notification.getFeature())) {
 				Object newValue = notification.getNewValue();
-				if(newValue instanceof EAnnotation && UMLVisualInformationPapyrusConstant.STEREOTYPE_ANNOTATION.equals(((EAnnotation)newValue).getSource())) {
+				if (newValue instanceof EAnnotation && UMLVisualInformationPapyrusConstant.STEREOTYPE_ANNOTATION.equals(((EAnnotation) newValue).getSource())) {
 					// the stereotype annotation was modified => refresh
 					listener.notifyChanged(notification);
 				}

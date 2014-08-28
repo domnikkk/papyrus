@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ public class DurationObservationParser extends MessageFormatParser implements IS
 	private static final String LINE_BREAK = System.getProperty("line.separator");
 
 	public DurationObservationParser() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() });
 	}
 
 	public DurationObservationParser(EAttribute[] features) {
@@ -50,16 +50,16 @@ public class DurationObservationParser extends MessageFormatParser implements IS
 
 	/**
 	 * Gets the e structural feature.
-	 * 
+	 *
 	 * @param notification
 	 * @return the structural feature
 	 */
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -80,8 +80,8 @@ public class DurationObservationParser extends MessageFormatParser implements IS
 	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		Object adapter = element.getAdapter(EObject.class);
-		if(adapter instanceof DurationObservation) {
-			return DurationObservationHelper.getLabelString((DurationObservation)adapter);
+		if (adapter instanceof DurationObservation) {
+			return DurationObservationHelper.getLabelString((DurationObservation) adapter);
 		}
 		return "";
 	}
@@ -89,6 +89,7 @@ public class DurationObservationParser extends MessageFormatParser implements IS
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		EStructuralFeature feature = getEStructuralFeature(notification);
 		return isValidFeature(feature);
@@ -97,11 +98,12 @@ public class DurationObservationParser extends MessageFormatParser implements IS
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-		if(element instanceof DurationObservation) {
-			DurationObservation observation = (DurationObservation)element;
+		if (element instanceof DurationObservation) {
+			DurationObservation observation = (DurationObservation) element;
 			semanticElementsBeingParsed.add(observation);
 		}
 		return semanticElementsBeingParsed;
@@ -109,12 +111,13 @@ public class DurationObservationParser extends MessageFormatParser implements IS
 
 	/**
 	 * Determines if the given feature has to be taken into account in this parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {
-		return UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature) || UMLPackage.eINSTANCE.getMessage_SendEvent().equals(feature) || UMLPackage.eINSTANCE.getMessage_ReceiveEvent().equals(feature) || UMLPackage.eINSTANCE.getDurationObservation_Event().equals(feature);
+		return UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature) || UMLPackage.eINSTANCE.getMessage_SendEvent().equals(feature) || UMLPackage.eINSTANCE.getMessage_ReceiveEvent().equals(feature)
+				|| UMLPackage.eINSTANCE.getDurationObservation_Event().equals(feature);
 	}
 }

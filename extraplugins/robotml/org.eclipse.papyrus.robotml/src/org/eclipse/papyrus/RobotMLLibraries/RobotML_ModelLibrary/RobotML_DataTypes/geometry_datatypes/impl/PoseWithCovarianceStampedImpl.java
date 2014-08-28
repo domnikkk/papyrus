@@ -3,9 +3,7 @@
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.PoseWithCovarianceStamped;
 
@@ -22,6 +20,7 @@ public class PoseWithCovarianceStampedImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PoseWithCovarianceStampedImpl() {
@@ -31,6 +30,7 @@ public class PoseWithCovarianceStampedImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -38,4 +38,4 @@ public class PoseWithCovarianceStampedImpl extends MinimalEObjectImpl.Container 
 		return Geometry_datatypesPackage.Literals.POSE_WITH_COVARIANCE_STAMPED;
 	}
 
-} //PoseWithCovarianceStampedImpl
+} // PoseWithCovarianceStampedImpl

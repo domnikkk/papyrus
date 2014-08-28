@@ -7,7 +7,6 @@
 package org.eclipse.papyrus.design.profile.architecture.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.eclipse.uml2.uml.edit.UMLEditPlugin;
@@ -16,6 +15,7 @@ import org.eclipse.uml2.uml.edit.UMLEditPlugin;
  * This is the central singleton for the Architecture edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public final class ArchitectureEditPlugin extends EMFPlugin {
@@ -23,6 +23,7 @@ public final class ArchitectureEditPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final ArchitectureEditPlugin INSTANCE = new ArchitectureEditPlugin();
@@ -31,6 +32,7 @@ public final class ArchitectureEditPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static Implementation plugin;
@@ -39,20 +41,21 @@ public final class ArchitectureEditPlugin extends EMFPlugin {
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ArchitectureEditPlugin() {
-		super
-		  (new ResourceLocator [] {
-		     EcoreEditPlugin.INSTANCE,
-		     UMLEditPlugin.INSTANCE,
-		   });
+		super(new ResourceLocator[] {
+				EcoreEditPlugin.INSTANCE,
+				UMLEditPlugin.INSTANCE,
+		});
 	}
 
 	/**
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -65,6 +68,7 @@ public final class ArchitectureEditPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -76,6 +80,7 @@ public final class ArchitectureEditPlugin extends EMFPlugin {
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static class Implementation extends EclipsePlugin {
@@ -83,6 +88,7 @@ public final class ArchitectureEditPlugin extends EMFPlugin {
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		public Implementation() {

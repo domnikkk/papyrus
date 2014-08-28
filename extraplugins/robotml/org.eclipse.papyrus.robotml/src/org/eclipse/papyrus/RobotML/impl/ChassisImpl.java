@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.Chassis;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -20,6 +19,7 @@ public class ChassisImpl extends SupportingStructureImpl implements Chassis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ChassisImpl() {
@@ -29,6 +29,7 @@ public class ChassisImpl extends SupportingStructureImpl implements Chassis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class ChassisImpl extends SupportingStructureImpl implements Chassis {
 		return RobotMLPackage.Literals.CHASSIS;
 	}
 
-} //ChassisImpl
+} // ChassisImpl

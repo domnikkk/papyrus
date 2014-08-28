@@ -13,6 +13,7 @@
 	<command id="org.eclipse.papyrus.sysml.diagram.internalblock.CreateCommand" name="Create a new Internal Block Diagram" description="Create a new Internal Block Diagram" categoryId="org.eclipse.papyrus.editor.category"></command>
 </extension>
 
+   
 
 <!-- Diagram creation command registration in menu and toolbar -->
 
@@ -346,13 +347,15 @@
 
 <!-- Insert custom extensions here. -->
 
+
+
 <!-- 
 	Handler declaration for the Interface Manager Command. 
 	The handler is enabled only if the selected element is a Port (excluding FlowPort) in an InternalBlockDiagram.
   -->
 <extension point="org.eclipse.ui.handlers">
 
-	<handler commandId="org.eclipse.papyrus.sysml.diagram.internalblock.command.manage.interfaces" class="org.eclipse.papyrus.sysml.diagram.internalblock.handler.ManageProvidedInterfacesHandler">
+	<handler commandId="org.eclipse.papyrus.sysml.diagram.internalblock.command.manage.interfaces" class="org.eclipse.papyrus.sysml.diagram.internalblock.handler.InternalBlockManageInterfacesHandler">
 		<activeWhen>
 		<and>
 			<with variable="selection">
@@ -482,6 +485,8 @@
 	</decoratorProvider>
 </extension>
 
+
+
 <!-- // End of user code 
   -->
 <extension point="org.eclipse.papyrus.infra.gmfdiag.common.notationTypesMapping">
@@ -542,4 +547,14 @@
    
           </diagramMappings>
    </extension>
+ 
+<extension id="org.eclipse.papyrus.sysml.diagram.internalblock.migration" name="InternalBlockMigration" point="org.eclipse.papyrus.infra.gmfdiag.common.diagramReconciler">
+   <diagramReconciler
+         diagramType="InternalBlock"
+         reconcilerClass="org.eclipse.papyrus.sysml.diagram.internalblock.migration.InternalBlockDiagramReconcilierUndefinedTo100"
+         source="undefined"
+         target="1.0.0">
+   </diagramReconciler>
+</extension>
+
 </plugin>

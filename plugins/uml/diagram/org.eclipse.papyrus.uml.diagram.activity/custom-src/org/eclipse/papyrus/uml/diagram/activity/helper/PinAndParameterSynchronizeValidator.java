@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 AtoS.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,7 @@ import java.lang.annotation.Target;
 
 /**
  * Annotation to specify on methods which ones are used for validation
- * 
+ *
  * @author tristan.faure@atos.net
  */
 @Target(ElementType.METHOD)

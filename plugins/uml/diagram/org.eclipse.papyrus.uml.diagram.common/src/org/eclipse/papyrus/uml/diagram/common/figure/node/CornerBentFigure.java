@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * this is the custom figure of the comment
- * 
+ *
  * @author Patrick Tessier
- * 
+ *
  */
 public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLElementFigure, IPapyrusNodeFigure {
 
@@ -64,8 +64,8 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 	public CornerBentFigure() {
 		super(100, 60, new Insets(5, 5, 5, 14));
 		setLayoutManager(new ToolbarLayout());
-		if(this.getBorder() instanceof NoteFigureBorder) {
-			noteBorder = (NoteFigureBorder)this.getBorder();
+		if (this.getBorder() instanceof NoteFigureBorder) {
+			noteBorder = (NoteFigureBorder) this.getBorder();
 		}
 		shadowborder = new NoteShadowBorder(3, getForegroundColor(), new Dimension(10, 10), noteBorder);
 		setBorder(shadowborder);
@@ -108,7 +108,7 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 
 		stereotypePropertiesContent.getChildren().clear();
 		StringTokenizer stringTokenizer = new StringTokenizer(stereotypeProperties, ";");
-		while(stringTokenizer.hasMoreElements()) {
+		while (stringTokenizer.hasMoreElements()) {
 			String tokenStereotype = stringTokenizer.nextToken();
 			tokenStereotype = tokenStereotype.replace("#", "\n  ");
 			tokenStereotype = tokenStereotype.replace("|", "\n  ");
@@ -127,7 +127,7 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 
 	/**
 	 * to obtain the stereotypePropertiesContent of the class figure
-	 * 
+	 *
 	 */
 	public RectangleFigure getStereotypePropertiesContent() {
 		return this.stereotypePropertiesContent;
@@ -136,24 +136,26 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 	/**
 	 * Returns the position of the stereotype properties location. this is just
 	 * after stereotype position
-	 * 
+	 *
 	 * @return the position of the stereotype properties label in the figure
 	 */
 	protected int getStereotypePropertiesLabelPosition() {
 		int position = getStereotypeLabelPosition();
-		if(this.stereotypesLabel != null) {
+		if (this.stereotypesLabel != null) {
 			position++;
 		}
 		return position;
 	}
 
+	@Override
 	public Label getStereotypesLabel() {
 		return this.stereotypesLabel;
 	}
 
+	@Override
 	public void setStereotypeDisplay(String stereotypes, Image image) {
 		// Set stereotype text on figure
-		if(!"".equals(stereotypes)) {
+		if (!"".equals(stereotypes)) {
 			setStereotypes(stereotypes);
 		} else {
 			setStereotypes(null);
@@ -163,10 +165,11 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 
 	}
 
+	@Override
 	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
-		if(stereotypeProperties == null) {
+		if (stereotypeProperties == null) {
 			// Remove label if any
-			if(this.stereotypePropertiesInBraceContent != null) {
+			if (this.stereotypePropertiesInBraceContent != null) {
 				this.remove(this.stereotypePropertiesInBraceContent);
 				this.stereotypePropertiesInBraceContent = null;
 			}
@@ -174,12 +177,12 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 		}
 
 		// Set the stereotype label if it does not already exist
-		if(this.stereotypePropertiesInBraceContent == null) {
+		if (this.stereotypePropertiesInBraceContent == null) {
 			this.createStereotypePropertiesInBraceLabel();
 		}
 
 		// Set stereotype text on figure
-		if(!"".equals(stereotypeProperties)) {
+		if (!"".equals(stereotypeProperties)) {
 			this.stereotypePropertiesInBraceContent.setText("{" + stereotypeProperties + "}");
 		} else {
 			this.stereotypePropertiesInBraceContent.setText("");
@@ -189,17 +192,18 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 
 	/**
 	 * displays the new string corresponding to the list of stereotypes.
-	 * 
+	 *
 	 * if the string is <code>null</code>, then the figure that displays the
 	 * stereotype label is removed from the NodeNamedElementFigure.
-	 * 
+	 *
 	 * @param stereotypeProperties
-	 *        the string to be displayed.
+	 *            the string to be displayed.
 	 */
+	@Override
 	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
-		if(stereotypeProperties == null || stereotypeProperties == "") {
+		if (stereotypeProperties == null || stereotypeProperties == "") {
 			// remove figure of stereotype properties compartment
-			if(this.stereotypePropertiesContent != null) {
+			if (this.stereotypePropertiesContent != null) {
 				this.remove(this.stereotypePropertiesContent);
 				this.stereotypePropertiesContent = null;
 			}
@@ -207,7 +211,7 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 		}
 
 		// set stereotype properties content
-		if(stereotypePropertiesContent == null) {
+		if (stereotypePropertiesContent == null) {
 			this.createStereotypePropertiesContent();
 		}
 
@@ -224,14 +228,14 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 	 * <li>if this is not <code>null</code>, it creates the stereotype label if needed and displays the specified string.</li>
 	 * </ul>
 	 * </p>
-	 * 
+	 *
 	 * @param stereotypes
-	 *        the string representing the stereotypes to be displayed
+	 *            the string representing the stereotypes to be displayed
 	 */
 	public void setStereotypes(String stereotypes) {
-		if(stereotypes == null) {
+		if (stereotypes == null) {
 			// Remove label if any
-			if(this.stereotypesLabel != null) {
+			if (this.stereotypesLabel != null) {
 				this.remove(this.stereotypesLabel);
 				this.stereotypesLabel = null;
 			}
@@ -239,12 +243,12 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 		}
 
 		// Set the stereotype label if it does not already exist
-		if(this.stereotypesLabel == null) {
+		if (this.stereotypesLabel == null) {
 			this.createStereotypeLabel();
 		}
 
 		// Set stereotype text on figure
-		if(!"".equals(stereotypes)) {
+		if (!"".equals(stereotypes)) {
 			this.stereotypesLabel.setText(stereotypes);
 		} else {
 			this.stereotypesLabel.setText("");
@@ -252,21 +256,21 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return the position of the stereotype label in the figure
 	 */
 	protected int getStereotypeLabelPosition() {
 		int position = getIconLabelPosition();
-		if((this.iconLabel != null) && (this.iconLabel.getIcon() != null)) {
+		if ((this.iconLabel != null) && (this.iconLabel.getIcon() != null)) {
 			position++;
 		}
 		return position;
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
 	protected int getIconLabelPosition() {
@@ -275,14 +279,14 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 
 	/**
 	 * Sets the stereotype icon for this figure.
-	 * 
+	 *
 	 * @param stereotypes
-	 *        the image representing the stereotype
+	 *            the image representing the stereotype
 	 */
 	public void setAppliedStereotypeIcon(Image image) {
-		if(image == null) {
+		if (image == null) {
 			// Remove label if any
-			if(this.iconLabel != null) {
+			if (this.iconLabel != null) {
 				this.remove(this.iconLabel);
 				this.iconLabel = null;
 			}
@@ -290,7 +294,7 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 		}
 
 		// Set the stereotype label if it does not already exist
-		if(this.iconLabel == null) {
+		if (this.iconLabel == null) {
 			this.createIconLabel();
 		}
 
@@ -308,26 +312,30 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 		iconLabel.setLabelAlignment(PositionConstants.LEFT);
 	}
 
+	@Override
 	public Color getBorderColor() {
 		return borderColor;
 	}
 
+	@Override
 	public void setBorderColor(Color borderColor) {
 		// this.borderColor = borderColor;
 		// super.setBorder(new LineBorder(borderColor));
 
 	}
 
+	@Override
 	public boolean isShadow() {
 		return shadow;
 	}
 
+	@Override
 	public void setShadow(boolean shadow) {
 		this.shadow = shadow;
-		if(shadow == true) {
+		if (shadow == true) {
 			this.setBorder(shadowborder);
 		} else {
-			if(noteBorder != null) {
+			if (noteBorder != null) {
 				this.setBorder(noteBorder);
 			}
 		}
@@ -337,7 +345,7 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 
 	@Override
 	protected void paintBorder(Graphics g) {
-		if(getBorder() == null) {
+		if (getBorder() == null) {
 			return;
 		}
 		super.paintBorder(g);

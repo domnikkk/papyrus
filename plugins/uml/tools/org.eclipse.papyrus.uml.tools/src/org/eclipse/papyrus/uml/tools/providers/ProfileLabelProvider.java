@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,13 +33,13 @@ public class ProfileLabelProvider extends EMFLabelProvider implements ILabelProv
 
 	@Override
 	public String getText(Object source) {
-		if(source instanceof Profile) {
-			Profile profile = (Profile)source;
+		if (source instanceof Profile) {
+			Profile profile = (Profile) source;
 			String name = profile.getQualifiedName();
-			if(name == null) {
+			if (name == null) {
 				name = UNKNOWN_PROFILE;
 			}
-			if(ProfileUtil.isDirty(umlPackage, profile)) {
+			if (ProfileUtil.isDirty(umlPackage, profile)) {
 				name += TAG_PROFILE_CHANGED;
 			}
 			return name;

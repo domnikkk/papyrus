@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,8 +35,8 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.ArrangeRequest;
 /**
  * This action is used to arrange editparts on the diagram
  * Copied from {@link ArrangeAction}
- * 
- * 
+ *
+ *
  */
 public class ArrangeAction extends AbstractGraphicalParametricAction {
 
@@ -46,9 +46,9 @@ public class ArrangeAction extends AbstractGraphicalParametricAction {
 	public static final String ARRANGE_SELECTION = "arrangeSelection"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameter
 	 */
 	public ArrangeAction(String parameter, List<IGraphicalEditPart> selection) {
@@ -57,34 +57,36 @@ public class ArrangeAction extends AbstractGraphicalParametricAction {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.menu.actions.AbstractParametricAction#getBuildedCommand()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected Command getBuildedCommand() {
 		CompoundCommand command = new CompoundCommand("Arrange Command"); //$NON-NLS-1$
 
-		if(getParameter().equals(ARRANGE_ALL)) {
+		if (getParameter().equals(ARRANGE_ALL)) {
 			ArrangeRequest request = new ArrangeRequest("arrangeAllAction"); //$NON-NLS-1$
 			request.setPartsToArrange(createOperationSetForArrangeAll(getSelection()));
 
-			for(Iterator<IGraphicalEditPart> iter = getSelection().iterator(); iter.hasNext();) {
+			for (Iterator<IGraphicalEditPart> iter = getSelection().iterator(); iter.hasNext();) {
 				EditPart element = iter.next();
 				Command cmd = element.getCommand(request);
-				if(cmd != null && cmd.canExecute())
+				if (cmd != null && cmd.canExecute()) {
 					command.add(cmd);
+				}
 			}
-		} else if(getParameter().equals(ARRANGE_SELECTION)) {
+		} else if (getParameter().equals(ARRANGE_SELECTION)) {
 			ArrangeRequest request = new ArrangeRequest("arrangeSelectionAction"); //$NON-NLS-1$
 			request.setPartsToArrange(getSelection());
 
 			EditPart commonAncestor = getTargetEditPartForArrangeSelection(getSelection(), request);
-			if(commonAncestor != null) {
+			if (commonAncestor != null) {
 				Command cmd = commonAncestor.getCommand(request);
-				if(cmd != null)
+				if (cmd != null) {
 					command.add(cmd);
+				}
 			}
 		}
 
@@ -92,58 +94,60 @@ public class ArrangeAction extends AbstractGraphicalParametricAction {
 	}
 
 	/**
-	 * 
+	 *
 	 * Copied from {@link org.eclipse.gmf.runtime.diagram.ui.actions.internal.ArrangeAction}
-	 * 
+	 *
 	 * @param editparts
-	 *        the list of the selected editparts
+	 *            the list of the selected editparts
 	 * @param request
-	 *        the request to arrange the edit part
+	 *            the request to arrange the edit part
 	 * @return
 	 *         the EditPart, which can arrange the selection
 	 */
 	@SuppressWarnings("restriction")
 	private EditPart getTargetEditPartForArrangeSelection(List<?> editparts, Request request) {
 
-		if(editparts.size() == 1) {
+		if (editparts.size() == 1) {
 
 			// If there is only one editpart selected, then the Arrange
 			// Selected request gets sent to this editpart's target editpart to
 			// allow clients to do as they wish.
-			return ((EditPart)editparts.get(0)).getTargetEditPart(request);
+			return ((EditPart) editparts.get(0)).getTargetEditPart(request);
 
 		} else {
 
 			// If there is more than one editpart selected, then the Arrange
 			// Selected request gets sent to the common parent.
 			EditPart parentEP = getSelectionParent(editparts);
-			if(parentEP == null)
+			if (parentEP == null) {
 				return null;
+			}
 
-			for(int i = 1; i < editparts.size(); i++) {
-				EditPart part = (EditPart)editparts.get(i);
-				if(part instanceof ConnectionEditPart) {
+			for (int i = 1; i < editparts.size(); i++) {
+				EditPart part = (EditPart) editparts.get(i);
+				if (part instanceof ConnectionEditPart) {
 					continue;
 				}
 				// if there is no common parent, then Arrange Selected isn't
 				// supported.
-				if(part.getParent() != parentEP)
+				if (part.getParent() != parentEP) {
 					return null;
+				}
 			}
 			return parentEP;
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.menu.actions.AbstractParametricAction#isEnabled()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public boolean isEnabled() {
-		//we don't need selection to do arrange all
-		if(getParameter().equals(ARRANGE_ALL)) {
+		// we don't need selection to do arrange all
+		if (getParameter().equals(ARRANGE_ALL)) {
 			return true;
 		}
 		return super.isEnabled();
@@ -151,21 +155,21 @@ public class ArrangeAction extends AbstractGraphicalParametricAction {
 
 
 	/**
-	 * 
+	 *
 	 * Copied from {@link ArrangeAction} getSelectionParent Utility to return the logical parent of the selection
 	 * list
-	 * 
+	 *
 	 * @param editparts
-	 *        List to parse for a common parent.
+	 *            List to parse for a common parent.
 	 * @return EditPart that is the parent or null if a common parent doesn't
 	 *         exist.
 	 */
 	protected EditPart getSelectionParent(List<?> editparts) {
 		ListIterator<?> li = editparts.listIterator();
-		while(li.hasNext()) {
+		while (li.hasNext()) {
 			Object obj = li.next();
-			if(!(obj instanceof ConnectionEditPart) && obj instanceof EditPart) {
-				return ((EditPart)obj).getParent();
+			if (!(obj instanceof ConnectionEditPart) && obj instanceof EditPart) {
+				return ((EditPart) obj).getParent();
 			}
 		}
 
@@ -179,20 +183,21 @@ public class ArrangeAction extends AbstractGraphicalParametricAction {
 	@SuppressWarnings("unchecked")
 	protected List<IGraphicalEditPart> createOperationSetForArrangeAll(List<IGraphicalEditPart> selection) {
 		Set<IGraphicalEditPart> parentsSet = new HashSet<IGraphicalEditPart>();
-		for(Iterator<IGraphicalEditPart> iter = selection.iterator(); iter.hasNext();) {
+		for (Iterator<IGraphicalEditPart> iter = selection.iterator(); iter.hasNext();) {
 			Object element = iter.next();
-			if(element instanceof ShapeCompartmentEditPart || element instanceof DiagramEditPart) {
-				parentsSet.add((IGraphicalEditPart)element);
-			} else if(element instanceof EditPart) {
-				EditPart gEditPart = (EditPart)element;
+			if (element instanceof ShapeCompartmentEditPart || element instanceof DiagramEditPart) {
+				parentsSet.add((IGraphicalEditPart) element);
+			} else if (element instanceof EditPart) {
+				EditPart gEditPart = (EditPart) element;
 				EditPart parentEditPart = gEditPart.getParent();
-				if(parentEditPart instanceof ShapeCompartmentEditPart || parentEditPart instanceof DiagramEditPart) {
-					if(!parentsSet.contains(parentEditPart))
-						parentsSet.add((IGraphicalEditPart)parentEditPart);
+				if (parentEditPart instanceof ShapeCompartmentEditPart || parentEditPart instanceof DiagramEditPart) {
+					if (!parentsSet.contains(parentEditPart)) {
+						parentsSet.add((IGraphicalEditPart) parentEditPart);
+					}
 				}
 			}
 		}
-		if(parentsSet.isEmpty()) {
+		if (parentsSet.isEmpty()) {
 			return Collections.EMPTY_LIST;
 		}
 		List<IGraphicalEditPart> elements = new ArrayList<IGraphicalEditPart>();
@@ -201,9 +206,9 @@ public class ArrangeAction extends AbstractGraphicalParametricAction {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.menu.actions.AbstractParametricAction#getSelection()
-	 * 
+	 *
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
@@ -211,12 +216,12 @@ public class ArrangeAction extends AbstractGraphicalParametricAction {
 	protected List<IGraphicalEditPart> getSelection() {
 		List<IGraphicalEditPart> selection = super.getSelection();
 
-		if(ArrangeAction.ARRANGE_ALL.equals(getParameter())) {
+		if (ArrangeAction.ARRANGE_ALL.equals(getParameter())) {
 
-			if(!selection.isEmpty()) {
+			if (!selection.isEmpty()) {
 				return createOperationSetForArrangeAll(selection);
 			}
-			if(getDiagramEditPart() != null) {
+			if (getDiagramEditPart() != null) {
 				return getDiagramEditPart().getChildren();
 			}
 			return Collections.EMPTY_LIST;
@@ -224,8 +229,9 @@ public class ArrangeAction extends AbstractGraphicalParametricAction {
 		} else {
 
 			// this is the case of Arrange Selection
-			if(selection.isEmpty() || !(selection.get(0) instanceof IGraphicalEditPart))
+			if (selection.isEmpty() || !(selection.get(0) instanceof IGraphicalEditPart)) {
 				return Collections.EMPTY_LIST;
+			}
 
 			selection = ToolUtilities.getSelectionWithoutDependants(selection);
 			return selection;

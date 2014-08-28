@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,12 +26,12 @@ import java.util.NoSuchElementException;
 public class FilteredListView extends AbstractSequentialList<Object> implements List<Object> {
 
 	/**
-	 * 
+	 *
 	 */
 	private List<Object> list;
 
 	/**
-	 * 
+	 *
 	 */
 	private IFilter filter;
 
@@ -42,8 +42,8 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 	private int size = -1;
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param filter
 	 * @param list
 	 */
@@ -54,9 +54,9 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 
 	/**
 	 * Sets the value of the list property.
-	 * 
+	 *
 	 * @param aList
-	 *        the new value of the list property
+	 *            the new value of the list property
 	 */
 	public void setBackupList(List aList) {
 		list = aList;
@@ -64,9 +64,9 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 
 	/**
 	 * Sets the value of the filter property.
-	 * 
+	 *
 	 * @param aFilter
-	 *        the new value of the filter property
+	 *            the new value of the filter property
 	 */
 	public void setFilter(IFilter aFilter) {
 		filter = aFilter;
@@ -74,15 +74,15 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 
 	/**
 	 * size.
-	 * 
+	 *
 	 * @return int
 	 */
 	@Override
 	public int size() {
-		if(size == -1) { // compute the size
+		if (size == -1) { // compute the size
 			size = 0;
 			Iterator<Object> i = iterator();
-			while(i.hasNext()) {
+			while (i.hasNext()) {
 				size++;
 				i.next();
 			}
@@ -95,10 +95,10 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 	 * More formally, returns <tt>true</tt> if and only if this collection
 	 * contains at least one element <tt>e</tt> such that <tt>(o==null ? e==null : o.equals(e))</tt>.
 	 * <p>
-	 * 
+	 *
 	 * @param o
-	 *        object to be checked for containment in this collection.
-	 * 
+	 *            object to be checked for containment in this collection.
+	 *
 	 * @return <tt>true</tt> if this collection contains the specified element.
 	 */
 	@Override
@@ -113,18 +113,18 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 	 * Returns <tt>true</tt> if the collection contained the specified element
 	 * (or equivalently, if the collection changed as a result of the call).
 	 * <p>
-	 * 
+	 *
 	 * This implementation call the remove method on the underlying collection.
 	 * <p>
-	 * 
+	 *
 	 * @param o
-	 *        element to be removed from this collection, if present.
-	 * 
+	 *            element to be removed from this collection, if present.
+	 *
 	 * @return <tt>true</tt> if the collection contained the specified element.
-	 * 
+	 *
 	 * @throws UnsupportedOperationException
-	 *         if the <tt>remove</tt> method is not supported by this
-	 *         collection.
+	 *             if the <tt>remove</tt> method is not supported by this
+	 *             collection.
 	 */
 	@Override
 	public boolean remove(Object o) {
@@ -134,10 +134,10 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 
 	/**
 	 * listIterator.
-	 * 
+	 *
 	 * @param index
-	 *        int
-	 * 
+	 *            int
+	 *
 	 * @return ListIterator
 	 */
 	@Override
@@ -146,22 +146,22 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	private class FilteredListIterator implements ListIterator<Object> {
 
 		/**
-		 * 
+		 *
 		 */
 		Object current;
 
 		/**
-		 * 
+		 *
 		 */
 		Object next;
 
 		/**
-		 * 
+		 *
 		 */
 		Object previous;
 
@@ -171,12 +171,12 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 		int currentIndex;
 
 		/**
-		 * 
+		 *
 		 */
 		int previousIndex;
 
 		/**
-		 * 
+		 *
 		 */
 		int nextIndex;
 
@@ -191,13 +191,13 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 		int index = 0;
 
 		/**
-		 * 
+		 *
 		 */
 		ListIterator<Object> listIterator;
 
 		/**
-		 * 
-		 * 
+		 *
+		 *
 		 * @param index
 		 */
 		FilteredListIterator(int index) {
@@ -211,23 +211,23 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 			currentIndex = 0;
 
 			// Go to the specified index
-			while(hasNext() && (nextIndex() < index)) {
+			while (hasNext() && (nextIndex() < index)) {
 				next();
 			}
 		}
 
 		/**
-		 * 
-		 * 
+		 *
+		 *
 		 * @return
 		 */
 		protected Object nextFilteredObject() {
-			while(listIterator.hasNext()) {
+			while (listIterator.hasNext()) {
 
 				int curIndex = listIterator.nextIndex(); // This is the current
 															// index in the list
 				Object ele = listIterator.next();
-				if(filter.isAllowed(ele) && (curIndex > nextIndex)) {
+				if (filter.isAllowed(ele) && (curIndex > nextIndex)) {
 					nextIndex = curIndex;
 					return ele;
 				}
@@ -236,17 +236,17 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 		}
 
 		/**
-		 * 
-		 * 
+		 *
+		 *
 		 * @return
 		 */
 		protected Object previousFilteredObject() {
-			while(listIterator.hasPrevious()) {
+			while (listIterator.hasPrevious()) {
 				int curIndex = listIterator.previousIndex(); // This is the
 																// current index
 																// in the list
 				Object ele = listIterator.previous();
-				if(filter.isAllowed(ele) && (curIndex < previousIndex)) {
+				if (filter.isAllowed(ele) && (curIndex < previousIndex)) {
 					previousIndex = curIndex;
 					return ele;
 				}
@@ -256,18 +256,20 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 
 		/**
 		 * /** nextIndex.
-		 * 
+		 *
 		 * @return int
 		 */
+		@Override
 		public int nextIndex() {
 			return index;
 		}
 
 		/**
 		 * previousIndex.
-		 * 
+		 *
 		 * @return int
 		 */
+		@Override
 		public int previousIndex() {
 			return index - 1;
 		}
@@ -275,39 +277,43 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 		/**
 		 * remove.
 		 */
+		@Override
 		public void remove() {
 			throw new UnsupportedOperationException();
 		}
 
 		/**
 		 * hasNext.
-		 * 
+		 *
 		 * @return boolean
 		 */
+		@Override
 		public boolean hasNext() {
 			return next != null;
 		}
 
 		/**
 		 * hasPrevious.
-		 * 
+		 *
 		 * @return boolean
 		 */
+		@Override
 		public boolean hasPrevious() {
 			return previous != null;
 		}
 
 		/**
 		 * next.
-		 * 
+		 *
 		 * @return Object
 		 */
+		@Override
 		public Object next() {
-			if(next == null) {
+			if (next == null) {
 				throw new NoSuchElementException();
 			}
 
-			if(index > eleIndex) { // previous was up, continue
+			if (index > eleIndex) { // previous was up, continue
 				previous = current;
 				previousIndex = currentIndex;
 				current = next;
@@ -325,15 +331,16 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 
 		/**
 		 * previous.
-		 * 
+		 *
 		 * @return Object
 		 */
+		@Override
 		public Object previous() {
-			if(previous == null) {
+			if (previous == null) {
 				throw new NoSuchElementException();
 			}
 
-			if(index > eleIndex) { // previous was up, turn back
+			if (index > eleIndex) { // previous was up, turn back
 				index--;
 				return current;
 			} else { // previuos was done, continue
@@ -353,20 +360,22 @@ public class FilteredListView extends AbstractSequentialList<Object> implements 
 
 		/**
 		 * add.
-		 * 
+		 *
 		 * @param o
-		 *        Object
+		 *            Object
 		 */
+		@Override
 		public void add(Object o) {
 			throw new UnsupportedOperationException();
 		}
 
 		/**
 		 * set.
-		 * 
+		 *
 		 * @param o
-		 *        Object
+		 *            Object
 		 */
+		@Override
 		public void set(Object o) {
 			throw new UnsupportedOperationException();
 		}

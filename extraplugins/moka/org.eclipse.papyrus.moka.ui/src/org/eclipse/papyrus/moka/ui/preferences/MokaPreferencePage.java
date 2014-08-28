@@ -50,7 +50,7 @@ public class MokaPreferencePage extends FieldEditorPreferencePage implements IWo
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		IConfigurationElement[] config = registry.getConfigurationElementsFor(MokaConstants.MOKA_ENGINE_EXTENSION_POINT_ID);
 		String[][] names = new String[config.length][2];
-		for(int i = 0; i < config.length; i++) {
+		for (int i = 0; i < config.length; i++) {
 			names[i][1] = config[i].getNamespaceIdentifier();
 			names[i][0] = config[i].getAttribute("description");
 		}

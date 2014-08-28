@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,9 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * An action to toggle the display of the DataContextElements in the UIEditor
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ToggleDataContextAction extends AbstractHandler {
 
@@ -31,16 +31,17 @@ public class ToggleDataContextAction extends AbstractHandler {
 	 */
 	public static boolean showDataContext = false;
 
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		showDataContext = !showDataContext;
 		IEditorPart editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if(editor instanceof UIEditor) {
-			UIEditor uiEditor = (UIEditor)editor;
+		if (editor instanceof UIEditor) {
+			UIEditor uiEditor = (UIEditor) editor;
 			uiEditor.getViewer().refresh();
 		}
 
 		//		State state = event.getCommand().getState("org.eclipse.papyrus.customization.properties.displayContextState"); //$NON-NLS-1$
-		//		state.setValue(showDataContext);
+		// state.setValue(showDataContext);
 		return null;
 	}
 

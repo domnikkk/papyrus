@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -23,22 +23,25 @@ import org.eclipse.swt.events.SelectionListener;
  *
  */
 class CreationMenuListener implements SelectionListener {
-	protected TransactionalEditingDomain	editingDomain;
+	protected TransactionalEditingDomain editingDomain;
 	protected Command cmd;
-	
+
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
-	 * @param cmd the command associated to the menu
-	 * @param editingDomain the editing domain needed to execute the command
+	 * @param cmd
+	 *            the command associated to the menu
+	 * @param editingDomain
+	 *            the editing domain needed to execute the command
 	 */
-	public CreationMenuListener(Command cmd ,TransactionalEditingDomain	editingDomain) {
-		this.cmd= cmd;
-		this.editingDomain=editingDomain;
+	public CreationMenuListener(Command cmd, TransactionalEditingDomain editingDomain) {
+		this.cmd = cmd;
+		this.editingDomain = editingDomain;
 	}
+
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.swt.events.SelectionListener#widgetSelected(org.eclipse.swt.events.SelectionEvent)
 	 *
 	 * @param e
@@ -46,8 +49,9 @@ class CreationMenuListener implements SelectionListener {
 	public void widgetSelected(SelectionEvent e) {
 		editingDomain.getCommandStack().execute(cmd);
 	}
+
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.swt.events.SelectionListener#widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent)
 	 *
 	 * @param e

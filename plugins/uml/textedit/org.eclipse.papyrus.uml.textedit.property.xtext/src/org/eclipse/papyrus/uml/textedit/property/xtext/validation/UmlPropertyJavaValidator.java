@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ import org.eclipse.xtext.validation.EValidatorRegistrar;
 
 /**
  * Class for customized java validation
- * 
+ *
  */
 public class UmlPropertyJavaValidator extends AbstractUmlPropertyJavaValidator {
 
@@ -40,7 +40,7 @@ public class UmlPropertyJavaValidator extends AbstractUmlPropertyJavaValidator {
 	/**
 	 * Custom validation for multiplicities. Raises an error in the case where
 	 * the lower bound is upper than the upper bound.
-	 * 
+	 *
 	 */
 	@Check
 	public void checkMultiplicityRule(MultiplicityRule rule) {
@@ -80,8 +80,9 @@ public class UmlPropertyJavaValidator extends AbstractUmlPropertyJavaValidator {
 				container = container.eContainer();
 			}
 
-			if (container == null)
+			if (container == null) {
 				return;
+			}
 
 			PropertyRule propertyRule = (PropertyRule) container;
 			Classifier typeOfRedefiningProperty = propertyRule.getType().getType();
@@ -131,8 +132,9 @@ public class UmlPropertyJavaValidator extends AbstractUmlPropertyJavaValidator {
 				return;
 			}
 
-			if (redefinedProperty.isDerived() && !isRedefiningPropertyDerived)
+			if (redefinedProperty.isDerived() && !isRedefiningPropertyDerived) {
 				valid_RedefinesRule = false;
+			}
 			if (!valid_RedefinesRule) {
 				error(multiplicityErrorMessage, UmlPropertyPackage.eINSTANCE.getRedefinesRule_Property());
 				// error(isDerivedErrorMessage, rule,
@@ -162,8 +164,9 @@ public class UmlPropertyJavaValidator extends AbstractUmlPropertyJavaValidator {
 				container = container.eContainer();
 			}
 
-			if (container == null)
+			if (container == null) {
 				return;
+			}
 
 			PropertyRule propertyRule = (PropertyRule) container;
 			Classifier typeOfSubsettingProperty = propertyRule.getType().getType();

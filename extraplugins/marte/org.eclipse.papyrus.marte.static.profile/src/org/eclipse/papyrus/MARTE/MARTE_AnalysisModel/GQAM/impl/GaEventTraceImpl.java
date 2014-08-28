@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,10 +29,10 @@ import org.eclipse.uml2.uml.NamedElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaEventTraceImpl#getContent <em>Content</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaEventTraceImpl#getFormat <em>Format</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaEventTraceImpl#getLocation <em>Location</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaEventTraceImpl#getBase_NamedElement <em>Base Named Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaEventTraceImpl#getContent <em>Content</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaEventTraceImpl#getFormat <em>Format</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaEventTraceImpl#getLocation <em>Location</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaEventTraceImpl#getBase_NamedElement <em>Base Named Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getContent()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	 * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getContent()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	 * The default value of the '{@link #getFormat() <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFormat()
 	 * @generated
 	 * @ordered
@@ -73,6 +76,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	 * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFormat()
 	 * @generated
 	 * @ordered
@@ -83,6 +87,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLocation()
 	 * @generated
 	 * @ordered
@@ -93,6 +98,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	 * The cached value of the '{@link #getLocation() <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLocation()
 	 * @generated
 	 * @ordered
@@ -103,6 +109,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -112,6 +119,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected GaEventTraceImpl() {
@@ -121,6 +129,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,8 +140,10 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getContent() {
 		return content;
 	}
@@ -140,20 +151,25 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setContent(String newContent) {
 		String oldContent = content;
 		content = newContent;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_EVENT_TRACE__CONTENT, oldContent, content));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getFormat() {
 		return format;
 	}
@@ -161,20 +177,25 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setFormat(String newFormat) {
 		String oldFormat = format;
 		format = newFormat;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_EVENT_TRACE__FORMAT, oldFormat, format));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLocation() {
 		return location;
 	}
@@ -182,27 +203,33 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setLocation(String newLocation) {
 		String oldLocation = location;
 		location = newLocation;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_EVENT_TRACE__LOCATION, oldLocation, location));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public NamedElement getBase_NamedElement() {
 		if (base_NamedElement != null && base_NamedElement.eIsProxy()) {
-			InternalEObject oldBase_NamedElement = (InternalEObject)base_NamedElement;
-			base_NamedElement = (NamedElement)eResolveProxy(oldBase_NamedElement);
+			InternalEObject oldBase_NamedElement = (InternalEObject) base_NamedElement;
+			base_NamedElement = (NamedElement) eResolveProxy(oldBase_NamedElement);
 			if (base_NamedElement != oldBase_NamedElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_EVENT_TRACE__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
+				}
 			}
 		}
 		return base_NamedElement;
@@ -211,6 +238,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -220,32 +248,38 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_NamedElement(NamedElement newBase_NamedElement) {
 		NamedElement oldBase_NamedElement = base_NamedElement;
 		base_NamedElement = newBase_NamedElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_EVENT_TRACE__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GQAMPackage.GA_EVENT_TRACE__CONTENT:
-				return getContent();
-			case GQAMPackage.GA_EVENT_TRACE__FORMAT:
-				return getFormat();
-			case GQAMPackage.GA_EVENT_TRACE__LOCATION:
-				return getLocation();
-			case GQAMPackage.GA_EVENT_TRACE__BASE_NAMED_ELEMENT:
-				if (resolve) return getBase_NamedElement();
-				return basicGetBase_NamedElement();
+		case GQAMPackage.GA_EVENT_TRACE__CONTENT:
+			return getContent();
+		case GQAMPackage.GA_EVENT_TRACE__FORMAT:
+			return getFormat();
+		case GQAMPackage.GA_EVENT_TRACE__LOCATION:
+			return getLocation();
+		case GQAMPackage.GA_EVENT_TRACE__BASE_NAMED_ELEMENT:
+			if (resolve) {
+				return getBase_NamedElement();
+			}
+			return basicGetBase_NamedElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -253,23 +287,24 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GQAMPackage.GA_EVENT_TRACE__CONTENT:
-				setContent((String)newValue);
-				return;
-			case GQAMPackage.GA_EVENT_TRACE__FORMAT:
-				setFormat((String)newValue);
-				return;
-			case GQAMPackage.GA_EVENT_TRACE__LOCATION:
-				setLocation((String)newValue);
-				return;
-			case GQAMPackage.GA_EVENT_TRACE__BASE_NAMED_ELEMENT:
-				setBase_NamedElement((NamedElement)newValue);
-				return;
+		case GQAMPackage.GA_EVENT_TRACE__CONTENT:
+			setContent((String) newValue);
+			return;
+		case GQAMPackage.GA_EVENT_TRACE__FORMAT:
+			setFormat((String) newValue);
+			return;
+		case GQAMPackage.GA_EVENT_TRACE__LOCATION:
+			setLocation((String) newValue);
+			return;
+		case GQAMPackage.GA_EVENT_TRACE__BASE_NAMED_ELEMENT:
+			setBase_NamedElement((NamedElement) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -277,23 +312,24 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_EVENT_TRACE__CONTENT:
-				setContent(CONTENT_EDEFAULT);
-				return;
-			case GQAMPackage.GA_EVENT_TRACE__FORMAT:
-				setFormat(FORMAT_EDEFAULT);
-				return;
-			case GQAMPackage.GA_EVENT_TRACE__LOCATION:
-				setLocation(LOCATION_EDEFAULT);
-				return;
-			case GQAMPackage.GA_EVENT_TRACE__BASE_NAMED_ELEMENT:
-				setBase_NamedElement((NamedElement)null);
-				return;
+		case GQAMPackage.GA_EVENT_TRACE__CONTENT:
+			setContent(CONTENT_EDEFAULT);
+			return;
+		case GQAMPackage.GA_EVENT_TRACE__FORMAT:
+			setFormat(FORMAT_EDEFAULT);
+			return;
+		case GQAMPackage.GA_EVENT_TRACE__LOCATION:
+			setLocation(LOCATION_EDEFAULT);
+			return;
+		case GQAMPackage.GA_EVENT_TRACE__BASE_NAMED_ELEMENT:
+			setBase_NamedElement((NamedElement) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -301,19 +337,20 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_EVENT_TRACE__CONTENT:
-				return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
-			case GQAMPackage.GA_EVENT_TRACE__FORMAT:
-				return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals(format);
-			case GQAMPackage.GA_EVENT_TRACE__LOCATION:
-				return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
-			case GQAMPackage.GA_EVENT_TRACE__BASE_NAMED_ELEMENT:
-				return base_NamedElement != null;
+		case GQAMPackage.GA_EVENT_TRACE__CONTENT:
+			return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
+		case GQAMPackage.GA_EVENT_TRACE__FORMAT:
+			return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals(format);
+		case GQAMPackage.GA_EVENT_TRACE__LOCATION:
+			return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
+		case GQAMPackage.GA_EVENT_TRACE__BASE_NAMED_ELEMENT:
+			return base_NamedElement != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -321,11 +358,14 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (content: ");
@@ -338,4 +378,4 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 		return result.toString();
 	}
 
-} //GaEventTraceImpl
+} // GaEventTraceImpl

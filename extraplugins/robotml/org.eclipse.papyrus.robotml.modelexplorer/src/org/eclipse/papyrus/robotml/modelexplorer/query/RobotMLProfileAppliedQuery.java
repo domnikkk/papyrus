@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,10 @@ public class RobotMLProfileAppliedQuery implements IJavaModelQuery<Element, Bool
 
 	public static String ROBOTML_ID = "RobotML";
 
+	@Override
 	public Boolean evaluate(Element context, ParameterValueList parameterValues) throws ModelQueryExecutionException {
 		// TODO Auto-generated method stub
-		if(ProfileUtil.getAppliedProfile(context.getNearestPackage(), "RobotML") != null) {
+		if (ProfileUtil.getAppliedProfile(context.getNearestPackage(), "RobotML") != null) {
 			return false;
 		}
 		return true;

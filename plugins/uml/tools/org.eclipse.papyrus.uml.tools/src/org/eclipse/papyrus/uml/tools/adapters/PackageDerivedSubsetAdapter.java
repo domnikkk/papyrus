@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,16 +26,16 @@ import org.eclipse.uml2.uml.util.UMLDerivedUnionAdapter;
  *      <li>UMLPackage.Literals.PACKAGE__OWNED_STEREOTYPE</li>
  *      <li>UMLPackage.Literals.PACKAGE__OWNED_TYPE</li>
  *      </ul>
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class PackageDerivedSubsetAdapter extends UMLDerivedUnionAdapter {
 
 	@Override
 	protected void notifyPackageChanged(Notification notification, EClass eClass) {
 		super.notifyPackageChanged(notification, eClass);
-		switch(notification.getFeatureID(org.eclipse.uml2.uml.Package.class)) {
+		switch (notification.getFeatureID(org.eclipse.uml2.uml.Package.class)) {
 		case UMLPackage.PACKAGE__PACKAGED_ELEMENT:
 			notifyChanged(notification, eClass, UMLPackage.Literals.PACKAGE__NESTED_PACKAGE);
 			notifyChanged(notification, eClass, UMLPackage.Literals.PACKAGE__OWNED_STEREOTYPE);
@@ -49,7 +49,7 @@ public class PackageDerivedSubsetAdapter extends UMLDerivedUnionAdapter {
 	@Override
 	protected void notifyProfileChanged(Notification notification, EClass eClass) {
 		super.notifyProfileChanged(notification, eClass);
-		switch(notification.getFeatureID(org.eclipse.uml2.uml.Profile.class)) {
+		switch (notification.getFeatureID(org.eclipse.uml2.uml.Profile.class)) {
 		case UMLPackage.PACKAGE__PACKAGED_ELEMENT:
 			notifyChanged(notification, eClass, UMLPackage.Literals.PACKAGE__NESTED_PACKAGE);
 			notifyChanged(notification, eClass, UMLPackage.Literals.PACKAGE__OWNED_STEREOTYPE);
@@ -63,7 +63,7 @@ public class PackageDerivedSubsetAdapter extends UMLDerivedUnionAdapter {
 	@Override
 	protected void notifyModelChanged(Notification notification, EClass eClass) {
 		super.notifyModelChanged(notification, eClass);
-		switch(notification.getFeatureID(org.eclipse.uml2.uml.Model.class)) {
+		switch (notification.getFeatureID(org.eclipse.uml2.uml.Model.class)) {
 		case UMLPackage.PACKAGE__PACKAGED_ELEMENT:
 			notifyChanged(notification, eClass, UMLPackage.Literals.PACKAGE__NESTED_PACKAGE);
 			notifyChanged(notification, eClass, UMLPackage.Literals.PACKAGE__OWNED_STEREOTYPE);

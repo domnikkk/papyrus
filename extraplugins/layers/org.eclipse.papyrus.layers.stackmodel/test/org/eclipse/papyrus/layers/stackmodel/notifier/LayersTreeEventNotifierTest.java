@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -55,15 +55,15 @@ public class LayersTreeEventNotifierTest {
 	 */
 	@Test
 	public void testLayersTreeEventNotifier() {
-		
+
 		// Create a notifier
 		LayersStack layersStack = LayersFactory.eINSTANCE.createLayersStack();
 		LayersTreeEventNotifier notifier = LayersTreeEventNotifierFactory.instance.adapt(layersStack);
-	
-//		// Add a trace listener
-//		ILayersTreeEventListener listener = new TraceLayersModelEventListener();
-//		notifier.addLayersModelEventListener(listener);
-		
+
+		// // Add a trace listener
+		// ILayersTreeEventListener listener = new TraceLayersModelEventListener();
+		// notifier.addLayersModelEventListener(listener);
+
 		// Check creation
 		assertNotNull("notifier created", notifier);
 	}
@@ -94,16 +94,16 @@ public class LayersTreeEventNotifierTest {
 		// Create a notifier
 		LayersStack layersStack = LayersFactory.eINSTANCE.createLayersStack();
 		LayersTreeEventNotifier notifier = LayersTreeEventNotifierFactory.instance.adapt(layersStack);
-	
+
 		// Add a trace listener
 		TraceLayersModelEventListener listener = new TraceLayersModelEventListener();
 		notifier.addLayersModelEventListener(listener);
-		
+
 		TriggeredEventTraces<Notification> traces = listener.traces;
 		// Add a layer
 		LayerOperator layerOp1 = LayersFactory.eINSTANCE.createStackedLayerOperator();
 		layersStack.setLayers(layerOp1);
-		
+
 		// dispose notifier
 		assertFalse("notifier disposed", notifier.isDisposed());
 		notifier.dispose();
@@ -118,14 +118,14 @@ public class LayersTreeEventNotifierTest {
 		// Create a notifier
 		LayersStack layersStack = LayersFactory.eINSTANCE.createLayersStack();
 		LayersTreeEventNotifier notifier = LayersTreeEventNotifierFactory.instance.adapt(layersStack);
-	
+
 		// Add a trace listener
 		ILayersTreeEventListener listener = new TraceLayersModelEventListener();
 		notifier.addLayersModelEventListener(listener);
-		
+
 		// Check creation
 		assertNotNull("notifier created", notifier);
-		assertTrue( "listener added to internal list", notifier.listeners.contains(listener) );
+		assertTrue("listener added to internal list", notifier.listeners.contains(listener));
 	}
 
 	/**
@@ -136,17 +136,17 @@ public class LayersTreeEventNotifierTest {
 		// Create a notifier
 		LayersStack layersStack = LayersFactory.eINSTANCE.createLayersStack();
 		LayersTreeEventNotifier notifier = LayersTreeEventNotifierFactory.instance.adapt(layersStack);
-	
+
 		// Add a trace listener
 		ILayersTreeEventListener listener = new TraceLayersModelEventListener();
 		notifier.addLayersModelEventListener(listener);
-		assertTrue( "listener added to internal list", notifier.listeners.contains(listener) );
-		
+		assertTrue("listener added to internal list", notifier.listeners.contains(listener));
+
 		// Remove the listener
 		notifier.removeLayersModelEventListener(listener);
-		assertFalse( "listener removed from internal list", notifier.listeners.contains(listener) );
-		
-		
+		assertFalse("listener removed from internal list", notifier.listeners.contains(listener));
+
+
 	}
 
 	/**
@@ -157,11 +157,11 @@ public class LayersTreeEventNotifierTest {
 		// Create a notifier
 		LayersStack layersStack = LayersFactory.eINSTANCE.createLayersStack();
 		LayersTreeEventNotifier notifier = LayersTreeEventNotifierFactory.instance.adapt(layersStack);
-	
+
 		// Add a trace listener
 		TraceLayersModelEventListener listener = new TraceLayersModelEventListener();
 		notifier.addLayersModelEventListener(listener);
-		
+
 		TriggeredEventTraces<Notification> traces = listener.traces;
 		// Add a layer
 		LayerOperator layerOp1 = LayersFactory.eINSTANCE.createStackedLayerOperator();
@@ -169,18 +169,18 @@ public class LayersTreeEventNotifierTest {
 		layersStack.setLayers(layerOp1);
 		// Check events
 		assertTrue("event recorded", traces.contains("layerSet"));
-		assertEquals("one event recorded", 1, traces.traces.size() );
-		assertEquals("one event recorded", "layerSet", traces.traces.get(0).name );
-		
+		assertEquals("one event recorded", 1, traces.traces.size());
+		assertEquals("one event recorded", "layerSet", traces.traces.get(0).name);
+
 		// Add a layer
 		Layer layer1 = LayersFactory.eINSTANCE.createLayer();
 		System.err.println("layerOp1.getLayers().add(layer1)");
 		layerOp1.getLayers().add(layer1);
-		
+
 		// Check events
 		assertTrue("event recorded", traces.contains("layerAdded"));
-		assertEquals("one event recorded", 2, traces.traces.size() );
-		assertEquals("one event recorded", "layerAdded", traces.traces.get(1).name );
+		assertEquals("one event recorded", 2, traces.traces.size());
+		assertEquals("one event recorded", "layerAdded", traces.traces.get(1).name);
 	}
 
 	/**
@@ -191,28 +191,28 @@ public class LayersTreeEventNotifierTest {
 		// Create a notifier
 		LayersStack layersStack = LayersFactory.eINSTANCE.createLayersStack();
 		LayersTreeEventNotifier notifier = LayersTreeEventNotifierFactory.instance.adapt(layersStack);
-	
+
 		// Add a trace listener
 		TraceLayersModelEventListener listener = new TraceLayersModelEventListener();
 		notifier.addLayersModelEventListener(listener);
-		
+
 		TriggeredEventTraces<Notification> traces = listener.traces;
 		// Add a layer
 		LayerOperator layerOp1 = LayersFactory.eINSTANCE.createStackedLayerOperator();
 		layersStack.setLayers(layerOp1);
-		
+
 		// Add a layer
 		Layer layer1 = LayersFactory.eINSTANCE.createLayer();
 		layerOp1.getLayers().add(layer1);
-		
+
 		// Remove layer
 		traces.clear();
 		layerOp1.getLayers().remove(layer1);
-		
+
 		// Check events
 		assertTrue("event recorded", traces.contains("layerRemoved"));
-		assertEquals("one event recorded", 1, traces.traces.size() );
-		assertEquals("one event recorded", "layerRemoved", traces.traces.get(0).name );
+		assertEquals("one event recorded", 1, traces.traces.size());
+		assertEquals("one event recorded", "layerRemoved", traces.traces.get(0).name);
 	}
 
 	/**
@@ -223,28 +223,28 @@ public class LayersTreeEventNotifierTest {
 		// Create a notifier
 		LayersStack layersStack = LayersFactory.eINSTANCE.createLayersStack();
 		LayersTreeEventNotifier notifier = LayersTreeEventNotifierFactory.instance.adapt(layersStack);
-	
+
 		// Add a trace listener
 		TraceLayersModelEventListener listener = new TraceLayersModelEventListener();
 		notifier.addLayersModelEventListener(listener);
-		
+
 		TriggeredEventTraces<Notification> traces = listener.traces;
 		// Add a layer as root
 		LayerOperator layerOp1 = LayersFactory.eINSTANCE.createStackedLayerOperator();
 		layersStack.setLayers(layerOp1);
-		
+
 		// Add a layer
 		Layer layer1 = LayersFactory.eINSTANCE.createLayer();
 		layerOp1.getLayers().add(layer1);
-		
+
 		// Remove root layer
 		traces.clear();
 		layersStack.setLayers(null);
-		
+
 		// Check events
 		assertTrue("event recorded", traces.contains("layerSet"));
-		assertEquals("one event recorded", 1, traces.traces.size() );
-		assertEquals("one event recorded", "layerSet", traces.traces.get(0).name );
+		assertEquals("one event recorded", 1, traces.traces.size());
+		assertEquals("one event recorded", "layerSet", traces.traces.get(0).name);
 		// Note that no event is sent for the nested layer
 	}
 
@@ -256,29 +256,29 @@ public class LayersTreeEventNotifierTest {
 		// Create a notifier
 		LayersStack layersStack = LayersFactory.eINSTANCE.createLayersStack();
 		LayersTreeEventNotifier notifier = LayersTreeEventNotifierFactory.instance.adapt(layersStack);
-	
+
 		// Add a trace listener
 		TraceLayersModelEventListener listener = new TraceLayersModelEventListener();
 		notifier.addLayersModelEventListener(listener);
-		
+
 		TriggeredEventTraces<Notification> traces = listener.traces;
 		// Add a layer as root
 		LayerOperator layerOp1 = LayersFactory.eINSTANCE.createStackedLayerOperator();
 		layersStack.setLayers(layerOp1);
-		
+
 		// Add a layer
 		Layer layer1 = LayersFactory.eINSTANCE.createLayer();
 		layerOp1.getLayers().add(layer1);
-		
+
 		// replace root layer
 		traces.clear();
 		Layer layer2 = LayersFactory.eINSTANCE.createLayer();
 		layersStack.setLayers(layer2);
-		
+
 		// Check events
 		assertTrue("event recorded", traces.contains("layerSet"));
-		assertEquals("one event recorded", 1, traces.traces.size() );
-		assertEquals("one event recorded", "layerSet", traces.traces.get(0).name );
+		assertEquals("one event recorded", 1, traces.traces.size());
+		assertEquals("one event recorded", "layerSet", traces.traces.get(0).name);
 	}
 
 	/**
@@ -289,29 +289,29 @@ public class LayersTreeEventNotifierTest {
 		// Create a notifier
 		LayersStack layersStack = LayersFactory.eINSTANCE.createLayersStack();
 		LayersTreeEventNotifier notifier = LayersTreeEventNotifierFactory.instance.adapt(layersStack);
-	
+
 		// Add a trace listener
 		TraceLayersModelEventListener listener = new TraceLayersModelEventListener();
 		notifier.addLayersModelEventListener(listener);
-		
+
 		TriggeredEventTraces<Notification> traces = listener.traces;
 		// Add a layer as root
 		LayerOperator layerOp1 = LayersFactory.eINSTANCE.createStackedLayerOperator();
 		layersStack.setLayers(layerOp1);
-		
+
 		// Add a layer
 		Layer layer1 = LayersFactory.eINSTANCE.createLayer();
 		layerOp1.getLayers().add(layer1);
-		
+
 		// replace root layer
 		traces.clear();
 		Layer layer2 = LayersFactory.eINSTANCE.createLayer();
 		layerOp1.getLayers().set(0, layer2);
-		
+
 		// Check events
 		assertTrue("event recorded", traces.contains("layerSet"));
-		assertEquals("one event recorded", 1, traces.traces.size() );
-		assertEquals("one event recorded", "layerSet", traces.traces.get(0).name );
+		assertEquals("one event recorded", 1, traces.traces.size());
+		assertEquals("one event recorded", "layerSet", traces.traces.get(0).name);
 	}
 
 	/**
@@ -322,34 +322,34 @@ public class LayersTreeEventNotifierTest {
 		// Create a notifier
 		LayersStack layersStack = LayersFactory.eINSTANCE.createLayersStack();
 		LayersTreeEventNotifier notifier = LayersTreeEventNotifierFactory.instance.adapt(layersStack);
-	
+
 		// Add a trace listener
 		TraceLayersModelEventListener listener = new TraceLayersModelEventListener();
 		notifier.addLayersModelEventListener(listener);
-		
+
 		TriggeredEventTraces<Notification> traces = listener.traces;
 		// Add a layer
 		LayerOperator layerOp1 = LayersFactory.eINSTANCE.createStackedLayerOperator();
 		layersStack.setLayers(layerOp1);
-		
+
 		// Add a layer
 		Layer layer1 = LayersFactory.eINSTANCE.createLayer();
 		layerOp1.getLayers().add(layer1);
-		
+
 		// Add a layer
 		Layer layer2 = LayersFactory.eINSTANCE.createLayer();
 		layerOp1.getLayers().add(layer2);
-		
+
 		// move layer
 		// EMF list are EList, which contains a move operation
 		traces.clear();
-		EList<LayerExpression> list = (EList<LayerExpression>)layerOp1.getLayers();
+		EList<LayerExpression> list = layerOp1.getLayers();
 		list.move(0, layer2);
-		
+
 		// Check events
 		assertTrue("event recorded", traces.contains("layerMoved"));
-		assertEquals("one event recorded", 1, traces.traces.size() );
-		assertEquals("one event recorded", "layerMoved", traces.traces.get(0).name );
+		assertEquals("one event recorded", 1, traces.traces.size());
+		assertEquals("one event recorded", "layerMoved", traces.traces.get(0).name);
 	}
 
 

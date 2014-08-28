@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ public class CustomDestructionOccurrenceSpecificationCreateCommand extends Destr
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -45,7 +45,7 @@ public class CustomDestructionOccurrenceSpecificationCreateCommand extends Destr
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomDestructionOccurrenceSpecificationCreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -54,15 +54,15 @@ public class CustomDestructionOccurrenceSpecificationCreateCommand extends Destr
 
 	/**
 	 * A DestructionEvent on a lifeline can only be created if it doesn't exist yet a destructionEvent on that lifeline.
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	public boolean canExecute() {
 		// Get the lifeline
-		Lifeline lifeline = (Lifeline)getElementToEdit();
-		for(InteractionFragment ift : lifeline.getCoveredBys()) {
-			if(ift instanceof DestructionOccurrenceSpecification) {
+		Lifeline lifeline = (Lifeline) getElementToEdit();
+		for (InteractionFragment ift : lifeline.getCoveredBys()) {
+			if (ift instanceof DestructionOccurrenceSpecification) {
 				// For each occurenceSpecification which covered the lifeline, check the associated event.
 				return false;
 			}
@@ -70,13 +70,14 @@ public class CustomDestructionOccurrenceSpecificationCreateCommand extends Destr
 		return true;
 	}
 
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// Get the model container
-		Object modelContainer = ((CreateElementRequest)getRequest()).getParameters().get(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER);
-		DestructionOccurrenceSpecification destructionSpecification = (DestructionOccurrenceSpecification)CommandHelper.doCreateDestructionOccurrenceSpecification((Lifeline)getElementToEdit(), modelContainer);
+		Object modelContainer = ((CreateElementRequest) getRequest()).getParameters().get(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER);
+		DestructionOccurrenceSpecification destructionSpecification = CommandHelper.doCreateDestructionOccurrenceSpecification((Lifeline) getElementToEdit(), modelContainer);
 		ElementInitializers.getInstance().init_DestructionOccurrenceSpecification_3022(destructionSpecification);
 		doConfigure(destructionSpecification, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(destructionSpecification);
+		((CreateElementRequest) getRequest()).setNewElement(destructionSpecification);
 		return CommandResult.newOKCommandResult(destructionSpecification);
 	}
 }

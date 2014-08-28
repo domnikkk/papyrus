@@ -19,8 +19,6 @@ import static org.eclipse.papyrus.sysml.diagram.parametric.tests.utils.EditorUti
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.junit.Assert;
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -66,6 +64,7 @@ import org.eclipse.uml2.uml.EncapsulatedClassifier;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.junit.Assert;
 
 
 public class TestPrepareUtils {

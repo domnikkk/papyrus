@@ -1,17 +1,17 @@
 /**
- * 
+ *
  */
 package javagen.umlparser;
 
-import japa.parser.ParseException;
 import japa.parser.JavaParser;
+import japa.parser.ParseException;
 import japa.parser.ast.CompilationUnit;
 
 import java.io.FileInputStream;
 
 /**
  * @author dumoulin
- * 
+ *
  */
 public class CuPrinter {
 
@@ -20,10 +20,10 @@ public class CuPrinter {
 
 		try {
 
-			if(args.length == 0) {
+			if (args.length == 0) {
 				System.out.println("Java Parser Version 1.1:  Reading from standard input . . .");
 				cu = JavaParser.parse(System.in);
-			} else if(args.length == 1) {
+			} else if (args.length == 1) {
 				System.out.println("Java Parser Version 1.1:  Reading from file " + args[0] + " . . .");
 				try {
 					cu = JavaParser.parse(new java.io.FileInputStream(args[0]));
@@ -47,7 +47,7 @@ public class CuPrinter {
 			System.out.println(e.getMessage());
 			System.out.println("Java Parser Version 1.1:  Encountered errors during parse.");
 		} finally {
-			//	            in.close();
+			// in.close();
 		}
 
 	}

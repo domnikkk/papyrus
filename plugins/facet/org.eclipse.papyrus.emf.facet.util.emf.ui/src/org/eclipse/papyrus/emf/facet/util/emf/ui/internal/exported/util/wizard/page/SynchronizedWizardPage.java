@@ -1,22 +1,22 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
 package org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.util.wizard.page;
 
-import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.AbstractExceptionFreeRunnable;
-import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.AbstractVoidExceptionFreeRunnable;
-import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.SynchronizedObject;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.wizard.IWizard;
 import org.eclipse.jface.wizard.IWizardPage;
+import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.AbstractExceptionFreeRunnable;
+import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.AbstractVoidExceptionFreeRunnable;
+import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.SynchronizedObject;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -24,10 +24,10 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * Synchronized class for safe run.
- * 
+ *
  * @author amenager_stage
  * @since 0.3
- * 
+ *
  */
 public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		SynchronizedObject<WP>
@@ -35,7 +35,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param object
 	 *            the to synchronized.
 	 * @param display
@@ -46,6 +46,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		super(object, display);
 	}
 
+	@Override
 	public void createControl(final Composite parent) {
 		this.voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -56,6 +57,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public void dispose() {
 		this.voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -65,6 +67,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public Control getControl() {
 		return this.safeSyncExec(new AbstractExceptionFreeRunnable<Control>() {
 			@Override
@@ -75,6 +78,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public String getDescription() {
 		return this.safeSyncExec(new AbstractExceptionFreeRunnable<String>() {
 			@Override
@@ -85,6 +89,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public String getErrorMessage() {
 		return this.safeSyncExec(new AbstractExceptionFreeRunnable<String>() {
 			@Override
@@ -95,6 +100,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public Image getImage() {
 		return this.safeSyncExec(new AbstractExceptionFreeRunnable<Image>() {
 			@Override
@@ -105,6 +111,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public String getMessage() {
 		return this.safeSyncExec(new AbstractExceptionFreeRunnable<String>() {
 			@Override
@@ -115,6 +122,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public String getTitle() {
 		return this.safeSyncExec(new AbstractExceptionFreeRunnable<String>() {
 			@Override
@@ -125,6 +133,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public void performHelp() {
 		this.voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -135,6 +144,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public void setDescription(final String description) {
 		this.voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -145,6 +155,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public void setImageDescriptor(final ImageDescriptor image) {
 		this.voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -155,6 +166,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public void setTitle(final String title) {
 		this.voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -165,6 +177,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public void setVisible(final boolean visible) {
 		this.voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -175,6 +188,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public boolean canFlipToNextPage() {
 		return this.safeSyncExec(new AbstractExceptionFreeRunnable<Boolean>() {
 			@Override
@@ -186,6 +200,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		}).booleanValue();
 	}
 
+	@Override
 	public IWizardPage getNextPage() {
 		return this
 				.safeSyncExec(new AbstractExceptionFreeRunnable<IWizardPage>() {
@@ -197,6 +212,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 				});
 	}
 
+	@Override
 	public IWizardPage getPreviousPage() {
 		return this
 				.safeSyncExec(new AbstractExceptionFreeRunnable<IWizardPage>() {
@@ -208,6 +224,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 				});
 	}
 
+	@Override
 	public IWizard getWizard() {
 		return this.safeSyncExec(new AbstractExceptionFreeRunnable<IWizard>() {
 			@Override
@@ -218,6 +235,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public boolean isPageComplete() {
 		return this.safeSyncExec(new AbstractExceptionFreeRunnable<Boolean>() {
 			@Override
@@ -228,6 +246,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		}).booleanValue();
 	}
 
+	@Override
 	public void setPreviousPage(final IWizardPage page) {
 		this.voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -238,6 +257,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public void setWizard(final IWizard newWizard) {
 		this.voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -248,6 +268,7 @@ public class SynchronizedWizardPage<WP extends IWizardPage> extends
 		});
 	}
 
+	@Override
 	public String getName() {
 		return this.safeSyncExec(new AbstractExceptionFreeRunnable<String>() {
 			@Override

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package javagen.umlparser;
 
@@ -52,9 +52,9 @@ import org.eclipse.uml2.uml.VisibilityKind;
 
 /**
  * A visitor filling the provided UML model
- * 
+ *
  * @author dumoulin
- * 
+ *
  */
 public class CompilationUnitAnalyser {
 
@@ -76,7 +76,8 @@ public class CompilationUnitAnalyser {
 	 */
 	private CreationPackageCatalog creationPackageCatalog;
 
-	/** Catalog used to lookup for a classifier. The catalog specifies a collection of models 
+	/**
+	 * Catalog used to lookup for a classifier. The catalog specifies a collection of models
 	 * containing the java packages
 	 */
 	private ClassifierCatalog classifierCatalog;
@@ -91,7 +92,7 @@ public class CompilationUnitAnalyser {
 	 * Initialized at the beginning of exploreCompilationUnit()
 	 */
 	private Package currentCompilationUnitPackage;
-	
+
 	/**
 	 * Enclosing namespaces of the currently processed class.
 	 * The first element is always the current package.
@@ -116,7 +117,7 @@ public class CompilationUnitAnalyser {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 */
 	public CompilationUnitAnalyser(Resource model, String generatePackageName, List<String> searchPaths) {
@@ -125,7 +126,7 @@ public class CompilationUnitAnalyser {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 */
 	public CompilationUnitAnalyser(Resource model, String modelRootPackageName, String generatePackageName, List<String> searchPaths) {
@@ -135,26 +136,26 @@ public class CompilationUnitAnalyser {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 * All provided paths and searchpaths are relative to the specified modelRootPackage.
 	 */
 	public CompilationUnitAnalyser(Package modelRootPackage, String generatePackageName, List<String> searchPaths) {
 
-		//        this.model = model;
+		// this.model = model;
 
 		initCompilationUnitAnalyser(modelRootPackage, generatePackageName, searchPaths);
 	}
 
 	/**
 	 * Initialize the class. Called by constructors.
-	 * 
+	 *
 	 * @param modelRootPackage
 	 * @param generatePackageName
 	 * @param searchPaths
 	 */
 	private void initCompilationUnitAnalyser(Package modelRootPackage, String generatePackageName, List<String> searchPaths) {
-		if(generatePackageName == null) {
+		if (generatePackageName == null) {
 			generatePackageName = DEFAULT_GENERATION_PACKAGE_NAME;
 		}
 
@@ -162,14 +163,16 @@ public class CompilationUnitAnalyser {
 
 
 		// Copy searchpath in order to be able to change it.
-		if(searchPaths != null)
+		if (searchPaths != null) {
 			searchPaths = new ArrayList<String>(searchPaths);
-		else
+		} else {
 			searchPaths = new ArrayList<String>();
+		}
 
 		// Add generation package in search paths
-		if(!searchPaths.contains(generatePackageName))
+		if (!searchPaths.contains(generatePackageName)) {
 			searchPaths.add(generatePackageName);
+		}
 
 		System.out.println(this.getClass().getSimpleName() + ".CT(" + generationPackageQualifiedName + ", sarchpaths=" + searchPaths + ")");
 
@@ -188,7 +191,7 @@ public class CompilationUnitAnalyser {
 	/**
 	 * Get the qualified name from a directory like name.
 	 * Name is splitted arround '/'
-	 * 
+	 *
 	 * @param name
 	 * @return
 	 */
@@ -211,33 +214,35 @@ public class CompilationUnitAnalyser {
 	 */
 	private void createDefaultGenerationPackage(Package rootModelElement) {
 
-//		Package p = UmlUtils.getPackage(rootModelElement, generationPackageQualifiedName);
+		// Package p = UmlUtils.getPackage(rootModelElement, generationPackageQualifiedName);
 		Package p = UmlUtils.getModel(rootModelElement, generationPackageQualifiedName);
 		defaultGenerationPackage = p;
 	}
 
 	/**
 	 * Explore the CU and create the declared types
-	 * 
+	 *
 	 * @param cu
 	 */
 	public void processCompilationUnit(CompilationUnit cu) {
 
 		// First, find the parent Package
-		currentCompilationUnitPackage = getCuPackage(cu.getPakage());;
+		currentCompilationUnitPackage = getCuPackage(cu.getPakage());
+		;
 		classifierCatalog.setCurrentCompilationUnitPackage(currentCompilationUnitPackage);
 
 		// Add imports
 		importedTypes.clear();
-		if(cu.getImports() != null)
+		if (cu.getImports() != null) {
 			addImports(importedTypes, cu.getImports());
+		}
 
 		// Now, explore each type declared type in the cu
-		if(cu.getTypes() != null) {
+		if (cu.getTypes() != null) {
 			// for (Iterator<TypeDeclaration> i = cu.getTypes().iterator();
 			// i.hasNext();)
 			// Process all types
-			for(TypeDeclaration typeDecl : cu.getTypes()) {
+			for (TypeDeclaration typeDecl : cu.getTypes()) {
 				// Build the enclosing namespaces. Add the package as parent
 				enclosingNamespaces.add(currentCompilationUnitPackage);
 				processTypedeclaration(enclosingNamespaces, typeDecl);
@@ -251,8 +256,9 @@ public class CompilationUnitAnalyser {
 	/**
 	 * Process Typedeclaration 2 Classifier.
 	 * Process common parts : modifiers, members, ...
-	 * 
-	 * @param enclosingParents The package, followed by nested classes if any.
+	 *
+	 * @param enclosingParents
+	 *            The package, followed by nested classes if any.
 	 * @param typeDecl
 	 */
 	private void processTypedeclaration(final List<Namespace> enclosingParents, TypeDeclaration typeDecl) {
@@ -277,8 +283,8 @@ public class CompilationUnitAnalyser {
 		// TODO
 
 		// Explore members
-		if(typeDecl.getMembers() != null) {
-			for(BodyDeclaration member : typeDecl.getMembers()) {
+		if (typeDecl.getMembers() != null) {
+			for (BodyDeclaration member : typeDecl.getMembers()) {
 				new SwitchVisitor<Type>() {
 
 					@Override
@@ -288,25 +294,25 @@ public class CompilationUnitAnalyser {
 
 					@Override
 					public void visit(MethodDeclaration n, Type classifier) {
-						processMethod(n, (Classifier)classifier);
+						processMethod(n, (Classifier) classifier);
 					}
 
 					/**
 					 * Inner classes ?
-					 * 
+					 *
 					 * @param n
 					 * @param arg
 					 */
 					@Override
 					public void visit(ClassOrInterfaceDeclaration n, Type classifier) {
 						System.out.println("Found nested class (ClassOrInterface)'" + n.getName() + "'");
-						
+
 						// Process nested classifier, and create it in its nested namespace
 						// So, increase the enclosing parents.
-						enclosingParents.add((Classifier)classifier);
+						enclosingParents.add((Classifier) classifier);
 						processTypedeclaration(enclosingParents, n);
-						enclosingParents.remove((Classifier)classifier);
-						//					    processClassOrInterfaceDeclaration(n, parent)
+						enclosingParents.remove(classifier);
+						// processClassOrInterfaceDeclaration(n, parent)
 						super.visit(n, classifier);
 					}
 					// TODO Other kind of members
@@ -318,17 +324,18 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Add all the imports to the manager.
-	 * 
+	 *
 	 * @param importedTypes2
 	 * @param imports
 	 */
 	private void addImports(ImportedTypeCatalog importedTypes, List<ImportDeclaration> imports) {
 
 
-		for(ImportDeclaration decl : imports) {
+		for (ImportDeclaration decl : imports) {
 			List<String> qualifiedName = qualifiedNameParser.getImportQualifiedName(decl);
-			if(decl.isAsterisk())
+			if (decl.isAsterisk()) {
 				qualifiedName.add("*");
+			}
 			importedTypes.addImport(qualifiedName);
 		}
 
@@ -339,10 +346,10 @@ public class CompilationUnitAnalyser {
 	 * Translate the qualifiedName according to imports, and lookup in classifierCatalog .
 	 * If nothing is found and provided name is not qualified, create/get in parent, otherwise create/get in root
 	 * using the qualified name.
-	 * 
+	 *
 	 * @param qualifiedName
 	 * @param isInterface
-	 *        What should be created if nothing is found ? An interface or a Class ?
+	 *            What should be created if nothing is found ? An interface or a Class ?
 	 * @return
 	 */
 	private Classifier getUmlClassifier(List<String> qualifiedName, boolean isInterface) {
@@ -352,16 +359,17 @@ public class CompilationUnitAnalyser {
 		Classifier foundClass = classifierCatalog.getClassifier(qualifiedName);
 
 		// If nothing found, create it
-		if(foundClass == null) {// Not yet created.
+		if (foundClass == null) {// Not yet created.
 			EClass expectedType;
-			if(isInterface)
+			if (isInterface) {
 				expectedType = UMLPackage.eINSTANCE.getInterface();
-			else
+			} else {
 				expectedType = UMLPackage.eINSTANCE.getClass_();
+			}
 
 			// Check where to create
-			if(importedTypes.isImportedType(qualifiedName)) { 
-				//This is an imported type, create it in its dedicated model
+			if (importedTypes.isImportedType(qualifiedName)) {
+				// This is an imported type, create it in its dedicated model
 				// First get the package where to create it, according to its name
 				Package creationPackage = creationPackageCatalog.getCreationPackage(qualifiedName);
 				// Now, create it.
@@ -371,30 +379,30 @@ public class CompilationUnitAnalyser {
 				// Check if it exist, or create it.
 				foundClass = UmlUtils.getGuessedClassifier(enclosingNamespaces, qualifiedName, expectedType);
 			}
-			
-			
-			
-//			if(qualifiedName.size() == 1 && currentCompilationUnitPackage != null) { 
-//				// No scope in qname, create it in current namespace.
-//				// TODO use current namespace instead of current package.
-//				
-//				// TODO change to create (avoid second lookup)
-////				foundClass = UmlUtils.getClassifier(currentCompilationUnitPackage, qualifiedName, expectedType);
-//				foundClass = UmlUtils.getGuessedClassifier(enclosingNamespaces, qualifiedName.get(0), expectedType);
-//			} else {
-//				//create with specified qname
-//				// First get the package where to create it, according to its name
-//				Package creationPackage = creationPackageCatalog.getCreationPackage(qualifiedName);
-//				// Now, create it.
-//				foundClass = UmlUtils.getClassifier(creationPackage, qualifiedName, expectedType);
-//			}
+
+
+
+			// if(qualifiedName.size() == 1 && currentCompilationUnitPackage != null) {
+			// // No scope in qname, create it in current namespace.
+			// // TODO use current namespace instead of current package.
+			//
+			// // TODO change to create (avoid second lookup)
+			// // foundClass = UmlUtils.getClassifier(currentCompilationUnitPackage, qualifiedName, expectedType);
+			// foundClass = UmlUtils.getGuessedClassifier(enclosingNamespaces, qualifiedName.get(0), expectedType);
+			// } else {
+			// //create with specified qname
+			// // First get the package where to create it, according to its name
+			// Package creationPackage = creationPackageCatalog.getCreationPackage(qualifiedName);
+			// // Now, create it.
+			// foundClass = UmlUtils.getClassifier(creationPackage, qualifiedName, expectedType);
+			// }
 		}
 		return foundClass;
 	}
 
 	/**
 	 * Get the type qualified name from its ast description
-	 * 
+	 *
 	 * @param astType
 	 * @return
 	 */
@@ -407,7 +415,7 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Create all attributes and add it to the parent.
-	 * 
+	 *
 	 * @param n
 	 * @param parent
 	 */
@@ -422,16 +430,17 @@ public class CompilationUnitAnalyser {
 		Type umlType = getUmlType(typeData);
 
 		// walk on variable declarations.
-		for(VariableDeclarator var : n.getVariables()) {
-			if(parent instanceof Classifier)
-				createAttribute(n, var, (Classifier)parent, umlType, typeData);
+		for (VariableDeclarator var : n.getVariables()) {
+			if (parent instanceof Classifier) {
+				createAttribute(n, var, (Classifier) parent, umlType, typeData);
+			}
 		}
 	}
 
 	/**
 	 * Get the qualified name, and other info on type.
 	 * Lookup in imports to resolve names.
-	 * 
+	 *
 	 * @param n
 	 * @return
 	 */
@@ -443,20 +452,20 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Get the uml type from the translated type.
-	 * 
+	 *
 	 * @param data
 	 * @return
 	 */
 	private Type getUmlType(TranslatedTypeData data) {
 		// Get the uml type
 		Type umlType = null;
-		if(data.isPrimitive) {
+		if (data.isPrimitive) {
 			umlType = classifierCatalog.getClassifier(data.qualifiedName);
-			if(umlType == null) {
+			if (umlType == null) {
 				Package creationPackage = creationPackageCatalog.getCreationPackage(data.qualifiedName);
 				umlType = UmlUtils.getPrimitive(creationPackage, data.qualifiedName);
 			}
-		} else if(data.isVoid || data.isWildcard) {
+		} else if (data.isVoid || data.isWildcard) {
 			return null;
 		} else {
 			// Look for existing classifier of any type.
@@ -466,8 +475,9 @@ public class CompilationUnitAnalyser {
 			String shortName = qualifiedName.get(qualifiedName.size() - 1);
 
 			// Try to guess if it is an interface.
-			if(shortName.length() > 2 && shortName.startsWith("I") && Character.isUpperCase(shortName.charAt(1)))
+			if (shortName.length() > 2 && shortName.startsWith("I") && Character.isUpperCase(shortName.charAt(1))) {
 				isInterface = true;
+			}
 
 			// Get or create type.
 			umlType = getUmlClassifier(qualifiedName, isInterface);
@@ -477,7 +487,7 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Get the Type from an ast.Type node.
-	 * 
+	 *
 	 * @param astType
 	 * @return
 	 */
@@ -497,9 +507,9 @@ public class CompilationUnitAnalyser {
 
 				data.qualifiedName = qname;
 				// Check for generic parameters
-				if(n.getTypeArgs() != null) {
+				if (n.getTypeArgs() != null) {
 					data.genericData = new ArrayList<TypeData>();
-					for(japa.parser.ast.type.Type arg : n.getTypeArgs()) {
+					for (japa.parser.ast.type.Type arg : n.getTypeArgs()) {
 						TypeData argData = new TypeData();
 						arg.accept(this, argData);
 						data.genericData.add(argData);
@@ -527,11 +537,11 @@ public class CompilationUnitAnalyser {
 			@Override
 			public void visit(WildcardType n, TypeData data) {
 				data.isWildcard = true;
-				if(n.getExtends() != null) {
+				if (n.getExtends() != null) {
 					data.extends_ = new TypeData();
 					n.getExtends().accept(this, data.extends_);
 				}
-				if(n.getSuper() != null) {
+				if (n.getSuper() != null) {
 					data.super_ = new TypeData();
 					n.getSuper().accept(this, data.super_);
 				}
@@ -551,9 +561,9 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Data structure to return data about a Declared type.
-	 * 
+	 *
 	 * @author dumoulin
-	 * 
+	 *
 	 */
 	protected class TypeData {
 
@@ -583,14 +593,14 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Create the uml2.primitivetype denoted by the specified PrimitiveType
-	 * 
+	 *
 	 * @param n
 	 * @return
 	 */
 	protected String getPrimitiveName(PrimitiveType n) {
 		String typeName = null;
 
-		switch(n.getType()) {
+		switch (n.getType()) {
 		case Boolean:
 			typeName = "Boolean";
 			break;
@@ -622,9 +632,9 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Create an attribute and add it to the parent.
-	 * 
+	 *
 	 * @param n
-	 *        node declaring type and modifiers
+	 *            node declaring type and modifiers
 	 * @param var
 	 * @param parent
 	 * @param type
@@ -632,11 +642,11 @@ public class CompilationUnitAnalyser {
 	protected void createAttribute(FieldDeclaration n, VariableDeclarator var, Classifier parent, Type type, TranslatedTypeData typeData) {
 
 		// get with no type, and then update type.
-		Property property = UmlUtils.createProperty((Classifier)parent, null, var.getId().getName(), var.getId().getArrayCount());
+		Property property = UmlUtils.createProperty(parent, null, var.getId().getName(), var.getId().getArrayCount());
 		property.setType(type);
 		processJavadoc(n.getJavaDoc(), property);
 		processModifiers(n.getModifiers(), property);
-		if(typeData.isCollection()) {
+		if (typeData.isCollection()) {
 			property.setLower(typeData.getTranslatedLower());
 			property.setUpper(typeData.getTranslatedUpper());
 		}
@@ -644,52 +654,52 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Process modifiers for Operation
-	 * 
+	 *
 	 * @param modifiers
 	 * @param property
 	 */
 	private void processModifiers(int modifiers, Operation property) {
-		if(ModifierSet.isAbstract(modifiers)) {
+		if (ModifierSet.isAbstract(modifiers)) {
 			property.setIsAbstract(true);
 		}
-		processModifiers(modifiers, (Feature)property);
+		processModifiers(modifiers, (Feature) property);
 	}
 
 	/**
 	 * Process modifiers
-	 * 
+	 *
 	 * @param modifiers
 	 * @param property
 	 */
 	private void processModifiers(int modifiers, Feature property) {
 		// TODO Auto-generated method stub
-		if(ModifierSet.isPrivate(modifiers)) {
+		if (ModifierSet.isPrivate(modifiers)) {
 			property.setVisibility(VisibilityKind.PRIVATE_LITERAL);
 		}
-		if(ModifierSet.isProtected(modifiers)) {
+		if (ModifierSet.isProtected(modifiers)) {
 			property.setVisibility(VisibilityKind.PROTECTED_LITERAL);
 		}
-		if(ModifierSet.isPublic(modifiers)) {
+		if (ModifierSet.isPublic(modifiers)) {
 			property.setVisibility(VisibilityKind.PUBLIC_LITERAL);
 		}
-		if(ModifierSet.isStatic(modifiers)) {
+		if (ModifierSet.isStatic(modifiers)) {
 			property.setIsStatic(true);
 		}
-		if(ModifierSet.isFinal(modifiers)) {
+		if (ModifierSet.isFinal(modifiers)) {
 			property.setIsLeaf(true);
 		}
-		//         if (ModifierSet.isNative(modifiers)) {
-		//         printer.print("native ");
-		//         }
-		//         if (ModifierSet.isStrictfp(modifiers)) {
-		//         printer.print("strictfp ");
-		//         }
-		//         if (ModifierSet.isSynchronized(modifiers)) {
-		//         printer.print("synchronized ");
-		//         }
-		//        if (ModifierSet.isTransient(modifiers)) {
-		//            property.set(true);
-		//        }
+		// if (ModifierSet.isNative(modifiers)) {
+		// printer.print("native ");
+		// }
+		// if (ModifierSet.isStrictfp(modifiers)) {
+		// printer.print("strictfp ");
+		// }
+		// if (ModifierSet.isSynchronized(modifiers)) {
+		// printer.print("synchronized ");
+		// }
+		// if (ModifierSet.isTransient(modifiers)) {
+		// property.set(true);
+		// }
 		// if (ModifierSet.isVolatile(modifiers)) {
 		// printer.print("volatile ");
 		// }
@@ -697,22 +707,22 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Process modifiers
-	 * 
+	 *
 	 * @param modifiers
 	 * @param property
 	 */
 	private void processModifiers(int modifiers, org.eclipse.uml2.uml.Parameter property) {
 		// TODO Auto-generated method stub
-		if(ModifierSet.isPrivate(modifiers)) {
+		if (ModifierSet.isPrivate(modifiers)) {
 			property.setVisibility(VisibilityKind.PRIVATE_LITERAL);
 		}
-		if(ModifierSet.isProtected(modifiers)) {
+		if (ModifierSet.isProtected(modifiers)) {
 			property.setVisibility(VisibilityKind.PROTECTED_LITERAL);
 		}
-		if(ModifierSet.isPublic(modifiers)) {
+		if (ModifierSet.isPublic(modifiers)) {
 			property.setVisibility(VisibilityKind.PUBLIC_LITERAL);
 		}
-		if(ModifierSet.isFinal(modifiers)) {
+		if (ModifierSet.isFinal(modifiers)) {
 			property.setDirection(ParameterDirectionKind.IN_LITERAL);
 		}
 	}
@@ -728,7 +738,7 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Process method to be added to the provided classifier.
-	 * 
+	 *
 	 * @param n
 	 * @param classifier
 	 */
@@ -738,10 +748,10 @@ public class CompilationUnitAnalyser {
 		// Parameters
 		List<Type> signature = new ArrayList<Type>();
 
-		if(n.getParameters() != null) {
+		if (n.getParameters() != null) {
 			List<MethodParameterData> paramDatas = new ArrayList<MethodParameterData>();
 
-			for(Parameter param : n.getParameters()) {
+			for (Parameter param : n.getParameters()) {
 				MethodParameterData data = new MethodParameterData();
 				data.dataType = processType(param.getType());
 				data.umlType = getUmlType(data.dataType);
@@ -751,7 +761,7 @@ public class CompilationUnitAnalyser {
 			}
 		}
 
-		//        Operation method = UmlUtils.getOperation(classifier, n.getName());
+		// Operation method = UmlUtils.getOperation(classifier, n.getName());
 		Operation method = getUmlOperation(classifier, n.getName(), signature);
 
 		processJavadoc(n.getJavaDoc(), method);
@@ -760,17 +770,17 @@ public class CompilationUnitAnalyser {
 		TranslatedTypeData typeData = processType(n.getType());
 		Type methodType = getUmlType(typeData);
 
-		if(methodType != null) {
+		if (methodType != null) {
 			method.setType(methodType);
-			if(typeData.isCollection()) {
+			if (typeData.isCollection()) {
 				method.setLower(typeData.getTranslatedLower());
 				method.setUpper(typeData.getTranslatedUpper());
 			}
 		}
 
 		// Parameters
-		if(n.getParameters() != null) {
-			for(Parameter param : n.getParameters()) {
+		if (n.getParameters() != null) {
+			for (Parameter param : n.getParameters()) {
 				processMethodParameter(param, method);
 			}
 		}
@@ -778,7 +788,7 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Get an operation by its signature
-	 * 
+	 *
 	 * @param classifier
 	 * @param name
 	 * @param signature
@@ -789,9 +799,9 @@ public class CompilationUnitAnalyser {
 
 		// walk all operations with the same name.
 		// Check signature matching
-		for(Operation oper : list) {
+		for (Operation oper : list) {
 
-			if(isSameOperation(oper, name, signature)) {
+			if (isSameOperation(oper, name, signature)) {
 				return oper;
 			}
 		}
@@ -807,32 +817,35 @@ public class CompilationUnitAnalyser {
 	private boolean isSameOperation(Operation oper, String name, List<Type> signature) {
 
 		// check name
-		if(!name.equals(oper.getName()))
+		if (!name.equals(oper.getName())) {
 			return false;
+		}
 
 		// Check parameters
 		List<org.eclipse.uml2.uml.Parameter> umlParams = oper.getOwnedParameters();
 		// Check signature
-		if(signature == null) {
+		if (signature == null) {
 			return true;
-		} else if(umlParams == null) {
-			if(signature.size() == 0)
+		} else if (umlParams == null) {
+			if (signature.size() == 0) {
 				return true;
-			else
+			} else {
 				return false;
-		} else if( /* signature!= null && */umlParams != null) {
+			}
+		} else if ( /* signature!= null && */umlParams != null) {
 			int umlParamIndex = 0;
-			for(Type signatureType : signature) {
+			for (Type signatureType : signature) {
 				try {
 					// Compare type
 					org.eclipse.uml2.uml.Parameter param = umlParams.get(umlParamIndex++);
 					// skip return parameter
-					while(param.getDirection() == ParameterDirectionKind.RETURN_LITERAL)
+					while (param.getDirection() == ParameterDirectionKind.RETURN_LITERAL) {
 						param = umlParams.get(umlParamIndex++);
+					}
 
 					// Check types, skip if existing type is null
 					Type existingType = param.getType();
-					if(existingType != null && !(existingType.getName().equals(signatureType.getName()))) {
+					if (existingType != null && !(existingType.getName().equals(signatureType.getName()))) {
 						// umlParamIndex > umlParams.getSize()
 						return false;
 					}
@@ -844,8 +857,8 @@ public class CompilationUnitAnalyser {
 			// Check if there still some type in umlParams
 			// if index is the last one: ok
 			// otherwise, check if remaining arguments are only returns.
-			while(umlParamIndex < umlParams.size()) {
-				if(umlParams.get(umlParamIndex++).getDirection() != ParameterDirectionKind.RETURN_LITERAL) {
+			while (umlParamIndex < umlParams.size()) {
+				if (umlParams.get(umlParamIndex++).getDirection() != ParameterDirectionKind.RETURN_LITERAL) {
 					return false;
 				}
 			}
@@ -858,7 +871,7 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Process a parameter.
-	 * 
+	 *
 	 * @param param
 	 * @param method
 	 */
@@ -870,7 +883,7 @@ public class CompilationUnitAnalyser {
 		System.out.println("getOwnedParameter(" + method.getName() + "= " + param.getId().getName() + ", " + type + " )");
 		org.eclipse.uml2.uml.Parameter umlParameter = method.getOwnedParameter(param.getId().getName(), type, true, true);
 
-		if(typeData.isCollection()) {
+		if (typeData.isCollection()) {
 			umlParameter.setLower(typeData.getTranslatedLower());
 			umlParameter.setUpper(typeData.getTranslatedUpper());
 		}
@@ -881,7 +894,7 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Process annotation.
-	 * 
+	 *
 	 * @param annotations
 	 * @param method
 	 */
@@ -892,18 +905,19 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Process javadoc.
-	 * 
+	 *
 	 * @param javaDoc
 	 * @param method
 	 */
 	private void processJavadoc(JavadocComment javaDoc, Element umlElement) {
-		if(javaDoc == null)
+		if (javaDoc == null) {
 			return;
+		}
 
 		Comment comment;
 		// Check if a comment already exists.
 		List<Comment> ownedComments = umlElement.getOwnedComments();
-		if(ownedComments != null && ownedComments.size() > 0) {
+		if (ownedComments != null && ownedComments.size() > 0) {
 			comment = ownedComments.get(0);
 		} else { // Create a new comment
 			comment = umlElement.createOwnedComment();
@@ -918,10 +932,11 @@ public class CompilationUnitAnalyser {
 	 * The Classifier is created exactly in the directly enclosing namespace.
 	 * First, a lookup is done to check if it has been created elsewhere in the namespaces. If true, correct the location
 	 * and maybe the type.
-	 * 
+	 *
 	 * Only need to create the object and fill it with data available at this level.
-	 * 
-	 * @param enclosingParents enclosing parent, Package included, in case of nested declaration.
+	 *
+	 * @param enclosingParents
+	 *            enclosing parent, Package included, in case of nested declaration.
 	 * @param n
 	 * @return
 	 */
@@ -935,9 +950,9 @@ public class CompilationUnitAnalyser {
 	 * The Classifier is created exactly in the directly enclosing namespace.
 	 * First, a lookup is done to check if it has been created elsewhere in the namespaces. If true, correct the location
 	 * and maybe the type.
-
+	 *
 	 * Only need to create the object and fill it with data available at this level.
-	 * 
+	 *
 	 * @param parent
 	 * @param n
 	 * @return
@@ -949,14 +964,14 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * get (lookup or create) the packages containing the CU.
-	 * 
+	 *
 	 * @param cu
 	 * @return
 	 */
 	private Package getCuPackage(PackageDeclaration packageDecl) {
 
 		// If null, return the generation root
-		if(packageDecl == null) {
+		if (packageDecl == null) {
 			return defaultGenerationPackage;
 		}
 
@@ -966,51 +981,51 @@ public class CompilationUnitAnalyser {
 		Package creationPackage = creationPackageCatalog.getCreationPackage(qualifiedName);
 		// Get the current unit package (where the element are created)
 		Package p = UmlUtils.getPackage(creationPackage, qualifiedName);
-		
-		return p;
-		//question
-		// How to let the creationPackageCatalog create the package for a specified name ?
-//		CreatePackage visitor = new CreatePackage();
-//		Package res = visitor.getPackage(packageDecl, defaultGenerationPackage);
 
-//		return res;
+		return p;
+		// question
+		// How to let the creationPackageCatalog create the package for a specified name ?
+		// CreatePackage visitor = new CreatePackage();
+		// Package res = visitor.getPackage(packageDecl, defaultGenerationPackage);
+
+		// return res;
 	}
 
 	private void createModifiers(Classifier c, int modifiers) {
 		// TODO Auto-generated method stub
-		if(ModifierSet.isPrivate(modifiers)) {
+		if (ModifierSet.isPrivate(modifiers)) {
 			c.setVisibility(VisibilityKind.PRIVATE_LITERAL);
 		}
-		if(ModifierSet.isProtected(modifiers)) {
+		if (ModifierSet.isProtected(modifiers)) {
 			c.setVisibility(VisibilityKind.PROTECTED_LITERAL);
 		}
-		if(ModifierSet.isPublic(modifiers)) {
+		if (ModifierSet.isPublic(modifiers)) {
 			c.setVisibility(VisibilityKind.PUBLIC_LITERAL);
 		}
-		if(ModifierSet.isAbstract(modifiers)) {
+		if (ModifierSet.isAbstract(modifiers)) {
 			c.setIsAbstract(true);
 		}
-		//        if (ModifierSet.isStatic(modifiers)) {
-		//            c.get
-		//        }
-		if(ModifierSet.isFinal(modifiers)) {
+		// if (ModifierSet.isStatic(modifiers)) {
+		// c.get
+		// }
+		if (ModifierSet.isFinal(modifiers)) {
 			c.setIsLeaf(true);
 		}
-		//        if (ModifierSet.isNative(modifiers)) {
-		//            printer.print("native ");
-		//        }
-		//        if (ModifierSet.isStrictfp(modifiers)) {
-		//            printer.print("strictfp ");
-		//        }
-		//        if (ModifierSet.isSynchronized(modifiers)) {
-		//            printer.print("synchronized ");
-		//        }
-		//        if (ModifierSet.isTransient(modifiers)) {
-		//            printer.print("transient ");
-		//        }
-		//        if (ModifierSet.isVolatile(modifiers)) {
-		//            printer.print("volatile ");
-		//        }
+		// if (ModifierSet.isNative(modifiers)) {
+		// printer.print("native ");
+		// }
+		// if (ModifierSet.isStrictfp(modifiers)) {
+		// printer.print("strictfp ");
+		// }
+		// if (ModifierSet.isSynchronized(modifiers)) {
+		// printer.print("synchronized ");
+		// }
+		// if (ModifierSet.isTransient(modifiers)) {
+		// printer.print("transient ");
+		// }
+		// if (ModifierSet.isVolatile(modifiers)) {
+		// printer.print("volatile ");
+		// }
 
 	}
 
@@ -1018,15 +1033,15 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Process Class or Interface declaration (only the head of the class, not the members).
-	 * 
+	 *
 	 * @param n
 	 * @param parent
 	 * @return
 	 */
 	private Classifier processClassOrInterfaceDeclaration(ClassOrInterfaceDeclaration n, List<Namespace> enclosingParents) {
-		
+
 		Classifier processedClass;
-		if(n.isInterface()) {
+		if (n.isInterface()) {
 			processedClass = createInterface(enclosingParents, n);
 		} else {
 			processedClass = createClass(enclosingParents, n);
@@ -1036,8 +1051,8 @@ public class CompilationUnitAnalyser {
 		processJavadoc(n.getJavaDoc(), processedClass);
 
 		// Extends parameters
-		if(n.getExtends() != null) {
-			for(ClassOrInterfaceType type : n.getExtends()) { // Get the type
+		if (n.getExtends() != null) {
+			for (ClassOrInterfaceType type : n.getExtends()) { // Get the type
 				List<String> qualifiedName = getQualifiedName(type);
 				qualifiedName = importedTypes.getQualifiedName(qualifiedName);
 				Classifier generalization = getUmlClassifier(qualifiedName, n.isInterface());
@@ -1047,19 +1062,19 @@ public class CompilationUnitAnalyser {
 		}
 
 		// implements parameters
-		if(n.getImplements() != null) {
-			for(ClassOrInterfaceType type : n.getImplements()) {
+		if (n.getImplements() != null) {
+			for (ClassOrInterfaceType type : n.getImplements()) {
 				List<String> qualifiedName = getQualifiedName(type);
 				qualifiedName = importedTypes.getQualifiedName(qualifiedName);
 				Classifier generalization = getUmlClassifier(qualifiedName, true);
 				// create the generalization
-				Package parentPackage = (Package)enclosingParents.get(0);
+				Package parentPackage = (Package) enclosingParents.get(0);
 				// TODO use InterfaceRealization instead of Realization
-				// Need to store the InterfaceRealization in the right parent 
-//				UmlUtils.getRealization(parentPackage, processedClass, generalization);
-				if( generalization instanceof Interface && processedClass instanceof BehavioredClassifier)
-				  UmlUtils.getInterfaceRealization((BehavioredClassifier)processedClass, (Interface)generalization);
-				else
+				// Need to store the InterfaceRealization in the right parent
+				// UmlUtils.getRealization(parentPackage, processedClass, generalization);
+				if (generalization instanceof Interface && processedClass instanceof BehavioredClassifier) {
+					UmlUtils.getInterfaceRealization((BehavioredClassifier) processedClass, (Interface) generalization);
+				} else
 				{
 					// should not happen
 					UmlUtils.getGeneralization(processedClass, generalization);
@@ -1078,9 +1093,9 @@ public class CompilationUnitAnalyser {
 	 * trace :
 	 * - visitQualifiedName( parser )
 	 * - visitName( javagen )
-	 * 
+	 *
 	 * @author dumoulin
-	 * 
+	 *
 	 */
 	protected class CreatePackage extends VoidVisitorAdapter<List<String>> {
 
@@ -1088,7 +1103,7 @@ public class CompilationUnitAnalyser {
 		/**
 		 * Create or find the packages corresponding to the qualified name.
 		 * This is the main method to be called
-		 * 
+		 *
 		 * @param decl
 		 * @param parent
 		 * @return
@@ -1101,7 +1116,7 @@ public class CompilationUnitAnalyser {
 
 			Package p = parent;
 			// iterate on names
-			for(String packageName : names) {
+			for (String packageName : names) {
 				p = UmlUtils.getPackage(p, packageName);
 			}
 			return p;
@@ -1112,18 +1127,18 @@ public class CompilationUnitAnalyser {
 		 */
 		@Override
 		public void visit(NameExpr n, List<String> names) {
-			//			System.out.println("visitName( " + n.getName() + " )");
+			// System.out.println("visitName( " + n.getName() + " )");
 			// Add in head, because elements are found in reverse order.
 			names.add(0, n.getName());
 			super.visit(n, names);
 		}
 
 		/**
-		 * 
+		 *
 		 */
 		@Override
 		public void visit(QualifiedNameExpr n, List<String> names) {
-			//			System.out.println("visitQualifiedName( " + n.getName() + " )");
+			// System.out.println("visitQualifiedName( " + n.getName() + " )");
 			// Add in head, because elements are found in reverse order.
 			names.add(0, n.getName());
 			super.visit(n, names);
@@ -1132,15 +1147,15 @@ public class CompilationUnitAnalyser {
 
 	/**
 	 * Visitor used to create a qualified name from ClassOrInterfaceType
-	 * 
+	 *
 	 * @author dumoulin
-	 * 
+	 *
 	 */
 	protected class QualifiedNameParser extends VoidVisitorAdapter<List<String>> {
 
 		/**
 		 * Get the qualified name from the specified ast type
-		 * 
+		 *
 		 * @param n
 		 * @return
 		 */
@@ -1152,7 +1167,7 @@ public class CompilationUnitAnalyser {
 
 		/**
 		 * Get the qualified name from the specified ast type
-		 * 
+		 *
 		 * @param n
 		 * @return
 		 */
@@ -1164,7 +1179,7 @@ public class CompilationUnitAnalyser {
 
 		/**
 		 * Get the qualified name from the specified ast type
-		 * 
+		 *
 		 * @param n
 		 * @return
 		 */
@@ -1176,7 +1191,7 @@ public class CompilationUnitAnalyser {
 
 		/**
 		 * Get the qualified name from the specified ast type
-		 * 
+		 *
 		 * @param n
 		 * @return
 		 */
@@ -1191,12 +1206,13 @@ public class CompilationUnitAnalyser {
 		 */
 		@Override
 		public void visit(ClassOrInterfaceType n, List<String> names) {
-			//		System.out.println("visitName( " + n.getName() + " )");
+			// System.out.println("visitName( " + n.getName() + " )");
 			// Add in head, because elements are found in reverse order.
-			//		super.visit(n, names);
+			// super.visit(n, names);
 			names.add(0, n.getName());
-			if(n.getScope() != null)
+			if (n.getScope() != null) {
 				n.getScope().accept(this, names);
+			}
 		}
 
 		/**
@@ -1205,22 +1221,24 @@ public class CompilationUnitAnalyser {
 		@Override
 		public void visit(NameExpr n, List<String> names) {
 			// Add in head, because elements are found in reverse order.
-			//		System.out.println("addName( " + n.getName() + " )");
+			// System.out.println("addName( " + n.getName() + " )");
 			names.add(0, n.getName());
-			//		super.visit(n, names);
+			// super.visit(n, names);
 		}
 
 		/**
-	 * 
+	 *
 	 */
 		@Override
 		public void visit(QualifiedNameExpr n, List<String> names) {
 			// Add in head, because elements are found in reverse order.
-			//		System.out.println("addQualifiedName( " + n.getName() + " )");
+			// System.out.println("addQualifiedName( " + n.getName() + " )");
 			names.add(0, n.getName());
-			if(n.getQualifier() != null)
+			if (n.getQualifier() != null)
+			{
 				n.getQualifier().accept(this, names);
-			//		super.visit(n, names);
+				// super.visit(n, names);
+			}
 		}
 	}
 

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,31 +21,33 @@ import org.eclipse.emf.ecore.EPackage;
  */
 public interface IConstraintProvider {
 	/**
-	 * 
-	 * @return  the mode of this provider
+	 *
+	 * @return the mode of this provider
 	 */
 	public Mode getMode();
 
 	/**
-	 * 
+	 *
 	 * @return the cache of the provider
 	 */
 	public boolean getCache();
-	
-	
+
+
 	public EPackage getEPackage();
-	
+
 	public void setEPackage(EPackage ePackage);
 
 	/**
-	 * 
+	 *
 	 * @return the list of categories
 	 */
 	public List<IConstraintsCategory> getConstraintsCategories();
 
 	/**
 	 * add categories
-	 * @param constraintCategories a list of categories
+	 *
+	 * @param constraintCategories
+	 *            a list of categories
 	 */
 	public void addConstraintCategories(
 			List<IConstraintsCategory> constraintCategories);

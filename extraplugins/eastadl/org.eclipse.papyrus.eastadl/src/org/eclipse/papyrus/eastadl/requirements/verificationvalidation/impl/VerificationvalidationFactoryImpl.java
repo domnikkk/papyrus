@@ -23,6 +23,7 @@ import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.Verify;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class VerificationvalidationFactoryImpl extends EFactoryImpl implements VerificationvalidationFactory {
@@ -30,16 +31,16 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static VerificationvalidationFactory init() {
 		try {
-			VerificationvalidationFactory theVerificationvalidationFactory = (VerificationvalidationFactory)EPackage.Registry.INSTANCE.getEFactory(VerificationvalidationPackage.eNS_URI);
+			VerificationvalidationFactory theVerificationvalidationFactory = (VerificationvalidationFactory) EPackage.Registry.INSTANCE.getEFactory(VerificationvalidationPackage.eNS_URI);
 			if (theVerificationvalidationFactory != null) {
 				return theVerificationvalidationFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new VerificationvalidationFactoryImpl();
@@ -49,6 +50,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public VerificationvalidationFactoryImpl() {
@@ -58,30 +60,42 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case VerificationvalidationPackage.VV_STIMULI: return createVVStimuli();
-			case VerificationvalidationPackage.VV_INTENDED_OUTCOME: return createVVIntendedOutcome();
-			case VerificationvalidationPackage.VV_ACTUAL_OUTCOME: return createVVActualOutcome();
-			case VerificationvalidationPackage.VV_CASE: return createVVCase();
-			case VerificationvalidationPackage.VV_TARGET: return createVVTarget();
-			case VerificationvalidationPackage.VV_LOG: return createVVLog();
-			case VerificationvalidationPackage.VV_PROCEDURE: return createVVProcedure();
-			case VerificationvalidationPackage.VERIFICATION_VALIDATION: return createVerificationValidation();
-			case VerificationvalidationPackage.VERIFY: return createVerify();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case VerificationvalidationPackage.VV_STIMULI:
+			return createVVStimuli();
+		case VerificationvalidationPackage.VV_INTENDED_OUTCOME:
+			return createVVIntendedOutcome();
+		case VerificationvalidationPackage.VV_ACTUAL_OUTCOME:
+			return createVVActualOutcome();
+		case VerificationvalidationPackage.VV_CASE:
+			return createVVCase();
+		case VerificationvalidationPackage.VV_TARGET:
+			return createVVTarget();
+		case VerificationvalidationPackage.VV_LOG:
+			return createVVLog();
+		case VerificationvalidationPackage.VV_PROCEDURE:
+			return createVVProcedure();
+		case VerificationvalidationPackage.VERIFICATION_VALIDATION:
+			return createVerificationValidation();
+		case VerificationvalidationPackage.VERIFY:
+			return createVerify();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public VVStimuli createVVStimuli() {
 		VVStimuliImpl vvStimuli = new VVStimuliImpl();
 		return vvStimuli;
@@ -90,8 +104,10 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public VVIntendedOutcome createVVIntendedOutcome() {
 		VVIntendedOutcomeImpl vvIntendedOutcome = new VVIntendedOutcomeImpl();
 		return vvIntendedOutcome;
@@ -100,8 +116,10 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public VVActualOutcome createVVActualOutcome() {
 		VVActualOutcomeImpl vvActualOutcome = new VVActualOutcomeImpl();
 		return vvActualOutcome;
@@ -110,8 +128,10 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public VVCase createVVCase() {
 		VVCaseImpl vvCase = new VVCaseImpl();
 		return vvCase;
@@ -120,8 +140,10 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public VVTarget createVVTarget() {
 		VVTargetImpl vvTarget = new VVTargetImpl();
 		return vvTarget;
@@ -130,8 +152,10 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public VVLog createVVLog() {
 		VVLogImpl vvLog = new VVLogImpl();
 		return vvLog;
@@ -140,8 +164,10 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public VVProcedure createVVProcedure() {
 		VVProcedureImpl vvProcedure = new VVProcedureImpl();
 		return vvProcedure;
@@ -150,8 +176,10 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public VerificationValidation createVerificationValidation() {
 		VerificationValidationImpl verificationValidation = new VerificationValidationImpl();
 		return verificationValidation;
@@ -160,8 +188,10 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Verify createVerify() {
 		VerifyImpl verify = new VerifyImpl();
 		return verify;
@@ -170,15 +200,18 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public VerificationvalidationPackage getVerificationvalidationPackage() {
-		return (VerificationvalidationPackage)getEPackage();
+		return (VerificationvalidationPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -187,4 +220,4 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 		return VerificationvalidationPackage.eINSTANCE;
 	}
 
-} //VerificationvalidationFactoryImpl
+} // VerificationvalidationFactoryImpl

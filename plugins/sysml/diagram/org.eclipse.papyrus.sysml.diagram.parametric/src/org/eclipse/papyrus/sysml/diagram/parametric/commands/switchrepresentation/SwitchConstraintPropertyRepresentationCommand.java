@@ -42,11 +42,11 @@ public class SwitchConstraintPropertyRepresentationCommand extends Command {
 		return this.editPartToSwitch;
 	}
 
-	
+
 	@Override
 	public void execute() {
 		if (this.getEditPartToSwitch() instanceof CustomConstraintBlockPropertyCompositeEditPart) {
-			CustomConstraintBlockPropertyCompositeEditPart constraintBlockPropertyCompositeEditPart = (CustomConstraintBlockPropertyCompositeEditPart)this.getEditPartToSwitch();
+			CustomConstraintBlockPropertyCompositeEditPart constraintBlockPropertyCompositeEditPart = (CustomConstraintBlockPropertyCompositeEditPart) this.getEditPartToSwitch();
 			ConstraintBlockPropertyCompositeFigure figure = constraintBlockPropertyCompositeEditPart.getPrimaryShape();
 			if (figure instanceof ConstraintBlockPropertyCompositeFigure) {
 				if (figure.getCorner() != 0) {
@@ -58,10 +58,10 @@ public class SwitchConstraintPropertyRepresentationCommand extends Command {
 			}
 		}
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private void switchToSquareRepresentationWithStructure(CustomConstraintBlockPropertyCompositeEditPart editPart, IFigure figure) {
-		
+
 		// Set corner as square
 		int newCorner = 0;
 		((ConstraintBlockPropertyCompositeFigure) figure).setCorner(newCorner);
@@ -72,26 +72,26 @@ public class SwitchConstraintPropertyRepresentationCommand extends Command {
 			structureCompartment.setVisible(true);
 		}
 		else {
-			structureCompartment = ViewService.createNode((View)editPart.getModel(), SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID, new PreferencesHint("org.eclipse.papyrus.sysml.diagram.parametric"));
+			structureCompartment = ViewService.createNode((View) editPart.getModel(), SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID, new PreferencesHint("org.eclipse.papyrus.sysml.diagram.parametric"));
 			if (structureCompartment != null) {
 				structureCompartment.setElement(editPart.resolveSemanticElement());
 			}
 		}
-		
+
 		// add the << constraint >> tag
 		editPart.getPrimaryShape().setTagLabel(String.valueOf("\u00AB") + "constraint" + String.valueOf("\u00BB"));
-		
+
 		// set the style to persist representation
-		StringValueStyle style = (StringValueStyle)((View)editPart.getModel()).getStyle(NotationPackage.eINSTANCE.getStringValueStyle());
+		StringValueStyle style = (StringValueStyle) ((View) editPart.getModel()).getStyle(NotationPackage.eINSTANCE.getStringValueStyle());
 		if (style == null) {
-			((View)editPart.getModel()).getStyles().add(NotationFactory.eINSTANCE.createStringValueStyle());
+			((View) editPart.getModel()).getStyles().add(NotationFactory.eINSTANCE.createStringValueStyle());
 		}
-		style = (StringValueStyle)((View)editPart.getModel()).getStyle(NotationPackage.eINSTANCE.getStringValueStyle());
-		style.setName(CustomConstraintBlockPropertyCompositeEditPart.REPRESENTATION_MODE_STYLE);
-		style.setStringValue(CustomConstraintBlockPropertyCompositeEditPart.SQUARE_REPRESENTATION_WITH_STRUCTURE);
-		
-		// set the default style for new elements 
-		ConstraintBlockPropertyCompositeEditPart.setLastRepresentation(CustomConstraintBlockPropertyCompositeEditPart.SQUARE_REPRESENTATION_WITH_STRUCTURE);
+		style = (StringValueStyle) ((View) editPart.getModel()).getStyle(NotationPackage.eINSTANCE.getStringValueStyle());
+		style.setName(ConstraintBlockPropertyCompositeEditPart.REPRESENTATION_MODE_STYLE);
+		style.setStringValue(ConstraintBlockPropertyCompositeEditPart.SQUARE_REPRESENTATION_WITH_STRUCTURE);
+
+		// set the default style for new elements
+		ConstraintBlockPropertyCompositeEditPart.setLastRepresentation(ConstraintBlockPropertyCompositeEditPart.SQUARE_REPRESENTATION_WITH_STRUCTURE);
 		editPart.setCornerLocators(newCorner);
 	}
 
@@ -110,18 +110,18 @@ public class SwitchConstraintPropertyRepresentationCommand extends Command {
 
 		// remove the << constraint >> tag
 		editPart.getPrimaryShape().setTagLabel("");
-		
-		// set the style to persist representation		
-		StringValueStyle style = (StringValueStyle)((View)editPart.getModel()).getStyle(NotationPackage.eINSTANCE.getStringValueStyle());
-		if (style == null) {
-			((View)editPart.getModel()).getStyles().add(NotationFactory.eINSTANCE.createStringValueStyle());
-		}
-		style = (StringValueStyle)((View)editPart.getModel()).getStyle(NotationPackage.eINSTANCE.getStringValueStyle());
-		style.setName(CustomConstraintBlockPropertyCompositeEditPart.REPRESENTATION_MODE_STYLE);
-		style.setStringValue(CustomConstraintBlockPropertyCompositeEditPart.ROUNDED_REPRESENTATION);
 
-		// set the default style for new elements 
-		ConstraintBlockPropertyCompositeEditPart.setLastRepresentation(CustomConstraintBlockPropertyCompositeEditPart.ROUNDED_REPRESENTATION);
+		// set the style to persist representation
+		StringValueStyle style = (StringValueStyle) ((View) editPart.getModel()).getStyle(NotationPackage.eINSTANCE.getStringValueStyle());
+		if (style == null) {
+			((View) editPart.getModel()).getStyles().add(NotationFactory.eINSTANCE.createStringValueStyle());
+		}
+		style = (StringValueStyle) ((View) editPart.getModel()).getStyle(NotationPackage.eINSTANCE.getStringValueStyle());
+		style.setName(ConstraintBlockPropertyCompositeEditPart.REPRESENTATION_MODE_STYLE);
+		style.setStringValue(ConstraintBlockPropertyCompositeEditPart.ROUNDED_REPRESENTATION);
+
+		// set the default style for new elements
+		ConstraintBlockPropertyCompositeEditPart.setLastRepresentation(ConstraintBlockPropertyCompositeEditPart.ROUNDED_REPRESENTATION);
 		editPart.setCornerLocators(newCorner);
 	}
 
@@ -134,5 +134,5 @@ public class SwitchConstraintPropertyRepresentationCommand extends Command {
 	public void redo() {
 		execute(); // switch
 	}
-	
+
 }

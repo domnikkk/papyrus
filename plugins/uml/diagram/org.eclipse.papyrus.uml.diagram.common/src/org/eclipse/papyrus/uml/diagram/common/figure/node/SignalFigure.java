@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class SignalFigure extends CompartmentFigure {
 	private final static List<String> COMPARTMENT = new ArrayList<String>() {
 
 		/**
-		 * 
+		 *
 		 */
 		private static final long serialVersionUID = 4239966810860044927L;
 
@@ -48,7 +48,7 @@ public class SignalFigure extends CompartmentFigure {
 
 	/**
 	 * Get the attribute's compartment figure
-	 * 
+	 *
 	 * @return
 	 */
 	public IFigure getAttributeCompartmentFigure() {

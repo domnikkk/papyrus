@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -12,7 +12,7 @@ package org.eclipse.papyrus.xwt.collection;
 
 /**
  * Provides an abstract base class for types that describe how to divide the items in a collection into groups.
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class GroupDescription {
@@ -25,7 +25,7 @@ public class GroupDescription {
 	protected String[] groupNames;
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public String[] getGroupNames() {
@@ -33,7 +33,7 @@ public class GroupDescription {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param groupNames
 	 */
 	public void setGroupNames(String[] groupNames) {

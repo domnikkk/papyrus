@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -17,14 +17,14 @@ import org.eclipse.papyrus.layers.stackmodel.util.TriggeredEventTraces;
 /**
  * A listener on {@link LayersModelEventNotifier}. This listener trace events from
  * the notifier.
- * 
+ *
  * @author cedric dumoulin
  *
  */
 public class TraceUmlNamedElementChangedEventListener implements IUmlNamedElementChangedEventListener {
 
 	public TriggeredEventTraces<Notification> traces = new TriggeredEventTraces<Notification>();
-	
+
 	/**
 	 * @see org.eclipse.papyrus.layers.runtime.ILayersModelEventListener#layerAdded(org.eclipse.emf.common.notify.Notification)
 	 *
@@ -33,8 +33,8 @@ public class TraceUmlNamedElementChangedEventListener implements IUmlNamedElemen
 	@Override
 	public void valueChanged(Notification notification) {
 		traces.addTrace("valueChanged", notification);
-		
+
 	}
-	
+
 
 }

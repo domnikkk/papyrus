@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,8 +45,10 @@ public class ExportProfilesIconsDialog extends TrayDialog {
 	/**
 	 * Instantiates a new export profiles icons dialog.
 	 *
-	 * @param shell the shell
-	 * @param profiles the profiles
+	 * @param shell
+	 *            the shell
+	 * @param profiles
+	 *            the profiles
 	 */
 	public ExportProfilesIconsDialog(Shell shell, Object[] profiles) {
 		super(shell);
@@ -59,7 +61,7 @@ public class ExportProfilesIconsDialog extends TrayDialog {
 	 * @see org.eclipse.jface.dialogs.Dialog#create()
 	 *
 	 */
-	
+
 	@Override
 	public void create() {
 		// TODO Auto-generated method stub
@@ -75,11 +77,11 @@ public class ExportProfilesIconsDialog extends TrayDialog {
 		data = new GridData(GridData.FILL_HORIZONTAL);
 		data.horizontalSpan = 2;
 
-		Composite parent = (Composite)getDialogArea();
-		for(int i = 0; i < this.profiles.length; i++) {
+		Composite parent = (Composite) getDialogArea();
+		for (int i = 0; i < this.profiles.length; i++) {
 			this.profileIconEditors[i] = new StringFileSelector(parent, SWT.BORDER);
 			this.profileIconEditors[i].setLayoutData(data);
-			this.profileIconEditors[i].setLabel("Icon for " + ((Profile)this.profiles[i]).getName());
+			this.profileIconEditors[i].setLabel("Icon for " + ((Profile) this.profiles[i]).getName());
 			this.profileIconEditors[i].setToolTipText("Enter the profile icon");
 		}
 
@@ -101,18 +103,19 @@ public class ExportProfilesIconsDialog extends TrayDialog {
 
 	/**
 	 * Ok pressed.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#okPressed()
 	 */
 
 	@Override
 	protected void okPressed() {
 
-		loop: for(int i = 0; i < this.profileIconEditors.length; i++) {
-			if(this.profileIconEditors[i] != null)
-				this.profilesIcons[i] = (String)this.profileIconEditors[i].getValue();
-			else
+		loop: for (int i = 0; i < this.profileIconEditors.length; i++) {
+			if (this.profileIconEditors[i] != null) {
+				this.profilesIcons[i] = (String) this.profileIconEditors[i].getValue();
+			} else {
 				break loop;
+			}
 		}
 
 		super.okPressed();

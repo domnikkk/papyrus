@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin Integration.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,19 +31,19 @@ import org.eclipse.ui.internal.decorators.DecorationBuilder;
  * This decorator computes decoration of related files
  * for each decoration an intersection is made
  * and the {@link IPapyrusFile} will have the same decoration of the set
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public class OneFileDecorator extends LabelProvider implements ILightweightLabelDecorator {
 
 	public void decorate(Object element, IDecoration decoration) {
-		if(element instanceof IPapyrusFile) {
-			IPapyrusFile papy = (IPapyrusFile)element;
+		if (element instanceof IPapyrusFile) {
+			IPapyrusFile papy = (IPapyrusFile) element;
 			IResource[] associatedResources = papy.getAssociatedResources();
 			FilteredDecorationBuilder builder = new FilteredDecorationBuilder(decoration.getDecorationContext(), associatedResources.length);
-			for(IResource r : associatedResources) {
+			for (IResource r : associatedResources) {
 				WorkbenchPlugin.getDefault().getDecoratorManager().getLightweightManager().getDecorations(r, builder);
 			}
 			builder.handleDecoration(decoration);
@@ -52,9 +52,9 @@ public class OneFileDecorator extends LabelProvider implements ILightweightLabel
 
 	/**
 	 * The builder which intercepts decoration
-	 * 
+	 *
 	 * @author tfaure
-	 * 
+	 *
 	 */
 	protected class FilteredDecorationBuilder extends DecorationBuilder {
 
@@ -87,82 +87,88 @@ public class OneFileDecorator extends LabelProvider implements ILightweightLabel
 			this.nbResource = nbResource;
 		}
 
+		@Override
 		public void addOverlay(ImageDescriptor overlay) {
 			Integer result = this.overlay.get(overlay);
-			if(result == null) {
+			if (result == null) {
 				result = 0;
 			}
 			result++;
 			this.overlay.put(overlay, result);
 		}
 
+		@Override
 		public void addPrefix(String prefixString) {
 			Integer result = this.prefixString.get(prefixString);
-			if(result == null) {
+			if (result == null) {
 				result = 0;
 			}
 			result++;
 			this.prefixString.put(prefixString, result);
 		}
 
+		@Override
 		public void addSuffix(String suffixString) {
 			Integer result = this.suffixString.get(suffixString);
-			if(result == null) {
+			if (result == null) {
 				result = 0;
 			}
 			result++;
 			this.suffixString.put(suffixString, result);
 		}
 
+		@Override
 		public void setBackgroundColor(Color bgColor) {
-			if(this.bgColor == null && !flagBgColor) {
+			if (this.bgColor == null && !flagBgColor) {
 				this.bgColor = bgColor;
 				flagBgColor = true;
-			} else if(this.bgColor != null && !this.bgColor.equals(bgColor)) {
+			} else if (this.bgColor != null && !this.bgColor.equals(bgColor)) {
 				this.bgColor = null;
 			}
 		}
 
+		@Override
 		public void setFont(Font newFont) {
-			if(this.newFont == null && !flagNewFont) {
+			if (this.newFont == null && !flagNewFont) {
 				this.newFont = newFont;
 				flagNewFont = true;
-			} else if(this.newFont != null && !this.newFont.equals(newFont)) {
+			} else if (this.newFont != null && !this.newFont.equals(newFont)) {
 				this.newFont = null;
 			}
 		}
 
+		@Override
 		public void setForegroundColor(Color fgColor) {
-			if(this.fgColor == null && !flagFgColor) {
+			if (this.fgColor == null && !flagFgColor) {
 				this.fgColor = fgColor;
 				flagFgColor = true;
-			} else if(this.fgColor != null && !this.fgColor.equals(fgColor)) {
+			} else if (this.fgColor != null && !this.fgColor.equals(fgColor)) {
 				this.fgColor = null;
 			}
 		}
 
 		public void handleDecoration(IDecoration decoration) {
-			if(fgColor != null) {
+			if (fgColor != null) {
 				decoration.setForegroundColor(fgColor);
 			}
-			if(bgColor != null) {
+			if (bgColor != null) {
 				decoration.setBackgroundColor(bgColor);
 			}
-			if(newFont != null) {
+			if (newFont != null) {
 				decoration.setFont(newFont);
 			}
-			for(ImageDescriptor desc : overlay.keySet()) {
-				if(overlay.get(desc) == nbResource) {
+			for (ImageDescriptor desc : overlay.keySet()) {
+				if (overlay.get(desc) == nbResource) {
 					decoration.addOverlay(desc);
 				}
 			}
-			for(String s : prefixString.keySet()) {
-				if(prefixString.get(s) == nbResource) {
+			for (String s : prefixString.keySet()) {
+				if (prefixString.get(s) == nbResource) {
 					decoration.addPrefix(s);
 				}
 			}
-			for(String s : suffixString.keySet()) {
-				if(suffixString.get(s) == nbResource) {
+			for (String s : suffixString.keySet()) {
+				if (suffixString.get(s) == nbResource) {
 					decoration.addSuffix(s);
 				}
 			}

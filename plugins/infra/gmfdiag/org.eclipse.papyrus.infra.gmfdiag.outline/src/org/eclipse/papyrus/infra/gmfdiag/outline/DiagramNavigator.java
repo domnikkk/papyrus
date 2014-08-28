@@ -1,16 +1,16 @@
 /***********************************************************************
  * Copyright (c) 2007, 2014 Anyware Technologies, Obeo, CEA, and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Anyware Technologies - initial API and implementation
- *    Obeo 
+ *    Obeo
  *    Christian W. Damus (CEA) - bug 410346
- * 
+ *
  **********************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.outline;
 
@@ -49,9 +49,9 @@ import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
 /**
  * <b>Diagram navigator :</b><br>
  * Display the content of the current diagram. <br>
- * 
+ *
  * Updated : 18 feb. 2008
- * 
+ *
  * @author <a href="mailto:david.sciamma@anyware-tech.com">David Sciamma</a>
  * @author <a href="mailto:jacques.lescot@anyware-tech.com">Jacques LESCOT</a>
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
@@ -70,16 +70,16 @@ public class DiagramNavigator extends Composite {
 	/**
 	 * This content provider filters the event from graphical object to only refresh when it's
 	 * needed.
-	 * 
+	 *
 	 * @author <a href="david.sciamma@anyware-tech.com">David Sciamma</a>
 	 */
 	protected class NavigatorAdapterFactoryContentProvider extends AdapterFactoryContentProvider {
 
 		/**
 		 * Constructor
-		 * 
+		 *
 		 * @param adapterFactory
-		 *        the factory
+		 *            the factory
 		 */
 		public NavigatorAdapterFactoryContentProvider(AdapterFactory adapterFactory) {
 			super(adapterFactory);
@@ -90,12 +90,12 @@ public class DiagramNavigator extends Composite {
 		 */
 		@Override
 		public void notifyChanged(Notification notification) {
-			if(notification instanceof IViewerNotification) {
-				Object element = ((IViewerNotification)notification).getElement();
-				if(!(element instanceof View)) {
+			if (notification instanceof IViewerNotification) {
+				Object element = ((IViewerNotification) notification).getElement();
+				if (!(element instanceof View)) {
 					// Filter only non-graphical object events
 					super.notifyChanged(notification);
-				} else if((element instanceof Diagram) && ((IViewerNotification)notification).isLabelUpdate()) {
+				} else if ((element instanceof Diagram) && ((IViewerNotification) notification).isLabelUpdate()) {
 					// A diagram or a Diagrams is added or removed : refresh the
 					// whole tree
 					refreshViewer(true);
@@ -108,13 +108,13 @@ public class DiagramNavigator extends Composite {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite
+	 *            the parent composite
 	 * @param diagEditor
-	 *        the viewer to edit as tree
+	 *            the viewer to edit as tree
 	 * @param pageSite
-	 *        the site
+	 *            the site
 	 */
 	public DiagramNavigator(Composite parent, IPageSite pageSite, ServicesRegistry registry) {
 		super(parent, SWT.BORDER);
@@ -128,7 +128,7 @@ public class DiagramNavigator extends Composite {
 
 	/**
 	 * Returns the TreeViewer used as navigator
-	 * 
+	 *
 	 * @return the navigable tree
 	 */
 	public TreeViewer getTreeViewer() {
@@ -141,9 +141,9 @@ public class DiagramNavigator extends Composite {
 
 	/**
 	 * Create the contents of the widget
-	 * 
+	 *
 	 * @param parent
-	 *        the current widget
+	 *            the current widget
 	 */
 	protected void createContents(Composite parent) {
 		this.viewer = new TreeViewer(parent, SWT.MULTI);
@@ -162,8 +162,8 @@ public class DiagramNavigator extends Composite {
 			@Override
 			public void dispose() {
 				// Dispose the adapter factory because we created it
-				if(adapterFactory instanceof IDisposable) {
-					((IDisposable)adapterFactory).dispose();
+				if (adapterFactory instanceof IDisposable) {
+					((IDisposable) adapterFactory).dispose();
 				}
 				super.dispose();
 			}
@@ -188,13 +188,13 @@ public class DiagramNavigator extends Composite {
 
 	/**
 	 * Refresh the tree viewer in the UI thread if we are in a different thread
-	 * 
+	 *
 	 * @param updateLabel
-	 *        <code>true</code> if the label must be refreshed
+	 *            <code>true</code> if the label must be refreshed
 	 */
 	protected final void refreshViewer(final boolean updateLabel) {
-		if((viewer != null) && !viewer.getTree().isDisposed()) {
-			if(Display.getCurrent() != Display.getDefault()) {
+		if ((viewer != null) && !viewer.getTree().isDisposed()) {
+			if (Display.getCurrent() != Display.getDefault()) {
 				syncRefreshViewer(updateLabel);
 			} else {
 				viewer.refresh(updateLabel);
@@ -204,9 +204,9 @@ public class DiagramNavigator extends Composite {
 
 	/**
 	 * Refresh the tree viewer in the UI thread
-	 * 
+	 *
 	 * @param updateLabel
-	 *        <code>true</code> if the label must be refreshed
+	 *            <code>true</code> if the label must be refreshed
 	 */
 	private void syncRefreshViewer(final boolean updateLabel) {
 		viewer.getControl().getDisplay().syncExec(new Runnable() {
@@ -227,7 +227,7 @@ public class DiagramNavigator extends Composite {
 
 	/**
 	 * Get the AdapterFactory associated with an editor
-	 * 
+	 *
 	 * @return AdapterFactory
 	 */
 	protected AdapterFactory getAdapterFactory() {

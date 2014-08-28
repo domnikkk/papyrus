@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -18,13 +18,13 @@ import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.*;
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
- * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
- * to invoke the <code>caseXXX</code> method for each class of the model,
+ * It supports the call {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object
  * and proceeding up the inheritance hierarchy
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage
  * @generated
  */
@@ -33,6 +33,7 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static UMLRealTimeStateMachPackage modelPackage;
@@ -41,6 +42,7 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UMLRealTimeStateMachSwitch() {
@@ -53,6 +55,7 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -66,43 +69,55 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case UMLRealTimeStateMachPackage.RT_STATE_MACHINE: {
-				RTStateMachine rtStateMachine = (RTStateMachine)theEObject;
-				T result = caseRTStateMachine(rtStateMachine);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+		case UMLRealTimeStateMachPackage.RT_STATE_MACHINE: {
+			RTStateMachine rtStateMachine = (RTStateMachine) theEObject;
+			T result = caseRTStateMachine(rtStateMachine);
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case UMLRealTimeStateMachPackage.RT_REGION: {
-				RTRegion rtRegion = (RTRegion)theEObject;
-				T result = caseRTRegion(rtRegion);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case UMLRealTimeStateMachPackage.RT_REGION: {
+			RTRegion rtRegion = (RTRegion) theEObject;
+			T result = caseRTRegion(rtRegion);
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case UMLRealTimeStateMachPackage.RT_STATE: {
-				RTState rtState = (RTState)theEObject;
-				T result = caseRTState(rtState);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case UMLRealTimeStateMachPackage.RT_STATE: {
+			RTState rtState = (RTState) theEObject;
+			T result = caseRTState(rtState);
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case UMLRealTimeStateMachPackage.RT_PSEUDOSTATE: {
-				RTPseudostate rtPseudostate = (RTPseudostate)theEObject;
-				T result = caseRTPseudostate(rtPseudostate);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case UMLRealTimeStateMachPackage.RT_PSEUDOSTATE: {
+			RTPseudostate rtPseudostate = (RTPseudostate) theEObject;
+			T result = caseRTPseudostate(rtPseudostate);
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case UMLRealTimeStateMachPackage.RT_TRIGGER: {
-				RTTrigger rtTrigger = (RTTrigger)theEObject;
-				T result = caseRTTrigger(rtTrigger);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case UMLRealTimeStateMachPackage.RT_TRIGGER: {
+			RTTrigger rtTrigger = (RTTrigger) theEObject;
+			T result = caseRTTrigger(rtTrigger);
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			default: return defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
@@ -112,7 +127,9 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>RT State Machine</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -127,7 +144,9 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>RT Region</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -142,7 +161,9 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>RT State</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -157,7 +178,9 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>RT Pseudostate</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -172,7 +195,9 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>RT Trigger</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -187,7 +212,9 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -197,4 +224,4 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //UMLRealTimeStateMachSwitch
+} // UMLRealTimeStateMachSwitch

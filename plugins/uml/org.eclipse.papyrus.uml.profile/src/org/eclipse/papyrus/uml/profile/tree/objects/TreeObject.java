@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,17 +27,17 @@ public class TreeObject {
 	protected ParentTreeObject parent;
 
 	/**
-	 * 
+	 *
 	 */
 	protected boolean isDisplay = false;
 
 	/**
 	 * The Constructor.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	public TreeObject(ParentTreeObject parent) {
 		this.parent = parent;
@@ -45,7 +45,7 @@ public class TreeObject {
 
 	/**
 	 * Gets the parent.
-	 * 
+	 *
 	 * @return the parent
 	 */
 	public ParentTreeObject getParent() {
@@ -53,8 +53,8 @@ public class TreeObject {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
 	public boolean isDisplay() {
@@ -62,8 +62,8 @@ public class TreeObject {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param isDisplay
 	 */
 	public void setDisplay(boolean isDisplay) {

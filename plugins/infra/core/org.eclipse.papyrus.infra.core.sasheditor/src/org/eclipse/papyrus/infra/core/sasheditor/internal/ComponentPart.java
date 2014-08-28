@@ -52,7 +52,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	 * Constructor.
 	 *
 	 * @param partModel
-	 *        The model of the editor.
+	 *            The model of the editor.
 	 */
 	public ComponentPart(TabFolderPart parent, IComponentModel partModel, Object rawModel) {
 		super(parent, rawModel);
@@ -70,7 +70,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 		try {
 			// Initialize it and create its controls.
 			editorControl = createEditorPartControl(parent);
-			//			attachListeners(editorControl, true);
+			// attachListeners(editorControl, true);
 
 		} catch (PartInitException e) {
 			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getLocalizedMessage()));
@@ -102,7 +102,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	@Override
 	public void dispose() {
 
-		//		detachListeners(editorControl, true);
+		// detachListeners(editorControl, true);
 		// dispose the SWT root control
 		editorControl.dispose();
 		// clean up properties to help GC
@@ -144,7 +144,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	@Override
 	public PagePart findPartAt(Point toFind, Class<?> expectedTileType) {
 
-		if(expectedTileType == this.getClass()) {
+		if (expectedTileType == this.getClass()) {
 			return this;
 		}
 
@@ -158,7 +158,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	 * @return
 	 */
 	public PagePart findPart(Object control) {
-		if(getControl() == control) {
+		if (getControl() == control) {
 			return this;
 		}
 
@@ -197,9 +197,9 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	 * Do not detach the Tile from its old parent.
 	 *
 	 * @param newParent
-	 *        The tilePart that should be used as part parent.
+	 *            The tilePart that should be used as part parent.
 	 * @param compositeParent
-	 *        The composite that should be used as parent.
+	 *            The composite that should be used as parent.
 	 */
 	@Override
 	public void reparent(TabFolderPart newParent) {
@@ -210,7 +210,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 		editorControl.setParent(newParent.getControl());
 
 		// Change state
-		if(garbageState == GarbageState.UNVISITED || garbageState == GarbageState.ORPHANED || garbageState == GarbageState.CREATED) {
+		if (garbageState == GarbageState.UNVISITED || garbageState == GarbageState.ORPHANED || garbageState == GarbageState.CREATED) {
 			garbageState = GarbageState.REPARENTED;
 		} else {
 			// Bad state, this is an internal error
@@ -226,7 +226,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	 */
 	@Override
 	public void setFocus() {
-		if(editorControl != null && !editorControl.isDisposed()) {
+		if (editorControl != null && !editorControl.isDisposed()) {
 			editorControl.setFocus();
 		}
 	}
@@ -287,12 +287,12 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	 * Show item status.
 	 */
 	protected void showStatus() {
-		//		System.out.println( "EditorTile: "
-		//				+ " disposed=" + editorControl.isDisposed()
-		//				+ ", visible=" + editorControl.isVisible()
-		//				+ ", garbState=" + garbageState
-		//				+ ", '" + editorPart.getTitle()
-		//				+ "', " + this);
+		// System.out.println( "EditorTile: "
+		// + " disposed=" + editorControl.isDisposed()
+		// + ", visible=" + editorControl.isVisible()
+		// + ", garbState=" + garbageState
+		// + ", '" + editorPart.getTitle()
+		// + "', " + this);
 
 		System.out.printf("ComponentPart: disposed=%-5b, visible=%-5b, garbState=%-10s, %s, %s\n", editorControl.isDisposed(), (editorControl.isDisposed() ? false : editorControl.isVisible()), garbageState, getPageTitle(), this);
 

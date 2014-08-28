@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2010-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -24,6 +24,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.papyrus.uml.service.types.command.GeneralizationReorientCommand;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -56,18 +57,18 @@ public class GeneralizationEditHelper extends DirectedRelationshipEditHelper {
 		if ((source != null) && !(source instanceof Classifier)) {
 			return false;
 		}
-		
+
 		if ((target != null) && !(target instanceof Classifier)) {
 			return false;
 		}
-		
+
 		if ((source != null) && (target != null) && (source == target)) {
 			return false;
 		}
-		
+
 		return true;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -84,8 +85,8 @@ public class GeneralizationEditHelper extends DirectedRelationshipEditHelper {
 			// Abort creation.
 			return UnexecutableCommand.INSTANCE;
 		}
-		
-		if(noSourceOrTarget && !noSourceAndTarget) {
+
+		if (noSourceOrTarget && !noSourceAndTarget) {
 			// The request isn't complete yet. Return the identity command so
 			// that the create relationship gesture is enabled.
 			return IdentityCommand.INSTANCE;
@@ -94,10 +95,10 @@ public class GeneralizationEditHelper extends DirectedRelationshipEditHelper {
 		// Propose a container if none is set in request.
 		EObject proposedContainer = source;
 		req.setContainer(proposedContainer);
-		
+
 		return new CreateRelationshipCommand(req);
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

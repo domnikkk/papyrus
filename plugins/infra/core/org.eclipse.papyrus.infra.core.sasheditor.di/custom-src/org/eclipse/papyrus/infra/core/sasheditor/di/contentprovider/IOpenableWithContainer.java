@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,9 +15,9 @@ package org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider;
 
 /**
  * Interface for adaptation, an IOpenable provides the getPageIdentifier to know how to open it
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 public interface IOpenableWithContainer extends IOpenable {
 
@@ -32,6 +32,7 @@ public interface IOpenableWithContainer extends IOpenable {
 			this.container = container;
 		}
 
+		@Override
 		public Object getContainer() {
 			return container;
 		}

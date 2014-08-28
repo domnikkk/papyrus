@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +14,7 @@ package org.eclipse.papyrus.infra.widgets.databinding;
 import org.eclipse.core.databinding.observable.value.AbstractObservableValue;
 import org.eclipse.core.databinding.observable.value.ValueDiff;
 import org.eclipse.papyrus.infra.tools.databinding.AggregatedObservable;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Button;
@@ -22,7 +23,7 @@ import org.eclipse.swt.widgets.Button;
  * An ObservableValue for {@link Button}s with the {@link SWT.CHECK} style
  * Allows the checkbox to take four states ; one for each possible combination
  * of {@link Button#getSelection()} and {@link Button#getGrayed()}
- * 
+ *
  * @author Camille Letavernier
  */
 public class GrayedCheckboxObservableValue extends AbstractObservableValue implements SelectionListener {
@@ -35,11 +36,11 @@ public class GrayedCheckboxObservableValue extends AbstractObservableValue imple
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param checkbox
-	 *        The observed checkbox
+	 *            The observed checkbox
 	 * @param aggregated
-	 *        The Observable aggregating the various observable booleans
+	 *            The Observable aggregating the various observable booleans
 	 */
 	public GrayedCheckboxObservableValue(Button checkbox, AggregatedObservable aggregated) {
 		this.checkbox = checkbox;
@@ -47,8 +48,9 @@ public class GrayedCheckboxObservableValue extends AbstractObservableValue imple
 		this.aggregated = aggregated;
 	}
 
+	@Override
 	public Object getValueType() {
-		return Object.class; //Can be either Boolean or BooleanWithDefaultState
+		return Object.class; // Can be either Boolean or BooleanWithDefaultState
 	}
 
 	@Override
@@ -58,7 +60,7 @@ public class GrayedCheckboxObservableValue extends AbstractObservableValue imple
 
 	@Override
 	protected void doSetValue(Object value) {
-		if(aggregated.hasDifferentValues()) {
+		if (aggregated.hasDifferentValues()) {
 			checkbox.setSelection(true);
 			checkbox.setGrayed(true);
 			return;
@@ -66,12 +68,12 @@ public class GrayedCheckboxObservableValue extends AbstractObservableValue imple
 			checkbox.setGrayed(false);
 		}
 
-		if(value instanceof Boolean) {
-			Boolean booleanValue = (Boolean)value;
+		if (value instanceof Boolean) {
+			Boolean booleanValue = (Boolean) value;
 			checkbox.setSelection(booleanValue);
 
 			this.currentValue = booleanValue;
-		} else if(value == null) {
+		} else if (value == null) {
 			checkbox.setSelection(false);
 		}
 	}
@@ -82,6 +84,7 @@ public class GrayedCheckboxObservableValue extends AbstractObservableValue imple
 		super.dispose();
 	}
 
+	@Override
 	public void widgetSelected(SelectionEvent e) {
 		final Boolean oldValue = currentValue;
 		final Boolean newValue = checkbox.getSelection();
@@ -103,8 +106,9 @@ public class GrayedCheckboxObservableValue extends AbstractObservableValue imple
 		});
 	}
 
+	@Override
 	public void widgetDefaultSelected(SelectionEvent e) {
-		//Nothing
+		// Nothing
 	}
 
 }

@@ -12,11 +12,11 @@ package org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.widgets.celleditors
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IImage;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.widgets.celleditors.composite.ImageComposite;
 import org.eclipse.papyrus.emf.facet.custom.ui.ImageUtils;
 import org.eclipse.papyrus.emf.facet.widgets.celleditors.IModelCellEditHandler;
 import org.eclipse.papyrus.emf.facet.widgets.celleditors.IModelCellEditor;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IImage;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -34,7 +34,7 @@ public class ImageCellEditor implements IModelCellEditor {
 	public Control activateCell(final Composite parent, final Object originalValue,
 			final IModelCellEditHandler editHandler, final EStructuralFeature feature,
 			final EObject source) {
-		
+
 		this.imageComposite = new ImageComposite(parent);
 
 		if (originalValue instanceof IImage) {

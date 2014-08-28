@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,14 +25,14 @@ public interface IMultiPageEditorPart {
 
 	/**
 	 * Get the currently active editor of the MultiPageEditorPart.
-	 * 
+	 *
 	 * @return
 	 */
 	public IEditorPart getActiveEditor();
 
 	/**
 	 * Get the main site of the MultiPageEditorPart.
-	 * 
+	 *
 	 * @return
 	 */
 	public IWorkbenchPartSite getSite();
@@ -40,7 +40,7 @@ public interface IMultiPageEditorPart {
 	/**
 	 * Get the IEditorSite associated to this MultiPageEditorPart.
 	 * This return the same object as getSite().
-	 * 
+	 *
 	 * @return
 	 */
 	public IEditorSite getEditorSite();

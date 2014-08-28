@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +14,7 @@
 
 package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
+import org.eclipse.papyrus.infra.core.sasheditor.internal.AbstractPart.GarbageState;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.internal.dnd.IDropTarget;
@@ -22,7 +23,7 @@ import org.eclipse.ui.internal.dnd.IDropTarget;
 /**
  * Common ancestor of Panel Parts.
  * Panels are sashes and folders.
- * 
+ *
  * @author cedric dumoulin
  */
 public abstract class AbstractPanelPart extends AbstractPart {
@@ -34,9 +35,9 @@ public abstract class AbstractPanelPart extends AbstractPart {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        Parent of the Pane.
+	 *            Parent of the Pane.
 	 */
 	public AbstractPanelPart(IPanelParent parent) {
 		super(parent.getSashWindowContainer());
@@ -45,7 +46,7 @@ public abstract class AbstractPanelPart extends AbstractPart {
 	/**
 	 * Create the SWT controls.
 	 * This method is called by the SWT parent.
-	 * 
+	 *
 	 * @param container
 	 */
 	abstract public void createPartControl(Composite container);
@@ -63,23 +64,23 @@ public abstract class AbstractPanelPart extends AbstractPart {
 
 	/**
 	 * Visit the part.
-	 * 
+	 *
 	 * @param visitor
 	 */
 	abstract public boolean visit(IPartVisitor visitor);
 
 	/**
 	 * Synchronize the part and its children with the models in contentProvider.
-	 * 
+	 *
 	 * @param existingParts
-	 *        List of already existing part before the synchronization.
+	 *            List of already existing part before the synchronization.
 	 */
 	abstract public void synchronize2(PartLists existingParts);
 
 	/**
 	 * Return true is the part is for the specified raw model.
 	 * Return false otherwise.
-	 * 
+	 *
 	 * @param rawModel
 	 * @return
 	 */
@@ -92,7 +93,7 @@ public abstract class AbstractPanelPart extends AbstractPart {
 	 */
 	public void orphan() {
 		// orphan only if we are in UNCHANGED state
-		if(garbageState == GarbageState.UNVISITED) {
+		if (garbageState == GarbageState.UNVISITED) {
 			garbageState = GarbageState.ORPHANED;
 			parent = null;
 		}
@@ -102,13 +103,13 @@ public abstract class AbstractPanelPart extends AbstractPart {
 	/**
 	 * Mark this Page as UNCHANGED.
 	 * The PAge should be in the COLLECTED state.
-	 * 
+	 *
 	 * @see
 	 * @return the parent
 	 */
 	public void unchanged() {
 		// orphan only if we are in COLLECTED state
-		if(garbageState == GarbageState.UNVISITED || garbageState == GarbageState.ORPHANED) {
+		if (garbageState == GarbageState.UNVISITED || garbageState == GarbageState.ORPHANED) {
 			garbageState = GarbageState.UNCHANGED;
 		} else {
 			// Bad state, this is an internal error
@@ -120,25 +121,25 @@ public abstract class AbstractPanelPart extends AbstractPart {
 	/**
 	 * Change the parent of the Part. The parent is changed, and the control is
 	 * attached to the parent control. Change garbage state to {@link GarbageState.REPARENTED}.
-	 * 
+	 *
 	 * @param newParent
-	 *        The new parent to which the part should be attached.
+	 *            The new parent to which the part should be attached.
 	 */
 	abstract public void reparent(IPanelParent newParent, Composite swtParent);
 
 	/**
 	 * Collect all the parts. The method is called recursively in the tree of parts.
-	 * 
+	 *
 	 * @param parts
-	 *        The list into which parts are added.
+	 *            The list into which parts are added.
 	 */
 	abstract public void fillPartMap(PartLists parts);
 
 	/**
 	 * Traverses the tree to find the part that intersects the given point
-	 * 
+	 *
 	 * @param toFind
-	 *        Point in display coordinate
+	 *            Point in display coordinate
 	 * @return the part that intersects the given point
 	 * @throws NotFoundException
 	 */
@@ -146,7 +147,7 @@ public abstract class AbstractPanelPart extends AbstractPart {
 
 	/**
 	 * Find the part associated to the provided control.
-	 * 
+	 *
 	 * @param control
 	 * @return
 	 */
@@ -154,9 +155,9 @@ public abstract class AbstractPanelPart extends AbstractPart {
 
 	/**
 	 * Locates the part that intersects the given point and that have the expected type
-	 * 
+	 *
 	 * @param toFind
-	 *        Position in Display coordinate.
+	 *            Position in Display coordinate.
 	 * @return
 	 */
 	abstract public AbstractPart findPartAt(Point toFind, Class<?> expectedTileType);

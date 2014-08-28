@@ -27,6 +27,7 @@ import org.eclipse.papyrus.infra.emf.newchild.Separator;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory {
@@ -34,16 +35,16 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static NewchildFactory init() {
 		try {
-			NewchildFactory theNewchildFactory = (NewchildFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/newchild"); 
+			NewchildFactory theNewchildFactory = (NewchildFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/newchild");
 			if (theNewchildFactory != null) {
 				return theNewchildFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new NewchildFactoryImpl();
@@ -53,6 +54,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NewchildFactoryImpl() {
@@ -62,56 +64,67 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case NewchildPackage.NEWCHILD_CONFIGURATION: return createNewchildConfiguration();
-			case NewchildPackage.MENU_ROOT: return createMenuRoot();
-			case NewchildPackage.MENU: return createMenu();
-			case NewchildPackage.MENU_ACTION: return createMenuAction();
-			case NewchildPackage.SEPARATOR: return createSeparator();
-			case NewchildPackage.MENU_GROUP: return createMenuGroup();
-			case NewchildPackage.CUSTOM_FILLER: return createCustomFiller();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case NewchildPackage.NEWCHILD_CONFIGURATION:
+			return createNewchildConfiguration();
+		case NewchildPackage.MENU_ROOT:
+			return createMenuRoot();
+		case NewchildPackage.MENU:
+			return createMenu();
+		case NewchildPackage.MENU_ACTION:
+			return createMenuAction();
+		case NewchildPackage.SEPARATOR:
+			return createSeparator();
+		case NewchildPackage.MENU_GROUP:
+			return createMenuGroup();
+		case NewchildPackage.CUSTOM_FILLER:
+			return createCustomFiller();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case NewchildPackage.MENU_POSITION:
-				return createMenuPositionFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case NewchildPackage.MENU_POSITION:
+			return createMenuPositionFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case NewchildPackage.MENU_POSITION:
-				return convertMenuPositionToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case NewchildPackage.MENU_POSITION:
+			return convertMenuPositionToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NewchildConfiguration createNewchildConfiguration() {
@@ -122,6 +135,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MenuRoot createMenuRoot() {
@@ -132,6 +146,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Menu createMenu() {
@@ -142,6 +157,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MenuAction createMenuAction() {
@@ -152,6 +168,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Separator createSeparator() {
@@ -162,6 +179,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MenuGroup createMenuGroup() {
@@ -172,6 +190,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public CustomFiller createCustomFiller() {
@@ -182,17 +201,21 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MenuPosition createMenuPositionFromString(EDataType eDataType, String initialValue) {
 		MenuPosition result = MenuPosition.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertMenuPositionToString(EDataType eDataType, Object instanceValue) {
@@ -202,15 +225,17 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NewchildPackage getNewchildPackage() {
-		return (NewchildPackage)getEPackage();
+		return (NewchildPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -219,4 +244,4 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 		return NewchildPackage.eINSTANCE;
 	}
 
-} //NewchildFactoryImpl
+} // NewchildFactoryImpl

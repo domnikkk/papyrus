@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,7 +53,7 @@ class SharedModelExplorerState extends EventManager {
 		boolean oldValue = this.linkingEnabled;
 		this.linkingEnabled = linkingEnabled;
 
-		if(oldValue != linkingEnabled) {
+		if (oldValue != linkingEnabled) {
 			fireStateChanged(StateChangedEvent.LINKING_ENABLED);
 		}
 	}
@@ -66,7 +66,7 @@ class SharedModelExplorerState extends EventManager {
 		boolean oldValue = this.alphaSorted;
 		this.alphaSorted = alphaSorted;
 
-		if(oldValue != alphaSorted) {
+		if (oldValue != alphaSorted) {
 			fireStateChanged(StateChangedEvent.ALPHA_SORTED);
 		}
 	}
@@ -78,13 +78,13 @@ class SharedModelExplorerState extends EventManager {
 	public void updateNavigatorContentExtensions(String[] contentExtensionIDs, boolean activate) {
 		Set<String> oldValue = ImmutableSet.copyOf(this.navigatorContentExtensions);
 
-		if(activate) {
+		if (activate) {
 			this.navigatorContentExtensions.addAll(Arrays.asList(contentExtensionIDs));
 		} else {
 			this.navigatorContentExtensions.removeAll(Arrays.asList(contentExtensionIDs));
 		}
 
-		if(!oldValue.equals(this.navigatorContentExtensions)) {
+		if (!oldValue.equals(this.navigatorContentExtensions)) {
 			fireStateChanged(StateChangedEvent.CONTENT_EXTENSIONS);
 		}
 	}
@@ -107,7 +107,7 @@ class SharedModelExplorerState extends EventManager {
 
 	private void readLinking(IMemento memento) {
 		IMemento linking = memento.getChild(LINKING_MEMENTO);
-		if(linking != null) {
+		if (linking != null) {
 			Boolean enabled = linking.getBoolean(ENABLED_ATTR);
 			this.linkingEnabled = (enabled != null) && enabled.booleanValue();
 		}
@@ -115,7 +115,7 @@ class SharedModelExplorerState extends EventManager {
 
 	private void writeLinking(IMemento memento) {
 		IMemento linking = memento.getChild(LINKING_MEMENTO);
-		if(linking == null) {
+		if (linking == null) {
 			linking = memento.createChild(LINKING_MEMENTO);
 		}
 		linking.putBoolean(ENABLED_ATTR, isLinkingEnabled());
@@ -123,7 +123,7 @@ class SharedModelExplorerState extends EventManager {
 
 	private void readSorting(IMemento memento) {
 		IMemento sorting = memento.getChild(SORTING_MEMENTO);
-		if(sorting != null) {
+		if (sorting != null) {
 			Boolean sorted = sorting.getBoolean(ALPHA_SORTED_ATTR);
 			this.alphaSorted = (sorted != null) && sorted.booleanValue();
 		}
@@ -131,7 +131,7 @@ class SharedModelExplorerState extends EventManager {
 
 	private void writeSorting(IMemento memento) {
 		IMemento sorting = memento.getChild(SORTING_MEMENTO);
-		if(sorting == null) {
+		if (sorting == null) {
 			sorting = memento.createChild(SORTING_MEMENTO);
 		}
 		sorting.putBoolean(ALPHA_SORTED_ATTR, isAlphaSorted());
@@ -146,12 +146,12 @@ class SharedModelExplorerState extends EventManager {
 	}
 
 	void fireStateChanged(int eventType) {
-		if(isListenerAttached()) {
+		if (isListenerAttached()) {
 			StateChangedEvent event = new StateChangedEvent(this, eventType);
 			Object[] listeners = getListeners();
-			for(int i = 0; i < listeners.length; i++) {
+			for (int i = 0; i < listeners.length; i++) {
 				try {
-					((StateChangedListener)listeners[i]).sharedStateChanged(event);
+					((StateChangedListener) listeners[i]).sharedStateChanged(event);
 				} catch (Exception e) {
 					Activator.log.error("Uncaught exception in shared state listener.", e);
 				}
@@ -182,7 +182,7 @@ class SharedModelExplorerState extends EventManager {
 
 		@Override
 		public SharedModelExplorerState getSource() {
-			return (SharedModelExplorerState)super.getSource();
+			return (SharedModelExplorerState) super.getSource();
 		}
 
 		public int getEventType() {

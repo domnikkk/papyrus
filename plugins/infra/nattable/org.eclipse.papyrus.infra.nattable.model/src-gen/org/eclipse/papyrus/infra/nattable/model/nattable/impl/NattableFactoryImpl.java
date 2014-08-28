@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -15,18 +15,17 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.nattable.model.nattable.*;
+import org.eclipse.papyrus.infra.nattable.model.nattable.NattableFactory;
+import org.eclipse.papyrus.infra.nattable.model.nattable.NattablePackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NattableFactoryImpl extends EFactoryImpl implements NattableFactory {
@@ -35,13 +34,13 @@ public class NattableFactoryImpl extends EFactoryImpl implements NattableFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NattableFactory init() {
 		try {
-			NattableFactory theNattableFactory = (NattableFactory)EPackage.Registry.INSTANCE.getEFactory(NattablePackage.eNS_URI);
-			if(theNattableFactory != null) {
+			NattableFactory theNattableFactory = (NattableFactory) EPackage.Registry.INSTANCE.getEFactory(NattablePackage.eNS_URI);
+			if (theNattableFactory != null) {
 				return theNattableFactory;
 			}
 		} catch (Exception exception) {
@@ -54,7 +53,7 @@ public class NattableFactoryImpl extends EFactoryImpl implements NattableFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NattableFactoryImpl() {
@@ -64,12 +63,12 @@ public class NattableFactoryImpl extends EFactoryImpl implements NattableFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case NattablePackage.TABLE:
 			return createTable();
 		default:
@@ -80,9 +79,10 @@ public class NattableFactoryImpl extends EFactoryImpl implements NattableFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public Table createTable() {
 		TableImpl table = new TableImpl();
 		return table;
@@ -91,17 +91,18 @@ public class NattableFactoryImpl extends EFactoryImpl implements NattableFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public NattablePackage getNattablePackage() {
-		return (NattablePackage)getEPackage();
+		return (NattablePackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -110,4 +111,4 @@ public class NattableFactoryImpl extends EFactoryImpl implements NattableFactory
 		return NattablePackage.eINSTANCE;
 	}
 
-} //NattableFactoryImpl
+} // NattableFactoryImpl

@@ -20,36 +20,38 @@ import org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager;
 
 /**
  * The feature axis content provider for the ModelViews table
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class EditorFeatureAxisManager extends AbstractAxisManager {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.ISubAxisManager#isDynamic()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public boolean isDynamic() {
 		return false;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#isSlave()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public boolean isSlave() {
 		return true;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#canEditAxisHeader()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -58,9 +60,9 @@ public class EditorFeatureAxisManager extends AbstractAxisManager {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#canDestroyAxisElement(java.lang.Integer)
-	 * 
+	 *
 	 * @param axisPosition
 	 * @return
 	 */
@@ -70,10 +72,9 @@ public class EditorFeatureAxisManager extends AbstractAxisManager {
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#getDestroyAxisElementCommand(TransactionalEditingDomain,
-	 *      java.lang.Integer)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#getDestroyAxisElementCommand(TransactionalEditingDomain, java.lang.Integer)
+	 *
 	 * @param domain
 	 * @param axisPosition
 	 * @return

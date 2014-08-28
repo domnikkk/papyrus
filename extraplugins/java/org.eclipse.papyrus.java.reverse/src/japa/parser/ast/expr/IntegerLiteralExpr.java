@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2007 Júlio Vilmar Gesser.
- * 
+ *
  * This file is part of Java 1.5 parser and Abstract Syntax Tree.
  *
  * Java 1.5 parser and Abstract Syntax Tree is free software: you can redistribute it and/or modify
@@ -48,7 +48,7 @@ public class IntegerLiteralExpr extends StringLiteralExpr {
 
 	public final boolean isMinValue() {
 		return value != null && //
-		value.length() == 10 && //
-		value.equals("2147483648");
+				value.length() == 10 && //
+				value.equals("2147483648");
 	}
 }

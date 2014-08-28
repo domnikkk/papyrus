@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -174,85 +174,85 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 */
 	@Override
 	public Tool createTool(String toolId) {
-		if(toolId.equals(CREATELIFELINE1CREATIONTOOL)) {
+		if (toolId.equals(CREATELIFELINE1CREATIONTOOL)) {
 			return createLifeline1CreationTool();
 		}
-		if(toolId.equals(CREATEACTIONEXECUTIONSPECIFICATION2CREATIONTOOL)) {
+		if (toolId.equals(CREATEACTIONEXECUTIONSPECIFICATION2CREATIONTOOL)) {
 			return createActionExecutionSpecification2CreationTool();
 		}
-		if(toolId.equals(CREATEBEHAVIOREXECUTIONSPECIFICATION3CREATIONTOOL)) {
+		if (toolId.equals(CREATEBEHAVIOREXECUTIONSPECIFICATION3CREATIONTOOL)) {
 			return createBehaviorExecutionSpecification3CreationTool();
 		}
-		if(toolId.equals(CREATEINTERACTIONUSE4CREATIONTOOL)) {
+		if (toolId.equals(CREATEINTERACTIONUSE4CREATIONTOOL)) {
 			return createInteractionUse4CreationTool();
 		}
-		if(toolId.equals(CREATECOMBINEDFRAGMENT5CREATIONTOOL)) {
+		if (toolId.equals(CREATECOMBINEDFRAGMENT5CREATIONTOOL)) {
 			return createCombinedFragment5CreationTool();
 		}
-		if(toolId.equals(CREATEINTERACTIONOPERAND6CREATIONTOOL)) {
+		if (toolId.equals(CREATEINTERACTIONOPERAND6CREATIONTOOL)) {
 			return createInteractionOperand6CreationTool();
 		}
-		if(toolId.equals(CREATECONTINUATION7CREATIONTOOL)) {
+		if (toolId.equals(CREATECONTINUATION7CREATIONTOOL)) {
 			return createContinuation7CreationTool();
 		}
-		if(toolId.equals(CREATESTATEINVARIANT8CREATIONTOOL)) {
+		if (toolId.equals(CREATESTATEINVARIANT8CREATIONTOOL)) {
 			return createStateInvariant8CreationTool();
 		}
-		if(toolId.equals(CREATECOMMENT9CREATIONTOOL)) {
+		if (toolId.equals(CREATECOMMENT9CREATIONTOOL)) {
 			return createComment9CreationTool();
 		}
-		if(toolId.equals(CREATECONSTRAINT10CREATIONTOOL)) {
+		if (toolId.equals(CREATECONSTRAINT10CREATIONTOOL)) {
 			return createConstraint10CreationTool();
 		}
-		if(toolId.equals(CREATECOREGION11CREATIONTOOL)) {
+		if (toolId.equals(CREATECOREGION11CREATIONTOOL)) {
 			return createCoRegion11CreationTool();
 		}
-		if(toolId.equals(CREATEDURATIONOBSERVATION12CREATIONTOOL)) {
+		if (toolId.equals(CREATEDURATIONOBSERVATION12CREATIONTOOL)) {
 			return createDurationObservation12CreationTool();
 		}
-		if(toolId.equals(CREATETIMECONSTRAINT13CREATIONTOOL)) {
+		if (toolId.equals(CREATETIMECONSTRAINT13CREATIONTOOL)) {
 			return createTimeConstraint13CreationTool();
 		}
-		if(toolId.equals(CREATETIMEOBSERVATION14CREATIONTOOL)) {
+		if (toolId.equals(CREATETIMEOBSERVATION14CREATIONTOOL)) {
 			return createTimeObservation14CreationTool();
 		}
-		if(toolId.equals(CREATEDURATIONCONSTRAINT15CREATIONTOOL)) {
+		if (toolId.equals(CREATEDURATIONCONSTRAINT15CREATIONTOOL)) {
 			return createDurationConstraint15CreationTool();
 		}
-		if(toolId.equals(CREATEDESTRUCTIONEVENT16CREATIONTOOL)) {
+		if (toolId.equals(CREATEDESTRUCTIONEVENT16CREATIONTOOL)) {
 			return createDestructionEvent16CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGESYNC1CREATIONTOOL)) {
+		if (toolId.equals(CREATEMESSAGESYNC1CREATIONTOOL)) {
 			return createMessageSync1CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGEASYNC2CREATIONTOOL)) {
+		if (toolId.equals(CREATEMESSAGEASYNC2CREATIONTOOL)) {
 			return createMessageAsync2CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGEREPLY3CREATIONTOOL)) {
+		if (toolId.equals(CREATEMESSAGEREPLY3CREATIONTOOL)) {
 			return createMessageReply3CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGECREATE4CREATIONTOOL)) {
+		if (toolId.equals(CREATEMESSAGECREATE4CREATIONTOOL)) {
 			return createMessageCreate4CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGEDELETE5CREATIONTOOL)) {
+		if (toolId.equals(CREATEMESSAGEDELETE5CREATIONTOOL)) {
 			return createMessageDelete5CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGELOST6CREATIONTOOL)) {
+		if (toolId.equals(CREATEMESSAGELOST6CREATIONTOOL)) {
 			return createMessageLost6CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGEFOUND7CREATIONTOOL)) {
+		if (toolId.equals(CREATEMESSAGEFOUND7CREATIONTOOL)) {
 			return createMessageFound7CreationTool();
 		}
-		if(toolId.equals(CREATEGENERALORDERING8CREATIONTOOL)) {
+		if (toolId.equals(CREATEGENERALORDERING8CREATIONTOOL)) {
 			return createGeneralOrdering8CreationTool();
 		}
-		if(toolId.equals(CREATECOMMENTLINK9CREATIONTOOL)) {
+		if (toolId.equals(CREATECOMMENTLINK9CREATIONTOOL)) {
 			return createCommentlink9CreationTool();
 		}
-		if(toolId.equals(CREATECONSTRAINTLINK10CREATIONTOOL)) {
+		if (toolId.equals(CREATECONSTRAINTLINK10CREATIONTOOL)) {
 			return createConstraintlink10CreationTool();
 		}
-		if(toolId.equals(CREATECONTEXTLINK11CREATIONTOOL)) {
+		if (toolId.equals(CREATECONTEXTLINK11CREATIONTOOL)) {
 			return createContextLink11CreationTool();
 		}
 		// default return: null
@@ -262,6 +262,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Object getTemplate(String templateId) {
 		// default return: null
 		return null;

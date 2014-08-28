@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,21 +30,21 @@ public class DataTypeProvider {
 	private DataTypeProvider() {
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
-		for(IConfigurationElement e : config) {
+		for (IConfigurationElement e : config) {
 			String dataTypeName = e.getAttribute("dataType"); //$NON-NLS-1$
 			String observableClassName = e.getAttribute("observable"); //$NON-NLS-1$
 
 			Class<? extends DataTypeObservableValue> observableClass = ClassLoaderHelper.loadClass(observableClassName, DataTypeObservableValue.class);
 
-			if(observableClass != null) {
+			if (observableClass != null) {
 				observableDataTypes.put(dataTypeName, observableClass);
 			}
 		}
 	}
 
 	public DataTypeObservableValue getObservableDataType(EDataType dataType) {
-		for(String key : observableDataTypes.keySet()) {
-			if(key.equals(dataType.getName())) {
+		for (String key : observableDataTypes.keySet()) {
+			if (key.equals(dataType.getName())) {
 				return ClassLoaderHelper.newInstance(observableDataTypes.get(key));
 			}
 		}

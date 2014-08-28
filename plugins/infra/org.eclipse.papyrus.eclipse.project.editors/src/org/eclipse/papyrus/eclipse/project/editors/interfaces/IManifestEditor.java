@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,9 +17,9 @@ package org.eclipse.papyrus.eclipse.project.editors.interfaces;
 
 
 /**
- * 
+ *
  * Editor for the Manifest
- * 
+ *
  */
 public interface IManifestEditor extends IProjectEditor, IFileEditor {
 
@@ -51,92 +51,92 @@ public interface IManifestEditor extends IProjectEditor, IFileEditor {
 	public static final String BUNDLE_LOCALIZATION = "Bundle-Localization"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * @param dependency
-	 *        the dependency to add
+	 *            the dependency to add
 	 */
 	public void addDependency(final String dependency);
 
 	/**
-	 * 
+	 *
 	 * @param dependency
-	 *        the dependency to add
+	 *            the dependency to add
 	 * @param version
-	 *        the version of the dependency
+	 *            the version of the dependency
 	 */
 	public void addDependency(final String dependency, final String version);
 
 
 	/**
-	 * 
+	 *
 	 * @param key
-	 *        the key
+	 *            the key
 	 * @param value
-	 *        the new value for the key
+	 *            the new value for the key
 	 */
 	public void setValue(final String key, final String value);
 
 	public String getValue(final String key);
 
 	/**
-	 * 
+	 *
 	 * @param key
-	 *        the key
+	 *            the key
 	 * @param name
-	 *        the name
+	 *            the name
 	 * @param value
-	 *        the new value for the key
+	 *            the new value for the key
 	 */
 	public void setValue(final String key, final String name, final String value);
 
 	/**
-	 * 
+	 *
 	 * @param key
-	 *        the key
+	 *            the key
 	 * @param value
-	 *        the value to remove for this key
+	 *            the value to remove for this key
 	 */
 	public void removeValue(final String key, final String value);
 
 	/**
-	 * 
+	 *
 	 * @param key
-	 *        a key to remove from the manifest
-	 * 
+	 *            a key to remove from the manifest
+	 *
 	 */
 	public void removeValue(final String key);
 
 	/**
-	 * 
+	 *
 	 * @param name
-	 *        the symbolic name for the bundle
+	 *            the symbolic name for the bundle
 	 */
 	public void setSymbolicBundleName(final String name);
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the bundle name for the project
 	 */
 	public String getSymbolicBundleName();
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the symbolic bundle name for the project
 	 */
 	public String getBundleName();
 
 	/**
-	 * 
+	 *
 	 * @param name
-	 *        the bundle name for the bundle
+	 *            the bundle name for the bundle
 	 */
 	public void setBundleName(final String name);
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the version of the bundle
 	 */
@@ -149,7 +149,7 @@ public interface IManifestEditor extends IProjectEditor, IFileEditor {
 
 	/**
 	 * Gets this plug-in's provider
-	 * 
+	 *
 	 * @return
 	 *         this plug-in's provider
 	 */
@@ -157,15 +157,15 @@ public interface IManifestEditor extends IProjectEditor, IFileEditor {
 
 	/**
 	 * Sets this plug-in's provider
-	 * 
+	 *
 	 * @param vendor
-	 *        this plug-in's provider
+	 *            this plug-in's provider
 	 */
 	public void setBundleVendor(final String vendor);
 
 	/**
 	 * Get the bundle localization
-	 * 
+	 *
 	 * @return
 	 *         the bundle localization
 	 */
@@ -173,18 +173,18 @@ public interface IManifestEditor extends IProjectEditor, IFileEditor {
 
 	/**
 	 * Sets the Manifest's singleton directive
-	 * 
+	 *
 	 * @param singleton
-	 *        Whether this plug-in should be a singleton
+	 *            Whether this plug-in should be a singleton
 	 */
 	public void setSingleton(boolean singleton);
 
 	/**
-	 * 
+	 *
 	 * @param dependencyPattern
-	 *        the pattern for the dependency to update
+	 *            the pattern for the dependency to update
 	 * @param newVersion
-	 *        the version for the dependency
+	 *            the version for the dependency
 	 */
 	public void setDependenciesVersion(final String dependencyPattern, final String newVersion);
 }

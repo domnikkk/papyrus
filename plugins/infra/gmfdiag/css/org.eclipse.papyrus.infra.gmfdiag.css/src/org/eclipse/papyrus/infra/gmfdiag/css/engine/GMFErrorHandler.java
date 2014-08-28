@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,7 +16,7 @@ import org.eclipse.papyrus.infra.gmfdiag.css.Activator;
 
 /**
  * A CSSErrorHandler which forwards exceptions to the Papyrus log
- * 
+ *
  * @author Camille Letavernier
  */
 @SuppressWarnings("restriction")
@@ -24,9 +24,10 @@ public class GMFErrorHandler implements CSSErrorHandler {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Forwards the exception to the Papyrus log
 	 */
+	@Override
 	public void error(Exception ex) {
 		Activator.log.error("CSS Error", ex); //$NON-NLS-1$
 	}

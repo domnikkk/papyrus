@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
 /**
  * Add a Button to the super-class {@link ElementTreeSelectionDialog} to create a new
  * InformationItem
- * 
+ *
  */
 public class InformationItemElementTreeSelectionDialog extends ElementTreeSelectionDialog {
 
@@ -39,29 +39,32 @@ public class InformationItemElementTreeSelectionDialog extends ElementTreeSelect
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
 		createButton(parent, newInformationItemButton_ID, "New InformationItem", false);
 		super.createButtonsForButtonBar(parent);
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected void buttonPressed(int buttonId) {
-		if(buttonId == newInformationItemButton_ID)
+		if (buttonId == newInformationItemButton_ID) {
 			newInformationItemButtonPressed();
-		else
+		} else {
 			super.buttonPressed(buttonId);
+		}
 
 	}
 
 	/**
 	 * Write the ReturnCode and close the window
-	 * 
+	 *
 	 */
 	protected void newInformationItemButtonPressed() {
 		setReturnCode(newInformationItemButton_ID);

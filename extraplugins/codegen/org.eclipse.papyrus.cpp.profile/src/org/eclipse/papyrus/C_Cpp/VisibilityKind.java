@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    CEA LIST - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.C_Cpp;
 
@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Visibility Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getVisibilityKind()
  * @model
  * @generated
@@ -32,6 +33,7 @@ public enum VisibilityKind implements Enumerator {
 	 * The '<em><b>Private</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #PRIVATE_VALUE
 	 * @generated
 	 * @ordered
@@ -42,6 +44,7 @@ public enum VisibilityKind implements Enumerator {
 	 * The '<em><b>Protected</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #PROTECTED_VALUE
 	 * @generated
 	 * @ordered
@@ -52,6 +55,7 @@ public enum VisibilityKind implements Enumerator {
 	 * The '<em><b>Public</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #PUBLIC_VALUE
 	 * @generated
 	 * @ordered
@@ -62,10 +66,10 @@ public enum VisibilityKind implements Enumerator {
 	 * The '<em><b>Private</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Private</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Private</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #PRIVATE
 	 * @model name="private"
 	 * @generated
@@ -77,10 +81,10 @@ public enum VisibilityKind implements Enumerator {
 	 * The '<em><b>Protected</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Protected</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Protected</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #PROTECTED
 	 * @model name="protected"
 	 * @generated
@@ -92,10 +96,10 @@ public enum VisibilityKind implements Enumerator {
 	 * The '<em><b>Public</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Public</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Public</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #PUBLIC
 	 * @model name="public"
 	 * @generated
@@ -107,19 +111,21 @@ public enum VisibilityKind implements Enumerator {
 	 * An array of all the '<em><b>Visibility Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static final VisibilityKind[] VALUES_ARRAY =
-		new VisibilityKind[] {
-			PRIVATE,
-			PROTECTED,
-			PUBLIC,
-		};
+			new VisibilityKind[] {
+					PRIVATE,
+					PROTECTED,
+					PUBLIC,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Visibility Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final List<VisibilityKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -128,6 +134,7 @@ public enum VisibilityKind implements Enumerator {
 	 * Returns the '<em><b>Visibility Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static VisibilityKind get(String literal) {
@@ -144,6 +151,7 @@ public enum VisibilityKind implements Enumerator {
 	 * Returns the '<em><b>Visibility Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static VisibilityKind getByName(String name) {
@@ -160,13 +168,17 @@ public enum VisibilityKind implements Enumerator {
 	 * Returns the '<em><b>Visibility Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static VisibilityKind get(int value) {
 		switch (value) {
-			case PRIVATE_VALUE: return PRIVATE;
-			case PROTECTED_VALUE: return PROTECTED;
-			case PUBLIC_VALUE: return PUBLIC;
+		case PRIVATE_VALUE:
+			return PRIVATE;
+		case PROTECTED_VALUE:
+			return PROTECTED;
+		case PUBLIC_VALUE:
+			return PUBLIC;
 		}
 		return null;
 	}
@@ -174,6 +186,7 @@ public enum VisibilityKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -181,6 +194,7 @@ public enum VisibilityKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -188,6 +202,7 @@ public enum VisibilityKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -196,6 +211,7 @@ public enum VisibilityKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private VisibilityKind(int value, String name, String literal) {
@@ -207,39 +223,46 @@ public enum VisibilityKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //VisibilityKind
+
+} // VisibilityKind

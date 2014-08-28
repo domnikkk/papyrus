@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,15 +44,15 @@ public class GenerateRTMapsCodeCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Instantiates a new generate rt maps code command.
-	 * 
+	 *
 	 * @param label
-	 *        the label
+	 *            the label
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param selectedElement
-	 *        the selected element
+	 *            the selected element
 	 * @param rtmapsTargetFolderPath
-	 *        the rtmaps target folder path
+	 *            the rtmaps target folder path
 	 */
 	public GenerateRTMapsCodeCommand(String label, TransactionalEditingDomain domain, EObject selectedElement, String rtmapsTargetFolderPath) {
 		super(domain, label, Collections.EMPTY_LIST);
@@ -63,9 +63,8 @@ public class GenerateRTMapsCodeCommand extends AbstractTransactionalCommand {
 
 
 	/**
-	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+	 *
 	 * @param monitor
 	 * @param info
 	 * @return
@@ -77,18 +76,18 @@ public class GenerateRTMapsCodeCommand extends AbstractTransactionalCommand {
 		// TODO Auto-generated method stub
 
 
-		//System.err.println("Model Exlorer generation menu RTMaps");
+		// System.err.println("Model Exlorer generation menu RTMaps");
 
 		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-		//final ProgressMonitorDialog monitordialog = new ProgressMonitorDialog(shell);
+		// final ProgressMonitorDialog monitordialog = new ProgressMonitorDialog(shell);
 		AcceleoRTMapsCodeGenerator codeGenerator = new AcceleoRTMapsCodeGenerator();
 		codeGenerator.runAcceleoTransformation(selectedElement, rtmapsTargetFolderPath);
 		/*
 		 * try {
-		 * 
+		 *
 		 * monitordialog.run(true, true, new IRunnableWithProgress() {
-		 * 
-		 * 
+		 *
+		 *
 		 * public void run(IProgressMonitor monitor)
 		 * throws InvocationTargetException, InterruptedException {
 		 * monitor.beginTask("Generating Acceleo files", 100);
@@ -96,9 +95,9 @@ public class GenerateRTMapsCodeCommand extends AbstractTransactionalCommand {
 		 * codeGenerator.runAcceleoTransformation(selectedElement, rtmapsTargetFolderPath);
 		 * monitor.done();
 		 * }
-		 * 
+		 *
 		 * });
-		 * 
+		 *
 		 * } catch (InvocationTargetException e) {
 		 * // TODO Auto-generated catch block
 		 * e.printStackTrace();

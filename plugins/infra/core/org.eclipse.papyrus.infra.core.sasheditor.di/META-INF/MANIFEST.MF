@@ -13,18 +13,19 @@ Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.swt;bundle-version="3.5.0",
- org.eclipse.papyrus.infra.core.sasheditor;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.papyrus.infra.core.sasheditor;bundle-version="1.0.1";visibility:=reexport,
  org.eclipse.ui;bundle-version="3.6.0",
  org.eclipse.core.runtime;bundle-version="3.6.0",
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi;bundle-version="2.5.0",
  org.eclipse.emf.transaction;bundle-version="1.4.0",
- org.eclipse.papyrus.infra.core.log;bundle-version="1.0.0"
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.0.1"
 Bundle-Vendor: %providerName
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-Activator: org.eclipse.papyrus.infra.core.sasheditor.di.content
  provider.Activator
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.infra.core.sasheditor.di;sing
  leton:=true
 Eclipse-ExtensibleAPI: true
+

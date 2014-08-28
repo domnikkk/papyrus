@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,22 +30,21 @@ import org.eclipse.papyrus.uml.diagram.component.custom.edit.command.CustomConne
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.policies.CustomGraphicalNodeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ConnectorEditPart;
 import org.eclipse.papyrus.uml.diagram.component.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants;
 
 /**
  * <pre>
- * This class provides a custom edit policy used to replace the SEMANTIC_ROLE 
+ * This class provides a custom edit policy used to replace the SEMANTIC_ROLE
  * generated for the Property element (when used as Composite Part)
- * 
+ *
  * TODO : This should probably also manage Port clean removal (semantic deletion causes issues)
  * </pre>
  */
 public class PropertyPartItemSemanticEditPolicyCN extends org.eclipse.papyrus.uml.diagram.component.edit.policies.PropertyItemSemanticEditPolicy {
 	/**
 	 * <pre>
-	 * Calls a custom creation command to allow the creation of a Port on a Property. 
-	 * The Property has to be typed by a StructuredClassifier. 
-	 * 
+	 * Calls a custom creation command to allow the creation of a Port on a Property.
+	 * The Property has to be typed by a StructuredClassifier.
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -60,8 +59,8 @@ public class PropertyPartItemSemanticEditPolicyCN extends org.eclipse.papyrus.um
 	/**
 	 * <pre>
 	 * Forbid direct destruction of Property in case the graphical parent is not
-	 * the semantic parent.  
-	 * 
+	 * the semantic parent.
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -78,8 +77,8 @@ public class PropertyPartItemSemanticEditPolicyCN extends org.eclipse.papyrus.um
 	/**
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a Connector connected to a Property
-	 * on its source end. 
-	 * 
+	 * on its source end.
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -95,8 +94,8 @@ public class PropertyPartItemSemanticEditPolicyCN extends org.eclipse.papyrus.um
 	/**
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a Connector connected to a Property
-	 * on its target end. 
-	 * 
+	 * on its target end.
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -119,7 +118,7 @@ public class PropertyPartItemSemanticEditPolicyCN extends org.eclipse.papyrus.um
 			}
 			// Add graphical new end View in request parameters
 			View targetView = (View) getHost().getModel();
-			req.setParameter(RequestParameterConstants.EDGE_REORIENT_REQUEST_END_VIEW, targetView);
+			req.setParameter(org.eclipse.papyrus.infra.services.edit.utils.RequestParameterConstants.EDGE_REORIENT_REQUEST_END_VIEW, targetView);
 			// Retrieve re-orient command from the Element Edit service
 			ICommand reorientCommand = provider.getEditCommand(req);
 			if (reorientCommand == null) {

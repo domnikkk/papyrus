@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,28 +23,29 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.policies.RedefinableTemplateSi
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 
 /**
- * 
+ *
  * specialization in order to call specific command
- * 
+ *
  */
 public class CRedefinableTemplateSignatureTemplateParameterCompartmentItemSemanticEditPolicy extends RedefinableTemplateSignatureTemplateParameterCompartmentItemSemanticEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.clazz.edit.policies.RedefinableTemplateSignatureTemplateParameterCompartmentItemSemanticEditPolicy#getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest)
-	 * 
+	 *
 	 */
+	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if(UMLElementTypes.ClassifierTemplateParameter_3031 == req.getElementType()) {
+		if (UMLElementTypes.ClassifierTemplateParameter_3031 == req.getElementType()) {
 			return getGEFWrapper(new CClassifierTemplateParameterCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.ConnectableElementTemplateParameter_3034 == req.getElementType()) {
+		if (UMLElementTypes.ConnectableElementTemplateParameter_3034 == req.getElementType()) {
 			return getGEFWrapper(new CConnectableElementTemplateParameterCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.OperationTemplateParameter_3035 == req.getElementType()) {
+		if (UMLElementTypes.OperationTemplateParameter_3035 == req.getElementType()) {
 			return getGEFWrapper(new COperationTemplateParameterCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.TemplateParameter_3016 == req.getElementType()) {
+		if (UMLElementTypes.TemplateParameter_3016 == req.getElementType()) {
 			return getGEFWrapper(new CTemplateParameterCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		return super.getCreateCommand(req);

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,6 +16,7 @@
 package org.eclipse.papyrus.eastadl.environment.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -37,8 +38,8 @@ import org.eclipse.uml2.uml.Connector;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.environment.impl.ClampConnectorImpl#getBase_Connector <em>Base Connector</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.environment.impl.ClampConnectorImpl#getPort <em>Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.environment.impl.ClampConnectorImpl#getBase_Connector <em>Base Connector</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.environment.impl.ClampConnectorImpl#getPort <em>Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,6 +51,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 	 * The cached value of the '{@link #getBase_Connector() <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_Connector()
 	 * @generated
 	 * @ordered
@@ -60,6 +62,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPort()
 	 * @generated
 	 * @ordered
@@ -68,6 +71,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ClampConnectorImpl() {
@@ -76,56 +80,62 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EnvironmentPackage.CLAMP_CONNECTOR__BASE_CONNECTOR:
-				if (resolve) return getBase_Connector();
-				return basicGetBase_Connector();
-			case EnvironmentPackage.CLAMP_CONNECTOR__PORT:
-				return getPort();
+		case EnvironmentPackage.CLAMP_CONNECTOR__BASE_CONNECTOR:
+			if (resolve) {
+				return getBase_Connector();
+			}
+			return basicGetBase_Connector();
+		case EnvironmentPackage.CLAMP_CONNECTOR__PORT:
+			return getPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EnvironmentPackage.CLAMP_CONNECTOR__BASE_CONNECTOR:
-				return base_Connector != null;
-			case EnvironmentPackage.CLAMP_CONNECTOR__PORT:
-				return port != null && !port.isEmpty();
+		case EnvironmentPackage.CLAMP_CONNECTOR__BASE_CONNECTOR:
+			return base_Connector != null;
+		case EnvironmentPackage.CLAMP_CONNECTOR__PORT:
+			return port != null && !port.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EnvironmentPackage.CLAMP_CONNECTOR__BASE_CONNECTOR:
-				setBase_Connector((Connector)newValue);
-				return;
-			case EnvironmentPackage.CLAMP_CONNECTOR__PORT:
-				getPort().clear();
-				getPort().addAll((Collection<? extends ClampConnectorInstanceRef>)newValue);
-				return;
+		case EnvironmentPackage.CLAMP_CONNECTOR__BASE_CONNECTOR:
+			setBase_Connector((Connector) newValue);
+			return;
+		case EnvironmentPackage.CLAMP_CONNECTOR__PORT:
+			getPort().clear();
+			getPort().addAll((Collection<? extends ClampConnectorInstanceRef>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,25 +145,28 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EnvironmentPackage.CLAMP_CONNECTOR__BASE_CONNECTOR:
-				setBase_Connector((Connector)null);
-				return;
-			case EnvironmentPackage.CLAMP_CONNECTOR__PORT:
-				getPort().clear();
-				return;
+		case EnvironmentPackage.CLAMP_CONNECTOR__BASE_CONNECTOR:
+			setBase_Connector((Connector) null);
+			return;
+		case EnvironmentPackage.CLAMP_CONNECTOR__PORT:
+			getPort().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<ClampConnectorInstanceRef> getPort() {
 		if (port == null) {
 			port = new EObjectContainmentEList<ClampConnectorInstanceRef>(ClampConnectorInstanceRef.class, this, EnvironmentPackage.CLAMP_CONNECTOR__PORT);
@@ -164,15 +177,18 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Connector getBase_Connector() {
 		if (base_Connector != null && base_Connector.eIsProxy()) {
-			InternalEObject oldBase_Connector = (InternalEObject)base_Connector;
-			base_Connector = (Connector)eResolveProxy(oldBase_Connector);
+			InternalEObject oldBase_Connector = (InternalEObject) base_Connector;
+			base_Connector = (Connector) eResolveProxy(oldBase_Connector);
 			if (base_Connector != oldBase_Connector) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EnvironmentPackage.CLAMP_CONNECTOR__BASE_CONNECTOR, oldBase_Connector, base_Connector));
+				}
 			}
 		}
 		return base_Connector;
@@ -181,6 +197,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Connector basicGetBase_Connector() {
@@ -190,25 +207,29 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_Connector(Connector newBase_Connector) {
 		Connector oldBase_Connector = base_Connector;
 		base_Connector = newBase_Connector;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.CLAMP_CONNECTOR__BASE_CONNECTOR, oldBase_Connector, base_Connector));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EnvironmentPackage.CLAMP_CONNECTOR__PORT:
-				return ((InternalEList<?>)getPort()).basicRemove(otherEnd, msgs);
+		case EnvironmentPackage.CLAMP_CONNECTOR__PORT:
+			return ((InternalEList<?>) getPort()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

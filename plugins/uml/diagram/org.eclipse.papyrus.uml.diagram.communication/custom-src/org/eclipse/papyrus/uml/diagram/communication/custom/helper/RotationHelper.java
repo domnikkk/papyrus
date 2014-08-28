@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,14 +41,14 @@ import org.eclipse.ui.PlatformUI;
 public class RotationHelper {
 
 	/**
-	 * 
+	 *
 	 * This method calculates the rotation clockwise angle w.r.t the source and
 	 * target connection anchor positions
-	 * 
+	 *
 	 * @param S
-	 *        Source connection anchor
+	 *            Source connection anchor
 	 * @param T
-	 *        Target connection anchor
+	 *            Target connection anchor
 	 * @return The rotation clockwise angle w.r.t the source and target
 	 *         connection
 	 */
@@ -57,39 +57,39 @@ public class RotationHelper {
 		double dy = T.y - S.y;
 		double angle = 0.0d;
 
-		if((dx > 0) && (dy < 0)) {
+		if ((dx > 0) && (dy < 0)) {
 			angle = -Math.atan(Math.abs(dy) / Math.abs(dx));
 			// System.out.print("(dx > 0) && (dy < 0)\n");
-		} else if((dx < 0) && (dy < 0)) {
+		} else if ((dx < 0) && (dy < 0)) {
 			angle = -(Math.PI - Math.atan(Math.abs(dy) / Math.abs(dx)));
 			// System.out.print("(dx < 0) && (dy < 0)\n");
-		} else if((dx < 0) && (dy > 0)) {
+		} else if ((dx < 0) && (dy > 0)) {
 			angle = Math.PI - Math.atan(Math.abs(dy) / Math.abs(dx));
 			// System.out.print("(dx < 0) && (dy > 0)\n");
-		} else if((dx > 0) && (dy > 0)) {
+		} else if ((dx > 0) && (dy > 0)) {
 			angle = Math.atan(Math.abs(dy) / dx);
 			// System.out.print("((dx > 0) && (dy > 0)\n");
-		} else if((dx == 0) && (dy < 0)) {
+		} else if ((dx == 0) && (dy < 0)) {
 			angle = -Math.PI / 2;
 			// System.out.print("((dx == 0) && (dy < 0))\n");
-		} else if((dx == 0) && (dy > 0)) {
+		} else if ((dx == 0) && (dy > 0)) {
 			angle = Math.PI / 2;
 			// System.out.print("((dx == 0) && (dy > 0))\n");
-		} else if((dy == 0) && (dx < 0)) {
+		} else if ((dy == 0) && (dx < 0)) {
 			angle = -Math.PI;
 			// System.out.print("((dy == 0) && (dx < 0))\n");
 		}
 
 		return Math.toDegrees(angle);
 	}
-	
+
 	/**
 	 * rotates an SWTimage using swt.graphics.Transform.
-	 * 
+	 *
 	 * @param image
-	 *        SWT image
+	 *            SWT image
 	 * @param degree
-	 *        angle of rotation in degrees
+	 *            angle of rotation in degrees
 	 * @return SWT rotated image
 	 */
 	public static Image rotateImage(Image image, double degree) {
@@ -99,14 +99,14 @@ public class RotationHelper {
 		float angle = (float) Math.toRadians(degree);
 		float sinA = (float) Math.abs(Math.sin(angle));
 		float cosA = (float) Math.abs(Math.cos(angle));
-		int neww = (int)Math.floor(w * cosA + h * sinA);
-		int newh = (int)Math.floor(h * cosA + w * sinA);
+		int neww = (int) Math.floor(w * cosA + h * sinA);
+		int newh = (int) Math.floor(h * cosA + w * sinA);
 
 		Transform transform = new Transform(PlatformUI.getWorkbench().getDisplay());
-		transform.translate(neww/2, newh/2);	// new center
+		transform.translate(neww / 2, newh / 2); // new center
 		transform.rotate((float) degree);
-		transform.translate(-w/2, -h/2);		// old center
-		
+		transform.translate(-w / 2, -h / 2); // old center
+
 		ImageData newImageData = new ImageData(neww, newh, imageData.depth, imageData.palette);
 		// Use "white" as transparent pixel instead of real transparency. The latter would raise cross platform
 		// issues, since the same image file leads to an image with alpha data on Linux (32 bit depth, 8 for alpha)
@@ -120,9 +120,9 @@ public class RotationHelper {
 		gc.fillRectangle(0, 0, neww, newh);
 		gc.setTransform(transform);
 		gc.drawImage(image, 0, 0);
-	
+
 		gc.dispose();
-		
+
 		return newImage;
 	}
 
@@ -130,11 +130,11 @@ public class RotationHelper {
 
 	/**
 	 * rotates an AWT image using awt.geom.AffineTransform.
-	 * 
+	 *
 	 * @param image
-	 *        awt image
+	 *            awt image
 	 * @param degree
-	 *        angle of rotation in degrees
+	 *            angle of rotation in degrees
 	 * @return swt rotated image
 	 */
 	@Deprecated
@@ -144,12 +144,12 @@ public class RotationHelper {
 		double angle = Math.toRadians(degree);
 		double sin = Math.abs(Math.sin(angle));
 		double cos = Math.abs(Math.cos(angle));
-		int neww = (int)Math.floor(w * cos + h * sin);
-		int newh = (int)Math.floor(h * cos + w * sin);
+		int neww = (int) Math.floor(w * cos + h * sin);
+		int newh = (int) Math.floor(h * cos + w * sin);
 
 		AffineTransform at = new AffineTransform();
 
-		//at.scale((w + 0.0) / (neww + 0.0), (h + 0.0) / (newh + 0.0));
+		// at.scale((w + 0.0) / (neww + 0.0), (h + 0.0) / (newh + 0.0));
 		at.translate((neww - w) / 2, (newh - h) / 2);
 
 		at.rotate(angle, w / 2, h / 2);
@@ -165,14 +165,14 @@ public class RotationHelper {
 	}
 
 
-	
+
 	/**
 	 * Rotates an SWT image by converting it to AWT first.
-	 * 
+	 *
 	 * @param img
-	 *        the SWT img
+	 *            the SWT img
 	 * @param degree
-	 *        the degree
+	 *            the degree
 	 * @return the rotated image
 	 */
 	@Deprecated
@@ -180,8 +180,8 @@ public class RotationHelper {
 
 		ImageData imageData = img.getImageData();
 		BufferedImage bufImg = convertToAWT(imageData);
-		//double angle = Math.toRadians(degree);
-		//return tilt(bufImg, angle);
+		// double angle = Math.toRadians(degree);
+		// return tilt(bufImg, angle);
 		ImageData imageDataNew = tiltBis(bufImg, degree);
 		Image imageNew = new Image(PlatformUI.getWorkbench().getDisplay(), imageDataNew);
 		return imageNew;
@@ -189,30 +189,30 @@ public class RotationHelper {
 
 	/**
 	 * convert an AWT BufferedImage to SWT ImageData.
-	 * 
+	 *
 	 * @param bufferedImage
-	 *        the buffered image
+	 *            the buffered image
 	 * @return converted ImageData
 	 */
 	@Deprecated
 	public static ImageData convertToSWT(BufferedImage bufferedImage) {
-		if(bufferedImage.getColorModel() instanceof DirectColorModel) {
-			DirectColorModel colorModel = (DirectColorModel)bufferedImage.getColorModel();
+		if (bufferedImage.getColorModel() instanceof DirectColorModel) {
+			DirectColorModel colorModel = (DirectColorModel) bufferedImage.getColorModel();
 			PaletteData palette = new PaletteData(colorModel.getRedMask(), colorModel.getGreenMask(), colorModel.getBlueMask());
 			ImageData data = new ImageData(bufferedImage.getWidth(), bufferedImage.getHeight(), colorModel.getPixelSize(), palette);
-			for(int y = 0; y < data.height; y++) {
-				for(int x = 0; x < data.width; x++) {
+			for (int y = 0; y < data.height; y++) {
+				for (int x = 0; x < data.width; x++) {
 					int rgb = bufferedImage.getRGB(x, y);
 					int pixel = palette.getPixel(new RGB((rgb >> 16) & 0xFF, (rgb >> 8) & 0xFF, rgb & 0xFF));
 					data.setPixel(x, y, pixel);
-					if(colorModel.hasAlpha()) {
+					if (colorModel.hasAlpha()) {
 						data.setAlpha(x, y, (rgb >> 24) & 0xFF);
 					}
 				}
 			}
 			return data;
-		} else if(bufferedImage.getColorModel() instanceof IndexColorModel) {
-			IndexColorModel colorModel = (IndexColorModel)bufferedImage.getColorModel();
+		} else if (bufferedImage.getColorModel() instanceof IndexColorModel) {
+			IndexColorModel colorModel = (IndexColorModel) bufferedImage.getColorModel();
 			int size = colorModel.getMapSize();
 			byte[] reds = new byte[size];
 			byte[] greens = new byte[size];
@@ -221,7 +221,7 @@ public class RotationHelper {
 			colorModel.getGreens(greens);
 			colorModel.getBlues(blues);
 			RGB[] rgbs = new RGB[size];
-			for(int i = 0; i < rgbs.length; i++) {
+			for (int i = 0; i < rgbs.length; i++) {
 				rgbs[i] = new RGB(reds[i] & 0xFF, greens[i] & 0xFF, blues[i] & 0xFF);
 			}
 			PaletteData palette = new PaletteData(rgbs);
@@ -229,8 +229,8 @@ public class RotationHelper {
 			data.transparentPixel = colorModel.getTransparentPixel();
 			WritableRaster raster = bufferedImage.getRaster();
 			int[] pixelArray = new int[1];
-			for(int y = 0; y < data.height; y++) {
-				for(int x = 0; x < data.width; x++) {
+			for (int y = 0; y < data.height; y++) {
+				for (int x = 0; x < data.width; x++) {
 					raster.getPixel(x, y, pixelArray);
 					data.setPixel(x, y, pixelArray[0]);
 				}
@@ -245,18 +245,18 @@ public class RotationHelper {
 	 * TODO: This function does not work on MacOS and Linux machines
 	 *
 	 * @param data
-	 *        SWT ImageData
+	 *            SWT ImageData
 	 * @return AWT BufferdImage
 	 */
 	@Deprecated
 	public static BufferedImage convertToAWT(ImageData data) {
 		ColorModel colorModel = null;
 		PaletteData palette = data.palette;
-		if(palette.isDirect) {
+		if (palette.isDirect) {
 			colorModel = new DirectColorModel(data.depth, palette.redMask, palette.greenMask, palette.blueMask);
 			BufferedImage bufferedImage = new BufferedImage(colorModel, colorModel.createCompatibleWritableRaster(data.width, data.height), false, null);
-			for(int y = 0; y < data.height; y++) {
-				for(int x = 0; x < data.width; x++) {
+			for (int y = 0; y < data.height; y++) {
+				for (int x = 0; x < data.width; x++) {
 					int pixel = data.getPixel(x, y);
 					RGB rgb = palette.getRGB(pixel);
 					bufferedImage.setRGB(x, y, rgb.red << 16 | rgb.green << 8 | rgb.blue);
@@ -268,13 +268,13 @@ public class RotationHelper {
 			byte[] red = new byte[rgbs.length];
 			byte[] green = new byte[rgbs.length];
 			byte[] blue = new byte[rgbs.length];
-			for(int i = 0; i < rgbs.length; i++) {
+			for (int i = 0; i < rgbs.length; i++) {
 				RGB rgb = rgbs[i];
-				red[i] = (byte)rgb.red;
-				green[i] = (byte)rgb.green;
-				blue[i] = (byte)rgb.blue;
+				red[i] = (byte) rgb.red;
+				green[i] = (byte) rgb.green;
+				blue[i] = (byte) rgb.blue;
 			}
-			if(data.transparentPixel != -1) {
+			if (data.transparentPixel != -1) {
 				colorModel = new IndexColorModel(data.depth, rgbs.length, red, green, blue, data.transparentPixel);
 			} else {
 				colorModel = new IndexColorModel(data.depth, rgbs.length, red, green, blue);
@@ -282,8 +282,8 @@ public class RotationHelper {
 			BufferedImage bufferedImage = new BufferedImage(colorModel, colorModel.createCompatibleWritableRaster(data.width, data.height), false, null);
 			WritableRaster raster = bufferedImage.getRaster();
 			int[] pixelArray = new int[1];
-			for(int y = 0; y < data.height; y++) {
-				for(int x = 0; x < data.width; x++) {
+			for (int y = 0; y < data.height; y++) {
+				for (int x = 0; x < data.width; x++) {
 					int pixel = data.getPixel(x, y);
 					pixelArray[0] = pixel;
 					raster.setPixel(x, y, pixelArray);

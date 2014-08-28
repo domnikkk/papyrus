@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,7 +14,6 @@ package org.eclipse.papyrus.robotml.deployment.dialog;
 import org.eclipse.draw2d.Label;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.RobotML.DeploymentPlan;
 import org.eclipse.papyrus.robotml.deployment.AllocUtils;
 import org.eclipse.papyrus.robotml.deployment.DepUtils;
@@ -42,9 +41,9 @@ import org.eclipse.uml2.uml.Package;
  * Select a connector type and implementation (group)
  * TODO: show information about the used connector [usage, implem properties, ...]
  * similar help for ports?
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 
 /*
@@ -83,12 +82,14 @@ public class AllocationDialog extends SelectionStatusDialog {
 	/**
 	 * @see SelectionStatusDialog#computeResult()
 	 */
+	@Override
 	protected void computeResult() {
 		// nothing to do
 	}
 
+	@Override
 	public Control createDialogArea(Composite parent) {
-		Composite contents = (Composite)super.createDialogArea(parent);
+		Composite contents = (Composite) super.createDialogArea(parent);
 		// (parent, "Container rules", "Avail. extensions/interceptors");
 
 		fTree = new Tree(contents, SWT.H_SCROLL | SWT.BORDER);
@@ -120,7 +121,7 @@ public class AllocationDialog extends SelectionStatusDialog {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(fTree.getSelection().length > 0) {
+				if (fTree.getSelection().length > 0) {
 					selectInstance(fTree.getSelection()[0]);
 				}
 			}
@@ -136,13 +137,13 @@ public class AllocationDialog extends SelectionStatusDialog {
 
 	/**
 	 * Helper method to fill a tree with data
-	 * 
+	 *
 	 * @param tree
-	 *        the tree to fill
+	 *            the tree to fill
 	 */
 	private void fillTree(Tree tree, TreeItem treeItem, InstanceSpecification is) {
 		TreeItem item;
-		if(treeItem != null) {
+		if (treeItem != null) {
 			item = new TreeItem(treeItem, SWT.NONE);
 		} else {
 			item = new TreeItem(tree, SWT.NONE);
@@ -151,7 +152,7 @@ public class AllocationDialog extends SelectionStatusDialog {
 		setTextFromData(item);
 
 		// create children
-		for(InstanceSpecification subIS : DepUtils.getContainedInstances(is)) {
+		for (InstanceSpecification subIS : DepUtils.getContainedInstances(is)) {
 			fillTree(tree, item, subIS);
 		}
 	}
@@ -159,46 +160,46 @@ public class AllocationDialog extends SelectionStatusDialog {
 	// obtain name and explicit/implicit node Allocation
 	protected void setTextFromData(TreeItem ti) {
 		Object data = ti.getData();
-		if(data instanceof InstanceSpecification) {
-			InstanceSpecification is = (InstanceSpecification)data;
+		if (data instanceof InstanceSpecification) {
+			InstanceSpecification is = (InstanceSpecification) data;
 
 			String name = is.getName();
 			int index = name.lastIndexOf(".");
-			if(index != -1) {
+			if (index != -1) {
 				name = name.substring(index + 1);
 			}
 			InstanceSpecification explicitNodeOrThread = AllocUtils.getNodeOrThread(is);
 			Classifier cl = DepUtils.getClassifier(is);
 			String nodeName;
-			if(explicitNodeOrThread == null) {
+			if (explicitNodeOrThread == null) {
 				nodeName = "-";
 			} else {
 				nodeName = getAllocName(explicitNodeOrThread);
 			}
-			
+
 			EList<InstanceSpecification> implicitNodes = AllocUtils.getAllNodesOrThreadsParent(is);
 			implicitNodes.addAll(AllocUtils.getAllNodesOrThreadsParent(is));
 			String list = "";
-			for(InstanceSpecification node : implicitNodes) {
-				if(list.equals("")) {
+			for (InstanceSpecification node : implicitNodes) {
+				if (list.equals("")) {
 					list = getAllocName(node);
 				} else {
 					list += ", " + getAllocName(node);
 				}
 			}
-			ti.setText(new String[]{ name, nodeName, "[" + list + "]" });
+			ti.setText(new String[] { name, nodeName, "[" + list + "]" });
 		}
 	}
 
 	protected void refreshTree(TreeItem ti) {
 		setTextFromData(ti);
-		for(TreeItem subItem : ti.getItems()) {
+		for (TreeItem subItem : ti.getItems()) {
 			refreshTree(subItem);
 		}
 	}
 
 	private String getAllocName(InstanceSpecification nodeOrThread) {
-		if(nodeOrThread == null) {
+		if (nodeOrThread == null) {
 			return "no explicit allocation";
 		} else {
 			String name = nodeOrThread.getName();
@@ -210,21 +211,22 @@ public class AllocationDialog extends SelectionStatusDialog {
 	protected void createAllocInfo(Composite parent) {
 		// create extension kind combo
 		fAlloc = DialogUtils.createComboWithText(parent, "Alloc to node:",
-			SWT.DROP_DOWN | SWT.READ_ONLY, SWT.NONE);
+				SWT.DROP_DOWN | SWT.READ_ONLY, SWT.NONE);
 
 		String items[] = new String[nodeOrThreadList.size()];
 		int i = 0;
-		for(InstanceSpecification nodeOrThread : nodeOrThreadList) {
+		for (InstanceSpecification nodeOrThread : nodeOrThreadList) {
 			items[i++] = getAllocName(nodeOrThread);
 		}
 		fAlloc.setItems(items);
 		fAlloc.addSelectionListener(new SelectionAdapter() {
 
+			@Override
 			public void widgetSelected(SelectionEvent event) {
-				if(currentIS != null) {
+				if (currentIS != null) {
 					updateAllocation(currentIS, fAlloc.getSelectionIndex());
 					// selectionCount should always be 1
-					for(TreeItem ti : fTree.getSelection()) {
+					for (TreeItem ti : fTree.getSelection()) {
 						refreshTree(ti);
 					}
 				}
@@ -236,21 +238,21 @@ public class AllocationDialog extends SelectionStatusDialog {
 
 	/**
 	 * Select a rule, i.e. update the visual representation from the rule
-	 * 
+	 *
 	 * @param rule
 	 */
 	protected void selectInstance(TreeItem item) {
 		// for (Port port : rule.getPortSet ()) {
-		//	fPorts.setSelection()
+		// fPorts.setSelection()
 		// }
-		currentIS = (InstanceSpecification)item.getData();
+		currentIS = (InstanceSpecification) item.getData();
 		fLabel.setText(currentIS.getName());
 
 		fAlloc.setEnabled(true);
 		InstanceSpecification nodeOrThread = AllocUtils.getNodeOrThread(currentIS);
 
-		for(int i = 0; i < nodeOrThreadList.size(); i++) {
-			if(nodeOrThreadList.get(i) == nodeOrThread) {
+		for (int i = 0; i < nodeOrThreadList.size(); i++) {
+			if (nodeOrThreadList.get(i) == nodeOrThread) {
 				fAlloc.select(i);
 			}
 		}
@@ -260,45 +262,45 @@ public class AllocationDialog extends SelectionStatusDialog {
 		InstanceSpecification oldNode = AllocUtils.getNodeOrThread(is);
 		InstanceSpecification newNode = nodeOrThreadList.get(index);
 
-		if(oldNode == newNode) {
+		if (oldNode == newNode) {
 			return;
 		}
 
 		// add or update
-		if(oldNode == null) {
-			
-					AllocUtils.allocate(is, newNode);
-				
-			
+		if (oldNode == null) {
+
+			AllocUtils.allocate(is, newNode);
+
+
 		} else {
 			AllocUtils.updateAllocation(is, oldNode, newNode);
 		}
 	}
 
 	void getAllNodesOrThreads(Package pkg, EList<InstanceSpecification> nodeList) {
-		for(Element el : pkg.getMembers()) {
-			if(el instanceof Package) {
-				if(!visitedPackages.contains(el)) {
-					visitedPackages.add((Package)el);
-					getAllNodesOrThreads((Package)el, nodeList);
+		for (Element el : pkg.getMembers()) {
+			if (el instanceof Package) {
+				if (!visitedPackages.contains(el)) {
+					visitedPackages.add((Package) el);
+					getAllNodesOrThreads((Package) el, nodeList);
 				}
-			} 
-			else if(el instanceof InstanceSpecification) {
-				Classifier cl = DepUtils.getClassifier((InstanceSpecification)el);
-				if(cl != null) {
-					if((cl instanceof Class) ) {
+			}
+			else if (el instanceof InstanceSpecification) {
+				Classifier cl = DepUtils.getClassifier((InstanceSpecification) el);
+				if (cl != null) {
+					if ((cl instanceof Class)) {
 						// check that instances are not part of a deployment plan
-						//  [TODO:] check that owner of instance is a platform definition
-						if(!StUtils.isApplied(el.getOwner(), DeploymentPlan.class)) {
-							nodeList.add((InstanceSpecification)el);
+						// [TODO:] check that owner of instance is a platform definition
+						if (!StUtils.isApplied(el.getOwner(), DeploymentPlan.class)) {
+							nodeList.add((InstanceSpecification) el);
 						}
 					}
 				}
 			}
 		}
 	}
-	
-	
+
+
 
 	private EList<Package> visitedPackages;
 }

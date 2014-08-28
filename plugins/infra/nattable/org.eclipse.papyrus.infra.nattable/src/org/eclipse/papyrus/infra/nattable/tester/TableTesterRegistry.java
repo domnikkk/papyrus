@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,28 +37,28 @@ public class TableTesterRegistry {
 	public static final TableTesterRegistry INSTANCE = new TableTesterRegistry();
 
 	private TableTesterRegistry() {
-		//to prevent instanciation
+		// to prevent instanciation
 	}
 
 	/**
-	 * 
+	 *
 	 * @param tableType
-	 *        the type of the table
+	 *            the type of the table
 	 * @return
 	 *         the URI of the configuration to use for this table or <code>null</code> if not found
 	 */
 	public ITableTester getTableTester(final String testerId) {
-		if(this.testers == null) {
+		if (this.testers == null) {
 			this.testers = new HashMap<String, ITableTester>();
 			final IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
-			for(final IConfigurationElement iConfigurationElement : configElements) {
+			for (final IConfigurationElement iConfigurationElement : configElements) {
 				String id = iConfigurationElement.getAttribute(ID_ATTRIBUTE);
-				if(this.testers.containsKey(id)) {
+				if (this.testers.containsKey(id)) {
 					Activator.log.warn(String.format(Messages.TableTesterRegistry_SeveralTesterAreRegisteredWithTheSameId, id));
 				} else {
 					ITableTester tester = null;
 					try {
-						tester = (ITableTester)iConfigurationElement.createExecutableExtension(CLASS_ATTRIBUTE);
+						tester = (ITableTester) iConfigurationElement.createExecutableExtension(CLASS_ATTRIBUTE);
 						this.testers.put(id, tester);
 					} catch (CoreException e) {
 						Activator.log.error(String.format(Messages.TableTesterRegistry_TheClassCantBeLoaded, id), e);

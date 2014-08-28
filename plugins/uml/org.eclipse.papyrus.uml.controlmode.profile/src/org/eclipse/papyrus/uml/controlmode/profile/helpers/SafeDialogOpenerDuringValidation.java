@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,8 +22,8 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.papyrus.commands.CheckedOperationHistory;
 
 /**
- * This class must be used to open a dialog during a validation. Its usage avoids side effects with the Properties view, which would throw an
- * {@link IllegalStateException}. The parameterizing class can be used to return a result from the dialog (use {@link Void} if no result is expected).
+ * This class must be used to open a dialog during a validation. Its usage avoids side effects with the Properties view, which would throw an {@link IllegalStateException}. The parameterizing class can be used to return a result from the dialog (use
+ * {@link Void} if no result is expected).
  */
 public abstract class SafeDialogOpenerDuringValidation<ReturnType> {
 

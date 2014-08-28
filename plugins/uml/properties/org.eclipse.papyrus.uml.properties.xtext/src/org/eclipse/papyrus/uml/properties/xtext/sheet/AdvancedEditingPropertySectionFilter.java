@@ -26,9 +26,9 @@ public class AdvancedEditingPropertySectionFilter implements IFilter {
 			IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 			String key = IDirectEditorsIds.EDITOR_FOR_ELEMENT
 					+ semanticElement.eClass().getInstanceClassName();
-			
+
 			String languagePreferred = store.getString(key);
-			
+
 			if (languagePreferred != null && !languagePreferred.equals("")) {
 				IDirectEditorConfiguration configuration = DirectEditorsUtil.findEditorConfiguration(
 						languagePreferred, semanticElement.eClass()

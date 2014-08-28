@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage
  * @generated
  */
@@ -17,6 +18,7 @@ public interface ServicedescriptorsFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	ServicedescriptorsFactory eINSTANCE = org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl.ServicedescriptorsFactoryImpl.init();
@@ -25,6 +27,7 @@ public interface ServicedescriptorsFactory extends EFactory {
 	 * Returns a new object of class '<em>Registry Desc</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Registry Desc</em>'.
 	 * @generated
 	 */
@@ -34,6 +37,7 @@ public interface ServicedescriptorsFactory extends EFactory {
 	 * Returns a new object of class '<em>Service Set Desc</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Service Set Desc</em>'.
 	 * @generated
 	 */
@@ -43,6 +47,7 @@ public interface ServicedescriptorsFactory extends EFactory {
 	 * Returns a new object of class '<em>Service Desc</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Service Desc</em>'.
 	 * @generated
 	 */
@@ -52,6 +57,7 @@ public interface ServicedescriptorsFactory extends EFactory {
 	 * Returns a new object of class '<em>Alias Desc</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Alias Desc</em>'.
 	 * @generated
 	 */
@@ -61,6 +67,7 @@ public interface ServicedescriptorsFactory extends EFactory {
 	 * Returns a new object of class '<em>Descriptors</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Descriptors</em>'.
 	 * @generated
 	 */
@@ -70,6 +77,7 @@ public interface ServicedescriptorsFactory extends EFactory {
 	 * Returns a new object of class '<em>Property Injection</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Property Injection</em>'.
 	 * @generated
 	 */
@@ -79,6 +87,7 @@ public interface ServicedescriptorsFactory extends EFactory {
 	 * Returns a new object of class '<em>Method Injection</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Method Injection</em>'.
 	 * @generated
 	 */
@@ -88,6 +97,7 @@ public interface ServicedescriptorsFactory extends EFactory {
 	 * Returns a new object of class '<em>Parameter Injection</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Parameter Injection</em>'.
 	 * @generated
 	 */
@@ -97,6 +107,7 @@ public interface ServicedescriptorsFactory extends EFactory {
 	 * Returns a new object of class '<em>Injected Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Injected Service</em>'.
 	 * @generated
 	 */
@@ -106,6 +117,7 @@ public interface ServicedescriptorsFactory extends EFactory {
 	 * Returns a new object of class '<em>Opaque Injected Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Opaque Injected Value</em>'.
 	 * @generated
 	 */
@@ -115,6 +127,7 @@ public interface ServicedescriptorsFactory extends EFactory {
 	 * Returns a new object of class '<em>Constructor Injection</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Constructor Injection</em>'.
 	 * @generated
 	 */
@@ -124,6 +137,7 @@ public interface ServicedescriptorsFactory extends EFactory {
 	 * Returns a new object of class '<em>Service Factory Desc</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Service Factory Desc</em>'.
 	 * @generated
 	 */
@@ -133,9 +147,10 @@ public interface ServicedescriptorsFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
 	ServicedescriptorsPackage getServicedescriptorsPackage();
 
-} //ServicedescriptorsFactory
+} // ServicedescriptorsFactory

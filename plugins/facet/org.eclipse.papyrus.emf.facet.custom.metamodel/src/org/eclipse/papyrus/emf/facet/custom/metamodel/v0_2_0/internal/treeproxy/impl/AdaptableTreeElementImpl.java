@@ -22,5 +22,5 @@ import org.eclipse.core.runtime.IAdaptable;
  *
  */
 public abstract class AdaptableTreeElementImpl implements IAdaptable {
-	//Nothing: used in the treeproxy genmodel to specify the IAdaptable interface
+	// Nothing: used in the treeproxy genmodel to specify the IAdaptable interface
 }

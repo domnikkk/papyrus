@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.InstanceSpecification;
  * <li>{@link org.eclipse.papyrus.sysml.blocks.internal.impl.DimensionImpl#getBase_InstanceSpecification <em>Base Instance Specification</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimension {
@@ -39,7 +39,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	 * The cached value of the '{@link #getBase_InstanceSpecification() <em>Base Instance Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_InstanceSpecification()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DimensionImpl() {
@@ -57,7 +57,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InstanceSpecification basicGetBase_InstanceSpecification() {
@@ -66,15 +66,16 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.DIMENSION__BASE_INSTANCE_SPECIFICATION:
-			if(resolve)
+			if (resolve) {
 				return getBase_InstanceSpecification();
+			}
 			return basicGetBase_InstanceSpecification();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -82,12 +83,12 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.DIMENSION__BASE_INSTANCE_SPECIFICATION:
 			return base_InstanceSpecification != null;
 		}
@@ -96,14 +97,14 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.DIMENSION__BASE_INSTANCE_SPECIFICATION:
-			setBase_InstanceSpecification((InstanceSpecification)newValue);
+			setBase_InstanceSpecification((InstanceSpecification) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -111,7 +112,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,14 +122,14 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.DIMENSION__BASE_INSTANCE_SPECIFICATION:
-			setBase_InstanceSpecification((InstanceSpecification)null);
+			setBase_InstanceSpecification((InstanceSpecification) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -136,16 +137,17 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InstanceSpecification getBase_InstanceSpecification() {
-		if(base_InstanceSpecification != null && base_InstanceSpecification.eIsProxy()) {
-			InternalEObject oldBase_InstanceSpecification = (InternalEObject)base_InstanceSpecification;
-			base_InstanceSpecification = (InstanceSpecification)eResolveProxy(oldBase_InstanceSpecification);
-			if(base_InstanceSpecification != oldBase_InstanceSpecification) {
-				if(eNotificationRequired())
+		if (base_InstanceSpecification != null && base_InstanceSpecification.eIsProxy()) {
+			InternalEObject oldBase_InstanceSpecification = (InternalEObject) base_InstanceSpecification;
+			base_InstanceSpecification = (InstanceSpecification) eResolveProxy(oldBase_InstanceSpecification);
+			if (base_InstanceSpecification != oldBase_InstanceSpecification) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.DIMENSION__BASE_INSTANCE_SPECIFICATION, oldBase_InstanceSpecification, base_InstanceSpecification));
+				}
 			}
 		}
 		return base_InstanceSpecification;
@@ -153,14 +155,15 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_InstanceSpecification(InstanceSpecification newBase_InstanceSpecification) {
 		InstanceSpecification oldBase_InstanceSpecification = base_InstanceSpecification;
 		base_InstanceSpecification = newBase_InstanceSpecification;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.DIMENSION__BASE_INSTANCE_SPECIFICATION, oldBase_InstanceSpecification, base_InstanceSpecification));
+		}
 	}
 
 } // DimensionImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,8 +32,8 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Scheduler;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDeviceImpl#getSpeedFactor <em>Speed Factor</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDeviceImpl#getMainScheduler <em>Main Scheduler</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDeviceImpl#getSpeedFactor <em>Speed Factor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDeviceImpl#getMainScheduler <em>Main Scheduler</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +44,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	 * The default value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -54,6 +55,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	 * The cached value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -64,6 +66,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	 * The cached value of the '{@link #getMainScheduler() <em>Main Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMainScheduler()
 	 * @generated
 	 * @ordered
@@ -73,6 +76,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HwDeviceImpl() {
@@ -82,6 +86,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,8 +97,10 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getSpeedFactor() {
 		return speedFactor;
 	}
@@ -101,27 +108,33 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setSpeedFactor(String newSpeedFactor) {
 		String oldSpeedFactor = speedFactor;
 		speedFactor = newSpeedFactor;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwDevicePackage.HW_DEVICE__SPEED_FACTOR, oldSpeedFactor, speedFactor));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Scheduler getMainScheduler() {
 		if (mainScheduler != null && mainScheduler.eIsProxy()) {
-			InternalEObject oldMainScheduler = (InternalEObject)mainScheduler;
-			mainScheduler = (Scheduler)eResolveProxy(oldMainScheduler);
+			InternalEObject oldMainScheduler = (InternalEObject) mainScheduler;
+			mainScheduler = (Scheduler) eResolveProxy(oldMainScheduler);
 			if (mainScheduler != oldMainScheduler) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HwDevicePackage.HW_DEVICE__MAIN_SCHEDULER, oldMainScheduler, mainScheduler));
+				}
 			}
 		}
 		return mainScheduler;
@@ -130,6 +143,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Scheduler basicGetMainScheduler() {
@@ -139,28 +153,34 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setMainScheduler(Scheduler newMainScheduler) {
 		Scheduler oldMainScheduler = mainScheduler;
 		mainScheduler = newMainScheduler;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwDevicePackage.HW_DEVICE__MAIN_SCHEDULER, oldMainScheduler, mainScheduler));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwDevicePackage.HW_DEVICE__SPEED_FACTOR:
-				return getSpeedFactor();
-			case HwDevicePackage.HW_DEVICE__MAIN_SCHEDULER:
-				if (resolve) return getMainScheduler();
-				return basicGetMainScheduler();
+		case HwDevicePackage.HW_DEVICE__SPEED_FACTOR:
+			return getSpeedFactor();
+		case HwDevicePackage.HW_DEVICE__MAIN_SCHEDULER:
+			if (resolve) {
+				return getMainScheduler();
+			}
+			return basicGetMainScheduler();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,17 +188,18 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwDevicePackage.HW_DEVICE__SPEED_FACTOR:
-				setSpeedFactor((String)newValue);
-				return;
-			case HwDevicePackage.HW_DEVICE__MAIN_SCHEDULER:
-				setMainScheduler((Scheduler)newValue);
-				return;
+		case HwDevicePackage.HW_DEVICE__SPEED_FACTOR:
+			setSpeedFactor((String) newValue);
+			return;
+		case HwDevicePackage.HW_DEVICE__MAIN_SCHEDULER:
+			setMainScheduler((Scheduler) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -186,17 +207,18 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwDevicePackage.HW_DEVICE__SPEED_FACTOR:
-				setSpeedFactor(SPEED_FACTOR_EDEFAULT);
-				return;
-			case HwDevicePackage.HW_DEVICE__MAIN_SCHEDULER:
-				setMainScheduler((Scheduler)null);
-				return;
+		case HwDevicePackage.HW_DEVICE__SPEED_FACTOR:
+			setSpeedFactor(SPEED_FACTOR_EDEFAULT);
+			return;
+		case HwDevicePackage.HW_DEVICE__MAIN_SCHEDULER:
+			setMainScheduler((Scheduler) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -204,15 +226,16 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwDevicePackage.HW_DEVICE__SPEED_FACTOR:
-				return SPEED_FACTOR_EDEFAULT == null ? speedFactor != null : !SPEED_FACTOR_EDEFAULT.equals(speedFactor);
-			case HwDevicePackage.HW_DEVICE__MAIN_SCHEDULER:
-				return mainScheduler != null;
+		case HwDevicePackage.HW_DEVICE__SPEED_FACTOR:
+			return SPEED_FACTOR_EDEFAULT == null ? speedFactor != null : !SPEED_FACTOR_EDEFAULT.equals(speedFactor);
+		case HwDevicePackage.HW_DEVICE__MAIN_SCHEDULER:
+			return mainScheduler != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -220,20 +243,25 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == ProcessingResource.class) {
 			switch (derivedFeatureID) {
-				case HwDevicePackage.HW_DEVICE__SPEED_FACTOR: return GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR;
-				case HwDevicePackage.HW_DEVICE__MAIN_SCHEDULER: return GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER;
-				default: return -1;
+			case HwDevicePackage.HW_DEVICE__SPEED_FACTOR:
+				return GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR;
+			case HwDevicePackage.HW_DEVICE__MAIN_SCHEDULER:
+				return GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER;
+			default:
+				return -1;
 			}
 		}
 		if (baseClass == DeviceResource.class) {
 			switch (derivedFeatureID) {
-				default: return -1;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -242,20 +270,25 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == ProcessingResource.class) {
 			switch (baseFeatureID) {
-				case GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR: return HwDevicePackage.HW_DEVICE__SPEED_FACTOR;
-				case GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER: return HwDevicePackage.HW_DEVICE__MAIN_SCHEDULER;
-				default: return -1;
+			case GRMPackage.PROCESSING_RESOURCE__SPEED_FACTOR:
+				return HwDevicePackage.HW_DEVICE__SPEED_FACTOR;
+			case GRMPackage.PROCESSING_RESOURCE__MAIN_SCHEDULER:
+				return HwDevicePackage.HW_DEVICE__MAIN_SCHEDULER;
+			default:
+				return -1;
 			}
 		}
 		if (baseClass == DeviceResource.class) {
 			switch (baseFeatureID) {
-				default: return -1;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -264,11 +297,14 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (speedFactor: ");
@@ -277,4 +313,4 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 		return result.toString();
 	}
 
-} //HwDeviceImpl
+} // HwDeviceImpl

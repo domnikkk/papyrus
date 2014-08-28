@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,25 +28,25 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * The label provider used for header when they represents an {@link EObject} and NOT an {@link EStructuralFeature}
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class EMFEObjectHeaderLabelProvider extends AbstractNattableCellLabelProvider {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.provider.AbstractNattableCellLabelProvider#accept(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	public boolean accept(Object element) {
-		if(element instanceof ILabelProviderContextElementWrapper) {
-			Object object = ((ILabelProviderContextElementWrapper)element).getObject();
-			if(object instanceof IAxis) {
-				object = ((IAxis)object).getElement();
+		if (element instanceof ILabelProviderContextElementWrapper) {
+			Object object = ((ILabelProviderContextElementWrapper) element).getObject();
+			if (object instanceof IAxis) {
+				object = ((IAxis) object).getElement();
 			}
 			return object instanceof EObject && !(object instanceof EStructuralFeature);
 		}
@@ -54,51 +54,51 @@ public class EMFEObjectHeaderLabelProvider extends AbstractNattableCellLabelProv
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.provider.AbstractNattableCellLabelProvider#getText(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	public String getText(Object element) {
-		ILabelProviderContextElementWrapper context = (ILabelProviderContextElementWrapper)element;
-		EObject object = (EObject)((ILabelProviderContextElementWrapper)element).getObject();
-		if(object instanceof EObjectAxis) {
-			object = ((EObjectAxis)object).getElement();
+		ILabelProviderContextElementWrapper context = (ILabelProviderContextElementWrapper) element;
+		EObject object = (EObject) ((ILabelProviderContextElementWrapper) element).getObject();
+		if (object instanceof EObjectAxis) {
+			object = ((EObjectAxis) object).getElement();
 		}
 		final IConfigRegistry configRegistry = context.getConfigRegistry();
 		final LabelProviderService serv = getLabelProviderService(configRegistry);
 		ILabelProviderConfiguration conf = null;
-		if(element instanceof LabelProviderCellContextElementWrapper) {
-			conf = getLabelConfiguration((LabelProviderCellContextElementWrapper)element);
+		if (element instanceof LabelProviderCellContextElementWrapper) {
+			conf = getLabelConfiguration((LabelProviderCellContextElementWrapper) element);
 		}
-		if(conf instanceof ObjectLabelProviderConfiguration && !((ObjectLabelProviderConfiguration)conf).isDisplayLabel()) {
+		if (conf instanceof ObjectLabelProviderConfiguration && !((ObjectLabelProviderConfiguration) conf).isDisplayLabel()) {
 			return "";
 		}
 		return serv.getLabelProvider(object).getText(object);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.provider.AbstractNattableCellLabelProvider#getImage(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	public Image getImage(Object element) {
-		EObject object = (EObject)((ILabelProviderContextElementWrapper)element).getObject();
-		if(object instanceof EObjectAxis) {
-			object = ((EObjectAxis)object).getElement();
+		EObject object = (EObject) ((ILabelProviderContextElementWrapper) element).getObject();
+		if (object instanceof EObjectAxis) {
+			object = ((EObjectAxis) object).getElement();
 		}
-		final IConfigRegistry configRegistry = ((ILabelProviderContextElementWrapper)element).getConfigRegistry();
+		final IConfigRegistry configRegistry = ((ILabelProviderContextElementWrapper) element).getConfigRegistry();
 		final LabelProviderService serv = getLabelProviderService(configRegistry);
 		ILabelProviderConfiguration conf = null;
-		if(element instanceof LabelProviderCellContextElementWrapper) {
-			conf = getLabelConfiguration((LabelProviderCellContextElementWrapper)element);
+		if (element instanceof LabelProviderCellContextElementWrapper) {
+			conf = getLabelConfiguration((LabelProviderCellContextElementWrapper) element);
 		}
-		if(conf instanceof ObjectLabelProviderConfiguration && !((ObjectLabelProviderConfiguration)conf).isDisplayIcon()) {
+		if (conf instanceof ObjectLabelProviderConfiguration && !((ObjectLabelProviderConfiguration) conf).isDisplayIcon()) {
 			return null;
 		}
 		return serv.getLabelProvider(object).getImage(object);

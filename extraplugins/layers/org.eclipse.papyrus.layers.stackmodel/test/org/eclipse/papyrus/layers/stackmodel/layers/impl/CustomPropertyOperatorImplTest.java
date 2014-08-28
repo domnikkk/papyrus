@@ -4,13 +4,16 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.eclipse.papyrus.layers.stackmodel.LayersException;
 import org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator;
@@ -46,7 +49,8 @@ public class CustomPropertyOperatorImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.CustomPropertyOperatorImpl#getComputePropertyValueCommand(org.eclipse.emf.common.util.EList)}.
-	 * @throws LayersException 
+	 *
+	 * @throws LayersException
 	 */
 	@Test
 	public void testGetComputePropertyValueCommand() throws LayersException {
@@ -54,7 +58,7 @@ public class CustomPropertyOperatorImplTest {
 
 		FakePropertyOperator opInstance = new FakePropertyOperator();
 		operator.setOperatorInstance(opInstance);
-		
+
 		// Check
 		operator.getComputePropertyValueCommand(null);
 		// Check if the corresponding method of the custom operator is called.
@@ -83,7 +87,7 @@ public class CustomPropertyOperatorImplTest {
 		operator.setClassname(classname);
 
 		// check
-		assertSame( "classname found", classname, operator.getClassname());
+		assertSame("classname found", classname, operator.getClassname());
 	}
 
 	/**
@@ -95,7 +99,7 @@ public class CustomPropertyOperatorImplTest {
 
 		CustomPropertyOperatorsInstance opInstance = new BooleanAndOperator();
 		operator.setOperatorInstance(opInstance);
-		
+
 		// Check
 		assertSame("custom op found", opInstance, operator.getOperatorInstance());
 	}
@@ -109,7 +113,7 @@ public class CustomPropertyOperatorImplTest {
 
 		// Set a classname
 		operator.setClassname(BooleanAndOperator.class.getName());
-		
+
 		// Check
 		assertNotNull("custom op created and found", operator.getOperatorInstance());
 	}
@@ -123,7 +127,7 @@ public class CustomPropertyOperatorImplTest {
 
 		CustomPropertyOperatorsInstance opInstance = new BooleanAndOperator();
 		operator.setOperatorInstance(opInstance);
-		
+
 		// Check
 		assertSame("custom op found", opInstance, operator.getOperatorInstance());
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,15 +55,17 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 	 */
 	public Boolean firing;
 
+	@Override
 	public void run() {
 		// Run this action activation and any outoging fork node attached to it.
 		super.run();
-		if(this.outgoingEdges.size() > 0) {
+		if (this.outgoingEdges.size() > 0) {
 			this.outgoingEdges.get(0).target.run();
 		}
 		this.firing = false;
 	}
 
+	@Override
 	public List<Token> takeOfferedTokens() {
 		// If the action is not locally reentrant, then mark this activation as
 		// firing.
@@ -71,28 +73,29 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		// all input pin activations.
 		// Note: This is included here to happen in the same isolation scope as
 		// the isReady test.
-		this.firing = !((Action)this.node).isLocallyReentrant();
+		this.firing = !((Action) this.node).isLocallyReentrant();
 		List<Token> offeredTokens = new ArrayList<Token>();
 		List<ActivityEdgeInstance> incomingEdges = this.incomingEdges;
-		for(int i = 0; i < incomingEdges.size(); i++) {
+		for (int i = 0; i < incomingEdges.size(); i++) {
 			ActivityEdgeInstance incomingEdge = incomingEdges.get(i);
 			List<Token> tokens = incomingEdge.takeOfferedTokens();
-			for(int j = 0; j < tokens.size(); j++) {
+			for (int j = 0; j < tokens.size(); j++) {
 				Token token = tokens.get(j);
 				token.withdraw();
 				offeredTokens.add(token);
 			}
 		}
-		Action action = (Action)(this.node);
+		Action action = (Action) (this.node);
 		// *** Fire all input pins concurrently. ***
 		List<InputPin> inputPins = getInputs(action); // CHANGED from: action.getInputs();
-		for(Iterator<InputPin> i = inputPins.iterator(); i.hasNext();) {
+		for (Iterator<InputPin> i = inputPins.iterator(); i.hasNext();) {
 			InputPin pin = i.next();
 			PinActivation pinActivation = this.getPinActivation(pin);
 			List<Token> tokens = pinActivation.takeOfferedTokens();
-			if(FUMLExecutionEngine.eInstance.getControlDelegate().control(pinActivation)) // Added for connection with debug API
+			if (FUMLExecutionEngine.eInstance.getControlDelegate().control(pinActivation)) {
 				pinActivation.fire(tokens);
-			for(int j = 0; j < tokens.size(); j++) {
+			}
+			for (int j = 0; j < tokens.size(); j++) {
 				Token token = tokens.get(j);
 				offeredTokens.add(token);
 			}
@@ -100,6 +103,7 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		return offeredTokens;
 	}
 
+	@Override
 	public void fire(List<Token> incomingTokens) {
 		// Do the main action behavior then concurrently fire all output pin
 		// activations
@@ -112,14 +116,15 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 			Debug.println("[event] Fire activity=" + this.getActivityExecution().getBehavior().getName() + " action=" + this.node.getName());
 			this.doAction();
 			incomingTokens = this.completeAction();
-		} while(incomingTokens.size() > 0);
+		} while (incomingTokens.size() > 0);
 	}
 
+	@Override
 	public void terminate() {
 		// Terminate this action activation and any outgoing fork node attached
 		// to it.
 		super.terminate();
-		if(this.outgoingEdges.size() > 0) {
+		if (this.outgoingEdges.size() > 0) {
 			this.outgoingEdges.get(0).target.terminate();
 		}
 	}
@@ -133,7 +138,7 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		_beginIsolation();
 		List<Token> incomingTokens = new ArrayList<Token>();
 		this.firing = false;
-		if(this.isReady()) {
+		if (this.isReady()) {
 			incomingTokens = this.takeOfferedTokens();
 			this.firing = this.isFiring() & incomingTokens.size() > 0;
 		}
@@ -141,6 +146,7 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		return incomingTokens;
 	}
 
+	@Override
 	public Boolean isReady() {
 		// In addition to the default condition, check that, if the action has
 		// isLocallyReentrant=false, then the activation is not currently
@@ -149,15 +155,15 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		// offers and all input pin activations are ready.
 		// [This assumes that all edges directly incoming to the action are
 		// control flows.]
-		boolean ready = super.isReady() & (((Action)this.node).isLocallyReentrant() | !this.isFiring());
+		boolean ready = super.isReady() & (((Action) this.node).isLocallyReentrant() | !this.isFiring());
 		int i = 1;
-		while(ready & i <= this.incomingEdges.size()) {
+		while (ready & i <= this.incomingEdges.size()) {
 			ready = this.incomingEdges.get(i - 1).hasOffer();
 			i = i + 1;
 		}
-		List<InputPin> inputPins = getInputs((Action)this.node); // CHANGED from: ((Action)(this.node)).getInputs();
+		List<InputPin> inputPins = getInputs((Action) this.node); // CHANGED from: ((Action)(this.node)).getInputs();
 		int j = 1;
-		while(ready & j <= inputPins.size()) {
+		while (ready & j <= inputPins.size()) {
 			ready = this.getPinActivation(inputPins.get(j - 1)).isReady();
 			j = j + 1;
 		}
@@ -173,16 +179,16 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 
 	public void sendOffers() {
 		// Fire all output pins and send offers on all outgoing control flows.
-		Action action = (Action)(this.node);
+		Action action = (Action) (this.node);
 		// *** Send offers from all output pins concurrently. ***
 		List<OutputPin> outputPins = getOutputs(action); // CHANGED from: action.getOutputs();
-		for(Iterator<OutputPin> i = outputPins.iterator(); i.hasNext();) {
+		for (Iterator<OutputPin> i = outputPins.iterator(); i.hasNext();) {
 			OutputPin outputPin = i.next();
 			PinActivation pinActivation = this.getPinActivation(outputPin);
 			pinActivation.sendUnofferedTokens();
 		}
 		// Send offers on all outgoing control flows.
-		if(this.outgoingEdges.size() > 0) {
+		if (this.outgoingEdges.size() > 0) {
 			List<Token> tokens = new ArrayList<Token>();
 			tokens.add(new ControlToken());
 			this.addTokens(tokens);
@@ -190,36 +196,38 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		}
 	}
 
+	@Override
 	public void createNodeActivations() {
 		// Create node activations for the input and output pins of the action
 		// for this activation.
 		// [Note: Pins are owned by their actions, not by the enclosing activity
 		// (or group), so they must be activated through the action activation.]
-		Action action = (Action)(this.node);
+		Action action = (Action) (this.node);
 		List<ActivityNode> inputPinNodes = new ArrayList<ActivityNode>();
 		List<InputPin> inputPins = getInputs(action); // CHANGED from: action.getInputs();
-		for(int i = 0; i < inputPins.size(); i++) {
+		for (int i = 0; i < inputPins.size(); i++) {
 			InputPin inputPin = inputPins.get(i);
 			inputPinNodes.add(inputPin);
 		}
 		this.group.createNodeActivations(inputPinNodes);
-		for(int i = 0; i < inputPinNodes.size(); i++) {
+		for (int i = 0; i < inputPinNodes.size(); i++) {
 			ActivityNode node = inputPinNodes.get(i);
-			this.addPinActivation((PinActivation)(this.group.getNodeActivation(node)));
+			this.addPinActivation((PinActivation) (this.group.getNodeActivation(node)));
 		}
 		List<ActivityNode> outputPinNodes = new ArrayList<ActivityNode>();
 		List<OutputPin> outputPins = getOutputs(action); // CHANGED from: action.getOutputs();
-		for(int i = 0; i < outputPins.size(); i++) {
+		for (int i = 0; i < outputPins.size(); i++) {
 			OutputPin outputPin = outputPins.get(i);
 			outputPinNodes.add(outputPin);
 		}
 		this.group.createNodeActivations(outputPinNodes);
-		for(int i = 0; i < outputPinNodes.size(); i++) {
+		for (int i = 0; i < outputPinNodes.size(); i++) {
 			ActivityNode node = outputPinNodes.get(i);
-			this.addPinActivation((PinActivation)(this.group.getNodeActivation(node)));
+			this.addPinActivation((PinActivation) (this.group.getNodeActivation(node)));
 		}
 	}
 
+	@Override
 	public void addOutgoingEdge(ActivityEdgeInstance edge) {
 		// If there are no outgoing activity edge instances, create a single
 		// activity edge instance with a fork node execution at the other end.
@@ -228,7 +236,7 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		// [This assumes that all edges directly outgoing from the action are
 		// control flows, with an implicit fork for offers out of the action.]
 		ActivityNodeActivation forkNodeActivation;
-		if(this.outgoingEdges.size() == 0) {
+		if (this.outgoingEdges.size() == 0) {
 			forkNodeActivation = new ForkNodeActivation();
 			forkNodeActivation.running = false; // ADDED
 			ActivityEdgeInstance newEdge = new ActivityEdgeInstance();
@@ -252,9 +260,9 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		// Return the pin activation corresponding to the given pin.
 		PinActivation pinActivation = null;
 		int i = 1;
-		while(pinActivation == null & i <= this.pinActivations.size()) {
+		while (pinActivation == null & i <= this.pinActivations.size()) {
 			PinActivation thisPinActivation = this.pinActivations.get(i - 1);
-			if(thisPinActivation.node == pin) {
+			if (thisPinActivation.node == pin) {
 				pinActivation = thisPinActivation;
 			}
 			i = i + 1;
@@ -280,7 +288,7 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		// Place tokens for the given values on the pin activation corresponding
 		// to the given output pin.
 		// Debug.println("[putTokens] node = " + this.node.getName());
-		for(int i = 0; i < values.size(); i++) {
+		for (int i = 0; i < values.size(); i++) {
 			Value value = values.get(i);
 			this.putToken(pin, value);
 		}
@@ -296,10 +304,10 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		PinActivation pinActivation = this.getPinActivation(pin);
 		List<Token> tokens = pinActivation.getUnofferedTokens();
 		List<Value> values = new ArrayList<Value>();
-		for(int i = 0; i < tokens.size(); i++) {
+		for (int i = 0; i < tokens.size(); i++) {
 			Token token = tokens.get(i);
-			Value value = ((ObjectToken)token).value;
-			if(value != null) {
+			Value value = ((ObjectToken) token).value;
+			if (value != null) {
 				values.add(value);
 			}
 		}
@@ -315,21 +323,22 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		PinActivation pinActivation = this.getPinActivation(pin);
 		List<Token> tokens = pinActivation.takeUnofferedTokens();
 		List<Value> values = new ArrayList<Value>();
-		for(int i = 0; i < tokens.size(); i++) {
+		for (int i = 0; i < tokens.size(); i++) {
 			Token token = tokens.get(i);
-			Value value = ((ObjectToken)token).value;
-			if(value != null) {
+			Value value = ((ObjectToken) token).value;
+			if (value != null) {
 				values.add(value);
 			}
 		}
 		return values;
 	}
 
+	@Override
 	public Boolean isSourceFor(ActivityEdgeInstance edgeInstance) {
 		// If this action has an outgoing fork node, check that the fork node is
 		// the source of the given edge instance.
 		boolean isSource = false;
-		if(this.outgoingEdges.size() > 0) {
+		if (this.outgoingEdges.size() > 0) {
 			isSource = this.outgoingEdges.get(0).target.isSourceFor(edgeInstance);
 		}
 		return isSource;
@@ -340,7 +349,7 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		List<FeatureValue> linkFeatureValues = link.getFeatureValues();
 		boolean participates = false;
 		int i = 1;
-		while(!participates & i <= linkFeatureValues.size()) {
+		while (!participates & i <= linkFeatureValues.size()) {
 			participates = linkFeatureValues.get(i - 1).values.get(0).equals(value);
 			i = i + 1;
 		}
@@ -353,16 +362,16 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		// the default used for evaluating Boolean literals.]
 		LiteralBoolean booleanLiteral = UMLFactory.eINSTANCE.createLiteralBoolean();
 		booleanLiteral.setValue(value);
-		return (BooleanValue)(this.getExecutionLocus().executor.evaluate(booleanLiteral));
+		return (BooleanValue) (this.getExecutionLocus().executor.evaluate(booleanLiteral));
 	}
 
 	// ADDED:
 	protected static List<InputPin> getInputs(Action action) {
-		return action instanceof LoopNode ? ((LoopNode)action).getLoopVariableInputs() : action.getInputs();
+		return action instanceof LoopNode ? ((LoopNode) action).getLoopVariableInputs() : action.getInputs();
 	}
 
 	protected static List<OutputPin> getOutputs(Action action) {
-		return action instanceof LoopNode ? ((LoopNode)action).getResults() : action instanceof ConditionalNode ? ((ConditionalNode)action).getResults() : action.getOutputs();
+		return action instanceof LoopNode ? ((LoopNode) action).getResults() : action instanceof ConditionalNode ? ((ConditionalNode) action).getResults() : action.getOutputs();
 	}
 	//
 }

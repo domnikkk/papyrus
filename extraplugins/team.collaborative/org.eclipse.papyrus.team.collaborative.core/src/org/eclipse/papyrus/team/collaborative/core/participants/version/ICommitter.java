@@ -16,19 +16,19 @@ import org.eclipse.papyrus.team.collaborative.core.participants.IExtendedURISupe
 
 /**
  * Object to commit elements
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public interface ICommitter extends IExtendedURISuperSet, IWorkOnModifiedElementParticipant {
 
 	/**
 	 * Commit {@link IExtendedURISuperSet#getExtendedSet()}
-	 * 
+	 *
 	 * @param message
-	 *        Message for the commit
+	 *            Message for the commit
 	 * @param keepLock
-	 *        If the lock has to be kept
+	 *            If the lock has to be kept
 	 * @return Success status is everything went fine
 	 * @throws CollabException
 	 */

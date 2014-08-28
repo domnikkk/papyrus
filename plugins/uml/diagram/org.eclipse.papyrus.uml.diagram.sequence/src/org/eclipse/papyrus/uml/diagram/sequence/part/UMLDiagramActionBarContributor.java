@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,6 +29,7 @@ public class UMLDiagramActionBarContributor extends DiagramActionBarContributor 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected Class getEditorClass() {
 		return UMLDiagramEditor.class;
 	}
@@ -36,6 +37,7 @@ public class UMLDiagramActionBarContributor extends DiagramActionBarContributor 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected String getEditorId() {
 		return UMLDiagramEditor.ID;
 	}
@@ -43,6 +45,7 @@ public class UMLDiagramActionBarContributor extends DiagramActionBarContributor 
 	/**
 	 * @generated
 	 */
+	@Override
 	public void init(IActionBars bars, IWorkbenchPage page) {
 		super.init(bars, page);
 		// print preview
@@ -51,7 +54,7 @@ public class UMLDiagramActionBarContributor extends DiagramActionBarContributor 
 		fileMenu.remove("pageSetupAction"); //$NON-NLS-1$
 		IMenuManager editMenu = bars.getMenuManager().findMenuUsingPath(IWorkbenchActionConstants.M_EDIT);
 		assert editMenu != null;
-		if(editMenu.find("validationGroup") == null) { //$NON-NLS-1$
+		if (editMenu.find("validationGroup") == null) { //$NON-NLS-1$
 			editMenu.add(new GroupMarker("validationGroup")); //$NON-NLS-1$
 		}
 		IAction validateAction = new ValidateAction(page);

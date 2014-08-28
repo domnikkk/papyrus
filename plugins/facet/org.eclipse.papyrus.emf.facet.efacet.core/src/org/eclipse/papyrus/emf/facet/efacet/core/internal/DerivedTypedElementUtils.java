@@ -30,28 +30,28 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperati
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.ParameterValue;
 
 public final class DerivedTypedElementUtils {
-	
+
 	private DerivedTypedElementUtils() {
 		// Must not be used
 	}
-	
+
 	private static <T> List<ParameterValue> createAndCheckOperationParameterValues(final EOperation operation,
 			final Object... arguments) throws UnmatchingExpectedTypeException {
 		final EList<EParameter> operationParameters = operation.getEParameters();
-		//Begin precondition checking
+		// Begin precondition checking
 		if (arguments.length > 0
 				&& operationParameters.size() != arguments.length) {
 			throw new IllegalArgumentException("Facet operation '" + operation.getName() + //$NON-NLS-1$
 					"' expects " + operationParameters.size() + " parameters. Got " + arguments.length); //$NON-NLS-1$ //$NON-NLS-2$
 		}
-		//End precondition checking
+		// End precondition checking
 		final List<ParameterValue> parameterValues = new ArrayList<ParameterValue>();
 		for (int i = 0; i < arguments.length; i++) {
 			final Object argument = arguments[i];
 			final EParameter eParameter = operationParameters.get(i);
-			//Begin precondition checking
+			// Begin precondition checking
 			EmfUtils.checkAssignment(argument, eParameter);
-			//End precondition checking
+			// End precondition checking
 			final ParameterValue parameterValue = EFacetFactory.eINSTANCE.createParameterValue();
 			parameterValue.setParameter(eParameter);
 			parameterValue.setValue(argument);
@@ -59,7 +59,7 @@ public final class DerivedTypedElementUtils {
 		}
 		return parameterValues;
 	}
-	
+
 	public static Object evaluate(final EObject eObject, final EOperation operation, final IFacetManager facetManager, final Object... arguments) throws UnmatchingExpectedTypeException,
 			DerivedTypedElementException {
 		Object result;

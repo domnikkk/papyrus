@@ -10,7 +10,7 @@ package org.eclipse.papyrus.domaincontextcodegen;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Stereotyped Element Matcher</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -20,7 +20,7 @@ package org.eclipse.papyrus.domaincontextcodegen;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.StereotypedElementMatcher#getBaseElementPackage <em>Base Element Package</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getStereotypedElementMatcher()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public interface StereotypedElementMatcher extends GenMatcher {
 	 * If the meaning of the '<em>Stereotype Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stereotype Name</em>' attribute.
 	 * @see #setStereotypeName(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getStereotypedElementMatcher_StereotypeName()
@@ -48,9 +48,9 @@ public interface StereotypedElementMatcher extends GenMatcher {
 	 * attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Stereotype Name</em>' attribute.
+	 *            the new value of the '<em>Stereotype Name</em>' attribute.
 	 * @see #getStereotypeName()
 	 * @generated
 	 */
@@ -63,7 +63,7 @@ public interface StereotypedElementMatcher extends GenMatcher {
 	 * If the meaning of the '<em>Stereotype Package</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stereotype Package</em>' attribute.
 	 * @see #setStereotypePackage(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getStereotypedElementMatcher_StereotypePackage()
@@ -77,9 +77,9 @@ public interface StereotypedElementMatcher extends GenMatcher {
 	 * <em>Stereotype Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Stereotype Package</em>' attribute.
+	 *            the new value of the '<em>Stereotype Package</em>' attribute.
 	 * @see #getStereotypePackage()
 	 * @generated
 	 */
@@ -92,7 +92,7 @@ public interface StereotypedElementMatcher extends GenMatcher {
 	 * If the meaning of the '<em>Base Element Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Element Name</em>' attribute.
 	 * @see #setBaseElementName(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getStereotypedElementMatcher_BaseElementName()
@@ -102,13 +102,12 @@ public interface StereotypedElementMatcher extends GenMatcher {
 	String getBaseElementName();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.StereotypedElementMatcher#getBaseElementName <em>Base Element Name</em>}
-	 * ' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.StereotypedElementMatcher#getBaseElementName <em>Base Element Name</em>} ' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Base Element Name</em>' attribute.
+	 *            the new value of the '<em>Base Element Name</em>' attribute.
 	 * @see #getBaseElementName()
 	 * @generated
 	 */
@@ -121,7 +120,7 @@ public interface StereotypedElementMatcher extends GenMatcher {
 	 * If the meaning of the '<em>Base Element Package</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Element Package</em>' attribute.
 	 * @see #setBaseElementPackage(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getStereotypedElementMatcher_BaseElementPackage()
@@ -135,9 +134,9 @@ public interface StereotypedElementMatcher extends GenMatcher {
 	 * <em>Base Element Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Base Element Package</em>' attribute.
+	 *            the new value of the '<em>Base Element Package</em>' attribute.
 	 * @see #getBaseElementPackage()
 	 * @generated
 	 */

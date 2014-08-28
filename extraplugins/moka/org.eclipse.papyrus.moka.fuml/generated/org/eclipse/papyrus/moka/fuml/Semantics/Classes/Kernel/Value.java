@@ -34,17 +34,17 @@ public abstract class Value extends SemanticVisitor {
 		// Debug.println("[equals] Value...");
 		// Debug.println("[equals] this has " + myTypes.size() +
 		// "types, other has " + otherTypes.size() + ".");
-		if(myTypes.size() != otherTypes.size()) {
+		if (myTypes.size() != otherTypes.size()) {
 			isEqual = false;
 		} else {
 			// Debug.println("[equals] " + myTypes.size() + " type(s).");
 			int i = 1;
-			while(isEqual & i <= myTypes.size()) {
+			while (isEqual & i <= myTypes.size()) {
 				// Debug.println("[equals] this type = " +
 				// myTypes.get(i-1).name);
 				boolean matched = false;
 				int j = 1;
-				while(!matched & j <= otherTypes.size()) {
+				while (!matched & j <= otherTypes.size()) {
 					// Debug.println("[equals] other type = " +
 					// otherTypes.get(j-1).name);
 					matched = (otherTypes.get(j - 1) == myTypes.get(i - 1));
@@ -75,7 +75,7 @@ public abstract class Value extends SemanticVisitor {
 		List<Classifier> types = this.getTypes();
 		boolean found = false;
 		int i = 1;
-		while(!found & i <= types.size()) {
+		while (!found & i <= types.size()) {
 			found = (types.get(i - 1) == type);
 			i = i + 1;
 		}

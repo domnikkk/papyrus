@@ -32,7 +32,7 @@ public interface ICollaborativeManager {
 
 	/**
 	 * Gets the strategies.
-	 * 
+	 *
 	 * @return the strategies or null if not found
 	 */
 	public Map<String, ILockingStrategy.Descriptor> getStrategies();
@@ -40,75 +40,75 @@ public interface ICollaborativeManager {
 
 	/**
 	 * Gets the locking strategy.
-	 * 
+	 *
 	 * @param id
-	 *        the id
+	 *            the id
 	 * @return the locking strategy or null if not found
 	 */
 	public ILockingStrategy getLockingStrategy(String id);
 
 	/**
 	 * Gets the locker.
-	 * 
+	 *
 	 * @param objectToLock
-	 *        the object to lock
+	 *            the object to lock
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @return the locker or null if not found
 	 */
 	public ILocker getLocker(Set<IExtendedURI> objectToLock, ResourceSet resourceSet);
 
 	/**
 	 * Gets the unlocker.
-	 * 
+	 *
 	 * @param objectToLock
-	 *        the object to lock
+	 *            the object to lock
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @return the unlocker or null if not found
 	 */
 	public IUnlocker getUnlocker(Set<IExtendedURI> objectToLock, ResourceSet resourceSet);
 
 	/**
 	 * Gets the updater.
-	 * 
+	 *
 	 * @param objectToLock
-	 *        the object to lock
+	 *            the object to lock
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @return the updater or null if not found
 	 */
 	public IUpdater getUpdater(Set<IExtendedURI> objectToLock, ResourceSet resourceSet);
 
 	/**
 	 * Gets the committer.
-	 * 
+	 *
 	 * @param objectToLock
-	 *        the object to lock
+	 *            the object to lock
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @return the committer or null if not found
 	 */
 	public ICommitter getCommitter(Set<IExtendedURI> objectToLock, ResourceSet resourceSet);
 
 	/**
 	 * Gets the reverter.
-	 * 
+	 *
 	 * @param objectToLock
-	 *        the object to lock
+	 *            the object to lock
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @return the reverter or null if not found
 	 */
 	public IReverter getReverter(Set<IExtendedURI> objectToLock, ResourceSet resourceSet);
 
 	/**
 	 * Checks if is collab.
-	 * 
+	 *
 	 * @param objectToLock
-	 *        the object to lock
+	 *            the object to lock
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @return true, if is collab
 	 */
 	public boolean isCollab(Set<IExtendedURI> objectToLock, ResourceSet resourceSet);

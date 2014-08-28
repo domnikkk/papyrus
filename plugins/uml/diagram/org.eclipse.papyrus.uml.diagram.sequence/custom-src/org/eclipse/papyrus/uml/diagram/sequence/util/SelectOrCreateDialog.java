@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,6 +52,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.forms.FormDialog;
 import org.eclipse.ui.forms.IManagedForm;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
@@ -113,26 +114,27 @@ public class SelectOrCreateDialog extends FormDialog {
 	private List<Type> types;
 
 	/**
-	 * 
+	 *
 	 * @param shell
-	 *        parent shell
+	 *            parent shell
 	 * @param title
-	 *        The title of the dialog
+	 *            The title of the dialog
 	 * @param typeLabelProvider
-	 *        The label provider to generate type label
+	 *            The label provider to generate type label
 	 * @param elementLabelProvider
-	 *        The label provider to generate elements label
+	 *            The label provider to generate elements label
 	 * @param transactionalEditingDomain
-	 *        The domain where to create the element if necessary.
+	 *            The domain where to create the element if necessary.
 	 * @param existingElements
-	 *        The list of existing elements that can be selected.
+	 *            The list of existing elements that can be selected.
 	 * @param mapTypesPossibleParents
-	 *        The map of possible types for the element
-	 *        and the possible parents where the element
-	 *        can be created.
+	 *            The map of possible types for the element
+	 *            and the possible parents where the element
+	 *            can be created.
 	 * @param types
 	 */
-	public SelectOrCreateDialog(Shell shell, String title, ILabelProvider typeLabelProvider, ILabelProvider elementLabelProvider, TransactionalEditingDomain transactionalEditingDomain, Collection<EObject> existingElements, LinkedHashMap<EClass, List<EObject>> mapTypesPossibleParents, List<Type> types) {
+	public SelectOrCreateDialog(Shell shell, String title, ILabelProvider typeLabelProvider, ILabelProvider elementLabelProvider, TransactionalEditingDomain transactionalEditingDomain, Collection<EObject> existingElements,
+			LinkedHashMap<EClass, List<EObject>> mapTypesPossibleParents, List<Type> types) {
 		super(shell);
 		this.typeLabelProvider = typeLabelProvider;
 		this.elementLabelProvider = elementLabelProvider;
@@ -145,9 +147,9 @@ public class SelectOrCreateDialog extends FormDialog {
 
 	/**
 	 * Adds buttons to this dialog's button bar.
-	 * 
+	 *
 	 * @param parent
-	 *        the button bar composite
+	 *            the button bar composite
 	 */
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
@@ -157,11 +159,11 @@ public class SelectOrCreateDialog extends FormDialog {
 
 	/**
 	 * Create the form to :
-	 * 
+	 *
 	 * - ask the user to select or create an element.
-	 * 
+	 *
 	 * - decide whether the action is synchronous.
-	 * 
+	 *
 	 * @see org.eclipse.ui.forms.FormDialog#createFormContent(org.eclipse.ui.forms.IManagedForm)
 	 */
 	@Override
@@ -186,7 +188,7 @@ public class SelectOrCreateDialog extends FormDialog {
 
 	private void createNothingSection(Composite pParent, FormToolkit pToolkit) {
 		// create the section
-		Section lSection = pToolkit.createSection(pParent, Section.EXPANDED | Section.TITLE_BAR);
+		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);
 		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL | GridData.GRAB_HORIZONTAL));
 		ScrolledForm lInsideScrolledForm = pToolkit.createScrolledForm(lSection);
 		lInsideScrolledForm.setExpandHorizontal(true);
@@ -203,15 +205,15 @@ public class SelectOrCreateDialog extends FormDialog {
 
 	/**
 	 * Create the section to ask the user to select or create an element.
-	 * 
+	 *
 	 * @param pParent
-	 *        the section's parent widget
+	 *            the section's parent widget
 	 * @param pToolkit
-	 *        the form toolkit
+	 *            the form toolkit
 	 */
 	private void createSelectionSection(Composite pParent, FormToolkit pToolkit) {
 		// create the section
-		Section lSection = pToolkit.createSection(pParent, Section.EXPANDED | Section.TITLE_BAR);
+		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);
 		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL | GridData.GRAB_HORIZONTAL));
 		ScrolledForm lInsideScrolledForm = pToolkit.createScrolledForm(lSection);
 		lInsideScrolledForm.setExpandHorizontal(true);
@@ -226,11 +228,11 @@ public class SelectOrCreateDialog extends FormDialog {
 		selectionText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
 		selectionButton = pToolkit.createButton(lBody, "...", SWT.FLAT); //$NON-NLS-1$
 		// find the first non null eobject and use its associated image
-		if(existingElements != null) {
+		if (existingElements != null) {
 			Iterator<EObject> it = existingElements.iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				EObject next = it.next();
-				if(next != null) {
+				if (next != null) {
 					selectionButton.setImage(UMLElementTypes.getImage(next.eClass()));
 					break;
 				}
@@ -244,15 +246,15 @@ public class SelectOrCreateDialog extends FormDialog {
 
 	/**
 	 * Create the section to ask the user to select or create an element.
-	 * 
+	 *
 	 * @param pParent
-	 *        the section's parent widget
+	 *            the section's parent widget
 	 * @param pToolkit
-	 *        the form toolkit
+	 *            the form toolkit
 	 */
 	private void createCreationSection(Composite pParent, FormToolkit pToolkit) {
 		// create the section
-		Section lSection = pToolkit.createSection(pParent, Section.EXPANDED | Section.TITLE_BAR);
+		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);
 		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL | GridData.GRAB_HORIZONTAL));
 		ScrolledForm lInsideScrolledForm = pToolkit.createScrolledForm(lSection);
 		lInsideScrolledForm.setExpandHorizontal(true);
@@ -267,8 +269,8 @@ public class SelectOrCreateDialog extends FormDialog {
 		Set<EClass> possibleTypes = mapTypesPossibleParents.keySet();
 		// only create the type selection buttons if more than one type
 		// is possible
-		if(possibleTypes.size() == 1) {
-			defaultType = (EClass)possibleTypes.toArray()[0];
+		if (possibleTypes.size() == 1) {
+			defaultType = (EClass) possibleTypes.toArray()[0];
 		} else {
 			pToolkit.createLabel(lBody, CustomMessages.SelectOrCreateDialog_TypeLabel, SWT.NONE);
 			creationTypeCombo = new Combo(lBody, SWT.DROP_DOWN | SWT.READ_ONLY);
@@ -277,9 +279,9 @@ public class SelectOrCreateDialog extends FormDialog {
 			creationTypeCombo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
 			typeComboViewer.setLabelProvider(typeLabelProvider);
 			typeComboViewer.add(possibleTypes.toArray());
-			if(possibleTypes.size() > 1) {
+			if (possibleTypes.size() > 1) {
 				// initialize selection
-				defaultType = (EClass)possibleTypes.toArray()[0];
+				defaultType = (EClass) possibleTypes.toArray()[0];
 				typeComboViewer.setSelection(new StructuredSelection(defaultType));
 			}
 		}
@@ -327,19 +329,20 @@ public class SelectOrCreateDialog extends FormDialog {
 			}
 		};
 		selectionButton.addSelectionListener(selectBtnListener);
-		if(creationTypeCombo != null && typeComboViewer != null) {
+		if (creationTypeCombo != null && typeComboViewer != null) {
 			// listener to select invocation type
 			ModifyListener lTypeListener = new ModifyListener() {
 
 				/**
 				 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 				 */
+				@Override
 				public void modifyText(ModifyEvent e) {
 					ISelection sel = typeComboViewer.getSelection();
-					if(sel instanceof StructuredSelection) {
-						Object type = ((StructuredSelection)sel).getFirstElement();
-						if(type instanceof EClass) {
-							setType((EClass)type);
+					if (sel instanceof StructuredSelection) {
+						Object type = ((StructuredSelection) sel).getFirstElement();
+						if (type instanceof EClass) {
+							setType((EClass) type);
 						} else {
 							setType(null);
 						}
@@ -356,6 +359,7 @@ public class SelectOrCreateDialog extends FormDialog {
 			/**
 			 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 			 */
+			@Override
 			public void modifyText(ModifyEvent e) {
 				selectedName = creationNameText.getText();
 				refreshOkButton();
@@ -381,10 +385,10 @@ public class SelectOrCreateDialog extends FormDialog {
 	 */
 	private void refreshOkButton() {
 		Button okButton = getButton(IDialogConstants.OK_ID);
-		if(okButton != null && !okButton.isDisposed()) {
-			if(selectionRadio.getSelection()) {
+		if (okButton != null && !okButton.isDisposed()) {
+			if (selectionRadio.getSelection()) {
 				okButton.setEnabled(selectedElement != null);
-			} else if(nothingRadio.getSelection()) {
+			} else if (nothingRadio.getSelection()) {
 				okButton.setEnabled(true);
 			} else {
 				okButton.setEnabled(selectedType != null && selectedParent != null && selectedName != null && !"".equals(selectedName)); //$NON-NLS-1$
@@ -398,7 +402,7 @@ public class SelectOrCreateDialog extends FormDialog {
 	protected void addElementInParent(EObject selectedParent, EObject createdElement) {
 		// Let the command find the relation on its own.
 		Command addCmd = AddCommand.create(transactionalEditingDomain, selectedParent, null, Collections.singleton(createdElement));
-		if(addCmd.canExecute()) {
+		if (addCmd.canExecute()) {
 			addCmd.execute();
 		}
 	}
@@ -406,20 +410,20 @@ public class SelectOrCreateDialog extends FormDialog {
 	/**
 	 * Set correctly the element, by creating it if needed.
 	 * Then, notifies that the ok button of this dialog has been pressed.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#okPressed()
-	 * 
+	 *
 	 */
 	@Override
 	protected void okPressed() {
 		// create element if needed
-		if(creationRadio.getSelection()) {
+		if (creationRadio.getSelection()) {
 			selectedElement = UMLFactory.eINSTANCE.create(selectedType);
-			if(selectedElement instanceof NamedElement) {
-				((NamedElement)selectedElement).setName(selectedName);
+			if (selectedElement instanceof NamedElement) {
+				((NamedElement) selectedElement).setName(selectedName);
 			}
 			addElementInParent(selectedParent, selectedElement);
-		} else if(nothingRadio.getSelection()) {
+		} else if (nothingRadio.getSelection()) {
 			selectedElement = null;
 		}
 		super.okPressed();
@@ -427,86 +431,93 @@ public class SelectOrCreateDialog extends FormDialog {
 
 	/**
 	 * Open the dialog to choose the existing element to select
-	 * 
+	 *
 	 */
 	private void handleSelectElement() {
 		ElementListSelectionDialog dialog = new ElementListSelectionDialog(getShell(), elementLabelProvider);
 		dialog.setMessage(CustomMessages.SelectOrCreateDialog_SelectLabel);
 		dialog.setMultipleSelection(false);
 		dialog.setElements(filterElements(existingElements));
-		if(dialog.open() == Window.OK) {
-			setElementSelection((EObject)dialog.getFirstResult());
+		if (dialog.open() == Window.OK) {
+			setElementSelection((EObject) dialog.getFirstResult());
 		}
 	}
 
 	private Set<Signal> getAllSignals(List<Type> types) {
 		Set<Signal> accept = new HashSet<Signal>();
 		Set<Classifier> collected = new HashSet<Classifier>();
-		for(Type t : types)
-			if(t instanceof Classifier) {
-				Classifier c = (Classifier)t;
+		for (Type t : types) {
+			if (t instanceof Classifier) {
+				Classifier c = (Classifier) t;
 				collectSignals(c, accept, collected);
 			}
+		}
 		return accept;
 	}
 
 	protected void collectSignals(Classifier c, Set<Signal> accept, Set<Classifier> collected) {
-		if(collected.contains(c))
+		if (collected.contains(c)) {
 			return;
+		}
 		collected.add(c);
-		if(c instanceof org.eclipse.uml2.uml.Class) {
-			EList<Reception> receptions = ((org.eclipse.uml2.uml.Class)c).getOwnedReceptions();
-			for(Reception r : receptions)
+		if (c instanceof org.eclipse.uml2.uml.Class) {
+			EList<Reception> receptions = ((org.eclipse.uml2.uml.Class) c).getOwnedReceptions();
+			for (Reception r : receptions) {
 				accept.add(r.getSignal());
+			}
 		}
 		EList<Property> attrs = c.getAllAttributes();
-		for(Property p : attrs)
-			if(p.getType() instanceof Signal) {
-				accept.add((Signal)p.getType());
-			} else if(p.getType() instanceof Classifier) {
-				collectSignals((Classifier)p.getType(), accept, collected);
+		for (Property p : attrs) {
+			if (p.getType() instanceof Signal) {
+				accept.add((Signal) p.getType());
+			} else if (p.getType() instanceof Classifier) {
+				collectSignals((Classifier) p.getType(), accept, collected);
 			}
+		}
 	}
 
 	private Object[] filterElements(Collection<EObject> elements) {
-		if(!filterSignalButton.getSelection() || types == null || types.isEmpty())
+		if (!filterSignalButton.getSelection() || types == null || types.isEmpty()) {
 			return elements.toArray(new EObject[elements.size()]);
+		}
 		Set<Signal> accept = getAllSignals(types);
 		List<EObject> result = new ArrayList<EObject>();
-		for(EObject o : elements)
-			if(!(o instanceof Signal))
+		for (EObject o : elements) {
+			if (!(o instanceof Signal)) {
 				result.add(o);
-			else if(accept.contains(o))
+			} else if (accept.contains(o)) {
 				result.add(o);
+			}
+		}
 		return result.toArray(new EObject[result.size()]);
 	}
 
 	/**
 	 * Open the dialog to choose the parent of element to create
-	 * 
+	 *
 	 */
 	private void handleSelectParent() {
 		ElementListSelectionDialog dialog = new ElementListSelectionDialog(getShell(), elementLabelProvider);
 		dialog.setMessage(CustomMessages.SelectOrCreateDialog_OwnerLabel);
 		dialog.setMultipleSelection(false);
 		List<EObject> possibleParents = mapTypesPossibleParents.get(selectedType);
-		if(possibleParents != null) {
+		if (possibleParents != null) {
 			dialog.setElements(possibleParents.toArray());
 		}
-		if(dialog.open() == Window.OK) {
-			setParent((EObject)dialog.getFirstResult());
+		if (dialog.open() == Window.OK) {
+			setParent((EObject) dialog.getFirstResult());
 		}
 	}
 
 	/**
 	 * Define the object in which element will be created (if creation mode is chosen)
-	 * 
+	 *
 	 * @param parent
-	 *        the selected parent
+	 *            the selected parent
 	 */
 	private void setParent(EObject parent) {
 		selectedParent = parent;
-		if(selectedParent instanceof NamedElement) {
+		if (selectedParent instanceof NamedElement) {
 			creationParentText.setText(elementLabelProvider.getText(selectedParent));
 			creationParentButton.setImage(UMLElementTypes.getImage(parent.eClass()));
 		} else {
@@ -517,13 +528,13 @@ public class SelectOrCreateDialog extends FormDialog {
 
 	/**
 	 * Define the name of the object that will be created by the action
-	 * 
+	 *
 	 * @param name
-	 *        the name of the element
+	 *            the name of the element
 	 */
 	private void setName(String name) {
 		selectedName = name;
-		if(name != null) {
+		if (name != null) {
 			creationNameText.setText(name);
 		} else {
 			creationNameText.setText(""); //$NON-NLS-1$
@@ -533,14 +544,14 @@ public class SelectOrCreateDialog extends FormDialog {
 
 	/**
 	 * Define the type of the object that will be created by the action
-	 * 
+	 *
 	 * @param type
-	 *        the type of the element
+	 *            the type of the element
 	 */
 	private void setType(EClass type) {
 		selectedType = type;
 		List<EObject> possibleParents = mapTypesPossibleParents.get(type);
-		if(possibleParents != null && possibleParents.size() > 0) {
+		if (possibleParents != null && possibleParents.size() > 0) {
 			setParent(possibleParents.get(0));
 		} else {
 			setParent(null);
@@ -550,13 +561,13 @@ public class SelectOrCreateDialog extends FormDialog {
 
 	/**
 	 * Define the object that will be returned by the action (if selection mode is chosen)
-	 * 
+	 *
 	 * @param element
-	 *        the selected element
+	 *            the selected element
 	 */
 	private void setElementSelection(EObject element) {
 		selectedElement = element;
-		if(selectedElement instanceof NamedElement) {
+		if (selectedElement instanceof NamedElement) {
 			selectionText.setText(elementLabelProvider.getText(selectedElement));
 		} else {
 			selectionText.setText(""); //$NON-NLS-1$
@@ -566,15 +577,15 @@ public class SelectOrCreateDialog extends FormDialog {
 
 	/**
 	 * Refresh the enabled and disabled elements in various sections
-	 * 
+	 *
 	 */
 	private void refreshSectionsEnable(Object radioObject) {
 		boolean nothingSelected = false;
 		boolean selectionSelected = false;
 		boolean creationSelected = false;
-		if(selectionRadio.equals(radioObject)) {
+		if (selectionRadio.equals(radioObject)) {
 			selectionSelected = true;
-		} else if(creationRadio.equals(radioObject)) {
+		} else if (creationRadio.equals(radioObject)) {
 			creationSelected = true;
 		} else {
 			nothingSelected = true;
@@ -585,7 +596,7 @@ public class SelectOrCreateDialog extends FormDialog {
 		selectionButton.setEnabled(selectionSelected);
 		// Creation widgets
 		creationRadio.setSelection(creationSelected);
-		if(creationTypeCombo != null) {
+		if (creationTypeCombo != null) {
 			creationTypeCombo.setEnabled(creationSelected);
 		}
 		creationNameText.setEnabled(creationSelected);
@@ -597,7 +608,7 @@ public class SelectOrCreateDialog extends FormDialog {
 
 	/**
 	 * Get the object that have been selected or created.
-	 * 
+	 *
 	 * @return the object to use.
 	 */
 	public EObject getSelected() {

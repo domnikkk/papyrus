@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.papyrus.uml.diagram.sequence.util.OccurrenceSpecificationHelper;
 import org.eclipse.papyrus.uml.diagram.sequence.util.ReconnectMessageHelper;
 import org.eclipse.uml2.uml.Element;
@@ -42,7 +43,7 @@ public class ExecutionOccurrenceSpecificationMessageReorientCommand extends Edit
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param label
 	 * @param elementToEdit
 	 * @param request
@@ -55,13 +56,13 @@ public class ExecutionOccurrenceSpecificationMessageReorientCommand extends Edit
 
 	/**
 	 * @see org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand#canExecute()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public boolean canExecute() {
 		Message link = getLink();
-		if(link == null) {
+		if (link == null) {
 			return false;
 		}
 		MessageSort messageSort = link.getMessageSort();
@@ -69,70 +70,71 @@ public class ExecutionOccurrenceSpecificationMessageReorientCommand extends Edit
 	}
 
 	protected Message getLink() {
-		return (Message)getRequest().getRelationship();
+		return (Message) getRequest().getRelationship();
 	}
 
 	@Override
 	protected ReorientRelationshipRequest getRequest() {
-		return (ReorientRelationshipRequest)super.getRequest();
+		return (ReorientRelationshipRequest) super.getRequest();
 	}
 
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		int direction = getRequest().getDirection();
-		if(ReorientRelationshipRequest.REORIENT_SOURCE == direction) {
+		if (ReorientRequest.REORIENT_SOURCE == direction) {
 			return reorientSource();
-		} else if(ReorientRelationshipRequest.REORIENT_TARGET == direction) {
+		} else if (ReorientRequest.REORIENT_TARGET == direction) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
 	}
 
 	protected Element getOldSource() {
-		return (Element)oldEnd;
+		return (Element) oldEnd;
 	}
 
 	protected Element getNewSource() {
-		return (Element)newEnd;
+		return (Element) newEnd;
 	}
 
 	protected Element getOldTarget() {
-		return (Element)oldEnd;
+		return (Element) oldEnd;
 	}
 
 	protected Element getNewTarget() {
-		return (Element)newEnd;
+		return (Element) newEnd;
 	}
 
 	protected ExecutionSpecification getExecution(Element element, boolean isSource) {
-		if(element instanceof ExecutionSpecification) {
-			return (ExecutionSpecification)element;
-		} else if(element instanceof OccurrenceSpecification) {
-			return OccurrenceSpecificationHelper.findExecutionWith((OccurrenceSpecification)element, isSource);
+		if (element instanceof ExecutionSpecification) {
+			return (ExecutionSpecification) element;
+		} else if (element instanceof OccurrenceSpecification) {
+			return OccurrenceSpecificationHelper.findExecutionWith((OccurrenceSpecification) element, isSource);
 		}
 		return null;
 	}
 
 	protected CommandResult reorientTarget() {
-		//Same target, ignore it.
+		// Same target, ignore it.
 		MessageEnd receiveEvent = getLink().getReceiveEvent();
-		if(receiveEvent != null && receiveEvent == getNewTarget()) {
+		if (receiveEvent != null && receiveEvent == getNewTarget()) {
 			return CommandResult.newOKCommandResult();
 		}
 		ExecutionSpecification oldExecution = getExecution(getOldTarget(), false);
 		ExecutionSpecification newExecution = getExecution(getNewTarget(), false);
 		ReconnectMessageHelper.updateMessageEnd(receiveEvent, oldExecution, newExecution);
 		ReconnectMessageHelper.updateMessage(getLink());
-		if(oldExecution != null && receiveEvent != null) {
-			if(receiveEvent == oldExecution.getStart()) {
+		if (oldExecution != null && receiveEvent != null) {
+			if (receiveEvent == oldExecution.getStart()) {
 				OccurrenceSpecificationHelper.resetExecutionStart(oldExecution, UMLFactory.eINSTANCE.createExecutionOccurrenceSpecification());
-			} else if(receiveEvent == oldExecution.getFinish()) {
+			} else if (receiveEvent == oldExecution.getFinish()) {
 				OccurrenceSpecificationHelper.resetExecutionFinish(oldExecution, UMLFactory.eINSTANCE.createExecutionOccurrenceSpecification());
 			}
 		}
-		if(newExecution != null && receiveEvent instanceof MessageOccurrenceSpecification) {
-			if(getNewTarget() == newExecution.getStart()) {
+		if (newExecution != null && receiveEvent instanceof MessageOccurrenceSpecification) {
+			if (getNewTarget() == newExecution.getStart()) {
 				OccurrenceSpecificationHelper.resetExecutionStart(newExecution, receiveEvent);
-			} else if(getNewTarget() == newExecution.getFinish()) {
+			} else if (getNewTarget() == newExecution.getFinish()) {
 				OccurrenceSpecificationHelper.resetExecutionFinish(newExecution, receiveEvent);
 			}
 		}
@@ -141,24 +143,24 @@ public class ExecutionOccurrenceSpecificationMessageReorientCommand extends Edit
 
 	protected CommandResult reorientSource() {
 		MessageEnd sendEvent = getLink().getSendEvent();
-		if(sendEvent != null && sendEvent == getNewTarget()) {
+		if (sendEvent != null && sendEvent == getNewTarget()) {
 			return CommandResult.newOKCommandResult();
 		}
 		ExecutionSpecification oldExecution = getExecution(getOldTarget(), false);
 		ExecutionSpecification newExecution = getExecution(getNewTarget(), false);
 
 		ReconnectMessageHelper.updateMessageEnd(sendEvent, oldExecution, newExecution);
-		if(oldExecution != null && sendEvent instanceof MessageOccurrenceSpecification) {
-			if(sendEvent == oldExecution.getStart()) {
+		if (oldExecution != null && sendEvent instanceof MessageOccurrenceSpecification) {
+			if (sendEvent == oldExecution.getStart()) {
 				OccurrenceSpecificationHelper.resetExecutionStart(oldExecution, UMLFactory.eINSTANCE.createExecutionOccurrenceSpecification());
-			} else if(sendEvent == oldExecution.getFinish()) {
+			} else if (sendEvent == oldExecution.getFinish()) {
 				OccurrenceSpecificationHelper.resetExecutionFinish(oldExecution, UMLFactory.eINSTANCE.createExecutionOccurrenceSpecification());
 			}
 		}
-		if(newExecution != null && sendEvent instanceof MessageOccurrenceSpecification) {
-			if(getNewTarget() == newExecution.getStart()) {
+		if (newExecution != null && sendEvent instanceof MessageOccurrenceSpecification) {
+			if (getNewTarget() == newExecution.getStart()) {
 				OccurrenceSpecificationHelper.resetExecutionStart(newExecution, sendEvent);
-			} else if(getNewTarget() == newExecution.getFinish()) {
+			} else if (getNewTarget() == newExecution.getFinish()) {
 				OccurrenceSpecificationHelper.resetExecutionFinish(newExecution, sendEvent);
 			}
 		}

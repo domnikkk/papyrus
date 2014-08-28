@@ -27,11 +27,12 @@ import org.eclipse.papyrus.diagramtemplate.SelectionRef;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.diagramtemplate.diagramtemplate.SelectionRef} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class SelectionRefItemProvider
-	extends AbstractSelectionItemProvider
-	implements
+		extends AbstractSelectionItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -41,6 +42,7 @@ public class SelectionRefItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SelectionRefItemProvider(AdapterFactory adapterFactory) {
@@ -51,6 +53,7 @@ public class SelectionRefItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -67,28 +70,30 @@ public class SelectionRefItemProvider
 	 * This adds a property descriptor for the EReference feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addEReferencePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SelectionRef_eReference_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SelectionRef_eReference_feature", "_UI_SelectionRef_type"),
-				 DiagramTemplatePackage.Literals.SELECTION_REF__EREFERENCE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_SelectionRef_eReference_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_SelectionRef_eReference_feature", "_UI_SelectionRef_type"),
+						DiagramTemplatePackage.Literals.SELECTION_REF__EREFERENCE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns SelectionRef.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,15 +105,16 @@ public class SelectionRefItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		SelectionKind labelValue = ((SelectionRef)object).getKind();
+		SelectionKind labelValue = ((SelectionRef) object).getKind();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
-			getString("_UI_SelectionRef_type") :
-			getString("_UI_SelectionRef_type") + " " + label;
+				getString("_UI_SelectionRef_type") :
+				getString("_UI_SelectionRef_type") + " " + label;
 	}
 
 	/**
@@ -116,6 +122,7 @@ public class SelectionRefItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,6 +136,7 @@ public class SelectionRefItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

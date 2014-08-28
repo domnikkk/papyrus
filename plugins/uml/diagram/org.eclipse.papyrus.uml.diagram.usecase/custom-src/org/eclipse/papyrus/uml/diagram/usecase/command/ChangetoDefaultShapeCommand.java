@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,20 +38,20 @@ import org.eclipse.uml2.uml.Element;
 
 /**
  * this is the specific command in charge to transform an element editpart into a defaultShape
- * 
+ *
  */
 public class ChangetoDefaultShapeCommand extends AbstractTransactionalCommand {
 
 	protected GraphicalEditPart elementEditPart;
 
 	/**
-	 * 
+	 *
 	 * Constructor of this command
-	 * 
+	 *
 	 * @param domain
-	 *        the transactional editing domain to execute transaction
+	 *            the transactional editing domain to execute transaction
 	 * @param classView
-	 *        the editpart that will be transformed
+	 *            the editpart that will be transformed
 	 */
 	public ChangetoDefaultShapeCommand(TransactionalEditingDomain domain, GraphicalEditPart classView) {
 		super(domain, "ChangeToDefaultNamedElement", Collections.EMPTY_LIST);
@@ -68,18 +68,18 @@ public class ChangetoDefaultShapeCommand extends AbstractTransactionalCommand {
 
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		//creation of the node
-		Element semanticElement = (Element)elementEditPart.resolveSemanticElement();
-		View containerView = (View)elementEditPart.getNotationView().eContainer();
+		// creation of the node
+		Element semanticElement = (Element) elementEditPart.resolveSemanticElement();
+		View containerView = (View) elementEditPart.getNotationView().eContainer();
 		int visualID = UMLVisualIDRegistry.getNodeVisualID(containerView, semanticElement);
 		UMLViewProvider umlViewProvider = new UMLViewProvider();
 		IAdaptable elementAdapter = new EObjectAdapter(semanticElement);
-		String semanticHint = ((IHintedType)getUMLElementType(visualID)).getSemanticHint();
+		String semanticHint = ((IHintedType) getUMLElementType(visualID)).getSemanticHint();
 		Node node = umlViewProvider.createNode(elementAdapter, containerView, semanticHint, -1, true, elementEditPart.getDiagramPreferencesHint());
-		node.setLayoutConstraint(((Node)elementEditPart.getNotationView()).getLayoutConstraint());
-		//copy of all eannotations
+		node.setLayoutConstraint(((Node) elementEditPart.getNotationView()).getLayoutConstraint());
+		// copy of all eannotations
 		Iterator<EAnnotation> iter = elementEditPart.getNotationView().getEAnnotations().iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			EAnnotation annotation = EcoreUtil.copy(iter.next());
 			node.getEAnnotations().add(annotation);
 		}

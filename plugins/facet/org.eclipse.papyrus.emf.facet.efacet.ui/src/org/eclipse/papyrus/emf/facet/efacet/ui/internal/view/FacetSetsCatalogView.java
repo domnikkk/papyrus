@@ -23,6 +23,12 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.jface.viewers.ColumnLabelProvider;
+import org.eclipse.jface.viewers.IOpenListener;
+import org.eclipse.jface.viewers.ITreeContentProvider;
+import org.eclipse.jface.viewers.OpenEvent;
+import org.eclipse.papyrus.emf.facet.common.ui.internal.exported.views.IColumnDescription;
+import org.eclipse.papyrus.emf.facet.common.ui.internal.exported.views.IElementsViewFactory;
 import org.eclipse.papyrus.emf.facet.efacet.core.FacetUtils;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetSetCatalogManagerFactory;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Category;
@@ -33,12 +39,6 @@ import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.dialogs.FacetSetTreeContentProvider;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.utils.ImageProvider;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.utils.ImageUtils;
-import org.eclipse.jface.viewers.ColumnLabelProvider;
-import org.eclipse.jface.viewers.IOpenListener;
-import org.eclipse.jface.viewers.ITreeContentProvider;
-import org.eclipse.jface.viewers.OpenEvent;
-import org.eclipse.papyrus.emf.facet.common.ui.internal.exported.views.IColumnDescription;
-import org.eclipse.papyrus.emf.facet.common.ui.internal.exported.views.IElementsViewFactory;
 import org.eclipse.swt.graphics.Image;
 
 /**
@@ -130,7 +130,7 @@ public class FacetSetsCatalogView implements IExecutableExtensionFactory, IOpenL
 						if (strCategories.length() > 0) {
 							strCategories.append("; "); //$NON-NLS-1$
 						}
-						strCategories.append(category.getName()); 
+						strCategories.append(category.getName());
 					}
 					result = strCategories.toString();
 				}

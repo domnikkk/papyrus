@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,12 +38,12 @@ import org.eclipse.ui.ISources;
 /**
  * This class provides the state of the Handlers. It's used to refresh
  * the status of these Handlers in the menu. (in toolbar and popup, it's not needed)
- * 
+ *
  * To get the status, we listen the selection service AND the part service!
  * The part service is used to know if the selection is in the Model Explorer or not!
  * When the selection is not in the model explorer, the handlers listening the variable need to be disabled
  * FIXME we should replace this class by a PropertyTester which avoid to set Listener.
- * 
+ *
  */
 public class HandlerStateSourceProvider extends AbstractActionStateSourceProvider {
 
@@ -88,12 +88,12 @@ public class HandlerStateSourceProvider extends AbstractActionStateSourceProvide
 
 	public static final String LINE_STYLE_TREE = "lineStyleTree"; //$NON-NLS-1$
 
-	public static final String SHOW_HIDE_CONNECTION_LABELS = "showHideLabels"; //$NON-NLS-1$ 
+	public static final String SHOW_HIDE_CONNECTION_LABELS = "showHideLabels"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public HandlerStateSourceProvider() {
 		super();
@@ -128,33 +128,33 @@ public class HandlerStateSourceProvider extends AbstractActionStateSourceProvide
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.ISourceProvider#getProvidedSourceNames()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public String[] getProvidedSourceNames() {
-		return new String[]{ SHOW_HIDE_CONTENTS, SHOW_HIDE_COMPARTMENTS, COPY_APPEARANCE_PROPERTIES, ZOOM
+		return new String[] { SHOW_HIDE_CONTENTS, SHOW_HIDE_COMPARTMENTS, COPY_APPEARANCE_PROPERTIES, ZOOM
 
 
-		, BRING_TO_FRONT, SEND_TO_BACK, BRING_FORWARD, SEND_BACKWARD
+				, BRING_TO_FRONT, SEND_TO_BACK, BRING_FORWARD, SEND_BACKWARD
 
-		, ARRANGE_ALL, ARRANGE_SELECTION
+				, ARRANGE_ALL, ARRANGE_SELECTION
 
-		, SELECT_ALL, SELECT_ALL_CONNECTORS, SELECT_ALL_SHAPES
+				, SELECT_ALL, SELECT_ALL_CONNECTORS, SELECT_ALL_SHAPES
 
-		, FONT
+				, FONT
 
-		, FILL_COLOR, LINE_COLOR, LINE_STYLE, LINE_STYLE_TREE, SHOW_HIDE_CONNECTION_LABELS };
+				, FILL_COLOR, LINE_COLOR, LINE_STYLE, LINE_STYLE_TREE, SHOW_HIDE_CONNECTION_LABELS };
 
 	}
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.providers.AbstractActionStateSourceProvider#refreshActions()
-	 * 
+	 *
 	 */
 	@Override
 	protected void refreshActions() {
@@ -187,26 +187,26 @@ public class HandlerStateSourceProvider extends AbstractActionStateSourceProvide
 
 	/**
 	 * Refresh the state of the handlers
-	 * 
+	 *
 	 * @param key
-	 *        the key used to refresh the handler status
+	 *            the key used to refresh the handler status
 	 * @param handler
-	 *        the handler to refresh
+	 *            the handler to refresh
 	 */
 	protected void refresh(String key, AbstractHandler handler) {
 		String oldState = currentState.get(key);
 		String newState = (test(handler) ? ENABLED : DISABLED);
 
-		if(oldState != newState) {
+		if (oldState != newState) {
 			currentState.put(key, newState);
 			fireSourceChanged(ISources.WORKBENCH, key, newState);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @param handler
-	 *        the handler to refresh
+	 *            the handler to refresh
 	 * @return
 	 *         <code>true</code> if the status of the handler is enabled
 	 */

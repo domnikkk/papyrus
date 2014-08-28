@@ -94,7 +94,7 @@ public abstract class ValidationDecoratorProvider extends AbstractProvider imple
 	 */
 	private static void refreshDecorators(String viewId, final TransactionalEditingDomain domain) {
 		final IDecorator decorator = viewId != null ? allDecorators.get(viewId) : null;
-		if(decorator == null || domain == null) {
+		if (decorator == null || domain == null) {
 			return;
 		}
 		PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
@@ -147,13 +147,13 @@ public abstract class ValidationDecoratorProvider extends AbstractProvider imple
 			super(decoratorTarget);
 			diagramDecorationAdapter = new DiagramDecorationAdapter(decoratorTarget);
 			try {
-				final View view = (View)getDecoratorTarget().getAdapter(View.class);
+				final View view = (View) getDecoratorTarget().getAdapter(View.class);
 				element = view.getElement();
-				EditPart editPart = (EditPart)getDecoratorTarget().getAdapter(EditPart.class);
-				IDiagramEditDomain domain = (IDiagramEditDomain)editPart.getViewer().getEditDomain();
+				EditPart editPart = (EditPart) getDecoratorTarget().getAdapter(EditPart.class);
+				IDiagramEditDomain domain = (IDiagramEditDomain) editPart.getViewer().getEditDomain();
 				ServicesRegistry serviceRegistry = ServiceUtilsForGMF.getInstance().getServiceRegistry(domain);
 				decorationService = serviceRegistry.getService(DecorationService.class);
-				//Register As an Decoration service customer
+				// Register As an Decoration service customer
 				decorationService.addListener(this);
 				TransactionUtil.getEditingDomain(view).runExclusive(new Runnable() {
 
@@ -175,11 +175,11 @@ public abstract class ValidationDecoratorProvider extends AbstractProvider imple
 		 */
 		@Override
 		public void refresh() {
-			View view = (View)getDecoratorTarget().getAdapter(View.class);
-			if(view == null || view.eResource() == null) {
+			View view = (View) getDecoratorTarget().getAdapter(View.class);
+			if (view == null || view.eResource() == null) {
 				return;
 			}
-			if(view.getElement() != null) {
+			if (view.getElement() != null) {
 				diagramDecorationAdapter.removeDecorations();
 				List<IPapyrusDecoration> semanticDecorations = new BasicEList<IPapyrusDecoration>();
 				for (Object decoratedElement : getDecoratedElements(element)) {
@@ -189,7 +189,7 @@ public abstract class ValidationDecoratorProvider extends AbstractProvider imple
 
 				List<IPapyrusDecoration> decorations = new LinkedList<IPapyrusDecoration>(semanticDecorations);
 				decorations.addAll(graphicalDecorations);
-				if(view instanceof Edge) {
+				if (view instanceof Edge) {
 					diagramDecorationAdapter.setDecorationsEdge(decorations, 50, true);
 				} else {
 					diagramDecorationAdapter.setDecorationsNode(decorations, 0, true);
@@ -201,28 +201,28 @@ public abstract class ValidationDecoratorProvider extends AbstractProvider imple
 		 * Refresh the decorators of a view when given a DecorationChange information.
 		 *
 		 * @param change
-		 *        A decoration change, e.g. addition or removal
+		 *            A decoration change, e.g. addition or removal
 		 */
 		public void refresh(DecorationChange change) {
 
-			if(change.getChangeKind() == DecorationChangeKind.DecorationRemoved || change.getChangeKind() == DecorationChangeKind.DecorationModified || change.getChangeKind() == DecorationChangeKind.RefreshAll) {
+			if (change.getChangeKind() == DecorationChangeKind.DecorationRemoved || change.getChangeKind() == DecorationChangeKind.DecorationModified || change.getChangeKind() == DecorationChangeKind.RefreshAll) {
 				// always recreate all decorations, in case of a deletion (would require recalculation of positions) or
 				// if all decorations should be refreshed
 				refresh();
 				return;
 			}
-			View view = (View)getDecoratorTarget().getAdapter(View.class);
-			if(view == null || view.eResource() == null) {
+			View view = (View) getDecoratorTarget().getAdapter(View.class);
+			if (view == null || view.eResource() == null) {
 				return;
 			}
-			if(view instanceof Edge) {
+			if (view instanceof Edge) {
 				// always recreate all decorations for an edge (since the position of all changes, if one is added or removed)
 				refresh();
 				return;
 			}
 			// add decoration
-			if(view.getElement() != null) {
-				if(change.getChangeKind() == DecorationChangeKind.DecorationAdded) {
+			if (view.getElement() != null) {
+				if (change.getChangeKind() == DecorationChangeKind.DecorationAdded) {
 					diagramDecorationAdapter.addDecorationNode(change.getDecoration(), -1, true);
 				}
 			}
@@ -234,13 +234,13 @@ public abstract class ValidationDecoratorProvider extends AbstractProvider imple
 		 */
 		@Override
 		public void activate() {
-			if(viewId == null) {
+			if (viewId == null) {
 				return;
 			}
 
 			// add self to global decorators registry
 			IDecorator decorator = allDecorators.get(viewId);
-			if(decorator == null) {
+			if (decorator == null) {
 				allDecorators.put(viewId, this);
 			}
 		}
@@ -250,7 +250,7 @@ public abstract class ValidationDecoratorProvider extends AbstractProvider imple
 		 */
 		@Override
 		public void deactivate() {
-			if(viewId == null) {
+			if (viewId == null) {
 				return;
 			}
 
@@ -259,8 +259,8 @@ public abstract class ValidationDecoratorProvider extends AbstractProvider imple
 			// remove self from global decorators registry
 			allDecorators.remove(viewId);
 
-			View view = (View)getDecoratorTarget().getAdapter(View.class);
-			if((view == null) || (editingDomain == null)) {
+			View view = (View) getDecoratorTarget().getAdapter(View.class);
+			if ((view == null) || (editingDomain == null)) {
 				// should not happen
 				super.deactivate();
 				return;
@@ -268,23 +268,24 @@ public abstract class ValidationDecoratorProvider extends AbstractProvider imple
 			super.deactivate();
 		}
 
-		//Refresh when the decoration service adds a decoration
+		// Refresh when the decoration service adds a decoration
 		@Override
 		public void update(Observable o, Object arg) {
 			// check whether update is for this view
-			if(arg instanceof DecorationChange) {
-				DecorationChange change = (DecorationChange)arg;
-				if((change.getChangeKind() == DecorationChangeKind.RefreshAll) || decorationMatches(element, change.getDecoration())) {
+			if (arg instanceof DecorationChange) {
+				DecorationChange change = (DecorationChange) arg;
+				if ((change.getChangeKind() == DecorationChangeKind.RefreshAll) || decorationMatches(element, change.getDecoration())) {
 					refresh(change);
 				}
 			}
 		}
-		
+
 		/**
 		 * Return the list of elements that correspond to a viewElement. In most cases, this list
 		 * contains just the view element. But some decorations need to apply to multiple elements.
 		 * In particular, decorations for a value specification of a constraint need to apply for the
 		 * constraint as well - see bug 427863 - Constraint does not show ValueSpecification error marker
+		 *
 		 * @param viewElement
 		 * @return the list of observed decorations
 		 */
@@ -302,11 +303,14 @@ public abstract class ValidationDecoratorProvider extends AbstractProvider imple
 			}
 			return decoratedElements;
 		}
-		
+
 		/**
 		 * Does the viewElement match a decoration?
-		 * @param viewElement the element behind a view
-		 * @param decoration a decoration
+		 *
+		 * @param viewElement
+		 *            the element behind a view
+		 * @param decoration
+		 *            a decoration
 		 * @return true, if matches
 		 */
 		public boolean decorationMatches(Object viewElement, Decoration decoration) {

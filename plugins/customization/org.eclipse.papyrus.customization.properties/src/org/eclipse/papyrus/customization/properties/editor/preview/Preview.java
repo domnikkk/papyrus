@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2013 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,8 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - Use URIs to support non-URL-compatible storage (CDO)
+ *  Christian W. Damus (CEA) - bug 417409
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.editor.preview;
 
@@ -128,7 +130,7 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 	 * Creates the preview control in the given composite.
 	 *
 	 * @param container
-	 *        The SWT Composite in which the preview should be displayed
+	 *            The SWT Composite in which the preview should be displayed
 	 */
 	@Override
 	public void createPartControl(Composite container) {
@@ -149,51 +151,51 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 
 		GridData data;
 
-		//		Label preview = new Label(controls, SWT.NONE);
+		// Label preview = new Label(controls, SWT.NONE);
 		//		preview.setImage(Activator.getDefault().getImage("/icons/preview.png")); //$NON-NLS-1$
-		//		data = new GridData(SWT.CENTER, SWT.BEGINNING, false, false);
-		//		preview.setLayoutData(data);
+		// data = new GridData(SWT.CENTER, SWT.BEGINNING, false, false);
+		// preview.setLayoutData(data);
 
-		//		Label previewText = new Label(controls, SWT.NONE);
-		//		previewText.setText(Messages.Preview_preview);
-		//		data = new GridData(SWT.CENTER, SWT.BEGINNING, false, false);
-		//		previewText.setLayoutData(data);
+		// Label previewText = new Label(controls, SWT.NONE);
+		// previewText.setText(Messages.Preview_preview);
+		// data = new GridData(SWT.CENTER, SWT.BEGINNING, false, false);
+		// previewText.setLayoutData(data);
 
 		previewTitle = new Label(controls, SWT.NONE);
 		data = new GridData(SWT.CENTER, SWT.BEGINNING, false, false);
 		previewTitle.setLayoutData(data);
 
-		//		final Button togglePreview = new Button(controls, SWT.CHECK);
-		//		togglePreview.setText(Messages.Preview_disablePreview);
-		//		togglePreview.addSelectionListener(new SelectionListener() {
+		// final Button togglePreview = new Button(controls, SWT.CHECK);
+		// togglePreview.setText(Messages.Preview_disablePreview);
+		// togglePreview.addSelectionListener(new SelectionListener() {
 		//
-		//			public void widgetSelected(SelectionEvent e) {
-		//				enabled = !enabled;
-		//				displayView();
-		//			}
+		// public void widgetSelected(SelectionEvent e) {
+		// enabled = !enabled;
+		// displayView();
+		// }
 		//
-		//			public void widgetDefaultSelected(SelectionEvent e) {
-		//				//Nothing
-		//			}
+		// public void widgetDefaultSelected(SelectionEvent e) {
+		// //Nothing
+		// }
 		//
-		//		});
+		// });
 
 		previewDisabled = new Label(parent, SWT.NONE);
 		previewDisabled.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 
 		contents = new CTabFolder(parent, SWT.VERTICAL);
 
-		//If currentEditors is empty, the preview is displayed in a view and
-		//should listen to the workbench to know about the activeEditor
-		if(currentEditors.isEmpty()) {
+		// If currentEditors is empty, the preview is displayed in a view and
+		// should listen to the workbench to know about the activeEditor
+		if (currentEditors.isEmpty()) {
 
 			IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-			if(window != null) {
+			if (window != null) {
 				activePage = window.getActivePage();
-				if(activePage != null) {
+				if (activePage != null) {
 					IEditorPart editorPart = activePage.getActiveEditor();
-					if(editorPart instanceof UIEditor) {
-						setEditor((UIEditor)editorPart);
+					if (editorPart instanceof UIEditor) {
+						setEditor((UIEditor) editorPart);
 					}
 
 					activePage.addPartListener(this);
@@ -220,7 +222,7 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 
 	private void refreshDisplay() {
 		Point size = parent.computeSize(SWT.DEFAULT, SWT.DEFAULT);
-		if(scrolledParent.getSize().x > 0) {
+		if (scrolledParent.getSize().x > 0) {
 			size.x = scrolledParent.getSize().x - 30;
 		}
 		parent.setSize(size);
@@ -231,12 +233,12 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 	 * can then be interpreted by XWT. Returns the URL to this file.
 	 *
 	 * @param section
-	 *        The section for which we want to persist the XWT Resource
+	 *            The section for which we want to persist the XWT Resource
 	 * @return
 	 *         The URL to the XWT Resource
 	 */
 	private URL saveTmp(Section section) {
-		if(section.getSectionFile() == null || section.getWidget() == null) {
+		if (section.getSectionFile() == null || section.getWidget() == null) {
 			return null;
 		}
 
@@ -244,13 +246,13 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 		path = path.append("/preview/"); //$NON-NLS-1$
 		try {
 			File previewDirectory = path.toFile();
-			if(!previewDirectory.exists()) {
+			if (!previewDirectory.exists()) {
 				previewDirectory.mkdirs();
 			}
 
 			File xwtFile = path.append(section.getSectionFile()).toFile();
 
-			if(!xwtFile.exists()) {
+			if (!xwtFile.exists()) {
 				xwtFile.getParentFile().mkdirs();
 				xwtFile.createNewFile();
 			}
@@ -258,10 +260,10 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 			OutputStream os = new FileOutputStream(xwtFile);
 			try {
 				Map<Object, Object> options = new HashMap<Object, Object>();
-				//The outputstream cannot be formatted. If format is true, this is
-				//the real file (and not the preview file) that will be formatted
+				// The outputstream cannot be formatted. If format is true, this is
+				// the real file (and not the preview file) that will be formatted
 				options.put(XWTResource.OPTION_FORMAT, false);
-				if(section.getWidget() == null || section.getWidget().eResource() == null) {
+				if (section.getWidget() == null || section.getWidget().eResource() == null) {
 					return null;
 				}
 				section.getWidget().eResource().save(os, options);
@@ -280,12 +282,12 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 	 * Sets the view to display in the preview
 	 *
 	 * @param view
-	 *        The view to display
+	 *            The view to display
 	 */
 	public void setView(View view) {
 		this.currentView = view;
-		if(view != null) {
-			if(view.getName() == null) {
+		if (view != null) {
+			if (view.getName() == null) {
 				previewTitle.setText(Messages.Preview_Unnamed);
 			} else {
 				previewTitle.setText(view.getName());
@@ -299,7 +301,7 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 	}
 
 	private void setPreviewError(String message) {
-		if(message != null) {
+		if (message != null) {
 			previewDisabled.setText(message);
 			previewDisabled.setVisible(true);
 		} else {
@@ -315,17 +317,22 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 	public void displayView() {
 		contents.dispose();
 
-		if(!enabled) {
+		if (!enabled) {
 			setPreviewError(Messages.Preview_previewIsDisabled);
 			return;
 		}
 
-		if(currentView == null) {
+		if (currentView == null) {
 			setPreviewError(Messages.Preview_noSelectedView);
 			return;
 		}
 
 		setPreviewError(null);
+
+		if (displayEngine != null) {
+			// Dispose of the old engine before employing a new one
+			displayEngine.dispose();
+		}
 
 		displayEngine = new DefaultDisplayEngine();
 		Map<Tab, Composite> tabs = new HashMap<Tab, Composite>();
@@ -335,11 +342,11 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 
 		boolean activeTab = false;
 
-		for(Tab tab : getTabs(currentView)) {
+		for (Tab tab : getTabs(currentView)) {
 			CTabItem tabItem = new CTabItem(contents, SWT.NONE);
 			tabItem.setText(tab.getLabel());
 
-			if(tab.getLabel().equals(selectedTab) || !activeTab) {
+			if (tab.getLabel().equals(selectedTab) || !activeTab) {
 				contents.setSelection(tabItem);
 				activeTab = true;
 			}
@@ -362,16 +369,16 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 			});
 		}
 
-		for(Section section : currentView.getSections()) {
+		for (Section section : currentView.getSections()) {
 			Composite tabControl = tabs.get(section.getTab());
-			if(tabControl == null) {
-				Activator.log.warn("The section doesn't have a tab"); //Bug in section deletion: it is still referenced by the views
+			if (tabControl == null) {
+				Activator.log.warn("The section doesn't have a tab"); // Bug in section deletion: it is still referenced by the views
 				continue;
 			}
 			Composite pView = new Composite(tabControl, SWT.NONE);
 			pView.setLayout(new GridLayout(1, false));
 			URL sectionURL = saveTmp(section);
-			if(sectionURL != null) {
+			if (sectionURL != null) {
 				displayEngine.createSection(pView, section, URI.createURI(sectionURL.toExternalForm(), true), null);
 			}
 		}
@@ -383,9 +390,9 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 
 		List<Tab> tabs = new LinkedList<Tab>();
 
-		for(Section section : view.getSections()) {
+		for (Section section : view.getSections()) {
 			Tab tab = section.getTab();
-			if(tab != null && !tabs.contains(tab)) {
+			if (tab != null && !tabs.contains(tab)) {
 				tabs.add(tab);
 			}
 		}
@@ -397,11 +404,11 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 				Tab afterTab1 = tab1.getAfterTab();
 				Tab afterTab2 = tab2.getAfterTab();
 
-				if(isAfter(tab1, afterTab2, new HashSet<Tab>())) {
+				if (isAfter(tab1, afterTab2, new HashSet<Tab>())) {
 					return -1;
 				}
 
-				if(isAfter(tab2, afterTab1, new HashSet<Tab>())) {
+				if (isAfter(tab2, afterTab1, new HashSet<Tab>())) {
 					return 1;
 				}
 
@@ -414,18 +421,18 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 	}
 
 	private boolean isAfter(Tab tab1, Tab tab2, Set<Tab> checkedTabs) {
-		if(checkedTabs.contains(tab2)) {
+		if (checkedTabs.contains(tab2)) {
 			Activator.log.warn("Loop in the afterTabs"); //$NON-NLS-1$
 			return false;
 		}
 
 		checkedTabs.add(tab2);
 
-		if(tab2 == null) {
+		if (tab2 == null) {
 			return false;
 		}
 
-		if(tab1.equals(tab2)) {
+		if (tab1.equals(tab2)) {
 			return true;
 		}
 
@@ -436,25 +443,25 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 	 * The preview listens on
 	 *
 	 * @param event
-	 *        The SelectionChangedEvent
+	 *            The SelectionChangedEvent
 	 */
 	@Override
 	public void selectionChanged(SelectionChangedEvent event) {
-		IStructuredSelection selection = (IStructuredSelection)event.getSelection();
-		if(selection.size() == 1) {
+		IStructuredSelection selection = (IStructuredSelection) event.getSelection();
+		if (selection.size() == 1) {
 			TreeElement child = null;
-			TreeElement treeElement = (TreeElement)selection.getFirstElement();
+			TreeElement treeElement = (TreeElement) selection.getFirstElement();
 
 			do {
 				EObject semantic = EMFHelper.getEObject(treeElement);
-				if(semantic instanceof View) {
-					setView((View)semantic);
+				if (semantic instanceof View) {
+					setView((View) semantic);
 					return;
 				}
 
 				child = treeElement;
 				treeElement = treeElement.getParent();
-			} while(child != treeElement && treeElement != null);
+			} while (child != treeElement && treeElement != null);
 		}
 	}
 
@@ -462,8 +469,8 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 	 * Activate or deactivate the preview
 	 *
 	 * @param enabled
-	 *        If true, the preview will be activated. Otherwise, it will
-	 *        be disabled
+	 *            If true, the preview will be activated. Otherwise, it will
+	 *            be disabled
 	 */
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
@@ -476,37 +483,37 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 
 	@Override
 	public void partActivated(IWorkbenchPart part) {
-		if(part instanceof UIEditor) {
-			setEditor((UIEditor)part);
+		if (part instanceof UIEditor) {
+			setEditor((UIEditor) part);
 		}
 	}
 
 	@Override
 	public void partBroughtToTop(IWorkbenchPart part) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void partClosed(IWorkbenchPart part) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void partDeactivated(IWorkbenchPart part) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void partOpened(IWorkbenchPart part) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void dispose() {
-		for(UIEditor editor : currentEditors) {
+		for (UIEditor editor : currentEditors) {
 			editor.removePreview(this);
 		}
-		if(activePage != null) {
+		if (activePage != null) {
 			activePage.removePartListener(this);
 		}
 		super.dispose();

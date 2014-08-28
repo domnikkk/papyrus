@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,9 +32,9 @@ import org.eclipse.ui.part.EditorActionBarContributor;
 /**
  * A factory managing ActionBarContributor creation. The factory is loaded from
  * ActionBarContributor declared in Eclipse extension mechanism.
- * 
+ *
  * @author dumoulin
- * 
+ *
  */
 public class ActionBarContributorRegistry implements IActionBarContributorFactory, IService {
 
@@ -54,9 +54,9 @@ public class ActionBarContributorRegistry implements IActionBarContributorFactor
 	 * order be sure that they are initialized. The multiEditor should be
 	 * initialized. In particular, getEditorSite(), getEditorInput() and
 	 * getDefaultContext() should return initialized values.
-	 * 
+	 *
 	 * @param multiEditor
-	 *        the multieditor
+	 *            the multieditor
 	 * @param extensionPointNamespace
 	 */
 	public ActionBarContributorRegistry(String extensionPointNamespace) {
@@ -66,9 +66,10 @@ public class ActionBarContributorRegistry implements IActionBarContributorFactor
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public EditorActionBarContributor getActionBarContributor(Object key) throws BackboneException {
 		try {
 			ActionBarContributorDescriptor desc = editorContextDescriptors.get(key);
@@ -81,21 +82,21 @@ public class ActionBarContributorRegistry implements IActionBarContributorFactor
 
 	/**
 	 * Get the list of descriptors.
-	 * 
+	 *
 	 * @return
 	 * @throws BackboneException
-	 *         If a contributor fail to be loaded.
+	 *             If a contributor fail to be loaded.
 	 */
 	public List<EditorActionBarContributor> getActionBarContributors() throws BackboneException {
 		List<EditorActionBarContributor> res = new ArrayList<EditorActionBarContributor>();
-		for(ActionBarContributorDescriptor desc : editorContextDescriptors.values()) {
+		for (ActionBarContributorDescriptor desc : editorContextDescriptors.values()) {
 			res.add(desc.getActionBarContributor());
 		}
 		return res;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	public void registerActionBarContributor(String contextKey, EditorActionBarContributor contributor) {
@@ -118,16 +119,16 @@ public class ActionBarContributorRegistry implements IActionBarContributorFactor
 
 		ActionBarContributorExtensionFactory extensionReader = new ActionBarContributorExtensionFactory();
 
-		for(IConfigurationElement ele : configElements) {
+		for (IConfigurationElement ele : configElements) {
 			ActionBarContributorDescriptor desc;
 			try {
-				if(ActionBarContributorExtensionFactory.EDITOR_ACTIONBARCONTRIBUTOR_EXTENSIONPOINT.equals(ele.getName())) {
+				if (ActionBarContributorExtensionFactory.EDITOR_ACTIONBARCONTRIBUTOR_EXTENSIONPOINT.equals(ele.getName())) {
 					desc = extensionReader.createActionBarContributorDescriptor(ele);
 					// Check double
-					if(editorContextDescriptors.get(desc.contextId) != null) {
+					if (editorContextDescriptors.get(desc.contextId) != null) {
 						// Already exists. Check if it is the same
 						ActionBarContributorDescriptor existingDesc = editorContextDescriptors.get(desc.contextId);
-						if(desc.equals(existingDesc)) {
+						if (desc.equals(existingDesc)) {
 							log.warn("More than one ActionBarContributor is registered under the name '" + desc.contextId + "', with different parameters. Extra declaration are discarded.");
 						}
 					} else {
@@ -139,33 +140,36 @@ public class ActionBarContributorRegistry implements IActionBarContributorFactor
 			}
 		}
 
-		if(log.isDebugEnabled()) {
+		if (log.isDebugEnabled()) {
 			log.debug(this.getClass().getSimpleName() + " : contributors desc loaded  [" + editorContextDescriptors.size() + "]");
 		}
 	}
 
 	/**
 	 * Initialize the service. Do nothing here.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#init(org.eclipse.papyrus.infra.core.services.ServicesRegistry)
-	 * 
+	 *
 	 * @param servicesRegistry
 	 */
+	@Override
 	public void init(ServicesRegistry servicesRegistry) {
 
 	}
 
 	/**
 	 * Do nothing in this implementation. {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#startService()
 	 */
+	@Override
 	public void startService() {
 	}
 
 	/**
 	 * Do nothing in this implementation.
 	 */
+	@Override
 	public void disposeService() {
 	}
 

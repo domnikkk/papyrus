@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.eclipse.papyrus.uml.properties.preferences.LanguageRegistry;
  * Handles the language extension point
  * This extension point allows the registration of custom widgets
  * for editing a specific language.
- * 
+ *
  * @author Camille Letavernier
  */
 public class LanguageEditorExtensionPoint {
@@ -39,7 +39,7 @@ public class LanguageEditorExtensionPoint {
 
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
-		for(IConfigurationElement e : config) {
+		for (IConfigurationElement e : config) {
 			String languageName = e.getAttribute("language"); //$NON-NLS-1$
 			String editorClassName = e.getAttribute("editor"); //$NON-NLS-1$
 

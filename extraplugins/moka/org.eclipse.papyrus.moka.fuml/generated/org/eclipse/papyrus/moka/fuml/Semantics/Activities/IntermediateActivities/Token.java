@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ public abstract class Token {
 		// Otherwise, remove this token from its holder and return a copy of it
 		// transfered to a new holder.
 		Token token = this;
-		if(this.holder != null) {
+		if (this.holder != null) {
 			this.withdraw();
 			token = this.copy();
 		}
@@ -35,7 +35,7 @@ public abstract class Token {
 
 	public void withdraw() {
 		// Remove this token from its holder, withdrawing any offers for it.
-		if(!this.isWithdrawn()) {
+		if (!this.isWithdrawn()) {
 			// Debug.println("[withdraw] Taking token with value = " +
 			// this.getValue());
 			this.holder.removeToken(this);

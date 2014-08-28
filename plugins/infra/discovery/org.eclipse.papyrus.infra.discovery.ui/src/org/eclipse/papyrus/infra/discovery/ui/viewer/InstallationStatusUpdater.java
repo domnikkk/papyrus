@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *     CEA LIST - adaptation to Papyrus
@@ -24,9 +24,9 @@ import org.eclipse.papyrus.infra.discovery.DiscoveryDefinition;
 import org.eclipse.papyrus.infra.discovery.InstallableComponent;
 
 /**
- * 
+ *
  * @author Cedric Brun <cedric.brun@obeo.fr>
- * 
+ *
  */
 public class InstallationStatusUpdater {
 

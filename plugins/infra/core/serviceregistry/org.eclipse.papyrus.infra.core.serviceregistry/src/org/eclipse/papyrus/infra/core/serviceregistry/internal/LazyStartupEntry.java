@@ -1,17 +1,18 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.serviceregistry.internal;
 
+import org.eclipse.papyrus.infra.core.serviceregistry.IService;
 import org.eclipse.papyrus.infra.core.serviceregistry.ServiceException;
 import org.eclipse.papyrus.infra.core.serviceregistry.ServiceState;
 import org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry;
 
 /**
  * An ServiceEntry managing {@link IService} registered as lazy start.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class LazyStartupEntry extends ServiceStartupEntry {
 
@@ -19,7 +20,7 @@ public class LazyStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param serviceDescriptor
 	 * @param registry
 	 */
@@ -30,15 +31,15 @@ public class LazyStartupEntry extends ServiceStartupEntry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.internal.ServiceStartupEntry#getServiceInstance()
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
 	 */
 	@Override
 	public Object getServiceInstance() throws ServiceException {
-		if(serviceEntry.getState() == ServiceState.registered) {
+		if (serviceEntry.getState() == ServiceState.registered) {
 			// Start the service
 			try {
 				serviceEntry.createService();
@@ -56,7 +57,7 @@ public class LazyStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * Do nothing
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -65,7 +66,7 @@ public class LazyStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * Do nothing
-	 * 
+	 *
 	 * @param servicesRegistry
 	 * @throws ServiceException
 	 */
@@ -75,7 +76,7 @@ public class LazyStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * Do nothing.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -84,7 +85,7 @@ public class LazyStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.AbstractServiceEntry#disposeService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override

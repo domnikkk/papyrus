@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -31,34 +31,33 @@ public class CustomTransitionGuardEditPart extends TransitionGuardEditPart {
 	 * Label should be capable of wrapping, i.e. of displaying text in multiple lines
 	 * which is in particular required when the code of an operation is shown instead of the operations name
 	 * [see bug 369305]
-	 * 
-	 * @see org.eclipse.papyrus.diagram.statemachine.edit.parts.TransitionGuardEditPart#setLabelTextHelper(org.eclipse.draw2d.IFigure,
-	 *      java.lang.String)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.diagram.statemachine.edit.parts.TransitionGuardEditPart#setLabelTextHelper(org.eclipse.draw2d.IFigure, java.lang.String)
+	 *
 	 * @param figure
 	 * @param text
 	 */
 	@Override
 	protected void setLabelTextHelper(IFigure figure, String text) {
-		if(figure instanceof WrappingLabel) {
-			((WrappingLabel)figure).setText(text);
+		if (figure instanceof WrappingLabel) {
+			((WrappingLabel) figure).setText(text);
 			// [addition for bug 369305]
-			((WrappingLabel)figure).setTextWrap(true);
-		} else if(figure instanceof ILabelFigure) {
-			((ILabelFigure)figure).setText(text);
+			((WrappingLabel) figure).setTextWrap(true);
+		} else if (figure instanceof ILabelFigure) {
+			((ILabelFigure) figure).setText(text);
 		} else {
-			((Label)figure).setText(text);
+			((Label) figure).setText(text);
 		}
 	}
 
 	/**
 	 * The following code has been commented, since the custom class was not in use (CustomUMLEditPartFactory
 	 * returned generated TransitionGuardEditPart instead of this one) before adding setLabelTextHelper above.
-	 * 
-	 * 
+	 *
+	 *
 	 * public String getInformationFromTransition(Transition transition) {
 	 * String textToEdit = "";
-	 * 
+	 *
 	 * // Triggers
 	 * if(!transition.getTriggers().isEmpty()) {
 	 * boolean isFirstTrigger = true;
@@ -73,14 +72,14 @@ public class CustomTransitionGuardEditPart extends TransitionGuardEditPart {
 	 * textToEdit = textToEdit + ((CallEvent)e).getOperation().getName();
 	 * else
 	 * textToEdit = textToEdit + ((CallEvent)e).getName();
-	 * 
+	 *
 	 * } else if(e instanceof SignalEvent) {
 	 * if(((SignalEvent)e).getSignal() != null)
 	 * textToEdit = textToEdit + ((SignalEvent)e).getSignal().getName();
 	 * else
 	 * textToEdit = textToEdit + ((SignalEvent)e).getName();
 	 * } else if(e instanceof ChangeEvent) {
-	 * 
+	 *
 	 * textToEdit = textToEdit + "when " + "\"" + retrieveBody((OpaqueExpression)((ChangeEvent)e).getChangeExpression(), "Natural language") + "\"";
 	 * } else if(e instanceof TimeEvent) {
 	 * String absRelPrefix = "" + (((TimeEvent)e).isRelative() ? "after " : "at ");
@@ -90,13 +89,13 @@ public class CustomTransitionGuardEditPart extends TransitionGuardEditPart {
 	 * }
 	 * }
 	 * }
-	 * 
+	 *
 	 * // Guard
 	 * if(transition.getGuard() != null && transition.getGuard().getSpecification() != null) {
 	 * textToEdit = textToEdit + " [" + "\"" + retrieveBody((OpaqueExpression)transition.getGuard().getSpecification(), "Natural language") + "\"" +
 	 * "]";
 	 * }
-	 * 
+	 *
 	 * if(transition.getEffect() != null) {
 	 * textToEdit = textToEdit + " / ";
 	 * String behaviorKind = "";
@@ -105,28 +104,28 @@ public class CustomTransitionGuardEditPart extends TransitionGuardEditPart {
 	 * behaviorKind = behaviorKind + ((behaviorKind.equals("") && (transition.getEffect() instanceof OpaqueBehavior)) ? "OpaqueBehavior " : "");
 	 * textToEdit = textToEdit + behaviorKind + " " + transition.getEffect().getName();
 	 * }
-	 * 
+	 *
 	 * return textToEdit;
 	 * }
-	 * 
+	 *
 	 * @Override
 	 *           protected void handleNotificationEvent(Notification notification) {
 	 *           // TODO Auto-generated method stub
 	 *           super.handleNotificationEvent(notification);
-	 * 
-	 * 
+	 *
+	 *
 	 *           refreshVisuals();
 	 *           }
 	 * @Override
 	 *           protected void refreshVisuals() {
 	 *           // TODO Auto-generated method stub
 	 *           super.refreshVisuals();
-	 * 
+	 *
 	 *           WrappingLabel transitionGuardLabel = (WrappingLabel)getFigure();
 	 *           Transition transition = (Transition)((View)getModel()).getElement();
 	 *           transitionGuardLabel.setText(getInformationFromTransition(transition));
 	 *           }
-	 * 
+	 *
 	 *           private String retrieveBody(OpaqueExpression exp, String languageName) {
 	 *           String body = "";
 	 *           if(exp == null)

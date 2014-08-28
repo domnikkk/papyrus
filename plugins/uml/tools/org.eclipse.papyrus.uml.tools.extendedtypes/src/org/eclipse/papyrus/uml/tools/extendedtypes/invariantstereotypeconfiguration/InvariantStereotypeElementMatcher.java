@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,18 +24,18 @@ import org.eclipse.uml2.uml.Stereotype;
 public class InvariantStereotypeElementMatcher implements IInvariantElementMatcher<InvariantStereotypeConfiguration> {
 
 	private String stereotypeQualifiedName;
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	public boolean matches(EObject eObject) {
-		
-		if(!(eObject instanceof Element)) {
+
+		if (!(eObject instanceof Element)) {
 			return false;
 		}
-		
-		Stereotype appliedStereotype = ((Element)eObject).getAppliedStereotype(getStereotypeQualifiedName());
-		return appliedStereotype !=null;
+
+		Stereotype appliedStereotype = ((Element) eObject).getAppliedStereotype(getStereotypeQualifiedName());
+		return appliedStereotype != null;
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class InvariantStereotypeElementMatcher implements IInvariantElementMatch
 	public void init(InvariantStereotypeConfiguration ruleConfiguration) {
 		setStereotypeQualifiedName(ruleConfiguration.getStereotypeQualifiedName());
 	}
-	
+
 	/**
 	 * @return the stereotypeQualifiedName
 	 */
@@ -53,7 +53,8 @@ public class InvariantStereotypeElementMatcher implements IInvariantElementMatch
 	}
 
 	/**
-	 * @param stereotypeQualifiedName the stereotypeQualifiedName to set
+	 * @param stereotypeQualifiedName
+	 *            the stereotypeQualifiedName to set
 	 */
 	public void setStereotypeQualifiedName(String stereotypeQualifiedName) {
 		this.stereotypeQualifiedName = stereotypeQualifiedName;

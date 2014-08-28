@@ -23,10 +23,10 @@ public class TraceMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if(eObject instanceof Abstraction) {
+		if (eObject instanceof Abstraction) {
 
-			Abstraction element = (Abstraction)eObject;
-			if(UMLUtil.getStereotypeApplication(element, Trace.class) != null) {
+			Abstraction element = (Abstraction) eObject;
+			if (UMLUtil.getStereotypeApplication(element, Trace.class) != null) {
 				isMatch = true;
 			}
 		}

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -32,17 +32,17 @@ public class RadioEventGroup extends AbstractEventGroup {
 		Object host = manager.getHost();
 		IMetaclass metaclass = XWT.getMetaclass(host);
 
-		EventProperty reaisedEventProperty = (EventProperty)property;
+		EventProperty reaisedEventProperty = (EventProperty) property;
 		String raisedName = reaisedEventProperty.getEvent().getName();
-		for(String name : getEventNames()) {
-			if(name.equalsIgnoreCase(raisedName)) {
+		for (String name : getEventNames()) {
+			if (name.equalsIgnoreCase(raisedName)) {
 				continue;
 			}
 			String eventPropertyName = IEventConstants.getEventPropertyName(name);
 			IProperty eventProperty = metaclass.findProperty(eventPropertyName);
 
 			IObservableValue value = manager.getValue(eventProperty);
-			if(value != null) {
+			if (value != null) {
 				value.setValue(false);
 			}
 		}
@@ -51,15 +51,15 @@ public class RadioEventGroup extends AbstractEventGroup {
 	public void registerEvent(IObservableValueListener manager, IProperty property) {
 		Object host = manager.getHost();
 		IEventController controller = UserData.findEventController(host);
-		if(controller == null) {
+		if (controller == null) {
 			controller = UserData.updateEventController(host);
 		}
 		IMetaclass metaclass = XWT.getMetaclass(host);
 
-		EventProperty reaisedEventProperty = (EventProperty)property;
+		EventProperty reaisedEventProperty = (EventProperty) property;
 		String raisedName = reaisedEventProperty.getEvent().getName();
-		for(String name : getEventNames()) {
-			if(name.equalsIgnoreCase(raisedName)) {
+		for (String name : getEventNames()) {
+			if (name.equalsIgnoreCase(raisedName)) {
 				continue;
 			}
 			String eventPropertyName = IEventConstants.getEventPropertyName(name);

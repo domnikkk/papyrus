@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,12 +21,13 @@ import org.eclipse.emf.ecore.EPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.MeasurementUnitsFactory
  * @model kind="package"
  * @generated
@@ -36,6 +37,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "MeasurementUnits";
@@ -44,6 +46,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http:///MARTE_Library/MeasurementUnits.ecore";
@@ -52,6 +55,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "MARTE_Library.MeasurementUnits";
@@ -60,6 +64,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	MeasurementUnitsPackage eINSTANCE = org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl.init();
@@ -68,6 +73,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.TimeUnitKind <em>Time Unit Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.TimeUnitKind
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getTimeUnitKind()
 	 * @generated
@@ -78,6 +84,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.PowerUnitKind <em>Power Unit Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.PowerUnitKind
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getPowerUnitKind()
 	 * @generated
@@ -88,6 +95,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.FrequencyUnitKind <em>Frequency Unit Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.FrequencyUnitKind
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getFrequencyUnitKind()
 	 * @generated
@@ -98,6 +106,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.DataSizeUnitKind <em>Data Size Unit Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.DataSizeUnitKind
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getDataSizeUnitKind()
 	 * @generated
@@ -108,6 +117,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.DataTxRateUnitKind <em>Data Tx Rate Unit Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.DataTxRateUnitKind
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getDataTxRateUnitKind()
 	 * @generated
@@ -118,6 +128,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.EnergyUnitKind <em>Energy Unit Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.EnergyUnitKind
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getEnergyUnitKind()
 	 * @generated
@@ -128,6 +139,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.LengthUnitKind <em>Length Unit Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.LengthUnitKind
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getLengthUnitKind()
 	 * @generated
@@ -138,6 +150,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.AreaUnitKind <em>Area Unit Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.AreaUnitKind
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getAreaUnitKind()
 	 * @generated
@@ -148,6 +161,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.WeightUnitKind <em>Weight Unit Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.WeightUnitKind
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getWeightUnitKind()
 	 * @generated
@@ -159,6 +173,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.TimeUnitKind <em>Time Unit Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Time Unit Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.TimeUnitKind
 	 * @generated
@@ -169,6 +184,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.PowerUnitKind <em>Power Unit Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Power Unit Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.PowerUnitKind
 	 * @generated
@@ -179,6 +195,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.FrequencyUnitKind <em>Frequency Unit Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Frequency Unit Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.FrequencyUnitKind
 	 * @generated
@@ -189,6 +206,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.DataSizeUnitKind <em>Data Size Unit Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Data Size Unit Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.DataSizeUnitKind
 	 * @generated
@@ -199,6 +217,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.DataTxRateUnitKind <em>Data Tx Rate Unit Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Data Tx Rate Unit Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.DataTxRateUnitKind
 	 * @generated
@@ -209,6 +228,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.EnergyUnitKind <em>Energy Unit Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Energy Unit Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.EnergyUnitKind
 	 * @generated
@@ -219,6 +239,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.LengthUnitKind <em>Length Unit Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Length Unit Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.LengthUnitKind
 	 * @generated
@@ -229,6 +250,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.AreaUnitKind <em>Area Unit Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Area Unit Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.AreaUnitKind
 	 * @generated
@@ -239,6 +261,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.WeightUnitKind <em>Weight Unit Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Weight Unit Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.WeightUnitKind
 	 * @generated
@@ -249,6 +272,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -258,12 +282,13 @@ public interface MeasurementUnitsPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -271,6 +296,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.TimeUnitKind <em>Time Unit Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.TimeUnitKind
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getTimeUnitKind()
 		 * @generated
@@ -281,6 +307,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.PowerUnitKind <em>Power Unit Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.PowerUnitKind
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getPowerUnitKind()
 		 * @generated
@@ -291,6 +318,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.FrequencyUnitKind <em>Frequency Unit Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.FrequencyUnitKind
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getFrequencyUnitKind()
 		 * @generated
@@ -301,6 +329,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.DataSizeUnitKind <em>Data Size Unit Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.DataSizeUnitKind
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getDataSizeUnitKind()
 		 * @generated
@@ -311,6 +340,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.DataTxRateUnitKind <em>Data Tx Rate Unit Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.DataTxRateUnitKind
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getDataTxRateUnitKind()
 		 * @generated
@@ -321,6 +351,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.EnergyUnitKind <em>Energy Unit Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.EnergyUnitKind
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getEnergyUnitKind()
 		 * @generated
@@ -331,6 +362,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.LengthUnitKind <em>Length Unit Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.LengthUnitKind
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getLengthUnitKind()
 		 * @generated
@@ -341,6 +373,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.AreaUnitKind <em>Area Unit Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.AreaUnitKind
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getAreaUnitKind()
 		 * @generated
@@ -351,6 +384,7 @@ public interface MeasurementUnitsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.MeasurementUnits.WeightUnitKind <em>Weight Unit Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.WeightUnitKind
 		 * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.impl.MeasurementUnitsPackageImpl#getWeightUnitKind()
 		 * @generated
@@ -359,4 +393,4 @@ public interface MeasurementUnitsPackage extends EPackage {
 
 	}
 
-} //MeasurementUnitsPackage
+} // MeasurementUnitsPackage

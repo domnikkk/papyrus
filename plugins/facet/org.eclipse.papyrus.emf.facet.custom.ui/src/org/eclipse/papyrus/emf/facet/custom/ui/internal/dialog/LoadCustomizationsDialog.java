@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.emf.facet.custom.ui.internal.dialog;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -22,11 +21,6 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.papyrus.emf.facet.custom.ui.internal.Messages;
-import org.eclipse.papyrus.emf.facet.custom.ui.internal.exported.dialog.ILoadCustomizationsDialog;
-import org.eclipse.papyrus.emf.facet.custom.ui.internal.exported.exception.IllegalParameterException;
-import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallback;
-import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallbackWithPreCommit;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.DoubleClickEvent;
@@ -40,6 +34,11 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
+import org.eclipse.papyrus.emf.facet.custom.ui.internal.Messages;
+import org.eclipse.papyrus.emf.facet.custom.ui.internal.exported.dialog.ILoadCustomizationsDialog;
+import org.eclipse.papyrus.emf.facet.custom.ui.internal.exported.exception.IllegalParameterException;
+import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallback;
+import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallbackWithPreCommit;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -83,7 +82,7 @@ public class LoadCustomizationsDialog<D> extends Dialog implements
 		}
 
 		public Object[] getChildren(final Object parentElement) {
-			return new Object[]{};
+			return new Object[] {};
 		}
 
 		public Object getParent(final Object element) {
@@ -110,7 +109,7 @@ public class LoadCustomizationsDialog<D> extends Dialog implements
 	private final String lockMsg;
 
 	public LoadCustomizationsDialog(final Shell parent,
-			final List<Customization> availableCustomizations, 
+			final List<Customization> availableCustomizations,
 			final List<Customization> selectedCustoms,
 			final List<Customization> lockedCustoms,
 			final IDialogCallbackWithPreCommit<List<Customization>, Boolean, D> callback,
@@ -148,53 +147,53 @@ public class LoadCustomizationsDialog<D> extends Dialog implements
 				this.selectedCustomizations.add(lockedCustom);
 			}
 		}
-//TODO: Remove before to commit
-//		LoadCustomizationsDialog.this.availableCustomizationsTreeViewer
-//				.refresh();
-//		LoadCustomizationsDialog.this.selectedCustomizationsTreeViewer
-//				.refresh();
-//TODO(end):  Remove before to commit
+		// TODO: Remove before to commit
+		// LoadCustomizationsDialog.this.availableCustomizationsTreeViewer
+		// .refresh();
+		// LoadCustomizationsDialog.this.selectedCustomizationsTreeViewer
+		// .refresh();
+		// TODO(end): Remove before to commit
 	}
 
-	//TODO Remove before to commit
+	// TODO Remove before to commit
 	/** Keep only customizations that apply to the given metamodel */
 	/*
-	private List<Customization> filterForMetamodel(
-			final Collection<Customization> allCustomizations, final Collection<EPackage> ePackages) {
-		List<Customization> filteredCustomizations = new ArrayList<Customization>();
-
-		// show only Customizations corresponding to the current EPackages or
-		// referenced EPackages
-		final Set<EPackage> allReferencedPackages = new HashSet<EPackage>();
-
-		for (EPackage ePackage : ePackages) {
-			allReferencedPackages.add(ePackage);
-			final Set<EPackage> referencedPackages = ModelUtils.computeReferencedPackages(ePackage);
-			allReferencedPackages.addAll(referencedPackages);
-		}
-
-		for (Customization metamodelView : Customization) {
-			String nsURI = metamodelView.getMetamodelURI();
-			EPackage ePackage = EPackage.Registry.INSTANCE.getEPackage(nsURI);
-			while (ePackage != null) {
-				if (allReferencedPackages.contains(ePackage)) {
-					filteredCustomizations.add(metamodelView);
-					break;
-				}
-				// allow customizations on Facets
-				if (ePackage instanceof FacetSet) {
-					FacetSet facetSet = (FacetSet) ePackage;
-					ePackage = facetSet.getExtendedPackage();
-				} else {
-					// allow customizations on sub-packages
-					ePackage = ePackage.getESuperPackage();
-				}
-			}
-		}
-		return filteredCustomizations;
-	}
-	*/
-	//TODO (end) Remove before to commit
+	 * private List<Customization> filterForMetamodel(
+	 * final Collection<Customization> allCustomizations, final Collection<EPackage> ePackages) {
+	 * List<Customization> filteredCustomizations = new ArrayList<Customization>();
+	 *
+	 * // show only Customizations corresponding to the current EPackages or
+	 * // referenced EPackages
+	 * final Set<EPackage> allReferencedPackages = new HashSet<EPackage>();
+	 *
+	 * for (EPackage ePackage : ePackages) {
+	 * allReferencedPackages.add(ePackage);
+	 * final Set<EPackage> referencedPackages = ModelUtils.computeReferencedPackages(ePackage);
+	 * allReferencedPackages.addAll(referencedPackages);
+	 * }
+	 *
+	 * for (Customization metamodelView : Customization) {
+	 * String nsURI = metamodelView.getMetamodelURI();
+	 * EPackage ePackage = EPackage.Registry.INSTANCE.getEPackage(nsURI);
+	 * while (ePackage != null) {
+	 * if (allReferencedPackages.contains(ePackage)) {
+	 * filteredCustomizations.add(metamodelView);
+	 * break;
+	 * }
+	 * // allow customizations on Facets
+	 * if (ePackage instanceof FacetSet) {
+	 * FacetSet facetSet = (FacetSet) ePackage;
+	 * ePackage = facetSet.getExtendedPackage();
+	 * } else {
+	 * // allow customizations on sub-packages
+	 * ePackage = ePackage.getESuperPackage();
+	 * }
+	 * }
+	 * }
+	 * return filteredCustomizations;
+	 * }
+	 */
+	// TODO (end) Remove before to commit
 
 	@Override
 	protected void configureShell(final Shell shell) {
@@ -220,7 +219,7 @@ public class LoadCustomizationsDialog<D> extends Dialog implements
 		createLoadRequiredFacetsCheckbox(contents);
 
 		this.availableCustomizationsTreeViewer.addDoubleClickListener(new IDoubleClickListener() {
-			
+
 			public void doubleClick(final DoubleClickEvent event) {
 				loadSelectedCustoms();
 			}
@@ -372,7 +371,7 @@ public class LoadCustomizationsDialog<D> extends Dialog implements
 			dialog.open();
 		}
 		removeFromSelection(toBeRemoved);
-		refresh();	
+		refresh();
 	}
 
 	protected void removeFromSelection(final List<Customization> toBeRemoved) {
@@ -434,10 +433,10 @@ public class LoadCustomizationsDialog<D> extends Dialog implements
 
 		this.availableCustomizationsTreeViewer.setInput(this.availableCustoms);
 
-		//TODO Remove before to commit
-//		final TreeItem treeItem = new TreeItem(availableCustomizationsTree, SWT.NONE);
-//		treeItem.setText(Messages.LoadCustomizationsDialog_Loading);
-		//TODO (end) Remove before to commit
+		// TODO Remove before to commit
+		// final TreeItem treeItem = new TreeItem(availableCustomizationsTree, SWT.NONE);
+		// treeItem.setText(Messages.LoadCustomizationsDialog_Loading);
+		// TODO (end) Remove before to commit
 
 		patternText.addModifyListener(new ModifyListener() {
 			public void modifyText(final ModifyEvent event) {
@@ -641,7 +640,7 @@ public class LoadCustomizationsDialog<D> extends Dialog implements
 	public void selectSelectedCustom(final Customization customization) {
 		final ISelection selection = new StructuredSelection(customization);
 		this.selectedCustomizationsTreeViewer.setSelection(selection);
-		
+
 	}
 
 	public List<Customization> getLockedCustoms() {

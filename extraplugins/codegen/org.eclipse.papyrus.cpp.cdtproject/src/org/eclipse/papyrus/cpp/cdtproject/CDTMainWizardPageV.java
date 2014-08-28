@@ -7,11 +7,11 @@ import org.eclipse.cdt.ui.wizards.CDTMainWizardPage;
  * is required in the context of setting an initial project name, since the
  * update of the project name will trigger a validation which stops with an
  * exception, since some elements (notable tree) are not yet initialized.
- * 
+ *
  * Verify if future versions of CDT still require this "hack" {@link CDTMainWizardPage}
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class CDTMainWizardPageV extends CDTMainWizardPage {
 
@@ -22,7 +22,7 @@ public class CDTMainWizardPageV extends CDTMainWizardPage {
 
 	@Override
 	protected boolean validatePage() {
-		if(firstValidate) {
+		if (firstValidate) {
 			return true;
 		} else {
 			return super.validatePage();

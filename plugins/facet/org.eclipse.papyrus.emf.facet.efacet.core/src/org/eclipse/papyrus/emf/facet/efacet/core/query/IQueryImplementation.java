@@ -23,16 +23,15 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Q
 /**
  * Interface implemented by all EMF Facet query evaluators.
  * <p>
- * A query evaluator may choose to implement {@link IQueryCollectionImplementation} instead if it wants to improve the
- * performance of evaluation on collections of elements.
- * 
+ * A query evaluator may choose to implement {@link IQueryCollectionImplementation} instead if it wants to improve the performance of evaluation on collections of elements.
+ *
  * @since 0.2
  */
 public interface IQueryImplementation {
 
 	/**
 	 * This method must be implemented by each sub class to evaluate a query
-	 * 
+	 *
 	 * @param query
 	 *            The query to evaluate
 	 * @param feature
@@ -40,8 +39,7 @@ public interface IQueryImplementation {
 	 * @param source
 	 *            The model element on which the query is evaluated
 	 * @param parameterValues
-	 *            The derived typed element's query parameter values (in the case of a {@link FacetOperation}); can be
-	 *            <code>null</code>
+	 *            The derived typed element's query parameter values (in the case of a {@link FacetOperation}); can be <code>null</code>
 	 * @return the result, which can be either a single object or a collection of values depending on the multiplicity
 	 *         of the given derived typed element
 	 * @throws DerivedTypedElementException
@@ -54,7 +52,7 @@ public interface IQueryImplementation {
 	/**
 	 * This method must be implemented by each sub class that allows to set the value of a derivedTypedElement using a
 	 * query
-	 * 
+	 *
 	 * @param query
 	 *            The query that sets the value
 	 * @param feature
@@ -75,9 +73,8 @@ public interface IQueryImplementation {
 	/**
 	 * Return whether to check the type of the query result after its evaluation
 	 * <p>
-	 * Normally, this is <code>true</code>, but the query evaluator can choose to skip the check, for example if the
-	 * return type of the query can't be loaded.
-	 * 
+	 * Normally, this is <code>true</code>, but the query evaluator can choose to skip the check, for example if the return type of the query can't be loaded.
+	 *
 	 * @return whether to check the type of the query result after its evaluation
 	 */
 	boolean isCheckResultType();

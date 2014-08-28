@@ -26,6 +26,7 @@ import org.eclipse.papyrus.infra.core.listenerservice.IPapyrusListener;
 import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
 import org.eclipse.papyrus.infra.gmfdiag.common.commands.CreateShapeCompartmentViewCommand;
 import org.eclipse.papyrus.infra.gmfdiag.common.commands.SetNodeVisibilityCommand;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IShapeCompartmentEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.service.shape.NotificationManager;
 import org.eclipse.papyrus.infra.gmfdiag.common.service.shape.ShapeService;
@@ -53,7 +54,7 @@ public class ShapeCompartmentEditPolicy extends GraphicalEditPolicy implements N
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -61,7 +62,7 @@ public class ShapeCompartmentEditPolicy extends GraphicalEditPolicy implements N
 		super.activate();
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
 		notificationManager = ShapeService.getInstance().createNotificationManager(getDiagramEventBroker(), view, this);
@@ -70,14 +71,14 @@ public class ShapeCompartmentEditPolicy extends GraphicalEditPolicy implements N
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	public void deactivate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
 		notificationManager.dispose();
@@ -87,18 +88,18 @@ public class ShapeCompartmentEditPolicy extends GraphicalEditPolicy implements N
 
 	/**
 	 * Returns the view controlled by the host edit part
-	 * 
+	 *
 	 * @return the view controlled by the host edit part
 	 */
 	protected View getView() {
-		return (View)getHost().getModel();
+		return (View) getHost().getModel();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public void refreshDisplay() {
-		final IGraphicalEditPart editPart = (IGraphicalEditPart)getHost();
+		final IGraphicalEditPart editPart = (IGraphicalEditPart) getHost();
 		editPart.refresh();
 	}
 
@@ -108,19 +109,19 @@ public class ShapeCompartmentEditPolicy extends GraphicalEditPolicy implements N
 
 	/**
 	 * the goal of this method is to execute the a command to create a notation node for a compartment of stereotype
-	 * 
+	 *
 	 * @param editPart
-	 *        the editpart owner of the new compartment
+	 *            the editpart owner of the new compartment
 	 * @param appliedstereotype
-	 *        the stereotype application
+	 *            the stereotype application
 	 */
 	protected void executeShapeCompartmentCreation(final IGraphicalEditPart editPart) {
 		try {
-			//boolean isVisible = hasToDisplayCompartment(editPart.getNotationView());
+			// boolean isVisible = hasToDisplayCompartment(editPart.getNotationView());
 			TransactionalEditingDomain domain = getEditingDomain(editPart);
 			CreateShapeCompartmentViewCommand command = new CreateShapeCompartmentViewCommand(domain, "Create Compartment", "Command that creates the compartment displaying shapes", editPart.getNotationView(), /* isVisible */false);
 			try {
-				//This should not change the command stack, as this transaction will only manipulate transient views. Create a transaction manually, if needed
+				// This should not change the command stack, as this transaction will only manipulate transient views. Create a transaction manually, if needed
 				GMFUnsafe.write(domain, command);
 			} catch (Exception e) {
 				Activator.log.error(e);
@@ -132,9 +133,9 @@ public class ShapeCompartmentEditPolicy extends GraphicalEditPolicy implements N
 
 	/**
 	 * Returns the editing domain for the given edit Part
-	 * 
+	 *
 	 * @param editPart
-	 *        the edit part from which editing domain is searched
+	 *            the edit part from which editing domain is searched
 	 * @return the editing domain
 	 */
 	protected TransactionalEditingDomain getEditingDomain(IGraphicalEditPart editPart) {
@@ -143,52 +144,53 @@ public class ShapeCompartmentEditPolicy extends GraphicalEditPolicy implements N
 
 	/**
 	 * Gets the diagram event broker from the editing domain.
-	 * 
+	 *
 	 * @return the diagram event broker
 	 */
 	protected DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
-		if(theEditingDomain != null) {
+		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		if (theEditingDomain != null) {
 			return DiagramEventBroker.getInstance(theEditingDomain);
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritedDoc}
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 		refreshDisplay();
 	}
 
 	/**
 	 * this method creates a node for the compartment of stereotype if it does not exist.
-	 * 
+	 *
 	 * @param stereotypeApplication
-	 *        the stereotype application
+	 *            the stereotype application
 	 */
 	public void createShapeCompartment() {
-		final IGraphicalEditPart editPart = (IGraphicalEditPart)getHost();
+		final IGraphicalEditPart editPart = (IGraphicalEditPart) getHost();
 		final View node = editPart.getNotationView();
 		// Look for the node for the shape compartment
 		View shapeCompartment = getShapeCompartmentView(node);
-		//it does not exist
-		if(shapeCompartment == null) {
+		// it does not exist
+		if (shapeCompartment == null) {
 			executeShapeCompartmentCreation(editPart);
 		}
 	}
 
 	/**
 	 * Returns the view corresponding to the shape compartment
-	 * 
+	 *
 	 * @param node
 	 * @return
 	 */
 	private View getShapeCompartmentView(View node) {
-		for(Object child : node.getChildren()) {
-			if(child instanceof View && IShapeCompartmentEditPart.VIEW_TYPE.equals(((View)child).getType())) {
-				return (View)child;
+		for (Object child : node.getChildren()) {
+			if (child instanceof View && IShapeCompartmentEditPart.VIEW_TYPE.equals(((View) child).getType())) {
+				return (View) child;
 			}
 		}
 		return null;
@@ -196,19 +198,20 @@ public class ShapeCompartmentEditPolicy extends GraphicalEditPolicy implements N
 
 	/**
 	 * the goal of this method is to execute the a command to create a notation node for a compartment of stereotype
-	 * 
+	 *
 	 * @param editPart
-	 *        the editpart owner of the new compartment
+	 *            the editpart owner of the new compartment
 	 * @param appliedstereotype
-	 *        the stereotype application
+	 *            the stereotype application
 	 */
 	protected void setVisibility(final View view, final boolean isVisible) {
-		final GraphicalEditPart editPart = (GraphicalEditPart)getHost();
+		final GraphicalEditPart editPart = (GraphicalEditPart) getHost();
 		Display.getCurrent().asyncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				SetNodeVisibilityCommand setCommand = new SetNodeVisibilityCommand(editPart.getEditingDomain(), view, isVisible);
-				//use to avoid to put it in the command stack
+				// use to avoid to put it in the command stack
 				try {
 					GMFUnsafe.write(editPart.getEditingDomain(), setCommand);
 				} catch (Exception e) {

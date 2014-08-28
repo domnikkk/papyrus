@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2011 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Nicolas Guyomar (Mia-Software) - Bug 349546 - EMF Facet facetSet editor
  *  Gregoire Dupe (Mia-Software) - Bug 373248 - Clean PMD errors
@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.SelectETypeWizardImpl;
-import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -30,9 +30,9 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 @SuppressWarnings("PMD.ConstructorCallsOverridableMethod")
-//@SuppressWarnings("PMD.ConstructorCallsOverridableMethod") Temporary: this class must be deeply refactored.
-//TODO remove the @SuppressWarnings("PMD.ConstructorCallsOverridableMethod")
-//cf. bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=373248
+// @SuppressWarnings("PMD.ConstructorCallsOverridableMethod") Temporary: this class must be deeply refactored.
+// TODO remove the @SuppressWarnings("PMD.ConstructorCallsOverridableMethod")
+// cf. bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=373248
 public class SelectETypeComposite extends Composite {
 
 	private static final int NUMBER_COLUMN = 3;

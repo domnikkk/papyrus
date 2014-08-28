@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -33,9 +33,10 @@ public class CustomPseudostateExitPointCreateCommand extends PseudostateExitPoin
 
 	@Override
 	public boolean canExecute() {
-		State owner = (State)getElementToEdit();
-		if(owner.getRegions().isEmpty())
+		State owner = (State) getElementToEdit();
+		if (owner.getRegions().isEmpty()) {
 			return false;
+		}
 		return true;
 	}
 
@@ -43,13 +44,13 @@ public class CustomPseudostateExitPointCreateCommand extends PseudostateExitPoin
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Pseudostate newElement = UMLFactory.eINSTANCE.createPseudostate();
 
-		State owner = (State)getElementToEdit();
+		State owner = (State) getElementToEdit();
 		owner.getConnectionPoints().add(newElement);
 		ElementInitializers.getInstance().init_Pseudostate_17000(newElement);
 
 		doConfigure(newElement, monitor, info);
 
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 }

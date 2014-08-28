@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,7 +54,7 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler impl
 
 	/**
 	 * Queries whether I interact with the user to confirm making resources writable. I am interactive by default.
-	 * 
+	 *
 	 * @return whether I am interactive
 	 */
 	public boolean isInteractive() {
@@ -63,9 +63,9 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler impl
 
 	/**
 	 * Sets whether I interact with the user to confirm making resources writable.
-	 * 
+	 *
 	 * @param interactive
-	 *        whether I am interactive
+	 *            whether I am interactive
 	 */
 	public void setInteractive(boolean interactive) {
 		this.interactive = interactive;
@@ -74,16 +74,16 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler impl
 	public Optional<Boolean> anyReadOnly(Set<ReadOnlyAxis> axes, URI[] uris) {
 		Optional<Boolean> result = Optional.absent();
 
-		if(axes.contains(ReadOnlyAxis.DISCRETION)) {
+		if (axes.contains(ReadOnlyAxis.DISCRETION)) {
 			final URIConverter converter = getEditingDomain().getResourceSet().getURIConverter();
 
-			for(int i = 0; i < uris.length; i++) {
+			for (int i = 0; i < uris.length; i++) {
 				// Clients may pass object URIs (including fragments), so trim to a resource URI because we operate on the resource level
 				URI next = uris[i].trimFragment();
 
 				// If the resource doesn't exist, then it can't be opened in some other editor, so
 				// we needn't be concerned about editing it in the context of a referencing model
-				if(!writableReferencedModels.contains(next.trimFileExtension()) && isNotModelSetMainModel(next) && converter.exists(next, null)) {
+				if (!writableReferencedModels.contains(next.trimFileExtension()) && isNotModelSetMainModel(next) && converter.exists(next, null)) {
 					result = Optional.of(true);
 					break;
 				}
@@ -97,12 +97,12 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler impl
 	public Optional<Boolean> canMakeWritable(Set<ReadOnlyAxis> axes, URI[] uris) {
 		Optional<Boolean> result = Optional.absent();
 
-		if(axes.contains(ReadOnlyAxis.DISCRETION)) {
-			for(int i = 0; i < uris.length; i++) {
+		if (axes.contains(ReadOnlyAxis.DISCRETION)) {
+			for (int i = 0; i < uris.length; i++) {
 				// Clients may pass object URIs (including fragments), so trim to a resource URI because we operate on the resource level
 				URI next = uris[i].trimFragment();
 
-				if(isNotModelSetMainModel(next)) {
+				if (isNotModelSetMainModel(next)) {
 					result = Optional.of(true);
 				} else {
 					// If it's not something I handle, then bomb
@@ -118,35 +118,35 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler impl
 	public Optional<Boolean> makeWritable(Set<ReadOnlyAxis> axes, URI[] uris) {
 		Optional<Boolean> result = Optional.absent();
 
-		if(axes.contains(ReadOnlyAxis.DISCRETION)) {
+		if (axes.contains(ReadOnlyAxis.DISCRETION)) {
 			final List<URI> toMakeWritable = new ArrayList<URI>(uris.length);
 
-			for(int i = 0; i < uris.length; i++) {
+			for (int i = 0; i < uris.length; i++) {
 				// Clients may pass object URIs (including fragments), so trim to a resource URI because we operate on the resource level
 				URI next = uris[i].trimFragment();
 
-				if(isNotModelSetMainModel(next)) {
+				if (isNotModelSetMainModel(next)) {
 					toMakeWritable.add(next);
 				}
 			}
 
-			if(!toMakeWritable.isEmpty()) {
+			if (!toMakeWritable.isEmpty()) {
 				final boolean[] enableWrite = { !isInteractive() };
 
-				if(isInteractive()) {
+				if (isInteractive()) {
 					Display currentDisplay = Display.getCurrent();
-					if(currentDisplay == null) {
+					if (currentDisplay == null) {
 						currentDisplay = Display.getDefault();
 					}
 					currentDisplay.syncExec(new Runnable() {
 
 						public void run() {
 							StringBuilder message = new StringBuilder(Messages.ReferencedModelReadOnlyHandler_promptMsg);
-							for(URI uri : toMakeWritable) {
+							for (URI uri : toMakeWritable) {
 								String path;
-								if(uri.isPlatformResource()) {
+								if (uri.isPlatformResource()) {
 									path = uri.toPlatformString(true);
-								} else if(uri.isFile()) {
+								} else if (uri.isFile()) {
 									path = uri.toFileString();
 								} else {
 									path = uri.toString();
@@ -160,8 +160,8 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler impl
 					});
 				}
 
-				if(enableWrite[0]) {
-					for(URI next : toMakeWritable) {
+				if (enableWrite[0]) {
+					for (URI next : toMakeWritable) {
 						writableReferencedModels.add(next.trimFileExtension());
 						fireReadOnlyStateChanged(ReadOnlyAxis.DISCRETION, next, true);
 					}
@@ -179,8 +179,8 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler impl
 		boolean result = false;
 
 		ResourceSet rset = getEditingDomain().getResourceSet();
-		if(rset instanceof ModelSet) {
-			ModelSet modelSet = (ModelSet)rset;
+		if (rset instanceof ModelSet) {
+			ModelSet modelSet = (ModelSet) rset;
 			uri = resolveRootResourceURI(modelSet, uri);
 
 			result = modelSet.isUserModelResource(uri) && !Objects.equal(modelSet.getURIWithoutExtension(), uri.trimFileExtension());
@@ -191,12 +191,12 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler impl
 
 	/**
 	 * Trace a potential controlled unit's root resource.
-	 * 
+	 *
 	 * @param modelSet
-	 *        the contextual model-set
+	 *            the contextual model-set
 	 * @param uri
-	 *        a resource URI
-	 * 
+	 *            a resource URI
+	 *
 	 * @return the corresponding root resource URI, which is just the original {@code uri} if either it isn't a controlled unit or we cannot tell
 	 */
 	protected URI resolveRootResourceURI(ModelSet modelSet, URI uri) {
@@ -209,6 +209,6 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler impl
 
 	@SuppressWarnings("unchecked")
 	public void restore(Object reloadContext) {
-		writableReferencedModels.addAll((Set<URI>)reloadContext);
+		writableReferencedModels.addAll((Set<URI>) reloadContext);
 	}
 }

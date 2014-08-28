@@ -1,14 +1,14 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Nicolas Guyomar (Mia-Software) - Bug 334615 - Java Query for EMF Facet
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.query.java.javaquery.impl;
 
@@ -29,7 +29,7 @@ import org.eclipse.papyrus.emf.facet.query.java.javaquery.JavaqueryPackage;
  * <li>{@link org.eclipse.papyrus.emf.facet.query.java.javaquery.impl.JavaQueryImpl#getImplementationClassName <em>Implementation Class Name</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  * @deprecated cf. https://bugs.eclipse.org/bugs/show_bug.cgi?id=374198
  */
@@ -39,6 +39,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	 * The default value of the '{@link #getImplementationClassName() <em>Implementation Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getImplementationClassName()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	 * The cached value of the '{@link #getImplementationClassName() <em>Implementation Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getImplementationClassName()
 	 * @generated
 	 * @ordered
@@ -58,6 +60,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JavaQueryImpl() {
@@ -67,6 +70,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,6 +81,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getImplementationClassName() {
@@ -86,6 +91,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setImplementationClassName(final String newImplementationClassName) {
@@ -99,13 +105,14 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
-			case JavaqueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
-				return getImplementationClassName();
+		case JavaqueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
+			return getImplementationClassName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,14 +120,15 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
-			case JavaqueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
-				setImplementationClassName((String)newValue);
-				return;
+		case JavaqueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
+			setImplementationClassName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -128,14 +136,15 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(final int featureID) {
 		switch (featureID) {
-			case JavaqueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
-				setImplementationClassName(JavaQueryImpl.IMPLEMENTATION_CLASS_NAME_EDEFAULT);
-				return;
+		case JavaqueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
+			setImplementationClassName(JavaQueryImpl.IMPLEMENTATION_CLASS_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,13 +152,14 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
-			case JavaqueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
-				return JavaQueryImpl.IMPLEMENTATION_CLASS_NAME_EDEFAULT == null ? this.implementationClassName != null : !JavaQueryImpl.IMPLEMENTATION_CLASS_NAME_EDEFAULT.equals(this.implementationClassName);
+		case JavaqueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
+			return JavaQueryImpl.IMPLEMENTATION_CLASS_NAME_EDEFAULT == null ? this.implementationClassName != null : !JavaQueryImpl.IMPLEMENTATION_CLASS_NAME_EDEFAULT.equals(this.implementationClassName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -157,6 +167,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,4 +183,4 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 		return result.toString();
 	}
 
-} //JavaQueryImpl
+} // JavaQueryImpl

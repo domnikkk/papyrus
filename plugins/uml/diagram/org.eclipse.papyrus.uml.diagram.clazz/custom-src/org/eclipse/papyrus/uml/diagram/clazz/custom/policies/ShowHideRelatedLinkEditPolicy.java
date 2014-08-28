@@ -27,7 +27,7 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.AbstractUMLShowHideRe
 public class ShowHideRelatedLinkEditPolicy extends AbstractUMLShowHideRelatedLinkEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param host
@@ -47,7 +47,7 @@ public class ShowHideRelatedLinkEditPolicy extends AbstractUMLShowHideRelatedLin
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IDiagramInformationProviderEditPolicy#getDiagramStructure()
 	 *
 	 * @return

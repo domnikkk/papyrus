@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,17 +35,17 @@ import org.eclipse.ui.navigator.CommonNavigator;
 
 /**
  * A Handler to toggle the Advanced/Simple UML ModelExplorer customization
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ToggleAdvancedModelExplorerHandler extends AbstractHandler {
 
 	/**
 	 * The SimpleUML customization ID
 	 */
-	//The filename of SimpleUML.uiCustom, without extension 
-	public static final String SIMPLE_UML_CUSTOMIZATION = "SimpleUML"; //$NON-NLS-1$ 
+	// The filename of SimpleUML.uiCustom, without extension
+	public static final String SIMPLE_UML_CUSTOMIZATION = "SimpleUML"; //$NON-NLS-1$
 
 	@Override
 	public void setEnabled(Object evaluationContext) {
@@ -55,45 +55,45 @@ public class ToggleAdvancedModelExplorerHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
 		ICustomizationManager customizationManager = Activator.getDefault().getCustomizationManager();
-		if(customizationManager != null) {
-			if(event.getTrigger() instanceof Event) {
-				if(((Event)event.getTrigger()).widget instanceof ToolItem) {
-					ToolItem item = (ToolItem)((Event)event.getTrigger()).widget;
+		if (customizationManager != null) {
+			if (event.getTrigger() instanceof Event) {
+				if (((Event) event.getTrigger()).widget instanceof ToolItem) {
+					ToolItem item = (ToolItem) ((Event) event.getTrigger()).widget;
 					ICustomizationCatalogManager customCatalog = ICustomizationCatalogManagerFactory.DEFAULT.getOrCreateCustomizationCatalogManager(customizationManager.getResourceSet());
 					Customization simpleUMLCustomization = null;
 
-					//look for SIMPLE UML Customization
-					for(Customization customization : customCatalog.getRegisteredCustomizations()) {
-						if(SIMPLE_UML_CUSTOMIZATION.equals(customization.getName())){
-							simpleUMLCustomization=	customization;
+					// look for SIMPLE UML Customization
+					for (Customization customization : customCatalog.getRegisteredCustomizations()) {
+						if (SIMPLE_UML_CUSTOMIZATION.equals(customization.getName())) {
+							simpleUMLCustomization = customization;
 						}
 					}
 
-					if(simpleUMLCustomization != null) {
-						if(item.getSelection()) {
+					if (simpleUMLCustomization != null) {
+						if (item.getSelection()) {
 
-							//Advanced view
+							// Advanced view
 							List<Customization> registeredCustomizations = new LinkedList<Customization>(customizationManager.getManagedCustomizations());
-							if(registeredCustomizations.remove(simpleUMLCustomization)) {
+							if (registeredCustomizations.remove(simpleUMLCustomization)) {
 								customizationManager.getManagedCustomizations().clear();
-								for(Customization customization : registeredCustomizations) {
+								for (Customization customization : registeredCustomizations) {
 									customizationManager.getManagedCustomizations().add(customization);
 								}
 							} else {
-								//No change
+								// No change
 								return null;
 							}
 
 						} else {
-							//Simple view
-							if(customizationManager.getManagedCustomizations().contains(simpleUMLCustomization)) {
-								return null; //No change
+							// Simple view
+							if (customizationManager.getManagedCustomizations().contains(simpleUMLCustomization)) {
+								return null; // No change
 							}
 
-							customizationManager.getManagedCustomizations().add(0,simpleUMLCustomization);
+							customizationManager.getManagedCustomizations().add(0, simpleUMLCustomization);
 						}
 
-						//Save the current state of the customizations
+						// Save the current state of the customizations
 						org.eclipse.papyrus.infra.emf.Activator.getDefault().saveCustomizationManagerState();
 					}
 				}
@@ -102,10 +102,10 @@ public class ToggleAdvancedModelExplorerHandler extends AbstractHandler {
 		}
 
 		IWorkbenchPart activePart = HandlerUtil.getActivePart(event);
-		if(activePart instanceof ModelExplorerPageBookView) {
-			IViewPart page = ((ModelExplorerPageBookView)activePart).getActiveView();
-			if(page instanceof CommonNavigator) {
-				((CommonNavigator)page).getCommonViewer().refresh();
+		if (activePart instanceof ModelExplorerPageBookView) {
+			IViewPart page = ((ModelExplorerPageBookView) activePart).getActiveView();
+			if (page instanceof CommonNavigator) {
+				((CommonNavigator) page).getCommonViewer().refresh();
 			}
 		}
 

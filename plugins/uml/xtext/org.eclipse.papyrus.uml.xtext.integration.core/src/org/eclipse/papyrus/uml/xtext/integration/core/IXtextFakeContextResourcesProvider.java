@@ -1,16 +1,16 @@
 /*****************************************************************************
-* Copyright (c) 2010 CEA LIST.
-*
-* 
+ * Copyright (c) 2010 CEA LIST.
+ *
+ *
  * All rights reserved. This program and the accompanying materials
-* are made available under the terms of the Eclipse Public License v1.0
-* which accompanies this distribution, and is available at
-* http://www.eclipse.org/legal/epl-v10.html
-*
-* Contributors:
-*  Itemis - Initial API and implementation
-*
-*****************************************************************************/ 
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Itemis - Initial API and implementation
+ *
+ *****************************************************************************/
 
 package org.eclipse.papyrus.uml.xtext.integration.core;
 
@@ -18,9 +18,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.resource.XtextResource;
 
 /**
- * 
+ *
  * @author alexander.nyssen@itemis.de
- * 
+ *
  */
 public interface IXtextFakeContextResourcesProvider {
 
@@ -37,7 +37,7 @@ public interface IXtextFakeContextResourcesProvider {
 	 * fake resource will not be contained in the fake resource set, because
 	 * that may cause problems when working with the resource set (as the fake
 	 * resource does actually not exist in the file system).
-	 * 
+	 *
 	 * @param fakeResourceSet
 	 *            the {@link ResourceSet} to populate
 	 * @param fakeResource

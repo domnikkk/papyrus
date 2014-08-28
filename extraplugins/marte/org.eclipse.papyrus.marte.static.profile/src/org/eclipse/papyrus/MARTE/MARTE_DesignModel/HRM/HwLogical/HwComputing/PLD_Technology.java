@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>PLD Technology</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getPLD_Technology()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum PLD_Technology implements Enumerator {
 	 * The '<em><b>SRAM</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #SRAM_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum PLD_Technology implements Enumerator {
 	 * The '<em><b>Antifuse</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #ANTIFUSE_VALUE
 	 * @generated
 	 * @ordered
@@ -53,6 +56,7 @@ public enum PLD_Technology implements Enumerator {
 	 * The '<em><b>Flash</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #FLASH_VALUE
 	 * @generated
 	 * @ordered
@@ -63,6 +67,7 @@ public enum PLD_Technology implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -73,6 +78,7 @@ public enum PLD_Technology implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #UNDEF_VALUE
 	 * @generated
 	 * @ordered
@@ -83,10 +89,10 @@ public enum PLD_Technology implements Enumerator {
 	 * The '<em><b>SRAM</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>SRAM</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>SRAM</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #SRAM
 	 * @model
 	 * @generated
@@ -98,10 +104,10 @@ public enum PLD_Technology implements Enumerator {
 	 * The '<em><b>Antifuse</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Antifuse</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Antifuse</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #ANTIFUSE
 	 * @model name="antifuse"
 	 * @generated
@@ -113,10 +119,10 @@ public enum PLD_Technology implements Enumerator {
 	 * The '<em><b>Flash</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Flash</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Flash</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #FLASH
 	 * @model name="flash"
 	 * @generated
@@ -128,10 +134,10 @@ public enum PLD_Technology implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #OTHER
 	 * @model name="other"
 	 * @generated
@@ -143,10 +149,10 @@ public enum PLD_Technology implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #UNDEF
 	 * @model name="undef"
 	 * @generated
@@ -158,21 +164,23 @@ public enum PLD_Technology implements Enumerator {
 	 * An array of all the '<em><b>PLD Technology</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static final PLD_Technology[] VALUES_ARRAY =
-		new PLD_Technology[] {
-			SRAM,
-			ANTIFUSE,
-			FLASH,
-			OTHER,
-			UNDEF,
-		};
+			new PLD_Technology[] {
+					SRAM,
+					ANTIFUSE,
+					FLASH,
+					OTHER,
+					UNDEF,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>PLD Technology</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final List<PLD_Technology> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -181,6 +189,7 @@ public enum PLD_Technology implements Enumerator {
 	 * Returns the '<em><b>PLD Technology</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static PLD_Technology get(String literal) {
@@ -197,6 +206,7 @@ public enum PLD_Technology implements Enumerator {
 	 * Returns the '<em><b>PLD Technology</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static PLD_Technology getByName(String name) {
@@ -213,15 +223,21 @@ public enum PLD_Technology implements Enumerator {
 	 * Returns the '<em><b>PLD Technology</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static PLD_Technology get(int value) {
 		switch (value) {
-			case SRAM_VALUE: return SRAM;
-			case ANTIFUSE_VALUE: return ANTIFUSE;
-			case FLASH_VALUE: return FLASH;
-			case OTHER_VALUE: return OTHER;
-			case UNDEF_VALUE: return UNDEF;
+		case SRAM_VALUE:
+			return SRAM;
+		case ANTIFUSE_VALUE:
+			return ANTIFUSE;
+		case FLASH_VALUE:
+			return FLASH;
+		case OTHER_VALUE:
+			return OTHER;
+		case UNDEF_VALUE:
+			return UNDEF;
 		}
 		return null;
 	}
@@ -229,6 +245,7 @@ public enum PLD_Technology implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -236,6 +253,7 @@ public enum PLD_Technology implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -243,6 +261,7 @@ public enum PLD_Technology implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -251,6 +270,7 @@ public enum PLD_Technology implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private PLD_Technology(int value, String name, String literal) {
@@ -262,39 +282,46 @@ public enum PLD_Technology implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //PLD_Technology
+
+} // PLD_Technology

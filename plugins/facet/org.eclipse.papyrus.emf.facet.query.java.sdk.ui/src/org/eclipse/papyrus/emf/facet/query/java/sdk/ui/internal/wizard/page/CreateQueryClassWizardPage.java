@@ -19,6 +19,13 @@ import java.util.List;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jdt.core.ICompilationUnit;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IPackageFragment;
+import org.eclipse.jdt.core.IPackageFragmentRoot;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
 import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.IQueryContext;
 import org.eclipse.papyrus.emf.facet.query.java.core.IJavaQuery2;
@@ -28,13 +35,6 @@ import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.wizard.JavaQuery
 import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.wizard.JdtUtils;
 import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.papyrus.emf.facet.util.core.internal.exported.StringUtils;
-import org.eclipse.jdt.core.ICompilationUnit;
-import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.IPackageFragment;
-import org.eclipse.jdt.core.IPackageFragmentRoot;
-import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jface.dialogs.MessageDialog;
 
 // Copied from org.eclipse.papyrus.emf.facet.query.java.ui.internal.wizard.page.NewQueryClassWizardPage
 public class CreateQueryClassWizardPage extends NewClassWizardPage {

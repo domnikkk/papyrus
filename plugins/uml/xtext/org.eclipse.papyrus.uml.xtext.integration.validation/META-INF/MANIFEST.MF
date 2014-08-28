@@ -4,13 +4,13 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.9.0",
  org.eclipse.emf.ecore;bundle-version="2.9.0",
  org.eclipse.emf.validation;bundle-version="1.7.0",
  org.eclipse.uml2.uml;bundle-version="4.1.0",
- org.eclipse.papyrus.uml.xtext.integration.ui;bundle-version="1.0.0",
+ org.eclipse.papyrus.uml.xtext.integration.ui;bundle-version="1.0.1",
  org.eclipse.xtext;bundle-version="2.5.1",
  org.eclipse.jface;bundle-version="3.10.0",
  org.eclipse.ui;bundle-version="3.106.0"
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-Name: GMF Xtext Integration Validation
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.uml.xtext.integration.validat

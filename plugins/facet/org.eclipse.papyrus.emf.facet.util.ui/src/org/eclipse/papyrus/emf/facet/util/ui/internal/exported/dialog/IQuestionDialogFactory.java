@@ -20,7 +20,7 @@ public interface IQuestionDialogFactory {
 
 	/**
 	 * Instantiates a question dialog (without opening it)
-	 * 
+	 *
 	 * @param parent
 	 *            the parent shell for the new dialog
 	 * @param title
@@ -31,10 +31,10 @@ public interface IQuestionDialogFactory {
 	 */
 	@Deprecated
 	IQuestionDialog createQuestionDialog(Shell parent, String title, String message);
-	
+
 	/**
 	 * Instantiates a question dialog (without opening it)
-	 * 
+	 *
 	 * @param parent
 	 *            the parent shell for the new dialog
 	 * @param title

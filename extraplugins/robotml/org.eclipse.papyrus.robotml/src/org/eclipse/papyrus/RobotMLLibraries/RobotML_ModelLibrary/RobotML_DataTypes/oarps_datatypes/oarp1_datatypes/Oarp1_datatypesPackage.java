@@ -12,13 +12,14 @@ import org.eclipse.emf.ecore.EReference;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each operation of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.Oarp1_datatypesFactory
  * @model kind="package"
  * @generated
@@ -28,6 +29,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "oarp1_datatypes";
@@ -36,6 +38,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/oarps_datatypes/oarp1_datatypes.ecore";
@@ -44,6 +47,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes";
@@ -52,6 +56,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	Oarp1_datatypesPackage eINSTANCE = org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl.init();
@@ -60,6 +65,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.CarLikeCommandImpl <em>Car Like Command</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.CarLikeCommandImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl#getCarLikeCommand()
 	 * @generated
@@ -70,6 +76,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Velocity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -79,6 +86,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Steering Angle</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -88,6 +96,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Car Like Command</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,6 +106,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Car Like Command</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -106,6 +116,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.MultiLayerLidarScanImpl <em>Multi Layer Lidar Scan</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.MultiLayerLidarScanImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl#getMultiLayerLidarScan()
 	 * @generated
@@ -116,6 +127,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Layers</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -125,6 +137,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Nb Layer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -134,6 +147,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Multi Layer Lidar Scan</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -143,6 +157,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Multi Layer Lidar Scan</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -152,6 +167,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.ExtentedLidarScanImpl <em>Extented Lidar Scan</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.ExtentedLidarScanImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl#getExtentedLidarScan()
 	 * @generated
@@ -162,6 +178,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Scan</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -171,6 +188,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -180,6 +198,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Angle</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -189,6 +208,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Extented Lidar Scan</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -198,6 +218,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Extented Lidar Scan</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -208,6 +229,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeCommand <em>Car Like Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Car Like Command</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeCommand
 	 * @generated
@@ -218,6 +240,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeCommand#getVelocity <em>Velocity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Velocity</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeCommand#getVelocity()
 	 * @see #getCarLikeCommand()
@@ -229,6 +252,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeCommand#getSteeringAngle <em>Steering Angle</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Steering Angle</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeCommand#getSteeringAngle()
 	 * @see #getCarLikeCommand()
@@ -240,6 +264,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.MultiLayerLidarScan <em>Multi Layer Lidar Scan</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Multi Layer Lidar Scan</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.MultiLayerLidarScan
 	 * @generated
@@ -250,6 +275,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.MultiLayerLidarScan#getLayers <em>Layers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference '<em>Layers</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.MultiLayerLidarScan#getLayers()
 	 * @see #getMultiLayerLidarScan()
@@ -261,6 +287,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.MultiLayerLidarScan#getNbLayer <em>Nb Layer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Nb Layer</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.MultiLayerLidarScan#getNbLayer()
 	 * @see #getMultiLayerLidarScan()
@@ -272,6 +299,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.ExtentedLidarScan <em>Extented Lidar Scan</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Extented Lidar Scan</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.ExtentedLidarScan
 	 * @generated
@@ -282,6 +310,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.ExtentedLidarScan#getScan <em>Scan</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference '<em>Scan</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.ExtentedLidarScan#getScan()
 	 * @see #getExtentedLidarScan()
@@ -293,6 +322,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.ExtentedLidarScan#getLayerId <em>Layer Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Layer Id</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.ExtentedLidarScan#getLayerId()
 	 * @see #getExtentedLidarScan()
@@ -304,6 +334,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.ExtentedLidarScan#getLayerAngle <em>Layer Angle</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Layer Angle</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.ExtentedLidarScan#getLayerAngle()
 	 * @see #getExtentedLidarScan()
@@ -315,6 +346,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -324,13 +356,14 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each operation of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -338,6 +371,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.CarLikeCommandImpl <em>Car Like Command</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.CarLikeCommandImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl#getCarLikeCommand()
 		 * @generated
@@ -348,6 +382,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Velocity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute CAR_LIKE_COMMAND__VELOCITY = eINSTANCE.getCarLikeCommand_Velocity();
@@ -356,6 +391,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Steering Angle</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute CAR_LIKE_COMMAND__STEERING_ANGLE = eINSTANCE.getCarLikeCommand_SteeringAngle();
@@ -364,6 +400,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.MultiLayerLidarScanImpl <em>Multi Layer Lidar Scan</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.MultiLayerLidarScanImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl#getMultiLayerLidarScan()
 		 * @generated
@@ -374,6 +411,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layers</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference MULTI_LAYER_LIDAR_SCAN__LAYERS = eINSTANCE.getMultiLayerLidarScan_Layers();
@@ -382,6 +420,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Nb Layer</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute MULTI_LAYER_LIDAR_SCAN__NB_LAYER = eINSTANCE.getMultiLayerLidarScan_NbLayer();
@@ -390,6 +429,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.ExtentedLidarScanImpl <em>Extented Lidar Scan</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.ExtentedLidarScanImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl#getExtentedLidarScan()
 		 * @generated
@@ -400,6 +440,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Scan</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference EXTENTED_LIDAR_SCAN__SCAN = eINSTANCE.getExtentedLidarScan_Scan();
@@ -408,6 +449,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layer Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute EXTENTED_LIDAR_SCAN__LAYER_ID = eINSTANCE.getExtentedLidarScan_LayerId();
@@ -416,10 +458,11 @@ public interface Oarp1_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layer Angle</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute EXTENTED_LIDAR_SCAN__LAYER_ANGLE = eINSTANCE.getExtentedLidarScan_LayerAngle();
 
 	}
 
-} //Oarp1_datatypesPackage
+} // Oarp1_datatypesPackage

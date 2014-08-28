@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -14,14 +14,10 @@ package org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfigurati
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.impl.SemanticTypeConfigurationImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantRuleConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationPackage;
@@ -33,7 +29,7 @@ import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguratio
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationImpl#getInvariantRuleConfiguration <em>Invariant Rule Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationImpl#getInvariantRuleConfiguration <em>Invariant Rule Configuration</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +40,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	 * The cached value of the '{@link #getInvariantRuleConfiguration() <em>Invariant Rule Configuration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getInvariantRuleConfiguration()
 	 * @generated
 	 * @ordered
@@ -53,6 +50,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected InvariantSemanticTypeConfigurationImpl() {
@@ -62,6 +60,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,6 +71,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public InvariantRuleConfiguration getInvariantRuleConfiguration() {
@@ -81,14 +81,20 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetInvariantRuleConfiguration(InvariantRuleConfiguration newInvariantRuleConfiguration, NotificationChain msgs) {
 		InvariantRuleConfiguration oldInvariantRuleConfiguration = invariantRuleConfiguration;
 		invariantRuleConfiguration = newInvariantRuleConfiguration;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION, oldInvariantRuleConfiguration, newInvariantRuleConfiguration);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION, oldInvariantRuleConfiguration,
+					newInvariantRuleConfiguration);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -96,32 +102,39 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setInvariantRuleConfiguration(InvariantRuleConfiguration newInvariantRuleConfiguration) {
 		if (newInvariantRuleConfiguration != invariantRuleConfiguration) {
 			NotificationChain msgs = null;
-			if (invariantRuleConfiguration != null)
-				msgs = ((InternalEObject)invariantRuleConfiguration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION, null, msgs);
-			if (newInvariantRuleConfiguration != null)
-				msgs = ((InternalEObject)newInvariantRuleConfiguration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION, null, msgs);
+			if (invariantRuleConfiguration != null) {
+				msgs = ((InternalEObject) invariantRuleConfiguration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION, null, msgs);
+			}
+			if (newInvariantRuleConfiguration != null) {
+				msgs = ((InternalEObject) newInvariantRuleConfiguration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION, null, msgs);
+			}
 			msgs = basicSetInvariantRuleConfiguration(newInvariantRuleConfiguration, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION, newInvariantRuleConfiguration, newInvariantRuleConfiguration));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION:
-				return basicSetInvariantRuleConfiguration(null, msgs);
+		case InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION:
+			return basicSetInvariantRuleConfiguration(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -129,13 +142,14 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION:
-				return getInvariantRuleConfiguration();
+		case InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION:
+			return getInvariantRuleConfiguration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -143,14 +157,15 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION:
-				setInvariantRuleConfiguration((InvariantRuleConfiguration)newValue);
-				return;
+		case InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION:
+			setInvariantRuleConfiguration((InvariantRuleConfiguration) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -158,14 +173,15 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION:
-				setInvariantRuleConfiguration((InvariantRuleConfiguration)null);
-				return;
+		case InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION:
+			setInvariantRuleConfiguration((InvariantRuleConfiguration) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -173,15 +189,16 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION:
-				return invariantRuleConfiguration != null;
+		case InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION:
+			return invariantRuleConfiguration != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //InvariantSemanticTypeConfigurationImpl
+} // InvariantSemanticTypeConfigurationImpl

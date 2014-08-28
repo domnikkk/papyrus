@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ import org.eclipse.swt.widgets.TableItem;
 /**
  * dialog to display a list of hyperlinks. the button ok is use to excute the
  * action linked to the hyperlink (open new diagram, open new editor...)
- * 
+ *
  */
 public class EditorNavigationDialog extends Dialog {
 
@@ -60,14 +60,14 @@ public class EditorNavigationDialog extends Dialog {
 	protected EObject contextElement;
 
 	/**
-	 * 
+	 *
 	 * dialog to display a list of hyperlinks. the button ok is use to excute
 	 * the action linked to the hyperlink (open new diagram, open new editor...)
-	 * 
+	 *
 	 * @param parentShell
-	 *        a shell
+	 *            a shell
 	 * @param hyperlinkObjects
-	 *        the list of hyperlinkObjects
+	 *            the list of hyperlinkObjects
 	 */
 	public EditorNavigationDialog(Shell parentShell, ArrayList<HyperLinkObject> hyperlinkObjects, EObject contextElement) {
 		super(parentShell);
@@ -83,7 +83,7 @@ public class EditorNavigationDialog extends Dialog {
 	@Override
 	protected Control createContents(Composite parent) {
 		super.createContents(parent);
-		Composite defaultHyperlinkComposite = (Composite)getDialogArea();
+		Composite defaultHyperlinkComposite = (Composite) getDialogArea();
 
 		Label lblHyperlinks = new Label(defaultHyperlinkComposite, SWT.NONE);
 		lblHyperlinks.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_BLACK));
@@ -99,7 +99,7 @@ public class EditorNavigationDialog extends Dialog {
 
 		// set the label provider
 		ILabelProvider provider = null;
-		if(contextElement != null) {
+		if (contextElement != null) {
 			try {
 				provider = ServiceUtilsForEObject.getInstance().getService(LabelProviderService.class, contextElement).getLabelProvider();
 			} catch (ServiceException ex) {
@@ -107,15 +107,15 @@ public class EditorNavigationDialog extends Dialog {
 			}
 		}
 
-		if(provider == null) {
+		if (provider == null) {
 			provider = new LabelProvider();
 		}
 
 		tableViewer.setLabelProvider(provider);
 		tableViewer.setInput(this.hyperlinkObjects);
 
-		//Check all elements by default
-		for(TableItem item : availableHyperLink.getItems()) {
+		// Check all elements by default
+		for (TableItem item : availableHyperLink.getItems()) {
 			item.setChecked(true);
 		}
 
@@ -127,7 +127,7 @@ public class EditorNavigationDialog extends Dialog {
 
 	/**
 	 * get the list of selected hyperlinks
-	 * 
+	 *
 	 * @return the list
 	 */
 	public List<HyperLinkObject> getSelectedHyperlinks() {
@@ -135,18 +135,18 @@ public class EditorNavigationDialog extends Dialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#okPressed()
-	 * 
+	 *
 	 */
 	@Override
 	protected void okPressed() {
 
 		hyperlinkResult = new ArrayList<HyperLinkObject>();
 		TableItem[] tableItems = availableHyperLink.getItems();
-		for(int i = 0; i < tableItems.length; i++) {
-			if(tableItems[i].getChecked()) {
-				hyperlinkResult.add((HyperLinkObject)tableItems[i].getData());
+		for (int i = 0; i < tableItems.length; i++) {
+			if (tableItems[i].getChecked()) {
+				hyperlinkResult.add((HyperLinkObject) tableItems[i].getData());
 			}
 		}
 

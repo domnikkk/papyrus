@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -99,7 +99,7 @@ public class PapyrusRepositoryManager extends Container<IPapyrusRepository> impl
 
 	@Override
 	public IInternalPapyrusRepository createRepository(String url) {
-		if(getRepository(url) != null) {
+		if (getRepository(url) != null) {
 			throw new IllegalArgumentException("repository already exists"); //$NON-NLS-1$
 		}
 
@@ -117,16 +117,16 @@ public class PapyrusRepositoryManager extends Container<IPapyrusRepository> impl
 
 	@Override
 	public void setURL(IPapyrusRepository repository, String url) {
-		if(!Objects.equal(repository.getURL(), url)) {
-			if(getRepository(url) != null) {
+		if (!Objects.equal(repository.getURL(), url)) {
+			if (getRepository(url) != null) {
 				throw new IllegalArgumentException("repository already exists"); //$NON-NLS-1$
 			}
 
-			if(repository.isConnected()) {
+			if (repository.isConnected()) {
 				throw new IllegalStateException("repository is connected"); //$NON-NLS-1$
 			}
 
-			PapyrusRepository internalRepository = (PapyrusRepository)repository;
+			PapyrusRepository internalRepository = (PapyrusRepository) repository;
 			repositories.remove(internalRepository.getURL());
 			internalRepository.getModel().setURL(url);
 			repositories.put(url, internalRepository);
@@ -135,12 +135,12 @@ public class PapyrusRepositoryManager extends Container<IPapyrusRepository> impl
 
 	@Override
 	public void removeRepository(IPapyrusRepository repository) {
-		if(repository.isConnected()) {
+		if (repository.isConnected()) {
 			throw new IllegalArgumentException("repository is still connected"); //$NON-NLS-1$
 		}
 
 		repositories.remove(repository.getURL());
-		EcoreUtil.delete(((PapyrusRepository)repository).getModel());
+		EcoreUtil.delete(((PapyrusRepository) repository).getModel());
 
 		fireElementRemovedEvent(repository);
 	}
@@ -159,22 +159,22 @@ public class PapyrusRepositoryManager extends Container<IPapyrusRepository> impl
 	public IInternalPapyrusRepository getRepositoryForURI(URI uri, boolean connectedOnly) {
 		IInternalPapyrusRepository result = null;
 
-		if(CDOUtils.isCDOURI(uri)) {
+		if (CDOUtils.isCDOURI(uri)) {
 			String uuid = CDOURIUtil.extractRepositoryUUID(uri);
 
-			for(IInternalPapyrusRepository next : repositories.values()) {
+			for (IInternalPapyrusRepository next : repositories.values()) {
 				CDOSession session = next.getCDOSession();
-				if((session != null) && Objects.equal(uuid, session.getRepositoryInfo().getUUID())) {
+				if ((session != null) && Objects.equal(uuid, session.getRepositoryInfo().getUUID())) {
 					result = next;
 					break;
 				}
 			}
 
-			if((result == null) && !connectedOnly) {
+			if ((result == null) && !connectedOnly) {
 				// guess based on the last known UUIDs
-				for(IInternalPapyrusRepository next : repositories.values()) {
+				for (IInternalPapyrusRepository next : repositories.values()) {
 					PapyrusRepository repo = CDOUtils.tryCast(next, PapyrusRepository.class);
-					if((repo != null) && Objects.equal(uuid, repo.getModel().getUUID())) {
+					if ((repo != null) && Objects.equal(uuid, repo.getModel().getUUID())) {
 						result = next;
 						break;
 					}
@@ -187,13 +187,13 @@ public class PapyrusRepositoryManager extends Container<IPapyrusRepository> impl
 
 	@Override
 	public void saveRepositories() {
-		if(storage != null) {
+		if (storage != null) {
 			try {
 				OutputStream output = storage.createOutputStream();
 				try {
 					repositoryRegistry.eResource().save(output, null);
 				} finally {
-					if(output != null) {
+					if (output != null) {
 						IOUtil.closeSilent(output);
 					}
 				}
@@ -224,10 +224,10 @@ public class PapyrusRepositoryManager extends Container<IPapyrusRepository> impl
 		URI uri = URI.createFileURI(repositoriesFile.getAbsolutePath());
 		Resource resource = rset.createResource(uri);
 
-		if(storage != null) {
+		if (storage != null) {
 			try {
 				InputStream input = storage.createInputStream();
-				if(input != null) {
+				if (input != null) {
 					try {
 						resource.load(input, null);
 					} finally {
@@ -236,15 +236,15 @@ public class PapyrusRepositoryManager extends Container<IPapyrusRepository> impl
 				}
 			} catch (Exception e) {
 				Activator.log.error("Failed to load repository registry from custom storage.", //$NON-NLS-1$
-					e);
+						e);
 			}
 		} else {
-			if(repositoriesFile.exists()) {
+			if (repositoriesFile.exists()) {
 				try {
 					resource.load(null);
 				} catch (Exception e) {
 					Activator.log.error("Failed to load repository registry.", //$NON-NLS-1$
-						e);
+							e);
 					// if there's any junk, clear it out
 					resource.getContents().clear();
 				}
@@ -253,9 +253,9 @@ public class PapyrusRepositoryManager extends Container<IPapyrusRepository> impl
 			}
 		}
 
-		RepositoryRegistry result = (RepositoryRegistry)EcoreUtil.getObjectByType(resource.getContents(), RepositoriesPackage.Literals.REPOSITORY_REGISTRY);
+		RepositoryRegistry result = (RepositoryRegistry) EcoreUtil.getObjectByType(resource.getContents(), RepositoriesPackage.Literals.REPOSITORY_REGISTRY);
 
-		if(result == null) {
+		if (result == null) {
 			result = RepositoriesFactory.eINSTANCE.createRepositoryRegistry();
 			resource.getContents().add(result);
 		}
@@ -266,7 +266,7 @@ public class PapyrusRepositoryManager extends Container<IPapyrusRepository> impl
 	private Map<String, IInternalPapyrusRepository> initializeRepositories() {
 		Map<String, IInternalPapyrusRepository> result = Maps.newHashMap();
 
-		for(Repository next : repositoryRegistry.getRepositories()) {
+		for (Repository next : repositoryRegistry.getRepositories()) {
 			result.put(next.getURL(), new PapyrusRepository(container, next));
 		}
 
@@ -290,10 +290,10 @@ public class PapyrusRepositoryManager extends Container<IPapyrusRepository> impl
 
 		int sessionID = view.getSessionID();
 
-		for(IInternalPapyrusRepository next : repositories.values()) {
+		for (IInternalPapyrusRepository next : repositories.values()) {
 			// if it's not connected, it can't be responsible for this view
-			if(next.isConnected()) {
-				if(next.getCDOSession().getSessionID() == sessionID) {
+			if (next.isConnected()) {
+				if (next.getCDOSession().getSessionID() == sessionID) {
 					result = next;
 					break;
 				}

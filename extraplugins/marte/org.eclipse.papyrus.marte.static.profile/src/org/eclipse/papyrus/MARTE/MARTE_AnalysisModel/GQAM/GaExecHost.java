@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,14 +25,14 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Scheduler;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCommTxOvh <em>Comm Tx Ovh</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCommRcvOvh <em>Comm Rcv Ovh</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCntxtSwT <em>Cntxt Sw T</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getClockOvh <em>Clock Ovh</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getSchedPriRange <em>Sched Pri Range</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getMemSize <em>Mem Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getUtilization <em>Utilization</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getThroughput <em>Throughput</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCommTxOvh <em>Comm Tx Ovh</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCommRcvOvh <em>Comm Rcv Ovh</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCntxtSwT <em>Cntxt Sw T</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getClockOvh <em>Clock Ovh</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getSchedPriRange <em>Sched Pri Range</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getMemSize <em>Mem Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getUtilization <em>Utilization</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getThroughput <em>Throughput</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,10 +45,10 @@ public interface GaExecHost extends Scheduler, ComputingResource {
 	 * Returns the value of the '<em><b>Comm Tx Ovh</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Comm Tx Ovh</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Comm Tx Ovh</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Comm Tx Ovh</em>' attribute.
 	 * @see #setCommTxOvh(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaExecHost_CommTxOvh()
@@ -61,7 +61,9 @@ public interface GaExecHost extends Scheduler, ComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCommTxOvh <em>Comm Tx Ovh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Comm Tx Ovh</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Comm Tx Ovh</em>' attribute.
 	 * @see #getCommTxOvh()
 	 * @generated
 	 */
@@ -71,10 +73,10 @@ public interface GaExecHost extends Scheduler, ComputingResource {
 	 * Returns the value of the '<em><b>Comm Rcv Ovh</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Comm Rcv Ovh</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Comm Rcv Ovh</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Comm Rcv Ovh</em>' attribute.
 	 * @see #setCommRcvOvh(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaExecHost_CommRcvOvh()
@@ -87,7 +89,9 @@ public interface GaExecHost extends Scheduler, ComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCommRcvOvh <em>Comm Rcv Ovh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Comm Rcv Ovh</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Comm Rcv Ovh</em>' attribute.
 	 * @see #getCommRcvOvh()
 	 * @generated
 	 */
@@ -97,10 +101,10 @@ public interface GaExecHost extends Scheduler, ComputingResource {
 	 * Returns the value of the '<em><b>Cntxt Sw T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Cntxt Sw T</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Cntxt Sw T</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Cntxt Sw T</em>' attribute.
 	 * @see #setCntxtSwT(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaExecHost_CntxtSwT()
@@ -113,7 +117,9 @@ public interface GaExecHost extends Scheduler, ComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getCntxtSwT <em>Cntxt Sw T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cntxt Sw T</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Cntxt Sw T</em>' attribute.
 	 * @see #getCntxtSwT()
 	 * @generated
 	 */
@@ -123,10 +129,10 @@ public interface GaExecHost extends Scheduler, ComputingResource {
 	 * Returns the value of the '<em><b>Clock Ovh</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Clock Ovh</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Clock Ovh</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Clock Ovh</em>' attribute.
 	 * @see #setClockOvh(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaExecHost_ClockOvh()
@@ -139,7 +145,9 @@ public interface GaExecHost extends Scheduler, ComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getClockOvh <em>Clock Ovh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Clock Ovh</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Clock Ovh</em>' attribute.
 	 * @see #getClockOvh()
 	 * @generated
 	 */
@@ -149,10 +157,10 @@ public interface GaExecHost extends Scheduler, ComputingResource {
 	 * Returns the value of the '<em><b>Sched Pri Range</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Sched Pri Range</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Sched Pri Range</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Sched Pri Range</em>' attribute.
 	 * @see #setSchedPriRange(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaExecHost_SchedPriRange()
@@ -165,7 +173,9 @@ public interface GaExecHost extends Scheduler, ComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getSchedPriRange <em>Sched Pri Range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sched Pri Range</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Sched Pri Range</em>' attribute.
 	 * @see #getSchedPriRange()
 	 * @generated
 	 */
@@ -175,10 +185,10 @@ public interface GaExecHost extends Scheduler, ComputingResource {
 	 * Returns the value of the '<em><b>Mem Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Mem Size</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Mem Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Mem Size</em>' attribute.
 	 * @see #setMemSize(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaExecHost_MemSize()
@@ -191,7 +201,9 @@ public interface GaExecHost extends Scheduler, ComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost#getMemSize <em>Mem Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mem Size</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Mem Size</em>' attribute.
 	 * @see #getMemSize()
 	 * @generated
 	 */
@@ -202,10 +214,10 @@ public interface GaExecHost extends Scheduler, ComputingResource {
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Utilization</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Utilization</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Utilization</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaExecHost_Utilization()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Real" ordered="false"
@@ -218,10 +230,10 @@ public interface GaExecHost extends Scheduler, ComputingResource {
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Throughput</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Throughput</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Throughput</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaExecHost_Throughput()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Frequency" ordered="false"

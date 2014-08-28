@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,7 +41,6 @@ import org.eclipse.papyrus.uml.diagram.composite.providers.ElementInitializers;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.InformationFlow;
 import org.eclipse.uml2.uml.InformationItem;
@@ -66,7 +65,7 @@ public class CustomInformationFlowCreateCommand extends org.eclipse.papyrus.uml.
 	 *  - opens a selection dialog to choose {@link InformationItem} or {@link Classifier} reference as a convoyed Classifier
 	 *   by the {@link InformationFlow} type
 	 *  - create the InformationFlow between the source and the target
-	 *  
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -86,53 +85,53 @@ public class CustomInformationFlowCreateCommand extends org.eclipse.papyrus.uml.
 			dialog.setHelpAvailable(false);
 			dialog.setInput(getSource().getModel());
 			dialog.setValidator(new InformationItemValidator());
-	
+
 			ArrayList<Classifier> initialSelection = new ArrayList<Classifier>();
-	
+
 			// here the dialog.getReturnCode is IDialogConstants.OK_ID
-			while(dialog.open() != IDialogConstants.CANCEL_ID) {
-	
+			while (dialog.open() != IDialogConstants.CANCEL_ID) {
+
 				/*
 				 * If classifiers have been selected, complete command execution and write the selection
 				 * in the conveyed:Classifief Association
 				 */
-				if(dialog.getReturnCode() == ElementTreeSelectionDialog.OK) {
+				if (dialog.getReturnCode() == Window.OK) {
 					Object[] conveyedClassified = dialog.getResult();
-	
+
 					InformationFlow newInformationFlow = UMLFactory.eINSTANCE.createInformationFlow();
 					getContainer().getPackagedElements().add(newInformationFlow);
 					newInformationFlow.getInformationSources().add(getSource());
 					newInformationFlow.getInformationTargets().add(getTarget());
-	
+
 					// add the classifier in the list of conveyed Classifier
-					for(int i = 0; i < conveyedClassified.length; i++) {
-						newInformationFlow.getConveyeds().add((Classifier)conveyedClassified[i]);
+					for (int i = 0; i < conveyedClassified.length; i++) {
+						newInformationFlow.getConveyeds().add((Classifier) conveyedClassified[i]);
 					}
-	
+
 					ElementInitializers.getInstance().init_InformationFlow_4021(newInformationFlow);
-	
-					((CreateElementRequest)getRequest()).setNewElement(newInformationFlow);
+
+					((CreateElementRequest) getRequest()).setNewElement(newInformationFlow);
 					return CommandResult.newOKCommandResult(newInformationFlow);
-	
-				} else if(dialog.getReturnCode() == InformationItemElementTreeSelectionDialog.newInformationItemButton_ID) {
+
+				} else if (dialog.getReturnCode() == InformationItemElementTreeSelectionDialog.newInformationItemButton_ID) {
 					// create a new InformationItem
-					initialSelection.add((Classifier)createNewInformationItem());
+					initialSelection.add(createNewInformationItem());
 					dialog.setInitialElementSelections(initialSelection);
 				}
 			}// end of while()
 		} finally {
 			adapterFactory.dispose();
 		}
-		
+
 		// No Classifier selected: abort element creation
 		return CommandResult.newCancelledCommandResult();
 	}
 
 	/**
 	 * - Create a new {@link InformationItem}
-	 * 
+	 *
 	 * - Ask for the {@link InformationItem}'s name
-	 * 
+	 *
 	 * @return the new InformationItem or null if canceled
 	 */
 
@@ -155,14 +154,14 @@ public class CustomInformationFlowCreateCommand extends org.eclipse.papyrus.uml.
 
 		dialog.open();
 
-		if(dialog.getReturnCode() == Window.CANCEL) {
+		if (dialog.getReturnCode() == Window.CANCEL) {
 			// We delete the newInformationItem
 			int index = getContainer().getPackagedElements().indexOf(infoItem);
 			getContainer().getPackagedElements().remove(index);
 			return null;
 		} else {
 			infoItem.setName(dialog.getValue());
-			((CreateElementRequest)getRequest()).setNewElement(infoItem);
+			((CreateElementRequest) getRequest()).setNewElement(infoItem);
 			return infoItem;
 		}
 	}

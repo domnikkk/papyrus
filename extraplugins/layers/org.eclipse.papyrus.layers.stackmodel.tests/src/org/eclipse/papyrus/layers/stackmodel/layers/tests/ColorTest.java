@@ -11,6 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Color</b></em>'.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class ColorTest extends TypeTest {
@@ -18,6 +19,7 @@ public class ColorTest extends TypeTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class ColorTest extends TypeTest {
 	 * Constructs a new Color test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ColorTest(String name) {
@@ -38,16 +41,18 @@ public class ColorTest extends TypeTest {
 	 * Returns the fixture for this Color test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	protected Color getFixture() {
-		return (Color)fixture;
+		return (Color) fixture;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -59,6 +64,7 @@ public class ColorTest extends TypeTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -67,4 +73,4 @@ public class ColorTest extends TypeTest {
 		setFixture(null);
 	}
 
-} //ColorTest
+} // ColorTest

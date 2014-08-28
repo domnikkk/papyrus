@@ -23,8 +23,8 @@ public class DefaultGetAssociationStrategy extends GetAssociationStrategy {
 		// association end,
 		// then get the associated association.
 		Association association = null;
-		if(feature instanceof Property) {
-			association = ((Property)feature).getAssociation();
+		if (feature instanceof Property) {
+			association = ((Property) feature).getAssociation();
 		}
 		return association;
 	}

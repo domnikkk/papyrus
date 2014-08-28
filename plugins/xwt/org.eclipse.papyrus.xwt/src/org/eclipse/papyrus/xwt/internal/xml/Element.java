@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -43,12 +43,12 @@ public class Element extends DocumentObject {
 	}
 
 	public String getXmlns(String prefix) {
-		if(prefix == null) {
+		if (prefix == null) {
 			prefix = "";
 		}
-		if(xmlnsMapping != null) {
-			for(int i = 0; i < xmlnsMapping.length; i++) {
-				if(prefix.equals(xmlnsMapping[i++])) {
+		if (xmlnsMapping != null) {
+			for (int i = 0; i < xmlnsMapping.length; i++) {
+				if (prefix.equals(xmlnsMapping[i++])) {
 					return xmlnsMapping[i];
 				}
 			}
@@ -58,15 +58,15 @@ public class Element extends DocumentObject {
 
 	/**
 	 * Default constructor
-	 * 
+	 *
 	 * @param context
-	 *        bundle context
+	 *            bundle context
 	 * @param namespace
-	 *        element namespace
+	 *            element namespace
 	 * @param name
-	 *        element name
+	 *            element name
 	 * @param originalAttributes
-	 *        element arributes
+	 *            element arributes
 	 */
 	public Element(String namespace, String name, Map<String, String> xmlnsMapping) {
 		this(namespace, name, null, null, xmlnsMapping);
@@ -75,12 +75,12 @@ public class Element extends DocumentObject {
 	public Element(String namespace, String name, String path, Collection<Attribute> attributes, Map<String, String> xmlnsMapping) {
 		super(namespace, name);
 		this.path = path;
-		if(xmlnsMapping != null) {
+		if (xmlnsMapping != null) {
 			this.xmlnsMapping = new String[xmlnsMapping.size() * 2];
 			int i = 0;
-			for(Map.Entry<String, String> entry : xmlnsMapping.entrySet()) {
+			for (Map.Entry<String, String> entry : xmlnsMapping.entrySet()) {
 				String key = entry.getKey();
-				if(key == null) {
+				if (key == null) {
 					key = "";
 				}
 				this.xmlnsMapping[i++] = key;
@@ -91,8 +91,8 @@ public class Element extends DocumentObject {
 		this.originalAttributes = Collections.emptyMap();
 		this.externalAttributes = Collections.emptyMap();
 
-		if(attributes != null) {
-			for(Attribute attribute : attributes) {
+		if (attributes != null) {
+			for (Attribute attribute : attributes) {
 				setInternalAttribute(attribute);
 			}
 		}
@@ -100,7 +100,7 @@ public class Element extends DocumentObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.eface.core.IElement#attributeNames()
 	 */
 	public String[] attributeNames() {
@@ -109,7 +109,7 @@ public class Element extends DocumentObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.eface.core.IElement#attributeNamespaces()
 	 */
 	public String[] attributeNamespaces() {
@@ -118,7 +118,7 @@ public class Element extends DocumentObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seecom.soyatec.eface.core.IElement#setAttribute(com.soyatec.eface.core. IAttribute)
 	 */
 	public void setAttribute(Attribute attribute) {
@@ -128,15 +128,15 @@ public class Element extends DocumentObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.eface.IElement#attributeNames(java.lang.String)
 	 */
 	public String[] attributeNames(String namespace) {
-		if(getNamespace().equals(namespace)) {
+		if (getNamespace().equals(namespace)) {
 			return attributeNames();
 		}
 		Map<String, Attribute> externalAttribute = externalAttributes.get(namespace);
-		if(externalAttribute != null) {
+		if (externalAttribute != null) {
 			return externalAttribute.keySet().toArray(EMPTY_STRING_ARRAY);
 		} else {
 			return Core.EMPTY_STRING_ARRAY;
@@ -145,7 +145,7 @@ public class Element extends DocumentObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.eface.core.IElement#getAttribute(java.lang.String)
 	 */
 	public Attribute getAttribute(String name) {
@@ -155,12 +155,12 @@ public class Element extends DocumentObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.eface.core.IElement#getAttribute(java.lang.String, java.lang.String)
 	 */
 	public Attribute getAttribute(String namespace, String name) {
 		Map<String, Attribute> externalAttribute = externalAttributes.get(namespace);
-		if(externalAttribute != null) {
+		if (externalAttribute != null) {
 			return externalAttribute.get(name);
 		} else {
 			return null;
@@ -169,30 +169,30 @@ public class Element extends DocumentObject {
 
 	@Override
 	public Object clone() throws CloneNotSupportedException {
-		Element element = (Element)super.clone();
+		Element element = (Element) super.clone();
 
 		element.parent = null;
 
-		if(originalAttributes.isEmpty()) {
+		if (originalAttributes.isEmpty()) {
 			originalAttributes = Collections.emptyMap();
 		} else {
 			element.originalAttributes = new LinkedHashMap<String, Attribute>(originalAttributes.size());
-			for(String attrName : originalAttributes.keySet()) {
-				Attribute attrValue = (Attribute)originalAttributes.get(attrName).clone();
+			for (String attrName : originalAttributes.keySet()) {
+				Attribute attrValue = (Attribute) originalAttributes.get(attrName).clone();
 				element.originalAttributes.put(attrName, attrValue);
 			}
 		}
 
-		if(externalAttributes.isEmpty()) {
+		if (externalAttributes.isEmpty()) {
 			element.originalAttributes = Collections.emptyMap();
 		} else {
 			element.externalAttributes = new LinkedHashMap<String, Map<String, Attribute>>(externalAttributes.size());
-			for(String ns : externalAttributes.keySet()) {
+			for (String ns : externalAttributes.keySet()) {
 				Map<String, Attribute> oAttributes = externalAttributes.get(ns);
 				Map<String, Attribute> nAttributes = new LinkedHashMap<String, Attribute>(oAttributes.size());
-				for(Map.Entry<String, Attribute> entry : oAttributes.entrySet()) {
+				for (Map.Entry<String, Attribute> entry : oAttributes.entrySet()) {
 					String attrName = entry.getKey();
-					Attribute attrValue = (Attribute)entry.getValue().clone();
+					Attribute attrValue = (Attribute) entry.getValue().clone();
 					nAttributes.put(attrName, attrValue);
 				}
 				element.externalAttributes.put(ns, nAttributes);
@@ -203,7 +203,7 @@ public class Element extends DocumentObject {
 	}
 
 	protected void setAttributes(Collection<Attribute> attributes) {
-		for(Attribute attribute : attributes) {
+		for (Attribute attribute : attributes) {
 			setInternalAttribute(attribute);
 		}
 		firePropertyChanged(attributes);
@@ -219,10 +219,10 @@ public class Element extends DocumentObject {
 
 	private boolean isXWTNamespace(String namespace) {
 		String scopeNamespace = getNamespace();
-		if(namespace == null || "".equals(namespace)) {
+		if (namespace == null || "".equals(namespace)) {
 			return true;
 		}
-		if(scopeNamespace.startsWith(IConstants.XAML_CLR_NAMESPACE_PROTO) || scopeNamespace.equals(IConstants.XWT_NAMESPACE)) {
+		if (scopeNamespace.startsWith(IConstants.XAML_CLR_NAMESPACE_PROTO) || scopeNamespace.equals(IConstants.XWT_NAMESPACE)) {
 			return namespace.equalsIgnoreCase(scopeNamespace) || namespace.equals(IConstants.XWT_NAMESPACE);
 		}
 		return false;
@@ -230,9 +230,9 @@ public class Element extends DocumentObject {
 
 	/**
 	 * Set attribute without notifying event.
-	 * 
+	 *
 	 * @param attribute
-	 *        the modified attribute.
+	 *            the modified attribute.
 	 */
 	private void setInternalAttribute(Attribute attribute) {
 		assert attribute != null;
@@ -240,22 +240,22 @@ public class Element extends DocumentObject {
 		String namespace = attribute.getNamespace();
 		String name = attribute.getName();
 
-		if(isXWTNamespace(namespace)) {
-			if(originalAttributes == Collections.EMPTY_MAP) {
+		if (isXWTNamespace(namespace)) {
+			if (originalAttributes == Collections.EMPTY_MAP) {
 				originalAttributes = new LinkedHashMap<String, Attribute>();
 			}
 			originalAttributes.put(name, attribute);
 		} else {
 			Map<String, Attribute> externalAttribute = externalAttributes.get(namespace);
-			if(externalAttribute == null) {
+			if (externalAttribute == null) {
 				externalAttribute = new HashMap<String, Attribute>();
 			}
-			if(externalAttributes == Collections.EMPTY_MAP) {
+			if (externalAttributes == Collections.EMPTY_MAP) {
 				externalAttributes = new LinkedHashMap<String, Map<String, Attribute>>();
 			}
 			externalAttribute.put(name, attribute);
 			externalAttributes.put(namespace, externalAttribute);
 		}
-		((DocumentObject)attribute).setParent(this);
+		((DocumentObject) attribute).setParent(this);
 	}
 }

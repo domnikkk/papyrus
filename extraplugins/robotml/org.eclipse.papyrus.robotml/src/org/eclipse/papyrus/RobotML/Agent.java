@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotML.Agent#getMovesOver <em>Moves Over</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.Agent#getMovesOver <em>Moves Over</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,10 +26,10 @@ public interface Agent extends PhysicalObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.RobotML.Surface}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Moves Over</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Moves Over</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Moves Over</em>' reference list.
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getAgent_MovesOver()
 	 * @model ordered="false"

@@ -37,15 +37,15 @@ public class ContextContentProvider extends CustomizedTreeContentProvider {
 
 	/**
 	 * @param inputElement
-	 *        : A ResourceSet
+	 *            : A ResourceSet
 	 * @return The root EObjects from the input ResourceSet
 	 */
 	@Override
 	public EObject[] getRootElements(Object inputElement) {
-		if(inputElement instanceof ResourceSet) {
-			ResourceSet resourceSet = (ResourceSet)inputElement;
+		if (inputElement instanceof ResourceSet) {
+			ResourceSet resourceSet = (ResourceSet) inputElement;
 
-			if(resourceSet.getResources().isEmpty()) {
+			if (resourceSet.getResources().isEmpty()) {
 				return null;
 			}
 
@@ -53,9 +53,9 @@ public class ContextContentProvider extends CustomizedTreeContentProvider {
 
 			elements.addAll(resourceSet.getResources().get(0).getContents());
 			Set<Context> allContexts = new LinkedHashSet<Context>();
-			for(EObject element : elements) {
-				if(element instanceof Context) {
-					allContexts.addAll(PropertiesUtil.getDependencies((Context)element));
+			for (EObject element : elements) {
+				if (element instanceof Context) {
+					allContexts.addAll(PropertiesUtil.getDependencies((Context) element));
 				}
 			}
 			elements.addAll(allContexts);

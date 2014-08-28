@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,6 +31,7 @@ public class HwBranchPredictorImpl extends HwResourceImpl implements HwBranchPre
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HwBranchPredictorImpl() {
@@ -40,6 +41,7 @@ public class HwBranchPredictorImpl extends HwResourceImpl implements HwBranchPre
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -47,4 +49,4 @@ public class HwBranchPredictorImpl extends HwResourceImpl implements HwBranchPre
 		return HwComputingPackage.Literals.HW_BRANCH_PREDICTOR;
 	}
 
-} //HwBranchPredictorImpl
+} // HwBranchPredictorImpl

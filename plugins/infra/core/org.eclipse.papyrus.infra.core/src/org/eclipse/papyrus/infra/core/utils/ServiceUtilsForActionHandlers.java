@@ -44,7 +44,7 @@ import org.eclipse.ui.IEditorPart;
 public class ServiceUtilsForActionHandlers {
 
 	private ServiceUtilsForActionHandlers() {
-		//Singleton
+		// Singleton
 	}
 
 	private final static ServiceUtilsForActionHandlers instance = new ServiceUtilsForActionHandlers();
@@ -66,9 +66,9 @@ public class ServiceUtilsForActionHandlers {
 	 */
 	public ServicesRegistry getServiceRegistry() throws ServiceException {
 		IEditorPart editor = WorkbenchPartHelper.getCurrentActiveEditorPart();
-		if(editor != null) {
-			ServicesRegistry serviceRegistry = (ServicesRegistry)editor.getAdapter(ServicesRegistry.class);
-			if(serviceRegistry != null) {
+		if (editor != null) {
+			ServicesRegistry serviceRegistry = (ServicesRegistry) editor.getAdapter(ServicesRegistry.class);
+			if (serviceRegistry != null) {
 				return serviceRegistry;
 			}
 		}
@@ -82,7 +82,7 @@ public class ServiceUtilsForActionHandlers {
 	 *
 	 * @return
 	 * @throws ServiceException
-	 *         If an error occurs while getting the requested service.
+	 *             If an error occurs while getting the requested service.
 	 */
 	public TransactionalEditingDomain getTransactionalEditingDomain() throws ServiceException {
 		return getServiceRegistry().getService(TransactionalEditingDomain.class);
@@ -93,7 +93,7 @@ public class ServiceUtilsForActionHandlers {
 	 *
 	 * @return
 	 * @throws ServiceException
-	 *         If an error occurs while getting the requested service.
+	 *             If an error occurs while getting the requested service.
 	 *
 	 * @deprecated Use {@link #getIPageManager} instead
 	 */
@@ -107,7 +107,7 @@ public class ServiceUtilsForActionHandlers {
 	 *
 	 * @return
 	 * @throws ServiceException
-	 *         If an error occurs while getting the requested service.
+	 *             If an error occurs while getting the requested service.
 	 */
 	public IPageManager getIPageManager() throws ServiceException {
 		return getServiceRegistry().getService(IPageManager.class);
@@ -118,7 +118,7 @@ public class ServiceUtilsForActionHandlers {
 	 *
 	 * @return
 	 * @throws ServiceException
-	 *         If an error occurs while getting the requested service.
+	 *             If an error occurs while getting the requested service.
 	 */
 	public ModelSet getModelSet() throws ServiceException {
 		return getServiceRegistry().getService(ModelSet.class);
@@ -130,7 +130,7 @@ public class ServiceUtilsForActionHandlers {
 	 * @param from
 	 * @return
 	 * @throws ServiceException
-	 *         If an error occurs while getting the requested service.
+	 *             If an error occurs while getting the requested service.
 	 */
 	public ILifeCycleEventsProvider getILifeCycleEventsProvider() throws ServiceException {
 		return getServiceRegistry().getService(ILifeCycleEventsProvider.class);
@@ -142,7 +142,7 @@ public class ServiceUtilsForActionHandlers {
 	 * @param from
 	 * @return
 	 * @throws ServiceException
-	 *         If an error occurs while getting the requested service.
+	 *             If an error occurs while getting the requested service.
 	 */
 	public ISashWindowsContainer getISashWindowsContainer() throws ServiceException {
 		return getServiceRegistry().getService(ISashWindowsContainer.class);
@@ -154,7 +154,7 @@ public class ServiceUtilsForActionHandlers {
 	 * @param from
 	 * @return
 	 * @throws ServiceException
-	 *         If an error occurs while getting the requested service.
+	 *             If an error occurs while getting the requested service.
 	 */
 	public IEditorPart getNestedActiveIEditorPart() throws ServiceException {
 		return getISashWindowsContainer().getActiveEditor();

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -78,7 +78,7 @@ public class CustomVertexCreateElementCommand extends AbstractTransactionalComma
 		configureRequest.setClientContext(createElementRequest.getClientContext());
 		configureRequest.addParameters(createElementRequest.getParameters());
 		ICommand configureCommand = elementType.getEditCommand(configureRequest);
-		if(configureCommand != null && configureCommand.canExecute()) {
+		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
 	}
@@ -86,64 +86,64 @@ public class CustomVertexCreateElementCommand extends AbstractTransactionalComma
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// adapt the view at execution time
-		View regionView = (View)adaptable.getAdapter(View.class);
-		View compartment = (View)regionView.getChildren().get(0);
+		View regionView = (View) adaptable.getAdapter(View.class);
+		View compartment = (View) regionView.getChildren().get(0);
 		// hack
-		viewDescriptor = new ViewDescriptor(new SemanticAdapter(null, (EObject)adaptable.getAdapter(EObject.class)), prefHints);
+		viewDescriptor = new ViewDescriptor(new SemanticAdapter(null, adaptable.getAdapter(EObject.class)), prefHints);
 
-		Region owner = (Region)regionView.getElement();
+		Region owner = (Region) regionView.getElement();
 		Vertex newVertex = null;
-		if(hint.getSemanticHint().equals(((IHintedType)UMLElementTypes.FinalState_5000).getSemanticHint())) {
+		if (hint.getSemanticHint().equals(((IHintedType) UMLElementTypes.FinalState_5000).getSemanticHint())) {
 			newVertex = UMLFactory.eINSTANCE.createFinalState();
 			owner.getSubvertices().add(newVertex);
-			ElementInitializers.getInstance().init_FinalState_5000((FinalState)newVertex);
+			ElementInitializers.getInstance().init_FinalState_5000((FinalState) newVertex);
 			createElementRequest = new CreateElementRequest(getEditingDomain(), regionView, UMLElementTypes.FinalState_5000);
-		} else if(hint.getSemanticHint().equals(((IHintedType)UMLElementTypes.State_6000).getSemanticHint())) {
+		} else if (hint.getSemanticHint().equals(((IHintedType) UMLElementTypes.State_6000).getSemanticHint())) {
 			newVertex = UMLFactory.eINSTANCE.createState();
 			owner.getSubvertices().add(newVertex);
-			ElementInitializers.getInstance().init_State_6000((State)newVertex);
+			ElementInitializers.getInstance().init_State_6000((State) newVertex);
 			createElementRequest = new CreateElementRequest(getEditingDomain(), regionView, UMLElementTypes.State_6000);
 		} else {
 			newVertex = UMLFactory.eINSTANCE.createPseudostate();
-			if(hint.getSemanticHint().equals(((IHintedType)UMLElementTypes.Pseudostate_8000).getSemanticHint())) {
+			if (hint.getSemanticHint().equals(((IHintedType) UMLElementTypes.Pseudostate_8000).getSemanticHint())) {
 				owner.getSubvertices().add(newVertex);
-				ElementInitializers.getInstance().init_Pseudostate_8000((Pseudostate)newVertex);
+				ElementInitializers.getInstance().init_Pseudostate_8000((Pseudostate) newVertex);
 				createElementRequest = new CreateElementRequest(getEditingDomain(), regionView, UMLElementTypes.Pseudostate_8000);
-			} else if(hint.getSemanticHint().equals(((IHintedType)UMLElementTypes.Pseudostate_9000).getSemanticHint())) {
+			} else if (hint.getSemanticHint().equals(((IHintedType) UMLElementTypes.Pseudostate_9000).getSemanticHint())) {
 				owner.getSubvertices().add(newVertex);
-				ElementInitializers.getInstance().init_Pseudostate_9000((Pseudostate)newVertex);
+				ElementInitializers.getInstance().init_Pseudostate_9000((Pseudostate) newVertex);
 				createElementRequest = new CreateElementRequest(getEditingDomain(), regionView, UMLElementTypes.Pseudostate_9000);
-			} else if(hint.getSemanticHint().equals(((IHintedType)UMLElementTypes.Pseudostate_10000).getSemanticHint())) {
+			} else if (hint.getSemanticHint().equals(((IHintedType) UMLElementTypes.Pseudostate_10000).getSemanticHint())) {
 				owner.getSubvertices().add(newVertex);
-				ElementInitializers.getInstance().init_Pseudostate_10000((Pseudostate)newVertex);
+				ElementInitializers.getInstance().init_Pseudostate_10000((Pseudostate) newVertex);
 				createElementRequest = new CreateElementRequest(getEditingDomain(), regionView, UMLElementTypes.Pseudostate_10000);
-			} else if(hint.getSemanticHint().equals(((IHintedType)UMLElementTypes.Pseudostate_11000).getSemanticHint())) {
+			} else if (hint.getSemanticHint().equals(((IHintedType) UMLElementTypes.Pseudostate_11000).getSemanticHint())) {
 				owner.getSubvertices().add(newVertex);
-				ElementInitializers.getInstance().init_Pseudostate_11000((Pseudostate)newVertex);
+				ElementInitializers.getInstance().init_Pseudostate_11000((Pseudostate) newVertex);
 				createElementRequest = new CreateElementRequest(getEditingDomain(), regionView, UMLElementTypes.Pseudostate_11000);
-			} else if(hint.getSemanticHint().equals(((IHintedType)UMLElementTypes.Pseudostate_12000).getSemanticHint())) {
+			} else if (hint.getSemanticHint().equals(((IHintedType) UMLElementTypes.Pseudostate_12000).getSemanticHint())) {
 				owner.getSubvertices().add(newVertex);
-				ElementInitializers.getInstance().init_Pseudostate_12000((Pseudostate)newVertex);
+				ElementInitializers.getInstance().init_Pseudostate_12000((Pseudostate) newVertex);
 				createElementRequest = new CreateElementRequest(getEditingDomain(), regionView, UMLElementTypes.Pseudostate_12000);
-			} else if(hint.getSemanticHint().equals(((IHintedType)UMLElementTypes.Pseudostate_13000).getSemanticHint())) {
+			} else if (hint.getSemanticHint().equals(((IHintedType) UMLElementTypes.Pseudostate_13000).getSemanticHint())) {
 				owner.getSubvertices().add(newVertex);
-				ElementInitializers.getInstance().init_Pseudostate_13000((Pseudostate)newVertex);
+				ElementInitializers.getInstance().init_Pseudostate_13000((Pseudostate) newVertex);
 				createElementRequest = new CreateElementRequest(getEditingDomain(), regionView, UMLElementTypes.Pseudostate_13000);
-			} else if(hint.getSemanticHint().equals(((IHintedType)UMLElementTypes.Pseudostate_14000).getSemanticHint())) {
+			} else if (hint.getSemanticHint().equals(((IHintedType) UMLElementTypes.Pseudostate_14000).getSemanticHint())) {
 				owner.getSubvertices().add(newVertex);
-				ElementInitializers.getInstance().init_Pseudostate_14000((Pseudostate)newVertex);
+				ElementInitializers.getInstance().init_Pseudostate_14000((Pseudostate) newVertex);
 				createElementRequest = new CreateElementRequest(getEditingDomain(), regionView, UMLElementTypes.Pseudostate_14000);
-			} else if(hint.getSemanticHint().equals(((IHintedType)UMLElementTypes.Pseudostate_15000).getSemanticHint())) {
+			} else if (hint.getSemanticHint().equals(((IHintedType) UMLElementTypes.Pseudostate_15000).getSemanticHint())) {
 				owner.getSubvertices().add(newVertex);
-				ElementInitializers.getInstance().init_Pseudostate_15000((Pseudostate)newVertex);
+				ElementInitializers.getInstance().init_Pseudostate_15000((Pseudostate) newVertex);
 				createElementRequest = new CreateElementRequest(getEditingDomain(), regionView, UMLElementTypes.Pseudostate_15000);
-			} else if(hint.getSemanticHint().equals(((IHintedType)UMLElementTypes.Pseudostate_16000).getSemanticHint())) {
-				((State)owner.eContainer()).getConnectionPoints().add((Pseudostate)newVertex);
-				ElementInitializers.getInstance().init_Pseudostate_16000((Pseudostate)newVertex);
+			} else if (hint.getSemanticHint().equals(((IHintedType) UMLElementTypes.Pseudostate_16000).getSemanticHint())) {
+				((State) owner.eContainer()).getConnectionPoints().add((Pseudostate) newVertex);
+				ElementInitializers.getInstance().init_Pseudostate_16000((Pseudostate) newVertex);
 				createElementRequest = new CreateElementRequest(getEditingDomain(), regionView, UMLElementTypes.Pseudostate_16000);
-			} else if(hint.getSemanticHint().equals(((IHintedType)UMLElementTypes.Pseudostate_17000).getSemanticHint())) {
-				((State)owner.eContainer()).getConnectionPoints().add((Pseudostate)newVertex);
-				ElementInitializers.getInstance().init_Pseudostate_17000((Pseudostate)newVertex);
+			} else if (hint.getSemanticHint().equals(((IHintedType) UMLElementTypes.Pseudostate_17000).getSemanticHint())) {
+				((State) owner.eContainer()).getConnectionPoints().add((Pseudostate) newVertex);
+				ElementInitializers.getInstance().init_Pseudostate_17000((Pseudostate) newVertex);
 				createElementRequest = new CreateElementRequest(getEditingDomain(), regionView, UMLElementTypes.Pseudostate_17000);
 			}
 		}
@@ -156,9 +156,9 @@ public class CustomVertexCreateElementCommand extends AbstractTransactionalComma
 		// see below
 		// View newVertexView;
 
-		if(hint.getSemanticHint().equals(((IHintedType)UMLElementTypes.Pseudostate_16000).getSemanticHint()) || hint.getSemanticHint().equals(((IHintedType)UMLElementTypes.Pseudostate_17000).getSemanticHint())) {
+		if (hint.getSemanticHint().equals(((IHintedType) UMLElementTypes.Pseudostate_16000).getSemanticHint()) || hint.getSemanticHint().equals(((IHintedType) UMLElementTypes.Pseudostate_17000).getSemanticHint())) {
 			// newVertexView =
-			ViewService.getInstance().createNode(newVertexAdapatable, (View)regionView.eContainer().eContainer(), hint.getSemanticHint(), -1, prefHints);
+			ViewService.getInstance().createNode(newVertexAdapatable, (View) regionView.eContainer().eContainer(), hint.getSemanticHint(), -1, prefHints);
 		} else {
 			// newVertexView =
 			ViewService.getInstance().createNode(newVertexAdapatable, compartment, hint.getSemanticHint(), -1, prefHints);

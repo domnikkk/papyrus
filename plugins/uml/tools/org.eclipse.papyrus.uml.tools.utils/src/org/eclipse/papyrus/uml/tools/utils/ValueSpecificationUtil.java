@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Remi SCHNEKENBURGER (CEA LIST) Remi.schnekenburger@cea.fr - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.uml.tools.utils;
@@ -44,47 +44,47 @@ public class ValueSpecificationUtil {
 
 	/**
 	 * Get a string representing of a ValueSpecification
-	 * 
+	 *
 	 * @param specification
 	 */
 	public static String getSpecificationValue(ValueSpecification specification) {
 		String value = ""; //$NON-NLS-1$
-		if(specification != null && specification.eClass() != null) {
-			switch(specification.eClass().getClassifierID()) {
+		if (specification != null && specification.eClass() != null) {
+			switch (specification.eClass().getClassifierID()) {
 			case UMLPackage.LITERAL_STRING:
-				value = ((LiteralString)specification).getValue();
+				value = ((LiteralString) specification).getValue();
 				break;
 			case UMLPackage.LITERAL_BOOLEAN:
-				value = Boolean.toString(((LiteralBoolean)specification).booleanValue());
+				value = Boolean.toString(((LiteralBoolean) specification).booleanValue());
 				break;
 			case UMLPackage.LITERAL_INTEGER:
-				value = Integer.toString(((LiteralInteger)specification).getValue());
+				value = Integer.toString(((LiteralInteger) specification).getValue());
 				break;
 			case UMLPackage.LITERAL_UNLIMITED_NATURAL:
-				value = Integer.toString(((LiteralUnlimitedNatural)specification).getValue());
-				if("-1".equals(value)) { //$NON-NLS-1$
-					value = UNLIMITED_KEYWORD; //$NON-NLS-1$
+				value = Integer.toString(((LiteralUnlimitedNatural) specification).getValue());
+				if ("-1".equals(value)) { //$NON-NLS-1$
+					value = UNLIMITED_KEYWORD;
 				}
 				break;
 			case UMLPackage.LITERAL_NULL:
 				break;
 			case UMLPackage.OPAQUE_EXPRESSION:
-				OpaqueExpression exp = (OpaqueExpression)specification;
-				value = OpaqueExpressionUtil.getBodyForLanguage(exp, null); //$NON-NLS-1$					
+				OpaqueExpression exp = (OpaqueExpression) specification;
+				value = OpaqueExpressionUtil.getBodyForLanguage(exp, null);
 				break;
 			case UMLPackage.INSTANCE_VALUE:
-				if (((InstanceValue)specification).getInstance() != null) {
-					value = ((InstanceValue)specification).getInstance().getName();
+				if (((InstanceValue) specification).getInstance() != null) {
+					value = ((InstanceValue) specification).getInstance().getName();
 				}
 				break;
 			case UMLPackage.EXPRESSION:
-				Expression expr = (Expression)specification;
-				if(!expr.getOperands().isEmpty()) {
+				Expression expr = (Expression) specification;
+				if (!expr.getOperands().isEmpty()) {
 					StringBuffer operandsBuff = new StringBuffer(expr.getSymbol());
 					operandsBuff.append("(");
 					int initialLength = operandsBuff.length();
-					for(ValueSpecification operand : expr.getOperands()) {
-						if(operandsBuff.length() > initialLength) {
+					for (ValueSpecification operand : expr.getOperands()) {
+						if (operandsBuff.length() > initialLength) {
 							operandsBuff.append(",");
 						}
 						operandsBuff.append(getSpecificationValue(operand));
@@ -99,34 +99,33 @@ public class ValueSpecificationUtil {
 				// TODO
 				break;
 			case UMLPackage.DURATION:
-				Duration durationExpr = (Duration)specification;
-				if(durationExpr.getExpr() != null) {
+				Duration durationExpr = (Duration) specification;
+				if (durationExpr.getExpr() != null) {
 					value = getSpecificationValue(durationExpr.getExpr());
-				} else if(durationExpr.getObservations().size() > 0) {
+				} else if (durationExpr.getObservations().size() > 0) {
 					value = durationExpr.getObservations().get(0).getName();
 				}
 				break;
 			case UMLPackage.TIME_EXPRESSION:
-				TimeExpression timeExpr = (TimeExpression)specification;
-				if(timeExpr.getExpr() != null) {
+				TimeExpression timeExpr = (TimeExpression) specification;
+				if (timeExpr.getExpr() != null) {
 					value = getSpecificationValue(timeExpr.getExpr());
-				} else if(timeExpr.getObservations().size() > 0) {
+				} else if (timeExpr.getObservations().size() > 0) {
 					value = timeExpr.getObservations().get(0).getName();
 				}
 				break;
 			case UMLPackage.INTERVAL:
 			case UMLPackage.TIME_INTERVAL:
 			case UMLPackage.DURATION_INTERVAL:
-				if(!(specification instanceof Interval)) { // safety test for bug 430525, but should not be necessary to perform a test here...
+				if (!(specification instanceof Interval)) { // safety test for bug 430525, but should not be necessary to perform a test here...
 					break;
 				}
-				Interval interval = (Interval)specification;
+				Interval interval = (Interval) specification;
 				String min = getSpecificationValue(interval.getMin());
 				String max = getSpecificationValue(interval.getMax());
 				value = String.format(INTERVAL_FORMAT, min, max);
 				break;
-			default:
-			{
+			default: {
 				break;
 			}
 			}
@@ -137,14 +136,14 @@ public class ValueSpecificationUtil {
 
 	/**
 	 * Get a string representing a Constraint
-	 * 
+	 *
 	 * @param Constraint
 	 */
 	public static String getConstraintnValue(Constraint specification) {
 		String value = ""; //$NON-NLS-1$
-		if(specification != null) {
+		if (specification != null) {
 			ValueSpecification spe = specification.getSpecification();
-			if(spe != null) {
+			if (spe != null) {
 				value = getSpecificationValue(spe);
 			}
 		}
@@ -153,43 +152,42 @@ public class ValueSpecificationUtil {
 
 	/**
 	 * Sets the value of a specification, using a string value
-	 * 
+	 *
 	 * @param specification
-	 *        the value specification to update
+	 *            the value specification to update
 	 * @param value
-	 *        the value to set
+	 *            the value to set
 	 */
 	public static void restoreSpecificationValue(ValueSpecification specification, String value) {
-		if(value == null) {
+		if (value == null) {
 			return;
 		}
 
-		switch(specification.eClass().getClassifierID()) {
+		switch (specification.eClass().getClassifierID()) {
 		case UMLPackage.LITERAL_STRING:
-			restoreLiteralString((LiteralString)specification, value);
+			restoreLiteralString((LiteralString) specification, value);
 			break;
 		case UMLPackage.LITERAL_BOOLEAN:
-			restoreLiteralBoolean((LiteralBoolean)specification, value);
+			restoreLiteralBoolean((LiteralBoolean) specification, value);
 			break;
 		case UMLPackage.LITERAL_INTEGER:
-			restoreLiteralInteger((LiteralInteger)specification, value);
+			restoreLiteralInteger((LiteralInteger) specification, value);
 			break;
 		case UMLPackage.LITERAL_UNLIMITED_NATURAL:
-			restoreLiteralUnlimitedNatural((LiteralUnlimitedNatural)specification, value);
+			restoreLiteralUnlimitedNatural((LiteralUnlimitedNatural) specification, value);
 			break;
 		case UMLPackage.LITERAL_NULL:
-			restoreLiteralNull((LiteralNull)specification, value);
+			restoreLiteralNull((LiteralNull) specification, value);
 			break;
 		case UMLPackage.OPAQUE_EXPRESSION:
-			OpaqueExpression exp = (OpaqueExpression)specification;
-			if(!exp.getLanguages().isEmpty()) {
-				restoreOpaqueExpression((org.eclipse.uml2.uml.OpaqueExpression)specification, exp.getLanguages().get(0), value);
+			OpaqueExpression exp = (OpaqueExpression) specification;
+			if (!exp.getLanguages().isEmpty()) {
+				restoreOpaqueExpression((org.eclipse.uml2.uml.OpaqueExpression) specification, exp.getLanguages().get(0), value);
 			} else {
-				restoreOpaqueExpression((org.eclipse.uml2.uml.OpaqueExpression)specification, value);
+				restoreOpaqueExpression((org.eclipse.uml2.uml.OpaqueExpression) specification, value);
 			}
 			break;
-		default:
-		{
+		default: {
 			break;
 		}
 		}
@@ -197,11 +195,11 @@ public class ValueSpecificationUtil {
 
 	/**
 	 * Sets the value of a literal string, using a string value
-	 * 
+	 *
 	 * @param specification
-	 *        the literal string to update
+	 *            the literal string to update
 	 * @param value
-	 *        the new value
+	 *            the new value
 	 */
 	public static void restoreLiteralString(LiteralString specification, String value) {
 		specification.setValue(value);
@@ -209,11 +207,11 @@ public class ValueSpecificationUtil {
 
 	/**
 	 * Sets the value of a literal, using a string value
-	 * 
+	 *
 	 * @param specification
-	 *        the literal integer to update
+	 *            the literal integer to update
 	 * @param value
-	 *        the new value
+	 *            the new value
 	 */
 	public static void restoreLiteralInteger(LiteralInteger specification, String value) {
 		int intValue = 0;
@@ -227,14 +225,14 @@ public class ValueSpecificationUtil {
 
 	/**
 	 * Sets the value of a literal boolean, using a string value
-	 * 
+	 *
 	 * @param specification
-	 *        the literal boolean to update
+	 *            the literal boolean to update
 	 * @param value
-	 *        the new value
+	 *            the new value
 	 */
 	public static void restoreLiteralBoolean(LiteralBoolean specification, String value) {
-		if("true".equals(value) || "1".equals(value)) {
+		if ("true".equals(value) || "1".equals(value)) {
 			specification.setValue(true);
 		} else {
 			specification.setValue(false);
@@ -243,11 +241,11 @@ public class ValueSpecificationUtil {
 
 	/**
 	 * Sets the value of a literal unlimited natural, using a string value
-	 * 
+	 *
 	 * @param specification
-	 *        the literal unlimited natural to update
+	 *            the literal unlimited natural to update
 	 * @param value
-	 *        the new value
+	 *            the new value
 	 */
 	public static void restoreLiteralUnlimitedNatural(LiteralUnlimitedNatural specification, String value) {
 		int intValue = 0;
@@ -257,7 +255,7 @@ public class ValueSpecificationUtil {
 			// Do nothing, this was not a number. 0 will be the default value
 		}
 		// Handle the special unlimited value separately
-		if(UNLIMITED_KEYWORD.equals(value)) {
+		if (UNLIMITED_KEYWORD.equals(value)) {
 			intValue = -1;
 		}
 		specification.setValue(intValue);
@@ -265,11 +263,11 @@ public class ValueSpecificationUtil {
 
 	/**
 	 * Sets the value of a literal null, using a string value
-	 * 
+	 *
 	 * @param specification
-	 *        the literal null to update
+	 *            the literal null to update
 	 * @param value
-	 *        the new value
+	 *            the new value
 	 */
 	public static void restoreLiteralNull(LiteralNull specification, String value) {
 		// nothing to set
@@ -277,11 +275,11 @@ public class ValueSpecificationUtil {
 
 	/**
 	 * Sets the value of an opaque expression, using a string value
-	 * 
+	 *
 	 * @param specification
-	 *        the opaque expression to update
+	 *            the opaque expression to update
 	 * @param value
-	 *        the new value
+	 *            the new value
 	 */
 	public static void restoreOpaqueExpression(org.eclipse.uml2.uml.OpaqueExpression specification, String value) {
 		// save in "UML" language, but should be desactivable
@@ -290,13 +288,13 @@ public class ValueSpecificationUtil {
 
 	/**
 	 * Sets the value of an opaque expression, using a string value.
-	 * 
+	 *
 	 * @param specification
-	 *        the opaque expression to update
+	 *            the opaque expression to update
 	 * @param language
-	 *        the specified language
+	 *            the specified language
 	 * @param value
-	 *        the new value
+	 *            the new value
 	 */
 	public static void restoreOpaqueExpression(org.eclipse.uml2.uml.OpaqueExpression specification, String language, String value) {
 		OpaqueExpressionUtil.setBodyForLanguage(specification, language, value);
@@ -304,29 +302,29 @@ public class ValueSpecificationUtil {
 
 	/**
 	 * Add to the collection the value specification and all its related value specifications, like min and max of an interval for example.
-	 * 
+	 *
 	 * @param spec
-	 *        the value specification to add
+	 *            the value specification to add
 	 * @param collection
-	 *        the collection
+	 *            the collection
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void addEnclosedValueSpecificationToCollection(ValueSpecification spec, Collection collection) {
-		if(!collection.contains(spec)) {
+		if (!collection.contains(spec)) {
 			collection.add(spec);
-			if(spec instanceof Interval) {
-				addEnclosedValueSpecificationToCollection(((Interval)spec).getMin(), collection);
-				addEnclosedValueSpecificationToCollection(((Interval)spec).getMax(), collection);
-			} else if(spec instanceof Duration) {
-				addEnclosedValueSpecificationToCollection(((Duration)spec).getExpr(), collection);
-			} else if(spec instanceof TimeExpression) {
-				addEnclosedValueSpecificationToCollection(((TimeExpression)spec).getExpr(), collection);
-			} else if(spec instanceof Expression) {
-				for(ValueSpecification vs : ((Expression)spec).getOperands()) {
+			if (spec instanceof Interval) {
+				addEnclosedValueSpecificationToCollection(((Interval) spec).getMin(), collection);
+				addEnclosedValueSpecificationToCollection(((Interval) spec).getMax(), collection);
+			} else if (spec instanceof Duration) {
+				addEnclosedValueSpecificationToCollection(((Duration) spec).getExpr(), collection);
+			} else if (spec instanceof TimeExpression) {
+				addEnclosedValueSpecificationToCollection(((TimeExpression) spec).getExpr(), collection);
+			} else if (spec instanceof Expression) {
+				for (ValueSpecification vs : ((Expression) spec).getOperands()) {
 					addEnclosedValueSpecificationToCollection(vs, collection);
 				}
-				if(spec instanceof StringExpression) {
-					for(StringExpression se : ((StringExpression)spec).getSubExpressions()) {
+				if (spec instanceof StringExpression) {
+					for (StringExpression se : ((StringExpression) spec).getSubExpressions()) {
 						addEnclosedValueSpecificationToCollection(se, collection);
 					}
 				}

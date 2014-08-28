@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.swt.graphics.Image;
 /**
  * A drop strategy which delegates to the hard-coded Drop edit policy
  * Called when no other strategy is available (Lowest priority)
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class DefaultDropStrategy implements DropStrategy {
 
@@ -42,7 +42,7 @@ public class DefaultDropStrategy implements DropStrategy {
 
 	/**
 	 * Constructs an instance of DefaultDropStrategy for a specific edit policy
-	 * 
+	 *
 	 * @param baseDropEditPolicy
 	 * @param baseCreationEditPolicy
 	 */
@@ -64,8 +64,8 @@ public class DefaultDropStrategy implements DropStrategy {
 	}
 
 	public Command getCommand(Request request, final EditPart targetEditPart) {
-		if(baseDropEditPolicy == null) {
-			if(baseCreationEditPolicy == null) {
+		if (baseDropEditPolicy == null) {
+			if (baseCreationEditPolicy == null) {
 				return null;
 			}
 			return baseCreationEditPolicy.getCommand(request);
@@ -73,7 +73,7 @@ public class DefaultDropStrategy implements DropStrategy {
 
 		Command command = baseDropEditPolicy.getCommand(request);
 
-		if(command == null && baseCreationEditPolicy != null) {
+		if (command == null && baseCreationEditPolicy != null) {
 			command = baseCreationEditPolicy.getCommand(request);
 		}
 
@@ -85,11 +85,11 @@ public class DefaultDropStrategy implements DropStrategy {
 	}
 
 	public int getPriority() {
-		return 100; //Low priority
+		return 100; // Low priority
 	}
 
 	public void setOptions(Map<String, Object> options) {
-		//Nothing
+		// Nothing
 	}
 
 }

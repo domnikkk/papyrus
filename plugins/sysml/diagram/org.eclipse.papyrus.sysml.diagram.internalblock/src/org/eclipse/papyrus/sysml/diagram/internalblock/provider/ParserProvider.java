@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -57,10 +57,10 @@ public class ParserProvider extends AbstractProvider implements IParserProvider 
 	 * {@inheritDoc}
 	 */
 	public boolean provides(IOperation operation) {
-		if(operation instanceof GetParserOperation) {
-			IAdaptable hint = ((GetParserOperation)operation).getHint();
+		if (operation instanceof GetParserOperation) {
+			IAdaptable hint = ((GetParserOperation) operation).getHint();
 
-			if(!ElementTypes.DIAGRAM_ID.equals(getDiagramType(hint))) {
+			if (!ElementTypes.DIAGRAM_ID.equals(getDiagramType(hint))) {
 				return false;
 			}
 
@@ -73,18 +73,18 @@ public class ParserProvider extends AbstractProvider implements IParserProvider 
 	 * {@inheritDoc}
 	 */
 	public IParser getParser(IAdaptable hint) {
-		String parserHint = (String)hint.getAdapter(String.class);
-		if(parserHint != null) {
+		String parserHint = (String) hint.getAdapter(String.class);
+		if (parserHint != null) {
 			IParser parser = graphicalHintToParser.get(parserHint);
-			if(parser != null) {
+			if (parser != null) {
 				return parser;
 			}
 		}
 
-		View view = (View)hint.getAdapter(View.class);
-		if(view != null) {
+		View view = (View) hint.getAdapter(View.class);
+		if (view != null) {
 			IParser parser = graphicalHintToParser.get(view.getType());
-			if(parser != null) {
+			if (parser != null) {
 				return parser;
 			}
 		}
@@ -93,8 +93,8 @@ public class ParserProvider extends AbstractProvider implements IParserProvider 
 	}
 
 	private String getDiagramType(IAdaptable hint) {
-		Diagram diagram = (Diagram)hint.getAdapter(Diagram.class);
-		if(diagram != null) {
+		Diagram diagram = (Diagram) hint.getAdapter(Diagram.class);
+		if (diagram != null) {
 			return diagram.getType();
 		}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
- * 
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.toolbox;
 
@@ -38,7 +38,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
 	 */
 	@Override
@@ -49,7 +49,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
 	 */
 	@Override
@@ -60,7 +60,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -69,14 +69,14 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * This method returns an <code>org.eclipse.swt.graphics.Image</code> identified by its pluginId and iconPath.<BR>
-	 * 
+	 *
 	 * By default, it returns a default image. This image is the image placed in
 	 * the directory <em>resources/icons/default.gif</em>
-	 * 
+	 *
 	 * @param pluginId
-	 *        id of plugin
+	 *            id of plugin
 	 * @param iconpPath
-	 *        the path of the icon image relative to the plugin
+	 *            the path of the icon image relative to the plugin
 	 * @return the Image
 	 */
 	public static Image getImage(String iconPath, String defaultPlugin) {
@@ -85,7 +85,7 @@ public class Activator extends AbstractUIPlugin {
 		ImageRegistry registry = getDefault().getImageRegistry();
 		Image image = registry.get(key);
 
-		if(image == null) {
+		if (image == null) {
 
 			ImageDescriptor desc = AbstractUIPlugin.imageDescriptorFromPlugin(defaultPlugin, iconPath);
 			registry.put(key, desc);

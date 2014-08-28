@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,17 +24,17 @@ package org.eclipse.papyrus.eastadl.dependability.errormodel;
  *
  * <!-- begin-model-doc -->
  * The FaultInPort represents a propagation point for faults that propagate to the containing ErrorModelType. The EADatatype of the FaultInPort defines the range of valid failures.
- * 
+ *
  * Constraints:
  * [1] The direction of the nominal port must be in.
- * 
+ *
  * Semantics:
  * The value range of a FaultInPort represents faults propagated from a FailureOutPort in another ErrorModel. The value range is defined by the FaultInPort’s EADatatype.
- * 
+ *
  * If nominal Ports HWTarget or FunctionTarget are referenced, the faults on the FaultInPort.
- * 
- * 
- * Extension: 
+ *
+ *
+ * Extension:
  * UML::Port
  * <!-- end-model-doc -->
  *

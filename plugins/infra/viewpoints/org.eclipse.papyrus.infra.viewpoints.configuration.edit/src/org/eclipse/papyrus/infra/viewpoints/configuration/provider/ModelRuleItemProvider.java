@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,14 +35,16 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.StereotypePropertyDesc
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class ModelRuleItemProvider
-	extends RuleItemProvider {
+		extends RuleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ModelRuleItemProvider(AdapterFactory adapterFactory) {
@@ -53,6 +55,7 @@ public class ModelRuleItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,98 +75,100 @@ public class ModelRuleItemProvider
 	 * This adds a property descriptor for the Element Multiplicity feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addElementMultiplicityPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DisplayUnit_elementMultiplicity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DisplayUnit_elementMultiplicity_feature", "_UI_DisplayUnit_type"),
-				 ConstraintsPackage.Literals.DISPLAY_UNIT__ELEMENT_MULTIPLICITY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_DisplayUnit_elementMultiplicity_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DisplayUnit_elementMultiplicity_feature", "_UI_DisplayUnit_type"),
+						ConstraintsPackage.Literals.DISPLAY_UNIT__ELEMENT_MULTIPLICITY,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected void addElementPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new EClassPropertyDescriptor(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelRule_element_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelRule_element_feature", "_UI_ModelRule_type"),
-				 ConfigurationPackage.Literals.MODEL_RULE__ELEMENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null)));
+				(new EClassPropertyDescriptor(createItemPropertyDescriptor
+						(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+								getResourceLocator(),
+								getString("_UI_ModelRule_element_feature"),
+								getString("_UI_PropertyDescriptor_description", "_UI_ModelRule_element_feature", "_UI_ModelRule_type"),
+								ConfigurationPackage.Literals.MODEL_RULE__ELEMENT,
+								true,
+								false,
+								true,
+								null,
+								null,
+								null)));
 	}
 
 	/**
 	 * This adds a property descriptor for the Stereotypes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected void addStereotypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new StereotypePropertyDescriptor(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelRule_stereotypes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelRule_stereotypes_feature", "_UI_ModelRule_type"),
-				 ConfigurationPackage.Literals.MODEL_RULE__STEREOTYPES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null)));
+				(new StereotypePropertyDescriptor(createItemPropertyDescriptor
+						(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+								getResourceLocator(),
+								getString("_UI_ModelRule_stereotypes_feature"),
+								getString("_UI_PropertyDescriptor_description", "_UI_ModelRule_stereotypes_feature", "_UI_ModelRule_type"),
+								ConfigurationPackage.Literals.MODEL_RULE__STEREOTYPES,
+								true,
+								false,
+								true,
+								null,
+								null,
+								null)));
 	}
 
 	/**
 	 * This adds a property descriptor for the Multiplicity feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addMultiplicityPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelRule_multiplicity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelRule_multiplicity_feature", "_UI_ModelRule_type"),
-				 ConfigurationPackage.Literals.MODEL_RULE__MULTIPLICITY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ModelRule_multiplicity_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ModelRule_multiplicity_feature", "_UI_ModelRule_type"),
+						ConfigurationPackage.Literals.MODEL_RULE__MULTIPLICITY,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,6 +183,7 @@ public class ModelRuleItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,6 +198,7 @@ public class ModelRuleItemProvider
 	 * This returns ModelRule.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT - Custom Image
 	 */
 	@Override
@@ -211,8 +218,9 @@ public class ModelRuleItemProvider
 		if (!rule.getStereotypes().isEmpty()) {
 			builder.append("<<");
 			for (int i = 0; i != rule.getStereotypes().size(); i++) {
-				if (i != 0)
+				if (i != 0) {
 					builder.append(",");
+				}
 				builder.append(rule.getStereotypes().get(i).getName());
 			}
 			builder.append(">> ");
@@ -230,6 +238,7 @@ public class ModelRuleItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,13 +246,13 @@ public class ModelRuleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ModelRule.class)) {
-			case ConfigurationPackage.MODEL_RULE__ELEMENT_MULTIPLICITY:
-			case ConfigurationPackage.MODEL_RULE__MULTIPLICITY:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ConfigurationPackage.MODEL_RULE__CONSTRAINTS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ConfigurationPackage.MODEL_RULE__ELEMENT_MULTIPLICITY:
+		case ConfigurationPackage.MODEL_RULE__MULTIPLICITY:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ConfigurationPackage.MODEL_RULE__CONSTRAINTS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -253,6 +262,7 @@ public class ModelRuleItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,14 +270,14 @@ public class ModelRuleItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ConstraintsPackage.Literals.DISPLAY_UNIT__CONSTRAINTS,
-				 ConstraintsFactory.eINSTANCE.createSimpleConstraint()));
+						ConstraintsFactory.eINSTANCE.createSimpleConstraint()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ConstraintsPackage.Literals.DISPLAY_UNIT__CONSTRAINTS,
-				 ConstraintsFactory.eINSTANCE.createCompositeConstraint()));
+						ConstraintsFactory.eINSTANCE.createCompositeConstraint()));
 	}
 
 }

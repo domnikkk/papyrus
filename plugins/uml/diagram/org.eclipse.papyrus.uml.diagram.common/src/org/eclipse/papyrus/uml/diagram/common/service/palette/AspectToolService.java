@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ public class AspectToolService extends Service implements IAspectToolProviderSer
 
 	/**
 	 * Returns the singleton instance of this service
-	 * 
+	 *
 	 * @return the singleton instance of this service
 	 */
 	public static AspectToolService getInstance() {
@@ -60,6 +60,7 @@ public class AspectToolService extends Service implements IAspectToolProviderSer
 	/**
 	 * @see org.eclipse.gmf.runtime.common.core.service.Service#newProviderDescriptor(org.eclipse.core.runtime.IConfigurationElement)
 	 */
+	@Override
 	protected Service.ProviderDescriptor newProviderDescriptor(IConfigurationElement element) {
 		return new ProviderDescriptor(element);
 	}
@@ -67,6 +68,7 @@ public class AspectToolService extends Service implements IAspectToolProviderSer
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public List<IAspectActionProvider> getProviders() {
 		List<IAspectActionProvider> providers = new ArrayList<IAspectActionProvider>();
 		execute(ExecutionStrategy.REVERSE, new GetAllAspectToolProvidersOperation(providers));
@@ -76,16 +78,17 @@ public class AspectToolService extends Service implements IAspectToolProviderSer
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public IAspectActionProvider getProvider(String id) {
-		List<IAspectActionProvider> providers = (List)execute(ExecutionStrategy.REVERSE, new GetAspectToolProviderOperation(id));
-		if(providers == null) {
+		List<IAspectActionProvider> providers = execute(ExecutionStrategy.REVERSE, new GetAspectToolProviderOperation(id));
+		if (providers == null) {
 			return new StereotypeAspectActionProvider(); // backward
 															// compatibility
 		}
 		Iterator<IAspectActionProvider> it = providers.iterator();
-		while(it.hasNext()) {
-			IAspectActionProvider aspectActionProvider = (IAspectActionProvider)it.next();
-			if(aspectActionProvider != null) {
+		while (it.hasNext()) {
+			IAspectActionProvider aspectActionProvider = it.next();
+			if (aspectActionProvider != null) {
 				return aspectActionProvider;
 			}
 		}
@@ -104,9 +107,9 @@ public class AspectToolService extends Service implements IAspectToolProviderSer
 		/**
 		 * Constructs a <code>ISemanticProvider</code> descriptor for the
 		 * specified configuration element.
-		 * 
+		 *
 		 * @param element
-		 *        The configuration element describing the provider.
+		 *            The configuration element describing the provider.
 		 */
 		public ProviderDescriptor(IConfigurationElement element) {
 			super(element);
@@ -117,15 +120,16 @@ public class AspectToolService extends Service implements IAspectToolProviderSer
 		/**
 		 * @see org.eclipse.gmf.runtime.common.core.service.IProvider#provides(org.eclipse.gmf.runtime.common.core.service.IOperation)
 		 */
+		@Override
 		public boolean provides(IOperation operation) {
-			if(!super.provides(operation)) {
+			if (!super.provides(operation)) {
 				return false;
 			}
-			if(operation instanceof GetAllAspectToolProvidersOperation) {
+			if (operation instanceof GetAllAspectToolProvidersOperation) {
 				return true;
 			}
-			if(operation instanceof GetAspectToolProviderOperation) {
-				return providerConfiguration.getId().equals(((GetAspectToolProviderOperation)operation).getIdentifier());
+			if (operation instanceof GetAspectToolProviderOperation) {
+				return providerConfiguration.getId().equals(((GetAspectToolProviderOperation) operation).getIdentifier());
 			}
 			return false;
 		}
@@ -133,11 +137,12 @@ public class AspectToolService extends Service implements IAspectToolProviderSer
 		/**
 		 * @see org.eclipse.gmf.runtime.common.core.service.Service.ProviderDescriptor#getProvider()
 		 */
+		@Override
 		public IProvider getProvider() {
-			if(provider == null) {
+			if (provider == null) {
 				IProvider newProvider = super.getProvider();
-				if(provider instanceof IAspectActionProvider) {
-					IAspectActionProvider defaultProvider = (IAspectActionProvider)newProvider;
+				if (provider instanceof IAspectActionProvider) {
+					IAspectActionProvider defaultProvider = (IAspectActionProvider) newProvider;
 					defaultProvider.setConfiguration(getElement());
 				}
 				return newProvider;
@@ -148,15 +153,15 @@ public class AspectToolService extends Service implements IAspectToolProviderSer
 
 	/**
 	 * Returns the id of the provider in charge of the specified node
-	 * 
+	 *
 	 * @param actionNode
-	 *        the node that handles the configuration for the post action
+	 *            the node that handles the configuration for the post action
 	 * @return the id of the factory in charge of the node
 	 */
 	public static String getProviderId(Node actionNode) {
 		String id = "";
 		Node node = actionNode.getAttributes().getNamedItem(IPapyrusPaletteConstant.ID);
-		if(node == null) {
+		if (node == null) {
 			return StereotypeAspectActionProvider.FACTORY_ID; // backward
 																// compatibility
 		} else {

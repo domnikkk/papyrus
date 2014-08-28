@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitecturalModelImpl#getIsConceptFor <em>Is Concept For</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitecturalModelImpl#getIsConceptFor <em>Is Concept For</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	 * The cached value of the '{@link #getIsConceptFor() <em>Is Concept For</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIsConceptFor()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ArchitecturalModelImpl() {
@@ -61,6 +63,7 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,8 +74,10 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<SystemModel> getIsConceptFor() {
 		if (isConceptFor == null) {
 			isConceptFor = new EObjectResolvingEList<SystemModel>(SystemModel.class, this, NeedsPackage.ARCHITECTURAL_MODEL__IS_CONCEPT_FOR);
@@ -83,13 +88,14 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NeedsPackage.ARCHITECTURAL_MODEL__IS_CONCEPT_FOR:
-				return getIsConceptFor();
+		case NeedsPackage.ARCHITECTURAL_MODEL__IS_CONCEPT_FOR:
+			return getIsConceptFor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -97,16 +103,17 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NeedsPackage.ARCHITECTURAL_MODEL__IS_CONCEPT_FOR:
-				getIsConceptFor().clear();
-				getIsConceptFor().addAll((Collection<? extends SystemModel>)newValue);
-				return;
+		case NeedsPackage.ARCHITECTURAL_MODEL__IS_CONCEPT_FOR:
+			getIsConceptFor().clear();
+			getIsConceptFor().addAll((Collection<? extends SystemModel>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -114,14 +121,15 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NeedsPackage.ARCHITECTURAL_MODEL__IS_CONCEPT_FOR:
-				getIsConceptFor().clear();
-				return;
+		case NeedsPackage.ARCHITECTURAL_MODEL__IS_CONCEPT_FOR:
+			getIsConceptFor().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -129,15 +137,16 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NeedsPackage.ARCHITECTURAL_MODEL__IS_CONCEPT_FOR:
-				return isConceptFor != null && !isConceptFor.isEmpty();
+		case NeedsPackage.ARCHITECTURAL_MODEL__IS_CONCEPT_FOR:
+			return isConceptFor != null && !isConceptFor.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ArchitecturalModelImpl
+} // ArchitecturalModelImpl

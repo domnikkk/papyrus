@@ -23,21 +23,23 @@ public class MokaStackFrame_from_ActivityNodeActivation extends MokaStackFrame_f
 		this.activityNodeActivation = activityNodeActivation;
 	}
 
-	///////////////////////////////
+	// /////////////////////////////
 	// Presentation
-	///////////////////////////////
+	// /////////////////////////////
 
+	@Override
 	public String getLabel() {
 		String activityName = activityNodeActivation.getActivityExecution().getBehavior().getName();
 		String nodeName = activityNodeActivation.node.getName();
-		if(nodeName == null || nodeName.length() == 0)
+		if (nodeName == null || nodeName.length() == 0) {
 			nodeName = "Anonymous node";
+		}
 		return activityName + "(" + nodeName + ")";
 	}
 
-	///////////////////////////////
+	// /////////////////////////////
 	// Debug
-	///////////////////////////////
+	// /////////////////////////////
 
 	@Override
 	protected Object_ getContextObject() {

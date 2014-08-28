@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -38,9 +38,9 @@ public abstract class AbstractStereotypedElementEditHelperAdvice extends Abstrac
 
 	/**
 	 * Check required profile application before approving the request.
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice#approveRequest(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return true if the request is approved
 	 */
@@ -48,23 +48,23 @@ public abstract class AbstractStereotypedElementEditHelperAdvice extends Abstrac
 	public boolean approveRequest(IEditCommandRequest request) {
 		boolean isApproved = super.approveRequest(request);
 
-		if((request != null) && (request instanceof GetEditContextRequest)) {
+		if ((request != null) && (request instanceof GetEditContextRequest)) {
 
 			// Retrieve the edit context from request
-			GetEditContextRequest editContextRequest = (GetEditContextRequest)request;
+			GetEditContextRequest editContextRequest = (GetEditContextRequest) request;
 			Package profileApplicationContext = null;
 
 			// Retrieve the context nearest package (or itself)
-			if(editContextRequest.getEditContext() instanceof Package) {
-				profileApplicationContext = (Package)editContextRequest.getEditContext();
-			} else if(editContextRequest.getEditContext() instanceof Element) {
-				profileApplicationContext = ((Element)editContextRequest.getEditContext()).getNearestPackage();
+			if (editContextRequest.getEditContext() instanceof Package) {
+				profileApplicationContext = (Package) editContextRequest.getEditContext();
+			} else if (editContextRequest.getEditContext() instanceof Element) {
+				profileApplicationContext = ((Element) editContextRequest.getEditContext()).getNearestPackage();
 			}
 
 			// Ensure all necessary profiles are effectively applied
-			if(profileApplicationContext != null) {
-				for(EPackage requiredProfile : requiredProfiles) {
-					if(! profileApplicationContext.getAllAppliedProfiles().contains(UMLUtil.getProfile(requiredProfile, profileApplicationContext))) {					
+			if (profileApplicationContext != null) {
+				for (EPackage requiredProfile : requiredProfiles) {
+					if (!profileApplicationContext.getAllAppliedProfiles().contains(UMLUtil.getProfile(requiredProfile, profileApplicationContext))) {
 						isApproved = false;
 						break;
 					}

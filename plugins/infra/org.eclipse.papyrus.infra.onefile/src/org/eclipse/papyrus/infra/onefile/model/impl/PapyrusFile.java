@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin Integration.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,9 +26,9 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * Default Implementation of {@link IPapyrusFile}
- * 
+ *
  * @author tristan.faure@atosorigin.com
- * 
+ *
  */
 public class PapyrusFile implements IPapyrusFile {
 
@@ -46,14 +46,14 @@ public class PapyrusFile implements IPapyrusFile {
 	public IResource[] getAssociatedResources() {
 		ArrayList<IResource> files = new ArrayList<IResource>();
 		try {
-			for(IResource res : file.getParent().members()) {
-				if(res instanceof IFile && OneFileUtils.withoutFileExtension(file).equals(OneFileUtils.withoutFileExtension(res))) {
+			for (IResource res : file.getParent().members()) {
+				if (res instanceof IFile && OneFileUtils.withoutFileExtension(file).equals(OneFileUtils.withoutFileExtension(res))) {
 					files.add(res);
 				}
 			}
 		} catch (CoreException e) {
 		}
-		return files.toArray(new IResource[]{});
+		return files.toArray(new IResource[] {});
 	}
 
 	public String getLabel() {
@@ -69,8 +69,8 @@ public class PapyrusFile implements IPapyrusFile {
 
 	@Override
 	public boolean equals(Object obj) {
-		if(obj instanceof PapyrusFile) {
-			PapyrusFile papy = (PapyrusFile)obj;
+		if (obj instanceof PapyrusFile) {
+			PapyrusFile papy = (PapyrusFile) obj;
 			return getMainFile().equals(papy.getMainFile());
 		}
 		return super.equals(obj);

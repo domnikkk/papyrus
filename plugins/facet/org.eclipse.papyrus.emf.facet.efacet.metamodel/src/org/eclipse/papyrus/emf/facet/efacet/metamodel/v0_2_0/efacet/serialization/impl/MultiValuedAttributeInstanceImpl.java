@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  */
 package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl;
@@ -29,7 +29,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serializatio
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedAttributeInstanceImpl#getValues <em>Values</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedAttributeInstanceImpl#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	 * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getValues()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MultiValuedAttributeInstanceImpl() {
@@ -58,6 +60,7 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,6 +71,7 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<Object> getValues() {
@@ -80,13 +84,14 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SerializationPackage.MULTI_VALUED_ATTRIBUTE_INSTANCE__VALUES:
-				return getValues();
+		case SerializationPackage.MULTI_VALUED_ATTRIBUTE_INSTANCE__VALUES:
+			return getValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -94,16 +99,17 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SerializationPackage.MULTI_VALUED_ATTRIBUTE_INSTANCE__VALUES:
-				getValues().clear();
-				getValues().addAll((Collection<? extends Object>)newValue);
-				return;
+		case SerializationPackage.MULTI_VALUED_ATTRIBUTE_INSTANCE__VALUES:
+			getValues().clear();
+			getValues().addAll((Collection<? extends Object>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -111,14 +117,15 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SerializationPackage.MULTI_VALUED_ATTRIBUTE_INSTANCE__VALUES:
-				getValues().clear();
-				return;
+		case SerializationPackage.MULTI_VALUED_ATTRIBUTE_INSTANCE__VALUES:
+			getValues().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -126,13 +133,14 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SerializationPackage.MULTI_VALUED_ATTRIBUTE_INSTANCE__VALUES:
-				return values != null && !values.isEmpty();
+		case SerializationPackage.MULTI_VALUED_ATTRIBUTE_INSTANCE__VALUES:
+			return values != null && !values.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -140,11 +148,14 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (values: "); //$NON-NLS-1$
@@ -153,4 +164,4 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 		return result.toString();
 	}
 
-} //MultiValuedAttributeInstanceImpl
+} // MultiValuedAttributeInstanceImpl

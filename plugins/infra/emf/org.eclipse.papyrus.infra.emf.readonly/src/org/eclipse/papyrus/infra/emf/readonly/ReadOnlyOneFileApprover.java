@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 Atos Origin, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,13 +62,14 @@ public class ReadOnlyOneFileApprover implements IOperationApprover2 {
 		HashSet<URI> filesToCheckForLock = new HashSet<URI>();
 
 		Set<IFile> affectedFiles = getAffectedFiles(operation);
-		
-		if(!affectedFiles.isEmpty()) {
-			for(IFile affectedFile : affectedFiles) {
-				if(affectedFile == null)
-					continue;
 
-				if(affectedFile.exists()) {
+		if (!affectedFiles.isEmpty()) {
+			for (IFile affectedFile : affectedFiles) {
+				if (affectedFile == null) {
+					continue;
+				}
+
+				if (affectedFile.exists()) {
 					// the file is in the workspace
 					IPapyrusFile papFile = PapyrusModelHelper.getPapyrusModelFactory().createIPapyrusFile(affectedFile);
 					for (IFile f : OneFileUtils.getAssociatedFiles(papFile)) {
@@ -77,50 +78,50 @@ public class ReadOnlyOneFileApprover implements IOperationApprover2 {
 				} else {
 					// the file is not in the workspace
 					IPath path = affectedFile.getRawLocation();
-					if(path == null) {
+					if (path == null) {
 						// cancel if we can't find the file
-						if(operation instanceof ICommand) {
-							setCommandResult((ICommand)operation, Status.CANCEL_STATUS);
+						if (operation instanceof ICommand) {
+							setCommandResult((ICommand) operation, Status.CANCEL_STATUS);
 						}
 						return Status.CANCEL_STATUS;
 					}
 					File file = path.toFile();
-					if(file != null && file.exists() && !file.canWrite()) {
+					if (file != null && file.exists() && !file.canWrite()) {
 						// cancel if we find a read-only file outside the
 						// workspace
-						if(operation instanceof ICommand) {
-							setCommandResult((ICommand)operation, Status.CANCEL_STATUS);
+						if (operation instanceof ICommand) {
+							setCommandResult((ICommand) operation, Status.CANCEL_STATUS);
 						}
 						return Status.CANCEL_STATUS;
 					}
 				}
 			}
 		}
-		
+
 		EditingDomain editingDomain = getEditingDomain(operation);
 
 		URI[] filesToCheckForLockArray = filesToCheckForLock.toArray(new URI[filesToCheckForLock.size()]);
 		IReadOnlyHandler2 roHandler = ReadOnlyManager.getReadOnlyHandler(editingDomain);
-		if(roHandler.anyReadOnly(ReadOnlyAxis.anyAxis(), filesToCheckForLockArray).get()) {
+		if (roHandler.anyReadOnly(ReadOnlyAxis.anyAxis(), filesToCheckForLockArray).get()) {
 			Optional<Boolean> ok = roHandler.makeWritable(ReadOnlyAxis.anyAxis(), filesToCheckForLockArray);
-			if(!ok.get()) {
+			if (!ok.get()) {
 				return Status.CANCEL_STATUS;
 			}
 		}
 
 		return Status.OK_STATUS;
 	}
-	
+
 	protected EditingDomain getEditingDomain(IUndoableOperation command) {
 		EditingDomain editingDomain = null;
 		if (command instanceof AbstractEMFOperation) {
-			editingDomain = ((AbstractEMFOperation)command).getEditingDomain();
+			editingDomain = ((AbstractEMFOperation) command).getEditingDomain();
 		}
 
 		if (editingDomain == null && command instanceof ICompositeCommand) {
-			Iterator<?> it = ((ICompositeCommand)command).iterator();
+			Iterator<?> it = ((ICompositeCommand) command).iterator();
 			while (editingDomain == null && it.hasNext()) {
-				IUndoableOperation c = (IUndoableOperation)it.next();
+				IUndoableOperation c = (IUndoableOperation) it.next();
 				editingDomain = getEditingDomain(c);
 			}
 		}
@@ -130,17 +131,17 @@ public class ReadOnlyOneFileApprover implements IOperationApprover2 {
 	/**
 	 * Sets the command result of the specified command to a CommandResult
 	 * having the specified status.
-	 * 
+	 *
 	 * @param command
-	 *        ICommand to set the CommandResult for
+	 *            ICommand to set the CommandResult for
 	 * @param status
-	 *        IStatus of the CommandResult that will be set on the
-	 *        command
+	 *            IStatus of the CommandResult that will be set on the
+	 *            command
 	 */
 	@SuppressWarnings("restriction")
 	protected void setCommandResult(ICommand command, IStatus status) {
-		if(command instanceof org.eclipse.gmf.runtime.common.core.internal.command.ICommandWithSettableResult) {
-			((org.eclipse.gmf.runtime.common.core.internal.command.ICommandWithSettableResult)command).internalSetResult(new CommandResult(status));
+		if (command instanceof org.eclipse.gmf.runtime.common.core.internal.command.ICommandWithSettableResult) {
+			((org.eclipse.gmf.runtime.common.core.internal.command.ICommandWithSettableResult) command).internalSetResult(new CommandResult(status));
 		}
 	}
 
@@ -148,24 +149,24 @@ public class ReadOnlyOneFileApprover implements IOperationApprover2 {
 		Set<IFile> result = getAffectedFiles(operation, null);
 		return (result == null) ? Collections.<IFile> emptySet() : result;
 	}
-	
+
 	protected Set<IFile> getAffectedFiles(IUndoableOperation operation, Set<IFile> result) {
-		if(operation instanceof ICommand) {
+		if (operation instanceof ICommand) {
 			@SuppressWarnings("unchecked")
-			Collection<IFile> files = ((ICommand)operation).getAffectedFiles();
+			Collection<IFile> files = ((ICommand) operation).getAffectedFiles();
 			result = appendFiles(result, files);
-		} else if(operation instanceof GMFtoEMFCommandWrapper) {
-			result = getAffectedFiles(((GMFtoEMFCommandWrapper)operation).getGMFCommand(), result);
-		} else if(operation instanceof EMFCommandOperation) {
-			result = getAffectedFiles(((EMFCommandOperation)operation).getCommand(), result);
+		} else if (operation instanceof GMFtoEMFCommandWrapper) {
+			result = getAffectedFiles(((GMFtoEMFCommandWrapper) operation).getGMFCommand(), result);
+		} else if (operation instanceof EMFCommandOperation) {
+			result = getAffectedFiles(((EMFCommandOperation) operation).getCommand(), result);
 		}
 
 		return result;
 	}
-	
+
 	private Set<IFile> appendFiles(Set<IFile> result, Collection<IFile> files) {
-		if((files != null) && !files.isEmpty()) {
-			if(result == null) {
+		if ((files != null) && !files.isEmpty()) {
+			if (result == null) {
 				result = new HashSet<IFile>(files);
 			} else {
 				result.addAll(files);
@@ -177,21 +178,21 @@ public class ReadOnlyOneFileApprover implements IOperationApprover2 {
 	/**
 	 * Dig into an EMF command to find wrapped GMF commands and get their affected files. As commands are generally provided by GMF edit-helpers, this
 	 * should turn up useful results.
-	 * 
+	 *
 	 * @param command
-	 *        a command to mine for affected files
+	 *            a command to mine for affected files
 	 * @param result
-	 *        an accumulator of affected files
+	 *            an accumulator of affected files
 	 * @return the {@code result} if it already exists, a non-empty set containing affected files, or {@code null}
 	 */
 	protected Set<IFile> getAffectedFiles(Command command, Set<IFile> result) {
-		if(command instanceof CompoundCommand) {
-			for(Command next : ((CompoundCommand)command).getCommandList()) {
+		if (command instanceof CompoundCommand) {
+			for (Command next : ((CompoundCommand) command).getCommandList()) {
 				// accumulate affected files
 				result = getAffectedFiles(next, result);
 			}
-		} else if(command instanceof GMFtoEMFCommandWrapper) {
-			result = getAffectedFiles(((GMFtoEMFCommandWrapper)command).getGMFCommand(), result);
+		} else if (command instanceof GMFtoEMFCommandWrapper) {
+			result = getAffectedFiles(((GMFtoEMFCommandWrapper) command).getGMFCommand(), result);
 		}
 
 		return result;

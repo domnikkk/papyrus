@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,11 +26,11 @@ import org.eclipse.swt.widgets.Composite;
  * A 3-choices button. The three possible values are "True", "False" or "Default".
  * When the choice is "Default", it can be either "Default (True)" or "Default (False)",
  * depending on the default value assignated to the button.
- * 
+ *
  * @see State
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class TernaryButton extends Composite implements SelectionListener {
 
@@ -43,13 +43,13 @@ public class TernaryButton extends Composite implements SelectionListener {
 	private IObservableValue observable;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        The parent in which the button is created
+	 *            The parent in which the button is created
 	 * @param defaultValue
-	 *        The value returned when the "default" value is selected
+	 *            The value returned when the "default" value is selected
 	 */
 	public TernaryButton(Composite parent, boolean defaultValue) {
 		super(parent, SWT.NONE);
@@ -61,7 +61,7 @@ public class TernaryButton extends Composite implements SelectionListener {
 	}
 
 	public void widgetSelected(SelectionEvent e) {
-		switch(state) {
+		switch (state) {
 		case DEFAULT:
 			setState(State.TRUE);
 			break;
@@ -80,9 +80,9 @@ public class TernaryButton extends Composite implements SelectionListener {
 	 * Sets the ObservableValue binded to this widget. The databinding
 	 * is only one-way : modifications on the Observable value won't be
 	 * reflected on the widget.
-	 * 
+	 *
 	 * @param value
-	 *        The Observable value to link to this widget
+	 *            The Observable value to link to this widget
 	 */
 	public void setObservable(IObservableValue value) {
 		this.observable = value;
@@ -90,9 +90,9 @@ public class TernaryButton extends Composite implements SelectionListener {
 
 	/**
 	 * Change this button's value
-	 * 
+	 *
 	 * @param state
-	 *        The new button's state
+	 *            The new button's state
 	 */
 	public void setState(State state) {
 		this.state = state;
@@ -116,15 +116,15 @@ public class TernaryButton extends Composite implements SelectionListener {
 	}
 
 	public void widgetDefaultSelected(SelectionEvent e) {
-		//Nothing
+		// Nothing
 	}
 
 	/**
 	 * An enum representing the three possible states of the button :
 	 * DEFAULT, TRUE, FALSE
-	 * 
+	 *
 	 * @author Camille Letavernier
-	 * 
+	 *
 	 */
 	public enum State {
 		/**
@@ -143,12 +143,12 @@ public class TernaryButton extends Composite implements SelectionListener {
 
 		/**
 		 * @param defaultValue
-		 *        The value to return if the state is "Default"
+		 *            The value to return if the state is "Default"
 		 * @return the boolean value of this button. If the State is Default, then
 		 *         the default value will be returned.
 		 */
 		public boolean getValue(boolean defaultValue) {
-			switch(this) {
+			switch (this) {
 			case DEFAULT:
 				return defaultValue;
 			case TRUE:
@@ -157,23 +157,23 @@ public class TernaryButton extends Composite implements SelectionListener {
 				return false;
 			}
 
-			//Cannot happen as the switch is exhaustive
+			// Cannot happen as the switch is exhaustive
 			throw new RuntimeException();
 		}
 
 		/**
 		 * Return the image corresponding to the current state. If the state
 		 * is "Default", the image will depend on the given defaultValue
-		 * 
+		 *
 		 * @param defaultValue
-		 *        The value to use if the State is "Default"
+		 *            The value to use if the State is "Default"
 		 * @return
 		 *         The image corresponding to the current State
 		 */
 		public Image getImage(boolean defaultValue) {
-			switch(this) {
+			switch (this) {
 			case DEFAULT:
-				if(defaultValue) {
+				if (defaultValue) {
 					return Activator.getDefault().getImage("/icons/default_true.gif"); //$NON-NLS-1$
 				} else {
 					return Activator.getDefault().getImage("/icons/default_false.gif"); //$NON-NLS-1$
@@ -184,23 +184,23 @@ public class TernaryButton extends Composite implements SelectionListener {
 				return Activator.getDefault().getImage("/icons/false.gif"); //$NON-NLS-1$
 			}
 
-			//Cannot happen as the switch is exhaustive
+			// Cannot happen as the switch is exhaustive
 			throw new RuntimeException();
 		}
 
 		/**
 		 * Return the text corresponding to the current state. If the state
 		 * is "Default", the text will depend on the given defaultValue
-		 * 
+		 *
 		 * @param defaultValue
-		 *        The value to use if the State is "Default"
+		 *            The value to use if the State is "Default"
 		 * @return
 		 *         The text corresponding to the current State
 		 */
 		public String getText(boolean defaultValue) {
-			switch(this) {
+			switch (this) {
 			case DEFAULT:
-				if(defaultValue) {
+				if (defaultValue) {
 					return Messages.TernaryButton_defaultTrue;
 				} else {
 					return Messages.TernaryButton_defaultFalse;
@@ -211,7 +211,7 @@ public class TernaryButton extends Composite implements SelectionListener {
 				return Messages.TernaryButton_false;
 			}
 
-			//Cannot happen as the switch is exhaustive
+			// Cannot happen as the switch is exhaustive
 			throw new RuntimeException();
 		}
 	}

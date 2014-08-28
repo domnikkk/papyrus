@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -35,35 +35,36 @@ import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 
 /**
  * Default handler for Delete command used in the ModelExplorer contextual menu.
- * 
+ *
  */
 public class DeleteCommandHandler extends AbstractCommandHandler implements IHandler {
 
-	
+
 	/**
 	 * Check if the selection allow delete
+	 *
 	 * @param selectedElements
 	 * @return
 	 */
 	public static boolean isDeleteEnabled(Collection<EObject> selectedElements) {
-		if(selectedElements.size() == 0) {
+		if (selectedElements.size() == 0) {
 			return false;
 		}
-		
-		for(EObject current : selectedElements) {
-			if(EMFHelper.isReadOnly(current)) {
+
+		for (EObject current : selectedElements) {
+			if (EMFHelper.isReadOnly(current)) {
 				return false;
 			}
-			//the root of the model can't be deleted!
-			if(current.eContainer() == null) {
+			// the root of the model can't be deleted!
+			if (current.eContainer() == null) {
 				try {
-					//Pages can be deleted even when they are root elements
+					// Pages can be deleted even when they are root elements
 					IPageManager pageManager = ServiceUtilsForEObject.getInstance().getIPageManager(current);
-					if(pageManager.allPages().contains(current)) {
+					if (pageManager.allPages().contains(current)) {
 						return true;
 					}
 				} catch (ServiceException ex) {
-					//Cannot retrieve the ServicesRegistry: ignore
+					// Cannot retrieve the ServicesRegistry: ignore
 				}
 				return false;
 			}
@@ -73,18 +74,18 @@ public class DeleteCommandHandler extends AbstractCommandHandler implements IHan
 		// it can be WAY too slow...
 		return true;
 	}
-	
+
 	/**
 	 * <pre>
-	 * 
+	 *
 	 * Build the delete command for a set of EObject selected in the ModelExplorer.
-	 * The delete command is given by the {@link IElementEditService} of selected 
+	 * The delete command is given by the {@link IElementEditService} of selected
 	 * elements.
 	 * @param selectedElements elements to delete
 	 * @return the composite deletion command for current selection
-	 * 
+	 *
 	 * @TODO : Manage possible Diagrams listed in the selection
-	 * 
+	 *
 	 * </pre>
 	 */
 	public static Command buildDeleteCommand(Collection<EObject> selectedElements) {
@@ -95,14 +96,14 @@ public class DeleteCommandHandler extends AbstractCommandHandler implements IHan
 		// if multiple elements are selected for deletion.
 		Map parameters = new HashMap();
 
-		for(EObject selectedEObject : selectedElements) {
+		for (EObject selectedEObject : selectedElements) {
 
-			if(selectedEObject == null) {
+			if (selectedEObject == null) {
 				continue;
 			}
 
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(selectedEObject);
-			if(provider == null) {
+			if (provider == null) {
 				continue;
 			}
 
@@ -122,24 +123,24 @@ public class DeleteCommandHandler extends AbstractCommandHandler implements IHan
 			parameters.putAll(request.getParameters());
 		}
 
-		if(gmfCommand == null) {
+		if (gmfCommand == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		return GMFtoEMFCommandWrapper.wrap(gmfCommand.reduce());
 	}
-	
-	
+
+
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return current command (only built here when the stored command is null)
 	 */
 	@Override
 	protected Command getCommand() {
 		// Don't cache the command, as it is no more refreshed by isEnabled().
-		return buildDeleteCommand( getSelectedElements());
+		return buildDeleteCommand(getSelectedElements());
 	}
 
 	/**

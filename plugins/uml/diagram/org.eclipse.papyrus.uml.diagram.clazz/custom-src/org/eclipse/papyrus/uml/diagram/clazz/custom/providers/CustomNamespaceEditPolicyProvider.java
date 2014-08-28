@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -61,26 +61,27 @@ import org.eclipse.uml2.uml.Namespace;
 
 /**
  * An edit policy provider to install
- * 
+ *
  * @author Boutheina Bannour
- * 
+ *
  */
 public class CustomNamespaceEditPolicyProvider extends AbstractProvider implements IEditPolicyProvider {
 
+	@Override
 	public boolean provides(IOperation operation) {
-		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
 		EditPart editPart = epOperation.getEditPart();
-		if(editPart == null) {
+		if (editPart == null) {
 			return false;
 		}
 		EObject eElement = EMFHelper.getEObject(editPart);
-		if(!(eElement instanceof Namespace)) {
+		if (!(eElement instanceof Namespace)) {
 			return false;
 		}
 		try {
 			// check whether the element is a papyrus element.
 			ServicesRegistry registry = ServiceUtilsForEObject.getInstance().getServiceRegistry(eElement);
-			if(registry == null) {
+			if (registry == null) {
 				return false;
 			}
 		} catch (Exception ex) {
@@ -90,68 +91,69 @@ public class CustomNamespaceEditPolicyProvider extends AbstractProvider implemen
 		return (editPart instanceof IPrimaryEditPart);
 	}
 
+	@Override
 	public void createEditPolicies(EditPart editPart) {
 		// install policy for ComponentEditPart
-		if(editPart instanceof ComponentEditPart) {
+		if (editPart instanceof ComponentEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomComponentContextLinkSemanticEditPolicy());
 		}
-		if(editPart instanceof ComponentEditPartCN) {
+		if (editPart instanceof ComponentEditPartCN) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomComponentContextLinkSemanticEditPolicyCN());
 		}
 		// install policy for InterfaceEditPart
-		if(editPart instanceof InterfaceEditPart) {
+		if (editPart instanceof InterfaceEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomInterfaceContextLinkSemanticEditPolicy());
 		}
-		if(editPart instanceof InterfaceEditPartCN) {
+		if (editPart instanceof InterfaceEditPartCN) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomInterfaceContextLinkSemanticEditPolicyCN());
 		}
 		// install policy for DataTypeEditPart
-		if(editPart instanceof DataTypeEditPart) {
+		if (editPart instanceof DataTypeEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomDataTypeContextLinkSemanticEditPolicy());
 		}
-		if(editPart instanceof DataTypeEditPartCN) {
+		if (editPart instanceof DataTypeEditPartCN) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomDataTypeContextLinkSemanticEditPolicyCN());
 		}
 		// install policy for EnumerationEditPart
-		if(editPart instanceof EnumerationEditPart) {
+		if (editPart instanceof EnumerationEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomEnumerationContextLinkSemanticEditPolicy());
 		}
-		if(editPart instanceof EnumerationEditPartCN) {
+		if (editPart instanceof EnumerationEditPartCN) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomEnumerationContextLinkSemanticEditPolicyCN());
 		}
 		// install policy for InformationItemEditPart
-		if(editPart instanceof InformationItemEditPart) {
+		if (editPart instanceof InformationItemEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomInformationItemContextLinkSemanticEditPolicy());
 		}
-		if(editPart instanceof InformationItemEditPartCN) {
+		if (editPart instanceof InformationItemEditPartCN) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomInformationItemContextLinkSemanticEditPolicy());
 		}
 		// install policy for PrimitiveTypeEditPart
-		if(editPart instanceof PrimitiveTypeEditPart) {
+		if (editPart instanceof PrimitiveTypeEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomPrimitiveTypeContextLinkSemanticEditPolicy());
 		}
-		if(editPart instanceof PrimitiveTypeEditPartCN) {
+		if (editPart instanceof PrimitiveTypeEditPartCN) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomPrimitiveTypeContextLinkSemanticEditPolicyCN());
 		}
 		// install policy for ModelEditPart
-		if(editPart instanceof ModelEditPartCN) {
+		if (editPart instanceof ModelEditPartCN) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomModelContextLinkSemanticEditPolicyCN());
 		}
-		if(editPart instanceof ModelEditPartTN) {
+		if (editPart instanceof ModelEditPartTN) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomModelContextLinkSemanticEditPolicyTN());
 		}
 		// install policy for PackageEditPart
-		if(editPart instanceof PackageEditPart) {
+		if (editPart instanceof PackageEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomPackageContextLinkSemanticEditPolicy());
 		}
-		//		if (editPart instanceof PackageEditPartCN){	
-		//			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new C);
-		//		}
+		// if (editPart instanceof PackageEditPartCN){
+		// editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new C);
+		// }
 		// install policy for SignalEditPart
-		if(editPart instanceof SignalEditPart) {
+		if (editPart instanceof SignalEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomSignalContextLinkSemanticEditPolicy());
 		}
-		if(editPart instanceof SignalEditPartCN) {
+		if (editPart instanceof SignalEditPartCN) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomSignalContextLinkSemanticEditPolicyCN());
 		}
 	}

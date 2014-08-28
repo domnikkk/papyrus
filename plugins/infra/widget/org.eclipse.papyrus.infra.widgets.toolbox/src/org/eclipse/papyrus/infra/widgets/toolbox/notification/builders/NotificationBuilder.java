@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,6 +29,7 @@ import org.eclipse.papyrus.infra.widgets.toolbox.notification.INotification;
 import org.eclipse.papyrus.infra.widgets.toolbox.notification.NotificationRunnable;
 import org.eclipse.papyrus.infra.widgets.toolbox.notification.PapyrusToolkit;
 import org.eclipse.papyrus.infra.widgets.toolbox.notification.Type;
+import org.eclipse.papyrus.infra.widgets.toolbox.notification.popups.PopupNotification;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
@@ -39,9 +40,9 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 /**
  * A class creating a notification,
  * the run method launch the message according to the value of the attributes
- * 
+ *
  * @author tristan faure
- * 
+ *
  */
 public class NotificationBuilder {
 
@@ -93,16 +94,16 @@ public class NotificationBuilder {
 
 	/**
 	 * Returns the ibuilders able to create notifications
-	 * 
+	 *
 	 * @return the list of {@link IBuilder}
 	 */
 	private static Map<Class<? extends IBuilder>, IBuilder> getBuilders() {
 		Map<Class<? extends IBuilder>, IBuilder> result = new HashMap<Class<? extends IBuilder>, IBuilder>();
 		IConfigurationElement[] elements = Platform.getExtensionRegistry().getConfigurationElementsFor("org.eclipse.papyrus.infra.widgets.toolbox.papyrusNotificationBuilder");
-		for(IConfigurationElement e : elements) {
+		for (IConfigurationElement e : elements) {
 			IBuilder instance;
 			try {
-				instance = (IBuilder)e.createExecutableExtension("builder");
+				instance = (IBuilder) e.createExecutableExtension("builder");
 				result.put(instance.getClass(), instance);
 			} catch (CoreException e1) {
 			}
@@ -112,9 +113,9 @@ public class NotificationBuilder {
 
 	/**
 	 * Set a message for the notification
-	 * 
+	 *
 	 * @param message
-	 *        , the message to display
+	 *            , the message to display
 	 * @return this
 	 */
 	public NotificationBuilder setMessage(String message) {
@@ -124,9 +125,9 @@ public class NotificationBuilder {
 
 	/**
 	 * Determines if the notification is asynchronous (don't force the user to read the notification immediately)
-	 * 
+	 *
 	 * @param asynchronous
-	 *        , true if it asynchronous
+	 *            , true if it asynchronous
 	 * @return this
 	 */
 	public NotificationBuilder setAsynchronous(boolean asynchronous) {
@@ -136,16 +137,16 @@ public class NotificationBuilder {
 
 	/**
 	 * Set a default action for the notification
-	 * 
+	 *
 	 * @param runnable
-	 *        , a runnable triggered when default action of the notification is selected
-	 *        The first action added is the default One
+	 *            , a runnable triggered when default action of the notification is selected
+	 *            The first action added is the default One
 	 * @return this
 	 */
 	@SuppressWarnings("unchecked")
 	public NotificationBuilder addAction(NotificationRunnable runnable) {
-		Collection<NotificationRunnable> runnables = (Collection<NotificationRunnable>)parameters.get(ACTION);
-		if(runnables == null) {
+		Collection<NotificationRunnable> runnables = (Collection<NotificationRunnable>) parameters.get(ACTION);
+		if (runnables == null) {
 			runnables = new LinkedList<NotificationRunnable>();
 			parameters.put(ACTION, runnables);
 		}
@@ -155,9 +156,9 @@ public class NotificationBuilder {
 
 	/**
 	 * Set a composite creator, able to fill a notification
-	 * 
+	 *
 	 * @param creator
-	 *        , the composite creator
+	 *            , the composite creator
 	 * @return this
 	 */
 	public NotificationBuilder setComposite(ICompositeCreator creator) {
@@ -167,9 +168,9 @@ public class NotificationBuilder {
 
 	/**
 	 * Set a delay if the notification is temporary
-	 * 
+	 *
 	 * @param delayMs
-	 *        , the delay in ms for visibility
+	 *            , the delay in ms for visibility
 	 * @return this
 	 */
 	public NotificationBuilder setDelay(long delayMs) {
@@ -179,7 +180,7 @@ public class NotificationBuilder {
 
 	/**
 	 * Set true if the notification is temporary
-	 * 
+	 *
 	 * @param temporary
 	 * @return this
 	 */
@@ -190,9 +191,9 @@ public class NotificationBuilder {
 
 	/**
 	 * Set a title for the notification
-	 * 
+	 *
 	 * @param title
-	 *        , the title
+	 *            , the title
 	 * @return this
 	 */
 	public NotificationBuilder setTitle(String title) {
@@ -202,7 +203,7 @@ public class NotificationBuilder {
 
 	/**
 	 * Set if the notification has to understand HTML
-	 * 
+	 *
 	 * @param useHTML
 	 * @return this
 	 */
@@ -213,9 +214,9 @@ public class NotificationBuilder {
 
 	/**
 	 * Set the type of the notification according to {@link Type}
-	 * 
+	 *
 	 * @param type
-	 *        , the desired type
+	 *            , the desired type
 	 * @return this
 	 */
 	public NotificationBuilder setType(Type type) {
@@ -225,9 +226,9 @@ public class NotificationBuilder {
 
 	/**
 	 * Set an image for the notification
-	 * 
+	 *
 	 * @param image
-	 *        , the desired image
+	 *            , the desired image
 	 * @return this
 	 */
 	public NotificationBuilder setImage(Image image) {
@@ -237,9 +238,9 @@ public class NotificationBuilder {
 
 	/**
 	 * Force a builder class
-	 * 
+	 *
 	 * @param builderClass
-	 *        , a class which inherits from {@link IBuilder}
+	 *            , a class which inherits from {@link IBuilder}
 	 * @return this
 	 */
 	public NotificationBuilder setBuilderClass(Class<? extends IBuilder> builderClass) {
@@ -249,11 +250,11 @@ public class NotificationBuilder {
 
 	/**
 	 * Allows the developer to use a specific parameter
-	 * 
+	 *
 	 * @param name
-	 *        , the key of the parameter
+	 *            , the key of the parameter
 	 * @param value
-	 *        , the value
+	 *            , the value
 	 * @return this
 	 */
 	public NotificationBuilder setParameter(String name, Object value) {
@@ -266,7 +267,7 @@ public class NotificationBuilder {
 	 */
 	public INotification run() {
 		Set<IBuilder> copy = null;
-		if(builderClass != null) {
+		if (builderClass != null) {
 			copy = new HashSet<IBuilder>();
 			try {
 				copy.add(builderClass.newInstance());
@@ -276,10 +277,10 @@ public class NotificationBuilder {
 		} else {
 			copy = new HashSet<IBuilder>(builders.values());
 		}
-		for(Iterator<IBuilder> i = copy.iterator(); i.hasNext();) {
+		for (Iterator<IBuilder> i = copy.iterator(); i.hasNext();) {
 			IBuilder b = i.next();
-			for(String string : parameters.keySet()) {
-				if(!b.accept(string, parameters.get(string))) {
+			for (String string : parameters.keySet()) {
+				if (!b.accept(string, parameters.get(string))) {
 					i.remove();
 					break;
 				}
@@ -287,10 +288,10 @@ public class NotificationBuilder {
 		}
 		INotification result = null;
 		PropertyWrapper wrapper = new PropertyWrapper(parameters);
-		if(copy.size() >= 1) {
+		if (copy.size() >= 1) {
 			result = copy.iterator().next().build(wrapper, toolkit);
 			// default case : the popup
-		} else if(copy.isEmpty()) {
+		} else if (copy.isEmpty()) {
 			result = builders.get(PopupBuilder.class).build(wrapper, toolkit);
 		}
 		return result;
@@ -298,7 +299,7 @@ public class NotificationBuilder {
 
 	/**
 	 * Creates a notification builder already configured to display an information builder
-	 * 
+	 *
 	 * @return a notification builder
 	 */
 	public static NotificationBuilder createInformationBuilder() {
@@ -308,9 +309,9 @@ public class NotificationBuilder {
 
 	/**
 	 * Creates a notification builder already configured to display an asynchronous popup
-	 * 
+	 *
 	 * @param text
-	 *        , the text to display
+	 *            , the text to display
 	 * @return a notification builder
 	 */
 	public static NotificationBuilder createAsyncPopup(String text) {
@@ -319,11 +320,11 @@ public class NotificationBuilder {
 
 	/**
 	 * Creates a notification builder already configured to display an asynchronous popup with a specified title
-	 * 
+	 *
 	 * @param text
-	 *        , the text to display
+	 *            , the text to display
 	 * @param title
-	 *        , the title of the popup
+	 *            , the title of the popup
 	 * @return a notification builder
 	 */
 	public static NotificationBuilder createAsyncPopup(String title, String text) {
@@ -332,9 +333,9 @@ public class NotificationBuilder {
 
 	/**
 	 * Creates a notification builder already configured to display an information popup
-	 * 
+	 *
 	 * @param text
-	 *        , the text to display
+	 *            , the text to display
 	 * @return a notification builder
 	 */
 	public static NotificationBuilder createInfoPopup(String text) {
@@ -343,9 +344,9 @@ public class NotificationBuilder {
 
 	/**
 	 * Creates a notification builder already configured to display an warning popup
-	 * 
+	 *
 	 * @param text
-	 *        , the text to display
+	 *            , the text to display
 	 * @return a notification builder
 	 */
 	public static NotificationBuilder createWarningPopup(String text) {
@@ -354,9 +355,9 @@ public class NotificationBuilder {
 
 	/**
 	 * Creates a notification builder already configured to display a popup with question icon
-	 * 
+	 *
 	 * @param text
-	 *        , the text to display
+	 *            , the text to display
 	 * @return a notification builder
 	 */
 	public static NotificationBuilder createQuestionPopup(String text) {
@@ -365,9 +366,9 @@ public class NotificationBuilder {
 
 	/**
 	 * Creates a notification builder already configured to display a popup with error icon
-	 * 
+	 *
 	 * @param text
-	 *        , the text to display
+	 *            , the text to display
 	 * @return a notification builder
 	 */
 	public static NotificationBuilder createErrorPopup(String text) {
@@ -376,18 +377,18 @@ public class NotificationBuilder {
 
 	/**
 	 * Creates a notification builder already configured to display a yes no question
-	 * 
+	 *
 	 * @param yes
-	 *        , the action to launch if yes is selected
+	 *            , the action to launch if yes is selected
 	 * @param no
-	 *        , the action to launch if no is selected
+	 *            , the action to launch if no is selected
 	 * @return a notification builder
 	 */
 	public static NotificationBuilder createYesNo(String message, final Runnable yes, final Runnable no) {
 		return new NotificationBuilder().setType(Type.QUESTION).setAsynchronous(false).setTemporary(false).setMessage(message).addAction(new NotificationRunnable() {
 
 			public void run(IContext context) {
-				if(yes != null) {
+				if (yes != null) {
 					context.put(IContext.ACTION_ID, SWT.YES);
 					yes.run();
 				}
@@ -399,7 +400,7 @@ public class NotificationBuilder {
 		}).addAction(new NotificationRunnable() {
 
 			public void run(IContext context) {
-				if(no != null) {
+				if (no != null) {
 					context.put(IContext.ACTION_ID, SWT.NO);
 					no.run();
 				}
@@ -416,9 +417,10 @@ public class NotificationBuilder {
 	 * PopupNotification result
 	 * This NotificationRunnable is not intended to be changed to an asynchronous notification for example
 	 * When the run method is called use getRsult method in {@link PopupNotification} and test if the value is SWT.YES or SWT.NO
+	 *
 	 * @param message
-	 *        , the message to display
-	 * 
+	 *            , the message to display
+	 *
 	 * @return a notification builder
 	 */
 	public static NotificationBuilder createYesNo(String message) {
@@ -445,18 +447,18 @@ public class NotificationBuilder {
 
 	/**
 	 * Creates a notification builder already configured to display a yes no question
-	 * 
+	 *
 	 * @param yes
-	 *        , the action to launch if yes is selected
+	 *            , the action to launch if yes is selected
 	 * @param no
-	 *        , the action to launch if no is selected
+	 *            , the action to launch if no is selected
 	 * @return a notification builder
 	 */
 	public static NotificationBuilder createYesNo(String message, final NotificationRunnable yes, final NotificationRunnable no) {
 		return new NotificationBuilder().setType(Type.QUESTION).setAsynchronous(false).setTemporary(false).setMessage(message).addAction(new NotificationRunnable() {
 
 			public void run(IContext context) {
-				if(yes != null) {
+				if (yes != null) {
 					context.put(IContext.ACTION_ID, SWT.YES);
 					yes.run(context);
 				}
@@ -468,7 +470,7 @@ public class NotificationBuilder {
 		}).addAction(new NotificationRunnable() {
 
 			public void run(IContext context) {
-				if(no != null) {
+				if (no != null) {
 					context.put(IContext.ACTION_ID, SWT.NO);
 					no.run(context);
 				}
@@ -482,14 +484,14 @@ public class NotificationBuilder {
 
 	/**
 	 * Return the system image according to the imageID
-	 * 
+	 *
 	 * @param imageID
 	 * @param shell
 	 * @return
 	 */
 	public static Image getSWTImage(final int imageID, Shell shell) {
 		final Display display;
-		if(shell == null || shell.isDisposed()) {
+		if (shell == null || shell.isDisposed()) {
 			display = Display.getCurrent();
 			// The dialog should be always instantiated in UI thread.
 			// However it was possible to instantiate it in other threads

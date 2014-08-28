@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,14 +17,14 @@ package org.eclipse.papyrus.infra.core.resource;
 
 /**
  * Exception thrown when an argument is invalid.
- * 
+ *
  * @author cedric dumoulin
  *
  */
 public class BadArgumentExcetion extends Exception {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -71,10 +71,10 @@ public class BadArgumentExcetion extends Exception {
 	 * @param cause
 	 * @param enableSuppression
 	 * @param writableStackTrace
-	 * Remove temporarily (because of incompatibility with current Java version)
+	 *            Remove temporarily (because of incompatibility with current Java version)
 	 */
-//	public BadArgumentExcetion(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-//		super(message, cause, enableSuppression, writableStackTrace);
-//	}
+	// public BadArgumentExcetion(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+	// super(message, cause, enableSuppression, writableStackTrace);
+	// }
 
 }

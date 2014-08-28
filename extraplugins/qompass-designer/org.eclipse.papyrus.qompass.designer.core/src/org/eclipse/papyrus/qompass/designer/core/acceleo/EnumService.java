@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -42,7 +42,7 @@ public class EnumService {
 
 	/**
 	 * Return qualified name of enum package which is used to prefix enumerations (namespace)
-	 * 
+	 *
 	 * @param dummy
 	 * @return
 	 */
@@ -53,16 +53,16 @@ public class EnumService {
 	public static String literalKey(Element dummy, String enumName, String literalKey) {
 		String prefix = "ID_"; //$NON-NLS-1$
 		String literal = ""; //$NON-NLS-1$
-		if(literalKey.equals("Port")) { //$NON-NLS-1$
+		if (literalKey.equals("Port")) { //$NON-NLS-1$
 			literal = prefix + TransformationContext.port.getName();
 		}
-		else if(literalKey.equals("Formal")) { //$NON-NLS-1$
+		else if (literalKey.equals("Formal")) { //$NON-NLS-1$
 			literal = prefix + TransformationContext.formalParameter.getName();
 		}
-		else if(literalKey.equals("Instance")) { //$NON-NLS-1$
+		else if (literalKey.equals("Instance")) { //$NON-NLS-1$
 			literal = prefix + TransformationContext.instance.getName();
 		}
-		else if(literalKey.equals("Interface")) { //$NON-NLS-1$
+		else if (literalKey.equals("Interface")) { //$NON-NLS-1$
 			literal = prefix + TransformationContext.classifier.getName();
 		}
 		return literal(enumName, literal);
@@ -79,31 +79,31 @@ public class EnumService {
 	 * from the transformation context.
 	 *
 	 * @param enumName
-	 *        the name of an enumeration
+	 *            the name of an enumeration
 	 * @param literal
-	 *        the name of a literal within that enumeration.
+	 *            the name of a literal within that enumeration.
 	 * @return
 	 */
 	public static String literal(String enumName, String literal) {
 		Enumeration enumeration = enumHash.get(enumName);
-		if(enumPkg == null) {
+		if (enumPkg == null) {
 			return literal;
 		}
-		if(enumeration == null) {
-			if(enumName.startsWith("L")) { //$NON-NLS-1$
+		if (enumeration == null) {
+			if (enumName.startsWith("L")) { //$NON-NLS-1$
 				// magic prefix for class local
 				enumeration = (Enumeration)
-					((Class)TransformationContext.classifier).createNestedClassifier(enumName, UMLPackage.eINSTANCE.getEnumeration());
+						((Class) TransformationContext.classifier).createNestedClassifier(enumName, UMLPackage.eINSTANCE.getEnumeration());
 			}
 			else {
 				enumeration = enumPkg.createOwnedEnumeration(enumName);
 			}
 			enumHash.put(enumName, enumeration);
 		}
-		if(enumeration.getOwnedLiteral(literal) == null) {
+		if (enumeration.getOwnedLiteral(literal) == null) {
 			enumeration.createOwnedLiteral(literal);
 		}
-		// declare a dependency to the enumeration from the current classifier 
+		// declare a dependency to the enumeration from the current classifier
 		checkAndCreateDependency(TransformationContext.classifier, enumeration);
 
 		if (enumName.startsWith("L")) { //$NON-NLS-1$
@@ -118,17 +118,20 @@ public class EnumService {
 	 * Create a dependency between the passed classifier, target pair. The objective
 	 * of this function is that code generators do the necessary to assure that the
 	 * target is known within the classifier (e.g. include directives)
-	 * @param classifier a classifier
-	 * @param target a target, on which the classifier or its code depends.
+	 *
+	 * @param classifier
+	 *            a classifier
+	 * @param target
+	 *            a target, on which the classifier or its code depends.
 	 */
 	public static void checkAndCreateDependency(Classifier classifier, NamedElement target) {
 		boolean found = false;
-		for(Dependency dep : classifier.getClientDependencies()) {
-			if(dep.getSuppliers().contains(target)) {
+		for (Dependency dep : classifier.getClientDependencies()) {
+			if (dep.getSuppliers().contains(target)) {
 				found = true;
 			}
 		}
-		if(!found) {
+		if (!found) {
 			Dependency dep = classifier.createDependency(target);
 			dep.setName(String.format("from %s to %s", classifier.getName(), target.getName())); //$NON-NLS-1$
 		}

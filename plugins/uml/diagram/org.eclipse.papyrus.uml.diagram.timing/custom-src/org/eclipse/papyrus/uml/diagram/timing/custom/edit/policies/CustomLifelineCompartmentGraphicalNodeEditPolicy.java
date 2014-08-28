@@ -23,6 +23,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.INodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.timing.custom.Messages;
+import org.eclipse.papyrus.uml.diagram.timing.custom.edit.parts.CustomFullLifelineEditPartCN;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.MessageUtils;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.MessageFoundEditPart;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.MessageLostEditPart;
@@ -32,13 +33,13 @@ public class CustomLifelineCompartmentGraphicalNodeEditPolicy extends GraphicalN
 	@Override
 	protected INodeEditPart getConnectionCompleteEditPart(final Request request) {
 		// connect to the Lifeline
-		return (INodeEditPart)getHost().getParent();
+		return (INodeEditPart) getHost().getParent();
 	}
 
 	@Override
 	protected INodeEditPart getConnectableEditPart() {
 		// connect to the Lifeline
-		return (INodeEditPart)getHost().getParent();
+		return (INodeEditPart) getHost().getParent();
 	}
 
 	/**
@@ -48,9 +49,9 @@ public class CustomLifelineCompartmentGraphicalNodeEditPolicy extends GraphicalN
 	@Override
 	protected Command getReconnectTargetCommand(final ReconnectRequest request) {
 		final ConnectionEditPart connectionEditPart = request.getConnectionEditPart();
-		if(connectionEditPart instanceof MessageLostEditPart) {
-			final TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
-			final IFigure sourceFigure = ((GraphicalEditPart)connectionEditPart.getSource()).getFigure();
+		if (connectionEditPart instanceof MessageLostEditPart) {
+			final TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+			final IFigure sourceFigure = ((GraphicalEditPart) connectionEditPart.getSource()).getFigure();
 			return MessageUtils.createMoveMessageAnchorCommand(request, connectionEditPart, sourceFigure, Messages.CustomLifelineCompartmentGraphicalNodeEditPolicy_SetMessageLostTargetLocation, editingDomain);
 		}
 		return super.getReconnectTargetCommand(request);
@@ -63,9 +64,9 @@ public class CustomLifelineCompartmentGraphicalNodeEditPolicy extends GraphicalN
 	@Override
 	protected Command getReconnectSourceCommand(final ReconnectRequest request) {
 		final ConnectionEditPart connectionEditPart = request.getConnectionEditPart();
-		if(connectionEditPart instanceof MessageFoundEditPart) {
-			final TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
-			final IFigure targetFigure = ((GraphicalEditPart)connectionEditPart.getTarget()).getFigure();
+		if (connectionEditPart instanceof MessageFoundEditPart) {
+			final TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+			final IFigure targetFigure = ((GraphicalEditPart) connectionEditPart.getTarget()).getFigure();
 			return MessageUtils.createMoveMessageAnchorCommand(request, connectionEditPart, targetFigure, Messages.CustomLifelineCompartmentGraphicalNodeEditPolicy_SetMessageFoundSourceLocation, editingDomain);
 		}
 		return super.getReconnectTargetCommand(request);
@@ -81,7 +82,7 @@ public class CustomLifelineCompartmentGraphicalNodeEditPolicy extends GraphicalN
 	@Override
 	protected ConnectionAnchor getSourceConnectionAnchor(final CreateConnectionRequest request) {
 		final Point startLocation = MessageUtils.retrieveRequestStartLocation(request);
-		if(startLocation != null) {
+		if (startLocation != null) {
 			return new XYAnchor(new Point(startLocation));
 		}
 		return super.getSourceConnectionAnchor(request);

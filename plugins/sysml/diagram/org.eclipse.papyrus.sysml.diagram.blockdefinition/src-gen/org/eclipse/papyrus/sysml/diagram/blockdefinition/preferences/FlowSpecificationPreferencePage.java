@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -36,7 +36,7 @@ public class FlowSpecificationPreferencePage extends BlockDefinitionDiagramNodeP
 	/** Static attribute initialization */
 	static {
 		compartmentDefaultVisibilityMap = new LinkedHashMap<String, Boolean>();
-		compartmentDefaultVisibilityMap.put("flow properties", Boolean.TRUE); //$NON-NLS-1$	
+		compartmentDefaultVisibilityMap.put("flow properties", Boolean.TRUE); //$NON-NLS-1$
 
 		compartmentTitleDefaultVisibilityMap = new LinkedHashMap<String, Boolean>();
 		compartmentTitleDefaultVisibilityMap.put("flow properties", Boolean.TRUE); //$NON-NLS-1$
@@ -61,13 +61,13 @@ public class FlowSpecificationPreferencePage extends BlockDefinitionDiagramNodeP
 		// End of user code
 
 		// Initialize default visibility for compartments in preference page.
-		for(String compartmentName : compartmentDefaultVisibilityMap.keySet()) {
+		for (String compartmentName : compartmentDefaultVisibilityMap.keySet()) {
 			String showCompartmentKey = PreferencesConstantsHelper.getCompartmentElementConstant(prefKey, compartmentName, PreferencesConstantsHelper.COMPARTMENT_VISIBILITY);
 			store.setDefault(showCompartmentKey, compartmentDefaultVisibilityMap.get(compartmentName));
 		}
 
 		// Initialize default title visibility for compartments in preference page.
-		for(String compartmentName : compartmentTitleDefaultVisibilityMap.keySet()) {
+		for (String compartmentName : compartmentTitleDefaultVisibilityMap.keySet()) {
 			String showCompartmentTitleKey = PreferencesConstantsHelper.getCompartmentElementConstant(prefKey, compartmentName, PreferencesConstantsHelper.COMPARTMENT_NAME_VISIBILITY);
 			store.setDefault(showCompartmentTitleKey, compartmentTitleDefaultVisibilityMap.get(compartmentName));
 		}
@@ -78,7 +78,7 @@ public class FlowSpecificationPreferencePage extends BlockDefinitionDiagramNodeP
 	 */
 	@Override
 	protected void initializeCompartmentNamesList() {
-		for(String name : compartmentDefaultVisibilityMap.keySet()) {
+		for (String name : compartmentDefaultVisibilityMap.keySet()) {
 			this.compartmentNamesList.add(name);
 		}
 	}
@@ -88,7 +88,7 @@ public class FlowSpecificationPreferencePage extends BlockDefinitionDiagramNodeP
 	 */
 	@Override
 	protected void initializeCompartmentTitlesList() {
-		for(String name : compartmentTitleDefaultVisibilityMap.keySet()) {
+		for (String name : compartmentTitleDefaultVisibilityMap.keySet()) {
 			this.compartmentTitlesList.add(name);
 		}
 	}

@@ -43,17 +43,17 @@ import com.google.common.collect.Sets;
  */
 public class AddFileToCollabSVN extends AbstractTransactionalCommand {
 
-	//	private Collection<URI> uris;
+	// private Collection<URI> uris;
 	/** The request. */
 	private ControlModeRequest request;
 
 	/**
 	 * Instantiates a new adds the file to collab svn.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param request
-	 *        the request
+	 *            the request
 	 */
 	public AddFileToCollabSVN(TransactionalEditingDomain domain, ControlModeRequest request) {
 		super(domain, "Add fiel to collacb", null);
@@ -62,30 +62,30 @@ public class AddFileToCollabSVN extends AbstractTransactionalCommand {
 
 	/**
 	 * Adds the source resource.
-	 * 
+	 *
 	 * @param extension
-	 *        the extension
+	 *            the extension
 	 * @param resources
-	 *        the resources
+	 *            the resources
 	 */
 	protected void addSourceResource(String extension, Collection<Resource> resources) {
 		Resource resource = request.getSourceResource(extension);
-		if(resource != null) {
+		if (resource != null) {
 			resources.add(resource);
 		}
 	}
 
 	/**
 	 * Adds the target resource.
-	 * 
+	 *
 	 * @param extension
-	 *        the extension
+	 *            the extension
 	 * @param resources
-	 *        the resources
+	 *            the resources
 	 */
 	protected void addTargetResource(String extension, Collection<Resource> resources) {
 		Resource resource = request.getTargetResource(extension);
-		if(resource != null) {
+		if (resource != null) {
 			resources.add(resource);
 		}
 	}
@@ -111,25 +111,25 @@ public class AddFileToCollabSVN extends AbstractTransactionalCommand {
 		addSourceResource("di", sourceResource);
 		addSourceResource("notation", sourceResource);
 
-		//Add target resource to repository
+		// Add target resource to repository
 		Collection<IFile> targetExtendedFiles = Collections2.transform(targetResource, CollabFunctionsFactory.getResourceToIFile());
 		IStatus status = SVNUtils.addToRepository(UIUtils.getLabel(request.getTargetObject()), targetExtendedFiles);
-		if(!status.isOK()) {
+		if (!status.isOK()) {
 			throw new ExecutionException(status.getMessage(), status.getException());
 		}
-		//Commit source resources
+		// Commit source resources
 		HashSet<IExtendedURI> sourceExtendedURIs = Sets.newHashSet(Collections2.transform(sourceResource, CollabFunctionsFactory.getResourceToExtendedURIWithContainment()));
 		ResourceSet resourceSet = request.getEditingDomain().getResourceSet();
 		StringBuilder commitMessage = new StringBuilder("Creation of new partition ");
 		commitMessage.append(getPartitionName());
 		status = CommitHandler.doCommit(sourceExtendedURIs, resourceSet, false, commitMessage.toString());
-		if(!status.isOK()) {
+		if (!status.isOK()) {
 			throw new ExecutionException(status.getMessage(), status.getException());
 		}
-		//Take lock in new resources
+		// Take lock in new resources
 		Set<IExtendedURI> targetExtendedURIs = Sets.newHashSet(Collections2.transform(targetResource, CollabFunctionsFactory.getResourceToExtendedURIWithContainment()));
 		status = LockAction.doSafeLock(resourceSet, targetExtendedURIs, false);
-		if(!status.isOK()) {
+		if (!status.isOK()) {
 			throw new ExecutionException(status.getMessage(), status.getException());
 		}
 		return CommandResult.newOKCommandResult();
@@ -137,7 +137,7 @@ public class AddFileToCollabSVN extends AbstractTransactionalCommand {
 
 	/**
 	 * Gets the partition name.
-	 * 
+	 *
 	 * @return the partition name
 	 */
 	protected String getPartitionName() {

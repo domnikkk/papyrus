@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
  *  Laurent Wouters (CEA LIST) laurent.wouters@cea.fr - Refactoring
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.service;
 
@@ -35,12 +35,13 @@ public class XMLPaletteDefinitionProfileInspector implements XMLPaletteDefinitio
 
 	/**
 	 * Gets the profiles required for the palette
+	 *
 	 * @return A collection of the required profiles
 	 */
 	public Collection<String> getRequiredProfiles() {
 		return requiredProfiles;
 	}
-	
+
 	/**
 	 * Initializes the inspector
 	 */
@@ -51,6 +52,7 @@ public class XMLPaletteDefinitionProfileInspector implements XMLPaletteDefinitio
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void onContent(Node node) {
 		// nothing specific here
 	}
@@ -58,6 +60,7 @@ public class XMLPaletteDefinitionProfileInspector implements XMLPaletteDefinitio
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void onDrawer(Node node) {
 		// nothing specific here
 	}
@@ -65,6 +68,7 @@ public class XMLPaletteDefinitionProfileInspector implements XMLPaletteDefinitio
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void onToolEntry(Node node) {
 		// nothing specific here
 	}
@@ -72,6 +76,7 @@ public class XMLPaletteDefinitionProfileInspector implements XMLPaletteDefinitio
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void onStack(Node node) {
 		// nothing specific here
 	}
@@ -79,6 +84,7 @@ public class XMLPaletteDefinitionProfileInspector implements XMLPaletteDefinitio
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void onSeparator(Node node) {
 		// nothing specific here
 	}
@@ -86,21 +92,22 @@ public class XMLPaletteDefinitionProfileInspector implements XMLPaletteDefinitio
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void onAspectToolEntry(Node node) {
-		if(node.getChildNodes().getLength() > 0) {
+		if (node.getChildNodes().getLength() > 0) {
 			NodeList children = node.getChildNodes();
-			for(int i = 0; i < children.getLength(); i++) {
+			for (int i = 0; i < children.getLength(); i++) {
 				Node childNode = children.item(i);
 				String childName = childNode.getNodeName();
-				if(IPapyrusPaletteConstant.POST_ACTION.equals(childName)) {
+				if (IPapyrusPaletteConstant.POST_ACTION.equals(childName)) {
 					// node is a post action => retrieve the id of the provider
 					// in charge of this configuration
 					IAspectActionProvider provider = AspectToolService.getInstance().getProvider(AspectToolService.getProviderId(childNode));
-					if(provider != null) {
+					if (provider != null) {
 						IAspectAction action = provider.createAction(childNode);
-						if(action instanceof StereotypePostAction) {
-							List<String> stereotypesToApply = ((StereotypePostAction)action).getStereotypesToApply();
-							for(String stereotypeQN : stereotypesToApply) {
+						if (action instanceof StereotypePostAction) {
+							List<String> stereotypesToApply = ((StereotypePostAction) action).getStereotypesToApply();
+							for (String stereotypeQN : stereotypesToApply) {
 								String profileName = PaletteUtil.findProfileNameFromStereotypeName(stereotypeQN);
 								requiredProfiles.add(profileName);
 							}

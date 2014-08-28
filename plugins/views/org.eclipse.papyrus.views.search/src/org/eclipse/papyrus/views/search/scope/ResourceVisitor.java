@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.URI;
 
 /**
- * 
+ *
  * Implements a visitor that goes through a hierarchy of Iresource from a root and collect only those that can be processed for search
- * 
+ *
  */
 public class ResourceVisitor implements IResourceProxyVisitor {
 
@@ -38,20 +38,20 @@ public class ResourceVisitor implements IResourceProxyVisitor {
 	}
 
 	public boolean visit(IResourceProxy proxy) throws CoreException {
-		switch(proxy.getType()) {
+		switch (proxy.getType()) {
 		case IResource.FILE:
 			IResource resource = proxy.requestResource();
 
 			URI uri = URI.createPlatformResourceURI(resource.getFullPath().toString(), true);
 
-			if("di".equals(uri.fileExtension())) { //$NON-NLS-1$
-				//Verify that it is a true papyrus model
-				//				try {
-				//					ModelSet modelSet = ModelUtils.openFile(resource);
-				//					modelSet.unload();
+			if ("di".equals(uri.fileExtension())) { //$NON-NLS-1$
+				// Verify that it is a true papyrus model
+				// try {
+				// ModelSet modelSet = ModelUtils.openFile(resource);
+				// modelSet.unload();
 				participantURIs.add(uri);
-				//				} catch (ModelMultiException e) {
-				//				}
+				// } catch (ModelMultiException e) {
+				// }
 			}
 
 			break;

@@ -40,21 +40,21 @@ public class AddMarteAndFcmProfile extends AbstractEMFOperation {
 	}
 
 	public static final String CMD_LABEL = "Add MARTE/FCM profiles"; //$NON-NLS-1$
-	
+
 	public static final String FCM_PROFILE_URI = "pathmap://FCM_PROFILES/FCM.profile.uml"; //$NON-NLS-1$
 
 	public static final String MARTE_PROFILE_URI = "pathmap://Papyrus_PROFILES/MARTE.profile.uml";//$NON-NLS-1$
 
 	static final String MARTE_FOUNDATIONS = "MARTE_Foundations"; //$NON-NLS-1$
-	
+
 	static final String MARTE_F_ALLOC = "Alloc"; //$NON-NLS-1$
-	
+
 	static final String MARTE_DESIGN_MODEL = "MARTE_DesignModel"; //$NON-NLS-1$
 
-	static final String MARTE_DM_HLAM ="HLAM"; //$NON-NLS-1$
-	
-	static final String MARTE_DM_GCM ="GCM"; //$NON-NLS-1$
-	
+	static final String MARTE_DM_HLAM = "HLAM"; //$NON-NLS-1$
+
+	static final String MARTE_DM_GCM = "GCM"; //$NON-NLS-1$
+
 	public static final int APPLY_FCM = 1;
 
 	public static final int APPLY_ALLOC = 2;
@@ -62,9 +62,9 @@ public class AddMarteAndFcmProfile extends AbstractEMFOperation {
 	public static final int APPLY_HLAM_GCM = 4;
 
 	Package selectedPkg;
-	
+
 	int applyCode;
-	
+
 	public static Element getContent(URI uri, ResourceSet rs) {
 		// Resource resource = getTransactionalEditingDomain ().getResourceSet().getResource (uri, true);
 		Resource resource = rs.getResource(uri, true);
@@ -73,8 +73,8 @@ public class AddMarteAndFcmProfile extends AbstractEMFOperation {
 
 	public static Element getContent(Resource resource) {
 		EList<EObject> contentObj = resource.getContents();
-		if((contentObj.size() > 0) && (contentObj.get(0) instanceof Element)) {
-			return (Element)contentObj.get(0);
+		if ((contentObj.size() > 0) && (contentObj.get(0) instanceof Element)) {
+			return (Element) contentObj.get(0);
 		}
 		return null;
 	}
@@ -83,7 +83,7 @@ public class AddMarteAndFcmProfile extends AbstractEMFOperation {
 	protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		final ResourceSet resourceSet = selectedPkg.eResource().getResourceSet();
-		
+
 		try {
 			/*
 			 * // Apply UML Standard profile
@@ -94,15 +94,15 @@ public class AddMarteAndFcmProfile extends AbstractEMFOperation {
 			 * umlModel.applyProfile(umlStdProfile);
 			 */
 
-			if((applyCode & APPLY_FCM) != 0) {
+			if ((applyCode & APPLY_FCM) != 0) {
 				// Retrieve FCM profile
 				Profile fcmProfile =
-					(Profile)getContent(URI.createURI(FCM_PROFILE_URI), resourceSet);
+						(Profile) getContent(URI.createURI(FCM_PROFILE_URI), resourceSet);
 
 				// Apply FCM profile and its nested profiles to new model
-				if(fcmProfile instanceof Profile) {
+				if (fcmProfile instanceof Profile) {
 					Profile profile = selectedPkg.getAppliedProfile(fcmProfile.getQualifiedName());
-					if((profile == null) && (!fcmProfile.getOwnedStereotypes().isEmpty())) {
+					if ((profile == null) && (!fcmProfile.getOwnedStereotypes().isEmpty())) {
 						selectedPkg.applyProfile(fcmProfile);
 					}
 				}
@@ -111,28 +111,28 @@ public class AddMarteAndFcmProfile extends AbstractEMFOperation {
 				}
 			}
 
-			if((applyCode & (APPLY_ALLOC | APPLY_HLAM_GCM)) != 0) {
+			if ((applyCode & (APPLY_ALLOC | APPLY_HLAM_GCM)) != 0) {
 				// Retrieve MARTE profile
 				Profile marteProfile =
-					(Profile)getContent(URI.createURI(MARTE_PROFILE_URI), resourceSet);
+						(Profile) getContent(URI.createURI(MARTE_PROFILE_URI), resourceSet);
 
 				// Apply MARTE::MARTE_DesignModel::HLAM
-				//     & MARTE::MARTE_DesignModel::GCM
-				if(marteProfile != null) {
+				// & MARTE::MARTE_DesignModel::GCM
+				if (marteProfile != null) {
 					PackageableElement foundationModel = marteProfile.getPackagedElement(MARTE_FOUNDATIONS);
-					if((foundationModel instanceof Package) && ((applyCode & APPLY_ALLOC) != 0)) {
-						PackageableElement alloc = ((Package)foundationModel).getPackagedElement(MARTE_F_ALLOC);
-						selectedPkg.applyProfile((Profile)alloc);
+					if ((foundationModel instanceof Package) && ((applyCode & APPLY_ALLOC) != 0)) {
+						PackageableElement alloc = ((Package) foundationModel).getPackagedElement(MARTE_F_ALLOC);
+						selectedPkg.applyProfile((Profile) alloc);
 					}
 					PackageableElement designModel = marteProfile.getPackagedElement(MARTE_DESIGN_MODEL);
-					if((designModel instanceof Package) && ((applyCode & APPLY_HLAM_GCM) != 0)) {
-						PackageableElement hlam = ((Package)designModel).getPackagedElement(MARTE_DM_HLAM);
-						if(hlam instanceof Profile) {
-							selectedPkg.applyProfile((Profile)hlam);
+					if ((designModel instanceof Package) && ((applyCode & APPLY_HLAM_GCM) != 0)) {
+						PackageableElement hlam = ((Package) designModel).getPackagedElement(MARTE_DM_HLAM);
+						if (hlam instanceof Profile) {
+							selectedPkg.applyProfile((Profile) hlam);
 						}
-						PackageableElement gcm = ((Package)designModel).getPackagedElement(MARTE_DM_GCM);
-						if(gcm instanceof Profile) {
-							selectedPkg.applyProfile((Profile)gcm);
+						PackageableElement gcm = ((Package) designModel).getPackagedElement(MARTE_DM_GCM);
+						if (gcm instanceof Profile) {
+							selectedPkg.applyProfile((Profile) gcm);
 						}
 					}
 				}

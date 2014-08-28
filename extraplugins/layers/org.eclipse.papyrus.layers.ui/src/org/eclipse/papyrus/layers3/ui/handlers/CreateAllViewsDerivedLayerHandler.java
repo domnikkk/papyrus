@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -20,9 +20,9 @@ import org.eclipse.papyrus.layers3.ui.commands.AbstractCreateLayerExpressionHand
 /**
  * Create a layer stack to a diagram.
  * This is performed on the current LayerStack Viewer.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class CreateAllViewsDerivedLayerHandler extends AbstractCreateLayerExpressionHandler implements IHandler {
 
@@ -36,7 +36,7 @@ public class CreateAllViewsDerivedLayerHandler extends AbstractCreateLayerExpres
 	public String getCommandName() {
 		return "Create RegExp Layer";
 	}
-	
+
 
 	/**
 	 * @return

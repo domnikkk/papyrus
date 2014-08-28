@@ -20,9 +20,9 @@ import java.util.List;
 import org.eclipse.papyrus.emf.facet.efacet.core.internal.exception.UnmatchingExpectedTypeException;
 
 public final class CastUtils {
-	
+
 	private CastUtils() {
-		//Must no be used.
+		// Must no be used.
 	}
 
 	/**
@@ -33,15 +33,13 @@ public final class CastUtils {
 	 * @param expectedType
 	 *            the expected type of the list elements
 	 * @param checkType
-	 *            whether to check the type of each element in the given list; should be
-	 *            <code>true</code> if the list comes from outside the framework, and
-	 *            <code>false</code> if the list is managed by the framework (and so already
+	 *            whether to check the type of each element in the given list; should be <code>true</code> if the list comes from outside the framework, and <code>false</code> if the list is managed by the framework (and so already
 	 *            checked)
 	 * @return the cast list
 	 * @throws UnmatchingExpectedTypeException
 	 */
 	@SuppressWarnings("unchecked")
-	//@SuppressWarnings("unchecked") The cast is checked by the both if statement.
+	// @SuppressWarnings("unchecked") The cast is checked by the both if statement.
 	public static <T> List<T> castToExpectedListType(final Object value, final Class<T> expectedType, final boolean checkType)
 			throws UnmatchingExpectedTypeException {
 		List<T> newList = new LinkedList<T>();
@@ -58,7 +56,7 @@ public final class CastUtils {
 	}
 
 	@SuppressWarnings("unchecked")
-	//@SuppressWarnings("unchecked") This method is used to isolate unsafe cast.
+	// @SuppressWarnings("unchecked") This method is used to isolate unsafe cast.
 	public static <T> T castToExpectedType(final Object value, final Class<T> expectedType)
 			throws UnmatchingExpectedTypeException {
 		try {

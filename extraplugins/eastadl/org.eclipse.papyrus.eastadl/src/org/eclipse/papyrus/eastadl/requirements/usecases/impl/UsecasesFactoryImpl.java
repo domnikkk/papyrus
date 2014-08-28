@@ -19,6 +19,7 @@ import org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class UsecasesFactoryImpl extends EFactoryImpl implements UsecasesFactory {
@@ -26,16 +27,16 @@ public class UsecasesFactoryImpl extends EFactoryImpl implements UsecasesFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static UsecasesFactory init() {
 		try {
-			UsecasesFactory theUsecasesFactory = (UsecasesFactory)EPackage.Registry.INSTANCE.getEFactory(UsecasesPackage.eNS_URI);
+			UsecasesFactory theUsecasesFactory = (UsecasesFactory) EPackage.Registry.INSTANCE.getEFactory(UsecasesPackage.eNS_URI);
 			if (theUsecasesFactory != null) {
 				return theUsecasesFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new UsecasesFactoryImpl();
@@ -45,6 +46,7 @@ public class UsecasesFactoryImpl extends EFactoryImpl implements UsecasesFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public UsecasesFactoryImpl() {
@@ -54,26 +56,34 @@ public class UsecasesFactoryImpl extends EFactoryImpl implements UsecasesFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case UsecasesPackage.EXTEND: return createExtend();
-			case UsecasesPackage.EXTENSION_POINT: return createExtensionPoint();
-			case UsecasesPackage.USE_CASE: return createUseCase();
-			case UsecasesPackage.INCLUDE: return createInclude();
-			case UsecasesPackage.ACTOR: return createActor();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case UsecasesPackage.EXTEND:
+			return createExtend();
+		case UsecasesPackage.EXTENSION_POINT:
+			return createExtensionPoint();
+		case UsecasesPackage.USE_CASE:
+			return createUseCase();
+		case UsecasesPackage.INCLUDE:
+			return createInclude();
+		case UsecasesPackage.ACTOR:
+			return createActor();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Extend createExtend() {
 		ExtendImpl extend = new ExtendImpl();
 		return extend;
@@ -82,8 +92,10 @@ public class UsecasesFactoryImpl extends EFactoryImpl implements UsecasesFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ExtensionPoint createExtensionPoint() {
 		ExtensionPointImpl extensionPoint = new ExtensionPointImpl();
 		return extensionPoint;
@@ -92,8 +104,10 @@ public class UsecasesFactoryImpl extends EFactoryImpl implements UsecasesFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public UseCase createUseCase() {
 		UseCaseImpl useCase = new UseCaseImpl();
 		return useCase;
@@ -102,8 +116,10 @@ public class UsecasesFactoryImpl extends EFactoryImpl implements UsecasesFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Include createInclude() {
 		IncludeImpl include = new IncludeImpl();
 		return include;
@@ -112,8 +128,10 @@ public class UsecasesFactoryImpl extends EFactoryImpl implements UsecasesFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Actor createActor() {
 		ActorImpl actor = new ActorImpl();
 		return actor;
@@ -122,15 +140,18 @@ public class UsecasesFactoryImpl extends EFactoryImpl implements UsecasesFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public UsecasesPackage getUsecasesPackage() {
-		return (UsecasesPackage)getEPackage();
+		return (UsecasesPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -139,4 +160,4 @@ public class UsecasesFactoryImpl extends EFactoryImpl implements UsecasesFactory
 		return UsecasesPackage.eINSTANCE;
 	}
 
-} //UsecasesFactoryImpl
+} // UsecasesFactoryImpl

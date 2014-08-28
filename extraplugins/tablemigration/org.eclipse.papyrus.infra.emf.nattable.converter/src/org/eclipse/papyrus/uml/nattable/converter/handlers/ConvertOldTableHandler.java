@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,6 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.expressions.IEvaluationContext;
 import org.eclipse.core.runtime.Assert;
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.util.URI;
@@ -35,7 +34,6 @@ import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.emf.core.util.CrossReferenceAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -63,9 +61,9 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * This handler allows to convert ONE old PapyrusTableInstance to a new Papyrus table
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class ConvertOldTableHandler extends AbstractHandler {
 
@@ -84,13 +82,14 @@ public class ConvertOldTableHandler extends AbstractHandler {
 	protected List<PapyrusTableInstance> oldPapyrusTableInstance;
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return null
 	 * @throws ExecutionException
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		boolean destroyOldTable = false;
 		boolean replaceOldRequirementTableByNewRequirementTable = false;
@@ -100,23 +99,23 @@ public class ConvertOldTableHandler extends AbstractHandler {
 		boolean selectionContainsCustomTableKind = false;
 		boolean convertCustomTabletoGenericTable = false;
 		final List<PapyrusTableInstance> oldTables = oldPapyrusTableInstance;
-		if(!oldTables.isEmpty()) {
-			for(final PapyrusTableInstance oldTable : oldTables) {
+		if (!oldTables.isEmpty()) {
+			for (final PapyrusTableInstance oldTable : oldTables) {
 				final String type = oldTable.getType();
-				if(OLD_REQUIREMENT_TABLE.equals(type)) {
+				if (OLD_REQUIREMENT_TABLE.equals(type)) {
 					selectionContainsRequirementsTable = true;
 				}
-				if(OLD_ALLOCATION_TABLE.equals(type)) {
+				if (OLD_ALLOCATION_TABLE.equals(type)) {
 					selectionContainsAllocationTable = true;
 				}
-				if(selectionContainsAllocationTable && selectionContainsRequirementsTable) {
+				if (selectionContainsAllocationTable && selectionContainsRequirementsTable) {
 					break;
 				}
 			}
 
 			String dialogTitle = Messages.ConvertOldTableHandler_ConvertOldTableQuestion;
 			boolean answer = MessageDialog.openQuestion(Display.getDefault().getActiveShell(), dialogTitle, Messages.ConvertOldTableHandler_AdvicesForUser);
-			if(!answer) {
+			if (!answer) {
 				return null;
 			}
 
@@ -124,9 +123,10 @@ public class ConvertOldTableHandler extends AbstractHandler {
 			String dialogAllocationMessage = String.format(dialogGlobalMessage, "Allocation"); //$NON-NLS-1$
 			String dialogRequirementMessage = String.format(dialogGlobalMessage, "Requirement"); //$NON-NLS-1$
 
-			if(selectionContainsAllocationTable) {
-				MessageDialog dialog = new MessageDialog(Display.getDefault().getActiveShell(), dialogTitle, null, dialogAllocationMessage, MessageDialog.QUESTION_WITH_CANCEL, new String[]{ Messages.ConvertOldTableHandler_ConvertToNewAllocationTable, Messages.ConvertOldTableHandler_ConvertToNewUMLGenericTable, Messages.ConvertOldTableHandler_Cancel }, 0);
-				switch(dialog.open()) {
+			if (selectionContainsAllocationTable) {
+				MessageDialog dialog = new MessageDialog(Display.getDefault().getActiveShell(), dialogTitle, null, dialogAllocationMessage, MessageDialog.QUESTION_WITH_CANCEL, new String[] { Messages.ConvertOldTableHandler_ConvertToNewAllocationTable,
+						Messages.ConvertOldTableHandler_ConvertToNewUMLGenericTable, Messages.ConvertOldTableHandler_Cancel }, 0);
+				switch (dialog.open()) {
 				case 0:
 					replaceOldSysMLAllocationTableByNewSysMLAllocationTable = true;
 					break;
@@ -137,9 +137,10 @@ public class ConvertOldTableHandler extends AbstractHandler {
 					return null;
 				}
 			}
-			if(selectionContainsRequirementsTable) {
-				MessageDialog dialog = new MessageDialog(Display.getDefault().getActiveShell(), dialogTitle, null, dialogRequirementMessage, MessageDialog.QUESTION_WITH_CANCEL, new String[]{ Messages.ConvertOldTableHandler_ConvertToNewRequirementTable, Messages.ConvertOldTableHandler_ConvertToNewUMLGenericTable, Messages.ConvertOldTableHandler_Cancel }, 0);
-				switch(dialog.open()) {
+			if (selectionContainsRequirementsTable) {
+				MessageDialog dialog = new MessageDialog(Display.getDefault().getActiveShell(), dialogTitle, null, dialogRequirementMessage, MessageDialog.QUESTION_WITH_CANCEL, new String[] { Messages.ConvertOldTableHandler_ConvertToNewRequirementTable,
+						Messages.ConvertOldTableHandler_ConvertToNewUMLGenericTable, Messages.ConvertOldTableHandler_Cancel }, 0);
+				switch (dialog.open()) {
 				case 0:
 					replaceOldRequirementTableByNewRequirementTable = true;
 					break;
@@ -151,7 +152,7 @@ public class ConvertOldTableHandler extends AbstractHandler {
 
 				}
 			}
-			if(selectionContainsCustomTableKind) {
+			if (selectionContainsCustomTableKind) {
 				convertCustomTabletoGenericTable = MessageDialog.openQuestion(Display.getDefault().getActiveShell(), dialogTitle, Messages.ConvertOldTableHandler_QuestionAboutCustomTable);
 			}
 
@@ -163,48 +164,48 @@ public class ConvertOldTableHandler extends AbstractHandler {
 			} catch (ServiceException e1) {
 				Activator.log.error("Can't found the editing domain", e1); //$NON-NLS-1$
 			}
-			for(final PapyrusTableInstance oldTable : oldTables) {
+			for (final PapyrusTableInstance oldTable : oldTables) {
 				final String type = oldTable.getType();
 
 				Table newTable = null;
-				if(OLD_DEFAULT_TABLE_TYPE.equals(type)) {
+				if (OLD_DEFAULT_TABLE_TYPE.equals(type)) {
 					newTable = getCreateUMLGenericTableCommand(oldTable);
-				} else if(OLD_REQUIREMENT_TABLE.equals(type)) {
-					if(replaceOldRequirementTableByNewRequirementTable) {
+				} else if (OLD_REQUIREMENT_TABLE.equals(type)) {
+					if (replaceOldRequirementTableByNewRequirementTable) {
 						newTable = getCreateSysMLRequirementTableCommand(oldTable);
 					} else {
 						newTable = getCreateUMLGenericTableCommand(oldTable);
 					}
-				} else if(OLD_ALLOCATION_TABLE.equals(type)) {
-					if(replaceOldSysMLAllocationTableByNewSysMLAllocationTable) {
+				} else if (OLD_ALLOCATION_TABLE.equals(type)) {
+					if (replaceOldSysMLAllocationTableByNewSysMLAllocationTable) {
 						newTable = getCreateSysMLAllocationTableCommand(oldTable);
 					} else {
 						newTable = getCreateUMLGenericTableCommand(oldTable);
 					}
-				} else if(convertCustomTabletoGenericTable) {
+				} else if (convertCustomTabletoGenericTable) {
 					newTable = getCreateUMLGenericTableCommand(oldTable);
 				} else {
 					continue;
 				}
 
 
-				final Resource notationResource = ((ModelSet)oldTable.eResource().getResourceSet()).getAssociatedResource(oldTable, PapyrusNattableModel.TABLE_MODEL_FILE_EXTENSION, true);
-				final IPageManager manager = getPageManager(oldTable);//to be sure to have the correct page manager, we do it each time.
+				final Resource notationResource = ((ModelSet) oldTable.eResource().getResourceSet()).getAssociatedResource(oldTable, PapyrusNattableModel.TABLE_MODEL_FILE_EXTENSION, true);
+				final IPageManager manager = getPageManager(oldTable);// to be sure to have the correct page manager, we do it each time.
 				convertCommand.append(getAddToResourceCommand(domain, notationResource, newTable));
 				Assert.isNotNull(manager);
 				convertCommand.append(getAddToPageManagerCommand(domain, manager, newTable));
 				Command tmp = getReplaceExistingTableCommand(domain, oldTable, newTable);
-				if(tmp != null) {
+				if (tmp != null) {
 					convertCommand.append(tmp);
 				}
 
-				if(destroyOldTable) {
+				if (destroyOldTable) {
 					convertCommand.append(getDestroyOldTableCommand(domain, oldTable));
 				}
 			}
 
 
-			if(!convertCommand.isEmpty()) {
+			if (!convertCommand.isEmpty()) {
 				domain.getCommandStack().execute(convertCommand);
 			}
 
@@ -215,11 +216,11 @@ public class ConvertOldTableHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param oldTable
-	 *        an old table
+	 *            an old table
 	 * @return
 	 *         the command to destroy the old table
 	 */
@@ -230,9 +231,9 @@ public class ConvertOldTableHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param oldTable
-	 *        an old table
+	 *            an old table
 	 * @return
 	 *         a new UML Generic Table initialized with the same rows as the old table
 	 */
@@ -240,10 +241,10 @@ public class ConvertOldTableHandler extends AbstractHandler {
 	protected Table getCreateUMLGenericTableCommand(final PapyrusTableInstance oldTable) {
 		URI uri = NattableConfigurationRegistry.INSTANCE.getConfigurationURI(PAPYRUS_NEW_DEFAULT_TABLE);
 		ResourceSet resourceSet = oldTable.eResource().getResourceSet();
-		TableConfiguration configuration = (TableConfiguration)resourceSet.getResource(uri, true).getContents().get(0);
+		TableConfiguration configuration = (TableConfiguration) resourceSet.getResource(uri, true).getContents().get(0);
 		Table newTable = getCreateTableFromConfiguration(oldTable, configuration);
 		final AxisManagerRepresentation representation = configuration.getRowHeaderAxisConfiguration().getAxisManagers().get(0);
-		for(final EObject element : oldTable.getTable().getElements()) {
+		for (final EObject element : oldTable.getTable().getElements()) {
 			EObjectAxis axis = NattableaxisFactory.eINSTANCE.createEObjectAxis();
 			axis.setElement(element);
 			axis.setManager(representation);
@@ -253,40 +254,40 @@ public class ConvertOldTableHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param oldTable
-	 *        an old table
+	 *            an old table
 	 * @return
 	 *         a new SysML Requirement table
 	 */
 	protected Table getCreateSysMLRequirementTableCommand(final PapyrusTableInstance oldTable) {
 		URI uri = NattableConfigurationRegistry.INSTANCE.getConfigurationURI(PAPYRUS_NEW_REQUIREMENT_TABLE);
 		ResourceSet resourceSet = oldTable.eResource().getResourceSet();
-		TableConfiguration configuration = (TableConfiguration)resourceSet.getResource(uri, true).getContents().get(0);
+		TableConfiguration configuration = (TableConfiguration) resourceSet.getResource(uri, true).getContents().get(0);
 		return getCreateTableFromConfiguration(oldTable, configuration);
 	}
 
 	/**
-	 * 
+	 *
 	 * @param oldTable
-	 *        the old table
+	 *            the old table
 	 * @return
 	 *         a new SysML Allocation table
-	 * 
+	 *
 	 */
 	protected Table getCreateSysMLAllocationTableCommand(final PapyrusTableInstance oldTable) {
 		URI uri = NattableConfigurationRegistry.INSTANCE.getConfigurationURI(PAPYRUS_NEW_ALLOCATION_TABLE);
 		ResourceSet resourceSet = oldTable.eResource().getResourceSet();
-		TableConfiguration configuration = (TableConfiguration)resourceSet.getResource(uri, true).getContents().get(0);
+		TableConfiguration configuration = (TableConfiguration) resourceSet.getResource(uri, true).getContents().get(0);
 		return getCreateTableFromConfiguration(oldTable, configuration);
 	}
 
 	/**
-	 * 
+	 *
 	 * @param oldTable
-	 *        the old table
+	 *            the old table
 	 * @param tableConfiguration
-	 *        the configuration to use to initialize it
+	 *            the configuration to use to initialize it
 	 * @return
 	 *         the new table initialized with its configuration
 	 */
@@ -296,7 +297,7 @@ public class ConvertOldTableHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param domain
 	 * @param manager
 	 * @param newTable
@@ -314,7 +315,7 @@ public class ConvertOldTableHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param domain
 	 * @param notationResource
 	 * @param newTable
@@ -333,31 +334,31 @@ public class ConvertOldTableHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param oldTable
-	 *        the old table
+	 *            the old table
 	 * @param newTable
-	 *        the newTable
+	 *            the newTable
 	 * @return
 	 *         the command to replace referenced to old table by references to new table
 	 */
 	protected Command getReplaceExistingTableCommand(final TransactionalEditingDomain domain, final PapyrusTableInstance oldTable, final Table newTable) {
 		final CompoundCommand compoundCommand = new CompoundCommand("Replace Old table Command"); //$NON-NLS-1$
-		final ECrossReferenceAdapter crossReferenceAdapter = CrossReferenceAdapter.getCrossReferenceAdapter(oldTable);
+		final ECrossReferenceAdapter crossReferenceAdapter = ECrossReferenceAdapter.getCrossReferenceAdapter(oldTable);
 		Collection<Setting> settings = crossReferenceAdapter.getNonNavigableInverseReferences(oldTable);
 
-		//replace the references to the old table to reference to the new table
-		for(final Setting setting : settings) {
+		// replace the references to the old table to reference to the new table
+		for (final Setting setting : settings) {
 			EStructuralFeature feature = setting.getEStructuralFeature();
-			if(feature != DiPackage.eINSTANCE.getPageRef_EmfPageIdentifier()) {//we replace all references excepted references in the page manager
+			if (feature != DiPackage.eINSTANCE.getPageRef_EmfPageIdentifier()) {// we replace all references excepted references in the page manager
 				Command cmd = new RecordingCommand(domain) {
 
 					/**
-					 * 
+					 *
 					 * @see org.eclipse.emf.transaction.RecordingCommand#doExecute()
-					 * 
+					 *
 					 */
 					@Override
 					protected void doExecute() {
@@ -367,7 +368,7 @@ public class ConvertOldTableHandler extends AbstractHandler {
 				compoundCommand.append(cmd);
 			}
 		}
-		if(compoundCommand.isEmpty()) {
+		if (compoundCommand.isEmpty()) {
 			return null;
 		}
 		return compoundCommand;
@@ -375,9 +376,9 @@ public class ConvertOldTableHandler extends AbstractHandler {
 
 
 	/**
-	 * 
+	 *
 	 * @param eobject
-	 *        an eobject
+	 *            an eobject
 	 * @return
 	 *         the page manager
 	 */
@@ -392,28 +393,28 @@ public class ConvertOldTableHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
 		this.oldPapyrusTableInstance = new ArrayList<PapyrusTableInstance>();
-		if(evaluationContext instanceof IEvaluationContext) {
-			Object selection = ((IEvaluationContext)evaluationContext).getDefaultVariable();
-			if(selection instanceof Collection<?>) {
-				List<?> currentSelection = (selection instanceof List<?>) ? (List<?>)selection : new java.util.ArrayList<Object>((Collection<?>)selection);
-				if(currentSelection.size() == 1) {
+		if (evaluationContext instanceof IEvaluationContext) {
+			Object selection = ((IEvaluationContext) evaluationContext).getDefaultVariable();
+			if (selection instanceof Collection<?>) {
+				List<?> currentSelection = (selection instanceof List<?>) ? (List<?>) selection : new java.util.ArrayList<Object>((Collection<?>) selection);
+				if (currentSelection.size() == 1) {
 					Object current = currentSelection.get(0);
-						EObject eobject= EMFHelper.getEObject(current);
-						if(eobject instanceof PapyrusTableInstance) {
+					EObject eobject = EMFHelper.getEObject(current);
+					if (eobject instanceof PapyrusTableInstance) {
 
-							this.oldPapyrusTableInstance.add((PapyrusTableInstance)eobject);
-						}
-						setBaseEnabled(this.oldPapyrusTableInstance != null && this.oldPapyrusTableInstance.size() == 1);
-						return;
+						this.oldPapyrusTableInstance.add((PapyrusTableInstance) eobject);
 					}
+					setBaseEnabled(this.oldPapyrusTableInstance != null && this.oldPapyrusTableInstance.size() == 1);
+					return;
+				}
 			}
 		}
 		setBaseEnabled(false);

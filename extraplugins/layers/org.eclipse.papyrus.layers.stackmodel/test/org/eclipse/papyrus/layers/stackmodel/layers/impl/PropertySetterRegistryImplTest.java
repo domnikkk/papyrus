@@ -4,13 +4,15 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
 
 import org.eclipse.papyrus.layers.stackmodel.NotFoundException;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
@@ -22,10 +24,10 @@ import org.junit.Test;
 
 
 /**
- * 
+ *
  * Test the class without application object.
  * The map should work.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -101,32 +103,37 @@ public class PropertySetterRegistryImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterRegistryImpl#getPropertySetter(java.lang.String)}.
-	 * @throws NotFoundException 
+	 *
+	 * @throws NotFoundException
 	 */
 	@Test
 	public void testGetPropertySetterString() throws NotFoundException {
 		PropertySetterRegistry registry = LayersFactory.eINSTANCE.createPropertySetterRegistry();
 
-	
+
 		assertNotNull("Default property can be retrieved", registry.getPropertySetter("isValid"));
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterRegistryImpl#addPropertySetter(org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter)}.
-	 * @throws NotFoundException 
+	 *
+	 * @throws NotFoundException
 	 */
 	@Test
 	public void testAddPropertySetter() throws NotFoundException {
 		PropertySetterRegistry registry = LayersFactory.eINSTANCE.createPropertySetterRegistry();
 
 		PropertySetterImpl setter = new PropertySetterImpl() {
-			public String getPropertyName() {return "myProperty";};
+			@Override
+			public String getPropertyName() {
+				return "myProperty";
+			};
 		};
-		
+
 		// add the setter
 		registry.addPropertySetter(setter);
 		// Try to get it in the map
-		assertNotNull("property can be retrieved from map", registry.getSetterMap().get("myProperty") );
+		assertNotNull("property can be retrieved from map", registry.getSetterMap().get("myProperty"));
 		assertNotNull("property can be retrieved from dedicated method", registry.getPropertySetter("myProperty"));
 
 	}

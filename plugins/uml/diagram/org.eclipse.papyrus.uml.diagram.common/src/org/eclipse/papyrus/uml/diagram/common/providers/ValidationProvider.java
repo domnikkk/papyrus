@@ -18,18 +18,18 @@ import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.uml2.uml.NamedElement;
 
 /**
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
- * 
+ *
  */
 public class ValidationProvider {
 
 	// @unused
 	public static IStatus validateUniqueName(NamedElement element) {
 		IStatus status = null;
-		if(element != null) {
+		if (element != null) {
 			boolean unique = checkUniqueName(element);
-			if(!unique) {
+			if (!unique) {
 				status = new Status(IStatus.ERROR, Activator.ID, "An element with name \"" + element.getName() + "\" already exists.");
 			} else {
 				status = new Status(IStatus.OK, Activator.ID, "Unique name.");
@@ -41,18 +41,18 @@ public class ValidationProvider {
 	}
 
 	public static boolean checkUniqueName(NamedElement namedElement) {
-		if(namedElement == null) {
+		if (namedElement == null) {
 			return false;
 		}
 		String namedElementName = namedElement.getName();
-		if(namedElementName == null) {
+		if (namedElementName == null) {
 			return true;
 		}
-		if(namedElement.eContainer() != null) {
-			for(EObject eObject : namedElement.eContainer().eContents()) {
-				if(eObject != null && eObject != namedElement && eObject instanceof NamedElement) {
-					String name = ((NamedElement)eObject).getName();
-					if(namedElementName.equals(name)) {
+		if (namedElement.eContainer() != null) {
+			for (EObject eObject : namedElement.eContainer().eContents()) {
+				if (eObject != null && eObject != namedElement && eObject instanceof NamedElement) {
+					String name = ((NamedElement) eObject).getName();
+					if (namedElementName.equals(name)) {
 						return false;
 					}
 				}

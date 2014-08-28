@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,26 +9,26 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) Vincent.Lorenzo@cea.fr - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.infra.tools.util;
 
 /**
- * 
+ *
  * This class provides an useful methods for boolean
- * 
+ *
  */
 public class BooleanHelper {
 
 	private BooleanHelper() {
-		//to prevent instanciation
+		// to prevent instanciation
 	}
 
 	/**
-	 * 
+	 *
 	 * @param str
-	 *        a string
+	 *            a string
 	 * @return
 	 *         <code>true</code> if the string represents a boolean value
 	 */

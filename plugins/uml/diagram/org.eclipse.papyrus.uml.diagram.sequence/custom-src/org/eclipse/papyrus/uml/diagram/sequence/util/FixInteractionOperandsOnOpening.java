@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation (ansgar.radermacher@cea.fr)
  *
  *****************************************************************************/
@@ -39,31 +39,31 @@ public class FixInteractionOperandsOnOpening {
 
 	/**
 	 * This method fixes the bounds of interaction operands
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 */
 	public void fix(Diagram diagram) {
 		String IAO_ID = "" + InteractionOperandEditPart.VISUAL_ID;
 		// Parse diagram content
 		Iterator<EObject> it = diagram.eAllContents();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject current = it.next();
 			// Select only shapes
-			if(!(current instanceof Shape)) {
+			if (!(current instanceof Shape)) {
 				continue;
 			}
-			String currentType = ((Shape)current).getType();
-			if(IAO_ID.equals(currentType)) {
-				Shape iaOperandShape = (Shape)current;
+			String currentType = ((Shape) current).getType();
+			if (IAO_ID.equals(currentType)) {
+				Shape iaOperandShape = (Shape) current;
 				View parentDecoration = ViewUtil.getViewContainer(iaOperandShape);
-				if(parentDecoration != null) {
+				if (parentDecoration != null) {
 					View parentParentView = ViewUtil.getViewContainer(parentDecoration);
-					if(parentParentView instanceof Shape) {
-						Shape parentShape = (Shape)parentParentView;
-						Bounds iaOperandShapeBounds = (Bounds)iaOperandShape.getLayoutConstraint();
-						Bounds parentShapeBounds = (Bounds)parentShape.getLayoutConstraint();
-						if((iaOperandShapeBounds.getX() == 0) && (iaOperandShapeBounds.getY() == 0) && (iaOperandShapeBounds.getWidth() == -1)) {
+					if (parentParentView instanceof Shape) {
+						Shape parentShape = (Shape) parentParentView;
+						Bounds iaOperandShapeBounds = (Bounds) iaOperandShape.getLayoutConstraint();
+						Bounds parentShapeBounds = (Bounds) parentShape.getLayoutConstraint();
+						if ((iaOperandShapeBounds.getX() == 0) && (iaOperandShapeBounds.getY() == 0) && (iaOperandShapeBounds.getWidth() == -1)) {
 							// distribute operands equally within the combined fragment.
 							int size = parentDecoration.getChildren().size();
 							int index = parentDecoration.getChildren().indexOf(iaOperandShape);

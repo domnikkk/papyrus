@@ -23,7 +23,7 @@ import org.eclipse.swt.widgets.Shell;
 
 // equivalent au inputDialog (code recopie) mais donne un sourceviewer a la place du label
 /**
- * 
+ *
  */
 public class LabelEditorDialog extends Dialog implements ILabelEditorDialog {
 
@@ -68,21 +68,21 @@ public class LabelEditorDialog extends Dialog implements ILabelEditorDialog {
 	 * <p>
 	 * Note that the <code>open</code> method blocks for input dialogs.
 	 * </p>
-	 * 
+	 *
 	 * @param dialogTitle
-	 *        the dialog title, or <code>null</code> if none
+	 *            the dialog title, or <code>null</code> if none
 	 * @param validator
-	 *        an input validator, or <code>null</code> if none
+	 *            an input validator, or <code>null</code> if none
 	 * @param parentShell
-	 *        the parent shell, or <code>null</code> to create a top-level shell
+	 *            the parent shell, or <code>null</code> to create a top-level shell
 	 * @param initialValue
-	 *        the initial input value, or <code>null</code> if none (equivalent to the empty
-	 *        string)
+	 *            the initial input value, or <code>null</code> if none (equivalent to the empty
+	 *            string)
 	 */
 	public LabelEditorDialog(Shell parentShell, String dialogTitle, String initialValue, IInputValidator validator) {
 		super(parentShell);
 		this.title = dialogTitle;
-		if(initialValue == null) {
+		if (initialValue == null) {
 			value = "";//$NON-NLS-1$
 		} else {
 			value = initialValue;
@@ -94,13 +94,13 @@ public class LabelEditorDialog extends Dialog implements ILabelEditorDialog {
 	 * (non-Javadoc) Method declared on Dialog.
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param buttonId
 	 */
 	@Override
 	protected void buttonPressed(int buttonId) {
-		if(buttonId == IDialogConstants.OK_ID) {
+		if (buttonId == IDialogConstants.OK_ID) {
 			value = viewer.getDocument().get();
 		} else {
 			value = null;
@@ -110,25 +110,25 @@ public class LabelEditorDialog extends Dialog implements ILabelEditorDialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.window.Window#configureShell(org.eclipse.swt.widgets .Shell)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param shell
 	 */
 	@Override
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
-		if(title != null) {
+		if (title != null) {
 			shell.setText(title);
 		}
 	}
 
 	/**
 	 * Returns the ok button.
-	 * 
+	 *
 	 * @return the ok button
 	 */
 	// @unused
@@ -138,7 +138,7 @@ public class LabelEditorDialog extends Dialog implements ILabelEditorDialog {
 
 	/**
 	 * Returns the text area.
-	 * 
+	 *
 	 * @return the text area
 	 */
 	// @unused
@@ -148,7 +148,7 @@ public class LabelEditorDialog extends Dialog implements ILabelEditorDialog {
 
 	/**
 	 * Returns the validator.
-	 * 
+	 *
 	 * @return the validator
 	 */
 	// @unused
@@ -158,7 +158,7 @@ public class LabelEditorDialog extends Dialog implements ILabelEditorDialog {
 
 	/**
 	 * Returns the string typed into this input dialog.
-	 * 
+	 *
 	 * @return the input string
 	 */
 	public String getValue() {
@@ -168,13 +168,13 @@ public class LabelEditorDialog extends Dialog implements ILabelEditorDialog {
 	/**
 	 * Validates the input.
 	 * <p>
-	 * The default implementation of this framework method delegates the request to the supplied input validator object; if it finds the input
-	 * invalid, the error message is displayed in the dialog's message line. This hook method is called whenever the text changes in the input field.
+	 * The default implementation of this framework method delegates the request to the supplied input validator object; if it finds the input invalid, the error message is displayed in the dialog's message line. This hook method is called whenever the text
+	 * changes in the input field.
 	 * </p>
 	 */
 	protected void validateInput() {
 		String errorMessage = null;
-		if(validator != null) {
+		if (validator != null) {
 			errorMessage = validator.isValid(viewer.getDocument().get());
 		}
 		// Bug 16256: important not to treat "" (blank error) the same as null
@@ -184,15 +184,15 @@ public class LabelEditorDialog extends Dialog implements ILabelEditorDialog {
 
 	/**
 	 * Sets or clears the error message. If not <code>null</code>, the OK button is disabled.
-	 * 
+	 *
 	 * @param errorMessage
-	 *        the error message, or <code>null</code> to clear
-	 * 
+	 *            the error message, or <code>null</code> to clear
+	 *
 	 * @since 3.0
 	 */
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
-		if((errorMessageText != null) && !errorMessageText.isDisposed()) {
+		if ((errorMessageText != null) && !errorMessageText.isDisposed()) {
 			Image errorImage = Activator.getImage("icons/error.gif");
 			errorMessageText.setImage(errorMessage == null ? null : errorImage);
 			errorMessageText.setText(errorMessage == null ? "" : errorMessage); //$NON-NLS-1$
@@ -201,7 +201,7 @@ public class LabelEditorDialog extends Dialog implements ILabelEditorDialog {
 			// button creation.
 			// See https://bugs.eclipse.org/bugs/show_bug.cgi?id=113643
 			Control button = getButton(IDialogConstants.OK_ID);
-			if(button != null) {
+			if (button != null) {
 				button.setEnabled(errorMessage == null);
 			}
 		}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,6 +32,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.FormDialog;
 import org.eclipse.ui.forms.IManagedForm;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ImageHyperlink;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
@@ -87,13 +88,13 @@ public class CreatePinsForObjectFlowDialog extends FormDialog {
 
 	/**
 	 * Create a new dialog to initialize a CallBehaviorAction.
-	 * 
+	 *
 	 * @param shell
-	 *        parent shell
+	 *            parent shell
 	 * @param source
-	 *        the chosen source of the object flow
+	 *            the chosen source of the object flow
 	 * @param target
-	 *        the chosen target of the object flow
+	 *            the chosen target of the object flow
 	 */
 	public CreatePinsForObjectFlowDialog(Shell shell, ActivityNode source, ActivityNode target) {
 		super(shell);
@@ -103,31 +104,31 @@ public class CreatePinsForObjectFlowDialog extends FormDialog {
 
 	@Override
 	public int open() {
-		if(CustomObjectFlowEditHelper.insertPinForStartingNewObjectFlow(initialSource) && CustomObjectFlowEditHelper.insertPinForEndingNewObjectFlow(initialTarget)) {
+		if (CustomObjectFlowEditHelper.insertPinForStartingNewObjectFlow(initialSource) && CustomObjectFlowEditHelper.insertPinForEndingNewObjectFlow(initialTarget)) {
 			// create an object flow between actions : both pins must be created
 			return super.open();
 		} else {
 			boolean needInformation = false;
 			// use correct extremities or configure new one
-			if(CustomObjectFlowEditHelper.insertPinForStartingNewObjectFlow(initialSource)) {
-				newSource = createSource((Action)initialSource, initialTarget);
-				if(newSource == null) {
+			if (CustomObjectFlowEditHelper.insertPinForStartingNewObjectFlow(initialSource)) {
+				newSource = createSource((Action) initialSource, initialTarget);
+				if (newSource == null) {
 					// ask for missing information
 					needInformation = true;
 				}
 			} else {
 				newSource = initialSource;
 			}
-			if(CustomObjectFlowEditHelper.insertPinForEndingNewObjectFlow(initialTarget)) {
-				newTarget = createTarget((Action)initialTarget, initialSource);
-				if(newTarget == null) {
+			if (CustomObjectFlowEditHelper.insertPinForEndingNewObjectFlow(initialTarget)) {
+				newTarget = createTarget((Action) initialTarget, initialSource);
+				if (newTarget == null) {
 					// ask for missing information
 					needInformation = true;
 				}
 			} else {
 				newTarget = initialTarget;
 			}
-			if(needInformation) {
+			if (needInformation) {
 				return super.open();
 			}
 			return OK;
@@ -136,16 +137,16 @@ public class CreatePinsForObjectFlowDialog extends FormDialog {
 
 	/**
 	 * Create a pin to use as target if all information is available
-	 * 
+	 *
 	 * @param parentAction
-	 *        the action containing the pin
+	 *            the action containing the pin
 	 * @param objectFlowSource
-	 *        the source of the object flow
+	 *            the source of the object flow
 	 * @return the created pin or null if information is missing
 	 */
 	private InputPin createTarget(Action parentAction, ActivityNode objectFlowSource) {
-		if(objectFlowSource instanceof Pin) {
-			return createInputPin(parentAction, objectFlowSource.getName(), ((Pin)objectFlowSource).getType());
+		if (objectFlowSource instanceof Pin) {
+			return createInputPin(parentAction, objectFlowSource.getName(), ((Pin) objectFlowSource).getType());
 		} else {
 			// Source is not a pin, probably a control node. Ask for information
 			return null;
@@ -154,16 +155,16 @@ public class CreatePinsForObjectFlowDialog extends FormDialog {
 
 	/**
 	 * Create a pin to use as source if all information is available
-	 * 
+	 *
 	 * @param parentAction
-	 *        the action containing the pin
+	 *            the action containing the pin
 	 * @param objectFlowTarget
-	 *        the target of the object flow
+	 *            the target of the object flow
 	 * @return the created pin or null if information is missing
 	 */
 	private OutputPin createSource(Action parentAction, ActivityNode objectFlowTarget) {
-		if(objectFlowTarget instanceof Pin) {
-			return createOutputPin(parentAction, objectFlowTarget.getName(), ((Pin)objectFlowTarget).getType());
+		if (objectFlowTarget instanceof Pin) {
+			return createOutputPin(parentAction, objectFlowTarget.getName(), ((Pin) objectFlowTarget).getType());
 		} else {
 			// Source is not a pin, probably a control node. Ask for information
 			return null;
@@ -172,13 +173,13 @@ public class CreatePinsForObjectFlowDialog extends FormDialog {
 
 	/**
 	 * Create an input pin
-	 * 
+	 *
 	 * @param parentAction
-	 *        the action containing this pin
+	 *            the action containing this pin
 	 * @param name
-	 *        pin name
+	 *            pin name
 	 * @param type
-	 *        pin type
+	 *            pin type
 	 * @return created pin
 	 */
 	private InputPin createInputPin(Action parentAction, String name, Type type) {
@@ -191,13 +192,13 @@ public class CreatePinsForObjectFlowDialog extends FormDialog {
 
 	/**
 	 * Create an output pin
-	 * 
+	 *
 	 * @param parentAction
-	 *        the action containing this pin
+	 *            the action containing this pin
 	 * @param name
-	 *        pin name
+	 *            pin name
 	 * @param type
-	 *        pin type
+	 *            pin type
 	 * @return created pin
 	 */
 	private OutputPin createOutputPin(Action parentAction, String name, Type type) {
@@ -210,11 +211,11 @@ public class CreatePinsForObjectFlowDialog extends FormDialog {
 
 	/**
 	 * Create the form to :
-	 * 
+	 *
 	 * - ask the user the name of pins to create.
-	 * 
+	 *
 	 * - ask the user the type of pins to create.
-	 * 
+	 *
 	 * @see org.eclipse.ui.forms.FormDialog#createFormContent(org.eclipse.ui.forms.IManagedForm)
 	 */
 	@Override
@@ -231,18 +232,18 @@ public class CreatePinsForObjectFlowDialog extends FormDialog {
 
 	/**
 	 * Create the section to ask the user to parameterize the pin.
-	 * 
+	 *
 	 * @param pParent
-	 *        the section's parent widget
+	 *            the section's parent widget
 	 * @param pToolkit
-	 *        the form toolkit
+	 *            the form toolkit
 	 */
 	private void createPinCreationSection(Composite pParent, FormToolkit pToolkit) {
 		// create the section
 		String lSectionTitle = PIN_CREATION_SECTION_TITLE;
-		Section lSection = pToolkit.createSection(pParent, Section.EXPANDED | Section.TITLE_BAR);
+		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);
 		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		if(lSectionTitle != null) {
+		if (lSectionTitle != null) {
 			lSection.setText(lSectionTitle);
 		}
 		ImageHyperlink componentHelp = HelpComponentFactory.createHelpComponent(lSection, pToolkit, CustomMessages.CreatePinsForObjectFlowDialog_PinCreationHelp, true);
@@ -280,6 +281,7 @@ public class CreatePinsForObjectFlowDialog extends FormDialog {
 			/**
 			 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 			 */
+			@Override
 			public void modifyText(ModifyEvent e) {
 				creationName = creationNameText.getText();
 			}
@@ -301,43 +303,43 @@ public class CreatePinsForObjectFlowDialog extends FormDialog {
 
 	/**
 	 * Open the dialog to choose the type of the pin(s) to create
-	 * 
+	 *
 	 */
 	private void handleChooseType() {
 		/*
 		 * TODO Backport
 		 */
-		//		UMLMultiEClassifierTreeSelectorDialog dialog = new UMLMultiEClassifierTreeSelectorDialog(getShell(),initialSource, Sets.newHashSet(UMLPackage.Literals.TYPE));
-		//		dialog.setMessage(CustomMessages.UMLModelingAssistantProviderMessage);
-		//		dialog.setTitle(CustomMessages.UMLModelingAssistantProviderTitle);
-		//		if(dialog.open() == Window.OK) {
-		//			creationType = (Type)dialog.getTheResult();
-		//			creationTypeText.setText(dialog.getText(creationType));
-		//		}
+		// UMLMultiEClassifierTreeSelectorDialog dialog = new UMLMultiEClassifierTreeSelectorDialog(getShell(),initialSource, Sets.newHashSet(UMLPackage.Literals.TYPE));
+		// dialog.setMessage(CustomMessages.UMLModelingAssistantProviderMessage);
+		// dialog.setTitle(CustomMessages.UMLModelingAssistantProviderTitle);
+		// if(dialog.open() == Window.OK) {
+		// creationType = (Type)dialog.getTheResult();
+		// creationTypeText.setText(dialog.getText(creationType));
+		// }
 	}
 
 	/**
 	 * Set correctly the invoked object, by creating it if needed. Then,
 	 * notifies that the ok button of this dialog has been pressed.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#okPressed()
-	 * 
+	 *
 	 */
 	@Override
 	protected void okPressed() {
 		// create pins if needed
-		if(newSource == null) {
-			newSource = createOutputPin((OpaqueAction)initialSource, creationName, creationType);
+		if (newSource == null) {
+			newSource = createOutputPin((OpaqueAction) initialSource, creationName, creationType);
 		}
-		if(newTarget == null) {
-			newTarget = createInputPin((OpaqueAction)initialTarget, creationName, creationType);
+		if (newTarget == null) {
+			newTarget = createInputPin((OpaqueAction) initialTarget, creationName, creationType);
 		}
 		super.okPressed();
 	}
 
 	/**
 	 * Get the node to use as object flow source
-	 * 
+	 *
 	 * @return new source
 	 */
 	public ActivityNode getSource() {
@@ -346,7 +348,7 @@ public class CreatePinsForObjectFlowDialog extends FormDialog {
 
 	/**
 	 * Get the node to use as object flow target
-	 * 
+	 *
 	 * @return new target
 	 */
 	public ActivityNode getTarget() {

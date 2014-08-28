@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,17 +28,17 @@ public class DefaultObjectLocalizerFactory implements IServiceFactory {
 
 	@Override
 	public void init(ServicesRegistry servicesRegistry) throws ServiceException {
-		// pass.  The localizer is stateless and requires no initialization
+		// pass. The localizer is stateless and requires no initialization
 	}
 
 	@Override
 	public void startService() throws ServiceException {
-		// pass.  The localizer is stateless and requires no starting
+		// pass. The localizer is stateless and requires no starting
 	}
 
 	@Override
 	public void disposeService() throws ServiceException {
-		// pass.  The localizer is stateless and requires no disposal
+		// pass. The localizer is stateless and requires no disposal
 	}
 
 	@Override

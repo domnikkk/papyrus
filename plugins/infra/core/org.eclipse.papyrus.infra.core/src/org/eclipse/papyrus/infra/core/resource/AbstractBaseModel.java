@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,15 +29,16 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl.PlatformSchemeAware;
 import org.eclipse.papyrus.infra.core.Activator;
 
 /**
  * An abstract implmeentation of model. This class should be subclassed to fit
  * the required model.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public abstract class AbstractBaseModel extends AbstractModel implements IVersionableModel, IEMFModel {
 
@@ -68,7 +69,7 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 
 	/**
 	 * Get the file extension used by the resource.
-	 * 
+	 *
 	 * @return
 	 */
 	abstract protected String getModelFileExtension();
@@ -76,7 +77,7 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 	/**
 	 * Return true if the resource is set, false otherwise. When the resource is
 	 * set, this mean that the model is loaded or created.
-	 * 
+	 *
 	 * @return
 	 */
 	protected boolean resourceIsSet() {
@@ -85,7 +86,7 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.resource.IModel#createModel(org.eclipse.core.runtime.IPath)
-	 * 
+	 *
 	 * @param fullPath
 	 */
 	@Override
@@ -103,7 +104,7 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 		// Create Resource of appropriate type
 		ModelSet modelSet = getModelManager();
 		resource = modelSet.getResource(resourceURI, false);
-		if(resource != null) {
+		if (resource != null) {
 			// it already exists? Best effort to make sure it's loaded
 			try {
 				modelSet.getResource(resourceURI, true);
@@ -111,8 +112,8 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 				// it commonly happens when creating a new model in the
 				// workspace that the wizard creates an empty file, first.
 				Map<String, ?> attributes = modelSet.getURIConverter().getAttributes(resourceURI, Collections.singletonMap(URIConverter.OPTION_REQUESTED_ATTRIBUTES, Collections.singleton(URIConverter.ATTRIBUTE_LENGTH)));
-				Number length = (Number)attributes.get(URIConverter.ATTRIBUTE_LENGTH);
-				if((length != null) && (length.longValue() > 0L)) {
+				Number length = (Number) attributes.get(URIConverter.ATTRIBUTE_LENGTH);
+				if ((length != null) && (length.longValue() > 0L)) {
 					// it has some length but isn't readable; fail
 					throw e;
 				} // otherwise, it's just empty and we'll fill it
@@ -125,17 +126,17 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 	}
 
 	protected void configureResource(Resource resource) {
-		if(resource instanceof XMIResource) {
-			((XMIResource)resource).getDefaultSaveOptions().putAll(getSaveOptions());
-			((XMIResource)resource).setEncoding(ENCODING);
+		if (resource instanceof XMIResource) {
+			((XMIResource) resource).getDefaultSaveOptions().putAll(getSaveOptions());
+			((XMIResource) resource).setEncoding(ENCODING);
 		}
 	}
 
 	/**
 	 * Get a platform resource URI of the given path
-	 * 
+	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @return the uri
 	 */
 	protected URI getPlatformURI(IPath path) {
@@ -145,10 +146,10 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 	/**
 	 * Load the model repository. The URI is calculated by removing the
 	 * extension and replacing it by the model extension.
-	 * 
+	 *
 	 * @param file
-	 *        The file selected by user requesting load. Should be used as a
-	 *        bases to guess the model IPath.
+	 *            The file selected by user requesting load. Should be used as a
+	 *            bases to guess the model IPath.
 	 */
 	public void loadModel(IFile file) {
 		// Get the full path and call the load method with it.
@@ -158,7 +159,7 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 	/**
 	 * Load the model by using the provided fullpath as a hint for the resource
 	 * URI. In this implementation, simply add the model extension.
-	 * 
+	 *
 	 * @param fullPathWithoutExtension
 	 */
 	@Override
@@ -170,7 +171,7 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 	/**
 	 * Load the model by using the provided fullpath as a hint for the resource
 	 * URI. In this implementation, simply add the model extension.
-	 * 
+	 *
 	 * @param fullPathWithoutExtension
 	 */
 	@Override
@@ -189,20 +190,20 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 
 	/**
 	 * Queries whether my resource (based on the given URI) exists in the current model set.
-	 * 
+	 *
 	 * @param uriWithoutExtension
-	 *        the base resource URI to check
-	 * 
+	 *            the base resource URI to check
+	 *
 	 * @return whether my resource based on this URI exists
 	 */
 	protected boolean exists(URI uriWithoutExtension) {
 		return modelSet.getURIConverter().exists(uriWithoutExtension.appendFileExtension(getModelFileExtension()), null);
 	}
-	
+
 	/**
 	 * Import the model by using the provided fullpath as a hint for the
 	 * resource URI. In this implementation, simply call {@link #loadModel(IPath)}
-	 * 
+	 *
 	 * @param fullPathWithoutExtension
 	 */
 	@Override
@@ -220,18 +221,18 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 	/**
 	 * @throws IOException
 	 * @see org.eclipse.papyrus.infra.core.resource.IModel#saveModel()
-	 * 
+	 *
 	 */
 	@Override
 	public void saveModel() throws IOException {
-		if(getModelManager().shouldSave(resource)) {
+		if (getModelManager().shouldSave(resource)) {
 			resource.save(null);
 		}
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.resource.IModel#changeModelPath(org.eclipse.core.runtime.IPath)
-	 * 
+	 *
 	 * @param nameWithoutExt
 	 */
 	@Override
@@ -250,7 +251,7 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.resource.IModel#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public void unload() {
@@ -258,7 +259,7 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 		snippets.performDispose(this);
 
 		// Do unloading
-		if(resource != null) {
+		if (resource != null) {
 			resource.unload();
 			resource = null;
 		}
@@ -271,16 +272,16 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 		Map<Object, Object> saveOptions = new HashMap<Object, Object>();
 
 		// default save options.
-		saveOptions.put(XMIResource.OPTION_DECLARE_XML, Boolean.TRUE);
-		saveOptions.put(XMIResource.OPTION_PROCESS_DANGLING_HREF, XMIResource.OPTION_PROCESS_DANGLING_HREF_DISCARD);
-		saveOptions.put(XMIResource.OPTION_SCHEMA_LOCATION, Boolean.TRUE);
+		saveOptions.put(XMLResource.OPTION_DECLARE_XML, Boolean.TRUE);
+		saveOptions.put(XMLResource.OPTION_PROCESS_DANGLING_HREF, XMLResource.OPTION_PROCESS_DANGLING_HREF_DISCARD);
+		saveOptions.put(XMLResource.OPTION_SCHEMA_LOCATION, Boolean.TRUE);
 		saveOptions.put(XMIResource.OPTION_USE_XMI_TYPE, Boolean.TRUE);
-		saveOptions.put(XMIResource.OPTION_SAVE_TYPE_INFORMATION, Boolean.TRUE);
-		saveOptions.put(XMIResource.OPTION_SKIP_ESCAPE_URI, Boolean.FALSE);
-		saveOptions.put(XMIResource.OPTION_ENCODING, "UTF-8");
+		saveOptions.put(XMLResource.OPTION_SAVE_TYPE_INFORMATION, Boolean.TRUE);
+		saveOptions.put(XMLResource.OPTION_SKIP_ESCAPE_URI, Boolean.FALSE);
+		saveOptions.put(XMLResource.OPTION_ENCODING, "UTF-8");
 
-		//see bug 397987: [Core][Save] The referenced plugin models are saved using relative path
-		saveOptions.put(XMIResource.OPTION_URI_HANDLER, new org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl.PlatformSchemeAware());
+		// see bug 397987: [Core][Save] The referenced plugin models are saved using relative path
+		saveOptions.put(XMLResource.OPTION_URI_HANDLER, new org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl.PlatformSchemeAware());
 
 		return saveOptions;
 	}
@@ -288,19 +289,19 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 
 	@Override
 	public void saveCopy(IPath targetPathWithoutExtension, Map<Object, Object> targetMap) {
-		//		OutputStream targetStream = getOutputStream(targetPath);
+		// OutputStream targetStream = getOutputStream(targetPath);
 		Map<Object, Object> saveOptions = new HashMap<Object, Object>();
 
 		URI targetURI = getTargetURI(targetPathWithoutExtension);
 
-		saveOptions.put(XMIResource.OPTION_URI_HANDLER, new SaveCopyURIHandlerImp(targetMap, targetURI));
+		saveOptions.put(XMLResource.OPTION_URI_HANDLER, new SaveCopyURIHandlerImp(targetMap, targetURI));
 		try {
 			OutputStream outputStream = modelSet.getURIConverter().createOutputStream(targetURI);
 			resource.save(outputStream, saveOptions);
 		} catch (IOException ex) {
 			Activator.log.error(ex);
 		}
-		//	resource.save(targetStream, options);
+		// resource.save(targetStream, options);
 	}
 
 	@Override
@@ -311,12 +312,12 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 	protected URI getTargetURI(IPath targetPathWithoutExtension) {
 		String resourceSegment = resourceURI.lastSegment();
 		int index = resourceSegment.lastIndexOf(".");
-		if(index > -1) {
+		if (index > -1) {
 			String extension = resourceSegment.substring(index + 1);
 			IPath targetPath = targetPathWithoutExtension.addFileExtension(extension);
 
 			URI targetURI;
-			if(targetPath.getDevice() == null) {
+			if (targetPath.getDevice() == null) {
 				targetURI = URI.createPlatformResourceURI(targetPath.toOSString(), true);
 			} else {
 				targetURI = URI.createFileURI(targetPath.toString());
@@ -344,7 +345,7 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 
 		@Override
 		public void setBaseURI(URI baseURI) {
-			//We're saving to a different target URI. Ignore the call to setBaseURI.
+			// We're saving to a different target URI. Ignore the call to setBaseURI.
 			super.setBaseURI(targetURI);
 		}
 
@@ -352,13 +353,13 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 		public URI deresolve(URI uri) {
 			URI resourceURI = uri.trimFragment();
 
-			//Do not map our own URI
-			if(!AbstractBaseModel.this.resourceURI.equals(resourceURI)) {
-				if(targetMap.containsKey(resourceURI)) {
+			// Do not map our own URI
+			if (!AbstractBaseModel.this.resourceURI.equals(resourceURI)) {
+				if (targetMap.containsKey(resourceURI)) {
 					Object target = targetMap.get(resourceURI);
-					if(target instanceof URI) {
-						URI targetURI = (URI)target;
-						if(uri.fragment() != null) {
+					if (target instanceof URI) {
+						URI targetURI = (URI) target;
+						if (uri.fragment() != null) {
 							targetURI = targetURI.appendFragment(uri.fragment());
 						}
 						return targetURI;
@@ -373,8 +374,8 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 
 	@Override
 	public Set<URI> getModifiedURIs() {
-		if(getResource() != null) {
-			if(!getResource().isTrackingModification() || getResource().isModified()) {
+		if (getResource() != null) {
+			if (!getResource().isTrackingModification() || getResource().isModified()) {
 				return Collections.singleton(getResource().getURI());
 			}
 		}
@@ -383,7 +384,7 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 
 	@Override
 	public void handle(Resource resource) {
-		//Default: do nothing
+		// Default: do nothing
 	}
 
 	@Override
@@ -393,25 +394,25 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 
 	/**
 	 * For standard controlled resources, resources have a single root with a non-null eContainer
-	 * 
-	 * 
+	 *
+	 *
 	 * @param resource
 	 * @return
 	 */
 	@Override
 	public boolean isControlled(Resource resource) {
-		if(resource == this.resource || resource == null) {
+		if (resource == this.resource || resource == null) {
 			return false;
 		}
 
-		if(resource.getContents().isEmpty()) {
+		if (resource.getContents().isEmpty()) {
 			return false;
 		}
 
 		EObject rootElement = resource.getContents().get(0);
 
 		boolean isControlled = rootElement.eContainer() != null;
-		if(isControlled) {
+		if (isControlled) {
 			Resource parentResource = rootElement.eContainer().eResource();
 			boolean isChildOfMainResource = parentResource == this.resource || isControlled(parentResource);
 			return isChildOfMainResource;

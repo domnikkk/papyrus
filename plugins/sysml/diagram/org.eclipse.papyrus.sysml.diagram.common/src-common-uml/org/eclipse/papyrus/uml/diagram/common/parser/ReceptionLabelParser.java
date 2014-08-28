@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.papyrus.gmf.diagram.common.parser.IMaskManagedSemanticParser;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.sysml.diagram.common.preferences.ILabelPreferenceConstants;
+import org.eclipse.papyrus.uml.tools.utils.ICustomAppearance;
 import org.eclipse.uml2.uml.Reception;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -52,27 +53,27 @@ public class ReceptionLabelParser extends NamedElementLabelParser implements IMa
 
 		Collection<String> maskValues = getMaskValues(element);
 
-		if(maskValues.isEmpty()) {
+		if (maskValues.isEmpty()) {
 			return MaskedLabel;
 		}
 
 		String result = PREFIX;
 		EObject eObject = EMFHelper.getEObject(element);
 
-		if((eObject != null) && (eObject instanceof Reception)) {
+		if ((eObject != null) && (eObject instanceof Reception)) {
 
-			Reception reception = (Reception)eObject;
+			Reception reception = (Reception) eObject;
 
 			// manage name
-			if(maskValues.contains(ILabelPreferenceConstants.DISP_NAME) && reception.isSetName()) {
+			if (maskValues.contains(ICustomAppearance.DISP_NAME) && reception.isSetName()) {
 				String name = reception.getName();
 				result = String.format(NAME_FORMAT, result, name);
 			}
 
 			// manage signal
-			if(maskValues.contains(ILabelPreferenceConstants.DISP_SIGNAL)) {
+			if (maskValues.contains(ILabelPreferenceConstants.DISP_SIGNAL)) {
 				String type = "<Undefined>";
-				if(reception.getSignal() != null) {
+				if (reception.getSignal() != null) {
 					type = reception.getSignal().getName();
 				}
 				result = String.format(TYPE_FORMAT, result, type);
@@ -88,9 +89,9 @@ public class ReceptionLabelParser extends NamedElementLabelParser implements IMa
 	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 
-		if(event instanceof Notification) {
-			Object feature = ((Notification)event).getFeature();
-			if(feature instanceof EStructuralFeature) {
+		if (event instanceof Notification) {
+			Object feature = ((Notification) event).getFeature();
+			if (feature instanceof EStructuralFeature) {
 				return UMLPackage.eINSTANCE.getReception_Signal().equals(feature) || super.isAffectingEvent(event, flags);
 			}
 		}
@@ -105,11 +106,11 @@ public class ReceptionLabelParser extends NamedElementLabelParser implements IMa
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = new ArrayList<EObject>();
 
-		if((element != null) && (element instanceof Reception)) {
-			Reception semElement = (Reception)element;
+		if ((element != null) && (element instanceof Reception)) {
+			Reception semElement = (Reception) element;
 
 			semanticElementsBeingParsed.add(semElement);
-			if(semElement.getSignal() != null) {
+			if (semElement.getSignal() != null) {
 				semanticElementsBeingParsed.add(semElement.getSignal());
 			}
 		}
@@ -122,13 +123,13 @@ public class ReceptionLabelParser extends NamedElementLabelParser implements IMa
 	@Override
 	public Map<String, String> getMasks() {
 		Map<String, String> masks = new HashMap<String, String>();
-		masks.put(ILabelPreferenceConstants.DISP_NAME, "Name");
+		masks.put(ICustomAppearance.DISP_NAME, "Name");
 		masks.put(ILabelPreferenceConstants.DISP_SIGNAL, "Signal");
 		return masks;
 	}
 
 	@Override
 	public Collection<String> getDefaultValue(IAdaptable element) {
-		return Arrays.asList(ILabelPreferenceConstants.DISP_NAME, ILabelPreferenceConstants.DISP_SIGNAL);
+		return Arrays.asList(ICustomAppearance.DISP_NAME, ILabelPreferenceConstants.DISP_SIGNAL);
 	}
 }

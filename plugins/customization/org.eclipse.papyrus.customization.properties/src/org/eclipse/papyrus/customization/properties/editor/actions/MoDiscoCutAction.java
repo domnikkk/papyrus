@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.papyrus.customization.properties.util.ActionUtil;
 /**
  * An adapter for the EMF "Cut" Action, compatible with the
  * MoDisco customizable content provider.
- * 
+ *
  * @author Camille Letavernier
  */
 public class MoDiscoCutAction extends CutAction {
@@ -33,11 +33,11 @@ public class MoDiscoCutAction extends CutAction {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
-	 *        The Editing domain on which the command will be executed
+	 *            The Editing domain on which the command will be executed
 	 */
 	public MoDiscoCutAction(EditingDomain domain) {
 		super(domain);

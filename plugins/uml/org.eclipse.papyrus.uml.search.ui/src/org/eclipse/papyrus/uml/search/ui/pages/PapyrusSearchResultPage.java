@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,9 +43,9 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PartInitException;
 
 /**
- * 
+ *
  * Papyrus specific search results page
- * 
+ *
  */
 public class PapyrusSearchResultPage extends AbstractTextSearchViewPage implements IResourceChangeListener {
 
@@ -71,12 +71,12 @@ public class PapyrusSearchResultPage extends AbstractTextSearchViewPage implemen
 
 		Set<AbstractResultEntry> results = MatchUtils.getMatches(this.getInput(), true);
 
-		if(element instanceof AbstractResultEntry) {
-			AbstractResultEntry resultEntry = (AbstractResultEntry)element;
+		if (element instanceof AbstractResultEntry) {
+			AbstractResultEntry resultEntry = (AbstractResultEntry) element;
 
-			if(results.contains(resultEntry)) {
+			if (results.contains(resultEntry)) {
 
-				return new Match[]{ resultEntry };
+				return new Match[] { resultEntry };
 
 			}
 			return new Match[0];
@@ -88,11 +88,11 @@ public class PapyrusSearchResultPage extends AbstractTextSearchViewPage implemen
 	@Override
 	public int getDisplayedMatchCount(Object element) {
 
-		if(element instanceof AbstractResultEntry) {
-			AbstractResultEntry resultEntry = (AbstractResultEntry)element;
+		if (element instanceof AbstractResultEntry) {
+			AbstractResultEntry resultEntry = (AbstractResultEntry) element;
 
 			Set<AbstractResultEntry> results = MatchUtils.getMatches(this.getInput(), true);
-			if(results.contains(resultEntry)) {
+			if (results.contains(resultEntry)) {
 				return 1;
 			}
 
@@ -112,19 +112,19 @@ public class PapyrusSearchResultPage extends AbstractTextSearchViewPage implemen
 	protected void handleOpen(OpenEvent event) {
 
 		ISelection selection = event.getSelection();
-		if(!selection.isEmpty()) {
-			if(selection instanceof IStructuredSelection) {
-				Object firstElement = ((IStructuredSelection)selection).getFirstElement();
+		if (!selection.isEmpty()) {
+			if (selection instanceof IStructuredSelection) {
+				Object firstElement = ((IStructuredSelection) selection).getFirstElement();
 
-				if(firstElement instanceof AbstractResultEntry) {
-					AbstractResultEntry resultEntry = (AbstractResultEntry)firstElement;
-					ScopeEntry scopeEntry = (ScopeEntry)resultEntry.getElement();
-					if(scopeEntry != null && scopeEntry.getServicesRegistry() != null) {
+				if (firstElement instanceof AbstractResultEntry) {
+					AbstractResultEntry resultEntry = (AbstractResultEntry) firstElement;
+					ScopeEntry scopeEntry = (ScopeEntry) resultEntry.getElement();
+					if (scopeEntry != null && scopeEntry.getServicesRegistry() != null) {
 						try {
 							OpenElementService service = scopeEntry.getServicesRegistry().getService(OpenElementService.class);
 							resultEntry.openElement(service);
 						} catch (ServiceException e) {
-							//							Activator.log.error(Messages.PapyrusSearchResultPage_0 + resultEntry.elementToOpen(), e);
+							// Activator.log.error(Messages.PapyrusSearchResultPage_0 + resultEntry.elementToOpen(), e);
 						} catch (PartInitException e) {
 							Activator.log.error(Messages.PapyrusSearchResultPage_1, e);
 						}
@@ -136,12 +136,12 @@ public class PapyrusSearchResultPage extends AbstractTextSearchViewPage implemen
 
 		}
 
-		//		super.handleOpen(event);
+		// super.handleOpen(event);
 	}
 
 	@Override
 	protected void elementsChanged(Object[] objects) {
-		if(fContentProvider != null) {
+		if (fContentProvider != null) {
 			fContentProvider.elementsChanged(objects);
 		}
 	}
@@ -149,7 +149,7 @@ public class PapyrusSearchResultPage extends AbstractTextSearchViewPage implemen
 
 	@Override
 	protected void evaluateChangedElements(Match[] matches, Set changedElements) {
-		for(int i = 0; i < matches.length; i++) {
+		for (int i = 0; i < matches.length; i++) {
 			changedElements.add(matches[i]);
 		}
 
@@ -157,7 +157,7 @@ public class PapyrusSearchResultPage extends AbstractTextSearchViewPage implemen
 
 	@Override
 	protected void clear() {
-		if(fContentProvider != null) {
+		if (fContentProvider != null) {
 			fContentProvider.clear();
 		}
 	}
@@ -166,7 +166,7 @@ public class PapyrusSearchResultPage extends AbstractTextSearchViewPage implemen
 	protected void configureTreeViewer(TreeViewer viewer) {
 		viewer.setContentProvider(new ResultContentProvider(this, viewer));
 		viewer.setLabelProvider(new ResultLabelProvider());
-		fContentProvider = (ResultContentProvider)viewer.getContentProvider();
+		fContentProvider = (ResultContentProvider) viewer.getContentProvider();
 
 	}
 
@@ -177,16 +177,16 @@ public class PapyrusSearchResultPage extends AbstractTextSearchViewPage implemen
 
 	public void resourceChanged(IResourceChangeEvent event) {
 
-		if(event.getType() == IResourceChangeEvent.POST_CHANGE) {
+		if (event.getType() == IResourceChangeEvent.POST_CHANGE) {
 
-			if(this.getInput() != null && this.getViewer().getInput() != null && this.getViewPart() != null) {
+			if (this.getInput() != null && this.getViewer().getInput() != null && this.getViewPart() != null) {
 
 
 
 				Display.getDefault().asyncExec(new Runnable() {
 
 					public void run() {
-						((SearchView)getViewPart()).showSearchResult(getInput());
+						((SearchView) getViewPart()).showSearchResult(getInput());
 						getViewer().refresh();
 					}
 				});

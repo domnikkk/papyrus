@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -44,12 +44,12 @@ public class PartDropHelper extends ElementHelper {
 	public Command getDropPartOnPart(DropObjectsRequest request, GraphicalEditPart host) {
 
 		Object droppedEObject = request.getObjects().get(0);
-		if(!isValidPart(droppedEObject, getHostEObject(host))) {
+		if (!isValidPart(droppedEObject, getHostEObject(host))) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		// Prepare the view creation command
-		ViewDescriptor descriptor = new ViewDescriptor(new SemanticAdapter((EObject)droppedEObject, null), Node.class, /* explicit semantic hint is mandatory */ null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
+		ViewDescriptor descriptor = new ViewDescriptor(new SemanticAdapter((EObject) droppedEObject, null), Node.class, /* explicit semantic hint is mandatory */null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
 		CreateViewRequest createViewRequest = new CreateViewRequest(descriptor);
 		createViewRequest.setLocation(request.getLocation().getCopy());
 		Command viewCreateCommand = host.getCommand(createViewRequest);
@@ -61,14 +61,14 @@ public class PartDropHelper extends ElementHelper {
 		boolean isValid = false;
 
 		// The drop object is supposed to be a Property
-		if((object != null) && (object instanceof Property) && !(object instanceof Port)) {
+		if ((object != null) && (object instanceof Property) && !(object instanceof Port)) {
 
 			// The dropTarget has to be a TypedElement with a non-null Type
-			if((dropTarget != null) && (dropTarget instanceof TypedElement) && (((TypedElement)dropTarget).getType() != null)) {
+			if ((dropTarget != null) && (dropTarget instanceof TypedElement) && (((TypedElement) dropTarget).getType() != null)) {
 
-				Type targetType = ((TypedElement)dropTarget).getType();
-				// The dropped object is owned by the target type 
-				if(((Property)object).eContainer() == targetType) {
+				Type targetType = ((TypedElement) dropTarget).getType();
+				// The dropped object is owned by the target type
+				if (((Property) object).eContainer() == targetType) {
 					isValid = true;
 				}
 			}
@@ -80,10 +80,10 @@ public class PartDropHelper extends ElementHelper {
 	/**
 	 * return the host Edit Part's semantic element, if the semantic element
 	 * is <code>null</code> or unresolvable it will return <code>null</code>
-	 * 
+	 *
 	 * @return EObject
 	 */
 	protected EObject getHostEObject(GraphicalEditPart host) {
-		return ViewUtil.resolveSemanticElement((View)host.getModel());
+		return ViewUtil.resolveSemanticElement((View) host.getModel());
 	}
 }

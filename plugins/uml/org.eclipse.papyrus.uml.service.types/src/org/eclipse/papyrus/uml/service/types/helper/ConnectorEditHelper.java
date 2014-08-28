@@ -8,7 +8,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -60,47 +60,47 @@ public class ConnectorEditHelper extends ElementEditHelper {
 
 	/**
 	 * Test if the relationship creation is allowed.
-	 * 
+	 *
 	 * @param source
-	 *        the relationship source can be null
+	 *            the relationship source can be null
 	 * @param target
-	 *        the relationship target can be null
+	 *            the relationship target can be null
 	 * @param sourceView
-	 *        the relationship graphical source can be null
+	 *            the relationship graphical source can be null
 	 * @param targetView
-	 *        the relationship graphical target can be null
+	 *            the relationship graphical target can be null
 	 * @return true if the creation is allowed
 	 */
 	protected boolean canCreate(EObject source, EObject target, View sourceView, View targetView) {
 
-		if((source != null) && !(source instanceof ConnectableElement)) {
+		if ((source != null) && !(source instanceof ConnectableElement)) {
 			return false;
 		}
 
-		if((target != null) && !(target instanceof ConnectableElement)) {
+		if ((target != null) && !(target instanceof ConnectableElement)) {
 			return false;
 		}
 
-		if((sourceView != null) && (targetView != null)) {
+		if ((sourceView != null) && (targetView != null)) {
 			// Cannot create a self connector on a view
-			if(sourceView == targetView) {
+			if (sourceView == targetView) {
 				return false;
 			}
 
 			// Cannot create a connector from a view representing a Part to its own Port (or the opposite)
-			if((sourceView.getChildren().contains(targetView)) || (targetView.getChildren().contains(sourceView))) {
+			if ((sourceView.getChildren().contains(targetView)) || (targetView.getChildren().contains(sourceView))) {
 				return false;
 			}
 
 			// Cannot connect two Port owned by the same view
-			if((sourceView.getElement() instanceof Port) && (targetView.getElement() instanceof Port)) {
-				if(ViewUtil.getContainerView(sourceView) == ViewUtil.getContainerView(targetView)) {
+			if ((sourceView.getElement() instanceof Port) && (targetView.getElement() instanceof Port)) {
+				if (ViewUtil.getContainerView(sourceView) == ViewUtil.getContainerView(targetView)) {
 					return false;
 				}
 			}
 
 			// Cannot connect a Part to one of its (possibly indirect) containment, must connect to one of its Port.
-			if(getStructureContainers(sourceView).contains(targetView) || getStructureContainers(targetView).contains(sourceView)) {
+			if (getStructureContainers(sourceView).contains(targetView) || getStructureContainers(targetView).contains(sourceView)) {
 				return false;
 			}
 		}
@@ -118,46 +118,46 @@ public class ConnectorEditHelper extends ElementEditHelper {
 
 		boolean noSourceOrTarget = (source == null || target == null);
 		boolean noSourceAndTarget = (source == null && target == null);
-		if(noSourceOrTarget && !noSourceAndTarget) {
-			
-			if (!(source instanceof ConnectableElement)){
-				return UnexecutableCommand.INSTANCE;
-			} 
-			// The request isn't complete yet. Return the identity command so
-			// that the create relationship gesture is enabled.
-			return IdentityCommand.INSTANCE;			
+		if (noSourceOrTarget && !noSourceAndTarget) {
 
-		}
-		
-		if (source != null && target != null){			
-			// Propose a semantic container for the new Connector.
-			StructuredClassifier proposedContainer = deduceContainer(req);
-			if(proposedContainer == null) {
+			if (!(source instanceof ConnectableElement)) {
 				return UnexecutableCommand.INSTANCE;
 			}
-			
+			// The request isn't complete yet. Return the identity command so
+			// that the create relationship gesture is enabled.
+			return IdentityCommand.INSTANCE;
+
+		}
+
+		if (source != null && target != null) {
+			// Propose a semantic container for the new Connector.
+			StructuredClassifier proposedContainer = deduceContainer(req);
+			if (proposedContainer == null) {
+				return UnexecutableCommand.INSTANCE;
+			}
+
 			EObject container = req.getContainer();
-			if (container != proposedContainer){
+			if (container != proposedContainer) {
 				req.setContainer(proposedContainer);
 				return new CreateRelationshipCommand(req);
 			}
-			
+
 		}
-	
-		boolean umlStrict = true;		
-		if (!req.getParameters().isEmpty()){
-				Object umlStrictParameter = req.getParameter(org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants.UML_STRICT);
-				if (umlStrictParameter instanceof Boolean){
-					umlStrict = (Boolean) umlStrictParameter;		
-				}
+
+		boolean umlStrict = true;
+		if (!req.getParameters().isEmpty()) {
+			Object umlStrictParameter = req.getParameter(org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants.UML_STRICT);
+			if (umlStrictParameter instanceof Boolean) {
+				umlStrict = (Boolean) umlStrictParameter;
 			}
+		}
 
 		boolean canCreate = true;
-		
-		if (umlStrict){
+
+		if (umlStrict) {
 			canCreate = canCreate(source, target, RequestParameterUtils.getSourceView(req), RequestParameterUtils.getTargetView(req));
 		}
-		if(!noSourceAndTarget && !canCreate) {
+		if (!noSourceAndTarget && !canCreate) {
 			// Abort creation.
 			return UnexecutableCommand.INSTANCE;
 		}
@@ -166,14 +166,14 @@ public class ConnectorEditHelper extends ElementEditHelper {
 
 	/**
 	 * This method provides the source role provided as {@link ConfigureRequest} parameter.
-	 * 
+	 *
 	 * @return the target role
 	 */
 	private ConnectableElement getSourceRole(IEditCommandRequest req) {
 		ConnectableElement result = null;
 		Object paramObject = req.getParameter(CreateRelationshipRequest.SOURCE);
-		if(paramObject instanceof ConnectableElement) {
-			result = (ConnectableElement)paramObject;
+		if (paramObject instanceof ConnectableElement) {
+			result = (ConnectableElement) paramObject;
 		}
 
 		return result;
@@ -181,14 +181,14 @@ public class ConnectorEditHelper extends ElementEditHelper {
 
 	/**
 	 * This method provides the target role provided as {@link ConfigureRequest} parameter.
-	 * 
+	 *
 	 * @return the target role
 	 */
 	private ConnectableElement getTargetRole(IEditCommandRequest req) {
 		ConnectableElement result = null;
 		Object paramObject = req.getParameter(CreateRelationshipRequest.TARGET);
-		if(paramObject instanceof ConnectableElement) {
-			result = (ConnectableElement)paramObject;
+		if (paramObject instanceof ConnectableElement) {
+			result = (ConnectableElement) paramObject;
 		}
 
 		return result;
@@ -196,20 +196,20 @@ public class ConnectorEditHelper extends ElementEditHelper {
 
 	/**
 	 * This method provides the source partWithPort provided as {@link ConfigureRequest} parameter.
-	 * 
+	 *
 	 * @return the target partWithPort
 	 */
 	private Property getSourcePartWithPort(IEditCommandRequest req) {
 		Property result = null;
-		if(getSourceRole(req) instanceof Port) {
+		if (getSourceRole(req) instanceof Port) {
 			// Only look for PartWithPort if the role is a Port.
 
 			View parentView = ViewUtil.getContainerView(RequestParameterUtils.getSourceView(req));
 			EObject semanticParent = parentView.getElement();
-			if((semanticParent instanceof Property) && !(semanticParent instanceof Port)) {
+			if ((semanticParent instanceof Property) && !(semanticParent instanceof Port)) {
 				// Only add PartWithPort for assembly (not for delegation)
-				if(!EcoreUtil.isAncestor(parentView, RequestParameterUtils.getTargetView(req))) {
-					result = (Property)semanticParent;
+				if (!EcoreUtil.isAncestor(parentView, RequestParameterUtils.getTargetView(req))) {
+					result = (Property) semanticParent;
 				}
 			}
 
@@ -219,20 +219,20 @@ public class ConnectorEditHelper extends ElementEditHelper {
 
 	/**
 	 * This method provides the target partWithPort provided as {@link ConfigureRequest} parameter.
-	 * 
+	 *
 	 * @return the target partWithPort
 	 */
 	private Property getTargetPartWithPort(IEditCommandRequest req) {
 		Property result = null;
-		if(getTargetRole(req) instanceof Port) {
+		if (getTargetRole(req) instanceof Port) {
 			// Only look for PartWithPort if the role is a Port.
 
 			View parentView = ViewUtil.getContainerView(RequestParameterUtils.getTargetView(req));
 			EObject semanticParent = parentView.getElement();
-			if((semanticParent instanceof Property) && !(semanticParent instanceof Port)) {
+			if ((semanticParent instanceof Property) && !(semanticParent instanceof Port)) {
 				// Only add PartWithPort for assembly (not for delegation)
-				if(!EcoreUtil.isAncestor(parentView, RequestParameterUtils.getSourceView(req))) {
-					result = (Property)semanticParent;
+				if (!EcoreUtil.isAncestor(parentView, RequestParameterUtils.getSourceView(req))) {
+					result = (Property) semanticParent;
 				}
 			}
 
@@ -247,7 +247,7 @@ public class ConnectorEditHelper extends ElementEditHelper {
 	@Override
 	protected ICommand getConfigureCommand(final ConfigureRequest req) {
 
-		final Connector connector = (Connector)req.getElementToConfigure();
+		final Connector connector = (Connector) req.getElementToConfigure();
 		final ConnectableElement sourceRole = getSourceRole(req);
 		final ConnectableElement targetRole = getTargetRole(req);
 		final Property sourcePartWithPort = getSourcePartWithPort(req);
@@ -255,11 +255,12 @@ public class ConnectorEditHelper extends ElementEditHelper {
 
 		ICommand configureCommand = new ConfigureElementCommand(req) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
-				if((sourceRole == null) || (targetRole == null)) {
-					//to allow creation from the ModelExplorer or from the table
-					//return CommandResult.newCancelledCommandResult();
+				if ((sourceRole == null) || (targetRole == null)) {
+					// to allow creation from the ModelExplorer or from the table
+					// return CommandResult.newCancelledCommandResult();
 				}
 
 				// Add source connector end

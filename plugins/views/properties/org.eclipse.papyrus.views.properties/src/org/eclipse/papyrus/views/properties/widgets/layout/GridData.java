@@ -20,13 +20,13 @@ import org.eclipse.swt.widgets.Control;
  * control, you use the <code>Control.setLayoutData(Object)</code> method.
  * <p>
  * There are two ways to create a <code>GridData</code> object with certain fields set. The first is to set the fields directly, like this:
- * 
+ *
  * <pre>
  * GridData gridData = new GridData();
  * gridData.horizontalAlignment = GridData.FILL;
  * gridData.grabExcessHorizontalSpace = true;
  * button1.setLayoutData(gridData);
- * 
+ *
  * gridData = new GridData();
  * gridData.horizontalAlignment = GridData.FILL;
  * gridData.verticalAlignment = GridData.FILL;
@@ -35,21 +35,20 @@ import org.eclipse.swt.widgets.Control;
  * gridData.horizontalSpan = 2;
  * button2.setLayoutData(gridData);
  * </pre>
- * 
+ *
  * The second is to take advantage of <code>GridData</code> convenience constructors, for example:
- * 
+ *
  * <pre>
  * button1.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
  * button2.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1));
  * </pre>
- * 
+ *
  * </p>
  * <p>
- * NOTE: Do not reuse <code>GridData</code> objects. Every control in a <code>Composite</code> that is managed by a <code>GridLayout</code> must have
- * a unique <code>GridData</code> object. If the layout data for a control in a <code>GridLayout</code> is null at layout time, a unique
- * <code>GridData</code> object is created for it.
+ * NOTE: Do not reuse <code>GridData</code> objects. Every control in a <code>Composite</code> that is managed by a <code>GridLayout</code> must have a unique <code>GridData</code> object. If the layout data for a control in a <code>GridLayout</code> is null
+ * at layout time, a unique <code>GridData</code> object is created for it.
  * </p>
- * 
+ *
  * @see PropertiesLayout
  * @see Control#setLayoutData
  * @see <a href="http://www.eclipse.org/swt/">Sample code and further information</a>
@@ -60,9 +59,9 @@ public final class GridData {
 	/**
 	 * verticalAlignment specifies how controls will be positioned
 	 * vertically within a cell.
-	 * 
+	 *
 	 * The default value is CENTER.
-	 * 
+	 *
 	 * Possible values are:
 	 * <ul>
 	 * <li>SWT.BEGINNING (or SWT.TOP): Position the control at the top of the cell</li>
@@ -76,9 +75,9 @@ public final class GridData {
 	/**
 	 * horizontalAlignment specifies how controls will be positioned
 	 * horizontally within a cell.
-	 * 
+	 *
 	 * The default value is BEGINNING.
-	 * 
+	 *
 	 * Possible values are:
 	 * <ul>
 	 * <li>SWT.BEGINNING (or SWT.LEFT): Position the control at the left of the cell</li>
@@ -93,9 +92,9 @@ public final class GridData {
 	 * widthHint specifies the preferred width in pixels. This value
 	 * is the wHint passed into Control.computeSize(int, int, boolean)
 	 * to determine the preferred size of the control.
-	 * 
+	 *
 	 * The default value is SWT.DEFAULT.
-	 * 
+	 *
 	 * @see Control#computeSize(int, int, boolean)
 	 */
 	public int widthHint = SWT.DEFAULT;
@@ -104,9 +103,9 @@ public final class GridData {
 	 * heightHint specifies the preferred height in pixels. This value
 	 * is the hHint passed into Control.computeSize(int, int, boolean)
 	 * to determine the preferred size of the control.
-	 * 
+	 *
 	 * The default value is SWT.DEFAULT.
-	 * 
+	 *
 	 * @see Control#computeSize(int, int, boolean)
 	 */
 	public int heightHint = SWT.DEFAULT;
@@ -114,7 +113,7 @@ public final class GridData {
 	/**
 	 * horizontalIndent specifies the number of pixels of indentation
 	 * that will be placed along the left side of the cell.
-	 * 
+	 *
 	 * The default value is 0.
 	 */
 	public int horizontalIndent = 0;
@@ -122,9 +121,9 @@ public final class GridData {
 	/**
 	 * verticalIndent specifies the number of pixels of indentation
 	 * that will be placed along the top side of the cell.
-	 * 
+	 *
 	 * The default value is 0.
-	 * 
+	 *
 	 * @since 3.1
 	 */
 	public int verticalIndent = 0;
@@ -132,7 +131,7 @@ public final class GridData {
 	/**
 	 * horizontalSpan specifies the number of column cells that the control
 	 * will take up.
-	 * 
+	 *
 	 * The default value is 1.
 	 */
 	public int horizontalSpan = 1;
@@ -140,32 +139,28 @@ public final class GridData {
 	/**
 	 * verticalSpan specifies the number of row cells that the control
 	 * will take up.
-	 * 
+	 *
 	 * The default value is 1.
 	 */
 	public int verticalSpan = 1;
 
 	/**
 	 * <p>
-	 * grabExcessHorizontalSpace specifies whether the width of the cell changes depending on the size of the parent Composite. If
-	 * grabExcessHorizontalSpace is <code>true</code>, the following rules apply to the width of the cell:
+	 * grabExcessHorizontalSpace specifies whether the width of the cell changes depending on the size of the parent Composite. If grabExcessHorizontalSpace is <code>true</code>, the following rules apply to the width of the cell:
 	 * </p>
 	 * <ul>
-	 * <li>If extra horizontal space is available in the parent, the cell will grow to be wider than its preferred width. The new width will be
-	 * "preferred width + delta" where delta is the extra horizontal space divided by the number of grabbing columns.</li>
-	 * <li>If there is not enough horizontal space available in the parent, the cell will shrink until it reaches its minimum width as specified by
-	 * GridData.minimumWidth. The new width will be the maximum of "minimumWidth" and "preferred width - delta", where delta is the amount of space
-	 * missing divided by the number of grabbing columns.</li>
+	 * <li>If extra horizontal space is available in the parent, the cell will grow to be wider than its preferred width. The new width will be "preferred width + delta" where delta is the extra horizontal space divided by the number of grabbing columns.</li>
+	 * <li>If there is not enough horizontal space available in the parent, the cell will shrink until it reaches its minimum width as specified by GridData.minimumWidth. The new width will be the maximum of "minimumWidth" and "preferred width - delta", where
+	 * delta is the amount of space missing divided by the number of grabbing columns.</li>
 	 * <li>If the parent is packed, the cell will be its preferred width as specified by GridData.widthHint.</li>
-	 * <li>If the control spans multiple columns and there are no other grabbing controls in any of the spanned columns, the last column in the span
-	 * will grab the extra space. If there is at least one other grabbing control in the span, the grabbing will be spread over the columns already
-	 * marked as grabExcessHorizontalSpace.</li>
+	 * <li>If the control spans multiple columns and there are no other grabbing controls in any of the spanned columns, the last column in the span will grab the extra space. If there is at least one other grabbing control in the span, the grabbing will be
+	 * spread over the columns already marked as grabExcessHorizontalSpace.</li>
 	 * </ul>
-	 * 
+	 *
 	 * <p>
 	 * The default value is false.
 	 * </p>
-	 * 
+	 *
 	 * @see GridData#minimumWidth
 	 * @see GridData#widthHint
 	 */
@@ -173,25 +168,21 @@ public final class GridData {
 
 	/**
 	 * <p>
-	 * grabExcessVerticalSpace specifies whether the height of the cell changes depending on the size of the parent Composite. If
-	 * grabExcessVerticalSpace is <code>true</code>, the following rules apply to the height of the cell:
+	 * grabExcessVerticalSpace specifies whether the height of the cell changes depending on the size of the parent Composite. If grabExcessVerticalSpace is <code>true</code>, the following rules apply to the height of the cell:
 	 * </p>
 	 * <ul>
-	 * <li>If extra vertical space is available in the parent, the cell will grow to be taller than its preferred height. The new height will be
-	 * "preferred height + delta" where delta is the extra vertical space divided by the number of grabbing rows.</li>
-	 * <li>If there is not enough vertical space available in the parent, the cell will shrink until it reaches its minimum height as specified by
-	 * GridData.minimumHeight. The new height will be the maximum of "minimumHeight" and "preferred height - delta", where delta is the amount of
-	 * space missing divided by the number of grabbing rows.</li>
+	 * <li>If extra vertical space is available in the parent, the cell will grow to be taller than its preferred height. The new height will be "preferred height + delta" where delta is the extra vertical space divided by the number of grabbing rows.</li>
+	 * <li>If there is not enough vertical space available in the parent, the cell will shrink until it reaches its minimum height as specified by GridData.minimumHeight. The new height will be the maximum of "minimumHeight" and "preferred height - delta",
+	 * where delta is the amount of space missing divided by the number of grabbing rows.</li>
 	 * <li>If the parent is packed, the cell will be its preferred height as specified by GridData.heightHint.</li>
-	 * <li>If the control spans multiple rows and there are no other grabbing controls in any of the spanned rows, the last row in the span will grab
-	 * the extra space. If there is at least one other grabbing control in the span, the grabbing will be spread over the rows already marked as
-	 * grabExcessVerticalSpace.</li>
+	 * <li>If the control spans multiple rows and there are no other grabbing controls in any of the spanned rows, the last row in the span will grab the extra space. If there is at least one other grabbing control in the span, the grabbing will be spread over
+	 * the rows already marked as grabExcessVerticalSpace.</li>
 	 * </ul>
-	 * 
+	 *
 	 * <p>
 	 * The default value is false.
 	 * </p>
-	 * 
+	 *
 	 * @see GridData#minimumHeight
 	 * @see GridData#heightHint
 	 */
@@ -203,9 +194,9 @@ public final class GridData {
 	 * SWT.DEFAULT means that the minimum width will be the result
 	 * of Control.computeSize(int, int, boolean) where wHint is
 	 * determined by GridData.widthHint.
-	 * 
+	 *
 	 * The default value is 0.
-	 * 
+	 *
 	 * @since 3.1
 	 * @see Control#computeSize(int, int, boolean)
 	 * @see GridData#widthHint
@@ -218,9 +209,9 @@ public final class GridData {
 	 * SWT.DEFAULT means that the minimum height will be the result
 	 * of Control.computeSize(int, int, boolean) where hHint is
 	 * determined by GridData.heightHint.
-	 * 
+	 *
 	 * The default value is 0.
-	 * 
+	 *
 	 * @since 3.1
 	 * @see Control#computeSize(int, int, boolean)
 	 * @see GridData#heightHint
@@ -233,9 +224,9 @@ public final class GridData {
 	 * the size and position of the control will not be managed by the
 	 * layout. If this value is <code>false</code>, the size and
 	 * position of the control will be computed and assigned.
-	 * 
+	 *
 	 * The default value is <code>false</code>.
-	 * 
+	 *
 	 * @since 3.1
 	 */
 	public boolean exclude = false;
@@ -382,46 +373,54 @@ public final class GridData {
 	/**
 	 * Constructs a new instance based on the GridData style.
 	 * This constructor is not recommended.
-	 * 
+	 *
 	 * @param style
-	 *        the GridData style
+	 *            the GridData style
 	 */
 	public GridData(int style) {
 		super();
-		if((style & VERTICAL_ALIGN_BEGINNING) != 0)
+		if ((style & VERTICAL_ALIGN_BEGINNING) != 0) {
 			verticalAlignment = BEGINNING;
-		if((style & VERTICAL_ALIGN_CENTER) != 0)
+		}
+		if ((style & VERTICAL_ALIGN_CENTER) != 0) {
 			verticalAlignment = CENTER;
-		if((style & VERTICAL_ALIGN_FILL) != 0)
+		}
+		if ((style & VERTICAL_ALIGN_FILL) != 0) {
 			verticalAlignment = FILL;
-		if((style & VERTICAL_ALIGN_END) != 0)
+		}
+		if ((style & VERTICAL_ALIGN_END) != 0) {
 			verticalAlignment = END;
-		if((style & HORIZONTAL_ALIGN_BEGINNING) != 0)
+		}
+		if ((style & HORIZONTAL_ALIGN_BEGINNING) != 0) {
 			horizontalAlignment = BEGINNING;
-		if((style & HORIZONTAL_ALIGN_CENTER) != 0)
+		}
+		if ((style & HORIZONTAL_ALIGN_CENTER) != 0) {
 			horizontalAlignment = CENTER;
-		if((style & HORIZONTAL_ALIGN_FILL) != 0)
+		}
+		if ((style & HORIZONTAL_ALIGN_FILL) != 0) {
 			horizontalAlignment = FILL;
-		if((style & HORIZONTAL_ALIGN_END) != 0)
+		}
+		if ((style & HORIZONTAL_ALIGN_END) != 0) {
 			horizontalAlignment = END;
+		}
 		grabExcessHorizontalSpace = (style & GRAB_HORIZONTAL) != 0;
 		grabExcessVerticalSpace = (style & GRAB_VERTICAL) != 0;
 	}
 
 	/**
 	 * Constructs a new instance of GridData according to the parameters.
-	 * 
+	 *
 	 * @param horizontalAlignment
-	 *        how control will be positioned horizontally within a cell,
-	 *        one of: SWT.BEGINNING (or SWT.LEFT), SWT.CENTER, SWT.END (or SWT.RIGHT), or SWT.FILL
+	 *            how control will be positioned horizontally within a cell,
+	 *            one of: SWT.BEGINNING (or SWT.LEFT), SWT.CENTER, SWT.END (or SWT.RIGHT), or SWT.FILL
 	 * @param verticalAlignment
-	 *        how control will be positioned vertically within a cell,
-	 *        one of: SWT.BEGINNING (or SWT.TOP), SWT.CENTER, SWT.END (or SWT.BOTTOM), or SWT.FILL
+	 *            how control will be positioned vertically within a cell,
+	 *            one of: SWT.BEGINNING (or SWT.TOP), SWT.CENTER, SWT.END (or SWT.BOTTOM), or SWT.FILL
 	 * @param grabExcessHorizontalSpace
-	 *        whether cell will be made wide enough to fit the remaining horizontal space
+	 *            whether cell will be made wide enough to fit the remaining horizontal space
 	 * @param grabExcessVerticalSpace
-	 *        whether cell will be made high enough to fit the remaining vertical space
-	 * 
+	 *            whether cell will be made high enough to fit the remaining vertical space
+	 *
 	 * @since 3.0
 	 */
 	public GridData(int horizontalAlignment, int verticalAlignment, boolean grabExcessHorizontalSpace, boolean grabExcessVerticalSpace) {
@@ -430,22 +429,22 @@ public final class GridData {
 
 	/**
 	 * Constructs a new instance of GridData according to the parameters.
-	 * 
+	 *
 	 * @param horizontalAlignment
-	 *        how control will be positioned horizontally within a cell,
-	 *        one of: SWT.BEGINNING (or SWT.LEFT), SWT.CENTER, SWT.END (or SWT.RIGHT), or SWT.FILL
+	 *            how control will be positioned horizontally within a cell,
+	 *            one of: SWT.BEGINNING (or SWT.LEFT), SWT.CENTER, SWT.END (or SWT.RIGHT), or SWT.FILL
 	 * @param verticalAlignment
-	 *        how control will be positioned vertically within a cell,
-	 *        one of: SWT.BEGINNING (or SWT.TOP), SWT.CENTER, SWT.END (or SWT.BOTTOM), or SWT.FILL
+	 *            how control will be positioned vertically within a cell,
+	 *            one of: SWT.BEGINNING (or SWT.TOP), SWT.CENTER, SWT.END (or SWT.BOTTOM), or SWT.FILL
 	 * @param grabExcessHorizontalSpace
-	 *        whether cell will be made wide enough to fit the remaining horizontal space
+	 *            whether cell will be made wide enough to fit the remaining horizontal space
 	 * @param grabExcessVerticalSpace
-	 *        whether cell will be made high enough to fit the remaining vertical space
+	 *            whether cell will be made high enough to fit the remaining vertical space
 	 * @param horizontalSpan
-	 *        the number of column cells that the control will take up
+	 *            the number of column cells that the control will take up
 	 * @param verticalSpan
-	 *        the number of row cells that the control will take up
-	 * 
+	 *            the number of row cells that the control will take up
+	 *
 	 * @since 3.0
 	 */
 	public GridData(int horizontalAlignment, int verticalAlignment, boolean grabExcessHorizontalSpace, boolean grabExcessVerticalSpace, int horizontalSpan, int verticalSpan) {
@@ -462,12 +461,12 @@ public final class GridData {
 	 * Constructs a new instance of GridData according to the parameters.
 	 * A value of SWT.DEFAULT indicates that no minimum width or
 	 * no minimum height is specified.
-	 * 
+	 *
 	 * @param width
-	 *        a minimum width for the column
+	 *            a minimum width for the column
 	 * @param height
-	 *        a minimum height for the row
-	 * 
+	 *            a minimum height for the row
+	 *
 	 * @since 3.0
 	 */
 	public GridData(int width, int height) {
@@ -478,9 +477,9 @@ public final class GridData {
 
 	/**
 	 * Creates a new Properties GridData from a SWT GridData
-	 * 
+	 *
 	 * @param layoutData
-	 *        The SWT GridData to copy
+	 *            The SWT GridData to copy
 	 */
 	public GridData(org.eclipse.swt.layout.GridData layoutData) {
 		this.exclude = layoutData.exclude;
@@ -500,10 +499,11 @@ public final class GridData {
 	}
 
 	protected void computeSize(Control control, int wHint, int hHint, boolean flushCache) {
-		if(cacheWidth != -1 && cacheHeight != -1)
+		if (cacheWidth != -1 && cacheHeight != -1) {
 			return;
-		if(wHint == this.widthHint && hHint == this.heightHint) {
-			if(defaultWidth == -1 || defaultHeight == -1 || wHint != defaultWhint || hHint != defaultHhint) {
+		}
+		if (wHint == this.widthHint && hHint == this.heightHint) {
+			if (defaultWidth == -1 || defaultHeight == -1 || wHint != defaultWhint || hHint != defaultHhint) {
 				Point size = control.computeSize(wHint, hHint, flushCache);
 				defaultWhint = wHint;
 				defaultHhint = hHint;
@@ -514,7 +514,7 @@ public final class GridData {
 			cacheHeight = defaultHeight;
 			return;
 		}
-		if(currentWidth == -1 || currentHeight == -1 || wHint != currentWhint || hHint != currentHhint) {
+		if (currentWidth == -1 || currentHeight == -1 || wHint != currentWhint || hHint != currentHhint) {
 			Point size = control.computeSize(wHint, hHint, flushCache);
 			currentWhint = wHint;
 			currentHhint = hHint;
@@ -534,21 +534,22 @@ public final class GridData {
 	protected String getName() {
 		String string = getClass().getName();
 		int index = string.lastIndexOf('.');
-		if(index == -1)
+		if (index == -1) {
 			return string;
+		}
 		return string.substring(index + 1, string.length());
 	}
 
 	/**
 	 * Returns a string containing a concise, human-readable
 	 * description of the receiver.
-	 * 
+	 *
 	 * @return a string representation of the GridData object
 	 */
 	@Override
 	public String toString() {
 		String hAlign = ""; //$NON-NLS-1$
-		switch(horizontalAlignment) {
+		switch (horizontalAlignment) {
 		case SWT.FILL:
 			hAlign = "SWT.FILL"; //$NON-NLS-1$
 			break;
@@ -578,7 +579,7 @@ public final class GridData {
 			break;
 		}
 		String vAlign = ""; //$NON-NLS-1$
-		switch(verticalAlignment) {
+		switch (verticalAlignment) {
 		case SWT.FILL:
 			vAlign = "SWT.FILL"; //$NON-NLS-1$
 			break;
@@ -609,29 +610,51 @@ public final class GridData {
 		}
 		String string = getName() + " {"; //$NON-NLS-1$
 		string += "horizontalAlignment=" + hAlign + " "; //$NON-NLS-1$ //$NON-NLS-2$
-		if(horizontalIndent != 0)
+		if (horizontalIndent != 0)
+		{
 			string += "horizontalIndent=" + horizontalIndent + " "; //$NON-NLS-1$ //$NON-NLS-2$
-		if(horizontalSpan != 1)
+		}
+		if (horizontalSpan != 1)
+		{
 			string += "horizontalSpan=" + horizontalSpan + " "; //$NON-NLS-1$ //$NON-NLS-2$
-		if(grabExcessHorizontalSpace)
+		}
+		if (grabExcessHorizontalSpace)
+		{
 			string += "grabExcessHorizontalSpace=" + grabExcessHorizontalSpace + " "; //$NON-NLS-1$ //$NON-NLS-2$
-		if(widthHint != SWT.DEFAULT)
+		}
+		if (widthHint != SWT.DEFAULT)
+		{
 			string += "widthHint=" + widthHint + " "; //$NON-NLS-1$ //$NON-NLS-2$
-		if(minimumWidth != 0)
+		}
+		if (minimumWidth != 0)
+		{
 			string += "minimumWidth=" + minimumWidth + " "; //$NON-NLS-1$ //$NON-NLS-2$
+		}
 		string += "verticalAlignment=" + vAlign + " "; //$NON-NLS-1$ //$NON-NLS-2$
-		if(verticalIndent != 0)
+		if (verticalIndent != 0)
+		{
 			string += "verticalIndent=" + verticalIndent + " "; //$NON-NLS-1$ //$NON-NLS-2$
-		if(verticalSpan != 1)
+		}
+		if (verticalSpan != 1)
+		{
 			string += "verticalSpan=" + verticalSpan + " "; //$NON-NLS-1$ //$NON-NLS-2$
-		if(grabExcessVerticalSpace)
+		}
+		if (grabExcessVerticalSpace)
+		{
 			string += "grabExcessVerticalSpace=" + grabExcessVerticalSpace + " "; //$NON-NLS-1$ //$NON-NLS-2$
-		if(heightHint != SWT.DEFAULT)
+		}
+		if (heightHint != SWT.DEFAULT)
+		{
 			string += "heightHint=" + heightHint + " "; //$NON-NLS-1$ //$NON-NLS-2$
-		if(minimumHeight != 0)
+		}
+		if (minimumHeight != 0)
+		{
 			string += "minimumHeight=" + minimumHeight + " "; //$NON-NLS-1$ //$NON-NLS-2$
-		if(exclude)
+		}
+		if (exclude)
+		{
 			string += "exclude=" + exclude + " "; //$NON-NLS-1$ //$NON-NLS-2$
+		}
 		string = string.trim();
 		string += "}"; //$NON-NLS-1$
 		return string;

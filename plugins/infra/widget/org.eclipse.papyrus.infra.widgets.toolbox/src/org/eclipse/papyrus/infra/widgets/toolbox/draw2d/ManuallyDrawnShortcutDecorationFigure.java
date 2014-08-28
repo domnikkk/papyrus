@@ -57,7 +57,8 @@ public class ManuallyDrawnShortcutDecorationFigure extends RectangleFigure {
 
 		this.add(arrow);
 	}
-	
+
+	@Override
 	public void setBackgroundColor(Color backgroundColor) {
 		border.setBackgroundColor(backgroundColor);
 	}

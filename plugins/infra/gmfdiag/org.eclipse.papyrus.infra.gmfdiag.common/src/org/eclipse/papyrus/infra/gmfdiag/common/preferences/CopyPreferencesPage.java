@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,14 +31,15 @@ public class CopyPreferencesPage extends PreferencePage implements IWorkbenchPre
 	private StrategyEditor editor;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public CopyPreferencesPage() {
 		super("Copy preferences", org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImageDescriptor("/icons/papyrus.png"));
 	}
 
+	@Override
 	public void init(IWorkbench workbench) {
 		setPreferenceStore(Activator.getInstance().getPreferenceStore());
 		setDescription("Papyrus copy configuration.\nSelect the copy strategies you wish to activate.");
@@ -55,7 +56,7 @@ public class CopyPreferencesPage extends PreferencePage implements IWorkbenchPre
 
 	@Override
 	protected void performDefaults() {
-		if(editor != null && !editor.isDisposed()) {
+		if (editor != null && !editor.isDisposed()) {
 			CopyStrategyManager.getInstance().restoreDefaults();
 			editor.refresh();
 		}

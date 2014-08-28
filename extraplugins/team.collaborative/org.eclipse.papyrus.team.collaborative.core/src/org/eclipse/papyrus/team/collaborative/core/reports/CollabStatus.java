@@ -19,17 +19,17 @@ public class CollabStatus extends Status {
 
 	/**
 	 * Instantiates a new collab status.
-	 * 
+	 *
 	 * @param severity
-	 *        the severity
+	 *            the severity
 	 * @param pluginId
-	 *        the plugin id
+	 *            the plugin id
 	 * @param code
-	 *        the code
+	 *            the code
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @param exception
-	 *        the exception
+	 *            the exception
 	 */
 	public CollabStatus(int severity, String pluginId, int code, String message, Throwable exception) {
 		super(severity, pluginId, code, message, exception);
@@ -37,15 +37,15 @@ public class CollabStatus extends Status {
 
 	/**
 	 * Instantiates a new collab status.
-	 * 
+	 *
 	 * @param severity
-	 *        the severity
+	 *            the severity
 	 * @param pluginId
-	 *        the plugin id
+	 *            the plugin id
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @param exception
-	 *        the exception
+	 *            the exception
 	 */
 	public CollabStatus(int severity, String pluginId, String message, Throwable exception) {
 		super(severity, pluginId, message, exception);
@@ -53,13 +53,13 @@ public class CollabStatus extends Status {
 
 	/**
 	 * Instantiates a new collab status.
-	 * 
+	 *
 	 * @param severity
-	 *        the severity
+	 *            the severity
 	 * @param pluginId
-	 *        the plugin id
+	 *            the plugin id
 	 * @param message
-	 *        the message
+	 *            the message
 	 */
 	public CollabStatus(int severity, String pluginId, String message) {
 		super(severity, pluginId, message);
@@ -67,9 +67,9 @@ public class CollabStatus extends Status {
 
 	/**
 	 * Creates the error status.
-	 * 
+	 *
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @return the collab status
 	 */
 	public static CollabStatus createErrorStatus(String message) {
@@ -78,11 +78,11 @@ public class CollabStatus extends Status {
 
 	/**
 	 * Creates the error status.
-	 * 
+	 *
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @param e
-	 *        the e
+	 *            the e
 	 * @return the collab status
 	 */
 	public static CollabStatus createErrorStatus(String message, Throwable e) {

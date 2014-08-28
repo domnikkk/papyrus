@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2011 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Nicolas Guyomar (Mia-Software) - Bug 349546 - EMF Facet facetSet editor
  */
@@ -13,16 +13,6 @@ package org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.papyrus.emf.facet.efacet.EFacetPackage;
-import org.eclipse.papyrus.emf.facet.efacet.FacetSet;
-import org.eclipse.papyrus.emf.facet.efacet.core.IFacetAction;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.wizard.ICreateFacetSetWizard;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.utils.ImageProvider;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages.FacetSetPropertyWizardPage;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages.CreateFacetSetWizardPage;
-import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -30,6 +20,16 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardDialog;
+import org.eclipse.papyrus.emf.facet.efacet.EFacetPackage;
+import org.eclipse.papyrus.emf.facet.efacet.FacetSet;
+import org.eclipse.papyrus.emf.facet.efacet.core.IFacetAction;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.wizard.ICreateFacetSetWizard;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.utils.ImageProvider;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages.CreateFacetSetWizardPage;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages.FacetSetPropertyWizardPage;
+import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
@@ -42,7 +42,7 @@ import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
 @Deprecated
-//TODO @Deprecated must be removed after a refactoring planed by https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601
+// TODO @Deprecated must be removed after a refactoring planed by https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601
 public class CreateFacetSetWizardImpl extends Wizard implements INewWizard, ICreateFacetSetWizard {
 
 	public static final String FILE_EXTENSION = "efacet"; //$NON-NLS-1$

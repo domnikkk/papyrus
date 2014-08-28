@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -41,7 +41,7 @@ public class CustomRegionComponentEditPolicy extends ComponentEditPolicy {
 			cc.compose(new CustomRegionDeleteCommand(editingDomain, (View) getHost().getModel()));
 			View compartmentView = (View) ((View) getHost().getModel()).eContainer();
 			// get and adaptable for it, to pass on to commands
-			IAdaptable adaptableForCompartmentView = (IAdaptable) new SemanticAdapter(null, compartmentView);
+			IAdaptable adaptableForCompartmentView = new SemanticAdapter(null, compartmentView);
 			if (compartmentView.getChildren().size() == 1) {
 				SetPropertyCommand showCompartment = new SetPropertyCommand(editingDomain, adaptableForCompartmentView, "notation.View.visible", "Visibility", false);
 				cc.compose(showCompartment);
@@ -52,7 +52,7 @@ public class CustomRegionComponentEditPolicy extends ComponentEditPolicy {
 				cc.compose(new CustomRegionDeleteCommand(editingDomain, (View) gep.getModel()));
 				View compartmentView = (View) ((View) getHost().getModel()).eContainer();
 				// get and adaptable for it, to pass on to commands
-				IAdaptable adaptableForCompartmentView = (IAdaptable) new SemanticAdapter(null, compartmentView);
+				IAdaptable adaptableForCompartmentView = new SemanticAdapter(null, compartmentView);
 				if (compartmentView.getChildren().size() == toDel.size()) {
 					SetPropertyCommand showCompartment = new SetPropertyCommand(editingDomain, adaptableForCompartmentView, "notation.View.visible", "Visibility", false);
 					cc.compose(showCompartment);

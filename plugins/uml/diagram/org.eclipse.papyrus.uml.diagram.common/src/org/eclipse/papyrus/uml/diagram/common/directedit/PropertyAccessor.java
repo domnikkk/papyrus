@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,43 +21,46 @@ public abstract class PropertyAccessor implements IPropertyAccessor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.core.common.directedit.IPropertyAccessor#getPropertyName
 	 * ()
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
+	@Override
 	public String getPropertyName() {
 		return "";
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.core.common.directedit.IPropertyAccessor#getValue()
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
+	@Override
 	public abstract String getValue();
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.core.common.directedit.IPropertyAccessor#setValue(java
 	 * .lang.String)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param value
 	 */
+	@Override
 	public abstract void setValue(String value);
 }

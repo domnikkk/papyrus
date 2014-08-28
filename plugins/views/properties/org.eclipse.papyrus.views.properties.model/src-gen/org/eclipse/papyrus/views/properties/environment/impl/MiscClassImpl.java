@@ -22,9 +22,9 @@ import org.eclipse.papyrus.views.properties.environment.Namespace;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.views.properties.environment.impl.MiscClassImpl#getLabel <em>Label</em>}</li>
- *   <li>{@link org.eclipse.papyrus.views.properties.environment.impl.MiscClassImpl#getClass_ <em>Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.views.properties.environment.impl.MiscClassImpl#getNamespace <em>Namespace</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.environment.impl.MiscClassImpl#getLabel <em>Label</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.environment.impl.MiscClassImpl#getClass_ <em>Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.environment.impl.MiscClassImpl#getNamespace <em>Namespace</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,6 +35,7 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -45,6 +46,7 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -55,6 +57,7 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	 * The default value of the '{@link #getClass_() <em>Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getClass_()
 	 * @generated
 	 * @ordered
@@ -65,6 +68,7 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	 * The cached value of the '{@link #getClass_() <em>Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getClass_()
 	 * @generated
 	 * @ordered
@@ -75,6 +79,7 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	 * The cached value of the '{@link #getNamespace() <em>Namespace</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNamespace()
 	 * @generated
 	 * @ordered
@@ -84,6 +89,7 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MiscClassImpl() {
@@ -93,6 +99,7 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,8 +110,10 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLabel() {
 		return label;
 	}
@@ -112,20 +121,25 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setLabel(String newLabel) {
 		String oldLabel = label;
 		label = newLabel;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.MISC_CLASS__LABEL, oldLabel, label));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getClass_() {
 		return class_;
 	}
@@ -133,27 +147,33 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setClass(String newClass) {
 		String oldClass = class_;
 		class_ = newClass;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.MISC_CLASS__CLASS, oldClass, class_));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Namespace getNamespace() {
 		if (namespace != null && namespace.eIsProxy()) {
-			InternalEObject oldNamespace = (InternalEObject)namespace;
-			namespace = (Namespace)eResolveProxy(oldNamespace);
+			InternalEObject oldNamespace = (InternalEObject) namespace;
+			namespace = (Namespace) eResolveProxy(oldNamespace);
 			if (namespace != oldNamespace) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EnvironmentPackage.MISC_CLASS__NAMESPACE, oldNamespace, namespace));
+				}
 			}
 		}
 		return namespace;
@@ -162,6 +182,7 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Namespace basicGetNamespace() {
@@ -171,30 +192,36 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setNamespace(Namespace newNamespace) {
 		Namespace oldNamespace = namespace;
 		namespace = newNamespace;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.MISC_CLASS__NAMESPACE, oldNamespace, namespace));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EnvironmentPackage.MISC_CLASS__LABEL:
-				return getLabel();
-			case EnvironmentPackage.MISC_CLASS__CLASS:
-				return getClass_();
-			case EnvironmentPackage.MISC_CLASS__NAMESPACE:
-				if (resolve) return getNamespace();
-				return basicGetNamespace();
+		case EnvironmentPackage.MISC_CLASS__LABEL:
+			return getLabel();
+		case EnvironmentPackage.MISC_CLASS__CLASS:
+			return getClass_();
+		case EnvironmentPackage.MISC_CLASS__NAMESPACE:
+			if (resolve) {
+				return getNamespace();
+			}
+			return basicGetNamespace();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,20 +229,21 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EnvironmentPackage.MISC_CLASS__LABEL:
-				setLabel((String)newValue);
-				return;
-			case EnvironmentPackage.MISC_CLASS__CLASS:
-				setClass((String)newValue);
-				return;
-			case EnvironmentPackage.MISC_CLASS__NAMESPACE:
-				setNamespace((Namespace)newValue);
-				return;
+		case EnvironmentPackage.MISC_CLASS__LABEL:
+			setLabel((String) newValue);
+			return;
+		case EnvironmentPackage.MISC_CLASS__CLASS:
+			setClass((String) newValue);
+			return;
+		case EnvironmentPackage.MISC_CLASS__NAMESPACE:
+			setNamespace((Namespace) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -223,20 +251,21 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EnvironmentPackage.MISC_CLASS__LABEL:
-				setLabel(LABEL_EDEFAULT);
-				return;
-			case EnvironmentPackage.MISC_CLASS__CLASS:
-				setClass(CLASS_EDEFAULT);
-				return;
-			case EnvironmentPackage.MISC_CLASS__NAMESPACE:
-				setNamespace((Namespace)null);
-				return;
+		case EnvironmentPackage.MISC_CLASS__LABEL:
+			setLabel(LABEL_EDEFAULT);
+			return;
+		case EnvironmentPackage.MISC_CLASS__CLASS:
+			setClass(CLASS_EDEFAULT);
+			return;
+		case EnvironmentPackage.MISC_CLASS__NAMESPACE:
+			setNamespace((Namespace) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -244,17 +273,18 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EnvironmentPackage.MISC_CLASS__LABEL:
-				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
-			case EnvironmentPackage.MISC_CLASS__CLASS:
-				return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
-			case EnvironmentPackage.MISC_CLASS__NAMESPACE:
-				return namespace != null;
+		case EnvironmentPackage.MISC_CLASS__LABEL:
+			return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
+		case EnvironmentPackage.MISC_CLASS__CLASS:
+			return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
+		case EnvironmentPackage.MISC_CLASS__NAMESPACE:
+			return namespace != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -262,11 +292,14 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (label: ");
@@ -277,4 +310,4 @@ public class MiscClassImpl extends EObjectImpl implements MiscClass {
 		return result.toString();
 	}
 
-} //MiscClassImpl
+} // MiscClassImpl

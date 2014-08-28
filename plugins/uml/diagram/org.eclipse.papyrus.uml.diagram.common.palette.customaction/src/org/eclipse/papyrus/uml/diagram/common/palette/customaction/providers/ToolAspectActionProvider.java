@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 AtoS.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,6 +26,7 @@ import org.w3c.dom.Node;
 
 /**
  * Provider for custom creation
+ *
  * @author tfaure
  *
  */
@@ -44,7 +45,9 @@ public class ToolAspectActionProvider extends AbstractAspectActionProvider {
 		return action;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.service.palette.IAspectActionProvider#isEnable(org.eclipse.papyrus.uml.diagram.common.service.palette.IPaletteEntryProxy)
 	 */
 	public boolean isEnable(final IPaletteEntryProxy entryProxy) {
@@ -75,7 +78,7 @@ public class ToolAspectActionProvider extends AbstractAspectActionProvider {
 	}
 
 	public void save(Node parentNode) {
-		
+
 	}
 
 

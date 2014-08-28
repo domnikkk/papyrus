@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,10 @@ public class CenterAnchor extends AbstractConnectionAnchor {
 	/**
 	 * @see org.eclipse.draw2d.ConnectionAnchor#getLocation(org.eclipse.draw2d.geometry.Point)
 	 */
+	@Override
 	public Point getLocation(Point reference) {
 
-		if(getOwner() == null) {
+		if (getOwner() == null) {
 			return null;
 		}
 		// Get the rectangle
@@ -49,7 +50,7 @@ public class CenterAnchor extends AbstractConnectionAnchor {
 
 	/**
 	 * Overrides to disable the reference point
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.AbstractConnectionAnchor#getReferencePoint()
 	 */
 	@Override

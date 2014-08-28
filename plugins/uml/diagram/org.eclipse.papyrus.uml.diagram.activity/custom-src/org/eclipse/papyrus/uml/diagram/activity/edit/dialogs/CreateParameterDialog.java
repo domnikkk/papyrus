@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,11 +13,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.activity.edit.dialogs;
 
-import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
@@ -30,10 +27,8 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.window.Window;
-import org.eclipse.papyrus.infra.core.modelsetquery.ModelSetQuery;
 import org.eclipse.papyrus.infra.core.utils.EditorUtils;
 import org.eclipse.papyrus.uml.diagram.activity.part.CustomMessages;
-import org.eclipse.papyrus.uml.diagram.activity.part.Messages;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.common.actions.LabelHelper;
@@ -53,9 +48,9 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.forms.FormDialog;
 import org.eclipse.ui.forms.IManagedForm;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ImageHyperlink;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
@@ -70,7 +65,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * DialogBox in order to link a parameter with the new ActivityParameterNode
  * that will be created
- * 
+ *
  */
 public class CreateParameterDialog extends FormDialog {
 
@@ -100,13 +95,13 @@ public class CreateParameterDialog extends FormDialog {
 
 	/**
 	 * Create a new dialog to initialize an ActivityParameterNode.
-	 * 
+	 *
 	 * @param shell
-	 *        parent shell
+	 *            parent shell
 	 * @param owner
-	 *        the activity that owns the action
+	 *            the activity that owns the action
 	 * @param defaultDirectionKind
-	 *        the parameter direction kind to select by default (or null)
+	 *            the parameter direction kind to select by default (or null)
 	 */
 	public CreateParameterDialog(Shell shell, NamedElement owner, ParameterDirectionKind defaultDirectionKind) {
 		super(shell);
@@ -117,9 +112,9 @@ public class CreateParameterDialog extends FormDialog {
 
 	/**
 	 * Create the form to :
-	 * 
+	 *
 	 * - ask the user to choose or create an existing element.
-	 * 
+	 *
 	 * @see org.eclipse.ui.forms.FormDialog#createFormContent(org.eclipse.ui.forms.IManagedForm)
 	 */
 	@Override
@@ -139,9 +134,9 @@ public class CreateParameterDialog extends FormDialog {
 
 	/**
 	 * Adds buttons to this dialog's button bar.
-	 * 
+	 *
 	 * @param parent
-	 *        the button bar composite
+	 *            the button bar composite
 	 */
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
@@ -151,18 +146,18 @@ public class CreateParameterDialog extends FormDialog {
 
 	/**
 	 * Create the section to ask the user to create a parameter.
-	 * 
+	 *
 	 * @param pParent
-	 *        the section's parent widget
+	 *            the section's parent widget
 	 * @param pToolkit
-	 *        the form toolkit
+	 *            the form toolkit
 	 */
 	protected void createParameterSection(Composite pParent, FormToolkit pToolkit) {
 		// create the section
 		String lSectionTitle = getCreationTitle();
-		Section lSection = pToolkit.createSection(pParent, Section.EXPANDED | Section.TITLE_BAR);
+		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);
 		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		if(lSectionTitle != null) {
+		if (lSectionTitle != null) {
 			lSection.setText(lSectionTitle);
 		}
 		ImageHyperlink componentHelp = HelpComponentFactory.createHelpComponent(lSection, pToolkit, CustomMessages.CreateParameterDialog_ParameterCreationHelp, true);
@@ -205,16 +200,16 @@ public class CreateParameterDialog extends FormDialog {
 	/**
 	 * Set correctly the invoked object, by creating it if needed. Then,
 	 * notifies that the ok button of this dialog has been pressed.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#okPressed()
-	 * 
+	 *
 	 */
 	@Override
 	protected void okPressed() {
 		// create element
 		createdParameter = UMLFactory.eINSTANCE.createParameter();
 		createdParameter.setName(selectedName);
-		createdParameter.setType((Type)selectedType);
+		createdParameter.setType((Type) selectedType);
 		createdParameter.setDirection(selectedDirection);
 		addParameter(createdParameter);
 		super.okPressed();
@@ -222,7 +217,7 @@ public class CreateParameterDialog extends FormDialog {
 
 	/**
 	 * Get the invoked object that have been selected or created.
-	 * 
+	 *
 	 * @return the invoked object to use.
 	 */
 	public Parameter getCreatedParameter() {
@@ -233,17 +228,18 @@ public class CreateParameterDialog extends FormDialog {
 	 * Add listeners to widgets
 	 */
 	private void hookListeners() {
-		if(creationDirectionCombo != null && directionComboViewer != null) {
+		if (creationDirectionCombo != null && directionComboViewer != null) {
 			// listener to select invocation type
 			ModifyListener lTypeListener = new ModifyListener() {
 
 				/**
 				 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 				 */
+				@Override
 				public void modifyText(ModifyEvent e) {
 					ISelection sel = directionComboViewer.getSelection();
-					if(sel instanceof StructuredSelection) {
-						String firstElement = ((StructuredSelection)sel).getFirstElement().toString();
+					if (sel instanceof StructuredSelection) {
+						String firstElement = ((StructuredSelection) sel).getFirstElement().toString();
 						selectedDirection = ParameterDirectionKind.getByName(firstElement);
 					} else {
 						selectedDirection = null;
@@ -261,6 +257,7 @@ public class CreateParameterDialog extends FormDialog {
 			/**
 			 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 			 */
+			@Override
 			public void modifyText(ModifyEvent e) {
 				setInvokedName(creationNameText.getText());
 			}
@@ -276,7 +273,7 @@ public class CreateParameterDialog extends FormDialog {
 			public void widgetSelected(SelectionEvent e) {
 				handleChooseType();
 				// reset name if not set
-				if(selectedName == null) {
+				if (selectedName == null) {
 					setInvokedName(null);
 				}
 				refreshOkButton();
@@ -287,17 +284,17 @@ public class CreateParameterDialog extends FormDialog {
 
 	/**
 	 * Set the name chosen for the invoked element
-	 * 
+	 *
 	 * @param text
-	 *        the text string or null for auto-initialization
+	 *            the text string or null for auto-initialization
 	 */
 	private void setInvokedName(String text) {
 		String name = text;
-		if(text == null) {
+		if (text == null) {
 			name = LabelHelper.INSTANCE.findName(parameterOwner, UMLPackage.eINSTANCE.getParameter());
 			// the name assignment will be performed by listener's call
 			creationNameText.setText(name);
-		} else if(name != null && !"".equals(name.trim())) {
+		} else if (name != null && !"".equals(name.trim())) {
 			selectedName = name.trim();
 			Color black = creationNameText.getDisplay().getSystemColor(SWT.COLOR_BLACK);
 			creationNameText.setForeground(black);
@@ -312,19 +309,15 @@ public class CreateParameterDialog extends FormDialog {
 
 	/**
 	 * Open the dialog to choose the type of element to create
-	 * 
+	 *
 	 */
 	private void handleChooseType() {
-		Set<Object> types = getPossibleTypes();
-		ElementListSelectionDialog dialog = new ElementListSelectionDialog(getShell(), labelProvider);
-		dialog.setMessage(Messages.UMLModelingAssistantProviderMessage);
-		dialog.setTitle(Messages.UMLModelingAssistantProviderTitle);
-		dialog.setMultipleSelection(false);
-		dialog.setElements(types.toArray());
-		if(dialog.open() == Window.OK) {
+		GetObjectsOfTypeListSelectionDialog dialog = new GetObjectsOfTypeListSelectionDialog(getShell(), labelProvider, parameterOwner, true);
+		dialog.addElementsOfType(UMLPackage.eINSTANCE.getTypedElement_Type().getEType());
+		if (dialog.open() == Window.OK) {
 			Object firstResult = dialog.getFirstResult();
-			if(firstResult instanceof EObject) {
-				setType((EObject)dialog.getFirstResult());
+			if (firstResult instanceof EObject) {
+				setType((EObject) dialog.getFirstResult());
 			} else {
 				setType(null);
 			}
@@ -333,13 +326,13 @@ public class CreateParameterDialog extends FormDialog {
 
 	/**
 	 * Define the type of the object that will be created
-	 * 
+	 *
 	 * @param type
-	 *        the selected type
+	 *            the selected type
 	 */
 	private void setType(EObject type) {
 		selectedType = type;
-		if(selectedType instanceof NamedElement) {
+		if (selectedType instanceof NamedElement) {
 			creationTypeText.setText(labelProvider.getText(selectedType));
 		} else {
 			creationTypeText.setText("");
@@ -350,7 +343,7 @@ public class CreateParameterDialog extends FormDialog {
 	 * Refresh the OK button activation
 	 */
 	private void refreshOkButton() {
-		if(getButton(IDialogConstants.OK_ID) != null && !getButton(IDialogConstants.OK_ID).isDisposed()) {
+		if (getButton(IDialogConstants.OK_ID) != null && !getButton(IDialogConstants.OK_ID).isDisposed()) {
 			getButton(IDialogConstants.OK_ID).setEnabled(selectedDirection != null && selectedName != null);
 		}
 	}
@@ -366,27 +359,14 @@ public class CreateParameterDialog extends FormDialog {
 	}
 
 	/**
-	 * Gets the possible types for the parameter
-	 * 
-	 * @return the possible types
-	 */
-	private Set<Object> getPossibleTypes() {
-		Collection<EObject> types = ModelSetQuery.getObjectsOfType(parameterOwner, UMLPackage.eINSTANCE.getTypedElement_Type().getEType());
-		Set<Object> result = new HashSet<Object>();
-		result.add("");
-		result.addAll(types);
-		return result;
-	}
-
-	/**
 	 * Gets the possible directions.
-	 * 
+	 *
 	 * @return the possible directions
 	 */
 	private String[] getPossibleDirections() {
 		List<ParameterDirectionKind> values = ParameterDirectionKind.VALUES;
 		String[] ret = new String[values.size()];
-		for(int i = 0; i < values.size(); i++) {
+		for (int i = 0; i < values.size(); i++) {
 			ret[i] = values.get(i).getName();
 		}
 		return ret;
@@ -394,11 +374,11 @@ public class CreateParameterDialog extends FormDialog {
 
 	/**
 	 * Gets the direction which is selected by default.
-	 * 
+	 *
 	 * @return the default direction
 	 */
 	private String getDefaultDirection() {
-		if(defaultDirection != null) {
+		if (defaultDirection != null) {
 			return defaultDirection.getName();
 		} else {
 			return getPossibleDirections()[0];

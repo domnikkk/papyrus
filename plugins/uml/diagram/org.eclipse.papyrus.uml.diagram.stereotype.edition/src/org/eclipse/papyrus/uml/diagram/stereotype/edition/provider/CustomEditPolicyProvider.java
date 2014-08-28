@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,6 @@ import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.IEditPolicyProvide
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.editpolicies.ApplyStereotypeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.stereotype.edition.editpart.AppliedStereotypeMultilinePropertyEditPart;
 import org.eclipse.papyrus.uml.diagram.stereotype.edition.editpolicies.AppliedStereotypeCommentCreationEditPolicy;
 import org.eclipse.papyrus.uml.diagram.stereotype.edition.editpolicies.AppliedStereotypeCompartmentEditPolicy;
@@ -32,26 +31,26 @@ import org.eclipse.papyrus.uml.tools.utils.UMLUtil;
 
 /**
  * this is an editpolicy provider in charge to install a policy to create a AssociationClass
- * 
+ *
  * @author Patrick Tessier
  */
 public class CustomEditPolicyProvider extends AbstractProvider implements IEditPolicyProvider {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	public void createEditPolicies(EditPart editPart) {
-		if(editPart instanceof IPapyrusEditPart) {
-			if(!(editPart instanceof AppliedStereotypeMultilinePropertyEditPart)) {
+		if (editPart instanceof IPapyrusEditPart) {
+			if (!(editPart instanceof AppliedStereotypeMultilinePropertyEditPart)) {
 
-				if(editPart instanceof IPrimaryEditPart) {
-					if(UMLUtil.resolveUMLElement(editPart) != null) {
+				if (editPart instanceof IPrimaryEditPart) {
+					if (UMLUtil.resolveUMLElement(editPart) != null) {
 						editPart.installEditPolicy(AppliedStereotypeCommentCreationEditPolicy.APPLIED_STEREOTYPE_COMMENT, new AppliedStereotypeCommentCreationEditPolicy());
 					}
 
 				}
-				if(editPart instanceof NamedElementEditPart) {
+				if (editPart instanceof NamedElementEditPart) {
 					editPart.installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeCompartmentEditPolicy());
 				}
 			}
@@ -59,25 +58,25 @@ public class CustomEditPolicyProvider extends AbstractProvider implements IEditP
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	public boolean provides(IOperation operation) {
-		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
-		if(!(epOperation.getEditPart() instanceof GraphicalEditPart) && !(epOperation.getEditPart() instanceof ConnectionEditPart)) {
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
+		if (!(epOperation.getEditPart() instanceof GraphicalEditPart) && !(epOperation.getEditPart() instanceof ConnectionEditPart)) {
 			return false;
 		}
 
 		EditPart gep = epOperation.getEditPart();
-		if(!(gep instanceof AppliedStereotypeMultilinePropertyEditPart)) {
+		if (!(gep instanceof AppliedStereotypeMultilinePropertyEditPart)) {
 
-			if(gep instanceof IPrimaryEditPart) {
-				if(UMLUtil.resolveUMLElement(gep) != null) {
+			if (gep instanceof IPrimaryEditPart) {
+				if (UMLUtil.resolveUMLElement(gep) != null) {
 					return true;
 				}
 
 			}
-			if(gep instanceof NamedElementEditPart) {
+			if (gep instanceof NamedElementEditPart) {
 				return true;
 			}
 		}

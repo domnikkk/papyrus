@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -13,13 +13,10 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.ApplicationDependantElement;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
@@ -31,7 +28,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.ApplicationDependantElementImpl#getApplication <em>Application</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.ApplicationDependantElementImpl#getApplication <em>Application</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +39,7 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	 * The cached value of the '{@link #getApplication() <em>Application</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getApplication()
 	 * @generated
 	 * @ordered
@@ -51,6 +49,7 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ApplicationDependantElementImpl() {
@@ -60,6 +59,7 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -70,15 +70,18 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public LayersStackApplication getApplication() {
 		if (application != null && application.eIsProxy()) {
-			InternalEObject oldApplication = (InternalEObject)application;
-			application = (LayersStackApplication)eResolveProxy(oldApplication);
+			InternalEObject oldApplication = (InternalEObject) application;
+			application = (LayersStackApplication) eResolveProxy(oldApplication);
 			if (application != oldApplication) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LayersPackage.APPLICATION_DEPENDANT_ELEMENT__APPLICATION, oldApplication, application));
+				}
 			}
 		}
 		return application;
@@ -87,6 +90,7 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LayersStackApplication basicGetApplication() {
@@ -96,26 +100,32 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setApplication(LayersStackApplication newApplication) {
 		LayersStackApplication oldApplication = application;
 		application = newApplication;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.APPLICATION_DEPENDANT_ELEMENT__APPLICATION, oldApplication, application));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersPackage.APPLICATION_DEPENDANT_ELEMENT__APPLICATION:
-				if (resolve) return getApplication();
-				return basicGetApplication();
+		case LayersPackage.APPLICATION_DEPENDANT_ELEMENT__APPLICATION:
+			if (resolve) {
+				return getApplication();
+			}
+			return basicGetApplication();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -123,14 +133,15 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersPackage.APPLICATION_DEPENDANT_ELEMENT__APPLICATION:
-				setApplication((LayersStackApplication)newValue);
-				return;
+		case LayersPackage.APPLICATION_DEPENDANT_ELEMENT__APPLICATION:
+			setApplication((LayersStackApplication) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -138,14 +149,15 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersPackage.APPLICATION_DEPENDANT_ELEMENT__APPLICATION:
-				setApplication((LayersStackApplication)null);
-				return;
+		case LayersPackage.APPLICATION_DEPENDANT_ELEMENT__APPLICATION:
+			setApplication((LayersStackApplication) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -153,15 +165,16 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersPackage.APPLICATION_DEPENDANT_ELEMENT__APPLICATION:
-				return application != null;
+		case LayersPackage.APPLICATION_DEPENDANT_ELEMENT__APPLICATION:
+			return application != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ApplicationDependantElementImpl
+} // ApplicationDependantElementImpl

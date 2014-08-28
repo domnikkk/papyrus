@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 Atos, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,11 +29,11 @@ import org.eclipse.papyrus.commands.util.NonDirtyingUtils;
 
 /**
  * This DiagramCommandStack uses CheckedOperationHistory instead of the default one.
- * 
+ *
  * @author vhemery
  */
 public class CheckedDiagramCommandStack extends DiagramCommandStack {
-	
+
 	protected IOperationHistory operationHistory;
 
 	public CheckedDiagramCommandStack(IDiagramEditDomain editDomain) {
@@ -46,43 +46,44 @@ public class CheckedDiagramCommandStack extends DiagramCommandStack {
 		return operationHistory;
 	}
 
+	@Override
 	public void execute(Command command, IProgressMonitor progressMonitor) {
-        if ((command != null) && command.canExecute()) {
-        	execute(wrap(command), progressMonitor);
-        }
+		if ((command != null) && command.canExecute()) {
+			execute(wrap(command), progressMonitor);
+		}
 	}
 
 	private ICommand wrap(Command command) {
-		if(command instanceof CompoundCommand) {
+		if (command instanceof CompoundCommand) {
 			CompositeCommand composite = new CompositeCommand(command.getLabel());
-			Object[] subCommands = ((CompoundCommand)command).getChildren();
+			Object[] subCommands = ((CompoundCommand) command).getChildren();
 
-			for(int i = 0; i < subCommands.length; i++) {
-				composite.compose(wrap((Command)subCommands[i]));
+			for (int i = 0; i < subCommands.length; i++) {
+				composite.compose(wrap((Command) subCommands[i]));
 			}
 			return composite.reduce();
 		}
 
-		if(command instanceof ICommandProxy) {
-			return getICommand(((ICommandProxy)command).getICommand());
+		if (command instanceof ICommandProxy) {
+			return getICommand(((ICommandProxy) command).getICommand());
 		}
 
-		if(null != command) {
+		if (null != command) {
 			// Handle possible non-dirtying command
 			return NonDirtyingUtils.wrap(command);
 		} else {
 			return null;
 		}
 	}
-	
+
 	@Override
 	public void dispose() {
 		// Flush my undo context
 		IUndoContext context = getUndoContext();
-		if((context != null) && (operationHistory != null)) {
+		if ((context != null) && (operationHistory != null)) {
 			operationHistory.dispose(context, true, true, true);
 		}
-		
+
 		super.dispose();
 	}
 }

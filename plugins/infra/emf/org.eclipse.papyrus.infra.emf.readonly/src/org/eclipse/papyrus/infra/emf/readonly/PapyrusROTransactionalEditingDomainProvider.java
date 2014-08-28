@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.core.resource.ITransactionalEditingDomainProvid
 /**
  * Editing Domain created using this provider will use handlers registered on readOnlyHandler extension
  * to determine if a resource is read only.
- * 
+ *
  * @author mvelten
  *
  */

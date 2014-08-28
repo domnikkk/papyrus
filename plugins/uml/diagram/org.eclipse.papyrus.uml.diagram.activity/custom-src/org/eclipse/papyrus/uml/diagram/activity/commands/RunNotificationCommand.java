@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ import com.google.common.collect.Lists;
 
 /**
  * Command used to launch a notification
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class RunNotificationCommand extends AbstractTransactionalCommand {
 
@@ -59,7 +59,7 @@ public class RunNotificationCommand extends AbstractTransactionalCommand {
 	}
 
 	private synchronized void clearOldNotif() {
-		for(INotification notif : notifs) {
+		for (INotification notif : notifs) {
 			notif.delete();
 		}
 		notifs.clear();

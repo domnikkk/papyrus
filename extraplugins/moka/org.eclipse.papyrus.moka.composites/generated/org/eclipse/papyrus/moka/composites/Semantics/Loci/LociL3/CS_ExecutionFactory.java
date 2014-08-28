@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,34 +45,35 @@ import org.eclipse.uml2.uml.SendSignalAction;
 
 public class CS_ExecutionFactory extends ExecutionFactoryL3 {
 
+	@Override
 	public SemanticVisitor instantiateVisitor(Element element) {
-		// Extends fUML semantics in the sense that newly introduced 
+		// Extends fUML semantics in the sense that newly introduced
 		// semantic visitors are instantiated instead of fUML visitors
 
 		SemanticVisitor visitor = null;
-		if(element instanceof ReadExtentAction) {
+		if (element instanceof ReadExtentAction) {
 			visitor = new CS_ReadExtentActionActivation();
-		} else if(element instanceof ReadIsClassifiedObjectAction) {
+		} else if (element instanceof ReadIsClassifiedObjectAction) {
 			visitor = new CS_ReadIsClassifiedObjectActionActivation();
-		} else if(element instanceof AddStructuralFeatureValueAction) {
+		} else if (element instanceof AddStructuralFeatureValueAction) {
 			visitor = new CS_AddStructuralFeatureValueActionActivation();
-		} else if(element instanceof ClearStructuralFeatureAction) {
+		} else if (element instanceof ClearStructuralFeatureAction) {
 			visitor = new CS_ClearStructuralFeatureValueActionActivation();
-		} else if(element instanceof CreateLinkAction) {
+		} else if (element instanceof CreateLinkAction) {
 			visitor = new CS_CreateLinkActionActivation();
-		} else if(element instanceof CreateObjectAction) {
+		} else if (element instanceof CreateObjectAction) {
 			visitor = new CS_CreateObjectActionActivation();
-		} else if(element instanceof ReadSelfAction) {
+		} else if (element instanceof ReadSelfAction) {
 			visitor = new CS_ReadSelfActionActivation();
-		} else if(element instanceof InstanceValue) {
+		} else if (element instanceof InstanceValue) {
 			visitor = new CS_InstanceValueEvaluation();
-		} else if(element instanceof AcceptEventAction) {
+		} else if (element instanceof AcceptEventAction) {
 			visitor = new CS_AcceptEventActionActivation();
-		} else if(element instanceof CallOperationAction) {
+		} else if (element instanceof CallOperationAction) {
 			visitor = new CS_CallOperationActionActivation();
-		} else if(element instanceof SendSignalAction) {
+		} else if (element instanceof SendSignalAction) {
 			visitor = new CS_SendSignalActionActivation();
-		} else if(element instanceof OpaqueExpression) {
+		} else if (element instanceof OpaqueExpression) {
 			visitor = new CS_OpaqueExpressionEvaluation();
 		} else {
 			visitor = super.instantiateVisitor(element);

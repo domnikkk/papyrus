@@ -11,7 +11,7 @@ package org.eclipse.papyrus.uml.diagram.timing.tests.canonical;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.papyrus.junit.utils.classification.FailingTest;
+import org.eclipse.papyrus.junit.framework.classification.FailingTest;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.FullLifelineEditPartCN;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.InteractionEditPartTN;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.StateDefinitionEditPart;

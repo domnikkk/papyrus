@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,11 +28,11 @@ public class Concat extends OpaqueBehaviorExecution {
 	@Override
 	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
 		try {
-			String leftValue = ((StringValue)inputParameters.get(0).values.get(0)).value;
-			String rightValue = ((StringValue)inputParameters.get(1).values.get(0)).value;
+			String leftValue = ((StringValue) inputParameters.get(0).values.get(0)).value;
+			String rightValue = ((StringValue) inputParameters.get(1).values.get(0)).value;
 			StringValue result = new StringValue();
 			result.value = "" + leftValue + rightValue;
-			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("String"); // ADDED
+			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("String"); // ADDED
 			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;

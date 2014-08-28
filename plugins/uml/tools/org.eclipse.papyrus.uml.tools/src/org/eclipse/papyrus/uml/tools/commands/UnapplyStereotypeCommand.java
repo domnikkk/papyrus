@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * A Command to unapply a Stereotype on a UML Element
- * 
+ *
  * @author Camille Letavernier
  */
 public class UnapplyStereotypeCommand extends RecordingCommand {
@@ -31,13 +31,13 @@ public class UnapplyStereotypeCommand extends RecordingCommand {
 	private Collection<Stereotype> stereotypes;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param element
-	 *        The UML Element from which the stereotypes will be unapplied
+	 *            The UML Element from which the stereotypes will be unapplied
 	 * @param stereotypes
-	 *        The stereotypes to unapply
+	 *            The stereotypes to unapply
 	 */
 	public UnapplyStereotypeCommand(Element element, Collection<Stereotype> stereotypes, TransactionalEditingDomain domain) {
 		super(domain);
@@ -46,13 +46,13 @@ public class UnapplyStereotypeCommand extends RecordingCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param element
-	 *        The UML Element from which the stereotype will be unapplied
+	 *            The UML Element from which the stereotype will be unapplied
 	 * @param stereotype
-	 *        The stereotype to unapply
+	 *            The stereotype to unapply
 	 */
 	public UnapplyStereotypeCommand(Element element, Stereotype stereotype, TransactionalEditingDomain domain) {
 		super(domain);
@@ -62,7 +62,7 @@ public class UnapplyStereotypeCommand extends RecordingCommand {
 
 	@Override
 	protected void doExecute() {
-		for(Stereotype stereotype : stereotypes) {
+		for (Stereotype stereotype : stereotypes) {
 			element.unapplyStereotype(stereotype);
 		}
 	}

@@ -33,16 +33,16 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.Na
 
 /**
  * the axis manager for EStructuralFeature
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class EStructuralFeatureAxisManager extends EObjectAxisManager {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#canBeSavedAsConfig()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -52,31 +52,33 @@ public class EStructuralFeatureAxisManager extends EObjectAxisManager {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#canDestroyAxisElement(java.lang.Integer)
-	 * 
+	 *
 	 * @param axisPosition
 	 * @return
 	 */
+	@Override
 	public boolean canDestroyAxisElement(Integer axisPosition) {
 		return false;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#canEditAxisHeader()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public boolean canEditAxisHeader() {
 		return true;
 	}
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#getAddAxisCommand(TransactionalEditingDomain, java.util.Collection)
-	 * 
+	 *
 	 * @param domain
 	 * @param objectToAdd
 	 * @return
@@ -84,15 +86,15 @@ public class EStructuralFeatureAxisManager extends EObjectAxisManager {
 	@Override
 	public Command getAddAxisCommand(final TransactionalEditingDomain domain, final Collection<Object> objectToAdd) {
 		final Collection<IAxis> toAdd = new ArrayList<IAxis>();
-		for(final Object current : objectToAdd) {
-			if(isAllowedContents(current) && !isAlreadyManaged(current)) {
+		for (final Object current : objectToAdd) {
+			if (isAllowedContents(current) && !isAlreadyManaged(current)) {
 				final EStructuralFeatureAxis newAxis = NattableaxisFactory.eINSTANCE.createEStructuralFeatureAxis();
-				newAxis.setElement((EStructuralFeature)current);
+				newAxis.setElement((EStructuralFeature) current);
 				newAxis.setManager(this.representedAxisManager);
 				toAdd.add(newAxis);
 			}
 		}
-		if(!toAdd.isEmpty()) {
+		if (!toAdd.isEmpty()) {
 			return AddCommand.create(domain, getRepresentedContentProvider(), NattableaxisproviderPackage.eINSTANCE.getAxisProvider_Axis(), toAdd);
 		}
 		return null;
@@ -104,10 +106,10 @@ public class EStructuralFeatureAxisManager extends EObjectAxisManager {
 
 	public Collection<Object> getAllPossibleAxis() {
 		Set<Object> objects = new HashSet<Object>();
-		for(final Object current : getAllManagedAxis()) {
-			EClass eClass = (EClass)current;
+		for (final Object current : getAllManagedAxis()) {
+			EClass eClass = (EClass) current;
 			EPackage ePackage = eClass.getEPackage();
-			if(!eClass.getEStructuralFeatures().isEmpty()) {
+			if (!eClass.getEStructuralFeatures().isEmpty()) {
 				objects.add(ePackage);
 			}
 		}
@@ -115,10 +117,9 @@ public class EStructuralFeatureAxisManager extends EObjectAxisManager {
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#getComplementaryAddAxisCommand(TransactionalEditingDomain,
-	 *      java.util.Collection)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#getComplementaryAddAxisCommand(TransactionalEditingDomain, java.util.Collection)
+	 *
 	 * @param domain
 	 * @param objectToAdd
 	 * @return
@@ -126,13 +127,13 @@ public class EStructuralFeatureAxisManager extends EObjectAxisManager {
 	@Override
 	public Command getComplementaryAddAxisCommand(final TransactionalEditingDomain domain, final Collection<Object> objectToAdd) {
 		final Set<Object> features = new HashSet<Object>();
-		for(final Object current : objectToAdd) {
-			if(current instanceof EObject) {
-				features.addAll(((EObject)current).eClass().getEAllStructuralFeatures());
+		for (final Object current : objectToAdd) {
+			if (current instanceof EObject) {
+				features.addAll(((EObject) current).eClass().getEAllStructuralFeatures());
 			}
 		}
 		features.removeAll(getElements());
-		if(!features.isEmpty()) {
+		if (!features.isEmpty()) {
 			return getAddAxisCommand(domain, features);
 		}
 		return null;
@@ -140,37 +141,37 @@ public class EStructuralFeatureAxisManager extends EObjectAxisManager {
 
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#getDestroyAxisElementCommand(org.eclipse.emf.transaction.TransactionalEditingDomain,
-	 *      java.lang.Integer)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#getDestroyAxisElementCommand(org.eclipse.emf.transaction.TransactionalEditingDomain, java.lang.Integer)
+	 *
 	 * @param domain
 	 * @param axisPosition
 	 * @return
 	 */
+	@Override
 	public Command getDestroyAxisElementCommand(final TransactionalEditingDomain domain, final Integer axisPosition) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#getElementAxisName(org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.IAxis)
-	 * 
+	 *
 	 * @param axis
 	 * @return
 	 */
 	@Override
 	public String getElementAxisName(IAxis axis) {
-		if(axis instanceof EStructuralFeatureAxis) {
-			return ((EStructuralFeatureAxis)axis).getElement().getName();
+		if (axis instanceof EStructuralFeatureAxis) {
+			return ((EStructuralFeatureAxis) axis).getElement().getName();
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#isAllowedContents(java.lang.Object)
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
@@ -180,11 +181,12 @@ public class EStructuralFeatureAxisManager extends EObjectAxisManager {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#isSlave()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public boolean isSlave() {
 		return true;
 	}

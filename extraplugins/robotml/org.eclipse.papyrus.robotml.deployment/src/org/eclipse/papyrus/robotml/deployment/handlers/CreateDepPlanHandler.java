@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.robotml.deployment.handlers;
 
 import org.eclipse.core.commands.ExecutionEvent;
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -47,32 +46,35 @@ public class CreateDepPlanHandler extends CmdHandler {
 	public boolean isEnabled() {
 		updateSelectedEObject();
 		EObject selectedObj = getSelectedEObject();
-		if((selectedObj instanceof Class) && Utils.isCompImpl((Class)selectedObj) && isEnvironment((Class)selectedObj)) {
+		if ((selectedObj instanceof Class) && Utils.isCompImpl((Class) selectedObj) && isEnvironment((Class) selectedObj)) {
 			return true;
 		}
 		return false;
 	}
 
-	private boolean isEnvironment(Class elt){
+	private boolean isEnvironment(Class elt) {
 		Environment environment = UMLUtil.getStereotypeApplication(elt, Environment.class);
-		if (environment != null){
+		if (environment != null) {
 			return true;
 		}
-		
+
 		return false;
-		
+
 	}
+
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) {
-		if(!(getSelectedEObject() instanceof Class)) {
+		if (!(getSelectedEObject() instanceof Class)) {
 			return null;
 		}
-		final Class selectedComposite = (Class)getSelectedEObject();
+		final Class selectedComposite = (Class) getSelectedEObject();
 
 		CommandSupport.exec("Create deployment plans", new Runnable() {
 
+			@Override
 			public void run() {
 				// execute with transaction support
 				depPlans = DepPlanUtils.getDepPlanRoot(selectedComposite);
@@ -81,35 +83,36 @@ public class CreateDepPlanHandler extends CmdHandler {
 
 		try {
 			String name = selectedComposite.getName() + DepPlanPostfix;
-			if(depPlans.getMember(name) != null) {
+			if (depPlans.getMember(name) != null) {
 				Shell shell = new Shell();
-				String dialogButtonLabels[] = new String[]{
-					"Cancel",
-					"Synchronize",
-					"create new (auto number name)"
+				String dialogButtonLabels[] = new String[] {
+						"Cancel",
+						"Synchronize",
+						"create new (auto number name)"
 				};
 				MessageDialog dialog = new MessageDialog(shell, "What should I do?", null,
-					"Deployment plan with name \"" + name + "\" exists already. You can always synchronize an " +
-						"existing deployment plan via the context menu \"Synchronize derived elements\"",
-					MessageDialog.QUESTION, dialogButtonLabels, 0);
+						"Deployment plan with name \"" + name + "\" exists already. You can always synchronize an " +
+								"existing deployment plan via the context menu \"Synchronize derived elements\"",
+						MessageDialog.QUESTION, dialogButtonLabels, 0);
 				int result = dialog.open();
-				if(result == 0) {
+				if (result == 0) {
 					return null;
 				}
-				else if(result == 1) {
+				else if (result == 1) {
 					NamedElement existing = depPlans.getMember(name);
-					if(existing instanceof Package) {
-						DepPlanSync.syncDepPlan((Package)existing);
+					if (existing instanceof Package) {
+						DepPlanSync.syncDepPlan((Package) existing);
 					}
 					else {
 						MessageDialog.openError(shell, "Cannot synchronize", "Element with name \"" + name + "\" exists, but is not a package");
 					}
 				}
 				else {
-					for(int i = 2;; i++) {
+					for (int i = 2;; i++) {
 						name = selectedComposite.getName() + DepPlanPostfix + i;
-						if(depPlans.getMember(name) == null)
+						if (depPlans.getMember(name) == null) {
 							break;
+						}
 					}
 
 				}
@@ -118,23 +121,24 @@ public class CreateDepPlanHandler extends CmdHandler {
 
 			CommandSupport.exec("Create deployment plan", new RunnableWithResult() {
 
+				@Override
 				public CommandResult run() {
 					Package cdp = depPlans.createNestedPackage(depPlanName);
 					Stereotype st = StUtils.apply(cdp, DeploymentPlan.class);
-					if(st == null) {
+					if (st == null) {
 						MessageDialog.openInformation(new Shell(), "Cannot create deployment plan",
-							"Application of stereotype \"RobotML::DeploymentPlan\" failed. Check, if RobotML profile is applied");
+								"Application of stereotype \"RobotML::DeploymentPlan\" failed. Check, if RobotML profile is applied");
 						return CommandResult.newErrorCommandResult("cannot create deployment plan");
 					}
 					try {
 						InstanceSpecification newRootIS =
-							DepCreation.createDepPlan(cdp, selectedComposite, "mainInstance", true);
+								DepCreation.createDepPlan(cdp, selectedComposite, "mainInstance", true);
 						DepCreation.initAutoValues(newRootIS);
 						return CommandResult.newOKCommandResult();
 					}
 					catch (TransformationException e) {
 						MessageDialog.openInformation(new Shell(), "Error during deployment plan creation",
-							e.getMessage());
+								e.getMessage());
 						return CommandResult.newErrorCommandResult(e.getMessage());
 					}
 				}

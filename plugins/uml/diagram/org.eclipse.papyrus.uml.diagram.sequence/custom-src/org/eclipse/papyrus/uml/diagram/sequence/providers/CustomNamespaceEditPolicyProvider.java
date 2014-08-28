@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,26 +32,27 @@ import org.eclipse.uml2.uml.Namespace;
 
 /**
  * An edit policy provider to install
- * 
+ *
  * @author Boutheina Bannour
- * 
+ *
  */
 public class CustomNamespaceEditPolicyProvider extends AbstractProvider implements IEditPolicyProvider {
 
+	@Override
 	public boolean provides(IOperation operation) {
-		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
 		EditPart editPart = epOperation.getEditPart();
-		if(editPart == null) {
+		if (editPart == null) {
 			return false;
 		}
 		EObject eElement = EMFHelper.getEObject(editPart);
-		if(!(eElement instanceof Namespace)) {
+		if (!(eElement instanceof Namespace)) {
 			return false;
 		}
 		try {
 			// check whether the element is a papyrus element.
 			ServicesRegistry registry = ServiceUtilsForEObject.getInstance().getServiceRegistry(eElement);
-			if(registry == null) {
+			if (registry == null) {
 				return false;
 			}
 		} catch (Exception ex) {
@@ -61,13 +62,14 @@ public class CustomNamespaceEditPolicyProvider extends AbstractProvider implemen
 		return (editPart instanceof IPrimaryEditPart);
 	}
 
+	@Override
 	public void createEditPolicies(EditPart editPart) {
 		// install policy for InteractionEditPart
-		if(editPart instanceof InteractionEditPart) {
+		if (editPart instanceof InteractionEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomInteractionContextLinkSemanticEditPolicy());
 		}
 		// install policy for InteractionOperandEditPart
-		if(editPart instanceof InteractionOperandEditPart) {
+		if (editPart instanceof InteractionOperandEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomInteractionOperandContextLinkSemanticEditPolicy());
 		}
 	}

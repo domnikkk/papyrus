@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -111,7 +111,7 @@ public class ZombieStereotypeDialogPresenter {
 		try {
 			zombieDescriptors.add(zombies);
 
-			if(presentation == null) {
+			if (presentation == null) {
 				internalSetPending(true);
 
 				presentation = new Runnable() {
@@ -121,7 +121,7 @@ public class ZombieStereotypeDialogPresenter {
 
 						lock.lock();
 						try {
-							if(presentation != this) {
+							if (presentation != this) {
 								internalSetPending(false);
 								return;
 							}
@@ -132,7 +132,7 @@ public class ZombieStereotypeDialogPresenter {
 						}
 
 						try {
-							if(!zombies.isEmpty()) {
+							if (!zombies.isEmpty()) {
 								try {
 									ZombieStereotypesDialog zombieDialog = new ZombieStereotypesDialog(parentShell, modelSet, zombies);
 									dynamicProfileSupplier.setParentWindow(zombieDialog);
@@ -164,7 +164,7 @@ public class ZombieStereotypeDialogPresenter {
 	public void awaitPending(boolean expected) throws InterruptedException {
 		lock.lock();
 		try {
-			while(pending != expected) {
+			while (pending != expected) {
 				pendingCond.await();
 			}
 		} finally {
@@ -175,12 +175,12 @@ public class ZombieStereotypeDialogPresenter {
 	public void onPendingDone(final Runnable runnable) {
 		lock.lock();
 		try {
-			if(!pending) {
+			if (!pending) {
 				// Just do it now
 				runnable.run();
 			} else {
 				// Schedule a wait
-				if(pendingExecutor == null) {
+				if (pendingExecutor == null) {
 					pendingExecutor = Executors.newSingleThreadExecutor();
 				}
 
@@ -251,10 +251,10 @@ public class ZombieStereotypeDialogPresenter {
 
 			try {
 				URI selectedProfileURI = task.get();
-				if(selectedProfileURI != null) {
+				if (selectedProfileURI != null) {
 					result = EMFHelper.load(modelSet, selectedProfileURI, Profile.class);
 
-					if((result != null) && hasNestedProfiles(result)) {
+					if ((result != null) && hasNestedProfiles(result)) {
 						// Need to select a particular profile from this resource
 						final TreeSelectorDialog selectorDlg = new TreeSelectorDialog(parentWindow.getShell());
 
@@ -280,8 +280,8 @@ public class ZombieStereotypeDialogPresenter {
 									Profile result = null;
 
 									Object[] selected = selectorDlg.getResult();
-									if((selected != null) && (selected.length > 0)) {
-										result = (Profile)selected[0];
+									if ((selected != null) && (selected.length > 0)) {
+										result = (Profile) selected[0];
 									}
 
 									return result;
@@ -301,7 +301,7 @@ public class ZombieStereotypeDialogPresenter {
 			} catch (InterruptedException e) {
 				Activator.log.error("Profile selection dialog presentation interrupted.", e); //$NON-NLS-1$
 			} finally {
-				if(localProvider) {
+				if (localProvider) {
 					try {
 						labelProvider.disposeService();
 					} catch (ServiceException e) {

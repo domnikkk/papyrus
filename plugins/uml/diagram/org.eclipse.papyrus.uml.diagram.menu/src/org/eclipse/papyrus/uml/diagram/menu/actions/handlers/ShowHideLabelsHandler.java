@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,9 +19,9 @@ import org.eclipse.papyrus.uml.diagram.menu.actions.ShowHideLabelsAction;
 
 /**
  * Handler for the {@link ShowHideLabelsAction}
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class ShowHideLabelsHandler extends AbstractGraphicalCommandHandler {
 
@@ -31,9 +31,9 @@ public class ShowHideLabelsHandler extends AbstractGraphicalCommandHandler {
 	public static final String parameterID = "show_hide_link_label_parameter"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameterID
 	 */
 	public ShowHideLabelsHandler() {
@@ -41,18 +41,18 @@ public class ShowHideLabelsHandler extends AbstractGraphicalCommandHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param parameter
-	 *        the value of the parameter for the handler
+	 *            the value of the parameter for the handler
 	 */
 	public ShowHideLabelsHandler(String parameter) {
 		super(parameterID, parameter);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.menu.actions.handlers.AbstractGraphicalCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */
@@ -64,8 +64,8 @@ public class ShowHideLabelsHandler extends AbstractGraphicalCommandHandler {
 
 	@Override
 	public void setEnabled(Object evaluationContext) {
-		if(this.parameter.equals(ShowHideLabelsAction.MANAGE_PARAMETER)) {
-			//we test if the action can be executed with an other parameter (because getCommand() for this parameter open a dialog
+		if (this.parameter.equals(ShowHideLabelsAction.MANAGE_PARAMETER)) {
+			// we test if the action can be executed with an other parameter (because getCommand() for this parameter open a dialog
 			ShowHideLabelsAction action = new ShowHideLabelsAction(ShowHideLabelsAction.SHOW_PARAMETER, getSelectedElements());
 			setBaseEnabled(action.getCommand().canExecute());
 			return;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,18 +29,18 @@ import org.eclipse.uml2.uml.ParameterEffectKind;
 import org.eclipse.uml2.uml.Type;
 
 /**
- * 
+ *
  * This class provides methods to get the label to display for a Parameter
- * 
- * 
+ *
+ *
  */
 public class UMLParameterEditorUtil extends ParameterUtil {
 
 	/**
 	 * Returns the string used to represent this parameter
-	 * 
+	 *
 	 * @param parameter
-	 *        a parameter
+	 *            a parameter
 	 * @return
 	 *         the string used to represent this parameter
 	 */
@@ -56,12 +56,12 @@ public class UMLParameterEditorUtil extends ParameterUtil {
 
 		// name
 		buffer.append(" "); //$NON-NLS-1$
-		if(parameter.getName() != null) {
+		if (parameter.getName() != null) {
 			buffer.append(parameter.getName());
 		}
 
 		// type
-		if(parameter.getType() != null) {
+		if (parameter.getType() != null) {
 			EList<Namespace> namespaces = parameter.allNamespaces();
 			buffer.append(" : " + getTypeLabel(parameter.getType(), namespaces.get(namespaces.size() - 1))); //$NON-NLS-1$
 		} else {
@@ -70,12 +70,12 @@ public class UMLParameterEditorUtil extends ParameterUtil {
 
 		// multiplicity -> do not display [1]
 		String multiplicity = MultiplicityElementUtil.getMultiplicityAsString(parameter);
-		if(!multiplicity.trim().equals("[1]")) { //$NON-NLS-1$
+		if (!multiplicity.trim().equals("[1]")) { //$NON-NLS-1$
 			buffer.append(multiplicity);
 		}
 
 		// default value
-		if(parameter.getDefault() != null) {
+		if (parameter.getDefault() != null) {
 			buffer.append(" = "); //$NON-NLS-1$
 			buffer.append(parameter.getDefault());
 		}
@@ -89,9 +89,9 @@ public class UMLParameterEditorUtil extends ParameterUtil {
 
 	/**
 	 * Returns the effect of the parameter as a String
-	 * 
+	 *
 	 * @param parameter
-	 *        the parameter
+	 *            the parameter
 	 * @return
 	 *         The effect of the parameter as a String
 	 */
@@ -100,7 +100,7 @@ public class UMLParameterEditorUtil extends ParameterUtil {
 		ParameterEffectKind effect = parameter.getEffect();
 		buffer.append(effect.toString());
 
-		if(!buffer.toString().equals("")) { //$NON-NLS-1$
+		if (!buffer.toString().equals("")) { //$NON-NLS-1$
 			buffer.insert(0, "{effect: "); //$NON-NLS-1$
 			buffer.append("}"); //$NON-NLS-1$
 		}
@@ -109,9 +109,9 @@ public class UMLParameterEditorUtil extends ParameterUtil {
 
 	/**
 	 * Returns the name of the type with its qualified name
-	 * 
+	 *
 	 * @param type
-	 *        a type
+	 *            a type
 	 * @return
 	 *         the name of the type with its qualified name
 	 */
@@ -125,19 +125,20 @@ public class UMLParameterEditorUtil extends ParameterUtil {
 
 		boolean rootFound = false;
 
-		while(currentPackage != null && !rootFound) {
+		while (currentPackage != null && !rootFound) {
 			visitedPackages.add(currentPackage);
-			if(importedPackages.contains(currentPackage) || currentPackage == model) {
+			if (importedPackages.contains(currentPackage) || currentPackage == model) {
 				rootFound = true;
 			}
 			Element owner = currentPackage.getOwner();
-			while(owner != null && !(owner instanceof Package))
+			while (owner != null && !(owner instanceof Package)) {
 				owner = owner.getOwner();
+			}
 
-			currentPackage = owner != null ? (Package)owner : null;
+			currentPackage = owner != null ? (Package) owner : null;
 		}
 
-		for(int i = visitedPackages.size() - 1; i >= 0; i--) {
+		for (int i = visitedPackages.size() - 1; i >= 0; i--) {
 			label += visitedPackages.get(i).getName() + "::"; //$NON-NLS-1$
 		}
 

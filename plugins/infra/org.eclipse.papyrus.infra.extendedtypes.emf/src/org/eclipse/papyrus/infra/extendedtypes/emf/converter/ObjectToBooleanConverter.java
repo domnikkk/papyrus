@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,17 +30,18 @@ public class ObjectToBooleanConverter extends Converter implements IConverter {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Boolean convert(Object fromObject) {
-		if(fromObject == null) {
+		if (fromObject == null) {
 			return null;
 		}
 
-		if(fromObject instanceof Boolean) {
-			return ((Boolean)fromObject);
+		if (fromObject instanceof Boolean) {
+			return ((Boolean) fromObject);
 		}
 
-		if(fromObject instanceof String) {
-			return Boolean.valueOf((String)fromObject);
+		if (fromObject instanceof String) {
+			return Boolean.valueOf((String) fromObject);
 		}
 
 		return null;

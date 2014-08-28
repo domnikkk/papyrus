@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.papyrus.sysml.blocks.BlocksPackage;
  * <li>{@link org.eclipse.papyrus.sysml.blocks.internal.impl.BlockImpl#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
@@ -39,7 +39,7 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	 * The default value of the '{@link #isEncapsulated() <em>Is Encapsulated</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #isEncapsulated()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	 * The cached value of the '{@link #isEncapsulated() <em>Is Encapsulated</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #isEncapsulated()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	/**
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BlockImpl() {
@@ -78,7 +78,7 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -87,17 +87,18 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.BLOCK__IS_ENCAPSULATED:
 			return isEncapsulated();
 		case BlocksPackage.BLOCK__BASE_CLASS:
-			if(resolve)
+			if (resolve) {
 				return getBase_Class();
+			}
 			return basicGetBase_Class();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -105,12 +106,12 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.BLOCK__IS_ENCAPSULATED:
 			return isEncapsulated != IS_ENCAPSULATED_EDEFAULT;
 		case BlocksPackage.BLOCK__BASE_CLASS:
@@ -121,17 +122,17 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.BLOCK__IS_ENCAPSULATED:
-			setIsEncapsulated((Boolean)newValue);
+			setIsEncapsulated((Boolean) newValue);
 			return;
 		case BlocksPackage.BLOCK__BASE_CLASS:
-			setBase_Class((org.eclipse.uml2.uml.Class)newValue);
+			setBase_Class((org.eclipse.uml2.uml.Class) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,7 +140,7 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +151,7 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isEncapsulated() {
@@ -159,17 +160,17 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.BLOCK__IS_ENCAPSULATED:
 			setIsEncapsulated(IS_ENCAPSULATED_EDEFAULT);
 			return;
 		case BlocksPackage.BLOCK__BASE_CLASS:
-			setBase_Class((org.eclipse.uml2.uml.Class)null);
+			setBase_Class((org.eclipse.uml2.uml.Class) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -177,16 +178,17 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class getBase_Class() {
-		if(base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
-			if(base_Class != oldBase_Class) {
-				if(eNotificationRequired())
+		if (base_Class != null && base_Class.eIsProxy()) {
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
+			if (base_Class != oldBase_Class) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.BLOCK__BASE_CLASS, oldBase_Class, base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -194,37 +196,40 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.BLOCK__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIsEncapsulated(boolean newIsEncapsulated) {
 		boolean oldIsEncapsulated = isEncapsulated;
 		isEncapsulated = newIsEncapsulated;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.BLOCK__IS_ENCAPSULATED, oldIsEncapsulated, isEncapsulated));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isEncapsulated: ");

@@ -17,11 +17,11 @@ import org.eclipse.papyrus.xwt.metadata.IObjectInitializer;
 public class JFaceInitializer implements IObjectInitializer {
 
 	public void initialize(Object object) {
-		if(object instanceof AbstractListViewer) {
-			AbstractListViewer viewer = (AbstractListViewer)object;
+		if (object instanceof AbstractListViewer) {
+			AbstractListViewer viewer = (AbstractListViewer) object;
 			viewer.setLabelProvider(new DefaultViewerLabelProvider(viewer));
-		} else if(object instanceof AbstractTableViewer) {
-			AbstractTableViewer viewer = (AbstractTableViewer)object;
+		} else if (object instanceof AbstractTableViewer) {
+			AbstractTableViewer viewer = (AbstractTableViewer) object;
 			viewer.setLabelProvider(new DefaultViewerLabelProvider(viewer));
 		}
 	}

@@ -33,7 +33,7 @@ import org.eclipse.swt.widgets.Text;
 
 /**
  * Support the aggregation of data binding
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class MultiBinding extends DynamicBinding implements IDataBindingInfo {
@@ -54,7 +54,7 @@ public class MultiBinding extends DynamicBinding implements IDataBindingInfo {
 	 * <p>
 	 * Default
 	 * </p>
-	 * 
+	 *
 	 */
 	private UpdateSourceTrigger updateSourceTrigger = UpdateSourceTrigger.Default;
 
@@ -77,7 +77,7 @@ public class MultiBinding extends DynamicBinding implements IDataBindingInfo {
 	}
 
 	public IMultiValueConverter getConverter() {
-		if(valueConverter == null) {
+		if (valueConverter == null) {
 			valueConverter = new StringMultiValueConerter();
 		}
 		return valueConverter;
@@ -88,8 +88,8 @@ public class MultiBinding extends DynamicBinding implements IDataBindingInfo {
 	}
 
 	public boolean isSourcePropertyReadOnly() {
-		for(Binding binding : bindings) {
-			if(binding.isSourcePropertyReadOnly()) {
+		for (Binding binding : bindings) {
+			if (binding.isSourcePropertyReadOnly()) {
 				return true;
 			}
 		}
@@ -97,13 +97,13 @@ public class MultiBinding extends DynamicBinding implements IDataBindingInfo {
 	}
 
 	public Object getValue(Class<?> targetType) {
-		if(observableValue == null) {
+		if (observableValue == null) {
 			IObservableValue[] values = new IObservableValue[bindings.length];
-			for(int i = 0; i < values.length; i++) {
+			for (int i = 0; i < values.length; i++) {
 				bindings[i].getValue(targetType);
 				IObservable observable = bindings[i].getObservableSource();
-				if(observable instanceof IObservableValue) {
-					values[i] = (IObservableValue)observable;
+				if (observable instanceof IObservableValue) {
+					values[i] = (IObservableValue) observable;
 				} else {
 					LoggerManager.log("Binding expression has a problem with " + bindings[i].getPath());
 					return null;
@@ -116,28 +116,28 @@ public class MultiBinding extends DynamicBinding implements IDataBindingInfo {
 		IObservableValue observableWidget = getObservableWidget();
 
 		IDataProvider dataProvider = getDataProvider();
-		if(dataProvider != null) {
+		if (dataProvider != null) {
 			BindingGate bindingGate = getBindingGate();
-			if(bindingGate != null) {
+			if (bindingGate != null) {
 				Object target = getControl();
-				if(target instanceof Text && getType().equalsIgnoreCase("text")) {
-					if(isSourcePropertyReadOnly()) {
-						Text text = (Text)target;
+				if (target instanceof Text && getType().equalsIgnoreCase("text")) {
+					if (isSourcePropertyReadOnly()) {
+						Text text = (Text) target;
 						text.setEditable(false);
 					}
-				} else if(target instanceof Button && getType().equalsIgnoreCase("selection")) {
-					if(isSourcePropertyReadOnly()) {
-						Button button = (Button)target;
+				} else if (target instanceof Button && getType().equalsIgnoreCase("selection")) {
+					if (isSourcePropertyReadOnly()) {
+						Button button = (Button) target;
 						button.setEnabled(false);
 					}
-				} else if((target instanceof Combo || target instanceof CCombo) && getType().equalsIgnoreCase("text")) {
-					if(isSourcePropertyReadOnly()) {
-						Control control = (Control)target;
+				} else if ((target instanceof Combo || target instanceof CCombo) && getType().equalsIgnoreCase("text")) {
+					if (isSourcePropertyReadOnly()) {
+						Control control = (Control) target;
 						control.setEnabled(false);
 					}
-				} else if(target instanceof MenuItem && getType().equalsIgnoreCase("selection")) {
-					if(isSourcePropertyReadOnly()) {
-						MenuItem menuItem = (MenuItem)target;
+				} else if (target instanceof MenuItem && getType().equalsIgnoreCase("selection")) {
+					if (isSourcePropertyReadOnly()) {
+						MenuItem menuItem = (MenuItem) target;
 						menuItem.setEnabled(false);
 					}
 				}
@@ -145,14 +145,14 @@ public class MultiBinding extends DynamicBinding implements IDataBindingInfo {
 			bindingGate.bind(observableValue, observableWidget, this);
 		}
 
-		if(targetType == null || !targetType.isInstance(observableValue)) {
+		if (targetType == null || !targetType.isInstance(observableValue)) {
 			return observableValue.getValue();
 		}
 		return observableValue;
 	}
 
 	private BindingGate getBindingGate() {
-		if(this.bindingGate == null) {
+		if (this.bindingGate == null) {
 			IBindingContext dataBindingContext = XWT.getBindingContext(getControl());
 			this.bindingGate = new BindingGate(dataBindingContext);
 		}
@@ -161,7 +161,7 @@ public class MultiBinding extends DynamicBinding implements IDataBindingInfo {
 	}
 
 	public IObservableValue getObservableWidget() {
-		if(observableWidget == null) {
+		if (observableWidget == null) {
 			Object target = getControl();
 			Object host = getHost();
 			try {
@@ -176,12 +176,12 @@ public class MultiBinding extends DynamicBinding implements IDataBindingInfo {
 		Object control = getControl();
 		Object source = XWT.getDataContext(control);
 		Object localDataContext = UserData.getLocalDataContext(control);
-		if(localDataContext == this) {
+		if (localDataContext == this) {
 			return source;
 		}
 
-		if(source instanceof IDynamicBinding) {
-			return ((IDynamicBinding)source).createBoundSource();
+		if (source instanceof IDynamicBinding) {
+			return ((IDynamicBinding) source).createBoundSource();
 		}
 		return source;
 	}
@@ -189,18 +189,18 @@ public class MultiBinding extends DynamicBinding implements IDataBindingInfo {
 	public boolean isSourceControl() {
 		Object source = null;
 		Object dataContextHost = getDataContextHost();
-		if(dataContextHost != null) {
+		if (dataContextHost != null) {
 			source = UserData.getLocalDataContext(dataContextHost);
 		}
 
-		if(source instanceof IDynamicBinding) {
-			return ((IDynamicBinding)source).isSourceControl();
+		if (source instanceof IDynamicBinding) {
+			return ((IDynamicBinding) source).isSourceControl();
 		}
 		return false;
 	}
 
 	public BindingExpressionPath getTargettPropertyExpression() {
-		if(targetPropertySegments == null) {
+		if (targetPropertySegments == null) {
 			targetPropertySegments = new BindingExpressionPath(getType());
 		}
 		return targetPropertySegments;
@@ -215,7 +215,7 @@ public class MultiBinding extends DynamicBinding implements IDataBindingInfo {
 	}
 
 	public void reset() {
-		for(Binding binding : bindings) {
+		for (Binding binding : bindings) {
 			binding.reset();
 		}
 	}

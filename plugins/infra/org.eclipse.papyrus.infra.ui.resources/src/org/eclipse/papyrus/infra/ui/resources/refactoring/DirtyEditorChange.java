@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * A change that checks if an editor is actually editing the model and if it must be save.
- * 
+ *
  * @author tszadel
- * 
+ *
  */
 public class DirtyEditorChange extends Change {
 
@@ -39,13 +39,13 @@ public class DirtyEditorChange extends Change {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param resourceSet
-	 *        The resource set being changed.
+	 *            The resource set being changed.
 	 * @param oldFile
-	 *        The old file.
+	 *            The old file.
 	 * @param newFile
-	 *        The new file.
+	 *            The new file.
 	 */
 	public DirtyEditorChange(IFile oldFile, IFile newFile) {
 		this.oldFile = oldFile;
@@ -54,7 +54,7 @@ public class DirtyEditorChange extends Change {
 
 	/**
 	 * @see org.eclipse.ltk.core.refactoring.Change#getModifiedElement()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -65,7 +65,7 @@ public class DirtyEditorChange extends Change {
 
 	/**
 	 * @see org.eclipse.ltk.core.refactoring.Change#getName()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -76,7 +76,7 @@ public class DirtyEditorChange extends Change {
 
 	/**
 	 * @see org.eclipse.ltk.core.refactoring.Change#initializeValidationData(org.eclipse.core.runtime.IProgressMonitor)
-	 * 
+	 *
 	 * @param pm
 	 */
 
@@ -88,9 +88,9 @@ public class DirtyEditorChange extends Change {
 
 	private boolean hasDirtyEditors() {
 		IMultiDiagramEditor[] list = EditorUtils.getRelatedEditors(oldFile);
-		if(list != null && list.length > 0) {
-			for(IMultiDiagramEditor editor : list) {
-				if(editor.isDirty()) {
+		if (list != null && list.length > 0) {
+			for (IMultiDiagramEditor editor : list) {
+				if (editor.isDirty()) {
 					return true;
 				}
 			}
@@ -100,14 +100,14 @@ public class DirtyEditorChange extends Change {
 
 	/**
 	 * @see org.eclipse.ltk.core.refactoring.Change#isValid(org.eclipse.core.runtime.IProgressMonitor)
-	 * 
+	 *
 	 * @param pm
-	 *        The progress monitor.
+	 *            The progress monitor.
 	 * @return The status.
 	 * @throws CoreException
-	 *         Error.
+	 *             Error.
 	 * @throws OperationCanceledException
-	 *         Operation canceled.
+	 *             Operation canceled.
 	 */
 
 	@Override
@@ -117,8 +117,8 @@ public class DirtyEditorChange extends Change {
 		Display.getDefault().syncExec(new Runnable() {
 
 			public void run() {
-				if(hasDirtyEditors()) {
-					if(!MessageDialog.openConfirm(Display.getDefault().getActiveShell(), Messages.DirtyEditorChange_1, Messages.DirtyEditorChange_2)) {
+				if (hasDirtyEditors()) {
+					if (!MessageDialog.openConfirm(Display.getDefault().getActiveShell(), Messages.DirtyEditorChange_1, Messages.DirtyEditorChange_2)) {
 						status.addFatalError(Messages.DirtyEditorChange_3);
 					}
 				}
@@ -130,12 +130,12 @@ public class DirtyEditorChange extends Change {
 
 	/**
 	 * @see org.eclipse.ltk.core.refactoring.Change#perform(org.eclipse.core.runtime.IProgressMonitor)
-	 * 
+	 *
 	 * @param pm
-	 *        The progress monitor.
+	 *            The progress monitor.
 	 * @return The change used to undo.
 	 * @throws CoreException
-	 *         Error.
+	 *             Error.
 	 */
 
 	@Override

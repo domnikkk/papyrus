@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -51,20 +51,20 @@ public class StateMachineFigure extends CompartmentFigure {
 
 	/**
 	 * Create a new StateMachine figure with the given tag
-	 * 
+	 *
 	 * @param tagLabel
-	 *        a String that will be displayed at the top of the figure
+	 *            a String that will be displayed at the top of the figure
 	 */
 	public StateMachineFigure(String tagLabel) {
 		super(COMPARTMENT, tagLabel);
 		shadowborder = new RoundedShadowBorder(getForegroundColor());
 		setBorder(shadowborder);
-		((AutomaticCompartmentLayoutManager)getLayoutManager()).setAddExtraHeight(false);
+		((AutomaticCompartmentLayoutManager) getLayoutManager()).setAddExtraHeight(false);
 	}
 
 	/**
 	 * Get the statemachine compartment figure
-	 * 
+	 *
 	 * @return
 	 */
 	public RectangleFigure getStateMachineCompartmentFigure() {
@@ -73,12 +73,13 @@ public class StateMachineFigure extends CompartmentFigure {
 
 	@Override
 	protected void paintBackground(Graphics graphics, Rectangle rectangle) {
-		if(isUsingGradient()) {
+		if (isUsingGradient()) {
 			applyTransparency(graphics);
 			boolean isVertical = (getGradientStyle() == GradientStyle.VERTICAL) ? true : false;
-			if(isVertical && rectangle.height > ((3 * arcwidth) / 2)) {
+			if (isVertical && rectangle.height > ((3 * arcwidth) / 2)) {
 				Rectangle rect1 = new Rectangle(rectangle.getLocation(), new Dimension(rectangle.width, arcwidth));
-				Rectangle rect2 = new Rectangle(rectangle.x, rectangle.y + rectangle.height - arcwidth, rectangle.width, arcwidth);;
+				Rectangle rect2 = new Rectangle(rectangle.x, rectangle.y + rectangle.height - arcwidth, rectangle.width, arcwidth);
+				;
 				graphics.setBackgroundColor(ColorRegistry.getInstance().getColor(getGradientColor2()));
 				graphics.fillRoundRectangle(rect1, arcwidth, arcwidth);
 				graphics.setBackgroundColor(ColorRegistry.getInstance().getColor(getGradientColor1()));
@@ -89,7 +90,7 @@ public class StateMachineFigure extends CompartmentFigure {
 				graphics.setForegroundColor(ColorRegistry.getInstance().getColor(getGradientColor2()));
 				Rectangle rect = new Rectangle(rectangle.x, rectangle.y + arcwidth / 2, rectangle.width, rectangle.height - arcwidth);
 				graphics.fillGradient(rect, true);
-			} else if(!isVertical && rectangle.width > ((3 * arcwidth) / 2)) {
+			} else if (!isVertical && rectangle.width > ((3 * arcwidth) / 2)) {
 				Rectangle rect1 = new Rectangle(rectangle.getLocation(), new Dimension(arcwidth, rectangle.height));
 				Rectangle rect2 = new Rectangle(rectangle.x + rectangle.width - arcwidth, rectangle.y, arcwidth, rectangle.height);
 				graphics.setBackgroundColor(ColorRegistry.getInstance().getColor(getGradientColor2()));
@@ -124,7 +125,7 @@ public class StateMachineFigure extends CompartmentFigure {
 	@Override
 	public void setShadow(boolean shadow) {
 		super.setShadow(shadow);
-		if(!shadow) {
+		if (!shadow) {
 			RoundedBorder bord = new RoundedBorder(arcwidth, arcwidth);
 			this.setBorder(bord);
 		}

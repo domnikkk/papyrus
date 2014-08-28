@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin and CEA LIST
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,6 @@ package org.eclipse.papyrus.uml.diagram.activity.edit.commands;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -30,7 +29,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.viewpoints.policy.ModelAddData;
 import org.eclipse.papyrus.infra.viewpoints.policy.PolicyChecker;
 import org.eclipse.papyrus.uml.diagram.activity.providers.ElementInitializers;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.CallOperationAction;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -77,15 +75,16 @@ public class InputPinInCallOpActAsTargetCreateCommand extends EditElementCommand
 
 	/**
 	 * FIXME: replace with setElementToEdit()
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest)getRequest()).getContainer();
-		if(container instanceof View) {
-			container = ((View)container).getElement();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
+		if (container instanceof View) {
+			container = ((View) container).getElement();
 		}
-		if(container != null) {
+		if (container != null) {
 			return container;
 		}
 		return eObject;
@@ -94,9 +93,10 @@ public class InputPinInCallOpActAsTargetCreateCommand extends EditElementCommand
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		CallOperationAction container = (CallOperationAction)getElementToEdit();
-		if(container.getTarget() != null) {
+		CallOperationAction container = (CallOperationAction) getElementToEdit();
+		if (container.getTarget() != null) {
 			return false;
 		}
 		EObject target = getElementToEdit();
@@ -107,16 +107,18 @@ public class InputPinInCallOpActAsTargetCreateCommand extends EditElementCommand
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		InputPin newElement = UMLFactory.eINSTANCE.createInputPin();
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
-		if(data.isPermitted()) {
-			if(data.isPathDefined()) {
-				if(!data.execute(target, newElement))
+		if (data.isPermitted()) {
+			if (data.isPathDefined()) {
+				if (!data.execute(target, newElement)) {
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
+				}
 			} else {
-				CallOperationAction qualifiedTarget = (CallOperationAction)target;
+				CallOperationAction qualifiedTarget = (CallOperationAction) target;
 				qualifiedTarget.setTarget(newElement);
 			}
 		} else {
@@ -124,7 +126,7 @@ public class InputPinInCallOpActAsTargetCreateCommand extends EditElementCommand
 		}
 		ElementInitializers.getInstance().init_InputPin_3027(newElement);
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 
@@ -132,12 +134,12 @@ public class InputPinInCallOpActAsTargetCreateCommand extends EditElementCommand
 	 * @generated
 	 */
 	protected void doConfigure(InputPin newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest)getRequest()).getElementType();
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest)getRequest()).getClientContext());
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
 		ICommand configureCommand = elementType.getEditCommand(configureRequest);
-		if(configureCommand != null && configureCommand.canExecute()) {
+		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
 	}

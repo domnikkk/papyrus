@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - adapted for self-nesting behaviour
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
 
@@ -43,18 +43,18 @@ public class NestingTransactionalCommandStack extends TransactionalCommandStackI
 	}
 
 	protected NestingTransactionalCommandStack getTopMostCommandStack() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			return this;
 		}
 		return childCommandStack.getTopMostCommandStack();
 	}
 
 	protected void startNestedTransaction(Command command) {
-		if(childCommandStack != null) {
-			//Forwards to the current stack
+		if (childCommandStack != null) {
+			// Forwards to the current stack
 			childCommandStack.startNestedTransaction(command);
 		} else {
-			//Start a new nested transaction in a new nested Stack
+			// Start a new nested transaction in a new nested Stack
 			childCommandStack = new NestingTransactionalCommandStack(true);
 			childCommandStack.setEditingDomain(getDomain());
 
@@ -63,20 +63,20 @@ public class NestingTransactionalCommandStack extends TransactionalCommandStackI
 	}
 
 	public void commit() {
-		if(childCommandStack != null) {
+		if (childCommandStack != null) {
 			disposeLastCommandStack();
 		}
 	}
 
 	private boolean disposeLastCommandStack() {
-		if(childCommandStack == null) {
-			//I'm the last command stack
+		if (childCommandStack == null) {
+			// I'm the last command stack
 			dispose();
 			return true;
 		}
 
-		//Propagates
-		if(childCommandStack.disposeLastCommandStack()) {
+		// Propagates
+		if (childCommandStack.disposeLastCommandStack()) {
 			childCommandStack = null;
 		}
 
@@ -84,8 +84,8 @@ public class NestingTransactionalCommandStack extends TransactionalCommandStackI
 	}
 
 	public void rollback() {
-		if(childCommandStack != null) {
-			while(canUndo()) {
+		if (childCommandStack != null) {
+			while (canUndo()) {
 				undo();
 			}
 			disposeLastCommandStack();
@@ -94,8 +94,8 @@ public class NestingTransactionalCommandStack extends TransactionalCommandStackI
 
 	@Override
 	public void execute(Command command) {
-		if(childCommandStack == null) {
-			if(!executing) {
+		if (childCommandStack == null) {
+			if (!executing) {
 				executing = true;
 
 				try {
@@ -121,19 +121,19 @@ public class NestingTransactionalCommandStack extends TransactionalCommandStackI
 
 	@Override
 	protected void handleError(Exception exception) {
-		if(nested && (exception instanceof RollbackException)) {
-			//A nested transaction rolled back
-			RollbackException rbe = (RollbackException)exception;
-			if(rbe.getStatus().getSeverity() == IStatus.CANCEL) {
+		if (nested && (exception instanceof RollbackException)) {
+			// A nested transaction rolled back
+			RollbackException rbe = (RollbackException) exception;
+			if (rbe.getStatus().getSeverity() == IStatus.CANCEL) {
 				// Propagate
 				throw new OperationCanceledException();
 			}
 		}
 
-		if(exception instanceof OperationCanceledException) {
+		if (exception instanceof OperationCanceledException) {
 			rollback();
 			// Propagate
-			throw (OperationCanceledException)exception;
+			throw (OperationCanceledException) exception;
 		} else {
 			super.handleError(exception);
 		}
@@ -141,7 +141,7 @@ public class NestingTransactionalCommandStack extends TransactionalCommandStackI
 
 	@Override
 	public Command getMostRecentCommand() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			return super.getMostRecentCommand();
 		} else {
 			return childCommandStack.getMostRecentCommand();
@@ -150,7 +150,7 @@ public class NestingTransactionalCommandStack extends TransactionalCommandStackI
 
 	@Override
 	public Command getRedoCommand() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			return super.getRedoCommand();
 		} else {
 			return childCommandStack.getRedoCommand();
@@ -159,7 +159,7 @@ public class NestingTransactionalCommandStack extends TransactionalCommandStackI
 
 	@Override
 	public Command getUndoCommand() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			return super.getUndoCommand();
 		} else {
 			return childCommandStack.getUndoCommand();
@@ -168,7 +168,7 @@ public class NestingTransactionalCommandStack extends TransactionalCommandStackI
 
 	@Override
 	public void undo() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			super.undo();
 		} else {
 			childCommandStack.undo();
@@ -177,7 +177,7 @@ public class NestingTransactionalCommandStack extends TransactionalCommandStackI
 
 	@Override
 	public boolean canUndo() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			return super.canUndo();
 		} else {
 			return childCommandStack.canUndo();
@@ -186,7 +186,7 @@ public class NestingTransactionalCommandStack extends TransactionalCommandStackI
 
 	@Override
 	public boolean canRedo() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			return super.canRedo();
 		} else {
 			return childCommandStack.canRedo();
@@ -195,7 +195,7 @@ public class NestingTransactionalCommandStack extends TransactionalCommandStackI
 
 	@Override
 	public void redo() {
-		if(childCommandStack == null) {
+		if (childCommandStack == null) {
 			super.redo();
 		} else {
 			childCommandStack.redo();
@@ -210,7 +210,7 @@ public class NestingTransactionalCommandStack extends TransactionalCommandStackI
 		try {
 			basicExecute(command);
 
-			// new in EMF 2.4:  AbortExecutionException can cause the
+			// new in EMF 2.4: AbortExecutionException can cause the
 			// command not to be added to the undo stack
 			completed = mostRecentCommand == command;
 
@@ -218,27 +218,27 @@ public class NestingTransactionalCommandStack extends TransactionalCommandStackI
 			tx.commit();
 		} catch (OperationCanceledException e) {
 			// snuff the exception, because this is expected (user asked to
-			//    cancel the model change).  We will rollback, below
-			if(nested) {
+			// cancel the model change). We will rollback, below
+			if (nested) {
 				// Propagate to the nesting context
 				throw e;
 			}
 		} finally {
-			if((tx != null) && (tx.isActive())) {
+			if ((tx != null) && (tx.isActive())) {
 				// roll back (some exception, possibly being thrown now or
-				//    an operation cancel, has occurred)
+				// an operation cancel, has occurred)
 				rollback(tx);
 				handleRollback(command, null);
 			} else {
 				// the transaction has already incorporated the triggers
-				//    into its change description, so the recording command
-				//    doesn't need them again
-				if(!(command instanceof RecordingCommand) && completed) {
+				// into its change description, so the recording command
+				// doesn't need them again
+				if (!(command instanceof RecordingCommand) && completed) {
 					Command triggerCommand = tx.getTriggers();
 
-					if(triggerCommand != null) {
+					if (triggerCommand != null) {
 						// replace the executed command by a compound of the
-						//    original and the trigger commands
+						// original and the trigger commands
 						CompoundCommand compound = new ConditionalRedoCommand.Compound();
 						compound.append(mostRecentCommand);
 						compound.append(triggerCommand);

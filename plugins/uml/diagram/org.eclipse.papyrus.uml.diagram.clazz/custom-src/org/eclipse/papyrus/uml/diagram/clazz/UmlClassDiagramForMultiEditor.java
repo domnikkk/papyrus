@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2014 LIFL, CEA LIST, and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ import org.eclipse.ui.PartInitException;
 
 /**
  * An editor to be used in multitabs editor. This editor extends the original UML Diagram.
- * 
+ *
  */
 public class UmlClassDiagramForMultiEditor extends org.eclipse.papyrus.uml.diagram.clazz.part.UMLDiagramEditor {
 
@@ -51,14 +51,14 @@ public class UmlClassDiagramForMultiEditor extends org.eclipse.papyrus.uml.diagr
 	private Composite splitter;
 
 	private Image titleImage;
-	
+
 	/**
 	 * Constructor for SashSystem v2. Context and required objects are retrieved from the
 	 * ServiceRegistry.
-	 * 
+	 *
 	 * @throws BackboneException
 	 * @throws ServiceException
-	 * 
+	 *
 	 */
 	public UmlClassDiagramForMultiEditor(ServicesRegistry servicesRegistry, Diagram diagram) throws BackboneException, ServiceException {
 		super(servicesRegistry, diagram);
@@ -77,14 +77,14 @@ public class UmlClassDiagramForMultiEditor extends org.eclipse.papyrus.uml.diagr
 
 	@Override
 	public void dispose() {
-		if(titleImage != null) {
+		if (titleImage != null) {
 			titleImage.dispose();
 			titleImage = null;
 		}
-		
+
 		super.dispose();
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

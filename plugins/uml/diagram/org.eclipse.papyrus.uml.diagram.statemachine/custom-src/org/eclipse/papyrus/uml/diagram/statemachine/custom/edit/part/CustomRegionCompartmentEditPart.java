@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -37,6 +37,7 @@ public class CustomRegionCompartmentEditPart extends RegionCompartmentEditPart {
 		removeEditPolicy(EditPolicyRoles.POPUPBAR_ROLE);
 	}
 
+	@Override
 	public IFigure createFigure() {
 		CustomRegionCompartmentFigure result = new CustomRegionCompartmentFigure(getCompartmentName(), getMapMode());
 		return result;
@@ -44,22 +45,27 @@ public class CustomRegionCompartmentEditPart extends RegionCompartmentEditPart {
 
 	@Override
 	public DragTracker getDragTracker(Request req) {
-		if(!supportsDragSelection())
+		if (!supportsDragSelection()) {
 			return super.getDragTracker(req);
+		}
 
-		if(req instanceof SelectionRequest && ((SelectionRequest)req).getLastButtonPressed() == 3)
+		if (req instanceof SelectionRequest && ((SelectionRequest) req).getLastButtonPressed() == 3) {
 			return new DeselectAllTracker(this) {
 
+				@Override
 				protected boolean handleButtonDown(int button) {
 					getCurrentViewer().select(getParent());
 					return true;
 				}
 			};
+		}
 		return new RubberbandDragTracker() {
 
+			@Override
 			protected void handleFinished() {
-				if(getViewer().getSelectedEditParts().isEmpty())
+				if (getViewer().getSelectedEditParts().isEmpty()) {
 					getViewer().select(getParent());
+				}
 			}
 		};
 	}
@@ -69,10 +75,10 @@ public class CustomRegionCompartmentEditPart extends RegionCompartmentEditPart {
 		// TODO Auto-generated method stub
 		super.refreshVisuals();
 
-		View regionView = (View)((View)getModel()).eContainer();
-		Region region = (Region)regionView.getElement();
+		View regionView = (View) ((View) getModel()).eContainer();
+		Region region = (Region) regionView.getElement();
 
-		((ResizableCompartmentFigure)getFigure()).setToolTip(region.getName());
+		((ResizableCompartmentFigure) getFigure()).setToolTip(region.getName());
 
 	}
 }

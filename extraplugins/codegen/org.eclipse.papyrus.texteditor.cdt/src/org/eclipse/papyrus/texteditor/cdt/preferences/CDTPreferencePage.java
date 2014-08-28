@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,13 +23,12 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 /**
  * This class represents the EC3M preference page
  * <p>
- * This page is used to modify preferences only. They are stored in the preference store that belongs to the main plug-in class. That way, preferences
- * can be accessed directly via the preference store.
+ * This page is used to modify preferences only. They are stored in the preference store that belongs to the main plug-in class. That way, preferences can be accessed directly via the preference store.
  */
 
 public class CDTPreferencePage
-	extends FieldEditorPreferencePage
-	implements IWorkbenchPreferencePage {
+		extends FieldEditorPreferencePage
+		implements IWorkbenchPreferencePage {
 
 	public CDTPreferencePage() {
 		super(GRID);
@@ -43,23 +42,23 @@ public class CDTPreferencePage
 	 * of preferences. Each field editor knows how to save and
 	 * restore itself.
 	 */
+	@Override
 	public void createFieldEditors() {
 		addField(new BooleanFieldEditor(
-			CDTPreferenceConstants.P_SYNC_PERMANENTLY,
-			"&Synchronize permanently (otherwise only on demand)", //$NON-NLS-1$
-			getFieldEditorParent()));
+				CDTPreferenceConstants.P_SYNC_PERMANENTLY, "&Synchronize permanently (otherwise only on demand)", //$NON-NLS-1$
+				getFieldEditorParent()));
 
 		addField(new BooleanFieldEditor(
-			CDTPreferenceConstants.P_SYNC_ALL_FILES,
-			"Synchronize all classes (otherwise synchronize only classes with open editor)", //$NON-NLS-1$
-			getFieldEditorParent()));
+				CDTPreferenceConstants.P_SYNC_ALL_FILES, "Synchronize all classes (otherwise synchronize only classes with open editor)", //$NON-NLS-1$
+				getFieldEditorParent()));
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
+	@Override
 	public void init(IWorkbench workbench) {
 	}
 }

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2011-2012 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	 Gregoire Dupe (Mia-Software) - Bug 364325 - [Restructuring] The user must be able to navigate into a model using the Facet.
  *   Nicolas Bros (Mia-Software) - Bug 379395 - Navigate should replace elements
@@ -21,10 +21,10 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.view.INavigationView;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.view.INavigationViewFactory;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.view.INavigationView;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.view.INavigationViewFactory;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
 

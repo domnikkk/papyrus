@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -65,9 +65,9 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 
 /**
- * 
+ *
  * Papyrus specific search query
- * 
+ *
  */
 public class PapyrusOCLQuery extends AbstractPapyrusQuery {
 
@@ -105,7 +105,7 @@ public class PapyrusOCLQuery extends AbstractPapyrusQuery {
 
 	protected boolean evaluate(final String expression) {
 
-		if((expression == null) || (expression.trim().length() <= 0)) {
+		if ((expression == null) || (expression.trim().length() <= 0)) {
 			MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.PapyrusOCLQuery_0, Messages.PapyrusOCLQuery_1);
 			return false;
 		}
@@ -125,51 +125,51 @@ public class PapyrusOCLQuery extends AbstractPapyrusQuery {
 					public Object exec(XtextResource state) throws Exception {
 						assert state != null;
 						IProgressService progressService = PlatformUI.getWorkbench().getProgressService();
-						EvaluationRunnable runnable = new EvaluationRunnable((BaseResource)state, expression);
+						EvaluationRunnable runnable = new EvaluationRunnable((BaseResource) state, expression);
 						runnable.run(new NullProgressMonitor());
-						//						progressService.busyCursorWhile(runnable);
+						// progressService.busyCursorWhile(runnable);
 						return runnable.getValue();
 					}
 				});
 			} catch (Exception e) {
-				//				MessageDialog.openError(Display.getCurrent().getActiveShell(), "Error", e.getMessage());
+				// MessageDialog.openError(Display.getCurrent().getActiveShell(), "Error", e.getMessage());
 			}
-			if(value instanceof InvalidValueException) {
-				InvalidValueException exception = (InvalidValueException)value;
-				//				MessageDialog.openError(Display.getCurrent().getActiveShell(), "Error", exception.getMessage());
+			if (value instanceof InvalidValueException) {
+				InvalidValueException exception = (InvalidValueException) value;
+				// MessageDialog.openError(Display.getCurrent().getActiveShell(), "Error", exception.getMessage());
 				Throwable cause = exception.getCause();
-				if((cause != null) && (cause != exception)) {
-					//					MessageDialog.openError(Display.getCurrent().getActiveShell(), "Error", cause.getMessage());
+				if ((cause != null) && (cause != exception)) {
+					// MessageDialog.openError(Display.getCurrent().getActiveShell(), "Error", cause.getMessage());
 				}
-			} else if(value != null) {
+			} else if (value != null) {
 				CollectionValue collectionValue = ValuesUtil.isCollectionValue(value);
-				if(collectionValue != null) {
-					for(Object elementValue : collectionValue.iterable()) {
-						if(elementValue instanceof EObject) {
+				if (collectionValue != null) {
+					for (Object elementValue : collectionValue.iterable()) {
+						if (elementValue instanceof EObject) {
 							ModelMatch match = new ModelElementMatch(elementValue, scopeEntry);
 							fResults.add(match);
 						}
-						//						System.err.println("Found : " + ValuesUtil.stringValueOf(elementValue));
+						// System.err.println("Found : " + ValuesUtil.stringValueOf(elementValue));
 					}
 				} else {
-					if(value instanceof EObject) {
+					if (value instanceof EObject) {
 						ModelMatch match = new ModelElementMatch(value, scopeEntry);
 						fResults.add(match);
 					}
-					//					System.err.println("Found : " + ValuesUtil.stringValueOf(value));
+					// System.err.println("Found : " + ValuesUtil.stringValueOf(value));
 				}
 			} else {
-				//				MessageDialog.openError(Display.getCurrent().getActiveShell(), "Error", ValuesUtil.stringValueOf(value));
+				// MessageDialog.openError(Display.getCurrent().getActiveShell(), "Error", ValuesUtil.stringValueOf(value));
 
 			}
 
 		} catch (Exception e) {
 			result = false;
 
-			if(e.getLocalizedMessage() == null) {
-				//				MessageDialog.openError(Display.getCurrent().getActiveShell(), "Error", e.getClass().getName());
+			if (e.getLocalizedMessage() == null) {
+				// MessageDialog.openError(Display.getCurrent().getActiveShell(), "Error", e.getClass().getName());
 			} else {
-				//				MessageDialog.openError(Display.getCurrent().getActiveShell(), "Error", e.getLocalizedMessage());
+				// MessageDialog.openError(Display.getCurrent().getActiveShell(), "Error", e.getLocalizedMessage());
 			}
 		}
 
@@ -207,7 +207,7 @@ public class PapyrusOCLQuery extends AbstractPapyrusQuery {
 				value = new InvalidValueException(e, ConsoleMessages.Result_ParsingFailure);
 				return;
 			}
-			if(expressionInOCL != null) {
+			if (expressionInOCL != null) {
 				// monitor.worked(2);
 				monitor.subTask(ConsoleMessages.Progress_Extent);
 				PivotEnvironmentFactory envFactory = new PivotEnvironmentFactory(null, metaModelManager);
@@ -224,17 +224,17 @@ public class PapyrusOCLQuery extends AbstractPapyrusQuery {
 				try {
 					// metaModelManager.setMonitor(monitor);
 					CancelableEvaluationVisitor evaluationVisitor = new CancelableEvaluationVisitor(monitor, environment, evaluationEnvironment, modelManager2);
-					//					evaluationVisitor.setLogger(new DomainLogger() {
+					// evaluationVisitor.setLogger(new DomainLogger() {
 					//
-					//						public void append(final @NonNull String message) {
-					//							OCLConsolePage.this.getControl().getDisplay().asyncExec(new Runnable() {
+					// public void append(final @NonNull String message) {
+					// OCLConsolePage.this.getControl().getDisplay().asyncExec(new Runnable() {
 					//
-					//								public void run() {
-					//									OCLConsolePage.this.append(message, ColorManager.DEFAULT, false);
-					//								}
-					//							});
-					//						}
-					//					});
+					// public void run() {
+					// OCLConsolePage.this.append(message, ColorManager.DEFAULT, false);
+					// }
+					// });
+					// }
+					// });
 					value = evaluationVisitor.visitExpressionInOCL(expressionInOCL);
 				} catch (InvalidValueException e) {
 					value = e;
@@ -285,17 +285,17 @@ public class PapyrusOCLQuery extends AbstractPapyrusQuery {
 
 	/**
 	 * Evaluate if the value matches the pattern
-	 * 
+	 *
 	 * @param value
-	 *        the value to evaluate
+	 *            the value to evaluate
 	 * @param attribute
-	 *        the attribute has the value
+	 *            the attribute has the value
 	 * @param pattern
-	 *        the pattern that is searched
+	 *            the pattern that is searched
 	 * @param participant
-	 *        the element that contains the value
+	 *            the element that contains the value
 	 * @param scopeEntry
-	 *        the scopeEntry that contains the participant
+	 *            the scopeEntry that contains the participant
 	 */
 	protected void evaluateAndAddToResult(String value, Object attribute, Pattern pattern, Object participant, ScopeEntry scopeEntry) {
 
@@ -303,117 +303,117 @@ public class PapyrusOCLQuery extends AbstractPapyrusQuery {
 
 		Matcher m = pattern.matcher(value);
 
-		//		if(isRegularExpression) {
-		//			if(m.matches()) {
-		//				int start = m.start();
-		//				int end = m.end();
-		//				ModelMatch match = new AttributeMatch(start, end, participant, scopeEntry, attribute);
+		// if(isRegularExpression) {
+		// if(m.matches()) {
+		// int start = m.start();
+		// int end = m.end();
+		// ModelMatch match = new AttributeMatch(start, end, participant, scopeEntry, attribute);
 		//
-		//				fResults.add(match);
-		//			}
-		//		} else {
-		//			while(m.find()) {
-		//				int start = m.start();
-		//				int end = m.end();
-		//				AttributeMatch match = new AttributeMatch(start, end, participant, scopeEntry, attribute);
-		//				fResults.add(match);
-		//			}
-		//		}
+		// fResults.add(match);
+		// }
+		// } else {
+		// while(m.find()) {
+		// int start = m.start();
+		// int end = m.end();
+		// AttributeMatch match = new AttributeMatch(start, end, participant, scopeEntry, attribute);
+		// fResults.add(match);
+		// }
+		// }
 
 
 	}
 
 	/**
 	 * Try to find elements that match in the participants
-	 * 
+	 *
 	 * @param participants
 	 * @param scopeEntry
 	 */
 	protected void evaluate(Collection<EObject> participants, ScopeEntry scopeEntry) {
 
-		//		for(EObject participant : participants) {
+		// for(EObject participant : participants) {
 		//
-		//			String query = searchQueryText;
+		// String query = searchQueryText;
 		//			if(searchQueryText.equals("")) { //$NON-NLS-1$
 		//				query = ".*"; //$NON-NLS-1$
-		//			}
+		// }
 		//
-		//			Pattern pattern = PatternHelper.getInstance().createPattern(query, isCaseSensitive, isRegularExpression);
+		// Pattern pattern = PatternHelper.getInstance().createPattern(query, isCaseSensitive, isRegularExpression);
 		//
-		//			if(pattern != null) {
-		//				if(searchAllStringAttributes) {
+		// if(pattern != null) {
+		// if(searchAllStringAttributes) {
 		//
-		//					for(EAttribute attribute : participant.eClass().getEAllAttributes()) {
-		//						Object value = participant.eGet(attribute);
+		// for(EAttribute attribute : participant.eClass().getEAllAttributes()) {
+		// Object value = participant.eGet(attribute);
 		//
-		//						if(value instanceof String) {
-		//							String stringValue = (String)value;
-		//							evaluateAndAddToResult(stringValue, attribute, pattern, participant, scopeEntry);
-		//						}
-		//					}
+		// if(value instanceof String) {
+		// String stringValue = (String)value;
+		// evaluateAndAddToResult(stringValue, attribute, pattern, participant, scopeEntry);
+		// }
+		// }
 		//
-		//				} else {
-		//					if(participant instanceof NamedElement) {
-		//						String umlElementName = ((NamedElement)participant).getName();
+		// } else {
+		// if(participant instanceof NamedElement) {
+		// String umlElementName = ((NamedElement)participant).getName();
 		//						umlElementName = umlElementName != null ? umlElementName : ""; //$NON-NLS-1$
 		//
-		//						evaluateAndAddToResult(umlElementName, UMLPackage.eINSTANCE.getNamedElement_Name(), pattern, participant, scopeEntry);
-		//					}
-		//				}
-		//				if(searchStereotypeAttributes) {
-		//					if(participant instanceof Element) {
-		//						EList<Stereotype> stereotypes = ((Element)participant).getAppliedStereotypes();
-		//						for(Stereotype stereotype : stereotypes) {
-		//							for(Property stereotypeProperty : stereotype.getAllAttributes()) {
-		//								if(!stereotypeProperty.getName().startsWith("base_")) {
-		//									Object value = ((Element)participant).getValue(stereotype, stereotypeProperty.getName());
-		//									if(value != null) {
+		// evaluateAndAddToResult(umlElementName, UMLPackage.eINSTANCE.getNamedElement_Name(), pattern, participant, scopeEntry);
+		// }
+		// }
+		// if(searchStereotypeAttributes) {
+		// if(participant instanceof Element) {
+		// EList<Stereotype> stereotypes = ((Element)participant).getAppliedStereotypes();
+		// for(Stereotype stereotype : stereotypes) {
+		// for(Property stereotypeProperty : stereotype.getAllAttributes()) {
+		// if(!stereotypeProperty.getName().startsWith("base_")) {
+		// Object value = ((Element)participant).getValue(stereotype, stereotypeProperty.getName());
+		// if(value != null) {
 		//
-		//										if(value instanceof String) {
-		//											String stringValue = (String)value;
-		//											evaluateAndAddToResult(stringValue, stereotypeProperty, pattern, participant, scopeEntry);
-		//										}
-		//									}
-		//								}
-		//							}
+		// if(value instanceof String) {
+		// String stringValue = (String)value;
+		// evaluateAndAddToResult(stringValue, stereotypeProperty, pattern, participant, scopeEntry);
+		// }
+		// }
+		// }
+		// }
 		//
-		//						}
-		//					}
-		//				}
+		// }
+		// }
+		// }
 		//
-		//			}
-		//		}
+		// }
+		// }
 		//
-		//		//Now, find in diagram and others the elements we found
-		//		ViewerSearchService viewerSearcherService = new ViewerSearchService();
-		//		try {
-		//			viewerSearcherService.startService();
+		// //Now, find in diagram and others the elements we found
+		// ViewerSearchService viewerSearcherService = new ViewerSearchService();
+		// try {
+		// viewerSearcherService.startService();
 		//
-		//			//Get sources elements that matched
-		//			Set<Object> sources = new HashSet<Object>();
-		//			for(AbstractResultEntry match : fResults) {
-		//				if(match instanceof AttributeMatch) {
-		//					sources.add(((AttributeMatch)match).getTarget());
-		//				} else {
-		//					sources.add(match.getSource());
-		//				}
-		//			}
+		// //Get sources elements that matched
+		// Set<Object> sources = new HashSet<Object>();
+		// for(AbstractResultEntry match : fResults) {
+		// if(match instanceof AttributeMatch) {
+		// sources.add(((AttributeMatch)match).getTarget());
+		// } else {
+		// sources.add(match.getSource());
+		// }
+		// }
 		//
-		//			//Get viewer of these sources
-		//			Map<Object, Map<Object, Object>> viewersMappings = viewerSearcherService.getViewers(sources, scopeEntry.getModelSet());
+		// //Get viewer of these sources
+		// Map<Object, Map<Object, Object>> viewersMappings = viewerSearcherService.getViewers(sources, scopeEntry.getModelSet());
 		//
-		//			//Add viewers to results
-		//			for(Object containingModelSet : viewersMappings.keySet()) {
-		//				for(Object view : viewersMappings.get(containingModelSet).keySet()) {
-		//					Object semanticElement = viewersMappings.get(containingModelSet).get(view);
-		//					ViewerMatch viewMatch = new ViewerMatch(view, scopeEntry, semanticElement);
-		//					fResults.add(viewMatch);
-		//				}
-		//			}
+		// //Add viewers to results
+		// for(Object containingModelSet : viewersMappings.keySet()) {
+		// for(Object view : viewersMappings.get(containingModelSet).keySet()) {
+		// Object semanticElement = viewersMappings.get(containingModelSet).get(view);
+		// ViewerMatch viewMatch = new ViewerMatch(view, scopeEntry, semanticElement);
+		// fResults.add(viewMatch);
+		// }
+		// }
 		//
-		//		} catch (ServiceException e) {
-		//			Activator.log.error(Messages.PapyrusQuery_5 + scopeEntry.getModelSet(), e);
-		//		}
+		// } catch (ServiceException e) {
+		// Activator.log.error(Messages.PapyrusQuery_5 + scopeEntry.getModelSet(), e);
+		// }
 	}
 
 	public String getLabel() {
@@ -429,7 +429,7 @@ public class PapyrusOCLQuery extends AbstractPapyrusQuery {
 	}
 
 	public ISearchResult getSearchResult() {
-		for(AbstractResultEntry match : fResults) {
+		for (AbstractResultEntry match : fResults) {
 			results.addMatch(match);
 		}
 		return results;
@@ -437,11 +437,12 @@ public class PapyrusOCLQuery extends AbstractPapyrusQuery {
 
 	/**
 	 * Getter for the text query
-	 * 
+	 *
 	 * @return the the query text
 	 */
+	@Override
 	public String getSearchQueryText() {
-		if(queryEditorDocument.get().length() > 25) {
+		if (queryEditorDocument.get().length() > 25) {
 			return queryEditorDocument.get().subSequence(0, 25) + "..."; //$NON-NLS-1$
 		} else {
 			return queryEditorDocument.get();

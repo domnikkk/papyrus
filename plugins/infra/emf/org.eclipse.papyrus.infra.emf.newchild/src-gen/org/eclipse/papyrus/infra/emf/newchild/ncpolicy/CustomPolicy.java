@@ -15,7 +15,7 @@ package org.eclipse.papyrus.infra.emf.newchild.ncpolicy;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CustomPolicy#getClassName <em>Class Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CustomPolicy#getClassName <em>Class Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface CustomPolicy extends NewChildPolicy {
 	 * Returns the value of the '<em><b>Class Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Class Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Class Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Class Name</em>' attribute.
 	 * @see #setClassName(String)
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyPackage#getCustomPolicy_ClassName()
@@ -44,7 +44,9 @@ public interface CustomPolicy extends NewChildPolicy {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CustomPolicy#getClassName <em>Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Class Name</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Class Name</em>' attribute.
 	 * @see #getClassName()
 	 * @generated
 	 */

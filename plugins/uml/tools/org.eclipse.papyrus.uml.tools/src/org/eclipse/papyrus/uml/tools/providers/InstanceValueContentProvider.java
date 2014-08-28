@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,12 +23,12 @@ import org.eclipse.uml2.uml.Type;
 
 /**
  * A Content provider for the value of an InstanceValue
- * 
+ *
  * The valid instance specifications are filtered according to the type of the
  * InstanceValue
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  * @see InstanceValue#getType()
  * @see InstanceValueViewerFilter
  */
@@ -37,15 +37,15 @@ public class InstanceValueContentProvider extends ServiceEditFilteredContentProv
 	private InstanceValue source;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
-	 *        The InstanceValue being edited
+	 *            The InstanceValue being edited
 	 * @param feature
-	 *        The EStructuralFeature being edited
+	 *            The EStructuralFeature being edited
 	 * @param root
-	 *        The root ResourceSet for the Tree representing the model
+	 *            The root ResourceSet for the Tree representing the model
 	 */
 	public InstanceValueContentProvider(InstanceValue source, EStructuralFeature feature, ResourceSet root) {
 		super(source, feature, root);
@@ -53,15 +53,15 @@ public class InstanceValueContentProvider extends ServiceEditFilteredContentProv
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
-	 *        The InstanceValue being edited
+	 *            The InstanceValue being edited
 	 * @param feature
-	 *        The EStructuralFeature being edited
+	 *            The EStructuralFeature being edited
 	 * @param roots
-	 *        The root EObjects for the Tree representing the model
+	 *            The root EObjects for the Tree representing the model
 	 */
 	public InstanceValueContentProvider(InstanceValue source, EStructuralFeature feature, EObject[] roots) {
 		super(source, feature, roots);
@@ -70,28 +70,28 @@ public class InstanceValueContentProvider extends ServiceEditFilteredContentProv
 
 	@Override
 	public boolean isValidValue(Object element) {
-		if(!super.isValidValue(element)) {
+		if (!super.isValidValue(element)) {
 			return false;
 		}
 
-		if(source.getType() == null) {
+		if (source.getType() == null) {
 			return true;
 		}
 
 		Type type = source.getType();
 
-		InstanceSpecification instance = (InstanceSpecification)UMLUtil.resolveUMLElement(element);
+		InstanceSpecification instance = (InstanceSpecification) UMLUtil.resolveUMLElement(element);
 
-		if(type instanceof Enumeration) {
-			return ((Enumeration)type).getOwnedLiterals().contains(instance);
-		} else if(type instanceof Classifier) {
-			Classifier classifier = (Classifier)type;
-			if(instance.getClassifiers().contains(classifier)) {
+		if (type instanceof Enumeration) {
+			return ((Enumeration) type).getOwnedLiterals().contains(instance);
+		} else if (type instanceof Classifier) {
+			Classifier classifier = (Classifier) type;
+			if (instance.getClassifiers().contains(classifier)) {
 				return true;
 			}
 
-			for(Classifier implementedClassifier : instance.getClassifiers()) {
-				if(implementedClassifier.conformsTo(classifier)) {
+			for (Classifier implementedClassifier : instance.getClassifiers()) {
+				if (implementedClassifier.conformsTo(classifier)) {
 					return true;
 				}
 			}

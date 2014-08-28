@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,17 +24,17 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementMatcher;
 public class ComposedElementMatcher implements IElementMatcher {
 
 	private final List<IElementMatcher> matchers;
-	
+
 	public ComposedElementMatcher(List<IElementMatcher> matchers) {
 		this.matchers = matchers;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	public boolean matches(EObject eObject) {
-		for(IElementMatcher matcher : getMatchers()) {
-			if(!matcher.matches(eObject)) {
+		for (IElementMatcher matcher : getMatchers()) {
+			if (!matcher.matches(eObject)) {
 				return false;
 			}
 		}

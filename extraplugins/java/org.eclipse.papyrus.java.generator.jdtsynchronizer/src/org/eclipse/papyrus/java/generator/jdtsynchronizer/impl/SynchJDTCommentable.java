@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -37,16 +37,16 @@ import org.eclipse.text.edits.TextEdit;
 
 /**
  * Useful for class who have to generate Javadoc comment.
- * 
+ *
  * @author Deblock Nicolas & Manuel Giles
- * 
+ *
  */
 public abstract class SynchJDTCommentable implements JDTVisitor {
 
 
 	/**
 	 * search the element to insert the Javadoc in compilation unit
-	 * 
+	 *
 	 * @param cu
 	 * @param typeName
 	 * @return
@@ -55,7 +55,7 @@ public abstract class SynchJDTCommentable implements JDTVisitor {
 
 	/**
 	 * return javaDoc tag to add. Call in function createJavaDocFor()
-	 * 
+	 *
 	 * @return javaDoc tag to add in a List<String> with String = "@tag comment"
 	 */
 	protected abstract List<String> getJavadocTags();
@@ -63,7 +63,7 @@ public abstract class SynchJDTCommentable implements JDTVisitor {
 	/**
 	 * Reads a ICompilationUnit and creates the AST DOM for manipulating the
 	 * Java source file
-	 * 
+	 *
 	 * @param unit
 	 * @return
 	 */
@@ -72,22 +72,22 @@ public abstract class SynchJDTCommentable implements JDTVisitor {
 		parser.setKind(ASTParser.K_COMPILATION_UNIT);
 		parser.setSource(unit);
 		parser.setResolveBindings(true);
-		return (CompilationUnit)parser.createAST(null); // parse
+		return (CompilationUnit) parser.createAST(null); // parse
 	}
 
 
 	/**
 	 * Create a JavaDoc for a a objet who extends IJavaElement and IMethod
 	 * (IType or IMethod by example)
-	 * 
+	 *
 	 * @param ielement
-	 *        the element you want add javadoc
+	 *            the element you want add javadoc
 	 * @param icu
-	 *        the compilation unit of ielement
+	 *            the compilation unit of ielement
 	 * @param comment
-	 *        body of the comment
+	 *            body of the comment
 	 * @param auteur
-	 *        author of the compilation unit
+	 *            author of the compilation unit
 	 * @throws JavaModelException
 	 * @throws BadLocationException
 	 * @throws MalformedTreeException
@@ -100,12 +100,12 @@ public abstract class SynchJDTCommentable implements JDTVisitor {
 		// create document
 		Document document = new Document(icu.getBuffer().getContents());
 
-		// Creating the new JavaDoc node 
+		// Creating the new JavaDoc node
 		AST ast = cu.getAST();
 		Javadoc jc = ast.newJavadoc();
 
 		TagElement tag = ast.newTagElement();
-		if(comment != null) {
+		if (comment != null) {
 			TextElement te = ast.newTextElement();
 			tag.fragments().add(te);
 			te.setText(comment);
@@ -113,8 +113,8 @@ public abstract class SynchJDTCommentable implements JDTVisitor {
 		jc.tags().add(tag);
 
 		List<String> javadocTags = getJavadocTags();
-		if(javadocTags != null) {
-			for(String s : javadocTags) {
+		if (javadocTags != null) {
+			for (String s : javadocTags) {
 				tag = ast.newTagElement();
 				tag.setTagName(s);
 				jc.tags().add(tag);
@@ -122,7 +122,7 @@ public abstract class SynchJDTCommentable implements JDTVisitor {
 		}
 		// add javadoc to type
 		BodyDeclaration classType = searchElementToInsert(cu, ielement);
-		if(classType != null) {
+		if (classType != null) {
 			classType.setJavadoc(jc);
 		}
 
@@ -137,21 +137,23 @@ public abstract class SynchJDTCommentable implements JDTVisitor {
 
 	/**
 	 * search type in type declaration
-	 * 
+	 *
 	 * @param classType
-	 *        type declaration
+	 *            type declaration
 	 * @param typeName
-	 *        typeName type name research
+	 *            typeName type name research
 	 * @return
 	 */
 	protected TypeDeclaration searchType(TypeDeclaration classType, String typeName) {
-		if(classType.getName().toString().equals(typeName))
+		if (classType.getName().toString().equals(typeName)) {
 			return classType;
+		}
 
-		for(Object objct : classType.getTypes()) {
-			TypeDeclaration ct = (TypeDeclaration)objct;
-			if(ct.getName().toString().equals(typeName))
+		for (Object objct : classType.getTypes()) {
+			TypeDeclaration ct = (TypeDeclaration) objct;
+			if (ct.getName().toString().equals(typeName)) {
 				return ct;
+			}
 			searchType(ct, typeName);
 		}
 		return null;

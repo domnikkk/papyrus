@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.FinalClause;
 import org.eclipse.papyrus.uml.alf.alf.IfStatement;
@@ -94,7 +91,11 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.IF_STATEMENT__SEQUENTIAL_CLAUSSES, oldSequentialClausses, newSequentialClausses);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -109,15 +110,20 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
     if (newSequentialClausses != sequentialClausses)
     {
       NotificationChain msgs = null;
-      if (sequentialClausses != null)
-        msgs = ((InternalEObject)sequentialClausses).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.IF_STATEMENT__SEQUENTIAL_CLAUSSES, null, msgs);
-      if (newSequentialClausses != null)
-        msgs = ((InternalEObject)newSequentialClausses).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.IF_STATEMENT__SEQUENTIAL_CLAUSSES, null, msgs);
+      if (sequentialClausses != null) {
+		msgs = ((InternalEObject)sequentialClausses).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.IF_STATEMENT__SEQUENTIAL_CLAUSSES, null, msgs);
+	}
+      if (newSequentialClausses != null) {
+		msgs = ((InternalEObject)newSequentialClausses).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.IF_STATEMENT__SEQUENTIAL_CLAUSSES, null, msgs);
+	}
       msgs = basicSetSequentialClausses(newSequentialClausses, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.IF_STATEMENT__SEQUENTIAL_CLAUSSES, newSequentialClausses, newSequentialClausses));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.IF_STATEMENT__SEQUENTIAL_CLAUSSES, newSequentialClausses, newSequentialClausses));
+	}
   }
 
   /**
@@ -142,7 +148,11 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.IF_STATEMENT__FINAL_CLAUSE, oldFinalClause, newFinalClause);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -157,15 +167,20 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
     if (newFinalClause != finalClause)
     {
       NotificationChain msgs = null;
-      if (finalClause != null)
-        msgs = ((InternalEObject)finalClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.IF_STATEMENT__FINAL_CLAUSE, null, msgs);
-      if (newFinalClause != null)
-        msgs = ((InternalEObject)newFinalClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.IF_STATEMENT__FINAL_CLAUSE, null, msgs);
+      if (finalClause != null) {
+		msgs = ((InternalEObject)finalClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.IF_STATEMENT__FINAL_CLAUSE, null, msgs);
+	}
+      if (newFinalClause != null) {
+		msgs = ((InternalEObject)newFinalClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.IF_STATEMENT__FINAL_CLAUSE, null, msgs);
+	}
       msgs = basicSetFinalClause(newFinalClause, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.IF_STATEMENT__FINAL_CLAUSE, newFinalClause, newFinalClause));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.IF_STATEMENT__FINAL_CLAUSE, newFinalClause, newFinalClause));
+	}
   }
 
   /**

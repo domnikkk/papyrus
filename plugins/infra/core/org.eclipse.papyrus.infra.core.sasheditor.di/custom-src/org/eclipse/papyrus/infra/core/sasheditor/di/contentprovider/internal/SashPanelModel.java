@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ public class SashPanelModel implements IAbstractPanelModel, ISashPanelModel {
 	private SashPanel sashPanel;
 
 	/**
-	 * 
+	 *
 	 * @param sashPanel
 	 */
 	public SashPanelModel(SashPanel sashPanel, IPageModelFactory pageModelFactory) {
@@ -49,33 +49,37 @@ public class SashPanelModel implements IAbstractPanelModel, ISashPanelModel {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashPanelModel#getChildren()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public List<?> getChildren() {
 		return sashPanel.getChildren();
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashPanelModel#createChildSashModel(java.lang.Object)
-	 * 
+	 *
 	 * @param child
 	 * @return
 	 */
+	@Override
 	public IAbstractPanelModel createChildSashModel(Object child) {
-		if(child instanceof SashPanel)
-			return new SashPanelModel((SashPanel)child, pageModelFactory);
-		else if(child instanceof TabFolder)
-			return new TabFolderModel((TabFolder)child, pageModelFactory);
-		else
+		if (child instanceof SashPanel) {
+			return new SashPanelModel((SashPanel) child, pageModelFactory);
+		} else if (child instanceof TabFolder) {
+			return new TabFolderModel((TabFolder) child, pageModelFactory);
+		} else {
 			throw new IllegalArgumentException("Can't create IPanelModel from raw model '" + child + "'.");
+		}
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashPanelModel#getSashDirection()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public int getSashDirection() {
 		return sashPanel.getDirection();
 	}

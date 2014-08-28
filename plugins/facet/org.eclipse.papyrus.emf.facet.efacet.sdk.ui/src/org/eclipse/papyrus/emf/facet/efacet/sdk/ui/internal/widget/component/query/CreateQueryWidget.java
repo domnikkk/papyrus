@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -24,11 +24,11 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * This widget is the base of the query creation widget.</p>
- * 
+ *
  * The name, canBeCashed and canHavSideEffects are originally present and the
  * others properties needed by the query are returned by the concrete widget
  * returned by {@link AbstractQueryDialogFactory#createWidget()}.
- * 
+ *
  * @see AbstractQueryDialogFactory
  */
 public class CreateQueryWidget extends AbstractCommandWidget implements

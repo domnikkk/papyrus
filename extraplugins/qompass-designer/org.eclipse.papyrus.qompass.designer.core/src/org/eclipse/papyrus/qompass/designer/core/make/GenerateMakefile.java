@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Manel Fredj 
+ *  Manel Fredj
  *
  *****************************************************************************/
 
@@ -24,7 +24,7 @@ import org.eclipse.papyrus.qompass.designer.core.Activator;
 /*
  * TODO:
  *  - Currently not used (and unclear, if useful)
- * 
+ *
  * 	- Determination of root folder
  * 	- files within fileList have relative folder names? (if not assure)
  *  - supporting def file (not only for Accord)
@@ -33,9 +33,9 @@ import org.eclipse.papyrus.qompass.designer.core.Activator;
 
 /**
  * Generate a makefile based on found source files, i.e. .cpp files
- * 
+ *
  * @author manel
- * 
+ *
  */
 @Deprecated
 public class GenerateMakefile {
@@ -62,7 +62,7 @@ public class GenerateMakefile {
 
 		showFiles.getFilesRec(fileList, folderList);
 		nodeList = showFiles.findNodesDir(folderList);
-		for(String node : nodeList) {
+		for (String node : nodeList) {
 			nodeSources = showFiles.getNodeSources(fileList, node);
 			String nodePath = showFiles.getRootPath() + File.pathSeparator + node + File.pathSeparator + "Makefile"; //$NON-NLS-1$
 			createFileList(nodePath, nodeSources, node);
@@ -71,7 +71,7 @@ public class GenerateMakefile {
 
 	/**
 	 * Create a list of .cpp files
-	 * 
+	 *
 	 * @param fileName
 	 * @param cppFileList
 	 * @param NodeName
@@ -83,7 +83,7 @@ public class GenerateMakefile {
 
 			makefile.createNewFile();
 			// not avail in Java 1.5?
-			// makefile.setWritable(true); 
+			// makefile.setWritable(true);
 
 			FileOutputStream writer = new java.io.FileOutputStream(makefile);
 
@@ -93,12 +93,12 @@ public class GenerateMakefile {
 			// Calculate list of sources
 			writer.write("SRCS=\\\n".getBytes()); //$NON-NLS-1$
 
-			if(cppFileList != null && cppFileList.size() != 0) {
+			if (cppFileList != null && cppFileList.size() != 0) {
 
 				// Calculate list of .cpp files
-				for(int i = 0; i < cppFileList.size(); i++) {
+				for (int i = 0; i < cppFileList.size(); i++) {
 					writer.write(("\t" + cppFileList.get(i)).getBytes()); //$NON-NLS-1$
-					if(i < cppFileList.size() - 1) {
+					if (i < cppFileList.size() - 1) {
 						// add \ to all but last item
 						writer.write("\\".getBytes()); //$NON-NLS-1$
 					}

@@ -21,7 +21,7 @@ import org.eclipse.papyrus.diagramtemplate.SelectionRef;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.impl.SelectionRefImpl#getEReference <em>EReference</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.impl.SelectionRefImpl#getEReference <em>EReference</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,6 +32,7 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	 * The cached value of the '{@link #getEReference() <em>EReference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEReference()
 	 * @generated
 	 * @ordered
@@ -41,6 +42,7 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SelectionRefImpl() {
@@ -50,6 +52,7 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -60,15 +63,17 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EObject getEReference() {
 		if (eReference != null && eReference.eIsProxy()) {
-			InternalEObject oldEReference = (InternalEObject)eReference;
+			InternalEObject oldEReference = (InternalEObject) eReference;
 			eReference = eResolveProxy(oldEReference);
 			if (eReference != oldEReference) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DiagramTemplatePackage.SELECTION_REF__EREFERENCE, oldEReference, eReference));
+				}
 			}
 		}
 		return eReference;
@@ -77,6 +82,7 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EObject basicGetEReference() {
@@ -86,26 +92,31 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setEReference(EObject newEReference) {
 		EObject oldEReference = eReference;
 		eReference = newEReference;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiagramTemplatePackage.SELECTION_REF__EREFERENCE, oldEReference, eReference));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DiagramTemplatePackage.SELECTION_REF__EREFERENCE:
-				if (resolve) return getEReference();
-				return basicGetEReference();
+		case DiagramTemplatePackage.SELECTION_REF__EREFERENCE:
+			if (resolve) {
+				return getEReference();
+			}
+			return basicGetEReference();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,14 +124,15 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DiagramTemplatePackage.SELECTION_REF__EREFERENCE:
-				setEReference((EObject)newValue);
-				return;
+		case DiagramTemplatePackage.SELECTION_REF__EREFERENCE:
+			setEReference((EObject) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -128,14 +140,15 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DiagramTemplatePackage.SELECTION_REF__EREFERENCE:
-				setEReference((EObject)null);
-				return;
+		case DiagramTemplatePackage.SELECTION_REF__EREFERENCE:
+			setEReference((EObject) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,15 +156,16 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DiagramTemplatePackage.SELECTION_REF__EREFERENCE:
-				return eReference != null;
+		case DiagramTemplatePackage.SELECTION_REF__EREFERENCE:
+			return eReference != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //SelectionRefImpl
+} // SelectionRefImpl

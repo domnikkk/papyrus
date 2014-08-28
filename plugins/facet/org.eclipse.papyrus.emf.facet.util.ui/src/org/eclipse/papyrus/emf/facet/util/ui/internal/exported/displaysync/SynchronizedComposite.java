@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync;
 
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 
 /**
  * <ul>
@@ -29,7 +28,7 @@ public class SynchronizedComposite<C extends Composite> extends SynchronizedObje
 	public SynchronizedComposite(final C composite) {
 		super(composite, composite.getDisplay());
 	}
-	
+
 	@Deprecated
 	protected C getSynchronizedComposite() {
 		return getSynchronizedObject();

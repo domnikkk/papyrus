@@ -28,9 +28,9 @@ public class MokaUMLComboBox extends MokaComboBox<String, NamedElement> {
 	}
 
 	public void selectByURIFragment(String fragment) {
-		for(String id : this.population.keySet()) {
+		for (String id : this.population.keySet()) {
 			String uriFrag = this.population.get(id).eResource().getURIFragment(this.population.get(id));
-			if(uriFrag != null && uriFrag.equals(fragment)) {
+			if (uriFrag != null && uriFrag.equals(fragment)) {
 				this.selectById(id);
 				break;
 			}

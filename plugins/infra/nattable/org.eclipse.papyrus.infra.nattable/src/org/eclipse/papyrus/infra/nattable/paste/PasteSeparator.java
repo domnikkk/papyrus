@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		 Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -17,9 +17,9 @@ import org.eclipse.papyrus.infra.nattable.messages.Messages;
 
 
 /**
- * 
+ *
  * Enumeration for cell delimiters in CSV files
- * 
+ *
  */
 public enum PasteSeparator {
 	/**
@@ -57,19 +57,19 @@ public enum PasteSeparator {
 	private final String name;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param name
 	 */
 	private PasteSeparator(final String name) {
-		this(Character.MIN_VALUE, name);//MIN_VALUE is a value as other one!
+		this(Character.MIN_VALUE, name);// MIN_VALUE is a value as other one!
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param separator
 	 * @param name
 	 */
@@ -79,19 +79,19 @@ public enum PasteSeparator {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the separator to use
 	 */
 	public char getSeparator() {
-		if(this == OTHER) {
+		if (this == OTHER) {
 			throw new UnsupportedOperationException();
 		}
 		return separator;
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the name of the separator
 	 */

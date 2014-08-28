@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2007 Júlio Vilmar Gesser.
- * 
+ *
  * This file is part of Java 1.5 parser and Abstract Syntax Tree.
  *
  * Java 1.5 parser and Abstract Syntax Tree is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@ import java.util.List;
  * <p>
  * This class represents the package declaration. The package declaration is optional for the {@link CompilationUnit}.
  * </p>
- * 
+ *
  * The PackageDeclaration is constructed following the syntax:<br>
  * <code>
  * <table>
@@ -43,9 +43,9 @@ import java.util.List;
  *       ( {@link AnnotationExpr} )* "package" {@link NameExpr} ) ";"
  *   </td>
  * </tr>
- * </table> 
+ * </table>
  * </code>
- * 
+ *
  * @author Julio Vilmar Gesser
  */
 public final class PackageDeclaration extends Node {
@@ -76,7 +76,7 @@ public final class PackageDeclaration extends Node {
 	/**
 	 * Retrieves the list of annotations declared before the package
 	 * declaration. Return <code>null</code> if there are no annotations.
-	 * 
+	 *
 	 * @return list of annotations or <code>null</code>
 	 */
 	public List<AnnotationExpr> getAnnotations() {
@@ -85,7 +85,7 @@ public final class PackageDeclaration extends Node {
 
 	/**
 	 * Return the name of the package.
-	 * 
+	 *
 	 * @return the name of the package
 	 */
 	public NameExpr getName() {
@@ -93,9 +93,9 @@ public final class PackageDeclaration extends Node {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param annotations
-	 *        the annotations to set
+	 *            the annotations to set
 	 */
 	public void setAnnotations(List<AnnotationExpr> annotations) {
 		this.annotations = annotations;
@@ -103,9 +103,9 @@ public final class PackageDeclaration extends Node {
 
 	/**
 	 * Sets the name of this package declaration.
-	 * 
+	 *
 	 * @param name
-	 *        the name to set
+	 *            the name to set
 	 */
 	public void setName(NameExpr name) {
 		this.name = name;

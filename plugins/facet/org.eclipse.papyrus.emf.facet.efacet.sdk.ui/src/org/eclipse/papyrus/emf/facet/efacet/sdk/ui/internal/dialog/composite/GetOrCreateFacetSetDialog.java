@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -23,13 +23,12 @@ import org.eclipse.papyrus.emf.facet.util.ui.utils.PropertyElement2;
 
 /**
  * Provide a dialog where the user can select a facetSet in the existing
- * facetSets list or create a new one. This class use the specific widget
- * {@link GetOrCreateFiltredFacetSetWidget} and return the selected element with
+ * facetSets list or create a new one. This class use the specific widget {@link GetOrCreateFiltredFacetSetWidget} and return the selected element with
  * the method {@link #getFacetSetSelected()}.</p>
- * 
+ *
  * When the "ok" button is pressed, the parent property is set with the selected
  * element.
- * 
+ *
  * @see GetOrCreateFiltredFacetSetWidget
  */
 public class GetOrCreateFacetSetDialog extends
@@ -42,7 +41,7 @@ public class GetOrCreateFacetSetDialog extends
 
 	/**
 	 * The constructor.
-	 * 
+	 *
 	 * @param callback
 	 *            the callback.
 	 * @param properties
@@ -61,7 +60,7 @@ public class GetOrCreateFacetSetDialog extends
 
 	/**
 	 * Return the facetSet selected by the user.
-	 * 
+	 *
 	 * @return the facetSet selected.
 	 */
 	public FacetSet getFacetSet() {

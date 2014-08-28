@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ import org.eclipse.papyrus.infra.services.semantic.service.SemanticService;
 /**
  * Default implementation of the SemanticService. The result is composed of the root elements
  * of each resource of the current model set
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class SemanticServiceImpl implements SemanticService {
 
@@ -40,7 +40,7 @@ public class SemanticServiceImpl implements SemanticService {
 	}
 
 	public void startService() throws ServiceException {
-		//Nothing
+		// Nothing
 	}
 
 	public void disposeService() throws ServiceException {
@@ -55,7 +55,7 @@ public class SemanticServiceImpl implements SemanticService {
 			List<EObject> rootElements = new LinkedList<EObject>();
 
 			ModelSet modelSet = ServiceUtils.getInstance().getModelSet(registry);
-			for(Resource resource : modelSet.getResources()) {
+			for (Resource resource : modelSet.getResources()) {
 				rootElements.addAll(resource.getContents());
 			}
 
@@ -71,7 +71,7 @@ public class SemanticServiceImpl implements SemanticService {
 	 * TODO: Unsupported
 	 */
 	public IModel[] getSemanticIModels() {
-		return new IModel[0]; //Currently, it is not possible to retrieve all registered IModels for a ModelSet
+		return new IModel[0]; // Currently, it is not possible to retrieve all registered IModels for a ModelSet
 	}
 
 }

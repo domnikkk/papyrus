@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2011 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 		Nicolas Guyomar (Mia-Software) - Bug 349556 - EMF Facet Java Query wizard
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
@@ -13,11 +13,11 @@
  */
 package org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.wizard.page;
 
-import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.Messages;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.ui.wizards.NewTypeWizardPage;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.Messages;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -40,6 +40,7 @@ public class NewClassWizardPage extends NewTypeWizardPage {
 		initTypePage(javaElement);
 	}
 
+	@Override
 	public void createControl(final Composite parent) {
 		initializeDialogUnits(parent);
 

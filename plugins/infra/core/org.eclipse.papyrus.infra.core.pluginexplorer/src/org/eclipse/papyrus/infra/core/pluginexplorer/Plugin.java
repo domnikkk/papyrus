@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,22 +30,25 @@ import org.osgi.framework.Bundle;
 
 /**
  * Represents an Eclipse plugin that can be introspected
+ *
  * @author Laurent Wouters
  */
 public class Plugin {
-	
+
 	/**
 	 * Gets an array of all the currently loaded plugins
+	 *
 	 * @return The currently loaded plugins
 	 */
 	public static Plugin[] getLoadedPlugins() {
 		Bundle[] loaded = Activator.getDefault().getContext().getBundles();
 		Plugin[] plugins = new Plugin[loaded.length];
-		for (int i=0; i!=loaded.length; i++)
+		for (int i = 0; i != loaded.length; i++) {
 			plugins[i] = new Plugin(loaded[i]);
+		}
 		return plugins;
 	}
-	
+
 	/**
 	 * The Eclipse bundle represented by this object
 	 */
@@ -59,65 +62,86 @@ public class Plugin {
 	 * It may be a jar file, or a folder.
 	 */
 	private File physicalLocation;
-	
+
 	/**
 	 * Gets the corresponding Eclipse bundle
+	 *
 	 * @return The Eclipse bundle represented by this object
 	 */
-	public Bundle getBundle() { return bundle; }
-	
+	public Bundle getBundle() {
+		return bundle;
+	}
+
 	/**
 	 * Gets whether this plugin contains resources
+	 *
 	 * @return <code>true</code> if this plugin contains resources
 	 */
-	public boolean hasEntries() { return (!entries.isEmpty()); }
-	
+	public boolean hasEntries() {
+		return (!entries.isEmpty());
+	}
+
 	/**
 	 * Gets the top entries within this plugin
+	 *
 	 * @return The top entries
 	 */
-	public List<PluginEntry> entries() { return entries; }
-	
+	public List<PluginEntry> entries() {
+		return entries;
+	}
+
 	/**
 	 * Gets the qualified name of this plugin.
 	 * This is the symbolic name of the represented bundle
+	 *
 	 * @return The plugin's name
 	 */
-	public String getName() { return bundle.getSymbolicName(); }
-	
+	public String getName() {
+		return bundle.getSymbolicName();
+	}
+
 	/**
 	 * Initializes this plugin with the given Eclipse bundle
-	 * @param bundle The Eclipse bundle to represent
+	 *
+	 * @param bundle
+	 *            The Eclipse bundle to represent
 	 */
 	public Plugin(Bundle bundle) {
 		this.bundle = bundle;
 		this.entries = new ArrayList<PluginEntry>();
-		try { physicalLocation = FileLocator.getBundleFile(bundle); }
-		catch (IOException e) {
+		try {
+			physicalLocation = FileLocator.getBundleFile(bundle);
+		} catch (IOException e) {
 			Activator.getDefault().getPapyrusLog().error("Failed to locate the plugin " + bundle.getSymbolicName(), e);
 		}
-		if (physicalLocation == null)
+		if (physicalLocation == null) {
 			return;
-		if (physicalLocation.isDirectory())
+		}
+		if (physicalLocation.isDirectory()) {
 			buildFromDirectory();
-		else
+		} else {
 			buildFromJar();
+		}
 	}
-	
+
 	/**
 	 * Gets the absolute physical path to this plugin
+	 *
 	 * @return The absolute path to this plugin
 	 */
 	public String getPhysicalPath() {
-		if (physicalLocation == null)
+		if (physicalLocation == null) {
 			return null;
+		}
 		return physicalLocation.getAbsolutePath();
 	}
-	
+
 	/**
 	 * Gets the entry corresponding to the given path, or <code>null</code> if none is found.
 	 * Paths shall be of the form <code>part1/part2/part3</code>, etc.
-	 * @param path The path to lookup for an entry
+	 *
+	 * @param path
+	 *            The path to lookup for an entry
 	 * @return The corresponding entry or <code>null</code> if none is found
 	 */
 	public PluginEntry getEntry(String path) {
@@ -134,27 +158,31 @@ public class Plugin {
 				break;
 			}
 		}
-		if (current == null)
+		if (current == null) {
 			return null;
-		for (int i=1; i!=parts.length; i++) {
+		}
+		for (int i = 1; i != parts.length; i++) {
 			current = current.getChild(parts[i]);
-			if (current == null)
+			if (current == null) {
 				return null;
+			}
 		}
 		return current;
 	}
-	
+
 	/**
 	 * Builds this plugin from a physical directory
 	 */
 	private void buildFromDirectory() {
 		File[] content = physicalLocation.listFiles();
-		if (content == null || content.length == 0)
+		if (content == null || content.length == 0) {
 			return;
-		for (int i=0; i!=content.length; i++)
+		}
+		for (int i = 0; i != content.length; i++) {
 			entries.add(new PhysicalFile(this, content[i]));
+		}
 	}
-	
+
 	/**
 	 * Builds this plugin from a Jar file
 	 */
@@ -163,8 +191,9 @@ public class Plugin {
 			JarFile jar = new JarFile(physicalLocation);
 			List<JarEntry> content = new ArrayList<JarEntry>();
 			Enumeration<JarEntry> e = jar.entries();
-			while (e.hasMoreElements())
+			while (e.hasMoreElements()) {
 				content.add(e.nextElement());
+			}
 			Collections.sort(content, new Comparator<JarEntry>() {
 				public int compare(JarEntry arg0, JarEntry arg1) {
 					return arg0.getName().compareTo(arg1.getName());
@@ -177,20 +206,25 @@ public class Plugin {
 				entries.add(child);
 			}
 			jar.close();
+		} catch (IOException e) {
 		}
-		catch (IOException e) { }
 	}
-	
+
 	/**
 	 * Builds the given embedded file with the given data
-	 * @param parent The parent embedded directory
-	 * @param content The sorted list of all the jar entries
-	 * @param index The current index in the list of jar entries
+	 *
+	 * @param parent
+	 *            The parent embedded directory
+	 * @param content
+	 *            The sorted list of all the jar entries
+	 * @param index
+	 *            The current index in the list of jar entries
 	 * @return The final index within the jar entries
 	 */
 	private int buildChildren(EmbeddedFile parent, List<JarEntry> content, int index) {
-		if (index >= content.size())
+		if (index >= content.size()) {
 			return index;
+		}
 		int next = index;
 		while (next < content.size() && content.get(next).getName().startsWith(parent.getEntry())) {
 			EmbeddedFile child = new EmbeddedFile(this, content.get(next).getName(), parent.getEntry());
@@ -199,28 +233,29 @@ public class Plugin {
 		}
 		return next;
 	}
-	
+
 	InputStream getStreamInJar(String localPath) {
 		try {
 			final JarFile jar = new JarFile(physicalLocation);
 			final JarEntry entry = jar.getJarEntry(localPath);
 			return new InputStream() {
-				private InputStream  inner = jar.getInputStream(entry);
+				private InputStream inner = jar.getInputStream(entry);
+
 				@Override
 				public int read() throws IOException {
 					return inner.read();
 				}
+
 				@Override
 				public void close() {
 					try {
 						inner.close();
 						jar.close();
+					} catch (IOException e) {
 					}
-					catch (IOException e) { }
 				}
 			};
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			return null;
 		}
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,20 +28,21 @@ import org.eclipse.papyrus.uml.commands.command.PasteElementCommand;
 
 /**
  * Handler for the Paste Action
+ *
  * @deprecated use org.eclipse.papyrus.views.modelexplorer.handler.PasteHandler
  */
-@Deprecated 
+@Deprecated
 public class PasteHandler extends AbstractEMFCommandHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.AbstractEMFCommandHandler.handler.AbstractCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected Command getCommand(ServicesRegistry registry) {
-		if(registry == null) {
+		if (registry == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -54,22 +55,22 @@ public class PasteHandler extends AbstractEMFCommandHandler {
 		}
 
 		List<EObject> selection = getSelectedElements();
-		if(editingDomain != null && selection.size() == 1) {
-//			return UmlPasteFromClipboardCommand.create(getEditingDomain(), owner, null);
-			//select UML Element and copy
+		if (editingDomain != null && selection.size() == 1) {
+			// return UmlPasteFromClipboardCommand.create(getEditingDomain(), owner, null);
+			// select UML Element and copy
 			return new PasteElementCommand(editingDomain, selection.get(0));
 		}
 		return UnexecutableCommand.INSTANCE;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean isEnabled() {
 		boolean enabled = super.isEnabled();
-		if(enabled) {
+		if (enabled) {
 			List<EObject> selectedElements = getSelectedElements();
 			EObject selection = selectedElements.get(0);
 			enabled = !EMFHelper.isReadOnly(selection);

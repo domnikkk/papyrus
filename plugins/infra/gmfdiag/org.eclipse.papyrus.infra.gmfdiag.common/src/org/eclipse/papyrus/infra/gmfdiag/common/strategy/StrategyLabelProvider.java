@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,31 +24,31 @@ import org.eclipse.swt.widgets.Display;
 public class StrategyLabelProvider extends ColumnLabelProvider {
 
 	IStrategyManager instance;
-	
+
 	public StrategyLabelProvider(IStrategyManager abstractStrategyManager) {
 		instance = abstractStrategyManager;
 	}
-	
+
 	@Override
 	public String getText(Object element) {
-		if(element instanceof IStrategy) {
-			return ((IStrategy)element).getLabel();
+		if (element instanceof IStrategy) {
+			return ((IStrategy) element).getLabel();
 		}
 		return super.getText(element);
 	}
 
 	@Override
 	public Image getImage(Object element) {
-		if(element instanceof IStrategy) {
-			return ((IStrategy)element).getImage();
+		if (element instanceof IStrategy) {
+			return ((IStrategy) element).getImage();
 		}
 		return super.getImage(element);
 	}
 
 	@Override
 	public String getToolTipText(Object element) {
-		if(element instanceof IStrategy) {
-			return ((IStrategy)element).getDescription();
+		if (element instanceof IStrategy) {
+			return ((IStrategy) element).getDescription();
 		}
 		return null;
 	}
@@ -58,14 +58,14 @@ public class StrategyLabelProvider extends ColumnLabelProvider {
 	public void update(ViewerCell cell) {
 		Object element = cell.getElement();
 
-		if(element instanceof IStrategy) {
-			IStrategy strategy = (IStrategy)element;
-			if(cell.getColumnIndex() == StrategyEditor.LABEL_COLUMN) {
+		if (element instanceof IStrategy) {
+			IStrategy strategy = (IStrategy) element;
+			if (cell.getColumnIndex() == StrategyEditor.LABEL_COLUMN) {
 				cell.setImage(strategy.getImage());
 
 				int foreground;
 
-				if(instance.isActive(strategy)) {
+				if (instance.isActive(strategy)) {
 					foreground = SWT.COLOR_BLACK;
 				} else {
 					foreground = SWT.COLOR_GRAY;

@@ -30,12 +30,12 @@ public class CallBehaviorActionActivation extends CallActionActivation {
 		// Otherwise, use a null context.
 		// [Note that this requires the behavior context to be compatible with
 		// the type of the current contect object.]
-		Behavior behavior = ((CallBehaviorAction)(this.node)).getBehavior();
+		Behavior behavior = ((CallBehaviorAction) (this.node)).getBehavior();
 		Object_ context;
-		if(behavior instanceof OpaqueBehavior) {
-			context = this.getActivityExecution(); //Enable to find out the execution context of an OpaqueBehavior
+		if (behavior instanceof OpaqueBehavior) {
+			context = this.getActivityExecution(); // Enable to find out the execution context of an OpaqueBehavior
 		} else {
-			if(behavior.getContext() == null) {
+			if (behavior.getContext() == null) {
 				context = null;
 			} else {
 				context = this.getExecutionContext();

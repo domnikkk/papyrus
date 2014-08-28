@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,7 +62,7 @@ import org.eclipse.swt.widgets.Tree;
 
 /**
  * Dialog to define a local theme from a selected CSS style.
- * 
+ *
  * @author gpascual
  */
 public class CSSThemeCreationDialog extends Dialog {
@@ -86,10 +86,10 @@ public class CSSThemeCreationDialog extends Dialog {
 	private static final String BROWSE_BUTTON_LABEL = "Browse...";
 
 	/** List of valid extensions for an icon. */
-	private static List<String> filterExtensions = Arrays.asList(new String[]{ "*.gif;*.png;*.jpeg", "*.gif", "*.png", "*.jpeg" });
+	private static List<String> filterExtensions = Arrays.asList(new String[] { "*.gif;*.png;*.jpeg", "*.gif", "*.png", "*.jpeg" });
 
 	/** List of name associated to valid extensions. */
-	private List<String> filterNames = Arrays.asList(new String[]{ "All images", "GIF Icon", "PNG Icon", "JPEG Icon" });
+	private List<String> filterNames = Arrays.asList(new String[] { "All images", "GIF Icon", "PNG Icon", "JPEG Icon" });
 
 	/** Text for dialog title. */
 	private static final String DIALOG_TITLE = "CSS Theme Definition";
@@ -122,9 +122,9 @@ public class CSSThemeCreationDialog extends Dialog {
 	 * Default constructor.
 	 *
 	 * @param parentShell
-	 *        shell of parent widget
+	 *            shell of parent widget
 	 * @param theme
-	 *        theme to edit
+	 *            theme to edit
 	 */
 	public CSSThemeCreationDialog(Shell parentShell, Theme theme) {
 		super(parentShell);
@@ -138,14 +138,14 @@ public class CSSThemeCreationDialog extends Dialog {
 	 * Gets the filter labels.
 	 *
 	 * @param filterNames
-	 *        the filter names
+	 *            the filter names
 	 * @param filterExtensions
-	 *        the filter extensions
+	 *            the filter extensions
 	 */
 	private void initialiseFilterLabels(List<String> filterNames, List<String> filterExtensions) {
 		int size = Math.min(filterNames.size(), filterExtensions.size());
 		String[] filters = new String[size];
-		for(int i = 0; i < size; i++) {
+		for (int i = 0; i < size; i++) {
 			filters[i] = filterNames.get(i) + " (" + filterExtensions.get(i) + ")";
 		}
 
@@ -175,7 +175,7 @@ public class CSSThemeCreationDialog extends Dialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.window.Window#configureShell(org.eclipse.swt.widgets.Shell)
 	 *
 	 * @param newShell
@@ -200,7 +200,7 @@ public class CSSThemeCreationDialog extends Dialog {
 	protected Control createDialogArea(Composite parent) {
 
 		// Create main container to dialog
-		Composite mainComposite = (Composite)super.createDialogArea(parent);
+		Composite mainComposite = (Composite) super.createDialogArea(parent);
 		mainComposite.setLayout(new GridLayout(2, false));
 
 		// Add different parts to dialog
@@ -208,7 +208,7 @@ public class CSSThemeCreationDialog extends Dialog {
 		createThemeIconPart(mainComposite);
 		createStyleSheetsTreeComposite(mainComposite);
 
-		// Initialise tree viewer 
+		// Initialise tree viewer
 		initialiseTree();
 
 		return mainComposite;
@@ -216,9 +216,9 @@ public class CSSThemeCreationDialog extends Dialog {
 
 	/**
 	 * Create all components for theme label.
-	 * 
+	 *
 	 * @param parent
-	 *        Composite where components will be added
+	 *            Composite where components will be added
 	 */
 	private void createThemeLabelPart(Composite parent) {
 
@@ -243,13 +243,13 @@ public class CSSThemeCreationDialog extends Dialog {
 
 	/**
 	 * Create all components for theme icon.
-	 * 
+	 *
 	 * @param parent
-	 *        Composite where components will be added
+	 *            Composite where components will be added
 	 */
 	private void createThemeIconPart(Composite parent) {
 
-		//Label for theme icon field
+		// Label for theme icon field
 		Label themeIconLabel = new Label(parent, SWT.NONE);
 		themeIconLabel.setText(ICON_PATH_LABEL);
 
@@ -278,11 +278,11 @@ public class CSSThemeCreationDialog extends Dialog {
 
 	/**
 	 * Create menu item.
-	 * 
+	 *
 	 * @param parentMenu
-	 *        Menu where it will be added
+	 *            Menu where it will be added
 	 * @param label
-	 *        Label of menu item
+	 *            Label of menu item
 	 * @param menuId
 	 */
 	private void createMenuItem(Menu parentMenu, String label, int menuId) {
@@ -294,7 +294,7 @@ public class CSSThemeCreationDialog extends Dialog {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				menuSelected(((Integer)e.widget.getData()).intValue());
+				menuSelected(((Integer) e.widget.getData()).intValue());
 			}
 		});
 
@@ -303,12 +303,12 @@ public class CSSThemeCreationDialog extends Dialog {
 
 	/**
 	 * Action to run when a menu is slected.
-	 * 
+	 *
 	 * @param menuId
-	 *        ID of selected menu
+	 *            ID of selected menu
 	 */
 	private void menuSelected(int menuId) {
-		switch(menuId) {
+		switch (menuId) {
 		case WORKSPACE_MENU_ID:
 			browseWorkspace();
 			break;
@@ -316,7 +316,7 @@ public class CSSThemeCreationDialog extends Dialog {
 			browseFileSytem();
 			break;
 		default:
-			// Nothing to do 
+			// Nothing to do
 			break;
 		}
 	}
@@ -335,7 +335,7 @@ public class CSSThemeCreationDialog extends Dialog {
 		dialog.setFilterNames(filterNames.toArray(new String[filterNames.size()]));
 
 		String result = dialog.open();
-		if(result == null) { //Cancel
+		if (result == null) { // Cancel
 			return;
 		}
 		setResult(result);
@@ -363,12 +363,12 @@ public class CSSThemeCreationDialog extends Dialog {
 		WorkspaceContentProvider contentProvider = new WorkspaceContentProvider();
 
 
-		if(!(filterExtensions.isEmpty() || filterNames.isEmpty())) {
-			//The filters have been defined 
-			contentProvider.setExtensionFilters(new LinkedHashMap<String, String>()); //Reset the default filters
+		if (!(filterExtensions.isEmpty() || filterNames.isEmpty())) {
+			// The filters have been defined
+			contentProvider.setExtensionFilters(new LinkedHashMap<String, String>()); // Reset the default filters
 
-			//Use our own filters
-			for(int i = 0; i < Math.min(filterNames.size(), filterExtensions.size()); i++) {
+			// Use our own filters
+			for (int i = 0; i < Math.min(filterNames.size(), filterExtensions.size()); i++) {
 				contentProvider.addExtensionFilter(filterExtensions.get(i), filterNames.get(i));
 			}
 		}
@@ -377,17 +377,17 @@ public class CSSThemeCreationDialog extends Dialog {
 		dialog.setLabelProvider(labelProvider);
 
 
-		if(currentFile != null && currentFile.exists()) {
-			dialog.setInitialSelections(new IFile[]{ currentFile });
+		if (currentFile != null && currentFile.exists()) {
+			dialog.setInitialSelections(new IFile[] { currentFile });
 		}
 
 		int code = dialog.open();
-		if(code == Window.OK) {
+		if (code == Window.OK) {
 			Object[] result = dialog.getResult();
-			if(result.length > 0) {
+			if (result.length > 0) {
 				Object file = result[0];
-				if(file instanceof IFile) {
-					setResult((IFile)file);
+				if (file instanceof IFile) {
+					setResult((IFile) file);
 				}
 			}
 		}
@@ -401,7 +401,7 @@ public class CSSThemeCreationDialog extends Dialog {
 	@Override
 	protected void buttonPressed(int buttonId) {
 
-		switch(buttonId) {
+		switch (buttonId) {
 		case BROWSE_BUTTON_ID:
 			browseMenu.setVisible(true);
 			break;
@@ -418,7 +418,7 @@ public class CSSThemeCreationDialog extends Dialog {
 	 * Sets the result.
 	 *
 	 * @param file
-	 *        the new result
+	 *            the new result
 	 */
 	protected void setResult(IFile file) {
 		iconPathField.setText(file.getFullPath().toString());
@@ -428,7 +428,7 @@ public class CSSThemeCreationDialog extends Dialog {
 	 * Sets the result.
 	 *
 	 * @param file
-	 *        the new result
+	 *            the new result
 	 */
 	protected void setResult(File file) {
 		iconPathField.setText(file.getAbsolutePath());
@@ -439,7 +439,7 @@ public class CSSThemeCreationDialog extends Dialog {
 	 * Sets the result.
 	 *
 	 * @param path
-	 *        the new result
+	 *            the new result
 	 */
 	protected void setResult(String path) {
 		iconPathField.setText(path);
@@ -450,7 +450,7 @@ public class CSSThemeCreationDialog extends Dialog {
 	 * Gets the file.
 	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @return the i file
 	 */
 	protected IFile getIFile(String path) {
@@ -461,7 +461,7 @@ public class CSSThemeCreationDialog extends Dialog {
 	 * Gets the file.
 	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @return the file
 	 */
 	protected File getFile(String path) {
@@ -472,9 +472,9 @@ public class CSSThemeCreationDialog extends Dialog {
 
 	/**
 	 * Create composite containing style sheets viewer.
-	 * 
+	 *
 	 * @param parent
-	 *        Composite where components will be added
+	 *            Composite where components will be added
 	 */
 	private void createStyleSheetsTreeComposite(Composite parent) {
 
@@ -497,7 +497,7 @@ public class CSSThemeCreationDialog extends Dialog {
 
 					public Object[] getElements() {
 						List<Object> result = new LinkedList<Object>();
-						if(editedEObject instanceof Theme) {
+						if (editedEObject instanceof Theme) {
 							result.addAll(theme.getStylesheets());
 						}
 						return result.toArray();
@@ -514,7 +514,7 @@ public class CSSThemeCreationDialog extends Dialog {
 
 	/**
 	 * Label provider for style sheets tree viwer.
-	 * 
+	 *
 	 * @author gpascual
 	 *
 	 */
@@ -547,8 +547,8 @@ public class CSSThemeCreationDialog extends Dialog {
 		public String getText(Object element) {
 			String text = element.toString();
 
-			if(element instanceof StyleSheetReference) {
-				text = ((StyleSheetReference)element).getPath();
+			if (element instanceof StyleSheetReference) {
+				text = ((StyleSheetReference) element).getPath();
 			}
 
 			return text;

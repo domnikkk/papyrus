@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,9 +33,9 @@ public class PapyrusNattableControlModeParticipant implements IControlCommandPar
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.controlmode.participants.IControlModeParticipant#getPriority()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -44,16 +44,16 @@ public class PapyrusNattableControlModeParticipant implements IControlCommandPar
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.controlmode.participants.IControlCommandParticipant#provideControlCommand(org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	public boolean provideControlCommand(ControlModeRequest request) {
 		final EObject objectToControl = request.getTargetObject();
-		if(objectToControl == null) {
+		if (objectToControl == null) {
 			return false;
 		}
 		final Iterable<EObject> iter = TableControlModeHelper.createDescendantTablesIterable(objectToControl);
@@ -61,9 +61,9 @@ public class PapyrusNattableControlModeParticipant implements IControlCommandPar
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.controlmode.participants.IUncontrolCommandParticipant#provideUnControlCommand(org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -74,9 +74,9 @@ public class PapyrusNattableControlModeParticipant implements IControlCommandPar
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.controlmode.participants.IUncontrolCommandParticipant#getPreUncontrolCommand(org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -86,36 +86,36 @@ public class PapyrusNattableControlModeParticipant implements IControlCommandPar
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.controlmode.participants.IControlCommandParticipant#getPreControlCommand(org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	public ICommand getPreControlCommand(ControlModeRequest request) {
-		//don't create the notation resource since it is already handled 
+		// don't create the notation resource since it is already handled
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.controlmode.participants.IUncontrolCommandParticipant#getPostUncontrolCommand(org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	public ICommand getPostUncontrolCommand(ControlModeRequest request) {
-		//don't remove the notation resource
+		// don't remove the notation resource
 		return null;
 	}
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.controlmode.participants.IControlCommandParticipant#getPostControlCommand(org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */

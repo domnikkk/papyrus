@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,7 +44,7 @@ import org.eclipse.papyrus.moka.engine.MokaExecutionEngineJob;
  * a MokaJobChangeListener is added to the given Job, so that when the Job terminates
  * (which means that Job.done() is called), the MokaProcess is notified of the termination
  * and terminates itself (i.e., MokaJobChangeListener.done() calls MokaProcess.terminated()).
- * 
+ *
  */
 public class MokaProcess extends PlatformObject implements IProcess {
 
@@ -81,20 +81,20 @@ public class MokaProcess extends PlatformObject implements IProcess {
 
 	/**
 	 * Constructs a MokaRuntimeProcess on the given job, adding this process to the given launch.
-	 * 
+	 *
 	 * @param launch
-	 *        the parent launch of this process
+	 *            the parent launch of this process
 	 * @param process
-	 *        underlying system process
+	 *            underlying system process
 	 * @param label
-	 *        the label used for this process
+	 *            the label used for this process
 	 * @param attributes
-	 *        map of attributes used to initialize the attributes of this process, or null if none
+	 *            map of attributes used to initialize the attributes of this process, or null if none
 	 */
 	public MokaProcess(ILaunch launch, Job job, String label, Map<String, String> attributes) {
 		this.launch = launch;
 		initializeAttributes(attributes);
-		this.job = (MokaExecutionEngineJob)job;
+		this.job = (MokaExecutionEngineJob) job;
 		this.job.addJobChangeListener(new MokaJobChangeListener(this));
 		this.label = label;
 		isTerminated = false;
@@ -104,16 +104,16 @@ public class MokaProcess extends PlatformObject implements IProcess {
 
 	/**
 	 * Initialize the attributes of this process to those in the given map.
-	 * 
+	 *
 	 * @param attributes
-	 *        attribute map or <code>null</code> if none
+	 *            attribute map or <code>null</code> if none
 	 */
 	protected void initializeAttributes(Map<String, String> attributes) {
-		if(attributes != null) {
+		if (attributes != null) {
 			Iterator<String> keys = attributes.keySet().iterator();
-			while(keys.hasNext()) {
-				String key = (String)keys.next();
-				setAttribute(key, (String)attributes.get(key));
+			while (keys.hasNext()) {
+				String key = keys.next();
+				setAttribute(key, attributes.get(key));
 			}
 		}
 	}
@@ -150,9 +150,9 @@ public class MokaProcess extends PlatformObject implements IProcess {
 	 * @see ITerminate#terminate()
 	 */
 	public void terminate() throws DebugException {
-		if(!isTerminated()) {
-			//Job job = getExecutionEngineJob();
-			if(this.job != null) {
+		if (!isTerminated()) {
+			// Job job = getExecutionEngineJob();
+			if (this.job != null) {
 				this.job.getDebugTarget().terminate();
 			}
 		}
@@ -171,9 +171,9 @@ public class MokaProcess extends PlatformObject implements IProcess {
 			running = true;
 		}
 
-		synchronized(this) {
+		synchronized (this) {
 			isTerminated = true;
-			if(!running) {
+			if (!running) {
 				this.exitValue = exitValue;
 			}
 			this.job = null;
@@ -197,14 +197,14 @@ public class MokaProcess extends PlatformObject implements IProcess {
 
 	/**
 	 * Fires the given debug event.
-	 * 
+	 *
 	 * @param event
-	 *        debug event to fire
+	 *            debug event to fire
 	 */
 	protected void fireEvent(DebugEvent event) {
 		DebugPlugin manager = DebugPlugin.getDefault();
-		if(manager != null) {
-			manager.fireDebugEventSet(new DebugEvent[]{ event });
+		if (manager != null) {
+			manager.fireDebugEventSet(new DebugEvent[] { event });
 		}
 	}
 
@@ -226,12 +226,12 @@ public class MokaProcess extends PlatformObject implements IProcess {
 	 * @see IProcess#setAttribute(String, String)
 	 */
 	public void setAttribute(String key, String value) {
-		if(attributes == null) {
+		if (attributes == null) {
 			attributes = new HashMap<String, String>();
 		}
 		Object origVal = attributes.get(key);
-		if(origVal != null && origVal.equals(value)) {
-			return; //nothing changed.
+		if (origVal != null && origVal.equals(value)) {
+			return; // nothing changed.
 		}
 
 		attributes.put(key, value);
@@ -242,36 +242,37 @@ public class MokaProcess extends PlatformObject implements IProcess {
 	 * @see IProcess#getAttribute(String)
 	 */
 	public String getAttribute(String key) {
-		if(attributes == null) {
+		if (attributes == null) {
 			return null;
 		}
-		return (String)attributes.get(key);
+		return attributes.get(key);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
 	 */
+	@Override
 	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
-		if(adapter.equals(IProcess.class)) {
+		if (adapter.equals(IProcess.class)) {
 			return this;
 		}
-		if(adapter.equals(IDebugTarget.class)) {
+		if (adapter.equals(IDebugTarget.class)) {
 			ILaunch launch = getLaunch();
 			IDebugTarget[] targets = launch.getDebugTargets();
-			for(int i = 0; i < targets.length; i++) {
-				if(this.equals(targets[i].getProcess())) {
+			for (int i = 0; i < targets.length; i++) {
+				if (this.equals(targets[i].getProcess())) {
 					return targets[i];
 				}
 			}
 			return null;
 		}
-		if(adapter.equals(ILaunch.class)) {
+		if (adapter.equals(ILaunch.class)) {
 			return getLaunch();
 		}
-		//CONTEXTLAUNCHING
-		if(adapter.equals(ILaunchConfiguration.class)) {
+		// CONTEXTLAUNCHING
+		if (adapter.equals(ILaunchConfiguration.class)) {
 			return getLaunch().getLaunchConfiguration();
 		}
 		return super.getAdapter(adapter);
@@ -281,7 +282,7 @@ public class MokaProcess extends PlatformObject implements IProcess {
 	 * @see IProcess#getExitValue()
 	 */
 	public synchronized int getExitValue() throws DebugException {
-		if(isTerminated()) {
+		if (isTerminated()) {
 			return exitValue;
 		}
 		throw new DebugException(new Status(IStatus.ERROR, DebugPlugin.getUniqueIdentifier(), DebugException.TARGET_REQUEST_FAILED, "Exit value not available until process terminates.", null));

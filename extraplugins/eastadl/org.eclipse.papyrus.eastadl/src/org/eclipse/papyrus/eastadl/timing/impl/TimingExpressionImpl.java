@@ -20,6 +20,7 @@ public class TimingExpressionImpl extends EAExpressionImpl implements TimingExpr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TimingExpressionImpl() {
@@ -29,6 +30,7 @@ public class TimingExpressionImpl extends EAExpressionImpl implements TimingExpr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class TimingExpressionImpl extends EAExpressionImpl implements TimingExpr
 		return TimingPackage.Literals.TIMING_EXPRESSION;
 	}
 
-} //TimingExpressionImpl
+} // TimingExpressionImpl

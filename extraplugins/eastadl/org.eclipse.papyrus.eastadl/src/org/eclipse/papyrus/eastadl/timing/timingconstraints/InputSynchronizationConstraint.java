@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,25 +27,25 @@ import org.eclipse.papyrus.eastadl.timing.TimingExpression;
  *
  * <!-- begin-model-doc -->
  * InputSynchronizationConstraint is a language entity that expresses a timing constraint on the input synchronization among the set of stimulus events.
- * 
+ *
  * Semantics:
  * The parameters of InputSynchronizationConstraint, see TimingConstraint, constrain the time from the first stimulus until last stimulus (i.e., maximum skew between these stimuli). A join point is identified by the response event in the scope EventChain.
- * 
+ *
  * Constraints:
  * [1] The set of FunctionFlowPorts referenced by the events should contain only FlowPorts with direction = in. The rationale for this is that the events shall relate to data on FunctionFlowPorts which is considered (or shall be) temporally consistent.
- * 
+ *
  * [2] The scope EventChain shall contain exactly one response Event.
- * 
+ *
  * [3] The semantics of this constraint requires that there is more than one stimulus Event in the scope EventChain (each refering to a different FlowPort with direction = in).
- * 
+ *
  * Extension: Class
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.InputSynchronizationConstraint#getTolerance <em>Tolerance</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.InputSynchronizationConstraint#getScope <em>Scope</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.InputSynchronizationConstraint#getTolerance <em>Tolerance</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.InputSynchronizationConstraint#getScope <em>Scope</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,6 +61,7 @@ public interface InputSynchronizationConstraint extends TimingConstraint {
 	 * <!-- begin-model-doc -->
 	 * The width of the sliding window.
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Tolerance</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getInputSynchronizationConstraint_Tolerance()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -73,10 +74,10 @@ public interface InputSynchronizationConstraint extends TimingConstraint {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.timing.EventChain}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Scope</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Scope</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Scope</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getInputSynchronizationConstraint_Scope()
 	 * @model lower="2" ordered="false"

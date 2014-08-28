@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ public class BasicClassifierCompartmentLayoutHelper extends ClassifierCompartmen
 
 	/**
 	 * Gets the instances.
-	 * 
+	 *
 	 * @return the instances
 	 */
 	public static BasicClassifierCompartmentLayoutHelper getInstances() {
@@ -57,14 +57,14 @@ public class BasicClassifierCompartmentLayoutHelper extends ClassifierCompartmen
 
 	/**
 	 * Checks if is automatic.
-	 * 
+	 *
 	 * @param eModelElement
-	 *        the e model element
-	 * 
+	 *            the e model element
+	 *
 	 * @return true, if is automatic
 	 */
 	public boolean isAutomatic(EModelElement eModelElement) {
-		if((super.getLayoutKindFromView(eModelElement)).equals(automaticToolBox.getLayout())) {
+		if ((super.getLayoutKindFromView(eModelElement)).equals(automaticToolBox.getLayout())) {
 			return true;
 		}
 		return false;
@@ -72,14 +72,14 @@ public class BasicClassifierCompartmentLayoutHelper extends ClassifierCompartmen
 
 	/**
 	 * Checks if is manual.
-	 * 
+	 *
 	 * @param eModelElement
-	 *        the e model element
-	 * 
+	 *            the e model element
+	 *
 	 * @return true, if is manual
 	 */
 	public boolean isManual(EModelElement eModelElement) {
-		if((super.getLayoutKindFromView(eModelElement)).equals(manualtoolBox.getLayout())) {
+		if ((super.getLayoutKindFromView(eModelElement)).equals(manualtoolBox.getLayout())) {
 			return true;
 		}
 		return false;
@@ -87,12 +87,12 @@ public class BasicClassifierCompartmentLayoutHelper extends ClassifierCompartmen
 
 	/**
 	 * Sets the manual layout kind on view.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param view
-	 *        the view
-	 * 
+	 *            the view
+	 *
 	 * @return the sets the layout kind command
 	 */
 	public SetLayoutKindCommand setManualLayoutKindOnView(TransactionalEditingDomain domain, EModelElement view) {
@@ -102,12 +102,12 @@ public class BasicClassifierCompartmentLayoutHelper extends ClassifierCompartmen
 
 	/**
 	 * Sets the automatic layout kind on view.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param view
-	 *        the view
-	 * 
+	 *            the view
+	 *
 	 * @return the sets the layout kind command
 	 */
 	public SetLayoutKindCommand setAutomaticLayoutKindOnView(TransactionalEditingDomain domain, EModelElement view) {

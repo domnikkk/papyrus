@@ -9,7 +9,7 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
  *****************************************************************************/
@@ -23,11 +23,11 @@
 package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -48,9 +48,9 @@ import org.eclipse.uml2.common.util.SubsetSupersetEObjectContainmentWithInverseE
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTPackageFragmentRootImpl#getChildren <em>Children</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTPackageFragmentRootImpl#getJavaProject <em>Java Project</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTPackageFragmentRootImpl#getPackageFragments <em>Package Fragments</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTPackageFragmentRootImpl#getChildren <em>Children</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTPackageFragmentRootImpl#getJavaProject <em>Java Project</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTPackageFragmentRootImpl#getPackageFragments <em>Package Fragments</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,6 +62,7 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	 * The cached value of the '{@link #getPackageFragments() <em>Package Fragments</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPackageFragments()
 	 * @generated
 	 * @ordered
@@ -71,6 +72,7 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTPackageFragmentRootImpl() {
@@ -80,6 +82,7 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,6 +93,7 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,56 +105,71 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	 * The array of subset feature identifiers for the '{@link #getChildren() <em>Children</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] CHILDREN_ESUBSETS = new int[] {JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS};
+	protected static final int[] CHILDREN_ESUBSETS = new int[] { JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS };
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public JDTJavaProject getJavaProject() {
-		if (eContainerFeatureID() != JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT) return null;
-		return (JDTJavaProject)eContainer();
+		if (eContainerFeatureID() != JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT) {
+			return null;
+		}
+		return (JDTJavaProject) eContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetJavaProject(JDTJavaProject newJavaProject, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newJavaProject, JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newJavaProject, JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setJavaProject(JDTJavaProject newJavaProject) {
 		if (newJavaProject != eInternalContainer() || (eContainerFeatureID() != JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT && newJavaProject != null)) {
-			if (EcoreUtil.isAncestor(this, newJavaProject))
+			if (EcoreUtil.isAncestor(this, newJavaProject)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newJavaProject != null)
-				msgs = ((InternalEObject)newJavaProject).eInverseAdd(this, JdtmmPackage.JDT_JAVA_PROJECT__PACKAGE_FRAGMENT_ROOTS, JDTJavaProject.class, msgs);
+			}
+			if (newJavaProject != null) {
+				msgs = ((InternalEObject) newJavaProject).eInverseAdd(this, JdtmmPackage.JDT_JAVA_PROJECT__PACKAGE_FRAGMENT_ROOTS, JDTJavaProject.class, msgs);
+			}
 			msgs = basicSetJavaProject(newJavaProject, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT, newJavaProject, newJavaProject));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public boolean isSetJavaProject() {
@@ -160,11 +179,14 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<JDTPackageFragment> getPackageFragments() {
 		if (packageFragments == null) {
-			packageFragments = new SubsetSupersetEObjectContainmentWithInverseEList<JDTPackageFragment>(JDTPackageFragment.class, this, JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS, PACKAGE_FRAGMENTS_ESUPERSETS, null, JdtmmPackage.JDT_PACKAGE_FRAGMENT__PACKAGE_FRAGMENT_ROOT);
+			packageFragments = new SubsetSupersetEObjectContainmentWithInverseEList<JDTPackageFragment>(JDTPackageFragment.class, this, JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS, PACKAGE_FRAGMENTS_ESUPERSETS, null,
+					JdtmmPackage.JDT_PACKAGE_FRAGMENT__PACKAGE_FRAGMENT_ROOT);
 		}
 		return packageFragments;
 	}
@@ -173,27 +195,30 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	 * The array of superset feature identifiers for the '{@link #getPackageFragments() <em>Package Fragments</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPackageFragments()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] PACKAGE_FRAGMENTS_ESUPERSETS = new int[] {JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__CHILDREN};
+	protected static final int[] PACKAGE_FRAGMENTS_ESUPERSETS = new int[] { JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__CHILDREN };
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetJavaProject((JDTJavaProject)otherEnd, msgs);
-			case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPackageFragments()).basicAdd(otherEnd, msgs);
+		case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT:
+			if (eInternalContainer() != null) {
+				msgs = eBasicRemoveFromContainer(msgs);
+			}
+			return basicSetJavaProject((JDTJavaProject) otherEnd, msgs);
+		case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPackageFragments()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -201,15 +226,16 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT:
-				return basicSetJavaProject(null, msgs);
-			case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS:
-				return ((InternalEList<?>)getPackageFragments()).basicRemove(otherEnd, msgs);
+		case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT:
+			return basicSetJavaProject(null, msgs);
+		case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS:
+			return ((InternalEList<?>) getPackageFragments()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -217,13 +243,14 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT:
-				return eInternalContainer().eInverseRemove(this, JdtmmPackage.JDT_JAVA_PROJECT__PACKAGE_FRAGMENT_ROOTS, JDTJavaProject.class, msgs);
+		case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT:
+			return eInternalContainer().eInverseRemove(this, JdtmmPackage.JDT_JAVA_PROJECT__PACKAGE_FRAGMENT_ROOTS, JDTJavaProject.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -231,15 +258,16 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT:
-				return getJavaProject();
-			case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS:
-				return getPackageFragments();
+		case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT:
+			return getJavaProject();
+		case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS:
+			return getPackageFragments();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -247,19 +275,20 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT:
-				setJavaProject((JDTJavaProject)newValue);
-				return;
-			case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS:
-				getPackageFragments().clear();
-				getPackageFragments().addAll((Collection<? extends JDTPackageFragment>)newValue);
-				return;
+		case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT:
+			setJavaProject((JDTJavaProject) newValue);
+			return;
+		case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS:
+			getPackageFragments().clear();
+			getPackageFragments().addAll((Collection<? extends JDTPackageFragment>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -267,17 +296,18 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT:
-				setJavaProject((JDTJavaProject)null);
-				return;
-			case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS:
-				getPackageFragments().clear();
-				return;
+		case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT:
+			setJavaProject((JDTJavaProject) null);
+			return;
+		case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS:
+			getPackageFragments().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -285,15 +315,16 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT:
-				return isSetJavaProject();
-			case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS:
-				return packageFragments != null && !packageFragments.isEmpty();
+		case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__JAVA_PROJECT:
+			return isSetJavaProject();
+		case JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS:
+			return packageFragments != null && !packageFragments.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -301,17 +332,19 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean isSetChildren() {
 		return super.isSetChildren()
-			|| eIsSet(JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS);
+				|| eIsSet(JdtmmPackage.JDT_PACKAGE_FRAGMENT_ROOT__PACKAGE_FRAGMENTS);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -322,6 +355,7 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -332,10 +366,11 @@ public class JDTPackageFragmentRootImpl extends JDTParentJavaElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public boolean isSetParent() {
-  		return false;
+		return false;
 	}
 
-} //JDTPackageFragmentRootImpl
+} // JDTPackageFragmentRootImpl

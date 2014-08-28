@@ -82,9 +82,9 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 	 * Constructor of AsyncObjectActivation.
 	 *
 	 * @param classifier
-	 *        that need to be executed on the current object activation
+	 *            that need to be executed on the current object activation
 	 * @param inputs
-	 *        parameters that are provided to the execution
+	 *            parameters that are provided to the execution
 	 */
 	public AsyncObjectActivation(Class classifier, List<ParameterValue> inputs) {
 		super();
@@ -102,39 +102,37 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 		/* 2. Execute behavior(s) associated to the given classifier */
 		try {
 			this.startBehavior(this.classifier, this.inputs);
-		}
-		catch (Exception e) {
-			Activator.log.error(e) ;
-			if (! MokaConstants.SILENT_MODE) {
+		} catch (Exception e) {
+			Activator.log.error(e);
+			if (!MokaConstants.SILENT_MODE) {
 				Display.getDefault().syncExec(new Runnable() {
 					public void run() {
-						MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.") ;
+						MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.");
 					}
-				}) ;
+				});
 			}
-			((AsyncControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()).notifyThreadTermination(this); // Added for connection with debug api
+			((AsyncControlDelegate) FUMLExecutionEngine.eInstance.getControlDelegate()).notifyThreadTermination(this); // Added for connection with debug api
 		}
 		/* 3. While current object activation is running then dispatch events */
-		while(!FUMLExecutionEngine.eInstance.isTerminated() && this.currentState.equals(ObjectActivationState.RUNNING)) {
+		while (!FUMLExecutionEngine.eInstance.isTerminated() && this.currentState.equals(ObjectActivationState.RUNNING)) {
 			try {
 				this.dispatchNextEvent(); /* Dispatch is blocking if no SignalInstance available */
-			}
-			catch (Exception e) {
-				Activator.log.error(e) ;
-				if (! MokaConstants.SILENT_MODE) {
+			} catch (Exception e) {
+				Activator.log.error(e);
+				if (!MokaConstants.SILENT_MODE) {
 					Display.getDefault().syncExec(new Runnable() {
 						public void run() {
-							MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.") ;
+							MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.");
 						}
-					}) ;
+					});
 				}
-				((AsyncControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()).notifyThreadTermination(this); // Added for connection with debug api
+				((AsyncControlDelegate) FUMLExecutionEngine.eInstance.getControlDelegate()).notifyThreadTermination(this); // Added for connection with debug api
 			}
-			if(this.waitingEventAccepters.isEmpty()) {
+			if (this.waitingEventAccepters.isEmpty()) {
 				this.currentState = ObjectActivationState.STOPPED;
 			}
 		}
-		((AsyncControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()).notifyThreadTermination(this); // Added for connection with debug api
+		((AsyncControlDelegate) FUMLExecutionEngine.eInstance.getControlDelegate()).notifyThreadTermination(this); // Added for connection with debug api
 	}
 
 	// Added for connection with debug API
@@ -152,11 +150,11 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 	 * the signal to continue its execution.
 	 *
 	 * @param signalInstance
-	 *        the signal instance
+	 *            the signal instance
 	 */
 	@Override
 	public synchronized void send(SignalInstance signalInstance) {
-		SignalInstance copy = (SignalInstance)signalInstance.copy();
+		SignalInstance copy = (SignalInstance) signalInstance.copy();
 		this.evtPool.send(copy);
 		AsyncDebug.println("[SignalInstance sent] " + signalInstance.type.getName());
 	}
@@ -173,16 +171,16 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 	@Override
 	public SignalInstance getNextEvent() {
 		// Added for connection with debug API
-		if(this.evtPool.isEmpty()) {
+		if (this.evtPool.isEmpty()) {
 			this.currentState = ObjectActivationState.WAITING;
 			this.hasBeenWaiting = true;
-			((AsyncControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()).notifyWaitingStateEntered(this);
+			((AsyncControlDelegate) FUMLExecutionEngine.eInstance.getControlDelegate()).notifyWaitingStateEntered(this);
 		}
 		SignalInstance signalInstance = this.evtPool.getNextEvent();
 		this.currentState = ObjectActivationState.RUNNING;
 		//
 
-		if(signalInstance != null) {
+		if (signalInstance != null) {
 			AsyncDebug.println("[consumed SignalInstance] " + signalInstance.type.getName());
 		}
 		return signalInstance;
@@ -201,20 +199,20 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 	 * Start EventDispatchLoop
 	 *
 	 * @param classifier
-	 *        the classifier
+	 *            the classifier
 	 * @param inputs
-	 *        the inputs
+	 *            the inputs
 	 */
 	@Override
 	public void startBehavior(Class classifier, List<ParameterValue> inputs) {
 		/* 1. Start behavior of the current classifier */
-		if(classifier == null) {
+		if (classifier == null) {
 			AsyncDebug.println("Starting behavior for all classifiers...");
 			// *** Start all classifier behaviors concurrently. ***
 			List<Class> types = this.object.types;
-			for(Iterator<Class> i = types.iterator(); i.hasNext();) {
+			for (Iterator<Class> i = types.iterator(); i.hasNext();) {
 				Class type = i.next();
-				if(type instanceof Behavior | type.getClassifierBehavior() != null) {
+				if (type instanceof Behavior | type.getClassifierBehavior() != null) {
 					this.startBehavior(type, new ArrayList<ParameterValue>());
 				}
 			}
@@ -222,11 +220,11 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 			AsyncDebug.println("Starting behavior for " + classifier.getName() + "...");
 			boolean notYetStarted = true;
 			int i = 1;
-			while(notYetStarted & i <= this.classifierBehaviorExecutions.size()) {
+			while (notYetStarted & i <= this.classifierBehaviorExecutions.size()) {
 				notYetStarted = (this.classifierBehaviorExecutions.get(i - 1).classifier != classifier);
 				i = i + 1;
 			}
-			if(notYetStarted) {
+			if (notYetStarted) {
 				ClassifierBehaviorExecution newExecution = new ClassifierBehaviorExecution();
 				newExecution.objectActivation = this;
 				this.classifierBehaviorExecutions.add(newExecution);
@@ -264,40 +262,40 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 		/* 2. Look for EventAccepter that match the selected SignalInstance */
 		List<Integer> matchingEventAccepterIndexes = new ArrayList<Integer>();
 		List<EventAccepter> waitingEventAccepters = this.waitingEventAccepters;
-		for(int i = 0; i < waitingEventAccepters.size(); i++) {
+		for (int i = 0; i < waitingEventAccepters.size(); i++) {
 			EventAccepter eventAccepter = waitingEventAccepters.get(i);
-			if(eventAccepter.match(signalInstance)) {
+			if (eventAccepter.match(signalInstance)) {
 				matchingEventAccepterIndexes.add(i);
 			}
 		}
 		/* 3. Choose one matching event accepter non-deterministically */
-		if(matchingEventAccepterIndexes.size() > 0) {
-			int j = ((ChoiceStrategy)this.object.locus.factory.getStrategy("choice")).choose(matchingEventAccepterIndexes.size());
+		if (matchingEventAccepterIndexes.size() > 0) {
+			int j = ((ChoiceStrategy) this.object.locus.factory.getStrategy("choice")).choose(matchingEventAccepterIndexes.size());
 			EventAccepter selectedEventAccepter = this.waitingEventAccepters.get(matchingEventAccepterIndexes.get(j - 1));
-			//this.waitingEventAccepters.remove(j - 1);
+			// this.waitingEventAccepters.remove(j - 1);
 			this.waitingEventAccepters.remove(selectedEventAccepter);
-			if(this.hasBeenWaiting) {
+			if (this.hasBeenWaiting) {
 				this.hasBeenWaiting = false;
 				if (selectedEventAccepter instanceof AcceptEventActionEventAccepter) {
-					((AsyncControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()).notifyWaitingStateExit(this, (AcceptEventActionEventAccepter)selectedEventAccepter);
+					((AsyncControlDelegate) FUMLExecutionEngine.eInstance.getControlDelegate()).notifyWaitingStateExit(this, (AcceptEventActionEventAccepter) selectedEventAccepter);
 				}
 			}
 			selectedEventAccepter.accept(signalInstance);
 		} else {
-			if(this.out == null) {
+			if (this.out == null) {
 				this.out = StandardOutputChannelImpl.getConsole().newOutputStream();
 			}
 
 			String expectedSignals = "";
-			for(EventAccepter eventAccepter : this.waitingEventAccepters) {
-				if(eventAccepter instanceof AcceptEventActionEventAccepter) {
-					AcceptEventActionEventAccepter acceptEventAccepter = (AcceptEventActionEventAccepter)eventAccepter;
-					AcceptEventAction acceptEventAction = (AcceptEventAction)acceptEventAccepter.actionActivation.node;
-					for(Trigger trigger : acceptEventAction.getTriggers()) {
-						if(trigger.getEvent() instanceof SignalEvent) {
-							SignalEvent signalEvent = (SignalEvent)trigger.getEvent();
+			for (EventAccepter eventAccepter : this.waitingEventAccepters) {
+				if (eventAccepter instanceof AcceptEventActionEventAccepter) {
+					AcceptEventActionEventAccepter acceptEventAccepter = (AcceptEventActionEventAccepter) eventAccepter;
+					AcceptEventAction acceptEventAction = (AcceptEventAction) acceptEventAccepter.actionActivation.node;
+					for (Trigger trigger : acceptEventAction.getTriggers()) {
+						if (trigger.getEvent() instanceof SignalEvent) {
+							SignalEvent signalEvent = (SignalEvent) trigger.getEvent();
 							Signal signal = signalEvent.getSignal();
-							if(!expectedSignals.isEmpty()) {
+							if (!expectedSignals.isEmpty()) {
 								expectedSignals += ", ";
 							}
 							expectedSignals += signal.getName();

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,7 +41,7 @@ public class CustomTimeConstraintCreateCommand extends TimeConstraintCreateComma
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -51,7 +51,7 @@ public class CustomTimeConstraintCreateCommand extends TimeConstraintCreateComma
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomTimeConstraintCreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -65,11 +65,11 @@ public class CustomTimeConstraintCreateCommand extends TimeConstraintCreateComma
 	public boolean canExecute() {
 		Object paramOccurrence = getRequest().getParameter(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION);
 		List<OccurrenceSpecification> occList = SequenceUtil.getAsOccSpecList(paramOccurrence);
-		if(!occList.isEmpty()) {
-			for(OccurrenceSpecification occurrence : occList) {
-				if(occurrence instanceof MessageOccurrenceSpecification) {
-					Message mess = ((MessageOccurrenceSpecification)occurrence).getMessage();
-					if(mess != null && occurrence.equals(mess.getReceiveEvent()) && MessageSort.SYNCH_CALL_LITERAL.equals(mess.getMessageSort())) {
+		if (!occList.isEmpty()) {
+			for (OccurrenceSpecification occurrence : occList) {
+				if (occurrence instanceof MessageOccurrenceSpecification) {
+					Message mess = ((MessageOccurrenceSpecification) occurrence).getMessage();
+					if (mess != null && occurrence.equals(mess.getReceiveEvent()) && MessageSort.SYNCH_CALL_LITERAL.equals(mess.getMessageSort())) {
 						// filter receive event, we prefer the corresponding start event at the same location
 						continue;
 					}
@@ -87,17 +87,17 @@ public class CustomTimeConstraintCreateCommand extends TimeConstraintCreateComma
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		TimeConstraint newElement = UMLFactory.eINSTANCE.createTimeConstraint();
 		// get the Lifeline parent as owner
-		Namespace owner = (Namespace)getElementToEdit().eContainer();
+		Namespace owner = (Namespace) getElementToEdit().eContainer();
 		owner.getOwnedRules().add(newElement);
 		ElementInitializers.getInstance().init_TimeConstraint_3019(newElement);
 		// assign the occurrence specification
 		Object paramOccurrence = getRequest().getParameter(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION);
 		List<OccurrenceSpecification> occList = SequenceUtil.getAsOccSpecList(paramOccurrence);
-		if(!occList.isEmpty()) {
-			for(OccurrenceSpecification occurrence : occList) {
-				if(occurrence instanceof MessageOccurrenceSpecification) {
-					Message mess = ((MessageOccurrenceSpecification)occurrence).getMessage();
-					if(mess != null && occurrence.equals(mess.getReceiveEvent()) && MessageSort.SYNCH_CALL_LITERAL.equals(mess.getMessageSort())) {
+		if (!occList.isEmpty()) {
+			for (OccurrenceSpecification occurrence : occList) {
+				if (occurrence instanceof MessageOccurrenceSpecification) {
+					Message mess = ((MessageOccurrenceSpecification) occurrence).getMessage();
+					if (mess != null && occurrence.equals(mess.getReceiveEvent()) && MessageSort.SYNCH_CALL_LITERAL.equals(mess.getMessageSort())) {
 						// filter receive event, we prefer the corresponding start event at the same location
 						continue;
 					}
@@ -108,7 +108,7 @@ public class CustomTimeConstraintCreateCommand extends TimeConstraintCreateComma
 			}
 		}
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 }

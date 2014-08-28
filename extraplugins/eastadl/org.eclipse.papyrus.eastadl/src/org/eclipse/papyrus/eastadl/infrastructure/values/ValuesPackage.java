@@ -12,13 +12,14 @@ import org.eclipse.emf.ecore.EReference;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each operation of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.eastadl.infrastructure.values.ValuesFactory
  * @model kind="package"
  * @generated
@@ -28,6 +29,7 @@ public interface ValuesPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "values";
@@ -36,6 +38,7 @@ public interface ValuesPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Infrastructure/Values/1";
@@ -44,6 +47,7 @@ public interface ValuesPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "Values";
@@ -52,6 +56,7 @@ public interface ValuesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	ValuesPackage eINSTANCE = org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl.init();
@@ -60,6 +65,7 @@ public interface ValuesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAValueImpl <em>EA Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAValueImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEAValue()
 	 * @generated
@@ -70,6 +76,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -79,6 +86,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Value Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -88,6 +96,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of structural features of the '<em>EA Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,6 +106,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of operations of the '<em>EA Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -106,6 +116,7 @@ public interface ValuesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAArrayValueImpl <em>EA Array Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAArrayValueImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEAArrayValue()
 	 * @generated
@@ -116,6 +127,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -125,6 +137,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Value Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -134,6 +147,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -143,6 +157,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of structural features of the '<em>EA Array Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -152,6 +167,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of operations of the '<em>EA Array Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -161,6 +177,7 @@ public interface ValuesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EABooleanValueImpl <em>EA Boolean Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EABooleanValueImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEABooleanValue()
 	 * @generated
@@ -171,6 +188,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -180,6 +198,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Value Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -189,6 +208,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -198,6 +218,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of structural features of the '<em>EA Boolean Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -207,6 +228,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of operations of the '<em>EA Boolean Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -216,6 +238,7 @@ public interface ValuesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EACompositeValueImpl <em>EA Composite Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EACompositeValueImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEACompositeValue()
 	 * @generated
@@ -226,6 +249,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -235,6 +259,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Value Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -244,6 +269,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -253,6 +279,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of structural features of the '<em>EA Composite Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -262,6 +289,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of operations of the '<em>EA Composite Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -271,6 +299,7 @@ public interface ValuesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAEnumerationValueImpl <em>EA Enumeration Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAEnumerationValueImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEAEnumerationValue()
 	 * @generated
@@ -281,6 +310,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -290,6 +320,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Value Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -299,6 +330,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -308,6 +340,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of structural features of the '<em>EA Enumeration Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -317,6 +350,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of operations of the '<em>EA Enumeration Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -326,6 +360,7 @@ public interface ValuesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAExpressionImpl <em>EA Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAExpressionImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEAExpression()
 	 * @generated
@@ -336,6 +371,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -345,6 +381,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Value Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -354,6 +391,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of structural features of the '<em>EA Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -363,6 +401,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of operations of the '<em>EA Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -372,6 +411,7 @@ public interface ValuesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EANumericalValueImpl <em>EA Numerical Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EANumericalValueImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEANumericalValue()
 	 * @generated
@@ -382,6 +422,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -391,6 +432,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Value Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -400,6 +442,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -409,6 +452,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of structural features of the '<em>EA Numerical Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -418,6 +462,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of operations of the '<em>EA Numerical Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -427,6 +472,7 @@ public interface ValuesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAStringValueImpl <em>EA String Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAStringValueImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEAStringValue()
 	 * @generated
@@ -437,6 +483,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -446,6 +493,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Value Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -455,6 +503,7 @@ public interface ValuesPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -464,6 +513,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of structural features of the '<em>EA String Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -473,6 +523,7 @@ public interface ValuesPackage extends EPackage {
 	 * The number of operations of the '<em>EA String Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -483,6 +534,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EAArrayValue <em>EA Array Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>EA Array Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EAArrayValue
 	 * @generated
@@ -493,6 +545,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EAArrayValue#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EAArrayValue#getValue()
 	 * @see #getEAArrayValue()
@@ -504,6 +557,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EAValue <em>EA Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>EA Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EAValue
 	 * @generated
@@ -514,6 +568,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EAValue#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EAValue#getType()
 	 * @see #getEAValue()
@@ -525,6 +580,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EAValue#getBase_ValueSpecification <em>Base Value Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Value Specification</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EAValue#getBase_ValueSpecification()
 	 * @see #getEAValue()
@@ -536,6 +592,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EABooleanValue <em>EA Boolean Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>EA Boolean Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EABooleanValue
 	 * @generated
@@ -546,6 +603,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EABooleanValue#isValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EABooleanValue#isValue()
 	 * @see #getEABooleanValue()
@@ -557,6 +615,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EACompositeValue <em>EA Composite Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>EA Composite Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EACompositeValue
 	 * @generated
@@ -567,6 +626,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EACompositeValue#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EACompositeValue#getValue()
 	 * @see #getEACompositeValue()
@@ -578,6 +638,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EAEnumerationValue <em>EA Enumeration Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>EA Enumeration Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EAEnumerationValue
 	 * @generated
@@ -588,6 +649,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EAEnumerationValue#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EAEnumerationValue#getValue()
 	 * @see #getEAEnumerationValue()
@@ -599,6 +661,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EAExpression <em>EA Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>EA Expression</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EAExpression
 	 * @generated
@@ -609,6 +672,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EANumericalValue <em>EA Numerical Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>EA Numerical Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EANumericalValue
 	 * @generated
@@ -619,6 +683,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EANumericalValue#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EANumericalValue#getValue()
 	 * @see #getEANumericalValue()
@@ -630,6 +695,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EAStringValue <em>EA String Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>EA String Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EAStringValue
 	 * @generated
@@ -640,6 +706,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EAStringValue#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EAStringValue#getValue()
 	 * @see #getEAStringValue()
@@ -651,6 +718,7 @@ public interface ValuesPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -660,13 +728,14 @@ public interface ValuesPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each operation of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -674,6 +743,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAArrayValueImpl <em>EA Array Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAArrayValueImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEAArrayValue()
 		 * @generated
@@ -684,6 +754,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference EA_ARRAY_VALUE__VALUE = eINSTANCE.getEAArrayValue_Value();
@@ -692,6 +763,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAValueImpl <em>EA Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAValueImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEAValue()
 		 * @generated
@@ -702,6 +774,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference EA_VALUE__TYPE = eINSTANCE.getEAValue_Type();
@@ -710,6 +783,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Value Specification</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference EA_VALUE__BASE_VALUE_SPECIFICATION = eINSTANCE.getEAValue_Base_ValueSpecification();
@@ -718,6 +792,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EABooleanValueImpl <em>EA Boolean Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EABooleanValueImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEABooleanValue()
 		 * @generated
@@ -728,6 +803,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute EA_BOOLEAN_VALUE__VALUE = eINSTANCE.getEABooleanValue_Value();
@@ -736,6 +812,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EACompositeValueImpl <em>EA Composite Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EACompositeValueImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEACompositeValue()
 		 * @generated
@@ -746,6 +823,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference EA_COMPOSITE_VALUE__VALUE = eINSTANCE.getEACompositeValue_Value();
@@ -754,6 +832,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAEnumerationValueImpl <em>EA Enumeration Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAEnumerationValueImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEAEnumerationValue()
 		 * @generated
@@ -764,6 +843,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference EA_ENUMERATION_VALUE__VALUE = eINSTANCE.getEAEnumerationValue_Value();
@@ -772,6 +852,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAExpressionImpl <em>EA Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAExpressionImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEAExpression()
 		 * @generated
@@ -782,6 +863,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EANumericalValueImpl <em>EA Numerical Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EANumericalValueImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEANumericalValue()
 		 * @generated
@@ -792,6 +874,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute EA_NUMERICAL_VALUE__VALUE = eINSTANCE.getEANumericalValue_Value();
@@ -800,6 +883,7 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAStringValueImpl <em>EA String Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAStringValueImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl#getEAStringValue()
 		 * @generated
@@ -810,10 +894,11 @@ public interface ValuesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute EA_STRING_VALUE__VALUE = eINSTANCE.getEAStringValue_Value();
 
 	}
 
-} //ValuesPackage
+} // ValuesPackage

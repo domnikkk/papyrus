@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -57,42 +57,46 @@ public class ConstraintParser implements IParser, ISemanticParser {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getEditString(org.eclipse.core.runtime.IAdaptable, int)
-	 * 
+	 *
 	 */
 
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		Constraint constraint = doAdapt(element);
-		if(constraint == null || constraint.getSpecification() == null) {
+		if (constraint == null || constraint.getSpecification() == null) {
 			return "<NULL Constraint>"; //$NON-NLS-1$
 		}
-		if(constraint.getSpecification() instanceof LiteralString) {
-			return ((LiteralString)constraint.getSpecification()).getValue();
+		if (constraint.getSpecification() instanceof LiteralString) {
+			return ((LiteralString) constraint.getSpecification()).getValue();
 		}
-		if(constraint.getSpecification() instanceof DurationInterval) {
-			if((((DurationInterval)constraint.getSpecification()).getMin())!=null && (((DurationInterval)constraint.getSpecification()).getMax()!=null)){
-				return ((DurationInterval)constraint.getSpecification()).getMin().stringValue()+".."+((DurationInterval)constraint.getSpecification()).getMax().stringValue();
+		if (constraint.getSpecification() instanceof DurationInterval) {
+			if ((((DurationInterval) constraint.getSpecification()).getMin()) != null && (((DurationInterval) constraint.getSpecification()).getMax() != null)) {
+				return ((DurationInterval) constraint.getSpecification()).getMin().stringValue() + ".." + ((DurationInterval) constraint.getSpecification()).getMax().stringValue();
 			}
-			else{
-				return "0..0";}
+			else {
+				return "0..0";
+			}
 		}
 
-		if(constraint.getSpecification() instanceof TimeInterval) {
-			if((((TimeInterval)constraint.getSpecification()).getMin())!=null && (((TimeInterval)constraint.getSpecification()).getMax()!=null)){
-				return ((TimeInterval)constraint.getSpecification()).getMin().stringValue()+".."+((TimeInterval)constraint.getSpecification()).getMax().stringValue();
+		if (constraint.getSpecification() instanceof TimeInterval) {
+			if ((((TimeInterval) constraint.getSpecification()).getMin()) != null && (((TimeInterval) constraint.getSpecification()).getMax() != null)) {
+				return ((TimeInterval) constraint.getSpecification()).getMin().stringValue() + ".." + ((TimeInterval) constraint.getSpecification()).getMax().stringValue();
 			}
-			else{
-				return "0..0";}
-		}
-		if(constraint.getSpecification() instanceof Interval) {
-			if((((Interval)constraint.getSpecification()).getMin())!=null && (((Interval)constraint.getSpecification()).getMax()!=null)){
-				return ((Interval)constraint.getSpecification()).getMin().stringValue()+".."+((Interval)constraint.getSpecification()).getMax().stringValue();
+			else {
+				return "0..0";
 			}
-			else{
-				return "0..0";}
 		}
-		if(constraint.getSpecification() instanceof OpaqueExpression) {
-			OpaqueExpression opaqueExpression = (OpaqueExpression)constraint.getSpecification();
-			if(opaqueExpression.getBodies().size() > 0) {
+		if (constraint.getSpecification() instanceof Interval) {
+			if ((((Interval) constraint.getSpecification()).getMin()) != null && (((Interval) constraint.getSpecification()).getMax() != null)) {
+				return ((Interval) constraint.getSpecification()).getMin().stringValue() + ".." + ((Interval) constraint.getSpecification()).getMax().stringValue();
+			}
+			else {
+				return "0..0";
+			}
+		}
+		if (constraint.getSpecification() instanceof OpaqueExpression) {
+			OpaqueExpression opaqueExpression = (OpaqueExpression) constraint.getSpecification();
+			if (opaqueExpression.getBodies().size() > 0) {
 				StringBuilder b = new StringBuilder();
 				if (opaqueExpression.getLanguages().size() > 0) {
 					b.append(OPAQUE_EXPRESSION_BEGIN_LANGUAGE);
@@ -101,136 +105,142 @@ public class ConstraintParser implements IParser, ISemanticParser {
 				}
 				b.append(opaqueExpression.getBodies().get(0));
 				return b.toString();
-				}
-			else{return OPAQUE_EXPRESSION_BEGIN_LANGUAGE+"NATURAL"+OPAQUE_EXPRESSION_END_LANGUAGE;}
+			}
+			else {
+				return OPAQUE_EXPRESSION_BEGIN_LANGUAGE + "NATURAL" + OPAQUE_EXPRESSION_END_LANGUAGE;
+			}
 		}
 		return "";
 	}
 
 	/**
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#isValidEditString(org.eclipse.core.runtime.IAdaptable, java.lang.String)
-	 * 
+	 *
 	 */
 
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
 	/**
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getParseCommand(org.eclipse.core.runtime.IAdaptable, java.lang.String, int)
-	 * 
+	 *
 	 */
 
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		Constraint constraint = doAdapt(element);
-		if(constraint == null || constraint.getSpecification() == null) {
+		if (constraint == null || constraint.getSpecification() == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(constraint);
-		if(editingDomain == null || constraint.getSpecification() == null) {
+		if (editingDomain == null || constraint.getSpecification() == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		ICommand command=UnexecutableCommand.INSTANCE;
-		if(constraint.getSpecification() instanceof LiteralString) {
-			LiteralString specif = (LiteralString)constraint.getSpecification();
+		ICommand command = UnexecutableCommand.INSTANCE;
+		if (constraint.getSpecification() instanceof LiteralString) {
+			LiteralString specif = (LiteralString) constraint.getSpecification();
 			command = new CompositeTransactionalCommand(editingDomain, "Set Value Constraint"); //$NON-NLS-1$
 			SetRequest request = new SetRequest(specif, UMLPackage.eINSTANCE.getLiteralString_Value(), newString);
 			command.compose(new SetValueCommand(request));
 		}
-		if(constraint.getSpecification() instanceof OpaqueExpression) {
-			OpaqueExpression specif = (OpaqueExpression)constraint.getSpecification();
+		if (constraint.getSpecification() instanceof OpaqueExpression) {
+			OpaqueExpression specif = (OpaqueExpression) constraint.getSpecification();
 			command = new CompositeTransactionalCommand(editingDomain, "Set Value Constraint"); //$NON-NLS-1$
-			ArrayList<String> stringBodyList=new ArrayList<String>();
-			ArrayList<String> stringLanguageList=new ArrayList<String>();
+			ArrayList<String> stringBodyList = new ArrayList<String>();
+			ArrayList<String> stringLanguageList = new ArrayList<String>();
 			stringLanguageList.add(newString.substring(1, newString.indexOf(OPAQUE_EXPRESSION_END_LANGUAGE)).toUpperCase());
-			stringBodyList.add( newString.substring(newString.indexOf(OPAQUE_EXPRESSION_END_LANGUAGE)+2,newString.length()));
+			stringBodyList.add(newString.substring(newString.indexOf(OPAQUE_EXPRESSION_END_LANGUAGE) + 2, newString.length()));
 			SetRequest request = new SetRequest(specif, UMLPackage.eINSTANCE.getOpaqueExpression_Body(), stringBodyList);
 			command.compose(new SetValueCommand(request));
 			request = new SetRequest(specif, UMLPackage.eINSTANCE.getOpaqueExpression_Language(), stringLanguageList);
 			command.compose(new SetValueCommand(request));
-			return  command;
+			return command;
 		}
 
-		if(constraint.getSpecification() instanceof DurationInterval) {
-			Interval specif = (Interval)constraint.getSpecification();
+		if (constraint.getSpecification() instanceof DurationInterval) {
+			Interval specif = (Interval) constraint.getSpecification();
 			command = new CompositeTransactionalCommand(editingDomain, "Set Value Constraint"); //$NON-NLS-1$
-			Duration durationMin= UMLFactory.eINSTANCE.createDuration();
-			durationMin.setName(NamedElementUtil.getDefaultNameWithIncrementFromBase(durationMin.eClass().getName(), constraint.eContents()));			
-			Duration durationMax= UMLFactory.eINSTANCE.createDuration();
+			Duration durationMin = UMLFactory.eINSTANCE.createDuration();
+			durationMin.setName(NamedElementUtil.getDefaultNameWithIncrementFromBase(durationMin.eClass().getName(), constraint.eContents()));
+			Duration durationMax = UMLFactory.eINSTANCE.createDuration();
 			durationMax.setName(NamedElementUtil.getDefaultNameWithIncrementFromBase(durationMax.eClass().getName(), constraint.eContents()));
-			LiteralString exp1 =UMLFactory.eINSTANCE.createLiteralString();
-			LiteralString exp2 =UMLFactory.eINSTANCE.createLiteralString();
+			LiteralString exp1 = UMLFactory.eINSTANCE.createLiteralString();
+			LiteralString exp2 = UMLFactory.eINSTANCE.createLiteralString();
 			exp1.setName(NamedElementUtil.getDefaultNameWithIncrementFromBase(exp1.eClass().getName(), durationMin.eContents()));
 			exp1.setValue(newString.substring(0, newString.indexOf("..")));
-			exp2.setValue( newString.substring(newString.indexOf("..")+2,newString.length()));
+			exp2.setValue(newString.substring(newString.indexOf("..") + 2, newString.length()));
 			exp2.setName(NamedElementUtil.getDefaultNameWithIncrementFromBase(exp2.eClass().getName(), durationMax.eContents()));
 			durationMin.setExpr(exp1);
 			durationMax.setExpr(exp2);
-			SetRequest request = new SetRequest(specif, UMLPackage.eINSTANCE.getInterval_Min(),durationMin);
+			SetRequest request = new SetRequest(specif, UMLPackage.eINSTANCE.getInterval_Min(), durationMin);
 			command.compose(new SetValueCommand(request));
 			request = new SetRequest(specif, UMLPackage.eINSTANCE.getInterval_Max(), durationMax);
 			command.compose(new SetValueCommand(request));
-			return  command;
+			return command;
 		}
 
-		if(constraint.getSpecification() instanceof TimeInterval) {
-			TimeInterval specif = (TimeInterval)constraint.getSpecification();
+		if (constraint.getSpecification() instanceof TimeInterval) {
+			TimeInterval specif = (TimeInterval) constraint.getSpecification();
 			command = new CompositeTransactionalCommand(editingDomain, "Set Value Constraint"); //$NON-NLS-1$
-			TimeExpression timeMin= UMLFactory.eINSTANCE.createTimeExpression();
+			TimeExpression timeMin = UMLFactory.eINSTANCE.createTimeExpression();
 			timeMin.setName(NamedElementUtil.getDefaultNameWithIncrementFromBase(timeMin.eClass().getName(), constraint.eContents()));
-			TimeExpression timeMax= UMLFactory.eINSTANCE.createTimeExpression();
+			TimeExpression timeMax = UMLFactory.eINSTANCE.createTimeExpression();
 			timeMax.setName(NamedElementUtil.getDefaultNameWithIncrementFromBase(timeMax.eClass().getName(), constraint.eContents()));
-			LiteralString exp1 =UMLFactory.eINSTANCE.createLiteralString();
-			LiteralString exp2 =UMLFactory.eINSTANCE.createLiteralString();
+			LiteralString exp1 = UMLFactory.eINSTANCE.createLiteralString();
+			LiteralString exp2 = UMLFactory.eINSTANCE.createLiteralString();
 			exp1.setName(NamedElementUtil.getDefaultNameWithIncrementFromBase(exp1.eClass().getName(), timeMin.eContents()));
 			exp1.setValue(newString.substring(0, newString.indexOf("..")));
-			exp2.setValue( newString.substring(newString.indexOf("..")+2,newString.length()));
+			exp2.setValue(newString.substring(newString.indexOf("..") + 2, newString.length()));
 			exp2.setName(NamedElementUtil.getDefaultNameWithIncrementFromBase(exp2.eClass().getName(), timeMax.eContents()));
 			timeMin.setExpr(exp1);
 			timeMax.setExpr(exp2);
-			SetRequest request = new SetRequest(specif, UMLPackage.eINSTANCE.getInterval_Min(),timeMin);
+			SetRequest request = new SetRequest(specif, UMLPackage.eINSTANCE.getInterval_Min(), timeMin);
 			command.compose(new SetValueCommand(request));
 			request = new SetRequest(specif, UMLPackage.eINSTANCE.getInterval_Max(), timeMax);
 			command.compose(new SetValueCommand(request));
-			return  command;
+			return command;
 		}
 
-		if(constraint.getSpecification() instanceof Interval) {
+		if (constraint.getSpecification() instanceof Interval) {
 
-			Interval specif = (Interval)constraint.getSpecification();
+			Interval specif = (Interval) constraint.getSpecification();
 			command = new CompositeTransactionalCommand(editingDomain, "Set Value Constraint"); //$NON-NLS-1$
 			LiteralInteger min = UMLFactory.eINSTANCE.createLiteralInteger();
 			LiteralInteger max = UMLFactory.eINSTANCE.createLiteralInteger();
 			min.setName(NamedElementUtil.getDefaultNameWithIncrementFromBase(min.eClass().getName(), min.eContents()));
 			max.setName(NamedElementUtil.getDefaultNameWithIncrementFromBase(max.eClass().getName(), max.eContents()));
-			Integer minInt= new Integer(newString.substring(0, newString.indexOf("..")));
-			Integer maxInt= new Integer( newString.substring(newString.indexOf("..")+2,newString.length()));
+			Integer minInt = new Integer(newString.substring(0, newString.indexOf("..")));
+			Integer maxInt = new Integer(newString.substring(newString.indexOf("..") + 2, newString.length()));
 			min.setValue(minInt.intValue());
-			max.setValue( maxInt.intValue());
+			max.setValue(maxInt.intValue());
 
-			SetRequest request = new SetRequest(specif, UMLPackage.eINSTANCE.getInterval_Min(),min);
+			SetRequest request = new SetRequest(specif, UMLPackage.eINSTANCE.getInterval_Min(), min);
 			command.compose(new SetValueCommand(request));
 			request = new SetRequest(specif, UMLPackage.eINSTANCE.getInterval_Max(), max);
 			command.compose(new SetValueCommand(request));
-			return  command;
+			return command;
 		}
 		return command;
 	}
 
 	/**
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getPrintString(org.eclipse.core.runtime.IAdaptable, int)
-	 * 
+	 *
 	 */
 
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		return getEditString(element, flags);
 	}
 
 	/**
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#isAffectingEvent(java.lang.Object, int)
-	 * 
+	 *
 	 */
 
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		// TODO Auto-generated method stub
 		return false;
@@ -238,9 +248,10 @@ public class ConstraintParser implements IParser, ISemanticParser {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getCompletionProcessor(org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 *
 	 */
 
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		// TODO Auto-generated method stub
 		return null;
@@ -248,30 +259,31 @@ public class ConstraintParser implements IParser, ISemanticParser {
 
 	/**
 	 * used to obtain the constraint element.
-	 * 
+	 *
 	 * @param element
-	 *        the given IAdaptable
+	 *            the given IAdaptable
 	 * @return the constraint or null if it can't be found.
 	 */
 	protected Constraint doAdapt(IAdaptable element) {
 		Object obj = EMFHelper.getEObject(element);
-		if(obj instanceof Constraint) {
-			return (Constraint)obj;
+		if (obj instanceof Constraint) {
+			return (Constraint) obj;
 		}
 		return null;
 	}
 
 	/**
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#getSemanticElementsBeingParsed(org.eclipse.emf.ecore.EObject)
-	 * 
+	 *
 	 */
 
+	@Override
 	public List getSemanticElementsBeingParsed(EObject element) {
-		Element umlElement = (Element)element;
+		Element umlElement = (Element) element;
 		List<EObject> result = new LinkedList<EObject>();
-		if(umlElement instanceof Constraint) {
-			Constraint constraint = (Constraint)umlElement;
-			if(constraint.getSpecification() != null) {
+		if (umlElement instanceof Constraint) {
+			Constraint constraint = (Constraint) umlElement;
+			if (constraint.getSpecification() != null) {
 				ValueSpecification value = constraint.getSpecification();
 				result.add(value);
 			}
@@ -280,11 +292,11 @@ public class ConstraintParser implements IParser, ISemanticParser {
 	}
 
 	/**
-	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#areSemanticElementsAffected(org.eclipse.emf.ecore.EObject,
-	 *      java.lang.Object)
-	 * 
+	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#areSemanticElementsAffected(org.eclipse.emf.ecore.EObject, java.lang.Object)
+	 *
 	 */
 
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		return true;
 	}

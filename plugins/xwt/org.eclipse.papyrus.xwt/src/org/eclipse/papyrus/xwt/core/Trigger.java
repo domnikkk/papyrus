@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -70,7 +70,7 @@ public class Trigger extends TriggerBase {
 	}
 
 	public SetterBase[] getSetters() {
-		if(setters == null) {
+		if (setters == null) {
 			return SetterBase.EMPTY_SETTERS;
 		}
 		return setters;
@@ -80,13 +80,15 @@ public class Trigger extends TriggerBase {
 		this.setters = setters;
 	}
 
+	@Override
 	public void on(Object target) {
 	}
 
+	@Override
 	public void prepare(Object target) {
-		if(property != null) {
+		if (property != null) {
 			final Object source = getElementByName(target, sourceName);
-			if(source == null) {
+			if (source == null) {
 				throw new XWTException("No element is found with the name = " + sourceName);
 			}
 			IObservable observableValue = ScopeManager.observeValue(source, source, property, UpdateSourceTrigger.PropertyChanged);
@@ -94,12 +96,12 @@ public class Trigger extends TriggerBase {
 
 				public void handleChange(ChangeEvent event) {
 					Class<?> valueType = JFaceXWTDataBinding.getValueType(source.getClass(), property);
-					if(valueType == null) {
+					if (valueType == null) {
 						LoggerManager.log("Type of the property " + property + " is not found in " + source.getClass().getName());
 						return;
 					}
 					Widget widget = UserData.getWidget(source);
-					if(widget == null) {
+					if (widget == null) {
 						return;
 					}
 
@@ -107,40 +109,40 @@ public class Trigger extends TriggerBase {
 					// test value ==
 					//
 					Object realValue = value;
-					if(value != null) {
+					if (value != null) {
 						IConverter converter = XWT.findConvertor(value.getClass(), valueType);
-						if(converter != null) {
+						if (converter != null) {
 							realValue = converter.convert(value);
 						}
 					}
 					Object newValue = event.getSource();
-					if(newValue instanceof IObservableValue) {
-						IObservableValue observableValue = (IObservableValue)newValue;
+					if (newValue instanceof IObservableValue) {
+						IObservableValue observableValue = (IObservableValue) newValue;
 						newValue = observableValue.getValue();
 					}
-					if(newValue != null) {
+					if (newValue != null) {
 						IConverter newConverter = XWT.findConvertor(newValue.getClass(), valueType);
-						if(newConverter != null) {
+						if (newConverter != null) {
 							newValue = newConverter.convert(newValue);
 						}
 					}
 
-					if(!Operator.compare(newValue, operator, realValue)) {
+					if (!Operator.compare(newValue, operator, realValue)) {
 						restoreValues();
-						if(oldvalues != null) {
+						if (oldvalues != null) {
 							oldvalues.clear();
 						}
 						return;
 					}
 
-					if(oldvalues != null && !oldvalues.isEmpty()) {
+					if (oldvalues != null && !oldvalues.isEmpty()) {
 						return;
 					}
 
-					for(SetterBase setter : getSetters()) {
+					for (SetterBase setter : getSetters()) {
 						try {
 							Object oldValue = setter.applyTo(element, true);
-							if(oldvalues == null) {
+							if (oldvalues == null) {
 								oldvalues = new HashMap<SetterBase, Object>();
 							}
 							oldvalues.put(setter, oldValue);

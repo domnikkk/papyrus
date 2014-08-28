@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ import org.eclipse.papyrus.uml.diagram.component.providers.UMLViewProvider;
 
 /**
  * Custom class to create the associationClass node
- * 
+ *
  */
 public class DependencyDiamonViewCreateCommand extends AbstractTransactionalCommand {
 	private static View node;
@@ -53,7 +53,7 @@ public class DependencyDiamonViewCreateCommand extends AbstractTransactionalComm
 
 	/**
 	 * constructor
-	 * 
+	 *
 	 * @param createConnectionViewAndElementRequest
 	 *            the request that is used to obtained the associationclass
 	 * @param domain
@@ -78,9 +78,10 @@ public class DependencyDiamonViewCreateCommand extends AbstractTransactionalComm
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// / get the factory of the viewer
 		// Dependency2ViewFactory factory = new Dependency2ViewFactory();
@@ -100,9 +101,10 @@ public class DependencyDiamonViewCreateCommand extends AbstractTransactionalComm
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public List<?> getAffectedFiles() {
 		if (viewer != null) {
 			EditPart editpart = viewer.getRootEditPart().getContents();
@@ -119,7 +121,7 @@ public class DependencyDiamonViewCreateCommand extends AbstractTransactionalComm
 
 	/**
 	 * used to obtain the created node
-	 * 
+	 *
 	 * @return the created node
 	 */
 	public View getNode() {

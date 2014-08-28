@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -36,105 +36,105 @@ public class InteractionCompartmentDiagramUpdater implements ICustomDiagramUpdat
 
 	/**
 	 * <pre>
-	 * The original generated method of {@link UMLDiagramUpdater} class is kept commented below. 
+	 * The original generated method of {@link UMLDiagramUpdater} class is kept commented below.
 	 * {@inheritDoc}
 	 * </pre>
 	 */
 	public List<UMLNodeDescriptor> getSemanticChildren(View view) {
-		if(false == view.eContainer() instanceof View) {
+		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
-		View containerView = (View)view.eContainer();
-		if(!containerView.isSetElement()) {
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		Interaction modelElement = (Interaction)containerView.getElement();
+		Interaction modelElement = (Interaction) containerView.getElement();
 		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
-		for(Iterator<?> it = modelElement.getLifelines().iterator(); it.hasNext();) {
-			Lifeline childElement = (Lifeline)it.next();
+		for (Iterator<?> it = modelElement.getLifelines().iterator(); it.hasNext();) {
+			Lifeline childElement = (Lifeline) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if(visualID == LifelineEditPartCN.VISUAL_ID) {
+			if (visualID == LifelineEditPartCN.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
-		for(Iterator<?> it = modelElement.getOwnedComments().iterator(); it.hasNext();) {
-			Comment childElement = (Comment)it.next();
+		for (Iterator<?> it = modelElement.getOwnedComments().iterator(); it.hasNext();) {
+			Comment childElement = (Comment) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if(visualID == CommentEditPartCN.VISUAL_ID) {
+			if (visualID == CommentEditPartCN.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
-		for(Iterator<?> it = modelElement.getOwnedRules().iterator(); it.hasNext();) {
-			Constraint childElement = (Constraint)it.next();
+		for (Iterator<?> it = modelElement.getOwnedRules().iterator(); it.hasNext();) {
+			Constraint childElement = (Constraint) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if(visualID == ConstraintEditPartCN.VISUAL_ID) {
+			if (visualID == ConstraintEditPartCN.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
-		//Added ".getNearestPackage()"
-		for(Iterator<?> it = modelElement.getNearestPackage().getPackagedElements().iterator(); it.hasNext();) {
-			PackageableElement childElement = (PackageableElement)it.next();
+		// Added ".getNearestPackage()"
+		for (Iterator<?> it = modelElement.getNearestPackage().getPackagedElements().iterator(); it.hasNext();) {
+			PackageableElement childElement = (PackageableElement) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if(visualID == TimeObservationEditPartCN.VISUAL_ID) {
+			if (visualID == TimeObservationEditPartCN.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if(visualID == DurationObservationEditPartCN.VISUAL_ID) {
+			if (visualID == DurationObservationEditPartCN.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
 		return result;
-		//----------------Original code-----------------
+		// ----------------Original code-----------------
 		//
-		//		if(false == view.eContainer() instanceof View) {
-		//			return Collections.emptyList();
-		//		}
-		//		View containerView = (View)view.eContainer();
-		//		if(!containerView.isSetElement()) {
-		//			return Collections.emptyList();
-		//		}
-		//		Interaction modelElement = (Interaction)containerView.getElement();
-		//		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
-		//		for(Iterator<?> it = modelElement.getLifelines().iterator(); it.hasNext();) {
-		//			Lifeline childElement = (Lifeline)it.next();
-		//			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-		//			if(visualID == LifelineEditPartCN.VISUAL_ID) {
-		//				result.add(new UMLNodeDescriptor(childElement, visualID));
-		//				continue;
-		//			}
-		//		}
-		//		for(Iterator<?> it = modelElement.getOwnedComments().iterator(); it.hasNext();) {
-		//			Comment childElement = (Comment)it.next();
-		//			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-		//			if(visualID == CommentEditPartCN.VISUAL_ID) {
-		//				result.add(new UMLNodeDescriptor(childElement, visualID));
-		//				continue;
-		//			}
-		//		}
-		//		for(Iterator<?> it = modelElement.getOwnedRules().iterator(); it.hasNext();) {
-		//			Constraint childElement = (Constraint)it.next();
-		//			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-		//			if(visualID == ConstraintEditPartCN.VISUAL_ID) {
-		//				result.add(new UMLNodeDescriptor(childElement, visualID));
-		//				continue;
-		//			}
-		//		}
-		//		for(Iterator<?> it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
-		//			PackageableElement childElement = (PackageableElement)it.next();
-		//			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-		//			if(visualID == TimeObservationEditPartCN.VISUAL_ID) {
-		//				result.add(new UMLNodeDescriptor(childElement, visualID));
-		//				continue;
-		//			}
-		//			if(visualID == DurationObservationEditPartCN.VISUAL_ID) {
-		//				result.add(new UMLNodeDescriptor(childElement, visualID));
-		//				continue;
-		//			}
-		//		}
-		//		return result;
+		// if(false == view.eContainer() instanceof View) {
+		// return Collections.emptyList();
+		// }
+		// View containerView = (View)view.eContainer();
+		// if(!containerView.isSetElement()) {
+		// return Collections.emptyList();
+		// }
+		// Interaction modelElement = (Interaction)containerView.getElement();
+		// LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		// for(Iterator<?> it = modelElement.getLifelines().iterator(); it.hasNext();) {
+		// Lifeline childElement = (Lifeline)it.next();
+		// int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+		// if(visualID == LifelineEditPartCN.VISUAL_ID) {
+		// result.add(new UMLNodeDescriptor(childElement, visualID));
+		// continue;
+		// }
+		// }
+		// for(Iterator<?> it = modelElement.getOwnedComments().iterator(); it.hasNext();) {
+		// Comment childElement = (Comment)it.next();
+		// int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+		// if(visualID == CommentEditPartCN.VISUAL_ID) {
+		// result.add(new UMLNodeDescriptor(childElement, visualID));
+		// continue;
+		// }
+		// }
+		// for(Iterator<?> it = modelElement.getOwnedRules().iterator(); it.hasNext();) {
+		// Constraint childElement = (Constraint)it.next();
+		// int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+		// if(visualID == ConstraintEditPartCN.VISUAL_ID) {
+		// result.add(new UMLNodeDescriptor(childElement, visualID));
+		// continue;
+		// }
+		// }
+		// for(Iterator<?> it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
+		// PackageableElement childElement = (PackageableElement)it.next();
+		// int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+		// if(visualID == TimeObservationEditPartCN.VISUAL_ID) {
+		// result.add(new UMLNodeDescriptor(childElement, visualID));
+		// continue;
+		// }
+		// if(visualID == DurationObservationEditPartCN.VISUAL_ID) {
+		// result.add(new UMLNodeDescriptor(childElement, visualID));
+		// continue;
+		// }
+		// }
+		// return result;
 	}
 }

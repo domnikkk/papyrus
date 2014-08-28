@@ -38,12 +38,13 @@ public class MaskManagedLabelEditPolicy extends GraphicalEditPolicy implements I
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Map<String, String> getMasks() {
 		Map<String, String> masks = new HashMap<String, String>();
 
 		IParser parser = getHostLabelEditPart().getParser();
-		if(parser instanceof IMaskManagedSemanticParser) {
-			masks = ((IMaskManagedSemanticParser)parser).getMasks();
+		if (parser instanceof IMaskManagedSemanticParser) {
+			masks = ((IMaskManagedSemanticParser) parser).getMasks();
 		}
 
 		return masks;
@@ -52,16 +53,17 @@ public class MaskManagedLabelEditPolicy extends GraphicalEditPolicy implements I
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<String> getCurrentDisplayValue() {
 		Collection<String> result = MaskLabelHelper.getMaskValues(getView());
-		if(result == null) {
+		if (result == null) {
 			IParser parser = getHostLabelEditPart().getParser();
-			if(parser instanceof IMaskManagedSemanticParser) {
-				result = ((IMaskManagedSemanticParser)parser).getDefaultValue(getHost());
+			if (parser instanceof IMaskManagedSemanticParser) {
+				result = ((IMaskManagedSemanticParser) parser).getDefaultValue(getHost());
 			}
 		}
 
-		if(result == null) {
+		if (result == null) {
 			return Collections.emptySet();
 		}
 
@@ -71,6 +73,7 @@ public class MaskManagedLabelEditPolicy extends GraphicalEditPolicy implements I
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void updateDisplayValue(Collection<String> maskValues) {
 		MaskLabelHelper.setMaskValues(getView(), maskValues);
 	}
@@ -78,25 +81,27 @@ public class MaskManagedLabelEditPolicy extends GraphicalEditPolicy implements I
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setDefaultDisplayValue() {
 		MaskLabelHelper.unsetMaskValues(getView());
 	}
 
 	// @unused.
+	@Override
 	public void refreshDisplay() {
 		// Not implemented.
 	}
 
 	/**
 	 * Get the host label edit part (has to implement {@link ITextAwareEditPart}).
-	 * 
+	 *
 	 * @return the host label edit part.
 	 */
 	private ITextAwareEditPart getHostLabelEditPart() {
-		return (ITextAwareEditPart)getHost();
+		return (ITextAwareEditPart) getHost();
 	}
 
 	private View getView() {
-		return (View)getHost().getModel();
+		return (View) getHost().getModel();
 	}
 }

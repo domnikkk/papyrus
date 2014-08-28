@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.ui.dialogs.SelectionDialog;
 /**
  * A Dialog used to input a String. The dialog uses a IInputValidator
  * to check the string, and can display an error message.
- * 
+ *
  * @author Camille Letavernier
  */
 public class InputDialog extends SelectionDialog {
@@ -76,17 +76,17 @@ public class InputDialog extends SelectionDialog {
 	protected IStaticContentProvider contentProvider;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
-	 *        The shell in which the dialog will be opened
+	 *            The shell in which the dialog will be opened
 	 * @param title
-	 *        The dialog's title
+	 *            The dialog's title
 	 * @param initialValue
-	 *        The dialog's initial value
+	 *            The dialog's initial value
 	 * @param validator
-	 *        The validator used to check the input string
+	 *            The validator used to check the input string
 	 */
 	public InputDialog(Shell parentShell, String title, String label, String initialValue, IInputValidator validator) {
 		super(parentShell);
@@ -98,14 +98,14 @@ public class InputDialog extends SelectionDialog {
 
 	@Override
 	protected Composite getDialogArea() {
-		return (Composite)super.getDialogArea();
+		return (Composite) super.getDialogArea();
 	}
 
 	@Override
 	public void create() {
 		super.create();
 
-		((GridLayout)getDialogArea().getLayout()).numColumns = 2;
+		((GridLayout) getDialogArea().getLayout()).numColumns = 2;
 
 		errorImage = new Label(getDialogArea(), SWT.NONE);
 		errorImage.setImage(Activator.getDefault().getImage("/icons/error.gif")); //$NON-NLS-1$
@@ -114,37 +114,39 @@ public class InputDialog extends SelectionDialog {
 		errorLabel.setVisible(false);
 
 		Label label = new Label(getDialogArea(), SWT.None);
-		if(labelText != null) {
+		if (labelText != null) {
 			label.setText(labelText);
 		}
 		label.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 2, 1));
 
-		if(contentProvider != null) {
+		if (contentProvider != null) {
 			editor = new StringCombo(getDialogArea(), SWT.BORDER);
-			((StringCombo)editor).setValue(initialValue);
-			((StringCombo)editor).setContentProvider(contentProvider);
+			((StringCombo) editor).setValue(initialValue);
+			((StringCombo) editor).setContentProvider(contentProvider);
 		} else {
 			editor = new StringEditor(getDialogArea(), SWT.BORDER) {
 
-				//FIXME: The StringEditor (Or one of its superclasses) should be responsible for forwarding this call
+				// FIXME: The StringEditor (Or one of its superclasses) should be responsible for forwarding this call
 				@Override
 				public void addKeyListener(KeyListener keyListener) {
 					super.text.addKeyListener(keyListener);
 				}
 			};
 
-			((StringEditor)editor).setValue(initialValue);
+			((StringEditor) editor).setValue(initialValue);
 		}
-		//		input = new Text(getDialogArea(), SWT.BORDER);
-		//		input.setText(initialValue);
+		// input = new Text(getDialogArea(), SWT.BORDER);
+		// input.setText(initialValue);
 		editor.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 2, 1));
 
 		editor.addKeyListener(new KeyListener() {
 
+			@Override
 			public void keyPressed(KeyEvent e) {
-				//Nothing
+				// Nothing
 			}
 
+			@Override
 			public void keyReleased(KeyEvent e) {
 				validate();
 			}
@@ -153,7 +155,7 @@ public class InputDialog extends SelectionDialog {
 
 		getShell().setImage(Activator.getDefault().getImage("/icons/papyrus.png")); //$NON-NLS-1$
 
-		if(title != null) {
+		if (title != null) {
 			getShell().setText(title);
 		}
 
@@ -166,15 +168,15 @@ public class InputDialog extends SelectionDialog {
 	 * and error message will be displayed.
 	 */
 	protected void validate() {
-		if(validator == null) {
+		if (validator == null) {
 			errorLabel.setVisible(false);
 			errorImage.setVisible(false);
 			getOkButton().setEnabled(true);
 			return;
 		}
 
-		String errorMessage = validator.isValid((String)editor.getValue());
-		if(errorMessage == null) {
+		String errorMessage = validator.isValid((String) editor.getValue());
+		if (errorMessage == null) {
 			errorLabel.setVisible(false);
 			errorImage.setVisible(false);
 			getOkButton().setEnabled(true);
@@ -190,7 +192,7 @@ public class InputDialog extends SelectionDialog {
 
 	@Override
 	protected void okPressed() {
-		setResult(Collections.singletonList((String)editor.getValue()));
+		setResult(Collections.singletonList((String) editor.getValue()));
 		super.okPressed();
 	}
 
@@ -200,15 +202,15 @@ public class InputDialog extends SelectionDialog {
 	 */
 	public String getText() {
 		Object[] result = getResult();
-		if(result == null || result.length == 0) {
+		if (result == null || result.length == 0) {
 			return null;
 		}
-		return (String)result[0];
+		return (String) result[0];
 	}
 
 	/**
 	 * Sets a content provider to suggest predefined values to the user
-	 * 
+	 *
 	 * @param contentProvider
 	 */
 	public void setContentProvider(IStaticContentProvider contentProvider) {

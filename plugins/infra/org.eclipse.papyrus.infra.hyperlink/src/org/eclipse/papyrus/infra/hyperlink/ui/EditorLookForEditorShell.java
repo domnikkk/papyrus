@@ -82,7 +82,7 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 	 * Sets the selected editor
 	 *
 	 * @param selectedEditor
-	 *        the selectedEditor to set
+	 *            the selectedEditor to set
 	 */
 	protected void setSelectedEditor(Object selectedEditor) {
 		this.selectedEditor = selectedEditor;
@@ -125,19 +125,19 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 		 * {@inheritedDoc}.
 		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		@Override
 		public void widgetSelected(SelectionEvent e) {
 			try {
-				if(treeViewer.getSelection().isEmpty()) {
+				if (treeViewer.getSelection().isEmpty()) {
 					return;
 				}
 
-				IStructuredSelection selection = (IStructuredSelection)treeViewer.getSelection();
+				IStructuredSelection selection = (IStructuredSelection) treeViewer.getSelection();
 
 				EObject elt = EMFHelper.getEObject(selection.getFirstElement());
-				if(elt == null) {
+				if (elt == null) {
 					return;
 				}
 
@@ -161,13 +161,13 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 		 * Instantiates a new diagram create listener.
 		 *
 		 * @param commandDescriptor
-		 *        the command descriptor
+		 *            the command descriptor
 		 * @param backboneContext
-		 *        the backbone context
+		 *            the backbone context
 		 * @param container
-		 *        the container
+		 *            the container
 		 * @param iCreationCommandRegistry
-		 *        the i creation command registry
+		 *            the i creation command registry
 		 */
 		public DiagramCreateListener(CreationCommandDescriptor commandDescriptor, EObject container, ICreationCommandRegistry iCreationCommandRegistry) {
 			super();
@@ -180,7 +180,7 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 		 * Sets the container.
 		 *
 		 * @param container
-		 *        the new container
+		 *            the new container
 		 */
 		public void setContainer(EObject container) {
 			this.container = container;
@@ -194,9 +194,9 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 	 * Instantiates a new editor look for diagram.
 	 *
 	 * @param editorFactoryRegistry
-	 *        the editor factory registry
+	 *            the editor factory registry
 	 * @param amodel
-	 *        the amodel
+	 *            the amodel
 	 */
 	public EditorLookForEditorShell(IPageIconsRegistry editorFactoryRegistry, EObject amodel) {
 		super();
@@ -207,21 +207,21 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 		// intall tree with uml element
 		treeViewer = getModeFilteredTree().getViewer();
 		treeViewer.setUseHashlookup(true);
-		//		treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory) {
+		// treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory) {
 		//
-		//			@Override
-		//			public Image getImage(Object object) {
-		//				//TODO
-		////				if(object instanceof PapyrusTableInstance) {
-		////					return editorRegistry.getEditorIcon((object));
-		////				} else {
-		////					return super.getImage(object);
-		////				}
-		//				Image im = super.getImage(object);
-		//				return im;
-		////				return null;
-		//			}
-		//		});
+		// @Override
+		// public Image getImage(Object object) {
+		// //TODO
+		// // if(object instanceof PapyrusTableInstance) {
+		// // return editorRegistry.getEditorIcon((object));
+		// // } else {
+		// // return super.getImage(object);
+		// // }
+		// Image im = super.getImage(object);
+		// return im;
+		// // return null;
+		// }
+		// });
 
 		ILabelProvider labelProvider;
 		ServicesRegistry registry = null;
@@ -240,8 +240,8 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 		// treeViewer.setContentProvider(new
 		// SemanticEMFContentProvider(amodel)); //This content provider will
 		// only display the selected element, instead of the root element
-		// FIXME:  Use a standard, non-deprecated content
-		treeViewer.setContentProvider(new SemanticEMFContentProvider(null, null, new EObject[] {EcoreUtil.getRootContainer(amodel)}) {
+		// FIXME: Use a standard, non-deprecated content
+		treeViewer.setContentProvider(new SemanticEMFContentProvider(null, null, new EObject[] { EcoreUtil.getRootContainer(amodel) }) {
 
 			@Override
 			public boolean hasChildren(Object element) {
@@ -251,21 +251,21 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 			/**
 			 *
 			 * @see org.eclipse.papyrus.infra.emf.providers.MoDiscoContentProvider#getChildren(java.lang.Object)
-			 * 
+			 *
 			 * @param parentElement
 			 * @return
 			 */
-			//in some case we return diagram twice!
-			//TODO the best correction we be able to manage applied facet, because if we get diagram twice it is probably because there are 2 facets with the same behavior applied
+			// in some case we return diagram twice!
+			// TODO the best correction we be able to manage applied facet, because if we get diagram twice it is probably because there are 2 facets with the same behavior applied
 			@Override
 			public Object[] getChildren(Object parentElement) {
 				Set<Object> alreadyVisited = new HashSet<Object>();
 				List<Object> returnedChildren = new ArrayList<Object>();
 				Object[] children = super.getChildren(parentElement);
-				for(Object current : children) {
+				for (Object current : children) {
 					EObject el = EMFHelper.getEObject(current);
-					if(el != null) {
-						if(!alreadyVisited.contains(el)) {
+					if (el != null) {
+						if (!alreadyVisited.contains(el)) {
 							returnedChildren.add(current);
 							alreadyVisited.add(el);
 						}
@@ -282,10 +282,10 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 		diagramListTreeViewer.setUseHashlookup(true);
 
 		// fill list of diagram
-		//TODO
-		//diagramListTreeViewer.setLabelProvider(new ObjectLabelProvider(null));
+		// TODO
+		// diagramListTreeViewer.setLabelProvider(new ObjectLabelProvider(null));
 
-		//we can't reuse the same instance of the label provider see bug 385599: [Hyperlink] We can't select the diagram/table for referencing them
+		// we can't reuse the same instance of the label provider see bug 385599: [Hyperlink] We can't select the diagram/table for referencing them
 		diagramListTreeViewer.setLabelProvider(labelProvider);
 
 
@@ -296,7 +296,7 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 		diagramMenuButton = new Menu(getNewDiagrambutton());
 		getNewDiagrambutton().setMenu(diagramMenuButton);
 		CreationCommandRegistry commandRegistry = CreationCommandRegistry.getInstance(org.eclipse.papyrus.infra.core.Activator.PLUGIN_ID);
-		for(CreationCommandDescriptor desc : commandRegistry.getCommandDescriptors()) {
+		for (CreationCommandDescriptor desc : commandRegistry.getCommandDescriptors()) {
 			MenuItem menuItem = new MenuItem(diagramMenuButton, SWT.PUSH);
 			menuItem.addSelectionListener(new DiagramCreateListener(desc, null, commandRegistry));
 			menuItem.setText(desc.getLabel());
@@ -314,7 +314,7 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 
 			@Override
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				IStructuredSelection iSelection = (IStructuredSelection)getModeFilteredTree().getViewer().getSelection();
+				IStructuredSelection iSelection = (IStructuredSelection) getModeFilteredTree().getViewer().getSelection();
 				Iterator<?> iterator = iSelection.iterator();
 
 				final IPageManager pageManager;
@@ -326,18 +326,18 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 				}
 
 				final List<Object> pagesToDelete = new LinkedList<Object>();
-				while(iterator.hasNext()) {
+				while (iterator.hasNext()) {
 					EObject selectedElement = EMFHelper.getEObject(iterator.next());
-					if(pageManager.allPages().contains(selectedElement)) {
+					if (pageManager.allPages().contains(selectedElement)) {
 						pagesToDelete.add(selectedElement);
 					}
 				}
 
-				if(pagesToDelete.isEmpty()) {
+				if (pagesToDelete.isEmpty()) {
 					return;
 				}
 
-				for(Object page : pagesToDelete) {
+				for (Object page : pagesToDelete) {
 					pageManager.closeAllOpenedPages(page);
 				}
 
@@ -351,7 +351,7 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 		getModeFilteredTree().getViewer().addSelectionChangedListener(new ISelectionChangedListener() {
 
 			public void selectionChanged(SelectionChangedEvent event) {
-				Object selection = ((IStructuredSelection)getModeFilteredTree().getViewer().getSelection()).getFirstElement();
+				Object selection = ((IStructuredSelection) getModeFilteredTree().getViewer().getSelection()).getFirstElement();
 				refresh(selection);
 
 			}
@@ -362,7 +362,7 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 		getDiagramfilteredTree().getViewer().addSelectionChangedListener(new ISelectionChangedListener() {
 
 			public void selectionChanged(SelectionChangedEvent event) {
-				Object selection = ((IStructuredSelection)getDiagramfilteredTree().getViewer().getSelection()).getFirstElement();
+				Object selection = ((IStructuredSelection) getDiagramfilteredTree().getViewer().getSelection()).getFirstElement();
 				refresh(selection);
 			}
 		});
@@ -393,15 +393,15 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 
 		// dispose the adapter factory when the shell is closed
 		getLookforShell().addDisposeListener(new DisposeListener() {
-			
+
 			public void widgetDisposed(DisposeEvent e) {
 				// we created the adapter factory, so we should dispose it
-				if(adapterFactory instanceof IDisposable) {
-					((IDisposable)adapterFactory).dispose();
+				if (adapterFactory instanceof IDisposable) {
+					((IDisposable) adapterFactory).dispose();
 				}
 			}
 		});
-		
+
 	}
 
 	/**
@@ -410,14 +410,14 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 	public void open() {
 		Display display = Display.getCurrent();
 		getLookforShell().pack();
-		//		getLookforShell().setSize(700, 500);
+		// getLookforShell().setSize(700, 500);
 
 		// code use to wait for an action from the user
 		getLookforShell().pack();
-		//		getLookforShell().setBounds(500, 500, 500, 300);
+		// getLookforShell().setBounds(500, 500, 500, 300);
 		getLookforShell().open();
-		while(!getLookforShell().isDisposed()) {
-			if(!display.readAndDispatch()) {
+		while (!getLookforShell().isDisposed()) {
+			if (!display.readAndDispatch()) {
 				display.sleep();
 			}
 		}
@@ -426,7 +426,7 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 	protected void refresh(Object selectedElement) {
 		selectedElement = EMFHelper.getEObject(selectedElement);
 		Button but = getOKbutton();
-		if(isAValidEditor(selectedElement)) {
+		if (isAValidEditor(selectedElement)) {
 			but = getOKbutton();
 			but.setEnabled(true);
 			selectedEditor = selectedElement;
@@ -437,11 +437,11 @@ public class EditorLookForEditorShell extends AbstractLookForEditorShell {
 	}
 
 	protected boolean isAValidEditor(final Object object) {
-		if(!(object instanceof EObject)) {
+		if (!(object instanceof EObject)) {
 			return false;
 		}
 
-		EObject eObject = (EObject)object;
+		EObject eObject = (EObject) object;
 
 		try {
 			return ServiceUtilsForEObject.getInstance().getIPageMngr(eObject).allPages().contains(object);

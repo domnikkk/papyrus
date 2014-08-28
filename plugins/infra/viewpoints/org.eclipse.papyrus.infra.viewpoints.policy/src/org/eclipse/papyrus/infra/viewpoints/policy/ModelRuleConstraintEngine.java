@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  CEA LIST - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.viewpoints.policy;
 
@@ -44,6 +44,7 @@ public class ModelRuleConstraintEngine extends DefaultConstraintEngine<ModelRule
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void refresh() {
 		modelRule2Constraints.clear();
 		fireConstraintsChanged();
@@ -52,11 +53,11 @@ public class ModelRuleConstraintEngine extends DefaultConstraintEngine<ModelRule
 	public boolean matchesRule(ModelRule rule, EObject element) {
 		IStructuredSelection selection = new StructuredSelection(element);
 		List<Constraint> constraints = getConstraintsFor(rule);
-		if(constraints == null || constraints.size() == 0) {
+		if (constraints == null || constraints.size() == 0) {
 			return true;
 		}
 		for (Constraint c : constraints) {
- 			try {
+			try {
 				if (!(c.match(selection))) {
 					return false;
 				}
@@ -69,7 +70,7 @@ public class ModelRuleConstraintEngine extends DefaultConstraintEngine<ModelRule
 
 	/**
 	 * Initialize and return the list of constraints for a given rule
-	 * 
+	 *
 	 * @param rule
 	 *            the rule to check
 	 * @return the list of constraints for the specified rule or an empty list if no rule is registered for the rule
@@ -84,7 +85,7 @@ public class ModelRuleConstraintEngine extends DefaultConstraintEngine<ModelRule
 
 	/**
 	 * Initialize constraints for a given rule
-	 * 
+	 *
 	 * @param rule
 	 *            the rule that contains the constraints
 	 * @return the list of constraints for the given rule or an empty list if no constraints were found for the given rule

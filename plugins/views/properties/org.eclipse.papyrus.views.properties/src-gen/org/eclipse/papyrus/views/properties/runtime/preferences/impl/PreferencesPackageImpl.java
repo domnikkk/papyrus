@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ import org.eclipse.papyrus.views.properties.runtime.preferences.PreferencesPacka
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class PreferencesPackageImpl extends EPackageImpl implements PreferencesPackage {
@@ -35,7 +35,7 @@ public class PreferencesPackageImpl extends EPackageImpl implements PreferencesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass contextDescriptorEClass = null;
@@ -43,7 +43,7 @@ public class PreferencesPackageImpl extends EPackageImpl implements PreferencesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass preferencesEClass = null;
@@ -53,9 +53,8 @@ public class PreferencesPackageImpl extends EPackageImpl implements PreferencesP
 	 * package
 	 * package URI value.
 	 * <p>
-	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
-	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.PreferencesPackage#eNS_URI
 	 * @see #init()
@@ -68,29 +67,29 @@ public class PreferencesPackageImpl extends EPackageImpl implements PreferencesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>
-	 * This method is used to initialize {@link PreferencesPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly.
-	 * Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This method is used to initialize {@link PreferencesPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static PreferencesPackage init() {
-		if(isInited)
-			return (PreferencesPackage)EPackage.Registry.INSTANCE.getEPackage(PreferencesPackage.eNS_URI);
+		if (isInited) {
+			return (PreferencesPackage) EPackage.Registry.INSTANCE.getEPackage(PreferencesPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		PreferencesPackageImpl thePreferencesPackage = (PreferencesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PreferencesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new PreferencesPackageImpl());
+		PreferencesPackageImpl thePreferencesPackage = (PreferencesPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PreferencesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new PreferencesPackageImpl());
 
 		isInited = true;
 
@@ -112,7 +111,7 @@ public class PreferencesPackageImpl extends EPackageImpl implements PreferencesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getContextDescriptor() {
@@ -122,47 +121,47 @@ public class PreferencesPackageImpl extends EPackageImpl implements PreferencesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getContextDescriptor_Name() {
-		return (EAttribute)contextDescriptorEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) contextDescriptorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getContextDescriptor_Applied() {
-		return (EAttribute)contextDescriptorEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) contextDescriptorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getContextDescriptor_Prototype() {
-		return (EReference)contextDescriptorEClass.getEStructuralFeatures().get(2);
+		return (EReference) contextDescriptorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getContextDescriptor_Deleted() {
-		return (EAttribute)contextDescriptorEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) contextDescriptorEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPreferences() {
@@ -172,37 +171,37 @@ public class PreferencesPackageImpl extends EPackageImpl implements PreferencesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPreferences_Contexts() {
-		return (EReference)preferencesEClass.getEStructuralFeatures().get(0);
+		return (EReference) preferencesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPreferences_Version() {
-		return (EAttribute)preferencesEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) preferencesEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PreferencesFactory getPreferencesFactory() {
-		return (PreferencesFactory)getEFactoryInstance();
+		return (PreferencesFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -212,12 +211,13 @@ public class PreferencesPackageImpl extends EPackageImpl implements PreferencesP
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if(isCreated)
+		if (isCreated) {
 			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -235,7 +235,7 @@ public class PreferencesPackageImpl extends EPackageImpl implements PreferencesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -245,12 +245,13 @@ public class PreferencesPackageImpl extends EPackageImpl implements PreferencesP
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if(isInitialized)
+		if (isInitialized) {
 			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -268,7 +269,8 @@ public class PreferencesPackageImpl extends EPackageImpl implements PreferencesP
 		initEClass(contextDescriptorEClass, ContextDescriptor.class, "ContextDescriptor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContextDescriptor_Name(), ecorePackage.getEString(), "name", null, 1, 1, ContextDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescriptor_Applied(), ecorePackage.getEBoolean(), "applied", "true", 1, 1, ContextDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContextDescriptor_Prototype(), this.getContextDescriptor(), null, "prototype", null, 0, 1, ContextDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContextDescriptor_Prototype(), this.getContextDescriptor(), null, "prototype", null, 0, 1, ContextDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescriptor_Deleted(), ecorePackage.getEBoolean(), "deleted", null, 1, 1, ContextDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(preferencesEClass, Preferences.class, "Preferences", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -279,4 +281,4 @@ public class PreferencesPackageImpl extends EPackageImpl implements PreferencesP
 		createResource(eNS_URI);
 	}
 
-} //PreferencesPackageImpl
+} // PreferencesPackageImpl

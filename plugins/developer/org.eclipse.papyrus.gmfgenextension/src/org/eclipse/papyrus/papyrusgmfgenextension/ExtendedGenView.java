@@ -18,19 +18,19 @@ import org.eclipse.gmf.codegen.gmfgen.GenCommonBase;
  * This element is always linked to a genView (topLevel, or child)
  * Used set if an editPart is abstract.
  * SuperGenViews is a list of all superEditPart.
- * 
+ *
  * Thanks to this, it is possible to factorize code and to decrease the number of generated classes.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#getGenView <em>Gen View</em>}</li>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#isIsAbstract <em>Is Abstract</em>}</li>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#getSuperGenViews <em>Super Gen Views</em>}</li>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#getPropRefreshHook <em>Prop Refresh Hook</em>}</li>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#getSuperOwnedEditPart <em>Super Owned Edit Part</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#getGenView <em>Gen View</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#isIsAbstract <em>Is Abstract</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#getSuperGenViews <em>Super Gen Views</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#getPropRefreshHook <em>Prop Refresh Hook</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#getSuperOwnedEditPart <em>Super Owned Edit Part</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +48,7 @@ public interface ExtendedGenView extends CommentedElement {
 	 * If the meaning of the '<em>Gen View</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Gen View</em>' reference list.
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getExtendedGenView_GenView()
 	 * @model required="true" ordered="false"
@@ -62,6 +63,7 @@ public interface ExtendedGenView extends CommentedElement {
 	 * If the meaning of the '<em>Is Abstract</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Is Abstract</em>' attribute.
 	 * @see #setIsAbstract(boolean)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getExtendedGenView_IsAbstract()
@@ -74,7 +76,9 @@ public interface ExtendedGenView extends CommentedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#isIsAbstract <em>Is Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Abstract</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Is Abstract</em>' attribute.
 	 * @see #isIsAbstract()
 	 * @generated
 	 */
@@ -88,6 +92,7 @@ public interface ExtendedGenView extends CommentedElement {
 	 * If the meaning of the '<em>Super Gen Views</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Super Gen Views</em>' reference list.
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getExtendedGenView_SuperGenViews()
 	 * @model ordered="false"
@@ -102,6 +107,7 @@ public interface ExtendedGenView extends CommentedElement {
 	 * If the meaning of the '<em>Prop Refresh Hook</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Prop Refresh Hook</em>' containment reference.
 	 * @see #setPropRefreshHook(PropertyRefreshHook)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getExtendedGenView_PropRefreshHook()
@@ -114,7 +120,9 @@ public interface ExtendedGenView extends CommentedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#getPropRefreshHook <em>Prop Refresh Hook</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Prop Refresh Hook</em>' containment reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Prop Refresh Hook</em>' containment reference.
 	 * @see #getPropRefreshHook()
 	 * @generated
 	 */
@@ -127,6 +135,7 @@ public interface ExtendedGenView extends CommentedElement {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getExtendedGenView_Name()
@@ -139,7 +148,9 @@ public interface ExtendedGenView extends CommentedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -152,6 +163,7 @@ public interface ExtendedGenView extends CommentedElement {
 	 * If the meaning of the '<em>Super Owned Edit Part</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Super Owned Edit Part</em>' attribute.
 	 * @see #setSuperOwnedEditPart(String)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getExtendedGenView_SuperOwnedEditPart()
@@ -164,7 +176,9 @@ public interface ExtendedGenView extends CommentedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView#getSuperOwnedEditPart <em>Super Owned Edit Part</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Super Owned Edit Part</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Super Owned Edit Part</em>' attribute.
 	 * @see #getSuperOwnedEditPart()
 	 * @generated
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.infra.hyperlink.util.HyperLinkConstants;
  * localization of the hyperlink
  */
 
-public class DeleteHyperLinkDocumentCommand extends AbstractDeleteHyperLinkCommand{
+public class DeleteHyperLinkDocumentCommand extends AbstractDeleteHyperLinkCommand {
 
 	/** The localization. */
 	public String link;
@@ -36,21 +36,21 @@ public class DeleteHyperLinkDocumentCommand extends AbstractDeleteHyperLinkComma
 	/**
 	 * Instantiates a new delete hyper link command used to suppress a link in
 	 * the view
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param object
-	 *        the object
+	 *            the object
 	 * @param link
-	 *        the localization of the link
+	 *            the localization of the link
 	 */
 	public DeleteHyperLinkDocumentCommand(TransactionalEditingDomain domain, EModelElement object, String link) {
-		super(domain, object);//TODO an error?
+		super(domain, object);// TODO an error?
 		this.link = link;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.hyperlink.commands.AbstractDeleteHyperLinkCommand#getEAnnotationsToRemove()
 	 *
 	 * @return
@@ -60,10 +60,10 @@ public class DeleteHyperLinkDocumentCommand extends AbstractDeleteHyperLinkComma
 		List<EAnnotation> toRemove = super.getEAnnotationsToRemove();
 		Iterator<EAnnotation> iter = getObject().getEAnnotations().iterator();
 		// look for interesting eannotations
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			EAnnotation currentAnnotation = iter.next();
-			if(currentAnnotation.getSource().equals(HyperLinkConstants.HYPERLINK_DOCUMENT) || currentAnnotation.getSource().equals(HyperLinkConstants.HYPERLINK_WEB)) {
-				if(currentAnnotation.getDetails().containsValue(link)) {
+			if (currentAnnotation.getSource().equals(HyperLinkConstants.HYPERLINK_DOCUMENT) || currentAnnotation.getSource().equals(HyperLinkConstants.HYPERLINK_WEB)) {
+				if (currentAnnotation.getDetails().containsValue(link)) {
 					toRemove.add(currentAnnotation);
 				}
 			}

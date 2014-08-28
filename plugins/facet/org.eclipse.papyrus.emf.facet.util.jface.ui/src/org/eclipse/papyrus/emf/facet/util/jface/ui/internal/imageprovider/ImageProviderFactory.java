@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Copyright (c) 2013 Soft-Maint.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,8 @@ import org.eclipse.papyrus.emf.facet.util.jface.ui.imageprovider.IImageProviderF
 public class ImageProviderFactory implements IImageProviderFactory {
 
 	private final Map<Plugin, IImageProvider> map = new HashMap<Plugin, IImageProvider>();
-	
+
+	@Override
 	public IImageProvider createIImageProvider(final Plugin plugin) {
 		IImageProvider result = this.map.get(plugin);
 		if (result == null) {

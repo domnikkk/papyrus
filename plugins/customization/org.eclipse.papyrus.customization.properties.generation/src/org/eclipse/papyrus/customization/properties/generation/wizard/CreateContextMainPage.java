@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add SelectOutputPage
  *  Christian W. Damus (CEA) - bug 422257
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.generation.wizard;
 
@@ -32,9 +32,9 @@ import org.eclipse.swt.widgets.Listener;
 /**
  * A WizardPage for selecting the method of generation (e.g. from Ecore
  * Metamodel or from Profile model)
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class CreateContextMainPage extends AbstractCreateContextPage implements Listener {
 
@@ -54,7 +54,7 @@ public class CreateContextMainPage extends AbstractCreateContextPage implements 
 	@Override
 	public void dispose() {
 		try {
-			for(IGenerator next : generators) {
+			for (IGenerator next : generators) {
 				next.dispose();
 			}
 		} finally {
@@ -67,7 +67,7 @@ public class CreateContextMainPage extends AbstractCreateContextPage implements 
 		root.setLayout(new GridLayout(1, false));
 
 		combo = new CCombo(root, SWT.BORDER);
-		for(IGenerator generator : generators) {
+		for (IGenerator generator : generators) {
 			combo.add(generator.getName());
 		}
 		combo.setEditable(false);
@@ -84,7 +84,7 @@ public class CreateContextMainPage extends AbstractCreateContextPage implements 
 	public IWizardPage getNextPage() {
 		int selection = combo.getSelectionIndex();
 		getWizard().setGenerator(generators.get(selection));
-		//		getWizard().generatorPage.clearTarget();
+		// getWizard().generatorPage.clearTarget();
 		return getWizard().generatorPage;
 	}
 

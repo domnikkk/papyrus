@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.NullPropertySetter;
 
@@ -30,6 +29,7 @@ public class NullPropertySetterImpl extends PropertySetterImpl implements NullPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	protected NullPropertySetterImpl() {
@@ -40,6 +40,7 @@ public class NullPropertySetterImpl extends PropertySetterImpl implements NullPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -47,4 +48,4 @@ public class NullPropertySetterImpl extends PropertySetterImpl implements NullPr
 		return LayersPackage.Literals.NULL_PROPERTY_SETTER;
 	}
 
-} //NullPropertySetterImpl
+} // NullPropertySetterImpl

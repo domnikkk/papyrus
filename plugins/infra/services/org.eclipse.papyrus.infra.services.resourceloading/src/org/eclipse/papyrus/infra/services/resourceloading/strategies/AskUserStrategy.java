@@ -95,8 +95,7 @@ public class AskUserStrategy implements ILoadingStrategy {
 	private static final URI NoForAllURI = URI.createURI(Messages.AskUserStrategy_NO_FOR_ALL_URI);
 
 	/**
-	 * @see org.eclipse.papyrus.infra.services.resourceloading.ILoadingStrategy#loadResource(org.eclipse.papyrus.infra.core.resource.ModelSet,
-	 *      org.eclipse.emf.common.util.URI)
+	 * @see org.eclipse.papyrus.infra.services.resourceloading.ILoadingStrategy#loadResource(org.eclipse.papyrus.infra.core.resource.ModelSet, org.eclipse.emf.common.util.URI)
 	 *
 	 * @param modelSet
 	 * @param uri
@@ -113,20 +112,20 @@ public class AskUserStrategy implements ILoadingStrategy {
 		// all the verification are made with the uri without the file extension
 		// each load is performed for a set of resources
 		URI trimFileExtensionAndFragment = uri.trimFragment().trimFileExtension();
-		if(!result) {
+		if (!result) {
 			result = initialURI.equals(trimFileExtensionAndFragment);
 		}
-		if(!result) {
+		if (!result) {
 			manageExtensions(initialURI, uri);
 			Set<URI> uris = authorized.get(initialURI);
-			if(uris != null && (uris.contains(YesForAllURI) || uris.contains(trimFileExtensionAndFragment))) {
+			if (uris != null && (uris.contains(YesForAllURI) || uris.contains(trimFileExtensionAndFragment))) {
 				result = true;
 			}
-			if(uris != null && (uris.contains(NoForAllURI))) {
+			if (uris != null && (uris.contains(NoForAllURI))) {
 				// in this case always false !
 				return false;
 			}
-			if(!result) {
+			if (!result) {
 				manageGuess(modelSet, initialURI, trimFileExtensionAndFragment);
 			}
 		}
@@ -141,7 +140,7 @@ public class AskUserStrategy implements ILoadingStrategy {
 	 * @param trimFragment
 	 */
 	protected void manageGuess(ModelSet modelSet, URI initialURI, URI trimFragment) {
-		if(!alreadyGuessed(initialURI, trimFragment) && !alreadyGuessed(initialURI, YesForAllURI) && !alreadyGuessed(initialURI, NoForAllURI)) {
+		if (!alreadyGuessed(initialURI, trimFragment) && !alreadyGuessed(initialURI, YesForAllURI) && !alreadyGuessed(initialURI, NoForAllURI)) {
 			String message = new StringBuffer(Messages.AskUserStrategy_MESSAGE_PART_1).append(initialURI.lastSegment()).append(Messages.AskUserStrategy_MESSAGE_PART_2).append(trimFragment.toString()).append(Messages.AskUserStrategy_MESSAGE_PART3).toString();
 			addGuessed(initialURI, trimFragment);
 			NotificationBuilder builder = getNotification(message, trimFragment, modelSet, initialURI);
@@ -157,9 +156,9 @@ public class AskUserStrategy implements ILoadingStrategy {
 	 * @param initialURI
 	 */
 	private void addClosingEditorListener(URI initialURI) {
-		if(!listeners.containsKey(initialURI)) {
+		if (!listeners.containsKey(initialURI)) {
 			EditorCloseListener value = new EditorCloseListener();
-			if(addPageListener(value)) {
+			if (addPageListener(value)) {
 				listeners.put(initialURI, value);
 			}
 		}
@@ -169,12 +168,12 @@ public class AskUserStrategy implements ILoadingStrategy {
 	 * Remember that an uri has already be asked
 	 *
 	 * @param initialURI
-	 *        , the uri opened by the editor
+	 *            , the uri opened by the editor
 	 * @param guessed
 	 */
 	private void addGuessed(URI initialURI, URI guessed) {
 		Set<URI> set = alreadyGuessed.get(initialURI);
-		if(set == null) {
+		if (set == null) {
 			set = new HashSet<URI>();
 			alreadyGuessed.put(initialURI, set);
 		}
@@ -185,14 +184,14 @@ public class AskUserStrategy implements ILoadingStrategy {
 	 * Check if the uri is already asked
 	 *
 	 * @param initialURI
-	 *        , the uri opened by the editor
+	 *            , the uri opened by the editor
 	 * @param toLoad
-	 *        , the uri to load
+	 *            , the uri to load
 	 * @return
 	 */
 	private boolean alreadyGuessed(URI initialURI, URI toLoad) {
 		Set<URI> guessed = alreadyGuessed.get(initialURI);
-		if(guessed != null) {
+		if (guessed != null) {
 			return guessed.contains(toLoad);
 		}
 		return false;
@@ -203,17 +202,17 @@ public class AskUserStrategy implements ILoadingStrategy {
 	 * wants to load a set of resources
 	 *
 	 * @param uri
-	 *        , the file to load
+	 *            , the file to load
 	 * @param trimFragment
 	 */
 	private void manageExtensions(URI initialURI, URI toLoad) {
 		Map<URI, Set<String>> map = mappingURIExtensions.get(initialURI);
-		if(map == null) {
+		if (map == null) {
 			map = new HashMap<URI, Set<String>>();
 			mappingURIExtensions.put(initialURI, map);
 		}
 		Set<String> extensions = map.get(toLoad.trimFileExtension());
-		if(extensions == null) {
+		if (extensions == null) {
 			extensions = new HashSet<String>();
 			map.put(toLoad.trimFileExtension(), extensions);
 		}
@@ -227,8 +226,8 @@ public class AskUserStrategy implements ILoadingStrategy {
 	 */
 	protected IMultiDiagramEditor getCurrentEditor() {
 		IEditorPart editor = getEditor();
-		if(editor instanceof IMultiDiagramEditor) {
-			return (IMultiDiagramEditor)editor;
+		if (editor instanceof IMultiDiagramEditor) {
+			return (IMultiDiagramEditor) editor;
 		}
 		return null;
 	}
@@ -237,13 +236,13 @@ public class AskUserStrategy implements ILoadingStrategy {
 	 * Create the notification with Yes/No/Yes For All/No For All option
 	 *
 	 * @param message
-	 *        , the message to display
+	 *            , the message to display
 	 * @param uri
-	 *        , the uri to load
+	 *            , the uri to load
 	 * @param modelSet
-	 *        , the model set of the editor
+	 *            , the model set of the editor
 	 * @param initialURI
-	 *        , the uri opened by the editor
+	 *            , the uri opened by the editor
 	 * @return a {@link NotificationBuilder} to build
 	 */
 	protected NotificationBuilder getNotification(String message, final URI uri, final ModelSet modelSet, final URI initialURI) {
@@ -251,7 +250,8 @@ public class AskUserStrategy implements ILoadingStrategy {
 		NotificationRunnable no = getNoRunnable(uri, modelSet, initialURI);
 		NotificationRunnable yesForAll = getYesForAllRunnable(uri, modelSet, initialURI);
 		NotificationRunnable noForAll = getNoForAllRunnable(uri, modelSet, initialURI);
-		return new NotificationBuilder().setType(Type.QUESTION).setAsynchronous(true).setTemporary(false).setMessage(message).setHTML(true).setAsynchronous(true).setTitle(Messages.AskUserStrategy_LOAD_RESOURCE + uri.toString()).addAction(yes).addAction(no).addAction(yesForAll).addAction(noForAll);
+		return new NotificationBuilder().setType(Type.QUESTION).setAsynchronous(true).setTemporary(false).setMessage(message).setHTML(true).setAsynchronous(true).setTitle(Messages.AskUserStrategy_LOAD_RESOURCE + uri.toString()).addAction(yes).addAction(no)
+				.addAction(yesForAll).addAction(noForAll);
 	}
 
 	/**
@@ -276,9 +276,9 @@ public class AskUserStrategy implements ILoadingStrategy {
 				addAuthorized(getInitialURI(), NoForAllURI);
 
 				List<INotification> list = notifications.get(getInitialURI());
-				if(list != null) {
-					for(INotification n : notifications.get(getInitialURI())) {
-						if(n != getNotification()) {
+				if (list != null) {
+					for (INotification n : notifications.get(getInitialURI())) {
+						if (n != getNotification()) {
 							n.delete();
 						}
 					}
@@ -317,10 +317,10 @@ public class AskUserStrategy implements ILoadingStrategy {
 					@Override
 					public void run(IMultiDiagramEditor editor) {
 						List<INotification> list = notifications.get(getInitialURI());
-						if(list != null) {
-							for(INotification n : notifications.get(getInitialURI())) {
-								if(n instanceof EncapsulatedNotification) {
-									EncapsulatedNotification encapsulated = (EncapsulatedNotification)n;
+						if (list != null) {
+							for (INotification n : notifications.get(getInitialURI())) {
+								if (n instanceof EncapsulatedNotification) {
+									EncapsulatedNotification encapsulated = (EncapsulatedNotification) n;
 									new RefreshRunnable(modelSet, encapsulated.getURIToLoad(), getInitialURI(), false, false).run(editor);
 								}
 							}
@@ -336,9 +336,9 @@ public class AskUserStrategy implements ILoadingStrategy {
 				addAuthorized(getInitialURI(), YesForAllURI);
 				INotification currentNotification = getNotification();
 				List<INotification> list = notifications.get(getInitialURI());
-				if(list != null) {
-					for(INotification n : notifications.get(getInitialURI())) {
-						if(n != currentNotification) {
+				if (list != null) {
+					for (INotification n : notifications.get(getInitialURI())) {
+						if (n != currentNotification) {
 							n.delete();
 						}
 					}
@@ -397,7 +397,7 @@ public class AskUserStrategy implements ILoadingStrategy {
 	 */
 	protected void addNotification(URI initialURI, INotification notification) {
 		List<INotification> notifs = notifications.get(initialURI);
-		if(notifs == null) {
+		if (notifs == null) {
 			notifs = new LinkedList<INotification>();
 			notifications.put(initialURI, notifs);
 		}
@@ -406,9 +406,9 @@ public class AskUserStrategy implements ILoadingStrategy {
 
 	protected IEditorPart getEditor() {
 		IWorkbenchWindow activeWorkbenchWindow = getActiveWorkbenchWindow();
-		if(activeWorkbenchWindow != null) {
+		if (activeWorkbenchWindow != null) {
 			IWorkbenchPage activePage = activeWorkbenchWindow.getActivePage();
-			if(activePage != null) {
+			if (activePage != null) {
 				return activePage.getActiveEditor();
 			}
 		}
@@ -417,7 +417,7 @@ public class AskUserStrategy implements ILoadingStrategy {
 
 	protected IWorkbenchWindow getActiveWorkbenchWindow() {
 		IWorkbench workbench = PlatformUI.getWorkbench();
-		if(workbench != null) {
+		if (workbench != null) {
 			return workbench.getActiveWorkbenchWindow();
 		}
 		return null;
@@ -425,7 +425,7 @@ public class AskUserStrategy implements ILoadingStrategy {
 
 	protected IWorkbenchPage getActivePage() {
 		IWorkbenchWindow activeWorkbenchWindow = getActiveWorkbenchWindow();
-		if(activeWorkbenchWindow != null) {
+		if (activeWorkbenchWindow != null) {
 			return activeWorkbenchWindow.getActivePage();
 		}
 		return null;
@@ -469,13 +469,13 @@ public class AskUserStrategy implements ILoadingStrategy {
 			context.put(IContext.ACTION_ID, getActionValue());
 			theContext = context;
 			IWorkbenchPage activePage = getActivePage();
-			if(activePage != null) {
+			if (activePage != null) {
 				// search the editor which opened the given URI
-				for(IEditorReference ref : activePage.getEditorReferences()) {
+				for (IEditorReference ref : activePage.getEditorReferences()) {
 					try {
 						URI uri = getURI(ref.getEditorInput());
-						if((uri != null) && uri.trimFileExtension().equals(initialURI)) {
-							IEditorPart part = (IEditorPart)ref.getPart(false);
+						if ((uri != null) && uri.trimFileExtension().equals(initialURI)) {
+							IEditorPart part = (IEditorPart) ref.getPart(false);
 							manageRefresh(ref, part);
 							// add the uris to load in authorized list
 						}
@@ -496,7 +496,7 @@ public class AskUserStrategy implements ILoadingStrategy {
 					}
 
 					public void windowActivated(IWorkbenchWindow window) {
-						if(window.getActivePage() != null) {
+						if (window.getActivePage() != null) {
 							run(new IContext.Context());
 							PlatformUI.getWorkbench().removeWindowListener(this);
 						}
@@ -510,13 +510,13 @@ public class AskUserStrategy implements ILoadingStrategy {
 		}
 
 		public INotification getNotification() {
-			return new EncapsulatedNotification((INotification)theContext.get(IContext.NOTIFICATION_OBJECT), uri);
+			return new EncapsulatedNotification((INotification) theContext.get(IContext.NOTIFICATION_OBJECT), uri);
 		}
 
 		protected void manageRefresh(IEditorReference ref, IEditorPart part) {
 			addAuthorized(initialURI, uri);
-			if(part != null) {
-				getRunnable().run((IMultiDiagramEditor)part);
+			if (part != null) {
+				getRunnable().run((IMultiDiagramEditor) part);
 			} else {
 				addPageListener(new EditorActivateListener(ref, modelSet, uri, initialURI, getRunnable()));
 			}
@@ -541,7 +541,7 @@ public class AskUserStrategy implements ILoadingStrategy {
 	 */
 	protected boolean addPageListener(IPartListener listener) {
 		IWorkbenchPage page = getActivePage();
-		if(page != null) {
+		if (page != null) {
 			page.addPartListener(listener);
 			return true;
 		}
@@ -555,7 +555,7 @@ public class AskUserStrategy implements ILoadingStrategy {
 	 * @return
 	 */
 	protected boolean addPerspectiveListener(IPerspectiveListener listener) {
-		if(PlatformUI.getWorkbench() != null && PlatformUI.getWorkbench().getActiveWorkbenchWindow() != null) {
+		if (PlatformUI.getWorkbench() != null && PlatformUI.getWorkbench().getActiveWorkbenchWindow() != null) {
 			PlatformUI.getWorkbench().getActiveWorkbenchWindow().addPerspectiveListener(listener);
 			return true;
 		}
@@ -569,21 +569,21 @@ public class AskUserStrategy implements ILoadingStrategy {
 	 * @return
 	 */
 	protected void removePerspectiveListener(IPerspectiveListener listener) {
-		if(PlatformUI.getWorkbench() != null && PlatformUI.getWorkbench().getActiveWorkbenchWindow() != null) {
+		if (PlatformUI.getWorkbench() != null && PlatformUI.getWorkbench().getActiveWorkbenchWindow() != null) {
 			PlatformUI.getWorkbench().getActiveWorkbenchWindow().removePerspectiveListener(listener);
 		}
 	}
 
 	protected void removePageListener(IPartListener listener) {
 		IWorkbenchPage page = getActivePage();
-		if(page != null) {
+		if (page != null) {
 			page.removePartListener(listener);
 		}
 	}
 
 	protected void addAuthorized(URI initial, URI toAutorized) {
 		Set<URI> uris = authorized.get(initial);
-		if(uris == null) {
+		if (uris == null) {
 			uris = new HashSet<URI>();
 			authorized.put(initial, uris);
 		}
@@ -593,11 +593,11 @@ public class AskUserStrategy implements ILoadingStrategy {
 	protected static URI getURI(final IEditorInput input) {
 		URI result;
 
-		IFile file = (IFile)input.getAdapter(IFile.class);
-		if((file != null) && (file.getFullPath() != null)) {
+		IFile file = (IFile) input.getAdapter(IFile.class);
+		if ((file != null) && (file.getFullPath() != null)) {
 			result = URI.createPlatformResourceURI(file.getFullPath().removeFileExtension().toString(), true);
 		} else {
-			result = (URI)input.getAdapter(URI.class);
+			result = (URI) input.getAdapter(URI.class);
 		}
 
 		return result;
@@ -675,8 +675,8 @@ public class AskUserStrategy implements ILoadingStrategy {
 
 		@Override
 		public void partActivated(IWorkbenchPart part) {
-			if(reference.getPart(false) == part && part instanceof IMultiDiagramEditor) {
-				refreshRunnable.run((IMultiDiagramEditor)part);
+			if (reference.getPart(false) == part && part instanceof IMultiDiagramEditor) {
+				refreshRunnable.run((IMultiDiagramEditor) part);
 				removePageListener(this);
 			}
 		}
@@ -694,11 +694,11 @@ public class AskUserStrategy implements ILoadingStrategy {
 		@Override
 		public void partClosed(IWorkbenchPart part) {
 			super.partClosed(part);
-			if(part instanceof IMultiDiagramEditor) {
-				IMultiDiagramEditor editor = (IMultiDiagramEditor)part;
+			if (part instanceof IMultiDiagramEditor) {
+				IMultiDiagramEditor editor = (IMultiDiagramEditor) part;
 
 				URI uri = getURI(editor.getEditorInput());
-				if(uri != null) {
+				if (uri != null) {
 					uri = uri.trimFileExtension();
 					addPerspectiveListener(new EditorClosePerspectiveListener(uri));
 					removePageListener(this);
@@ -731,8 +731,8 @@ public class AskUserStrategy implements ILoadingStrategy {
 			mappingURIExtensions.remove(uri);
 			alreadyGuessed.remove(uri);
 			List<INotification> list = notifications.get(uri);
-			if(list != null) {
-				for(INotification n : list) {
+			if (list != null) {
+				for (INotification n : list) {
 					n.delete();
 				}
 			}
@@ -777,23 +777,24 @@ public class AskUserStrategy implements ILoadingStrategy {
 				List<Object> allPages = pageMngr.allPages();
 				// the uri is added after getting all the pages. If it is done
 				// before, the eobjects are resolved
-				NotificationBuilder error = NotificationBuilder.createAsyncPopup(Messages.AskUserStrategy_ERROR, String.format(Messages.AskUserStrategy_UNABLE_TO_LOAD, uri != null ? uri.toString() : Messages.AskUserStrategy_12)).setType(Type.ERROR).setDelay(2000);
+				NotificationBuilder error = NotificationBuilder.createAsyncPopup(Messages.AskUserStrategy_ERROR, String.format(Messages.AskUserStrategy_UNABLE_TO_LOAD, uri != null ? uri.toString() : Messages.AskUserStrategy_12)).setType(Type.ERROR)
+						.setDelay(2000);
 				// load associated resources
 				// the extensions needed for each element are saved so it is not needed to check filesystem
 				Set<String> extensions = getExtensions();
-				if(extensions != null) {
-					for(String s : extensions) {
+				if (extensions != null) {
+					for (String s : extensions) {
 						try {
-							if(s != null) {
+							if (s != null) {
 								URI uriToLoad = URI.createURI(uri.toString());
-								if(s != null) {
+								if (s != null) {
 									uriToLoad = uriToLoad.appendFileExtension(s);
 								}
 								// the resource is loaded only if it is needed
-								if(!alreadyLoaded.contains(uriToLoad)) {
+								if (!alreadyLoaded.contains(uriToLoad)) {
 									Resource r = modelSet.getResource(uriToLoad, true);
 									alreadyLoaded.add(uriToLoad);
-									if(r == null) {
+									if (r == null) {
 										error.run();
 									}
 								}
@@ -805,11 +806,11 @@ public class AskUserStrategy implements ILoadingStrategy {
 					}
 				}
 				// refresh tabs
-				for(Object o : allPages) {
-					if(o instanceof EObject) {
-						EObject eobject = (EObject)o;
+				for (Object o : allPages) {
+					if (o instanceof EObject) {
+						EObject eobject = (EObject) o;
 						URI eobjectURI = EcoreUtil.getURI(eobject);
-						if(refreshAll || (refreshTab && eobjectURI.trimFileExtension().trimFragment().equals(uri))) {
+						if (refreshAll || (refreshTab && eobjectURI.trimFileExtension().trimFragment().equals(uri))) {
 							// TODO improve this when an update is created
 							pageMngr.selectPage(eobject);
 						}
@@ -824,7 +825,7 @@ public class AskUserStrategy implements ILoadingStrategy {
 
 		public Set<String> getExtensions() {
 			Map<URI, Set<String>> map = mappingURIExtensions.get(initialURI);
-			if(map != null) {
+			if (map != null) {
 				return map.get(uri);
 			}
 			return null;
@@ -832,10 +833,10 @@ public class AskUserStrategy implements ILoadingStrategy {
 
 		public IWorkbenchPage getActivePage() {
 			IWorkbench workbench = PlatformUI.getWorkbench();
-			if(workbench != null) {
+			if (workbench != null) {
 				IWorkbenchWindow activeWorkbenchWindow = workbench.getActiveWorkbenchWindow();
-				if(activeWorkbenchWindow != null) {
-					if(activeWorkbenchWindow.getActivePage() != null) {
+				if (activeWorkbenchWindow != null) {
+					if (activeWorkbenchWindow.getActivePage() != null) {
 						return activeWorkbenchWindow.getActivePage();
 					}
 				}

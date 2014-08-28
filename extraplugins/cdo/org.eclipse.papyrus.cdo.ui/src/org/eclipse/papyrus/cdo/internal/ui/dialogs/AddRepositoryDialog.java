@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ public class AddRepositoryDialog
 		extends TitleAreaDialog {
 
 	private static final String TITLE = Messages.AddRepositoryDialog_0;
-	
+
 	private static final String MESSAGE = Messages.AddRepositoryDialog_1;
 
 	private RepositoryPropertiesBlock block;
@@ -37,7 +37,7 @@ public class AddRepositoryDialog
 	public AddRepositoryDialog(Shell parentShell) {
 		super(parentShell);
 		setShellStyle(getShellStyle() | SWT.APPLICATION_MODAL | SWT.TITLE
-			| SWT.RESIZE);
+				| SWT.RESIZE);
 	}
 
 	@Override
@@ -52,28 +52,28 @@ public class AddRepositoryDialog
 		setMessage(MESSAGE);
 
 		Composite result = (Composite) super.createDialogArea(parent);
-		
+
 		block = new RepositoryPropertiesBlock();
 		block.createControl(result);
 
 		block
-			.addListener(new RepositoryPropertiesBlock.StatusChangedMessageProviderAdapter() {
+				.addListener(new RepositoryPropertiesBlock.StatusChangedMessageProviderAdapter() {
 
-				@Override
-				protected void handleMessageChange(String message,
-						int messageSeverity) {
+					@Override
+					protected void handleMessageChange(String message,
+							int messageSeverity) {
 
-					Button okButton = getButton(IDialogConstants.OK_ID);
-					okButton
-						.setEnabled(messageSeverity == IMessageProvider.NONE);
+						Button okButton = getButton(IDialogConstants.OK_ID);
+						okButton
+								.setEnabled(messageSeverity == IMessageProvider.NONE);
 
-					if (message == null) {
-						setMessage(MESSAGE);
-					} else {
-						setMessage(message, messageSeverity);
+						if (message == null) {
+							setMessage(MESSAGE);
+						} else {
+							setMessage(message, messageSeverity);
+						}
 					}
-				}
-			});
+				});
 
 		return result;
 	}

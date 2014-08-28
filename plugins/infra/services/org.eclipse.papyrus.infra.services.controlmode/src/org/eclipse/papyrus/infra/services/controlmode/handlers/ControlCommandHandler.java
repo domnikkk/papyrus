@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 Atos, CEA LIST, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,11 +19,9 @@ package org.eclipse.papyrus.infra.services.controlmode.handlers;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import org.eclipse.core.commands.AbstractParameterValueConverter;
 import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.commands.ParameterValueConversionException;
 import org.eclipse.core.commands.ParameterValuesException;
 import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.emf.common.util.URI;
@@ -32,6 +30,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
@@ -50,7 +49,7 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * Handler used to control an element
- * 
+ *
  * @author adaussy
  */
 public class ControlCommandHandler extends AbstractModelExplorerHandler {
@@ -59,16 +58,16 @@ public class ControlCommandHandler extends AbstractModelExplorerHandler {
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		List<EObject> selection = getCurrentSelectionAdaptedToType(event, EObject.class);
-		if(selection == null || selection.isEmpty() || selection.size() > 1) {
+		if (selection == null || selection.isEmpty() || selection.size() > 1) {
 			NotificationBuilder.createInfoPopup("Nothing to control").run();
 			return null;
 		}
 		EObject eObjectToControl = selection.get(0);
 
-		if(getShowDialogParameterValue(event)) {
+		if (getShowDialogParameterValue(event)) {
 			IControlModeFragmentDialogProvider provider = getDialogProvider(eObjectToControl);
 			Dialog dialog = provider.createDialog(Display.getCurrent().getActiveShell(), eObjectToControl.eResource(), getDefaultLabelResource(eObjectToControl));
-			if(dialog.open() == Dialog.OK) {
+			if (dialog.open() == Window.OK) {
 				ControlModeRequest controlRequest = ControlModeRequest.createUIControlModelRequest(getEditingDomain(), eObjectToControl, provider.getSelectedURI(dialog));
 				IControlModeManager controlMng = ControlModeManager.getInstance();
 				ICommand controlCommand = controlMng.getControlCommand(controlRequest);
@@ -92,7 +91,7 @@ public class ControlCommandHandler extends AbstractModelExplorerHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param event
 	 * @return true if the dialog will be displayed to the user, false if it will be bypassed and the default values will be used
 	 */
@@ -102,10 +101,10 @@ public class ControlCommandHandler extends AbstractModelExplorerHandler {
 		ControlModeCommandParameterValues parameterValues = null;
 		try {
 			Command command = event.getCommand();
-			parameterValues = (ControlModeCommandParameterValues)command.getParameter(CONTROLMODE_USE_DIALOG_PARAMETER).getValues();
+			parameterValues = (ControlModeCommandParameterValues) command.getParameter(CONTROLMODE_USE_DIALOG_PARAMETER).getValues();
 			showDialogValue = parameterValues.get("showDialog");
-			if(showDialogValue == null) {
-				showDialogValue = true; //By default, the dialog is always displayed to the user
+			if (showDialogValue == null) {
+				showDialogValue = true; // By default, the dialog is always displayed to the user
 			}
 		} catch (ParameterValuesException e) {
 			ControlModePlugin.log.error("Parameter values exception in control mode command.", e);
@@ -120,7 +119,7 @@ public class ControlCommandHandler extends AbstractModelExplorerHandler {
 			ModelSet modelSet = ServiceUtilsForEObject.getInstance().getModelSet(context);
 			return AdapterUtils.adapt(modelSet, IControlModeFragmentDialogProvider.class, IControlModeFragmentDialogProvider.DEFAULT);
 		} catch (ServiceException e) {
-			// can't get the model set?  Odd
+			// can't get the model set? Odd
 			ControlModePlugin.log.error("Cannot obtain ModelSet for controlled object.", e);
 			return IControlModeFragmentDialogProvider.DEFAULT;
 		}
@@ -129,27 +128,27 @@ public class ControlCommandHandler extends AbstractModelExplorerHandler {
 	/**
 	 * Compute a default name for the new resource
 	 * TODO plug in naming strategy
-	 * 
+	 *
 	 * @param eObject
 	 * @return
 	 */
 	protected String getDefaultLabelResource(EObject eObject) {
 		String defaultName = null;
 		EStructuralFeature feature = eObject.eClass().getEStructuralFeature("name");
-		if(feature != null) {
+		if (feature != null) {
 			Object eGet = eObject.eGet(feature);
-			if(eGet instanceof String) {
-				defaultName = (String)eGet;
+			if (eGet instanceof String) {
+				defaultName = (String) eGet;
 			}
 		}
-		if(defaultName == null) {
+		if (defaultName == null) {
 			defaultName = LabelHelper.getPrettyLabel(eObject);
 			Pattern p = Pattern.compile("<<.*?>>|<.*?>");
 			defaultName = p.matcher(defaultName).replaceAll("").trim();
 		}
 		StringBuilder b = new StringBuilder();
-		for(Character c : defaultName.toCharArray()) {
-			if(Character.isJavaIdentifierPart(c)) {
+		for (Character c : defaultName.toCharArray()) {
+			if (Character.isJavaIdentifierPart(c)) {
 				b.append(c);
 			} else {
 				b.append("_");

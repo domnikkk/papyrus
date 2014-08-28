@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,8 +22,8 @@ package org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Reshape#getPatternShape <em>Pattern Shape</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Reshape#getRepetitonShape <em>Repetiton Shape</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Reshape#getPatternShape <em>Pattern Shape</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Reshape#getRepetitonShape <em>Repetiton Shape</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,10 +36,10 @@ public interface Reshape extends LinkTopology {
 	 * Returns the value of the '<em><b>Pattern Shape</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Pattern Shape</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Pattern Shape</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Pattern Shape</em>' attribute.
 	 * @see #setPatternShape(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMPackage#getReshape_PatternShape()
@@ -52,7 +52,9 @@ public interface Reshape extends LinkTopology {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Reshape#getPatternShape <em>Pattern Shape</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pattern Shape</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Pattern Shape</em>' attribute.
 	 * @see #getPatternShape()
 	 * @generated
 	 */
@@ -62,10 +64,10 @@ public interface Reshape extends LinkTopology {
 	 * Returns the value of the '<em><b>Repetiton Shape</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Repetiton Shape</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Repetiton Shape</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Repetiton Shape</em>' attribute.
 	 * @see #setRepetitonShape(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMPackage#getReshape_RepetitonShape()
@@ -78,7 +80,9 @@ public interface Reshape extends LinkTopology {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Reshape#getRepetitonShape <em>Repetiton Shape</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Repetiton Shape</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Repetiton Shape</em>' attribute.
 	 * @see #getRepetitonShape()
 	 * @generated
 	 */

@@ -60,29 +60,29 @@ public class MarkerListenerUtils {
 
 	/**
 	 * E object from marker or map.
-	 * 
+	 *
 	 * @param marker
-	 *        the marker
+	 *            the marker
 	 * @param attributes
-	 *        the attributes
+	 *            the attributes
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @return the e object
 	 */
 	public static EObject eObjectFromMarkerOrMap(IMarker marker, @SuppressWarnings("rawtypes") Map attributes, EditingDomain domain) {
 		String uriAttribute;
-		if((domain == null) || (domain.getResourceSet() == null)) {
+		if ((domain == null) || (domain.getResourceSet() == null)) {
 			return null;
 		}
-		if(marker != null) {
+		if (marker != null) {
 			uriAttribute = marker.getAttribute(EValidator.URI_ATTRIBUTE, null);
 		} else {
-			uriAttribute = (String)attributes.get(EValidator.URI_ATTRIBUTE);
+			uriAttribute = (String) attributes.get(EValidator.URI_ATTRIBUTE);
 		}
-		if(uriAttribute != null) {
+		if (uriAttribute != null) {
 			URI uriOfMarker = URI.createURI(uriAttribute);
 			try {
-				//Bug 410461: Do not load external objects in the current resource set!!
+				// Bug 410461: Do not load external objects in the current resource set!!
 				return domain.getResourceSet().getEObject(uriOfMarker, false);
 			} catch (MissingResourceException e) {
 				// happens after renaming of the file containing the marker (or a parent folder)
@@ -99,21 +99,21 @@ public class MarkerListenerUtils {
 
 	/**
 	 * E object of fragment.
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @return the e object
 	 */
 	public static EObject eObjectOfFragment(URI uri, EditingDomain domain) {
 		try {
-			for(Resource resource : domain.getResourceSet().getResources()) {
-				if(uri.fragment() == null) {
+			for (Resource resource : domain.getResourceSet().getResources()) {
+				if (uri.fragment() == null) {
 					continue;
 				}
 				EObject eObjectOfMarker = resource.getEObject(uri.fragment());
-				if(eObjectOfMarker != null) {
+				if (eObjectOfMarker != null) {
 					return eObjectOfMarker;
 				}
 			}
@@ -141,13 +141,13 @@ public class MarkerListenerUtils {
 		URI uri = resource.getURI();
 
 		ResourceSet rset = resource.getResourceSet();
-		if(rset != null) {
+		if (rset != null) {
 			uri = rset.getURIConverter().normalize(uri);
 		}
 
 		IFile result = uri.isPlatformResource() ? ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))) : null;
 
-		if((result != null) && !result.exists()) {
+		if ((result != null) && !result.exists()) {
 			result = null;
 		}
 
@@ -157,7 +157,7 @@ public class MarkerListenerUtils {
 	public static String getMarkerTypeLabel(String type) {
 		String result = MARKER_LABELS.get(type);
 
-		if(result == null) {
+		if (result == null) {
 			result = type;
 		}
 
@@ -167,16 +167,16 @@ public class MarkerListenerUtils {
 	private static void loadMarkerTypes() {
 		IExtensionPoint point = Platform.getExtensionRegistry().getExtensionPoint(ResourcesPlugin.PI_RESOURCES, ResourcesPlugin.PT_MARKERS);
 
-		for(IExtension next : point.getExtensions()) {
+		for (IExtension next : point.getExtensions()) {
 			String type = next.getUniqueIdentifier();
 			MARKER_LABELS.put(type, next.getLabel());
 
 			Set<String> superTypes = new java.util.HashSet<String>();
 
-			for(IConfigurationElement config : next.getConfigurationElements()) {
-				if("super".equals(config.getName())) { //$NON-NLS-1$
+			for (IConfigurationElement config : next.getConfigurationElements()) {
+				if ("super".equals(config.getName())) { //$NON-NLS-1$
 					String super_ = config.getAttribute("type"); //$NON-NLS-1$
-					if((super_ != null) && (super_.length() > 0)) {
+					if ((super_ != null) && (super_.length() > 0)) {
 						superTypes.add(super_);
 					}
 				}
@@ -190,9 +190,9 @@ public class MarkerListenerUtils {
 		boolean result = false;
 
 		Set<String> supertypes = MARKER_HIERARCHY.get(subtype);
-		if(supertypes != null) {
+		if (supertypes != null) {
 			result = supertypes.contains(supertype);
-			if(!result) {
+			if (!result) {
 				// recursive
 				Set<String> cycleDetect = new java.util.HashSet<String>();
 				cycleDetect.add(subtype);
@@ -206,15 +206,15 @@ public class MarkerListenerUtils {
 	private static boolean isAnyMarkerTypeSubtypeOf(Set<String> subtypes, String supertype, Set<String> cycleDetect) {
 		boolean result = false;
 
-		for(String subtype : subtypes) {
-			if(cycleDetect.add(subtype)) {
+		for (String subtype : subtypes) {
+			if (cycleDetect.add(subtype)) {
 				Set<String> supertypes = MARKER_HIERARCHY.get(subtype);
-				if(supertypes != null) {
+				if (supertypes != null) {
 					result = supertypes.contains(supertype);
-					if(!result) {
+					if (!result) {
 						result = isAnyMarkerTypeSubtypeOf(supertypes, supertype, cycleDetect);
 					}
-					if(result) {
+					if (result) {
 						break;
 					}
 				}

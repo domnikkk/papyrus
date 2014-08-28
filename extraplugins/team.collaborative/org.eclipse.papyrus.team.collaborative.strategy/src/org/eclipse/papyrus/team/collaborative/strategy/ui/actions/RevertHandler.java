@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.team.collaborative.core.ExtendedURI;
 import org.eclipse.papyrus.team.collaborative.core.ICollaborativeManager;
 import org.eclipse.papyrus.team.collaborative.core.IExtendedURI;
@@ -40,7 +41,7 @@ import org.eclipse.swt.widgets.Display;
 /**
  * Handler use for Revert action
  * The revert action will be performe on all the current model.
- * 
+ *
  * @author adaussy
  */
 public class RevertHandler extends AbstractCollabHandler {
@@ -51,25 +52,26 @@ public class RevertHandler extends AbstractCollabHandler {
 	 * 
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		//Check that everything is commit
-		if(!UIUtils.saveAllDirtyEditor().isOK()) {
+		// Check that everything is commit
+		if (!UIUtils.saveAllDirtyEditor().isOK()) {
 			return null;
 		}
 		ResourceSet resourceSet = getResourceSet();
-		if(resourceSet == null) {
+		if (resourceSet == null) {
 			UIUtils.errorDialog(CollabStatus.createErrorStatus("unable to retreive the resource set"), "Collaboratibe error");
 			return null;
 		}
 		Set<IExtendedURI> uris = new HashSet<IExtendedURI>();
-		for(Resource r : resourceSet.getResources()) {
+		for (Resource r : resourceSet.getResources()) {
 			IFile file = WorkspaceSynchronizer.getFile(r);
-			if(file != null && file.exists()) {
+			if (file != null && file.exists()) {
 				uris.add(new ExtendedURI(r.getURI()));
 			}
 		}
 		IStatus status = doRevert(uris, resourceSet);
-		if(!status.isOK() && status.getCode() == Status.ERROR) {
+		if (!status.isOK() && status.getCode() == IStatus.ERROR) {
 			UIUtils.errorDialog(status, "Error");
 		}
 
@@ -79,19 +81,19 @@ public class RevertHandler extends AbstractCollabHandler {
 
 	/**
 	 * Do revert action
-	 * 
+	 *
 	 * @param uris
-	 *        the uris about to be reverted
+	 *            the uris about to be reverted
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @return the {@link IStatus} of the operation
 	 * @throws CollabException
-	 *         the collab exception
+	 *             the collab exception
 	 */
 	public static IStatus doRevert(Set<IExtendedURI> uris, ResourceSet resourceSet) {
 
 		IReverter reverter = ICollaborativeManager.INSTANCE.getReverter(uris, resourceSet);
-		if(reverter == null) {
+		if (reverter == null) {
 			CollabStatus errorStatus = CollabStatus.createErrorStatus("Unable to find a reverter");
 			return errorStatus;
 		}
@@ -104,28 +106,28 @@ public class RevertHandler extends AbstractCollabHandler {
 
 	/**
 	 * Do revert using an existing {@link IReverter}s
-	 * 
+	 *
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @param reverter
-	 *        the reverter
+	 *            the reverter
 	 * @param toBeReverted
-	 *        the {@link IExtendedURI} about to be reverted
+	 *            the {@link IExtendedURI} about to be reverted
 	 * @return the {@link IStatus} of the operation
 	 * @throws CollabException
-	 *         the collab exception
+	 *             the collab exception
 	 */
 	public static IStatus doRevertFromBuilder(ResourceSet resourceSet, IReverter reverter, Set<IExtendedURI> toBeReverted) {
-		ExtensivePartitionNameLabelProvider labelProvider = new ExtensivePartitionNameLabelProvider(new MatchingURIObject(toBeReverted),UIUtils.getModelExplorerLavelProvider());
+		ExtensivePartitionNameLabelProvider labelProvider = new ExtensivePartitionNameLabelProvider(new MatchingURIObject(toBeReverted), UIUtils.getModelExplorerLavelProvider());
 		labelProvider.setColor(ICollabColors.REVERT_COLLOR);
 		PreviewDialog revertDialog = new PreviewDialog(Display.getDefault().getActiveShell(), labelProvider, "Revert Dialog", "Element in yellow will be reverted");
 		Collection<EObject> objectsToReveal = UIUtils.getLeafSemanticElement(toBeReverted, resourceSet);
-		if(objectsToReveal != null && !objectsToReveal.isEmpty()) {
+		if (objectsToReveal != null && !objectsToReveal.isEmpty()) {
 			revertDialog.setObjectsToReveal(objectsToReveal);
 		}
-		if(revertDialog.open() == PreviewDialog.OK) {
+		if (revertDialog.open() == Window.OK) {
 
-			//Keep lock force to true. This shall be improve later
+			// Keep lock force to true. This shall be improve later
 			IStatus commitStatus = reverter.revert();
 			UIUtils.refreshModelExplorer(toBeReverted, resourceSet);
 			UIUtils.reloadEditor();

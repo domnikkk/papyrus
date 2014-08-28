@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,11 +41,12 @@ public class StructuredActivityNodeActivation extends ActionActivation {
 	 */
 	public ActivityNodeActivationGroup activationGroup;
 
+	@Override
 	public void doAction() {
 		// If the structured activity node has mustIsolate=true, then carry out
 		// its behavior with isolation.
 		// Otherwise just activate it normally.
-		if(((StructuredActivityNode)(this.node)).isMustIsolate()) {
+		if (((StructuredActivityNode) (this.node)).isMustIsolate()) {
 			_beginIsolation();
 			this.doStructuredActivity();
 			_endIsolation();
@@ -60,10 +61,10 @@ public class StructuredActivityNodeActivation extends ActionActivation {
 		// (This is the default behavior for a structured activity node used
 		// simply as a group. It is overridden for the execution of conditional
 		// and loop nodes.)
-		Action action = (Action)(this.node);
+		Action action = (Action) (this.node);
 		// *** Concurrently send offers from all input pins. ***
 		List<InputPin> inputPins = getInputs(action); // CHANGED from: action.getInputs();
-		for(Iterator<InputPin> i = inputPins.iterator(); i.hasNext();) {
+		for (Iterator<InputPin> i = inputPins.iterator(); i.hasNext();) {
 			InputPin inputPin = i.next();
 			PinActivation pinActivation = this.getPinActivation(inputPin);
 			pinActivation.sendUnofferedTokens();
@@ -71,6 +72,7 @@ public class StructuredActivityNodeActivation extends ActionActivation {
 		this.activationGroup.run(this.activationGroup.nodeActivations);
 	}
 
+	@Override
 	public void terminate() {
 		// Terminate the execution of all contained node activations (which
 		// completes the performance of the structured activity node
@@ -79,15 +81,16 @@ public class StructuredActivityNodeActivation extends ActionActivation {
 		super.terminate();
 	}
 
+	@Override
 	public ActivityNodeActivation getNodeActivation(ActivityNode node) {
 		// If this structured activity node activation is not for the given
 		// node, then check if there is an activation for the node in the
 		// activation group.
 		ActivityNodeActivation thisActivation = super.getNodeActivation(node);
 		ActivityNodeActivation activation = null;
-		if(thisActivation != null) {
+		if (thisActivation != null) {
 			activation = thisActivation;
-		} else if(this.activationGroup != null) {
+		} else if (this.activationGroup != null) {
 			activation = this.activationGroup.getNodeActivation(node);
 		}
 		return activation;
@@ -98,18 +101,18 @@ public class StructuredActivityNodeActivation extends ActionActivation {
 		// nodes
 		// and any pins that they own.
 		List<ActivityNode> activityNodes = new ArrayList<ActivityNode>();
-		for(int i = 0; i < nodes.size(); i++) {
+		for (int i = 0; i < nodes.size(); i++) {
 			ActivityNode node = nodes.get(i);
 			activityNodes.add(node);
-			if(node instanceof Action) {
-				Action action = (Action)node;
+			if (node instanceof Action) {
+				Action action = (Action) node;
 				List<InputPin> inputPins = getInputs(action); // CHANGED from: action.getInputs();
-				for(int j = 0; j < inputPins.size(); j++) {
+				for (int j = 0; j < inputPins.size(); j++) {
 					InputPin inputPin = inputPins.get(j);
 					activityNodes.add(inputPin);
 				}
 				List<OutputPin> outputPins = getOutputs(action); // CHANGED from: action.getOutputs();
-				for(int j = 0; j < outputPins.size(); j++) {
+				for (int j = 0; j < outputPins.size(); j++) {
 					OutputPin outputPin = outputPins.get(j);
 					activityNodes.add(outputPin);
 				}
@@ -122,13 +125,13 @@ public class StructuredActivityNodeActivation extends ActionActivation {
 		// Return the values of the tokens on the pin activation corresponding
 		// to the given pin in the internal activation group for this node
 		// activation.
-		PinActivation pinActivation = (PinActivation)(this.activationGroup.getNodeActivation(pin));
+		PinActivation pinActivation = (PinActivation) (this.activationGroup.getNodeActivation(pin));
 		List<Token> tokens = pinActivation.getTokens();
 		List<Value> values = new ArrayList<Value>();
-		for(int i = 0; i < tokens.size(); i++) {
+		for (int i = 0; i < tokens.size(); i++) {
 			Token token = tokens.get(i);
-			Value value = ((ObjectToken)token).value;
-			if(value != null) {
+			Value value = ((ObjectToken) token).value;
+			if (value != null) {
 				values.add(value);
 			}
 		}
@@ -139,8 +142,8 @@ public class StructuredActivityNodeActivation extends ActionActivation {
 		// Place tokens for the given values on the pin activation corresponding
 		// to the given output pin on the internal activation group for this
 		// node activation.
-		PinActivation pinActivation = (PinActivation)(this.activationGroup.getNodeActivation(pin));
-		for(int i = 0; i < values.size(); i++) {
+		PinActivation pinActivation = (PinActivation) (this.activationGroup.getNodeActivation(pin));
+		for (int i = 0; i < values.size(); i++) {
 			Value value = values.get(i);
 			ObjectToken token = new ObjectToken();
 			token.value = value;
@@ -148,6 +151,7 @@ public class StructuredActivityNodeActivation extends ActionActivation {
 		}
 	}
 
+	@Override
 	public void createNodeActivations() {
 		// Create an activation group and create node activations for all the
 		// nodes within the structured activity node.
@@ -155,20 +159,22 @@ public class StructuredActivityNodeActivation extends ActionActivation {
 
 		this.activationGroup = new ActivityNodeActivationGroup();
 		this.activationGroup.containingNodeActivation = this;
-		this.activationGroup.createNodeActivations(((StructuredActivityNode)(this.node)).getNodes());
+		this.activationGroup.createNodeActivations(((StructuredActivityNode) (this.node)).getNodes());
 	}
 
+	@Override
 	public void createEdgeInstances() {
 		// Create instances for all edges owned by this node.
-		this.activationGroup.createEdgeInstances(((StructuredActivityNode)(this.node)).getEdges());
+		this.activationGroup.createEdgeInstances(((StructuredActivityNode) (this.node)).getEdges());
 	}
 
+	@Override
 	public Boolean isSourceFor(ActivityEdgeInstance edgeInstance) {
 		// Returns true if this node is either the source for the given
 		// edgeInstance itself or if it contains the source in its
 		// activation group.
 		boolean isSource = super.isSourceFor(edgeInstance);
-		if(!isSource) {
+		if (!isSource) {
 			isSource = this.activationGroup.hasSourceFor(edgeInstance);
 		}
 		return isSource;
@@ -186,27 +192,30 @@ public class StructuredActivityNodeActivation extends ActionActivation {
 		return this.activationGroup.isSuspended();
 	}
 
+	@Override
 	public List<Token> completeAction() {
 		// Only actually complete this structured activity node if it is not
 		// suspended.
 		List<Token> incomingTokens = new ArrayList<Token>();
-		if(!this.isSuspended()) {
+		if (!this.isSuspended()) {
 			incomingTokens = super.completeAction();
 		}
 		return incomingTokens;
 	}
 
+	@Override
 	public void resume() {
 		// When this structured activity node is resumed after being suspended,
 		// then complete its prior firing and, if there are more incoming
 		// tokens, fire it again. If, after that, the node is not suspended,
 		// then finish its resumption.
 		List<Token> incomingTokens = super.completeAction();
-		if(incomingTokens.size() > 0) {
-			if(FUMLExecutionEngine.eInstance.getControlDelegate().control(this)) // Added for connection with debug API
+		if (incomingTokens.size() > 0) {
+			if (FUMLExecutionEngine.eInstance.getControlDelegate().control(this)) {
 				this.fire(incomingTokens);
+			}
 		}
-		if(!this.isSuspended()) {
+		if (!this.isSuspended()) {
 			super.resume();
 		}
 	}

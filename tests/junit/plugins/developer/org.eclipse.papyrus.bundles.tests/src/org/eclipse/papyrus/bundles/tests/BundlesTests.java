@@ -22,8 +22,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.eclipse.osgi.util.NLS;
-import org.eclipse.papyrus.junit.utils.classification.NotImplemented;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.InvalidTest;
+import org.eclipse.papyrus.junit.framework.classification.NotImplemented;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.pde.internal.core.feature.Feature;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
@@ -46,14 +47,14 @@ public class BundlesTests extends AbstractPapyrusTest {
 
 	//Indicates that the bundle name must contain the (Incubation) string
 	//private static final String REGEX_INCUBATION = ".*\\(Incubation\\)"; //$NON-NLS-1$
-	
+
 	private static final String INCUBATION_KEYWORD = "(Incubation)"; //$NON-NLS-1$
 
 	private static final String BATIK_VERSION = "[1.6.0,1.7.0)"; //$NON-NLS-1$
 
 	private static final String NATTABLE_VERSION = "1.1.0"; //$NON-NLS-1$
 
-	private static final String PAPYRUS_VERSION = "1.0.0"; //$NON-NLS-1$
+	private static final String PAPYRUS_VERSION = BundleTestsUtils.PAPYRUS_VERSION;
 
 	@Test
 	public void featureVersionNumberTest() {
@@ -78,13 +79,15 @@ public class BundlesTests extends AbstractPapyrusTest {
 	/**
 	 * Tests that all Papyrus Bundle name are finished by {@link #INCUBATION}
 	 */
+	@InvalidTest("Some Papyrus bundles are still incubating (Extra...)")
 	@Test
 	public void incubationTest() {
 		org.hamcrest.Matcher<String> matcher = new BaseMatcher<String>() {
+
 			public boolean matches(Object item) {
-				return item instanceof String && ! ((String)item).contains(INCUBATION_KEYWORD);
+				return item instanceof String && !((String)item).contains(INCUBATION_KEYWORD);
 			}
-			
+
 			public void describeTo(Description description) {
 				description.appendText("Does not contain ");
 				description.appendText(INCUBATION_KEYWORD);
@@ -188,7 +191,7 @@ public class BundlesTests extends AbstractPapyrusTest {
 	 *        JavaProject
 	 */
 	private void testManifestProperty(final String property, final String regex, final boolean mustBeNull, final boolean onlyOnJavaProject) {
-		org.hamcrest.Matcher<String> regexMatcher = new org.hamcrest.BaseMatcher<String>(){
+		org.hamcrest.Matcher<String> regexMatcher = new org.hamcrest.BaseMatcher<String>() {
 
 			public boolean matches(Object item) {
 				return item instanceof String && ((String)item).matches(regex);
@@ -199,13 +202,13 @@ public class BundlesTests extends AbstractPapyrusTest {
 				description.appendValue(regex);
 				description.appendText(")");
 			}
-			
+
 		};
-		
+
 		testManifestProperty(property, regexMatcher, mustBeNull, onlyOnJavaProject);
 	}
-	
-	private void testManifestProperty(final String property, final org.hamcrest.Matcher<String> matcher, final boolean mustBeNull, final boolean onlyOnJavaProject){
+
+	private void testManifestProperty(final String property, final org.hamcrest.Matcher<String> matcher, final boolean mustBeNull, final boolean onlyOnJavaProject) {
 		String message = null;
 		int nb = 0;
 		for(final Bundle current : BundleTestsUtils.getPapyrusBundles()) {

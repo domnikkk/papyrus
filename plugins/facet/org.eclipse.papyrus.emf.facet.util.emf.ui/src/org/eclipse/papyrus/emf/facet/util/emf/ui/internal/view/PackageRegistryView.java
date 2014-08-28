@@ -20,11 +20,6 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EPackage.Registry;
-import org.eclipse.papyrus.emf.facet.util.core.Logger;
-import org.eclipse.papyrus.emf.facet.util.emf.core.IBrowserRegistry;
-import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Activator;
-import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Messages;
-import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.utils.ImageUtils;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.GroupMarker;
 import org.eclipse.jface.action.IAction;
@@ -38,6 +33,11 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.emf.facet.common.ui.internal.views.AbstractTreeView;
+import org.eclipse.papyrus.emf.facet.util.core.Logger;
+import org.eclipse.papyrus.emf.facet.util.emf.core.IBrowserRegistry;
+import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Activator;
+import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Messages;
+import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.utils.ImageUtils;
 import org.eclipse.swt.dnd.Clipboard;
 import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.Transfer;
@@ -128,7 +128,7 @@ public class PackageRegistryView extends AbstractTreeView implements IMenuListen
 
 	/**
 	 * Reads the registry in a non-UI thread, so that the UI thread will be able to access it faster
-	 * 
+	 *
 	 * @param registry
 	 *            the registry to preload
 	 */
@@ -152,7 +152,7 @@ public class PackageRegistryView extends AbstractTreeView implements IMenuListen
 
 	/**
 	 * An {@link EObject} was added to the package registry
-	 * 
+	 *
 	 * @param eObject
 	 * @param file
 	 */
@@ -165,7 +165,7 @@ public class PackageRegistryView extends AbstractTreeView implements IMenuListen
 
 	/**
 	 * An {@link EObject} was changed in the package registry
-	 * 
+	 *
 	 * @param eObject
 	 * @param file
 	 */
@@ -178,7 +178,7 @@ public class PackageRegistryView extends AbstractTreeView implements IMenuListen
 
 	/**
 	 * A file was removed from the package registry
-	 * 
+	 *
 	 * @param file
 	 */
 	public void removed(final IFile file) {
@@ -191,6 +191,7 @@ public class PackageRegistryView extends AbstractTreeView implements IMenuListen
 	@Override
 	protected IContentProvider getContentProvider() {
 		return new ITreeContentProvider() {
+			@Override
 			public Object[] getElements(final Object inputElement) {
 				if (inputElement instanceof EPackage.Registry) {
 					EPackage.Registry registry = (EPackage.Registry) inputElement;
@@ -224,11 +225,13 @@ public class PackageRegistryView extends AbstractTreeView implements IMenuListen
 				}
 			}
 
+			@Override
 			public void inputChanged(final Viewer viewer, final Object oldInput,
 					final Object newInput) {
 				// Nothing to do
 			}
 
+			@Override
 			public Object[] getChildren(final Object parentElement) {
 				if (parentElement instanceof EPackage.Registry) {
 					EPackage.Registry registry = (EPackage.Registry) parentElement;
@@ -241,10 +244,12 @@ public class PackageRegistryView extends AbstractTreeView implements IMenuListen
 				}
 			}
 
+			@Override
 			public Object getParent(final Object element) {
 				return null;
 			}
 
+			@Override
 			public boolean hasChildren(final Object element) {
 				if (element instanceof EPackage.Registry) {
 					return true;
@@ -252,6 +257,7 @@ public class PackageRegistryView extends AbstractTreeView implements IMenuListen
 				return false;
 			}
 
+			@Override
 			public void dispose() {
 				// Nothing to do
 			}
@@ -276,6 +282,7 @@ public class PackageRegistryView extends AbstractTreeView implements IMenuListen
 		// display a message while initializing
 		// (initialization can take a while)
 		Display.getDefault().syncExec(new Runnable() {
+			@Override
 			public void run() {
 				getViewer().setInput(Messages.PackageRegistryView_initializing);
 			}
@@ -285,6 +292,7 @@ public class PackageRegistryView extends AbstractTreeView implements IMenuListen
 		// blocking. Then it will be cached for the UI thread.
 		preloadRegistry(registry);
 		Display.getDefault().syncExec(new Runnable() {
+			@Override
 			public void run() {
 				// the control might be disposed if the view was closed
 				// in the meantime
@@ -329,6 +337,7 @@ public class PackageRegistryView extends AbstractTreeView implements IMenuListen
 		return null;
 	}
 
+	@Override
 	public void menuAboutToShow(final IMenuManager manager) {
 		this.actionCopyNsURI.setEnabled(getSelectedPackage() != null);
 	}

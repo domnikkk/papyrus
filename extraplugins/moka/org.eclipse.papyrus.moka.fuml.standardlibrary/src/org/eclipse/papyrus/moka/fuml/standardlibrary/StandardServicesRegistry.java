@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class StandardServicesRegistry extends AbstractSystemServicesRegistry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.registry.AbstractSystemServicesRegistry#instantiateServices()
 	 */
 	@Override
@@ -51,14 +51,14 @@ public class StandardServicesRegistry extends AbstractSystemServicesRegistry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.registry.AbstractSystemServicesRegistry#instantiateService(org.eclipse.uml2.uml.Class)
 	 */
 	@Override
 	protected Object_ instantiateService(Class service) {
-		if(service.getQualifiedName().equals(STANDARD_INPUT_CHANNEL_SERVICE_NAME)) {
+		if (service.getQualifiedName().equals(STANDARD_INPUT_CHANNEL_SERVICE_NAME)) {
 			return new StandardInputChannelImpl(service);
-		} else if(service.getQualifiedName().equals(STANDARD_OUTPUT_CHANNEL_SERVICE_NAME)) {
+		} else if (service.getQualifiedName().equals(STANDARD_OUTPUT_CHANNEL_SERVICE_NAME)) {
 			return new StandardOutputChannelImpl(service);
 		}
 		return null;

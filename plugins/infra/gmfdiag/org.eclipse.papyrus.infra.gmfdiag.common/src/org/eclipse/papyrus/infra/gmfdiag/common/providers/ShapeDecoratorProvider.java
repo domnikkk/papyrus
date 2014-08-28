@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,9 +32,10 @@ public class ShapeDecoratorProvider extends AbstractProvider implements IDecorat
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void createDecorators(IDecoratorTarget decoratorTarget) {
 		View node = ShapeDecorator.getDecoratorTargetNode(decoratorTarget);
-		if(node != null) {
+		if (node != null) {
 			decoratorTarget.installDecorator(SHAPE_DECORATOR, new ShapeDecorator(decoratorTarget));
 		}
 	}
@@ -42,14 +43,15 @@ public class ShapeDecoratorProvider extends AbstractProvider implements IDecorat
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean provides(IOperation operation) {
 		Assert.isNotNull(operation);
 
-		if(!(operation instanceof CreateDecoratorsOperation)) {
+		if (!(operation instanceof CreateDecoratorsOperation)) {
 			return false;
 		}
 
-		IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation)operation).getDecoratorTarget();
+		IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation) operation).getDecoratorTarget();
 		return ShapeDecorator.getDecoratorTargetNode(decoratorTarget) != null;
 	}
 

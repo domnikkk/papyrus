@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ public class DefaultConstructorFacade extends SignatureFacade {
 
 	private Class classToBeConstructed ;
 	private DataType datatypeToBeConstructed ;
-	
+
 	public DefaultConstructorFacade(Class c) {
 		super(c) ;
 		this.classToBeConstructed = c ;
@@ -38,7 +38,7 @@ public class DefaultConstructorFacade extends SignatureFacade {
 		}
 		this.setReturnType(TypeExpressionFactory.eInstance.createTypeExpression(d)) ;
 	}
-	
+
 	@Override
 	public String getName() {
 		return classToBeConstructed.getName();
@@ -55,7 +55,11 @@ public class DefaultConstructorFacade extends SignatureFacade {
 		label += "(" ;
 		boolean first = true ;
 		for (TypeExpression t : parameters) {
-			if (first) first = false ; else label += ", " ;
+			if (first) {
+				first = false ;
+			} else {
+				label += ", " ;
+			}
 			label += t.getLabel() ;
 		}
 		label += ") : " + this.getReturnType().getLabel() ;
@@ -66,7 +70,7 @@ public class DefaultConstructorFacade extends SignatureFacade {
 	public boolean isAConstructor() {
 		return true;
 	}
-	
+
 	@Override
 	public boolean isADestructor(){
 		return false ;

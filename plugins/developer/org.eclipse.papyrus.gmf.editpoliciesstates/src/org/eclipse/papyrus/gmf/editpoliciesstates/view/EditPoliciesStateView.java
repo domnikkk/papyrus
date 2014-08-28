@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,6 @@ import java.util.Collection;
 
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.editparts.AbstractEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.viewers.IContentProvider;
@@ -42,29 +41,30 @@ import org.eclipse.ui.part.ViewPart;
 /**
  * this class is used to see all editpolicies attached to a editpart
  * It very specify for papyrus.
- * 
+ *
  *
  */
 public class EditPoliciesStateView extends ViewPart {
 
 	/**
-	 * this a object that represents a line into  the table
+	 * this a object that represents a line into the table
 	 */
-	class EditPolicyDescriptor{
-		public String role="NO ROLE";
-		public EditPolicy policy= null;
+	class EditPolicyDescriptor {
+		public String role = "NO ROLE";
+		public EditPolicy policy = null;
 	}
-	
 
-	private  ArrayList<EditPolicyDescriptor> editPolicyList = new ArrayList<EditPolicyDescriptor>();
+
+	private ArrayList<EditPolicyDescriptor> editPolicyList = new ArrayList<EditPolicyDescriptor>();
 	private ISelectionListener myEditPartlistener;
 	private TreeViewer viewer;
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.WorkbenchPart#setFocus()
 	 */
+	@Override
 	public void setFocus() {
 		Viewer viewer = getViewer();
 		if (viewer != null && !viewer.getControl().isDisposed()) {
@@ -75,27 +75,28 @@ public class EditPoliciesStateView extends ViewPart {
 
 	/**
 	 * Create the main tree control
-	 * 
+	 *
 	 * @param parent
 	 * @return Tree
 	 */
 	protected Tree createTree(Composite parent) {
 		Tree tree = new Tree(parent, SWT.H_SCROLL | SWT.V_SCROLL | SWT.MULTI
-			| SWT.FULL_SELECTION);
+				| SWT.FULL_SELECTION);
 		tree.setLinesVisible(true);
 		return tree;
 	}
 
 	/**
 	 * Return the viewer.
-	 * 
+	 *
 	 * @return TreeViewer
 	 */
 	protected TreeViewer getViewer() {
 		return viewer;
 	}
+
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 */
@@ -104,43 +105,43 @@ public class EditPoliciesStateView extends ViewPart {
 
 			public void selectionChanged(IWorkbenchPart part, ISelection selection) {
 
-				if(selection instanceof IStructuredSelection) {
-					Object[] policiesValue=null;
-					Object selectedobject = ((IStructuredSelection)selection).getFirstElement();
-					if(selectedobject instanceof org.eclipse.gef.GraphicalEditPart) {
-						org.eclipse.gef.GraphicalEditPart graphicalEP = ((org.eclipse.gef.GraphicalEditPart)selectedobject);
+				if (selection instanceof IStructuredSelection) {
+					Object[] policiesValue = null;
+					Object selectedobject = ((IStructuredSelection) selection).getFirstElement();
+					if (selectedobject instanceof org.eclipse.gef.GraphicalEditPart) {
+						org.eclipse.gef.GraphicalEditPart graphicalEP = ((org.eclipse.gef.GraphicalEditPart) selectedobject);
 						Field policiesFiled = null;
 						try {
 							policiesFiled = AbstractEditPart.class.getDeclaredField("policies");
-						} catch (NoSuchFieldException e ) {
+						} catch (NoSuchFieldException e) {
 							e.printStackTrace();
-						}catch (SecurityException  e) {
+						} catch (SecurityException e) {
 							e.printStackTrace();
 						}
 						policiesFiled.setAccessible(true);
 
 						try {
-							policiesValue = (Object[])policiesFiled.get(graphicalEP);
+							policiesValue = (Object[]) policiesFiled.get(graphicalEP);
 						} catch (IllegalArgumentException e) {
 							e.printStackTrace();
-						}catch (IllegalAccessException e) {
+						} catch (IllegalAccessException e) {
 							e.printStackTrace();
 						}
 						editPolicyList.clear();
 
-						for(int i=0;i<policiesValue.length;i=i+2) {
-							EditPolicyDescriptor epd= new EditPolicyDescriptor();
-							if(policiesValue[i] instanceof String){
-								epd.role=(String)policiesValue[i];
+						for (int i = 0; i < policiesValue.length; i = i + 2) {
+							EditPolicyDescriptor epd = new EditPolicyDescriptor();
+							if (policiesValue[i] instanceof String) {
+								epd.role = (String) policiesValue[i];
 								editPolicyList.add(epd);
 							}
 
 
-							if(policiesValue[i+1] instanceof EditPolicy){
-								epd.policy=(EditPolicy)policiesValue[i+1];
+							if (policiesValue[i + 1] instanceof EditPolicy) {
+								epd.policy = (EditPolicy) policiesValue[i + 1];
 							}
 						}
-						if(viewer!=null){
+						if (viewer != null) {
 							viewer.setInput(editPolicyList);
 						}
 					}
@@ -157,7 +158,7 @@ public class EditPoliciesStateView extends ViewPart {
 		viewer.getTree().setHeaderVisible(true);
 		viewer.getTree().setLinesVisible(true);
 
-		TreeColumn tcName =new TreeColumn(viewer.getTree(), SWT.LEFT);
+		TreeColumn tcName = new TreeColumn(viewer.getTree(), SWT.LEFT);
 		tcName.setText("Name");
 		tcName.setWidth(200);
 		TreeColumn tcDescription = new TreeColumn(viewer.getTree(), SWT.LEFT);
@@ -176,11 +177,11 @@ public class EditPoliciesStateView extends ViewPart {
 
 	}
 
-	protected ITableLabelProvider getLabelProvider(){
+	protected ITableLabelProvider getLabelProvider() {
 		return new EditpolicyLabelProvider();
 	}
 
-	protected Action getClearViewAction(){
+	protected Action getClearViewAction() {
 		return new Action() {
 
 			@Override
@@ -211,8 +212,8 @@ public class EditPoliciesStateView extends ViewPart {
 		return new ITreeContentProvider() {
 
 			public Object[] getElements(final Object inputElement) {
-				if(inputElement instanceof Collection<?>) {
-					return ((Collection<?>)inputElement).toArray();
+				if (inputElement instanceof Collection<?>) {
+					return ((Collection<?>) inputElement).toArray();
 				}
 				return new Object[0];
 
@@ -236,9 +237,9 @@ public class EditPoliciesStateView extends ViewPart {
 			}
 
 			public Object[] getChildren(final Object parentElement) {
-				if(parentElement instanceof EditPolicyDescriptor) {
-					if ( ((EditPolicyDescriptor)parentElement).policy!=null){
-						if( ((EditPolicyDescriptor)parentElement).policy  instanceof CustomizableDropEditPolicy){
+				if (parentElement instanceof EditPolicyDescriptor) {
+					if (((EditPolicyDescriptor) parentElement).policy != null) {
+						if (((EditPolicyDescriptor) parentElement).policy instanceof CustomizableDropEditPolicy) {
 							Field defaultDropEditPolicyField;
 							try {
 								defaultDropEditPolicyField = CustomizableDropEditPolicy.class.getDeclaredField("defaultDropEditPolicy");
@@ -247,19 +248,19 @@ public class EditPoliciesStateView extends ViewPart {
 								defaultDropEditPolicyField.setAccessible(true);
 								defaultCreationEditPolicyField.setAccessible(true);
 
-								EditPolicyDescriptor edp1= new EditPolicyDescriptor();
-								EditPolicyDescriptor edp2= new EditPolicyDescriptor();
-								edp1.policy=(EditPolicy)defaultDropEditPolicyField.get(((EditPolicyDescriptor)parentElement).policy);
-								edp2.policy=(EditPolicy)defaultCreationEditPolicyField.get(((EditPolicyDescriptor)parentElement).policy);
-								edp1.role="defaultDropEditPolicy";
-								edp2.role="defaultCreationEditPolicy";
-								Object[] result= new Object[2];
-								result[0]=edp1;
-								result[1]=edp2;
+								EditPolicyDescriptor edp1 = new EditPolicyDescriptor();
+								EditPolicyDescriptor edp2 = new EditPolicyDescriptor();
+								edp1.policy = (EditPolicy) defaultDropEditPolicyField.get(((EditPolicyDescriptor) parentElement).policy);
+								edp2.policy = (EditPolicy) defaultCreationEditPolicyField.get(((EditPolicyDescriptor) parentElement).policy);
+								edp1.role = "defaultDropEditPolicy";
+								edp2.role = "defaultCreationEditPolicy";
+								Object[] result = new Object[2];
+								result[0] = edp1;
+								result[1] = edp2;
 								return result;
-							} catch (NoSuchFieldException e ) {
+							} catch (NoSuchFieldException e) {
 								e.printStackTrace();
-							}catch (SecurityException e ) {
+							} catch (SecurityException e) {
 								e.printStackTrace();
 							} catch (IllegalArgumentException e) {
 								e.printStackTrace();

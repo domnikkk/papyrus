@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,18 +42,18 @@ public class CreateStyleHandler extends AbstractStyleHandler {
 
 	@Override
 	protected Stylesheet getStyleSheet(AbstractStyleDialog dialog, View contextView) {
-		StyleSheet styleSheet = ((StyleCreationDialog)dialog).getStyleSheet();
+		StyleSheet styleSheet = ((StyleCreationDialog) dialog).getStyleSheet();
 
-		if(styleSheet == null) {
+		if (styleSheet == null) {
 			MessageDialog.open(MessageDialog.ERROR, dialog.getShell(), "Stylesheet error", "Invalid stylesheet", SWT.NONE);
 			return null;
 		}
 
 		Resource resource;
 
-		if(styleSheet instanceof StyleSheetReference) {
-			resource = XtextStylesheetHelper.loadStylesheet((StyleSheetReference)styleSheet, null, contextView, dialog.getShell());
-			if(resource == null) {
+		if (styleSheet instanceof StyleSheetReference) {
+			resource = XtextStylesheetHelper.loadStylesheet((StyleSheetReference) styleSheet, null, contextView, dialog.getShell());
+			if (resource == null) {
 				return null;
 			}
 		} else {
@@ -63,12 +63,12 @@ public class CreateStyleHandler extends AbstractStyleHandler {
 
 		Stylesheet xtextStylesheet;
 
-		if(resource.getContents().isEmpty()) {
+		if (resource.getContents().isEmpty()) {
 			xtextStylesheet = CssFactory.eINSTANCE.createStylesheet();
 			xtextStylesheet.setCharset("UTF-8");
 			resource.getContents().add(xtextStylesheet);
 		} else {
-			xtextStylesheet = (Stylesheet)resource.getContents().get(0);
+			xtextStylesheet = (Stylesheet) resource.getContents().get(0);
 		}
 
 		return xtextStylesheet;

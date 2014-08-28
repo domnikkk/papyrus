@@ -21,15 +21,15 @@ public final class InteractionUtils {
 	/**
 	 * Return the {@link Interaction} containing the given model element if any, or <code>null</code> if the element is
 	 * not recursively contained in any {@link Interaction}.
-	 * 
+	 *
 	 * @param eObject
-	 *        the model element for which we want to find the containing {@link Interaction}.
+	 *            the model element for which we want to find the containing {@link Interaction}.
 	 * @return the parent {@link Interaction} or <code>null</code> if none.
 	 */
 	public static Interaction getContainingInteraction(final EObject eObject) {
-		if(eObject != null) {
-			if(eObject instanceof Interaction) {
-				return (Interaction)eObject;
+		if (eObject != null) {
+			if (eObject instanceof Interaction) {
+				return (Interaction) eObject;
 			}
 			final EObject eContainer = eObject.eContainer();
 			return getContainingInteraction(eContainer);

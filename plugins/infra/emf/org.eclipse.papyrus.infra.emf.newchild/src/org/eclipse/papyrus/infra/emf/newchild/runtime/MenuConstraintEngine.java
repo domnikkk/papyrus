@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,8 +20,8 @@ import org.eclipse.papyrus.infra.emf.newchild.NewchildConfiguration;
 public class MenuConstraintEngine extends DefaultConstraintEngine<MenuRoot> {
 
 	public void addConfiguration(NewchildConfiguration configuration) {
-		for(MenuRoot root : configuration.getRoots()) {
-			for(ConstraintDescriptor descriptor : root.getConstraints()) {
+		for (MenuRoot root : configuration.getRoots()) {
+			for (ConstraintDescriptor descriptor : root.getConstraints()) {
 				addConstraint(descriptor);
 			}
 		}
@@ -30,6 +30,6 @@ public class MenuConstraintEngine extends DefaultConstraintEngine<MenuRoot> {
 	@Override
 	public void refresh() {
 		constraints.clear();
-		//Find all active Configurations
+		// Find all active Configurations
 	}
 }

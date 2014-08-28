@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,18 +19,17 @@ import org.eclipse.core.expressions.IEvaluationContext;
 import org.eclipse.papyrus.uml.textedit.transition.xtext.ui.editor.ContextEditorUtil;
 import org.eclipse.ui.ISources;
 import org.eclipse.ui.texteditor.ContentAssistAction;
-import org.eclipse.ui.texteditor.ITextEditor;
 import org.eclipse.xtext.ui.XtextUIMessages;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.handler.ContentAssistHandler;
 
 public class UmlTransitionContentAssistHandler extends ContentAssistHandler {
-	
+
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		// TODO Auto-generated method stub
 		new ContentAssistAction(XtextUIMessages.getResourceBundle(), "ContentAssistProposal.",
-				(ITextEditor) ContextEditorUtil.currentEditor).run();
+				ContextEditorUtil.currentEditor).run();
 		return this;
 	}
 
@@ -40,14 +39,14 @@ public class UmlTransitionContentAssistHandler extends ContentAssistHandler {
 		if (evaluationContext instanceof IEvaluationContext) {
 			Object var = ((IEvaluationContext) evaluationContext).getVariable(ISources.ACTIVE_EDITOR_NAME);
 			// TODO: this is just for testing....
-			var = ContextEditorUtil.currentEditor ;
-			//////////////////////////////////////
+			var = ContextEditorUtil.currentEditor;
+			// ////////////////////////////////////
 			if (var instanceof XtextEditor) {
 				contentAssistAvailable = ((XtextEditor) var).isContentAssistAvailable();
 			}
 		}
-		super.setBaseEnabled(contentAssistAvailable) ;
-		//super.setBaseEnabled(isEnabled() & contentAssistAvailable);
+		super.setBaseEnabled(contentAssistAvailable);
+		// super.setBaseEnabled(isEnabled() & contentAssistAvailable);
 	}
 
 }

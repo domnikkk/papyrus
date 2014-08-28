@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 439725
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.util;
 
@@ -49,18 +49,18 @@ public class JobWaiter {
 
 	/**
 	 * Wait for all jobs (if any) in the given {@code family} to finish.
-	 * 
+	 *
 	 * @param family
-	 *        a job family to wait for
+	 *            a job family to wait for
 	 * @param timeout
-	 *        a positive timeout
+	 *            a positive timeout
 	 * @param unit
-	 *        the time unit for the {@code timeout}
-	 * 
+	 *            the time unit for the {@code timeout}
+	 *
 	 * @return {@code true} on successful wait (if required); {@code false} on time-out
-	 * 
+	 *
 	 * @throws InterruptedException
-	 *         if the wait is interrupted
+	 *             if the wait is interrupted
 	 */
 	public static boolean waitFor(Object family, long timeout, TimeUnit unit) throws InterruptedException {
 		return new JobWaiter(null, family).doWait(timeout, unit);
@@ -68,25 +68,25 @@ public class JobWaiter {
 
 	/**
 	 * Wait for a specific {@code job} to finish.
-	 * 
+	 *
 	 * @param job
-	 *        a job to wait for
+	 *            a job to wait for
 	 * @param timeout
-	 *        a positive timeout
+	 *            a positive timeout
 	 * @param unit
-	 *        the time unit for the {@code timeout}
-	 * 
+	 *            the time unit for the {@code timeout}
+	 *
 	 * @return {@code true} on successful wait (if required); {@code false} on time-out
-	 * 
+	 *
 	 * @throws InterruptedException
-	 *         if the wait is interrupted
+	 *             if the wait is interrupted
 	 */
 	public static boolean waitFor(Job job, long timeout, TimeUnit unit) throws InterruptedException {
 		return new JobWaiter(job, null).doWait(timeout, unit);
 	}
 
 	protected boolean doWait(long timeout, TimeUnit unit) throws InterruptedException {
-		if(timeout <= 0) {
+		if (timeout <= 0) {
 			throw new IllegalArgumentException("Non-positive timeout"); //$NON-NLS-1$
 		}
 
@@ -98,7 +98,7 @@ public class JobWaiter {
 		timeoutService.schedule(timeoutTask, timeout, unit);
 
 		try {
-			if(targetJob != null) {
+			if (targetJob != null) {
 				// the Job::join() API documents that it is interruptible, but the
 				// actual implementation in the JobManager is not
 				new JobFinishListener(targetJob).await();
@@ -110,11 +110,11 @@ public class JobWaiter {
 			result = true;
 			timeoutTask.cancel();
 
-			if(Thread.interrupted()) {
+			if (Thread.interrupted()) {
 				throw new InterruptedException();
 			}
 		} catch (InterruptedException e) {
-			if(timeoutTask.timedOut()) {
+			if (timeoutTask.timedOut()) {
 				// normal condition: time-out task interrupted us
 			} else {
 				// "real" interruption
@@ -139,7 +139,7 @@ public class JobWaiter {
 
 		@Override
 		public void run() {
-			if(!cancelled.get()) {
+			if (!cancelled.get()) {
 				timedOut.set(true);
 				toInterrupt.interrupt();
 			}
@@ -170,9 +170,9 @@ public class JobWaiter {
 
 		synchronized void await() throws InterruptedException {
 			try {
-				for(;;) {
+				for (;;) {
 					// Check done condition because our job/family may have finished already before we got here
-					if(done || checkDone()) {
+					if (done || checkDone()) {
 						break;
 					}
 
@@ -186,7 +186,7 @@ public class JobWaiter {
 
 		@Override
 		public synchronized void done(IJobChangeEvent event) {
-			if(checkDone()) {
+			if (checkDone()) {
 				try {
 					done = true;
 					dispose();

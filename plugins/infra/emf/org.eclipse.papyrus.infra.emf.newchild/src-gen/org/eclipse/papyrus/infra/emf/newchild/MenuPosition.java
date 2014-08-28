@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Menu Position</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.infra.emf.newchild.NewchildPackage#getMenuPosition()
  * @model
  * @generated
@@ -26,6 +27,7 @@ public enum MenuPosition implements Enumerator {
 	 * The '<em><b>Top</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #TOP_VALUE
 	 * @generated
 	 * @ordered
@@ -36,6 +38,7 @@ public enum MenuPosition implements Enumerator {
 	 * The '<em><b>Bottom</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #BOTTOM_VALUE
 	 * @generated
 	 * @ordered
@@ -46,10 +49,10 @@ public enum MenuPosition implements Enumerator {
 	 * The '<em><b>Top</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Top</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Top</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #TOP
 	 * @model name="top"
 	 * @generated
@@ -61,10 +64,10 @@ public enum MenuPosition implements Enumerator {
 	 * The '<em><b>Bottom</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Bottom</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Bottom</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #BOTTOM
 	 * @model name="bottom"
 	 * @generated
@@ -76,18 +79,20 @@ public enum MenuPosition implements Enumerator {
 	 * An array of all the '<em><b>Menu Position</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static final MenuPosition[] VALUES_ARRAY =
-		new MenuPosition[] {
-			TOP,
-			BOTTOM,
-		};
+			new MenuPosition[] {
+					TOP,
+					BOTTOM,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Menu Position</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final List<MenuPosition> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -96,6 +101,7 @@ public enum MenuPosition implements Enumerator {
 	 * Returns the '<em><b>Menu Position</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static MenuPosition get(String literal) {
@@ -112,6 +118,7 @@ public enum MenuPosition implements Enumerator {
 	 * Returns the '<em><b>Menu Position</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static MenuPosition getByName(String name) {
@@ -128,12 +135,15 @@ public enum MenuPosition implements Enumerator {
 	 * Returns the '<em><b>Menu Position</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static MenuPosition get(int value) {
 		switch (value) {
-			case TOP_VALUE: return TOP;
-			case BOTTOM_VALUE: return BOTTOM;
+		case TOP_VALUE:
+			return TOP;
+		case BOTTOM_VALUE:
+			return BOTTOM;
 		}
 		return null;
 	}
@@ -141,6 +151,7 @@ public enum MenuPosition implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -148,6 +159,7 @@ public enum MenuPosition implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -155,6 +167,7 @@ public enum MenuPosition implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -163,6 +176,7 @@ public enum MenuPosition implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private MenuPosition(int value, String name, String literal) {
@@ -174,39 +188,43 @@ public enum MenuPosition implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //MenuPosition
+
+} // MenuPosition

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,9 +41,9 @@ public class PaletteLocalDrawerProxy extends PaletteContainerProxy {
 
 	/**
 	 * Creates a new PaletteContainer
-	 * 
+	 *
 	 * @param drawer
-	 *        the drawer to cache
+	 *            the drawer to cache
 	 */
 	public PaletteLocalDrawerProxy(String name, String id, String imagePath, String description) {
 		super(null);
@@ -55,9 +55,9 @@ public class PaletteLocalDrawerProxy extends PaletteContainerProxy {
 
 	/**
 	 * A listener can only be added once. Adding it more than once will do nothing.
-	 * 
+	 *
 	 * @param listener
-	 *        the PropertyChangeListener that is to be notified of changes
+	 *            the PropertyChangeListener that is to be notified of changes
 	 * @see java.beans.PropertyChangeSupport#addPropertyChangeListener(java.beans.PropertyChangeListener)
 	 */
 	@Override
@@ -69,7 +69,7 @@ public class PaletteLocalDrawerProxy extends PaletteContainerProxy {
 
 	/**
 	 * @param listener
-	 *        the PropertyChangeListener that is not to be notified anymore
+	 *            the PropertyChangeListener that is not to be notified anymore
 	 * @see java.beans.PropertyChangeSupport#removePropertyChangeListener(java.beans.PropertyChangeListener)
 	 */
 	@Override
@@ -112,7 +112,7 @@ public class PaletteLocalDrawerProxy extends PaletteContainerProxy {
 
 	/**
 	 * Returns the image path
-	 * 
+	 *
 	 * @return the image path
 	 */
 	@Override
@@ -122,9 +122,9 @@ public class PaletteLocalDrawerProxy extends PaletteContainerProxy {
 
 	/**
 	 * Sets the label of the drawer
-	 * 
+	 *
 	 * @param label
-	 *        the label to set
+	 *            the label to set
 	 */
 	@Override
 	public void setLabel(String label) {
@@ -143,9 +143,9 @@ public class PaletteLocalDrawerProxy extends PaletteContainerProxy {
 
 	/**
 	 * Sets the id of the drawer
-	 * 
+	 *
 	 * @param id
-	 *        the id to set
+	 *            the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -153,9 +153,9 @@ public class PaletteLocalDrawerProxy extends PaletteContainerProxy {
 
 	/**
 	 * Sets the image path of the drawer
-	 * 
+	 *
 	 * @param imagePath
-	 *        the imagePath to set
+	 *            the imagePath to set
 	 */
 	public void setImagePath(String imagePath) {
 		String oldValue = this.imagePath;
@@ -165,9 +165,9 @@ public class PaletteLocalDrawerProxy extends PaletteContainerProxy {
 
 	/**
 	 * Sets the description of the drawer
-	 * 
+	 *
 	 * @param description
-	 *        the description to set
+	 *            the description to set
 	 */
 	@Override
 	public void setDescription(String description) {
@@ -176,7 +176,7 @@ public class PaletteLocalDrawerProxy extends PaletteContainerProxy {
 
 	/**
 	 * Returns the description of the drawer
-	 * 
+	 *
 	 * @return the description of the drawer
 	 */
 	@Override

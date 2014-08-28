@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ public class HierarchicToFlatContentProvider extends TreeToFlatContentProvider {
 
 	public HierarchicToFlatContentProvider(IHierarchicContentProvider provider) {
 		super(provider);
-		if(!(provider instanceof IStaticContentProvider)) {
+		if (!(provider instanceof IStaticContentProvider)) {
 			throw new IllegalArgumentException();
 		}
 		contentProvider = provider;
@@ -47,9 +47,9 @@ public class HierarchicToFlatContentProvider extends TreeToFlatContentProvider {
 		Collection<Object> result = new LinkedHashSet<Object>();
 		Set<Object> browsedElements = new HashSet<Object>();
 
-		for(Object root : ((IStaticContentProvider)contentProvider).getElements()) {
-			if(exploreBranch(null, root)) {
-				if(contentProvider.isValidValue(root)) {
+		for (Object root : ((IStaticContentProvider) contentProvider).getElements()) {
+			if (exploreBranch(null, root)) {
+				if (contentProvider.isValidValue(root)) {
 					result.add(getValue(root));
 				}
 				getElementsList(root, result, browsedElements);
@@ -61,22 +61,22 @@ public class HierarchicToFlatContentProvider extends TreeToFlatContentProvider {
 
 	@Override
 	protected void getElementsList(Object parent, Collection<Object> result, Set<Object> browsedElements) {
-		if(!browsedElements.add(parent)) {
+		if (!browsedElements.add(parent)) {
 			return;
 		}
 
 		Object[] children = contentProvider.getChildren(parent);
-		if(children == null) {
+		if (children == null) {
 			return;
 		}
 
-		for(Object child : children) {
+		for (Object child : children) {
 			Object childValue = getValue(child);
-			if(result.contains(childValue)) {
-				continue; //Avoid infinite recursion
+			if (result.contains(childValue)) {
+				continue; // Avoid infinite recursion
 			}
-			if(exploreBranch(parent, child)) {
-				if(contentProvider.isValidValue(child)) {
+			if (exploreBranch(parent, child)) {
+				if (contentProvider.isValidValue(child)) {
 					result.add(childValue);
 				}
 				getElementsList(child, result, browsedElements);

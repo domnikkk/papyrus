@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,21 +26,22 @@ import org.eclipse.ui.PlatformUI;
 /**
  * Reduce the scope of the Menu contribution of the Activity Diagram.
  * implements {@link IPopupMenuContributionPolicy}
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class ClassDiagramContributionPolicyClass implements IPopupMenuContributionPolicy {
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean appliesTo(ISelection selection, IConfigurationElement configuration) {
 		IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if(editorPart instanceof IMultiDiagramEditor) {
-			editorPart = ((IMultiDiagramEditor)editorPart).getActiveEditor();
-			if(editorPart instanceof DiagramEditor) {
-				DiagramEditPart host = ((DiagramEditor)editorPart).getDiagramEditPart();
+		if (editorPart instanceof IMultiDiagramEditor) {
+			editorPart = ((IMultiDiagramEditor) editorPart).getActiveEditor();
+			if (editorPart instanceof DiagramEditor) {
+				DiagramEditPart host = ((DiagramEditor) editorPart).getDiagramEditPart();
 				return ModelEditPart.MODEL_ID.equals(host.getDiagramView().getType());
 			}
 		}

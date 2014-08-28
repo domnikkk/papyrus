@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 
 /**
- * 
+ *
  * this class provides a combo, with a warning message when the list is empty
  */
 public class ComboDialogWithMessage extends ComboInputDialog {
@@ -50,17 +50,17 @@ public class ComboDialogWithMessage extends ComboInputDialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.ui.dialogs.InputDialog#createDialogArea(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 * @return
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
 		// create composite
-		Composite composite = (Composite)super.createDialogArea(parent);
-		if(getElementList() == null || (getElementList().length == 1 && getElementList()[0].equals(""))) { //$NON-NLS-1$
+		Composite composite = (Composite) super.createDialogArea(parent);
+		if (getElementList() == null || (getElementList().length == 1 && getElementList()[0].equals(""))) { //$NON-NLS-1$
 			warningMessageText = new CLabel(composite, SWT.READ_ONLY | SWT.WRAP);
 			warningMessageText.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
 			warningMessageText.setBackground(warningMessageText.getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
@@ -74,12 +74,12 @@ public class ComboDialogWithMessage extends ComboInputDialog {
 
 	/**
 	 * Set the warning message
-	 * 
+	 *
 	 * @param warningMessage
 	 */
 	public void setWarningMessage(String warningMessage) {
 		this.warningMessage = warningMessage;
-		if((warningMessageText != null) && !warningMessageText.isDisposed()) {
+		if ((warningMessageText != null) && !warningMessageText.isDisposed()) {
 			Image errorImage = Activator.getPluginIconImage(Activator.ID, ICON_WARNING);
 			warningMessageText.setImage(warningMessage == null ? null : errorImage);
 			warningMessageText.setText(warningMessage == null ? "" : warningMessage); //$NON-NLS-1$
@@ -89,7 +89,7 @@ public class ComboDialogWithMessage extends ComboInputDialog {
 			// See https://bugs.eclipse.org/bugs/show_bug.cgi?id=113643
 
 			Control button = getButton(IDialogConstants.OK_ID);
-			if(button != null) {
+			if (button != null) {
 				button.setEnabled(warningMessage == null);
 			}
 		}
@@ -98,10 +98,10 @@ public class ComboDialogWithMessage extends ComboInputDialog {
 	/**
 	 * Returns the style bits that should be used for the input text field.
 	 * Defaults to a single line entry. Subclasses may override.
-	 * 
+	 *
 	 * @return the integer style bits that should be used when creating the
 	 *         input text
-	 * 
+	 *
 	 * @since 3.4
 	 */
 	protected int getInputTextStyle() {

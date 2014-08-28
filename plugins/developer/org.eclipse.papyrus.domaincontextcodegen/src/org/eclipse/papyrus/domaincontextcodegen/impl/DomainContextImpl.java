@@ -51,7 +51,7 @@ import org.eclipse.papyrus.domaincontextcodegen.MenuDeclaration;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.DomainContextImpl#getCommand <em>Command</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class DomainContextImpl extends EObjectImpl implements DomainContext {
@@ -60,7 +60,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The default value of the '{@link #getTypeProjectName() <em>Type Project Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypeProjectName()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getTypeProjectName() <em>Type Project Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypeProjectName()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The default value of the '{@link #getHandlerProjectName() <em>Handler Project Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHandlerProjectName()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getHandlerProjectName() <em>Handler Project Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHandlerProjectName()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The default value of the '{@link #getIClientContextID() <em>IClient Context ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIClientContextID()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getIClientContextID() <em>IClient Context ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIClientContextID()
 	 * @generated
 	 * @ordered
@@ -126,7 +126,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getMetamodel() <em>Metamodel</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMetamodel()
 	 * @generated
 	 * @ordered
@@ -137,7 +137,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getSpecializationOf() <em>Specialization Of</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpecializationOf()
 	 * @generated
 	 * @ordered
@@ -148,7 +148,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The default value of the '{@link #getElementTypeIDPrefix() <em>Element Type ID Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementTypeIDPrefix()
 	 * @generated
 	 * @ordered
@@ -159,7 +159,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getElementTypeIDPrefix() <em>Element Type ID Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementTypeIDPrefix()
 	 * @generated
 	 * @ordered
@@ -170,7 +170,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The default value of the '{@link #getElementTypeNamePrefix() <em>Element Type Name Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementTypeNamePrefix()
 	 * @generated
 	 * @ordered
@@ -181,7 +181,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getElementTypeNamePrefix() <em>Element Type Name Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementTypeNamePrefix()
 	 * @generated
 	 * @ordered
@@ -192,7 +192,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getElementTypes() <em>Element Types</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementTypes()
 	 * @generated
 	 * @ordered
@@ -203,7 +203,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The default value of the '{@link #getDefaultHelperPath() <em>Default Helper Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefaultHelperPath()
 	 * @generated
 	 * @ordered
@@ -214,7 +214,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getDefaultHelperPath() <em>Default Helper Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefaultHelperPath()
 	 * @generated
 	 * @ordered
@@ -225,7 +225,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getAdvices() <em>Advices</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAdvices()
 	 * @generated
 	 * @ordered
@@ -236,7 +236,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getBindings() <em>Bindings</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBindings()
 	 * @generated
 	 * @ordered
@@ -247,7 +247,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getGenHandlers() <em>Gen Handlers</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenHandlers()
 	 * @generated
 	 * @ordered
@@ -258,7 +258,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The default value of the '{@link #getGeneratedSourceFolder() <em>Generated Source Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGeneratedSourceFolder()
 	 * @generated
 	 * @ordered
@@ -269,7 +269,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getGeneratedSourceFolder() <em>Generated Source Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGeneratedSourceFolder()
 	 * @generated
 	 * @ordered
@@ -280,7 +280,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getMenu() <em>Menu</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMenu()
 	 * @generated
 	 * @ordered
@@ -291,7 +291,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	 * The cached value of the '{@link #getCommand() <em>Command</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCommand()
 	 * @generated
 	 * @ordered
@@ -301,7 +301,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DomainContextImpl() {
@@ -311,7 +311,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -322,7 +322,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getTypeProjectName() {
@@ -332,20 +332,21 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTypeProjectName(String newTypeProjectName) {
 		String oldTypeProjectName = typeProjectName;
 		typeProjectName = newTypeProjectName;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.DOMAIN_CONTEXT__TYPE_PROJECT_NAME, oldTypeProjectName, typeProjectName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getHandlerProjectName() {
@@ -355,20 +356,21 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHandlerProjectName(String newHandlerProjectName) {
 		String oldHandlerProjectName = handlerProjectName;
 		handlerProjectName = newHandlerProjectName;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.DOMAIN_CONTEXT__HANDLER_PROJECT_NAME, oldHandlerProjectName, handlerProjectName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getIClientContextID() {
@@ -378,29 +380,31 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIClientContextID(String newIClientContextID) {
 		String oldIClientContextID = iClientContextID;
 		iClientContextID = newIClientContextID;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.DOMAIN_CONTEXT__ICLIENT_CONTEXT_ID, oldIClientContextID, iClientContextID));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EPackage getMetamodel() {
-		if(metamodel != null && metamodel.eIsProxy()) {
-			InternalEObject oldMetamodel = (InternalEObject)metamodel;
-			metamodel = (EPackage)eResolveProxy(oldMetamodel);
-			if(metamodel != oldMetamodel) {
-				if(eNotificationRequired())
+		if (metamodel != null && metamodel.eIsProxy()) {
+			InternalEObject oldMetamodel = (InternalEObject) metamodel;
+			metamodel = (EPackage) eResolveProxy(oldMetamodel);
+			if (metamodel != oldMetamodel) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomaincontextcodegenPackage.DOMAIN_CONTEXT__METAMODEL, oldMetamodel, metamodel));
+				}
 			}
 		}
 		return metamodel;
@@ -409,7 +413,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EPackage basicGetMetamodel() {
@@ -419,29 +423,31 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMetamodel(EPackage newMetamodel) {
 		EPackage oldMetamodel = metamodel;
 		metamodel = newMetamodel;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.DOMAIN_CONTEXT__METAMODEL, oldMetamodel, metamodel));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DomainContext getSpecializationOf() {
-		if(specializationOf != null && specializationOf.eIsProxy()) {
-			InternalEObject oldSpecializationOf = (InternalEObject)specializationOf;
-			specializationOf = (DomainContext)eResolveProxy(oldSpecializationOf);
-			if(specializationOf != oldSpecializationOf) {
-				if(eNotificationRequired())
+		if (specializationOf != null && specializationOf.eIsProxy()) {
+			InternalEObject oldSpecializationOf = (InternalEObject) specializationOf;
+			specializationOf = (DomainContext) eResolveProxy(oldSpecializationOf);
+			if (specializationOf != oldSpecializationOf) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomaincontextcodegenPackage.DOMAIN_CONTEXT__SPECIALIZATION_OF, oldSpecializationOf, specializationOf));
+				}
 			}
 		}
 		return specializationOf;
@@ -450,7 +456,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DomainContext basicGetSpecializationOf() {
@@ -460,20 +466,21 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSpecializationOf(DomainContext newSpecializationOf) {
 		DomainContext oldSpecializationOf = specializationOf;
 		specializationOf = newSpecializationOf;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.DOMAIN_CONTEXT__SPECIALIZATION_OF, oldSpecializationOf, specializationOf));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getElementTypeIDPrefix() {
@@ -483,20 +490,21 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElementTypeIDPrefix(String newElementTypeIDPrefix) {
 		String oldElementTypeIDPrefix = elementTypeIDPrefix;
 		elementTypeIDPrefix = newElementTypeIDPrefix;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPE_ID_PREFIX, oldElementTypeIDPrefix, elementTypeIDPrefix));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getElementTypeNamePrefix() {
@@ -506,20 +514,21 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElementTypeNamePrefix(String newElementTypeNamePrefix) {
 		String oldElementTypeNamePrefix = elementTypeNamePrefix;
 		elementTypeNamePrefix = newElementTypeNamePrefix;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPE_NAME_PREFIX, oldElementTypeNamePrefix, elementTypeNamePrefix));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementTypes getElementTypes() {
@@ -529,18 +538,19 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetElementTypes(ElementTypes newElementTypes, NotificationChain msgs) {
 		ElementTypes oldElementTypes = elementTypes;
 		elementTypes = newElementTypes;
-		if(eNotificationRequired()) {
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPES, oldElementTypes, newElementTypes);
-			if(msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -548,27 +558,31 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElementTypes(ElementTypes newElementTypes) {
-		if(newElementTypes != elementTypes) {
+		if (newElementTypes != elementTypes) {
 			NotificationChain msgs = null;
-			if(elementTypes != null)
-				msgs = ((InternalEObject)elementTypes).eInverseRemove(this, DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN, ElementTypes.class, msgs);
-			if(newElementTypes != null)
-				msgs = ((InternalEObject)newElementTypes).eInverseAdd(this, DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN, ElementTypes.class, msgs);
+			if (elementTypes != null) {
+				msgs = ((InternalEObject) elementTypes).eInverseRemove(this, DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN, ElementTypes.class, msgs);
+			}
+			if (newElementTypes != null) {
+				msgs = ((InternalEObject) newElementTypes).eInverseAdd(this, DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN, ElementTypes.class, msgs);
+			}
 			msgs = basicSetElementTypes(newElementTypes, msgs);
-			if(msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if(eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPES, newElementTypes, newElementTypes));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDefaultHelperPath() {
@@ -578,24 +592,25 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDefaultHelperPath(String newDefaultHelperPath) {
 		String oldDefaultHelperPath = defaultHelperPath;
 		defaultHelperPath = newDefaultHelperPath;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.DOMAIN_CONTEXT__DEFAULT_HELPER_PATH, oldDefaultHelperPath, defaultHelperPath));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Advice> getAdvices() {
-		if(advices == null) {
+		if (advices == null) {
 			advices = new EObjectContainmentEList<Advice>(Advice.class, this, DomaincontextcodegenPackage.DOMAIN_CONTEXT__ADVICES);
 		}
 		return advices;
@@ -604,11 +619,11 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ElementTypeBindings> getBindings() {
-		if(bindings == null) {
+		if (bindings == null) {
 			bindings = new EObjectContainmentEList<ElementTypeBindings>(ElementTypeBindings.class, this, DomaincontextcodegenPackage.DOMAIN_CONTEXT__BINDINGS);
 		}
 		return bindings;
@@ -617,7 +632,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GenHandlers getGenHandlers() {
@@ -627,18 +642,19 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetGenHandlers(GenHandlers newGenHandlers, NotificationChain msgs) {
 		GenHandlers oldGenHandlers = genHandlers;
 		genHandlers = newGenHandlers;
-		if(eNotificationRequired()) {
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.DOMAIN_CONTEXT__GEN_HANDLERS, oldGenHandlers, newGenHandlers);
-			if(msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -646,27 +662,31 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setGenHandlers(GenHandlers newGenHandlers) {
-		if(newGenHandlers != genHandlers) {
+		if (newGenHandlers != genHandlers) {
 			NotificationChain msgs = null;
-			if(genHandlers != null)
-				msgs = ((InternalEObject)genHandlers).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomaincontextcodegenPackage.DOMAIN_CONTEXT__GEN_HANDLERS, null, msgs);
-			if(newGenHandlers != null)
-				msgs = ((InternalEObject)newGenHandlers).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomaincontextcodegenPackage.DOMAIN_CONTEXT__GEN_HANDLERS, null, msgs);
+			if (genHandlers != null) {
+				msgs = ((InternalEObject) genHandlers).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomaincontextcodegenPackage.DOMAIN_CONTEXT__GEN_HANDLERS, null, msgs);
+			}
+			if (newGenHandlers != null) {
+				msgs = ((InternalEObject) newGenHandlers).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomaincontextcodegenPackage.DOMAIN_CONTEXT__GEN_HANDLERS, null, msgs);
+			}
 			msgs = basicSetGenHandlers(newGenHandlers, msgs);
-			if(msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if(eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.DOMAIN_CONTEXT__GEN_HANDLERS, newGenHandlers, newGenHandlers));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getGeneratedSourceFolder() {
@@ -676,24 +696,25 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setGeneratedSourceFolder(String newGeneratedSourceFolder) {
 		String oldGeneratedSourceFolder = generatedSourceFolder;
 		generatedSourceFolder = newGeneratedSourceFolder;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.DOMAIN_CONTEXT__GENERATED_SOURCE_FOLDER, oldGeneratedSourceFolder, generatedSourceFolder));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<MenuDeclaration> getMenu() {
-		if(menu == null) {
+		if (menu == null) {
 			menu = new EObjectContainmentEList<MenuDeclaration>(MenuDeclaration.class, this, DomaincontextcodegenPackage.DOMAIN_CONTEXT__MENU);
 		}
 		return menu;
@@ -702,11 +723,11 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<CommandDeclaration> getCommand() {
-		if(command == null) {
+		if (command == null) {
 			command = new EObjectContainmentEList<CommandDeclaration>(CommandDeclaration.class, this, DomaincontextcodegenPackage.DOMAIN_CONTEXT__COMMAND);
 		}
 		return command;
@@ -715,16 +736,17 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPES:
-			if(elementTypes != null)
-				msgs = ((InternalEObject)elementTypes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPES, null, msgs);
-			return basicSetElementTypes((ElementTypes)otherEnd, msgs);
+			if (elementTypes != null) {
+				msgs = ((InternalEObject) elementTypes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPES, null, msgs);
+			}
+			return basicSetElementTypes((ElementTypes) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -732,24 +754,24 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPES:
 			return basicSetElementTypes(null, msgs);
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__ADVICES:
-			return ((InternalEList<?>)getAdvices()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getAdvices()).basicRemove(otherEnd, msgs);
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__BINDINGS:
-			return ((InternalEList<?>)getBindings()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getBindings()).basicRemove(otherEnd, msgs);
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__GEN_HANDLERS:
 			return basicSetGenHandlers(null, msgs);
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__MENU:
-			return ((InternalEList<?>)getMenu()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getMenu()).basicRemove(otherEnd, msgs);
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__COMMAND:
-			return ((InternalEList<?>)getCommand()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getCommand()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -757,12 +779,12 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__TYPE_PROJECT_NAME:
 			return getTypeProjectName();
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__HANDLER_PROJECT_NAME:
@@ -770,12 +792,14 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__ICLIENT_CONTEXT_ID:
 			return getIClientContextID();
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__METAMODEL:
-			if(resolve)
+			if (resolve) {
 				return getMetamodel();
+			}
 			return basicGetMetamodel();
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__SPECIALIZATION_OF:
-			if(resolve)
+			if (resolve) {
 				return getSpecializationOf();
+			}
 			return basicGetSpecializationOf();
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPE_ID_PREFIX:
 			return getElementTypeIDPrefix();
@@ -804,61 +828,61 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__TYPE_PROJECT_NAME:
-			setTypeProjectName((String)newValue);
+			setTypeProjectName((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__HANDLER_PROJECT_NAME:
-			setHandlerProjectName((String)newValue);
+			setHandlerProjectName((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__ICLIENT_CONTEXT_ID:
-			setIClientContextID((String)newValue);
+			setIClientContextID((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__METAMODEL:
-			setMetamodel((EPackage)newValue);
+			setMetamodel((EPackage) newValue);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__SPECIALIZATION_OF:
-			setSpecializationOf((DomainContext)newValue);
+			setSpecializationOf((DomainContext) newValue);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPE_ID_PREFIX:
-			setElementTypeIDPrefix((String)newValue);
+			setElementTypeIDPrefix((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPE_NAME_PREFIX:
-			setElementTypeNamePrefix((String)newValue);
+			setElementTypeNamePrefix((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPES:
-			setElementTypes((ElementTypes)newValue);
+			setElementTypes((ElementTypes) newValue);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__DEFAULT_HELPER_PATH:
-			setDefaultHelperPath((String)newValue);
+			setDefaultHelperPath((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__ADVICES:
 			getAdvices().clear();
-			getAdvices().addAll((Collection<? extends Advice>)newValue);
+			getAdvices().addAll((Collection<? extends Advice>) newValue);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__BINDINGS:
 			getBindings().clear();
-			getBindings().addAll((Collection<? extends ElementTypeBindings>)newValue);
+			getBindings().addAll((Collection<? extends ElementTypeBindings>) newValue);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__GEN_HANDLERS:
-			setGenHandlers((GenHandlers)newValue);
+			setGenHandlers((GenHandlers) newValue);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__GENERATED_SOURCE_FOLDER:
-			setGeneratedSourceFolder((String)newValue);
+			setGeneratedSourceFolder((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__MENU:
 			getMenu().clear();
-			getMenu().addAll((Collection<? extends MenuDeclaration>)newValue);
+			getMenu().addAll((Collection<? extends MenuDeclaration>) newValue);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__COMMAND:
 			getCommand().clear();
-			getCommand().addAll((Collection<? extends CommandDeclaration>)newValue);
+			getCommand().addAll((Collection<? extends CommandDeclaration>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -867,12 +891,12 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__TYPE_PROJECT_NAME:
 			setTypeProjectName(TYPE_PROJECT_NAME_EDEFAULT);
 			return;
@@ -883,10 +907,10 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 			setIClientContextID(ICLIENT_CONTEXT_ID_EDEFAULT);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__METAMODEL:
-			setMetamodel((EPackage)null);
+			setMetamodel((EPackage) null);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__SPECIALIZATION_OF:
-			setSpecializationOf((DomainContext)null);
+			setSpecializationOf((DomainContext) null);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPE_ID_PREFIX:
 			setElementTypeIDPrefix(ELEMENT_TYPE_ID_PREFIX_EDEFAULT);
@@ -895,7 +919,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 			setElementTypeNamePrefix(ELEMENT_TYPE_NAME_PREFIX_EDEFAULT);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPES:
-			setElementTypes((ElementTypes)null);
+			setElementTypes((ElementTypes) null);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__DEFAULT_HELPER_PATH:
 			setDefaultHelperPath(DEFAULT_HELPER_PATH_EDEFAULT);
@@ -907,7 +931,7 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 			getBindings().clear();
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__GEN_HANDLERS:
-			setGenHandlers((GenHandlers)null);
+			setGenHandlers((GenHandlers) null);
 			return;
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__GENERATED_SOURCE_FOLDER:
 			setGeneratedSourceFolder(GENERATED_SOURCE_FOLDER_EDEFAULT);
@@ -925,12 +949,12 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__TYPE_PROJECT_NAME:
 			return TYPE_PROJECT_NAME_EDEFAULT == null ? typeProjectName != null : !TYPE_PROJECT_NAME_EDEFAULT.equals(typeProjectName);
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT__HANDLER_PROJECT_NAME:
@@ -968,13 +992,14 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (typeProjectName: ");
@@ -995,4 +1020,4 @@ public class DomainContextImpl extends EObjectImpl implements DomainContext {
 		return result.toString();
 	}
 
-} //DomainContextImpl
+} // DomainContextImpl

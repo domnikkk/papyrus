@@ -16,9 +16,9 @@ import org.eclipse.uml2.uml.Dependency;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.design.profile.architecture.PluginDependency#getDeprecatedComment <em>Deprecated Comment</em>}</li>
- *   <li>{@link org.eclipse.papyrus.design.profile.architecture.PluginDependency#isDeprecated <em>Is Deprecated</em>}</li>
- *   <li>{@link org.eclipse.papyrus.design.profile.architecture.PluginDependency#getBase_Dependency <em>Base Dependency</em>}</li>
+ * <li>{@link org.eclipse.papyrus.design.profile.architecture.PluginDependency#getDeprecatedComment <em>Deprecated Comment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.design.profile.architecture.PluginDependency#isDeprecated <em>Is Deprecated</em>}</li>
+ * <li>{@link org.eclipse.papyrus.design.profile.architecture.PluginDependency#getBase_Dependency <em>Base Dependency</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,9 +33,10 @@ public interface PluginDependency extends Element {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * <p>
-	 *     A comment associated to the isDeprecated=true
+	 * A comment associated to the isDeprecated=true
 	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Deprecated Comment</em>' attribute.
 	 * @see #setDeprecatedComment(String)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getPluginDependency_DeprecatedComment()
@@ -48,7 +49,9 @@ public interface PluginDependency extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.PluginDependency#getDeprecatedComment <em>Deprecated Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Deprecated Comment</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Deprecated Comment</em>' attribute.
 	 * @see #getDeprecatedComment()
 	 * @generated
 	 */
@@ -58,10 +61,10 @@ public interface PluginDependency extends Element {
 	 * Returns the value of the '<em><b>Is Deprecated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Deprecated</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Deprecated</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Is Deprecated</em>' attribute.
 	 * @see #setIsDeprecated(boolean)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getPluginDependency_IsDeprecated()
@@ -74,7 +77,9 @@ public interface PluginDependency extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.PluginDependency#isDeprecated <em>Is Deprecated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Deprecated</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Is Deprecated</em>' attribute.
 	 * @see #isDeprecated()
 	 * @generated
 	 */
@@ -84,10 +89,10 @@ public interface PluginDependency extends Element {
 	 * Returns the value of the '<em><b>Base Dependency</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Dependency</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Dependency</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Dependency</em>' reference.
 	 * @see #setBase_Dependency(Dependency)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getPluginDependency_Base_Dependency()
@@ -100,7 +105,9 @@ public interface PluginDependency extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.PluginDependency#getBase_Dependency <em>Base Dependency</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Dependency</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Dependency</em>' reference.
 	 * @see #getBase_Dependency()
 	 * @generated
 	 */

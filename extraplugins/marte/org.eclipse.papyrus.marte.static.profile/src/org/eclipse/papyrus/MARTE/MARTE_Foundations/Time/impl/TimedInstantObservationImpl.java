@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,8 +29,8 @@ import org.eclipse.uml2.uml.TimeObservation;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedInstantObservationImpl#getObsKind <em>Obs Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedInstantObservationImpl#getBase_TimeObservation <em>Base Time Observation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedInstantObservationImpl#getObsKind <em>Obs Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedInstantObservationImpl#getBase_TimeObservation <em>Base Time Observation</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class TimedInstantObservationImpl extends TimedElementImpl implements Tim
 	 * The default value of the '{@link #getObsKind() <em>Obs Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getObsKind()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class TimedInstantObservationImpl extends TimedElementImpl implements Tim
 	 * The cached value of the '{@link #getObsKind() <em>Obs Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getObsKind()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public class TimedInstantObservationImpl extends TimedElementImpl implements Tim
 	 * The cached value of the '{@link #getBase_TimeObservation() <em>Base Time Observation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_TimeObservation()
 	 * @generated
 	 * @ordered
@@ -70,6 +73,7 @@ public class TimedInstantObservationImpl extends TimedElementImpl implements Tim
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TimedInstantObservationImpl() {
@@ -79,6 +83,7 @@ public class TimedInstantObservationImpl extends TimedElementImpl implements Tim
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -89,8 +94,10 @@ public class TimedInstantObservationImpl extends TimedElementImpl implements Tim
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EventKind getObsKind() {
 		return obsKind;
 	}
@@ -98,27 +105,33 @@ public class TimedInstantObservationImpl extends TimedElementImpl implements Tim
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setObsKind(EventKind newObsKind) {
 		EventKind oldObsKind = obsKind;
 		obsKind = newObsKind == null ? OBS_KIND_EDEFAULT : newObsKind;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimePackage.TIMED_INSTANT_OBSERVATION__OBS_KIND, oldObsKind, obsKind));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimeObservation getBase_TimeObservation() {
 		if (base_TimeObservation != null && base_TimeObservation.eIsProxy()) {
-			InternalEObject oldBase_TimeObservation = (InternalEObject)base_TimeObservation;
-			base_TimeObservation = (TimeObservation)eResolveProxy(oldBase_TimeObservation);
+			InternalEObject oldBase_TimeObservation = (InternalEObject) base_TimeObservation;
+			base_TimeObservation = (TimeObservation) eResolveProxy(oldBase_TimeObservation);
 			if (base_TimeObservation != oldBase_TimeObservation) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimePackage.TIMED_INSTANT_OBSERVATION__BASE_TIME_OBSERVATION, oldBase_TimeObservation, base_TimeObservation));
+				}
 			}
 		}
 		return base_TimeObservation;
@@ -127,6 +140,7 @@ public class TimedInstantObservationImpl extends TimedElementImpl implements Tim
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public TimeObservation basicGetBase_TimeObservation() {
@@ -136,28 +150,34 @@ public class TimedInstantObservationImpl extends TimedElementImpl implements Tim
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_TimeObservation(TimeObservation newBase_TimeObservation) {
 		TimeObservation oldBase_TimeObservation = base_TimeObservation;
 		base_TimeObservation = newBase_TimeObservation;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimePackage.TIMED_INSTANT_OBSERVATION__BASE_TIME_OBSERVATION, oldBase_TimeObservation, base_TimeObservation));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TimePackage.TIMED_INSTANT_OBSERVATION__OBS_KIND:
-				return getObsKind();
-			case TimePackage.TIMED_INSTANT_OBSERVATION__BASE_TIME_OBSERVATION:
-				if (resolve) return getBase_TimeObservation();
-				return basicGetBase_TimeObservation();
+		case TimePackage.TIMED_INSTANT_OBSERVATION__OBS_KIND:
+			return getObsKind();
+		case TimePackage.TIMED_INSTANT_OBSERVATION__BASE_TIME_OBSERVATION:
+			if (resolve) {
+				return getBase_TimeObservation();
+			}
+			return basicGetBase_TimeObservation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,17 +185,18 @@ public class TimedInstantObservationImpl extends TimedElementImpl implements Tim
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TimePackage.TIMED_INSTANT_OBSERVATION__OBS_KIND:
-				setObsKind((EventKind)newValue);
-				return;
-			case TimePackage.TIMED_INSTANT_OBSERVATION__BASE_TIME_OBSERVATION:
-				setBase_TimeObservation((TimeObservation)newValue);
-				return;
+		case TimePackage.TIMED_INSTANT_OBSERVATION__OBS_KIND:
+			setObsKind((EventKind) newValue);
+			return;
+		case TimePackage.TIMED_INSTANT_OBSERVATION__BASE_TIME_OBSERVATION:
+			setBase_TimeObservation((TimeObservation) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,17 +204,18 @@ public class TimedInstantObservationImpl extends TimedElementImpl implements Tim
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TimePackage.TIMED_INSTANT_OBSERVATION__OBS_KIND:
-				setObsKind(OBS_KIND_EDEFAULT);
-				return;
-			case TimePackage.TIMED_INSTANT_OBSERVATION__BASE_TIME_OBSERVATION:
-				setBase_TimeObservation((TimeObservation)null);
-				return;
+		case TimePackage.TIMED_INSTANT_OBSERVATION__OBS_KIND:
+			setObsKind(OBS_KIND_EDEFAULT);
+			return;
+		case TimePackage.TIMED_INSTANT_OBSERVATION__BASE_TIME_OBSERVATION:
+			setBase_TimeObservation((TimeObservation) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -201,15 +223,16 @@ public class TimedInstantObservationImpl extends TimedElementImpl implements Tim
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TimePackage.TIMED_INSTANT_OBSERVATION__OBS_KIND:
-				return obsKind != OBS_KIND_EDEFAULT;
-			case TimePackage.TIMED_INSTANT_OBSERVATION__BASE_TIME_OBSERVATION:
-				return base_TimeObservation != null;
+		case TimePackage.TIMED_INSTANT_OBSERVATION__OBS_KIND:
+			return obsKind != OBS_KIND_EDEFAULT;
+		case TimePackage.TIMED_INSTANT_OBSERVATION__BASE_TIME_OBSERVATION:
+			return base_TimeObservation != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -217,11 +240,14 @@ public class TimedInstantObservationImpl extends TimedElementImpl implements Tim
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (obsKind: ");
@@ -230,4 +256,4 @@ public class TimedInstantObservationImpl extends TimedElementImpl implements Tim
 		return result.toString();
 	}
 
-} //TimedInstantObservationImpl
+} // TimedInstantObservationImpl

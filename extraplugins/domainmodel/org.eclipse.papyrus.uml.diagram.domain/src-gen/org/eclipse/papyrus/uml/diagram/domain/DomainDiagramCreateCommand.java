@@ -7,16 +7,13 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.domain;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.infra.gmfdiag.common.AbstractPapyrusGmfCreateDiagramCommandHandler;
 import org.eclipse.papyrus.uml.diagram.domain.provider.ElementTypes;
 
@@ -47,16 +44,6 @@ public class DomainDiagramCreateCommand extends AbstractPapyrusGmfCreateDiagramC
 	@Override
 	protected PreferencesHint getPreferenceHint() {
 		return Activator.DIAGRAM_PREFERENCES_HINT;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	protected Diagram createDiagram(Resource diagramResource, EObject owner, String name) {
-		// Start of user code Custom diagram creation
-		return super.createDiagram(diagramResource, owner, name);
-		// End of user code
 	}
 
 	// Start of user code Custom creation command

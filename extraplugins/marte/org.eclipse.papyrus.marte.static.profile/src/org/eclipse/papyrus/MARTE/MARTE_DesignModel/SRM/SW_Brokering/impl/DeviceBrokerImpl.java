@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,14 +34,14 @@ import org.eclipse.uml2.uml.TypedElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#getAccessPolicy <em>Access Policy</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#isIsBuffered <em>Is Buffered</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#getDevices <em>Devices</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#getCloseServices <em>Close Services</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#getControlServices <em>Control Services</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#getOpenServices <em>Open Services</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#getReadServices <em>Read Services</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#getWriteServices <em>Write Services</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#getAccessPolicy <em>Access Policy</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#isIsBuffered <em>Is Buffered</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#getDevices <em>Devices</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#getCloseServices <em>Close Services</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#getControlServices <em>Control Services</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#getOpenServices <em>Open Services</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#getReadServices <em>Read Services</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl#getWriteServices <em>Write Services</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,6 +52,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The default value of the '{@link #getAccessPolicy() <em>Access Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getAccessPolicy()
 	 * @generated
 	 * @ordered
@@ -62,6 +63,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #getAccessPolicy() <em>Access Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getAccessPolicy()
 	 * @generated
 	 * @ordered
@@ -72,6 +74,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The default value of the '{@link #isIsBuffered() <em>Is Buffered</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsBuffered()
 	 * @generated
 	 * @ordered
@@ -82,6 +85,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #isIsBuffered() <em>Is Buffered</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsBuffered()
 	 * @generated
 	 * @ordered
@@ -92,6 +96,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #getDevices() <em>Devices</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDevices()
 	 * @generated
 	 * @ordered
@@ -102,6 +107,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #getCloseServices() <em>Close Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getCloseServices()
 	 * @generated
 	 * @ordered
@@ -112,6 +118,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #getControlServices() <em>Control Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getControlServices()
 	 * @generated
 	 * @ordered
@@ -122,6 +129,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #getOpenServices() <em>Open Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOpenServices()
 	 * @generated
 	 * @ordered
@@ -132,6 +140,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #getReadServices() <em>Read Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReadServices()
 	 * @generated
 	 * @ordered
@@ -142,6 +151,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #getWriteServices() <em>Write Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getWriteServices()
 	 * @generated
 	 * @ordered
@@ -151,6 +161,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DeviceBrokerImpl() {
@@ -160,6 +171,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,8 +182,10 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public AccessPolicyKind getAccessPolicy() {
 		return accessPolicy;
 	}
@@ -179,20 +193,25 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setAccessPolicy(AccessPolicyKind newAccessPolicy) {
 		AccessPolicyKind oldAccessPolicy = accessPolicy;
 		accessPolicy = newAccessPolicy == null ? ACCESS_POLICY_EDEFAULT : newAccessPolicy;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SW_BrokeringPackage.DEVICE_BROKER__ACCESS_POLICY, oldAccessPolicy, accessPolicy));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isIsBuffered() {
 		return isBuffered;
 	}
@@ -200,20 +219,25 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsBuffered(boolean newIsBuffered) {
 		boolean oldIsBuffered = isBuffered;
 		isBuffered = newIsBuffered;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SW_BrokeringPackage.DEVICE_BROKER__IS_BUFFERED, oldIsBuffered, isBuffered));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<TypedElement> getDevices() {
 		if (devices == null) {
 			devices = new EObjectResolvingEList<TypedElement>(TypedElement.class, this, SW_BrokeringPackage.DEVICE_BROKER__DEVICES);
@@ -224,8 +248,10 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<BehavioralFeature> getCloseServices() {
 		if (closeServices == null) {
 			closeServices = new EObjectResolvingEList<BehavioralFeature>(BehavioralFeature.class, this, SW_BrokeringPackage.DEVICE_BROKER__CLOSE_SERVICES);
@@ -236,8 +262,10 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<BehavioralFeature> getControlServices() {
 		if (controlServices == null) {
 			controlServices = new EObjectResolvingEList<BehavioralFeature>(BehavioralFeature.class, this, SW_BrokeringPackage.DEVICE_BROKER__CONTROL_SERVICES);
@@ -248,8 +276,10 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<BehavioralFeature> getOpenServices() {
 		if (openServices == null) {
 			openServices = new EObjectResolvingEList<BehavioralFeature>(BehavioralFeature.class, this, SW_BrokeringPackage.DEVICE_BROKER__OPEN_SERVICES);
@@ -260,8 +290,10 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<BehavioralFeature> getReadServices() {
 		if (readServices == null) {
 			readServices = new EObjectResolvingEList<BehavioralFeature>(BehavioralFeature.class, this, SW_BrokeringPackage.DEVICE_BROKER__READ_SERVICES);
@@ -272,8 +304,10 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<BehavioralFeature> getWriteServices() {
 		if (writeServices == null) {
 			writeServices = new EObjectResolvingEList<BehavioralFeature>(BehavioralFeature.class, this, SW_BrokeringPackage.DEVICE_BROKER__WRITE_SERVICES);
@@ -284,27 +318,28 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SW_BrokeringPackage.DEVICE_BROKER__ACCESS_POLICY:
-				return getAccessPolicy();
-			case SW_BrokeringPackage.DEVICE_BROKER__IS_BUFFERED:
-				return isIsBuffered();
-			case SW_BrokeringPackage.DEVICE_BROKER__DEVICES:
-				return getDevices();
-			case SW_BrokeringPackage.DEVICE_BROKER__CLOSE_SERVICES:
-				return getCloseServices();
-			case SW_BrokeringPackage.DEVICE_BROKER__CONTROL_SERVICES:
-				return getControlServices();
-			case SW_BrokeringPackage.DEVICE_BROKER__OPEN_SERVICES:
-				return getOpenServices();
-			case SW_BrokeringPackage.DEVICE_BROKER__READ_SERVICES:
-				return getReadServices();
-			case SW_BrokeringPackage.DEVICE_BROKER__WRITE_SERVICES:
-				return getWriteServices();
+		case SW_BrokeringPackage.DEVICE_BROKER__ACCESS_POLICY:
+			return getAccessPolicy();
+		case SW_BrokeringPackage.DEVICE_BROKER__IS_BUFFERED:
+			return isIsBuffered();
+		case SW_BrokeringPackage.DEVICE_BROKER__DEVICES:
+			return getDevices();
+		case SW_BrokeringPackage.DEVICE_BROKER__CLOSE_SERVICES:
+			return getCloseServices();
+		case SW_BrokeringPackage.DEVICE_BROKER__CONTROL_SERVICES:
+			return getControlServices();
+		case SW_BrokeringPackage.DEVICE_BROKER__OPEN_SERVICES:
+			return getOpenServices();
+		case SW_BrokeringPackage.DEVICE_BROKER__READ_SERVICES:
+			return getReadServices();
+		case SW_BrokeringPackage.DEVICE_BROKER__WRITE_SERVICES:
+			return getWriteServices();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -312,42 +347,43 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SW_BrokeringPackage.DEVICE_BROKER__ACCESS_POLICY:
-				setAccessPolicy((AccessPolicyKind)newValue);
-				return;
-			case SW_BrokeringPackage.DEVICE_BROKER__IS_BUFFERED:
-				setIsBuffered((Boolean)newValue);
-				return;
-			case SW_BrokeringPackage.DEVICE_BROKER__DEVICES:
-				getDevices().clear();
-				getDevices().addAll((Collection<? extends TypedElement>)newValue);
-				return;
-			case SW_BrokeringPackage.DEVICE_BROKER__CLOSE_SERVICES:
-				getCloseServices().clear();
-				getCloseServices().addAll((Collection<? extends BehavioralFeature>)newValue);
-				return;
-			case SW_BrokeringPackage.DEVICE_BROKER__CONTROL_SERVICES:
-				getControlServices().clear();
-				getControlServices().addAll((Collection<? extends BehavioralFeature>)newValue);
-				return;
-			case SW_BrokeringPackage.DEVICE_BROKER__OPEN_SERVICES:
-				getOpenServices().clear();
-				getOpenServices().addAll((Collection<? extends BehavioralFeature>)newValue);
-				return;
-			case SW_BrokeringPackage.DEVICE_BROKER__READ_SERVICES:
-				getReadServices().clear();
-				getReadServices().addAll((Collection<? extends BehavioralFeature>)newValue);
-				return;
-			case SW_BrokeringPackage.DEVICE_BROKER__WRITE_SERVICES:
-				getWriteServices().clear();
-				getWriteServices().addAll((Collection<? extends BehavioralFeature>)newValue);
-				return;
+		case SW_BrokeringPackage.DEVICE_BROKER__ACCESS_POLICY:
+			setAccessPolicy((AccessPolicyKind) newValue);
+			return;
+		case SW_BrokeringPackage.DEVICE_BROKER__IS_BUFFERED:
+			setIsBuffered((Boolean) newValue);
+			return;
+		case SW_BrokeringPackage.DEVICE_BROKER__DEVICES:
+			getDevices().clear();
+			getDevices().addAll((Collection<? extends TypedElement>) newValue);
+			return;
+		case SW_BrokeringPackage.DEVICE_BROKER__CLOSE_SERVICES:
+			getCloseServices().clear();
+			getCloseServices().addAll((Collection<? extends BehavioralFeature>) newValue);
+			return;
+		case SW_BrokeringPackage.DEVICE_BROKER__CONTROL_SERVICES:
+			getControlServices().clear();
+			getControlServices().addAll((Collection<? extends BehavioralFeature>) newValue);
+			return;
+		case SW_BrokeringPackage.DEVICE_BROKER__OPEN_SERVICES:
+			getOpenServices().clear();
+			getOpenServices().addAll((Collection<? extends BehavioralFeature>) newValue);
+			return;
+		case SW_BrokeringPackage.DEVICE_BROKER__READ_SERVICES:
+			getReadServices().clear();
+			getReadServices().addAll((Collection<? extends BehavioralFeature>) newValue);
+			return;
+		case SW_BrokeringPackage.DEVICE_BROKER__WRITE_SERVICES:
+			getWriteServices().clear();
+			getWriteServices().addAll((Collection<? extends BehavioralFeature>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -355,35 +391,36 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SW_BrokeringPackage.DEVICE_BROKER__ACCESS_POLICY:
-				setAccessPolicy(ACCESS_POLICY_EDEFAULT);
-				return;
-			case SW_BrokeringPackage.DEVICE_BROKER__IS_BUFFERED:
-				setIsBuffered(IS_BUFFERED_EDEFAULT);
-				return;
-			case SW_BrokeringPackage.DEVICE_BROKER__DEVICES:
-				getDevices().clear();
-				return;
-			case SW_BrokeringPackage.DEVICE_BROKER__CLOSE_SERVICES:
-				getCloseServices().clear();
-				return;
-			case SW_BrokeringPackage.DEVICE_BROKER__CONTROL_SERVICES:
-				getControlServices().clear();
-				return;
-			case SW_BrokeringPackage.DEVICE_BROKER__OPEN_SERVICES:
-				getOpenServices().clear();
-				return;
-			case SW_BrokeringPackage.DEVICE_BROKER__READ_SERVICES:
-				getReadServices().clear();
-				return;
-			case SW_BrokeringPackage.DEVICE_BROKER__WRITE_SERVICES:
-				getWriteServices().clear();
-				return;
+		case SW_BrokeringPackage.DEVICE_BROKER__ACCESS_POLICY:
+			setAccessPolicy(ACCESS_POLICY_EDEFAULT);
+			return;
+		case SW_BrokeringPackage.DEVICE_BROKER__IS_BUFFERED:
+			setIsBuffered(IS_BUFFERED_EDEFAULT);
+			return;
+		case SW_BrokeringPackage.DEVICE_BROKER__DEVICES:
+			getDevices().clear();
+			return;
+		case SW_BrokeringPackage.DEVICE_BROKER__CLOSE_SERVICES:
+			getCloseServices().clear();
+			return;
+		case SW_BrokeringPackage.DEVICE_BROKER__CONTROL_SERVICES:
+			getControlServices().clear();
+			return;
+		case SW_BrokeringPackage.DEVICE_BROKER__OPEN_SERVICES:
+			getOpenServices().clear();
+			return;
+		case SW_BrokeringPackage.DEVICE_BROKER__READ_SERVICES:
+			getReadServices().clear();
+			return;
+		case SW_BrokeringPackage.DEVICE_BROKER__WRITE_SERVICES:
+			getWriteServices().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -391,27 +428,28 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SW_BrokeringPackage.DEVICE_BROKER__ACCESS_POLICY:
-				return accessPolicy != ACCESS_POLICY_EDEFAULT;
-			case SW_BrokeringPackage.DEVICE_BROKER__IS_BUFFERED:
-				return isBuffered != IS_BUFFERED_EDEFAULT;
-			case SW_BrokeringPackage.DEVICE_BROKER__DEVICES:
-				return devices != null && !devices.isEmpty();
-			case SW_BrokeringPackage.DEVICE_BROKER__CLOSE_SERVICES:
-				return closeServices != null && !closeServices.isEmpty();
-			case SW_BrokeringPackage.DEVICE_BROKER__CONTROL_SERVICES:
-				return controlServices != null && !controlServices.isEmpty();
-			case SW_BrokeringPackage.DEVICE_BROKER__OPEN_SERVICES:
-				return openServices != null && !openServices.isEmpty();
-			case SW_BrokeringPackage.DEVICE_BROKER__READ_SERVICES:
-				return readServices != null && !readServices.isEmpty();
-			case SW_BrokeringPackage.DEVICE_BROKER__WRITE_SERVICES:
-				return writeServices != null && !writeServices.isEmpty();
+		case SW_BrokeringPackage.DEVICE_BROKER__ACCESS_POLICY:
+			return accessPolicy != ACCESS_POLICY_EDEFAULT;
+		case SW_BrokeringPackage.DEVICE_BROKER__IS_BUFFERED:
+			return isBuffered != IS_BUFFERED_EDEFAULT;
+		case SW_BrokeringPackage.DEVICE_BROKER__DEVICES:
+			return devices != null && !devices.isEmpty();
+		case SW_BrokeringPackage.DEVICE_BROKER__CLOSE_SERVICES:
+			return closeServices != null && !closeServices.isEmpty();
+		case SW_BrokeringPackage.DEVICE_BROKER__CONTROL_SERVICES:
+			return controlServices != null && !controlServices.isEmpty();
+		case SW_BrokeringPackage.DEVICE_BROKER__OPEN_SERVICES:
+			return openServices != null && !openServices.isEmpty();
+		case SW_BrokeringPackage.DEVICE_BROKER__READ_SERVICES:
+			return readServices != null && !readServices.isEmpty();
+		case SW_BrokeringPackage.DEVICE_BROKER__WRITE_SERVICES:
+			return writeServices != null && !writeServices.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -419,11 +457,14 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (accessPolicy: ");
@@ -434,4 +475,4 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 		return result.toString();
 	}
 
-} //DeviceBrokerImpl
+} // DeviceBrokerImpl

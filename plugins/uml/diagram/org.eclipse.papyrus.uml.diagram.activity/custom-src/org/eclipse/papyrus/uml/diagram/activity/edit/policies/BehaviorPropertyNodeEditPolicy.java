@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,8 +54,9 @@ public class BehaviorPropertyNodeEditPolicy extends NonResizableEditPolicyEx {
 	/**
 	 * @see org.eclipse.gef.editpolicies.NonResizableEditPolicy#createSelectionHandles()
 	 */
+	@Override
 	protected List createSelectionHandles() {
-		MoveHandle mh = new MoveHandle((GraphicalEditPart)getHost());
+		MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
 		mh.setBorder(null);
 		return Collections.singletonList(mh);
 	}
@@ -63,26 +64,31 @@ public class BehaviorPropertyNodeEditPolicy extends NonResizableEditPolicyEx {
 	/**
 	 * Calls other methods as appropriate.
 	 */
+	@Override
 	public void eraseSourceFeedback(Request request) {
-		if((REQ_MOVE.equals(request.getType()) && isDragAllowed()) || REQ_CLONE.equals(request.getType()) || REQ_ADD.equals(request.getType()) || RequestConstants.REQ_DROP.equals(request.getType()))
-			eraseChangeBoundsFeedback((ChangeBoundsRequest)request);
+		if ((REQ_MOVE.equals(request.getType()) && isDragAllowed()) || REQ_CLONE.equals(request.getType()) || REQ_ADD.equals(request.getType()) || RequestConstants.REQ_DROP.equals(request.getType())) {
+			eraseChangeBoundsFeedback((ChangeBoundsRequest) request);
+		}
 	}
 
 	/**
 	 * Calls other methods as appropriate.
 	 */
+	@Override
 	public void showSourceFeedback(Request request) {
-		if((REQ_MOVE.equals(request.getType()) && isDragAllowed()) || REQ_ADD.equals(request.getType()) || REQ_CLONE.equals(request.getType()) || RequestConstants.REQ_DROP.equals(request.getType()))
-			showChangeBoundsFeedback((ChangeBoundsRequest)request);
+		if ((REQ_MOVE.equals(request.getType()) && isDragAllowed()) || REQ_ADD.equals(request.getType()) || REQ_CLONE.equals(request.getType()) || RequestConstants.REQ_DROP.equals(request.getType())) {
+			showChangeBoundsFeedback((ChangeBoundsRequest) request);
+		}
 	}
 
 	/**
 	 * Returns the command contribution to a change bounds request.
-	 * 
+	 *
 	 * @param request
-	 *        the change bounds requesgt
+	 *            the change bounds requesgt
 	 * @return the command contribution to the request
 	 */
+	@Override
 	protected Command getMoveCommand(ChangeBoundsRequest request) {
 		// translate the feedback figure
 		PrecisionRectangle rect = new PrecisionRectangle(getInitialFeedbackBounds().getCopy());
@@ -90,69 +96,74 @@ public class BehaviorPropertyNodeEditPolicy extends NonResizableEditPolicyEx {
 		rect.translate(request.getMoveDelta());
 		rect.resize(request.getSizeDelta());
 		getHostFigure().translateToRelative(rect);
-		if(getHost() instanceof IBorderItemEditPart) {
-			IBorderItemEditPart borderItemEP = (IBorderItemEditPart)getHost();
+		if (getHost() instanceof IBorderItemEditPart) {
+			IBorderItemEditPart borderItemEP = (IBorderItemEditPart) getHost();
 			IBorderItemLocator borderItemLocator = borderItemEP.getBorderItemLocator();
-			if(borderItemLocator != null) {
+			if (borderItemLocator != null) {
 				Rectangle realLocation = borderItemLocator.getValidLocation(rect.getCopy(), borderItemEP.getFigure());
 				Point parentOrigin = borderItemEP.getFigure().getParent().getBounds().getTopLeft();
 				Dimension d = realLocation.getTopLeft().getDifference(parentOrigin);
 				Point location = new Point(d.width, d.height);
-				ICommand moveCommand = new SetBoundsCommand(borderItemEP.getEditingDomain(), DiagramUIMessages.Commands_MoveElement, new EObjectAdapter((View)getHost().getModel()), location);
+				ICommand moveCommand = new SetBoundsCommand(borderItemEP.getEditingDomain(), DiagramUIMessages.Commands_MoveElement, new EObjectAdapter((View) getHost().getModel()), location);
 				return new ICommandProxy(moveCommand);
 			}
-		} else if(getHost() instanceof LabelEditPart) {
-			LabelEditPart editPart = (LabelEditPart)getHost();
+		} else if (getHost() instanceof LabelEditPart) {
+			LabelEditPart editPart = (LabelEditPart) getHost();
 			Point refPoint = editPart.getReferencePoint();
 			Point normalPoint = LabelHelper.offsetFromRelativeCoordinate(getHostFigure(), rect, refPoint);
-			ICommand moveCommand = new SetBoundsCommand(editPart.getEditingDomain(), DiagramUIMessages.Commands_MoveElement, new EObjectAdapter((View)editPart.getModel()), normalPoint);
+			ICommand moveCommand = new SetBoundsCommand(editPart.getEditingDomain(), DiagramUIMessages.Commands_MoveElement, new EObjectAdapter((View) editPart.getModel()), normalPoint);
 			return new ICommandProxy(moveCommand);
 		}
 		return null;
 	}
 
 	/** Return <tt>null</tt> to avoid handling the request. */
+	@Override
 	protected Command getAlignCommand(AlignmentRequest request) {
 		return null;
 	}
 
 	/**
 	 * Erase the feedback link figure
-	 * 
+	 *
 	 * @see org.eclipse.gef.editpolicies.NonResizableEditPolicy#eraseChangeBoundsFeedback(org.eclipse.gef.requests.ChangeBoundsRequest)
 	 */
+	@Override
 	protected void eraseChangeBoundsFeedback(ChangeBoundsRequest request) {
 		super.eraseChangeBoundsFeedback(request);
-		if(linkFeedback != null)
+		if (linkFeedback != null) {
 			removeFeedback(linkFeedback);
+		}
 		linkFeedback = null;
 	}
 
 	/**
 	 * Create the feedback link figure
-	 * 
+	 *
 	 * @see org.eclipse.gef.editpolicies.NonResizableEditPolicy#createDragSourceFeedbackFigure()
 	 */
+	@Override
 	protected IFigure createDragSourceFeedbackFigure() {
 		IFigure feedback = super.createDragSourceFeedbackFigure();
 		linkFeedback = new PolylineShape();
 		linkFeedback.setLineWidth(1);
 		linkFeedback.setLineStyle(Graphics.LINE_DASHDOT);
-		linkFeedback.setForegroundColor(((IGraphicalEditPart)getHost()).getFigure().getForegroundColor());
+		linkFeedback.setForegroundColor(((IGraphicalEditPart) getHost()).getFigure().getForegroundColor());
 		addFeedback(linkFeedback);
 		return feedback;
 	}
 
 	/**
 	 * Show link feedback
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy#showChangeBoundsFeedback(org.eclipse.gef.requests.ChangeBoundsRequest)
 	 */
+	@Override
 	protected void showChangeBoundsFeedback(org.eclipse.gef.requests.ChangeBoundsRequest request) {
-		if(getHost() instanceof IBorderItemEditPart) {
-			IBorderItemEditPart borderItemEP = (IBorderItemEditPart)getHost();
+		if (getHost() instanceof IBorderItemEditPart) {
+			IBorderItemEditPart borderItemEP = (IBorderItemEditPart) getHost();
 			IBorderItemLocator borderItemLocator = borderItemEP.getBorderItemLocator();
-			if(borderItemLocator != null) {
+			if (borderItemLocator != null) {
 				IFigure feedback = getDragSourceFeedbackFigure();
 				PrecisionRectangle rect = new PrecisionRectangle(getInitialFeedbackBounds().getCopy());
 				getHostFigure().translateToAbsolute(rect);
@@ -179,7 +190,7 @@ public class BehaviorPropertyNodeEditPolicy extends NonResizableEditPolicyEx {
 		Point end = getLinkEndPoint(request, referencePoint);
 		linkFeedback.setEnd(end);
 		Point start = getLinkStartPoint(request, referencePoint, end);
-		if(start != null) {
+		if (start != null) {
 			linkFeedback.setStart(start);
 		} else {
 			linkFeedback.setStart(referencePoint);
@@ -188,18 +199,18 @@ public class BehaviorPropertyNodeEditPolicy extends NonResizableEditPolicyEx {
 
 	/**
 	 * Get the reference point at the center of the parent figure
-	 * 
+	 *
 	 * @param request
-	 *        change bounds request
+	 *            change bounds request
 	 * @return point
 	 */
 	private Point getReferencePoint(ChangeBoundsRequest request) {
-		Point refPoint = ((LabelEditPart)getHost()).getReferencePoint();
+		Point refPoint = ((LabelEditPart) getHost()).getReferencePoint();
 		Rectangle centerMain = null;
-		if(((IGraphicalEditPart)getHost().getParent()).getFigure() instanceof Connection) {
+		if (((IGraphicalEditPart) getHost().getParent()).getFigure() instanceof Connection) {
 			centerMain = new Rectangle(refPoint.x, refPoint.y, 0, 0);
 		} else {
-			centerMain = ((IGraphicalEditPart)getHost().getParent()).getFigure().getBounds().getCopy();
+			centerMain = ((IGraphicalEditPart) getHost().getParent()).getFigure().getBounds().getCopy();
 			centerMain.translate(centerMain.width / 2, centerMain.height / 2);
 		}
 		PrecisionRectangle ref = new PrecisionRectangle(centerMain);
@@ -210,24 +221,24 @@ public class BehaviorPropertyNodeEditPolicy extends NonResizableEditPolicyEx {
 
 	/**
 	 * Get the point for starting the link
-	 * 
+	 *
 	 * @param request
-	 *        change bounds request
+	 *            change bounds request
 	 * @param referencePoint
-	 *        the reference point at the center of the start figure
+	 *            the reference point at the center of the start figure
 	 * @param endPoint
-	 *        the end point at the border of the end figure
+	 *            the end point at the border of the end figure
 	 * @return point where to start the link
 	 */
 	private Point getLinkStartPoint(ChangeBoundsRequest request, Point referencePoint, Point endPoint) {
 		Point u1 = referencePoint;
 		Point u2 = endPoint;
-		if(getHost().getParent() instanceof AbstractBorderedShapeEditPart) {
+		if (getHost().getParent() instanceof AbstractBorderedShapeEditPart) {
 			// the parent figure is a node : choose a point on its border
-			AbstractBorderedShapeEditPart parentPart = (AbstractBorderedShapeEditPart)getHost().getParent();
+			AbstractBorderedShapeEditPart parentPart = (AbstractBorderedShapeEditPart) getHost().getParent();
 			IFigure fig = parentPart.getMainFigure();
-			if(fig instanceof NodeFigure) {
-				PointList pointsList = ((NodeFigure)fig).getPolygonPoints().getCopy();
+			if (fig instanceof NodeFigure) {
+				PointList pointsList = ((NodeFigure) fig).getPolygonPoints().getCopy();
 				// translate points relatively to drag feedback
 				fig.translateToAbsolute(pointsList);
 				getDragSourceFeedbackFigure().translateToRelative(pointsList);
@@ -240,11 +251,11 @@ public class BehaviorPropertyNodeEditPolicy extends NonResizableEditPolicyEx {
 
 	/**
 	 * Get the point for ending the link
-	 * 
+	 *
 	 * @param request
-	 *        change bounds request
+	 *            change bounds request
 	 * @param referencePoint
-	 *        the reference point at the center of the start figure
+	 *            the reference point at the center of the start figure
 	 * @return point
 	 */
 	private Point getLinkEndPoint(ChangeBoundsRequest request, Point referencePoint) {
@@ -255,19 +266,19 @@ public class BehaviorPropertyNodeEditPolicy extends NonResizableEditPolicyEx {
 
 	/**
 	 * Get the point on the border intersection the segment
-	 * 
+	 *
 	 * @param polygonalBounds
-	 *        the list of points tracing the border
+	 *            the list of points tracing the border
 	 * @param insidePoint
-	 *        first segment extremity
+	 *            first segment extremity
 	 * @param outsideExtremity
-	 *        second segment extremity
+	 *            second segment extremity
 	 * @return the intersection point or null if none
 	 */
 	public static Point getIntersectionPoint(PointList polygonalBounds, Point insidePoint, Point outsideExtremity) {
 		Point intersection = null;
 		int i = 0;
-		while(intersection == null && i < polygonalBounds.size() - 1) {
+		while (intersection == null && i < polygonalBounds.size() - 1) {
 			Point v1 = polygonalBounds.getPoint(i).getCopy();
 			Point v2 = polygonalBounds.getPoint(i + 1).getCopy();
 			intersection = getIntersection(insidePoint, outsideExtremity, v1, v2);
@@ -279,12 +290,12 @@ public class BehaviorPropertyNodeEditPolicy extends NonResizableEditPolicyEx {
 	/**
 	 * Get the point of the border which is the more appropriated to link to the
 	 * reference point
-	 * 
+	 *
 	 * @param referencePoint
-	 *        point to refer to, which the link is directed to (not
-	 *        necessary an end of the link)
+	 *            point to refer to, which the link is directed to (not
+	 *            necessary an end of the link)
 	 * @param border
-	 *        the border on which an anchoring point must be chosen
+	 *            the border on which an anchoring point must be chosen
 	 * @return a point of the border to use as link end
 	 */
 	public static Point getAppropriateBorderPoint(Point referencePoint, Rectangle border) {
@@ -297,27 +308,27 @@ public class BehaviorPropertyNodeEditPolicy extends NonResizableEditPolicyEx {
 		Dimension diffRight = referencePoint.getDifference(midRight);
 		Dimension diffLeft = referencePoint.getDifference(midLeft);
 		Point startPoint = midBottom;
-		if(diffBottom.height > 0) {
+		if (diffBottom.height > 0) {
 			// check if right or left is more appropriated
-			if(diffLeft.width < 0 && diffBottom.height < -diffLeft.width) {
+			if (diffLeft.width < 0 && diffBottom.height < -diffLeft.width) {
 				startPoint = midLeft;
-			} else if(diffRight.width > 0 && diffBottom.height < diffRight.width) {
+			} else if (diffRight.width > 0 && diffBottom.height < diffRight.width) {
 				startPoint = midRight;
 			} else {
 				startPoint = midBottom;
 			}
-		} else if(diffTop.height < 0) {
+		} else if (diffTop.height < 0) {
 			// check if right or left is more appropriated
-			if(diffLeft.width < 0 && -diffTop.height < -diffLeft.width) {
+			if (diffLeft.width < 0 && -diffTop.height < -diffLeft.width) {
 				startPoint = midLeft;
-			} else if(diffRight.width > 0 && -diffTop.height < diffRight.width) {
+			} else if (diffRight.width > 0 && -diffTop.height < diffRight.width) {
 				startPoint = midRight;
 			} else {
 				startPoint = midTop;
 			}
-		} else if(diffLeft.width < 0) {
+		} else if (diffLeft.width < 0) {
 			startPoint = midLeft;
-		} else if(diffRight.width > 0) {
+		} else if (diffRight.width > 0) {
 			startPoint = midRight;
 		}
 		return startPoint;
@@ -325,27 +336,27 @@ public class BehaviorPropertyNodeEditPolicy extends NonResizableEditPolicyEx {
 
 	/**
 	 * Get the intersection between segments joining the points
-	 * 
+	 *
 	 * @param u1
-	 *        the first extremity of the u segment
+	 *            the first extremity of the u segment
 	 * @param u2
-	 *        the second extremity of the u segment
+	 *            the second extremity of the u segment
 	 * @param v1
-	 *        the first extremity of the v segment
+	 *            the first extremity of the v segment
 	 * @param v2
-	 *        the second extremity of the v segment
+	 *            the second extremity of the v segment
 	 * @return the intersection point or null if none
 	 */
 	public static Point getIntersection(Point u1, Point u2, Point v1, Point v2) {
 		float denom = ((u2.y - u1.y) * (v2.x - v1.x)) - ((u2.x - u1.x) * (v2.y - v1.y));
 		float nume_a = ((u2.x - u1.x) * (v1.y - u1.y)) - ((u2.y - u1.y) * (v1.x - u1.x));
 		float nume_b = ((v2.x - v1.x) * (v1.y - u1.y)) - ((v2.y - v1.y) * (v1.x - u1.x));
-		if(denom == 0.0f) {
+		if (denom == 0.0f) {
 			return null;
 		}
 		float ua = nume_a / denom;
 		float ub = nume_b / denom;
-		if(ua >= 0.0f && ua <= 1.0f && ub >= 0.0f && ub <= 1.0f) {
+		if (ua >= 0.0f && ua <= 1.0f && ub >= 0.0f && ub <= 1.0f) {
 			// Get the intersection point.
 			Float x = v1.x + ua * (v2.x - v1.x);
 			Float y = v1.y + ua * (v2.y - v1.y);

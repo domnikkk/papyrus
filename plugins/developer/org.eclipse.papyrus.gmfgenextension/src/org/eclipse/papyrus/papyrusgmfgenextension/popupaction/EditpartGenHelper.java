@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,13 +54,13 @@ public class EditpartGenHelper {
 
 	/**
 	 * Adds the behavior.
-	 * 
+	 *
 	 * @param base
-	 *        the base where we want to add a behvior
+	 *            the base where we want to add a behvior
 	 * @param key
-	 *        the key
+	 *            the key
 	 * @param value
-	 *        the value
+	 *            the value
 	 */
 	public static void addBehavior(GenCommonBase base, String key, String value) {
 		CustomBehaviour behaviour = GMFGenFactory.eINSTANCE.createCustomBehaviour();
@@ -71,13 +71,13 @@ public class EditpartGenHelper {
 
 	/**
 	 * Creates the top node.
-	 * 
+	 *
 	 * @param genDiagram
-	 *        the gen diagram
+	 *            the gen diagram
 	 * @param name
-	 *        the name
+	 *            the name
 	 * @param visualClass
-	 *        the visual class node etc..
+	 *            the visual class node etc..
 	 * @return the gen top level node
 	 */
 	public static GenTopLevelNode createTopNode(GenDiagram genDiagram, String name, GenClass visualClass) {
@@ -98,13 +98,13 @@ public class EditpartGenHelper {
 
 	/**
 	 * Creates the gen node label.
-	 * 
+	 *
 	 * @param genNode
-	 *        the gen node
+	 *            the gen node
 	 * @param name
-	 *        the name
+	 *            the name
 	 * @param visualClass
-	 *        the visual class node etc...
+	 *            the visual class node etc...
 	 * @return the gen node label
 	 */
 	public static GenNodeLabel createGenNodeLabel(GenNode genNode, String name, GenClass visualClass) {
@@ -121,13 +121,13 @@ public class EditpartGenHelper {
 
 	/**
 	 * Creates the external gen node label.
-	 * 
+	 *
 	 * @param genNode
-	 *        the gen node
+	 *            the gen node
 	 * @param name
-	 *        the name
+	 *            the name
 	 * @param visualClass
-	 *        the visual class node etc ...
+	 *            the visual class node etc ...
 	 * @return the gen node label
 	 */
 	public static GenNodeLabel createExternalGenNodeLabel(GenNode genNode, String name, GenClass visualClass) {
@@ -144,28 +144,28 @@ public class EditpartGenHelper {
 
 	/**
 	 * Creates the meta model type.
-	 * 
+	 *
 	 * @param base
-	 *        the base that will contains the metamodel type
+	 *            the base that will contains the metamodel type
 	 * @param name
-	 *        the name of the edit class helper
+	 *            the name of the edit class helper
 	 */
 	public static void createMetaModelType(GenCommonBase base, String name) {
 		MetamodelType metamodelType = GMFGenFactory.eINSTANCE.createMetamodelType();
 		metamodelType.setDefinedExternally(false);
 		metamodelType.setDisplayName(name);
-		metamodelType.setEditHelperClassName(name + EDIT_HELPER); //$NON-NLS-1$
+		metamodelType.setEditHelperClassName(name + EDIT_HELPER);
 		metamodelType.setDiagramElement(base);
 	}
 
 
 	/**
 	 * Creates the label view map.
-	 * 
+	 *
 	 * @param base
-	 *        the base that will contains the labelview map
+	 *            the base that will contains the labelview map
 	 * @param qualifiedNameFigure
-	 *        the qualified name figure
+	 *            the qualified name figure
 	 */
 	public static void createLabelViewMap(GenCommonBase base, String qualifiedNameFigure) {
 		ParentAssignedViewmap figureViewmap = GMFGenFactory.eINSTANCE.createParentAssignedViewmap();
@@ -182,15 +182,15 @@ public class EditpartGenHelper {
 
 	/**
 	 * Creates the figure view map.
-	 * 
+	 *
 	 * @param base
-	 *        the base that will contains the labelview map
+	 *            the base that will contains the labelview map
 	 * @param qualifiedNameFigure
-	 *        the qualified name figure
+	 *            the qualified name figure
 	 * @param width
-	 *        the width of the default figure
+	 *            the width of the default figure
 	 * @param height
-	 *        the height of the default figure
+	 *            the height of the default figure
 	 */
 	public static void createFigureViewMap(GenCommonBase base, String qualifiedNameFigure, int width, int height) {
 		FigureViewmap figureViewmap = GMFGenFactory.eINSTANCE.createFigureViewmap();
@@ -204,13 +204,13 @@ public class EditpartGenHelper {
 
 	/**
 	 * Creates the model facet.
-	 * 
+	 *
 	 * @param base
-	 *        the base that will contains the model facet
+	 *            the base that will contains the model facet
 	 * @param genFeature
-	 *        the gen feature
+	 *            the gen feature
 	 * @param genclass
-	 *        the genclass
+	 *            the genclass
 	 */
 	public static void createModelFacet(GenNode base, GenFeature genFeature, GenClass genclass) {
 		TypeModelFacet facet = GMFGenFactory.eINSTANCE.createTypeModelFacet();
@@ -222,13 +222,13 @@ public class EditpartGenHelper {
 
 	/**
 	 * Creates the label model facet.
-	 * 
+	 *
 	 * @param label
-	 *        the label that will contains the label model facet
+	 *            the label that will contains the label model facet
 	 * @param genFeature
-	 *        the gen feature
+	 *            the gen feature
 	 * @param value
-	 *        the value
+	 *            the value
 	 */
 	public static void createLabelModelFacet(GenLabel label, GenFeature genFeature, GenParserImplementation value) {
 		FeatureLabelModelFacet facet = GMFGenFactory.eINSTANCE.createFeatureLabelModelFacet();
@@ -240,17 +240,17 @@ public class EditpartGenHelper {
 
 	/**
 	 * Gets the first predefined parse.
-	 * 
+	 *
 	 * @param editorView
-	 *        the editor view
+	 *            the editor view
 	 * @return the first predefined parse
 	 */
 	public static PredefinedParser getFirstPredefinedParse(GenEditorGenerator editorView) {
 		Iterator<GenParserImplementation> iter = editorView.getLabelParsers().getImplementations().iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			GenParserImplementation base = iter.next();
-			if(base instanceof PredefinedParser) {
-				return (PredefinedParser)base;
+			if (base instanceof PredefinedParser) {
+				return (PredefinedParser) base;
 			}
 
 		}

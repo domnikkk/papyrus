@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,16 +28,16 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * When an Exception Input is set (for {@link ExceptionHandler}) then the Handler Body should be set automatically
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class ExceptionHandlerListener extends AbstractPapyrusModifcationTriggerListener {
 
 	private static NotificationFilter FEATURE_FILTER = null;
 
 	public static NotificationFilter getFEATURE_FILTER() {
-		if(FEATURE_FILTER == null) {
+		if (FEATURE_FILTER == null) {
 			FEATURE_FILTER = NotificationFilter.createFeatureFilter(UMLPackage.Literals.EXCEPTION_HANDLER__EXCEPTION_INPUT);
 		}
 		return FEATURE_FILTER;
@@ -45,8 +45,8 @@ public class ExceptionHandlerListener extends AbstractPapyrusModifcationTriggerL
 
 	protected ExceptionHandler getElement(Notification notif) {
 		Object elem = notif.getNotifier();
-		if(elem instanceof ExceptionHandler) {
-			return (ExceptionHandler)elem;
+		if (elem instanceof ExceptionHandler) {
+			return (ExceptionHandler) elem;
 		}
 		return null;
 	}
@@ -58,12 +58,12 @@ public class ExceptionHandlerListener extends AbstractPapyrusModifcationTriggerL
 
 	@Override
 	protected ICommand getModificationCommand(Notification notif) {
-		if(Notification.SET == notif.getEventType()) {
+		if (Notification.SET == notif.getEventType()) {
 			ExceptionHandler ex = getElement(notif);
 			Object exceptionInput = notif.getNewValue();
-			if(exceptionInput instanceof Pin) {
-				Element owner = ((Pin)exceptionInput).getOwner();
-				if(owner instanceof ExecutableNode) {
+			if (exceptionInput instanceof Pin) {
+				Element owner = ((Pin) exceptionInput).getOwner();
+				if (owner instanceof ExecutableNode) {
 					SetCommand cmd = new SetCommand(getEditingDomain(notif.getNotifier()), ex, UMLPackage.Literals.EXCEPTION_HANDLER__HANDLER_BODY, owner);
 					return new EMFtoGMFCommandWrapper(cmd);
 				}

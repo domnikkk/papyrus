@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,21 +38,21 @@ public class ReApplyProfiles extends AbstractViewActionDelegate {
 
 	/**
 	 * Run.
-	 * 
+	 *
 	 * @param action
-	 *        the action
+	 *            the action
 	 */
 	@Override
 	public void run(IAction action) {
 
-		if(selectedElement == null) { // Cancel was selected
+		if (selectedElement == null) { // Cancel was selected
 			return;
 		}
 
-		if(selectedElement instanceof Package) {
-			Package pack = (Package)selectedElement;
+		if (selectedElement instanceof Package) {
+			Package pack = (Package) selectedElement;
 			Iterator<Profile> profilesIt = pack.getAllAppliedProfiles().iterator();
-			while(profilesIt.hasNext()) {
+			while (profilesIt.hasNext()) {
 				Profile prof = profilesIt.next();
 				EPackage ep = prof.getDefinition();
 				pack.applyProfile(prof);

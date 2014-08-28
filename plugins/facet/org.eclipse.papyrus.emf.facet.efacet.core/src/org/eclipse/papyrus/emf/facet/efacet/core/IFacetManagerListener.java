@@ -11,9 +11,8 @@
 package org.eclipse.papyrus.emf.facet.efacet.core;
 
 /**
- * This interface allows clients to manage listeners added on the
- * {@link IFacetManager}
- * 
+ * This interface allows clients to manage listeners added on the {@link IFacetManager}
+ *
  * @since 0.4
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.

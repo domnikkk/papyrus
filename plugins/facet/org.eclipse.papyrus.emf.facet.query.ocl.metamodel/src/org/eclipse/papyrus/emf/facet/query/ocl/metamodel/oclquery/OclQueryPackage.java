@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2012 Mia-Software.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  * 	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
- * 
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery;
 
@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.ExtensiblePackage;
 
 /**
@@ -25,12 +24,13 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.E
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQueryFactory
  * @model kind="package"
  * @generated
@@ -40,6 +40,7 @@ public interface OclQueryPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "oclquery";
@@ -48,6 +49,7 @@ public interface OclQueryPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/emf/facet/query/ocl/0.3.incubation/oclquery";
@@ -56,6 +58,7 @@ public interface OclQueryPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "oclQuery";
@@ -64,6 +67,7 @@ public interface OclQueryPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	OclQueryPackage eINSTANCE = org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.impl.OclQueryPackageImpl.init();
@@ -72,6 +76,7 @@ public interface OclQueryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.impl.OclQueryImpl <em>Ocl Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.impl.OclQueryImpl
 	 * @see org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.impl.OclQueryPackageImpl#getOclQuery()
 	 * @generated
@@ -82,6 +87,7 @@ public interface OclQueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Have Side Effects</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -91,6 +97,7 @@ public interface OclQueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -100,6 +107,7 @@ public interface OclQueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -109,6 +117,7 @@ public interface OclQueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Ocl Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -118,6 +127,7 @@ public interface OclQueryPackage extends EPackage {
 	 * The number of structural features of the '<em>Ocl Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -128,6 +138,7 @@ public interface OclQueryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQuery <em>Ocl Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ocl Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQuery
 	 * @generated
@@ -138,6 +149,7 @@ public interface OclQueryPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQuery#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Context</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQuery#getContext()
 	 * @see #getOclQuery()
@@ -149,6 +161,7 @@ public interface OclQueryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQuery#getOclExpression <em>Ocl Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Ocl Expression</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQuery#getOclExpression()
 	 * @see #getOclQuery()
@@ -160,6 +173,7 @@ public interface OclQueryPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -169,12 +183,13 @@ public interface OclQueryPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -182,6 +197,7 @@ public interface OclQueryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.impl.OclQueryImpl <em>Ocl Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.impl.OclQueryImpl
 		 * @see org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.impl.OclQueryPackageImpl#getOclQuery()
 		 * @generated
@@ -192,6 +208,7 @@ public interface OclQueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Context</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference OCL_QUERY__CONTEXT = eINSTANCE.getOclQuery_Context();
@@ -200,10 +217,11 @@ public interface OclQueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ocl Expression</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute OCL_QUERY__OCL_EXPRESSION = eINSTANCE.getOclQuery_OclExpression();
 
 	}
 
-} //OclQueryPackage
+} // OclQueryPackage

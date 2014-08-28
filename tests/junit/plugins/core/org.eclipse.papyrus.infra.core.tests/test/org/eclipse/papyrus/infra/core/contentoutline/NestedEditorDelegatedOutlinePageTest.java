@@ -17,7 +17,7 @@ import static org.junit.Assert.fail;
 
 import java.lang.reflect.Field;
 
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.ui.part.PageSite;
 import org.junit.Test;
 

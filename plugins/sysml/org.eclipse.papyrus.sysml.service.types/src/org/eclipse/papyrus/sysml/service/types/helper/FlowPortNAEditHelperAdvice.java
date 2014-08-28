@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,12 +40,13 @@ public class FlowPortNAEditHelperAdvice extends AbstractStereotypedElementEditHe
 
 		return new ConfigureElementCommand(request) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
-				Port port = (Port)request.getElementToConfigure();
-				
+				Port port = (Port) request.getElementToConfigure();
+
 				// Ensure the type is a FlowSpecification
-				if((port != null) && (port.getType() != null)) {
+				if ((port != null) && (port.getType() != null)) {
 					if (UMLUtil.getStereotypeApplication(port.getType(), FlowSpecification.class) != null) {
 						return CommandResult.newOKCommandResult(port);
 					}
@@ -55,5 +56,5 @@ public class FlowPortNAEditHelperAdvice extends AbstractStereotypedElementEditHe
 			}
 		};
 	}
-	
+
 }

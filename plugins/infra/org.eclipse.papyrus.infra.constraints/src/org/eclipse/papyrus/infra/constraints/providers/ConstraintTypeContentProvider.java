@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,8 +19,8 @@ import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 //TODO : Move that to customization.constraints
 /**
  * A ContentProvider which returns Constraint types
- * 
- * 
+ *
+ *
  * @author Camille Letavernier
  */
 public class ConstraintTypeContentProvider extends AbstractFilteredContentProvider implements IStaticContentProvider {

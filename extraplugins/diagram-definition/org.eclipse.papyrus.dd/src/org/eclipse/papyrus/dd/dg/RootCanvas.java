@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -17,11 +17,11 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>Root Canvas</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
  * RootCanvas is a kind of canvas that represents the root of containment for all graphical elements that render together.
  * <!-- end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -31,7 +31,7 @@ import org.eclipse.emf.common.util.EList;
  * <li>{@link org.eclipse.papyrus.dd.dg.RootCanvas#getScripts <em>Script</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getRootCanvas()
  * @model
  * @generated
@@ -42,7 +42,7 @@ public interface RootCanvas extends Canvas {
 	 * Returns the value of the '<em><b>Background Color</b></em>' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> An
 	 * optional paint for the background of the canvas. <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Background Color</em>' attribute.
 	 * @see #isSetBackgroundColor()
 	 * @see #unsetBackgroundColor()
@@ -58,9 +58,9 @@ public interface RootCanvas extends Canvas {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.RootCanvas#getBackgroundColor <em>Background Color</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Background Color</em>' attribute.
+	 *            the new value of the '<em>Background Color</em>' attribute.
 	 * @see #isSetBackgroundColor()
 	 * @see #unsetBackgroundColor()
 	 * @see #getBackgroundColor()
@@ -72,7 +72,7 @@ public interface RootCanvas extends Canvas {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dg.RootCanvas#getBackgroundColor <em>Background Color</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #isSetBackgroundColor()
 	 * @see #getBackgroundColor()
 	 * @see #setBackgroundColor(Color)
@@ -84,7 +84,7 @@ public interface RootCanvas extends Canvas {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dg.RootCanvas#getBackgroundColor <em>Background Color</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether the value of the '<em>Background Color</em>' attribute is set.
 	 * @see #unsetBackgroundColor()
 	 * @see #getBackgroundColor()
@@ -98,7 +98,7 @@ public interface RootCanvas extends Canvas {
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
 	 * begin-model-doc --> An optional definitions element to hold objects
 	 * commonly referenced by the canvas. <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Definitions</em>' containment reference.
 	 * @see #setDefinitions(Definitions)
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getRootCanvas_Definitions()
@@ -111,9 +111,9 @@ public interface RootCanvas extends Canvas {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.RootCanvas#getDefinitions <em>Definitions</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Definitions</em>' containment reference.
+	 *            the new value of the '<em>Definitions</em>' containment reference.
 	 * @see #getDefinitions()
 	 * @generated
 	 */
@@ -124,7 +124,7 @@ public interface RootCanvas extends Canvas {
 	 * list. The list contents are of type {@link org.eclipse.papyrus.dd.dg.StyleSheet}. <!-- begin-user-doc -->
 	 * <!-- end-user-doc --> <!-- begin-model-doc --> A list of external style
 	 * sheets that are imported by the canvas. <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>External Style Sheet</em>' reference list.
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getRootCanvas_ExternalStyleSheet()
 	 * @model
@@ -140,7 +140,7 @@ public interface RootCanvas extends Canvas {
 	 * If the meaning of the '<em>Script</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Script</em>' attribute list.
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getRootCanvas_Script()
 	 * @model dataType="org.eclipse.papyrus.dd.dc.String" ordered="false"

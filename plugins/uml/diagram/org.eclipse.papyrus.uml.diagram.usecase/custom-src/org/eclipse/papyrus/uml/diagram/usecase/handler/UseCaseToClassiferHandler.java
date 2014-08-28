@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseInPackageEditPa
 
 /**
  * the goal of this class is to transform a change a Subject as a default named Element
- * 
+ *
  */
 public class UseCaseToClassiferHandler extends ChangeShapeHandler implements IHandler {
 

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ public interface IRollbackStatus extends IStatus {
 
 	/**
 	 * Queries the set of objects (if known) that caused the rollback, such as because they are are {@linkplain #READ_ONLY_OBJECT read-only}.
-	 * 
+	 *
 	 * @return the set (possibly empty, but not {@code null}) of objects that caused the rollback
 	 */
 	Collection<?> getCausalObjects();

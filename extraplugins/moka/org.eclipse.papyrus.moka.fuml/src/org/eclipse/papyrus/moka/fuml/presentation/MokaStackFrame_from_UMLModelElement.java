@@ -27,20 +27,20 @@ public abstract class MokaStackFrame_from_UMLModelElement extends MokaStackFrame
 		this.modelElement = modelElement;
 	}
 
-	///////////////////////////////
+	// /////////////////////////////
 	// Presentation
-	///////////////////////////////
+	// /////////////////////////////
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getLabel()
 	 */
 	abstract public String getLabel();
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getDetails()
 	 */
 	public String getDetails() {
@@ -50,20 +50,20 @@ public abstract class MokaStackFrame_from_UMLModelElement extends MokaStackFrame
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getImage()
 	 */
 	public Image getImage() {
 		return FUMLPresentationUtils.getImage(modelElement);
 	}
 
-	///////////////////////////////
+	// /////////////////////////////
 	// Debug
-	///////////////////////////////
+	// /////////////////////////////
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.debug.MokaStackFrame#hasVariables()
 	 */
 	@Override
@@ -73,25 +73,25 @@ public abstract class MokaStackFrame_from_UMLModelElement extends MokaStackFrame
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.debug.MokaStackFrame#getVariables()
 	 */
 	@Override
 	public IVariable[] getVariables() throws DebugException {
 		Object_ contextObject = this.getContextObject();
 		IVariable[] variables;
-		if(contextObject == null) {
-			variables = new IVariable[]{};
+		if (contextObject == null) {
+			variables = new IVariable[] {};
 		} else {
 			MokaVariable_from_ContextObject var = new MokaVariable_from_ContextObject(contextObject);
-			variables = new IVariable[]{ var };
+			variables = new IVariable[] { var };
 		}
 		return variables;
 	}
 
 	/**
 	 * Returns the context fUML Object_ for this stack frame
-	 * 
+	 *
 	 * @return the context fUML Object_ for this stack frame
 	 */
 	protected abstract Object_ getContextObject();

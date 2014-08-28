@@ -35,7 +35,7 @@ import org.eclipse.papyrus.domaincontextcodegen.GenHandlers;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.GenHandlersImpl#getCreateChildMenuLocationURI <em>Create Child Menu Location URI</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
@@ -44,7 +44,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	 * The default value of the '{@link #getHandlerPackage() <em>Handler Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHandlerPackage()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	 * The cached value of the '{@link #getHandlerPackage() <em>Handler Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHandlerPackage()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	 * The default value of the '{@link #getSuperClass() <em>Super Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuperClass()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	 * The cached value of the '{@link #getSuperClass() <em>Super Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuperClass()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	 * The default value of the '{@link #getSuperClassPackage() <em>Super Class Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuperClassPackage()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	 * The cached value of the '{@link #getSuperClassPackage() <em>Super Class Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuperClassPackage()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	 * The default value of the '{@link #getElementTypeEnumerator() <em>Element Type Enumerator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementTypeEnumerator()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	 * The cached value of the '{@link #getElementTypeEnumerator() <em>Element Type Enumerator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementTypeEnumerator()
 	 * @generated
 	 * @ordered
@@ -132,7 +132,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	 * The default value of the '{@link #getElementTypeEnumeratorPackage() <em>Element Type Enumerator Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementTypeEnumeratorPackage()
 	 * @generated
 	 * @ordered
@@ -143,7 +143,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	 * The cached value of the '{@link #getElementTypeEnumeratorPackage() <em>Element Type Enumerator Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementTypeEnumeratorPackage()
 	 * @generated
 	 * @ordered
@@ -154,7 +154,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	 * The cached value of the '{@link #getVisibleCreateChildHandlers() <em>Visible Create Child Handlers</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVisibleCreateChildHandlers()
 	 * @generated
 	 * @ordered
@@ -165,7 +165,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	 * The cached value of the '{@link #getParentDomainCreateChild() <em>Parent Domain Create Child</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getParentDomainCreateChild()
 	 * @generated
 	 * @ordered
@@ -176,7 +176,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	 * The default value of the '{@link #getCreateChildMenuLocationURI() <em>Create Child Menu Location URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCreateChildMenuLocationURI()
 	 * @generated
 	 * @ordered
@@ -187,7 +187,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	 * The cached value of the '{@link #getCreateChildMenuLocationURI() <em>Create Child Menu Location URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCreateChildMenuLocationURI()
 	 * @generated
 	 * @ordered
@@ -197,7 +197,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GenHandlersImpl() {
@@ -207,7 +207,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +218,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getHandlerPackage() {
@@ -228,20 +228,21 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHandlerPackage(String newHandlerPackage) {
 		String oldHandlerPackage = handlerPackage;
 		handlerPackage = newHandlerPackage;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.GEN_HANDLERS__HANDLER_PACKAGE, oldHandlerPackage, handlerPackage));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getSuperClass() {
@@ -251,20 +252,21 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSuperClass(String newSuperClass) {
 		String oldSuperClass = superClass;
 		superClass = newSuperClass;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.GEN_HANDLERS__SUPER_CLASS, oldSuperClass, superClass));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getSuperClassPackage() {
@@ -274,20 +276,21 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSuperClassPackage(String newSuperClassPackage) {
 		String oldSuperClassPackage = superClassPackage;
 		superClassPackage = newSuperClassPackage;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.GEN_HANDLERS__SUPER_CLASS_PACKAGE, oldSuperClassPackage, superClassPackage));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getElementTypeEnumerator() {
@@ -297,20 +300,21 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElementTypeEnumerator(String newElementTypeEnumerator) {
 		String oldElementTypeEnumerator = elementTypeEnumerator;
 		elementTypeEnumerator = newElementTypeEnumerator;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.GEN_HANDLERS__ELEMENT_TYPE_ENUMERATOR, oldElementTypeEnumerator, elementTypeEnumerator));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getElementTypeEnumeratorPackage() {
@@ -320,24 +324,25 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElementTypeEnumeratorPackage(String newElementTypeEnumeratorPackage) {
 		String oldElementTypeEnumeratorPackage = elementTypeEnumeratorPackage;
 		elementTypeEnumeratorPackage = newElementTypeEnumeratorPackage;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.GEN_HANDLERS__ELEMENT_TYPE_ENUMERATOR_PACKAGE, oldElementTypeEnumeratorPackage, elementTypeEnumeratorPackage));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ElementType> getVisibleCreateChildHandlers() {
-		if(visibleCreateChildHandlers == null) {
+		if (visibleCreateChildHandlers == null) {
 			visibleCreateChildHandlers = new EObjectResolvingEList<ElementType>(ElementType.class, this, DomaincontextcodegenPackage.GEN_HANDLERS__VISIBLE_CREATE_CHILD_HANDLERS);
 		}
 		return visibleCreateChildHandlers;
@@ -346,11 +351,11 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ElementType> getParentDomainCreateChild() {
-		if(parentDomainCreateChild == null) {
+		if (parentDomainCreateChild == null) {
 			parentDomainCreateChild = new EObjectResolvingEList<ElementType>(ElementType.class, this, DomaincontextcodegenPackage.GEN_HANDLERS__PARENT_DOMAIN_CREATE_CHILD);
 		}
 		return parentDomainCreateChild;
@@ -359,7 +364,7 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getCreateChildMenuLocationURI() {
@@ -369,25 +374,26 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCreateChildMenuLocationURI(String newCreateChildMenuLocationURI) {
 		String oldCreateChildMenuLocationURI = createChildMenuLocationURI;
 		createChildMenuLocationURI = newCreateChildMenuLocationURI;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.GEN_HANDLERS__CREATE_CHILD_MENU_LOCATION_URI, oldCreateChildMenuLocationURI, createChildMenuLocationURI));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.GEN_HANDLERS__HANDLER_PACKAGE:
 			return getHandlerPackage();
 		case DomaincontextcodegenPackage.GEN_HANDLERS__SUPER_CLASS:
@@ -411,38 +417,38 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.GEN_HANDLERS__HANDLER_PACKAGE:
-			setHandlerPackage((String)newValue);
+			setHandlerPackage((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.GEN_HANDLERS__SUPER_CLASS:
-			setSuperClass((String)newValue);
+			setSuperClass((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.GEN_HANDLERS__SUPER_CLASS_PACKAGE:
-			setSuperClassPackage((String)newValue);
+			setSuperClassPackage((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.GEN_HANDLERS__ELEMENT_TYPE_ENUMERATOR:
-			setElementTypeEnumerator((String)newValue);
+			setElementTypeEnumerator((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.GEN_HANDLERS__ELEMENT_TYPE_ENUMERATOR_PACKAGE:
-			setElementTypeEnumeratorPackage((String)newValue);
+			setElementTypeEnumeratorPackage((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.GEN_HANDLERS__VISIBLE_CREATE_CHILD_HANDLERS:
 			getVisibleCreateChildHandlers().clear();
-			getVisibleCreateChildHandlers().addAll((Collection<? extends ElementType>)newValue);
+			getVisibleCreateChildHandlers().addAll((Collection<? extends ElementType>) newValue);
 			return;
 		case DomaincontextcodegenPackage.GEN_HANDLERS__PARENT_DOMAIN_CREATE_CHILD:
 			getParentDomainCreateChild().clear();
-			getParentDomainCreateChild().addAll((Collection<? extends ElementType>)newValue);
+			getParentDomainCreateChild().addAll((Collection<? extends ElementType>) newValue);
 			return;
 		case DomaincontextcodegenPackage.GEN_HANDLERS__CREATE_CHILD_MENU_LOCATION_URI:
-			setCreateChildMenuLocationURI((String)newValue);
+			setCreateChildMenuLocationURI((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -451,12 +457,12 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.GEN_HANDLERS__HANDLER_PACKAGE:
 			setHandlerPackage(HANDLER_PACKAGE_EDEFAULT);
 			return;
@@ -488,12 +494,12 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.GEN_HANDLERS__HANDLER_PACKAGE:
 			return HANDLER_PACKAGE_EDEFAULT == null ? handlerPackage != null : !HANDLER_PACKAGE_EDEFAULT.equals(handlerPackage);
 		case DomaincontextcodegenPackage.GEN_HANDLERS__SUPER_CLASS:
@@ -517,13 +523,14 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (handlerPackage: ");
@@ -542,4 +549,4 @@ public class GenHandlersImpl extends EObjectImpl implements GenHandlers {
 		return result.toString();
 	}
 
-} //GenHandlersImpl
+} // GenHandlersImpl

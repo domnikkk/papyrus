@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -15,7 +15,7 @@ import org.eclipse.core.databinding.conversion.IConverter;
 
 /**
  * Safely SWT context values, it used to avoid a NullPointerException when set text values to SWT Widgets.
- * 
+ *
  * @author jliu
  */
 public class ObjectToString implements IConverter {
@@ -36,11 +36,11 @@ public class ObjectToString implements IConverter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.conversion.IConverter#convert(java.lang.Object)
 	 */
 	public Object convert(Object fromObject) {
-		if(fromObject == null) {
+		if (fromObject == null) {
 			return "";
 		}
 		return fromObject.toString();
@@ -48,11 +48,11 @@ public class ObjectToString implements IConverter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.conversion.IConverter#getFromType()
 	 */
 	public Object getFromType() {
-		if(fromType == null) {
+		if (fromType == null) {
 			return Object.class;
 		}
 		return fromType;
@@ -60,7 +60,7 @@ public class ObjectToString implements IConverter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.conversion.IConverter#getToType()
 	 */
 	public Object getToType() {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,11 +38,11 @@ public class Suspend_Request extends RequestMessage {
 	 * Constructs a request message from the given debug element and suspend details.
 	 * debugElement represents the element from which the execution engine shall suspend execution
 	 * resumeDetail provides information about the reason for suspending. This is typically a Client Request.
-	 * 
+	 *
 	 * @param debugElement
-	 *        The element from which the execution engine shall suspend execution
+	 *            The element from which the execution engine shall suspend execution
 	 * @param resumeDetail
-	 *        The reason for suspending
+	 *            The reason for suspending
 	 */
 	public Suspend_Request(IDebugElement debugElement, int suspendDetail) {
 		this.debugElement = debugElement;
@@ -51,7 +51,7 @@ public class Suspend_Request extends RequestMessage {
 
 	/**
 	 * Returns the element from which the execution engine shall suspend execution
-	 * 
+	 *
 	 * @return The element from which the execution engine shall suspend execution
 	 */
 	public IDebugElement getDebugElement() {
@@ -60,7 +60,7 @@ public class Suspend_Request extends RequestMessage {
 
 	/**
 	 * Returns the reason for suspending. This is typically a Client Request.
-	 * 
+	 *
 	 * @return The reason for suspending
 	 */
 	public int getSuspendDetail() {
@@ -69,9 +69,10 @@ public class Suspend_Request extends RequestMessage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
+	@Override
 	public String marshall() {
 		return Marshaller.getInstance().suspend_request_marshal(this);
 	}

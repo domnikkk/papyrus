@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - refactor for non-workspace abstraction of problem markers (CDO)
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.editpolicies;
 
@@ -38,7 +38,7 @@ import org.w3c.dom.Element;
 
 /**
  * An EditPolicy to handle marker events on semantic element associated with EditParts
- * 
+ *
  */
 public class MarkerEventListenerEditPolicy extends AbstractEditPolicy implements EditPolicy, EditPartListener {
 
@@ -50,13 +50,13 @@ public class MarkerEventListenerEditPolicy extends AbstractEditPolicy implements
 	protected CssMarkerEventManagerService markerEventManagerService;
 
 	public MarkerEventListenerEditPolicy() {
-		//Nothing
+		// Nothing
 	}
 
 	/**
 	 * Register this edit policy with the marker event manager service.
 	 * When an edit policy has to be notified, this must be done through this marker event manager service.
-	 * 
+	 *
 	 * @see org.eclipse.gef.EditPolicy#activate()
 	 */
 	@Override
@@ -65,7 +65,7 @@ public class MarkerEventListenerEditPolicy extends AbstractEditPolicy implements
 			ServicesRegistry servicesRegistry = ServiceUtilsForEditPart.getInstance().getServiceRegistry(getHost());
 
 			markerEventManagerService = servicesRegistry.getService(CssMarkerEventManagerService.class);
-			if(markerEventManagerService != null) {
+			if (markerEventManagerService != null) {
 				markerEventManagerService.registerEditPolicy(this);
 			}
 
@@ -78,12 +78,12 @@ public class MarkerEventListenerEditPolicy extends AbstractEditPolicy implements
 
 	/**
 	 * Unregister this edit policy from the marker event manager service
-	 * 
+	 *
 	 * @see org.eclipse.gef.EditPolicy#deactivate()
 	 */
 	@Override
 	public void deactivate() {
-		if(markerEventManagerService != null) {
+		if (markerEventManagerService != null) {
 			markerEventManagerService.unregisterEditPolicy(this);
 		}
 		getHost().removeEditPartListener(this);
@@ -91,117 +91,122 @@ public class MarkerEventListenerEditPolicy extends AbstractEditPolicy implements
 	}
 
 	protected View getSemanticView() {
-		return (View)getHost().getModel();
+		return (View) getHost().getModel();
 	}
 
 	/**
 	 * Updates the css state of the element associated with this edit policy
-	 * 
+	 *
 	 * @param state
-	 *        The css states to be added or removed from the current state
+	 *            The css states to be added or removed from the current state
 	 * @param addedOrRemoved
-	 *        Indicates wheter states have to be added or removed (Possible values are IMarkerEventListener.MARKER_ADDED and
-	 *        IMarkerEventListener.MARKER_REMOVED)
+	 *            Indicates wheter states have to be added or removed (Possible values are IMarkerEventListener.MARKER_ADDED and
+	 *            IMarkerEventListener.MARKER_REMOVED)
 	 */
 	public void updateState(Set<String> state, int addedOrRemoved) {
 		MarkerEventListenerEditPolicy primaryEditPolicy = getPrimaryEditPolicy();
 
-		if(primaryEditPolicy == this) {
+		if (primaryEditPolicy == this) {
 			View view = getSemanticView();
-			if(view.getDiagram() instanceof CSSDiagram) {
-				Element domElement = ((CSSDiagram)view.getDiagram()).getEngine().getElement(view);
-				if(domElement instanceof StatefulView) {
-					if(addedOrRemoved == IMarkerEventListener.MARKER_ADDED) {
-						((StatefulView)domElement).addStates(state);
+			if (view.getDiagram() instanceof CSSDiagram) {
+				Element domElement = ((CSSDiagram) view.getDiagram()).getEngine().getElement(view);
+				if (domElement instanceof StatefulView) {
+					if (addedOrRemoved == IMarkerEventListener.MARKER_ADDED) {
+						((StatefulView) domElement).addStates(state);
 					} else {
-						((StatefulView)domElement).removeStates(state);
+						((StatefulView) domElement).removeStates(state);
 					}
 				}
 			}
-		} else if(primaryEditPolicy != null) {
+		} else if (primaryEditPolicy != null) {
 			primaryEditPolicy.updateState(state, addedOrRemoved);
 		}
 	}
 
 	/**
 	 * Returns the primary edit policy
-	 * 
+	 *
 	 * @return THe primary edit policy
 	 */
 	private MarkerEventListenerEditPolicy getPrimaryEditPolicy() {
 		EditPart current = getHost();
 		EditPart parent = current.getParent();
 
-		while(parent != null && semanticCompareEditParts(parent, getHost())) {
+		while (parent != null && semanticCompareEditParts(parent, getHost())) {
 			current = parent;
 			parent = parent.getParent();
 		}
 
-		return (MarkerEventListenerEditPolicy)current.getEditPolicy(ROLE);
+		return (MarkerEventListenerEditPolicy) current.getEditPolicy(ROLE);
 	}
 
 	/**
 	 * Compares semantically the two given edit parts
-	 * 
+	 *
 	 * @param one
-	 *        The first edit part to be compared
+	 *            The first edit part to be compared
 	 * @param other
-	 *        The second edit part to be compared
+	 *            The second edit part to be compared
 	 * @return True if the two edit parts refer to the same model element, false otherwise
 	 */
 	private boolean semanticCompareEditParts(EditPart one, EditPart other) {
-		if(one.getModel() instanceof View && other.getModel() instanceof View) {
-			View view1 = (View)one.getModel();
-			View view2 = (View)other.getModel();
+		if (one.getModel() instanceof View && other.getModel() instanceof View) {
+			View view1 = (View) one.getModel();
+			View view2 = (View) other.getModel();
 			return view1 != null && view2 != null && view1.getElement() == view2.getElement();
 		}
 		return false;
 	}
 
-	//Helper method: casts the host edit part to the right type.
+	// Helper method: casts the host edit part to the right type.
 	@Override
 	public GraphicalEditPart getHost() {
-		return (GraphicalEditPart)super.getHost();
+		return (GraphicalEditPart) super.getHost();
 	}
 
 	/*
 	 * Events support
 	 */
+	@Override
 	public void selectedStateChanged(EditPart editpart) {
-		//Ignore
+		// Ignore
 	}
 
 	/*
 	 * Ignored events
 	 */
+	@Override
 	public void childAdded(EditPart child, int index) {
-		//Ignore
+		// Ignore
 	}
 
+	@Override
 	public void partActivated(EditPart editpart) {
-		//Ignore
+		// Ignore
 	}
 
+	@Override
 	public void partDeactivated(EditPart editpart) {
-		//Ignore
+		// Ignore
 	}
 
+	@Override
 	public void removingChild(EditPart child, int index) {
-		//Ignore
+		// Ignore
 	}
 
 	/**
 	 * Notifies this edit policy about a marker change
-	 * 
+	 *
 	 * @param marker
-	 *        The actual marker
+	 *            The actual marker
 	 * @param addedOrRemoved
-	 *        Indicates whether states have to be added or removed (Possible values are IMarkerEventListener.MARKER_ADDED and
-	 *        IMarkerEventListener.MARKER_REMOVED)
+	 *            Indicates whether states have to be added or removed (Possible values are IMarkerEventListener.MARKER_ADDED and
+	 *            IMarkerEventListener.MARKER_REMOVED)
 	 */
 	public void notifyMarkerChange(IPapyrusMarker marker, int addedOrRemoved) {
 		String cssName = this.getPseudoSelector(marker);
-		if(cssName != null && !"".equals(cssName)) {
+		if (cssName != null && !"".equals(cssName)) {
 			Set<String> state = new HashSet<String>();
 			state.add(cssName);
 			updateState(state, addedOrRemoved);
@@ -210,22 +215,22 @@ public class MarkerEventListenerEditPolicy extends AbstractEditPolicy implements
 
 	/**
 	 * Notifies this edit policy about multiple marker changes
-	 * 
+	 *
 	 * @param markers
-	 *        The actual markers
+	 *            The actual markers
 	 * @param addedOrRemoved
-	 *        Indicates whether states have to be added or removed (Possible values are IMarkerEventListener.MARKER_ADDED and
-	 *        IMarkerEventListener.MARKER_REMOVED)
+	 *            Indicates whether states have to be added or removed (Possible values are IMarkerEventListener.MARKER_ADDED and
+	 *            IMarkerEventListener.MARKER_REMOVED)
 	 */
 	public void notifyMarkerChange(IPapyrusMarker[] markers, int addedOrRemoved) {
-		if(markers.length == 0) {
+		if (markers.length == 0) {
 			return;
 		}
 		String cssName = "";
 		Set<String> state = new HashSet<String>();
-		for(int i = 0; i < markers.length; i++) {
+		for (int i = 0; i < markers.length; i++) {
 			cssName = this.getPseudoSelector(markers[i]);
-			if(cssName != null && !cssName.equals("")) {
+			if (cssName != null && !cssName.equals("")) {
 				state.add(cssName);
 			}
 		}
@@ -248,20 +253,20 @@ public class MarkerEventListenerEditPolicy extends AbstractEditPolicy implements
 
 	/**
 	 * Convenience method returning the pseudo selector associated with a marker, using the MarkerToPseudoSelectorMappingService
-	 * 
+	 *
 	 * @param marker
-	 *        The marker for which
+	 *            The marker for which
 	 * @return the pseudo selector associated with the given marker
 	 */
 	protected String getPseudoSelector(IPapyrusMarker marker) {
 		try {
-			if(!marker.exists()) {
+			if (!marker.exists()) {
 				// Tries to retrieve it from the local map
 				String pseudoSelector = this.markerStringToMarkerPseudoSelector.get(marker.toString());
 				return pseudoSelector == null ? "" : pseudoSelector;
 			}
 
-			if(this.markerToPseudoSelectorMappingService == null) {
+			if (this.markerToPseudoSelectorMappingService == null) {
 				return "";
 			}
 

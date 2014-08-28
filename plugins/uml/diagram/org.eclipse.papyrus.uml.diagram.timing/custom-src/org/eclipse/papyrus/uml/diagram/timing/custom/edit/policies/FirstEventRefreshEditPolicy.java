@@ -41,7 +41,7 @@ public class FirstEventRefreshEditPolicy extends GraphicalEditPolicy implements 
 	@Override
 	public void activate() {
 		this.umlElement = getUMLElement();
-		if(this.umlElement == null) {
+		if (this.umlElement == null) {
 			return;
 		}
 		// adds a listener on the UML element
@@ -53,7 +53,7 @@ public class FirstEventRefreshEditPolicy extends GraphicalEditPolicy implements 
 	@Override
 	public void deactivate() {
 		// retrieve the UML element managed by the edit part
-		if(this.umlElement == null) {
+		if (this.umlElement == null) {
 			return;
 		}
 		// remove the listener from the UML element
@@ -62,12 +62,12 @@ public class FirstEventRefreshEditPolicy extends GraphicalEditPolicy implements 
 
 	/**
 	 * Gets the diagram event broker from the editing domain.
-	 * 
+	 *
 	 * @return the diagram event broker
 	 */
 	protected DiagramEventBroker getDiagramEventBroker() {
-		final TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
-		if(editingDomain != null) {
+		final TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		if (editingDomain != null) {
 			return DiagramEventBroker.getInstance(editingDomain);
 		}
 		return null;
@@ -75,30 +75,32 @@ public class FirstEventRefreshEditPolicy extends GraphicalEditPolicy implements 
 
 	/**
 	 * Returns the uml element controlled by the host edit part
-	 * 
+	 *
 	 * @return the uml element controlled by the host edit part
 	 */
 	protected Element getUMLElement() {
 		final View view = getView();
-		if(view != null) {
-			return (Element)view.getElement();
+		if (view != null) {
+			return (Element) view.getElement();
 		}
 		return null;
 	}
 
 	/**
 	 * Returns the view controlled by the host edit part
-	 * 
+	 *
 	 * @return the view controlled by the host edit part
 	 */
 	protected View getView() {
-		return (View)getHost().getModel();
+		return (View) getHost().getModel();
 	}
 
+	@Override
 	public void notifyChanged(final Notification notification) {
-		if(notification.getEventType() == Notification.SET) {
+		if (notification.getEventType() == Notification.SET) {
 			final Object feature = notification.getFeature();
-			if(feature == UMLPackage.eINSTANCE.getTimeObservation_FirstEvent() || feature == UMLPackage.eINSTANCE.getTimeObservation_Event() || feature == UMLPackage.eINSTANCE.getTimeConstraint_FirstEvent() || feature == UMLPackage.eINSTANCE.getConstraint_ConstrainedElement()) {
+			if (feature == UMLPackage.eINSTANCE.getTimeObservation_FirstEvent() || feature == UMLPackage.eINSTANCE.getTimeObservation_Event() || feature == UMLPackage.eINSTANCE.getTimeConstraint_FirstEvent()
+					|| feature == UMLPackage.eINSTANCE.getConstraint_ConstrainedElement()) {
 				refreshView();
 			}
 		}

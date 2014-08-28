@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,8 +48,8 @@ import org.eclipse.ui.PlatformUI;
 /**
  * Abstract validation command. While being abstract (and refined by concrete validation commands)
  * it contains all validation related code.
- * 
- * 
+ *
+ *
  * @author Ansgar Radermacher (CEA LIST)
  */
 abstract public class AbstractValidateCommand extends AbstractTransactionalCommand {
@@ -64,42 +64,43 @@ abstract public class AbstractValidateCommand extends AbstractTransactionalComma
 	 * Current diagnostic within a validation run
 	 */
 	protected Diagnostic diagnostic;
-	
+
 	protected IPapyrusDiagnostician diagnostician;
 
 	protected boolean showUIfeedback;
-	
+
 	/**
 	 * Creates a new ValidationCommand
 	 *
 	 * @param label
-	 *        the command label
+	 *            the command label
 	 * @param domain
-	 *        the editing domain
-	 * @param selectedElement the selected element
+	 *            the editing domain
+	 * @param selectedElement
+	 *            the selected element
 	 */
 	public AbstractValidateCommand(String label, TransactionalEditingDomain domain, EObject selectedElement) {
 		this(label, domain, selectedElement, new EcoreDiagnostician());
 	}
-	
+
 	/**
 	 * Creates a new ImportLibraryFromRepositoryCommand
-	 * 
+	 *
 	 * @param label
-	 *        the command label
+	 *            the command label
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param selectedElement
-	 *        the selected element
+	 *            the selected element
 	 * @param diagnostician
-	 *        a diagnostician adapted to a domain see {@link IPapyrusDiagnostician}
+	 *            a diagnostician adapted to a domain see {@link IPapyrusDiagnostician}
 	 */
 	public AbstractValidateCommand(String label, TransactionalEditingDomain domain, EObject selectedElement, IPapyrusDiagnostician diagnostician) {
 		super(domain, label, Collections.EMPTY_LIST);
 		this.domain = domain;
 		this.selectedElement = selectedElement;
 		this.diagnostician = diagnostician;
-		this.showUIfeedback = true;	// default is true;
+		this.showUIfeedback = true; // default is true;
 	}
 
 	/**
@@ -109,7 +110,14 @@ abstract public class AbstractValidateCommand extends AbstractTransactionalComma
 	public void disableUIFeedback() {
 		this.showUIfeedback = false;
 	}
-	
+
+	/**
+	 * @return
+	 */
+	public Diagnostic getDiagnostic() {
+		return diagnostic;
+	}
+
 	/**
 	 * @return The resource on which markers should be applied.
 	 */
@@ -129,7 +137,7 @@ abstract public class AbstractValidateCommand extends AbstractTransactionalComma
 			{
 				try {
 					handleDiagnostic(progressMonitor, diagnostic, validateElement, shell);
-					
+
 				}
 				finally {
 					progressMonitor.done();
@@ -138,12 +146,12 @@ abstract public class AbstractValidateCommand extends AbstractTransactionalComma
 		};
 
 		createMarkersWithProgress = new ValidationTool(validateElement)
-			.wrap(createMarkersWithProgress);
+				.wrap(createMarkersWithProgress);
 
 		try {
 			// runs the operation, and shows progress.
 			try {
-				if(showUIfeedback) {
+				if (showUIfeedback) {
 					new ProgressMonitorDialog(shell).run(true, true, runValidationWithProgress);
 				} else {
 					runValidationWithProgress.run(new NullProgressMonitor());
@@ -152,10 +160,10 @@ abstract public class AbstractValidateCommand extends AbstractTransactionalComma
 				diagnostic = runValidationWithProgress.getDiagnostics();
 				runValidationWithProgress.dispose();
 			}
-			
-			if(diagnostic != null) {
+
+			if (diagnostic != null) {
 				int markersToCreate = diagnostic.getChildren().size();
-				if((markersToCreate > 0) && PreferenceUtils.getAutoShowValidation() && showUIfeedback) {
+				if ((markersToCreate > 0) && PreferenceUtils.getAutoShowValidation() && showUIfeedback) {
 					// activate model view, if activated in configuration
 					// IViewRegistry viewRegistry = PlatformUI.getWorkbench().getViewRegistry();
 					// IViewDescriptor desc = viewRegistry.find(modelValidationViewID);
@@ -182,22 +190,22 @@ abstract public class AbstractValidateCommand extends AbstractTransactionalComma
 	protected Diagnostic validate(IProgressMonitor progressMonitor, EObject validateElement)
 	{
 		int validationSteps = 0;
-		for(Iterator<?> i = validateElement.eAllContents(); i.hasNext(); i.next()) {
+		for (Iterator<?> i = validateElement.eAllContents(); i.hasNext(); i.next()) {
 			++validationSteps;
 		}
 
 		progressMonitor.beginTask("", validationSteps); //$NON-NLS-1$
 		AdapterFactory adapterFactory =
-			domain instanceof AdapterFactoryEditingDomain ? ((AdapterFactoryEditingDomain)domain).getAdapterFactory() : null;
+				domain instanceof AdapterFactoryEditingDomain ? ((AdapterFactoryEditingDomain) domain).getAdapterFactory() : null;
 		diagnostician.initialize(adapterFactory, progressMonitor);
 
 		BasicDiagnostic diagnostic = diagnostician.createDefaultDiagnostic(validateElement);
 		Map<Object, Object> context = diagnostician.createDefaultContext();
 
-		progressMonitor.setTaskName(EMFEditUIPlugin.INSTANCE.getString("_UI_Validating_message", new Object[]{ diagnostician.getObjectLabel(validateElement) })); //$NON-NLS-1$
+		progressMonitor.setTaskName(EMFEditUIPlugin.INSTANCE.getString("_UI_Validating_message", new Object[] { diagnostician.getObjectLabel(validateElement) })); //$NON-NLS-1$
 		diagnostician.validate(validateElement, diagnostic, context);
 
-		if(progressMonitor.isCanceled()) {
+		if (progressMonitor.isCanceled()) {
 			return null;
 		}
 		return diagnostic;
@@ -212,10 +220,10 @@ abstract public class AbstractValidateCommand extends AbstractTransactionalComma
 		// in the model explorer
 		Resource resource = getValidationResource();
 		// final Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-		if(resource != null) {
-			if(validateElement != null) {
+		if (resource != null) {
+			if (validateElement != null) {
 				SubMonitor sub = SubMonitor.convert(monitor, 2);
-				
+
 				ValidationTool vt = new ValidationTool(validateElement, resource);
 				int markersToCreate = diagnostic.getChildren().size();
 
@@ -228,16 +236,18 @@ abstract public class AbstractValidateCommand extends AbstractTransactionalComma
 				flushDisplayEvents(shell.getDisplay());
 
 				vt.createMarkers(diagnostic, sub.newChild(1));
-				
+
 				sub.done();
 			}
 		}
 	}
 
 	protected void flushDisplayEvents(Display display) {
-		while (display.readAndDispatch());
+		while (display.readAndDispatch()) {
+			;
+		}
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

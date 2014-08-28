@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -18,7 +18,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -30,7 +29,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.util.NattableproblemAdapterFactory;
 
 /**
@@ -40,7 +38,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.util.Na
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NattableproblemItemProviderAdapterFactory extends NattableproblemAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -49,7 +47,7 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -58,7 +56,7 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -67,7 +65,7 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -76,7 +74,7 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NattableproblemItemProviderAdapterFactory() {
@@ -91,7 +89,7 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.Problem} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ProblemItemProvider problemItemProvider;
@@ -100,12 +98,12 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.Problem}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createProblemAdapter() {
-		if(problemItemProvider == null) {
+		if (problemItemProvider == null) {
 			problemItemProvider = new ProblemItemProvider(this);
 		}
 
@@ -113,11 +111,10 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StringResolutionProblemItemProvider stringResolutionProblemItemProvider;
@@ -126,12 +123,12 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createStringResolutionProblemAdapter() {
-		if(stringResolutionProblemItemProvider == null) {
+		if (stringResolutionProblemItemProvider == null) {
 			stringResolutionProblemItemProvider = new StringResolutionProblemItemProvider(this);
 		}
 
@@ -142,9 +139,10 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -153,9 +151,10 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -163,7 +162,7 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +174,7 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,14 +185,14 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if(isFactoryForType(type)) {
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if(!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -205,9 +204,10 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -216,9 +216,10 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -227,13 +228,14 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if(parentAdapterFactory != null) {
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -242,14 +244,17 @@ public class NattableproblemItemProviderAdapterFactory extends NattableproblemAd
 	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if(problemItemProvider != null)
+		if (problemItemProvider != null) {
 			problemItemProvider.dispose();
-		if(stringResolutionProblemItemProvider != null)
+		}
+		if (stringResolutionProblemItemProvider != null) {
 			stringResolutionProblemItemProvider.dispose();
+		}
 	}
 
 }

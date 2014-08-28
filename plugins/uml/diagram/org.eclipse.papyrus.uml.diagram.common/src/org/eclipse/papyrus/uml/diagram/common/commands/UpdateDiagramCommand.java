@@ -19,10 +19,11 @@ import org.eclipse.papyrus.uml.diagram.common.util.DiagramEditPartsUtil;
 // TODO: Auto-generated Javadoc
 /**
  * The Class UMLUpdateDiagramCommand.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  * @deprecated there is another functionality for drag and drop
  */
+@Deprecated
 public class UpdateDiagramCommand extends Command {
 
 	/** The edit part. */
@@ -30,9 +31,9 @@ public class UpdateDiagramCommand extends Command {
 
 	/**
 	 * Instantiates a new uML update diagram command.
-	 * 
+	 *
 	 * @param editPart
-	 *        the edit part
+	 *            the edit part
 	 */
 	public UpdateDiagramCommand(IGraphicalEditPart editPart) {
 		this.editPart = editPart;
@@ -40,7 +41,7 @@ public class UpdateDiagramCommand extends Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#canExecute()
 	 */
 	@Override
@@ -50,7 +51,7 @@ public class UpdateDiagramCommand extends Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#canUndo()
 	 */
 	@Override
@@ -60,7 +61,7 @@ public class UpdateDiagramCommand extends Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#execute()
 	 */
 	@Override

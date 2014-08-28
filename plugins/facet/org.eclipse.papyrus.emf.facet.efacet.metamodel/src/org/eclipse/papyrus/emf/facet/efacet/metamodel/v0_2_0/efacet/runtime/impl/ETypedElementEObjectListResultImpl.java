@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011, 2012 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 366055 - NavigationQuery
  *       Gregoire Dupe (Mia-Software) - Bug 369673 - [Facet] IsOneOfQuery
@@ -35,7 +35,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.Runt
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.impl.ETypedElementEObjectListResultImpl#getResultList <em>Result List</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.impl.ETypedElementEObjectListResultImpl#getResultList <em>Result List</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +46,7 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	 * The cached value of the '{@link #getResultList() <em>Result List</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getResultList()
 	 * @generated
 	 * @ordered
@@ -55,6 +56,7 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ETypedElementEObjectListResultImpl() {
@@ -64,6 +66,7 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,6 +77,7 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<T> getResultList() {
@@ -86,13 +90,14 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RuntimePackage.ETYPED_ELEMENT_EOBJECT_LIST_RESULT__RESULT_LIST:
-				return getResultList();
+		case RuntimePackage.ETYPED_ELEMENT_EOBJECT_LIST_RESULT__RESULT_LIST:
+			return getResultList();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -100,16 +105,17 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RuntimePackage.ETYPED_ELEMENT_EOBJECT_LIST_RESULT__RESULT_LIST:
-				getResultList().clear();
-				getResultList().addAll((Collection<? extends T>)newValue);
-				return;
+		case RuntimePackage.ETYPED_ELEMENT_EOBJECT_LIST_RESULT__RESULT_LIST:
+			getResultList().clear();
+			getResultList().addAll((Collection<? extends T>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -117,14 +123,15 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.ETYPED_ELEMENT_EOBJECT_LIST_RESULT__RESULT_LIST:
-				getResultList().clear();
-				return;
+		case RuntimePackage.ETYPED_ELEMENT_EOBJECT_LIST_RESULT__RESULT_LIST:
+			getResultList().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -132,15 +139,16 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.ETYPED_ELEMENT_EOBJECT_LIST_RESULT__RESULT_LIST:
-				return resultList != null && !resultList.isEmpty();
+		case RuntimePackage.ETYPED_ELEMENT_EOBJECT_LIST_RESULT__RESULT_LIST:
+			return resultList != null && !resultList.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ETypedElementEObjectListResultImpl
+} // ETypedElementEObjectListResultImpl

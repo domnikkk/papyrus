@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.w3c.dom.css.CSSValue;
 
 /**
  * An extended, lazy version of a CSSEngine
- * 
+ *
  * @author Camille Letavernier
  */
 @SuppressWarnings("restriction")
@@ -27,14 +27,14 @@ public interface ExtendedCSSEngine extends LazyCSSEngine, CSSEngine {
 
 	/**
 	 * Adds a listener to be notified each time a StyleSheet has changed
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void addStyleSheetChangeListener(StyleSheetChangeListener listener);
 
 	/**
 	 * Removes a StyleSheetChangeListener
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeStyleSheetChangedListener(StyleSheetChangeListener listener);
@@ -47,35 +47,37 @@ public interface ExtendedCSSEngine extends LazyCSSEngine, CSSEngine {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * This method never throws an Exception
 	 */
+	@Override
 	public Object convert(CSSValue cssValue, Object toType, Object context);
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Should be called when the StyleSheets have changed
 	 */
+	@Override
 	public void reset();
 
 	/**
 	 * Resets the CSS cache
-	 * 
+	 *
 	 * Should be called when the semantic model has changed.
 	 */
 	public void resetCache();
 
 	/**
 	 * Notifies a change from the given Element
-	 * 
+	 *
 	 * @param element
 	 */
 	public void notifyChange(Element element);
 
 	/**
 	 * Notifies the Engine that the given widget has been disposed
-	 * 
+	 *
 	 * @param nativeWidget
 	 */
 	public void handleDispose(Object nativeWidget);
@@ -83,5 +85,6 @@ public interface ExtendedCSSEngine extends LazyCSSEngine, CSSEngine {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Element getElement(Object node);
 }

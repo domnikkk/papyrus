@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -34,13 +34,13 @@ public class OperationsAreImplemented extends AbstractModelConstraint
 	public IStatus validate(IValidationContext ctx) {
 
 		Operation operation = (Operation) ctx.getTarget();
-		if(operation.getNamespace() instanceof Interface) {
+		if (operation.getNamespace() instanceof Interface) {
 			// operations within an interface are always abstract
 			return ctx.createSuccessStatus();
 		}
-		if((!operation.isAbstract() && operation.getMethods().size() == 0) && StereotypeUtil.isApplicable(operation, DerivedElement.class)) {
-			return ctx.createFailureStatus ("The operation '" + operation.getName () +
-				" has no implementation (and is not marked as abstract)");
+		if ((!operation.isAbstract() && operation.getMethods().size() == 0) && StereotypeUtil.isApplicable(operation, DerivedElement.class)) {
+			return ctx.createFailureStatus("The operation '" + operation.getName() +
+					" has no implementation (and is not marked as abstract)");
 		}
 		return ctx.createSuccessStatus();
 	}

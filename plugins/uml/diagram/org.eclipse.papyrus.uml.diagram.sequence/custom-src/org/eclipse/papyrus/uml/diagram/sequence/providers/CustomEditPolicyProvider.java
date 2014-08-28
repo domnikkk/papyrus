@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,67 +44,69 @@ import org.eclipse.uml2.uml.Observation;
 
 /**
  * this is an editpolicy provider in charge to install a policy to navigate between diagrams and elements
- * 
+ *
  */
 public class CustomEditPolicyProvider implements IEditPolicyProvider {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void addProviderChangeListener(IProviderChangeListener listener) {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void createEditPolicies(final EditPart editPart) {
 		EditPolicy editPolicy = editPart.getEditPolicy(EditPolicyRoles.CONNECTION_HANDLES_ROLE);
-		if(editPolicy != null) {
+		if (editPolicy != null) {
 			editPart.removeEditPolicy(EditPolicyRoles.CONNECTION_HANDLES_ROLE);
-			//fixed bug about display Connection Handles.
+			// fixed bug about display Connection Handles.
 			editPart.installEditPolicy(EditPolicyRoles.CONNECTION_HANDLES_ROLE, new SequenceConnectionHandleEditPolicy());
 		}
 		installHighlightPolicy(editPart);
 		SequenceUtil.installObservationLinkPolicy(editPart);
-		//install annotated link edit policy.
-		if(editPart instanceof IGraphicalEditPart) {
+		// install annotated link edit policy.
+		if (editPart instanceof IGraphicalEditPart) {
 			Object model = editPart.getModel();
-			if(model instanceof View) {
-				View view = (View)model;
-				EObject element = ViewUtil.resolveSemanticElement((View)model);
-				if(element instanceof Element && editPart instanceof INodeEditPart) {
+			if (model instanceof View) {
+				View view = (View) model;
+				EObject element = ViewUtil.resolveSemanticElement((View) model);
+				if (element instanceof Element && editPart instanceof INodeEditPart) {
 					installEditPolicy(editPart, new AnnotatedLinkEndEditPolicy(), AnnotatedLinkEndEditPolicy.ANNOTATED_LINK_END_ROLE);
 				}
-				if(editPart instanceof INodeEditPart && (element instanceof Constraint || element instanceof Observation || element instanceof Comment)) {
+				if (editPart instanceof INodeEditPart && (element instanceof Constraint || element instanceof Observation || element instanceof Comment)) {
 					installEditPolicy(editPart, new AnnotatedLinkStartEditPolicy(), AnnotatedLinkStartEditPolicy.ANNOTATED_LINK_START_ROLE);
 					editPart.removeEditPolicy(EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 					editPart.installEditPolicy(EditPolicyRoles.CONNECTION_HANDLES_ROLE, new AnnotatedConnectionHandleEditPolicy());
 				}
-				//Ordering fragments after moving and resizing,  See https://bugs.eclipse.org/bugs/show_bug.cgi?id=403233
-				if(view.isSetElement() && (view.getElement() instanceof InteractionFragment)) {
+				// Ordering fragments after moving and resizing, See https://bugs.eclipse.org/bugs/show_bug.cgi?id=403233
+				if (view.isSetElement() && (view.getElement() instanceof InteractionFragment)) {
 					editPart.installEditPolicy(InteractionFragmentsOrderingEditPolicy.ORDERING_ROLE, new InteractionFragmentsOrderingEditPolicy());
 				}
 			}
 		}
-		//install/removel Tooltip EditPolicy
+		// install/removel Tooltip EditPolicy
 		TooltipUtil.manageTooltipEditPolicy(editPart);
 	}
 
 	/**
 	 * Safely install a EditPolicy, if the editpolicy with given role is existed in editpart, ignore it.
-	 * 
+	 *
 	 * @param editPart
 	 * @param editPolicy
 	 * @param role
 	 */
 	private void installEditPolicy(EditPart editPart, EditPolicy editPolicy, String role) {
-		if(editPart == null || editPolicy == null) {
+		if (editPart == null || editPolicy == null) {
 			return;
 		}
 		EditPolicy myEditPolicy = editPart.getEditPolicy(role);
-		if(myEditPolicy == null) {
+		if (myEditPolicy == null) {
 			editPart.installEditPolicy(role, editPolicy);
 		}
 	}
@@ -114,26 +116,28 @@ public class CustomEditPolicyProvider implements IEditPolicyProvider {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean provides(IOperation operation) {
-		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
-		if(!(epOperation.getEditPart() instanceof GraphicalEditPart) && !(epOperation.getEditPart() instanceof ConnectionEditPart)) {
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
+		if (!(epOperation.getEditPart() instanceof GraphicalEditPart) && !(epOperation.getEditPart() instanceof ConnectionEditPart)) {
 			return false;
 		}
 		EditPart gep = epOperation.getEditPart();
-		String diagramType = ((View)gep.getModel()).getDiagram().getType();
-		if(PackageEditPart.MODEL_ID.equals(diagramType)) {
+		String diagramType = ((View) gep.getModel()).getDiagram().getType();
+		if (PackageEditPart.MODEL_ID.equals(diagramType)) {
 			return true;
 		}
 		return false;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void removeProviderChangeListener(IProviderChangeListener listener) {
 	}
 }

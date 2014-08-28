@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ public class PapyrusPaletteContextMenuProvider extends PaletteContextMenuProvide
 
 	/**
 	 * Creates a new PaletteContextMenuProvider
-	 * 
+	 *
 	 * @param palette
-	 *        the palette for which the context menu has to be buuild
+	 *            the palette for which the context menu has to be buuild
 	 */
 	public PapyrusPaletteContextMenuProvider(PaletteViewer palette) {
 		super(palette);

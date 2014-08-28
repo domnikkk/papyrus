@@ -33,12 +33,12 @@ public class CSSViewDelegate implements CSSView {
 	@Override
 	public boolean isCSSVisible() {
 		CSSValue cssValue = engine.retrievePropertyValue(view, "visible");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getView_Visible().getDefaultValue();
-			return (Boolean)defaultValue;
+			return (Boolean) defaultValue;
 		}
 
-		return (Boolean)engine.convert(cssValue, Boolean.class, null);
+		return (Boolean) engine.convert(cssValue, Boolean.class, null);
 	}
 
 	private boolean lookupStyle = false;
@@ -47,39 +47,39 @@ public class CSSViewDelegate implements CSSView {
 	public NamedStyle getCSSNamedStyle(EClass eClass, String name) {
 
 
-		if(!NotationPackage.eINSTANCE.getNamedStyle().isSuperTypeOf(eClass)) {
+		if (!NotationPackage.eINSTANCE.getNamedStyle().isSuperTypeOf(eClass)) {
 			return null;
 		}
 
-		///////////////////////////////////////////////
-		//This method may call getNamedStyle() to retrieve the applied CSS Styles. Prevent overflow
-		if(CSSStyles.RESERVED_KEYWORDS.contains(name)) {
+		// /////////////////////////////////////////////
+		// This method may call getNamedStyle() to retrieve the applied CSS Styles. Prevent overflow
+		if (CSSStyles.RESERVED_KEYWORDS.contains(name)) {
 			return null;
 		}
 
 		CSSValue cssValue;
-		synchronized(this) {
-			if(lookupStyle) {
+		synchronized (this) {
+			if (lookupStyle) {
 				return null;
 			}
 
 			try {
 				lookupStyle = true;
 				cssValue = engine.retrievePropertyValue(view, name);
-				if(cssValue == null) {
+				if (cssValue == null) {
 					return null;
 				}
 			} finally {
 				lookupStyle = false;
 			}
 		}
-		///////////////////////////////////////////////
+		// /////////////////////////////////////////////
 
 		try {
-			switch(eClass.getClassifierID()) {
+			switch (eClass.getClassifierID()) {
 			case NotationPackage.BOOLEAN_VALUE_STYLE:
 
-				Boolean booleanValue = (Boolean)engine.convert(cssValue, Boolean.class, null);
+				Boolean booleanValue = (Boolean) engine.convert(cssValue, Boolean.class, null);
 				BooleanValueStyle booleanStyle = NotationFactory.eINSTANCE.createBooleanValueStyle();
 
 				booleanStyle.setBooleanValue(booleanValue);
@@ -89,7 +89,7 @@ public class CSSViewDelegate implements CSSView {
 
 			case NotationPackage.STRING_VALUE_STYLE:
 
-				String stringValue = (String)engine.convert(cssValue, String.class, null);
+				String stringValue = (String) engine.convert(cssValue, String.class, null);
 				StringValueStyle stringStyle = NotationFactory.eINSTANCE.createStringValueStyle();
 
 				stringStyle.setName(name);
@@ -99,7 +99,7 @@ public class CSSViewDelegate implements CSSView {
 
 			case NotationPackage.INT_VALUE_STYLE:
 
-				Integer intValue = (Integer)engine.convert(cssValue, Integer.class, null);
+				Integer intValue = (Integer) engine.convert(cssValue, Integer.class, null);
 				IntValueStyle intStyle = NotationFactory.eINSTANCE.createIntValueStyle();
 
 				intStyle.setName(name);
@@ -108,7 +108,7 @@ public class CSSViewDelegate implements CSSView {
 				return intStyle;
 			case NotationPackage.DOUBLE_VALUE_STYLE:
 
-				Double doubleValue = (Double)engine.convert(cssValue, Double.class, null);
+				Double doubleValue = (Double) engine.convert(cssValue, Double.class, null);
 				DoubleValueStyle doubleStyle = NotationFactory.eINSTANCE.createDoubleValueStyle();
 
 				doubleStyle.setName(name);

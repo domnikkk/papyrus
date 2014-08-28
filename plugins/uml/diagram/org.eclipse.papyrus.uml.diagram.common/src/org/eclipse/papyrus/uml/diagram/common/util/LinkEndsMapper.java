@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,10 +20,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.Connector;
 
 /**
- * 
- * A utils class to map links, with their sources and targets OR with ends, when source/target have no sense for the link (example for
- * {@link Connector})
- * 
+ *
+ * A utils class to map links, with their sources and targets OR with ends, when source/target have no sense for the link (example for {@link Connector})
+ *
  */
 public class LinkEndsMapper {
 
@@ -48,17 +47,17 @@ public class LinkEndsMapper {
 	private final Collection<?> sources;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param link
-	 *        the represented link
+	 *            the represented link
 	 * @param ends
-	 *        the ends for this link (could be <code>null</code>)
+	 *            the ends for this link (could be <code>null</code>)
 	 * @param sources
-	 *        the sources for this link (could be <code>null</code>)
+	 *            the sources for this link (could be <code>null</code>)
 	 * @param targets
-	 *        the targets for this link (could be <code>null</code>)
+	 *            the targets for this link (could be <code>null</code>)
 	 */
 	public LinkEndsMapper(final EObject link, final Collection<?> ends, final Collection<?> sources, final Collection<?> targets) {
 		this.link = link;
@@ -68,7 +67,7 @@ public class LinkEndsMapper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the link represented by the instance of this class
 	 */
@@ -77,7 +76,7 @@ public class LinkEndsMapper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the ends for the links
 	 */
@@ -86,7 +85,7 @@ public class LinkEndsMapper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the targets for the links
 	 */
@@ -95,7 +94,7 @@ public class LinkEndsMapper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the sources for the link
 	 */

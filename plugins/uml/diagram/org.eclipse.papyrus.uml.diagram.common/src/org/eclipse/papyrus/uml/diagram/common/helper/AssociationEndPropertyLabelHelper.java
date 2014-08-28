@@ -15,6 +15,6 @@ package org.eclipse.papyrus.uml.diagram.common.helper;
 
 public abstract class AssociationEndPropertyLabelHelper extends PropertyLabelHelper {
 
-	//CSS are not yet supported for association ends
+	// CSS are not yet supported for association ends
 
 }

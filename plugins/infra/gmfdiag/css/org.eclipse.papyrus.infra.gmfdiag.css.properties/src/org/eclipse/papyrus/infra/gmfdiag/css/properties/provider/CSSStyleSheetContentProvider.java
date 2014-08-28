@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,11 +36,11 @@ public class CSSStyleSheetContentProvider extends EMFContentProvider {
 
 	/**
 	 * Returns the content provider associated to feature being edited
-	 * 
+	 *
 	 * @param editedEObject
-	 *        The object being edited
+	 *            The object being edited
 	 * @param feature
-	 *        The object's feature being edited
+	 *            The object's feature being edited
 	 * @return
 	 *         A content provider returning all the values valid for the given feature
 	 */
@@ -51,15 +51,15 @@ public class CSSStyleSheetContentProvider extends EMFContentProvider {
 
 			public Object[] getElements() {
 				List<Object> result = new LinkedList<Object>();
-				for(Resource resource : CSSStyleSheetContentProvider.this.context.eResource().getResourceSet().getResources()) {
-					for(Object object : resource.getContents()) {
-						if(object instanceof ModelStyleSheets) {
-							ModelStyleSheets styleSheets = (ModelStyleSheets)object;
-							for(StyleSheet styleSheet : styleSheets.getStylesheets()) {
+				for (Resource resource : CSSStyleSheetContentProvider.this.context.eResource().getResourceSet().getResources()) {
+					for (Object object : resource.getContents()) {
+						if (object instanceof ModelStyleSheets) {
+							ModelStyleSheets styleSheets = (ModelStyleSheets) object;
+							for (StyleSheet styleSheet : styleSheets.getStylesheets()) {
 								result.add(styleSheet);
 							}
 						} else {
-							if(object instanceof StyleSheet) {
+							if (object instanceof StyleSheet) {
 								result.add(object);
 							}
 						}

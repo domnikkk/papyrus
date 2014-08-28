@@ -5,7 +5,6 @@ package org.eclipse.papyrus.layers.stackmodel.layers.tests;
 import java.util.Map;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
@@ -16,6 +15,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>String To Property Index Map</b></em>'.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class StringToPropertyIndexMapTest extends TestCase {
@@ -24,6 +24,7 @@ public class StringToPropertyIndexMapTest extends TestCase {
 	 * The fixture for this String To Property Index Map test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected Map.Entry<String, PropertyIndex> fixture = null;
@@ -31,6 +32,7 @@ public class StringToPropertyIndexMapTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -41,6 +43,7 @@ public class StringToPropertyIndexMapTest extends TestCase {
 	 * Constructs a new String To Property Index Map test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public StringToPropertyIndexMapTest(String name) {
@@ -51,6 +54,7 @@ public class StringToPropertyIndexMapTest extends TestCase {
 	 * Sets the fixture for this String To Property Index Map test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void setFixture(Map.Entry<String, PropertyIndex> fixture) {
@@ -61,6 +65,7 @@ public class StringToPropertyIndexMapTest extends TestCase {
 	 * Returns the fixture for this String To Property Index Map test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected Map.Entry<String, PropertyIndex> getFixture() {
@@ -70,18 +75,20 @@ public class StringToPropertyIndexMapTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	protected void setUp() throws Exception {
-		setFixture((Map.Entry<String, PropertyIndex>)LayersFactory.eINSTANCE.create(LayersPackage.Literals.STRING_TO_PROPERTY_INDEX_MAP));
+		setFixture((Map.Entry<String, PropertyIndex>) LayersFactory.eINSTANCE.create(LayersPackage.Literals.STRING_TO_PROPERTY_INDEX_MAP));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -90,4 +97,4 @@ public class StringToPropertyIndexMapTest extends TestCase {
 		setFixture(null);
 	}
 
-} //StringToPropertyIndexMapTest
+} // StringToPropertyIndexMapTest

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,29 +44,30 @@ public class SubjectSelectionDialog extends AbstractSubjectMetaclassesSelectionD
 
 	/**
 	 * Instantiates a new association selection dialog.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent shell
+	 *            the parent shell
 	 * @param style
-	 *        the style
+	 *            the style
 	 */
 	public SubjectSelectionDialog(Shell parent, ArrayList<IHintedType> executableHTypeCreation, int style) {
 		super(parent, style);
 		this.subClassifierList = executableHTypeCreation;
-		this.selectedMetaclass = (IHintedType)subClassifierList.toArray()[0];
+		this.selectedMetaclass = (IHintedType) subClassifierList.toArray()[0];
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.clazz.custom.ui.AbstractAssociationSelectionDialog#createContents()
-	 * 
+	 *
 	 */
+	@Override
 	protected void createContents() {
 		super.createContents();
 		final ILabelProvider labelProvider = new LabelProvider() {
 			@Override
 			public String getText(Object element) {
-				if(element instanceof IHintedType) {
-					String out = ((IHintedType)element).getDisplayName();
+				if (element instanceof IHintedType) {
+					String out = ((IHintedType) element).getDisplayName();
 					return out;
 				}
 				return super.getText(element);
@@ -77,15 +78,18 @@ public class SubjectSelectionDialog extends AbstractSubjectMetaclassesSelectionD
 				final ILabelProvider labelProvider = new AdapterFactoryLabelProvider(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 				return labelProvider.getImage(UMLFactory.eINSTANCE.createClass());
 			}
-		};//new EMFLabelProvider();//new AdapterFactoryLabelProvider(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
+		};// new EMFLabelProvider();//new AdapterFactoryLabelProvider(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 		final IStructuredContentProvider associationContentProvider = new IStructuredContentProvider() {
 
+			@Override
 			public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 			}
 
+			@Override
 			public void dispose() {
 			}
 
+			@Override
 			public Object[] getElements(Object inputElement) {
 				return subClassifierList.toArray();
 			}
@@ -96,17 +100,20 @@ public class SubjectSelectionDialog extends AbstractSubjectMetaclassesSelectionD
 		tableViewer.setInput(subClassifierList);
 		btnOk.addMouseListener(new MouseListener() {
 
+			@Override
 			public void mouseUp(MouseEvent e) {
 				ISelection selection = tableViewer.getSelection();
-				if(selection instanceof IStructuredSelection) {
-					selectedMetaclass = (IHintedType)((IStructuredSelection)selection).getFirstElement();
+				if (selection instanceof IStructuredSelection) {
+					selectedMetaclass = (IHintedType) ((IStructuredSelection) selection).getFirstElement();
 					shlmetaclassSelection.close();
 				}
 			}
 
+			@Override
 			public void mouseDown(MouseEvent e) {
 			}
 
+			@Override
 			public void mouseDoubleClick(MouseEvent e) {
 			}
 		});
@@ -115,7 +122,7 @@ public class SubjectSelectionDialog extends AbstractSubjectMetaclassesSelectionD
 
 	/**
 	 * Gets the selected association.
-	 * 
+	 *
 	 * @return the selected association
 	 */
 	public IHintedType getSelectedMetaclass() {

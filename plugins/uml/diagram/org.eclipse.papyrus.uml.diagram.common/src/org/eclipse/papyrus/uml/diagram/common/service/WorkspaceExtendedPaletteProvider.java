@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,26 +35,26 @@ public class WorkspaceExtendedPaletteProvider extends ExtendedPluginPaletteProvi
 
 	/**
 	 * locally defines palette
-	 * 
+	 *
 	 * @param description
-	 *        the description of the palette to build
+	 *            the description of the palette to build
 	 */
 	public void setContributions(IPaletteDescription description) {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		Object paletteContributions = description.getContributions();
 		contributions = Collections.emptyList();
-		if(!(paletteContributions instanceof String)) {
+		if (!(paletteContributions instanceof String)) {
 			return;
 		}
-		Resource resource = loadResourceFromWorkspace((String)paletteContributions, resourceSet);
-		if(resource != null) {
+		Resource resource = loadResourceFromWorkspace((String) paletteContributions, resourceSet);
+		if (resource != null) {
 			try {
 				resource.load(Collections.emptyMap());
-				if(resource.getContents().size() > 0) {
+				if (resource.getContents().size() > 0) {
 					contributions = new ArrayList<PaletteConfiguration>(EcoreUtil.<PaletteConfiguration> getObjectsByType(resource.getContents(), PaletteconfigurationPackage.eINSTANCE.getPaletteConfiguration()));
 				}
 			} catch (IOException e) {
-				if(!loadResourceExceptionLogged) {
+				if (!loadResourceExceptionLogged) {
 					Activator.log.debug("Impossible to load the resource for palette: " + description);
 					loadResourceExceptionLogged = true;
 				}

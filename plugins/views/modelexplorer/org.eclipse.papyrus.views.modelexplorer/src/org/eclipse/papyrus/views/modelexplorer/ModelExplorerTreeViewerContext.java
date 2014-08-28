@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2010, 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - adapted from ModelExplorerView::reveal(...) API
- *   
+ *
  */
 package org.eclipse.papyrus.views.modelexplorer;
 
@@ -43,26 +43,28 @@ class ModelExplorerTreeViewerContext extends EMFTreeViewerContext {
 		super(viewer);
 	}
 
+	@Override
 	public Object deresolveSelectableElement(Object selectableElement) {
 		return EMFHelper.getEObject(selectableElement);
 	}
 
+	@Override
 	public Object resolveSelectableElement(Object object) {
-		return new ModelElementItemMatchingItemWithElement((EObject)object);
+		return new ModelElementItemMatchingItemWithElement((EObject) object);
 	}
 
 	@Override
 	protected void setExpandedElements(AbstractTreeViewer viewer, Collection<?> toExpand) {
 		// EMF Facet makes expanding tree elements very complicated
-		if(viewer.getContentProvider() != null) {
-			for(ModelElementItemMatchingItemWithElement next : Iterables.filter(toExpand, ModelElementItemMatchingItemWithElement.class)) {
+		if (viewer.getContentProvider() != null) {
+			for (ModelElementItemMatchingItemWithElement next : Iterables.filter(toExpand, ModelElementItemMatchingItemWithElement.class)) {
 
 				// retrieve the ancestors to reveal them
 				// and allow the selection of the object
 				EObject currentEObject = next.element();
 				ArrayList<EObject> parents = new ArrayList<EObject>();
 				EObject tmp = currentEObject.eContainer();
-				while(tmp != null) {
+				while (tmp != null) {
 					parents.add(tmp);
 					tmp = tmp.eContainer();
 				}
@@ -71,16 +73,16 @@ class ModelExplorerTreeViewerContext extends EMFTreeViewerContext {
 
 				// reveal the resource if necessary
 				Resource r = null;
-				if(!parents.isEmpty()) {
+				if (!parents.isEmpty()) {
 					r = parents.get(parents.size() - 1).eResource();
 				} else {
 					r = currentEObject.eResource();
 				}
 
-				if(r != null) {
+				if (r != null) {
 					final ResourceSet rs = r.getResourceSet();
 					final Resource resource = r;
-					if(rs instanceof ModelSet && AdditionalResourcesModel.isAdditionalResource((ModelSet)rs, r.getURI())) {
+					if (rs instanceof ModelSet && AdditionalResourcesModel.isAdditionalResource((ModelSet) rs, r.getURI())) {
 						viewer.expandToLevel(new ReferencableMatchingItem(rs), 1);
 						viewer.expandToLevel(new ReferencableMatchingItem(resource), 1);
 					}
@@ -91,16 +93,16 @@ class ModelExplorerTreeViewerContext extends EMFTreeViewerContext {
 				 * in the good order. This is a lot faster than going through the whole tree
 				 * using getChildren of the ContentProvider since our Viewer uses a Hashtable
 				 * to keep track of the revealed elements.
-				 * 
+				 *
 				 * However we need to use a dedicated MatchingItem to do the matching,
 				 * and a specific comparer in our viewer so than the equals of MatchingItem is
 				 * used in priority.
-				 * 
+				 *
 				 * Please refer to MatchingItem for more infos.
 				 */
 				EObject previousParent = null;
-				for(EObject parent : reverseParents) {
-					if(parent.eContainingFeature() != null && previousParent != null) {
+				for (EObject parent : reverseParents) {
+					if (parent.eContainingFeature() != null && previousParent != null) {
 						viewer.expandToLevel(new LinkItemMatchingItem(previousParent, parent.eContainmentFeature()), 1);
 					}
 

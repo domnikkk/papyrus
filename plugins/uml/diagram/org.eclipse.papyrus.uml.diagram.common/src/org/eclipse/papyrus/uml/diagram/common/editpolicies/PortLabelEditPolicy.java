@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,13 +47,13 @@ public class PortLabelEditPolicy extends PropertyLabelEditPolicy {
 	 * notifies that the the property has changed.
 	 *
 	 * @param property
-	 *        the property that has changed
+	 *            the property that has changed
 	 * @param notification
-	 *        the notification send when the element has been changed
+	 *            the notification send when the element has been changed
 	 */
 	@Override
 	protected void notifyPropertyChanged(Property property, Notification notification) {
-		switch(notification.getFeatureID(Property.class)) {
+		switch (notification.getFeatureID(Property.class)) {
 		case UMLPackage.PROPERTY__NAME:
 		case UMLPackage.PORT__IS_CONJUGATED:
 		case UMLPackage.PROPERTY__VISIBILITY:
@@ -72,34 +72,34 @@ public class PortLabelEditPolicy extends PropertyLabelEditPolicy {
 		case UMLPackage.PROPERTY__UPPER:
 		case UMLPackage.PROPERTY__UPPER_VALUE:
 
-			switch(notification.getEventType()) {
+			switch (notification.getEventType()) {
 			// if it is added => adds listener to the type element
 			case Notification.ADD:
-				getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+				getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 				refreshDisplay();
 				// if it is removed => removes listener from the type element
 				break;
 			case Notification.ADD_MANY: // should never happen
-				if(notification.getNewValue() instanceof List<?>) {
-					List<?> addedElements = (List<?>)notification.getNewValue();
-					for(Object addedElement : addedElements) {
-						if(addedElement instanceof EObject) {
-							getDiagramEventBroker().addNotificationListener((EObject)addedElement, this);
+				if (notification.getNewValue() instanceof List<?>) {
+					List<?> addedElements = (List<?>) notification.getNewValue();
+					for (Object addedElement : addedElements) {
+						if (addedElement instanceof EObject) {
+							getDiagramEventBroker().addNotificationListener((EObject) addedElement, this);
 						}
 					}
 				}
 				refreshDisplay();
 				break;
 			case Notification.REMOVE:
-				getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+				getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 				refreshDisplay();
 				break;
 			case Notification.REMOVE_MANY: // should never happen
-				if(notification.getOldValue() instanceof List<?>) {
-					List<?> removedElements = (List<?>)notification.getOldValue();
-					for(Object removedElement : removedElements) {
-						if(removedElement instanceof EObject) {
-							getDiagramEventBroker().removeNotificationListener((EObject)removedElement, this);
+				if (notification.getOldValue() instanceof List<?>) {
+					List<?> removedElements = (List<?>) notification.getOldValue();
+					for (Object removedElement : removedElements) {
+						if (removedElement instanceof EObject) {
+							getDiagramEventBroker().removeNotificationListener((EObject) removedElement, this);
 						}
 					}
 				}
@@ -108,11 +108,11 @@ public class PortLabelEditPolicy extends PropertyLabelEditPolicy {
 			// if it is set, remove the old one and adds the new one. this is the method use when
 			// the type is set or removed...
 			case Notification.SET:
-				if(notification.getOldValue() != null) {
-					getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+				if (notification.getOldValue() != null) {
+					getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 				}
-				if(notification.getNewValue() != null) {
-					getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+				if (notification.getNewValue() != null) {
+					getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 				}
 				refreshDisplay();
 
@@ -134,7 +134,7 @@ public class PortLabelEditPolicy extends PropertyLabelEditPolicy {
 	@Override
 	public void refreshDisplay() {
 		// calls the helper for this edit Part
-		PortLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart)getHost());
+		PortLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart) getHost());
 	}
 
 }

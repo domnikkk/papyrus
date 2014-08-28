@@ -19,16 +19,17 @@ import org.eclipse.swt.graphics.Image;
 // TODO: Auto-generated Javadoc
 /**
  * Basic label provider for a ViewInfo.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  */
 public class BaseViewInfoLabelProvider implements IBaseLabelProvider, ILabelProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
 	 */
+	@Override
 	public Image getImage(Object element) {
 		// TODO Auto-generated method stub
 		return null;
@@ -36,12 +37,13 @@ public class BaseViewInfoLabelProvider implements IBaseLabelProvider, ILabelProv
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getText(java.lang.Object)
 	 */
+	@Override
 	public String getText(Object element) {
-		if(element instanceof ViewInfo) {
-			ViewInfo viewInfo = (ViewInfo)element;
+		if (element instanceof ViewInfo) {
+			ViewInfo viewInfo = (ViewInfo) element;
 			return getLabelType(viewInfo) + " : " + viewInfo.getLabel() + " - " + viewInfo.getVisualID();
 		}
 		return null;
@@ -49,30 +51,33 @@ public class BaseViewInfoLabelProvider implements IBaseLabelProvider, ILabelProv
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.
 	 * jface.viewers. ILabelProviderListener)
 	 */
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 		// nothing to do
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#dispose()
 	 */
+	@Override
 	public void dispose() {
 		// nothing to do
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.jface.viewers.IBaseLabelProvider#isLabelProperty(java.lang
 	 * .Object, java.lang.String)
 	 */
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		// TODO Auto-generated method stub
 		return false;
@@ -80,24 +85,25 @@ public class BaseViewInfoLabelProvider implements IBaseLabelProvider, ILabelProv
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.jface.viewers.IBaseLabelProvider#removeListener(org.eclipse
 	 * .jface.viewers. ILabelProviderListener)
 	 */
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 		// nothing to do
 	}
 
 	/**
 	 * Gets the label type.
-	 * 
+	 *
 	 * @param info
-	 *        the info
-	 * 
+	 *            the info
+	 *
 	 * @return the label type
 	 */
 	protected String getLabelType(ViewInfo info) {
-		switch(info.getType()) {
+		switch (info.getType()) {
 		case ViewInfo.None:
 			return "Unknown";
 		case ViewInfo.Head:

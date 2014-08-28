@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,15 +16,15 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * A Widget for selecting Files on the workspace or on the file system.
  * The widgets only edits String values : it uses the path of the files
- * 
+ *
  * @author Camille Letavernier
  */
 public class XWTStringFileSelectorEMF extends StringFileSelector {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 * @param style
 	 */
@@ -34,11 +34,11 @@ public class XWTStringFileSelectorEMF extends StringFileSelector {
 
 	/**
 	 * Creates the selector
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 * @return the selector
 	 */
 	@Override

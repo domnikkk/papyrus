@@ -61,9 +61,9 @@ public class CustomPreferenceInitializer extends BlockDefinitionDiagramPreferenc
 	 * Initialize default position of a link label in preferences.
 	 *
 	 * @param parentGraphicalType
-	 *        the graphical type of the view owning the label
+	 *            the graphical type of the view owning the label
 	 * @param graphicalType
-	 *        the graphical type of the label
+	 *            the graphical type of the label
 	 * @param x
 	 * @param y
 	 */

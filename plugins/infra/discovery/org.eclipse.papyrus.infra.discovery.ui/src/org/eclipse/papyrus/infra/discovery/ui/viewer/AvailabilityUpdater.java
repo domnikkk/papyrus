@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *     CEA LIST - adaptation to Papyrus additional components
@@ -155,8 +155,7 @@ public class AvailabilityUpdater {
 		public VerifyUpdateSiteJob call() throws Exception {
 			URI baseUrl = URI.createURI(removeTraillingSlash(url));
 			List<URI> locations = new ArrayList<URI>();
-			for (String location : new String[] {
-					"compositeContent.jar","content.jar", "content.xml", "site.xml" }) { //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$
+			for (String location : new String[] { "compositeContent.jar", "content.jar", "content.xml", "site.xml" }) { //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$
 				URI locationURI = baseUrl.appendSegment(location);
 				locations.add(locationURI);
 			}
@@ -165,15 +164,17 @@ public class AvailabilityUpdater {
 			while (it.hasNext() && !ok) {
 				URI uri = it.next();
 				if (handler.canHandle(uri)
-						&& handler.exists(uri, Collections.EMPTY_MAP))
+						&& handler.exists(uri, Collections.EMPTY_MAP)) {
 					ok = true;
+				}
 			}
 			return this;
 		}
 
 		private String removeTraillingSlash(String url2) {
-			if (url2.endsWith("/"))
+			if (url2.endsWith("/")) {
 				return url2.substring(0, url2.length() - 1);
+			}
 			return url2;
 		}
 

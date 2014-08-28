@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008-2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,9 +50,9 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 	protected IFigure shape;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public NodeEditPart(View view) {
@@ -69,14 +69,14 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 
 	protected void refreshSVGPath() {
 		View view = getNotationView();
-		if(svgNodePlate != null) {
-			BooleanValueStyle followStyle = (BooleanValueStyle)view.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), FollowSVGSymbolEditPolicy.FOLLOW_SVG_SYMBOL);
-			if(followStyle != null && followStyle.isBooleanValue()) {
-				if(ShapeService.getInstance().hasShapeToDisplay(getNotationView())) {
+		if (svgNodePlate != null) {
+			BooleanValueStyle followStyle = (BooleanValueStyle) view.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), FollowSVGSymbolEditPolicy.FOLLOW_SVG_SYMBOL);
+			if (followStyle != null && followStyle.isBooleanValue()) {
+				if (ShapeService.getInstance().hasShapeToDisplay(getNotationView())) {
 					List<SVGDocument> svgToDisplay = ShapeService.getInstance().getSVGDocumentToDisplay(getNotationView());
 					int documentNumber = svgToDisplay.size();
 					SVGDocument svgdoc = null;
-					if(documentNumber > 0) {
+					if (documentNumber > 0) {
 						svgdoc = svgToDisplay.get(documentNumber - 1);
 					}
 
@@ -95,7 +95,7 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 	 * Returns the primary shape being the View of this edit part.
 	 * </p>
 	 * <b>Warning</b> It should never return <code>null</code>
-	 * 
+	 *
 	 * @return the primary shape associated to this edit part.
 	 */
 	@Override
@@ -110,7 +110,7 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -119,16 +119,16 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 
 		// Update the figure when the line width changes
 		Object feature = event.getFeature();
-		if((getModel() != null) && (getModel() == event.getNotifier())) {
-			if(NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
+		if ((getModel() != null) && (getModel() == event.getNotifier())) {
+			if (NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
 				refreshLineWidth();
-			} else if(NotationPackage.eINSTANCE.getLineTypeStyle_LineType().equals(feature)) {
+			} else if (NotationPackage.eINSTANCE.getLineTypeStyle_LineType().equals(feature)) {
 				refreshLineType();
 			}
 		}
 
 		// set the figure active when the feature of the of a class is true
-		if(resolveSemanticElement() != null) {
+		if (resolveSemanticElement() != null) {
 			refreshShadow();
 		}
 	}
@@ -145,7 +145,7 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 
 	@Override
 	protected void setLineWidth(int width) {
-		if(width < 0) {
+		if (width < 0) {
 			width = 1;
 		}
 		getPrimaryShape().setLineWidth(width);
@@ -166,9 +166,9 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 
 	/**
 	 * sets the back ground color of this edit part
-	 * 
+	 *
 	 * @param color
-	 *        the new value of the back ground color
+	 *            the new value of the back ground color
 	 */
 	@Override
 	protected void setBackgroundColor(Color color) {
@@ -183,9 +183,10 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 	@Override
 	protected void setGradient(GradientData gradient) {
 		IPapyrusNodeFigure fig = getPrimaryShape();
-		FillStyle style = (FillStyle)getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
-		if(gradient != null) {
-			fig.setIsUsingGradient(true);;
+		FillStyle style = (FillStyle) getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
+		if (gradient != null) {
+			fig.setIsUsingGradient(true);
+			;
 			fig.setGradientData(style.getFillColor(), gradient.getGradientColor1(), gradient.getGradientStyle());
 		} else {
 			fig.setIsUsingGradient(false);
@@ -194,9 +195,9 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 
 	/**
 	 * sets the font color
-	 * 
+	 *
 	 * @param color
-	 *        the new value of the font color
+	 *            the new value of the font color
 	 */
 	@Override
 	protected void setFontColor(Color color) {
@@ -205,9 +206,9 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 
 	/**
 	 * sets the fore ground color of this edit part's figure
-	 * 
+	 *
 	 * @param color
-	 *        the new value of the foregroundcolor
+	 *            the new value of the foregroundcolor
 	 */
 	@Override
 	protected void setForegroundColor(Color color) {
@@ -218,7 +219,7 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 	 * Refresh the shadow of the figure
 	 */
 	protected final void refreshShadow() {
-		getPrimaryShape().setShadow(AppearanceHelper.showShadow((View)getModel()));
+		getPrimaryShape().setShadow(AppearanceHelper.showShadow((View) getModel()));
 	}
 
 	@Override
@@ -228,20 +229,20 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the figure that represent the shape, this class is generated by the GMF tooling
 	 */
 	protected abstract IFigure createNodePlate();
 
 	/**
-	 * 
+	 *
 	 * @return the figure that represent the shape, this class is generated by the GMF tooling
 	 */
 	protected abstract IFigure createNodeShape();
 
 	/**
 	 * this method installs the content pane in the node shape to add compartment for example
-	 * 
+	 *
 	 * @param nodeShape
 	 * @return the figure that is the the node shape
 	 */
@@ -251,7 +252,7 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 	/**
 	 * Now the method create node plate is not used,
 	 * If you want to overlad it you must overload createSVGNodePlate
-	 * 
+	 *
 	 * @return the figure that allow following border of shape
 	 */
 	protected NodeFigure createSVGNodePlate() {
@@ -263,10 +264,10 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 */
 	protected NodeFigure createMainFigureWithSVG() {
 
@@ -281,7 +282,7 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 
 	@Override
 	public IFigure getContentPane() {
-		if(shape != null) {
+		if (shape != null) {
 			IFigure contentPane = setupContentPane(shape);
 			return contentPane;
 		} else {
@@ -290,9 +291,9 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#getDragTracker(org.eclipse.gef.Request)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -300,15 +301,16 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 	public DragTracker getDragTracker(final Request request) {
 		return new PapyrusDragEditPartsTrackerEx(this, true, false, false);
 	}
-	
+
 	/**
 	 * TODO : remove this override when the bug will be fixed
 	 * See Bug 424943 ResizableEditPolicy#getResizeCommand duplicates request ignoring some request values
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeEditPart#getPrimaryDragEditPolicy()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public EditPolicy getPrimaryDragEditPolicy() {
 		EditPolicy policy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 		return policy != null ? policy : new PapyrusResizableShapeEditPolicy();

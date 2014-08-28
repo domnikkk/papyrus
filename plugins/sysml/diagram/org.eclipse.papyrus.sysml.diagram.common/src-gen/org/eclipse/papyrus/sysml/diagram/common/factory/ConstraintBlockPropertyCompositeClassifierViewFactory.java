@@ -7,11 +7,11 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.sysml.diagram.common.factory; 
+package org.eclipse.papyrus.sysml.diagram.common.factory;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.util.EList;
@@ -40,27 +40,27 @@ public class ConstraintBlockPropertyCompositeClassifierViewFactory extends Shape
 	@Override
 	protected void decorateView(View containerView, View view, IAdaptable element, String semanticHint, int index, boolean persisted) {
 
-		getViewService().createNode(element, view, UMLGraphicalTypes.LABEL_UML_PROPERTY_LABEL_ID, ViewUtil.APPEND, persisted, getPreferencesHint());		
+		getViewService().createNode(element, view, UMLGraphicalTypes.LABEL_UML_PROPERTY_LABEL_ID, ViewUtil.APPEND, persisted, getPreferencesHint());
 		if (ConstraintBlockPropertyCompositeEditPart.lastRepresentationIsSquareWithStructure()) {
 			getViewService().createNode(element, view, SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID, ViewUtil.APPEND, persisted, getPreferencesHint());
 		}
 
 		if (element != null) {
-			 EObject newElement = EMFHelper.getEObject(element);
-			 if (newElement instanceof Property && UMLUtil.getStereotypeApplication((Property)newElement, ConstraintProperty.class) != null) {
-				Property constraintProperty = (Property) newElement;	
+			EObject newElement = EMFHelper.getEObject(element);
+			if (newElement instanceof Property && UMLUtil.getStereotypeApplication((Property) newElement, ConstraintProperty.class) != null) {
+				Property constraintProperty = (Property) newElement;
 				ViewService.createNode(view, getConstraint(constraintProperty), UMLGraphicalTypes.SHAPE_UML_CONSTRAINT_AS_LABEL_ID, getPreferencesHint());
-			 }
+			}
 		}
-		
+
 		// this action needs to be done after the compartments creation
 		super.decorateView(containerView, view, element, semanticHint, index, persisted);
 	}
-	
+
 	private Constraint getConstraint(Property constraintProperty) {
 		Type type = constraintProperty.getType();
 		if (type instanceof Class && UMLUtil.getStereotypeApplication(type, ConstraintBlock.class) != null) { // instanceof ensure type is not null
-			Class constraintBlock = (Class)type;
+			Class constraintBlock = (Class) type;
 			EList<Constraint> ownedRules = constraintBlock.getOwnedRules();
 			for (Constraint constraint : ownedRules) {
 				return constraint;
@@ -69,6 +69,6 @@ public class ConstraintBlockPropertyCompositeClassifierViewFactory extends Shape
 		return null;
 	}
 
-	// Start of user code preferences	
+	// Start of user code preferences
 	// End of user code
 }

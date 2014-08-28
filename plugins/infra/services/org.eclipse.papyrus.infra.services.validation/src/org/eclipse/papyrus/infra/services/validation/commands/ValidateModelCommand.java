@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,30 +26,30 @@ import org.eclipse.papyrus.infra.services.validation.Messages;
 
 /**
  * use to validate the model from a selected element in the model
- * 
+ *
  */
 public class ValidateModelCommand extends AbstractValidateCommand {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param selectedElement
 	 */
-	public ValidateModelCommand(EObject selectedElement,IPapyrusDiagnostician diagnostician) {
+	public ValidateModelCommand(EObject selectedElement, IPapyrusDiagnostician diagnostician) {
 		super(Messages.ValidateModelCommand_ValidateModel, TransactionUtil.getEditingDomain(selectedElement), getTopOwner(selectedElement), diagnostician);
 	}
 
 
 	/**
 	 * get the root element
-	 * 
+	 *
 	 * @param selectedElement
 	 * @return the root element
 	 */
 	private static EObject getTopOwner(EObject selectedElement) {
 		EObject selectedObject = selectedElement;
-		while(selectedObject.eContainer() != null) {
+		while (selectedObject.eContainer() != null) {
 			selectedObject = selectedObject.eContainer();
 		}
 		return selectedObject;
@@ -62,7 +62,7 @@ public class ValidateModelCommand extends AbstractValidateCommand {
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// replace selection by model instead of current selection
-		if(selectedElement != null) {
+		if (selectedElement != null) {
 			runValidation(selectedElement);
 		}
 		return null;

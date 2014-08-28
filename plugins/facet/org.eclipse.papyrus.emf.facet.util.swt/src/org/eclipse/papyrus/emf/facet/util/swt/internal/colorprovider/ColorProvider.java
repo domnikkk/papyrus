@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Copyright (c) 2013 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ public class ColorProvider implements IColorProvider {
 	public ColorProvider(final Device device) {
 		this.device = device;
 	}
-	
+
 	public Color getColor(final RGB rgb) {
 		Color result = this.cash.get(rgb);
 		if (result == null) {

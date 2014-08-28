@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,8 +26,8 @@ public class Offer {
 		// them in the count.
 		this.removeWithdrawnTokens();
 		int count = 0;
-		for(int i = 0; i < this.offeredTokens.size(); i++) {
-			if(this.offeredTokens.get(i).getValue() != null) {
+		for (int i = 0; i < this.offeredTokens.size(); i++) {
+			if (this.offeredTokens.get(i).getValue() != null) {
 				count = count + 1;
 			}
 		}
@@ -39,7 +39,7 @@ public class Offer {
 		this.removeWithdrawnTokens();
 		List<Token> tokens = new ArrayList<Token>();
 		List<Token> offeredTokens = this.offeredTokens;
-		for(int i = 0; i < this.offeredTokens.size(); i++) {
+		for (int i = 0; i < this.offeredTokens.size(); i++) {
 			Token offeredToken = offeredTokens.get(i);
 			// Debug.println("[getOfferedTokens] token value = " +
 			// offeredToken.getValue());
@@ -53,8 +53,8 @@ public class Offer {
 		// offer.
 		int n = count;
 		int i = 1;
-		while(n > 0) {
-			if(this.offeredTokens.get(i - 1).getValue() != null) {
+		while (n > 0) {
+			if (this.offeredTokens.get(i - 1).getValue() != null) {
 				this.offeredTokens.remove(i - 1);
 			} else {
 				i = i + 1;
@@ -67,8 +67,8 @@ public class Offer {
 		// Remove any tokens that have already been consumed.
 		// List<Token> offeredTokens = this.offeredTokens;
 		int i = 1;
-		while(i <= this.offeredTokens.size()) {
-			if(this.offeredTokens.get(i - 1).isWithdrawn()) {
+		while (i <= this.offeredTokens.size()) {
+			if (this.offeredTokens.get(i - 1).isWithdrawn()) {
 				this.offeredTokens.remove(i - 1);
 				i = i - 1;
 			}

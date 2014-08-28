@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,15 +14,15 @@
 
 package org.eclipse.papyrus.layers.stackmodel.notifier;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.gmf.runtime.notation.Shape;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.layers.stackmodel.util.NotationAndUmlModelsFactory;
 import org.eclipse.papyrus.layers.stackmodel.util.TriggeredEventTraces;
-import org.eclipse.papyrus.layers.stackmodel.util.TriggeredEventTraces.TriggeredEvent;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Property;
 import org.junit.After;
@@ -58,8 +58,8 @@ public class UmlNamedElementChangedEventNotifierTest {
 		Diagram diagram1 = modelsFactory.newDiagram();
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
 
-		UmlNamedElementChangedEventNotifierFactory notifierFactory = new UmlNamedElementChangedEventNotifierFactory();		
-		UmlNamedElementChangedEventNotifier eventNotifier = (UmlNamedElementChangedEventNotifier)notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
+		UmlNamedElementChangedEventNotifierFactory notifierFactory = new UmlNamedElementChangedEventNotifierFactory();
+		UmlNamedElementChangedEventNotifier eventNotifier = (UmlNamedElementChangedEventNotifier) notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
 
 		// Assert
 		assertNotNull("notifier created", eventNotifier);
@@ -74,8 +74,8 @@ public class UmlNamedElementChangedEventNotifierTest {
 		Diagram diagram1 = modelsFactory.newDiagram();
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
 
-		UmlNamedElementChangedEventNotifierFactory notifierFactory = new UmlNamedElementChangedEventNotifierFactory();		
-		UmlNamedElementChangedEventNotifier eventNotifier = (UmlNamedElementChangedEventNotifier)notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
+		UmlNamedElementChangedEventNotifierFactory notifierFactory = new UmlNamedElementChangedEventNotifierFactory();
+		UmlNamedElementChangedEventNotifier eventNotifier = (UmlNamedElementChangedEventNotifier) notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
 
 		TraceUmlNamedElementChangedEventListener listener = new TraceUmlNamedElementChangedEventListener();
 		eventNotifier.addEventListener(listener);
@@ -93,8 +93,8 @@ public class UmlNamedElementChangedEventNotifierTest {
 		Diagram diagram1 = modelsFactory.newDiagram();
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
 
-		UmlNamedElementChangedEventNotifierFactory notifierFactory = new UmlNamedElementChangedEventNotifierFactory();		
-		UmlNamedElementChangedEventNotifier eventNotifier = (UmlNamedElementChangedEventNotifier)notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
+		UmlNamedElementChangedEventNotifierFactory notifierFactory = new UmlNamedElementChangedEventNotifierFactory();
+		UmlNamedElementChangedEventNotifier eventNotifier = (UmlNamedElementChangedEventNotifier) notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
 
 		TraceUmlNamedElementChangedEventListener listener = new TraceUmlNamedElementChangedEventListener();
 		eventNotifier.addEventListener(listener);
@@ -113,13 +113,13 @@ public class UmlNamedElementChangedEventNotifierTest {
 		Diagram diagram1 = modelsFactory.newDiagram();
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
 
-		UmlNamedElementChangedEventNotifierFactory notifierFactory = new UmlNamedElementChangedEventNotifierFactory();		
-		UmlNamedElementChangedEventNotifier eventNotifier = (UmlNamedElementChangedEventNotifier)notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
+		UmlNamedElementChangedEventNotifierFactory notifierFactory = new UmlNamedElementChangedEventNotifierFactory();
+		UmlNamedElementChangedEventNotifier eventNotifier = (UmlNamedElementChangedEventNotifier) notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
 
 		TraceUmlNamedElementChangedEventListener listener = new TraceUmlNamedElementChangedEventListener();
 		eventNotifier.addEventListener(listener);
 		TriggeredEventTraces<Notification> traces = listener.traces;
-		
+
 		// Action
 		traces.clear();
 		// Modify ele
@@ -128,11 +128,11 @@ public class UmlNamedElementChangedEventNotifierTest {
 		// Assert
 		// Assert
 		assertTrue("event recorded", traces.contains("valueChanged"));
-		assertEquals("one event recorded", 1, traces.traces.size() );
-		
+		assertEquals("one event recorded", 1, traces.traces.size());
+
 		TriggeredEventTraces<Notification>.TriggeredEvent event = traces.traces.get(0);
-		
-		assertEquals("right element in event", c1, event.notifier.getNotifier() );
+
+		assertEquals("right element in event", c1, event.notifier.getNotifier());
 	}
 
 	/**
@@ -144,14 +144,14 @@ public class UmlNamedElementChangedEventNotifierTest {
 		Diagram diagram1 = modelsFactory.newDiagram();
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
 
-		UmlNamedElementChangedEventNotifierFactory notifierFactory = new UmlNamedElementChangedEventNotifierFactory();		
-		UmlNamedElementChangedEventNotifier eventNotifier = (UmlNamedElementChangedEventNotifier)notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
+		UmlNamedElementChangedEventNotifierFactory notifierFactory = new UmlNamedElementChangedEventNotifierFactory();
+		UmlNamedElementChangedEventNotifier eventNotifier = (UmlNamedElementChangedEventNotifier) notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
 
 		TraceUmlNamedElementChangedEventListener listener = new TraceUmlNamedElementChangedEventListener();
 		eventNotifier.addEventListener(listener);
 		TriggeredEventTraces<Notification> traces = listener.traces;
 		int expectedEventCount = 2;
-		
+
 		// Action
 		traces.clear();
 		// Modify ele
@@ -160,10 +160,10 @@ public class UmlNamedElementChangedEventNotifierTest {
 		// Assert
 		// Assert
 		assertTrue("event recorded", traces.contains("valueChanged"));
-		assertEquals("one event recorded", expectedEventCount, traces.traces.size() );
-		
-//		TriggeredEventTraces<Notification>.TriggeredEvent event = traces.traces.get(0);	
-//		assertEquals("right element in event", c1, event.notifier.getNotifier() );
+		assertEquals("one event recorded", expectedEventCount, traces.traces.size());
+
+		// TriggeredEventTraces<Notification>.TriggeredEvent event = traces.traces.get(0);
+		// assertEquals("right element in event", c1, event.notifier.getNotifier() );
 	}
 
 	/**
@@ -176,14 +176,14 @@ public class UmlNamedElementChangedEventNotifierTest {
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
 		Property p1 = modelsFactory.newProperty(c1, "p1");
 
-		UmlNamedElementChangedEventNotifierFactory notifierFactory = new UmlNamedElementChangedEventNotifierFactory();		
-		UmlNamedElementChangedEventNotifier eventNotifier = (UmlNamedElementChangedEventNotifier)notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
+		UmlNamedElementChangedEventNotifierFactory notifierFactory = new UmlNamedElementChangedEventNotifierFactory();
+		UmlNamedElementChangedEventNotifier eventNotifier = (UmlNamedElementChangedEventNotifier) notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
 
 		TraceUmlNamedElementChangedEventListener listener = new TraceUmlNamedElementChangedEventListener();
 		eventNotifier.addEventListener(listener);
 		TriggeredEventTraces<Notification> traces = listener.traces;
 		int expectedEventCount = 1;
-		
+
 		// Action
 		traces.clear();
 		// Modify ele
@@ -192,10 +192,10 @@ public class UmlNamedElementChangedEventNotifierTest {
 		// Assert
 		// Assert
 		assertTrue("event recorded", traces.contains("valueChanged"));
-		assertEquals("one event recorded", expectedEventCount, traces.traces.size() );
-		
-//		TriggeredEventTraces<Notification>.TriggeredEvent event = traces.traces.get(0);	
-//		assertEquals("right element in event", c1, event.notifier.getNotifier() );
+		assertEquals("one event recorded", expectedEventCount, traces.traces.size());
+
+		// TriggeredEventTraces<Notification>.TriggeredEvent event = traces.traces.get(0);
+		// assertEquals("right element in event", c1, event.notifier.getNotifier() );
 	}
 
 }

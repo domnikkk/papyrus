@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,20 +26,20 @@ import org.eclipse.papyrus.uml.diagram.deployment.providers.UMLViewProvider;
 
 /**
  * this is the specific command in charge to transform an element editpart into a shape_namedElement Editpart
- * 
+ *
  */
 public class ElementToStereotypedShape extends RecordingCommand {
 
 	protected GraphicalEditPart elementEditPart;
 
 	/**
-	 * 
+	 *
 	 * Constructor of this command
-	 * 
+	 *
 	 * @param domain
-	 *        the transactional editing domain to execute transaction
+	 *            the transactional editing domain to execute transaction
 	 * @param classView
-	 *        the editpart that will be transformed
+	 *            the editpart that will be transformed
 	 */
 	public ElementToStereotypedShape(TransactionalEditingDomain domain, GraphicalEditPart classView) {
 		super(domain);
@@ -49,14 +49,14 @@ public class ElementToStereotypedShape extends RecordingCommand {
 	@Override
 	protected void doExecute() {
 
-		//creation of the node
+		// creation of the node
 		UMLViewProvider umlViewProvider = new UMLViewProvider();
-		Node packageview = umlViewProvider.createNamedElement_2012(elementEditPart.resolveSemanticElement(), (View)elementEditPart.getNotationView().eContainer(), -1, true, elementEditPart.getDiagramPreferencesHint());
-		packageview.setLayoutConstraint(((Node)elementEditPart.getNotationView()).getLayoutConstraint());
+		Node packageview = umlViewProvider.createNamedElement_2012(elementEditPart.resolveSemanticElement(), (View) elementEditPart.getNotationView().eContainer(), -1, true, elementEditPart.getDiagramPreferencesHint());
+		packageview.setLayoutConstraint(((Node) elementEditPart.getNotationView()).getLayoutConstraint());
 
-		//copy of all eannotations
+		// copy of all eannotations
 		Iterator<EAnnotation> iter = elementEditPart.getNotationView().getEAnnotations().iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			EAnnotation annotation = EcoreUtil.copy(iter.next());
 			packageview.getEAnnotations().add(annotation);
 

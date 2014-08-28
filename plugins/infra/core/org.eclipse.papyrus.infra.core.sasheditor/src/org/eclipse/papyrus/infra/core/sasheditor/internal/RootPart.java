@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,14 +23,14 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * Part used as root. This is the one with no parent and no model. This class is intended for local
  * use only.
- * 
+ *
  * @author dumoulin
- * 
+ *
  * @param T
- *        Common ancestor for the model provided for the sash windows by the application.
- *        This is the type used externally by the application. Sash implementation don't use this type,
- *        it just carry it to ask for the appropriate wrapper. Concrete implementation can specify
- *        a type.
+ *            Common ancestor for the model provided for the sash windows by the application.
+ *            This is the type used externally by the application. Sash implementation don't use this type,
+ *            it just carry it to ask for the appropriate wrapper. Concrete implementation can specify
+ *            a type.
  */
 public class RootPart extends AbstractPart implements IPanelParent {
 
@@ -43,7 +43,7 @@ public class RootPart extends AbstractPart implements IPanelParent {
 	private AbstractPanelPart child;
 
 	/** Raw model associated to this part. We store it because the PartModel do not provide it */
-//	private Object rawModel;
+	// private Object rawModel;
 
 	/**
 	 * Constructor.
@@ -64,9 +64,10 @@ public class RootPart extends AbstractPart implements IPanelParent {
 	 * Dispose this part and its children.
 	 */
 	public void disposeThisAndChildren() {
-		if(child != null)
+		if (child != null) {
 			child.disposeThisAndChildren();
-		
+		}
+
 		// Detach properties to help GC
 		child = null;
 	}
@@ -74,6 +75,7 @@ public class RootPart extends AbstractPart implements IPanelParent {
 	/**
 	 * Get control associated to this part.
 	 */
+	@Override
 	public Composite getControl() {
 		return container;
 	}
@@ -82,9 +84,9 @@ public class RootPart extends AbstractPart implements IPanelParent {
 	/**
 	 * Create the part for the specified child model.
 	 * The controls are also builds.
-	 * 
+	 *
 	 * TODO: delegate to sashContainer.
-	 * 
+	 *
 	 * @param rootPart
 	 * @param partModel
 	 * @return
@@ -95,10 +97,10 @@ public class RootPart extends AbstractPart implements IPanelParent {
 		IAbstractPanelModel model = getPartModel().createChildSashModel(rawModel);
 
 		AbstractPanelPart createdPart;
-		if(model instanceof ITabFolderModel) {
-			createdPart = new TabFolderPart(this, (ITabFolderModel)model, rawModel);
-		} else if(model instanceof ISashPanelModel) {
-			createdPart = new SashPanelPart(this, (ISashPanelModel)model, rawModel);
+		if (model instanceof ITabFolderModel) {
+			createdPart = new TabFolderPart(this, (ITabFolderModel) model, rawModel);
+		} else if (model instanceof ISashPanelModel) {
+			createdPart = new SashPanelPart(this, (ISashPanelModel) model, rawModel);
 		} else {
 			// error
 			throw new IllegalArgumentException("Can't create child part for model of type '"
@@ -115,7 +117,7 @@ public class RootPart extends AbstractPart implements IPanelParent {
 
 	/**
 	 * Get the PartModel associated to this Part.
-	 * 
+	 *
 	 * @return
 	 */
 	private ISashWindowsContentProvider getPartModel() {
@@ -125,7 +127,7 @@ public class RootPart extends AbstractPart implements IPanelParent {
 
 	/**
 	 * Synchronize the part and its children.
-	 * 
+	 *
 	 * @param partMap
 	 */
 	public void synchronize2(PartLists partMap) {
@@ -133,14 +135,15 @@ public class RootPart extends AbstractPart implements IPanelParent {
 		// Synchronize locally the child
 		synchronizeChild(partMap);
 		// Synchronize recursively subchilds.
-		if(child != null)
+		if (child != null) {
 			child.synchronize2(partMap);
+		}
 
 	}
 
 	/**
 	 * Synchronize locally the child
-	 * 
+	 *
 	 * @param partMap
 	 */
 	private void synchronizeChild(PartLists partMap) {
@@ -150,10 +153,10 @@ public class RootPart extends AbstractPart implements IPanelParent {
 
 		// Check if old child exist
 		// If exist, check if the current part is associated to the checked model
-		// 
-		if(child != null) {
+		//
+		if (child != null) {
 			// If the tile is already for the model, there is nothing to do.
-			if(child.isPartFor(rawModel)) {
+			if (child.isPartFor(rawModel)) {
 				child.unchanged();
 				return;
 			}
@@ -164,7 +167,7 @@ public class RootPart extends AbstractPart implements IPanelParent {
 		// The child tile need to be updated. Do it.
 		// First check if already exist in the map
 		AbstractPanelPart newPart = partMap.findPartFor(rawModel);
-		if(newPart != null) {
+		if (newPart != null) {
 			// Reparent the tile
 			newPart.reparent(this, getControl());
 		} else {
@@ -178,7 +181,7 @@ public class RootPart extends AbstractPart implements IPanelParent {
 
 	/**
 	 * Set the child. If a child already exist at the specified index, it is lost.
-	 * 
+	 *
 	 * @param newTile
 	 */
 	private void setChild(AbstractPanelPart newTile) {
@@ -187,12 +190,13 @@ public class RootPart extends AbstractPart implements IPanelParent {
 
 	/**
 	 * Fill partMap with the children.
-	 * 
+	 *
 	 * @param partMap
 	 */
 	public void fillPartMap(PartLists partMap) {
-		if(child != null)
+		if (child != null) {
 			child.fillPartMap(partMap);
+		}
 
 	}
 
@@ -200,47 +204,49 @@ public class RootPart extends AbstractPart implements IPanelParent {
 	 * Find The AbstractPart under the specified position.
 	 */
 	public AbstractPart findPart(Point toFind) {
-		if(child != null)
+		if (child != null) {
 			try {
 				return child.findPart(toFind);
 			} catch (NotFoundException e) {
 				System.err.println(e.getMessage());
 				return null;
 			}
-		else
+		} else {
 			return null;
+		}
 	}
 
-	//	/**
-	//	 * Locates the part that intersects the given point and that have the expected type
-	//	 * 
-	//	 * @param toFind
-	//	 * @return
-	//	 */
-	//	public AbstractPart findPartAt(Point toFind, Class<?> tileType) {
-	//		return child.findPartAt(toFind, tileType);
-	//	}
+	// /**
+	// * Locates the part that intersects the given point and that have the expected type
+	// *
+	// * @param toFind
+	// * @return
+	// */
+	// public AbstractPart findPartAt(Point toFind, Class<?> tileType) {
+	// return child.findPartAt(toFind, tileType);
+	// }
 
 	/**
-	 * 
+	 *
 	 */
 	public AbstractPart findPart(Object control) {
-		if(child != null)
+		if (child != null) {
 			return child.findPart(control);
-		else
+		} else {
 			return null;
+		}
 	}
 
-	//	/**
-	//	 * @see org.eclipse.papyrus.infra.core.sasheditor.sash.ITilePart#getDropTarget(java.lang.Object, org.eclipse.papyrus.infra.core.sasheditor.sash.TabFolderPart, org.eclipse.swt.graphics.Point)
-	//	 */
-	//	public IDropTarget getDropTarget(Object draggedObject, TabFolderPart sourcePart, Point position) {
-	//		return child.getDropTarget(draggedObject, sourcePart, position);
-	//	}
+	// /**
+	// * @see org.eclipse.papyrus.infra.core.sasheditor.sash.ITilePart#getDropTarget(java.lang.Object, org.eclipse.papyrus.infra.core.sasheditor.sash.TabFolderPart, org.eclipse.swt.graphics.Point)
+	// */
+	// public IDropTarget getDropTarget(Object draggedObject, TabFolderPart sourcePart, Point position) {
+	// return child.getDropTarget(draggedObject, sourcePart, position);
+	// }
 
 	/**
 	 * Do nothing. This node can't be orphaned
-	 * 
+	 *
 	 */
 	public void orphan() {
 		// Do nothing. This node can't be orphaned
@@ -248,22 +254,24 @@ public class RootPart extends AbstractPart implements IPanelParent {
 
 	/**
 	 * Always return false. This Part can't be orphaned.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.internal.AbstractPart#isOrphaned()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public boolean isOrphaned() {
 		return false;
 	}
 
 	/**
 	 * Get the Garbage state.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.internal.AbstractPart#getGarbageState()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public GarbageState getGarbageState() {
 		return GarbageState.UNVISITED;
 	}
@@ -271,7 +279,7 @@ public class RootPart extends AbstractPart implements IPanelParent {
 	/**
 	 * Accept the provided visitor.
 	 * Call the corresponding accept method in the visitor.
-	 * 
+	 *
 	 * @param visitor
 	 * @return
 	 */
@@ -281,12 +289,13 @@ public class RootPart extends AbstractPart implements IPanelParent {
 
 	/**
 	 * Visit the children of this Tile.
-	 * 
+	 *
 	 * @param visitor
 	 */
 	public boolean visitChildren(IPartVisitor visitor) {
-		if(child != null)
+		if (child != null) {
 			return child.visit(visitor);
+		}
 
 		// Return the default value
 		return true;

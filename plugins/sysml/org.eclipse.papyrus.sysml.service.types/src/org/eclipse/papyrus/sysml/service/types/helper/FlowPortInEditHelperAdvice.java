@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,11 +41,12 @@ public class FlowPortInEditHelperAdvice extends AbstractStereotypedElementEditHe
 
 		return new ConfigureElementCommand(request) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
-				Port port = (Port)request.getElementToConfigure();
+				Port port = (Port) request.getElementToConfigure();
 				FlowPort flowPort = UMLUtil.getStereotypeApplication(port, FlowPort.class);
-				if(flowPort != null) {
+				if (flowPort != null) {
 					flowPort.setDirection(FlowDirection.IN);
 				}
 

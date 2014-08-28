@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 /**
  * This class represents an element which can be accessed from an other element
  * throught a feature using defined navigation rules.
- * 
+ *
  * @author mvelten
- * 
+ *
  */
 public abstract class NavigableElement implements Comparable<NavigableElement> {
 
@@ -38,7 +38,7 @@ public abstract class NavigableElement implements Comparable<NavigableElement> {
 
 	public NavigableElement(EObject element, NavigableElement previousNavigableElement, EStructuralFeature feature) {
 		this(element, feature);
-		if(previousNavigableElement != null) {
+		if (previousNavigableElement != null) {
 			this.depth = previousNavigableElement.getDepth() + 1;
 		}
 	}
@@ -53,7 +53,7 @@ public abstract class NavigableElement implements Comparable<NavigableElement> {
 
 	/**
 	 * Retrieve the navigation depth.
-	 * 
+	 *
 	 * @return the navigation depth
 	 */
 	public int getDepth() {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,10 @@ import com.google.common.base.Predicate;
 
 /**
  * Predicate used to filter views by ID
+ *
  * @author arthur daussy
  */
-public class ViewTypePredicate implements Predicate<View>{
+public class ViewTypePredicate implements Predicate<View> {
 	/**
 	 * Visual Id
 	 */
@@ -31,6 +32,7 @@ public class ViewTypePredicate implements Predicate<View>{
 
 	/**
 	 * Visual Id your are looking for
+	 *
 	 * @param id
 	 */
 	public ViewTypePredicate(String id) {
@@ -39,9 +41,10 @@ public class ViewTypePredicate implements Predicate<View>{
 		this.id = id;
 	}
 
-	public boolean apply(View input) {	
+	@Override
+	public boolean apply(View input) {
 		return id.equals(input.getType());
 	}
-	
-	
+
+
 }

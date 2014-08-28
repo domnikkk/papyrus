@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ public class UndeployExtendedPaletteConfigurationHandler extends AbstractUndeplo
 	@Override
 	protected IStatus deactivatePalette(String identifier, String editorId) {
 		PapyrusPalettePreferences.changePaletteVisibility(identifier, editorId, false);
-		return new Status(IStatus.OK, Activator.ID, "The palette configuration "+identifier+" has been successfully deactivated and undeployed");
+		return new Status(IStatus.OK, Activator.ID, "The palette configuration " + identifier + " has been successfully deactivated and undeployed");
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

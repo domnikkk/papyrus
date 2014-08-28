@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ import org.eclipse.uml2.uml.Parameter;
  * Main listener for model changes (registered via plugin.xml). It will delegate
  * to the sub-listeners for specific sub-elements (type, operation, port, ...) that
  * can be found in this package
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class ModelListener implements IPapyrusListener {
 
@@ -41,14 +41,15 @@ public class ModelListener implements IPapyrusListener {
 	 */
 	public static boolean syncFromEditor;
 
+	@Override
 	public void notifyChanged(Notification notification) {
 		Object notifier = notification.getNotifier();
 		int eventType = notification.getEventType();
-		if(syncFromEditor) {
+		if (syncFromEditor) {
 			return;
 		}
-		if((eventType == Notification.REMOVING_ADAPTER) ||
-			(eventType == Notification.RESOLVE)) {
+		if ((eventType == Notification.REMOVING_ADAPTER) ||
+				(eventType == Notification.RESOLVE)) {
 			// does not indicate a modification of the element
 			return;
 		}
@@ -58,45 +59,45 @@ public class ModelListener implements IPapyrusListener {
 		try {
 			// TODO: kind of get nearest classifier
 
-			if(notifier instanceof Classifier) {
-				Classifier classifier = (Classifier)notifier;
-				if((eventType == Notification.REMOVE) ||
-					(eventType == PapyrusStereotypeListener.MODIFIED_STEREOTYPE)) {
+			if (notifier instanceof Classifier) {
+				Classifier classifier = (Classifier) notifier;
+				if ((eventType == Notification.REMOVE) ||
+						(eventType == PapyrusStereotypeListener.MODIFIED_STEREOTYPE)) {
 					regenList.add(classifier);
 				}
 				// don't treat addition here, since operations/properties do not have their final names yet
 				// IStorage storage = new TextStorage(string);
 			}
-			else if(notifier instanceof Feature) {
+			else if (notifier instanceof Feature) {
 				// if a feature is added, it is first generated with a dummy name, then the name is corrected.
-				Feature feature = (Feature)notifier;
+				Feature feature = (Feature) notifier;
 				Element owner = feature.getOwner();
-				if(owner instanceof Classifier) {
+				if (owner instanceof Classifier) {
 					// System.out.println(owner);
-					regenList.add((Classifier)owner);
+					regenList.add((Classifier) owner);
 				}
 			}
-			else if(notifier instanceof Parameter) {
-				Parameter parameter = (Parameter)notifier;
+			else if (notifier instanceof Parameter) {
+				Parameter parameter = (Parameter) notifier;
 				if (parameter.getOperation() != null) {
 					Element owner = parameter.getOperation().getOwner();
-					if(owner instanceof Classifier) {
+					if (owner instanceof Classifier) {
 						// System.out.println(owner);
-						regenList.add((Classifier)owner);
+						regenList.add((Classifier) owner);
 					}
 				}
 			}
-			else if(notifier instanceof DirectedRelationship) {
+			else if (notifier instanceof DirectedRelationship) {
 				// if a feature is added, it is first generated with a dummy name, then the name is corrected.
-				DirectedRelationship dr = (DirectedRelationship)notifier;
-				for(Element client : dr.getSources()) {
-					if(client instanceof Classifier) {
+				DirectedRelationship dr = (DirectedRelationship) notifier;
+				for (Element client : dr.getSources()) {
+					if (client instanceof Classifier) {
 						// System.out.println(client);
-						regenList.add((Classifier)client);
+						regenList.add((Classifier) client);
 					}
 				}
 			}
-			else if(notifier instanceof Package) {
+			else if (notifier instanceof Package) {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -22,23 +22,22 @@ import org.eclipse.uml2.uml.TemplateBinding;
 public class BindOperation implements IBindingHelper, PreCopyListener {
 
 	private TemplateBinding binding;
-	
+
 	@Override
 	public EObject preCopyEObject(LazyCopier copy, EObject sourceEObj) {
-		
-		if(sourceEObj instanceof Operation) {
+
+		if (sourceEObj instanceof Operation) {
 			Operation operation = (Operation) sourceEObj;
 			Classifier actual = TemplateUtils.getFirstActualFromBinding(binding);
 
 			Operation newOperation = BindingUtils.instantiateOperation(copy, actual, operation);
-			for(Behavior method : operation.getMethods()) {
-				if(method instanceof OpaqueBehavior) {
+			for (Behavior method : operation.getMethods()) {
+				if (method instanceof OpaqueBehavior) {
 					try {
 						Behavior newBehavior =
-							BindingUtils.instantiateBehavior(copy, actual, (OpaqueBehavior)method);
+								BindingUtils.instantiateBehavior(copy, actual, (OpaqueBehavior) method);
 						newBehavior.setSpecification(newOperation);
-					}
-					catch (TransformationException e) {
+					} catch (TransformationException e) {
 						Activator.log.error(e);
 					}
 				}

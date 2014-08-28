@@ -9,7 +9,7 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
  *****************************************************************************/
@@ -23,18 +23,13 @@
 package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParentJavaElement;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
-
 import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
 
 /**
@@ -44,8 +39,8 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTParentJavaElementImpl#getChildren <em>Children</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTParentJavaElementImpl#getFlags <em>Flags</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTParentJavaElementImpl#getChildren <em>Children</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTParentJavaElementImpl#getFlags <em>Flags</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,6 +52,7 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	 * The default value of the '{@link #getFlags() <em>Flags</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFlags()
 	 * @generated
 	 * @ordered
@@ -67,6 +63,7 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	 * The cached value of the '{@link #getFlags() <em>Flags</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFlags()
 	 * @generated
 	 * @ordered
@@ -76,6 +73,7 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTParentJavaElementImpl() {
@@ -85,6 +83,7 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,8 +94,10 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<JDTJavaElement> getChildren() {
 		return new DerivedUnionEObjectEList<JDTJavaElement>(JDTJavaElement.class, this, JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__CHILDREN, null);
 	}
@@ -104,8 +105,10 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getFlags() {
 		return flags;
 	}
@@ -113,35 +116,41 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setFlags(int newFlags) {
 		int oldFlags = flags;
 		flags = newFlags;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS, oldFlags, flags));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void setFlag(int flag, boolean value) {
 
-		if(value == true)
+		if (value == true) {
 			setFlags(getFlags() | (flag));
-		else
+		} else {
 			setFlags(getFlags() & ~(flag));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public boolean isFlagSet(int flag) {
 
 		return (getFlags() & flag) != 0;
@@ -150,15 +159,16 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__CHILDREN:
-				return getChildren();
-			case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS:
-				return getFlags();
+		case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__CHILDREN:
+			return getChildren();
+		case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS:
+			return getFlags();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -166,14 +176,15 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS:
-				setFlags((Integer)newValue);
-				return;
+		case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS:
+			setFlags((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -181,14 +192,15 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS:
-				setFlags(FLAGS_EDEFAULT);
-				return;
+		case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS:
+			setFlags(FLAGS_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -196,15 +208,16 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__CHILDREN:
-				return isSetChildren();
-			case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS:
-				return flags != FLAGS_EDEFAULT;
+		case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__CHILDREN:
+			return isSetChildren();
+		case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS:
+			return flags != FLAGS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -212,15 +225,19 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == JDTParent.class) {
 			switch (derivedFeatureID) {
-				case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__CHILDREN: return JdtmmPackage.JDT_PARENT__CHILDREN;
-				case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS: return JdtmmPackage.JDT_PARENT__FLAGS;
-				default: return -1;
+			case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__CHILDREN:
+				return JdtmmPackage.JDT_PARENT__CHILDREN;
+			case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS:
+				return JdtmmPackage.JDT_PARENT__FLAGS;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -229,15 +246,19 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == JDTParent.class) {
 			switch (baseFeatureID) {
-				case JdtmmPackage.JDT_PARENT__CHILDREN: return JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__CHILDREN;
-				case JdtmmPackage.JDT_PARENT__FLAGS: return JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS;
-				default: return -1;
+			case JdtmmPackage.JDT_PARENT__CHILDREN:
+				return JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__CHILDREN;
+			case JdtmmPackage.JDT_PARENT__FLAGS:
+				return JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -246,11 +267,14 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (flags: ");
@@ -262,10 +286,11 @@ public abstract class JDTParentJavaElementImpl extends JDTJavaElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public boolean isSetChildren() {
 		return false;
 	}
 
-} //JDTParentJavaElementImpl
+} // JDTParentJavaElementImpl

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,7 +8,7 @@
  *
  * Contributors:
  *  Mickaël Adam (ALL4TEC) mickael.adam@all4tec.net - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.properties.databinding;
 
@@ -31,9 +31,9 @@ import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.ModelStyleSheets;
 
 
 /**
- * 
+ *
  * EMFObservableList containing stylesheets of the model.
- * 
+ *
  * @author Mickael ADAM
  *
  */
@@ -52,29 +52,29 @@ public class ModelStyleSheetObservableList extends EMFObservableList implements 
 	 * Constructor.
 	 *
 	 * @param notationResource
-	 *        the notation resource
+	 *            the notation resource
 	 * @param wrappedList
-	 *        the wrapped list
+	 *            the wrapped list
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param source
-	 *        the source
+	 *            the source
 	 * @param feature
-	 *        the feature
+	 *            the feature
 	 */
 	public ModelStyleSheetObservableList(Resource notationResource, List<?> wrappedList, EditingDomain domain, EObject source, EStructuralFeature feature) {
 		super(wrappedList, domain, source, feature);
 		this.notationResource = notationResource;
 		this.domain = domain;
 
-		source.eAdapters().add(listener = new CustomModelStyleSheetListener(notationResource, (ModelStyleSheets)source, this));
+		source.eAdapters().add(listener = new CustomModelStyleSheetListener(notationResource, (ModelStyleSheets) source, this));
 	}
 
 	/**
 	 * Used to add manually.
 	 *
 	 * @param values
-	 *        the values
+	 *            the values
 	 * @return the command to add values
 	 * @see org.eclipse.papyrus.infra.emf.databinding.EMFObservableList#getAddAllCommand(java.util.Collection)
 	 */
@@ -82,7 +82,7 @@ public class ModelStyleSheetObservableList extends EMFObservableList implements 
 	public Command getAddAllCommand(Collection<?> values) {
 		CompoundCommand compoundCommand = new CompoundCommand();
 		compoundCommand.append(super.getAddAllCommand(values));
-		compoundCommand.append(new AddAllModelStyleSheetCommand((TransactionalEditingDomain)domain, notationResource, values));
+		compoundCommand.append(new AddAllModelStyleSheetCommand((TransactionalEditingDomain) domain, notationResource, values));
 		return compoundCommand;
 	}
 
@@ -90,7 +90,7 @@ public class ModelStyleSheetObservableList extends EMFObservableList implements 
 	 * Used to remove manually styleSheet.
 	 *
 	 * @param value
-	 *        the value
+	 *            the value
 	 * @return the removes command
 	 * @see org.eclipse.papyrus.infra.emf.databinding.EMFObservableList#getRemoveCommand(java.lang.Object)
 	 */
@@ -99,20 +99,20 @@ public class ModelStyleSheetObservableList extends EMFObservableList implements 
 		CompoundCommand compoundCommand = new CompoundCommand();
 		compoundCommand.append(super.getRemoveCommand(value));
 
-		//Retrieve all instance of EObjectListValueStyleImpl on all CSSDiagramImpl to 
+		// Retrieve all instance of EObjectListValueStyleImpl on all CSSDiagramImpl to
 		EList<EObject> objectsFromResource = notationResource.getContents();
-		for(Object objectFromResource : objectsFromResource) {
-			//For each CSSDiagramImpl of the resource look for EObjectListValueStyleImpl
-			if(objectFromResource instanceof CSSDiagram) {
-				EList<EObject> objectsFromDiagram = ((CSSDiagram)objectFromResource).getStyles();
-				for(Object objectFromDiagram : objectsFromDiagram) {
-					//For each EObjectListValueStyleImpl of each diagram
-					if(objectFromDiagram instanceof EObjectListValueStyle) {
-						for(Object styleSheetReference : ((EObjectListValueStyle)objectFromDiagram).getEObjectListValue()) {
-							//If the current style sheet to delete from model exist on a diagram, add it on the root
-							if(value == styleSheetReference) {
-								compoundCommand.append(new RemoveObjectCommand((TransactionalEditingDomain)domain, (EObject)styleSheetReference));
-								compoundCommand.append(new AddModelStyleSheetCommand((TransactionalEditingDomain)domain, notationResource, (EObject)styleSheetReference));
+		for (Object objectFromResource : objectsFromResource) {
+			// For each CSSDiagramImpl of the resource look for EObjectListValueStyleImpl
+			if (objectFromResource instanceof CSSDiagram) {
+				EList<EObject> objectsFromDiagram = ((CSSDiagram) objectFromResource).getStyles();
+				for (Object objectFromDiagram : objectsFromDiagram) {
+					// For each EObjectListValueStyleImpl of each diagram
+					if (objectFromDiagram instanceof EObjectListValueStyle) {
+						for (Object styleSheetReference : ((EObjectListValueStyle) objectFromDiagram).getEObjectListValue()) {
+							// If the current style sheet to delete from model exist on a diagram, add it on the root
+							if (value == styleSheetReference) {
+								compoundCommand.append(new RemoveObjectCommand((TransactionalEditingDomain) domain, (EObject) styleSheetReference));
+								compoundCommand.append(new AddModelStyleSheetCommand((TransactionalEditingDomain) domain, notationResource, (EObject) styleSheetReference));
 							}
 						}
 					}
@@ -126,13 +126,13 @@ public class ModelStyleSheetObservableList extends EMFObservableList implements 
 	 * Used to remove all StyleSheets before replace the new list.
 	 *
 	 * @param values
-	 *        the values
+	 *            the values
 	 * @return the removes the all command
 	 * @see org.eclipse.papyrus.infra.emf.databinding.EMFObservableList#getRemoveAllCommand(java.util.Collection)
 	 */
 	@Override
 	public Command getRemoveAllCommand(Collection<?> values) {
-		return new RemoveAllModelStyleSheetValueCommand((TransactionalEditingDomain)domain, notationResource, values);
+		return new RemoveAllModelStyleSheetValueCommand((TransactionalEditingDomain) domain, notationResource, values);
 	}
 
 	/**

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -53,15 +53,15 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#addChild(org.soyatec.xaml.IDocumentObject )
 	 */
 	public void addChild(DocumentObject child) {
 		assert child != null;
 
-		if(children.add(child)) {
+		if (children.add(child)) {
 			DocumentObject oParent = (child).getParent();
-			if(oParent != null) {
+			if (oParent != null) {
 				oParent.delChild(child);
 			}
 			// Assign the new parent.
@@ -71,7 +71,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#getChildren()
 	 */
 	public DocumentObject[] getChildren() {
@@ -80,7 +80,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#getContent()
 	 */
 	public String getContent() {
@@ -89,7 +89,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#getId()
 	 */
 	public String getId() {
@@ -98,7 +98,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#getName()
 	 */
 	public String getName() {
@@ -107,7 +107,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#getNamespace()
 	 */
 	public String getNamespace() {
@@ -116,7 +116,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#hasCildren()
 	 */
 	public boolean hasChildren() {
@@ -125,7 +125,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#include(java.io.InputStream)
 	 */
 	public void include(ElementManager elementManager, InputStream input) throws IOException {
@@ -138,12 +138,12 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#include(java.lang.String)
 	 */
 	public void include(ElementManager elementManager, String path) throws IOException {
 		InputStream input = elementManager.getDocumentRoot().openStream(path);
-		if(input != null) {
+		if (input != null) {
 			include(elementManager, input);
 		}
 		input.close();
@@ -151,7 +151,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#setContent(java.lang.String)
 	 */
 	public void setContent(String text) {
@@ -160,14 +160,14 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	@Override
 	public Object clone() throws CloneNotSupportedException {
-		DocumentObject docobj = (DocumentObject)super.clone();
+		DocumentObject docobj = (DocumentObject) super.clone();
 
 		// Clear object id.
 		docobj.id = null;
 
 		// Clone children.
-		for(DocumentObject child : getChildren()) {
-			DocumentObject nChild = (DocumentObject)child.clone();
+		for (DocumentObject child : getChildren()) {
+			DocumentObject nChild = (DocumentObject) child.clone();
 			docobj.addChild(nChild);
 		}
 
@@ -176,10 +176,10 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/**
 	 * @param id
-	 *        the id to set
+	 *            the id to set
 	 */
 	protected void setId(String id) {
-		if(this.id != null) {
+		if (this.id != null) {
 			throw new IllegalStateException("Element id is already defined");
 		}
 
@@ -190,7 +190,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/**
 	 * @param namespace
-	 *        the namespace to set
+	 *            the namespace to set
 	 * @uml.property name="namespace"
 	 */
 	protected void setNamespace(String namespace) {
@@ -202,7 +202,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/**
 	 * @param name
-	 *        the name to set
+	 *            the name to set
 	 * @uml.property name="name"
 	 */
 	protected void setName(String name) {
@@ -214,18 +214,18 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/**
 	 * Remove child from parent.
-	 * 
+	 *
 	 * @param child
-	 *        the removed parent.
+	 *            the removed parent.
 	 */
 	protected void delChild(DocumentObject child) {
 		assert child != null;
 
-		if(child instanceof Element) {
-			DocumentObject parent = ((Element)child).getParent();
-			if(parent != null && parent.equals(this)) {
+		if (child instanceof Element) {
+			DocumentObject parent = ((Element) child).getParent();
+			if (parent != null && parent.equals(this)) {
 				children.remove(child);
-				((Element)child).setParent(null);
+				((Element) child).setParent(null);
 			}
 		}
 	}

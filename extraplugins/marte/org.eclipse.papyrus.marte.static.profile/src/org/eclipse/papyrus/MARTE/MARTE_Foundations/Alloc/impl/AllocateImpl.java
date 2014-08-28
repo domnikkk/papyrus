@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,10 +36,10 @@ import org.eclipse.uml2.uml.Abstraction;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AllocateImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AllocateImpl#getNature <em>Nature</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AllocateImpl#getBase_Abstraction <em>Base Abstraction</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AllocateImpl#getImpliedConstraint <em>Implied Constraint</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AllocateImpl#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AllocateImpl#getNature <em>Nature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AllocateImpl#getBase_Abstraction <em>Base Abstraction</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AllocateImpl#getImpliedConstraint <em>Implied Constraint</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,6 +50,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -60,6 +61,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -70,6 +72,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	 * The default value of the '{@link #getNature() <em>Nature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNature()
 	 * @generated
 	 * @ordered
@@ -80,6 +83,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	 * The cached value of the '{@link #getNature() <em>Nature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNature()
 	 * @generated
 	 * @ordered
@@ -90,6 +94,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	 * The cached value of the '{@link #getBase_Abstraction() <em>Base Abstraction</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_Abstraction()
 	 * @generated
 	 * @ordered
@@ -100,6 +105,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	 * The cached value of the '{@link #getImpliedConstraint() <em>Implied Constraint</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getImpliedConstraint()
 	 * @generated
 	 * @ordered
@@ -109,6 +115,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected AllocateImpl() {
@@ -118,6 +125,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,8 +136,10 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public AllocationKind getKind() {
 		return kind;
 	}
@@ -137,20 +147,25 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setKind(AllocationKind newKind) {
 		AllocationKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AllocPackage.ALLOCATE__KIND, oldKind, kind));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public AllocationNature getNature() {
 		return nature;
 	}
@@ -158,27 +173,33 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setNature(AllocationNature newNature) {
 		AllocationNature oldNature = nature;
 		nature = newNature == null ? NATURE_EDEFAULT : newNature;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AllocPackage.ALLOCATE__NATURE, oldNature, nature));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Abstraction getBase_Abstraction() {
 		if (base_Abstraction != null && base_Abstraction.eIsProxy()) {
-			InternalEObject oldBase_Abstraction = (InternalEObject)base_Abstraction;
-			base_Abstraction = (Abstraction)eResolveProxy(oldBase_Abstraction);
+			InternalEObject oldBase_Abstraction = (InternalEObject) base_Abstraction;
+			base_Abstraction = (Abstraction) eResolveProxy(oldBase_Abstraction);
 			if (base_Abstraction != oldBase_Abstraction) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AllocPackage.ALLOCATE__BASE_ABSTRACTION, oldBase_Abstraction, base_Abstraction));
+				}
 			}
 		}
 		return base_Abstraction;
@@ -187,6 +208,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Abstraction basicGetBase_Abstraction() {
@@ -196,20 +218,25 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_Abstraction(Abstraction newBase_Abstraction) {
 		Abstraction oldBase_Abstraction = base_Abstraction;
 		base_Abstraction = newBase_Abstraction;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AllocPackage.ALLOCATE__BASE_ABSTRACTION, oldBase_Abstraction, base_Abstraction));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<NfpConstraint> getImpliedConstraint() {
 		if (impliedConstraint == null) {
 			impliedConstraint = new EObjectResolvingEList<NfpConstraint>(NfpConstraint.class, this, AllocPackage.ALLOCATE__IMPLIED_CONSTRAINT);
@@ -220,20 +247,23 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AllocPackage.ALLOCATE__KIND:
-				return getKind();
-			case AllocPackage.ALLOCATE__NATURE:
-				return getNature();
-			case AllocPackage.ALLOCATE__BASE_ABSTRACTION:
-				if (resolve) return getBase_Abstraction();
-				return basicGetBase_Abstraction();
-			case AllocPackage.ALLOCATE__IMPLIED_CONSTRAINT:
-				return getImpliedConstraint();
+		case AllocPackage.ALLOCATE__KIND:
+			return getKind();
+		case AllocPackage.ALLOCATE__NATURE:
+			return getNature();
+		case AllocPackage.ALLOCATE__BASE_ABSTRACTION:
+			if (resolve) {
+				return getBase_Abstraction();
+			}
+			return basicGetBase_Abstraction();
+		case AllocPackage.ALLOCATE__IMPLIED_CONSTRAINT:
+			return getImpliedConstraint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -241,25 +271,26 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AllocPackage.ALLOCATE__KIND:
-				setKind((AllocationKind)newValue);
-				return;
-			case AllocPackage.ALLOCATE__NATURE:
-				setNature((AllocationNature)newValue);
-				return;
-			case AllocPackage.ALLOCATE__BASE_ABSTRACTION:
-				setBase_Abstraction((Abstraction)newValue);
-				return;
-			case AllocPackage.ALLOCATE__IMPLIED_CONSTRAINT:
-				getImpliedConstraint().clear();
-				getImpliedConstraint().addAll((Collection<? extends NfpConstraint>)newValue);
-				return;
+		case AllocPackage.ALLOCATE__KIND:
+			setKind((AllocationKind) newValue);
+			return;
+		case AllocPackage.ALLOCATE__NATURE:
+			setNature((AllocationNature) newValue);
+			return;
+		case AllocPackage.ALLOCATE__BASE_ABSTRACTION:
+			setBase_Abstraction((Abstraction) newValue);
+			return;
+		case AllocPackage.ALLOCATE__IMPLIED_CONSTRAINT:
+			getImpliedConstraint().clear();
+			getImpliedConstraint().addAll((Collection<? extends NfpConstraint>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -267,23 +298,24 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AllocPackage.ALLOCATE__KIND:
-				setKind(KIND_EDEFAULT);
-				return;
-			case AllocPackage.ALLOCATE__NATURE:
-				setNature(NATURE_EDEFAULT);
-				return;
-			case AllocPackage.ALLOCATE__BASE_ABSTRACTION:
-				setBase_Abstraction((Abstraction)null);
-				return;
-			case AllocPackage.ALLOCATE__IMPLIED_CONSTRAINT:
-				getImpliedConstraint().clear();
-				return;
+		case AllocPackage.ALLOCATE__KIND:
+			setKind(KIND_EDEFAULT);
+			return;
+		case AllocPackage.ALLOCATE__NATURE:
+			setNature(NATURE_EDEFAULT);
+			return;
+		case AllocPackage.ALLOCATE__BASE_ABSTRACTION:
+			setBase_Abstraction((Abstraction) null);
+			return;
+		case AllocPackage.ALLOCATE__IMPLIED_CONSTRAINT:
+			getImpliedConstraint().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -291,19 +323,20 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AllocPackage.ALLOCATE__KIND:
-				return kind != KIND_EDEFAULT;
-			case AllocPackage.ALLOCATE__NATURE:
-				return nature != NATURE_EDEFAULT;
-			case AllocPackage.ALLOCATE__BASE_ABSTRACTION:
-				return base_Abstraction != null;
-			case AllocPackage.ALLOCATE__IMPLIED_CONSTRAINT:
-				return impliedConstraint != null && !impliedConstraint.isEmpty();
+		case AllocPackage.ALLOCATE__KIND:
+			return kind != KIND_EDEFAULT;
+		case AllocPackage.ALLOCATE__NATURE:
+			return nature != NATURE_EDEFAULT;
+		case AllocPackage.ALLOCATE__BASE_ABSTRACTION:
+			return base_Abstraction != null;
+		case AllocPackage.ALLOCATE__IMPLIED_CONSTRAINT:
+			return impliedConstraint != null && !impliedConstraint.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -311,11 +344,14 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (kind: ");
@@ -326,4 +362,4 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 		return result.toString();
 	}
 
-} //AllocateImpl
+} // AllocateImpl

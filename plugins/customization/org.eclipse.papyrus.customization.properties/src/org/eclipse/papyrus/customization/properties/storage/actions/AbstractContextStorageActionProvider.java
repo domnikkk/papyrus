@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,8 +27,9 @@ public abstract class AbstractContextStorageActionProvider implements IContextSt
 		super();
 	}
 
+	@Override
 	public IContextCopyAction getContextCopyAction() {
-		if(copyAction == null) {
+		if (copyAction == null) {
 			copyAction = createContextCopyAction();
 		}
 
@@ -37,8 +38,9 @@ public abstract class AbstractContextStorageActionProvider implements IContextSt
 
 	protected abstract IContextCopyAction createContextCopyAction();
 
+	@Override
 	public IContextEditAction getContextEditAction() {
-		if(editAction == null) {
+		if (editAction == null) {
 			editAction = createContextEditAction();
 		}
 
@@ -47,8 +49,9 @@ public abstract class AbstractContextStorageActionProvider implements IContextSt
 
 	protected abstract IContextEditAction createContextEditAction();
 
+	@Override
 	public IContextDeleteAction getContextDeleteAction() {
-		if(deleteAction == null) {
+		if (deleteAction == null) {
 			deleteAction = createContextDeleteAction();
 		}
 

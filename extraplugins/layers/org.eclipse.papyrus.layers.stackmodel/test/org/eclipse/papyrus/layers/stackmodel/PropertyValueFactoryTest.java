@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -22,10 +22,10 @@ import org.junit.Test;
 
 
 /**
- * 
+ *
  * @author dumoulin
  *
- * 
+ *
  */
 public class PropertyValueFactoryTest {
 
@@ -34,19 +34,19 @@ public class PropertyValueFactoryTest {
 	public static final String EXT_NSURI = "org.eclipse.papyrus.extpropertymodel.0.10";
 	public static final String CLASS_LAYER = "Layer";
 	public static final String CLASS_EXTPROPERTY = "StringAndIntPropertyValue";
-	
-	
+
+
 	/**
 	 * Initialize EMF registry for standalone tests.
 	 * Do not do it for plugin tests
-	 * 
+	 *
 	 */
 	@BeforeClass
 	static public void setRegistry() {
-	
-		
+
+
 	}
-	
+
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -63,9 +63,10 @@ public class PropertyValueFactoryTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.PropertyValueFactory#newInstance(java.lang.String, java.lang.String)}.
-	 * @throws IllegalAccessException 
-	 * @throws InstantiationException 
-	 * @throws ClassNotFoundException 
+	 *
+	 * @throws IllegalAccessException
+	 * @throws InstantiationException
+	 * @throws ClassNotFoundException
 	 */
 	@Test
 	@Ignore
@@ -73,13 +74,14 @@ public class PropertyValueFactoryTest {
 		PropertyValueFactory factory = new PropertyValueFactory();
 		Object instance = factory.newInstance("org.eclipse.papyrus.layers.stackmodel", "org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersStackImpl");
 
-	
+
 		assertNotNull("instance created", instance);
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.PropertyValueFactory#loadClass(java.lang.String, java.lang.String)}.
-	 * @throws ClassNotFoundException 
+	 *
+	 * @throws ClassNotFoundException
 	 */
 	@Test
 	public void testLoadLocalClass() throws ClassNotFoundException {
@@ -88,30 +90,32 @@ public class PropertyValueFactoryTest {
 		PropertyValueFactory factory = new PropertyValueFactory();
 		Class<?> type = factory.loadClass("org.eclipse.papyrus.layers.stackmodel", "org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersStackImpl");
 
-	
+
 		assertNotNull("class loaded", type);
 	}
 
 	/**
-	 * Test method 
-	 * @throws IllegalAccessException 
-	 * @throws InstantiationException 
-	 * @throws ClassNotFoundException 
+	 * Test method
+	 *
+	 * @throws IllegalAccessException
+	 * @throws InstantiationException
+	 * @throws ClassNotFoundException
 	 */
 	@Test
 	public void testLocalnewEClassInstance() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		PropertyValueFactory factory = new PropertyValueFactory();
 		Object instance = factory.newEClassInstance(LOCAL_NSURI, CLASS_LAYER);
 
-	
+
 		assertNotNull("instance created", instance);
 	}
 
 	/**
-	 * Test method 
-	 * @throws IllegalAccessException 
-	 * @throws InstantiationException 
-	 * @throws ClassNotFoundException 
+	 * Test method
+	 *
+	 * @throws IllegalAccessException
+	 * @throws InstantiationException
+	 * @throws ClassNotFoundException
 	 */
 	@Test
 	@Ignore
@@ -119,15 +123,16 @@ public class PropertyValueFactoryTest {
 		PropertyValueFactory factory = new PropertyValueFactory();
 		Object instance = factory.newEClassInstance(EXT_NSURI, CLASS_EXTPROPERTY);
 
-	
+
 		assertNotNull("instance created", instance);
 	}
 
 	/**
-	 * Test method 
-	 * @throws IllegalAccessException 
-	 * @throws InstantiationException 
-	 * @throws ClassNotFoundException 
+	 * Test method
+	 *
+	 * @throws IllegalAccessException
+	 * @throws InstantiationException
+	 * @throws ClassNotFoundException
 	 */
 	@Test
 	@Ignore
@@ -137,7 +142,7 @@ public class PropertyValueFactoryTest {
 
 		String value = "John Doe";
 		factory.setEObjectPropertyValue(instance, PROPERTY_NAME, value);
-		
+
 		// Try to get the value
 		Object res = factory.getEObjectPropertyValue(instance, PROPERTY_NAME);
 

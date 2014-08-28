@@ -31,14 +31,14 @@ public class ShowHideRelatedContentsAction extends org.eclipse.papyrus.sysml.dia
 	public ShowHideRelatedContentsAction() {
 		super();
 	}
-	
+
 	/**
 	 * @see org.eclipse.papyrus.diagram.common.actions.AbstractShowHideAction#initAction()
 	 */
 	@Override
 	protected void initAction() {
 		super.initAction();
-		
+
 		// Only ConstraintParameter are allowed => remove Ports (and subclasses) from AffixedNode selection
 		List<EditPartRepresentation> editPartRepresentationsToRemove = new ArrayList<EditPartRepresentation>();
 		Set<EObject> representedAffixedElements = new HashSet<EObject>();
@@ -57,7 +57,7 @@ public class ShowHideRelatedContentsAction extends org.eclipse.papyrus.sysml.dia
 		for (EditPartRepresentation editPartRepresentationToRemove : editPartRepresentationsToRemove) {
 			affixedNodeRepresentations.getPossibleElement().remove(editPartRepresentationToRemove);
 		}
-		
+
 		// Remove from structure category elements which match as AffixedNode
 		editPartRepresentationsToRemove = new ArrayList<EditPartRepresentation>();
 		CompartmentEditPartRepresentation compartmentEditPartRepresentation = getCompartmentEditPartRepresentation(this.representations);
@@ -79,12 +79,12 @@ public class ShowHideRelatedContentsAction extends org.eclipse.papyrus.sysml.dia
 	}
 
 	/**
-	 * 
+	 *
 	 * @param editPartRepresentations
 	 * @return
 	 */
 	private AffixedChildrenEditPartRepresentation getAffixedNodeRepresentation(List<EditPartRepresentation> editPartRepresentations) {
-		
+
 		for (EditPartRepresentation representation : editPartRepresentations) {
 			if (representation instanceof AffixedChildrenEditPartRepresentation) {
 				return (AffixedChildrenEditPartRepresentation) representation;
@@ -99,12 +99,12 @@ public class ShowHideRelatedContentsAction extends org.eclipse.papyrus.sysml.dia
 	}
 
 	/**
-	 * 
+	 *
 	 * @param editPartRepresentations
 	 * @return
 	 */
 	private CompartmentEditPartRepresentation getCompartmentEditPartRepresentation(List<EditPartRepresentation> editPartRepresentations) {
-		
+
 		for (EditPartRepresentation representation : editPartRepresentations) {
 			if (representation instanceof CompartmentEditPartRepresentation && !(representation instanceof AffixedChildrenEditPartRepresentation)) {
 				return (CompartmentEditPartRepresentation) representation;

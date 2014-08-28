@@ -67,24 +67,24 @@ public abstract class AbstractMessageFigure extends UMLEdgeFigure {
 	@Override
 	public void setLineWidth(final int w) {
 		super.setLineWidth(w);
-		if(getSourceDecoration() instanceof Shape) {
-			((Shape)getSourceDecoration()).setLineWidth(w);
+		if (getSourceDecoration() instanceof Shape) {
+			((Shape) getSourceDecoration()).setLineWidth(w);
 		}
-		if(getTargetDecoration() instanceof Shape) {
-			((Shape)getTargetDecoration()).setLineWidth(w);
+		if (getTargetDecoration() instanceof Shape) {
+			((Shape) getTargetDecoration()).setLineWidth(w);
 		}
 	}
 
 	@Override
 	public void setForegroundColor(final Color c) {
 		super.setForegroundColor(c);
-		if(getSourceDecoration() instanceof Shape) {
-			((Shape)getSourceDecoration()).setForegroundColor(c);
-			((Shape)getSourceDecoration()).setBackgroundColor(c);
+		if (getSourceDecoration() instanceof Shape) {
+			((Shape) getSourceDecoration()).setForegroundColor(c);
+			((Shape) getSourceDecoration()).setBackgroundColor(c);
 		}
-		if(getTargetDecoration() instanceof Shape) {
-			((Shape)getTargetDecoration()).setForegroundColor(c);
-			((Shape)getTargetDecoration()).setBackgroundColor(c);
+		if (getTargetDecoration() instanceof Shape) {
+			((Shape) getTargetDecoration()).setForegroundColor(c);
+			((Shape) getTargetDecoration()).setBackgroundColor(c);
 		}
 	}
 

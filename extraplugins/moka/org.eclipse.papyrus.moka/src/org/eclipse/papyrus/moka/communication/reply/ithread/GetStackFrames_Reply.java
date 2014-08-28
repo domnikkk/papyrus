@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,19 +31,20 @@ public class GetStackFrames_Reply extends ReplyMessage {
 
 	/**
 	 * Constructs a reply message from an array of stack frames
-	 * 
+	 *
 	 * @param stackFrames
-	 *        The stack associated with this reply message
+	 *            The stack associated with this reply message
 	 */
 	public GetStackFrames_Reply(IStackFrame[] stackFrames) {
 		this.stackFrames = stackFrames;
-		if(this.stackFrames == null)
-			this.stackFrames = new IStackFrame[]{};
+		if (this.stackFrames == null) {
+			this.stackFrames = new IStackFrame[] {};
+		}
 	}
 
 	/**
 	 * Returns the stack associated with this reply message
-	 * 
+	 *
 	 * @return the stack associated with this reply message
 	 */
 	public IStackFrame[] getStackFrames() {
@@ -52,9 +53,10 @@ public class GetStackFrames_Reply extends ReplyMessage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.communication.reply.ReplyMessage#marshal()
 	 */
+	@Override
 	public String marshal() {
 		return Marshaller.getInstance().getStackFrames_reply_marshal(this);
 	}

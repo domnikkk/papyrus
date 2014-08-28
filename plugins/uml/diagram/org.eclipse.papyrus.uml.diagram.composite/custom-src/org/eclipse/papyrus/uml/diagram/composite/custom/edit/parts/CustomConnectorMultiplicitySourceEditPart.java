@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,9 +34,9 @@ public class CustomConnectorMultiplicitySourceEditPart extends org.eclipse.papyr
 	 */
 	@Override
 	public EObject resolveSemanticElement() {
-		if(super.resolveSemanticElement() instanceof Connector) {
-			Connector connector = (Connector)super.resolveSemanticElement();
-			if(connector.getEnds().size() == 2) {
+		if (super.resolveSemanticElement() instanceof Connector) {
+			Connector connector = (Connector) super.resolveSemanticElement();
+			if (connector.getEnds().size() == 2) {
 				return connector.getEnds().get(0);
 			}
 		}

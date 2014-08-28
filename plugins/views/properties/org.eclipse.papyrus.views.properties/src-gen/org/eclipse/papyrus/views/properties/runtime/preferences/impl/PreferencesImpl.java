@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ import org.eclipse.papyrus.views.properties.runtime.preferences.PreferencesPacka
  * <li>{@link org.eclipse.papyrus.views.properties.runtime.preferences.impl.PreferencesImpl#getVersion <em>Version</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class PreferencesImpl extends EObjectImpl implements Preferences {
@@ -47,7 +47,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	 * The cached value of the '{@link #getContexts() <em>Contexts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContexts()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PreferencesImpl() {
@@ -89,7 +89,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,11 +100,11 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ContextDescriptor> getContexts() {
-		if(contexts == null) {
+		if (contexts == null) {
 			contexts = new EObjectContainmentEList<ContextDescriptor>(ContextDescriptor.class, this, PreferencesPackage.PREFERENCES__CONTEXTS);
 		}
 		return contexts;
@@ -113,7 +113,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getVersion() {
@@ -123,27 +123,28 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setVersion(int newVersion) {
 		int oldVersion = version;
 		version = newVersion;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PreferencesPackage.PREFERENCES__VERSION, oldVersion, version));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case PreferencesPackage.PREFERENCES__CONTEXTS:
-			return ((InternalEList<?>)getContexts()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getContexts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -151,12 +152,12 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case PreferencesPackage.PREFERENCES__CONTEXTS:
 			return getContexts();
 		case PreferencesPackage.PREFERENCES__VERSION:
@@ -168,19 +169,19 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case PreferencesPackage.PREFERENCES__CONTEXTS:
 			getContexts().clear();
-			getContexts().addAll((Collection<? extends ContextDescriptor>)newValue);
+			getContexts().addAll((Collection<? extends ContextDescriptor>) newValue);
 			return;
 		case PreferencesPackage.PREFERENCES__VERSION:
-			setVersion((Integer)newValue);
+			setVersion((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,12 +190,12 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case PreferencesPackage.PREFERENCES__CONTEXTS:
 			getContexts().clear();
 			return;
@@ -208,12 +209,12 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case PreferencesPackage.PREFERENCES__CONTEXTS:
 			return contexts != null && !contexts.isEmpty();
 		case PreferencesPackage.PREFERENCES__VERSION:
@@ -225,13 +226,14 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (version: ");
@@ -240,4 +242,4 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 		return result.toString();
 	}
 
-} //PreferencesImpl
+} // PreferencesImpl

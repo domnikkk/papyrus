@@ -5,17 +5,12 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Point32;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Polygon;
@@ -27,7 +22,7 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.PolygonImpl#getPoint <em>Point</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.PolygonImpl#getPoint <em>Point</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +33,7 @@ public class PolygonImpl extends MinimalEObjectImpl.Container implements Polygon
 	 * The cached value of the '{@link #getPoint() <em>Point</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPoint()
 	 * @generated
 	 * @ordered
@@ -47,6 +43,7 @@ public class PolygonImpl extends MinimalEObjectImpl.Container implements Polygon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PolygonImpl() {
@@ -56,6 +53,7 @@ public class PolygonImpl extends MinimalEObjectImpl.Container implements Polygon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -66,6 +64,7 @@ public class PolygonImpl extends MinimalEObjectImpl.Container implements Polygon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<Point32> getPoint() {
@@ -78,13 +77,14 @@ public class PolygonImpl extends MinimalEObjectImpl.Container implements Polygon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Geometry_datatypesPackage.POLYGON__POINT:
-				return ((InternalEList<?>)getPoint()).basicRemove(otherEnd, msgs);
+		case Geometry_datatypesPackage.POLYGON__POINT:
+			return ((InternalEList<?>) getPoint()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -92,13 +92,14 @@ public class PolygonImpl extends MinimalEObjectImpl.Container implements Polygon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Geometry_datatypesPackage.POLYGON__POINT:
-				return getPoint();
+		case Geometry_datatypesPackage.POLYGON__POINT:
+			return getPoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,16 +107,17 @@ public class PolygonImpl extends MinimalEObjectImpl.Container implements Polygon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Geometry_datatypesPackage.POLYGON__POINT:
-				getPoint().clear();
-				getPoint().addAll((Collection<? extends Point32>)newValue);
-				return;
+		case Geometry_datatypesPackage.POLYGON__POINT:
+			getPoint().clear();
+			getPoint().addAll((Collection<? extends Point32>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -123,14 +125,15 @@ public class PolygonImpl extends MinimalEObjectImpl.Container implements Polygon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Geometry_datatypesPackage.POLYGON__POINT:
-				getPoint().clear();
-				return;
+		case Geometry_datatypesPackage.POLYGON__POINT:
+			getPoint().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -138,15 +141,16 @@ public class PolygonImpl extends MinimalEObjectImpl.Container implements Polygon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Geometry_datatypesPackage.POLYGON__POINT:
-				return point != null && !point.isEmpty();
+		case Geometry_datatypesPackage.POLYGON__POINT:
+			return point != null && !point.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PolygonImpl
+} // PolygonImpl

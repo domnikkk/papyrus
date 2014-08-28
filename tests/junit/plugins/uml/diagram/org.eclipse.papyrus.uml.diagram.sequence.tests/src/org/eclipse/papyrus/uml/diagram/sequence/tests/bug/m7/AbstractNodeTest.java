@@ -88,7 +88,7 @@ public abstract class AbstractNodeTest extends TestTopNode {
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase#getDiagramCommandCreation()
+	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase#getDiagramCommandCreation()
 	 *
 	 * @return
 	 */

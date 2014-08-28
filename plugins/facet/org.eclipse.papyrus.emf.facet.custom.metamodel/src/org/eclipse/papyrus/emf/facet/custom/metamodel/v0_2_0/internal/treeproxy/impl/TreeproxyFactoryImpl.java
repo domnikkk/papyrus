@@ -55,4 +55,4 @@ public class TreeproxyFactoryImpl implements TreeproxyFactory {
 		return eStructuralFeatureTreeElement;
 	}
 
-} //TreeproxyFactoryImpl
+} // TreeproxyFactoryImpl

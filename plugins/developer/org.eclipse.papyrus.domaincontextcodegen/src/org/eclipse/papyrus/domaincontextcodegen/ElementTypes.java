@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Element Types</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.ElementTypes#getDomain <em>Domain</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getElementTypes()
  * @model
  * @generated
@@ -37,7 +37,7 @@ public interface ElementTypes extends EObject {
 	 * If the meaning of the '<em>Types</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Types</em>' containment reference list.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getElementTypes_Types()
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementType#getOwner
@@ -48,14 +48,13 @@ public interface ElementTypes extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Domain</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.domaincontextcodegen.DomainContext#getElementTypes <em>Element Types</em>}
-	 * '.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.domaincontextcodegen.DomainContext#getElementTypes <em>Element Types</em>} '.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Domain</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Domain</em>' container reference.
 	 * @see #setDomain(DomainContext)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getElementTypes_Domain()
@@ -69,9 +68,9 @@ public interface ElementTypes extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.ElementTypes#getDomain <em>Domain</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Domain</em>' container reference.
+	 *            the new value of the '<em>Domain</em>' container reference.
 	 * @see #getDomain()
 	 * @generated
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ public class ActivityLinkMappingHelper implements ILinkMappingHelper {
 
 	/**
 	 * Gets the single instance of ClassLinkMappingHelper.
-	 * 
+	 *
 	 * @return single instance of ClassLinkMappingHelper
 	 */
 	public static ActivityLinkMappingHelper getInstance() {
@@ -57,17 +57,21 @@ public class ActivityLinkMappingHelper implements ILinkMappingHelper {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<?> getSource(Element link) {
 		return LinkMappingHelper.getSource(link, new CommonSourceUMLSwitch() {
 
+			@Override
 			public Collection<?> caseActivityEdge(ActivityEdge object) {
 				return Collections.singleton(object.getSource());
 			}
 
+			@Override
 			public Collection<?> caseObjectFlow(ObjectFlow object) {
 				return caseActivityEdge(object);
 			}
 
+			@Override
 			public Collection<?> caseControlFlow(ControlFlow object) {
 				return caseActivityEdge(object);
 			}
@@ -77,17 +81,21 @@ public class ActivityLinkMappingHelper implements ILinkMappingHelper {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<?> getTarget(Element link) {
 		return LinkMappingHelper.getTarget(link, new CommonTargetUMLSwitch() {
 
+			@Override
 			public Collection<?> caseActivityEdge(ActivityEdge object) {
 				return Collections.singleton(object.getTarget());
 			}
 
+			@Override
 			public Collection<?> caseObjectFlow(ObjectFlow object) {
 				return caseActivityEdge(object);
 			}
 
+			@Override
 			public Collection<?> caseControlFlow(ControlFlow object) {
 				return caseActivityEdge(object);
 			}

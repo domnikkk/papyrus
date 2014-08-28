@@ -13,6 +13,7 @@ import org.eclipse.papyrus.eastadl.annex.behaviordescription.Behaviordescription
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class BehaviordescriptionXMLProcessor extends XMLProcessor {
@@ -21,17 +22,19 @@ public class BehaviordescriptionXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public BehaviordescriptionXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		BehaviordescriptionPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the BehaviordescriptionResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -44,4 +47,4 @@ public class BehaviordescriptionXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //BehaviordescriptionXMLProcessor
+} // BehaviordescriptionXMLProcessor

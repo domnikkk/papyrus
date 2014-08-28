@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 422257
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core.exporter;
 
@@ -56,7 +56,7 @@ public class ModelExporter implements IModelExporter {
 		add(result, mapping.getConfiguration().validate());
 		add(result, mapping.validate());
 
-		if(result.getSeverity() < Diagnostic.ERROR) {
+		if (result.getSeverity() < Diagnostic.ERROR) {
 			add(result, mapping.getConfiguration().getOperationContext().run(new IModelTransferOperation() {
 
 				@Override
@@ -77,7 +77,7 @@ public class ModelExporter implements IModelExporter {
 		// 1 for proxy resolution, 1 for resource saving, and 1 for clean-up
 		SubMonitor sub = SubMonitor.convert(monitor, Messages.ModelExporter_0, 2 * configuration.getModelsToTransfer().size() + 3);
 
-		IInternalPapyrusRepository repository = (IInternalPapyrusRepository)mapping.getRepository();
+		IInternalPapyrusRepository repository = (IInternalPapyrusRepository) mapping.getRepository();
 		ResourceSet destination = new ResourceSetImpl();
 		ResourceSet source = repository.createTransaction(new CDOProxyResolvingResourceSet());
 		CDOView view = repository.getCDOView(source);
@@ -85,17 +85,17 @@ public class ModelExporter implements IModelExporter {
 		try {
 			// load all models to be exported and resolve their cross-references so that CDO-style
 			// cross-resource proxies will be resolved
-			for(IModelTransferNode model : configuration.getModelsToTransfer()) {
+			for (IModelTransferNode model : configuration.getModelsToTransfer()) {
 				add(result, loadModel(model, view, sub.newChild(1)));
 			}
 			EcoreUtil.resolveAll(source);
 			sub.worked(1);
 
-			for(IModelTransferNode model : configuration.getModelsToTransfer()) {
+			for (IModelTransferNode model : configuration.getModelsToTransfer()) {
 				add(result, exportModel(model, view, mapping.getMapping(model), destination, sub.newChild(1)));
 			}
 
-			for(IModelTransferNode model : configuration.getModelsToTransfer()) {
+			for (IModelTransferNode model : configuration.getModelsToTransfer()) {
 				add(result, saveModel(model, view, mapping.getMapping(model), destination));
 			}
 			sub.worked(1);
@@ -118,9 +118,9 @@ public class ModelExporter implements IModelExporter {
 
 		SubMonitor sub = SubMonitor.convert(monitor, model.getName(), model.getResourceURIs().size());
 
-		for(URI next : model.getResourceURIs()) {
+		for (URI next : model.getResourceURIs()) {
 			Resource source = view.getResourceSet().getResource(next, true);
-			for(Iterator<?> iter = source.getContents().iterator(); iter.hasNext(); iter.next()) {
+			for (Iterator<?> iter = source.getContents().iterator(); iter.hasNext(); iter.next()) {
 				// just iterate them to load the contents; we will walk over the content trees later to resolve proxies
 			}
 			sub.worked(1);
@@ -138,7 +138,7 @@ public class ModelExporter implements IModelExporter {
 
 		SubMonitor sub = SubMonitor.convert(monitor, model.getName(), model.getResourceURIs().size());
 
-		for(URI next : model.getResourceURIs()) {
+		for (URI next : model.getResourceURIs()) {
 			Resource source = view.getResourceSet().getResource(next, true);
 			Resource destination = rset.createResource(URI.createPlatformResourceURI(basePath.addFileExtension(next.fileExtension()).toString(), true));
 			add(result, exportResource(source, destination));
@@ -161,12 +161,12 @@ public class ModelExporter implements IModelExporter {
 
 		IPath basePath = toPath.removeFileExtension();
 
-		for(URI next : model.getResourceURIs()) {
+		for (URI next : model.getResourceURIs()) {
 			Resource destination = rset.getResource(URI.createPlatformResourceURI(basePath.addFileExtension(next.fileExtension()).toString(), true), false);
 			try {
 				destination.save(null);
 			} catch (Exception e) {
-				add(result, new BasicDiagnostic(IStatus.ERROR, Activator.PLUGIN_ID, 0, Messages.ModelExporter_1, new Object[]{ e }));
+				add(result, new BasicDiagnostic(IStatus.ERROR, Activator.PLUGIN_ID, 0, Messages.ModelExporter_1, new Object[] { e }));
 			}
 		}
 
@@ -174,7 +174,7 @@ public class ModelExporter implements IModelExporter {
 	}
 
 	private static void add(DiagnosticChain diagnostics, Diagnostic diagnostic) {
-		if(diagnostic.getSeverity() > Diagnostic.OK) {
+		if (diagnostic.getSeverity() > Diagnostic.OK) {
 			diagnostics.merge(diagnostic);
 		}
 	}

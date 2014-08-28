@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,18 +30,19 @@ import org.eclipse.papyrus.uml.commands.command.PutInClipboardCommand;
 /**
  * Handler for the Copy Action
  */
-@Deprecated // use org.eclipse.papyrus.views.modelexplorer.handler.CopyHandler
+@Deprecated
+// use org.eclipse.papyrus.views.modelexplorer.handler.CopyHandler
 public class CopyHandler extends AbstractEMFCommandHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.AbstractEMFCommandHandler.handler.AbstractCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected Command getCommand(ServicesRegistry registry) {
-		if(registry != null) {
+		if (registry != null) {
 			final TransactionalEditingDomain editingDomain;
 			try {
 				editingDomain = ServiceUtils.getInstance().getTransactionalEditingDomain(registry);
@@ -51,10 +52,10 @@ public class CopyHandler extends AbstractEMFCommandHandler {
 			}
 
 			Collection<EObject> selection = getSelectedElements();
-			
+
 			List<Object> objectList = new ArrayList<Object>();
 			objectList.addAll(selection);
-			if(editingDomain != null && !selection.isEmpty()) {
+			if (editingDomain != null && !selection.isEmpty()) {
 				return new PutInClipboardCommand(editingDomain, objectList);
 			}
 		}

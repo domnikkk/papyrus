@@ -1,22 +1,20 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
@@ -31,8 +29,8 @@ import org.eclipse.emf.ecore.resource.Resource;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.QueryContext#getSelectedModelElements <em>Selected Model Elements</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.QueryContext#getSelectedModels <em>Selected Models</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.QueryContext#getSelectedModelElements <em>Selected Model Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.QueryContext#getSelectedModels <em>Selected Models</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,10 +47,10 @@ public interface QueryContext extends EObject {
 	 * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Selected Model Elements</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Selected Model Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Selected Model Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQueryContext_SelectedModelElements()
 	 * @model
@@ -67,10 +65,10 @@ public interface QueryContext extends EObject {
 	 * The list contents are of type {@link org.eclipse.emf.ecore.resource.Resource}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Selected Models</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Selected Models</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Selected Models</em>' attribute list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQueryContext_SelectedModels()
 	 * @model transient="true"

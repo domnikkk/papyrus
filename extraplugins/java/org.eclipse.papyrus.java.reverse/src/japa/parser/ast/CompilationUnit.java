@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2007 Júlio Vilmar Gesser.
- * 
+ *
  * This file is part of Java 1.5 parser and Abstract Syntax Tree.
  *
  * Java 1.5 parser and Abstract Syntax Tree is free software: you can redistribute it and/or modify
@@ -36,7 +36,7 @@ import java.util.List;
  * <p>
  * This class represents the entire compilation unit. Each java file denotes a compilation unit.
  * </p>
- * 
+ *
  * The CompilationUnit is constructed following the syntax:<br>
  * <code>
  * <table>
@@ -44,14 +44,14 @@ import java.util.List;
  *   <td align=right>CompilationUnit</td>
  *   <td align=center>::=</td>
  *   <td align=left>
- *   ( {@link PackageDeclaration} )?<br> 
+ *   ( {@link PackageDeclaration} )?<br>
  *   ( {@link ImportDeclaration} )*<br>
  *   ( {@link TypeDeclaration} )*<br>
  *   </td>
  * </tr>
- * </table> 
+ * </table>
  * </code>
- * 
+ *
  * @author Julio Vilmar Gesser
  */
 public final class CompilationUnit extends Node {
@@ -90,7 +90,7 @@ public final class CompilationUnit extends Node {
 	 * Including javadocs, line comments and block comments of all types,
 	 * inner-classes and other members.<br>
 	 * If there is no comment, <code>null</code> is returned.
-	 * 
+	 *
 	 * @return list with all comments of this compilation unit or <code>null</code>
 	 * @see JavadocComment
 	 * @see LineComment
@@ -102,7 +102,7 @@ public final class CompilationUnit extends Node {
 
 	/**
 	 * Retrieves the list of imports declared in this compilation unit or <code>null</code> if there is no import.
-	 * 
+	 *
 	 * @return the list of imports or <code>null</code> if there is no import
 	 */
 	public List<ImportDeclaration> getImports() {
@@ -112,7 +112,7 @@ public final class CompilationUnit extends Node {
 	/**
 	 * Retrieves the package declaration of this compilation unit.<br>
 	 * If this compilation unit has no package declaration (default package), <code>null</code> is returned.
-	 * 
+	 *
 	 * @return the package declaration or <code>null</code>
 	 */
 	public PackageDeclaration getPakage() {
@@ -122,7 +122,7 @@ public final class CompilationUnit extends Node {
 	/**
 	 * Return the list of types declared in this compilation unit.<br>
 	 * If there is no types declared, <code>null</code> is returned.
-	 * 
+	 *
 	 * @return the list of types or <code>null</code> null if there is no type
 	 * @see AnnotationDeclaration
 	 * @see ClassOrInterfaceDeclaration
@@ -135,9 +135,9 @@ public final class CompilationUnit extends Node {
 
 	/**
 	 * Sets the list of comments of this compilation unit.
-	 * 
+	 *
 	 * @param comments
-	 *        the list of comments
+	 *            the list of comments
 	 */
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
@@ -146,9 +146,9 @@ public final class CompilationUnit extends Node {
 	/**
 	 * Sets the list of imports of this compilation unit.
 	 * The list is initially <code>null</code>.
-	 * 
+	 *
 	 * @param imports
-	 *        the list of imports
+	 *            the list of imports
 	 */
 	public void setImports(List<ImportDeclaration> imports) {
 		this.imports = imports;
@@ -156,9 +156,9 @@ public final class CompilationUnit extends Node {
 
 	/**
 	 * Sets or clear the package declarations of this compilation unit.
-	 * 
+	 *
 	 * @param pakage
-	 *        the pakage declaration to set or <code>null</code> to default package
+	 *            the pakage declaration to set or <code>null</code> to default package
 	 */
 	public void setPakage(PackageDeclaration pakage) {
 		this.pakage = pakage;
@@ -166,9 +166,9 @@ public final class CompilationUnit extends Node {
 
 	/**
 	 * Sets the list of types declared in this compilation unit.
-	 * 
+	 *
 	 * @param types
-	 *        the lis of types
+	 *            the lis of types
 	 */
 	public void setTypes(List<TypeDeclaration> types) {
 		this.types = types;

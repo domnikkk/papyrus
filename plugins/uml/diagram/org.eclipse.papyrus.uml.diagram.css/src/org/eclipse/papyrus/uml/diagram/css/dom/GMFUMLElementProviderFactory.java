@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,17 +19,19 @@ import org.eclipse.uml2.uml.Element;
 
 /**
  * IElementProvider Factory for Diagrams related to UML Elements
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public class GMFUMLElementProviderFactory implements ICSSElementProviderFactory {
 
+	@Override
 	public boolean isProviderFor(CSSDiagram diagram) {
-		return diagram.getElement() instanceof Element; //Provider for UML Elements
+		return diagram.getElement() instanceof Element; // Provider for UML Elements
 	}
 
+	@Override
 	public IElementProvider createProvider(CSSDiagram diagram) {
 		return new GMFUMLElementProvider();
 	}

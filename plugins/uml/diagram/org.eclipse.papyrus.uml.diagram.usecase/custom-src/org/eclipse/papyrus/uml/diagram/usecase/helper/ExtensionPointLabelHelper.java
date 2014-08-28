@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * The Class ExtensionPointLabelHelper to display label on extension point
- * 
+ *
  * @author eperico
  */
 public class ExtensionPointLabelHelper extends StereotypedElementLabelHelper {
@@ -33,7 +33,7 @@ public class ExtensionPointLabelHelper extends StereotypedElementLabelHelper {
 	private static ExtensionPointLabelHelper labelHelper;
 
 	public static ExtensionPointLabelHelper getInstance() {
-		if(labelHelper == null) {
+		if (labelHelper == null) {
 			labelHelper = new ExtensionPointLabelHelper();
 		}
 		return labelHelper;
@@ -41,10 +41,11 @@ public class ExtensionPointLabelHelper extends StereotypedElementLabelHelper {
 
 	/**
 	 * Refreshes the label of the figure associated to the specified edit part
-	 * 
+	 *
 	 * @param editPart
-	 *        the edit part managing the refreshed figure
+	 *            the edit part managing the refreshed figure
 	 */
+	@Override
 	public void refreshEditPartDisplay(GraphicalEditPart editPart) {
 		IFigure figure = editPart.getFigure();
 		// computes the icon to be displayed
@@ -55,16 +56,16 @@ public class ExtensionPointLabelHelper extends StereotypedElementLabelHelper {
 		// TODO (RS - CEA LIST): how many icons were displayed => should fix a max number
 		// solution: set all images to null, and then add the correct icons
 		int i = 0;
-		while(((WrappingLabel)figure).getIcon(i) != null) {
-			((WrappingLabel)figure).setIcon(null, i);
+		while (((WrappingLabel) figure).getIcon(i) != null) {
+			((WrappingLabel) figure).setIcon(null, i);
 			i++;
 		}
 		i = 0;
-		for(Image image : imageToDisplay) {
-			((WrappingLabel)figure).setIcon(image, i);
+		for (Image image : imageToDisplay) {
+			((WrappingLabel) figure).setIcon(image, i);
 			i++;
 		}
-		((WrappingLabel)figure).setText(labelToDisplay(editPart));
+		((WrappingLabel) figure).setText(labelToDisplay(editPart));
 	}
 
 	/**
@@ -73,8 +74,8 @@ public class ExtensionPointLabelHelper extends StereotypedElementLabelHelper {
 	@Override
 	public NamedElement getUMLElement(GraphicalEditPart editPart) {
 		EObject element = super.getUMLElement(editPart);
-		if(element instanceof NamedElement) {
-			return (NamedElement)element;
+		if (element instanceof NamedElement) {
+			return (NamedElement) element;
 		}
 		return null;
 	}
@@ -85,7 +86,7 @@ public class ExtensionPointLabelHelper extends StereotypedElementLabelHelper {
 	@Override
 	protected String elementLabel(GraphicalEditPart editPart) {
 		NamedElement element = getUMLElement(editPart);
-		if(element != null) {
+		if (element != null) {
 			return getUMLElement(editPart).getName();
 		}
 		return null;

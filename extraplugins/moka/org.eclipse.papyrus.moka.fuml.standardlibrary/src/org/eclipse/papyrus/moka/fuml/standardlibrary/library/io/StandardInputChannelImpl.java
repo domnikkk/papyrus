@@ -43,7 +43,7 @@ public class StandardInputChannelImpl extends AbstractService {
 
 	@Override
 	public Execution dispatch(Operation operation) {
-		if(operation.getName().equals("readLine")) {
+		if (operation.getName().equals("readLine")) {
 			return new ReadLineExecution(operation);
 		}
 		return null;
@@ -66,7 +66,7 @@ public class StandardInputChannelImpl extends AbstractService {
 		public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
 			// This implementation does not produce errorStatus information.
 			try {
-				if(bufferedReader == null) {
+				if (bufferedReader == null) {
 					bufferedReader = new BufferedReader(new InputStreamReader(in));
 				}
 				String line = bufferedReader.readLine();

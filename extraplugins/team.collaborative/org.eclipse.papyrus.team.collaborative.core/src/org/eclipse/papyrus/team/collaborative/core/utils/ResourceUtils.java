@@ -35,44 +35,44 @@ public class ResourceUtils {
 	protected ResourceUtils() {
 	}
 
-	//	/**
-	//	 * Gets the list of non collab ancestor.
-	//	 * 
-	//	 * @param inputResources
-	//	 *        the input resources
-	//	 * @param resourceSet
-	//	 *        the resource set
-	//	 * @return the list of non collab ancestor
-	//	 */
-	//	public static List<IResource> getListOfNonCollabAncestor(Collection<? extends IResource> inputResources, ResourceSet resourceSet) {
-	//		List<IResource> result = new ArrayList<IResource>();
-	//		for(IResource f : inputResources) {
-	//			if(!(f instanceof IProject) && (f instanceof IContainer || f instanceof IFile)) {
-	//				getListOfNonCollabAncestor(Collections.singletonList(f.getParent()), resourceSet);
-	//				if(!result.contains(f)) {
-	//					if(!ICollaborativeManager.INSTANCE.isCollab(Collections.singleton(IResourceToExtendedURI.getInstance().apply(f)), resourceSet)) {
-	//						result.add(f);
-	//					}
-	//				}
-	//			}
-	//		}
-	//		return result;
-	//	}
+	// /**
+	// * Gets the list of non collab ancestor.
+	// *
+	// * @param inputResources
+	// * the input resources
+	// * @param resourceSet
+	// * the resource set
+	// * @return the list of non collab ancestor
+	// */
+	// public static List<IResource> getListOfNonCollabAncestor(Collection<? extends IResource> inputResources, ResourceSet resourceSet) {
+	// List<IResource> result = new ArrayList<IResource>();
+	// for(IResource f : inputResources) {
+	// if(!(f instanceof IProject) && (f instanceof IContainer || f instanceof IFile)) {
+	// getListOfNonCollabAncestor(Collections.singletonList(f.getParent()), resourceSet);
+	// if(!result.contains(f)) {
+	// if(!ICollaborativeManager.INSTANCE.isCollab(Collections.singleton(IResourceToExtendedURI.getInstance().apply(f)), resourceSet)) {
+	// result.add(f);
+	// }
+	// }
+	// }
+	// }
+	// return result;
+	// }
 
 
 	/**
 	 * Gets the list ancestors.
-	 * 
+	 *
 	 * @param inputResources
-	 *        the input resources
+	 *            the input resources
 	 * @return the list ancestors
 	 */
 	public static List<IResource> getListAncestors(Collection<? extends IResource> inputResources) {
 		List<IResource> result = new ArrayList<IResource>();
-		for(IResource f : inputResources) {
-			if(!(f instanceof IProject) && (f instanceof IContainer || f instanceof IFile)) {
+		for (IResource f : inputResources) {
+			if (!(f instanceof IProject) && (f instanceof IContainer || f instanceof IFile)) {
 				getListAncestors(Collections.singletonList(f.getParent()));
-				if(!result.contains(f)) {
+				if (!result.contains(f)) {
 					result.add(f);
 				}
 			}

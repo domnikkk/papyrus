@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
@@ -26,7 +26,7 @@ import org.eclipse.papyrus.uml.diagram.common.actions.AbstractAction;
 
 /**
  * Initialize diagram elements from a semantic model.
- * 
+ *
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  */
 public class InitializeDiagramAction extends AbstractAction {
@@ -65,10 +65,10 @@ public class InitializeDiagramAction extends AbstractAction {
 	 */
 	@Override
 	public void run() {
-		if(false == getHost() instanceof DiagramEditPart) {
+		if (false == getHost() instanceof DiagramEditPart) {
 			return;
 		}
-		DiagramEditPart diagramEditPart = (DiagramEditPart)getHost();
+		DiagramEditPart diagramEditPart = (DiagramEditPart) getHost();
 		final DiagramCommandStack commandStack = getHost().getDiagramEditDomain().getDiagramCommandStack();
 		// Run initialize at first (do not use compoundCommand)
 		commandStack.execute(new ICommandProxy(new InitializeDiagramCommand(diagramEditPart)), new NullProgressMonitor());

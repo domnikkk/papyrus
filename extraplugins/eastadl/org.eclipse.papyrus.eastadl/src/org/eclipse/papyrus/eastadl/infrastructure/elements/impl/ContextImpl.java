@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,8 +33,8 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecificatio
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.impl.ContextImpl#getTraceableSpecification <em>Traceable Specification</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.impl.ContextImpl#getOwnedRelationship <em>Owned Relationship</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.impl.ContextImpl#getTraceableSpecification <em>Traceable Specification</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.impl.ContextImpl#getOwnedRelationship <em>Owned Relationship</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +45,7 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	 * The cached value of the '{@link #getTraceableSpecification() <em>Traceable Specification</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getTraceableSpecification()
 	 * @generated
 	 * @ordered
@@ -55,6 +56,7 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	 * The cached value of the '{@link #getOwnedRelationship() <em>Owned Relationship</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOwnedRelationship()
 	 * @generated
 	 * @ordered
@@ -64,6 +66,7 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ContextImpl() {
@@ -73,15 +76,16 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ElementsPackage.CONTEXT__TRACEABLE_SPECIFICATION:
-				return getTraceableSpecification();
-			case ElementsPackage.CONTEXT__OWNED_RELATIONSHIP:
-				return getOwnedRelationship();
+		case ElementsPackage.CONTEXT__TRACEABLE_SPECIFICATION:
+			return getTraceableSpecification();
+		case ElementsPackage.CONTEXT__OWNED_RELATIONSHIP:
+			return getOwnedRelationship();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -89,15 +93,16 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ElementsPackage.CONTEXT__TRACEABLE_SPECIFICATION:
-				return traceableSpecification != null && !traceableSpecification.isEmpty();
-			case ElementsPackage.CONTEXT__OWNED_RELATIONSHIP:
-				return ownedRelationship != null && !ownedRelationship.isEmpty();
+		case ElementsPackage.CONTEXT__TRACEABLE_SPECIFICATION:
+			return traceableSpecification != null && !traceableSpecification.isEmpty();
+		case ElementsPackage.CONTEXT__OWNED_RELATIONSHIP:
+			return ownedRelationship != null && !ownedRelationship.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -105,20 +110,21 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ElementsPackage.CONTEXT__TRACEABLE_SPECIFICATION:
-				getTraceableSpecification().clear();
-				getTraceableSpecification().addAll((Collection<? extends TraceableSpecification>)newValue);
-				return;
-			case ElementsPackage.CONTEXT__OWNED_RELATIONSHIP:
-				getOwnedRelationship().clear();
-				getOwnedRelationship().addAll((Collection<? extends Relationship>)newValue);
-				return;
+		case ElementsPackage.CONTEXT__TRACEABLE_SPECIFICATION:
+			getTraceableSpecification().clear();
+			getTraceableSpecification().addAll((Collection<? extends TraceableSpecification>) newValue);
+			return;
+		case ElementsPackage.CONTEXT__OWNED_RELATIONSHIP:
+			getOwnedRelationship().clear();
+			getOwnedRelationship().addAll((Collection<? extends Relationship>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -126,6 +132,7 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,17 +143,18 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ElementsPackage.CONTEXT__TRACEABLE_SPECIFICATION:
-				getTraceableSpecification().clear();
-				return;
-			case ElementsPackage.CONTEXT__OWNED_RELATIONSHIP:
-				getOwnedRelationship().clear();
-				return;
+		case ElementsPackage.CONTEXT__TRACEABLE_SPECIFICATION:
+			getTraceableSpecification().clear();
+			return;
+		case ElementsPackage.CONTEXT__OWNED_RELATIONSHIP:
+			getOwnedRelationship().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -154,8 +162,10 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<Relationship> getOwnedRelationship() {
 		if (ownedRelationship == null) {
 			ownedRelationship = new EObjectResolvingEList<Relationship>(Relationship.class, this, ElementsPackage.CONTEXT__OWNED_RELATIONSHIP);
@@ -166,8 +176,10 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<TraceableSpecification> getTraceableSpecification() {
 		if (traceableSpecification == null) {
 			traceableSpecification = new EObjectResolvingEList<TraceableSpecification>(TraceableSpecification.class, this, ElementsPackage.CONTEXT__TRACEABLE_SPECIFICATION);
@@ -175,4 +187,4 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 		return traceableSpecification;
 	}
 
-} //ContextImpl
+} // ContextImpl

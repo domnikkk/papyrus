@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -21,10 +21,10 @@ package org.eclipse.papyrus.layers.stackmodel.layers;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontColor <em>Font Color</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontName <em>Font Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontHeigh <em>Font Heigh</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#isBold <em>Bold</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontColor <em>Font Color</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontName <em>Font Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontHeigh <em>Font Heigh</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#isBold <em>Bold</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,10 +38,10 @@ public interface FontInstance extends TypeInstance {
 	 * The default value is <code>"15053796"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Font Color</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Font Color</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Font Color</em>' attribute.
 	 * @see #setFontColor(int)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getFontInstance_FontColor()
@@ -54,7 +54,9 @@ public interface FontInstance extends TypeInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontColor <em>Font Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Font Color</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Font Color</em>' attribute.
 	 * @see #getFontColor()
 	 * @generated
 	 */
@@ -65,10 +67,10 @@ public interface FontInstance extends TypeInstance {
 	 * The default value is <code>"Segoe UI"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Font Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Font Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Font Name</em>' attribute.
 	 * @see #setFontName(String)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getFontInstance_FontName()
@@ -81,7 +83,9 @@ public interface FontInstance extends TypeInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontName <em>Font Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Font Name</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Font Name</em>' attribute.
 	 * @see #getFontName()
 	 * @generated
 	 */
@@ -92,10 +96,10 @@ public interface FontInstance extends TypeInstance {
 	 * The default value is <code>"9"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Font Heigh</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Font Heigh</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Font Heigh</em>' attribute.
 	 * @see #setFontHeigh(int)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getFontInstance_FontHeigh()
@@ -108,7 +112,9 @@ public interface FontInstance extends TypeInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontHeigh <em>Font Heigh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Font Heigh</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Font Heigh</em>' attribute.
 	 * @see #getFontHeigh()
 	 * @generated
 	 */
@@ -119,10 +125,10 @@ public interface FontInstance extends TypeInstance {
 	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Bold</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Bold</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Bold</em>' attribute.
 	 * @see #setBold(boolean)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getFontInstance_Bold()
@@ -135,7 +141,9 @@ public interface FontInstance extends TypeInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#isBold <em>Bold</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Bold</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Bold</em>' attribute.
 	 * @see #isBold()
 	 * @generated
 	 */

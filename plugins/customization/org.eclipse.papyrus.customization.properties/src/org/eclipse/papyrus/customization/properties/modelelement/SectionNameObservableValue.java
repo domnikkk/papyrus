@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,21 +30,21 @@ import org.eclipse.papyrus.views.properties.contexts.Section;
  * name. When the section's name changes, the XWT resource should
  * be moved as well, and the section's sectionFile property should
  * be updated.
- * 
+ *
  * @author Camille Letavernier
  */
 public class SectionNameObservableValue extends EMFObservableValue {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param eObject
-	 *        The EObject (Section) being edited
+	 *            The EObject (Section) being edited
 	 * @param eStructuralFeature
-	 *        The feature ("name") being editing
+	 *            The feature ("name") being editing
 	 * @param domain
-	 *        The editing domain on which the commands will be called
+	 *            The editing domain on which the commands will be called
 	 */
 	public SectionNameObservableValue(EObject eObject, EStructuralFeature eStructuralFeature, EditingDomain domain) {
 		super(eObject, eStructuralFeature, domain);
@@ -53,7 +53,7 @@ public class SectionNameObservableValue extends EMFObservableValue {
 	@Override
 	public void doSetValue(Object value) {
 		CompoundCommand command = new CompoundCommand();
-		String name = (String)value;
+		String name = (String) value;
 		command.append(getSetCommand(name));
 		command.append(getMoveCommand(name));
 		command.append(getSetSectionFileCommand(name));
@@ -62,29 +62,29 @@ public class SectionNameObservableValue extends EMFObservableValue {
 
 	/**
 	 * Returns a command to change the section's sectionFile when the name changes
-	 * 
+	 *
 	 * @param name
-	 *        The name of the section we are editing
+	 *            The name of the section we are editing
 	 * @return
 	 *         The command to change the section's sectionFile
 	 */
 	protected Command getSetSectionFileCommand(String name) {
-		return new SetCommand(domain, eObject, ContextsPackage.eINSTANCE.getSection_SectionFile(), "ui/" + name + ".xwt"); //$NON-NLS-1$ //$NON-NLS-2$ 
+		return new SetCommand(domain, eObject, ContextsPackage.eINSTANCE.getSection_SectionFile(), "ui/" + name + ".xwt"); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * Returns the EMF command to move the section's XWT Resource
-	 * 
+	 *
 	 * @param name
-	 *        The new name of the section
+	 *            The new name of the section
 	 * @return
 	 *         The EMF command to move the section's XWT Resource
 	 */
 	protected Command getMoveCommand(String name) {
-		Section section = (Section)eObject;
+		Section section = (Section) eObject;
 
-		//TODO : Create a command for that
-		if(section.getWidget() != null) {
+		// TODO : Create a command for that
+		if (section.getWidget() != null) {
 			URI newURI = URI.createURI("ui/" + name + ".xwt"); //$NON-NLS-1$ //$NON-NLS-2$
 			newURI = newURI.resolve(section.eResource().getURI());
 			ResourceSet resourceSet = section.eResource().getResourceSet();

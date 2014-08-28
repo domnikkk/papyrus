@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 430701
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.menu.handlers;
 
@@ -48,17 +48,18 @@ import org.eclipse.swt.widgets.Text;
  */
 public class CopyInDiagramHandler extends AbstractGraphicalCommandHandler {
 
-	
-	
+
+
 	/**
 	 * Construct copy command from the selection
+	 *
 	 * @param editingDomain
 	 * @param selectedElements
 	 * @return
 	 */
 	public static Command buildCopyCommand(TransactionalEditingDomain editingDomain, Collection<IGraphicalEditPart> selectedElements) {
 		PapyrusClipboard<Object> papyrusClipboard = PapyrusClipboard.getNewInstance();
-		
+
 		Command result;
 
 		DefaultDiagramCopyCommand defaultDiagramCopyCommand = new DefaultDiagramCopyCommand(editingDomain, papyrusClipboard, selectedElements);
@@ -68,12 +69,12 @@ public class CopyInDiagramHandler extends AbstractGraphicalCommandHandler {
 		Diagram diagram = activeDiagramWorkbenchPart.getDiagram();
 		DiagramEditPart diagramEditPart = activeDiagramWorkbenchPart.getDiagramEditPart();
 		List<Object> selectedElementModels = new ArrayList<Object>();
-		for(IGraphicalEditPart iGraphicalEditPart : selectedElements) {
+		for (IGraphicalEditPart iGraphicalEditPart : selectedElements) {
 			selectedElementModels.add(iGraphicalEditPart.getModel());
 		}
 
 		MyCopyImageCommand copyImageCommand = new MyCopyImageCommand("Create image to allow paste on system", diagram, selectedElementModels, diagramEditPart); //$NON-NLS-1$
-		if(copyImageCommand.canExecute()) {
+		if (copyImageCommand.canExecute()) {
 			Command gmFtoGEFCommandWrapper = GMFtoGEFCommandWrapper.wrap(copyImageCommand);
 			result = NonDirtyingUtils.chain(result, gmFtoGEFCommandWrapper);
 		} else {
@@ -81,20 +82,20 @@ public class CopyInDiagramHandler extends AbstractGraphicalCommandHandler {
 		}
 
 		List<IStrategy> allStrategies = PasteStrategyManager.getInstance().getAllStrategies();
-		for(IStrategy iStrategy : allStrategies) {
-			IPasteStrategy iIPasteStrategy = (IPasteStrategy)iStrategy;
+		for (IStrategy iStrategy : allStrategies) {
+			IPasteStrategy iIPasteStrategy = (IPasteStrategy) iStrategy;
 			iIPasteStrategy.prepare(papyrusClipboard, null);
 		}
 
 		return result;
 	}
-	
-	
-	
+
+
+
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -106,24 +107,24 @@ public class CopyInDiagramHandler extends AbstractGraphicalCommandHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.menu.handlers.AbstractGraphicalCommandHandler#setEnabled(java.lang.Object)
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
-		if(evaluationContext instanceof IEvaluationContext) {
-			IEvaluationContext iEvaluationContext = (IEvaluationContext)evaluationContext;
+		if (evaluationContext instanceof IEvaluationContext) {
+			IEvaluationContext iEvaluationContext = (IEvaluationContext) evaluationContext;
 			Object activeFocusControl = iEvaluationContext.getVariable("activeFocusControl"); //$NON-NLS-1$
 			Object activeShell = iEvaluationContext.getVariable("activeShell"); //$NON-NLS-1$
 			Control focusControl = null;
-			if(activeShell instanceof Shell) {
-				Shell shell = (Shell)activeShell;
+			if (activeShell instanceof Shell) {
+				Shell shell = (Shell) activeShell;
 				Display display = shell.getDisplay();
-				if(display != null) {
+				if (display != null) {
 					focusControl = display.getFocusControl();
 				}
 			}
-			if(activeFocusControl instanceof StyledText || focusControl instanceof Text) { // true if the focus is on an internal xtext editor or a text edit
+			if (activeFocusControl instanceof StyledText || focusControl instanceof Text) { // true if the focus is on an internal xtext editor or a text edit
 				setBaseEnabled(false);
 			} else {
 				PapyrusClipboard<Object> instance = PapyrusClipboard.getInstance();

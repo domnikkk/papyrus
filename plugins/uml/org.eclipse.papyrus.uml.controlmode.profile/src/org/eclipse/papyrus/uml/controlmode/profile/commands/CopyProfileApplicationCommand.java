@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,9 +26,9 @@ import org.eclipse.uml2.uml.Profile;
 
 /**
  * Command used to copy profile application when controling an UML model
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public final class CopyProfileApplicationCommand extends AbstractControlCommand {
 
@@ -45,12 +45,12 @@ public final class CopyProfileApplicationCommand extends AbstractControlCommand 
 
 	/**
 	 * Duplicate all applied profiles from the package on the root element of the controlled resource
-	 * 
+	 *
 	 * @param selection
 	 */
 	private void duplicateAppliedProfiles(final EObject selection) {
-		Package _package = (Package)selection;
-		for(Profile profile : _package.getAllAppliedProfiles()) {
+		Package _package = (Package) selection;
+		for (Profile profile : _package.getAllAppliedProfiles()) {
 			ProfileApplicationHelper.duplicateProfileApplication(_package, profile);
 		}
 	}

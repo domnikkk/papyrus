@@ -4,13 +4,13 @@ package org.eclipse.papyrus.eastadl.annex.computationconstraint.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.papyrus.eastadl.annex.computationconstraint.*;
-
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationConstraint;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalPath;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalTransformation;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.TransformationOccurrence;
 import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
 
 /**
@@ -18,6 +18,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage
  * @generated
  */
@@ -26,6 +27,7 @@ public class ComputationconstraintAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static ComputationconstraintPackage modelPackage;
@@ -34,6 +36,7 @@ public class ComputationconstraintAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ComputationconstraintAdapterFactory() {
@@ -47,6 +50,7 @@ public class ComputationconstraintAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -56,7 +60,7 @@ public class ComputationconstraintAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -65,47 +69,55 @@ public class ComputationconstraintAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ComputationconstraintSwitch<Adapter> modelSwitch =
-		new ComputationconstraintSwitch<Adapter>() {
-			@Override
-			public Adapter caseComputationConstraint(ComputationConstraint object) {
-				return createComputationConstraintAdapter();
-			}
-			@Override
-			public Adapter caseLogicalPath(LogicalPath object) {
-				return createLogicalPathAdapter();
-			}
-			@Override
-			public Adapter caseLogicalTransformation(LogicalTransformation object) {
-				return createLogicalTransformationAdapter();
-			}
-			@Override
-			public Adapter caseTransformationOccurrence(TransformationOccurrence object) {
-				return createTransformationOccurrenceAdapter();
-			}
-			@Override
-			public Adapter caseEAElement(EAElement object) {
-				return createEAElementAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new ComputationconstraintSwitch<Adapter>() {
+				@Override
+				public Adapter caseComputationConstraint(ComputationConstraint object) {
+					return createComputationConstraintAdapter();
+				}
+
+				@Override
+				public Adapter caseLogicalPath(LogicalPath object) {
+					return createLogicalPathAdapter();
+				}
+
+				@Override
+				public Adapter caseLogicalTransformation(LogicalTransformation object) {
+					return createLogicalTransformationAdapter();
+				}
+
+				@Override
+				public Adapter caseTransformationOccurrence(TransformationOccurrence object) {
+					return createTransformationOccurrenceAdapter();
+				}
+
+				@Override
+				public Adapter caseEAElement(EAElement object) {
+					return createEAElementAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 *
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -115,6 +127,7 @@ public class ComputationconstraintAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationConstraint
 	 * @generated
@@ -129,6 +142,7 @@ public class ComputationconstraintAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalPath
 	 * @generated
@@ -143,6 +157,7 @@ public class ComputationconstraintAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalTransformation
 	 * @generated
@@ -157,6 +172,7 @@ public class ComputationconstraintAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.TransformationOccurrence
 	 * @generated
@@ -171,6 +187,7 @@ public class ComputationconstraintAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement
 	 * @generated
@@ -184,6 +201,7 @@ public class ComputationconstraintAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -191,4 +209,4 @@ public class ComputationconstraintAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //ComputationconstraintAdapterFactory
+} // ComputationconstraintAdapterFactory

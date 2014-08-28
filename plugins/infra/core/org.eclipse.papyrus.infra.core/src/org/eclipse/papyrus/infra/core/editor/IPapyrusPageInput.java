@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,9 +16,9 @@ import org.eclipse.ui.IEditorInput;
 
 /**
  * An IEditorInput used to reference the page(s) to open
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public interface IPapyrusPageInput extends IEditorInput {
 
@@ -28,7 +28,7 @@ public interface IPapyrusPageInput extends IEditorInput {
 	public URI[] getPages();
 
 	/**
-	 * 
+	 *
 	 * @return true if the editor should close all other pages
 	 */
 	public boolean closeOtherPages();

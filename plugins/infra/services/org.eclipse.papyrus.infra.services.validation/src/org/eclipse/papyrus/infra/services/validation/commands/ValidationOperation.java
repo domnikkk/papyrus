@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,8 +25,8 @@ import org.eclipse.jface.operation.ModalContext;
 
 
 /**
- * A disposable validation operation. The purpose of disposing it is to ensure that this validation operation, if it runs in a
- * {@linkplain ModalContext modal context thread} and that thread is the one that first Guice-injects state into Xtext's {code CompositeEValidator} in
+ * A disposable validation operation. The purpose of disposing it is to ensure that this validation operation, if it runs in a {@linkplain ModalContext modal context thread} and that thread is the one that first Guice-injects state into Xtext's {code
+ * CompositeEValidator} in
  * the static {@link EValidator.Registry} instance, that it will not end up leaking whatever was the (potentially very large) UML model that it
  * validated.
  */

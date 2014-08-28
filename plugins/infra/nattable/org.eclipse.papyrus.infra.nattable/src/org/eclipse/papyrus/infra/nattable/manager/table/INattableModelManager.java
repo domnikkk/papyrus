@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,8 +34,10 @@ import org.eclipse.ui.services.IDisposable;
 public interface INattableModelManager extends ITableAxisElementProvider, IDisposable, IDataProvider {
 
 
+	@Override
 	public int getColumnCount();
 
+	@Override
 	public int getRowCount();
 
 	public void addRows(final Collection<Object> objectsToAdd);
@@ -113,14 +115,14 @@ public interface INattableModelManager extends ITableAxisElementProvider, IDispo
 
 	/**
 	 * Returns <code>true</code> if columns axis can be destroyed (only are will be destroyed, the model element won't be destroyed)
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean canCreateDestroyColumnsAxis();
 
 	/**
 	 * Returns <code>true</code> if columns axis can be destroyed (only are will be destroyed, the model element won't be destroyed)
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean canCreateDestroyRowsAxis();
@@ -131,7 +133,7 @@ public interface INattableModelManager extends ITableAxisElementProvider, IDispo
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the "real"{@link AbstractAxisProvider}, that's to say that this method use the property {@link Table#isInvertAxis()} to return the real
 	 *         vertical axis
@@ -139,7 +141,7 @@ public interface INattableModelManager extends ITableAxisElementProvider, IDispo
 	public AbstractAxisProvider getVerticalAxisProvider();
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the "real"{@link AbstractAxisProvider}, that's to say that this method use the property {@link Table#isInvertAxis()} to return the real
 	 *         horizontal axis
@@ -150,14 +152,14 @@ public interface INattableModelManager extends ITableAxisElementProvider, IDispo
 
 	/**
 	 * Opens a dialog to edit the alias of the row
-	 * 
+	 *
 	 * @param event
 	 */
 	public void openEditRowAliasDialog(final NatEventData event);
 
 	/**
 	 * Opens a dialog to edit the alias of the column
-	 * 
+	 *
 	 * @param event
 	 */
 	public void openEditColumnAliasDialog(final NatEventData event);
@@ -167,30 +169,30 @@ public interface INattableModelManager extends ITableAxisElementProvider, IDispo
 	public boolean canEditRowHeader(final NatEventData eventData);
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the column axis manager, managing the axis inversion
 	 */
 	public IAxisManager getColumnAxisManager();
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the row axis manager, managing the axis inversion
 	 */
 	public IAxisManager getRowAxisManager();
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the local preference store for the table instance or <code>null</code>
 	 */
 	public PreferenceStore getTablePreferenceStore();
 
 	/**
-	 * 
+	 *
 	 * @param store
-	 *        the table preference store
+	 *            the table preference store
 	 */
 	public void setWorkspacePreferenceStore(final PreferenceStore store);
 }

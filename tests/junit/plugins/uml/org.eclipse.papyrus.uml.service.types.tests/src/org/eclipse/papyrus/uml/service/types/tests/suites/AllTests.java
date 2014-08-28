@@ -18,5 +18,5 @@ import org.junit.runners.Suite.SuiteClasses;
 	DeletePureUMLElementTest.class,
 	})
 public class AllTests {
-
+	//JUnit 4 Test Suite
 }

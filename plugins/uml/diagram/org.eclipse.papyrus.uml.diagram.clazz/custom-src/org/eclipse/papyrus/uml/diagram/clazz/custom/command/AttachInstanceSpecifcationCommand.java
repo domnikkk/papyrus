@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ import org.eclipse.uml2.uml.UMLFactory;
 
 /**
  * this class has in charge to create the semantic instance specification as a link
- * 
+ *
  */
 public class AttachInstanceSpecifcationCommand extends AbstractCustomCommand {
 
@@ -55,9 +55,9 @@ public class AttachInstanceSpecifcationCommand extends AbstractCustomCommand {
 	protected HashSet<Association> commonAssociations = new HashSet<Association>();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
 	 *            the editing domain
 	 * @param req
@@ -86,7 +86,7 @@ public class AttachInstanceSpecifcationCommand extends AbstractCustomCommand {
 					HashSet<Association> assoSource = new HashSet<Association>();
 					Iterator<Classifier> iterator = target.getClassifiers().iterator();
 					while (iterator.hasNext()) {
-						Classifier classifier = (Classifier) iterator.next();
+						Classifier classifier = iterator.next();
 						assoSource.addAll(classifier.getAssociations());
 					}
 					// how many association it linked?
@@ -114,13 +114,13 @@ public class AttachInstanceSpecifcationCommand extends AbstractCustomCommand {
 			HashSet<Association> assoSource = new HashSet<Association>();
 			Iterator<Classifier> iterator = source.getClassifiers().iterator();
 			while (iterator.hasNext()) {
-				Classifier classifier = (Classifier) iterator.next();
+				Classifier classifier = iterator.next();
 				assoSource.addAll(classifier.getAssociations());
 			}
 			HashSet<Association> assoTarget = new HashSet<Association>();
 			iterator = target.getClassifiers().iterator();
 			while (iterator.hasNext()) {
-				Classifier classifier = (Classifier) iterator.next();
+				Classifier classifier = iterator.next();
 				assoTarget.addAll(classifier.getAssociations());
 			}
 			assoSource.retainAll(assoTarget);
@@ -153,7 +153,7 @@ public class AttachInstanceSpecifcationCommand extends AbstractCustomCommand {
 				// Creation of slots
 				Iterator<Property> proIterator = selectedAssociation.getMemberEnds().iterator();
 				while (proIterator.hasNext()) {
-					Property property = (Property) proIterator.next();
+					Property property = proIterator.next();
 					Slot slot = UMLFactory.eINSTANCE.createSlot();
 					slot.setDefiningFeature(property);
 					if (source.getClassifiers().contains(property.getOwner())) {
@@ -178,7 +178,7 @@ public class AttachInstanceSpecifcationCommand extends AbstractCustomCommand {
 
 	/**
 	 * create an instanceValue for the slot (owner) with the reference to InstanceSpecification and the good type
-	 * 
+	 *
 	 * @param instanceSpecification
 	 *            that is referenced by the instanceValue
 	 * @param owner

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ import org.eclipse.ui.part.ViewPart;
 
 /**
  * This class shows the figure hierarchy attached to a edit-part
- * 
+ *
  */
 public class FigureHierarchyView extends ViewPart {
 
@@ -46,12 +46,13 @@ public class FigureHierarchyView extends ViewPart {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.WorkbenchPart#setFocus()
 	 */
+	@Override
 	public void setFocus() {
 		Viewer viewer = getViewer();
-		if(viewer != null && !viewer.getControl().isDisposed()) {
+		if (viewer != null && !viewer.getControl().isDisposed()) {
 
 			viewer.getControl().setFocus();
 		}
@@ -59,20 +60,20 @@ public class FigureHierarchyView extends ViewPart {
 
 	/**
 	 * Create the main tree control
-	 * 
+	 *
 	 * @param parent
 	 * @return Tree
 	 */
 	protected Tree createTree(Composite parent) {
 		Tree tree = new Tree(parent, SWT.H_SCROLL | SWT.V_SCROLL | SWT.MULTI
-			| SWT.FULL_SELECTION);
+				| SWT.FULL_SELECTION);
 		tree.setLinesVisible(true);
 		return tree;
 	}
 
 	/**
 	 * Return the viewer.
-	 * 
+	 *
 	 * @return TreeViewer
 	 */
 	protected TreeViewer getViewer() {
@@ -80,23 +81,24 @@ public class FigureHierarchyView extends ViewPart {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public FigureHierarchyView() {
 		myEditPartlistener = new ISelectionListener() {
 
+			@Override
 			public void selectionChanged(IWorkbenchPart part, ISelection selection) {
 
-				if(selection instanceof IStructuredSelection) {
-					Object selectedobject = ((IStructuredSelection)selection).getFirstElement();
-					if(selectedobject instanceof GraphicalEditPart) {
-						GraphicalEditPart graphicalEP = ((GraphicalEditPart)selectedobject);
+				if (selection instanceof IStructuredSelection) {
+					Object selectedobject = ((IStructuredSelection) selection).getFirstElement();
+					if (selectedobject instanceof GraphicalEditPart) {
+						GraphicalEditPart graphicalEP = ((GraphicalEditPart) selectedobject);
 						IFigure figure = graphicalEP.getContentPane();
 
-						if(viewer != null) {
-							viewer.setInput(new Object[]{ figure });
+						if (viewer != null) {
+							viewer.setInput(new Object[] { figure });
 							viewer.expandAll();
 						}
 					}
@@ -174,33 +176,39 @@ public class FigureHierarchyView extends ViewPart {
 	protected IContentProvider getContentProvider() {
 		return new ITreeContentProvider() {
 
+			@Override
 			public Object[] getElements(final Object inputElement) {
-				if(inputElement instanceof Object[]) {
-					return (Object[])inputElement;
+				if (inputElement instanceof Object[]) {
+					return (Object[]) inputElement;
 				}
 				return null;
 			}
 
+			@Override
 			public void inputChanged(final Viewer viewer, final Object oldInput, final Object newInput) {
 				// nothing
 			}
 
+			@Override
 			public void dispose() {
 				// nothing
 			}
 
+			@Override
 			public boolean hasChildren(final Object element) {
 
 				return getChildren(element).length != 0;
 			}
 
+			@Override
 			public Object getParent(final Object element) {
 				return null;
 			}
 
+			@Override
 			public Object[] getChildren(final Object parentElement) {
-				if(parentElement instanceof IFigure) {
-					return ((IFigure)parentElement).getChildren().toArray();
+				if (parentElement instanceof IFigure) {
+					return ((IFigure) parentElement).getChildren().toArray();
 				}
 				return new Object[0];
 			}

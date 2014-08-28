@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -15,18 +15,20 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.*;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.EObjectAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.EStructuralFeatureAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.FeatureIdAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.NattableaxisFactory;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.NattableaxisPackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.ObjectIdAxis;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NattableaxisFactoryImpl extends EFactoryImpl implements NattableaxisFactory {
@@ -35,13 +37,13 @@ public class NattableaxisFactoryImpl extends EFactoryImpl implements Nattableaxi
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NattableaxisFactory init() {
 		try {
-			NattableaxisFactory theNattableaxisFactory = (NattableaxisFactory)EPackage.Registry.INSTANCE.getEFactory(NattableaxisPackage.eNS_URI);
-			if(theNattableaxisFactory != null) {
+			NattableaxisFactory theNattableaxisFactory = (NattableaxisFactory) EPackage.Registry.INSTANCE.getEFactory(NattableaxisPackage.eNS_URI);
+			if (theNattableaxisFactory != null) {
 				return theNattableaxisFactory;
 			}
 		} catch (Exception exception) {
@@ -54,7 +56,7 @@ public class NattableaxisFactoryImpl extends EFactoryImpl implements Nattableaxi
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NattableaxisFactoryImpl() {
@@ -64,12 +66,12 @@ public class NattableaxisFactoryImpl extends EFactoryImpl implements Nattableaxi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case NattableaxisPackage.EOBJECT_AXIS:
 			return createEObjectAxis();
 		case NattableaxisPackage.FEATURE_ID_AXIS:
@@ -86,9 +88,10 @@ public class NattableaxisFactoryImpl extends EFactoryImpl implements Nattableaxi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EObjectAxis createEObjectAxis() {
 		EObjectAxisImpl eObjectAxis = new EObjectAxisImpl();
 		return eObjectAxis;
@@ -97,9 +100,10 @@ public class NattableaxisFactoryImpl extends EFactoryImpl implements Nattableaxi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public FeatureIdAxis createFeatureIdAxis() {
 		FeatureIdAxisImpl featureIdAxis = new FeatureIdAxisImpl();
 		return featureIdAxis;
@@ -108,9 +112,10 @@ public class NattableaxisFactoryImpl extends EFactoryImpl implements Nattableaxi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EStructuralFeatureAxis createEStructuralFeatureAxis() {
 		EStructuralFeatureAxisImpl eStructuralFeatureAxis = new EStructuralFeatureAxisImpl();
 		return eStructuralFeatureAxis;
@@ -119,9 +124,10 @@ public class NattableaxisFactoryImpl extends EFactoryImpl implements Nattableaxi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public ObjectIdAxis createObjectIdAxis() {
 		ObjectIdAxisImpl objectIdAxis = new ObjectIdAxisImpl();
 		return objectIdAxis;
@@ -130,17 +136,18 @@ public class NattableaxisFactoryImpl extends EFactoryImpl implements Nattableaxi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public NattableaxisPackage getNattableaxisPackage() {
-		return (NattableaxisPackage)getEPackage();
+		return (NattableaxisPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -149,4 +156,4 @@ public class NattableaxisFactoryImpl extends EFactoryImpl implements Nattableaxi
 		return NattableaxisPackage.eINSTANCE;
 	}
 
-} //NattableaxisFactoryImpl
+} // NattableaxisFactoryImpl

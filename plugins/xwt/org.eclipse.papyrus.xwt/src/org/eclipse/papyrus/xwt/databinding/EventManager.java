@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -19,7 +19,7 @@ import org.eclipse.core.databinding.observable.Realm;
 
 /**
  * This class <code>EventManager</code> is used to manage all event listeners for a observed object.
- * 
+ *
  * @author jliu jin.liu@soyatec.com
  */
 public class EventManager {
@@ -39,7 +39,7 @@ public class EventManager {
 
 	public static EventManager getEventManager(Object eventTarget, Realm realm) {
 		EventManager eventManager = managers.get(eventTarget);
-		if(eventManager == null || eventManager.realm != realm) {
+		if (eventManager == null || eventManager.realm != realm) {
 			eventManager = new EventManager(eventTarget, realm);
 			managers.put(eventTarget, eventManager);
 		}
@@ -49,14 +49,14 @@ public class EventManager {
 	public void dispatchEvent(Event event) {
 		String eventType = event.getEventType();
 		List<EventListener> listeners = type2listeners.get(eventType);
-		for(EventListener l : listeners) {
+		for (EventListener l : listeners) {
 			l.handleEvent(event);
 		}
 	}
 
 	public void addEventListener(String eventType, EventListener eventListener) {
 		List<EventListener> listeners = type2listeners.get(eventType);
-		if(listeners == null) {
+		if (listeners == null) {
 			listeners = new ArrayList<EventListener>();
 			type2listeners.put(eventType, listeners);
 		}
@@ -65,7 +65,7 @@ public class EventManager {
 
 	public void removeEventListener(String eventType, EventListener eventListener) {
 		List<EventListener> listeners = type2listeners.get(eventType);
-		if(listeners != null) {
+		if (listeners != null) {
 			listeners.remove(eventListener);
 		}
 	}

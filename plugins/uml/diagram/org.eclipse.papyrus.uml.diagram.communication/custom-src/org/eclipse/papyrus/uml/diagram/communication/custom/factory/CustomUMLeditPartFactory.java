@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,17 +35,17 @@ public class CustomUMLeditPartFactory extends UMLEditPartFactory {
 	 * Creates a new CustomUMLeditPart object.
 	 *
 	 * @param context
-	 *        the context
+	 *            the context
 	 * @param model
-	 *        the model
+	 *            the model
 	 * @return the custom edit part
 	 * @see org.eclipse.papyrus.uml.diagram.communication.edit.parts.UMLEditPartFactory#createEditPart(org.eclipse.gef.EditPart, java.lang.Object)
 	 */
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
-		if(model instanceof View) {
-			View view = (View)model;
-			switch(UMLVisualIDRegistry.getVisualID(view)) {
+		if (model instanceof View) {
+			View view = (View) model;
+			switch (UMLVisualIDRegistry.getVisualID(view)) {
 			case LifelineEditPartCN.VISUAL_ID:
 				return new CustomLifelineEditPartCN(view);
 			case MessageNameEditPart.VISUAL_ID:

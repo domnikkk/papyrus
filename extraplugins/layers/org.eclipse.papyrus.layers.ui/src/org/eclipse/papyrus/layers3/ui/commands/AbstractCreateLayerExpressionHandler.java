@@ -4,13 +4,15 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
 package org.eclipse.papyrus.layers3.ui.commands;
 
 
+
+import static org.eclipse.papyrus.layers.ui.Activator.log;
 
 import java.util.List;
 
@@ -23,7 +25,6 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperator;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
-import static org.eclipse.papyrus.layers.ui.Activator.log;
 
 public abstract class AbstractCreateLayerExpressionHandler extends AbstractLayersCommand {
 
@@ -37,7 +38,7 @@ public abstract class AbstractCreateLayerExpressionHandler extends AbstractLayer
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers3.ui.commands.AbstractLayersCommand#doExecute(org.eclipse.core.commands.ExecutionEvent, org.eclipse.core.expressions.IEvaluationContext, java.util.List)
 	 *
 	 * @param event
@@ -46,18 +47,18 @@ public abstract class AbstractCreateLayerExpressionHandler extends AbstractLayer
 	 */
 	@Override
 	protected void doExecute(ExecutionEvent event, IEvaluationContext context, List<Object> selections) {
-		if(log.isDebugEnabled()) {
+		if (log.isDebugEnabled()) {
 			log.debug(this.getClass().getSimpleName() + ".doExecute()");
 		}
-		
-		if(!isEnabled(context, selections)) {
+
+		if (!isEnabled(context, selections)) {
 			return;
 		}
-		
+
 		// Get application
 		LayersStackApplication application;
 		try {
-		   application = lookupLayersStackApplicationChecked(context);
+			application = lookupLayersStackApplicationChecked(context);
 		} catch (NotFoundException e) {
 			// Silently fails
 			return;
@@ -68,36 +69,37 @@ public abstract class AbstractCreateLayerExpressionHandler extends AbstractLayer
 			// Silently fails
 			return;
 		}
-	
-		
+
+
 		// Create a layer !
 		LayerExpression layer = createLayer();
 		layer.setName("layer" + creationCount++);
 		layer.setApplication(application);
-		
-		if(log.isDebugEnabled()) {
+
+		if (log.isDebugEnabled()) {
 			log.debug(this.getClass().getSimpleName() + ". layerCreated");
 		}
-	
+
 		// insert layer in selected object
 		Object selection = selections.get(0);
-		if(selection instanceof LayersContainer) {
-			LayersContainer stack = (LayersContainer)selection;
+		if (selection instanceof LayersContainer) {
+			LayersContainer stack = (LayersContainer) selection;
 			stack.addLayer(layer);
 		}
-//		if(selection instanceof LayersStack) {
-//			LayersStack stack = (LayersStack)selection;
-//			stack.setLayers(layer);
-//		}
-//		else {
-//			LayerOperator operator = (LayerOperator)selection;
-//			operator.getLayers().add(layer);
-//		}
-		
+		// if(selection instanceof LayersStack) {
+		// LayersStack stack = (LayersStack)selection;
+		// stack.setLayers(layer);
+		// }
+		// else {
+		// LayerOperator operator = (LayerOperator)selection;
+		// operator.getLayers().add(layer);
+		// }
+
 	}
 
 	/**
 	 * This method must create the Layer that will be populated and inserted in parent.
+	 *
 	 * @return
 	 */
 	protected abstract LayerExpression createLayer();
@@ -108,14 +110,14 @@ public abstract class AbstractCreateLayerExpressionHandler extends AbstractLayer
 	 */
 	@Override
 	public boolean isEnabled(IEvaluationContext context, List<Object> selections) {
-	    if( selections.size() != 1) {
-	    	return false;
-	    }
-	    Object first = selections.get(0);
-	    boolean res = (first instanceof LayerOperator) || (first instanceof LayersStack);
-//	    if(log.isDebugEnabled()) {
-//			log.debug("isEnable(" + res + ")");
-//		}
+		if (selections.size() != 1) {
+			return false;
+		}
+		Object first = selections.get(0);
+		boolean res = (first instanceof LayerOperator) || (first instanceof LayersStack);
+		// if(log.isDebugEnabled()) {
+		// log.debug("isEnable(" + res + ")");
+		// }
 		return res;
 	}
 

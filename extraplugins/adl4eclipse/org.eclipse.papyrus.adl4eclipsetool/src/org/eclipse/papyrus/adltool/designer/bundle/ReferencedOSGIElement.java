@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,18 +17,19 @@ import org.osgi.framework.VersionRange;
 
 /**
  * this class is an abstraction of a reference to an element
- * it name + version 
+ * it name + version
  *
  */
 public class ReferencedOSGIElement {
 
-	private VersionRange version=null;
-	private String symbolicName= null;
-	private String kindRef="";
-	private boolean optional= false;
+	private VersionRange version = null;
+	private String symbolicName = null;
+	private String kindRef = "";
+	private boolean optional = false;
 
 	/**
 	 * a reference may be optional
+	 *
 	 * @return true if the the reference is optional
 	 */
 	public boolean isOptional() {
@@ -37,7 +38,9 @@ public class ReferencedOSGIElement {
 
 	/**
 	 * set the reference as optional
-	 * @param optional a boolean
+	 *
+	 * @param optional
+	 *            a boolean
 	 */
 
 	public void setOptional(boolean optional) {
@@ -55,19 +58,22 @@ public class ReferencedOSGIElement {
 
 	/**
 	 * set the model ref as dependency to a feature or plug-in
-	 * @param kindRef a string  see FEATURE ou PLUGIN constant
+	 *
+	 * @param kindRef
+	 *            a string see FEATURE ou PLUGIN constant
 	 */
 	public void setKindRef(String kindRef) {
 		this.kindRef = kindRef;
 	}
+
 	/**
 	 * the type of ref for a feature
 	 */
-	public static String FEATURE="feature";
+	public static String FEATURE = "feature";
 	/**
 	 * the type of ref for a plug-in
 	 */
-	public static String PLUGIN="plugin";
+	public static String PLUGIN = "plugin";
 
 	/**
 	 * Constructor.
@@ -79,7 +85,7 @@ public class ReferencedOSGIElement {
 		super();
 		this.version = version;
 		this.symbolicName = symbolicName;
-		this.kindRef=PLUGIN;
+		this.kindRef = PLUGIN;
 	}
 
 
@@ -91,7 +97,8 @@ public class ReferencedOSGIElement {
 	}
 
 	/**
-	 * @param version the version to set
+	 * @param version
+	 *            the version to set
 	 */
 	public void setVersion(VersionRange version) {
 		this.version = version;
@@ -105,7 +112,8 @@ public class ReferencedOSGIElement {
 	}
 
 	/**
-	 * @param symbolicName the symbolicName to set
+	 * @param symbolicName
+	 *            the symbolicName to set
 	 */
 	public void setSymbolicName(String symbolicName) {
 		this.symbolicName = symbolicName;

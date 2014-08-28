@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 
 /**
  * An IObservableValue for editing EMF EAnnotations
- * 
+ *
  * @author Camille Letavernier
  */
 public class AnnotationObservableValue extends AbstractObservableValue {
@@ -57,18 +57,18 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * Creates an IObservableValue for the annotation. The annotation doesn't
 	 * need to be created beforehand
-	 * 
+	 *
 	 * @param source
-	 *        The EObject owning the annotation
+	 *            The EObject owning the annotation
 	 * @param domain
-	 *        The editing domain on which the commands will be executed
+	 *            The editing domain on which the commands will be executed
 	 * @param annotationName
-	 *        The name of the annotation
+	 *            The name of the annotation
 	 * @param key
-	 *        The name of annotation's property to edit
+	 *            The name of annotation's property to edit
 	 */
 	public AnnotationObservableValue(EModelElement source, EditingDomain domain, String annotationName, String key) {
 		this(source, domain, annotationName, key, false);
@@ -76,21 +76,21 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * Creates an IObservableValue for the annotation. The annotation doesn't
 	 * need to be created beforehand
-	 * 
+	 *
 	 * @param source
-	 *        The EObject owning the annotation
+	 *            The EObject owning the annotation
 	 * @param domain
-	 *        The editing domain on which the commands will be executed
+	 *            The editing domain on which the commands will be executed
 	 * @param annotationName
-	 *        The name of the annotation
+	 *            The name of the annotation
 	 * @param key
-	 *        The name of annotation's property to edit
+	 *            The name of annotation's property to edit
 	 * @param deleteWithLastEntry
-	 *        Whether the EAnnotation should be removed from the source when its
-	 *        last entry is removed (ie. value = null)
+	 *            Whether the EAnnotation should be removed from the source when its
+	 *            last entry is removed (ie. value = null)
 	 */
 	public AnnotationObservableValue(EModelElement source, EditingDomain domain, String annotationName, String key, boolean deleteWithLastEntry) {
 		this.source = source;
@@ -113,7 +113,7 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 	@Override
 	protected Object doGetValue() {
 		EAnnotation annotation = getEAnnotation();
-		if(annotation == null) {
+		if (annotation == null) {
 			return null;
 		}
 
@@ -133,7 +133,7 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 	@Override
 	protected void doSetValue(Object value) {
 		Command emfCommand = getCommand(value);
-		if(emfCommand != null) {
+		if (emfCommand != null) {
 			domain.getCommandStack().execute(emfCommand);
 		}
 	}
@@ -141,20 +141,20 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 	/**
 	 * Returns the command used to edit the observed annotation, which the
 	 * given value
-	 * 
+	 *
 	 * @param value
 	 * @return
 	 */
 	protected Command getCommand(Object value) {
 		EAnnotation annotation = getEAnnotation();
 
-		if(value == null) {
-			//No change : the key is not defined ; we cannot remove it
-			if(annotation == null || !annotation.getDetails().containsKey(key)) {
+		if (value == null) {
+			// No change : the key is not defined ; we cannot remove it
+			if (annotation == null || !annotation.getDetails().containsKey(key)) {
 				return null;
 			}
 		} else {
-			if(!(value instanceof String)) {
+			if (!(value instanceof String)) {
 				return null;
 			}
 		}
@@ -163,7 +163,7 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 
 			@Override
 			public boolean prepare() {
-				if(this.isEmpty()) {
+				if (this.isEmpty()) {
 					return false;
 				}
 
@@ -172,7 +172,7 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 
 		};
 
-		if(annotation == null) {
+		if (annotation == null) {
 			annotation = EcoreFactory.eINSTANCE.createEAnnotation();
 
 			SetCommand attachToSourceCommand = new SetCommand(domain, annotation, EcorePackage.eINSTANCE.getEAnnotation_EModelElement(), source);
@@ -184,9 +184,9 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 			emfCommand.append(nameCommand);
 		}
 
-		if(value == null) {
-			if(annotation.getDetails().size() == 1 && annotation.getDetails().containsKey(key) && deleteWithLastEntry) {
-				//We removed the last key : delete the annotation
+		if (value == null) {
+			if (annotation.getDetails().size() == 1 && annotation.getDetails().containsKey(key) && deleteWithLastEntry) {
+				// We removed the last key : delete the annotation
 				SetCommand deleteAnnotationCommand = new SetCommand(domain, annotation, EcorePackage.eINSTANCE.getEAnnotation_EModelElement(), null);
 				deleteAnnotationCommand.setLabel("Delete EAnnotation");
 				emfCommand.append(deleteAnnotationCommand);
@@ -195,7 +195,7 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 				emfCommand.append(removeEntryCommand);
 			}
 		} else {
-			Command addEntryCommand = new AddEntryCommand(annotation, key, (String)value);
+			Command addEntryCommand = new AddEntryCommand(annotation, key, (String) value);
 			emfCommand.append(addEntryCommand);
 		}
 
@@ -204,9 +204,9 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 
 	/**
 	 * A Command to remove an entry from an EAnnotation
-	 * 
+	 *
 	 * @author Camille Letavernier
-	 * 
+	 *
 	 */
 	protected class RemoveEntryCommand extends AbstractCommand {
 
@@ -220,11 +220,11 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 
 		/**
 		 * Constructor
-		 * 
+		 *
 		 * @param annotation
-		 *        The EAnnotation to edit
+		 *            The EAnnotation to edit
 		 * @param key
-		 *        The EAnnotation's key to edit
+		 *            The EAnnotation's key to edit
 		 */
 		public RemoveEntryCommand(EAnnotation annotation, String key) {
 			this.annotation = annotation;
@@ -233,7 +233,7 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 
 		public void execute() {
 			undo = annotation.getDetails().containsKey(key);
-			if(undo) {
+			if (undo) {
 				previousValue = annotation.getDetails().get(key);
 				annotation.getDetails().remove(key);
 			}
@@ -250,7 +250,7 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 
 		@Override
 		public void undo() {
-			if(undo) {
+			if (undo) {
 				annotation.getDetails().put(key, previousValue);
 			}
 		}
@@ -258,7 +258,7 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 
 	/**
 	 * A Command to set an EAnnotation's entry
-	 * 
+	 *
 	 * @author Camille Letavernier
 	 */
 	protected class AddEntryCommand extends AbstractCommand {
@@ -270,14 +270,14 @@ public class AnnotationObservableValue extends AbstractObservableValue {
 		private String value;
 
 		/**
-		 * 
-		 * 
+		 *
+		 *
 		 * @param annotation
-		 *        The EAnnotation to edit
+		 *            The EAnnotation to edit
 		 * @param key
-		 *        The EAnnotation's key to edit
+		 *            The EAnnotation's key to edit
 		 * @param value
-		 *        The value to set
+		 *            The value to set
 		 */
 		public AddEntryCommand(EAnnotation annotation, String key, String value) {
 			this.annotation = annotation;

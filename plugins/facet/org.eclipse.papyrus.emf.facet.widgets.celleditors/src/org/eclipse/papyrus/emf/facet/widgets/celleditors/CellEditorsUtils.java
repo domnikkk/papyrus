@@ -8,7 +8,7 @@
  *  Vincent Lorenzo (CEA-LIST) - Bug 351931 - Use local cell editor in table
  *  Gregoire Dupe (Mia-Software) - Bug 351931 - Use local cell editor in table
  */
- package org.eclipse.papyrus.emf.facet.widgets.celleditors;
+package org.eclipse.papyrus.emf.facet.widgets.celleditors;
 
 import java.util.Iterator;
 import java.util.List;
@@ -26,23 +26,23 @@ import org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.ModelCe
  *
  */
 public final class CellEditorsUtils {
-	
+
 	private static final String FILE_EXTENSION = "modelcelleditors"; //$NON-NLS-1$
 
 	private CellEditorsUtils() {
 		// This is an utility class which must not be instantiated
 	}
-	
+
 	/**
 	 * This method allows to find the bundle name for an editor
-	 * 
+	 *
 	 * @param editor
 	 *            an editor
 	 * @return the bundle name for this editor
 	 */
 	public static String getBundleNameFor(final AbstractModelCellEditor editor, final ResourceSet resourceSet) {
 		for (Resource ressource : resourceSet.getResources()) {
-			if (CellEditorsUtils.FILE_EXTENSION.equals(ressource.getURI().fileExtension())) { 
+			if (CellEditorsUtils.FILE_EXTENSION.equals(ressource.getURI().fileExtension())) {
 				Iterator<EObject> allContents = ressource.getContents().iterator();
 				while (allContents.hasNext()) {
 					EObject currentContent = allContents.next();

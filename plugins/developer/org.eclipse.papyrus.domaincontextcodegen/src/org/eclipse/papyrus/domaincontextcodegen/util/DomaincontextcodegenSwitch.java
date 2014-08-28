@@ -38,7 +38,7 @@ import org.eclipse.papyrus.domaincontextcodegen.StereotypedElementMatcher;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage
  * @generated
  */
@@ -48,7 +48,7 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static DomaincontextcodegenPackage modelPackage;
@@ -57,11 +57,11 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DomaincontextcodegenSwitch() {
-		if(modelPackage == null) {
+		if (modelPackage == null) {
 			modelPackage = DomaincontextcodegenPackage.eINSTANCE;
 		}
 	}
@@ -70,7 +70,7 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -84,167 +84,173 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch(classifierID) {
-		case DomaincontextcodegenPackage.DOMAIN_CONTEXT:
-		{
-			DomainContext domainContext = (DomainContext)theEObject;
+		switch (classifierID) {
+		case DomaincontextcodegenPackage.DOMAIN_CONTEXT: {
+			DomainContext domainContext = (DomainContext) theEObject;
 			T result = caseDomainContext(domainContext);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.ELEMENT_TYPES:
-		{
-			ElementTypes elementTypes = (ElementTypes)theEObject;
+		case DomaincontextcodegenPackage.ELEMENT_TYPES: {
+			ElementTypes elementTypes = (ElementTypes) theEObject;
 			T result = caseElementTypes(elementTypes);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.ELEMENT_TYPE:
-		{
-			ElementType elementType = (ElementType)theEObject;
+		case DomaincontextcodegenPackage.ELEMENT_TYPE: {
+			ElementType elementType = (ElementType) theEObject;
 			T result = caseElementType(elementType);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.META_CLASS_TYPE:
-		{
-			MetaClassType metaClassType = (MetaClassType)theEObject;
+		case DomaincontextcodegenPackage.META_CLASS_TYPE: {
+			MetaClassType metaClassType = (MetaClassType) theEObject;
 			T result = caseMetaClassType(metaClassType);
-			if(result == null)
+			if (result == null) {
 				result = caseElementType(metaClassType);
-			if(result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE:
-		{
-			SpecializationType specializationType = (SpecializationType)theEObject;
+		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE: {
+			SpecializationType specializationType = (SpecializationType) theEObject;
 			T result = caseSpecializationType(specializationType);
-			if(result == null)
+			if (result == null) {
 				result = caseElementType(specializationType);
-			if(result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.ADVICE:
-		{
-			Advice advice = (Advice)theEObject;
+		case DomaincontextcodegenPackage.ADVICE: {
+			Advice advice = (Advice) theEObject;
 			T result = caseAdvice(advice);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDINGS:
-		{
-			ElementTypeBindings elementTypeBindings = (ElementTypeBindings)theEObject;
+		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDINGS: {
+			ElementTypeBindings elementTypeBindings = (ElementTypeBindings) theEObject;
 			T result = caseElementTypeBindings(elementTypeBindings);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.BINDING:
-		{
-			Binding binding = (Binding)theEObject;
+		case DomaincontextcodegenPackage.BINDING: {
+			Binding binding = (Binding) theEObject;
 			T result = caseBinding(binding);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDING:
-		{
-			ElementTypeBinding elementTypeBinding = (ElementTypeBinding)theEObject;
+		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDING: {
+			ElementTypeBinding elementTypeBinding = (ElementTypeBinding) theEObject;
 			T result = caseElementTypeBinding(elementTypeBinding);
-			if(result == null)
+			if (result == null) {
 				result = caseBinding(elementTypeBinding);
-			if(result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.ADVICE_BINDING:
-		{
-			AdviceBinding adviceBinding = (AdviceBinding)theEObject;
+		case DomaincontextcodegenPackage.ADVICE_BINDING: {
+			AdviceBinding adviceBinding = (AdviceBinding) theEObject;
 			T result = caseAdviceBinding(adviceBinding);
-			if(result == null)
+			if (result == null) {
 				result = caseBinding(adviceBinding);
-			if(result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.GEN_HANDLERS:
-		{
-			GenHandlers genHandlers = (GenHandlers)theEObject;
+		case DomaincontextcodegenPackage.GEN_HANDLERS: {
+			GenHandlers genHandlers = (GenHandlers) theEObject;
 			T result = caseGenHandlers(genHandlers);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.GEN_MATCHER:
-		{
-			GenMatcher genMatcher = (GenMatcher)theEObject;
+		case DomaincontextcodegenPackage.GEN_MATCHER: {
+			GenMatcher genMatcher = (GenMatcher) theEObject;
 			T result = caseGenMatcher(genMatcher);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.GEN_HELPER:
-		{
-			GenHelper genHelper = (GenHelper)theEObject;
+		case DomaincontextcodegenPackage.GEN_HELPER: {
+			GenHelper genHelper = (GenHelper) theEObject;
 			T result = caseGenHelper(genHelper);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_MATCHER:
-		{
-			StereotypedElementMatcher stereotypedElementMatcher = (StereotypedElementMatcher)theEObject;
+		case DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_MATCHER: {
+			StereotypedElementMatcher stereotypedElementMatcher = (StereotypedElementMatcher) theEObject;
 			T result = caseStereotypedElementMatcher(stereotypedElementMatcher);
-			if(result == null)
+			if (result == null) {
 				result = caseGenMatcher(stereotypedElementMatcher);
-			if(result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER:
-		{
-			StereotypedElementHelper stereotypedElementHelper = (StereotypedElementHelper)theEObject;
+		case DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER: {
+			StereotypedElementHelper stereotypedElementHelper = (StereotypedElementHelper) theEObject;
 			T result = caseStereotypedElementHelper(stereotypedElementHelper);
-			if(result == null)
+			if (result == null) {
 				result = caseGenHelper(stereotypedElementHelper);
-			if(result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.MENU_DECLARATION:
-		{
-			MenuDeclaration menuDeclaration = (MenuDeclaration)theEObject;
+		case DomaincontextcodegenPackage.MENU_DECLARATION: {
+			MenuDeclaration menuDeclaration = (MenuDeclaration) theEObject;
 			T result = caseMenuDeclaration(menuDeclaration);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.COMMAND_DECLARATION:
-		{
-			CommandDeclaration commandDeclaration = (CommandDeclaration)theEObject;
+		case DomaincontextcodegenPackage.COMMAND_DECLARATION: {
+			CommandDeclaration commandDeclaration = (CommandDeclaration) theEObject;
 			T result = caseCommandDeclaration(commandDeclaration);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case DomaincontextcodegenPackage.COMMAND:
-		{
-			Command command = (Command)theEObject;
+		case DomaincontextcodegenPackage.COMMAND: {
+			Command command = (Command) theEObject;
 			T result = caseCommand(command);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		default:
@@ -258,9 +264,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Domain Context</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -275,9 +281,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Element Types</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -292,9 +298,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Element Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -309,9 +315,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Meta Class Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -326,9 +332,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Specialization Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -343,9 +349,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Advice</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -360,9 +366,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Element Type Bindings</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -377,9 +383,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Advice Binding</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -394,9 +400,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Binding</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -411,9 +417,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Element Type Binding</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -428,9 +434,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Gen Handlers</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -445,9 +451,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Gen Matcher</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -462,9 +468,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Gen Helper</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -479,9 +485,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Stereotyped Element Matcher</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -496,9 +502,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Stereotyped Element Helper</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -513,9 +519,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Menu Declaration</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -530,9 +536,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Command Declaration</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -547,9 +553,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Command</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -564,9 +570,9 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -576,4 +582,4 @@ public class DomaincontextcodegenSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //DomaincontextcodegenSwitch
+} // DomaincontextcodegenSwitch

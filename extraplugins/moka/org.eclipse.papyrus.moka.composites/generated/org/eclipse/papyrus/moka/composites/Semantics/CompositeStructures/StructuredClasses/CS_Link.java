@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,9 +33,9 @@ public class CS_Link extends Link {
 		List<FeatureValue> allFeatureValues = this.getFeatureValues();
 		Integer i = 1;
 		StructuralFeature feature = null;
-		while(i <= allFeatureValues.size() && feature == null) {
+		while (i <= allFeatureValues.size() && feature == null) {
 			FeatureValue featureValue = allFeatureValues.get(i - 1);
-			if(!featureValue.values.isEmpty() && featureValue.values.get(0).equals(value)) {
+			if (!featureValue.values.isEmpty() && featureValue.values.get(0).equals(value)) {
 				feature = featureValue.feature;
 			}
 			i = i + 1;

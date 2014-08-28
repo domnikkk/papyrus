@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,22 +24,22 @@ import org.eclipse.uml2.uml.Image;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Appear as parts of a HardwareComponentType and is itself typed by a HardwareComponentType. This allows for a reference to the occurrence of a HardwareComponentType when it acts as a part. 
- * The purpose is to support the definition of hierarchical structures, and to reuse the same type of Hardware at several places. For example, a wheel speed sensor may occur at all four wheels, but it has a single definition. 
- * 
+ * Appear as parts of a HardwareComponentType and is itself typed by a HardwareComponentType. This allows for a reference to the occurrence of a HardwareComponentType when it acts as a part.
+ * The purpose is to support the definition of hierarchical structures, and to reuse the same type of Hardware at several places. For example, a wheel speed sensor may occur at all four wheels, but it has a single definition.
+ *
  * Semantics:
- * The HardwareComponentPrototype represents an occurrence of a hardware element, according to the type of the HardwareComponentPrototype. 
- * 
+ * The HardwareComponentPrototype represents an occurrence of a hardware element, according to the type of the HardwareComponentPrototype.
+ *
  * Notation:
  * Shall be shown in the same style as the class specified as type, however it shall be clear that this is a part.
- * 
+ *
  * Extension: Property
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentPrototype#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentPrototype#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +51,7 @@ public interface HardwareComponentPrototype extends AllocationTarget, EAPrototyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -64,6 +65,7 @@ public interface HardwareComponentPrototype extends AllocationTarget, EAPrototyp
 	 * The type of the HWElement.
 	 * {derived from UML::TypedElement::type}
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(HardwareComponentType)
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwareComponentPrototype_Type()
@@ -76,7 +78,9 @@ public interface HardwareComponentPrototype extends AllocationTarget, EAPrototyp
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentPrototype#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Type</em>' reference.
 	 * @see #getType()
 	 * @generated
 	 */

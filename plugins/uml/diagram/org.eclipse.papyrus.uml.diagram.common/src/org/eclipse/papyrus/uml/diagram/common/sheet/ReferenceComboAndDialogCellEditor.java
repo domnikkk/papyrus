@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2006 Borland Software Corporation
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -75,7 +75,7 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 	}
 
 	protected Object openDialogBox(Control cellEditorWindow) {
-		if(myElementChooserDialog.open() == Window.OK) {
+		if (myElementChooserDialog.open() == Window.OK) {
 			URI uri = myElementChooserDialog.getSelectedModelElementURI();
 			try {
 				return myEditingDomain.getResourceSet().getEObject(uri, true);
@@ -89,7 +89,7 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 
 	@Override
 	public void deactivate() {
-		if(myButton != null && !myButton.isDisposed()) {
+		if (myButton != null && !myButton.isDisposed()) {
 			myButton.removeFocusListener(getButtonFocusListener());
 		}
 		super.deactivate();
@@ -110,7 +110,7 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 
 			@Override
 			public void keyReleased(KeyEvent e) {
-				if(e.character == '\u001b') { // Escape
+				if (e.character == '\u001b') { // Escape
 					fireCancelEditor();
 				}
 			}
@@ -131,15 +131,15 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 				// Re-add the listener once the dialog closes
 				myButton.addFocusListener(getButtonFocusListener());
 
-				if(newValue != null) {
+				if (newValue != null) {
 					boolean newValidState = isCorrect(newValue);
-					if(newValidState) {
+					if (newValidState) {
 						markDirty();
 						doSetValue(newValue);
 					} else {
 						// try to insert the current value into the error
 						// message.
-						setErrorMessage(MessageFormat.format(getErrorMessage(), new Object[]{ newValue.toString() }));
+						setErrorMessage(MessageFormat.format(getErrorMessage(), new Object[] { newValue.toString() }));
 					}
 					fireApplyEditorValue();
 				}
@@ -149,13 +149,15 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 	}
 
 	private FocusListener getButtonFocusListener() {
-		if(myButtonFocusListener == null) {
+		if (myButtonFocusListener == null) {
 			myButtonFocusListener = new FocusListener() {
 
+				@Override
 				public void focusGained(FocusEvent e) {
 					// Do nothing
 				}
 
+				@Override
 				public void focusLost(FocusEvent e) {
 					// CellEditor.this.focusLost();
 				}
@@ -171,7 +173,7 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 		public void layout(Composite editor, boolean force) {
 			Rectangle bounds = editor.getClientArea();
 			Point size = myButton.computeSize(SWT.DEFAULT, SWT.DEFAULT, force);
-			if(myContents != null) {
+			if (myContents != null) {
 				myContents.setBounds(0, 0, bounds.width - size.x, bounds.height);
 			}
 			myButton.setBounds(bounds.width - size.x, 0, size.x, bounds.height);
@@ -179,7 +181,7 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 
 		@Override
 		public Point computeSize(Composite editor, int wHint, int hHint, boolean force) {
-			if(wHint != SWT.DEFAULT && hHint != SWT.DEFAULT) {
+			if (wHint != SWT.DEFAULT && hHint != SWT.DEFAULT) {
 				return new Point(wHint, hHint);
 			}
 			Point contentsSize = myContents.computeSize(SWT.DEFAULT, SWT.DEFAULT, force);

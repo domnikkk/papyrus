@@ -18,12 +18,12 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.papyrus.emf.facet.widgets.celleditors.ICellEditorsRegistry;
-import org.eclipse.papyrus.emf.facet.widgets.celleditors.IModelCellEditHandler;
-import org.eclipse.papyrus.emf.facet.widgets.celleditors.IModelCellEditor;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ColumnViewer;
 import org.eclipse.jface.viewers.EditingSupport;
+import org.eclipse.papyrus.emf.facet.widgets.celleditors.ICellEditorsRegistry;
+import org.eclipse.papyrus.emf.facet.widgets.celleditors.IModelCellEditHandler;
+import org.eclipse.papyrus.emf.facet.widgets.celleditors.IModelCellEditor;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
@@ -78,7 +78,7 @@ public class ModelCellsEditingSupport<T> extends EditingSupport {
 				IModelCellEditHandler editHandler = new IModelCellEditHandler() {
 					public void commit() {
 						@SuppressWarnings("unchecked")
-						//unchecked: The cellEditor.getValue() type cannot be checked.
+						// unchecked: The cellEditor.getValue() type cannot be checked.
 						T value = (T) ModelCellsEditingSupport.this.cellEditor.getValue();
 						int index = ModelCellsEditingSupport.this.values.indexOf(element);
 						if (index != -1

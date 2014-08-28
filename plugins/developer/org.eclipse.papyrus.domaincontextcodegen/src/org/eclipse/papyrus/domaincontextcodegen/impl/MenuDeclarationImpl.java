@@ -29,7 +29,7 @@ import org.eclipse.papyrus.domaincontextcodegen.MenuDeclaration;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.MenuDeclarationImpl#getCommands <em>Commands</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class MenuDeclarationImpl extends EObjectImpl implements MenuDeclaration {
@@ -38,7 +38,7 @@ public class MenuDeclarationImpl extends EObjectImpl implements MenuDeclaration 
 	 * The default value of the '{@link #getLocationURI() <em>Location URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLocationURI()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class MenuDeclarationImpl extends EObjectImpl implements MenuDeclaration 
 	 * The cached value of the '{@link #getLocationURI() <em>Location URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLocationURI()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class MenuDeclarationImpl extends EObjectImpl implements MenuDeclaration 
 	 * The cached value of the '{@link #getCommands() <em>Commands</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCommands()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class MenuDeclarationImpl extends EObjectImpl implements MenuDeclaration 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MenuDeclarationImpl() {
@@ -80,7 +80,7 @@ public class MenuDeclarationImpl extends EObjectImpl implements MenuDeclaration 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +91,7 @@ public class MenuDeclarationImpl extends EObjectImpl implements MenuDeclaration 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLocationURI() {
@@ -101,24 +101,25 @@ public class MenuDeclarationImpl extends EObjectImpl implements MenuDeclaration 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLocationURI(String newLocationURI) {
 		String oldLocationURI = locationURI;
 		locationURI = newLocationURI;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.MENU_DECLARATION__LOCATION_URI, oldLocationURI, locationURI));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Command> getCommands() {
-		if(commands == null) {
+		if (commands == null) {
 			commands = new EObjectResolvingEList<Command>(Command.class, this, DomaincontextcodegenPackage.MENU_DECLARATION__COMMANDS);
 		}
 		return commands;
@@ -127,12 +128,12 @@ public class MenuDeclarationImpl extends EObjectImpl implements MenuDeclaration 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.MENU_DECLARATION__LOCATION_URI:
 			return getLocationURI();
 		case DomaincontextcodegenPackage.MENU_DECLARATION__COMMANDS:
@@ -144,19 +145,19 @@ public class MenuDeclarationImpl extends EObjectImpl implements MenuDeclaration 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.MENU_DECLARATION__LOCATION_URI:
-			setLocationURI((String)newValue);
+			setLocationURI((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.MENU_DECLARATION__COMMANDS:
 			getCommands().clear();
-			getCommands().addAll((Collection<? extends Command>)newValue);
+			getCommands().addAll((Collection<? extends Command>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -165,12 +166,12 @@ public class MenuDeclarationImpl extends EObjectImpl implements MenuDeclaration 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.MENU_DECLARATION__LOCATION_URI:
 			setLocationURI(LOCATION_URI_EDEFAULT);
 			return;
@@ -184,12 +185,12 @@ public class MenuDeclarationImpl extends EObjectImpl implements MenuDeclaration 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.MENU_DECLARATION__LOCATION_URI:
 			return LOCATION_URI_EDEFAULT == null ? locationURI != null : !LOCATION_URI_EDEFAULT.equals(locationURI);
 		case DomaincontextcodegenPackage.MENU_DECLARATION__COMMANDS:
@@ -201,13 +202,14 @@ public class MenuDeclarationImpl extends EObjectImpl implements MenuDeclaration 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (locationURI: ");
@@ -216,4 +218,4 @@ public class MenuDeclarationImpl extends EObjectImpl implements MenuDeclaration 
 		return result.toString();
 	}
 
-} //MenuDeclarationImpl
+} // MenuDeclarationImpl

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
 
 /**
  * A helper for manipulating the Papyrus services from an EditPart
- * 
+ *
  * @author Camille Letavernier
  */
 public class ServiceUtilsForEditPart extends AbstractServiceUtils<EditPart> {
@@ -29,14 +29,14 @@ public class ServiceUtilsForEditPart extends AbstractServiceUtils<EditPart> {
 	@Override
 	public ServicesRegistry getServiceRegistry(EditPart from) throws ServiceException {
 		EObject semanticElement = EMFHelper.getEObject(from);
-		if(semanticElement == null) {
+		if (semanticElement == null) {
 			Object model = from.getModel();
-			if(model instanceof EObject) {
-				semanticElement = (EObject)model;
+			if (model instanceof EObject) {
+				semanticElement = (EObject) model;
 			}
 		}
 
-		if(semanticElement != null) {
+		if (semanticElement != null) {
 			return ServiceUtilsForEObject.getInstance().getServiceRegistry(semanticElement);
 		}
 
@@ -50,7 +50,7 @@ public class ServiceUtilsForEditPart extends AbstractServiceUtils<EditPart> {
 	private static ServiceUtilsForEditPart instance = new ServiceUtilsForEditPart();
 
 	private ServiceUtilsForEditPart() {
-		//Singleton
+		// Singleton
 	}
 
 }

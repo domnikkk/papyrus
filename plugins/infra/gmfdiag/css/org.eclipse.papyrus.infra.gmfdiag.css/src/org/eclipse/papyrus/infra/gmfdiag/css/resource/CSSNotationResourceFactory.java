@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,9 @@ import org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory;
 /**
  * A GMFResourceFactory which installs CSS Support on the produced
  * NotationResources.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public class CSSNotationResourceFactory extends GMFResourceFactory {
@@ -35,7 +35,7 @@ public class CSSNotationResourceFactory extends GMFResourceFactory {
 		resource.getDefaultLoadOptions().putAll(GMFResourceFactory.getDefaultLoadOptions());
 		resource.getDefaultSaveOptions().putAll(GMFResourceFactory.getDefaultSaveOptions());
 
-		if(!resource.getEncoding().equals(EMFCoreConstants.XMI_ENCODING)) {
+		if (!resource.getEncoding().equals(EMFCoreConstants.XMI_ENCODING)) {
 			resource.setEncoding(EMFCoreConstants.XMI_ENCODING);
 		}
 

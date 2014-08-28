@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,9 +51,9 @@ public class BlockEditHelperAdvice extends AbstractStereotypedElementEditHelperA
 
 	/**
 	 * Check if the creation context is allowed.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.sysml.service.types.helper.AbstractStereotypedElementEditHelperAdvice#approveRequest(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return true if the request is approved
 	 */
@@ -61,26 +61,26 @@ public class BlockEditHelperAdvice extends AbstractStereotypedElementEditHelperA
 	public boolean approveRequest(IEditCommandRequest request) {
 		boolean isApproved = super.approveRequest(request);
 
-		if((request != null) && (request instanceof GetEditContextRequest)) {
+		if ((request != null) && (request instanceof GetEditContextRequest)) {
 
 			// Retrieve the edit context from request
-			GetEditContextRequest editContextRequest = (GetEditContextRequest)request;
+			GetEditContextRequest editContextRequest = (GetEditContextRequest) request;
 
 			// Test context type
-			if(editContextRequest.getEditContext() instanceof Element) {
-				Element contextElement = (Element)editContextRequest.getEditContext();
+			if (editContextRequest.getEditContext() instanceof Element) {
+				Element contextElement = (Element) editContextRequest.getEditContext();
 
 				IElementMatcher matcher;
 
 				// Cannot create a nested Block in FlowSpecification
 				matcher = new FlowSpecificationMatcher();
-				if(matcher.matches(contextElement)) {
+				if (matcher.matches(contextElement)) {
 					isApproved = false;
 				}
 
 				// Cannot create a nested Block in Requirement
 				matcher = new RequirementMatcher();
-				if(matcher.matches(contextElement)) {
+				if (matcher.matches(contextElement)) {
 					isApproved = false;
 				}
 			}
@@ -95,9 +95,10 @@ public class BlockEditHelperAdvice extends AbstractStereotypedElementEditHelperA
 
 		return new ConfigureElementCommand(request) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				NamedElement element = (NamedElement)request.getElementToConfigure();
-				if(element != null) {
+				NamedElement element = (NamedElement) request.getElementToConfigure();
+				if (element != null) {
 					StereotypeApplicationHelper.INSTANCE.applyStereotype(element, BlocksPackage.eINSTANCE.getBlock());
 
 					// Set default name
@@ -109,13 +110,13 @@ public class BlockEditHelperAdvice extends AbstractStereotypedElementEditHelperA
 			}
 		};
 	}
-	
+
 	@Override
 	protected ICommand getBeforeCreateRelationshipCommand(CreateRelationshipRequest request) {
 		// test if the creation is for a SysML association
 
 		IElementType type = request.getElementType();
-		if(hasSuperType(type, SysMLElementTypes.ASSOCIATION)) {
+		if (hasSuperType(type, SysMLElementTypes.ASSOCIATION)) {
 			// test source and target...
 			EObject source = request.getSource();
 			// The source of an association cannot be read-only.
@@ -126,20 +127,20 @@ public class BlockEditHelperAdvice extends AbstractStereotypedElementEditHelperA
 
 		return super.getBeforeCreateRelationshipCommand(request);
 	}
-	
+
 	protected boolean hasSuperType(IElementType elementType, IElementType typeToTest) {
-		if(elementType == null || typeToTest == null) {
+		if (elementType == null || typeToTest == null) {
 			return false;
 		}
 
-		if(elementType.equals(typeToTest)) {
+		if (elementType.equals(typeToTest)) {
 			return true;
 		}
 
 		List<IElementType> superTypes = Arrays.asList(elementType.getAllSuperTypes());
-			if(superTypes.contains(typeToTest)) {
-				return true;
-			}
+		if (superTypes.contains(typeToTest)) {
+			return true;
+		}
 
 		return false;
 	}

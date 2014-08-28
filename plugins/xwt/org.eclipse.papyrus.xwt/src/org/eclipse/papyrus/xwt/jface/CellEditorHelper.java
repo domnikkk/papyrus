@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -32,16 +32,16 @@ public class CellEditorHelper {
 
 	public Class<?> getTargetType() {
 		ISelection selection = this.tableViewer.getSelection();
-		if(!selection.isEmpty() && selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+		if (!selection.isEmpty() && selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			Object element = structuredSelection.getFirstElement();
 			Object property = this.tableViewer.getColumnProperties()[index];
 			String propertyName = property.toString();
 			try {
 				BeanInfo beanInfo = java.beans.Introspector.getBeanInfo(element.getClass());
 				PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
-				for(PropertyDescriptor propertyDescriptor : propertyDescriptors) {
-					if(propertyDescriptor.getName().equalsIgnoreCase(propertyName)) {
+				for (PropertyDescriptor propertyDescriptor : propertyDescriptors) {
+					if (propertyDescriptor.getName().equalsIgnoreCase(propertyName)) {
 						return propertyDescriptor.getPropertyType();
 					}
 				}

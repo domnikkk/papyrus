@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,15 +33,15 @@ public class RoundedRectangleDashedShadowBorder extends RectangularShadowBorder 
 	/**
 	 * Creates an instance of this class with the given arc width and arc height
 	 * in pixels
-	 * 
+	 *
 	 * @param borderwidth
-	 *        the width of the border line
+	 *            the width of the border line
 	 * @param color
-	 *        the color or the line
+	 *            the color or the line
 	 * @param arcWidth
-	 *        the width of the corner arc
+	 *            the width of the corner arc
 	 * @param arcHeight
-	 *        the height of the corner arc
+	 *            the height of the corner arc
 	 */
 	public RoundedRectangleDashedShadowBorder(int borderwidth, Color color, int arcWidth, int arcHeight) {
 		super(borderwidth, color);
@@ -60,15 +60,16 @@ public class RoundedRectangleDashedShadowBorder extends RectangularShadowBorder 
 		// draw the normal line border
 		tempRect.setBounds(getPaintRectangle(figure, insets));
 
-		if(getWidth() % 2 == 1) {
+		if (getWidth() % 2 == 1) {
 			tempRect.width--;
 			tempRect.height--;
 		}
 
 		tempRect.shrink(getWidth() / 2, getWidth() / 2);
 		graphics.setLineWidth(getWidth());
-		if(getColor() != null)
+		if (getColor() != null) {
 			graphics.setForegroundColor(getColor());
+		}
 		graphics.drawRoundRectangle(tempRect, cornerWidth, cornerHeight);
 
 		// draw the shadow
@@ -88,7 +89,7 @@ public class RoundedRectangleDashedShadowBorder extends RectangularShadowBorder 
 		plt.addPoint(tempRect.x + tempRect.width + borderwidth, tempRect.y + tempRect.height);
 		plt.addPoint(tempRect.x + tempRect.width + borderwidth, tempRect.y + cornerHeight);
 		plt.addPoint(tempRect.x + tempRect.width, tempRect.y + cornerHeight / 2);
-		if(getColor() != null) {
+		if (getColor() != null) {
 			graphics.setBackgroundColor(getColor());
 		} else {
 			graphics.setBackgroundColor(ColorConstants.black);

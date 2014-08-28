@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2013 CEA LIST and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,10 +54,10 @@ import org.eclipse.swt.widgets.Table;
 /**
  * this class is GUI that represent a tab for each kind of hyperlink
  * for example a tab for diagram, for web links...
- * 
+ *
  */
 
-//TODO change the methods to get images after the refactoring
+// TODO change the methods to get images after the refactoring
 public class HyperLinkTab extends AbstractHyperLinkTab {
 
 	/**
@@ -80,18 +80,18 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 	protected TableViewer tableViewer;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public HyperLinkTab() {
-		//nothing to do
+		// nothing to do
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param tabId
 	 * @param helpers
 	 */
@@ -101,7 +101,7 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 
 	/**
 	 * get TableVeiver
-	 * 
+	 *
 	 * @return
 	 */
 	public TableViewer getTableViewer() {
@@ -109,7 +109,7 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the list of hyperlink displayed in the tab
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 
 	/**
 	 * set list of hyperlinks to display in the tab
-	 * 
+	 *
 	 * @param hyperlinkObjects
 	 */
 	public void setHyperlinkObjects(List<HyperLinkObject> hyperlinkObjects) {
@@ -128,10 +128,9 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.hyperlink.ui.AbstractHyperLinkTab#init(org.eclipse.swt.custom.CTabFolder, java.util.List,
-	 *      org.eclipse.emf.ecore.EObject)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.hyperlink.ui.AbstractHyperLinkTab#init(org.eclipse.swt.custom.CTabFolder, java.util.List, org.eclipse.emf.ecore.EObject)
+	 *
 	 * @param cTabFolder
 	 * @param hyperlinkObjects
 	 * @param element
@@ -184,21 +183,21 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 		hyperLinkListTable.setLayoutData(gridData1);
 		hyperLinkListTable.setLinesVisible(false);
 		modifyHyperLinkButton = new Button(diagramComposite, SWT.NONE);
-		modifyHyperLinkButton.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("/icons/Edit_16x16.gif")); //$NON-NLS-1$ 
+		modifyHyperLinkButton.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("/icons/Edit_16x16.gif")); //$NON-NLS-1$
 		modifyHyperLinkButton.setToolTipText("Edit hyperlink");
 
 		removeHyperLinkButton = new Button(diagramComposite, SWT.NONE);
 		removeHyperLinkButton.setText(""); //$NON-NLS-1$
-		removeHyperLinkButton.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("/icons/Delete_16x16.gif")); //$NON-NLS-1$ 
+		removeHyperLinkButton.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("/icons/Delete_16x16.gif")); //$NON-NLS-1$
 		removeHyperLinkButton.setToolTipText("Remove hyperlink");
 
 		upHyperLinkButton = new Button(diagramComposite, SWT.NONE);
-		upHyperLinkButton.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("/icons/ArrowUp_16x16.gif")); //$NON-NLS-1$ 
+		upHyperLinkButton.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("/icons/ArrowUp_16x16.gif")); //$NON-NLS-1$
 		upHyperLinkButton.setToolTipText("Move hyperlink up");
 
 		upHyperLinkButton.setLayoutData(gridData2);
 		downHyperLinkButton = new Button(diagramComposite, SWT.NONE);
-		downHyperLinkButton.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("/icons/ArrowDown_16x16.gif")); //$NON-NLS-1$ 
+		downHyperLinkButton.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("/icons/ArrowDown_16x16.gif")); //$NON-NLS-1$
 		downHyperLinkButton.setToolTipText("Move hyperlink down");
 
 		downHyperLinkButton.setLayoutData(gridData3);
@@ -208,7 +207,7 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 		this.hyperlinkObjects = hyperLinkHelper.getFilteredObject(hyperlinkObjects);
 
 		ILabelProvider provider = null;
-		if(element != null) {
+		if (element != null) {
 			try {
 				provider = ServiceUtilsForEObject.getInstance().getService(LabelProviderService.class, element).getLabelProvider();
 			} catch (ServiceException ex) {
@@ -216,7 +215,7 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 			}
 		}
 
-		if(provider == null) {
+		if (provider == null) {
 			provider = new LabelProvider();
 		}
 
@@ -231,9 +230,9 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 			}
 
 			public void mouseDown(MouseEvent e) {
-				if(HyperLinkTab.this.getTableViewer().getTable().getSelection().length != 0) {
-					Iterator<?> iterator = ((IStructuredSelection)HyperLinkTab.this.getTableViewer().getSelection()).iterator();
-					while(iterator.hasNext()) {
+				if (HyperLinkTab.this.getTableViewer().getTable().getSelection().length != 0) {
+					Iterator<?> iterator = ((IStructuredSelection) HyperLinkTab.this.getTableViewer().getSelection()).iterator();
+					while (iterator.hasNext()) {
 						Object object = iterator.next();
 						HyperLinkTab.this.getHyperlinkObjects().remove(object);
 						HyperLinkTab.this.getTableViewer().setInput(HyperLinkTab.this.getHyperlinkObjects());
@@ -251,14 +250,14 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 			}
 
 			public void mouseDown(MouseEvent e) {
-				if(HyperLinkTab.this.getTableViewer().getTable().getSelection().length != 0) {
-					Object elt = ((IStructuredSelection)HyperLinkTab.this.getTableViewer().getSelection()).getFirstElement();
-					if(HyperLinkTab.this.getHyperlinkObjects().indexOf(elt) == 0) {
+				if (HyperLinkTab.this.getTableViewer().getTable().getSelection().length != 0) {
+					Object elt = ((IStructuredSelection) HyperLinkTab.this.getTableViewer().getSelection()).getFirstElement();
+					if (HyperLinkTab.this.getHyperlinkObjects().indexOf(elt) == 0) {
 						return;
 					}
-					Iterator<?> iterator = ((IStructuredSelection)HyperLinkTab.this.getTableViewer().getSelection()).iterator();
-					while(iterator.hasNext()) {
-						HyperLinkObject currentHyperLinkDoc = (HyperLinkObject)iterator.next();
+					Iterator<?> iterator = ((IStructuredSelection) HyperLinkTab.this.getTableViewer().getSelection()).iterator();
+					while (iterator.hasNext()) {
+						HyperLinkObject currentHyperLinkDoc = (HyperLinkObject) iterator.next();
 						int index = HyperLinkTab.this.getHyperlinkObjects().indexOf(currentHyperLinkDoc);
 						HyperLinkTab.this.getHyperlinkObjects().remove(currentHyperLinkDoc);
 						HyperLinkTab.this.getHyperlinkObjects().add(index - 1, currentHyperLinkDoc);
@@ -277,13 +276,13 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 			}
 
 			public void mouseDown(MouseEvent e) {
-				if(HyperLinkTab.this.getTableViewer().getTable().getSelection().length != 0) {
-					Object[] block = ((IStructuredSelection)HyperLinkTab.this.getTableViewer().getSelection()).toArray();
-					if((HyperLinkTab.this.getHyperlinkObjects().indexOf(block[block.length - 1])) == HyperLinkTab.this.getHyperlinkObjects().size() - 1) {
+				if (HyperLinkTab.this.getTableViewer().getTable().getSelection().length != 0) {
+					Object[] block = ((IStructuredSelection) HyperLinkTab.this.getTableViewer().getSelection()).toArray();
+					if ((HyperLinkTab.this.getHyperlinkObjects().indexOf(block[block.length - 1])) == HyperLinkTab.this.getHyperlinkObjects().size() - 1) {
 						return;
 					}
-					for(int i = block.length - 1; i >= 0; i--) {
-						HyperLinkObject currentobject = (HyperLinkObject)block[i];
+					for (int i = block.length - 1; i >= 0; i--) {
+						HyperLinkObject currentobject = (HyperLinkObject) block[i];
 						int index = HyperLinkTab.this.getHyperlinkObjects().indexOf(currentobject);
 						HyperLinkTab.this.getHyperlinkObjects().remove(currentobject);
 						HyperLinkTab.this.getHyperlinkObjects().add(index + 1, currentobject);
@@ -303,25 +302,26 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 				HyperLinkTab.this.setInput(HyperLinkTab.this.getHyperlinkObjects());
 			}
 		};
-		if(!isCompositeHelper()) {
+		if (!isCompositeHelper()) {
 			getNewHyperLinkbutton().addMouseListener(new MouseAdapter() {
 
-			public void mouseDown(MouseEvent e) {
-				addHandler.run();
-			}
+				@Override
+				public void mouseDown(MouseEvent e) {
+					addHandler.run();
+				}
 			});
 		} else {
 			addNewHyperLinkMenuActions(addHandler);
 		}
-		
+
 		getModifyHyperLinkButton().addMouseListener(new MouseListener() {
 
 			public void mouseUp(MouseEvent e) {
 			}
 
 			public void mouseDown(MouseEvent e) {
-				if(HyperLinkTab.this.getTableViewer().getTable().getSelection().length != 0) {
-					HyperLinkObject hyperLinkObject = (HyperLinkObject)((IStructuredSelection)HyperLinkTab.this.getTableViewer().getSelection()).getFirstElement();
+				if (HyperLinkTab.this.getTableViewer().getTable().getSelection().length != 0) {
+					HyperLinkObject hyperLinkObject = (HyperLinkObject) ((IStructuredSelection) HyperLinkTab.this.getTableViewer().getSelection()).getFirstElement();
 					HyperLinkTab.this.hyperLinkHelper.executeEditMousePressed(HyperLinkTab.this.getHyperlinkObjects(), hyperLinkObject, HyperLinkTab.this.element);
 					HyperLinkTab.this.setInput(HyperLinkTab.this.getHyperlinkObjects());
 				}
@@ -334,36 +334,36 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 
 	private void addNewHyperLinkMenuActions(final Runnable addNewHyperlinkHandler) {
 		PopupButtonMenu menu = new PopupButtonMenu(getNewHyperLinkbutton());
-		
-		for(final AbstractHyperLinkHelper helper : ((CompositeHyperlinkHelper)hyperLinkHelper).getHelpers()) {
-				IAction action = new Action(helper.getNameofManagedHyperLink()) {
 
-					@Override
-					public void run() {
-						((CompositeHyperlinkHelper)hyperLinkHelper).setActiveHelper(helper);
-						addNewHyperlinkHandler.run();
-					}
-				};
-				action.setToolTipText(NLS.bind(Messages.HyperLinkTab_addTooltip, helper.getNameofManagedHyperLink()));
+		for (final AbstractHyperLinkHelper helper : ((CompositeHyperlinkHelper) hyperLinkHelper).getHelpers()) {
+			IAction action = new Action(helper.getNameofManagedHyperLink()) {
 
-				menu.addAction(action);
-			}
+				@Override
+				public void run() {
+					((CompositeHyperlinkHelper) hyperLinkHelper).setActiveHelper(helper);
+					addNewHyperlinkHandler.run();
+				}
+			};
+			action.setToolTipText(NLS.bind(Messages.HyperLinkTab_addTooltip, helper.getNameofManagedHyperLink()));
+
+			menu.addAction(action);
 		}
-	
+	}
+
 	/**
-	 * 
+	 *
 	 * @return get the button to create a hyperlinkObject
 	 */
 	private Button getNewHyperLinkbutton() {
 		return newHyperLinkbutton;
 	}
-	
+
 	protected boolean isCompositeHelper() {
 		return hyperLinkHelper instanceof CompositeHyperlinkHelper;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @return the button to edit a hyperlinkObject
 	 */
 
@@ -372,7 +372,7 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the button to remove a hyperlinkObject
 	 */
 	private Button getRemoveHyperLinkButton() {
@@ -380,7 +380,7 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the button to move up a hyperlinkObject
 	 */
 	private Button getUpHyperLinkButton() {
@@ -388,7 +388,7 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the button to move down the hyperlinkObject
 	 */
 	private Button getDownHyperLinkButton() {
@@ -397,13 +397,13 @@ public class HyperLinkTab extends AbstractHyperLinkTab {
 
 	/**
 	 * set as input a list of hyperlinkObject to display
-	 * 
+	 *
 	 * @param hyperlinkObjects
-	 *        the lis of hyperlinkobjects
+	 *            the lis of hyperlinkobjects
 	 */
 	@Override
 	public void setInput(List<HyperLinkObject> hyperlinkObjects) {
-		if(!getTableViewer().getControl().isDisposed()) {
+		if (!getTableViewer().getControl().isDisposed()) {
 			this.hyperlinkObjects = this.hyperLinkHelper.getFilteredObject(hyperlinkObjects);
 			getTableViewer().setInput(this.hyperlinkObjects);
 		} else {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,7 +51,7 @@ public class UseCaseFigure extends NodeNamedElementFigure implements IPapyrusNod
 
 	/**
 	 * get the gmf container figure of the package
-	 * 
+	 *
 	 * @return the gmf container
 	 */
 	public ShapeCompartmentFigure getGMFExtensionPointContainer() {

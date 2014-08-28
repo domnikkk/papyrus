@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -89,7 +89,7 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomStateInvariantEditPart(View view) {
@@ -100,16 +100,16 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 	public void activate() {
 		super.activate();
 		EObject element = resolveSemanticElement();
-		if(element instanceof StateInvariant && ((StateInvariant)element).getInvariant() != null) {
-			notifierHelper.listenObject(((StateInvariant)element).getInvariant());
+		if (element instanceof StateInvariant && ((StateInvariant) element).getInvariant() != null) {
+			notifierHelper.listenObject(((StateInvariant) element).getInvariant());
 		}
 	}
 
 	@Override
 	public void deactivate() {
 		EObject element = resolveSemanticElement();
-		if(element instanceof StateInvariant && ((StateInvariant)element).getInvariant() != null) {
-			notifierHelper.unlistenObject(((StateInvariant)element).getInvariant());
+		if (element instanceof StateInvariant && ((StateInvariant) element).getInvariant() != null) {
+			notifierHelper.unlistenObject(((StateInvariant) element).getInvariant());
 		}
 		super.deactivate();
 	}
@@ -121,7 +121,7 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomStateInvariantItemSemanticEditPolicy());
-		//install a editpolicy to display stereotypes
+		// install a editpolicy to display stereotypes
 		installEditPolicy(AppliedStereotypeCommentCreationEditPolicy.APPLIED_STEREOTYPE_COMMENT, new AppliedStereotypeCommentCreationEditPolicyEx());
 		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeNodeLabelDisplayEditPolicy());
 	}
@@ -131,19 +131,19 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 		super.handleNotificationEvent(notification);
 		Object feature = notification.getFeature();
 		Object notifier = notification.getNotifier();
-		if((getModel() != null) && (getModel() == notifier)) {
-			if(NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
+		if ((getModel() != null) && (getModel() == notifier)) {
+			if (NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
 				refreshLineWidth();
 			}
-		} else if(UMLPackage.eINSTANCE.getStateInvariant_Invariant() == feature) {
-			if(Notification.SET == notification.getEventType() || Notification.UNSET == notification.getEventType()) {
-				notifierHelper.unlistenObject((Notifier)notification.getOldValue());
-				notifierHelper.listenObject((Notifier)notification.getNewValue());
+		} else if (UMLPackage.eINSTANCE.getStateInvariant_Invariant() == feature) {
+			if (Notification.SET == notification.getEventType() || Notification.UNSET == notification.getEventType()) {
+				notifierHelper.unlistenObject((Notifier) notification.getOldValue());
+				notifierHelper.listenObject((Notifier) notification.getNewValue());
 			}
 			refreshLabels();
-		} else if(notifier != null) {
+		} else if (notifier != null) {
 			EObject element = resolveSemanticElement();
-			if(element instanceof StateInvariant && notifier == ((StateInvariant)element).getInvariant()) {
+			if (element instanceof StateInvariant && notifier == ((StateInvariant) element).getInvariant()) {
 				refreshLabels();
 			}
 		}
@@ -151,20 +151,20 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#getModelChildren()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected List getModelChildren() {
 		List<Object> modelChildren = new ArrayList<Object>(super.getModelChildren());
 		boolean hasInvariantView = false;
-		for(Object object : modelChildren) {
-			if(object instanceof View && UMLVisualIDRegistry.getType(StateInvariantLabelEditPart.VISUAL_ID).equals(((View)object).getType())) {
+		for (Object object : modelChildren) {
+			if (object instanceof View && UMLVisualIDRegistry.getType(StateInvariantLabelEditPart.VISUAL_ID).equals(((View) object).getType())) {
 				hasInvariantView = true;
 				break;
 			}
 		}
-		if(!hasInvariantView) {
+		if (!hasInvariantView) {
 			final View view = getNotationView();
 			final DecorationNode guardNode = NotationFactory.eINSTANCE.createDecorationNode();
 			guardNode.setType(UMLVisualIDRegistry.getType(StateInvariantLabelEditPart.VISUAL_ID));
@@ -184,7 +184,7 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 	protected void setFontColor(Color color) {
 		super.setFontColor(color);
 		StateInvariantFigure primaryShape = getPrimaryShape();
-		if(primaryShape != null && primaryShape.getConstraintContentContainer() != null) {
+		if (primaryShape != null && primaryShape.getConstraintContentContainer() != null) {
 			primaryShape.getConstraintContentContainer().setForegroundColor(color);
 		}
 	}
@@ -202,9 +202,9 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 	 */
 	protected void refreshLabels() {
 		List parts = getChildren();
-		for(Object p : parts) {
-			if(p instanceof CustomStateInvariantLabelEditPart) {
-				((CustomStateInvariantLabelEditPart)p).refreshLabel();
+		for (Object p : parts) {
+			if (p instanceof CustomStateInvariantLabelEditPart) {
+				((CustomStateInvariantLabelEditPart) p).refreshLabel();
 			}
 		}
 	}
@@ -216,12 +216,12 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 
 	@Override
 	protected void refreshBounds() {
-		if(getBorderItemLocator() != null) {
-			int x = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-			int y = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		if (getBorderItemLocator() != null) {
+			int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+			int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
 			Point loc = new Point(x, y);
-			int width = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
-			int height = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
+			int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
+			int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
 			Dimension size = new Dimension(width, height);
 			// fix size
 			getFigure().setBounds(new Rectangle(loc, size));
@@ -233,24 +233,24 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.StateInvariantEditPart#getPrimaryShape()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public StateInvariantFigure getPrimaryShape() {
-		return (StateInvariantFigure)primaryShape;
+		return (StateInvariantFigure) primaryShape;
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.StateInvariantEditPart#addFixedChild(org.eclipse.gef.EditPart)
-	 * 
+	 *
 	 * @param childEditPart
 	 * @return
 	 */
 	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof CustomStateInvariantLabelEditPart) {
-			((CustomStateInvariantLabelEditPart)childEditPart).setLabel(getPrimaryShape().getInvariantFigure());
+		if (childEditPart instanceof CustomStateInvariantLabelEditPart) {
+			((CustomStateInvariantLabelEditPart) childEditPart).setLabel(getPrimaryShape().getInvariantFigure());
 			return true;
 		}
 		return super.addFixedChild(childEditPart);
@@ -258,13 +258,13 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.StateInvariantEditPart#removeFixedChild(org.eclipse.gef.EditPart)
-	 * 
+	 *
 	 * @param childEditPart
 	 * @return
 	 */
 	@Override
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof CustomStateInvariantLabelEditPart) {
+		if (childEditPart instanceof CustomStateInvariantLabelEditPart) {
 			return true;
 		}
 		return super.removeFixedChild(childEditPart);
@@ -272,7 +272,7 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.StateInvariantEditPart#createNodeShape()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -306,7 +306,7 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 */
 		public StateInvariantFigure() {
 			super();
@@ -316,11 +316,11 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 			contents.setCornerDimensions(new Dimension(getMapMode().DPtoLP(50), getMapMode().DPtoLP(50)));
 			contents.setOutline(false);
 			this.add(contents);
-			//Name figure
+			// Name figure
 			fFigureContinuationNameLabel = new CenteredWrappedLabel();
 			contents.add(fFigureContinuationNameLabel);
 
-			//Invariant figure
+			// Invariant figure
 			constraintContentContainer = new FlowPage();
 			constraintContentContainer.setOpaque(false);
 			constraintContentContainer.setHorizontalAligment(PositionConstants.CENTER);
@@ -328,7 +328,7 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 			constraintContentContainer.add(constraintContent);
 			contents.add(constraintContentContainer);
 
-			//Contents layout.
+			// Contents layout.
 			ToolbarLayout layout = new ToolbarLayout(false);
 			layout.setStretchMinorAxis(true);
 			layout.setMinorAlignment(OrderedLayout.ALIGN_CENTER);
@@ -345,10 +345,12 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 			return fFigureContinuationNameLabel;
 		}
 
+		@Override
 		public IFigure getInvariantFigure() {
 			return this;
 		}
 
+		@Override
 		protected void fillShape(Graphics graphics) {
 			graphics.pushState();
 			applyTransparency(graphics);
@@ -358,7 +360,7 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 
 		/**
 		 * Returns transparency value (belongs to [0, 100] interval)
-		 * 
+		 *
 		 * @return transparency
 		 * @since 1.2
 		 */
@@ -368,13 +370,13 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 
 		/**
 		 * Sets the transparency if the given parameter is in [0, 100] range
-		 * 
+		 *
 		 * @param transparency
-		 *        The transparency to set
+		 *            The transparency to set
 		 * @since 1.2
 		 */
 		public void setTransparency(int transparency) {
-			if(transparency != this.transparency && transparency >= 0 && transparency <= 100) {
+			if (transparency != this.transparency && transparency >= 0 && transparency <= 100) {
 				this.transparency = transparency;
 				repaint();
 			}
@@ -384,59 +386,64 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 		 * Converts transparency value from percent range [0, 100] to alpha range
 		 * [0, 255] and applies converted value. 0% corresponds to alpha 255 and
 		 * 100% corresponds to alpha 0.
-		 * 
+		 *
 		 * @param g
-		 *        The Graphics used to paint
+		 *            The Graphics used to paint
 		 * @since 1.2
 		 */
 		protected void applyTransparency(Graphics g) {
 			g.setAlpha(255 - transparency * 255 / 100);
 		}
 
+		@Override
 		public void setText(String text) {
-			if(constraintContent != null) {
+			if (constraintContent != null) {
 				constraintContent.setText(LEFT_BRACE + text + RIGHT_BRACE);
 			}
 		}
 
+		@Override
 		public String getText() {
-			if(constraintContent != null) {
+			if (constraintContent != null) {
 				return constraintContent.getText();
 			}
 			return null;
 		}
 
+		@Override
 		public void setIcon(Image icon) {
 
 		}
 
+		@Override
 		public Image getIcon() {
 			return null;
 		}
 
+		@Override
 		public Point getEditionLocation() {
-			if(constraintContentContainer != null) {
+			if (constraintContentContainer != null) {
 				return constraintContentContainer.getLocation();
 			}
 			return null;
 		}
 
 		/**
-		 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String,
-		 *      org.eclipse.swt.graphics.Image)
-		 * 
+		 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String, org.eclipse.swt.graphics.Image)
+		 *
 		 * @param stereotypes
 		 * @param image
 		 */
 
+		@Override
 		public void setStereotypeDisplay(String stereotypes, Image image) {
-			if(stereotypes == null || stereotypes.trim().equals("")) {
-				if(stereotypesLabel != null) {
+			if (stereotypes == null || stereotypes.trim().equals("")) {
+				if (stereotypesLabel != null) {
 					labelContainer.remove(stereotypesLabel);
 				}
 				stereotypesLabel = null;
 			} else {
-				if(stereotypesLabel == null) {
+				if (stereotypesLabel == null) {
 					stereotypesLabel = new Label(stereotypes, image);
 					labelContainer.add(stereotypesLabel, 0);
 				} else {
@@ -448,18 +455,19 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 
 		/**
 		 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeUMLElementFigure#setStereotypePropertiesInBrace(java.lang.String)
-		 * 
+		 *
 		 * @param stereotypeProperties
 		 */
 
+		@Override
 		public void setStereotypePropertiesInBrace(String stereotypeProperties) {
-			if(stereotypeProperties == null || stereotypeProperties.trim().equals("")) {
-				if(stereotypePropertiesLabel != null) {
+			if (stereotypeProperties == null || stereotypeProperties.trim().equals("")) {
+				if (stereotypePropertiesLabel != null) {
 					labelContainer.remove(stereotypePropertiesLabel);
 				}
 				stereotypePropertiesLabel = null;
 			} else {
-				if(stereotypePropertiesLabel == null) {
+				if (stereotypePropertiesLabel == null) {
 					stereotypePropertiesLabel = new Label();
 					int index = labelContainer.getChildren().indexOf(stereotypesLabel);
 					labelContainer.add(stereotypePropertiesLabel, index + 1);
@@ -470,20 +478,22 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 
 		/**
 		 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeUMLElementFigure#setStereotypePropertiesInCompartment(java.lang.String)
-		 * 
+		 *
 		 * @param stereotypeProperties
 		 */
 
+		@Override
 		public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
 
 		}
 
 		/**
 		 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeUMLElementFigure#getStereotypesLabel()
-		 * 
+		 *
 		 * @return
 		 */
 
+		@Override
 		public Label getStereotypesLabel() {
 			return stereotypesLabel;
 		}
@@ -495,6 +505,7 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 			super(parentFigure, location);
 		}
 
+		@Override
 		public void relocate(IFigure borderItem) {
 			Point constraintLocation = getConstraint().getLocation();
 			Dimension size = getSize(borderItem);
@@ -502,6 +513,7 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 			borderItem.setBounds(new Rectangle(ptNewLocation, size));
 		}
 
+		@Override
 		public Rectangle getValidLocation(Rectangle proposedLocation, IFigure borderItem) {
 			Rectangle realLocation = new Rectangle(proposedLocation);
 			Point point = new Point(getParentBorder().getCenter().x - realLocation.getSize().width / 2, realLocation.y);
@@ -512,38 +524,42 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 
 	public static class StateInvariantResizableEditPolicy extends BorderItemResizableEditPolicy {
 
+		@Override
 		protected Command getResizeCommand(ChangeBoundsRequest request) {
-			IBorderItemEditPart borderItemEP = (IBorderItemEditPart)getHost();
+			IBorderItemEditPart borderItemEP = (IBorderItemEditPart) getHost();
 			IBorderItemLocator borderItemLocator = borderItemEP.getBorderItemLocator();
-			if(borderItemLocator != null) {
+			if (borderItemLocator != null) {
 				PrecisionRectangle rect = new PrecisionRectangle(getInitialFeedbackBounds().getCopy());
 				getHostFigure().translateToAbsolute(rect);
 				rect.translate(request.getMoveDelta());
 				rect.resize(request.getSizeDelta());
 				getHostFigure().translateToRelative(rect);
 				Rectangle realLocation = borderItemLocator.getValidLocation(rect.getCopy(), borderItemEP.getFigure());
-				if(borderItemEP.getParent() instanceof LifelineEditPart && !restrictInParentBounds((LifelineEditPart)borderItemEP.getParent(), borderItemEP, realLocation.getCopy()))
+				if (borderItemEP.getParent() instanceof LifelineEditPart && !restrictInParentBounds((LifelineEditPart) borderItemEP.getParent(), borderItemEP, realLocation.getCopy())) {
 					return null;
-				ICommand moveCommand = new SetBoundsCommand(borderItemEP.getEditingDomain(), DiagramUIMessages.Commands_MoveElement, new EObjectAdapter((View)getHost().getModel()), realLocation);
+				}
+				ICommand moveCommand = new SetBoundsCommand(borderItemEP.getEditingDomain(), DiagramUIMessages.Commands_MoveElement, new EObjectAdapter((View) getHost().getModel()), realLocation);
 				return new ICommandProxy(moveCommand);
 			}
 			return null;
 		}
 
+		@Override
 		protected Command getMoveCommand(ChangeBoundsRequest request) {
-			IBorderItemEditPart borderItemEP = (IBorderItemEditPart)getHost();
+			IBorderItemEditPart borderItemEP = (IBorderItemEditPart) getHost();
 			IBorderItemLocator borderItemLocator = borderItemEP.getBorderItemLocator();
-			if(borderItemLocator != null) {
+			if (borderItemLocator != null) {
 				PrecisionRectangle rect = new PrecisionRectangle(getInitialFeedbackBounds().getCopy());
 				getHostFigure().translateToAbsolute(rect);
 				rect.translate(request.getMoveDelta());
 				rect.resize(request.getSizeDelta());
 				getHostFigure().translateToRelative(rect);
 				Rectangle realLocation = borderItemLocator.getValidLocation(rect.getCopy(), borderItemEP.getFigure());
-				if(borderItemEP.getParent() instanceof LifelineEditPart && !restrictInParentBounds((LifelineEditPart)borderItemEP.getParent(), borderItemEP, realLocation.getCopy()))
+				if (borderItemEP.getParent() instanceof LifelineEditPart && !restrictInParentBounds((LifelineEditPart) borderItemEP.getParent(), borderItemEP, realLocation.getCopy())) {
 					return null;
+				}
 				Point location = realLocation.getTopLeft();
-				ICommand moveCommand = new SetBoundsCommand(borderItemEP.getEditingDomain(), DiagramUIMessages.Commands_MoveElement, new EObjectAdapter((View)getHost().getModel()), location);
+				ICommand moveCommand = new SetBoundsCommand(borderItemEP.getEditingDomain(), DiagramUIMessages.Commands_MoveElement, new EObjectAdapter((View) getHost().getModel()), location);
 				return new ICommandProxy(moveCommand);
 			}
 			return null;
@@ -554,10 +570,12 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 			Rectangle bounds = ep.getPrimaryShape().getBounds().getCopy();
 			ep.getPrimaryShape().translateToAbsolute(bounds);
 			int nameHeight = ep.getPrimaryShape().getFigureLifelineNameContainerFigure().getBounds().height;
-			if(realLocation.y - nameHeight < bounds.y)
+			if (realLocation.y - nameHeight < bounds.y) {
 				return false;
-			if(realLocation.getBottom().y > bounds.getBottom().y)
+			}
+			if (realLocation.getBottom().y > bounds.getBottom().y) {
 				return false;
+			}
 			return true;
 		}
 	}

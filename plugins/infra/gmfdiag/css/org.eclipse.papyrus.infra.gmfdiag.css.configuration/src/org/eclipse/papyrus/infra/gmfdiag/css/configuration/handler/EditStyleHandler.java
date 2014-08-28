@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class EditStyleHandler extends AbstractStyleHandler {
 
 	@Override
 	protected Ruleset getRuleset(AbstractStyleDialog dialog) {
-		Ruleset ruleset = ((StyleEditionDialog)dialog).getSelectedRuleset();
+		Ruleset ruleset = ((StyleEditionDialog) dialog).getSelectedRuleset();
 		ruleset.getSelectors().clear();
 		ruleset.getProperties().clear();
 		return ruleset;
@@ -38,7 +38,7 @@ public class EditStyleHandler extends AbstractStyleHandler {
 
 	@Override
 	protected Stylesheet getStyleSheet(AbstractStyleDialog dialog, View contextView) {
-		return ((StyleEditionDialog)dialog).getStylesheet();
+		return ((StyleEditionDialog) dialog).getStylesheet();
 	}
 
 }

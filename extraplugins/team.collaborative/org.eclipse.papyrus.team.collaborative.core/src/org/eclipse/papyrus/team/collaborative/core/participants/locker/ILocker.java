@@ -18,7 +18,7 @@ import org.eclipse.papyrus.team.collaborative.core.participants.IExtendedURISupe
 
 /**
  * Object to perform a lock
- * 
+ *
  * @author adaussy
  */
 public interface ILocker extends IExtendedURISuperSet {
@@ -26,7 +26,7 @@ public interface ILocker extends IExtendedURISuperSet {
 
 	/**
 	 * Lock the element of {@link IExtendedURISuperSet#getExtendedSet()}
-	 * 
+	 *
 	 * @return
 	 * @throws CollabException
 	 */
@@ -34,7 +34,7 @@ public interface ILocker extends IExtendedURISuperSet {
 
 	/**
 	 * Return true if the {@link ExtendedURI} is locked
-	 * 
+	 *
 	 * @return
 	 */
 	IStatus isLocked(IExtendedURI uri);

@@ -50,65 +50,65 @@ public class ResetStyleCommand extends RecordingCommand {
 
 	@Override
 	public void doExecute() {
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Object selectedItem = iterator.next();
 			View view = NotationHelper.findView(selectedItem);
-			if(view == null) {
+			if (view == null) {
 				continue;
 			}
 
-			if(view instanceof Diagram) {
-				resetDiagram((Diagram)view);
+			if (view instanceof Diagram) {
+				resetDiagram((Diagram) view);
 				break;
 			} else {
-				//Reset the style attribute to their default value
+				// Reset the style attribute to their default value
 				resetStyle(view, true);
 			}
 		}
 	}
 
 	private void resetDiagram(Diagram diagram) {
-		for(Object viewObject : diagram.getChildren()) {
-			if(viewObject instanceof View) {
-				resetStyle((View)viewObject, true);
+		for (Object viewObject : diagram.getChildren()) {
+			if (viewObject instanceof View) {
+				resetStyle((View) viewObject, true);
 			}
 		}
-		for(Object lineObject : diagram.getEdges()) {
-			if(lineObject instanceof View) {
-				resetStyle((View)lineObject, true);
+		for (Object lineObject : diagram.getEdges()) {
+			if (lineObject instanceof View) {
+				resetStyle((View) lineObject, true);
 			}
 		}
 	}
 
 	private void resetStyle(View view, boolean recursive) {
 		resetStyle(view);
-		if(recursive) {
-			for(Object childObject : view.getChildren()) {
-				if(childObject instanceof View) {
-					resetStyle((View)childObject, recursive);
+		if (recursive) {
+			for (Object childObject : view.getChildren()) {
+				if (childObject instanceof View) {
+					resetStyle((View) childObject, recursive);
 				}
 			}
 		}
 	}
 
 	private void resetStyle(View view) {
-		//Reset the view (Except for volatile/transient elements which are already derived, e.g. Stereotype compartments)
-		if(view.eContainingFeature().isTransient()) {
+		// Reset the view (Except for volatile/transient elements which are already derived, e.g. Stereotype compartments)
+		if (view.eContainingFeature().isTransient()) {
 			return;
 		}
 
 		Iterator<?> styleIterator = view.getStyles().iterator();
-		while(styleIterator.hasNext()) {
+		while (styleIterator.hasNext()) {
 			Object styleObject = styleIterator.next();
-			if(styleObject instanceof NamedStyle) {
-				NamedStyle customStyle = (NamedStyle)styleObject;
+			if (styleObject instanceof NamedStyle) {
+				NamedStyle customStyle = (NamedStyle) styleObject;
 
-				if(!CSSStyles.RESERVED_KEYWORDS.contains(customStyle.getName())) {
+				if (!CSSStyles.RESERVED_KEYWORDS.contains(customStyle.getName())) {
 
-					//Remove only NamedStyle which are supported by the CSS Implementation
-					//See org.eclipse.papyrus.infra.gmfdiag.css.style.impl.CSSViewDelegate.getCSSNamedStyle(EClass, String)
-					//See Bug 425190 - [CSS] Loss of Notation information when CSS style is applied on Edges.
-					switch(customStyle.eClass().getClassifierID()) {
+					// Remove only NamedStyle which are supported by the CSS Implementation
+					// See org.eclipse.papyrus.infra.gmfdiag.css.style.impl.CSSViewDelegate.getCSSNamedStyle(EClass, String)
+					// See Bug 425190 - [CSS] Loss of Notation information when CSS style is applied on Edges.
+					switch (customStyle.eClass().getClassifierID()) {
 					case NotationPackage.STRING_VALUE_STYLE:
 					case NotationPackage.BOOLEAN_VALUE_STYLE:
 					case NotationPackage.INT_VALUE_STYLE:
@@ -118,59 +118,59 @@ public class ResetStyleCommand extends RecordingCommand {
 					}
 
 				}
-			} else if(styleObject instanceof Style) {
-				resetStyle((Style)styleObject);
+			} else if (styleObject instanceof Style) {
+				resetStyle((Style) styleObject);
 			}
 		}
 
-		if(view instanceof Style) {
-			resetStyle((Style)view);
+		if (view instanceof Style) {
+			resetStyle((Style) view);
 		}
 
-		//Remove the "forceValue" annotations
+		// Remove the "forceValue" annotations
 		resetAnnotations(view);
-		//Remove the Papyrus Style EAnnotations
+		// Remove the Papyrus Style EAnnotations
 		resetStyleAnnotations(view);
 
-		//Reset the visibility
+		// Reset the visibility
 		view.eUnset(NotationPackage.eINSTANCE.getView_Visible());
 	}
 
 	private void resetStyle(Style style) {
-		if(style instanceof NamedStyle) {
-			//Skip custom styles.
-			//TODO: We should skip CSS Styles (CSSClass, CSSId, CSSStyle, DiagramStyleSheets),
-			//and reset custom GMF Styles (elementIcon, shadow, ...).
-			//What about external custom styles (ie. unkwnown styles)?
-			//They should be stylable, but they might contain something we don't want to reset...
+		if (style instanceof NamedStyle) {
+			// Skip custom styles.
+			// TODO: We should skip CSS Styles (CSSClass, CSSId, CSSStyle, DiagramStyleSheets),
+			// and reset custom GMF Styles (elementIcon, shadow, ...).
+			// What about external custom styles (ie. unkwnown styles)?
+			// They should be stylable, but they might contain something we don't want to reset...
 			return;
 		}
 
-		for(EStructuralFeature feature : style.eClass().getEAllStructuralFeatures()) {
-			//Only edit Style features
-			if(NotationPackage.eINSTANCE.getStyle().isSuperTypeOf(feature.getEContainingClass())) {
-				//Reset the value to default
+		for (EStructuralFeature feature : style.eClass().getEAllStructuralFeatures()) {
+			// Only edit Style features
+			if (NotationPackage.eINSTANCE.getStyle().isSuperTypeOf(feature.getEContainingClass())) {
+				// Reset the value to default
 				style.eUnset(feature);
 			}
 		}
 	}
 
-	//Resets the "Force Value" annotations (Tags to indicate that the user
-	//has manually selected a value, which will override the CSS Style)
+	// Resets the "Force Value" annotations (Tags to indicate that the user
+	// has manually selected a value, which will override the CSS Style)
 	private void resetAnnotations(View view) {
 		Iterator<EAnnotation> iterator = view.getEAnnotations().iterator();
-		while(iterator.hasNext()) {
-			if(CSSAnnotations.CSS_FORCE_VALUE.equals(iterator.next().getSource())) {
+		while (iterator.hasNext()) {
+			if (CSSAnnotations.CSS_FORCE_VALUE.equals(iterator.next().getSource())) {
 				iterator.remove();
 			}
 		}
 	}
 
-	//Resets the "Custom style" Annotations (elementIcon, shadow, qualifiedName)
+	// Resets the "Custom style" Annotations (elementIcon, shadow, qualifiedName)
 	private void resetStyleAnnotations(View view) {
 		Iterator<EAnnotation> iterator = view.getEAnnotations().iterator();
-		while(iterator.hasNext()) {
-			if(papyrusStyleAnnotations.contains(iterator.next().getSource())) {
+		while (iterator.hasNext()) {
+			if (papyrusStyleAnnotations.contains(iterator.next().getSource())) {
 				iterator.remove();
 			}
 		}

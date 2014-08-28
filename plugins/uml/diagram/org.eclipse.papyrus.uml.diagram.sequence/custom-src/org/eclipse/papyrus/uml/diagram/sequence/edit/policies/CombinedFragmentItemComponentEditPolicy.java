@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,13 +36,13 @@ public class CombinedFragmentItemComponentEditPolicy extends ComponentEditPolicy
 	 */
 	@Override
 	protected Command createDeleteViewCommand(GroupRequest deleteRequest) {
-		if(getEditingDomain() != null) {
+		if (getEditingDomain() != null) {
 			CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 			cmd.setTransactionNestingEnabled(true);
 			CommandProxy deleteView = new CommandProxy(super.createDeleteViewCommand(deleteRequest));
-			if(getEObject() instanceof CombinedFragment) {
-				CombinedFragment cf = (CombinedFragment)getEObject();
-				CombinedFragmentEditPart host = (CombinedFragmentEditPart)getHost();
+			if (getEObject() instanceof CombinedFragment) {
+				CombinedFragment cf = (CombinedFragment) getEObject();
+				CombinedFragmentEditPart host = (CombinedFragmentEditPart) getHost();
 				ICommand prompt = CombinedFragmentDeleteHelper.createDeleteViewCommand(cf, getEditingDomain(), host);
 				cmd.add(prompt);
 			}
@@ -54,16 +54,16 @@ public class CombinedFragmentItemComponentEditPolicy extends ComponentEditPolicy
 
 	/**
 	 * Copy from superclass as visibility is private
-	 * 
+	 *
 	 * @return the editing domain
 	 */
 	private TransactionalEditingDomain getEditingDomain() {
-		if(getHost() instanceof IGraphicalEditPart) {
-			return ((IGraphicalEditPart)getHost()).getEditingDomain();
-		} else if(getHost() instanceof IEditingDomainProvider) {
-			Object domain = ((IEditingDomainProvider)getHost()).getEditingDomain();
-			if(domain instanceof TransactionalEditingDomain) {
-				return (TransactionalEditingDomain)domain;
+		if (getHost() instanceof IGraphicalEditPart) {
+			return ((IGraphicalEditPart) getHost()).getEditingDomain();
+		} else if (getHost() instanceof IEditingDomainProvider) {
+			Object domain = ((IEditingDomainProvider) getHost()).getEditingDomain();
+			if (domain instanceof TransactionalEditingDomain) {
+				return (TransactionalEditingDomain) domain;
 			}
 		}
 		return null;
@@ -71,12 +71,12 @@ public class CombinedFragmentItemComponentEditPolicy extends ComponentEditPolicy
 
 	/**
 	 * Get the EObject of the host
-	 * 
+	 *
 	 * @return the EObject or null
 	 */
 	private EObject getEObject() {
-		if(getHost() instanceof GraphicalEditPart) {
-			return ((GraphicalEditPart)getHost()).resolveSemanticElement();
+		if (getHost() instanceof GraphicalEditPart) {
+			return ((GraphicalEditPart) getHost()).resolveSemanticElement();
 		}
 		return null;
 	}

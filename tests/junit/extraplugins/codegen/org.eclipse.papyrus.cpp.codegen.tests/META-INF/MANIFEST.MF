@@ -1,27 +1,30 @@
 Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Vendor: Eclipse Modeling Project
-Bundle-Name: Papyrus CPP Codegen Tests (Incubation)
-Bundle-SymbolicName: org.eclipse.papyrus.cpp.codegen.tests
-Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.junit,
- org.eclipse.papyrus.cpp.codegen;bundle-version="1.0.0",
- org.eclipse.papyrus.cpp.codegen.ui;bundle-version="1.0.0",
- org.eclipse.papyrus.uml.tools;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
+ org.eclipse.papyrus.cpp.codegen;bundle-version="1.0.1",
+ org.eclipse.papyrus.cpp.codegen.ui;bundle-version="1.0.1",
+ org.eclipse.papyrus.uml.tools;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.core;bundle-version="1.0.1",
  org.eclipse.ui.ide,
  org.eclipse.emf.common.ui,
- org.eclipse.papyrus.editor;bundle-version="1.0.0",
+ org.eclipse.papyrus.editor;bundle-version="1.0.1",
  org.eclipse.emf.edit,
  org.eclipse.gmf.runtime.diagram.ui,
- org.eclipse.papyrus.infra.services.openelement;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.services.openelement;bundle-version="1.0.1",
  org.eclipse.cdt.core,
- org.eclipse.papyrus.acceleo;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.emf;bundle-version="1.0.0"
-Bundle-Activator: org.eclipse.papyrus.cpp.codegen.tests.TestPlugin
-Bundle-ActivationPolicy: lazy
-Eclipse-BundleShape: dir
+ org.eclipse.papyrus.acceleo;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.emf;bundle-version="1.0.1",
+ org.eclipse.papyrus.junit.framework;bundle-version="1.0.1",
+ org.eclipse.papyrus.junit.utils;bundle-version="1.0.1"
 Export-Package: org.eclipse.papyrus.cpp.codegen.tests
+Bundle-Vendor: Eclipse Modeling Project
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.0.1.qualifier
+Eclipse-BundleShape: dir
+Bundle-Name: Papyrus CPP Codegen Tests (Incubation)
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.eclipse.papyrus.cpp.codegen.tests.TestPlugin
+Bundle-SymbolicName: org.eclipse.papyrus.cpp.codegen.tests
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

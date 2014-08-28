@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,8 +27,8 @@ import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaCommHost;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaCommHostImpl#getIsSched <em>Is Sched</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaCommHostImpl#getSchSlack <em>Sch Slack</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaCommHostImpl#getIsSched <em>Is Sched</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaCommHostImpl#getSchSlack <em>Sch Slack</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +39,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	 * The default value of the '{@link #getIsSched() <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIsSched()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	 * The cached value of the '{@link #getIsSched() <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIsSched()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	 * The default value of the '{@link #getSchSlack() <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSchSlack()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	 * The cached value of the '{@link #getSchSlack() <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSchSlack()
 	 * @generated
 	 * @ordered
@@ -78,6 +82,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SaCommHostImpl() {
@@ -87,6 +92,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,8 +103,10 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getIsSched() {
 		return isSched;
 	}
@@ -106,20 +114,25 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsSched(String newIsSched) {
 		String oldIsSched = isSched;
 		isSched = newIsSched;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SAMPackage.SA_COMM_HOST__IS_SCHED, oldIsSched, isSched));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getSchSlack() {
 		return schSlack;
 	}
@@ -127,27 +140,31 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setSchSlack(String newSchSlack) {
 		String oldSchSlack = schSlack;
 		schSlack = newSchSlack;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SAMPackage.SA_COMM_HOST__SCH_SLACK, oldSchSlack, schSlack));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SAMPackage.SA_COMM_HOST__IS_SCHED:
-				return getIsSched();
-			case SAMPackage.SA_COMM_HOST__SCH_SLACK:
-				return getSchSlack();
+		case SAMPackage.SA_COMM_HOST__IS_SCHED:
+			return getIsSched();
+		case SAMPackage.SA_COMM_HOST__SCH_SLACK:
+			return getSchSlack();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -155,17 +172,18 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SAMPackage.SA_COMM_HOST__IS_SCHED:
-				setIsSched((String)newValue);
-				return;
-			case SAMPackage.SA_COMM_HOST__SCH_SLACK:
-				setSchSlack((String)newValue);
-				return;
+		case SAMPackage.SA_COMM_HOST__IS_SCHED:
+			setIsSched((String) newValue);
+			return;
+		case SAMPackage.SA_COMM_HOST__SCH_SLACK:
+			setSchSlack((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -173,17 +191,18 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SAMPackage.SA_COMM_HOST__IS_SCHED:
-				setIsSched(IS_SCHED_EDEFAULT);
-				return;
-			case SAMPackage.SA_COMM_HOST__SCH_SLACK:
-				setSchSlack(SCH_SLACK_EDEFAULT);
-				return;
+		case SAMPackage.SA_COMM_HOST__IS_SCHED:
+			setIsSched(IS_SCHED_EDEFAULT);
+			return;
+		case SAMPackage.SA_COMM_HOST__SCH_SLACK:
+			setSchSlack(SCH_SLACK_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -191,15 +210,16 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SAMPackage.SA_COMM_HOST__IS_SCHED:
-				return IS_SCHED_EDEFAULT == null ? isSched != null : !IS_SCHED_EDEFAULT.equals(isSched);
-			case SAMPackage.SA_COMM_HOST__SCH_SLACK:
-				return SCH_SLACK_EDEFAULT == null ? schSlack != null : !SCH_SLACK_EDEFAULT.equals(schSlack);
+		case SAMPackage.SA_COMM_HOST__IS_SCHED:
+			return IS_SCHED_EDEFAULT == null ? isSched != null : !IS_SCHED_EDEFAULT.equals(isSched);
+		case SAMPackage.SA_COMM_HOST__SCH_SLACK:
+			return SCH_SLACK_EDEFAULT == null ? schSlack != null : !SCH_SLACK_EDEFAULT.equals(schSlack);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -207,11 +227,14 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isSched: ");
@@ -222,4 +245,4 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 		return result.toString();
 	}
 
-} //SaCommHostImpl
+} // SaCommHostImpl

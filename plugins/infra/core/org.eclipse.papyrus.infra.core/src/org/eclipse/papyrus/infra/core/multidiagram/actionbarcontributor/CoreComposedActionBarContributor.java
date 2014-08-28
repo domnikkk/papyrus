@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,13 +25,13 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.part.EditorActionBarContributor;
 
 /**
- * 
+ *
  * An ActionBarContributor composed of ActionBarContributor from multi editor.
  * This ActionBarContributor switch to the contributor dedicated to the active
  * editor in a MultiPageEditor environement.
- * 
+ *
  * @author dumoulin
- * 
+ *
  */
 public class CoreComposedActionBarContributor extends ComposedActionBarContributor implements IMultiPageEditorActionBarContributor {
 
@@ -44,7 +44,7 @@ public class CoreComposedActionBarContributor extends ComposedActionBarContribut
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @throws BackboneException
 	 */
 	public CoreComposedActionBarContributor() throws BackboneException {
@@ -53,7 +53,7 @@ public class CoreComposedActionBarContributor extends ComposedActionBarContribut
 	}
 
 	/**
-	 * 
+	 *
 	 * @throws BackboneException
 	 */
 	private void loadContributors() throws BackboneException {
@@ -75,7 +75,7 @@ public class CoreComposedActionBarContributor extends ComposedActionBarContribut
 	@Override
 	public void dispose() {
 		// Dispose nested contributors.
-		for(EditorActionBarContributor contributor : contributors) {
+		for (EditorActionBarContributor contributor : contributors) {
 			contributor.dispose();
 		}
 		super.dispose();
@@ -90,17 +90,17 @@ public class CoreComposedActionBarContributor extends ComposedActionBarContribut
 		buildActions();
 
 		// init nested contributors.
-		for(EditorActionBarContributor contributor : contributors) {
+		for (EditorActionBarContributor contributor : contributors) {
 			contributor.init(bars, page);
 			// remove GMF GlobalSaveAction from bar, fix bug 407854 - [Editor] The save action is disabled in Papyrus
-			bars.setGlobalActionHandler("save", null);	// GMF is not using IWorkbenchCommandConstants.FILE_SAVE as ID //$NON-NLS-1$
+			bars.setGlobalActionHandler("save", null); // GMF is not using IWorkbenchCommandConstants.FILE_SAVE as ID //$NON-NLS-1$
 		}
 
 	}
 
 	/**
 	 * Load default actions (undo/redo/delete)
-	 * 
+	 *
 	 * @see org.eclipse.gef.ui.actions.ActionBarContributor#buildActions()
 	 */
 	protected void buildActions() {
@@ -111,8 +111,8 @@ public class CoreComposedActionBarContributor extends ComposedActionBarContribut
 	@Override
 	public void setActiveEditor(IEditorPart part) {
 		super.setActiveEditor(part);
-		for(EditorActionBarContributor contributor : contributors) {
-			if(part != null) {
+		for (EditorActionBarContributor contributor : contributors) {
+			if (part != null) {
 				contributor.setActiveEditor(part);
 			}
 		}

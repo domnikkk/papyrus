@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,11 +27,11 @@ import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
  * Service Factory used to create the {@link IUndoContext} used by all editors and views associated to
  * a model (or {@link ServicesRegistry}).
  * The {@link IUndoContext} can be retrieved from the {@link ServicesRegistry}.
- * 
+ *
  * @author Cedric Dumoulin
- * 
+ *
  */
-//TODO: Refactor 0.10: To be moved out of infra.core
+// TODO: Refactor 0.10: To be moved out of infra.core
 public class UndoContextServiceFactory implements IServiceFactory {
 
 	/**
@@ -40,12 +40,13 @@ public class UndoContextServiceFactory implements IServiceFactory {
 	private IUndoContext undoContext;
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#init(org.eclipse.papyrus.infra.core.services.ServicesRegistry)
-	 * 
+	 *
 	 * @param servicesRegistry
 	 * @throws ServiceException
 	 */
+	@Override
 	public void init(ServicesRegistry servicesRegistry) throws ServiceException {
 
 		// Lookup TransactionalEditingDomain
@@ -56,32 +57,35 @@ public class UndoContextServiceFactory implements IServiceFactory {
 
 	/**
 	 * Do nothing
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#startService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
+	@Override
 	public void startService() throws ServiceException {
 	}
 
 	/**
 	 * Do nothing
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#disposeService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
+	@Override
 	public void disposeService() throws ServiceException {
 
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IServiceFactory#createServiceInstance()
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Override
 	public Object createServiceInstance() throws ServiceException {
 		return undoContext;
 	}

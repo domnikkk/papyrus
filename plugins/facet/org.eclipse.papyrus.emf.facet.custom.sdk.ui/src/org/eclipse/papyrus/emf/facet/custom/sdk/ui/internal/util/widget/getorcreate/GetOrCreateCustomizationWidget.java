@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.widget.getorcreate;
 
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.dialog.getorcreate.GetOrCreateCustomizationDialog;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialog;
@@ -21,7 +22,6 @@ import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.comma
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.IGetOrCreateFilteredElementCommmandWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.component.getorcreate.AbstractGetOrCreateElementWithDialogButtonWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.utils.PropertyElement2;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 import org.eclipse.swt.widgets.Composite;
 
 /**
@@ -35,7 +35,7 @@ public class GetOrCreateCustomizationWidget
 
 	/**
 	 * Constructor.*
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of this composite.
 	 * @param propertyElement

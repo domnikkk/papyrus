@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,15 +16,15 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
  * Represents a value replacement.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public interface Replacement extends EStructuralFeature.Setting {
 
 	/**
 	 * Returns the old value
-	 * 
+	 *
 	 * @return
 	 *         The value which has been replaced
 	 */

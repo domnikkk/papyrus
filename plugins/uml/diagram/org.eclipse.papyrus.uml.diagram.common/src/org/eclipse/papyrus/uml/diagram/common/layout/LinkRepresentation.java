@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,18 +28,17 @@ import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.editparts.AbstractConnectionEditPart;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.ReconnectRequest;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.SetAllBendpointRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 
 /**
- * 
+ *
  * This class is used to represent a link, to allow an alignment action. Its
  * provides fields to store the sources and the target and methods to do the
  * needed action to align the link extremities.
- * 
+ *
  * This alignment align the two anchors of a link. To do this, only one {@link EditPart} can moves.
- * 
+ *
  * TODO should be merge with LinkRepresentationForLayoutAction
  */
 public class LinkRepresentation {
@@ -69,17 +68,17 @@ public class LinkRepresentation {
 	private Point movedPoint;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param link
-	 *        the represented link
+	 *            the represented link
 	 * @param source
-	 *        the representation of the source of the link
+	 *            the representation of the source of the link
 	 * @param target
-	 *        the representation of the target of the link
+	 *            the representation of the target of the link
 	 * @param alignment
-	 *        the alignment
+	 *            the alignment
 	 */
 	public LinkRepresentation(EditPart link, EditPartRepresentation source, EditPartRepresentation target, int alignment) {
 		this.link = link;
@@ -90,7 +89,7 @@ public class LinkRepresentation {
 
 	/**
 	 * Getter for {@link #link}
-	 * 
+	 *
 	 * @return {@link #link}
 	 */
 	public EditPart getLink() {
@@ -99,7 +98,7 @@ public class LinkRepresentation {
 
 	/**
 	 * Getter for {@link #source}
-	 * 
+	 *
 	 * @return {@link #source}
 	 */
 	public EditPartRepresentation getSource() {
@@ -108,7 +107,7 @@ public class LinkRepresentation {
 
 	/**
 	 * Getter for {@link #target}
-	 * 
+	 *
 	 * @return {@link #target}
 	 */
 	public EditPartRepresentation getTarget() {
@@ -117,7 +116,7 @@ public class LinkRepresentation {
 
 	/**
 	 * Returns the command to align the node with a common link
-	 * 
+	 *
 	 * @return the command to align the node with a common link
 	 */
 	public Command getCommand() {
@@ -128,13 +127,13 @@ public class LinkRepresentation {
 
 		// the command to align the node
 		cmd = movedEditPart.getCommand();
-		if(cmd != null && cmd.canExecute()) {
+		if (cmd != null && cmd.canExecute()) {
 			command.add(cmd);
 		}
 
 		// the command to reset the anchor location
 		cmd = preserveAnchorLocationCommand();
-		if(cmd.canExecute()) {
+		if (cmd.canExecute()) {
 			command.add(cmd);
 		}
 
@@ -155,7 +154,7 @@ public class LinkRepresentation {
 		PrecisionPoint newLocation = new PrecisionPoint(oldLocation);
 
 		/* we calculate the shift for the editpart */
-		switch(this.align) {
+		switch (this.align) {
 		case PositionConstants.LEFT:// it's the left figure we move
 			shift = referencePoint.y - movedPoint.y;
 			movedPoint.y += shift;
@@ -182,17 +181,17 @@ public class LinkRepresentation {
 		// we correct the location to avoid the scrollbar!
 		// the parent bounds
 		PrecisionRectangle parentBounds = LayoutUtils.getAbsolutePosition(movedEditPart.getRepresentedEditPart().getParent());
-		if(this.align == PositionConstants.LEFT || this.align == PositionConstants.RIGHT) {
-			if((newLocation.y < (parentBounds.y + LayoutUtils.scrollBarSize)) && (shift < 0)) {
-				newLocation.setLocation(newLocation.x, parentBounds.y + (int)LayoutUtils.scrollBarSize);
-			} else if(((newLocation.y + absolutePosition.height) > parentBounds.getBottomLeft().y) && (shift > 0)) {
-				newLocation.setLocation(newLocation.x, parentBounds.getBottomLeft().y - ((int)LayoutUtils.scrollBarSize + absolutePosition.height));
+		if (this.align == PositionConstants.LEFT || this.align == PositionConstants.RIGHT) {
+			if ((newLocation.y < (parentBounds.y + LayoutUtils.scrollBarSize)) && (shift < 0)) {
+				newLocation.setLocation(newLocation.x, parentBounds.y + (int) LayoutUtils.scrollBarSize);
+			} else if (((newLocation.y + absolutePosition.height) > parentBounds.getBottomLeft().y) && (shift > 0)) {
+				newLocation.setLocation(newLocation.x, parentBounds.getBottomLeft().y - ((int) LayoutUtils.scrollBarSize + absolutePosition.height));
 			}
-		} else if(this.align == PositionConstants.TOP || this.align == PositionConstants.BOTTOM) {
-			if((newLocation.x < (parentBounds.x + LayoutUtils.scrollBarSize)) && (shift < 0)) {
-				newLocation.setLocation(parentBounds.x + (int)LayoutUtils.scrollBarSize, newLocation.y);
-			} else if(((newLocation.x + absolutePosition.width) > parentBounds.getBottomRight().x) && (shift > 0)) {
-				newLocation.setLocation(parentBounds.getBottomRight().x - ((int)LayoutUtils.scrollBarSize + absolutePosition.width), newLocation.y);
+		} else if (this.align == PositionConstants.TOP || this.align == PositionConstants.BOTTOM) {
+			if ((newLocation.x < (parentBounds.x + LayoutUtils.scrollBarSize)) && (shift < 0)) {
+				newLocation.setLocation(parentBounds.x + (int) LayoutUtils.scrollBarSize, newLocation.y);
+			} else if (((newLocation.x + absolutePosition.width) > parentBounds.getBottomRight().x) && (shift > 0)) {
+				newLocation.setLocation(parentBounds.getBottomRight().x - ((int) LayoutUtils.scrollBarSize + absolutePosition.width), newLocation.y);
 			}
 		}
 
@@ -215,7 +214,7 @@ public class LinkRepresentation {
 	 * <li> {@link #referencePoint}</li>
 	 * <li> {@link #movedPoint}</li>
 	 * </ul>
-	 * 
+	 *
 	 * It determines the reference point and the reference editpart for the
 	 * alignment
 	 */
@@ -223,9 +222,9 @@ public class LinkRepresentation {
 		PrecisionRectangle absolutePositionSource = LayoutUtils.getAbsolutePosition(source.getRepresentedEditPart());
 		PrecisionRectangle absolutePositionTarget = LayoutUtils.getAbsolutePosition(target.getRepresentedEditPart());
 
-		switch(this.align) {
+		switch (this.align) {
 		case PositionConstants.LEFT:
-			if(absolutePositionSource.preciseX < absolutePositionTarget.preciseX) {// the
+			if (absolutePositionSource.preciseX < absolutePositionTarget.preciseX) {// the
 																					// left
 																					// node
 																					// moves
@@ -235,7 +234,7 @@ public class LinkRepresentation {
 			}
 			break;
 		case PositionConstants.RIGHT:
-			if(absolutePositionSource.preciseX > absolutePositionTarget.preciseX) {// the
+			if (absolutePositionSource.preciseX > absolutePositionTarget.preciseX) {// the
 																					// right
 																					// node
 																					// moves
@@ -245,7 +244,7 @@ public class LinkRepresentation {
 			}
 			break;
 		case PositionConstants.TOP:
-			if(absolutePositionSource.preciseY < absolutePositionTarget.preciseY) {// the
+			if (absolutePositionSource.preciseY < absolutePositionTarget.preciseY) {// the
 																					// top
 																					// node
 																					// moves
@@ -255,7 +254,7 @@ public class LinkRepresentation {
 			}
 			break;
 		case PositionConstants.BOTTOM:
-			if(absolutePositionSource.preciseY > absolutePositionTarget.preciseY) {// the
+			if (absolutePositionSource.preciseY > absolutePositionTarget.preciseY) {// the
 																					// bottom
 																					// node
 																					// moves
@@ -268,9 +267,9 @@ public class LinkRepresentation {
 		assert (fixedEditPart != null);
 		movedEditPart = (source == fixedEditPart) ? target : source;
 
-		PolylineConnectionEx figure = (PolylineConnectionEx)((AbstractConnectionEditPart)link).getFigure();
+		PolylineConnectionEx figure = (PolylineConnectionEx) ((AbstractConnectionEditPart) link).getFigure();
 
-		if(fixedEditPart == source) {
+		if (fixedEditPart == source) {
 			referencePoint = figure.getStart();
 			movedPoint = figure.getEnd();
 		} else {
@@ -290,12 +289,12 @@ public class LinkRepresentation {
 
 	/**
 	 * Returns the side on which the anchor is on the {@link #source}
-	 * 
+	 *
 	 * @return the side on which the anchor is on the {@link #source}
 	 */
 	public int getLinkSideOnSource() {
 
-		PolylineConnectionEx figure = (PolylineConnectionEx)((AbstractConnectionEditPart)link).getFigure();
+		PolylineConnectionEx figure = (PolylineConnectionEx) ((AbstractConnectionEditPart) link).getFigure();
 		Point sourcePoint = figure.getStart();
 		figure.translateToAbsolute(sourcePoint);
 		return LayoutUtils.getAnchorPosition(source.getRepresentedEditPart(), sourcePoint);
@@ -303,12 +302,12 @@ public class LinkRepresentation {
 
 	/**
 	 * Returns the side on which the anchor is on the {@link #target}
-	 * 
+	 *
 	 * @return the side on which the anchor is on the {@link #target}
 	 */
 	public int getLinkSideOnTarget() {
 
-		PolylineConnectionEx figure = (PolylineConnectionEx)((AbstractConnectionEditPart)link).getFigure();
+		PolylineConnectionEx figure = (PolylineConnectionEx) ((AbstractConnectionEditPart) link).getFigure();
 		Point targetPoint = figure.getEnd();
 		figure.translateToAbsolute(targetPoint);
 		return LayoutUtils.getAnchorPosition(target.getRepresentedEditPart(), targetPoint);
@@ -317,22 +316,22 @@ public class LinkRepresentation {
 	/**
 	 * Creates and returns the command to reset the connection anchors after
 	 * alignment to their initial location
-	 * 
-	 * 
-	 * 
+	 *
+	 *
+	 *
 	 * @return the command to reset the connection anchors to their initial
 	 *         location after the node shifting
-	 * 
+	 *
 	 */
 	protected Command preserveAnchorLocationCommand() {
 		CompoundCommand command = new CompoundCommand("Preserve Anchor"); //$NON-NLS-1$
 
 		Command cmd;
-		if(movedEditPart == source) {
+		if (movedEditPart == source) {
 			// the moved editpart is the source
 			ReconnectRequest reconnectRequest = new ReconnectRequest();
-			reconnectRequest.setType(GraphicalNodeEditPolicy.REQ_RECONNECT_SOURCE);
-			reconnectRequest.setConnectionEditPart((ConnectionEditPart)this.link);
+			reconnectRequest.setType(RequestConstants.REQ_RECONNECT_SOURCE);
+			reconnectRequest.setConnectionEditPart((ConnectionEditPart) this.link);
 			reconnectRequest.setTargetEditPart(source.getRepresentedEditPart());
 			reconnectRequest.setLocation(movedPoint.getTranslated(-movedEditPart.getMoveDelta().width, -movedEditPart.getMoveDelta().height));
 			cmd = source.getRepresentedEditPart().getCommand(reconnectRequest);
@@ -340,8 +339,8 @@ public class LinkRepresentation {
 
 			// the fixed editpart is the target
 			ReconnectRequest reconnectRequestTarget = new ReconnectRequest();
-			reconnectRequestTarget.setType(GraphicalNodeEditPolicy.REQ_RECONNECT_TARGET);
-			reconnectRequestTarget.setConnectionEditPart((ConnectionEditPart)this.link);
+			reconnectRequestTarget.setType(RequestConstants.REQ_RECONNECT_TARGET);
+			reconnectRequestTarget.setConnectionEditPart((ConnectionEditPart) this.link);
 			reconnectRequestTarget.setTargetEditPart(target.getRepresentedEditPart());
 			reconnectRequestTarget.setLocation(referencePoint.getTranslated(-fixedEditPart.getMoveDelta().width, -fixedEditPart.getMoveDelta().height));
 			cmd = target.getRepresentedEditPart().getCommand(reconnectRequestTarget);
@@ -349,8 +348,8 @@ public class LinkRepresentation {
 		} else {
 			// the moved editpart is the target
 			ReconnectRequest reconnectRequest = new ReconnectRequest();
-			reconnectRequest.setType(GraphicalNodeEditPolicy.REQ_RECONNECT_TARGET);
-			reconnectRequest.setConnectionEditPart((ConnectionEditPart)this.link);
+			reconnectRequest.setType(RequestConstants.REQ_RECONNECT_TARGET);
+			reconnectRequest.setConnectionEditPart((ConnectionEditPart) this.link);
 			reconnectRequest.setTargetEditPart(target.getRepresentedEditPart());
 			reconnectRequest.setLocation(movedPoint.getTranslated(-movedEditPart.getMoveDelta().width, -movedEditPart.getMoveDelta().height));
 			cmd = target.getRepresentedEditPart().getCommand(reconnectRequest);
@@ -358,8 +357,8 @@ public class LinkRepresentation {
 
 			// the fixed editpart is the source
 			ReconnectRequest reconnectRequestTarget = new ReconnectRequest();
-			reconnectRequestTarget.setType(GraphicalNodeEditPolicy.REQ_RECONNECT_SOURCE);
-			reconnectRequestTarget.setConnectionEditPart((ConnectionEditPart)this.link);
+			reconnectRequestTarget.setType(RequestConstants.REQ_RECONNECT_SOURCE);
+			reconnectRequestTarget.setConnectionEditPart((ConnectionEditPart) this.link);
 			reconnectRequestTarget.setTargetEditPart(source.getRepresentedEditPart());
 			reconnectRequestTarget.setLocation(referencePoint.getTranslated(-fixedEditPart.getMoveDelta().width, -fixedEditPart.getMoveDelta().height));
 			cmd = source.getRepresentedEditPart().getCommand(reconnectRequestTarget);

@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.provider;
 
@@ -35,16 +35,17 @@ import org.eclipse.papyrus.emf.facet.efacet.QueryFacetElement;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.QueryFacetElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  * @deprecated use the new eFacet metamodel in org.eclipse.papyrus.emf.facet.efacet.metamodel. Cf.
  *             https://bugs.eclipse.org/bugs/show_bug.cgi?id=373672
  */
 @Deprecated
-//generated code
+// generated code
 @SuppressWarnings("all")
 public class QueryFacetElementItemProvider
-	extends FacetElementItemProvider
-	implements
+		extends FacetElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -54,6 +55,7 @@ public class QueryFacetElementItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public QueryFacetElementItemProvider(AdapterFactory adapterFactory) {
@@ -64,6 +66,7 @@ public class QueryFacetElementItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,11 +79,11 @@ public class QueryFacetElementItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,6 +98,7 @@ public class QueryFacetElementItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,6 +113,7 @@ public class QueryFacetElementItemProvider
 	 * This returns QueryFacetElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,14 +125,15 @@ public class QueryFacetElementItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((QueryFacetElement)object).getName();
+		String label = ((QueryFacetElement) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_QueryFacetElement_type") : //$NON-NLS-1$
-			getString("_UI_QueryFacetElement_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_QueryFacetElement_type") : //$NON-NLS-1$
+				getString("_UI_QueryFacetElement_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -135,6 +141,7 @@ public class QueryFacetElementItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,9 +149,9 @@ public class QueryFacetElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(QueryFacetElement.class)) {
-			case EFacetPackage.QUERY_FACET_ELEMENT__QUERY:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case EFacetPackage.QUERY_FACET_ELEMENT__QUERY:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -154,6 +161,7 @@ public class QueryFacetElementItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,14 +169,14 @@ public class QueryFacetElementItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EFacetPackage.Literals.QUERY_FACET_ELEMENT__QUERY,
-				 EFacetFactory.eINSTANCE.createLiteral()));
+						EFacetFactory.eINSTANCE.createLiteral()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EFacetPackage.Literals.QUERY_FACET_ELEMENT__QUERY,
-				 EFacetFactory.eINSTANCE.createTypedElementRef()));
+						EFacetFactory.eINSTANCE.createTypedElementRef()));
 	}
 
 }

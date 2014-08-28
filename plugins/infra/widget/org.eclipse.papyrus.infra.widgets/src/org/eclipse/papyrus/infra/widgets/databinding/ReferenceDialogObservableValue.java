@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.swt.custom.CLabel;
 /**
  * An ObservableValue for ReferenceDialog widget (Which displays
  * the current value with a CLabel)
- * 
+ *
  * @author Camille Letavernier
  */
 public class ReferenceDialogObservableValue extends CLabelObservableValue {
@@ -29,11 +29,11 @@ public class ReferenceDialogObservableValue extends CLabelObservableValue {
 
 	/**
 	 * @param dialog
-	 *        The observed ReferenceDialog
+	 *            The observed ReferenceDialog
 	 * @param label
-	 *        The observed CLabel (Should correspond to dialog#currentValueLabel)
+	 *            The observed CLabel (Should correspond to dialog#currentValueLabel)
 	 * @param modelObservable
-	 *        The Model IObservable
+	 *            The Model IObservable
 	 */
 	public ReferenceDialogObservableValue(ReferenceDialog dialog, CLabel label, IObservableValue modelObservable) {
 		this(dialog, label, modelObservable, null);
@@ -41,13 +41,13 @@ public class ReferenceDialogObservableValue extends CLabelObservableValue {
 
 	/**
 	 * @param dialog
-	 *        The observed ReferenceDialog
+	 *            The observed ReferenceDialog
 	 * @param label
-	 *        The observed CLabel (Should correspond to dialog#currentValueLabel)
+	 *            The observed CLabel (Should correspond to dialog#currentValueLabel)
 	 * @param modelObservable
-	 *        The Model IObservable
+	 *            The Model IObservable
 	 * @param labelProvider
-	 *        The LabelProvider used to define the CLabel's text/image from the current value
+	 *            The LabelProvider used to define the CLabel's text/image from the current value
 	 */
 	public ReferenceDialogObservableValue(ReferenceDialog dialog, CLabel label, IObservableValue modelObservable, ILabelProvider labelProvider) {
 		super(label, modelObservable, labelProvider);

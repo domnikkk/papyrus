@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,14 +58,14 @@ public class DependencyEditHelper extends DirectedRelationshipEditHelper {
 		if ((source != null) && !(source instanceof NamedElement)) {
 			return false;
 		}
-		
+
 		if ((target != null) && !(target instanceof NamedElement)) {
 			return false;
 		}
-		
+
 		return true;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -82,22 +82,22 @@ public class DependencyEditHelper extends DirectedRelationshipEditHelper {
 
 		ICommand command = super.getDestroyReferenceCommand(req);
 
-		Dependency elementToEdit = (Dependency)req.getContainer();
+		Dependency elementToEdit = (Dependency) req.getContainer();
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(elementToEdit.eContainer());
-		if(provider == null) {
+		if (provider == null) {
 			return command;
 		}
 
 		boolean shouldDestroyDependency = false;
-		if(getSourceReference().equals(req.getContainingFeature()) && (elementToEdit.getClients().size() == 1)) {
+		if (getSourceReference().equals(req.getContainingFeature()) && (elementToEdit.getClients().size() == 1)) {
 			shouldDestroyDependency = true;
 		}
 
-		if(getTargetReference().equals(req.getContainingFeature()) && (elementToEdit.getSuppliers().size() == 1)) {
+		if (getTargetReference().equals(req.getContainingFeature()) && (elementToEdit.getSuppliers().size() == 1)) {
 			shouldDestroyDependency = true;
 		}
 
-		if(shouldDestroyDependency) {
+		if (shouldDestroyDependency) {
 			DestroyElementRequest destroyRequest = new DestroyElementRequest(elementToEdit, false);
 			command = provider.getEditCommand(destroyRequest);
 		}
@@ -111,16 +111,16 @@ public class DependencyEditHelper extends DirectedRelationshipEditHelper {
 	@Override
 	protected ICommand getSetCommand(SetRequest req) {
 
-		// If sources or targets are set with an empty list, the dependency 
+		// If sources or targets are set with an empty list, the dependency
 		// should be destroyed.
-		if(getSourceReference().equals(req.getFeature()) || getTargetReference().equals(req.getFeature())) {
+		if (getSourceReference().equals(req.getFeature()) || getTargetReference().equals(req.getFeature())) {
 
 			Object values = req.getValue();
-			if((values != null) && (values instanceof EList) && ((EList<?>)values).isEmpty()) {
+			if ((values != null) && (values instanceof EList) && ((EList<?>) values).isEmpty()) {
 
 				// Get dependency destroy command from Element Edit Service
 				IElementEditService provider = ElementEditServiceUtils.getCommandProvider(req.getElementToEdit());
-				if(provider != null) {
+				if (provider != null) {
 					DestroyElementRequest destroyRequest = new DestroyElementRequest(req.getElementToEdit(), false);
 					ICommand destroyCommand = provider.getEditCommand(destroyRequest);
 					return destroyCommand;

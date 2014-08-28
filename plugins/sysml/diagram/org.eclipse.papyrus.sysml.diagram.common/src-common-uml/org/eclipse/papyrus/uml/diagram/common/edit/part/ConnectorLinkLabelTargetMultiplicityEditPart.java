@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -20,6 +20,7 @@ import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.gmf.diagram.common.edit.policy.LinkLabelDragEditPolicy;
 import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.ConnectorEnd;
 
 /**
  * Edit Part for link label showing {@link Connector} target {@link ConnectorEnd} multiplicity.
@@ -54,11 +55,11 @@ public class ConnectorLinkLabelTargetMultiplicityEditPart extends AbstractElemen
 	 */
 	@Override
 	public EObject getParserElement() {
-		Connector connector = (Connector)resolveSemanticElement();
-		if((getNotationView() != null) && (ViewUtil.getContainerView(getNotationView()) != null)) {
+		Connector connector = (Connector) resolveSemanticElement();
+		if ((getNotationView() != null) && (ViewUtil.getContainerView(getNotationView()) != null)) {
 			View owner = ViewUtil.getContainerView(getNotationView());
 
-			if((connector != null) && (connector.getEnds().size() == 2)) {
+			if ((connector != null) && (connector.getEnds().size() == 2)) {
 				connector.getEnds().get(1);
 			}
 		}
@@ -77,6 +78,7 @@ public class ConnectorLinkLabelTargetMultiplicityEditPart extends AbstractElemen
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getLabelRole() {
 		return "TargetMultiplicity"; //$NON-NLS-1$
 	}
@@ -84,6 +86,7 @@ public class ConnectorLinkLabelTargetMultiplicityEditPart extends AbstractElemen
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getIconPathRole() {
 		return ""; //$NON-NLS-1$
 	}

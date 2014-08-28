@@ -16,10 +16,11 @@ import java.util.List;
 
 /**
  * Groups all UML Diagram Editors' IDs.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  * @deprecated
  */
+@Deprecated
 public class UMLDiagramEditorIDs {
 
 	/** Model IDs. */
@@ -46,12 +47,12 @@ public class UMLDiagramEditorIDs {
 
 	/**
 	 * Gets the all model i ds.
-	 * 
+	 *
 	 * @return the all model i ds
 	 */
 	// @unused
 	public static List<String> getAllModelIDs() {
-		if(allModelIDs == null) {
+		if (allModelIDs == null) {
 			allModelIDs = new ArrayList<String>();
 			allModelIDs.add(ClazzModelID);
 			allModelIDs.add(ActivityModelID);

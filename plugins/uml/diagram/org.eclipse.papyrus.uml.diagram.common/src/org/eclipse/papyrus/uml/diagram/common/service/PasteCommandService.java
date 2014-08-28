@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,8 +23,8 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
-import org.eclipse.papyrus.uml.diagram.common.providers.IPasteCommandProvider;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
+import org.eclipse.papyrus.uml.diagram.common.providers.IPasteCommandProvider;
 import org.osgi.framework.Bundle;
 
 /**
@@ -44,7 +44,7 @@ public class PasteCommandService {
 	protected static PasteCommandService instance = null;
 
 	public static PasteCommandService getInstance() {
-		if(instance == null) {
+		if (instance == null) {
 			instance = new PasteCommandService();
 		}
 		return instance;
@@ -53,14 +53,14 @@ public class PasteCommandService {
 
 	/**
 	 * Load an instance of a class
-	 * 
+	 *
 	 * @param element
-	 *        the extension point
+	 *            the extension point
 	 * @param classAttribute
-	 *        the name of the class to load
+	 *            the name of the class to load
 	 * @return the loaded Class
 	 * @throws Exception
-	 *         if the class is not loaded
+	 *             if the class is not loaded
 	 */
 	protected static Object createExtension(final IConfigurationElement element, final String classAttribute) throws Exception {
 		try {
@@ -75,12 +75,12 @@ public class PasteCommandService {
 
 	protected Map<String, IPasteCommandProvider> pasteCommandProviderMap;
 
-	
+
 	private PasteCommandService() {
 		// Reading data from plugins
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(PASTECOMMANDPROVIDER_EXTENSION_ID);
 		pasteCommandProviderMap = new HashMap<String, IPasteCommandProvider>();
-		for(int i = 0; i < configElements.length; i++) {
+		for (int i = 0; i < configElements.length; i++) {
 			getPasteCommandProvider(configElements[i]);
 		}
 
@@ -88,15 +88,15 @@ public class PasteCommandService {
 
 	/**
 	 * Load one rule
-	 * 
+	 *
 	 * @param element
-	 *        the extension point
+	 *            the extension point
 	 */
 	protected void getPasteCommandProvider(IConfigurationElement element) {
 		IPasteCommandProvider pasteCommandProvider = null;
 		try {
-			pasteCommandProvider = (IPasteCommandProvider)createExtension(element, element.getAttribute(REALIZATION));
-			String priority = (String)element.getAttribute(PRIORITY);
+			pasteCommandProvider = (IPasteCommandProvider) createExtension(element, element.getAttribute(REALIZATION));
+			String priority = element.getAttribute(PRIORITY);
 			pasteCommandProviderMap.put(priority, pasteCommandProvider);
 
 		} catch (Exception e) {
@@ -108,7 +108,7 @@ public class PasteCommandService {
 		String[] priority = { "Highest", "High", "Medium", "Low", "Lowest" };
 		IPasteCommandProvider selectedProvider = null;
 		int i = 0;
-		while(selectedProvider == null && i < priority.length) {
+		while (selectedProvider == null && i < priority.length) {
 			selectedProvider = pasteCommandProviderMap.get(priority[i]);
 			i++;
 		}
@@ -117,37 +117,37 @@ public class PasteCommandService {
 
 	/**
 	 * return the paste command to execute by taking account parameter
-	 * 
+	 *
 	 * @param targetEditPart
-	 *        the target where object will be paste
+	 *            the target where object will be paste
 	 * @param systemClipboard
-	 *        contains info form the system copy paste
+	 *            contains info form the system copy paste
 	 * @param papyrusCliboard
-	 *        the list of views to paste
+	 *            the list of views to paste
 	 * @return a command
 	 */
 	public ICommand getPasteViewCommand(GraphicalEditPart targetEditPart, Clipboard systemClipboard, Collection<Object> papyrusCliboard) {
 		IPasteCommandProvider selectedProvider = lookForProvider();
-		if(selectedProvider == null) {
+		if (selectedProvider == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return selectedProvider.getPasteViewCommand(targetEditPart, systemClipboard, papyrusCliboard);
 	}
-	
+
 	/**
 	 * return the paste command to execute by taking account parameter. It copy also element of the semantic model
-	 * 
+	 *
 	 * @param targetEditPart
-	 *        the target where object will be paste
+	 *            the target where object will be paste
 	 * @param systemClipboard
-	 *        contains info form the system copy paste
+	 *            contains info form the system copy paste
 	 * @param papyrusCliboard
-	 *        the list of views to paste
+	 *            the list of views to paste
 	 * @return a command
 	 */
 	public ICommand getPasteWithModelCommand(GraphicalEditPart targetEditPart, Clipboard systemClipboard, Collection<Object> papyrusCliboard) {
 		IPasteCommandProvider selectedProvider = lookForProvider();
-		if(selectedProvider == null) {
+		if (selectedProvider == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return selectedProvider.getPasteWithModelCommand(targetEditPart, systemClipboard, papyrusCliboard);

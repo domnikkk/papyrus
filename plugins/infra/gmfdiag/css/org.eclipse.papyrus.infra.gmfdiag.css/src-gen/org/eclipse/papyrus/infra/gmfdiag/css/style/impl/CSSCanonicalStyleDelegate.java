@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,16 +28,17 @@ public class CSSCanonicalStyleDelegate implements CSSCanonicalStyle {
 		this.engine = engine;
 	}
 
-	////////////////////////////////////////////////
-	//	Implements a getter for each CSS property //
-	////////////////////////////////////////////////
+	// //////////////////////////////////////////////
+	// Implements a getter for each CSS property //
+	// //////////////////////////////////////////////
 
+	@Override
 	public boolean isCSSCanonical() {
 		CSSValue cssValue = engine.retrievePropertyValue(canonicalStyle, "canonical");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getCanonicalStyle_Canonical().getDefaultValue();
-			return (Boolean)defaultValue;
+			return (Boolean) defaultValue;
 		}
-		return (Boolean)engine.convert(cssValue, Boolean.class, null);
+		return (Boolean) engine.convert(cssValue, Boolean.class, null);
 	}
 }

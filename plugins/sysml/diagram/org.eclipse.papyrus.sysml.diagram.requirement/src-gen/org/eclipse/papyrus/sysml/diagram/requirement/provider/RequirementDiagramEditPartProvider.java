@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,11 +26,11 @@ public class RequirementDiagramEditPartProvider extends AbstractEditPartProvider
 
 	@Override
 	public boolean provides(IOperation operation) {
-		if(operation instanceof CreateGraphicEditPartOperation) {
-			View view = ((IEditPartOperation)operation).getView();
+		if (operation instanceof CreateGraphicEditPartOperation) {
+			View view = ((IEditPartOperation) operation).getView();
 
 			// Ensure current diagram is Requirement Diagram
-			if(ElementTypes.DIAGRAM_ID.equals(view.getType())) {
+			if (ElementTypes.DIAGRAM_ID.equals(view.getType())) {
 				return true;
 			}
 		}
@@ -40,7 +40,7 @@ public class RequirementDiagramEditPartProvider extends AbstractEditPartProvider
 
 	@Override
 	protected Class<?> getDiagramEditPartClass(View view) {
-		if(ElementTypes.DIAGRAM_ID.equals(view.getType())) {
+		if (ElementTypes.DIAGRAM_ID.equals(view.getType())) {
 			return RequirementDiagramEditPart.class;
 		}
 

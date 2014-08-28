@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,24 +42,24 @@ public class CreateMarkersAction extends AbstractRepairAction {
 
 	public boolean repair(Resource resource, EPackage profileDefinition, Collection<? extends EObject> stereotypeApplications, DiagnosticChain problems, IProgressMonitor monitor) {
 		List<IMarkerProvider> providers = MarkerListenerUtils.getMarkerProviders(resource);
-		if(!providers.isEmpty()) {
+		if (!providers.isEmpty()) {
 			IMarkerProvider provider = providers.get(0);
 			BasicDiagnostic diagnostics = new BasicDiagnostic();
 
-			for(EObject next : stereotypeApplications) {
+			for (EObject next : stereotypeApplications) {
 				EObject subject = getBaseElement(next);
-				if(subject == null) {
+				if (subject == null) {
 					// OK, apply it to the application, instead
 					subject = next;
 				}
 
-				diagnostics.add(new BasicDiagnostic(Diagnostic.WARNING, Activator.PLUGIN_ID, 0, "Obsolete application of stereotype " + UML2EcoreConverter.getOriginalName(next.eClass()), new Object[]{ subject, next }));
+				diagnostics.add(new BasicDiagnostic(Diagnostic.WARNING, Activator.PLUGIN_ID, 0, "Obsolete application of stereotype " + UML2EcoreConverter.getOriginalName(next.eClass()), new Object[] { subject, next }));
 			}
 
 			try {
 				provider.createMarkers(resource, diagnostics, SubMonitor.convert(monitor, "Creating problem markers...", stereotypeApplications.size()));
 			} catch (CoreException e) {
-				if(problems == null) {
+				if (problems == null) {
 					Activator.log.error(e);
 				} else {
 					problems.add(BasicDiagnostic.toDiagnostic(e.getStatus()));

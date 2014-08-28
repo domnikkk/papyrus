@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -25,11 +25,11 @@ public class InverseValidationRule implements IValidationRule {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IValueValidator#getBindingMode()
 	 */
 	public Direction getBindingMode() {
-		switch(delegate.getBindingMode()) {
+		switch (delegate.getBindingMode()) {
 		case SourceToTarget:
 			return Direction.TargetToSource;
 		case TargetToSource:
@@ -42,7 +42,7 @@ public class InverseValidationRule implements IValidationRule {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IValueValidator#getPhase()
 	 */
 	public Phase getPhase() {
@@ -51,7 +51,7 @@ public class InverseValidationRule implements IValidationRule {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IValueValidator#validateBack(java.lang.Object)
 	 */
 	public IStatus validateBack(Object value) {
@@ -60,7 +60,7 @@ public class InverseValidationRule implements IValidationRule {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.validation.IValidator#validate(java.lang.Object)
 	 */
 	public IStatus validate(Object value) {

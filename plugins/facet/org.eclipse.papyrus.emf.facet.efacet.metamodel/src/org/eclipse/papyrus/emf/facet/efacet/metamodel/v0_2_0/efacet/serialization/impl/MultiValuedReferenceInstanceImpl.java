@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  */
 package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl;
@@ -30,7 +30,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serializatio
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedReferenceInstanceImpl#getReferencedElements <em>Referenced Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedReferenceInstanceImpl#getReferencedElements <em>Referenced Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	 * The cached value of the '{@link #getReferencedElements() <em>Referenced Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReferencedElements()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MultiValuedReferenceInstanceImpl() {
@@ -59,6 +61,7 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,6 +72,7 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<EObject> getReferencedElements() {
@@ -81,13 +85,14 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SerializationPackage.MULTI_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENTS:
-				return getReferencedElements();
+		case SerializationPackage.MULTI_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENTS:
+			return getReferencedElements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -95,16 +100,17 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SerializationPackage.MULTI_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENTS:
-				getReferencedElements().clear();
-				getReferencedElements().addAll((Collection<? extends EObject>)newValue);
-				return;
+		case SerializationPackage.MULTI_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENTS:
+			getReferencedElements().clear();
+			getReferencedElements().addAll((Collection<? extends EObject>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -112,14 +118,15 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SerializationPackage.MULTI_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENTS:
-				getReferencedElements().clear();
-				return;
+		case SerializationPackage.MULTI_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENTS:
+			getReferencedElements().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -127,15 +134,16 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SerializationPackage.MULTI_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENTS:
-				return referencedElements != null && !referencedElements.isEmpty();
+		case SerializationPackage.MULTI_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENTS:
+			return referencedElements != null && !referencedElements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //MultiValuedReferenceInstanceImpl
+} // MultiValuedReferenceInstanceImpl

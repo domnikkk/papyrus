@@ -22,7 +22,7 @@ public class CloseAllDiagramsCommand extends AbstractHandler {
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
-		//		System.out.println("call to CloseAllDiagramsCommand.setEnable(" + evaluationContext + ")");
+		// System.out.println("call to CloseAllDiagramsCommand.setEnable(" + evaluationContext + ")");
 	}
 
 	/**
@@ -50,11 +50,11 @@ public class CloseAllDiagramsCommand extends AbstractHandler {
 	 * @param event
 	 * @return
 	 * @throws NullPointerException
-	 *         if the PageMngr can't be found.
+	 *             if the PageMngr can't be found.
 	 */
 	private IPageManager getPageManager(ExecutionEvent event) {
 		IEditorPart part = HandlerUtil.getActiveEditor(event);
-		IPageManager pageManager = (IPageManager)part.getAdapter(IPageManager.class);
+		IPageManager pageManager = (IPageManager) part.getAdapter(IPageManager.class);
 
 		return pageManager;
 	}
@@ -66,14 +66,14 @@ public class CloseAllDiagramsCommand extends AbstractHandler {
 	 */
 	public void execute(final IPageManager pageManager) throws ExecutionException {
 		boolean atLeastOneOpenPage = false;
-		for(Object pageIdentifier : pageManager.allPages()) {
-			if(pageManager.isOpen(pageIdentifier)) {
+		for (Object pageIdentifier : pageManager.allPages()) {
+			if (pageManager.isOpen(pageIdentifier)) {
 				atLeastOneOpenPage = true;
 				break;
 			}
 		}
 
-		if(!atLeastOneOpenPage) {
+		if (!atLeastOneOpenPage) {
 			return;
 		}
 

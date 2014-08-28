@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -29,9 +29,9 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * Used to choice a generic class
- * 
+ *
  * @author DEBLOCK Nicolas and GILES Manuel
- * 
+ *
  */
 public class GenericClassFieldEditor extends StringButtonFieldEditor {
 
@@ -47,10 +47,10 @@ public class GenericClassFieldEditor extends StringButtonFieldEditor {
 		FilteredTypesSelectionDialog d = new FilteredTypesSelectionDialog(getShell(), false, null, scope, IJavaSearchConstants.TYPE);
 		d.open();
 		Object[] pack = d.getResult();
-		BinaryType result = (BinaryType)pack[0];
+		BinaryType result = (BinaryType) pack[0];
 		try {
 			// if it's not a generic class, generate a error message
-			if(!(result.getClassFile().getType().getFullyQualifiedParameterizedName().contains("<") && result.getClassFile().getType().getFullyQualifiedParameterizedName().contains(">"))) {
+			if (!(result.getClassFile().getType().getFullyQualifiedParameterizedName().contains("<") && result.getClassFile().getType().getFullyQualifiedParameterizedName().contains(">"))) {
 				String errorMessage = "Erreur : " + result.getElementName() + " is not a generic class";
 				MessageDialog.openError(getShell(), "Error", errorMessage);
 				return getStringValue();

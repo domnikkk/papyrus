@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,9 @@ import org.eclipse.papyrus.sysml.nattable.menu.handlers.AllocateHandler;
 
 /**
  * This handler allows to create an Allocate object, only if the table is a PapyrusSysMLAllocationTable
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class CreateAllocateHandler extends AllocateHandler {
 
@@ -33,9 +33,9 @@ public class CreateAllocateHandler extends AllocateHandler {
 	public static final String TABLE_ALLOCATION_TYPE = "PapyrusSysMLAllocationTable"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.sysml.nattable.menu.handlers.AbstractSysmlNattableCreateCommandHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
 	@Override
@@ -44,7 +44,7 @@ public class CreateAllocateHandler extends AllocateHandler {
 		boolean isEnabled = command.canExecute();
 		INattableModelManager tableManager = INattableModelManagerUtils.getTableManagerFromWorkbenchPart(getActiveWorkbenchPart());
 		isEnabled = isEnabled && tableManager.getTable().getTableConfiguration().getType().equals(TABLE_ALLOCATION_TYPE);
-		if(isEnabled) {
+		if (isEnabled) {
 			IElementType newElementType = getElementTypeToCreate();
 			String id = newElementType.getId();
 			isEnabled = tableManager.canCreateRowElement(id);

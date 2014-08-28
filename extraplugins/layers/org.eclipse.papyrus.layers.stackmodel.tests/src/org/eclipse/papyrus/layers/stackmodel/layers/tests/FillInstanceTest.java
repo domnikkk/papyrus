@@ -11,6 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Fill Instance</b></em>'.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class FillInstanceTest extends TypeInstanceTest {
@@ -18,6 +19,7 @@ public class FillInstanceTest extends TypeInstanceTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class FillInstanceTest extends TypeInstanceTest {
 	 * Constructs a new Fill Instance test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public FillInstanceTest(String name) {
@@ -38,16 +41,18 @@ public class FillInstanceTest extends TypeInstanceTest {
 	 * Returns the fixture for this Fill Instance test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	protected FillInstance getFixture() {
-		return (FillInstance)fixture;
+		return (FillInstance) fixture;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -59,6 +64,7 @@ public class FillInstanceTest extends TypeInstanceTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -67,4 +73,4 @@ public class FillInstanceTest extends TypeInstanceTest {
 		setFixture(null);
 	}
 
-} //FillInstanceTest
+} // FillInstanceTest

@@ -92,7 +92,7 @@ public class PapyrusNattableModel extends AbstractModelWithSharedResource<Table>
 	 * Add a new initialized {@link PapyrusTableInstance} to the model.
 	 *
 	 * @param tableInstance
-	 *        The tableInstance to add.
+	 *            The tableInstance to add.
 	 */
 	public void addPapyrusTable(Table tableInstance) {
 		try {
@@ -108,7 +108,7 @@ public class PapyrusNattableModel extends AbstractModelWithSharedResource<Table>
 	 * Add a new initialized {@link PapyrusTableInstance} to the model.
 	 *
 	 * @param tableInstance
-	 *        The tableInstance to add.
+	 *            The tableInstance to add.
 	 */
 	public void removeTable(Table tableInstance) {
 		getResource().getContents().remove(tableInstance);

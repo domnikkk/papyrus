@@ -2,7 +2,7 @@
 /* JavaCCOptions:KEEP_LINE_COL=null */
 /*
  * Copyright (C) 2008 Júlio Vilmar Gesser.
- * 
+ *
  * This file is part of Java 1.5 parser and Abstract Syntax Tree.
  *
  * Java 1.5 parser and Abstract Syntax Tree is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ package japa.parser;
  * You can explicitly create objects of this exception type by
  * calling the method generateParseException in the generated
  * parser.
- * 
+ *
  * You can modify this class to customize your error reporting
  * mechanisms so long as you retain the public fields.
  */
@@ -112,30 +112,32 @@ public class ParseException extends Exception {
 	 * of the final stack trace, and hence the correct error message
 	 * gets displayed.
 	 */
+	@Override
 	public String getMessage() {
-		if(!specialConstructor) {
+		if (!specialConstructor) {
 			return super.getMessage();
 		}
 		StringBuffer expected = new StringBuffer();
 		int maxSize = 0;
-		for(int i = 0; i < expectedTokenSequences.length; i++) {
-			if(maxSize < expectedTokenSequences[i].length) {
+		for (int i = 0; i < expectedTokenSequences.length; i++) {
+			if (maxSize < expectedTokenSequences[i].length) {
 				maxSize = expectedTokenSequences[i].length;
 			}
-			for(int j = 0; j < expectedTokenSequences[i].length; j++) {
+			for (int j = 0; j < expectedTokenSequences[i].length; j++) {
 				expected.append(tokenImage[expectedTokenSequences[i][j]]).append(' ');
 			}
-			if(expectedTokenSequences[i][expectedTokenSequences[i].length - 1] != 0) {
+			if (expectedTokenSequences[i][expectedTokenSequences[i].length - 1] != 0) {
 				expected.append("...");
 			}
 			expected.append(eol).append("    ");
 		}
 		String retval = "Encountered \"";
 		Token tok = currentToken.next;
-		for(int i = 0; i < maxSize; i++) {
-			if(i != 0)
+		for (int i = 0; i < maxSize; i++) {
+			if (i != 0) {
 				retval += " ";
-			if(tok.kind == 0) {
+			}
+			if (tok.kind == 0) {
 				retval += tokenImage[0];
 				break;
 			}
@@ -147,7 +149,7 @@ public class ParseException extends Exception {
 		}
 		retval += "\" at line " + currentToken.next.beginLine + ", column " + currentToken.next.beginColumn;
 		retval += "." + eol;
-		if(expectedTokenSequences.length == 1) {
+		if (expectedTokenSequences.length == 1) {
 			retval += "Was expecting:" + eol + "    ";
 		} else {
 			retval += "Was expecting one of:" + eol + "    ";
@@ -169,8 +171,8 @@ public class ParseException extends Exception {
 	protected String add_escapes(String str) {
 		StringBuffer retval = new StringBuffer();
 		char ch;
-		for(int i = 0; i < str.length(); i++) {
-			switch(str.charAt(i)) {
+		for (int i = 0; i < str.length(); i++) {
+			switch (str.charAt(i)) {
 			case 0:
 				continue;
 			case '\b':
@@ -198,7 +200,7 @@ public class ParseException extends Exception {
 				retval.append("\\\\");
 				continue;
 			default:
-				if((ch = str.charAt(i)) < 0x20 || ch > 0x7e) {
+				if ((ch = str.charAt(i)) < 0x20 || ch > 0x7e) {
 					String s = "0000" + Integer.toString(ch, 16);
 					retval.append("\\u" + s.substring(s.length() - 4, s.length()));
 				} else {

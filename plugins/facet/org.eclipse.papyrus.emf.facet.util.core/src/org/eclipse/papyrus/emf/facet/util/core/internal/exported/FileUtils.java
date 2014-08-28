@@ -10,7 +10,7 @@
  *    Nicolas Guyomar (Mia-Software) - Bug 340339 - Need some Utils class for Folder/File/Project management
  *    Nicolas Guyomar (Mia-Software) - Bug 342451 - To be able to edit derived facet attributes and derived facet references in a table
  *    Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning
- *    Thomas Cicognani (Soft-Maint) - Bug 398079 - org.eclipse.papyrus.emf.facet.util.core.internal.exported.FileUtils.copyFolderFromBundle 
+ *    Thomas Cicognani (Soft-Maint) - Bug 398079 - org.eclipse.papyrus.emf.facet.util.core.internal.exported.FileUtils.copyFolderFromBundle
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.util.core.internal.exported;
 
@@ -76,10 +76,10 @@ public final class FileUtils {
 		reader.close();
 		return builder.toString();
 	}
-	
+
 	/**
 	 * Copy a folder contents from a bundle
-	 * 
+	 *
 	 * @param folderPath
 	 *            Folder path to copy
 	 * @param project

@@ -34,7 +34,7 @@ import org.eclipse.papyrus.domaincontextcodegen.StereotypedElementMatcher;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements DomaincontextcodegenFactory {
@@ -43,13 +43,13 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DomaincontextcodegenFactory init() {
 		try {
-			DomaincontextcodegenFactory theDomaincontextcodegenFactory = (DomaincontextcodegenFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/2010/domaincontextcodegen");
-			if(theDomaincontextcodegenFactory != null) {
+			DomaincontextcodegenFactory theDomaincontextcodegenFactory = (DomaincontextcodegenFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/2010/domaincontextcodegen");
+			if (theDomaincontextcodegenFactory != null) {
 				return theDomaincontextcodegenFactory;
 			}
 		} catch (Exception exception) {
@@ -62,7 +62,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DomaincontextcodegenFactoryImpl() {
@@ -72,12 +72,12 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case DomaincontextcodegenPackage.DOMAIN_CONTEXT:
 			return createDomainContext();
 		case DomaincontextcodegenPackage.ELEMENT_TYPES:
@@ -114,12 +114,12 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case DomaincontextcodegenPackage.INHERITANCE_KIND:
 			return createInheritanceKindFromString(eDataType, initialValue);
 		default:
@@ -130,12 +130,12 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case DomaincontextcodegenPackage.INHERITANCE_KIND:
 			return convertInheritanceKindToString(eDataType, instanceValue);
 		default:
@@ -146,7 +146,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DomainContext createDomainContext() {
@@ -157,7 +157,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementTypes createElementTypes() {
@@ -168,7 +168,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MetaClassType createMetaClassType() {
@@ -179,7 +179,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SpecializationType createSpecializationType() {
@@ -190,7 +190,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Advice createAdvice() {
@@ -201,7 +201,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementTypeBindings createElementTypeBindings() {
@@ -212,7 +212,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementTypeBinding createElementTypeBinding() {
@@ -223,7 +223,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AdviceBinding createAdviceBinding() {
@@ -234,7 +234,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GenHandlers createGenHandlers() {
@@ -245,7 +245,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StereotypedElementMatcher createStereotypedElementMatcher() {
@@ -256,7 +256,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StereotypedElementHelper createStereotypedElementHelper() {
@@ -267,7 +267,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MenuDeclaration createMenuDeclaration() {
@@ -278,7 +278,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CommandDeclaration createCommandDeclaration() {
@@ -289,7 +289,7 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Command createCommand() {
@@ -300,20 +300,21 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InheritanceKind createInheritanceKindFromString(EDataType eDataType, String initialValue) {
 		InheritanceKind result = InheritanceKind.get(initialValue);
-		if(result == null)
+		if (result == null) {
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertInheritanceKindToString(EDataType eDataType, Object instanceValue) {
@@ -323,17 +324,17 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DomaincontextcodegenPackage getDomaincontextcodegenPackage() {
-		return (DomaincontextcodegenPackage)getEPackage();
+		return (DomaincontextcodegenPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -342,4 +343,4 @@ public class DomaincontextcodegenFactoryImpl extends EFactoryImpl implements Dom
 		return DomaincontextcodegenPackage.eINSTANCE;
 	}
 
-} //DomaincontextcodegenFactoryImpl
+} // DomaincontextcodegenFactoryImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,7 +51,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext
 	 * )
@@ -67,16 +67,16 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * get the image descriptor from a string path
-	 * 
+	 *
 	 * @param pathString
-	 *        path of the image
+	 *            path of the image
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor getImageDescriptor(String pathString) {
 
 		IPath path = new Path(pathString);
 		URL uri = FileLocator.find(Activator.plugin.getBundle(), path, null);
-		if(uri == null) {
+		if (uri == null) {
 			return null;
 		}
 		return ImageDescriptor.createFromURL(uri);
@@ -84,7 +84,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext
 	 * )
@@ -97,7 +97,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -105,7 +105,7 @@ public class Activator extends AbstractUIPlugin {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the customization manager in charge to adapt element in modisco
 	 */
 	public ICustomizationManager getCustomizationManager() {
@@ -115,93 +115,93 @@ public class Activator extends AbstractUIPlugin {
 	private void init(final ICustomizationManager customizationManager) {
 		// the appearance can be customized here:
 
-//		customizationManager.setShowDerivedLinks(true);
-//
-//		try {
-//
-//			// load customizations defined as default through the customization
-//			// extension
-//			List<MetamodelView> registryDefaultCustomizations = CustomizationsCatalog.getInstance().getRegistryDefaultCustomizations();
-//			for(MetamodelView metamodelView : registryDefaultCustomizations) {
-//				customizationManager.registerCustomization(metamodelView);
-//			}
-//			customizationManager.loadCustomizations();
-//			loadFacetsForCustomizations(registryDefaultCustomizations, customizationManager);
-//
-//		} catch (Throwable e) {
-//			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Error initializing customizations", e)); //$NON-NLS-1$
-//		}
+		// customizationManager.setShowDerivedLinks(true);
+		//
+		// try {
+		//
+		// // load customizations defined as default through the customization
+		// // extension
+		// List<MetamodelView> registryDefaultCustomizations = CustomizationsCatalog.getInstance().getRegistryDefaultCustomizations();
+		// for(MetamodelView metamodelView : registryDefaultCustomizations) {
+		// customizationManager.registerCustomization(metamodelView);
+		// }
+		// customizationManager.loadCustomizations();
+		// loadFacetsForCustomizations(registryDefaultCustomizations, customizationManager);
+		//
+		// } catch (Throwable e) {
+		//			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Error initializing customizations", e)); //$NON-NLS-1$
+		// }
 	}
 
-//	/**
-//	 * load the facets
-//	 * 
-//	 * @param customizations
-//	 *        list of customization
-//	 * @param customizationManager
-//	 *        the Customization Manager
-//	 */
-//	protected void loadFacetsForCustomizations(final List<MetamodelView> customizations, final CustomizationManager customizationManager) {
-//		final Set<Facet> referencedFacets = new HashSet<Facet>();
-//		final Collection<FacetSet> facetSets = FacetSetCatalog.getSingleton().getAllFacetSets();
-//
-//		for(MetamodelView customization : customizations) {
-//			String metamodelURI = customization.getMetamodelURI();
-//			// find customized FacetSet
-//			FacetSet customizedFacetSet = null;
-//			if(metamodelURI != null) {
-//				for(FacetSet facetSet : facetSets) {
-//					if(metamodelURI.equals(facetSet.getNsURI())) {
-//						customizedFacetSet = facetSet;
-//						break;
-//					}
-//				}
-//			}
-//			if(customizedFacetSet == null) {
-//				continue;
-//			}
-//
-//			// find customized Facets
-//			EList<TypeView> types = customization.getTypes();
-//			for(TypeView typeView : types) {
-//				String metaclassName = typeView.getMetaclassName();
-//				Facet facet = findFacetWithFullyQualifiedName(metaclassName, customizedFacetSet);
-//				if(facet != null) {
-//					referencedFacets.add(facet);
-//				} else {
-//					Activator.log.warn(NLS.bind(Messages.BrowserActionBarContributor_missingRequiredFacet, new Object[]{ metaclassName, customizedFacetSet.getName(), customization.getName() }));
-//				}
-//			}
-//
-//			for(Facet referencedFacet : referencedFacets) {
-//				customizationManager.loadFacet(referencedFacet);
-//			}
-//		}
-//
-//		//
-//		// for modified facets
-//		// customizationManager.getInstancesForMetaclasses().buildDerivationTree();
-//		// customizationManager.getAppearanceConfiguration().touch();
-//		// customizationManager.refreshDelayed(true);
-//	}
+	// /**
+	// * load the facets
+	// *
+	// * @param customizations
+	// * list of customization
+	// * @param customizationManager
+	// * the Customization Manager
+	// */
+	// protected void loadFacetsForCustomizations(final List<MetamodelView> customizations, final CustomizationManager customizationManager) {
+	// final Set<Facet> referencedFacets = new HashSet<Facet>();
+	// final Collection<FacetSet> facetSets = FacetSetCatalog.getSingleton().getAllFacetSets();
+	//
+	// for(MetamodelView customization : customizations) {
+	// String metamodelURI = customization.getMetamodelURI();
+	// // find customized FacetSet
+	// FacetSet customizedFacetSet = null;
+	// if(metamodelURI != null) {
+	// for(FacetSet facetSet : facetSets) {
+	// if(metamodelURI.equals(facetSet.getNsURI())) {
+	// customizedFacetSet = facetSet;
+	// break;
+	// }
+	// }
+	// }
+	// if(customizedFacetSet == null) {
+	// continue;
+	// }
+	//
+	// // find customized Facets
+	// EList<TypeView> types = customization.getTypes();
+	// for(TypeView typeView : types) {
+	// String metaclassName = typeView.getMetaclassName();
+	// Facet facet = findFacetWithFullyQualifiedName(metaclassName, customizedFacetSet);
+	// if(facet != null) {
+	// referencedFacets.add(facet);
+	// } else {
+	// Activator.log.warn(NLS.bind(Messages.BrowserActionBarContributor_missingRequiredFacet, new Object[]{ metaclassName, customizedFacetSet.getName(), customization.getName() }));
+	// }
+	// }
+	//
+	// for(Facet referencedFacet : referencedFacets) {
+	// customizationManager.loadFacet(referencedFacet);
+	// }
+	// }
+	//
+	// //
+	// // for modified facets
+	// // customizationManager.getInstancesForMetaclasses().buildDerivationTree();
+	// // customizationManager.getAppearanceConfiguration().touch();
+	// // customizationManager.refreshDelayed(true);
+	// }
 
-//	/**
-//	 * fin a facet from
-//	 * 
-//	 * @param metaclassName
-//	 * @param customizedFacetSet
-//	 * @return
-//	 */
-//	private Facet findFacetWithFullyQualifiedName(final String metaclassName, final FacetSet customizedFacetSet) {
-//		EList<Facet> facets = customizedFacetSet.getFacets();
-//		for(Facet facet : facets) {
-//			String facetName = getMetaclassQualifiedName(facet);
-//			if(metaclassName.equals(facetName)) {
-//				return facet;
-//			}
-//		}
-//		return null;
-//	}
+	// /**
+	// * fin a facet from
+	// *
+	// * @param metaclassName
+	// * @param customizedFacetSet
+	// * @return
+	// */
+	// private Facet findFacetWithFullyQualifiedName(final String metaclassName, final FacetSet customizedFacetSet) {
+	// EList<Facet> facets = customizedFacetSet.getFacets();
+	// for(Facet facet : facets) {
+	// String facetName = getMetaclassQualifiedName(facet);
+	// if(metaclassName.equals(facetName)) {
+	// return facet;
+	// }
+	// }
+	// return null;
+	// }
 
 	/** @return the qualified name of the given metaclass */
 	public static String getMetaclassQualifiedName(final EClassifier eClass) {
@@ -209,12 +209,12 @@ public class Activator extends AbstractUIPlugin {
 		final StringBuilder builder = new StringBuilder();
 
 		EPackage ePackage = eClass.getEPackage();
-		while(ePackage != null) {
+		while (ePackage != null) {
 			qualifiedNameParts.add(ePackage.getName());
 			ePackage = ePackage.getESuperPackage();
 		}
 
-		for(int i = qualifiedNameParts.size() - 1; i >= 0; i--) {
+		for (int i = qualifiedNameParts.size() - 1; i >= 0; i--) {
 			builder.append(qualifiedNameParts.get(i) + "."); //$NON-NLS-1$
 		}
 

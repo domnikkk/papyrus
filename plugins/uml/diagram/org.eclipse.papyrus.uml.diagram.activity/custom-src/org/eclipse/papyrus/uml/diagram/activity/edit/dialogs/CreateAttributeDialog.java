@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,6 +55,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.forms.FormDialog;
 import org.eclipse.ui.forms.IManagedForm;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
@@ -67,7 +68,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * DialogBox in order to link a parameter with the new ActivityParameterNode
  * that will be created
- * 
+ *
  */
 public class CreateAttributeDialog extends FormDialog {
 
@@ -95,11 +96,11 @@ public class CreateAttributeDialog extends FormDialog {
 
 	/**
 	 * Create a new dialog to initialize an ActivityParameterNode.
-	 * 
+	 *
 	 * @param shell
-	 *        parent shell
+	 *            parent shell
 	 * @param owner
-	 *        the activity that owns the action
+	 *            the activity that owns the action
 	 */
 	public CreateAttributeDialog(Shell shell, NamedElement owner) {
 		super(shell);
@@ -109,9 +110,9 @@ public class CreateAttributeDialog extends FormDialog {
 
 	/**
 	 * Create the form to :
-	 * 
+	 *
 	 * - ask the user to choose or create an existing element.
-	 * 
+	 *
 	 * @see org.eclipse.ui.forms.FormDialog#createFormContent(org.eclipse.ui.forms.IManagedForm)
 	 */
 	@Override
@@ -131,9 +132,9 @@ public class CreateAttributeDialog extends FormDialog {
 
 	/**
 	 * Adds buttons to this dialog's button bar.
-	 * 
+	 *
 	 * @param parent
-	 *        the button bar composite
+	 *            the button bar composite
 	 */
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
@@ -143,18 +144,18 @@ public class CreateAttributeDialog extends FormDialog {
 
 	/**
 	 * Create the section to ask the user to create an attribute.
-	 * 
+	 *
 	 * @param pParent
-	 *        the section's parent widget
+	 *            the section's parent widget
 	 * @param pToolkit
-	 *        the form toolkit
+	 *            the form toolkit
 	 */
 	protected void createAttributeSection(Composite pParent, FormToolkit pToolkit) {
 		// create the section
 		String lSectionTitle = getCreationTitle();
-		Section lSection = pToolkit.createSection(pParent, Section.EXPANDED | Section.TITLE_BAR);
+		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);
 		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		if(lSectionTitle != null) {
+		if (lSectionTitle != null) {
 			lSection.setText(lSectionTitle);
 		}
 		ScrolledForm lInsideScrolledForm = pToolkit.createScrolledForm(lSection);
@@ -173,7 +174,7 @@ public class CreateAttributeDialog extends FormDialog {
 		creationEClassCombo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
 		eClassComboViewer.setLabelProvider(labelProvider);
 		eClassComboViewer.add(getPossibleAttributes());
-		if(getPossibleAttributes().length > 1) {
+		if (getPossibleAttributes().length > 1) {
 			// initialize selection
 			eClassComboViewer.setSelection(new StructuredSelection(getPossibleAttributes()[0]));
 			selectedEClass = getPossibleAttributes()[0];
@@ -198,23 +199,23 @@ public class CreateAttributeDialog extends FormDialog {
 	/**
 	 * Set correctly the object, by creating it if needed. Then, notifies that
 	 * the ok button of this dialog has been pressed.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#okPressed()
-	 * 
+	 *
 	 */
 	@Override
 	protected void okPressed() {
 		// create element
-		createdProperty = (Property)UMLFactory.eINSTANCE.create(selectedEClass);
+		createdProperty = (Property) UMLFactory.eINSTANCE.create(selectedEClass);
 		createdProperty.setName(selectedName);
-		createdProperty.setType((Type)selectedType);
+		createdProperty.setType((Type) selectedType);
 		addAttribute(createdProperty);
 		super.okPressed();
 	}
 
 	/**
 	 * Get the invoked object that have been selected or created.
-	 * 
+	 *
 	 * @return the invoked object to use.
 	 */
 	public Property getCreatedAttribute() {
@@ -225,19 +226,20 @@ public class CreateAttributeDialog extends FormDialog {
 	 * Add listeners to widgets
 	 */
 	private void hookListeners() {
-		if(creationEClassCombo != null && eClassComboViewer != null) {
+		if (creationEClassCombo != null && eClassComboViewer != null) {
 			// listener to select invocation eclass
 			ModifyListener lTypeListener = new ModifyListener() {
 
 				/**
 				 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 				 */
+				@Override
 				public void modifyText(ModifyEvent e) {
 					ISelection sel = eClassComboViewer.getSelection();
-					if(sel instanceof StructuredSelection) {
-						Object type = ((StructuredSelection)sel).getFirstElement();
-						if(type instanceof EClass) {
-							selectedEClass = (EClass)type;
+					if (sel instanceof StructuredSelection) {
+						Object type = ((StructuredSelection) sel).getFirstElement();
+						if (type instanceof EClass) {
+							selectedEClass = (EClass) type;
 						} else {
 							selectedEClass = null;
 						}
@@ -255,6 +257,7 @@ public class CreateAttributeDialog extends FormDialog {
 			/**
 			 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 			 */
+			@Override
 			public void modifyText(ModifyEvent e) {
 				setInvokedName(creationNameText.getText());
 			}
@@ -270,7 +273,7 @@ public class CreateAttributeDialog extends FormDialog {
 			public void widgetSelected(SelectionEvent e) {
 				handleChooseType();
 				// reset name if not set
-				if(selectedName == null) {
+				if (selectedName == null) {
 					setInvokedName(null);
 				}
 				refreshOkButton();
@@ -281,17 +284,17 @@ public class CreateAttributeDialog extends FormDialog {
 
 	/**
 	 * Set the name chosen for the invoked element
-	 * 
+	 *
 	 * @param text
-	 *        the text string or null for auto-initialization
+	 *            the text string or null for auto-initialization
 	 */
 	private void setInvokedName(String text) {
 		String name = text;
-		if(text == null && selectedEClass != null) {
+		if (text == null && selectedEClass != null) {
 			name = LabelHelper.INSTANCE.findName(attributeOwner, selectedEClass);
 			// the name assignment will be performed by listener's call
 			creationNameText.setText(name);
-		} else if(name != null && !"".equals(name.trim())) {
+		} else if (name != null && !"".equals(name.trim())) {
 			selectedName = name.trim();
 			Color black = creationNameText.getDisplay().getSystemColor(SWT.COLOR_BLACK);
 			creationNameText.setForeground(black);
@@ -306,7 +309,7 @@ public class CreateAttributeDialog extends FormDialog {
 
 	/**
 	 * Open the dialog to choose the type of element to create
-	 * 
+	 *
 	 */
 	private void handleChooseType() {
 		Set<Object> types = getPossibleTypes();
@@ -315,10 +318,10 @@ public class CreateAttributeDialog extends FormDialog {
 		dialog.setTitle(Messages.UMLModelingAssistantProviderTitle);
 		dialog.setMultipleSelection(false);
 		dialog.setElements(types.toArray());
-		if(dialog.open() == Window.OK) {
+		if (dialog.open() == Window.OK) {
 			Object firstResult = dialog.getFirstResult();
-			if(firstResult instanceof EObject) {
-				setType((EObject)dialog.getFirstResult());
+			if (firstResult instanceof EObject) {
+				setType((EObject) dialog.getFirstResult());
 			} else {
 				setType(null);
 			}
@@ -327,13 +330,13 @@ public class CreateAttributeDialog extends FormDialog {
 
 	/**
 	 * Define the type of the object that will be created
-	 * 
+	 *
 	 * @param type
-	 *        the selected type
+	 *            the selected type
 	 */
 	private void setType(EObject type) {
 		selectedType = type;
-		if(selectedType instanceof NamedElement) {
+		if (selectedType instanceof NamedElement) {
 			creationTypeText.setText(labelProvider.getText(selectedType));
 		} else {
 			creationTypeText.setText("");
@@ -344,7 +347,7 @@ public class CreateAttributeDialog extends FormDialog {
 	 * Refresh the OK button activation
 	 */
 	private void refreshOkButton() {
-		if(getButton(IDialogConstants.OK_ID) != null && !getButton(IDialogConstants.OK_ID).isDisposed()) {
+		if (getButton(IDialogConstants.OK_ID) != null && !getButton(IDialogConstants.OK_ID).isDisposed()) {
 			getButton(IDialogConstants.OK_ID).setEnabled(selectedEClass != null && selectedName != null);
 		}
 	}
@@ -361,7 +364,7 @@ public class CreateAttributeDialog extends FormDialog {
 
 	/**
 	 * Gets the possible types for the parameter
-	 * 
+	 *
 	 * @return the possible types
 	 */
 	private Set<Object> getPossibleTypes() {
@@ -374,7 +377,7 @@ public class CreateAttributeDialog extends FormDialog {
 
 	/**
 	 * Gets the custom label provider that parses label for EClass
-	 * 
+	 *
 	 * @return the custom label provider
 	 */
 	private ILabelProvider getCustomLabelProvider() {
@@ -382,13 +385,13 @@ public class CreateAttributeDialog extends FormDialog {
 
 			/**
 			 * Override label provider for EClass
-			 * 
+			 *
 			 * @see org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider#getText(java.lang.Object)
 			 */
 			@Override
 			public String getText(Object object) {
 				String text = super.getText(object);
-				if(object instanceof EClass) {
+				if (object instanceof EClass) {
 					return text.substring(0, text.indexOf("[") - 1);
 				} else {
 					return text;
@@ -400,11 +403,11 @@ public class CreateAttributeDialog extends FormDialog {
 
 	/**
 	 * Get possible classes to create an attribute
-	 * 
+	 *
 	 * @return classes inheriting {@link Property}
 	 */
 	protected EClass[] getPossibleAttributes() {
-		return new EClass[]{ UMLPackage.eINSTANCE.getProperty(), UMLPackage.eINSTANCE.getExtensionEnd(), UMLPackage.eINSTANCE.getPort() };
+		return new EClass[] { UMLPackage.eINSTANCE.getProperty(), UMLPackage.eINSTANCE.getExtensionEnd(), UMLPackage.eINSTANCE.getPort() };
 	}
 
 	private Image getTypeImage() {

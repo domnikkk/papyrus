@@ -63,8 +63,8 @@ public class MaskManagedNodeEditPolicy extends AbstractMaskManagedEditPolicy {
 	@Override
 	public Property getUMLElement() {
 		EObject element = super.getUMLElement();
-		if(element instanceof Property) {
-			return (Property)element;
+		if (element instanceof Property) {
+			return (Property) element;
 		}
 		return null;
 	}
@@ -72,7 +72,7 @@ public class MaskManagedNodeEditPolicy extends AbstractMaskManagedEditPolicy {
 	@Override
 	public void refreshDisplay() {
 		// do nothing
-		//there are label that are will be refreshed
+		// there are label that are will be refreshed
 
 	}
 

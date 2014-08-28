@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,21 +29,21 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
 
 /**
  * Utils class for paste actions
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class PasteConfigurationUtils {
 
 
 	private PasteConfigurationUtils() {
-		//to prevent instanciation
+		// to prevent instanciation
 	}
 
 	/**
-	 * 
+	 *
 	 * @param pasteConfiguration
-	 *        a paste configuration
+	 *            a paste configuration
 	 * @return
 	 *         a status describing the consistence of the paste configuration
 	 */
@@ -51,20 +51,20 @@ public class PasteConfigurationUtils {
 		Assert.isNotNull(pasteConfiguration);
 		final String pluginId = Activator.PLUGIN_ID;
 		final EStructuralFeature feature = pasteConfiguration.getPasteElementContainementFeature();
-		if(feature == null) {
+		if (feature == null) {
 			return new Status(IStatus.ERROR, pluginId, Messages.PasteConfigurationUtils_ContainmentFeatureIsNull);
-		} else if(feature instanceof EReference) {
-			if(!((EReference)feature).isContainment()) {
+		} else if (feature instanceof EReference) {
+			if (!((EReference) feature).isContainment()) {
 				return new Status(IStatus.ERROR, pluginId, Messages.PasteConfigurationUtils_ContainmentFeatureIsNotAReferenceContainment);
 			}
 			final String elementId = pasteConfiguration.getPastedElementId();
-			if(elementId != null && !elementId.equals("")) { //$NON-NLS-1$
+			if (elementId != null && !elementId.equals("")) { //$NON-NLS-1$
 				final IElementType elementType = ElementTypeRegistry.getInstance().getType(elementId);
-				if(elementType != null) {
+				if (elementType != null) {
 					final EClass elementTypeMetaclass = elementType.getEClass();
-					final EClass containmentFeatureEClass = (EClass)feature.getEType();
+					final EClass containmentFeatureEClass = (EClass) feature.getEType();
 					boolean knownFeature = elementTypeMetaclass == containmentFeatureEClass || containmentFeatureEClass.isSuperTypeOf(elementTypeMetaclass);
-					if(knownFeature) {
+					if (knownFeature) {
 						return new Status(IStatus.OK, pluginId, Messages.PasteConfigurationUtils_PasteConfigurationIsConsistent);
 					} else {
 						return new Status(IStatus.ERROR, pluginId, NLS.bind(Messages.PasteConfigurationUtils_CreatesElementsAreNotCompatibleWithContainmentFeature, elementId, containmentFeatureEClass.getName()));

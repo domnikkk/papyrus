@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.*;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerFeature;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerKind;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort;
@@ -42,6 +41,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.PortSpecificationKind;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
@@ -49,16 +49,16 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static GCMFactory init() {
 		try {
-			GCMFactory theGCMFactory = (GCMFactory)EPackage.Registry.INSTANCE.getEFactory(GCMPackage.eNS_URI);
+			GCMFactory theGCMFactory = (GCMFactory) EPackage.Registry.INSTANCE.getEFactory(GCMPackage.eNS_URI);
 			if (theGCMFactory != null) {
 				return theGCMFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new GCMFactoryImpl();
@@ -68,6 +68,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public GCMFactoryImpl() {
@@ -77,74 +78,90 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case GCMPackage.FLOW_PROPERTY: return createFlowProperty();
-			case GCMPackage.FLOW_PORT: return createFlowPort();
-			case GCMPackage.CLIENT_SERVER_PORT: return createClientServerPort();
-			case GCMPackage.CLIENT_SERVER_SPECIFICATION: return createClientServerSpecification();
-			case GCMPackage.FLOW_SPECIFICATION: return createFlowSpecification();
-			case GCMPackage.CLIENT_SERVER_FEATURE: return createClientServerFeature();
-			case GCMPackage.GCM_TRIGGER: return createGCMTrigger();
-			case GCMPackage.GCM_INVOCATION_ACTION: return createGCMInvocationAction();
-			case GCMPackage.DATA_EVENT: return createDataEvent();
-			case GCMPackage.DATA_POOL: return createDataPool();
-			case GCMPackage.GCM_INVOCATING_BEHAVIOR: return createGCMInvocatingBehavior();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case GCMPackage.FLOW_PROPERTY:
+			return createFlowProperty();
+		case GCMPackage.FLOW_PORT:
+			return createFlowPort();
+		case GCMPackage.CLIENT_SERVER_PORT:
+			return createClientServerPort();
+		case GCMPackage.CLIENT_SERVER_SPECIFICATION:
+			return createClientServerSpecification();
+		case GCMPackage.FLOW_SPECIFICATION:
+			return createFlowSpecification();
+		case GCMPackage.CLIENT_SERVER_FEATURE:
+			return createClientServerFeature();
+		case GCMPackage.GCM_TRIGGER:
+			return createGCMTrigger();
+		case GCMPackage.GCM_INVOCATION_ACTION:
+			return createGCMInvocationAction();
+		case GCMPackage.DATA_EVENT:
+			return createDataEvent();
+		case GCMPackage.DATA_POOL:
+			return createDataPool();
+		case GCMPackage.GCM_INVOCATING_BEHAVIOR:
+			return createGCMInvocatingBehavior();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case GCMPackage.FLOW_DIRECTION_KIND:
-				return createFlowDirectionKindFromString(eDataType, initialValue);
-			case GCMPackage.PORT_SPECIFICATION_KIND:
-				return createPortSpecificationKindFromString(eDataType, initialValue);
-			case GCMPackage.CLIENT_SERVER_KIND:
-				return createClientServerKindFromString(eDataType, initialValue);
-			case GCMPackage.DATA_POOL_ORDERING_KIND:
-				return createDataPoolOrderingKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case GCMPackage.FLOW_DIRECTION_KIND:
+			return createFlowDirectionKindFromString(eDataType, initialValue);
+		case GCMPackage.PORT_SPECIFICATION_KIND:
+			return createPortSpecificationKindFromString(eDataType, initialValue);
+		case GCMPackage.CLIENT_SERVER_KIND:
+			return createClientServerKindFromString(eDataType, initialValue);
+		case GCMPackage.DATA_POOL_ORDERING_KIND:
+			return createDataPoolOrderingKindFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case GCMPackage.FLOW_DIRECTION_KIND:
-				return convertFlowDirectionKindToString(eDataType, instanceValue);
-			case GCMPackage.PORT_SPECIFICATION_KIND:
-				return convertPortSpecificationKindToString(eDataType, instanceValue);
-			case GCMPackage.CLIENT_SERVER_KIND:
-				return convertClientServerKindToString(eDataType, instanceValue);
-			case GCMPackage.DATA_POOL_ORDERING_KIND:
-				return convertDataPoolOrderingKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case GCMPackage.FLOW_DIRECTION_KIND:
+			return convertFlowDirectionKindToString(eDataType, instanceValue);
+		case GCMPackage.PORT_SPECIFICATION_KIND:
+			return convertPortSpecificationKindToString(eDataType, instanceValue);
+		case GCMPackage.CLIENT_SERVER_KIND:
+			return convertClientServerKindToString(eDataType, instanceValue);
+		case GCMPackage.DATA_POOL_ORDERING_KIND:
+			return convertDataPoolOrderingKindToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public FlowProperty createFlowProperty() {
 		FlowPropertyImpl flowProperty = new FlowPropertyImpl();
 		return flowProperty;
@@ -153,8 +170,10 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public FlowPort createFlowPort() {
 		FlowPortImpl flowPort = new FlowPortImpl();
 		return flowPort;
@@ -163,8 +182,10 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ClientServerPort createClientServerPort() {
 		ClientServerPortImpl clientServerPort = new ClientServerPortImpl();
 		return clientServerPort;
@@ -173,8 +194,10 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ClientServerSpecification createClientServerSpecification() {
 		ClientServerSpecificationImpl clientServerSpecification = new ClientServerSpecificationImpl();
 		return clientServerSpecification;
@@ -183,8 +206,10 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public FlowSpecification createFlowSpecification() {
 		FlowSpecificationImpl flowSpecification = new FlowSpecificationImpl();
 		return flowSpecification;
@@ -193,8 +218,10 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ClientServerFeature createClientServerFeature() {
 		ClientServerFeatureImpl clientServerFeature = new ClientServerFeatureImpl();
 		return clientServerFeature;
@@ -203,8 +230,10 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GCMTrigger createGCMTrigger() {
 		GCMTriggerImpl gcmTrigger = new GCMTriggerImpl();
 		return gcmTrigger;
@@ -213,8 +242,10 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GCMInvocationAction createGCMInvocationAction() {
 		GCMInvocationActionImpl gcmInvocationAction = new GCMInvocationActionImpl();
 		return gcmInvocationAction;
@@ -223,8 +254,10 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public DataEvent createDataEvent() {
 		DataEventImpl dataEvent = new DataEventImpl();
 		return dataEvent;
@@ -233,8 +266,10 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public DataPool createDataPool() {
 		DataPoolImpl dataPool = new DataPoolImpl();
 		return dataPool;
@@ -243,8 +278,10 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GCMInvocatingBehavior createGCMInvocatingBehavior() {
 		GCMInvocatingBehaviorImpl gcmInvocatingBehavior = new GCMInvocatingBehaviorImpl();
 		return gcmInvocatingBehavior;
@@ -253,17 +290,21 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public FlowDirectionKind createFlowDirectionKindFromString(EDataType eDataType, String initialValue) {
 		FlowDirectionKind result = FlowDirectionKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertFlowDirectionKindToString(EDataType eDataType, Object instanceValue) {
@@ -273,17 +314,21 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PortSpecificationKind createPortSpecificationKindFromString(EDataType eDataType, String initialValue) {
 		PortSpecificationKind result = PortSpecificationKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertPortSpecificationKindToString(EDataType eDataType, Object instanceValue) {
@@ -293,17 +338,21 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ClientServerKind createClientServerKindFromString(EDataType eDataType, String initialValue) {
 		ClientServerKind result = ClientServerKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertClientServerKindToString(EDataType eDataType, Object instanceValue) {
@@ -313,17 +362,21 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DataPoolOrderingKind createDataPoolOrderingKindFromString(EDataType eDataType, String initialValue) {
 		DataPoolOrderingKind result = DataPoolOrderingKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertDataPoolOrderingKindToString(EDataType eDataType, Object instanceValue) {
@@ -333,15 +386,18 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GCMPackage getGCMPackage() {
-		return (GCMPackage)getEPackage();
+		return (GCMPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -350,4 +406,4 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 		return GCMPackage.eINSTANCE;
 	}
 
-} //GCMFactoryImpl
+} // GCMFactoryImpl

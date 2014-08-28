@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2009 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.swt.graphics.RGB;
 /**
  * An utility class to ease the use of gradient preference within Papyrus. It converts the
  * preference into gradientData, RGB color and int (transparency and style) and vice versa
- * 
+ *
  * @author tlandre
- * 
+ *
  */
 public class GradientPreferenceConverter {
 
@@ -46,12 +46,12 @@ public class GradientPreferenceConverter {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param pPreference
-	 *        the preference. It must be formated like this : <br>
-	 *        <code>RGB {x, x, x};RGB {x, x,
+	 *            the preference. It must be formated like this : <br>
+	 *            <code>RGB {x, x, x};RGB {x, x,
 	 * x};style;transparency</code> <br>
-	 *        where style and transparency are <code>int</code>
+	 *            where style and transparency are <code>int</code>
 	 */
 	public GradientPreferenceConverter(String pPreference) {
 		initFieldFromPreference(pPreference);
@@ -59,16 +59,16 @@ public class GradientPreferenceConverter {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param pColor1
-	 *        the first color used
+	 *            the first color used
 	 * @param pColor2
-	 *        the second color used
+	 *            the second color used
 	 * @param pStyle
-	 *        the style of the gradient. It can be GradientStyle.VERTICAL or
-	 *        GradientStyle.HORIZONTAL
+	 *            the style of the gradient. It can be GradientStyle.VERTICAL or
+	 *            GradientStyle.HORIZONTAL
 	 * @param pTransparency
-	 *        the transparency. It must be contained in [0,100]
+	 *            the transparency. It must be contained in [0,100]
 	 */
 	public GradientPreferenceConverter(RGB pColor1, RGB pColor2, int pStyle, int pTransparency) {
 		fColor1 = pColor1;
@@ -79,16 +79,16 @@ public class GradientPreferenceConverter {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param pColor1
-	 *        the first color used
+	 *            the first color used
 	 * @param pColor2
-	 *        the second color used
+	 *            the second color used
 	 * @param pStyle
-	 *        the style of the gradient. It can be GradientStyle.VERTICAL or
-	 *        GradientStyle.HORIZONTAL
+	 *            the style of the gradient. It can be GradientStyle.VERTICAL or
+	 *            GradientStyle.HORIZONTAL
 	 * @param pTransparency
-	 *        the transparency. It must be contained in [0,100]
+	 *            the transparency. It must be contained in [0,100]
 	 */
 	// @unused
 	public GradientPreferenceConverter(int pColor1, int pColor2, int pStyle, int pTransparency) {
@@ -100,7 +100,7 @@ public class GradientPreferenceConverter {
 
 	private void initFieldFromPreference(String pPreference) {
 		String[] values = pPreference.split(";"); //$NON-NLS-1$
-		if(values.length == 4) {
+		if (values.length == 4) {
 			fColor1 = getRGBColor(values[GRADIENT_COLOR1]);
 			fColor2 = getRGBColor(values[GRADIENT_COLOR2]);
 			fStyle = Integer.parseInt(values[GRADIENT_STYLE]);
@@ -110,7 +110,7 @@ public class GradientPreferenceConverter {
 
 	/**
 	 * Get the transparency of the gradient
-	 * 
+	 *
 	 * @return the transparency
 	 */
 	public int getTransparency() {
@@ -119,12 +119,12 @@ public class GradientPreferenceConverter {
 
 	/**
 	 * Get the gradientData of the gradient
-	 * 
+	 *
 	 * @return the gradientData
 	 */
 	public GradientData getGradientData() {
 		GradientData gd = GradientData.getDefaultGradientData();
-		if(fColor1 != null && fColor2 != null) {
+		if (fColor1 != null && fColor2 != null) {
 			gd = new GradientData(FigureUtilities.RGBToInteger(fColor1), FigureUtilities.RGBToInteger(fColor2), fStyle);
 		}
 		return gd;
@@ -132,12 +132,12 @@ public class GradientPreferenceConverter {
 
 	/**
 	 * Get the first color used for the gradient.
-	 * 
+	 *
 	 * @return the RGB
 	 */
 	public RGB getColor1() {
 		RGB color;
-		if(fColor1 != null) {
+		if (fColor1 != null) {
 			color = fColor1;
 		} else {
 			color = FigureUtilities.integerToRGB(GradientData.getDefaultGradientData().getGradientColor1());
@@ -147,13 +147,13 @@ public class GradientPreferenceConverter {
 
 	/**
 	 * Get the second color used for the gradient.
-	 * 
+	 *
 	 * @return the RGB
 	 */
 	// @unused
 	public RGB getColor2() {
 		RGB color;
-		if(fColor1 != null) {
+		if (fColor1 != null) {
 			color = fColor2;
 		} else {
 			color = FigureUtilities.integerToRGB(GradientData.getDefaultGradientData().getGradientColor2());
@@ -163,7 +163,7 @@ public class GradientPreferenceConverter {
 
 	/**
 	 * Get the style of the gradient
-	 * 
+	 *
 	 * @return GradientStyle.HORIZONTAL or GradientStyle.VERTICAL
 	 */
 	public int getStyle() {
@@ -172,9 +172,9 @@ public class GradientPreferenceConverter {
 
 	/**
 	 * Extract the values of the RGB color contained in the string "RGB {x, x, x}"
-	 * 
+	 *
 	 * @param string
-	 *        a string of format "RGB {x, x, x}"
+	 *            a string of format "RGB {x, x, x}"
 	 * @return the corresponding color
 	 */
 	private static RGB getRGBColor(String string) {
@@ -190,7 +190,7 @@ public class GradientPreferenceConverter {
 	 * Get a string that can be store The value is in the following format : <br>
 	 * <b>RGB {x, x, x};RGB {x, x, x};style;transparency</b> <br>
 	 * where style and transparency are <b>int</b>
-	 * 
+	 *
 	 * @return the string
 	 */
 	public String getPreferenceValue() {

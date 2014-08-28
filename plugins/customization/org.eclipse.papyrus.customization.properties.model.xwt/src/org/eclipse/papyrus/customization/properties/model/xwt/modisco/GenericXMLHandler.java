@@ -77,7 +77,7 @@ public class GenericXMLHandler extends DefaultHandler implements LexicalHandler 
 	 * Constructor for GenericXMLHandler.
 	 *
 	 * @param resource
-	 *        the model container.
+	 *            the model container.
 	 */
 	public GenericXMLHandler(final Resource resource, final Map<String, Object> options) {
 		this.container = resource;
@@ -86,15 +86,15 @@ public class GenericXMLHandler extends DefaultHandler implements LexicalHandler 
 
 	@Override
 	public final void startElement(final String uri, final String localName, final String qName, final Attributes attrs) throws SAXException {
-		if(this.root == null) {
+		if (this.root == null) {
 			this.root = XwtxmlFactory.eINSTANCE.createRoot();
 			this.root.setName(qName);
 			this.container.getContents().add(this.root);
 			this.current = this.root;
-			if(this.dtd != null) {
+			if (this.dtd != null) {
 				this.root.setDtd(this.dtd);
 			}
-			if(this.leadingPIs != null) {
+			if (this.leadingPIs != null) {
 				this.root.getLeadingPIs().addAll(this.leadingPIs);
 			}
 		} else {
@@ -105,11 +105,11 @@ public class GenericXMLHandler extends DefaultHandler implements LexicalHandler 
 			this.current = newElement;
 		}
 
-		for(int i = 0; i < attrs.getLength(); i++) {
+		for (int i = 0; i < attrs.getLength(); i++) {
 			String name = attrs.getQName(i);
-			if(this.current == this.root && name.startsWith(GenericXMLHandler.XMLNS)) {
+			if (this.current == this.root && name.startsWith(GenericXMLHandler.XMLNS)) {
 				Namespace newNamespace = XwtxmlFactory.eINSTANCE.createNamespace();
-				if(name.length() == GenericXMLHandler.XMLNS.length()) {
+				if (name.length() == GenericXMLHandler.XMLNS.length()) {
 					newNamespace.setName(""); // xmlns= //$NON-NLS-1$
 				} else {
 					newNamespace.setName(name.substring(GenericXMLHandler.XMLNS.length() + 1));
@@ -135,26 +135,26 @@ public class GenericXMLHandler extends DefaultHandler implements LexicalHandler 
 
 	@Override
 	public final void characters(final char[] ch, final int start, final int length) throws SAXException {
-		if(this.current != null) {
+		if (this.current != null) {
 			boolean hasContent = true;
-			if(isLightweightModel()) {
+			if (isLightweightModel()) {
 				hasContent = false;
 				int index = start;
-				while(!hasContent && index < start + length) {
+				while (!hasContent && index < start + length) {
 					hasContent = !UCharacter.isWhitespace(ch[index]);
 					index++;
 				}
 			}
 
-			if(hasContent) {
+			if (hasContent) {
 				String text = new String(ch, start, length);
-				if(isIgnoreWhitespace()) {
+				if (isIgnoreWhitespace()) {
 					text = text.trim();
 				}
 
-				if(text.length() > 0) {
+				if (text.length() > 0) {
 					Text newElement;
-					if(this.nextIsCDATA) {
+					if (this.nextIsCDATA) {
 						newElement = XwtxmlFactory.eINSTANCE.createCDATA();
 					} else {
 						newElement = XwtxmlFactory.eINSTANCE.createText();
@@ -168,10 +168,10 @@ public class GenericXMLHandler extends DefaultHandler implements LexicalHandler 
 
 	@Override
 	public final void comment(final char[] ch, final int start, final int length) throws SAXException {
-		if(this.current != null && !isLightweightModel()) {
+		if (this.current != null && !isLightweightModel()) {
 			String text = new String(ch, start, length);
 
-			if(text.length() > 0) {
+			if (text.length() > 0) {
 				Comment newElement = XwtxmlFactory.eINSTANCE.createComment();
 				newElement.setName(text);
 				this.current.getChildren().add(newElement);
@@ -186,15 +186,15 @@ public class GenericXMLHandler extends DefaultHandler implements LexicalHandler 
 		newDtd.setPublicID(publicId);
 		newDtd.setSystemID(systemId);
 		this.dtd = newDtd;
-		if(this.root != null) {
+		if (this.root != null) {
 			this.root.setDtd(this.dtd);
 		}
 	}
 
 	private boolean isIgnoreWhitespace() {
-		if(this.ignoreWhiteSpace == null) {
-			if(this.parameters != null && this.parameters.get(GenericXMLHandler.OPTION_IGNORE_WHITESPACE) != null) {
-				this.ignoreWhiteSpace = (Boolean)this.parameters.get(GenericXMLHandler.OPTION_IGNORE_WHITESPACE);
+		if (this.ignoreWhiteSpace == null) {
+			if (this.parameters != null && this.parameters.get(GenericXMLHandler.OPTION_IGNORE_WHITESPACE) != null) {
+				this.ignoreWhiteSpace = (Boolean) this.parameters.get(GenericXMLHandler.OPTION_IGNORE_WHITESPACE);
 			} else {
 				this.ignoreWhiteSpace = false;
 			}
@@ -204,9 +204,9 @@ public class GenericXMLHandler extends DefaultHandler implements LexicalHandler 
 	}
 
 	private boolean isLightweightModel() {
-		if(this.lightweightModel == null) {
-			if(this.parameters != null && this.parameters.get(GenericXMLHandler.OPTION_LIGHTWEIGHT_MODEL) != null) {
-				this.lightweightModel = (Boolean)this.parameters.get(GenericXMLHandler.OPTION_LIGHTWEIGHT_MODEL);
+		if (this.lightweightModel == null) {
+			if (this.parameters != null && this.parameters.get(GenericXMLHandler.OPTION_LIGHTWEIGHT_MODEL) != null) {
+				this.lightweightModel = (Boolean) this.parameters.get(GenericXMLHandler.OPTION_LIGHTWEIGHT_MODEL);
 			} else {
 				this.lightweightModel = false;
 			}
@@ -226,10 +226,10 @@ public class GenericXMLHandler extends DefaultHandler implements LexicalHandler 
 		newElement.setName(target);
 		newElement.setData(data);
 
-		if(this.current != null) {
+		if (this.current != null) {
 			this.current.getChildren().add(newElement);
 		} else {
-			if(this.leadingPIs == null) {
+			if (this.leadingPIs == null) {
 				this.leadingPIs = new ArrayList<ProcessingInstruction>();
 			}
 			this.leadingPIs.add(newElement);

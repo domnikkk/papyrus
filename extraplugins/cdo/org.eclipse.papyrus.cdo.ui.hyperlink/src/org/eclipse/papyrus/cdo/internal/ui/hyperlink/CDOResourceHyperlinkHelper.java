@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2013 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA LIST) - adapted for CDO repository resource hyperlinks
- * 
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.cdo.internal.ui.hyperlink;
@@ -49,11 +49,11 @@ public class CDOResourceHyperlinkHelper extends AbstractHyperLinkHelper implemen
 	public HyperLinkObject getHyperLinkObject(EAnnotation eAnnotation) {
 		CDOResourceHyperlink result = null;
 
-		if(eAnnotation.getSource().equals(CDOHyperlinkConstants.HYPERLINK_ANNOTATION_SOURCE)) {
+		if (eAnnotation.getSource().equals(CDOHyperlinkConstants.HYPERLINK_ANNOTATION_SOURCE)) {
 			result = new CDOResourceHyperlink();
 			result.setHyperlink(URI.createURI(eAnnotation.getDetails().get(CDOHyperlinkConstants.HYPERLINK_DETAIL_URI)));
 			result.setTooltipText(eAnnotation.getDetails().get(HyperLinkConstants.HYPERLINK_TOOLTYPE_TEXT));
-			if(eAnnotation.getDetails().get(HyperLinkConstants.HYPERLINK_IS_DEFAULT_NAVIGATION) != null) {
+			if (eAnnotation.getDetails().get(HyperLinkConstants.HYPERLINK_IS_DEFAULT_NAVIGATION) != null) {
 				boolean isDefaultNaviagation = Boolean.parseBoolean(eAnnotation.getDetails().get(HyperLinkConstants.HYPERLINK_IS_DEFAULT_NAVIGATION));
 				result.setIsDefault(isDefaultNaviagation);
 			} else {
@@ -68,8 +68,8 @@ public class CDOResourceHyperlinkHelper extends AbstractHyperLinkHelper implemen
 	public RecordingCommand getAddHyperLinkCommand(TransactionalEditingDomain domain, EModelElement object, HyperLinkObject hyperlinkObject) {
 		RecordingCommand result = null;
 
-		if(hyperlinkObject instanceof CDOResourceHyperlink) {
-			CDOResourceHyperlink cdoHyperlink = (CDOResourceHyperlink)hyperlinkObject;
+		if (hyperlinkObject instanceof CDOResourceHyperlink) {
+			CDOResourceHyperlink cdoHyperlink = (CDOResourceHyperlink) hyperlinkObject;
 			result = new CreateCDOResourceHyperlinkCommand(domain, object, cdoHyperlink.getTooltipText(), cdoHyperlink.getHyperlink(), cdoHyperlink.getIsDefault());
 		}
 
@@ -84,7 +84,7 @@ public class CDOResourceHyperlinkHelper extends AbstractHyperLinkHelper implemen
 	@Override
 	public void executeNewMousePressed(List<HyperLinkObject> list, EObject aModel) {
 		CDOResourceHyperlinkEditorShell editor = new CDOResourceHyperlinkEditorShell();
-		if(editor.open()) {
+		if (editor.open()) {
 			list.add(editor.getHyperlink());
 		}
 	}
@@ -99,14 +99,14 @@ public class CDOResourceHyperlinkHelper extends AbstractHyperLinkHelper implemen
 		Command result = null;
 
 		CDOResourceNode node = AdapterUtils.adapt(linkTarget, CDOResourceNode.class, null);
-		if(node instanceof CDOResourceLeaf) {
+		if (node instanceof CDOResourceLeaf) {
 			URI uri = node.getURI();
 			String tip = uri.lastSegment();
 
-			if(node instanceof CDOResource) {
-				DIModel di = DIModel.getInstance((CDOResource)node, false);
-				if(di != null) {
-					// it's a DI model.  We don't use file extensions with their names
+			if (node instanceof CDOResource) {
+				DIModel di = DIModel.getInstance((CDOResource) node, false);
+				if (di != null) {
+					// it's a DI model. We don't use file extensions with their names
 					tip = di.getName();
 				}
 			}

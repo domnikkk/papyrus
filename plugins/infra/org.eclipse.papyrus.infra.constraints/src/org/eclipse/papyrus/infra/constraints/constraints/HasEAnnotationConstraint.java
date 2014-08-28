@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,9 +18,9 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 
 /**
  * A Constraint to test whether the selected EObject has a specific EAnnotation
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class HasEAnnotationConstraint extends AbstractConstraint {
 
@@ -28,8 +28,8 @@ public class HasEAnnotationConstraint extends AbstractConstraint {
 
 	@Override
 	protected boolean equivalent(Constraint constraint) {
-		if(constraint instanceof HasEAnnotationConstraint) {
-			HasEAnnotationConstraint other = (HasEAnnotationConstraint)constraint;
+		if (constraint instanceof HasEAnnotationConstraint) {
+			HasEAnnotationConstraint other = (HasEAnnotationConstraint) constraint;
 			return annotationName.equals(other.annotationName);
 		}
 		return false;
@@ -44,8 +44,8 @@ public class HasEAnnotationConstraint extends AbstractConstraint {
 	@Override
 	protected boolean match(Object selection) {
 		EObject eObject = EMFHelper.getEObject(selection);
-		if(eObject instanceof EModelElement) {
-			EModelElement modelElement = (EModelElement)eObject;
+		if (eObject instanceof EModelElement) {
+			EModelElement modelElement = (EModelElement) eObject;
 			return modelElement.getEAnnotation(annotationName) != null;
 		}
 

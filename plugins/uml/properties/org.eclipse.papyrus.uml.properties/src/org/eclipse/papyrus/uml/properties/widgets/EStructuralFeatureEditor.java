@@ -97,22 +97,22 @@ public class EStructuralFeatureEditor implements IValueChangeListener, IListChan
 	}
 
 	public void setFeatureToEdit(EStructuralFeature feature, EObject element) {
-		if(currentPage != null) {
+		if (currentPage != null) {
 			currentPage.dispose();
 		}
 
-		if(feature instanceof EReference) {
-			if(feature.isMany()) {
+		if (feature instanceof EReference) {
+			if (feature.isMany()) {
 				MultipleReferenceEditor editor = new MultipleReferenceEditor(pageBook, style);
-				setMultipleValueEditorProperties(editor, (List<?>)element.eGet(feature), element, feature);
+				setMultipleValueEditorProperties(editor, (List<?>) element.eGet(feature), element, feature);
 
 				editor.setProviders(contentProvider, labelProvider);
 				editor.setFactory(valueFactory);
 				currentPage = editor;
 			} else {
 				EClassifier featureType = feature.getEType();
-				if(featureType instanceof EClass && DataTypeUtil.isDataTypeDefinition((EClass)featureType, element)) {
-					EObjectContentsEditor editor = new EObjectContentsEditor(pageBook, style, (EReference)feature);
+				if (featureType instanceof EClass && DataTypeUtil.isDataTypeDefinition((EClass) featureType, element)) {
+					EObjectContentsEditor editor = new EObjectContentsEditor(pageBook, style, (EReference) feature);
 					editor.setValue(new PapyrusObservableValue(element, feature, EMFHelper.resolveEditingDomain(element)));
 					currentPage = editor;
 				} else {
@@ -123,18 +123,18 @@ public class EStructuralFeatureEditor implements IValueChangeListener, IListChan
 					editor.setLabelProvider(labelProvider);
 					editor.setValueFactory(valueFactory);
 
-					editor.setDirectCreation(((EReference)feature).isContainment());
+					editor.setDirectCreation(((EReference) feature).isContainment());
 					currentPage = editor;
 				}
 			}
 		}
 
-		if(feature instanceof EAttribute) {
+		if (feature instanceof EAttribute) {
 			EClassifier type = feature.getEType();
-			if(type instanceof EEnum) {
-				if(feature.isMany()) {
+			if (type instanceof EEnum) {
+				if (feature.isMany()) {
 					MultipleReferenceEditor editor = new MultipleReferenceEditor(pageBook, style);
-					setMultipleValueEditorProperties(editor, (List<?>)element.eGet(feature), element, feature);
+					setMultipleValueEditorProperties(editor, (List<?>) element.eGet(feature), element, feature);
 
 					editor.setProviders(contentProvider, labelProvider);
 					editor.setFactory(valueFactory);
@@ -146,54 +146,54 @@ public class EStructuralFeatureEditor implements IValueChangeListener, IListChan
 					editor.setContentProvider(new EMFEnumeratorContentProvider(feature));
 					currentPage = editor;
 				}
-			} else if(type instanceof EDataType) {
-				String instanceClassName = ((EDataType)type).getInstanceClassName();
-				if("java.lang.String".equalsIgnoreCase(instanceClassName) || "string".equalsIgnoreCase(instanceClassName)) {
-					if(feature.isMany()) {
+			} else if (type instanceof EDataType) {
+				String instanceClassName = ((EDataType) type).getInstanceClassName();
+				if ("java.lang.String".equalsIgnoreCase(instanceClassName) || "string".equalsIgnoreCase(instanceClassName)) {
+					if (feature.isMany()) {
 						MultipleStringEditor editor = new MultipleStringEditor(pageBook, style, true);
-						setMultipleValueEditorProperties(editor, (List<?>)element.eGet(feature), element, feature);
+						setMultipleValueEditorProperties(editor, (List<?>) element.eGet(feature), element, feature);
 						currentPage = editor;
 					} else {
 						StringEditor editor = new StringEditor(pageBook, style | SWT.MULTI);
 						setValueEditorProperties(editor, element, feature);
 						currentPage = editor;
 					}
-				} else if("java.lang.Integer".equalsIgnoreCase(instanceClassName) || "integer".equalsIgnoreCase(instanceClassName) || "int".equalsIgnoreCase(instanceClassName)) {
-					if(feature.isMany()) {
+				} else if ("java.lang.Integer".equalsIgnoreCase(instanceClassName) || "integer".equalsIgnoreCase(instanceClassName) || "int".equalsIgnoreCase(instanceClassName)) {
+					if (feature.isMany()) {
 						MultipleIntegerEditor editor = new MultipleIntegerEditor(pageBook, style);
-						setMultipleValueEditorProperties(editor, (List<?>)element.eGet(feature), element, feature);
+						setMultipleValueEditorProperties(editor, (List<?>) element.eGet(feature), element, feature);
 						currentPage = editor;
 					} else {
 						IntegerEditor editor = new IntegerEditor(pageBook, style);
 						setValueEditorProperties(editor, element, feature);
 						currentPage = editor;
 					}
-				} else if("java.lang.Boolean".equals(instanceClassName) || "boolean".equalsIgnoreCase(instanceClassName) || "bool".equalsIgnoreCase(instanceClassName)) {
-					if(feature.isMany()) {
+				} else if ("java.lang.Boolean".equals(instanceClassName) || "boolean".equalsIgnoreCase(instanceClassName) || "bool".equalsIgnoreCase(instanceClassName)) {
+					if (feature.isMany()) {
 						// TODO widget not available
 					} else {
 						BooleanCombo editor = new BooleanCombo(pageBook, style);
 						setValueEditorProperties(editor, element, feature);
 						currentPage = editor;
 					}
-				} else if("java.lang.Float".equals(instanceClassName) || "float".equalsIgnoreCase(instanceClassName)) {
-					if(feature.isMany()) {
+				} else if ("java.lang.Float".equals(instanceClassName) || "float".equalsIgnoreCase(instanceClassName)) {
+					if (feature.isMany()) {
 						// TODO widget not available
 					} else {
 						FloatEditor editor = new FloatEditor(pageBook, style);
 						setValueEditorProperties(editor, element, feature);
 						currentPage = editor;
 					}
-				} else if("java.lang.Double".equals(instanceClassName) || "double".equalsIgnoreCase(instanceClassName)) {
-					if(feature.isMany()) {
+				} else if ("java.lang.Double".equals(instanceClassName) || "double".equalsIgnoreCase(instanceClassName)) {
+					if (feature.isMany()) {
 						// TODO widget not available
 					} else {
 						DoubleEditor editor = new DoubleEditor(pageBook, style);
 						setValueEditorProperties(editor, element, feature);
 						currentPage = editor;
 					}
-				} else if("java.lang.Long".equals(instanceClassName) || "long".equalsIgnoreCase(instanceClassName)) {
-					if(feature.isMany()) {
+				} else if ("java.lang.Long".equals(instanceClassName) || "long".equalsIgnoreCase(instanceClassName)) {
+					if (feature.isMany()) {
 						// TODO widget not available
 					} else {
 						LongEditor editor = new LongEditor(pageBook, style);
@@ -204,7 +204,7 @@ public class EStructuralFeatureEditor implements IValueChangeListener, IListChan
 			}
 		}
 
-		if(currentPage == null) {
+		if (currentPage == null) {
 			currentPage = createEmptyPage();
 		}
 
@@ -214,7 +214,7 @@ public class EStructuralFeatureEditor implements IValueChangeListener, IListChan
 	protected void setValueEditorProperties(AbstractValueEditor editor, EObject stereotypeApplication, EStructuralFeature feature) {
 		editor.setLabel(feature.getName());
 
-		if(!isEditable(stereotypeApplication, feature)) {
+		if (!isEditable(stereotypeApplication, feature)) {
 			editor.setReadOnly(true);
 		}
 
@@ -230,11 +230,11 @@ public class EStructuralFeatureEditor implements IValueChangeListener, IListChan
 		editor.setUnique(feature.isUnique());
 		editor.setOrdered(feature.isOrdered());
 		editor.setUpperBound(feature.getUpperBound());
-		if(feature instanceof EReference) {
-			editor.setDirectCreation(((EReference)feature).isContainment());
+		if (feature instanceof EReference) {
+			editor.setDirectCreation(((EReference) feature).isContainment());
 		}
 
-		if(!isEditable(stereotypeApplication, feature)) {
+		if (!isEditable(stereotypeApplication, feature)) {
 			editor.setReadOnly(true);
 		}
 
@@ -255,13 +255,13 @@ public class EStructuralFeatureEditor implements IValueChangeListener, IListChan
 	}
 
 	public void handleValueChange(ValueChangeEvent event) {
-		if(changeListener != null) {
+		if (changeListener != null) {
 			changeListener.handleChange(new ChangeEvent(event.getObservable()));
 		}
 	}
 
 	public void handleListChange(ListChangeEvent event) {
-		if(changeListener != null) {
+		if (changeListener != null) {
 			changeListener.handleChange(new ChangeEvent(event.getObservable()));
 		}
 	}

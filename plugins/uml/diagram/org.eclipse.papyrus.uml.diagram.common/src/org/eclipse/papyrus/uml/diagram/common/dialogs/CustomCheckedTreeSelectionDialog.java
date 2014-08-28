@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,15 +49,15 @@ import org.eclipse.ui.dialogs.SelectionStatusDialog;
 import org.eclipse.ui.internal.WorkbenchMessages;
 
 /**
- * 
+ *
  * This class is copied from {@link org.eclipse.ui.dialogs.CheckedTreeSelectionDialog} We add it the
  * possibility to change the style of the TreeViewer! (we want use
  * SWT.FULL_SELECTION)
- * 
+ *
  * A patch has been provided to the Platform/SWT project (bug 341923)
- * 
+ *
  * A class to select elements out of a tree structure.
- * 
+ *
  * @since 2.0
  */
 public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
@@ -97,13 +97,13 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/**
 	 * Constructs an instance of <code>ElementTreeSelectionDialog</code>.
-	 * 
+	 *
 	 * @param parent
-	 *        The shell to parent from.
+	 *            The shell to parent from.
 	 * @param labelProvider
-	 *        the label provider to render the entries
+	 *            the label provider to render the entries
 	 * @param contentProvider
-	 *        the content provider to evaluate the tree structure
+	 *            the content provider to evaluate the tree structure
 	 */
 	public CustomCheckedTreeSelectionDialog(Shell parent, ILabelProvider labelProvider, ITreeContentProvider contentProvider, int style) {
 		super(parent);
@@ -119,9 +119,9 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 	/**
 	 * If set, the checked /gray state of containers (inner nodes) is derived
 	 * from the checked state of its leaf nodes.
-	 * 
+	 *
 	 * @param containerMode
-	 *        The containerMode to set
+	 *            The containerMode to set
 	 */
 	public void setContainerMode(boolean containerMode) {
 		fContainerMode = containerMode;
@@ -129,19 +129,19 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/**
 	 * Sets the initial selection. Convenience method.
-	 * 
+	 *
 	 * @param selection
-	 *        the initial selection.
+	 *            the initial selection.
 	 */
 	public void setInitialSelection(Object selection) {
-		setInitialSelections(new Object[]{ selection });
+		setInitialSelections(new Object[] { selection });
 	}
 
 	/**
 	 * Sets the message to be displayed if the list is empty.
-	 * 
+	 *
 	 * @param message
-	 *        the message to be displayed.
+	 *            the message to be displayed.
 	 */
 	public void setEmptyListMessage(String message) {
 		fEmptyListMessage = message;
@@ -149,7 +149,7 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/**
 	 * Sets the sorter used by the tree viewer.
-	 * 
+	 *
 	 * @param sorter
 	 * @deprecated since 3.3, use {@link CustomCheckedTreeSelectionDialog#setComparator(ViewerComparator)} instead
 	 */
@@ -160,7 +160,7 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/**
 	 * Sets the comparator used by the tree viewer.
-	 * 
+	 *
 	 * @param comparator
 	 * @since 3.3
 	 */
@@ -170,12 +170,12 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/**
 	 * Adds a filter to the tree viewer.
-	 * 
+	 *
 	 * @param filter
-	 *        a filter.
+	 *            a filter.
 	 */
 	public void addFilter(ViewerFilter filter) {
-		if(fFilters == null) {
+		if (fFilters == null) {
 			fFilters = new ArrayList(4);
 		}
 		fFilters.add(filter);
@@ -184,9 +184,9 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 	/**
 	 * Sets an optional validator to check if the selection is valid. The
 	 * validator is invoked whenever the selection changes.
-	 * 
+	 *
 	 * @param validator
-	 *        the validator to validate the selection.
+	 *            the validator to validate the selection.
 	 */
 	public void setValidator(ISelectionStatusValidator validator) {
 		fValidator = validator;
@@ -194,9 +194,9 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/**
 	 * Sets the tree input.
-	 * 
+	 *
 	 * @param input
-	 *        the tree input.
+	 *            the tree input.
 	 */
 	public void setInput(Object input) {
 		fInput = input;
@@ -204,9 +204,9 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/**
 	 * Expands elements in the tree.
-	 * 
+	 *
 	 * @param elements
-	 *        The elements that will be expanded.
+	 *            The elements that will be expanded.
 	 */
 	public void setExpandedElements(Object[] elements) {
 		fExpandedElements = elements;
@@ -214,11 +214,11 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/**
 	 * Sets the size of the tree in unit of characters.
-	 * 
+	 *
 	 * @param width
-	 *        the width of the tree.
+	 *            the width of the tree.
 	 * @param height
-	 *        the height of the tree.
+	 *            the height of the tree.
 	 */
 	public void setSize(int width, int height) {
 		fWidth = width;
@@ -227,16 +227,16 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/**
 	 * Validate the receiver and update the status with the result.
-	 * 
+	 *
 	 */
 	protected void updateOKStatus() {
-		if(!fIsEmpty) {
-			if(fValidator != null) {
+		if (!fIsEmpty) {
+			if (fValidator != null) {
 				fCurrStatus = fValidator.validate(fViewer.getCheckedElements());
 				updateStatus(fCurrStatus);
-			} else if(!fCurrStatus.isOK()) {
+			} else if (!fCurrStatus.isOK()) {
 				fCurrStatus = new Status(IStatus.OK, PlatformUI.PLUGIN_ID, IStatus.OK, "", //$NON-NLS-1$
-				null);
+						null);
 			}
 		} else {
 			fCurrStatus = new Status(IStatus.ERROR, PlatformUI.PLUGIN_ID, IStatus.OK, fEmptyListMessage, null);
@@ -246,7 +246,7 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.window.Window#open()
 	 */
 	@Override
@@ -279,17 +279,18 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.window.Window#create()
 	 */
 	@Override
 	public void create() {
 		BusyIndicator.showWhile(null, new Runnable() {
 
+			@Override
 			public void run() {
 				access$superCreate();
 				fViewer.setCheckedElements(getInitialElementSelections().toArray());
-				if(fExpandedElements != null) {
+				if (fExpandedElements != null) {
 					fViewer.setExpandedElements(fExpandedElements);
 				}
 				updateOKStatus();
@@ -299,14 +300,14 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.jface.dialogs.Dialog#createDialogArea(org.eclipse.swt.widgets
 	 * .Composite)
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite composite = (Composite)super.createDialogArea(parent);
+		Composite composite = (Composite) super.createDialogArea(parent);
 		Label messageLabel = createMessageArea(composite);
 		CheckboxTreeViewer treeViewer = createTreeViewer(composite);
 		Control buttonComposite = createSelectionButtons(composite);
@@ -316,7 +317,7 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 		Tree treeWidget = treeViewer.getTree();
 		treeWidget.setLayoutData(data);
 		treeWidget.setFont(parent.getFont());
-		if(fIsEmpty) {
+		if (fIsEmpty) {
 			messageLabel.setEnabled(false);
 			treeWidget.setEnabled(false);
 			buttonComposite.setEnabled(false);
@@ -326,13 +327,13 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/**
 	 * Creates the tree viewer.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite
+	 *            the parent composite
 	 * @return the tree viewer
 	 */
 	protected CheckboxTreeViewer createTreeViewer(Composite parent) {
-		if(fContainerMode) {
+		if (fContainerMode) {
 			fViewer = new ContainerCheckedTreeViewer(parent, this.fStyle);
 		} else {
 			fViewer = new CheckboxTreeViewer(parent, this.fStyle);
@@ -341,14 +342,15 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 		fViewer.setLabelProvider(fLabelProvider);
 		fViewer.addCheckStateListener(new ICheckStateListener() {
 
+			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
 				updateOKStatus();
 			}
 		});
 		fViewer.setComparator(fComparator);
-		if(fFilters != null) {
-			for(int i = 0; i != fFilters.size(); i++) {
-				fViewer.addFilter((ViewerFilter)fFilters.get(i));
+		if (fFilters != null) {
+			for (int i = 0; i != fFilters.size(); i++) {
+				fViewer.addFilter((ViewerFilter) fFilters.get(i));
 			}
 		}
 		fViewer.setInput(fInput);
@@ -357,7 +359,7 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/**
 	 * Returns the tree viewer.
-	 * 
+	 *
 	 * @return the tree viewer
 	 */
 	protected CheckboxTreeViewer getTreeViewer() {
@@ -366,9 +368,9 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/**
 	 * Adds the selection and deselection buttons to the dialog.
-	 * 
+	 *
 	 * @param composite
-	 *        the parent composite
+	 *            the parent composite
 	 * @return Composite the composite the buttons were created in.
 	 */
 	protected Composite createSelectionButtons(Composite composite) {
@@ -388,10 +390,10 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				Object[] viewerElements = fContentProvider.getElements(fInput);
-				if(fContainerMode) {
+				if (fContainerMode) {
 					fViewer.setCheckedElements(viewerElements);
 				} else {
-					for(int i = 0; i < viewerElements.length; i++) {
+					for (int i = 0; i < viewerElements.length; i++) {
 						fViewer.setSubtreeChecked(viewerElements[i], true);
 					}
 				}
@@ -414,10 +416,10 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	protected boolean evaluateIfTreeEmpty(Object input) {
 		Object[] elements = fContentProvider.getElements(input);
-		if(elements.length > 0) {
-			if(fFilters != null) {
-				for(int i = 0; i < fFilters.size(); i++) {
-					ViewerFilter curr = (ViewerFilter)fFilters.get(i);
+		if (elements.length > 0) {
+			if (fFilters != null) {
+				for (int i = 0; i < fFilters.size(); i++) {
+					ViewerFilter curr = (ViewerFilter) fFilters.get(i);
 					elements = curr.filter(fViewer, input, elements);
 				}
 			}
@@ -427,7 +429,7 @@ public class CustomCheckedTreeSelectionDialog extends SelectionStatusDialog {
 
 	/**
 	 * Returns the label provider used by this dialog
-	 * 
+	 *
 	 * @return the label provider used by this dialog
 	 */
 	public ILabelProvider getLabelProvider() {

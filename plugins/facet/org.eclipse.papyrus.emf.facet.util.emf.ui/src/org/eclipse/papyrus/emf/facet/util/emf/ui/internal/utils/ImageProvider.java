@@ -11,10 +11,10 @@
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.util.emf.ui.internal.utils;
 
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.util.swt.imageprovider.IImageProvider;
 import org.eclipse.papyrus.emf.facet.util.swt.imageprovider.IImageProviderFactory;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
 /**
@@ -28,7 +28,7 @@ public final class ImageProvider {
 	private static final ImageProvider SINGLETON = new ImageProvider();
 	public static final IImageProvider DEFAULT = IImageProviderFactory.DEFAULT
 			.createIImageProvider(Activator.getDefault());
-	
+
 	private ImageProvider() {
 		// Must not be used
 	}

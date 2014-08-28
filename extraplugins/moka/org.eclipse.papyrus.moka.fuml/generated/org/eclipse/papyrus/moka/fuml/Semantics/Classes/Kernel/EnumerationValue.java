@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,6 +32,7 @@ public class EnumerationValue extends Value {
 
 	public Enumeration type;
 
+	@Override
 	public ValueSpecification specify() {
 		// Return an instance value with literal as the instance.
 		InstanceValue instanceValue = UMLFactory.eINSTANCE.createInstanceValue();
@@ -42,31 +43,35 @@ public class EnumerationValue extends Value {
 		return instanceValue;
 	}
 
+	@Override
 	public Boolean equals(Value otherValue) {
 		// Test if this enumeration value is equal to the otherValue.
 		// To be equal, the otherValue must also be an enumeration value with
 		// the same literal as this enumeration value.
 		boolean isEqual = false;
-		if(otherValue instanceof EnumerationValue) {
-			isEqual = ((EnumerationValue)otherValue).literal == this.literal;
+		if (otherValue instanceof EnumerationValue) {
+			isEqual = ((EnumerationValue) otherValue).literal == this.literal;
 		}
 		return isEqual;
 	}
 
+	@Override
 	public Value copy() {
 		// Create a new enumeration value with the same literal as this
 		// enumeration value.
-		EnumerationValue newValue = (EnumerationValue)(super.copy());
+		EnumerationValue newValue = (EnumerationValue) (super.copy());
 		newValue.type = this.type;
 		newValue.literal = this.literal;
 		return newValue;
 	}
 
+	@Override
 	public Value new_() {
 		// Create a new enumeration value with no literal.
 		return new EnumerationValue();
 	}
 
+	@Override
 	public List<Classifier> getTypes() {
 		// Return the single type of this enumeration value.
 		List<Classifier> types = new ArrayList<Classifier>();
@@ -74,6 +79,7 @@ public class EnumerationValue extends Value {
 		return types;
 	}
 
+	@Override
 	public String toString() {
 		return literal.getName();
 	}

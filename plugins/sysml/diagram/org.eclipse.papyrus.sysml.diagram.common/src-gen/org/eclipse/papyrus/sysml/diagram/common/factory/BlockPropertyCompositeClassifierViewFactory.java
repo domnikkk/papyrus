@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -37,8 +37,8 @@ public class BlockPropertyCompositeClassifierViewFactory extends ShapeViewFactor
 	@Override
 	protected void initializeFromPreferences(View view) {
 		super.initializeFromPreferences(view);
-		org.eclipse.jface.preference.IPreferenceStore store = (org.eclipse.jface.preference.IPreferenceStore)getPreferencesHint().getPreferenceStore();
-		if(store == null) {
+		org.eclipse.jface.preference.IPreferenceStore store = (org.eclipse.jface.preference.IPreferenceStore) getPreferencesHint().getPreferenceStore();
+		if (store == null) {
 			return;
 		}
 		// Get default size from preferences use set view size.

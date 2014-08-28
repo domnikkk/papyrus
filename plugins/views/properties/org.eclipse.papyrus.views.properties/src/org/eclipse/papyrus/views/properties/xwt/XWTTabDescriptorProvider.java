@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.xwt;
 
@@ -44,7 +44,7 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributo
 /**
  * An implementation of ITabDescriptorProvider, which displays the Property view
  * from XWT files.
- * 
+ *
  * @author Camille Letavernier
  */
 public class XWTTabDescriptorProvider implements ITabDescriptorProvider {
@@ -64,47 +64,47 @@ public class XWTTabDescriptorProvider implements ITabDescriptorProvider {
 			public void constraintsChanged(ConstraintsChangedEvent event) {
 				// Purge the caches of all display engines because the XML view descriptions
 				// they cached are out of date
-				for(DisplayEngine next : displays.values()) {
-					((DefaultDisplayEngine)next).invalidate();
+				for (DisplayEngine next : displays.values()) {
+					((DefaultDisplayEngine) next).invalidate();
 				}
 			}
 		});
 	}
-	
+
 	private DisplayEngine getDisplay(final IWorkbenchPart part) {
-		if(!displays.containsKey(part)) {
+		if (!displays.containsKey(part)) {
 			displays.put(part, new DefaultDisplayEngine());
 			part.getSite().getPage().addPartListener(new IPartListener() {
 
 				public void partClosed(IWorkbenchPart part) {
 					part.getSite().getPage().removePartListener(this);
 					DisplayEngine display = displays.get(part);
-					if(display != null) {
+					if (display != null) {
 						display.dispose();
 						displays.remove(part);
 					}
 
-					//We remove pointers to the cached IWorkbenchPart, to avoid Memory Leaks.
-					//Even if the closed part is not the previousPart, both parts may share the same objects (e.g. ModelExplorer & DiagramEditor).
-					//We'd better not retain the selection at all. In such a case, we won't receive a SelectionChangedEvent from the ModelExplorer.
+					// We remove pointers to the cached IWorkbenchPart, to avoid Memory Leaks.
+					// Even if the closed part is not the previousPart, both parts may share the same objects (e.g. ModelExplorer & DiagramEditor).
+					// We'd better not retain the selection at all. In such a case, we won't receive a SelectionChangedEvent from the ModelExplorer.
 					previousPart = null;
 					previousSelection = null;
 				}
 
 				public void partActivated(IWorkbenchPart part) {
-					//Nothing
+					// Nothing
 				}
 
 				public void partBroughtToTop(IWorkbenchPart part) {
-					//Nothing
+					// Nothing
 				}
 
 				public void partDeactivated(IWorkbenchPart part) {
-					//Nothing
+					// Nothing
 				}
 
 				public void partOpened(IWorkbenchPart part) {
-					//Nothing
+					// Nothing
 				}
 
 			});
@@ -114,7 +114,7 @@ public class XWTTabDescriptorProvider implements ITabDescriptorProvider {
 	}
 
 	public ITabDescriptor[] getTabDescriptors(final IWorkbenchPart part, final ISelection selection) {
-		if(selection != this.previousSelection || part != previousPart) {
+		if (selection != this.previousSelection || part != previousPart) {
 			this.previousSelection = selection;
 			this.previousPart = part;
 
@@ -123,22 +123,22 @@ public class XWTTabDescriptorProvider implements ITabDescriptorProvider {
 			List<ITabDescriptor> descriptors = new LinkedList<ITabDescriptor>();
 
 			Set<View> views = constraintEngine.getViews(selection);
-			if(!views.isEmpty()) {
+			if (!views.isEmpty()) {
 				descriptors.addAll(getDisplay(part).getTabDescriptors(views));
 			}
 
-			//FIXME: In some cases (e.g. Selection in the Papyrus Tree outline), the IWorkbenchPart is not an ITabbedPropertySheetPageContributor
-			//TODO: Investigate on this case and fix the issue (contributor == null in this case)
+			// FIXME: In some cases (e.g. Selection in the Papyrus Tree outline), the IWorkbenchPart is not an ITabbedPropertySheetPageContributor
+			// TODO: Investigate on this case and fix the issue (contributor == null in this case)
 			ITabbedPropertySheetPageContributor contributor;
-			if(part instanceof ITabbedPropertySheetPageContributor) {
-				contributor = (ITabbedPropertySheetPageContributor)part;
+			if (part instanceof ITabbedPropertySheetPageContributor) {
+				contributor = (ITabbedPropertySheetPageContributor) part;
 			} else {
-				contributor = (ITabbedPropertySheetPageContributor)(part.getAdapter(ITabbedPropertySheetPageContributor.class));
+				contributor = (ITabbedPropertySheetPageContributor) (part.getAdapter(ITabbedPropertySheetPageContributor.class));
 			}
 
-			if(contributor != null) {
+			if (contributor != null) {
 				// get all tab descriptors for the registered extension points
-				//Memory leak here
+				// Memory leak here
 				TabbedPropertyRegistry registry = TabbedPropertyRegistryFactory.getInstance().createRegistry(contributor);
 
 				// invoke dynamically on the tab registry, as method is private
@@ -149,11 +149,11 @@ public class XWTTabDescriptorProvider implements ITabDescriptorProvider {
 					method.setAccessible(true);
 					ITabDescriptor[] registeredTabDesriptors;
 
-					registeredTabDesriptors = (ITabDescriptor[])method.invoke(registry);
+					registeredTabDesriptors = (ITabDescriptor[]) method.invoke(registry);
 
-					if(registeredTabDesriptors != null) {
-						for(ITabDescriptor descriptor : registeredTabDesriptors) {
-							if(descriptor.getSectionDescriptors().size() > 0) {
+					if (registeredTabDesriptors != null) {
+						for (ITabDescriptor descriptor : registeredTabDesriptors) {
+							if (descriptor.getSectionDescriptors().size() > 0) {
 								descriptors.add(descriptor);
 							}
 						}
@@ -175,8 +175,8 @@ public class XWTTabDescriptorProvider implements ITabDescriptorProvider {
 
 			cachedResult = descriptors.toArray(new ITabDescriptor[descriptors.size()]);
 
-			//Workaround for memory leak
-			TabbedPropertyRegistryFactory.getInstance().disposeRegistry((ITabbedPropertySheetPageContributor)part);
+			// Workaround for memory leak
+			TabbedPropertyRegistryFactory.getInstance().disposeRegistry((ITabbedPropertySheetPageContributor) part);
 		}
 
 		return cachedResult;
@@ -184,9 +184,9 @@ public class XWTTabDescriptorProvider implements ITabDescriptorProvider {
 
 	/**
 	 * Order the tab descriptors in the given list, given the afterTab comparator
-	 * 
+	 *
 	 * @param descriptors
-	 *        tab descriptor list to order
+	 *            tab descriptor list to order
 	 */
 	protected void orderTabDescriptors(final List<ITabDescriptor> descriptors) {
 
@@ -194,39 +194,39 @@ public class XWTTabDescriptorProvider implements ITabDescriptorProvider {
 
 			/**
 			 * compares two tab descriptors each other
-			 * 
+			 *
 			 * @param tabDescriptor1
-			 *        first tab to compare
+			 *            first tab to compare
 			 * @param tabDescriptor2
-			 *        second tab to compare
+			 *            second tab to compare
 			 * @return an integer lesser than -1 if the first tab should be placed before the second tab
 			 */
 			public int compare(ITabDescriptor tabDescriptor1, ITabDescriptor tabDescriptor2) {
 				int priority1 = getPriority(tabDescriptor1);
 				int priority2 = getPriority(tabDescriptor2);
 
-				if(priority1 < priority2) {
+				if (priority1 < priority2) {
 					return -1;
 				}
 
-				if(priority1 > priority2) {
+				if (priority1 > priority2) {
 					return 1;
 				}
 
-				//p1 == p2
+				// p1 == p2
 
 				priority1 = getXWTTabPriority(tabDescriptor1);
 				priority2 = getXWTTabPriority(tabDescriptor2);
 
-				if(priority1 < priority2) {
+				if (priority1 < priority2) {
 					return -1;
 				}
 
-				if(priority1 > priority2) {
+				if (priority1 > priority2) {
 					return 1;
 				}
 
-				//p1 == p2
+				// p1 == p2
 
 				String label1 = tabDescriptor1.getLabel();
 				String label2 = tabDescriptor2.getLabel();
@@ -236,17 +236,17 @@ public class XWTTabDescriptorProvider implements ITabDescriptorProvider {
 
 			/**
 			 * Returns the tab descriptor before tab
-			 * 
+			 *
 			 * @param tab
-			 *        the tab to test
+			 *            the tab to test
 			 * @return the tab descriptor before tab
 			 */
 			private ITabDescriptor getPreviousTab(ITabDescriptor tab) {
 				String afterId = tab.getAfterTab();
-				if(!(ITabDescriptor.TOP.equals(afterId))) {
-					for(ITabDescriptor descriptor : descriptors) {
+				if (!(ITabDescriptor.TOP.equals(afterId))) {
+					for (ITabDescriptor descriptor : descriptors) {
 						String id = descriptor.getId();
-						if(id != null && id.equals(afterId)) {
+						if (id != null && id.equals(afterId)) {
 							return descriptor;
 						}
 					}
@@ -258,7 +258,7 @@ public class XWTTabDescriptorProvider implements ITabDescriptorProvider {
 
 			private int getPriority(ITabDescriptor tab) {
 				ITabDescriptor previousTab = getPreviousTab(tab);
-				if(previousTab != null) {
+				if (previousTab != null) {
 					return getPriority(previousTab) + 1;
 				}
 
@@ -266,11 +266,11 @@ public class XWTTabDescriptorProvider implements ITabDescriptorProvider {
 			}
 
 			private int getXWTTabPriority(ITabDescriptor tab) {
-				if(tab instanceof XWTTabDescriptor) {
-					XWTTabDescriptor xwtTab = (XWTTabDescriptor)tab;
+				if (tab instanceof XWTTabDescriptor) {
+					XWTTabDescriptor xwtTab = (XWTTabDescriptor) tab;
 					return xwtTab.getPriority();
 				} else {
-					return 100; //This tab is not handled by our framework
+					return 100; // This tab is not handled by our framework
 				}
 			}
 

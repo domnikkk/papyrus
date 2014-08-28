@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,8 +38,8 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.OutputSynchronizationConstraintImpl#getScope <em>Scope</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.OutputSynchronizationConstraintImpl#getTolerance <em>Tolerance</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.OutputSynchronizationConstraintImpl#getScope <em>Scope</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.OutputSynchronizationConstraintImpl#getTolerance <em>Tolerance</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,14 +50,17 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	 * The cached value of the '{@link #getScope() <em>Scope</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getScope()
 	 * @generated
 	 * @ordered
 	 */
 	protected EList<EventChain> scope;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected OutputSynchronizationConstraintImpl() {
@@ -67,16 +70,19 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE:
-				return getScope();
-			case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__TOLERANCE:
-				if (resolve) return getTolerance();
-				return basicGetTolerance();
+		case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE:
+			return getScope();
+		case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__TOLERANCE:
+			if (resolve) {
+				return getTolerance();
+			}
+			return basicGetTolerance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -84,15 +90,16 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE:
-				return scope != null && !scope.isEmpty();
-			case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__TOLERANCE:
-				return basicGetTolerance() != null;
+		case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE:
+			return scope != null && !scope.isEmpty();
+		case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__TOLERANCE:
+			return basicGetTolerance() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -100,16 +107,17 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE:
-				getScope().clear();
-				getScope().addAll((Collection<? extends EventChain>)newValue);
-				return;
+		case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE:
+			getScope().clear();
+			getScope().addAll((Collection<? extends EventChain>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -117,6 +125,7 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,8 +136,10 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<EventChain> getScope() {
 		if (scope == null) {
 			scope = new EObjectResolvingEList<EventChain>(EventChain.class, this, TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE);
@@ -139,47 +150,52 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimingExpression getTolerance() {
 		TimingExpression tolerance = basicGetTolerance();
-		return tolerance != null && tolerance.eIsProxy() ? (TimingExpression)eResolveProxy((InternalEObject)tolerance) : tolerance;
+		return tolerance != null && tolerance.eIsProxy() ? (TimingExpression) eResolveProxy((InternalEObject) tolerance) : tolerance;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	public TimingExpression basicGetTolerance() {
 		TimingExpression adlBehavior = null;
 		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
-			
+
 			while (it.hasNext()) {
 				Element element = it.next();
-				adlBehavior = (TimingExpression )UMLUtil.getStereotypeApplication(element, TimingExpression.class);
-				if (adlBehavior != null)
+				adlBehavior = UMLUtil.getStereotypeApplication(element, TimingExpression.class);
+				if (adlBehavior != null) {
 					return adlBehavior;
+				}
 			}
 		}
-		
+
 		return adlBehavior;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE:
-				getScope().clear();
-				return;
+		case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE:
+			getScope().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
-} //OutputSynchronizationConstraintImpl
+} // OutputSynchronizationConstraintImpl

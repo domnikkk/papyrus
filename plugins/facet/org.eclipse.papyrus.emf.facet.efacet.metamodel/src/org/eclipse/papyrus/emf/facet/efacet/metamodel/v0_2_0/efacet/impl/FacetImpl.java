@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  *  Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
  *  Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning
@@ -44,12 +44,12 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl#getDocumentation <em>Documentation</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl#getExtendedMetaclass <em>Extended Metaclass</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl#getFacetElements <em>Facet Elements</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl#getFacetOperations <em>Facet Operations</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl#getConformanceTypedElement <em>Conformance Typed Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl#getExtendedFacets <em>Extended Facets</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl#getDocumentation <em>Documentation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl#getExtendedMetaclass <em>Extended Metaclass</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl#getFacetElements <em>Facet Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl#getFacetOperations <em>Facet Operations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl#getConformanceTypedElement <em>Conformance Typed Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl#getExtendedFacets <em>Extended Facets</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,6 +60,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -70,6 +71,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -80,6 +82,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getExtendedMetaclass() <em>Extended Metaclass</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getExtendedMetaclass()
 	 * @generated
 	 * @ordered
@@ -90,6 +93,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getFacetElements() <em>Facet Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFacetElements()
 	 * @generated
 	 * @ordered
@@ -100,6 +104,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getFacetOperations() <em>Facet Operations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFacetOperations()
 	 * @generated
 	 * @ordered
@@ -110,6 +115,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getConformanceTypedElement() <em>Conformance Typed Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getConformanceTypedElement()
 	 * @generated
 	 * @ordered
@@ -120,6 +126,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getExtendedFacets() <em>Extended Facets</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getExtendedFacets()
 	 * @generated
 	 * @ordered
@@ -129,6 +136,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FacetImpl() {
@@ -138,6 +146,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,6 +157,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDocumentation() {
@@ -157,18 +167,21 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDocumentation(String newDocumentation) {
 		String oldDocumentation = documentation;
 		documentation = newDocumentation;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EFacetPackage.FACET__DOCUMENTATION, oldDocumentation, documentation));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	public FacetSet basicGetFacetSet() {
@@ -182,6 +195,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	public void setFacetSet(final FacetSet newFacetSet) {
@@ -191,15 +205,17 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getExtendedMetaclass() {
 		if (extendedMetaclass != null && extendedMetaclass.eIsProxy()) {
-			InternalEObject oldExtendedMetaclass = (InternalEObject)extendedMetaclass;
-			extendedMetaclass = (EClass)eResolveProxy(oldExtendedMetaclass);
+			InternalEObject oldExtendedMetaclass = (InternalEObject) extendedMetaclass;
+			extendedMetaclass = (EClass) eResolveProxy(oldExtendedMetaclass);
 			if (extendedMetaclass != oldExtendedMetaclass) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EFacetPackage.FACET__EXTENDED_METACLASS, oldExtendedMetaclass, extendedMetaclass));
+				}
 			}
 		}
 		return extendedMetaclass;
@@ -208,12 +224,13 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	public EClass basicGetExtendedMetaclass() {
 		if (this.extendedMetaclass != null && this.extendedMetaclass.eIsProxy()) {
-			InternalEObject oldExtendedMetaclass = (InternalEObject)this.extendedMetaclass;
-			this.extendedMetaclass = (EClass)eResolveProxy(oldExtendedMetaclass);
+			InternalEObject oldExtendedMetaclass = (InternalEObject) this.extendedMetaclass;
+			this.extendedMetaclass = (EClass) eResolveProxy(oldExtendedMetaclass);
 			if (this.extendedMetaclass != oldExtendedMetaclass) {
 				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EFacetPackage.FACET__EXTENDED_METACLASS, oldExtendedMetaclass, this.extendedMetaclass));
@@ -226,18 +243,21 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setExtendedMetaclass(EClass newExtendedMetaclass) {
 		EClass oldExtendedMetaclass = extendedMetaclass;
 		extendedMetaclass = newExtendedMetaclass;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EFacetPackage.FACET__EXTENDED_METACLASS, oldExtendedMetaclass, extendedMetaclass));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<EStructuralFeature> getFacetElements() {
@@ -250,6 +270,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<FacetOperation> getFacetOperations() {
@@ -262,15 +283,17 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ETypedElement getConformanceTypedElement() {
 		if (conformanceTypedElement != null && conformanceTypedElement.eIsProxy()) {
-			InternalEObject oldConformanceTypedElement = (InternalEObject)conformanceTypedElement;
-			conformanceTypedElement = (ETypedElement)eResolveProxy(oldConformanceTypedElement);
+			InternalEObject oldConformanceTypedElement = (InternalEObject) conformanceTypedElement;
+			conformanceTypedElement = (ETypedElement) eResolveProxy(oldConformanceTypedElement);
 			if (conformanceTypedElement != oldConformanceTypedElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EFacetPackage.FACET__CONFORMANCE_TYPED_ELEMENT, oldConformanceTypedElement, conformanceTypedElement));
+				}
 			}
 		}
 		return conformanceTypedElement;
@@ -279,6 +302,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ETypedElement basicGetConformanceTypedElement() {
@@ -288,18 +312,21 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setConformanceTypedElement(ETypedElement newConformanceTypedElement) {
 		ETypedElement oldConformanceTypedElement = conformanceTypedElement;
 		conformanceTypedElement = newConformanceTypedElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EFacetPackage.FACET__CONFORMANCE_TYPED_ELEMENT, oldConformanceTypedElement, conformanceTypedElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<Facet> getExtendedFacets() {
@@ -312,15 +339,16 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EFacetPackage.FACET__FACET_ELEMENTS:
-				return ((InternalEList<?>)getFacetElements()).basicRemove(otherEnd, msgs);
-			case EFacetPackage.FACET__FACET_OPERATIONS:
-				return ((InternalEList<?>)getFacetOperations()).basicRemove(otherEnd, msgs);
+		case EFacetPackage.FACET__FACET_ELEMENTS:
+			return ((InternalEList<?>) getFacetElements()).basicRemove(otherEnd, msgs);
+		case EFacetPackage.FACET__FACET_OPERATIONS:
+			return ((InternalEList<?>) getFacetOperations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -328,25 +356,30 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EFacetPackage.FACET__DOCUMENTATION:
-				return getDocumentation();
-			case EFacetPackage.FACET__EXTENDED_METACLASS:
-				if (resolve) return getExtendedMetaclass();
-				return basicGetExtendedMetaclass();
-			case EFacetPackage.FACET__FACET_ELEMENTS:
-				return getFacetElements();
-			case EFacetPackage.FACET__FACET_OPERATIONS:
-				return getFacetOperations();
-			case EFacetPackage.FACET__CONFORMANCE_TYPED_ELEMENT:
-				if (resolve) return getConformanceTypedElement();
-				return basicGetConformanceTypedElement();
-			case EFacetPackage.FACET__EXTENDED_FACETS:
-				return getExtendedFacets();
+		case EFacetPackage.FACET__DOCUMENTATION:
+			return getDocumentation();
+		case EFacetPackage.FACET__EXTENDED_METACLASS:
+			if (resolve) {
+				return getExtendedMetaclass();
+			}
+			return basicGetExtendedMetaclass();
+		case EFacetPackage.FACET__FACET_ELEMENTS:
+			return getFacetElements();
+		case EFacetPackage.FACET__FACET_OPERATIONS:
+			return getFacetOperations();
+		case EFacetPackage.FACET__CONFORMANCE_TYPED_ELEMENT:
+			if (resolve) {
+				return getConformanceTypedElement();
+			}
+			return basicGetConformanceTypedElement();
+		case EFacetPackage.FACET__EXTENDED_FACETS:
+			return getExtendedFacets();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -354,33 +387,34 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EFacetPackage.FACET__DOCUMENTATION:
-				setDocumentation((String)newValue);
-				return;
-			case EFacetPackage.FACET__EXTENDED_METACLASS:
-				setExtendedMetaclass((EClass)newValue);
-				return;
-			case EFacetPackage.FACET__FACET_ELEMENTS:
-				getFacetElements().clear();
-				getFacetElements().addAll((Collection<? extends EStructuralFeature>)newValue);
-				return;
-			case EFacetPackage.FACET__FACET_OPERATIONS:
-				getFacetOperations().clear();
-				getFacetOperations().addAll((Collection<? extends FacetOperation>)newValue);
-				return;
-			case EFacetPackage.FACET__CONFORMANCE_TYPED_ELEMENT:
-				setConformanceTypedElement((ETypedElement)newValue);
-				return;
-			case EFacetPackage.FACET__EXTENDED_FACETS:
-				getExtendedFacets().clear();
-				getExtendedFacets().addAll((Collection<? extends Facet>)newValue);
-				return;
+		case EFacetPackage.FACET__DOCUMENTATION:
+			setDocumentation((String) newValue);
+			return;
+		case EFacetPackage.FACET__EXTENDED_METACLASS:
+			setExtendedMetaclass((EClass) newValue);
+			return;
+		case EFacetPackage.FACET__FACET_ELEMENTS:
+			getFacetElements().clear();
+			getFacetElements().addAll((Collection<? extends EStructuralFeature>) newValue);
+			return;
+		case EFacetPackage.FACET__FACET_OPERATIONS:
+			getFacetOperations().clear();
+			getFacetOperations().addAll((Collection<? extends FacetOperation>) newValue);
+			return;
+		case EFacetPackage.FACET__CONFORMANCE_TYPED_ELEMENT:
+			setConformanceTypedElement((ETypedElement) newValue);
+			return;
+		case EFacetPackage.FACET__EXTENDED_FACETS:
+			getExtendedFacets().clear();
+			getExtendedFacets().addAll((Collection<? extends Facet>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -388,29 +422,30 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EFacetPackage.FACET__DOCUMENTATION:
-				setDocumentation(DOCUMENTATION_EDEFAULT);
-				return;
-			case EFacetPackage.FACET__EXTENDED_METACLASS:
-				setExtendedMetaclass((EClass)null);
-				return;
-			case EFacetPackage.FACET__FACET_ELEMENTS:
-				getFacetElements().clear();
-				return;
-			case EFacetPackage.FACET__FACET_OPERATIONS:
-				getFacetOperations().clear();
-				return;
-			case EFacetPackage.FACET__CONFORMANCE_TYPED_ELEMENT:
-				setConformanceTypedElement((ETypedElement)null);
-				return;
-			case EFacetPackage.FACET__EXTENDED_FACETS:
-				getExtendedFacets().clear();
-				return;
+		case EFacetPackage.FACET__DOCUMENTATION:
+			setDocumentation(DOCUMENTATION_EDEFAULT);
+			return;
+		case EFacetPackage.FACET__EXTENDED_METACLASS:
+			setExtendedMetaclass((EClass) null);
+			return;
+		case EFacetPackage.FACET__FACET_ELEMENTS:
+			getFacetElements().clear();
+			return;
+		case EFacetPackage.FACET__FACET_OPERATIONS:
+			getFacetOperations().clear();
+			return;
+		case EFacetPackage.FACET__CONFORMANCE_TYPED_ELEMENT:
+			setConformanceTypedElement((ETypedElement) null);
+			return;
+		case EFacetPackage.FACET__EXTENDED_FACETS:
+			getExtendedFacets().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -418,23 +453,24 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EFacetPackage.FACET__DOCUMENTATION:
-				return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
-			case EFacetPackage.FACET__EXTENDED_METACLASS:
-				return extendedMetaclass != null;
-			case EFacetPackage.FACET__FACET_ELEMENTS:
-				return facetElements != null && !facetElements.isEmpty();
-			case EFacetPackage.FACET__FACET_OPERATIONS:
-				return facetOperations != null && !facetOperations.isEmpty();
-			case EFacetPackage.FACET__CONFORMANCE_TYPED_ELEMENT:
-				return conformanceTypedElement != null;
-			case EFacetPackage.FACET__EXTENDED_FACETS:
-				return extendedFacets != null && !extendedFacets.isEmpty();
+		case EFacetPackage.FACET__DOCUMENTATION:
+			return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
+		case EFacetPackage.FACET__EXTENDED_METACLASS:
+			return extendedMetaclass != null;
+		case EFacetPackage.FACET__FACET_ELEMENTS:
+			return facetElements != null && !facetElements.isEmpty();
+		case EFacetPackage.FACET__FACET_OPERATIONS:
+			return facetOperations != null && !facetOperations.isEmpty();
+		case EFacetPackage.FACET__CONFORMANCE_TYPED_ELEMENT:
+			return conformanceTypedElement != null;
+		case EFacetPackage.FACET__EXTENDED_FACETS:
+			return extendedFacets != null && !extendedFacets.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -442,14 +478,17 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == DocumentedElement.class) {
 			switch (derivedFeatureID) {
-				case EFacetPackage.FACET__DOCUMENTATION: return EFacetPackage.DOCUMENTED_ELEMENT__DOCUMENTATION;
-				default: return -1;
+			case EFacetPackage.FACET__DOCUMENTATION:
+				return EFacetPackage.DOCUMENTED_ELEMENT__DOCUMENTATION;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -458,14 +497,17 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == DocumentedElement.class) {
 			switch (baseFeatureID) {
-				case EFacetPackage.DOCUMENTED_ELEMENT__DOCUMENTATION: return EFacetPackage.FACET__DOCUMENTATION;
-				default: return -1;
+			case EFacetPackage.DOCUMENTED_ELEMENT__DOCUMENTATION:
+				return EFacetPackage.FACET__DOCUMENTATION;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -474,11 +516,14 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (documentation: "); //$NON-NLS-1$
@@ -487,4 +532,4 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 		return result.toString();
 	}
 
-} //FacetImpl
+} // FacetImpl

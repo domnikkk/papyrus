@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.StorageResource;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.StorageResourceImpl#getElementSize <em>Element Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.StorageResourceImpl#getElementSize <em>Element Size</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +37,7 @@ public class StorageResourceImpl extends ResourceImpl implements StorageResource
 	 * The default value of the '{@link #getElementSize() <em>Element Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementSize()
 	 * @generated
 	 * @ordered
@@ -47,6 +48,7 @@ public class StorageResourceImpl extends ResourceImpl implements StorageResource
 	 * The cached value of the '{@link #getElementSize() <em>Element Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementSize()
 	 * @generated
 	 * @ordered
@@ -56,6 +58,7 @@ public class StorageResourceImpl extends ResourceImpl implements StorageResource
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected StorageResourceImpl() {
@@ -65,6 +68,7 @@ public class StorageResourceImpl extends ResourceImpl implements StorageResource
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,8 +79,10 @@ public class StorageResourceImpl extends ResourceImpl implements StorageResource
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getElementSize() {
 		return elementSize;
 	}
@@ -84,25 +90,29 @@ public class StorageResourceImpl extends ResourceImpl implements StorageResource
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setElementSize(String newElementSize) {
 		String oldElementSize = elementSize;
 		elementSize = newElementSize;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.STORAGE_RESOURCE__ELEMENT_SIZE, oldElementSize, elementSize));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GRMPackage.STORAGE_RESOURCE__ELEMENT_SIZE:
-				return getElementSize();
+		case GRMPackage.STORAGE_RESOURCE__ELEMENT_SIZE:
+			return getElementSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,14 +120,15 @@ public class StorageResourceImpl extends ResourceImpl implements StorageResource
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GRMPackage.STORAGE_RESOURCE__ELEMENT_SIZE:
-				setElementSize((String)newValue);
-				return;
+		case GRMPackage.STORAGE_RESOURCE__ELEMENT_SIZE:
+			setElementSize((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -125,14 +136,15 @@ public class StorageResourceImpl extends ResourceImpl implements StorageResource
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GRMPackage.STORAGE_RESOURCE__ELEMENT_SIZE:
-				setElementSize(ELEMENT_SIZE_EDEFAULT);
-				return;
+		case GRMPackage.STORAGE_RESOURCE__ELEMENT_SIZE:
+			setElementSize(ELEMENT_SIZE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,13 +152,14 @@ public class StorageResourceImpl extends ResourceImpl implements StorageResource
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GRMPackage.STORAGE_RESOURCE__ELEMENT_SIZE:
-				return ELEMENT_SIZE_EDEFAULT == null ? elementSize != null : !ELEMENT_SIZE_EDEFAULT.equals(elementSize);
+		case GRMPackage.STORAGE_RESOURCE__ELEMENT_SIZE:
+			return ELEMENT_SIZE_EDEFAULT == null ? elementSize != null : !ELEMENT_SIZE_EDEFAULT.equals(elementSize);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,11 +167,14 @@ public class StorageResourceImpl extends ResourceImpl implements StorageResource
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (elementSize: ");
@@ -167,4 +183,4 @@ public class StorageResourceImpl extends ResourceImpl implements StorageResource
 		return result.toString();
 	}
 
-} //StorageResourceImpl
+} // StorageResourceImpl

@@ -23,7 +23,7 @@ import org.eclipse.papyrus.domaincontextcodegen.MetaClassType;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.MetaClassTypeImpl#getMetaClass <em>Meta Class</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class MetaClassTypeImpl extends ElementTypeImpl implements MetaClassType {
@@ -32,7 +32,7 @@ public class MetaClassTypeImpl extends ElementTypeImpl implements MetaClassType 
 	 * The cached value of the '{@link #getMetaClass() <em>Meta Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMetaClass()
 	 * @generated
 	 * @ordered
@@ -42,7 +42,7 @@ public class MetaClassTypeImpl extends ElementTypeImpl implements MetaClassType 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MetaClassTypeImpl() {
@@ -52,7 +52,7 @@ public class MetaClassTypeImpl extends ElementTypeImpl implements MetaClassType 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -63,16 +63,17 @@ public class MetaClassTypeImpl extends ElementTypeImpl implements MetaClassType 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getMetaClass() {
-		if(metaClass != null && metaClass.eIsProxy()) {
-			InternalEObject oldMetaClass = (InternalEObject)metaClass;
-			metaClass = (EClass)eResolveProxy(oldMetaClass);
-			if(metaClass != oldMetaClass) {
-				if(eNotificationRequired())
+		if (metaClass != null && metaClass.eIsProxy()) {
+			InternalEObject oldMetaClass = (InternalEObject) metaClass;
+			metaClass = (EClass) eResolveProxy(oldMetaClass);
+			if (metaClass != oldMetaClass) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomaincontextcodegenPackage.META_CLASS_TYPE__META_CLASS, oldMetaClass, metaClass));
+				}
 			}
 		}
 		return metaClass;
@@ -81,7 +82,7 @@ public class MetaClassTypeImpl extends ElementTypeImpl implements MetaClassType 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass basicGetMetaClass() {
@@ -91,28 +92,30 @@ public class MetaClassTypeImpl extends ElementTypeImpl implements MetaClassType 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMetaClass(EClass newMetaClass) {
 		EClass oldMetaClass = metaClass;
 		metaClass = newMetaClass;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.META_CLASS_TYPE__META_CLASS, oldMetaClass, metaClass));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.META_CLASS_TYPE__META_CLASS:
-			if(resolve)
+			if (resolve) {
 				return getMetaClass();
+			}
 			return basicGetMetaClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -121,14 +124,14 @@ public class MetaClassTypeImpl extends ElementTypeImpl implements MetaClassType 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.META_CLASS_TYPE__META_CLASS:
-			setMetaClass((EClass)newValue);
+			setMetaClass((EClass) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -137,14 +140,14 @@ public class MetaClassTypeImpl extends ElementTypeImpl implements MetaClassType 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.META_CLASS_TYPE__META_CLASS:
-			setMetaClass((EClass)null);
+			setMetaClass((EClass) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -153,16 +156,16 @@ public class MetaClassTypeImpl extends ElementTypeImpl implements MetaClassType 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.META_CLASS_TYPE__META_CLASS:
 			return metaClass != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //MetaClassTypeImpl
+} // MetaClassTypeImpl

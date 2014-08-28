@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ import org.eclipse.uml2.uml.UMLFactory;
 
 /**
  * use to construct the instance specification link between two instance
- * 
+ *
  */
 public class CInstanceSpecificationLinkCreateCommand extends InstanceSpecificationLinkCreateCommand {
 
@@ -50,48 +50,48 @@ public class CInstanceSpecificationLinkCreateCommand extends InstanceSpecificati
 
 	@Override
 	public boolean canExecute() {
-		if(source != null && target == null) {
-			//test if is an instanceSpecification
-			if(source instanceof InstanceSpecification) {
-				InstanceSpecification instance = (InstanceSpecification)source;
-				//Is it associated to a classifier?
-				if(instance.getClassifiers().size() > 0) {
+		if (source != null && target == null) {
+			// test if is an instanceSpecification
+			if (source instanceof InstanceSpecification) {
+				InstanceSpecification instance = (InstanceSpecification) source;
+				// Is it associated to a classifier?
+				if (instance.getClassifiers().size() > 0) {
 					HashSet<Association> assoSource = new HashSet<Association>();
 					Iterator<Classifier> iterator = instance.getClassifiers().iterator();
-					while(iterator.hasNext()) {
-						Classifier classifier = (Classifier)iterator.next();
+					while (iterator.hasNext()) {
+						Classifier classifier = iterator.next();
 						assoSource.addAll(classifier.getAssociations());
 					}
-					//how many association it linked?
-					if(assoSource.size() > 0) {
+					// how many association it linked?
+					if (assoSource.size() > 0) {
 						return true;
 					}
 				}
 			}
 			return false;
 		}
-		//source and target != null 
-		//look for if it exist at least a common association between classifiers referenced between these instances
-		if(source != null && target != null) {
-			if(!(source instanceof InstanceSpecification)) {
+		// source and target != null
+		// look for if it exist at least a common association between classifiers referenced between these instances
+		if (source != null && target != null) {
+			if (!(source instanceof InstanceSpecification)) {
 				return false;
 			}
-			if(!(target instanceof InstanceSpecification)) {
+			if (!(target instanceof InstanceSpecification)) {
 				return false;
 			}
-			if(((InstanceSpecification)source).getClassifiers().size() == 0 || ((InstanceSpecification)target).getClassifiers().size() == 0) {
+			if (((InstanceSpecification) source).getClassifiers().size() == 0 || ((InstanceSpecification) target).getClassifiers().size() == 0) {
 				return false;
 			}
 			HashSet<Association> assoSource = new HashSet<Association>();
-			Iterator<Classifier> iterator = ((InstanceSpecification)source).getClassifiers().iterator();
-			while(iterator.hasNext()) {
-				Classifier classifier = (Classifier)iterator.next();
+			Iterator<Classifier> iterator = ((InstanceSpecification) source).getClassifiers().iterator();
+			while (iterator.hasNext()) {
+				Classifier classifier = iterator.next();
 				assoSource.addAll(classifier.getAssociations());
 			}
 			HashSet<Association> assoTarget = new HashSet<Association>();
-			iterator = ((InstanceSpecification)target).getClassifiers().iterator();
-			while(iterator.hasNext()) {
-				Classifier classifier = (Classifier)iterator.next();
+			iterator = ((InstanceSpecification) target).getClassifiers().iterator();
+			while (iterator.hasNext()) {
+				Classifier classifier = iterator.next();
 				assoTarget.addAll(classifier.getAssociations());
 			}
 			assoSource.retainAll(assoTarget);
@@ -106,37 +106,37 @@ public class CInstanceSpecificationLinkCreateCommand extends InstanceSpecificati
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		AssociationSelectionDialog associationSelectionDialog;
 		Association selectedAssociation = null;
-		if(((InstanceSpecification)source).getClassifiers().size() > 0 && ((InstanceSpecification)target).getClassifiers().size() > 0) {
-			//look for the good association
+		if (((InstanceSpecification) source).getClassifiers().size() > 0 && ((InstanceSpecification) target).getClassifiers().size() > 0) {
+			// look for the good association
 			associationSelectionDialog = new AssociationSelectionDialog(new Shell(), SWT.NATIVE, commonAssociations);
 			associationSelectionDialog.open();
 			selectedAssociation = associationSelectionDialog.getSelectedAssociation();
-			//creation of the instance specification link
+			// creation of the instance specification link
 			// with a name a container, and set the source and target
 			InstanceSpecification instanceSpecification = org.eclipse.uml2.uml.UMLFactory.eINSTANCE.createInstanceSpecification();
 			getContainer().getPackagedElements().add(instanceSpecification);
 			instanceSpecification.setName(NamedElementHelper.EINSTANCE.getNewUMLElementName(instanceSpecification.getOwner(), instanceSpecification.eClass()));
 			instanceSpecification.getClassifiers().add(selectedAssociation);
-			InstanceSpecificationLinkHelper.addEnd(instanceSpecification, ((InstanceSpecification)source));
-			InstanceSpecificationLinkHelper.addEnd(instanceSpecification, ((InstanceSpecification)target));
-			//Creation of slots into the good instance by taking in account the  association
+			InstanceSpecificationLinkHelper.addEnd(instanceSpecification, ((InstanceSpecification) source));
+			InstanceSpecificationLinkHelper.addEnd(instanceSpecification, ((InstanceSpecification) target));
+			// Creation of slots into the good instance by taking in account the association
 			Iterator<Property> proIterator = selectedAssociation.getMemberEnds().iterator();
-			while(proIterator.hasNext()) {
-				Property property = (Property)proIterator.next();
+			while (proIterator.hasNext()) {
+				Property property = proIterator.next();
 				Slot slot = UMLFactory.eINSTANCE.createSlot();
 				slot.setDefiningFeature(property);
-				if(((InstanceSpecification)source).getClassifiers().contains(property.getOwner())) {
-					((InstanceSpecification)source).getSlots().add(slot);
-					associateValue(((InstanceSpecification)target), slot, property.getType());
-				} else if(((InstanceSpecification)target).getClassifiers().contains(property.getOwner())) {
-					((InstanceSpecification)target).getSlots().add(slot);
-					associateValue(((InstanceSpecification)source), slot, property.getType());
+				if (((InstanceSpecification) source).getClassifiers().contains(property.getOwner())) {
+					((InstanceSpecification) source).getSlots().add(slot);
+					associateValue(((InstanceSpecification) target), slot, property.getType());
+				} else if (((InstanceSpecification) target).getClassifiers().contains(property.getOwner())) {
+					((InstanceSpecification) target).getSlots().add(slot);
+					associateValue(((InstanceSpecification) source), slot, property.getType());
 				} else {
 					instanceSpecification.getSlots().add(slot);
-					if(((InstanceSpecification)source).getClassifiers().contains(property.getType())) {
-						associateValue(((InstanceSpecification)source), slot, property.getType());
+					if (((InstanceSpecification) source).getClassifiers().contains(property.getType())) {
+						associateValue(((InstanceSpecification) source), slot, property.getType());
 					} else {
-						associateValue(((InstanceSpecification)target), slot, property.getType());
+						associateValue(((InstanceSpecification) target), slot, property.getType());
 					}
 				}
 			}
@@ -147,13 +147,13 @@ public class CInstanceSpecificationLinkCreateCommand extends InstanceSpecificati
 
 	/**
 	 * create an instanceValue for the slot (owner) with the reference to InstanceSpecification and the good type
-	 * 
+	 *
 	 * @param instanceSpecification
-	 *        that is referenced by the instanceValue
+	 *            that is referenced by the instanceValue
 	 * @param owner
-	 *        of the instance value
+	 *            of the instance value
 	 * @param type
-	 *        of the instanceValue
+	 *            of the instanceValue
 	 * @return a instanceValue
 	 */
 	protected InstanceValue associateValue(InstanceSpecification instanceSpecification, Slot owner, Type type) {

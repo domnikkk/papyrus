@@ -19,6 +19,7 @@ import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Quant
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class AttributequantificationconstraintFactoryImpl extends EFactoryImpl implements AttributequantificationconstraintFactory {
@@ -26,16 +27,16 @@ public class AttributequantificationconstraintFactoryImpl extends EFactoryImpl i
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static AttributequantificationconstraintFactory init() {
 		try {
-			AttributequantificationconstraintFactory theAttributequantificationconstraintFactory = (AttributequantificationconstraintFactory)EPackage.Registry.INSTANCE.getEFactory(AttributequantificationconstraintPackage.eNS_URI);
+			AttributequantificationconstraintFactory theAttributequantificationconstraintFactory = (AttributequantificationconstraintFactory) EPackage.Registry.INSTANCE.getEFactory(AttributequantificationconstraintPackage.eNS_URI);
 			if (theAttributequantificationconstraintFactory != null) {
 				return theAttributequantificationconstraintFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new AttributequantificationconstraintFactoryImpl();
@@ -45,6 +46,7 @@ public class AttributequantificationconstraintFactoryImpl extends EFactoryImpl i
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public AttributequantificationconstraintFactoryImpl() {
@@ -54,26 +56,34 @@ public class AttributequantificationconstraintFactoryImpl extends EFactoryImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT: return createAttributeQuantificationconstraint();
-			case AttributequantificationconstraintPackage.QUANTIFICATION: return createQuantification();
-			case AttributequantificationconstraintPackage.BEHAVIOR_ATTRIBUTE_BINDING: return createBehaviorAttributeBinding();
-			case AttributequantificationconstraintPackage.LOGICAL_EVENT: return createLogicalEvent();
-			case AttributequantificationconstraintPackage.ATTRIBUTE: return createAttribute();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT:
+			return createAttributeQuantificationconstraint();
+		case AttributequantificationconstraintPackage.QUANTIFICATION:
+			return createQuantification();
+		case AttributequantificationconstraintPackage.BEHAVIOR_ATTRIBUTE_BINDING:
+			return createBehaviorAttributeBinding();
+		case AttributequantificationconstraintPackage.LOGICAL_EVENT:
+			return createLogicalEvent();
+		case AttributequantificationconstraintPackage.ATTRIBUTE:
+			return createAttribute();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public AttributeQuantificationconstraint createAttributeQuantificationconstraint() {
 		AttributeQuantificationconstraintImpl attributeQuantificationconstraint = new AttributeQuantificationconstraintImpl();
 		return attributeQuantificationconstraint;
@@ -82,8 +92,10 @@ public class AttributequantificationconstraintFactoryImpl extends EFactoryImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Quantification createQuantification() {
 		QuantificationImpl quantification = new QuantificationImpl();
 		return quantification;
@@ -92,8 +104,10 @@ public class AttributequantificationconstraintFactoryImpl extends EFactoryImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public BehaviorAttributeBinding createBehaviorAttributeBinding() {
 		BehaviorAttributeBindingImpl behaviorAttributeBinding = new BehaviorAttributeBindingImpl();
 		return behaviorAttributeBinding;
@@ -102,8 +116,10 @@ public class AttributequantificationconstraintFactoryImpl extends EFactoryImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public LogicalEvent createLogicalEvent() {
 		LogicalEventImpl logicalEvent = new LogicalEventImpl();
 		return logicalEvent;
@@ -112,8 +128,10 @@ public class AttributequantificationconstraintFactoryImpl extends EFactoryImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Attribute createAttribute() {
 		AttributeImpl attribute = new AttributeImpl();
 		return attribute;
@@ -122,15 +140,18 @@ public class AttributequantificationconstraintFactoryImpl extends EFactoryImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public AttributequantificationconstraintPackage getAttributequantificationconstraintPackage() {
-		return (AttributequantificationconstraintPackage)getEPackage();
+		return (AttributequantificationconstraintPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -139,4 +160,4 @@ public class AttributequantificationconstraintFactoryImpl extends EFactoryImpl i
 		return AttributequantificationconstraintPackage.eINSTANCE;
 	}
 
-} //AttributequantificationconstraintFactoryImpl
+} // AttributequantificationconstraintFactoryImpl

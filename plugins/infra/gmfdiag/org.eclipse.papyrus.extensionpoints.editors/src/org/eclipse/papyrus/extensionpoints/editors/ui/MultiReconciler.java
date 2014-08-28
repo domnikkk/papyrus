@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,19 +35,19 @@ public class MultiReconciler extends AbstractReconciler {
 	/**
 	 * Creates a new reconciler that uses several reconciling strategies to reconcile its document
 	 * independent of the type of the document's contents.
-	 * 
+	 *
 	 * @param strategies
-	 *        the reconciling strategies to be used
+	 *            the reconciling strategies to be used
 	 * @param isIncremental
-	 *        the indication whether strategy is incremental or not
+	 *            the indication whether strategy is incremental or not
 	 */
 	// @unused
 	public MultiReconciler(List<IReconcilingStrategy> strategies, boolean isIncremental) {
 		Assert.isNotNull(strategies);
 		fStrategies = strategies;
-		for(IReconcilingStrategy strategy : fStrategies) {
-			if(strategy instanceof IReconcilingStrategyExtension) {
-				IReconcilingStrategyExtension extension = (IReconcilingStrategyExtension)strategy;
+		for (IReconcilingStrategy strategy : fStrategies) {
+			if (strategy instanceof IReconcilingStrategyExtension) {
+				IReconcilingStrategyExtension extension = (IReconcilingStrategyExtension) strategy;
 				extension.setProgressMonitor(getProgressMonitor());
 			}
 		}
@@ -69,12 +69,12 @@ public class MultiReconciler extends AbstractReconciler {
 	@Override
 	protected void process(DirtyRegion dirtyRegion) {
 
-		for(IReconcilingStrategy strategy : fStrategies) {
-			if(dirtyRegion != null) {
+		for (IReconcilingStrategy strategy : fStrategies) {
+			if (dirtyRegion != null) {
 				strategy.reconcile(dirtyRegion, dirtyRegion);
 			} else {
 				IDocument document = getDocument();
-				if(document != null) {
+				if (document != null) {
 					strategy.reconcile(new Region(0, document.getLength()));
 				}
 			}
@@ -86,7 +86,7 @@ public class MultiReconciler extends AbstractReconciler {
 	 */
 	@Override
 	protected void reconcilerDocumentChanged(IDocument document) {
-		for(IReconcilingStrategy strategy : fStrategies) {
+		for (IReconcilingStrategy strategy : fStrategies) {
 			strategy.setDocument(document);
 		}
 	}
@@ -98,9 +98,9 @@ public class MultiReconciler extends AbstractReconciler {
 	public void setProgressMonitor(IProgressMonitor monitor) {
 		super.setProgressMonitor(monitor);
 
-		for(IReconcilingStrategy strategy : fStrategies) {
-			if(strategy instanceof IReconcilingStrategyExtension) {
-				IReconcilingStrategyExtension extension = (IReconcilingStrategyExtension)strategy;
+		for (IReconcilingStrategy strategy : fStrategies) {
+			if (strategy instanceof IReconcilingStrategyExtension) {
+				IReconcilingStrategyExtension extension = (IReconcilingStrategyExtension) strategy;
 				extension.setProgressMonitor(monitor);
 			}
 		}
@@ -113,9 +113,9 @@ public class MultiReconciler extends AbstractReconciler {
 	@Override
 	protected void initialProcess() {
 
-		for(IReconcilingStrategy strategy : fStrategies) {
-			if(strategy instanceof IReconcilingStrategyExtension) {
-				IReconcilingStrategyExtension extension = (IReconcilingStrategyExtension)strategy;
+		for (IReconcilingStrategy strategy : fStrategies) {
+			if (strategy instanceof IReconcilingStrategyExtension) {
+				IReconcilingStrategyExtension extension = (IReconcilingStrategyExtension) strategy;
 				extension.initialReconcile();
 			}
 		}

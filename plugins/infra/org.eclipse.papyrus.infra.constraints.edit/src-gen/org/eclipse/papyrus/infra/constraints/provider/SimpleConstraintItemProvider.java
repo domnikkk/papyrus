@@ -12,9 +12,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -23,7 +21,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.infra.constraints.ConstraintsFactory;
 import org.eclipse.papyrus.infra.constraints.ConstraintsPackage;
 import org.eclipse.papyrus.infra.constraints.SimpleConstraint;
@@ -32,11 +29,12 @@ import org.eclipse.papyrus.infra.constraints.SimpleConstraint;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.constraints.SimpleConstraint} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class SimpleConstraintItemProvider
-	extends ConstraintDescriptorItemProvider
-	implements
+		extends ConstraintDescriptorItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -46,6 +44,7 @@ public class SimpleConstraintItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SimpleConstraintItemProvider(AdapterFactory adapterFactory) {
@@ -56,6 +55,7 @@ public class SimpleConstraintItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,30 +72,31 @@ public class SimpleConstraintItemProvider
 	 * This adds a property descriptor for the Constraint Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addConstraintTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SimpleConstraint_constraintType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SimpleConstraint_constraintType_feature", "_UI_SimpleConstraint_type"),
-				 ConstraintsPackage.Literals.SIMPLE_CONSTRAINT__CONSTRAINT_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_SimpleConstraint_constraintType_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_SimpleConstraint_constraintType_feature", "_UI_SimpleConstraint_type"),
+						ConstraintsPackage.Literals.SIMPLE_CONSTRAINT__CONSTRAINT_TYPE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,6 +111,7 @@ public class SimpleConstraintItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,6 +126,7 @@ public class SimpleConstraintItemProvider
 	 * This returns SimpleConstraint.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,14 +138,15 @@ public class SimpleConstraintItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SimpleConstraint)object).getName();
+		String label = ((SimpleConstraint) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_SimpleConstraint_type") :
-			getString("_UI_SimpleConstraint_type") + " " + label;
+				getString("_UI_SimpleConstraint_type") :
+				getString("_UI_SimpleConstraint_type") + " " + label;
 	}
 
 	/**
@@ -150,6 +154,7 @@ public class SimpleConstraintItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,9 +162,9 @@ public class SimpleConstraintItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SimpleConstraint.class)) {
-			case ConstraintsPackage.SIMPLE_CONSTRAINT__PROPERTIES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ConstraintsPackage.SIMPLE_CONSTRAINT__PROPERTIES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -169,6 +174,7 @@ public class SimpleConstraintItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,14 +182,14 @@ public class SimpleConstraintItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ConstraintsPackage.Literals.SIMPLE_CONSTRAINT__PROPERTIES,
-				 ConstraintsFactory.eINSTANCE.createValueProperty()));
+						ConstraintsFactory.eINSTANCE.createValueProperty()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ConstraintsPackage.Literals.SIMPLE_CONSTRAINT__PROPERTIES,
-				 ConstraintsFactory.eINSTANCE.createReferenceProperty()));
+						ConstraintsFactory.eINSTANCE.createReferenceProperty()));
 	}
 
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionco
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.papyrus.infra.extendedtypes.IActionCreationElementValidator;
 import org.eclipse.papyrus.infra.extendedtypes.ICreationElementValidator;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfiguration;
 
 /**
  * {@link ICreationElementValidator} for {@link SetValuesActionConfiguration}
@@ -24,6 +25,7 @@ public class RuntimeValuesEditionActionCreationElementValidator implements IActi
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean canCreate(CreateElementRequest request) {
 		return true;
 	}
@@ -31,6 +33,7 @@ public class RuntimeValuesEditionActionCreationElementValidator implements IActi
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void init(RuntimeValuesEditionActionConfiguration configuration) {
 	}
 }

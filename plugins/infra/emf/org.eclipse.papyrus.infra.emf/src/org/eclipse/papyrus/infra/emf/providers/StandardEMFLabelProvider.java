@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *     Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Added support for enum literals
@@ -37,7 +37,7 @@ import org.eclipse.swt.graphics.Image;
  * The class can handle the following cases :
  * - An EObject (Which can be resolved with {@link EMFHelper#getEObject(Object)})
  * - A IStructuredSelection containing EObject(s)
- * 
+ *
  * @author Jerome Benois
  */
 public class StandardEMFLabelProvider extends AdapterFactoryLabelProvider implements IDetailLabelProvider {
@@ -144,7 +144,7 @@ public class StandardEMFLabelProvider extends AdapterFactoryLabelProvider implem
 
 	/**
 	 * Returns the item provider for the given object
-	 * 
+	 *
 	 * @param eObject
 	 *            the object to display
 	 * @return the item label provider for the given eobject
@@ -162,10 +162,10 @@ public class StandardEMFLabelProvider extends AdapterFactoryLabelProvider implem
 
 	/**
 	 * Gets the edit factory.
-	 * 
+	 *
 	 * @param eobject
 	 *            the eobject
-	 * 
+	 *
 	 * @return the edits the factory
 	 */
 	public static AdapterFactory getEditFactory(EObject eobject) {
@@ -175,10 +175,10 @@ public class StandardEMFLabelProvider extends AdapterFactoryLabelProvider implem
 
 	/**
 	 * Gets the factory from uri.
-	 * 
+	 *
 	 * @param uri
 	 *            the uri
-	 * 
+	 *
 	 * @return the factory
 	 */
 	public static AdapterFactory getFactory(String uri) {
@@ -213,7 +213,7 @@ public class StandardEMFLabelProvider extends AdapterFactoryLabelProvider implem
 	/**
 	 * Returns the qualified Class name of the given EObject, or an
 	 * empty String if the object is not an EObject
-	 * 
+	 *
 	 * @param object
 	 * @return The qualified name of this object's class, or an empty
 	 *         String if the object is not an EObject

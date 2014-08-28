@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * Content provider of ViewPrototypes
- * 
+ *
  * @author Laurent Wouters
  *
  */
@@ -60,18 +60,24 @@ public class ViewPrototypeContentProvider implements ITreeContentProvider {
 
 		@Override
 		public String getText(Object element) {
-			if (element instanceof Category)
+			if (element instanceof Category) {
 				return "Category " + ((Category) element).getName();
-			if (element instanceof ViewPrototype)
+			}
+			if (element instanceof ViewPrototype) {
 				return ((ViewPrototype) element).getLabel();
-			if (element instanceof PapyrusViewpoint)
+			}
+			if (element instanceof PapyrusViewpoint) {
 				return "Available in viewpoint: " + ((PapyrusViewpoint) element).getName();
-			if (element instanceof EPackage)
+			}
+			if (element instanceof EPackage) {
 				return "Required profile: " + ((EPackage) element).getNsURI();
-			if (element instanceof ModelRule)
+			}
+			if (element instanceof ModelRule) {
 				return getText((ModelRule) element);
-			if (element instanceof OwningRule)
+			}
+			if (element instanceof OwningRule) {
 				return getText((OwningRule) element);
+			}
 			return element.toString();
 		}
 
@@ -79,8 +85,9 @@ public class ViewPrototypeContentProvider implements ITreeContentProvider {
 			StringBuilder builder = new StringBuilder("Possible root: ");
 			boolean first = true;
 			for (EClass ste : rule.getStereotypes()) {
-				if (!first)
+				if (!first) {
 					builder.append(", ");
+				}
 				builder.append("<<");
 				builder.append(ste.getEPackage().getNsPrefix());
 				builder.append("::");
@@ -89,8 +96,9 @@ public class ViewPrototypeContentProvider implements ITreeContentProvider {
 				first = false;
 			}
 			if (rule.getElement() != null) {
-				if (!first)
+				if (!first) {
 					builder.append(" ");
+				}
 				builder.append(rule.getElement().getEPackage().getNsPrefix());
 				builder.append("::");
 				builder.append(rule.getElement().getName());
@@ -102,8 +110,9 @@ public class ViewPrototypeContentProvider implements ITreeContentProvider {
 			StringBuilder builder = new StringBuilder("Possible owner: ");
 			boolean first = true;
 			for (EClass ste : rule.getStereotypes()) {
-				if (!first)
+				if (!first) {
 					builder.append(", ");
+				}
 				builder.append("<<");
 				builder.append(ste.getEPackage().getNsPrefix());
 				builder.append("::");
@@ -112,8 +121,9 @@ public class ViewPrototypeContentProvider implements ITreeContentProvider {
 				first = false;
 			}
 			if (rule.getElement() != null) {
-				if (!first)
+				if (!first) {
 					builder.append(" ");
+				}
 				builder.append(rule.getElement().getEPackage().getNsPrefix());
 				builder.append("::");
 				builder.append(rule.getElement().getName());
@@ -123,18 +133,24 @@ public class ViewPrototypeContentProvider implements ITreeContentProvider {
 
 		@Override
 		public Image getImage(Object element) {
-			if (element instanceof Category)
+			if (element instanceof Category) {
 				return imageCategory;
-			if (element instanceof ViewPrototype)
+			}
+			if (element instanceof ViewPrototype) {
 				return ((ViewPrototype) element).getIcon();
-			if (element instanceof PapyrusViewpoint)
+			}
+			if (element instanceof PapyrusViewpoint) {
 				return imageViewpoint;
-			if (element instanceof EPackage)
+			}
+			if (element instanceof EPackage) {
 				return imageProfile;
-			if (element instanceof ModelRule)
+			}
+			if (element instanceof ModelRule) {
 				return imageModel;
-			if (element instanceof OwningRule)
+			}
+			if (element instanceof OwningRule) {
 				return imageOwner;
+			}
 			return null;
 		}
 	}
@@ -156,7 +172,7 @@ public class ViewPrototypeContentProvider implements ITreeContentProvider {
 
 	/**
 	 * Creates the provider
-	 * 
+	 *
 	 * @param views
 	 *            The views to provide
 	 */
@@ -176,7 +192,7 @@ public class ViewPrototypeContentProvider implements ITreeContentProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
 	 */
 	public void dispose() {
@@ -184,7 +200,7 @@ public class ViewPrototypeContentProvider implements ITreeContentProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 	 */
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
@@ -192,7 +208,7 @@ public class ViewPrototypeContentProvider implements ITreeContentProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getElements(java.lang.Object)
 	 */
 	public Object[] getElements(Object inputElement) {
@@ -201,8 +217,9 @@ public class ViewPrototypeContentProvider implements ITreeContentProvider {
 
 
 	private Object[] getChildren(ViewPrototype view) {
-		if (view.getConfiguration() == null)
+		if (view.getConfiguration() == null) {
 			return new String[0];
+		}
 		List<Object> data = new ArrayList<Object>();
 		data.add(view.getConfiguration().eContainer());
 		data.addAll(view.getConfiguration().getProfiles());
@@ -213,47 +230,54 @@ public class ViewPrototypeContentProvider implements ITreeContentProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getChildren(java.lang.Object)
 	 */
 	public Object[] getChildren(Object element) {
-		if (element == treeRoot)
+		if (element == treeRoot) {
 			return categories.toArray();
+		}
 		if (element instanceof Category) {
-			List<ViewPrototype> protos = new ArrayList<ViewPrototype>(views.get((Category) element));
+			List<ViewPrototype> protos = new ArrayList<ViewPrototype>(views.get(element));
 			Collections.sort(protos, new ViewPrototype.Comp());
 			return protos.toArray();
 		}
-		if (element instanceof ViewPrototype)
+		if (element instanceof ViewPrototype) {
 			return getChildren((ViewPrototype) element);
+		}
 		return new Object[0];
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getParent(java.lang.Object)
 	 */
 	public Object getParent(Object element) {
-		if (element == treeRoot)
+		if (element == treeRoot) {
 			return null;
-		if (element instanceof Category)
+		}
+		if (element instanceof Category) {
 			return treeRoot;
+		}
 		return null;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#hasChildren(java.lang.Object)
 	 */
 	public boolean hasChildren(Object element) {
-		if (element == treeRoot)
+		if (element == treeRoot) {
 			return true;
-		if (element instanceof Category)
+		}
+		if (element instanceof Category) {
 			return true;
-		if (element instanceof ViewPrototype)
+		}
+		if (element instanceof ViewPrototype) {
 			return true;
+		}
 		return false;
 	}
 }

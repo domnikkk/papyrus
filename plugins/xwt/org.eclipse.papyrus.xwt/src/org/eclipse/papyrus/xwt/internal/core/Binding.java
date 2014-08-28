@@ -28,7 +28,7 @@ import org.eclipse.swt.widgets.Widget;
 
 /**
  * Generic Binding definition
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class Binding extends DynamicBinding {
@@ -55,14 +55,14 @@ public class Binding extends DynamicBinding {
 	 * <p>
 	 * Default
 	 * </p>
-	 * 
+	 *
 	 */
 	private UpdateSourceTrigger updateSourceTrigger = UpdateSourceTrigger.Default;
 
 	private BindingExpressionPath pathSegments;
 
 	public BindingExpressionPath getPathPropertySegments() {
-		if(pathSegments == null) {
+		if (pathSegments == null) {
 			pathSegments = new BindingExpressionPath(getPath());
 		}
 		return pathSegments;
@@ -94,8 +94,8 @@ public class Binding extends DynamicBinding {
 
 	public void setSource(Object source) {
 		this.source = source;
-		if(this.source instanceof IObservable) {
-			this.observableSource = (IObservable)this.source;
+		if (this.source instanceof IObservable) {
+			this.observableSource = (IObservable) this.source;
 		}
 	}
 
@@ -112,45 +112,45 @@ public class Binding extends DynamicBinding {
 	}
 
 	protected Object getSourceObject() {
-		if(source != null) {
+		if (source != null) {
 			return source;
-		} else if(elementName != null) {
+		} else if (elementName != null) {
 			return XWT.findElementByName(getControl(), elementName);
 		}
 		return null;
 	}
 
 	protected boolean isSelfBinding(Object data) {
-		if(data != this) {
+		if (data != this) {
 			return false;
 		}
-		Binding binding = (Binding)data;
+		Binding binding = (Binding) data;
 		return BindingExpressionPath.isEmptyPath(binding.getPath());
 	}
 
 	public Object createBoundSource() {
 		Object control = getControl();
 		Object source = getSourceObject();
-		if(source == null) {
+		if (source == null) {
 			source = XWT.getDataContext(control, IDynamicBinding.class);
 			Object localDataContext = UserData.getLocalDataContext(control);
-			if(localDataContext == this) {
+			if (localDataContext == this) {
 				return source;
 			}
 		}
-		if(source instanceof IDynamicBinding) {
-			Object value = ((IDynamicBinding)source).createBoundSource();
-			if(value != null && path != null) {
+		if (source instanceof IDynamicBinding) {
+			Object value = ((IDynamicBinding) source).createBoundSource();
+			if (value != null && path != null) {
 				Widget widget = UserData.getWidget(value);
-				if(widget == null) {
+				if (widget == null) {
 					widget = UserData.getWidget(control);
 				}
 				return ScopeManager.observeValue(widget, value, getPathPropertySegments(), getUpdateSourceTrigger());
 			}
 		}
-		if(source != null && !BindingExpressionPath.isEmptyPath(path)) {
+		if (source != null && !BindingExpressionPath.isEmptyPath(path)) {
 			Widget widget = UserData.getWidget(source);
-			if(widget == null) {
+			if (widget == null) {
 				widget = UserData.getWidget(control);
 			}
 			return ScopeManager.observeValue(widget, source, getPathPropertySegments(), getUpdateSourceTrigger());
@@ -160,38 +160,38 @@ public class Binding extends DynamicBinding {
 
 	public boolean isSourceControl() {
 		Object source = getSourceObject();
-		if(source == null) {
+		if (source == null) {
 			Object dataContextHost = getDataContextHost();
-			if(dataContextHost != null) {
+			if (dataContextHost != null) {
 				source = UserData.getLocalDataContext(dataContextHost);
 			}
 		}
 
-		if(source instanceof IDynamicBinding) {
-			return ((IDynamicBinding)source).isSourceControl();
+		if (source instanceof IDynamicBinding) {
+			return ((IDynamicBinding) source).isSourceControl();
 		}
-		if(source instanceof IBinding) {
-			source = ((IBinding)source).getValue(null);
+		if (source instanceof IBinding) {
+			source = ((IBinding) source).getValue(null);
 		}
 
-		if(path == null) {
+		if (path == null) {
 			return false;
 		}
 
 		int index = BindingExpressionPath.lastIndexOf(path);
-		if(index == -1) {
+		if (index == -1) {
 			return (source instanceof Control || source instanceof Viewer);
 		}
 
-		if(source instanceof IDataProvider) {
+		if (source instanceof IDataProvider) {
 			return false;
 		}
 		String parentPath = path.substring(0, index);
 		IObservable observable = ScopeManager.observeValue(getControl(), source, parentPath, getUpdateSourceTrigger());
-		if(observable != null) {
-			IObservableValue observableValue = (IObservableValue)observable;
+		if (observable != null) {
+			IObservableValue observableValue = (IObservableValue) observable;
 			Object type = observableValue.getValueType();
-			if(type != null) {
+			if (type != null) {
 				return UserData.isUIElementType(type);
 			}
 		}
@@ -200,14 +200,14 @@ public class Binding extends DynamicBinding {
 
 	public Object getValue(Class<?> targetType) {
 		Object dataContext = getSourceObject();
-		if(dataContext == null) {
+		if (dataContext == null) {
 			Object dataContextHost = getDataContextHost();
-			if(dataContextHost != null) {
+			if (dataContextHost != null) {
 				dataContext = UserData.getLocalDataContext(dataContextHost);
-				if(dataContext instanceof IDynamicBinding) {
-					IDynamicBinding dynamicBinding = (IDynamicBinding)dataContext;
+				if (dataContext instanceof IDynamicBinding) {
+					IDynamicBinding dynamicBinding = (IDynamicBinding) dataContext;
 					Object boundSource = dynamicBinding.createBoundSource();
-					if(boundSource != null) {
+					if (boundSource != null) {
 						dataContext = boundSource;
 					}
 				}
@@ -215,14 +215,14 @@ public class Binding extends DynamicBinding {
 		}
 
 		// direct binding
-		if(dataContext instanceof IBinding) {
-			dataContext = ((IBinding)dataContext).getValue(null);
+		if (dataContext instanceof IBinding) {
+			dataContext = ((IBinding) dataContext).getValue(null);
 		}
 
 		IDataProvider dataProvider = getDataProvider(dataContext);
 
 		try {
-			if(isSourceControl()) {
+			if (isSourceControl()) {
 				ControlDataBinding controlDataBinding = new ControlDataBinding(dataContext, this, dataProvider);
 				return controlDataBinding.getValue(targetType);
 			}
@@ -231,10 +231,10 @@ public class Binding extends DynamicBinding {
 		}
 
 		DataBinding dataBinding = null;
-		if(dataProvider != null && (path != null || dataContext instanceof IObservable)) {
+		if (dataProvider != null && (path != null || dataContext instanceof IObservable)) {
 			dataBinding = new DataBinding(this, dataProvider);
 		}
-		if(dataBinding != null) {
+		if (dataBinding != null) {
 			return dataBinding.getValue(targetType);
 		}
 		return convertedValue(dataContext);
@@ -242,7 +242,7 @@ public class Binding extends DynamicBinding {
 
 	private Object convertedValue(Object value) {
 		IValueConverter converter = getConverter();
-		if(converter != null) {
+		if (converter != null) {
 			value = converter.convert(value);
 		}
 		return value;
@@ -267,7 +267,7 @@ public class Binding extends DynamicBinding {
 
 	/**
 	 * Returns the validationRules for the binding
-	 * 
+	 *
 	 * @return the array of validationRules
 	 */
 	public IValidationRule[] getValidationRules() {
@@ -276,11 +276,11 @@ public class Binding extends DynamicBinding {
 
 	/**
 	 * Sets a single validationRule
-	 * 
+	 *
 	 * @param validator
 	 */
 	public IValidationRule getValidationRule() {
-		if(this.validationRules != null && this.validationRules.length > 0) {
+		if (this.validationRules != null && this.validationRules.length > 0) {
 			return this.validationRules[0];
 		}
 		return null;
@@ -288,7 +288,7 @@ public class Binding extends DynamicBinding {
 
 	/**
 	 * Set the validationRules for the binding
-	 * 
+	 *
 	 * @param validators
 	 */
 	public void setValidationRules(IValidationRule[] validationRules) {
@@ -297,11 +297,11 @@ public class Binding extends DynamicBinding {
 
 	/**
 	 * Sets a single validationRule
-	 * 
+	 *
 	 * @param validator
 	 */
 	public void setValidationRule(IValidationRule validationRule) {
-		this.validationRules = new IValidationRule[]{ validationRule };
+		this.validationRules = new IValidationRule[] { validationRule };
 	}
 
 	public void reset() {

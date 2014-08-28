@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,18 +32,18 @@ public class ActorEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * In case of {@link Association} creation, it should not be possible to have an {@link Actor} as source.
 	 */
 	@Override
 	protected ICommand getBeforeCreateRelationshipCommand(CreateRelationshipRequest request) {
 		IElementType type = request.getElementType();
-		if(SysMLElementTypes.ASSOCIATION.equals(type)) {
+		if (SysMLElementTypes.ASSOCIATION.equals(type)) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if(type != null) {
+		if (type != null) {
 			List<IElementType> superTypes = Arrays.asList(type.getAllSuperTypes());
-			if(superTypes.contains(SysMLElementTypes.ASSOCIATION)) {
+			if (superTypes.contains(SysMLElementTypes.ASSOCIATION)) {
 				return UnexecutableCommand.INSTANCE;
 			}
 
@@ -52,16 +52,16 @@ public class ActorEditHelperAdvice extends AbstractEditHelperAdvice {
 	}
 
 	protected boolean hasSuperType(IElementType elementType, IElementType typeToTest) {
-		if(elementType == null || typeToTest == null) {
+		if (elementType == null || typeToTest == null) {
 			return false;
 		}
 
-		if(elementType.equals(typeToTest)) {
+		if (elementType.equals(typeToTest)) {
 			return true;
 		}
 
 		List<IElementType> superTypes = Arrays.asList(elementType.getAllSuperTypes());
-		if(superTypes.contains(typeToTest)) {
+		if (superTypes.contains(typeToTest)) {
 			return true;
 		}
 

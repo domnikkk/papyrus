@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin Integration - CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,9 +28,9 @@ import org.eclipse.ui.internal.navigator.resources.actions.EditActionProvider;
 
 /**
  * An edit action provider to provide Copy/Paste/Delete on sub resources
- * 
+ *
  * @author Tristan Faure
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public class SubresourceFileActionProvider extends EditActionProvider {
@@ -39,17 +39,17 @@ public class SubresourceFileActionProvider extends EditActionProvider {
 	public void setContext(ActionContext context) {
 		// TODO Auto-generated method stub
 		List<Object> resources = new LinkedList<Object>();
-		if(context.getSelection() instanceof IStructuredSelection) {
-			IStructuredSelection contextSelec = (IStructuredSelection)context.getSelection();
-			for(Iterator<?> i = contextSelec.iterator(); i.hasNext();) {
+		if (context.getSelection() instanceof IStructuredSelection) {
+			IStructuredSelection contextSelec = (IStructuredSelection) context.getSelection();
+			for (Iterator<?> i = contextSelec.iterator(); i.hasNext();) {
 				Object o = i.next();
 				IResource res = adapt(o, IResource.class);
-				if(res != null) {
+				if (res != null) {
 					resources.add(res);
 				}
 			}
 		}
-		if(!resources.isEmpty()) {
+		if (!resources.isEmpty()) {
 			ISelection selec = new StructuredSelection(resources);
 			super.setContext(new ActionContext(selec));
 		} else {
@@ -60,15 +60,15 @@ public class SubresourceFileActionProvider extends EditActionProvider {
 	@SuppressWarnings("unchecked")
 	public <T> T adapt(Object o, Class<T> aClass) {
 		T result = null;
-		if(aClass.isInstance(o)) {
-			result = (T)o;
+		if (aClass.isInstance(o)) {
+			result = (T) o;
 		}
-		if(o instanceof IAdaptable) {
-			IAdaptable adaptable = (IAdaptable)o;
-			result = (T)adaptable.getAdapter(aClass);
+		if (o instanceof IAdaptable) {
+			IAdaptable adaptable = (IAdaptable) o;
+			result = (T) adaptable.getAdapter(aClass);
 		}
-		if(result == null) {
-			result = (T)Platform.getAdapterManager().getAdapter(o, aClass);
+		if (result == null) {
+			result = (T) Platform.getAdapterManager().getAdapter(o, aClass);
 		}
 
 		return result;

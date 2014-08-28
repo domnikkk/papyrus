@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -42,9 +42,9 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitor
 
 /**
  * Allow to generate Method in a IType
- * 
+ *
  * @author Deblock Nicolas & Manuel Giles
- * 
+ *
  */
 public class SynchJDTMethod extends SynchJDTCommentable {
 
@@ -56,9 +56,9 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param itype
-	 *        the type parent
+	 *            the type parent
 	 */
 	public SynchJDTMethod(IType itype, GeneratorPreference preference) {
 		super();
@@ -68,22 +68,24 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 
 
 
+	@Override
 	public void visit(JDTJavaElement element) throws JDTVisitorException {
 		// if element can't be generated, we stop all
-		if(!element.isGenerated())
+		if (!element.isGenerated()) {
 			return;
+		}
 
-		method = (JDTMethod)element;
-		//IntroduceParameterObjectDescript
+		method = (JDTMethod) element;
+		// IntroduceParameterObjectDescript
 		IMethod imethod = null;
 
 		try {
 			// See if the method exist
 			boolean createMethod = true;
 
-			for(IMethod m : itype.getMethods()) {
-				// if it's the same name, and the same parameterTypes, the method exist 
-				if(m.getElementName().equals(method.getElementName()) && m.getSignature().equals(method.getJDTSignature())) {
+			for (IMethod m : itype.getMethods()) {
+				// if it's the same name, and the same parameterTypes, the method exist
+				if (m.getElementName().equals(method.getElementName()) && m.getSignature().equals(method.getJDTSignature())) {
 					// stop all
 					createMethod = false;
 					imethod = m;
@@ -91,27 +93,28 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 				}
 			}
 
-			if(createMethod) {
+			if (createMethod) {
 				StringBuffer methodStr = new StringBuffer("\n");
 
 				// visibility
-				if(itype.isInterface()) // for a interface, there are only public method!
+				if (itype.isInterface()) {
 					methodStr.append("public ");
-				else
+				} else {
 					methodStr.append(SynchTools.getVisibility(method).toString());
+				}
 
 				// if method is a constructor, no return Type, and name is class name
-				if(method.isConstructor()) {
+				if (method.isConstructor()) {
 					methodStr.append(itype.getElementName() + "(");
 				}
 				else {
 					// return type
-					if(method.getReturnType() != null) {
+					if (method.getReturnType() != null) {
 						// Compute the type, taken into account multivalue
 						String type = getTypeAsString(method.getReturnType());
-						// put the import package	
+						// put the import package
 						SynchTools.createImport(itype, method.getOwner(), method.getReturnType().getType());
-						
+
 						methodStr.append(type + " ");
 					}
 					else {
@@ -121,21 +124,22 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 					methodStr.append(method.getElementName() + "(");
 				}
 				// parameters
-				//System.out.println(method.getParam() + " " + method.getParameterTypes());
+				// System.out.println(method.getParam() + " " + method.getParameterTypes());
 				int nbParam = 0;
-				for(JDTParameter p : method.getParameters()) {
+				for (JDTParameter p : method.getParameters()) {
 					String typeName = p.getElementName();
 					String type = "Undefined";
-					if(p.getType() != null) {
+					if (p.getType() != null) {
 						// Compute the type, taken into account multivalue
 						type = getTypeAsString(p);
-						// put the import package	
+						// put the import package
 						SynchTools.createImport(itype, method.getOwner(), p.getType());
 					}
 
 
-					if(nbParam > 0)
+					if (nbParam > 0) {
 						methodStr.append(", ");
+					}
 					methodStr.append(type + " " + typeName);
 					nbParam++;
 				}
@@ -143,42 +147,45 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 				// close
 				methodStr.append(")");
 
-				// throws				
-				if(method.getExceptions() != null && method.getExceptions().size() > 0) {
+				// throws
+				if (method.getExceptions() != null && method.getExceptions().size() > 0) {
 					methodStr.append(" throws ");
 					int nbExc = 0;
-					for(JDTType exception : method.getExceptions()) {
-						if(nbExc > 0)
+					for (JDTType exception : method.getExceptions()) {
+						if (nbExc > 0) {
 							methodStr.append(", ");
+						}
 						methodStr.append(exception.getElementName());
-						if(!SynchTools.isPrimiveType(exception.getQualifiedName()) && exception.getQualifiedName().contains("."))
+						if (!SynchTools.isPrimiveType(exception.getQualifiedName()) && exception.getQualifiedName().contains(".")) {
 							itype.getCompilationUnit().createImport(exception.getQualifiedName(), null, null);
+						}
 						nbExc++;
 					}
 				}
 
 
 				// Do we need a body ?
-				if(itype.isInterface() || Flags.isAbstract(method.getFlags())) {
+				if (itype.isInterface() || Flags.isAbstract(method.getFlags())) {
 					methodStr.append(";");
 				}
 				else {
 					// Generate Body. Open the body
 					methodStr.append(" {");
 					// If there is a declared body, use it. Otherwise, use the default body.
-					if( method.getBodies().size() >0) {
+					if (method.getBodies().size() > 0) {
 
-						for( JDTMethodBody body : method.getBodies()) {
+						for (JDTMethodBody body : method.getBodies()) {
 							methodStr.append("\n\t");
 							methodStr.append(body.asText());
 						}
-//						methodStr.append("\n");
-					} 
+						// methodStr.append("\n");
+					}
 					else {
 						// Default body
 						methodStr.append(" \n\t// TODO Auto-generated method");
-						if(method.getReturnType() != null)
+						if (method.getReturnType() != null) {
 							methodStr.append("\n\treturn " + SynchTools.defaultReturn(method.getReturnType().getType().getElementName()) + ";");
+						}
 
 					}
 					// Close the body
@@ -189,17 +196,17 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 				imethod = itype.createMethod(methodStr.toString(), null, true, null);
 			}
 
-			// add javadoc to method			
+			// add javadoc to method
 			createJavaDocFor(imethod, imethod.getCompilationUnit(), method.getComment(), "");
 			// Add explicit imports
 			generateExplicitImports(method, itype);
 		} catch (JavaModelException e) {
-//			e.printStackTrace();
-//			throw new JDTVisitorException(e.getMessage(), e.getCause());
+			// e.printStackTrace();
+			// throw new JDTVisitorException(e.getMessage(), e.getCause());
 			propagateException(e.getMessage(), e);
 		} catch (Exception e) {
-//			e.printStackTrace();
-//			throw new JDTVisitorException(e.getMessage(), e.getCause());
+			// e.printStackTrace();
+			// throw new JDTVisitorException(e.getMessage(), e.getCause());
 			propagateException(e.getMessage(), e);
 		}
 
@@ -209,16 +216,18 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 
 	/**
 	 * Get the type of the parameter as a String. Take into account the multivalue setting.
+	 *
 	 * @param p
 	 * @return
 	 * @throws JavaModelException
 	 */
 	private String getTypeAsString(JDTParameter p) throws JavaModelException {
 		String type;
-		if(p.isMultiValued())
+		if (p.isMultiValued()) {
 			type = SynchTools.getMultiValued(itype, p.getType().getElementName(), preference);
-		else
+		} else {
 			type = p.getType().getElementName();
+		}
 		return type;
 	}
 
@@ -232,7 +241,7 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 	@Override
 	/**
 	 * search the method to insert Javadoc
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.java.generator.jdtsynchronizer.impl.SynchJDTCommentable#searchElementToInsert(org.eclipse.jdt.core.dom.CompilationUnit, org.eclipse.jdt.core.IJavaElement)
 	 *
 	 * @param cu
@@ -242,34 +251,38 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 	protected BodyDeclaration searchElementToInsert(CompilationUnit cu, IJavaElement method) {
 
 		// search Itype parent
-		if(method.getParent() instanceof IType) {
-			IType itype = (IType)method.getParent();
+		if (method.getParent() instanceof IType) {
+			IType itype = (IType) method.getParent();
 			// find the good type
-			TypeDeclaration type = searchType((TypeDeclaration)cu.types().get(0), itype.getElementName());
+			TypeDeclaration type = searchType((TypeDeclaration) cu.types().get(0), itype.getElementName());
 
 			// search the method. Fortunately, there are no method getSignature() for the type MethodDeclaration.
 			// So, we search manually
-			for(MethodDeclaration m : type.getMethods())
-				if(m.getName().toString().equals(method.getElementName())) {
-					// verify the signature		
-					if(m.parameters() != null && m.parameters().size() == 0 && this.method.getParameters().size() == 0)
+			for (MethodDeclaration m : type.getMethods()) {
+				if (m.getName().toString().equals(method.getElementName())) {
+					// verify the signature
+					if (m.parameters() != null && m.parameters().size() == 0 && this.method.getParameters().size() == 0) {
 						return m;
-					if(m.parameters().size() == this.method.getParameters().size()) {
+					}
+					if (m.parameters().size() == this.method.getParameters().size()) {
 						int numParam = 0;
 						boolean goodSignature = true;
-						for(Object paramObj : m.parameters()) {
-							if(paramObj instanceof SingleVariableDeclaration) {
-								SingleVariableDeclaration param = (SingleVariableDeclaration)paramObj;
-								if(!param.getType().toString().equals(this.method.getParameters().get(numParam).getType().getElementName()))
+						for (Object paramObj : m.parameters()) {
+							if (paramObj instanceof SingleVariableDeclaration) {
+								SingleVariableDeclaration param = (SingleVariableDeclaration) paramObj;
+								if (!param.getType().toString().equals(this.method.getParameters().get(numParam).getType().getElementName())) {
 									goodSignature = false;
+								}
 
 								numParam++;
 							}
 						}
-						if(goodSignature)
+						if (goodSignature) {
 							return m;
+						}
 					}
 				}
+			}
 		}
 
 		return null;
@@ -278,31 +291,34 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 	@Override
 	protected List<String> getJavadocTags() {
 		List<String> lst = new LinkedList<String>();
-		if(method == null)
+		if (method == null) {
 			return lst;
+		}
 
 		// parameters
-		for(JDTParameter param : method.getParameters()) {
+		for (JDTParameter param : method.getParameters()) {
 			String comment = param.getComment();
-			if(comment == null)
+			if (comment == null) {
 				comment = "";
+			}
 			lst.add(TagElement.TAG_PARAM + " " + param.getElementName() + " " + comment);
 		}
 
 		// return
-		if(method.getReturnType() != null) {
+		if (method.getReturnType() != null) {
 			String comment = method.getReturnType().getComment();
-			if(comment == null)
+			if (comment == null) {
 				comment = "";
+			}
 			lst.add(TagElement.TAG_RETURN + " " + comment);
 		}
 
 		// exception
-		// TODO prendre en compte notion de commentaire		
-		if(method.getExceptions() != null) {
-			for(JDTType exception : method.getExceptions()) {
-				//String comment = exception.getComment();
-				//if(comment == null) comment = "";
+		// TODO prendre en compte notion de commentaire
+		if (method.getExceptions() != null) {
+			for (JDTType exception : method.getExceptions()) {
+				// String comment = exception.getComment();
+				// if(comment == null) comment = "";
 				lst.add(TagElement.TAG_THROWS + " " + exception.getElementName());
 			}
 		}
@@ -315,14 +331,15 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 
 
 	/**
-	 * Propagate a {@link JDTVisitorException} if the flag is not set 
+	 * Propagate a {@link JDTVisitorException} if the flag is not set
+	 *
 	 * @param msg
 	 * @param e
 	 * @throws JDTVisitorException
 	 */
 	private void propagateException(String msg, Throwable e) throws JDTVisitorException {
-		
-		if(preference.stopOnFirstError()) {
+
+		if (preference.stopOnFirstError()) {
 			throw new JDTVisitorException(msg, e.getCause());
 		}
 		else {
@@ -336,32 +353,35 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 
 	/**
 	 * Generate imports that are explicitly declared in the type
-	 * @param srcType The src type to be transformed
-	 * @param destType The jdt dest type to be generated
-	 * @throws JavaModelException 
-	 * @throws JDTVisitorException 
+	 *
+	 * @param srcType
+	 *            The src type to be transformed
+	 * @param destType
+	 *            The jdt dest type to be generated
+	 * @throws JavaModelException
+	 * @throws JDTVisitorException
 	 */
 	private void generateExplicitImports(JDTMethod srcType, IType destType) throws JDTVisitorException {
-		
-	
-		// Add explicit type 
-		for( JDTType anImport : srcType.getExplicitRequiredImports()) {
+
+
+		// Add explicit type
+		for (JDTType anImport : srcType.getExplicitRequiredImports()) {
 			try {
 				destType.getCompilationUnit().createImport(anImport.getQualifiedName(), null, null);
 			} catch (Exception e) {
 				propagateException(destType.getFullyQualifiedName() + "Can't add explicit import " + anImport.getQualifiedName(), e);
 			}
 		}
-		
+
 		// Add explicit plain text types
-		for( String anImport : srcType.getExplicitPlainTextRequiredImports()) {
+		for (String anImport : srcType.getExplicitPlainTextRequiredImports()) {
 			try {
 				destType.getCompilationUnit().createImport(anImport, null, null);
 			} catch (JavaModelException e) {
 				propagateException(destType.getFullyQualifiedName() + "Can't add explicit plain text import " + anImport, e);
 			}
 		}
-				
+
 	}
 
 }

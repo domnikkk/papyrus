@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ public final class DefaultSizeUtils {
 
 	private static final float WIDTH_HEIGHT_RATIO = 8;
 
-	private static final float ROW_HEADER_RATIO = 2; //Row header width height ratio
+	private static final float ROW_HEADER_RATIO = 2; // Row header width height ratio
 
 	private static final float DEFAULT_DPI = 96;
 
@@ -40,48 +40,48 @@ public final class DefaultSizeUtils {
 	 * fontName = Segoe UI
 	 * fontHeight = 9
 	 * value = 33
-	 * 
+	 *
 	 * windows 125% :
 	 * dipX = dpiY = 120
 	 * fontName = Segoe UI
 	 * fontHeight = 9
 	 * value = 27,5
-	 * 
+	 *
 	 * windows 100%
 	 * dipX = dpiY = 96
 	 * fontName = Segoe UI
 	 * fontHeight = 9
 	 * value = 22
-	 * 
+	 *
 	 * @return
 	 *         the default cell height to use, according to the dpi used by the system
 	 */
 	public static int getDefaultCellHeight() {
 		float dpiY = Display.getDefault().getDPI().y;
 		FontData[] fd = Display.getDefault().getSystemFont().getFontData();
-		//fd[0].getName();
+		// fd[0].getName();
 		float height = (fd[0].getHeight() * DefaultSizeUtils.FONT_CELL_RATIO) + DefaultSizeUtils.MARGINE;
 		float value = height * (dpiY / DEFAULT_DPI);
-		return (int)Math.ceil(value);
+		return (int) Math.ceil(value);
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the default cell width to use, according to the dpi used by the system
 	 */
 	public static int getDefaultCellWidth() {
 		float width = DefaultSizeUtils.getDefaultCellHeight() * DefaultSizeUtils.WIDTH_HEIGHT_RATIO;
-		return (int)Math.ceil(width);
+		return (int) Math.ceil(width);
 	}
 
-	//not used
+	// not used
 	public static int getDefaultRowHeaderWidth() {
 		float width = DefaultSizeUtils.getDefaultCellHeight() * DefaultSizeUtils.ROW_HEADER_RATIO;
-		return (int)Math.ceil(width);
+		return (int) Math.ceil(width);
 	}
 
-	//not used
+	// not used
 	public static Font getHeaderFont() {
 		FontData[] fd = Display.getDefault().getSystemFont().getFontData().clone();
 		fd[0].setStyle(SWT.BOLD);

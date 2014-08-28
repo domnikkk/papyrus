@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,17 +16,15 @@ package org.eclipse.papyrus.facade.virtualmetamodel.util;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
 
 /**
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class VirtualmetamodelXMLProcessor extends XMLProcessor {
@@ -35,17 +33,19 @@ public class VirtualmetamodelXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public VirtualmetamodelXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		VirtualmetamodelPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the VirtualmetamodelResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -58,4 +58,4 @@ public class VirtualmetamodelXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //VirtualmetamodelXMLProcessor
+} // VirtualmetamodelXMLProcessor

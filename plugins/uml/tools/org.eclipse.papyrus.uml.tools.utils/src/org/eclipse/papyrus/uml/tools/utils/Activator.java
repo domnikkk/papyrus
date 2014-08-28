@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Remi SCHNEKENBURGER (CEA LIST) Remi.schnekenburger@cea.fr - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.utils;
 
@@ -29,22 +29,22 @@ public class Activator extends Plugin {
 
 	// The plug-in ID
 	/**
-	 * 
+	 *
 	 */
 	public static final String PLUGIN_ID = "org.eclipse.papyrus.uml.tools.utils";
 
 	// The shared instance
 	/**
-	 * 
+	 *
 	 */
 	private static Activator plugin;
 
 	// Resource bundle.
 	/**
-	 * 
+	 *
 	 */
 	private ResourceBundle resourceBundle;
-	
+
 	public static LogHelper log;
 
 	/**
@@ -61,14 +61,14 @@ public class Activator extends Plugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.Plugins#start(org.osgi.framework.BundleContext)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param context
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	@Override
@@ -79,14 +79,14 @@ public class Activator extends Plugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.Plugin#stop(org.osgi.framework.BundleContext)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param context
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class Activator extends Plugin {
 
 	/**
 	 * Returns the shared instance.
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -106,9 +106,9 @@ public class Activator extends Plugin {
 
 	/**
 	 * Returns the string from the plugin's resource bundle, or 'key' if not found.
-	 * 
+	 *
 	 * @param key
-	 * 
+	 *
 	 * @return
 	 */
 	public static String getResourceString(String key) {
@@ -122,7 +122,7 @@ public class Activator extends Plugin {
 
 	/**
 	 * Returns the plugin's resource bundle,.
-	 * 
+	 *
 	 * @return
 	 */
 	public ResourceBundle getResourceBundle() {
@@ -131,9 +131,9 @@ public class Activator extends Plugin {
 
 	/**
 	 * Logs a warning message in the plugin log
-	 * 
+	 *
 	 * @param message
-	 *        the message to log
+	 *            the message to log
 	 */
 	public static void logWarning(String message) {
 		getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, message));
@@ -141,9 +141,9 @@ public class Activator extends Plugin {
 
 	/**
 	 * Logs an error message in the plugin log
-	 * 
+	 *
 	 * @param message
-	 *        the message to log
+	 *            the message to log
 	 */
 	public static void logError(String message) {
 		getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, message));
@@ -151,9 +151,9 @@ public class Activator extends Plugin {
 
 	/**
 	 * Logs an information message in the plugin log
-	 * 
+	 *
 	 * @param message
-	 *        the message to log
+	 *            the message to log
 	 */
 	public static void logInfo(String message) {
 		getDefault().getLog().log(new Status(IStatus.INFO, Activator.PLUGIN_ID, message));
@@ -161,9 +161,9 @@ public class Activator extends Plugin {
 
 	/**
 	 * Logs an error message in the plugin log
-	 * 
+	 *
 	 * @param exception
-	 *        the exception to log
+	 *            the exception to log
 	 */
 	public static void logException(Exception exception) {
 		getDefault().getLog().log(

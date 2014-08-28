@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 public class DefaultObjectLocalizer extends AbstractObjectLocalizer {
 
 	public static final DefaultObjectLocalizer INSTANCE = new DefaultObjectLocalizer();
-	
+
 	public DefaultObjectLocalizer() {
 		super();
 	}
@@ -34,11 +34,11 @@ public class DefaultObjectLocalizer extends AbstractObjectLocalizer {
 	public EObject getLocalEObject(ResourceSet localSet, EObject remoteObject) {
 		EObject result = null;
 
-		if(getResourceSet(remoteObject) == localSet) {
+		if (getResourceSet(remoteObject) == localSet) {
 			result = remoteObject;
 		} else {
 			URI uri = EcoreUtil.getURI(remoteObject);
-			if(uri != null) {
+			if (uri != null) {
 				result = localSet.getEObject(uri, true);
 			}
 		}
@@ -50,12 +50,12 @@ public class DefaultObjectLocalizer extends AbstractObjectLocalizer {
 	public Resource getLocalResource(ResourceSet localSet, Resource remoteResource) {
 		Resource result = null;
 
-		if(remoteResource != null) {
-			if(remoteResource.getResourceSet() == localSet) {
+		if (remoteResource != null) {
+			if (remoteResource.getResourceSet() == localSet) {
 				result = remoteResource;
 			} else {
 				result = localSet.getResource(remoteResource.getURI(), false);
-				if(result == null) {
+				if (result == null) {
 					// create but don't load
 					result = localSet.createResource(remoteResource.getURI(), ContentHandler.UNSPECIFIED_CONTENT_TYPE);
 				}

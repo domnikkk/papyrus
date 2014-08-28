@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -33,7 +33,7 @@ public class LayersApplicationService implements IService {
 	 * ModelSet to retrieve models
 	 */
 	protected ModelSet modelSet;
-	
+
 	/**
 	 * The synchronizer used to listen on events and to synchronize layers and notation.
 	 */
@@ -42,11 +42,12 @@ public class LayersApplicationService implements IService {
 	 * associated layerModel.
 	 */
 	private LayersModel layersModel;
-	
+
 	/**
 	 * The {@link NotationModel}
 	 */
 	private NotationModel notationModel;
+
 	/**
 	 * Constructor.
 	 *
@@ -65,7 +66,7 @@ public class LayersApplicationService implements IService {
 	public void init(ServicesRegistry servicesRegistry) throws ServiceException {
 		// Retrieve required services.
 		modelSet = servicesRegistry.getService(ModelSet.class);
-//		multiDiagramEditor = servicesRegistry.getService(IMultiDiagramEditor.class);
+		// multiDiagramEditor = servicesRegistry.getService(IMultiDiagramEditor.class);
 	}
 
 	/**
@@ -75,32 +76,32 @@ public class LayersApplicationService implements IService {
 	 */
 	@Override
 	public void startService() throws ServiceException {
-		
+
 		// Try to get the associated model
 		try {
-			layersModel = (LayersModel)modelSet.getModelChecked(LayersModel.MODEL_ID);
-			notationModel = (NotationModel)modelSet.getModelChecked(NotationModel.MODEL_ID);
+			layersModel = (LayersModel) modelSet.getModelChecked(LayersModel.MODEL_ID);
+			notationModel = (NotationModel) modelSet.getModelChecked(NotationModel.MODEL_ID);
 		} catch (NotFoundException e) {
 			throw new ServiceException("Can't get layer model", e);
 		} catch (ClassCastException e) {
 			throw new ServiceException("layersModel should be of type LayersModel", e);
 		}
-		
+
 		// Check model
 		LayersStackApplication application = layersModel.getModelRoot();
-		boolean isAlreadyExist = (application !=null);
-		if( log.isDebugEnabled() ) {
-			if( isAlreadyExist) {
+		boolean isAlreadyExist = (application != null);
+		if (log.isDebugEnabled()) {
+			if (isAlreadyExist) {
 				log.debug("LayerApplication already exist in modelSet");
 			}
 			else {
-				log.debug("LayerApplication do not exist in modelSet");			
+				log.debug("LayerApplication do not exist in modelSet");
 			}
 		}
-		
+
 		// Start synchronizer
 		layersSynchronizer = new LayerStackApplicationSynchronizer(layersModel, notationModel);
-		
+
 	}
 
 	/**
@@ -110,12 +111,12 @@ public class LayersApplicationService implements IService {
 	 */
 	@Override
 	public void disposeService() throws ServiceException {
-		
+
 		layersSynchronizer.dispose();
 		layersSynchronizer = null;
 		layersModel = null;
 		modelSet = null;
-//		multiDiagramEditor = null;
+		// multiDiagramEditor = null;
 
 	}
 

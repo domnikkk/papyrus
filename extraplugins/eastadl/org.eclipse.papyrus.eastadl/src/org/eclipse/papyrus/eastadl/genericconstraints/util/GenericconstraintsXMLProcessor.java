@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,6 +27,7 @@ import org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class GenericconstraintsXMLProcessor extends XMLProcessor {
@@ -35,17 +36,19 @@ public class GenericconstraintsXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public GenericconstraintsXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		GenericconstraintsPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the GenericconstraintsResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -58,4 +61,4 @@ public class GenericconstraintsXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //GenericconstraintsXMLProcessor
+} // GenericconstraintsXMLProcessor

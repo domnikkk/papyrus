@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
 /**
- * 
+ *
  * @author JC236769
- * 
+ *
  */
 public class FlattenableRestrictedFilteredContentProvider extends AbstractFilteredContentProvider implements IStaticContentProvider, IRestrictedContentProvider, IFlattenableContentProvider {
 
@@ -37,13 +37,13 @@ public class FlattenableRestrictedFilteredContentProvider extends AbstractFilter
 	protected HierarchicToFlatContentProvider flatProvider;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param provider
-	 *        the encapsulated content provider
+	 *            the encapsulated content provider
 	 * @param selector
-	 *        the reference selector (we need it to refresh it)
+	 *            the reference selector (we need it to refresh it)
 	 */
 	public FlattenableRestrictedFilteredContentProvider(IRestrictedContentProvider provider, ReferenceSelector selector) {
 		this.provider = provider;
@@ -53,9 +53,9 @@ public class FlattenableRestrictedFilteredContentProvider extends AbstractFilter
 
 	/**
 	 * Add 2 checkboxes to the dialog
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.AbstractFilteredContentProvider#createAfter(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 */
 	@Override
@@ -71,18 +71,21 @@ public class FlattenableRestrictedFilteredContentProvider extends AbstractFilter
 		showFlatListOfFeaturesCheckbox.setText(Messages.FlattenableRestrictedFilteredContentProvider_FlatViewMessage);
 		onlyCurrentContainersCheckbox.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				setRestriction(!onlyCurrentContainersCheckbox.getSelection());
 				viewer.refresh();
 				selector.refresh();
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 
 			}
 		});
 		showFlatListOfFeaturesCheckbox.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 
 				setFlat(showFlatListOfFeaturesCheckbox.getSelection());
@@ -91,14 +94,16 @@ public class FlattenableRestrictedFilteredContentProvider extends AbstractFilter
 
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 
 			}
 		});
 	}
 
+	@Override
 	public Object[] getElements(Object inputElement) {
-		if(isFlat) {
+		if (isFlat) {
 			return flatProvider.getElements(inputElement);
 		}
 		return provider.getElements(inputElement);
@@ -117,70 +122,80 @@ public class FlattenableRestrictedFilteredContentProvider extends AbstractFilter
 		provider.inputChanged(viewer, oldInput, newInput);
 	}
 
+	@Override
 	public boolean isValidValue(Object element) {
 		return provider.isValidValue(element);
 	}
 
+	@Override
 	public Object[] getChildren(Object parentElement) {
-		if(isFlat) {
+		if (isFlat) {
 			return new Object[0];
 		}
 		return provider.getChildren(parentElement);
 	}
 
+	@Override
 	public Object getParent(Object element) {
-		if(isFlat) {
+		if (isFlat) {
 			return null;
 		}
 		return provider.getParent(element);
 	}
 
+	@Override
 	public boolean hasChildren(Object element) {
-		if(isFlat) {
+		if (isFlat) {
 			return false;
 		}
 		return provider.hasChildren(element);
 	}
 
+	@Override
 	public void setRestriction(boolean isRestricted) {
 		provider.setRestriction(isRestricted);
 	}
 
+	@Override
 	public void setFlat(boolean flat) {
 		this.isFlat = flat;
 
 	}
 
+	@Override
 	public Object[] getElements() {
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IInheritedElementContentProvider#setIgnoreInheritedElements(boolean)
 	 *
 	 * @param ignoreInheritedElements
 	 */
+	@Override
 	public void setIgnoreInheritedElements(boolean ignoreInheritedElements) {
 		provider.setIgnoreInheritedElements(ignoreInheritedElements);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IInheritedElementContentProvider#isIgnoringInheritedElements()
 	 *
 	 * @return
 	 */
+	@Override
 	public boolean isIgnoringInheritedElements() {
 		return provider.isIgnoringInheritedElements();
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IRestrictedContentProvider#isRestricted()
 	 *
 	 * @return
 	 */
+	@Override
 	public boolean isRestricted() {
 		return provider.isRestricted();
 	}

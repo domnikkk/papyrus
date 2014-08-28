@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,7 +55,7 @@ public class PapyrusEditActionProvider extends CommonActionProvider {
 
 	@Override
 	public void fillActionBars(IActionBars actionBars) {
-		if(fInViewPart) {
+		if (fInViewPart) {
 			actionBars.setGlobalActionHandler(ActionFactory.PASTE.getId(), pasteAction);
 		}
 		super.fillActionBars(actionBars);
@@ -68,18 +68,18 @@ public class PapyrusEditActionProvider extends CommonActionProvider {
 	}
 
 	private void appendToGroup(IMenuManager menu, IAction action, String id) {
-		if(action != null && action.isEnabled()) {
+		if (action != null && action.isEnabled()) {
 			menu.appendToGroup(id, action);
 		}
 	}
 
 	@Override
 	public void init(ICommonActionExtensionSite site) {
-		if(site.getViewSite() instanceof ICommonViewerWorkbenchSite) {
-			workbenchSite = (ICommonViewerWorkbenchSite)site.getViewSite();
+		if (site.getViewSite() instanceof ICommonViewerWorkbenchSite) {
+			workbenchSite = (ICommonViewerWorkbenchSite) site.getViewSite();
 		}
-		if(workbenchSite != null) {
-			if(workbenchSite.getPart() != null && workbenchSite.getPart() instanceof IViewPart) {
+		if (workbenchSite != null) {
+			if (workbenchSite.getPart() != null && workbenchSite.getPart() instanceof IViewPart) {
 				fInViewPart = true;
 			}
 			makeActions();
@@ -93,7 +93,7 @@ public class PapyrusEditActionProvider extends CommonActionProvider {
 		Clipboard clipboard = new Clipboard(shell.getDisplay());
 		pasteAction = new PapyrusModelPasteAction(shell, clipboard) {
 
-			//the helper is filtering Ipapyrus files
+			// the helper is filtering Ipapyrus files
 
 			@Override
 			protected List getSelectedResources() {
@@ -106,11 +106,11 @@ public class PapyrusEditActionProvider extends CommonActionProvider {
 				ISelection selec = context.getSelection();
 				List<IResource> resources = new ArrayList<IResource>();
 
-				if(selec instanceof TreeSelection) {
-					TreeSelection tree = (TreeSelection)selec;
-					Object firstElement = tree.getFirstElement(); 
-					if(firstElement instanceof IResource) {
-						resources.add((IResource)firstElement);
+				if (selec instanceof TreeSelection) {
+					TreeSelection tree = (TreeSelection) selec;
+					Object firstElement = tree.getFirstElement();
+					if (firstElement instanceof IResource) {
+						resources.add((IResource) firstElement);
 					}
 				}
 				return resources;
@@ -122,23 +122,23 @@ public class PapyrusEditActionProvider extends CommonActionProvider {
 
 	/**
 	 * Create an action
-	 * 
+	 *
 	 * @param action
 	 * @param id
 	 * @param imgTool
 	 * @param imgToolDisabled
 	 */
 	protected void makeAction(Action action, String id, String imgTool, String imgToolDisabled) {
-		if(action != null) {
+		if (action != null) {
 			ISharedImages images = PlatformUI.getWorkbench().getSharedImages();
-			if(id != null) {
+			if (id != null) {
 				action.setId(id);
 				action.setActionDefinitionId(id);
 			}
-			if(imgTool != null) {
+			if (imgTool != null) {
 				action.setImageDescriptor(images.getImageDescriptor(imgTool));
 			}
-			if(imgToolDisabled != null) {
+			if (imgToolDisabled != null) {
 				action.setDisabledImageDescriptor(images.getImageDescriptor(imgToolDisabled));
 			}
 		}

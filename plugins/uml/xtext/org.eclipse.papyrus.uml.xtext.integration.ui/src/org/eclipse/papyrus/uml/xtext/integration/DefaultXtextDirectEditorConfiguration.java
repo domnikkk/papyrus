@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,12 +58,12 @@ import com.google.inject.Key;
 import com.google.inject.name.Names;
 
 /**
- * 
+ *
  * abstract base implementation of {@link ICustomDirectEditorConfiguration}
- * 
+ *
  * @author andreas muelder - Initial contribution and API
  *         Ansgar Radermacher - Added possibility to configure context provider
- * 
+ *
  */
 public abstract class DefaultXtextDirectEditorConfiguration extends DefaultDirectEditorConfiguration implements ICustomDirectEditorConfiguration {
 
@@ -73,13 +73,13 @@ public abstract class DefaultXtextDirectEditorConfiguration extends DefaultDirec
 
 	/**
 	 * returns the UI Injector for the Xtext language
-	 * 
+	 *
 	 */
 	public abstract Injector getInjector();
 
 	/**
 	 * returns the {@link ICommand} used to update the UML Model
-	 * 
+	 *
 	 * @param umlObject
 	 * @param xtextObject
 	 * @return
@@ -96,6 +96,7 @@ public abstract class DefaultXtextDirectEditorConfiguration extends DefaultDirec
 
 	/**
 	 * Clients may override, if the objectToEdit is not equal to the context element
+	 *
 	 * @return the context provider
 	 */
 	public IContextElementProvider getContextProvider() {
@@ -109,7 +110,7 @@ public abstract class DefaultXtextDirectEditorConfiguration extends DefaultDirec
 			}
 		};
 	}
-	
+
 	public DirectEditManager createDirectEditManager(final ITextAwareEditPart host) {
 		return new XtextDirectEditManager(host, getInjector(), getStyle(), this);
 	}
@@ -142,7 +143,7 @@ public abstract class DefaultXtextDirectEditorConfiguration extends DefaultDirec
 					((IContextElementProviderWithInit) provider).initResource(context.getFakeResource());
 				}
 				EcoreUtil2.resolveLazyCrossReferences(context.getFakeResource(), CancelIndicator.NullImpl);
-				if(!context.getFakeResource().getParseResult().hasSyntaxErrors() && context.getFakeResource().getErrors().size() == 0) {
+				if (!context.getFakeResource().getParseResult().hasSyntaxErrors() && context.getFakeResource().getErrors().size() == 0) {
 					EObject xtextObject = context.getFakeResource().getParseResult().getRootASTElement();
 					result.add(DefaultXtextDirectEditorConfiguration.this.getParseCommand(semanticObject, xtextObject));
 				} else {
@@ -175,9 +176,9 @@ public abstract class DefaultXtextDirectEditorConfiguration extends DefaultDirec
 	}
 
 	protected String getTextToEditInternal(EObject semanticObject) {
-		if(semanticObject instanceof Element) {
-			String textualRepresentation = InvalidStringUtil.getTextualRepresentation((Element)semanticObject);
-			if(textualRepresentation != null) {
+		if (semanticObject instanceof Element) {
+			String textualRepresentation = InvalidStringUtil.getTextualRepresentation((Element) semanticObject);
+			if (textualRepresentation != null) {
 				return textualRepresentation;
 			}
 		}
@@ -185,16 +186,16 @@ public abstract class DefaultXtextDirectEditorConfiguration extends DefaultDirec
 	}
 
 	protected ICommand createInvalidStringCommand(final String newString, EObject semanticElement) {
-		if(semanticElement instanceof Element) {
+		if (semanticElement instanceof Element) {
 			registerInvalidStringAdapter(semanticElement);
-			final Element element = (Element)semanticElement;
+			final Element element = (Element) semanticElement;
 			return new AbstractTransactionalCommand(TransactionUtil.getEditingDomain(semanticElement), "", Collections.emptyList()) { //$NON-NLS-1$
 
 				@Override
 				protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 					String languageName = getInjector().getInstance(Key.get(String.class, Names.named(Constants.LANGUAGE_NAME)));
 					Comment comment = InvalidStringUtil.getTextualRepresentationComment(element);
-					if(comment == null) {
+					if (comment == null) {
 						comment = InvalidStringUtil.createTextualRepresentationComment(element, languageName);
 					}
 					comment.setBody(newString);
@@ -208,7 +209,7 @@ public abstract class DefaultXtextDirectEditorConfiguration extends DefaultDirec
 
 	protected void registerInvalidStringAdapter(EObject semanticElement) {
 		Adapter existingAdapter = EcoreUtil.getExistingAdapter(semanticElement, InvalidSyntaxAdapter.class);
-		if(existingAdapter == null) {
+		if (existingAdapter == null) {
 			semanticElement.eAdapters().add(new InvalidSyntaxAdapter());
 		}
 	}
@@ -228,7 +229,7 @@ public abstract class DefaultXtextDirectEditorConfiguration extends DefaultDirec
 				text.addListener(3005, new Listener() {
 
 					public void handleEvent(Event event) {
-						if(event.character == SWT.CR && !completionProposalAdapter.isProposalPopupOpen()) {
+						if (event.character == SWT.CR && !completionProposalAdapter.isProposalPopupOpen()) {
 							focusLost();
 						}
 					}

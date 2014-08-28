@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.swt.widgets.Group;
 
 /**
  * Add the possibility to display or hide the guard of Operand
- * 
+ *
  * https://bugs.eclipse.org/bugs/show_bug.cgi?id=402966
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class CustomInteractionOperandPreferencePage extends InteractionOperandPreferencePage {
@@ -41,7 +41,7 @@ public class CustomInteractionOperandPreferencePage extends InteractionOperandPr
 
 	/**
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.pages.AbstractPapyrusNodePreferencePage#createPageContents(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 */
 	@Override
@@ -57,7 +57,7 @@ public class CustomInteractionOperandPreferencePage extends InteractionOperandPr
 		Group group = new Group(parent, SWT.NONE);
 		group.setText("Guard");
 		group.setLayout(new GridLayout());
-		//Guard Visibility
+		// Guard Visibility
 		guardVisibleButton = new Button(group, SWT.CHECK);
 		guardVisibleButton.setText("Show");
 		guardVisibleButton.setSelection(getPreferenceStore().getBoolean(GUARD_VISIBILITY));
@@ -65,24 +65,24 @@ public class CustomInteractionOperandPreferencePage extends InteractionOperandPr
 
 	/**
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.pages.AbstractPapyrusPreferencePage#performDefaults()
-	 * 
+	 *
 	 */
 	@Override
 	protected void performDefaults() {
 		super.performDefaults();
-		if(guardVisibleButton != null && !guardVisibleButton.isDisposed()) {
+		if (guardVisibleButton != null && !guardVisibleButton.isDisposed()) {
 			guardVisibleButton.setSelection(getPreferenceStore().getDefaultBoolean(GUARD_VISIBILITY));
 		}
 	}
 
 	/**
 	 * @see org.eclipse.jface.preference.PreferencePage#performApply()
-	 * 
+	 *
 	 */
 	@Override
 	protected void performApply() {
 		super.performApply();
-		if(guardVisibleButton != null && !guardVisibleButton.isDisposed()) {
+		if (guardVisibleButton != null && !guardVisibleButton.isDisposed()) {
 			getPreferenceStore().setValue(GUARD_VISIBILITY, guardVisibleButton.getSelection());
 		}
 	}

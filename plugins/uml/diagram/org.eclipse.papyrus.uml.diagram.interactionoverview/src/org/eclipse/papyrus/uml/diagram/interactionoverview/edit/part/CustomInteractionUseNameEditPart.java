@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ public class CustomInteractionUseNameEditPart extends CallBehaviorActionNameEdit
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.parts.CallBehaviorActionNameEditPart#getParser()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -29,7 +29,7 @@ public class CustomInteractionUseNameEditPart extends CallBehaviorActionNameEdit
 
 	@Override
 	public IParser getParser() {
-		if(customParser == null) {
+		if (customParser == null) {
 			customParser = UMLParserProvider.getParser(UMLElementTypes.CallBehaviorAction_3008, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.activity.edit.parts.CallBehaviorActionNameEditPart.VISUAL_ID));
 		}
 		return customParser;

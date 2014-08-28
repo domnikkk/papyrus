@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -17,9 +17,9 @@ import org.eclipse.core.commands.IParameterValues;
 
 
 /**
- * Class used to return a list of LayersOperator names. This names are then used 
+ * Class used to return a list of LayersOperator names. This names are then used
  * to create the corresponding LayerOperator.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -41,7 +41,7 @@ public class LayerOperatorsParameterValues implements IParameterValues {
 	@Override
 	public Map<String, String> getParameterValues() {
 		Map<String, String> res = new HashMap<String, String>();
-		
+
 		res.put("Top Layer Operator", "TopLayerOperator");
 		res.put("Stacked Layer Operator", "StackedLayeroperator");
 		return res;

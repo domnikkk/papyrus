@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -32,16 +32,16 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * This class provide the composite:</p>
- * 
+ *
  * Label : [x] [/TextField/] [...]</p>
- * 
+ *
  * The text field is not directly editable by will be edit by the result of the
  * type selection. The {@link GetConformanceMetaclassWidget} composite is used
  * in this composite.</p>
- * 
+ *
  * When the checkbox is selected, the button for the conformance type selection
  * is enabled.
- * 
+ *
  * @see GetConformanceMetaclassWidget
  */
 public class SelectSubTypingTypeWidget extends AbstractWidget {
@@ -90,7 +90,7 @@ public class SelectSubTypingTypeWidget extends AbstractWidget {
 	/**
 	 * Create a checkbox in the composite. When the checkbox is selected, the
 	 * button for the conformance type selection is enabled.
-	 * 
+	 *
 	 * @param enabled
 	 */
 	private void createCheckbox(final boolean enabled) {
@@ -134,7 +134,7 @@ public class SelectSubTypingTypeWidget extends AbstractWidget {
 
 	/**
 	 * Set the value of the checkbox.
-	 * 
+	 *
 	 * @param selected
 	 *            the value of the selection.
 	 */

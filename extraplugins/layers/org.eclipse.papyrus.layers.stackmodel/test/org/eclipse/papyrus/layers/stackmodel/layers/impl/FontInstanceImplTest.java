@@ -4,16 +4,18 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 import org.eclipse.papyrus.layers.stackmodel.layers.FontInstance;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
@@ -48,17 +50,17 @@ public class FontInstanceImplTest {
 	@Test
 	public void testSetValueFromString() {
 		FontInstance instance = LayersFactory.eINSTANCE.createFontInstance();
-		
-		instance.setValueFromString("MySegoe UI, 111, 123, false"); // "FontName, FontHeight, FontColor, Bold"	
-//		instance.setValueFromString("Segoe UI, 9, 0, false"); // "FontName, FontHeight, FontColor, Bold"	
-		
+
+		instance.setValueFromString("MySegoe UI, 111, 123, false"); // "FontName, FontHeight, FontColor, Bold"
+		// instance.setValueFromString("Segoe UI, 9, 0, false"); // "FontName, FontHeight, FontColor, Bold"
+
 		// Check values
 		assertEquals("name", "MySegoe UI", instance.getFontName());
 		assertEquals("heigt", 111, instance.getFontHeigh());
 		assertEquals("color", 123, instance.getFontColor());
 		assertEquals("bold", false, instance.isBold());
-		
-		instance.setValueFromString("MySegoe UI, 111, 123, true"); // "FontName, FontHeight, FontColor, Bold"	
+
+		instance.setValueFromString("MySegoe UI, 111, 123, true"); // "FontName, FontHeight, FontColor, Bold"
 		assertEquals("bold", true, instance.isBold());
 
 	}
@@ -78,7 +80,7 @@ public class FontInstanceImplTest {
 	@Test
 	public void testFontInstanceImpl() {
 		FontInstance instance = LayersFactory.eINSTANCE.createFontInstance();
-		
+
 		assertNotNull("object created", instance);
 	}
 

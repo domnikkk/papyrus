@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ import org.eclipse.swt.widgets.Text;
 
 /**
  * A Widget for selecting or creating a file in the workspace
- * 
+ *
  * @author Camille Letavernier
  */
 public class FileChooser extends Composite implements SelectionListener, Listener {
@@ -55,12 +55,12 @@ public class FileChooser extends Composite implements SelectionListener, Listene
 
 	/**
 	 * Constructs a new FileChooser in the given Composite
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the FileChooser is created
+	 *            The composite in which the FileChooser is created
 	 * @param newFile
-	 *        True if the fileChooser allows the user to create a new file,
-	 *        false if he should select an existing one
+	 *            True if the fileChooser allows the user to create a new file,
+	 *            false if he should select an existing one
 	 */
 	public FileChooser(Composite parent, boolean newFile) {
 		super(parent, SWT.NONE);
@@ -83,11 +83,11 @@ public class FileChooser extends Composite implements SelectionListener, Listene
 	 * @return the selected file path
 	 */
 	public String getFilePath() {
-		if(text.isDisposed()) {
+		if (text.isDisposed()) {
 			return null;
 		}
 		String path = text.getText();
-		if(path.trim().equals("")) { //$NON-NLS-1$
+		if (path.trim().equals("")) { //$NON-NLS-1$
 			return null;
 		}
 		return path.trim();
@@ -96,7 +96,7 @@ public class FileChooser extends Composite implements SelectionListener, Listene
 	/**
 	 * Sets the file extensions that this FileChooser accepts
 	 * Files that don't match one of these extensions will be hidden
-	 * 
+	 *
 	 * @param extensions
 	 */
 	public void setFilterExtensions(String[] extensions) {
@@ -112,7 +112,7 @@ public class FileChooser extends Composite implements SelectionListener, Listene
 	/**
 	 * Add a listener to this widget. The listener will be notified when the user
 	 * choose a new file
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void addListener(Listener listener) {
@@ -122,16 +122,16 @@ public class FileChooser extends Composite implements SelectionListener, Listene
 	public void widgetSelected(SelectionEvent e) {
 		IFile[] result = new IFile[0];
 
-		if(newFile) {
+		if (newFile) {
 			IFile file = WorkspaceResourceDialog.openNewFile(getShell(), null, null, null, filters);
-			if(file != null) {
-				result = new IFile[]{ file };
+			if (file != null) {
+				result = new IFile[] { file };
 			}
 		} else {
-			result = WorkspaceResourceDialog.openFileSelection(getShell(), null, null, false, new Object[]{ currentFile }, filters);
+			result = WorkspaceResourceDialog.openFileSelection(getShell(), null, null, false, new Object[] { currentFile }, filters);
 		}
 
-		if(result.length >= 1) {
+		if (result.length >= 1) {
 			currentFile = result[0];
 			text.setText(currentFile.getFullPath().toString());
 			notifyChange();
@@ -139,22 +139,22 @@ public class FileChooser extends Composite implements SelectionListener, Listene
 	}
 
 	private void notifyChange() {
-		for(Listener listener : listeners) {
+		for (Listener listener : listeners) {
 			listener.handleEvent(null);
 		}
 	}
 
 	public void widgetDefaultSelected(SelectionEvent e) {
-		//Nothing
-	}
-	
-	public IObservableValue getObservableValue(){
-		 IWidgetValueProperty prop = WidgetProperties.text(SWT.Modify);
-		 return prop.observeDelayed(600, text);
+		// Nothing
 	}
 
-	public void setText(String s){
+	public IObservableValue getObservableValue() {
+		IWidgetValueProperty prop = WidgetProperties.text(SWT.Modify);
+		return prop.observeDelayed(600, text);
+	}
+
+	public void setText(String s) {
 		text.setText(s);
-		
+
 	}
 }

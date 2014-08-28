@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage;
 
@@ -19,10 +16,10 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ColorRGBAImpl#getR <em>R</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ColorRGBAImpl#getG <em>G</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ColorRGBAImpl#getB <em>B</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ColorRGBAImpl#getA <em>A</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ColorRGBAImpl#getR <em>R</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ColorRGBAImpl#getG <em>G</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ColorRGBAImpl#getB <em>B</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ColorRGBAImpl#getA <em>A</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +30,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The default value of the '{@link #getR() <em>R</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getR()
 	 * @generated
 	 * @ordered
@@ -43,6 +41,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The cached value of the '{@link #getR() <em>R</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getR()
 	 * @generated
 	 * @ordered
@@ -53,6 +52,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The default value of the '{@link #getG() <em>G</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getG()
 	 * @generated
 	 * @ordered
@@ -63,6 +63,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The cached value of the '{@link #getG() <em>G</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getG()
 	 * @generated
 	 * @ordered
@@ -73,6 +74,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The default value of the '{@link #getB() <em>B</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getB()
 	 * @generated
 	 * @ordered
@@ -83,6 +85,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The cached value of the '{@link #getB() <em>B</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getB()
 	 * @generated
 	 * @ordered
@@ -93,6 +96,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The default value of the '{@link #getA() <em>A</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getA()
 	 * @generated
 	 * @ordered
@@ -103,6 +107,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The cached value of the '{@link #getA() <em>A</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getA()
 	 * @generated
 	 * @ordered
@@ -112,6 +117,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ColorRGBAImpl() {
@@ -121,6 +127,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,6 +138,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public float getR() {
@@ -140,18 +148,21 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setR(float newR) {
 		float oldR = r;
 		r = newR;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Std_datatypesPackage.COLOR_RGBA__R, oldR, r));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public float getG() {
@@ -161,18 +172,21 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setG(float newG) {
 		float oldG = g;
 		g = newG;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Std_datatypesPackage.COLOR_RGBA__G, oldG, g));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public float getB() {
@@ -182,18 +196,21 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setB(float newB) {
 		float oldB = b;
 		b = newB;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Std_datatypesPackage.COLOR_RGBA__B, oldB, b));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public float getA() {
@@ -203,31 +220,34 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setA(float newA) {
 		float oldA = a;
 		a = newA;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Std_datatypesPackage.COLOR_RGBA__A, oldA, a));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Std_datatypesPackage.COLOR_RGBA__R:
-				return getR();
-			case Std_datatypesPackage.COLOR_RGBA__G:
-				return getG();
-			case Std_datatypesPackage.COLOR_RGBA__B:
-				return getB();
-			case Std_datatypesPackage.COLOR_RGBA__A:
-				return getA();
+		case Std_datatypesPackage.COLOR_RGBA__R:
+			return getR();
+		case Std_datatypesPackage.COLOR_RGBA__G:
+			return getG();
+		case Std_datatypesPackage.COLOR_RGBA__B:
+			return getB();
+		case Std_datatypesPackage.COLOR_RGBA__A:
+			return getA();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -235,23 +255,24 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Std_datatypesPackage.COLOR_RGBA__R:
-				setR((Float)newValue);
-				return;
-			case Std_datatypesPackage.COLOR_RGBA__G:
-				setG((Float)newValue);
-				return;
-			case Std_datatypesPackage.COLOR_RGBA__B:
-				setB((Float)newValue);
-				return;
-			case Std_datatypesPackage.COLOR_RGBA__A:
-				setA((Float)newValue);
-				return;
+		case Std_datatypesPackage.COLOR_RGBA__R:
+			setR((Float) newValue);
+			return;
+		case Std_datatypesPackage.COLOR_RGBA__G:
+			setG((Float) newValue);
+			return;
+		case Std_datatypesPackage.COLOR_RGBA__B:
+			setB((Float) newValue);
+			return;
+		case Std_datatypesPackage.COLOR_RGBA__A:
+			setA((Float) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -259,23 +280,24 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Std_datatypesPackage.COLOR_RGBA__R:
-				setR(R_EDEFAULT);
-				return;
-			case Std_datatypesPackage.COLOR_RGBA__G:
-				setG(G_EDEFAULT);
-				return;
-			case Std_datatypesPackage.COLOR_RGBA__B:
-				setB(B_EDEFAULT);
-				return;
-			case Std_datatypesPackage.COLOR_RGBA__A:
-				setA(A_EDEFAULT);
-				return;
+		case Std_datatypesPackage.COLOR_RGBA__R:
+			setR(R_EDEFAULT);
+			return;
+		case Std_datatypesPackage.COLOR_RGBA__G:
+			setG(G_EDEFAULT);
+			return;
+		case Std_datatypesPackage.COLOR_RGBA__B:
+			setB(B_EDEFAULT);
+			return;
+		case Std_datatypesPackage.COLOR_RGBA__A:
+			setA(A_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -283,19 +305,20 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Std_datatypesPackage.COLOR_RGBA__R:
-				return r != R_EDEFAULT;
-			case Std_datatypesPackage.COLOR_RGBA__G:
-				return g != G_EDEFAULT;
-			case Std_datatypesPackage.COLOR_RGBA__B:
-				return b != B_EDEFAULT;
-			case Std_datatypesPackage.COLOR_RGBA__A:
-				return a != A_EDEFAULT;
+		case Std_datatypesPackage.COLOR_RGBA__R:
+			return r != R_EDEFAULT;
+		case Std_datatypesPackage.COLOR_RGBA__G:
+			return g != G_EDEFAULT;
+		case Std_datatypesPackage.COLOR_RGBA__B:
+			return b != B_EDEFAULT;
+		case Std_datatypesPackage.COLOR_RGBA__A:
+			return a != A_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -303,11 +326,14 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (r: ");
@@ -322,4 +348,4 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 		return result.toString();
 	}
 
-} //ColorRGBAImpl
+} // ColorRGBAImpl

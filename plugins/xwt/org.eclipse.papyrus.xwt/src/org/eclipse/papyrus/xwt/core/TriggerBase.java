@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -27,7 +27,7 @@ public abstract class TriggerBase {
 	protected TriggerAction[] exitActions;
 
 	public TriggerAction[] getEntryActions() {
-		if(entryActions == null) {
+		if (entryActions == null) {
 			return TriggerAction.EMPTY_ARRAY;
 		}
 		return entryActions;
@@ -38,7 +38,7 @@ public abstract class TriggerBase {
 	}
 
 	public TriggerAction[] getExitActions() {
-		if(exitActions == null) {
+		if (exitActions == null) {
 			return TriggerAction.EMPTY_ARRAY;
 		}
 		return exitActions;
@@ -63,21 +63,21 @@ public abstract class TriggerBase {
 		}
 
 		protected void restoreValues() {
-			if(oldvalues == null) {
+			if (oldvalues == null) {
 				return;
 			}
-			for(SetterBase setter : oldvalues.keySet()) {
+			for (SetterBase setter : oldvalues.keySet()) {
 				setter.undo(element, oldvalues.get(setter));
 			}
 		}
 	}
 
 	public static Object getElementByName(Object target, String elementName) {
-		if(elementName != null && elementName.length() > 0) {
+		if (elementName != null && elementName.length() > 0) {
 			Widget widget = UserData.getWidget(target);
-			if(widget != null) {
+			if (widget != null) {
 				Object element = XWT.findElementByName(widget, elementName);
-				if(element != null) {
+				if (element != null) {
 					return element;
 				}
 				LoggerManager.log("EventTrigger: Source \n" + elementName + "\n is not found in " + target.getClass().getName());

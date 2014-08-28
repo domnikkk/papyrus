@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Nicolas Bros (Mia-Software) - initial API and implementation
  */
@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.ModelCellEditorFactory
  * @model kind="package"
  * @generated
@@ -34,21 +34,21 @@ import org.eclipse.emf.ecore.EReference;
 public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "modelCellEditor"; //$NON-NLS-1$
 
 	/**
 	 * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/EMF_Facet/ModelCellEditor/0.1.0/modelCellEditor"; //$NON-NLS-1$
 
 	/**
 	 * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "modelCellEditor"; //$NON-NLS-1$
@@ -56,18 +56,17 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The singleton instance of the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	ModelCellEditorPackage eINSTANCE = org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorPackageImpl
 			.init();
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorDeclarationsImpl
+	 * The meta object id for the ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorDeclarationsImpl
 	 * <em>Declarations</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorDeclarationsImpl
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorPackageImpl#getModelCellEditorDeclarations()
 	 * @generated
@@ -77,7 +76,7 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Model Cell Editors</b></em>' containment
 	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -86,18 +85,17 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Declarations</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
 	int MODEL_CELL_EDITOR_DECLARATIONS_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.AbstractModelCellEditorImpl
+	 * The meta object id for the ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.AbstractModelCellEditorImpl
 	 * <em>Abstract Model Cell Editor</em>}' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.AbstractModelCellEditorImpl
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorPackageImpl#getAbstractModelCellEditor()
 	 * @generated
@@ -107,7 +105,7 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Cell Type</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -116,28 +114,26 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Cell Id</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
 	int ABSTRACT_MODEL_CELL_EDITOR__CELL_ID = 1;
 
 	/**
-	 * The number of structural features of the '
-	 * <em>Abstract Model Cell Editor</em>' class. <!-- begin-user-doc --> <!--
+	 * The number of structural features of the ' <em>Abstract Model Cell Editor</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
 	int ABSTRACT_MODEL_CELL_EDITOR_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.BasicCellEditorImpl
+	 * The meta object id for the ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.BasicCellEditorImpl
 	 * <em>Basic Cell Editor</em>}' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.BasicCellEditorImpl
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorPackageImpl#getBasicCellEditor()
 	 * @generated
@@ -147,7 +143,7 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Cell Type</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -156,7 +152,7 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Cell Id</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -165,7 +161,7 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Basic Cell Editor Impl</b></em>'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -174,18 +170,17 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Basic Cell Editor</em>'
 	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
 	int BASIC_CELL_EDITOR_FEATURE_COUNT = ModelCellEditorPackage.ABSTRACT_MODEL_CELL_EDITOR_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.UnaryReferenceCellEditorImpl
+	 * The meta object id for the ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.UnaryReferenceCellEditorImpl
 	 * <em>Unary Reference Cell Editor</em>}' class. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.UnaryReferenceCellEditorImpl
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorPackageImpl#getUnaryReferenceCellEditor()
 	 * @generated
@@ -195,7 +190,7 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Cell Type</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -204,7 +199,7 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Cell Id</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -213,28 +208,26 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Unary Reference Cell Editor Impl</b></em>'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
 	int UNARY_REFERENCE_CELL_EDITOR__UNARY_REFERENCE_CELL_EDITOR_IMPL = ModelCellEditorPackage.ABSTRACT_MODEL_CELL_EDITOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '
-	 * <em>Unary Reference Cell Editor</em>' class. <!-- begin-user-doc --> <!--
+	 * The number of structural features of the ' <em>Unary Reference Cell Editor</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
 	int UNARY_REFERENCE_CELL_EDITOR_FEATURE_COUNT = ModelCellEditorPackage.ABSTRACT_MODEL_CELL_EDITOR_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.NaryFeatureCellEditorImpl
+	 * The meta object id for the ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.NaryFeatureCellEditorImpl
 	 * <em>Nary Feature Cell Editor</em>}' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.NaryFeatureCellEditorImpl
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorPackageImpl#getNaryFeatureCellEditor()
 	 * @generated
@@ -244,7 +237,7 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Cell Type</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -253,7 +246,7 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Cell Id</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -262,27 +255,25 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Nary Feature Cell Editor Impl</b></em>'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
 	int NARY_FEATURE_CELL_EDITOR__NARY_FEATURE_CELL_EDITOR_IMPL = ModelCellEditorPackage.ABSTRACT_MODEL_CELL_EDITOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '
-	 * <em>Nary Feature Cell Editor</em>' class. <!-- begin-user-doc --> <!--
+	 * The number of structural features of the ' <em>Nary Feature Cell Editor</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
 	int NARY_FEATURE_CELL_EDITOR_FEATURE_COUNT = ModelCellEditorPackage.ABSTRACT_MODEL_CELL_EDITOR_FEATURE_COUNT + 1;
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.ModelCellEditorDeclarations
+	 * Returns the meta object for class ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.ModelCellEditorDeclarations
 	 * <em>Declarations</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Declarations</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.ModelCellEditorDeclarations
 	 * @generated
@@ -290,13 +281,11 @@ public interface ModelCellEditorPackage extends EPackage {
 	EClass getModelCellEditorDeclarations();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.ModelCellEditorDeclarations#getModelCellEditors
+	 * Returns the meta object for the containment reference list ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.ModelCellEditorDeclarations#getModelCellEditors
 	 * <em>Model Cell Editors</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
-	 * @return the meta object for the containment reference list '
-	 *         <em>Model Cell Editors</em>'.
+	 *
+	 * @return the meta object for the containment reference list ' <em>Model Cell Editors</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.ModelCellEditorDeclarations#getModelCellEditors()
 	 * @see #getModelCellEditorDeclarations()
 	 * @generated
@@ -304,11 +293,10 @@ public interface ModelCellEditorPackage extends EPackage {
 	EReference getModelCellEditorDeclarations_ModelCellEditors();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.AbstractModelCellEditor
+	 * Returns the meta object for class ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.AbstractModelCellEditor
 	 * <em>Abstract Model Cell Editor</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Abstract Model Cell Editor</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.AbstractModelCellEditor
 	 * @generated
@@ -316,10 +304,9 @@ public interface ModelCellEditorPackage extends EPackage {
 	EClass getAbstractModelCellEditor();
 
 	/**
-	 * Returns the meta object for the reference '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.AbstractModelCellEditor#getCellType
+	 * Returns the meta object for the reference ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.AbstractModelCellEditor#getCellType
 	 * <em>Cell Type</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Cell Type</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.AbstractModelCellEditor#getCellType()
 	 * @see #getAbstractModelCellEditor()
@@ -328,10 +315,9 @@ public interface ModelCellEditorPackage extends EPackage {
 	EReference getAbstractModelCellEditor_CellType();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.AbstractModelCellEditor#getCellId
+	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.AbstractModelCellEditor#getCellId
 	 * <em>Cell Id</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Cell Id</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.AbstractModelCellEditor#getCellId()
 	 * @see #getAbstractModelCellEditor()
@@ -340,11 +326,10 @@ public interface ModelCellEditorPackage extends EPackage {
 	EAttribute getAbstractModelCellEditor_CellId();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.BasicCellEditor
+	 * Returns the meta object for class ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.BasicCellEditor
 	 * <em>Basic Cell Editor</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Basic Cell Editor</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.BasicCellEditor
 	 * @generated
@@ -352,13 +337,11 @@ public interface ModelCellEditorPackage extends EPackage {
 	EClass getBasicCellEditor();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.BasicCellEditor#getBasicCellEditorImpl
+	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.BasicCellEditor#getBasicCellEditorImpl
 	 * <em>Basic Cell Editor Impl</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '
-	 *         <em>Basic Cell Editor Impl</em>'.
+	 *
+	 * @return the meta object for the attribute ' <em>Basic Cell Editor Impl</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.BasicCellEditor#getBasicCellEditorImpl()
 	 * @see #getBasicCellEditor()
 	 * @generated
@@ -366,11 +349,10 @@ public interface ModelCellEditorPackage extends EPackage {
 	EAttribute getBasicCellEditor_BasicCellEditorImpl();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.UnaryReferenceCellEditor
+	 * Returns the meta object for class ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.UnaryReferenceCellEditor
 	 * <em>Unary Reference Cell Editor</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Unary Reference Cell Editor</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.UnaryReferenceCellEditor
 	 * @generated
@@ -378,13 +360,11 @@ public interface ModelCellEditorPackage extends EPackage {
 	EClass getUnaryReferenceCellEditor();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.UnaryReferenceCellEditor#getUnaryReferenceCellEditorImpl
+	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.UnaryReferenceCellEditor#getUnaryReferenceCellEditorImpl
 	 * <em>Unary Reference Cell Editor Impl</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '
-	 *         <em>Unary Reference Cell Editor Impl</em>'.
+	 *
+	 * @return the meta object for the attribute ' <em>Unary Reference Cell Editor Impl</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.UnaryReferenceCellEditor#getUnaryReferenceCellEditorImpl()
 	 * @see #getUnaryReferenceCellEditor()
 	 * @generated
@@ -392,11 +372,10 @@ public interface ModelCellEditorPackage extends EPackage {
 	EAttribute getUnaryReferenceCellEditor_UnaryReferenceCellEditorImpl();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.NaryFeatureCellEditor
+	 * Returns the meta object for class ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.NaryFeatureCellEditor
 	 * <em>Nary Feature Cell Editor</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Nary Feature Cell Editor</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.NaryFeatureCellEditor
 	 * @generated
@@ -404,13 +383,11 @@ public interface ModelCellEditorPackage extends EPackage {
 	EClass getNaryFeatureCellEditor();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.NaryFeatureCellEditor#getNaryFeatureCellEditorImpl
+	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.NaryFeatureCellEditor#getNaryFeatureCellEditorImpl
 	 * <em>Nary Feature Cell Editor Impl</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '
-	 *         <em>Nary Feature Cell Editor Impl</em>'.
+	 *
+	 * @return the meta object for the attribute ' <em>Nary Feature Cell Editor Impl</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.NaryFeatureCellEditor#getNaryFeatureCellEditorImpl()
 	 * @see #getNaryFeatureCellEditor()
 	 * @generated
@@ -420,7 +397,7 @@ public interface ModelCellEditorPackage extends EPackage {
 	/**
 	 * Returns the factory that creates the instances of the model. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -436,16 +413,15 @@ public interface ModelCellEditorPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorDeclarationsImpl
+		 * The meta object literal for the ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorDeclarationsImpl
 		 * <em>Declarations</em>}' class. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorDeclarationsImpl
 		 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorPackageImpl#getModelCellEditorDeclarations()
 		 * @generated
@@ -457,18 +433,17 @@ public interface ModelCellEditorPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Model Cell Editors</b></em>'
 		 * containment reference list feature. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MODEL_CELL_EDITOR_DECLARATIONS__MODEL_CELL_EDITORS = ModelCellEditorPackage.eINSTANCE
 				.getModelCellEditorDeclarations_ModelCellEditors();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.AbstractModelCellEditorImpl
+		 * The meta object literal for the ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.AbstractModelCellEditorImpl
 		 * <em>Abstract Model Cell Editor</em>}' class. <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.AbstractModelCellEditorImpl
 		 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorPackageImpl#getAbstractModelCellEditor()
 		 * @generated
@@ -479,7 +454,7 @@ public interface ModelCellEditorPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Cell Type</b></em>' reference
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ABSTRACT_MODEL_CELL_EDITOR__CELL_TYPE = ModelCellEditorPackage.eINSTANCE
@@ -488,18 +463,17 @@ public interface ModelCellEditorPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Cell Id</b></em>' attribute
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ABSTRACT_MODEL_CELL_EDITOR__CELL_ID = ModelCellEditorPackage.eINSTANCE
 				.getAbstractModelCellEditor_CellId();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.BasicCellEditorImpl
+		 * The meta object literal for the ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.BasicCellEditorImpl
 		 * <em>Basic Cell Editor</em>}' class. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.BasicCellEditorImpl
 		 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorPackageImpl#getBasicCellEditor()
 		 * @generated
@@ -507,21 +481,19 @@ public interface ModelCellEditorPackage extends EPackage {
 		EClass BASIC_CELL_EDITOR = ModelCellEditorPackage.eINSTANCE.getBasicCellEditor();
 
 		/**
-		 * The meta object literal for the '
-		 * <em><b>Basic Cell Editor Impl</b></em>' attribute feature. <!--
+		 * The meta object literal for the ' <em><b>Basic Cell Editor Impl</b></em>' attribute feature. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute BASIC_CELL_EDITOR__BASIC_CELL_EDITOR_IMPL = ModelCellEditorPackage.eINSTANCE
 				.getBasicCellEditor_BasicCellEditorImpl();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.UnaryReferenceCellEditorImpl
+		 * The meta object literal for the ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.UnaryReferenceCellEditorImpl
 		 * <em>Unary Reference Cell Editor</em>}' class. <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.UnaryReferenceCellEditorImpl
 		 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorPackageImpl#getUnaryReferenceCellEditor()
 		 * @generated
@@ -530,21 +502,19 @@ public interface ModelCellEditorPackage extends EPackage {
 				.getUnaryReferenceCellEditor();
 
 		/**
-		 * The meta object literal for the '
-		 * <em><b>Unary Reference Cell Editor Impl</b></em>' attribute feature.
+		 * The meta object literal for the ' <em><b>Unary Reference Cell Editor Impl</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute UNARY_REFERENCE_CELL_EDITOR__UNARY_REFERENCE_CELL_EDITOR_IMPL = ModelCellEditorPackage.eINSTANCE
 				.getUnaryReferenceCellEditor_UnaryReferenceCellEditorImpl();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.NaryFeatureCellEditorImpl
+		 * The meta object literal for the ' {@link org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.NaryFeatureCellEditorImpl
 		 * <em>Nary Feature Cell Editor</em>}' class. <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.NaryFeatureCellEditorImpl
 		 * @see org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.impl.ModelCellEditorPackageImpl#getNaryFeatureCellEditor()
 		 * @generated
@@ -553,10 +523,9 @@ public interface ModelCellEditorPackage extends EPackage {
 				.getNaryFeatureCellEditor();
 
 		/**
-		 * The meta object literal for the '
-		 * <em><b>Nary Feature Cell Editor Impl</b></em>' attribute feature.
+		 * The meta object literal for the ' <em><b>Nary Feature Cell Editor Impl</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute NARY_FEATURE_CELL_EDITOR__NARY_FEATURE_CELL_EDITOR_IMPL = ModelCellEditorPackage.eINSTANCE

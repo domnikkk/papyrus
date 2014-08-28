@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * This dialog adds a checkbox at the end of the {@link MultipleValueSelectorDialog}
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class MultipleValueSelectorDialogWithCheckBox extends MultipleValueSelectorDialog {
 
@@ -41,9 +41,9 @@ public class MultipleValueSelectorDialogWithCheckBox extends MultipleValueSelect
 	protected boolean displayCheckBox = true;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 * @param selector
 	 * @param unique
@@ -53,9 +53,9 @@ public class MultipleValueSelectorDialogWithCheckBox extends MultipleValueSelect
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 * @param selector
 	 * @param title
@@ -68,9 +68,9 @@ public class MultipleValueSelectorDialogWithCheckBox extends MultipleValueSelect
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 * @param selector
 	 * @param title
@@ -82,9 +82,9 @@ public class MultipleValueSelectorDialogWithCheckBox extends MultipleValueSelect
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 * @param selector
 	 * @param title
@@ -94,9 +94,9 @@ public class MultipleValueSelectorDialogWithCheckBox extends MultipleValueSelect
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 * @param selector
 	 */
@@ -105,13 +105,13 @@ public class MultipleValueSelectorDialogWithCheckBox extends MultipleValueSelect
 	}
 
 	/**
-	 * 
+	 *
 	 * @param text
-	 *        the text to display near the checkbox
+	 *            the text to display near the checkbox
 	 * @param tooltip
-	 *        the tooltip to display for the checkbox
+	 *            the tooltip to display for the checkbox
 	 * @param isChecked
-	 *        the initial state of the checkbox
+	 *            the initial state of the checkbox
 	 */
 	public void setCheckBoxValues(final String text, final String tooltip, final boolean isChecked) {
 		this.text = text;
@@ -127,7 +127,7 @@ public class MultipleValueSelectorDialogWithCheckBox extends MultipleValueSelect
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         <code>true</code> if the disalog is displaying the checkbox
 	 */
@@ -137,14 +137,14 @@ public class MultipleValueSelectorDialogWithCheckBox extends MultipleValueSelect
 
 	/**
 	 * We Add a checkbox at the end of the dialog
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.editors.MultipleValueSelectorDialog#createDialogContents()
-	 * 
+	 *
 	 */
 	@Override
 	protected void createDialogContents() {
 		super.createDialogContents();
-		if(this.displayCheckBox) {
+		if (this.displayCheckBox) {
 			final Composite parent = getDialogArea();
 			final Button button = new Button(parent, SWT.CHECK);
 			button.setText(this.text);
@@ -152,10 +152,12 @@ public class MultipleValueSelectorDialogWithCheckBox extends MultipleValueSelect
 			button.setSelection(this.isChecked);
 			final SelectionListener listener = new SelectionListener() {
 
+				@Override
 				public void widgetSelected(SelectionEvent e) {
 					isChecked = button.getSelection();
 				}
 
+				@Override
 				public void widgetDefaultSelected(SelectionEvent e) {
 				}
 			};
@@ -165,7 +167,7 @@ public class MultipleValueSelectorDialogWithCheckBox extends MultipleValueSelect
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the state of the checkbox button
 	 */

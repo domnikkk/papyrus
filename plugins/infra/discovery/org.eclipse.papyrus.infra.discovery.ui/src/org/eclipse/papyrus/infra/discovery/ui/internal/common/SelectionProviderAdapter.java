@@ -24,7 +24,7 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 /**
  * Provides an simple implementation of {@link ISelectionProvider} that propagates selection events to registered
  * listeners.
- * 
+ *
  * @author Steffen Pingel
  */
 public class SelectionProviderAdapter extends EventManager implements ISelectionProvider, ISelectionChangedListener {
@@ -33,7 +33,7 @@ public class SelectionProviderAdapter extends EventManager implements ISelection
 
 	/**
 	 * Constructs a <code>SelectionProviderAdapter</code> and initializes the selection to <code>selection</code>.
-	 * 
+	 *
 	 * @param selection
 	 *            the initial selection
 	 * @see #setSelection(ISelection)

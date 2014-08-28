@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest;
 
 /**
  * Abstract Command used for base command for all command that use {@link ControlModeRequest}
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public abstract class AbstractControlCommand extends AbstractTransactionalCommand {
 
@@ -48,7 +48,7 @@ public abstract class AbstractControlCommand extends AbstractTransactionalComman
 
 	/**
 	 * Utils method used to create error during command
-	 * 
+	 *
 	 * @param message
 	 * @return
 	 */

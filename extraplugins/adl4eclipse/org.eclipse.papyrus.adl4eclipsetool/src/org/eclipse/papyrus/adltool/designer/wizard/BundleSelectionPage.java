@@ -1,8 +1,7 @@
-
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,32 +31,33 @@ import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
 
 /**
- * aGUI in order to select a set of bundle from a list 
+ * aGUI in order to select a set of bundle from a list
  *
  */
 public class BundleSelectionPage extends WizardPage {
 	/**
-	 * the graphical tree 
+	 * the graphical tree
 	 */
 	protected Tree elementTree;
 	protected ArrayList<?> bundleList;
 	protected ArrayList<Object> selectedBundleList;
-	protected BundleLabelProvider bundleLabelProvider= new BundleLabelProvider();
+	protected BundleLabelProvider bundleLabelProvider = new BundleLabelProvider();
 
 	private Composite comp;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
-	 * @param bundleList the list of bundle to display
+	 * @param bundleList
+	 *            the list of bundle to display
 	 */
 	public BundleSelectionPage(ArrayList<?> bundleList) {
 		super("BundleSelection");
 		setTitle("Bundle Selection");
 		setDescription("Select bundles to create the architecture model.");
-		this.bundleList=bundleList;
-		this.selectedBundleList= new ArrayList<Object>();
+		this.bundleList = bundleList;
+		this.selectedBundleList = new ArrayList<Object>();
 	}
 
 	public void createControl(Composite parent) {
@@ -88,15 +88,15 @@ public class BundleSelectionPage extends WizardPage {
 				deselectAll();
 			}
 
-			
+
 		});
 
-		
-		
-		if(bundleList != null) {
+
+
+		if (bundleList != null) {
 
 			Iterator<?> it = bundleList.iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				Object current = it.next();
 				createTreeItem(current);
 			}
@@ -105,17 +105,17 @@ public class BundleSelectionPage extends WizardPage {
 		elementTree.addListener(SWT.Selection, new Listener() {
 
 			public void handleEvent(Event event) {
-				if(event.detail == SWT.CHECK) {
-					if(selectedBundleList.contains(event.item.getData())) {
+				if (event.detail == SWT.CHECK) {
+					if (selectedBundleList.contains(event.item.getData())) {
 						selectedBundleList.remove(event.item.getData());
 
 					} else {
 						selectedBundleList.add(event.item.getData());
 					}
-					if(selectedBundleList.size()>0){
+					if (selectedBundleList.size() > 0) {
 						setPageComplete(true);
 					}
-					else{
+					else {
 						setPageComplete(false);
 					}
 				}
@@ -131,25 +131,27 @@ public class BundleSelectionPage extends WizardPage {
 
 	protected void selectAll() {
 		selectedBundleList.clear();
-		for(int i = 0; i < elementTree.getItems().length; i++) {
+		for (int i = 0; i < elementTree.getItems().length; i++) {
 			elementTree.getItems()[i].setChecked(true);
 			selectedBundleList.add(elementTree.getItems()[i].getData());
-			
+
 		}
 		setPageComplete(true);
-		
+
 	}
+
 	protected void deselectAll() {
-		for(int i = 0; i < elementTree.getItems().length; i++) {
+		for (int i = 0; i < elementTree.getItems().length; i++) {
 			elementTree.getItems()[i].setChecked(false);
 		}
-		
-			selectedBundleList.clear();
-			setPageComplete(false);
+
+		selectedBundleList.clear();
+		setPageComplete(false);
 	}
 
 	/**
 	 * create an item that represent the bundle
+	 *
 	 * @param _package
 	 */
 	private void createTreeItem(Object bundle) {
@@ -161,11 +163,11 @@ public class BundleSelectionPage extends WizardPage {
 
 	/**
 	 * Returns the elements to import.
-	 * 
+	 *
 	 * @return the set of selected bundle
 	 */
 	public ArrayList<Object> getResult() {
 		return selectedBundleList;
 	}
 
-} 
+}

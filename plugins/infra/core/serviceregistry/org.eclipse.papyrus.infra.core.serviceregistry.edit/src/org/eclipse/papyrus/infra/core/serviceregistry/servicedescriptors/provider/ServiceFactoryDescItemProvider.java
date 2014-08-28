@@ -8,25 +8,24 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceFactoryDesc;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceFactoryDesc} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class ServiceFactoryDescItemProvider
-	extends ServiceDescItemProvider
-	implements
+		extends ServiceDescItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -36,6 +35,7 @@ public class ServiceFactoryDescItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ServiceFactoryDescItemProvider(AdapterFactory adapterFactory) {
@@ -46,6 +46,7 @@ public class ServiceFactoryDescItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -61,6 +62,7 @@ public class ServiceFactoryDescItemProvider
 	 * This returns ServiceFactoryDesc.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,14 +74,15 @@ public class ServiceFactoryDescItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ServiceFactoryDesc)object).getName();
+		String label = ((ServiceFactoryDesc) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ServiceFactoryDesc_type") :
-			getString("_UI_ServiceFactoryDesc_type") + " " + label;
+				getString("_UI_ServiceFactoryDesc_type") :
+				getString("_UI_ServiceFactoryDesc_type") + " " + label;
 	}
 
 	/**
@@ -87,6 +90,7 @@ public class ServiceFactoryDescItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,6 +104,7 @@ public class ServiceFactoryDescItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

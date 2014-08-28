@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - support pluggable edit-part conflict detection (CDO)
  *  Céline Janssens (ALL4TEC) - Override getDragTracker with the PapyrusRubberbandDragTracker
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.editpart;
 
@@ -40,7 +40,7 @@ public class PapyrusDiagramEditPart extends DiagramEditPart {
 
 	@Override
 	protected void removeChild(EditPart child) {
-		if(!getConflictingEditPartFilter().isConflicting(child)) {
+		if (!getConflictingEditPartFilter().isConflicting(child)) {
 			super.removeChild(child);
 		}
 	}
@@ -56,6 +56,7 @@ public class PapyrusDiagramEditPart extends DiagramEditPart {
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart#createDefaultEditPolicies()
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, new XYLayoutWithConstrainedResizedEditPolicy());
@@ -71,7 +72,7 @@ public class PapyrusDiagramEditPart extends DiagramEditPart {
 	public DragTracker getDragTracker(Request req) {
 
 		// In case of new selection and right-click deselect previous trackers
-		if(req instanceof SelectionRequest && ((SelectionRequest)req).getLastButtonPressed() == RIGHT_MOUSE_BUTTON) {
+		if (req instanceof SelectionRequest && ((SelectionRequest) req).getLastButtonPressed() == RIGHT_MOUSE_BUTTON) {
 			return new DeselectAllTracker(this);
 		}
 

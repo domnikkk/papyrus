@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -68,30 +68,30 @@ import org.eclipse.uml2.uml.MessageEnd;
 /**
  * 1. Create a Lifeline if the target of Message Created is not selected.
  * See: https://bugs.eclipse.org/bugs/show_bug.cgi?id=403134
- * 
+ *
  * 2. Redirect the source from CombinedFragment, Interaction and InteractionUse to a Graphical Gate.
  * See: https://bugs.eclipse.org/bugs/show_bug.cgi?id=389531
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class InteractionGraphicalNodeEditPolicy extends GatesHolderGraphicalNodeEditPolicy {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public InteractionGraphicalNodeEditPolicy() {
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.policies.SequenceGraphicalNodeEditPolicy#getTargetEditPart(org.eclipse.gef.Request)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	public EditPart getTargetEditPart(Request request) {
-		if(REQ_CONNECTION_END.equals(request.getType()) && isCreateConnectionRequest(request, UMLElementTypes.Message_4006)) {
+		if (REQ_CONNECTION_END.equals(request.getType()) && isCreateConnectionRequest(request, UMLElementTypes.Message_4006)) {
 			return getHost();
 		}
 		return super.getTargetEditPart(request);
@@ -99,66 +99,67 @@ public class InteractionGraphicalNodeEditPolicy extends GatesHolderGraphicalNode
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy#getCommand(org.eclipse.gef.Request)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	public Command getCommand(Request request) {
-		if(REQ_CONNECTION_END.equals(request.getType()) && isCreateConnectionRequest(request, UMLElementTypes.Message_4006)) {
-			return getMessageCreateAndLifelineCommands((CreateConnectionRequest)request);
-		} else if(REQ_CONNECTION_START.equals(request.getType()) && request instanceof CreateConnectionRequest) {
-			//Fixed bug about mapping source location for creating a Gate.
-			request.getExtendedData().put(SequenceRequestConstant.SOURCE_LOCATION_DATA, ((CreateConnectionRequest)request).getLocation());
+		if (REQ_CONNECTION_END.equals(request.getType()) && isCreateConnectionRequest(request, UMLElementTypes.Message_4006)) {
+			return getMessageCreateAndLifelineCommands((CreateConnectionRequest) request);
+		} else if (REQ_CONNECTION_START.equals(request.getType()) && request instanceof CreateConnectionRequest) {
+			// Fixed bug about mapping source location for creating a Gate.
+			request.getExtendedData().put(SequenceRequestConstant.SOURCE_LOCATION_DATA, ((CreateConnectionRequest) request).getLocation());
 		}
 		return super.getCommand(request);
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.policies.SequenceGraphicalNodeEditPolicy#getConnectionCompleteCommand(org.eclipse.gef.requests.CreateConnectionRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	protected Command getConnectionCompleteCommand(CreateConnectionRequest request) {
 		Command command = super.getConnectionCompleteCommand(request);
-		if(command != null && command.canExecute() && REQ_CONNECTION_END.equals(request.getType()) && isCreateConnectionRequest(request, UMLElementTypes.Message_4008)) {
+		if (command != null && command.canExecute() && REQ_CONNECTION_END.equals(request.getType()) && isCreateConnectionRequest(request, UMLElementTypes.Message_4008)) {
 			EditPart sourceEditPart = request.getSourceEditPart();
-			EObject source = ViewUtil.resolveSemanticElement((View)sourceEditPart.getModel());
-			//ignore CoRegion
-			if(!(sourceEditPart instanceof CombinedFragment2EditPart) && (source instanceof CombinedFragment || source instanceof Interaction || source instanceof InteractionUse)) {
+			EObject source = ViewUtil.resolveSemanticElement((View) sourceEditPart.getModel());
+			// ignore CoRegion
+			if (!(sourceEditPart instanceof CombinedFragment2EditPart) && (source instanceof CombinedFragment || source instanceof Interaction || source instanceof InteractionUse)) {
 				Point location = null;
-				IGraphicalEditPart adapter = (IGraphicalEditPart)sourceEditPart.getAdapter(IGraphicalEditPart.class);
+				IGraphicalEditPart adapter = (IGraphicalEditPart) sourceEditPart.getAdapter(IGraphicalEditPart.class);
 				TransactionalEditingDomain editingDomain = null;
-				if(adapter != null) {
+				if (adapter != null) {
 					location = GateHelper.computeGateLocation(request.getLocation(), adapter.getFigure(), null);
 					editingDomain = adapter.getEditingDomain();
 				}
 				ConnectionViewDescriptor edgeAdaptor = null;
-				if(request instanceof CreateConnectionViewRequest) {
-					edgeAdaptor = ((CreateConnectionViewRequest)request).getConnectionViewDescriptor();
-				} else if(request instanceof CreateUnspecifiedTypeConnectionRequest) {
-					List elementTypes = ((CreateUnspecifiedTypeConnectionRequest)request).getElementTypes();
-					if(elementTypes.size() == 1) {
-						CreateRequest realRequest = ((CreateUnspecifiedTypeConnectionRequest)request).getRequestForType((IElementType)elementTypes.get(0));
-						if(realRequest instanceof CreateConnectionViewRequest) {
-							edgeAdaptor = ((CreateConnectionViewRequest)realRequest).getConnectionViewDescriptor();
+				if (request instanceof CreateConnectionViewRequest) {
+					edgeAdaptor = ((CreateConnectionViewRequest) request).getConnectionViewDescriptor();
+				} else if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
+					List elementTypes = ((CreateUnspecifiedTypeConnectionRequest) request).getElementTypes();
+					if (elementTypes.size() == 1) {
+						CreateRequest realRequest = ((CreateUnspecifiedTypeConnectionRequest) request).getRequestForType((IElementType) elementTypes.get(0));
+						if (realRequest instanceof CreateConnectionViewRequest) {
+							edgeAdaptor = ((CreateConnectionViewRequest) realRequest).getConnectionViewDescriptor();
 						}
 					}
 				}
-				if(edgeAdaptor != null) {
+				if (edgeAdaptor != null) {
 					final IAdaptable elementAdapter = edgeAdaptor.getElementAdapter();
-					if(elementAdapter != null) {
+					if (elementAdapter != null) {
 						CompoundCommand cc = new CompoundCommand("Redirect to Gate");
 						cc.add(command);
 						IAdaptable gateAdaptor = new IAdaptable() {
 
+							@Override
 							public Object getAdapter(Class adapter) {
-								if(Gate.class == adapter) {
-									Message message = (Message)elementAdapter.getAdapter(Message.class);
+								if (Gate.class == adapter) {
+									Message message = (Message) elementAdapter.getAdapter(Message.class);
 									MessageEnd sendEvent = message.getSendEvent();
-									if(sendEvent instanceof Gate) {
+									if (sendEvent instanceof Gate) {
 										return sendEvent;
 									}
 								}
@@ -184,13 +185,13 @@ public class InteractionGraphicalNodeEditPolicy extends GatesHolderGraphicalNode
 	}
 
 	protected Command getMessageCreateAndLifelineCommands(CreateConnectionRequest request) {
-		InteractionEditPart iep = (InteractionEditPart)getHost();
+		InteractionEditPart iep = (InteractionEditPart) getHost();
 		IGraphicalEditPart container = iep.getChildBySemanticHint("" + InteractionInteractionCompartmentEditPart.VISUAL_ID);
 		CompoundCommand cc = new CompoundCommand(DiagramUIMessages.Command_CreateRelationship_Label);
-		//1. Create a Lifeline.
+		// 1. Create a Lifeline.
 		CreateViewAndOptionallyElementCommand createOtherEndCmd = new CreateViewAndOptionallyElementCommand(UMLElementTypes.Lifeline_3001, container, request.getLocation(), iep.getDiagramPreferencesHint());
 		cc.add(new ICommandProxy(createOtherEndCmd));
-		//2. Create message to the Lifeline.
+		// 2. Create message to the Lifeline.
 		ICommand connectionCmd = new CreateMessageCreateWithLifelineCommand(request, UMLElementTypes.Message_4006, request.getSourceEditPart(), createOtherEndCmd.getResult(), iep.getViewer());
 		cc.add(new ICommandProxy(connectionCmd));
 		return cc;
@@ -198,12 +199,12 @@ public class InteractionGraphicalNodeEditPolicy extends GatesHolderGraphicalNode
 
 	/**
 	 * This class is copied from DeferredCreateConnectionViewAndElementCommand.
-	 * 
+	 *
 	 * But to fixed bugs about creating Message:
-	 * 
+	 *
 	 * 1. Set the location for CreateConnectionViewRequest with created Lifeline.
 	 * 2. Update targetContainer with created Lifeline.
-	 * 
+	 *
 	 * @author Jin Liu (jin.liu@soyatec.com)
 	 */
 	private static class CreateMessageCreateWithLifelineCommand extends AbstractCommand {
@@ -230,13 +231,14 @@ public class InteractionGraphicalNodeEditPolicy extends GatesHolderGraphicalNode
 			this.viewer = currentViewer;
 		}
 
+		@Override
 		@SuppressWarnings("rawtypes")
 		public List getAffectedFiles() {
-			if(viewer != null) {
+			if (viewer != null) {
 				EditPart editpart = viewer.getRootEditPart().getContents();
-				if(editpart instanceof IGraphicalEditPart) {
-					View view = (View)editpart.getModel();
-					if(view != null) {
+				if (editpart instanceof IGraphicalEditPart) {
+					View view = (View) editpart.getModel();
+					if (view != null) {
 						IFile f = WorkspaceSynchronizer.getFile(view.eResource());
 						return f != null ? Collections.singletonList(f) : Collections.EMPTY_LIST;
 					}
@@ -245,10 +247,12 @@ public class InteractionGraphicalNodeEditPolicy extends GatesHolderGraphicalNode
 			return super.getAffectedFiles();
 		}
 
+		@Override
 		public boolean canUndo() {
 			return command != null && command.canUndo();
 		}
 
+		@Override
 		public boolean canRedo() {
 			return CommandUtilities.canRedo(command);
 		}
@@ -256,73 +260,79 @@ public class InteractionGraphicalNodeEditPolicy extends GatesHolderGraphicalNode
 		/**
 		 * gives access to the connection source edit part, which is the edit part
 		 * of the connection's source <code>View</code>
-		 * 
+		 *
 		 * @return the source edit part
 		 */
 		protected EditPart getSourceEditPart() {
-			return (IGraphicalEditPart)viewer.getEditPartRegistry().get(sourceViewAdapter.getAdapter(View.class));
+			return (IGraphicalEditPart) viewer.getEditPartRegistry().get(sourceViewAdapter.getAdapter(View.class));
 		}
 
 		/**
 		 * gives access to the connection target edit part, which is the edit part
 		 * of the connection's target <code>View</code>
-		 * 
+		 *
 		 * @return the source edit part
 		 */
 		protected EditPart getTargetEditPart() {
-			return (IGraphicalEditPart)viewer.getEditPartRegistry().get(targetViewAdapter.getAdapter(View.class));
+			return (IGraphicalEditPart) viewer.getEditPartRegistry().get(targetViewAdapter.getAdapter(View.class));
 		}
 
+		@Override
 		public boolean canExecute() {
-			if(!(request instanceof CreateConnectionViewRequest) && !(request instanceof CreateUnspecifiedTypeConnectionRequest))
+			if (!(request instanceof CreateConnectionViewRequest) && !(request instanceof CreateUnspecifiedTypeConnectionRequest)) {
 				return false;
-			if(request instanceof CreateUnspecifiedTypeConnectionRequest) {
-				if(typeInfoAdapter == null)
+			}
+			if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
+				if (typeInfoAdapter == null) {
 					return false;
-				final IElementType typeInfo = (IElementType)typeInfoAdapter.getAdapter(IElementType.class);
-				if(typeInfo != null) {
-					if(((CreateUnspecifiedTypeConnectionRequest)request).getRequestForType(typeInfo) == null)
+				}
+				final IElementType typeInfo = (IElementType) typeInfoAdapter.getAdapter(IElementType.class);
+				if (typeInfo != null) {
+					if (((CreateUnspecifiedTypeConnectionRequest) request).getRequestForType(typeInfo) == null) {
 						return false;
+					}
 				}
 			}
 			return true;
 		}
 
+		@Override
 		@SuppressWarnings({ "restriction", "unchecked" })
 		protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 			CreateConnectionViewRequest req = null;
-			if(request != null) {
-				if(request instanceof CreateConnectionViewRequest) {
-					req = (CreateConnectionViewRequest)request;
+			if (request != null) {
+				if (request instanceof CreateConnectionViewRequest) {
+					req = (CreateConnectionViewRequest) request;
 				}
 			} else {
 				return CommandResult.newErrorCommandResult(getLabel());
 			}
-			if(typeInfoAdapter != null) {
-				IElementType typeInfo = (IElementType)typeInfoAdapter.getAdapter(IElementType.class);
-				if(typeInfo == null) {
+			if (typeInfoAdapter != null) {
+				IElementType typeInfo = (IElementType) typeInfoAdapter.getAdapter(IElementType.class);
+				if (typeInfo == null) {
 					return CommandResult.newErrorCommandResult(getLabel());
 				}
-				if(request instanceof CreateUnspecifiedTypeConnectionRequest) {
-					req = ((CreateConnectionViewRequest)((CreateUnspecifiedTypeConnectionRequest)request).getRequestForType(typeInfo));
+				if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
+					req = ((CreateConnectionViewRequest) ((CreateUnspecifiedTypeConnectionRequest) request).getRequestForType(typeInfo));
 				}
 			}
 			// Suppressing UI if the target edit part has not been created yet
 			// this is so that if we are creating a new target the connection
 			// creation will just take default data instead of prompting
 			// For Defect RATLC00524293
-			if(targetViewAdapter.getAdapter(IGraphicalEditPart.class) == null && req instanceof SuppressibleUIRequest)
-				((SuppressibleUIRequest)req).setSuppressibleUI(true);
+			if (targetViewAdapter.getAdapter(IGraphicalEditPart.class) == null && req instanceof SuppressibleUIRequest) {
+				((SuppressibleUIRequest) req).setSuppressibleUI(true);
+			}
 			EditPart sourceEP = getSourceEditPart();
 			EditPart targetEP = getTargetEditPart();
-			//			if(targetEP instanceof IGraphicalEditPart) {
-			//				Rectangle absoluteBounds = SequenceUtil.getAbsoluteBounds((IGraphicalEditPart)targetEP);
-			//				if(absoluteBounds != null) {
-			//					req.setLocation(absoluteBounds.getLocation());
-			//				}
-			//			} else {
-			//				req.setLocation(null);
-			//			}
+			// if(targetEP instanceof IGraphicalEditPart) {
+			// Rectangle absoluteBounds = SequenceUtil.getAbsoluteBounds((IGraphicalEditPart)targetEP);
+			// if(absoluteBounds != null) {
+			// req.setLocation(absoluteBounds.getLocation());
+			// }
+			// } else {
+			// req.setLocation(null);
+			// }
 			// There are situations where src or target can be null and we must
 			// check for these
 			// ie. When a Select Existing Dialog is presnetd to the user and the
@@ -331,41 +341,45 @@ public class InteractionGraphicalNodeEditPolicy extends GatesHolderGraphicalNode
 			// So the following assertions have been replaced with a check for null
 			// on the editparts.
 			// old code ... Assert.isNotNull(sourceEP); Assert.isNotNull(targetEP);
-			if((sourceEP == null) || (targetEP == null))
+			if ((sourceEP == null) || (targetEP == null)) {
 				return null;
-			if(req instanceof CreateConnectionViewAndElementRequest) {
+			}
+			if (req instanceof CreateConnectionViewAndElementRequest) {
 				req.getExtendedData().put(SequenceRequestConstant.TARGET_MODEL_CONTAINER, SequenceUtil.findInteractionFragmentContainerAt(req.getLocation(), getTargetEditPart()));
-				command = CreateConnectionViewAndElementRequest.getCreateCommand(req, sourceEP, targetEP);
+				command = CreateConnectionViewRequest.getCreateCommand(req, sourceEP, targetEP);
 			} else {
 				command = CreateConnectionViewRequest.getCreateCommand(req, sourceEP, targetEP);
 			}
-			if(command != null && command.canExecute()) {
+			if (command != null && command.canExecute()) {
 				command.execute();
 			}
 			viewer = null;// for garbage collection
-			View view = (View)req.getConnectionViewDescriptor().getAdapter(View.class);
-			if(null == view) {
+			View view = (View) req.getConnectionViewDescriptor().getAdapter(View.class);
+			if (null == view) {
 				return CommandResult.newCancelledCommandResult();
 			}
 			return CommandResult.newOKCommandResult(req.getNewObject());
 		}
 
+		@Override
 		public String getLabel() {
-			if(command != null) {
+			if (command != null) {
 				return command.getLabel();
 			}
 			return null;
 		}
 
+		@Override
 		protected CommandResult doRedoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-			if(command != null) {
+			if (command != null) {
 				command.redo();
 			}
 			return CommandResult.newOKCommandResult();
 		}
 
+		@Override
 		protected CommandResult doUndoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-			if(command != null) {
+			if (command != null) {
 				command.undo();
 			}
 			return CommandResult.newOKCommandResult();

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,16 +9,19 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC) - Initial API and implementation
  /*****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.component.custom.command;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
@@ -31,21 +34,24 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.uml.diagram.common.dialogs.NewElementRepresentation;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.papyrus.uml.diagram.component.providers.UMLViewProvider;
-import org.eclipse.uml2.uml.Interface;
 
 /**
  * this class is used to create the lollipop interface from a port
  *
  */
 public class CreateLollipopPortCommand extends RecordingCommand {
-	protected ArrayList<Interface> providedInterface = new ArrayList<Interface>();
-	protected ArrayList<Interface> requiredInterface = new ArrayList<Interface>();
+
+	protected List<Object> providedInterface = new ArrayList<Object>();
+
+	protected List<Object> requiredInterface = new ArrayList<Object>();
+
 	protected PortEditPart porteditPart = null;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param domain
@@ -57,7 +63,7 @@ public class CreateLollipopPortCommand extends RecordingCommand {
 	 * @param portEditpart
 	 *            the port editpart form which interfaces will be displayed
 	 */
-	public CreateLollipopPortCommand(TransactionalEditingDomain domain, Collection<Interface> provided, Collection<Interface> required, PortEditPart portEditpart) {
+	public CreateLollipopPortCommand(TransactionalEditingDomain domain, Collection<Object> provided, Collection<Object> required, PortEditPart portEditpart) {
 		super(domain, "Creation of lollipop for ports");
 		providedInterface.addAll(provided);
 		requiredInterface.addAll(required);
@@ -75,14 +81,32 @@ public class CreateLollipopPortCommand extends RecordingCommand {
 		// take the great parent of the port
 		EditPart componentEditPart = porteditPart.getParent();
 		EditPart container = componentEditPart.getParent();
-		for (Interface currentRequired : requiredInterface) {
-			Node node = createInterfacenode(umlViewProvider, container, currentRequired);
+		for (Object currentRequired : requiredInterface) {
+
+
+			EObject interfaceRequired = null;
+			if (currentRequired instanceof NewElementRepresentation) {
+				interfaceRequired = ((NewElementRepresentation) currentRequired).getEObject();
+			} else {
+				interfaceRequired = (EObject) currentRequired;
+			}
+
+			Node node = createInterfacenode(umlViewProvider, container, interfaceRequired);
 			setPositionNode(node, position);
 			String kind = "REQUIRED";
 			createEdge(umlViewProvider, node, kind);
 		}
-		for (Interface currentprovided : providedInterface) {
-			Node node = createInterfacenode(umlViewProvider, container, currentprovided);
+		for (Object currentprovided : providedInterface) {
+
+
+			EObject interfaceProvided = null;
+			if (currentprovided instanceof NewElementRepresentation) {
+				interfaceProvided = ((NewElementRepresentation) currentprovided).getEObject();
+			} else {
+				interfaceProvided = (EObject) currentprovided;
+			}
+
+			Node node = createInterfacenode(umlViewProvider, container, interfaceProvided);
 			setPositionNode(node, position);
 			String kind = "PROVIDED";
 			createEdge(umlViewProvider, node, kind);
@@ -91,7 +115,7 @@ public class CreateLollipopPortCommand extends RecordingCommand {
 
 	/**
 	 * creation of the edge form the port to the interface
-	 * 
+	 *
 	 * @param umlViewProvider
 	 * @param node
 	 *            the node that represent the interface
@@ -113,7 +137,7 @@ public class CreateLollipopPortCommand extends RecordingCommand {
 
 	/**
 	 * create the interface node
-	 * 
+	 *
 	 * @param umlViewProvider
 	 * @param container
 	 *            the container of the interface node
@@ -121,7 +145,7 @@ public class CreateLollipopPortCommand extends RecordingCommand {
 	 *            the interface
 	 * @return the node
 	 */
-	protected Node createInterfacenode(UMLViewProvider umlViewProvider, EditPart container, Interface currentInterface) {
+	protected Node createInterfacenode(UMLViewProvider umlViewProvider, EditPart container, EObject currentInterface) {
 		Node node = umlViewProvider.createInterface_2003(currentInterface, (View) container.getModel(), -1, true, porteditPart.getDiagramPreferencesHint());
 		((Bounds) node.getLayoutConstraint()).setWidth(20);
 		((Bounds) node.getLayoutConstraint()).setHeight(20);
@@ -130,7 +154,7 @@ public class CreateLollipopPortCommand extends RecordingCommand {
 
 	/**
 	 * use to place the interface node around the component form the port
-	 * 
+	 *
 	 * @param node
 	 *            the interface node
 	 * @param position
@@ -142,14 +166,11 @@ public class CreateLollipopPortCommand extends RecordingCommand {
 		int distance = 60;
 		if (position == PositionConstants.SOUTH) {
 			((Bounds) node.getLayoutConstraint()).setY(((Bounds) node.getLayoutConstraint()).getY() + distance);
-		}
-		else if (position == PositionConstants.NORTH) {
+		} else if (position == PositionConstants.NORTH) {
 			((Bounds) node.getLayoutConstraint()).setY(((Bounds) node.getLayoutConstraint()).getY() - distance);
-		}
-		else if (position == PositionConstants.EAST) {
+		} else if (position == PositionConstants.EAST) {
 			((Bounds) node.getLayoutConstraint()).setX(((Bounds) node.getLayoutConstraint()).getX() + distance);
-		}
-		else if (position == PositionConstants.WEST) {
+		} else if (position == PositionConstants.WEST) {
 			((Bounds) node.getLayoutConstraint()).setX(((Bounds) node.getLayoutConstraint()).getX() - distance);
 		}
 	}

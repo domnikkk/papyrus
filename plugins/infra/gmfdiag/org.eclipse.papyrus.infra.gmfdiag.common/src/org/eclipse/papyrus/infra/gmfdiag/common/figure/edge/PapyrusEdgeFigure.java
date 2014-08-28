@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,10 +47,10 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 
 /**
- * 
+ *
  * This class should be the super class of all Papyrus figure.
  * Its provides the way to draw common bendpoints bigger than others
- * 
+ *
  */
 public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 
@@ -60,9 +60,9 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 	private int bendpointDiameter;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public PapyrusEdgeFigure() {
 		super();
@@ -71,9 +71,9 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 
 	/**
 	 * We override this method to circle on bendpoints when a segment of the link is shared with another link of the same kind
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx#outlineShape(org.eclipse.draw2d.Graphics)
-	 * 
+	 *
 	 * @param g
 	 */
 	@Override
@@ -88,8 +88,9 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 	public void resetStyle() {
 
 	}
+
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the common bendpoints to draw (see bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=424099)
 	 */
@@ -99,77 +100,77 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 		final PointList bendPoints = getPoints();
 
 		final Map<?, ?> visualPartMap = getVisualPartMap(this);
-		if(visualPartMap != null) {
-			final EditPart currentEditPart = (EditPart)visualPartMap.get(this);
-			//1. find the uml eClass of the current link
+		if (visualPartMap != null) {
+			final EditPart currentEditPart = (EditPart) visualPartMap.get(this);
+			// 1. find the uml eClass of the current link
 			EClass eClass = null;
-			if(currentEditPart instanceof IGraphicalEditPart) {
-				final EObject el = ((IGraphicalEditPart)currentEditPart).resolveSemanticElement();
-				if(el != null) {
+			if (currentEditPart instanceof IGraphicalEditPart) {
+				final EObject el = ((IGraphicalEditPart) currentEditPart).resolveSemanticElement();
+				if (el != null) {
 					eClass = el.eClass();
 				}
 			}
 
-			//2. find all connections editpart with same source AND/OR same target than the current one
-			if(currentEditPart instanceof ConnectionEditPart && eClass != null) {
-				final EditPart sourceEP = ((ConnectionEditPart)currentEditPart).getSource();
-				final EditPart targetEP = ((ConnectionEditPart)currentEditPart).getTarget();
+			// 2. find all connections editpart with same source AND/OR same target than the current one
+			if (currentEditPart instanceof ConnectionEditPart && eClass != null) {
+				final EditPart sourceEP = ((ConnectionEditPart) currentEditPart).getSource();
+				final EditPart targetEP = ((ConnectionEditPart) currentEditPart).getTarget();
 				final Set<Object> allConnectionsEP = new HashSet<Object>();
-				//2.1. get all potential editpart connections
-				if(sourceEP instanceof AbstractGraphicalEditPart && targetEP instanceof AbstractGraphicalEditPart) {
-					allConnectionsEP.addAll(((AbstractGraphicalEditPart)sourceEP).getSourceConnections());
-					allConnectionsEP.addAll(((AbstractGraphicalEditPart)targetEP).getSourceConnections());
-					allConnectionsEP.addAll(((AbstractGraphicalEditPart)sourceEP).getTargetConnections());
-					allConnectionsEP.addAll(((AbstractGraphicalEditPart)targetEP).getTargetConnections());
+				// 2.1. get all potential editpart connections
+				if (sourceEP instanceof AbstractGraphicalEditPart && targetEP instanceof AbstractGraphicalEditPart) {
+					allConnectionsEP.addAll(((AbstractGraphicalEditPart) sourceEP).getSourceConnections());
+					allConnectionsEP.addAll(((AbstractGraphicalEditPart) targetEP).getSourceConnections());
+					allConnectionsEP.addAll(((AbstractGraphicalEditPart) sourceEP).getTargetConnections());
+					allConnectionsEP.addAll(((AbstractGraphicalEditPart) targetEP).getTargetConnections());
 					allConnectionsEP.remove(currentEditPart);
 				}
 
-				//2.2 get the figure for these connections and keep only figure when its editpart has the same kind than the current one
+				// 2.2 get the figure for these connections and keep only figure when its editpart has the same kind than the current one
 				final Set<Connection> allConnections = new HashSet<Connection>();
-				if(allConnectionsEP.size() > 0) {
-					for(final Object current : allConnectionsEP) {
-						//the editpart be instance of the same class
-						if(current.getClass().isInstance(currentEditPart) && currentEditPart.getClass().isInstance(current) && current instanceof IGraphicalEditPart) {
-							final EObject resolvedElement = ((IGraphicalEditPart)current).resolveSemanticElement();
-							if(resolvedElement != null && eClass != null && resolvedElement.eClass() != eClass) {
-								continue;//we draw ben point only for elements which have the same eClass, when this eClass is not null
+				if (allConnectionsEP.size() > 0) {
+					for (final Object current : allConnectionsEP) {
+						// the editpart be instance of the same class
+						if (current.getClass().isInstance(currentEditPart) && currentEditPart.getClass().isInstance(current) && current instanceof IGraphicalEditPart) {
+							final EObject resolvedElement = ((IGraphicalEditPart) current).resolveSemanticElement();
+							if (resolvedElement != null && eClass != null && resolvedElement.eClass() != eClass) {
+								continue;// we draw ben point only for elements which have the same eClass, when this eClass is not null
 							}
-							final IFigure currentFig = ((IGraphicalEditPart)current).getFigure();
-							if(currentFig instanceof Connection) {
-								allConnections.add((Connection)currentFig);
+							final IFigure currentFig = ((IGraphicalEditPart) current).getFigure();
+							if (currentFig instanceof Connection) {
+								allConnections.add((Connection) currentFig);
 							}
 						}
 					}
 				}
 
-				//3. Create the list of the LineSeg of the current figure
+				// 3. Create the list of the LineSeg of the current figure
 				final List<LineSeg> refs = new ArrayList<LineSeg>();
-				for(int i = 0; i < bendPoints.size() - 1; i++) {
+				for (int i = 0; i < bendPoints.size() - 1; i++) {
 					LineSeg seg = new LineSeg(bendPoints.getPoint(i), bendPoints.getPoint(i + 1));
 					refs.add(seg);
 				}
 
 
-				//4. find common segments between the current figure and each others link
-				//we need to associate each common segment to the concerned link
+				// 4. find common segments between the current figure and each others link
+				// we need to associate each common segment to the concerned link
 				final Map<Connection, Map<LineSeg, List<LineSeg>>> segs = new HashMap<Connection, Map<LineSeg, List<LineSeg>>>();
-				for(Connection currentConn : allConnections) {
+				for (Connection currentConn : allConnections) {
 					final PointList currentPoints = currentConn.getPoints();
 					final Map<LineSeg, List<LineSeg>> mapSegs = new HashMap<LineSeg, List<LineSeg>>();
 					segs.put(currentConn, mapSegs);
-					for(LineSeg refSeg : refs) {
+					for (LineSeg refSeg : refs) {
 						final List<LineSeg> commonSubSegs = new ArrayList<LineSeg>();
 						mapSegs.put(refSeg, commonSubSegs);
-						for(int i = 0; i < currentPoints.size() - 1; i++) {
+						for (int i = 0; i < currentPoints.size() - 1; i++) {
 							LineSeg tmp = new LineSeg(currentPoints.getPoint(i), currentPoints.getPoint(i + 1));
 							PointList intersection = getCommonSegment(refSeg, tmp);
-							if(intersection.size() == 2) {
-								if(!intersection.getFirstPoint().equals(intersection.getLastPoint())) {
+							if (intersection.size() == 2) {
+								if (!intersection.getFirstPoint().equals(intersection.getLastPoint())) {
 									double distanceFromFirst = refSeg.getOrigin().getDistance(intersection.getFirstPoint());
 									double distanceFromSecond = refSeg.getOrigin().getDistance(intersection.getLastPoint());
 									final LineSeg commonSeg;
-									//we arrange the 2 points in order to have the first point nearest of the start of the current segment
-									if(distanceFromFirst < distanceFromSecond) {
+									// we arrange the 2 points in order to have the first point nearest of the start of the current segment
+									if (distanceFromFirst < distanceFromSecond) {
 										commonSeg = new LineSeg(intersection.getFirstPoint(), intersection.getLastPoint());
 									} else {
 										commonSeg = new LineSeg(intersection.getLastPoint(), intersection.getFirstPoint());
@@ -181,15 +182,15 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 					}
 				}
 
-				//5. we look for the bendpoints crossing existing link on the model, then crossing their common segment with the current figure, to find bendpoints to draw
-				for(Entry<Connection, Map<LineSeg, List<LineSeg>>> entry : segs.entrySet()) {
+				// 5. we look for the bendpoints crossing existing link on the model, then crossing their common segment with the current figure, to find bendpoints to draw
+				for (Entry<Connection, Map<LineSeg, List<LineSeg>>> entry : segs.entrySet()) {
 					final Map<LineSeg, List<LineSeg>> commonSegMap = entry.getValue();
-					for(int i = 0; i < refs.size(); i++) { //we iterate on the segments of the current figure
+					for (int i = 0; i < refs.size(); i++) { // we iterate on the segments of the current figure
 
 
-						//5.1 find required values to find bendpoints to draw
+						// 5.1 find required values to find bendpoints to draw
 						final LineSeg currentFigureSeg = refs.get(i);
-						//final List<LineSeg> currentCommonSegs = segs.get(currentFigureSeg);
+						// final List<LineSeg> currentCommonSegs = segs.get(currentFigureSeg);
 						final List<LineSeg> currentCommonSegs = commonSegMap.get(currentFigureSeg);
 
 						final LineSeg previousSeg;
@@ -198,8 +199,8 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 						final LineSeg nextSeg;
 						final List<LineSeg> nextCommonSegs;
 
-						//obtain previous segs of the current figure
-						if(i != 0) {
+						// obtain previous segs of the current figure
+						if (i != 0) {
 							previousSeg = refs.get(i - 1);
 							previousCommonSegs = commonSegMap.get(previousSeg);
 						} else {
@@ -207,8 +208,8 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 							previousCommonSegs = null;
 						}
 
-						//obtain next segs of the current figure
-						if(i != refs.size() - 1) {
+						// obtain next segs of the current figure
+						if (i != refs.size() - 1) {
 							nextSeg = refs.get(i + 1);
 							nextCommonSegs = commonSegMap.get(nextSeg);
 						} else {
@@ -220,14 +221,14 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 						LineSeg previousCommonSeg = null;
 						LineSeg nextCommonSeg = null;
 
-						//we iterate on the common subsegment shared with others link with the current figure
-						for(int a = 0; a < currentCommonSegs.size(); a++) {
+						// we iterate on the common subsegment shared with others link with the current figure
+						for (int a = 0; a < currentCommonSegs.size(); a++) {
 							final LineSeg curr = currentCommonSegs.get(a);
 							final Point first = curr.getOrigin();
 							final Point second = curr.getTerminus();
-							//obtain previous common seg
-							if(a == 0) {
-								if(previousCommonSegs != null && previousCommonSegs.size() > 0) {
+							// obtain previous common seg
+							if (a == 0) {
+								if (previousCommonSegs != null && previousCommonSegs.size() > 0) {
 									previousCommonSeg = previousCommonSegs.get(previousCommonSegs.size() - 1);
 								} else {
 									previousCommonSeg = null;
@@ -236,9 +237,9 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 								previousCommonSeg = currentCommonSegs.get(a - 1);
 							}
 
-							//obtain next common seg
-							if(a == currentCommonSegs.size() - 1) {
-								if(nextCommonSegs != null && nextCommonSegs.size() > 0) {
+							// obtain next common seg
+							if (a == currentCommonSegs.size() - 1) {
+								if (nextCommonSegs != null && nextCommonSegs.size() > 0) {
 									nextCommonSeg = nextCommonSegs.get(0);
 								} else {
 									nextCommonSeg = null;
@@ -247,37 +248,37 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 								nextCommonSeg = currentCommonSegs.get(a + 1);
 							}
 
-							//5.2 calculates bendpoints visibility 
+							// 5.2 calculates bendpoints visibility
 
-							//determining if we draw first point : 
-							if(previousCommonSeg == null) {
-								if(i == 0) {//first segment of the figure
-									if(!bendPoints.getFirstPoint().equals(first)) {
-										//we draw the point when it is not the first anchor of the figure
+							// determining if we draw first point :
+							if (previousCommonSeg == null) {
+								if (i == 0) {// first segment of the figure
+									if (!bendPoints.getFirstPoint().equals(first)) {
+										// we draw the point when it is not the first anchor of the figure
 										commonBendpointsToDraw.add(first);
 									}
 								} else {
 									commonBendpointsToDraw.add(first);
 								}
-							} else if(!previousCommonSeg.getTerminus().equals(first)) {
-								//the previous common seg doesn't share this point with the current segment
-								//we draw the first point
+							} else if (!previousCommonSeg.getTerminus().equals(first)) {
+								// the previous common seg doesn't share this point with the current segment
+								// we draw the first point
 								commonBendpointsToDraw.add(first);
 							}
 
-							//determining if we draw the second point
-							if(nextCommonSeg == null) {
-								if(i == refs.size() - 1) {
-									if(!bendPoints.getLastPoint().equals(second)) {
-										//we draw the point when it is not the first anchor of the figure
+							// determining if we draw the second point
+							if (nextCommonSeg == null) {
+								if (i == refs.size() - 1) {
+									if (!bendPoints.getLastPoint().equals(second)) {
+										// we draw the point when it is not the first anchor of the figure
 										commonBendpointsToDraw.add(second);
 									}
 								} else {
 									commonBendpointsToDraw.add(second);
 								}
-							} else if(!nextCommonSeg.getOrigin().equals(second)) {
-								//the next common seg doesn't share this point with the current segment
-								//we draw the second point
+							} else if (!nextCommonSeg.getOrigin().equals(second)) {
+								// the next common seg doesn't share this point with the current segment
+								// we draw the second point
 								commonBendpointsToDraw.add(second);
 							}
 						}
@@ -290,32 +291,32 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param g
-	 *        graphics
+	 *            graphics
 	 * @param pointsToDraw
-	 *        the list of the points to draw
+	 *            the list of the points to draw
 	 */
 	public void drawCommonBendpoints(final Graphics g, final Collection<Point> bendPoints) {
 		final int diameter = getBendPointDiameter();
-		if(getDrawBendpointPreferenceValue() && bendPoints.size() > 0 && diameter > 1) {
-			//initialize the graphics
-			if(getBackgroundColor() != null) {
+		if (getDrawBendpointPreferenceValue() && bendPoints.size() > 0 && diameter > 1) {
+			// initialize the graphics
+			if (getBackgroundColor() != null) {
 				g.setForegroundColor(getBackgroundColor());
 			}
-			if(getForegroundColor() != null) {
+			if (getForegroundColor() != null) {
 				g.setBackgroundColor(getForegroundColor());
 			}
 
-			for(final Point point : bendPoints) {
+			for (final Point point : bendPoints) {
 				g.fillOval(point.x - (diameter - 1) / 2, point.y - (diameter - 1) / 2, diameter, diameter);
 			}
 
-			//reset the graphics
-			if(getBackgroundColor() != null) {
+			// reset the graphics
+			if (getBackgroundColor() != null) {
 				g.setBackgroundColor(getBackgroundColor());
 			}
-			if(getForegroundColor() != null) {
+			if (getForegroundColor() != null) {
 				g.setForegroundColor(getForegroundColor());
 			}
 		}
@@ -324,12 +325,12 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 
 
 	/**
-	 * 
+	 *
 	 * @param g
-	 * 
+	 *
 	 */
 	protected void drawCommonbendpoints(final Graphics g) {
-		if(getPoints().size() > 2 && getDrawBendpointPreferenceValue()) {
+		if (getPoints().size() > 2 && getDrawBendpointPreferenceValue()) {
 			final Collection<Point> commonPoints = getCommonBendpointsToDraw();
 			drawCommonBendpoints(g, commonPoints);
 		}
@@ -338,7 +339,7 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         <code>true</code> according to the preference store
 	 */
@@ -347,38 +348,38 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param figure
-	 *        a figure
+	 *            a figure
 	 * @return
 	 *         the visual part map for this figure or <code>null</code> if not found
 	 */
 	protected Map<?, ?> getVisualPartMap(final IFigure figure) {
 		IEditorPart part = EditorHelper.getCurrentEditor();
-		if(part instanceof CoreMultiDiagramEditor) {
-			final List<IEditorPart> visibleEditors = ((CoreMultiDiagramEditor)part).getISashWindowsContainer().getVisibleIEditorParts();
-			for(final IEditorPart current : visibleEditors) {
-				final GraphicalViewer viewer = (GraphicalViewer)current.getAdapter(GraphicalViewer.class);
+		if (part instanceof CoreMultiDiagramEditor) {
+			final List<IEditorPart> visibleEditors = ((CoreMultiDiagramEditor) part).getISashWindowsContainer().getVisibleIEditorParts();
+			for (final IEditorPart current : visibleEditors) {
+				final GraphicalViewer viewer = (GraphicalViewer) current.getAdapter(GraphicalViewer.class);
 				final Map<?, ?> visualPartMap = viewer.getVisualPartMap();
-				if(visualPartMap.containsKey(figure)) {
+				if (visualPartMap.containsKey(figure)) {
 					return visualPartMap;
 				}
 			}
 		} else {
-			//used when papyrus has been "unsashified"
+			// used when papyrus has been "unsashified"
 			final IWorkbench workbench = PlatformUI.getWorkbench();
-			if(workbench != null) {
+			if (workbench != null) {
 				final IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();
-				if(window != null) {
+				if (window != null) {
 					final List<?> editors = EditorService.getInstance().getRegisteredEditorParts();
-					for(Iterator<?> j = editors.iterator(); j.hasNext();) {
-						final IEditorPart editor = (IEditorPart)j.next();
-						if(editor.getEditorSite().getWorkbenchWindow() == window) {
-							if(editor instanceof IDiagramWorkbenchPart) {
-								final IDiagramWorkbenchPart de = (IDiagramWorkbenchPart)editor;
+					for (Iterator<?> j = editors.iterator(); j.hasNext();) {
+						final IEditorPart editor = (IEditorPart) j.next();
+						if (editor.getEditorSite().getWorkbenchWindow() == window) {
+							if (editor instanceof IDiagramWorkbenchPart) {
+								final IDiagramWorkbenchPart de = (IDiagramWorkbenchPart) editor;
 								final GraphicalViewer viewer = de.getDiagramGraphicalViewer();
 								final Map<?, ?> visualPartMap = viewer.getVisualPartMap();
-								if(visualPartMap.containsKey(figure)) {
+								if (visualPartMap.containsKey(figure)) {
 									return visualPartMap;
 								}
 							}
@@ -391,11 +392,11 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param seg1
-	 *        the first segment
+	 *            the first segment
 	 * @param seg2
-	 *        the secong segment
+	 *            the secong segment
 	 * @return
 	 */
 	public static final PointList getCommonSegment(final LineSeg seg1, final LineSeg seg2) {
@@ -406,16 +407,16 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 		list.add(seg2.getTerminus());
 
 		List<Point> commonPoints = new ArrayList<Point>();
-		for(Point point : list) {
-			if(!commonPoints.contains(point)) {
-				if(seg1.containsPoint(point, 0) && seg2.containsPoint(point, 0)) {
+		for (Point point : list) {
+			if (!commonPoints.contains(point)) {
+				if (seg1.containsPoint(point, 0) && seg2.containsPoint(point, 0)) {
 					commonPoints.add(point);
 				}
 			}
 		}
 
 		final PointList result = new PointList();
-		for(final Point point : commonPoints) {
+		for (final Point point : commonPoints) {
 			result.addPoint(point);
 		}
 		return result;
@@ -423,15 +424,15 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 
 	/**
 	 * Calculate the best diameter and set the diameter value
-	 * 
+	 *
 	 * @param diameter
-	 *        the diameter of the bendpoints (if diameter<=1, we set the diameter to 0)
+	 *            the diameter of the bendpoints (if diameter<=1, we set the diameter to 0)
 	 */
 	public void setBendPointDiameter(final int diameter) {
-		if(diameter <= 1) {
+		if (diameter <= 1) {
 			this.bendpointDiameter = 0;
 		}
-		if(diameter % 2 != 0) {
+		if (diameter % 2 != 0) {
 			this.bendpointDiameter = diameter;
 		} else {
 			setBendPointDiameter(diameter + 1);
@@ -439,7 +440,7 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the bendpoint diameter
 	 */

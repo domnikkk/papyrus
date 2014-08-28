@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -71,7 +71,7 @@ public class CustomRegionCreateElementCommand extends AbstractTransactionalComma
 		configureRequest.setClientContext(createElementRequest.getClientContext());
 		configureRequest.addParameters(createElementRequest.getParameters());
 		ICommand configureCommand = elementType.getEditCommand(configureRequest);
-		if(configureCommand != null && configureCommand.canExecute()) {
+		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
 	}
@@ -79,7 +79,7 @@ public class CustomRegionCreateElementCommand extends AbstractTransactionalComma
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// adapt the view at execution time
-		View existingRegion = (View)adaptable.getAdapter(View.class);
+		View existingRegion = (View) adaptable.getAdapter(View.class);
 
 		// get existingRegion bounds (i.e. the space which needs to be divided)
 		int height = Zone.getHeight(existingRegion);
@@ -88,20 +88,20 @@ public class CustomRegionCreateElementCommand extends AbstractTransactionalComma
 		int y = Zone.getY(existingRegion);
 
 		// get the stateMachine/state via the stateMachineView/stateView
-		View compartment = (View)existingRegion.eContainer();
-		View ownerView = (View)compartment.eContainer();
+		View compartment = (View) existingRegion.eContainer();
+		View ownerView = (View) compartment.eContainer();
 
-		if(adaptableForDropped == null) {
+		if (adaptableForDropped == null) {
 			Region umlRegion = UMLFactory.eINSTANCE.createRegion();
 
 			createElementRequest = new CreateElementRequest(getEditingDomain(), ownerView, UMLElementTypes.Region_3000);
 
 			// create a new UML region
-			if(ownerView.getElement() instanceof StateMachine) {
-				StateMachine umlStateMachine = (StateMachine)ownerView.getElement();
+			if (ownerView.getElement() instanceof StateMachine) {
+				StateMachine umlStateMachine = (StateMachine) ownerView.getElement();
 				umlStateMachine.getRegions().add(umlRegion);
-			} else if(ownerView.getElement() instanceof State) {
-				State umlState = (State)ownerView.getElement();
+			} else if (ownerView.getElement() instanceof State) {
+				State umlState = (State) ownerView.getElement();
 				umlState.getRegions().add(umlRegion);
 			}
 
@@ -113,8 +113,8 @@ public class CustomRegionCreateElementCommand extends AbstractTransactionalComma
 		}
 
 		// create a view for the new region on the stateMachineCompartment
-		String semanticHint = ((IHintedType)UMLElementTypes.Region_3000).getSemanticHint();
-		View newRegion = (View)ViewService.getInstance().createNode(adaptableForDropped, compartment, semanticHint, -1, prefHints);
+		String semanticHint = ((IHintedType) UMLElementTypes.Region_3000).getSemanticHint();
+		View newRegion = ViewService.getInstance().createNode(adaptableForDropped, compartment, semanticHint, -1, prefHints);
 
 		// add region specific annotation
 		Zone.createRegionDefaultAnnotation(newRegion);
@@ -122,7 +122,7 @@ public class CustomRegionCreateElementCommand extends AbstractTransactionalComma
 		// adjust bounds and zone
 
 		// the test itself and change of bounds
-		if(Zone.isRight(dropLocation)) {
+		if (Zone.isRight(dropLocation)) {
 			// the new region zone should reflect that of other branch
 			Zone.copyZone(existingRegion, newRegion);
 			// now set new region as RIGHT
@@ -141,7 +141,7 @@ public class CustomRegionCreateElementCommand extends AbstractTransactionalComma
 			// moved)
 			Zone.setX(newRegion, x + width);
 			Zone.setY(newRegion, y);
-		} else if(Zone.isLeft(dropLocation)) {
+		} else if (Zone.isLeft(dropLocation)) {
 			// the new region zone should reflect that of existing region
 			Zone.copyZone(existingRegion, newRegion);
 			// now set new region as LEFT
@@ -161,7 +161,7 @@ public class CustomRegionCreateElementCommand extends AbstractTransactionalComma
 			Zone.setX(existingRegion, x + width);
 			Zone.setX(newRegion, x);
 			Zone.setY(newRegion, y);
-		} else if(Zone.isBottom(dropLocation)) {
+		} else if (Zone.isBottom(dropLocation)) {
 			// the new region zone should reflect that of existing region
 			Zone.copyZone(existingRegion, newRegion);
 			// now set new region as BOTTOM
@@ -180,7 +180,7 @@ public class CustomRegionCreateElementCommand extends AbstractTransactionalComma
 			// moved)
 			Zone.setX(newRegion, x);
 			Zone.setY(newRegion, y + height);
-		} else if(Zone.isTop(dropLocation)) {
+		} else if (Zone.isTop(dropLocation)) {
 			// the new region zone should reflect that of existing region
 			Zone.copyZone(existingRegion, newRegion);
 			// now set new region as TOP

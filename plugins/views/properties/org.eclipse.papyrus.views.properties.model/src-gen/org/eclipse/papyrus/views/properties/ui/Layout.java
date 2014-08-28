@@ -16,7 +16,7 @@ import org.eclipse.papyrus.views.properties.environment.LayoutType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.views.properties.ui.Layout#getLayoutType <em>Layout Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.ui.Layout#getLayoutType <em>Layout Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,10 +29,10 @@ public interface Layout extends UIComponent {
 	 * Returns the value of the '<em><b>Layout Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Layout Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Layout Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Layout Type</em>' reference.
 	 * @see #setLayoutType(LayoutType)
 	 * @see org.eclipse.papyrus.views.properties.ui.UiPackage#getLayout_LayoutType()
@@ -45,7 +45,9 @@ public interface Layout extends UIComponent {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.ui.Layout#getLayoutType <em>Layout Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Layout Type</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Layout Type</em>' reference.
 	 * @see #getLayoutType()
 	 * @generated
 	 */

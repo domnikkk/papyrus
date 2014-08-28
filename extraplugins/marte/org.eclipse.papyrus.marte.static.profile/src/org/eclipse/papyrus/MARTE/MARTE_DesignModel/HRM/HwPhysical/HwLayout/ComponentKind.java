@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Component Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.HwLayoutPackage#getComponentKind()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum ComponentKind implements Enumerator {
 	 * The '<em><b>Card</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #CARD_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum ComponentKind implements Enumerator {
 	 * The '<em><b>Channel</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #CHANNEL_VALUE
 	 * @generated
 	 * @ordered
@@ -53,6 +56,7 @@ public enum ComponentKind implements Enumerator {
 	 * The '<em><b>Chip</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #CHIP_VALUE
 	 * @generated
 	 * @ordered
@@ -63,6 +67,7 @@ public enum ComponentKind implements Enumerator {
 	 * The '<em><b>Port</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #PORT_VALUE
 	 * @generated
 	 * @ordered
@@ -73,6 +78,7 @@ public enum ComponentKind implements Enumerator {
 	 * The '<em><b>Unit</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #UNIT_VALUE
 	 * @generated
 	 * @ordered
@@ -83,6 +89,7 @@ public enum ComponentKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -93,6 +100,7 @@ public enum ComponentKind implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #UNDEF_VALUE
 	 * @generated
 	 * @ordered
@@ -103,10 +111,10 @@ public enum ComponentKind implements Enumerator {
 	 * The '<em><b>Card</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Card</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Card</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #CARD
 	 * @model name="card"
 	 * @generated
@@ -118,10 +126,10 @@ public enum ComponentKind implements Enumerator {
 	 * The '<em><b>Channel</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Channel</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Channel</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #CHANNEL
 	 * @model name="channel"
 	 * @generated
@@ -133,10 +141,10 @@ public enum ComponentKind implements Enumerator {
 	 * The '<em><b>Chip</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Chip</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Chip</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #CHIP
 	 * @model name="chip"
 	 * @generated
@@ -148,10 +156,10 @@ public enum ComponentKind implements Enumerator {
 	 * The '<em><b>Port</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Port</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Port</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #PORT
 	 * @model name="port"
 	 * @generated
@@ -163,10 +171,10 @@ public enum ComponentKind implements Enumerator {
 	 * The '<em><b>Unit</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Unit</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Unit</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #UNIT
 	 * @model name="unit"
 	 * @generated
@@ -178,10 +186,10 @@ public enum ComponentKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #OTHER
 	 * @model name="other"
 	 * @generated
@@ -193,10 +201,10 @@ public enum ComponentKind implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #UNDEF
 	 * @model name="undef"
 	 * @generated
@@ -208,23 +216,25 @@ public enum ComponentKind implements Enumerator {
 	 * An array of all the '<em><b>Component Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static final ComponentKind[] VALUES_ARRAY =
-		new ComponentKind[] {
-			CARD,
-			CHANNEL,
-			CHIP,
-			PORT,
-			UNIT,
-			OTHER,
-			UNDEF,
-		};
+			new ComponentKind[] {
+					CARD,
+					CHANNEL,
+					CHIP,
+					PORT,
+					UNIT,
+					OTHER,
+					UNDEF,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Component Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final List<ComponentKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -233,6 +243,7 @@ public enum ComponentKind implements Enumerator {
 	 * Returns the '<em><b>Component Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static ComponentKind get(String literal) {
@@ -249,6 +260,7 @@ public enum ComponentKind implements Enumerator {
 	 * Returns the '<em><b>Component Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static ComponentKind getByName(String name) {
@@ -265,17 +277,25 @@ public enum ComponentKind implements Enumerator {
 	 * Returns the '<em><b>Component Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static ComponentKind get(int value) {
 		switch (value) {
-			case CARD_VALUE: return CARD;
-			case CHANNEL_VALUE: return CHANNEL;
-			case CHIP_VALUE: return CHIP;
-			case PORT_VALUE: return PORT;
-			case UNIT_VALUE: return UNIT;
-			case OTHER_VALUE: return OTHER;
-			case UNDEF_VALUE: return UNDEF;
+		case CARD_VALUE:
+			return CARD;
+		case CHANNEL_VALUE:
+			return CHANNEL;
+		case CHIP_VALUE:
+			return CHIP;
+		case PORT_VALUE:
+			return PORT;
+		case UNIT_VALUE:
+			return UNIT;
+		case OTHER_VALUE:
+			return OTHER;
+		case UNDEF_VALUE:
+			return UNDEF;
 		}
 		return null;
 	}
@@ -283,6 +303,7 @@ public enum ComponentKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -290,6 +311,7 @@ public enum ComponentKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -297,6 +319,7 @@ public enum ComponentKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -305,6 +328,7 @@ public enum ComponentKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private ComponentKind(int value, String name, String literal) {
@@ -316,39 +340,46 @@ public enum ComponentKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //ComponentKind
+
+} // ComponentKind

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,13 +49,13 @@ import org.eclipse.uml2.uml.Profile;
 /**
  * <pre>
  * This policy is used to suppress orphan node view in GMF view.
- * The policy to remove orphan connection is more complex. 
- * 
+ * The policy to remove orphan connection is more complex.
+ *
  * As this policy uses VisualID(s), this class obviously depends from
  * the diagram and may not be shared in Common plug-in.
- * 
+ *
  * See RemoveOrphanViewPolicy in Class Diagram
- * 
+ *
  * This EditPolicy have a custom method isOrphan to delete the Metaclass view if the ElementImport is deleted!
  * </pre>
  */
@@ -64,7 +64,11 @@ public class RemoveOrphanViewPolicy extends OrphanViewPolicy {
 	/**
 	 * the compartment editpartID
 	 */
-	public int[] notOrphanNode = { PackagePackageableElementCompartmentEditPart.VISUAL_ID, PackagePackageableElementCompartmentEditPartCN.VISUAL_ID, ProfilePackageableElementCompartmentEditPartCN.VISUAL_ID, ProfilePackageableElementCompartmentEditPartTN.VISUAL_ID, StereotypeAttributeCompartmentEditPart.VISUAL_ID, StereotypeAttributeCompartmentEditPartCN.VISUAL_ID, StereotypeOperationCompartmentEditPart.VISUAL_ID, StereotypeOperationCompartmentEditPartCN.VISUAL_ID, StereotypeOperationCompartmentEditPart.VISUAL_ID, ModelPackageableElementCompartmentEditPartCN.VISUAL_ID, ModelPackageableElementCompartmentEditPartTN.VISUAL_ID, EnumerationEnumerationLiteralCompartmentEditPart.VISUAL_ID, EnumerationEnumerationLiteralCompartmentEditPartCN.VISUAL_ID, DataTypeAttributeCompartmentEditPart.VISUAL_ID, DataTypeAttributeCompartmentEditPartCN.VISUAL_ID, DataTypeOperationCompartmentEditPart.VISUAL_ID, DataTypeOperationCompartmentEditPartCN.VISUAL_ID, CommentAnnotatedElementEditPart.VISUAL_ID };
+	public int[] notOrphanNode = { PackagePackageableElementCompartmentEditPart.VISUAL_ID, PackagePackageableElementCompartmentEditPartCN.VISUAL_ID, ProfilePackageableElementCompartmentEditPartCN.VISUAL_ID,
+			ProfilePackageableElementCompartmentEditPartTN.VISUAL_ID, StereotypeAttributeCompartmentEditPart.VISUAL_ID, StereotypeAttributeCompartmentEditPartCN.VISUAL_ID, StereotypeOperationCompartmentEditPart.VISUAL_ID,
+			StereotypeOperationCompartmentEditPartCN.VISUAL_ID, StereotypeOperationCompartmentEditPart.VISUAL_ID, ModelPackageableElementCompartmentEditPartCN.VISUAL_ID, ModelPackageableElementCompartmentEditPartTN.VISUAL_ID,
+			EnumerationEnumerationLiteralCompartmentEditPart.VISUAL_ID, EnumerationEnumerationLiteralCompartmentEditPartCN.VISUAL_ID, DataTypeAttributeCompartmentEditPart.VISUAL_ID, DataTypeAttributeCompartmentEditPartCN.VISUAL_ID,
+			DataTypeOperationCompartmentEditPart.VISUAL_ID, DataTypeOperationCompartmentEditPartCN.VISUAL_ID, CommentAnnotatedElementEditPart.VISUAL_ID };
 
 	/**
 	 * the metclass editpartID
@@ -80,13 +84,13 @@ public class RemoveOrphanViewPolicy extends OrphanViewPolicy {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param notOrphanVisualID
 	 * @param metaclassNodeID
 	 */
 	public void init(int[] notOrphanVisualID, int[] metaclassNodeID) {
 		init(notOrphanNode);
-		for(int i = 0; i < metaclassNodeID.length; i++) {
+		for (int i = 0; i < metaclassNodeID.length; i++) {
 			metaclassNodeList.add(new Integer(metaclassNodeID[i]));
 		}
 	}
@@ -96,19 +100,19 @@ public class RemoveOrphanViewPolicy extends OrphanViewPolicy {
 	@Override
 	protected boolean isOrphaned(View view) {
 		String semanticHint = view.getType();
-		if((metaclassNodeList.contains(new Integer(semanticHint)))) {
+		if ((metaclassNodeList.contains(new Integer(semanticHint)))) {
 			String metaclassName = null;
 			EObject el = view.getElement();
-			if(el != null && el instanceof Class) {
-				metaclassName = ((Class)el).getName();
+			if (el != null && el instanceof Class) {
+				metaclassName = ((Class) el).getName();
 			}
 			/**
 			 * get the root profile
 			 */
 			Profile rootProfile = DiagramHelper.getTopProfile(view);
 			EList<ElementImport> importedElement = rootProfile.getElementImports();
-			for(ElementImport elementImport : importedElement) {
-				if(elementImport.getAlias().equals(metaclassName)) {
+			for (ElementImport elementImport : importedElement) {
+				if (elementImport.getAlias().equals(metaclassName)) {
 					return false;
 				}
 			}

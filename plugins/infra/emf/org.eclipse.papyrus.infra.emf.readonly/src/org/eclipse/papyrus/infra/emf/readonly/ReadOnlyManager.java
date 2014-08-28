@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 Atos Origin, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -72,12 +72,12 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 	public static IReadOnlyHandler2 getReadOnlyHandler(EditingDomain editingDomain) {
 		IReadOnlyHandler2 roHandler = IReadOnlyHandler2.NULL;
 
-		if(editingDomain != null) {
+		if (editingDomain != null) {
 			roHandler = roHandlers.get(editingDomain);
-			if(roHandler == null) {
+			if (roHandler == null) {
 				roHandler = new ReadOnlyManager(editingDomain);
 				IReadOnlyHandler2 existing = roHandlers.putIfAbsent(editingDomain, roHandler);
-				if(existing != null) {
+				if (existing != null) {
 					// Another thread beat us to it since we checked for an existing instance
 					roHandler = existing;
 				}
@@ -96,9 +96,9 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		public Set<ReadOnlyAxis> axes;
 
 		public int compareTo(HandlerPriorityPair o) {
-			if(o.priority > priority) {
+			if (o.priority > priority) {
 				return 1;
-			} else if(o.priority < priority) {
+			} else if (o.priority < priority) {
 				return -1;
 			} else {
 				return 0;
@@ -114,8 +114,8 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		List<HandlerPriorityPair> handlerPriorityPairs = new LinkedList<HandlerPriorityPair>();
 		Map<String, HandlerPriorityPair> idMap = new HashMap<String, HandlerPriorityPair>();
 
-		for(IConfigurationElement elem : configElements) {
-			if("readOnlyHandler".equals(elem.getName())) {
+		for (IConfigurationElement elem : configElements) {
+			if ("readOnlyHandler".equals(elem.getName())) {
 				try {
 					HandlerPriorityPair handlerPriorityPair = new HandlerPriorityPair();
 					String className = elem.getAttribute("class");
@@ -124,36 +124,36 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 					handlerPriorityPair.priority = Integer.parseInt(elem.getAttribute("priority"));
 
 					IConfigurationElement[] affinities = elem.getChildren("affinity");
-					if((affinities == null) || (affinities.length == 0)) {
+					if ((affinities == null) || (affinities.length == 0)) {
 						// implicit affinity is with any axis
 						handlerPriorityPair.axes = ReadOnlyAxis.anyAxis();
 					} else {
 						handlerPriorityPair.axes = EnumSet.noneOf(ReadOnlyAxis.class);
-						for(IConfigurationElement next : affinities) {
+						for (IConfigurationElement next : affinities) {
 							handlerPriorityPair.axes.add(ReadOnlyAxis.valueOf(next.getAttribute("axis").toUpperCase()));
 						}
 					}
 
 					String id = elem.getAttribute("id");
-					if(id != null) {
-						//if any then the handler could be overrided by another registration
+					if (id != null) {
+						// if any then the handler could be overrided by another registration
 						HandlerPriorityPair oldHandler = idMap.get(id);
-						if(oldHandler == null) {
+						if (oldHandler == null) {
 							idMap.put(id, handlerPriorityPair);
 							handlerPriorityPairs.add(handlerPriorityPair);
 						} else {
-							if(oldHandler.priority < handlerPriorityPair.priority) {
+							if (oldHandler.priority < handlerPriorityPair.priority) {
 								handlerPriorityPairs.remove(oldHandler);
 								handlerPriorityPairs.add(handlerPriorityPair);
 							}
 						}
 					} else {
-						//If none the handler can not be overrided
+						// If none the handler can not be overrided
 						handlerPriorityPairs.add(handlerPriorityPair);
 					}
 				} catch (Throwable t) {
-					//FIXME: We need to catch Throwables because we rely on external contributions. It is required to also catch Errors (such as compilation errors).
-					//Move this code to an initialization method, because if a throwable is not caught, this will prevent the whole class initialization
+					// FIXME: We need to catch Throwables because we rely on external contributions. It is required to also catch Errors (such as compilation errors).
+					// Move this code to an initialization method, because if a throwable is not caught, this will prevent the whole class initialization
 					Activator.log.error(t);
 				}
 			}
@@ -163,7 +163,7 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 
 		orderedHandlerClasses = new LinkedHashMap<Class<?>, Set<ReadOnlyAxis>>();
 
-		for(HandlerPriorityPair next : handlerPriorityPairs) {
+		for (HandlerPriorityPair next : handlerPriorityPairs) {
 			orderedHandlerClasses.put(next.handlerClass, next.axes);
 		}
 	}
@@ -175,25 +175,25 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Constructor<?> constructor = null;
 		try {
 			constructor = handlerClass.getConstructor(EditingDomain.class);
-			if(constructor == null) {
+			if (constructor == null) {
 				isEditingDomainConstructor = false;
 				constructor = handlerClass.getConstructor();
 			}
 
-			if(IReadOnlyHandler2.class.isAssignableFrom(constructor.getDeclaringClass())) {
-				if(isEditingDomainConstructor) {
-					return (IReadOnlyHandler2)constructor.newInstance(editingDomain);
+			if (IReadOnlyHandler2.class.isAssignableFrom(constructor.getDeclaringClass())) {
+				if (isEditingDomainConstructor) {
+					return (IReadOnlyHandler2) constructor.newInstance(editingDomain);
 				} else {
-					return (IReadOnlyHandler2)constructor.newInstance();
+					return (IReadOnlyHandler2) constructor.newInstance();
 				}
-			} else if(IReadOnlyHandler.class.isAssignableFrom(constructor.getDeclaringClass())) {
-				if(isEditingDomainConstructor) {
-					return AbstractReadOnlyHandler.adapt((IReadOnlyHandler)constructor.newInstance(editingDomain), editingDomain);
+			} else if (IReadOnlyHandler.class.isAssignableFrom(constructor.getDeclaringClass())) {
+				if (isEditingDomainConstructor) {
+					return AbstractReadOnlyHandler.adapt((IReadOnlyHandler) constructor.newInstance(editingDomain), editingDomain);
 				} else {
-					return AbstractReadOnlyHandler.adapt((IReadOnlyHandler)constructor.newInstance(), editingDomain);
+					return AbstractReadOnlyHandler.adapt((IReadOnlyHandler) constructor.newInstance(), editingDomain);
 				}
-			} else if(org.eclipse.papyrus.infra.emf.readonly.IReadOnlyHandler.class.isAssignableFrom(constructor.getDeclaringClass())) {
-				return new OldStyleHandlerAdapter((org.eclipse.papyrus.infra.emf.readonly.IReadOnlyHandler)constructor.newInstance(), editingDomain);
+			} else if (org.eclipse.papyrus.infra.emf.readonly.IReadOnlyHandler.class.isAssignableFrom(constructor.getDeclaringClass())) {
+				return new OldStyleHandlerAdapter((org.eclipse.papyrus.infra.emf.readonly.IReadOnlyHandler) constructor.newInstance(), editingDomain);
 			}
 		} catch (Exception e) {
 		}
@@ -205,14 +205,14 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 
 	public ReadOnlyManager(EditingDomain editingDomain) {
 		Map<ReadOnlyAxis, List<IReadOnlyHandler2>> handlers = new EnumMap<ReadOnlyAxis, List<IReadOnlyHandler2>>(ReadOnlyAxis.class);
-		for(Map.Entry<Class<?>, Set<ReadOnlyAxis>> roClass : orderedHandlerClasses.entrySet()) {
+		for (Map.Entry<Class<?>, Set<ReadOnlyAxis>> roClass : orderedHandlerClasses.entrySet()) {
 			IReadOnlyHandler2 h = create(roClass.getKey(), editingDomain);
-			if(h != null) {
+			if (h != null) {
 				h.addReadOnlyListener(getForwardingListener());
 
-				for(ReadOnlyAxis axis : roClass.getValue()) {
+				for (ReadOnlyAxis axis : roClass.getValue()) {
 					List<IReadOnlyHandler2> list = handlers.get(axis);
-					if(list == null) {
+					if (list == null) {
 						list = new ArrayList<IReadOnlyHandler2>();
 						handlers.put(axis, list);
 					}
@@ -223,9 +223,9 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 
 		// Iterate the enumeration to make sure all axes are represented (even if only by an empty array)
 		orderedHandlersByAxis = new EnumMap<ReadOnlyAxis, IReadOnlyHandler2[]>(ReadOnlyAxis.class);
-		for(ReadOnlyAxis axis : ReadOnlyAxis.values()) {
+		for (ReadOnlyAxis axis : ReadOnlyAxis.values()) {
 			List<IReadOnlyHandler2> list = handlers.get(axis);
-			if(list == null) {
+			if (list == null) {
 				orderedHandlersByAxis.put(axis, new IReadOnlyHandler2[0]);
 			} else {
 				orderedHandlersByAxis.put(axis, list.toArray(new IReadOnlyHandler2[list.size()]));
@@ -235,14 +235,14 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		// Is this editing domain associated with an editor?
 		try {
 			IMultiDiagramEditor editor = ServiceUtilsForResourceSet.getInstance().getService(IMultiDiagramEditor.class, editingDomain.getResourceSet());
-			if(editor != null) {
+			if (editor != null) {
 				IReloadableEditor reloadable = IReloadableEditor.Adapter.getAdapter(editor);
-				if(reloadable != null) {
+				if (reloadable != null) {
 					reloadable.addEditorReloadListener(this);
 				}
 			}
 		} catch (ServiceException e) {
-			// That's OK.  We're not in the context of an editor
+			// That's OK. We're not in the context of an editor
 		}
 	}
 
@@ -250,8 +250,8 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Optional<Boolean> result = Optional.absent();
 
 		ReadOnlyAxis[] all = ReadOnlyAxis.values();
-		for(int i = 0; (i < all.length) && !result.or(Boolean.FALSE); i++) {
-			if(axes.contains(all[i])) {
+		for (int i = 0; (i < all.length) && !result.or(Boolean.FALSE); i++) {
+			if (axes.contains(all[i])) {
 				result = anyReadOnly(all[i], uris);
 			}
 		}
@@ -264,7 +264,7 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Optional<Boolean> result = Optional.absent();
 
 		IReadOnlyHandler2[] orderedHandlers = orderedHandlersByAxis.get(axis);
-		for(int i = 0; (i < orderedHandlers.length) && !result.isPresent(); i++) {
+		for (int i = 0; (i < orderedHandlers.length) && !result.isPresent(); i++) {
 			result = orderedHandlers[i].anyReadOnly(axes, uris);
 		}
 
@@ -275,8 +275,8 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Optional<Boolean> result = Optional.absent();
 
 		ReadOnlyAxis[] all = ReadOnlyAxis.values();
-		for(int i = 0; (i < all.length) && !result.or(Boolean.FALSE); i++) {
-			if(axes.contains(all[i])) {
+		for (int i = 0; (i < all.length) && !result.or(Boolean.FALSE); i++) {
+			if (axes.contains(all[i])) {
 				result = isReadOnly(all[i], eObject);
 			}
 		}
@@ -289,7 +289,7 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Optional<Boolean> result = Optional.absent();
 
 		IReadOnlyHandler2[] orderedHandlers = orderedHandlersByAxis.get(axis);
-		for(int i = 0; (i < orderedHandlers.length) && !result.isPresent(); i++) {
+		for (int i = 0; (i < orderedHandlers.length) && !result.isPresent(); i++) {
 			result = orderedHandlers[i].isReadOnly(axes, eObject);
 		}
 
@@ -300,8 +300,8 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Boolean finalResult = true;
 
 		ReadOnlyAxis[] all = ReadOnlyAxis.values();
-		for(int i = 0; (i < all.length) && finalResult; i++) {
-			if(axes.contains(all[i])) {
+		for (int i = 0; (i < all.length) && finalResult; i++) {
+			if (axes.contains(all[i])) {
 				finalResult = makeWritable(all[i], uris);
 			}
 		}
@@ -314,13 +314,13 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Boolean finalResult = true;
 
 		IReadOnlyHandler2[] orderedHandlers = orderedHandlersByAxis.get(axis);
-		for(int i = 0; (i < orderedHandlers.length); i++) {
+		for (int i = 0; (i < orderedHandlers.length); i++) {
 			Optional<Boolean> isRO = orderedHandlers[i].anyReadOnly(axes, uris);
-			if(isRO.or(Boolean.FALSE)) {
+			if (isRO.or(Boolean.FALSE)) {
 				Optional<Boolean> result = orderedHandlers[i].makeWritable(axes, uris);
 				// makeWritable should provide an answer since anyReadOnly returned a positive value.
 				// If no answer consider it a failure
-				if(!result.or(Boolean.FALSE)) {
+				if (!result.or(Boolean.FALSE)) {
 					finalResult = false;
 					break;
 				}
@@ -334,8 +334,8 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Boolean finalResult = true;
 
 		ReadOnlyAxis[] all = ReadOnlyAxis.values();
-		for(int i = 0; (i < all.length) && finalResult; i++) {
-			if(axes.contains(all[i])) {
+		for (int i = 0; (i < all.length) && finalResult; i++) {
+			if (axes.contains(all[i])) {
 				finalResult = makeWritable(all[i], eObject);
 			}
 		}
@@ -348,13 +348,13 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Boolean finalResult = true;
 
 		IReadOnlyHandler2[] orderedHandlers = orderedHandlersByAxis.get(axis);
-		for(int i = 0; (i < orderedHandlers.length); i++) {
+		for (int i = 0; (i < orderedHandlers.length); i++) {
 			Optional<Boolean> isRO = orderedHandlers[i].isReadOnly(axes, eObject);
-			if(isRO.or(Boolean.FALSE)) {
+			if (isRO.or(Boolean.FALSE)) {
 				Optional<Boolean> result = orderedHandlers[i].makeWritable(axes, eObject);
 				// makeWritable should provide an answer since anyReadOnly returned a positive value
 				// if no answer consider it a failure
-				if(!result.or(Boolean.FALSE)) {
+				if (!result.or(Boolean.FALSE)) {
 					finalResult = false;
 					break;
 				}
@@ -368,8 +368,8 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Boolean result = false;
 
 		ReadOnlyAxis[] all = ReadOnlyAxis.values();
-		for(int i = 0; (i < all.length) && !result; i++) {
-			if(axes.contains(all[i])) {
+		for (int i = 0; (i < all.length) && !result; i++) {
+			if (axes.contains(all[i])) {
 				result = canMakeWritable(all[i], uris);
 			}
 		}
@@ -382,11 +382,11 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Boolean result = false;
 
 		IReadOnlyHandler2[] orderedHandlers = orderedHandlersByAxis.get(axis);
-		for(int i = 0; (i < orderedHandlers.length); i++) {
-			if(orderedHandlers[i].anyReadOnly(axes, uris).or(false)) {
+		for (int i = 0; (i < orderedHandlers.length); i++) {
+			if (orderedHandlers[i].anyReadOnly(axes, uris).or(false)) {
 				// Only ask a handler about making writable what it considers to be read-only
 				Optional<Boolean> canMakeWritable = orderedHandlers[i].canMakeWritable(axes, uris);
-				if(canMakeWritable.isPresent()) {
+				if (canMakeWritable.isPresent()) {
 					result = canMakeWritable.get();
 					break;
 				}
@@ -400,8 +400,8 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Boolean result = false;
 
 		ReadOnlyAxis[] all = ReadOnlyAxis.values();
-		for(int i = 0; (i < all.length) && !result; i++) {
-			if(axes.contains(all[i])) {
+		for (int i = 0; (i < all.length) && !result; i++) {
+			if (axes.contains(all[i])) {
 				result = canMakeWritable(all[i], object);
 			}
 		}
@@ -414,11 +414,11 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Boolean result = false;
 
 		IReadOnlyHandler2[] orderedHandlers = orderedHandlersByAxis.get(axis);
-		for(int i = 0; (i < orderedHandlers.length); i++) {
-			if(orderedHandlers[i].isReadOnly(axes, object).or(false)) {
+		for (int i = 0; (i < orderedHandlers.length); i++) {
+			if (orderedHandlers[i].isReadOnly(axes, object).or(false)) {
 				// Only ask a handler about making writable what it considers to be read-only
 				Optional<Boolean> canMakeWritable = orderedHandlers[i].canMakeWritable(axes, object);
-				if(canMakeWritable.isPresent()) {
+				if (canMakeWritable.isPresent()) {
 					result = canMakeWritable.get();
 					break;
 				}
@@ -437,13 +437,13 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 	}
 
 	private IReadOnlyListener getForwardingListener() {
-		if(forwardingListener == null) {
+		if (forwardingListener == null) {
 			forwardingListener = new IReadOnlyListener() {
 
 				public void readOnlyStateChanged(ReadOnlyEvent event) {
 					ReadOnlyEvent myEvent;
 
-					switch(event.getEventType()) {
+					switch (event.getEventType()) {
 					case ReadOnlyEvent.OBJECT_READ_ONLY_STATE_CHANGED:
 						myEvent = new ReadOnlyEvent(ReadOnlyManager.this, event.getAxis(), event.getObject(), event.isReadOnly());
 						break;
@@ -461,8 +461,8 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 	}
 
 	protected void notifyReadOnlyStateChanged(ReadOnlyEvent event) {
-		if(!listeners.isEmpty()) {
-			for(IReadOnlyListener next : listeners) {
+		if (!listeners.isEmpty()) {
+			for (IReadOnlyListener next : listeners) {
 				try {
 					next.readOnlyStateChanged(event);
 				} catch (Exception e) {
@@ -475,18 +475,18 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 	public void editorAboutToReload(EditorReloadEvent event) {
 		Map<Class<? extends IReadOnlyHandler2>, Object> reloadContexts = Maps.newHashMap();
 
-		for(IReadOnlyHandler2[] partition : orderedHandlersByAxis.values()) {
-			for(IReadOnlyHandler2 next : partition) {
-				if(!reloadContexts.containsKey(next.getClass())) {
+		for (IReadOnlyHandler2[] partition : orderedHandlersByAxis.values()) {
+			for (IReadOnlyHandler2 next : partition) {
+				if (!reloadContexts.containsKey(next.getClass())) {
 					IReloadContextProvider provider = AdapterUtils.adapt(next, IReloadContextProvider.class, null);
-					if(provider != null) {
+					if (provider != null) {
 						reloadContexts.put(next.getClass(), provider.createReloadContext());
 					}
 				}
 			}
 		}
 
-		if(!reloadContexts.isEmpty()) {
+		if (!reloadContexts.isEmpty()) {
 			event.putContext(reloadContexts);
 		}
 	}
@@ -495,7 +495,7 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		// I will have been replaced by a new read-only manager
 		ReadOnlyManager manager = this;
 		try {
-			manager = (ReadOnlyManager)getReadOnlyHandler(event.getEditor().getServicesRegistry().getService(TransactionalEditingDomain.class));
+			manager = (ReadOnlyManager) getReadOnlyHandler(event.getEditor().getServicesRegistry().getService(TransactionalEditingDomain.class));
 			IReloadableEditor reloadable = IReloadableEditor.Adapter.getAdapter(event.getEditor());
 			reloadable.removeEditorReloadListener(this);
 			reloadable.addEditorReloadListener(manager);
@@ -504,15 +504,15 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		}
 
 		Object context = event.getContext();
-		if(context instanceof Map<?, ?>) {
+		if (context instanceof Map<?, ?>) {
 			@SuppressWarnings("unchecked")
-			Map<Class<? extends IReadOnlyHandler2>, Object> reloadContexts = (Map<Class<? extends IReadOnlyHandler2>, Object>)context;
-			for(IReadOnlyHandler2[] partition : manager.orderedHandlersByAxis.values()) {
-				for(IReadOnlyHandler2 next : partition) {
+			Map<Class<? extends IReadOnlyHandler2>, Object> reloadContexts = (Map<Class<? extends IReadOnlyHandler2>, Object>) context;
+			for (IReadOnlyHandler2[] partition : manager.orderedHandlersByAxis.values()) {
+				for (IReadOnlyHandler2 next : partition) {
 					Object reloadContext = reloadContexts.get(next.getClass());
-					if(reloadContext != null) {
+					if (reloadContext != null) {
 						IReloadContextProvider provider = AdapterUtils.adapt(next, IReloadContextProvider.class, null);
-						if(provider != null) {
+						if (provider != null) {
 							provider.restore(reloadContext);
 						}
 					}
@@ -564,7 +564,7 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 
 			// the old API contract is that handlers only return true if they
 			// know it to be true, because the manager takes the first positive
-			// answer.  Moreover, they only dealt with permission-based read-only-ness
+			// answer. Moreover, they only dealt with permission-based read-only-ness
 			boolean delegateResult = axes.contains(ReadOnlyAxis.PERMISSION) && delegate.isReadOnly(uris, getEditingDomain());
 			return delegateResult ? Optional.of(Boolean.TRUE) : Optional.<Boolean> absent();
 		}
@@ -574,7 +574,7 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 			// the old API contract is that handlers only return false if they
 			// tried to but could not make the resources writable, because the
 			// manager takes the first negative answer (this is opposite to the
-			// isReadOnly logic).  Moreover, they only dealt with permission-based
+			// isReadOnly logic). Moreover, they only dealt with permission-based
 			// read-only-ness
 			boolean delegateResult = axes.contains(ReadOnlyAxis.PERMISSION) && delegate.enableWrite(uris, getEditingDomain());
 			return delegateResult ? Optional.<Boolean> absent() : Optional.of(Boolean.FALSE);

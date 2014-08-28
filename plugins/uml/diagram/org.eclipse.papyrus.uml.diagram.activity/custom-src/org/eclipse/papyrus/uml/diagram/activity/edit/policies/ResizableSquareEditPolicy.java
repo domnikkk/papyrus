@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableShapeEditPolicy;
 /**
  * A resizable editpolicy for shape editparts. It constraint the resize requests
  * so that the shape stays as a square.
- * 
+ *
  * @see ResizableShapeEditPolicy
  */
 public class ResizableSquareEditPolicy extends ResizableShapeEditPolicy {
@@ -30,9 +30,9 @@ public class ResizableSquareEditPolicy extends ResizableShapeEditPolicy {
 	/**
 	 * Shows or updates feedback for a change bounds request. The request is
 	 * updated by the way so that the shape stays a square.
-	 * 
+	 *
 	 * @param request
-	 *        the request
+	 *            the request
 	 */
 	@Override
 	protected void showChangeBoundsFeedback(ChangeBoundsRequest request) {
@@ -42,16 +42,16 @@ public class ResizableSquareEditPolicy extends ResizableShapeEditPolicy {
 		int dH = delta.height;
 		int dW = delta.width;
 		int signum = 0;
-		if(dH <= 0 && dW <= 0) {
+		if (dH <= 0 && dW <= 0) {
 			signum = -1;
 		} else {
 			signum = 1;
 		}
 		int positiveResize = Math.max(dH, dW);
-		if(positiveResize <= 0) {
-			if(dH == 0) {
+		if (positiveResize <= 0) {
+			if (dH == 0) {
 				positiveResize = -dW;
-			} else if(dW == 0) {
+			} else if (dW == 0) {
 				positiveResize = -dH;
 			} else {
 				positiveResize = Math.min(-dH, -dW);
@@ -61,10 +61,10 @@ public class ResizableSquareEditPolicy extends ResizableShapeEditPolicy {
 		int newDW = newDH;
 		int dir = request.getResizeDirection();
 		// adjust new position if impacted by resizing
-		if((dir & PositionConstants.NORTH) > 0) {
+		if ((dir & PositionConstants.NORTH) > 0) {
 			move.y += dH - newDH;
 		}
-		if((dir & PositionConstants.WEST) > 0) {
+		if ((dir & PositionConstants.WEST) > 0) {
 			move.x += dW - newDW;
 		}
 		request.setMoveDelta(move);

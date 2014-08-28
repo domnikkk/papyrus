@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,11 +33,11 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
 
 /**
- * 
+ *
  * A StringMultiline property editor with support for TextReferences
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  * @see {@link org.eclipse.papyrus.infra.emf.utils.TextReferencesHelper}
  */
 public class StringMultilineWithReferences extends AbstractPropertyEditor {
@@ -56,12 +56,12 @@ public class StringMultilineWithReferences extends AbstractPropertyEditor {
 	protected void doBinding() {
 		super.doBinding();
 		IStaticContentProvider provider = input.getContentProvider(propertyPath);
-		if(provider != null) {
+		if (provider != null) {
 			editor.setReferenceBrowserContentProvider(provider);
 		}
 
-		if(getInputObservableValue() instanceof ICommitListener) {
-			editor.addCommitListener((ICommitListener)getInputObservableValue());
+		if (getInputObservableValue() instanceof ICommitListener) {
+			editor.addCommitListener((ICommitListener) getInputObservableValue());
 		}
 	}
 
@@ -73,7 +73,7 @@ public class StringMultilineWithReferences extends AbstractPropertyEditor {
 	protected void installDropListener() {
 		DropTarget target = new DropTarget(getStringEditor().getText(), DND.DROP_LINK);
 		LocalSelectionTransfer selectionTransfer = LocalSelectionTransfer.getTransfer();
-		target.setTransfer(new Transfer[]{ selectionTransfer });
+		target.setTransfer(new Transfer[] { selectionTransfer });
 		target.addDropListener(new DropTargetListener() {
 
 			public void dropAccept(DropTargetEvent event) {
@@ -81,7 +81,7 @@ public class StringMultilineWithReferences extends AbstractPropertyEditor {
 
 			public void drop(DropTargetEvent event) {
 				IStructuredSelection dropSelection = getSelection(event);
-				if(dropSelection == null) {
+				if (dropSelection == null) {
 					return;
 				}
 
@@ -90,9 +90,9 @@ public class StringMultilineWithReferences extends AbstractPropertyEditor {
 				Text textWidget = getStringEditor().getText();
 				String textToEdit = textWidget.getText();
 				int caretPosition = textWidget.getCaretPosition();
-				while(selectionIterator.hasNext()) {
+				while (selectionIterator.hasNext()) {
 					EObject selectedEObject = EMFHelper.getEObject(selectionIterator.next());
-					if(selectedEObject == null) {
+					if (selectedEObject == null) {
 						continue;
 					}
 					textToEdit = textReferencesHelper.insertReference(selectedEObject, textToEdit, caretPosition);
@@ -119,7 +119,7 @@ public class StringMultilineWithReferences extends AbstractPropertyEditor {
 
 			private void verifyDrop(DropTargetEvent event) {
 				IStructuredSelection selection = getSelection(event);
-				if(isValidSelection(selection)) {
+				if (isValidSelection(selection)) {
 					event.feedback = DND.FEEDBACK_INSERT_AFTER;
 					event.detail = DND.DROP_LINK;
 				} else {
@@ -128,18 +128,18 @@ public class StringMultilineWithReferences extends AbstractPropertyEditor {
 			}
 
 			private IStructuredSelection getSelection(DropTargetEvent event) {
-				if(!(event.getSource() instanceof DropTarget)) {
+				if (!(event.getSource() instanceof DropTarget)) {
 					return null;
 				}
 
-				DropTarget target = (DropTarget)event.getSource();
+				DropTarget target = (DropTarget) event.getSource();
 
-				for(Transfer transfer : target.getTransfer()) {
-					if(transfer instanceof LocalSelectionTransfer) {
-						LocalSelectionTransfer selectionTransfer = (LocalSelectionTransfer)transfer;
+				for (Transfer transfer : target.getTransfer()) {
+					if (transfer instanceof LocalSelectionTransfer) {
+						LocalSelectionTransfer selectionTransfer = (LocalSelectionTransfer) transfer;
 						ISelection selection = selectionTransfer.getSelection();
-						if(selection instanceof IStructuredSelection) {
-							return (IStructuredSelection)selection;
+						if (selection instanceof IStructuredSelection) {
+							return (IStructuredSelection) selection;
 						}
 					}
 				}
@@ -148,18 +148,18 @@ public class StringMultilineWithReferences extends AbstractPropertyEditor {
 			}
 
 			private boolean isValidSelection(IStructuredSelection dropSelection) {
-				if(textReferencesHelper == null) {
+				if (textReferencesHelper == null) {
 					return false;
 				}
-				if(dropSelection.isEmpty()) {
+				if (dropSelection.isEmpty()) {
 					return false;
 				}
 
 				IStructuredSelection structuredSelection = dropSelection;
 				Iterator<?> selectionIterator = structuredSelection.iterator();
-				while(selectionIterator.hasNext()) {
+				while (selectionIterator.hasNext()) {
 					EObject selectedElement = EMFHelper.getEObject(selectionIterator.next());
-					if(selectedElement == null) {
+					if (selectedElement == null) {
 						return false;
 					}
 				}
@@ -170,7 +170,7 @@ public class StringMultilineWithReferences extends AbstractPropertyEditor {
 	}
 
 	protected org.eclipse.papyrus.infra.widgets.editors.StringEditor getStringEditor() {
-		return (org.eclipse.papyrus.infra.widgets.editors.StringEditor)valueEditor;
+		return (org.eclipse.papyrus.infra.widgets.editors.StringEditor) valueEditor;
 	}
 
 	protected void setContentProvider(IStaticContentProvider provider) {

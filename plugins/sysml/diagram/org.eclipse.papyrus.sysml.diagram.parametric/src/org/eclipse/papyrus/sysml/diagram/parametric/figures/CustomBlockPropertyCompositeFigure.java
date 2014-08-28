@@ -23,13 +23,13 @@ public class CustomBlockPropertyCompositeFigure extends
 	protected void initTagLabel(String value) {
 		// do nothing: we don't want a two lines element (tag + name)
 	}
-	
+
 	@Override
 	public Label getTaggedLabel() {
 		// return a mock Label
 		return new Label();
 	}
-	
+
 	@Override
 	public void setNameLabelIcon(boolean displayNameLabelIcon) {
 		getNameLabel().setIcon(null);

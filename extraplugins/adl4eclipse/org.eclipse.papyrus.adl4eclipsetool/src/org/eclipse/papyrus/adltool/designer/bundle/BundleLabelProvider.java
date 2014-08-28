@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,53 +29,54 @@ import org.osgi.framework.Bundle;
 @SuppressWarnings("restriction")
 public class BundleLabelProvider extends LabelProvider {
 	BundleDesignerRegistry bundleDesignerRegistry;
-	
+
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 */
 	public BundleLabelProvider() {
-		bundleDesignerRegistry= new BundleDesignerRegistry();
+		bundleDesignerRegistry = new BundleDesignerRegistry();
 	}
-	
+
+	@Override
 	public Image getImage(Object bundleProject) {
-		if(bundleProject instanceof IBundleProjectDescription){
+		if (bundleProject instanceof IBundleProjectDescription) {
 			return getImage("img/bundle_pj.gif");
 
 		}
-		else if(bundleProject instanceof Bundle){
+		else if (bundleProject instanceof Bundle) {
 			return getImage("img/bundle_obj.gif");
 		}
-		else if(bundleProject instanceof IFeatureModel){
+		else if (bundleProject instanceof IFeatureModel) {
 			return getImage("img/bundle_obj.gif");
 		}
-		
-		else if(bundleProject instanceof IPluginModelBase){
+
+		else if (bundleProject instanceof IPluginModelBase) {
 			return getImage("img/bundle_obj.gif");
 		}
-		
+
 		return super.getImage(bundleProject);
 	}
-	
+
 	@Override
 	public String getText(Object element) {
 		return bundleDesignerRegistry.getSymbolicName(element);
 	}
-	
+
 	/**
 	 * Returns an {@link org.eclipse.swt.graphics.Image} identified by its key.<BR>
 	 * By default, it returns a default image. This image is the image placed in the directory <em>resources/icons/default.gif</em>
-	 * 
+	 *
 	 * @param key
-	 *        the key of the image
-	 * 
+	 *            the key of the image
+	 *
 	 * @return the Image
 	 */
 	public static Image getImage(String key) {
 		ImageRegistry registry = org.eclipse.papyrus.adltool.Activator.getDefault().getImageRegistry();
 		Image image = registry.get(key);
-		if(image == null) {
+		if (image == null) {
 			ImageDescriptor desc = AbstractUIPlugin.imageDescriptorFromPlugin(org.eclipse.papyrus.adltool.Activator.PLUGIN_ID, key);
 			registry.put(key, desc);
 			image = registry.get(key);

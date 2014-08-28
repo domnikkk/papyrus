@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ public class ContainmentFigure extends DefaultSizeNodeFigure implements IOvalAnc
 
 	/**
 	 * Constructor for StateLineFigure.
-	 * 
+	 *
 	 * @param width
 	 *            figure width
 	 * @param height
@@ -45,7 +45,7 @@ public class ContainmentFigure extends DefaultSizeNodeFigure implements IOvalAnc
 
 	/**
 	 * Constructor for StateLineFigure.
-	 * 
+	 *
 	 * @param dim
 	 *            figure dimensions
 	 */
@@ -55,7 +55,7 @@ public class ContainmentFigure extends DefaultSizeNodeFigure implements IOvalAnc
 
 	/**
 	 * Constructor for StateLineFigure.
-	 * 
+	 *
 	 * @param diameter
 	 *            circle diameter
 	 */
@@ -65,9 +65,10 @@ public class ContainmentFigure extends DefaultSizeNodeFigure implements IOvalAnc
 
 	/**
 	 * Draw the state object.
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.Figure#paintBorder(org.eclipse.draw2d.Graphics)
 	 */
+	@Override
 	protected void paintFigure(Graphics graphics) {
 		graphics.setAntialias(SWT.LOW);
 		Rectangle r = Rectangle.SINGLETON;
@@ -91,38 +92,42 @@ public class ContainmentFigure extends DefaultSizeNodeFigure implements IOvalAnc
 	}
 
 	/** Return <code>getBounds()</code>. */
+	@Override
 	public final Rectangle getOvalBounds() {
 		return getBounds();
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createAnchor(org.eclipse.draw2d.geometry.PrecisionPoint)
 	 */
+	@Override
 	protected ConnectionAnchor createAnchor(PrecisionPoint p) {
-		if (p == null)
+		if (p == null) {
 			// If the old terminal for the connection anchor cannot be resolved (by SlidableAnchor) a null
 			// PrecisionPoint will passed in - this is handled here
 			return createDefaultAnchor();
+		}
 		return new SlidableOvalAnchor(this, p);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createDefaultAnchor()
 	 */
+	@Override
 	protected ConnectionAnchor createDefaultAnchor() {
 		return new SlidableOvalAnchor(this);
 	}
 
 	/**
 	 * Fills the circle.
-	 * 
+	 *
 	 * @param graphics
 	 *            the graphics
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.Shape#fillShape(org.eclipse.draw2d.Graphics)
 	 */
 	protected void fillShape(Graphics graphics) {

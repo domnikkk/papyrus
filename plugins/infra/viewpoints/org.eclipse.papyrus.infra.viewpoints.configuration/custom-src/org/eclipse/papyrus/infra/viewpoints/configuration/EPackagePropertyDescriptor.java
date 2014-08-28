@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,13 +23,14 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 /**
  * Represents a descriptor for properties of type EPackage.
  * This class lists the currently loaded ECore metamodels.
+ *
  * @author Laurent Wouters
  */
 public class EPackagePropertyDescriptor extends SurrogateItemPropertyDescriptor {
 	public EPackagePropertyDescriptor(IItemPropertyDescriptor inner) {
 		super(inner);
 	}
-	
+
 	@Override
 	public Collection<?> getChoiceOfValues(Object object) {
 		EPackage.Registry reg = EPackage.Registry.INSTANCE;
@@ -37,19 +38,23 @@ public class EPackagePropertyDescriptor extends SurrogateItemPropertyDescriptor 
 		Collection<String> keys = new ArrayList<String>(reg.keySet());
 		for (String key : keys) {
 			EPackage pack = reg.getEPackage(key);
-			if (!result.contains(pack))
+			if (!result.contains(pack)) {
 				result.add(reg.getEPackage(key));
+			}
 		}
 		return result;
 	}
-	
+
 	@Override
 	public IItemLabelProvider getLabelProvider(Object object) {
 		return new IItemLabelProvider() {
 			public String getText(Object object) {
-				return ((EPackage)object).getNsURI();
+				return ((EPackage) object).getNsURI();
 			}
-			public Object getImage(Object object) { return null; }
+
+			public Object getImage(Object object) {
+				return null;
+			}
 		};
 	}
 }

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,8 @@ package org.eclipse.papyrus.uml.diagram.composite.custom.edit.parts;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.uml.diagram.composite.edit.parts.ConnectorMultiplicitySourceEditPart;
+import org.eclipse.papyrus.uml.diagram.composite.edit.parts.ConnectorMultiplicityTargetEditPart;
 import org.eclipse.papyrus.uml.diagram.composite.edit.parts.ConstraintEditPartCN;
 import org.eclipse.papyrus.uml.diagram.composite.edit.parts.UMLEditPartFactory;
 import org.eclipse.papyrus.uml.diagram.composite.part.UMLVisualIDRegistry;
@@ -29,13 +31,13 @@ public class CustomEditPartFactory extends UMLEditPartFactory {
 	 */
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
-		if(model instanceof View) {
-			View view = (View)model;
-			switch(UMLVisualIDRegistry.getVisualID(view)) {
+		if (model instanceof View) {
+			View view = (View) model;
+			switch (UMLVisualIDRegistry.getVisualID(view)) {
 
-			case CustomConnectorMultiplicitySourceEditPart.VISUAL_ID:
+			case ConnectorMultiplicitySourceEditPart.VISUAL_ID:
 				return new CustomConnectorMultiplicitySourceEditPart(view);
-			case CustomConnectorMultiplicityTargetEditPart.VISUAL_ID:
+			case ConnectorMultiplicityTargetEditPart.VISUAL_ID:
 				return new CustomConnectorMultiplicityTargetEditPart(view);
 			case ConstraintEditPartCN.VISUAL_ID:
 				return new CustomConstraintEditPartCN(view);

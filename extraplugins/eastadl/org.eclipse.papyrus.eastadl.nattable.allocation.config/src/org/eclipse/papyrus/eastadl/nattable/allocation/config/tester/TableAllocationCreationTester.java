@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,20 +26,21 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 public class TableAllocationCreationTester implements ITableTester {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.tester.ITableTester#isAllowed(java.lang.Object)
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
+	@Override
 	public IStatus isAllowed(Object context) {
-		if(context instanceof Element) {
-			Element el = (Element)context;
+		if (context instanceof Element) {
+			Element el = (Element) context;
 			boolean result = context instanceof Component;
-			if(result) {
+			if (result) {
 				final String packageQN = UMLUtil.getProfile(FunctionmodelingPackage.eINSTANCE, el).getQualifiedName();
 				result = result && el.getNearestPackage().getAppliedProfile(packageQN, true) != null;
-				if(result) {
+				if (result) {
 					return new Status(IStatus.OK, Activator.PLUGIN_ID, Messages.TableAllocationCreationTester_OKMessage);
 				} else {
 					return new Status(IStatus.ERROR, Activator.PLUGIN_ID, String.format(Messages.TableAllocationCreationTester_ProfileNotApplied, packageQN));

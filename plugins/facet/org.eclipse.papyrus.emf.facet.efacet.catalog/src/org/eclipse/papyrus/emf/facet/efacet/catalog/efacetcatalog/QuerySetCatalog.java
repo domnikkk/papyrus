@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog;
 
@@ -20,10 +20,10 @@ import org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Query Set Catalog</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc --> A QuerySetCatalog aims at referencing EMF Facet QuerySet. <!--
  * end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog;
  * <em>Installed Query Sets</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.EfacetcatalogPackage#getQuerySetCatalog()
  * @model
  * @generated
@@ -48,6 +48,7 @@ public interface QuerySetCatalog extends Catalog {
 	 * <!-- begin-model-doc -->
 	 * "installedQuerySets" derived link aims at providing a direct access to QuerySet objects in the catalog.
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Installed Query Sets</em>' reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.EfacetcatalogPackage#getQuerySetCatalog_InstalledQuerySets()
 	 * @model transient="true" volatile="true" derived="true"

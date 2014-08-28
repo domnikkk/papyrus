@@ -20,9 +20,9 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 
 /**
  * A service starting the ModelSet
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class OnDemandLoadingModelSetServiceFactory extends ModelSetServiceFactory {
 

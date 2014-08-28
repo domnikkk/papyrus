@@ -3,16 +3,15 @@
  */
 package org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.ui;
 
+import org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.ui.internal.UmlCollaborationUseActivator;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
-import org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.ui.internal.UmlCollaborationUseActivator;
-
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class UmlCollaborationUseExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
@@ -20,10 +19,10 @@ public class UmlCollaborationUseExecutableExtensionFactory extends AbstractGuice
 	protected Bundle getBundle() {
 		return UmlCollaborationUseActivator.getInstance().getBundle();
 	}
-	
+
 	@Override
 	protected Injector getInjector() {
 		return UmlCollaborationUseActivator.getInstance().getInjector(UmlCollaborationUseActivator.ORG_ECLIPSE_PAPYRUS_UML_TEXTEDIT_COLLABORATIONUSE_XTEXT_UMLCOLLABORATIONUSE);
 	}
-	
+
 }

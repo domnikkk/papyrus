@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,8 @@ import org.eclipse.uml2.uml.Connector;
 
 /**
  * @deprecated : use LinkEndsMapper instead
- * A utils class to map links, with their sources and targets OR with ends, when source/target have no sense for the link (example for
- * {@link Connector})
- * 
+ *             A utils class to map links, with their sources and targets OR with ends, when source/target have no sense for the link (example for {@link Connector})
+ *
  */
 @Deprecated
 public class EdgeEndsMapper {
@@ -49,17 +48,17 @@ public class EdgeEndsMapper {
 	private final Collection<?> sources;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param link
-	 *        the represented link
+	 *            the represented link
 	 * @param ends
-	 *        the ends for this link (could be <code>null</code>)
+	 *            the ends for this link (could be <code>null</code>)
 	 * @param sources
-	 *        the sources for this link (could be <code>null</code>)
+	 *            the sources for this link (could be <code>null</code>)
 	 * @param targets
-	 *        the targets for this link (could be <code>null</code>)
+	 *            the targets for this link (could be <code>null</code>)
 	 */
 	public EdgeEndsMapper(final EObject link, final Collection<?> ends, final Collection<?> sources, final Collection<?> targets) {
 		this.link = link;
@@ -69,7 +68,7 @@ public class EdgeEndsMapper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the link represented by the instance of this class
 	 */
@@ -78,7 +77,7 @@ public class EdgeEndsMapper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the ends for the links
 	 */
@@ -87,7 +86,7 @@ public class EdgeEndsMapper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the targets for the links
 	 */
@@ -96,7 +95,7 @@ public class EdgeEndsMapper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the sources for the link
 	 */

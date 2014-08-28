@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,11 +25,11 @@ import org.w3c.dom.Element;
 /**
  * The base CSS Engine. It contains the default stylesheet, which will be applied
  * in all cases (With the lowest priority).
- * 
+ *
  * It should not be used directly.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  * @see DiagramCSSEngine
  */
 @SuppressWarnings("restriction")
@@ -52,12 +52,13 @@ public class BaseCSSEngine extends ExtendedCSSEngineImpl implements IRefreshHand
 	/**
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.handler.IRefreshHandlerPart#refresh(org.eclipse.ui.IEditorPart)
 	 */
+	@Override
 	public void refresh(IEditorPart editorPart) {
 		// Resets this engine, regardless of the current editor
 		this.reset();
 	}
 
-	//Unsupported operations. The BaseCSSEngine should never be used directly.
+	// Unsupported operations. The BaseCSSEngine should never be used directly.
 
 	@Override
 	public Element getElement(Object node) {

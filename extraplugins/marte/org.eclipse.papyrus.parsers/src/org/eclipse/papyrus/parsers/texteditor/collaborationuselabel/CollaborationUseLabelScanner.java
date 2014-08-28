@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.swt.graphics.Color;
  * Scanner for the action language.<BR>
  * It implements the interface IALKeywords, which contains the different keywords available in the
  * action language
- * 
+ *
  * @author Remi SCHNEKENBURGER
  * @see org.eclipse.jface.text.rules.RuleBasedScanner
  * @see com.cea.actionlanguage.sharedresources.texteditor.IRTActionKeywords
@@ -62,7 +62,7 @@ public class CollaborationUseLabelScanner extends RuleBasedScanner implements IC
 		IRule[] rules = new IRule[2];
 
 		WordRule wordRule = new WordRule(new PropertyWordDetector(), other);
-		for(int i = 0; i < VisibilityCompletionProposal.visibilityStrings.length; i++) {
+		for (int i = 0; i < VisibilityCompletionProposal.visibilityStrings.length; i++) {
 			// wordRule.addWord(getWordWithoutQuotes(visibilityStrings[i]), keyword);
 		}
 
@@ -84,9 +84,9 @@ public class CollaborationUseLabelScanner extends RuleBasedScanner implements IC
 
 	/**
 	 * returns the word for the scanner, without quotes.
-	 * 
+	 *
 	 * @param word
-	 * 
+	 *
 	 * @return
 	 */
 	public static String getWordWithoutQuotes(String word) {

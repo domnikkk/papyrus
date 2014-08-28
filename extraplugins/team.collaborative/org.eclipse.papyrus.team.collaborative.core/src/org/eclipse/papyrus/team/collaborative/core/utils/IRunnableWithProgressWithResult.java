@@ -16,15 +16,15 @@ import org.eclipse.jface.operation.IRunnableWithProgress;
 /**
  * The Class AbstractRunnableWithProgressWithResult.
  * Runnable used to return a result
- * 
+ *
  * @param <T>
- *        the generic type
+ *            the generic type
  */
 public interface IRunnableWithProgressWithResult<T> extends IRunnableWithProgress {
 
 	/**
 	 * Gets the result.
-	 * 
+	 *
 	 * @return the result
 	 */
 	public T getResult();

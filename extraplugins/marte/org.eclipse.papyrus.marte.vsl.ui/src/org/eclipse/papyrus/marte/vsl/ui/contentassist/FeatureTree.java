@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,82 +24,83 @@ import org.eclipse.uml2.uml.Property;
 
 public class FeatureTree extends Tree<Feature> {
 
-	private List<Classifier> typesCrossedToReachThisTree  ;
-	
+	private List<Classifier> typesCrossedToReachThisTree;
+
 	public FeatureTree(Feature root) {
 		super(root);
-		typesCrossedToReachThisTree = new ArrayList<Classifier>() ;
+		typesCrossedToReachThisTree = new ArrayList<Classifier>();
 	}
-	
+
 	public FeatureTree(Feature root, List<Classifier> typesCrossedToReachThisTree) {
-		this(root) ;
-		this.typesCrossedToReachThisTree.addAll(typesCrossedToReachThisTree) ;
-		buildTree() ;
+		this(root);
+		this.typesCrossedToReachThisTree.addAll(typesCrossedToReachThisTree);
+		buildTree();
 	}
-	
+
 	@Override
 	public void buildTree() {
-		Classifier featureType = null ;
+		Classifier featureType = null;
 		if (root instanceof Property) {
-			featureType = (Classifier)((Property)root).getType() ;
+			featureType = (Classifier) ((Property) root).getType();
 		}
 		else if (root instanceof Operation) {
-			featureType = (Classifier)((Operation)root).getType() ;
+			featureType = (Classifier) ((Operation) root).getType();
 		}
-		if (featureType == null)
-			return ;
+		if (featureType == null) {
+			return;
+		}
 		if (typesCrossedToReachThisTree.contains(featureType)) {
-			return ;
+			return;
 		}
 		else {
-			typesCrossedToReachThisTree.add(featureType) ;
+			typesCrossedToReachThisTree.add(featureType);
 		}
 		for (Feature property : featureType.getAllAttributes()) {
-			getChildren().add(new FeatureTree(property, typesCrossedToReachThisTree)) ;
+			getChildren().add(new FeatureTree(property, typesCrossedToReachThisTree));
 		}
 		for (Feature operation : featureType.getAllOperations()) {
-			getChildren().add(new FeatureTree(operation, typesCrossedToReachThisTree)) ;
+			getChildren().add(new FeatureTree(operation, typesCrossedToReachThisTree));
 		}
 	}
-	
+
 	public static List<FeatureTree> buildListOfFeatureTrees(Classifier classifier) {
-		List<FeatureTree> list = new ArrayList<FeatureTree>() ;
-		List<Classifier> typesCrossedToReachThisTree = new ArrayList<Classifier>() ;
-		typesCrossedToReachThisTree.add(classifier) ;
+		List<FeatureTree> list = new ArrayList<FeatureTree>();
+		List<Classifier> typesCrossedToReachThisTree = new ArrayList<Classifier>();
+		typesCrossedToReachThisTree.add(classifier);
 		for (Feature property : classifier.getAllAttributes()) {
-			list.add(new FeatureTree(property, typesCrossedToReachThisTree)) ;
+			list.add(new FeatureTree(property, typesCrossedToReachThisTree));
 		}
 		for (Feature operation : classifier.getAllOperations()) {
-			list.add(new FeatureTree(operation, typesCrossedToReachThisTree)) ;
+			list.add(new FeatureTree(operation, typesCrossedToReachThisTree));
 		}
-		return list ;
+		return list;
 	}
-	
+
 	public static boolean canClassifierBeReached(List<FeatureTree> listOfFeatureTrees, Classifier classifier) {
-		boolean classifierReached = false ;
-		Iterator<FeatureTree> i = listOfFeatureTrees.iterator() ;
+		boolean classifierReached = false;
+		Iterator<FeatureTree> i = listOfFeatureTrees.iterator();
 		while (i.hasNext() && !classifierReached) {
-			classifierReached = i.next().canClassifierBeReached(classifier) ;
+			classifierReached = i.next().canClassifierBeReached(classifier);
 		}
-		return classifierReached ;
+		return classifierReached;
 	}
-	
+
 	public boolean canClassifierBeReached(Classifier classifier) {
 		for (Classifier type : typesCrossedToReachThisTree) {
-			if (classifier == type || type.conformsTo(classifier))
-				return true ;
-			else if (type.getName().equals(classifier.getName()) 
-					 && (type.getName().equals("Integer") 
-							 || type.getName().equals("Integer") 
-							 || type.getName().equals("String"))) {
-				return true ;
+			if (classifier == type || type.conformsTo(classifier)) {
+				return true;
+			} else if (type.getName().equals(classifier.getName())
+					&& (type.getName().equals("Integer")
+							|| type.getName().equals("Integer")
+							|| type.getName().equals("String"))) {
+				return true;
 			}
 		}
-		boolean classifierReached = false ;
-		Iterator<Tree<Feature>> i = getChildren().iterator() ;
+		boolean classifierReached = false;
+		Iterator<Tree<Feature>> i = getChildren().iterator();
 		while (i.hasNext() && !classifierReached) {
-			classifierReached = ((FeatureTree)i.next()).canClassifierBeReached(classifier) ;
+			classifierReached = ((FeatureTree) i.next()).canClassifierBeReached(classifier);
 		}
-		return classifierReached ;
+		return classifierReached;
 	}
 }

@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -31,16 +31,16 @@ public class PortUtils {
 	/**
 	 * Return the provided interface associated with the UML port, i.e.
 	 * the derived attribute of the FCM profile
-	 * 
+	 *
 	 * @param port
-	 *        the UML port
+	 *            the UML port
 	 * @return the provided interface
 	 */
 	public static Interface getProvided(Port port) {
 		org.eclipse.papyrus.FCM.Port fcmPort = getFCMport(port);
-		if(fcmPort != null) {
+		if (fcmPort != null) {
 			return fcmPort.getProvidedInterface();
-		} else if(port.getProvideds().size() > 0) {
+		} else if (port.getProvideds().size() > 0) {
 			// return first standard UML provided port
 			return port.getProvideds().get(0);
 		}
@@ -50,16 +50,16 @@ public class PortUtils {
 	/**
 	 * Return the required interface associated with the UML port, i.e.
 	 * the derived attribute of the FCM profile
-	 * 
+	 *
 	 * @param port
-	 *        the UML port
+	 *            the UML port
 	 * @return the required interface
 	 */
 	public static Interface getRequired(Port port) {
 		org.eclipse.papyrus.FCM.Port fcmPort = getFCMport(port);
-		if(fcmPort != null) {
+		if (fcmPort != null) {
 			return fcmPort.getRequiredInterface();
-		} else if(port.getRequireds().size() > 0) {
+		} else if (port.getRequireds().size() > 0) {
 			// return first standard UML required port
 			return port.getRequireds().get(0);
 		}
@@ -68,7 +68,7 @@ public class PortUtils {
 
 	/**
 	 * Return the FCM port (static profile) from a given UML port
-	 * 
+	 *
 	 * @param port
 	 * @return
 	 */
@@ -85,12 +85,12 @@ public class PortUtils {
 	 */
 	public static EList<Port> getAllPorts(EncapsulatedClassifier ec) {
 		EList<Port> ports = new BasicEList<Port>();
-		for(Property attribute : ec.getAllAttributes()) {
-			if(attribute instanceof Port) {
+		for (Property attribute : ec.getAllAttributes()) {
+			if (attribute instanceof Port) {
 				ports.add((Port) attribute);
 			}
 		}
-		
+
 		// TODO: for the moment, don't add aggregated ports to list.
 		/*
 		 * ComponentType compType = = UMLUtil.getStereotypeApplication (ec, ComponentType.class);
@@ -113,7 +113,7 @@ public class PortUtils {
 	 * component implementation have already corresponding operations/attributes,
 	 * only ports inherited by types need these definitions in subclasses.
 	 * TODO: support for abstract implementations that partially implement ports
-	 * 
+	 *
 	 * @param ec
 	 * @return
 	 */
@@ -121,10 +121,10 @@ public class PortUtils {
 		EList<Port> ports = new BasicEList<Port>();
 
 		ports.addAll(ec.getOwnedPorts());
-		
-		for(Classifier general : ec.getGenerals()) {
-			if((general instanceof EncapsulatedClassifier) && (!Utils.isCompImpl(general))) {
-				ports.addAll(getAllPorts2((EncapsulatedClassifier)general));
+
+		for (Classifier general : ec.getGenerals()) {
+			if ((general instanceof EncapsulatedClassifier) && (!Utils.isCompImpl(general))) {
+				ports.addAll(getAllPorts2((EncapsulatedClassifier) general));
 			}
 		}
 		return ports;
@@ -133,20 +133,23 @@ public class PortUtils {
 	/**
 	 * When given a list of ports, flatten the extended ports within this list
 	 * and return a list of port-infos, i.e. information about ports.
-	 * @param ports A list of ports
+	 *
+	 * @param ports
+	 *            A list of ports
 	 * @return A list of port-infos
 	 */
 	public static EList<PortInfo> flattenExtendedPorts(EList<Port> ports) {
 		EList<PortInfo> portInfos = new BasicEList<PortInfo>();
 		for (Port port : ports) {
-			portInfos.addAll (flattenExtendedPort(port));
+			portInfos.addAll(flattenExtendedPort(port));
 		}
 		return portInfos;
 	}
 
-	
+
 	/**
 	 * Flatten the given extended port and return a list of port-infos.
+	 *
 	 * @param port
 	 * @return
 	 */
@@ -180,9 +183,10 @@ public class PortUtils {
 		}
 		return portInfos;
 	}
-	
+
 	/**
 	 * Return true, if the passed port is an extended port
+	 *
 	 * @param port
 	 * @return
 	 */
@@ -194,25 +198,26 @@ public class PortUtils {
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Return true, if the passed port is an extended port
+	 *
 	 * @param port
 	 * @return
 	 */
 	public static boolean isTemplatePort(Port port) {
 		return StereotypeUtil.isApplied(port, TemplatePort.class);
 	}
-	
+
 	/**
 	 * Return the port kind, an element of the static profile
-	 * 
+	 *
 	 * @param port
 	 * @return
 	 */
 	public static PortKind getKind(Port port) {
 		org.eclipse.papyrus.FCM.Port fcmPort = getFCMport(port);
-		if(fcmPort != null) {
+		if (fcmPort != null) {
 			return fcmPort.getKind();
 		}
 		return null;
@@ -222,7 +227,7 @@ public class PortUtils {
 	 * Check whether two ports have the same port kind. Since different models apparently
 	 * use different Java instances for the same port kind, the check is therefore based
 	 * on the equality of full qualified name.
-	 * 
+	 *
 	 * @param portA
 	 * @param portB
 	 * @return true, if port kinds are identical
@@ -236,17 +241,17 @@ public class PortUtils {
 	/**
 	 * Check whether two ports match, i.e. have the same kind but different conjugation (assembly)
 	 * or same (delegation)
-	 * 
+	 *
 	 * @param portA
-	 *        first port
+	 *            first port
 	 * @param portB
-	 *        second port
+	 *            second port
 	 * @param isAssembly
-	 *        true, if the ports should be connected by an assembly connector (i.e. no delegation)
+	 *            true, if the ports should be connected by an assembly connector (i.e. no delegation)
 	 * @return true, if ports match
 	 */
 	public static boolean matches(Port portA, Port portB, boolean isAssembly) {
-		if(isAssembly) {
+		if (isAssembly) {
 			return ((portA.getType() == portB.getType()) && sameKinds(portA, portB) && (portA.isConjugated() != portB.isConjugated()));
 		} else {
 			// delegation
@@ -256,39 +261,38 @@ public class PortUtils {
 
 	/**
 	 * Check whether two ports are compatible. i.e. either match or are compatible interface wise
-	 * 
+	 *
 	 * @param portA
 	 * @param portB
 	 * @param isAssembly
-	 *        true, if the ports should be connected by an assembly connector (i.e. no delegation)
+	 *            true, if the ports should be connected by an assembly connector (i.e. no delegation)
 	 * @return
 	 */
 	public static boolean isCompatible(Port portA, Port portB, boolean isAssembly) {
-		if(matches(portA, portB, isAssembly)) {
+		if (matches(portA, portB, isAssembly)) {
 			return true;
 		}
 		// no match found, try weaker condition: find 1st match for provided ...
-		if(isAssembly) {
+		if (isAssembly) {
 			Interface reqA = PortUtils.getRequired(portA);
 			Interface reqB = PortUtils.getRequired(portB);
 			Interface prodA = PortUtils.getProvided(portA);
 			Interface prodB = PortUtils.getProvided(portB);
-			return (
-					((reqA == null) && isSubInterface(prodA, reqB))
+			return (((reqA == null) && isSubInterface(prodA, reqB))
 					|| ((reqB == null) && isSubInterface(prodB, reqA))
-					|| (isSubInterface(prodA, reqB) && isSubInterface(prodB, reqA))
-				);
+					|| (isSubInterface(prodA, reqB) && isSubInterface(prodB, reqA)));
 		}
 		else {
 			return (PortUtils.getProvided(portA) == PortUtils.getProvided(portB)) &&
-				(PortUtils.getRequired(portB) == PortUtils.getRequired(portA));
+					(PortUtils.getRequired(portB) == PortUtils.getRequired(portA));
 		}
 	}
-	
+
 	/**
 	 * return true, if intfA is a sub-interface of intfB, i.e. either both interfaces are identical or one of the
 	 * superclasses (generalizations of intfA) is identical to B.
 	 * more general than interfaceB.
+	 *
 	 * @param intfA
 	 * @param intfB
 	 * @return

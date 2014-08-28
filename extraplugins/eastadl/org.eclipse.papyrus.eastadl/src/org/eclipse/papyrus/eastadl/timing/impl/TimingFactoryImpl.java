@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,22 +20,24 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.eastadl.timing.*;
 import org.eclipse.papyrus.eastadl.timing.EventChain;
 import org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint;
 import org.eclipse.papyrus.eastadl.timing.Timing;
+import org.eclipse.papyrus.eastadl.timing.TimingExpression;
 import org.eclipse.papyrus.eastadl.timing.TimingFactory;
 import org.eclipse.papyrus.eastadl.timing.TimingPackage;
 
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ *
  * @generated
  */
 public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -47,16 +49,16 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static TimingFactory init() {
 		try {
-			TimingFactory theTimingFactory = (TimingFactory)EPackage.Registry.INSTANCE.getEFactory(TimingPackage.eNS_URI);
+			TimingFactory theTimingFactory = (TimingFactory) EPackage.Registry.INSTANCE.getEFactory(TimingPackage.eNS_URI);
 			if (theTimingFactory != null) {
 				return theTimingFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new TimingFactoryImpl();
@@ -65,6 +67,7 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public TimingFactoryImpl() {
@@ -73,24 +76,31 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case TimingPackage.TIMING: return createTiming();
-			case TimingPackage.EVENT_CHAIN: return createEventChain();
-			case TimingPackage.TIMING_EXPRESSION: return createTimingExpression();
-			case TimingPackage.PRECEDENCE_CONSTRAINT: return createPrecedenceConstraint();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case TimingPackage.TIMING:
+			return createTiming();
+		case TimingPackage.EVENT_CHAIN:
+			return createEventChain();
+		case TimingPackage.TIMING_EXPRESSION:
+			return createTimingExpression();
+		case TimingPackage.PRECEDENCE_CONSTRAINT:
+			return createPrecedenceConstraint();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EventChain createEventChain() {
 		EventChainImpl eventChain = new EventChainImpl();
 		return eventChain;
@@ -99,8 +109,10 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimingExpression createTimingExpression() {
 		TimingExpressionImpl timingExpression = new TimingExpressionImpl();
 		return timingExpression;
@@ -109,8 +121,10 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public PrecedenceConstraint createPrecedenceConstraint() {
 		PrecedenceConstraintImpl precedenceConstraint = new PrecedenceConstraintImpl();
 		return precedenceConstraint;
@@ -118,8 +132,10 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Timing createTiming() {
 		TimingImpl timing = new TimingImpl();
 		return timing;
@@ -127,10 +143,12 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimingPackage getTimingPackage() {
-		return (TimingPackage)getEPackage();
+		return (TimingPackage) getEPackage();
 	}
 
 } // TimingFactoryImpl

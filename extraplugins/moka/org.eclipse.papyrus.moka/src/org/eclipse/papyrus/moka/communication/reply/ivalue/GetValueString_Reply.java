@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ public class GetValueString_Reply extends ReplyMessage {
 
 	/**
 	 * Constructs a reply message from a string
-	 * 
+	 *
 	 * @param textualRepresentation
-	 *        The textual value representation associated with this reply message
+	 *            The textual value representation associated with this reply message
 	 */
 	public GetValueString_Reply(String textualRepresentation) {
 		super();
@@ -41,7 +41,7 @@ public class GetValueString_Reply extends ReplyMessage {
 
 	/**
 	 * Returns The textual value representation associated with this reply message
-	 * 
+	 *
 	 * @return The textual value representation associated with this reply message
 	 */
 	public String getValueString() {
@@ -50,9 +50,10 @@ public class GetValueString_Reply extends ReplyMessage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.communication.reply.ReplyMessage#marshal()
 	 */
+	@Override
 	public String marshal() {
 		return Marshaller.getInstance().getValueString_reply_marshal(this);
 	}

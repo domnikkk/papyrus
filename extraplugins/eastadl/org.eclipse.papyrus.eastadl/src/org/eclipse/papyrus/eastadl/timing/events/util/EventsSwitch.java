@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,13 +37,13 @@ import org.eclipse.papyrus.eastadl.timing.events.ModeEvent;
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
- * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
- * to invoke the <code>caseXXX</code> method for each class of the model,
+ * It supports the call {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object
  * and proceeding up the inheritance hierarchy
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage
  * @generated
  */
@@ -52,6 +52,7 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static EventsPackage modelPackage;
@@ -60,6 +61,7 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EventsSwitch() {
@@ -72,6 +74,7 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -87,7 +90,9 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -102,7 +107,9 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Value</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -117,7 +124,9 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -132,7 +141,9 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Event Function</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -147,7 +158,9 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>AUTOSAR Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -162,7 +175,9 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Event Fault Failure</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -177,7 +192,9 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Event Feature Flaw</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -192,7 +209,9 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>External Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -207,7 +226,9 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Mode Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -222,7 +243,9 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -237,7 +260,9 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Event Function Client Server Port</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -252,7 +277,9 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Event Function Flow Port</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -267,7 +294,9 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -282,7 +311,9 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -296,90 +327,164 @@ public class EventsSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case EventsPackage.EVENT_FUNCTION_FLOW_PORT: {
-				EventFunctionFlowPort eventFunctionFlowPort = (EventFunctionFlowPort)theEObject;
-				T result = caseEventFunctionFlowPort(eventFunctionFlowPort);
-				if (result == null) result = caseEvent(eventFunctionFlowPort);
-				if (result == null) result = caseEAExpression(eventFunctionFlowPort);
-				if (result == null) result = caseTimingDescription(eventFunctionFlowPort);
-				if (result == null) result = caseEAValue(eventFunctionFlowPort);
-				if (result == null) result = caseEAElement(eventFunctionFlowPort);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+		case EventsPackage.EVENT_FUNCTION_FLOW_PORT: {
+			EventFunctionFlowPort eventFunctionFlowPort = (EventFunctionFlowPort) theEObject;
+			T result = caseEventFunctionFlowPort(eventFunctionFlowPort);
+			if (result == null) {
+				result = caseEvent(eventFunctionFlowPort);
 			}
-			case EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT: {
-				EventFunctionClientServerPort eventFunctionClientServerPort = (EventFunctionClientServerPort)theEObject;
-				T result = caseEventFunctionClientServerPort(eventFunctionClientServerPort);
-				if (result == null) result = caseEvent(eventFunctionClientServerPort);
-				if (result == null) result = caseEAExpression(eventFunctionClientServerPort);
-				if (result == null) result = caseTimingDescription(eventFunctionClientServerPort);
-				if (result == null) result = caseEAValue(eventFunctionClientServerPort);
-				if (result == null) result = caseEAElement(eventFunctionClientServerPort);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseEAExpression(eventFunctionFlowPort);
 			}
-			case EventsPackage.EVENT_FUNCTION: {
-				EventFunction eventFunction = (EventFunction)theEObject;
-				T result = caseEventFunction(eventFunction);
-				if (result == null) result = caseEvent(eventFunction);
-				if (result == null) result = caseTimingDescription(eventFunction);
-				if (result == null) result = caseEAElement(eventFunction);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseTimingDescription(eventFunctionFlowPort);
 			}
-			case EventsPackage.AUTOSAR_EVENT: {
-				AUTOSAREvent autosarEvent = (AUTOSAREvent)theEObject;
-				T result = caseAUTOSAREvent(autosarEvent);
-				if (result == null) result = caseEvent(autosarEvent);
-				if (result == null) result = caseTimingDescription(autosarEvent);
-				if (result == null) result = caseEAElement(autosarEvent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseEAValue(eventFunctionFlowPort);
 			}
-			case EventsPackage.EVENT_FAULT_FAILURE: {
-				EventFaultFailure eventFaultFailure = (EventFaultFailure)theEObject;
-				T result = caseEventFaultFailure(eventFaultFailure);
-				if (result == null) result = caseEvent(eventFaultFailure);
-				if (result == null) result = caseTimingDescription(eventFaultFailure);
-				if (result == null) result = caseEAElement(eventFaultFailure);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseEAElement(eventFunctionFlowPort);
 			}
-			case EventsPackage.EVENT_FEATURE_FLAW: {
-				EventFeatureFlaw eventFeatureFlaw = (EventFeatureFlaw)theEObject;
-				T result = caseEventFeatureFlaw(eventFeatureFlaw);
-				if (result == null) result = caseEvent(eventFeatureFlaw);
-				if (result == null) result = caseTimingDescription(eventFeatureFlaw);
-				if (result == null) result = caseEAElement(eventFeatureFlaw);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case EventsPackage.EXTERNAL_EVENT: {
-				ExternalEvent externalEvent = (ExternalEvent)theEObject;
-				T result = caseExternalEvent(externalEvent);
-				if (result == null) result = caseEvent(externalEvent);
-				if (result == null) result = caseTimingDescription(externalEvent);
-				if (result == null) result = caseEAElement(externalEvent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT: {
+			EventFunctionClientServerPort eventFunctionClientServerPort = (EventFunctionClientServerPort) theEObject;
+			T result = caseEventFunctionClientServerPort(eventFunctionClientServerPort);
+			if (result == null) {
+				result = caseEvent(eventFunctionClientServerPort);
 			}
-			case EventsPackage.MODE_EVENT: {
-				ModeEvent modeEvent = (ModeEvent)theEObject;
-				T result = caseModeEvent(modeEvent);
-				if (result == null) result = caseEvent(modeEvent);
-				if (result == null) result = caseTimingDescription(modeEvent);
-				if (result == null) result = caseEAElement(modeEvent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseEAExpression(eventFunctionClientServerPort);
 			}
-			default: return defaultCase(theEObject);
+			if (result == null) {
+				result = caseTimingDescription(eventFunctionClientServerPort);
+			}
+			if (result == null) {
+				result = caseEAValue(eventFunctionClientServerPort);
+			}
+			if (result == null) {
+				result = caseEAElement(eventFunctionClientServerPort);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EventsPackage.EVENT_FUNCTION: {
+			EventFunction eventFunction = (EventFunction) theEObject;
+			T result = caseEventFunction(eventFunction);
+			if (result == null) {
+				result = caseEvent(eventFunction);
+			}
+			if (result == null) {
+				result = caseTimingDescription(eventFunction);
+			}
+			if (result == null) {
+				result = caseEAElement(eventFunction);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EventsPackage.AUTOSAR_EVENT: {
+			AUTOSAREvent autosarEvent = (AUTOSAREvent) theEObject;
+			T result = caseAUTOSAREvent(autosarEvent);
+			if (result == null) {
+				result = caseEvent(autosarEvent);
+			}
+			if (result == null) {
+				result = caseTimingDescription(autosarEvent);
+			}
+			if (result == null) {
+				result = caseEAElement(autosarEvent);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EventsPackage.EVENT_FAULT_FAILURE: {
+			EventFaultFailure eventFaultFailure = (EventFaultFailure) theEObject;
+			T result = caseEventFaultFailure(eventFaultFailure);
+			if (result == null) {
+				result = caseEvent(eventFaultFailure);
+			}
+			if (result == null) {
+				result = caseTimingDescription(eventFaultFailure);
+			}
+			if (result == null) {
+				result = caseEAElement(eventFaultFailure);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EventsPackage.EVENT_FEATURE_FLAW: {
+			EventFeatureFlaw eventFeatureFlaw = (EventFeatureFlaw) theEObject;
+			T result = caseEventFeatureFlaw(eventFeatureFlaw);
+			if (result == null) {
+				result = caseEvent(eventFeatureFlaw);
+			}
+			if (result == null) {
+				result = caseTimingDescription(eventFeatureFlaw);
+			}
+			if (result == null) {
+				result = caseEAElement(eventFeatureFlaw);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EventsPackage.EXTERNAL_EVENT: {
+			ExternalEvent externalEvent = (ExternalEvent) theEObject;
+			T result = caseExternalEvent(externalEvent);
+			if (result == null) {
+				result = caseEvent(externalEvent);
+			}
+			if (result == null) {
+				result = caseTimingDescription(externalEvent);
+			}
+			if (result == null) {
+				result = caseEAElement(externalEvent);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EventsPackage.MODE_EVENT: {
+			ModeEvent modeEvent = (ModeEvent) theEObject;
+			T result = caseModeEvent(modeEvent);
+			if (result == null) {
+				result = caseEvent(modeEvent);
+			}
+			if (result == null) {
+				result = caseTimingDescription(modeEvent);
+			}
+			if (result == null) {
+				result = caseEAElement(modeEvent);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
-} //EventsSwitch
+} // EventsSwitch

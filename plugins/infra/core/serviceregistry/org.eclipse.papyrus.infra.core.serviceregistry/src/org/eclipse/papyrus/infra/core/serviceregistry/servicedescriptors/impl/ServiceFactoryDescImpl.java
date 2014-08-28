@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceFactoryDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage;
 
@@ -20,6 +19,7 @@ public class ServiceFactoryDescImpl extends ServiceDescImpl implements ServiceFa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ServiceFactoryDescImpl() {
@@ -29,6 +29,7 @@ public class ServiceFactoryDescImpl extends ServiceDescImpl implements ServiceFa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class ServiceFactoryDescImpl extends ServiceDescImpl implements ServiceFa
 		return ServicedescriptorsPackage.Literals.SERVICE_FACTORY_DESC;
 	}
 
-} //ServiceFactoryDescImpl
+} // ServiceFactoryDescImpl

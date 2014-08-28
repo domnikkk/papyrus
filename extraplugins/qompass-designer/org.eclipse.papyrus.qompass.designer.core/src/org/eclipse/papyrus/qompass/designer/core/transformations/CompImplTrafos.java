@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -55,14 +55,14 @@ import org.eclipse.uml2.uml.UMLPackage;
  * storage attribute*) for a port with a required interface 3. add an
  * implementation for the getcnx_q operation for a port with a required
  * interface (the operation itself has been added before)
- * 
+ *
  * TODO: C++ specific, support different "component to OO" mappings
- * 
+ *
  * Caveat: Assure that the folder derivedInterfaces already exists in a model.
  * Otherwise the call to getProvided/getRequired interface might trigger its
  * creation resulting in the corruption of list iterators (ConcurrentAccess
  * exception)
- * 
+ *
  */
 public class CompImplTrafos {
 
@@ -102,7 +102,7 @@ public class CompImplTrafos {
 	 * adds a suitable implementation that evaluates delegation connectors from
 	 * the port to a property within the composite. The delegation target could
 	 * either be a normal class (no port) or an inner component.
-	 * 
+	 *
 	 * @param implementation
 	 */
 	private static void addGetPortOperation(LazyCopier copy, Class implementation) {
@@ -210,8 +210,8 @@ public class CompImplTrafos {
 	 * to change the aggregation kind, since it remains logically a composition,
 	 * it is merely an implementation issue that it must be a pointer for C++ if
 	 * the concrete type is not yet known.
-	 * 
-	 * 
+	 *
+	 *
 	 * @param implementation
 	 */
 	private static void markPartsPointer(Class implementation) {
@@ -235,7 +235,7 @@ public class CompImplTrafos {
 	 * (method) is needed for ports inherited from a component type (the
 	 * behavior is implementation specific, as it needs to take delegation to
 	 * parts into account)
-	 * 
+	 *
 	 * @param implementation
 	 */
 	private static void addConnectPortOperation(LazyCopier sat, Class implementation) {
@@ -274,8 +274,7 @@ public class CompImplTrafos {
 								CompTypeTrafos.INDEX_TYPE_FOR_MULTI_RECEPTACLE));
 					}
 				}
-				Parameter refParam = op.createOwnedParameter(
-						"ref", requiredIntf); //$NON-NLS-1$
+				Parameter refParam = op.createOwnedParameter("ref", requiredIntf); //$NON-NLS-1$
 				StereotypeUtil.apply(refParam, Ptr.class);
 
 				OpaqueBehavior behavior = (OpaqueBehavior) implementation
@@ -376,7 +375,7 @@ public class CompImplTrafos {
 	 * between composite parts. It only takes the assembly connections into
 	 * account, since delegation connectors are handled by the get_ and connect_
 	 * port operations above.
-	 * 
+	 *
 	 * @param implementation
 	 */
 	private static void addCreateConnections(Class implementation)
@@ -416,8 +415,7 @@ public class CompImplTrafos {
 		}
 		// TODO: use template, as in bootloader
 		if (createConnBody.length() > 0) {
-			Operation operation = implementation.createOwnedOperation(
-					"createConnections", null, null); //$NON-NLS-1$
+			Operation operation = implementation.createOwnedOperation("createConnections", null, null); //$NON-NLS-1$
 
 			OpaqueBehavior behavior = (OpaqueBehavior) implementation
 					.createOwnedBehavior("b:" + operation.getName(), //$NON-NLS-1$
@@ -432,7 +430,7 @@ public class CompImplTrafos {
 	 * Create a connection between the two ends of a receptacle. This function
 	 * checks whether the first end really is a receptacle and the second really
 	 * is a facet.
-	 * 
+	 *
 	 * @param indexMap
 	 *            a map of indices that are used in case of multiplex
 	 *            receptacles
@@ -538,7 +536,7 @@ public class CompImplTrafos {
 	 * start with index 0. Implementations can make no assumption which
 	 * connection is associated with a certain index. [want to avoid associative
 	 * array in runtime].
-	 * 
+	 *
 	 * @param port
 	 * @param end
 	 * @return
@@ -563,7 +561,9 @@ public class CompImplTrafos {
 
 	/**
 	 * Recursively delete all connectors in a given package package
-	 * @param pkg the package in which connector deletion starts
+	 *
+	 * @param pkg
+	 *            the package in which connector deletion starts
 	 */
 	public static void deleteConnectors(Package pkg) {
 		for (PackageableElement element : pkg.getPackagedElements()) {
@@ -592,17 +592,17 @@ public class CompImplTrafos {
 	 * the bootloader. The bootloader also has to instantiate, if different
 	 * allocation variants are required. (this is for instance the case for
 	 * distribution connectors and for the system itself)
-	 * 
+	 *
 	 * If possible, we want to let composites instantiate sub-components, since
 	 * this eases the transition to systems which support reconfiguration.
-	 * 
+	 *
 	 * [TODO: optimization: analyze whether the deployment plan selects a single
 	 * implementation. If yes, let the composite instantiate]
-	 * 
+	 *
 	 * [TODO: elements within an assembly need to be instantiated by composite -
 	 * if System - by bootloader. assembly also need to be instantiated by
 	 * composite!!
-	 * 
+	 *
 	 * @param implementation
 	 * @return
 	 */
@@ -615,7 +615,7 @@ public class CompImplTrafos {
 	 * by the composite in which it is contained. The criteria is based on the
 	 * question whether the containing composite is flattened, as it is the case
 	 * for the system component and the interaction components for distribution.
-	 * 
+	 *
 	 * @param part
 	 * @return
 	 */
@@ -638,7 +638,7 @@ public class CompImplTrafos {
 	 * instantiate via the bootloader, it becomes a pointer. If it is
 	 * instantiated by the composite itself, it is not a pointer, it will be
 	 * instantiated along with the composite
-	 * 
+	 *
 	 * @param part
 	 * @return
 	 */

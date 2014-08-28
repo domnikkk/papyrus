@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotML.System#getBase_Class <em>Base Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.System#isNative <em>Native</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.System#getLibraryPath <em>Library Path</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.System#getLibraryComponentName <em>Library Component Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.System#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.System#isNative <em>Native</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.System#getLibraryPath <em>Library Path</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.System#getLibraryComponentName <em>Library Component Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface System extends EObject {
 	 * Returns the value of the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Class</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSystem_Base_Class()
@@ -44,7 +44,9 @@ public interface System extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.System#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Class</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
@@ -54,10 +56,10 @@ public interface System extends EObject {
 	 * Returns the value of the '<em><b>Native</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Native</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Native</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Native</em>' attribute.
 	 * @see #setNative(boolean)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSystem_Native()
@@ -70,7 +72,9 @@ public interface System extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.System#isNative <em>Native</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Native</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Native</em>' attribute.
 	 * @see #isNative()
 	 * @generated
 	 */
@@ -80,10 +84,10 @@ public interface System extends EObject {
 	 * Returns the value of the '<em><b>Library Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Library Path</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Library Path</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Library Path</em>' attribute.
 	 * @see #setLibraryPath(String)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSystem_LibraryPath()
@@ -96,7 +100,9 @@ public interface System extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.System#getLibraryPath <em>Library Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Library Path</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Library Path</em>' attribute.
 	 * @see #getLibraryPath()
 	 * @generated
 	 */
@@ -106,10 +112,10 @@ public interface System extends EObject {
 	 * Returns the value of the '<em><b>Library Component Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Library Component Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Library Component Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Library Component Name</em>' attribute.
 	 * @see #setLibraryComponentName(String)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSystem_LibraryComponentName()
@@ -122,7 +128,9 @@ public interface System extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.System#getLibraryComponentName <em>Library Component Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Library Component Name</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Library Component Name</em>' attribute.
 	 * @see #getLibraryComponentName()
 	 * @generated
 	 */

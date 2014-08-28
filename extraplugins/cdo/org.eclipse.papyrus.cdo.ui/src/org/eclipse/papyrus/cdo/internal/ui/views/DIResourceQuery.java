@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.views;
 
@@ -82,15 +82,15 @@ public class DIResourceQuery {
 		// Query for all SashWindowsMngr instances (legacy DI models, definitely accurate) and
 		// all resources named *.di that are empty (new-style DI models)
 		this.legacyQuery = view.createQuery("ocl", //$NON-NLS-1$
-			"SashWindowsMngr.allInstances()->collect(oclAsType(ecore::EObject).eResource()).oclAsType(eresource::CDOResource)->union(" + //$NON-NLS-1$
-			"eresource::CDOResource.allInstances()->select(uRI.toString().endsWith('.di') and contents->isEmpty()))", //$NON-NLS-1$
-			DiPackage.Literals.SASH_MODEL);
+				"SashWindowsMngr.allInstances()->collect(oclAsType(ecore::EObject).eResource()).oclAsType(eresource::CDOResource)->union(" + //$NON-NLS-1$
+						"eresource::CDOResource.allInstances()->select(uRI.toString().endsWith('.di') and contents->isEmpty()))", //$NON-NLS-1$
+				DiPackage.Literals.SASH_MODEL);
 
 		// Query for new-style models only, used when the repository does not know the DiPackage
 		// (because it contains no legacy models)
 		this.query = view.createQuery("ocl", //$NON-NLS-1$
-			"eresource::CDOResource.allInstances()->select(uRI.toString().endsWith('.di') and contents->isEmpty())", //$NON-NLS-1$
-			EresourcePackage.Literals.CDO_RESOURCE);
+				"eresource::CDOResource.allInstances()->select(uRI.toString().endsWith('.di') and contents->isEmpty())", //$NON-NLS-1$
+				EresourcePackage.Literals.CDO_RESOURCE);
 
 		view.addListener(cdoViewListener);
 		viewer.getControl().addDisposeListener(createViewerDisposeListener());
@@ -102,9 +102,9 @@ public class DIResourceQuery {
 
 		DIResourceQuery result;
 
-		synchronized(instances) {
+		synchronized (instances) {
 			result = instances.get(view);
-			if(result == null) {
+			if (result == null) {
 				result = new DIResourceQuery(viewer, view);
 				instances.put(view, result);
 			}
@@ -115,21 +115,21 @@ public class DIResourceQuery {
 
 	/**
 	 * Wait for the current in-progress query on the specified {@code view} to finish, if any.
-	 * 
+	 *
 	 * @param view
-	 *        a view which we are or may be querying for DI resources
+	 *            a view which we are or may be querying for DI resources
 	 * @param timeout
-	 *        a positive timeout
+	 *            a positive timeout
 	 * @param unit
-	 *        the time unit for the {@code timeout}
-	 * 
+	 *            the time unit for the {@code timeout}
+	 *
 	 * @return {@code true} on successful wait (if required); {@code false} on time-out
-	 * 
+	 *
 	 * @throws InterruptedException
-	 *         if the wait is interrupted
+	 *             if the wait is interrupted
 	 */
 	public static boolean waitFor(CDOView view, long timeout, TimeUnit unit) throws InterruptedException {
-		if(timeout <= 0) {
+		if (timeout <= 0) {
 			throw new IllegalArgumentException("Non-positive timeout"); //$NON-NLS-1$
 		}
 
@@ -137,11 +137,11 @@ public class DIResourceQuery {
 
 		DIResourceQuery query;
 
-		synchronized(instances) {
+		synchronized (instances) {
 			query = instances.get(view);
 		}
 
-		if(query == null) {
+		if (query == null) {
 			// have nothing to wait for
 			result = true;
 		} else {
@@ -154,12 +154,12 @@ public class DIResourceQuery {
 	public static Set<CDOResource> getDIResources(CDOView view) {
 		DIResourceQuery query;
 
-		synchronized(instances) {
+		synchronized (instances) {
 			query = instances.get(view);
 		}
 
 		Set<CDOResource> result;
-		if(query == null) {
+		if (query == null) {
 			result = Collections.emptySet();
 		} else {
 			result = query.getDIResources();
@@ -176,14 +176,14 @@ public class DIResourceQuery {
 		CDOResource result = null;
 
 		URI uri = resource.getURI();
-		if(DI_FILE_EXTENSION.equals(uri.fileExtension())) {
+		if (DI_FILE_EXTENSION.equals(uri.fileExtension())) {
 			// it *is* a DI resource
 			result = resource;
 		} else {
 			uri = uri.trimFileExtension().appendFileExtension(DI_FILE_EXTENSION);
 
-			for(CDOResource next : getDIResources(resource.cdoView())) {
-				if(uri.equals(next.getURI())) {
+			for (CDOResource next : getDIResources(resource.cdoView())) {
+				if (uri.equals(next.getURI())) {
 					result = next;
 					break;
 				}
@@ -198,7 +198,7 @@ public class DIResourceQuery {
 	}
 
 	boolean hasLegacyModels() {
-		if(hasLegacyModels == null) {
+		if (hasLegacyModels == null) {
 			hasLegacyModels = query.getView().getSession().getPackageRegistry().getPackageInfo(DiPackage.eINSTANCE) != null;
 		}
 
@@ -217,7 +217,7 @@ public class DIResourceQuery {
 	}
 
 	private void dispose() {
-		synchronized(instances) {
+		synchronized (instances) {
 			CDOView view = query.getView();
 			view.removeListener(cdoViewListener);
 			instances.remove(view);
@@ -229,12 +229,12 @@ public class DIResourceQuery {
 
 			@Override
 			public void notifyEvent(IEvent event) {
-				if(event instanceof ILifecycleEvent) {
-					ILifecycleEvent lifecycleEvent = (ILifecycleEvent)event;
-					if(lifecycleEvent.getKind() == Kind.DEACTIVATED) {
+				if (event instanceof ILifecycleEvent) {
+					ILifecycleEvent lifecycleEvent = (ILifecycleEvent) event;
+					if (lifecycleEvent.getKind() == Kind.DEACTIVATED) {
 						dispose();
 					}
-				} else if(event instanceof CDOViewInvalidationEvent) {
+				} else if (event instanceof CDOViewInvalidationEvent) {
 					// if my view is invalidated, then some folder or resource
 					// that I am showing has changed. Run the query again and
 					// update asynchronously
@@ -278,10 +278,10 @@ public class DIResourceQuery {
 
 			// don't use an iterator because it won't be able to advance
 			// past a resource proxy that cannot be resolved
-			for(int i = 0; i < rawResult.size(); i++) {
+			for (int i = 0; i < rawResult.size(); i++) {
 				try {
 					CDOResource next = rawResult.get(i);
-					if(isContained(next)) {
+					if (isContained(next)) {
 						resultBuilder.add(next);
 					}
 				} catch (Exception e) {
@@ -294,14 +294,14 @@ public class DIResourceQuery {
 
 			diResources.set(ImmutableSet.copyOf(result));
 
-			if((viewer != null) && (viewer.getControl() != null)) {
+			if ((viewer != null) && (viewer.getControl() != null)) {
 				Display display = viewer.getControl().getDisplay();
-				if(display != null) {
+				if (display != null) {
 					display.asyncExec(new Runnable() {
 
 						@Override
 						public void run() {
-							if((viewer != null) && (viewer.getControl() != null) && !viewer.getControl().isDisposed()) {
+							if ((viewer != null) && (viewer.getControl() != null) && !viewer.getControl().isDisposed()) {
 								refresh();
 							}
 						}
@@ -318,14 +318,14 @@ public class DIResourceQuery {
 			boolean result = false;
 
 			CDOResourceFolder folder = resource.getFolder();
-			if(folder != null) {
+			if (folder != null) {
 				// if we don't have read permission on the folder, then we shouldn't attempt to show any contents
-				if(folder.cdoPermission().isReadable()) {
+				if (folder.cdoPermission().isReadable()) {
 					result = folder.getNodes().contains(resource);
 				}
 			} else {
 				CDOResource root = resource.cdoResource();
-				if((root != null) && root.isRoot()) {
+				if ((root != null) && root.isRoot()) {
 					result = root.getContents().contains(resource);
 				}
 			}

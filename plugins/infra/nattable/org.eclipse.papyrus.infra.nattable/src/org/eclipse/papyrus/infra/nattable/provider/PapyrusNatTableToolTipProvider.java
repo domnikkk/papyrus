@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,12 +27,12 @@ import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.internal.SharedImages;
 
 /**
- * 
+ *
  * @author VL222926
  *         This class provides the tooltip to display in the table
  */
-@SuppressWarnings("restriction")//$NON-NLS-1$
-//suppress warning for SharedImages
+@SuppressWarnings("restriction")
+// suppress warning for SharedImages
 public class PapyrusNatTableToolTipProvider extends NatTableContentTooltip {
 
 	/**
@@ -41,43 +41,43 @@ public class PapyrusNatTableToolTipProvider extends NatTableContentTooltip {
 	private final ISharedImages sharedImage = new SharedImages();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param natTable
-	 *        the nattable
+	 *            the nattable
 	 * @param tooltipRegions
-	 *        the region on which this tooltip provider will be applied
+	 *            the region on which this tooltip provider will be applied
 	 */
 	public PapyrusNatTableToolTipProvider(final NatTable natTable, final String... tooltipRegions) {
 		super(natTable, tooltipRegions);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.window.DefaultToolTip#getImage(org.eclipse.swt.widgets.Event)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 */
 	@Override
 	protected Image getImage(Event event) {
-		if(isCellWithError(event)) {
+		if (isCellWithError(event)) {
 			return this.sharedImage.getImage(ISharedImages.IMG_OBJS_ERROR_TSK);
 		}
 		return super.getImage(event);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.tooltip.NatTableContentTooltip#getText(org.eclipse.swt.widgets.Event)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 */
 	@Override
 	protected String getText(final Event event) {
-		if(isCellWithError(event)) {
+		if (isCellWithError(event)) {
 			final ILayerCell cell = getCell(event);
 			return getProblemTooltip(cell.getDataValue());
 		} else {
@@ -86,23 +86,23 @@ public class PapyrusNatTableToolTipProvider extends NatTableContentTooltip {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param value
 	 * @return
 	 */
 	protected String getProblemTooltip(final Object value) {
 		ProblemLabelProvider provider = new ProblemLabelProvider();
-		if(value instanceof Problem) {
-			return provider.getTooltipText((EObject)value);
-		} else if(value instanceof Collection<?>) {
+		if (value instanceof Problem) {
+			return provider.getTooltipText((EObject) value);
+		} else if (value instanceof Collection<?>) {
 			final StringBuilder builder = new StringBuilder();
-			final Iterator<?> iter = ((Collection<?>)value).iterator();
-			while(iter.hasNext()) {
+			final Iterator<?> iter = ((Collection<?>) value).iterator();
+			while (iter.hasNext()) {
 				final Object current = iter.next();
-				if(current instanceof Problem){
-					builder.append(provider.getTooltipText((EObject)current));
+				if (current instanceof Problem) {
+					builder.append(provider.getTooltipText((EObject) current));
 				}
-				if(iter.hasNext()){
+				if (iter.hasNext()) {
 					builder.append("\n"); //$NON-NLS-1$
 				}
 			}
@@ -112,9 +112,9 @@ public class PapyrusNatTableToolTipProvider extends NatTableContentTooltip {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param event
-	 *        an event
+	 *            an event
 	 * @return
 	 *         the cell for this event
 	 */
@@ -125,22 +125,22 @@ public class PapyrusNatTableToolTipProvider extends NatTableContentTooltip {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param event
-	 *        an event
+	 *            an event
 	 * @return
 	 *         <code>true</code> if the cell have a problem
 	 */
 	protected boolean isCellWithError(final Event event) {
 		final ILayerCell cell = getCell(event);
 		boolean hasError = false;
-		if(cell != null) {
+		if (cell != null) {
 			final Object value = cell.getDataValue();
-			if(value instanceof Problem) {
+			if (value instanceof Problem) {
 				hasError = true;
-			} else if(value instanceof Collection<?>) {
-				final Iterator<?> iter = ((Collection<?>)value).iterator();
-				while(!hasError && iter.hasNext()) {
+			} else if (value instanceof Collection<?>) {
+				final Iterator<?> iter = ((Collection<?>) value).iterator();
+				while (!hasError && iter.hasNext()) {
 					hasError = iter.next() instanceof Problem;
 				}
 			}
@@ -149,31 +149,31 @@ public class PapyrusNatTableToolTipProvider extends NatTableContentTooltip {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.tooltip.NatTableContentTooltip#shouldCreateToolTip(org.eclipse.swt.widgets.Event)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 */
 	@Override
 	protected boolean shouldCreateToolTip(final Event event) {
-		if(isCellWithError(event)) {
+		if (isCellWithError(event)) {
 			return true;
 		}
-		if(!isDisplayingFullCellText(event)) {
+		if (!isDisplayingFullCellText(event)) {
 			return true;
 		}
 		return false;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param event
-	 *        an event
+	 *            an event
 	 * @return
 	 *         <code>true</code> if the cell size allow to display the full text
 	 */
 	protected boolean isDisplayingFullCellText(final Event event) {
-		return true;//TODO : display a tooltip when the full text is not displayed in the cell
+		return true;// TODO : display a tooltip when the full text is not displayed in the cell
 	}
 }

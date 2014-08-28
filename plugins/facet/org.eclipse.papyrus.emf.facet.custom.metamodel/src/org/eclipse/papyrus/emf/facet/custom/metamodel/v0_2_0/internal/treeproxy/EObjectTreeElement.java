@@ -24,8 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement#getEObject <em>EObject</em>}</li>
- * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement#getSfTreeElmement <em>Sf Tree Elmement</em>}
- * </li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement#getSfTreeElmement <em>Sf Tree Elmement</em>}</li>
  * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement#getParent <em>Parent</em>}</li>
  * </ul>
  * </p>
@@ -49,7 +48,7 @@ public interface EObjectTreeElement extends TreeElement {
 	 * <em>EObject</em>}' reference.
 	 *
 	 * @param value
-	 *        the new value of the '<em>EObject</em>' reference.
+	 *            the new value of the '<em>EObject</em>' reference.
 	 * @see #getEObject()
 	 */
 	void setEObject(EObject value);
@@ -57,8 +56,7 @@ public interface EObjectTreeElement extends TreeElement {
 	/**
 	 * Returns the value of the '<em><b>Sf Tree Elmement</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EStructuralFeatureTreeElement}.
-	 * It is bidirectional and its opposite is '
-	 * {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EStructuralFeatureTreeElement#getParent <em>Parent</em>}'.
+	 * It is bidirectional and its opposite is ' {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EStructuralFeatureTreeElement#getParent <em>Parent</em>}'.
 	 * <p>
 	 * If the meaning of the '<em>Sf Tree Elmement</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin and CEA LIST
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,17 +52,18 @@ public class ConstraintConstrainedElementCreateCommand extends EditElementComman
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(source == null && target == null) {
+		if (source == null && target == null) {
 			return false;
 		}
-		if(source != null && false == source instanceof Constraint) {
+		if (source != null && false == source instanceof Constraint) {
 			return false;
 		}
-		if(target != null && false == target instanceof Element) {
+		if (target != null && false == target instanceof Element) {
 			return false;
 		}
-		if(getSource() == null) {
+		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
@@ -72,11 +73,12 @@ public class ConstraintConstrainedElementCreateCommand extends EditElementComman
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
-		if(getSource() != null && getTarget() != null) {
+		if (getSource() != null && getTarget() != null) {
 			getSource().getConstrainedElements().add(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
@@ -85,6 +87,7 @@ public class ConstraintConstrainedElementCreateCommand extends EditElementComman
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setElementToEdit(EObject element) {
 		throw new UnsupportedOperationException();
 	}
@@ -93,13 +96,13 @@ public class ConstraintConstrainedElementCreateCommand extends EditElementComman
 	 * @generated
 	 */
 	protected Constraint getSource() {
-		return (Constraint)source;
+		return (Constraint) source;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Element getTarget() {
-		return (Element)target;
+		return (Element) target;
 	}
 }

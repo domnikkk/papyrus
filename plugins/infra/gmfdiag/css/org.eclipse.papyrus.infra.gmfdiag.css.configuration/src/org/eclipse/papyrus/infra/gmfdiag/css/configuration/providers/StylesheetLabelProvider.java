@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,28 +40,28 @@ public class StylesheetLabelProvider extends EMFLabelProvider {
 
 	@Override
 	public String getText(Object element) {
-		if(element instanceof Ruleset) {
-			return getText((Ruleset)element);
+		if (element instanceof Ruleset) {
+			return getText((Ruleset) element);
 		}
 
-		if(element instanceof StyleSheetReference) {
-			return getText((StyleSheetReference)element);
+		if (element instanceof StyleSheetReference) {
+			return getText((StyleSheetReference) element);
 		}
 
-		if(element instanceof EmbeddedStyleSheet) {
-			return getText((EmbeddedStyleSheet)element);
+		if (element instanceof EmbeddedStyleSheet) {
+			return getText((EmbeddedStyleSheet) element);
 		}
 
 		return super.getText(element);
 	}
 
 	public String getText(Ruleset ruleset) {
-		//Delegate the label to XText serialization
+		// Delegate the label to XText serialization
 		String label = "";
 
-		if(!ruleset.getSelectors().isEmpty()) {
+		if (!ruleset.getSelectors().isEmpty()) {
 			label += serializer.serialize(ruleset.getSelectors().get(0));
-			for(int i = 1; i < ruleset.getSelectors().size(); i++) {
+			for (int i = 1; i < ruleset.getSelectors().size(); i++) {
 				label += ", " + serializer.serialize(ruleset.getSelectors().get(i));
 			}
 			label = label.trim().replaceAll("\\s+", " ");
@@ -80,7 +80,7 @@ public class StylesheetLabelProvider extends EMFLabelProvider {
 
 	@Override
 	public Color getForeground(Object element) {
-		if(!(element instanceof Ruleset)) {
+		if (!(element instanceof Ruleset)) {
 			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_GRAY);
 		}
 		return super.getForeground(element);
@@ -88,9 +88,9 @@ public class StylesheetLabelProvider extends EMFLabelProvider {
 
 	@Override
 	public Image getImage(Object element) {
-		//		if(element instanceof StyleSheetReference) {
-		//			return org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(Activator.PLUGIN_ID, "/icons/sourceEditor.gif");
-		//		}
+		// if(element instanceof StyleSheetReference) {
+		// return org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(Activator.PLUGIN_ID, "/icons/sourceEditor.gif");
+		// }
 		return null;
 	}
 }

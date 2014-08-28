@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,11 +19,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -34,9 +31,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.facade.provider.FacadeEditPlugin;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelFactory;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
@@ -45,11 +40,12 @@ import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class VirtualMetamodelItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -59,6 +55,7 @@ public class VirtualMetamodelItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public VirtualMetamodelItemProvider(AdapterFactory adapterFactory) {
@@ -69,6 +66,7 @@ public class VirtualMetamodelItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,74 +85,77 @@ public class VirtualMetamodelItemProvider
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_VirtualMetamodel_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VirtualMetamodel_name_feature", "_UI_VirtualMetamodel_type"),
-				 VirtualmetamodelPackage.Literals.VIRTUAL_METAMODEL__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_VirtualMetamodel_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VirtualMetamodel_name_feature", "_UI_VirtualMetamodel_type"),
+						VirtualmetamodelPackage.Literals.VIRTUAL_METAMODEL__NAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Ns Prefix feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addNsPrefixPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_VirtualMetamodel_nsPrefix_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VirtualMetamodel_nsPrefix_feature", "_UI_VirtualMetamodel_type"),
-				 VirtualmetamodelPackage.Literals.VIRTUAL_METAMODEL__NS_PREFIX,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_VirtualMetamodel_nsPrefix_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VirtualMetamodel_nsPrefix_feature", "_UI_VirtualMetamodel_type"),
+						VirtualmetamodelPackage.Literals.VIRTUAL_METAMODEL__NS_PREFIX,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Ns URI feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addNsURIPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_VirtualMetamodel_nsURI_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VirtualMetamodel_nsURI_feature", "_UI_VirtualMetamodel_type"),
-				 VirtualmetamodelPackage.Literals.VIRTUAL_METAMODEL__NS_URI,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_VirtualMetamodel_nsURI_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VirtualMetamodel_nsURI_feature", "_UI_VirtualMetamodel_type"),
+						VirtualmetamodelPackage.Literals.VIRTUAL_METAMODEL__NS_URI,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,6 +170,7 @@ public class VirtualMetamodelItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,6 +185,7 @@ public class VirtualMetamodelItemProvider
 	 * This returns VirtualMetamodel.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,22 +197,24 @@ public class VirtualMetamodelItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((VirtualMetamodel)object).getName();
+		String label = ((VirtualMetamodel) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_VirtualMetamodel_type") :
-			getString("_UI_VirtualMetamodel_type") + " " + label;
+				getString("_UI_VirtualMetamodel_type") :
+				getString("_UI_VirtualMetamodel_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,14 +222,14 @@ public class VirtualMetamodelItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(VirtualMetamodel.class)) {
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NAME:
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_PREFIX:
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_URI:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NAME:
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_PREFIX:
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_URI:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -234,6 +239,7 @@ public class VirtualMetamodelItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,25 +247,26 @@ public class VirtualMetamodelItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(VirtualmetamodelPackage.Literals.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS,
-				 VirtualmetamodelFactory.eINSTANCE.createVirtualMetaclass()));
+						VirtualmetamodelFactory.eINSTANCE.createVirtualMetaclass()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(VirtualmetamodelPackage.Literals.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS,
-				 VirtualmetamodelFactory.eINSTANCE.createVirtualDatatype()));
+						VirtualmetamodelFactory.eINSTANCE.createVirtualDatatype()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(VirtualmetamodelPackage.Literals.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS,
-				 VirtualmetamodelFactory.eINSTANCE.createVirtualEnum()));
+						VirtualmetamodelFactory.eINSTANCE.createVirtualEnum()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ import org.eclipse.papyrus.uml.diagram.component.providers.UMLViewProvider;
 
 /**
  * this is the specific command in charge to transform an element editpart into a defaultShape
- * 
+ *
  */
 public class LollipopToRectangleCommand extends AbstractTransactionalCommand {
 
@@ -46,17 +46,17 @@ public class LollipopToRectangleCommand extends AbstractTransactionalCommand {
 	protected SemanticAdapter semanticApdater;
 
 	/**
-	 * 
+	 *
 	 * Constructor of this command
-	 * 
+	 *
 	 * @param domain
-	 *        the transactional editing domain to execute transaction
+	 *            the transactional editing domain to execute transaction
 	 * @param classView
-	 *        the editpart that will be transformed
-	 * @param semanticAdapter 
-	 * 		  the wrapper that will store the result of the command
+	 *            the editpart that will be transformed
+	 * @param semanticAdapter
+	 *            the wrapper that will store the result of the command
 	 */
-	public LollipopToRectangleCommand(TransactionalEditingDomain domain, GraphicalEditPart classView,  SemanticAdapter semanticAdapter) {
+	public LollipopToRectangleCommand(TransactionalEditingDomain domain, GraphicalEditPart classView, SemanticAdapter semanticAdapter) {
 		super(domain, "change to Lollipop", Collections.EMPTY_LIST);
 		this.elementEditPart = classView;
 		this.semanticApdater = semanticAdapter;
@@ -64,7 +64,7 @@ public class LollipopToRectangleCommand extends AbstractTransactionalCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param elementID
 	 * @return return the element type from the id
 	 */
@@ -73,7 +73,7 @@ public class LollipopToRectangleCommand extends AbstractTransactionalCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param containerView
 	 * @param domainElement
 	 * @return get the visual id from the domain element
@@ -84,19 +84,19 @@ public class LollipopToRectangleCommand extends AbstractTransactionalCommand {
 
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		//creation of the node
+		// creation of the node
 		UMLViewProvider umlViewProvider = new UMLViewProvider();
-		View container = (View)elementEditPart.getNotationView().eContainer();
+		View container = (View) elementEditPart.getNotationView().eContainer();
 		Node interfaceView = umlViewProvider.createInterface_3205(elementEditPart.resolveSemanticElement(), container, -1, true, elementEditPart.getDiagramPreferencesHint());
-		interfaceView.setLayoutConstraint(((Node)elementEditPart.getNotationView()).getLayoutConstraint());
-		if( interfaceView.getLayoutConstraint() instanceof Bounds){
-			((Bounds)interfaceView.getLayoutConstraint()).setWidth(200);
-			((Bounds)interfaceView.getLayoutConstraint()).setHeight(100);
+		interfaceView.setLayoutConstraint(((Node) elementEditPart.getNotationView()).getLayoutConstraint());
+		if (interfaceView.getLayoutConstraint() instanceof Bounds) {
+			((Bounds) interfaceView.getLayoutConstraint()).setWidth(200);
+			((Bounds) interfaceView.getLayoutConstraint()).setHeight(100);
 		}
-		node=interfaceView;
-		//copy of all eannotations
+		node = interfaceView;
+		// copy of all eannotations
 		Iterator<EAnnotation> iter = elementEditPart.getNotationView().getEAnnotations().iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			EAnnotation annotation = EcoreUtil.copy(iter.next());
 			interfaceView.getEAnnotations().add(annotation);
 		}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 LIFL and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,15 +18,15 @@ import java.util.List;
 
 /**
  * Descriptor of a service. This descriptor describe a service.
- * 
+ *
  * @author cedirc dumoulin
- * 
+ *
  */
 public class ServiceDescriptor {
 
 	/**
 	 * Possible kind for service types.
-	 * 
+	 *
 	 */
 	public enum ServiceTypeKind {
 		service, serviceFactory, pojo, alias
@@ -76,7 +76,7 @@ public class ServiceDescriptor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param key
 	 * @param serviceClassname
 	 * @param serviceStartKind
@@ -93,9 +93,9 @@ public class ServiceDescriptor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param key
-	 *        A class used as key. The classname is used as key.
+	 *            A class used as key. The classname is used as key.
 	 * @param serviceClassname
 	 * @param serviceStartKind
 	 * @param priority
@@ -107,9 +107,9 @@ public class ServiceDescriptor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param key
-	 *        A class used as key. The classname is used as key.
+	 *            A class used as key. The classname is used as key.
 	 * @param serviceClassname
 	 * @param serviceStartKind
 	 * @param priority
@@ -127,9 +127,9 @@ public class ServiceDescriptor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param key
-	 *        A class used as key. The classname is used as key.
+	 *            A class used as key. The classname is used as key.
 	 * @param serviceClassname
 	 * @param serviceStartKind
 	 * @param priority
@@ -142,7 +142,7 @@ public class ServiceDescriptor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param key
 	 * @param serviceClassname
 	 * @param serviceStartKind
@@ -154,9 +154,9 @@ public class ServiceDescriptor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param key
-	 *        A class used as key. The classname is used as key.
+	 *            A class used as key. The classname is used as key.
 	 * @param serviceClassname
 	 * @param serviceStartKind
 	 * @param priority
@@ -167,7 +167,7 @@ public class ServiceDescriptor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param serviceClassname
 	 * @param serviceStartKind
 	 * @param priority
@@ -179,7 +179,7 @@ public class ServiceDescriptor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param serviceClassname
 	 * @param serviceStartKind
 	 * @param priority
@@ -190,7 +190,7 @@ public class ServiceDescriptor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param serviceClassname
 	 * @param serviceStartKind
 	 * @param priority
@@ -208,7 +208,7 @@ public class ServiceDescriptor {
 
 	/**
 	 * Return true if StartKind is 'always'.
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isStartAtStartup() {
@@ -245,7 +245,7 @@ public class ServiceDescriptor {
 
 	/**
 	 * @param classBundleId
-	 *        the classBundleID to set
+	 *            the classBundleID to set
 	 */
 	public void setClassBundleID(String classBundleId) {
 		classBundleID = classBundleId;
@@ -253,7 +253,7 @@ public class ServiceDescriptor {
 
 	/**
 	 * Get the keys of all the required services
-	 * 
+	 *
 	 * @return the requiredServices
 	 */
 	public List<String> getRequiredServiceKeys() {
@@ -262,7 +262,7 @@ public class ServiceDescriptor {
 
 	/**
 	 * @param requiredServices
-	 *        the requiredServices to set
+	 *            the requiredServices to set
 	 */
 	public void setRequiredServiceKeys(List<String> requiredServices) {
 		this.requiredServices = requiredServices;
@@ -271,7 +271,7 @@ public class ServiceDescriptor {
 	/**
 	 * @see java.lang.Object#toString()
 	 * @return
-	 * 
+	 *
 	 */
 	@Override
 	public String toString() {
@@ -287,7 +287,7 @@ public class ServiceDescriptor {
 
 	/**
 	 * @param isAnonymous
-	 *        the isAnonymous to set
+	 *            the isAnonymous to set
 	 */
 	public void setAnonymous(boolean isAnonymous) {
 		this.isAnonymous = isAnonymous;
@@ -302,7 +302,7 @@ public class ServiceDescriptor {
 
 	/**
 	 * @param serviceTypeKind
-	 *        the serviceTypeKind to set
+	 *            the serviceTypeKind to set
 	 */
 	public void setServiceTypeKind(ServiceTypeKind serviceTypeKind) {
 		this.serviceTypeKind = serviceTypeKind;

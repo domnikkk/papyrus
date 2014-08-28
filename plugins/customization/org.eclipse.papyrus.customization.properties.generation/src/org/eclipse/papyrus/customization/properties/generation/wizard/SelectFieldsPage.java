@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,7 +53,7 @@ import org.eclipse.swt.widgets.TreeItem;
  * The visibility of properties marked as Default is decided by the Generator.
  * When the context is regenerated, the visibility of properties marked as default
  * may change (If the generator is changed)
- * 
+ *
  * @author Camille Letavernier
  */
 public class SelectFieldsPage extends AbstractCreateContextPage {
@@ -69,7 +69,7 @@ public class SelectFieldsPage extends AbstractCreateContextPage {
 	public int fieldColumn = -1, selectionSingleColumn = -1, selectionMultipleColumn = -1, descriptionColumn = -1;
 
 	private int columnId = 0;
-	
+
 
 	/**
 	 * Constructor.
@@ -90,12 +90,12 @@ public class SelectFieldsPage extends AbstractCreateContextPage {
 
 	/**
 	 * Sets the generated partial context
-	 * 
+	 *
 	 * @param context
-	 *        The partially generated context
+	 *            The partially generated context
 	 */
 	public void setContexts(List<Context> contexts) {
-		if(contexts == null || contexts.isEmpty()) {
+		if (contexts == null || contexts.isEmpty()) {
 			Activator.log.warn("Generated context is null"); //$NON-NLS-1$
 			return;
 		}
@@ -141,7 +141,7 @@ public class SelectFieldsPage extends AbstractCreateContextPage {
 
 		column.setText(label);
 		column.setResizable(true);
-		((TableLayout)tree.getLayout()).addColumnData(new ColumnWeightData(weight, minimumWidth));
+		((TableLayout) tree.getLayout()).addColumnData(new ColumnWeightData(weight, minimumWidth));
 
 		return columnId++;
 	}
@@ -149,7 +149,7 @@ public class SelectFieldsPage extends AbstractCreateContextPage {
 	private void installEditors(TreeViewer viewer) {
 		Tree tree = viewer.getTree();
 
-		for(TreeItem treeItem : tree.getItems()) {
+		for (TreeItem treeItem : tree.getItems()) {
 			installEditors(treeItem);
 		}
 	}
@@ -157,8 +157,8 @@ public class SelectFieldsPage extends AbstractCreateContextPage {
 	private void installEditors(TreeItem treeItem) {
 
 		EObject eObject = EMFHelper.getEObject(treeItem.getData());
-		if(eObject instanceof Property) {
-			Property property = (Property)eObject;
+		if (eObject instanceof Property) {
+			Property property = (Property) eObject;
 
 			boolean defaultSingleValue = getGenerator().isSelectedSingle(property);
 			boolean defaultMultipleValue = getGenerator().isSelectedMultiple(property);
@@ -172,7 +172,7 @@ public class SelectFieldsPage extends AbstractCreateContextPage {
 			createTreeEditor(treeItem, selectionMultipleColumn, defaultMultipleValue, multipleValue);
 		}
 
-		for(TreeItem subItem : treeItem.getItems()) {
+		for (TreeItem subItem : treeItem.getItems()) {
 			installEditors(subItem);
 		}
 
@@ -195,8 +195,8 @@ public class SelectFieldsPage extends AbstractCreateContextPage {
 	private FieldSelection createNewFieldSelection() {
 		FieldSelection selection = FieldSelectionFactory.eINSTANCE.createFieldSelection();
 
-		for(Context context : contexts) {
-			for(DataContextRoot dataContextRoot : context.getDataContexts()) {
+		for (Context context : contexts) {
+			for (DataContextRoot dataContextRoot : context.getDataContexts()) {
 				ContextElement definition = createContextPackage(dataContextRoot);
 				selection.getContextElements().add(definition);
 			}
@@ -208,10 +208,10 @@ public class SelectFieldsPage extends AbstractCreateContextPage {
 	private ContextElement createContextPackage(DataContextPackage sourcePackage) {
 		ContextElement element = createContextElement(sourcePackage);
 
-		for(DataContextElement sourceElement : sourcePackage.getElements()) {
+		for (DataContextElement sourceElement : sourcePackage.getElements()) {
 			ContextElement subElement;
-			if(sourceElement instanceof DataContextPackage) {
-				subElement = createContextPackage((DataContextPackage)sourceElement);
+			if (sourceElement instanceof DataContextPackage) {
+				subElement = createContextPackage((DataContextPackage) sourceElement);
 			} else {
 				subElement = createContextElement(sourceElement);
 			}
@@ -224,7 +224,7 @@ public class SelectFieldsPage extends AbstractCreateContextPage {
 		ContextElement element = FieldSelectionFactory.eINSTANCE.createContextElement();
 		element.setName(sourceElement.getName());
 
-		for(Property property : sourceElement.getProperties()) {
+		for (Property property : sourceElement.getProperties()) {
 			PropertyDefinition propertyDefinition = FieldSelectionFactory.eINSTANCE.createPropertyDefinition();
 			propertyDefinition.setName(property.getName());
 			propertyDefinition.setValueSingle(TernaryButton.State.DEFAULT);
@@ -237,69 +237,69 @@ public class SelectFieldsPage extends AbstractCreateContextPage {
 
 	private void displayFields(DataContextElement contextElement, TreeViewer treeViewer) {
 
-		//		if(contextElement.getProperties().size() > 0) {
+		// if(contextElement.getProperties().size() > 0) {
 		//
-		//			Label separator = new Label(fields, SWT.SEPARATOR | SWT.HORIZONTAL);
-		//			GridData data = new GridData(SWT.FILL, SWT.CENTER, true, false, 4, 1);
-		//			separator.setLayoutData(data);
+		// Label separator = new Label(fields, SWT.SEPARATOR | SWT.HORIZONTAL);
+		// GridData data = new GridData(SWT.FILL, SWT.CENTER, true, false, 4, 1);
+		// separator.setLayoutData(data);
 		//
-		//			Label elementName = new Label(fields, SWT.NONE);
-		//			elementName.setText(contextElement.getName());
-		//			FontData[] fontDatas = elementName.getFont().getFontData();
-		//			for(FontData fontData : fontDatas) {
-		//				fontData.setStyle(SWT.BOLD);
-		//				// fontData.setHeight(fontData.getHeight() + 2);
-		//			}
-		//			elementName.setFont(new Font(elementName.getDisplay(), fontDatas));
+		// Label elementName = new Label(fields, SWT.NONE);
+		// elementName.setText(contextElement.getName());
+		// FontData[] fontDatas = elementName.getFont().getFontData();
+		// for(FontData fontData : fontDatas) {
+		// fontData.setStyle(SWT.BOLD);
+		// // fontData.setHeight(fontData.getHeight() + 2);
+		// }
+		// elementName.setFont(new Font(elementName.getDisplay(), fontDatas));
 		//
-		//			data = new GridData(SWT.FILL, SWT.CENTER, true, false, 4, 1);
-		//			elementName.setLayoutData(data);
+		// data = new GridData(SWT.FILL, SWT.CENTER, true, false, 4, 1);
+		// elementName.setLayoutData(data);
 		//
-		//			Label separator2 = new Label(fields, SWT.SEPARATOR | SWT.HORIZONTAL);
-		//			data = new GridData(SWT.FILL, SWT.CENTER, true, false, 4, 1);
-		//			separator2.setLayoutData(data);
+		// Label separator2 = new Label(fields, SWT.SEPARATOR | SWT.HORIZONTAL);
+		// data = new GridData(SWT.FILL, SWT.CENTER, true, false, 4, 1);
+		// separator2.setLayoutData(data);
 		//
-		//			for(Property property : contextElement.getProperties()) {
-		//				Label label = new Label(fields, SWT.NONE);
-		//				label.setText(property.getName());
+		// for(Property property : contextElement.getProperties()) {
+		// Label label = new Label(fields, SWT.NONE);
+		// label.setText(property.getName());
 		//
-		//				TernaryButton showSingle = new TernaryButton(fields, getGenerator().isSelectedSingle(property));
-		//				TernaryButton showMultiple = new TernaryButton(fields, getGenerator().isSelectedMultiple(property));
+		// TernaryButton showSingle = new TernaryButton(fields, getGenerator().isSelectedSingle(property));
+		// TernaryButton showMultiple = new TernaryButton(fields, getGenerator().isSelectedMultiple(property));
 		//
-		//				PropertyDefinition propertyDefinition = getWizard().getPropertyDefinition(fieldSelection, property);
+		// PropertyDefinition propertyDefinition = getWizard().getPropertyDefinition(fieldSelection, property);
 		//
-		//				IObservableValue singleValue = EMFProperties.value(FieldSelectionPackage.eINSTANCE.getPropertyDefinition_ValueSingle()).observe(propertyDefinition);
-		//				IObservableValue multipleValue = EMFProperties.value(FieldSelectionPackage.eINSTANCE.getPropertyDefinition_ValueMultiple()).observe(propertyDefinition);
+		// IObservableValue singleValue = EMFProperties.value(FieldSelectionPackage.eINSTANCE.getPropertyDefinition_ValueSingle()).observe(propertyDefinition);
+		// IObservableValue multipleValue = EMFProperties.value(FieldSelectionPackage.eINSTANCE.getPropertyDefinition_ValueMultiple()).observe(propertyDefinition);
 		//
-		//				showSingle.setObservable(singleValue);
-		//				showMultiple.setObservable(multipleValue);
+		// showSingle.setObservable(singleValue);
+		// showMultiple.setObservable(multipleValue);
 		//
-		//				Label description = new Label(fields, SWT.WRAP);
+		// Label description = new Label(fields, SWT.WRAP);
 		//				String propertyDescription = "";// property.getTooltipText(); //$NON-NLS-1$
 		//				if(propertyDescription == null || propertyDescription.trim().equals("")) { //$NON-NLS-1$
-		//					propertyDescription = Messages.SelectFieldsPage_descriptionNotAvailable;
-		//					description.setAlignment(SWT.CENTER);
-		//				}
-		//				description.setText(propertyDescription);
+		// propertyDescription = Messages.SelectFieldsPage_descriptionNotAvailable;
+		// description.setAlignment(SWT.CENTER);
+		// }
+		// description.setText(propertyDescription);
 		//
-		//				data = new GridData(SWT.FILL, SWT.CENTER, true, false);
-		//				label.setLayoutData(data);
-		//				data = new GridData(SWT.FILL, SWT.CENTER, true, false);
-		//				showSingle.setLayoutData(data);
-		//				data = new GridData(SWT.FILL, SWT.CENTER, true, false);
-		//				showMultiple.setLayoutData(data);
-		//				data = new GridData(SWT.CENTER, SWT.CENTER, true, false);
-		//				data.widthHint = 500;
-		//				description.setLayoutData(data);
-		//			}
-		//		}
+		// data = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		// label.setLayoutData(data);
+		// data = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		// showSingle.setLayoutData(data);
+		// data = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		// showMultiple.setLayoutData(data);
+		// data = new GridData(SWT.CENTER, SWT.CENTER, true, false);
+		// data.widthHint = 500;
+		// description.setLayoutData(data);
+		// }
+		// }
 		//
-		//		if(contextElement instanceof DataContextPackage) {
-		//			DataContextPackage contextPackage = (DataContextPackage)contextElement;
-		//			for(DataContextElement element : contextPackage.getElements()) {
-		//				displayFields(element, treeViewer);
-		//			}
-		//		}
+		// if(contextElement instanceof DataContextPackage) {
+		// DataContextPackage contextPackage = (DataContextPackage)contextElement;
+		// for(DataContextElement element : contextPackage.getElements()) {
+		// displayFields(element, treeViewer);
+		// }
+		// }
 	}
 
 	private IGenerator getGenerator() {
@@ -308,9 +308,9 @@ public class SelectFieldsPage extends AbstractCreateContextPage {
 
 	/**
 	 * Sets the URI of the generated context
-	 * 
+	 *
 	 * @param uri
-	 *        The URI of the generated context
+	 *            The URI of the generated context
 	 */
 	public void setTargetURI(List<URI> uri) {
 		this.targetURI = uri;
@@ -320,7 +320,7 @@ public class SelectFieldsPage extends AbstractCreateContextPage {
 	public void setVisible(boolean visible) {
 		super.setPageComplete(true);
 		super.setVisible(visible);
-		if(contexts == null && visible) {
+		if (contexts == null && visible) {
 			setContexts(getWizard().generator.generate(targetURI));
 		}
 	}

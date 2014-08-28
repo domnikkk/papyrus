@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 422257
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.editors;
 
@@ -103,14 +103,14 @@ public class PapyrusCDOEditorManager {
 
 		IEditorPart result = page.openEditor(input, PapyrusMultiDiagramEditor.EDITOR_ID);
 
-		EditingDomain domain = (EditingDomain)result.getAdapter(EditingDomain.class);
+		EditingDomain domain = (EditingDomain) result.getAdapter(EditingDomain.class);
 		ResourceSet resourceSet = domain.getResourceSet();
 
 		CDOView view = repository.getCDOView(resourceSet);
 		add(view, result);
 
-		if(view instanceof CDOTransaction) {
-			ServicesRegistry services = (ServicesRegistry)result.getAdapter(ServicesRegistry.class);
+		if (view instanceof CDOTransaction) {
+			ServicesRegistry services = (ServicesRegistry) result.getAdapter(ServicesRegistry.class);
 			view.addListener(new PapyrusTransactionListener(services, resourceSet));
 		}
 
@@ -118,7 +118,7 @@ public class PapyrusCDOEditorManager {
 	}
 
 	private IResourceSetDisposalApprover getDisposalApprover() {
-		if(disposalApprover == null) {
+		if (disposalApprover == null) {
 			disposalApprover = new ResourceSetDisposalApprover();
 		}
 
@@ -138,8 +138,8 @@ public class PapyrusCDOEditorManager {
 
 				@Override
 				public EditorListener call() throws Exception {
-					//Probably not necessary. But the previous API is deprecated. It is probably safer
-					//to return a non-null EditorListener, but we're not supposed to enter this method anyway
+					// Probably not necessary. But the previous API is deprecated. It is probably safer
+					// to return a non-null EditorListener, but we're not supposed to enter this method anyway
 					EditorListener listener = new EditorListener();
 					editor.getSite().getPage().addPartListener(listener);
 					return listener;
@@ -174,7 +174,7 @@ public class PapyrusCDOEditorManager {
 
 				@Override
 				public void run() {
-					if(editors.containsKey(editor)) {
+					if (editors.containsKey(editor)) {
 						editor.getSite().getPage().closeEditor(editor, false);
 					}
 				}
@@ -192,20 +192,20 @@ public class PapyrusCDOEditorManager {
 			editors.add(editor);
 
 			Optional<ISashWindowsContainer> sashContainer = AdapterUtils.adapt(editor, ISashWindowsContainer.class);
-			if(sashContainer.isPresent()) {
+			if (sashContainer.isPresent()) {
 				sashContainer.get().addPageLifeCycleListener(this);
 			}
 		}
 
 		@Override
 		public void partClosed(IWorkbenchPart part) {
-			if(editors.remove(part)) {
-				IEditorPart editor = (IEditorPart)part;
+			if (editors.remove(part)) {
+				IEditorPart editor = (IEditorPart) part;
 				closed(editor);
 			}
 
 			Optional<ISashWindowsContainer> sashContainer = AdapterUtils.adapt(part, ISashWindowsContainer.class);
-			if(sashContainer.isPresent()) {
+			if (sashContainer.isPresent()) {
 				sashContainer.get().removePageLifeCycleListener(this);
 				sashContainer.get().visit(new IPageVisitor() {
 
@@ -224,8 +224,8 @@ public class PapyrusCDOEditorManager {
 
 		@Override
 		public void pageClosed(IPage page) {
-			if(page instanceof IEditorPage) {
-				closed(((IEditorPage)page).getIEditorPart());
+			if (page instanceof IEditorPage) {
+				closed(((IEditorPage) page).getIEditorPart());
 			}
 		}
 
@@ -286,32 +286,32 @@ public class PapyrusCDOEditorManager {
 		public DisposeAction disposalRequested(IPapyrusRepository repository, Collection<ResourceSet> resourceSets) {
 
 			DisposeAction result = DisposeAction.CLOSE;
-			IInternalPapyrusRepository internal = (IInternalPapyrusRepository)repository;
+			IInternalPapyrusRepository internal = (IInternalPapyrusRepository) repository;
 			final List<IEditorPart> dirty = Lists.newArrayList();
 
-			for(ResourceSet next : resourceSets) {
+			for (ResourceSet next : resourceSets) {
 				CDOView view = internal.getCDOView(next);
 				IEditorPart editor = editors.inverse().get(view);
 
-				if((editor != null) && editor.isDirty()) {
+				if ((editor != null) && editor.isDirty()) {
 					dirty.add(editor);
 				}
 			}
 
-			if(!dirty.isEmpty()) {
+			if (!dirty.isEmpty()) {
 				Future<Integer> dlgResult = UIUtil.call(new Callable<Integer>() {
 
 					@Override
 					public Integer call() {
 						MessageDialog dlg = new MessageDialog(dirty.get(0).getSite().getShell(), Messages.PapyrusCDOEditorManager_1, null, Messages.PapyrusCDOEditorManager_2, MessageDialog.QUESTION_WITH_CANCEL, //
-						new String[]{ IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL, IDialogConstants.CANCEL_LABEL }, 2);
+								new String[] { IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL, IDialogConstants.CANCEL_LABEL }, 2);
 
 						return dlg.open();
 					}
 				});
 
 				try {
-					switch(dlgResult.get()) {
+					switch (dlgResult.get()) {
 					case 0: // Yes
 						result = DisposeAction.SAVE;
 						break;

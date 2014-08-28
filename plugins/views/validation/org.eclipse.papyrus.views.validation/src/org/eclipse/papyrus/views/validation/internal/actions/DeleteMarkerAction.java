@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ public class DeleteMarkerAction
 		super(site, "Delete");
 
 		setImageDescriptor(PlatformUI.getWorkbench().getSharedImages()
-			.getImageDescriptor(ISharedImages.IMG_TOOL_DELETE));
+				.getImageDescriptor(ISharedImages.IMG_TOOL_DELETE));
 		setDisabledImageDescriptor(PlatformUI.getWorkbench().getSharedImages()
-			.getImageDescriptor(ISharedImages.IMG_TOOL_DELETE_DISABLED));
+				.getImageDescriptor(ISharedImages.IMG_TOOL_DELETE_DISABLED));
 		setActionDefinitionId(ActionFactory.DELETE.getCommandId());
 	}
 
@@ -45,7 +45,7 @@ public class DeleteMarkerAction
 			} catch (CoreException e) {
 				StatusAdapter adapter = new StatusAdapter(e.getStatus());
 				adapter.setProperty(IStatusAdapterConstants.TITLE_PROPERTY,
-					"Delete Validation Problem");
+						"Delete Validation Problem");
 				StatusManager.getManager().handle(adapter, StatusManager.SHOW);
 			}
 		}

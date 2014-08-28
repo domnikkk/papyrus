@@ -30,8 +30,8 @@ public class AssertFalse extends OpaqueBehaviorExecution {
 	@Override
 	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
 		Classifier executionContext = AssertionExecutionContextHelper.getExecutionContext(this);
-		StringValue label = (StringValue)inputParameters.get(0).values.get(0);
-		BooleanValue assertionResult = (BooleanValue)inputParameters.get(1).values.get(0);
+		StringValue label = (StringValue) inputParameters.get(0).values.get(0);
+		BooleanValue assertionResult = (BooleanValue) inputParameters.get(1).values.get(0);
 		Reporter.INSTANCE.add(new TestReport(executionContext != null ? executionContext : null, label.value, assertionResult.value == false ? TestDecision.SUCCESS : TestDecision.FAILED, getClass()));
 	}
 

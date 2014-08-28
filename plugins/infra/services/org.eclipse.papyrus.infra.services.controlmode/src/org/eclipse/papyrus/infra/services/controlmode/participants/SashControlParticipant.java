@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Arthur Daussy <a href="mailto:arthur.daussy@atos.net"> - initial API and implementation
  ******************************************************************************/
@@ -36,14 +36,14 @@ import org.eclipse.papyrus.infra.services.controlmode.commands.RemoveControlReso
 /**
  * Control participant in charge of controling the di resources.
  * It move page ref to control resources
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class SashControlParticipant implements IControlCommandParticipant, IUncontrolCommandParticipant {
 
 	public String getID() {
-		return "org.eclipse.papyrus.infra.services.controlmode.participants.SashControlParticipant";////$NON-NLS-0$
+		return "org.eclipse.papyrus.infra.services.controlmode.participants.SashControlParticipant";//
 	}
 
 	public int getPriority() {
@@ -70,7 +70,7 @@ public class SashControlParticipant implements IControlCommandParticipant, IUnco
 
 	public ICommand getPreUncontrolCommand(ControlModeRequest request) {
 		boolean result = setDiTargetRequest(request);
-		if(result) {
+		if (result) {
 			return getClearDiCommand(request);
 		}
 		return UnexecutableCommand.INSTANCE;
@@ -91,7 +91,7 @@ public class SashControlParticipant implements IControlCommandParticipant, IUnco
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 			ModelSet modelSet = getRequest().getModelSet();
-			if (modelSet == null){
+			if (modelSet == null) {
 				return CommandResult.newErrorCommandResult("Unable to retrieve resource set");
 			}
 			Resource oldDiresource = modelSet.getAssociatedResource(getRequest().getTargetObject(), SashModel.MODEL_FILE_EXTENSION, true);
@@ -106,18 +106,18 @@ public class SashControlParticipant implements IControlCommandParticipant, IUnco
 	protected boolean setDiTargetRequest(ControlModeRequest request) {
 		URI diURI = request.getNewURI().trimFileExtension().appendFileExtension(SashModel.MODEL_FILE_EXTENSION);
 		ModelSet modelSet = request.getModelSet();
-		if(modelSet != null) {
+		if (modelSet != null) {
 			Resource diResource = null;
 			try {
 				diResource = modelSet.getResource(diURI, true);
 			} catch (Exception e) {
 				diResource = null;
 			}
-			if(diResource == null) {
+			if (diResource == null) {
 				return false;
 			}
 			request.setTargetResource(diResource, SashModel.MODEL_FILE_EXTENSION);
-			//Nothing to do but everything is ok
+			// Nothing to do but everything is ok
 			return true;
 		}
 		return false;

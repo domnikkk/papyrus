@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,14 +55,14 @@ class LocalMemento implements InvocationHandler {
 
 	static IMemento createMemento(String type, String id) {
 		LocalMemento handler = new LocalMemento(type, id);
-		return (IMemento)Proxy.newProxyInstance(LocalMemento.class.getClassLoader(), INTERFACES, handler);
+		return (IMemento) Proxy.newProxyInstance(LocalMemento.class.getClassLoader(), INTERFACES, handler);
 	}
 
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 		Object result = null;
 
 		Method implementation = delegates.get(method);
-		if(implementation == null) {
+		if (implementation == null) {
 			throw new UnsupportedOperationException("dynamic proxy handler does not understand " + method.getName()); //$NON-NLS-1$
 		} else {
 			result = implementation.invoke(this, args);
@@ -96,8 +96,8 @@ class LocalMemento implements InvocationHandler {
 	@API
 	IMemento getChild(String type) {
 		IMemento result = null;
-		for(IMemento next : children) {
-			if(type.equals(next.getType())) {
+		for (IMemento next : children) {
+			if (type.equals(next.getType())) {
 				result = next;
 				break;
 			}
@@ -113,8 +113,8 @@ class LocalMemento implements InvocationHandler {
 	@API
 	IMemento[] getChildren(String type) {
 		List<IMemento> result = new ArrayList<IMemento>(children.size());
-		for(IMemento next : children) {
-			if(type.equals(next.getType())) {
+		for (IMemento next : children) {
+			if (type.equals(next.getType())) {
 				result.add(next);
 			}
 		}
@@ -129,36 +129,36 @@ class LocalMemento implements InvocationHandler {
 	private <T> T coerce(Object value, Class<T> type) {
 		Object result;
 
-		if(value == null) {
+		if (value == null) {
 			result = value;
-		} else if(type.isInstance(value)) {
+		} else if (type.isInstance(value)) {
 			result = value;
-		} else if(Number.class.isAssignableFrom(type) && (value instanceof Number)) {
-			Number number = (Number)value;
-			if(type == Integer.class) {
+		} else if (Number.class.isAssignableFrom(type) && (value instanceof Number)) {
+			Number number = (Number) value;
+			if (type == Integer.class) {
 				result = number.intValue();
-			} else if(type == Float.class) {
+			} else if (type == Float.class) {
 				result = number.floatValue();
 			} else {
 				throw new IllegalArgumentException("unsupported numeric type: " + type.getSimpleName()); //$NON-NLS-1$
 			}
-		} else if(Number.class.isAssignableFrom(type) && (value instanceof String)) {
-			String string = (String)value;
-			if(type == Integer.class) {
+		} else if (Number.class.isAssignableFrom(type) && (value instanceof String)) {
+			String string = (String) value;
+			if (type == Integer.class) {
 				result = Integer.valueOf(string);
-			} else if(type == Float.class) {
+			} else if (type == Float.class) {
 				result = Float.valueOf(string);
 			} else {
 				throw new IllegalArgumentException("unsupported numeric type: " + type.getSimpleName()); //$NON-NLS-1$
 			}
-		} else if(type == Boolean.class) {
+		} else if (type == Boolean.class) {
 			// We know the value isn't a Boolean, otherwise we would have handled it already
-			if(value instanceof String) {
-				result = Boolean.valueOf((String)value);
+			if (value instanceof String) {
+				result = Boolean.valueOf((String) value);
 			} else {
 				throw new IllegalArgumentException("unsupported boolean conversion from type: " + ((value == null) ? "null" : value.getClass().getSimpleName())); //$NON-NLS-1$
 			}
-		} else if(type == String.class) {
+		} else if (type == String.class) {
 			result = String.valueOf(value);
 		} else {
 			throw new IllegalArgumentException("unsupported attribute type: " + type.getSimpleName()); //$NON-NLS-1$
@@ -223,12 +223,13 @@ class LocalMemento implements InvocationHandler {
 
 	@API
 	void putMemento(IMemento memento) {
-		if(!isLocalMemento(memento)) {
+		if (!isLocalMemento(memento)) {
 			throw new IllegalArgumentException("memento is not a local memento"); //$NON-NLS-1$
 		}
 		children.add(memento);
 	}
 
+	@Override
 	@API(owner = Object.class)
 	public String toString() {
 		StringBuilder result = new StringBuilder();
@@ -240,29 +241,29 @@ class LocalMemento implements InvocationHandler {
 
 	private void append(StringBuilder buf, int depth) {
 		// Indent
-		for(int i = 0; i < depth; i++) {
+		for (int i = 0; i < depth; i++) {
 			buf.append("  "); //$NON-NLS-1$
 		}
 
 		buf.append("LocalMemento(");//$NON-NLS-1$
 		buf.append(type);
-		if(id != null) {
+		if (id != null) {
 			buf.append('[').append(id).append(']');
 		}
 		buf.append(") ").append(attributes); //$NON-NLS-1$
 		buf.append('\n');
 
 		final int nextDepth = depth + 1;
-		for(IMemento next : children) {
-			((LocalMemento)Proxy.getInvocationHandler(next)).append(buf, nextDepth);
+		for (IMemento next : children) {
+			((LocalMemento) Proxy.getInvocationHandler(next)).append(buf, nextDepth);
 		}
 	}
 
 	private static Map<Method, Method> createDelegates() {
 		Map<Method, Method> result = new HashMap<Method, Method>();
 
-		for(Method implementation : LocalMemento.class.getDeclaredMethods()) {
-			if(implementation.isAnnotationPresent(API.class)) {
+		for (Method implementation : LocalMemento.class.getDeclaredMethods()) {
+			if (implementation.isAnnotationPresent(API.class)) {
 				try {
 					Method api = implementation.getAnnotation(API.class).owner().getMethod(implementation.getName(), implementation.getParameterTypes());
 					result.put(api, implementation);

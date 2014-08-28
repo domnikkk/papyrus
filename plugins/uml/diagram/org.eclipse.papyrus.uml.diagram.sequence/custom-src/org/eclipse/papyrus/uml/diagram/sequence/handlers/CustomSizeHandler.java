@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,6 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.menu.actions.SizeAction;
@@ -41,14 +40,14 @@ public class CustomSizeHandler extends SizeHandler {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public CustomSizeHandler() {
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.menu.actions.handlers.SizeHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */
@@ -64,7 +63,7 @@ public class CustomSizeHandler extends SizeHandler {
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param parameter
 		 * @param selectedElements
 		 */
@@ -74,13 +73,13 @@ public class CustomSizeHandler extends SizeHandler {
 
 		/**
 		 * Return the command for the Same Height Action
-		 * 
+		 *
 		 * @return
 		 *         Return the command for the Same Height Action
 		 */
 		@Override
 		protected Command getHeightCommand() {
-			if(!(this.selectedElements.size() > 1)) {
+			if (!(this.selectedElements.size() > 1)) {
 				return UnexecutableCommand.INSTANCE;
 			} else {
 				// Create a compound command to hold the resize commands
@@ -89,23 +88,23 @@ public class CustomSizeHandler extends SizeHandler {
 				Iterator<IGraphicalEditPart> iter = selectedElements.iterator();
 				// Get the Primary Selection
 				Dimension primarySize = getPrimarySize();
-				while(iter.hasNext()) {
+				while (iter.hasNext()) {
 					// For each figure in the selection (to be resize) a request is created for resize to new bounds in the south-east direction.
 					// The command for this resize is contributed by the edit part for the resize request.
 					IGraphicalEditPart toResize = iter.next();
-					View resizeView = (View)toResize.getModel();
-					Integer previousWidth = (Integer)ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Width());
-					Integer previousHeight = (Integer)ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Height());
+					View resizeView = (View) toResize.getModel();
+					Integer previousWidth = (Integer) ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Width());
+					Integer previousHeight = (Integer) ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Height());
 					Dimension previousSize;
-					if(previousWidth.intValue() == -1 || previousHeight.intValue() == -1) {
+					if (previousWidth.intValue() == -1 || previousHeight.intValue() == -1) {
 						previousSize = toResize.getFigure().getSize().getCopy();
 					} else {
 						previousSize = new Dimension(previousWidth.intValue(), previousHeight.intValue());
 					}
 					// Calculate delta resize
 					Dimension delta = new Dimension(0, primarySize.height - previousSize.height);
-					if(isLifelines()) {
-						//Align all Lifelines at bottom.
+					if (isLifelines()) {
+						// Align all Lifelines at bottom.
 						Rectangle constraint = getLifelineConstraint();
 						Rectangle previousRect = SequenceUtil.getAbsoluteBounds(toResize);
 						delta.height = constraint.bottom() - previousRect.bottom();
@@ -114,7 +113,7 @@ public class CustomSizeHandler extends SizeHandler {
 					ChangeBoundsRequest bRequest = new ChangeBoundsRequest();
 					bRequest.setResizeDirection(PositionConstants.SOUTH);
 					bRequest.setSizeDelta(delta);
-					bRequest.setType(RequestConstants.REQ_RESIZE);
+					bRequest.setType(org.eclipse.gef.RequestConstants.REQ_RESIZE);
 					Command resizeCommand = toResize.getCommand(bRequest);
 					// Previous implementation (following line) forced bounds on view instead of using resize command provided by the edit part.
 					//
@@ -128,7 +127,7 @@ public class CustomSizeHandler extends SizeHandler {
 		}
 
 		protected Dimension getPrimarySize() {
-			if(selectedElements.isEmpty()) {
+			if (selectedElements.isEmpty()) {
 				return null;
 			}
 			// Get the Primary Selection
@@ -138,11 +137,11 @@ public class CustomSizeHandler extends SizeHandler {
 		}
 
 		private boolean isLifelines() {
-			if(selectedElements.isEmpty()) {
+			if (selectedElements.isEmpty()) {
 				return true;
 			}
 			boolean isLifelines = true;
-			for(int i = 0; i < selectedElements.size(); i++) {
+			for (int i = 0; i < selectedElements.size(); i++) {
 				isLifelines &= selectedElements.get(i) instanceof LifelineEditPart;
 			}
 			return isLifelines;
@@ -150,8 +149,8 @@ public class CustomSizeHandler extends SizeHandler {
 
 		protected Rectangle getLifelineConstraint() {
 			Rectangle constraint = new Rectangle();
-			for(int i = 0; i < selectedElements.size(); i++) {
-				LifelineEditPart lifelineEditPart = (LifelineEditPart)selectedElements.get(i);
+			for (int i = 0; i < selectedElements.size(); i++) {
+				LifelineEditPart lifelineEditPart = (LifelineEditPart) selectedElements.get(i);
 				Rectangle rect = SequenceUtil.getAbsoluteBounds(lifelineEditPart);
 				constraint.union(rect);
 			}
@@ -159,11 +158,11 @@ public class CustomSizeHandler extends SizeHandler {
 		}
 
 		protected Dimension getPrimarySize(IGraphicalEditPart primaryChild) {
-			View primaryView = (View)primaryChild.getModel();
-			Integer width = (Integer)ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Width());
-			Integer height = (Integer)ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Height());
+			View primaryView = (View) primaryChild.getModel();
+			Integer width = (Integer) ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Width());
+			Integer height = (Integer) ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Height());
 			Dimension primarySize;
-			if(width.intValue() == -1 || height.intValue() == -1) {
+			if (width.intValue() == -1 || height.intValue() == -1) {
 				primarySize = primaryChild.getFigure().getSize().getCopy();
 			} else {
 				primarySize = new Dimension(width.intValue(), height.intValue());
@@ -173,13 +172,13 @@ public class CustomSizeHandler extends SizeHandler {
 
 		/**
 		 * Return the command for the Same Width Action
-		 * 
+		 *
 		 * @return
 		 *         the command for the Same Width Action
 		 */
 		@Override
 		protected Command getWidthCommand() {
-			if(!(this.selectedElements.size() > 1)) {
+			if (!(this.selectedElements.size() > 1)) {
 				return UnexecutableCommand.INSTANCE;
 			} else {
 				// Create a compound command to hold the resize commands
@@ -188,15 +187,15 @@ public class CustomSizeHandler extends SizeHandler {
 				Iterator<IGraphicalEditPart> iter = selectedElements.iterator();
 				// Get the Primary Selection
 				Dimension primarySize = getPrimarySize();
-				while(iter.hasNext()) {
+				while (iter.hasNext()) {
 					// For each figure in the selection (to be resize) a request is created for resize to new bounds in the south-east direction.
 					// The command for this resize is contributed by the edit part for the resize request.
 					IGraphicalEditPart toResize = iter.next();
-					View resizeView = (View)toResize.getModel();
-					Integer previousWidth = (Integer)ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Width());
-					Integer previousHeight = (Integer)ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Height());
+					View resizeView = (View) toResize.getModel();
+					Integer previousWidth = (Integer) ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Width());
+					Integer previousHeight = (Integer) ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Height());
 					Dimension previousSize;
-					if(previousWidth.intValue() == -1 || previousHeight.intValue() == -1) {
+					if (previousWidth.intValue() == -1 || previousHeight.intValue() == -1) {
 						previousSize = toResize.getFigure().getSize().getCopy();
 					} else {
 						previousSize = new Dimension(previousWidth.intValue(), previousHeight.intValue());
@@ -207,7 +206,7 @@ public class CustomSizeHandler extends SizeHandler {
 					ChangeBoundsRequest bRequest = new ChangeBoundsRequest();
 					bRequest.setResizeDirection(PositionConstants.EAST);
 					bRequest.setSizeDelta(delta);
-					bRequest.setType(RequestConstants.REQ_RESIZE);
+					bRequest.setType(org.eclipse.gef.RequestConstants.REQ_RESIZE);
 					Command resizeCommand = toResize.getCommand(bRequest);
 					// Previous implementation (following line) forced bounds on view instead of using resize command provided by the edit part.
 					//
@@ -222,12 +221,12 @@ public class CustomSizeHandler extends SizeHandler {
 
 		/**
 		 * @see org.eclipse.papyrus.uml.diagram.menu.actions.SizeAction#getBothCommand()
-		 * 
+		 *
 		 * @return
 		 */
 		@Override
 		protected Command getBothCommand() {
-			if(!(this.selectedElements.size() > 1)) {
+			if (!(this.selectedElements.size() > 1)) {
 				return UnexecutableCommand.INSTANCE;
 			} else {
 				// Create a compound command to hold the resize commands
@@ -239,29 +238,29 @@ public class CustomSizeHandler extends SizeHandler {
 				// Get the Primary Selection
 				int last = selectedElements.size() - 1;
 				IGraphicalEditPart primary = selectedElements.get(last);
-				View primaryView = (View)primary.getModel();
-				Integer width = (Integer)ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Width());
-				Integer height = (Integer)ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Height());
+				View primaryView = (View) primary.getModel();
+				Integer width = (Integer) ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Width());
+				Integer height = (Integer) ViewUtil.getStructuralFeatureValue(primaryView, NotationPackage.eINSTANCE.getSize_Height());
 
 				Dimension primarySize;
-				if(width.intValue() == -1 || height.intValue() == -1) {
+				if (width.intValue() == -1 || height.intValue() == -1) {
 					primarySize = primary.getFigure().getSize().getCopy();
 				} else {
 					primarySize = new Dimension(width.intValue(), height.intValue());
 				}
 
-				while(iter.hasNext()) {
+				while (iter.hasNext()) {
 
 					// For each figure in the selection (to be resize) a request is created for resize to new bounds in the south-east direction.
 					// The command for this resize is contributed by the edit part for the resize request.
 
 					IGraphicalEditPart toResize = iter.next();
-					View resizeView = (View)toResize.getModel();
-					Integer previousWidth = (Integer)ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Width());
-					Integer previousHeight = (Integer)ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Height());
+					View resizeView = (View) toResize.getModel();
+					Integer previousWidth = (Integer) ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Width());
+					Integer previousHeight = (Integer) ViewUtil.getStructuralFeatureValue(resizeView, NotationPackage.eINSTANCE.getSize_Height());
 
 					Dimension previousSize;
-					if(previousWidth.intValue() == -1 || previousHeight.intValue() == -1) {
+					if (previousWidth.intValue() == -1 || previousHeight.intValue() == -1) {
 						previousSize = toResize.getFigure().getSize().getCopy();
 					} else {
 						previousSize = new Dimension(previousWidth.intValue(), previousHeight.intValue());
@@ -269,8 +268,8 @@ public class CustomSizeHandler extends SizeHandler {
 
 					// Calculate delta resize
 					Dimension delta = new Dimension(primarySize.width - previousSize.width, primarySize.height - previousSize.height);
-					if(isLifelines()) {
-						//Align all Lifelines at bottom.
+					if (isLifelines()) {
+						// Align all Lifelines at bottom.
 						Rectangle constraint = getLifelineConstraint();
 						Rectangle previousRect = SequenceUtil.getAbsoluteBounds(toResize);
 						delta.height = constraint.bottom() - previousRect.bottom();
@@ -279,7 +278,7 @@ public class CustomSizeHandler extends SizeHandler {
 					ChangeBoundsRequest bRequest = new ChangeBoundsRequest();
 					bRequest.setResizeDirection(PositionConstants.SOUTH_EAST);
 					bRequest.setSizeDelta(delta);
-					bRequest.setType(RequestConstants.REQ_RESIZE);
+					bRequest.setType(org.eclipse.gef.RequestConstants.REQ_RESIZE);
 
 					Command resizeCommand = toResize.getCommand(bRequest);
 

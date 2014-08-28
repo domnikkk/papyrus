@@ -1,11 +1,11 @@
 /*******************************************************************************
- * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana, Obeo . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  * 	Francisco Javier Cano Muñoz (Prodevelop) – Initial API implementation.
  *  Obeo
  *
@@ -24,7 +24,7 @@ import org.eclipse.ui.navigator.CommonViewer;
 /**
  * Specialization of <CommonActionProvider> to be used as Papyrus action
  * provider.
- * 
+ *
  * @author fjcano
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  */
@@ -33,7 +33,7 @@ public abstract class AbstractCommonActionProvider extends CommonActionProvider 
 	/**
 	 * Gets the ID of the <CommonViewer> this <MOSKittCommonActionProvider> is
 	 * associated to.
-	 * 
+	 *
 	 * @return the viewer id
 	 */
 	// @unused
@@ -44,23 +44,23 @@ public abstract class AbstractCommonActionProvider extends CommonActionProvider 
 	/**
 	 * Gets the <MOSKittCommonNavigator> this <MOSKittCommonActionProvider> is
 	 * associated with, via the viewerID.
-	 * 
+	 *
 	 * @return the common navigator
 	 */
 	protected CommonNavigator getCommonNavigator() {
-		
-		return ((CommonViewer)getActionSite().getStructuredViewer()).getCommonNavigator();
-//		IViewPart part = org.eclipse.papyrus.views.modelexplorer.NavigatorUtils
-//				.findViewPart(getViewerID());
-//		if (part instanceof CommonNavigator) {
-//			return ((CommonNavigator) part);
-//		}
-//		return null;
+
+		return ((CommonViewer) getActionSite().getStructuredViewer()).getCommonNavigator();
+		// IViewPart part = org.eclipse.papyrus.views.modelexplorer.NavigatorUtils
+		// .findViewPart(getViewerID());
+		// if (part instanceof CommonNavigator) {
+		// return ((CommonNavigator) part);
+		// }
+		// return null;
 	}
 
 	/**
 	 * Gets the current context's selection.
-	 * 
+	 *
 	 * @return the selection
 	 */
 	// @unused
@@ -71,7 +71,7 @@ public abstract class AbstractCommonActionProvider extends CommonActionProvider 
 
 	/**
 	 * Gets the first element of the current context's selection.
-	 * 
+	 *
 	 * @return the first selected element
 	 */
 	protected Object getFirstSelectedElement() {
@@ -84,13 +84,13 @@ public abstract class AbstractCommonActionProvider extends CommonActionProvider 
 
 	/**
 	 * Resolve semantic element
-	 * 
+	 *
 	 * @param object
 	 *            the object to resolve
 	 * @return <code>null</code> or the semantic element associated to the
 	 *         specified object
 	 */
 	protected EObject resolveSemanticObject(Object object) {
-		return 	EMFHelper.getEObject(object);
+		return EMFHelper.getEObject(object);
 	}
 }

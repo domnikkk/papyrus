@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Nicolas Bros (Mia-Software) - initial API and implementation
  */
@@ -18,8 +18,7 @@ import org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.ModelCe
 import org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.NaryFeatureCellEditor;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Nary Feature Cell Editor</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Nary Feature Cell Editor</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -28,7 +27,7 @@ import org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.NaryFea
  * <em>Nary Feature Cell Editor Impl</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class NaryFeatureCellEditorImpl extends AbstractModelCellEditorImpl implements
@@ -37,7 +36,7 @@ public class NaryFeatureCellEditorImpl extends AbstractModelCellEditorImpl imple
 	 * The default value of the '{@link #getNaryFeatureCellEditorImpl()
 	 * <em>Nary Feature Cell Editor Impl</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNaryFeatureCellEditorImpl()
 	 * @generated
 	 * @ordered
@@ -48,7 +47,7 @@ public class NaryFeatureCellEditorImpl extends AbstractModelCellEditorImpl imple
 	 * The cached value of the '{@link #getNaryFeatureCellEditorImpl()
 	 * <em>Nary Feature Cell Editor Impl</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNaryFeatureCellEditorImpl()
 	 * @generated
 	 * @ordered
@@ -57,7 +56,7 @@ public class NaryFeatureCellEditorImpl extends AbstractModelCellEditorImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NaryFeatureCellEditorImpl() {
@@ -66,7 +65,7 @@ public class NaryFeatureCellEditorImpl extends AbstractModelCellEditorImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +75,7 @@ public class NaryFeatureCellEditorImpl extends AbstractModelCellEditorImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getNaryFeatureCellEditorImpl() {
@@ -85,7 +84,7 @@ public class NaryFeatureCellEditorImpl extends AbstractModelCellEditorImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setNaryFeatureCellEditorImpl(final String newNaryFeatureCellEditorImpl) {
@@ -100,7 +99,7 @@ public class NaryFeatureCellEditorImpl extends AbstractModelCellEditorImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +113,7 @@ public class NaryFeatureCellEditorImpl extends AbstractModelCellEditorImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +128,7 @@ public class NaryFeatureCellEditorImpl extends AbstractModelCellEditorImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +143,7 @@ public class NaryFeatureCellEditorImpl extends AbstractModelCellEditorImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +159,7 @@ public class NaryFeatureCellEditorImpl extends AbstractModelCellEditorImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

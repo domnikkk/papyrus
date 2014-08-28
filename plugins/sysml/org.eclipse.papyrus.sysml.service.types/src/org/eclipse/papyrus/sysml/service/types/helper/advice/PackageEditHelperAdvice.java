@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ public class PackageEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * In case of {@link Association} creation, it should not be possible to target an association as target end.
 	 */
 	@Override
@@ -41,16 +41,16 @@ public class PackageEditHelperAdvice extends AbstractEditHelperAdvice {
 		// test if the creation is for a SysML association
 
 		IElementType type = request.getElementType();
-		if(hasSuperType(type, SysMLElementTypes.ASSOCIATION)) {
+		if (hasSuperType(type, SysMLElementTypes.ASSOCIATION)) {
 			// test source and target...
 			EObject target = request.getTarget();
-			if(target instanceof Association || target == null) {
+			if (target instanceof Association || target == null) {
 				return UnexecutableCommand.INSTANCE;
 			}
 
 			if (!(hasSuperType(type, SysMLElementTypes.ASSOCIATION_NONE_DIRECTED) || hasSuperType(type, SysMLElementTypes.ASSOCIATION_COMPOSITE_DIRECTED) || hasSuperType(type, SysMLElementTypes.ASSOCIATION_SHARED_DIRECTED))) {
 				// The association is bidirectional. Check if that is possible.
-				
+
 				// The target can be read-only only if the association is directed.
 				if (EMFUtil.isReadOnly(target)) {
 					return UnexecutableCommand.INSTANCE;
@@ -60,25 +60,25 @@ public class PackageEditHelperAdvice extends AbstractEditHelperAdvice {
 					return UnexecutableCommand.INSTANCE;
 				}
 			}
-			
+
 		}
 
 		return super.getBeforeCreateRelationshipCommand(request);
 	}
 
 	protected boolean hasSuperType(IElementType elementType, IElementType typeToTest) {
-		if(elementType == null || typeToTest == null) {
+		if (elementType == null || typeToTest == null) {
 			return false;
 		}
 
-		if(elementType.equals(typeToTest)) {
+		if (elementType.equals(typeToTest)) {
 			return true;
 		}
 
 		List<IElementType> superTypes = Arrays.asList(elementType.getAllSuperTypes());
-			if(superTypes.contains(typeToTest)) {
-				return true;
-			}
+		if (superTypes.contains(typeToTest)) {
+			return true;
+		}
 
 		return false;
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,24 +41,25 @@ import org.eclipse.uml2.uml.Element;
 
 /**
  * this editpolicy attached to StereotypeCommentEdipart has in charge to prevent the remove form model
- *  and launch command of deletion if it detect that any properties of applied stereotype are displayed
+ * and launch command of deletion if it detect that any properties of applied stereotype are displayed
  *
  */
 public class CommentShapeForAppliedStereotypeEditPolicy extends GraphicalEditPolicy implements NotificationListener, IPapyrusListener {
 
+	@Override
 	public void notifyChanged(Notification notification) {
-		View commentNode=getView();
-		final TransactionalEditingDomain domain=	TransactionUtil.getEditingDomain(commentNode);
-		if(getUMLElement()==null){
+		View commentNode = getView();
+		final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(commentNode);
+		if (getUMLElement() == null) {
 			executeAppliedStereotypeCommentDeletion(domain, commentNode);
 		}
 		final int eventType = notification.getEventType();
-		if(eventType==Notification.SET && notification.getFeature().equals(NotationPackage.eINSTANCE.getView_Visible())){
+		if (eventType == Notification.SET && notification.getFeature().equals(NotationPackage.eINSTANCE.getView_Visible())) {
 
-			if(getView()!=null){
-				
-				if (getvisibleAppliedStereotypeCompartment(commentNode, getUMLElement())==0){
-					
+			if (getView() != null) {
+
+				if (getvisibleAppliedStereotypeCompartment(commentNode, getUMLElement()) == 0) {
+
 					executeAppliedStereotypeCommentDeletion(domain, commentNode);
 
 				}
@@ -68,23 +69,24 @@ public class CommentShapeForAppliedStereotypeEditPolicy extends GraphicalEditPol
 
 	/**
 	 * Returns the uml element controlled by the host edit part
-	 * 
+	 *
 	 * @return the uml element controlled by the host edit part
 	 */
 	protected Element getUMLElement() {
-		if( (Element)getView().getElement()!=null){
-			return  (Element)getView().getElement();
+		if ((Element) getView().getElement() != null) {
+			return (Element) getView().getElement();
 		}
-		if(getView().getNamedStyle(NotationPackage.eINSTANCE.getEObjectValueStyle(), "BASE_ELEMENT")!=null){
-			EObjectValueStyle eObjectValueStyle=(EObjectValueStyle)getView().getNamedStyle(NotationPackage.eINSTANCE.getEObjectValueStyle(), "BASE_ELEMENT");
-				return (Element)eObjectValueStyle.getEObjectValue();
+		if (getView().getNamedStyle(NotationPackage.eINSTANCE.getEObjectValueStyle(), "BASE_ELEMENT") != null) {
+			EObjectValueStyle eObjectValueStyle = (EObjectValueStyle) getView().getNamedStyle(NotationPackage.eINSTANCE.getEObjectValueStyle(), "BASE_ELEMENT");
+			return (Element) eObjectValueStyle.getEObjectValue();
 		}
 		return null;
 	}
+
 	@Override
 	public Command getCommand(Request request) {
-		if(request instanceof EditCommandRequestWrapper){
-			if(((EditCommandRequestWrapper)(request)).getEditCommandRequest() instanceof DestroyElementRequest){
+		if (request instanceof EditCommandRequestWrapper) {
+			if (((EditCommandRequestWrapper) (request)).getEditCommandRequest() instanceof DestroyElementRequest) {
 				return UnexecutableCommand.INSTANCE;
 			}
 		}
@@ -93,12 +95,13 @@ public class CommentShapeForAppliedStereotypeEditPolicy extends GraphicalEditPol
 
 
 	protected void executeAppliedStereotypeCommentDeletion(final TransactionalEditingDomain domain, final View commentNode) {
-		if(commentNode != null) {
+		if (commentNode != null) {
 			Display.getCurrent().asyncExec(new Runnable() {
 
+				@Override
 				public void run() {
-					//because it is asynchronous the comment node's domain maybe become null
-					if(TransactionUtil.getEditingDomain(commentNode) == domain) {
+					// because it is asynchronous the comment node's domain maybe become null
+					if (TransactionUtil.getEditingDomain(commentNode) == domain) {
 						DeleteCommand command = new DeleteCommand(commentNode);
 						try {
 							GMFUnsafe.write(domain, command);
@@ -111,12 +114,12 @@ public class CommentShapeForAppliedStereotypeEditPolicy extends GraphicalEditPol
 		}
 	}
 
-	protected int getvisibleAppliedStereotypeCompartment(View view, EObject eobject){
-		int nbVisibleCompartment=0;
-		Iterator<View> iteratorView= view.getChildren().iterator();
-		while(iteratorView.hasNext()) {
-			View subview = (View)iteratorView.next();
-			if(  subview.isVisible()==true){
+	protected int getvisibleAppliedStereotypeCompartment(View view, EObject eobject) {
+		int nbVisibleCompartment = 0;
+		Iterator<View> iteratorView = view.getChildren().iterator();
+		while (iteratorView.hasNext()) {
+			View subview = iteratorView.next();
+			if (subview.isVisible() == true) {
 				nbVisibleCompartment++;
 			}
 		}
@@ -128,7 +131,7 @@ public class CommentShapeForAppliedStereotypeEditPolicy extends GraphicalEditPol
 	public void activate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
 
@@ -138,36 +141,39 @@ public class CommentShapeForAppliedStereotypeEditPolicy extends GraphicalEditPol
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void deactivate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
 
 		getDiagramEventBroker().removeNotificationListener(view, this);
 	}
+
 	/**
 	 * Gets the diagram event broker from the editing domain.
-	 * 
+	 *
 	 * @return the diagram event broker
 	 */
 	protected DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
-		if(theEditingDomain != null) {
+		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		if (theEditingDomain != null) {
 			return DiagramEventBroker.getInstance(theEditingDomain);
 		}
 		return null;
 	}
+
 	/**
 	 * Returns the view controlled by the host edit part
-	 * 
+	 *
 	 * @return the view controlled by the host edit part
 	 */
 	protected View getView() {
-		return (View)getHost().getModel();
+		return (View) getHost().getModel();
 	}
 }

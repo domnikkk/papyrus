@@ -1,20 +1,20 @@
 /**
  * Copyright (c) 2011 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Nicolas Guyomar (Mia-Software) - Bug 349546 - EMF Facet facetSet editor
  *  Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
 package org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.wizard.page;
 
+import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.wizard.page.IFacetSetPropertyWizardPage;
-import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;

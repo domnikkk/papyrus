@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,25 +35,25 @@ import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 /**
  * An ObservableList used to edit collections of EObjects through
  * Papyrus commands
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 @SuppressWarnings("unchecked")
 public class PapyrusObservableList extends EMFObservableList {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param wrappedList
-	 *        The list to be edited when #commit() is called
+	 *            The list to be edited when #commit() is called
 	 * @param domain
-	 *        The editing domain on which the commands will be executed
+	 *            The editing domain on which the commands will be executed
 	 * @param source
-	 *        The EObject from which the list will be retrieved
+	 *            The EObject from which the list will be retrieved
 	 * @param feature
-	 *        The feature from which the list will be retrieved
+	 *            The feature from which the list will be retrieved
 	 */
 	public PapyrusObservableList(List<?> wrappedList, EditingDomain domain, EObject source, EStructuralFeature feature) {
 		super(wrappedList, domain, source, feature);
@@ -68,20 +68,20 @@ public class PapyrusObservableList extends EMFObservableList {
 
 	/**
 	 * Creates an EMF command from a GMF request, with the given IElementEditService
-	 * 
+	 *
 	 * @param provider
 	 * @param requests
 	 * @return
 	 *         The EMF command corresponding to the given request
 	 */
 	protected Command getCommandFromRequests(IElementEditService provider, Collection<? extends IEditCommandRequest> requests) {
-		if(requests.size() == 1) {
+		if (requests.size() == 1) {
 			return new GMFtoEMFCommandWrapper(provider.getEditCommand(requests.iterator().next()));
 		}
 
 		CompositeCommand cc = new CompositeCommand("Edit list");
 
-		for(IEditCommandRequest request : requests) {
+		for (IEditCommandRequest request : requests) {
 			ICommand cmd = provider.getEditCommand(request);
 			cc.add(cmd);
 		}
@@ -95,7 +95,7 @@ public class PapyrusObservableList extends EMFObservableList {
 	@Override
 	public Command getAddCommand(int index, Object value) {
 		IElementEditService provider = getProvider();
-		if(provider != null) {
+		if (provider != null) {
 			List<Object> values = new LinkedList<Object>(this);
 			values.add(index, value);
 			return getCommandFromRequests(provider, getRequests(values, null));
@@ -110,7 +110,7 @@ public class PapyrusObservableList extends EMFObservableList {
 	@Override
 	public Command getAddCommand(Object value) {
 		IElementEditService provider = getProvider();
-		if(provider != null) {
+		if (provider != null) {
 			List<Object> values = new LinkedList<Object>(this);
 			values.add(value);
 			return getCommandFromRequests(provider, getRequests(values, null));
@@ -125,7 +125,7 @@ public class PapyrusObservableList extends EMFObservableList {
 	@Override
 	public Command getAddAllCommand(Collection<?> values) {
 		IElementEditService provider = getProvider();
-		if(provider != null) {
+		if (provider != null) {
 			List<Object> result = new LinkedList<Object>(this);
 			result.addAll(values);
 			return getCommandFromRequests(provider, getRequests(result, null));
@@ -140,7 +140,7 @@ public class PapyrusObservableList extends EMFObservableList {
 	@Override
 	public Command getAddAllCommand(int index, Collection<?> values) {
 		IElementEditService provider = getProvider();
-		if(provider != null) {
+		if (provider != null) {
 			List<Object> result = new LinkedList<Object>(this);
 			result.addAll(index, values);
 			return getCommandFromRequests(provider, getRequests(result, null));
@@ -154,7 +154,7 @@ public class PapyrusObservableList extends EMFObservableList {
 	@Override
 	public Command getClearCommand() {
 		IElementEditService provider = getProvider();
-		if(provider != null) {
+		if (provider != null) {
 			return getCommandFromRequests(provider, getRequests(Collections.EMPTY_LIST, new LinkedList<Object>(this)));
 		}
 		return super.getClearCommand();
@@ -166,7 +166,7 @@ public class PapyrusObservableList extends EMFObservableList {
 	@Override
 	public Command getRemoveCommand(int index) {
 		IElementEditService provider = getProvider();
-		if(provider != null) {
+		if (provider != null) {
 			List<Object> values = new LinkedList<Object>(this);
 			Object o = values.remove(index);
 			return getCommandFromRequests(provider, getRequests(values, Collections.singletonList(o)));
@@ -182,7 +182,7 @@ public class PapyrusObservableList extends EMFObservableList {
 	public Command getRemoveCommand(final Object value) {
 		IElementEditService provider = getProvider();
 
-		if(provider != null) {
+		if (provider != null) {
 			List<Object> values = new LinkedList<Object>(this);
 			values.remove(value);
 			return getCommandFromRequests(provider, getRequests(values, Collections.singletonList(value)));
@@ -197,7 +197,7 @@ public class PapyrusObservableList extends EMFObservableList {
 	@Override
 	public Command getRemoveAllCommand(Collection<?> values) {
 		IElementEditService provider = getProvider();
-		if(provider != null) {
+		if (provider != null) {
 			List<Object> result = new LinkedList<Object>(this);
 			result.removeAll(values);
 			return getCommandFromRequests(provider, getRequests(result, values));
@@ -211,7 +211,7 @@ public class PapyrusObservableList extends EMFObservableList {
 	@Override
 	public List<Command> getMoveCommands(int oldIndex, int newIndex) {
 		IElementEditService provider = getProvider();
-		if(provider != null) {
+		if (provider != null) {
 			List<Object> values = new LinkedList<Object>(this);
 			Object result = values.remove(oldIndex);
 			values.add(newIndex, result);
@@ -227,7 +227,7 @@ public class PapyrusObservableList extends EMFObservableList {
 	@Override
 	public Command getSetCommand(int index, Object value) {
 		IElementEditService provider = getProvider();
-		if(provider != null) {
+		if (provider != null) {
 			List<Object> values = new LinkedList<Object>(this);
 			Object oldElem = values.set(index, value);
 			return getCommandFromRequests(provider, getRequests(values, Collections.singletonList(oldElem)));
@@ -238,25 +238,25 @@ public class PapyrusObservableList extends EMFObservableList {
 
 	/**
 	 * Compute the requests
-	 * 
+	 *
 	 * @param newValues
-	 *        the new list that will be set as a value of the observed feature
+	 *            the new list that will be set as a value of the observed feature
 	 * @param removedValues
-	 *        if element has been removed from the list put it there : it handles destroy of elements if the observed feature is a containment
+	 *            if element has been removed from the list put it there : it handles destroy of elements if the observed feature is a containment
 	 * @return
 	 */
 	protected Collection<? extends IEditCommandRequest> getRequests(List<Object> newValues, Collection<?> removedValues) {
 		LinkedList<IEditCommandRequest> requests = new LinkedList<IEditCommandRequest>();
 
-		if(feature instanceof EReference && ((EReference)feature).isContainment() && removedValues != null) {
-			for(Object o : removedValues) {
-				if(o instanceof EObject) {
-					requests.add(new DestroyElementRequest((TransactionalEditingDomain)editingDomain, (EObject)o, false));
+		if (feature instanceof EReference && ((EReference) feature).isContainment() && removedValues != null) {
+			for (Object o : removedValues) {
+				if (o instanceof EObject) {
+					requests.add(new DestroyElementRequest((TransactionalEditingDomain) editingDomain, (EObject) o, false));
 				}
 			}
 		}
 
-		requests.add(new SetRequest((TransactionalEditingDomain)editingDomain, source, feature, newValues));
+		requests.add(new SetRequest((TransactionalEditingDomain) editingDomain, source, feature, newValues));
 		return requests;
 	}
 }

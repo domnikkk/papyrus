@@ -45,14 +45,15 @@ public class LifelineFigure extends PapyrusNodeFigure implements IPapyrusNodeUML
 		createContents();
 		setLayoutManager(new AbstractLayout() {
 
+			@Override
 			public void layout(final IFigure container) {
 				final Rectangle clientArea = container.getClientArea();
 				final List<?> children = container.getChildren();
-				for(int i = 0; i < children.size(); i++) {
-					final IFigure child = (IFigure)children.get(i);
-					if(child == getNameLabelContainerFigure()) {
+				for (int i = 0; i < children.size(); i++) {
+					final IFigure child = (IFigure) children.get(i);
+					if (child == getNameLabelContainerFigure()) {
 						child.setBounds(new Rectangle(clientArea.x, clientArea.y, LifelineFigure.this.LABEL_WIDTH, clientArea.height));
-					} else if(child == getLifelineDataContainerFigure()) {
+					} else if (child == getLifelineDataContainerFigure()) {
 						child.setBounds(new Rectangle(clientArea.x + LifelineFigure.this.LABEL_WIDTH, clientArea.y, clientArea.width - LifelineFigure.this.LABEL_WIDTH, clientArea.height));
 					}
 				}
@@ -71,7 +72,7 @@ public class LifelineFigure extends PapyrusNodeFigure implements IPapyrusNodeUML
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.Figure#setPreferredSize(org.eclipse.draw2d.geometry.Dimension)
 	 */
 	@Override
@@ -90,7 +91,7 @@ public class LifelineFigure extends PapyrusNodeFigure implements IPapyrusNodeUML
 	@Override
 	public void paintFigure(final Graphics graphics) {
 		super.paintFigure(graphics);
-		if(this.selected) {
+		if (this.selected) {
 			graphics.pushState();
 			graphics.setForegroundColor(ColorConstants.black);
 			graphics.setLineWidth(1);
@@ -127,18 +128,22 @@ public class LifelineFigure extends PapyrusNodeFigure implements IPapyrusNodeUML
 		return this.lifelineDataContainerFigure;
 	}
 
+	@Override
 	public void setStereotypeDisplay(final String stereotypes, final Image image) {
 		// TODO implement LifelineFigure#setStereotypeDisplay
 	}
 
+	@Override
 	public void setStereotypePropertiesInBrace(final String stereotypeProperties) {
 		// TODO implement LifelineFigure#setStereotypePropertiesInBrace
 	}
 
+	@Override
 	public void setStereotypePropertiesInCompartment(final String stereotypeProperties) {
 		// TODO implement LifelineFigure#setStereotypePropertiesInCompartment
 	}
 
+	@Override
 	public Label getStereotypesLabel() {
 		return null;
 	}

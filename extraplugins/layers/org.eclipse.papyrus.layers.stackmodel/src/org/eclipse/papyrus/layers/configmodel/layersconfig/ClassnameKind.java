@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Classname Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getClassnameKind()
  * @model
  * @generated
@@ -32,6 +33,7 @@ public enum ClassnameKind implements Enumerator {
 	 * The '<em><b>UNDEFINED</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #UNDEFINED_VALUE
 	 * @generated
 	 * @ordered
@@ -42,6 +44,7 @@ public enum ClassnameKind implements Enumerator {
 	 * The '<em><b>EMF CLASSNAME</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #EMF_CLASSNAME_VALUE
 	 * @generated
 	 * @ordered
@@ -52,6 +55,7 @@ public enum ClassnameKind implements Enumerator {
 	 * The '<em><b>POJO CLASSNAME</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #POJO_CLASSNAME_VALUE
 	 * @generated
 	 * @ordered
@@ -62,6 +66,7 @@ public enum ClassnameKind implements Enumerator {
 	 * The '<em><b>NOT FOUND</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #NOT_FOUND_VALUE
 	 * @generated
 	 * @ordered
@@ -72,10 +77,10 @@ public enum ClassnameKind implements Enumerator {
 	 * The '<em><b>UNDEFINED</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>UNDEFINED</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>UNDEFINED</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #UNDEFINED
 	 * @model
 	 * @generated
@@ -87,10 +92,10 @@ public enum ClassnameKind implements Enumerator {
 	 * The '<em><b>EMF CLASSNAME</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>EMF CLASSNAME</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>EMF CLASSNAME</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #EMF_CLASSNAME
 	 * @model
 	 * @generated
@@ -102,10 +107,10 @@ public enum ClassnameKind implements Enumerator {
 	 * The '<em><b>POJO CLASSNAME</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>POJO CLASSNAME</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>POJO CLASSNAME</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #POJO_CLASSNAME
 	 * @model
 	 * @generated
@@ -117,10 +122,10 @@ public enum ClassnameKind implements Enumerator {
 	 * The '<em><b>NOT FOUND</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>NOT FOUND</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>NOT FOUND</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #NOT_FOUND
 	 * @model
 	 * @generated
@@ -132,20 +137,22 @@ public enum ClassnameKind implements Enumerator {
 	 * An array of all the '<em><b>Classname Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static final ClassnameKind[] VALUES_ARRAY =
-		new ClassnameKind[] {
-			UNDEFINED,
-			EMF_CLASSNAME,
-			POJO_CLASSNAME,
-			NOT_FOUND,
-		};
+			new ClassnameKind[] {
+					UNDEFINED,
+					EMF_CLASSNAME,
+					POJO_CLASSNAME,
+					NOT_FOUND,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Classname Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final List<ClassnameKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -154,6 +161,7 @@ public enum ClassnameKind implements Enumerator {
 	 * Returns the '<em><b>Classname Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static ClassnameKind get(String literal) {
@@ -170,6 +178,7 @@ public enum ClassnameKind implements Enumerator {
 	 * Returns the '<em><b>Classname Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static ClassnameKind getByName(String name) {
@@ -186,14 +195,19 @@ public enum ClassnameKind implements Enumerator {
 	 * Returns the '<em><b>Classname Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static ClassnameKind get(int value) {
 		switch (value) {
-			case UNDEFINED_VALUE: return UNDEFINED;
-			case EMF_CLASSNAME_VALUE: return EMF_CLASSNAME;
-			case POJO_CLASSNAME_VALUE: return POJO_CLASSNAME;
-			case NOT_FOUND_VALUE: return NOT_FOUND;
+		case UNDEFINED_VALUE:
+			return UNDEFINED;
+		case EMF_CLASSNAME_VALUE:
+			return EMF_CLASSNAME;
+		case POJO_CLASSNAME_VALUE:
+			return POJO_CLASSNAME;
+		case NOT_FOUND_VALUE:
+			return NOT_FOUND;
 		}
 		return null;
 	}
@@ -201,6 +215,7 @@ public enum ClassnameKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -208,6 +223,7 @@ public enum ClassnameKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -215,6 +231,7 @@ public enum ClassnameKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -223,6 +240,7 @@ public enum ClassnameKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private ClassnameKind(int value, String name, String literal) {
@@ -234,39 +252,46 @@ public enum ClassnameKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //ClassnameKind
+
+} // ClassnameKind

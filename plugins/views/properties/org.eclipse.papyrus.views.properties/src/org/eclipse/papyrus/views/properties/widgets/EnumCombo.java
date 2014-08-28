@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,9 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * A PropertyEditor for editing enumerations through a ComboBox
- * 
+ *
  * @see org.eclipse.papyrus.infra.widgets.editors.BooleanCheckbox
- * 
+ *
  * @author Camille Letavernier
  */
 public class EnumCombo extends AbstractPropertyEditor {
@@ -34,15 +34,15 @@ public class EnumCombo extends AbstractPropertyEditor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 */
 	public EnumCombo(Composite parent, int style) {
 		super(new org.eclipse.papyrus.infra.widgets.editors.EnumCombo(parent, style));
-		enumCombo = (org.eclipse.papyrus.infra.widgets.editors.EnumCombo)valueEditor;
+		enumCombo = (org.eclipse.papyrus.infra.widgets.editors.EnumCombo) valueEditor;
 	}
 
 	/**
@@ -57,10 +57,10 @@ public class EnumCombo extends AbstractPropertyEditor {
 
 		IStaticContentProvider provider = input.getContentProvider(propertyPath);
 
-		if(provider instanceof IHierarchicContentProvider) {
-			provider = new HierarchicToFlatContentProvider((IHierarchicContentProvider)provider);
-		} else if(provider instanceof ITreeContentProvider) {
-			provider = new TreeToFlatContentProvider((ITreeContentProvider)provider);
+		if (provider instanceof IHierarchicContentProvider) {
+			provider = new HierarchicToFlatContentProvider((IHierarchicContentProvider) provider);
+		} else if (provider instanceof ITreeContentProvider) {
+			provider = new TreeToFlatContentProvider((ITreeContentProvider) provider);
 		}
 
 		enumCombo.setProviders(input.getContentProvider(propertyPath), input.getLabelProvider(propertyPath));

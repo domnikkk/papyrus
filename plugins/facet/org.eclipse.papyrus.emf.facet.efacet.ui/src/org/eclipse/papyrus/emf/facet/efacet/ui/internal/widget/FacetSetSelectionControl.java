@@ -25,13 +25,6 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.papyrus.emf.facet.efacet.core.internal.exported.IResolverManager;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.dialogs.FacetSetTreeContentProvider;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.widget.IFacetSetSelectionWidget;
-import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.utils.ImageUtils;
 import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
 import org.eclipse.jface.viewers.ICheckStateListener;
@@ -40,6 +33,13 @@ import org.eclipse.jface.viewers.IContentProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.emf.facet.efacet.core.internal.exported.IResolverManager;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.dialogs.FacetSetTreeContentProvider;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.widget.IFacetSetSelectionWidget;
+import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.utils.ImageUtils;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
@@ -131,7 +131,7 @@ public class FacetSetSelectionControl implements IFacetSetSelectionWidget {
 		});
 		getTreeViewer().refresh();
 	}
-	
+
 	protected void checkStateChanged(final CheckStateChangedEvent event) {
 		handleCheckStateChange(event);
 		getTreeViewer().refresh();
@@ -156,7 +156,7 @@ public class FacetSetSelectionControl implements IFacetSetSelectionWidget {
 		}
 		this.treeViewer.refresh();
 	}
-	
+
 	protected boolean isUnderCheckedSuperPackage(final Object element) {
 		boolean result = false;
 		if (element instanceof FacetSet) {
@@ -239,7 +239,7 @@ public class FacetSetSelectionControl implements IFacetSetSelectionWidget {
 		}
 		setValidationStatus(newStatus);
 	}
-	
+
 	protected static IStatus validateElement(final Object checkedElement) {
 		IStatus status = FacetSetSelectionControl.OK_STATUS;
 		if (!(checkedElement instanceof FacetSet)) {

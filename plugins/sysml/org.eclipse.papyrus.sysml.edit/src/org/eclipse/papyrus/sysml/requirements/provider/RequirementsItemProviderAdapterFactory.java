@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.sysml.requirements.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
@@ -38,7 +39,7 @@ import org.eclipse.papyrus.sysml.requirements.util.RequirementsAdapterFactory;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -46,7 +47,7 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -54,7 +55,7 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -63,7 +64,7 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -71,7 +72,7 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RequirementsItemProviderAdapterFactory() {
@@ -85,7 +86,7 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.sysml.requirements.DeriveReqt} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DeriveReqtItemProvider deriveReqtItemProvider;
@@ -93,12 +94,12 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.sysml.requirements.DeriveReqt}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createDeriveReqtAdapter() {
-		if(deriveReqtItemProvider == null) {
+		if (deriveReqtItemProvider == null) {
 			deriveReqtItemProvider = new DeriveReqtItemProvider(this);
 		}
 
@@ -108,7 +109,7 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.sysml.requirements.Verify} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VerifyItemProvider verifyItemProvider;
@@ -116,12 +117,12 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.sysml.requirements.Verify}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createVerifyAdapter() {
-		if(verifyItemProvider == null) {
+		if (verifyItemProvider == null) {
 			verifyItemProvider = new VerifyItemProvider(this);
 		}
 
@@ -131,7 +132,7 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.sysml.requirements.Copy} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CopyItemProvider copyItemProvider;
@@ -140,12 +141,12 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	 * This creates an adapter for a {@link org.eclipse.papyrus.sysml.requirements.Copy}.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createCopyAdapter() {
-		if(copyItemProvider == null) {
+		if (copyItemProvider == null) {
 			copyItemProvider = new CopyItemProvider(this);
 		}
 
@@ -155,7 +156,7 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.sysml.requirements.Satisfy} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SatisfyItemProvider satisfyItemProvider;
@@ -163,12 +164,12 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.sysml.requirements.Satisfy}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createSatisfyAdapter() {
-		if(satisfyItemProvider == null) {
+		if (satisfyItemProvider == null) {
 			satisfyItemProvider = new SatisfyItemProvider(this);
 		}
 
@@ -178,7 +179,7 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.sysml.requirements.TestCase} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TestCaseItemProvider testCaseItemProvider;
@@ -186,12 +187,12 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.sysml.requirements.TestCase}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createTestCaseAdapter() {
-		if(testCaseItemProvider == null) {
+		if (testCaseItemProvider == null) {
 			testCaseItemProvider = new TestCaseItemProvider(this);
 		}
 
@@ -201,7 +202,7 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.sysml.requirements.Requirement} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RequirementItemProvider requirementItemProvider;
@@ -209,12 +210,12 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.sysml.requirements.Requirement}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createRequirementAdapter() {
-		if(requirementItemProvider == null) {
+		if (requirementItemProvider == null) {
 			requirementItemProvider = new RequirementItemProvider(this);
 		}
 
@@ -224,7 +225,7 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.sysml.requirements.RequirementRelated} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RequirementRelatedItemProvider requirementRelatedItemProvider;
@@ -232,12 +233,12 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.sysml.requirements.RequirementRelated}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createRequirementRelatedAdapter() {
-		if(requirementRelatedItemProvider == null) {
+		if (requirementRelatedItemProvider == null) {
 			requirementRelatedItemProvider = new RequirementRelatedItemProvider(this);
 		}
 
@@ -247,9 +248,10 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This returns the root adapter factory that contains this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -257,16 +259,17 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This sets the composed adapter factory that contains this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +280,7 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,14 +290,14 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if(isFactoryForType(type)) {
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if(!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -305,9 +308,10 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This adds a listener.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -315,9 +319,10 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This removes a listener.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -325,13 +330,14 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if(parentAdapterFactory != null) {
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -339,24 +345,32 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	/**
 	 * This disposes all of the item providers created by this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if(deriveReqtItemProvider != null)
+		if (deriveReqtItemProvider != null) {
 			deriveReqtItemProvider.dispose();
-		if(verifyItemProvider != null)
+		}
+		if (verifyItemProvider != null) {
 			verifyItemProvider.dispose();
-		if(copyItemProvider != null)
+		}
+		if (copyItemProvider != null) {
 			copyItemProvider.dispose();
-		if(satisfyItemProvider != null)
+		}
+		if (satisfyItemProvider != null) {
 			satisfyItemProvider.dispose();
-		if(testCaseItemProvider != null)
+		}
+		if (testCaseItemProvider != null) {
 			testCaseItemProvider.dispose();
-		if(requirementItemProvider != null)
+		}
+		if (requirementItemProvider != null) {
 			requirementItemProvider.dispose();
-		if(requirementRelatedItemProvider != null)
+		}
+		if (requirementRelatedItemProvider != null) {
 			requirementRelatedItemProvider.dispose();
+		}
 	}
 
 }

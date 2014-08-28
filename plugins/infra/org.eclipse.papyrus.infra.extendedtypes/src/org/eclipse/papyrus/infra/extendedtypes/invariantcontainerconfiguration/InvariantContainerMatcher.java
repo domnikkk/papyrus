@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,7 +12,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
@@ -29,7 +28,7 @@ public class InvariantContainerMatcher implements IInvariantElementMatcher<Invar
 	protected EList<HierarchyPermission> permissions;
 
 	/**
-	 * 
+	 *
 	 */
 	public InvariantContainerMatcher() {
 		// nothing here. Trying not to create list to avoid unnecessary created objects
@@ -40,42 +39,42 @@ public class InvariantContainerMatcher implements IInvariantElementMatcher<Invar
 	 */
 	public boolean matches(EObject eObject) {
 		return true;
-//		boolean matches = false;
-//		
-//		EObject container = eObject.eContainer(); 
-//		
-//		if(container ==null) {
-//			return false;
-//		}
-//		
-//		matches = checkAllowed(container, allowedDirectParents, false);
-//		
-//		// if not ok in direct parents, test in the hierarchy
-//		if(!matches && allowedParentsInHierarchy!=null && !allowedParentsInHierarchy.isEmpty()) {
-//			while(!matches && container.eContainer() !=null) {
-//				container = container.eContainer();
-//				matches = checkAllowed(container, allowedParentsInHierarchy, false);
-//			}
-//		}
-//
-//		// check now that some forbidden type does not override the current matches
-//		if(!matches) {
-//			return false;
-//		}
-//		
-//		container = eObject.eContainer();
-//		// container (direct or indirect) could match. now try the forbidden lists
-//		matches = checkForbidden(container, forbiddenDirectParents, false);
-//		
-//		// if not ok in direct parents, test in the hierarchy
-//		if(matches && forbiddenParentsInHierarchy!=null && !forbiddenParentsInHierarchy.isEmpty()) {
-//			while(matches && container.eContainer() !=null) {
-//				container = container.eContainer();
-//				matches = checkForbidden(container, forbiddenParentsInHierarchy, false);
-//			}
-//		}
-//
-//		return matches;
+		// boolean matches = false;
+		//
+		// EObject container = eObject.eContainer();
+		//
+		// if(container ==null) {
+		// return false;
+		// }
+		//
+		// matches = checkAllowed(container, allowedDirectParents, false);
+		//
+		// // if not ok in direct parents, test in the hierarchy
+		// if(!matches && allowedParentsInHierarchy!=null && !allowedParentsInHierarchy.isEmpty()) {
+		// while(!matches && container.eContainer() !=null) {
+		// container = container.eContainer();
+		// matches = checkAllowed(container, allowedParentsInHierarchy, false);
+		// }
+		// }
+		//
+		// // check now that some forbidden type does not override the current matches
+		// if(!matches) {
+		// return false;
+		// }
+		//
+		// container = eObject.eContainer();
+		// // container (direct or indirect) could match. now try the forbidden lists
+		// matches = checkForbidden(container, forbiddenDirectParents, false);
+		//
+		// // if not ok in direct parents, test in the hierarchy
+		// if(matches && forbiddenParentsInHierarchy!=null && !forbiddenParentsInHierarchy.isEmpty()) {
+		// while(matches && container.eContainer() !=null) {
+		// container = container.eContainer();
+		// matches = checkForbidden(container, forbiddenParentsInHierarchy, false);
+		// }
+		// }
+		//
+		// return matches;
 	}
 
 	/**
@@ -86,20 +85,20 @@ public class InvariantContainerMatcher implements IInvariantElementMatcher<Invar
 	 */
 	protected boolean checkForbidden(EObject container, List<String> forbiddenParents, boolean isStrict) {
 		// check direct permissions
-		if(forbiddenParents != null && !forbiddenParents.isEmpty()) {
+		if (forbiddenParents != null && !forbiddenParents.isEmpty()) {
 			IElementType parentType = ElementTypeRegistry.getInstance().getElementType(container);
-			if(parentType != null) {
+			if (parentType != null) {
 				// check if necessary all super types of the direct parent
-				if(forbiddenParents.contains(parentType.getId())) {
+				if (forbiddenParents.contains(parentType.getId())) {
 					return false;
 				} else {
 					// check also super types ids, if not strict permission
-					if(!isStrict) {
-						for(IElementType superType : parentType.getAllSuperTypes()) {
-							if(forbiddenParents.contains(superType.getId())) {
+					if (!isStrict) {
+						for (IElementType superType : parentType.getAllSuperTypes()) {
+							if (forbiddenParents.contains(superType.getId())) {
 								return false;
 							}
-						}	
+						}
 					}
 				}
 			}
@@ -108,26 +107,26 @@ public class InvariantContainerMatcher implements IInvariantElementMatcher<Invar
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	protected boolean checkAllowed(EObject container, List<String> allowedParents, boolean isStrict) {
 		boolean matches = false;
 		// check direct permissions
-		if(allowedParents != null && !allowedParents.isEmpty()) {
+		if (allowedParents != null && !allowedParents.isEmpty()) {
 			IElementType parentType = ElementTypeRegistry.getInstance().getElementType(container);
-			if(parentType != null) {
+			if (parentType != null) {
 				// check if necessary all super types of the direct parent
-				if(allowedParents.contains(parentType.getId())) {
+				if (allowedParents.contains(parentType.getId())) {
 					matches = true;
 				} else {
 					// check also super types ids, if not strict permission
-					if(!isStrict) {
-						for(IElementType superType : parentType.getAllSuperTypes()) {
-							if(allowedParents.contains(superType.getId())) {
+					if (!isStrict) {
+						for (IElementType superType : parentType.getAllSuperTypes()) {
+							if (allowedParents.contains(superType.getId())) {
 								matches = true;
 								break;
 							}
-						}	
+						}
 					}
 				}
 			}

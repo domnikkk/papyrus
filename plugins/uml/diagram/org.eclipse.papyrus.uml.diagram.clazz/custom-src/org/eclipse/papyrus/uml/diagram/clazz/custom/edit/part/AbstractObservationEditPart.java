@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,8 +24,8 @@ import org.eclipse.papyrus.uml.diagram.common.editparts.IUMLNamedElementEditPart
 import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
 
 /**
- * 
- * 
+ *
+ *
  */
 public abstract class AbstractObservationEditPart extends NamedElementEditPart implements IUMLNamedElementEditPart {
 
@@ -34,23 +34,25 @@ public abstract class AbstractObservationEditPart extends NamedElementEditPart i
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected void refreshBounds() {
 		int width = 20;
 		int height = 20;
 		Dimension size = new Dimension(width, height);
-		int x = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-		int y = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
 		Point loc = new Point(x, y);
-		((GraphicalEditPart)getParent()).setLayoutConstraint(this, getFigure(), new Rectangle(loc, size));
+		((GraphicalEditPart) getParent()).setLayoutConstraint(this, getFigure(), new Rectangle(loc, size));
 	}
 
+	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
 		// set the figure active when the feature of the of a class is true
-		if(resolveSemanticElement() != null) {
+		if (resolveSemanticElement() != null) {
 			refreshFontColor();
 			// To adapt the display of the container to the icon!
 			refreshBounds();

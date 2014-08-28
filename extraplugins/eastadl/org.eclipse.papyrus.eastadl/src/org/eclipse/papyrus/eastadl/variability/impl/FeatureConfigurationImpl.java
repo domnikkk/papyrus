@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.eastadl.variability.VariabilityPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.variability.impl.FeatureConfigurationImpl#getConfiguredFeatureModel <em>Configured Feature Model</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.variability.impl.FeatureConfigurationImpl#getConfiguredFeatureModel <em>Configured Feature Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +42,7 @@ public class FeatureConfigurationImpl extends ConfigurationDecisionModelImpl imp
 	 * The cached value of the '{@link #getConfiguredFeatureModel() <em>Configured Feature Model</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getConfiguredFeatureModel()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class FeatureConfigurationImpl extends ConfigurationDecisionModelImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FeatureConfigurationImpl() {
@@ -60,6 +62,7 @@ public class FeatureConfigurationImpl extends ConfigurationDecisionModelImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public FeatureModel basicGetConfiguredFeatureModel() {
@@ -69,14 +72,17 @@ public class FeatureConfigurationImpl extends ConfigurationDecisionModelImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VariabilityPackage.FEATURE_CONFIGURATION__CONFIGURED_FEATURE_MODEL:
-				if (resolve) return getConfiguredFeatureModel();
-				return basicGetConfiguredFeatureModel();
+		case VariabilityPackage.FEATURE_CONFIGURATION__CONFIGURED_FEATURE_MODEL:
+			if (resolve) {
+				return getConfiguredFeatureModel();
+			}
+			return basicGetConfiguredFeatureModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -84,13 +90,14 @@ public class FeatureConfigurationImpl extends ConfigurationDecisionModelImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VariabilityPackage.FEATURE_CONFIGURATION__CONFIGURED_FEATURE_MODEL:
-				return configuredFeatureModel != null;
+		case VariabilityPackage.FEATURE_CONFIGURATION__CONFIGURED_FEATURE_MODEL:
+			return configuredFeatureModel != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -98,14 +105,15 @@ public class FeatureConfigurationImpl extends ConfigurationDecisionModelImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VariabilityPackage.FEATURE_CONFIGURATION__CONFIGURED_FEATURE_MODEL:
-				setConfiguredFeatureModel((FeatureModel)newValue);
-				return;
+		case VariabilityPackage.FEATURE_CONFIGURATION__CONFIGURED_FEATURE_MODEL:
+			setConfiguredFeatureModel((FeatureModel) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -113,6 +121,7 @@ public class FeatureConfigurationImpl extends ConfigurationDecisionModelImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,14 +132,15 @@ public class FeatureConfigurationImpl extends ConfigurationDecisionModelImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VariabilityPackage.FEATURE_CONFIGURATION__CONFIGURED_FEATURE_MODEL:
-				setConfiguredFeatureModel((FeatureModel)null);
-				return;
+		case VariabilityPackage.FEATURE_CONFIGURATION__CONFIGURED_FEATURE_MODEL:
+			setConfiguredFeatureModel((FeatureModel) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -138,15 +148,18 @@ public class FeatureConfigurationImpl extends ConfigurationDecisionModelImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public FeatureModel getConfiguredFeatureModel() {
 		if (configuredFeatureModel != null && configuredFeatureModel.eIsProxy()) {
-			InternalEObject oldConfiguredFeatureModel = (InternalEObject)configuredFeatureModel;
-			configuredFeatureModel = (FeatureModel)eResolveProxy(oldConfiguredFeatureModel);
+			InternalEObject oldConfiguredFeatureModel = (InternalEObject) configuredFeatureModel;
+			configuredFeatureModel = (FeatureModel) eResolveProxy(oldConfiguredFeatureModel);
 			if (configuredFeatureModel != oldConfiguredFeatureModel) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariabilityPackage.FEATURE_CONFIGURATION__CONFIGURED_FEATURE_MODEL, oldConfiguredFeatureModel, configuredFeatureModel));
+				}
 			}
 		}
 		return configuredFeatureModel;
@@ -155,13 +168,16 @@ public class FeatureConfigurationImpl extends ConfigurationDecisionModelImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setConfiguredFeatureModel(FeatureModel newConfiguredFeatureModel) {
 		FeatureModel oldConfiguredFeatureModel = configuredFeatureModel;
 		configuredFeatureModel = newConfiguredFeatureModel;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.FEATURE_CONFIGURATION__CONFIGURED_FEATURE_MODEL, oldConfiguredFeatureModel, configuredFeatureModel));
+		}
 	}
 
-} //FeatureConfigurationImpl
+} // FeatureConfigurationImpl

@@ -6,7 +6,7 @@ import org.eclipse.jface.viewers.LabelProvider;
 
 /**
  * A LabelProvider based on a Map
- * 
+ *
  * @author Camille Letavernier
  */
 public class MapLabelProvider extends LabelProvider {

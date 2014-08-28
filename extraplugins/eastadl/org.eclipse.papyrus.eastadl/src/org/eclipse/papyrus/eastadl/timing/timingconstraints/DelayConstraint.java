@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,19 +26,19 @@ import org.eclipse.papyrus.eastadl.timing.TimingExpression;
  *
  * <!-- begin-model-doc -->
  * DelayConstraints give bounds on system timing attributes, i.e. end-to-end delays, periods, etc.
- * 
+ *
  * A DelayConstraint can specify one or several of an upper bound, a lower bound or a nominal value and jitter. The jitter is evenly distributed around the nominal (nominal - jitter/2 .. nominal + jitter/2). The bound will be measured in a given unit.
- * 
+ *
  * Constraints:
  * [1] At least Upper or Nominal must be specified. Rationale: At least one value is needed to work with.
- * 
+ *
  * Semantics:
  * Lower (from TimingConstraint) denotes the minimum value of the given bound.
  * Upper (from TimingConstraint) denotes the maximum value of the given bound.
  * Variation around the nominal value can be expressed by means of an upper and lower bound, or by means of a jitter value.
  * For example, [lower=10, upper=20, nominal=15] is equal to [nominal=15, jitter=10].
- * 
- * 
+ *
+ *
  * Extension:
  * abstract, no extension
  * <!-- end-model-doc -->
@@ -46,10 +46,10 @@ import org.eclipse.papyrus.eastadl.timing.TimingExpression;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.DelayConstraint#getTarget <em>Target</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.DelayConstraint#getSource <em>Source</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.DelayConstraint#getLower <em>Lower</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.DelayConstraint#getUpper <em>Upper</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.DelayConstraint#getTarget <em>Target</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.DelayConstraint#getSource <em>Source</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.DelayConstraint#getLower <em>Lower</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.DelayConstraint#getUpper <em>Upper</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,10 +62,10 @@ public interface DelayConstraint extends TimingConstraint {
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Target</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Target</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(Event)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getDelayConstraint_Target()
@@ -78,7 +78,9 @@ public interface DelayConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.DelayConstraint#getTarget <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Target</em>' reference.
 	 * @see #getTarget()
 	 * @generated
 	 */
@@ -88,10 +90,10 @@ public interface DelayConstraint extends TimingConstraint {
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Source</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Source</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Event)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getDelayConstraint_Source()
@@ -104,7 +106,9 @@ public interface DelayConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.DelayConstraint#getSource <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Source</em>' reference.
 	 * @see #getSource()
 	 * @generated
 	 */
@@ -114,10 +118,10 @@ public interface DelayConstraint extends TimingConstraint {
 	 * Returns the value of the '<em><b>Lower</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Lower</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Lower</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Lower</em>' reference.
 	 * @see #setLower(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getDelayConstraint_Lower()
@@ -130,7 +134,9 @@ public interface DelayConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.DelayConstraint#getLower <em>Lower</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Lower</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Lower</em>' reference.
 	 * @see #getLower()
 	 * @generated
 	 */
@@ -140,10 +146,10 @@ public interface DelayConstraint extends TimingConstraint {
 	 * Returns the value of the '<em><b>Upper</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Upper</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Upper</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Upper</em>' reference.
 	 * @see #setUpper(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getDelayConstraint_Upper()
@@ -156,7 +162,9 @@ public interface DelayConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.DelayConstraint#getUpper <em>Upper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Upper</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Upper</em>' reference.
 	 * @see #getUpper()
 	 * @generated
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ import org.eclipse.swt.widgets.Shell;
 /**
  * A JFace dialog used to show information to the end user.<br>
  * This dialog is able to store the user choice into a preference store.<br>
- * 
+ *
  */
 public class InformationDialog extends MessageDialog {
 
@@ -38,7 +38,7 @@ public class InformationDialog extends MessageDialog {
 
 	/**
 	 * The Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 *            the parent shell
 	 * @param dialogTitle
@@ -59,7 +59,7 @@ public class InformationDialog extends MessageDialog {
 
 	/**
 	 * The Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 *            the parent shell
 	 * @param dialogTitle
@@ -89,6 +89,7 @@ public class InformationDialog extends MessageDialog {
 	/**
 	 * @see org.eclipse.jface.dialogs.MessageDialog#createDialogArea(org.eclipse.swt.widgets.Composite)
 	 */
+	@Override
 	protected Control createDialogArea(Composite parent) {
 		Composite container = (Composite) super.createDialogArea(parent);
 
@@ -103,6 +104,7 @@ public class InformationDialog extends MessageDialog {
 	 * @see org.eclipse.jface.window.Window#open() return Window.OK if it's
 	 *      valid
 	 */
+	@Override
 	public int open() {
 		// Do not open the dialog if the preference is true
 		if (ps != null && preference != null && preference.length() > 0) {
@@ -116,6 +118,7 @@ public class InformationDialog extends MessageDialog {
 	/**
 	 * @see org.eclipse.jface.dialogs.Dialog#buttonPressed(int)
 	 */
+	@Override
 	protected void buttonPressed(int buttonId) {
 		// OK pressed
 		if (buttonId == Window.OK && rememberChoice != null && rememberChoice.getSelection()) {

@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -15,15 +15,11 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurat
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TableHeaderAxisConfiguration;
@@ -35,11 +31,10 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.TableHeaderAxisConfigurationImpl#getAxisManagers <em>
- * Axis Managers</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.TableHeaderAxisConfigurationImpl#getAxisManagers <em> Axis Managers</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class TableHeaderAxisConfigurationImpl extends AbstractHeaderAxisConfigurationImpl implements TableHeaderAxisConfiguration {
@@ -48,7 +43,7 @@ public class TableHeaderAxisConfigurationImpl extends AbstractHeaderAxisConfigur
 	 * The cached value of the '{@link #getAxisManagers() <em>Axis Managers</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAxisManagers()
 	 * @generated
 	 * @ordered
@@ -58,7 +53,7 @@ public class TableHeaderAxisConfigurationImpl extends AbstractHeaderAxisConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TableHeaderAxisConfigurationImpl() {
@@ -68,7 +63,7 @@ public class TableHeaderAxisConfigurationImpl extends AbstractHeaderAxisConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,11 +74,12 @@ public class TableHeaderAxisConfigurationImpl extends AbstractHeaderAxisConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<AxisManagerRepresentation> getAxisManagers() {
-		if(axisManagers == null) {
+		if (axisManagers == null) {
 			axisManagers = new EObjectContainmentEList<AxisManagerRepresentation>(AxisManagerRepresentation.class, this, NattableaxisconfigurationPackage.TABLE_HEADER_AXIS_CONFIGURATION__AXIS_MANAGERS);
 		}
 		return axisManagers;
@@ -92,14 +88,14 @@ public class TableHeaderAxisConfigurationImpl extends AbstractHeaderAxisConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisconfigurationPackage.TABLE_HEADER_AXIS_CONFIGURATION__AXIS_MANAGERS:
-			return ((InternalEList<?>)getAxisManagers()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getAxisManagers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -107,12 +103,12 @@ public class TableHeaderAxisConfigurationImpl extends AbstractHeaderAxisConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisconfigurationPackage.TABLE_HEADER_AXIS_CONFIGURATION__AXIS_MANAGERS:
 			return getAxisManagers();
 		}
@@ -122,16 +118,16 @@ public class TableHeaderAxisConfigurationImpl extends AbstractHeaderAxisConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisconfigurationPackage.TABLE_HEADER_AXIS_CONFIGURATION__AXIS_MANAGERS:
 			getAxisManagers().clear();
-			getAxisManagers().addAll((Collection<? extends AxisManagerRepresentation>)newValue);
+			getAxisManagers().addAll((Collection<? extends AxisManagerRepresentation>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -140,12 +136,12 @@ public class TableHeaderAxisConfigurationImpl extends AbstractHeaderAxisConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisconfigurationPackage.TABLE_HEADER_AXIS_CONFIGURATION__AXIS_MANAGERS:
 			getAxisManagers().clear();
 			return;
@@ -156,16 +152,16 @@ public class TableHeaderAxisConfigurationImpl extends AbstractHeaderAxisConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisconfigurationPackage.TABLE_HEADER_AXIS_CONFIGURATION__AXIS_MANAGERS:
 			return axisManagers != null && !axisManagers.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //TableHeaderAxisConfigurationImpl
+} // TableHeaderAxisConfigurationImpl

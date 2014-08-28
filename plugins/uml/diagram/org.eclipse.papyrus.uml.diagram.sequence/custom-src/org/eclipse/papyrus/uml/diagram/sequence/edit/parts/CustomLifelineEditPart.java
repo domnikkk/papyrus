@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -134,7 +134,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 */
 		public CustomLifelineFigure() {
 		}
@@ -144,23 +144,25 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 			return CustomLifelineEditPart.this.getMapMode();
 		}
 
+		@Override
 		public boolean containsPoint(int x, int y) {
 			boolean contains = super.containsPoint(x, y);
-			if(!contains) {
+			if (!contains) {
 				return false;
 			}
-			//Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=395462
-			//If is inline mode, just return true, otherwise the child lifeline cannot be moved.
-			if(isInlineMode()) {
-				//return true;
+			// Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=395462
+			// If is inline mode, just return true, otherwise the child lifeline cannot be moved.
+			if (isInlineMode()) {
+				// return true;
 			}
-			if(fFigureLifelineNameContainerFigure != null && fFigureLifelineNameContainerFigure.containsPoint(x, y)) {
+			if (fFigureLifelineNameContainerFigure != null && fFigureLifelineNameContainerFigure.containsPoint(x, y)) {
 				return true;
-			} else if(!isInlineMode() && fFigureLifelineDotLineFigure != null) {
+			} else if (!isInlineMode() && fFigureLifelineDotLineFigure != null) {
 				Rectangle bounds = fFigureLifelineDotLineFigure.getDashLineRectangle().getBounds().getCopy();
 				bounds.expand(4, 0);
-				if(bounds.contains(x, y))
+				if (bounds.contains(x, y)) {
 					return true;
+				}
 			}
 			return containsChildFigure(this, x, y);
 		}
@@ -168,53 +170,54 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 		@Override
 		public IFigure findFigureAt(int x, int y, TreeSearch search) {
 			IFigure figure = super.findFigureAt(x, y, search);
-			if(figure == null) {
+			if (figure == null) {
 				return null;
 			}
 			// 1. First check if the location is enter the Title.
-			if(fFigureLifelineNameContainerFigure != null && fFigureLifelineNameContainerFigure.containsPoint(x, y)) {
+			if (fFigureLifelineNameContainerFigure != null && fFigureLifelineNameContainerFigure.containsPoint(x, y)) {
 				// Return label figure for supporting direct edit.
-				EditPart editPart = (EditPart)getViewer().getVisualPartMap().get(figure);
-				while(editPart == null) {
+				EditPart editPart = (EditPart) getViewer().getVisualPartMap().get(figure);
+				while (editPart == null) {
 					figure = figure.getParent();
-					if(figure == null) {
+					if (figure == null) {
 						break;
 					}
-					editPart = (EditPart)getViewer().getVisualPartMap().get(figure);
+					editPart = (EditPart) getViewer().getVisualPartMap().get(figure);
 				}
 				return figure == null ? this : figure;
 			}
-			//2. Check children, maybe contain the Label figure, but we process it before.
+			// 2. Check children, maybe contain the Label figure, but we process it before.
 			IFigure child = findChildFigure(this, x, y);
-			if(child != null) {
+			if (child != null) {
 				return child;
 			}
-			//3. Finally check the line.
-			if(!isInlineMode() && fFigureLifelineDotLineFigure != null) {
+			// 3. Finally check the line.
+			if (!isInlineMode() && fFigureLifelineDotLineFigure != null) {
 				Rectangle bounds = fFigureLifelineDotLineFigure.getDashLineRectangle().getBounds().getCopy();
 				bounds.expand(4, 0);
-				if(bounds.contains(x, y))
+				if (bounds.contains(x, y)) {
 					return this;
+				}
 			}
 			return null;
 		}
 
 		@Override
 		public Dimension getMinimumSize(int wHint, int hHint) {
-			if(minSize != null && minSize.height < 0) {
-				//Make sure Lifeline can be expanded vertically by itself.
+			if (minSize != null && minSize.height < 0) {
+				// Make sure Lifeline can be expanded vertically by itself.
 				int height = minSize.height;
-				//Introduce a minimum width for PartDecomposition.
+				// Introduce a minimum width for PartDecomposition.
 				int width = minSize.width;
-				if(getLayoutManager() != null) {
+				if (getLayoutManager() != null) {
 					Dimension d = getLayoutManager().getMinimumSize(this, wHint, hHint);
-					if(d != null) {
+					if (d != null) {
 						height = Math.max(height, d.height);
 						width = Math.max(width, d.width);
 					}
 				} else {
 					Dimension d = getPreferredSize(wHint, hHint);
-					if(d != null) {
+					if (d != null) {
 						height = Math.max(height, d.height);
 						width = Math.max(width, d.height);
 					}
@@ -240,29 +243,30 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 			String res = super.getNewIdStr(anchor);
 			String id = anchor.getId();
 			int start = id.indexOf('{');
-			if(start > 0)
+			if (start > 0) {
 				res = res + id.substring(start);
+			}
 			return res;
 		}
 	}
 
 	/**
 	 * Return the inner ConnectableElements of the lifeline
-	 * 
+	 *
 	 * @param lifeline
-	 *        The lifeline
+	 *            The lifeline
 	 * @return inner ConnectableElements
 	 */
 	// TODO Extract in a helper
 	public static List<Property> getProperties(Lifeline lifeline) {
-		if(lifeline != null) {
+		if (lifeline != null) {
 			ConnectableElement represents = lifeline.getRepresents();
-			if(represents != null) {
+			if (represents != null) {
 				Type type = represents.getType();
-				if(type instanceof StructuredClassifier) {
-					StructuredClassifier structuredClassifier = (StructuredClassifier)type;
-					if(!structuredClassifier.getAllAttributes().isEmpty()) {
-						return new ArrayList<Property>(((StructuredClassifier)type).getAllAttributes());
+				if (type instanceof StructuredClassifier) {
+					StructuredClassifier structuredClassifier = (StructuredClassifier) type;
+					if (!structuredClassifier.getAllAttributes().isEmpty()) {
+						return new ArrayList<Property>(((StructuredClassifier) type).getAllAttributes());
 					}
 				}
 			}
@@ -299,7 +303,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomLifelineEditPart(View view) {
@@ -311,7 +315,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	 */
 	@Override
 	public void activate() {
-		//updateCrossEnd();
+		// updateCrossEnd();
 		super.activate();
 	}
 
@@ -320,31 +324,31 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	 */
 	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		//Affixed locator for Lifelines to place element with a time bar
-		if(childEditPart instanceof TimeConstraintEditPart) {
+		// Affixed locator for Lifelines to place element with a time bar
+		if (childEditPart instanceof TimeConstraintEditPart) {
 			// update the locator with edit part reference
 			TimeMarkElementPositionLocator locator = new TimeMarkElementPositionLocator(getMainFigure(), PositionConstants.NONE);
 			locator.setEditPart(childEditPart);
-			getBorderedFigure().getBorderItemContainer().add(((TimeConstraintEditPart)childEditPart).getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((TimeConstraintEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
-		if(childEditPart instanceof TimeObservationEditPart) {
+		if (childEditPart instanceof TimeObservationEditPart) {
 			// update the locator with edit part reference
 			TimeMarkElementPositionLocator locator = new TimeMarkElementPositionLocator(getMainFigure(), PositionConstants.NONE);
 			locator.setEditPart(childEditPart);
-			getBorderedFigure().getBorderItemContainer().add(((TimeObservationEditPart)childEditPart).getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((TimeObservationEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
-		if(childEditPart instanceof DurationConstraintEditPart) {
+		if (childEditPart instanceof DurationConstraintEditPart) {
 			// update the locator with edit part reference
 			TimeMarkElementPositionLocator locator = new TimeMarkElementPositionLocator(getMainFigure(), PositionConstants.NONE);
 			locator.setEditPart(childEditPart);
-			getBorderedFigure().getBorderItemContainer().add(((DurationConstraintEditPart)childEditPart).getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((DurationConstraintEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
-		if(childEditPart instanceof StateInvariantEditPart) {
+		if (childEditPart instanceof StateInvariantEditPart) {
 			IBorderItemLocator locator = new StateInvariantLocator(getMainFigure(), PositionConstants.NONE);
-			getBorderedFigure().getBorderItemContainer().add(((StateInvariantEditPart)childEditPart).getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((StateInvariantEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		return super.addFixedChild(childEditPart);
@@ -352,22 +356,22 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 	/**
 	 * Configure the lifeline
-	 * 
+	 *
 	 * @param inlineMode
-	 *        True if the lifeline is in inline mode
+	 *            True if the lifeline is in inline mode
 	 */
 	private void configure(boolean inlineMode, boolean refresh) {
 		(getPrimaryShape().getFigureLifelineDotLineFigure()).configure(inlineMode, LifelineEditPartUtil.getInnerConnectableElementList(this).size());
-		if(this.inlineMode != inlineMode) {
+		if (this.inlineMode != inlineMode) {
 			this.inlineMode = inlineMode;
-			if(inlineMode) {
+			if (inlineMode) {
 				installEditPolicy(EditPolicy.LAYOUT_ROLE, inlineModeLayoutRole);
 				removeEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE);
 			} else {
 				installEditPolicy(EditPolicy.LAYOUT_ROLE, normalModeLayoutRole);
 				installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, dragDropEditPolicy);
 			}
-			if(refresh) {
+			if (refresh) {
 				refreshVisuals();
 			}
 		}
@@ -375,7 +379,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 	/**
 	 * Check if the IFigure contains point, only check visible figures.
-	 * 
+	 *
 	 * @param parent
 	 * @param x
 	 * @param y
@@ -383,7 +387,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	 */
 	@SuppressWarnings("rawtypes")
 	private boolean containsChildFigure(IFigure parent, int x, int y) {
-		if(parent == null) {
+		if (parent == null) {
 			return false;
 		}
 		Map visualPartMap = getViewer().getVisualPartMap();
@@ -391,22 +395,22 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 		Point pt = new Point(x, y);
 		parent.translateFromParent(pt);
 		IFigure child;
-		for(int i = figures.size(); i > 0;) {
+		for (int i = figures.size(); i > 0;) {
 			i--;
-			child = (IFigure)figures.get(i);
-			if(!child.isVisible()) {
+			child = (IFigure) figures.get(i);
+			if (!child.isVisible()) {
 				continue;
 			}
-			if(containsChildFigure(child, pt.x, pt.y)) {
+			if (containsChildFigure(child, pt.x, pt.y)) {
 				return true;
 			}
-			if(visualPartMap.containsKey(child)) {
+			if (visualPartMap.containsKey(child)) {
 				Object object = visualPartMap.get(child);
-				if(object instanceof LifelineEditPart) {
-					if(((LifelineEditPart)object).getPrimaryShape().containsPoint(pt)) {
+				if (object instanceof LifelineEditPart) {
+					if (((LifelineEditPart) object).getPrimaryShape().containsPoint(pt)) {
 						return true;
 					}
-				} else if(child.containsPoint(pt)) {
+				} else if (child.containsPoint(pt)) {
 					return true;
 				}
 			}
@@ -421,7 +425,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomLifelineItemSemanticEditPolicy());
-		//Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=364608
+		// Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=364608
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new LifelineSelectionEditPolicy());
 		installEditPolicy(EditPolicy.COMPONENT_ROLE, new LifelineMessageCreateHelper.ComponentEditPolicyEx());
 		// custom label, fix bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=383722
@@ -429,12 +433,14 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 		installEditPolicy(AbstractHeadImpactLayoutEditPolicy.HEAD_IMPACT_LAYOUT_POLICY, new LifelineHeadImpactLayoutEditPolicy());
 	}
 
+	@Override
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
+			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				View childView = (View)child.getModel();
-				switch(UMLVisualIDRegistry.getVisualID(childView)) {
+				View childView = (View) child.getModel();
+				switch (UMLVisualIDRegistry.getVisualID(childView)) {
 				case StateInvariantEditPart.VISUAL_ID:
 				case TimeConstraintEditPart.VISUAL_ID:
 				case TimeObservationEditPart.VISUAL_ID:
@@ -443,39 +449,44 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 					return new BorderItemResizableEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
 			}
 
+			@Override
 			public Command getCommand(Request request) {
 				Command command = null;
-				if(REQ_MOVE_CHILDREN.equals(request.getType()))
+				if (REQ_MOVE_CHILDREN.equals(request.getType())) {
 					command = getMoveChildrenCommand(request);
-				if(REQ_RESIZE_CHILDREN.equals(request.getType()) && request instanceof ChangeBoundsRequest)
-					command = getMoveResizeCommand((ChangeBoundsRequest)request);
-				if(command != null)
+				}
+				if (REQ_RESIZE_CHILDREN.equals(request.getType()) && request instanceof ChangeBoundsRequest) {
+					command = getMoveResizeCommand((ChangeBoundsRequest) request);
+				}
+				if (command != null) {
 					return command;
+				}
 				return super.getCommand(request);
 			}
 
 			@Override
 			protected Command getOrphanChildrenCommand(Request request) {
-				//Disable orphan children command.
-				//Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=395462
+				// Disable orphan children command.
+				// Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=395462
 				return UnexecutableCommand.INSTANCE;
 			}
 
+			@Override
 			protected Command getCreateCommand(CreateRequest request) {
-				//only allow Lifeline creation for PartDecomposition.
-				if(request instanceof CreateViewRequest) {
-					CreateViewRequest req = (CreateViewRequest)request;
+				// only allow Lifeline creation for PartDecomposition.
+				if (request instanceof CreateViewRequest) {
+					CreateViewRequest req = (CreateViewRequest) request;
 					Iterator iter = req.getViewDescriptors().iterator();
-					while(iter.hasNext()) {
-						CreateViewRequest.ViewDescriptor viewDescriptor = (CreateViewRequest.ViewDescriptor)iter.next();
+					while (iter.hasNext()) {
+						CreateViewRequest.ViewDescriptor viewDescriptor = (CreateViewRequest.ViewDescriptor) iter.next();
 						String semanticHint = viewDescriptor.getSemanticHint();
-						if(!UMLVisualIDRegistry.getType(VISUAL_ID).equals(semanticHint)) {
+						if (!UMLVisualIDRegistry.getType(VISUAL_ID).equals(semanticHint)) {
 							return UnexecutableCommand.INSTANCE;
 						}
 					}
@@ -485,54 +496,55 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 			@Override
 			protected Command getMoveChildrenCommand(Request request) {
-				if(request instanceof ChangeBoundsRequest)
-					return getMoveResizeCommand((ChangeBoundsRequest)request);
+				if (request instanceof ChangeBoundsRequest) {
+					return getMoveResizeCommand((ChangeBoundsRequest) request);
+				}
 				return null;
 			}
 
 			private Command getMoveResizeCommand(ChangeBoundsRequest request) {
 				List changeEditParts = request.getEditParts();
-				if(changeEditParts != null && changeEditParts.size() > 0) {
-					TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+				if (changeEditParts != null && changeEditParts.size() > 0) {
+					TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 					CompositeTransactionalCommand composite = new CompositeTransactionalCommand(editingDomain, null);
-					LifelineEditPart parent = (LifelineEditPart)this.getHost();
-					LifelineDotLineCustomFigure parentFig = (LifelineDotLineCustomFigure)parent.getContentPane();
+					LifelineEditPart parent = (LifelineEditPart) this.getHost();
+					LifelineDotLineCustomFigure parentFig = (LifelineDotLineCustomFigure) parent.getContentPane();
 					Rectangle parentBounds = parentFig.getBounds();
-					for(Object o : changeEditParts) {
-						if(o instanceof LifelineEditPart) {
-							LifelineEditPart child = (LifelineEditPart)o;
+					for (Object o : changeEditParts) {
+						if (o instanceof LifelineEditPart) {
+							LifelineEditPart child = (LifelineEditPart) o;
 							IFigure childFig = child.getFigure();
 							Rectangle newBounds = childFig.getBounds().getCopy();
-							Rectangle childConstraint = (Rectangle)parentFig.getLayoutManager().getConstraint(childFig);
+							Rectangle childConstraint = (Rectangle) parentFig.getLayoutManager().getConstraint(childFig);
 							newBounds.setLocation(childConstraint.getLocation().getCopy());
 							newBounds.translate(request.getMoveDelta());
-							if(!request.getType().equals(RequestConstants.REQ_MOVE_CHILDREN)) {
+							if (!request.getType().equals(org.eclipse.gef.RequestConstants.REQ_MOVE_CHILDREN)) {
 								newBounds.resize(request.getSizeDelta());
 							}
 							// do not excceed parent
-							if(newBounds.x < 0) {
+							if (newBounds.x < 0) {
 								newBounds.width += newBounds.x;
 								newBounds.x = 0;
 							}
-							if(newBounds.x + newBounds.width > parentBounds.width) {
+							if (newBounds.x + newBounds.width > parentBounds.width) {
 								newBounds.width = parentBounds.width - newBounds.x;
 							}
-							ICommand boundsCommand = new SetBoundsCommand(editingDomain, DiagramUIMessages.SetLocationCommand_Label_Resize, new EObjectAdapter((View)child.getModel()), newBounds);
+							ICommand boundsCommand = new SetBoundsCommand(editingDomain, DiagramUIMessages.SetLocationCommand_Label_Resize, new EObjectAdapter((View) child.getModel()), newBounds);
 							composite.add(boundsCommand);
-							composite.add(LifelineResizeHelper.createManualLabelSizeCommand((LifelineEditPart)child));
-							//Move ExecutionSpecifications
-							//Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=395462
-							if(!request.getType().equals(REQ_MOVE_CHILDREN)) {
+							composite.add(LifelineResizeHelper.createManualLabelSizeCommand(child));
+							// Move ExecutionSpecifications
+							// Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=395462
+							if (!request.getType().equals(REQ_MOVE_CHILDREN)) {
 								CompoundCommand resizeChildrenCommand = new CompoundCommand();
 								InteractionCompartmentXYLayoutEditPolicy.addLifelineResizeChildrenCommand(resizeChildrenCommand, request, child, 1);
-								//If no child, just ignore it. Fixed bug about Resizing child lifeline: 
+								// If no child, just ignore it. Fixed bug about Resizing child lifeline:
 								Command cmd = resizeChildrenCommand.isEmpty() ? null : resizeChildrenCommand.unwrap();
-								if(cmd != null) {
+								if (cmd != null) {
 									composite.add(new CommandProxy(cmd));
 								}
-								if(request.getSizeDelta().height != 0) {
-									//Update message anchors.
-									composite.add(new PreserveAnchorsPositionCommandEx(child, request.getSizeDelta(), PreserveAnchorsPositionCommandEx.PRESERVE_Y, child.getBorderedFigure(), request.getResizeDirection()));
+								if (request.getSizeDelta().height != 0) {
+									// Update message anchors.
+									composite.add(new PreserveAnchorsPositionCommandEx(child, request.getSizeDelta(), PreserveAnchorsPositionCommand.PRESERVE_Y, child.getBorderedFigure(), request.getResizeDirection()));
 								}
 							}
 						}
@@ -551,7 +563,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 			@Override
 			public boolean containsPoint(int x, int y) {
-				if(getBounds().contains(x, y)) {
+				if (getBounds().contains(x, y)) {
 					return true;
 				}
 				return super.containsPoint(x, y);
@@ -562,11 +574,11 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 			 */
 			@Override
 			public IFigure findFigureAt(int x, int y, TreeSearch search) {
-				if(search.prune(this)) {
+				if (search.prune(this)) {
 					return null;
 				}
 				IFigure mainFigure = getMainFigure().findFigureAt(x, y, search);
-				if(mainFigure != null) {
+				if (mainFigure != null) {
 					return mainFigure;
 				}
 				return getBorderItemContainer().findFigureAt(x, y, search);
@@ -574,15 +586,15 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 			@Override
 			public void setBackgroundColor(Color bg) {
-				//				if (getPrimaryShape() != null) {
-				//					NodeFigure dashLineRectangle = getPrimaryShape().getFigureLifelineDotLineFigure().getDashLineRectangle();
-				//					dashLineRectangle.setBackgroundColor(bg);
-				//				}
+				// if (getPrimaryShape() != null) {
+				// NodeFigure dashLineRectangle = getPrimaryShape().getFigureLifelineDotLineFigure().getDashLineRectangle();
+				// dashLineRectangle.setBackgroundColor(bg);
+				// }
 			}
 
 			@Override
 			public void setOpaque(boolean opaque) {
-				if(getPrimaryShape() != null) {
+				if (getPrimaryShape() != null) {
 					NodeFigure dashLineRectangle = getPrimaryShape().getFigureLifelineDotLineFigure().getDashLineRectangle();
 					dashLineRectangle.setOpaque(opaque);
 				}
@@ -593,7 +605,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	/**
 	 * Overrides to disable the defaultAnchorArea. The edge is now more stuck with the middle of the
 	 * figure.
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
@@ -602,7 +614,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 			@Override
 			public boolean containsPoint(int x, int y) {
-				if(primaryShape != null) {
+				if (primaryShape != null) {
 					return primaryShape.containsPoint(x, y);
 				}
 				return super.containsPoint(x, y);
@@ -621,7 +633,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.LifelineEditPart#createNodeShape()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -632,14 +644,14 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	protected ConnectionAnchor createSideAnchor(Request request, SlidableAnchor sa) {
 		Point loc = AnchorHelper.getRequestLocation(request);
 		PrecisionPoint pt = BaseSlidableAnchor.parseTerminalString(sa.getTerminal());
-		if(loc == null || pt == null) {
+		if (loc == null || pt == null) {
 			return sa;
 		}
 		IFigure fig = this.getDashLineFigure();
 		Rectangle bounds = fig.getBounds().getCopy();
 		fig.translateToAbsolute(bounds);
 		boolean rightHand = true;
-		if(loc.x < bounds.getCenter().x) {
+		if (loc.x < bounds.getCenter().x) {
 			rightHand = false;
 		}
 		return new AnchorHelper.SideAnchor(getNodeFigure(), pt, rightHand);
@@ -651,7 +663,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	 */
 	@Override
 	public void deactivate() {
-		if(notifier != null) {
+		if (notifier != null) {
 			notifier.unlistenAll();
 		}
 		super.deactivate();
@@ -663,7 +675,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	 */
 	@SuppressWarnings("rawtypes")
 	private IFigure findChildFigure(IFigure parent, int x, int y) {
-		if(parent == null) {
+		if (parent == null) {
 			return null;
 		}
 		Map visualPartMap = getViewer().getVisualPartMap();
@@ -671,23 +683,23 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 		Point pt = new Point(x, y);
 		parent.translateFromParent(pt);
 		IFigure child;
-		for(int i = figures.size(); i > 0;) {
+		for (int i = figures.size(); i > 0;) {
 			i--;
-			child = (IFigure)figures.get(i);
-			if(!child.isVisible()) {
+			child = (IFigure) figures.get(i);
+			if (!child.isVisible()) {
 				continue;
 			}
 			IFigure fig = findChildFigure(child, pt.x, pt.y);
-			if(fig != null) {
+			if (fig != null) {
 				return fig;
 			}
-			if(visualPartMap.containsKey(child)) {
+			if (visualPartMap.containsKey(child)) {
 				Object object = visualPartMap.get(child);
-				if(object instanceof LifelineEditPart) {
-					if(((LifelineEditPart)object).getPrimaryShape().containsPoint(pt)) {
+				if (object instanceof LifelineEditPart) {
+					if (((LifelineEditPart) object).getPrimaryShape().containsPoint(pt)) {
 						return child;
 					}
-				} else if(child.containsPoint(pt)) {
+				} else if (child.containsPoint(pt)) {
 					return child;
 				}
 			}
@@ -697,17 +709,17 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 	/**
 	 * Get available properties
-	 * 
+	 *
 	 * @return Only not already used properties
 	 */
 	public List<Property> getAvailableProperties() {
 		List<Property> properties = getProperties();
-		if(properties != null) {
-			for(EditPart editPart : (List<EditPart>)getChildren()) {
-				if(editPart instanceof LifelineEditPart) {
-					Lifeline lifeline = (Lifeline)((LifelineEditPart)editPart).resolveSemanticElement();
+		if (properties != null) {
+			for (EditPart editPart : (List<EditPart>) getChildren()) {
+				if (editPart instanceof LifelineEditPart) {
+					Lifeline lifeline = (Lifeline) ((LifelineEditPart) editPart).resolveSemanticElement();
 					ConnectableElement represents = lifeline.getRepresents();
-					if(properties.contains(represents)) {
+					if (properties.contains(represents)) {
 						properties.remove(represents);
 					}
 				}
@@ -717,10 +729,10 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	}
 
 	private Bounds getBounds() {
-		if(getModel() instanceof Node) {
-			Node node = (Node)getModel();
-			if(node.getLayoutConstraint() instanceof Bounds) {
-				return (Bounds)node.getLayoutConstraint();
+		if (getModel() instanceof Node) {
+			Node node = (Node) getModel();
+			if (node.getLayoutConstraint() instanceof Bounds) {
+				return (Bounds) node.getLayoutConstraint();
 			}
 		}
 		return null;
@@ -729,37 +741,38 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	/**
 	 * Handle message creation for execution specification
 	 */
+	@Override
 	public Command getCommand(Request request) {
-		if(ignoreRequest(request)) {
+		if (ignoreRequest(request)) {
 			return null;
 		}
-		if(request instanceof DropObjectsRequest) { // drop from model explorer
-			DropObjectsRequest dropRequest = (DropObjectsRequest)request;
-			if(dropRequest.getObjects().size() > 0) {
+		if (request instanceof DropObjectsRequest) { // drop from model explorer
+			DropObjectsRequest dropRequest = (DropObjectsRequest) request;
+			if (dropRequest.getObjects().size() > 0) {
 				Object obj = dropRequest.getObjects().get(0);
-				if(obj instanceof Comment || obj instanceof Constraint || obj instanceof TimeObservation) {
+				if (obj instanceof Comment || obj instanceof Constraint || obj instanceof TimeObservation) {
 					InteractionInteractionCompartmentEditPart part = getParentInteractionCompartmentEditPart();
-					if(part != null) {
+					if (part != null) {
 						return part.getCommand(request);
 					}
 				}
 			}
 		}
-		if(request instanceof CreateConnectionRequest) {
-			CreateConnectionRequest createConnectionRequest = (CreateConnectionRequest)request;
+		if (request instanceof CreateConnectionRequest) {
+			CreateConnectionRequest createConnectionRequest = (CreateConnectionRequest) request;
 			EditPart target = createConnectionRequest.getTargetEditPart();
-			if(target instanceof CustomLifelineEditPart) {
-				CustomLifelineEditPart lifelineEditPart = (CustomLifelineEditPart)target;
+			if (target instanceof CustomLifelineEditPart) {
+				CustomLifelineEditPart lifelineEditPart = (CustomLifelineEditPart) target;
 				Rectangle lifelineBounds = lifelineEditPart.getContentPane().getBounds();
-				for(ShapeNodeEditPart executionSpecificationEditPart : LifelineEditPartUtil.getChildShapeNodeEditPart(lifelineEditPart)) {
+				for (ShapeNodeEditPart executionSpecificationEditPart : LifelineEditPartUtil.getChildShapeNodeEditPart(lifelineEditPart)) {
 					IFigure executionSpecificationFigure = executionSpecificationEditPart.getFigure();
 					Rectangle esBounds = executionSpecificationFigure.getBounds().getCopy();
 					esBounds.x = lifelineBounds.x;
 					esBounds.width = lifelineBounds.width;
-					if(createConnectionRequest.getLocation() != null) {
+					if (createConnectionRequest.getLocation() != null) {
 						Point location = createConnectionRequest.getLocation().getCopy();
 						executionSpecificationFigure.translateToRelative(location);
-						if(esBounds.contains(location)) {
+						if (esBounds.contains(location)) {
 							createConnectionRequest.setTargetEditPart(executionSpecificationEditPart);
 							return executionSpecificationEditPart.getCommand(request);
 						}
@@ -774,13 +787,13 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @Override Execution specification handling
 	 */
 	@Override
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		// Execution specification handling
-		if(editPart instanceof AbstractExecutionSpecificationEditPart || editPart instanceof CombinedFragment2EditPart) {
+		if (editPart instanceof AbstractExecutionSpecificationEditPart || editPart instanceof CombinedFragment2EditPart) {
 			return getPrimaryShape().getFigureLifelineDotLineFigure();
 		}
 		return super.getContentPaneFor(editPart);
@@ -791,8 +804,8 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	 */
 	private NodeFigure getDashLineFigure() {
 		NodeFigure centerFigure = null;
-		if(getContentPane() instanceof LifelineDotLineCustomFigure) {
-			centerFigure = ((LifelineDotLineCustomFigure)getContentPane()).getDashLineRectangle();
+		if (getContentPane() instanceof LifelineDotLineCustomFigure) {
+			centerFigure = ((LifelineDotLineCustomFigure) getContentPane()).getDashLineRectangle();
 		}
 		return centerFigure;
 	}
@@ -800,21 +813,21 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	private int getMinimumHeight(int heightHint) {
 		Rectangle rect = getFigure().getBounds().getCopy();
 		getFigure().translateToAbsolute(rect);
-		Lifeline lifeline = (Lifeline)resolveSemanticElement();
+		Lifeline lifeline = (Lifeline) resolveSemanticElement();
 		EList<InteractionFragment> coveredBys = lifeline.getCoveredBys();
 		int bottom = 0;
-		for(InteractionFragment interactionFragment : coveredBys) {
+		for (InteractionFragment interactionFragment : coveredBys) {
 			Collection<Setting> settings = CacheAdapter.getInstance().getNonNavigableInverseReferences(interactionFragment);
-			for(Setting ref : settings) {
-				if(!NotationPackage.eINSTANCE.getView_Element().equals(ref.getEStructuralFeature())) {
+			for (Setting ref : settings) {
+				if (!NotationPackage.eINSTANCE.getView_Element().equals(ref.getEStructuralFeature())) {
 					continue;
 				}
-				View view = (View)ref.getEObject();
+				View view = (View) ref.getEObject();
 				EditPart part = DiagramEditPartsUtil.getEditPartFromView(view, this);
-				if(!(part instanceof GraphicalEditPart)) {
+				if (!(part instanceof GraphicalEditPart)) {
 					continue;
 				}
-				GraphicalEditPart ep = (GraphicalEditPart)part;
+				GraphicalEditPart ep = (GraphicalEditPart) part;
 				Rectangle r = ep.getFigure().getBounds().getCopy();
 				getFigure().translateToAbsolute(r);
 				bottom = Math.max(bottom, r.bottom());
@@ -826,7 +839,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	/**
 	 * Overrides to return the DashLineFigure instead of this figure. This is necessary for the
 	 * connections anchor.
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#getNodeFigure()
 	 */
 	@Override
@@ -838,11 +851,11 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	 * Try to use the notifier from super class, if not exist, create new one.
 	 */
 	protected NotificationHelper getNotifier() {
-		if(notifier == null) {
+		if (notifier == null) {
 			try {
 				Field f = LifelineEditPart.class.getDeclaredField("notifier");
 				f.setAccessible(true);
-				notifier = (NotificationHelper)f.get(this);
+				notifier = (NotificationHelper) f.get(this);
 			} catch (Exception e) {
 				notifier = new NotificationHelper(new UIAdapterImpl() {
 
@@ -860,27 +873,27 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 		EditPart part = this;
 		do {
 			part = part.getParent();
-		} while(part != null && !(part instanceof InteractionInteractionCompartmentEditPart));
-		return (InteractionInteractionCompartmentEditPart)part;
+		} while (part != null && !(part instanceof InteractionInteractionCompartmentEditPart));
+		return (InteractionInteractionCompartmentEditPart) part;
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.LifelineEditPart#getPrimaryShape()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public CustomLifelineFigure getPrimaryShape() {
-		return (CustomLifelineFigure)primaryShape;
+		return (CustomLifelineFigure) primaryShape;
 	}
 
 	/**
 	 * Return the inner ConnectableElements of the lifeline
-	 * 
+	 *
 	 * @return inner ConnectableElements
 	 */
 	public List<Property> getProperties() {
-		Lifeline lifeline = (Lifeline)resolveSemanticElement();
+		Lifeline lifeline = (Lifeline) resolveSemanticElement();
 		return getProperties(lifeline);
 	}
 
@@ -889,24 +902,24 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	 */
 	@Override
 	public ConnectionAnchor getTargetConnectionAnchor(ConnectionEditPart connEditPart) {
-		if(connEditPart instanceof Message4EditPart) {
+		if (connEditPart instanceof Message4EditPart) {
 			// Create message
 			return new LifelineAnchor(getPrimaryShape().getFigureLifelineNameContainerFigure());
 		}
-		if(connEditPart instanceof Message2EditPart) {
+		if (connEditPart instanceof Message2EditPart) {
 			String terminal = AnchorHelper.getAnchorId(getEditingDomain(), connEditPart, false);
-			if(terminal.length() > 0) {
+			if (terminal.length() > 0) {
 				int start = terminal.indexOf("{") + 1;
 				PrecisionPoint pt = BaseSlidableAnchor.parseTerminalString(terminal);
 				boolean rightHand = true;
-				if(start > 0) {
-					if(terminal.charAt(start) == 'L') {
+				if (start > 0) {
+					if (terminal.charAt(start) == 'L') {
 						rightHand = false;
 					}
 				} else {
-					Connection c = (Connection)connEditPart.getFigure();
+					Connection c = (Connection) connEditPart.getFigure();
 					PointList list = c.getPoints();
-					if(list.getPoint(0).x > list.getPoint(1).x) {
+					if (list.getPoint(0).x > list.getPoint(1).x) {
 						rightHand = false;
 					}
 				}
@@ -921,100 +934,101 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	 */
 	@Override
 	public ConnectionAnchor getTargetConnectionAnchor(Request request) {
-		if(request instanceof CreateUnspecifiedTypeConnectionRequest) {
-			CreateUnspecifiedTypeConnectionRequest createRequest = (CreateUnspecifiedTypeConnectionRequest)request;
+		if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
+			CreateUnspecifiedTypeConnectionRequest createRequest = (CreateUnspecifiedTypeConnectionRequest) request;
 			List<?> relationshipTypes = createRequest.getElementTypes();
-			for(Object obj : relationshipTypes) {
-				if(UMLElementTypes.Message_4006.equals(obj)) {
-					return LifelineMessageCreateHelper.getCreateMessageAnchor(this, request, ((CreateUnspecifiedTypeConnectionRequest)request).getLocation().getCopy());
+			for (Object obj : relationshipTypes) {
+				if (UMLElementTypes.Message_4006.equals(obj)) {
+					return LifelineMessageCreateHelper.getCreateMessageAnchor(this, request, ((CreateUnspecifiedTypeConnectionRequest) request).getLocation().getCopy());
 				}
 			}
-		} else if(request instanceof ReconnectRequest) {
-			ReconnectRequest reconnectRequest = (ReconnectRequest)request;
+		} else if (request instanceof ReconnectRequest) {
+			ReconnectRequest reconnectRequest = (ReconnectRequest) request;
 			ConnectionEditPart connectionEditPart = reconnectRequest.getConnectionEditPart();
-			if(connectionEditPart instanceof Message4EditPart) {
-				return LifelineMessageCreateHelper.getCreateMessageAnchor(this, request, ((ReconnectRequest)request).getLocation().getCopy());
+			if (connectionEditPart instanceof Message4EditPart) {
+				return LifelineMessageCreateHelper.getCreateMessageAnchor(this, request, ((ReconnectRequest) request).getLocation().getCopy());
 			}
 		}
 		ConnectionAnchor anchor = super.getTargetConnectionAnchor(request);
-		if(anchor instanceof SlidableAnchor) {
-			return createSideAnchor(request, (SlidableAnchor)anchor);
+		if (anchor instanceof SlidableAnchor) {
+			return createSideAnchor(request, (SlidableAnchor) anchor);
 		}
 		return anchor;
 	}
 
 	/**
 	 * Handle lifeline covered by and destruction event
-	 * 
+	 *
 	 */
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
 		final NotificationHelper notifier = getNotifier();
 		Object feature = notification.getFeature();
-		if(ElementIconUtil.isIconNotification(notification)) {
+		if (ElementIconUtil.isIconNotification(notification)) {
 			updateLifelinePosition();
 		}
 		EObject element = resolveSemanticElement();
 		TransactionalEditingDomain editingDomain = getEditingDomain();
-		if(element instanceof Lifeline && !((Lifeline)element).getCoveredBys().isEmpty()) {
-			Lifeline lifeline = (Lifeline)element;
+		if (element instanceof Lifeline && !((Lifeline) element).getCoveredBys().isEmpty()) {
+			Lifeline lifeline = (Lifeline) element;
 			EList<InteractionFragment> coveredBys = lifeline.getCoveredBys();
-			//if the coveredBy was removed from resource, then make sure them removed from lifeline model.
-			if(Notification.REMOVE == notification.getEventType()) {
+			// if the coveredBy was removed from resource, then make sure them removed from lifeline model.
+			if (Notification.REMOVE == notification.getEventType()) {
 				Object oldValue = notification.getOldValue();
-				if(coveredBys.contains(oldValue)) {
+				if (coveredBys.contains(oldValue)) {
 					CommandHelper.executeCommandWithoutHistory(editingDomain, RemoveCommand.create(editingDomain, lifeline, UMLPackage.eINSTANCE.getLifeline_CoveredBy(), oldValue), true);
 				}
-			} else if(Notification.REMOVE_MANY == notification.getEventType()) {
-				List oldValue = (List)notification.getOldValue();
-				for(Object object : oldValue) {
-					if(coveredBys.contains(object)) {
+			} else if (Notification.REMOVE_MANY == notification.getEventType()) {
+				List oldValue = (List) notification.getOldValue();
+				for (Object object : oldValue) {
+					if (coveredBys.contains(object)) {
 						CommandHelper.executeCommandWithoutHistory(editingDomain, RemoveCommand.create(editingDomain, lifeline, UMLPackage.eINSTANCE.getLifeline_CoveredBy(), object), true);
 					}
 				}
 			}
 		}
-		if(UMLPackage.eINSTANCE.getLifeline_CoveredBy().equals(feature)) {
+		if (UMLPackage.eINSTANCE.getLifeline_CoveredBy().equals(feature)) {
 			// Handle coveredBy attribute
 			Object newValue = notification.getNewValue();
-			if(notification.getOldValue() instanceof MessageOccurrenceSpecification) {
-				notifier.unlistenObject((Notifier)notification.getOldValue());
-				if(newValue == null) {
-					//updateCrossEnd();
+			if (notification.getOldValue() instanceof MessageOccurrenceSpecification) {
+				notifier.unlistenObject((Notifier) notification.getOldValue());
+				if (newValue == null) {
+					// updateCrossEnd();
 				}
 			}
-			if(newValue instanceof MessageOccurrenceSpecification) {
-				MessageOccurrenceSpecification newMessageOccurrenceSpecification = (MessageOccurrenceSpecification)newValue;
+			if (newValue instanceof MessageOccurrenceSpecification) {
+				MessageOccurrenceSpecification newMessageOccurrenceSpecification = (MessageOccurrenceSpecification) newValue;
 				notifier.listenObject(newMessageOccurrenceSpecification);
-				//				if(newMessageOccurrenceSpecification.getEvent() instanceof DestructionEvent) {
-				//					getPrimaryShape().getFigureLifelineDotLineFigure().setCrossAtEnd(true);
-				//					getPrimaryShape().repaint();
-				//				}
+				// if(newMessageOccurrenceSpecification.getEvent() instanceof DestructionEvent) {
+				// getPrimaryShape().getFigureLifelineDotLineFigure().setCrossAtEnd(true);
+				// getPrimaryShape().repaint();
+				// }
 			}
-			// Handle removing the coveredBys. 
-			if(newValue instanceof InteractionFragment) {
-				EObject eContainer = ((InteractionFragment)newValue).eContainer();
-				if(eContainer != null) {
+			// Handle removing the coveredBys.
+			if (newValue instanceof InteractionFragment) {
+				EObject eContainer = ((InteractionFragment) newValue).eContainer();
+				if (eContainer != null) {
 					notifier.listenObject(eContainer);
 				}
 			}
-		} else if(UMLPackage.eINSTANCE.getOccurrenceSpecification().equals(feature)) {
-			//			// Handle destruction event
-			//			Object newValue = notification.getNewValue();
-			//			if(notification.getOldValue() instanceof DestructionEvent && newValue instanceof DestructionEvent == false) {
-			//				//updateCrossEnd();
-			//			}
-			//			if(newValue instanceof DestructionEvent) {
-			//				getPrimaryShape().getFigureLifelineDotLineFigure().setCrossAtEnd(true);
-			//				getPrimaryShape().repaint();
-			//			}
+		} else if (UMLPackage.eINSTANCE.getOccurrenceSpecification().equals(feature)) {
+			// // Handle destruction event
+			// Object newValue = notification.getNewValue();
+			// if(notification.getOldValue() instanceof DestructionEvent && newValue instanceof DestructionEvent == false) {
+			// //updateCrossEnd();
+			// }
+			// if(newValue instanceof DestructionEvent) {
+			// getPrimaryShape().getFigureLifelineDotLineFigure().setCrossAtEnd(true);
+			// getPrimaryShape().repaint();
+			// }
 		}
 		super.handleNotificationEvent(notification);
 		// fixed bug (id=364711) when bounds changed update coveredBys with the
 		// figure's bounds.
-		if(notification.getNotifier() instanceof Bounds) {
+		if (notification.getNotifier() instanceof Bounds) {
 			Display.getDefault().asyncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					LifelineCoveredByUpdater updater = new LifelineCoveredByUpdater();
 					updater.update(CustomLifelineEditPart.this);
@@ -1024,11 +1038,11 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	}
 
 	public boolean ignoreRequest(Request request) { // moving editpart causing to add child
-		if(request instanceof ChangeBoundsRequest && (request.getType().equals(org.eclipse.gef.RequestConstants.REQ_ADD) || request.getType().equals(RequestConstants.REQ_DROP))) {
-			List parts = ((ChangeBoundsRequest)request).getEditParts();
-			if(parts != null) {
-				for(Object obj : parts) {
-					if(obj instanceof CommentEditPart || obj instanceof ConstraintEditPart || obj instanceof TimeObservationEditPart || obj instanceof CombinedFragmentEditPart) {
+		if (request instanceof ChangeBoundsRequest && (request.getType().equals(org.eclipse.gef.RequestConstants.REQ_ADD) || request.getType().equals(RequestConstants.REQ_DROP))) {
+			List parts = ((ChangeBoundsRequest) request).getEditParts();
+			if (parts != null) {
+				for (Object obj : parts) {
+					if (obj instanceof CommentEditPart || obj instanceof ConstraintEditPart || obj instanceof TimeObservationEditPart || obj instanceof CombinedFragmentEditPart) {
 						return true;
 					}
 				}
@@ -1039,12 +1053,12 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 	/**
 	 * Determine inline capability
-	 * 
+	 *
 	 * @return True if inline mode is possible
 	 */
 	public boolean isInlineCapability() {
 		List<Property> properties = getAvailableProperties();
-		if(properties != null && !properties.isEmpty()) {
+		if (properties != null && !properties.isEmpty()) {
 			return inlineMode || getChildren().size() < 2;
 		}
 		return false;
@@ -1052,20 +1066,20 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 	/**
 	 * Get the inline mode
-	 * 
+	 *
 	 * @return True if the lifeline is in inline mode and if there are properties, else false
 	 */
 	public boolean isInlineMode() {
-		//		for(Object o : getChildren()) {
-		//			if(o instanceof LifelineEditPart) {
-		//				return true;
-		//			}
-		//		}
+		// for(Object o : getChildren()) {
+		// if(o instanceof LifelineEditPart) {
+		// return true;
+		// }
+		// }
 		List models = super.getModelChildren();
-		for(Object o : models) {
-			if(o instanceof View) {
-				View view = (View)o;
-				if(UMLVisualIDRegistry.getVisualID(view.getType()) == LifelineEditPart.VISUAL_ID && view.getElement() instanceof Lifeline) {
+		for (Object o : models) {
+			if (o instanceof View) {
+				View view = (View) o;
+				if (UMLVisualIDRegistry.getVisualID(view.getType()) == LifelineEditPart.VISUAL_ID && view.getElement() instanceof Lifeline) {
 					return true;
 				}
 			}
@@ -1077,20 +1091,20 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 		{
 			Rectangle leftMostExecution = null;
 			List<ShapeNodeEditPart> childShapeNodeEditPart = LifelineEditPartUtil.getChildShapeNodeEditPart(this);
-			for(ShapeNodeEditPart executionSpecificationEP : childShapeNodeEditPart) {
-				if(executionSpecificationEP.resolveSemanticElement() instanceof ExecutionSpecification) {
+			for (ShapeNodeEditPart executionSpecificationEP : childShapeNodeEditPart) {
+				if (executionSpecificationEP.resolveSemanticElement() instanceof ExecutionSpecification) {
 					Rectangle bounds = executionSpecificationEP.getFigure().getBounds();
 					Point point = bounds.getLocation();
-					if(leftMostExecution == null || leftMostExecution.x > point.x) {
+					if (leftMostExecution == null || leftMostExecution.x > point.x) {
 						leftMostExecution = bounds;
 					}
 				}
 			}
-			if(leftMostExecution == null) {
+			if (leftMostExecution == null) {
 				return;
 			}
 			Rectangle dotLineBounds = this.getPrimaryShape().getFigureLifelineDotLineFigure().getBounds();
-			int targetX = (int)(dotLineBounds.x + Math.round((dotLineBounds.width - leftMostExecution.width) / 2.0));
+			int targetX = (int) (dotLineBounds.x + Math.round((dotLineBounds.width - leftMostExecution.width) / 2.0));
 			sizeDelta.width += (targetX - leftMostExecution.x); // adjust width to keep execution in center line
 		}
 		{ // move all executions
@@ -1105,7 +1119,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 			CompoundCommand compoundCmd = new CompoundCommand();
 			compoundCmd.setLabel("Move or Resize");
 			InteractionCompartmentXYLayoutEditPolicy.addLifelineResizeChildrenCommand(compoundCmd, request, this, 1);
-			if(compoundCmd.canExecute()) {
+			if (compoundCmd.canExecute()) {
 				CommandHelper.executeCommandWithoutHistory(getEditingDomain(), new GEFtoEMFCommandWrapper(compoundCmd.unwrap()), true);
 			}
 		}
@@ -1120,9 +1134,9 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	@Override
 	protected void refreshBounds() {
 		super.refreshBounds();
-		if(LifelineResizeHelper.isManualSize(this)) {
+		if (LifelineResizeHelper.isManualSize(this)) {
 			LifelineFigure primaryShape = getPrimaryShape();
-			//Once the minimum size is set, the main figure will not be expanded by itself.
+			// Once the minimum size is set, the main figure will not be expanded by itself.
 			primaryShape.setMinimumSize(new Dimension(1, -1));
 		}
 	}
@@ -1138,19 +1152,19 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 		IFigure parent = getContentPane();
 		List visualChildren = parent.getChildren();
 		int index = 0;
-		//Fixed bug about z-order of Execution Specifications: reorder figures if needed.
+		// Fixed bug about z-order of Execution Specifications: reorder figures if needed.
 		Map editPartRegistry = getViewer().getEditPartRegistry();
-		for(int i = 0; i < modelChildren.size(); i++) {
+		for (int i = 0; i < modelChildren.size(); i++) {
 			Object child = editPartRegistry.get(modelChildren.get(i));
-			if(!(child instanceof GraphicalEditPart)) {
+			if (!(child instanceof GraphicalEditPart)) {
 				continue;
 			}
-			IFigure figure = ((GraphicalEditPart)child).getFigure();
+			IFigure figure = ((GraphicalEditPart) child).getFigure();
 			int currentIndex = visualChildren.indexOf(figure);
-			if(currentIndex == -1) {
+			if (currentIndex == -1) {
 				continue;
 			}
-			if(currentIndex != index) {
+			if (currentIndex != index) {
 				visualChildren.remove(figure);
 				visualChildren.add(index, figure);
 			}
@@ -1170,7 +1184,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	 */
 	@Override
 	public void removeNotify() {
-		if(notifier != null) {
+		if (notifier != null) {
 			notifier.unlistenAll();
 		}
 		super.removeNotify();
@@ -1178,7 +1192,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 	/**
 	 * Overrides because getNodeFigure() doesn't return the getFigure() anymore.
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#setBackgroundColor(org.eclipse.swt.graphics.Color)
 	 */
 	@Override
@@ -1195,8 +1209,8 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 	@Override
 	protected void setLineWidth(int width) {
-		if(getPrimaryShape() instanceof NodeFigure) {
-			((NodeFigure)getPrimaryShape()).setLineWidth(width);
+		if (getPrimaryShape() instanceof NodeFigure) {
+			((NodeFigure) getPrimaryShape()).setLineWidth(width);
 		}
 		super.setLineWidth(width);
 	}
@@ -1204,23 +1218,24 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	/**
 	 * Default implementation treats passed figure as content pane. Respects layout one may have set
 	 * for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
-	 *        instance of generated figure class
+	 *            instance of generated figure class
 	 * @Override Execution specification handling
 	 */
 	@Override
 	protected IFigure setupContentPane(IFigure nodeShape) {
 		// Execution specification handling
-		if(nodeShape instanceof LifelineFigure) {
-			LifelineFigure lFigure = (LifelineFigure)nodeShape;
+		if (nodeShape instanceof LifelineFigure) {
+			LifelineFigure lFigure = (LifelineFigure) nodeShape;
 			return lFigure.getFigureLifelineDotLineFigure();
 		}
 		return setupContentPane(nodeShape);
 	}
 
+	@Override
 	public void showTargetFeedback(Request request) {
-		if(ignoreRequest(request)) {
+		if (ignoreRequest(request)) {
 			return;
 		}
 		super.showTargetFeedback(request);
@@ -1228,13 +1243,13 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 	/**
 	 * set the bounds of the lifeline.
-	 * 
+	 *
 	 * @param rect
-	 *        the rectangle corresponding to the bounds.
+	 *            the rectangle corresponding to the bounds.
 	 */
 	public void updateLifelineBounds(final Rectangle rect) {
 		final Bounds bounds = getBounds();
-		if(bounds != null) {
+		if (bounds != null) {
 			AbstractCommand cmd = new AbstractCommand() {
 
 				/**
@@ -1256,6 +1271,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 				/**
 				 * {@inheritDoc}
 				 */
+				@Override
 				public void execute() {
 					bounds.setX(rect.x);
 					bounds.setY(rect.y);
@@ -1266,6 +1282,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 				/**
 				 * {@inheritDoc}
 				 */
+				@Override
 				public void redo() {
 					execute();
 				}
@@ -1280,7 +1297,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	 */
 	public void updateLifelinePosition() {
 		Bounds bounds = getBounds();
-		if(bounds != null) {
+		if (bounds != null) {
 			Rectangle rect = new Rectangle(bounds.getX(), bounds.getY(), bounds.getWidth(), bounds.getHeight());
 			// retrieve the real bounds in updatedRect because we need the real width
 			Rectangle updatedRect = rect.getCopy();
@@ -1289,12 +1306,12 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 			 * // use the real width to compute the preferred height which will be used during the layout
 			 * int newNameContainerHeight = getPrimaryShape().getNameContainerPreferredHeight(updatedRect.width); //fix width would cause height
 			 * expand
-			 * 
+			 *
 			 * if(oldNameContainerHeight != newNameContainerHeight) {
-			 * 
+			 *
 			 * if(oldNameContainerHeight != 0) {
 			 * int heightDiff = oldNameContainerHeight - newNameContainerHeight;
-			 * 
+			 *
 			 * if(rect.height != -1) {
 			 * rect.height -= heightDiff;
 			 * }
@@ -1303,13 +1320,13 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 			 * rect.y += heightDiff;
 			 * updateLifelineBounds(rect);
 			 * }
-			 * 
+			 *
 			 * oldNameContainerHeight = newNameContainerHeight;
 			 * }
 			 */
 			Dimension size = getPrimaryShape().getFigureLifelineNameContainerFigure().getPreferredSize(-1, oldNameContainerHeight);
-			if(!LifelineResizeHelper.isManualSize(this)) {
-				if(size.width != rect.width) {
+			if (!LifelineResizeHelper.isManualSize(this)) {
+				if (size.width != rect.width) {
 					moveExecutionParts(new Dimension(size.width - rect.width, 0));
 					rect.width = size.width;
 					updateLifelineBounds(rect);
@@ -1322,29 +1339,29 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 	 * Update the rectangle bounds.
 	 * In case of a creation, the lifeline width and height will be 0. Get the preferred size
 	 * In case of a move, when the lifeline has not be resize, the width or height may be set to -1. Get the according figure bounds.
-	 * 
+	 *
 	 * @param rect
-	 *        the rectangle to update
+	 *            the rectangle to update
 	 */
 	private void updateRectangleBounds(Rectangle rect) {
 		// When moving the lifeline
-		if(rect.width == -1) {
+		if (rect.width == -1) {
 			rect.width = getFigure().getBounds().width;
 		}
-		if(rect.height == -1) {
+		if (rect.height == -1) {
 			rect.height = getFigure().getBounds().height;
 		}
-		if(rect.x == -1) {
+		if (rect.x == -1) {
 			rect.x = getFigure().getBounds().x;
 		}
-		if(rect.y == -1) {
+		if (rect.y == -1) {
 			rect.y = getFigure().getBounds().y;
 		}
 		// When creating the lifeline
-		if(rect.width == 0) {
+		if (rect.width == 0) {
 			rect.width = getFigure().getPreferredSize().width;
 		}
-		if(rect.height == 0) {
+		if (rect.height == 0) {
 			rect.height = getFigure().getPreferredSize().height;
 		}
 	}

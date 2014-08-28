@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,15 +10,15 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - Use URIs to support non-URL-compatible storage (CDO)
  *  Christian W. Damus (CEA) - bug 417409
- *     
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.runtime;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -40,6 +40,8 @@ import org.eclipse.papyrus.xwt.ILoadingContext;
 import org.eclipse.papyrus.xwt.IXWTLoader;
 import org.eclipse.papyrus.xwt.XWT;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.DisposeEvent;
+import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -48,19 +50,21 @@ import org.eclipse.ui.views.properties.tabbed.ITabDescriptor;
 
 /**
  * A default implementation for {@link DisplayEngine}
- * 
+ *
  * @author Camille Letavernier
  */
 public class DefaultDisplayEngine implements DisplayEngine {
 
 	private ILoadingContext loadingContext = new DefaultLoadingContext(getClass().getClassLoader());
 
-	private Set<String> displayedSections = new HashSet<String>();
+	private Map<String, XWTTabDescriptor> currentTabs = new HashMap<String, XWTTabDescriptor>();
 
-	private Set<Control> controls = new HashSet<Control>();
+	private TabModel<DataSource> displayedSections = new TabModel<DataSource>();
+
+	private TabModel<Control> controls = new TabModel<Control>();
 
 	private boolean allowDuplicate;
-	
+
 	private Object xmlCache;
 
 	/**
@@ -72,39 +76,38 @@ public class DefaultDisplayEngine implements DisplayEngine {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param allowDuplicate
-	 *        If false, two calls of {@link #createSection(Composite, Section, DataSource)} with the same
-	 *        section will display the section only once : only the first call is taken into account
-	 *        The main property view doesn't allow duplication, to avoid redundancy when two views link to
-	 *        the same section.
+	 *            If false, two calls of {@link #createSection(Composite, Section, DataSource)} with the same
+	 *            section will display the section only once : only the first call is taken into account
+	 *            The main property view doesn't allow duplication, to avoid redundancy when two views link to
+	 *            the same section.
 	 */
 	public DefaultDisplayEngine(boolean allowDuplicate) {
 		this.allowDuplicate = allowDuplicate;
 	}
 
 	public List<ITabDescriptor> getTabDescriptors(Set<View> views) {
-
 		Map<String, XWTTabDescriptor> result = new LinkedHashMap<String, XWTTabDescriptor>();
 
 		Set<String> selectedSections = new HashSet<String>();
 
-		for(View view : views) {
-			for(Section section : view.getSections()) {
-				if(selectedSections.contains(section.getName())) {
+		for (View view : views) {
+			for (Section section : view.getSections()) {
+				if (selectedSections.contains(section.getName())) {
 					continue;
 				}
 
 				Tab tab = section.getTab();
 
-				if(tab == null) {
+				if (tab == null) {
 					Activator.log.warn("Null tab for " + section); //$NON-NLS-1$
 					continue;
 				}
 
 				XWTTabDescriptor descriptor;
 
-				if(result.containsKey(tab.getId())) {
+				if (result.containsKey(tab.getId())) {
 					descriptor = result.get(tab.getId());
 				} else {
 					descriptor = new XWTTabDescriptor(tab);
@@ -116,20 +119,37 @@ public class DefaultDisplayEngine implements DisplayEngine {
 			}
 		}
 
-		disposeControls();
-		return new LinkedList<ITabDescriptor>(result.values());
+		for (Map.Entry<String, XWTTabDescriptor> next : result.entrySet()) {
+			XWTTabDescriptor existing = currentTabs.get(next.getKey());
+			if ((existing != null) && !existing.equals(next.getValue())) {
+				// Will have to rebuild this tab
+				disposeControls(next.getKey());
+			}
+		}
+
+		currentTabs = result;
+
+		return new ArrayList<ITabDescriptor>(result.values());
 	}
 
 	/**
-	 * Disposes the controls created by this DisplayEngine
+	 * Disposes the controls created by this DisplayEngine for the specified tab ID.
 	 * This should not dispose the engine itself, which can be reused.
 	 */
-	protected void disposeControls() {
-		for(Control control : controls) {
+	protected void disposeControls(String tabID) {
+		for (Control control : this.controls.remove(tabID)) {
 			control.dispose();
 		}
-		displayedSections.clear();
-		controls.clear();
+
+		for (DataSource dataSource : displayedSections.remove(tabID)) {
+			dataSource.dispose();
+		}
+	}
+
+	protected void disposeControls() {
+		for (String next : new ArrayList<String>(controls.tabIDs())) {
+			disposeControls(next);
+		}
 	}
 
 	/**
@@ -138,7 +158,7 @@ public class DefaultDisplayEngine implements DisplayEngine {
 	public void dispose() {
 		disposeControls();
 	}
-	
+
 	/**
 	 * Invalidates any caches that I may have because the displayed property UI contexts, constraints, or views have
 	 * changed in some way.
@@ -149,43 +169,76 @@ public class DefaultDisplayEngine implements DisplayEngine {
 	}
 
 	public Control createSection(Composite parent, Section section, DataSource source) {
-		if(source == null) {
+		if (source == null) {
 			return null;
 		}
 
-		if(!allowDuplicate && displayedSections.contains(section.getName())) {
+		DataSource existing = getDataSource(section);
+		if (!allowDuplicate && (existing != null)) {
+			// Update the data source and fire the bindings
+			existing.setSelection(source.getSelection());
+
 			return null;
 		}
 
 		Control control = createSection(parent, section, loadXWTFile(section), source);
 
-		displayedSections.add(section.getName());
+		addDataSource(section, source);
 
-		if(control != null) {
-			controls.add(control);
+		if (control != null) {
+			addControl(section, control);
 		}
 
 		return control;
 	}
 
+	protected DataSource getDataSource(Section section) {
+		return displayedSections.get(section.getTab().getId(), section.getName());
+	}
+
+	/**
+	 * Adds a new {@code dataSource} for a property {@code section}.
+	 *
+	 * @return the previously-recorded data source, if any, for this {@code section} which has now been displaced
+	 */
+	protected DataSource addDataSource(Section section, DataSource dataSource) {
+		return displayedSections.put(section.getTab().getId(), section.getName(), dataSource);
+	}
+
+	protected void addControl(Section section, Control control) {
+		final String tabID = section.getTab().getId();
+		final String sectionID = section.getName();
+
+		controls.put(tabID, sectionID, control);
+
+		control.addDisposeListener(new DisposeListener() {
+
+			public void widgetDisposed(DisposeEvent e) {
+				// Perhaps the tabbed properties view is disposing a tab that is not shown by the new selection
+				displayedSections.remove(tabID, sectionID);
+				controls.remove(tabID, sectionID);
+			}
+		});
+	}
+
 	public void refreshSection(Composite parent, Section section, DataSource source) {
-		for(Control control : parent.getChildren()) {
+		for (Control control : parent.getChildren()) {
 			control.dispose();
 		}
 
 		Control control = createSection(parent, section, loadXWTFile(section), source);
 
-		displayedSections.add(section.getName());
+		addDataSource(section, source);
 
-		if(control != null) {
-			controls.add(control);
+		if (control != null) {
+			addControl(section, control);
 		}
 	}
 
 	public Control createSection(Composite parent, Section section, URI sectionFile, DataSource source) {
-		if(sectionFile == null) {
+		if (sectionFile == null) {
 			sectionFile = loadXWTFile(section);
-			if(sectionFile == null) {
+			if (sectionFile == null) {
 				return null;
 			}
 		}
@@ -198,21 +251,21 @@ public class DefaultDisplayEngine implements DisplayEngine {
 		try {
 			ResourceSet rset = section.eResource().getResourceSet();
 			URL url = new URL(null, sectionFile.toString(), new EMFURLStreamHandler(rset.getURIConverter()));
-			
+
 			Map<String, Object> options = new HashMap<String, Object>();
 			options.put(IXWTLoader.CONTAINER_PROPERTY, parent);
 			options.put(IXWTLoader.DATACONTEXT_PROPERTY, source);
 			options.put(IXWTLoader.XML_CACHE_PROPERTY, (xmlCache != null) ? xmlCache : Boolean.TRUE);
-			control = (Control)XWT.loadWithOptions(url, options);
+			control = (Control) XWT.loadWithOptions(url, options);
 			xmlCache = options.get(IXWTLoader.XML_CACHE_PROPERTY);
 
-			if(control != null) {
+			if (control != null) {
 				control.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-				controls.add(control);
+				addControl(section, control);
 			}
 		} catch (Exception ex) {
 			Activator.log.error("Error while loading " + section.getSectionFile(), ex); //$NON-NLS-1$
-			disposeControls();
+			disposeControls(section.getTab().getId());
 			Label label = new Label(parent, SWT.NONE);
 			label.setText("An error occured in the property view. The file " + section.getSectionFile() + " could not be loaded"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -225,15 +278,15 @@ public class DefaultDisplayEngine implements DisplayEngine {
 
 	private URI loadXWTFile(Section section) {
 		EObject tab = section.eContainer();
-		Context context = (Context)tab.eContainer();
-		if(context.eResource() == null) {
+		Context context = (Context) tab.eContainer();
+		if (context.eResource() == null) {
 			context = ConfigurationManager.getInstance().getContext(context.getName());
 			Activator.log.warn("No resource for Context : " + context + " ; refreshing the model"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
 		URI sectionURI = URI.createURI(section.getSectionFile());
 		URI baseURI = context.eResource().getURI();
-		if(PropertiesURIHandler.PROPERTIES_SCHEME.equals(baseURI.scheme())) {
+		if (PropertiesURIHandler.PROPERTIES_SCHEME.equals(baseURI.scheme())) {
 			PropertiesURIHandler handler = new PropertiesURIHandler();
 			baseURI = handler.getConvertedURI(baseURI);
 		}
@@ -249,7 +302,7 @@ public class DefaultDisplayEngine implements DisplayEngine {
 	}
 
 	public void removeSection(Composite parent) {
-		for(Control control : parent.getChildren()) {
+		for (Control control : parent.getChildren()) {
 			control.dispose();
 		}
 		layout(parent);

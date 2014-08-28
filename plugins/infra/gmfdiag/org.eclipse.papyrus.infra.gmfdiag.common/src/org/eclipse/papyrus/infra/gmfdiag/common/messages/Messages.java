@@ -1,6 +1,6 @@
 /****************************************
  * Copyright (c) 2013, 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class Messages extends NLS {
 	public static String UnitsUtils_Inches;
 
 	public static String UnitsUtils_Pixels;
-	
+
 	public static String MultiPagesEditorActionBarContributor_PapyrusMenu;
 
 	public static String AbstractPapyrusGmfCreateDiagramCommandHandler_CreateDiagramCommandLabel;
@@ -90,7 +90,7 @@ public class Messages extends NLS {
 	public static String PastePreferencesPage_PageDescription;
 
 	public static String PastePreferencesPage_KeepReferenceDescription;
-	
+
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

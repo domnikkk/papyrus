@@ -11,6 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.OrStackedLayerOperatorDescri
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Or Stacked Layer Operator Descriptor</b></em>'.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class OrStackedLayerOperatorDescriptorTest extends StackedLayerOperatorDescriptorTest {
@@ -18,6 +19,7 @@ public class OrStackedLayerOperatorDescriptorTest extends StackedLayerOperatorDe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class OrStackedLayerOperatorDescriptorTest extends StackedLayerOperatorDe
 	 * Constructs a new Or Stacked Layer Operator Descriptor test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public OrStackedLayerOperatorDescriptorTest(String name) {
@@ -38,16 +41,18 @@ public class OrStackedLayerOperatorDescriptorTest extends StackedLayerOperatorDe
 	 * Returns the fixture for this Or Stacked Layer Operator Descriptor test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	protected OrStackedLayerOperatorDescriptor getFixture() {
-		return (OrStackedLayerOperatorDescriptor)fixture;
+		return (OrStackedLayerOperatorDescriptor) fixture;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -59,6 +64,7 @@ public class OrStackedLayerOperatorDescriptorTest extends StackedLayerOperatorDe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -67,4 +73,4 @@ public class OrStackedLayerOperatorDescriptorTest extends StackedLayerOperatorDe
 		setFixture(null);
 	}
 
-} //OrStackedLayerOperatorDescriptorTest
+} // OrStackedLayerOperatorDescriptorTest

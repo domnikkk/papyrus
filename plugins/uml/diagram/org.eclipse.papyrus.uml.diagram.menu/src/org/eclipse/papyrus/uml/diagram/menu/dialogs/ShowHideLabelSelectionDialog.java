@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,9 +41,9 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * This class provides a Dialog with 2 columns. In the first column, we have a TreeViewer and in the other one, you have a text.
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class ShowHideLabelSelectionDialog extends AbstractCheckedTreeColumnViewerSelectionDialog {
 
@@ -53,17 +53,17 @@ public class ShowHideLabelSelectionDialog extends AbstractCheckedTreeColumnViewe
 	private DiagramEditPart diagramEP = null;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        the shell parent
+	 *            the shell parent
 	 * @param labelProvider
-	 *        the label provider (used only to get the name of the root elements
+	 *            the label provider (used only to get the name of the root elements
 	 * @param contentProvider
-	 *        the content provider
+	 *            the content provider
 	 * @param diagramEP
-	 *        the current diagram EditPart
+	 *            the current diagram EditPart
 	 */
 	public ShowHideLabelSelectionDialog(Shell parent, ILabelProvider labelProvider, ITreeContentProvider contentProvider) {
 		super(parent, labelProvider, contentProvider, SWT.CENTER | SWT.BORDER | SWT.FULL_SELECTION, 2);
@@ -72,25 +72,25 @@ public class ShowHideLabelSelectionDialog extends AbstractCheckedTreeColumnViewe
 
 
 	protected void init() {
-		setColumnTitles(new String[]{ "Label Role", "Displayed Text" });
-		setColumnWidths(new int[]{ 300, 300 });
-		setColumnCellLabelProvider(new CellLabelProvider[]{ new RoleLabelProvider(), new TextLabelProvider() });
+		setColumnTitles(new String[] { "Label Role", "Displayed Text" });
+		setColumnWidths(new int[] { 300, 300 });
+		setColumnCellLabelProvider(new CellLabelProvider[] { new RoleLabelProvider(), new TextLabelProvider() });
 	}
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.dialogs.CheckedTreeSelectionDialog#setInput(java.lang.Object)
-	 * 
+	 *
 	 * @param input
 	 */
 	@Override
 	public void setInput(Object input) {
 		super.setInput(input);
-		if(input instanceof List<?> && !((List<?>)input).isEmpty()) {
-			Object obj = ((List<?>)input).get(0);
-			if(obj instanceof EditPart) {
-				diagramEP = DiagramEditPartsUtil.getDiagramEditPart((EditPart)obj);
+		if (input instanceof List<?> && !((List<?>) input).isEmpty()) {
+			Object obj = ((List<?>) input).get(0);
+			if (obj instanceof EditPart) {
+				diagramEP = DiagramEditPartsUtil.getDiagramEditPart((EditPart) obj);
 			}
 		}
 		Assert.isNotNull(diagramEP);
@@ -98,9 +98,9 @@ public class ShowHideLabelSelectionDialog extends AbstractCheckedTreeColumnViewe
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.dialogs.AbstractCheckedTreeColumnViewerSelectionDialog#getEditingSupport(int)
-	 * 
+	 *
 	 * @param columnIndex
 	 * @return
 	 */
@@ -111,28 +111,28 @@ public class ShowHideLabelSelectionDialog extends AbstractCheckedTreeColumnViewe
 
 	/**
 	 * This provider is used by the first column
-	 * 
-	 * 
-	 * 
+	 *
+	 *
+	 *
 	 */
 	public class RoleLabelProvider extends CellLabelProvider implements ILabelProvider {
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
-		 * 
+		 *
 		 * @param element
 		 * @return
 		 */
 		public Image getImage(Object element) {
-			if(element instanceof View) {
-				EditPart dummyEP = EditPartService.getInstance().createGraphicEditPart((View)element);
+			if (element instanceof View) {
+				EditPart dummyEP = EditPartService.getInstance().createGraphicEditPart((View) element);
 				String iconPath = "";
-				if(dummyEP instanceof ILabelRoleProvider) {
-					iconPath = ((ILabelRoleProvider)dummyEP).getIconPathRole();
-					if(iconPath != null) {
-						if(iconPath.indexOf("platform") == 0) {
-							//the path looks like "platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif"
+				if (dummyEP instanceof ILabelRoleProvider) {
+					iconPath = ((ILabelRoleProvider) dummyEP).getIconPathRole();
+					if (iconPath != null) {
+						if (iconPath.indexOf("platform") == 0) {
+							// the path looks like "platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif"
 							try {
 								URL url = new URL(iconPath);
 								ImageDescriptor descriptor = ImageDescriptor.createFromURL(url);
@@ -149,26 +149,26 @@ public class ShowHideLabelSelectionDialog extends AbstractCheckedTreeColumnViewe
 		}
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.ILabelProvider#getText(java.lang.Object)
-		 * 
+		 *
 		 * @param element
 		 * @return
 		 */
 		public String getText(Object element) {
-			if(element instanceof View) {
-				EditPart dummyEP = EditPartService.getInstance().createGraphicEditPart((View)element);
-				if(dummyEP instanceof ILabelRoleProvider) {
-					return ((ILabelRoleProvider)dummyEP).getLabelRole();
+			if (element instanceof View) {
+				EditPart dummyEP = EditPartService.getInstance().createGraphicEditPart((View) element);
+				if (dummyEP instanceof ILabelRoleProvider) {
+					return ((ILabelRoleProvider) dummyEP).getLabelRole();
 				}
 			}
 			return "";
 		}
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.CellLabelProvider#update(org.eclipse.jface.viewers.ViewerCell)
-		 * 
+		 *
 		 * @param cell
 		 */
 		@Override
@@ -181,16 +181,16 @@ public class ShowHideLabelSelectionDialog extends AbstractCheckedTreeColumnViewe
 
 	/**
 	 * This provider is used by the 2nd column
-	 * 
-	 * 
-	 * 
+	 *
+	 *
+	 *
 	 */
 	class TextLabelProvider extends CellLabelProvider implements ILabelProvider {
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
-		 * 
+		 *
 		 * @param element
 		 * @return
 		 */
@@ -199,20 +199,20 @@ public class ShowHideLabelSelectionDialog extends AbstractCheckedTreeColumnViewe
 		}
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.ILabelProvider#getText(java.lang.Object)
-		 * 
+		 *
 		 * @param element
 		 * @return
 		 */
 		public String getText(Object element) {
-			EditPart dummyEP = DiagramEditPartsUtil.getEditPartFromView((View)element, diagramEP);
+			EditPart dummyEP = DiagramEditPartsUtil.getEditPartFromView((View) element, diagramEP);
 			String text = "[No Text To Display]";
-			if(dummyEP instanceof GraphicalEditPart) {
-				IFigure figure = ((GraphicalEditPart)dummyEP).getFigure();
-				if(figure instanceof WrappingLabel) {
-					String str = ((WrappingLabel)figure).getText();
-					if(str != null && str.length() != 0) {
+			if (dummyEP instanceof GraphicalEditPart) {
+				IFigure figure = ((GraphicalEditPart) dummyEP).getFigure();
+				if (figure instanceof WrappingLabel) {
+					String str = ((WrappingLabel) figure).getText();
+					if (str != null && str.length() != 0) {
 						text = str;
 					}
 				}
@@ -222,9 +222,9 @@ public class ShowHideLabelSelectionDialog extends AbstractCheckedTreeColumnViewe
 
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.CellLabelProvider#update(org.eclipse.jface.viewers.ViewerCell)
-		 * 
+		 *
 		 * @param cell
 		 */
 		@Override

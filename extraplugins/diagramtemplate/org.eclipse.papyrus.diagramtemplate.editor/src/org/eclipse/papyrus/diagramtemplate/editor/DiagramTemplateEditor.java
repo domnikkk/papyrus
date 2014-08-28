@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,6 +56,7 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
+import org.eclipse.jface.viewers.AbstractTreeViewer;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.CheckboxCellEditor;
@@ -134,7 +135,7 @@ import com.swtdesigner.ResourceManager;
 
 /**
  * The template model editor.
- * 
+ *
  */
 public class DiagramTemplateEditor extends EditorPart {
 
@@ -265,14 +266,14 @@ public class DiagramTemplateEditor extends EditorPart {
 
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AdapterFactoryEditingDomain editingDomain;
 
 	/**
 	 * Map to store the diagnostic associated with a resource.
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Map<Resource, Diagnostic> resourceToDiagnosticMap = new LinkedHashMap<Resource, Diagnostic>();
@@ -296,9 +297,9 @@ public class DiagramTemplateEditor extends EditorPart {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public DiagramTemplateEditor() {
 		super();
@@ -312,16 +313,16 @@ public class DiagramTemplateEditor extends EditorPart {
 
 	/**
 	 * This looks up a string in plugin.properties, making a substitution.
-	 * 
+	 *
 	 * @generated
 	 */
 	private static String getString(String key, Object s1) {
-		return DiagramTemplateEditorPlugin.INSTANCE.getString(key, new Object[]{ s1 });
+		return DiagramTemplateEditorPlugin.INSTANCE.getString(key, new Object[] { s1 });
 	}
 
 	/**
 	 * This is the method called to load a resource into the editing domain's resource set based on the editor's input.
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected boolean createModel() {
@@ -337,22 +338,22 @@ public class DiagramTemplateEditor extends EditorPart {
 		}
 
 		Diagnostic diagnostic = analyzeResourceProblems(templateResource, exception);
-		if(diagnostic.getSeverity() != Diagnostic.OK) {
-			//Failed to load
+		if (diagnostic.getSeverity() != Diagnostic.OK) {
+			// Failed to load
 			MessageDialog.openError(getSite().getShell(), Messages.DiagramTemplateEditor_2, Messages.DiagramTemplateEditor_3);
 			return false;
 		} else {
 
-			if(templateResource.getContents().isEmpty()) {
-				//Create the template
+			if (templateResource.getContents().isEmpty()) {
+				// Create the template
 				template = diagramtemplateFactory.createTemplate();
 				templateResource.getContents().add(template);
 			} else {
-				//Load the template
-				template = (Template)templateResource.getContents().get(0);
-				if(template.getTargetRoot() != null) {
+				// Load the template
+				template = (Template) templateResource.getContents().get(0);
+				if (template.getTargetRoot() != null) {
 					Resource res = template.getTargetRoot().eResource();
-					if(res != null) {
+					if (res != null) {
 						targetModelResource = res;
 					} else {
 						MessageDialog.openError(getSite().getShell(), Messages.DiagramTemplateEditor_4, Messages.DiagramTemplateEditor_5);
@@ -366,11 +367,11 @@ public class DiagramTemplateEditor extends EditorPart {
 
 	/**
 	 * Helper method to load a model
-	 * 
+	 *
 	 * @param resourceSet
-	 *        the resourceSet to load the model in
+	 *            the resourceSet to load the model in
 	 * @param file
-	 *        the file corresponding to the model to load
+	 *            the file corresponding to the model to load
 	 * @return the resource corresponding to the model
 	 */
 	protected Resource loadModel(ResourceSet resourceSet, IFile file) {
@@ -385,8 +386,8 @@ public class DiagramTemplateEditor extends EditorPart {
 	 * Helper method to update rootText widget
 	 */
 	protected void updateRootText() {
-		if(currentDiagramDefinition.getFromRoot() instanceof NamedElement) {
-			rootText.setText(((NamedElement)currentDiagramDefinition.getFromRoot()).getQualifiedName());
+		if (currentDiagramDefinition.getFromRoot() instanceof NamedElement) {
+			rootText.setText(((NamedElement) currentDiagramDefinition.getFromRoot()).getQualifiedName());
 		} else {
 			rootText.setText(currentDiagramDefinition.getFromRoot().toString());
 		}
@@ -405,7 +406,7 @@ public class DiagramTemplateEditor extends EditorPart {
 		nameText.setText(currentDiagramDefinition.getName());
 		descriptionText.setText(currentDiagramDefinition.getDescription());
 		prefixText.setText(currentDiagramDefinition.getPrefix());
-		if(currentDiagramDefinition.getFromRoot() != null) {
+		if (currentDiagramDefinition.getFromRoot() != null) {
 			updateRootText();
 		} else {
 			rootText.setText(""); //$NON-NLS-1$
@@ -416,25 +417,25 @@ public class DiagramTemplateEditor extends EditorPart {
 	 * Helper method to initialize the diagram categories (kinds)
 	 */
 	protected void initializeDiagramCategories() {
-		for(DiagramCategoryDescriptor diagramCategoryDescriptor : DiagramCategoryRegistry.getInstance().getDiagramCategories()) {
+		for (DiagramCategoryDescriptor diagramCategoryDescriptor : DiagramCategoryRegistry.getInstance().getDiagramCategories()) {
 			diagramCategories.add(diagramCategoryDescriptor.getLabel());
 		}
 	}
 
 	/**
 	 * Helper method used to check if the element is already defined
-	 * 
+	 *
 	 * @param object
-	 *        the element to find
+	 *            the element to find
 	 * @param list
-	 *        the list to search in
+	 *            the list to search in
 	 * @return
 	 *         true if found false else
 	 */
 	protected boolean containsElement(EObject object, List<?> list) {
-		if(list != null) {
-			for(Object selection : list) {
-				if(((AbstractSelection)selection).getElement() == object) {
+		if (list != null) {
+			for (Object selection : list) {
+				if (((AbstractSelection) selection).getElement() == object) {
 					return true;
 				}
 			}
@@ -447,19 +448,19 @@ public class DiagramTemplateEditor extends EditorPart {
 	 */
 	protected void clearTemplate() {
 		TreeIterator<EObject> it = template.eAllContents();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject eObject = it.next();
-			if(eObject instanceof DiagramDefinition) {
-				((DiagramDefinition)eObject).setFromRoot(null);
-			} else if(eObject instanceof Selection) {
-				if(((AbstractSelection)eObject).getKind() != SelectionKind.FOR_ALL) {
-					RemoveCommand command = new RemoveCommand(editingDomain, ((Selection)eObject).eContainer(), ((Selection)eObject).eContainer().eClass().getEStructuralFeature("selection"), eObject); //$NON-NLS-1$
+			if (eObject instanceof DiagramDefinition) {
+				((DiagramDefinition) eObject).setFromRoot(null);
+			} else if (eObject instanceof Selection) {
+				if (((AbstractSelection) eObject).getKind() != SelectionKind.FOR_ALL) {
+					RemoveCommand command = new RemoveCommand(editingDomain, ((Selection) eObject).eContainer(), ((Selection) eObject).eContainer().eClass().getEStructuralFeature("selection"), eObject); //$NON-NLS-1$
 					editingDomain.getCommandStack().execute(command);
 					it = template.eAllContents();
 				}
-			} else if(eObject instanceof SelectionRef) {
-				if(((AbstractSelection)eObject).getKind() != SelectionKind.FOR_ALL) {
-					RemoveCommand command = new RemoveCommand(editingDomain, ((SelectionRef)eObject).eContainer(), ((SelectionRef)eObject).eContainer().eClass().getEStructuralFeature("selectionRef"), eObject); //$NON-NLS-1$
+			} else if (eObject instanceof SelectionRef) {
+				if (((AbstractSelection) eObject).getKind() != SelectionKind.FOR_ALL) {
+					RemoveCommand command = new RemoveCommand(editingDomain, ((SelectionRef) eObject).eContainer(), ((SelectionRef) eObject).eContainer().eClass().getEStructuralFeature("selectionRef"), eObject); //$NON-NLS-1$
 					editingDomain.getCommandStack().execute(command);
 					it = template.eAllContents();
 				}
@@ -495,11 +496,11 @@ public class DiagramTemplateEditor extends EditorPart {
 		currentDiagramDefinition.setDescription(""); //$NON-NLS-1$
 		currentDiagramDefinition.setPrefix(DEFAULT_PREFIX);
 
-		if(targetModelResource != null) {
+		if (targetModelResource != null) {
 			currentDiagramDefinition.setFromRoot(targetModelResource.getContents().get(0));
 		}
 
-		//Update UI
+		// Update UI
 		updateUI();
 
 		addDiagramDefinitionButton.setEnabled(true);
@@ -508,16 +509,17 @@ public class DiagramTemplateEditor extends EditorPart {
 	/**
 	 * Returns a diagnostic describing the errors and warnings listed in the resource
 	 * and the specified exception (if any).
-	 * 
+	 *
 	 * @generated
 	 */
 	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
-		if(!resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty()) {
-			BasicDiagnostic basicDiagnostic = new BasicDiagnostic(Diagnostic.ERROR, "org.eclipse.papyrus.diagramtemplate.editor", 0, getString("_UI_CreateModelError_message", resource.getURI()), new Object[]{ exception == null ? (Object)resource : exception }); //$NON-NLS-1$ //$NON-NLS-2$
+		if (!resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty()) {
+			BasicDiagnostic basicDiagnostic = new BasicDiagnostic(Diagnostic.ERROR,
+					"org.eclipse.papyrus.diagramtemplate.editor", 0, getString("_UI_CreateModelError_message", resource.getURI()), new Object[] { exception == null ? (Object) resource : exception }); //$NON-NLS-1$ //$NON-NLS-2$
 			basicDiagnostic.merge(EcoreUtil.computeDiagnostic(resource, true));
 			return basicDiagnostic;
-		} else if(exception != null) {
-			return new BasicDiagnostic(Diagnostic.ERROR, "org.eclipse.papyrus.diagramtemplate.editor", 0, getString("_UI_CreateModelError_message", resource.getURI()), new Object[]{ exception }); //$NON-NLS-1$ //$NON-NLS-2$
+		} else if (exception != null) {
+			return new BasicDiagnostic(Diagnostic.ERROR, "org.eclipse.papyrus.diagramtemplate.editor", 0, getString("_UI_CreateModelError_message", resource.getURI()), new Object[] { exception }); //$NON-NLS-1$ //$NON-NLS-2$
 		} else {
 			return Diagnostic.OK_INSTANCE;
 		}
@@ -526,7 +528,7 @@ public class DiagramTemplateEditor extends EditorPart {
 
 	/**
 	 * This sets up the editing domain for the model editor.
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void initializeEditingDomain() {
@@ -560,14 +562,14 @@ public class DiagramTemplateEditor extends EditorPart {
 	/**
 	 * This returns whether something has been persisted to the URI of the specified resource.
 	 * The implementation uses the URI converter from the editor's resource set to try to open an input stream.
-	 * 
+	 *
 	 * @generated
 	 */
 	protected boolean isPersisted(Resource resource) {
 		boolean result = false;
 		try {
 			InputStream stream = editingDomain.getResourceSet().getURIConverter().createInputStream(resource.getURI());
-			if(stream != null) {
+			if (stream != null) {
 				result = true;
 				stream.close();
 			}
@@ -595,8 +597,8 @@ public class DiagramTemplateEditor extends EditorPart {
 				// Save the resources to the file system.
 				//
 				boolean first = true;
-				for(Resource resource : editingDomain.getResourceSet().getResources()) {
-					if((first || !resource.getContents().isEmpty() || isPersisted(resource)) && !editingDomain.isReadOnly(resource)) {
+				for (Resource resource : editingDomain.getResourceSet().getResources()) {
+					if ((first || !resource.getContents().isEmpty() || isPersisted(resource)) && !editingDomain.isReadOnly(resource)) {
 						try {
 							resource.save(saveOptions);
 						} catch (Exception exception) {
@@ -612,7 +614,7 @@ public class DiagramTemplateEditor extends EditorPart {
 
 			new ProgressMonitorDialog(getSite().getShell()).run(true, false, operation);
 
-			((BasicCommandStack)editingDomain.getCommandStack()).saveIsDone();
+			((BasicCommandStack) editingDomain.getCommandStack()).saveIsDone();
 			firePropertyChange(IEditorPart.PROP_DIRTY);
 		} catch (Exception exception) {
 			// Something went wrong that shouldn't.
@@ -636,7 +638,7 @@ public class DiagramTemplateEditor extends EditorPart {
 
 	@Override
 	public boolean isDirty() {
-		return ((BasicCommandStack)editingDomain.getCommandStack()).isSaveNeeded();
+		return ((BasicCommandStack) editingDomain.getCommandStack()).isSaveNeeded();
 	}
 
 	@Override
@@ -657,7 +659,7 @@ public class DiagramTemplateEditor extends EditorPart {
 
 			@Override
 			public void mouseUp(MouseEvent e) {
-				if(targetModelResource != null) {
+				if (targetModelResource != null) {
 					DiagramTemplateLauncher launcher = DiagramTemplateLauncher.getInstance();
 					launcher.execute(template);
 				} else {
@@ -684,13 +686,13 @@ public class DiagramTemplateEditor extends EditorPart {
 				ElementTreeSelectionDialog dialog = new ElementTreeSelectionDialog(getSite().getShell(), new WorkbenchLabelProvider(), new BaseWorkbenchContentProvider());
 				dialog.addFilter(new ViewerFilter() {
 
-					//Show only element with UML extension
+					// Show only element with UML extension
 					@Override
 					public boolean select(Viewer viewer, Object parentElement, Object element) {
-						if(element instanceof IContainer) {
+						if (element instanceof IContainer) {
 							return true;
 						} else {
-							if(((IFile)element).getFileExtension().compareToIgnoreCase("uml") == 0) { //$NON-NLS-1$
+							if (((IFile) element).getFileExtension().compareToIgnoreCase("uml") == 0) { //$NON-NLS-1$
 								return true;
 							} else {
 								return false;
@@ -706,8 +708,8 @@ public class DiagramTemplateEditor extends EditorPart {
 				dialog.open();
 
 				Object result = dialog.getFirstResult();
-				if(result instanceof IFile) {
-					modelFile = (IFile)dialog.getFirstResult();
+				if (result instanceof IFile) {
+					modelFile = (IFile) dialog.getFirstResult();
 					targetModelResourceSet = new ResourceSetImpl();
 					targetModelResource = loadModel(targetModelResourceSet, modelFile);
 					targetModelPathText.setText(targetModelResource.getURI().toString());
@@ -715,8 +717,8 @@ public class DiagramTemplateEditor extends EditorPart {
 					SetCommand command = new SetCommand(editingDomain, template, template.eClass().getEStructuralFeature("targetRoot"), targetModelResource.getContents().get(0)); //$NON-NLS-1$
 					editingDomain.getCommandStack().execute(command);
 
-					//Set fromRoots automatically
-					for(DiagramDefinition diagramDefinition : template.getDiagramDefinitions()) {
+					// Set fromRoots automatically
+					for (DiagramDefinition diagramDefinition : template.getDiagramDefinitions()) {
 						diagramDefinition.setFromRoot(targetModelResource.getContents().get(0));
 					}
 
@@ -736,7 +738,7 @@ public class DiagramTemplateEditor extends EditorPart {
 
 			@Override
 			public void mouseUp(MouseEvent e) {
-				if(MessageDialog.openConfirm(getSite().getShell(), Messages.DiagramTemplateEditor_27, Messages.DiagramTemplateEditor_28)) {
+				if (MessageDialog.openConfirm(getSite().getShell(), Messages.DiagramTemplateEditor_27, Messages.DiagramTemplateEditor_28)) {
 					clearTemplate();
 				}
 			}
@@ -773,8 +775,8 @@ public class DiagramTemplateEditor extends EditorPart {
 
 			@Override
 			public void mouseUp(MouseEvent e) {
-				if(currentDiagramDefinition.getDiagramKind() != null) {
-					if(template != null) {
+				if (currentDiagramDefinition.getDiagramKind() != null) {
+					if (template != null) {
 						AddCommand command = new AddCommand(editingDomain, template, template.eClass().getEStructuralFeature("diagramDefinitions"), currentDiagramDefinition); //$NON-NLS-1$
 						editingDomain.getCommandStack().execute(command);
 					}
@@ -792,9 +794,9 @@ public class DiagramTemplateEditor extends EditorPart {
 			@Override
 			public void mouseUp(MouseEvent e) {
 				ISelection selection = diagramDefinitionTableViewer.getSelection();
-				if(selection instanceof IStructuredSelection) {
-					Iterator it = ((IStructuredSelection)selection).iterator();
-					while(it.hasNext()) {
+				if (selection instanceof IStructuredSelection) {
+					Iterator it = ((IStructuredSelection) selection).iterator();
+					while (it.hasNext()) {
 						Object object = it.next();
 
 						RemoveCommand command = new RemoveCommand(editingDomain, template, template.eClass().getEStructuralFeature("diagramDefinitions"), object); //$NON-NLS-1$
@@ -815,8 +817,8 @@ public class DiagramTemplateEditor extends EditorPart {
 			@Override
 			public void mouseUp(MouseEvent e) {
 				ISelection selection = diagramDefinitionTableViewer.getSelection();
-				if(selection instanceof IStructuredSelection) {
-					DiagramDefinition diagramDefinition = (DiagramDefinition)((IStructuredSelection)selection).getFirstElement();
+				if (selection instanceof IStructuredSelection) {
+					DiagramDefinition diagramDefinition = (DiagramDefinition) ((IStructuredSelection) selection).getFirstElement();
 					MoveCommand command = new MoveCommand(editingDomain, template, template.eClass().getEStructuralFeature("diagramDefinitions"), diagramDefinition, template.getDiagramDefinitions().indexOf(diagramDefinition) - 1); //$NON-NLS-1$
 					editingDomain.getCommandStack().execute(command);
 
@@ -832,8 +834,8 @@ public class DiagramTemplateEditor extends EditorPart {
 			@Override
 			public void mouseUp(MouseEvent e) {
 				ISelection selection = diagramDefinitionTableViewer.getSelection();
-				if(selection instanceof IStructuredSelection) {
-					DiagramDefinition diagramDefinition = (DiagramDefinition)((IStructuredSelection)selection).getFirstElement();
+				if (selection instanceof IStructuredSelection) {
+					DiagramDefinition diagramDefinition = (DiagramDefinition) ((IStructuredSelection) selection).getFirstElement();
 					MoveCommand command = new MoveCommand(editingDomain, template, template.eClass().getEStructuralFeature("diagramDefinitions"), diagramDefinition, template.getDiagramDefinitions().indexOf(diagramDefinition) + 1); //$NON-NLS-1$
 					editingDomain.getCommandStack().execute(command);
 
@@ -850,17 +852,17 @@ public class DiagramTemplateEditor extends EditorPart {
 			public void mouseUp(MouseEvent e) {
 				ISelection selection = diagramDefinitionTableViewer.getSelection();
 
-				if(selection != null && !selection.isEmpty()) {
-					if(selection instanceof IStructuredSelection) {
-						DiagramDefinition diagramDefinition = (DiagramDefinition)((IStructuredSelection)selection).getFirstElement();
+				if (selection != null && !selection.isEmpty()) {
+					if (selection instanceof IStructuredSelection) {
+						DiagramDefinition diagramDefinition = (DiagramDefinition) ((IStructuredSelection) selection).getFirstElement();
 
 						Copier copier = new Copier();
-						DiagramDefinition diagramDefinitionCopy = (DiagramDefinition)copier.copy(diagramDefinition);
+						DiagramDefinition diagramDefinitionCopy = (DiagramDefinition) copier.copy(diagramDefinition);
 						copier.copyReferences();
 
 						diagramDefinitionCopy.setName(Messages.DiagramTemplateEditor_47 + diagramDefinitionCopy.getName());
 
-						if(template != null) {
+						if (template != null) {
 							AddCommand command = new AddCommand(editingDomain, template, template.eClass().getEStructuralFeature("diagramDefinitions"), diagramDefinitionCopy); //$NON-NLS-1$
 							editingDomain.getCommandStack().execute(command);
 						}
@@ -882,14 +884,14 @@ public class DiagramTemplateEditor extends EditorPart {
 			 * {@inheritDoc}
 			 */
 			public void selectionChanged(SelectionChangedEvent event) {
-				if(event.getSelection() instanceof IStructuredSelection && !event.getSelection().isEmpty()) {
+				if (event.getSelection() instanceof IStructuredSelection && !event.getSelection().isEmpty()) {
 
-					currentDiagramDefinition = (DiagramDefinition)((IStructuredSelection)event.getSelection()).getFirstElement();
+					currentDiagramDefinition = (DiagramDefinition) ((IStructuredSelection) event.getSelection()).getFirstElement();
 
-					//Update UI
+					// Update UI
 					updateUI();
 
-					//We are under edition of an existing diagram definition: we cannot add
+					// We are under edition of an existing diagram definition: we cannot add
 					addDiagramDefinitionButton.setEnabled(false);
 				}
 			}
@@ -963,10 +965,10 @@ public class DiagramTemplateEditor extends EditorPart {
 				ElementTreeSelectionDialog dlg = new ElementTreeSelectionDialog(getSite().getShell(), new AdapterFactoryLabelProvider(adapterFactory), new AdapterFactoryContentProvider(adapterFactory));
 				dlg.addFilter(new ViewerFilter() {
 
-					//Show only eObject element
+					// Show only eObject element
 					@Override
 					public boolean select(Viewer viewer, Object parentElement, Object element) {
-						if(element instanceof EObject) {
+						if (element instanceof EObject) {
 							return true;
 						} else {
 							return false;
@@ -980,7 +982,7 @@ public class DiagramTemplateEditor extends EditorPart {
 				dlg.open();
 
 				Object result = dlg.getFirstResult();
-				if(result instanceof EObject) {
+				if (result instanceof EObject) {
 					SetCommand command = new SetCommand(editingDomain, currentDiagramDefinition, currentDiagramDefinition.eClass().getEStructuralFeature("fromRoot"), result); //$NON-NLS-1$
 					editingDomain.getCommandStack().execute(command);
 
@@ -1002,8 +1004,8 @@ public class DiagramTemplateEditor extends EditorPart {
 
 			public void checkStateChanged(CheckStateChangedEvent event) {
 				Object element = event.getElement();
-				if(element instanceof CreationCommandDescriptor) {
-					SetCommand command = new SetCommand(editingDomain, currentDiagramDefinition, currentDiagramDefinition.eClass().getEStructuralFeature("diagramKind"), ((CreationCommandDescriptor)element).getCommandId()); //$NON-NLS-1$
+				if (element instanceof CreationCommandDescriptor) {
+					SetCommand command = new SetCommand(editingDomain, currentDiagramDefinition, currentDiagramDefinition.eClass().getEStructuralFeature("diagramKind"), ((CreationCommandDescriptor) element).getCommandId()); //$NON-NLS-1$
 					editingDomain.getCommandStack().execute(command);
 				}
 
@@ -1022,9 +1024,9 @@ public class DiagramTemplateEditor extends EditorPart {
 			}
 
 			public boolean isChecked(Object element) {
-				if(currentDiagramDefinition != null) {
-					if(element instanceof CreationCommandDescriptor && currentDiagramDefinition.getDiagramKind() != null) {
-						return ((CreationCommandDescriptor)element).getCommandId().equals(currentDiagramDefinition.getDiagramKind());
+				if (currentDiagramDefinition != null) {
+					if (element instanceof CreationCommandDescriptor && currentDiagramDefinition.getDiagramKind() != null) {
+						return ((CreationCommandDescriptor) element).getCommandId().equals(currentDiagramDefinition.getDiagramKind());
 					}
 				}
 				return false;
@@ -1061,17 +1063,17 @@ public class DiagramTemplateEditor extends EditorPart {
 				List<EObject> listOfTypes = new ArrayList<EObject>();
 				UMLPackage umlPackage = UMLPackage.eINSTANCE;
 				TreeIterator<EObject> it = umlPackage.eAllContents();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					EObject typeInUML = it.next();
-					if(typeInUML instanceof EClass) {
-						if(targetModelResource != null) {
-							if(!targetModelResource.getContents().isEmpty()) {
-								//If the element is a type available in the model
+					if (typeInUML instanceof EClass) {
+						if (targetModelResource != null) {
+							if (!targetModelResource.getContents().isEmpty()) {
+								// If the element is a type available in the model
 								TreeIterator<EObject> itTarget = targetModelResource.getAllContents();
-								while(itTarget.hasNext()) {
+								while (itTarget.hasNext()) {
 									EObject elementInTargetModel = itTarget.next();
 
-									if(typeInUML == elementInTargetModel.eClass() && !listOfTypes.contains(typeInUML)) {
+									if (typeInUML == elementInTargetModel.eClass() && !listOfTypes.contains(typeInUML)) {
 										listOfTypes.add(typeInUML);
 									}
 								}
@@ -1087,18 +1089,18 @@ public class DiagramTemplateEditor extends EditorPart {
 				dlg.open();
 
 				Object[] results = dlg.getResult();
-				if(results != null) {
-					for(Object object : results) {
-						if(object instanceof EClass) {
+				if (results != null) {
+					for (Object object : results) {
+						if (object instanceof EClass) {
 
-							if(!containsElement((EClass)object, currentDiagramDefinition.getSelection())) {
+							if (!containsElement((EClass) object, currentDiagramDefinition.getSelection())) {
 
 								Selection selection = diagramtemplateFactory.createSelection();
 								selection.setKind(SelectionKind.FOR_ALL);
 								selection.setRecursively(false);
 								selection.setSubTypes(false);
 								selection.setStereotypedBy(""); //$NON-NLS-1$
-								selection.setElement((EClass)object);
+								selection.setElement((EClass) object);
 
 								AddCommand command = new AddCommand(editingDomain, currentDiagramDefinition, currentDiagramDefinition.eClass().getEStructuralFeature("selection"), selection); //$NON-NLS-1$
 								editingDomain.getCommandStack().execute(command);
@@ -1120,26 +1122,26 @@ public class DiagramTemplateEditor extends EditorPart {
 
 			@Override
 			public void mouseUp(MouseEvent e) {
-				if(targetModelResource != null) {
+				if (targetModelResource != null) {
 					CheckedTreeSelectionDialog dlg = new CheckedTreeSelectionDialog(getSite().getShell(), new AdapterFactoryLabelProvider(adapterFactory), new AdapterFactoryContentProvider(adapterFactory));
 					dlg.setInput(targetModelResource);
 					dlg.setTitle(Messages.DiagramTemplateEditor_74);
 					dlg.open();
 
 					Object[] results = dlg.getResult();
-					if(results != null) {
-						for(Object object : results) {
-							if(object instanceof EObject) {
+					if (results != null) {
+						for (Object object : results) {
+							if (object instanceof EObject) {
 
-								if(!containsElement((EObject)object, currentDiagramDefinition.getSelection())) {
+								if (!containsElement((EObject) object, currentDiagramDefinition.getSelection())) {
 									Selection selection = diagramtemplateFactory.createSelection();
 									selection.setKind(SelectionKind.SPECIFIC);
 									selection.setRecursively(false);
 									selection.setSubTypes(false);
 									selection.setStereotypedBy(""); //$NON-NLS-1$
-									selection.setElement((EObject)object);
+									selection.setElement((EObject) object);
 
-									//									currentDiagramDefinition.getSelection().add(selection);
+									// currentDiagramDefinition.getSelection().add(selection);
 									AddCommand command = new AddCommand(editingDomain, currentDiagramDefinition, currentDiagramDefinition.eClass().getEStructuralFeature("selection"), selection); //$NON-NLS-1$
 									editingDomain.getCommandStack().execute(command);
 								}
@@ -1160,16 +1162,16 @@ public class DiagramTemplateEditor extends EditorPart {
 			@Override
 			public void mouseUp(MouseEvent e) {
 				ISelection selection = forTreeViewer.getSelection();
-				if(selection != null && selection instanceof ITreeSelection) {
-					Iterator it = ((ITreeSelection)selection).iterator();
-					while(it.hasNext()) {
+				if (selection != null && selection instanceof ITreeSelection) {
+					Iterator it = ((ITreeSelection) selection).iterator();
+					while (it.hasNext()) {
 						Object object = it.next();
-						//						removeSelection((AbstractSelection)object);
-						if(object instanceof Selection) {
-							RemoveCommand command = new RemoveCommand(editingDomain, ((Selection)object).eContainer(), ((Selection)object).eContainer().eClass().getEStructuralFeature("selection"), object); //$NON-NLS-1$
+						// removeSelection((AbstractSelection)object);
+						if (object instanceof Selection) {
+							RemoveCommand command = new RemoveCommand(editingDomain, ((Selection) object).eContainer(), ((Selection) object).eContainer().eClass().getEStructuralFeature("selection"), object); //$NON-NLS-1$
 							editingDomain.getCommandStack().execute(command);
-						} else if(object instanceof SelectionRef) {
-							RemoveCommand command = new RemoveCommand(editingDomain, ((SelectionRef)object).eContainer(), ((SelectionRef)object).eContainer().eClass().getEStructuralFeature("selectionRef"), object); //$NON-NLS-1$
+						} else if (object instanceof SelectionRef) {
+							RemoveCommand command = new RemoveCommand(editingDomain, ((SelectionRef) object).eContainer(), ((SelectionRef) object).eContainer().eClass().getEStructuralFeature("selectionRef"), object); //$NON-NLS-1$
 							editingDomain.getCommandStack().execute(command);
 						}
 					}
@@ -1186,13 +1188,15 @@ public class DiagramTemplateEditor extends EditorPart {
 			@Override
 			public void mouseUp(MouseEvent e) {
 				ISelection selection = forTreeViewer.getSelection();
-				if(selection instanceof IStructuredSelection) {
-					AbstractSelection abstractSelection = (AbstractSelection)((IStructuredSelection)selection).getFirstElement();
-					if(abstractSelection instanceof Selection) {
-						MoveCommand command = new MoveCommand(editingDomain, abstractSelection.eContainer(), abstractSelection.eContainer().eClass().getEStructuralFeature("selection"), abstractSelection, ((DiagramDefinition)abstractSelection.eContainer()).getSelection().indexOf(abstractSelection) - 1); //$NON-NLS-1$
+				if (selection instanceof IStructuredSelection) {
+					AbstractSelection abstractSelection = (AbstractSelection) ((IStructuredSelection) selection).getFirstElement();
+					if (abstractSelection instanceof Selection) {
+						MoveCommand command = new MoveCommand(editingDomain, abstractSelection.eContainer(),
+								abstractSelection.eContainer().eClass().getEStructuralFeature("selection"), abstractSelection, ((DiagramDefinition) abstractSelection.eContainer()).getSelection().indexOf(abstractSelection) - 1); //$NON-NLS-1$
 						editingDomain.getCommandStack().execute(command);
-					} else if(abstractSelection instanceof SelectionRef) {
-						MoveCommand command = new MoveCommand(editingDomain, abstractSelection.eContainer(), abstractSelection.eContainer().eClass().getEStructuralFeature("selectionRef"), abstractSelection, ((AbstractSelection)abstractSelection.eContainer()).getSelectionRef().indexOf(abstractSelection) - 1); //$NON-NLS-1$
+					} else if (abstractSelection instanceof SelectionRef) {
+						MoveCommand command = new MoveCommand(editingDomain, abstractSelection.eContainer(),
+								abstractSelection.eContainer().eClass().getEStructuralFeature("selectionRef"), abstractSelection, ((AbstractSelection) abstractSelection.eContainer()).getSelectionRef().indexOf(abstractSelection) - 1); //$NON-NLS-1$
 						editingDomain.getCommandStack().execute(command);
 					}
 					forTreeViewer.refresh();
@@ -1207,13 +1211,15 @@ public class DiagramTemplateEditor extends EditorPart {
 			@Override
 			public void mouseUp(MouseEvent e) {
 				ISelection selection = forTreeViewer.getSelection();
-				if(selection instanceof IStructuredSelection) {
-					AbstractSelection abstractSelection = (AbstractSelection)((IStructuredSelection)selection).getFirstElement();
-					if(abstractSelection instanceof Selection) {
-						MoveCommand command = new MoveCommand(editingDomain, abstractSelection.eContainer(), abstractSelection.eContainer().eClass().getEStructuralFeature("selection"), abstractSelection, ((DiagramDefinition)abstractSelection.eContainer()).getSelection().indexOf(abstractSelection) + 1); //$NON-NLS-1$
+				if (selection instanceof IStructuredSelection) {
+					AbstractSelection abstractSelection = (AbstractSelection) ((IStructuredSelection) selection).getFirstElement();
+					if (abstractSelection instanceof Selection) {
+						MoveCommand command = new MoveCommand(editingDomain, abstractSelection.eContainer(),
+								abstractSelection.eContainer().eClass().getEStructuralFeature("selection"), abstractSelection, ((DiagramDefinition) abstractSelection.eContainer()).getSelection().indexOf(abstractSelection) + 1); //$NON-NLS-1$
 						editingDomain.getCommandStack().execute(command);
-					} else if(abstractSelection instanceof SelectionRef) {
-						MoveCommand command = new MoveCommand(editingDomain, abstractSelection.eContainer(), abstractSelection.eContainer().eClass().getEStructuralFeature("selectionRef"), abstractSelection, ((AbstractSelection)abstractSelection.eContainer()).getSelectionRef().indexOf(abstractSelection) + 1); //$NON-NLS-1$
+					} else if (abstractSelection instanceof SelectionRef) {
+						MoveCommand command = new MoveCommand(editingDomain, abstractSelection.eContainer(),
+								abstractSelection.eContainer().eClass().getEStructuralFeature("selectionRef"), abstractSelection, ((AbstractSelection) abstractSelection.eContainer()).getSelectionRef().indexOf(abstractSelection) + 1); //$NON-NLS-1$
 						editingDomain.getCommandStack().execute(command);
 					}
 					forTreeViewer.refresh();
@@ -1225,7 +1231,7 @@ public class DiagramTemplateEditor extends EditorPart {
 		forTreeViewer = new TreeViewer(forPartComposite, SWT.BORDER | SWT.FULL_SELECTION);
 		forTree = forTreeViewer.getTree();
 		forTree.setHeaderVisible(true);
-		forTreeViewer.setAutoExpandLevel(TreeViewer.ALL_LEVELS);
+		forTreeViewer.setAutoExpandLevel(AbstractTreeViewer.ALL_LEVELS);
 		forTree.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
 
 		TreeViewerColumn selectionTreeViewerColumn = new TreeViewerColumn(forTreeViewer, SWT.NONE);
@@ -1241,26 +1247,26 @@ public class DiagramTemplateEditor extends EditorPart {
 
 			@Override
 			protected void setValue(Object element, Object value) {
-				if(element instanceof Selection) {
-					SetCommand command = new SetCommand(editingDomain, (Selection)element, ((Selection)element).eClass().getEStructuralFeature("recursively"), (Boolean)value); //$NON-NLS-1$
+				if (element instanceof Selection) {
+					SetCommand command = new SetCommand(editingDomain, (Selection) element, ((Selection) element).eClass().getEStructuralFeature("recursively"), (Boolean) value); //$NON-NLS-1$
 					editingDomain.getCommandStack().execute(command);
-					//					((AbstractSelection)element).setRecursively((Boolean)value);
+					// ((AbstractSelection)element).setRecursively((Boolean)value);
 					getViewer().update(element, null);
 				}
 			}
 
 			@Override
 			protected Object getValue(Object element) {
-				if(element instanceof Selection) {
-					return Boolean.valueOf(((Selection)element).isRecursively());
+				if (element instanceof Selection) {
+					return Boolean.valueOf(((Selection) element).isRecursively());
 				}
 				return null;
 			}
 
 			@Override
 			protected CellEditor getCellEditor(Object element) {
-				if(element instanceof Selection) {
-					if(((Selection)element).getKind() == SelectionKind.FOR_ALL) {
+				if (element instanceof Selection) {
+					if (((Selection) element).getKind() == SelectionKind.FOR_ALL) {
 						return new CheckboxCellEditor(forTree);
 					}
 				}
@@ -1282,26 +1288,26 @@ public class DiagramTemplateEditor extends EditorPart {
 
 			@Override
 			protected void setValue(Object element, Object value) {
-				if(element instanceof AbstractSelection) {
-					SetCommand command = new SetCommand(editingDomain, (AbstractSelection)element, ((AbstractSelection)element).eClass().getEStructuralFeature("subTypes"), (Boolean)value); //$NON-NLS-1$
+				if (element instanceof AbstractSelection) {
+					SetCommand command = new SetCommand(editingDomain, (AbstractSelection) element, ((AbstractSelection) element).eClass().getEStructuralFeature("subTypes"), (Boolean) value); //$NON-NLS-1$
 					editingDomain.getCommandStack().execute(command);
-					//					((AbstractSelection)element).setSubTypes((Boolean)value);
+					// ((AbstractSelection)element).setSubTypes((Boolean)value);
 					getViewer().update(element, null);
 				}
 			}
 
 			@Override
 			protected Object getValue(Object element) {
-				if(element instanceof AbstractSelection) {
-					return Boolean.valueOf(((AbstractSelection)element).isSubTypes());
+				if (element instanceof AbstractSelection) {
+					return Boolean.valueOf(((AbstractSelection) element).isSubTypes());
 				}
 				return null;
 			}
 
 			@Override
 			protected CellEditor getCellEditor(Object element) {
-				if(element instanceof AbstractSelection) {
-					if(((AbstractSelection)element).getKind() == SelectionKind.FOR_ALL) {
+				if (element instanceof AbstractSelection) {
+					if (((AbstractSelection) element).getKind() == SelectionKind.FOR_ALL) {
 						return new CheckboxCellEditor(forTree);
 					}
 				}
@@ -1324,8 +1330,8 @@ public class DiagramTemplateEditor extends EditorPart {
 
 			@Override
 			protected void setValue(Object element, Object value) {
-				if(element instanceof AbstractSelection) {
-					SetCommand command = new SetCommand(editingDomain, (AbstractSelection)element, ((AbstractSelection)element).eClass().getEStructuralFeature("stereotypedBy"), (String)value); //$NON-NLS-1$
+				if (element instanceof AbstractSelection) {
+					SetCommand command = new SetCommand(editingDomain, (AbstractSelection) element, ((AbstractSelection) element).eClass().getEStructuralFeature("stereotypedBy"), (String) value); //$NON-NLS-1$
 					editingDomain.getCommandStack().execute(command);
 					getViewer().update(element, null);
 				}
@@ -1333,11 +1339,11 @@ public class DiagramTemplateEditor extends EditorPart {
 
 			@Override
 			protected Object getValue(Object element) {
-				if(element instanceof AbstractSelection) {
-					if(((AbstractSelection)element).getStereotypedBy() == null) {
+				if (element instanceof AbstractSelection) {
+					if (((AbstractSelection) element).getStereotypedBy() == null) {
 						return ""; //$NON-NLS-1$
 					} else {
-						return ((AbstractSelection)element).getStereotypedBy();
+						return ((AbstractSelection) element).getStereotypedBy();
 					}
 				}
 				return null;
@@ -1345,8 +1351,8 @@ public class DiagramTemplateEditor extends EditorPart {
 
 			@Override
 			protected CellEditor getCellEditor(Object element) {
-				if(element instanceof AbstractSelection) {
-					if(((AbstractSelection)element).getKind() == SelectionKind.FOR_ALL) {
+				if (element instanceof AbstractSelection) {
+					if (((AbstractSelection) element).getKind() == SelectionKind.FOR_ALL) {
 						return new TextCellEditor(forTree);
 					}
 				}
@@ -1365,16 +1371,16 @@ public class DiagramTemplateEditor extends EditorPart {
 
 			public void selectionChanged(SelectionChangedEvent event) {
 				ISelection selection = event.getSelection();
-				if(selection != null && !selection.isEmpty()) {
+				if (selection != null && !selection.isEmpty()) {
 					whatTableViewer.setInput(selection);
 					whatTableViewer.refresh();
 
-					if(selection instanceof IStructuredSelection) {
-						Object selectionItem = ((IStructuredSelection)selection).getFirstElement();
-						if(selectionItem instanceof AbstractSelection) {
-							if(((AbstractSelection)selectionItem).getKind() == SelectionKind.FOR_ALL) {
+					if (selection instanceof IStructuredSelection) {
+						Object selectionItem = ((IStructuredSelection) selection).getFirstElement();
+						if (selectionItem instanceof AbstractSelection) {
+							if (((AbstractSelection) selectionItem).getKind() == SelectionKind.FOR_ALL) {
 								specificWhatButton.setEnabled(false);
-							} else if(((AbstractSelection)selectionItem).getKind() == SelectionKind.SPECIFIC) {
+							} else if (((AbstractSelection) selectionItem).getKind() == SelectionKind.SPECIFIC) {
 								specificWhatButton.setEnabled(true);
 							}
 						}
@@ -1406,33 +1412,33 @@ public class DiagramTemplateEditor extends EditorPart {
 			@Override
 			public void mouseUp(MouseEvent e) {
 				ISelection selection = whatTableViewer.getSelection();
-				if(selection != null) {
-					if(selection instanceof IStructuredSelection && !selection.isEmpty()) {
+				if (selection != null) {
+					if (selection instanceof IStructuredSelection && !selection.isEmpty()) {
 
-						EReference eReference = (EReference)((IStructuredSelection)selection).getFirstElement();
+						EReference eReference = (EReference) ((IStructuredSelection) selection).getFirstElement();
 
 						ListSelectionDialog dlg = new ListSelectionDialog(getSite().getShell(), eReference, new TypesAvailableFromEReferenceContentProvider(), new AdapterFactoryLabelProvider(adapterFactory), Messages.DiagramTemplateEditor_99);
 						dlg.setTitle(Messages.DiagramTemplateEditor_100);
 						dlg.open();
 
 						ISelection forSelection = forTreeViewer.getSelection();
-						if(forSelection != null) {
-							if(forSelection instanceof ITreeSelection) {
+						if (forSelection != null) {
+							if (forSelection instanceof ITreeSelection) {
 
-								AbstractSelection selectionItem = (AbstractSelection)((ITreeSelection)forSelection).getFirstElement();
-								if(selectionItem != null) {
+								AbstractSelection selectionItem = (AbstractSelection) ((ITreeSelection) forSelection).getFirstElement();
+								if (selectionItem != null) {
 
 									Object[] results = dlg.getResult();
-									if(results != null) {
+									if (results != null) {
 
-										for(Object object : results) {
-											if(object instanceof EClass) {
+										for (Object object : results) {
+											if (object instanceof EClass) {
 
-												if(!containsElement((EClass)object, selectionItem.getSelectionRef())) {
+												if (!containsElement((EClass) object, selectionItem.getSelectionRef())) {
 													SelectionRef selectionRef = diagramtemplateFactory.createSelectionRef();
 
 													selectionRef.setKind(SelectionKind.FOR_ALL);
-													selectionRef.setElement((EClass)object);
+													selectionRef.setElement((EClass) object);
 													selectionRef.setSubTypes(false);
 													selectionRef.setStereotypedBy(""); //$NON-NLS-1$
 													selectionRef.setEReference(eReference);
@@ -1466,25 +1472,25 @@ public class DiagramTemplateEditor extends EditorPart {
 			@Override
 			public void mouseUp(MouseEvent e) {
 				ISelection selection = whatTableViewer.getSelection();
-				if(selection != null) {
-					if(selection instanceof IStructuredSelection && !selection.isEmpty()) {
+				if (selection != null) {
+					if (selection instanceof IStructuredSelection && !selection.isEmpty()) {
 
 						ISelection forSelection = forTreeViewer.getSelection();
-						if(forSelection != null) {
-							if(forSelection instanceof ITreeSelection) {
+						if (forSelection != null) {
+							if (forSelection instanceof ITreeSelection) {
 
-								AbstractSelection selectionItem = (AbstractSelection)((ITreeSelection)forSelection).getFirstElement();
-								if(selectionItem != null) {
+								AbstractSelection selectionItem = (AbstractSelection) ((ITreeSelection) forSelection).getFirstElement();
+								if (selectionItem != null) {
 
-									EReference eReference = (EReference)((IStructuredSelection)selection).getFirstElement();
+									EReference eReference = (EReference) ((IStructuredSelection) selection).getFirstElement();
 
 									Object value = selectionItem.getElement().eGet(eReference);
 
 									List<EObject> valueToShow = new ArrayList<EObject>();
-									if(value instanceof List) {
-										valueToShow.addAll((Collection<? extends EObject>)value);
-									} else if(value instanceof EObject) {
-										valueToShow.add((EObject)value);
+									if (value instanceof List) {
+										valueToShow.addAll((Collection<? extends EObject>) value);
+									} else if (value instanceof EObject) {
+										valueToShow.add((EObject) value);
 									}
 
 									ListSelectionDialog dlg = new ListSelectionDialog(getSite().getShell(), valueToShow, new ElementsAvailableContentProvider(), new AdapterFactoryLabelProvider(adapterFactory), Messages.DiagramTemplateEditor_108);
@@ -1492,16 +1498,16 @@ public class DiagramTemplateEditor extends EditorPart {
 									dlg.open();
 
 									Object[] results = dlg.getResult();
-									if(results != null) {
+									if (results != null) {
 
-										for(Object object : results) {
-											if(object instanceof EObject) {
+										for (Object object : results) {
+											if (object instanceof EObject) {
 
-												if(!containsElement((EObject)object, selectionItem.getSelectionRef())) {
+												if (!containsElement((EObject) object, selectionItem.getSelectionRef())) {
 													SelectionRef selectionRef = diagramtemplateFactory.createSelectionRef();
 
 													selectionRef.setKind(SelectionKind.SPECIFIC);
-													selectionRef.setElement((EObject)object);
+													selectionRef.setElement((EObject) object);
 													selectionRef.setEReference(eReference);
 													selectionRef.setStereotypedBy(""); //$NON-NLS-1$
 													selectionRef.setSubTypes(false);
@@ -1533,8 +1539,8 @@ public class DiagramTemplateEditor extends EditorPart {
 		whatTableViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 		whatTable.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
 
-		//Balance the sashForm
-		selectionPartSashForm.setWeights(new int[]{ 1, 1 });
+		// Balance the sashForm
+		selectionPartSashForm.setWeights(new int[] { 1, 1 });
 	}
 
 	private void createEditionPart(Composite parent) {
@@ -1543,8 +1549,8 @@ public class DiagramTemplateEditor extends EditorPart {
 		createDiagramInformationPart(editionPartSashForm);
 		createSelectionPart(editionPartSashForm);
 
-		//Balance the sashForm
-		editionPartSashForm.setWeights(new int[]{ 1, 1 });
+		// Balance the sashForm
+		editionPartSashForm.setWeights(new int[] { 1, 1 });
 	}
 
 	private void createTemplatePart(Composite parent) {
@@ -1554,24 +1560,24 @@ public class DiagramTemplateEditor extends EditorPart {
 		createDiagramDefinitionPart(templatePartSashForm);
 		createEditionPart(templatePartSashForm);
 
-		//Balance the sashForm
-		templatePartSashForm.setWeights(new int[]{ 140, 808 });
+		// Balance the sashForm
+		templatePartSashForm.setWeights(new int[] { 140, 808 });
 	}
 
 	@Override
 	public void createPartControl(Composite parent) {
 
-		if(createModel()) {
+		if (createModel()) {
 
 			parent.setLayout(new GridLayout(1, false));
 
 			createloadPart(parent);
 			createTemplatePart(parent);
 
-			//Create the initial diagram definition
+			// Create the initial diagram definition
 			createNewDiagramDefinition();
 
-			if(targetModelResource != null) {
+			if (targetModelResource != null) {
 				targetModelPathText.setText(targetModelResource.getURI().toString());
 				selectRootButton.setEnabled(true);
 				loadModelButton.setEnabled(false);

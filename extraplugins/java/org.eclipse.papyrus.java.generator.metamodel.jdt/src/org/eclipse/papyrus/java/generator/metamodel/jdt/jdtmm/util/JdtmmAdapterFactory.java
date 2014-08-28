@@ -8,18 +8,39 @@ package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.*;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTClass;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTCompilationUnit;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTEnum;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTException;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTImportContainer;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTImportDeclaration;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTInterface;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaModel;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaProject;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMember;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethodBody;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTOpaqueBody;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragment;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragmentRoot;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParentJavaElement;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeParameter;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeRoot;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage
  * @generated
  */
@@ -29,6 +50,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static JdtmmPackage modelPackage;
@@ -37,6 +59,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public JdtmmAdapterFactory() {
@@ -50,6 +73,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -59,7 +83,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -68,119 +92,145 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JdtmmSwitch<Adapter> modelSwitch =
 			new JdtmmSwitch<Adapter>() {
-			@Override
-			public Adapter caseJDTMethodBody(JDTMethodBody object) {
-				return createJDTMethodBodyAdapter();
-			}
-			@Override
-			public Adapter caseJDTMethod(JDTMethod object) {
-				return createJDTMethodAdapter();
-			}
-			@Override
-			public Adapter caseJDTMember(JDTMember object) {
-				return createJDTMemberAdapter();
-			}
-			@Override
-			public Adapter caseJDTParentJavaElement(JDTParentJavaElement object) {
-				return createJDTParentJavaElementAdapter();
-			}
-			@Override
-			public Adapter caseJDTParent(JDTParent object) {
-				return createJDTParentAdapter();
-			}
-			@Override
-			public Adapter caseJDTJavaElement(JDTJavaElement object) {
-				return createJDTJavaElementAdapter();
-			}
-			@Override
-			public Adapter caseJDTTypeParameter(JDTTypeParameter object) {
-				return createJDTTypeParameterAdapter();
-			}
-			@Override
-			public Adapter caseJDTType(JDTType object) {
-				return createJDTTypeAdapter();
-			}
-			@Override
-			public Adapter caseJDTField(JDTField object) {
-				return createJDTFieldAdapter();
-			}
-			@Override
-			public Adapter caseJDTCompilationUnit(JDTCompilationUnit object) {
-				return createJDTCompilationUnitAdapter();
-			}
-			@Override
-			public Adapter caseJDTTypeRoot(JDTTypeRoot object) {
-				return createJDTTypeRootAdapter();
-			}
-			@Override
-			public Adapter caseJDTPackageFragment(JDTPackageFragment object) {
-				return createJDTPackageFragmentAdapter();
-			}
-			@Override
-			public Adapter caseJDTPackageFragmentRoot(JDTPackageFragmentRoot object) {
-				return createJDTPackageFragmentRootAdapter();
-			}
-			@Override
-			public Adapter caseJDTJavaProject(JDTJavaProject object) {
-				return createJDTJavaProjectAdapter();
-			}
-			@Override
-			public Adapter caseJDTJavaModel(JDTJavaModel object) {
-				return createJDTJavaModelAdapter();
-			}
-			@Override
-			public Adapter caseJDTParameter(JDTParameter object) {
-				return createJDTParameterAdapter();
-			}
-			@Override
-			public Adapter caseJDTClass(JDTClass object) {
-				return createJDTClassAdapter();
-			}
-			@Override
-			public Adapter caseJDTInterface(JDTInterface object) {
-				return createJDTInterfaceAdapter();
-			}
-			@Override
-			public Adapter caseJDTEnum(JDTEnum object) {
-				return createJDTEnumAdapter();
-			}
-			@Override
-			public Adapter caseJDTImportDeclaration(JDTImportDeclaration object) {
-				return createJDTImportDeclarationAdapter();
-			}
-			@Override
-			public Adapter caseJDTImportContainer(JDTImportContainer object) {
-				return createJDTImportContainerAdapter();
-			}
-			@Override
-			public Adapter caseJDTException(JDTException object) {
-				return createJDTExceptionAdapter();
-			}
-			@Override
-			public Adapter caseJDTOpaqueBody(JDTOpaqueBody object) {
-				return createJDTOpaqueBodyAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+				@Override
+				public Adapter caseJDTMethodBody(JDTMethodBody object) {
+					return createJDTMethodBodyAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTMethod(JDTMethod object) {
+					return createJDTMethodAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTMember(JDTMember object) {
+					return createJDTMemberAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTParentJavaElement(JDTParentJavaElement object) {
+					return createJDTParentJavaElementAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTParent(JDTParent object) {
+					return createJDTParentAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTJavaElement(JDTJavaElement object) {
+					return createJDTJavaElementAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTTypeParameter(JDTTypeParameter object) {
+					return createJDTTypeParameterAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTType(JDTType object) {
+					return createJDTTypeAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTField(JDTField object) {
+					return createJDTFieldAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTCompilationUnit(JDTCompilationUnit object) {
+					return createJDTCompilationUnitAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTTypeRoot(JDTTypeRoot object) {
+					return createJDTTypeRootAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTPackageFragment(JDTPackageFragment object) {
+					return createJDTPackageFragmentAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTPackageFragmentRoot(JDTPackageFragmentRoot object) {
+					return createJDTPackageFragmentRootAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTJavaProject(JDTJavaProject object) {
+					return createJDTJavaProjectAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTJavaModel(JDTJavaModel object) {
+					return createJDTJavaModelAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTParameter(JDTParameter object) {
+					return createJDTParameterAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTClass(JDTClass object) {
+					return createJDTClassAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTInterface(JDTInterface object) {
+					return createJDTInterfaceAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTEnum(JDTEnum object) {
+					return createJDTEnumAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTImportDeclaration(JDTImportDeclaration object) {
+					return createJDTImportDeclarationAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTImportContainer(JDTImportContainer object) {
+					return createJDTImportContainerAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTException(JDTException object) {
+					return createJDTExceptionAdapter();
+				}
+
+				@Override
+				public Adapter caseJDTOpaqueBody(JDTOpaqueBody object) {
+					return createJDTOpaqueBodyAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 *
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -190,6 +240,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethodBody
 	 * @generated
@@ -204,6 +255,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement
 	 * @generated
@@ -218,6 +270,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent
 	 * @generated
@@ -232,6 +285,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMember
 	 * @generated
@@ -246,6 +300,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParentJavaElement
 	 * @generated
@@ -260,6 +315,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeParameter
 	 * @generated
@@ -274,6 +330,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField
 	 * @generated
@@ -288,6 +345,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType
 	 * @generated
@@ -302,6 +360,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod
 	 * @generated
@@ -316,6 +375,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter
 	 * @generated
@@ -330,6 +390,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTCompilationUnit
 	 * @generated
@@ -344,6 +405,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeRoot
 	 * @generated
@@ -358,6 +420,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragment
 	 * @generated
@@ -372,6 +435,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragmentRoot
 	 * @generated
@@ -386,6 +450,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaProject
 	 * @generated
@@ -400,6 +465,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaModel
 	 * @generated
@@ -414,6 +480,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTClass
 	 * @generated
@@ -428,6 +495,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTInterface
 	 * @generated
@@ -442,6 +510,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTEnum
 	 * @generated
@@ -456,6 +525,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTImportDeclaration
 	 * @generated
@@ -470,6 +540,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTImportContainer
 	 * @generated
@@ -484,6 +555,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTException
 	 * @generated
@@ -498,6 +570,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTOpaqueBody
 	 * @generated
@@ -511,6 +584,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -518,4 +592,4 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //JdtmmAdapterFactory
+} // JdtmmAdapterFactory

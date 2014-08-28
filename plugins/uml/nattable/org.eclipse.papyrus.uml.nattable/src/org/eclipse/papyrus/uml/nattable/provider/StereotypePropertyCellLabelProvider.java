@@ -23,25 +23,25 @@ import org.eclipse.uml2.uml.Property;
 public class StereotypePropertyCellLabelProvider extends AbstractUMLNattableCellLabelProvider {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.provider.GenericCellLabelProvider#accept(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	public boolean accept(Object element) {
-		if(element instanceof ILabelProviderCellContextElementWrapper) {
-			final ILabelProviderCellContextElementWrapper cellWrapperContextElement = (ILabelProviderCellContextElementWrapper)element;
+		if (element instanceof ILabelProviderCellContextElementWrapper) {
+			final ILabelProviderCellContextElementWrapper cellWrapperContextElement = (ILabelProviderCellContextElementWrapper) element;
 
 			final IConfigRegistry registry = cellWrapperContextElement.getConfigRegistry();
 
-			//now it is possible that we accepts the element
+			// now it is possible that we accepts the element
 			final Object rowObject = getRowObject(cellWrapperContextElement, registry);
 			final Object columnObject = getColumnObject(cellWrapperContextElement, registry);
 
 			final List<Object> objects = getUMLObjects(rowObject, columnObject);
-			if(objects.size() == 2) {
+			if (objects.size() == 2) {
 				final Object feature = objects.get(1);
 				return feature instanceof Property;
 			}

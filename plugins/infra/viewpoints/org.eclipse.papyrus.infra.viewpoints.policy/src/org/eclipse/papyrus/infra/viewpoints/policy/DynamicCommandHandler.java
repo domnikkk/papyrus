@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.eclipse.core.commands.IHandlerListener;
 /**
  * Represents the default handler for commands about the creation of dynamic views.
  * This class is used to activate the UI elements that rely on the corresponding commands.
- * 
+ *
  * @author Laurent Wouters
  */
 public class DynamicCommandHandler implements IHandler {

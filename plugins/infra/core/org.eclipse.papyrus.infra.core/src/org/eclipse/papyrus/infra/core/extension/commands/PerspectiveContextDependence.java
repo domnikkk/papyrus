@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.infra.core.extension.commands;
 
 import org.eclipse.emf.ecore.EObject;
+
 //FIXME  Refactoring Juno : I don't know how to migrate this code
 public class PerspectiveContextDependence implements ICreationCondition {
 
@@ -26,21 +27,23 @@ public class PerspectiveContextDependence implements ICreationCondition {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean create(EObject selectedElement) {
-		//FIXME Refactoring Juno : I don't know how to migrate this code
-//		// Get the perspective
-//		Perspective perspective = ((WorkbenchPage)PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()).getActivePerspective();
-//		// look for the perspective
-//		// verify if the commannd has to be displayed
-//		if(perspective.getHiddenMenuItems().contains(commandID) && perspective.getHiddenToolbarItems().contains(commandID)) {
-//			return false;
-//		}
+		// FIXME Refactoring Juno : I don't know how to migrate this code
+		// // Get the perspective
+		// Perspective perspective = ((WorkbenchPage)PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()).getActivePerspective();
+		// // look for the perspective
+		// // verify if the commannd has to be displayed
+		// if(perspective.getHiddenMenuItems().contains(commandID) && perspective.getHiddenToolbarItems().contains(commandID)) {
+		// return false;
+		// }
 		return true;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setCommand(String commandID) {
 		this.commandID = commandID;
 	}

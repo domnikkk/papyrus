@@ -22,7 +22,7 @@ import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.impl.ModelStyleSheetsImpl#getStylesheets <em>Stylesheets</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.impl.ModelStyleSheetsImpl#getStylesheets <em>Stylesheets</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +33,7 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	 * The cached value of the '{@link #getStylesheets() <em>Stylesheets</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getStylesheets()
 	 * @generated
 	 * @ordered
@@ -42,6 +43,7 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ModelStyleSheetsImpl() {
@@ -51,6 +53,7 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -61,6 +64,7 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<StyleSheet> getStylesheets() {
@@ -73,13 +77,14 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case StylesheetsPackage.MODEL_STYLE_SHEETS__STYLESHEETS:
-				return ((InternalEList<?>)getStylesheets()).basicRemove(otherEnd, msgs);
+		case StylesheetsPackage.MODEL_STYLE_SHEETS__STYLESHEETS:
+			return ((InternalEList<?>) getStylesheets()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -87,13 +92,14 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case StylesheetsPackage.MODEL_STYLE_SHEETS__STYLESHEETS:
-				return getStylesheets();
+		case StylesheetsPackage.MODEL_STYLE_SHEETS__STYLESHEETS:
+			return getStylesheets();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -101,16 +107,17 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case StylesheetsPackage.MODEL_STYLE_SHEETS__STYLESHEETS:
-				getStylesheets().clear();
-				getStylesheets().addAll((Collection<? extends StyleSheet>)newValue);
-				return;
+		case StylesheetsPackage.MODEL_STYLE_SHEETS__STYLESHEETS:
+			getStylesheets().clear();
+			getStylesheets().addAll((Collection<? extends StyleSheet>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -118,14 +125,15 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case StylesheetsPackage.MODEL_STYLE_SHEETS__STYLESHEETS:
-				getStylesheets().clear();
-				return;
+		case StylesheetsPackage.MODEL_STYLE_SHEETS__STYLESHEETS:
+			getStylesheets().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -133,15 +141,16 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case StylesheetsPackage.MODEL_STYLE_SHEETS__STYLESHEETS:
-				return stylesheets != null && !stylesheets.isEmpty();
+		case StylesheetsPackage.MODEL_STYLE_SHEETS__STYLESHEETS:
+			return stylesheets != null && !stylesheets.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ModelStyleSheetsImpl
+} // ModelStyleSheetsImpl

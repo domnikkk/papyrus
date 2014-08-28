@@ -28,35 +28,35 @@ public class UmlTransitionProposalProvider extends AbstractUmlTransitionProposal
 	@Override
 	public void complete_CallOrSignalEventRule(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// TODO Auto-generated method stub
-		TransitionRule rule = (TransitionRule)model;
+		TransitionRule rule = (TransitionRule) model;
 		List<EObject> operationAndSignals = UmlTransitionScopeProvider.getVisibleOperationAndSignals(ContextElementUtil.getContextElement(model.eResource()));
 		List<EObject> alreadyUsedOperationAndSignals = new ArrayList<EObject>();
-		if(rule != null && rule.getTriggers() != null && !rule.getTriggers().isEmpty()) {
+		if (rule != null && rule.getTriggers() != null && !rule.getTriggers().isEmpty()) {
 			List<EventRule> eventRules = rule.getTriggers();
-			for(EventRule eventRule : eventRules) {
-				if(eventRule instanceof CallOrSignalEventRule) {
-					CallOrSignalEventRule callOrSignalEventRule = (CallOrSignalEventRule)eventRule;
-					if(callOrSignalEventRule.getOperationOrSignal() != null) {
+			for (EventRule eventRule : eventRules) {
+				if (eventRule instanceof CallOrSignalEventRule) {
+					CallOrSignalEventRule callOrSignalEventRule = (CallOrSignalEventRule) eventRule;
+					if (callOrSignalEventRule.getOperationOrSignal() != null) {
 						alreadyUsedOperationAndSignals.add(callOrSignalEventRule.getOperationOrSignal());
 					}
 				}
 			}
 		}
 		operationAndSignals.removeAll(alreadyUsedOperationAndSignals);
-		for(EObject o : operationAndSignals) {
-			NamedElement opOrSignal = (NamedElement)o;
-			if(opOrSignal.getName().startsWith(context.getPrefix())) {
+		for (EObject o : operationAndSignals) {
+			NamedElement opOrSignal = (NamedElement) o;
+			if (opOrSignal.getName().startsWith(context.getPrefix())) {
 				String completionString = opOrSignal.getName().substring(context.getPrefix().length());
-				ICompletionProposal completionProposal = new CompletionProposal(completionString, // String to be inserted 
-				context.getOffset(), // Offset
-				context.getSelectedText().length(), // Replacement length
-				completionString.length(), // cursorPosition
-				null, // image
-				opOrSignal.getName() + " - " + (opOrSignal instanceof Operation ? "Operation" : "Signal"), // displayString
-				null, // contextInformation
-				(opOrSignal instanceof Operation ? "Operation associated with the CallEvent of this trigger" : "Signal associated with the SignalEvent of this trigger") // additionalProposalInfo
+				ICompletionProposal completionProposal = new CompletionProposal(completionString, // String to be inserted
+						context.getOffset(), // Offset
+						context.getSelectedText().length(), // Replacement length
+						completionString.length(), // cursorPosition
+						null, // image
+						opOrSignal.getName() + " - " + (opOrSignal instanceof Operation ? "Operation" : "Signal"), // displayString
+						null, // contextInformation
+						(opOrSignal instanceof Operation ? "Operation associated with the CallEvent of this trigger" : "Signal associated with the SignalEvent of this trigger") // additionalProposalInfo
 				);
-				//acceptor.accept(new CompletionProposal(replacementString, replacementOffset, replacementLength, cursorPosition, image, displayString, contextInformation, additionalProposalInfo))
+				// acceptor.accept(new CompletionProposal(replacementString, replacementOffset, replacementLength, cursorPosition, image, displayString, contextInformation, additionalProposalInfo))
 				acceptor.accept(completionProposal);
 			}
 		}

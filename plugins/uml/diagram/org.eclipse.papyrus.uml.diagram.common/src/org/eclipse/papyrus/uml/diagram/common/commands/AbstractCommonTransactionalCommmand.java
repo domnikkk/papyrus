@@ -21,15 +21,15 @@ import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 
 /**
  * An <AbstractTransactionalCommand> that can give proxies for EMF and GEF.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
- * 
+ *
  */
 public abstract class AbstractCommonTransactionalCommmand extends AbstractTransactionalCommand {
 
 	/**
 	 * Default constructor.
-	 * 
+	 *
 	 * @param domain
 	 * @param label
 	 * @param affectedFiles
@@ -40,7 +40,7 @@ public abstract class AbstractCommonTransactionalCommmand extends AbstractTransa
 
 	/**
 	 * To EMF proxy.
-	 * 
+	 *
 	 * @return
 	 */
 	public Command toEMFCommand() {
@@ -49,7 +49,7 @@ public abstract class AbstractCommonTransactionalCommmand extends AbstractTransa
 
 	/**
 	 * To GEF proxy.
-	 * 
+	 *
 	 * @return
 	 */
 	// @unused
@@ -63,7 +63,7 @@ public abstract class AbstractCommonTransactionalCommmand extends AbstractTransa
 	 */
 	// @unused
 	public void executeInTransaction() {
-		if(getEditingDomain() != null) {
+		if (getEditingDomain() != null) {
 			getEditingDomain().getCommandStack().execute(toEMFCommand());
 		}
 	}

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -14,15 +14,11 @@ package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerApplicationFactory;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
@@ -34,7 +30,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerApplicationFactoryImpl#getApplication <em>Application</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerApplicationFactoryImpl#getApplication <em>Application</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +40,7 @@ public class LayerApplicationFactoryImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LayerApplicationFactoryImpl() {
@@ -53,6 +50,7 @@ public class LayerApplicationFactoryImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -63,56 +61,71 @@ public class LayerApplicationFactoryImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public LayersStackApplication getApplication() {
-		if (eContainerFeatureID() != LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION) return null;
-		return (LayersStackApplication)eInternalContainer();
+		if (eContainerFeatureID() != LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION) {
+			return null;
+		}
+		return (LayersStackApplication) eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetApplication(LayersStackApplication newApplication, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newApplication, LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newApplication, LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setApplication(LayersStackApplication newApplication) {
 		if (newApplication != eInternalContainer() || (eContainerFeatureID() != LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION && newApplication != null)) {
-			if (EcoreUtil.isAncestor(this, newApplication))
+			if (EcoreUtil.isAncestor(this, newApplication)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newApplication != null)
-				msgs = ((InternalEObject)newApplication).eInverseAdd(this, LayersPackage.LAYERS_STACK_APPLICATION__FACTORY, LayersStackApplication.class, msgs);
+			}
+			if (newApplication != null) {
+				msgs = ((InternalEObject) newApplication).eInverseAdd(this, LayersPackage.LAYERS_STACK_APPLICATION__FACTORY, LayersStackApplication.class, msgs);
+			}
 			msgs = basicSetApplication(newApplication, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION, newApplication, newApplication));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetApplication((LayersStackApplication)otherEnd, msgs);
+		case LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION:
+			if (eInternalContainer() != null) {
+				msgs = eBasicRemoveFromContainer(msgs);
+			}
+			return basicSetApplication((LayersStackApplication) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -120,13 +133,14 @@ public class LayerApplicationFactoryImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION:
-				return basicSetApplication(null, msgs);
+		case LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION:
+			return basicSetApplication(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -134,13 +148,14 @@ public class LayerApplicationFactoryImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION:
-				return eInternalContainer().eInverseRemove(this, LayersPackage.LAYERS_STACK_APPLICATION__FACTORY, LayersStackApplication.class, msgs);
+		case LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION:
+			return eInternalContainer().eInverseRemove(this, LayersPackage.LAYERS_STACK_APPLICATION__FACTORY, LayersStackApplication.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -148,13 +163,14 @@ public class LayerApplicationFactoryImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION:
-				return getApplication();
+		case LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION:
+			return getApplication();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,14 +178,15 @@ public class LayerApplicationFactoryImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION:
-				setApplication((LayersStackApplication)newValue);
-				return;
+		case LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION:
+			setApplication((LayersStackApplication) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -177,14 +194,15 @@ public class LayerApplicationFactoryImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION:
-				setApplication((LayersStackApplication)null);
-				return;
+		case LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION:
+			setApplication((LayersStackApplication) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,15 +210,16 @@ public class LayerApplicationFactoryImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION:
-				return getApplication() != null;
+		case LayersPackage.LAYER_APPLICATION_FACTORY__APPLICATION:
+			return getApplication() != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //LayerApplicationFactoryImpl
+} // LayerApplicationFactoryImpl

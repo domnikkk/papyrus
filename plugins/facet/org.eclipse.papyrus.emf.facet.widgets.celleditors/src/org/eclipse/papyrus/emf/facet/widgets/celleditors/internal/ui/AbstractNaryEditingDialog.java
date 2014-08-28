@@ -16,13 +16,13 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.papyrus.emf.facet.widgets.celleditors.IModelCellEditHandler;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.papyrus.emf.facet.widgets.celleditors.IModelCellEditHandler;
 import org.eclipse.swt.widgets.Shell;
 
 public abstract class AbstractNaryEditingDialog<T extends Object> extends Dialog {
@@ -44,7 +44,7 @@ public abstract class AbstractNaryEditingDialog<T extends Object> extends Dialog
 		this.editHandler = editHandler;
 		this.eObject = eObject;
 	}
-	
+
 	public class AssignedValuesContentProvider implements IStructuredContentProvider {
 		public Object[] getElements(final Object inputElement) {
 			if (inputElement instanceof FeatureValuesInput) {
@@ -75,7 +75,8 @@ public abstract class AbstractNaryEditingDialog<T extends Object> extends Dialog
 		return this.values;
 	}
 
-	@SuppressWarnings("unchecked") // type erasure on generic
+	@SuppressWarnings("unchecked")
+	// type erasure on generic
 	public void upButtonClicked() {
 		final IStructuredSelection selection = (IStructuredSelection) getSelection();
 
@@ -88,7 +89,8 @@ public abstract class AbstractNaryEditingDialog<T extends Object> extends Dialog
 		refresh();
 	}
 
-	@SuppressWarnings("unchecked") // type erasure on generic
+	@SuppressWarnings("unchecked")
+	// type erasure on generic
 	public void downButtonClicked() {
 		final IStructuredSelection selection = (StructuredSelection) getSelection();
 
@@ -119,7 +121,7 @@ public abstract class AbstractNaryEditingDialog<T extends Object> extends Dialog
 		super.okPressed();
 		this.editHandler.commit();
 	}
-	
+
 	protected List<T> getValues() {
 		return this.values;
 	}

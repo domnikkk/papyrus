@@ -1,6 +1,6 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
- *    
+ * Copyright (c) 2012, 2014 CEA LIST and others.
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Sebastien Poissonnet (CEA LIST) sebastien.poissonnet@cea.fr
+ *  Christian W. Damus (CEA) - bug 417409
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
@@ -16,15 +18,15 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.tools.utils.UMLUtil;
 import org.eclipse.papyrus.views.properties.Activator;
 import org.eclipse.papyrus.views.properties.contexts.DataContextElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory;
+import org.eclipse.papyrus.views.properties.modelelement.AbstractEMFModelElementFactory;
 import org.eclipse.uml2.uml.Element;
 
-public class CommentModelElementFactory implements ModelElementFactory {
+public class CommentModelElementFactory extends AbstractEMFModelElementFactory<CommentModelElement> {
 
-	public ModelElement createFromSource(Object source, DataContextElement context) {
+	@Override
+	protected CommentModelElement doCreateFromSource(Object source, DataContextElement context) {
 		Element umlSource = UMLUtil.resolveUMLElement(source);
-		if(umlSource == null) {
+		if (umlSource == null) {
 			Activator.log.warn("Unable to resolve the selected element to a UML Element"); //$NON-NLS-1$
 			return null;
 		}

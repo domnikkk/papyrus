@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -15,7 +15,7 @@ import org.eclipse.core.runtime.IStatus;
 
 /**
  * @author hceylan
- * 
+ *
  */
 public interface IValidationRule extends IValidator {
 
@@ -35,7 +35,7 @@ public interface IValidationRule extends IValidator {
 
 	/**
 	 * Returns the direction of the validation
-	 * 
+	 *
 	 * @return {@link Direction} indicating the direction of the validation.
 	 *         Never null
 	 */
@@ -43,16 +43,16 @@ public interface IValidationRule extends IValidator {
 
 	/**
 	 * Returns the phase this validator applies to
-	 * 
+	 *
 	 * @return {@link Phase} to indicate the phase of the validation. Never null
 	 */
 	public Phase getPhase();
 
 	/**
 	 * Determines if the given value is valid.
-	 * 
+	 *
 	 * @param value
-	 *        the value to validate
+	 *            the value to validate
 	 * @return a status object indicating whether the validation succeeded {@link IStatus#isOK()} or not. Never null.
 	 */
 	public IStatus validateBack(Object value);

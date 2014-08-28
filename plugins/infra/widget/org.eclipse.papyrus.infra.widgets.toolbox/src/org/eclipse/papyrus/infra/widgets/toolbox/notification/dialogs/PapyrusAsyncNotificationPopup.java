@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ import org.eclipse.ui.forms.widgets.Hyperlink;
 
 /**
  * This popup creates an async notification
- * 
+ *
  * @author tristan faure
- * 
+ *
  */
 public class PapyrusAsyncNotificationPopup extends AbstractNotificationPopup {
 
@@ -63,10 +63,10 @@ public class PapyrusAsyncNotificationPopup extends AbstractNotificationPopup {
 	}
 
 	protected void createRunnables(Composite compo) {
-		if(!runnables.isEmpty()) {
+		if (!runnables.isEmpty()) {
 			boolean first = true;
-			for(final NotificationRunnable r : runnables) {
-				if(!first) {
+			for (final NotificationRunnable r : runnables) {
+				if (!first) {
 					toolkit.createLabel(compo, " ");
 				}
 				Hyperlink h = toolkit.createHyperlink(compo, r.getLabel() == null ? "run" : r.getLabel(), SWT.NONE);
@@ -93,16 +93,16 @@ public class PapyrusAsyncNotificationPopup extends AbstractNotificationPopup {
 
 	/**
 	 * Sets the used notification for recovering when needed (e.g. for removal)
-	 * 
+	 *
 	 * @param notification
-	 *        the used notification
+	 *            the used notification
 	 */
 	public void setINotification(INotification notification) {
 		context.put(IContext.NOTIFICATION_OBJECT, notification);
 	}
 
 	protected void run(NotificationRunnable r) {
-		if(r != null) {
+		if (r != null) {
 			r.run(context);
 		}
 	}
@@ -130,7 +130,7 @@ public class PapyrusAsyncNotificationPopup extends AbstractNotificationPopup {
 
 	@Override
 	protected String getPopupShellTitle() {
-		if(title == null) {
+		if (title == null) {
 			return super.getPopupShellTitle();
 		}
 		return title;

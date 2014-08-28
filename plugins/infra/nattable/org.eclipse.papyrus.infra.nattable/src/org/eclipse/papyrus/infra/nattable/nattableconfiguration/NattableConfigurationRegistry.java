@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,13 +52,13 @@ public class NattableConfigurationRegistry {
 	public static final NattableConfigurationRegistry INSTANCE = new NattableConfigurationRegistry();
 
 	private NattableConfigurationRegistry() {
-		//to prevent instantiation
+		// to prevent instantiation
 		initFields();
 	}
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the list of the known table configuration
 	 */
@@ -67,8 +67,8 @@ public class NattableConfigurationRegistry {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param newTableConfiguration
 	 * @return
 	 */
@@ -78,9 +78,9 @@ public class NattableConfigurationRegistry {
 
 
 	/**
-	 * 
+	 *
 	 * @param tableType
-	 *        the type of the table
+	 *            the type of the table
 	 * @return
 	 *         the URI of the configuration to use for this table or <code>null</code> if not found
 	 */
@@ -92,23 +92,23 @@ public class NattableConfigurationRegistry {
 	 * inits the fields of the class
 	 */
 	private void initFields() {
-		if(this.configsURI == null) {
+		if (this.configsURI == null) {
 			this.configsURI = new HashMap<String, TableConfiguration>();
 			final IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 			this.resourceSet = new ResourceSetImpl();
-			for(final IConfigurationElement iConfigurationElement : configElements) {
+			for (final IConfigurationElement iConfigurationElement : configElements) {
 				Object file = iConfigurationElement.getAttribute(FILE_ATTRIBUTE);
 				IContributor contributor = iConfigurationElement.getContributor();
-				//we build the uri for the file
+				// we build the uri for the file
 				URI uri = URI.createPlatformPluginURI(contributor.getName() + "/" + file.toString(), true);//$NON-NLS-1$ //TODO : maybe a best way?
 				Resource res = this.resourceSet.getResource(uri, true);
-				if(res.getContents().size() > 0) {
+				if (res.getContents().size() > 0) {
 					EObject first = res.getContents().get(0);
-					if(first instanceof TableConfiguration) {
-						String type = ((TableConfiguration)first).getType();
-						if(type != null) {
-							if(!this.configsURI.containsKey(type)) {
-								this.configsURI.put(type, (TableConfiguration)first);
+					if (first instanceof TableConfiguration) {
+						String type = ((TableConfiguration) first).getType();
+						if (type != null) {
+							if (!this.configsURI.containsKey(type)) {
+								this.configsURI.put(type, (TableConfiguration) first);
 							} else {
 								Activator.log.warn(String.format(Messages.NattableConfigurationRegistry_SeveralConfigurationsWithTheSameType, type));
 							}
@@ -126,27 +126,27 @@ public class NattableConfigurationRegistry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param tableType
-	 *        the table type to create
+	 *            the table type to create
 	 * @param tableContext
-	 *        the table context
+	 *            the table context
 	 * @return
 	 *         a status {@link IStatus#OK} when wa can create the table or {@link IStatus#ERROR} if not
 	 */
 	public IStatus canCreateTable(final String tableType, final Object tableContext) {
 		TableConfiguration config = this.configsURI.get(tableType);
-		if(config != null) {
+		if (config != null) {
 			AbstractTableTester tester = config.getCreationTester();
-			if(tester instanceof JavaTableTester) {
-				final String testerId = ((JavaTableTester)tester).getTester();
+			if (tester instanceof JavaTableTester) {
+				final String testerId = ((JavaTableTester) tester).getTester();
 				final ITableTester myTester = TableTesterRegistry.INSTANCE.getTableTester(testerId);
-				if(myTester != null) {
+				if (myTester != null) {
 					return myTester.isAllowed(tableContext);
 				} else {
 					new Status(IStatus.ERROR, Activator.PLUGIN_ID, Messages.NattableConfigurationRegistry_TesterNotFound);
 				}
-			} else if(tester == null) {
+			} else if (tester == null) {
 				return new Status(IStatus.OK, Activator.PLUGIN_ID, Messages.NattableConfigurationRegistry_NoTesterForThisConfiguration);
 			} else {
 				new Status(IStatus.ERROR, Activator.PLUGIN_ID, Messages.NattableConfigurationRegistry_TesterNotManager);

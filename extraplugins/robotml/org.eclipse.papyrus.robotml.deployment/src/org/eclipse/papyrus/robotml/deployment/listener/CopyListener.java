@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ import org.eclipse.papyrus.robotml.deployment.Copy;
 /**
  * Interface for listeners that are notified for the addition of a classifier
  * via copy
- * 
+ *
  * @see com.cea.ec3m.gentools.core.transformations.Copy
  */
 public interface CopyListener {
@@ -27,9 +27,9 @@ public interface CopyListener {
 	 * indicated object should not be copied. If it returns a different object
 	 * than the passed EObject, this object is used (the returned object of the
 	 * first listener is used).
-	 * 
+	 *
 	 * @param sourceEObj
-	 *        the added classifier
+	 *            the added classifier
 	 */
 	public EObject copyEObject(Copy copy, EObject sourceEObj);
 }

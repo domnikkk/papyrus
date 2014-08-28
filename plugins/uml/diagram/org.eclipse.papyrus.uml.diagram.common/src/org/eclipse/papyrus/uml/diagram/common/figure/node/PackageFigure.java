@@ -8,7 +8,7 @@
  * Contributors:
  *     CEA List - initial API and implementation
  *     Christian W. Damus (CEA) - bug 392301
- *     
+ *
  *******************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.figure.node;
 
@@ -46,12 +46,12 @@ public class PackageFigure extends NodeNamedElementFigure {
 
 	/**
 	 * this is the layout manager in charge to place element in the enumeration
-	 * 
+	 *
 	 */
 	private class PackageLayoutManager extends AbstractLayout {
 
 		/**
-		 * 
+		 *
 		 * {@inheritDoc}
 		 */
 		@Override
@@ -60,8 +60,8 @@ public class PackageFigure extends NodeNamedElementFigure {
 			int minimumWith = 0;
 			int minimumHeight = 0;
 			// display name
-			if(getNameLabel() != null) {
-				if(getNameLabel().getPreferredSize().width > minimumWith) {
+			if (getNameLabel() != null) {
+				if (getNameLabel().getPreferredSize().width > minimumWith) {
 					minimumWith = getNameLabel().getPreferredSize().width;
 				}
 				minimumHeight += getNameLabel().getPreferredSize().height;
@@ -71,38 +71,39 @@ public class PackageFigure extends NodeNamedElementFigure {
 		}
 
 		/**
-		 * 
+		 *
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void layout(IFigure container) {
 			List childrenList = container.getChildren();
-			for(int i = 0; i < container.getChildren().size(); i++) {
-				Rectangle bound = new Rectangle(((IFigure)childrenList.get(i)).getBounds());
-				IFigure fig=((IFigure)childrenList.get(i));
+			for (int i = 0; i < container.getChildren().size(); i++) {
+				Rectangle bound = new Rectangle(((IFigure) childrenList.get(i)).getBounds());
+				IFigure fig = ((IFigure) childrenList.get(i));
 				fig.invalidate();
-				Dimension pref=((IFigure)childrenList.get(i)).getPreferredSize();
+				Dimension pref = ((IFigure) childrenList.get(i)).getPreferredSize();
 				fig.invalidate();
-				Dimension prefConstraint=((IFigure)childrenList.get(i)).getPreferredSize(container.getBounds().width-40,-1);
-				if( pref.width<prefConstraint.width){
+				Dimension prefConstraint = ((IFigure) childrenList.get(i)).getPreferredSize(container.getBounds().width - 40, -1);
+				if (pref.width < prefConstraint.width) {
 					bound.setSize(pref);
 				}
-				else{
+				else {
 					bound.setSize(prefConstraint);
 				}
-				if(((IFigure)childrenList.get(i)).equals(iconPackage)) {
+				if (((IFigure) childrenList.get(i)).equals(iconPackage)) {
 					Rectangle boundName = getNameLabel().getBounds().getCopy();
 					boundName.x += GAP_X / 2;
 					iconPackage.setBounds(new Rectangle(boundName.getTopRight(), new Dimension(16, 16)));
 				} else {
-					if(i > 0) {
-						bound.y = ((IFigure)childrenList.get(i - 1)).getBounds().getBottomLeft().y + 1;
+					if (i > 0) {
+						bound.y = ((IFigure) childrenList.get(i - 1)).getBounds().getBottomLeft().y + 1;
 						bound.x = getBounds().x + GAP_X;
 					} else {
 						bound.x = getBounds().x + GAP_X;
 						bound.y = getBounds().y + GAP_Y;
 
 					}
-					((IFigure)childrenList.get(i)).setBounds(bound);
+					((IFigure) childrenList.get(i)).setBounds(bound);
 				}
 			}
 			// container
@@ -110,9 +111,9 @@ public class PackageFigure extends NodeNamedElementFigure {
 			lastRectangle.height = getBounds().y + getBounds().height - lastRectangle.y;
 			lastRectangle.x = container.getBounds().x;
 			lastRectangle.width = getBounds().width;
-			//getPackageableElementFigure().setBounds(lastRectangle);
-			if(getGMFPackageableElementContainer() != null) {
-				//getGMFPackageableElementContainer().setBounds(lastRectangle);
+			// getPackageableElementFigure().setBounds(lastRectangle);
+			if (getGMFPackageableElementContainer() != null) {
+				// getGMFPackageableElementContainer().setBounds(lastRectangle);
 			}
 		}
 
@@ -141,7 +142,7 @@ public class PackageFigure extends NodeNamedElementFigure {
 	/**
 	 * this method is used to display a symabol image for an element package as
 	 * triangle for the model
-	 * 
+	 *
 	 * @param image
 	 */
 	public void setTagIcon(Image image) {
@@ -153,12 +154,12 @@ public class PackageFigure extends NodeNamedElementFigure {
 
 	/**
 	 * get the gmf container figure of the package
-	 * 
+	 *
 	 * @return the gmf container
 	 */
 	public ShapeCompartmentFigure getGMFPackageableElementContainer() {
-		if(shapeCompartment.getChildren().size() > 0) {
-			return (ShapeCompartmentFigure)shapeCompartment.getChildren().get(0);
+		if (shapeCompartment.getChildren().size() > 0) {
+			return (ShapeCompartmentFigure) shapeCompartment.getChildren().get(0);
 		}
 		return null;
 	}
@@ -169,7 +170,7 @@ public class PackageFigure extends NodeNamedElementFigure {
 
 	/**
 	 * use to obtain the coordinates of the package header
-	 * 
+	 *
 	 * @return coordinate of the package header, maybe null if the figure has
 	 *         never be painted.
 	 */
@@ -177,9 +178,9 @@ public class PackageFigure extends NodeNamedElementFigure {
 		// the index of the shape container
 		int indexShapeContainer = getChildren().indexOf(shapeCompartment);
 		Rectangle headerBound = new Rectangle(0, 0, 0, 0);
-		for(int i = 0; i < indexShapeContainer; i++) {
-			IFigure currentchild = (IFigure)this.getChildren().get(i);
-			if(currentchild.getSize().width + 2 * GAP_X > headerBound.width) {
+		for (int i = 0; i < indexShapeContainer; i++) {
+			IFigure currentchild = (IFigure) this.getChildren().get(i);
+			if (currentchild.getSize().width + 2 * GAP_X > headerBound.width) {
 				headerBound.width = currentchild.getSize().width + 2 * GAP_X;
 			}
 			headerBound.height += currentchild.getSize().height;
@@ -189,7 +190,7 @@ public class PackageFigure extends NodeNamedElementFigure {
 		headerBound.x = this.getBounds().x;
 		headerBound.y = this.getBounds().y;
 		headerBound.height = getPackageableElementFigure().getBounds().y - headerBound.y;
-		if(iconPackage != null) {
+		if (iconPackage != null) {
 			headerBound.width += iconPackage.getBounds().width;
 		}
 		return headerBound;
@@ -219,12 +220,12 @@ public class PackageFigure extends NodeNamedElementFigure {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected void paintBackground(Graphics graphics, Rectangle rectangle) {
-		if(isUsingGradient()) {
+		if (isUsingGradient()) {
 			applyTransparency(graphics);
 			graphics.setBackgroundColor(ColorRegistry.getInstance().getColor(getGradientColor2()));
 			graphics.fillRectangle(getHeader());

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,18 +26,18 @@ import org.eclipse.uml2.uml.Stereotype;
 import com.swtdesigner.ResourceManager;
 
 /**
- * 
+ *
  * Label provider used by the filter dialog to list available types in a search result
- * 
+ *
  */
 public class FilterTypeLabelProvider extends LabelProvider {
 
 	@Override
 	public Image getImage(Object object) {
-		if(object instanceof ENamedElement) {
-			String imagePath = "/icons/full/obj16/" + ((ENamedElement)object).getName() + ".gif"; //$NON-NLS-1$ //$NON-NLS-2$
+		if (object instanceof ENamedElement) {
+			String imagePath = "/icons/full/obj16/" + ((ENamedElement) object).getName() + ".gif"; //$NON-NLS-1$ //$NON-NLS-2$
 			return ResourceManager.getPluginImage("org.eclipse.uml2.uml.edit", imagePath); //$NON-NLS-1$
-		} else if(object instanceof Stereotype) {
+		} else if (object instanceof Stereotype) {
 			LabelProviderService service = new LabelProviderServiceImpl();
 			try {
 				service.startService();
@@ -54,10 +54,10 @@ public class FilterTypeLabelProvider extends LabelProvider {
 
 	@Override
 	public String getText(Object object) {
-		if(object instanceof ENamedElement) {
-			return ((ENamedElement)object).getName();
-		} else if(object instanceof Stereotype) {
-			return ((Stereotype)object).getName();
+		if (object instanceof ENamedElement) {
+			return ((ENamedElement) object).getName();
+		} else if (object instanceof Stereotype) {
+			return ((Stereotype) object).getName();
 		} else {
 			return ""; //$NON-NLS-1$
 		}

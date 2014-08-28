@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ public class DefaultDirectEditorConfiguration implements IDirectEditorConfigurat
 
 	/**
 	 * Returns the language of the edited body
-	 * 
+	 *
 	 * @return the language of the edited body
 	 */
 	public String getLanguage() {
@@ -48,7 +48,7 @@ public class DefaultDirectEditorConfiguration implements IDirectEditorConfigurat
 
 	/**
 	 * Sets the language of the edited body
-	 * 
+	 *
 	 * @param language
 	 *            the language of the edited body
 	 */
@@ -111,7 +111,7 @@ public class DefaultDirectEditorConfiguration implements IDirectEditorConfigurat
 
 	/**
 	 * Returns the object to edit
-	 * 
+	 *
 	 * @return the object to edit
 	 */
 	public Object getObjectToEdit() {
@@ -120,7 +120,7 @@ public class DefaultDirectEditorConfiguration implements IDirectEditorConfigurat
 
 	/**
 	 * Sets the object to edit
-	 * 
+	 *
 	 * @param objectToEdit
 	 *            the object to edit
 	 */

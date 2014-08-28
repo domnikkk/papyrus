@@ -13,15 +13,16 @@ public abstract class AbstractEastadlNattableCreateCommandHandler extends
 
 	/**
 	 * <pre>
-	 * 
+	 *
 	 * Build the create command for an element creation in the selected container.
-	 * The create command is given by the {@link IElementEditService} of selected 
+	 * The create command is given by the {@link IElementEditService} of selected
 	 * element.
-	 * 
+	 *
 	 * @return the composite creation command for current selection
-	 * 
+	 *
 	 * </pre>
 	 */
+	@Override
 	protected Command buildCommand() {
 		Command createCmd = super.buildCommand();
 
@@ -31,11 +32,12 @@ public abstract class AbstractEastadlNattableCreateCommandHandler extends
 
 	/**
 	 * Obtain the context of the active table editor.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.service.types.handlers.AbstractCommandHandler#getCommandContext()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	protected ICommandContext getCommandContext() {
 		return TableMenuUtils.getTableCommandContext(INattableModelManagerUtils
 				.getTableManagerFromWorkbenchPart(getActiveWorkbenchPart()));
@@ -45,11 +47,12 @@ public abstract class AbstractEastadlNattableCreateCommandHandler extends
 	/**
 	 * Verify if this handler is currently active and the command can execute.
 	 * Additionally, verify if this table can add this type of element.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.service.types.handlers.AbstractCreateCommandHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
+	@Override
 	public void setEnabled(Object evaluationContext) {
 		INattableModelManager tableManager = INattableModelManagerUtils
 				.getTableManagerFromWorkbenchPart(getActiveWorkbenchPart());

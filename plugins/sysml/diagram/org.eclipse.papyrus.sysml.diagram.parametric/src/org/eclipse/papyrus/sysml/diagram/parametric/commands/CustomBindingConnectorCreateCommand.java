@@ -39,7 +39,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
 
 /**
- * 
+ *
  */
 public class CustomBindingConnectorCreateCommand extends EditElementCommand {
 
@@ -55,41 +55,43 @@ public class CustomBindingConnectorCreateCommand extends EditElementCommand {
 	/**
 	 * A BindingConnector could be created in Parametric only if at least one end is a ConstraintParameter.
 	 * Also check Block.isEncapsulated (could not cross a Block which is encapsulted)
-	 * @return 
+	 *
+	 * @return
 	 */
 	@Override
 	public boolean canExecute() {
-		if(this.source == null) {
+		if (this.source == null) {
 			return false;
 		}
-		if(this.target == null) {
+		if (this.target == null) {
 			return true;
 		}
-		if(this.source == this.target) {
+		if (this.source == this.target) {
 			return false;
 		}
 		if (this.source != null && this.target != null) {
-			
-			boolean hasEncapsulationViolation = !checkEncapsulationCrossing();		
-			
+
+			boolean hasEncapsulationViolation = !checkEncapsulationCrossing();
+
 			return hasEncapsulationViolation ? false :
-					// one of the end must be a ConstraintParameter	
-					ConstraintBlockHelper.isConstraintParameter((Element)source, RequestParameterUtils.getSourceView(getRequest()))
-					|| ConstraintBlockHelper.isConstraintParameter((Element)target, RequestParameterUtils.getTargetView(getRequest()));
+					// one of the end must be a ConstraintParameter
+					ConstraintBlockHelper.isConstraintParameter((Element) source, RequestParameterUtils.getSourceView(getRequest()))
+							|| ConstraintBlockHelper.isConstraintParameter((Element) target, RequestParameterUtils.getTargetView(getRequest()));
 		}
 		return false;
 	}
 
 	/**
 	 * Check that BindingConnector do not cross a "Block.isEncapsulated" Part/Reference/ConstraintProperty
+	 *
 	 * @return true no encapsulation problem, false else
 	 */
 	private boolean checkEncapsulationCrossing() {
 		org.eclipse.papyrus.sysml.service.types.utils.ConnectorUtils util = new org.eclipse.papyrus.sysml.service.types.utils.ConnectorUtils();
 
-		// source end - get the nestedPath	
+		// source end - get the nestedPath
 		List<Property> nestedPropertyPath = util.getNestedPropertyPath(RequestParameterUtils.getSourceView(getRequest()), RequestParameterUtils.getTargetView(getRequest()));
-		// check for each level of path if crossing an isEncapsultaed Block 
+		// check for each level of path if crossing an isEncapsultaed Block
 		for (Property property : nestedPropertyPath) {
 			Type type = property.getType();
 			Block stereotypeApplication = UMLUtil.getStereotypeApplication(type, Block.class);
@@ -99,7 +101,7 @@ public class CustomBindingConnectorCreateCommand extends EditElementCommand {
 				}
 			}
 		}
-		
+
 		// target end - get the nestedPath
 		nestedPropertyPath = util.getNestedPropertyPath(RequestParameterUtils.getTargetView(getRequest()), RequestParameterUtils.getSourceView(getRequest()));
 		// check for each level of path if crossing an isEncapsultaed Block
@@ -117,6 +119,7 @@ public class CustomBindingConnectorCreateCommand extends EditElementCommand {
 
 	/**
 	 * Create the connector, affect its owner, calculate nestedPath
+	 *
 	 * @param monitor
 	 * @param info
 	 * @return CommandResult contains the created Connector
@@ -124,22 +127,22 @@ public class CustomBindingConnectorCreateCommand extends EditElementCommand {
 	@Override
 	protected CommandResult doExecuteWithResult(final IProgressMonitor monitor, final IAdaptable info) throws ExecutionException {
 
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		// Create the Connector and its ConnectorEnd. Correct container are set and paths are set in case of <<NestedConnectorEnd>>.
 		StructuredClassifier deducedContainer = new ConnectorUtils().deduceContainer(RequestParameterUtils.getSourceView(getRequest()), RequestParameterUtils.getTargetView(getRequest()));
-		((CreateRelationshipRequest)getRequest()).setContainer(deducedContainer);
+		((CreateRelationshipRequest) getRequest()).setContainer(deducedContainer);
 		IElementEditService commandProvider = ElementEditServiceUtils.getCommandProvider(deducedContainer);
 		ICommand editCommand = commandProvider.getEditCommand(getRequest());
-		
+
 		if (editCommand.canExecute()) {
 			editCommand.execute(monitor, info);
 			Object newObject = editCommand.getCommandResult().getReturnValue();
-			
+
 			if (newObject instanceof Connector) {
-				Connector connector = (Connector)newObject;
+				Connector connector = (Connector) newObject;
 				// Apply the <<BindingConnector>> stereotype
 				StereotypeApplicationHelper.INSTANCE.applyStereotype(connector, BlocksPackage.eINSTANCE.getBindingConnector());
 			}
@@ -148,5 +151,5 @@ public class CustomBindingConnectorCreateCommand extends EditElementCommand {
 		}
 		return CommandResult.newErrorCommandResult("Invalid arguments in create link command");
 	}
-	
+
 }

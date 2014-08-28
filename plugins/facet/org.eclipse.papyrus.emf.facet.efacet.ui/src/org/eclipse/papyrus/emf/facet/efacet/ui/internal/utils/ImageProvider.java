@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2011 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Nicolas Guyomar (Mia-Software) - Bug 349546 - EMF Facet facetSet editor
  *  Vincent Lorenzo (CEA-LIST) - Bug 357621 - Improve the label displayed for Customization and Facets
@@ -14,10 +14,10 @@ package org.eclipse.papyrus.emf.facet.efacet.ui.internal.utils;
 
 import java.net.URL;
 
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
-import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
+import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.swt.graphics.Image;
 
 public class ImageProvider {
@@ -43,7 +43,7 @@ public class ImageProvider {
 
 	/**
 	 * Create an image descriptor from a resource
-	 * 
+	 *
 	 * @param resourcePath
 	 *            the path of the resource (in the bundle)
 	 * @return the image descriptor
@@ -78,14 +78,15 @@ public class ImageProvider {
 		}
 		return this.queryIcon;
 	}
-	
-	public Image getFlatViewIcon(){
+
+	public Image getFlatViewIcon() {
 		if (this.flatViewIcon == null) {
 			this.flatViewIcon = createImageDescriptor(ImageProvider.FLAT_VIEW_ICON_PATH).createImage();
 		}
 		return this.flatViewIcon;
 	}
-	public Image getTreeViewIcon(){
+
+	public Image getTreeViewIcon() {
 		if (this.treeViewIcon == null) {
 			this.treeViewIcon = createImageDescriptor(ImageProvider.TREE_VIEW_ICON_PATH).createImage();
 		}

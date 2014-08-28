@@ -20,6 +20,7 @@ public abstract class CreateObjectActionStrategy extends SemanticStrategy {
 
 	public abstract Object_ instantiate(Class type, Locus locus);
 
+	@Override
 	public String getName() {
 		return "CreateObjectActionStrategy";
 	}

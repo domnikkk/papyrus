@@ -9,9 +9,9 @@ import org.eclipse.jface.wizard.IWizardPage;
  * It does not use the standard CDTMainWizardPage but a variant
  * called CDTMainWizardPageV that skips the first validation which
  * would other trigger an error.
- * 
+ *
  * @see org.eclipse.papyrus.cpp.cdtproject.CDTMainWizardPageV
- * 
+ *
  * @author ansgar
  */
 public class CCNamedProjectWizard extends CCProjectWizard {
@@ -38,7 +38,7 @@ public class CCNamedProjectWizard extends CCProjectWizard {
 
 	@Override
 	public void addPage(IWizardPage page) {
-		if(!dontAdd) {
+		if (!dontAdd) {
 			super.addPage(page);
 		}
 	}

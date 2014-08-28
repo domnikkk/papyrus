@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -26,9 +26,9 @@ import org.eclipse.papyrus.uml.diagram.statemachine.providers.UMLElementTypes;
  */
 public class UMLPaletteFactory extends PaletteFactory.Adapter {
 
-	//RS: New Palette generation
-	//Generates the ID for the tool elements
-	//Generate the tool factory (if(ID) createtool...)
+	// RS: New Palette generation
+	// Generates the ID for the tool elements
+	// Generate the tool factory (if(ID) createtool...)
 	/**
 	 * @generated
 	 */
@@ -122,66 +122,75 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	private final static String CREATECONTEXTLINK3CREATIONTOOL = "createContextLink3CreationTool";//$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public UMLPaletteFactory() {
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	public Tool createTool(String toolId) {
-		if(toolId.equals(CREATEREGIONCREATIONTOOL)) {
+		if (toolId.equals(CREATEREGIONCREATIONTOOL)) {
 			return createRegionCreationTool();
 		}
-		if(toolId.equals(CREATESTATECREATIONTOOL)) {
+		if (toolId.equals(CREATESTATECREATIONTOOL)) {
 			return createStateCreationTool();
 		}
-		if(toolId.equals(CREATEINITIALCREATIONTOOL)) {
+		if (toolId.equals(CREATEINITIALCREATIONTOOL)) {
 			return createInitialCreationTool();
 		}
-		if(toolId.equals(CREATEFINALSTATECREATIONTOOL)) {
+		if (toolId.equals(CREATEFINALSTATECREATIONTOOL)) {
 			return createFinalStateCreationTool();
 		}
-		if(toolId.equals(CREATESHALLOWHISTORYCREATIONTOOL)) {
+		if (toolId.equals(CREATESHALLOWHISTORYCREATIONTOOL)) {
 			return createShallowHistoryCreationTool();
 		}
-		if(toolId.equals(CREATEDEEPHISTORYCREATIONTOOL)) {
+		if (toolId.equals(CREATEDEEPHISTORYCREATIONTOOL)) {
 			return createDeepHistoryCreationTool();
 		}
-		if(toolId.equals(CREATEFORKCREATIONTOOL)) {
+		if (toolId.equals(CREATEFORKCREATIONTOOL)) {
 			return createForkCreationTool();
 		}
-		if(toolId.equals(CREATEJOINCREATIONTOOL)) {
+		if (toolId.equals(CREATEJOINCREATIONTOOL)) {
 			return createJoinCreationTool();
 		}
-		if(toolId.equals(CREATECHOICECREATIONTOOL)) {
+		if (toolId.equals(CREATECHOICECREATIONTOOL)) {
 			return createChoiceCreationTool();
 		}
-		if(toolId.equals(CREATEJUNCTIONCREATIONTOOL)) {
+		if (toolId.equals(CREATEJUNCTIONCREATIONTOOL)) {
 			return createJunctionCreationTool();
 		}
-		if(toolId.equals(CREATEENTRYPOINTCREATIONTOOL)) {
+		if (toolId.equals(CREATEENTRYPOINTCREATIONTOOL)) {
 			return createEntryPointCreationTool();
 		}
-		if(toolId.equals(CREATEEXITPOINTCREATIONTOOL)) {
+		if (toolId.equals(CREATEEXITPOINTCREATIONTOOL)) {
 			return createExitPointCreationTool();
 		}
-		if(toolId.equals(CREATETERMINATECREATIONTOOL)) {
+		if (toolId.equals(CREATETERMINATECREATIONTOOL)) {
 			return createTerminateCreationTool();
 		}
-		if(toolId.equals(CREATECONNECTIONPOINTREFERENCECREATIONTOOL)) {
+		if (toolId.equals(CREATECONNECTIONPOINTREFERENCECREATIONTOOL)) {
 			return createConnectionPointReferenceCreationTool();
 		}
-		if(toolId.equals(CREATESTATEMACHINECOMMENTCREATIONTOOL)) {
+		if (toolId.equals(CREATESTATEMACHINECOMMENTCREATIONTOOL)) {
 			return createStateMachineCommentCreationTool();
 		}
-		if(toolId.equals(CREATECONSTRAINTCREATIONTOOL)) {
+		if (toolId.equals(CREATECONSTRAINTCREATIONTOOL)) {
 			return createConstraintCreationTool();
 		}
-		if(toolId.equals(CREATETRANSITIONCREATIONTOOL)) {
+		if (toolId.equals(CREATETRANSITIONCREATIONTOOL)) {
 			return createTransitionCreationTool();
 		}
-		if(toolId.equals(CREATECOMMENTLINKCREATIONTOOL)) {
+		if (toolId.equals(CREATECOMMENTLINKCREATIONTOOL)) {
 			return createCommentlinkCreationTool();
+		}
+		if(toolId.equals(CREATECONTEXTLINK3CREATIONTOOL)) {
+			return createContextLink3CreationTool();
 		}
 		// default return: null
 		return null;
@@ -190,6 +199,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Object getTemplate(String templateId) {
 		// default return: null
 		return null;
@@ -372,6 +382,16 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 		List<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(UMLElementTypes.CommentAnnotatedElement_667);
 		types.add(UMLElementTypes.ConstraintConstrainedElement_670);
+		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
+		return tool;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Tool createContextLink3CreationTool() {
+		List<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(UMLElementTypes.ConstraintContext_8500);
 		Tool tool = new AspectUnspecifiedTypeConnectionTool(types);
 		return tool;
 	}

@@ -4,13 +4,16 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
@@ -50,19 +53,19 @@ public class StackedLayerOperatorImplWithAplicationTest {
 		LayersStackApplication application = LayersFactory.eINSTANCE.createLayersStackApplication();
 		LayerOperatorDescriptor layerDesc = LayersFactory.eINSTANCE.createLayerOperatorDescriptor();
 		String layerDescName = "myLayerDesc";
-		layerDesc.setName(layerDescName );
+		layerDesc.setName(layerDescName);
 		application.getLayerOperatorDescriptorRegistry().addLayerOperatorDescriptor(layerDesc);
-		
+
 		StackedLayerOperator layer = LayersFactory.eINSTANCE.createStackedLayerOperator();
 
 		// Check if the descriptor is unset
 		assertFalse("descriptor is not set", layer.isDescriptorSet());
-		
+
 		// Set name and application.
 		// This should call reset, and set the descriptor
 		layer.setLayerOperatorDescriptorName(layerDescName);
 		layer.setApplication(application);
-		
+
 		// check if the descriptor is set
 		assertTrue("descriptor is set", layer.isDescriptorSet());
 		assertSame("right descriptor is set", layerDesc, layer.getLayerOperatorDescriptor());
@@ -79,7 +82,7 @@ public class StackedLayerOperatorImplWithAplicationTest {
 		// Check if the descriptor is unset
 		assertNotNull("layer is created", layer);
 		assertFalse("descriptor is not set", layer.isDescriptorSet());
-		
+
 	}
 
 }

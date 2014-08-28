@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.layers.stackmodel.layers.BooleanInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.IsAbstractUmlSetter;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance;
-import org.eclipse.papyrus.layers.stackmodel.layers.IsAbstractUmlSetter;
 import org.eclipse.uml2.uml.Classifier;
 
 /**
@@ -34,6 +34,7 @@ public class IsAbstractUmlSetterImpl extends PropertySetterImpl implements IsAbs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	protected IsAbstractUmlSetterImpl() {
@@ -45,6 +46,7 @@ public class IsAbstractUmlSetterImpl extends PropertySetterImpl implements IsAbs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -54,6 +56,7 @@ public class IsAbstractUmlSetterImpl extends PropertySetterImpl implements IsAbs
 
 	/**
 	 * Set the property of the specified view.
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl#setValue(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance)
 	 *
 	 * @param view
@@ -61,16 +64,16 @@ public class IsAbstractUmlSetterImpl extends PropertySetterImpl implements IsAbs
 	 */
 	@Override
 	public void setValue(View view, TypeInstance value) {
-	
 
-		BooleanInstance boolValue = (BooleanInstance)value;
+
+		BooleanInstance boolValue = (BooleanInstance) value;
 
 		EObject ele = view.getElement();
-		if( ele instanceof Classifier) {
-			Classifier classifier = (Classifier)ele;
+		if (ele instanceof Classifier) {
+			Classifier classifier = (Classifier) ele;
 			classifier.setIsAbstract(boolValue.isValue());
 		}
 
 	}
 
-} //IsAbstractUmlSetterImpl
+} // IsAbstractUmlSetterImpl

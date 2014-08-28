@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,14 +36,12 @@ import org.eclipse.papyrus.cdo.internal.core.PapyrusRepositoryManager;
  * <li>a repository is {@linkplain #onRemoved(IPapyrusRepositoryManager, IPapyrusRepository) removed}</li>
  * <li>a repository is {@linkplain #onConnected(IPapyrusRepository) connected}</li>
  * <li>a repository is {@linkplain #onDisconnected(IPapyrusRepository) disconnected}</li>
- * <li>(optionally) the view attached to some {link ResourceSet} receives an
- * {@linkplain #onInvalidation(IPapyrusRepository, CDOView, CDOViewInvalidationEvent) invalidation event}</li>
+ * <li>(optionally) the view attached to some {link ResourceSet} receives an {@linkplain #onInvalidation(IPapyrusRepository, CDOView, CDOViewInvalidationEvent) invalidation event}</li>
  * </ul>
  * <p>
- * To add the listener to a repository manager, use the {@link #install(IPapyrusRepositoryManager)} method. To remove it, use
- * {@link #uninstall(IPapyrusRepositoryManager)}.
+ * To add the listener to a repository manager, use the {@link #install(IPapyrusRepositoryManager)} method. To remove it, use {@link #uninstall(IPapyrusRepositoryManager)}.
  * </p>
- * 
+ *
  * @see #install(IPapyrusRepositoryManager)
  * @see #uninstall(IPapyrusRepositoryManager)
  */
@@ -71,25 +69,24 @@ public class RepositoryManagerEventAdapter {
 	}
 
 	/**
-	 * Install me on a repository manager. This iterates all repositories that already exist, to call the
-	 * {@link #onAdded(IPapyrusRepositoryManager, IPapyrusRepository)} call-back
+	 * Install me on a repository manager. This iterates all repositories that already exist, to call the {@link #onAdded(IPapyrusRepositoryManager, IPapyrusRepository)} call-back
 	 * on each, for convenience. For any existing repositories that are already connected, the {@link #onConnected(IPapyrusRepository)} call-back is
 	 * also invoked.
-	 * 
+	 *
 	 * @param repositoryManager
-	 *        a repository manager to install me on
-	 * 
+	 *            a repository manager to install me on
+	 *
 	 * @return myself, for convenience of call chaining
 	 */
 	public RepositoryManagerEventAdapter install(IPapyrusRepositoryManager repositoryManager) {
 		@SuppressWarnings("unchecked")
-		IContainer<IPapyrusRepository> container = (IContainer<IPapyrusRepository>)repositoryManager;
+		IContainer<IPapyrusRepository> container = (IContainer<IPapyrusRepository>) repositoryManager;
 
 		target = repositoryManager;
 
 		container.addListener(managerListener);
 
-		for(IPapyrusRepository next : repositoryManager.getRepositories()) {
+		for (IPapyrusRepository next : repositoryManager.getRepositories()) {
 			try {
 				managerListener.onAdded(container, next);
 			} catch (Exception e) {
@@ -101,20 +98,19 @@ public class RepositoryManagerEventAdapter {
 	}
 
 	/**
-	 * Remove me from a repository manager. This iterates all repositories that currently exist, to call the
-	 * {@link #onRemoved(IPapyrusRepositoryManager, IPapyrusRepository)} call-back on each, for convenience.
-	 * 
+	 * Remove me from a repository manager. This iterates all repositories that currently exist, to call the {@link #onRemoved(IPapyrusRepositoryManager, IPapyrusRepository)} call-back on each, for convenience.
+	 *
 	 * @param repositoryManager
-	 *        a repository manager to remove me from
-	 * 
+	 *            a repository manager to remove me from
+	 *
 	 * @return myself, for convenience of call chaining
 	 */
 	public RepositoryManagerEventAdapter uninstall(IPapyrusRepositoryManager repositoryManager) {
-		if((target != null) && (target == repositoryManager)) {
+		if ((target != null) && (target == repositoryManager)) {
 			@SuppressWarnings("unchecked")
-			IContainer<IPapyrusRepository> container = (IContainer<IPapyrusRepository>)repositoryManager;
+			IContainer<IPapyrusRepository> container = (IContainer<IPapyrusRepository>) repositoryManager;
 
-			for(IPapyrusRepository next : repositoryManager.getRepositories()) {
+			for (IPapyrusRepository next : repositoryManager.getRepositories()) {
 				try {
 					onRemoved(repositoryManager, next);
 				} catch (Exception e) {
@@ -131,12 +127,12 @@ public class RepositoryManagerEventAdapter {
 	}
 
 	void handleConnection(IInternalPapyrusRepository repository) {
-		if(viewInvalidationListener != null) {
+		if (viewInvalidationListener != null) {
 			repository.getCDOSession().addListener(viewInvalidationListener);
 
 			// look for existing view
-			for(CDOView next : repository.getCDOSession().getViews()) {
-				if(next.getResourceSet() == target) {
+			for (CDOView next : repository.getCDOSession().getViews()) {
+				if (next.getResourceSet() == target) {
 					next.addListener(viewInvalidationListener);
 				}
 			}
@@ -180,10 +176,10 @@ public class RepositoryManagerEventAdapter {
 		protected void onAdded(IContainer<IPapyrusRepository> container, IPapyrusRepository element) {
 			element.addPapyrusRepositoryListener(repositoryListener);
 
-			RepositoryManagerEventAdapter.this.onAdded((IPapyrusRepositoryManager)container, element);
+			RepositoryManagerEventAdapter.this.onAdded((IPapyrusRepositoryManager) container, element);
 
-			if(element.isConnected()) {
-				handleConnection((IInternalPapyrusRepository)element);
+			if (element.isConnected()) {
+				handleConnection((IInternalPapyrusRepository) element);
 			}
 		}
 
@@ -191,20 +187,21 @@ public class RepositoryManagerEventAdapter {
 		protected void onRemoved(IContainer<IPapyrusRepository> container, IPapyrusRepository element) {
 			element.removePapyrusRepositoryListener(repositoryListener);
 
-			RepositoryManagerEventAdapter.this.onRemoved((IPapyrusRepositoryManager)container, element);
+			RepositoryManagerEventAdapter.this.onRemoved((IPapyrusRepositoryManager) container, element);
 		}
 
 	}
 
 	private class RepositoryListener implements IPapyrusRepositoryListener {
 
+		@Override
 		public void papyrusRepositoryChanged(PapyrusRepositoryEvent event) {
-			switch(event.getEventType()) {
+			switch (event.getEventType()) {
 			case PapyrusRepositoryEvent.CONNECTED:
-				handleConnection((IInternalPapyrusRepository)event.getSource());
+				handleConnection((IInternalPapyrusRepository) event.getSource());
 				break;
 			case PapyrusRepositoryEvent.DISCONNECTED:
-				handleDisconnection((IInternalPapyrusRepository)event.getSource());
+				handleDisconnection((IInternalPapyrusRepository) event.getSource());
 				break;
 			default:
 				throw new IllegalArgumentException("Invalid repository event type: " + event.getEventType()); //$NON-NLS-1$
@@ -222,13 +219,13 @@ public class RepositoryManagerEventAdapter {
 
 		@Override
 		protected void notifyOtherEvent(IEvent event) {
-			if(event instanceof CDOViewInvalidationEvent) {
-				CDOViewInvalidationEvent invalidation = (CDOViewInvalidationEvent)event;
-				IPapyrusRepository repo = ((IInternalPapyrusRepositoryManager)target).getRepository(invalidation.getSource());
+			if (event instanceof CDOViewInvalidationEvent) {
+				CDOViewInvalidationEvent invalidation = (CDOViewInvalidationEvent) event;
+				IPapyrusRepository repo = ((IInternalPapyrusRepositoryManager) target).getRepository(invalidation.getSource());
 				onInvalidation(repo, invalidation.getSource(), invalidation);
-			} else if(event instanceof IContainerEvent<?>) {
+			} else if (event instanceof IContainerEvent<?>) {
 				@SuppressWarnings("unchecked")
-				IContainerEvent<CDOView> containerEvent = (IContainerEvent<CDOView>)event;
+				IContainerEvent<CDOView> containerEvent = (IContainerEvent<CDOView>) event;
 				onContainerEvent(containerEvent);
 			}
 		}
@@ -239,9 +236,9 @@ public class RepositoryManagerEventAdapter {
 		}
 
 		protected void onContainerEvent(IContainerEvent<CDOView> event) {
-			for(IContainerDelta<CDOView> next : event.getDeltas()) {
-				if(next.getKind() == Kind.ADDED) {
-					if(next.getElement().getResourceSet() == resourceSet) {
+			for (IContainerDelta<CDOView> next : event.getDeltas()) {
+				if (next.getKind() == Kind.ADDED) {
+					if (next.getElement().getResourceSet() == resourceSet) {
 						next.getElement().addListener(this);
 					}
 				}

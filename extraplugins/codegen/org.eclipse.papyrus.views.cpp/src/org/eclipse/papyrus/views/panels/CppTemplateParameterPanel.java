@@ -44,7 +44,7 @@ public class CppTemplateParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#getSelectedElement()
 	 */
 	@Override
@@ -54,14 +54,14 @@ public class CppTemplateParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#setSelectedElement(java.lang.Element)
 	 */
 	@Override
 	public void setSelectedElement(Element newElement) {
 		super.setSelectedElement(newElement);
-		if(newElement instanceof TemplateParameter) {
-			this.selectedTP = (TemplateParameter)newElement;
+		if (newElement instanceof TemplateParameter) {
+			this.selectedTP = (TemplateParameter) newElement;
 		}
 		else {
 			throw new RuntimeException("bad selection: " + newElement + " should be an uml2 TemplateParameter");
@@ -70,35 +70,36 @@ public class CppTemplateParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#createContent()
 	 */
+	@Override
 	public Control createContent() {
 
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// Create save reset buttons with superclass method
-		///////////////////////////////////////////////////////////////////////    	
+		// /////////////////////////////////////////////////////////////////////
 		createSaveResetButtons();
 
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// TemplateParameter declaration
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 		docParameter = createDocumentC();
 		groupParameter = createGroup(
-			this
-			, "Parameter name"
-			, buttonSave
-			, null
-			, true
-			, 0
-			, 0
-			, true);
+				this
+				, "Parameter name"
+				, buttonSave
+				, null
+				, true
+				, 0
+				, 0
+				, true);
 		// Use CDT CEditor coloration
 		viewerParameter = createViewerC(docParameter, groupParameter);
 
-		///////////////////////////////////////////////////////////////////////					
+		// /////////////////////////////////////////////////////////////////////
 		// Return control on this composite
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 
 		return this;
 	}
@@ -106,19 +107,21 @@ public class CppTemplateParameterPanel extends CppAbstractPanel {
 	/**
 	 * Saves the body for an '<code>Property</code>'
 	 */
+	@Override
 	public void save()
 	{
-		if(selectedTP == null) {
+		if (selectedTP == null) {
 			/* Log.debug("saveBody : selectedProperty is null"); */
 		}
 		else {
 			CommandSupport.exec("C++ template parameter save", new Runnable() {
 
+				@Override
 				public void run()
 				{
 					// Treat Parameter name
 					String newB = docParameter.get();
-					if(newB.equals("")) {
+					if (newB.equals("")) {
 						StereotypeUtil.unapply(selectedTP, org.eclipse.papyrus.C_Cpp.TemplateParameter.class);
 					}
 					else {
@@ -132,12 +135,12 @@ public class CppTemplateParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#refreshPanel()
 	 */
 	@Override
 	protected void refreshPanel() {
-		if(selectedTP == null) {
+		if (selectedTP == null) {
 			/* Log.debug("resetBody : selectedProperty is null"); */
 		} else {
 
@@ -149,9 +152,10 @@ public class CppTemplateParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#entryAction()
 	 */
+	@Override
 	public void entryAction() {
 		super.entryAction();
 		reset();
@@ -159,7 +163,7 @@ public class CppTemplateParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#checkModifications()
 	 */
 	@Override
@@ -167,7 +171,7 @@ public class CppTemplateParameterPanel extends CppAbstractPanel {
 		org.eclipse.papyrus.C_Cpp.TemplateParameter templateParameter = UMLUtil.getStereotypeApplication(selectedTP, org.eclipse.papyrus.C_Cpp.TemplateParameter.class);
 		// TODO: use UML template bindings?
 		String parameterName = templateParameter != null ? templateParameter.getName() : "";
-		if(!docParameter.get().equals(parameterName)) {
+		if (!docParameter.get().equals(parameterName)) {
 			return true;
 		}
 		return false;

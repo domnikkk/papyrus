@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -40,22 +40,22 @@ public class PartCompartmentSemanticEditPolicy extends CompartmentSemanticEditPo
 
 		IElementType elementTypeToCreate = req.getElementType();
 		IElementType baseType = elementTypeToCreate;
-		//if extended type, retrieve the sysml closest element element type
-		if(elementTypeToCreate instanceof IExtendedHintedElementType) {
+		// if extended type, retrieve the sysml closest element element type
+		if (elementTypeToCreate instanceof IExtendedHintedElementType) {
 			List<IElementType> superTypes = Arrays.asList(elementTypeToCreate.getAllSuperTypes());
-			if(superTypes.contains(SysMLElementTypes.PART_PROPERTY)) {
+			if (superTypes.contains(SysMLElementTypes.PART_PROPERTY)) {
 				baseType = SysMLElementTypes.PART_PROPERTY;
-			} else if(superTypes.contains(SysMLElementTypes.CONSTRAINT_PROPERTY)) {
+			} else if (superTypes.contains(SysMLElementTypes.CONSTRAINT_PROPERTY)) {
 				baseType = SysMLElementTypes.CONSTRAINT_PROPERTY;
 			}
 		}
-		
-		
-		if(SysMLElementTypes.PART_PROPERTY == baseType) {
+
+
+		if (SysMLElementTypes.PART_PROPERTY == baseType) {
 			req.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new CreatePartWithTypeConfigureCommandFactory());
 		}
 
-		if(SysMLElementTypes.CONSTRAINT_PROPERTY == baseType) {
+		if (SysMLElementTypes.CONSTRAINT_PROPERTY == baseType) {
 			req.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new CreateConstraintPropertyWithTypeConfigureCommandFactory());
 		}
 

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -35,7 +35,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorImpl#getLayers <em>Layers</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorImpl#getLayers <em>Layers</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +46,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	 * The cached value of the '{@link #getLayers() <em>Layers</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLayers()
 	 * @generated
 	 * @ordered
@@ -55,6 +56,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LayerOperatorImpl() {
@@ -64,6 +66,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,8 +77,10 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<LayerExpression> getLayers() {
 		if (layers == null) {
 			layers = new EObjectContainmentEList<LayerExpression>(LayerExpression.class, this, LayersPackage.LAYER_OPERATOR__LAYERS);
@@ -86,10 +91,12 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void addLayer(LayerExpression layer) {
-//		getLayers().add(layer);
+		// getLayers().add(layer);
 		// Add layer on top of the stack.
 		getLayers().add(0, layer);
 	}
@@ -97,13 +104,14 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LayersPackage.LAYER_OPERATOR__LAYERS:
-				return ((InternalEList<?>)getLayers()).basicRemove(otherEnd, msgs);
+		case LayersPackage.LAYER_OPERATOR__LAYERS:
+			return ((InternalEList<?>) getLayers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -111,13 +119,14 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersPackage.LAYER_OPERATOR__LAYERS:
-				return getLayers();
+		case LayersPackage.LAYER_OPERATOR__LAYERS:
+			return getLayers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -125,16 +134,17 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersPackage.LAYER_OPERATOR__LAYERS:
-				getLayers().clear();
-				getLayers().addAll((Collection<? extends LayerExpression>)newValue);
-				return;
+		case LayersPackage.LAYER_OPERATOR__LAYERS:
+			getLayers().clear();
+			getLayers().addAll((Collection<? extends LayerExpression>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -142,14 +152,15 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersPackage.LAYER_OPERATOR__LAYERS:
-				getLayers().clear();
-				return;
+		case LayersPackage.LAYER_OPERATOR__LAYERS:
+			getLayers().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -157,13 +168,14 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersPackage.LAYER_OPERATOR__LAYERS:
-				return layers != null && !layers.isEmpty();
+		case LayersPackage.LAYER_OPERATOR__LAYERS:
+			return layers != null && !layers.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -171,14 +183,17 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == LayersContainer.class) {
 			switch (baseOperationID) {
-				case LayersPackage.LAYERS_CONTAINER___ADD_LAYER__LAYEREXPRESSION: return LayersPackage.LAYER_OPERATOR___ADD_LAYER__LAYEREXPRESSION;
-				default: return -1;
+			case LayersPackage.LAYERS_CONTAINER___ADD_LAYER__LAYEREXPRESSION:
+				return LayersPackage.LAYER_OPERATOR___ADD_LAYER__LAYEREXPRESSION;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
@@ -187,39 +202,40 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case LayersPackage.LAYER_OPERATOR___ADD_LAYER__LAYEREXPRESSION:
-				addLayer((LayerExpression)arguments.get(0));
-				return null;
+		case LayersPackage.LAYER_OPERATOR___ADD_LAYER__LAYEREXPRESSION:
+			addLayer((LayerExpression) arguments.get(0));
+			return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * Get the LayersStack that own directly or indirectly this Layer.
-	 * Throw an exception if no {@link LayersStack} can be found.
-	 * <br>
+	 * Throw an exception if no {@link LayersStack} can be found. <br>
 	 * Lookup is done recursively in parent containers.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl#getLayersStack()
 	 *
 	 * @return
 	 * @throws NotFoundException
 	 */
-//	@Override
-//	public LayersStack getLayersStack() throws NotFoundException {
-//		// TODO: performance improvment. It is possible to avoid the lookup 
-//		// by caching the LayersStack, or by setting a corresponding property
-//		// in the model
-//		return (LayersStack)ECoreUtils.lookupAncestorOfType(this, LayersPackage.eINSTANCE.getLayersStack());
-//	}
+	// @Override
+	// public LayersStack getLayersStack() throws NotFoundException {
+	// // TODO: performance improvment. It is possible to avoid the lookup
+	// // by caching the LayersStack, or by setting a corresponding property
+	// // in the model
+	// return (LayersStack)ECoreUtils.lookupAncestorOfType(this, LayersPackage.eINSTANCE.getLayersStack());
+	// }
 
 	/**
 	 * Propagate the change to children
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl#setIsBranchEnabled(boolean)
 	 *
 	 * @param newIsBranchEnabled
@@ -230,14 +246,14 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 		super.setIsBranchEnabled(newIsBranchEnabled);
 		// Now, propagate
 		boolean value = isBranchEnabled();
-		for( LayerExpression layer : getLayers() ) {
+		for (LayerExpression layer : getLayers()) {
 			layer.setIsBranchEnabled(value);
 		}
 	}
-	
+
 	/**
 	 * Set the value then propagate to children nodes.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl#setOwningLayersStack(org.eclipse.papyrus.layers.stackmodel.layers.LayersStack)
 	 *
 	 * @param newOwningLayersStack
@@ -248,18 +264,19 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 		super.setOwningLayersStack(newOwningLayersStack);
 		// Now propagate to children
 		LayersStack value = getOwningLayersStack();
-		for( LayerExpression layer : getLayers() ) {
+		for (LayerExpression layer : getLayers()) {
 			layer.setOwningLayersStack(value);
 		}
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * Start this element after its reloading by EMF
 	 * This method is called recursively by the parent of this element.
-	 * 
+	 *
 	 * <!-- end-user-doc -->
-	 * @throws LayersException 
+	 *
+	 * @throws LayersException
 	 * @generated NOT
 	 */
 	@Override
@@ -267,13 +284,13 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 		// Try to attach this Layer
 		super.attach();
 		// attach children
-		for( LayerExpression l : getLayers()) {
+		for (LayerExpression l : getLayers()) {
 			l.attach();
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl#detach()
 	 *
 	 * @throws LayersException
@@ -283,29 +300,33 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 		// Detach this Layer
 		super.detach();
 		// detach children
-		for( LayerExpression l : getLayers()) {
+		for (LayerExpression l : getLayers()) {
 			l.detach();
 		}
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated unless we need it again
 	 * @generated NOT
 	 */
+	@Deprecated
+	@Override
 	public void attachToLayersStack(LayersStack owningLayersStack) {
-		
+
 		// the owning stack
 		setOwningLayersStack(owningLayersStack);
-		
+
 		// Ensure child is started, if any
-		for( LayerExpression l : getLayers()) {
+		for (LayerExpression l : getLayers()) {
 			l.attachToLayersStack(owningLayersStack);
 		}
-		
+
 		// Start local behaviors
 		startBehaviors();
 	}
 
 
-} //LayerOperatorImpl
+} // LayerOperatorImpl

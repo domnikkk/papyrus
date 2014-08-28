@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,8 +16,8 @@ package org.eclipse.papyrus.uml.profile.definition;
 
 /**
  * Constant fields for papyrus profile version
- * 
- * 
+ *
+ *
  * @deprecated API was moved to the plugin org.eclipse.papyrus.uml.tools for Bug 435995.
  *             It was preserved for standard releases of Papyrus 1.0.0
  * @see org.eclipse.papyrus.uml.tools.profile.definition.IPapyrusVersionConstants

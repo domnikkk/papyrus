@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,10 +32,10 @@ public abstract class AsyncEditAction<T> extends AsyncTransactionAction<T> {
 	protected boolean updateSelection(org.eclipse.jface.viewers.IStructuredSelection selection) {
 		boolean result = super.updateSelection(selection);
 
-		if(result) {
+		if (result) {
 			CDOObject cdoObject = getSelectedCDOObject();
 
-			if((cdoObject == null) || CDOUtils.isReadOnly(cdoObject)) {
+			if ((cdoObject == null) || CDOUtils.isReadOnly(cdoObject)) {
 				result = false;
 			}
 		}

@@ -3,9 +3,9 @@
  * All rights reserved. This program and the accompanying materials            *
  * are made available under the terms of the Eclipse Public License v1.0       *
  * which accompanies this distribution, and is available at                    *
- * http://www.eclipse.org/legal/epl-v10.html                                   *  
- * Contributors:                                                               *  
- *     Soyatec - initial API and implementation                                * 
+ * http://www.eclipse.org/legal/epl-v10.html                                   *
+ * Contributors:                                                               *
+ *     Soyatec - initial API and implementation                                *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt.utils;
 
@@ -28,24 +28,24 @@ public class PathHelper {
 	public static final String WHITE_SPACE_ASCII = "%20";
 
 	public static String getRelativePath(String source, String target) {
-		if(source == null || target == null) {
+		if (source == null || target == null) {
 			return target;
 		}
 		File sourceFile = new File(source);
-		if(!sourceFile.exists()) {
+		if (!sourceFile.exists()) {
 			return target;
 		}
 		File targetFile = new File(target);
-		if(!targetFile.exists()) {
+		if (!targetFile.exists()) {
 			return target;
 		}
 		source = switchToForwardSlashes(source);
 		target = switchToForwardSlashes(target);
 		int index = target.indexOf(FORWARD_SLASH);
 		String container = null;
-		while(index != -1) {
+		while (index != -1) {
 			container = target.substring(0, index);
-			if(!source.startsWith(container + FORWARD_SLASH)) {
+			if (!source.startsWith(container + FORWARD_SLASH)) {
 				break;
 			}
 			source = source.substring(index + 1);
@@ -53,7 +53,7 @@ public class PathHelper {
 			index = target.indexOf(FORWARD_SLASH);
 		}
 		index = source.indexOf(FORWARD_SLASH);
-		while(index != -1) {
+		while (index != -1) {
 			target = RELATIVE_PATH_SIG + target;
 			source = source.substring(index + 1);
 			index = source.indexOf(FORWARD_SLASH);
@@ -71,51 +71,51 @@ public class PathHelper {
 	}
 
 	public static String getAbsolutePath(String source, String relative) {
-		if(source.indexOf(WHITE_SPACE_ASCII) != -1) {
+		if (source.indexOf(WHITE_SPACE_ASCII) != -1) {
 			source = source.replace(WHITE_SPACE_ASCII, " ");
 		}
-		if(relative.indexOf(WHITE_SPACE_ASCII) != -1) {
+		if (relative.indexOf(WHITE_SPACE_ASCII) != -1) {
 			relative = relative.replace(WHITE_SPACE_ASCII, " ");
 		}
-		if(source.startsWith(FORWARD_SLASH)) {
+		if (source.startsWith(FORWARD_SLASH)) {
 			source = source.substring(1);
 		}
 		String prefix = null;
-		if(source.startsWith(URL_IDENTIFY_PREFIX)) {
+		if (source.startsWith(URL_IDENTIFY_PREFIX)) {
 			prefix = URL_IDENTIFY_PREFIX;
 			source = source.substring(URL_IDENTIFY_PREFIX.length());
-			if(System.getProperty("os.arch").startsWith("Win")) {
+			if (System.getProperty("os.arch").startsWith("Win")) {
 				source = source.substring(1);
 			}
 		}
 		File file = new File(source);
-		if(!file.exists()) {
+		if (!file.exists()) {
 			return relative;
 		}
-		if(file.isFile()) {
+		if (file.isFile()) {
 			source = file.getParent();
 		}
 		source = switchToForwardSlashes(source);
 		relative = switchToForwardSlashes(relative);
-		if(relative.startsWith(FORWARD_SLASH)) {
+		if (relative.startsWith(FORWARD_SLASH)) {
 			relative = relative.substring(1);
 		}
 		int index = relative.lastIndexOf(FORWARD_SLASH);
-		if(index != -1) {
+		if (index != -1) {
 			String container = relative.substring(0, index);
 			int i = source.indexOf(container);
-			if(i != -1) {
+			if (i != -1) {
 				source = source.substring(0, i);
 			} else {
 				int j = relative.indexOf(RELATIVE_PATH_SIG);
-				while(j != -1) {
+				while (j != -1) {
 					relative = relative.substring(j + RELATIVE_PATH_SIG.length());
 					source = source.substring(0, source.lastIndexOf(FORWARD_SLASH));
 					j = relative.indexOf(RELATIVE_PATH_SIG);
 				}
 			}
 		}
-		if(System.getProperty("os.arch").startsWith("Win")) {
+		if (System.getProperty("os.arch").startsWith("Win")) {
 			source = "/" + source;
 		}
 
@@ -130,21 +130,23 @@ public class PathHelper {
 		StringTokenizer baseTokenizer = new StringTokenizer(base, FORWARD_SLASH);
 		String token1 = "", token2 = "";
 		//
-		while(true) {
-			if(!inputTokenizer.hasMoreTokens() || !baseTokenizer.hasMoreTokens())
+		while (true) {
+			if (!inputTokenizer.hasMoreTokens() || !baseTokenizer.hasMoreTokens()) {
 				break;
+			}
 			token1 = baseTokenizer.nextToken();
 			token2 = inputTokenizer.nextToken();
-			if(!token1.equals(token2))
+			if (!token1.equals(token2)) {
 				break;
+			}
 		}
 		StringBuilder builder = new StringBuilder();
-		while(baseTokenizer.hasMoreTokens()) {
+		while (baseTokenizer.hasMoreTokens()) {
 			baseTokenizer.nextToken();
 			builder.append(RELATIVE_PATH_SIG);
 		}
 		builder.append(token2);
-		while(inputTokenizer.hasMoreTokens()) {
+		while (inputTokenizer.hasMoreTokens()) {
 			builder.append(FORWARD_SLASH + inputTokenizer.nextToken());
 		}
 		return builder.toString();

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,6 +62,7 @@ public abstract class AbstractConstraintEditPart extends NamedElementEditPart {
 	/**
 	 * assure that a specification change gets handled by the constraint body.
 	 */
+	@Override
 	protected void handleNotificationEvent(Notification event) {
 		if (event.getFeature() instanceof ENamedElement) {
 			if (((ENamedElement) event.getFeature()).getName().equals(SPECIFICATION)) {
@@ -84,7 +85,7 @@ public abstract class AbstractConstraintEditPart extends NamedElementEditPart {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.NodeEditPart#getPrimaryShape()
 	 */
 	@Override
@@ -93,7 +94,7 @@ public abstract class AbstractConstraintEditPart extends NamedElementEditPart {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart#refreshLabelsFont(org.eclipse.swt.graphics.Font)
 	 */
 	@Override
@@ -118,7 +119,7 @@ public abstract class AbstractConstraintEditPart extends NamedElementEditPart {
 
 	/**
 	 * Refresh figure's background transparency.
-	 * 
+	 *
 	 * @since 1.2
 	 */
 	@Override
@@ -132,7 +133,7 @@ public abstract class AbstractConstraintEditPart extends NamedElementEditPart {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart#setFontColor(org.eclipse.swt.graphics.Color)
 	 */
 	@Override
@@ -169,6 +170,7 @@ public abstract class AbstractConstraintEditPart extends NamedElementEditPart {
 			editPart = (EditPart) getEditingDomain().runExclusive(
 					new RunnableWithResult.Impl<Object>() {
 
+						@Override
 						public void run() {
 							// edit body, which can be found in 2nd child, instead of default action (first child)
 							setResult(getChildren().get(1));

@@ -15,14 +15,14 @@ package org.eclipse.papyrus.views.modelexplorer.queries;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IColor;
+import org.eclipse.papyrus.emf.facet.custom.ui.internal.custompt.Color;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
 import org.eclipse.papyrus.emf.facet.efacet.core.exception.DerivedTypedElementException;
 import org.eclipse.papyrus.emf.facet.query.java.core.IJavaQuery2;
 import org.eclipse.papyrus.emf.facet.query.java.core.IParameterValueList2;
-import org.eclipse.papyrus.emf.facet.custom.ui.internal.custompt.Color;
 
 /**
- * The purpose of this request is the return the color for read only elements 
+ * The purpose of this request is the return the color for read only elements
  *
  */
 public class IsReadOnlyColorQuery implements IJavaQuery2<EObject, IColor> {
@@ -31,7 +31,7 @@ public class IsReadOnlyColorQuery implements IJavaQuery2<EObject, IColor> {
 			final IParameterValueList2 parameterValues,
 			final IFacetManager facetManager)
 			throws DerivedTypedElementException {
-		return new Color(100,100,100);
+		return new Color(100, 100, 100);
 	}
 
 }

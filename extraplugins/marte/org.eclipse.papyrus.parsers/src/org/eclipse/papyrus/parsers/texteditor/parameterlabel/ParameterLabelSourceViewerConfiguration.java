@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.uml2.uml.Parameter;
 /**
  * This class bundles the configuration space of the action language source viewer. Instances of
  * this class are passed to the configure method of <code>SourceViewer</code>.
- * 
+ *
  * @see org.eclipse.jface.text.source.SourceViewerConfiguration
  */
 public class ParameterLabelSourceViewerConfiguration extends CompletionFilterSourceViewerConfiguration {
@@ -42,9 +42,9 @@ public class ParameterLabelSourceViewerConfiguration extends CompletionFilterSou
 
 	/**
 	 * Creates a new ParameterLabelSourceViewerConfiguration
-	 * 
+	 *
 	 * @param parameter
-	 *        the {@link Parameter} to edit
+	 *            the {@link Parameter} to edit
 	 */
 	public ParameterLabelSourceViewerConfiguration(Parameter parameter) {
 		super(null);
@@ -60,11 +60,11 @@ public class ParameterLabelSourceViewerConfiguration extends CompletionFilterSou
 
 	/**
 	 * Instantiates a new property label source viewer configuration.
-	 * 
+	 *
 	 * @param property
-	 *        the property
+	 *            the property
 	 * @param filter
-	 *        the filter
+	 *            the filter
 	 */
 	public ParameterLabelSourceViewerConfiguration(Parameter parameter, ICompletionFilter filter) {
 		super(filter);
@@ -85,7 +85,7 @@ public class ParameterLabelSourceViewerConfiguration extends CompletionFilterSou
 
 		/**
 		 * Constructor
-		 * 
+		 *
 		 * @param attribute
 		 */
 		public SingleTokenScanner(TextAttribute attribute) {
@@ -136,7 +136,7 @@ public class ParameterLabelSourceViewerConfiguration extends CompletionFilterSou
 
 	/**
 	 * Returns the edited {@link Parameter}
-	 * 
+	 *
 	 * @return the {@link Parameter} to edit
 	 */
 	public Parameter getParameter() {
@@ -145,9 +145,9 @@ public class ParameterLabelSourceViewerConfiguration extends CompletionFilterSou
 
 	/**
 	 * Sets the {@link Parameter} to Edit
-	 * 
+	 *
 	 * @param collaborationUse
-	 *        the {@link Parameter} to edit
+	 *            the {@link Parameter} to edit
 	 */
 	public void setParameter(Parameter parameter) {
 		this.parameter = parameter;

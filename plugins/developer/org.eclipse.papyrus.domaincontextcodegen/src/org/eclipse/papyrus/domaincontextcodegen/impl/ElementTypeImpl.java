@@ -30,7 +30,7 @@ import org.eclipse.papyrus.domaincontextcodegen.ElementTypes;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypeImpl#getIcon <em>Icon</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class ElementTypeImpl extends EObjectImpl implements ElementType {
@@ -39,7 +39,7 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	 * The default value of the '{@link #getHelper() <em>Helper</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHelper()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	 * The cached value of the '{@link #getHelper() <em>Helper</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHelper()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -94,7 +94,7 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	 * The cached value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ElementTypeImpl() {
@@ -114,7 +114,7 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -135,20 +135,21 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.ELEMENT_TYPE__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getHelper() {
@@ -158,65 +159,72 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHelper(String newHelper) {
 		String oldHelper = helper;
 		helper = newHelper;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.ELEMENT_TYPE__HELPER, oldHelper, helper));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementTypes getOwner() {
-		if(eContainerFeatureID() != DomaincontextcodegenPackage.ELEMENT_TYPE__OWNER)
+		if (eContainerFeatureID() != DomaincontextcodegenPackage.ELEMENT_TYPE__OWNER) {
 			return null;
-		return (ElementTypes)eContainer();
+		}
+		return (ElementTypes) eContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOwner(ElementTypes newOwner, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newOwner, DomaincontextcodegenPackage.ELEMENT_TYPE__OWNER, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newOwner, DomaincontextcodegenPackage.ELEMENT_TYPE__OWNER, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOwner(ElementTypes newOwner) {
-		if(newOwner != eInternalContainer() || (eContainerFeatureID() != DomaincontextcodegenPackage.ELEMENT_TYPE__OWNER && newOwner != null)) {
-			if(EcoreUtil.isAncestor(this, newOwner))
+		if (newOwner != eInternalContainer() || (eContainerFeatureID() != DomaincontextcodegenPackage.ELEMENT_TYPE__OWNER && newOwner != null)) {
+			if (EcoreUtil.isAncestor(this, newOwner)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if(eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if(newOwner != null)
-				msgs = ((InternalEObject)newOwner).eInverseAdd(this, DomaincontextcodegenPackage.ELEMENT_TYPES__TYPES, ElementTypes.class, msgs);
+			}
+			if (newOwner != null) {
+				msgs = ((InternalEObject) newOwner).eInverseAdd(this, DomaincontextcodegenPackage.ELEMENT_TYPES__TYPES, ElementTypes.class, msgs);
+			}
 			msgs = basicSetOwner(newOwner, msgs);
-			if(msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if(eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.ELEMENT_TYPE__OWNER, newOwner, newOwner));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getIcon() {
@@ -226,29 +234,31 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIcon(String newIcon) {
 		String oldIcon = icon;
 		icon = newIcon;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.ELEMENT_TYPE__ICON, oldIcon, icon));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE__OWNER:
-			if(eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetOwner((ElementTypes)otherEnd, msgs);
+			}
+			return basicSetOwner((ElementTypes) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -256,12 +266,12 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE__OWNER:
 			return basicSetOwner(null, msgs);
 		}
@@ -271,12 +281,12 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch(eContainerFeatureID()) {
+		switch (eContainerFeatureID()) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE__OWNER:
 			return eInternalContainer().eInverseRemove(this, DomaincontextcodegenPackage.ELEMENT_TYPES__TYPES, ElementTypes.class, msgs);
 		}
@@ -286,12 +296,12 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE__NAME:
 			return getName();
 		case DomaincontextcodegenPackage.ELEMENT_TYPE__HELPER:
@@ -307,23 +317,23 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE__NAME:
-			setName((String)newValue);
+			setName((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.ELEMENT_TYPE__HELPER:
-			setHelper((String)newValue);
+			setHelper((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.ELEMENT_TYPE__OWNER:
-			setOwner((ElementTypes)newValue);
+			setOwner((ElementTypes) newValue);
 			return;
 		case DomaincontextcodegenPackage.ELEMENT_TYPE__ICON:
-			setIcon((String)newValue);
+			setIcon((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -332,12 +342,12 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE__NAME:
 			setName(NAME_EDEFAULT);
 			return;
@@ -345,7 +355,7 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 			setHelper(HELPER_EDEFAULT);
 			return;
 		case DomaincontextcodegenPackage.ELEMENT_TYPE__OWNER:
-			setOwner((ElementTypes)null);
+			setOwner((ElementTypes) null);
 			return;
 		case DomaincontextcodegenPackage.ELEMENT_TYPE__ICON:
 			setIcon(ICON_EDEFAULT);
@@ -357,12 +367,12 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case DomaincontextcodegenPackage.ELEMENT_TYPE__HELPER:
@@ -378,13 +388,14 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -397,4 +408,4 @@ public abstract class ElementTypeImpl extends EObjectImpl implements ElementType
 		return result.toString();
 	}
 
-} //ElementTypeImpl
+} // ElementTypeImpl

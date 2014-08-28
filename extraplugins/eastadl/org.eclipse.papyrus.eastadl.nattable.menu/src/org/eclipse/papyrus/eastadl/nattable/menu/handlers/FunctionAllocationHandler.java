@@ -8,13 +8,14 @@ public class FunctionAllocationHandler extends AbstractEastadlNattableCreateComm
 	/**
 	 * <pre>
 	 * @see org.eclipse.papyrus.uml.service.types.handlers.AbstractCreateCommandHandler#getElementTypeToCreate()
-	 * 
+	 *
 	 * @return the IElementType this handler is supposed to create
-	 * 
+	 *
 	 * </pre>
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected IElementType getElementTypeToCreate() {
 		return EastadlElementTypes.FUNCTION_ALLOCATE;
 	}

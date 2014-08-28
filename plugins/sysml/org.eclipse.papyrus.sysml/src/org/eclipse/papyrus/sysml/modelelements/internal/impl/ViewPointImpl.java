@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.sysml.modelelements.internal.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -37,7 +38,7 @@ import org.eclipse.papyrus.sysml.modelelements.ViewPoint;
  * <li>{@link org.eclipse.papyrus.sysml.modelelements.internal.impl.ViewPointImpl#getMethods <em>Methods</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewPoint {
@@ -45,7 +46,7 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 	/**
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -56,7 +57,7 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 	 * The cached value of the '{@link #getStakeHolders() <em>Stake Holders</em>}' attribute list.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getStakeHolders()
 	 * @generated
 	 * @ordered
@@ -66,7 +67,7 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 	/**
 	 * The default value of the '{@link #getPurpose() <em>Purpose</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPurpose()
 	 * @generated
 	 * @ordered
@@ -76,7 +77,7 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 	/**
 	 * The cached value of the '{@link #getPurpose() <em>Purpose</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPurpose()
 	 * @generated
 	 * @ordered
@@ -86,7 +87,7 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 	/**
 	 * The cached value of the '{@link #getConcerns() <em>Concerns</em>}' attribute list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConcerns()
 	 * @generated
 	 * @ordered
@@ -96,7 +97,7 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 	/**
 	 * The cached value of the '{@link #getLanguages() <em>Languages</em>}' attribute list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLanguages()
 	 * @generated
 	 * @ordered
@@ -106,7 +107,7 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 	/**
 	 * The cached value of the '{@link #getMethods() <em>Methods</em>}' attribute list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMethods()
 	 * @generated
 	 * @ordered
@@ -115,7 +116,7 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ViewPointImpl() {
@@ -124,7 +125,7 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -133,15 +134,16 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case ModelelementsPackage.VIEW_POINT__BASE_CLASS:
-			if(resolve)
+			if (resolve) {
 				return getBase_Class();
+			}
 			return basicGetBase_Class();
 		case ModelelementsPackage.VIEW_POINT__STAKE_HOLDERS:
 			return getStakeHolders();
@@ -159,12 +161,12 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ModelelementsPackage.VIEW_POINT__BASE_CLASS:
 			return base_Class != null;
 		case ModelelementsPackage.VIEW_POINT__STAKE_HOLDERS:
@@ -183,34 +185,34 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case ModelelementsPackage.VIEW_POINT__BASE_CLASS:
-			setBase_Class((org.eclipse.uml2.uml.Class)newValue);
+			setBase_Class((org.eclipse.uml2.uml.Class) newValue);
 			return;
 		case ModelelementsPackage.VIEW_POINT__STAKE_HOLDERS:
 			getStakeHolders().clear();
-			getStakeHolders().addAll((Collection<? extends String>)newValue);
+			getStakeHolders().addAll((Collection<? extends String>) newValue);
 			return;
 		case ModelelementsPackage.VIEW_POINT__PURPOSE:
-			setPurpose((String)newValue);
+			setPurpose((String) newValue);
 			return;
 		case ModelelementsPackage.VIEW_POINT__CONCERNS:
 			getConcerns().clear();
-			getConcerns().addAll((Collection<? extends String>)newValue);
+			getConcerns().addAll((Collection<? extends String>) newValue);
 			return;
 		case ModelelementsPackage.VIEW_POINT__LANGUAGES:
 			getLanguages().clear();
-			getLanguages().addAll((Collection<? extends String>)newValue);
+			getLanguages().addAll((Collection<? extends String>) newValue);
 			return;
 		case ModelelementsPackage.VIEW_POINT__METHODS:
 			getMethods().clear();
-			getMethods().addAll((Collection<? extends String>)newValue);
+			getMethods().addAll((Collection<? extends String>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -218,7 +220,7 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,14 +230,14 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ModelelementsPackage.VIEW_POINT__BASE_CLASS:
-			setBase_Class((org.eclipse.uml2.uml.Class)null);
+			setBase_Class((org.eclipse.uml2.uml.Class) null);
 			return;
 		case ModelelementsPackage.VIEW_POINT__STAKE_HOLDERS:
 			getStakeHolders().clear();
@@ -258,16 +260,17 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class getBase_Class() {
-		if(base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
-			if(base_Class != oldBase_Class) {
-				if(eNotificationRequired())
+		if (base_Class != null && base_Class.eIsProxy()) {
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
+			if (base_Class != oldBase_Class) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelelementsPackage.VIEW_POINT__BASE_CLASS, oldBase_Class, base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -275,11 +278,11 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getConcerns() {
-		if(concerns == null) {
+		if (concerns == null) {
 			concerns = new EDataTypeEList<String>(String.class, this, ModelelementsPackage.VIEW_POINT__CONCERNS);
 		}
 		return concerns;
@@ -287,11 +290,11 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getLanguages() {
-		if(languages == null) {
+		if (languages == null) {
 			languages = new EDataTypeEList<String>(String.class, this, ModelelementsPackage.VIEW_POINT__LANGUAGES);
 		}
 		return languages;
@@ -299,11 +302,11 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getMethods() {
-		if(methods == null) {
+		if (methods == null) {
 			methods = new EDataTypeEList<String>(String.class, this, ModelelementsPackage.VIEW_POINT__METHODS);
 		}
 		return methods;
@@ -311,7 +314,7 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getPurpose() {
@@ -320,11 +323,11 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getStakeHolders() {
-		if(stakeHolders == null) {
+		if (stakeHolders == null) {
 			stakeHolders = new EDataTypeEList<String>(String.class, this, ModelelementsPackage.VIEW_POINT__STAKE_HOLDERS);
 		}
 		return stakeHolders;
@@ -332,37 +335,40 @@ public class ViewPointImpl extends MinimalEObjectImpl.Container implements ViewP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelelementsPackage.VIEW_POINT__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPurpose(String newPurpose) {
 		String oldPurpose = purpose;
 		purpose = newPurpose;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelelementsPackage.VIEW_POINT__PURPOSE, oldPurpose, purpose));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (stakeHolders: ");

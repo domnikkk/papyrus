@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ import org.eclipse.swt.widgets.Group;
 /**
  * Preference group to define whether the specific keyword of the descendant of
  * structured activity node has to be displayed of not
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class SpecificKeywordStructuredActivityNodeVisibility extends AbstractGroup {
 
@@ -46,9 +46,9 @@ public class SpecificKeywordStructuredActivityNodeVisibility extends AbstractGro
 	private ElementType type;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 * @param key
 	 * @param dialogPage
@@ -61,16 +61,16 @@ public class SpecificKeywordStructuredActivityNodeVisibility extends AbstractGro
 
 	/**
 	 * Creates the content.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	public void createContent(Composite parent) {
 		Group visibilityGroup = new Group(parent, SWT.SCROLL_PAGE);
 		visibilityGroup.setLayout(new GridLayout());
 		visibilityGroup.setText(CustomMessages.SpecificKeywordStructuredActivityNodeVisibility_visibility);
 		String preferenceName;
-		switch(this.type) {
+		switch (this.type) {
 		case LOOP_NODE:
 			preferenceName = IActivityPreferenceConstants.PREF_STRUCTURED_SPECIFIC_KEYWORD_DISPLAY_LOOP_NODE;
 			break;

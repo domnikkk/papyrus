@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.uml2.uml.Property;
  * <li>{@link org.eclipse.papyrus.sysml.blocks.internal.impl.ConnectorPropertyImpl#getConnector <em>Connector</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ConnectorPropertyImpl extends MinimalEObjectImpl.Container implements ConnectorProperty {
@@ -41,7 +41,7 @@ public class ConnectorPropertyImpl extends MinimalEObjectImpl.Container implemen
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class ConnectorPropertyImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * The cached value of the '{@link #getConnector() <em>Connector</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConnector()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class ConnectorPropertyImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConnectorPropertyImpl() {
@@ -69,7 +69,7 @@ public class ConnectorPropertyImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -78,7 +78,7 @@ public class ConnectorPropertyImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Connector basicGetConnector() {
@@ -87,19 +87,21 @@ public class ConnectorPropertyImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.CONNECTOR_PROPERTY__BASE_PROPERTY:
-			if(resolve)
+			if (resolve) {
 				return getBase_Property();
+			}
 			return basicGetBase_Property();
 		case BlocksPackage.CONNECTOR_PROPERTY__CONNECTOR:
-			if(resolve)
+			if (resolve) {
 				return getConnector();
+			}
 			return basicGetConnector();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,12 +109,12 @@ public class ConnectorPropertyImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.CONNECTOR_PROPERTY__BASE_PROPERTY:
 			return base_Property != null;
 		case BlocksPackage.CONNECTOR_PROPERTY__CONNECTOR:
@@ -123,17 +125,17 @@ public class ConnectorPropertyImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.CONNECTOR_PROPERTY__BASE_PROPERTY:
-			setBase_Property((Property)newValue);
+			setBase_Property((Property) newValue);
 			return;
 		case BlocksPackage.CONNECTOR_PROPERTY__CONNECTOR:
-			setConnector((Connector)newValue);
+			setConnector((Connector) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -141,7 +143,7 @@ public class ConnectorPropertyImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,17 +153,17 @@ public class ConnectorPropertyImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.CONNECTOR_PROPERTY__BASE_PROPERTY:
-			setBase_Property((Property)null);
+			setBase_Property((Property) null);
 			return;
 		case BlocksPackage.CONNECTOR_PROPERTY__CONNECTOR:
-			setConnector((Connector)null);
+			setConnector((Connector) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -169,16 +171,17 @@ public class ConnectorPropertyImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property getBase_Property() {
-		if(base_Property != null && base_Property.eIsProxy()) {
-			InternalEObject oldBase_Property = (InternalEObject)base_Property;
-			base_Property = (Property)eResolveProxy(oldBase_Property);
-			if(base_Property != oldBase_Property) {
-				if(eNotificationRequired())
+		if (base_Property != null && base_Property.eIsProxy()) {
+			InternalEObject oldBase_Property = (InternalEObject) base_Property;
+			base_Property = (Property) eResolveProxy(oldBase_Property);
+			if (base_Property != oldBase_Property) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.CONNECTOR_PROPERTY__BASE_PROPERTY, oldBase_Property, base_Property));
+				}
 			}
 		}
 		return base_Property;
@@ -186,16 +189,17 @@ public class ConnectorPropertyImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Connector getConnector() {
-		if(connector != null && connector.eIsProxy()) {
-			InternalEObject oldConnector = (InternalEObject)connector;
-			connector = (Connector)eResolveProxy(oldConnector);
-			if(connector != oldConnector) {
-				if(eNotificationRequired())
+		if (connector != null && connector.eIsProxy()) {
+			InternalEObject oldConnector = (InternalEObject) connector;
+			connector = (Connector) eResolveProxy(oldConnector);
+			if (connector != oldConnector) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.CONNECTOR_PROPERTY__CONNECTOR, oldConnector, connector));
+				}
 			}
 		}
 		return connector;
@@ -203,26 +207,28 @@ public class ConnectorPropertyImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.CONNECTOR_PROPERTY__BASE_PROPERTY, oldBase_Property, base_Property));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setConnector(Connector newConnector) {
 		Connector oldConnector = connector;
 		connector = newConnector;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.CONNECTOR_PROPERTY__CONNECTOR, oldConnector, connector));
+		}
 	}
 
 } // ConnectorPropertyImpl

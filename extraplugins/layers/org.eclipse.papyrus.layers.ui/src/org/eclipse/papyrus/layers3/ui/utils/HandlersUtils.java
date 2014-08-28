@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -23,6 +23,7 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * Set of utilities methods for handlers {@link AbstractHandler}.
+ *
  * @author cedric dumoulin
  *
  */
@@ -38,33 +39,33 @@ public class HandlersUtils {
 
 	/**
 	 * Get the diagram associated to the currently selected editor.
-	 * Throw events if no diagram is associated.
-	 * <br>
-	 * Warnings: This method is for handlers only. It can return unpredictable 
+	 * Throw events if no diagram is associated. <br>
+	 * Warnings: This method is for handlers only. It can return unpredictable
 	 * results if used during the application initialization phase.
-	 * 
+	 *
 	 * @return
-	 * @throws NotFoundException 
-	 * @throws ServiceException 
+	 * @throws NotFoundException
+	 * @throws ServiceException
 	 */
 	public Diagram getDiagramFromCurrentEditor() throws ServiceException, NotFoundException {
 		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-		if( page == null)
+		if (page == null) {
 			throw new NotFoundException("No active IWorkbenchPage");
-		
+		}
+
 		IEditorPart editor = ServiceUtilsForWorkbenchPage.getInstance().getNestedActiveIEditorPart(page);
 
-		if( ! (editor instanceof DiagramDocumentEditor) ) {
+		if (!(editor instanceof DiagramDocumentEditor)) {
 			throw new NotFoundException("Selected editor do not contains Diagram");
 		}
-		DiagramDocumentEditor diagramEditor = (DiagramDocumentEditor)editor;
-		
+		DiagramDocumentEditor diagramEditor = (DiagramDocumentEditor) editor;
+
 		Diagram diagram = diagramEditor.getDiagram();
-		if(diagram == null) {
-			throw new NotFoundException("Selected editor do not contains Diagram");			
+		if (diagram == null) {
+			throw new NotFoundException("Selected editor do not contains Diagram");
 		}
-		
+
 		return diagram;
 	}
-	
+
 }

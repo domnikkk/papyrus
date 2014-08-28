@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		 Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -20,9 +20,9 @@ import org.eclipse.papyrus.infra.nattable.paste.PasteSeparator;
 import org.eclipse.papyrus.infra.nattable.paste.TextDelimiter;
 
 /**
- * 
+ *
  * This class provides utils method to split a string to do a paste in the table
- * 
+ *
  */
 public class CSVPasteHelper {
 
@@ -46,25 +46,24 @@ public class CSVPasteHelper {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * The default constructor initialize the class with {@value #DEFAULT_CLIPBOARD_COLUMN_SEPARATOR}, {@value #DEFAULT_TEXT_MARKER},
-	 * {@value #DEFAULT_MULTI_VALUE_SEPARATOR}
+	 * The default constructor initialize the class with {@value #DEFAULT_CLIPBOARD_COLUMN_SEPARATOR}, {@value #DEFAULT_TEXT_MARKER}, {@value #DEFAULT_MULTI_VALUE_SEPARATOR}
 	 */
 	public CSVPasteHelper() {
 		this(DEFAULT_CLIPBOARD_COLUMN_SEPARATOR, DEFAULT_TEXT_MARKER, DEFAULT_MULTI_VALUE_SEPARATOR);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param cellSeparator
-	 *        the column separator to use
+	 *            the column separator to use
 	 * @param textMarked
-	 *        the row separator to use
+	 *            the row separator to use
 	 * @param textMarker
-	 *        the multi value separator to use
+	 *            the multi value separator to use
 	 */
 	public CSVPasteHelper(final char cellSeparator, final char textMarker, final String multiValueSeparator) {
 		this.cellSeparator = cellSeparator;
@@ -73,9 +72,9 @@ public class CSVPasteHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param reader
-	 *        a reader
+	 *            a reader
 	 * @return
 	 *         create a parser from the reader
 	 */
@@ -85,7 +84,7 @@ public class CSVPasteHelper {
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the separator used for multivalue
 	 */

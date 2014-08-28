@@ -40,13 +40,13 @@ public class CDTprojectHandler extends CmdHandler {
 	@Override
 	public boolean isEnabled() {
 		updateSelectedEObject();
-		
+
 		if (selectedEObject instanceof Package || selectedEObject instanceof Classifier) {
 			URI uri = selectedEObject.eResource().getURI();
 
 			// URIConverter uriConverter = resource.getResourceSet().getURIConverter();
 			IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-			if(uri.segmentCount() < 2) {
+			if (uri.segmentCount() < 2) {
 				return false;
 			}
 			IProject modelProject = root.getProject(uri.segment(1));
@@ -56,16 +56,17 @@ public class CDTprojectHandler extends CmdHandler {
 		return false;
 	}
 
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
-		if(selectedEObject instanceof PackageableElement) {
-			PackageableElement pe = (PackageableElement)selectedEObject;
+		if (selectedEObject instanceof PackageableElement) {
+			PackageableElement pe = (PackageableElement) selectedEObject;
 
 			IProject modelProject = LocateCppProject.getTargetProject(pe, true);
-			if(modelProject == null) {
+			if (modelProject == null) {
 				return null;
 			}
-			
+
 			// get the container for the current element
 			ILangSupport langSupport = LanguageSupport.getLangSupport(LANGUAGE_NAME);
 			if (langSupport != null) {

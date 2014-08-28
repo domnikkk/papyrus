@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 429422
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.engine;
 
@@ -39,28 +39,31 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * A CSS Engine for the current Eclipse Project
- * 
+ *
  * Note: Some models are not necessarily stored in a Project (e.g. CDO Models)
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ProjectCSSEngine extends ExtendedCSSEngineImpl {
 
 	private IResourceChangeListener resourceListener = new IResourceChangeListener() {
 
+		@Override
 		public void resourceChanged(IResourceChangeEvent event) {
-			if(project != null) {
+			if (project != null) {
 				try {
-					if(event != null && event.getDelta() != null) {
+					if (event != null && event.getDelta() != null) {
 						event.getDelta().accept(new IResourceDeltaVisitor() {
 
+							@Override
 							public boolean visit(IResourceDelta delta) throws CoreException {
-								if(delta.getResource().equals(stylesheetPreferences)) {
+								if (delta.getResource().equals(stylesheetPreferences)) {
 									ProjectCSSEngine.this.reset();
 									DiagramHelper.setNeedsRefresh();
 									Display.getDefault().asyncExec(new Runnable() {
 
+										@Override
 										public void run() {
 											DiagramHelper.refreshDiagrams();
 										}
@@ -84,7 +87,7 @@ public class ProjectCSSEngine extends ExtendedCSSEngineImpl {
 	/**
 	 * The file name of the EMF Model containing the {@link StyleSheet}s.
 	 * It will be stored in the project's preferences scope (Typically the .settings folder)
-	 * 
+	 *
 	 * @see {@link ProjectScope}
 	 */
 	public static String PROJECT_STYLESHEETS = "stylesheets.xmi"; //$NON-NLS-1$
@@ -104,7 +107,7 @@ public class ProjectCSSEngine extends ExtendedCSSEngineImpl {
 		super(WorkspaceCSSEngine.instance);
 
 		URI resourceURI = modelResource.getURI();
-		if(resourceURI.isPlatformResource()) {
+		if (resourceURI.isPlatformResource()) {
 			String platformString = resourceURI.toPlatformString(true);
 			try {
 				IPath workspacePath = new Path(platformString);
@@ -123,7 +126,7 @@ public class ProjectCSSEngine extends ExtendedCSSEngineImpl {
 		super(WorkspaceCSSEngine.instance);
 
 		this.project = project;
-		
+
 		try {
 			IPath preferencesAbsolutePath = new ProjectScope(project).getLocation().append(PROJECT_STYLESHEETS);
 			IPath projectRelativePath = preferencesAbsolutePath.makeRelativeTo(project.getLocation());
@@ -133,20 +136,20 @@ public class ProjectCSSEngine extends ExtendedCSSEngineImpl {
 			Activator.log.error(ex);
 		}
 	}
-	
+
 	/**
 	 * Creates the project-scoped CSS engine for the project containing the specified {@code modelResource}, if such
 	 * project actually exists.
-	 * 
+	 *
 	 * @param modelResource
-	 *        a model resource
+	 *            a model resource
 	 * @return the containing project's CSS engine, or {@code null} if the containing project does not exist
 	 */
 	public static ProjectCSSEngine createEngine(Resource modelResource) {
 		ProjectCSSEngine result = null;
-		
+
 		URI resourceURI = modelResource.getURI();
-		if(resourceURI.isPlatformResource()) {
+		if (resourceURI.isPlatformResource()) {
 			String platformString = resourceURI.toPlatformString(true);
 			try {
 				IPath workspacePath = new Path(platformString);
@@ -155,11 +158,11 @@ public class ProjectCSSEngine extends ExtendedCSSEngineImpl {
 					result = new ProjectCSSEngine(project);
 				}
 			} catch (Exception ex) {
-				// It's OK.  We'll return a null result because it wouldn't be a valid CSS engine
+				// It's OK. We'll return a null result because it wouldn't be a valid CSS engine
 				Activator.log.error(ex);
 			}
 		}
-		
+
 		return result;
 	}
 
@@ -172,11 +175,11 @@ public class ProjectCSSEngine extends ExtendedCSSEngineImpl {
 	@Override
 	protected void reloadStyleSheets() {
 		styleSheets.clear();
-		if(project == null || !project.exists() || !project.isOpen()) {
+		if (project == null || !project.exists() || !project.isOpen()) {
 			return;
 		}
 
-		if(stylesheetPreferences == null || !stylesheetPreferences.exists()) {
+		if (stylesheetPreferences == null || !stylesheetPreferences.exists()) {
 			return;
 		}
 
@@ -187,10 +190,10 @@ public class ProjectCSSEngine extends ExtendedCSSEngineImpl {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		try {
 			Resource stylesheetsResource = resourceSet.getResource(workspaceURI, true);
-			for(EObject rootElement : stylesheetsResource.getContents()) {
-				if(rootElement instanceof StyleSheet) {
-					//Do not call super#addStyleSheet(styleSheet) to avoid a StackOverFlow
-					styleSheets.add((StyleSheet)rootElement);
+			for (EObject rootElement : stylesheetsResource.getContents()) {
+				if (rootElement instanceof StyleSheet) {
+					// Do not call super#addStyleSheet(styleSheet) to avoid a StackOverFlow
+					styleSheets.add((StyleSheet) rootElement);
 				}
 			}
 		} catch (Exception ex) {
@@ -202,14 +205,14 @@ public class ProjectCSSEngine extends ExtendedCSSEngineImpl {
 	@Override
 	protected void parseStyleSheet(StyleSheetReference styleSheet) throws IOException {
 		String path = styleSheet.getPath();
-		if(path.startsWith("/")) { //$NON-NLS-1$
+		if (path.startsWith("/")) { //$NON-NLS-1$
 			super.parseStyleSheet(styleSheet);
 		} else {
-			//Parse relative paths from the Project
-			if(project != null && project.exists() && project.isOpen()) {
+			// Parse relative paths from the Project
+			if (project != null && project.exists() && project.isOpen()) {
 				IFile file = project.getFile(path);
 
-				if(file.exists()) {
+				if (file.exists()) {
 					try {
 						parseStyleSheet(file.getContents());
 					} catch (CoreException ex) {

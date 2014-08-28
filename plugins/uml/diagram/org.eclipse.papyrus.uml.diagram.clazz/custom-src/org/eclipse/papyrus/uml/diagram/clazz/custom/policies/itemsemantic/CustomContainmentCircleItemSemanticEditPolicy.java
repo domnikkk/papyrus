@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -67,62 +67,62 @@ public class CustomContainmentCircleItemSemanticEditPolicy extends UMLBaseItemSe
 
 	/**
 	 * Gets the destroy element command gen.
-	 * 
+	 *
 	 * @param req
-	 *        the req
+	 *            the req
 	 * @return the destroy element command gen
 	 */
 	protected Command getDestroyElementCommandGen(DestroyElementRequest req) {
-		// copy of super.getDestroyElementCommand() 
+		// copy of super.getDestroyElementCommand()
 		// with commented case of AddedLinkAddedPart wihich causes NPE
-		View view = (View)getHost().getModel();
+		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
-		for(Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
-			Edge incomingLink = (Edge)it.next();
-			if(UMLVisualIDRegistry.getVisualID(incomingLink) == RealizationEditPart.VISUAL_ID) {
+		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
+			Edge incomingLink = (Edge) it.next();
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == RealizationEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if(UMLVisualIDRegistry.getVisualID(incomingLink) == AbstractionEditPart.VISUAL_ID) {
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == AbstractionEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if(UMLVisualIDRegistry.getVisualID(incomingLink) == UsageEditPart.VISUAL_ID) {
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == UsageEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if(UMLVisualIDRegistry.getVisualID(incomingLink) == DependencyEditPart.VISUAL_ID) {
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == DependencyEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if(UMLVisualIDRegistry.getVisualID(incomingLink) == DependencyBranchEditPart.VISUAL_ID) {
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == DependencyBranchEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if(UMLVisualIDRegistry.getVisualID(incomingLink) == CommentAnnotatedElementEditPart.VISUAL_ID) {
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == CommentAnnotatedElementEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if(UMLVisualIDRegistry.getVisualID(incomingLink) == ConstraintConstrainedElementEditPart.VISUAL_ID) {
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == ConstraintConstrainedElementEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if(UMLVisualIDRegistry.getVisualID(incomingLink) == TemplateBindingEditPart.VISUAL_ID) {
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == TemplateBindingEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -136,46 +136,46 @@ public class CustomContainmentCircleItemSemanticEditPolicy extends UMLBaseItemSe
 			 * continue;
 			 * }
 			 **/
-			if(UMLVisualIDRegistry.getVisualID(incomingLink) == ConnectorTimeObservationEditPart.VISUAL_ID) {
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == ConnectorTimeObservationEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if(UMLVisualIDRegistry.getVisualID(incomingLink) == ConnectorDurationObservationEditPart.VISUAL_ID) {
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == ConnectorDurationObservationEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
 		}
-		for(Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
-			Edge outgoingLink = (Edge)it.next();
-			if(UMLVisualIDRegistry.getVisualID(outgoingLink) == RealizationEditPart.VISUAL_ID) {
+		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
+			Edge outgoingLink = (Edge) it.next();
+			if (UMLVisualIDRegistry.getVisualID(outgoingLink) == RealizationEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if(UMLVisualIDRegistry.getVisualID(outgoingLink) == AbstractionEditPart.VISUAL_ID) {
+			if (UMLVisualIDRegistry.getVisualID(outgoingLink) == AbstractionEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if(UMLVisualIDRegistry.getVisualID(outgoingLink) == UsageEditPart.VISUAL_ID) {
+			if (UMLVisualIDRegistry.getVisualID(outgoingLink) == UsageEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if(UMLVisualIDRegistry.getVisualID(outgoingLink) == DependencyEditPart.VISUAL_ID) {
+			if (UMLVisualIDRegistry.getVisualID(outgoingLink) == DependencyEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if(UMLVisualIDRegistry.getVisualID(outgoingLink) == DependencyBranchEditPart.VISUAL_ID) {
+			if (UMLVisualIDRegistry.getVisualID(outgoingLink) == DependencyBranchEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -191,7 +191,7 @@ public class CustomContainmentCircleItemSemanticEditPolicy extends UMLBaseItemSe
 			 **/
 		}
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
-		if(annotation == null) {
+		if (annotation == null) {
 			// there are indirectly referenced children, need extra commands: false
 			addDestroyShortcutsCommand(cmd, view);
 			// delete host element
@@ -206,28 +206,28 @@ public class CustomContainmentCircleItemSemanticEditPolicy extends UMLBaseItemSe
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
-		View circle = (View)getHost().getModel();
+		View circle = (View) getHost().getModel();
 		List<String> targetNames = new ArrayList<String>();
-		for(Object next : circle.getSourceEdges()) {
-			Edge outgoingLink = (Edge)next;
-			if(ContainmentHelper.isContainmentLink(outgoingLink)) {
-				targetNames.add(((NamedElement)outgoingLink.getTarget().getElement()).getName());
+		for (Object next : circle.getSourceEdges()) {
+			Edge outgoingLink = (Edge) next;
+			if (ContainmentHelper.isContainmentLink(outgoingLink)) {
+				targetNames.add(((NamedElement) outgoingLink.getTarget().getElement()).getName());
 			}
 		}
 		cmd.add(new AskToDeleteContainmentCommand(targetNames));
-		ICommandProxy command = (ICommandProxy)getDestroyElementCommandGen(req);
+		ICommandProxy command = (ICommandProxy) getDestroyElementCommandGen(req);
 		cmd.add(command.getICommand());
-		for(Object next : circle.getSourceEdges()) {
-			Edge outgoingLink = (Edge)next;
-			if(ContainmentHelper.isContainmentLink(outgoingLink)) {
+		for (Object next : circle.getSourceEdges()) {
+			Edge outgoingLink = (Edge) next;
+			if (ContainmentHelper.isContainmentLink(outgoingLink)) {
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
-				//delete target view as it actually contained by the source object and will be deleted 
+				// delete target view as it actually contained by the source object and will be deleted
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink.getTarget()));
 				// Important! Here we remove target
 				cmd.add(new DestroyElementCommand(new DestroyElementRequest(outgoingLink.getTarget().getElement(), true)));
@@ -238,21 +238,21 @@ public class CustomContainmentCircleItemSemanticEditPolicy extends UMLBaseItemSe
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	public Command getCommand(Request request) {
-		if(request instanceof ReconnectRequest) {
-			if(((ReconnectRequest)request).getTarget() instanceof CContainmentCircleEditPart) {
-				return getCustomReconnectRequest((ReconnectRequest)request);
+		if (request instanceof ReconnectRequest) {
+			if (((ReconnectRequest) request).getTarget() instanceof CContainmentCircleEditPart) {
+				return getCustomReconnectRequest((ReconnectRequest) request);
 			}
 		}
 		return super.getCommand(request);
 	}
 
 	/**
-	 * 
+	 *
 	 * use the AbstractTransactionalCommand "CustomReorientLinkCommand" to change the owner of the target class
 	 */
 	public Command getCustomReconnectRequest(ReconnectRequest request) {
@@ -275,8 +275,8 @@ public class CustomContainmentCircleItemSemanticEditPolicy extends UMLBaseItemSe
 			String messageFormat = "You are about to delete a Containment Link - %s and its contained elements will be deleted as well. Are you sure you want to delete it?";
 			String message = String.format(messageFormat, getNamesString());
 			NotificationBuilder builder = NotificationBuilder.createYesNo(message);
-			int dialogResult = ((PopupNotification)builder.run()).getResult();
-			if(dialogResult == SWT.YES) {
+			int dialogResult = ((PopupNotification) builder.run()).getResult();
+			if (dialogResult == SWT.YES) {
 				return Status.OK_STATUS;
 			}
 			return Status.CANCEL_STATUS;
@@ -285,9 +285,9 @@ public class CustomContainmentCircleItemSemanticEditPolicy extends UMLBaseItemSe
 		private String getNamesString() {
 			String namesString = "";
 			Iterator<String> namesIterator = myTargetNames.iterator();
-			while(namesIterator.hasNext()) {
+			while (namesIterator.hasNext()) {
 				namesString += "'" + namesIterator.next() + "'";
-				if(namesIterator.hasNext()) {
+				if (namesIterator.hasNext()) {
 					namesString += ", ";
 				}
 			}

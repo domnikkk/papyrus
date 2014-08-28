@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,14 +29,14 @@ import org.eclipse.papyrus.sysml.modelelements.ViewPoint;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ModelelementsFactoryImpl extends EFactoryImpl implements ModelelementsFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -49,13 +49,13 @@ public class ModelelementsFactoryImpl extends EFactoryImpl implements Modeleleme
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ModelelementsFactory init() {
 		try {
-			ModelelementsFactory theModelelementsFactory = (ModelelementsFactory)EPackage.Registry.INSTANCE.getEFactory(ModelelementsPackage.eNS_URI);
-			if(theModelelementsFactory != null) {
+			ModelelementsFactory theModelelementsFactory = (ModelelementsFactory) EPackage.Registry.INSTANCE.getEFactory(ModelelementsPackage.eNS_URI);
+			if (theModelelementsFactory != null) {
 				return theModelelementsFactory;
 			}
 		} catch (Exception exception) {
@@ -68,7 +68,7 @@ public class ModelelementsFactoryImpl extends EFactoryImpl implements Modeleleme
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelelementsFactoryImpl() {
@@ -77,12 +77,12 @@ public class ModelelementsFactoryImpl extends EFactoryImpl implements Modeleleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case ModelelementsPackage.CONFORM:
 			return createConform();
 		case ModelelementsPackage.VIEW:
@@ -100,7 +100,7 @@ public class ModelelementsFactoryImpl extends EFactoryImpl implements Modeleleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Conform createConform() {
@@ -110,7 +110,7 @@ public class ModelelementsFactoryImpl extends EFactoryImpl implements Modeleleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Problem createProblem() {
@@ -120,7 +120,7 @@ public class ModelelementsFactoryImpl extends EFactoryImpl implements Modeleleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Rationale createRationale() {
@@ -130,7 +130,7 @@ public class ModelelementsFactoryImpl extends EFactoryImpl implements Modeleleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public View createView() {
@@ -140,7 +140,7 @@ public class ModelelementsFactoryImpl extends EFactoryImpl implements Modeleleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ViewPoint createViewPoint() {
@@ -150,11 +150,11 @@ public class ModelelementsFactoryImpl extends EFactoryImpl implements Modeleleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelelementsPackage getModelelementsPackage() {
-		return (ModelelementsPackage)getEPackage();
+		return (ModelelementsPackage) getEPackage();
 	}
 
 } // ModelelementsFactoryImpl

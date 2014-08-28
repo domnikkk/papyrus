@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -38,7 +38,7 @@ public class ValidationProvider {
 				}
 			}
 		};
-		if(editingDomain != null) {
+		if (editingDomain != null) {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
@@ -50,11 +50,11 @@ public class ValidationProvider {
 	}
 
 	static boolean isInDefaultEditorContext(Object object) {
-		if(shouldConstraintsBePrivate() && !constraintsActive) {
+		if (shouldConstraintsBePrivate() && !constraintsActive) {
 			return false;
 		}
-		if(object instanceof View) {
-			return constraintsActive && ElementTypes.DIAGRAM_ID.equals(((View)object).getDiagram().getType());
+		if (object instanceof View) {
+			return constraintsActive && ElementTypes.DIAGRAM_ID.equals(((View) object).getDiagram().getType());
 		}
 		return true;
 	}

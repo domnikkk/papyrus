@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,9 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
 /**
  * A catalog for property view URIs
- * 
+ *
  * Handles URIs with the ppe:/ scheme
- * 
+ *
  * @author Camille Letavernier
  */
 public class PropertiesCatalog implements Factory {
@@ -37,21 +37,21 @@ public class PropertiesCatalog implements Factory {
 	/**
 	 * An XMIResource with a specific URI Converter, for handling
 	 * the ppe:/ scheme
-	 * 
+	 *
 	 * @author Camille Letavernier
 	 */
-	//TODO : This class should encapsulate a resource, and not extend it
-	//Non-xmi resources which are relative to a XMI resource cannot be handled
-	//Typically, xwt files cannot be handled by an XMIResource
-	//Problem : local calls to getURIConverter will skip the encapsulation...
+	// TODO : This class should encapsulate a resource, and not extend it
+	// Non-xmi resources which are relative to a XMI resource cannot be handled
+	// Typically, xwt files cannot be handled by an XMIResource
+	// Problem : local calls to getURIConverter will skip the encapsulation...
 	public class PropertiesXMIResource extends XMIResourceImpl {
 
 		/**
-		 * 
+		 *
 		 * Constructor.
-		 * 
+		 *
 		 * @param sourceURI
-		 *        The URI to associate to this resource
+		 *            The URI to associate to this resource
 		 */
 		public PropertiesXMIResource(URI sourceURI) {
 			super(sourceURI);

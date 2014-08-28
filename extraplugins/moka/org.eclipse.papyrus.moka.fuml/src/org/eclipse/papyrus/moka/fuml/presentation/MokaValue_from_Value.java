@@ -27,17 +27,18 @@ public class MokaValue_from_Value extends MokaValue_for_fUML {
 		this.value = value;
 	}
 
-	//////////////////////////////////
+	// ////////////////////////////////
 	// Presentation
-	//////////////////////////////////
+	// ////////////////////////////////
 
+	@Override
 	public String getDetails() {
 		return value.toString();
 	}
 
-	//////////////////////////////////
+	// ////////////////////////////////
 	// Debug
-	//////////////////////////////////
+	// ////////////////////////////////
 
 	@Override
 	public String getValueString() throws DebugException {
@@ -46,15 +47,15 @@ public class MokaValue_from_Value extends MokaValue_for_fUML {
 
 	@Override
 	public IVariable[] getVariables() throws DebugException {
-		if(variables == null) {
-			if(!(value instanceof CompoundValue)) {
-				variables = new IVariable[]{};
-			} else if(((CompoundValue)value).featureValues.isEmpty()) {
-				variables = new IVariable[]{};
+		if (variables == null) {
+			if (!(value instanceof CompoundValue)) {
+				variables = new IVariable[] {};
+			} else if (((CompoundValue) value).featureValues.isEmpty()) {
+				variables = new IVariable[] {};
 			} else {
-				CompoundValue compound = (CompoundValue)value;
+				CompoundValue compound = (CompoundValue) value;
 				variables = new IVariable[compound.featureValues.size()];
-				for(int i = 0; i < variables.length; i++) {
+				for (int i = 0; i < variables.length; i++) {
 					IVariable featureValueVariable = new MokaVariable_from_FeatureValue(compound.featureValues.get(i));
 					variables[i] = featureValueVariable;
 				}

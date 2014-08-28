@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,18 +24,18 @@ package org.eclipse.papyrus.eastadl.dependability.errormodel;
  *
  * <!-- begin-model-doc -->
  * The FailureOutPort represents a propagation point for failures that propagate out from the containing ErrorModelType.The EADatatype of the FailureOutPort defines the range of valid failures.
- * 
- * 
+ *
+ *
  * Constraints:
  * [1] The direction of the nominal port must be out.
- * 
+ *
  * Semantics:
  * The value range of a FailureOutPort represents failures that can propagate to FaultInPorts in other ErrorModels. The value range is defined by the FailureOutPort’s EADatatype.
- * 
+ *
  * If nominal Ports HWTargets or FunctionTargets are referenced, the failures of the FailureOutPort correspond to data on these nominal ports.
- * 
- * 
- * Extension: 
+ *
+ *
+ * Extension:
  * UML::Port
  * <!-- end-model-doc -->
  *

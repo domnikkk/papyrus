@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,6 +20,7 @@ import java.util.Iterator;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.uml.profile.Message;
 import org.eclipse.papyrus.uml.profile.tree.ProfileElementLabelProvider;
 import org.eclipse.papyrus.uml.profile.ui.dialogs.ComboSelectionDialog;
@@ -38,11 +39,11 @@ public class StereotypeValueTreeObject extends ValueTreeObject {
 
 	/**
 	 * Creates a new StereotypeValueTreeObject.
-	 * 
+	 *
 	 * @param value
-	 *        the value
+	 *            the value
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	public StereotypeValueTreeObject(AppliedStereotypePropertyTreeObject parent, Object value) {
 		super(parent, value);
@@ -51,14 +52,14 @@ public class StereotypeValueTreeObject extends ValueTreeObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.profile.tree.objects.ValueTreeObject#editMe()
 	 */
 	@Override
 	public void editMe() {
 
-		AppliedStereotypePropertyTreeObject pTO = (AppliedStereotypePropertyTreeObject)getParent();
-		Element elt = ((StereotypedElementTreeObject)getParent().getParent().getParent()).getElement();
+		AppliedStereotypePropertyTreeObject pTO = (AppliedStereotypePropertyTreeObject) getParent();
+		Element elt = ((StereotypedElementTreeObject) getParent().getParent().getParent()).getElement();
 		Property property = pTO.getProperty();
 		Type type = property.getType();
 
@@ -71,15 +72,15 @@ public class StereotypeValueTreeObject extends ValueTreeObject {
 			@SuppressWarnings("unchecked")
 			EList<EObject> values = (EList<EObject>) pTO.getValue();
 			if (values != null) {
-				Iterator<Element> filteredElementIt = filteredElements.iterator ();
-				while (filteredElementIt.hasNext ()) {
+				Iterator<Element> filteredElementIt = filteredElements.iterator();
+				while (filteredElementIt.hasNext()) {
 					EObject eObj = filteredElementIt.next();
 					if (eObj instanceof Element) {
 						Element element = (Element) eObj;
 						EObject stereoApplication = element.getStereotypeApplication((Stereotype) type);
-						if ((values.contains (stereoApplication)) && (stereoApplication != value)) {
+						if ((values.contains(stereoApplication)) && (stereoApplication != value)) {
 							// remove already selected elements, but not the current (value)
-							filteredElementIt.remove ();
+							filteredElementIt.remove();
 						}
 					}
 				}
@@ -88,7 +89,7 @@ public class StereotypeValueTreeObject extends ValueTreeObject {
 
 		String[] elementNames = Util.getStringArrayFromList(filteredElements);
 		// if no possible selection : abort
-		if(elementNames == null) {
+		if (elementNames == null) {
 			Message.warning("No element stereotyped <<" + type.getName() + ">> was found in the model.");
 			return;
 		}
@@ -97,13 +98,13 @@ public class StereotypeValueTreeObject extends ValueTreeObject {
 		String initialValue = (value != null ? labelProvider.getText(this) : elementNames[0]);
 		ComboSelectionDialog valueDialog = new ComboSelectionDialog(new Shell(), "New value:", elementNames, initialValue);
 		int val = valueDialog.open();
-		if((val == ComboSelectionDialog.OK) && (valueDialog.indexOfSelection != -1)) {
-			Element newElement = (Element)filteredElements.get(valueDialog.indexOfSelection);
-			EObject newValue = newElement.getStereotypeApplication((Stereotype)type);
+		if ((val == Window.OK) && (valueDialog.indexOfSelection != -1)) {
+			Element newElement = filteredElements.get(valueDialog.indexOfSelection);
+			EObject newValue = newElement.getStereotypeApplication((Stereotype) type);
 			if (newValue == null) {
 				// the selected element is stereotyped with stereotype specializing type
-				EList<Stereotype> specialStereotypes = newElement.getAppliedSubstereotypes((Stereotype)type);
-				if(!specialStereotypes.isEmpty()) {
+				EList<Stereotype> specialStereotypes = newElement.getAppliedSubstereotypes((Stereotype) type);
+				if (!specialStereotypes.isEmpty()) {
 					newValue = newElement.getStereotypeApplication(specialStereotypes.get(0));
 				}
 			}

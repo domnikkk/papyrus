@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,14 +46,14 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 	protected IObservableValue styleObservable;
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	public void activate() {
 		// retrieve the view and the element managed by the edit part
-		View view = (View)getHost().getModel();
-		if(view == null) {
+		View view = (View) getHost().getModel();
+		if (view == null) {
 			return;
 		}
 
@@ -65,7 +65,7 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 		getDiagramEventBroker().addNotificationListener(view, this);
 
 		EObject semanticElement = EMFHelper.getEObject(getHost());
-		if(semanticElement != null) {
+		if (semanticElement != null) {
 			getDiagramEventBroker().addNotificationListener(semanticElement, this);
 		}
 
@@ -75,12 +75,12 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 
 	/**
 	 * Gets the diagram event broker from the editing domain.
-	 * 
+	 *
 	 * @return the diagram event broker
 	 */
 	protected DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
-		if(theEditingDomain != null) {
+		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		if (theEditingDomain != null) {
 			return DiagramEventBroker.getInstance(theEditingDomain);
 		}
 		return null;
@@ -88,21 +88,21 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 
 
 	/**
-	 * 
+	 *
 	 * @param currentView
 	 * @return the current Style that reperesent the boder
 	 */
 	protected BooleanValueStyle getMaintainSymbolRatioStyle(View currentView) {
-		return (BooleanValueStyle)currentView.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), DISPLAY_BORDER);
+		return (BooleanValueStyle) currentView.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), DISPLAY_BORDER);
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	public void deactivate() {
-		if(styleObservable != null) {
+		if (styleObservable != null) {
 			styleObservable.removeChangeListener(this);
 			styleObservable.dispose();
 			styleObservable = null;
@@ -126,8 +126,8 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 
 	protected IFigure getPrimaryShape() {
 		EditPart host = getHost();
-		if(host instanceof IPapyrusEditPart) {
-			IPapyrusEditPart graphicalHost = (IPapyrusEditPart)host;
+		if (host instanceof IPapyrusEditPart) {
+			IPapyrusEditPart graphicalHost = (IPapyrusEditPart) host;
 			return graphicalHost.getPrimaryShape();
 		}
 
@@ -136,11 +136,11 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 
 	protected View getNotationView() {
 		EditPart host = getHost();
-		if(host instanceof org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart) {
-			return ((org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart)host).getNotationView();
+		if (host instanceof org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart) {
+			return ((org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart) host).getNotationView();
 		}
 
-		View view = (View)host.getAdapter(View.class);
+		View view = (View) host.getAdapter(View.class);
 		return view;
 	}
 
@@ -148,39 +148,39 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 
 	protected void refreshBorderDisplay() {
 		View view = getNotationView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
 
 		BooleanValueStyle displayBorderStyle = findDisplayBorderStyle(view);
 
-		if(displayBorderStyle != null && !displayBorderStyle.isBooleanValue()) {
-			if(defaultBorder == null) {
+		if (displayBorderStyle != null && !displayBorderStyle.isBooleanValue()) {
+			if (defaultBorder == null) {
 				defaultBorder = getPrimaryShape().getBorder();
 			}
 			getPrimaryShape().setBorder(null);
 
-			//TODO: This edit policy should be installed on all compartments. We shouldn't need to refresh them from here
-			//			for(Object currentEditPart : getHost().getChildren()) {
-			//				if(currentEditPart instanceof ResizableCompartmentEditPart) {
-			//					((ResizableCompartmentEditPart)currentEditPart).getFigure().setBorder(null);
-			//				}
-			//			}
+			// TODO: This edit policy should be installed on all compartments. We shouldn't need to refresh them from here
+			// for(Object currentEditPart : getHost().getChildren()) {
+			// if(currentEditPart instanceof ResizableCompartmentEditPart) {
+			// ((ResizableCompartmentEditPart)currentEditPart).getFigure().setBorder(null);
+			// }
+			// }
 			//
 
 
 		} else {
-			if(defaultBorder != null) {
+			if (defaultBorder != null) {
 				getPrimaryShape().setBorder(defaultBorder);
 			}
 			defaultBorder = null;
 
-			//TODO: This edit policy should be installed on all compartments. We shouldn't need to refresh them from here
-			//			for(Object currentEditPart : getHost().getChildren()) {
-			//				if(currentEditPart instanceof ResizableCompartmentEditPart) {
-			//					((ResizableCompartmentEditPart)currentEditPart).getFigure().setBorder(new OneLineBorder());
-			//				}
-			//			}
+			// TODO: This edit policy should be installed on all compartments. We shouldn't need to refresh them from here
+			// for(Object currentEditPart : getHost().getChildren()) {
+			// if(currentEditPart instanceof ResizableCompartmentEditPart) {
+			// ((ResizableCompartmentEditPart)currentEditPart).getFigure().setBorder(new OneLineBorder());
+			// }
+			// }
 			//
 
 		}
@@ -189,14 +189,14 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 
 	private BooleanValueStyle findDisplayBorderStyle(View view) {
 		View parentView = view;
-		while(parentView.getElement() == view.getElement()) {
-			BooleanValueStyle style = (BooleanValueStyle)parentView.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), DISPLAY_BORDER);
-			if(style != null) {
+		while (parentView.getElement() == view.getElement()) {
+			BooleanValueStyle style = (BooleanValueStyle) parentView.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), DISPLAY_BORDER);
+			if (style != null) {
 				return style;
 			}
 
-			if(parentView.eContainer() instanceof View) {
-				parentView = (View)parentView.eContainer();
+			if (parentView.eContainer() instanceof View) {
+				parentView = (View) parentView.eContainer();
 			} else {
 				break;
 			}

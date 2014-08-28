@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -57,21 +57,21 @@ public class CustomStateMachineNameEditPart extends StateMachineNameEditPart {
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 
-		View stateMachineLabelView = (View)getModel();
-		View stateMachineView = (View)stateMachineLabelView.eContainer();
-		View stateMachineCompartView = (View)stateMachineView.getChildren().get(1);
+		View stateMachineLabelView = (View) getModel();
+		View stateMachineView = (View) stateMachineLabelView.eContainer();
+		View stateMachineCompartView = (View) stateMachineView.getChildren().get(1);
 
-		StateMachineFigure stateFigure = ((StateMachineEditPart)getParent()).getPrimaryShape();
+		StateMachineFigure stateFigure = ((StateMachineEditPart) getParent()).getPrimaryShape();
 		int width = stateFigure.getBounds().width;
 		// calculate height for labels via position of the rectangle figure after the labels. Layout managers such as the
 		// AutomaticCompartmentLayoutManager add extra space on top of the first label which would not be accounted for
 		// when adding the space for the labels.
 		int height = 0;
-		if(stateMachineCompartView.isVisible() && (stateFigure.getStateMachineCompartmentFigure() != null)) {
+		if (stateMachineCompartView.isVisible() && (stateFigure.getStateMachineCompartmentFigure() != null)) {
 			stateFigure.validate(); // validate the figure, assure that layout manager is called.
 			height = stateFigure.getStateMachineCompartmentFigure().getBounds().y - stateFigure.getBounds().y + 1;
 			// Sanity check
-			if(height < 0) {
+			if (height < 0) {
 				height = 0;
 			}
 		}
@@ -89,7 +89,7 @@ public class CustomStateMachineNameEditPart extends StateMachineNameEditPart {
 		int x = Zone.getX(stateMachineView);
 		int y = Zone.getY(stateMachineView);
 
-		if((stateMachineHeight != -1) && (width != 0) && (dy != 0)) {
+		if ((stateMachineHeight != -1) && (width != 0) && (dy != 0)) {
 			dx = (dx > 0) ? dx : 0;
 			// a resize request, which we route to the specific ResizeCommand
 			IAdaptable adaptableForStateMachine = new SemanticAdapter(null, stateMachineView);

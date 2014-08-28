@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -95,20 +95,20 @@ public class DisplayAppliedStereotypePostAction extends GraphicalPostAction {
 	@Override
 	public void init(Node configurationNode, IAspectActionProvider factory) {
 		super.init(configurationNode, factory);
-		if(configurationNode == null) {
+		if (configurationNode == null) {
 			return;
 		}
 		NodeList childNodes = configurationNode.getChildNodes();
-		for(int i = 0; i < childNodes.getLength(); i++) {
+		for (int i = 0; i < childNodes.getLength(); i++) {
 			String nodeName = childNodes.item(i).getNodeName();
-			if("displayName".equals(nodeName)) {
+			if ("displayName".equals(nodeName)) {
 				Node stereotypeNameNode = childNodes.item(i).getAttributes().getNamedItem(IPapyrusPaletteConstant.NAME);
-				if(stereotypeNameNode != null) {
+				if (stereotypeNameNode != null) {
 					stereotypesToDisplay.add(stereotypeNameNode.getNodeValue());
 				}
-			} else if("displayQualifiedName".equals(nodeName)) {
+			} else if ("displayQualifiedName".equals(nodeName)) {
 				Node stereotypeNameNode = childNodes.item(i).getAttributes().getNamedItem(IPapyrusPaletteConstant.NAME);
-				if(stereotypeNameNode != null) {
+				if (stereotypeNameNode != null) {
 					stereotypesQNToDisplay.add(stereotypeNameNode.getNodeValue());
 				}
 			}
@@ -120,18 +120,18 @@ public class DisplayAppliedStereotypePostAction extends GraphicalPostAction {
 	 */
 	@Override
 	public void save(Node parentNode) {
-		for(String stereotypeName : listOfDisplayableStereotypes.keySet()) {
+		for (String stereotypeName : listOfDisplayableStereotypes.keySet()) {
 
-			switch(listOfDisplayableStereotypes.get(stereotypeName)) {
+			switch (listOfDisplayableStereotypes.get(stereotypeName)) {
 			case DISPLAY_SIMPLE_NAME:
-				Element displayName = ((Element)parentNode).getOwnerDocument().createElement("displayName");
+				Element displayName = ((Element) parentNode).getOwnerDocument().createElement("displayName");
 				displayName.setAttribute(IPapyrusPaletteConstant.NAME, stereotypeName);
-				((Element)parentNode).appendChild(displayName);
+				((Element) parentNode).appendChild(displayName);
 				break;
 			case DISPLAY_QUALIFIED_NAME:
-				Element displayQualifiedName = ((Element)parentNode).getOwnerDocument().createElement("displayQualifiedName");
+				Element displayQualifiedName = ((Element) parentNode).getOwnerDocument().createElement("displayQualifiedName");
 				displayQualifiedName.setAttribute(IPapyrusPaletteConstant.NAME, stereotypeName);
-				((Element)parentNode).appendChild(displayQualifiedName);
+				((Element) parentNode).appendChild(displayQualifiedName);
 				break;
 
 			default:
@@ -144,6 +144,7 @@ public class DisplayAppliedStereotypePostAction extends GraphicalPostAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public ICommand getPostCommand(final IAdaptable viewAdapter) {
 		final TransactionalEditingDomain editingDomain = EditorUtils.getTransactionalEditingDomain();
 
@@ -151,22 +152,22 @@ public class DisplayAppliedStereotypePostAction extends GraphicalPostAction {
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				View view = (View)viewAdapter.getAdapter(View.class);
+				View view = (View) viewAdapter.getAdapter(View.class);
 
 				// creates the commands to display simple stereotypes name
-				for(String stereotypeName : stereotypesToDisplay) {
+				for (String stereotypeName : stereotypesToDisplay) {
 					String presentationKind = AppliedStereotypeHelper.getAppliedStereotypePresentationKind(view);
 					AppliedStereotypeHelper.getAddAppliedStereotypeCommand(editingDomain, view, stereotypeName, presentationKind).execute();
 				}
 
 				// creates the commands to display qualified names of stereotypes
-				for(String stereotypeName : stereotypesQNToDisplay) {
+				for (String stereotypeName : stereotypesQNToDisplay) {
 					AppliedStereotypeHelper.getAddAppliedStereotypeToDisplayWithQNCommand(editingDomain, view, stereotypeName).execute();
 				}
 
-				org.eclipse.uml2.uml.Element element = (org.eclipse.uml2.uml.Element)view.getElement();
-				for(Stereotype stereo : element.getAppliedStereotypes()) {
-					if(!stereotypesQNToDisplay.contains(stereo.getQualifiedName()) && !stereotypesToDisplay.contains(stereo.getQualifiedName())) {
+				org.eclipse.uml2.uml.Element element = (org.eclipse.uml2.uml.Element) view.getElement();
+				for (Stereotype stereo : element.getAppliedStereotypes()) {
+					if (!stereotypesQNToDisplay.contains(stereo.getQualifiedName()) && !stereotypesToDisplay.contains(stereo.getQualifiedName())) {
 						String presentationKind = AppliedStereotypeHelper.getAppliedStereotypePresentationKind(view);
 						AppliedStereotypeHelper.getRemoveAppliedStereotypeCommand(editingDomain, view, stereo.getQualifiedName(), presentationKind).execute();
 					}
@@ -185,11 +186,11 @@ public class DisplayAppliedStereotypePostAction extends GraphicalPostAction {
 		this.entryProxy = entryProxy;
 
 		// retrieve displayable stereotypes
-		if(entryProxy instanceof IPaletteAspectToolEntryProxy) {
-			for(IPostAction postAction : ((IPaletteAspectToolEntryProxy)entryProxy).getPostActions()) {
-				if(postAction instanceof StereotypePostAction) {
-					for(String stereotype : ((StereotypePostAction)postAction).getStereotypesToApply()) {
-						if(!listOfDisplayableStereotypes.containsKey(stereotype)) {
+		if (entryProxy instanceof IPaletteAspectToolEntryProxy) {
+			for (IPostAction postAction : ((IPaletteAspectToolEntryProxy) entryProxy).getPostActions()) {
+				if (postAction instanceof StereotypePostAction) {
+					for (String stereotype : ((StereotypePostAction) postAction).getStereotypesToApply()) {
+						if (!listOfDisplayableStereotypes.containsKey(stereotype)) {
 							listOfDisplayableStereotypes.put(stereotype, DONT_DISPLAY);
 						}
 					}
@@ -198,13 +199,13 @@ public class DisplayAppliedStereotypePostAction extends GraphicalPostAction {
 		}
 
 		// Load from config
-		for(String stereotypeName : stereotypesToDisplay) {
-			if(listOfDisplayableStereotypes.containsKey(stereotypeName)) {
+		for (String stereotypeName : stereotypesToDisplay) {
+			if (listOfDisplayableStereotypes.containsKey(stereotypeName)) {
 				listOfDisplayableStereotypes.put(stereotypeName, DISPLAY_SIMPLE_NAME);
 			}
 		}
-		for(String stereotypeName : stereotypesQNToDisplay) {
-			if(listOfDisplayableStereotypes.containsKey(stereotypeName)) {
+		for (String stereotypeName : stereotypesQNToDisplay) {
+			if (listOfDisplayableStereotypes.containsKey(stereotypeName)) {
 				listOfDisplayableStereotypes.put(stereotypeName, DISPLAY_QUALIFIED_NAME);
 			}
 		}
@@ -223,20 +224,23 @@ public class DisplayAppliedStereotypePostAction extends GraphicalPostAction {
 		createColumns(stereotypesToShowTableViewer);
 		stereotypesToShowTableViewer.setContentProvider(new IStructuredContentProvider() {
 
+			@Override
 			public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 				// TODO Auto-generated method stub
 
 			}
 
+			@Override
 			public void dispose() {
 				// TODO Auto-generated method stub
 
 			}
 
+			@Override
 			@SuppressWarnings("unchecked")
 			public Object[] getElements(Object inputElement) {
-				if(inputElement instanceof HashMap<?, ?>) {
-					return ((HashMap<String, Integer>)inputElement).keySet().toArray();
+				if (inputElement instanceof HashMap<?, ?>) {
+					return ((HashMap<String, Integer>) inputElement).keySet().toArray();
 				}
 				return null;
 			}
@@ -255,14 +259,16 @@ public class DisplayAppliedStereotypePostAction extends GraphicalPostAction {
 	 */
 	class StereotypeToDisplayLabelProvider extends LabelProvider implements ITableLabelProvider {
 
+		@Override
 		public Image getColumnImage(Object element, int columnIndex) {
 			return null;
 		}
 
+		@Override
 		public String getColumnText(Object element, int columnIndex) {
-			switch(columnIndex) {
+			switch (columnIndex) {
 			case 0:
-				return (String)element;
+				return (String) element;
 			case 1:
 				return diplayOptions[listOfDisplayableStereotypes.get(element)];
 
@@ -283,7 +289,7 @@ public class DisplayAppliedStereotypePostAction extends GraphicalPostAction {
 		public StereotypeToDisplayEditingSupport(ColumnViewer viewer) {
 			super(viewer);
 
-			editor = new ComboBoxCellEditor(((TableViewer)viewer).getTable(), diplayOptions);
+			editor = new ComboBoxCellEditor(((TableViewer) viewer).getTable(), diplayOptions);
 		}
 
 		@Override
@@ -303,7 +309,7 @@ public class DisplayAppliedStereotypePostAction extends GraphicalPostAction {
 
 		@Override
 		protected void setValue(Object element, Object value) {
-			listOfDisplayableStereotypes.put((String)element, (Integer)value);
+			listOfDisplayableStereotypes.put((String) element, (Integer) value);
 			getViewer().update(element, null);
 		}
 	}
@@ -311,9 +317,9 @@ public class DisplayAppliedStereotypePostAction extends GraphicalPostAction {
 	/**
 	 * Creates appropriate columns : one for the stereotype and one for its
 	 * display options
-	 * 
+	 *
 	 * @param viewer
-	 *        the table to create the columns in
+	 *            the table to create the columns in
 	 */
 	protected void createColumns(TableViewer viewer) {
 

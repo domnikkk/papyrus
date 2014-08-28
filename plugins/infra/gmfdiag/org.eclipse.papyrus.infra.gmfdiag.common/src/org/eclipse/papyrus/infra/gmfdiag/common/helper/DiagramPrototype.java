@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,23 +29,24 @@ import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 
 /**
  * Represents a prototype of GMF diagram for the viewpoints infrastructure
+ *
  * @author Laurent Wouters
  */
 public class DiagramPrototype extends ViewPrototype {
 	protected final String category;
 	protected final AbstractPapyrusGmfCreateDiagramCommandHandler command;
-	
+
 	public DiagramPrototype(PapyrusView configuration, String category, AbstractPapyrusGmfCreateDiagramCommandHandler command) {
 		super(configuration);
 		this.category = category;
 		this.command = command;
 	}
-	
+
 	@Override
 	public boolean instantiateOn(EObject owner) {
 		return instantiateOn(owner, null);
 	}
-	
+
 	@Override
 	public boolean instantiateOn(EObject owner, String name) {
 		ServicesRegistry registry;
@@ -65,7 +66,7 @@ public class DiagramPrototype extends ViewPrototype {
 		Object result = command.createDiagram(modelSet, owner, owner, this, name);
 		return (result != null);
 	}
-	
+
 	@Override
 	public boolean isOwnerReassignable() {
 		// Users can always move diagrams that are part of their viewpoint
@@ -74,47 +75,65 @@ public class DiagramPrototype extends ViewPrototype {
 
 	@Override
 	public Command getCommandChangeOwner(EObject view, final EObject target) {
-		final Diagram diagram = (Diagram)view;
+		final Diagram diagram = (Diagram) view;
 		final EObject previous = DiagramUtils.getOwner(diagram);
 		return new AbstractCommand("Change diagram owner") {
 			@Override
 			public void execute() {
 				DiagramUtils.setOwner(diagram, target);
 			}
+
 			@Override
-			public void redo() {
+			public void undo() {
 				DiagramUtils.setOwner(diagram, previous);
 			}
+
 			@Override
-			protected boolean prepare() { return true; }
+			public void redo() {
+				DiagramUtils.setOwner(diagram, target);
+			}
+
+			@Override
+			protected boolean prepare() {
+				return true;
+			}
 		};
 	}
 
 	@Override
 	public Command getCommandChangeRoot(EObject view, final EObject target) {
-		final Diagram diagram = (Diagram)view;
+		final Diagram diagram = (Diagram) view;
 		final EObject previous = diagram.getElement();
 		return new AbstractCommand("Change diagram root element") {
 			@Override
 			public void execute() {
 				diagram.setElement(target);
 			}
+
 			@Override
-			public void redo() {
+			public void undo() {
 				diagram.setElement(previous);
 			}
+
 			@Override
-			protected boolean prepare() { return true; }
+			public void redo() {
+				diagram.setElement(target);
+			}
+
+			@Override
+			protected boolean prepare() {
+				return true;
+			}
 		};
 	}
-	
+
 	@Override
 	public EObject getOwnerOf(EObject view) {
-		return DiagramUtils.getOwner((Diagram)view);
+		return DiagramUtils.getOwner((Diagram) view);
 	}
 
 	@Override
 	public EObject getRootOf(EObject view) {
-		return ((Diagram)view).getElement();
+		return ((Diagram) view).getElement();
 	}
 }

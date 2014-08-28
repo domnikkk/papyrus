@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  CEA LIST - Initial API and implementation
  *  Inspired from Class {@link SwitchPackageImportDialog}
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.modelrepair.ui;
 
@@ -126,7 +126,7 @@ public class SwitchResourceDialog extends SelectionDialog {
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite contents = (Composite)super.createDialogArea(parent);
+		Composite contents = (Composite) super.createDialogArea(parent);
 
 		Composite self = new Composite(contents, SWT.NONE);
 		self.setLayout(new GridLayout(1, false));
@@ -185,21 +185,21 @@ public class SwitchResourceDialog extends SelectionDialog {
 		viewer.setContentProvider(new IStructuredContentProvider() {
 
 			public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-				//Nothing
+				// Nothing
 			}
 
 			public void dispose() {
-				//Nothing
+				// Nothing
 			}
 
 			public Object[] getElements(Object inputElement) {
-				if(inputElement instanceof ModelSet) {
-					ModelSet modelSet = (ModelSet)inputElement;
+				if (inputElement instanceof ModelSet) {
+					ModelSet modelSet = (ModelSet) inputElement;
 
 					Set<PackageImport> allImportedPackages = LibraryHelper.getAllImportedPackages(modelSet);
 
 					Set<Resource> allResources = new HashSet<Resource>();
-					for(PackageImport appliedLibrary : allImportedPackages) {
+					for (PackageImport appliedLibrary : allImportedPackages) {
 						URI libraryResourceURI = EcoreUtil.getURI(appliedLibrary.getImportedPackage()).trimFragment();
 						Resource resource = modelSet.getResource(libraryResourceURI, true);
 						allResources.add(resource);
@@ -215,12 +215,12 @@ public class SwitchResourceDialog extends SelectionDialog {
 
 			@Override
 			public String getText(Object element) {
-				if(element instanceof Resource) {
-					Resource resource = (Resource)element;
+				if (element instanceof Resource) {
+					Resource resource = (Resource) element;
 
-					for(EObject rootElement : resource.getContents()) {
-						if(rootElement instanceof Package) {
-							return ((Package)rootElement).getName();
+					for (EObject rootElement : resource.getContents()) {
+						if (rootElement instanceof Package) {
+							return ((Package) rootElement).getName();
 						}
 					}
 
@@ -236,7 +236,7 @@ public class SwitchResourceDialog extends SelectionDialog {
 				return nullToEmpty(labelProvider.getText(e1)).compareTo(nullToEmpty(labelProvider.getText(e2)));
 			}
 		});
-		
+
 		viewer.setInput(modelSet);
 
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
@@ -245,9 +245,9 @@ public class SwitchResourceDialog extends SelectionDialog {
 				updateControls();
 			}
 		});
-		
+
 		viewer.getControl().addDisposeListener(new DisposeListener() {
-			
+
 			public void widgetDisposed(DisposeEvent e) {
 				labelProvider.dispose();
 			}
@@ -258,7 +258,7 @@ public class SwitchResourceDialog extends SelectionDialog {
 
 	protected void updateControls() {
 		String newTitle = "Switch Library Locations";
-		if(!librariesToEdit.isEmpty()) {
+		if (!librariesToEdit.isEmpty()) {
 			newTitle += " *";
 		}
 		getShell().setText(newTitle);
@@ -268,22 +268,22 @@ public class SwitchResourceDialog extends SelectionDialog {
 
 		getButton(BROWSE_REGISTERED_ID).setEnabled(enableBrowse);
 		getButton(BROWSE_WORKSPACE_ID).setEnabled(enableBrowse);
-		
+
 		viewer.refresh();
 	}
 
 	@Override
 	protected void setButtonLayoutData(Button button) {
-		int buttonId = ((Integer)button.getData()).intValue();
-		if(buttonId == BROWSE_REGISTERED_ID || buttonId == BROWSE_WORKSPACE_ID) {
-			return; //Don't change the layout data
+		int buttonId = ((Integer) button.getData()).intValue();
+		if (buttonId == BROWSE_REGISTERED_ID || buttonId == BROWSE_WORKSPACE_ID) {
+			return; // Don't change the layout data
 		}
 
 		super.setButtonLayoutData(button);
 	}
 
 	protected void applyPressed() {
-		if(librariesToEdit.isEmpty()) {
+		if (librariesToEdit.isEmpty()) {
 			return;
 		}
 
@@ -294,17 +294,17 @@ public class SwitchResourceDialog extends SelectionDialog {
 
 				final Collection<Replacement> allReplacements = new LinkedList<Replacement>();
 				final BasicDiagnostic diagnostics = new BasicDiagnostic(Activator.PLUGIN_ID, 0, "Problems in switching library", null);
-				
+
 				IRunnableWithProgress runnable = TransactionHelper.createPrivilegedRunnableWithProgress(editingDomain, new IRunnableWithProgress() {
 
 					public void run(IProgressMonitor monitor) {
 						SubMonitor subMonitor = SubMonitor.convert(monitor, librariesToEdit.size());
 
-						for(Entry<Resource, Resource> replacementEntry : librariesToEdit.entrySet()) {
+						for (Entry<Resource, Resource> replacementEntry : librariesToEdit.entrySet()) {
 							URI uriToReplace = replacementEntry.getKey().getURI();
 							URI targetURI = replacementEntry.getValue().getURI();
 
-							if(uriToReplace.equals(targetURI)) {
+							if (uriToReplace.equals(targetURI)) {
 								continue;
 							}
 
@@ -315,18 +315,20 @@ public class SwitchResourceDialog extends SelectionDialog {
 						subMonitor.done();
 					}
 				});
-				
+
 				try {
 					PlatformUI.getWorkbench().getProgressService().busyCursorWhile(runnable);
 				} catch (Exception e) {
 					StatusManager.getManager().handle(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to execute library switch."), StatusManager.SHOW);
 				}
 
-				if(allReplacements.isEmpty()) {
+				if (allReplacements.isEmpty()) {
 					MessageDialog.openWarning(getShell(), "Switch Libraries", "No library applications were found to update.");
 				} else {
-					if(diagnostics.getSeverity() > Diagnostic.OK) {
-						DiagnosticDialog dialog = new DiagnosticDialog(getShell(), "Problems in Switching Libraries", "Some incompatible differences in the target library likely resulted in loss or transformation of data in stereotype applications. Please review the specific details and take any corrective action that may be required.", diagnostics, Diagnostic.ERROR | Diagnostic.WARNING);
+					if (diagnostics.getSeverity() > Diagnostic.OK) {
+						DiagnosticDialog dialog = new DiagnosticDialog(getShell(), "Problems in Switching Libraries",
+								"Some incompatible differences in the target library likely resulted in loss or transformation of data in stereotype applications. Please review the specific details and take any corrective action that may be required.",
+								diagnostics, Diagnostic.ERROR | Diagnostic.WARNING);
 						dialog.setBlockOnOpen(true);
 						dialog.open();
 					}
@@ -346,9 +348,9 @@ public class SwitchResourceDialog extends SelectionDialog {
 
 	@Override
 	protected void buttonPressed(int buttonId) {
-		switch(buttonId) {
+		switch (buttonId) {
 		case IDialogConstants.CANCEL_ID:
-			if(!librariesToEdit.isEmpty() && !MessageDialog.openQuestion(getShell(), "Switch Libraries", "You have not yet applied the pending library switch(es). Are you sure you want to cancel?")) {
+			if (!librariesToEdit.isEmpty() && !MessageDialog.openQuestion(getShell(), "Switch Libraries", "You have not yet applied the pending library switch(es). Are you sure you want to cancel?")) {
 				// don't cancel
 				return;
 			}
@@ -410,8 +412,8 @@ public class SwitchResourceDialog extends SelectionDialog {
 		@Override
 		public void update(ViewerCell cell) {
 			Object element = cell.getElement();
-			Resource resource = (element instanceof Resource) ? (Resource)element : null;
-			
+			Resource resource = (element instanceof Resource) ? (Resource) element : null;
+
 			switch (cell.getColumnIndex()) {
 			case 0:
 				updateName(cell);
@@ -433,9 +435,9 @@ public class SwitchResourceDialog extends SelectionDialog {
 
 		public void updateLocation(ViewerCell cell, Resource resource) {
 			String location = "Unknown";
-			if(resource != null) {
+			if (resource != null) {
 				URI uri = resource.getURI();
-				if(uri != null) {
+				if (uri != null) {
 					location = uri.toString();
 				}
 			}
@@ -446,10 +448,10 @@ public class SwitchResourceDialog extends SelectionDialog {
 		public void updateNewLocation(ViewerCell cell, Resource resource) {
 			String location = "";
 			resource = librariesToEdit.get(resource);
-			
-			if(resource != null) {
+
+			if (resource != null) {
 				URI uri = resource.getURI();
-				if(uri != null) {
+				if (uri != null) {
 					location = uri.toString();
 				}
 			}
@@ -459,7 +461,7 @@ public class SwitchResourceDialog extends SelectionDialog {
 	}
 
 	protected void browseWorkspaceLibraries() {
-		if(getSelectedResource() == null) {
+		if (getSelectedResource() == null) {
 			return;
 		}
 
@@ -477,16 +479,16 @@ public class SwitchResourceDialog extends SelectionDialog {
 		dialog.setLabelProvider(labelProviderService.getLabelProvider());
 
 
-		if(dialog.open() == Window.OK) {
+		if (dialog.open() == Window.OK) {
 			Object[] result = dialog.getResult();
-			if(result == null || result.length == 0) {
+			if (result == null || result.length == 0) {
 				return;
 			}
 
 			Object selectedFile = result[0];
 
-			if(selectedFile instanceof IFile) {
-				IPath filePath = ((IFile)selectedFile).getFullPath();
+			if (selectedFile instanceof IFile) {
+				IPath filePath = ((IFile) selectedFile).getFullPath();
 				URI workspaceURI = URI.createPlatformResourceURI(filePath.toString(), true);
 
 				replaceSelectionWith(workspaceURI);
@@ -496,14 +498,14 @@ public class SwitchResourceDialog extends SelectionDialog {
 
 	protected Resource getSelectedResource() {
 		ISelection selection = viewer.getSelection();
-		if(selection.isEmpty()) {
+		if (selection.isEmpty()) {
 			return null;
 		}
 
-		if(selection instanceof IStructuredSelection) {
-			Object selectedElement = ((IStructuredSelection)selection).getFirstElement();
-			if(selectedElement instanceof Resource) {
-				return (Resource)selectedElement;
+		if (selection instanceof IStructuredSelection) {
+			Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
+			if (selectedElement instanceof Resource) {
+				return (Resource) selectedElement;
 			}
 		}
 
@@ -519,8 +521,8 @@ public class SwitchResourceDialog extends SelectionDialog {
 
 			@Override
 			public Image getImage(Object element) {
-				if(element instanceof IRegisteredLibrary) {
-					IRegisteredLibrary library = (IRegisteredLibrary)element;
+				if (element instanceof IRegisteredLibrary) {
+					IRegisteredLibrary library = (IRegisteredLibrary) element;
 					return library.getImage();
 				}
 				return super.getImage(element);
@@ -528,8 +530,8 @@ public class SwitchResourceDialog extends SelectionDialog {
 
 			@Override
 			public String getText(Object element) {
-				if(element instanceof IRegisteredLibrary) {
-					IRegisteredLibrary library = (IRegisteredLibrary)element;
+				if (element instanceof IRegisteredLibrary) {
+					IRegisteredLibrary library = (IRegisteredLibrary) element;
 					return library.getName();
 				}
 
@@ -537,15 +539,15 @@ public class SwitchResourceDialog extends SelectionDialog {
 			}
 		});
 
-		if(dialog.open() == Window.OK) {
+		if (dialog.open() == Window.OK) {
 			Object[] result = dialog.getResult();
-			if(result == null || result.length == 0) {
+			if (result == null || result.length == 0) {
 				return;
 			}
 
 			Object selectedElement = result[0];
-			if(selectedElement instanceof IRegisteredLibrary) {
-				IRegisteredLibrary library = (IRegisteredLibrary)selectedElement;
+			if (selectedElement instanceof IRegisteredLibrary) {
+				IRegisteredLibrary library = (IRegisteredLibrary) selectedElement;
 
 				replaceSelectionWith(library.getUri());
 			}
@@ -555,7 +557,7 @@ public class SwitchResourceDialog extends SelectionDialog {
 	protected void replaceSelectionWith(URI targetURI) {
 		Resource targetResource = modelSet.getResource(targetURI, true);
 
-		if(getSelectedResource() != targetResource) {
+		if (getSelectedResource() != targetResource) {
 			librariesToEdit.put(getSelectedResource(), targetResource);
 			updateControls();
 		} else {

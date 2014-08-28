@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Advice</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.Advice#getInheritance <em>Inheritance</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getAdvice()
  * @model
  * @generated
@@ -36,7 +36,7 @@ public interface Advice extends EObject {
 	 * If the meaning of the '<em>Advice ID</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Advice ID</em>' attribute.
 	 * @see #setAdviceID(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getAdvice_AdviceID()
@@ -49,9 +49,9 @@ public interface Advice extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.Advice#getAdviceID <em>Advice ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Advice ID</em>' attribute.
+	 *            the new value of the '<em>Advice ID</em>' attribute.
 	 * @see #getAdviceID()
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public interface Advice extends EObject {
 	 * If the meaning of the '<em>Ref</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Ref</em>' reference.
 	 * @see #setRef(ElementType)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getAdvice_Ref()
@@ -77,9 +77,9 @@ public interface Advice extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.Advice#getRef <em>Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Ref</em>' reference.
+	 *            the new value of the '<em>Ref</em>' reference.
 	 * @see #getRef()
 	 * @generated
 	 */
@@ -92,7 +92,7 @@ public interface Advice extends EObject {
 	 * If the meaning of the '<em>Advice Path</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Advice Path</em>' attribute.
 	 * @see #setAdvicePath(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getAdvice_AdvicePath()
@@ -105,9 +105,9 @@ public interface Advice extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.Advice#getAdvicePath <em>Advice Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Advice Path</em>' attribute.
+	 *            the new value of the '<em>Advice Path</em>' attribute.
 	 * @see #getAdvicePath()
 	 * @generated
 	 */
@@ -121,7 +121,7 @@ public interface Advice extends EObject {
 	 * If the meaning of the '<em>Inheritance</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Inheritance</em>' attribute.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.InheritanceKind
 	 * @see #setInheritance(InheritanceKind)
@@ -135,9 +135,9 @@ public interface Advice extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.Advice#getInheritance <em>Inheritance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Inheritance</em>' attribute.
+	 *            the new value of the '<em>Inheritance</em>' attribute.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.InheritanceKind
 	 * @see #getInheritance()
 	 * @generated

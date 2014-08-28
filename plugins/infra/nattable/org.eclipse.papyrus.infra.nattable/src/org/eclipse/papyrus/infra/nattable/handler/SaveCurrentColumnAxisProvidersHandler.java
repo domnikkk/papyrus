@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.Ab
 
 /**
  * Concrete handler to save the current axis provider, in this case for columns.
- * 
+ *
  */
 public class SaveCurrentColumnAxisProvidersHandler extends AbstractSaveCurrentAxisProvidersHandler {
 
@@ -29,14 +29,17 @@ public class SaveCurrentColumnAxisProvidersHandler extends AbstractSaveCurrentAx
 		setBaseEnabled(columnAxisManager.canBeSavedAsConfig());
 	}
 
+	@Override
 	public AbstractAxisProvider getAxisProvider() {
 		return this.getCurrentNattableModelManager().getVerticalAxisProvider();
 	}
 
+	@Override
 	public EList<AbstractAxisProvider> getAxisProviderHistory() {
 		return this.getCurrentNattableModelManager().getTable().getColumnAxisProvidersHistory();
 	}
 
+	@Override
 	public EReference getAxisProviderHistoryEReference() {
 		return NattablePackage.eINSTANCE.getTable_ColumnAxisProvidersHistory();
 	}

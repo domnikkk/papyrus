@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,21 +27,22 @@ public class GetImageQuery implements IJavaModelQuery<Element, String> {
 
 	public static final String robotML_plugin_path = "/org.eclipse.papyrus.robotml/";
 
+	@Override
 	public String evaluate(final Element context, final ParameterValueList parameterValues) throws ModelQueryExecutionException {
 
 		String icon_relative_path = "";
 
-		if(!context.getAppliedStereotypes().isEmpty()) {
+		if (!context.getAppliedStereotypes().isEmpty()) {
 
 
 			Stereotype first_stereotype = context.getAppliedStereotypes().get(0);
 			Profile robotML = first_stereotype.getProfile();
 
 
-			if(robotML != null && robotML.getName().equals(ROBOTML_ID)) {
-				if(!first_stereotype.getIcons().isEmpty()) {
+			if (robotML != null && robotML.getName().equals(ROBOTML_ID)) {
+				if (!first_stereotype.getIcons().isEmpty()) {
 					org.eclipse.uml2.uml.Image icon = ElementUtil.getStereotypeImage(context, first_stereotype, "icon");
-					if(icon != null) {
+					if (icon != null) {
 						icon_relative_path = icon.getLocation();
 					}
 				}
@@ -49,7 +50,7 @@ public class GetImageQuery implements IJavaModelQuery<Element, String> {
 		}
 
 		String image_path = "";
-		if(!"".equals(icon_relative_path)) {
+		if (!"".equals(icon_relative_path)) {
 			image_path = robotML_plugin_path + icon_relative_path;
 		}
 		return image_path;

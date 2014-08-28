@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -126,6 +126,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class InfrastructurePackageImpl extends EPackageImpl implements InfrastructurePackage {
@@ -133,6 +134,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass instanceRefEClass = null;
@@ -140,6 +142,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass targetInstanceRefEClass = null;
@@ -147,6 +150,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass functionConnectorPortInstanceRefEClass = null;
@@ -154,6 +158,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass hardwareConnectorInstanceRefEClass = null;
@@ -161,6 +166,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass hardwarePortConnectorInstanceRefEClass = null;
@@ -168,6 +174,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass allocatedElementInstanceRefEClass = null;
@@ -175,6 +182,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass clampConnectorInstanceRefEClass = null;
@@ -182,6 +190,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass refineInstanceRefEClass = null;
@@ -189,6 +198,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass satisfyInstanceRefEClass = null;
@@ -196,6 +206,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass vvCaseInstanceRefEClass = null;
@@ -203,6 +214,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass vvTargetInstanceRefEClass = null;
@@ -210,6 +222,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass realization_realizedInstanceRefEClass = null;
@@ -217,6 +230,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass realization_realizedByInstanceRefEClass = null;
@@ -224,6 +238,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass eventFunctionInstanceRefEClass = null;
@@ -231,6 +246,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass eventFunctionClientServerPortInstanceRefEClass = null;
@@ -238,6 +254,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass eventFunctionFlowPortInstanceRefEClass = null;
@@ -245,6 +262,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass precedenceConstraint_precedingInstanceRefEClass = null;
@@ -252,6 +270,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass precedenceConstraint_successiveInstanceRefEClass = null;
@@ -259,6 +278,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass errorModelPrototype_functionTargetInstanceRefEClass = null;
@@ -266,6 +286,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass errorModelPrototype_hwTargetInstanceRefEClass = null;
@@ -273,6 +294,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass faultFailurePort_hwTargetInstanceRefEClass = null;
@@ -280,6 +302,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass faultFailurePort_functionTargetInstanceRefEClass = null;
@@ -287,6 +310,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass faultFailurePropagationLink_fromPortInstanceRefEClass = null;
@@ -294,6 +318,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass faultFailure_anomalyInstanceRefEClass = null;
@@ -301,6 +326,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass faultFailurePropagationLink_toPortInstanceRefEClass = null;
@@ -308,6 +334,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass behaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefEClass = null;
@@ -315,6 +342,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass behaviorConstraintInternalBinding_throughHardwareConnectorInstanceRefEClass = null;
@@ -322,6 +350,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass behaviorConstraintPrototype_functionTargetInstanceRefEClass = null;
@@ -329,6 +358,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass behaviorConstraintPrototype_hardwareComponentTargetInstanceRefEClass = null;
@@ -336,6 +366,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass behaviorConstraintPrototype_errorModelTargetInstanceRefEClass = null;
@@ -343,6 +374,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType dummyEDataType = null;
@@ -350,26 +382,30 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link InfrastructurePackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * <p>
+	 * This method is used to initialize {@link InfrastructurePackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static InfrastructurePackage init() {
-		if (isInited) return (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
+		if (isInited) {
+			return (InfrastructurePackage) EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new InfrastructurePackageImpl());
+		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new InfrastructurePackageImpl());
 
 		isInited = true;
 
@@ -377,39 +413,71 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		SysmlPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		EastadlPackageImpl theEastadlPackage = (EastadlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EastadlPackage.eNS_URI) instanceof EastadlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EastadlPackage.eNS_URI) : EastadlPackage.eINSTANCE);
-		VariabilityPackageImpl theVariabilityPackage = (VariabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VariabilityPackage.eNS_URI) instanceof VariabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VariabilityPackage.eNS_URI) : VariabilityPackage.eINSTANCE);
-		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
-		UserattributesPackageImpl theUserattributesPackage = (UserattributesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) instanceof UserattributesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) : UserattributesPackage.eINSTANCE);
-		ValuesPackageImpl theValuesPackage = (ValuesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) instanceof ValuesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) : ValuesPackage.eINSTANCE);
-		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) instanceof ElementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) : ElementsPackage.eINSTANCE);
-		StructurePackageImpl theStructurePackage = (StructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) instanceof StructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) : StructurePackage.eINSTANCE);
-		FunctionmodelingPackageImpl theFunctionmodelingPackage = (FunctionmodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) instanceof FunctionmodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) : FunctionmodelingPackage.eINSTANCE);
-		FeaturemodelingPackageImpl theFeaturemodelingPackage = (FeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) instanceof FeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) : FeaturemodelingPackage.eINSTANCE);
-		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
-		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
-		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
-		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) : DependabilityPackage.eINSTANCE);
-		SafetyrequirementPackageImpl theSafetyrequirementPackage = (SafetyrequirementPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) instanceof SafetyrequirementPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) : SafetyrequirementPackage.eINSTANCE);
-		SafetyconstraintsPackageImpl theSafetyconstraintsPackage = (SafetyconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) instanceof SafetyconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) : SafetyconstraintsPackage.eINSTANCE);
-		SafetycasePackageImpl theSafetycasePackage = (SafetycasePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) instanceof SafetycasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) : SafetycasePackage.eINSTANCE);
-		ErrormodelPackageImpl theErrormodelPackage = (ErrormodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) instanceof ErrormodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) : ErrormodelPackage.eINSTANCE);
-		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);
-		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) : UsecasesPackage.eINSTANCE);
-		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
-		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
-		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
-		TimingPackageImpl theTimingPackage = (TimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) : TimingPackage.eINSTANCE);
-		TimingconstraintsPackageImpl theTimingconstraintsPackage = (TimingconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) instanceof TimingconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) : TimingconstraintsPackage.eINSTANCE);
-		EventsPackageImpl theEventsPackage = (EventsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) instanceof EventsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) : EventsPackage.eINSTANCE);
-		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
-		AnnexPackageImpl theAnnexPackage = (AnnexPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) instanceof AnnexPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) : AnnexPackage.eINSTANCE);
-		NeedsPackageImpl theNeedsPackage = (NeedsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) instanceof NeedsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) : NeedsPackage.eINSTANCE);
-		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) : BehaviordescriptionPackage.eINSTANCE);
-		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
-		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
-		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
-		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
+		EastadlPackageImpl theEastadlPackage = (EastadlPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(EastadlPackage.eNS_URI) instanceof EastadlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EastadlPackage.eNS_URI) : EastadlPackage.eINSTANCE);
+		VariabilityPackageImpl theVariabilityPackage = (VariabilityPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VariabilityPackage.eNS_URI) instanceof VariabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VariabilityPackage.eNS_URI)
+				: VariabilityPackage.eINSTANCE);
+		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI)
+				: DatatypesPackage.eINSTANCE);
+		UserattributesPackageImpl theUserattributesPackage = (UserattributesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) instanceof UserattributesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(UserattributesPackage.eNS_URI) : UserattributesPackage.eINSTANCE);
+		ValuesPackageImpl theValuesPackage = (ValuesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) instanceof ValuesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) : ValuesPackage.eINSTANCE);
+		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) instanceof ElementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI)
+				: ElementsPackage.eINSTANCE);
+		StructurePackageImpl theStructurePackage = (StructurePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) instanceof StructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI)
+				: StructurePackage.eINSTANCE);
+		FunctionmodelingPackageImpl theFunctionmodelingPackage = (FunctionmodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) instanceof FunctionmodelingPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(FunctionmodelingPackage.eNS_URI) : FunctionmodelingPackage.eINSTANCE);
+		FeaturemodelingPackageImpl theFeaturemodelingPackage = (FeaturemodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) instanceof FeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(FeaturemodelingPackage.eNS_URI) : FeaturemodelingPackage.eINSTANCE);
+		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
+		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI)
+				: VehiclefeaturemodelingPackage.eINSTANCE);
+		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
+		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(DependabilityPackage.eNS_URI) : DependabilityPackage.eINSTANCE);
+		SafetyrequirementPackageImpl theSafetyrequirementPackage = (SafetyrequirementPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) instanceof SafetyrequirementPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(SafetyrequirementPackage.eNS_URI) : SafetyrequirementPackage.eINSTANCE);
+		SafetyconstraintsPackageImpl theSafetyconstraintsPackage = (SafetyconstraintsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) instanceof SafetyconstraintsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(SafetyconstraintsPackage.eNS_URI) : SafetyconstraintsPackage.eINSTANCE);
+		SafetycasePackageImpl theSafetycasePackage = (SafetycasePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) instanceof SafetycasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI)
+				: SafetycasePackage.eINSTANCE);
+		ErrormodelPackageImpl theErrormodelPackage = (ErrormodelPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) instanceof ErrormodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI)
+				: ErrormodelPackage.eINSTANCE);
+		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI)
+				: RequirementsPackage.eINSTANCE);
+		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI)
+				: UsecasesPackage.eINSTANCE);
+		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(VerificationvalidationPackage.eNS_URI)
+				: VerificationvalidationPackage.eINSTANCE);
+		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI)
+				: BehaviorPackage.eINSTANCE);
+		TimingPackageImpl theTimingPackage = (TimingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) : TimingPackage.eINSTANCE);
+		TimingconstraintsPackageImpl theTimingconstraintsPackage = (TimingconstraintsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) instanceof TimingconstraintsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(TimingconstraintsPackage.eNS_URI) : TimingconstraintsPackage.eINSTANCE);
+		EventsPackageImpl theEventsPackage = (EventsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) instanceof EventsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) : EventsPackage.eINSTANCE);
+		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI)
+				: EnvironmentPackage.eINSTANCE);
+		AnnexPackageImpl theAnnexPackage = (AnnexPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) instanceof AnnexPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) : AnnexPackage.eINSTANCE);
+		NeedsPackageImpl theNeedsPackage = (NeedsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) instanceof NeedsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) : NeedsPackage.eINSTANCE);
+		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(BehaviordescriptionPackage.eNS_URI) : BehaviordescriptionPackage.eINSTANCE);
+		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(AttributequantificationconstraintPackage.eNS_URI)
+				: AttributequantificationconstraintPackage.eINSTANCE);
+		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
+		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(ComputationconstraintPackage.eNS_URI)
+				: ComputationconstraintPackage.eINSTANCE);
+		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theInfrastructurePackage.createPackageContents();
@@ -486,7 +554,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		// Mark meta-data to indicate it can't be changed
 		theInfrastructurePackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(InfrastructurePackage.eNS_URI, theInfrastructurePackage);
 		return theInfrastructurePackage;
@@ -495,8 +563,10 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getInstanceRef() {
 		return instanceRefEClass;
 	}
@@ -504,8 +574,10 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getTargetInstanceRef() {
 		return targetInstanceRefEClass;
 	}
@@ -513,35 +585,43 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getTargetInstanceRef_AllocationTarget() {
-		return (EReference)targetInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) targetInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getTargetInstanceRef_AllocationTarget_context() {
-		return (EReference)targetInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) targetInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTargetInstanceRef_IntAttribute() {
-		return (EAttribute)targetInstanceRefEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) targetInstanceRefEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFunctionConnectorPortInstanceRef() {
 		return functionConnectorPortInstanceRefEClass;
 	}
@@ -549,26 +629,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFunctionConnectorPortInstanceRef_FunctionPort() {
-		return (EReference)functionConnectorPortInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) functionConnectorPortInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFunctionConnectorPortInstanceRef_FunctionPrototype() {
-		return (EReference)functionConnectorPortInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) functionConnectorPortInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getHardwareConnectorInstanceRef() {
 		return hardwareConnectorInstanceRefEClass;
 	}
@@ -576,26 +662,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getHardwareConnectorInstanceRef_HardwarePin() {
-		return (EReference)hardwareConnectorInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) hardwareConnectorInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getHardwareConnectorInstanceRef_HardwareComponentPrototype() {
-		return (EReference)hardwareConnectorInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) hardwareConnectorInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getHardwarePortConnectorInstanceRef() {
 		return hardwarePortConnectorInstanceRefEClass;
 	}
@@ -603,26 +695,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getHardwarePortConnectorInstanceRef_HardwarePort() {
-		return (EReference)hardwarePortConnectorInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) hardwarePortConnectorInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getHardwarePortConnectorInstanceRef_HardwareComponentPrototype() {
-		return (EReference)hardwarePortConnectorInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) hardwarePortConnectorInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getAllocatedElementInstanceRef() {
 		return allocatedElementInstanceRefEClass;
 	}
@@ -630,26 +728,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAllocatedElementInstanceRef_AllocateableElement() {
-		return (EReference)allocatedElementInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) allocatedElementInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAllocatedElementInstanceRef_AllocateableElement_context() {
-		return (EReference)allocatedElementInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) allocatedElementInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getClampConnectorInstanceRef() {
 		return clampConnectorInstanceRefEClass;
 	}
@@ -657,26 +761,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getClampConnectorInstanceRef_FunctionPort() {
-		return (EReference)clampConnectorInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) clampConnectorInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getClampConnectorInstanceRef_FunctionPrototype() {
-		return (EReference)clampConnectorInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) clampConnectorInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getRefineInstanceRef() {
 		return refineInstanceRefEClass;
 	}
@@ -684,26 +794,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getRefineInstanceRef_Identifiable_target() {
-		return (EReference)refineInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) refineInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getRefineInstanceRef_Identifiable_context() {
-		return (EReference)refineInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) refineInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getSatisfyInstanceRef() {
 		return satisfyInstanceRefEClass;
 	}
@@ -711,26 +827,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getSatisfyInstanceRef_Identifiable_target() {
-		return (EReference)satisfyInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) satisfyInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getSatisfyInstanceRef_Identifiable_context() {
-		return (EReference)satisfyInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) satisfyInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getVVCaseInstanceRef() {
 		return vvCaseInstanceRefEClass;
 	}
@@ -738,26 +860,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getVVCaseInstanceRef_Identifiable_target() {
-		return (EReference)vvCaseInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) vvCaseInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getVVCaseInstanceRef_Identifiable_context() {
-		return (EReference)vvCaseInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) vvCaseInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getVVTargetInstanceRef() {
 		return vvTargetInstanceRefEClass;
 	}
@@ -765,26 +893,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getVVTargetInstanceRef_Identifiable_target() {
-		return (EReference)vvTargetInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) vvTargetInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getVVTargetInstanceRef_Identifiable_context() {
-		return (EReference)vvTargetInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) vvTargetInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getRealization_realizedInstanceRef() {
 		return realization_realizedInstanceRefEClass;
 	}
@@ -792,26 +926,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getRealization_realizedInstanceRef_Identifiable_target() {
-		return (EReference)realization_realizedInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) realization_realizedInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getRealization_realizedInstanceRef_Identifiable_context() {
-		return (EReference)realization_realizedInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) realization_realizedInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getRealization_realizedByInstanceRef() {
 		return realization_realizedByInstanceRefEClass;
 	}
@@ -819,26 +959,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getRealization_realizedByInstanceRef_Identifiable_target() {
-		return (EReference)realization_realizedByInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) realization_realizedByInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getRealization_realizedByInstanceRef_Identifiable_context() {
-		return (EReference)realization_realizedByInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) realization_realizedByInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getEventFunctionInstanceRef() {
 		return eventFunctionInstanceRefEClass;
 	}
@@ -846,26 +992,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEventFunctionInstanceRef_FunctionPrototype_target() {
-		return (EReference)eventFunctionInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) eventFunctionInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEventFunctionInstanceRef_FunctionPrototype_context() {
-		return (EReference)eventFunctionInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) eventFunctionInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getEventFunctionClientServerPortInstanceRef() {
 		return eventFunctionClientServerPortInstanceRefEClass;
 	}
@@ -873,26 +1025,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEventFunctionClientServerPortInstanceRef_FunctionClientServerPort() {
-		return (EReference)eventFunctionClientServerPortInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) eventFunctionClientServerPortInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEventFunctionClientServerPortInstanceRef_FunctionPrototype() {
-		return (EReference)eventFunctionClientServerPortInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) eventFunctionClientServerPortInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getEventFunctionFlowPortInstanceRef() {
 		return eventFunctionFlowPortInstanceRefEClass;
 	}
@@ -900,26 +1058,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEventFunctionFlowPortInstanceRef_FunctionFlowPort() {
-		return (EReference)eventFunctionFlowPortInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) eventFunctionFlowPortInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getEventFunctionFlowPortInstanceRef_FunctionPrototype() {
-		return (EReference)eventFunctionFlowPortInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) eventFunctionFlowPortInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getPrecedenceConstraint_precedingInstanceRef() {
 		return precedenceConstraint_precedingInstanceRefEClass;
 	}
@@ -927,26 +1091,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPrecedenceConstraint_precedingInstanceRef_FunctionPrototype_target() {
-		return (EReference)precedenceConstraint_precedingInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) precedenceConstraint_precedingInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPrecedenceConstraint_precedingInstanceRef_FunctionPrototype_context() {
-		return (EReference)precedenceConstraint_precedingInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) precedenceConstraint_precedingInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getPrecedenceConstraint_successiveInstanceRef() {
 		return precedenceConstraint_successiveInstanceRefEClass;
 	}
@@ -954,26 +1124,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPrecedenceConstraint_successiveInstanceRef_FunctionPrototype_target() {
-		return (EReference)precedenceConstraint_successiveInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) precedenceConstraint_successiveInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPrecedenceConstraint_successiveInstanceRef_FunctionPrototype_context() {
-		return (EReference)precedenceConstraint_successiveInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) precedenceConstraint_successiveInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getErrorModelPrototype_functionTargetInstanceRef() {
 		return errorModelPrototype_functionTargetInstanceRefEClass;
 	}
@@ -981,26 +1157,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getErrorModelPrototype_functionTargetInstanceRef_FunctionPrototype() {
-		return (EReference)errorModelPrototype_functionTargetInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) errorModelPrototype_functionTargetInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getErrorModelPrototype_functionTargetInstanceRef_FunctionPrototype_context() {
-		return (EReference)errorModelPrototype_functionTargetInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) errorModelPrototype_functionTargetInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getErrorModelPrototype_hwTargetInstanceRef() {
 		return errorModelPrototype_hwTargetInstanceRefEClass;
 	}
@@ -1008,26 +1190,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getErrorModelPrototype_hwTargetInstanceRef_HardwareComponentProtype() {
-		return (EReference)errorModelPrototype_hwTargetInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) errorModelPrototype_hwTargetInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getErrorModelPrototype_hwTargetInstanceRef_HardwareComponentProtype_context() {
-		return (EReference)errorModelPrototype_hwTargetInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) errorModelPrototype_hwTargetInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFaultFailurePort_hwTargetInstanceRef() {
 		return faultFailurePort_hwTargetInstanceRefEClass;
 	}
@@ -1035,26 +1223,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFaultFailurePort_hwTargetInstanceRef_HardwarePort() {
-		return (EReference)faultFailurePort_hwTargetInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) faultFailurePort_hwTargetInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFaultFailurePort_hwTargetInstanceRef_HardwareComponentProtype() {
-		return (EReference)faultFailurePort_hwTargetInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) faultFailurePort_hwTargetInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFaultFailurePort_functionTargetInstanceRef() {
 		return faultFailurePort_functionTargetInstanceRefEClass;
 	}
@@ -1062,26 +1256,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFaultFailurePort_functionTargetInstanceRef_FunctionPort() {
-		return (EReference)faultFailurePort_functionTargetInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) faultFailurePort_functionTargetInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFaultFailurePort_functionTargetInstanceRef_FunctionPrototype() {
-		return (EReference)faultFailurePort_functionTargetInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) faultFailurePort_functionTargetInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFaultFailurePropagationLink_fromPortInstanceRef() {
 		return faultFailurePropagationLink_fromPortInstanceRefEClass;
 	}
@@ -1089,26 +1289,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFaultFailurePropagationLink_fromPortInstanceRef_FaultFairelurePort() {
-		return (EReference)faultFailurePropagationLink_fromPortInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) faultFailurePropagationLink_fromPortInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFaultFailurePropagationLink_fromPortInstanceRef_ErrorModelPrototype() {
-		return (EReference)faultFailurePropagationLink_fromPortInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) faultFailurePropagationLink_fromPortInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFaultFailure_anomalyInstanceRef() {
 		return faultFailure_anomalyInstanceRefEClass;
 	}
@@ -1116,26 +1322,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFaultFailure_anomalyInstanceRef_Anomaly() {
-		return (EReference)faultFailure_anomalyInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) faultFailure_anomalyInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFaultFailure_anomalyInstanceRef_ErrorModelPrototype() {
-		return (EReference)faultFailure_anomalyInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) faultFailure_anomalyInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFaultFailurePropagationLink_toPortInstanceRef() {
 		return faultFailurePropagationLink_toPortInstanceRefEClass;
 	}
@@ -1143,26 +1355,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFaultFailurePropagationLink_toPortInstanceRef_FaultFairelurePort() {
-		return (EReference)faultFailurePropagationLink_toPortInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) faultFailurePropagationLink_toPortInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFaultFailurePropagationLink_toPortInstanceRef_ErrorModelPrototype() {
-		return (EReference)faultFailurePropagationLink_toPortInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) faultFailurePropagationLink_toPortInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef() {
 		return behaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefEClass;
 	}
@@ -1170,26 +1388,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef_FunctionConnector() {
-		return (EReference)behaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) behaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef_FunctionPrototype() {
-		return (EReference)behaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) behaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef() {
 		return behaviorConstraintInternalBinding_throughHardwareConnectorInstanceRefEClass;
 	}
@@ -1197,26 +1421,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef_HardwareConnector() {
-		return (EReference)behaviorConstraintInternalBinding_throughHardwareConnectorInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) behaviorConstraintInternalBinding_throughHardwareConnectorInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef_HardwareComponentPrototype() {
-		return (EReference)behaviorConstraintInternalBinding_throughHardwareConnectorInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) behaviorConstraintInternalBinding_throughHardwareConnectorInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getBehaviorConstraintPrototype_functionTargetInstanceRef() {
 		return behaviorConstraintPrototype_functionTargetInstanceRefEClass;
 	}
@@ -1224,26 +1454,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintPrototype_functionTargetInstanceRef_FunctionPrototype_target() {
-		return (EReference)behaviorConstraintPrototype_functionTargetInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) behaviorConstraintPrototype_functionTargetInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintPrototype_functionTargetInstanceRef_FunctionPrototype_context() {
-		return (EReference)behaviorConstraintPrototype_functionTargetInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) behaviorConstraintPrototype_functionTargetInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef() {
 		return behaviorConstraintPrototype_hardwareComponentTargetInstanceRefEClass;
 	}
@@ -1251,26 +1487,32 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef_HardwareComponentProtype_target() {
-		return (EReference)behaviorConstraintPrototype_hardwareComponentTargetInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) behaviorConstraintPrototype_hardwareComponentTargetInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef_HardwareComponentPrototype_context() {
-		return (EReference)behaviorConstraintPrototype_hardwareComponentTargetInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) behaviorConstraintPrototype_hardwareComponentTargetInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getBehaviorConstraintPrototype_errorModelTargetInstanceRef() {
 		return behaviorConstraintPrototype_errorModelTargetInstanceRefEClass;
 	}
@@ -1278,24 +1520,29 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintPrototype_errorModelTargetInstanceRef_ErrorModelPrototype_target() {
-		return (EReference)behaviorConstraintPrototype_errorModelTargetInstanceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) behaviorConstraintPrototype_errorModelTargetInstanceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintPrototype_errorModelTargetInstanceRef_ErrorModelPrototype_context() {
-		return (EReference)behaviorConstraintPrototype_errorModelTargetInstanceRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) behaviorConstraintPrototype_errorModelTargetInstanceRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -1303,19 +1550,17 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#eNS_URI
 	 * @see #init()
@@ -1326,14 +1571,17 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	}
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -1463,8 +1711,10 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getDummy() {
 		return dummyEDataType;
 	}
@@ -1472,21 +1722,26 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public InfrastructureFactory getInfrastructureFactory() {
-		return (InfrastructureFactory)getEFactoryInstance();
+		return (InfrastructureFactory) getEFactoryInstance();
 	}
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -1495,15 +1750,15 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		DatatypesPackage theDatatypesPackage = (DatatypesPackage)EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
-		UserattributesPackage theUserattributesPackage = (UserattributesPackage)EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI);
-		ValuesPackage theValuesPackage = (ValuesPackage)EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI);
-		ElementsPackage theElementsPackage = (ElementsPackage)EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
-		HardwaremodelingPackage theHardwaremodelingPackage = (HardwaremodelingPackage)EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI);
-		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
-		FunctionmodelingPackage theFunctionmodelingPackage = (FunctionmodelingPackage)EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI);
-		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
-		ErrormodelPackage theErrormodelPackage = (ErrormodelPackage)EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI);
+		DatatypesPackage theDatatypesPackage = (DatatypesPackage) EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
+		UserattributesPackage theUserattributesPackage = (UserattributesPackage) EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI);
+		ValuesPackage theValuesPackage = (ValuesPackage) EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI);
+		ElementsPackage theElementsPackage = (ElementsPackage) EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
+		HardwaremodelingPackage theHardwaremodelingPackage = (HardwaremodelingPackage) EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage) EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		FunctionmodelingPackage theFunctionmodelingPackage = (FunctionmodelingPackage) EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage) EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		ErrormodelPackage theErrormodelPackage = (ErrormodelPackage) EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theDatatypesPackage);
@@ -1550,124 +1805,186 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		initEClass(instanceRefEClass, InstanceRef.class, "InstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(targetInstanceRefEClass, TargetInstanceRef.class, "TargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTargetInstanceRef_AllocationTarget(), theHardwaremodelingPackage.getAllocationTarget(), null, "allocationTarget", null, 1, 1, TargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getTargetInstanceRef_AllocationTarget_context(), theHardwaremodelingPackage.getAllocationTarget(), null, "allocationTarget_context", null, 0, -1, TargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTargetInstanceRef_AllocationTarget(), theHardwaremodelingPackage.getAllocationTarget(), null, "allocationTarget", null, 1, 1, TargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTargetInstanceRef_AllocationTarget_context(), theHardwaremodelingPackage.getAllocationTarget(), null, "allocationTarget_context", null, 0, -1, TargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getTargetInstanceRef_IntAttribute(), theTypesPackage.getInteger(), "intAttribute", null, 1, 1, TargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(functionConnectorPortInstanceRefEClass, FunctionConnectorPortInstanceRef.class, "FunctionConnectorPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFunctionConnectorPortInstanceRef_FunctionPort(), theFunctionmodelingPackage.getFunctionPort(), null, "functionPort", null, 1, 1, FunctionConnectorPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFunctionConnectorPortInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 1, 1, FunctionConnectorPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFunctionConnectorPortInstanceRef_FunctionPort(), theFunctionmodelingPackage.getFunctionPort(), null, "functionPort", null, 1, 1, FunctionConnectorPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFunctionConnectorPortInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 1, 1, FunctionConnectorPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(hardwareConnectorInstanceRefEClass, HardwareConnectorInstanceRef.class, "HardwareConnectorInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHardwareConnectorInstanceRef_HardwarePin(), theHardwaremodelingPackage.getHardwarePin(), null, "hardwarePin", null, 1, 1, HardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwareConnectorInstanceRef_HardwareComponentPrototype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentPrototype", null, 1, 1, HardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHardwareConnectorInstanceRef_HardwarePin(), theHardwaremodelingPackage.getHardwarePin(), null, "hardwarePin", null, 1, 1, HardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHardwareConnectorInstanceRef_HardwareComponentPrototype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentPrototype", null, 1, 1, HardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(hardwarePortConnectorInstanceRefEClass, HardwarePortConnectorInstanceRef.class, "HardwarePortConnectorInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHardwarePortConnectorInstanceRef_HardwarePort(), theHardwaremodelingPackage.getHardwarePort(), null, "hardwarePort", null, 1, 1, HardwarePortConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwarePortConnectorInstanceRef_HardwareComponentPrototype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentPrototype", null, 1, 1, HardwarePortConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHardwarePortConnectorInstanceRef_HardwarePort(), theHardwaremodelingPackage.getHardwarePort(), null, "hardwarePort", null, 1, 1, HardwarePortConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHardwarePortConnectorInstanceRef_HardwareComponentPrototype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentPrototype", null, 1, 1, HardwarePortConnectorInstanceRef.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(allocatedElementInstanceRefEClass, AllocatedElementInstanceRef.class, "AllocatedElementInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAllocatedElementInstanceRef_AllocateableElement(), theFunctionmodelingPackage.getAllocateableElement(), null, "allocateableElement", null, 1, 1, AllocatedElementInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getAllocatedElementInstanceRef_AllocateableElement_context(), theFunctionmodelingPackage.getAllocateableElement(), null, "allocateableElement_context", null, 0, -1, AllocatedElementInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAllocatedElementInstanceRef_AllocateableElement(), theFunctionmodelingPackage.getAllocateableElement(), null, "allocateableElement", null, 1, 1, AllocatedElementInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAllocatedElementInstanceRef_AllocateableElement_context(), theFunctionmodelingPackage.getAllocateableElement(), null, "allocateableElement_context", null, 0, -1, AllocatedElementInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(clampConnectorInstanceRefEClass, ClampConnectorInstanceRef.class, "ClampConnectorInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getClampConnectorInstanceRef_FunctionPort(), theFunctionmodelingPackage.getFunctionPort(), null, "functionPort", null, 1, 1, ClampConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getClampConnectorInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1, ClampConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getClampConnectorInstanceRef_FunctionPort(), theFunctionmodelingPackage.getFunctionPort(), null, "functionPort", null, 1, 1, ClampConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getClampConnectorInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1, ClampConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(refineInstanceRefEClass, RefineInstanceRef.class, "RefineInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRefineInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, RefineInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRefineInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, RefineInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRefineInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, RefineInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRefineInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, RefineInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(satisfyInstanceRefEClass, SatisfyInstanceRef.class, "SatisfyInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSatisfyInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, SatisfyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSatisfyInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, SatisfyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSatisfyInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, SatisfyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSatisfyInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, SatisfyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(vvCaseInstanceRefEClass, VVCaseInstanceRef.class, "VVCaseInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVVCaseInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, VVCaseInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVVCaseInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, VVCaseInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getVVCaseInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, VVCaseInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getVVCaseInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, VVCaseInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(vvTargetInstanceRefEClass, VVTargetInstanceRef.class, "VVTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVVTargetInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, VVTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVVTargetInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, VVTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getVVTargetInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, VVTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getVVTargetInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, VVTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(realization_realizedInstanceRefEClass, Realization_realizedInstanceRef.class, "Realization_realizedInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRealization_realizedInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, Realization_realizedInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRealization_realizedInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, Realization_realizedInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRealization_realizedInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, Realization_realizedInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRealization_realizedInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, Realization_realizedInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(realization_realizedByInstanceRefEClass, Realization_realizedByInstanceRef.class, "Realization_realizedByInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRealization_realizedByInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, Realization_realizedByInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRealization_realizedByInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, Realization_realizedByInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRealization_realizedByInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, Realization_realizedByInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRealization_realizedByInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, Realization_realizedByInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(eventFunctionInstanceRefEClass, EventFunctionInstanceRef.class, "EventFunctionInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEventFunctionInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_target", null, 1, 1, EventFunctionInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getEventFunctionInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1, EventFunctionInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getEventFunctionInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_target", null, 1, 1, EventFunctionInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getEventFunctionInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1, EventFunctionInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(eventFunctionClientServerPortInstanceRefEClass, EventFunctionClientServerPortInstanceRef.class, "EventFunctionClientServerPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEventFunctionClientServerPortInstanceRef_FunctionClientServerPort(), theFunctionmodelingPackage.getFunctionClientServerPort(), null, "functionClientServerPort", null, 1, 1, EventFunctionClientServerPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getEventFunctionClientServerPortInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1, EventFunctionClientServerPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getEventFunctionClientServerPortInstanceRef_FunctionClientServerPort(), theFunctionmodelingPackage.getFunctionClientServerPort(), null, "functionClientServerPort", null, 1, 1, EventFunctionClientServerPortInstanceRef.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getEventFunctionClientServerPortInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1, EventFunctionClientServerPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(eventFunctionFlowPortInstanceRefEClass, EventFunctionFlowPortInstanceRef.class, "EventFunctionFlowPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEventFunctionFlowPortInstanceRef_FunctionFlowPort(), theFunctionmodelingPackage.getFunctionFlowPort(), null, "functionFlowPort", null, 1, 1, EventFunctionFlowPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getEventFunctionFlowPortInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1, EventFunctionFlowPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getEventFunctionFlowPortInstanceRef_FunctionFlowPort(), theFunctionmodelingPackage.getFunctionFlowPort(), null, "functionFlowPort", null, 1, 1, EventFunctionFlowPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getEventFunctionFlowPortInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1, EventFunctionFlowPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(precedenceConstraint_precedingInstanceRefEClass, PrecedenceConstraint_precedingInstanceRef.class, "PrecedenceConstraint_precedingInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPrecedenceConstraint_precedingInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_target", null, 1, 1, PrecedenceConstraint_precedingInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getPrecedenceConstraint_precedingInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1, PrecedenceConstraint_precedingInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPrecedenceConstraint_precedingInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_target", null, 1, 1, PrecedenceConstraint_precedingInstanceRef.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPrecedenceConstraint_precedingInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1, PrecedenceConstraint_precedingInstanceRef.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(precedenceConstraint_successiveInstanceRefEClass, PrecedenceConstraint_successiveInstanceRef.class, "PrecedenceConstraint_successiveInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPrecedenceConstraint_successiveInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_target", null, 1, 1, PrecedenceConstraint_successiveInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getPrecedenceConstraint_successiveInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1, PrecedenceConstraint_successiveInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPrecedenceConstraint_successiveInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_target", null, 1, 1, PrecedenceConstraint_successiveInstanceRef.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPrecedenceConstraint_successiveInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1, PrecedenceConstraint_successiveInstanceRef.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(errorModelPrototype_functionTargetInstanceRefEClass, ErrorModelPrototype_functionTargetInstanceRef.class, "ErrorModelPrototype_functionTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getErrorModelPrototype_functionTargetInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 1, 1, ErrorModelPrototype_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorModelPrototype_functionTargetInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1, ErrorModelPrototype_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getErrorModelPrototype_functionTargetInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 1, 1, ErrorModelPrototype_functionTargetInstanceRef.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getErrorModelPrototype_functionTargetInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1, ErrorModelPrototype_functionTargetInstanceRef.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(errorModelPrototype_hwTargetInstanceRefEClass, ErrorModelPrototype_hwTargetInstanceRef.class, "ErrorModelPrototype_hwTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getErrorModelPrototype_hwTargetInstanceRef_HardwareComponentProtype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentProtype", null, 1, 1, ErrorModelPrototype_hwTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorModelPrototype_hwTargetInstanceRef_HardwareComponentProtype_context(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentProtype_context", null, 0, -1, ErrorModelPrototype_hwTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getErrorModelPrototype_hwTargetInstanceRef_HardwareComponentProtype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentProtype", null, 1, 1, ErrorModelPrototype_hwTargetInstanceRef.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getErrorModelPrototype_hwTargetInstanceRef_HardwareComponentProtype_context(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentProtype_context", null, 0, -1,
+				ErrorModelPrototype_hwTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(faultFailurePort_hwTargetInstanceRefEClass, FaultFailurePort_hwTargetInstanceRef.class, "FaultFailurePort_hwTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFaultFailurePort_hwTargetInstanceRef_HardwarePort(), theHardwaremodelingPackage.getHardwarePin(), null, "hardwarePort", null, 1, 1, FaultFailurePort_hwTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailurePort_hwTargetInstanceRef_HardwareComponentProtype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentProtype", null, 0, -1, FaultFailurePort_hwTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFaultFailurePort_hwTargetInstanceRef_HardwarePort(), theHardwaremodelingPackage.getHardwarePin(), null, "hardwarePort", null, 1, 1, FaultFailurePort_hwTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFaultFailurePort_hwTargetInstanceRef_HardwareComponentProtype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentProtype", null, 0, -1, FaultFailurePort_hwTargetInstanceRef.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(faultFailurePort_functionTargetInstanceRefEClass, FaultFailurePort_functionTargetInstanceRef.class, "FaultFailurePort_functionTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFaultFailurePort_functionTargetInstanceRef_FunctionPort(), theFunctionmodelingPackage.getFunctionPort(), null, "functionPort", null, 1, 1, FaultFailurePort_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailurePort_functionTargetInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1, FaultFailurePort_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFaultFailurePort_functionTargetInstanceRef_FunctionPort(), theFunctionmodelingPackage.getFunctionPort(), null, "functionPort", null, 1, 1, FaultFailurePort_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFaultFailurePort_functionTargetInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1, FaultFailurePort_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(faultFailurePropagationLink_fromPortInstanceRefEClass, FaultFailurePropagationLink_fromPortInstanceRef.class, "FaultFailurePropagationLink_fromPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFaultFailurePropagationLink_fromPortInstanceRef_FaultFairelurePort(), theErrormodelPackage.getFaultFailurePort(), null, "faultFairelurePort", null, 1, 1, FaultFailurePropagationLink_fromPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailurePropagationLink_fromPortInstanceRef_ErrorModelPrototype(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype", null, 0, -1, FaultFailurePropagationLink_fromPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFaultFailurePropagationLink_fromPortInstanceRef_FaultFairelurePort(), theErrormodelPackage.getFaultFailurePort(), null, "faultFairelurePort", null, 1, 1, FaultFailurePropagationLink_fromPortInstanceRef.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFaultFailurePropagationLink_fromPortInstanceRef_ErrorModelPrototype(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype", null, 0, -1, FaultFailurePropagationLink_fromPortInstanceRef.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(faultFailure_anomalyInstanceRefEClass, FaultFailure_anomalyInstanceRef.class, "FaultFailure_anomalyInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFaultFailure_anomalyInstanceRef_Anomaly(), theErrormodelPackage.getAnomaly(), null, "anomaly", null, 1, 1, FaultFailure_anomalyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailure_anomalyInstanceRef_ErrorModelPrototype(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype", null, 0, -1, FaultFailure_anomalyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFaultFailure_anomalyInstanceRef_Anomaly(), theErrormodelPackage.getAnomaly(), null, "anomaly", null, 1, 1, FaultFailure_anomalyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFaultFailure_anomalyInstanceRef_ErrorModelPrototype(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype", null, 0, -1, FaultFailure_anomalyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(faultFailurePropagationLink_toPortInstanceRefEClass, FaultFailurePropagationLink_toPortInstanceRef.class, "FaultFailurePropagationLink_toPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFaultFailurePropagationLink_toPortInstanceRef_FaultFairelurePort(), theErrormodelPackage.getFaultFailurePort(), null, "faultFairelurePort", null, 1, 1, FaultFailurePropagationLink_toPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailurePropagationLink_toPortInstanceRef_ErrorModelPrototype(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype", null, 0, -1, FaultFailurePropagationLink_toPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFaultFailurePropagationLink_toPortInstanceRef_FaultFairelurePort(), theErrormodelPackage.getFaultFailurePort(), null, "faultFairelurePort", null, 1, 1, FaultFailurePropagationLink_toPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFaultFailurePropagationLink_toPortInstanceRef_ErrorModelPrototype(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype", null, 0, -1, FaultFailurePropagationLink_toPortInstanceRef.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(behaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefEClass, BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef.class, "BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef_FunctionConnector(), theFunctionmodelingPackage.getFunctionConnector(), null, "functionConnector", null, 1, 1, BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1, BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(behaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefEClass, BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef.class, "BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef_FunctionConnector(), theFunctionmodelingPackage.getFunctionConnector(), null, "functionConnector", null, 1, 1,
+				BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1,
+				BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(behaviorConstraintInternalBinding_throughHardwareConnectorInstanceRefEClass, BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef.class, "BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef_HardwareConnector(), theHardwaremodelingPackage.getHardwareConnector(), null, "hardwareConnector", null, 1, 1, BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef_HardwareComponentPrototype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentPrototype", null, 0, -1, BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(behaviorConstraintInternalBinding_throughHardwareConnectorInstanceRefEClass, BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef.class, "BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef_HardwareConnector(), theHardwaremodelingPackage.getHardwareConnector(), null, "hardwareConnector", null, 1, 1,
+				BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef_HardwareComponentPrototype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentPrototype", null, 0, -1,
+				BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(behaviorConstraintPrototype_functionTargetInstanceRefEClass, BehaviorConstraintPrototype_functionTargetInstanceRef.class, "BehaviorConstraintPrototype_functionTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintPrototype_functionTargetInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_target", null, 1, 1, BehaviorConstraintPrototype_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_functionTargetInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1, BehaviorConstraintPrototype_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintPrototype_functionTargetInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_target", null, 1, 1,
+				BehaviorConstraintPrototype_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintPrototype_functionTargetInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1,
+				BehaviorConstraintPrototype_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(behaviorConstraintPrototype_hardwareComponentTargetInstanceRefEClass, BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef.class, "BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef_HardwareComponentProtype_target(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentProtype_target", null, 1, 1, BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef_HardwareComponentPrototype_context(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentPrototype_context", null, 0, -1, BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(behaviorConstraintPrototype_hardwareComponentTargetInstanceRefEClass, BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef.class, "BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef_HardwareComponentProtype_target(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentProtype_target", null, 1, 1,
+				BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef_HardwareComponentPrototype_context(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentPrototype_context", null, 0, -1,
+				BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(behaviorConstraintPrototype_errorModelTargetInstanceRefEClass, BehaviorConstraintPrototype_errorModelTargetInstanceRef.class, "BehaviorConstraintPrototype_errorModelTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintPrototype_errorModelTargetInstanceRef_ErrorModelPrototype_target(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype_target", null, 1, 1, BehaviorConstraintPrototype_errorModelTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_errorModelTargetInstanceRef_ErrorModelPrototype_context(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype_context", null, 0, -1, BehaviorConstraintPrototype_errorModelTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(behaviorConstraintPrototype_errorModelTargetInstanceRefEClass, BehaviorConstraintPrototype_errorModelTargetInstanceRef.class, "BehaviorConstraintPrototype_errorModelTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBehaviorConstraintPrototype_errorModelTargetInstanceRef_ErrorModelPrototype_target(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype_target", null, 1, 1,
+				BehaviorConstraintPrototype_errorModelTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintPrototype_errorModelTargetInstanceRef_ErrorModelPrototype_context(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype_context", null, 0, -1,
+				BehaviorConstraintPrototype_errorModelTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(dummyEDataType, String.class, "Dummy", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 	}
 
-} //InfrastructurePackageImpl
+} // InfrastructurePackageImpl

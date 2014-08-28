@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,8 +48,8 @@ public class ContextStorageRegistry {
 	public IContextStorageProvider getStorageProvider(Context context) {
 		IContextStorageProvider result = IContextStorageProvider.NULL;
 
-		for(IContextStorageProvider next : providers) {
-			if(next.providesFor(context)) {
+		for (IContextStorageProvider next : providers) {
+			if (next.providesFor(context)) {
 				result = next;
 				break;
 			}
@@ -81,10 +81,10 @@ public class ContextStorageRegistry {
 		protected boolean readElement(IConfigurationElement element, boolean add) {
 			boolean result = true;
 
-			if(E_PROVIDER.equals(element.getName())) {
-				if(add) {
+			if (E_PROVIDER.equals(element.getName())) {
+				if (add) {
 					try {
-						IContextStorageProvider provider = (IContextStorageProvider)element.createExecutableExtension(A_CLASS);
+						IContextStorageProvider provider = (IContextStorageProvider) element.createExecutableExtension(A_CLASS);
 						provider.initialize(resourceSet);
 						providers.add(provider);
 					} catch (Exception e) {
@@ -94,16 +94,16 @@ public class ContextStorageRegistry {
 				} else {
 					try {
 						String className = element.getAttribute(A_CLASS);
-						for(Iterator<IContextStorageProvider> iter = providers.iterator(); iter.hasNext();) {
+						for (Iterator<IContextStorageProvider> iter = providers.iterator(); iter.hasNext();) {
 							IContextStorageProvider next = iter.next();
-							if(className.equals(next.getClass().getName())) {
+							if (className.equals(next.getClass().getName())) {
 								// dispose of the provider
 								try {
 									next.dispose();
 								} catch (Exception e) {
 									Activator.log.error("Uncaught exception in disposal of context storage provider extension.", e); //$NON-NLS-1$
 								}
-								
+
 								// and forget it
 								iter.remove();
 							}

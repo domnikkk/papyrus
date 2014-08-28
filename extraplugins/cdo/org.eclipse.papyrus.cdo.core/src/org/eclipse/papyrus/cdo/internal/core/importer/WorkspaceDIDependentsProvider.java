@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,9 +49,10 @@ public class WorkspaceDIDependentsProvider implements IModelDependentsProvider {
 		super();
 	}
 
+	@Override
 	public Collection<URI> getDependents(Resource resource, IProgressMonitor monitor) {
 
-		if(!completedScan) {
+		if (!completedScan) {
 			scanWorkspace(resource.getResourceSet());
 		}
 
@@ -60,14 +61,14 @@ public class WorkspaceDIDependentsProvider implements IModelDependentsProvider {
 		// if it's a DI resource, get its dependencies' dependents and find
 		// their dependents that are unique DIs
 		Resource di = getDIResource(resource);
-		if(di != null) {
+		if (di != null) {
 			// the DI's dependencies are the model components
-			for(Resource component : DependencyAdapter.getDependencies(di)) {
+			for (Resource component : DependencyAdapter.getDependencies(di)) {
 				// the components' dependents in other models are what we are
 				// interested in
-				for(Resource next : DependencyAdapter.getDependents(component)) {
+				for (Resource next : DependencyAdapter.getDependents(component)) {
 					Resource dependentDI = getDIResource(next);
-					if((dependentDI != null) && (dependentDI != di)) {
+					if ((dependentDI != null) && (dependentDI != di)) {
 						result.add(dependentDI.getURI());
 					}
 				}
@@ -77,10 +78,11 @@ public class WorkspaceDIDependentsProvider implements IModelDependentsProvider {
 		return result;
 	}
 
+	@Override
 	public Collection<URI> getComponents(Resource diResource, IProgressMonitor monitor) {
 		Collection<URI> result;
 
-		if(!diResource.getURI().isPlatformResource()) {
+		if (!diResource.getURI().isPlatformResource()) {
 			result = Collections.emptyList();
 		} else {
 			ImmutableList.Builder<URI> uris = ImmutableList.builder();
@@ -91,8 +93,8 @@ public class WorkspaceDIDependentsProvider implements IModelDependentsProvider {
 			final IContainer container = file.getParent();
 
 			try {
-				for(IFile next : filter(Arrays.asList(container.members()), IFile.class)) {
-					if(!next.equals(file) && baseName.equals(next.getFullPath().removeFileExtension().lastSegment())) {
+				for (IFile next : filter(Arrays.asList(container.members()), IFile.class)) {
+					if (!next.equals(file) && baseName.equals(next.getFullPath().removeFileExtension().lastSegment())) {
 						uris.add(baseURI.appendSegment(next.getName()));
 					}
 				}
@@ -111,16 +113,17 @@ public class WorkspaceDIDependentsProvider implements IModelDependentsProvider {
 
 		IResourceProxyVisitor visitor = new IResourceProxyVisitor() {
 
+			@Override
 			public boolean visit(IResourceProxy proxy) throws CoreException {
 
-				if((proxy.getType() == IResource.FILE) && proxy.getName().endsWith(".di")) { //$NON-NLS-1$
+				if ((proxy.getType() == IResource.FILE) && proxy.getName().endsWith(".di")) { //$NON-NLS-1$
 
 					String path = proxy.requestFullPath().toString();
 
 					try {
 						Resource resource = resourceSet.getResource(URI.createPlatformResourceURI(path, true), true);
 
-						if((resource != null) && isDIResource(resource)) {
+						if ((resource != null) && isDIResource(resource)) {
 							// it's a Papyrus model. Initialize the
 							// dependencies
 							DependencyAdapter.getInstance(resource);
@@ -128,7 +131,7 @@ public class WorkspaceDIDependentsProvider implements IModelDependentsProvider {
 					} catch (Exception e) {
 						// not a valid model resource. That's OK.
 						Resource resource = resourceSet.getResource(URI.createPlatformResourceURI(path, true), false);
-						if(resource != null) {
+						if (resource != null) {
 							resource.unload();
 							resourceSet.getResources().remove(resource);
 							resource.eAdapters().clear();

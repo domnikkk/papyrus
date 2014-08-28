@@ -1,12 +1,12 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 323802
@@ -49,9 +49,9 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
-import org.eclipse.papyrus.infra.gmfdiag.preferences.utils.GradientPreferenceConverter;
 import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.GMFUnsafe;
+import org.eclipse.papyrus.infra.gmfdiag.preferences.utils.GradientPreferenceConverter;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.AcceptEventActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActionInputPinInCallBeActEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActionInputPinInCallOpActAsTargetEditPart;
@@ -178,7 +178,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	protected IFigure primaryShape;
 
 	private boolean isRefreshingSnapshotFigure;
-	
+
 	/**
 	 * @generated
 	 */
@@ -188,8 +188,8 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new PapyrusCreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CallBehaviorActionItemSemanticEditPolicy());
-		//in Papyrus diagrams are not strongly synchronised
-		//installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.activity.edit.policies.CallBehaviorActionCanonicalEditPolicy());
+		// in Papyrus diagrams are not strongly synchronised
+		// installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.activity.edit.policies.CallBehaviorActionCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy());
 		installEditPolicy(RequestConstants.REQ_CREATE, new CreateActionLocalConditionEditPolicy());
@@ -204,21 +204,22 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 
 	/**
 	 * Papyrus codeGen
-	 * 
+	 *
 	 * @generated
 	 **/
 	@Override
 	protected void handleNotificationEvent(final Notification event) {
 		super.handleNotificationEvent(event);
-		//Add/Remove the RakeFigure when an Activity is selected as behavior or deselected
-		if(resolveSemanticElement() != null) {
-			if(resolveSemanticElement() instanceof CallBehaviorAction && resolveSemanticElement().equals(event.getNotifier()) && event.getFeature().equals(UMLPackage.eINSTANCE.getCallBehaviorAction_Behavior())) {
-				final CallBehaviorAction action = (CallBehaviorAction)resolveSemanticElement();
-				if(action.getBehavior() instanceof Activity) {
+		// Add/Remove the RakeFigure when an Activity is selected as behavior or deselected
+		if (resolveSemanticElement() != null) {
+			if (resolveSemanticElement() instanceof CallBehaviorAction && resolveSemanticElement().equals(event.getNotifier()) && event.getFeature().equals(UMLPackage.eINSTANCE.getCallBehaviorAction_Behavior())) {
+				final CallBehaviorAction action = (CallBehaviorAction) resolveSemanticElement();
+				if (action.getBehavior() instanceof Activity) {
 					getPrimaryShape().displayRake(true);
 				} else {
 					getPrimaryShape().displayRake(false);
-				};
+				}
+				;
 				refreshVisuals();
 			}
 		}
@@ -232,8 +233,8 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 
 			@Override
 			protected EditPolicy createChildEditPolicy(final EditPart child) {
-				final View childView = (View)child.getModel();
-				switch(UMLVisualIDRegistry.getVisualID(childView)) {
+				final View childView = (View) child.getModel();
+				switch (UMLVisualIDRegistry.getVisualID(childView)) {
 				case ValuePinInCallBeActEditPart.VISUAL_ID:
 				case ActionInputPinInCallBeActEditPart.VISUAL_ID:
 				case InputPinInCallBeActEditPart.VISUAL_ID:
@@ -241,7 +242,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 					return new BorderItemResizableEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
@@ -263,6 +264,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	/**
 	 * @generated
 	 */
+	@Override
 	protected IFigure createNodeShape() {
 		return primaryShape = new InteractionWithSnapshotFigure();
 	}
@@ -272,7 +274,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	 */
 	@Override
 	public CallBehaviorActionFigure getPrimaryShape() {
-		return (CallBehaviorActionFigure)primaryShape;
+		return (CallBehaviorActionFigure) primaryShape;
 	}
 
 	/**
@@ -296,7 +298,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	 */
 	@Override
 	protected void addChildVisual(final EditPart childEditPart, final int index) {
-		if(addFixedChild(childEditPart)) {
+		if (addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -307,7 +309,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	 */
 	@Override
 	protected void removeChildVisual(final EditPart childEditPart) {
-		if(removeFixedChild(childEditPart)) {
+		if (removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -318,7 +320,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	 */
 	@Override
 	protected IFigure getContentPaneFor(final IGraphicalEditPart editPart) {
-		if(editPart instanceof IBorderItemEditPart) {
+		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
 		return getContentPane();
@@ -327,6 +329,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	/**
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createNodePlate() {
 		final String prefElementId = "CallBehaviorAction";
 		final IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
@@ -338,10 +341,10 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -356,7 +359,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 
 	/**
 	 * Refresh the children parts, including the rake if necessary
-	 * 
+	 *
 	 * @see org.eclipse.gef.editparts.AbstractEditPart#refreshChildren()
 	 * @generated NOT
 	 */
@@ -364,9 +367,9 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	protected void refreshChildren() {
 		super.refreshChildren();
 		// add the rake if behavior is an activity
-		if(resolveSemanticElement() instanceof CallBehaviorAction) {
-			final CallBehaviorAction action = (CallBehaviorAction)resolveSemanticElement();
-			if(action.getBehavior() instanceof Activity) {
+		if (resolveSemanticElement() instanceof CallBehaviorAction) {
+			final CallBehaviorAction action = (CallBehaviorAction) resolveSemanticElement();
+			if (action.getBehavior() instanceof Activity) {
 				getPrimaryShape().displayRake(true);
 			} else {
 				getPrimaryShape().displayRake(false);
@@ -377,13 +380,14 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
-	 *        instance of generated figure class
+	 *            instance of generated figure class
 	 * @generated
 	 */
+	@Override
 	protected IFigure setupContentPane(final IFigure nodeShape) {
-		if(nodeShape.getLayoutManager() == null) {
+		if (nodeShape.getLayoutManager() == null) {
 			final ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
 			layout.setSpacing(5);
 			nodeShape.setLayoutManager(layout);
@@ -396,7 +400,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	 */
 	@Override
 	public IFigure getContentPane() {
-		if(contentPane != null) {
+		if (contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
@@ -407,7 +411,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	 */
 	@Override
 	protected void setForegroundColor(final Color color) {
-		if(primaryShape != null) {
+		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
 		}
 	}
@@ -417,8 +421,8 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	 */
 	@Override
 	protected void setLineWidth(final int width) {
-		if(primaryShape instanceof Shape) {
-			((Shape)primaryShape).setLineWidth(width);
+		if (primaryShape instanceof Shape) {
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 
@@ -427,8 +431,8 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	 */
 	@Override
 	protected void setLineType(final int style) {
-		if(primaryShape instanceof Shape) {
-			((Shape)primaryShape).setLineStyle(style);
+		if (primaryShape instanceof Shape) {
+			((Shape) primaryShape).setLineStyle(style);
 		}
 	}
 
@@ -455,238 +459,238 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	public List<IElementType> getMARelTypesOnSourceAndTarget(final IGraphicalEditPart targetEditPart) {
 		final LinkedList<IElementType> types = new LinkedList<IElementType>();
 
-		if(targetEditPart instanceof org.eclipse.papyrus.uml.diagram.activity.edit.parts.CallBehaviorActionEditPart) {
+		if (targetEditPart instanceof org.eclipse.papyrus.uml.diagram.activity.edit.parts.CallBehaviorActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof CallBehaviorActionAsInteractionEditPart) {
+		if (targetEditPart instanceof CallBehaviorActionAsInteractionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InitialNodeEditPart) {
+		if (targetEditPart instanceof InitialNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActivityFinalNodeEditPart) {
+		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof FlowFinalNodeEditPart) {
+		if (targetEditPart instanceof FlowFinalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OpaqueActionEditPart) {
+		if (targetEditPart instanceof OpaqueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInOpaqueActEditPart) {
+		if (targetEditPart instanceof ValuePinInOpaqueActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInOpaqueActEditPart) {
+		if (targetEditPart instanceof ActionInputPinInOpaqueActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInOpaqueActEditPart) {
+		if (targetEditPart instanceof InputPinInOpaqueActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInOpaqueActEditPart) {
+		if (targetEditPart instanceof OutputPinInOpaqueActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInCallBeActEditPart) {
+		if (targetEditPart instanceof ValuePinInCallBeActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInCallBeActEditPart) {
+		if (targetEditPart instanceof ActionInputPinInCallBeActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInCallBeActEditPart) {
+		if (targetEditPart instanceof InputPinInCallBeActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInCallBeActEditPart) {
+		if (targetEditPart instanceof OutputPinInCallBeActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof CallOperationActionEditPart) {
+		if (targetEditPart instanceof CallOperationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInCallOpActEditPart) {
+		if (targetEditPart instanceof ActionInputPinInCallOpActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInCallOpActEditPart) {
+		if (targetEditPart instanceof ValuePinInCallOpActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInCallOpActEditPart) {
+		if (targetEditPart instanceof InputPinInCallOpActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInCallOpActEditPart) {
+		if (targetEditPart instanceof OutputPinInCallOpActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInCallOpActAsTargetEditPart) {
+		if (targetEditPart instanceof ValuePinInCallOpActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInCallOpActAsTargetEditPart) {
+		if (targetEditPart instanceof ActionInputPinInCallOpActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInCallOpActAsTargetEditPart) {
+		if (targetEditPart instanceof InputPinInCallOpActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof DecisionNodeEditPart) {
+		if (targetEditPart instanceof DecisionNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof MergeNodeEditPart) {
+		if (targetEditPart instanceof MergeNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ForkNodeEditPart) {
+		if (targetEditPart instanceof ForkNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof JoinNodeEditPart) {
+		if (targetEditPart instanceof JoinNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof DataStoreNodeEditPart) {
+		if (targetEditPart instanceof DataStoreNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof SendObjectActionEditPart) {
+		if (targetEditPart instanceof SendObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInSendObjActAsReqEditPart) {
+		if (targetEditPart instanceof ValuePinInSendObjActAsReqEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInSendObjActAsReqEditPart) {
+		if (targetEditPart instanceof ActionInputPinInSendObjActAsReqEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInSendObjActAsReqEditPart) {
+		if (targetEditPart instanceof InputPinInSendObjActAsReqEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInSendObjActAsTargetEditPart) {
+		if (targetEditPart instanceof ValuePinInSendObjActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInSendObjActAsTargetEditPart) {
+		if (targetEditPart instanceof ActionInputPinInSendObjActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInSendObjActAsTargetEditPart) {
+		if (targetEditPart instanceof InputPinInSendObjActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof SendSignalActionEditPart) {
+		if (targetEditPart instanceof SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInSendSigActEditPart) {
+		if (targetEditPart instanceof ActionInputPinInSendSigActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInSendSigActEditPart) {
+		if (targetEditPart instanceof ValuePinInSendSigActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInSendSigActEditPart) {
+		if (targetEditPart instanceof InputPinInSendSigActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInSendSigActAsTargetEditPart) {
+		if (targetEditPart instanceof ValuePinInSendSigActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInSendSigActAsTargetEditPart) {
+		if (targetEditPart instanceof ActionInputPinInSendSigActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInSendSigActAsTargetEditPart) {
+		if (targetEditPart instanceof InputPinInSendSigActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActivityParameterNodeEditPart) {
+		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof AcceptEventActionEditPart) {
+		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInAcceptEventActionEditPart) {
+		if (targetEditPart instanceof OutputPinInAcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInValSpecActEditPart) {
+		if (targetEditPart instanceof OutputPinInValSpecActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ConditionalNodeEditPart) {
+		if (targetEditPart instanceof ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ExpansionRegionEditPart) {
+		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ExpansionNodeAsInEditPart) {
+		if (targetEditPart instanceof ExpansionNodeAsInEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ExpansionNodeAsOutEditPart) {
+		if (targetEditPart instanceof ExpansionNodeAsOutEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof LoopNodeEditPart) {
+		if (targetEditPart instanceof LoopNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInLoopNodeAsBodyOutputEditPart) {
+		if (targetEditPart instanceof OutputPinInLoopNodeAsBodyOutputEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInLoopNodeAsLoopVariableEditPart) {
+		if (targetEditPart instanceof OutputPinInLoopNodeAsLoopVariableEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInLoopNodeAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInLoopNodeAsResultEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof SequenceNodeEditPart) {
+		if (targetEditPart instanceof SequenceNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof StructuredActivityNodeEditPart) {
+		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInLoopNodeAsVariableEditPart) {
+		if (targetEditPart instanceof InputPinInLoopNodeAsVariableEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ReadSelfActionEditPart) {
+		if (targetEditPart instanceof ReadSelfActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ReadSelfActionOutputPinEditPart) {
+		if (targetEditPart instanceof ReadSelfActionOutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof CreateObjectActionEditPart) {
+		if (targetEditPart instanceof CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInCreateObjectActionAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInCreateObjectActionAsResultEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ReadStructuralFeatureActionEditPart) {
+		if (targetEditPart instanceof ReadStructuralFeatureActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInReadStructuralFeatureAsObjectEditPart) {
+		if (targetEditPart instanceof InputPinInReadStructuralFeatureAsObjectEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInReadStructuralFeatureAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInReadStructuralFeatureAsResultEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
+		if (targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInAddStructuralFeatureValueActionAsObjectEditPart) {
+		if (targetEditPart instanceof InputPinInAddStructuralFeatureValueActionAsObjectEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInAddStructuralFeatureValueActionAsValueEditPart) {
+		if (targetEditPart instanceof InputPinInAddStructuralFeatureValueActionAsValueEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInAddStructuralFeatureValueActionAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInAddStructuralFeatureValueActionAsResultEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof DestroyObjectActionEditPart) {
+		if (targetEditPart instanceof DestroyObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInDestroyObjectActionEditPart) {
+		if (targetEditPart instanceof InputPinInDestroyObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ReadVariableActionEditPart) {
+		if (targetEditPart instanceof ReadVariableActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInReadVariableActionAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInReadVariableActionAsResultEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof AddVariableValueActionEditPart) {
+		if (targetEditPart instanceof AddVariableValueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInAddVariableValueActionAsInsertAtEditPart) {
+		if (targetEditPart instanceof InputPinInAddVariableValueActionAsInsertAtEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInAddVariableValueActionAsValueEditPart) {
+		if (targetEditPart instanceof InputPinInAddVariableValueActionAsValueEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof BroadcastSignalActionEditPart) {
+		if (targetEditPart instanceof BroadcastSignalActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInBroadcastSignalActionEditPart) {
+		if (targetEditPart instanceof InputPinInBroadcastSignalActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof CentralBufferNodeEditPart) {
+		if (targetEditPart instanceof CentralBufferNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
 		return types;
@@ -697,7 +701,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	 */
 	public List<IElementType> getMATypesForTarget(final IElementType relationshipType) {
 		final LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(relationshipType == UMLElementTypes.ControlFlow_4004) {
+		if (relationshipType == UMLElementTypes.ControlFlow_4004) {
 			types.add(UMLElementTypes.InitialNode_3004);
 			types.add(UMLElementTypes.ActivityFinalNode_3005);
 			types.add(UMLElementTypes.FlowFinalNode_3006);
@@ -796,7 +800,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	 */
 	public List<IElementType> getMATypesForSource(final IElementType relationshipType) {
 		final LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(relationshipType == UMLElementTypes.ControlFlow_4004) {
+		if (relationshipType == UMLElementTypes.ControlFlow_4004) {
 			types.add(UMLElementTypes.InitialNode_3004);
 			types.add(UMLElementTypes.ActivityFinalNode_3005);
 			types.add(UMLElementTypes.FlowFinalNode_3006);
@@ -875,9 +879,9 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 			types.add(UMLElementTypes.InputPin_3103);
 			types.add(UMLElementTypes.CentralBufferNode_3104);
 			types.add(org.eclipse.papyrus.uml.diagram.interactionoverview.provider.UMLElementTypes.CallBehaviorAction_5000);
-		} else if(relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
+		} else if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
 			types.add(UMLElementTypes.Comment_3080);
-		} else if(relationshipType == UMLElementTypes.ConstraintConstrainedElement_4007) {
+		} else if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4007) {
 			types.add(UMLElementTypes.DurationConstraint_3034);
 			types.add(UMLElementTypes.DurationConstraint_3035);
 			types.add(UMLElementTypes.TimeConstraint_3036);
@@ -896,28 +900,28 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	 */
 	@Override
 	public Object getPreferredValue(final EStructuralFeature feature) {
-		final IPreferenceStore preferenceStore = (IPreferenceStore)getDiagramPreferencesHint().getPreferenceStore();
+		final IPreferenceStore preferenceStore = (IPreferenceStore) getDiagramPreferencesHint().getPreferenceStore();
 		Object result = null;
-		if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
+		if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 			String prefColor = null;
-			if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
+			if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("CallBehaviorAction", PreferencesConstantsHelper.COLOR_LINE);
-			} else if(feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("CallBehaviorAction", PreferencesConstantsHelper.COLOR_FONT);
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("CallBehaviorAction", PreferencesConstantsHelper.COLOR_FILL);
 			}
 			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor(preferenceStore, prefColor));
-		} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
+		} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 			final String prefGradient = PreferencesConstantsHelper.getElementConstant("CallBehaviorAction", PreferencesConstantsHelper.COLOR_GRADIENT);
 			final GradientPreferenceConverter gradientPreferenceConverter = new GradientPreferenceConverter(preferenceStore.getString(prefGradient));
-			if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
+			if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
 				result = new Integer(gradientPreferenceConverter.getTransparency());
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 				result = gradientPreferenceConverter.getGradientData();
 			}
 		}
-		if(result == null) {
+		if (result == null) {
 			result = getStructuralFeatureValue(feature);
 		}
 		return result;
@@ -926,8 +930,8 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	@Override
 	public Command getCommand(final Request _request) {
 		// TODO Auto-generated method stub
-		if(_request instanceof ChangeBoundsRequest) {
-			final ChangeBoundsRequest request = (ChangeBoundsRequest)_request;
+		if (_request instanceof ChangeBoundsRequest) {
+			final ChangeBoundsRequest request = (ChangeBoundsRequest) _request;
 			final CompoundCommand compoundCommand = new CompoundCommand();
 			compoundCommand.add(new RefreshCommandForUndo(this));
 			compoundCommand.add(new Command() {
@@ -935,7 +939,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 				@Override
 				public void execute() {
 					final Rectangle newBound = request.getTransformedRectangle(primaryShape.getBounds());
-					((InteractionWithSnapshotFigure)primaryShape).updateSnapshot(new Rectangle(newBound.x, newBound.y, newBound.width, newBound.height - 15));
+					((InteractionWithSnapshotFigure) primaryShape).updateSnapshot(new Rectangle(newBound.x, newBound.y, newBound.width, newBound.height - 15));
 				}
 			});
 			compoundCommand.add(super.getCommand(request));
@@ -948,17 +952,17 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	@Override
 	public void refresh() {
 		super.refresh();
-		if(((InteractionWithSnapshotFigure)primaryShape).getImageFigure() != null && isValidFromRefresh()) {
-			if(!isRefreshingSnapshotFigure) {
+		if (((InteractionWithSnapshotFigure) primaryShape).getImageFigure() != null && isValidFromRefresh()) {
+			if (!isRefreshingSnapshotFigure) {
 				isRefreshingSnapshotFigure = true;
 
 				try {
-					if(((InteractionWithSnapshotFigure)primaryShape).getImageFigure().getImage() == null) {
+					if (((InteractionWithSnapshotFigure) primaryShape).getImageFigure().getImage() == null) {
 
 						try {
 
-							final CreateSnapshotForInteractionFromRefreshCommand command = CreateSnapshotForInteractionFromRefreshCommand.create((View)getModel(), (GraphicalEditPart)getParent());
-							//use to avoid to put it in the command stack
+							final CreateSnapshotForInteractionFromRefreshCommand command = CreateSnapshotForInteractionFromRefreshCommand.create((View) getModel(), (GraphicalEditPart) getParent());
+							// use to avoid to put it in the command stack
 							try {
 								GMFUnsafe.write(getEditingDomain(), command);
 							} catch (final Exception e) {
@@ -969,10 +973,10 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 							Activator.log.error(e);
 						}
 					}
-					if(!((InteractionWithSnapshotFigure)primaryShape).isImageSizeFitsImageFigure()) {
+					if (!((InteractionWithSnapshotFigure) primaryShape).isImageSizeFitsImageFigure()) {
 
 						final Rectangle bounds = new Rectangle(0, 0, primaryShape.getBounds().width, primaryShape.getBounds().height - 15);
-						((InteractionWithSnapshotFigure)primaryShape).updateSnapshot(bounds);
+						((InteractionWithSnapshotFigure) primaryShape).updateSnapshot(bounds);
 					}
 				} finally {
 					isRefreshingSnapshotFigure = false;
@@ -982,7 +986,7 @@ public class CallBehaviorActionAsInteractionEditPart extends NamedElementEditPar
 	}
 
 	private boolean isValidFromRefresh() {
-		final View callBehaviorActionView = (View)getModel();
+		final View callBehaviorActionView = (View) getModel();
 		return CallBehaviorUtil.getDiagramLinked(callBehaviorActionView) != null && !CallBehaviorUtil.getDiagramLinked(callBehaviorActionView).equals("");
 	}
 }

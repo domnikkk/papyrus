@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin Integration.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * Default implementation of {@link ISubResourceFile}
- * 
+ *
  * @author tristan.faure@atosorigin.com
- * 
+ *
  */
 public class SubResourceFile implements ISubResourceFile {
 
@@ -55,7 +55,7 @@ public class SubResourceFile implements ISubResourceFile {
 
 	public Image getImage() {
 		Image image = JFaceResources.getImage(getFile().getFileExtension());
-		if(image == null) {
+		if (image == null) {
 			ImageDescriptor desc = PlatformUI.getWorkbench().getEditorRegistry().getImageDescriptor(getFile().getName());
 			JFaceResources.getImageRegistry().put(getFile().getFileExtension(), desc);
 		}

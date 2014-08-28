@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,13 +23,14 @@ import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SVGNodePlateFigure;
 /**
  * this figure is used to display at the good positionn acnhor on the
  * packageable element
- * 
+ *
  * @author PT202707
- * 
+ *
  */
-public class PackageNodePlateFigure extends DefaultSizeNodeFigure implements ICustomNodePlate{
+public class PackageNodePlateFigure extends DefaultSizeNodeFigure implements ICustomNodePlate {
 
-	protected SVGNodePlateFigure svgNodePlateFigure=null;
+	protected SVGNodePlateFigure svgNodePlateFigure = null;
+
 	// @unused
 	public PackageNodePlateFigure(Dimension defSize) {
 		super(defSize);
@@ -43,22 +44,22 @@ public class PackageNodePlateFigure extends DefaultSizeNodeFigure implements ICu
 
 	/**
 	 * Gets the package figure, it's a child of PackageNodePlateFigure
-	 * 
+	 *
 	 * @return the package figure
 	 */
 	public PackageFigure getPackageFigure() {
-		if(getChildren().size() > 0 && getChildren().get(0) instanceof PackageFigure) {
-			return (PackageFigure)getChildren().get(0);
+		if (getChildren().size() > 0 && getChildren().get(0) instanceof PackageFigure) {
+			return (PackageFigure) getChildren().get(0);
 
 		}
-		if(svgNodePlateFigure!=null &&svgNodePlateFigure.getChildren().size() > 0 && svgNodePlateFigure.getChildren().get(0) instanceof PackageFigure) {
-			return (PackageFigure)svgNodePlateFigure.getChildren().get(0);
+		if (svgNodePlateFigure != null && svgNodePlateFigure.getChildren().size() > 0 && svgNodePlateFigure.getChildren().get(0) instanceof PackageFigure) {
+			return (PackageFigure) svgNodePlateFigure.getChildren().get(0);
 
 		}
 		return null;
 	}
 
-	
+
 	// This returns as the anchoring area only the central line
 	@Override
 	public PointList getPolygonPoints() {
@@ -68,7 +69,7 @@ public class PackageNodePlateFigure extends DefaultSizeNodeFigure implements ICu
 
 		PackageFigure packageFigure = getPackageFigure();
 
-		if(packageFigure != null) {
+		if (packageFigure != null) {
 			// take in account the header of the package
 			points.addPoint(anchorableRectangle.x + packageFigure.getHeader().width, anchorableRectangle.y);
 			points.addPoint(anchorableRectangle.x + packageFigure.getHeader().width, anchorableRectangle.y + packageFigure.getHeader().height);
@@ -85,21 +86,24 @@ public class PackageNodePlateFigure extends DefaultSizeNodeFigure implements ICu
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.figure.node.ICustomNodePlate#setSVGNodePlateContainer(org.eclipse.papyrus.uml.diagram.common.figure.node.SVGNodePlateFigure)
 	 *
 	 * @param svgNodePlateFigure
 	 */
+	@Override
 	public void setSVGNodePlateContainer(SVGNodePlateFigure svgNodePlateFigure) {
-		this.svgNodePlateFigure=svgNodePlateFigure;
-		
+		this.svgNodePlateFigure = svgNodePlateFigure;
+
 	}
-/**
- * 
- * @see org.eclipse.papyrus.infra.gmfdiag.common.figure.node.ICustomNodePlate#getSvgNodePlateContainer()
- *
- * @return
- */
+
+	/**
+	 *
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.figure.node.ICustomNodePlate#getSvgNodePlateContainer()
+	 *
+	 * @return
+	 */
+	@Override
 	public SVGNodePlateFigure getSvgNodePlateContainer() {
 		return this.svgNodePlateFigure;
 	}

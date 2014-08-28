@@ -1,18 +1,17 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
-import org.eclipse.papyrus.infra.core.sasheditor.editor.IEditorPage;
 import org.eclipse.papyrus.infra.core.sasheditor.editor.IPageVisitor;
 
 
 /**
  * A wrapper used to let the provided public visitor use the internal visitor to
  * visit {@link ComponentPart} and {@link EditorPart}.
- * 
+ *
  * @author Cedric dumoulin
- * 
+ *
  */
 public class PageVisitorWrapper extends PartVisitor {
 
@@ -43,7 +42,7 @@ public class PageVisitorWrapper extends PartVisitor {
 	 */
 	@Override
 	public boolean acceptEditorTile(EditorPart part) {
-		pageVisitor.accept((IEditorPage)part);
+		pageVisitor.accept(part);
 		return true;
 	}
 }

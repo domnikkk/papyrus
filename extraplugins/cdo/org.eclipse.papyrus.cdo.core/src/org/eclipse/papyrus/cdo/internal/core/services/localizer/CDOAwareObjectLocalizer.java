@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,17 +38,17 @@ public class CDOAwareObjectLocalizer extends DefaultObjectLocalizer {
 	public EObject getLocalEObject(ResourceSet localSet, EObject remoteObject) {
 		EObject result = null;
 
-		if(!(remoteObject instanceof CDOResourceNode)) {
+		if (!(remoteObject instanceof CDOResourceNode)) {
 			result = super.getLocalEObject(localSet, remoteObject);
-		} else if(remoteObject instanceof CDOResource) {
-			result = (CDOResource)getLocalResource(localSet, (CDOResource)remoteObject);
+		} else if (remoteObject instanceof CDOResource) {
+			result = (CDOResource) getLocalResource(localSet, (CDOResource) remoteObject);
 		} else {
 			// these need special handling!
-			CDOResourceNode node = (CDOResourceNode)remoteObject;
+			CDOResourceNode node = (CDOResourceNode) remoteObject;
 			String path = node.getPath();
 
 			CDOView view = CDOUtils.getView(localSet);
-			if(view != null) {
+			if (view != null) {
 				try {
 					result = view.getResourceNode(path);
 				} catch (Exception e) {
@@ -64,14 +64,14 @@ public class CDOAwareObjectLocalizer extends DefaultObjectLocalizer {
 	public Resource getLocalResource(ResourceSet localSet, Resource remoteResource) {
 		Resource result = null;
 
-		if(!(remoteResource instanceof CDOResource)) {
+		if (!(remoteResource instanceof CDOResource)) {
 			result = super.getLocalResource(localSet, remoteResource);
 		} else {
-			CDOResource cdo = (CDOResource)remoteResource;
+			CDOResource cdo = (CDOResource) remoteResource;
 			String path = cdo.getPath();
 
 			CDOView view = CDOUtils.getView(localSet);
-			if(view != null) {
+			if (view != null) {
 				try {
 					result = view.getResource(path);
 				} catch (Exception e) {
@@ -97,17 +97,17 @@ public class CDOAwareObjectLocalizer extends DefaultObjectLocalizer {
 
 		@Override
 		public void init(ServicesRegistry servicesRegistry) throws ServiceException {
-			// pass.  The localizer is stateless and requires no initialization
+			// pass. The localizer is stateless and requires no initialization
 		}
 
 		@Override
 		public void startService() throws ServiceException {
-			// pass.  The localizer is stateless and requires no starting
+			// pass. The localizer is stateless and requires no starting
 		}
 
 		@Override
 		public void disposeService() throws ServiceException {
-			// pass.  The localizer is stateless and requires no disposal
+			// pass. The localizer is stateless and requires no disposal
 		}
 
 		@Override

@@ -25,7 +25,7 @@ import org.eclipse.swt.widgets.Event;
 
 /**
  * A Custom JFace ToolTip that applies a gradient to the contents
- * 
+ *
  * @author Shawn Minto
  * @since 3.2
  */

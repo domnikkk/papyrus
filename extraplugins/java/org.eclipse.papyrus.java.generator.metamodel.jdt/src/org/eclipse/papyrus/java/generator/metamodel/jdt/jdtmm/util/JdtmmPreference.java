@@ -6,7 +6,7 @@ public class JdtmmPreference {
 
 	/**
 	 * Set value of class used for the MultiValue
-	 * 
+	 *
 	 * @param classMultiValue
 	 */
 	public static void setClassMultiValue(String classMultiValue) {
@@ -15,7 +15,7 @@ public class JdtmmPreference {
 
 	/**
 	 * get value of class used for the MultiValue
-	 * 
+	 *
 	 * @param classMultiValue
 	 */
 	public static String getMultiValued(String typeName) {
@@ -24,27 +24,35 @@ public class JdtmmPreference {
 
 	/**
 	 * return the Class of a primitive type (ex : int => Integer)
-	 * 
+	 *
 	 * @param typename
 	 * @return true if typename is a primive type
 	 */
 	private static String getPrimiveTypeClass(String typename) {
-		if(typename.equals("byte"))
+		if (typename.equals("byte")) {
 			return "Byte";
-		if(typename.equals("char"))
+		}
+		if (typename.equals("char")) {
 			return "Character";
-		if(typename.equals("double"))
+		}
+		if (typename.equals("double")) {
 			return "Double";
-		if(typename.equals("float"))
+		}
+		if (typename.equals("float")) {
 			return "Float";
-		if(typename.equals("int"))
+		}
+		if (typename.equals("int")) {
 			return "Integer";
-		if(typename.equals("long"))
+		}
+		if (typename.equals("long")) {
 			return "Long";
-		if(typename.equals("short"))
+		}
+		if (typename.equals("short")) {
 			return "Short";
-		if(typename.equals("boolean"))
+		}
+		if (typename.equals("boolean")) {
 			return "Boolean";
+		}
 		return typename;
 	}
 }

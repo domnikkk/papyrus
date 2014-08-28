@@ -1,9 +1,9 @@
 /**
  * Copyright CEA-LIST 2009
  * available under EPL 1.0 licence
- * 
+ *
  * This file is part of the Qompass tool chain (www.ec3m.net)
- * 
+ *
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * $Id$
@@ -44,10 +44,10 @@ import org.eclipse.uml2.uml.OpaqueBehavior;
 
 public class AcceleoDriver {
 
-	public final static String UML_URI = "http://www.eclipse.org/uml2/5.0.0/UML";  //$NON-NLS-1$
+	public final static String UML_URI = "http://www.eclipse.org/uml2/5.0.0/UML"; //$NON-NLS-1$
 
 	public final static String DOT = "."; //$NON-NLS-1$
-	
+
 	/**
 	 * URI of file that is currently evaluated
 	 */
@@ -62,6 +62,7 @@ public class AcceleoDriver {
 		// an event in the Acceleo log which is captured via this listener.
 		AcceleoEnginePlugin.getDefault().getLog().addLogListener(new ILogListener() {
 
+			@Override
 			public void logging(IStatus status, String plugin) {
 				hasErrors = true;
 				lastErrors = true;
@@ -78,11 +79,11 @@ public class AcceleoDriver {
 	 * Execute a script passed as parameter. It will be executed in the context
 	 * of a base script that declares the meta-model (UML2) and has additional
 	 * imports (currently none).
-	 * 
+	 *
 	 * @param template
-	 *        The template in string form
+	 *            The template in string form
 	 * @param element
-	 *        The UML element to which the template is applied
+	 *            The UML element to which the template is applied
 	 * @return the evaluated template
 	 */
 	public static String bind(String templateStr, Element element) throws AcceleoException {
@@ -92,27 +93,27 @@ public class AcceleoDriver {
 	/**
 	 * find an MTL file in a plugin. This functions assumes that the relative path (to a "bin" folder) within the
 	 * plugin includes the plug-in name as a prefix
-	 * 
+	 *
 	 * @param moduleName
-	 *        qualified name within the plug-in (assuming that the associated file is located
-	 *        in a sub-folder with the name "bin")
+	 *            qualified name within the plug-in (assuming that the associated file is located
+	 *            in a sub-folder with the name "bin")
 	 */
 	public static URI findFileInPlugin(String moduleName) {
 		String relativePath = moduleName.replace(IAcceleoConstants.NAMESPACE_SEPARATOR, File.separator);
 		String segments[] = moduleName.split(IAcceleoConstants.NAMESPACE_SEPARATOR);
 
-		for(int pass = 0; pass < 2; pass++) {
+		for (int pass = 0; pass < 2; pass++) {
 			// try bin directory in first pass (deployed plugins: don't use bin, devel: use bin).
 			// Problem: resource is also found without bin, but resolving fails later
-			String binSep = (pass == 0) ? "/bin/" : "/";  //$NON-NLS-1$//$NON-NLS-2$
-			for(int segmentLen = segments.length - 1; segmentLen > 1; segmentLen--) {
+			String binSep = (pass == 0) ? "/bin/" : "/"; //$NON-NLS-1$//$NON-NLS-2$
+			for (int segmentLen = segments.length - 1; segmentLen > 1; segmentLen--) {
 				String pluginNameCandidate = segments[0];
-				for(int i = 1; i < segmentLen; i++) {
+				for (int i = 1; i < segmentLen; i++) {
 					pluginNameCandidate += DOT + segments[i];
 				}
 
 				String fileNameCandidate = pluginNameCandidate + binSep + relativePath +
-					DOT + IAcceleoConstants.EMTL_FILE_EXTENSION;
+						DOT + IAcceleoConstants.EMTL_FILE_EXTENSION;
 
 				URI uri = URI.createPlatformPluginURI(fileNameCandidate, true);
 				if (pass == 0) {
@@ -127,19 +128,19 @@ public class AcceleoDriver {
 					// in your debugging workspace, since they might get loaded twice which leads to
 					// incompatible Java objects denoting the same element (e.g. two instance of Classifier MM
 					// element). See bug 351137.
-				
+
 					String absoluteFileName = Utils.getAbsoluteFN(uri.toString());
-					if(absoluteFileName != null) {
+					if (absoluteFileName != null) {
 						File fileCandidate = new File(absoluteFileName);
-						if(fileCandidate.exists()) {
+						if (fileCandidate.exists()) {
 							return URI.createFileURI(fileCandidate.getAbsolutePath());
 						}
 					}
-				}						
+				}
 				else {
 					try {
 						Resource r = acceleoResourceSet.getResource(uri, true);
-						if(r != null) {
+						if (r != null) {
 							return uri;
 						}
 					} catch (Exception e) {
@@ -154,12 +155,12 @@ public class AcceleoDriver {
 
 	/**
 	 * Small helper: remove a URI from the AcceleoResourceSet
-	 * 
+	 *
 	 * @param uri
 	 */
 	protected static void removeURIfromResourceSet(URI uri) {
-		for(Resource resource : acceleoResourceSet.getResources()) {
-			if(resource.getURI() == uri) {
+		for (Resource resource : acceleoResourceSet.getResources()) {
+			if (resource.getURI() == uri) {
 				acceleoResourceSet.getResources().remove(resource);
 				break;
 			}
@@ -168,22 +169,22 @@ public class AcceleoDriver {
 
 	/**
 	 * Evaluate an Acceleo template
-	 * 
+	 *
 	 * @param ob
-	 *        An opaque behavior whose first body contains an Acceleo template that should be evaluated
+	 *            An opaque behavior whose first body contains an Acceleo template that should be evaluated
 	 * @param element
-	 *        The UML element to which the template is applied
+	 *            The UML element to which the template is applied
 	 * @param args
-	 *        an array of arguments that are passed to the template. Each argument
-	 *        must be either an EObject, a String, an Integer or a Boolean
-	 *        (TODO: currently not evaluated)
+	 *            an array of arguments that are passed to the template. Each argument
+	 *            must be either an EObject, a String, an Integer or a Boolean
+	 *            (TODO: currently not evaluated)
 	 * @return the evaluated template
 	 * @return
 	 * @throws AcceleoException
 	 */
 	public static String evaluate(OpaqueBehavior b, Element element, Object args[]) throws AcceleoException {
 		// script = null;
-		if(b.getBodies().size() > 0) {
+		if (b.getBodies().size() > 0) {
 			String body = b.getBodies().get(0);
 			return evaluate(body, b.getQualifiedName(), element, args);
 		}
@@ -192,15 +193,15 @@ public class AcceleoDriver {
 
 	/**
 	 * Evaluate an Acceleo template
-	 * 
+	 *
 	 * @param template
-	 *        The template in string form
+	 *            The template in string form
 	 * @param element
-	 *        The UML element to which the template is applied
+	 *            The UML element to which the template is applied
 	 * @param args
-	 *        an array of arguments that are passed to the template. Each argument
-	 *        must be either an EObject, a String, an Integer or a Boolean
-	 *        (TODO: currently not evaluated)
+	 *            an array of arguments that are passed to the template. Each argument
+	 *            must be either an EObject, a String, an Integer or a Boolean
+	 *            (TODO: currently not evaluated)
 	 * @return the evaluated template
 	 */
 	public static String evaluate(String templateStr, Element element, Object args[]) throws AcceleoException {
@@ -209,50 +210,50 @@ public class AcceleoDriver {
 
 	/**
 	 * Evaluate an Acceleo template
-	 * 
+	 *
 	 * @param templateStr
-	 *        The acceleo template in string form
+	 *            The acceleo template in string form
 	 * @param templateName
-	 *        The name under which a template can be identified, i.e. the file name
-	 *        if the template is stored in a file and the qualified name of the model element (opaque
-	 *        behavior) if the template is stored within the model.
+	 *            The name under which a template can be identified, i.e. the file name
+	 *            if the template is stored in a file and the qualified name of the model element (opaque
+	 *            behavior) if the template is stored within the model.
 	 * @param element
-	 *        The UML element to which the template is applied
+	 *            The UML element to which the template is applied
 	 * @param args
-	 *        an array of arguments that are passed to the template. Each argument
-	 *        must be either an EObject, a String, an Integer or a Boolean
-	 *        (TODO: currently not evaluated)
+	 *            an array of arguments that are passed to the template. Each argument
+	 *            must be either an EObject, a String, an Integer or a Boolean
+	 *            (TODO: currently not evaluated)
 	 * @return the evaluated template
 	 * @throws AcceleoException
 	 */
 	public static String evaluate(String templateStr, String templateName, Element element, Object args[]) throws AcceleoException {
-		if(templateStr == null) {
+		if (templateStr == null) {
 			return null;
 		}
 
-		if(engine == null) {
+		if (engine == null) {
 			init();
 		}
 
 		// support non declaration of a template for default naming operations
-		if(!(templateStr.startsWith("[import") || //$NON-NLS-1$
-			templateStr.startsWith("[template") || //$NON-NLS-1$
-			templateStr.startsWith("[module"))) { //$NON-NLS-1$
+		if (!(templateStr.startsWith("[import") || //$NON-NLS-1$
+				templateStr.startsWith("[template") || //$NON-NLS-1$
+		templateStr.startsWith("[module"))) { //$NON-NLS-1$
 			templateStr = "[template public dummy(ne : NamedElement)]\n" + templateStr + //$NON-NLS-1$
 					"\n[/template]\n"; //$NON-NLS-1$
 		}
 
 		// module names are not relevant, since passed templates can not be called by others
-		if(!templateStr.startsWith("[module")) { //$NON-NLS-1$
-			templateStr = "[module dummyMod('" + UML_URI + "')/]\n\n" + templateStr;  //$NON-NLS-1$//$NON-NLS-2$
+		if (!templateStr.startsWith("[module")) { //$NON-NLS-1$
+			templateStr = "[module dummyMod('" + UML_URI + "')/]\n\n" + templateStr; //$NON-NLS-1$//$NON-NLS-2$
 		}
 
 		// Strategy:
-		//   1. Use AcceleoParser to transform text (OpaqueExpression) into Module
-		//		=> list of dependencies via explicit import statements
-		//   2. Use AcceleoEngine to resolve expression.
+		// 1. Use AcceleoParser to transform text (OpaqueExpression) into Module
+		// => list of dependencies via explicit import statements
+		// 2. Use AcceleoEngine to resolve expression.
 
-		// Strategy first: parse imports: verify, if already in resourceSet 
+		// Strategy first: parse imports: verify, if already in resourceSet
 
 		AcceleoSourceBuffer sourceBuffer = new AcceleoSourceBuffer(new StringBuffer(templateStr));
 
@@ -265,21 +266,21 @@ public class AcceleoDriver {
 
 			// check, if imports are already in resource set
 			sourceBuffer.createCST();
-			for(ModuleImportsValue importValue : sourceBuffer.getCST().getImports()) {
+			for (ModuleImportsValue importValue : sourceBuffer.getCST().getImports()) {
 				String importedModuleName = importValue.getName();
-				if(importedModuleName != null) {
+				if (importedModuleName != null) {
 					// String pathName = importedModuleName.replace(IAcceleoConstants.NAMESPACE_SEPARATOR, File.separator);
 
 					URI depURI = findFileInPlugin(importedModuleName);
-					if(depURI != null) {
+					if (depURI != null) {
 						depURIs.add(depURI);
 						// Resource r = acceleoResourceSet.getResource(depURI, true);
 					}
 					else {
 						throw new AcceleoException("Could not find imported module:\n" + importedModuleName + "\n\n" +
-							"The module (in compiled form, i.e. with .emtl) is searched in the path corresponding to its qualified name " +
-							"(starting with the \"bin\" directory, if a source plugin) of dependend plug-ins. Verify that these have the " +
-							"Acceleo nature");
+								"The module (in compiled form, i.e. with .emtl) is searched in the path corresponding to its qualified name " +
+								"(starting with the \"bin\" directory, if a source plugin) of dependend plug-ins. Verify that these have the " +
+								"Acceleo nature");
 					}
 				}
 			}
@@ -288,23 +289,23 @@ public class AcceleoDriver {
 			// parser.parse(depInputFiles, outputURIs, new BasicEList<URI>(), null, new BasicMonitor());
 
 			parser.parse(sourceBuffer, resource, depURIs);
-			if(sourceBuffer.getProblems().getList() != null) {
-				if(sourceBuffer.getProblems().getList().size() > 0) {
+			if (sourceBuffer.getProblems().getList() != null) {
+				if (sourceBuffer.getProblems().getList().size() > 0) {
 					throw new AcceleoException("Acceleo problem: " + sourceBuffer.getProblems().getMessage() +
-						"\n\nTemplate: " + templateName + "\n" + templateStr);
+							"\n\nTemplate: " + templateName + "\n" + templateStr);
 				}
 			}
 			String result = evaluateResource(resource, element, templateName, templateStr);
-			if(result != null) {
+			if (result != null) {
 				return result;
 			}
-		
+
 		} catch (AcceleoEvaluationException e) {
-			String elementStr = (element instanceof NamedElement ? ((NamedElement)element).getQualifiedName() : element.toString());
+			String elementStr = (element instanceof NamedElement ? ((NamedElement) element).getQualifiedName() : element.toString());
 			throw new AcceleoException("Acceleo EvaluationException" + e + "\n\nPassed element: " + elementStr +
-				"\n\nTemplate: " + templateName + "\n" + templateStr);
+					"\n\nTemplate: " + templateName + "\n" + templateStr);
 		}
-		String elementStr = (element instanceof NamedElement ? ((NamedElement)element).getQualifiedName() : element.toString());
+		String elementStr = (element instanceof NamedElement ? ((NamedElement) element).getQualifiedName() : element.toString());
 		throw new AcceleoException("Acceleo evaluation error\n\nPassed element: " + elementStr +
 				"\n\nTemplate: " + templateName + "\n" + templateStr);
 	}
@@ -312,9 +313,9 @@ public class AcceleoDriver {
 	/**
 	 * Evaluate a template within the given module. Assume that the template has the same name as
 	 * the module. If this is not the case, use the function below
-	 * 
+	 *
 	 * @param moduleName
-	 *        a qualified Acceleo module name, elements are separated by '::'
+	 *            a qualified Acceleo module name, elements are separated by '::'
 	 * @param element
 	 * @return
 	 */
@@ -326,8 +327,8 @@ public class AcceleoDriver {
 
 
 	public static String evaluateURI(String moduleName, String templateName, Element element) {
-		//throws AcceleoException {
-		if(engine == null) {
+		// throws AcceleoException {
+		if (engine == null) {
 			init();
 		}
 		try {
@@ -335,7 +336,7 @@ public class AcceleoDriver {
 			URI uri = findFileInPlugin(moduleName);
 			if (uri == null) {
 				throw new RuntimeException("Cannot find Acceleo module " + moduleName + //$NON-NLS-1$
-						". Check whether the .emtl file exists and whether it is exported");  //$NON-NLS-1$
+						". Check whether the .emtl file exists and whether it is exported"); //$NON-NLS-1$
 			}
 			return evaluateURI(uri, templateName, element);
 		} catch (AcceleoException e) {
@@ -345,12 +346,12 @@ public class AcceleoDriver {
 
 	public static String evaluateURI(URI uri, String templateName, Element element) throws AcceleoException {
 
-		if(engine == null) {
+		if (engine == null) {
 			init();
 		}
 
 		Resource resource = acceleoResourceSet.getResource(uri, true);
-		if(resource != null) {
+		if (resource != null) {
 			return evaluateResource(resource, element, templateName, ""); //$NON-NLS-1$
 		}
 		return null;
@@ -358,29 +359,33 @@ public class AcceleoDriver {
 
 	/**
 	 * Evaluate an Acceleo template when given a resource, template name
-	 * 
-	 * @param resource The resource of an Acceleo module
-	 * @param element the UML model element that is passed (
-	 * @param templateName the name of the template
-	 * @param templateStr the contents of the template. May be empty (only used for
-	 *        error messages
+	 *
+	 * @param resource
+	 *            The resource of an Acceleo module
+	 * @param element
+	 *            the UML model element that is passed (
+	 * @param templateName
+	 *            the name of the template
+	 * @param templateStr
+	 *            the contents of the template. May be empty (only used for
+	 *            error messages
 	 * @return the evaluated template
 	 * @throws AcceleoException
 	 */
 	protected static String evaluateResource(Resource resource, Element element, String templateName, String templateStr) throws AcceleoException {
-		if(resource.getContents().size() > 0) {
+		if (resource.getContents().size() > 0) {
 			EObject result = resource.getContents().get(0);
 			List<Object> arguments = new ArrayList<Object>();
 			// The input model itself is a potential argument
 			arguments.add(element);
-			if(result instanceof Module) {
-				Module module = (Module)result;
-				// do not check the template name, if there is only one. 
+			if (result instanceof Module) {
+				Module module = (Module) result;
+				// do not check the template name, if there is only one.
 				boolean dontCheck = (module.getOwnedModuleElement().size() == 1);
-				for(ModuleElement me : module.getOwnedModuleElement()) {
-					if((me instanceof Template) && (dontCheck || me.getName().equals(templateName))) {
+				for (ModuleElement me : module.getOwnedModuleElement()) {
+					if ((me instanceof Template) && (dontCheck || me.getName().equals(templateName))) {
 						lastErrors = false;
-						Object stringResult = engine.evaluate((Template)me, arguments, new PreviewStrategy(), null);
+						Object stringResult = engine.evaluate((Template) me, arguments, new PreviewStrategy(), null);
 						if (lastErrors) {
 							// we do not throw an exception, since it would imply that the evaluation result is
 							// lost. For a users, the (partially) evaluated result might be more useful to locate
@@ -392,10 +397,10 @@ public class AcceleoDriver {
 								message += "Template contents:\n" + templateStr; //$NON-NLS-1$
 							}
 							AcceleoEnginePlugin.getDefault().getLog().log(
-								new Status(Status.INFO, AcceleoEnginePlugin.PLUGIN_ID, message));
+									new Status(IStatus.INFO, AcceleoEnginePlugin.PLUGIN_ID, message));
 						}
-						if(stringResult instanceof String) {
-							return (String)stringResult;
+						if (stringResult instanceof String) {
+							return (String) stringResult;
 						}
 					}
 				}
@@ -408,15 +413,15 @@ public class AcceleoDriver {
 		hasErrors = false;
 		lastErrors = false;
 	}
-	
+
 	public static boolean hasErrors() {
 		return hasErrors;
 	}
-	
+
 	protected static boolean hasErrors;
-	
+
 	protected static boolean lastErrors;
-	
+
 	protected static AcceleoEngine engine = null;
 
 	protected static ResourceSet acceleoResourceSet;

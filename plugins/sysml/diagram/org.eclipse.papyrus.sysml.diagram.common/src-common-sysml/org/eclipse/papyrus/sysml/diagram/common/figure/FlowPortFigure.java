@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -24,9 +24,9 @@ public class FlowPortFigure extends AffixedNamedElementFigure {
 
 	/**
 	 * Set the image in FlowPort figure.
-	 * 
+	 *
 	 * @param image
-	 *        the image to show in the FlowPort
+	 *            the image to show in the FlowPort
 	 */
 	public void setImage(Image image) {
 		setIcon(image);

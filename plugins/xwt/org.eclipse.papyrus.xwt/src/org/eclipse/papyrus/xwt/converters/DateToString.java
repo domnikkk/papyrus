@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -15,7 +15,7 @@ import java.util.Date;
 
 /**
  * Date to String converter
- * 
+ *
  * @author yyang
  */
 public class DateToString extends ObjectToString {
@@ -32,13 +32,15 @@ public class DateToString extends ObjectToString {
 		super(fromType);
 	}
 
+	@Override
 	public Object convert(Object fromObject) {
-		if(fromObject == null) {
+		if (fromObject == null) {
 			return super.convert(null);
 		}
-		return FORMATTER.format((Date)fromObject);
+		return FORMATTER.format((Date) fromObject);
 	}
 
+	@Override
 	public Object getToType() {
 		return String.class;
 	}

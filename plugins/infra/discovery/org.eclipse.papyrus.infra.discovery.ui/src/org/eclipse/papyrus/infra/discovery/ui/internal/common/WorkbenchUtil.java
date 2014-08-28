@@ -7,9 +7,9 @@
  *
  * Contributors:
  *     Tasktop Technologies - initial API and implementation
- *     IBM Corporation - helper methods from 
+ *     IBM Corporation - helper methods from
  *       org.eclipse.wst.common.frameworks.internal.ui.WTPActivityHelper
- *     Obeo - adaptation for Amalgamation, EMF based and no Mylyn dependency 
+ *     Obeo - adaptation for Amalgamation, EMF based and no Mylyn dependency
  *     CEA LIST - adaptation to Papyrus
  *******************************************************************************/
 
@@ -29,43 +29,41 @@ import org.eclipse.ui.browser.IWorkbenchBrowserSupport;
  */
 public class WorkbenchUtil {
 
-    /**
-     * Opens <code>location</code> in a web-browser according to the Eclipse
-     * workbench preferences.
-     * 
-     * @param location
-     *            the url to open
-     * @see #openUrl(String, int)
-     */
-    public static void openUrl(String location) {
-        openUrl(location, SWT.NONE);
-    }
+	/**
+	 * Opens <code>location</code> in a web-browser according to the Eclipse
+	 * workbench preferences.
+	 *
+	 * @param location
+	 *            the url to open
+	 * @see #openUrl(String, int)
+	 */
+	public static void openUrl(String location) {
+		openUrl(location, SWT.NONE);
+	}
 
-    /**
-     * Opens <code>location</code> in a web-browser according to the Eclipse
-     * workbench preferences.
-     * 
-     * @param location
-     *            the url to open
-     * @param customFlags
-     *            additional flags that are passed to
-     *            {@link IWorkbenchBrowserSupport}, pass
-     *            {@link IWorkbenchBrowserSupport#AS_EXTERNAL} to force opening
-     *            external browser
-     */
-    public static void openUrl(String location, int customFlags) {
-        try {
-            URL url = null;
-            if (location != null) {
-                url = new URL(location);
-            }
-            IWorkbenchBrowserSupport support = PlatformUI.getWorkbench().getBrowserSupport();
-            support.getExternalBrowser().openURL(url);
+	/**
+	 * Opens <code>location</code> in a web-browser according to the Eclipse
+	 * workbench preferences.
+	 *
+	 * @param location
+	 *            the url to open
+	 * @param customFlags
+	 *            additional flags that are passed to {@link IWorkbenchBrowserSupport}, pass {@link IWorkbenchBrowserSupport#AS_EXTERNAL} to force opening
+	 *            external browser
+	 */
+	public static void openUrl(String location, int customFlags) {
+		try {
+			URL url = null;
+			if (location != null) {
+				url = new URL(location);
+			}
+			IWorkbenchBrowserSupport support = PlatformUI.getWorkbench().getBrowserSupport();
+			support.getExternalBrowser().openURL(url);
 
-        } catch (PartInitException e) {
-        } catch (MalformedURLException e) {
+		} catch (PartInitException e) {
+		} catch (MalformedURLException e) {
 
-        }
-    }
+		}
+	}
 
 }

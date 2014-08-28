@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,13 +24,13 @@ import org.eclipse.ui.browser.IWorkbenchBrowserSupport;
 
 /**
  * this is an hyperlink to manage web link (it open a web browser when it is selected)
- * 
+ *
  */
 public class HyperLinkWeb extends HyperLinkObject {
 
 	public String getHyperLinkWeb() {
 		// TODO Auto-generated method stub
-		return (String)super.getObject();
+		return (String) super.getObject();
 	}
 
 	public void setHyperLinkWeb(String object) {
@@ -39,9 +39,9 @@ public class HyperLinkWeb extends HyperLinkObject {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.hyperlink.object.HyperLinkObject#executeSelectPressed()
-	 * 
+	 *
 	 */
 	@Override
 	public void openLink() {
@@ -55,9 +55,9 @@ public class HyperLinkWeb extends HyperLinkObject {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.hyperlink.object.HyperLinkObject#executeEditMousePressed(java.util.List, org.eclipse.uml2.uml.Package)
-	 * 
+	 *
 	 */
 	@Override
 	public void executeEditMousePressed(List<HyperLinkObject> list, EObject amodel) {

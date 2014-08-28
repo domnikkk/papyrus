@@ -12,21 +12,24 @@ import org.eclipse.papyrus.uml.service.types.filter.ICommandFilter;
 public class EastadlCommandFilter implements ICommandFilter {
 
 	public static final EastadlCommandFilter INSTANCE = new EastadlCommandFilter();
+
 	private EastadlCommandFilter() {
-		
+
 	}
+
 	private List<IElementType> visibleCommands;
+
 	@Override
 	public List<IElementType> getVisibleCommands() {
 		if (visibleCommands == null) {
 			List<IElementType> localVisibleCommands = new ArrayList<IElementType>();
 
 			localVisibleCommands = new ArrayList<IElementType>();
-			
+
 			localVisibleCommands.add(EastadlElementTypes.FUNCTION_ALLOCATE);
-			
+
 			localVisibleCommands.add(UMLElementTypes.PROPERTY);
-			
+
 			this.visibleCommands = Collections.unmodifiableList(localVisibleCommands);
 		}
 		return visibleCommands;

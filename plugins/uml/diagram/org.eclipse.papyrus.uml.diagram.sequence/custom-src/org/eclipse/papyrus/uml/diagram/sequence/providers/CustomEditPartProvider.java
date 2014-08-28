@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,27 +28,28 @@ public class CustomEditPartProvider extends UMLEditPartProvider {
 	@Override
 	protected IGraphicalEditPart createEditPart(View view) {
 		IGraphicalEditPart customEditPart = createCustomEditPart(view);
-		if(customEditPart != null) {
+		if (customEditPart != null) {
 			return customEditPart;
 		}
 		return super.createEditPart(view);
 	}
 
 	protected IGraphicalEditPart createCustomEditPart(View view) {
-		if(GateEditPart.GATE_TYPE.equals(view.getType())) {
+		if (GateEditPart.GATE_TYPE.equals(view.getType())) {
 			return new GateEditPart(view);
-		} else if(GateNameEditPart.GATE_NAME_TYPE.equals(view.getType())) {
+		} else if (GateNameEditPart.GATE_NAME_TYPE.equals(view.getType())) {
 			return new GateNameEditPart(view);
-		} else if(InteractionOperandGuardEditPart.GUARD_TYPE.equals(view.getType())) {
+		} else if (InteractionOperandGuardEditPart.GUARD_TYPE.equals(view.getType())) {
 			return new InteractionOperandGuardEditPart(view);
-		} else if(BehaviorExecutionSpecificationBehaviorEditPart.BEHAVIOR_TYPE.equals(view.getType())) {
+		} else if (BehaviorExecutionSpecificationBehaviorEditPart.BEHAVIOR_TYPE.equals(view.getType())) {
 			return new BehaviorExecutionSpecificationBehaviorEditPart(view);
 		}
-		if(view instanceof Connector) {
-			if(((Connector)view).getType().equals(SequenceUtil.OBSERVATION_LINK_TYPE))
-				return new ObservationLinkEditPart((View)view);
+		if (view instanceof Connector) {
+			if (((Connector) view).getType().equals(SequenceUtil.OBSERVATION_LINK_TYPE)) {
+				return new ObservationLinkEditPart(view);
+			}
 		}
-		switch(UMLVisualIDRegistry.getVisualID(view)) {
+		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case PackageEditPart.VISUAL_ID:
 			return new CustomPackageEditPart(view);
 		case InteractionEditPart.VISUAL_ID:

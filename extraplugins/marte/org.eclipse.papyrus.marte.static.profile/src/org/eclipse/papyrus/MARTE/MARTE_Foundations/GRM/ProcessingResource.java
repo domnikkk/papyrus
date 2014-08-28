@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,8 +22,8 @@ package org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.ProcessingResource#getSpeedFactor <em>Speed Factor</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.ProcessingResource#getMainScheduler <em>Main Scheduler</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.ProcessingResource#getSpeedFactor <em>Speed Factor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.ProcessingResource#getMainScheduler <em>Main Scheduler</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,10 +37,10 @@ public interface ProcessingResource extends Resource {
 	 * The default value is <code>"1.0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Speed Factor</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Speed Factor</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Speed Factor</em>' attribute.
 	 * @see #setSpeedFactor(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getProcessingResource_SpeedFactor()
@@ -53,7 +53,9 @@ public interface ProcessingResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.ProcessingResource#getSpeedFactor <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Speed Factor</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Speed Factor</em>' attribute.
 	 * @see #getSpeedFactor()
 	 * @generated
 	 */
@@ -63,10 +65,10 @@ public interface ProcessingResource extends Resource {
 	 * Returns the value of the '<em><b>Main Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Main Scheduler</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Main Scheduler</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Main Scheduler</em>' reference.
 	 * @see #setMainScheduler(Scheduler)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getProcessingResource_MainScheduler()
@@ -79,7 +81,9 @@ public interface ProcessingResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.ProcessingResource#getMainScheduler <em>Main Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Main Scheduler</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Main Scheduler</em>' reference.
 	 * @see #getMainScheduler()
 	 * @generated
 	 */

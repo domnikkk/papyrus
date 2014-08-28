@@ -29,7 +29,7 @@ import org.eclipse.papyrus.domaincontextcodegen.InheritanceKind;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.AdviceImpl#getInheritance <em>Inheritance</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class AdviceImpl extends EObjectImpl implements Advice {
@@ -38,7 +38,7 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	 * The default value of the '{@link #getAdviceID() <em>Advice ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAdviceID()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	 * The cached value of the '{@link #getAdviceID() <em>Advice ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAdviceID()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	 * The cached value of the '{@link #getRef() <em>Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRef()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	 * The default value of the '{@link #getAdvicePath() <em>Advice Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAdvicePath()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	 * The cached value of the '{@link #getAdvicePath() <em>Advice Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAdvicePath()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	 * The default value of the '{@link #getInheritance() <em>Inheritance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInheritance()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	 * The cached value of the '{@link #getInheritance() <em>Inheritance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInheritance()
 	 * @generated
 	 * @ordered
@@ -114,7 +114,7 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AdviceImpl() {
@@ -124,7 +124,7 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,7 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getAdviceID() {
@@ -145,29 +145,31 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setAdviceID(String newAdviceID) {
 		String oldAdviceID = adviceID;
 		adviceID = newAdviceID;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.ADVICE__ADVICE_ID, oldAdviceID, adviceID));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementType getRef() {
-		if(ref != null && ref.eIsProxy()) {
-			InternalEObject oldRef = (InternalEObject)ref;
-			ref = (ElementType)eResolveProxy(oldRef);
-			if(ref != oldRef) {
-				if(eNotificationRequired())
+		if (ref != null && ref.eIsProxy()) {
+			InternalEObject oldRef = (InternalEObject) ref;
+			ref = (ElementType) eResolveProxy(oldRef);
+			if (ref != oldRef) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomaincontextcodegenPackage.ADVICE__REF, oldRef, ref));
+				}
 			}
 		}
 		return ref;
@@ -176,7 +178,7 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementType basicGetRef() {
@@ -186,20 +188,21 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRef(ElementType newRef) {
 		ElementType oldRef = ref;
 		ref = newRef;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.ADVICE__REF, oldRef, ref));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getAdvicePath() {
@@ -209,20 +212,21 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setAdvicePath(String newAdvicePath) {
 		String oldAdvicePath = advicePath;
 		advicePath = newAdvicePath;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.ADVICE__ADVICE_PATH, oldAdvicePath, advicePath));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InheritanceKind getInheritance() {
@@ -232,30 +236,32 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setInheritance(InheritanceKind newInheritance) {
 		InheritanceKind oldInheritance = inheritance;
 		inheritance = newInheritance == null ? INHERITANCE_EDEFAULT : newInheritance;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.ADVICE__INHERITANCE, oldInheritance, inheritance));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ADVICE__ADVICE_ID:
 			return getAdviceID();
 		case DomaincontextcodegenPackage.ADVICE__REF:
-			if(resolve)
+			if (resolve) {
 				return getRef();
+			}
 			return basicGetRef();
 		case DomaincontextcodegenPackage.ADVICE__ADVICE_PATH:
 			return getAdvicePath();
@@ -268,23 +274,23 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ADVICE__ADVICE_ID:
-			setAdviceID((String)newValue);
+			setAdviceID((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.ADVICE__REF:
-			setRef((ElementType)newValue);
+			setRef((ElementType) newValue);
 			return;
 		case DomaincontextcodegenPackage.ADVICE__ADVICE_PATH:
-			setAdvicePath((String)newValue);
+			setAdvicePath((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.ADVICE__INHERITANCE:
-			setInheritance((InheritanceKind)newValue);
+			setInheritance((InheritanceKind) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -293,17 +299,17 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ADVICE__ADVICE_ID:
 			setAdviceID(ADVICE_ID_EDEFAULT);
 			return;
 		case DomaincontextcodegenPackage.ADVICE__REF:
-			setRef((ElementType)null);
+			setRef((ElementType) null);
 			return;
 		case DomaincontextcodegenPackage.ADVICE__ADVICE_PATH:
 			setAdvicePath(ADVICE_PATH_EDEFAULT);
@@ -318,12 +324,12 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ADVICE__ADVICE_ID:
 			return ADVICE_ID_EDEFAULT == null ? adviceID != null : !ADVICE_ID_EDEFAULT.equals(adviceID);
 		case DomaincontextcodegenPackage.ADVICE__REF:
@@ -339,13 +345,14 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (adviceID: ");
@@ -358,4 +365,4 @@ public class AdviceImpl extends EObjectImpl implements Advice {
 		return result.toString();
 	}
 
-} //AdviceImpl
+} // AdviceImpl

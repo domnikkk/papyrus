@@ -30,7 +30,7 @@ import org.w3c.dom.svg.SVGDocument;
 
 /**
  * Shape provider based on the applied style
- * 
+ *
  * @author Laurent Wouters
  */
 public class StyleBasedShapeProvider extends AbstractShapeProvider {
@@ -58,12 +58,14 @@ public class StyleBasedShapeProvider extends AbstractShapeProvider {
 	 */
 	@Override
 	public List<RenderedImage> getShapes(EObject view) {
-		if (!(view instanceof View))
+		if (!(view instanceof View)) {
 			return listEmptyRendered;
+		}
 		View v = (View) view;
 		String svgFile = extract((StringValueStyle) v.getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), STYLE_PROPERTY));
-		if (svgFile == null)
+		if (svgFile == null) {
 			return listEmptyRendered;
+		}
 		SVGDocument svg = getSVGDocument(view, svgFile);
 		RenderedImage img = null;
 		try {
@@ -80,12 +82,14 @@ public class StyleBasedShapeProvider extends AbstractShapeProvider {
 	 */
 	@Override
 	public List<SVGDocument> getSVGDocument(EObject view) {
-		if (!(view instanceof View))
+		if (!(view instanceof View)) {
 			return listEmptySVG;
+		}
 		View v = (View) view;
 		String svgFile = extract((StringValueStyle) v.getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), STYLE_PROPERTY));
-		if (svgFile == null)
+		if (svgFile == null) {
 			return listEmptySVG;
+		}
 		SVGDocument svg = getSVGDocument(view, svgFile);
 		listSingletonSVG.set(0, svg);
 		return listSingletonSVG;
@@ -96,8 +100,9 @@ public class StyleBasedShapeProvider extends AbstractShapeProvider {
 	 */
 	@Override
 	public boolean providesShapes(EObject view) {
-		if (!(view instanceof View))
+		if (!(view instanceof View)) {
 			return false;
+		}
 		View v = (View) view;
 		String svgFile = extract((StringValueStyle) v.getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), STYLE_PROPERTY));
 		return (svgFile != null);
@@ -105,7 +110,7 @@ public class StyleBasedShapeProvider extends AbstractShapeProvider {
 
 	/**
 	 * Extracts the primitive value from the given style
-	 * 
+	 *
 	 * @param style
 	 *            The style
 	 * @return The primitive value
@@ -123,8 +128,9 @@ public class StyleBasedShapeProvider extends AbstractShapeProvider {
 	 */
 	@Override
 	public ProviderNotificationManager createProviderNotificationManager(DiagramEventBroker diagramEventBroker, EObject view, NotificationListener notificationListener) {
-		if (manager != null)
+		if (manager != null) {
 			return manager;
+		}
 		manager = new ProviderNotificationManager(diagramEventBroker, view, notificationListener) {
 			@Override
 			protected void registerListeners() {

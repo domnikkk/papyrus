@@ -28,11 +28,12 @@ import org.eclipse.papyrus.views.properties.contexts.DataContextPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.views.properties.contexts.DataContextPackage} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class DataContextPackageItemProvider
-	extends DataContextElementItemProvider
-	implements
+		extends DataContextElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -42,6 +43,7 @@ public class DataContextPackageItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DataContextPackageItemProvider(AdapterFactory adapterFactory) {
@@ -52,6 +54,7 @@ public class DataContextPackageItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -64,11 +67,11 @@ public class DataContextPackageItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,6 +86,7 @@ public class DataContextPackageItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,6 +101,7 @@ public class DataContextPackageItemProvider
 	 * This returns DataContextPackage.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,14 +113,15 @@ public class DataContextPackageItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DataContextPackage)object).getName();
+		String label = ((DataContextPackage) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_DataContextPackage_type") :
-			getString("_UI_DataContextPackage_type") + " " + label;
+				getString("_UI_DataContextPackage_type") :
+				getString("_UI_DataContextPackage_type") + " " + label;
 	}
 
 	/**
@@ -123,6 +129,7 @@ public class DataContextPackageItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,9 +137,9 @@ public class DataContextPackageItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DataContextPackage.class)) {
-			case ContextsPackage.DATA_CONTEXT_PACKAGE__ELEMENTS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ContextsPackage.DATA_CONTEXT_PACKAGE__ELEMENTS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -142,6 +149,7 @@ public class DataContextPackageItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,19 +157,19 @@ public class DataContextPackageItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ContextsPackage.Literals.DATA_CONTEXT_PACKAGE__ELEMENTS,
-				 ContextsFactory.eINSTANCE.createDataContextElement()));
+						ContextsFactory.eINSTANCE.createDataContextElement()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ContextsPackage.Literals.DATA_CONTEXT_PACKAGE__ELEMENTS,
-				 ContextsFactory.eINSTANCE.createDataContextPackage()));
+						ContextsFactory.eINSTANCE.createDataContextPackage()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ContextsPackage.Literals.DATA_CONTEXT_PACKAGE__ELEMENTS,
-				 ContextsFactory.eINSTANCE.createDataContextRoot()));
+						ContextsFactory.eINSTANCE.createDataContextRoot()));
 	}
 
 }

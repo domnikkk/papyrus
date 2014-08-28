@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -20,15 +20,15 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.papyrus.xwt.IConstants;
+import org.eclipse.papyrus.xwt.IXWTLoader;
 import org.eclipse.papyrus.xwt.XWT;
-import org.eclipse.papyrus.xwt.XWTLoader;
 import org.eclipse.papyrus.xwt.databinding.BindingContext;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 
 /**
- * 
+ *
  * @author yyang <yves.yang@soyatec.com>
  */
 public class XWTTitleAreaDialog extends TitleAreaDialog {
@@ -62,14 +62,14 @@ public class XWTTitleAreaDialog extends TitleAreaDialog {
 	protected Control createDialogArea(Composite parent) {
 		Control control = super.createDialogArea(parent);
 
-		if(bindingContext == null) {
+		if (bindingContext == null) {
 			bindingContext = new BindingContext(parent);
 		}
 		validationStatus = bindingContext.getStatus();
 		validationStatus.addChangeListener(new IChangeListener() {
 
 			public void handleChange(ChangeEvent event) {
-				IStatus status = (IStatus)validationStatus.getValue();
+				IStatus status = (IStatus) validationStatus.getValue();
 				setMessage(status.getMessage(), status.getSeverity());
 			}
 		});
@@ -78,16 +78,16 @@ public class XWTTitleAreaDialog extends TitleAreaDialog {
 		try {
 			Thread.currentThread().setContextClassLoader(contentCLS.getClassLoader());
 			HashMap<String, Object> newOptions = new HashMap<String, Object>();
-			newOptions.put(XWTLoader.CONTAINER_PROPERTY, parent);
+			newOptions.put(IXWTLoader.CONTAINER_PROPERTY, parent);
 			Object dataContext = getDataContext();
-			if(dataContext != null) {
-				newOptions.put(XWTLoader.DATACONTEXT_PROPERTY, dataContext);
+			if (dataContext != null) {
+				newOptions.put(IXWTLoader.DATACONTEXT_PROPERTY, dataContext);
 			}
 			BindingContext bindingContext = getBindingContext();
-			if(bindingContext != null) {
-				newOptions.put(XWTLoader.BINDING_CONTEXT_PROPERTY, bindingContext);
+			if (bindingContext != null) {
+				newOptions.put(IXWTLoader.BINDING_CONTEXT_PROPERTY, bindingContext);
 			}
-			newOptions.put(XWTLoader.CLASS_PROPERTY, contentCLS);
+			newOptions.put(IXWTLoader.CLASS_PROPERTY, contentCLS);
 
 			XWT.loadWithOptions(getContentURL(), newOptions);
 			GridLayoutFactory.fillDefaults().generateLayout(parent);
@@ -102,7 +102,7 @@ public class XWTTitleAreaDialog extends TitleAreaDialog {
 	}
 
 	public URL getContentURL() {
-		if(contentCLS != null) {
+		if (contentCLS != null) {
 			return contentCLS.getResource(contentCLS.getSimpleName() + IConstants.XWT_EXTENSION_SUFFIX);
 		}
 		return null;

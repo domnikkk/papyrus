@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,14 +38,14 @@ public class FillMenuGroup extends FillMenuContainer {
 
 		Separator tmpSeparator = new Separator(groupId);
 
-		if(manager.find(group.getBefore()) != null) {
+		if (manager.find(group.getBefore()) != null) {
 			manager.insertBefore(group.getBefore(), tmpSeparator);
-		} else if(manager.find(group.getAfter()) != null) {
+		} else if (manager.find(group.getAfter()) != null) {
 			manager.insertAfter(group.getAfter(), tmpSeparator);
-		} else if(group.getAbsolutePosition() != null) {
-			switch(group.getAbsolutePosition()) {
+		} else if (group.getAbsolutePosition() != null) {
+			switch (group.getAbsolutePosition()) {
 			case TOP:
-				if(manager.find(NewchildManager.TOP) != null) {
+				if (manager.find(NewchildManager.TOP) != null) {
 					manager.insertAfter(NewchildManager.TOP, tmpSeparator);
 					break;
 				}
@@ -59,9 +59,9 @@ public class FillMenuGroup extends FillMenuContainer {
 		Separator endSeparator = new Separator(END_SEP);
 		manager.insertAfter(TOP_SEP, endSeparator);
 
-		for(MenuItem menuItem : container.getSubmenus()) {
+		for (MenuItem menuItem : container.getSubmenus()) {
 			FillElement filler = FillerFactory.instance.getFiller(this, menuItem, selectedObject);
-			if(filler != null) {
+			if (filler != null) {
 				filler.fill(manager);
 			}
 		}

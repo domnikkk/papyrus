@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,10 +32,10 @@ import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.EditorUtils;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
-import org.eclipse.papyrus.infra.gmfdiag.common.utils.ServiceUtilsForEditPart;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.infra.widgets.editors.TreeSelectorDialog;
 import org.eclipse.papyrus.uml.diagram.activity.part.CustomMessages;
@@ -45,7 +45,6 @@ import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.common.actions.LabelHelper;
 import org.eclipse.papyrus.uml.diagram.common.ui.helper.HelpComponentFactory;
 import org.eclipse.papyrus.uml.tools.providers.UMLContentProvider;
-import org.eclipse.papyrus.uml.tools.providers.UMLLabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -64,6 +63,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.FormDialog;
 import org.eclipse.ui.forms.IManagedForm;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ImageHyperlink;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
@@ -111,40 +111,41 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 	private Combo creationTypeCombo = null;
 
 	private ILabelProvider labelProvider;
-	
+
 	/**
 	 * New Object about to be created
 	 */
 	private InvocationAction invocationAction;
-	
+
 
 	/**
 	 * Create a new dialog to initialize a CallAction.
-	 * 
+	 *
 	 * @param shell
-	 *        parent shell
+	 *            parent shell
 	 * @param owner
-	 *        the activity that owns the action
+	 *            the activity that owns the action
 	 */
-	public CreateInvocationActionDialog(Shell shell, Activity owner,InvocationAction newAction) {
+	public CreateInvocationActionDialog(Shell shell, Activity owner, InvocationAction newAction) {
 		super(shell);
 		actionParent = owner;
 		selectedParent = getDefaultParent(owner);
 		labelProvider = getCustomLabelProvider();
 		this.invocationAction = newAction;
 		try {
-			LabelProviderService labelProviderService=(LabelProviderService)ServiceUtilsForEObject.getInstance().getServiceRegistry(owner).getService(LabelProviderService.class);
-			labelProvider=labelProviderService.getLabelProvider(owner);
+			LabelProviderService labelProviderService = ServiceUtilsForEObject.getInstance().getServiceRegistry(owner).getService(LabelProviderService.class);
+			labelProvider = labelProviderService.getLabelProvider(owner);
 		} catch (ServiceException e) {
 			e.printStackTrace();
 		}
 	}
-	
-	
 
-	
+
+
+
 	/**
 	 * Invocation action about to be created
+	 *
 	 * @return
 	 */
 	public InvocationAction getInvocationAction() {
@@ -155,23 +156,23 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Get the parent to propose as default choice for the element creation
-	 * 
+	 *
 	 * @param owner
-	 *        the invocation action's owner
+	 *            the invocation action's owner
 	 * @return default parent to select
 	 */
 	private EObject getDefaultParent(Activity owner) {
 		// try recovering last user choice from preferences
 		IPreferenceStore prefStore = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
 		String ownerString = prefStore.getString(getCreationDefaultOwnerPreference());
-		if(ownerString != null && !"".equals(ownerString)) {
+		if (ownerString != null && !"".equals(ownerString)) {
 			Matcher match = MAP_PATTERN.matcher(ownerString);
-			if(match.matches() && match.groupCount() >= 2) {
+			if (match.matches() && match.groupCount() >= 2) {
 				String ressURI = match.group(1);
 				String parentURI = match.group(2);
-				if(owner.eResource().getURI().toString().equals(ressURI)) {
+				if (owner.eResource().getURI().toString().equals(ressURI)) {
 					EObject parent = owner.eResource().getEObject(parentURI);
-					if(parent != null) {
+					if (parent != null) {
 						return parent;
 					}
 				}
@@ -179,7 +180,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 		}
 		// recover default choice from the action's owner
 		EObject parent = owner;
-		while(!isPossibleInvokedParent(parent)) {
+		while (!isPossibleInvokedParent(parent)) {
 			parent = parent.eContainer();
 		}
 		return parent;
@@ -187,11 +188,11 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Create the form to :
-	 * 
+	 *
 	 * - ask the user to choose or create an invoked element.
-	 * 
+	 *
 	 * - decide whether the action is synchronous.
-	 * 
+	 *
 	 * @see org.eclipse.ui.forms.FormDialog#createFormContent(org.eclipse.ui.forms.IManagedForm)
 	 */
 	@Override
@@ -214,7 +215,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Get whether the selection of an existing element is the default
-	 * 
+	 *
 	 * @return true if selection by default
 	 */
 	protected boolean isSelectionDefault() {
@@ -225,25 +226,25 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 	/**
 	 * Get the id of the preference storing whether selection is the default
 	 * choice.
-	 * 
+	 *
 	 * @return preference id
 	 */
 	abstract protected String getSelectionIsDefaultPreference();
 
 	/**
 	 * Get the id of the preference storing the last selected owner.
-	 * 
+	 *
 	 * @return preference id
 	 */
 	abstract protected String getCreationDefaultOwnerPreference();
 
 	/**
 	 * Create the other needed sections. Subclasses can override this method.
-	 * 
+	 *
 	 * @param pParent
-	 *        the section's parent widget
+	 *            the section's parent widget
 	 * @param pToolkit
-	 *        the form toolkit
+	 *            the form toolkit
 	 */
 	protected void createExtraSections(Composite pParent, FormToolkit pToolkit) {
 		// do nothing
@@ -251,9 +252,9 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Adds buttons to this dialog's button bar.
-	 * 
+	 *
 	 * @param parent
-	 *        the button bar composite
+	 *            the button bar composite
 	 */
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
@@ -264,18 +265,18 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 	/**
 	 * Create the section to ask the user to choose or create an invoked
 	 * element.
-	 * 
+	 *
 	 * @param pParent
-	 *        the section's parent widget
+	 *            the section's parent widget
 	 * @param pToolkit
-	 *        the form toolkit
+	 *            the form toolkit
 	 */
 	private void createInvocationSelectionSection(Composite pParent, FormToolkit pToolkit) {
 		// create the section
 		String lSectionTitle = getInvocationSelectionSectionTitle();
-		Section lSection = pToolkit.createSection(pParent, Section.EXPANDED | Section.TITLE_BAR);
+		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);
 		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		if(lSectionTitle != null) {
+		if (lSectionTitle != null) {
 			lSection.setText(lSectionTitle);
 		}
 		ScrolledForm lInsideScrolledForm = pToolkit.createScrolledForm(lSection);
@@ -303,18 +304,18 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 	/**
 	 * Create the section to ask the user to choose or create an invoked
 	 * element.
-	 * 
+	 *
 	 * @param pParent
-	 *        the section's parent widget
+	 *            the section's parent widget
 	 * @param pToolkit
-	 *        the form toolkit
+	 *            the form toolkit
 	 */
 	private void createInvocationCreationSection(Composite pParent, FormToolkit pToolkit) {
 		// create the section
 		String lSectionTitle = getInvocationCreationSectionTitle();
-		Section lSection = pToolkit.createSection(pParent, Section.EXPANDED | Section.TITLE_BAR);
+		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);
 		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		if(lSectionTitle != null) {
+		if (lSectionTitle != null) {
 			lSection.setText(lSectionTitle);
 		}
 		ImageHyperlink componentHelp = HelpComponentFactory.createHelpComponent(lSection, pToolkit, getInvocationCreationSectionHelp(), true);
@@ -330,7 +331,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 		creationRadio = pToolkit.createButton(lBody, getCreationLabel(), SWT.RADIO);
 		// creationRadio.setSelection(true);
 		creationRadio.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 3, 1));
-		if(getPossibleInvokedTypes().length == 1) {
+		if (getPossibleInvokedTypes().length == 1) {
 			selectedType = getPossibleInvokedTypes()[0];
 		} else {
 			pToolkit.createLabel(lBody, getInvokedTypeLabel(), SWT.NONE);
@@ -340,7 +341,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 			creationTypeCombo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
 			typeComboViewer.setLabelProvider(labelProvider);
 			typeComboViewer.add(getPossibleInvokedTypes());
-			if(getPossibleInvokedTypes().length > 1) {
+			if (getPossibleInvokedTypes().length > 1) {
 				// initialize selection
 				typeComboViewer.setSelection(new StructuredSelection(getPossibleInvokedTypes()[0]));
 				selectedType = getPossibleInvokedTypes()[0];
@@ -364,18 +365,18 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 	/**
 	 * Set correctly the invoked object, by creating it if needed. Then,
 	 * notifies that the ok button of this dialog has been pressed.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#okPressed()
-	 * 
+	 *
 	 */
 	@Override
 	protected void okPressed() {
 		boolean isSelectionSelected = selectionRadio.getSelection();
 		// create element if needed
-		if(!isSelectionSelected) {
+		if (!isSelectionSelected) {
 			selectedInvoked = UMLFactory.eINSTANCE.create(selectedType);
-			if(selectedInvoked instanceof NamedElement) {
-				((NamedElement)selectedInvoked).setName(selectedName);
+			if (selectedInvoked instanceof NamedElement) {
+				((NamedElement) selectedInvoked).setName(selectedName);
 			}
 			addInvokedInParent(selectedParent, selectedInvoked);
 		}
@@ -383,7 +384,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 		IPreferenceStore prefStore = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
 		// store choice between selection and creation
 		prefStore.setValue(getSelectionIsDefaultPreference(), isSelectionSelected);
-		if(!isSelectionSelected) {
+		if (!isSelectionSelected) {
 			// store the owner choice
 			String ressUri = selectedParent.eResource().getURI().toString();
 			String parentURI = selectedParent.eResource().getURIFragment(selectedParent);
@@ -395,7 +396,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Get the invoked object that have been selected or created.
-	 * 
+	 *
 	 * @return the invoked object to use.
 	 */
 	public EObject getSelectedInvoked() {
@@ -414,7 +415,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 			 */
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(creationRadio.equals(e.getSource())) {
+				if (creationRadio.equals(e.getSource())) {
 					refreshSectionsEnable(false);
 				} else {
 					refreshSectionsEnable(true);
@@ -437,19 +438,20 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 			}
 		};
 		selectionButton.addSelectionListener(selectBtnListener);
-		if(creationTypeCombo != null && typeComboViewer != null) {
+		if (creationTypeCombo != null && typeComboViewer != null) {
 			// listener to select invocation type
 			ModifyListener lTypeListener = new ModifyListener() {
 
 				/**
 				 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 				 */
+				@Override
 				public void modifyText(ModifyEvent e) {
 					ISelection sel = typeComboViewer.getSelection();
-					if(sel instanceof StructuredSelection) {
-						Object type = ((StructuredSelection)sel).getFirstElement();
-						if(type instanceof EClass) {
-							selectedType = (EClass)type;
+					if (sel instanceof StructuredSelection) {
+						Object type = ((StructuredSelection) sel).getFirstElement();
+						if (type instanceof EClass) {
+							selectedType = (EClass) type;
 						} else {
 							selectedType = null;
 						}
@@ -467,6 +469,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 			/**
 			 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 			 */
+			@Override
 			public void modifyText(ModifyEvent e) {
 				setInvokedName(creationNameText.getText());
 			}
@@ -482,7 +485,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 			public void widgetSelected(SelectionEvent e) {
 				handleChooseParent();
 				// reset name if not set
-				if(selectedName == null) {
+				if (selectedName == null) {
 					setInvokedName(null);
 				}
 				refreshOkButton();
@@ -493,17 +496,17 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Set the name chosen for the invoked element
-	 * 
+	 *
 	 * @param text
-	 *        the text string or null for auto-initialization
+	 *            the text string or null for auto-initialization
 	 */
 	private void setInvokedName(String text) {
 		String name = text;
-		if(text == null && selectedParent != null && selectedType != null) {
+		if (text == null && selectedParent != null && selectedType != null) {
 			name = LabelHelper.INSTANCE.findName(selectedParent, selectedType);
 			// the name assignment will be performed by listener's call
 			creationNameText.setText(name);
-		} else if(name != null && !"".equals(name.trim())) {
+		} else if (name != null && !"".equals(name.trim())) {
 			selectedName = name.trim();
 			Color black = creationNameText.getDisplay().getSystemColor(SWT.COLOR_BLACK);
 			creationNameText.setForeground(black);
@@ -518,35 +521,36 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Open the dialog to choose the existing element to select
-	 * 
+	 *
 	 */
 	protected void handleChooseInvoked() {
-		
-		
+
+
 		TreeSelectorDialog dialog = new TreeSelectorDialog(Display.getDefault().getActiveShell());
 		dialog.setContentProvider(new UMLContentProvider(getInvocationAction(), getInvocationFeature()));
-		
+
 		dialog.setLabelProvider(labelProvider);
-		//		UMLMultiEClassifierTreeSelectorDialog dialog = new UMLMultiEClassifierTreeSelectorDialog(getShell(), actionParent, Collections.singleton(getInvocationFeature().getEType()));
+		// UMLMultiEClassifierTreeSelectorDialog dialog = new UMLMultiEClassifierTreeSelectorDialog(getShell(), actionParent, Collections.singleton(getInvocationFeature().getEType()));
 		dialog.setMessage(Messages.UMLModelingAssistantProviderMessage);
 		dialog.setTitle(Messages.UMLModelingAssistantProviderTitle);
-		if(dialog.open() == org.eclipse.jface.window.Window.OK) {
+		if (dialog.open() == org.eclipse.jface.window.Window.OK) {
 			Object[] result = dialog.getResult();
-			if (result != null && result.length > 0 && result[0] instanceof EObject)
-			setInvokedSelection((EObject)result[0]);
+			if (result != null && result.length > 0 && result[0] instanceof EObject) {
+				setInvokedSelection((EObject) result[0]);
+			}
 		}
 	}
 
 	/**
 	 * Define the object that will be invoked by the action (if selection mode
 	 * is chosen)
-	 * 
+	 *
 	 * @param invokedElement
-	 *        the selected element
+	 *            the selected element
 	 */
 	protected void setInvokedSelection(EObject invokedElement) {
 		selectedInvoked = invokedElement;
-		if(selectedInvoked instanceof NamedElement) {
+		if (selectedInvoked instanceof NamedElement) {
 			selectionText.setText(labelProvider.getText(selectedInvoked));
 		} else {
 			selectionText.setText("");
@@ -555,30 +559,31 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Open the dialog to choose the parent of element to create
-	 * 
+	 *
 	 */
 	private void handleChooseParent() {
-		/*
-		 * TODO BACKPORT
-		 */
-		//		UMLMultiEClassifierTreeSelectorDialog dialog = new UMLMultiEClassifierTreeSelectorDialog(getShell(), actionParent, getPossibleInvokedParents(actionParent),true);
-		//		dialog.setMessage(CustomMessages.UMLModelingAssistantProviderMessage);
-		//		dialog.setTitle(CustomMessages.UMLModelingAssistantProviderTitle);
-		//		if(dialog.open() == Window.OK) {
-		//			setInvokedParent((EObject)dialog.getTheResult());
-		//		}
+		GetObjectsOfTypeListSelectionDialog dialog = new GetObjectsOfTypeListSelectionDialog(getParentShell(), labelProvider, actionParent, false);
+		for (EClassifier type : getPossibleInvokedParents(actionParent)) {
+			dialog.addElementsOfType(type);
+		}
+		if (dialog.open() == Window.OK) {
+			Object firstResult = dialog.getFirstResult();
+			if (firstResult instanceof EObject) {
+				setInvokedParent((EObject) dialog.getFirstResult());
+			}
+		}
 	}
 
 	/**
 	 * Define the object in which invoked object will be created (if creation
 	 * mode is chosen)
-	 * 
+	 *
 	 * @param invokedParent
-	 *        the selected parent
+	 *            the selected parent
 	 */
 	private void setInvokedParent(EObject invokedParent) {
 		selectedParent = invokedParent;
-		if(selectedParent instanceof NamedElement) {
+		if (selectedParent instanceof NamedElement) {
 			creationParentText.setText(labelProvider.getText(selectedParent));
 		} else {
 			creationParentText.setText("");
@@ -587,28 +592,28 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Refresh the enabled and disabled elements in various sections
-	 * 
+	 *
 	 * @param isSelectionSelected
-	 *        true if we choose to select an existing element, false if we
-	 *        choose to create an element
+	 *            true if we choose to select an existing element, false if we
+	 *            choose to create an element
 	 */
 	protected void refreshSectionsEnable(boolean isSelectionSelected) {
 		// handle radio button value
-		if(isSelectionSelected) {
+		if (isSelectionSelected) {
 			creationRadio.setSelection(false);
-			if(!selectionRadio.getSelection()) {
+			if (!selectionRadio.getSelection()) {
 				selectionRadio.setSelection(true);
 			}
 		} else {
 			selectionRadio.setSelection(false);
-			if(!creationRadio.getSelection()) {
+			if (!creationRadio.getSelection()) {
 				creationRadio.setSelection(true);
 			}
 		}
 		// handle disabled section
 		selectionText.setEnabled(isSelectionSelected);
 		selectionButton.setEnabled(isSelectionSelected);
-		if(creationTypeCombo != null) {
+		if (creationTypeCombo != null) {
 			creationTypeCombo.setEnabled(!isSelectionSelected);
 		}
 		creationNameText.setEnabled(!isSelectionSelected);
@@ -622,8 +627,8 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 	 */
 	private void refreshOkButton() {
 		boolean isSelectionSelected = selectionRadio.getSelection();
-		if(getButton(IDialogConstants.OK_ID) != null && !getButton(IDialogConstants.OK_ID).isDisposed()) {
-			if(isSelectionSelected) {
+		if (getButton(IDialogConstants.OK_ID) != null && !getButton(IDialogConstants.OK_ID).isDisposed()) {
+			if (isSelectionSelected) {
 				getButton(IDialogConstants.OK_ID).setEnabled(selectedInvoked != null);
 			} else {
 				getButton(IDialogConstants.OK_ID).setEnabled(selectedParent != null && selectedType != null && selectedName != null);
@@ -643,7 +648,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Gets the custom label provider that parses label for EClass
-	 * 
+	 *
 	 * @return the custom label provider
 	 */
 	private ILabelProvider getCustomLabelProvider() {
@@ -651,13 +656,13 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 			/**
 			 * Override label provider for EClass
-			 * 
+			 *
 			 * @see org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider#getText(java.lang.Object)
 			 */
 			@Override
 			public String getText(Object object) {
 				String text = super.getText(object);
-				if(object instanceof EClass) {
+				if (object instanceof EClass) {
 					return text.substring(0, text.indexOf("[") - 1);
 				} else {
 					return text;
@@ -669,46 +674,46 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Get the possible types for creating a new invoked element
-	 * 
+	 *
 	 * @return array of EClasses
 	 */
 	abstract protected EClass[] getPossibleInvokedTypes();
 
 	/**
 	 * Get the possible parents of the new invoked element
-	 * 
+	 *
 	 * @param actionParent
-	 *        the parent of the action
+	 *            the parent of the action
 	 * @return collection of EObject possible owners
 	 */
 	abstract protected Set<? extends EClassifier> getPossibleInvokedParents(EObject actionParent);
 
 	/**
 	 * Whether element can be parent of the new invoked element
-	 * 
+	 *
 	 * @param parent
-	 *        the parent to test
+	 *            the parent to test
 	 * @return true if parent is of an appropriate eclass
 	 */
 	abstract protected boolean isPossibleInvokedParent(EObject parent);
 
 	/**
 	 * Get feature referencing the invoked object
-	 * 
+	 *
 	 * @return invocation feature
 	 */
 	abstract protected EReference getInvocationFeature();
 
 	/**
 	 * Get the image for the parent selection button
-	 * 
+	 *
 	 * @return image
 	 */
 	abstract protected Image getParentImage();
 
 	/**
 	 * Get the label to present the name of the invoked object
-	 * 
+	 *
 	 * @return label
 	 */
 	protected String getInvokedNameLabel() {
@@ -717,7 +722,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Get the label to present the type of the invoked object
-	 * 
+	 *
 	 * @return label
 	 */
 	protected String getInvokedTypeLabel() {
@@ -726,7 +731,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Get the label to present parent of the invoked object
-	 * 
+	 *
 	 * @return label
 	 */
 	protected String getInvokedParentLabel() {
@@ -735,7 +740,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Get the label to present the invoked object
-	 * 
+	 *
 	 * @return label
 	 */
 	protected String getInvokedObjectLabel() {
@@ -744,42 +749,42 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Get the title of the dialog
-	 * 
+	 *
 	 * @return dialog title
 	 */
 	abstract protected String getTitle();
 
 	/**
 	 * Get the title of the invocation creation section
-	 * 
+	 *
 	 * @return section title
 	 */
 	abstract protected String getInvocationCreationSectionTitle();
 
 	/**
 	 * Get the help description of the invocation creation section
-	 * 
+	 *
 	 * @return section title
 	 */
 	abstract protected String getInvocationCreationSectionHelp();
 
 	/**
 	 * Get the title of the invocation selection section
-	 * 
+	 *
 	 * @return section title
 	 */
 	abstract protected String getInvocationSelectionSectionTitle();
 
 	/**
 	 * Get the label to choose to select an existing element
-	 * 
+	 *
 	 * @return label
 	 */
 	abstract protected String getSelectionLabel();
 
 	/**
 	 * Get the label to choose to create a new element
-	 * 
+	 *
 	 * @return label
 	 */
 	abstract protected String getCreationLabel();

@@ -53,7 +53,7 @@ public class EObjectToExtendedURI implements Function<EObject, IExtendedURI> {
 	/**
 	 * Returns the Singleton instance.
 	 * <p>
-	 * 
+	 *
 	 * @return The Singleton instance.
 	 */
 	public static EObjectToExtendedURI getInstance() {

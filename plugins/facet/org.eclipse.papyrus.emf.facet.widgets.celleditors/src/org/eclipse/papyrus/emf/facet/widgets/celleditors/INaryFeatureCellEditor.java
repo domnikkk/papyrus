@@ -22,7 +22,7 @@ public interface INaryFeatureCellEditor {
 	/**
 	 * Initialize a cell for edition of a n-ary feature. This method must create
 	 * a control inside the given parent to let the user edit the value.
-	 * 
+	 *
 	 * @param parent
 	 *            the SWT control that must contain the cell editor
 	 * @param feature
@@ -30,9 +30,8 @@ public interface INaryFeatureCellEditor {
 	 * @param source
 	 *            the object containing the attribute or reference
 	 * @param editingDomain
-	 *            the source {@link EObject} must be edited only through this
-	 *            {@link EditingDomain}
-	 * 
+	 *            the source {@link EObject} must be edited only through this {@link EditingDomain}
+	 *
 	 * @return the SWT {@link Control} to be used for capturing the new cell
 	 *         value
 	 */

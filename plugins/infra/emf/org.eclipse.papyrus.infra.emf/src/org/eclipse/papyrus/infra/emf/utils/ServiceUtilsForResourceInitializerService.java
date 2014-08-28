@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 Cedric Dumoulin, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,13 +26,13 @@ import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
  * This service register inside the ResourceSet an AdapterFactory referencing the ServiceRegistry.
  * This will allows to get the ServicesRegistry from any EMF object (see {@link ServiceUtilsForResource}.
  * The AdapterFactory can't provide Adapters. It is only used to hold a reference on the ServiceRegistry.
- * 
+ *
  * This service depends on the ModelSet service.
- * 
- * 
+ *
+ *
  * @see ServiceRegistryAdapterFactory
  * @see ServiceUtilsForResource
- * 
+ *
  * @author cedric dumoulin
  *
  * @deprecated Since 1.0, the {@link ModelSetServiceFactory} class associates the model-set with its service registry
@@ -42,15 +42,15 @@ import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
 public class ServiceUtilsForResourceInitializerService implements IService {
 
 	ServicesRegistry servicesRegistry;
-	
+
 	/**
 	 * Associate the service registry with the resource set if the resource set wasn't created by the registry.
 	 */
 	public void init(ServicesRegistry servicesRegistry) throws ServiceException {
-		
+
 		this.servicesRegistry = servicesRegistry;
 		ModelSet modelSet = ServiceUtils.getInstance().getModelSet(servicesRegistry);
-		
+
 		ModelSetServiceFactory.setServiceRegistry(modelSet, servicesRegistry);
 	}
 
@@ -64,11 +64,11 @@ public class ServiceUtilsForResourceInitializerService implements IService {
 	public void disposeService() throws ServiceException {
 		try {
 			ModelSet modelSet = ServiceUtils.getInstance().getModelSet(servicesRegistry);
-			
+
 			ModelSetServiceFactory.setServiceRegistry(modelSet, null);
 		} catch (BadStateException e) {
 			// ModelSet is already disposed. Do nothing
 		}
 	}
-		
+
 }

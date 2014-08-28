@@ -11,6 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>All Views Derived Layer</b></em>'.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class AllViewsDerivedLayerTest extends AbstractLayerTest {
@@ -18,6 +19,7 @@ public class AllViewsDerivedLayerTest extends AbstractLayerTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class AllViewsDerivedLayerTest extends AbstractLayerTest {
 	 * Constructs a new All Views Derived Layer test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public AllViewsDerivedLayerTest(String name) {
@@ -38,16 +41,18 @@ public class AllViewsDerivedLayerTest extends AbstractLayerTest {
 	 * Returns the fixture for this All Views Derived Layer test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	protected AllViewsDerivedLayer getFixture() {
-		return (AllViewsDerivedLayer)fixture;
+		return (AllViewsDerivedLayer) fixture;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -59,6 +64,7 @@ public class AllViewsDerivedLayerTest extends AbstractLayerTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -67,4 +73,4 @@ public class AllViewsDerivedLayerTest extends AbstractLayerTest {
 		setFixture(null);
 	}
 
-} //AllViewsDerivedLayerTest
+} // AllViewsDerivedLayerTest

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ public interface IReloadContextProvider {
 
 	/**
 	 * Creates an opaque token from which the receiver can be {@linkplain #restore(Object) restored} after the editor has reloaded.
-	 * 
+	 *
 	 * @return an opaque editor re-load context, or {@code null} if none is needed on this occasion (for example because the receiver
 	 *         is in its default state)
 	 */
@@ -30,9 +30,9 @@ public interface IReloadContextProvider {
 
 	/**
 	 * Reloads the receiver's state from a token previously {@linkplain #createReloadContext() provided}.
-	 * 
+	 *
 	 * @param reloadContext
-	 *        the opaque re-load context token
+	 *            the opaque re-load context token
 	 */
 	void restore(Object reloadContext);
 }

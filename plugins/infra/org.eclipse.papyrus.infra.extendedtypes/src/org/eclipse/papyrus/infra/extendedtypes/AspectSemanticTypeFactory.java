@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,16 +38,16 @@ public class AspectSemanticTypeFactory extends AbstractConfigurableElementTypeFa
 	@Override
 	protected IEditHelperAdvice createEditHelperAdvice(AspectSemanticTypeConfiguration configuration) {
 		List<SemanticActionConfiguration> semanticActionConfigurations = configuration.getActionConfiguration();
-		List<IEditHelperAdvice> actionAdvices = new ArrayList<IEditHelperAdvice>(semanticActionConfigurations.size()); 
-		for(SemanticActionConfiguration actionConfiguration : semanticActionConfigurations) {
+		List<IEditHelperAdvice> actionAdvices = new ArrayList<IEditHelperAdvice>(semanticActionConfigurations.size());
+		for (SemanticActionConfiguration actionConfiguration : semanticActionConfigurations) {
 			IEditHelperAdvice advice = AspectConfigurationFactoryRegistry.getInstance().createEditHelperAdvice(actionConfiguration);
-			if(advice!=null) {
+			if (advice != null) {
 				actionAdvices.add(advice);
-//			} else {
-//				Activator.log.error("Impossible to create an advice for :" + actionConfiguration, null);
+				// } else {
+				// Activator.log.error("Impossible to create an advice for :" + actionConfiguration, null);
 			}
 		}
-		if(actionAdvices!=null && actionAdvices.size() > 0) {
+		if (actionAdvices != null && actionAdvices.size() > 0) {
 			return new ComposedEditHelperAdvice(actionAdvices);
 		}
 		return null;
@@ -59,16 +59,16 @@ public class AspectSemanticTypeFactory extends AbstractConfigurableElementTypeFa
 	@Override
 	protected IContainerDescriptor createContainerDescriptor(AspectSemanticTypeConfiguration configuration) {
 		List<SemanticActionConfiguration> semanticActionConfigurations = configuration.getActionConfiguration();
-		List<IContainerDescriptor> containerDescriptors = new ArrayList<IContainerDescriptor>(semanticActionConfigurations.size()); 
-		for(SemanticActionConfiguration actionConfiguration : semanticActionConfigurations) {
+		List<IContainerDescriptor> containerDescriptors = new ArrayList<IContainerDescriptor>(semanticActionConfigurations.size());
+		for (SemanticActionConfiguration actionConfiguration : semanticActionConfigurations) {
 			IContainerDescriptor containerDescriptor = AspectConfigurationFactoryRegistry.getInstance().createContainerDescriptor(actionConfiguration);
-			if(containerDescriptor!=null) {
+			if (containerDescriptor != null) {
 				containerDescriptors.add(containerDescriptor);
-//			} else {
-//				Activator.log.error("Impossible to create a container descriptor for :" + actionConfiguration, null);
+				// } else {
+				// Activator.log.error("Impossible to create a container descriptor for :" + actionConfiguration, null);
 			}
 		}
-		if(containerDescriptors!=null && containerDescriptors.size() > 0) {
+		if (containerDescriptors != null && containerDescriptors.size() > 0) {
 			return new ComposedContainerDescriptor(containerDescriptors);
 		}
 		return null;
@@ -80,21 +80,21 @@ public class AspectSemanticTypeFactory extends AbstractConfigurableElementTypeFa
 	@Override
 	public ICreationElementValidator createElementCreationValidator(AspectSemanticTypeConfiguration configuration) {
 		List<SemanticActionConfiguration> semanticActionConfigurations = configuration.getActionConfiguration();
-		List<ICreationElementValidator> actionValidators = new ArrayList<ICreationElementValidator>(semanticActionConfigurations.size()); 
-		for(SemanticActionConfiguration actionConfiguration : semanticActionConfigurations) {
+		List<ICreationElementValidator> actionValidators = new ArrayList<ICreationElementValidator>(semanticActionConfigurations.size());
+		for (SemanticActionConfiguration actionConfiguration : semanticActionConfigurations) {
 			ICreationElementValidator validator = AspectConfigurationFactoryRegistry.getInstance().createCreationElementValidator(actionConfiguration);
-			if(validator!=null) {
+			if (validator != null) {
 				actionValidators.add(validator);
-//			} else {
-//				Activator.log.error("Impossible to create a creation element validator for :" + actionConfiguration, null);
+				// } else {
+				// Activator.log.error("Impossible to create a creation element validator for :" + actionConfiguration, null);
 			}
 		}
-		if(actionValidators!=null && actionValidators.size() > 0) {
+		if (actionValidators != null && actionValidators.size() > 0) {
 			return new ComposedElementCreationValidator(actionValidators);
 		}
 		return null;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

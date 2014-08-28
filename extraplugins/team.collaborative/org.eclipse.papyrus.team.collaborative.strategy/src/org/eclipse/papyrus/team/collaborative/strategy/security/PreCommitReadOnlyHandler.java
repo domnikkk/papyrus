@@ -43,17 +43,17 @@ import com.google.common.collect.Sets;
  * This model snippet will register a new {@link ResourceSetListener} that will provide a new security on modifed resources.
  * Each time a resource will be set to modified this listener will check that the resources has been locked. If the resources is not lock then it will
  * try to rollback the current transaction
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class PreCommitReadOnlyHandler implements IModelSetSnippet {
 
 	/**
 	 * This {@link ResourceSetListener} will listen each time a resource is modified to check that it has been locked or will ask for lock
-	 * 
+	 *
 	 * @author adaussy
-	 * 
+	 *
 	 */
 	private static class ResourceSetListener extends ResourceSetListenerImpl {
 
@@ -86,33 +86,33 @@ public class PreCommitReadOnlyHandler implements IModelSetSnippet {
 		@Override
 		public Command transactionAboutToCommit(ResourceSetChangeEvent event) throws RollbackException {
 			final Set<Resource> resourceToTest = new HashSet<Resource>();
-			for(Notification n : event.getNotifications()) {
-				if(n.getNewBooleanValue()) {
-					Resource resource = (Resource)n.getNotifier();
-					//Filtered out any DI resource. Those resource are not collaborative resources
-					if(!DiModel.MODEL_FILE_EXTENSION.equals(resource.getURI().fileExtension())) {
+			for (Notification n : event.getNotifications()) {
+				if (n.getNewBooleanValue()) {
+					Resource resource = (Resource) n.getNotifier();
+					// Filtered out any DI resource. Those resource are not collaborative resources
+					if (!DiModel.MODEL_FILE_EXTENSION.equals(resource.getURI().fileExtension())) {
 						resourceToTest.add(resource);
 					}
 				}
 			}
-			if(!resourceToTest.isEmpty()) {
+			if (!resourceToTest.isEmpty()) {
 				TransactionalEditingDomain editingDomain = event.getEditingDomain();
 				ResourceSet resourceSet = editingDomain.getResourceSet();
 				HashSet<IExtendedURI> uriToTest = Sets.newHashSet(Collections2.transform(resourceToTest, CollabFunctionsFactory.getResourceToExtendedURIWithContainment()));
-				if(ICollaborativeManager.INSTANCE.isCollab(uriToTest, resourceSet)) {
+				if (ICollaborativeManager.INSTANCE.isCollab(uriToTest, resourceSet)) {
 					Set<IExtendedURI> uriToLock = new HashSet<IExtendedURI>();
 					ILocker locker = ICollaborativeManager.INSTANCE.getLocker(uriToTest, resourceSet);
-					if(locker == null) {
+					if (locker == null) {
 						return null;
 					}
-					for(IExtendedURI extendURI : locker.getExtendedSet()) {
-						if(!locker.isLocked(extendURI).isOK()) {
+					for (IExtendedURI extendURI : locker.getExtendedSet()) {
+						if (!locker.isLocked(extendURI).isOK()) {
 							uriToLock.add(extendURI);
 						}
 					}
-					if(!uriToLock.isEmpty()) {
+					if (!uriToLock.isEmpty()) {
 						final IStatus status = LockAction.doSafeLock(resourceSet, uriToLock, true);
-						if(!status.isOK()) {
+						if (!status.isOK()) {
 							UIUtils.errorDialog(status, "Unable to lock");
 							throw new RollbackException(status);
 
@@ -130,6 +130,7 @@ public class PreCommitReadOnlyHandler implements IModelSetSnippet {
 
 	private WeakHashMap<EditingDomain, ResourceSetListener> link = new WeakHashMap<EditingDomain, PreCommitReadOnlyHandler.ResourceSetListener>();
 
+	@Override
 	public void start(ModelSet modelsManager) {
 		TransactionalEditingDomain transactionalEditingDomain = modelsManager.getTransactionalEditingDomain();
 		ResourceSetListener listener = new ResourceSetListener();
@@ -138,6 +139,7 @@ public class PreCommitReadOnlyHandler implements IModelSetSnippet {
 
 	}
 
+	@Override
 	public void dispose(ModelSet modelsManager) {
 		TransactionalEditingDomain transactionalEditingDomain = modelsManager.getTransactionalEditingDomain();
 		transactionalEditingDomain.removeResourceSetListener(link.get(transactionalEditingDomain));

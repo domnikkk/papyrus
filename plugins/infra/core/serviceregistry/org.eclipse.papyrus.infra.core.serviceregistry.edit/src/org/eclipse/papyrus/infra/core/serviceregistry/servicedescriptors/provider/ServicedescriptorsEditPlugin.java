@@ -3,13 +3,13 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**
  * This is the central singleton for the Servicedescriptors edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public final class ServicedescriptorsEditPlugin extends EMFPlugin {
@@ -17,6 +17,7 @@ public final class ServicedescriptorsEditPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final ServicedescriptorsEditPlugin INSTANCE = new ServicedescriptorsEditPlugin();
@@ -25,6 +26,7 @@ public final class ServicedescriptorsEditPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static Implementation plugin;
@@ -33,18 +35,19 @@ public final class ServicedescriptorsEditPlugin extends EMFPlugin {
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ServicedescriptorsEditPlugin() {
-		super
-		  (new ResourceLocator [] {
-		   });
+		super(new ResourceLocator[] {
+				});
 	}
 
 	/**
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -57,6 +60,7 @@ public final class ServicedescriptorsEditPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -68,6 +72,7 @@ public final class ServicedescriptorsEditPlugin extends EMFPlugin {
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static class Implementation extends EclipsePlugin {
@@ -75,6 +80,7 @@ public final class ServicedescriptorsEditPlugin extends EMFPlugin {
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		public Implementation() {

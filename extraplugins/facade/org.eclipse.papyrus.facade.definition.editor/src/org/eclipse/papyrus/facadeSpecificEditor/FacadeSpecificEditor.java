@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,8 +15,6 @@ package org.eclipse.papyrus.facadeSpecificEditor;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -38,14 +36,12 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
-import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.TreeViewerColumn;
-import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.facade.Facade;
 import org.eclipse.papyrus.facade.FacadePackage;
 import org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass;
@@ -82,6 +78,8 @@ import org.eclipse.papyrus.facadeSpecificEditor.providers.TypedElementLabelProvi
 import org.eclipse.papyrus.facadeSpecificEditor.utils.ProfileUtils;
 import org.eclipse.papyrus.facadeSpecificEditor.utils.StereotypeUtils;
 import org.eclipse.papyrus.facadeSpecificEditor.utils.UMLModelUtils;
+import org.eclipse.papyrus.infra.widgets.providers.CollectionContentProvider;
+import org.eclipse.papyrus.uml.extensionpoints.profile.IRegisteredProfile;
 import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
 import org.eclipse.papyrus.uml.extensionpoints.standard.ExtensionLabelProvider;
 import org.eclipse.swt.SWT;
@@ -175,8 +173,9 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 	/**
 	 * @see org.eclipse.papyrus.facade.presentation.FacadeEditor#createModel()
-	 * 
+	 *
 	 */
+	@Override
 	public void createModel() {
 
 		URI resourceURI = EditUIUtil.getURI(getEditorInput());
@@ -191,20 +190,20 @@ public class FacadeSpecificEditor extends FacadeEditor {
 		}
 
 		Diagnostic diagnostic = analyzeResourceProblems(facadeModelResource, exception);
-		if(diagnostic.getSeverity() != Diagnostic.OK) {
+		if (diagnostic.getSeverity() != Diagnostic.OK) {
 			resourceToDiagnosticMap.put(facadeModelResource, analyzeResourceProblems(facadeModelResource, exception));
 		}
 		editingDomain.getResourceSet().eAdapters().add(problemIndicationAdapter);
 
-		if(facadeModelResource.getContents().size() > 0) {
+		if (facadeModelResource.getContents().size() > 0) {
 			// Get the root
-			facade = (Facade)facadeModelResource.getContents().get(0);
+			facade = (Facade) facadeModelResource.getContents().get(0);
 
-			if(!facade.getExtensionDefinitions().isEmpty()) {
+			if (!facade.getExtensionDefinitions().isEmpty()) {
 				// Shouldn't be required but just in case
 				ProfileUtils.clearSiblings();
 
-				for(ExtensionDefinition stereotypeDefinition : facade.getExtensionDefinitions()) {
+				for (ExtensionDefinition stereotypeDefinition : facade.getExtensionDefinitions()) {
 					ProfileUtils.initSiblings(stereotypeDefinition.getStereotype());
 				}
 			}
@@ -213,7 +212,7 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 	/**
 	 * Getter for the extensionDefintionTreeViewer widget
-	 * 
+	 *
 	 * @return the extensionDefintionTreeViewer widget
 	 */
 	public static TreeViewer getExtensionDefintionTreeViewer() {
@@ -222,7 +221,7 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 	/**
 	 * Getter for the metamodelTreeViewer widget
-	 * 
+	 *
 	 * @return the metamodelTreeViewer widget
 	 */
 	public static TreeViewer getMetamodelTreeViewer() {
@@ -247,53 +246,39 @@ public class FacadeSpecificEditor extends FacadeEditor {
 		 * Open profiles to start the definition of the facade.
 		 */
 		protected void openProfile() {
-			RegisteredProfile[] regProfiles = RegisteredProfile.getRegisteredProfiles();
-			ListSelectionDialog dlg = new ListSelectionDialog(Display.getCurrent().getActiveShell(), Arrays.asList(regProfiles), new IStructuredContentProvider() {
-
-				public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-				}
-
-				public void dispose() {
-				}
-
-				public Object[] getElements(Object inputElement) {
-					if(inputElement instanceof List) {
-						return ((List<?>)inputElement).toArray();
-					}
-					return Collections.emptyList().toArray();
-				}
-			}, new ExtensionLabelProvider(), Messages.FacadeSpecificEditor_1);
+			List<IRegisteredProfile> regProfiles = RegisteredProfile.getRegisteredProfiles();
+			ListSelectionDialog dlg = new ListSelectionDialog(Display.getCurrent().getActiveShell(), regProfiles, CollectionContentProvider.instance, new ExtensionLabelProvider(), Messages.FacadeSpecificEditor_1);
 			dlg.setTitle(Messages.FacadeSpecificEditor_2);
 			dlg.open();
-			if(dlg.getResult() != null) {
+			if (dlg.getResult() != null) {
 
-				for(Object selectedElement : dlg.getResult()) {
-					if(selectedElement instanceof RegisteredProfile) {
-						EObject model = UMLModelUtils.loadModel(((RegisteredProfile)selectedElement).uri, profileResourceSet);
-						if(model instanceof Profile) {
+				for (Object selectedElement : dlg.getResult()) {
+					if (selectedElement instanceof RegisteredProfile) {
+						EObject model = UMLModelUtils.loadModel(((RegisteredProfile) selectedElement).uri, profileResourceSet);
+						if (model instanceof Profile) {
 							TreeIterator<EObject> it = model.eAllContents();
 							boolean failed = false;
-							while(it.hasNext() && !failed) {
-								EObject eObject = (EObject)it.next();
-								if(eObject instanceof PrimitiveType) {
-									Stereotype stereotype = ((PrimitiveType)eObject).getAppliedStereotype("Ecore::EDataType"); //$NON-NLS-1$
-									if(stereotype != null) {
-										Object value = ((PrimitiveType)eObject).getValue(stereotype, "instanceClassName"); //$NON-NLS-1$
-										if(!(value instanceof String)) {
+							while (it.hasNext() && !failed) {
+								EObject eObject = it.next();
+								if (eObject instanceof PrimitiveType) {
+									Stereotype stereotype = ((PrimitiveType) eObject).getAppliedStereotype("Ecore::EDataType"); //$NON-NLS-1$
+									if (stereotype != null) {
+										Object value = ((PrimitiveType) eObject).getValue(stereotype, "instanceClassName"); //$NON-NLS-1$
+										if (!(value instanceof String)) {
 											failed = true;
-											MessageDialog.openError(getContainer().getShell(), Messages.FacadeSpecificEditor_5, Messages.FacadeSpecificEditor_6 + ((PrimitiveType)eObject).getName() + Messages.FacadeSpecificEditor_7);
+											MessageDialog.openError(getContainer().getShell(), Messages.FacadeSpecificEditor_5, Messages.FacadeSpecificEditor_6 + ((PrimitiveType) eObject).getName() + Messages.FacadeSpecificEditor_7);
 										}
 									}
 								}
-								if(eObject instanceof Extension) {
-									if(((Extension)eObject).isRequired()) {
+								if (eObject instanceof Extension) {
+									if (((Extension) eObject).isRequired()) {
 										failed = true;
 										MessageDialog.openError(getContainer().getShell(), Messages.FacadeSpecificEditor_8, Messages.FacadeSpecificEditor_9);
 									}
 								}
 							}
-							if(!failed) {
-								profileModels.add((Profile)model);
+							if (!failed) {
+								profileModels.add((Profile) model);
 							}
 						} else {
 							MessageDialog.openError(getContainer().getShell(), Messages.FacadeSpecificEditor_10, Messages.FacadeSpecificEditor_11);
@@ -305,17 +290,18 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 		/**
 		 * @see org.eclipse.swt.events.MouseAdapter#mouseUp(org.eclipse.swt.events.MouseEvent)
-		 * 
+		 *
 		 * @param e
 		 */
 
+		@Override
 		public void mouseUp(MouseEvent e) {
 
 			profileModels.clear();
 
 			openProfile();
 
-			if(!profileModels.isEmpty()) {
+			if (!profileModels.isEmpty()) {
 
 				clearModel();
 				ProfileUtils.clearSiblings();
@@ -345,32 +331,33 @@ public class FacadeSpecificEditor extends FacadeEditor {
 		try {
 			dialog.run(false, false, new IRunnableWithProgress() {
 
+				@Override
 				public void run(IProgressMonitor monitor) {
 					monitor.beginTask(Messages.FacadeSpecificEditor_15, IProgressMonitor.UNKNOWN);
 
 					// Find all extensions be it in the profile or in another profile
 					Set<Extension> extensions = new HashSet<Extension>();
 
-					for(Profile profile : profileModels) {
+					for (Profile profile : profileModels) {
 
 						TreeIterator<EObject> iterator = profile.eAllContents();
-						while(iterator.hasNext()) {
-							EObject eObject = (EObject)iterator.next();
-							if(eObject instanceof Stereotype) {
+						while (iterator.hasNext()) {
+							EObject eObject = iterator.next();
+							if (eObject instanceof Stereotype) {
 
-								extensions.addAll(ProfileUtils.findExtensions((Stereotype)eObject));
+								extensions.addAll(ProfileUtils.findExtensions((Stereotype) eObject));
 
 							}
 						}
 					}
 
-					for(Extension extension : extensions) {
+					for (Extension extension : extensions) {
 
 						List<Stereotype> stereotypes = ProfileUtils.findAllSubsInProfile(extension.getStereotype());
 
 						stereotypes.add(extension.getStereotype());
 
-						for(Stereotype stereotype : stereotypes) {
+						for (Stereotype stereotype : stereotypes) {
 							ExtensionDefinition extensionDefinition = ExtensiondefinitionFactory.eINSTANCE.createExtensionDefinition();
 							extensionDefinition.setExtension(extension);
 							extensionDefinition.setKind(ExtensionDefinitionKind.ASSOCIATION);
@@ -382,7 +369,7 @@ public class FacadeSpecificEditor extends FacadeEditor {
 							ProfileUtils.initSiblings(stereotype);
 
 							List<EClass> baseMetaclasses = StereotypeUtils.getAllExtendableMetaclasses(extension, false);
-							for(EClass eClass : baseMetaclasses) {
+							for (EClass eClass : baseMetaclasses) {
 
 								BaseMetaclass baseMetaclass = ExtensiondefinitionFactory.eINSTANCE.createBaseMetaclass();
 								baseMetaclass.setBase(eClass);
@@ -413,14 +400,15 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 	/**
 	 * @see org.eclipse.papyrus.facade.presentation.FacadeEditor#createPages()
-	 * 
+	 *
 	 */
+	@Override
 	public void createPages() {
 		// Creates the model from the editor input
 		createModel();
 
 		// Only creates the other pages if there is something that can be edited
-		if(!getEditingDomain().getResourceSet().getResources().isEmpty()) {
+		if (!getEditingDomain().getResourceSet().getResources().isEmpty()) {
 			Composite composite = new Composite(getContainer(), SWT.NONE);
 			composite.setLayout(new GridLayout(1, true));
 
@@ -450,8 +438,9 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 			tabFolder.addSelectionListener(new SelectionAdapter() {
 
+				@Override
 				public void widgetSelected(org.eclipse.swt.events.SelectionEvent event) {
-					if(tabFolder.getSelectionIndex() <= 1) {
+					if (tabFolder.getSelectionIndex() <= 1) {
 						extensionDefintionTreeViewer.refresh();
 						metamodelTreeViewer.refresh();
 					}
@@ -468,8 +457,9 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 			boolean guard = false;
 
+			@Override
 			public void controlResized(ControlEvent event) {
-				if(!guard) {
+				if (!guard) {
 					guard = true;
 					hideTabs();
 					guard = false;
@@ -479,6 +469,7 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 		getSite().getShell().getDisplay().asyncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				updateProblemIndication();
 			}
@@ -487,11 +478,11 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 	/**
 	 * Creates the tab corresponding to the generation of the actual ECore metamodel
-	 * 
+	 *
 	 * @param tabFolder
-	 *        the tab folder
+	 *            the tab folder
 	 * @param generateMetamodelTabItem
-	 *        the generate metamodel tab item
+	 *            the generate metamodel tab item
 	 */
 	protected void createGenerateEcore(Composite tabFolder, TabItem generateMetamodelTabItem) {
 		GridData layoutData = new GridData(SWT.FILL, SWT.FILL, true, false);
@@ -503,8 +494,8 @@ public class FacadeSpecificEditor extends FacadeEditor {
 		metamodelNameLabel.setText(Messages.FacadeSpecificEditor_21);
 		metamodelName = new Text(composite, SWT.BORDER);
 		metamodelName.setLayoutData(layoutData);
-		if(facade.getVirtualmetamodel() != null) {
-			if(facade.getVirtualmetamodel().getName() != null) {
+		if (facade.getVirtualmetamodel() != null) {
+			if (facade.getVirtualmetamodel().getName() != null) {
 				metamodelName.setText(facade.getVirtualmetamodel().getName());
 			} else {
 				metamodelName.setText(""); //$NON-NLS-1$
@@ -512,6 +503,7 @@ public class FacadeSpecificEditor extends FacadeEditor {
 		}
 		metamodelName.addModifyListener(new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
 				SetCommand commandName = new SetCommand(editingDomain, facade.getVirtualmetamodel(), VirtualmetamodelPackage.eINSTANCE.getVirtualMetamodel_Name(), metamodelName.getText());
 				editingDomain.getCommandStack().execute(commandName);
@@ -522,8 +514,8 @@ public class FacadeSpecificEditor extends FacadeEditor {
 		nsPrefixLabel.setText(Messages.FacadeSpecificEditor_23);
 		nsPrefix = new Text(composite, SWT.BORDER);
 		nsPrefix.setLayoutData(layoutData);
-		if(facade.getVirtualmetamodel() != null) {
-			if(facade.getVirtualmetamodel().getNsPrefix() != null) {
+		if (facade.getVirtualmetamodel() != null) {
+			if (facade.getVirtualmetamodel().getNsPrefix() != null) {
 				nsPrefix.setText(facade.getVirtualmetamodel().getNsPrefix());
 			} else {
 				nsPrefix.setText(""); //$NON-NLS-1$
@@ -531,6 +523,7 @@ public class FacadeSpecificEditor extends FacadeEditor {
 		}
 		nsPrefix.addModifyListener(new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
 				SetCommand commandName = new SetCommand(editingDomain, facade.getVirtualmetamodel(), VirtualmetamodelPackage.eINSTANCE.getVirtualMetamodel_NsPrefix(), nsPrefix.getText());
 				editingDomain.getCommandStack().execute(commandName);
@@ -542,8 +535,8 @@ public class FacadeSpecificEditor extends FacadeEditor {
 		nsURILabel.setText(Messages.FacadeSpecificEditor_25);
 		nsURI = new Text(composite, SWT.BORDER);
 		nsURI.setLayoutData(layoutData);
-		if(facade.getVirtualmetamodel() != null) {
-			if(facade.getVirtualmetamodel().getNsURI() != null) {
+		if (facade.getVirtualmetamodel() != null) {
+			if (facade.getVirtualmetamodel().getNsURI() != null) {
 				nsURI.setText(facade.getVirtualmetamodel().getNsURI());
 			} else {
 				nsURI.setText(""); //$NON-NLS-1$
@@ -551,6 +544,7 @@ public class FacadeSpecificEditor extends FacadeEditor {
 		}
 		nsURI.addModifyListener(new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
 				SetCommand commandName = new SetCommand(editingDomain, facade.getVirtualmetamodel(), VirtualmetamodelPackage.eINSTANCE.getVirtualMetamodel_NsURI(), nsURI.getText());
 				editingDomain.getCommandStack().execute(commandName);
@@ -567,11 +561,11 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 	/**
 	 * Creates the tab used to define the wanted facade metamodel.
-	 * 
+	 *
 	 * @param tabFolder
-	 *        the tab folder
+	 *            the tab folder
 	 * @param designMetamodelTabItem
-	 *        the design metamodel tab item
+	 *            the design metamodel tab item
 	 */
 	protected void createDesignMetamodel(Composite tabFolder, TabItem designMetamodelTabItem) {
 
@@ -630,9 +624,10 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 		metamodelTreeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				if(event.getSelection() instanceof IStructuredSelection) {
-					Object first = ((IStructuredSelection)event.getSelection()).getFirstElement();
+				if (event.getSelection() instanceof IStructuredSelection) {
+					Object first = ((IStructuredSelection) event.getSelection()).getFirstElement();
 					propertiesTreeViewer.setInput(first);
 					propertiesTreeViewer.refresh();
 				}
@@ -683,11 +678,11 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 	/**
 	 * Creates the tab used to clarify extensions identified in the UML profiles
-	 * 
+	 *
 	 * @param tabFolder
-	 *        the tab folder
+	 *            the tab folder
 	 * @param clarifyExtensionsTabItem
-	 *        the clarify extensions tab item
+	 *            the clarify extensions tab item
 	 */
 	protected void createClarifyExtension(Composite tabFolder, TabItem clarifyExtensionsTabItem) {
 		GridData layoutData = new GridData(SWT.FILL, SWT.FILL, true, true);
@@ -726,9 +721,10 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 		extensionDefintionTreeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				if(event.getSelection() instanceof IStructuredSelection) {
-					Object first = ((IStructuredSelection)event.getSelection()).getFirstElement();
+				if (event.getSelection() instanceof IStructuredSelection) {
+					Object first = ((IStructuredSelection) event.getSelection()).getFirstElement();
 					incompatibilitiesTableViewer.setInput(first);
 					incompatibilitiesTableViewer.refresh();
 				}

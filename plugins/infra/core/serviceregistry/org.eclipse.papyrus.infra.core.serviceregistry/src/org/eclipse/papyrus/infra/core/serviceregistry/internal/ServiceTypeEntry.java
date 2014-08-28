@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.serviceregistry.internal;
 
@@ -14,7 +14,7 @@ import org.osgi.framework.Bundle;
 /**
  * Base class for the different types of service entries (PoJo, Service,
  * ServiceFactory, ...).
- * 
+ *
  * @author cedric dumoulin
  */
 public abstract class ServiceTypeEntry {
@@ -30,9 +30,9 @@ public abstract class ServiceTypeEntry {
 	protected ServiceDescriptor serviceDescriptor;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public ServiceTypeEntry(ServiceDescriptor serviceDescriptor) {
 		this.serviceDescriptor = serviceDescriptor;
@@ -40,7 +40,7 @@ public abstract class ServiceTypeEntry {
 
 	/**
 	 * Change the state of the service.
-	 * 
+	 *
 	 * @param newState
 	 */
 	protected void setState(ServiceState newState) {
@@ -57,19 +57,19 @@ public abstract class ServiceTypeEntry {
 	/**
 	 * Check if the current state is the proposed state. Throws an exception if
 	 * the state is different.
-	 * 
+	 *
 	 * @param expectedState
 	 * @throws BadStateException
 	 */
 	protected void checkState(ServiceState expectedState) throws BadStateException {
-		if(expectedState != state) {
+		if (expectedState != state) {
 			throw new BadStateException(expectedState, state, serviceDescriptor);
 		}
 	}
 
 	/**
 	 * Get the descriptor of the service associated to this entry.
-	 * 
+	 *
 	 * @return
 	 */
 	public ServiceDescriptor getDescriptor() {
@@ -78,7 +78,7 @@ public abstract class ServiceTypeEntry {
 
 	/**
 	 * Instanciate the service as specified in serviceClassname.
-	 * 
+	 *
 	 * @return the created service.
 	 * @throws ServiceException
 	 */
@@ -129,7 +129,7 @@ public abstract class ServiceTypeEntry {
 	/**
 	 * Load the Class object. Try from current ClassLoader, then try using the
 	 * plugin referenced in the serviceDescriptor.PluginId
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
 	 */
@@ -154,7 +154,7 @@ public abstract class ServiceTypeEntry {
 
 	/**
 	 * Return true if the service is started. Return false otherwise.
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isStarted() {
@@ -163,7 +163,7 @@ public abstract class ServiceTypeEntry {
 
 	/**
 	 * Get the service instance.
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
 	 */
@@ -171,24 +171,24 @@ public abstract class ServiceTypeEntry {
 
 	/**
 	 * Create the associated service if not a Lazy Service.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	abstract public void createService() throws ServiceException;
 
 	/**
 	 * Start the associated service if not a Lazy Service.
-	 * 
+	 *
 	 * @param servicesRegistry
-	 *        The servicesRegistry containing this service.
-	 * 
+	 *            The servicesRegistry containing this service.
+	 *
 	 * @throws ServiceException
 	 */
 	abstract public void initService(ServicesRegistry servicesRegistry) throws ServiceException;
 
 	/**
 	 * Start the associated service if not a Lazy Service.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	abstract public void startService() throws ServiceException;

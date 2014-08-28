@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,9 +47,9 @@ public class DialogUtils {
 	 * int width, int height, int style)
 	 * {
 	 * style = SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL | style;
-	 * 
+	 *
 	 * List list = new List (parent, style);
-	 * 
+	 *
 	 * GridData data = new GridData();
 	 * data.widthHint = width;
 	 * // data.heightHint = convertHeightInCharsToPixels(height);
@@ -86,7 +86,7 @@ public class DialogUtils {
 
 	/**
 	 * Create a GridData object which fills the available vertical and horizontal space
-	 * 
+	 *
 	 * @return
 	 */
 	public static GridData createFillGridData() {

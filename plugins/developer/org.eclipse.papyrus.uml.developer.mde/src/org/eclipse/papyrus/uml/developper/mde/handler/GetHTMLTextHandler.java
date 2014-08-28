@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,11 +38,11 @@ public class GetHTMLTextHandler extends IDMAbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		super.execute(event);
-		System.err.println( getCurrentProject().getLocationURI().getPath());
-		CreateDocumentModelCommand createDocumentModelCommand= new CreateDocumentModelCommand(transactionalEditingDomain,(Model)getSelection(), getCurrentProject().getLocationURI().getPath()+INTERNAL_DIRECTORY_NAME );
+		System.err.println(getCurrentProject().getLocationURI().getPath());
+		CreateDocumentModelCommand createDocumentModelCommand = new CreateDocumentModelCommand(transactionalEditingDomain, (Model) getSelection(), getCurrentProject().getLocationURI().getPath() + INTERNAL_DIRECTORY_NAME);
 		transactionalEditingDomain.getCommandStack().execute(createDocumentModelCommand);
 		IProject project = getCurrentProject();
-		TranscriptionEngine engine= new TranscriptionEngine((Model)getSelection(), project, new HTMLTranscription());
+		TranscriptionEngine engine = new TranscriptionEngine((Model) getSelection(), project, new HTMLTranscription());
 		engine.traduce();
 		return null;
 	}
@@ -51,23 +51,31 @@ public class GetHTMLTextHandler extends IDMAbstractHandler {
 	private IProject getCurrentProject() {
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = workspace.getRoot();
+<<<<<<< HEAD
 		IProject project  = root.getProject();
 		String path=getSelection().eResource().getURI().path();
 		String tmpPath=path.replaceAll("/resource/","");
 		for(IProject currentProject : root.getProjects()) {
 			if( tmpPath.startsWith(currentProject.getName())){
 				project=currentProject;
+=======
+		IProject project = root.getProject();
+		String path = getSelection().eResource().getURI().path();
+		for (IProject currentProject : root.getProjects()) {
+			if (path.contains(currentProject.getName())) {
+				project = currentProject;
+>>>>>>> branch 'master' of ssh://ptessier@git.eclipse.org:29418/papyrus/org.eclipse.papyrus
 			}
 		}
 		return project;
 	}
 
 
-	
+
 	@Override
 	public boolean isEnabled() {
-		if(getSelection() instanceof Model){
-			if(((Model)getSelection()).getAppliedStereotype(I_DeveloperIDMStereotype.PROJECT_STEREOTYPE)!=null){
+		if (getSelection() instanceof Model) {
+			if (((Model) getSelection()).getAppliedStereotype(I_DeveloperIDMStereotype.PROJECT_STEREOTYPE) != null) {
 				return true;
 			}
 

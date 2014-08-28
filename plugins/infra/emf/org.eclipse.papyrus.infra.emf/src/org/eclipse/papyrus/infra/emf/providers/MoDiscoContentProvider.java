@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.emf.Activator;
 
 /**
  * the content provider that inherits of modisco properties
- * 
+ *
  * @deprecated Use SemanticUMLContentProvider instead
  */
 @Deprecated
@@ -53,7 +53,7 @@ public class MoDiscoContentProvider extends CustomizedTreeContentProvider {
 	@Override
 	public Object[] getChildren(final Object parentElement) {
 		Object[] children = super.getChildren(parentElement);
-		if(children == null) {
+		if (children == null) {
 			return new Object[0];
 		}
 		return children;
@@ -62,9 +62,9 @@ public class MoDiscoContentProvider extends CustomizedTreeContentProvider {
 	/**
 	 * Return the initial values from the input.
 	 * Input should be of type {@link UmlModel}.
-	 * 
+	 *
 	 * @see org.eclipse.gmt.modisco.infra.browser.uicore.CustomizableModelContentProvider#getRootElements(java.lang.Object)
-	 * 
+	 *
 	 * @param inputElement
 	 * @return
 	 */
@@ -72,11 +72,11 @@ public class MoDiscoContentProvider extends CustomizedTreeContentProvider {
 	protected EObject[] getRootElements(Object inputElement) {
 
 		try {
-			if(!(inputElement instanceof ServicesRegistry)) {
+			if (!(inputElement instanceof ServicesRegistry)) {
 				return null;
 			}
 
-			ServicesRegistry servicesRegistry = (ServicesRegistry)inputElement;
+			ServicesRegistry servicesRegistry = (ServicesRegistry) inputElement;
 
 			modelSet = ModelUtils.getModelSetChecked(servicesRegistry);
 			pageMngr = servicesRegistry.getService(IPageManager.class);
@@ -91,26 +91,26 @@ public class MoDiscoContentProvider extends CustomizedTreeContentProvider {
 
 	/**
 	 * Get the roots elements from the {@link ModelSet} provided as input.
-	 * 
+	 *
 	 * @return
 	 */
 	protected EObject[] getRootElements(ModelSet modelSet) {
-		//FIXME: Refactoring. Workaround to remove the explicit dependency to UMLModel in uml.tools. We should not depend on UML at all.
+		// FIXME: Refactoring. Workaround to remove the explicit dependency to UMLModel in uml.tools. We should not depend on UML at all.
 		IModel umlIModel = modelSet.getModel("org.eclipse.papyrus.infra.core.resource.uml.UmlModel");
 
 		AbstractBaseModel umlModel = null;
-		if(umlIModel instanceof AbstractBaseModel) {
-			umlModel = (AbstractBaseModel)umlIModel;
+		if (umlIModel instanceof AbstractBaseModel) {
+			umlModel = (AbstractBaseModel) umlIModel;
 		}
 
-		if(umlModel == null) {
+		if (umlModel == null) {
 			return null;
 		}
 
 		EList<EObject> contents = umlModel.getResource().getContents();
 		ArrayList<EObject> result = new ArrayList<EObject>();
 		Iterator<EObject> iterator = contents.iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			EObject eObject = iterator.next();
 			result.add(eObject);
 		}

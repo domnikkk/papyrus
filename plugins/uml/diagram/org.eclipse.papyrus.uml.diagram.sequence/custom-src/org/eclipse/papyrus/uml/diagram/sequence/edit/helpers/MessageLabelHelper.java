@@ -57,7 +57,7 @@ public class MessageLabelHelper extends StereotypedElementLabelHelper {
 	 * @return the singleton instance.
 	 */
 	public static MessageLabelHelper getInstance() {
-		if(labelHelper == null) {
+		if (labelHelper == null) {
 			labelHelper = new MessageLabelHelper();
 		}
 		return labelHelper;
@@ -65,33 +65,33 @@ public class MessageLabelHelper extends StereotypedElementLabelHelper {
 
 	@Override
 	public Message getUMLElement(GraphicalEditPart editPart) {
-		EObject e = ((View)editPart.getModel()).getElement();
-		if(e instanceof Message) {
-			return ((Message)e);
+		EObject e = ((View) editPart.getModel()).getElement();
+		if (e instanceof Message) {
+			return ((Message) e);
 		}
 		return null;
 	}
 
 	@Override
 	protected String elementLabel(GraphicalEditPart editPart) {
-		if(editPart instanceof LabelEditPart) {
-			editPart = (GraphicalEditPart)editPart.getParent();
+		if (editPart instanceof LabelEditPart) {
+			editPart = (GraphicalEditPart) editPart.getParent();
 		}
 		Collection<String> displayValue = DEFAULT_LABEL_DISPLAY;
-		IMaskManagedLabelEditPolicy policy = (IMaskManagedLabelEditPolicy)editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
-		if(policy != null) {
+		IMaskManagedLabelEditPolicy policy = (IMaskManagedLabelEditPolicy) editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
+		if (policy != null) {
 			displayValue = policy.getCurrentDisplayValue();
 		}
 		Message e = getUMLElement(editPart);
-		if(e == null) {
+		if (e == null) {
 			return null;
 		}
 		NamedElement signature = e.getSignature();
-		if(signature instanceof Operation) {
-			return OperationUtil.getCustomLabel(e, (Operation)signature, displayValue);
-		} else if(signature instanceof Signal) {
-			return SignalUtil.getCustomLabel(e, (Signal)signature, displayValue);
-		} else if(signature != null) {
+		if (signature instanceof Operation) {
+			return OperationUtil.getCustomLabel(e, (Operation) signature, displayValue);
+		} else if (signature instanceof Signal) {
+			return SignalUtil.getCustomLabel(e, (Signal) signature, displayValue);
+		} else if (signature != null) {
 			return signature.getName();
 		}
 		// signature is null
@@ -103,35 +103,35 @@ public class MessageLabelHelper extends StereotypedElementLabelHelper {
 		buffer.append(message.getName());
 		// parameters : '(' parameter-list ')'
 		EList<ValueSpecification> arguments = message.getArguments();
-		if(arguments.size() > 0 && (displayValue.contains(ICustomAppearance.DISP_PARAMETER_NAME) || displayValue.contains(ICustomAppearance.DISP_DERIVE))) {
+		if (arguments.size() > 0 && (displayValue.contains(ICustomAppearance.DISP_PARAMETER_NAME) || displayValue.contains(ICustomAppearance.DISP_DERIVE))) {
 			buffer.append("(");
-			for(int i = 0; i < arguments.size(); i++) {
-				if(i > 0) {
+			for (int i = 0; i < arguments.size(); i++) {
+				if (i > 0) {
 					buffer.append(", ");
 				}
 				ValueSpecification arg = arguments.get(i);
-				//type
-				if(displayValue.contains(ICustomAppearance.DISP_PARAMETER_TYPE)) {
+				// type
+				if (displayValue.contains(ICustomAppearance.DISP_PARAMETER_TYPE)) {
 					String type = TypedElementUtil.getTypeAsString(arg);
-					if(type != null) {
+					if (type != null) {
 						buffer.append(type);
 					}
 				}
 				boolean showEqualMark = false;
 				// name
-				if(displayValue.contains(ICustomAppearance.DISP_PARAMETER_NAME)) {
+				if (displayValue.contains(ICustomAppearance.DISP_PARAMETER_NAME)) {
 					buffer.append(" ");
 					String name = StringHelper.trimToEmpty(arg.getName());
 					buffer.append(name);
-					if(name.trim().length() > 0) {
+					if (name.trim().length() > 0) {
 						showEqualMark = true;
 					}
 				}
 				// value
-				if(displayValue.contains(ICustomAppearance.DISP_DERIVE)) {
+				if (displayValue.contains(ICustomAppearance.DISP_DERIVE)) {
 					String value = ValueSpecificationUtil.getSpecificationValue(arg);
-					if(value != null) {
-						if(showEqualMark) {
+					if (value != null) {
+						if (showEqualMark) {
 							buffer.append(" = ");
 						}
 						buffer.append(value);

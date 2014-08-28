@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -73,7 +73,7 @@ public class EMFURLStreamHandler extends URLStreamHandler {
 
 		@Override
 		public void connect() throws IOException {
-			if(!connected) {
+			if (!connected) {
 				try {
 					input = uriConverter.getURIHandler(uri).createInputStream(uri, createInputStreamOptions());
 					connected = true;
@@ -85,12 +85,12 @@ public class EMFURLStreamHandler extends URLStreamHandler {
 
 		@Override
 		public String getContentEncoding() {
-			return (String)getContentDescription().get(CHARSET_PROPERTY);
+			return (String) getContentDescription().get(CHARSET_PROPERTY);
 		}
 
 		@Override
 		public String getContentType() {
-			return (String)getContentDescription().get(CONTENT_TYPE_PROPERTY);
+			return (String) getContentDescription().get(CONTENT_TYPE_PROPERTY);
 		}
 
 		@Override
@@ -110,7 +110,7 @@ public class EMFURLStreamHandler extends URLStreamHandler {
 
 		@Override
 		public InputStream getInputStream() throws IOException {
-			if(!connected) {
+			if (!connected) {
 				connect();
 			}
 
@@ -118,7 +118,7 @@ public class EMFURLStreamHandler extends URLStreamHandler {
 		}
 
 		private Map<String, ?> getContentDescription() {
-			if(contentDescription == null) {
+			if (contentDescription == null) {
 				try {
 					contentDescription = uriConverter.getURIHandler(uri).contentDescription(uri, getContentDescriptionOptions());
 				} catch (IOException e) {

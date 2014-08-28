@@ -4,13 +4,15 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
 /**
  */
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
+
+import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
@@ -30,7 +32,6 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.Property;
-import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,8 +40,8 @@ import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerOperatorImpl#getLayerOperatorDescriptor <em>Layer Operator Descriptor</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerOperatorImpl#getLayerOperatorDescriptorName <em>Layer Operator Descriptor Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerOperatorImpl#getLayerOperatorDescriptor <em>Layer Operator Descriptor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerOperatorImpl#getLayerOperatorDescriptorName <em>Layer Operator Descriptor Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +52,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	 * The cached value of the '{@link #getLayerOperatorDescriptor() <em>Layer Operator Descriptor</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLayerOperatorDescriptor()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	 * The default value of the '{@link #getLayerOperatorDescriptorName() <em>Layer Operator Descriptor Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLayerOperatorDescriptorName()
 	 * @generated
 	 * @ordered
@@ -70,6 +73,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	 * The cached value of the '{@link #getLayerOperatorDescriptorName() <em>Layer Operator Descriptor Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLayerOperatorDescriptorName()
 	 * @generated
 	 * @ordered
@@ -79,6 +83,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected AbstractLayerOperatorImpl() {
@@ -88,6 +93,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,15 +104,18 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public LayerOperatorDescriptor getLayerOperatorDescriptor() {
 		if (layerOperatorDescriptor != null && layerOperatorDescriptor.eIsProxy()) {
-			InternalEObject oldLayerOperatorDescriptor = (InternalEObject)layerOperatorDescriptor;
-			layerOperatorDescriptor = (LayerOperatorDescriptor)eResolveProxy(oldLayerOperatorDescriptor);
+			InternalEObject oldLayerOperatorDescriptor = (InternalEObject) layerOperatorDescriptor;
+			layerOperatorDescriptor = (LayerOperatorDescriptor) eResolveProxy(oldLayerOperatorDescriptor);
 			if (layerOperatorDescriptor != oldLayerOperatorDescriptor) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR, oldLayerOperatorDescriptor, layerOperatorDescriptor));
+				}
 			}
 		}
 		return layerOperatorDescriptor;
@@ -115,6 +124,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LayerOperatorDescriptor basicGetLayerOperatorDescriptor() {
@@ -124,20 +134,25 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setLayerOperatorDescriptor(LayerOperatorDescriptor newLayerOperatorDescriptor) {
 		LayerOperatorDescriptor oldLayerOperatorDescriptor = layerOperatorDescriptor;
 		layerOperatorDescriptor = newLayerOperatorDescriptor;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR, oldLayerOperatorDescriptor, layerOperatorDescriptor));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLayerOperatorDescriptorName() {
 		return layerOperatorDescriptorName;
 	}
@@ -145,27 +160,32 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void setLayerOperatorDescriptorName(String newLayerOperatorDescriptorName) {
 
 		// Avoid recursive call if name is the same
-		if( newLayerOperatorDescriptorName.equals(layerOperatorDescriptorName) ) {
+		if (newLayerOperatorDescriptorName.equals(layerOperatorDescriptorName)) {
 			return;
 		}
-		
+
 		String oldLayerOperatorDescriptorName = layerOperatorDescriptorName;
 		layerOperatorDescriptorName = newLayerOperatorDescriptorName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR_NAME, oldLayerOperatorDescriptorName, layerOperatorDescriptorName));
+		}
 
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public boolean isDescriptorSet() {
 		return getLayerOperatorDescriptor() != null;
 	}
@@ -178,42 +198,46 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	 * <!-- begin-user-doc -->
 	 * Not used ?
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void resetDescriptor() {
 
-		if( getApplication() == null ) {
+		if (getApplication() == null) {
 			return;
 		}
-		if( getLayerOperatorDescriptorName() == null) {
+		if (getLayerOperatorDescriptorName() == null) {
 			return;
 		}
-		
+
 		try {
 			LayerOperatorDescriptor descriptor = application.getLayerOperatorDescriptorRegistry().getLayerOperatorDescriptor(getLayerOperatorDescriptorName());
 			setLayerOperatorDescriptor(descriptor);
 		} catch (NotFoundException e) {
-			log.error("LOG - " + this.getClass().getName() + " - " + e.getMessage(), e );
+			log.error("LOG - " + this.getClass().getName() + " - " + e.getMessage(), e);
 		}
-		
+
 	}
 
 	/**
 	 * Override in order to call {@link #resetDescriptor()}
+	 *
 	 * @param newApplication
 	 */
-//	@Override
-//	public void setApplication(LayersStackApplication newApplication) {
-//		super.setApplication(newApplication);
-//		resetDescriptor();
-//	}
-	
+	// @Override
+	// public void setApplication(LayersStackApplication newApplication) {
+	// super.setApplication(newApplication);
+	// resetDescriptor();
+	// }
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public boolean isLayerEnabledInternal() {
 		return isLayerEnabled() && isDescriptorSet();
 	}
@@ -222,16 +246,19 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR:
-				if (resolve) return getLayerOperatorDescriptor();
-				return basicGetLayerOperatorDescriptor();
-			case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR_NAME:
-				return getLayerOperatorDescriptorName();
+		case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR:
+			if (resolve) {
+				return getLayerOperatorDescriptor();
+			}
+			return basicGetLayerOperatorDescriptor();
+		case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR_NAME:
+			return getLayerOperatorDescriptorName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -239,17 +266,18 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR:
-				setLayerOperatorDescriptor((LayerOperatorDescriptor)newValue);
-				return;
-			case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR_NAME:
-				setLayerOperatorDescriptorName((String)newValue);
-				return;
+		case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR:
+			setLayerOperatorDescriptor((LayerOperatorDescriptor) newValue);
+			return;
+		case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR_NAME:
+			setLayerOperatorDescriptorName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -257,17 +285,18 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR:
-				setLayerOperatorDescriptor((LayerOperatorDescriptor)null);
-				return;
-			case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR_NAME:
-				setLayerOperatorDescriptorName(LAYER_OPERATOR_DESCRIPTOR_NAME_EDEFAULT);
-				return;
+		case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR:
+			setLayerOperatorDescriptor((LayerOperatorDescriptor) null);
+			return;
+		case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR_NAME:
+			setLayerOperatorDescriptorName(LAYER_OPERATOR_DESCRIPTOR_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -275,15 +304,16 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR:
-				return layerOperatorDescriptor != null;
-			case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR_NAME:
-				return LAYER_OPERATOR_DESCRIPTOR_NAME_EDEFAULT == null ? layerOperatorDescriptorName != null : !LAYER_OPERATOR_DESCRIPTOR_NAME_EDEFAULT.equals(layerOperatorDescriptorName);
+		case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR:
+			return layerOperatorDescriptor != null;
+		case LayersPackage.ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR_NAME:
+			return LAYER_OPERATOR_DESCRIPTOR_NAME_EDEFAULT == null ? layerOperatorDescriptorName != null : !LAYER_OPERATOR_DESCRIPTOR_NAME_EDEFAULT.equals(layerOperatorDescriptorName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -291,16 +321,17 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case LayersPackage.ABSTRACT_LAYER_OPERATOR___IS_DESCRIPTOR_SET:
-				return isDescriptorSet();
-			case LayersPackage.ABSTRACT_LAYER_OPERATOR___RESET_DESCRIPTOR:
-				resetDescriptor();
-				return null;
+		case LayersPackage.ABSTRACT_LAYER_OPERATOR___IS_DESCRIPTOR_SET:
+			return isDescriptorSet();
+		case LayersPackage.ABSTRACT_LAYER_OPERATOR___RESET_DESCRIPTOR:
+			resetDescriptor();
+			return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -308,11 +339,14 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (layerOperatorDescriptorName: ");
@@ -325,8 +359,8 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	 * Get the command to compute the required property value.
 	 * Walk all layers and collect the non null command for the property and view.
 	 * Then return the command provided by a call to the properties'operator(collectedCmd).
-	 * 
-
+	 *
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl#getComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 *
 	 * @param view
@@ -336,47 +370,48 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	 */
 	@Override
 	public ComputePropertyValueCommand getComputePropertyValueCommand(View view, Property property) throws LayersException {
-		
+
 		// Do nothing if the layer is disable.
-		if( ! isLayerEnabled() ) {
+		if (!isLayerEnabled()) {
 			return null;
 		}
-		
-		
+
+
 		// The list of commands provided by each layers
 		EList<ComputePropertyValueCommand> collectedCmds = new BasicEList<ComputePropertyValueCommand>(getLayers().size());
 
 		// Walk all layers and return the first cmd that is not null for specified view and proerty.
-		for( LayerExpression layer : getLayers()) {
-			
+		for (LayerExpression layer : getLayers()) {
+
 			ComputePropertyValueCommand cmd = layer.getComputePropertyValueCommand(view, property);
-			if( cmd != null) {
+			if (cmd != null) {
 				collectedCmds.add(cmd);
 			}
 		}
-		
+
 		// If we have no subcommand, skip the value by returning null.
-		if( collectedCmds.size()==0) {
+		if (collectedCmds.size() == 0) {
 			return null;
 		}
-		
+
 		// Call the corresponding operator
 		ComputePropertyValueCommand res;
 		try {
 			res = getLayerOperatorDescriptor().getPropertyOperator(property).getComputePropertyValueCommand(collectedCmds);
 		} catch (UnsupportedOperationException e) {
 			// The operator is not implemented
-			log.error(this.getClass().getSimpleName() + "WARNING - Operator not implemened for LayerOperator '" 
-			         + this.getClass().getSimpleName() +"' and property '"
-			         + property.getName() + "'.", e);
+			log.error(this.getClass().getSimpleName() + "WARNING - Operator not implemened for LayerOperator '"
+					+ this.getClass().getSimpleName() + "' and property '"
+					+ property.getName() + "'.", e);
 			return null;
 		}
 		return res;
-	
+
 	}
+
 	/**
 	 * For each property, add the first property value in the list of result.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl#getPropertiesComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, java.util.List)
 	 *
 	 * @param view
@@ -388,46 +423,46 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	public EList<ComputePropertyValueCommand> getPropertiesComputePropertyValueCommand(View view, List<Property> properties) throws LayersException {
 
 		// Do nothing if the layer is disable.
-		if( ! isLayerEnabled() ) {
+		if (!isLayerEnabled()) {
 			return null;
 		}
-		
+
 		// Simple implementation
 		// TODO Check if we can optimize
 
 		// the result list
 		EList<ComputePropertyValueCommand> resCmds = new BasicEList<ComputePropertyValueCommand>(properties.size());
 		boolean isCmdFound = false;
-		
+
 		// Walk each property
-		for( Property property : properties) {
-			if( property == null) {
+		for (Property property : properties) {
+			if (property == null) {
 				resCmds.add(null);
 				continue;
 			}
-			
+
 			ComputePropertyValueCommand cmd = getComputePropertyValueCommand(view, property);
-			if( cmd != null) {
+			if (cmd != null) {
 				isCmdFound = true;
 			}
 			resCmds.add(cmd);
 
-				
+
 		}
 		// Return appropriate result
-		if( isCmdFound) {
+		if (isCmdFound) {
 			return resCmds;
 		}
 		else {
-			// No command ==> null 
+			// No command ==> null
 			return null;
 		}
 	}
-	
+
 	/**
 	 * For each view, add the first property value in the list of result.
-	 * 
-	 * 
+	 *
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl#getViewsComputePropertyValueCommand(java.util.List, org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 *
 	 * @param view
@@ -439,38 +474,38 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	public EList<ComputePropertyValueCommand> getViewsComputePropertyValueCommand(List<View> views, Property property) throws LayersException {
 
 		// Do nothing if the layer is disable.
-		if( ! isLayerEnabled() ) {
+		if (!isLayerEnabled()) {
 			return null;
 		}
-		
+
 		// Simple implementation
 		// TODO Check if we can optimize
-		
+
 		// the result list
 		EList<ComputePropertyValueCommand> resCmds = new BasicEList<ComputePropertyValueCommand>(views.size());
 		boolean isCmdFound = false;
-		
-		for( View view : views) {
-			if( view == null) {
+
+		for (View view : views) {
+			if (view == null) {
 				resCmds.add(null);
 				continue;
 			}
-			
+
 			ComputePropertyValueCommand cmd = getComputePropertyValueCommand(view, property);
-			if( cmd != null) {
+			if (cmd != null) {
 				isCmdFound = true;
 			}
 			resCmds.add(cmd);
 		}
-				
+
 		// Return appropriate result
-		if( isCmdFound) {
+		if (isCmdFound) {
 			return resCmds;
 		}
 		else {
-			// No command ==> null 
+			// No command ==> null
 			return null;
 		}
 	}
-	
-} //AbstractLayerOperatorImpl
+
+} // AbstractLayerOperatorImpl

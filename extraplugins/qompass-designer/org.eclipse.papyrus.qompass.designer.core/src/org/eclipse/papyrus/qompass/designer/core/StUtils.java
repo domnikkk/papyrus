@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -29,22 +29,22 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * Some functions around stereotype usage.
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class StUtils {
 
 	/**
 	 * Copy the stereotype application from a source to a destination element. The
 	 * function will also copy the stereotype attributes.
-	 * 
+	 *
 	 * @param source
 	 * @param destination
 	 * @return
 	 */
 	public static void copyStereotypes(LazyCopier copy, Element source, Element destination) {
-		for(Stereotype stereotype : source.getAppliedStereotypes()) {
+		for (Stereotype stereotype : source.getAppliedStereotypes()) {
 			copyAttributes(copy, stereotype.getQualifiedName(), source, destination);
 		}
 	}
@@ -55,11 +55,11 @@ public class StUtils {
 
 	/**
 	 * copy stereotype attributes.
-	 * 
+	 *
 	 * TODO: verify if it is necessary to distinguish between stereoSource and stereoDest
 	 * (they should be identical, if the resource sets are).
 	 * => simplify code
-	 * 
+	 *
 	 * @param stereotypeName
 	 * @param source
 	 * @param destination
@@ -70,27 +70,27 @@ public class StUtils {
 		Stereotype stereoSource = source.getAppliedStereotype(stereotypeName);
 		Stereotype stereoDest = destination.getApplicableStereotype(stereotypeName);
 
-		if((stereoSource == null) || (stereoDest == null)) {
+		if ((stereoSource == null) || (stereoDest == null)) {
 			return false;
 		}
 		Stereotype alreadyApplied = destination.getAppliedStereotype(stereotypeName);
-		if(alreadyApplied == null) {
+		if (alreadyApplied == null) {
 			// only apply stereotype, if not already applied
 			destination.applyStereotype(stereoDest);
 		}
 
 		// getAllAttributes? (but have to avoid attribute base_Class which resets stereotype application)
-		for(Property attribute : stereoSource.getAllAttributes()) {
+		for (Property attribute : stereoSource.getAllAttributes()) {
 			String attrName = attribute.getName();
 
-			if(attrName.length() >= 5) {
+			if (attrName.length() >= 5) {
 				// do not copy base_ stereotypes (base_class, base_package and base_PackageImport)
-				if(attrName.startsWith(Extension.METACLASS_ROLE_PREFIX)) {
+				if (attrName.startsWith(Extension.METACLASS_ROLE_PREFIX)) {
 					continue;
 				}
 			}
 			// do not copy derived attributes
-			if(attribute.isDerived()) {
+			if (attribute.isDerived()) {
 				continue;
 			}
 
@@ -103,25 +103,25 @@ public class StUtils {
 			 * }
 			 */
 
-			if(value instanceof EList) {
+			if (value instanceof EList) {
 				// copy list
 				EList<Object> newList = new BasicEList<Object>();
-				for(Object valueEl : (EList<Object>)value) {
-					if((copy != null) && (valueEl instanceof Element)) {
-						newList.add(copy.getCopy((Element)valueEl));
+				for (Object valueEl : (EList<Object>) value) {
+					if ((copy != null) && (valueEl instanceof Element)) {
+						newList.add(copy.getCopy((Element) valueEl));
 					} else {
 						newList.add(valueEl);
 					}
 				}
-				if(newList.size() > 0) {
+				if (newList.size() > 0) {
 					destination.setValue(stereoDest, attrName, newList);
 				}
-			} else if((copy != null) && (value instanceof EObject)) {
+			} else if ((copy != null) && (value instanceof EObject)) {
 				if (value instanceof Element) {
-					destination.setValue(stereoDest, attrName, copy.getCopy((Element)value));
+					destination.setValue(stereoDest, attrName, copy.getCopy((Element) value));
 				}
 				// TODO: remove hack: the template port references directly an element of a package template
-				//   the package template should not be copied, but instantiated as done in class TemplatePort
+				// the package template should not be copied, but instantiated as done in class TemplatePort
 				else if (!stereotypeName.endsWith("TemplatePort")) { //$NON-NLS-1$
 					// value is likely a stereotype application. If copy does a package-template instantiation, it would
 					// check whether the passed element is within the package template. This would fail if we pass
@@ -129,7 +129,7 @@ public class StUtils {
 					EObject eValue = (EObject) value;
 					Element base = UMLUtil.getBaseElement(eValue);
 					EClass eClass = eValue.eClass();
-					Element newBase =  copy.getCopy(base);
+					Element newBase = copy.getCopy(base);
 					for (EObject stereoApp : newBase.getStereotypeApplications()) {
 						if (stereoApp.eClass() == eClass) {
 							destination.setValue(stereoDest, attrName, stereoApp);
@@ -151,7 +151,7 @@ public class StUtils {
 
 	public static boolean copyAttribute(String stereotypeName, String attribute, Element source, Element destination) {
 		Stereotype stereotype = source.getAppliedStereotype(stereotypeName);
-		if(stereotype == null) {
+		if (stereotype == null) {
 			return false;
 		}
 		Object value = source.getValue(stereotype, attribute);

@@ -94,47 +94,47 @@ public class DefineProfileCommand extends AbstractTransactionalCommand {
 	 * Define this package if it is a profile and its sub-profiles
 	 *
 	 * @param thePackage
-	 *        the package to define (if it is a profile)
+	 *            the package to define (if it is a profile)
 	 */
 	public static List<EPackage> defineProfiles(Package thePackage, boolean saveConstraintInDef) {
 		Map<String, String> options = new HashMap<String, String>();
 
-		options.put(Profile2EPackageConverter.OPTION__ECORE_TAGGED_VALUES, UMLUtil.OPTION__PROCESS);
-		options.put(Profile2EPackageConverter.OPTION__DERIVED_FEATURES, UMLUtil.OPTION__REPORT);
-		options.put(Profile2EPackageConverter.OPTION__DUPLICATE_FEATURE_INHERITANCE, UMLUtil.OPTION__PROCESS);
-		options.put(Profile2EPackageConverter.OPTION__DUPLICATE_FEATURES, UMLUtil.OPTION__PROCESS);
-		options.put(Profile2EPackageConverter.OPTION__DUPLICATE_OPERATIONS, UMLUtil.OPTION__REPORT);
-		options.put(Profile2EPackageConverter.OPTION__DUPLICATE_OPERATION_INHERITANCE, UMLUtil.OPTION__REPORT);
-		options.put(Profile2EPackageConverter.OPTION__REDEFINING_OPERATIONS, UMLUtil.OPTION__REPORT);
-		options.put(Profile2EPackageConverter.OPTION__REDEFINING_PROPERTIES, UMLUtil.OPTION__REPORT);
-		options.put(Profile2EPackageConverter.OPTION__SUBSETTING_PROPERTIES, UMLUtil.OPTION__REPORT);
-		options.put(Profile2EPackageConverter.OPTION__UNION_PROPERTIES, UMLUtil.OPTION__PROCESS);
+		options.put(UML2EcoreConverter.OPTION__ECORE_TAGGED_VALUES, UMLUtil.OPTION__PROCESS);
+		options.put(UML2EcoreConverter.OPTION__DERIVED_FEATURES, UMLUtil.OPTION__REPORT);
+		options.put(UML2EcoreConverter.OPTION__DUPLICATE_FEATURE_INHERITANCE, UMLUtil.OPTION__PROCESS);
+		options.put(UML2EcoreConverter.OPTION__DUPLICATE_FEATURES, UMLUtil.OPTION__PROCESS);
+		options.put(UML2EcoreConverter.OPTION__DUPLICATE_OPERATIONS, UMLUtil.OPTION__REPORT);
+		options.put(UML2EcoreConverter.OPTION__DUPLICATE_OPERATION_INHERITANCE, UMLUtil.OPTION__REPORT);
+		options.put(UML2EcoreConverter.OPTION__REDEFINING_OPERATIONS, UMLUtil.OPTION__REPORT);
+		options.put(UML2EcoreConverter.OPTION__REDEFINING_PROPERTIES, UMLUtil.OPTION__REPORT);
+		options.put(UML2EcoreConverter.OPTION__SUBSETTING_PROPERTIES, UMLUtil.OPTION__REPORT);
+		options.put(UML2EcoreConverter.OPTION__UNION_PROPERTIES, UMLUtil.OPTION__PROCESS);
 		options.put(UML2EcoreConverter.OPTION__SUPER_CLASS_ORDER, UMLUtil.OPTION__REPORT);
-		options.put(Profile2EPackageConverter.OPTION__ANNOTATION_DETAILS, UMLUtil.OPTION__REPORT);
+		options.put(UML2EcoreConverter.OPTION__ANNOTATION_DETAILS, UMLUtil.OPTION__REPORT);
 
-		//Generate constraints for the validation
+		// Generate constraints for the validation
 		String handleConstraints = saveConstraintInDef ? UMLUtil.OPTION__PROCESS : UMLUtil.OPTION__IGNORE;
-		options.put(Profile2EPackageConverter.OPTION__INVARIANT_CONSTRAINTS, handleConstraints);
-		options.put(Profile2EPackageConverter.OPTION__VALIDATION_DELEGATES, handleConstraints);
-		options.put(Profile2EPackageConverter.OPTION__INVOCATION_DELEGATES, handleConstraints);
+		options.put(UML2EcoreConverter.OPTION__INVARIANT_CONSTRAINTS, handleConstraints);
+		options.put(UML2EcoreConverter.OPTION__VALIDATION_DELEGATES, handleConstraints);
+		options.put(UML2EcoreConverter.OPTION__INVOCATION_DELEGATES, handleConstraints);
 		options.put(UML2EcoreConverter.OPTION__OPERATION_BODIES, handleConstraints);
 		//
 
-		options.put(Profile2EPackageConverter.OPTION__COMMENTS, UMLUtil.OPTION__IGNORE);
+		options.put(UML2EcoreConverter.OPTION__COMMENTS, UMLUtil.OPTION__IGNORE);
 		options.put(Profile2EPackageConverter.OPTION__FOREIGN_DEFINITIONS, UMLUtil.OPTION__PROCESS);
 
-		options.put(Profile2EPackageConverter.OPTION__UNTYPED_PROPERTIES, UMLUtil.OPTION__PROCESS); //Closer to the UML semantics of untyped properties
+		options.put(UML2EcoreConverter.OPTION__UNTYPED_PROPERTIES, UMLUtil.OPTION__PROCESS); // Closer to the UML semantics of untyped properties
 
 		List<EPackage> result = new LinkedList<EPackage>();
 
 		// we want to define
-		if(thePackage instanceof Profile) {
-			EPackage profileDefinition = ((Profile)thePackage).define(options, null, null);
+		if (thePackage instanceof Profile) {
+			EPackage profileDefinition = ((Profile) thePackage).define(options, null, null);
 			result.add(profileDefinition);
 		}
 
 		Iterator<Package> it = thePackage.getNestedPackages().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			Package p = it.next();
 			List<EPackage> profileDefinitions = defineProfiles(p, saveConstraintInDef);
 			result.addAll(profileDefinitions);
@@ -146,8 +146,7 @@ public class DefineProfileCommand extends AbstractTransactionalCommand {
 	/**
 	 *
 	 *
-	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
+	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
 	 *
 	 * @param monitor
 	 * @param info
@@ -161,11 +160,11 @@ public class DefineProfileCommand extends AbstractTransactionalCommand {
 
 		IStatus result;
 
-		//PackageUtil.defineProfiles(rootProfile);
+		// PackageUtil.defineProfiles(rootProfile);
 		try {
 			ProfileRedefinition.redefineProfile(rootProfile, papyrusAnnotation);
 			ProfileRedefinition.cleanProfile(rootProfile);
-			//TODO: Validate the new definition
+			// TODO: Validate the new definition
 
 			result = postValidate(profileDefinitions);
 		} catch (ExecutionException ex) {
@@ -180,20 +179,20 @@ public class DefineProfileCommand extends AbstractTransactionalCommand {
 	protected IStatus postValidate(List<EPackage> profileDefinitions) throws ExecutionException {
 
 		EditingDomain domain = EMFHelper.resolveEditingDomain(rootProfile);
-		AdapterFactory adapterFactory = domain instanceof AdapterFactoryEditingDomain ? ((AdapterFactoryEditingDomain)domain).getAdapterFactory() : null;
+		AdapterFactory adapterFactory = domain instanceof AdapterFactoryEditingDomain ? ((AdapterFactoryEditingDomain) domain).getAdapterFactory() : null;
 		Diagnostician diagnostician = createDiagnostician(adapterFactory, new NullProgressMonitor());
 		diagnostic = diagnostician.createDefaultDiagnostic(rootProfile);
 		Map<Object, Object> context = diagnostician.createDefaultContext();
 
-		for(EPackage ePackage : profileDefinitions) {
+		for (EPackage ePackage : profileDefinitions) {
 			diagnostician.validate(ePackage, diagnostic, context);
 		}
 
-		if(diagnostic.getSeverity() == Diagnostic.ERROR) {
+		if (diagnostic.getSeverity() == Diagnostic.ERROR) {
 			return new Status(IStatus.ERROR, Activator.PLUGIN_ID, "The defined profile is invalid");
 		}
 
-		if(diagnostic.getSeverity() == Diagnostic.WARNING) {
+		if (diagnostic.getSeverity() == Diagnostic.WARNING) {
 			return new Status(IStatus.WARNING, Activator.PLUGIN_ID, "The profile has been successfully defined");
 		}
 
@@ -211,9 +210,9 @@ public class DefineProfileCommand extends AbstractTransactionalCommand {
 
 			@Override
 			public String getObjectLabel(EObject eObject) {
-				if(adapterFactory != null && !eObject.eIsProxy()) {
-					IItemLabelProvider itemLabelProvider = (IItemLabelProvider)adapterFactory.adapt(eObject, IItemLabelProvider.class);
-					if(itemLabelProvider != null) {
+				if (adapterFactory != null && !eObject.eIsProxy()) {
+					IItemLabelProvider itemLabelProvider = (IItemLabelProvider) adapterFactory.adapt(eObject, IItemLabelProvider.class);
+					if (itemLabelProvider != null) {
 						return itemLabelProvider.getText(eObject);
 					}
 				}

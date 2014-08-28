@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package javagen.umlparser;
 
@@ -8,15 +8,15 @@ import java.util.Collection;
 
 /**
  * Instance of this class denote a qualified name of a type.
- * 
+ *
  * @author dumoulin
- * 
+ *
  */
 @SuppressWarnings("serial")
 public class QualifiedName extends ArrayList<String> {
 
 	/**
-     * 
+     *
      */
 	public QualifiedName() {
 	}
@@ -38,7 +38,7 @@ public class QualifiedName extends ArrayList<String> {
 	/**
 	 * Return the last name of the qualified name.
 	 * This is usually the short name.
-	 * 
+	 *
 	 * @return
 	 */
 	public String getName() {

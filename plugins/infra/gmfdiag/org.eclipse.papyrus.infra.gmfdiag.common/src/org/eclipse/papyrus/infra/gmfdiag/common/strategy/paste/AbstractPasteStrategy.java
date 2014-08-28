@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,33 +30,43 @@ import org.eclipse.swt.graphics.Image;
 public abstract class AbstractPasteStrategy implements IPasteStrategy {
 
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getLabel()
 	 */
 	@Override
-	public abstract String getLabel() ;
+	public abstract String getLabel();
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getDescription()
 	 */
 	@Override
 	public abstract String getDescription();
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getID()
 	 */
 	@Override
-	public abstract String getID() ;
+	public abstract String getID();
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#dependsOn()
 	 */
 	@Override
-	public abstract IPasteStrategy dependsOn() ;	
-	
+	public abstract IPasteStrategy dependsOn();
 
 
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getSemanticCommand(org.eclipse.emf.edit.domain.EditingDomain, org.eclipse.emf.ecore.EObject, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
 	@Override
@@ -64,27 +74,32 @@ public abstract class AbstractPasteStrategy implements IPasteStrategy {
 
 
 
-	/* (non-Javadoc)
-	 * By default, if there is no specific graphical command use the semantic one 
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getGraphicalCommand(org.eclipse.emf.edit.domain.EditingDomain, org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
+	/*
+	 * (non-Javadoc)
+	 * By default, if there is no specific graphical command use the semantic one
+	 *
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getGraphicalCommand(org.eclipse.emf.edit.domain.EditingDomain, org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart,
+	 * org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
 	@Override
 	public org.eclipse.gef.commands.Command getGraphicalCommand(EditingDomain domain, GraphicalEditPart targetEditPart, PapyrusClipboard<Object> papyrusClipboard) {
-		if (targetEditPart != null){
+		if (targetEditPart != null) {
 			Object model = targetEditPart.getModel();
-			if (model instanceof View){
-				View view = (View)model;
+			if (model instanceof View) {
+				View view = (View) model;
 				EObject targetOwner = view.getElement();
 				Command semanticCommand = this.getSemanticCommand(domain, targetOwner, papyrusClipboard);
-				if (semanticCommand != null){
+				if (semanticCommand != null) {
 					return new EMFtoGEFCommandWrapper(semanticCommand);
-				}					
+				}
 			}
 		}
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#prepare(org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard, java.util.List)
 	 */
 	@Override
@@ -94,20 +109,22 @@ public abstract class AbstractPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getImage()
 	 */
 	@Override
 	public Image getImage() {
 		return null;
-	}	
-	
-	/* (non-Javadoc)
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getPriority()
 	 */
 	@Override
 	public int getPriority() {
 		return 1;
-	}	
-	
+	}
+
 }

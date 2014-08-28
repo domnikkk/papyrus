@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,18 +34,18 @@ public class HyperLinkDocument extends HyperLinkObject {
 
 	/**
 	 * Gets the hyperlink document.
-	 * 
+	 *
 	 * @return the hyperlink document
 	 */
 	public String getHyperlinkDocument() {
-		return (String)super.getObject();
+		return (String) super.getObject();
 	}
 
 	/**
 	 * Sets the hyperlink document.
-	 * 
+	 *
 	 * @param object
-	 *        the new hyperlink document
+	 *            the new hyperlink document
 	 */
 	public void setHyperlinkDocument(String object) {
 		super.setObject(object);
@@ -64,7 +64,7 @@ public class HyperLinkDocument extends HyperLinkObject {
 
 			IFileStore fileStore = EFS.getStore(uri);
 
-			IDE.openEditorOnFileStore(page, fileStore); //Let eclipse determine the better editor type for our file
+			IDE.openEditorOnFileStore(page, fileStore); // Let eclipse determine the better editor type for our file
 		} catch (Exception e) {
 			Activator.log.error(e);
 		}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.uml2.uml.StartClassifierBehaviorAction;
 
 public class StartClassifierBehaviorActionActivation extends ActionActivation {
 
+	@Override
 	public void doAction() {
 		// Get the value on the object input pin. If it is not a reference, then
 		// do nothing.
@@ -32,10 +33,10 @@ public class StartClassifierBehaviorActionActivation extends ActionActivation {
 		// If the object input pin has no type, then start the classifier
 		// behaviors of all types of the referent object. [The required behavior
 		// in this case is not clear from the spec.]
-		StartClassifierBehaviorAction action = (StartClassifierBehaviorAction)(this.node);
+		StartClassifierBehaviorAction action = (StartClassifierBehaviorAction) (this.node);
 		Value object = this.takeTokens(action.getObject()).get(0);
-		if(object instanceof Reference) {
-			((Reference)object).startBehavior((Class)(action.getObject().getType()), new ArrayList<ParameterValue>());
+		if (object instanceof Reference) {
+			((Reference) object).startBehavior((Class) (action.getObject().getType()), new ArrayList<ParameterValue>());
 		}
 	}
 }

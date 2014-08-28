@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -33,7 +33,7 @@ public class EditFacetReferenceDialog extends
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param callback
 	 *            the callback.
 	 * @param selection
@@ -41,7 +41,7 @@ public class EditFacetReferenceDialog extends
 	 */
 	public EditFacetReferenceDialog(final FacetReference facetReference,
 			final EditingDomain editingDomain) {
-		super(facetReference, editingDomain,  new PropertyElement2<Facet>(true,
+		super(facetReference, editingDomain, new PropertyElement2<Facet>(true,
 				(Facet) facetReference.eContainer()));
 		this.facetReference = facetReference;
 	}

@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.InstanceCreationExpression;
 import org.eclipse.papyrus.uml.alf.alf.InstanceCreationInvocationStatement;
@@ -82,7 +79,11 @@ public class InstanceCreationInvocationStatementImpl extends StatementImpl imple
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_INVOCATION_STATEMENT__NEW, old_new, new_new);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -97,15 +98,20 @@ public class InstanceCreationInvocationStatementImpl extends StatementImpl imple
     if (new_new != _new)
     {
       NotificationChain msgs = null;
-      if (_new != null)
-        msgs = ((InternalEObject)_new).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_INVOCATION_STATEMENT__NEW, null, msgs);
-      if (new_new != null)
-        msgs = ((InternalEObject)new_new).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_INVOCATION_STATEMENT__NEW, null, msgs);
+      if (_new != null) {
+		msgs = ((InternalEObject)_new).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_INVOCATION_STATEMENT__NEW, null, msgs);
+	}
+      if (new_new != null) {
+		msgs = ((InternalEObject)new_new).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_INVOCATION_STATEMENT__NEW, null, msgs);
+	}
       msgs = basicSet_new(new_new, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_INVOCATION_STATEMENT__NEW, new_new, new_new));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_INVOCATION_STATEMENT__NEW, new_new, new_new));
+	}
   }
 
   /**

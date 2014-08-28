@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -54,15 +54,16 @@ public class DefaultSemanticEditPolicy extends SemanticEditPolicy {
 	 * so command switch can decide what kind of diagram element is being edited.
 	 * It is done in those cases when it's not possible to deduce diagram
 	 * element kind from domain element.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public Command getCommand(Request request) {
-		if(request instanceof ReconnectRequest) {
-			Object view = ((ReconnectRequest)request).getConnectionEditPart().getModel();
-			if(view instanceof View) {
-				request.getExtendedData().put(GRAPHICAL_RECONNECTED_EDGE, (View)view);
+		if (request instanceof ReconnectRequest) {
+			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
+			if (view instanceof View) {
+				request.getExtendedData().put(GRAPHICAL_RECONNECTED_EDGE, view);
 			}
 		}
 		return super.getCommand(request);
@@ -71,11 +72,12 @@ public class DefaultSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected Command getSemanticCommand(IEditCommandRequest request) {
 		IEditCommandRequest completedRequest = completeRequest(request);
 		Command semanticCommand = getSemanticCommandSwitch(completedRequest);
-		if(completedRequest instanceof DestroyRequest) {
-			DestroyRequest destroyRequest = (DestroyRequest)completedRequest;
+		if (completedRequest instanceof DestroyRequest) {
+			DestroyRequest destroyRequest = (DestroyRequest) completedRequest;
 			return shouldProceed(destroyRequest) ? semanticCommand : null;
 		}
 		return semanticCommand;
@@ -85,28 +87,28 @@ public class DefaultSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	protected Command getSemanticCommandSwitch(IEditCommandRequest req) {
-		if(req instanceof CreateRelationshipRequest) {
-			return getCreateRelationshipCommand((CreateRelationshipRequest)req);
-		} else if(req instanceof CreateElementRequest) {
-			return getCreateCommand((CreateElementRequest)req);
-		} else if(req instanceof ConfigureRequest) {
-			return getConfigureCommand((ConfigureRequest)req);
-		} else if(req instanceof DestroyElementRequest) {
-			return getDestroyElementCommand((DestroyElementRequest)req);
-		} else if(req instanceof DestroyReferenceRequest) {
-			return getDestroyReferenceCommand((DestroyReferenceRequest)req);
-		} else if(req instanceof DuplicateElementsRequest) {
-			return getDuplicateCommand((DuplicateElementsRequest)req);
-		} else if(req instanceof GetEditContextRequest) {
-			return getEditContextCommand((GetEditContextRequest)req);
-		} else if(req instanceof MoveRequest) {
-			return getMoveCommand((MoveRequest)req);
-		} else if(req instanceof ReorientReferenceRelationshipRequest) {
-			return getReorientReferenceRelationshipCommand((ReorientReferenceRelationshipRequest)req);
-		} else if(req instanceof ReorientRelationshipRequest) {
-			return getReorientRelationshipCommand((ReorientRelationshipRequest)req);
-		} else if(req instanceof SetRequest) {
-			return getSetCommand((SetRequest)req);
+		if (req instanceof CreateRelationshipRequest) {
+			return getCreateRelationshipCommand((CreateRelationshipRequest) req);
+		} else if (req instanceof CreateElementRequest) {
+			return getCreateCommand((CreateElementRequest) req);
+		} else if (req instanceof ConfigureRequest) {
+			return getConfigureCommand((ConfigureRequest) req);
+		} else if (req instanceof DestroyElementRequest) {
+			return getDestroyElementCommand((DestroyElementRequest) req);
+		} else if (req instanceof DestroyReferenceRequest) {
+			return getDestroyReferenceCommand((DestroyReferenceRequest) req);
+		} else if (req instanceof DuplicateElementsRequest) {
+			return getDuplicateCommand((DuplicateElementsRequest) req);
+		} else if (req instanceof GetEditContextRequest) {
+			return getEditContextCommand((GetEditContextRequest) req);
+		} else if (req instanceof MoveRequest) {
+			return getMoveCommand((MoveRequest) req);
+		} else if (req instanceof ReorientReferenceRelationshipRequest) {
+			return getReorientReferenceRelationshipCommand((ReorientReferenceRelationshipRequest) req);
+		} else if (req instanceof ReorientRelationshipRequest) {
+			return getReorientRelationshipCommand((ReorientRelationshipRequest) req);
+		} else if (req instanceof SetRequest) {
+			return getSetCommand((SetRequest) req);
 		}
 		return null;
 	}
@@ -186,17 +188,17 @@ public class DefaultSemanticEditPolicy extends SemanticEditPolicy {
 	 */
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		IElementEditService commandService = ElementEditServiceUtils.getCommandProvider(req.getRelationship());
-		if(commandService == null) {
+		if (commandService == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		// Add new graphical end in request parameters
-		View newView = (View)getHost().getModel();
+		View newView = (View) getHost().getModel();
 		req.setParameter(RequestParameterConstants.EDGE_REORIENT_REQUEST_END_VIEW, newView);
 
 		ICommand semanticCommand = commandService.getEditCommand(req);
 
-		if((semanticCommand != null) && (semanticCommand.canExecute())) {
+		if ((semanticCommand != null) && (semanticCommand.canExecute())) {
 			return getGEFWrapper(semanticCommand);
 		}
 		return UnexecutableCommand.INSTANCE;
@@ -211,11 +213,11 @@ public class DefaultSemanticEditPolicy extends SemanticEditPolicy {
 
 	/**
 	 * Returns editing domain from the host edit part.
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TransactionalEditingDomain getEditingDomain() {
-		return ((IGraphicalEditPart)getHost()).getEditingDomain();
+		return ((IGraphicalEditPart) getHost()).getEditingDomain();
 	}
 
 	private Command getDefaultSemanticCommand(IEditCommandRequest req) {
@@ -223,18 +225,18 @@ public class DefaultSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	private Command getDefaultSemanticCommand(IEditCommandRequest req, Object context) {
-		IElementEditService commandService = ElementEditServiceUtils.getCommandProvider(((IGraphicalEditPart)getHost()).resolveSemanticElement());
-		if(context != null) {
+		IElementEditService commandService = ElementEditServiceUtils.getCommandProvider(((IGraphicalEditPart) getHost()).resolveSemanticElement());
+		if (context != null) {
 			commandService = ElementEditServiceUtils.getCommandProvider(context);
 		}
 
-		if(commandService == null) {
+		if (commandService == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		ICommand semanticCommand = commandService.getEditCommand(req);
 
-		if((semanticCommand != null) && (semanticCommand.canExecute())) {
+		if ((semanticCommand != null) && (semanticCommand.canExecute())) {
 			return getGEFWrapper(semanticCommand);
 		}
 		return UnexecutableCommand.INSTANCE;

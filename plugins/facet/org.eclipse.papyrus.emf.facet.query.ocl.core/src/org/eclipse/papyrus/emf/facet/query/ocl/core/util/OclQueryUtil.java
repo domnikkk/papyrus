@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -53,7 +53,7 @@ public final class OclQueryUtil {
 
 	/**
 	 * Get or create an OCL instance for Ecore.
-	 * 
+	 *
 	 * @return the OCL environment for Ecore
 	 */
 	private static OCL<EPackage, EClassifier, EOperation, EStructuralFeature, EEnumLiteral, EParameter, EObject, CallOperationAction, SendSignalAction, Constraint, EClass, EObject> getOCLEnvironment() {
@@ -66,7 +66,7 @@ public final class OclQueryUtil {
 
 	/**
 	 * Get or create an OCLHelper with a specific context.
-	 * 
+	 *
 	 * @param context
 	 *            the context of the helper.
 	 * @return the helper according to the context.
@@ -77,7 +77,7 @@ public final class OclQueryUtil {
 
 	/**
 	 * Set the helper context.
-	 * 
+	 *
 	 * @param context
 	 *            the context of the helper.
 	 */
@@ -87,7 +87,7 @@ public final class OclQueryUtil {
 
 	/**
 	 * Set the helper context.
-	 * 
+	 *
 	 * @param context
 	 *            the context of the helper.
 	 */
@@ -97,7 +97,7 @@ public final class OclQueryUtil {
 
 	/**
 	 * Create an OCLExpression according to a string.
-	 * 
+	 *
 	 * @param expression
 	 *            the expression to create.
 	 * @return the expression.
@@ -113,7 +113,7 @@ public final class OclQueryUtil {
 
 	/**
 	 * Evaluate the expression in parameter.
-	 * 
+	 *
 	 * @param oclExpression
 	 *            the expression to evaluate.
 	 * @return the result of the expression.
@@ -126,7 +126,7 @@ public final class OclQueryUtil {
 
 	/**
 	 * Evaluate the expression in parameter on the specific object.
-	 * 
+	 *
 	 * @param oclExpression
 	 *            the expression to evaluate.
 	 * @param objectSource
@@ -143,7 +143,7 @@ public final class OclQueryUtil {
 
 	/**
 	 * Evaluate the expression in parameter on the specifics objects.
-	 * 
+	 *
 	 * @param oclExpression
 	 *            the expression to evaluate.
 	 * @param objectsSource
@@ -160,7 +160,7 @@ public final class OclQueryUtil {
 
 	/**
 	 * Return a list of syntax choice for the current expression.
-	 * 
+	 *
 	 * @param expression
 	 *            the expression.
 	 * @return the different choices.
@@ -175,7 +175,7 @@ public final class OclQueryUtil {
 	/**
 	 * Return the {@link EClassifier} associated to the <code>type</code> in
 	 * parameter.
-	 * 
+	 *
 	 * @param context
 	 *            the context of the environment.
 	 * @param type
@@ -215,7 +215,7 @@ public final class OclQueryUtil {
 
 	/**
 	 * Compare the two types and return if they are equivalents.
-	 * 
+	 *
 	 * @param firstType
 	 *            the first {@link EClassifier} to compare.
 	 * @param secondType
@@ -242,14 +242,14 @@ public final class OclQueryUtil {
 	public static Object getExpressionType(
 			final OCLExpression<?> expression) {
 		Object result = null;
-		
+
 		if (expression instanceof IteratorExp<?, ?>) {
 			final Object type = ((IteratorExp<?, ?>) expression).getType();
 			result = ((CollectionType) type).getElementType();
 		} else {
 			result = expression.getType();
 		}
-		
+
 		return result;
 	}
 }

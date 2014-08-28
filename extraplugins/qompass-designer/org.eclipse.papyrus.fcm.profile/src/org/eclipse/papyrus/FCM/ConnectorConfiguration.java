@@ -1,19 +1,18 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Ansgar Radermacher - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.FCM;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Slot;
 
 /**
@@ -24,8 +23,8 @@ import org.eclipse.uml2.uml.Slot;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.FCM.ConnectorConfiguration#getBase_Slot <em>Base Slot</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.ConnectorConfiguration#getConnector <em>Connector</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.ConnectorConfiguration#getBase_Slot <em>Base Slot</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.ConnectorConfiguration#getConnector <em>Connector</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,10 +37,10 @@ public interface ConnectorConfiguration extends EObject {
 	 * Returns the value of the '<em><b>Base Slot</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Slot</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Slot</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Slot</em>' reference.
 	 * @see #setBase_Slot(Slot)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getConnectorConfiguration_Base_Slot()
@@ -54,7 +53,9 @@ public interface ConnectorConfiguration extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.ConnectorConfiguration#getBase_Slot <em>Base Slot</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Slot</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Slot</em>' reference.
 	 * @see #getBase_Slot()
 	 * @generated
 	 */
@@ -64,10 +65,10 @@ public interface ConnectorConfiguration extends EObject {
 	 * Returns the value of the '<em><b>Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Connector</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Connector</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Connector</em>' reference.
 	 * @see #setConnector(Connector)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getConnectorConfiguration_Connector()
@@ -80,7 +81,9 @@ public interface ConnectorConfiguration extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.ConnectorConfiguration#getConnector <em>Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Connector</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Connector</em>' reference.
 	 * @see #getConnector()
 	 * @generated
 	 */

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,20 +22,20 @@ public interface IPreAction extends IAspectAction {
 
 	/**
 	 * Get the precommand for a node element.
-	 * 
+	 *
 	 * @param containerView
-	 *        the View corresponding to the parent of the element that is about to created
+	 *            the View corresponding to the parent of the element that is about to created
 	 * @return
 	 */
 	public ICommand getNodePreCommand(View containerView);
 
 	/**
 	 * Get the precommand for a connection element.
-	 * 
+	 *
 	 * @param sourceView
-	 *        the View corresponding to the connection's source
+	 *            the View corresponding to the connection's source
 	 * @param targetView
-	 *        the View corresponding to the connection's target
+	 *            the View corresponding to the connection's target
 	 * @return
 	 */
 	public ICommand getConnectionPreCommand(View sourceView, View targetView);

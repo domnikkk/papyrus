@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ public class ProviderHelper {
 	 * Encapsulates the given content provider in a higher-level content provider
 	 * The returned provider uses two different strategies to display and search
 	 * elements, and adds a pattern filter and an History
-	 * 
+	 *
 	 * @param provider
-	 *        The ContentProvider to encapsulate
+	 *            The ContentProvider to encapsulate
 	 * @return
 	 */
 	public static EMFGraphicalContentProvider encapsulateProvider(ITreeContentProvider provider, ResourceSet resourceSet, String historyId) {
@@ -47,9 +47,9 @@ public class ProviderHelper {
 	 * Encapsulates the given content provider in a higher-level content provider
 	 * The returned provider uses two different strategies to display and search
 	 * elements, and adds a pattern filter and an History
-	 * 
+	 *
 	 * @param provider
-	 *        The ContentProvider to encapsulate
+	 *            The ContentProvider to encapsulate
 	 * @return
 	 */
 	public static EMFGraphicalContentProvider encapsulateProvider(ITreeContentProvider provider, EObject editedEObject, EStructuralFeature feature) {

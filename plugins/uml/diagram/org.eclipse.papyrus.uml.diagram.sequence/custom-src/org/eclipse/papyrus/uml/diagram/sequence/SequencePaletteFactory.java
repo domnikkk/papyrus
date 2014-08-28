@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest.ConnectionViewDescriptor;
-import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.diagram.ui.services.palette.PaletteFactory;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
@@ -96,59 +95,59 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 
 	@Override
 	public Tool createTool(String toolId) {
-		if(toolId.equals(CREATECOMBINEDFRAGMENTTOOL)) {
+		if (toolId.equals(CREATECOMBINEDFRAGMENTTOOL)) {
 			return createCombinedFragment5CreationTool();
 		}
 		// add
-		if(toolId.equals(CREATECONSIDERIGNOREFRAGMENTTOOL)) {
+		if (toolId.equals(CREATECONSIDERIGNOREFRAGMENTTOOL)) {
 			return createConsiderIgnoreFragmentCreationTool();
 		}
-		if(toolId.equals(CREATECOMMENTTOOL)) {
+		if (toolId.equals(CREATECOMMENTTOOL)) {
 			return createComment9CreationTool();
 		}
-		if(toolId.equals(CREATECONSTRAINTTOOL)) {
+		if (toolId.equals(CREATECONSTRAINTTOOL)) {
 			return createConstraint10CreationTool();
 		}
-		if(toolId.equals(CREATEDURATIONOBSERVATIONTOOL)) {
+		if (toolId.equals(CREATEDURATIONOBSERVATIONTOOL)) {
 			return createDurationObservation12CreationTool();
 		}
-		if(toolId.equals(CREATETIMEOBSERVATIONTOOL)) {
+		if (toolId.equals(CREATETIMEOBSERVATIONTOOL)) {
 			return createTimeObservation14CreationTool();
 		}
-		if(toolId.equals(CREATEDURATIONCONSTRAINTTOOL)) {
+		if (toolId.equals(CREATEDURATIONCONSTRAINTTOOL)) {
 			return createDurationConstraint15CreationTool();
 		}
-		if(toolId.equals(CREATEDESTRUCTIONEVENTTOOL)) {
+		if (toolId.equals(CREATEDESTRUCTIONEVENTTOOL)) {
 			return createDestructionEvent16CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGESYNCTOOL)) {
+		if (toolId.equals(CREATEMESSAGESYNCTOOL)) {
 			return createMessageSync1CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGEASYNCTOOL)) {
+		if (toolId.equals(CREATEMESSAGEASYNCTOOL)) {
 			return createMessageAsync2CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGEREPLYTOOL)) {
+		if (toolId.equals(CREATEMESSAGEREPLYTOOL)) {
 			return createMessageReply3CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGECREATETOOL)) {
+		if (toolId.equals(CREATEMESSAGECREATETOOL)) {
 			return createMessageCreate4CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGEDELETETOOL)) {
+		if (toolId.equals(CREATEMESSAGEDELETETOOL)) {
 			return createMessageDelete5CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGELOSTTOOL)) {
+		if (toolId.equals(CREATEMESSAGELOSTTOOL)) {
 			return createMessageLost6CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGEFOUNDTOOL)) {
+		if (toolId.equals(CREATEMESSAGEFOUNDTOOL)) {
 			return createMessageFound7CreationTool();
 		}
-		if(toolId.equals(CREATEGENERALORDERINGTOOL)) {
+		if (toolId.equals(CREATEGENERALORDERINGTOOL)) {
 			return createGeneralOrdering8CreationTool();
 		}
-		if(toolId.equals(CREATEANNOTATEDLINKTOOL)) {
+		if (toolId.equals(CREATEANNOTATEDLINKTOOL)) {
 			return createAnnotatedLink9CreationTool();
 		}
-		if(toolId.equals(CREATEGATETOOL)) {
+		if (toolId.equals(CREATEGATETOOL)) {
 			return createGateTool();
 		}
 		// default return: null
@@ -161,10 +160,12 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 	private Tool createGateTool() {
 		return new CreationTool(new CreationFactory() {
 
+			@Override
 			public Object getObjectType() {
 				return GateEditPart.GATE_TYPE;
 			}
 
+			@Override
 			public Object getNewObject() {
 				return GateEditPart.GATE_TYPE;
 			}
@@ -179,7 +180,7 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 
 	private Tool createCombinedFragment5CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		//types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
+		// types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 		types.add(UMLElementTypes.CombinedFragment_3004);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
 		return tool;
@@ -195,19 +196,19 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 	private Tool createComment9CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.Comment_3009);
-		//		Tool tool = new AspectUnspecifiedTypeCreationTool(types){
-		//			protected Command getCommand() {
-		//				if (!antiScroll){
-		//					if(getTargetEditPart() instanceof LifelineEditPart){
-		//						InteractionInteractionCompartmentEditPart parent = ((LifelineEditPart) getTargetEditPart()).getParentInteractionCompartmentEditPart();
-		//						if(parent != null)
-		//							return parent.getCommand( getTargetRequest() );
-		//					}
-		//					return super.getCommand();
-		//				}
-		//				return null;
-		//			}
-		//		};
+		// Tool tool = new AspectUnspecifiedTypeCreationTool(types){
+		// protected Command getCommand() {
+		// if (!antiScroll){
+		// if(getTargetEditPart() instanceof LifelineEditPart){
+		// InteractionInteractionCompartmentEditPart parent = ((LifelineEditPart) getTargetEditPart()).getParentInteractionCompartmentEditPart();
+		// if(parent != null)
+		// return parent.getCommand( getTargetRequest() );
+		// }
+		// return super.getCommand();
+		// }
+		// return null;
+		// }
+		// };
 		InteractionChildCreationTool tool = new InteractionChildCreationTool(types);
 		return tool;
 	}
@@ -215,19 +216,19 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 	private Tool createConstraint10CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.Constraint_3008);
-		//		Tool tool = new AspectUnspecifiedTypeCreationTool(types){
-		//			protected Command getCommand() {
-		//				if (!antiScroll){
-		//					if(getTargetEditPart() instanceof LifelineEditPart){
-		//						InteractionInteractionCompartmentEditPart parent = ((LifelineEditPart) getTargetEditPart()).getParentInteractionCompartmentEditPart();
-		//						if(parent != null)
-		//							return parent.getCommand( getTargetRequest() );
-		//					}
-		//					return super.getCommand();
-		//				}
-		//				return null;
-		//			}
-		//		};
+		// Tool tool = new AspectUnspecifiedTypeCreationTool(types){
+		// protected Command getCommand() {
+		// if (!antiScroll){
+		// if(getTargetEditPart() instanceof LifelineEditPart){
+		// InteractionInteractionCompartmentEditPart parent = ((LifelineEditPart) getTargetEditPart()).getParentInteractionCompartmentEditPart();
+		// if(parent != null)
+		// return parent.getCommand( getTargetRequest() );
+		// }
+		// return super.getCommand();
+		// }
+		// return null;
+		// }
+		// };
 		InteractionChildCreationTool tool = new InteractionChildCreationTool(types);
 		return tool;
 	}
@@ -236,43 +237,43 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.DurationObservation_3024);
 		// use DurationCreationTool
-		//Tool tool = new DurationCreationTool(types);
-		//		AspectUnspecifiedTypeCreationTool tool = new AspectUnspecifiedTypeCreationTool(types);
+		// Tool tool = new DurationCreationTool(types);
+		// AspectUnspecifiedTypeCreationTool tool = new AspectUnspecifiedTypeCreationTool(types);
 		InteractionChildCreationTool tool = new InteractionChildCreationTool(types);
-		//		tool.setDefaultCursor(SharedCursors.HAND);
-		//		tool.setDisabledCursor(SharedCursors.NO);
+		// tool.setDefaultCursor(SharedCursors.HAND);
+		// tool.setDisabledCursor(SharedCursors.NO);
 		return tool;
 	}
 
 	private Tool createTimeObservation14CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.TimeObservation_3020);
-		//		AspectUnspecifiedTypeCreationTool tool = new AspectUnspecifiedTypeCreationTool(types){
-		//			protected Command getCommand() {
-		//				if (!antiScroll){
-		//					if(getTargetEditPart() instanceof LifelineEditPart){
-		//						InteractionInteractionCompartmentEditPart parent = ((LifelineEditPart) getTargetEditPart()).getParentInteractionCompartmentEditPart();
-		//						if(parent != null)
-		//							return parent.getCommand( getTargetRequest() );
-		//					}
-		//					return super.getCommand();
-		//				}
-		//				return null;
-		//			}
-		//		};
+		// AspectUnspecifiedTypeCreationTool tool = new AspectUnspecifiedTypeCreationTool(types){
+		// protected Command getCommand() {
+		// if (!antiScroll){
+		// if(getTargetEditPart() instanceof LifelineEditPart){
+		// InteractionInteractionCompartmentEditPart parent = ((LifelineEditPart) getTargetEditPart()).getParentInteractionCompartmentEditPart();
+		// if(parent != null)
+		// return parent.getCommand( getTargetRequest() );
+		// }
+		// return super.getCommand();
+		// }
+		// return null;
+		// }
+		// };
 		InteractionChildCreationTool tool = new InteractionChildCreationTool(types);
-		//		tool.setDefaultCursor(SharedCursors.HAND);
-		//		tool.setDisabledCursor(SharedCursors.NO);
+		// tool.setDefaultCursor(SharedCursors.HAND);
+		// tool.setDisabledCursor(SharedCursors.NO);
 		return tool;
 	}
 
 	private Tool createDurationConstraint15CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(UMLElementTypes.DurationConstraint_3021);
-		//		types.add(UMLElementTypes.DurationConstraint_3023);
+		// types.add(UMLElementTypes.DurationConstraint_3023);
 		// use DurationCreationTool
-		//		Tool tool = new DurationCreationTool(types);
-		//Disable old DurationConstraint creation.
+		// Tool tool = new DurationCreationTool(types);
+		// Disable old DurationConstraint creation.
 		InteractionChildCreationTool tool = new InteractionChildCreationTool(types);
 		return tool;
 	}
@@ -345,13 +346,13 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 
 			@Override
 			protected CreateConnectionRequest createTargetRequest() {
-				IHintedType type = (IHintedType)UMLElementTypes.CommentAnnotatedElement_4010;
+				IHintedType type = (IHintedType) UMLElementTypes.CommentAnnotatedElement_4010;
 				return new CreateConnectionViewRequest(new ConnectionViewDescriptor(type, type.getSemanticHint(), getPreferencesHint()));
 			}
 
 			@Override
 			protected String getCommandName() {
-				if(isInState(STATE_CONNECTION_STARTED | STATE_ACCESSIBLE_DRAG_IN_PROGRESS)) {
+				if (isInState(STATE_CONNECTION_STARTED | STATE_ACCESSIBLE_DRAG_IN_PROGRESS)) {
 					return AnnotatedLinkEndEditPolicy.REQ_ANNOTATED_LINK_END;
 				} else {
 					return AnnotatedLinkStartEditPolicy.REQ_ANNOTATED_LINK_START;
@@ -361,7 +362,7 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 			@Override
 			protected boolean handleCreateConnection() {
 				boolean handled = super.handleCreateConnection();
-				//Make sure to erase source feedback whatever the connection created or not.
+				// Make sure to erase source feedback whatever the connection created or not.
 				setAvoidDeactivation(false);
 				eraseSourceFeedback();
 				deactivate();
@@ -386,8 +387,8 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 		@Override
 		public void setViewer(EditPartViewer viewer) {
 			super.setViewer(viewer);
-			if(tooltipHook == null || !tooltipHook.isHooked(viewer)) {
-				if(tooltipHook != null) {
+			if (tooltipHook == null || !tooltipHook.isHooked(viewer)) {
+				if (tooltipHook != null) {
 					tooltipHook.dispose();
 				}
 				tooltipHook = new TooltipHook(viewer);
@@ -397,7 +398,7 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 		@Override
 		public void deactivate() {
 			super.deactivate();
-			if(tooltipHook != null) {
+			if (tooltipHook != null) {
 				tooltipHook.dispose();
 				tooltipHook = null;
 			}
@@ -410,10 +411,10 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 		}
 
 		public void clearConnectionFeedback() {
-			if(!isShowingSourceFeedback()) {
+			if (!isShowingSourceFeedback()) {
 				return;
 			}
-			if(source != null) {
+			if (source != null) {
 				Request req = getSourceRequest();
 				req.setType(REQ_CONNECTION_END);
 				source.eraseSourceFeedback(req);
@@ -423,14 +424,14 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 
 	/**
 	 * Try to create child in Interaction directly.
-	 * 
+	 *
 	 * @author Jin Liu (jin.liu@soyatec.com)
 	 */
 	public static class InteractionChildCreationTool extends AspectUnspecifiedTypeCreationTool {
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param elementTypes
 		 */
 		public InteractionChildCreationTool(List<IElementType> elementTypes) {
@@ -439,15 +440,15 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 
 		@Override
 		protected boolean updateTargetUnderMouse() {
-			if(antiScroll) {
+			if (antiScroll) {
 				return super.updateTargetUnderMouse();
 			}
-			if(!isTargetLocked()) {
+			if (!isTargetLocked()) {
 				EditPart editPart = null;
-				if(getCurrentViewer() != null) {
+				if (getCurrentViewer() != null) {
 					editPart = getCurrentViewer().findObjectAtExcluding(getLocation(), getExclusionSet(), getTargetingConditional());
 				}
-				if(editPart != null) {
+				if (editPart != null) {
 					editPart = getInteractionEditPart(editPart);
 				}
 				boolean changed = getTargetEditPart() != editPart;
@@ -459,10 +460,10 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 		}
 
 		private EditPart getInteractionEditPart(EditPart editPart) {
-			if(editPart == null) {
+			if (editPart == null) {
 				return null;
 			}
-			if(editPart instanceof InteractionInteractionCompartmentEditPart) {
+			if (editPart instanceof InteractionInteractionCompartmentEditPart) {
 				return editPart;
 			}
 			return getInteractionEditPart(editPart.getParent());
@@ -473,7 +474,7 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param elementTypes
 		 */
 		public MessageConnectionTool(List<IElementType> elementTypes) {
@@ -484,35 +485,36 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 		protected void selectAddedObject(EditPartViewer viewer, Collection objects) {
 			final List editparts = new ArrayList();
 			final EditPart[] primaryEP = new EditPart[1];
-			for(Iterator i = objects.iterator(); i.hasNext();) {
+			for (Iterator i = objects.iterator(); i.hasNext();) {
 				Object object = i.next();
-				if(object instanceof IAdaptable) {
-					Object editPart = viewer.getEditPartRegistry().get(((IAdaptable)object).getAdapter(View.class));
-					if(editPart instanceof IPrimaryEditPart) {
+				if (object instanceof IAdaptable) {
+					Object editPart = viewer.getEditPartRegistry().get(((IAdaptable) object).getAdapter(View.class));
+					if (editPart instanceof IPrimaryEditPart) {
 						editparts.add(editPart);
 					}
 					// Priority is to put a shape into direct edit mode.
-					if(editPart instanceof ShapeEditPart) {
-						primaryEP[0] = (ShapeEditPart)editPart;
+					if (editPart instanceof ShapeEditPart) {
+						primaryEP[0] = (ShapeEditPart) editPart;
 					}
 				}
 			}
-			if(!editparts.isEmpty()) {
+			if (!editparts.isEmpty()) {
 				viewer.setSelection(new StructuredSelection(editparts));
 				// automatically put the first shape into edit-mode
 				Display.getCurrent().asyncExec(new Runnable() {
 
+					@Override
 					public void run() {
-						if(primaryEP[0] == null) {
-							primaryEP[0] = (EditPart)editparts.get(0);
+						if (primaryEP[0] == null) {
+							primaryEP[0] = (EditPart) editparts.get(0);
 						}
 						//
 						// add active test since test scripts are failing on this
 						// basically, the editpart has been deleted when this
 						// code is being executed. (see RATLC00527114)
-						if(primaryEP[0].isActive()) {
-							Request request = new Request(RequestConstants.REQ_DIRECT_EDIT);
-							//Mark this request as the first direct edit after creation.
+						if (primaryEP[0].isActive()) {
+							Request request = new Request(org.eclipse.gef.RequestConstants.REQ_DIRECT_EDIT);
+							// Mark this request as the first direct edit after creation.
 							request.getExtendedData().put(SequenceRequestConstant.DIRECT_EDIT_AFTER_CREATION, true);
 							primaryEP[0].performRequest(request);
 						}
@@ -523,14 +525,14 @@ public class SequencePaletteFactory extends PaletteFactory.Adapter {
 
 		/**
 		 * @see org.eclipse.gmf.runtime.diagram.ui.tools.ConnectionCreationTool#deactivate()
-		 * 
+		 *
 		 */
 		@Override
 		public void deactivate() {
 			EditPart targetEditPart = getTargetEditPart();
-			if(targetEditPart != null) {
+			if (targetEditPart != null) {
 				EditPolicy editPolicy = targetEditPart.getEditPolicy(HighlightEditPolicy.HIGHLIGHT_ROLE);
-				if(editPolicy != null) {
+				if (editPolicy != null) {
 					editPolicy.eraseSourceFeedback(getTargetRequest());
 				}
 			}

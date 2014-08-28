@@ -35,7 +35,9 @@ public final class FolderUtils {
 
 	/**
 	 * This method delete the content of the folder
-	 * @param folder The folder that has to be emptied
+	 *
+	 * @param folder
+	 *            The folder that has to be emptied
 	 */
 	public static final void clearFolder(final File folder) {
 		assert folder != null;
@@ -57,7 +59,9 @@ public final class FolderUtils {
 
 	/**
 	 * This method create a folder and it parents if they do not exists.
-	 * @param folder The folder that have to be created.
+	 *
+	 * @param folder
+	 *            The folder that have to be created.
 	 * @throws CoreException
 	 */
 	public static void createFolder(final IFolder folder) throws CoreException {

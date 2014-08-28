@@ -3,7 +3,7 @@
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Jacques Lescot (Anyware Technologies) - initial API and
  * implementation
  ******************************************************************************/
@@ -20,6 +20,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.ui.dialogs.WorkspaceResourceDialog;
 import org.eclipse.emf.common.util.URI;
@@ -48,9 +49,9 @@ import org.eclipse.swt.widgets.Text;
 
 /**
  * Dialog that will ask the user the name of the new partition and create an {@link URI}
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class CreateCollabModelFragmentDialog extends Dialog {
 
@@ -65,7 +66,7 @@ public class CreateCollabModelFragmentDialog extends Dialog {
 
 	/**
 	 * The constructor
-	 * 
+	 *
 	 * @param parent
 	 * @param theDomain
 	 * @param theCurrentResource
@@ -86,7 +87,7 @@ public class CreateCollabModelFragmentDialog extends Dialog {
 		IFile file = CollabFunctionsFactory.getResourceToIFile().apply(currentResource);
 		IProject project = file.getProject();
 		IFolder folder = project.getFolder(COLLAB_FOLDER_PATH);
-		if(!folder.exists()) {
+		if (!folder.exists()) {
 			try {
 				folder.create(true, true, null);
 			} catch (CoreException e) {
@@ -111,33 +112,33 @@ public class CreateCollabModelFragmentDialog extends Dialog {
 	 * that a resource can be opened for that URI, that the resource is not the object's current
 	 * container, and that it is not read-only in the editing domain. If there is an existing
 	 * resource with that URI, it prompts before overriding or adding to it.
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.ui.dialogs.ResourceDialog#processResources()
 	 */
 	protected boolean processResources() {
 		String uriText = getURIText();
-		if("".equals(uriText)) {
-			ErrorDialog.openError(Display.getDefault().getActiveShell(), "Illegal partition name", "The name can not be empty", new Status(Status.ERROR, Activator.PLUGIN_ID, "Illegal name"));
+		if ("".equals(uriText)) {
+			ErrorDialog.openError(Display.getDefault().getActiveShell(), "Illegal partition name", "The name can not be empty", new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Illegal name"));
 			return false;
 		}
 		Matcher matcher = LEGAL_NAME.matcher(uriText);
-		if(matcher.matches()) {
+		if (matcher.matches()) {
 			URI uri = computetURI().appendSegment(uriText).appendFileExtension("uml");
-			if(!alreadyExist(uri)) {
+			if (!alreadyExist(uri)) {
 				this.uri = uri;
 				return true;
 			} else {
-				ErrorDialog.openError(Display.getDefault().getActiveShell(), "Illegal partition name", "This name is already used", new Status(Status.ERROR, Activator.PLUGIN_ID, "Illegal name"));
+				ErrorDialog.openError(Display.getDefault().getActiveShell(), "Illegal partition name", "This name is already used", new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Illegal name"));
 				return false;
 			}
 		}
-		ErrorDialog.openError(Display.getDefault().getActiveShell(), "Illegal partition name", "The partition name shoudl respect ^[a-zA-Z][a-zA-Z0-9]*?$ convention", new Status(Status.ERROR, Activator.PLUGIN_ID, "Illegal name"));
+		ErrorDialog.openError(Display.getDefault().getActiveShell(), "Illegal partition name", "The partition name shoudl respect ^[a-zA-Z][a-zA-Z0-9]*?$ convention", new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Illegal name"));
 		return false;
 	}
 
 	protected boolean alreadyExist(URI uri) {
-		for(Resource r : currentResource.getResourceSet().getResources()) {
-			if(r.getURI().equals(uri)) {
+		for (Resource r : currentResource.getResourceSet().getResources()) {
+			if (r.getURI().equals(uri)) {
 				return true;
 			}
 		}
@@ -148,7 +149,7 @@ public class CreateCollabModelFragmentDialog extends Dialog {
 
 	/**
 	 * Return the created Resource
-	 * 
+	 *
 	 * @return the Resource
 	 */
 	public URI getURI() {
@@ -169,25 +170,25 @@ public class CreateCollabModelFragmentDialog extends Dialog {
 	protected void normalizeStyle() {
 		// Ensure there are no extraneous style bits.
 		//
-		if((style & ~(SWT.MULTI | SWT.SINGLE | SWT.OPEN | SWT.SAVE)) != 0) {
+		if ((style & ~(SWT.MULTI | SWT.SINGLE | SWT.OPEN | SWT.SAVE)) != 0) {
 			throw new IllegalArgumentException("extraneous style bits specified (only SWT.MULTI, SWT.SINGLE, SWT.OPEN, SWT.SAVE allowed");
 		}
 
 		// Assign default style bits, if necessary, and ensure none conflict.
 		//
-		if((style & SWT.MULTI) == 0 && (style & SWT.SINGLE) == 0) {
+		if ((style & SWT.MULTI) == 0 && (style & SWT.SINGLE) == 0) {
 			style |= SWT.SINGLE;
-		} else if((style & SWT.MULTI) != 0 && (style & SWT.SINGLE) != 0) {
+		} else if ((style & SWT.MULTI) != 0 && (style & SWT.SINGLE) != 0) {
 			throw new IllegalArgumentException("conflicting style bits specified (sWT.MUTLI and SWT.SINGLE)");
 		}
 
-		if((style & SWT.OPEN) == 0 && (style & SWT.SAVE) == 0) {
+		if ((style & SWT.OPEN) == 0 && (style & SWT.SAVE) == 0) {
 			style |= SWT.OPEN;
-		} else if((style & SWT.OPEN) != 0 && (style & SWT.SAVE) != 0) {
+		} else if ((style & SWT.OPEN) != 0 && (style & SWT.SAVE) != 0) {
 			throw new IllegalArgumentException("conflicting style bits specified (sWT.OPEN and SWT.SAVE)");
 		}
 
-		if(isMulti() && isSave()) {
+		if (isMulti() && isSave()) {
 			throw new IllegalArgumentException("conflicting style bits specified (sWT.MULTI and SWT.SAVE)");
 		}
 	}
@@ -209,12 +210,11 @@ public class CreateCollabModelFragmentDialog extends Dialog {
 	/**
 	 * Creates and returns the contents of the upper part of this dialog.
 	 * This implementation creates a labeled text field for the URI(s) and buttons for browsing the
-	 * file system and workspace. These buttons are configured (selection listeners are added) by calling {@link #prepareBrowseFileSystemButton} and
-	 * {@link #prepareBrowseWorkspaceButton}, respectively.
+	 * file system and workspace. These buttons are configured (selection listeners are added) by calling {@link #prepareBrowseFileSystemButton} and {@link #prepareBrowseWorkspaceButton}, respectively.
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite composite = (Composite)super.createDialogArea(parent);
+		Composite composite = (Composite) super.createDialogArea(parent);
 		{
 			FormLayout layout = new FormLayout();
 			composite.setLayout(layout);
@@ -259,7 +259,7 @@ public class CreateCollabModelFragmentDialog extends Dialog {
 			uriField.setLayoutData(data);
 		}
 
-		composite.setTabList(new Control[]{ uriField, buttonComposite });
+		composite.setTabList(new Control[] { uriField, buttonComposite });
 		return composite;
 	}
 
@@ -276,18 +276,18 @@ public class CreateCollabModelFragmentDialog extends Dialog {
 				fileDialog.open();
 
 				String filterPath = fileDialog.getFilterPath();
-				if(isMulti()) {
+				if (isMulti()) {
 					String[] fileNames = fileDialog.getFileNames();
 					StringBuffer uris = new StringBuffer();
 
-					for(int i = 0, len = fileNames.length; i < len; i++) {
+					for (int i = 0, len = fileNames.length; i < len; i++) {
 						uris.append(URI.createFileURI(filterPath + File.separator + fileNames[i]).toString());
 						uris.append("  ");
 					}
 					uriField.setText((uriField.getText() + "  " + uris.toString()).trim());
 				} else {
 					String fileName = fileDialog.getFileName();
-					if(fileName != null) {
+					if (fileName != null) {
 						uriField.setText(URI.createFileURI(filterPath + File.separator + fileName).toString());
 					}
 				}
@@ -304,11 +304,11 @@ public class CreateCollabModelFragmentDialog extends Dialog {
 
 			@Override
 			public void widgetSelected(SelectionEvent event) {
-				if(isMulti()) {
+				if (isMulti()) {
 					StringBuffer uris = new StringBuffer();
 
 					IFile[] files = WorkspaceResourceDialog.openFileSelection(getShell(), null, null, true, null, null);
-					for(int i = 0, len = files.length; i < len; i++) {
+					for (int i = 0, len = files.length; i < len; i++) {
 						uris.append(URI.createPlatformResourceURI(files[i].getFullPath().toString(), true));
 						uris.append("  ");
 					}
@@ -316,16 +316,16 @@ public class CreateCollabModelFragmentDialog extends Dialog {
 				} else {
 					IFile file = null;
 
-					if(isSave()) {
+					if (isSave()) {
 						file = WorkspaceResourceDialog.openNewFile(getShell(), null, null, null, null);
 					} else {
 						IFile[] files = WorkspaceResourceDialog.openFileSelection(getShell(), null, null, false, null, null);
-						if(files.length != 0) {
+						if (files.length != 0) {
 							file = files[0];
 						}
 					}
 
-					if(file != null) {
+					if (file != null) {
 						uriField.setText(URI.createPlatformResourceURI(file.getFullPath().toString(), true).toString());
 					}
 				}
@@ -342,7 +342,7 @@ public class CreateCollabModelFragmentDialog extends Dialog {
 	@Override
 	protected void okPressed() {
 		uriText = getURIText();
-		if(processResources()) {
+		if (processResources()) {
 			super.okPressed();
 		} else {
 			uriField.selectAll();
@@ -362,7 +362,7 @@ public class CreateCollabModelFragmentDialog extends Dialog {
 	 */
 	public List<URI> getURIs() {
 		List<URI> uris = new ArrayList<URI>();
-		for(StringTokenizer stringTokenizer = new StringTokenizer(getURIText()); stringTokenizer.hasMoreTokens();) {
+		for (StringTokenizer stringTokenizer = new StringTokenizer(getURIText()); stringTokenizer.hasMoreTokens();) {
 			String uri = stringTokenizer.nextToken();
 			uris.add(URI.createURI(uri));
 		}

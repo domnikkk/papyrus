@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Node;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.NodeImpl#getExecutionRate <em>Execution Rate</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.NodeImpl#getExecutionRate <em>Execution Rate</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	 * The default value of the '{@link #getExecutionRate() <em>Execution Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getExecutionRate()
 	 * @generated
 	 * @ordered
@@ -49,14 +50,17 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	 * The cached value of the '{@link #getExecutionRate() <em>Execution Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getExecutionRate()
 	 * @generated
 	 * @ordered
 	 */
 	protected Float executionRate = EXECUTION_RATE_EDEFAULT;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected NodeImpl() {
@@ -66,13 +70,14 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HardwaremodelingPackage.NODE__EXECUTION_RATE:
-				return getExecutionRate();
+		case HardwaremodelingPackage.NODE__EXECUTION_RATE:
+			return getExecutionRate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -80,13 +85,14 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HardwaremodelingPackage.NODE__EXECUTION_RATE:
-				return EXECUTION_RATE_EDEFAULT == null ? executionRate != null : !EXECUTION_RATE_EDEFAULT.equals(executionRate);
+		case HardwaremodelingPackage.NODE__EXECUTION_RATE:
+			return EXECUTION_RATE_EDEFAULT == null ? executionRate != null : !EXECUTION_RATE_EDEFAULT.equals(executionRate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -94,14 +100,15 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HardwaremodelingPackage.NODE__EXECUTION_RATE:
-				setExecutionRate((Float)newValue);
-				return;
+		case HardwaremodelingPackage.NODE__EXECUTION_RATE:
+			setExecutionRate((Float) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -109,6 +116,7 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,14 +127,15 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HardwaremodelingPackage.NODE__EXECUTION_RATE:
-				setExecutionRate(EXECUTION_RATE_EDEFAULT);
-				return;
+		case HardwaremodelingPackage.NODE__EXECUTION_RATE:
+			setExecutionRate(EXECUTION_RATE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -134,8 +143,10 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Float getExecutionRate() {
 		return executionRate;
 	}
@@ -143,23 +154,29 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setExecutionRate(Float newExecutionRate) {
 		Float oldExecutionRate = executionRate;
 		executionRate = newExecutionRate;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HardwaremodelingPackage.NODE__EXECUTION_RATE, oldExecutionRate, executionRate));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (executionRate: ");
@@ -168,4 +185,4 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 		return result.toString();
 	}
 
-} //NodeImpl
+} // NodeImpl

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -28,10 +28,10 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * An abstract class providing the creation of a specific action widget.</p>
- * 
+ *
  * The listener provided by the {@link #getWidgetListener()} is applied on the
  * widget and called when the mouse move into the dialog.
- * 
+ *
  * @see AbstractCommandWidget
  * @see AbstractGetOrCreateFilteredElementCommandWidget
  * @see FilteredElementSelectionWidget
@@ -52,7 +52,7 @@ public abstract class AbstractWidget extends Composite implements IAbstractWidge
 
 	/**
 	 * The constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the widget.
 	 * @param editingDomain
@@ -69,7 +69,7 @@ public abstract class AbstractWidget extends Composite implements IAbstractWidge
 
 	/**
 	 * Add the widget to the list of sub widgets.
-	 * 
+	 *
 	 * @param widget
 	 *            the widget to add.
 	 */
@@ -93,7 +93,7 @@ public abstract class AbstractWidget extends Composite implements IAbstractWidge
 
 	/**
 	 * Return the string containing the error for this widget.
-	 * 
+	 *
 	 * @return null if there is no error. The string containing the error if
 	 *         there is an error.
 	 */
@@ -114,7 +114,7 @@ public abstract class AbstractWidget extends Composite implements IAbstractWidge
 	/**
 	 * Add the abstractWidget in parameter to the list of listeners of the
 	 * widget.
-	 * 
+	 *
 	 * @param abstractWidget
 	 *            the abstractWidget to listen.
 	 */
@@ -129,8 +129,7 @@ public abstract class AbstractWidget extends Composite implements IAbstractWidge
 	}
 
 	/**
-	 * When a modification append, this method is called and the method
-	 * {@link #notifyChanged()} is called for each listeners of this widget.
+	 * When a modification append, this method is called and the method {@link #notifyChanged()} is called for each listeners of this widget.
 	 */
 	protected void fireChanged() {
 		for (final IAbstractWidget listener : this.listeners) {

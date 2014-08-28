@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.domain.EditingDomain;
  * Creates {@link Command}s for a specific {@link EditingDomain}.
  * <p>
  * See also {@link ICommandFactoriesRegistry}
- * 
+ *
  * @since 0.2
  */
 // Copied from org.eclipse.papyrus.emf.facet.widgets.celleditors.ICommandFactory

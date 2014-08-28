@@ -31,14 +31,14 @@ public class IsTableContainer extends AbstractEditorContainerQuery implements IJ
 	@Override
 	public Boolean evaluate(EObject source, IParameterValueList2 parameterValues, IFacetManager facetManager) throws DerivedTypedElementException {
 		Iterator<EObject> roots = NavigatorUtils.getNotationRoots(source);
-		if(roots == null) {
+		if (roots == null) {
 			return false;
 		}
 
-		while(roots.hasNext()) {
+		while (roots.hasNext()) {
 			EObject root = roots.next();
-			if(root instanceof Table) {
-				if(((Table)root).getOwner() == source) {
+			if (root instanceof Table) {
+				if (((Table) root).getOwner() == source) {
 					return true;
 				}
 			}

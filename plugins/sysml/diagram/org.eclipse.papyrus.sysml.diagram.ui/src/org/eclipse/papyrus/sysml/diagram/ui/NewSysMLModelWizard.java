@@ -1,7 +1,7 @@
 /*****************************************************************************
 on * Copyright (c) 2010, 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,18 +41,18 @@ public class NewSysMLModelWizard extends CreateModelWizard {
 		super.init(workbench, selection);
 		setWindowTitle("New SysML Model");
 	}
-	
+
 	@Override
 	public String getModelKindName() {
 		return "Papyrus SysML";
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected String[] getDiagramCategoryIds() {
-		return new String[]{CreateSysMLModelCommand.COMMAND_ID};
+		return new String[] { CreateSysMLModelCommand.COMMAND_ID };
 	}
 
 	/**
@@ -60,16 +60,16 @@ public class NewSysMLModelWizard extends CreateModelWizard {
 	 */
 	@Override
 	protected SelectDiagramCategoryPage createSelectDiagramCategoryPage() {
-		//here SysML is the only available category
+		// here SysML is the only available category
 		return null;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected void saveDiagramCategorySettings() {
-		//here SysML is the only available category
+		// here SysML is the only available category
 	}
 
 }

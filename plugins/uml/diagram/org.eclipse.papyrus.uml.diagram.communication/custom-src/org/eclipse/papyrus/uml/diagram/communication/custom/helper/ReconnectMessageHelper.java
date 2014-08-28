@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,52 +29,52 @@ public class ReconnectMessageHelper {
 	/**
 	 * Update Message :
 	 * - Update its signature.
-	 * 
+	 *
 	 * @param message
-	 *        the message
+	 *            the message
 	 */
 	public static void updateMessage(Message message) {
 	}
 
 	/**
 	 * Update the message end :.
-	 * 
+	 *
 	 * @param messageEnd
-	 *        the message end
+	 *            the message end
 	 * @param oldElement
-	 *        the old element
+	 *            the old element
 	 * @param newElement
-	 *        the new element
+	 *            the new element
 	 */
 	public static void updateMessageEnd(MessageEnd messageEnd, Element oldElement, Element newElement) {
-		if(messageEnd instanceof MessageOccurrenceSpecification) {
-			updateMos((MessageOccurrenceSpecification)messageEnd, oldElement, newElement);
+		if (messageEnd instanceof MessageOccurrenceSpecification) {
+			updateMos((MessageOccurrenceSpecification) messageEnd, oldElement, newElement);
 		}
 	}
 
 	/**
 	 * Update mos.
-	 * 
+	 *
 	 * @param messageEnd
-	 *        the message end
+	 *            the message end
 	 * @param oldElement
-	 *        the old element
+	 *            the old element
 	 * @param newElement
-	 *        the new element
+	 *            the new element
 	 */
 	public static void updateMos(MessageOccurrenceSpecification messageEnd, Element oldElement, Element newElement) {
-		if(newElement instanceof Lifeline && oldElement instanceof Lifeline) {
-			updateOccurenceSpecification(messageEnd, (Lifeline)newElement);
+		if (newElement instanceof Lifeline && oldElement instanceof Lifeline) {
+			updateOccurenceSpecification(messageEnd, (Lifeline) newElement);
 		}
 	}
 
 	/**
 	 * OccurrenceSpecification cover a unique lifeline.
-	 * 
+	 *
 	 * @param os
-	 *        the occurrence specification to update
+	 *            the occurrence specification to update
 	 * @param newLifeline
-	 *        the new lifeline covered by the OS
+	 *            the new lifeline covered by the OS
 	 */
 	public static void updateOccurenceSpecification(OccurrenceSpecification os, Lifeline newLifeline) {
 		// An occurrence specification covers a unique lifeline

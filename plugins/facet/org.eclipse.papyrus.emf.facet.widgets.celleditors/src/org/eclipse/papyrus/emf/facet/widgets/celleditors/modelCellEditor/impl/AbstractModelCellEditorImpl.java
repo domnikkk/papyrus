@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Nicolas Bros (Mia-Software) - initial API and implementation
  */
@@ -21,8 +21,7 @@ import org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.Abstrac
 import org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.ModelCellEditorPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Abstract Model Cell Editor</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Abstract Model Cell Editor</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -34,7 +33,7 @@ import org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.ModelCe
  * <em>Cell Id</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
@@ -42,7 +41,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 	/**
 	 * The cached value of the '{@link #getCellType() <em>Cell Type</em>}'
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCellType()
 	 * @generated
 	 * @ordered
@@ -52,7 +51,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 	/**
 	 * The default value of the '{@link #getCellId() <em>Cell Id</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCellId()
 	 * @generated
 	 * @ordered
@@ -62,7 +61,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 	/**
 	 * The cached value of the '{@link #getCellId() <em>Cell Id</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCellId()
 	 * @generated
 	 * @ordered
@@ -71,7 +70,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AbstractModelCellEditorImpl() {
@@ -80,7 +79,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +89,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClassifier getCellType() {
@@ -110,7 +109,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClassifier basicGetCellType() {
@@ -119,7 +118,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCellType(final EClassifier newCellType) {
@@ -134,7 +133,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getCellId() {
@@ -143,7 +142,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCellId(final String newCellId) {
@@ -158,7 +157,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getModelCellEditorImpl() {
@@ -169,7 +168,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +187,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +205,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +223,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +240,7 @@ public abstract class AbstractModelCellEditorImpl extends EObjectImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

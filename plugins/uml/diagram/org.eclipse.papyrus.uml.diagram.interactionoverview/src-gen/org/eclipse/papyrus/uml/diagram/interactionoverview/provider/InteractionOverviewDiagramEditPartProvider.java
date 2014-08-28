@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,11 +22,11 @@ public class InteractionOverviewDiagramEditPartProvider extends AbstractEditPart
 
 	@Override
 	public boolean provides(final IOperation operation) {
-		if(operation instanceof CreateGraphicEditPartOperation) {
-			final View view = ((IEditPartOperation)operation).getView();
+		if (operation instanceof CreateGraphicEditPartOperation) {
+			final View view = ((IEditPartOperation) operation).getView();
 
 			// Ensure current diagram is InteractionOverviewDiagram Diagram
-			if(ElementTypes.DIAGRAM_ID.equals(view.getType())) {
+			if (ElementTypes.DIAGRAM_ID.equals(view.getType())) {
 				return true;
 			}
 		}
@@ -36,7 +36,7 @@ public class InteractionOverviewDiagramEditPartProvider extends AbstractEditPart
 
 	@Override
 	protected Class<?> getDiagramEditPartClass(final View view) {
-		if(ElementTypes.DIAGRAM_ID.equals(view.getType())) {
+		if (ElementTypes.DIAGRAM_ID.equals(view.getType())) {
 			return InteractionOverviewDiagramEditPart.class;
 		}
 

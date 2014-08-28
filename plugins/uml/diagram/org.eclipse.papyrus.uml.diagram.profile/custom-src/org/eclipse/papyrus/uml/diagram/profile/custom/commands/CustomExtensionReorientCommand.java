@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,9 +38,9 @@ public class CustomExtensionReorientCommand extends ExtensionReorientCommand {
 	protected int reorientDirection;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param request
 	 */
 	public CustomExtensionReorientCommand(ReorientRelationshipRequest request) {
@@ -51,41 +51,41 @@ public class CustomExtensionReorientCommand extends ExtensionReorientCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.profile.edit.commands.ExtensionReorientCommand#canReorientSource()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected boolean canReorientSource() {
 		Type target = getLink().getEndTypes().get(1);
-		if(!(target instanceof Class)) {
+		if (!(target instanceof Class)) {
 			return false;
 		}
-		if(_getNewSource() == null) {
+		if (_getNewSource() == null) {
 			return false;
 		}
-		Package container = (Package)getLink().eContainer();
-		return CUMLBaseItemSemanticEditPolicy.LinkConstraints.canExistExtension_1013(container, _getNewSource(), (Class)target);
+		Package container = (Package) getLink().eContainer();
+		return CUMLBaseItemSemanticEditPolicy.LinkConstraints.canExistExtension_1013(container, _getNewSource(), (Class) target);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.profile.edit.commands.ExtensionReorientCommand#canReorientTarget()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected boolean canReorientTarget() {
 		Type source = getLink().getEndTypes().get(0);
-		if(!(source instanceof Stereotype)) {
+		if (!(source instanceof Stereotype)) {
 			return false;
 		}
-		if(!(getNewTarget() instanceof org.eclipse.uml2.uml.Class) || (getNewTarget() instanceof org.eclipse.uml2.uml.Stereotype)) {
+		if (!(getNewTarget() instanceof org.eclipse.uml2.uml.Class) || (getNewTarget() instanceof org.eclipse.uml2.uml.Stereotype)) {
 			return false;
 		}
-		Package container = (Package)getLink().eContainer();
-		return CUMLBaseItemSemanticEditPolicy.LinkConstraints.canExistExtension_1013(container, (Stereotype)source, getNewTarget());
+		Package container = (Package) getLink().eContainer();
+		return CUMLBaseItemSemanticEditPolicy.LinkConstraints.canExistExtension_1013(container, (Stereotype) source, getNewTarget());
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class CustomExtensionReorientCommand extends ExtensionReorientCommand {
 
 	/**
 	 * Returns the new source
-	 * 
+	 *
 	 * @return
 	 *         <ul>
 	 *         <li>the new source if its a {@link Stereotype}</li>
@@ -114,8 +114,8 @@ public class CustomExtensionReorientCommand extends ExtensionReorientCommand {
 	 *         </ul>
 	 */
 	protected Stereotype _getNewSource() {
-		if(newEnd instanceof Stereotype) {
-			return (Stereotype)newEnd;
+		if (newEnd instanceof Stereotype) {
+			return (Stereotype) newEnd;
 		}
 		return null;
 	}

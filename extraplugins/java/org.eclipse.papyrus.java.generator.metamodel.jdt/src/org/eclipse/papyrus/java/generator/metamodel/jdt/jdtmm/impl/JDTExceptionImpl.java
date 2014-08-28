@@ -9,7 +9,7 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
  *****************************************************************************/
@@ -23,9 +23,7 @@
 package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTException;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
 
@@ -43,6 +41,7 @@ public class JDTExceptionImpl extends EObjectImpl implements JDTException {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JDTExceptionImpl() {
@@ -52,6 +51,7 @@ public class JDTExceptionImpl extends EObjectImpl implements JDTException {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -59,4 +59,4 @@ public class JDTExceptionImpl extends EObjectImpl implements JDTException {
 		return JdtmmPackage.Literals.JDT_EXCEPTION;
 	}
 
-} //JDTExceptionImpl
+} // JDTExceptionImpl

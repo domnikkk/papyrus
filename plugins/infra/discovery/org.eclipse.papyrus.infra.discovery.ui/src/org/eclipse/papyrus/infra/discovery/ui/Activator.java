@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
@@ -19,47 +19,48 @@ import org.osgi.framework.BundleContext;
  */
 public class Activator extends AbstractUIPlugin {
 
-    /** ID of the plugin */
-    public static final String PLUGIN_ID = "org.eclipse.papyrus.infra.discovery.ui";
+	/** ID of the plugin */
+	public static final String PLUGIN_ID = "org.eclipse.papyrus.infra.discovery.ui";
 
-    /** singleton instance of the plugin */
-    private static Activator plugin;
-    
-    /** logging system */
-    public static LogHelper logHelper;
+	/** singleton instance of the plugin */
+	private static Activator plugin;
 
-    /**
-     * The constructor
-     */
-    public Activator() {
-    }
+	/** logging system */
+	public static LogHelper logHelper;
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void start(BundleContext context) throws Exception {
-        super.start(context);
-        plugin = this;
-        logHelper = new LogHelper(this);
-    }
+	/**
+	 * The constructor
+	 */
+	public Activator() {
+	}
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void stop(BundleContext context) throws Exception {
-    	logHelper = null;
-        plugin = null;
-        super.stop(context);
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void start(BundleContext context) throws Exception {
+		super.start(context);
+		plugin = this;
+		logHelper = new LogHelper(this);
+	}
 
-    /**
-     * Returns the shared instance
-     * @return the shared instance
-     */
-    public static Activator getDefault() {
-        return plugin;
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void stop(BundleContext context) throws Exception {
+		logHelper = null;
+		plugin = null;
+		super.stop(context);
+	}
+
+	/**
+	 * Returns the shared instance
+	 *
+	 * @return the shared instance
+	 */
+	public static Activator getDefault() {
+		return plugin;
+	}
 
 }

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,8 +26,8 @@ import org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Reshape;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ReshapeImpl#getPatternShape <em>Pattern Shape</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ReshapeImpl#getRepetitonShape <em>Repetiton Shape</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ReshapeImpl#getPatternShape <em>Pattern Shape</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ReshapeImpl#getRepetitonShape <em>Repetiton Shape</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +38,7 @@ public class ReshapeImpl extends LinkTopologyImpl implements Reshape {
 	 * The default value of the '{@link #getPatternShape() <em>Pattern Shape</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPatternShape()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public class ReshapeImpl extends LinkTopologyImpl implements Reshape {
 	 * The cached value of the '{@link #getPatternShape() <em>Pattern Shape</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPatternShape()
 	 * @generated
 	 * @ordered
@@ -58,6 +60,7 @@ public class ReshapeImpl extends LinkTopologyImpl implements Reshape {
 	 * The default value of the '{@link #getRepetitonShape() <em>Repetiton Shape</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRepetitonShape()
 	 * @generated
 	 * @ordered
@@ -68,6 +71,7 @@ public class ReshapeImpl extends LinkTopologyImpl implements Reshape {
 	 * The cached value of the '{@link #getRepetitonShape() <em>Repetiton Shape</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRepetitonShape()
 	 * @generated
 	 * @ordered
@@ -77,6 +81,7 @@ public class ReshapeImpl extends LinkTopologyImpl implements Reshape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ReshapeImpl() {
@@ -86,6 +91,7 @@ public class ReshapeImpl extends LinkTopologyImpl implements Reshape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,8 +102,10 @@ public class ReshapeImpl extends LinkTopologyImpl implements Reshape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getPatternShape() {
 		return patternShape;
 	}
@@ -105,20 +113,25 @@ public class ReshapeImpl extends LinkTopologyImpl implements Reshape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setPatternShape(String newPatternShape) {
 		String oldPatternShape = patternShape;
 		patternShape = newPatternShape;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.RESHAPE__PATTERN_SHAPE, oldPatternShape, patternShape));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getRepetitonShape() {
 		return repetitonShape;
 	}
@@ -126,27 +139,31 @@ public class ReshapeImpl extends LinkTopologyImpl implements Reshape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setRepetitonShape(String newRepetitonShape) {
 		String oldRepetitonShape = repetitonShape;
 		repetitonShape = newRepetitonShape;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.RESHAPE__REPETITON_SHAPE, oldRepetitonShape, repetitonShape));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RSMPackage.RESHAPE__PATTERN_SHAPE:
-				return getPatternShape();
-			case RSMPackage.RESHAPE__REPETITON_SHAPE:
-				return getRepetitonShape();
+		case RSMPackage.RESHAPE__PATTERN_SHAPE:
+			return getPatternShape();
+		case RSMPackage.RESHAPE__REPETITON_SHAPE:
+			return getRepetitonShape();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,17 +171,18 @@ public class ReshapeImpl extends LinkTopologyImpl implements Reshape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RSMPackage.RESHAPE__PATTERN_SHAPE:
-				setPatternShape((String)newValue);
-				return;
-			case RSMPackage.RESHAPE__REPETITON_SHAPE:
-				setRepetitonShape((String)newValue);
-				return;
+		case RSMPackage.RESHAPE__PATTERN_SHAPE:
+			setPatternShape((String) newValue);
+			return;
+		case RSMPackage.RESHAPE__REPETITON_SHAPE:
+			setRepetitonShape((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -172,17 +190,18 @@ public class ReshapeImpl extends LinkTopologyImpl implements Reshape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RSMPackage.RESHAPE__PATTERN_SHAPE:
-				setPatternShape(PATTERN_SHAPE_EDEFAULT);
-				return;
-			case RSMPackage.RESHAPE__REPETITON_SHAPE:
-				setRepetitonShape(REPETITON_SHAPE_EDEFAULT);
-				return;
+		case RSMPackage.RESHAPE__PATTERN_SHAPE:
+			setPatternShape(PATTERN_SHAPE_EDEFAULT);
+			return;
+		case RSMPackage.RESHAPE__REPETITON_SHAPE:
+			setRepetitonShape(REPETITON_SHAPE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -190,15 +209,16 @@ public class ReshapeImpl extends LinkTopologyImpl implements Reshape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RSMPackage.RESHAPE__PATTERN_SHAPE:
-				return PATTERN_SHAPE_EDEFAULT == null ? patternShape != null : !PATTERN_SHAPE_EDEFAULT.equals(patternShape);
-			case RSMPackage.RESHAPE__REPETITON_SHAPE:
-				return REPETITON_SHAPE_EDEFAULT == null ? repetitonShape != null : !REPETITON_SHAPE_EDEFAULT.equals(repetitonShape);
+		case RSMPackage.RESHAPE__PATTERN_SHAPE:
+			return PATTERN_SHAPE_EDEFAULT == null ? patternShape != null : !PATTERN_SHAPE_EDEFAULT.equals(patternShape);
+		case RSMPackage.RESHAPE__REPETITON_SHAPE:
+			return REPETITON_SHAPE_EDEFAULT == null ? repetitonShape != null : !REPETITON_SHAPE_EDEFAULT.equals(repetitonShape);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -206,11 +226,14 @@ public class ReshapeImpl extends LinkTopologyImpl implements Reshape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (patternShape: ");
@@ -221,4 +244,4 @@ public class ReshapeImpl extends LinkTopologyImpl implements Reshape {
 		return result.toString();
 	}
 
-} //ReshapeImpl
+} // ReshapeImpl

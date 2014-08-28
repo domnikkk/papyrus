@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011, 2012 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 366055 - NavigationQuery
  *       Gregoire Dupe (Mia-Software) - Bug 369673 - [Facet] IsOneOfQuery
@@ -43,10 +43,10 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.Runt
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.impl.ETypedElementResultImpl#getDerivedTypedElement <em>Derived Typed Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.impl.ETypedElementResultImpl#getParameterValues <em>Parameter Values</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.impl.ETypedElementResultImpl#getSource <em>Source</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.impl.ETypedElementResultImpl#getException <em>Exception</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.impl.ETypedElementResultImpl#getDerivedTypedElement <em>Derived Typed Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.impl.ETypedElementResultImpl#getParameterValues <em>Parameter Values</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.impl.ETypedElementResultImpl#getSource <em>Source</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.impl.ETypedElementResultImpl#getException <em>Exception</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,6 +57,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	 * The cached value of the '{@link #getDerivedTypedElement() <em>Derived Typed Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDerivedTypedElement()
 	 * @generated
 	 * @ordered
@@ -67,6 +68,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	 * The cached value of the '{@link #getParameterValues() <em>Parameter Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getParameterValues()
 	 * @generated
 	 * @ordered
@@ -77,6 +79,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -87,6 +90,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	 * The default value of the '{@link #getException() <em>Exception</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getException()
 	 * @generated
 	 * @ordered
@@ -97,6 +101,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	 * The cached value of the '{@link #getException() <em>Exception</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getException()
 	 * @generated
 	 * @ordered
@@ -106,6 +111,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ETypedElementResultImpl() {
@@ -115,6 +121,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,15 +132,17 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ETypedElement getDerivedTypedElement() {
 		if (derivedTypedElement != null && derivedTypedElement.eIsProxy()) {
-			InternalEObject oldDerivedTypedElement = (InternalEObject)derivedTypedElement;
-			derivedTypedElement = (ETypedElement)eResolveProxy(oldDerivedTypedElement);
+			InternalEObject oldDerivedTypedElement = (InternalEObject) derivedTypedElement;
+			derivedTypedElement = (ETypedElement) eResolveProxy(oldDerivedTypedElement);
 			if (derivedTypedElement != oldDerivedTypedElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.ETYPED_ELEMENT_RESULT__DERIVED_TYPED_ELEMENT, oldDerivedTypedElement, derivedTypedElement));
+				}
 			}
 		}
 		return derivedTypedElement;
@@ -142,6 +151,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ETypedElement basicGetDerivedTypedElement() {
@@ -151,18 +161,21 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDerivedTypedElement(ETypedElement newDerivedTypedElement) {
 		ETypedElement oldDerivedTypedElement = derivedTypedElement;
 		derivedTypedElement = newDerivedTypedElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.ETYPED_ELEMENT_RESULT__DERIVED_TYPED_ELEMENT, oldDerivedTypedElement, derivedTypedElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<ParameterValue> getParameterValues() {
@@ -175,15 +188,17 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EObject getSource() {
 		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
+			InternalEObject oldSource = (InternalEObject) source;
 			source = eResolveProxy(oldSource);
 			if (source != oldSource) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.ETYPED_ELEMENT_RESULT__SOURCE, oldSource, source));
+				}
 			}
 		}
 		return source;
@@ -192,6 +207,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EObject basicGetSource() {
@@ -201,18 +217,21 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setSource(EObject newSource) {
 		EObject oldSource = source;
 		source = newSource;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.ETYPED_ELEMENT_RESULT__SOURCE, oldSource, source));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Throwable getException() {
@@ -222,25 +241,28 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setException(Throwable newException) {
 		Throwable oldException = exception;
 		exception = newException;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.ETYPED_ELEMENT_RESULT__EXCEPTION, oldException, exception));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__PARAMETER_VALUES:
-				return ((InternalEList<?>)getParameterValues()).basicRemove(otherEnd, msgs);
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__PARAMETER_VALUES:
+			return ((InternalEList<?>) getParameterValues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -248,21 +270,26 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__DERIVED_TYPED_ELEMENT:
-				if (resolve) return getDerivedTypedElement();
-				return basicGetDerivedTypedElement();
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__PARAMETER_VALUES:
-				return getParameterValues();
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__EXCEPTION:
-				return getException();
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__DERIVED_TYPED_ELEMENT:
+			if (resolve) {
+				return getDerivedTypedElement();
+			}
+			return basicGetDerivedTypedElement();
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__PARAMETER_VALUES:
+			return getParameterValues();
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__SOURCE:
+			if (resolve) {
+				return getSource();
+			}
+			return basicGetSource();
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__EXCEPTION:
+			return getException();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -270,25 +297,26 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__DERIVED_TYPED_ELEMENT:
-				setDerivedTypedElement((ETypedElement)newValue);
-				return;
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__PARAMETER_VALUES:
-				getParameterValues().clear();
-				getParameterValues().addAll((Collection<? extends ParameterValue>)newValue);
-				return;
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__SOURCE:
-				setSource((EObject)newValue);
-				return;
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__EXCEPTION:
-				setException((Throwable)newValue);
-				return;
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__DERIVED_TYPED_ELEMENT:
+			setDerivedTypedElement((ETypedElement) newValue);
+			return;
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__PARAMETER_VALUES:
+			getParameterValues().clear();
+			getParameterValues().addAll((Collection<? extends ParameterValue>) newValue);
+			return;
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__SOURCE:
+			setSource((EObject) newValue);
+			return;
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__EXCEPTION:
+			setException((Throwable) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -296,23 +324,24 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__DERIVED_TYPED_ELEMENT:
-				setDerivedTypedElement((ETypedElement)null);
-				return;
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__PARAMETER_VALUES:
-				getParameterValues().clear();
-				return;
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__SOURCE:
-				setSource((EObject)null);
-				return;
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__EXCEPTION:
-				setException(EXCEPTION_EDEFAULT);
-				return;
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__DERIVED_TYPED_ELEMENT:
+			setDerivedTypedElement((ETypedElement) null);
+			return;
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__PARAMETER_VALUES:
+			getParameterValues().clear();
+			return;
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__SOURCE:
+			setSource((EObject) null);
+			return;
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__EXCEPTION:
+			setException(EXCEPTION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -320,19 +349,20 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__DERIVED_TYPED_ELEMENT:
-				return derivedTypedElement != null;
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__PARAMETER_VALUES:
-				return parameterValues != null && !parameterValues.isEmpty();
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__SOURCE:
-				return source != null;
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__EXCEPTION:
-				return EXCEPTION_EDEFAULT == null ? exception != null : !EXCEPTION_EDEFAULT.equals(exception);
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__DERIVED_TYPED_ELEMENT:
+			return derivedTypedElement != null;
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__PARAMETER_VALUES:
+			return parameterValues != null && !parameterValues.isEmpty();
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__SOURCE:
+			return source != null;
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__EXCEPTION:
+			return EXCEPTION_EDEFAULT == null ? exception != null : !EXCEPTION_EDEFAULT.equals(exception);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -340,11 +370,14 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (exception: "); //$NON-NLS-1$
@@ -353,4 +386,4 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 		return result.toString();
 	}
 
-} //ETypedElementResultImpl
+} // ETypedElementResultImpl

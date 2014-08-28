@@ -5,6 +5,7 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager;
 import org.eclipse.papyrus.infra.core.sasheditor.editor.ISashWindowsContainer;
+import org.eclipse.papyrus.infra.core.sasheditor.internal.SashWindowsContainer;
 import org.eclipse.papyrus.infra.core.sashwindows.di.PageRef;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.handlers.HandlerUtil;
@@ -24,7 +25,7 @@ public class CloseDiagramCommand extends AbstractHandler {
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
-		//		System.out.println("call to CloseDiagramCommand.setEnable(" + evaluationContext + ")");
+		// System.out.println("call to CloseDiagramCommand.setEnable(" + evaluationContext + ")");
 	}
 
 	/**
@@ -36,12 +37,12 @@ public class CloseDiagramCommand extends AbstractHandler {
 
 		try {
 			IEditorPart part = HandlerUtil.getActiveEditor(event);
-			IPageManager pageManager = (IPageManager)part.getAdapter(IPageManager.class);
-			ISashWindowsContainer container = (ISashWindowsContainer)part.getAdapter(ISashWindowsContainer.class);
+			IPageManager pageManager = (IPageManager) part.getAdapter(IPageManager.class);
+			ISashWindowsContainer container = (ISashWindowsContainer) part.getAdapter(ISashWindowsContainer.class);
 			Object pageIdentifier = container.getActiveSashWindowsPage().getRawModel();
-			//FIXME Bug from sash Di to be corrected
-			if(pageIdentifier instanceof PageRef) {
-				pageIdentifier = ((PageRef)pageIdentifier).getPageIdentifier();
+			// FIXME Bug from sash Di to be corrected
+			if (pageIdentifier instanceof PageRef) {
+				pageIdentifier = ((PageRef) pageIdentifier).getPageIdentifier();
 			}
 
 			pageManager.closePage(pageIdentifier);

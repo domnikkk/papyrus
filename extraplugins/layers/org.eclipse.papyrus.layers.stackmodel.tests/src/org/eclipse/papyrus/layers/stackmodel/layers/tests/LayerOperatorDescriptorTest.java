@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.tests;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor;
@@ -16,12 +15,13 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#getPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Property Operator</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#setPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.Property, org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator) <em>Set Property Operator</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#createLayerOperator() <em>Create Layer Operator</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#setPropertyCollectionSize(int, org.eclipse.papyrus.layers.stackmodel.layers.DefaultPropertyOperator) <em>Set Property Collection Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#getPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Property Operator</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#setPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.Property, org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator) <em>Set Property Operator</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#createLayerOperator() <em>Create Layer Operator</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#setPropertyCollectionSize(int, org.eclipse.papyrus.layers.stackmodel.layers.DefaultPropertyOperator) <em>Set Property Collection Size</em>}</li>
  * </ul>
  * </p>
+ *
  * @generated
  */
 public class LayerOperatorDescriptorTest extends TestCase {
@@ -30,6 +30,7 @@ public class LayerOperatorDescriptorTest extends TestCase {
 	 * The fixture for this Layer Operator Descriptor test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LayerOperatorDescriptor fixture = null;
@@ -37,6 +38,7 @@ public class LayerOperatorDescriptorTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -47,6 +49,7 @@ public class LayerOperatorDescriptorTest extends TestCase {
 	 * Constructs a new Layer Operator Descriptor test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LayerOperatorDescriptorTest(String name) {
@@ -57,6 +60,7 @@ public class LayerOperatorDescriptorTest extends TestCase {
 	 * Sets the fixture for this Layer Operator Descriptor test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void setFixture(LayerOperatorDescriptor fixture) {
@@ -67,6 +71,7 @@ public class LayerOperatorDescriptorTest extends TestCase {
 	 * Returns the fixture for this Layer Operator Descriptor test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LayerOperatorDescriptor getFixture() {
@@ -76,6 +81,7 @@ public class LayerOperatorDescriptorTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -87,6 +93,7 @@ public class LayerOperatorDescriptorTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -99,6 +106,7 @@ public class LayerOperatorDescriptorTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#getPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Property Operator</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#getPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
 	 */
@@ -109,9 +117,11 @@ public class LayerOperatorDescriptorTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#setPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.Property, org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator) <em>Set Property Operator</em>}' operation.
+	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#setPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.Property, org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator)
+	 * <em>Set Property Operator</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#setPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.Property, org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator)
 	 * @generated
 	 */
@@ -125,6 +135,7 @@ public class LayerOperatorDescriptorTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#createLayerOperator() <em>Create Layer Operator</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#createLayerOperator()
 	 * @generated
 	 */
@@ -138,6 +149,7 @@ public class LayerOperatorDescriptorTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#setPropertyCollectionSize(int, org.eclipse.papyrus.layers.stackmodel.layers.DefaultPropertyOperator) <em>Set Property Collection Size</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#setPropertyCollectionSize(int, org.eclipse.papyrus.layers.stackmodel.layers.DefaultPropertyOperator)
 	 * @generated
 	 */
@@ -147,4 +159,4 @@ public class LayerOperatorDescriptorTest extends TestCase {
 		fail();
 	}
 
-} //LayerOperatorDescriptorTest
+} // LayerOperatorDescriptorTest

@@ -4,7 +4,7 @@ import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "org.eclipse.papyrus.qompass.designer.core.messages"; //$NON-NLS-1$
-	
+
 	public static String BootLoaderGen_AtLeastOneBlockingCall;
 
 	public static String BootLoaderGen_CannotApplyCppInclude;
@@ -31,9 +31,9 @@ public class Messages extends NLS {
 	public static String Deploy_0;
 
 	public static String Description_NoAvail;
-	
+
 	public static String LWContainerTrafo_CannotApplyRule;
-	
+
 	public static String ConnectorBinding_CannotFindBinding;
 	public static String ConnectorBinding_CannotFindBindingForPort;
 	public static String ConnectorBinding_CannotFindConsistentBinding;
@@ -67,7 +67,7 @@ public class Messages extends NLS {
 	public static String TemplateUtils_InfoCreateBoundPackage;
 	public static String TemplateUtils_InfoGetActualFrom;
 	public static String TemplateUtils_NoTemplateSignature;
-	
+
 	public static String TemplateInstantiation_TemplateIsNull;
 	public static String TemplateInstantiationListener_TrafoException;
 
@@ -80,7 +80,7 @@ public class Messages extends NLS {
 	public static String ContainerTrafo_InterceptionRuleButNoInterceptor;
 
 	public static String ContainerTrafo_RecursiveLWnotSupported;
-	
+
 	public static String InstanceConfigurator_InvalidPluginExtension;
 
 	public static String InstantiateDepPlan_AcceleoErrors;
@@ -116,7 +116,7 @@ public class Messages extends NLS {
 	public static String DepPlanUtils_ConfigOfPropertyFailed;
 
 	public static String UpdateUtils_CannotApplyFCMstereo;
-	
+
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -23,12 +23,12 @@ import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * An EMF {@link Adapter} listening on uml::NamedElement properties changes.
- * 
+ *
  * This class listen to a {@link NamedElement} and send following events to listeners:
  * <ul>
- *   <li>valueChanged</li>
+ * <li>valueChanged</li>
  * </ul>
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -43,58 +43,60 @@ public class UmlNamedElementChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Something happen on the tree of object
+	 *
 	 * @see org.eclipse.emf.ecore.util.EContentAdapter#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param msg
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 
 		// Self atttach
 		super.notifyChanged(notification);
 
 		// Retain only NamedElement
-		if( ! (notification.getNotifier() instanceof NamedElement) ) {
+		if (!(notification.getNotifier() instanceof NamedElement)) {
 			return;
 		}
-		
+
 		// No more filter: all events are forwarded
 		fireValueChangedEvent(notification);
 
-//		// We are only interested in NamedElement (from newValue if set, or oldValue if removed)
-//		Object newValue = notification.getNewValue();
-//		if( ! (newValue instanceof NamedElement || notification.getOldValue() instanceof NamedElement ) ) {
-//			return;
-//		}
-//		// Check diagram modification
-//		// There is 4 sources: View::persistedChildren and View::transientChildren
-//		// Diagram::persistedChildren and Diagram::transientChildren
-//		Object feature = notification.getFeature();
-//		if( feature == UMLPackage.eINSTANCE.getNamedElement()
-//				|| feature == NotationPackage.eINSTANCE.getView_TransientChildren() 
-//				|| feature == NotationPackage.eINSTANCE.getDiagram_PersistedEdges() 
-//				|| feature == NotationPackage.eINSTANCE.getDiagram_TransientEdges() ) {
-//			// LayerOperator::layers || LayersStack::layers
-//			// check the event type.
-//			switch(notification.getEventType()) {
-//			case Notification.SET:
-//
-//				break;
-//			case Notification.ADD:
-//				// A view is added
-//				fireValueChangedEvent(notification);
-//				break;
-//			case Notification.REMOVE:
-//				// A layer is removed
-//				fireDiagramViewRemovedEvent(notification);
-//				break;
-//			}
-//		}
+		// // We are only interested in NamedElement (from newValue if set, or oldValue if removed)
+		// Object newValue = notification.getNewValue();
+		// if( ! (newValue instanceof NamedElement || notification.getOldValue() instanceof NamedElement ) ) {
+		// return;
+		// }
+		// // Check diagram modification
+		// // There is 4 sources: View::persistedChildren and View::transientChildren
+		// // Diagram::persistedChildren and Diagram::transientChildren
+		// Object feature = notification.getFeature();
+		// if( feature == UMLPackage.eINSTANCE.getNamedElement()
+		// || feature == NotationPackage.eINSTANCE.getView_TransientChildren()
+		// || feature == NotationPackage.eINSTANCE.getDiagram_PersistedEdges()
+		// || feature == NotationPackage.eINSTANCE.getDiagram_TransientEdges() ) {
+		// // LayerOperator::layers || LayersStack::layers
+		// // check the event type.
+		// switch(notification.getEventType()) {
+		// case Notification.SET:
+		//
+		// break;
+		// case Notification.ADD:
+		// // A view is added
+		// fireValueChangedEvent(notification);
+		// break;
+		// case Notification.REMOVE:
+		// // A layer is removed
+		// fireDiagramViewRemovedEvent(notification);
+		// break;
+		// }
+		// }
 
 	};
 
 	/**
 	 * This Adapter is for {@link LayersTreeEventNotifier}.
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.impl.AdapterImpl#isAdapterForType(java.lang.Object)
 	 *
 	 * @param type
@@ -104,7 +106,7 @@ public class UmlNamedElementChangedEventNotifier extends EContentAdapter {
 	public boolean isAdapterForType(Object type) {
 		return type == UmlNamedElementChangedEventNotifier.class;
 	}
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -118,7 +120,7 @@ public class UmlNamedElementChangedEventNotifier extends EContentAdapter {
 	 */
 	public void dispose() {
 
-		if(isDisposed()) {
+		if (isDisposed()) {
 			return;
 		}
 
@@ -128,6 +130,7 @@ public class UmlNamedElementChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Return true if the object is disposed.
+	 *
 	 * @return
 	 */
 	public boolean isDisposed() {
@@ -137,25 +140,26 @@ public class UmlNamedElementChangedEventNotifier extends EContentAdapter {
 	/**
 	 * Add the specified listener to the list of listener.
 	 * Do not add it if the listener is already in the list.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void addEventListener(IUmlNamedElementChangedEventListener listener) {
 
-		if(listener == null ) {
+		if (listener == null) {
 			return;
 		}
 
 		// Check if exist
-		if( listeners.contains(listener)) {
+		if (listeners.contains(listener)) {
 			return;
 		}
 
 		listeners.add(listener);
 	}
 
-	/** 
+	/**
 	 * Remove the specified listener from the list of listeners.
+	 *
 	 * @param listener
 	 */
 	public void removeEventListener(IUmlNamedElementChangedEventListener listener) {
@@ -165,10 +169,11 @@ public class UmlNamedElementChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Called by events when a {@link LayersStack} is added to the {@link LayersStackApplication}
+	 *
 	 * @param msg
 	 */
 	protected void fireValueChangedEvent(Notification msg) {
-		for(IUmlNamedElementChangedEventListener listener : listeners) {
+		for (IUmlNamedElementChangedEventListener listener : listeners) {
 			listener.valueChanged(msg);
 		}
 	}

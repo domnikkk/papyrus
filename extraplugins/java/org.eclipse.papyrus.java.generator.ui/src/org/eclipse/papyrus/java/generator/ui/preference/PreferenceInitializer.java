@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -28,9 +28,10 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer#initializeDefaultPreferences()
 	 */
+	@Override
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 
@@ -40,6 +41,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		store.setDefault(PreferenceConstants.P_FILTER_OF_PACKAGE_NOT_TO_GENERATE, "java.*;javax.*");
 		store.setDefault(PreferenceConstants.P_GENERIC_CLASS_FOR_MULTIVALUE, "java.util.List");
 		store.setDefault(PreferenceConstants.P_STOP_ON_FIRST_ERROR, true);
+		store.setDefault(PreferenceConstants.P_DEFAULT_SOURCE_FOLDER_NAME, "src");
 	}
 
 }

@@ -1,23 +1,20 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
 package org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.NattablelabelproviderPackage;
 
@@ -30,16 +27,14 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.N
  * <ul>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl#isDisplayIsDerived
  * <em>Display Is Derived</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl#isDisplayType <em>
- * Display Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl#isDisplayType <em> Display Type</em>}</li>
  * <li>
  * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl#isDisplayMultiplicity
  * <em>Display Multiplicity</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl#isDisplayName <em>
- * Display Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl#isDisplayName <em> Display Name</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderConfigurationImpl implements FeatureLabelProviderConfiguration {
@@ -48,7 +43,7 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	 * The default value of the '{@link #isDisplayIsDerived() <em>Display Is Derived</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDisplayIsDerived()
 	 * @generated
 	 * @ordered
@@ -59,7 +54,7 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	 * The cached value of the '{@link #isDisplayIsDerived() <em>Display Is Derived</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDisplayIsDerived()
 	 * @generated
 	 * @ordered
@@ -70,7 +65,7 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	 * The default value of the '{@link #isDisplayType() <em>Display Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDisplayType()
 	 * @generated
 	 * @ordered
@@ -81,7 +76,7 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	 * The cached value of the '{@link #isDisplayType() <em>Display Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDisplayType()
 	 * @generated
 	 * @ordered
@@ -92,7 +87,7 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	 * The default value of the '{@link #isDisplayMultiplicity() <em>Display Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDisplayMultiplicity()
 	 * @generated
 	 * @ordered
@@ -103,7 +98,7 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	 * The cached value of the '{@link #isDisplayMultiplicity() <em>Display Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDisplayMultiplicity()
 	 * @generated
 	 * @ordered
@@ -114,7 +109,7 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	 * The default value of the '{@link #isDisplayName() <em>Display Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDisplayName()
 	 * @generated
 	 * @ordered
@@ -125,7 +120,7 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	 * The cached value of the '{@link #isDisplayName() <em>Display Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDisplayName()
 	 * @generated
 	 * @ordered
@@ -135,7 +130,7 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FeatureLabelProviderConfigurationImpl() {
@@ -145,7 +140,7 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,9 +151,10 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isDisplayIsDerived() {
 		return displayIsDerived;
 	}
@@ -166,22 +162,25 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDisplayIsDerived(boolean newDisplayIsDerived) {
 		boolean oldDisplayIsDerived = displayIsDerived;
 		displayIsDerived = newDisplayIsDerived;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattablelabelproviderPackage.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_IS_DERIVED, oldDisplayIsDerived, displayIsDerived));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isDisplayType() {
 		return displayType;
 	}
@@ -189,22 +188,25 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDisplayType(boolean newDisplayType) {
 		boolean oldDisplayType = displayType;
 		displayType = newDisplayType;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattablelabelproviderPackage.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_TYPE, oldDisplayType, displayType));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isDisplayMultiplicity() {
 		return displayMultiplicity;
 	}
@@ -212,22 +214,25 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDisplayMultiplicity(boolean newDisplayMultiplicity) {
 		boolean oldDisplayMultiplicity = displayMultiplicity;
 		displayMultiplicity = newDisplayMultiplicity;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattablelabelproviderPackage.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_MULTIPLICITY, oldDisplayMultiplicity, displayMultiplicity));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isDisplayName() {
 		return displayName;
 	}
@@ -235,25 +240,27 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDisplayName(boolean newDisplayName) {
 		boolean oldDisplayName = displayName;
 		displayName = newDisplayName;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattablelabelproviderPackage.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_NAME, oldDisplayName, displayName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattablelabelproviderPackage.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_IS_DERIVED:
 			return isDisplayIsDerived();
 		case NattablelabelproviderPackage.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_TYPE:
@@ -269,23 +276,23 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattablelabelproviderPackage.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_IS_DERIVED:
-			setDisplayIsDerived((Boolean)newValue);
+			setDisplayIsDerived((Boolean) newValue);
 			return;
 		case NattablelabelproviderPackage.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_TYPE:
-			setDisplayType((Boolean)newValue);
+			setDisplayType((Boolean) newValue);
 			return;
 		case NattablelabelproviderPackage.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_MULTIPLICITY:
-			setDisplayMultiplicity((Boolean)newValue);
+			setDisplayMultiplicity((Boolean) newValue);
 			return;
 		case NattablelabelproviderPackage.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_NAME:
-			setDisplayName((Boolean)newValue);
+			setDisplayName((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -294,12 +301,12 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattablelabelproviderPackage.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_IS_DERIVED:
 			setDisplayIsDerived(DISPLAY_IS_DERIVED_EDEFAULT);
 			return;
@@ -319,12 +326,12 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattablelabelproviderPackage.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_IS_DERIVED:
 			return displayIsDerived != DISPLAY_IS_DERIVED_EDEFAULT;
 		case NattablelabelproviderPackage.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_TYPE:
@@ -340,13 +347,14 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (displayIsDerived: "); //$NON-NLS-1$
@@ -361,4 +369,4 @@ public class FeatureLabelProviderConfigurationImpl extends ObjectLabelProviderCo
 		return result.toString();
 	}
 
-} //FeatureLabelProviderConfigurationImpl
+} // FeatureLabelProviderConfigurationImpl

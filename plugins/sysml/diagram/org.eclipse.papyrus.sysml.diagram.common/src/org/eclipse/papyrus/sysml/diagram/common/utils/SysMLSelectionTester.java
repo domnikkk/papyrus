@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.Package;
  * This class is used in order to create test for deciding whether a diagram creation command should be visible or not.
  * This property tester assumes that currently active editor is Papyrus, it should be used with care (simultaneously with a test to ensure Papyrus is
  * currently opened and active).
- * 
+ *
  */
 public class SysMLSelectionTester extends PropertyTester {
 
@@ -46,17 +46,18 @@ public class SysMLSelectionTester extends PropertyTester {
 	}
 
 	/** Test the receiver against the selected property */
+	@Override
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
 
 		// Ensure Papyrus is the active editor
 		Object currentValue = null;
-		if(IS_SYSML_MODEL.equals(property)) {
+		if (IS_SYSML_MODEL.equals(property)) {
 			currentValue = testSysMLModelNature(receiver);
 			return (currentValue == expectedValue);
-		} else if(IS_SYSML_BLOCKS_MODEL.equals(property)) {
+		} else if (IS_SYSML_BLOCKS_MODEL.equals(property)) {
 			currentValue = testSysMLBlocksModelNature(receiver);
 			return (currentValue == expectedValue);
-		} else if(IS_SYSML_REQUIREMENTS_MODEL.equals(property)) {
+		} else if (IS_SYSML_REQUIREMENTS_MODEL.equals(property)) {
 			currentValue = testSysMLRequirementsModelNature(receiver);
 			return (currentValue == expectedValue);
 		}
@@ -69,16 +70,16 @@ public class SysMLSelectionTester extends PropertyTester {
 		boolean isSysMLModel = false;
 
 		EObject root = getRoot(receiver);
-		if(root instanceof Package) {
+		if (root instanceof Package) {
 
-			return (((Package)root).getAppliedProfile("SysML") != null);
+			return (((Package) root).getAppliedProfile("SysML") != null);
 
-			//FIX: UMLUtil.getProfile() loads the profile into the resource set. This is not desired.
+			// FIX: UMLUtil.getProfile() loads the profile into the resource set. This is not desired.
 			//
-			//			Profile sysml = UMLUtil.getProfile(SysmlPackage.eINSTANCE, root);
-			//			if(((Package)root).isProfileApplied(sysml)) {
-			//				isSysMLModel = true;
-			//			}
+			// Profile sysml = UMLUtil.getProfile(SysmlPackage.eINSTANCE, root);
+			// if(((Package)root).isProfileApplied(sysml)) {
+			// isSysMLModel = true;
+			// }
 		}
 
 		return isSysMLModel;
@@ -89,14 +90,14 @@ public class SysMLSelectionTester extends PropertyTester {
 		boolean isSysMLModel = false;
 
 		EObject root = getRoot(receiver);
-		if(root instanceof Package) {
-			return (((Package)root).getAppliedProfile("SysML::Requirements") != null);
+		if (root instanceof Package) {
+			return (((Package) root).getAppliedProfile("SysML::Requirements") != null);
 
-			//FIX: UMLUtil.getProfile() loads the profile into the resource set. This is not desired.
-			//			Profile sysml = UMLUtil.getProfile(RequirementsPackage.eINSTANCE, root);
-			//			if(((Package)root).isProfileApplied(sysml)) {
-			//				isSysMLModel = true;
-			//			}
+			// FIX: UMLUtil.getProfile() loads the profile into the resource set. This is not desired.
+			// Profile sysml = UMLUtil.getProfile(RequirementsPackage.eINSTANCE, root);
+			// if(((Package)root).isProfileApplied(sysml)) {
+			// isSysMLModel = true;
+			// }
 		}
 
 		return isSysMLModel;
@@ -107,13 +108,13 @@ public class SysMLSelectionTester extends PropertyTester {
 		boolean isSysMLModel = false;
 
 		EObject root = getRoot(receiver);
-		if(root instanceof Package) {
-			return (((Package)root).getAppliedProfile("SysML::Blocks") != null);
-			//FIX: UMLUtil.getProfile() loads the profile into the resource set. This is not desired.
-			//			Profile sysml = UMLUtil.getProfile(BlocksPackage.eINSTANCE, root);
-			//			if(((Package)root).isProfileApplied(sysml)) {
-			//				isSysMLModel = true;
-			//			}
+		if (root instanceof Package) {
+			return (((Package) root).getAppliedProfile("SysML::Blocks") != null);
+			// FIX: UMLUtil.getProfile() loads the profile into the resource set. This is not desired.
+			// Profile sysml = UMLUtil.getProfile(BlocksPackage.eINSTANCE, root);
+			// if(((Package)root).isProfileApplied(sysml)) {
+			// isSysMLModel = true;
+			// }
 		}
 
 		return isSysMLModel;
@@ -123,20 +124,20 @@ public class SysMLSelectionTester extends PropertyTester {
 	private EObject getRoot(Object receiver) {
 		EObject root = null;
 
-		if(receiver instanceof ISelection) {
-			ISelection selection = (ISelection)receiver;
-			if(selection.isEmpty()) {
+		if (receiver instanceof ISelection) {
+			ISelection selection = (ISelection) receiver;
+			if (selection.isEmpty()) {
 				return null;
 			}
 
 			try {
 				ServiceUtilsForSelection serviceUtils = ServiceUtilsForSelection.getInstance();
-				UmlModel openedModel = (UmlModel)serviceUtils.getModelSet(selection).getModel(UmlModel.MODEL_ID);
-				if(openedModel != null) {
+				UmlModel openedModel = (UmlModel) serviceUtils.getModelSet(selection).getModel(UmlModel.MODEL_ID);
+				if (openedModel != null) {
 					root = openedModel.lookupRoot();
 				}
 			} catch (ServiceException e) {
-				//Ignored: The selection cannot be used to retrieve the ServicesRegistry
+				// Ignored: The selection cannot be used to retrieve the ServicesRegistry
 			} catch (NotFoundException e) {
 				Activator.log.error(e);
 			}

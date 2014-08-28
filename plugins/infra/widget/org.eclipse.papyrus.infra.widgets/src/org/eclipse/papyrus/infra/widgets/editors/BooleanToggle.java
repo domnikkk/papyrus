@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,9 +28,9 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * A widget to represent boolean values as a Toggle Button.
  * The Button may have either an Icon or a Text
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class BooleanToggle extends AbstractValueEditor {
 
@@ -48,20 +48,22 @@ public class BooleanToggle extends AbstractValueEditor {
 
 		toggleButton.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				commit();
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
-				//Nothing
+				// Nothing
 			}
 		});
 
 		setText(text);
 		setImage(image);
 		gridData.horizontalIndent = FieldDecorationRegistry.getDefault().getMaximumDecorationWidth();
-		
-		controlDecoration = new ControlDecoration(toggleButton, SWT.TOP | SWT.LEFT );
+
+		controlDecoration = new ControlDecoration(toggleButton, SWT.TOP | SWT.LEFT);
 	}
 
 	public BooleanToggle(Composite parent, int style, String label, String text) {
@@ -82,24 +84,24 @@ public class BooleanToggle extends AbstractValueEditor {
 
 	/**
 	 * Sets this button's text
-	 * 
+	 *
 	 * @param text
-	 *        The text to set to this button
+	 *            The text to set to this button
 	 */
 	public void setText(String text) {
-		if(text != null) {
+		if (text != null) {
 			toggleButton.setText(text);
 		}
 	}
 
 	/**
 	 * Sets this button's image
-	 * 
+	 *
 	 * @param image
-	 *        The image to set to this button
+	 *            The image to set to this button
 	 */
 	public void setImage(Image image) {
-		if(image != null) {
+		if (image != null) {
 			toggleButton.setImage(image);
 		}
 	}
@@ -132,9 +134,9 @@ public class BooleanToggle extends AbstractValueEditor {
 
 	/**
 	 * Indicates whether this button should be selected or not
-	 * 
+	 *
 	 * @param isActive
-	 *        If true, the button will be selected
+	 *            If true, the button will be selected
 	 */
 	public void setValue(boolean isActive) {
 		toggleButton.setSelection(isActive);
@@ -166,13 +168,13 @@ public class BooleanToggle extends AbstractValueEditor {
 		default:
 			controlDecoration.hide();
 			break;
-}
+		}
 	}
 
 	@Override
 	public void changeColorField() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

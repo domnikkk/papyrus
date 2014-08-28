@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,23 +35,24 @@ public class ExecutionFactoryL1 extends ExecutionFactory {
 		super();
 	}
 
+	@Override
 	public SemanticVisitor instantiateVisitor(Element element) {
 		// Instantiate a visitor object for the given element (at Conformance
 		// Level 1)
 		SemanticVisitor visitor = null;
-		if(element instanceof LiteralBoolean) {
+		if (element instanceof LiteralBoolean) {
 			visitor = new LiteralBooleanEvaluation();
-		} else if(element instanceof LiteralString) {
+		} else if (element instanceof LiteralString) {
 			visitor = new LiteralStringEvaluation();
-		} else if(element instanceof LiteralNull) {
+		} else if (element instanceof LiteralNull) {
 			visitor = new LiteralNullEvaluation();
-		} else if(element instanceof InstanceValue) {
+		} else if (element instanceof InstanceValue) {
 			visitor = new InstanceValueEvaluation();
-		} else if(element instanceof LiteralUnlimitedNatural) {
+		} else if (element instanceof LiteralUnlimitedNatural) {
 			visitor = new LiteralUnlimitedNaturalEvaluation();
-		} else if(element instanceof LiteralInteger) {
+		} else if (element instanceof LiteralInteger) {
 			visitor = new LiteralIntegerEvaluation();
-		} else if(element instanceof LiteralReal) {
+		} else if (element instanceof LiteralReal) {
 			visitor = new LiteralRealEvaluation();
 		}
 		return visitor;

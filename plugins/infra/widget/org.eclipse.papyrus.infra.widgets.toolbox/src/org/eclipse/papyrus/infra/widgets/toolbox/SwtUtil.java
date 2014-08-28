@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) Eclipse.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ public class SwtUtil {
 	public static final int FADE_OUT_INCREMENT = -20;
 
 	public static void collectItemData(TreeItem[] items, Set<Object> allVisible) {
-		for(TreeItem item : items) {
+		for (TreeItem item : items) {
 			allVisible.add(item.getData());
 			collectItemData(item.getItems(), allVisible);
 		}
@@ -69,10 +69,10 @@ public class SwtUtil {
 
 		public FadeJob(Shell shell, int increment, long delay, IFadeListener fadeListener) {
 			super("Fading");
-			if(increment < -255 || increment == 0 || increment > 255) {
+			if (increment < -255 || increment == 0 || increment > 255) {
 				throw new IllegalArgumentException("-255 <= increment <= 255 && increment != 0"); //$NON-NLS-1$
 			}
-			if(delay < 1) {
+			if (delay < 1) {
 				throw new IllegalArgumentException("delay must be > 0"); //$NON-NLS-1$
 			}
 			this.currentAlpha = shell.getAlpha();
@@ -91,21 +91,21 @@ public class SwtUtil {
 		}
 
 		private void reschedule() {
-			if(stopped) {
+			if (stopped) {
 				return;
 			}
 			schedule(delay);
 		}
 
 		public void cancelAndWait(final boolean setAlpha) {
-			if(stopped) {
+			if (stopped) {
 				return;
 			}
 			cancel();
 			Display.getDefault().syncExec(new Runnable() {
 
 				public void run() {
-					if(setAlpha) {
+					if (setAlpha) {
 						shell.setAlpha(getLastAlpha());
 					}
 				}
@@ -114,38 +114,38 @@ public class SwtUtil {
 
 		@Override
 		protected IStatus run(IProgressMonitor monitor) {
-			if(stopped) {
+			if (stopped) {
 				return Status.OK_STATUS;
 			}
 
 			currentAlpha += increment;
-			if(currentAlpha <= 0) {
+			if (currentAlpha <= 0) {
 				currentAlpha = 0;
-			} else if(currentAlpha >= 255) {
+			} else if (currentAlpha >= 255) {
 				currentAlpha = 255;
 			}
 
 			Display.getDefault().syncExec(new Runnable() {
 
 				public void run() {
-					if(stopped) {
+					if (stopped) {
 						return;
 					}
 
-					if(shell.isDisposed()) {
+					if (shell.isDisposed()) {
 						stopped = true;
 						return;
 					}
 
 					shell.setAlpha(currentAlpha);
 
-					if(fadeListener != null) {
+					if (fadeListener != null) {
 						fadeListener.faded(shell, currentAlpha);
 					}
 				}
 			});
 
-			if(currentAlpha == 0 || currentAlpha == 255) {
+			if (currentAlpha == 0 || currentAlpha == 255) {
 				stopped = true;
 			}
 

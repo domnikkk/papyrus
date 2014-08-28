@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ public class ServiceAdapterEntry extends PojoServiceEntry {
 	}
 
 	protected final void checkAdapter() throws ServiceException {
-		if(serviceAdapter == null) {
+		if (serviceAdapter == null) {
 			throw new BadStateException("Service is disposed", state, serviceDescriptor);
 		}
 	}
@@ -54,7 +54,7 @@ public class ServiceAdapterEntry extends PojoServiceEntry {
 
 	@Override
 	public void disposeService() throws ServiceException {
-		if(serviceAdapter != null) {
+		if (serviceAdapter != null) {
 			serviceAdapter.disposeService();
 			serviceAdapter = null;
 		}

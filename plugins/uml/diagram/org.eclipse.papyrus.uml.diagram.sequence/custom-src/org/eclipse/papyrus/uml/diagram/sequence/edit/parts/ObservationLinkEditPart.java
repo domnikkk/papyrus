@@ -18,7 +18,7 @@ import org.eclipse.uml2.uml.TimeObservation;
 
 /**
  * Observation link editpart used by time observation and duration observation
- * 
+ *
  */
 public class ObservationLinkEditPart extends AnnotatedLinkEditPart {
 
@@ -26,12 +26,13 @@ public class ObservationLinkEditPart extends AnnotatedLinkEditPart {
 		super(view);
 	}
 
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomComponentEditPolicy());
-		//installEditPolicy(EditPolicy.COMPONENT_ROLE, new CustomComponentEditPolicy());
-		//SequenceUtil.OBSERVATION_LINK_TYPE
-		//		installEditPolicy(EditPolicy.CONNECTION_ENDPOINTS_ROLE,new CustomConnectionEndpointEditPolicy());
+		// installEditPolicy(EditPolicy.COMPONENT_ROLE, new CustomComponentEditPolicy());
+		// SequenceUtil.OBSERVATION_LINK_TYPE
+		// installEditPolicy(EditPolicy.CONNECTION_ENDPOINTS_ROLE,new CustomConnectionEndpointEditPolicy());
 	}
 
 	private final class CustomComponentEditPolicy extends SemanticEditPolicy {
@@ -39,23 +40,23 @@ public class ObservationLinkEditPart extends AnnotatedLinkEditPart {
 		@Override
 		protected Command getSemanticCommand(IEditCommandRequest request) {
 			Command semanticCommand = super.getSemanticCommand(request);
-			if(semanticCommand != null) {
-				if(semanticCommand instanceof ICommandProxy) {
-					ICommandProxy proxy = (ICommandProxy)semanticCommand;
-					if(proxy.getICommand() instanceof CompositeTransactionalCommand) {
-						CompositeTransactionalCommand compositeCommand = (CompositeTransactionalCommand)proxy.getICommand();
+			if (semanticCommand != null) {
+				if (semanticCommand instanceof ICommandProxy) {
+					ICommandProxy proxy = (ICommandProxy) semanticCommand;
+					if (proxy.getICommand() instanceof CompositeTransactionalCommand) {
+						CompositeTransactionalCommand compositeCommand = (CompositeTransactionalCommand) proxy.getICommand();
 						// update TimeObservation or DurationObservation model
-						final ObservationLinkEditPart link = (ObservationLinkEditPart)getHost();
+						final ObservationLinkEditPart link = (ObservationLinkEditPart) getHost();
 						AbstractTransactionalCommand updateLinkSourceModelCmd = new AbstractTransactionalCommand(link.getEditingDomain(), "", null) {
 
 							@Override
 							protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 								EditPart source = link.getSource();
-								if(source instanceof TimeObservationLabelEditPart) {
-									TimeObservation timeObservation = (TimeObservation)((TimeObservationLabelEditPart)source).resolveSemanticElement();
+								if (source instanceof TimeObservationLabelEditPart) {
+									TimeObservation timeObservation = (TimeObservation) ((TimeObservationLabelEditPart) source).resolveSemanticElement();
 									timeObservation.setEvent(null);
-								} else if(source instanceof DurationObservationEditPart) {
-									DurationObservation durationObservation = (DurationObservation)((DurationObservationEditPart)source).resolveSemanticElement();
+								} else if (source instanceof DurationObservationEditPart) {
+									DurationObservation durationObservation = (DurationObservation) ((DurationObservationEditPart) source).resolveSemanticElement();
 									durationObservation.getEvents().clear();
 								}
 								return CommandResult.newOKCommandResult();

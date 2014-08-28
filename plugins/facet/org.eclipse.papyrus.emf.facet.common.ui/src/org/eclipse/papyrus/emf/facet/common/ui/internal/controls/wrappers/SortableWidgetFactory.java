@@ -18,8 +18,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.Tree;
 
 /**
- * A factory to obtain a {@link SortableWidget}, that provides a unified API over both SWT
- * {@link Tree} and {@link Table}.
+ * A factory to obtain a {@link SortableWidget}, that provides a unified API over both SWT {@link Tree} and {@link Table}.
  */
 public final class SortableWidgetFactory {
 
@@ -28,9 +27,8 @@ public final class SortableWidgetFactory {
 	}
 
 	/**
-	 * Get a {@link SortableWidget} for the given {@link Viewer}, that can be either a
-	 * {@link TreeViewer} or a {@link TableViewer}.
-	 * 
+	 * Get a {@link SortableWidget} for the given {@link Viewer}, that can be either a {@link TreeViewer} or a {@link TableViewer}.
+	 *
 	 * @param viewer
 	 *            a {@link TreeViewer} or a {@link TableViewer}
 	 * @return a {@link SortableWidget} that delegates to the given viewer

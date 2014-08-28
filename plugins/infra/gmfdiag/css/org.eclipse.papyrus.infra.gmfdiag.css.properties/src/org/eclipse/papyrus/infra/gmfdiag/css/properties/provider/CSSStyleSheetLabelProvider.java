@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,11 +20,11 @@ public class CSSStyleSheetLabelProvider extends EMFLabelProvider {
 
 	@Override
 	public String getText(Object element) {
-		if(element instanceof StyleSheetReference) {
-			return ((StyleSheetReference)element).getPath();
-		} else if(element instanceof EmbeddedStyleSheet) {
-			EmbeddedStyleSheet styleSheet = (EmbeddedStyleSheet)element;
-			if(styleSheet.getLabel() == null || "".equals(styleSheet.getLabel())) {
+		if (element instanceof StyleSheetReference) {
+			return ((StyleSheetReference) element).getPath();
+		} else if (element instanceof EmbeddedStyleSheet) {
+			EmbeddedStyleSheet styleSheet = (EmbeddedStyleSheet) element;
+			if (styleSheet.getLabel() == null || "".equals(styleSheet.getLabel())) {
 				return "EmbeddedStyleSheet";
 			}
 			return styleSheet.getLabel();

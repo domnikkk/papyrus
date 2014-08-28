@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,18 +34,18 @@ public class CustomElementOperations extends ElementOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Applies the specified stereotype to this element.
-	 * 
+	 *
 	 * @param element
-	 *        The receiving '<em><b>Element</b></em>' model object.
+	 *            The receiving '<em><b>Element</b></em>' model object.
 	 * @param stereotype
-	 *        The stereotype to apply.
-	 *        <!-- end-model-doc -->
+	 *            The stereotype to apply.
+	 *            <!-- end-model-doc -->
 	 * @generated NOT
 	 */
 	public static EObject applyStereotype(final Package nearestPackageAttachedToTheModel, Element element, Stereotype stereotype) {
 		EClass definition = getDefinition(nearestPackageAttachedToTheModel, stereotype);
 
-		if(definition == null || getExtension(element, stereotype) == null || element.getStereotypeApplication(stereotype) != null) {
+		if (definition == null || getExtension(element, stereotype) == null || element.getStereotypeApplication(stereotype) != null) {
 
 			throw new IllegalArgumentException(String.valueOf(stereotype));
 		}
@@ -54,13 +54,13 @@ public class CustomElementOperations extends ElementOperations {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param parentElement
-	 *        the parent of the element (required because the element is probably to yet attached to its parent
+	 *            the parent of the element (required because the element is probably to yet attached to its parent
 	 * @param element
-	 *        the element on which we want apply a stereotype
+	 *            the element on which we want apply a stereotype
 	 * @param stereotype
-	 *        the stereotype to apply
+	 *            the stereotype to apply
 	 * @return
 	 *         <code>true</code> if the stereotype can be applied on this element
 	 */
@@ -70,29 +70,29 @@ public class CustomElementOperations extends ElementOperations {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param element
 	 * @param stereotype
 	 * @return
 	 */
 	protected static EClass getDefinition(Element element, Stereotype stereotype) {
 
-		if(stereotype != null) {
+		if (stereotype != null) {
 			Profile profile = stereotype.getProfile();
 
-			if(profile != null) {
+			if (profile != null) {
 				org.eclipse.uml2.uml.Package package_ = element.getNearestPackage();
 
-				if(package_ != null) {
+				if (package_ != null) {
 					ProfileApplication profileApplication = package_.getProfileApplication(profile, true);
 
-					if(profileApplication != null) {
+					if (profileApplication != null) {
 						ENamedElement appliedDefinition = profileApplication.getAppliedDefinition(stereotype);
 
-						if(appliedDefinition instanceof EClass) {
-							EClass eClass = (EClass)appliedDefinition;
+						if (appliedDefinition instanceof EClass) {
+							EClass eClass = (EClass) appliedDefinition;
 
-							if(!eClass.isAbstract()) {
+							if (!eClass.isAbstract()) {
 								return eClass;
 							}
 						}
@@ -105,7 +105,7 @@ public class CustomElementOperations extends ElementOperations {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param element
 	 * @param definition
 	 * @return
@@ -116,28 +116,28 @@ public class CustomElementOperations extends ElementOperations {
 
 	/**
 	 * Duplicated and adapted from UML ElementOperations
-	 * 
+	 *
 	 * @param element
 	 * @param package_
 	 * @return
 	 */
 	public static EList<Stereotype> getApplicableStereotypes(Element element, final Package package_) {
-		//		org.eclipse.uml2.uml.Package package_ = element.getNearestPackage();
+		// org.eclipse.uml2.uml.Package package_ = element.getNearestPackage();
 
-		if(package_ != null) {
+		if (package_ != null) {
 			EList<Stereotype> applicableStereotypes = new UniqueEList.FastCompare<Stereotype>();
 
-			for(ProfileApplication profileApplication : package_.getAllProfileApplications()) {
+			for (ProfileApplication profileApplication : package_.getAllProfileApplications()) {
 
 				Profile appliedProfile = profileApplication.getAppliedProfile();
 
-				if(appliedProfile != null) {
+				if (appliedProfile != null) {
 
-					for(Stereotype stereotype : appliedProfile.allApplicableStereotypes()) {
+					for (Stereotype stereotype : appliedProfile.allApplicableStereotypes()) {
 
 						ENamedElement appliedDefinition = profileApplication.getAppliedDefinition(stereotype);
 
-						if(appliedDefinition instanceof EClass && !((EClass)appliedDefinition).isAbstract() && getExtension(element, stereotype) != null) {
+						if (appliedDefinition instanceof EClass && !((EClass) appliedDefinition).isAbstract() && getExtension(element, stereotype) != null) {
 
 							applicableStereotypes.add(stereotype);
 						}

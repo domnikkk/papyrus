@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -26,9 +26,9 @@ import org.eclipse.papyrus.uml.diagram.timing.providers.UMLElementTypes;
  */
 public class UMLPaletteFactory extends PaletteFactory.Adapter {
 
-	//RS: New Palette generation
-	//Generates the ID for the tool elements
-	//Generate the tool factory (if(ID) createtool...)
+	// RS: New Palette generation
+	// Generates the ID for the tool elements
+	// Generate the tool factory (if(ID) createtool...)
 	/**
 	 * @generated
 	 */
@@ -128,59 +128,60 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Tool createTool(String toolId) {
-		if(toolId.equals(CREATEINTERACTIONCREATIONTOOL)) {
+		if (toolId.equals(CREATEINTERACTIONCREATIONTOOL)) {
 			return createInteractionCreationTool();
 		}
-		if(toolId.equals(CREATELIFELINECREATIONTOOL)) {
+		if (toolId.equals(CREATELIFELINECREATIONTOOL)) {
 			return createLifelineCreationTool();
 		}
-		if(toolId.equals(CREATESTATEDEFINITIONCREATIONTOOL)) {
+		if (toolId.equals(CREATESTATEDEFINITIONCREATIONTOOL)) {
 			return createStateDefinitionCreationTool();
 		}
-		if(toolId.equals(CREATETIMEOBSERVATIONCREATIONTOOL)) {
+		if (toolId.equals(CREATETIMEOBSERVATIONCREATIONTOOL)) {
 			return createTimeObservationCreationTool();
 		}
-		if(toolId.equals(CREATETIMECONSTRAINTCREATIONTOOL)) {
+		if (toolId.equals(CREATETIMECONSTRAINTCREATIONTOOL)) {
 			return createTimeConstraintCreationTool();
 		}
-		if(toolId.equals(CREATEDURATIONOBSERVATIONCREATIONTOOL)) {
+		if (toolId.equals(CREATEDURATIONOBSERVATIONCREATIONTOOL)) {
 			return createDurationObservationCreationTool();
 		}
-		if(toolId.equals(CREATEDURATIONCONSTRAINTCREATIONTOOL)) {
+		if (toolId.equals(CREATEDURATIONCONSTRAINTCREATIONTOOL)) {
 			return createDurationConstraintCreationTool();
 		}
-		if(toolId.equals(CREATEOCCURRENCESPECIFICATIONCREATIONTOOL)) {
+		if (toolId.equals(CREATEOCCURRENCESPECIFICATIONCREATIONTOOL)) {
 			return createOccurrenceSpecificationCreationTool();
 		}
-		if(toolId.equals(CREATEDESTRUCTIONOCCURRENCESPECIFICATIONCREATIONTOOL)) {
+		if (toolId.equals(CREATEDESTRUCTIONOCCURRENCESPECIFICATIONCREATIONTOOL)) {
 			return createDestructionOccurrenceSpecificationCreationTool();
 		}
-		if(toolId.equals(CREATEGATECREATIONTOOL)) {
+		if (toolId.equals(CREATEGATECREATIONTOOL)) {
 			return createGateCreationTool();
 		}
-		if(toolId.equals(CREATEGENERALORDERINGCREATIONTOOL)) {
+		if (toolId.equals(CREATEGENERALORDERINGCREATIONTOOL)) {
 			return createGeneralOrderingCreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGESYNCCREATIONTOOL)) {
+		if (toolId.equals(CREATEMESSAGESYNCCREATIONTOOL)) {
 			return createMessageSyncCreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGEASYNCCREATIONTOOL)) {
+		if (toolId.equals(CREATEMESSAGEASYNCCREATIONTOOL)) {
 			return createMessageAsyncCreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGEREPLYCREATIONTOOL)) {
+		if (toolId.equals(CREATEMESSAGEREPLYCREATIONTOOL)) {
 			return createMessageReplyCreationTool();
 		}
-		if(toolId.equals(CREATECREATEMESSAGECREATIONTOOL)) {
+		if (toolId.equals(CREATECREATEMESSAGECREATIONTOOL)) {
 			return createCreateMessageCreationTool();
 		}
-		if(toolId.equals(CREATEDELETEMESSAGECREATIONTOOL)) {
+		if (toolId.equals(CREATEDELETEMESSAGECREATIONTOOL)) {
 			return createDeleteMessageCreationTool();
 		}
-		if(toolId.equals(CREATELOSTMESSAGECREATIONTOOL)) {
+		if (toolId.equals(CREATELOSTMESSAGECREATIONTOOL)) {
 			return createLostMessageCreationTool();
 		}
-		if(toolId.equals(CREATEFOUNDMESSAGECREATIONTOOL)) {
+		if (toolId.equals(CREATEFOUNDMESSAGECREATIONTOOL)) {
 			return createFoundMessageCreationTool();
 		}
 		// default return: null
@@ -190,6 +191,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Object getTemplate(String templateId) {
 		// default return: null
 		return null;

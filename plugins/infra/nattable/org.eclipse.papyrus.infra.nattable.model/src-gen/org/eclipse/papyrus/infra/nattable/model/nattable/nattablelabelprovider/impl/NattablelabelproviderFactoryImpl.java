@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -15,18 +15,18 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.*;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.NattablelabelproviderFactory;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.NattablelabelproviderPackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NattablelabelproviderFactoryImpl extends EFactoryImpl implements NattablelabelproviderFactory {
@@ -35,13 +35,13 @@ public class NattablelabelproviderFactoryImpl extends EFactoryImpl implements Na
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NattablelabelproviderFactory init() {
 		try {
-			NattablelabelproviderFactory theNattablelabelproviderFactory = (NattablelabelproviderFactory)EPackage.Registry.INSTANCE.getEFactory(NattablelabelproviderPackage.eNS_URI);
-			if(theNattablelabelproviderFactory != null) {
+			NattablelabelproviderFactory theNattablelabelproviderFactory = (NattablelabelproviderFactory) EPackage.Registry.INSTANCE.getEFactory(NattablelabelproviderPackage.eNS_URI);
+			if (theNattablelabelproviderFactory != null) {
 				return theNattablelabelproviderFactory;
 			}
 		} catch (Exception exception) {
@@ -54,7 +54,7 @@ public class NattablelabelproviderFactoryImpl extends EFactoryImpl implements Na
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NattablelabelproviderFactoryImpl() {
@@ -64,12 +64,12 @@ public class NattablelabelproviderFactoryImpl extends EFactoryImpl implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case NattablelabelproviderPackage.FEATURE_LABEL_PROVIDER_CONFIGURATION:
 			return createFeatureLabelProviderConfiguration();
 		case NattablelabelproviderPackage.OBJECT_LABEL_PROVIDER_CONFIGURATION:
@@ -82,9 +82,10 @@ public class NattablelabelproviderFactoryImpl extends EFactoryImpl implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public FeatureLabelProviderConfiguration createFeatureLabelProviderConfiguration() {
 		FeatureLabelProviderConfigurationImpl featureLabelProviderConfiguration = new FeatureLabelProviderConfigurationImpl();
 		return featureLabelProviderConfiguration;
@@ -93,9 +94,10 @@ public class NattablelabelproviderFactoryImpl extends EFactoryImpl implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public ObjectLabelProviderConfiguration createObjectLabelProviderConfiguration() {
 		ObjectLabelProviderConfigurationImpl objectLabelProviderConfiguration = new ObjectLabelProviderConfigurationImpl();
 		return objectLabelProviderConfiguration;
@@ -104,17 +106,18 @@ public class NattablelabelproviderFactoryImpl extends EFactoryImpl implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public NattablelabelproviderPackage getNattablelabelproviderPackage() {
-		return (NattablelabelproviderPackage)getEPackage();
+		return (NattablelabelproviderPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -123,4 +126,4 @@ public class NattablelabelproviderFactoryImpl extends EFactoryImpl implements Na
 		return NattablelabelproviderPackage.eINSTANCE;
 	}
 
-} //NattablelabelproviderFactoryImpl
+} // NattablelabelproviderFactoryImpl

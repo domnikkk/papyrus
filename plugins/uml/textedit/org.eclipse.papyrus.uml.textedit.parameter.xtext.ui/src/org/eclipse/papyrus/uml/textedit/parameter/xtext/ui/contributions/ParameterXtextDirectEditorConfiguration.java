@@ -33,13 +33,13 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 	protected ICommand getParseCommand(EObject umlObject, EObject xtextObject) {
 		CompositeCommand cc = new CompositeCommand("Set values for Parameter"); //$NON-NLS-1$
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(umlObject);
-		if(provider != null) {
+		if (provider != null) {
 
 			ICommand editCommand = null;
-			for(SetRequest current : getRequests(umlObject, xtextObject)) {
+			for (SetRequest current : getRequests(umlObject, xtextObject)) {
 				editCommand = provider.getEditCommand(current);
 
-				if(editCommand != null && editCommand.canExecute()) {
+				if (editCommand != null && editCommand.canExecute()) {
 					cc.add(editCommand);
 				}
 			}
@@ -49,7 +49,7 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 
 	/**
 	 * Returns the list of requests to update the {@link #parameter}
-	 * 
+	 *
 	 * @return
 	 *         the list of requests to update the {@link #parameter}
 	 */
@@ -59,16 +59,16 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 
 		// first: retrieves / determines if the xtextObject is a CollaborationUseRule object
 		EObject modifiedObject = xtextObject;
-		if(!(modelObject instanceof Parameter)) {
+		if (!(modelObject instanceof Parameter)) {
 			return requests;
 		}
-		while(xtextObject != null && !(xtextObject instanceof ParameterRule)) {
+		while (xtextObject != null && !(xtextObject instanceof ParameterRule)) {
 			modifiedObject = modifiedObject.eContainer();
 		}
-		if(modifiedObject == null) {
+		if (modifiedObject == null) {
 			return requests;
 		}
-		ParameterRule parameterRuleObject = (ParameterRule)xtextObject;
+		ParameterRule parameterRuleObject = (ParameterRule) xtextObject;
 
 		/** the new name for the {@link Parameter} */
 		String newName;
@@ -104,9 +104,9 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 		ParameterDirectionKind newDirection = ParameterDirectionKind.IN_LITERAL;
 
 		// Retrieves the information to be populated in modelObject
-		if(parameterRuleObject.getModifiers() != null) {
-			for(org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierSpecification modifier : parameterRuleObject.getModifiers().getValues()) {
-				switch(modifier.getValue()) {
+		if (parameterRuleObject.getModifiers() != null) {
+			for (org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierSpecification modifier : parameterRuleObject.getModifiers().getValues()) {
+				switch (modifier.getValue()) {
 				case ORDERED:
 					newIsOrdered = true;
 					break;
@@ -125,27 +125,27 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 			}
 		}
 
-		if(parameterRuleObject.getMultiplicity() != null) {
-			if(parameterRuleObject.getMultiplicity().getBounds().size() == 1) {
+		if (parameterRuleObject.getMultiplicity() != null) {
+			if (parameterRuleObject.getMultiplicity().getBounds().size() == 1) {
 				String tempBound = parameterRuleObject.getMultiplicity().getBounds().get(0).getValue();
-				if(tempBound.equals("*")) { //$NON-NLS-1$
+				if (tempBound.equals("*")) { //$NON-NLS-1$
 					newLowerBound = 0;
 					newUpperBound = -1;
 				} else {
 					newLowerBound = new Integer(tempBound).intValue();
 					newUpperBound = new Integer(tempBound).intValue();
 				}
-			} else { //size == 2
+			} else { // size == 2
 				String tempBound = parameterRuleObject.getMultiplicity().getBounds().get(0).getValue();
 				newLowerBound = new Integer(tempBound).intValue();
 				tempBound = parameterRuleObject.getMultiplicity().getBounds().get(1).getValue();
-				if(tempBound.equals("*")) { //$NON-NLS-1$
+				if (tempBound.equals("*")) { //$NON-NLS-1$
 					newUpperBound = -1;
 				} else {
 					newUpperBound = new Integer(tempBound).intValue();
 				}
 			}
-		} else {//reset to the default value :
+		} else {// reset to the default value :
 			newLowerBound = 1;
 			newUpperBound = 1;
 		}
@@ -153,7 +153,7 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 		newName = "" + parameterRuleObject.getName(); //$NON-NLS-1$
 
 		TypeRule typeRule = parameterRuleObject.getType();
-		if(typeRule == null) {
+		if (typeRule == null) {
 			newType = null;
 		} else {
 			newType = typeRule.getType();
@@ -161,7 +161,7 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 
 		newVisibility = org.eclipse.uml2.uml.VisibilityKind.PUBLIC_LITERAL;
 
-		switch(parameterRuleObject.getVisibility()) {
+		switch (parameterRuleObject.getVisibility()) {
 		case PUBLIC:
 			newVisibility = org.eclipse.uml2.uml.VisibilityKind.PUBLIC_LITERAL;
 			break;
@@ -178,7 +178,7 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 			break;
 		}
 
-		switch(parameterRuleObject.getDirection()) {
+		switch (parameterRuleObject.getDirection()) {
 		case IN:
 			newDirection = ParameterDirectionKind.IN_LITERAL;
 			break;
@@ -193,7 +193,7 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 			break;
 		}
 
-		switch(parameterRuleObject.getEffect().getEffectKind()) {
+		switch (parameterRuleObject.getEffect().getEffectKind()) {
 		case CREATE:
 			newEffect = ParameterEffectKind.CREATE_LITERAL;
 			break;
@@ -208,7 +208,7 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 			break;
 		}
 
-		Parameter parameter = (Parameter)modelObject;
+		Parameter parameter = (Parameter) modelObject;
 
 		requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getNamedElement_Name(), newName));
 		requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getNamedElement_Visibility(), newVisibility));
@@ -229,8 +229,8 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 	 */
 	@Override
 	public String getTextToEdit(Object editedObject) {
-		if(editedObject instanceof Parameter) {
-			return UMLParameterEditorUtil.getLabel((Parameter)editedObject).trim();
+		if (editedObject instanceof Parameter) {
+			return UMLParameterEditorUtil.getLabel((Parameter) editedObject).trim();
 		}
 		return "not a Parameter"; //$NON-NLS-1$
 	}

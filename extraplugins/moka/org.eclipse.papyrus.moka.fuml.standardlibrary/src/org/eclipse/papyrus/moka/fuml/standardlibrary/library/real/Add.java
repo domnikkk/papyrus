@@ -26,11 +26,11 @@ public class Add extends OpaqueBehaviorExecution {
 	@Override
 	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
 		try {
-			Double x = ((RealValue)inputParameters.get(0).values.get(0)).value;
-			Double y = ((RealValue)inputParameters.get(1).values.get(0)).value;
+			Double x = ((RealValue) inputParameters.get(0).values.get(0)).value;
+			Double y = ((RealValue) inputParameters.get(1).values.get(0)).value;
 			RealValue result = new RealValue();
 			result.value = x + y;
-			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("Real");
+			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Real");
 			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;

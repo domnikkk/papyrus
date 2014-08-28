@@ -7,29 +7,27 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.Mode;
 import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.PapyrusDSMLValidationRuleFactory;
 import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.PapyrusDSMLValidationRulePackage;
 import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.Severity;
 import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.ValidationRule;
-
 import org.eclipse.uml2.types.TypesPackage;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implements PapyrusDSMLValidationRulePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass validationRuleEClass = null;
@@ -37,6 +35,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EEnum severityEEnum = null;
@@ -44,20 +43,17 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EEnum modeEEnum = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.PapyrusDSMLValidationRulePackage#eNS_URI
 	 * @see #init()
@@ -70,27 +66,31 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link PapyrusDSMLValidationRulePackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 *
+	 * <p>
+	 * This method is used to initialize {@link PapyrusDSMLValidationRulePackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static PapyrusDSMLValidationRulePackage init() {
-		if (isInited) return (PapyrusDSMLValidationRulePackage)EPackage.Registry.INSTANCE.getEPackage(PapyrusDSMLValidationRulePackage.eNS_URI);
+		if (isInited) {
+			return (PapyrusDSMLValidationRulePackage) EPackage.Registry.INSTANCE.getEPackage(PapyrusDSMLValidationRulePackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		PapyrusDSMLValidationRulePackageImpl thePapyrusDSMLValidationRulePackage = (PapyrusDSMLValidationRulePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PapyrusDSMLValidationRulePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new PapyrusDSMLValidationRulePackageImpl());
+		PapyrusDSMLValidationRulePackageImpl thePapyrusDSMLValidationRulePackage = (PapyrusDSMLValidationRulePackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PapyrusDSMLValidationRulePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+				: new PapyrusDSMLValidationRulePackageImpl());
 
 		isInited = true;
 
@@ -106,7 +106,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 		// Mark meta-data to indicate it can't be changed
 		thePapyrusDSMLValidationRulePackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(PapyrusDSMLValidationRulePackage.eNS_URI, thePapyrusDSMLValidationRulePackage);
 		return thePapyrusDSMLValidationRulePackage;
@@ -115,6 +115,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getValidationRule() {
@@ -124,96 +125,107 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Severity() {
-		return (EAttribute)validationRuleEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) validationRuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Mode() {
-		return (EAttribute)validationRuleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) validationRuleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_IsEnabledByDefault() {
-		return (EAttribute)validationRuleEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) validationRuleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getValidationRule_Base_Constraint() {
-		return (EReference)validationRuleEClass.getEStructuralFeatures().get(3);
+		return (EReference) validationRuleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_StatusCode() {
-		return (EAttribute)validationRuleEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) validationRuleEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Message() {
-		return (EAttribute)validationRuleEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) validationRuleEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Description() {
-		return (EAttribute)validationRuleEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) validationRuleEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Target() {
-		return (EAttribute)validationRuleEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) validationRuleEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Class() {
-		return (EAttribute)validationRuleEClass.getEStructuralFeatures().get(8);
+		return (EAttribute) validationRuleEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Id() {
-		return (EAttribute)validationRuleEClass.getEStructuralFeatures().get(9);
+		return (EAttribute) validationRuleEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EEnum getSeverity() {
@@ -223,6 +235,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EEnum getMode() {
@@ -232,28 +245,33 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PapyrusDSMLValidationRuleFactory getPapyrusDSMLValidationRuleFactory() {
-		return (PapyrusDSMLValidationRuleFactory)getEFactoryInstance();
+		return (PapyrusDSMLValidationRuleFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -277,19 +295,23 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -298,8 +320,8 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
-		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage) EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage) EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -312,7 +334,8 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 		initEAttribute(getValidationRule_Severity(), this.getSeverity(), "severity", "ERROR", 1, 1, ValidationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValidationRule_Mode(), this.getMode(), "mode", "Batch", 1, 1, ValidationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValidationRule_IsEnabledByDefault(), theTypesPackage.getBoolean(), "isEnabledByDefault", "true", 1, 1, ValidationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getValidationRule_Base_Constraint(), theUMLPackage.getConstraint(), null, "base_Constraint", null, 1, 1, ValidationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getValidationRule_Base_Constraint(), theUMLPackage.getConstraint(), null, "base_Constraint", null, 1, 1, ValidationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValidationRule_StatusCode(), theTypesPackage.getInteger(), "statusCode", "1", 1, 1, ValidationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValidationRule_Message(), theTypesPackage.getString(), "message", null, 0, 1, ValidationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValidationRule_Description(), theTypesPackage.getString(), "description", null, 0, 1, ValidationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -335,4 +358,4 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 		createResource(eNS_URI);
 	}
 
-} //PapyrusDSMLValidationRulePackageImpl
+} // PapyrusDSMLValidationRulePackageImpl

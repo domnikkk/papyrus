@@ -30,11 +30,10 @@ public class DataTypeUtil extends UMLUtil {
 	 * test if the eclass is a definition of a dataType
 	 *
 	 * @param eclass
-	 *        the eclass that will be tested
+	 *            the eclass that will be tested
 	 * @return true if this is a definition of a DataType else false
 	 *
-	 * @deprecated This method only works for dynamically-defined profiles. Use {@link #isDataTypeInstance(EObject)} or
-	 *             {@link #isDataTypeDefinition(EClass, EObject)} instead
+	 * @deprecated This method only works for dynamically-defined profiles. Use {@link #isDataTypeInstance(EObject)} or {@link #isDataTypeDefinition(EClass, EObject)} instead
 	 */
 	@Deprecated
 	public static boolean isDataTypeDefinition(EClass eclass) {
@@ -45,10 +44,10 @@ public class DataTypeUtil extends UMLUtil {
 	 * test if the eclass is a definition of a dataType
 	 *
 	 * @param eclass
-	 *        the eclass that will be tested
+	 *            the eclass that will be tested
 	 * @param context
-	 *        the context is used for loading the UML profile is necessary (Especially for statically-defined profiles)
-	 *        It can be the (potential) instance of the DataType, or its owner, or any other object
+	 *            the context is used for loading the UML profile is necessary (Especially for statically-defined profiles)
+	 *            It can be the (potential) instance of the DataType, or its owner, or any other object
 	 * @return true if this is a definition of a DataType else false
 	 *
 	 */
@@ -60,10 +59,10 @@ public class DataTypeUtil extends UMLUtil {
 	 * test if the element is an instance of DataType
 	 *
 	 * @param eclass
-	 *        the eclass that will be tested
+	 *            the eclass that will be tested
 	 * @param context
-	 *        the context is used for loading the UML profile is necessary (Especially for statically-defined profiles)
-	 *        It can be the (potential) instance of the DataType, or its owner, or any other object
+	 *            the context is used for loading the UML profile is necessary (Especially for statically-defined profiles)
+	 *            It can be the (potential) instance of the DataType, or its owner, or any other object
 	 * @return true if this is a definition of a DataType else false
 	 *
 	 */

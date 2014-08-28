@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -26,9 +26,9 @@ import org.eclipse.uml2.uml.Vertex;
 
 /**
  * Customized transition-reorient command, takes changing of container into account.
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.UnsafeCommand {
 
@@ -40,7 +40,7 @@ public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.Unsaf
 
 	public EMFCustomTransitionRetargetContainerCommand(Transition transition) {
 		super(TransactionUtil.getEditingDomain(transition));
-		
+
 		this.transition = transition;
 	}
 
@@ -51,10 +51,10 @@ public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.Unsaf
 	public static boolean changeContainer(Transition transition) {
 		// now change container
 		Region region = deduceContainer(transition.getSource(), transition.getTarget());
-		if(region == null) {
+		if (region == null) {
 			return false; // transition is not valid
 		}
-		if(region != transition.getOwner()) {
+		if (region != transition.getOwner()) {
 			region.getTransitions().add(transition); // will remove transition automatically from original region
 		}
 		return true;
@@ -64,7 +64,7 @@ public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.Unsaf
 	 * Check whether a transition from source to target is valid
 	 */
 	public static boolean isValid(EObject sourceE, EObject targetE) {
-		if(targetE == null) {
+		if (targetE == null) {
 			return true; // don't judge before knowing the target
 		}
 		NamedElement source = getNearestStateOrSM(sourceE);
@@ -72,42 +72,42 @@ public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.Unsaf
 		Region sourceRegion = getNearestRegion(source);
 		Region targetRegion = getNearestRegion(target);
 
-		if(isChild(source, targetRegion)) {
+		if (isChild(source, targetRegion)) {
 			// transition starts from a composite state (or state-machine) to a vertex within this state
 			// assure that source is not an exit point
-			if(isExitPoint(sourceE)) {
+			if (isExitPoint(sourceE)) {
 				return false; // source is an exit point, but target is within the inner part of a class (inverse condition)
 			}
-			if(isExitPoint(targetE)) {
+			if (isExitPoint(targetE)) {
 				return false; // standard condition
 			}
 			return true;
-		} else if(isChild(target, sourceRegion)) {
+		} else if (isChild(target, sourceRegion)) {
 			// transition from a vertex within the target points to target composite state (or state-machine)
 			// assure that target is not an entry point
-			if(isEntryPoint(sourceE)) {
+			if (isEntryPoint(sourceE)) {
 				return false; // standard condition
 			}
-			if(isEntryPoint(targetE)) {
+			if (isEntryPoint(targetE)) {
 				return false; // source is an entry point, but target is outside the composite state
 
 			}
 			return true;
-		} else if(source == target) {
+		} else if (source == target) {
 			// source and target are on same state or state machine. Could be either an external or internal transition
 			// Allow transitions from entry to exit (internal) as well as from exit to entry (external)
 			// => only disallow from entry to entry and from exit to exit
-			if((isEntryPoint(sourceE) && isEntryPoint(targetE)) || (isExitPoint(sourceE) && isExitPoint(targetE))) {
+			if ((isEntryPoint(sourceE) && isEntryPoint(targetE)) || (isExitPoint(sourceE) && isExitPoint(targetE))) {
 				return false;
 			}
 			return true;
 		}
 
 		// standard conditions for external connections: start may not be a entry point, target not an exit point
-		if(isEntryPoint(sourceE)) {
+		if (isEntryPoint(sourceE)) {
 			return false;
 		}
-		if(isExitPoint(targetE)) {
+		if (isExitPoint(targetE)) {
 			return false;
 		}
 		return true;
@@ -115,7 +115,7 @@ public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.Unsaf
 
 	/**
 	 * Calculate the container. Also checks whether a transition is possible
-	 * 
+	 *
 	 * @param sourceE
 	 * @param targetE
 	 * @return
@@ -123,9 +123,9 @@ public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.Unsaf
 	public static Region deduceContainer(EObject sourceE, EObject targetE) {
 		// Find container element for the new link.
 		NamedElement source = getNearestStateOrSM(sourceE);
-		if(targetE == null) {
+		if (targetE == null) {
 			// don't constraint until both source and target are given.
-			if(getNearestRegion(source) != null) {
+			if (getNearestRegion(source) != null) {
 				return getNearestRegion(source);
 			} else {
 				return firstRegion(source);
@@ -135,24 +135,24 @@ public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.Unsaf
 		Region sourceRegion = getNearestRegion(source);
 		Region targetRegion = getNearestRegion(target);
 
-		if(isChild(source, targetRegion)) {
+		if (isChild(source, targetRegion)) {
 			// transition starts from a composite state (or state-machine) to a vertex within this state
 			return childRegion(sourceRegion, source, targetRegion, target);
-		} else if(isChild(target, sourceRegion)) {
+		} else if (isChild(target, sourceRegion)) {
 			// transition from a vertex within the target points to target composite state (or state-machine)
 			return childRegion(targetRegion, target, sourceRegion, source);
-		} else if(source == target) {
+		} else if (source == target) {
 			// source and target are on same state or state machine. Could be either an external or internal transition
 			// Allow transitions from entry to exit (internal) as well as from exit to entry (external)
 			// => only disallow from entry to entry and from exit to exit
-			if(isEntryPoint(sourceE) || isExitPoint(targetE)) {
+			if (isEntryPoint(sourceE) || isExitPoint(targetE)) {
 				// is a local or internal transition, return first owned region
 				return firstRegion(source);
 			}
 			return sourceRegion;
 		}
 
-		if(isChild(targetRegion, sourceRegion)) {
+		if (isChild(targetRegion, sourceRegion)) {
 			// region of target state is a child of region of source state, choose the letter as "more global" region
 			// also include standard case, a transition between two states within same region
 			return targetRegion;
@@ -166,15 +166,15 @@ public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.Unsaf
 		// (or entry point of this state) to a target within composite
 		// need to choose a region of the state depending on target
 		EList<Region> regions = null;
-		if(source instanceof State) {
-			regions = ((State)source).getRegions();
-		} else if(source instanceof StateMachine) {
-			regions = ((StateMachine)source).getRegions();
+		if (source instanceof State) {
+			regions = ((State) source).getRegions();
+		} else if (source instanceof StateMachine) {
+			regions = ((StateMachine) source).getRegions();
 		}
-		if(regions != null) {
+		if (regions != null) {
 			// should always be true, since we called getNearsetStateOrSM before
-			for(Region region : regions) {
-				if(isChild(region, targetRegion)) {
+			for (Region region : regions) {
+				if (isChild(region, targetRegion)) {
 					return region;
 				}
 			}
@@ -184,18 +184,18 @@ public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.Unsaf
 
 	/**
 	 * Return the first region of a state or statemachine.
-	 * 
+	 *
 	 * @param source
 	 * @return
 	 */
 	public static Region firstRegion(EObject source) {
 		EList<Region> regions = null;
-		if(source instanceof State) {
-			regions = ((State)source).getRegions();
-		} else if(source instanceof StateMachine) {
-			regions = ((StateMachine)source).getRegions();
+		if (source instanceof State) {
+			regions = ((State) source).getRegions();
+		} else if (source instanceof StateMachine) {
+			regions = ((StateMachine) source).getRegions();
 		}
-		if((regions != null) && (regions.size() > 0)) {
+		if ((regions != null) && (regions.size() > 0)) {
 			return regions.get(0);
 		} else {
 			return null;
@@ -203,8 +203,8 @@ public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.Unsaf
 	}
 
 	public static boolean isChild(EObject parent, EObject child) {
-		for(EObject element = child; element != null; element = element.eContainer()) {
-			if(element == parent) {
+		for (EObject element = child; element != null; element = element.eContainer()) {
+			if (element == parent) {
 				return true;
 			}
 		}
@@ -212,9 +212,9 @@ public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.Unsaf
 	}
 
 	public static boolean isEntryPoint(EObject vertex) {
-		if(vertex instanceof Pseudostate) {
-			Pseudostate ps = (Pseudostate)vertex;
-			if(ps.getKind() == PseudostateKind.ENTRY_POINT_LITERAL) {
+		if (vertex instanceof Pseudostate) {
+			Pseudostate ps = (Pseudostate) vertex;
+			if (ps.getKind() == PseudostateKind.ENTRY_POINT_LITERAL) {
 				return true;
 			}
 		}
@@ -222,9 +222,9 @@ public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.Unsaf
 	}
 
 	public static boolean isExitPoint(EObject vertex) {
-		if(vertex instanceof Pseudostate) {
-			Pseudostate ps = (Pseudostate)vertex;
-			if(ps.getKind() == PseudostateKind.EXIT_POINT_LITERAL) {
+		if (vertex instanceof Pseudostate) {
+			Pseudostate ps = (Pseudostate) vertex;
+			if (ps.getKind() == PseudostateKind.EXIT_POINT_LITERAL) {
 				return true;
 			}
 		}
@@ -237,9 +237,9 @@ public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.Unsaf
 	 * and return the first region (as in default policy)
 	 */
 	public static Region getNearestRegion(EObject startFrom) {
-		for(EObject element = startFrom; element != null; element = element.eContainer()) {
-			if(element instanceof Region) {
-				return (Region)element;
+		for (EObject element = startFrom; element != null; element = element.eContainer()) {
+			if (element instanceof Region) {
+				return (Region) element;
 			}
 		}
 		return null;
@@ -249,47 +249,47 @@ public class EMFCustomTransitionRetargetContainerCommand extends GMFUnsafe.Unsaf
 	/**
 	 * Returns the nearest state or statemachine, if the passed element is a pseudo-state.
 	 * This simplifies the calculation of a suitable container;
-	 * 
+	 *
 	 * @param vertex
 	 * @return Return type is named element, since state and region have no other common superclass
 	 */
 	public static NamedElement getNearestStateOrSM(EObject vertex) {
-		if(vertex instanceof Pseudostate) {
-			Pseudostate ps = (Pseudostate)vertex;
-			if((ps.getKind() == PseudostateKind.ENTRY_POINT_LITERAL) || (ps.getKind() == PseudostateKind.EXIT_POINT_LITERAL)) {
+		if (vertex instanceof Pseudostate) {
+			Pseudostate ps = (Pseudostate) vertex;
+			if ((ps.getKind() == PseudostateKind.ENTRY_POINT_LITERAL) || (ps.getKind() == PseudostateKind.EXIT_POINT_LITERAL)) {
 				State state = ps.getState();
-				if(state != null) {
+				if (state != null) {
 					return state;
 				}
 				StateMachine sm = ps.getStateMachine();
-				if(sm != null) {
+				if (sm != null) {
 					return sm;
 				}
 			}
 		}
-		if(vertex instanceof Vertex) {
-			return (Vertex)vertex;
+		if (vertex instanceof Vertex) {
+			return (Vertex) vertex;
 		}
 		return null;
 	}
 
 	@Override
 	protected void doExecute() {
-		oldRegion = (Region)transition.getOwner();
+		oldRegion = (Region) transition.getOwner();
 		changeContainer(transition);
-		newRegion = (Region)transition.getOwner();
+		newRegion = (Region) transition.getOwner();
 	}
 
 	@Override
 	protected void doUndo() {
-		if(oldRegion != transition.getOwner()) {
+		if (oldRegion != transition.getOwner()) {
 			oldRegion.getTransitions().add(transition); // will remove transition automatically from original region
 		}
 	}
 
 	@Override
 	protected void doRedo() {
-		if(newRegion != transition.getOwner()) {
+		if (newRegion != transition.getOwner()) {
 			newRegion.getTransitions().add(transition); // will remove transition automatically from original region
 		}
 	}

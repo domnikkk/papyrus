@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,9 +44,9 @@ public class SortElementState extends State implements IExecutableExtension {
 	public Object getValue() {
 		IWorkbench bench = PlatformUI.getWorkbench();
 		IWorkbenchWindow window = bench.getActiveWorkbenchWindow();
-		if(window == null) {
+		if (window == null) {
 			// Not actually active?
-			if(bench.getWorkbenchWindowCount() > 0) {
+			if (bench.getWorkbenchWindowCount() > 0) {
 				window = bench.getWorkbenchWindows()[0];
 			}
 		}
@@ -60,7 +60,7 @@ public class SortElementState extends State implements IExecutableExtension {
 	public void setInitializationData(IConfigurationElement config, String propertyName, Object data) throws CoreException {
 		viewID = getViewID(config, propertyName, data);
 
-		if(viewID == null) {
+		if (viewID == null) {
 			throw new CoreException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "No viewID specified in SortElementState extension.")); //$NON-NLS-1$
 		}
 	}
@@ -68,15 +68,15 @@ public class SortElementState extends State implements IExecutableExtension {
 	static String getViewID(IConfigurationElement config, String propertyName, Object data) {
 		String result = null;
 
-		if(data instanceof String) {
+		if (data instanceof String) {
 			// It's the view ID
-			result = (String)data;
+			result = (String) data;
 		} else {
 			// It's a parameter map
-			Map<?, ?> parameters = (Map<?, ?>)data;
+			Map<?, ?> parameters = (Map<?, ?>) data;
 			Object value = parameters.get("viewID");
-			if(value instanceof String) {
-				result = (String)value;
+			if (value instanceof String) {
+				result = (String) value;
 			}
 		}
 

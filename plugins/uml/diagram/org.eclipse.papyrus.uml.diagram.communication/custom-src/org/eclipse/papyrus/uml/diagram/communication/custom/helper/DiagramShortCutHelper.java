@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,9 +40,9 @@ public class DiagramShortCutHelper extends ElementHelper {
 
 	/**
 	 * Instantiates a new DiagramShortCut helper.
-	 * 
+	 *
 	 * @param editDomain
-	 *        the edit domain
+	 *            the edit domain
 	 */
 	public DiagramShortCutHelper(TransactionalEditingDomain editDomain) {
 		this.editDomain = editDomain;
@@ -50,29 +50,29 @@ public class DiagramShortCutHelper extends ElementHelper {
 
 	/**
 	 * Drop DiagramShortCut.
-	 * 
+	 *
 	 * @param diagram
-	 *        the element to drop
-	 * 
+	 *            the element to drop
+	 *
 	 * @param viewer
-	 *        the viewer
+	 *            the viewer
 	 * @param diagramPreferencesHint
-	 *        the diagram preferences hint
+	 *            the diagram preferences hint
 	 * @param location
-	 *        the location of the drop
+	 *            the location of the drop
 	 * @param containerView
-	 *        the container view that will contain the associationClass views
-	 * 
+	 *            the container view that will contain the associationClass views
+	 *
 	 * @return the command
 	 */
 	public Command dropDiagramShortCut(Diagram diagram, EditPartViewer viewer, PreferencesHint diagramPreferencesHint, Point location, View containerView) {
 		CompositeCommand cc = new CompositeCommand("dropDiagramShortCut"); //$NON-NLS-1$
-		//creation of the node DiagramShortCut
+		// creation of the node DiagramShortCut
 		IAdaptable elementAdapter = new EObjectAdapter(diagram);
-		ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, ((IHintedType)UMLElementTypes.Diagram_8016).getSemanticHint(), ViewUtil.APPEND, true, diagramPreferencesHint);
-		DiagramShortCutCreationViewCommand nodeCreationCommand = new DiagramShortCutCreationViewCommand(getEditingDomain(), descriptor, ((View)containerView));
+		ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, ((IHintedType) UMLElementTypes.Diagram_8016).getSemanticHint(), ViewUtil.APPEND, true, diagramPreferencesHint);
+		DiagramShortCutCreationViewCommand nodeCreationCommand = new DiagramShortCutCreationViewCommand(getEditingDomain(), descriptor, (containerView));
 		cc.compose(nodeCreationCommand);
-		SetBoundsCommand setBoundsCommand = new SetBoundsCommand(getEditingDomain(), "drop", (IAdaptable)nodeCreationCommand.getCommandResult().getReturnValue(), location); //$NON-NLS-1$
+		SetBoundsCommand setBoundsCommand = new SetBoundsCommand(getEditingDomain(), "drop", (IAdaptable) nodeCreationCommand.getCommandResult().getReturnValue(), location); //$NON-NLS-1$
 		cc.compose(setBoundsCommand);
 		return new ICommandProxy(cc);
 	}

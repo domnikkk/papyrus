@@ -92,7 +92,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -152,10 +152,10 @@ public class Activator extends AbstractUIPlugin {
 		IDawnEditor result = null;
 		IEditorPart editor = DawnEditorHelper.getActiveEditor();
 
-		if(editor instanceof IDawnEditor) {
-			result = (IDawnEditor)editor;
+		if (editor instanceof IDawnEditor) {
+			result = (IDawnEditor) editor;
 		} else {
-			result = (IDawnEditor)editor.getAdapter(IDawnEditor.class);
+			result = (IDawnEditor) editor.getAdapter(IDawnEditor.class);
 		}
 
 		return result;

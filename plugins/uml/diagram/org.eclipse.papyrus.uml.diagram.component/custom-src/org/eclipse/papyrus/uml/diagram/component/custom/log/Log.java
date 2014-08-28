@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,8 @@ public class Log extends LogHelper {
 	/**
 	 * Access restriction on constructors.
 	 *
-	 * @param activator the activator
+	 * @param activator
+	 *            the activator
 	 */
 	private Log(Plugin activator) {
 		super(activator);
@@ -49,7 +50,7 @@ public class Log extends LogHelper {
 	 */
 	public static synchronized Log getInstance() {
 
-		if(instance == null) {
+		if (instance == null) {
 			instance = new Log();
 		}
 		return instance;

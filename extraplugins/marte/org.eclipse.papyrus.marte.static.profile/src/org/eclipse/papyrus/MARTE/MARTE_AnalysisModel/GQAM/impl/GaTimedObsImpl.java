@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,9 +33,9 @@ import org.eclipse.uml2.uml.TimeObservation;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaTimedObsImpl#getLaxity <em>Laxity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaTimedObsImpl#getStartObs <em>Start Obs</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaTimedObsImpl#getEndObs <em>End Obs</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaTimedObsImpl#getLaxity <em>Laxity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaTimedObsImpl#getStartObs <em>Start Obs</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaTimedObsImpl#getEndObs <em>End Obs</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +46,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	 * The default value of the '{@link #getLaxity() <em>Laxity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLaxity()
 	 * @generated
 	 * @ordered
@@ -56,6 +57,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	 * The cached value of the '{@link #getLaxity() <em>Laxity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLaxity()
 	 * @generated
 	 * @ordered
@@ -66,6 +68,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	 * The cached value of the '{@link #getStartObs() <em>Start Obs</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getStartObs()
 	 * @generated
 	 * @ordered
@@ -76,6 +79,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	 * The cached value of the '{@link #getEndObs() <em>End Obs</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEndObs()
 	 * @generated
 	 * @ordered
@@ -85,6 +89,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected GaTimedObsImpl() {
@@ -94,6 +99,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,8 +110,10 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public LaxityKind getLaxity() {
 		return laxity;
 	}
@@ -113,20 +121,25 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setLaxity(LaxityKind newLaxity) {
 		LaxityKind oldLaxity = laxity;
 		laxity = newLaxity == null ? LAXITY_EDEFAULT : newLaxity;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_TIMED_OBS__LAXITY, oldLaxity, laxity));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<TimeObservation> getStartObs() {
 		if (startObs == null) {
 			startObs = new EObjectResolvingEList<TimeObservation>(TimeObservation.class, this, GQAMPackage.GA_TIMED_OBS__START_OBS);
@@ -137,8 +150,10 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<TimeObservation> getEndObs() {
 		if (endObs == null) {
 			endObs = new EObjectResolvingEList<TimeObservation>(TimeObservation.class, this, GQAMPackage.GA_TIMED_OBS__END_OBS);
@@ -149,17 +164,18 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GQAMPackage.GA_TIMED_OBS__LAXITY:
-				return getLaxity();
-			case GQAMPackage.GA_TIMED_OBS__START_OBS:
-				return getStartObs();
-			case GQAMPackage.GA_TIMED_OBS__END_OBS:
-				return getEndObs();
+		case GQAMPackage.GA_TIMED_OBS__LAXITY:
+			return getLaxity();
+		case GQAMPackage.GA_TIMED_OBS__START_OBS:
+			return getStartObs();
+		case GQAMPackage.GA_TIMED_OBS__END_OBS:
+			return getEndObs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,23 +183,24 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GQAMPackage.GA_TIMED_OBS__LAXITY:
-				setLaxity((LaxityKind)newValue);
-				return;
-			case GQAMPackage.GA_TIMED_OBS__START_OBS:
-				getStartObs().clear();
-				getStartObs().addAll((Collection<? extends TimeObservation>)newValue);
-				return;
-			case GQAMPackage.GA_TIMED_OBS__END_OBS:
-				getEndObs().clear();
-				getEndObs().addAll((Collection<? extends TimeObservation>)newValue);
-				return;
+		case GQAMPackage.GA_TIMED_OBS__LAXITY:
+			setLaxity((LaxityKind) newValue);
+			return;
+		case GQAMPackage.GA_TIMED_OBS__START_OBS:
+			getStartObs().clear();
+			getStartObs().addAll((Collection<? extends TimeObservation>) newValue);
+			return;
+		case GQAMPackage.GA_TIMED_OBS__END_OBS:
+			getEndObs().clear();
+			getEndObs().addAll((Collection<? extends TimeObservation>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -191,20 +208,21 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_TIMED_OBS__LAXITY:
-				setLaxity(LAXITY_EDEFAULT);
-				return;
-			case GQAMPackage.GA_TIMED_OBS__START_OBS:
-				getStartObs().clear();
-				return;
-			case GQAMPackage.GA_TIMED_OBS__END_OBS:
-				getEndObs().clear();
-				return;
+		case GQAMPackage.GA_TIMED_OBS__LAXITY:
+			setLaxity(LAXITY_EDEFAULT);
+			return;
+		case GQAMPackage.GA_TIMED_OBS__START_OBS:
+			getStartObs().clear();
+			return;
+		case GQAMPackage.GA_TIMED_OBS__END_OBS:
+			getEndObs().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -212,17 +230,18 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_TIMED_OBS__LAXITY:
-				return laxity != LAXITY_EDEFAULT;
-			case GQAMPackage.GA_TIMED_OBS__START_OBS:
-				return startObs != null && !startObs.isEmpty();
-			case GQAMPackage.GA_TIMED_OBS__END_OBS:
-				return endObs != null && !endObs.isEmpty();
+		case GQAMPackage.GA_TIMED_OBS__LAXITY:
+			return laxity != LAXITY_EDEFAULT;
+		case GQAMPackage.GA_TIMED_OBS__START_OBS:
+			return startObs != null && !startObs.isEmpty();
+		case GQAMPackage.GA_TIMED_OBS__END_OBS:
+			return endObs != null && !endObs.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -230,11 +249,14 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (laxity: ");
@@ -243,4 +265,4 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 		return result.toString();
 	}
 
-} //GaTimedObsImpl
+} // GaTimedObsImpl

@@ -4,11 +4,6 @@ Export-Package: org.eclipse.papyrus.infra.viewpoints.policy,
  org.eclipse.papyrus.infra.viewpoints.style,
  org.eclipse.papyrus.infra.viewpoints.style.impl,
  org.eclipse.papyrus.infra.viewpoints.style.util
-Bundle-ActivationPolicy: lazy
-Bundle-ClassPath: .
-Bundle-Localization: plugin
-Bundle-Name: %pluginName
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.expressions,
  org.eclipse.core.runtime,
@@ -19,16 +14,23 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.gmf.runtime.diagram.ui.providers,
  org.eclipse.gmf.runtime.notation.edit,
- org.eclipse.papyrus.infra.core.log;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.core.pluginexplorer;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.emf;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.viewpoints.iso42010;bundle-version="1.0.0";visibility:=reexport,
- org.eclipse.papyrus.infra.viewpoints.configuration;bundle-version="1.0.0";visibility:=reexport,
- org.eclipse.papyrus.infra.constraints;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.widgets;bundle-version="1.0.0"
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.core.pluginexplorer;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.emf;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.viewpoints.iso42010;bundle-version="1.0.1";visibility:=reexport,
+ org.eclipse.papyrus.infra.viewpoints.configuration;bundle-version="1.0.1";visibility:=reexport,
+ org.eclipse.papyrus.infra.constraints;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.widgets;bundle-version="1.0.1"
 Bundle-Vendor: %providerName
-Bundle-Version: 1.0.0.qualifier
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 1.0.1.qualifier
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
 Bundle-ManifestVersion: 2
-Bundle-Activator: org.eclipse.papyrus.infra.viewpoints.policy.Activator
-Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy;singleton:=true
+Bundle-Activator: org.eclipse.papyrus.infra.viewpoints.policy.Activato
+ r
+Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy;singl
+ eton:=true
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
 

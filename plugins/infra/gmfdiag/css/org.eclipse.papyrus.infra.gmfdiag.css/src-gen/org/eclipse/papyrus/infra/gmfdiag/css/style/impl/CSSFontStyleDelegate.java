@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,70 +28,77 @@ public class CSSFontStyleDelegate implements CSSFontStyle {
 		this.engine = engine;
 	}
 
-	////////////////////////////////////////////////
-	//	Implements a getter for each CSS property //
-	////////////////////////////////////////////////
+	// //////////////////////////////////////////////
+	// Implements a getter for each CSS property //
+	// //////////////////////////////////////////////
 
+	@Override
 	public int getCSSFontColor() {
 		CSSValue cssValue = engine.retrievePropertyValue(fontStyle, "fontColor");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getFontStyle_FontColor().getDefaultValue();
-			return (Integer)defaultValue;
+			return (Integer) defaultValue;
 		}
-		return (Integer)engine.convert(cssValue, "GMFColor", null);
+		return (Integer) engine.convert(cssValue, "GMFColor", null);
 	}
 
+	@Override
 	public java.lang.String getCSSFontName() {
 		CSSValue cssValue = engine.retrievePropertyValue(fontStyle, "fontName");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getFontStyle_FontName().getDefaultValue();
-			return (String)defaultValue;
+			return (String) defaultValue;
 		}
-		return (String)engine.convert(cssValue, String.class, null);
+		return (String) engine.convert(cssValue, String.class, null);
 	}
 
+	@Override
 	public int getCSSFontHeight() {
 		CSSValue cssValue = engine.retrievePropertyValue(fontStyle, "fontHeight");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getFontStyle_FontHeight().getDefaultValue();
-			return (Integer)defaultValue;
+			return (Integer) defaultValue;
 		}
-		return (Integer)engine.convert(cssValue, Integer.class, null);
+		return (Integer) engine.convert(cssValue, Integer.class, null);
 	}
 
+	@Override
 	public boolean isCSSBold() {
 		CSSValue cssValue = engine.retrievePropertyValue(fontStyle, "bold");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getFontStyle_Bold().getDefaultValue();
-			return (Boolean)defaultValue;
+			return (Boolean) defaultValue;
 		}
-		return (Boolean)engine.convert(cssValue, Boolean.class, null);
+		return (Boolean) engine.convert(cssValue, Boolean.class, null);
 	}
 
+	@Override
 	public boolean isCSSItalic() {
 		CSSValue cssValue = engine.retrievePropertyValue(fontStyle, "italic");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getFontStyle_Italic().getDefaultValue();
-			return (Boolean)defaultValue;
+			return (Boolean) defaultValue;
 		}
-		return (Boolean)engine.convert(cssValue, Boolean.class, null);
+		return (Boolean) engine.convert(cssValue, Boolean.class, null);
 	}
 
+	@Override
 	public boolean isCSSUnderline() {
 		CSSValue cssValue = engine.retrievePropertyValue(fontStyle, "underline");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getFontStyle_Underline().getDefaultValue();
-			return (Boolean)defaultValue;
+			return (Boolean) defaultValue;
 		}
-		return (Boolean)engine.convert(cssValue, Boolean.class, null);
+		return (Boolean) engine.convert(cssValue, Boolean.class, null);
 	}
 
+	@Override
 	public boolean isCSSStrikeThrough() {
 		CSSValue cssValue = engine.retrievePropertyValue(fontStyle, "strikeThrough");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getFontStyle_StrikeThrough().getDefaultValue();
-			return (Boolean)defaultValue;
+			return (Boolean) defaultValue;
 		}
-		return (Boolean)engine.convert(cssValue, Boolean.class, null);
+		return (Boolean) engine.convert(cssValue, Boolean.class, null);
 	}
 }

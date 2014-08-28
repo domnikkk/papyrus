@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,7 @@
  *  Christian W. Damus (CEA) - bug 408491
  *  Christian W. Damus (CEA) - bug 432813
  *  Christian W. Damus (CEA) - bug 422257
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.utils;
 
@@ -65,25 +65,25 @@ import com.google.common.collect.Iterables;
 
 /**
  * A Helper class for manipulating EMF Objects
- * 
+ *
  * @author Camille Letavernier
  */
-//TODO : Check implementations. Most of them are old and don't always match the specification
+// TODO : Check implementations. Most of them are old and don't always match the specification
 public class EMFHelper {
 
 	/**
 	 * Returns the EClass corresponding to the given nsUri and className
-	 * 
+	 *
 	 * @param nsUri
-	 *        The NSURI of the EClass' EPackage
+	 *            The NSURI of the EClass' EPackage
 	 * @param className
-	 *        The EClass' name
+	 *            The EClass' name
 	 * @return
 	 *         The EClass instance, or null if the EClass couldn't be found
 	 */
 	public static EClass getEClass(final String nsUri, final String className) {
 		EPackage ePackage = EPackage.Registry.INSTANCE.getEPackage(nsUri);
-		if(ePackage == null) {
+		if (ePackage == null) {
 			Activator.log.warn("Cannot find an EPackage matching the nsURI " + nsUri); //$NON-NLS-1$
 			return null;
 		}
@@ -92,21 +92,21 @@ public class EMFHelper {
 
 	/**
 	 * Return the EClass corresponding to the given EPackage and className
-	 * 
+	 *
 	 * @param metamodel
-	 *        The EClass' EPackage
+	 *            The EClass' EPackage
 	 * @param className
-	 *        The EClass' name
+	 *            The EClass' name
 	 * @return
 	 *         The EClass instance, or null if the EClass couldn't be found
 	 */
 	public static EClass getEClass(final EPackage metamodel, final String className) {
 		EClassifier classifier = metamodel.getEClassifier(className);
-		if(classifier == null) {
+		if (classifier == null) {
 			Activator.log.warn("Classifier " + className + " not found in metamodel " + metamodel.getName() + " (" + metamodel.getNsURI() + ")"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 		}
-		if(classifier instanceof EClass) {
-			return (EClass)classifier;
+		if (classifier instanceof EClass) {
+			return (EClass) classifier;
 		} else {
 			Activator.log.warn("Classifier " + className + " in " + metamodel.getName() + " (" + metamodel.getNsURI() + ") is not an EClass"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 		}
@@ -116,13 +116,13 @@ public class EMFHelper {
 
 	/**
 	 * Tests if an Object is an instance of the given EClass
-	 * 
+	 *
 	 * @param element
-	 *        The EObject to test
+	 *            The EObject to test
 	 * @param className
-	 *        The name of the EClass
+	 *            The name of the EClass
 	 * @param metamodel
-	 *        The EPackage owning the EClass
+	 *            The EPackage owning the EClass
 	 * @return
 	 *         True if the EObject is an instance of the EClass, or of one of the EClass' subtypes
 	 */
@@ -130,7 +130,7 @@ public class EMFHelper {
 
 		EClassifier theClass = metamodel.getEClassifier(className);
 
-		if(theClass == null) {
+		if (theClass == null) {
 			String message = String.format("Class %s not found in  metamodel: %s (%s)", className, metamodel.getName(), metamodel.getNsURI());//$NON-NLS-1$
 			Activator.log.warn(message);
 			return false;
@@ -144,25 +144,25 @@ public class EMFHelper {
 	 * Tests if an Object is an instance of the given EClass
 	 *
 	 * @param element
-	 *        The EObject to test
+	 *            The EObject to test
 	 * @param className
-	 *        The name of the EClass
+	 *            The name of the EClass
 	 * @param metamodel
-	 *        The URI of the EPackage owning the EClass
+	 *            The URI of the EPackage owning the EClass
 	 * @return
 	 *         True if the EObject is an instance of the EClass, or of one of the EClass' subtypes
 	 */
 	public static boolean isInstance(EObject selectedItem, String className, String nsUri) {
 		EClass actualEClass = selectedItem.eClass();
 
-		//Exact match
-		if(isExactMatch(actualEClass, className, nsUri)) {
+		// Exact match
+		if (isExactMatch(actualEClass, className, nsUri)) {
 			return true;
 		}
 
 		List<EClass> allSuperTypes = actualEClass.getEAllSuperTypes();
-		for(EClass eClass : allSuperTypes) {
-			if(isExactMatch(eClass, className, nsUri)) {
+		for (EClass eClass : allSuperTypes) {
+			if (isExactMatch(eClass, className, nsUri)) {
 				return true;
 			}
 		}
@@ -174,7 +174,7 @@ public class EMFHelper {
 	 * Tests whether the given EClass has the given className and belongs to the EPackage represented by nsUri
 	 *
 	 * @param eClass
-	 *        The EClass to test
+	 *            The EClass to test
 	 * @param className
 	 *
 	 * @param nsUri
@@ -188,24 +188,24 @@ public class EMFHelper {
 	/**
 	 * Tests if the given eClass is a Subclass of fromClass
 	 * Also returns true when eClass == fromClass
-	 * 
+	 *
 	 * @param eClass
 	 * @param fromClass
 	 * @return
 	 *         true if eClass is a subclass of fromClass
 	 */
 	public static boolean isSubclass(final EClass eClass, final EClass fromClass) {
-		//Everything is an EObject
-		if(eClass != null && fromClass == EcorePackage.eINSTANCE.getEObject()) {
+		// Everything is an EObject
+		if (eClass != null && fromClass == EcorePackage.eINSTANCE.getEObject()) {
 			return true;
 		}
 
-		if(eClass == fromClass) {
+		if (eClass == fromClass) {
 			return true;
 		}
 
 		List<EClass> superTypes = eClass.getEAllSuperTypes();
-		if(superTypes.contains(fromClass)) {
+		if (superTypes.contains(fromClass)) {
 			return true;
 		}
 
@@ -216,27 +216,27 @@ public class EMFHelper {
 	 * Returns the EObject corresponding to the input object
 	 * Tests if the input is an EObject, or if it is Adaptable
 	 * to an EObject
-	 * 
+	 *
 	 * @param source
 	 * @return An EObject corresponding to the input source, or null
 	 *         if the EObject could not be resolved
 	 */
 	public static EObject getEObject(final Object source) {
 
-		//Support for EMF 0.2 CustomizedTree: The TreeElements are EObjects, and do not implement IAdatapble.
-		//FIXME: Use an AdapterFactory instead, to remove the dependency to EMF Facet 0.2
+		// Support for EMF 0.2 CustomizedTree: The TreeElements are EObjects, and do not implement IAdatapble.
+		// FIXME: Use an AdapterFactory instead, to remove the dependency to EMF Facet 0.2
 		Object resolved = CustomizedContentProviderUtils.resolve(source);
-		if(resolved != source && isEMFModelElement(resolved)) {
-			return (EObject)resolved;
+		if (resolved != source && isEMFModelElement(resolved)) {
+			return (EObject) resolved;
 		}
 
-		//General case
-		if(isEMFModelElement(source)) {
-			return (EObject)source;
-		} else if(source instanceof IAdaptable) {
-			EObject eObject = (EObject)((IAdaptable)source).getAdapter(EObject.class);
-			if(eObject == null) { //EMF Facet 0.1
-				eObject = (EObject)((IAdaptable)source).getAdapter(EReference.class);
+		// General case
+		if (isEMFModelElement(source)) {
+			return (EObject) source;
+		} else if (source instanceof IAdaptable) {
+			EObject eObject = (EObject) ((IAdaptable) source).getAdapter(EObject.class);
+			if (eObject == null) { // EMF Facet 0.1
+				eObject = (EObject) ((IAdaptable) source).getAdapter(EReference.class);
 			}
 			return asEMFModelElement(eObject); // in case the adapter is a CDOResource
 		}
@@ -251,11 +251,11 @@ public class EMFHelper {
 	 * where objects are {@code EObject}s but shouldn't be treated as
 	 * "model content". But, a minimum requirement is that the {@code object} is
 	 * an {@link EObject}.
-	 * 
+	 *
 	 * @param object
-	 *        an object
+	 *            an object
 	 * @return whether it is "model content"
-	 * 
+	 *
 	 * @see EMFHelper#asEMFModelElement(Object)
 	 */
 	public static boolean isEMFModelElement(Object object) {
@@ -264,22 +264,22 @@ public class EMFHelper {
 
 	/**
 	 * Casts an {@code object} as an EMF model element, if appropriate.
-	 * 
+	 *
 	 * @param object
-	 *        an object
+	 *            an object
 	 * @return the object as an EMF model element, or {@code null} if it is not
 	 *         an EMF model element
-	 * 
+	 *
 	 * @see #isEMFModelElement(Object)
 	 */
 	public static EObject asEMFModelElement(Object object) {
-		return isEMFModelElement(object) ? (EObject)object : null;
+		return isEMFModelElement(object) ? (EObject) object : null;
 	}
 
 	/**
 	 * Retrieve the EditingDomain for the given source object. The object is first
 	 * resolved to an EObject through #getEObject when possible.
-	 * 
+	 *
 	 * @param source
 	 * @return
 	 *         The source object's editing domain, or null if it couldn't be found
@@ -290,18 +290,18 @@ public class EMFHelper {
 
 	/**
 	 * Retrieve the EditingDomain for the given source EObject
-	 * 
+	 *
 	 * @param source
 	 * @return
 	 *         The source eObject's editing domain, or null if it couldn't be found
 	 */
 	public static EditingDomain resolveEditingDomain(final EObject source) {
 		EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(source);
-		if(domain == null) {
+		if (domain == null) {
 			try {
 				domain = ServiceUtilsForActionHandlers.getInstance().getTransactionalEditingDomain();
 			} catch (ServiceException e) {
-				//Ignore: We cannot find the domain
+				// Ignore: We cannot find the domain
 			}
 		}
 		return domain;
@@ -310,10 +310,10 @@ public class EMFHelper {
 	/**
 	 * Return the eClassifier' qualified name. The qualified name is obtained by the concatenation
 	 * of its package hierarchy with the class name, separated by the given separator
-	 * 
+	 *
 	 * @param eClassifier
 	 * @param separator
-	 *        The separator used between each package name
+	 *            The separator used between each package name
 	 * @return
 	 *         The EClassifier' qualified name
 	 */
@@ -324,15 +324,15 @@ public class EMFHelper {
 	/**
 	 * Return the ePackage's qualified name. The qualified name is obtained by the concatenation
 	 * of its superPackage hierarchy with the ePackage name, separated by the given separator
-	 * 
+	 *
 	 * @param ePackage
 	 * @param separator
-	 *        The separator used between each package name
+	 *            The separator used between each package name
 	 * @return
 	 *         The EPackage's qualified name
 	 */
 	public static String getQualifiedName(final EPackage ePackage, final String separator) {
-		if(ePackage.getESuperPackage() == null) {
+		if (ePackage.getESuperPackage() == null) {
 			return ePackage.getName();
 		}
 		return getQualifiedName(ePackage.getESuperPackage(), separator) + separator + ePackage.getName();
@@ -342,27 +342,27 @@ public class EMFHelper {
 	/**
 	 * Loads and returns the first EObject at the given URI.
 	 * The EObject is loaded in the given resourceSet.
-	 * 
+	 *
 	 * @param resourceSet
-	 *        The ResourceSet in which the model will be loaded
+	 *            The ResourceSet in which the model will be loaded
 	 * @param uri
-	 *        The URI describing the location of the model to load
+	 *            The URI describing the location of the model to load
 	 * @return
 	 *         The first EObject located at the given URI
 	 * @throws IOException
-	 *         When the URI cannot be loaded
+	 *             When the URI cannot be loaded
 	 */
 	public static EObject loadEMFModel(ResourceSet resourceSet, final URI uri) throws IOException {
 		assert resourceSet != null : "null resourceSet"; //$NON-NLS-1$
-		if(resourceSet == null) {
+		if (resourceSet == null) {
 			Activator.log.warn("Created a new resourceSet to load an EMF model in " + Activator.log.getCallerMethod()); //$NON-NLS-1$
 			resourceSet = new ResourceSetImpl();
 		}
 
 		try {
 			Resource resource = resourceSet.getResource(uri, true);
-			if(resource != null) {
-				if(!resource.getContents().isEmpty()) {
+			if (resource != null) {
+				if (!resource.getContents().isEmpty()) {
 					return resource.getContents().get(0);
 				}
 			}
@@ -384,14 +384,14 @@ public class EMFHelper {
 	 * <li>removing all adapters from all resources</li>
 	 * <li>removing all adapters from the resource set</li>
 	 * </ul>
-	 * 
+	 *
 	 * @param resourceSet
-	 *        the resource set to purge
+	 *            the resource set to purge
 	 */
 	public static void unload(ResourceSet resourceSet) {
 		List<Resource> resources = ImmutableList.copyOf(resourceSet.getResources());
 		resourceSet.getResources().clear();
-		for(Resource next : resources) {
+		for (Resource next : resources) {
 			next.unload();
 			next.eAdapters().clear();
 		}
@@ -401,7 +401,7 @@ public class EMFHelper {
 		// want to leak in BasicExtendedMetaData instances attached to static EPackages)
 		// Works around EMF bug 433108
 		EPackage.Registry packageRegistry = resourceSet.getPackageRegistry();
-		if(packageRegistry != null) {
+		if (packageRegistry != null) {
 			packageRegistry.clear();
 		}
 	}
@@ -409,17 +409,17 @@ public class EMFHelper {
 	/**
 	 * Return the root package containing the given package, or the package
 	 * itself if it is already the root
-	 * 
+	 *
 	 * @param ePackage
 	 * @return
 	 *         The Root package
 	 */
 	public static EPackage getRootPackage(final EPackage ePackage) {
-		if(ePackage == null) {
+		if (ePackage == null) {
 			return null;
 		}
 
-		if(ePackage.getESuperPackage() == null) {
+		if (ePackage.getESuperPackage() == null) {
 			return ePackage;
 		}
 		return getRootPackage(ePackage.getESuperPackage());
@@ -429,16 +429,16 @@ public class EMFHelper {
 	/**
 	 * Return the list of EClasses that are subtypes
 	 * of the given EClass
-	 * 
+	 *
 	 * @param type
 	 * @param concreteClassesOnly
-	 *        If true, only Concrete EClasses will be returned. Abstract and Interface EClasses will be filtered
+	 *            If true, only Concrete EClasses will be returned. Abstract and Interface EClasses will be filtered
 	 * @return
 	 *         The list of EClasses implementing or extending the given EClass
 	 */
 	public static List<EClass> getSubclassesOf(final EClass type, final boolean concreteClassesOnly) {
 		Set<EClass> result = new LinkedHashSet<EClass>();
-		if(!concreteClassesOnly || (!type.isAbstract() && !type.isInterface())) {
+		if (!concreteClassesOnly || (!type.isAbstract() && !type.isInterface())) {
 			result.add(type);
 		}
 
@@ -450,22 +450,22 @@ public class EMFHelper {
 	/**
 	 * Return the list of EClasses that are sub types
 	 * of the given EClass
-	 * 
+	 *
 	 * @param type
 	 * @param concreteClassesOnly
-	 *        If true, only Concrete EClasses will be returned. Abstract and Interface EClasses will be filtered
+	 *            If true, only Concrete EClasses will be returned. Abstract and Interface EClasses will be filtered
 	 * @param packagesToBrowse
-	 *        The EPackages in which the EClasses should be retrieved
+	 *            The EPackages in which the EClasses should be retrieved
 	 * @return
 	 *         The list of EClasses implementing or extending the given EClass
 	 */
 	public static List<EClass> getSubclassesOf(final EClass type, final boolean concreteClassesOnly, Collection<EPackage> packagesToBrowse) {
 		Set<EClass> result = new LinkedHashSet<EClass>();
-		if(!concreteClassesOnly || (!type.isAbstract() && !type.isInterface())) {
+		if (!concreteClassesOnly || (!type.isAbstract() && !type.isInterface())) {
 			result.add(type);
 		}
 
-		for(EPackage ePackage : packagesToBrowse) {
+		for (EPackage ePackage : packagesToBrowse) {
 			getSubclassesOf(type, ePackage, result, concreteClassesOnly);
 		}
 
@@ -474,28 +474,28 @@ public class EMFHelper {
 
 	/**
 	 * Return the list of EClasses that are sub types of the given EClass
-	 * 
+	 *
 	 * @param type
 	 * @param concreteClassesOnly
-	 *        If true, only Concrete EClasses will be returned. Abstract and Interface EClasses will be filtered
+	 *            If true, only Concrete EClasses will be returned. Abstract and Interface EClasses will be filtered
 	 * @param browseAllRegisteredPackages
-	 *        If true, all registered EPackages will be navigated to retrieve the matching EClasses. Otherwise,
-	 *        only the current EPackage will be used.
+	 *            If true, all registered EPackages will be navigated to retrieve the matching EClasses. Otherwise,
+	 *            only the current EPackage will be used.
 	 * @return
 	 *         The list of EClasses implementing or extending the given EClass
 	 */
 	public static List<EClass> getSubclassesOf(final EClass type, final boolean concreteClassesOnly, final boolean browseAllRegisteredPackages) {
-		//If the current package is a dynamic package, it may not be registered (?). Add it directly
+		// If the current package is a dynamic package, it may not be registered (?). Add it directly
 		EPackage currentPackage = getRootPackage(type.getEPackage());
 
 		Set<EPackage> allPackages = new LinkedHashSet<EPackage>();
 		allPackages.add(currentPackage);
 
-		if(browseAllRegisteredPackages) {
-			//FIXME // WARNING: This loop will load all EPackages. The first call is expensive.
+		if (browseAllRegisteredPackages) {
+			// FIXME // WARNING: This loop will load all EPackages. The first call is expensive.
 			Set<String> allUris = new HashSet<String>(EPackage.Registry.INSTANCE.keySet());
 
-			for(String nsURI : allUris) {
+			for (String nsURI : allUris) {
 				allPackages.add(EPackage.Registry.INSTANCE.getEPackage(nsURI));
 			}
 		}
@@ -504,18 +504,18 @@ public class EMFHelper {
 	}
 
 	private static void getSubclassesOf(final EClass type, final EPackage fromPackage, final Set<EClass> result, final boolean concreteClassesOnly) {
-		for(EClassifier classifier : fromPackage.getEClassifiers()) {
-			if(classifier instanceof EClass) {
-				EClass eClass = (EClass)classifier;
-				if(eClass.getEAllSuperTypes().contains(type)) {
-					if(!concreteClassesOnly || (!eClass.isAbstract() && !eClass.isInterface())) {
+		for (EClassifier classifier : fromPackage.getEClassifiers()) {
+			if (classifier instanceof EClass) {
+				EClass eClass = (EClass) classifier;
+				if (eClass.getEAllSuperTypes().contains(type)) {
+					if (!concreteClassesOnly || (!eClass.isAbstract() && !eClass.isInterface())) {
 						result.add(eClass);
 					}
 				}
 			}
 		}
 
-		for(EPackage subPackage : fromPackage.getESubpackages()) {
+		for (EPackage subPackage : fromPackage.getESubpackages()) {
 			getSubclassesOf(type, subPackage, result, concreteClassesOnly);
 		}
 	}
@@ -523,7 +523,7 @@ public class EMFHelper {
 	/**
 	 * Tests if an EObject is read only on any {@linkplain ReadOnlyAxis axis}.
 	 * Delegates to the EObject's editing domain if it can be found
-	 * 
+	 *
 	 * @param eObject
 	 * @return
 	 *         True if the EObject is read only on any axis
@@ -536,9 +536,9 @@ public class EMFHelper {
 	/**
 	 * Tests if an EObject is read only on any of the specified {@code axes}.
 	 * Delegates to the EObject's editing domain if it can be found
-	 * 
+	 *
 	 * @param axes
-	 *        a set if orthogonal axes of read-only-ness to consider. May be empty, but that would not be especially useful
+	 *            a set if orthogonal axes of read-only-ness to consider. May be empty, but that would not be especially useful
 	 * @param eObject
 	 * @return
 	 *         True if the EObject is read only on any of the given {@code axes}
@@ -551,7 +551,7 @@ public class EMFHelper {
 	/**
 	 * Tests if an EObject is read only on any {@linkplain ReadOnlyAxis axis}.
 	 * Delegates to the given editing domain if it isn't null
-	 * 
+	 *
 	 * @param eObject
 	 * @param domain
 	 * @return
@@ -564,26 +564,26 @@ public class EMFHelper {
 	/**
 	 * Tests if an EObject is read only on any of the specified {@code axes}.
 	 * Delegates to the given editing domain if it isn't null
-	 * 
+	 *
 	 * @param axes
-	 *        a set if orthogonal axes of read-only-ness to consider. May be empty, but that would not be especially useful
+	 *            a set if orthogonal axes of read-only-ness to consider. May be empty, but that would not be especially useful
 	 * @param eObject
-	 * 
+	 *
 	 * @param domain
 	 * @return
 	 *         True if the EObject is read only
 	 */
 	public static boolean isReadOnly(Set<ReadOnlyAxis> axes, final EObject eObject, final EditingDomain domain) {
-		if(domain != null) {
+		if (domain != null) {
 			Object handler = PlatformHelper.getAdapter(domain, IReadOnlyHandler.class);
-			if(handler instanceof IReadOnlyHandler2) {
-				return ((IReadOnlyHandler2)handler).isReadOnly(axes, eObject).get();
-			} else if(handler instanceof IReadOnlyHandler) {
+			if (handler instanceof IReadOnlyHandler2) {
+				return ((IReadOnlyHandler2) handler).isReadOnly(axes, eObject).get();
+			} else if (handler instanceof IReadOnlyHandler) {
 				// these handlers only deal with permission-based read-only-ness
-				return axes.contains(ReadOnlyAxis.PERMISSION) && ((IReadOnlyHandler)handler).isReadOnly(eObject).get();
+				return axes.contains(ReadOnlyAxis.PERMISSION) && ((IReadOnlyHandler) handler).isReadOnly(eObject).get();
 			}
 
-			if(eObject.eResource() != null) {
+			if (eObject.eResource() != null) {
 				return domain.isReadOnly(eObject.eResource());
 			}
 		}
@@ -593,7 +593,7 @@ public class EMFHelper {
 	/**
 	 * Tests if the Resource is read only on any {@linkplain ReadOnlyAxis axis}.
 	 * Delegates to the given editing domain if it isn't null
-	 * 
+	 *
 	 * @param resource
 	 * @param domain
 	 * @return
@@ -606,26 +606,26 @@ public class EMFHelper {
 	/**
 	 * Tests if the Resource is read only on any of the given {@code axes}.
 	 * Delegates to the given editing domain if it isn't null
-	 * 
+	 *
 	 * @param axes
-	 *        a set if orthogonal axes of read-only-ness to consider. May be empty, but that would not be especially useful
+	 *            a set if orthogonal axes of read-only-ness to consider. May be empty, but that would not be especially useful
 	 * @param resource
 	 * @param domain
 	 * @return
 	 *         True if the Resource is read only on any of the given {@code axes}
 	 */
 	public static boolean isReadOnly(Set<ReadOnlyAxis> axes, final Resource resource, final EditingDomain domain) {
-		if(resource == null) {
+		if (resource == null) {
 			return false;
 		}
 
-		if(domain != null && resource.getURI() != null) {
+		if (domain != null && resource.getURI() != null) {
 			Object handler = PlatformHelper.getAdapter(domain, IReadOnlyHandler.class);
-			if(handler instanceof IReadOnlyHandler2) {
-				return ((IReadOnlyHandler2)handler).anyReadOnly(axes, new URI[]{ resource.getURI() }).get();
-			} else if(handler instanceof IReadOnlyHandler) {
+			if (handler instanceof IReadOnlyHandler2) {
+				return ((IReadOnlyHandler2) handler).anyReadOnly(axes, new URI[] { resource.getURI() }).get();
+			} else if (handler instanceof IReadOnlyHandler) {
 				// these handlers only deal with permission-based read-only-ness
-				return axes.contains(ReadOnlyAxis.PERMISSION) && ((IReadOnlyHandler)handler).anyReadOnly(new URI[]{ resource.getURI() }).get();
+				return axes.contains(ReadOnlyAxis.PERMISSION) && ((IReadOnlyHandler) handler).anyReadOnly(new URI[] { resource.getURI() }).get();
 			}
 			return domain.isReadOnly(resource);
 		}
@@ -633,12 +633,12 @@ public class EMFHelper {
 		// no editing domain : use file system attribute
 		ResourceSet resourceSet = resource.getResourceSet();
 
-		if(resourceSet == null) {
+		if (resourceSet == null) {
 			return false;
 		}
 
 		Map<String, ?> attributes = resourceSet.getURIConverter().getAttributes(resource.getURI(), null);
-		Boolean readOnly = (Boolean)attributes.get(URIConverter.ATTRIBUTE_READ_ONLY);
+		Boolean readOnly = (Boolean) attributes.get(URIConverter.ATTRIBUTE_READ_ONLY);
 
 		return readOnly == null ? false : readOnly;
 	}
@@ -646,11 +646,11 @@ public class EMFHelper {
 	/**
 	 * Tests if an object that is read only could possibly be made writable by some means (file system attributes, team provider hook, database
 	 * permissions, etc.)
-	 * 
+	 *
 	 * @param eObject
-	 *        an object that is assumed to be read-only
+	 *            an object that is assumed to be read-only
 	 * @param domain
-	 *        the editing domain context of the {@link eObject}
+	 *            the editing domain context of the {@link eObject}
 	 * @return
 	 *         whether the {@code eObject} could be made writable
 	 */
@@ -661,21 +661,21 @@ public class EMFHelper {
 	/**
 	 * Tests if an object that is read only could possibly be made writable according to any of
 	 * the specified {@code axes} of read-only-ness.
-	 * 
+	 *
 	 * @param axes
-	 *        a set if orthogonal axes of read-only-ness to consider. May be empty, but that would not be especially useful
+	 *            a set if orthogonal axes of read-only-ness to consider. May be empty, but that would not be especially useful
 	 * @param eObject
-	 *        an object that is assumed to be read-only
+	 *            an object that is assumed to be read-only
 	 * @param domain
-	 *        the editing domain context of the {@link eObject}
+	 *            the editing domain context of the {@link eObject}
 	 * @return
 	 *         whether the {@code eObject} could be made writable
 	 */
 	public static boolean canMakeWritable(Set<ReadOnlyAxis> axes, final EObject eObject, final EditingDomain domain) {
-		if(domain != null) {
+		if (domain != null) {
 			Object handler = PlatformHelper.getAdapter(domain, IReadOnlyHandler.class);
-			if(handler instanceof IReadOnlyHandler2) {
-				return ((IReadOnlyHandler2)handler).canMakeWritable(axes, eObject).or(false);
+			if (handler instanceof IReadOnlyHandler2) {
+				return ((IReadOnlyHandler2) handler).canMakeWritable(axes, eObject).or(false);
 			}
 		}
 		return false;
@@ -684,11 +684,11 @@ public class EMFHelper {
 	/**
 	 * Tests if a resource that is read only could possibly be made writable by some means (file system attributes, team provider hook, database
 	 * permissions, etc.)
-	 * 
+	 *
 	 * @param resource
-	 *        a resource that is assumed to be read-only
+	 *            a resource that is assumed to be read-only
 	 * @param domain
-	 *        the editing domain context of the {@link resource}
+	 *            the editing domain context of the {@link resource}
 	 * @return
 	 *         whether the {@code resource} could be made writable
 	 */
@@ -699,21 +699,21 @@ public class EMFHelper {
 	/**
 	 * Tests if a resource that is read only could possibly be made writable according to any of
 	 * the specified {@code axes} of read-only-ness.
-	 * 
+	 *
 	 * @param axes
-	 *        a set if orthogonal axes of read-only-ness to consider. May be empty, but that would not be especially useful
+	 *            a set if orthogonal axes of read-only-ness to consider. May be empty, but that would not be especially useful
 	 * @param resource
-	 *        a resource that is assumed to be read-only
+	 *            a resource that is assumed to be read-only
 	 * @param domain
-	 *        the editing domain context of the {@link resource}
+	 *            the editing domain context of the {@link resource}
 	 * @return
 	 *         whether the {@code resource} could be made writable
 	 */
 	public static boolean canMakeWritable(Set<ReadOnlyAxis> axes, final Resource resource, final EditingDomain domain) {
-		if(domain != null) {
+		if (domain != null) {
 			Object handler = PlatformHelper.getAdapter(domain, IReadOnlyHandler.class);
-			if(handler instanceof IReadOnlyHandler2) {
-				return ((IReadOnlyHandler2)handler).canMakeWritable(axes, new URI[]{ resource.getURI() }).or(false);
+			if (handler instanceof IReadOnlyHandler2) {
+				return ((IReadOnlyHandler2) handler).canMakeWritable(axes, new URI[] { resource.getURI() }).or(false);
 			}
 		}
 		return false;
@@ -722,48 +722,48 @@ public class EMFHelper {
 	/**
 	 * Tests if the given EStructuralFeature is required (ie. should always
 	 * have a value)
-	 * 
+	 *
 	 * A feature is required if at least of one the following conditions if
 	 * true :
-	 * 
+	 *
 	 * - It has a defaultValue
 	 * - Its lowerBound is at least 1
 	 * - It is an enumeration (Enumerations always have a default value)
 	 * - It is a Java primitive type, and is not marked as Unsettable
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return
 	 *         true if the feature is required, false otherwise
 	 */
 	public static boolean isRequired(final EStructuralFeature feature) {
-		//EEnums are always required, as an EEnum always has a default value
-		if(feature.getEType() instanceof EEnum) {
+		// EEnums are always required, as an EEnum always has a default value
+		if (feature.getEType() instanceof EEnum) {
 			return true;
 		}
 
-		//At least one value means it is required
-		if(feature.getLowerBound() >= 1) {
+		// At least one value means it is required
+		if (feature.getLowerBound() >= 1) {
 			return true;
 		}
 
-		//Java primitive types cannot have a null value
-		//if the feature is not specifically marked as unsettable, then it is required
-		if(feature.getEType().getInstanceClass().isPrimitive() && !feature.isUnsettable()) {
+		// Java primitive types cannot have a null value
+		// if the feature is not specifically marked as unsettable, then it is required
+		if (feature.getEType().getInstanceClass().isPrimitive() && !feature.isUnsettable()) {
 			return true;
 		}
 
-		//If there is a default value, there is always a value
-		if(feature.getDefaultValueLiteral() != null) {
+		// If there is a default value, there is always a value
+		if (feature.getDefaultValueLiteral() != null) {
 			return true;
 		}
 
-		return false; //The property if not required
+		return false; // The property if not required
 	}
 
 	/**
 	 * Returns all objects of type T contained in the resource
-	 * 
+	 *
 	 * @param resource
 	 * @param type
 	 * @return
@@ -772,9 +772,9 @@ public class EMFHelper {
 		TreeIterator<EObject> iterator = resource.getAllContents();
 		Set<T> result = new LinkedHashSet<T>();
 
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			EObject element = iterator.next();
-			if(type.isInstance(element)) {
+			if (type.isInstance(element)) {
 				result.add(type.cast(element));
 			}
 		}
@@ -784,17 +784,17 @@ public class EMFHelper {
 
 	/**
 	 * Returns all the EPackages and nested EPackages contained in this resource
-	 * 
+	 *
 	 * @param resource
 	 * @return
 	 */
 	public static Set<EPackage> getAllEPackages(final Resource resource) {
 		Set<EPackage> result = new LinkedHashSet<EPackage>();
 
-		for(EObject rootElement : resource.getContents()) {
-			if(rootElement instanceof EPackage) {
-				result.add((EPackage)rootElement);
-				result.addAll(getAllNestedPackages((EPackage)rootElement));
+		for (EObject rootElement : resource.getContents()) {
+			if (rootElement instanceof EPackage) {
+				result.add((EPackage) rootElement);
+				result.addAll(getAllNestedPackages((EPackage) rootElement));
 			}
 		}
 
@@ -804,14 +804,14 @@ public class EMFHelper {
 	/**
 	 * Returns all packages nested in the given EPackage (recursively). Does not
 	 * include the base EPackage.
-	 * 
+	 *
 	 * @param basePackage
 	 * @return
 	 */
 	public static Set<EPackage> getAllNestedPackages(EPackage basePackage) {
 		Set<EPackage> result = new LinkedHashSet<EPackage>();
 
-		for(EPackage nestedPackage : basePackage.getESubpackages()) {
+		for (EPackage nestedPackage : basePackage.getESubpackages()) {
 			result.add(nestedPackage);
 			result.addAll(getAllNestedPackages(nestedPackage));
 		}
@@ -820,18 +820,18 @@ public class EMFHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param resource
-	 *        a resource
-	 * 
+	 *            a resource
+	 *
 	 * @return
 	 *         the list of the metamodels known by the resource
 	 */
 	public static Set<EPackage> getMetamodels(final Resource resource) {
 		Set<EPackage> metamodels = new HashSet<EPackage>();
-		if(resource != null) {
+		if (resource != null) {
 			final List<EObject> contents = new ArrayList<EObject>(resource.getContents());
-			for(final EObject current : contents) {
+			for (final EObject current : contents) {
 				metamodels.add(current.eClass().getEPackage());
 			}
 		}
@@ -839,17 +839,17 @@ public class EMFHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * Returns the XMI ID of the given {@link EObject} or <code>null</code> if it cannot be resolved.
-	 * 
+	 *
 	 * @param object
-	 *        Object which we seek the XMI ID of.
+	 *            Object which we seek the XMI ID of.
 	 * @return <code>object</code>'s XMI ID, <code>null</code> if not applicable.
 	 */
 	public static final String getXMIID(final EObject object) {
 		String objectID = null;
-		if(object != null && object.eResource() instanceof XMIResource) {
-			objectID = ((XMIResource)object.eResource()).getID(object);
+		if (object != null && object.eResource() instanceof XMIResource) {
+			objectID = ((XMIResource) object.eResource()).getID(object);
 		}
 		return objectID;
 	}
@@ -858,10 +858,10 @@ public class EMFHelper {
 
 	/**
 	 * Gets the usages.
-	 * 
+	 *
 	 * @param source
-	 *        the source
-	 * 
+	 *            the source
+	 *
 	 * @return the usages or null if there is no usages
 	 */
 	public static Collection<Setting> getUsages(EObject source) {
@@ -876,11 +876,11 @@ public class EMFHelper {
 	 * Test if the used element is referenced by other elements than the known
 	 * referencer (except its container). It ignores references from an other meta-model.
 	 * </pre>
-	 * 
+	 *
 	 * @param usedObject
-	 *        the used object
+	 *            the used object
 	 * @param knownReferencer
-	 *        the known referencer
+	 *            the known referencer
 	 * @return true if the known referencer is the only referencer.
 	 */
 	public static boolean isOnlyUsage(EObject usedObject, EObject knownReferencer) {
@@ -889,9 +889,9 @@ public class EMFHelper {
 
 		// Retrieve the list of elements referencing the usedObject.
 		Set<EObject> crossReferences = new HashSet<EObject>();
-		for(Setting setting : getUsages(usedObject)) {
+		for (Setting setting : getUsages(usedObject)) {
 			EObject eObj = setting.getEObject();
-			if(eObj.eClass().getEPackage().equals(mmPackage)) {
+			if (eObj.eClass().getEPackage().equals(mmPackage)) {
 				crossReferences.add(eObj);
 			}
 		}
@@ -903,7 +903,7 @@ public class EMFHelper {
 
 		// If no referencer remains in the list, the known element is the only
 		// usage.
-		if(crossReferences.isEmpty()) {
+		if (crossReferences.isEmpty()) {
 			isUsed = true;
 		}
 
@@ -911,32 +911,32 @@ public class EMFHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param superType
-	 *        an eclassifier
+	 *            an eclassifier
 	 * @param subType
-	 *        another eClassifier
+	 *            another eClassifier
 	 * @return
 	 *         <code>true</code> if the 2nd {@link EClassifier} is a subtype of the first one
 	 */
 	public static boolean isSuperType(final EClassifier superType, final EClassifier subType) {
-		if(superType == subType) {
+		if (superType == subType) {
 			return true;
 		}
 
-		if(superType instanceof EClass && subType instanceof EClass) {
+		if (superType instanceof EClass && subType instanceof EClass) {
 			// special case because isSuperTypeOf doesn't handle it
-			if(superType == EcorePackage.eINSTANCE.getEObject()) {
+			if (superType == EcorePackage.eINSTANCE.getEObject()) {
 				return true;
 			}
 
-			EClass superTypeEClass = (EClass)superType;
-			EClass subTypeEClass = (EClass)subType;
+			EClass superTypeEClass = (EClass) superType;
+			EClass subTypeEClass = (EClass) subType;
 			return superTypeEClass.isSuperTypeOf(subTypeEClass);
 		}
 
-		//manage EDtataType
-		if(superType == EcorePackage.eINSTANCE.getEDataType() && subType instanceof EDataType) {
+		// manage EDtataType
+		if (superType == EcorePackage.eINSTANCE.getEDataType() && subType instanceof EDataType) {
 			return true;
 		}
 
@@ -945,13 +945,13 @@ public class EMFHelper {
 
 	/**
 	 * Computes the path from the root EObject to the given element, as a List of EObjects
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	public static List<EObject> getContainmentPath(EObject element) {
 		List<EObject> result;
-		if(element.eContainer() == null) {
+		if (element.eContainer() == null) {
 			result = new LinkedList<EObject>();
 			result.add(element);
 			return result;
@@ -977,14 +977,14 @@ public class EMFHelper {
 		ResourceSet sourceResourceSet = getResourceSet(element);
 		ResourceSet loadingContext = getResourceSet(contextElement);
 
-		if(sourceResourceSet == loadingContext || loadingContext == null) {
+		if (sourceResourceSet == loadingContext || loadingContext == null) {
 			return element;
 		}
 
 		URI sourceURI = EcoreUtil.getURI(element);
 		EObject result = loadingContext.getEObject(sourceURI, true);
 
-		return (T)result;
+		return (T) result;
 	}
 
 	/**
@@ -998,18 +998,17 @@ public class EMFHelper {
 	}
 
 	/**
-	 * Best-effort loads a resource, returning the first root element of the requested {@code type}. Unlike the
-	 * {@link #loadChecked(ResourceSet, URI, Class) loadChecked} method, this will never throw an exception.
-	 * 
+	 * Best-effort loads a resource, returning the first root element of the requested {@code type}. Unlike the {@link #loadChecked(ResourceSet, URI, Class) loadChecked} method, this will never throw an exception.
+	 *
 	 * @param rset
-	 *        a resource set in which to load the resource
+	 *            a resource set in which to load the resource
 	 * @param uri
-	 *        the URI of the resource to load
+	 *            the URI of the resource to load
 	 * @param type
-	 *        the type of root element to retrieve
-	 * 
+	 *            the type of root element to retrieve
+	 *
 	 * @return the requested root element, or {@code null} if the resource does not contain such an element or could not be loaded
-	 * 
+	 *
 	 * @see #loadChecked(ResourceSet, URI, Class)
 	 */
 	public static <T extends EObject> T load(ResourceSet rset, URI uri, Class<T> type) {
@@ -1022,7 +1021,7 @@ public class EMFHelper {
 
 			// Maybe it was partially loaded? If so, try again
 			Resource res = rset.getResource(uri, false);
-			if((res != null) && res.isLoaded()) {
+			if ((res != null) && res.isLoaded()) {
 				result = Iterables.getFirst(Iterables.filter(res.getContents(), type), null);
 			}
 		}
@@ -1032,29 +1031,29 @@ public class EMFHelper {
 
 	/**
 	 * Best-effort loads a resource, returning the first root element of the requested {@code type}.
-	 * 
+	 *
 	 * @param rset
-	 *        a resource set in which to load the resource
+	 *            a resource set in which to load the resource
 	 * @param uri
-	 *        the URI of the resource to load
+	 *            the URI of the resource to load
 	 * @param type
-	 *        the type of root element to retrieve
-	 * 
+	 *            the type of root element to retrieve
+	 *
 	 * @return the requested root element, or {@code null} if the resource does not contain such an element or could not be loaded
 	 * @throws IOException
-	 *         on an I/O problem in loading the resource
+	 *             on an I/O problem in loading the resource
 	 * @throw RuntimeException on any other unforeseen (usually programming error) problem
-	 * 
+	 *
 	 * @see #load(ResourceSet, URI, Class)
 	 */
 	public static <T extends EObject> T loadChecked(ResourceSet rset, URI uri, Class<T> type) throws IOException {
 		try {
 			return Iterables.getFirst(Iterables.filter(rset.getResource(uri, true).getContents(), type), null);
 		} catch (WrappedException e) {
-			if(e.exception() instanceof IOException) {
-				throw (IOException)e.exception();
-			} else if(e.exception() instanceof RuntimeException) {
-				throw (RuntimeException)e.exception();
+			if (e.exception() instanceof IOException) {
+				throw (IOException) e.exception();
+			} else if (e.exception() instanceof RuntimeException) {
+				throw (RuntimeException) e.exception();
 			} else {
 				throw e;
 			}

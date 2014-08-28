@@ -14,8 +14,8 @@
  *     Gregoire Dupe (Mia-Software) - Bug 372626 - Aggregates
  *     Olivier Remaud (Soft-Maint) - Bug 377615 - Query View filtering
  *     Vincent Lorenzo (CEA-LIST) - Bug 357621 - Improve the label displayed for Customization and Facets
- *     Vincent Lorenzo (CEA-LIST) - Bug 377909 - The elements displayed in the ETypedElement dialog are not sorted by alphabetic order 
-*******************************************************************************/
+ *     Vincent Lorenzo (CEA-LIST) - Bug 377909 - The elements displayed in the ETypedElement dialog are not sorted by alphabetic order
+ *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal.widget;
 
 import java.util.ArrayList;
@@ -31,11 +31,6 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedLabelProviderFactory;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.utils.ImageProvider;
-import org.eclipse.papyrus.emf.facet.util.core.internal.exported.IFilter;
 import org.eclipse.jface.viewers.ColumnViewerToolTipSupport;
 import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.IContentProvider;
@@ -54,6 +49,11 @@ import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManagerFactory;
+import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedLabelProviderFactory;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.utils.ImageProvider;
+import org.eclipse.papyrus.emf.facet.util.core.internal.exported.IFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -72,9 +72,9 @@ import org.eclipse.ui.dialogs.PatternFilter;
 public class ETypedElementSelectionControl implements IETypedElementTabSelectionWidgetInternal {
 
 	public static final String TAB_ID = "flat.view.id"; //$NON-NLS-1$
-	
+
 	public static final String TITLE = Messages.ETypedElementSelectionControl_FlatView;
-	
+
 	/** An OK status, but without the "OK" message, because we don't want "OK" to appear in the status bar */
 	private static final IStatus OK_STATUS = new Status(IStatus.OK, Activator.PLUGIN_ID, ""); //$NON-NLS-1$
 

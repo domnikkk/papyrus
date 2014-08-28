@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,24 +25,24 @@ import org.eclipse.jface.text.contentassist.ICompletionProposal;
 public class ParameterModifiersProposal implements ICompletionProposalComputer {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final String EMPTY_MODIFIERS = "{}";
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.classdiagram.parsers.texteditor.completionproposals.ICompletionProposalComputer
 	 * #generateCompletionProposals(int, int, java.lang.String)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param selectionRange
 	 * @param prefix
 	 * @param documentOffset
-	 * 
+	 *
 	 * @return
 	 */
 	public List<ICompletionProposal> generateCompletionProposals(int documentOffset, int selectionRange, String prefix) {
@@ -52,7 +52,7 @@ public class ParameterModifiersProposal implements ICompletionProposalComputer {
 		ICompletionProposal proposal = null;
 
 		// first, add [] ans set the cursor after left curly
-		if(EMPTY_MODIFIERS.startsWith(prefix)) {
+		if (EMPTY_MODIFIERS.startsWith(prefix)) {
 			proposal = new CompletionProposal(EMPTY_MODIFIERS, documentOffset - prefix.length(), prefix.length()
 					+ selectionRange, 1, null, "{ <ParameterModifiers> }", null, "Parameter modifiers");
 			v.add(proposal);

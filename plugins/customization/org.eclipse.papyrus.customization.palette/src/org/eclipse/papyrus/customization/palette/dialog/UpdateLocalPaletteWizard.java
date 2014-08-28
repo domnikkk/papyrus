@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,11 +41,11 @@ public class UpdateLocalPaletteWizard extends Wizard {
 
 	/**
 	 * Creates a NewLocalPaletteWizard.
-	 * 
+	 *
 	 * @param part
-	 *        the editor part where the palette is available
+	 *            the editor part where the palette is available
 	 * @param descriptor
-	 *        the descriptor to edit
+	 *            the descriptor to edit
 	 */
 	public UpdateLocalPaletteWizard(IEditorPart part, PapyrusPaletteService.LocalProviderDescriptor descriptor, PaletteCustomizer customizer) {
 		this.editorPart = part;

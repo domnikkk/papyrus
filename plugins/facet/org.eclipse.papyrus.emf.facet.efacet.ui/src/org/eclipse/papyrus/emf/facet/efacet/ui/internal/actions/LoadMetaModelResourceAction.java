@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.ui.action.LoadResourceAction;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.papyrus.emf.facet.common.ui.internal.widgets.AnywhereFilterMatcher;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -35,7 +35,7 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 
 /**
  * @author Gregoire Dupe
- * 
+ *
  */
 public class LoadMetaModelResourceAction extends LoadResourceAction {
 

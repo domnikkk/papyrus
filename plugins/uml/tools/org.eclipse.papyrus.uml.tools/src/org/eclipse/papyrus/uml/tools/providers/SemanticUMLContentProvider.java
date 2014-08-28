@@ -48,7 +48,7 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 
 
 	public SemanticUMLContentProvider() {
-		//Empty (@see #inputChanged(Viewer, Object, Object))
+		// Empty (@see #inputChanged(Viewer, Object, Object))
 	}
 
 	public SemanticUMLContentProvider(EObject editedEObject, EStructuralFeature feature, EObject[] roots) {
@@ -73,34 +73,34 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 	}
 
 	protected static EObject[] findRoots(EObject source) {
-		if(source.eResource() == null || source.eResource().getResourceSet() == null) {
+		if (source.eResource() == null || source.eResource().getResourceSet() == null) {
 			return SemanticEMFContentProvider.findRoots(source);
 		}
 
-		//We have a full resourceSet : we return its contents
+		// We have a full resourceSet : we return its contents
 		return getRoots(source.eResource().getResourceSet());
 	}
 
 	protected static EObject[] getRoots(ResourceSet root) {
 		EObject rootElement = null;
 
-		if(root instanceof ModelSet) {
-			ModelSet modelSet = (ModelSet)root;
-			UmlModel umlModel = (UmlModel)modelSet.getModel(UmlModel.MODEL_ID);
-			if(umlModel != null) {
+		if (root instanceof ModelSet) {
+			ModelSet modelSet = (ModelSet) root;
+			UmlModel umlModel = (UmlModel) modelSet.getModel(UmlModel.MODEL_ID);
+			if (umlModel != null) {
 				try {
 					rootElement = umlModel.lookupRoot();
 				} catch (NotFoundException ex) {
-					//Ignore and treat the ModelSet as a standard resource set
+					// Ignore and treat the ModelSet as a standard resource set
 				}
 			}
 		}
 
 		List<EObject> rootElements = new LinkedList<EObject>();
-		for(Resource resource : root.getResources()) {
-			if(isUMLModel(resource, rootElement)) {
-				for(EObject rootEObject : resource.getContents()) {
-					if(rootEObject instanceof Element) {
+		for (Resource resource : root.getResources()) {
+			if (isUMLModel(resource, rootElement)) {
+				for (EObject rootEObject : resource.getContents()) {
+					if (rootEObject instanceof Element) {
 						rootElements.add(rootEObject);
 					}
 				}
@@ -109,38 +109,38 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 		return rootElements.toArray(new EObject[0]);
 	}
 
-	//	protected static URI[] excludedModels = new URI[0];
+	// protected static URI[] excludedModels = new URI[0];
 
-	//TODO: Currently, some resources are explicitly excluded.
-	//We need more use cases and user feedback to determine how we should filter them
-	protected static URI[] excludedModels = new URI[]{
-		//		URI.createURI(UMLResource.STANDARD_L2_PROFILE_URI),
-		//		URI.createURI(UMLResource.STANDARD_L3_PROFILE_URI),
-	URI.createURI(UMLResource.UML_METAMODEL_URI), URI.createURI(UMLResource.ECORE_METAMODEL_URI)
-	//		URI.createURI(UMLResource.ECORE_PRIMITIVE_TYPES_LIBRARY_URI)
+	// TODO: Currently, some resources are explicitly excluded.
+	// We need more use cases and user feedback to determine how we should filter them
+	protected static URI[] excludedModels = new URI[] {
+			// URI.createURI(UMLResource.STANDARD_L2_PROFILE_URI),
+			// URI.createURI(UMLResource.STANDARD_L3_PROFILE_URI),
+			URI.createURI(UMLResource.UML_METAMODEL_URI), URI.createURI(UMLResource.ECORE_METAMODEL_URI)
+			// URI.createURI(UMLResource.ECORE_PRIMITIVE_TYPES_LIBRARY_URI)
 	};
 
 	protected static boolean isUMLModel(Resource resource, EObject rootElement) {
-		if(!isUMLResource(resource)) {
+		if (!isUMLResource(resource)) {
 			return false;
 		}
 
-		for(URI uri : excludedModels) {
-			if(uri.equals(resource.getURI())) {
+		for (URI uri : excludedModels) {
+			if (uri.equals(resource.getURI())) {
 				return false;
 			}
 		}
 
-		for(EObject rootObject : resource.getContents()) {
-			if(rootObject.eIsProxy()) {
+		for (EObject rootObject : resource.getContents()) {
+			if (rootObject.eIsProxy()) {
 				continue;
 			}
 
-			if(rootObject.eContainer() != null) { //Controlled element
+			if (rootObject.eContainer() != null) { // Controlled element
 				return false;
 			}
 
-			if(rootObject instanceof Profile && !(rootElement instanceof Profile)) {
+			if (rootObject instanceof Profile && !(rootElement instanceof Profile)) {
 				return false;
 			}
 		}
@@ -149,11 +149,11 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 	}
 
 	protected static boolean isUMLResource(Resource resource) {
-		if(resource == null) {
+		if (resource == null) {
 			return false;
 		}
 
-		if(resource instanceof UMLResource) {
+		if (resource instanceof UMLResource) {
 			return true;
 		}
 
@@ -165,18 +165,18 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 	protected boolean isCompatibleMetaclass(Object containerElement, Object metaclass) {
 		Element semanticElement = UMLUtil.resolveUMLElement(containerElement);
 
-		if(semanticElement == null) {
+		if (semanticElement == null) {
 			return false;
 		}
 
-		if(metaclass instanceof Stereotype) {
-			Stereotype stereotype = (Stereotype)metaclass;
+		if (metaclass instanceof Stereotype) {
+			Stereotype stereotype = (Stereotype) metaclass;
 			boolean res = semanticElement.getAppliedStereotype(stereotype.getQualifiedName()) != null;
-			if(!res) {
+			if (!res) {
 				EClass definition = stereotype.getDefinition();
-				for(EObject e : semanticElement.getStereotypeApplications()) {
+				for (EObject e : semanticElement.getStereotypeApplications()) {
 					EClass c = e.eClass();
-					if(definition != null && definition.isSuperTypeOf(c)) {
+					if (definition != null && definition.isSuperTypeOf(c)) {
 						res = true;
 						break;
 					}
@@ -185,10 +185,10 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 			return res;
 		}
 
-		//TODO : We should use super.isCompatibleMetaclass(), but the super-implementation
-		//may not be compatible with our implementation of getAdaptedValue()
-		if(metaclass instanceof EClassifier) {
-			return ((EClassifier)metaclass).isInstance(semanticElement);
+		// TODO : We should use super.isCompatibleMetaclass(), but the super-implementation
+		// may not be compatible with our implementation of getAdaptedValue()
+		if (metaclass instanceof EClassifier) {
+			return ((EClassifier) metaclass).isInstance(semanticElement);
 		}
 
 		return false;
@@ -200,41 +200,41 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 	 *
 	 * This depends on the wanted metaclass.
 	 */
-	//TODO : In some cases, we may have a filter based on both a UML Metaclass and a Stereotype
-	//In such a specific case, a specific implementation is probably needed
+	// TODO : In some cases, we may have a filter based on both a UML Metaclass and a Stereotype
+	// In such a specific case, a specific implementation is probably needed
 	//
-	//This case may especially occur in the case of dynamic creation of stereotype associations.
+	// This case may especially occur in the case of dynamic creation of stereotype associations.
 	@Override
 	public Object getAdaptedValue(Object containerElement) {
 		Object semanticElement = super.getAdaptedValue(containerElement);
 
-		if(semanticElement instanceof Element) {
-			Element element = (Element)semanticElement;
-			//Looks for a compatible Stereotype application
-			for(Object metaclassWanted : getWantedMetaclasses()) {
+		if (semanticElement instanceof Element) {
+			Element element = (Element) semanticElement;
+			// Looks for a compatible Stereotype application
+			for (Object metaclassWanted : getWantedMetaclasses()) {
 
-				if(metaclassWanted instanceof Stereotype) {
+				if (metaclassWanted instanceof Stereotype) {
 					EObject stereotypeApplication = null;
 
-					stereotypeApplication = element.getStereotypeApplication((Stereotype)metaclassWanted);
-					if(stereotypeApplication == null) {
-						List<Stereotype> subStereotypes = element.getAppliedSubstereotypes((Stereotype)metaclassWanted);
-						for(Stereotype subSteretoype : subStereotypes) {
+					stereotypeApplication = element.getStereotypeApplication((Stereotype) metaclassWanted);
+					if (stereotypeApplication == null) {
+						List<Stereotype> subStereotypes = element.getAppliedSubstereotypes((Stereotype) metaclassWanted);
+						for (Stereotype subSteretoype : subStereotypes) {
 							stereotypeApplication = element.getStereotypeApplication(subSteretoype);
-							if(stereotypeApplication != null) {
+							if (stereotypeApplication != null) {
 								break;
 							}
 						}
 					}
 
-					if(stereotypeApplication != null) {
+					if (stereotypeApplication != null) {
 						return stereotypeApplication;
 					}
 				}
 			}
 		}
 
-		//If no stereotype application is found, return the UML Element
+		// If no stereotype application is found, return the UML Element
 		return semanticElement;
 	}
 
@@ -242,17 +242,17 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 		ResourceSet resourceSet = root;
 
-		if(newInput instanceof ResourceSet) {
-			resourceSet = (ResourceSet)newInput;
-		} else if(newInput instanceof ServicesRegistry) {
+		if (newInput instanceof ResourceSet) {
+			resourceSet = (ResourceSet) newInput;
+		} else if (newInput instanceof ServicesRegistry) {
 			try {
-				resourceSet = ServiceUtils.getInstance().getModelSet((ServicesRegistry)newInput);
+				resourceSet = ServiceUtils.getInstance().getModelSet((ServicesRegistry) newInput);
 			} catch (Exception ex) {
 				Activator.log.error(ex);
 			}
 		}
 
-		if(newInput == null) {
+		if (newInput == null) {
 			resourceSetListener.unsetTarget(root);
 		} else {
 			listenOnResourceSet(resourceSet);
@@ -264,13 +264,13 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 	}
 
 	protected void listenOnResourceSet(ResourceSet resourceSet) {
-		if(root != null) {
+		if (root != null) {
 			resourceSetListener.unsetTarget(root);
 			root = null;
 			roots = null;
 		}
 
-		if(resourceSet != null) {
+		if (resourceSet != null) {
 			resourceSetListener.setTarget(resourceSet);
 			this.root = resourceSet;
 			this.roots = getRoots(root);
@@ -279,7 +279,7 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 
 	@Override
 	public void dispose() {
-		if(root != null) {
+		if (root != null) {
 			resourceSetListener.unsetTarget(root);
 		}
 		root = null;
@@ -298,11 +298,11 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 
 		@Override
 		protected void doNotify(Notification msg) {
-			if(root == null || msg.isTouch()) {
+			if (root == null || msg.isTouch()) {
 				return;
 			}
 
-			switch(msg.getEventType()) {
+			switch (msg.getEventType()) {
 			case Notification.ADD:
 			case Notification.ADD_MANY:
 			case Notification.REMOVE:
@@ -313,14 +313,14 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 
 		private synchronized void triggerRefresh() {
 			roots = getRoots(root);
-			//During display, a resource has been loaded (e.g. by a Label provider).
-			//Schedule an update (in the future, to avoid conflicts with a potential current update)
-			if(viewer != null && viewer.getControl() != null && !viewer.getControl().isDisposed()) {
+			// During display, a resource has been loaded (e.g. by a Label provider).
+			// Schedule an update (in the future, to avoid conflicts with a potential current update)
+			if (viewer != null && viewer.getControl() != null && !viewer.getControl().isDisposed()) {
 				needsRefresh = true;
 				viewer.getControl().getDisplay().asyncExec(new Runnable() {
 
 					public void run() {
-						if(!needsRefresh || viewer == null || viewer.getControl() == null || viewer.getControl().isDisposed()) {
+						if (!needsRefresh || viewer == null || viewer.getControl() == null || viewer.getControl().isDisposed()) {
 							return;
 						}
 						needsRefresh = false;

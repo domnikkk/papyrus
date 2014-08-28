@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,11 +44,12 @@ public class CustomPackageReparentCreationEditPolicy extends PapyrusCreationEdit
 
 	/**
 	 * return a command to reparent both the semantic and view elements.
-	 * 
+	 *
 	 * @param request
 	 *            the request
 	 * @return command
 	 */
+	@Override
 	protected Command getReparentCommand(ChangeBoundsRequest request) {
 		Iterator<?> editParts = request.getEditParts().iterator();
 		View container = (View) getHost().getAdapter(View.class);
@@ -71,13 +72,14 @@ public class CustomPackageReparentCreationEditPolicy extends PapyrusCreationEdit
 				// if ( context != null && shouldReparent(semantic, context)){
 				ChangeBoundsRequest req = new ChangeBoundsRequest();
 				req.setEditParts(ep);
-				return super.getReparentCommand((ChangeBoundsRequest) req);
+				return super.getReparentCommand(req);
 				// }
 			}
 		}
 		return cc.isEmpty() ? null : new ICommandProxy(cc.reduce());
 	}
 
+	@Override
 	protected ICommand getReparentCommand(IGraphicalEditPart gep) {
 		// 1.******************************************** Variables initialization
 		CompositeCommand cc = new CompositeCommand(DiagramUIMessages.AddCommand_Label);

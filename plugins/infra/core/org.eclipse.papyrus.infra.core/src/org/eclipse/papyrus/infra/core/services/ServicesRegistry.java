@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 LIFL, CEA, and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,60 +39,60 @@ import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
  * A Service is a class providing operations. The ServiceRegistry is used to
  * share objects (i.e. services) between nested editors and also the core main
  * editor.
- * 
+ *
  * <br>
  * In this implementation, services should be added to the registry before the
  * call to createServices(). If a service is added after the call, it will not
  * be started (except if it is a lazy service). <br>
  * A typical usage is:
- * 
+ *
  * <pre>
  * <code>
  *   ServicesRegistry serviceRegistry = new ServiceRegistry();
  *   // Add your services
  *   serviceRegistry.add( ...);
  *   serviceRegistry.add( ...);
- *   
+ *
  *   // start the services
  *   serviceRegistry.startRegistry();
- *   
+ *
  *   // Retrieve a service
  *   myService = serviceRegistry.getService( serviceKey );
  * </code>
  * </pre>
- * 
+ *
  * It is possible to register new services after the serviceRegistry has been
  * started. In this case, you need to start them explicitly if they are of type
  * ServiceStartKind.STARTUP.
- * 
+ *
  * <pre>
  * <code>
  *   // Add your new services
  *   serviceRegistry.add( key1, ...);
  *   serviceRegistry.add( key2, ...);
- *   
+ *
  *   // start the new services
  *   serviceRegistry.startRegistry(key1, key2);
  * </code>
  * </pre>
- * 
+ *
  * <ul>
  * <li></li>
  * <li></li>
  * </ul>
- * 
+ *
  * @author cedric dumoulin
- * 
- * 
+ *
+ *
  */
 public class ServicesRegistry {
 
 	/**
 	 * Log object
-	 * 
+	 *
 	 * @deprecated Use {@link Activator#log} instead
 	 */
-	//@unused
+	// @unused
 	@Deprecated
 	protected Logger log = Logger.getLogger(getClass().getName());
 
@@ -126,29 +126,30 @@ public class ServicesRegistry {
 
 	/**
 	 * Add a service by its ServiceDescriptor.
-	 * 
+	 *
 	 * @param serviceDescriptor
-	 *        Descriptor describing the service.
+	 *            Descriptor describing the service.
 	 * @throws ServiceException
-	 *         If an error occurs while initializing service.
+	 *             If an error occurs while initializing service.
 	 */
 	public void add(ServiceDescriptor serviceDescriptor) {
 		// Check if the service already exist.
 		ServiceStartupEntry service = addedServices.get(serviceDescriptor.getKey());
-		if(service != null) {
-			if(service.getDescriptor().getPriority() > serviceDescriptor.getPriority()) {
+		if (service != null) {
+			if (service.getDescriptor().getPriority() > serviceDescriptor.getPriority()) {
 				return;
-			} else if(service.getDescriptor().getPriority() == serviceDescriptor.getPriority()) {
-				Activator.log.warn("Two services with same priority (" + serviceDescriptor.getPriority() + ") are declared under key '" + service.getDescriptor().getKey() + "'. Keep the first encountered only. (bundles: " + service.getDescriptor().getClassBundleID() + ", " + serviceDescriptor.getClassBundleID() + ")");
+			} else if (service.getDescriptor().getPriority() == serviceDescriptor.getPriority()) {
+				Activator.log.warn("Two services with same priority (" + serviceDescriptor.getPriority() + ") are declared under key '" + service.getDescriptor().getKey() + "'. Keep the first encountered only. (bundles: "
+						+ service.getDescriptor().getClassBundleID() + ", " + serviceDescriptor.getClassBundleID() + ")");
 			}
 		}
 
 		// Compute the service type entry
 		ServiceTypeEntry serviceTypeEntry;
 		ServiceTypeKind typeKind = serviceDescriptor.getServiceTypeKind();
-		if(typeKind == ServiceTypeKind.service) {
+		if (typeKind == ServiceTypeKind.service) {
 			serviceTypeEntry = new ServiceEntry(serviceDescriptor);
-		} else if(typeKind == ServiceTypeKind.serviceFactory) {
+		} else if (typeKind == ServiceTypeKind.serviceFactory) {
 			serviceTypeEntry = new ServiceFactoryEntry(serviceDescriptor);
 		} else {
 			serviceTypeEntry = new PojoServiceEntry(serviceDescriptor);
@@ -156,7 +157,7 @@ public class ServicesRegistry {
 
 		// Create the entry
 		ServiceStartupEntry serviceEntry;
-		if(serviceDescriptor.isStartAtStartup()) {
+		if (serviceDescriptor.isStartAtStartup()) {
 			serviceEntry = new StartStartupEntry(serviceTypeEntry);
 		} else {
 			serviceEntry = new LazyStartupEntry(serviceTypeEntry, this);
@@ -167,13 +168,13 @@ public class ServicesRegistry {
 
 	/**
 	 * Add a service. The descriptor will be created.
-	 * 
+	 *
 	 * @param key
-	 *        Service key
+	 *            Service key
 	 * @param priority
-	 *        service priority
+	 *            service priority
 	 * @param serviceInstance
-	 *        The instance of the service
+	 *            The instance of the service
 	 */
 	public void add(String key, int priority, IService serviceInstance) {
 		add(key, priority, serviceInstance, ServiceStartKind.STARTUP);
@@ -181,13 +182,13 @@ public class ServicesRegistry {
 
 	/**
 	 * Add a service. The descriptor will be created.
-	 * 
+	 *
 	 * @param key
-	 *        Service key
+	 *            Service key
 	 * @param priority
-	 *        service priority
+	 *            service priority
 	 * @param serviceInstance
-	 *        The instance of the service
+	 *            The instance of the service
 	 */
 	public void add(Class<?> key, int priority, IService serviceInstance) {
 		add(key.getName(), priority, serviceInstance, ServiceStartKind.STARTUP);
@@ -195,21 +196,21 @@ public class ServicesRegistry {
 
 	/**
 	 * Add a service. The descriptor will be created.
-	 * 
+	 *
 	 * @param key
-	 *        Service key
+	 *            Service key
 	 * @param priority
-	 *        service priority
+	 *            service priority
 	 * @param serviceInstance
-	 *        The instance of the service
+	 *            The instance of the service
 	 */
 	public void add(String key, int priority, IService serviceInstance, ServiceStartKind startKind) {
 		// Check if the service already exist.
 		ServiceStartupEntry service = addedServices.get(key);
-		if(service != null) {
-			if(service.getDescriptor().getPriority() > priority) {
+		if (service != null) {
+			if (service.getDescriptor().getPriority() > priority) {
 				return;
-			} else if(service.getDescriptor().getPriority() == priority) {
+			} else if (service.getDescriptor().getPriority() == priority) {
 				Activator.log.warn("Two services with same priority (" + priority + ") are declared under key '" + service.getDescriptor().getKey() + "'. Keep the first encountered only.");
 			}
 		}
@@ -217,7 +218,7 @@ public class ServicesRegistry {
 		// Create descriptor and add service.
 		ServiceDescriptor descriptor = new ServiceDescriptor(key, serviceInstance.getClass().getName(), startKind, priority);
 
-		if(startKind == ServiceStartKind.STARTUP) {
+		if (startKind == ServiceStartKind.STARTUP) {
 			addedServices.put(key, new StartStartupEntry(new ServiceEntry(descriptor, serviceInstance)));
 		} else {
 			addedServices.put(key, new LazyStartupEntry(new ServiceEntry(descriptor, serviceInstance), this));
@@ -226,13 +227,13 @@ public class ServicesRegistry {
 
 	/**
 	 * Add a service. The descriptor will be created.
-	 * 
+	 *
 	 * @param key
-	 *        Service key Class used as key. The classname is used as key.
+	 *            Service key Class used as key. The classname is used as key.
 	 * @param priority
-	 *        service priority
+	 *            service priority
 	 * @param serviceInstance
-	 *        The instance of the service
+	 *            The instance of the service
 	 */
 	public void add(Class<?> key, int priority, IService serviceInstance, ServiceStartKind startKind) {
 
@@ -243,13 +244,13 @@ public class ServicesRegistry {
 	 * Add an already instanciated pojo (Plain Old Java Object) as Service. The
 	 * descriptor will be created. No life cycle methods are called on the
 	 * service.
-	 * 
+	 *
 	 * @param key
-	 *        Service key
+	 *            Service key
 	 * @param priority
-	 *        service priority
+	 *            service priority
 	 * @param serviceInstance
-	 *        The instance of the service
+	 *            The instance of the service
 	 */
 	public void add(Class<?> key, int priority, Object serviceInstance) {
 		add(key, priority, serviceInstance, ServiceStartKind.STARTUP);
@@ -259,28 +260,28 @@ public class ServicesRegistry {
 	 * Add an already instanciated pojo (Plain Old Java Object) as Service. The
 	 * descriptor will be created. No life cycle methods are called on the
 	 * service.
-	 * 
+	 *
 	 * @param key
-	 *        Service key
+	 *            Service key
 	 * @param priority
-	 *        service priority
+	 *            service priority
 	 * @param serviceInstance
-	 *        The instance of the service
+	 *            The instance of the service
 	 * @param startKind
-	 * 
+	 *
 	 */
 	public void add(String key, int priority, Object serviceInstance, ServiceStartKind startKind) {
 		// If the service instance is actually an IService, register it thus to enable the lifecycle hooks
-		if(serviceInstance instanceof IService) {
-			add(key, priority, (IService)serviceInstance, startKind);
+		if (serviceInstance instanceof IService) {
+			add(key, priority, (IService) serviceInstance, startKind);
 		}
-		
+
 		// Check if the service already exist.
 		ServiceStartupEntry service = addedServices.get(key);
-		if(service != null) {
-			if(service.getDescriptor().getPriority() > priority) {
+		if (service != null) {
+			if (service.getDescriptor().getPriority() > priority) {
 				return;
-			} else if(service.getDescriptor().getPriority() == priority) {
+			} else if (service.getDescriptor().getPriority() == priority) {
 				Activator.log.warn("Two services with same priority (" + priority + ") are declared under key '" + service.getDescriptor().getKey() + "'. Keep the first encountered only.");
 			}
 		}
@@ -289,16 +290,16 @@ public class ServicesRegistry {
 		ServiceDescriptor descriptor = new ServiceDescriptor(key, serviceInstance.getClass().getName(), startKind, priority);
 		ServiceTypeEntry type;
 		ServiceStartupEntry entry;
-		
+
 		// If the instance is a service or has an adapter for the service protocol, register that
 		IService serviceAdapter = AdapterUtils.adapt(serviceInstance, IService.class, null);
-		if(serviceAdapter != null) {
+		if (serviceAdapter != null) {
 			type = new ServiceAdapterEntry(descriptor, serviceInstance, serviceAdapter);
 		} else {
 			type = new PojoServiceEntry(descriptor, serviceInstance);
 		}
-		
-		switch(startKind) {
+
+		switch (startKind) {
 		case STARTUP:
 			entry = new StartStartupEntry(type);
 			break;
@@ -308,7 +309,7 @@ public class ServicesRegistry {
 		default:
 			throw new IllegalArgumentException("Unrecognized startKind: " + startKind);
 		}
-		
+
 		addedServices.put(key, entry);
 	}
 
@@ -316,15 +317,15 @@ public class ServicesRegistry {
 	 * Add an already instanciated pojo (Plain Old Java Object) as Service. The
 	 * descriptor will be created. No life cycle methods are called on the
 	 * service.
-	 * 
+	 *
 	 * @param key
-	 *        Service key Class used as key. The classname is used as key.
+	 *            Service key Class used as key. The classname is used as key.
 	 * @param priority
-	 *        service priority
+	 *            service priority
 	 * @param serviceInstance
-	 *        The instance of the service
+	 *            The instance of the service
 	 * @param startKind
-	 * 
+	 *
 	 */
 	public void add(Class<?> key, int priority, Object serviceInstance, ServiceStartKind startKind) {
 
@@ -333,7 +334,7 @@ public class ServicesRegistry {
 
 	/**
 	 * Remove the specified service from the registry.
-	 * 
+	 *
 	 * @param key
 	 */
 	public void remove(ServiceDescriptor serviceDescriptor) throws ServiceException {
@@ -342,12 +343,12 @@ public class ServicesRegistry {
 
 	/**
 	 * Remove the specified service from the registry.
-	 * 
+	 *
 	 * @param key
 	 */
 	public void remove(Object key) throws ServiceException {
 		ServiceStartupEntry service = namedServices.remove(key);
-		if(service == null) {
+		if (service == null) {
 			return;
 		}
 
@@ -358,19 +359,19 @@ public class ServicesRegistry {
 	/**
 	 * Get the requested service by its key. The key is usually the classname of
 	 * the service.
-	 * 
+	 *
 	 * @param serviceClass
 	 * @return
 	 * @throws ServiceException
-	 *         If servive can't be started
+	 *             If servive can't be started
 	 */
 	public Object getService(Object key) throws ServiceException {
 		ServiceStartupEntry service = namedServices.get(key);
-		if(service == null) {
+		if (service == null) {
 			// throw an exception.
 			// If added, say it.
 			service = addedServices.get(key);
-			if(service != null) {
+			if (service != null) {
 				throw new BadStateException("Registry should be started before.", service.getState(), service.getDescriptor());
 			} else {
 				throw new ServiceNotFoundException("No service registered under '" + key + "'");
@@ -383,12 +384,12 @@ public class ServicesRegistry {
 	/**
 	 * Get the requested service by its class (the service has to be registered
 	 * by its class object).
-	 * 
+	 *
 	 * @param key
-	 *        The service class.
+	 *            The service class.
 	 * @return The service.
 	 * @throws ServiceException
-	 *         If service can't be started
+	 *             If service can't be started
 	 */
 	@SuppressWarnings("unchecked")
 	public <S> S getService(Class<S> key) throws ServiceException {
@@ -396,28 +397,28 @@ public class ServicesRegistry {
 		String realKey = key.getName();
 		ServiceStartupEntry service = namedServices.get(realKey);
 
-		if(service == null) {
+		if (service == null) {
 			// throw an exception.
 			// If added, say it.
 			service = addedServices.get(realKey);
-			if(service != null) {
+			if (service != null) {
 				throw new BadStateException("Registry should be started before.", service.getState(), service.getDescriptor());
 			} else {
 				throw new ServiceNotFoundException("No service registered under '" + key + "'");
 			}
 		}
 
-		return (S)service.getServiceInstance();
+		return (S) service.getServiceInstance();
 	}
 
 	/**
 	 * Return true if the service is instantiated. Return false otherwise.
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isStarted(Object key) throws ServiceNotFoundException {
 		ServiceStartupEntry service = namedServices.get(key);
-		if(service == null) {
+		if (service == null) {
 			throw new ServiceNotFoundException("No service registered under '" + key + "'");
 		}
 
@@ -426,12 +427,12 @@ public class ServicesRegistry {
 
 	/**
 	 * Return the state of the specified service.
-	 * 
+	 *
 	 * @return
 	 */
 	public ServiceState serviceState(Object key) throws ServiceNotFoundException {
 		ServiceStartupEntry service = namedServices.get(key);
-		if(service == null) {
+		if (service == null) {
 			throw new ServiceNotFoundException("No service registered under '" + key + "'");
 		}
 
@@ -443,11 +444,11 @@ public class ServicesRegistry {
 	 * started. All services are first created, then initialized and finally
 	 * started. If an error occur on a service during one of this step, the
 	 * service is removed from the registry and and the error is logged.
-	 * 
+	 *
 	 * @throws ServiceMultiException
-	 * 
+	 *
 	 * @throws ServiceException
-	 *         If a service can't be started.
+	 *             If a service can't be started.
 	 */
 	public void startRegistry() throws ServiceMultiException {
 		// Create an object to collect errors if any.
@@ -460,7 +461,7 @@ public class ServicesRegistry {
 		try {
 			checkDependencies(addedServices.values(), map);
 		} catch (ServiceMultiException ex) {
-			for(Throwable t : ex.getExceptions()) {
+			for (Throwable t : ex.getExceptions()) {
 				errors.addException(t);
 			}
 		}
@@ -475,7 +476,7 @@ public class ServicesRegistry {
 		//
 		List<ServiceStartupEntry> toStart = buildTopologicalListOfServicesToStart(roots, map);
 
-		if(Activator.log.isDebugEnabled()) {
+		if (Activator.log.isDebugEnabled()) {
 			showServices(" Services to start:", toStart);
 		}
 
@@ -486,7 +487,7 @@ public class ServicesRegistry {
 		startServices(toStart, errors);
 
 		// Report errors if any
-		if(errors.getExceptions().size() > 0) {
+		if (errors.getExceptions().size() > 0) {
 			throw errors;
 		}
 
@@ -499,15 +500,15 @@ public class ServicesRegistry {
 	 * created, then initialized and finally started. If an error occur on a
 	 * service during one of this step, the service is removed from the registry
 	 * and and the error is logged.
-	 * 
+	 *
 	 * @param serviceKeys
-	 *        Keys of services to start.
+	 *            Keys of services to start.
 	 * @throws ServiceMultiException
 	 * @throws ServiceNotFoundException
-	 *         If a service can't be retrieved by its key.
-	 * 
+	 *             If a service can't be retrieved by its key.
+	 *
 	 * @throws ServiceException
-	 *         If a service can't be started.
+	 *             If a service can't be started.
 	 */
 	public void startServices(List<String> serviceKeys) throws ServiceMultiException, ServiceNotFoundException {
 
@@ -523,17 +524,17 @@ public class ServicesRegistry {
 
 	/**
 	 * Same as {@link #startServices(List)}, but with an array as input.
-	 * 
+	 *
 	 * @see #startServices(List)
-	 * 
+	 *
 	 * @param serviceKeys
-	 *        Keys of services to start.
+	 *            Keys of services to start.
 	 * @throws ServiceMultiException
 	 * @throws ServiceNotFoundException
-	 *         If a service can't be retrieved by its key.
-	 * 
+	 *             If a service can't be retrieved by its key.
+	 *
 	 * @throws ServiceException
-	 *         If a service can't be started.
+	 *             If a service can't be started.
 	 */
 	public void startServices(String... serviceKeys) throws ServiceMultiException, ServiceNotFoundException {
 
@@ -548,16 +549,16 @@ public class ServicesRegistry {
 	 * created, then initialized and finally started. If an error occur on a
 	 * service during one of this step, the service is removed from the registry
 	 * and and the error is logged.
-	 * 
+	 *
 	 * @param serviceKeys
-	 *        Keys of services to start. Keys will be translated to the
-	 *        classname.
+	 *            Keys of services to start. Keys will be translated to the
+	 *            classname.
 	 * @throws ServiceMultiException
 	 * @throws ServiceNotFoundException
-	 *         If a service can't be retrieved by its key.
-	 * 
+	 *             If a service can't be retrieved by its key.
+	 *
 	 * @throws ServiceException
-	 *         If a service can't be started.
+	 *             If a service can't be started.
 	 */
 	public void startServicesByClassKeys(List<Class<?>> serviceKeys) throws ServiceMultiException, ServiceNotFoundException {
 
@@ -574,17 +575,17 @@ public class ServicesRegistry {
 	/**
 	 * Same as {@link #startServicesByClassKeys(List)}, but with an array as
 	 * input.
-	 * 
+	 *
 	 * @see #startServices(List)
-	 * 
+	 *
 	 * @param serviceKeys
-	 *        Keys of services to start.
+	 *            Keys of services to start.
 	 * @throws ServiceMultiException
 	 * @throws ServiceNotFoundException
-	 *         If a service can't be retrieved by its key.
-	 * 
+	 *             If a service can't be retrieved by its key.
+	 *
 	 * @throws ServiceException
-	 *         If a service can't be started.
+	 *             If a service can't be started.
 	 */
 	public void startServicesByClassKeys(Class<?>... serviceKeys) throws ServiceMultiException, ServiceNotFoundException {
 
@@ -599,13 +600,13 @@ public class ServicesRegistry {
 	 * services are first created, then initialized and finally started. If an
 	 * error occur on a service during one of this step, the service is removed
 	 * from the registry and and the error is logged.
-	 * 
+	 *
 	 * @param services
-	 *        Services to start
+	 *            Services to start
 	 * @param map
-	 *        a table of (key, service) used to get a service by its key.
+	 *            a table of (key, service) used to get a service by its key.
 	 * @throws ServiceMultiException
-	 *         If a service can't be started.
+	 *             If a service can't be started.
 	 */
 	private void startServices(List<ServiceStartupEntry> services, LookupMap map) throws ServiceMultiException {
 		// Create an object to collect errors if any.
@@ -615,14 +616,14 @@ public class ServicesRegistry {
 		try {
 			checkDependencies(services, map);
 		} catch (ServiceMultiException ex) {
-			for(Throwable t : ex.getExceptions()) {
+			for (Throwable t : ex.getExceptions()) {
 				errors.addException(t);
 			}
 		}
 
 		// Get all roots : LAZY and START
 		Collection<ServiceStartupEntry> roots = getServiceRoots(services, map);
-		if(Activator.log.isDebugEnabled()) {
+		if (Activator.log.isDebugEnabled()) {
 			showServices(" Roots:", roots);
 		}
 		// Detect cycles
@@ -648,25 +649,25 @@ public class ServicesRegistry {
 		startServices(toStart, errors);
 
 		// Report errors if any
-		if(errors.getExceptions().size() > 0) {
+		if (errors.getExceptions().size() > 0) {
 			throw errors;
 		}
 	}
 
 	/**
 	 * Return a list of services from a list of services keys.
-	 * 
+	 *
 	 * @param serviceKeys
 	 * @param map
 	 * @return
 	 * @throws ServiceNotFoundException
-	 *         If a service can't be retrieved by its key.
+	 *             If a service can't be retrieved by its key.
 	 */
 	private List<ServiceStartupEntry> keysToServices(List<String> serviceKeys, LookupMap map) throws ServiceNotFoundException {
 
 		List<ServiceStartupEntry> result = new ArrayList<ServiceStartupEntry>(serviceKeys.size());
 
-		for(String key : serviceKeys) {
+		for (String key : serviceKeys) {
 			result.add(map.getChecked(key));
 		}
 		return result;
@@ -674,18 +675,18 @@ public class ServicesRegistry {
 
 	/**
 	 * Return a list of services from a list of services keys.
-	 * 
+	 *
 	 * @param serviceKeys
 	 * @param map
 	 * @return
 	 * @throws ServiceNotFoundException
-	 *         If a service can't be retrieved by its key.
+	 *             If a service can't be retrieved by its key.
 	 */
 	private List<ServiceStartupEntry> classKeysToServices(List<Class<?>> serviceKeys, LookupMap map) throws ServiceNotFoundException {
 
 		List<ServiceStartupEntry> result = new ArrayList<ServiceStartupEntry>(serviceKeys.size());
 
-		for(Class<?> key : serviceKeys) {
+		for (Class<?> key : serviceKeys) {
 			result.add(map.getChecked(key.getName()));
 		}
 		return result;
@@ -693,7 +694,7 @@ public class ServicesRegistry {
 
 	/**
 	 * Print the services. For debug purpose
-	 * 
+	 *
 	 * @param roots
 	 */
 	private void showServices(String message, Collection<ServiceStartupEntry> roots) {
@@ -701,7 +702,7 @@ public class ServicesRegistry {
 		buffer.append("--------------------------\n");
 		buffer.append(message);
 		buffer.append("\n");
-		for(ServiceStartupEntry service : roots) {
+		for (ServiceStartupEntry service : roots) {
 			buffer.append("  ");
 			buffer.append(service.getDescriptor().toString());
 			buffer.append("\n");
@@ -713,11 +714,11 @@ public class ServicesRegistry {
 	/**
 	 * Check if all dependencies exist. Throw an error if a declared dependency
 	 * has no corresponding service.
-	 * 
+	 *
 	 * @param services
-	 *        Services to check
+	 *            Services to check
 	 * @param map
-	 *        Map of services by keys.
+	 *            Map of services by keys.
 	 * @throws ServiceMultiException
 	 */
 	private void checkDependencies(Collection<ServiceStartupEntry> services, LookupMap map) throws ServiceMultiException {
@@ -725,11 +726,11 @@ public class ServicesRegistry {
 		ServiceMultiException errors = new ServiceMultiException();
 
 		// Walk each service and check if its required services exist.
-		for(ServiceStartupEntry service : services) {
+		for (ServiceStartupEntry service : services) {
 			ServiceDescriptor desc = service.getDescriptor();
 
 			// Check each required service
-			for(String key : desc.getRequiredServiceKeys()) {
+			for (String key : desc.getRequiredServiceKeys()) {
 
 				// Check if service can be found
 				try {
@@ -741,7 +742,7 @@ public class ServicesRegistry {
 		}
 
 		// Throw errors if any
-		if(errors.getExceptions().size() > 0) {
+		if (errors.getExceptions().size() > 0) {
 			throw errors;
 		}
 	}
@@ -749,17 +750,17 @@ public class ServicesRegistry {
 	/**
 	 * Retains only the services that should be started. Retains only services
 	 * with startupkind = START and state == REGISTERED
-	 * 
+	 *
 	 * @param services
-	 *        Collection to filter
+	 *            Collection to filter
 	 * @return a new Collection containing the services to start.
 	 */
 	private List<ServiceStartupEntry> retainsToStartServices(Collection<ServiceStartupEntry> services) {
 
 		List<ServiceStartupEntry> result = new ArrayList<ServiceStartupEntry>();
-		for(ServiceStartupEntry service : services) {
+		for (ServiceStartupEntry service : services) {
 			ServiceDescriptor desc = service.getDescriptor();
-			if(service.getState() == ServiceState.registered && desc.isStartAtStartup()) {
+			if (service.getState() == ServiceState.registered && desc.isStartAtStartup()) {
 				result.add(service);
 			}
 		}
@@ -770,7 +771,7 @@ public class ServicesRegistry {
 	/**
 	 * Check for cycles. Throws an exception if a cycle is discovered. Each root
 	 * is checked to see if it contains a cycle.
-	 * 
+	 *
 	 * @param roots
 	 * @param map
 	 */
@@ -783,10 +784,10 @@ public class ServicesRegistry {
 	 * Build a list of services to start, in the topological order (right
 	 * order). The required services are placed before the dependent services in
 	 * the list. Services already started are disguarded.
-	 * 
+	 *
 	 * @param roots
 	 * @param map
-	 *        Map used to resolve the entry by their key.
+	 *            Map used to resolve the entry by their key.
 	 * @return
 	 */
 	private List<ServiceStartupEntry> buildTopologicalListOfServicesToStart(Collection<ServiceStartupEntry> roots, LookupMap map) {
@@ -795,7 +796,7 @@ public class ServicesRegistry {
 
 		// Each root represent a graph. Walk the root and its child in the list,
 		// in the right order.
-		for(ServiceStartupEntry root : roots) {
+		for (ServiceStartupEntry root : roots) {
 			walkGraphDepthFirst(result, root, map);
 		}
 
@@ -804,22 +805,22 @@ public class ServicesRegistry {
 
 	/**
 	 * Add recursively the provided node, and then its direct children.
-	 * 
+	 *
 	 * @param result
-	 *        The list where the node are added
+	 *            The list where the node are added
 	 * @param node
-	 *        The node to add
+	 *            The node to add
 	 * @param map
 	 */
 	private void walkGraphDepthFirst(List<ServiceStartupEntry> result, ServiceStartupEntry node, LookupMap map) {
 
 		// Do not add already added or started node.
-		if(result.contains(node) || node.isStarted()) {
+		if (result.contains(node) || node.isStarted()) {
 			return;
 		}
 
 		// add direct child
-		for(String serviceKey : node.getDescriptor().getRequiredServiceKeys()) {
+		for (String serviceKey : node.getDescriptor().getRequiredServiceKeys()) {
 			try {
 				ServiceStartupEntry child = map.getChecked(serviceKey);
 				walkGraphDepthFirst(result, child, map);
@@ -836,10 +837,10 @@ public class ServicesRegistry {
 	/**
 	 * Create a List of the root services. The roots are services that are not
 	 * required by any service.
-	 * 
+	 *
 	 * @param addedServices
-	 *        A collection from which roots are required. The collection is
-	 *        unmodified.
+	 *            A collection from which roots are required. The collection is
+	 *            unmodified.
 	 * @param map
 	 * @return
 	 */
@@ -852,9 +853,9 @@ public class ServicesRegistry {
 
 		// The roots are services that are not required by any service.
 		// Build a list of the services required by all other services.
-		for(ServiceStartupEntry service : services) {
+		for (ServiceStartupEntry service : services) {
 			// Add each child to the list of required
-			for(String serviceKey : service.getDescriptor().getRequiredServiceKeys()) {
+			for (String serviceKey : service.getDescriptor().getRequiredServiceKeys()) {
 				try {
 
 					ServiceStartupEntry child = keyServiceMap.getChecked(serviceKey);
@@ -876,7 +877,7 @@ public class ServicesRegistry {
 
 	/**
 	 * Dispose all services.
-	 * 
+	 *
 	 * @throws ServiceMultiException
 	 */
 	public void disposeRegistry() throws ServiceMultiException {
@@ -892,35 +893,35 @@ public class ServicesRegistry {
 		namedServices.clear();
 
 		// Report errors if any
-		if(errors.getExceptions().size() > 0) {
+		if (errors.getExceptions().size() > 0) {
 			throw errors;
 		}
 	}
 
 	/**
 	 * Create all services provided in the list
-	 * 
+	 *
 	 * @param toStart
-	 *        List of services to create.
+	 *            List of services to create.
 	 * @param errors
-	 *        Exception to collect errors.
-	 * 
+	 *            Exception to collect errors.
+	 *
 	 * @throws ServiceMultiException
-	 *         If an error occure during the creation
-	 * 
+	 *             If an error occure during the creation
+	 *
 	 * @throws ServiceException
-	 *         If a service can't be started.
+	 *             If a service can't be started.
 	 */
 	private void createServices(List<ServiceStartupEntry> toStart, ServiceMultiException errors) {
 
 		// Loop on all services
-		for(ServiceStartupEntry serviceEntry : toStart) {
+		for (ServiceStartupEntry serviceEntry : toStart) {
 			try {
 
 				serviceEntry.createService();
 			} catch (ServiceException e) {
-				//Do not log the exception, as it is thrown. It may already be caught and logged by the caller.
-				//log.log(Level.SEVERE, "Can't create service '" + serviceEntry + "'", e);
+				// Do not log the exception, as it is thrown. It may already be caught and logged by the caller.
+				// log.log(Level.SEVERE, "Can't create service '" + serviceEntry + "'", e);
 				errors.addException(serviceEntry.getDescriptor().getKey(), e);
 			}
 		}
@@ -930,19 +931,19 @@ public class ServicesRegistry {
 	/**
 	 * Register all services provided in the list. After this operation,
 	 * services are available thru {@link #getService(Class)}.
-	 * 
+	 *
 	 * @param toStart
-	 *        List of services to register.
-	 * 
+	 *            List of services to register.
+	 *
 	 * @throws ServiceException
-	 *         If a service can't be started.
+	 *             If a service can't be started.
 	 */
 	private void registerServices(Collection<ServiceStartupEntry> toStart) {
 
 		// Loop on all services
-		for(ServiceStartupEntry serviceEntry : toStart) {
+		for (ServiceStartupEntry serviceEntry : toStart) {
 			ServiceDescriptor desc = serviceEntry.getDescriptor();
-			if(desc.isAnonymous()) {
+			if (desc.isAnonymous()) {
 				anonymousServices.add(serviceEntry);
 			} else {
 				namedServices.put(desc.getKey(), serviceEntry);
@@ -952,27 +953,27 @@ public class ServicesRegistry {
 
 	/**
 	 * Init all services provided in the list
-	 * 
+	 *
 	 * @param toStart
-	 *        List of services to init.
+	 *            List of services to init.
 	 * @param errors
-	 * 
+	 *
 	 * @throws ServiceMultiException
-	 *         If an error occure during the process
-	 * 
+	 *             If an error occure during the process
+	 *
 	 * @throws ServiceException
-	 *         If a service can't be started.
+	 *             If a service can't be started.
 	 */
 	private void initServices(List<ServiceStartupEntry> toStart, ServiceMultiException errors) {
 
 		// Loop on all services
-		for(ServiceStartupEntry serviceEntry : toStart) {
+		for (ServiceStartupEntry serviceEntry : toStart) {
 			try {
 
 				serviceEntry.initService(this);
 			} catch (ServiceException e) {
-				//Do not log the exception, as it is thrown. It may already be caught and logged by the caller.
-				//log.log(Level.SEVERE, "Can't initialize service '" + serviceEntry + "'", e);
+				// Do not log the exception, as it is thrown. It may already be caught and logged by the caller.
+				// log.log(Level.SEVERE, "Can't initialize service '" + serviceEntry + "'", e);
 				errors.addException(serviceEntry.getDescriptor().getKey(), e);
 			}
 		}
@@ -981,27 +982,27 @@ public class ServicesRegistry {
 
 	/**
 	 * Init all services provided in the list
-	 * 
+	 *
 	 * @param toStart
-	 *        List of services to init.
+	 *            List of services to init.
 	 * @param errors
-	 * 
+	 *
 	 * @throws ServiceMultiException
-	 *         If an error occure during the process
-	 * 
+	 *             If an error occure during the process
+	 *
 	 * @throws ServiceException
-	 *         If a service can't be started.
+	 *             If a service can't be started.
 	 */
 	private void startServices(List<ServiceStartupEntry> toStart, ServiceMultiException errors) {
 
 		// Loop on all services
-		for(ServiceStartupEntry serviceEntry : toStart) {
+		for (ServiceStartupEntry serviceEntry : toStart) {
 			try {
 
 				serviceEntry.startService();
 			} catch (ServiceException e) {
-				//Do not log the exception, as it is thrown. It may already be caught and logged by the caller.
-				//log.log(Level.SEVERE, "Can't start service '" + serviceEntry + "'", e);
+				// Do not log the exception, as it is thrown. It may already be caught and logged by the caller.
+				// log.log(Level.SEVERE, "Can't start service '" + serviceEntry + "'", e);
 				errors.addException(serviceEntry.getDescriptor().getKey(), e);
 			}
 		}
@@ -1011,21 +1012,21 @@ public class ServicesRegistry {
 	/**
 	 * Dispose all started services.
 	 * Services are disposed in creation reverse order
-	 * 
+	 *
 	 * @throws ServiceMultiException
-	 * 
+	 *
 	 * @throws ServiceException
-	 *         If a service can't be started.
+	 *             If a service can't be started.
 	 */
 	private void disposeServices(Collection<ServiceStartupEntry> services, ServiceMultiException errors) {
 
 		// Dispose services
-		for(ServiceStartupEntry serviceEntry : services) {
+		for (ServiceStartupEntry serviceEntry : services) {
 			try {
 				serviceEntry.disposeService();
 			} catch (Exception ex) {
-				//Do not log the exception, as it is thrown. It may already be caught and logged by the caller.
-				//log.log(Level.SEVERE, "Can't dispose service'" + serviceEntry.getDescriptor().getKey() + "'", ex);
+				// Do not log the exception, as it is thrown. It may already be caught and logged by the caller.
+				// log.log(Level.SEVERE, "Can't dispose service'" + serviceEntry.getDescriptor().getKey() + "'", ex);
 				errors.addException(serviceEntry.getDescriptor(), ex);
 			}
 		}
@@ -1034,9 +1035,9 @@ public class ServicesRegistry {
 	/**
 	 * This class represents a union of two maps of <String,
 	 * ServiceStartupEntry>. It provide specific methods to retrieve a {@link ServiceStartupEntry} by its key.
-	 * 
+	 *
 	 * @author cedric dumoulin
-	 * 
+	 *
 	 */
 	private class LookupMap {
 
@@ -1045,9 +1046,9 @@ public class ServicesRegistry {
 		Map<String, ServiceStartupEntry> map2;
 
 		/**
-		 * 
+		 *
 		 * Constructor. Build a union of two maps.
-		 * 
+		 *
 		 * @param map1
 		 * @param map2
 		 */
@@ -1057,9 +1058,9 @@ public class ServicesRegistry {
 		}
 
 		/**
-		 * 
+		 *
 		 * Constructor. Build a union of one map (sic).
-		 * 
+		 *
 		 * @param map
 		 */
 		@SuppressWarnings("unused")
@@ -1069,7 +1070,7 @@ public class ServicesRegistry {
 
 		/**
 		 * Get a service by its key.
-		 * 
+		 *
 		 * @param key
 		 * @return the service or null if not found.
 		 */
@@ -1077,10 +1078,10 @@ public class ServicesRegistry {
 		public ServiceStartupEntry get(String key) {
 
 			ServiceStartupEntry res = map1.get(key);
-			if(res != null) {
+			if (res != null) {
 				return res;
 			}
-			if(map2 != null) {
+			if (map2 != null) {
 				res = map2.get(key);
 			}
 
@@ -1089,22 +1090,22 @@ public class ServicesRegistry {
 
 		/**
 		 * Get a service by its key.
-		 * 
+		 *
 		 * @param key
 		 * @return The requested service.
 		 * @throws ServiceNotFoundException
-		 *         if the service can't be found.
+		 *             if the service can't be found.
 		 */
 		public ServiceStartupEntry getChecked(String key) throws ServiceNotFoundException {
 
 			ServiceStartupEntry res = map1.get(key);
-			if(res != null) {
+			if (res != null) {
 				return res;
 			}
-			if(map2 != null) {
+			if (map2 != null) {
 				res = map2.get(key);
 			}
-			if(res != null) {
+			if (res != null) {
 				return res;
 			}
 

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -17,7 +17,7 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * Default XWT Dialog with a content via static URL
- * 
+ *
  * @author yyang <yves.yang@soyatec.com>
  */
 public class XWTDialog extends AbstractDialog {
@@ -31,7 +31,7 @@ public class XWTDialog extends AbstractDialog {
 
 	@Override
 	protected URL getContentURL() {
-		if(contentForm != null) {
+		if (contentForm != null) {
 			return contentForm.getResource(contentForm.getSimpleName() + IConstants.XWT_EXTENSION_SUFFIX);
 		}
 		return null;

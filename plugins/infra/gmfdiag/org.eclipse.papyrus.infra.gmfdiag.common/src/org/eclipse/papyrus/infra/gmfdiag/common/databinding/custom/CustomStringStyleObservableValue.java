@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,6 +23,7 @@ public class CustomStringStyleObservableValue extends AbstractCustomStyleObserva
 		super(source, domain, styleName, NotationPackage.eINSTANCE.getStringValueStyle(), NotationPackage.eINSTANCE.getStringValueStyle_StringValue());
 	}
 
+	@Override
 	public Object getValueType() {
 		return String.class;
 	}
@@ -30,7 +31,7 @@ public class CustomStringStyleObservableValue extends AbstractCustomStyleObserva
 	/**
 	 * Gets the default value when this style is not set.
 	 * Subclasses may override
-	 * 
+	 *
 	 * @return The default value for this StringStyleValue
 	 */
 	@Override
@@ -40,7 +41,7 @@ public class CustomStringStyleObservableValue extends AbstractCustomStyleObserva
 
 	@Override
 	public Command getCommand(Object value) {
-		if(value instanceof String) {
+		if (value instanceof String) {
 			return super.getCommand(value);
 		}
 		throw new IllegalArgumentException("The value " + value + " is not a valid String Value");

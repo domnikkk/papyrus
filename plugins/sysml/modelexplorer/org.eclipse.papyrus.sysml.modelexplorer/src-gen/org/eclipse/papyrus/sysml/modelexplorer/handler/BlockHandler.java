@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,9 +17,9 @@ import org.eclipse.papyrus.sysml.service.types.element.SysMLElementTypes;
 /**
  * <pre>
  * Command handler for Block creation
- * 
+ *
  * </pre>
- * 
+ *
  * @generated
  */
 public class BlockHandler extends AbstractSysmlModelExplorerCreateCommandHandler {
@@ -27,13 +27,14 @@ public class BlockHandler extends AbstractSysmlModelExplorerCreateCommandHandler
 	/**
 	 * <pre>
 	 * @see org.eclipse.papyrus.uml.service.creation.handler.CreateHandler#getElementTypeToCreate()
-	 * 
+	 *
 	 * @return the IElementType this handler is supposed to create
-	 * 
+	 *
 	 * </pre>
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected IElementType getElementTypeToCreate() {
 		return SysMLElementTypes.BLOCK;
 	}

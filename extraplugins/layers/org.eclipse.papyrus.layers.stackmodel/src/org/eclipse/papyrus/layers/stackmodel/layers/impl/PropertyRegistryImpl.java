@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -41,9 +41,9 @@ import org.eclipse.papyrus.layers.stackmodel.layers.TypeRegistry;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyRegistryImpl#getProperties <em>Properties</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyRegistryImpl#getTypeRegistry <em>Type Registry</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyRegistryImpl#getPropertiesCount <em>Properties Count</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyRegistryImpl#getProperties <em>Properties</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyRegistryImpl#getTypeRegistry <em>Type Registry</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyRegistryImpl#getPropertiesCount <em>Properties Count</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +54,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getProperties()
 	 * @generated
 	 * @ordered
@@ -64,6 +65,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getTypeRegistry() <em>Type Registry</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getTypeRegistry()
 	 * @generated
 	 * @ordered
@@ -74,6 +76,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getPropertiesCount() <em>Properties Count</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPropertiesCount()
 	 * @generated
 	 * @ordered
@@ -83,6 +86,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOt
 	 */
 	protected PropertyRegistryImpl() {
@@ -90,7 +94,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 		// initialie transient ref
 		init();
 	}
-	
+
 	/**
 	 * Init the transient references
 	 * Create the internal objects : TypeRegistry.
@@ -99,47 +103,48 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 		// Create the TypeRegistry
 		TypeRegistry typeRegistry = LayersFactory.eINSTANCE.createTypeRegistry();
 		setTypeRegistry(typeRegistry);
-		
+
 		// Initialize the list of properties
 		// Properties to add
 		// name, type, defaultvalues
-		// colors: black=0 , fushia=15053796, 
+		// colors: black=0 , fushia=15053796,
 		String[] properties = new String[] {
-//				"name", "String",
-//				"age", "int",
-//				"num", "int",
-//				"addr", "String",
-//				"isValid", "boolean", "true",
-				"isVisible", "boolean","true",
+				// "name", "String",
+				// "age", "int",
+				// "num", "int",
+				// "addr", "String",
+				// "isValid", "boolean", "true",
+				"isVisible", "boolean", "true",
 				"isAbstract", "boolean", "false",
-				"fill", "Fill", "0, 15053796", //"transparency, fillColor"
-				"line", "LineType",	"0, -1",	 // "lineColor, lineWith"	
-				"font", "FontType",	"Segoe UI, 9, 0, false",	 // "FontName, FontHeight, FontColor, Bold"	
-//				"bgcolor", "Color",
-//				"fgcolor", "Color",
+				"fill", "Fill", "0, 15053796", // "transparency, fillColor"
+				"line", "LineType", "0, -1", // "lineColor, lineWith"
+				"font", "FontType", "Segoe UI, 9, 0, false", // "FontName, FontHeight, FontColor, Bold"
+		// "bgcolor", "Color",
+				// "fgcolor", "Color",
 		};
-		
-		for( int i=0;i<properties.length; i+=3) {
+
+		for (int i = 0; i < properties.length; i += 3) {
 			Property property = LayersFactory.eINSTANCE.createProperty();
 			property.setName(properties[i]);
-			Type propertyType = typeRegistry.getTypes().get(properties[i+1]);
+			Type propertyType = typeRegistry.getTypes().get(properties[i + 1]);
 			property.setType(propertyType);
 			// Create Default value
-			String defaultValueStr = properties[i+2];
-			if( defaultValueStr != null && defaultValueStr.length()>0) {
+			String defaultValueStr = properties[i + 2];
+			if (defaultValueStr != null && defaultValueStr.length() > 0) {
 				TypeInstance defaultValue = propertyType.createInstance();
 				defaultValue.setValueFromString(defaultValueStr);
 				property.setDefaultValue(defaultValue);
 			}
-			
+
 			addProperty(property);
-//			getProperties().add(property);
+			// getProperties().add(property);
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,8 +155,10 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<Property> getProperties() {
 		if (properties == null) {
 			properties = new EObjectContainmentEList<Property>(Property.class, this, LayersPackage.PROPERTY_REGISTRY__PROPERTIES);
@@ -162,8 +169,10 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TypeRegistry getTypeRegistry() {
 		return typeRegistry;
 	}
@@ -171,6 +180,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetTypeRegistry(TypeRegistry newTypeRegistry, NotificationChain msgs) {
@@ -178,7 +188,11 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 		typeRegistry = newTypeRegistry;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY, oldTypeRegistry, newTypeRegistry);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -186,27 +200,36 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setTypeRegistry(TypeRegistry newTypeRegistry) {
 		if (newTypeRegistry != typeRegistry) {
 			NotificationChain msgs = null;
-			if (typeRegistry != null)
-				msgs = ((InternalEObject)typeRegistry).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY, null, msgs);
-			if (newTypeRegistry != null)
-				msgs = ((InternalEObject)newTypeRegistry).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY, null, msgs);
+			if (typeRegistry != null) {
+				msgs = ((InternalEObject) typeRegistry).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY, null, msgs);
+			}
+			if (newTypeRegistry != null) {
+				msgs = ((InternalEObject) newTypeRegistry).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY, null, msgs);
+			}
 			msgs = basicSetTypeRegistry(newTypeRegistry, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY, newTypeRegistry, newTypeRegistry));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public int getPropertiesCount() {
 		return getProperties().size();
 	}
@@ -214,20 +237,22 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public int getPropertyIndex(String propertyName) throws NotFoundException {
-		
-		if(propertyName == null) {
+
+		if (propertyName == null) {
 			throw new NotFoundException("Null not Allowed");
 		}
 		List<Property> props = getProperties();
-		for( int i=0; i<props.size(); i++) {
-			if( propertyName.equals(props.get(i).getName() ) ) {
+		for (int i = 0; i < props.size(); i++) {
+			if (propertyName.equals(props.get(i).getName())) {
 				return i;
 			}
 		}
-		
+
 		// Not found
 		throw new NotFoundException("No property found with name '" + propertyName + "'");
 	}
@@ -235,8 +260,10 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public Property getProperty(String propertyName) throws NotFoundException {
 
 		int index = getPropertyIndex(propertyName);
@@ -246,8 +273,10 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void addProperty(Property property) {
 
 		// Check if the property already exist
@@ -258,7 +287,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 		} catch (NotFoundException e) {
 			// ok
 		}
-		
+
 		// set the index
 		property.setIndex(getProperties().size());
 		// Add the property
@@ -268,15 +297,16 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LayersPackage.PROPERTY_REGISTRY__PROPERTIES:
-				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
-			case LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY:
-				return basicSetTypeRegistry(null, msgs);
+		case LayersPackage.PROPERTY_REGISTRY__PROPERTIES:
+			return ((InternalEList<?>) getProperties()).basicRemove(otherEnd, msgs);
+		case LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY:
+			return basicSetTypeRegistry(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -284,17 +314,18 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersPackage.PROPERTY_REGISTRY__PROPERTIES:
-				return getProperties();
-			case LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY:
-				return getTypeRegistry();
-			case LayersPackage.PROPERTY_REGISTRY__PROPERTIES_COUNT:
-				return getPropertiesCount();
+		case LayersPackage.PROPERTY_REGISTRY__PROPERTIES:
+			return getProperties();
+		case LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY:
+			return getTypeRegistry();
+		case LayersPackage.PROPERTY_REGISTRY__PROPERTIES_COUNT:
+			return getPropertiesCount();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -302,19 +333,20 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersPackage.PROPERTY_REGISTRY__PROPERTIES:
-				getProperties().clear();
-				getProperties().addAll((Collection<? extends Property>)newValue);
-				return;
-			case LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY:
-				setTypeRegistry((TypeRegistry)newValue);
-				return;
+		case LayersPackage.PROPERTY_REGISTRY__PROPERTIES:
+			getProperties().clear();
+			getProperties().addAll((Collection<? extends Property>) newValue);
+			return;
+		case LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY:
+			setTypeRegistry((TypeRegistry) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -322,17 +354,18 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersPackage.PROPERTY_REGISTRY__PROPERTIES:
-				getProperties().clear();
-				return;
-			case LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY:
-				setTypeRegistry((TypeRegistry)null);
-				return;
+		case LayersPackage.PROPERTY_REGISTRY__PROPERTIES:
+			getProperties().clear();
+			return;
+		case LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY:
+			setTypeRegistry((TypeRegistry) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -340,17 +373,18 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersPackage.PROPERTY_REGISTRY__PROPERTIES:
-				return properties != null && !properties.isEmpty();
-			case LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY:
-				return typeRegistry != null;
-			case LayersPackage.PROPERTY_REGISTRY__PROPERTIES_COUNT:
-				return getPropertiesCount() != PROPERTIES_COUNT_EDEFAULT;
+		case LayersPackage.PROPERTY_REGISTRY__PROPERTIES:
+			return properties != null && !properties.isEmpty();
+		case LayersPackage.PROPERTY_REGISTRY__TYPE_REGISTRY:
+			return typeRegistry != null;
+		case LayersPackage.PROPERTY_REGISTRY__PROPERTIES_COUNT:
+			return getPropertiesCount() != PROPERTIES_COUNT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -358,30 +392,29 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case LayersPackage.PROPERTY_REGISTRY___GET_PROPERTY_INDEX__STRING:
-				try {
-					return getPropertyIndex((String)arguments.get(0));
-				}
-				catch (Throwable throwable) {
-					throw new InvocationTargetException(throwable);
-				}
-			case LayersPackage.PROPERTY_REGISTRY___GET_PROPERTY__STRING:
-				try {
-					return getProperty((String)arguments.get(0));
-				}
-				catch (Throwable throwable) {
-					throw new InvocationTargetException(throwable);
-				}
-			case LayersPackage.PROPERTY_REGISTRY___ADD_PROPERTY__PROPERTY:
-				addProperty((Property)arguments.get(0));
-				return null;
+		case LayersPackage.PROPERTY_REGISTRY___GET_PROPERTY_INDEX__STRING:
+			try {
+				return getPropertyIndex((String) arguments.get(0));
+			} catch (Throwable throwable) {
+				throw new InvocationTargetException(throwable);
+			}
+		case LayersPackage.PROPERTY_REGISTRY___GET_PROPERTY__STRING:
+			try {
+				return getProperty((String) arguments.get(0));
+			} catch (Throwable throwable) {
+				throw new InvocationTargetException(throwable);
+			}
+		case LayersPackage.PROPERTY_REGISTRY___ADD_PROPERTY__PROPERTY:
+			addProperty((Property) arguments.get(0));
+			return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-} //PropertyRegistryImpl
+} // PropertyRegistryImpl

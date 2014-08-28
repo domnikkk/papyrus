@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,8 +24,8 @@ import org.eclipse.uml2.uml.ActivityPartition;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocateActivityGroup#isIsUnique <em>Is Unique</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocateActivityGroup#getBase_ActivityPartition <em>Base Activity Partition</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocateActivityGroup#isIsUnique <em>Is Unique</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocateActivityGroup#getBase_ActivityPartition <em>Base Activity Partition</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,10 +39,10 @@ public interface AllocateActivityGroup extends EObject {
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Unique</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Unique</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Is Unique</em>' attribute.
 	 * @see #setIsUnique(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getAllocateActivityGroup_IsUnique()
@@ -55,7 +55,9 @@ public interface AllocateActivityGroup extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocateActivityGroup#isIsUnique <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Unique</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Is Unique</em>' attribute.
 	 * @see #isIsUnique()
 	 * @generated
 	 */
@@ -65,10 +67,10 @@ public interface AllocateActivityGroup extends EObject {
 	 * Returns the value of the '<em><b>Base Activity Partition</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Activity Partition</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Activity Partition</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Activity Partition</em>' reference.
 	 * @see #setBase_ActivityPartition(ActivityPartition)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getAllocateActivityGroup_Base_ActivityPartition()
@@ -81,7 +83,9 @@ public interface AllocateActivityGroup extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocateActivityGroup#getBase_ActivityPartition <em>Base Activity Partition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Activity Partition</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Activity Partition</em>' reference.
 	 * @see #getBase_ActivityPartition()
 	 * @generated
 	 */

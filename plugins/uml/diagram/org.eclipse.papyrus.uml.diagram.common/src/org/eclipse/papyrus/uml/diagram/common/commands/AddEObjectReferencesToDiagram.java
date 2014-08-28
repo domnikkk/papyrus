@@ -27,7 +27,7 @@ import org.eclipse.papyrus.uml.diagram.common.util.MultiDiagramUtil;
 // TODO: Auto-generated Javadoc
 /**
  * The Class AddEObjectReferencesToDiagram.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  */
 public class AddEObjectReferencesToDiagram extends AbstractTransactionalCommand {
@@ -45,13 +45,13 @@ public class AddEObjectReferencesToDiagram extends AbstractTransactionalCommand 
 
 	/**
 	 * Instantiates a new adds the e object references to diagram.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 * @param eObjects
-	 *        the e objects
+	 *            the e objects
 	 */
 	public AddEObjectReferencesToDiagram(TransactionalEditingDomain domain, Diagram diagram, List<EObject> eObjects) {
 		super(domain, "Add EObject references to Diagram", null);
@@ -69,7 +69,7 @@ public class AddEObjectReferencesToDiagram extends AbstractTransactionalCommand 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.operations.AbstractOperation#canExecute()
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class AddEObjectReferencesToDiagram extends AbstractTransactionalCommand 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.emf.commands.core.command.
 	 * AbstractTransactionalCommand
 	 * #doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
@@ -87,7 +87,7 @@ public class AddEObjectReferencesToDiagram extends AbstractTransactionalCommand 
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		for(EObject eObject : eObjects) {
+		for (EObject eObject : eObjects) {
 			addReferences(eObject);
 		}
 		return CommandResult.newOKCommandResult();
@@ -95,13 +95,13 @@ public class AddEObjectReferencesToDiagram extends AbstractTransactionalCommand 
 
 	/**
 	 * Adds the references.
-	 * 
+	 *
 	 * @param eObject
-	 *        the e object
+	 *            the e object
 	 */
 	private void addReferences(EObject eObject) {
-		if(addContents) {
-			for(EObject e : eObject.eContents()) {
+		if (addContents) {
+			for (EObject e : eObject.eContents()) {
 				addReferences(e);
 			}
 		}

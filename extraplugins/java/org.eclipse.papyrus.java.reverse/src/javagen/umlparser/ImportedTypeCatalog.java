@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package javagen.umlparser;
 
@@ -10,9 +10,9 @@ import java.util.Map;
 /**
  * Catalog managing the imports names.
  * This catalog allows to lookup the qualified name of a type.
- * 
+ *
  * @author dumoulin
- * 
+ *
  */
 public class ImportedTypeCatalog {
 
@@ -34,9 +34,9 @@ public class ImportedTypeCatalog {
 			"Runnable", "java.lang.Runnable",
 			"Throwable", "java.lang.Throwable",
 			"Thread", "java.lang.Thread",
-			};
+	};
 
-	
+
 	/**
 	 * Constructor.
 	 */
@@ -47,11 +47,11 @@ public class ImportedTypeCatalog {
 
 	/**
 	 * Set the default mappings
-	 * 
+	 *
 	 * @param defaultMappingNames
 	 */
 	private void setDefaultMapping(String[] defaultMappingNames) {
-		for(int i = 0; i < defaultMappingNames.length; i += 2) {
+		for (int i = 0; i < defaultMappingNames.length; i += 2) {
 			map.put(defaultMappingNames[i], UmlUtils.toQualifiedName(defaultMappingNames[i + 1]));
 			System.out.println("setDefaultMapping().add(" + defaultMappingNames[i] + ", " + UmlUtils.toQualifiedName(defaultMappingNames[i + 1]) + ")");
 		}
@@ -60,21 +60,22 @@ public class ImportedTypeCatalog {
 	/**
 	 * Get the associated qualified name from the imports.
 	 * Return the translation or the name itself, as a qualifiedName.
-	 * 
+	 *
 	 * @param name
 	 * @return
 	 */
 	public List<String> getQualifiedName(String name) {
 
 		List<String> res = map.get(name);
-		if(res == null)
+		if (res == null) {
 			res = UmlUtils.toQualifiedName(name);
+		}
 		return res;
 	}
 
 	/**
 	 * Lookup the associated qualified name from the imports.
-	 * 
+	 *
 	 * @param name
 	 * @return
 	 */
@@ -88,50 +89,53 @@ public class ImportedTypeCatalog {
 	 * Get the qualified name of the provided [qualifiedName].
 	 * If the provided name size is one, lookup for its full name.
 	 * Otherwise, return the imput.
-	 * 
+	 *
 	 * @param typeQualifiedName
 	 * @return
 	 */
 	public List<String> getQualifiedName(List<String> possiblyQualifiedName) {
-		if(possiblyQualifiedName.size() == 1) {
+		if (possiblyQualifiedName.size() == 1) {
 			List<String> res = lookupQualifiedName(possiblyQualifiedName.get(0));
-			if(res == null)
+			if (res == null) {
 				res = possiblyQualifiedName;
+			}
 			return res;
-		} else
+		} else {
 			return possiblyQualifiedName;
+		}
 	}
 
 	/**
 	 * Return true if the specified qualifiedName denote an imported name.
 	 * Return false otherwise.
-	 * 
+	 *
 	 * @param qualifiedName
 	 * @return
 	 */
 	public boolean isImportedType(List<String> qualifiedName) {
-		
+
 		String lastName = qualifiedName.get(qualifiedName.size() - 1);
 
 		// Check if the last name is in the catalog, and compare package names
 		List<String> found = map.get(lastName);
-		if( found != null && found.equals( qualifiedName ) )
+		if (found != null && found.equals(qualifiedName)) {
 			return true;
-		
+		}
+
 		return false;
 	}
 
 
 	/**
 	 * Add an import
-	 * 
+	 *
 	 * @param qualifiedName
 	 */
 	public void addImport(List<String> qualifiedName) {
 
 		String lastName = qualifiedName.get(qualifiedName.size() - 1);
 		System.out.println("ImportedCatalog.add(" + qualifiedName + ")");
-		if("*".equals(lastName)) {
+		if ("*".equals(lastName)) {
 			addPackageClasses(qualifiedName);
 		} else {
 			map.put(lastName, qualifiedName);
@@ -141,12 +145,12 @@ public class ImportedTypeCatalog {
 	/**
 	 * Add all the class from the package.
 	 * Last name is '*'
-	 * 
+	 *
 	 * @param qualifiedName
 	 */
 	private void addPackageClasses(List<String> qualifiedName) {
 		// TODO Auto-generated method stub
-		//		throw new UnsupportedOperationException("not yet implmeented");
+		// throw new UnsupportedOperationException("not yet implmeented");
 		System.err.println(this.getClass().getName()
 				+ ".addPackageClasses() - Not yet implemented - can't process import with 'p1.p2.*;'");
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.ui.part.ViewPart;
 
 /**
  * this is console that display the result of a OCL Constraint. The pattern Singleton has been applied
- * 
+ *
  */
 public class OCLEvaluationView extends ViewPart {
 
@@ -45,9 +45,9 @@ public class OCLEvaluationView extends ViewPart {
 	protected MetaModelManager metaModelManager = null;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public OCLEvaluationView() {
 		super();
@@ -67,16 +67,16 @@ public class OCLEvaluationView extends ViewPart {
 
 	/**
 	 * this method comes from the org.eclipse.ocl.examples.xtext.console.OCLConsolePage written by
-	 * 
+	 *
 	 * @param contextObject
 	 * @return the metamodelManager
 	 */
 	protected MetaModelManager getMetaModelManager(EObject contextObject) {
 		MetaModelManager metaModelManager = ElementUtil.findMetaModelManager(contextObject);
-		if(metaModelManager != null) {
+		if (metaModelManager != null) {
 			return metaModelManager;
 		}
-		if(metaModelManager == null) {
+		if (metaModelManager == null) {
 			metaModelManager = new MetaModelManager();
 		}
 		return metaModelManager;
@@ -86,14 +86,14 @@ public class OCLEvaluationView extends ViewPart {
 
 	/**
 	 * allow to compute the constraint written in the string in the context of the EObject
-	 * 
+	 *
 	 * @param contextObject
-	 *        the context of the constraint
+	 *            the context of the constraint
 	 * @param expression
-	 *        the constraint
+	 *            the constraint
 	 */
 	public void compute(EObject contextObject, String expression) {
-		//initialize the context of an evaluation of the OCL expression
+		// initialize the context of an evaluation of the OCL expression
 		MetaModelManager metaModelManager = getMetaModelManager(contextObject);
 		PivotEnvironmentFactory envFactory = new PivotEnvironmentFactory(null, metaModelManager);
 		PivotEnvironment environment = envFactory.createEnvironment();
@@ -105,7 +105,7 @@ public class OCLEvaluationView extends ViewPart {
 			Object evaluate = ocl.evaluate(contextObject, createQuery);
 			String print = evaluate.toString();
 
-			//display the value
+			// display the value
 			textViewer.setText("value = " + print);
 		} catch (Exception ex) {
 			textViewer.setText("\nERROR " + ex);

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,32 +20,32 @@ public interface ILabelFigure {
 
 	/**
 	 * Sets the text for this figure
-	 * 
+	 *
 	 * @param text
-	 *        the text to display
+	 *            the text to display
 	 * @return the text to display
 	 */
 	public void setText(String text);
 
 	/**
 	 * Returns the text of this figure
-	 * 
+	 *
 	 * @return the text displayed by this figure
 	 */
 	public String getText();
 
 	/**
 	 * Sets the icon for this figure
-	 * 
+	 *
 	 * @param icon
-	 *        the image to display
+	 *            the image to display
 	 * @return the image to display
 	 */
 	public void setIcon(Image icon);
 
 	/**
 	 * Returns the image of this figure
-	 * 
+	 *
 	 * @return the image displayed by this figure
 	 */
 	public Image getIcon();

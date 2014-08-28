@@ -2,37 +2,35 @@
 <?eclipse version="3.0"?>
 
 <!--
- <copyright>
- </copyright>
-
- $Id$
 -->
 
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generatoroptionsmm -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.presentation.JdtmmModelWizardID"
-            name="%_UI_JdtmmModelWizard_label"
-            class="org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.presentation.JdtmmModelWizard"
+            id="org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.presentation.GeneratoroptionsmmModelWizardID"
+            name="%_UI_GeneratoroptionsmmModelWizard_label"
+            class="org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.presentation.GeneratoroptionsmmModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/JdtmmModelFile.gif">
-         <description>%_UI_JdtmmModelWizard_description</description>
+            icon="icons/full/obj16/GeneratoroptionsmmModelFile.gif">
+         <description>%_UI_GeneratoroptionsmmModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
 
    <extension point="org.eclipse.ui.editors">
+      <!-- @generated generatoroptionsmm -->
       <editor
-            id="org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.presentation.JdtmmEditorID"
-            name="%_UI_JdtmmEditor_label"
-            icon="icons/full/obj16/JdtmmModelFile.gif"
-            extensions="jdtmm"
-            class="org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.presentation.JdtmmEditor"
-            contributorClass="org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.presentation.JdtmmActionBarContributor">
+            id="org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.presentation.GeneratoroptionsmmEditorID"
+            name="%_UI_GeneratoroptionsmmEditor_label"
+            icon="icons/full/obj16/GeneratoroptionsmmModelFile.gif"
+            extensions="generatoroptionsmm"
+            class="org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.presentation.GeneratoroptionsmmEditor"
+            contributorClass="org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.presentation.GeneratoroptionsmmActionBarContributor">
       </editor>
    </extension>
 

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -82,7 +82,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  * Dialog to edit theme from an initial selection in workspace.
- * 
+ *
  * @author gpascual
  *
  */
@@ -122,7 +122,7 @@ public class CSSThemeEditionDialog extends Dialog {
 	private static final int BROWSE_BUTTON_ID = 16;
 
 	/** Array of all id's buttons which were added in dialog. */
-	private static int[] actionIdList = new int[]{ DOWN_BUTTON_ID, UP_BUTTON_ID, DELETE_BUTTON_ID, ADD_BUTTON_ID, BROWSE_BUTTON_ID, EDIT_BUTTON_ID };
+	private static int[] actionIdList = new int[] { DOWN_BUTTON_ID, UP_BUTTON_ID, DELETE_BUTTON_ID, ADD_BUTTON_ID, BROWSE_BUTTON_ID, EDIT_BUTTON_ID };
 
 	/** Title for add action dialog. */
 	private static final String ADD_DIALOG_TITLE = "Style sheets selection";
@@ -161,10 +161,10 @@ public class CSSThemeEditionDialog extends Dialog {
 	private static final String DIALOG_TITLE = "CSS Theme Edition";
 
 	/** List of valid extensions for an icon. */
-	private List<String> filterExtensions = Arrays.asList(new String[]{ "*.gif;*.png;*.jpeg", "*.gif", "*.png", "*.jpeg" });
+	private List<String> filterExtensions = Arrays.asList(new String[] { "*.gif;*.png;*.jpeg", "*.gif", "*.png", "*.jpeg" });
 
 	/** List of name associated to valid extensions. */
-	private List<String> filterNames = Arrays.asList(new String[]{ "All images", "GIF Icon", "PNG Icon", "JPEG Icon" });
+	private List<String> filterNames = Arrays.asList(new String[] { "All images", "GIF Icon", "PNG Icon", "JPEG Icon" });
 
 	/** Field for theme label. */
 	private Text themeLabelField = null;
@@ -211,14 +211,14 @@ public class CSSThemeEditionDialog extends Dialog {
 	 * Gets the filter labels.
 	 *
 	 * @param filterNames
-	 *        the filter names
+	 *            the filter names
 	 * @param filterExtensions
-	 *        the filter extensions
+	 *            the filter extensions
 	 */
 	private void initialiseFilterLabels(List<String> filterNames, List<String> filterExtensions) {
 		int size = Math.min(filterNames.size(), filterExtensions.size());
 		String[] filters = new String[size];
-		for(int i = 0; i < size; i++) {
+		for (int i = 0; i < size; i++) {
 			filters[i] = filterNames.get(i) + " (" + filterExtensions.get(i) + ")";
 		}
 		this.filterNames = Arrays.asList(filters);
@@ -226,9 +226,9 @@ public class CSSThemeEditionDialog extends Dialog {
 
 	/**
 	 * Initialise selected style sheets list with selection.
-	 * 
+	 *
 	 * @param selection
-	 *        Source to extract style sheets
+	 *            Source to extract style sheets
 	 */
 	private void initialiseWithSelection(IStructuredSelection selection) {
 		Assert.isNotNull(selection);
@@ -241,15 +241,15 @@ public class CSSThemeEditionDialog extends Dialog {
 		StylesheetsFactory styleSheetsFactory = StylesheetsFactory.eINSTANCE;
 
 		// Explore selection
-		while(selectionIterator.hasNext()) {
+		while (selectionIterator.hasNext()) {
 
 			// Check only file from selection
 			Object object = selectionIterator.next();
-			if(object instanceof IFile) {
+			if (object instanceof IFile) {
 
 				// Create a style sheet reference and add it to list
 				StyleSheetReference reference = styleSheetsFactory.createStyleSheetReference();
-				reference.setPath(((IFile)object).getFullPath().toString());
+				reference.setPath(((IFile) object).getFullPath().toString());
 
 				selectedStyleSheetsList.add(reference);
 			}
@@ -274,12 +274,12 @@ public class CSSThemeEditionDialog extends Dialog {
 
 	/**
 	 * Create contents of the dialog.
-	 * 
+	 *
 	 * @param parent
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite container = (Composite)super.createDialogArea(parent);
+		Composite container = (Composite) super.createDialogArea(parent);
 		container.setLayout(new GridLayout(2, false));
 
 		createEditedThemeComposite(container);
@@ -295,9 +295,9 @@ public class CSSThemeEditionDialog extends Dialog {
 
 	/**
 	 * Create composite whith that can select theme to edit.
-	 * 
+	 *
 	 * @param parent
-	 *        Parent composite where components will be added
+	 *            Parent composite where components will be added
 	 */
 	private void createEditedThemeComposite(Composite parent) {
 
@@ -339,8 +339,8 @@ public class CSSThemeEditionDialog extends Dialog {
 				String text = super.getText(element);
 
 				// Display label of theme in combo viewer
-				if(element instanceof Theme) {
-					text = ((Theme)element).getLabel();
+				if (element instanceof Theme) {
+					text = ((Theme) element).getLabel();
 				}
 
 
@@ -351,8 +351,7 @@ public class CSSThemeEditionDialog extends Dialog {
 		comboViewer.setContentProvider(new EMFContentProvider(workspaceThemes, StylesheetsPackage.eINSTANCE.getWorkspaceThemes_Themes()) {
 
 			/**
-			 * @see org.eclipse.papyrus.infra.emf.providers.EMFContentProvider#getSemanticProvider(org.eclipse.emf.ecore.EObject,
-			 *      org.eclipse.emf.ecore.EStructuralFeature)
+			 * @see org.eclipse.papyrus.infra.emf.providers.EMFContentProvider#getSemanticProvider(org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EStructuralFeature)
 			 *
 			 * @param editedEObject
 			 * @param feature
@@ -369,7 +368,7 @@ public class CSSThemeEditionDialog extends Dialog {
 						List<Object> result = new LinkedList<Object>();
 
 						// Create list with workspace themes
-						if(editedEObject instanceof WorkspaceThemes) {
+						if (editedEObject instanceof WorkspaceThemes) {
 							result.addAll(workspaceThemes.getThemes());
 						}
 
@@ -387,9 +386,9 @@ public class CSSThemeEditionDialog extends Dialog {
 
 	/**
 	 * Create theme label composite.
-	 * 
+	 *
 	 * @param parent
-	 *        Parent composite where components will be added
+	 *            Parent composite where components will be added
 	 */
 	private void createThemeLabelPart(Composite parent) {
 
@@ -414,9 +413,9 @@ public class CSSThemeEditionDialog extends Dialog {
 
 	/**
 	 * Create theme icon part.
-	 * 
+	 *
 	 * @param parent
-	 *        Parent composite where components will be added
+	 *            Parent composite where components will be added
 	 */
 	private void createThemeIconPart(Composite parent) {
 		Label iconLabel = new Label(parent, SWT.NONE);
@@ -441,11 +440,11 @@ public class CSSThemeEditionDialog extends Dialog {
 
 	/**
 	 * Create menu item.
-	 * 
+	 *
 	 * @param parentMenu
-	 *        Menu where it will be added
+	 *            Menu where it will be added
 	 * @param label
-	 *        Label of menu item
+	 *            Label of menu item
 	 * @param menuId
 	 */
 	private void createMenuItem(Menu parentMenu, String label, int menuId) {
@@ -457,7 +456,7 @@ public class CSSThemeEditionDialog extends Dialog {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				menuSelected(((Integer)e.widget.getData()).intValue());
+				menuSelected(((Integer) e.widget.getData()).intValue());
 			}
 		});
 
@@ -466,12 +465,12 @@ public class CSSThemeEditionDialog extends Dialog {
 
 	/**
 	 * Action to run when a menu is slected.
-	 * 
+	 *
 	 * @param menuId
-	 *        ID of selected menu
+	 *            ID of selected menu
 	 */
 	private void menuSelected(int menuId) {
-		switch(menuId) {
+		switch (menuId) {
 		case WORKSPACE_MENU_ID:
 			browseWorkspace();
 			break;
@@ -479,7 +478,7 @@ public class CSSThemeEditionDialog extends Dialog {
 			browseFileSytem();
 			break;
 		default:
-			// Nothing to do 
+			// Nothing to do
 			break;
 		}
 	}
@@ -497,7 +496,7 @@ public class CSSThemeEditionDialog extends Dialog {
 		dialog.setFilterExtensions(filterExtensions.toArray(new String[filterExtensions.size()]));
 		dialog.setFilterNames(filterNames.toArray(new String[filterNames.size()]));
 		String result = dialog.open();
-		if(result == null) { //Cancel
+		if (result == null) { // Cancel
 			return;
 		}
 		setResult(result);
@@ -525,12 +524,12 @@ public class CSSThemeEditionDialog extends Dialog {
 		WorkspaceContentProvider contentProvider = new WorkspaceContentProvider();
 
 
-		if(!(filterExtensions.isEmpty() || filterNames.isEmpty())) {
-			//The filters have been defined 
-			contentProvider.setExtensionFilters(new LinkedHashMap<String, String>()); //Reset the default filters
+		if (!(filterExtensions.isEmpty() || filterNames.isEmpty())) {
+			// The filters have been defined
+			contentProvider.setExtensionFilters(new LinkedHashMap<String, String>()); // Reset the default filters
 
-			//Use our own filters
-			for(int i = 0; i < Math.min(filterNames.size(), filterExtensions.size()); i++) {
+			// Use our own filters
+			for (int i = 0; i < Math.min(filterNames.size(), filterExtensions.size()); i++) {
 				contentProvider.addExtensionFilter(filterExtensions.get(i), filterNames.get(i));
 			}
 		}
@@ -539,17 +538,17 @@ public class CSSThemeEditionDialog extends Dialog {
 		dialog.setLabelProvider(labelProvider);
 
 
-		if(currentFile != null && currentFile.exists()) {
-			dialog.setInitialSelections(new IFile[]{ currentFile });
+		if (currentFile != null && currentFile.exists()) {
+			dialog.setInitialSelections(new IFile[] { currentFile });
 		}
 
 		int code = dialog.open();
-		if(code == Window.OK) {
+		if (code == Window.OK) {
 			Object[] result = dialog.getResult();
-			if(result.length > 0) {
+			if (result.length > 0) {
 				Object file = result[0];
-				if(file instanceof IFile) {
-					setResult((IFile)file);
+				if (file instanceof IFile) {
+					setResult((IFile) file);
 				}
 			}
 		}
@@ -560,7 +559,7 @@ public class CSSThemeEditionDialog extends Dialog {
 	 * Sets the result.
 	 *
 	 * @param file
-	 *        the new result
+	 *            the new result
 	 */
 	protected void setResult(IFile file) {
 		iconPathfield.setText(file.getFullPath().toString());
@@ -570,7 +569,7 @@ public class CSSThemeEditionDialog extends Dialog {
 	 * Sets the result.
 	 *
 	 * @param file
-	 *        the new result
+	 *            the new result
 	 */
 	protected void setResult(File file) {
 		iconPathfield.setText(file.getAbsolutePath());
@@ -581,7 +580,7 @@ public class CSSThemeEditionDialog extends Dialog {
 	 * Sets the result.
 	 *
 	 * @param path
-	 *        the new result
+	 *            the new result
 	 */
 	protected void setResult(String path) {
 		iconPathfield.setText(path);
@@ -592,7 +591,7 @@ public class CSSThemeEditionDialog extends Dialog {
 	 * Gets the file.
 	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @return the i file
 	 */
 	protected IFile getIFile(String path) {
@@ -603,7 +602,7 @@ public class CSSThemeEditionDialog extends Dialog {
 	 * Gets the file.
 	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @return the file
 	 */
 	protected File getFile(String path) {
@@ -613,9 +612,9 @@ public class CSSThemeEditionDialog extends Dialog {
 
 	/**
 	 * Create theme style sheets part.
-	 * 
+	 *
 	 * @param parent
-	 *        Parent composite where components will be added
+	 *            Parent composite where components will be added
 	 */
 	private void createThemeStyleSheetsPart(Composite parent) {
 
@@ -640,10 +639,10 @@ public class CSSThemeEditionDialog extends Dialog {
 				String text = super.getText(element);
 
 				// Display path of style sheet reference
-				if(element instanceof StyleSheetReference) {
-					text = ((StyleSheetReference)element).getPath();
-				} else if(element instanceof EmbeddedStyleSheet) {
-					text = ((EmbeddedStyleSheet)element).getLabel();
+				if (element instanceof StyleSheetReference) {
+					text = ((StyleSheetReference) element).getPath();
+				} else if (element instanceof EmbeddedStyleSheet) {
+					text = ((EmbeddedStyleSheet) element).getLabel();
 				}
 
 				return text;
@@ -660,9 +659,9 @@ public class CSSThemeEditionDialog extends Dialog {
 
 	/**
 	 * Create actions associate to tree viewer.
-	 * 
+	 *
 	 * @param parent
-	 *        Composite where action buttons will be added
+	 *            Composite where action buttons will be added
 	 */
 	private void createTreeActionButtons(Composite parent) {
 		Label labelViewer = new Label(parent, SWT.NONE);
@@ -683,9 +682,9 @@ public class CSSThemeEditionDialog extends Dialog {
 
 	/**
 	 * Override method to create a button with an icon and no label.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#createButton(Composite, int, String, boolean)
-	 * 
+	 *
 	 * @param parent
 	 * @param id
 	 * @param icon
@@ -698,9 +697,9 @@ public class CSSThemeEditionDialog extends Dialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * Override method to define specific data layout for own dialog's buttons.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#setButtonLayoutData(org.eclipse.swt.widgets.Button)
 	 *
 	 * @param button
@@ -711,12 +710,12 @@ public class CSSThemeEditionDialog extends Dialog {
 		// Determine id of button
 		Object data = button.getData();
 		int buttonId = -1;
-		if(data instanceof Integer) {
-			buttonId = (Integer)data;
+		if (data instanceof Integer) {
+			buttonId = (Integer) data;
 		}
 
-		//Filter specific button to set data layout
-		switch(buttonId) {
+		// Filter specific button to set data layout
+		switch (buttonId) {
 		case ADD_BUTTON_ID:
 		case DELETE_BUTTON_ID:
 		case UP_BUTTON_ID:
@@ -738,9 +737,9 @@ public class CSSThemeEditionDialog extends Dialog {
 	private void deleteAction() {
 		ISelection selection = themeStyleSheetsViewer.getSelection();
 
-		if(selection instanceof IStructuredSelection) {
-			Object selectedElement = ((IStructuredSelection)selection).getFirstElement();
-			if(selectedElement instanceof StyleSheet) {
+		if (selection instanceof IStructuredSelection) {
+			Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
+			if (selectedElement instanceof StyleSheet) {
 				currentTheme.getStylesheets().remove(selectedElement);
 			}
 
@@ -768,7 +767,7 @@ public class CSSThemeEditionDialog extends Dialog {
 
 					public Object[] getElements() {
 						List<Object> result = new LinkedList<Object>();
-						if(editedEObject instanceof Theme) {
+						if (editedEObject instanceof Theme) {
 							result.addAll(currentTheme.getStylesheets());
 						}
 						return result.toArray();
@@ -786,7 +785,7 @@ public class CSSThemeEditionDialog extends Dialog {
 
 		// Handle dialog result
 		int result = vDialog.open();
-		if(result == Dialog.OK) {
+		if (result == Window.OK) {
 
 			Object[] resultArray = vDialog.getResult();
 			refreshStyleSheets(resultArray);
@@ -802,18 +801,18 @@ public class CSSThemeEditionDialog extends Dialog {
 
 		// Handle selection to extract selected style sheet
 		ISelection selection = themeStyleSheetsViewer.getSelection();
-		if(selection instanceof IStructuredSelection) {
-			Object selectedElement = ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
 
-			if(selectedElement instanceof StyleSheet) {
+			if (selectedElement instanceof StyleSheet) {
 
 				// Get index of selected style sheet in list
 				EList<StyleSheet> stylesheetsList = currentTheme.getStylesheets();
 				int index = stylesheetsList.indexOf(selectedElement);
 
 				// Check if selected style sheet is not at top of list
-				if(index > 0) {
-					stylesheetsList.move(--index, (StyleSheet)selectedElement);
+				if (index > 0) {
+					stylesheetsList.move(--index, (StyleSheet) selectedElement);
 					themeStyleSheetsViewer.setInput(stylesheetsList);
 				}
 			}
@@ -828,18 +827,18 @@ public class CSSThemeEditionDialog extends Dialog {
 		// Handle selection to extract selected style sheet
 		ISelection selection = themeStyleSheetsViewer.getSelection();
 
-		if(selection instanceof IStructuredSelection) {
-			Object selectedElement = ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
 
-			if(selectedElement instanceof StyleSheet) {
+			if (selectedElement instanceof StyleSheet) {
 
 				// Get index of selected style sheet in list
 				EList<StyleSheet> stylesheetsList = currentTheme.getStylesheets();
 				int index = stylesheetsList.indexOf(selectedElement);
 
 				// Check if selected style sheet is not at bottom of list
-				if(index < stylesheetsList.size() - 1) {
-					stylesheetsList.move(++index, (StyleSheet)selectedElement);
+				if (index < stylesheetsList.size() - 1) {
+					stylesheetsList.move(++index, (StyleSheet) selectedElement);
 					themeStyleSheetsViewer.setInput(stylesheetsList);
 				}
 			}
@@ -854,9 +853,9 @@ public class CSSThemeEditionDialog extends Dialog {
 
 		ISelection selection = themeStyleSheetsViewer.getSelection();
 
-		if(selection instanceof IStructuredSelection) {
-			Object selectedObject = ((IStructuredSelection)selection).getFirstElement();
-			if(selectedObject instanceof StyleSheet) {
+		if (selection instanceof IStructuredSelection) {
+			Object selectedObject = ((IStructuredSelection) selection).getFirstElement();
+			if (selectedObject instanceof StyleSheet) {
 				// Use editor factory
 				editorFactory.edit(getContents(), selectedObject);
 			}
@@ -868,18 +867,19 @@ public class CSSThemeEditionDialog extends Dialog {
 
 	/**
 	 * Fill style sheets viewer with selected style sheets.
-	 * 
+	 *
 	 * @param result
-	 *        Result from dialog selection
+	 *            Result from dialog selection
 	 */
 	private void refreshStyleSheets(Object[] result) {
 
 		// Complete current theme with dialog result
-		for(Object object : result) {
+		for (Object object : result) {
 
 			// Check if this is a style sheet
-			if(object instanceof StyleSheet)
-				currentTheme.getStylesheets().add((StyleSheet)object);
+			if (object instanceof StyleSheet) {
+				currentTheme.getStylesheets().add((StyleSheet) object);
+			}
 		}
 
 		refreshTreeviewer(currentTheme);
@@ -888,26 +888,26 @@ public class CSSThemeEditionDialog extends Dialog {
 
 	/**
 	 * Refresh content of tree viewer according to selected theme/
-	 * 
+	 *
 	 * @param currentTheme
-	 *        Current theme
+	 *            Current theme
 	 */
 	private void refreshTreeviewer(Theme currentTheme) {
 
-		if(currentTheme != null) {
+		if (currentTheme != null) {
 
 			EList<StyleSheet> themeStyleSheetsList = currentTheme.getStylesheets();
 
 
 			// For each selected reference, check match with existing reference in theme
-			for(StyleSheet basereference : selectedStyleSheetsList) {
+			for (StyleSheet basereference : selectedStyleSheetsList) {
 
 				// Flag for search
 				boolean found = false;
 				int i = 0;
 
 				// Explore theme style s
-				while(i < themeStyleSheetsList.size() && !found) {
+				while (i < themeStyleSheetsList.size() && !found) {
 
 					// Use own comparator to determine if style sheet reference exist
 					found = StylesheetsComparator.instance.compare(themeStyleSheetsList.get(i), basereference) == 0;
@@ -915,7 +915,7 @@ public class CSSThemeEditionDialog extends Dialog {
 				}
 
 				// Add selected reference only if it don't exist in theme
-				if(!found) {
+				if (!found) {
 					themeStyleSheetsList.add(basereference);
 				}
 			}
@@ -930,17 +930,17 @@ public class CSSThemeEditionDialog extends Dialog {
 
 
 	/**
-	 * 
+	 *
 	 * Update state of dialog buttons.
-	 * 
+	 *
 	 * @param currentTheme
-	 *        Selected theme which determine state of different buttons.
+	 *            Selected theme which determine state of different buttons.
 	 */
 	private void updateButtons(Theme currentTheme) {
 		boolean editionEnable = currentTheme != null;
 
-		for(int buttonId : actionIdList) {
-			switch(buttonId) {
+		for (int buttonId : actionIdList) {
+			switch (buttonId) {
 			case ADD_BUTTON_ID:
 			case BROWSE_BUTTON_ID:
 				getButton(buttonId).setEnabled(editionEnable);
@@ -962,9 +962,9 @@ public class CSSThemeEditionDialog extends Dialog {
 
 	/**
 	 * Refresh dialog area according to combo selection.
-	 * 
+	 *
 	 * @param selection
-	 *        selection which comes from combo viewer
+	 *            selection which comes from combo viewer
 	 */
 	protected void refreshDialogContent(ISelection selection) {
 
@@ -972,11 +972,11 @@ public class CSSThemeEditionDialog extends Dialog {
 		currentTheme = null;
 
 		// Get selected theme from combo
-		if(selection instanceof IStructuredSelection) {
-			Object selectedElement = ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
 
-			if(selectedElement instanceof Theme) {
-				currentTheme = (Theme)selectedElement;
+			if (selectedElement instanceof Theme) {
+				currentTheme = (Theme) selectedElement;
 			}
 		}
 
@@ -986,18 +986,18 @@ public class CSSThemeEditionDialog extends Dialog {
 		themeLabelField.setEditable(editionEnable);
 		iconPathfield.setEditable(editionEnable);
 
-		if(editionEnable) {
+		if (editionEnable) {
 
 			// Refresh text field (label, icon path, ...)
 			String themeLabel = currentTheme.getLabel();
-			if(themeLabel == null) {
+			if (themeLabel == null) {
 				themeLabel = "";
 			}
 			themeLabelField.setText(themeLabel);
 
 
 			String iconPath = currentTheme.getIcon();
-			if(iconPath == null) {
+			if (iconPath == null) {
 				iconPath = "";
 			}
 			iconPathfield.setText(iconPath);
@@ -1011,7 +1011,7 @@ public class CSSThemeEditionDialog extends Dialog {
 
 	/**
 	 * Create contents of the button bar.
-	 * 
+	 *
 	 * @param parent
 	 */
 	@Override
@@ -1027,7 +1027,7 @@ public class CSSThemeEditionDialog extends Dialog {
 	 */
 	@Override
 	protected void buttonPressed(int buttonId) {
-		switch(buttonId) {
+		switch (buttonId) {
 		case ADD_BUTTON_ID:
 			addAction();
 			break;
@@ -1098,20 +1098,20 @@ public class CSSThemeEditionDialog extends Dialog {
 			String rightOperand = null;
 			String leftOperand = null;
 
-			if(firstStyleSheet instanceof StyleSheetReference && secondStyleSheet instanceof StyleSheetReference) {
+			if (firstStyleSheet instanceof StyleSheetReference && secondStyleSheet instanceof StyleSheetReference) {
 
 				// Get both compared reference path
-				rightOperand = ((StyleSheetReference)firstStyleSheet).getPath();
-				leftOperand = ((StyleSheetReference)secondStyleSheet).getPath();
+				rightOperand = ((StyleSheetReference) firstStyleSheet).getPath();
+				leftOperand = ((StyleSheetReference) secondStyleSheet).getPath();
 
 				// Use standard string comparison
 				comparisonResult = rightOperand.equals(leftOperand);
 
-			} else if(firstStyleSheet instanceof EmbeddedStyleSheet && secondStyleSheet instanceof EmbeddedStyleSheet) {
+			} else if (firstStyleSheet instanceof EmbeddedStyleSheet && secondStyleSheet instanceof EmbeddedStyleSheet) {
 
 				// Get both of compared embedded label
-				rightOperand = ((EmbeddedStyleSheet)firstStyleSheet).getLabel();
-				leftOperand = ((EmbeddedStyleSheet)secondStyleSheet).getLabel();
+				rightOperand = ((EmbeddedStyleSheet) firstStyleSheet).getLabel();
+				leftOperand = ((EmbeddedStyleSheet) secondStyleSheet).getLabel();
 
 				// Use standard string comparison
 				comparisonResult = rightOperand.equals(leftOperand);
@@ -1119,7 +1119,7 @@ public class CSSThemeEditionDialog extends Dialog {
 
 			// Final comparison value
 			int comparisonValue = -1;
-			if(comparisonResult) {
+			if (comparisonResult) {
 				comparisonValue = 0;
 			}
 

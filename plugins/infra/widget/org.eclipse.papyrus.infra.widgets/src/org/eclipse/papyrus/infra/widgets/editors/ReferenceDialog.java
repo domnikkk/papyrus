@@ -188,7 +188,7 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 	}
 
 	protected void createButtons() {
-		((GridLayout)getLayout()).numColumns += 4;
+		((GridLayout) getLayout()).numColumns += 4;
 
 		browseValuesButton = factory.createButton(this, null, SWT.PUSH);
 		browseValuesButton.setImage(Activator.getDefault().getImage("/icons/browse_12x12.gif")); //$NON-NLS-1$
@@ -218,19 +218,19 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 	protected void browseAction() {
 		setInitialSelection(Collections.singletonList(getValue()));
 		int result = dialog.open();
-		if(result == Window.OK) {
+		if (result == Window.OK) {
 			Object[] newValue = dialog.getResult();
-			if(newValue == null) {
+			if (newValue == null) {
 				return;
 			}
 
-			if(newValue.length == 0) {
+			if (newValue.length == 0) {
 				setValue(null);
 			} else {
 				Object value = newValue[0];
-				if(contentProvider instanceof IAdaptableContentProvider) {
+				if (contentProvider instanceof IAdaptableContentProvider) {
 
-					value = ((IAdaptableContentProvider)contentProvider).getAdaptedValue(value);
+					value = ((IAdaptableContentProvider) contentProvider).getAdaptedValue(value);
 				}
 				setValue(value);
 			}
@@ -242,19 +242,19 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 	 * instance and assign it to this reference
 	 */
 	protected void createAction() {
-		if(valueFactory != null && valueFactory.canCreateObject()) {
+		if (valueFactory != null && valueFactory.canCreateObject()) {
 			final Object context = getContextElement();
 			getOperationExecutor(context).execute(new Runnable() {
 
 				@Override
 				public void run() {
 					Object value = valueFactory.createObject(createInstanceButton, context);
-					if(value == null) {
+					if (value == null) {
 						// Cancel the operation
 						throw new OperationCanceledException();
 					}
 					Collection<Object> validatedObjects = valueFactory.validateObjects(Collections.singleton(value));
-					if(!validatedObjects.isEmpty()) {
+					if (!validatedObjects.isEmpty()) {
 						setValue(validatedObjects.iterator().next());
 					}
 				}
@@ -270,13 +270,13 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 		currentValueLabel.setBackground(EDIT);
 		edit = true;
 		final Object currentValue = getValue();
-		if(currentValue != null && valueFactory != null && valueFactory.canEdit()) {
+		if (currentValue != null && valueFactory != null && valueFactory.canEdit()) {
 			getOperationExecutor(currentValue).execute(new Runnable() {
 
 				@Override
 				public void run() {
 					Object newValue = valueFactory.edit(editInstanceButton, currentValue);
-					if(newValue != currentValue) {
+					if (newValue != currentValue) {
 						setValue(newValue);
 					}
 					updateLabel();
@@ -297,7 +297,7 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 	 * Updates the displayed label for the current value
 	 */
 	protected void updateLabel() {
-		if(binding != null) {
+		if (binding != null) {
 			binding.updateModelToTarget();
 
 		} else {
@@ -310,12 +310,12 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 	 * Sets the Content provider for this editor
 	 *
 	 * @param provider
-	 *        The content provider used to retrieve the possible values for
-	 *        this Reference
+	 *            The content provider used to retrieve the possible values for
+	 *            this Reference
 	 */
 	public void setContentProvider(IStaticContentProvider provider) {
 		dialog.setContentProvider(new EncapsulatedContentProvider(provider));
-		if(getValue() != null) {
+		if (getValue() != null) {
 			setInitialSelection(Collections.singletonList(getValue()));
 		}
 
@@ -328,18 +328,18 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 	 * editor's label and the selection dialog.
 	 *
 	 * @param provider
-	 *        The label provider
+	 *            The label provider
 	 */
 	public void setLabelProvider(ILabelProvider provider) {
-		if(provider == null) {
+		if (provider == null) {
 			setLabelProvider(new LabelProvider());
 			return;
 		}
 
 		dialog.setLabelProvider(provider);
 		this.labelProvider = provider;
-		if(widgetObservable != null) {
-			((CLabelObservableValue)widgetObservable).setLabelProvider(labelProvider);
+		if (widgetObservable != null) {
+			((CLabelObservableValue) widgetObservable).setLabelProvider(labelProvider);
 		}
 		updateLabel();
 	}
@@ -358,7 +358,7 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 	 */
 	@Override
 	public Object getValue() {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			return modelProperty.getValue();
 		}
 		return value;
@@ -422,13 +422,13 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 	@Override
 	public void widgetSelected(SelectionEvent e) {
 		Widget widget = e.widget;
-		if(widget == browseValuesButton) {
+		if (widget == browseValuesButton) {
 			browseAction();
-		} else if(widget == createInstanceButton) {
+		} else if (widget == createInstanceButton) {
 			createAction();
-		} else if(widget == editInstanceButton) {
+		} else if (widget == editInstanceButton) {
 			editAction();
-		} else if(widget == unsetButton) {
+		} else if (widget == unsetButton) {
 			unsetAction();
 		}
 	}
@@ -452,14 +452,14 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 		browseValuesButton.setEnabled(!readOnly);
 
 		// If they are displayed, check if they should be enabled
-		if(!exclude) {
+		if (!exclude) {
 			editInstanceButton.setEnabled(valueFactory != null && valueFactory.canEdit() && getValue() != null);
 			createInstanceButton.setEnabled(valueFactory != null && valueFactory.canCreateObject() && !readOnly);
 		}
 
 		// Do not display unset if the value is mandatory
 		setExclusion(unsetButton, mandatory);
-		if(!mandatory) {
+		if (!mandatory) {
 			boolean enabled = !readOnly;
 			enabled = enabled && getValue() != null;
 
@@ -481,7 +481,7 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 	public void setValue(Object value) {
 		this.value = value;
 		try {
-			if(modelProperty != null) {
+			if (modelProperty != null) {
 				modelProperty.setValue(value);
 				error = false;
 			}
@@ -510,7 +510,7 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 	@Override
 	public void updateStatus(IStatus status) {
 
-		if(error) {
+		if (error) {
 			FieldDecoration error = FieldDecorationRegistry.getDefault().getFieldDecoration(FieldDecorationRegistry.DEC_ERROR);
 			controlDecoration.setImage(error.getImage());
 			controlDecoration.showHoverText(Messages.ReferenceDialog_0);
@@ -527,26 +527,26 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 
 	@Override
 	public void dispose() {
-		if(changeColorTask != null) {
+		if (changeColorTask != null) {
 			changeColorTask.cancel();
 		}
-		if(timer != null) {
+		if (timer != null) {
 			timer.cancel();
 		}
 		super.dispose();
 	}
 
 	private void cancelCurrentTask() {
-		if(changeColorTask != null) {
+		if (changeColorTask != null) {
 			changeColorTask.cancel();
 		}
 	}
 
 	@Override
 	public void changeColorField() {
-		if(!error & !edit) {
+		if (!error & !edit) {
 
-			if(timer == null) {
+			if (timer == null) {
 				timer = new Timer(true);
 			}
 
@@ -555,14 +555,14 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 
 				@Override
 				public void run() {
-					if(ReferenceDialog.this.isDisposed()) {
+					if (ReferenceDialog.this.isDisposed()) {
 						return;
 					}
 					ReferenceDialog.this.getDisplay().syncExec(new Runnable() {
 
 						@Override
 						public void run() {
-							if(ReferenceDialog.this.isDisposed()) {//Bug 434787 : Shouldn't not execute the timer thread if the widget is disposed
+							if (ReferenceDialog.this.isDisposed()) {// Bug 434787 : Shouldn't not execute the timer thread if the widget is disposed
 								return;
 							}
 							currentValueLabel.setBackground(DEFAULT);
@@ -574,12 +574,12 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 				}
 			};
 
-			if(errorBinding) {
+			if (errorBinding) {
 				currentValueLabel.setBackground(ERROR);
 				currentValueLabel.update();
 			} else {
-				IStatus status = (IStatus)binding.getValidationStatus().getValue();
-				switch(status.getSeverity()) {
+				IStatus status = (IStatus) binding.getValidationStatus().getValue();
+				switch (status.getSeverity()) {
 				case IStatus.OK:
 				case IStatus.WARNING:
 					timer.schedule(changeColorTask, 600);

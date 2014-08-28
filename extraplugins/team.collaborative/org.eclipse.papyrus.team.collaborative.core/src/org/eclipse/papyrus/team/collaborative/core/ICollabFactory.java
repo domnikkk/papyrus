@@ -22,9 +22,9 @@ import org.eclipse.papyrus.team.collaborative.core.participants.version.IUpdater
 
 /**
  * Factory for creating all necessary participant for collaborative actions
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public interface ICollabFactory {
 

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.papyrus.views.properties.Activator;
 
 /**
  * A URI Handler for URIs with the ppe:/ scheme
- * 
+ *
  * @author Camille Letavernier
  */
 public class PropertiesURIHandler implements URIHandler {
@@ -115,19 +115,19 @@ public class PropertiesURIHandler implements URIHandler {
 
 	/**
 	 * Returns the URIHandler that can handle the given URI
-	 * 
+	 *
 	 * @param convertedURI
-	 *        The URI obtained after converting the ppe:/ URI to a standard URI
+	 *            The URI obtained after converting the ppe:/ URI to a standard URI
 	 * @return
 	 *         The URIHandler corresponding to the converted URI
 	 */
 	protected URIHandler getDelegateHandler(URI convertedURI) {
-		if(convertedURI == null) {
+		if (convertedURI == null) {
 			return null;
 		}
 
-		for(URIHandler handler : URIHandler.DEFAULT_HANDLERS) {
-			if(handler.canHandle(convertedURI)) {
+		for (URIHandler handler : URIHandler.DEFAULT_HANDLERS) {
+			if (handler.canHandle(convertedURI)) {
 				return handler;
 			}
 		}
@@ -136,25 +136,25 @@ public class PropertiesURIHandler implements URIHandler {
 
 	/**
 	 * Converts the ppe:/ URI to a standard URI
-	 * 
+	 *
 	 * @param sourceURI
-	 *        The ppe:/ URI to convert
+	 *            The ppe:/ URI to convert
 	 * @return
 	 *         The standard URI
 	 */
 	public URI getConvertedURI(URI sourceURI) {
-		if(sourceURI == null) {
+		if (sourceURI == null) {
 			throw new IllegalArgumentException("sourceURI shall not be null"); //$NON-NLS-1$
 		}
 		String firstSegment = sourceURI.segment(0);
 		URI targetURI = URI.createURI(""); //$NON-NLS-1$
-		if(firstSegment.equals(ENVIRONMENT_SEGMENT)) {
-			for(int i = 1; i < sourceURI.segmentsList().size(); i++) {
+		if (firstSegment.equals(ENVIRONMENT_SEGMENT)) {
+			for (int i = 1; i < sourceURI.segmentsList().size(); i++) {
 				String segment = sourceURI.segmentsList().get(i);
 				targetURI = targetURI.appendSegment(segment);
 			}
-		} else if(firstSegment.equals(CONTEXT_SEGMENT)) {
-			for(int i = 1; i < sourceURI.segmentsList().size(); i++) {
+		} else if (firstSegment.equals(CONTEXT_SEGMENT)) {
+			for (int i = 1; i < sourceURI.segmentsList().size(); i++) {
 				String segment = sourceURI.segmentsList().get(i);
 				targetURI = targetURI.appendSegment(segment);
 			}
@@ -164,11 +164,11 @@ public class PropertiesURIHandler implements URIHandler {
 
 		URI pluginURI = targetURI.resolve(URI.createURI("platform:/plugin/")); //$NON-NLS-1$
 
-		if(!exists(pluginURI)) {
+		if (!exists(pluginURI)) {
 			URI workspaceURI = targetURI.resolve(URI.createURI("platform:/resource/")); //$NON-NLS-1$
-			if(!exists(workspaceURI)) {
+			if (!exists(workspaceURI)) {
 				URI preferenceURI = targetURI.resolve(URI.createFileURI(Activator.getDefault().getPreferencesPath().toString() + "/")); //$NON-NLS-1$
-				if(!exists(preferenceURI)) {
+				if (!exists(preferenceURI)) {
 					return null;
 				}
 				return preferenceURI;
@@ -180,8 +180,8 @@ public class PropertiesURIHandler implements URIHandler {
 	}
 
 	private boolean exists(URI uri) {
-		for(URIHandler handler : DEFAULT_HANDLERS) {
-			if(handler.canHandle(uri)) {
+		for (URIHandler handler : DEFAULT_HANDLERS) {
+			if (handler.canHandle(uri)) {
 				return handler.exists(uri, Collections.EMPTY_MAP);
 			}
 		}

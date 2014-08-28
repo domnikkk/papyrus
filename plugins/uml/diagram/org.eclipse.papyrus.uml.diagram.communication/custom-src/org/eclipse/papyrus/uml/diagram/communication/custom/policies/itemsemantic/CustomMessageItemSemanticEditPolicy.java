@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,29 +42,29 @@ import org.eclipse.uml2.uml.Message;
  * this is a specialization to manage creation of Message,
  * CommentAnnotatedElement, ConstraintConstrainedElement,
  * DurationObservationEvent and TimeObservationEvent
- * 
+ *
  * This class also manages the deletion a message connector
  */
 public class CustomMessageItemSemanticEditPolicy extends org.eclipse.papyrus.uml.diagram.communication.edit.policies.MessageItemSemanticEditPolicy {
 
 	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Message_8009 == req.getElementType()) {
+		if (UMLElementTypes.Message_8009 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
-		if(UMLElementTypes.CommentAnnotatedElement_8010 == req.getElementType()) {
+		if (UMLElementTypes.CommentAnnotatedElement_8010 == req.getElementType()) {
 			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
-		if(UMLElementTypes.ConstraintConstrainedElement_8011 == req.getElementType()) {
+		if (UMLElementTypes.ConstraintConstrainedElement_8011 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
-		if(UMLElementTypes.DurationObservationEvent_8012 == req.getElementType()) {
+		if (UMLElementTypes.DurationObservationEvent_8012 == req.getElementType()) {
 			return getGEFWrapper(new ConnectorDurationObservationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.TimeObservationEvent_8013 == req.getElementType()) {
+		if (UMLElementTypes.TimeObservationEvent_8013 == req.getElementType()) {
 			return getGEFWrapper(new ConnectorTimeObservationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getCompleteCreateRelationshipCommand(req);
@@ -72,8 +72,8 @@ public class CustomMessageItemSemanticEditPolicy extends org.eclipse.papyrus.uml
 
 	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		//System.err.println("getReorientRelationshipCommand VisualID of element to reorient" + getVisualID(req));
-		switch(getVisualID(req)) {
+		// System.err.println("getReorientRelationshipCommand VisualID of element to reorient" + getVisualID(req));
+		switch (getVisualID(req)) {
 		case MessageEditPart.VISUAL_ID:
 			return getGEFWrapper(new MessageReorientCommand(req));
 
@@ -83,7 +83,7 @@ public class CustomMessageItemSemanticEditPolicy extends org.eclipse.papyrus.uml
 
 	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Message_8009 == req.getElementType()) {
+		if (UMLElementTypes.Message_8009 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getStartCreateRelationshipCommand(req);
@@ -105,16 +105,16 @@ public class CustomMessageItemSemanticEditPolicy extends org.eclipse.papyrus.uml
 		List<EditPart> children = getHost().getChildren();
 		List<EObject> elementsToDestroy = new ArrayList<EObject>();
 
-		//A. Find the elements to destroy
-		for(EditPart current : children) {
+		// A. Find the elements to destroy
+		for (EditPart current : children) {
 			Object model = current.getModel();
 
-			if(model instanceof DecorationNode) {//if the current object is a label 
-				EObject obj = ((DecorationNode)model).getElement();
-				if(obj instanceof Message) {
-					Message message = (Message)obj;
+			if (model instanceof DecorationNode) {// if the current object is a label
+				EObject obj = ((DecorationNode) model).getElement();
+				if (obj instanceof Message) {
+					Message message = (Message) obj;
 
-					//1. Add the message to the list of elements to destroy
+					// 1. Add the message to the list of elements to destroy
 					elementsToDestroy.add(message);
 
 				}
@@ -122,11 +122,11 @@ public class CustomMessageItemSemanticEditPolicy extends org.eclipse.papyrus.uml
 
 		}
 
-		//B. Build the destroy command
-		for(EObject selectedEObject : elementsToDestroy) {
+		// B. Build the destroy command
+		for (EObject selectedEObject : elementsToDestroy) {
 
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(selectedEObject);
-			if(provider == null) {
+			if (provider == null) {
 				continue;
 			}
 

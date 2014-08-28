@@ -21,6 +21,7 @@ import org.eclipse.papyrus.eastadl.annex.temporalconstraint.TransitionEvent;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class TemporalconstraintFactoryImpl extends EFactoryImpl implements TemporalconstraintFactory {
@@ -28,16 +29,16 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static TemporalconstraintFactory init() {
 		try {
-			TemporalconstraintFactory theTemporalconstraintFactory = (TemporalconstraintFactory)EPackage.Registry.INSTANCE.getEFactory(TemporalconstraintPackage.eNS_URI);
+			TemporalconstraintFactory theTemporalconstraintFactory = (TemporalconstraintFactory) EPackage.Registry.INSTANCE.getEFactory(TemporalconstraintPackage.eNS_URI);
 			if (theTemporalconstraintFactory != null) {
 				return theTemporalconstraintFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new TemporalconstraintFactoryImpl();
@@ -47,6 +48,7 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public TemporalconstraintFactoryImpl() {
@@ -56,28 +58,38 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case TemporalconstraintPackage.TEMPORAL_CONSTRAINT: return createTemporalConstraint();
-			case TemporalconstraintPackage.LOGICAL_TIME_CONDITION: return createLogicalTimeCondition();
-			case TemporalconstraintPackage.TRANSITION: return createTransition();
-			case TemporalconstraintPackage.STATE: return createState();
-			case TemporalconstraintPackage.STATE_EVENT: return createStateEvent();
-			case TemporalconstraintPackage.SYNCHRONOUSTRANSITION: return createSynchronoustransition();
-			case TemporalconstraintPackage.TRANSITION_EVENT: return createTransitionEvent();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case TemporalconstraintPackage.TEMPORAL_CONSTRAINT:
+			return createTemporalConstraint();
+		case TemporalconstraintPackage.LOGICAL_TIME_CONDITION:
+			return createLogicalTimeCondition();
+		case TemporalconstraintPackage.TRANSITION:
+			return createTransition();
+		case TemporalconstraintPackage.STATE:
+			return createState();
+		case TemporalconstraintPackage.STATE_EVENT:
+			return createStateEvent();
+		case TemporalconstraintPackage.SYNCHRONOUSTRANSITION:
+			return createSynchronoustransition();
+		case TemporalconstraintPackage.TRANSITION_EVENT:
+			return createTransitionEvent();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TemporalConstraint createTemporalConstraint() {
 		TemporalConstraintImpl temporalConstraint = new TemporalConstraintImpl();
 		return temporalConstraint;
@@ -86,8 +98,10 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public LogicalTimeCondition createLogicalTimeCondition() {
 		LogicalTimeConditionImpl logicalTimeCondition = new LogicalTimeConditionImpl();
 		return logicalTimeCondition;
@@ -96,8 +110,10 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Transition createTransition() {
 		TransitionImpl transition = new TransitionImpl();
 		return transition;
@@ -106,8 +122,10 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public State createState() {
 		StateImpl state = new StateImpl();
 		return state;
@@ -116,8 +134,10 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public StateEvent createStateEvent() {
 		StateEventImpl stateEvent = new StateEventImpl();
 		return stateEvent;
@@ -126,8 +146,10 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Synchronoustransition createSynchronoustransition() {
 		SynchronoustransitionImpl synchronoustransition = new SynchronoustransitionImpl();
 		return synchronoustransition;
@@ -136,8 +158,10 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TransitionEvent createTransitionEvent() {
 		TransitionEventImpl transitionEvent = new TransitionEventImpl();
 		return transitionEvent;
@@ -146,15 +170,18 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TemporalconstraintPackage getTemporalconstraintPackage() {
-		return (TemporalconstraintPackage)getEPackage();
+		return (TemporalconstraintPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -163,4 +190,4 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 		return TemporalconstraintPackage.eINSTANCE;
 	}
 
-} //TemporalconstraintFactoryImpl
+} // TemporalconstraintFactoryImpl

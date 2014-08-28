@@ -52,7 +52,7 @@ public class ExtendedDirectEditionDialog extends LabelEditorDialog {
 
 	/**
 	 * Creates a new ExtendedDirectEditionDialog
-	 * 
+	 *
 	 * @param parentShell
 	 *            the parent shell
 	 * @param parameter
@@ -123,18 +123,18 @@ public class ExtendedDirectEditionDialog extends LabelEditorDialog {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	private class LabelKeyListener implements VerifyKeyListener {
 
 		/**
-		 * 
+		 *
 		 */
 		SourceViewer viewer;
 
 		/**
 		 * Default constructor.
-		 * 
+		 *
 		 * @param viewer
 		 */
 		public LabelKeyListener(SourceViewer viewer) {
@@ -143,13 +143,13 @@ public class ExtendedDirectEditionDialog extends LabelEditorDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * org.eclipse.swt.custom.VerifyKeyListener#verifyKey(org.eclipse.swt.events.VerifyEvent)
 		 */
 		/**
-		 * 
-		 * 
+		 *
+		 *
 		 * @param event
 		 */
 		public void verifyKey(VerifyEvent event) {
@@ -165,21 +165,21 @@ public class ExtendedDirectEditionDialog extends LabelEditorDialog {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	private class DocumentListener implements IDocumentListener {
 
 		/**
-		 * 
-		 * 
+		 *
+		 *
 		 * @param event
 		 */
 		public void documentAboutToBeChanged(DocumentEvent event) {
 		}
 
 		/**
-		 * 
-		 * 
+		 *
+		 *
 		 * @param event
 		 */
 		public void documentChanged(DocumentEvent event) {

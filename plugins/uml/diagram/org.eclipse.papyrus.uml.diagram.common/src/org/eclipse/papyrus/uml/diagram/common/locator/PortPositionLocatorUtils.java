@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -19,8 +19,8 @@ import org.eclipse.draw2d.geometry.Rectangle;
 /**
  * <pre>
  * This class provides convenience methods to manage Port location.
- * 
- * The method are base on the Port and its graphical parent bounds (given as Rectangle), which can either be 
+ *
+ * The method are base on the Port and its graphical parent bounds (given as Rectangle), which can either be
  * based on the figure bounds or the view bounds.
  * </pre>
  */
@@ -29,9 +29,13 @@ public class PortPositionLocatorUtils {
 	/**
 	 * Get the valid border location of the Port with the proposed location on
 	 * the parent.
-	 * @param parentFigureBounds the parent bounds.
-	 * @param proposedFigureBounds the proposed Port bounds.
-	 * @param borderItemOffset the overlapping size of the Port over its parent figure. 
+	 *
+	 * @param parentFigureBounds
+	 *            the parent bounds.
+	 * @param proposedFigureBounds
+	 *            the proposed Port bounds.
+	 * @param borderItemOffset
+	 *            the overlapping size of the Port over its parent figure.
 	 * @return the allowed bounds for the Port (location relative to parent
 	 *         TopLeft point).
 	 */
@@ -46,35 +50,35 @@ public class PortPositionLocatorUtils {
 		// Calculate Max position around the graphical parent (1/2 size or the
 		// port around
 		// the graphical parent bounds.
-		int xMin = - borderItemOffset;
-		int xMax = - borderItemOffset + parentRec.width;
-		int yMin = - borderItemOffset;
-		int yMax = - borderItemOffset + parentRec.height;
+		int xMin = -borderItemOffset;
+		int xMax = -borderItemOffset + parentRec.width;
+		int yMin = -borderItemOffset;
+		int yMax = -borderItemOffset + parentRec.height;
 
 		// Modify Port location if MAX X or Y are exceeded
-		if(realLocation.x < xMin) {
+		if (realLocation.x < xMin) {
 			realLocation.x = xMin;
 		}
 
-		if(realLocation.x > xMax) {
+		if (realLocation.x > xMax) {
 			realLocation.x = xMax;
 		}
 
-		if(realLocation.y < yMin) {
+		if (realLocation.y < yMin) {
 			realLocation.y = yMin;
 		}
 
-		if(realLocation.y > yMax) {
+		if (realLocation.y > yMax) {
 			realLocation.y = yMax;
 		}
 
 		// Ensure the port is positioned on its parent borders and not in the
 		// middle.
 		// Modify position if needed.
-		if((realLocation.y != yMin) && (realLocation.y != yMax)) {
-			if((realLocation.x != xMin) && (realLocation.x != xMax)) {
+		if ((realLocation.y != yMin) && (realLocation.y != yMax)) {
+			if ((realLocation.x != xMin) && (realLocation.x != xMax)) {
 
-				if(realLocation.x <= (xMin + (parentRec.width / 2))) {
+				if (realLocation.x <= (xMin + (parentRec.width / 2))) {
 					realLocation.x = xMin;
 				} else {
 					realLocation.x = xMax;
@@ -85,13 +89,17 @@ public class PortPositionLocatorUtils {
 		// Return constrained location
 		return realLocation;
 	}
-	
+
 	/**
 	 * Get the current side (on the parent) where the Port is located.
-	 * @param parentFigureBounds the parent bounds.
-	 * @param proposedFigureBounds the proposed Port bounds.
-	 * @param borderItemOffset the overlapping size of the Port over its parent figure. 
-
+	 *
+	 * @param parentFigureBounds
+	 *            the parent bounds.
+	 * @param proposedFigureBounds
+	 *            the proposed Port bounds.
+	 * @param borderItemOffset
+	 *            the overlapping size of the Port over its parent figure.
+	 *
 	 * @return the position of the port around its parent. This position can be
 	 *         <ul>
 	 *         <li>{@linkplain PositionConstants#NORTH}</li>
@@ -108,42 +116,42 @@ public class PortPositionLocatorUtils {
 		int position = PositionConstants.NONE;
 
 		// we are not on EAST, not on WEST, but we are on the NORTH
-		if((figureBounds.x != parentFigureBounds.width - borderItemOffset) && (figureBounds.x != -borderItemOffset) && (figureBounds.y == -borderItemOffset)) {
+		if ((figureBounds.x != parentFigureBounds.width - borderItemOffset) && (figureBounds.x != -borderItemOffset) && (figureBounds.y == -borderItemOffset)) {
 			position = PositionConstants.NORTH;
 
 			// we are not on the EAST and not on the WEST, but we are on the
 			// SOUTH
-		} else if((figureBounds.x != parentFigureBounds.width - borderItemOffset) && (figureBounds.x != -borderItemOffset) && (figureBounds.y == parentFigureBounds.height - borderItemOffset)) {
+		} else if ((figureBounds.x != parentFigureBounds.width - borderItemOffset) && (figureBounds.x != -borderItemOffset) && (figureBounds.y == parentFigureBounds.height - borderItemOffset)) {
 			position = PositionConstants.SOUTH;
 
 			// we are on the EAST, but we are not on the NORTH and not on the
 			// SOUTH
-		} else if((figureBounds.x == parentFigureBounds.width - borderItemOffset) && (figureBounds.y != -borderItemOffset) && (figureBounds.y != parentFigureBounds.height - borderItemOffset)) {
+		} else if ((figureBounds.x == parentFigureBounds.width - borderItemOffset) && (figureBounds.y != -borderItemOffset) && (figureBounds.y != parentFigureBounds.height - borderItemOffset)) {
 			position = PositionConstants.EAST;
 
 			// we are on the WEST, but we are not on the on the NORTH and not on
 			// the SOUTH
-		} else if((figureBounds.x == -borderItemOffset) && (figureBounds.y != -borderItemOffset) && (figureBounds.y != parentFigureBounds.height - borderItemOffset)) {
+		} else if ((figureBounds.x == -borderItemOffset) && (figureBounds.y != -borderItemOffset) && (figureBounds.y != parentFigureBounds.height - borderItemOffset)) {
 			position = PositionConstants.WEST;
 
 			// we are on the NORTH and on the EAST
-		} else if((figureBounds.x == parentFigureBounds.width - borderItemOffset) && (figureBounds.y == -borderItemOffset)) {
+		} else if ((figureBounds.x == parentFigureBounds.width - borderItemOffset) && (figureBounds.y == -borderItemOffset)) {
 			position = PositionConstants.NORTH_EAST;
 
 			// we are on the NORTH and on the WEST
-		} else if((figureBounds.x == -borderItemOffset) && (figureBounds.y == -borderItemOffset)) {
+		} else if ((figureBounds.x == -borderItemOffset) && (figureBounds.y == -borderItemOffset)) {
 			position = PositionConstants.NORTH_WEST;
 
 			// we are on the EAST and on the SOUTH
-		} else if((figureBounds.x == parentFigureBounds.width - borderItemOffset) && (figureBounds.y == parentFigureBounds.height - borderItemOffset)) {
+		} else if ((figureBounds.x == parentFigureBounds.width - borderItemOffset) && (figureBounds.y == parentFigureBounds.height - borderItemOffset)) {
 			position = PositionConstants.SOUTH_EAST;
 
 			// we are on the WEST and on the SOUTH
-		} else if((figureBounds.x == -borderItemOffset) && (figureBounds.y == parentFigureBounds.height - borderItemOffset)) {
+		} else if ((figureBounds.x == -borderItemOffset) && (figureBounds.y == parentFigureBounds.height - borderItemOffset)) {
 			position = PositionConstants.SOUTH_WEST;
 		}
 
 		return position;
 	}
-	
+
 }

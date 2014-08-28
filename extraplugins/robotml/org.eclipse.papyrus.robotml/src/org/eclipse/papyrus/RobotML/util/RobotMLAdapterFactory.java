@@ -4,11 +4,8 @@ package org.eclipse.papyrus.RobotML.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.papyrus.RobotML.ActuatedJoint;
 import org.eclipse.papyrus.RobotML.ActuatorHardware;
 import org.eclipse.papyrus.RobotML.ActuatorSystem;
@@ -95,6 +92,7 @@ import org.eclipse.papyrus.RobotML.WeaponSystem;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.RobotML.RobotMLPackage
  * @generated
  */
@@ -103,6 +101,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static RobotMLPackage modelPackage;
@@ -111,6 +110,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public RobotMLAdapterFactory() {
@@ -124,6 +124,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -133,7 +134,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -142,347 +143,430 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected RobotMLSwitch<Adapter> modelSwitch =
-		new RobotMLSwitch<Adapter>() {
-			@Override
-			public Adapter caseTransition(Transition object) {
-				return createTransitionAdapter();
-			}
-			@Override
-			public Adapter caseAlgorithm(Algorithm object) {
-				return createAlgorithmAdapter();
-			}
-			@Override
-			public Adapter caseState(State object) {
-				return createStateAdapter();
-			}
-			@Override
-			public Adapter caseActuatedJoint(ActuatedJoint object) {
-				return createActuatedJointAdapter();
-			}
-			@Override
-			public Adapter caseJoint(Joint object) {
-				return createJointAdapter();
-			}
-			@Override
-			public Adapter caseCompleteBonding(CompleteBonding object) {
-				return createCompleteBondingAdapter();
-			}
-			@Override
-			public Adapter caseRobot(Robot object) {
-				return createRobotAdapter();
-			}
-			@Override
-			public Adapter caseSystem(org.eclipse.papyrus.RobotML.System object) {
-				return createSystemAdapter();
-			}
-			@Override
-			public Adapter caseAgent(Agent object) {
-				return createAgentAdapter();
-			}
-			@Override
-			public Adapter casePhysicalObject(PhysicalObject object) {
-				return createPhysicalObjectAdapter();
-			}
-			@Override
-			public Adapter caseEnvironment(Environment object) {
-				return createEnvironmentAdapter();
-			}
-			@Override
-			public Adapter caseSurface(Surface object) {
-				return createSurfaceAdapter();
-			}
-			@Override
-			public Adapter caseDataFlowPort(DataFlowPort object) {
-				return createDataFlowPortAdapter();
-			}
-			@Override
-			public Adapter casePort(Port object) {
-				return createPortAdapter();
-			}
-			@Override
-			public Adapter caseServicePort(ServicePort object) {
-				return createServicePortAdapter();
-			}
-			@Override
-			public Adapter caseActuatorSystem(ActuatorSystem object) {
-				return createActuatorSystemAdapter();
-			}
-			@Override
-			public Adapter caseRoboticSystem(RoboticSystem object) {
-				return createRoboticSystemAdapter();
-			}
-			@Override
-			public Adapter caseCyberPhysicalSystem(CyberPhysicalSystem object) {
-				return createCyberPhysicalSystemAdapter();
-			}
-			@Override
-			public Adapter caseSensorSystem(SensorSystem object) {
-				return createSensorSystemAdapter();
-			}
-			@Override
-			public Adapter caseHardware(Hardware object) {
-				return createHardwareAdapter();
-			}
-			@Override
-			public Adapter caseSoftware(Software object) {
-				return createSoftwareAdapter();
-			}
-			@Override
-			public Adapter caseEngineSystem(EngineSystem object) {
-				return createEngineSystemAdapter();
-			}
-			@Override
-			public Adapter caseSteeredWheelSystem(SteeredWheelSystem object) {
-				return createSteeredWheelSystemAdapter();
-			}
-			@Override
-			public Adapter caseLocomotionSystem(LocomotionSystem object) {
-				return createLocomotionSystemAdapter();
-			}
-			@Override
-			public Adapter caseImageSensorSystem(ImageSensorSystem object) {
-				return createImageSensorSystemAdapter();
-			}
-			@Override
-			public Adapter caseCameraSystem(CameraSystem object) {
-				return createCameraSystemAdapter();
-			}
-			@Override
-			public Adapter caseObjectDetectionSensorSystem(ObjectDetectionSensorSystem object) {
-				return createObjectDetectionSensorSystemAdapter();
-			}
-			@Override
-			public Adapter caseObjectTrackingSensorSystem(ObjectTrackingSensorSystem object) {
-				return createObjectTrackingSensorSystemAdapter();
-			}
-			@Override
-			public Adapter caseLidarSystem(LidarSystem object) {
-				return createLidarSystemAdapter();
-			}
-			@Override
-			public Adapter caseLocalizationSensorSystem(LocalizationSensorSystem object) {
-				return createLocalizationSensorSystemAdapter();
-			}
-			@Override
-			public Adapter caseGPSSystem(GPSSystem object) {
-				return createGPSSystemAdapter();
-			}
-			@Override
-			public Adapter caseAlgorithmLibrary(AlgorithmLibrary object) {
-				return createAlgorithmLibraryAdapter();
-			}
-			@Override
-			public Adapter caseSensorDriver(SensorDriver object) {
-				return createSensorDriverAdapter();
-			}
-			@Override
-			public Adapter caseBuilding(Building object) {
-				return createBuildingAdapter();
-			}
-			@Override
-			public Adapter casePlanet(Planet object) {
-				return createPlanetAdapter();
-			}
-			@Override
-			public Adapter caseLandSurface(LandSurface object) {
-				return createLandSurfaceAdapter();
-			}
-			@Override
-			public Adapter caseGround(Ground object) {
-				return createGroundAdapter();
-			}
-			@Override
-			public Adapter caseFloor(Floor object) {
-				return createFloorAdapter();
-			}
-			@Override
-			public Adapter caseWaterSurface(WaterSurface object) {
-				return createWaterSurfaceAdapter();
-			}
-			@Override
-			public Adapter caseHuman(Human object) {
-				return createHumanAdapter();
-			}
-			@Override
-			public Adapter casePedestrian(Pedestrian object) {
-				return createPedestrianAdapter();
-			}
-			@Override
-			public Adapter caseStairs(Stairs object) {
-				return createStairsAdapter();
-			}
-			@Override
-			public Adapter casePlatform(Platform object) {
-				return createPlatformAdapter();
-			}
-			@Override
-			public Adapter caseExternalLibrary(ExternalLibrary object) {
-				return createExternalLibraryAdapter();
-			}
-			@Override
-			public Adapter caseRoboticMiddleware(RoboticMiddleware object) {
-				return createRoboticMiddlewareAdapter();
-			}
-			@Override
-			public Adapter caseRoboticSimulator(RoboticSimulator object) {
-				return createRoboticSimulatorAdapter();
-			}
-			@Override
-			public Adapter caseCycabTK(CycabTK object) {
-				return createCycabTKAdapter();
-			}
-			@Override
-			public Adapter caseBlenderMorse(BlenderMorse object) {
-				return createBlenderMorseAdapter();
-			}
-			@Override
-			public Adapter caseOnPort(OnPort object) {
-				return createOnPortAdapter();
-			}
-			@Override
-			public Adapter caseAllocate(Allocate object) {
-				return createAllocateAdapter();
-			}
-			@Override
-			public Adapter caseInertialMeasurementUnitSystem(InertialMeasurementUnitSystem object) {
-				return createInertialMeasurementUnitSystemAdapter();
-			}
-			@Override
-			public Adapter caseInertialNavigationSystem(InertialNavigationSystem object) {
-				return createInertialNavigationSystemAdapter();
-			}
-			@Override
-			public Adapter caseOdometrySystem(OdometrySystem object) {
-				return createOdometrySystemAdapter();
-			}
-			@Override
-			public Adapter caseInfraRedProximetrySystem(InfraRedProximetrySystem object) {
-				return createInfraRedProximetrySystemAdapter();
-			}
-			@Override
-			public Adapter caseDeploymentPlan(DeploymentPlan object) {
-				return createDeploymentPlanAdapter();
-			}
-			@Override
-			public Adapter caseGyroscope(Gyroscope object) {
-				return createGyroscopeAdapter();
-			}
-			@Override
-			public Adapter caseOnProperty(OnProperty object) {
-				return createOnPropertyAdapter();
-			}
-			@Override
-			public Adapter caseChassis(Chassis object) {
-				return createChassisAdapter();
-			}
-			@Override
-			public Adapter caseSupportingStructure(SupportingStructure object) {
-				return createSupportingStructureAdapter();
-			}
-			@Override
-			public Adapter caseMechanicalLinkage(MechanicalLinkage object) {
-				return createMechanicalLinkageAdapter();
-			}
-			@Override
-			public Adapter caseLeg(Leg object) {
-				return createLegAdapter();
-			}
-			@Override
-			public Adapter caseLocomotionHardware(LocomotionHardware object) {
-				return createLocomotionHardwareAdapter();
-			}
-			@Override
-			public Adapter caseActuatorHardware(ActuatorHardware object) {
-				return createActuatorHardwareAdapter();
-			}
-			@Override
-			public Adapter caseMobileRobot(MobileRobot object) {
-				return createMobileRobotAdapter();
-			}
-			@Override
-			public Adapter caseManipulator(Manipulator object) {
-				return createManipulatorAdapter();
-			}
-			@Override
-			public Adapter casePilotedSystem(PilotedSystem object) {
-				return createPilotedSystemAdapter();
-			}
-			@Override
-			public Adapter casePowerHardware(PowerHardware object) {
-				return createPowerHardwareAdapter();
-			}
-			@Override
-			public Adapter caseSensorHardware(SensorHardware object) {
-				return createSensorHardwareAdapter();
-			}
-			@Override
-			public Adapter caseGraspingHardware(GraspingHardware object) {
-				return createGraspingHardwareAdapter();
-			}
-			@Override
-			public Adapter caseSteeredWheelHardware(SteeredWheelHardware object) {
-				return createSteeredWheelHardwareAdapter();
-			}
-			@Override
-			public Adapter caseArm(Arm object) {
-				return createArmAdapter();
-			}
-			@Override
-			public Adapter caseLegSystem(LegSystem object) {
-				return createLegSystemAdapter();
-			}
-			@Override
-			public Adapter caseGraspingSystem(GraspingSystem object) {
-				return createGraspingSystemAdapter();
-			}
-			@Override
-			public Adapter caseWeaponSystem(WeaponSystem object) {
-				return createWeaponSystemAdapter();
-			}
-			@Override
-			public Adapter caseManMachineInterfaceSystem(ManMachineInterfaceSystem object) {
-				return createManMachineInterfaceSystemAdapter();
-			}
-			@Override
-			public Adapter caseClosedLoopControlSystem(ClosedLoopControlSystem object) {
-				return createClosedLoopControlSystemAdapter();
-			}
-			@Override
-			public Adapter caseOpenLoopControlSystem(OpenLoopControlSystem object) {
-				return createOpenLoopControlSystemAdapter();
-			}
-			@Override
-			public Adapter caseRoboticHead(RoboticHead object) {
-				return createRoboticHeadAdapter();
-			}
-			@Override
-			public Adapter caseNavigationCommandSystem(NavigationCommandSystem object) {
-				return createNavigationCommandSystemAdapter();
-			}
-			@Override
-			public Adapter caseJoysticNavigationSystem(JoysticNavigationSystem object) {
-				return createJoysticNavigationSystemAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new RobotMLSwitch<Adapter>() {
+				@Override
+				public Adapter caseTransition(Transition object) {
+					return createTransitionAdapter();
+				}
+
+				@Override
+				public Adapter caseAlgorithm(Algorithm object) {
+					return createAlgorithmAdapter();
+				}
+
+				@Override
+				public Adapter caseState(State object) {
+					return createStateAdapter();
+				}
+
+				@Override
+				public Adapter caseActuatedJoint(ActuatedJoint object) {
+					return createActuatedJointAdapter();
+				}
+
+				@Override
+				public Adapter caseJoint(Joint object) {
+					return createJointAdapter();
+				}
+
+				@Override
+				public Adapter caseCompleteBonding(CompleteBonding object) {
+					return createCompleteBondingAdapter();
+				}
+
+				@Override
+				public Adapter caseRobot(Robot object) {
+					return createRobotAdapter();
+				}
+
+				@Override
+				public Adapter caseSystem(org.eclipse.papyrus.RobotML.System object) {
+					return createSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseAgent(Agent object) {
+					return createAgentAdapter();
+				}
+
+				@Override
+				public Adapter casePhysicalObject(PhysicalObject object) {
+					return createPhysicalObjectAdapter();
+				}
+
+				@Override
+				public Adapter caseEnvironment(Environment object) {
+					return createEnvironmentAdapter();
+				}
+
+				@Override
+				public Adapter caseSurface(Surface object) {
+					return createSurfaceAdapter();
+				}
+
+				@Override
+				public Adapter caseDataFlowPort(DataFlowPort object) {
+					return createDataFlowPortAdapter();
+				}
+
+				@Override
+				public Adapter casePort(Port object) {
+					return createPortAdapter();
+				}
+
+				@Override
+				public Adapter caseServicePort(ServicePort object) {
+					return createServicePortAdapter();
+				}
+
+				@Override
+				public Adapter caseActuatorSystem(ActuatorSystem object) {
+					return createActuatorSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseRoboticSystem(RoboticSystem object) {
+					return createRoboticSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseCyberPhysicalSystem(CyberPhysicalSystem object) {
+					return createCyberPhysicalSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseSensorSystem(SensorSystem object) {
+					return createSensorSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseHardware(Hardware object) {
+					return createHardwareAdapter();
+				}
+
+				@Override
+				public Adapter caseSoftware(Software object) {
+					return createSoftwareAdapter();
+				}
+
+				@Override
+				public Adapter caseEngineSystem(EngineSystem object) {
+					return createEngineSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseSteeredWheelSystem(SteeredWheelSystem object) {
+					return createSteeredWheelSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseLocomotionSystem(LocomotionSystem object) {
+					return createLocomotionSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseImageSensorSystem(ImageSensorSystem object) {
+					return createImageSensorSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseCameraSystem(CameraSystem object) {
+					return createCameraSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseObjectDetectionSensorSystem(ObjectDetectionSensorSystem object) {
+					return createObjectDetectionSensorSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseObjectTrackingSensorSystem(ObjectTrackingSensorSystem object) {
+					return createObjectTrackingSensorSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseLidarSystem(LidarSystem object) {
+					return createLidarSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseLocalizationSensorSystem(LocalizationSensorSystem object) {
+					return createLocalizationSensorSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseGPSSystem(GPSSystem object) {
+					return createGPSSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseAlgorithmLibrary(AlgorithmLibrary object) {
+					return createAlgorithmLibraryAdapter();
+				}
+
+				@Override
+				public Adapter caseSensorDriver(SensorDriver object) {
+					return createSensorDriverAdapter();
+				}
+
+				@Override
+				public Adapter caseBuilding(Building object) {
+					return createBuildingAdapter();
+				}
+
+				@Override
+				public Adapter casePlanet(Planet object) {
+					return createPlanetAdapter();
+				}
+
+				@Override
+				public Adapter caseLandSurface(LandSurface object) {
+					return createLandSurfaceAdapter();
+				}
+
+				@Override
+				public Adapter caseGround(Ground object) {
+					return createGroundAdapter();
+				}
+
+				@Override
+				public Adapter caseFloor(Floor object) {
+					return createFloorAdapter();
+				}
+
+				@Override
+				public Adapter caseWaterSurface(WaterSurface object) {
+					return createWaterSurfaceAdapter();
+				}
+
+				@Override
+				public Adapter caseHuman(Human object) {
+					return createHumanAdapter();
+				}
+
+				@Override
+				public Adapter casePedestrian(Pedestrian object) {
+					return createPedestrianAdapter();
+				}
+
+				@Override
+				public Adapter caseStairs(Stairs object) {
+					return createStairsAdapter();
+				}
+
+				@Override
+				public Adapter casePlatform(Platform object) {
+					return createPlatformAdapter();
+				}
+
+				@Override
+				public Adapter caseExternalLibrary(ExternalLibrary object) {
+					return createExternalLibraryAdapter();
+				}
+
+				@Override
+				public Adapter caseRoboticMiddleware(RoboticMiddleware object) {
+					return createRoboticMiddlewareAdapter();
+				}
+
+				@Override
+				public Adapter caseRoboticSimulator(RoboticSimulator object) {
+					return createRoboticSimulatorAdapter();
+				}
+
+				@Override
+				public Adapter caseCycabTK(CycabTK object) {
+					return createCycabTKAdapter();
+				}
+
+				@Override
+				public Adapter caseBlenderMorse(BlenderMorse object) {
+					return createBlenderMorseAdapter();
+				}
+
+				@Override
+				public Adapter caseOnPort(OnPort object) {
+					return createOnPortAdapter();
+				}
+
+				@Override
+				public Adapter caseAllocate(Allocate object) {
+					return createAllocateAdapter();
+				}
+
+				@Override
+				public Adapter caseInertialMeasurementUnitSystem(InertialMeasurementUnitSystem object) {
+					return createInertialMeasurementUnitSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseInertialNavigationSystem(InertialNavigationSystem object) {
+					return createInertialNavigationSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseOdometrySystem(OdometrySystem object) {
+					return createOdometrySystemAdapter();
+				}
+
+				@Override
+				public Adapter caseInfraRedProximetrySystem(InfraRedProximetrySystem object) {
+					return createInfraRedProximetrySystemAdapter();
+				}
+
+				@Override
+				public Adapter caseDeploymentPlan(DeploymentPlan object) {
+					return createDeploymentPlanAdapter();
+				}
+
+				@Override
+				public Adapter caseGyroscope(Gyroscope object) {
+					return createGyroscopeAdapter();
+				}
+
+				@Override
+				public Adapter caseOnProperty(OnProperty object) {
+					return createOnPropertyAdapter();
+				}
+
+				@Override
+				public Adapter caseChassis(Chassis object) {
+					return createChassisAdapter();
+				}
+
+				@Override
+				public Adapter caseSupportingStructure(SupportingStructure object) {
+					return createSupportingStructureAdapter();
+				}
+
+				@Override
+				public Adapter caseMechanicalLinkage(MechanicalLinkage object) {
+					return createMechanicalLinkageAdapter();
+				}
+
+				@Override
+				public Adapter caseLeg(Leg object) {
+					return createLegAdapter();
+				}
+
+				@Override
+				public Adapter caseLocomotionHardware(LocomotionHardware object) {
+					return createLocomotionHardwareAdapter();
+				}
+
+				@Override
+				public Adapter caseActuatorHardware(ActuatorHardware object) {
+					return createActuatorHardwareAdapter();
+				}
+
+				@Override
+				public Adapter caseMobileRobot(MobileRobot object) {
+					return createMobileRobotAdapter();
+				}
+
+				@Override
+				public Adapter caseManipulator(Manipulator object) {
+					return createManipulatorAdapter();
+				}
+
+				@Override
+				public Adapter casePilotedSystem(PilotedSystem object) {
+					return createPilotedSystemAdapter();
+				}
+
+				@Override
+				public Adapter casePowerHardware(PowerHardware object) {
+					return createPowerHardwareAdapter();
+				}
+
+				@Override
+				public Adapter caseSensorHardware(SensorHardware object) {
+					return createSensorHardwareAdapter();
+				}
+
+				@Override
+				public Adapter caseGraspingHardware(GraspingHardware object) {
+					return createGraspingHardwareAdapter();
+				}
+
+				@Override
+				public Adapter caseSteeredWheelHardware(SteeredWheelHardware object) {
+					return createSteeredWheelHardwareAdapter();
+				}
+
+				@Override
+				public Adapter caseArm(Arm object) {
+					return createArmAdapter();
+				}
+
+				@Override
+				public Adapter caseLegSystem(LegSystem object) {
+					return createLegSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseGraspingSystem(GraspingSystem object) {
+					return createGraspingSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseWeaponSystem(WeaponSystem object) {
+					return createWeaponSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseManMachineInterfaceSystem(ManMachineInterfaceSystem object) {
+					return createManMachineInterfaceSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseClosedLoopControlSystem(ClosedLoopControlSystem object) {
+					return createClosedLoopControlSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseOpenLoopControlSystem(OpenLoopControlSystem object) {
+					return createOpenLoopControlSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseRoboticHead(RoboticHead object) {
+					return createRoboticHeadAdapter();
+				}
+
+				@Override
+				public Adapter caseNavigationCommandSystem(NavigationCommandSystem object) {
+					return createNavigationCommandSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseJoysticNavigationSystem(JoysticNavigationSystem object) {
+					return createJoysticNavigationSystemAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 *
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -492,6 +576,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Transition
 	 * @generated
@@ -506,6 +591,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Algorithm
 	 * @generated
@@ -520,6 +606,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.State
 	 * @generated
@@ -534,6 +621,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.ActuatedJoint
 	 * @generated
@@ -548,6 +636,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Joint
 	 * @generated
@@ -562,6 +651,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.CompleteBonding
 	 * @generated
@@ -576,6 +666,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Robot
 	 * @generated
@@ -590,6 +681,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.System
 	 * @generated
@@ -604,6 +696,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Agent
 	 * @generated
@@ -618,6 +711,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.PhysicalObject
 	 * @generated
@@ -632,6 +726,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Environment
 	 * @generated
@@ -646,6 +741,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Surface
 	 * @generated
@@ -660,6 +756,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.DataFlowPort
 	 * @generated
@@ -674,6 +771,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Port
 	 * @generated
@@ -688,6 +786,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.ServicePort
 	 * @generated
@@ -702,6 +801,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.ActuatorSystem
 	 * @generated
@@ -716,6 +816,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.RoboticSystem
 	 * @generated
@@ -730,6 +831,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.CyberPhysicalSystem
 	 * @generated
@@ -744,6 +846,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.SensorSystem
 	 * @generated
@@ -758,6 +861,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Hardware
 	 * @generated
@@ -772,6 +876,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Software
 	 * @generated
@@ -786,6 +891,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.EngineSystem
 	 * @generated
@@ -800,6 +906,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.SteeredWheelSystem
 	 * @generated
@@ -814,6 +921,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.LocomotionSystem
 	 * @generated
@@ -828,6 +936,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.ImageSensorSystem
 	 * @generated
@@ -842,6 +951,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.CameraSystem
 	 * @generated
@@ -856,6 +966,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.ObjectDetectionSensorSystem
 	 * @generated
@@ -870,6 +981,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.ObjectTrackingSensorSystem
 	 * @generated
@@ -884,6 +996,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.LidarSystem
 	 * @generated
@@ -898,6 +1011,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.LocalizationSensorSystem
 	 * @generated
@@ -912,6 +1026,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.GPSSystem
 	 * @generated
@@ -926,6 +1041,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.AlgorithmLibrary
 	 * @generated
@@ -940,6 +1056,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.SensorDriver
 	 * @generated
@@ -954,6 +1071,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Building
 	 * @generated
@@ -968,6 +1086,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Planet
 	 * @generated
@@ -982,6 +1101,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.LandSurface
 	 * @generated
@@ -996,6 +1116,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Ground
 	 * @generated
@@ -1010,6 +1131,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Floor
 	 * @generated
@@ -1024,6 +1146,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.WaterSurface
 	 * @generated
@@ -1038,6 +1161,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Human
 	 * @generated
@@ -1052,6 +1176,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Pedestrian
 	 * @generated
@@ -1066,6 +1191,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Stairs
 	 * @generated
@@ -1080,6 +1206,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Platform
 	 * @generated
@@ -1094,6 +1221,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.ExternalLibrary
 	 * @generated
@@ -1108,6 +1236,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.RoboticMiddleware
 	 * @generated
@@ -1122,6 +1251,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.RoboticSimulator
 	 * @generated
@@ -1136,6 +1266,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.CycabTK
 	 * @generated
@@ -1150,6 +1281,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.BlenderMorse
 	 * @generated
@@ -1164,6 +1296,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.OnPort
 	 * @generated
@@ -1178,6 +1311,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Allocate
 	 * @generated
@@ -1192,6 +1326,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.InertialMeasurementUnitSystem
 	 * @generated
@@ -1206,6 +1341,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.InertialNavigationSystem
 	 * @generated
@@ -1220,6 +1356,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.OdometrySystem
 	 * @generated
@@ -1234,6 +1371,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.InfraRedProximetrySystem
 	 * @generated
@@ -1248,6 +1386,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.DeploymentPlan
 	 * @generated
@@ -1262,6 +1401,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Gyroscope
 	 * @generated
@@ -1276,6 +1416,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.OnProperty
 	 * @generated
@@ -1290,6 +1431,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Chassis
 	 * @generated
@@ -1304,6 +1446,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.SupportingStructure
 	 * @generated
@@ -1318,6 +1461,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.MechanicalLinkage
 	 * @generated
@@ -1332,6 +1476,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Leg
 	 * @generated
@@ -1346,6 +1491,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.LocomotionHardware
 	 * @generated
@@ -1360,6 +1506,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.ActuatorHardware
 	 * @generated
@@ -1374,6 +1521,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.MobileRobot
 	 * @generated
@@ -1388,6 +1536,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Manipulator
 	 * @generated
@@ -1402,6 +1551,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.PilotedSystem
 	 * @generated
@@ -1416,6 +1566,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.PowerHardware
 	 * @generated
@@ -1430,6 +1581,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.SensorHardware
 	 * @generated
@@ -1444,6 +1596,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.GraspingHardware
 	 * @generated
@@ -1458,6 +1611,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.SteeredWheelHardware
 	 * @generated
@@ -1472,6 +1626,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.Arm
 	 * @generated
@@ -1486,6 +1641,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.LegSystem
 	 * @generated
@@ -1500,6 +1656,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.GraspingSystem
 	 * @generated
@@ -1514,6 +1671,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.WeaponSystem
 	 * @generated
@@ -1528,6 +1686,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.ManMachineInterfaceSystem
 	 * @generated
@@ -1542,6 +1701,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.ClosedLoopControlSystem
 	 * @generated
@@ -1556,6 +1716,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.OpenLoopControlSystem
 	 * @generated
@@ -1570,6 +1731,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.RoboticHead
 	 * @generated
@@ -1584,6 +1746,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.NavigationCommandSystem
 	 * @generated
@@ -1598,6 +1761,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotML.JoysticNavigationSystem
 	 * @generated
@@ -1611,6 +1775,7 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -1618,4 +1783,4 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //RobotMLAdapterFactory
+} // RobotMLAdapterFactory

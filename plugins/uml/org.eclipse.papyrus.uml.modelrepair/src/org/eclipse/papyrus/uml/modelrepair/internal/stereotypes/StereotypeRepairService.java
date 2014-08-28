@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -93,7 +93,7 @@ public class StereotypeRepairService implements IStereotypeRepairService, IServi
 		modelSet = null;
 		registry = null;
 
-		if(executor != null) {
+		if (executor != null) {
 			// Don't need to run any tasks still pending because the model-set, editor, everything are all gone
 			executor.shutdownNow();
 			executor = null;
@@ -117,7 +117,7 @@ public class StereotypeRepairService implements IStereotypeRepairService, IServi
 		lock.lock();
 		try {
 			Set<Resource> resources = modelSetsInRepair.get(modelSet);
-			if(resources == null) {
+			if (resources == null) {
 				resources = Sets.newIdentityHashSet();
 				modelSetsInRepair.put(modelSet, resources);
 			}
@@ -131,9 +131,9 @@ public class StereotypeRepairService implements IStereotypeRepairService, IServi
 		lock.lock();
 		try {
 			Set<Resource> resources = modelSetsInRepair.get(modelSet);
-			if(resources != null) {
+			if (resources != null) {
 				resources.remove(resource);
-				if(resources.isEmpty()) {
+				if (resources.isEmpty()) {
 					modelSetsInRepair.remove(modelSet);
 					finishedRepairCond.signalAll();
 				}
@@ -148,7 +148,7 @@ public class StereotypeRepairService implements IStereotypeRepairService, IServi
 		try {
 			pending.add(executor);
 
-			if(pendingExecutor == null) {
+			if (pendingExecutor == null) {
 				pendingExecutor = Executors.newSingleThreadExecutor();
 				start(pendingExecutor);
 			}
@@ -171,8 +171,8 @@ public class StereotypeRepairService implements IStereotypeRepairService, IServi
 							// Doesn't matter. We'll just re-schedule. But, who would interrupt me?
 						}
 
-						for(Iterator<PostRepairExecutor> iter = pending.iterator(); iter.hasNext();) {
-							if(iter.next().processPending()) {
+						for (Iterator<PostRepairExecutor> iter = pending.iterator(); iter.hasNext();) {
+							if (iter.next().processPending()) {
 								iter.remove();
 							}
 						}
@@ -208,11 +208,11 @@ public class StereotypeRepairService implements IStereotypeRepairService, IServi
 		}
 
 		public void execute(Runnable command) {
-			if(shutdown) {
+			if (shutdown) {
 				throw new RejectedExecutionException("Executor is shut down"); //$NON-NLS-1$
 			}
 
-			if(!isInRepair(modelSet)) {
+			if (!isInRepair(modelSet)) {
 				// Fire away
 				try {
 					delegate.execute(command);
@@ -270,11 +270,11 @@ public class StereotypeRepairService implements IStereotypeRepairService, IServi
 		boolean processPending() {
 			boolean result = !isInRepair(modelSet);
 
-			if(result) {
+			if (result) {
 				lock.lock();
 				try {
 					try {
-						for(Runnable next : pending) {
+						for (Runnable next : pending) {
 							delegate.execute(next);
 						}
 					} catch (RejectedExecutionException e) {

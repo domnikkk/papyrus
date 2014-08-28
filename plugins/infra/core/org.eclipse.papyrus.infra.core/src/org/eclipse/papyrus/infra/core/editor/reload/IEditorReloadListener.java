@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,18 +27,18 @@ public interface IEditorReloadListener extends EventListener {
 	 * context} to retrieve in an eventual {@linkplain #editorReloaded(EditorReloadEvent) }re-load} notification. The canonical example of this
 	 * usage is storing state such as selection, expanded tree nodes, etc. to restore after re-building a UI that depends on the reloaded
 	 * editor.
-	 * 
+	 *
 	 * @param event
-	 *        notification that an editor is going to re-load itself
+	 *            notification that an editor is going to re-load itself
 	 */
 	void editorAboutToReload(EditorReloadEvent event);
 
 	/**
 	 * Notifies that an editor has reloaded. Implementors may retrieve from the {@code event} any {@link EditorReloadEvent#getContext()
 	 * context} that they put in {@linkplain #editorAboutToReload(EditorReloadEvent) before} the re-load.
-	 * 
+	 *
 	 * @param event
-	 *        notification that an editor has reloaded
+	 *            notification that an editor has reloaded
 	 */
 	void editorReloaded(EditorReloadEvent event);
 }

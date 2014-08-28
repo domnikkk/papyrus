@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -28,8 +28,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.common.commands.SemanticAdapter;
 
 /**
- *this command is used to set a value of a view during the execution
- *as deferred command 
+ * this command is used to set a value of a view during the execution
+ * as deferred command
  *
  */
 public class DeferredSetViewCommand extends AbstractTransactionalCommand {
@@ -37,28 +37,33 @@ public class DeferredSetViewCommand extends AbstractTransactionalCommand {
 	private EStructuralFeature feature;
 	private Object value;
 	private SemanticAdapter semanticAdapter;
-	
+
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
-	 * @param domain the transactional command
-	 * @param semanticAdapter the semanticadapter that wrap the view
-	 * @param feature the ecore feature
-	 * @param value the value that will be associated
+	 * @param domain
+	 *            the transactional command
+	 * @param semanticAdapter
+	 *            the semanticadapter that wrap the view
+	 * @param feature
+	 *            the ecore feature
+	 * @param value
+	 *            the value that will be associated
 	 */
 	public DeferredSetViewCommand(TransactionalEditingDomain domain, SemanticAdapter semanticAdapter, EStructuralFeature feature, Object value) {
-		super(domain, "DeferredSetCommand",  Collections.EMPTY_LIST);
-		this.semanticAdapter=semanticAdapter;
-		this.feature=feature;
-		this.value=value;
+		super(domain, "DeferredSetCommand", Collections.EMPTY_LIST);
+		this.semanticAdapter = semanticAdapter;
+		this.feature = feature;
+		this.value = value;
 	}
+
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		SetCommand cmd= new SetCommand(this.getEditingDomain(), (EObject)semanticAdapter.getAdapter(View.class), feature, value);
+		SetCommand cmd = new SetCommand(this.getEditingDomain(), (EObject) semanticAdapter.getAdapter(View.class), feature, value);
 		cmd.canExecute();
 		cmd.execute();
 		return CommandResult.newOKCommandResult();
-		
+
 	}
 }

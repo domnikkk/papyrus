@@ -1,29 +1,25 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  * 	CEA LIST - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.impl;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreationMenuModelPackage;
 import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Folder;
 import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Menu;
@@ -35,7 +31,7 @@ import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Menu;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.impl.FolderImpl#getMenu <em>Menu</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.impl.FolderImpl#getMenu <em>Menu</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +42,7 @@ public class FolderImpl extends MenuImpl implements Folder {
 	 * The cached value of the '{@link #getMenu() <em>Menu</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMenu()
 	 * @generated
 	 * @ordered
@@ -55,6 +52,7 @@ public class FolderImpl extends MenuImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FolderImpl() {
@@ -64,6 +62,7 @@ public class FolderImpl extends MenuImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,6 +73,7 @@ public class FolderImpl extends MenuImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<Menu> getMenu() {
@@ -86,13 +86,14 @@ public class FolderImpl extends MenuImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ElementCreationMenuModelPackage.FOLDER__MENU:
-				return ((InternalEList<?>)getMenu()).basicRemove(otherEnd, msgs);
+		case ElementCreationMenuModelPackage.FOLDER__MENU:
+			return ((InternalEList<?>) getMenu()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -100,13 +101,14 @@ public class FolderImpl extends MenuImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ElementCreationMenuModelPackage.FOLDER__MENU:
-				return getMenu();
+		case ElementCreationMenuModelPackage.FOLDER__MENU:
+			return getMenu();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,16 +116,17 @@ public class FolderImpl extends MenuImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ElementCreationMenuModelPackage.FOLDER__MENU:
-				getMenu().clear();
-				getMenu().addAll((Collection<? extends Menu>)newValue);
-				return;
+		case ElementCreationMenuModelPackage.FOLDER__MENU:
+			getMenu().clear();
+			getMenu().addAll((Collection<? extends Menu>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,14 +134,15 @@ public class FolderImpl extends MenuImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ElementCreationMenuModelPackage.FOLDER__MENU:
-				getMenu().clear();
-				return;
+		case ElementCreationMenuModelPackage.FOLDER__MENU:
+			getMenu().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -146,15 +150,16 @@ public class FolderImpl extends MenuImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ElementCreationMenuModelPackage.FOLDER__MENU:
-				return menu != null && !menu.isEmpty();
+		case ElementCreationMenuModelPackage.FOLDER__MENU:
+			return menu != null && !menu.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //FolderImpl
+} // FolderImpl

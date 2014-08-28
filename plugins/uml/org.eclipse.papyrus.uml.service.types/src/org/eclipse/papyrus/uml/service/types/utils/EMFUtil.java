@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -24,16 +24,16 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 
 /**
  * Utility class use to retrieve stereotype applications.
- * 
+ *
  * Copied from oep.infra.emf.EMFHelper to avoid dependency toward this plug-in.
- * 
+ *
  */
 public class EMFUtil {
 
 	/**
 	 * Tests if an EObject is read only
 	 * Delegates to the EObject's editing domain if it can be found
-	 * 
+	 *
 	 * @param eObject
 	 * @return
 	 *         True if the EObject is read only
@@ -46,7 +46,7 @@ public class EMFUtil {
 	/**
 	 * Tests if an EObject is read only
 	 * Delegates to the given editing domain if it isn't null
-	 * 
+	 *
 	 * @param eObject
 	 * @param domain
 	 * @return
@@ -59,29 +59,29 @@ public class EMFUtil {
 	/**
 	 * Tests if the Resource is read only
 	 * Delegates to the given editing domain if it isn't null
-	 * 
+	 *
 	 * @param resource
 	 * @param domain
 	 * @return
 	 *         True if the Resource is read only
 	 */
 	public static boolean isReadOnly(Resource resource, EditingDomain domain) {
-		if(domain instanceof AdapterFactoryEditingDomain) {
-			return ((AdapterFactoryEditingDomain)domain).isReadOnly(resource);
+		if (domain instanceof AdapterFactoryEditingDomain) {
+			return ((AdapterFactoryEditingDomain) domain).isReadOnly(resource);
 		}
 
-		if(resource == null) {
+		if (resource == null) {
 			return false;
 		}
 
 		ResourceSet resourceSet = resource.getResourceSet();
 
-		if(resourceSet == null) {
+		if (resourceSet == null) {
 			return false;
 		}
 
 		Map<String, ?> attributes = resourceSet.getURIConverter().getAttributes(resource.getURI(), null);
-		Boolean readOnly = (Boolean)attributes.get(URIConverter.ATTRIBUTE_READ_ONLY);
+		Boolean readOnly = (Boolean) attributes.get(URIConverter.ATTRIBUTE_READ_ONLY);
 
 		return readOnly == null ? false : readOnly;
 	}

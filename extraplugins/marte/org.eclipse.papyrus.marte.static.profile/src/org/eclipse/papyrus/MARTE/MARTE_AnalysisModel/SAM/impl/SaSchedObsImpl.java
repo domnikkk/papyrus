@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaSchedObs;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaSchedObsImpl#getSuspentions <em>Suspentions</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaSchedObsImpl#getBlockT <em>Block T</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaSchedObsImpl#getOverlaps <em>Overlaps</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaSchedObsImpl#getSuspentions <em>Suspentions</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaSchedObsImpl#getBlockT <em>Block T</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaSchedObsImpl#getOverlaps <em>Overlaps</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +42,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	 * The cached value of the '{@link #getSuspentions() <em>Suspentions</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSuspentions()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	 * The cached value of the '{@link #getBlockT() <em>Block T</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBlockT()
 	 * @generated
 	 * @ordered
@@ -62,6 +64,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	 * The cached value of the '{@link #getOverlaps() <em>Overlaps</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOverlaps()
 	 * @generated
 	 * @ordered
@@ -71,6 +74,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SaSchedObsImpl() {
@@ -80,6 +84,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,8 +95,10 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<String> getSuspentions() {
 		if (suspentions == null) {
 			suspentions = new EDataTypeUniqueEList<String>(String.class, this, SAMPackage.SA_SCHED_OBS__SUSPENTIONS);
@@ -102,8 +109,10 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<String> getBlockT() {
 		if (blockT == null) {
 			blockT = new EDataTypeUniqueEList<String>(String.class, this, SAMPackage.SA_SCHED_OBS__BLOCK_T);
@@ -114,8 +123,10 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<String> getOverlaps() {
 		if (overlaps == null) {
 			overlaps = new EDataTypeUniqueEList<String>(String.class, this, SAMPackage.SA_SCHED_OBS__OVERLAPS);
@@ -126,17 +137,18 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SAMPackage.SA_SCHED_OBS__SUSPENTIONS:
-				return getSuspentions();
-			case SAMPackage.SA_SCHED_OBS__BLOCK_T:
-				return getBlockT();
-			case SAMPackage.SA_SCHED_OBS__OVERLAPS:
-				return getOverlaps();
+		case SAMPackage.SA_SCHED_OBS__SUSPENTIONS:
+			return getSuspentions();
+		case SAMPackage.SA_SCHED_OBS__BLOCK_T:
+			return getBlockT();
+		case SAMPackage.SA_SCHED_OBS__OVERLAPS:
+			return getOverlaps();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -144,24 +156,25 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SAMPackage.SA_SCHED_OBS__SUSPENTIONS:
-				getSuspentions().clear();
-				getSuspentions().addAll((Collection<? extends String>)newValue);
-				return;
-			case SAMPackage.SA_SCHED_OBS__BLOCK_T:
-				getBlockT().clear();
-				getBlockT().addAll((Collection<? extends String>)newValue);
-				return;
-			case SAMPackage.SA_SCHED_OBS__OVERLAPS:
-				getOverlaps().clear();
-				getOverlaps().addAll((Collection<? extends String>)newValue);
-				return;
+		case SAMPackage.SA_SCHED_OBS__SUSPENTIONS:
+			getSuspentions().clear();
+			getSuspentions().addAll((Collection<? extends String>) newValue);
+			return;
+		case SAMPackage.SA_SCHED_OBS__BLOCK_T:
+			getBlockT().clear();
+			getBlockT().addAll((Collection<? extends String>) newValue);
+			return;
+		case SAMPackage.SA_SCHED_OBS__OVERLAPS:
+			getOverlaps().clear();
+			getOverlaps().addAll((Collection<? extends String>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -169,20 +182,21 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SAMPackage.SA_SCHED_OBS__SUSPENTIONS:
-				getSuspentions().clear();
-				return;
-			case SAMPackage.SA_SCHED_OBS__BLOCK_T:
-				getBlockT().clear();
-				return;
-			case SAMPackage.SA_SCHED_OBS__OVERLAPS:
-				getOverlaps().clear();
-				return;
+		case SAMPackage.SA_SCHED_OBS__SUSPENTIONS:
+			getSuspentions().clear();
+			return;
+		case SAMPackage.SA_SCHED_OBS__BLOCK_T:
+			getBlockT().clear();
+			return;
+		case SAMPackage.SA_SCHED_OBS__OVERLAPS:
+			getOverlaps().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -190,17 +204,18 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SAMPackage.SA_SCHED_OBS__SUSPENTIONS:
-				return suspentions != null && !suspentions.isEmpty();
-			case SAMPackage.SA_SCHED_OBS__BLOCK_T:
-				return blockT != null && !blockT.isEmpty();
-			case SAMPackage.SA_SCHED_OBS__OVERLAPS:
-				return overlaps != null && !overlaps.isEmpty();
+		case SAMPackage.SA_SCHED_OBS__SUSPENTIONS:
+			return suspentions != null && !suspentions.isEmpty();
+		case SAMPackage.SA_SCHED_OBS__BLOCK_T:
+			return blockT != null && !blockT.isEmpty();
+		case SAMPackage.SA_SCHED_OBS__OVERLAPS:
+			return overlaps != null && !overlaps.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -208,11 +223,14 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (suspentions: ");
@@ -225,4 +243,4 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 		return result.toString();
 	}
 
-} //SaSchedObsImpl
+} // SaSchedObsImpl

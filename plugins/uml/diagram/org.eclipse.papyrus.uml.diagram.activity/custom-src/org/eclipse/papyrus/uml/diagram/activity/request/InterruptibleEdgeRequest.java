@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.gef.Request;
  * Create a request related to Interruptible Edge.
  * For now this request is created but and throw to editPart but there is no edit part which used.
  * The aim is to have for the future a mechanism in place in order to add specific EditPart mechanism
- * 
+ *
  * @author arthur daussy
  */
 public class InterruptibleEdgeRequest extends Request {
@@ -37,7 +37,7 @@ public class InterruptibleEdgeRequest extends Request {
 
 	@Override
 	public void setType(Object type) {
-		if(!SET_INTERRUPTIBLE_EDGE.equals(type) && !UNSET_INTERRUPTIBLE_EDGE.equals(type)) {
+		if (!SET_INTERRUPTIBLE_EDGE.equals(type) && !UNSET_INTERRUPTIBLE_EDGE.equals(type)) {
 			setType(UNSET_INTERRUPTIBLE_EDGE);
 		}
 		super.setType(type);

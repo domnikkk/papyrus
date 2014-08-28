@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,7 +55,7 @@ public class DialogCredentialsProviderFactory implements ICredentialsProviderFac
 
 			@Override
 			public void windowClosed(IWorkbenchWindow window) {
-				if(activeWindow == window) {
+				if (activeWindow == window) {
 					activeWindow = null;
 				}
 			}
@@ -112,7 +112,7 @@ public class DialogCredentialsProviderFactory implements ICredentialsProviderFac
 			String username = repository.getUsername();
 			String password = repository.getPassword();
 
-			if(!Strings.isNullOrEmpty(username) && !Strings.isNullOrEmpty(password)) {
+			if (!Strings.isNullOrEmpty(username) && !Strings.isNullOrEmpty(password)) {
 				// use stored creds
 				result = new PasswordCredentials(username, password.toCharArray());
 			} else {
@@ -137,7 +137,7 @@ public class DialogCredentialsProviderFactory implements ICredentialsProviderFac
 			IPasswordCredentials result = null;
 
 			RepositoryCredentialsDialog dlg = new RepositoryCredentialsDialog(getCurrentShell(), repository);
-			if(dlg.open() == Window.OK) {
+			if (dlg.open() == Window.OK) {
 				result = dlg.getCredentials();
 			}
 
@@ -171,7 +171,7 @@ public class DialogCredentialsProviderFactory implements ICredentialsProviderFac
 
 			final Shell parentShell = getCurrentShell();
 
-			if(parentShell.getDisplay() == Display.getCurrent()) {
+			if (parentShell.getDisplay() == Display.getCurrent()) {
 				try {
 					result[0] = callable.call();
 				} catch (Exception e) {
@@ -193,7 +193,7 @@ public class DialogCredentialsProviderFactory implements ICredentialsProviderFac
 
 			// this is safe according to the 'callable' type
 			@SuppressWarnings("unchecked")
-			T resultAsT = (T)result[0];
+			T resultAsT = (T) result[0];
 
 			return resultAsT;
 		}

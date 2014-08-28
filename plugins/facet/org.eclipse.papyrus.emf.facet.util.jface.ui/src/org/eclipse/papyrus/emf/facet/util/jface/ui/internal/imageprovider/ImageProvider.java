@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Copyright (c) 2013 Soft-Maint.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,12 +16,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.core.runtime.Plugin;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.viewers.DecorationOverlayIcon;
 import org.eclipse.papyrus.emf.facet.util.core.DebugUtils;
 import org.eclipse.papyrus.emf.facet.util.jface.ui.imageprovider.IImageProvider;
 import org.eclipse.papyrus.emf.facet.util.jface.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.util.swt.imageprovider.IImageProviderFactory;
-import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.jface.viewers.DecorationOverlayIcon;
 import org.eclipse.swt.graphics.Image;
 import org.osgi.framework.Bundle;
 
@@ -39,6 +39,7 @@ public final class ImageProvider implements IImageProvider {
 				.createIImageProvider(plugin);
 	}
 
+	@Override
 	public Image getImage(final DecorationOverlayIcon imgDescriptor) {
 		Image result = this.map.get(imgDescriptor);
 		if (result == null) {
@@ -47,8 +48,7 @@ public final class ImageProvider implements IImageProvider {
 			if (DEBUG) {
 				final Bundle bundle = this.plugin.getBundle();
 				final String bundleId = bundle.getSymbolicName();
-				final String message = String.format(
-						"New image loaded from an overlay icon (bundle=%s)", //$NON-NLS-1$
+				final String message = String.format("New image loaded from an overlay icon (bundle=%s)", //$NON-NLS-1$
 						bundleId);
 				DebugUtils.debug(message);
 			}
@@ -56,14 +56,17 @@ public final class ImageProvider implements IImageProvider {
 		return result;
 	}
 
+	@Override
 	public Image getImage(final String path) {
 		return this.delegate.getImage(path);
 	}
 
+	@Override
 	public ImageDescriptor createImageDescriptor(final String resourcePath) {
 		return this.delegate.createImageDescriptor(resourcePath);
 	}
 
+	@Override
 	public Image getImage(final ImageDescriptor imgDescriptor) {
 		return this.delegate.getImage(imgDescriptor);
 	}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 422257
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.wizards;
 
@@ -53,7 +53,7 @@ public class LocalRepositoryView {
 	 * Disposes of all of the local {@link CDOView}s that I have cached.
 	 */
 	public void dispose() {
-		for(Map.Entry<IPapyrusRepository, CDOView> next : localViews.entrySet()) {
+		for (Map.Entry<IPapyrusRepository, CDOView> next : localViews.entrySet()) {
 			CDOView view = next.getValue();
 			try {
 				CDOUtils.unload(view);
@@ -66,7 +66,7 @@ public class LocalRepositoryView {
 
 		localViews.clear();
 
-		if(rset != null) {
+		if (rset != null) {
 			try {
 				EMFHelper.unload(rset);
 			} catch (Exception e) {
@@ -79,10 +79,10 @@ public class LocalRepositoryView {
 
 	/**
 	 * Obtain a view of the specified {@code selection} in the context of a local cache of distinct {@link CDOView}s.
-	 * 
+	 *
 	 * @param selection
-	 *        a selection of objects in a CDO view
-	 * 
+	 *            a selection of objects in a CDO view
+	 *
 	 * @return a new selection consisting of the same objects as presented in my local CDO views
 	 */
 	public IStructuredSelection translate(IStructuredSelection selection) {
@@ -91,20 +91,20 @@ public class LocalRepositoryView {
 
 	/**
 	 * Obtain a view of the specified {@code objects} in the context of a local cache of distinct {@link CDOView}s.
-	 * 
+	 *
 	 * @param objects
-	 *        a bunch of objects in a CDO view
-	 * 
+	 *            a bunch of objects in a CDO view
+	 *
 	 * @return a new list consisting of the same objects as presented in my local CDO views
 	 */
 	public List<Object> translate(Collection<?> objects) {
 		List<Object> result = Lists.newArrayListWithCapacity(objects.size());
 
-		for(Object next : objects) {
-			if(next instanceof EObject) {
-				result.add(translate((EObject)next));
-			} else if(next instanceof DIModel) {
-				DIModel di = (DIModel)next;
+		for (Object next : objects) {
+			if (next instanceof EObject) {
+				result.add(translate((EObject) next));
+			} else if (next instanceof DIModel) {
+				DIModel di = (DIModel) next;
 
 				result.add(DIModel.getInstance(translate(di.getResource()), true));
 			}
@@ -115,24 +115,24 @@ public class LocalRepositoryView {
 
 	/**
 	 * Obtain a view of the specified {@code object} in the context of a local cache of distinct {@link CDOView}s.
-	 * 
+	 *
 	 * @param objects
-	 *        a modeled object in a CDO view
-	 * 
+	 *            a modeled object in a CDO view
+	 *
 	 * @return the same object as presented in my local CDO views
 	 */
 	public <T extends EObject> T translate(T object) {
 		T result;
 
-		if(object instanceof CDOObject) {
-			CDOObject cdo = (CDOObject)object;
+		if (object instanceof CDOObject) {
+			CDOObject cdo = (CDOObject) object;
 			CDOView view = cdo.cdoView();
-			if(view == null) {
+			if (view == null) {
 				result = object;
 			} else {
 				IInternalPapyrusRepository repo = PapyrusRepositoryManager.INSTANCE.getRepository(view);
 				CDOView localView = localViews.get(repo);
-				if(localView == null) {
+				if (localView == null) {
 					localView = repo.getCDOView(repo.createReadOnlyView(getResourceSet()));
 					localViews.put(repo, localView);
 				}
@@ -147,7 +147,7 @@ public class LocalRepositoryView {
 	}
 
 	protected ResourceSet getResourceSet() {
-		if(rset == null) {
+		if (rset == null) {
 			rset = createResourceSet();
 		}
 

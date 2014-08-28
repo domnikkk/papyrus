@@ -4,11 +4,13 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.exprmatcher;
+
+import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,17 +27,16 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
 import org.eclipse.papyrus.layers.stackmodel.notifier.LayersTreeEventNotifier;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.UMLPackage;
-import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 
 /**
  * An EMF {@link Adapter} listening on uml::NamedElement properties changes.
- * 
+ *
  * This class listen to a {@link NamedElement} and send following events to listeners:
  * <ul>
- *   <li>valueChanged</li>
+ * <li>valueChanged</li>
  * </ul>
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -50,78 +51,81 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Something happen on the tree of object
+	 *
 	 * @see org.eclipse.emf.ecore.util.EContentAdapter#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param msg
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 
 		// Self atttach
 		super.notifyChanged(notification);
 
 		// Take into account the domain hierarchy found from the notation.
-		
-		// Now, filter
-		if( isDiagramRootView(notification)) {
-			fireValueChangedEvent(notification);
-		}
-		else if ( isUmlDomainElementChanged(notification)) {
-			fireValueChangedEvent(notification);
-		}
-		
 
-//		// We are only interested in NamedElement (from newValue if set, or oldValue if removed)
-//		Object newValue = notification.getNewValue();
-//		if( ! (newValue instanceof NamedElement || notification.getOldValue() instanceof NamedElement ) ) {
-//			return;
-//		}
-//		// Check diagram modification
-//		// There is 4 sources: View::persistedChildren and View::transientChildren
-//		// Diagram::persistedChildren and Diagram::transientChildren
-//		Object feature = notification.getFeature();
-//		if( feature == UMLPackage.eINSTANCE.getNamedElement()
-//				|| feature == NotationPackage.eINSTANCE.getView_TransientChildren() 
-//				|| feature == NotationPackage.eINSTANCE.getDiagram_PersistedEdges() 
-//				|| feature == NotationPackage.eINSTANCE.getDiagram_TransientEdges() ) {
-//			// LayerOperator::layers || LayersStack::layers
-//			// check the event type.
-//			switch(notification.getEventType()) {
-//			case Notification.SET:
-//
-//				break;
-//			case Notification.ADD:
-//				// A view is added
-//				fireValueChangedEvent(notification);
-//				break;
-//			case Notification.REMOVE:
-//				// A layer is removed
-//				fireDiagramViewRemovedEvent(notification);
-//				break;
-//			}
-//		}
+		// Now, filter
+		if (isDiagramRootView(notification)) {
+			fireValueChangedEvent(notification);
+		}
+		else if (isUmlDomainElementChanged(notification)) {
+			fireValueChangedEvent(notification);
+		}
+
+
+		// // We are only interested in NamedElement (from newValue if set, or oldValue if removed)
+		// Object newValue = notification.getNewValue();
+		// if( ! (newValue instanceof NamedElement || notification.getOldValue() instanceof NamedElement ) ) {
+		// return;
+		// }
+		// // Check diagram modification
+		// // There is 4 sources: View::persistedChildren and View::transientChildren
+		// // Diagram::persistedChildren and Diagram::transientChildren
+		// Object feature = notification.getFeature();
+		// if( feature == UMLPackage.eINSTANCE.getNamedElement()
+		// || feature == NotationPackage.eINSTANCE.getView_TransientChildren()
+		// || feature == NotationPackage.eINSTANCE.getDiagram_PersistedEdges()
+		// || feature == NotationPackage.eINSTANCE.getDiagram_TransientEdges() ) {
+		// // LayerOperator::layers || LayersStack::layers
+		// // check the event type.
+		// switch(notification.getEventType()) {
+		// case Notification.SET:
+		//
+		// break;
+		// case Notification.ADD:
+		// // A view is added
+		// fireValueChangedEvent(notification);
+		// break;
+		// case Notification.REMOVE:
+		// // A layer is removed
+		// fireDiagramViewRemovedEvent(notification);
+		// break;
+		// }
+		// }
 
 	};
 
 	/**
 	 * Return true if the notification indicates a change in a uml element.
+	 *
 	 * @param notification
 	 * @return
 	 */
 	private boolean isUmlDomainElementChanged(Notification notification) {
 		// Notifier should be the diagram
-		if( ! (notification.getNotifier() instanceof NamedElement) ) {
+		if (!(notification.getNotifier() instanceof NamedElement)) {
 			return false;
 		}
-			
+
 		Object feature = notification.getFeature();
 
-		if( feature == UMLPackage.eINSTANCE.getNamedElement_Name() ) {
+		if (feature == UMLPackage.eINSTANCE.getNamedElement_Name()) {
 			// check the event type.
-			switch(notification.getEventType()) {
+			switch (notification.getEventType()) {
 			case Notification.SET:
 			case Notification.ADD:
 			case Notification.REMOVE:
-				
+
 				return true;
 			}
 		}
@@ -130,29 +134,30 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Return true if the notification indicates that a Diagram root view is modifified.
+	 *
 	 * @param notification
 	 * @return
 	 */
 	private boolean isDiagramRootView(Notification notification) {
-		
+
 		// Notifier should be the diagram
-		if( ! (notification.getNotifier() instanceof Diagram) ) {
+		if (!(notification.getNotifier() instanceof Diagram)) {
 			return false;
 		}
-			
+
 		Object feature = notification.getFeature();
 
-		if( feature == NotationPackage.eINSTANCE.getView_PersistedChildren()
+		if (feature == NotationPackage.eINSTANCE.getView_PersistedChildren()
 				|| feature == NotationPackage.eINSTANCE.getView_TransientChildren()
-				|| feature == NotationPackage.eINSTANCE.getDiagram_PersistedEdges() 
-				|| feature == NotationPackage.eINSTANCE.getDiagram_TransientEdges() ) {
+				|| feature == NotationPackage.eINSTANCE.getDiagram_PersistedEdges()
+				|| feature == NotationPackage.eINSTANCE.getDiagram_TransientEdges()) {
 			// LayerOperator::layers || LayersStack::layers
 			// check the event type.
-			switch(notification.getEventType()) {
+			switch (notification.getEventType()) {
 			case Notification.SET:
 			case Notification.ADD:
 			case Notification.REMOVE:
-				
+
 				return true;
 			}
 		}
@@ -161,7 +166,7 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * This Adapter is for {@link LayersTreeEventNotifier}.
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.impl.AdapterImpl#isAdapterForType(java.lang.Object)
 	 *
 	 * @param type
@@ -171,7 +176,7 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 	public boolean isAdapterForType(Object type) {
 		return type == ValueChangedEventNotifier.class;
 	}
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -185,7 +190,7 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 	 */
 	public void dispose() {
 
-		if(isDisposed()) {
+		if (isDisposed()) {
 			return;
 		}
 
@@ -195,6 +200,7 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Return true if the object is disposed.
+	 *
 	 * @return
 	 */
 	public boolean isDisposed() {
@@ -204,25 +210,26 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 	/**
 	 * Add the specified listener to the list of listener.
 	 * Do not add it if the listener is already in the list.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void addEventListener(IValueChangedEventListener listener) {
 
-		if(listener == null ) {
+		if (listener == null) {
 			return;
 		}
 
 		// Check if exist
-		if( listeners.contains(listener)) {
+		if (listeners.contains(listener)) {
 			return;
 		}
 
 		listeners.add(listener);
 	}
 
-	/** 
+	/**
 	 * Remove the specified listener from the list of listeners.
+	 *
 	 * @param listener
 	 */
 	public void removeEventListener(IValueChangedEventListener listener) {
@@ -232,24 +239,24 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Called by events when a {@link LayersStack} is added to the {@link LayersStackApplication}
+	 *
 	 * @param msg
 	 */
 	protected void fireValueChangedEvent(Notification msg) {
-		for(IValueChangedEventListener listener : listeners) {
+		for (IValueChangedEventListener listener : listeners) {
 			listener.valueChanged(msg);
 		}
 	}
 
 	/**
 	 * Handle View::element hierarchy in the self adapt mechanism.
-	 * Handles a notification by calling {@link #handleContainment handleContainment}
-	 * for any containment-based notification.
+	 * Handles a notification by calling {@link #handleContainment handleContainment} for any containment-based notification.
 	 */
 	@Override
 	protected void selfAdapt(Notification notification)
 	{
-		if(log.isDebugEnabled()) {
-			log.debug(this.getClass().getSimpleName() + ".selfAdapt("+ notification+")" );
+		if (log.isDebugEnabled()) {
+			log.debug(this.getClass().getSimpleName() + ".selfAdapt(" + notification + ")");
 		}
 
 		if (notification.getFeature() == NotationPackage.eINSTANCE.getView_Element())
@@ -257,47 +264,49 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 			handleContainment(notification);
 		}
 		else {
-			super.selfAdapt(notification);			
+			super.selfAdapt(notification);
 		}
 	}
 
 	/**
 	 * Handle View::element hierarchy in the self adapt mechanism.
+	 *
 	 * @see org.eclipse.emf.ecore.util.EContentAdapter#setTarget(org.eclipse.emf.ecore.EObject)
 	 *
 	 * @param target
 	 */
 	@Override
 	protected void setTarget(EObject target) {
-		if(log.isDebugEnabled()) {
-			log.debug(this.getClass().getSimpleName() + ".setTarget("+ target+")" );
+		if (log.isDebugEnabled()) {
+			log.debug(this.getClass().getSimpleName() + ".setTarget(" + target + ")");
 		}
 
 		// Handle the View::element tree
-		if( target instanceof View ) {
-			EObject extraTarget = ((View)target).getElement();
-			if( extraTarget != null) {
-				log.info( this.getClass().getSimpleName() + ".setExtraTarget("+ extraTarget+")" );
+		if (target instanceof View) {
+			EObject extraTarget = ((View) target).getElement();
+			if (extraTarget != null) {
+				log.info(this.getClass().getSimpleName() + ".setExtraTarget(" + extraTarget + ")");
 				// copied from org.eclipse.emf.ecore.util.EContentAdapter.setTarget(EObject)
-//			    basicSetTarget(target);
+				// basicSetTarget(target);
 				// Add the extra object
 				addAdapter(extraTarget);
 				// Add the content of the extra object
-//			    for (Iterator<? extends Notifier> i = resolve() ? 
-//			    		extraTarget.eContents().iterator() : 
-//			           ((InternalEList<? extends Notifier>)extraTarget.eContents()).basicIterator();
-//			         i.hasNext(); )
-//			    {
-//			      Notifier notifier = i.next();
-//			      addAdapter(notifier);
-//			    }
+				// for (Iterator<? extends Notifier> i = resolve() ?
+				// extraTarget.eContents().iterator() :
+				// ((InternalEList<? extends Notifier>)extraTarget.eContents()).basicIterator();
+				// i.hasNext(); )
+				// {
+				// Notifier notifier = i.next();
+				// addAdapter(notifier);
+				// }
 
 			}
 		}
 	}
-	
+
 	/**
 	 * Handle View::element hierarchy in the self adapt mechanism.
+	 *
 	 * @see org.eclipse.emf.ecore.util.EContentAdapter#unsetTarget(org.eclipse.emf.ecore.EObject)
 	 *
 	 * @param target
@@ -307,22 +316,22 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 		// TODO Auto-generated method stub
 		super.unsetTarget(target);
 		// Handle the View::element tree
-		if( target instanceof View ) {
-			EObject extraTarget = ((View)target).getElement();
-			if( extraTarget != null) {
+		if (target instanceof View) {
+			EObject extraTarget = ((View) target).getElement();
+			if (extraTarget != null) {
 				// copied from org.eclipse.emf.ecore.util.EContentAdapter.setTarget(EObject)
-//			    basicSetTarget(target);
+				// basicSetTarget(target);
 				// Remove the extra object
 				removeAdapter(extraTarget);
 				// Remove contents of the extra object
-//			    for (Iterator<? extends Notifier> i = resolve() ? 
-//			    		extraTarget.eContents().iterator() : 
-//			           ((InternalEList<? extends Notifier>)extraTarget.eContents()).basicIterator();
-//			         i.hasNext(); )
-//			    {
-//			      Notifier notifier = i.next();
-//			      removeAdapter(notifier);
-//			    }
+				// for (Iterator<? extends Notifier> i = resolve() ?
+				// extraTarget.eContents().iterator() :
+				// ((InternalEList<? extends Notifier>)extraTarget.eContents()).basicIterator();
+				// i.hasNext(); )
+				// {
+				// Notifier notifier = i.next();
+				// removeAdapter(notifier);
+				// }
 
 			}
 		}

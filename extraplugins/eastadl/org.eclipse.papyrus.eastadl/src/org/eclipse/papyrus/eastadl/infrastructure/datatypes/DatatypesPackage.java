@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,17 +28,18 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
  * The Datatypes subpackage of EAST-ADL2 defines EAST-ADL2 general-purpose datatypes that may be used to type structural constructs in several different modeling diagrams.
- * 
+ *
  * The purpose of the metaclasses in the Datatypes subpackage is to specify the concepts for the specific domain.
  * <!-- end-model-doc -->
+ *
  * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesFactory
  * @model kind="package"
  * @generated
@@ -48,12 +49,13 @@ public interface DatatypesPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -61,6 +63,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EADatatypeImpl <em>EA Datatype</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EADatatypeImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getEADatatype()
 		 * @generated
@@ -71,6 +74,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference EA_DATATYPE__BASE_DATA_TYPE = eINSTANCE.getEADatatype_Base_DataType();
@@ -79,6 +83,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EADatatypePrototypeImpl <em>EA Datatype Prototype</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EADatatypePrototypeImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getEADatatypePrototype()
 		 * @generated
@@ -89,6 +94,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference EA_DATATYPE_PROTOTYPE__TYPE = eINSTANCE.getEADatatypePrototype_Type();
@@ -97,6 +103,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference EA_DATATYPE_PROTOTYPE__BASE_PROPERTY = eINSTANCE.getEADatatypePrototype_Base_Property();
@@ -105,6 +112,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Parameter</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference EA_DATATYPE_PROTOTYPE__BASE_PARAMETER = eINSTANCE.getEADatatypePrototype_Base_Parameter();
@@ -113,6 +121,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EANumericalImpl <em>EA Numerical</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EANumericalImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getEANumerical()
 		 * @generated
@@ -123,6 +132,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute EA_NUMERICAL__MAX = eINSTANCE.getEANumerical_Max();
@@ -131,6 +141,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute EA_NUMERICAL__MIN = eINSTANCE.getEANumerical_Min();
@@ -139,6 +150,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Unit</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference EA_NUMERICAL__UNIT = eINSTANCE.getEANumerical_Unit();
@@ -147,6 +159,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.UnitImpl <em>Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.UnitImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getUnit()
 		 * @generated
@@ -157,6 +170,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Factor</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute UNIT__FACTOR = eINSTANCE.getUnit_Factor();
@@ -165,6 +179,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute UNIT__OFFSET = eINSTANCE.getUnit_Offset();
@@ -173,6 +188,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute UNIT__SYMBOL = eINSTANCE.getUnit_Symbol();
@@ -181,6 +197,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Quantity</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference UNIT__QUANTITY = eINSTANCE.getUnit_Quantity();
@@ -189,6 +206,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference UNIT__REFERENCE = eINSTANCE.getUnit_Reference();
@@ -197,6 +215,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.QuantityImpl <em>Quantity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.QuantityImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getQuantity()
 		 * @generated
@@ -207,6 +226,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Amount Of Substance Exp</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute QUANTITY__AMOUNT_OF_SUBSTANCE_EXP = eINSTANCE.getQuantity_AmountOfSubstanceExp();
@@ -215,6 +235,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Electric Current Exp</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute QUANTITY__ELECTRIC_CURRENT_EXP = eINSTANCE.getQuantity_ElectricCurrentExp();
@@ -223,6 +244,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Lenght Exp</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute QUANTITY__LENGHT_EXP = eINSTANCE.getQuantity_LenghtExp();
@@ -231,6 +253,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Luminous Intensity Exp</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute QUANTITY__LUMINOUS_INTENSITY_EXP = eINSTANCE.getQuantity_LuminousIntensityExp();
@@ -239,6 +262,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mass Exp</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute QUANTITY__MASS_EXP = eINSTANCE.getQuantity_MassExp();
@@ -247,6 +271,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Thermodynamic Temperature Exp</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute QUANTITY__THERMODYNAMIC_TEMPERATURE_EXP = eINSTANCE.getQuantity_ThermodynamicTemperatureExp();
@@ -255,6 +280,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Time Exp</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute QUANTITY__TIME_EXP = eINSTANCE.getQuantity_TimeExp();
@@ -263,6 +289,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.RangeableValueTypeImpl <em>Rangeable Value Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.RangeableValueTypeImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getRangeableValueType()
 		 * @generated
@@ -273,6 +300,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Accuracy</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute RANGEABLE_VALUE_TYPE__ACCURACY = eINSTANCE.getRangeableValueType_Accuracy();
@@ -281,6 +309,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Resolution</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute RANGEABLE_VALUE_TYPE__RESOLUTION = eINSTANCE.getRangeableValueType_Resolution();
@@ -289,6 +318,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Significant Digits</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute RANGEABLE_VALUE_TYPE__SIGNIFICANT_DIGITS = eINSTANCE.getRangeableValueType_SignificantDigits();
@@ -297,6 +327,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Rangeable</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference RANGEABLE_VALUE_TYPE__BASE_RANGEABLE = eINSTANCE.getRangeableValueType_BaseRangeable();
@@ -305,6 +336,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.CompositeDatatypeImpl <em>Composite Datatype</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.CompositeDatatypeImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getCompositeDatatype()
 		 * @generated
@@ -315,6 +347,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Datatype Prototype</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference COMPOSITE_DATATYPE__DATATYPE_PROTOTYPE = eINSTANCE.getCompositeDatatype_DatatypePrototype();
@@ -323,6 +356,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EAStringImpl <em>EA String</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EAStringImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getEAString()
 		 * @generated
@@ -333,6 +367,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EABooleanImpl <em>EA Boolean</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EABooleanImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getEABoolean()
 		 * @generated
@@ -343,6 +378,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EnumerationLiteralImpl <em>Enumeration Literal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EnumerationLiteralImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getEnumerationLiteral()
 		 * @generated
@@ -353,6 +389,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EnumerationImpl <em>Enumeration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EnumerationImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getEnumeration()
 		 * @generated
@@ -363,6 +400,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Literal</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ENUMERATION__LITERAL = eINSTANCE.getEnumeration_Literal();
@@ -371,6 +409,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Multi Valued</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute ENUMERATION__IS_MULTI_VALUED = eINSTANCE.getEnumeration_IsMultiValued();
@@ -379,6 +418,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.ArrayDataTypeImpl <em>Array Data Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.ArrayDataTypeImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getArrayDataType()
 		 * @generated
@@ -389,6 +429,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Max Lenght</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute ARRAY_DATA_TYPE__MAX_LENGHT = eINSTANCE.getArrayDataType_MaxLenght();
@@ -397,6 +438,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Min Lenght</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute ARRAY_DATA_TYPE__MIN_LENGHT = eINSTANCE.getArrayDataType_MinLenght();
@@ -405,6 +447,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Element Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ARRAY_DATA_TYPE__ELEMENT_TYPE = eINSTANCE.getArrayDataType_ElementType();
@@ -413,6 +456,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Numerical</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.Float
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getNumerical()
 		 * @generated
@@ -423,6 +467,7 @@ public interface DatatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>javalang Float</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.Float
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getjavalangFloat()
 		 * @generated
@@ -435,6 +480,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "datatypes";
@@ -443,6 +489,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Infrastructure/Datatypes/1";
@@ -451,6 +498,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "Datatypes";
@@ -459,6 +507,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	DatatypesPackage eINSTANCE = org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl.init();
@@ -467,6 +516,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EADatatypeImpl <em>EA Datatype</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EADatatypeImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getEADatatype()
 	 * @generated
@@ -477,6 +527,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -486,6 +537,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -495,6 +547,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -504,6 +557,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -513,6 +567,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -522,6 +577,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -531,6 +587,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>EA Datatype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -540,6 +597,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of operations of the '<em>EA Datatype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -549,6 +607,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EADatatypePrototypeImpl <em>EA Datatype Prototype</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EADatatypePrototypeImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getEADatatypePrototype()
 	 * @generated
@@ -559,6 +618,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -568,6 +628,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -577,6 +638,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -586,6 +648,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -595,6 +658,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -604,6 +668,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -613,6 +678,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>EA Datatype Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -622,6 +688,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of operations of the '<em>EA Datatype Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -631,6 +698,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EANumericalImpl <em>EA Numerical</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EANumericalImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getEANumerical()
 	 * @generated
@@ -641,6 +709,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -650,6 +719,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -659,6 +729,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -668,6 +739,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -677,6 +749,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -686,6 +759,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -695,6 +769,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -704,6 +779,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -713,6 +789,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Unit</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -722,6 +799,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>EA Numerical</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -731,6 +809,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of operations of the '<em>EA Numerical</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -740,6 +819,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.UnitImpl <em>Unit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.UnitImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getUnit()
 	 * @generated
@@ -750,6 +830,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -759,6 +840,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -768,6 +850,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -777,6 +860,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -786,6 +870,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -795,6 +880,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Offset</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -804,6 +890,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -813,6 +900,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Quantity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -822,6 +910,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -831,6 +920,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -840,6 +930,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -849,6 +940,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.QuantityImpl <em>Quantity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.QuantityImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getQuantity()
 	 * @generated
@@ -859,6 +951,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -868,6 +961,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -877,6 +971,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -886,6 +981,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -895,6 +991,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Amount Of Substance Exp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -904,6 +1001,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Electric Current Exp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -913,6 +1011,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Lenght Exp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -922,6 +1021,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Luminous Intensity Exp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -931,6 +1031,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Mass Exp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -940,6 +1041,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Thermodynamic Temperature Exp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -949,6 +1051,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Time Exp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -958,6 +1061,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Quantity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -967,6 +1071,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Quantity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -976,6 +1081,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.RangeableValueTypeImpl <em>Rangeable Value Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.RangeableValueTypeImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getRangeableValueType()
 	 * @generated
@@ -986,6 +1092,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -995,6 +1102,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1004,6 +1112,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1013,6 +1122,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1022,6 +1132,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1031,6 +1142,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1040,6 +1152,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Accuracy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1049,6 +1162,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Resolution</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1058,6 +1172,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Significant Digits</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1067,6 +1182,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Rangeable</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1076,6 +1192,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Rangeable Value Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1085,6 +1202,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Rangeable Value Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1094,6 +1212,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.CompositeDatatypeImpl <em>Composite Datatype</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.CompositeDatatypeImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getCompositeDatatype()
 	 * @generated
@@ -1104,6 +1223,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1113,6 +1233,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1122,6 +1243,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1131,6 +1253,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1140,6 +1263,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1149,6 +1273,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1158,6 +1283,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Datatype Prototype</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1167,6 +1293,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Composite Datatype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1176,6 +1303,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Composite Datatype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1185,6 +1313,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EAStringImpl <em>EA String</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EAStringImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getEAString()
 	 * @generated
@@ -1195,6 +1324,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1204,6 +1334,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1213,6 +1344,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1222,6 +1354,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1231,6 +1364,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1240,6 +1374,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1249,6 +1384,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>EA String</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1258,6 +1394,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of operations of the '<em>EA String</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1267,6 +1404,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EABooleanImpl <em>EA Boolean</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EABooleanImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getEABoolean()
 	 * @generated
@@ -1277,6 +1415,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1286,6 +1425,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1295,6 +1435,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1304,6 +1445,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1313,6 +1455,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1322,6 +1465,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1331,6 +1475,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>EA Boolean</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1340,6 +1485,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of operations of the '<em>EA Boolean</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1349,6 +1495,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EnumerationLiteralImpl <em>Enumeration Literal</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EnumerationLiteralImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getEnumerationLiteral()
 	 * @generated
@@ -1359,6 +1506,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1368,6 +1516,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1377,6 +1526,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1386,6 +1536,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Enumeration Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1395,6 +1546,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Enumeration Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1404,6 +1556,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EnumerationImpl <em>Enumeration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EnumerationImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getEnumeration()
 	 * @generated
@@ -1414,6 +1567,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1423,6 +1577,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1432,6 +1587,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1441,6 +1597,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1450,6 +1607,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1459,6 +1617,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1468,6 +1627,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Literal</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1477,6 +1637,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Multi Valued</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1486,6 +1647,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Enumeration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1495,6 +1657,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Enumeration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1504,6 +1667,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.ArrayDataTypeImpl <em>Array Data Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.ArrayDataTypeImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getArrayDataType()
 	 * @generated
@@ -1514,6 +1678,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1523,6 +1688,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1532,6 +1698,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1541,6 +1708,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1550,6 +1718,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1559,6 +1728,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1568,6 +1738,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Max Lenght</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1577,6 +1748,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Min Lenght</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1586,6 +1758,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1595,6 +1768,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Array Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1604,6 +1778,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Array Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1613,6 +1788,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The meta object id for the '<em>Numerical</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.Float
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getNumerical()
 	 * @generated
@@ -1623,6 +1799,7 @@ public interface DatatypesPackage extends EPackage {
 	 * The meta object id for the '<em>javalang Float</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.Float
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl#getjavalangFloat()
 	 * @generated
@@ -1634,6 +1811,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatype <em>EA Datatype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>EA Datatype</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatype
 	 * @generated
@@ -1644,6 +1822,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatype#getBase_DataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatype#getBase_DataType()
 	 * @see #getEADatatype()
@@ -1655,6 +1834,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatypePrototype <em>EA Datatype Prototype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>EA Datatype Prototype</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatypePrototype
 	 * @generated
@@ -1665,6 +1845,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatypePrototype#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatypePrototype#getType()
 	 * @see #getEADatatypePrototype()
@@ -1676,6 +1857,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatypePrototype#getBase_Property <em>Base Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatypePrototype#getBase_Property()
 	 * @see #getEADatatypePrototype()
@@ -1687,6 +1869,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatypePrototype#getBase_Parameter <em>Base Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Parameter</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatypePrototype#getBase_Parameter()
 	 * @see #getEADatatypePrototype()
@@ -1698,6 +1881,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EANumerical <em>EA Numerical</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>EA Numerical</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.EANumerical
 	 * @generated
@@ -1708,6 +1892,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EANumerical#getMax <em>Max</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Max</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.EANumerical#getMax()
 	 * @see #getEANumerical()
@@ -1719,6 +1904,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EANumerical#getMin <em>Min</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Min</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.EANumerical#getMin()
 	 * @see #getEANumerical()
@@ -1730,6 +1916,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EANumerical#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Unit</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.EANumerical#getUnit()
 	 * @see #getEANumerical()
@@ -1741,6 +1928,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Unit</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit
 	 * @generated
@@ -1751,6 +1939,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getFactor <em>Factor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Factor</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getFactor()
 	 * @see #getUnit()
@@ -1762,6 +1951,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getOffset <em>Offset</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Offset</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getOffset()
 	 * @see #getUnit()
@@ -1773,6 +1963,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getSymbol <em>Symbol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Symbol</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getSymbol()
 	 * @see #getUnit()
@@ -1784,6 +1975,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getQuantity <em>Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Quantity</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getQuantity()
 	 * @see #getUnit()
@@ -1795,6 +1987,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getReference <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Reference</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getReference()
 	 * @see #getUnit()
@@ -1806,6 +1999,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity <em>Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Quantity</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity
 	 * @generated
@@ -1816,6 +2010,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getAmountOfSubstanceExp <em>Amount Of Substance Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Amount Of Substance Exp</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getAmountOfSubstanceExp()
 	 * @see #getQuantity()
@@ -1827,6 +2022,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getElectricCurrentExp <em>Electric Current Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Electric Current Exp</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getElectricCurrentExp()
 	 * @see #getQuantity()
@@ -1838,6 +2034,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getLenghtExp <em>Lenght Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Lenght Exp</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getLenghtExp()
 	 * @see #getQuantity()
@@ -1849,6 +2046,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getLuminousIntensityExp <em>Luminous Intensity Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Luminous Intensity Exp</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getLuminousIntensityExp()
 	 * @see #getQuantity()
@@ -1860,6 +2058,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getMassExp <em>Mass Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Mass Exp</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getMassExp()
 	 * @see #getQuantity()
@@ -1871,6 +2070,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getThermodynamicTemperatureExp <em>Thermodynamic Temperature Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Thermodynamic Temperature Exp</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getThermodynamicTemperatureExp()
 	 * @see #getQuantity()
@@ -1882,6 +2082,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getTimeExp <em>Time Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Time Exp</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getTimeExp()
 	 * @see #getQuantity()
@@ -1893,6 +2094,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.CompositeDatatype <em>Composite Datatype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Composite Datatype</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.CompositeDatatype
 	 * @generated
@@ -1903,6 +2105,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.CompositeDatatype#getDatatypePrototype <em>Datatype Prototype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Datatype Prototype</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.CompositeDatatype#getDatatypePrototype()
 	 * @see #getCompositeDatatype()
@@ -1914,6 +2117,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EAString <em>EA String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>EA String</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.EAString
 	 * @generated
@@ -1924,6 +2128,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EABoolean <em>EA Boolean</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>EA Boolean</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.EABoolean
 	 * @generated
@@ -1934,6 +2139,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1943,6 +2149,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EnumerationLiteral <em>Enumeration Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Enumeration Literal</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.EnumerationLiteral
 	 * @generated
@@ -1953,6 +2160,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Enumeration <em>Enumeration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Enumeration</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Enumeration
 	 * @generated
@@ -1963,6 +2171,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Enumeration#getLiteral <em>Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Literal</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Enumeration#getLiteral()
 	 * @see #getEnumeration()
@@ -1974,6 +2183,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Enumeration#isIsMultiValued <em>Is Multi Valued</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Is Multi Valued</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.Enumeration#isIsMultiValued()
 	 * @see #getEnumeration()
@@ -1985,6 +2195,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType <em>Array Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Array Data Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType
 	 * @generated
@@ -1995,6 +2206,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getMaxLenght <em>Max Lenght</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Max Lenght</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getMaxLenght()
 	 * @see #getArrayDataType()
@@ -2006,6 +2218,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getMinLenght <em>Min Lenght</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Min Lenght</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getMinLenght()
 	 * @see #getArrayDataType()
@@ -2017,6 +2230,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getElementType <em>Element Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Element Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getElementType()
 	 * @see #getArrayDataType()
@@ -2028,6 +2242,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.Float <em>Numerical</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Numerical</em>'.
 	 * @see java.lang.Float
 	 * @model instanceClass="java.lang.Float"
@@ -2039,6 +2254,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.Float <em>javalang Float</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>javalang Float</em>'.
 	 * @see java.lang.Float
 	 * @model instanceClass="java.lang.Float"
@@ -2050,6 +2266,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType <em>Rangeable Value Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Rangeable Value Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType
 	 * @generated
@@ -2060,6 +2277,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getAccuracy <em>Accuracy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Accuracy</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getAccuracy()
 	 * @see #getRangeableValueType()
@@ -2071,6 +2289,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getResolution <em>Resolution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Resolution</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getResolution()
 	 * @see #getRangeableValueType()
@@ -2082,6 +2301,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getSignificantDigits <em>Significant Digits</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Significant Digits</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getSignificantDigits()
 	 * @see #getRangeableValueType()
@@ -2093,6 +2313,7 @@ public interface DatatypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getBaseRangeable <em>Base Rangeable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Rangeable</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getBaseRangeable()
 	 * @see #getRangeableValueType()
@@ -2100,4 +2321,4 @@ public interface DatatypesPackage extends EPackage {
 	 */
 	EReference getRangeableValueType_BaseRangeable();
 
-} //DatatypesPackage
+} // DatatypesPackage

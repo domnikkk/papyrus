@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,12 +39,14 @@ import org.eclipse.papyrus.eastadl.dependability.errormodel.ProcessFaultPrototyp
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -57,16 +59,16 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static ErrormodelFactory init() {
 		try {
-			ErrormodelFactory theErrormodelFactory = (ErrormodelFactory)EPackage.Registry.INSTANCE.getEFactory(ErrormodelPackage.eNS_URI);
+			ErrormodelFactory theErrormodelFactory = (ErrormodelFactory) EPackage.Registry.INSTANCE.getEFactory(ErrormodelPackage.eNS_URI);
 			if (theErrormodelFactory != null) {
 				return theErrormodelFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ErrormodelFactoryImpl();
@@ -76,6 +78,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ErrormodelFactoryImpl() {
@@ -85,6 +88,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertErrorBehaviorKindToString(EDataType eDataType, Object instanceValue) {
@@ -94,45 +98,58 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case ErrormodelPackage.ERROR_BEHAVIOR_KIND:
-				return convertErrorBehaviorKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case ErrormodelPackage.ERROR_BEHAVIOR_KIND:
+			return convertErrorBehaviorKindToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ErrormodelPackage.ANOMALY: return createAnomaly();
-			case ErrormodelPackage.ERROR_MODEL_PROTOTYPE: return createErrorModelPrototype();
-			case ErrormodelPackage.ERROR_MODEL_TYPE: return createErrorModelType();
-			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK: return createFaultFailurePropagationLink();
-			case ErrormodelPackage.ERROR_BEHAVIOR: return createErrorBehavior();
-			case ErrormodelPackage.INTERNAL_FAULT_PROTOTYPE: return createInternalFaultPrototype();
-			case ErrormodelPackage.FAILURE_OUT_PORT: return createFailureOutPort();
-			case ErrormodelPackage.FAULT_IN_PORT: return createFaultInPort();
-			case ErrormodelPackage.PROCESS_FAULT_PROTOTYPE: return createProcessFaultPrototype();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case ErrormodelPackage.ANOMALY:
+			return createAnomaly();
+		case ErrormodelPackage.ERROR_MODEL_PROTOTYPE:
+			return createErrorModelPrototype();
+		case ErrormodelPackage.ERROR_MODEL_TYPE:
+			return createErrorModelType();
+		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK:
+			return createFaultFailurePropagationLink();
+		case ErrormodelPackage.ERROR_BEHAVIOR:
+			return createErrorBehavior();
+		case ErrormodelPackage.INTERNAL_FAULT_PROTOTYPE:
+			return createInternalFaultPrototype();
+		case ErrormodelPackage.FAILURE_OUT_PORT:
+			return createFailureOutPort();
+		case ErrormodelPackage.FAULT_IN_PORT:
+			return createFaultInPort();
+		case ErrormodelPackage.PROCESS_FAULT_PROTOTYPE:
+			return createProcessFaultPrototype();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Anomaly createAnomaly() {
 		AnomalyImpl anomaly = new AnomalyImpl();
 		return anomaly;
@@ -141,8 +158,10 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ErrorBehavior createErrorBehavior() {
 		ErrorBehaviorImpl errorBehavior = new ErrorBehaviorImpl();
 		return errorBehavior;
@@ -151,19 +170,24 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ErrorBehaviorKind createErrorBehaviorKindFromString(EDataType eDataType, String initialValue) {
 		ErrorBehaviorKind result = ErrorBehaviorKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ErrorModelPrototype createErrorModelPrototype() {
 		ErrorModelPrototypeImpl errorModelPrototype = new ErrorModelPrototypeImpl();
 		return errorModelPrototype;
@@ -172,8 +196,10 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ErrorModelType createErrorModelType() {
 		ErrorModelTypeImpl errorModelType = new ErrorModelTypeImpl();
 		return errorModelType;
@@ -182,8 +208,10 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public FailureOutPort createFailureOutPort() {
 		FailureOutPortImpl failureOutPort = new FailureOutPortImpl();
 		return failureOutPort;
@@ -192,8 +220,10 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public FaultFailurePropagationLink createFaultFailurePropagationLink() {
 		FaultFailurePropagationLinkImpl faultFailurePropagationLink = new FaultFailurePropagationLinkImpl();
 		return faultFailurePropagationLink;
@@ -202,8 +232,10 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public FaultInPort createFaultInPort() {
 		FaultInPortImpl faultInPort = new FaultInPortImpl();
 		return faultInPort;
@@ -212,23 +244,26 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case ErrormodelPackage.ERROR_BEHAVIOR_KIND:
-				return createErrorBehaviorKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case ErrormodelPackage.ERROR_BEHAVIOR_KIND:
+			return createErrorBehaviorKindFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public InternalFaultPrototype createInternalFaultPrototype() {
 		InternalFaultPrototypeImpl internalFaultPrototype = new InternalFaultPrototypeImpl();
 		return internalFaultPrototype;
@@ -237,8 +272,10 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ProcessFaultPrototype createProcessFaultPrototype() {
 		ProcessFaultPrototypeImpl processFaultPrototype = new ProcessFaultPrototypeImpl();
 		return processFaultPrototype;
@@ -247,10 +284,12 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ErrormodelPackage getErrormodelPackage() {
-		return (ErrormodelPackage)getEPackage();
+		return (ErrormodelPackage) getEPackage();
 	}
 
-} //ErrormodelFactoryImpl
+} // ErrormodelFactoryImpl

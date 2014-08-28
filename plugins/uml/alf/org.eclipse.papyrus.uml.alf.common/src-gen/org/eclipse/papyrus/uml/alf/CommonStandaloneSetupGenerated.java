@@ -3,9 +3,7 @@
 */
 package org.eclipse.papyrus.uml.alf;
 
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.xtext.ISetup;
-import org.eclipse.emf.ecore.resource.Resource;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -16,6 +14,7 @@ import com.google.inject.Injector;
 @SuppressWarnings("all")
 public class CommonStandaloneSetupGenerated implements ISetup {
 
+	@Override
 	public Injector createInjectorAndDoEMFRegistration() {
 		org.eclipse.xtext.common.TerminalsStandaloneSetup.doSetup();
 
@@ -23,11 +22,11 @@ public class CommonStandaloneSetupGenerated implements ISetup {
 		register(injector);
 		return injector;
 	}
-	
+
 	public Injector createInjector() {
 		return Guice.createInjector(new org.eclipse.papyrus.uml.alf.CommonRuntimeModule());
 	}
-	
+
 	public void register(Injector injector) {
 
 

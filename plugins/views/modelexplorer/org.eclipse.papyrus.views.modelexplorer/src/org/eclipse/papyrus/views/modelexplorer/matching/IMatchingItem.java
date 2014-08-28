@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,25 +19,25 @@ package org.eclipse.papyrus.views.modelexplorer.matching;
  * to match an existing facet item in a facet viewer.
  * To do that each implementation mimics the behavior of the equals and hashCode methods
  * of the corresponding items.
- * 
+ *
  * @author mvelten
  * @author proland
- * 
+ *
  */
 public interface IMatchingItem {
 
 	/**
 	 * Mimics the corresponding class's equals method
-	 * 
+	 *
 	 * @param obj
-	 *        the object to match
+	 *            the object to match
 	 * @return true if the match is successful
 	 */
 	public boolean matchingItemEquals(Object obj);
 
 	/**
 	 * Mimics the corresponding class's hashcode method
-	 * 
+	 *
 	 * @return the hashcode
 	 */
 	public int matchingItemHashcode();

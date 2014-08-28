@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,7 +44,7 @@ import org.eclipse.uml2.uml.Element;
  * Ignore the impact layout when the head get changed.
  * 1. Font of head label changes.
  * 2. Stereotype changes.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public abstract class AbstractHeadImpactLayoutEditPolicy extends GraphicalEditPolicy implements NotificationListener, IPapyrusListener {
@@ -56,24 +56,25 @@ public abstract class AbstractHeadImpactLayoutEditPolicy extends GraphicalEditPo
 
 	protected int currentHeadHeight = -1;
 
+	@Override
 	public void activate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
 		hostSemanticElement = getUMLElement();
 		// adds a listener on the view and the element controlled by the
 		// editpart
 		getDiagramEventBroker().addNotificationListener(view, this);
-		if(hostSemanticElement == null) {
+		if (hostSemanticElement == null) {
 			return;
 		}
 		getDiagramEventBroker().addNotificationListener(hostSemanticElement, this);
 		// adds the listener for stereotype application and applied stereotypes
 		// add listener to react to the application and remove of a stereotype
 		// add a lister to each already applied stereotyped
-		for(EObject stereotypeApplication : hostSemanticElement.getStereotypeApplications()) {
+		for (EObject stereotypeApplication : hostSemanticElement.getStereotypeApplications()) {
 			getDiagramEventBroker().addNotificationListener(stereotypeApplication, this);
 		}
 		currentHeadHeight = getHeadHeight();
@@ -84,28 +85,29 @@ public abstract class AbstractHeadImpactLayoutEditPolicy extends GraphicalEditPo
 	 */
 	public void impactLayout() {
 		int headHeight = getHeadHeight();
-		if(currentHeadHeight > 0 && headHeight != currentHeadHeight) {
+		if (currentHeadHeight > 0 && headHeight != currentHeadHeight) {
 			doImpactLayout(headHeight - currentHeadHeight);
 		}
 		currentHeadHeight = headHeight;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void deactivate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
 		getDiagramEventBroker().removeNotificationListener(view, this);
-		if(hostSemanticElement == null) {
+		if (hostSemanticElement == null) {
 			return;
 		}
 		// remove listeners to applied stereotyped
-		for(EObject stereotypeApplication : hostSemanticElement.getStereotypeApplications()) {
+		for (EObject stereotypeApplication : hostSemanticElement.getStereotypeApplications()) {
 			getDiagramEventBroker().removeNotificationListener(stereotypeApplication, this);
 		}
 		// remove notification on element
@@ -116,12 +118,12 @@ public abstract class AbstractHeadImpactLayoutEditPolicy extends GraphicalEditPo
 
 	/**
 	 * Gets the diagram event broker from the editing domain.
-	 * 
+	 *
 	 * @return the diagram event broker
 	 */
 	protected DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
-		if(theEditingDomain != null) {
+		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		if (theEditingDomain != null) {
 			return DiagramEventBroker.getInstance(theEditingDomain);
 		}
 		return null;
@@ -129,48 +131,51 @@ public abstract class AbstractHeadImpactLayoutEditPolicy extends GraphicalEditPo
 
 	/**
 	 * Returns the uml element controlled by the host edit part
-	 * 
+	 *
 	 * @return the uml element controlled by the host edit part
 	 */
 	protected Element getUMLElement() {
 		EObject element = getView().getElement();
-		if(element instanceof Element) {
-			return (Element)element;
+		if (element instanceof Element) {
+			return (Element) element;
 		}
 		return null;
 	}
 
 	/**
 	 * Returns the view controlled by the host edit part
-	 * 
+	 *
 	 * @return the view controlled by the host edit part
 	 */
 	protected View getView() {
-		return (View)getHost().getModel();
+		return (View) getHost().getModel();
 	}
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener#notifyChanged(org.eclipse.emf.common.notify.Notification)
-	 * 
+	 *
 	 * @param notification
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 		Object feature = notification.getFeature();
 		boolean headChanged = false;
-		if(NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature)) {
+		if (NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature)
+				|| NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature)) {
 			headChanged = true;
-		} else if(notification.getNotifier() instanceof EAnnotation && UMLVisualInformationPapyrusConstant.STEREOTYPE_ANNOTATION == ((EAnnotation)notification.getNotifier()).getSource()) {
+		} else if (notification.getNotifier() instanceof EAnnotation && UMLVisualInformationPapyrusConstant.STEREOTYPE_ANNOTATION == ((EAnnotation) notification.getNotifier()).getSource()) {
 			headChanged = true;
-		} else if((notification.getNotifier() instanceof DynamicEObjectImpl) && (hostSemanticElement != null) && (hostSemanticElement.getStereotypeApplications().contains(notification.getNotifier()))) {
+		} else if ((notification.getNotifier() instanceof DynamicEObjectImpl) && (hostSemanticElement != null) && (hostSemanticElement.getStereotypeApplications().contains(notification.getNotifier()))) {
 			headChanged = true;
-		} else if(PapyrusStereotypeListener.MODIFIED_STEREOTYPE == notification.getEventType()) {
+		} else if (PapyrusStereotypeListener.MODIFIED_STEREOTYPE == notification.getEventType()) {
 			headChanged = true;
-		} else if(notification instanceof StereotypeCustomNotification) {
+		} else if (notification instanceof StereotypeCustomNotification) {
 			headChanged = true;
 		}
-		if(headChanged) {
+		if (headChanged) {
 			Display.getDefault().asyncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					impactLayout();
 				}
@@ -181,10 +186,10 @@ public abstract class AbstractHeadImpactLayoutEditPolicy extends GraphicalEditPo
 	protected Rectangle getBoundsRect() {
 		Rectangle r = new Rectangle();
 		View view = getView();
-		if(view instanceof Node) {
-			LayoutConstraint layoutConstraint = ((Node)view).getLayoutConstraint();
-			if(layoutConstraint instanceof Bounds) {
-				Bounds b = (Bounds)layoutConstraint;
+		if (view instanceof Node) {
+			LayoutConstraint layoutConstraint = ((Node) view).getLayoutConstraint();
+			if (layoutConstraint instanceof Bounds) {
+				Bounds b = (Bounds) layoutConstraint;
 				r.x = b.getX();
 				r.y = b.getY();
 				r.width = b.getWidth();
@@ -192,39 +197,39 @@ public abstract class AbstractHeadImpactLayoutEditPolicy extends GraphicalEditPo
 			}
 		}
 		Rectangle bounds = getHostFigure().getBounds();
-		if(r.x == -1) {
+		if (r.x == -1) {
 			r.x = bounds.x;
 		}
-		if(r.y == -1) {
+		if (r.y == -1) {
 			r.y = bounds.y;
 		}
-		if(r.width == -1) {
+		if (r.width == -1) {
 			r.width = bounds.width;
 		}
-		if(r.height == -1) {
+		if (r.height == -1) {
 			r.height = bounds.height;
 		}
 		Dimension preferredSize = getHostFigure().getPreferredSize();
-		if(r.width == 0) {
+		if (r.width == 0) {
 			r.width = preferredSize.width;
 		}
-		if(r.height == 0) {
+		if (r.height == 0) {
 			r.height = preferredSize.height;
 		}
 		return r;
 	}
 
 	protected IFigure getPrimaryShape() {
-		if(getHost() instanceof IPapyrusEditPart) {
-			return ((IPapyrusEditPart)getHost()).getPrimaryShape();
+		if (getHost() instanceof IPapyrusEditPart) {
+			return ((IPapyrusEditPart) getHost()).getPrimaryShape();
 		}
 		return getHostFigure();
 	}
 
 	protected TransactionalEditingDomain getEditingDomain() {
 		EditPart host = getHost();
-		if(host instanceof IGraphicalEditPart) {
-			return ((IGraphicalEditPart)host).getEditingDomain();
+		if (host instanceof IGraphicalEditPart) {
+			return ((IGraphicalEditPart) host).getEditingDomain();
 		}
 		return null;
 	}
@@ -236,7 +241,7 @@ public abstract class AbstractHeadImpactLayoutEditPolicy extends GraphicalEditPo
 
 	/**
 	 * Layout contents when the height of head has been changed.
-	 * 
+	 *
 	 * @param resizeDelta
 	 */
 	protected abstract void doImpactLayout(int resizeDelta);

@@ -13,11 +13,11 @@
 package org.eclipse.papyrus.emf.facet.util.emf.ui.internal.actions;
 
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.papyrus.emf.facet.util.emf.core.IBrowserRegistry;
-import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.dialogs.UriSelectionDialog;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.window.Window;
+import org.eclipse.papyrus.emf.facet.util.emf.core.IBrowserRegistry;
+import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.dialogs.UriSelectionDialog;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
@@ -29,14 +29,17 @@ public class OpenModelFromEmfRegistryAction implements IWorkbenchWindowActionDel
 
 	private IWorkbenchWindow fWorkbenchWindow;
 
+	@Override
 	public void dispose() {
 		// nothing
 	}
 
+	@Override
 	public void init(final IWorkbenchWindow window) {
 		this.fWorkbenchWindow = window;
 	}
 
+	@Override
 	public void run(final IAction action) {
 		final IWorkbenchPage activePage = this.fWorkbenchWindow.getActivePage();
 		if (activePage != null) {
@@ -52,6 +55,7 @@ public class OpenModelFromEmfRegistryAction implements IWorkbenchWindowActionDel
 		}
 	}
 
+	@Override
 	public void selectionChanged(final IAction action, final ISelection selection) {
 		// nothing
 	}

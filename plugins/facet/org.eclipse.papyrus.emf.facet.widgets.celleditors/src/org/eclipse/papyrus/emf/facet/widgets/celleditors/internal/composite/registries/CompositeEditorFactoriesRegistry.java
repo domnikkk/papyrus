@@ -8,7 +8,7 @@
  * Contributors:
  *    Fabien Giquel (Mia-Software) - initial API and implementation
  *    Nicolas Bros (Mia-Software) - Bug 338437 - compositeEditors extension point cannot be used to register user types
- *    Nicolas Guyomar (Mia-Software) - Bug 338826 - CompositeEditorFactoriesRegistry.getCompositeEditorFactory() should be parameterized 
+ *    Nicolas Guyomar (Mia-Software) - Bug 338826 - CompositeEditorFactoriesRegistry.getCompositeEditorFactory() should be parameterized
  *    Nicolas Guyomar (Mia-Software) - Bug 339554 - org.eclipse.papyrus.emf.facet.widgets.celleditors API cleaning
  *    Nicolas Bros (Mia-Software) - Bug 341369 - CompositeEditorFactoriesRegistry : inverted type comparison
  *    Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
@@ -116,8 +116,7 @@ public class CompositeEditorFactoriesRegistry extends AbstractRegistry
 			this.compositeFactories.add(factory);
 		} catch (CoreException e) {
 			Logger.logError(
-					e,
-					"A problem occured when instantiating a composite editor factory", Activator.getDefault()); //$NON-NLS-1$
+					e, "A problem occured when instantiating a composite editor factory", Activator.getDefault()); //$NON-NLS-1$
 		}
 	}
 }

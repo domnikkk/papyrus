@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedValue;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage;
 
@@ -19,7 +16,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.InjectedValueImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.InjectedValueImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,6 +27,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -40,6 +38,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -49,6 +48,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected InjectedValueImpl() {
@@ -58,6 +58,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,8 +69,10 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -77,25 +80,29 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorswithidPackage.INJECTED_VALUE__DESCRIPTION, oldDescription, description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.INJECTED_VALUE__DESCRIPTION:
-				return getDescription();
+		case ServicedescriptorswithidPackage.INJECTED_VALUE__DESCRIPTION:
+			return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -103,14 +110,15 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.INJECTED_VALUE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
+		case ServicedescriptorswithidPackage.INJECTED_VALUE__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -118,14 +126,15 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.INJECTED_VALUE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
+		case ServicedescriptorswithidPackage.INJECTED_VALUE__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -133,13 +142,14 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.INJECTED_VALUE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case ServicedescriptorswithidPackage.INJECTED_VALUE__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -147,11 +157,14 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: ");
@@ -160,4 +173,4 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 		return result.toString();
 	}
 
-} //InjectedValueImpl
+} // InjectedValueImpl

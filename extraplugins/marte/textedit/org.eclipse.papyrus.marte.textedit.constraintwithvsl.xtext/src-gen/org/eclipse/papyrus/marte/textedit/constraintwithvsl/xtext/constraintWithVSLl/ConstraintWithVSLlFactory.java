@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintWithVSLlPackage
  * @generated
  */
@@ -21,6 +22,7 @@ public interface ConstraintWithVSLlFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	ConstraintWithVSLlFactory eINSTANCE = org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintWithVSLlFactoryImpl.init();
@@ -29,6 +31,7 @@ public interface ConstraintWithVSLlFactory extends EFactory {
 	 * Returns a new object of class '<em>Constraint Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Constraint Rule</em>'.
 	 * @generated
 	 */
@@ -38,6 +41,7 @@ public interface ConstraintWithVSLlFactory extends EFactory {
 	 * Returns a new object of class '<em>Constraint Specification</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Constraint Specification</em>'.
 	 * @generated
 	 */
@@ -47,9 +51,10 @@ public interface ConstraintWithVSLlFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
 	ConstraintWithVSLlPackage getConstraintWithVSLlPackage();
 
-} //ConstraintWithVSLlFactory
+} // ConstraintWithVSLlFactory

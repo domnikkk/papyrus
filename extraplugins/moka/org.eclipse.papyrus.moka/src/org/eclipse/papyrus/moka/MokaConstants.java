@@ -20,8 +20,8 @@ package org.eclipse.papyrus.moka;
 public class MokaConstants {
 
 	/** For testing/debugging purposes */
-	public static boolean SILENT_MODE = false ;
-	
+	public static boolean SILENT_MODE = false;
+
 	/** The Constant PAPYRUS_EDITOR_ID. */
 	public final static String PAPYRUS_EDITOR_ID = "org.eclipse.papyrus.infra.core.papyrusEditor";
 
@@ -64,9 +64,9 @@ public class MokaConstants {
 
 	/** Constants underlying the communication protocol between the debug target and the actual execution engine. */
 
-	//////////
+	// ////////
 	// Generic
-	//////////
+	// ////////
 	/**
 	 * Prefix for generic acknowledgment sent by the target program
 	 */
@@ -75,18 +75,18 @@ public class MokaConstants {
 	/** Prefix for a start event. */
 	public final static String event_start = "event_start";
 
-	//////////////////////////
+	// ////////////////////////
 	// IDebugTarget
-	//////////////////////////
+	// ////////////////////////
 	/** Prefix for a getThreads request. */
 	public final static String request_getThreads = "request_getThreads";
 
 	/** Prefix for a getName request. */
 	public final static String request_getName = "request_getName";
 
-	//////////////////////////
+	// ////////////////////////
 	// IBreakpointListener
-	//////////////////////////
+	// ////////////////////////
 	/**
 	 * Prefix for an addBreakpoint request (called in the MokaDebugTarget realization of IBreakpointListener.breakpointAdded and
 	 * IBreakpointListener.breakpointChanged)
@@ -99,21 +99,21 @@ public class MokaConstants {
 	 */
 	public final static String request_removeBreakpoint = "request_removeBreakpoint";
 
-	//////////////////////////
+	// ////////////////////////
 	// IDisconnect
-	//////////////////////////
+	// ////////////////////////
 	/** Prefix for a disconnect request. */
 	public final static String request_disconnect = "request_disconnect";
 
-	//////////////////////////
+	// ////////////////////////
 	// IMemoryBlockRetrieval
-	//////////////////////////
+	// ////////////////////////
 	/** Prefix for a getMemoryBlock request. */
 	public final static String request_getMemoryBlock = "request_getMemoryBlock";
 
-	//////////////////////////
+	// ////////////////////////
 	// ISuspendResume
-	//////////////////////////
+	// ////////////////////////
 	/** Prefix for a resume request. */
 	public final static String request_resume = "request_resume";
 
@@ -126,42 +126,42 @@ public class MokaConstants {
 	/** Prefix for a suspend event. */
 	public final static String event_suspend = "event_suspend";
 
-	//////////////////////////
+	// ////////////////////////
 	// ITerminate
-	//////////////////////////
+	// ////////////////////////
 	/** Prefix for a terminate request. */
 	public final static String request_terminate = "request_terminate";
 
 	/** Prefix for a terminate event. */
 	public final static String event_terminate = "event_terminate";
 
-	//////////////////////////
+	// ////////////////////////
 	// IThread
-	//////////////////////////
+	// ////////////////////////
 	/** Prefix for a getStackFrames request. */
 	public final static String request_getStackFrames = "request_getStackFrames";
 
-	//////////////////////////
+	// ////////////////////////
 	// IStackFrame
-	//////////////////////////
+	// ////////////////////////
 	/** Prefix for a getVariables request. */
 	public final static String request_getVariables = "request_getVariables";
 
 	/** Prefix for a getRegisterGroups request. */
 	public final static String request_getRegisterGroups = "request_getRegisterGroups";
 
-	//////////////////////////
+	// ////////////////////////
 	// IVariable
-	//////////////////////////
+	// ////////////////////////
 	/** Prefix for a getValue request. */
 	public final static String request_getValue = "request_getValue";
 
 	/** Prefix for a getReferenceTypeName request. */
 	public final static String request_getReferenceTypeName = "request_getReferenceTypeName";
 
-	//////////////////////////
+	// ////////////////////////
 	// IValue
-	//////////////////////////
+	// ////////////////////////
 	/** Prefix for a getValueString request. */
 	public final static String request_getValueString = "request_getValueString";
 

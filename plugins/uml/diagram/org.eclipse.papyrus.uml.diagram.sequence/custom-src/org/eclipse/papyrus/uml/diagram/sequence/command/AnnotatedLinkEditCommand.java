@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,7 +49,7 @@ public class AnnotatedLinkEditCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
 	 * @param label
 	 * @param affectedFiles
@@ -60,18 +60,18 @@ public class AnnotatedLinkEditCommand extends AbstractTransactionalCommand {
 
 	@Override
 	public boolean canExecute() {
-		if(newSourceElement != null) {
-			if(!(newSourceElement instanceof Comment || newSourceElement instanceof Observation || newSourceElement instanceof Constraint)) {
+		if (newSourceElement != null) {
+			if (!(newSourceElement instanceof Comment || newSourceElement instanceof Observation || newSourceElement instanceof Constraint)) {
 				return false;
 			}
-			if(newSourceElement == newTargetElement || newSourceElement == oldTargetElement) {
+			if (newSourceElement == newTargetElement || newSourceElement == oldTargetElement) {
 				return false;
 			}
-		} else if(oldSourceElement != null) {
-			if(!(oldSourceElement instanceof Comment || oldSourceElement instanceof Observation || oldSourceElement instanceof Constraint)) {
+		} else if (oldSourceElement != null) {
+			if (!(oldSourceElement instanceof Comment || oldSourceElement instanceof Observation || oldSourceElement instanceof Constraint)) {
 				return false;
 			}
-			if(oldSourceElement == newTargetElement || oldSourceElement == newTargetElement) {
+			if (oldSourceElement == newTargetElement || oldSourceElement == newTargetElement) {
 				return false;
 			}
 		}
@@ -86,19 +86,18 @@ public class AnnotatedLinkEditCommand extends AbstractTransactionalCommand {
 	 * 2. Create constraint for each Element.
 	 */
 	private boolean checkTargetType(Element sourceElement, Element targetElement) {
-		if(sourceElement == null || targetElement == null) {
+		if (sourceElement == null || targetElement == null) {
 			return false;
 		}
-		if(sourceElement instanceof DurationObservation || sourceElement instanceof TimeObservation) {
+		if (sourceElement instanceof DurationObservation || sourceElement instanceof TimeObservation) {
 			return targetElement instanceof NamedElement;
 		}
 		return true;
 	}
 
 	/**
-	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+	 *
 	 * @param monitor
 	 * @param info
 	 * @return
@@ -106,46 +105,46 @@ public class AnnotatedLinkEditCommand extends AbstractTransactionalCommand {
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			return CommandResult.newErrorCommandResult("Unable to create annotated link");
 		}
 		Element targetElement = newTargetElement == null ? oldTargetElement : newTargetElement;
 		Element sourceElement = newSourceElement == null ? oldSourceElement : newSourceElement;
-		if(targetElement == null || sourceElement == null) {
+		if (targetElement == null || sourceElement == null) {
 			return CommandResult.newErrorCommandResult("Unable to create annotated link");
 		}
-		if(oldSourceElement != null) {
-			if(oldSourceElement instanceof Comment) {
-				((Comment)oldSourceElement).getAnnotatedElements().remove(oldTargetElement);
-			} else if(oldSourceElement instanceof DurationObservation) {
-				((DurationObservation)oldSourceElement).getEvents().remove(oldTargetElement);
-			} else if(oldSourceElement instanceof TimeObservation) {
-				((TimeObservation)oldSourceElement).setEvent(null);
-			} else if(oldSourceElement instanceof Constraint) {
-				((Constraint)oldSourceElement).getConstrainedElements().remove(oldTargetElement);
+		if (oldSourceElement != null) {
+			if (oldSourceElement instanceof Comment) {
+				((Comment) oldSourceElement).getAnnotatedElements().remove(oldTargetElement);
+			} else if (oldSourceElement instanceof DurationObservation) {
+				((DurationObservation) oldSourceElement).getEvents().remove(oldTargetElement);
+			} else if (oldSourceElement instanceof TimeObservation) {
+				((TimeObservation) oldSourceElement).setEvent(null);
+			} else if (oldSourceElement instanceof Constraint) {
+				((Constraint) oldSourceElement).getConstrainedElements().remove(oldTargetElement);
 			}
 		}
-		if(sourceElement instanceof Comment) {
-			((Comment)sourceElement).getAnnotatedElements().add(targetElement);
-		} else if(sourceElement instanceof DurationObservation && targetElement instanceof NamedElement) {
-			((DurationObservation)sourceElement).getEvents().add((NamedElement)targetElement);
-		} else if(sourceElement instanceof TimeObservation && targetElement instanceof NamedElement) {
-			((TimeObservation)sourceElement).setEvent((NamedElement)targetElement);
-		} else if(sourceElement instanceof Constraint) {
-			((Constraint)sourceElement).getConstrainedElements().add(targetElement);
+		if (sourceElement instanceof Comment) {
+			((Comment) sourceElement).getAnnotatedElements().add(targetElement);
+		} else if (sourceElement instanceof DurationObservation && targetElement instanceof NamedElement) {
+			((DurationObservation) sourceElement).getEvents().add((NamedElement) targetElement);
+		} else if (sourceElement instanceof TimeObservation && targetElement instanceof NamedElement) {
+			((TimeObservation) sourceElement).setEvent((NamedElement) targetElement);
+		} else if (sourceElement instanceof Constraint) {
+			((Constraint) sourceElement).getConstrainedElements().add(targetElement);
 		}
 		return CommandResult.newOKCommandResult(sourceElement);
 	}
 
 	private Element resolveElement(EditPart editPart) {
-		if(editPart == null) {
+		if (editPart == null) {
 			return null;
 		}
 		Object model = editPart.getModel();
-		if(model instanceof View) {
-			EObject element = ViewUtil.resolveSemanticElement((View)model);
-			if(element instanceof Element) {
-				return (Element)element;
+		if (model instanceof View) {
+			EObject element = ViewUtil.resolveSemanticElement((View) model);
+			if (element instanceof Element) {
+				return (Element) element;
 			}
 		}
 		return null;
@@ -153,7 +152,7 @@ public class AnnotatedLinkEditCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * @param source
-	 *        the source to set
+	 *            the source to set
 	 */
 	public void setSource(EditPart source) {
 		newSourceElement = resolveElement(source);
@@ -161,7 +160,7 @@ public class AnnotatedLinkEditCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * @param target
-	 *        the target to set
+	 *            the target to set
 	 */
 	public void setTarget(EditPart target) {
 		newTargetElement = resolveElement(target);
@@ -176,11 +175,11 @@ public class AnnotatedLinkEditCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * @param annotatedLink
-	 *        the annotatedLink to set
+	 *            the annotatedLink to set
 	 */
 	public void setAnnotatedLink(AnnotatedLinkEditPart annotatedLink) {
 		this.annotatedLink = annotatedLink;
-		if(annotatedLink != null) {
+		if (annotatedLink != null) {
 			oldSourceElement = resolveElement(annotatedLink.getSource());
 			oldTargetElement = resolveElement(annotatedLink.getTarget());
 		}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *   
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,11 +30,11 @@ public abstract class CmdHandler extends AbstractHandler {
 	 */
 	public void updateSelectedEObject() {
 		// Retrieve selected elements
-		IStructuredSelection selection = (IStructuredSelection)PlatformUI
+		IStructuredSelection selection = (IStructuredSelection) PlatformUI
 				.getWorkbench().getActiveWorkbenchWindow()
 				.getSelectionService().getSelection();
-				
-		if(selection != null) {
+
+		if (selection != null) {
 			selectedEObject = EMFHelper.getEObject(selection.getFirstElement());
 		}
 	}

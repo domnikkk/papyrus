@@ -14,22 +14,22 @@ package org.eclipse.papyrus.uml.extensionpoints.standard;
 import org.eclipse.jface.viewers.LabelProvider;
 
 /**
- * 
+ *
  */
 public class ExtensionLabelProvider extends LabelProvider {
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param obj
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public String getText(Object obj) {
 
-		if(obj instanceof RegisteredElementExtensionPoint) {
-			return ((RegisteredElementExtensionPoint)obj).name;
+		if (obj instanceof RegisteredElementExtensionPoint) {
+			return ((RegisteredElementExtensionPoint) obj).name;
 		} else {
 			return "unknown object";
 		}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,21 +40,21 @@ public class InteractionOperandDragDropEditPolicy extends ResizableEditPolicy {
 	 */
 	@Override
 	protected Command getResizeCommand(ChangeBoundsRequest request) {
-		if((request.getResizeDirection() & PositionConstants.EAST_WEST) != 0) {
+		if ((request.getResizeDirection() & PositionConstants.EAST_WEST) != 0) {
 			EditPart parent = getHost().getParent().getParent();
 			return parent.getCommand(request);
 		} else {
-			if(this.getHost() instanceof InteractionOperandEditPart && this.getHost().getParent() instanceof CombinedFragmentCombinedFragmentCompartmentEditPart) {
-				InteractionOperandEditPart currentIOEP = (InteractionOperandEditPart)this.getHost();
-				CombinedFragmentCombinedFragmentCompartmentEditPart compartEP = (CombinedFragmentCombinedFragmentCompartmentEditPart)this.getHost().getParent();
+			if (this.getHost() instanceof InteractionOperandEditPart && this.getHost().getParent() instanceof CombinedFragmentCombinedFragmentCompartmentEditPart) {
+				InteractionOperandEditPart currentIOEP = (InteractionOperandEditPart) this.getHost();
+				CombinedFragmentCombinedFragmentCompartmentEditPart compartEP = (CombinedFragmentCombinedFragmentCompartmentEditPart) this.getHost().getParent();
 				// if first interaction operand and resize direction is NORTH
-				if(this.getHost() == OperandBoundsComputeHelper.findFirstIOEP(compartEP) && (request.getResizeDirection() & PositionConstants.NORTH) != 0) {
+				if (this.getHost() == OperandBoundsComputeHelper.findFirstIOEP(compartEP) && (request.getResizeDirection() & PositionConstants.NORTH) != 0) {
 					return getHost().getParent().getParent().getCommand(request);
 				} else {
 					int heightDelta = request.getSizeDelta().height();
-					if((request.getResizeDirection() & PositionConstants.NORTH) != 0) {
+					if ((request.getResizeDirection() & PositionConstants.NORTH) != 0) {
 						return OperandBoundsComputeHelper.createIOEPResizeCommand(currentIOEP, heightDelta, compartEP, PositionConstants.NORTH);
-					} else if((request.getResizeDirection() & PositionConstants.SOUTH) != 0) {
+					} else if ((request.getResizeDirection() & PositionConstants.SOUTH) != 0) {
 						return OperandBoundsComputeHelper.createIOEPResizeCommand(currentIOEP, heightDelta, compartEP, PositionConstants.SOUTH);
 					}
 				}

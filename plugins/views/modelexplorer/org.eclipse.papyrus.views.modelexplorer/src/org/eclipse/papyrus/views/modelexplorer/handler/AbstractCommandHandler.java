@@ -82,13 +82,13 @@ public abstract class AbstractCommandHandler extends AbstractModelExplorerHandle
 		List<?> selection = getSelection();
 
 		// Treat non-null selected object (try to adapt and return EObject)
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 
 			// Get first element if the selection is an IStructuredSelection
 			Object first = selection.get(0);
 
 			EObject businessObject = EMFHelper.getEObject(first);
-			if(businessObject != null) {
+			if (businessObject != null) {
 				eObject = businessObject;
 			}
 		}
@@ -116,14 +116,14 @@ public abstract class AbstractCommandHandler extends AbstractModelExplorerHandle
 		Collection<?> selection = getSelection();
 
 		// Treat non-null selected object (try to adapt and return EObject)
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 
 			// Parse current selection
-			for(Object current : selection) {
+			for (Object current : selection) {
 				// Adapt current selection to EObject
 				EObject selectedEObject = EMFHelper.getEObject(current);
-				if(selectedEObject != null) {
-					//we avoid to add null element in the list!
+				if (selectedEObject != null) {
+					// we avoid to add null element in the list!
 					selectedEObjects.add(selectedEObject);
 				}
 			}
@@ -143,7 +143,7 @@ public abstract class AbstractCommandHandler extends AbstractModelExplorerHandle
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		try {
 			ISelection selection = HandlerUtil.getCurrentSelection(event);
-			this.selection = (selection instanceof IStructuredSelection) ? ((IStructuredSelection)selection).toList() : Collections.EMPTY_LIST;
+			this.selection = (selection instanceof IStructuredSelection) ? ((IStructuredSelection) selection).toList() : Collections.EMPTY_LIST;
 
 			ServiceUtilsForHandlers.getInstance().getTransactionalEditingDomain(event).getCommandStack().execute(getCommand());
 		} catch (ServiceException e) {
@@ -160,7 +160,7 @@ public abstract class AbstractCommandHandler extends AbstractModelExplorerHandle
 		boolean result = false;
 
 		Command command = getCommand();
-		if(command != null) {
+		if (command != null) {
 			result = getCommand().canExecute();
 			command.dispose();
 		}
@@ -170,10 +170,10 @@ public abstract class AbstractCommandHandler extends AbstractModelExplorerHandle
 
 	@Override
 	public void setEnabled(Object evaluationContext) {
-		if(evaluationContext instanceof IEvaluationContext) {
-			Object selection = ((IEvaluationContext)evaluationContext).getDefaultVariable();
-			if(selection instanceof Collection<?>) {
-				this.selection = (selection instanceof List<?>) ? (List<?>)selection : new java.util.ArrayList<Object>((Collection<?>)selection);
+		if (evaluationContext instanceof IEvaluationContext) {
+			Object selection = ((IEvaluationContext) evaluationContext).getDefaultVariable();
+			if (selection instanceof Collection<?>) {
+				this.selection = (selection instanceof List<?>) ? (List<?>) selection : new java.util.ArrayList<Object>((Collection<?>) selection);
 				setBaseEnabled(computeEnabled());
 				this.selection = Collections.EMPTY_LIST;
 			}

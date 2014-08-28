@@ -43,7 +43,7 @@ public class PackageImportDialog extends PackageImportTreeSelectionDialog {
 
 	@Override
 	public Composite createDialogArea(Composite parent) {
-		Composite result = (Composite)super.createDialogArea(parent);
+		Composite result = (Composite) super.createDialogArea(parent);
 
 		Composite buttons = new Composite(result, SWT.NONE);
 		buttons.setLayout(new RowLayout());

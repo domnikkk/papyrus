@@ -24,7 +24,7 @@ import org.eclipse.papyrus.infra.services.markerlistener.IPapyrusMarker;
 /**
  * An IPapyrusMarker for GMF Shapes, which is activated when the graphical container is different
  * from the semantic container (i.e. highlight external references / imported elements)
- * 
+ *
  * This marker is volatile (created/deleted by EditPolicies on EditParts). It cannot be removed directly by the user
  *
  * @author Camille Letavernier
@@ -69,13 +69,13 @@ public class ExternalReferenceMarker implements IPapyrusMarker {
 
 	@Override
 	public void delete() throws CoreException {
-		//Do nothing: the user cannot manually remove the marker
+		// Do nothing: the user cannot manually remove the marker
 	}
 
 
-	///
-	//The marker doesn't have any attribute: default implementation does nothing
-	///
+	// /
+	// The marker doesn't have any attribute: default implementation does nothing
+	// /
 
 	@Override
 	public Object getAttribute(String name) throws CoreException {
@@ -109,27 +109,27 @@ public class ExternalReferenceMarker implements IPapyrusMarker {
 
 	@Override
 	public void setAttribute(String name, Object value) throws CoreException {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void setAttribute(String name, String value) throws CoreException {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void setAttribute(String name, boolean value) throws CoreException {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void setAttribute(String name, int value) throws CoreException {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void setAttributes(Map<String, ?> attributes) throws CoreException {
-		//Nothing
+		// Nothing
 	}
 
 }

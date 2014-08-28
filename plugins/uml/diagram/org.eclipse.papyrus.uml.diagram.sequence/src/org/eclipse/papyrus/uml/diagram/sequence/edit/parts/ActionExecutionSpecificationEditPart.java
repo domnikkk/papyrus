@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -94,9 +94,10 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 
 	/**
 	 * Papyrus codeGen
-	 * 
+	 *
 	 * @generated
 	 **/
+	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
 	}
@@ -107,18 +108,21 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
+			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
 			}
 
+			@Override
 			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
+			@Override
 			protected Command getCreateCommand(CreateRequest request) {
 				return null;
 			}
@@ -136,16 +140,18 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 	/**
 	 * @generated
 	 */
+	@Override
 	public AbstractExecutionSpecificationEditPart.ExecutionSpecificationRectangleFigure getPrimaryShape() {
-		return (AbstractExecutionSpecificationEditPart.ExecutionSpecificationRectangleFigure)primaryShape;
+		return (AbstractExecutionSpecificationEditPart.ExecutionSpecificationRectangleFigure) primaryShape;
 	}
 
 	/**
 	 * Overrides to disable the defaultAnchorArea. The edge is now more stuck with the middle of the
 	 * figure.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createNodePlate() {
 		String prefElementId = "ActionExecutionSpecification";
 		IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
@@ -161,8 +167,8 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 	@Override
 	public EditPolicy getPrimaryDragEditPolicy() {
 		EditPolicy result = super.getPrimaryDragEditPolicy();
-		if(result instanceof ResizableEditPolicy) {
-			ResizableEditPolicy ep = (ResizableEditPolicy)result;
+		if (result instanceof ResizableEditPolicy) {
+			ResizableEditPolicy ep = (ResizableEditPolicy) result;
 			ep.setResizeDirections(PositionConstants.NORTH | PositionConstants.SOUTH);
 		}
 		return result;
@@ -170,10 +176,10 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model so you may safely remove
 	 * <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,9 +195,9 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 	/**
 	 * Default implementation treats passed figure as content pane. Respects layout one may have set
 	 * for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
-	 *        instance of generated figure class
+	 *            instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
@@ -203,7 +209,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 	 */
 	@Override
 	public IFigure getContentPane() {
-		if(contentPane != null) {
+		if (contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
@@ -214,7 +220,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 	 */
 	@Override
 	protected void setForegroundColor(Color color) {
-		if(primaryShape != null) {
+		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
 		}
 	}
@@ -222,28 +228,29 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineWidth(int width) {
-		if(primaryShape instanceof Shape) {
-			((Shape)primaryShape).setLineWidth(width);
+		if (primaryShape instanceof Shape) {
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 
-	//	/**
-	//	 * @generated
-	//	 */
-	//	@Override
-	//	protected void setLineWidth(int width) {
-	//		if(primaryShape instanceof Shape) {
-	//			((Shape)primaryShape).setLineWidth(width);
-	//		}
-	//	}
+	// /**
+	// * @generated
+	// */
+	// @Override
+	// protected void setLineWidth(int width) {
+	// if(primaryShape instanceof Shape) {
+	// ((Shape)primaryShape).setLineWidth(width);
+	// }
+	// }
 	/**
 	 * @generated
 	 */
 	@Override
 	protected void setLineType(int style) {
-		if(primaryShape instanceof Shape) {
-			((Shape)primaryShape).setLineStyle(style);
+		if (primaryShape instanceof Shape) {
+			((Shape) primaryShape).setLineStyle(style);
 		}
 	}
 
@@ -267,403 +274,403 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 	 */
 	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(targetEditPart instanceof InteractionEditPart) {
+		if (targetEditPart instanceof InteractionEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof ConsiderIgnoreFragmentEditPart) {
+		if (targetEditPart instanceof ConsiderIgnoreFragmentEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof CombinedFragmentEditPart) {
+		if (targetEditPart instanceof CombinedFragmentEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof InteractionOperandEditPart) {
+		if (targetEditPart instanceof InteractionOperandEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof InteractionUseEditPart) {
+		if (targetEditPart instanceof InteractionUseEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof ContinuationEditPart) {
+		if (targetEditPart instanceof ContinuationEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof LifelineEditPart) {
+		if (targetEditPart instanceof LifelineEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof BehaviorExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof BehaviorExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof StateInvariantEditPart) {
+		if (targetEditPart instanceof StateInvariantEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof CombinedFragment2EditPart) {
+		if (targetEditPart instanceof CombinedFragment2EditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof TimeConstraintEditPart) {
+		if (targetEditPart instanceof TimeConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof TimeObservationEditPart) {
+		if (targetEditPart instanceof TimeObservationEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof DurationConstraintEditPart) {
+		if (targetEditPart instanceof DurationConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof DestructionOccurrenceSpecificationEditPart) {
+		if (targetEditPart instanceof DestructionOccurrenceSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof CommentEditPart) {
+		if (targetEditPart instanceof CommentEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof DurationConstraintInMessageEditPart) {
+		if (targetEditPart instanceof DurationConstraintInMessageEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof DurationObservationEditPart) {
+		if (targetEditPart instanceof DurationObservationEditPart) {
 			types.add(UMLElementTypes.Message_4003);
 		}
-		if(targetEditPart instanceof InteractionEditPart) {
+		if (targetEditPart instanceof InteractionEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof ConsiderIgnoreFragmentEditPart) {
+		if (targetEditPart instanceof ConsiderIgnoreFragmentEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof CombinedFragmentEditPart) {
+		if (targetEditPart instanceof CombinedFragmentEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof InteractionOperandEditPart) {
+		if (targetEditPart instanceof InteractionOperandEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof InteractionUseEditPart) {
+		if (targetEditPart instanceof InteractionUseEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof ContinuationEditPart) {
+		if (targetEditPart instanceof ContinuationEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof LifelineEditPart) {
+		if (targetEditPart instanceof LifelineEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof BehaviorExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof BehaviorExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof StateInvariantEditPart) {
+		if (targetEditPart instanceof StateInvariantEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof CombinedFragment2EditPart) {
+		if (targetEditPart instanceof CombinedFragment2EditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof TimeConstraintEditPart) {
+		if (targetEditPart instanceof TimeConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof TimeObservationEditPart) {
+		if (targetEditPart instanceof TimeObservationEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof DurationConstraintEditPart) {
+		if (targetEditPart instanceof DurationConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof DestructionOccurrenceSpecificationEditPart) {
+		if (targetEditPart instanceof DestructionOccurrenceSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof CommentEditPart) {
+		if (targetEditPart instanceof CommentEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof DurationConstraintInMessageEditPart) {
+		if (targetEditPart instanceof DurationConstraintInMessageEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof DurationObservationEditPart) {
+		if (targetEditPart instanceof DurationObservationEditPart) {
 			types.add(UMLElementTypes.Message_4004);
 		}
-		if(targetEditPart instanceof InteractionEditPart) {
+		if (targetEditPart instanceof InteractionEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof ConsiderIgnoreFragmentEditPart) {
+		if (targetEditPart instanceof ConsiderIgnoreFragmentEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof CombinedFragmentEditPart) {
+		if (targetEditPart instanceof CombinedFragmentEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof InteractionOperandEditPart) {
+		if (targetEditPart instanceof InteractionOperandEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof InteractionUseEditPart) {
+		if (targetEditPart instanceof InteractionUseEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof ContinuationEditPart) {
+		if (targetEditPart instanceof ContinuationEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof LifelineEditPart) {
+		if (targetEditPart instanceof LifelineEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof BehaviorExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof BehaviorExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof StateInvariantEditPart) {
+		if (targetEditPart instanceof StateInvariantEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof CombinedFragment2EditPart) {
+		if (targetEditPart instanceof CombinedFragment2EditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof TimeConstraintEditPart) {
+		if (targetEditPart instanceof TimeConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof TimeObservationEditPart) {
+		if (targetEditPart instanceof TimeObservationEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof DurationConstraintEditPart) {
+		if (targetEditPart instanceof DurationConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof DestructionOccurrenceSpecificationEditPart) {
+		if (targetEditPart instanceof DestructionOccurrenceSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof CommentEditPart) {
+		if (targetEditPart instanceof CommentEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof DurationConstraintInMessageEditPart) {
+		if (targetEditPart instanceof DurationConstraintInMessageEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof DurationObservationEditPart) {
+		if (targetEditPart instanceof DurationObservationEditPart) {
 			types.add(UMLElementTypes.Message_4005);
 		}
-		if(targetEditPart instanceof InteractionEditPart) {
+		if (targetEditPart instanceof InteractionEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof ConsiderIgnoreFragmentEditPart) {
+		if (targetEditPart instanceof ConsiderIgnoreFragmentEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof CombinedFragmentEditPart) {
+		if (targetEditPart instanceof CombinedFragmentEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof InteractionOperandEditPart) {
+		if (targetEditPart instanceof InteractionOperandEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof InteractionUseEditPart) {
+		if (targetEditPart instanceof InteractionUseEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof ContinuationEditPart) {
+		if (targetEditPart instanceof ContinuationEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof LifelineEditPart) {
+		if (targetEditPart instanceof LifelineEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof BehaviorExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof BehaviorExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof StateInvariantEditPart) {
+		if (targetEditPart instanceof StateInvariantEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof CombinedFragment2EditPart) {
+		if (targetEditPart instanceof CombinedFragment2EditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof TimeConstraintEditPart) {
+		if (targetEditPart instanceof TimeConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof TimeObservationEditPart) {
+		if (targetEditPart instanceof TimeObservationEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof DurationConstraintEditPart) {
+		if (targetEditPart instanceof DurationConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof DestructionOccurrenceSpecificationEditPart) {
+		if (targetEditPart instanceof DestructionOccurrenceSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof CommentEditPart) {
+		if (targetEditPart instanceof CommentEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof DurationConstraintInMessageEditPart) {
+		if (targetEditPart instanceof DurationConstraintInMessageEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof DurationObservationEditPart) {
+		if (targetEditPart instanceof DurationObservationEditPart) {
 			types.add(UMLElementTypes.Message_4006);
 		}
-		if(targetEditPart instanceof InteractionEditPart) {
+		if (targetEditPart instanceof InteractionEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof ConsiderIgnoreFragmentEditPart) {
+		if (targetEditPart instanceof ConsiderIgnoreFragmentEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof CombinedFragmentEditPart) {
+		if (targetEditPart instanceof CombinedFragmentEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof InteractionOperandEditPart) {
+		if (targetEditPart instanceof InteractionOperandEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof InteractionUseEditPart) {
+		if (targetEditPart instanceof InteractionUseEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof ContinuationEditPart) {
+		if (targetEditPart instanceof ContinuationEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof LifelineEditPart) {
+		if (targetEditPart instanceof LifelineEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof BehaviorExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof BehaviorExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof StateInvariantEditPart) {
+		if (targetEditPart instanceof StateInvariantEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof CombinedFragment2EditPart) {
+		if (targetEditPart instanceof CombinedFragment2EditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof TimeConstraintEditPart) {
+		if (targetEditPart instanceof TimeConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof TimeObservationEditPart) {
+		if (targetEditPart instanceof TimeObservationEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof DurationConstraintEditPart) {
+		if (targetEditPart instanceof DurationConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof DestructionOccurrenceSpecificationEditPart) {
+		if (targetEditPart instanceof DestructionOccurrenceSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof CommentEditPart) {
+		if (targetEditPart instanceof CommentEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof DurationConstraintInMessageEditPart) {
+		if (targetEditPart instanceof DurationConstraintInMessageEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof DurationObservationEditPart) {
+		if (targetEditPart instanceof DurationObservationEditPart) {
 			types.add(UMLElementTypes.Message_4007);
 		}
-		if(targetEditPart instanceof InteractionEditPart) {
+		if (targetEditPart instanceof InteractionEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof ConsiderIgnoreFragmentEditPart) {
+		if (targetEditPart instanceof ConsiderIgnoreFragmentEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof CombinedFragmentEditPart) {
+		if (targetEditPart instanceof CombinedFragmentEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof InteractionOperandEditPart) {
+		if (targetEditPart instanceof InteractionOperandEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof InteractionUseEditPart) {
+		if (targetEditPart instanceof InteractionUseEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof ContinuationEditPart) {
+		if (targetEditPart instanceof ContinuationEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof LifelineEditPart) {
+		if (targetEditPart instanceof LifelineEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof BehaviorExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof BehaviorExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof StateInvariantEditPart) {
+		if (targetEditPart instanceof StateInvariantEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof CombinedFragment2EditPart) {
+		if (targetEditPart instanceof CombinedFragment2EditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof TimeConstraintEditPart) {
+		if (targetEditPart instanceof TimeConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof TimeObservationEditPart) {
+		if (targetEditPart instanceof TimeObservationEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof DurationConstraintEditPart) {
+		if (targetEditPart instanceof DurationConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof DestructionOccurrenceSpecificationEditPart) {
+		if (targetEditPart instanceof DestructionOccurrenceSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof CommentEditPart) {
+		if (targetEditPart instanceof CommentEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof DurationConstraintInMessageEditPart) {
+		if (targetEditPart instanceof DurationConstraintInMessageEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof DurationObservationEditPart) {
+		if (targetEditPart instanceof DurationObservationEditPart) {
 			types.add(UMLElementTypes.Message_4008);
 		}
-		if(targetEditPart instanceof InteractionEditPart) {
+		if (targetEditPart instanceof InteractionEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof ConsiderIgnoreFragmentEditPart) {
+		if (targetEditPart instanceof ConsiderIgnoreFragmentEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof CombinedFragmentEditPart) {
+		if (targetEditPart instanceof CombinedFragmentEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof InteractionOperandEditPart) {
+		if (targetEditPart instanceof InteractionOperandEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof InteractionUseEditPart) {
+		if (targetEditPart instanceof InteractionUseEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof ContinuationEditPart) {
+		if (targetEditPart instanceof ContinuationEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof LifelineEditPart) {
+		if (targetEditPart instanceof LifelineEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof BehaviorExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof BehaviorExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof StateInvariantEditPart) {
+		if (targetEditPart instanceof StateInvariantEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof CombinedFragment2EditPart) {
+		if (targetEditPart instanceof CombinedFragment2EditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof TimeConstraintEditPart) {
+		if (targetEditPart instanceof TimeConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof TimeObservationEditPart) {
+		if (targetEditPart instanceof TimeObservationEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof DurationConstraintEditPart) {
+		if (targetEditPart instanceof DurationConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof DestructionOccurrenceSpecificationEditPart) {
+		if (targetEditPart instanceof DestructionOccurrenceSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof CommentEditPart) {
+		if (targetEditPart instanceof CommentEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof DurationConstraintInMessageEditPart) {
+		if (targetEditPart instanceof DurationConstraintInMessageEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
-		if(targetEditPart instanceof DurationObservationEditPart) {
+		if (targetEditPart instanceof DurationObservationEditPart) {
 			types.add(UMLElementTypes.Message_4009);
 		}
 		return types;
@@ -674,7 +681,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(relationshipType == UMLElementTypes.Message_4003) {
+		if (relationshipType == UMLElementTypes.Message_4003) {
 			types.add(UMLElementTypes.Interaction_2001);
 			types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 			types.add(UMLElementTypes.CombinedFragment_3004);
@@ -694,7 +701,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 			types.add(UMLElementTypes.Comment_3009);
 			types.add(UMLElementTypes.DurationConstraint_3023);
 			types.add(UMLElementTypes.DurationObservation_3024);
-		} else if(relationshipType == UMLElementTypes.Message_4004) {
+		} else if (relationshipType == UMLElementTypes.Message_4004) {
 			types.add(UMLElementTypes.Interaction_2001);
 			types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 			types.add(UMLElementTypes.CombinedFragment_3004);
@@ -714,7 +721,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 			types.add(UMLElementTypes.Comment_3009);
 			types.add(UMLElementTypes.DurationConstraint_3023);
 			types.add(UMLElementTypes.DurationObservation_3024);
-		} else if(relationshipType == UMLElementTypes.Message_4005) {
+		} else if (relationshipType == UMLElementTypes.Message_4005) {
 			types.add(UMLElementTypes.Interaction_2001);
 			types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 			types.add(UMLElementTypes.CombinedFragment_3004);
@@ -734,7 +741,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 			types.add(UMLElementTypes.Comment_3009);
 			types.add(UMLElementTypes.DurationConstraint_3023);
 			types.add(UMLElementTypes.DurationObservation_3024);
-		} else if(relationshipType == UMLElementTypes.Message_4006) {
+		} else if (relationshipType == UMLElementTypes.Message_4006) {
 			types.add(UMLElementTypes.Interaction_2001);
 			types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 			types.add(UMLElementTypes.CombinedFragment_3004);
@@ -754,7 +761,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 			types.add(UMLElementTypes.Comment_3009);
 			types.add(UMLElementTypes.DurationConstraint_3023);
 			types.add(UMLElementTypes.DurationObservation_3024);
-		} else if(relationshipType == UMLElementTypes.Message_4007) {
+		} else if (relationshipType == UMLElementTypes.Message_4007) {
 			types.add(UMLElementTypes.Interaction_2001);
 			types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 			types.add(UMLElementTypes.CombinedFragment_3004);
@@ -774,7 +781,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 			types.add(UMLElementTypes.Comment_3009);
 			types.add(UMLElementTypes.DurationConstraint_3023);
 			types.add(UMLElementTypes.DurationObservation_3024);
-		} else if(relationshipType == UMLElementTypes.Message_4008) {
+		} else if (relationshipType == UMLElementTypes.Message_4008) {
 			types.add(UMLElementTypes.Interaction_2001);
 			types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 			types.add(UMLElementTypes.CombinedFragment_3004);
@@ -794,7 +801,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 			types.add(UMLElementTypes.Comment_3009);
 			types.add(UMLElementTypes.DurationConstraint_3023);
 			types.add(UMLElementTypes.DurationObservation_3024);
-		} else if(relationshipType == UMLElementTypes.Message_4009) {
+		} else if (relationshipType == UMLElementTypes.Message_4009) {
 			types.add(UMLElementTypes.Interaction_2001);
 			types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 			types.add(UMLElementTypes.CombinedFragment_3004);
@@ -840,7 +847,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(relationshipType == UMLElementTypes.Message_4003) {
+		if (relationshipType == UMLElementTypes.Message_4003) {
 			types.add(UMLElementTypes.Interaction_2001);
 			types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 			types.add(UMLElementTypes.CombinedFragment_3004);
@@ -860,7 +867,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 			types.add(UMLElementTypes.Comment_3009);
 			types.add(UMLElementTypes.DurationConstraint_3023);
 			types.add(UMLElementTypes.DurationObservation_3024);
-		} else if(relationshipType == UMLElementTypes.Message_4004) {
+		} else if (relationshipType == UMLElementTypes.Message_4004) {
 			types.add(UMLElementTypes.Interaction_2001);
 			types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 			types.add(UMLElementTypes.CombinedFragment_3004);
@@ -880,7 +887,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 			types.add(UMLElementTypes.Comment_3009);
 			types.add(UMLElementTypes.DurationConstraint_3023);
 			types.add(UMLElementTypes.DurationObservation_3024);
-		} else if(relationshipType == UMLElementTypes.Message_4005) {
+		} else if (relationshipType == UMLElementTypes.Message_4005) {
 			types.add(UMLElementTypes.Interaction_2001);
 			types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 			types.add(UMLElementTypes.CombinedFragment_3004);
@@ -900,7 +907,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 			types.add(UMLElementTypes.Comment_3009);
 			types.add(UMLElementTypes.DurationConstraint_3023);
 			types.add(UMLElementTypes.DurationObservation_3024);
-		} else if(relationshipType == UMLElementTypes.Message_4006) {
+		} else if (relationshipType == UMLElementTypes.Message_4006) {
 			types.add(UMLElementTypes.Interaction_2001);
 			types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 			types.add(UMLElementTypes.CombinedFragment_3004);
@@ -920,7 +927,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 			types.add(UMLElementTypes.Comment_3009);
 			types.add(UMLElementTypes.DurationConstraint_3023);
 			types.add(UMLElementTypes.DurationObservation_3024);
-		} else if(relationshipType == UMLElementTypes.Message_4007) {
+		} else if (relationshipType == UMLElementTypes.Message_4007) {
 			types.add(UMLElementTypes.Interaction_2001);
 			types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 			types.add(UMLElementTypes.CombinedFragment_3004);
@@ -940,7 +947,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 			types.add(UMLElementTypes.Comment_3009);
 			types.add(UMLElementTypes.DurationConstraint_3023);
 			types.add(UMLElementTypes.DurationObservation_3024);
-		} else if(relationshipType == UMLElementTypes.Message_4008) {
+		} else if (relationshipType == UMLElementTypes.Message_4008) {
 			types.add(UMLElementTypes.Interaction_2001);
 			types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 			types.add(UMLElementTypes.CombinedFragment_3004);
@@ -960,7 +967,7 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 			types.add(UMLElementTypes.Comment_3009);
 			types.add(UMLElementTypes.DurationConstraint_3023);
 			types.add(UMLElementTypes.DurationObservation_3024);
-		} else if(relationshipType == UMLElementTypes.Message_4009) {
+		} else if (relationshipType == UMLElementTypes.Message_4009) {
 			types.add(UMLElementTypes.Interaction_2001);
 			types.add(UMLElementTypes.ConsiderIgnoreFragment_3007);
 			types.add(UMLElementTypes.CombinedFragment_3004);
@@ -980,9 +987,9 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 			types.add(UMLElementTypes.Comment_3009);
 			types.add(UMLElementTypes.DurationConstraint_3023);
 			types.add(UMLElementTypes.DurationObservation_3024);
-		} else if(relationshipType == UMLElementTypes.CommentAnnotatedElement_4010) {
+		} else if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4010) {
 			types.add(UMLElementTypes.Comment_3009);
-		} else if(relationshipType == UMLElementTypes.ConstraintConstrainedElement_4011) {
+		} else if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4011) {
 			types.add(UMLElementTypes.TimeConstraint_3019);
 			types.add(UMLElementTypes.DurationConstraint_3021);
 			types.add(UMLElementTypes.Constraint_3008);
@@ -991,47 +998,47 @@ public class ActionExecutionSpecificationEditPart extends AbstractExecutionSpeci
 		return types;
 	}
 
-	//	/**
-	//	 * @generated
-	//	 */
-	//	public class ExecutionSpecificationRectangleFigure extends RectangleFigure {
+	// /**
+	// * @generated
+	// */
+	// public class ExecutionSpecificationRectangleFigure extends RectangleFigure {
 	//
-	//		/**
-	//		 * @generated
-	//		 */
-	//		public ExecutionSpecificationRectangleFigure() {
-	//			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(60)));
-	//			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(20)));
-	//		}
+	// /**
+	// * @generated
+	// */
+	// public ExecutionSpecificationRectangleFigure() {
+	// this.setPreferredSize(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(60)));
+	// this.setMinimumSize(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(20)));
+	// }
 	//
-	//	}
+	// }
 	/**
 	 * @generated
 	 */
 	@Override
 	public Object getPreferredValue(EStructuralFeature feature) {
-		IPreferenceStore preferenceStore = (IPreferenceStore)getDiagramPreferencesHint().getPreferenceStore();
+		IPreferenceStore preferenceStore = (IPreferenceStore) getDiagramPreferencesHint().getPreferenceStore();
 		Object result = null;
-		if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
+		if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 			String prefColor = null;
-			if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
+			if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("ActionExecutionSpecification", PreferencesConstantsHelper.COLOR_LINE);
-			} else if(feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("ActionExecutionSpecification", PreferencesConstantsHelper.COLOR_FONT);
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("ActionExecutionSpecification", PreferencesConstantsHelper.COLOR_FILL);
 			}
-			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor((IPreferenceStore)preferenceStore, prefColor));
-		} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
+			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor(preferenceStore, prefColor));
+		} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 			String prefGradient = PreferencesConstantsHelper.getElementConstant("ActionExecutionSpecification", PreferencesConstantsHelper.COLOR_GRADIENT);
 			GradientPreferenceConverter gradientPreferenceConverter = new GradientPreferenceConverter(preferenceStore.getString(prefGradient));
-			if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
+			if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
 				result = new Integer(gradientPreferenceConverter.getTransparency());
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 				result = gradientPreferenceConverter.getGradientData();
 			}
 		}
-		if(result == null) {
+		if (result == null) {
 			result = getStructuralFeatureValue(feature);
 		}
 		return result;

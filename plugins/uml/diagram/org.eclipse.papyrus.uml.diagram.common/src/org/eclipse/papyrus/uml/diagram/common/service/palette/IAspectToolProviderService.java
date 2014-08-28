@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,16 +20,16 @@ public interface IAspectToolProviderService {
 
 	/**
 	 * Returns the factory, given the id of the factory to return
-	 * 
+	 *
 	 * @param id
-	 *        the id of the factory to retrieve
+	 *            the id of the factory to retrieve
 	 * @return the found factory or <code>null</code>
 	 */
 	public IAspectActionProvider getProvider(String id);
 
 	/**
 	 * Returns the list of factories present in the workbench
-	 * 
+	 *
 	 * @return the list of available factories
 	 */
 	public List<IAspectActionProvider> getProviders();

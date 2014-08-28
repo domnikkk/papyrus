@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.customization.model.customizationplugin.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage;
 import org.eclipse.papyrus.customization.model.customizationplugin.ModelTemplate;
 
@@ -18,9 +15,9 @@ import org.eclipse.papyrus.customization.model.customizationplugin.ModelTemplate
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.customization.model.customizationplugin.impl.ModelTemplateImpl#getLanguage <em>Language</em>}</li>
- *   <li>{@link org.eclipse.papyrus.customization.model.customizationplugin.impl.ModelTemplateImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.customization.model.customizationplugin.impl.ModelTemplateImpl#getId <em>Id</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.model.customizationplugin.impl.ModelTemplateImpl#getLanguage <em>Language</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.model.customizationplugin.impl.ModelTemplateImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.model.customizationplugin.impl.ModelTemplateImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,6 +28,7 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLanguage()
 	 * @generated
 	 * @ordered
@@ -41,6 +39,7 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	 * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLanguage()
 	 * @generated
 	 * @ordered
@@ -51,6 +50,7 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -61,6 +61,7 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -71,6 +72,7 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -81,6 +83,7 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -90,6 +93,7 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ModelTemplateImpl() {
@@ -99,6 +103,7 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,6 +114,7 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getLanguage() {
@@ -118,18 +124,21 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setLanguage(String newLanguage) {
 		String oldLanguage = language;
 		language = newLanguage;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CustomizationPluginPackage.MODEL_TEMPLATE__LANGUAGE, oldLanguage, language));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -139,18 +148,21 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CustomizationPluginPackage.MODEL_TEMPLATE__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getId() {
@@ -160,29 +172,32 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CustomizationPluginPackage.MODEL_TEMPLATE__ID, oldId, id));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CustomizationPluginPackage.MODEL_TEMPLATE__LANGUAGE:
-				return getLanguage();
-			case CustomizationPluginPackage.MODEL_TEMPLATE__NAME:
-				return getName();
-			case CustomizationPluginPackage.MODEL_TEMPLATE__ID:
-				return getId();
+		case CustomizationPluginPackage.MODEL_TEMPLATE__LANGUAGE:
+			return getLanguage();
+		case CustomizationPluginPackage.MODEL_TEMPLATE__NAME:
+			return getName();
+		case CustomizationPluginPackage.MODEL_TEMPLATE__ID:
+			return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -190,20 +205,21 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CustomizationPluginPackage.MODEL_TEMPLATE__LANGUAGE:
-				setLanguage((String)newValue);
-				return;
-			case CustomizationPluginPackage.MODEL_TEMPLATE__NAME:
-				setName((String)newValue);
-				return;
-			case CustomizationPluginPackage.MODEL_TEMPLATE__ID:
-				setId((String)newValue);
-				return;
+		case CustomizationPluginPackage.MODEL_TEMPLATE__LANGUAGE:
+			setLanguage((String) newValue);
+			return;
+		case CustomizationPluginPackage.MODEL_TEMPLATE__NAME:
+			setName((String) newValue);
+			return;
+		case CustomizationPluginPackage.MODEL_TEMPLATE__ID:
+			setId((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -211,20 +227,21 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CustomizationPluginPackage.MODEL_TEMPLATE__LANGUAGE:
-				setLanguage(LANGUAGE_EDEFAULT);
-				return;
-			case CustomizationPluginPackage.MODEL_TEMPLATE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case CustomizationPluginPackage.MODEL_TEMPLATE__ID:
-				setId(ID_EDEFAULT);
-				return;
+		case CustomizationPluginPackage.MODEL_TEMPLATE__LANGUAGE:
+			setLanguage(LANGUAGE_EDEFAULT);
+			return;
+		case CustomizationPluginPackage.MODEL_TEMPLATE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case CustomizationPluginPackage.MODEL_TEMPLATE__ID:
+			setId(ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -232,17 +249,18 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CustomizationPluginPackage.MODEL_TEMPLATE__LANGUAGE:
-				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
-			case CustomizationPluginPackage.MODEL_TEMPLATE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CustomizationPluginPackage.MODEL_TEMPLATE__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case CustomizationPluginPackage.MODEL_TEMPLATE__LANGUAGE:
+			return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
+		case CustomizationPluginPackage.MODEL_TEMPLATE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case CustomizationPluginPackage.MODEL_TEMPLATE__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -250,11 +268,14 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (language: ");
@@ -267,4 +288,4 @@ public class ModelTemplateImpl extends FileBasedCustomizableElementImpl implemen
 		return result.toString();
 	}
 
-} //ModelTemplateImpl
+} // ModelTemplateImpl

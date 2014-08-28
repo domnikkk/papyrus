@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,9 +14,7 @@
 package org.eclipse.papyrus.facade.virtualmetamodel.validation;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualOperation;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty;
@@ -31,9 +29,14 @@ public interface VirtualMetaclassValidator {
 	boolean validate();
 
 	boolean validateAbstract(boolean value);
+
 	boolean validateAppliedStereotypes(EList<BaseMetaclass> value);
+
 	boolean validateOperations(EList<VirtualOperation> value);
+
 	boolean validateParents(EList<VirtualMetaclass> value);
+
 	boolean validateProperties(EList<VirtualProperty> value);
+
 	boolean validateStereotypeInterface(boolean value);
 }

@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -30,8 +30,7 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
  * us to create a page that is small and knows how to
  * save, restore and apply itself.
  * <p>
- * This page is used to modify preferences only. They are stored in the preference store that belongs to the main plug-in class. That way, preferences
- * can be accessed directly via the preference store.
+ * This page is used to modify preferences only. They are stored in the preference store that belongs to the main plug-in class. That way, preferences can be accessed directly via the preference store.
  */
 
 public class PreferencePage
@@ -48,6 +47,7 @@ public class PreferencePage
 	 * of preferences. Each field editor knows how to save and
 	 * restore itself.
 	 */
+	@Override
 	public void createFieldEditors() {
 
 		// implements methods of inherits interfaces and abstract class
@@ -63,7 +63,7 @@ public class PreferencePage
 				getFieldEditorParent()));
 
 
-		//  generate getters setters		
+		// generate getters setters
 		addField(new BooleanFieldEditor(
 				PreferenceConstants.P_GENERATE_GETTERS,
 				"Generate getters",
@@ -84,13 +84,21 @@ public class PreferencePage
 				PreferenceConstants.P_GENERIC_CLASS_FOR_MULTIVALUE,
 				"Generic class to use for association * ",
 				getFieldEditorParent()));
+
+
+		// text input field for the default source folder name
+		addField(new GenericClassFieldEditor(
+				PreferenceConstants.P_DEFAULT_SOURCE_FOLDER_NAME,
+				PreferenceConstants.LABEL_DEFAULT_SOURCE_FOLDER_NAME,
+				getFieldEditorParent()));
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
+	@Override
 	public void init(IWorkbench workbench) {
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());
 		setDescription("Edit your preferences to generate Java classes with papyrus");

@@ -21,8 +21,7 @@ import java.util.List;
  * The following features are supported:
  * <ul>
  * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EStructuralFeatureTreeElement#getParent <em>Parent</em>}</li>
- * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EStructuralFeatureTreeElement#getReferedEObjectTE <em>Refered
- * EObject TE</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EStructuralFeatureTreeElement#getReferedEObjectTE <em>Refered EObject TE</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,11 +32,9 @@ public interface EStructuralFeatureTreeElement extends TreeElement {
 	/**
 	 * Returns the value of the '<em><b>Refered EObject TE</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement}.
-	 * It is bidirectional and its opposite is '
-	 * {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement#getParent <em>Parent</em>}'.
+	 * It is bidirectional and its opposite is ' {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement#getParent <em>Parent</em>}'.
 	 * <p>
-	 * If the meaning of the '<em>Refered EObject TE</em>' containment reference list isn't clear, there really should be more of a description
-	 * here...
+	 * If the meaning of the '<em>Refered EObject TE</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 *
 	 * @return the value of the '<em>Refered EObject TE</em>' containment reference list.

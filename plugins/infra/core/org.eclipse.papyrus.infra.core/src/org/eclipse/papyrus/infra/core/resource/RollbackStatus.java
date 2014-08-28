@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,13 +34,13 @@ public class RollbackStatus extends Status implements IRollbackStatus {
 
 	/**
 	 * Initializes me with the source bundle ID, reason code, and message.
-	 * 
+	 *
 	 * @param pluginId
-	 *        the source bundle ID
+	 *            the source bundle ID
 	 * @param reason
-	 *        the {@linkplain IRollbackStatus#UNKNOWN_REASON reason code} indicating why rollback occurred
+	 *            the {@linkplain IRollbackStatus#UNKNOWN_REASON reason code} indicating why rollback occurred
 	 * @param message
-	 *        the human-readable message
+	 *            the human-readable message
 	 */
 	public RollbackStatus(String pluginId, int reason, String message) {
 		this(pluginId, reason, message, null, null);
@@ -48,15 +48,15 @@ public class RollbackStatus extends Status implements IRollbackStatus {
 
 	/**
 	 * Initializes me with the source bundle ID, reason code, and message.
-	 * 
+	 *
 	 * @param pluginId
-	 *        the source bundle ID
+	 *            the source bundle ID
 	 * @param reason
-	 *        the {@linkplain IRollbackStatus#UNKNOWN_REASON reason code} indicating why rollback occurred
+	 *            the {@linkplain IRollbackStatus#UNKNOWN_REASON reason code} indicating why rollback occurred
 	 * @param message
-	 *        the human-readable message
+	 *            the human-readable message
 	 * @param exception
-	 *        an exception that somehow caused the rollback to occur
+	 *            an exception that somehow caused the rollback to occur
 	 */
 	public RollbackStatus(String pluginId, int reason, String message, Throwable exception) {
 		this(pluginId, reason, message, null, exception);
@@ -64,15 +64,15 @@ public class RollbackStatus extends Status implements IRollbackStatus {
 
 	/**
 	 * Initializes me with the source bundle ID, reason code, and message.
-	 * 
+	 *
 	 * @param pluginId
-	 *        the source bundle ID
+	 *            the source bundle ID
 	 * @param reason
-	 *        the {@linkplain IRollbackStatus#UNKNOWN_REASON reason code} indicating why rollback occurred
+	 *            the {@linkplain IRollbackStatus#UNKNOWN_REASON reason code} indicating why rollback occurred
 	 * @param message
-	 *        the human-readable message
+	 *            the human-readable message
 	 * @param causalObjects
-	 *        the objects that caused the rollback (may be {@code null} if not needed)
+	 *            the objects that caused the rollback (may be {@code null} if not needed)
 	 */
 	public RollbackStatus(String pluginId, int reason, String message, Iterable<?> causalObjects) {
 		this(pluginId, reason, message, causalObjects, null);
@@ -80,17 +80,17 @@ public class RollbackStatus extends Status implements IRollbackStatus {
 
 	/**
 	 * Initializes me with the source bundle ID, reason code, and message.
-	 * 
+	 *
 	 * @param pluginId
-	 *        the source bundle ID
+	 *            the source bundle ID
 	 * @param reason
-	 *        the {@linkplain IRollbackStatus#UNKNOWN_REASON reason code} indicating why rollback occurred
+	 *            the {@linkplain IRollbackStatus#UNKNOWN_REASON reason code} indicating why rollback occurred
 	 * @param message
-	 *        the human-readable message
+	 *            the human-readable message
 	 * @param causalObjects
-	 *        the objects that caused the rollback (may be {@code null} if not needed)
+	 *            the objects that caused the rollback (may be {@code null} if not needed)
 	 * @param exception
-	 *        an exception that somehow caused the rollback to occur
+	 *            an exception that somehow caused the rollback to occur
 	 */
 	public RollbackStatus(String pluginId, int reason, String message, Iterable<?> causalObjects, Throwable exception) {
 		super(IStatus.ERROR, pluginId, reason, message, exception);
@@ -105,28 +105,28 @@ public class RollbackStatus extends Status implements IRollbackStatus {
 
 	/**
 	 * Dig through a possibly {@linkplain #isMultiStatus() multi} status to get a rollback status out of it.
-	 * 
+	 *
 	 * @param status
-	 *        a status
-	 * 
+	 *            a status
+	 *
 	 * @return the embedded rollback status, if any (which could be the {@code status}, itself, in the simplest case)
 	 */
 	public static IRollbackStatus findRollbackStatus(IStatus status) {
 		IRollbackStatus result = null;
 
-		if(status != null) {
-			if(status instanceof IRollbackStatus) {
-				result = (IRollbackStatus)status;
-			} else if(status.isMultiStatus()) {
+		if (status != null) {
+			if (status instanceof IRollbackStatus) {
+				result = (IRollbackStatus) status;
+			} else if (status.isMultiStatus()) {
 				IStatus[] children = status.getChildren();
-				for(int i = 0; (result == null) && (i < children.length); i++) {
+				for (int i = 0; (result == null) && (i < children.length); i++) {
 					result = findRollbackStatus(children[i]);
 				}
 			}
 
-			if((result == null) && (status.getException() instanceof RollbackException)) {
+			if ((result == null) && (status.getException() instanceof RollbackException)) {
 				// The RollbackStatus may be rolled up in a generic Status created from the RollbackException that originally carried it
-				result = findRollbackStatus(((RollbackException)status.getException()).getStatus());
+				result = findRollbackStatus(((RollbackException) status.getException()).getStatus());
 			}
 		}
 
@@ -150,7 +150,7 @@ public class RollbackStatus extends Status implements IRollbackStatus {
 		}
 
 		IRollbackStatus getRollback() {
-			if(rollback == null) {
+			if (rollback == null) {
 				rollback = findRollbackStatus(this);
 			}
 

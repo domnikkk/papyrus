@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,19 +28,19 @@ public class PolicyMatcher {
 
 	public void setPolicies(Collection<NewChildPolicySet> policySets) {
 		this.fillPolicies = new LinkedList<NewChildFillPolicy>();
-		for(NewChildPolicySet policySet : policySets) {
-			for(NewChildPolicy policy : policySet.getPolicies()) {
+		for (NewChildPolicySet policySet : policySets) {
+			for (NewChildPolicy policy : policySet.getPolicies()) {
 				NewChildFillPolicy fillPolicy = NewChildFillPolicy.Factory.instance.getPolicy(policy);
 				fillPolicies.add(fillPolicy);
 			}
 		}
 	}
 
-	public List<NewChildFillPolicy> getMatchingPolicies(EClass eClass, EStructuralFeature role){
+	public List<NewChildFillPolicy> getMatchingPolicies(EClass eClass, EStructuralFeature role) {
 		List<NewChildFillPolicy> matchedPolicies = new LinkedList<NewChildFillPolicy>();
 
-		for (NewChildFillPolicy policy : fillPolicies){
-			if(matches(policy, eClass, role)) {
+		for (NewChildFillPolicy policy : fillPolicies) {
+			if (matches(policy, eClass, role)) {
 				matchedPolicies.add(policy);
 			}
 		}
@@ -52,15 +52,15 @@ public class PolicyMatcher {
 		Collection<EClass> eClasses = policy.getEClasses();
 		Collection<String> roles = policy.getRoles();
 
-		if(eClasses.isEmpty() && roles.isEmpty()) {
+		if (eClasses.isEmpty() && roles.isEmpty()) {
 			return true;
 		}
 
-		if(roles.contains(role.getName()) && (eClasses.isEmpty() || isContained(eClass, eClasses))) {
+		if (roles.contains(role.getName()) && (eClasses.isEmpty() || isContained(eClass, eClasses))) {
 			return true;
 		}
 
-		if((roles.isEmpty() || roles.contains(role)) && isContained(eClass, eClasses)) {
+		if ((roles.isEmpty() || roles.contains(role)) && isContained(eClass, eClasses)) {
 			return true;
 		}
 
@@ -68,8 +68,8 @@ public class PolicyMatcher {
 	}
 
 	private boolean isContained(EClass eClass, Collection<EClass> eClasses) {
-		for(EClass classToCheck : eClasses) {
-			if(EMFHelper.isSubclass(eClass, classToCheck)) {
+		for (EClass classToCheck : eClasses) {
+			if (EMFHelper.isSubclass(eClass, classToCheck)) {
 				return true;
 			}
 		}

@@ -193,7 +193,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 					// the exec queue.
 					// When the method is executed asynchronously, the object is already finalized, and so
 					// editor is null.
-					if(editor == null) {
+					if (editor == null) {
 						return;
 					}
 					editor.firePropertyChange(IEditorPart.PROP_DIRTY);
@@ -266,7 +266,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 * @return the contentOutlineRegistry
 	 */
 	protected ContentOutlineRegistry getContentOutlineRegistry() {
-		if(contentOutlineRegistry == null) {
+		if (contentOutlineRegistry == null) {
 			createContentOutlineRegistry();
 		}
 
@@ -287,7 +287,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 */
 	@Override
 	public ServicesRegistry getServicesRegistry() {
-		if(servicesRegistry == null) {
+		if (servicesRegistry == null) {
 			servicesRegistry = createServicesRegistry();
 		}
 		return servicesRegistry;
@@ -329,18 +329,18 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 *
 	 * @param pageFactory
 	 * @param diResource
-	 *        Resource used to load/save the SashModel.
+	 *            Resource used to load/save the SashModel.
 	 *
 	 *
 	 */
-	//	protected ISashWindowsContentProvider createPageProvider(IPageModelFactory pageFactory, Resource diResource, TransactionalEditingDomain editingDomain) {
+	// protected ISashWindowsContentProvider createPageProvider(IPageModelFactory pageFactory, Resource diResource, TransactionalEditingDomain editingDomain) {
 	//
-	//		sashModelMngr = new TransactionalDiSashModelMngr(pageFactory, diResource, editingDomain);
+	// sashModelMngr = new TransactionalDiSashModelMngr(pageFactory, diResource, editingDomain);
 	//
-	//		ISashWindowsContentProvider pageProvider = sashModelMngr.getISashWindowsContentProvider();
+	// ISashWindowsContentProvider pageProvider = sashModelMngr.getISashWindowsContentProvider();
 	//
-	//		return pageProvider;
-	//	}
+	// return pageProvider;
+	// }
 
 	/**
 	 * Get The {@link IPageMngr} used to add, open, remove or close a diagram in
@@ -363,16 +363,16 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 * @return
 	 */
 	protected ActionBarContributorRegistry getActionBarContributorRegistry() {
-		if(actionBarContributorRegistry != null) {
+		if (actionBarContributorRegistry != null) {
 			return actionBarContributorRegistry;
 		}
 
 		// Try to got it from CoreComposedActionBarContributor
 		// Get it from the contributor.
 		IEditorActionBarContributor contributor = getEditorSite().getActionBarContributor();
-		if(contributor instanceof CoreComposedActionBarContributor) {
+		if (contributor instanceof CoreComposedActionBarContributor) {
 			log.debug(getClass().getSimpleName() + " - ActionBarContributorRegistry loaded from CoreComposedActionBarContributor.");
-			return ((CoreComposedActionBarContributor)contributor).getActionBarContributorRegistry();
+			return ((CoreComposedActionBarContributor) contributor).getActionBarContributorRegistry();
 		} else {
 			// Create a registry.
 			log.debug(getClass().getSimpleName() + " - create an ActionBarContributorRegistry.");
@@ -401,15 +401,15 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	@Override
 	public Object getAdapter(Class adapter) {
 
-		if(ServicesRegistry.class == adapter) {
+		if (ServicesRegistry.class == adapter) {
 			return getServicesRegistry();
 		}
 
-		if(IPageMngr.class == adapter || IPageManager.class == adapter) {
+		if (IPageMngr.class == adapter || IPageManager.class == adapter) {
 			return getIPageManager();
 		}
 
-		if(IPropertySheetPage.class == adapter) {
+		if (IPropertySheetPage.class == adapter) {
 			// Do not test if tabbedPropertySheetPage is null before calling new
 			// this is managed by Eclipse which only call current method when
 			// necessary
@@ -417,22 +417,22 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 		}
 
 		// Add a viewer
-		if(IContentOutlinePage.class == adapter) {
+		if (IContentOutlinePage.class == adapter) {
 			try {
 				ContentOutlineRegistry outlineRegistry = getContentOutlineRegistry();
-				if(outlineRegistry == null) {
+				if (outlineRegistry == null) {
 					return null;
 				}
 				IContentOutlinePage contentOutline = outlineRegistry.getContentOutline();
-				if(contentOutline != null) {
+				if (contentOutline != null) {
 					return contentOutline;
 				}
 			} catch (BackboneException e) {
-				//Ignore: There is not registered outline.
+				// Ignore: There is not registered outline.
 			}
 		}
 
-		if(EditingDomain.class == adapter || TransactionalEditingDomain.class == adapter) {
+		if (EditingDomain.class == adapter || TransactionalEditingDomain.class == adapter) {
 			return transactionalEditingDomain;
 		}
 
@@ -441,25 +441,25 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 		 * context. The prefer way to get this is to use undoContext =
 		 * servicesRegistry.getService(IUndoContext.class);
 		 */
-		if(IUndoContext.class == adapter) {
+		if (IUndoContext.class == adapter) {
 			return undoContext;
 		}
 
 		// EMF requirements
-		if(IEditingDomainProvider.class == adapter) {
+		if (IEditingDomainProvider.class == adapter) {
 			return this;
 		}
 
 		// GEF diagram requirements
-		if(adapter == ActionRegistry.class) {
+		if (adapter == ActionRegistry.class) {
 			return gefAdaptorDelegate.getActionRegistry();
 		}
 
-		if(adapter == ISelection.class) {
+		if (adapter == ISelection.class) {
 			return getSite().getSelectionProvider().getSelection();
 		}
 
-		if(adapter == IReloadableEditor.class) {
+		if (adapter == IReloadableEditor.class) {
 			return createReloadAdapter();
 		}
 
@@ -484,15 +484,15 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	public void createPartControl(Composite parent) {
 		super.createPartControl(parent);
 
-		//Fire the PostDisplay event asynchronously, to leave time to the Eclipse
-		//framework to actually display the contents of the editor
+		// Fire the PostDisplay event asynchronously, to leave time to the Eclipse
+		// framework to actually display the contents of the editor
 		Display.getDefault().asyncExec(new Runnable() {
 
 			@Override
 			public void run() {
-				//Because we are asynchronous, the editor may already have been disposed
-				//(Especially in the case of tests running in the UI Thread)
-				if(servicesRegistry == null) {
+				// Because we are asynchronous, the editor may already have been disposed
+				// (Especially in the case of tests running in the UI Thread)
+				if (servicesRegistry == null) {
 					return;
 				}
 				getLifecycleManager().firePostDisplay(CoreMultiDiagramEditor.this);
@@ -512,47 +512,47 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 		servicesRegistry.add(IMultiDiagramEditor.class, 1, this);
 
 		// Create lifeCycle event provider and the event that is used when the editor fire a save event.
-		//		lifeCycleEventsProvider = new LifeCycleEventsProvider();
-		//		lifeCycleEvent = new DoSaveEvent(servicesRegistry, this);
-		//		servicesRegistry.add(ILifeCycleEventsProvider.class, 1, lifeCycleEventsProvider);
+		// lifeCycleEventsProvider = new LifeCycleEventsProvider();
+		// lifeCycleEvent = new DoSaveEvent(servicesRegistry, this);
+		// servicesRegistry.add(ILifeCycleEventsProvider.class, 1, lifeCycleEventsProvider);
 
 		// register services
 		servicesRegistry.add(ActionBarContributorRegistry.class, 1, getActionBarContributorRegistry());
-		//		servicesRegistry.add(TransactionalEditingDomain.class, 1, transactionalEditingDomain);
-		//		servicesRegistry.add(DiResourceSet.class, 1, resourceSet);
+		// servicesRegistry.add(TransactionalEditingDomain.class, 1, transactionalEditingDomain);
+		// servicesRegistry.add(DiResourceSet.class, 1, resourceSet);
 
 		// Create and initalize editor icons service
-		//		PageIconsRegistry pageIconsRegistry = new PageIconsRegistry();
-		//		PluggableEditorFactoryReader editorReader = new PluggableEditorFactoryReader(Activator.PLUGIN_ID);
-		//		editorReader.populate(pageIconsRegistry);
-		//		servicesRegistry.add(IPageIconsRegistry.class, 1, pageIconsRegistry);
+		// PageIconsRegistry pageIconsRegistry = new PageIconsRegistry();
+		// PluggableEditorFactoryReader editorReader = new PluggableEditorFactoryReader(Activator.PLUGIN_ID);
+		// editorReader.populate(pageIconsRegistry);
+		// servicesRegistry.add(IPageIconsRegistry.class, 1, pageIconsRegistry);
 
 
 		// Create PageModelRegistry requested by content provider.
 		// Also populate it from extensions.
-		//		PageModelFactoryRegistry pageModelRegistry = new PageModelFactoryRegistry();
-		//		editorReader.populate(pageModelRegistry, servicesRegistry);
+		// PageModelFactoryRegistry pageModelRegistry = new PageModelFactoryRegistry();
+		// editorReader.populate(pageModelRegistry, servicesRegistry);
 
 		// TODO : create appropriate Resource for the contentProvider, and pass it here.
 		// This will allow to remove the old sash stuff.
-		//		setContentProvider(createPageProvider(pageModelRegistry, resourceSet.getDiResource(), transactionalEditingDomain));
-		//		servicesRegistry.add(ISashWindowsContentProvider.class, 1, getContentProvider());
-		//		servicesRegistry.add(IPageMngr.class, 1, getIPageMngr());
+		// setContentProvider(createPageProvider(pageModelRegistry, resourceSet.getDiResource(), transactionalEditingDomain));
+		// servicesRegistry.add(ISashWindowsContentProvider.class, 1, getContentProvider());
+		// servicesRegistry.add(IPageMngr.class, 1, getIPageMngr());
 
 		// register a basic label provider
 		// adapter factory used by EMF objects
 		AdapterFactory factory = null;
 		try {
 			EditingDomain domain = ServiceUtils.getInstance().getTransactionalEditingDomain(servicesRegistry);
-			if(domain instanceof AdapterFactoryEditingDomain) {
+			if (domain instanceof AdapterFactoryEditingDomain) {
 				// Use the adapter factory already provided by this editing domain
-				factory = ((AdapterFactoryEditingDomain)domain).getAdapterFactory();
+				factory = ((AdapterFactoryEditingDomain) domain).getAdapterFactory();
 			}
 		} catch (ServiceException e) {
 			// OK, there's no editing domain. That's fine
 		}
 
-		if(factory == null) {
+		if (factory == null) {
 			// Must create a new adapter factory
 			factory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 		}
@@ -569,9 +569,9 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 			public String getText(Object object) {
 				// Get the adapter from the factory.
 				//
-				IItemLabelProvider itemLabelProvider = (IItemLabelProvider)adapterFactory.adapt(object, IItemLabelProvider.class);
-				if(object instanceof EObject) {
-					if(((EObject)object).eIsProxy()) {
+				IItemLabelProvider itemLabelProvider = (IItemLabelProvider) adapterFactory.adapt(object, IItemLabelProvider.class);
+				if (object instanceof EObject) {
+					if (((EObject) object).eIsProxy()) {
 						return "Proxy - " + object;
 					}
 				}
@@ -586,12 +586,12 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 		// Start servicesRegistry
 		URI uri;
 		IEditorInput input = getEditorInput();
-		if(input instanceof IFileEditorInput) {
-			uri = URI.createPlatformResourceURI(((IFileEditorInput)input).getFile().getFullPath().toString(), true);
-		} else if(input instanceof URIEditorInput) {
-			uri = ((URIEditorInput)input).getURI();
+		if (input instanceof IFileEditorInput) {
+			uri = URI.createPlatformResourceURI(((IFileEditorInput) input).getFile().getFullPath().toString(), true);
+		} else if (input instanceof URIEditorInput) {
+			uri = ((URIEditorInput) input).getURI();
 		} else {
-			uri = URI.createURI(((IURIEditorInput)input).getURI().toString());
+			uri = URI.createURI(((IURIEditorInput) input).getURI().toString());
 		}
 
 		try {
@@ -620,7 +620,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 			}
 		} catch (ServiceException e) {
 			log.error(e);
-			//throw new PartInitException("could not initialize services", e);
+			// throw new PartInitException("could not initialize services", e);
 		}
 
 
@@ -647,12 +647,12 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	}
 
 	private InternalEditorLifecycleManager getLifecycleManager() {
-		//I've been disposed
-		if(servicesRegistry == null) {
+		// I've been disposed
+		if (servicesRegistry == null) {
 			return null;
 		}
 		try {
-			return (InternalEditorLifecycleManager)servicesRegistry.getService(EditorLifecycleManager.class);
+			return (InternalEditorLifecycleManager) servicesRegistry.getService(EditorLifecycleManager.class);
 		} catch (ServiceException ex) {
 			Activator.log.error(ex);
 		}
@@ -674,29 +674,29 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 		setContentProvider(contentProvider);
 
 		// Listen on contentProvider changes
-		if(contentChangedListener == null) {
+		if (contentChangedListener == null) {
 			contentChangedListener = new ContentChangedListener();
 		}
 		sashModelMngr.getSashModelContentChangedProvider().addListener(contentChangedListener);
 
 		IEditorInput input = getEditorInput();
 
-		if(input instanceof IPapyrusPageInput) {
-			IPapyrusPageInput papyrusPageInput = (IPapyrusPageInput)input;
+		if (input instanceof IPapyrusPageInput) {
+			IPapyrusPageInput papyrusPageInput = (IPapyrusPageInput) input;
 			final IPageManager pageManager = getIPageManager();
 
-			if(papyrusPageInput.closeOtherPages()) {
+			if (papyrusPageInput.closeOtherPages()) {
 				pageManager.closeAllOpenedPages();
 			}
 
-			for(URI pageIdentifierURI : papyrusPageInput.getPages()) {
+			for (URI pageIdentifierURI : papyrusPageInput.getPages()) {
 				final EObject pageIdentifier = resourceSet.getEObject(pageIdentifierURI, true);
-				if(!pageManager.allPages().contains(pageIdentifier)) {
+				if (!pageManager.allPages().contains(pageIdentifier)) {
 					Activator.log.warn("The object " + pageIdentifier + " does not reference an existing page");
 					continue;
 				}
 
-				if(pageManager.isOpen(pageIdentifier)) {
+				if (pageManager.isOpen(pageIdentifier)) {
 					pageManager.selectPage(pageIdentifier);
 				} else {
 					pageManager.openPage(pageIdentifier);
@@ -726,7 +726,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 			getServicesRegistry().startServicesByClassKeys(ISashWindowsContainer.class);
 			// Let the IPageMngr use the ISashWindowsContainer to discover current folder
 			// This should be done after SashWindowContainer initialization.
-			//			DiSashModelManager sashModelManager = getServicesRegistry().getService(DiSashModelManager.class);
+			// DiSashModelManager sashModelManager = getServicesRegistry().getService(DiSashModelManager.class);
 			sashModelMngr.setCurrentFolderAndPageMngr(getISashWindowsContainer());
 
 		} catch (ServiceException e) {
@@ -774,7 +774,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 */
 	@Override
 	public void dispose() {
-		for(IPropertySheetPage propertiesPage : this.propertiesPages) {
+		for (IPropertySheetPage propertiesPage : this.propertiesPages) {
 			propertiesPage.dispose();
 		}
 		propertiesPages.clear();
@@ -794,9 +794,9 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 				// Attempt to re-load, later
 				pendingReload.set(new DeferredReload(triggeringResources, reason, dirtyPolicy));
 
-				// If I am already active, then re-load now
+				// If I am already active, then do it now. Or, if we're not going to ask the user about it, also do it now
 				IWorkbenchPage page = getSite().getPage();
-				if(page.getActiveEditor() == CoreMultiDiagramEditor.this) {
+				if ((page.getActiveEditor() == CoreMultiDiagramEditor.this) || (dirtyPolicy != DirtyPolicy.PROMPT_TO_SAVE)) {
 					pendingReload.get().reload();
 				}
 			}
@@ -823,7 +823,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 
 			@Override
 			public void editorReloaded(EditorReloadEvent event) {
-				((MultiDiagramEditorSelectionContext)event.getContext()).restore(event.getEditor());
+				((MultiDiagramEditorSelectionContext) event.getContext()).restore(event.getEditor());
 			}
 		});
 	}
@@ -831,14 +831,14 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	@Override
 	protected void deactivate() {
 		getLifecycleManager().fireBeforeClose(this);
-		if(sashModelMngr != null) {
+		if (sashModelMngr != null) {
 			sashModelMngr.getSashModelContentChangedProvider().removeListener(contentChangedListener);
 		}
 
 		super.deactivate();
 
 		// dispose available service
-		if(servicesRegistry != null) {
+		if (servicesRegistry != null) {
 			try {
 				servicesRegistry.disposeRegistry();
 				servicesRegistry = null;
@@ -847,16 +847,16 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 			}
 		}
 
-		if(contentChangedListener != null) {
+		if (contentChangedListener != null) {
 			this.contentChangedListener = null;
 		}
 
-		if(editorInputChangedListener != null) {
+		if (editorInputChangedListener != null) {
 			this.editorInputChangedListener.dispose();
 			this.editorInputChangedListener = null;
 		}
 
-		if(gefAdaptorDelegate != null) {
+		if (gefAdaptorDelegate != null) {
 			gefAdaptorDelegate.dispose();
 			gefAdaptorDelegate = null;
 		}
@@ -878,7 +878,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 		super.setFocus();
 
 		DeferredReload reload = pendingReload.get();
-		if(reload != null) {
+		if (reload != null) {
 			reload.reload();
 		}
 	}
@@ -906,12 +906,12 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 			event.dispose();
 
 			// Ensure that the editor previously active is active again (if it still exists)
-			if((activeEditor != null) && page.isPartVisible(activeEditor)) {
+			if ((activeEditor != null) && page.isPartVisible(activeEditor)) {
 				page.activate(activeEditor);
 			}
 
 			// Ensure that the part previously active is active again (if it still exists and is not the active editor)
-			if((activePart != null) && (activePart != activeEditor) && page.isPartVisible(activePart)) {
+			if ((activePart != null) && (activePart != activeEditor) && page.isPartVisible(activePart)) {
 				page.activate(activePart);
 			}
 		}
@@ -936,9 +936,9 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 */
 	@Override
 	public boolean isDirty() {
-		//May happen if the editor has not yet been initialized. In this case, the editor cannot be dirty, so we simply return false.
-		//Bug 410286: The isDirty() method can also be called /after/ the editor has been disposed. Most likely an Eclipse bug?
-		if(saveAndDirtyService == null) {
+		// May happen if the editor has not yet been initialized. In this case, the editor cannot be dirty, so we simply return false.
+		// Bug 410286: The isDirty() method can also be called /after/ the editor has been disposed. Most likely an Eclipse bug?
+		if (saveAndDirtyService == null) {
 			return false;
 		}
 		return saveAndDirtyService.isDirty();
@@ -993,37 +993,37 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart#getDiagram()
 	 */
-	//	public org.eclipse.gmf.runtime.notation.Diagram getDiagram() {
-	//		IEditorPart activeEditor = getActiveEditor();
-	//		if(activeEditor instanceof DiagramEditor) {
-	//			return ((DiagramEditor)activeEditor).getDiagram();
-	//		} else {
-	//			return null;
-	//		}
-	//	}
+	// public org.eclipse.gmf.runtime.notation.Diagram getDiagram() {
+	// IEditorPart activeEditor = getActiveEditor();
+	// if(activeEditor instanceof DiagramEditor) {
+	// return ((DiagramEditor)activeEditor).getDiagram();
+	// } else {
+	// return null;
+	// }
+	// }
 
 	/**
 	 * This method is called from a GMF diagram. It should only be called from GMF diagram code. Normally, the Diagram under the Mouse is a GMF
 	 * Diagram. The active Diagram can be another Diagram, not
 	 * under the mouse. This is a GMF issue.
 	 */
-	//	public DiagramEditPart getDiagramEditPart() {
+	// public DiagramEditPart getDiagramEditPart() {
 	//
-	//		// Get the editor under the mouse
-	//		// IEditorPart activeEditor = rootContainer.getEditorUnderMouse();
-	//		IEditorPart activeEditor = getActiveEditor();
-	//		if(activeEditor == null) {
-	//			return null;
-	//		}
-	//		// IEditorPart activeEditor = getActiveEditor();
-	//		if(activeEditor instanceof DiagramEditor) {
-	//			return ((DiagramEditor)activeEditor).getDiagramEditPart();
-	//		} else {
-	//			// This case should never happen.
-	//			// Return null, as the GMF runtime now support it (since 093009)
-	//			return null;
-	//		}
-	//	}
+	// // Get the editor under the mouse
+	// // IEditorPart activeEditor = rootContainer.getEditorUnderMouse();
+	// IEditorPart activeEditor = getActiveEditor();
+	// if(activeEditor == null) {
+	// return null;
+	// }
+	// // IEditorPart activeEditor = getActiveEditor();
+	// if(activeEditor instanceof DiagramEditor) {
+	// return ((DiagramEditor)activeEditor).getDiagramEditPart();
+	// } else {
+	// // This case should never happen.
+	// // Return null, as the GMF runtime now support it (since 093009)
+	// return null;
+	// }
+	// }
 
 	/**
 	 * Overrides getDiagramGraphicalViewer.
@@ -1032,14 +1032,14 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart#getDiagramGraphicalViewer()
 	 */
-	//	public IDiagramGraphicalViewer getDiagramGraphicalViewer() {
-	//		IEditorPart activeEditor = getActiveEditor();
-	//		if(activeEditor instanceof DiagramEditor) {
-	//			return ((DiagramEditor)activeEditor).getDiagramGraphicalViewer();
-	//		} else {
-	//			return null;
-	//		}
-	//	}
+	// public IDiagramGraphicalViewer getDiagramGraphicalViewer() {
+	// IEditorPart activeEditor = getActiveEditor();
+	// if(activeEditor instanceof DiagramEditor) {
+	// return ((DiagramEditor)activeEditor).getDiagramGraphicalViewer();
+	// } else {
+	// return null;
+	// }
+	// }
 
 	/**
 	 * Overrides getEditingDomain.
@@ -1058,9 +1058,9 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 *
 	 * @see org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor#getDiagramEditDomain()
 	 */
-	//	public DiagramEditDomain getDiagramEditDomain() {
-	//		throw new UnsupportedOperationException("Not implemented. Should not be called.");
-	//	}
+	// public DiagramEditDomain getDiagramEditDomain() {
+	// throw new UnsupportedOperationException("Not implemented. Should not be called.");
+	// }
 
 
 	/**
@@ -1070,7 +1070,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 * @see org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor#setEditorInput(org.eclipse.ui.IEditorInput)
 	 *
 	 * @param newInput
-	 *        The new input
+	 *            The new input
 	 * @deprecated Not used anymore
 	 */
 
@@ -1087,16 +1087,16 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 		IWorkbench wb = PlatformUI.getWorkbench();
 		IWorkbenchPage page = wb.getActiveWorkbenchWindow().getActivePage();
 		boolean first = true;
-		for(IViewReference view : page.getViewReferences()) {
+		for (IViewReference view : page.getViewReferences()) {
 			// no longer restrict to model explorer (see bug 387578)
 			IWorkbenchPart part = view.getPart(false);
-			if(part instanceof IGotoMarker) {
+			if (part instanceof IGotoMarker) {
 				// activate first view implementing the IGotoMarker interface
-				if(first) {
+				if (first) {
 					page.activate(view.getPart(false));
 					first = false;
 				}
-				((IGotoMarker)part).gotoMarker(marker);
+				((IGotoMarker) part).gotoMarker(marker);
 			}
 		}
 	}
@@ -1116,7 +1116,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 
 	@Override
 	protected void refreshTabs() {
-		if(!needsRefresh) {
+		if (!needsRefresh) {
 			return;
 		}
 		needsRefresh = false;
@@ -1158,20 +1158,20 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 
 		@Override
 		public void reloadEditor(Collection<? extends Resource> triggeringResources, ReloadReason reason, DirtyPolicy dirtyPolicy) throws CoreException {
-			if(!pendingReload.compareAndSet(this, null)) {
+			if (!pendingReload.compareAndSet(this, null)) {
 				return;
 			}
 
 			final DirtyPolicy action = dirtyPolicy.resolve(CoreMultiDiagramEditor.this, triggeringResources, reason);
 
-			if((action == DirtyPolicy.SAVE) && isDirty()) {
+			if ((action == DirtyPolicy.SAVE) && isDirty()) {
 				doSave(new NullProgressMonitor());
 			}
 
-			switch(action) {
+			switch (action) {
 			case SAVE:
 			case DO_NOT_SAVE:
-				if(reason.shouldReload(triggeringResources)) {
+				if (reason.shouldReload(triggeringResources)) {
 					// Attempt to re-load
 					doReload();
 				} else {

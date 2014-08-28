@@ -8,7 +8,7 @@
  * Contributors:
  *   IBM - Initial API and implementation
  *   Christian W. Damus (CEA) - Target EObject must be the diagnostic's first data element
- *   
+ *
  *****************************************************************************/
 
 
@@ -31,24 +31,19 @@ import org.eclipse.uml2.uml.OpaqueExpression;
 
 
 /**
- * An adapter that plugs the EMF Model Validation Service API into the
- * {@link org.eclipse.emf.ecore.EValidator} API.
+ * An adapter that plugs the EMF Model Validation Service API into the {@link org.eclipse.emf.ecore.EValidator} API.
  * <p>
- * <strong>NOTE</strong> that this class was copied from the EMF Validation
- * "Validation Adapter" example project as created by the EMF Validation SDK,
- * and modified only to ensure that the {@link Diagnostic} created from an
- * {@link IConstraintStatus} has the original validation target element as the
- * first element of the {@linkplain Diagnostic#getData() data list} because the
- * {@linkplain IConstraintStatus#getResultLocus() result locus} of a constraint
- * status is an unordered set.
+ * <strong>NOTE</strong> that this class was copied from the EMF Validation "Validation Adapter" example project as created by the EMF Validation SDK, and modified only to ensure that the {@link Diagnostic} created from an {@link IConstraintStatus} has the
+ * original validation target element as the first element of the {@linkplain Diagnostic#getData() data list} because the {@linkplain IConstraintStatus#getResultLocus() result locus} of a constraint status is an unordered set.
  * </p>
- * 
- * bug 405160 - avoid "false" errors by using the UMLValidator instead of EObjectValidator as base class 
+ *
+ * bug 405160 - avoid "false" errors by using the UMLValidator instead of EObjectValidator as base class
  */
 public class OCLEValidatorAdapter
-	extends EValidatorAdapter {
+		extends EValidatorAdapter {
 
 	// Overridden to invoke OCLDelegateValidator
+	@Override
 	public boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (eObject.eIsProxy()) {
 			if (context != null && context.get(ROOT_OBJECT) != null) {
@@ -56,13 +51,13 @@ public class OCLEValidatorAdapter
 					diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE,
 							EOBJECT__EVERY_PROXY_RESOLVES, "_UI_UnresolvedProxy_diagnostic",
 							new Object[] {
-								getFeatureLabel(eObject.eContainmentFeature(), context),
-								getObjectLabel(eObject.eContainer(), context),
-								getObjectLabel(eObject, context) },
+									getFeatureLabel(eObject.eContainmentFeature(), context),
+									getObjectLabel(eObject.eContainer(), context),
+									getObjectLabel(eObject, context) },
 							new Object[] {
-								eObject.eContainer(),
-								eObject.eContainmentFeature(),
-								eObject },
+									eObject.eContainer(),
+									eObject.eContainmentFeature(),
+									eObject },
 							context));
 				}
 			}
@@ -75,7 +70,7 @@ public class OCLEValidatorAdapter
 		}
 		return batchValidate(eObject, diagnostics, context);
 	}
-	
+
 	@Override
 	public boolean validateInstanceSpecification(InstanceSpecification instanceSpecification,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -102,7 +97,7 @@ public class OCLEValidatorAdapter
 		}
 		return UMLOCLEValidator.INSTANCE.validateOpaqueBehavior(opaqueBehavior, diagnostics, context);
 	}
-	
+
 	@Override
 	public boolean validateOpaqueExpression(OpaqueExpression opaqueExpression,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {

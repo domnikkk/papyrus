@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ public class SynchroSemanticForPopertyPartCompartment implements ISynchroSemanti
 	@Override
 	public List<EObject> getSynchroSemanticChild(EObject semanticFromEditPart) {
 		ArrayList<EObject> result = new ArrayList<EObject>();
-		if(semanticFromEditPart instanceof Property) {
-			if(((Property)semanticFromEditPart).getType() != null) {
-				result.addAll(((Property)semanticFromEditPart).getType().getOwnedElements());
+		if (semanticFromEditPart instanceof Property) {
+			if (((Property) semanticFromEditPart).getType() != null) {
+				result.addAll(((Property) semanticFromEditPart).getType().getOwnedElements());
 			}
 		}
 		return result;
@@ -40,9 +40,9 @@ public class SynchroSemanticForPopertyPartCompartment implements ISynchroSemanti
 
 	@Override
 	public EObject getSemanticEObjectToListen(EObject semanticFromEditPart) {
-		if(semanticFromEditPart instanceof Property) {
-			if(((Property)semanticFromEditPart).getType() != null) {
-				return ((Property)semanticFromEditPart).getType();
+		if (semanticFromEditPart instanceof Property) {
+			if (((Property) semanticFromEditPart).getType() != null) {
+				return ((Property) semanticFromEditPart).getType();
 			}
 		}
 		return null;

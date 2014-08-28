@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,12 +15,11 @@ package org.eclipse.papyrus.infra.viewpoints.configuration.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
 import java.util.List;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.CommandParameter;
@@ -38,7 +37,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationFactory;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
 import org.eclipse.papyrus.infra.viewpoints.configuration.util.ConfigurationAdapterFactory;
@@ -55,6 +53,7 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.util.Iso42010Switch;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
@@ -62,6 +61,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -70,6 +70,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -78,6 +79,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This helps manage the child creation extenders.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(ConfigurationEditPlugin.INSTANCE, ConfigurationPackage.eNS_URI);
@@ -86,6 +88,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -94,6 +97,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ConfigurationItemProviderAdapterFactory() {
@@ -108,6 +112,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PapyrusConfigurationItemProvider papyrusConfigurationItemProvider;
@@ -116,6 +121,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,6 +137,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PapyrusViewpointItemProvider papyrusViewpointItemProvider;
@@ -139,6 +146,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,6 +162,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PapyrusViewItemProvider papyrusViewItemProvider;
@@ -162,6 +171,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,6 +187,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PapyrusDiagramItemProvider papyrusDiagramItemProvider;
@@ -185,6 +196,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,6 +212,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusSyncTable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PapyrusSyncTableItemProvider papyrusSyncTableItemProvider;
@@ -208,6 +221,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusSyncTable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,6 +237,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusTable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PapyrusTableItemProvider papyrusTableItemProvider;
@@ -231,6 +246,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusTable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,6 +262,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ModelRuleItemProvider modelRuleItemProvider;
@@ -254,6 +271,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,6 +287,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected OwningRuleItemProvider owningRuleItemProvider;
@@ -277,6 +296,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -292,6 +312,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ChildRuleItemProvider childRuleItemProvider;
@@ -300,6 +321,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,6 +337,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PaletteRuleItemProvider paletteRuleItemProvider;
@@ -323,6 +346,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,6 +362,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.configuration.PathElement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PathElementItemProvider pathElementItemProvider;
@@ -346,6 +371,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PathElement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -361,6 +387,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.configuration.Category} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected CategoryItemProvider categoryItemProvider;
@@ -369,6 +396,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.Category}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -384,6 +412,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ModelAutoCreateItemProvider modelAutoCreateItemProvider;
@@ -392,6 +421,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -407,6 +437,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
@@ -417,6 +448,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
@@ -426,6 +458,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -437,6 +470,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -447,13 +481,14 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -464,6 +499,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public List<IChildCreationExtender> getChildCreationExtenders() {
@@ -473,6 +509,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
@@ -482,6 +519,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ResourceLocator getResourceLocator() {
@@ -492,6 +530,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void addListener(INotifyChangedListener notifyChangedListener) {
@@ -502,6 +541,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
@@ -512,6 +552,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void fireNotifyChanged(Notification notification) {
@@ -523,31 +564,59 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void dispose() {
-		if (papyrusConfigurationItemProvider != null) papyrusConfigurationItemProvider.dispose();
-		if (papyrusViewpointItemProvider != null) papyrusViewpointItemProvider.dispose();
-		if (papyrusViewItemProvider != null) papyrusViewItemProvider.dispose();
-		if (papyrusDiagramItemProvider != null) papyrusDiagramItemProvider.dispose();
-		if (papyrusSyncTableItemProvider != null) papyrusSyncTableItemProvider.dispose();
-		if (papyrusTableItemProvider != null) papyrusTableItemProvider.dispose();
-		if (modelRuleItemProvider != null) modelRuleItemProvider.dispose();
-		if (owningRuleItemProvider != null) owningRuleItemProvider.dispose();
-		if (childRuleItemProvider != null) childRuleItemProvider.dispose();
-		if (paletteRuleItemProvider != null) paletteRuleItemProvider.dispose();
-		if (pathElementItemProvider != null) pathElementItemProvider.dispose();
-		if (categoryItemProvider != null) categoryItemProvider.dispose();
-		if (modelAutoCreateItemProvider != null) modelAutoCreateItemProvider.dispose();
+		if (papyrusConfigurationItemProvider != null) {
+			papyrusConfigurationItemProvider.dispose();
+		}
+		if (papyrusViewpointItemProvider != null) {
+			papyrusViewpointItemProvider.dispose();
+		}
+		if (papyrusViewItemProvider != null) {
+			papyrusViewItemProvider.dispose();
+		}
+		if (papyrusDiagramItemProvider != null) {
+			papyrusDiagramItemProvider.dispose();
+		}
+		if (papyrusSyncTableItemProvider != null) {
+			papyrusSyncTableItemProvider.dispose();
+		}
+		if (papyrusTableItemProvider != null) {
+			papyrusTableItemProvider.dispose();
+		}
+		if (modelRuleItemProvider != null) {
+			modelRuleItemProvider.dispose();
+		}
+		if (owningRuleItemProvider != null) {
+			owningRuleItemProvider.dispose();
+		}
+		if (childRuleItemProvider != null) {
+			childRuleItemProvider.dispose();
+		}
+		if (paletteRuleItemProvider != null) {
+			paletteRuleItemProvider.dispose();
+		}
+		if (pathElementItemProvider != null) {
+			pathElementItemProvider.dispose();
+		}
+		if (categoryItemProvider != null) {
+			categoryItemProvider.dispose();
+		}
+		if (modelAutoCreateItemProvider != null) {
+			modelAutoCreateItemProvider.dispose();
+		}
 	}
 
 	/**
 	 * A child creation extender for the {@link Iso42010Package}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static class Iso42010ChildCreationExtender implements IChildCreationExtender {
@@ -555,6 +624,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 		 * The switch for creating child descriptors specific to each extended class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		protected static class CreationSwitch extends Iso42010Switch<Object> {
@@ -562,6 +632,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 			 * The child descriptors being populated.
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
+			 *
 			 * @generated
 			 */
 			protected List<Object> newChildDescriptors;
@@ -570,6 +641,7 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 			 * The domain in which to create the children.
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
+			 *
 			 * @generated
 			 */
 			protected EditingDomain editingDomain;
@@ -578,75 +650,81 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 			 * Creates the a switch for populating child descriptors in the given domain.
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
+			 *
 			 * @generated
 			 */
 			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
 				this.newChildDescriptors = newChildDescriptors;
 				this.editingDomain = editingDomain;
 			}
+
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
+			 *
 			 * @generated
 			 */
 			@Override
 			public Object caseArchitectureDescription(ArchitectureDescription object) {
 				newChildDescriptors.add
-					(createChildParameter
+						(createChildParameter
 						(Iso42010Package.Literals.ARCHITECTURE_DESCRIPTION__VIEWPOINTS,
-						 ConfigurationFactory.eINSTANCE.createPapyrusViewpoint()));
+								ConfigurationFactory.eINSTANCE.createPapyrusViewpoint()));
 
 				return null;
 			}
- 
+
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
+			 *
 			 * @generated
 			 */
 			@Override
 			public Object caseArchitectureViewpoint(ArchitectureViewpoint object) {
 				newChildDescriptors.add
-					(createChildParameter
+						(createChildParameter
 						(Iso42010Package.Literals.ARCHITECTURE_VIEWPOINT__MODEL_KINDS,
-						 ConfigurationFactory.eINSTANCE.createPapyrusView()));
+								ConfigurationFactory.eINSTANCE.createPapyrusView()));
 
 				newChildDescriptors.add
-					(createChildParameter
+						(createChildParameter
 						(Iso42010Package.Literals.ARCHITECTURE_VIEWPOINT__MODEL_KINDS,
-						 ConfigurationFactory.eINSTANCE.createPapyrusDiagram()));
+								ConfigurationFactory.eINSTANCE.createPapyrusDiagram()));
 
 				newChildDescriptors.add
-					(createChildParameter
+						(createChildParameter
 						(Iso42010Package.Literals.ARCHITECTURE_VIEWPOINT__MODEL_KINDS,
-						 ConfigurationFactory.eINSTANCE.createPapyrusSyncTable()));
+								ConfigurationFactory.eINSTANCE.createPapyrusSyncTable()));
 
 				newChildDescriptors.add
-					(createChildParameter
+						(createChildParameter
 						(Iso42010Package.Literals.ARCHITECTURE_VIEWPOINT__MODEL_KINDS,
-						 ConfigurationFactory.eINSTANCE.createPapyrusTable()));
+								ConfigurationFactory.eINSTANCE.createPapyrusTable()));
 
 				return null;
 			}
- 
+
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
+			 *
 			 * @generated
 			 */
 			@Override
 			public Object caseArchitectureFramework(ArchitectureFramework object) {
 				newChildDescriptors.add
-					(createChildParameter
+						(createChildParameter
 						(Iso42010Package.Literals.ARCHITECTURE_FRAMEWORK__VIEWPOINTS,
-						 ConfigurationFactory.eINSTANCE.createPapyrusViewpoint()));
+								ConfigurationFactory.eINSTANCE.createPapyrusViewpoint()));
 
 				return null;
 			}
- 
+
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
+			 *
 			 * @generated
 			 */
 			protected CommandParameter createChildParameter(Object feature, Object child) {
@@ -658,17 +736,19 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 			ArrayList<Object> result = new ArrayList<Object>();
-			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			new CreationSwitch(result, editingDomain).doSwitch((EObject) object);
 			return result;
 		}
 
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		public ResourceLocator getResourceLocator() {

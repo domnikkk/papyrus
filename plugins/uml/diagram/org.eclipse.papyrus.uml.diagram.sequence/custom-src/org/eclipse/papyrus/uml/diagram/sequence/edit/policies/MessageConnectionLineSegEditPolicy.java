@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -65,9 +65,9 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
 
 /**
  * This bendpoint edit policy is used to allow drag of horizontal messages and forbid drag otherwise.
- * 
+ *
  * @author mvelten
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditPolicy {
@@ -91,8 +91,8 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 	@Override
 	protected List createManualHandles() {
 		RouterKind kind = RouterKind.getKind(getConnection(), getConnection().getPoints());
-		if(kind == RouterKind.SELF || kind == RouterKind.HORIZONTAL || getConnection() instanceof MessageCreate) {
-			//Removed the handles for self message.
+		if (kind == RouterKind.SELF || kind == RouterKind.HORIZONTAL || getConnection() instanceof MessageCreate) {
+			// Removed the handles for self message.
 			return Collections.emptyList();
 		}
 		return super.createManualHandles();
@@ -101,25 +101,25 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 	@Override
 	public Command getCommand(Request request) {
 		RouterKind kind = RouterKind.getKind(getConnection(), getConnection().getPoints());
-		if(kind == RouterKind.SELF || kind == RouterKind.HORIZONTAL || getConnection() instanceof MessageCreate) {
+		if (kind == RouterKind.SELF || kind == RouterKind.HORIZONTAL || getConnection() instanceof MessageCreate) {
 			return super.getCommand(request);
-		} else if(request instanceof BendpointRequest) {
-			return getMoveMessageCommand((BendpointRequest)request);
+		} else if (request instanceof BendpointRequest) {
+			return getMoveMessageCommand((BendpointRequest) request);
 		}
 		return null;
 	}
 
 	/**
 	 * Add impossible to move the message lost/found by drag the middle line
-	 * 
+	 *
 	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=403138
 	 */
 	protected Command getMoveMessageCommand(BendpointRequest request) {
-		if(getHost() instanceof Message6EditPart || getHost() instanceof Message7EditPart) {
+		if (getHost() instanceof Message6EditPart || getHost() instanceof Message7EditPart) {
 			PointList points = getConnection().getPoints().getCopy();
 			CompoundCommand command = new CompoundCommand("Move");
-			AbstractMessageEditPart messageEditPart = (AbstractMessageEditPart)getHost();
-			//move source
+			AbstractMessageEditPart messageEditPart = (AbstractMessageEditPart) getHost();
+			// move source
 			ReconnectRequest sourceReq = new ReconnectRequest(REQ_RECONNECT_SOURCE);
 			sourceReq.setConnectionEditPart(messageEditPart);
 			Point sourceLocation = points.getFirstPoint().getCopy();
@@ -129,7 +129,7 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 			sourceReq.setTargetEditPart(source);
 			Command moveSourceCommand = source.getCommand(sourceReq);
 			command.add(moveSourceCommand);
-			//move target
+			// move target
 			EditPart target = messageEditPart.getTarget();
 			ReconnectRequest targetReq = new ReconnectRequest(REQ_RECONNECT_TARGET);
 			targetReq.setConnectionEditPart(messageEditPart);
@@ -149,24 +149,24 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 	 */
 	@Override
 	protected Command getBendpointsChangedCommand(BendpointRequest request) {
-		if((getHost().getViewer() instanceof ScrollingGraphicalViewer) && (getHost().getViewer().getControl() instanceof FigureCanvas)) {
-			SelectInDiagramHelper.exposeLocation((FigureCanvas)getHost().getViewer().getControl(), request.getLocation().getCopy());
+		if ((getHost().getViewer() instanceof ScrollingGraphicalViewer) && (getHost().getViewer().getControl() instanceof FigureCanvas)) {
+			SelectInDiagramHelper.exposeLocation((FigureCanvas) getHost().getViewer().getControl(), request.getLocation().getCopy());
 		}
-		if(getHost() instanceof ConnectionNodeEditPart) {
-			ConnectionNodeEditPart connectionPart = (ConnectionNodeEditPart)getHost();
+		if (getHost() instanceof ConnectionNodeEditPart) {
+			ConnectionNodeEditPart connectionPart = (ConnectionNodeEditPart) getHost();
 			EObject message = connectionPart.resolveSemanticElement();
-			if(message instanceof Message) {
-				MessageEnd send = ((Message)message).getSendEvent();
-				MessageEnd rcv = ((Message)message).getReceiveEvent();
+			if (message instanceof Message) {
+				MessageEnd send = ((Message) message).getSendEvent();
+				MessageEnd rcv = ((Message) message).getReceiveEvent();
 				EditPart srcPart = connectionPart.getSource();
 				LifelineEditPart srcLifelinePart = SequenceUtil.getParentLifelinePart(srcPart);
 				EditPart tgtPart = connectionPart.getTarget();
 				LifelineEditPart tgtLifelinePart = SequenceUtil.getParentLifelinePart(tgtPart);
-				if(/* send instanceof OccurrenceSpecification && rcv instanceof OccurrenceSpecification && */srcLifelinePart != null && tgtLifelinePart != null) {
+				if (/* send instanceof OccurrenceSpecification && rcv instanceof OccurrenceSpecification && */srcLifelinePart != null && tgtLifelinePart != null) {
 					RouterKind kind = RouterKind.getKind(getConnection(), getConnection().getPoints());
-					if((getHost() instanceof MessageEditPart || getHost() instanceof Message2EditPart) && kind == RouterKind.SELF) {
+					if ((getHost() instanceof MessageEditPart || getHost() instanceof Message2EditPart) && kind == RouterKind.SELF) {
 						return getSelfLinkMoveCommand(request, connectionPart, send, rcv, srcLifelinePart);
-					} else if(getHost() instanceof Message4EditPart) {
+					} else if (getHost() instanceof Message4EditPart) {
 						IFigure fig = tgtLifelinePart.getPrimaryShape().getFigureLifelineNameContainerFigure();
 						Rectangle bounds = fig.getBounds().getCopy();
 						fig.translateToAbsolute(bounds);
@@ -177,7 +177,7 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 						Point location = tgtLifelinePart.getFigure().getBounds().getLocation().getCopy().translate(0, dy);
 						Command moveCmd = new ICommandProxy(new SetBoundsCommand(tgtLifelinePart.getEditingDomain(), DiagramUIMessages.SetLocationCommand_Label_Resize, new EObjectAdapter(tgtLifelinePart.getNotationView()), location));
 						// Take care of the order of commands, to make sure target is always bellow the source.
-						if(dy < 0) { // move up
+						if (dy < 0) { // move up
 							return LifelineMessageCreateHelper.moveCascadeLifeline(tgtLifelinePart, moveCmd, dy);
 						} else { // move down
 							Command cmd = LifelineMessageCreateHelper.moveCascadeLifeline(tgtLifelinePart, null, dy);
@@ -186,17 +186,17 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 						}
 					} else {
 						int y = request.getLocation().y;
-						Command srcCmd = createMoveMessageEndCommand((Message)message, srcPart, send, y, srcLifelinePart);
-						Command tgtCmd = createMoveMessageEndCommand((Message)message, tgtPart, rcv, y, tgtLifelinePart);
+						Command srcCmd = createMoveMessageEndCommand((Message) message, srcPart, send, y, srcLifelinePart);
+						Command tgtCmd = createMoveMessageEndCommand((Message) message, tgtPart, rcv, y, tgtLifelinePart);
 						CompoundCommand compoudCmd = new CompoundCommand(CustomMessages.MoveMessageCommand_Label);
 						/*
 						 * Take care of the order of commands, to make sure target is always bellow the source.
 						 * Otherwise, moving the target above the source would cause order conflict with existing CF.
 						 */
 						Point oldLocation = SequenceUtil.getAbsoluteEdgeExtremity(connectionPart, true);
-						if(oldLocation != null) {
+						if (oldLocation != null) {
 							int oldY = oldLocation.y;
-							if(oldY < y) {
+							if (oldY < y) {
 								compoudCmd.add(tgtCmd);
 								compoudCmd.add(srcCmd);
 							} else {
@@ -214,17 +214,17 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 
 	/**
 	 * Add impossible to move the anchor connected inside of CoRegion
-	 * 
+	 *
 	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=402970
 	 */
 	protected Command createMoveMessageEndCommand(Message message, EditPart endEditPart, MessageEnd end, int yLocation, LifelineEditPart lifeline) {
-		if(end instanceof OccurrenceSpecification) {
+		if (end instanceof OccurrenceSpecification) {
 			List<EditPart> empty = Collections.emptyList();
-			return OccurrenceSpecificationMoveHelper.getMoveOccurrenceSpecificationsCommand((OccurrenceSpecification)end, null, yLocation, -1, lifeline, empty);
-		} else if(end instanceof Gate) {
+			return OccurrenceSpecificationMoveHelper.getMoveOccurrenceSpecificationsCommand((OccurrenceSpecification) end, null, yLocation, -1, lifeline, empty);
+		} else if (end instanceof Gate) {
 			boolean isSource = (end == message.getSendEvent());
-			ConnectionNodeEditPart connection = (ConnectionNodeEditPart)getHost();
-			if(isSource) {
+			ConnectionNodeEditPart connection = (ConnectionNodeEditPart) getHost();
+			if (isSource) {
 				ReconnectRequest req = new ReconnectRequest(REQ_RECONNECT_SOURCE);
 				req.setConnectionEditPart(connection);
 				req.setTargetEditPart(endEditPart);
@@ -248,58 +248,58 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 	}
 
 	protected Command getSelfLinkMoveCommand(BendpointRequest request, ConnectionNodeEditPart connectionPart, MessageEnd send, MessageEnd rcv, LifelineEditPart srcLifelinePart) {
-		//Just do it, checking was finished by showing feedback.
+		// Just do it, checking was finished by showing feedback.
 		Object moveData = request.getExtendedData().get(MOVE_LINE_ORIENTATION_DATA);
 		CompoundCommand compoudCmd = new CompoundCommand(CustomMessages.MoveMessageCommand_Label);
-		//And make sure the self linked message can be customized by using bendpoints.
+		// And make sure the self linked message can be customized by using bendpoints.
 		compoudCmd.add(super.getBendpointsChangedCommand(request));
 		PointList points = getConnection().getPoints();
-		if(MOVED_UP.equals(moveData)) {
+		if (MOVED_UP.equals(moveData)) {
 			Point sourceRefPoint = points.getFirstPoint();
 			getConnection().translateToAbsolute(sourceRefPoint);
 			Command srcCmd = getReconnectCommand(connectionPart, connectionPart.getSource(), sourceRefPoint, RequestConstants.REQ_RECONNECT_SOURCE);
 			compoudCmd.add(srcCmd);
-		} else if(MOVED_DOWN.equals(moveData)) {
+		} else if (MOVED_DOWN.equals(moveData)) {
 			Point targetRefPoint = points.getLastPoint();
 			getConnection().translateToAbsolute(targetRefPoint);
-			//Self message not always has same source and target, such as MessageSync.
+			// Self message not always has same source and target, such as MessageSync.
 			Command tgtCmd = getReconnectCommand(connectionPart, connectionPart.getTarget(), targetRefPoint, RequestConstants.REQ_RECONNECT_TARGET);
 			compoudCmd.add(tgtCmd);
 		}
 		return compoudCmd.unwrap();
-		//		CompoundCommand compoudCmd = new CompoundCommand(Messages.MoveMessageCommand_Label);
-		//		PointList points = getConnection().getPoints();
-		//		Point sourceRefPoint = points.getFirstPoint();;
-		//		Point targetRefPoint = points.getLastPoint();;
-		//		getConnection().translateToAbsolute(sourceRefPoint);
-		//		getConnection().translateToAbsolute(targetRefPoint);
-		//		
-		//		Point oldSourcePoint = SequenceUtil.findLocationOfEvent(srcLifelinePart, (OccurrenceSpecification)send);
-		//		int dy = sourceRefPoint.y - oldSourcePoint.y;
-		//		int dx = request.getLocation().x > sourceRefPoint.x ? 3 : -3;
-		//		
-		//		// check bounds
-		//		NodeFigure fig = srcLifelinePart.getPrimaryShape().getFigureLifelineDotLineFigure().getDashLineRectangle();
-		//		Rectangle bounds = fig.getBounds().getCopy();
-		//		fig.translateToAbsolute(bounds);
-		//		
-		//		bounds.expand(6, 0);
-		//		if(!bounds.contains(sourceRefPoint) || !bounds.contains(targetRefPoint)){
-		//			return UnexecutableCommand.INSTANCE; // cannot move outside lifeline part
-		//		}
-		//		sourceRefPoint = sourceRefPoint.translate(dx, 0);
-		//		targetRefPoint = targetRefPoint.translate(dx, 0);
-		//		Command srcCmd = getReconnectCommand(connectionPart, srcLifelinePart, sourceRefPoint, RequestConstants.REQ_RECONNECT_SOURCE);
-		//		Command tgtCmd = getReconnectCommand(connectionPart, srcLifelinePart, targetRefPoint, RequestConstants.REQ_RECONNECT_TARGET);
-		//		
-		//		if(dy < 0){  // move up
-		//			compoudCmd.add(srcCmd);
-		//			compoudCmd.add(tgtCmd);
-		//		}else{      // move down
-		//			compoudCmd.add(tgtCmd);
-		//			compoudCmd.add(srcCmd);
-		//		}
-		//		return compoudCmd;
+		// CompoundCommand compoudCmd = new CompoundCommand(Messages.MoveMessageCommand_Label);
+		// PointList points = getConnection().getPoints();
+		// Point sourceRefPoint = points.getFirstPoint();;
+		// Point targetRefPoint = points.getLastPoint();;
+		// getConnection().translateToAbsolute(sourceRefPoint);
+		// getConnection().translateToAbsolute(targetRefPoint);
+		//
+		// Point oldSourcePoint = SequenceUtil.findLocationOfEvent(srcLifelinePart, (OccurrenceSpecification)send);
+		// int dy = sourceRefPoint.y - oldSourcePoint.y;
+		// int dx = request.getLocation().x > sourceRefPoint.x ? 3 : -3;
+		//
+		// // check bounds
+		// NodeFigure fig = srcLifelinePart.getPrimaryShape().getFigureLifelineDotLineFigure().getDashLineRectangle();
+		// Rectangle bounds = fig.getBounds().getCopy();
+		// fig.translateToAbsolute(bounds);
+		//
+		// bounds.expand(6, 0);
+		// if(!bounds.contains(sourceRefPoint) || !bounds.contains(targetRefPoint)){
+		// return UnexecutableCommand.INSTANCE; // cannot move outside lifeline part
+		// }
+		// sourceRefPoint = sourceRefPoint.translate(dx, 0);
+		// targetRefPoint = targetRefPoint.translate(dx, 0);
+		// Command srcCmd = getReconnectCommand(connectionPart, srcLifelinePart, sourceRefPoint, RequestConstants.REQ_RECONNECT_SOURCE);
+		// Command tgtCmd = getReconnectCommand(connectionPart, srcLifelinePart, targetRefPoint, RequestConstants.REQ_RECONNECT_TARGET);
+		//
+		// if(dy < 0){ // move up
+		// compoudCmd.add(srcCmd);
+		// compoudCmd.add(tgtCmd);
+		// }else{ // move down
+		// compoudCmd.add(tgtCmd);
+		// compoudCmd.add(srcCmd);
+		// }
+		// return compoudCmd;
 	}
 
 	protected Command getReconnectCommand(ConnectionNodeEditPart connectionPart, EditPart targetPart, Point location, String requestType) {
@@ -320,25 +320,25 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 	 */
 	@Override
 	public void showSourceFeedback(Request request) {
-		if(request instanceof BendpointRequest) {
+		if (request instanceof BendpointRequest) {
 			RouterKind kind = RouterKind.getKind(getConnection(), getConnection().getPoints());
-			if(kind == RouterKind.SELF || kind == RouterKind.HORIZONTAL || getConnection() instanceof MessageCreate) {
-				if(getLineSegMode() != LineMode.OBLIQUE && REQ_MOVE_BENDPOINT.equals(request.getType())) {
-					//Fixed bug about show feedback for moving bendpoints, make sure at least 3 points. 
-					List constraint = (List)getConnection().getRoutingConstraint();
-					if(constraint.size() > 2) {
+			if (kind == RouterKind.SELF || kind == RouterKind.HORIZONTAL || getConnection() instanceof MessageCreate) {
+				if (getLineSegMode() != LineMode.OBLIQUE && REQ_MOVE_BENDPOINT.equals(request.getType())) {
+					// Fixed bug about show feedback for moving bendpoints, make sure at least 3 points.
+					List constraint = (List) getConnection().getRoutingConstraint();
+					if (constraint.size() > 2) {
 						super.showSourceFeedback(request);
 					}
 				} else {
 					super.showSourceFeedback(request);
 				}
-				if(getLineSegMode() != LineMode.OBLIQUE && REQ_MOVE_BENDPOINT.equals(request.getType())) {
-					showMoveLineSegFeedback((BendpointRequest)request);
+				if (getLineSegMode() != LineMode.OBLIQUE && REQ_MOVE_BENDPOINT.equals(request.getType())) {
+					showMoveLineSegFeedback((BendpointRequest) request);
 				}
 			}
-			//Add impossible to move MessageLost and MessageFound by dragging the line.
-			else if(getHost() instanceof Message7EditPart || getHost() instanceof Message6EditPart) {
-				showMoveLineSegFeedback((BendpointRequest)request);
+			// Add impossible to move MessageLost and MessageFound by dragging the line.
+			else if (getHost() instanceof Message7EditPart || getHost() instanceof Message6EditPart) {
+				showMoveLineSegFeedback((BendpointRequest) request);
 			}
 		}
 	}
@@ -347,6 +347,7 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 
 	static class DummyRouter extends AbstractRouter {
 
+		@Override
 		public void route(Connection conn) {
 		}
 	}
@@ -355,8 +356,8 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 	@SuppressWarnings("unchecked")
 	protected void showMoveLineSegFeedback(BendpointRequest request) {
 		RouterKind kind = RouterKind.getKind(getConnection(), getConnection().getPoints());
-		if((getHost() instanceof MessageEditPart || getHost() instanceof Message2EditPart) && kind == RouterKind.SELF) {
-			if(router == null) {
+		if ((getHost() instanceof MessageEditPart || getHost() instanceof Message2EditPart) && kind == RouterKind.SELF) {
+			if (router == null) {
 				router = getConnection().getConnectionRouter();
 				getConnection().setConnectionRouter(new DummyRouter());
 			}
@@ -367,44 +368,44 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 			int dx = 0;
 			int from = 0, to = 0;
 			int index = request.getIndex();
-			if(index == 0) {
+			if (index == 0) {
 				dy = ptLoc.y - linkPoints.getFirstPoint().y;
 				from = 0;
 				to = 1;
 				request.getExtendedData().put(MOVE_LINE_ORIENTATION_DATA, MOVED_UP);
-			} else if(index == 1) {
+			} else if (index == 1) {
 				dx = ptLoc.x - linkPoints.getMidpoint().x;
 				from = 1;
 				to = 2;
 				request.getExtendedData().put(MOVE_LINE_ORIENTATION_DATA, MOVED_HORIZONTAL);
-			} else if(index == 2) {
+			} else if (index == 2) {
 				dy = ptLoc.y - linkPoints.getLastPoint().y;
 				from = 2;
 				to = 3;
 				request.getExtendedData().put(MOVE_LINE_ORIENTATION_DATA, MOVED_DOWN);
 			}
-			if(getHost() instanceof MessageEditPart && index > 1) {
+			if (getHost() instanceof MessageEditPart && index > 1) {
 				dy = 0;
 			}
 			// move points on link
 			int size = linkPoints.size();
-			if(from >= 0 && from < size && to >= 0 && to < size && from <= to) {
-				for(int i = from; i <= to; i++) {
+			if (from >= 0 && from < size && to >= 0 && to < size && from <= to) {
+				for (int i = from; i <= to; i++) {
 					Point p = linkPoints.getPoint(i);
 					p.translate(dx, dy);
 					linkPoints.setPoint(p, i);
 				}
 			}
-			// link should not exceed lifeline bounds  
-			if(checkBounds(linkPoints)) {
+			// link should not exceed lifeline bounds
+			if (checkBounds(linkPoints)) {
 				getConnection().setPoints(linkPoints);
 				getConnection().getLayoutManager().layout(getConnection());
 			}
 			return;
 		}
-		//Add impossible to dragging MessageLost and MessageFound. See bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=403138 
-		if(getHost() instanceof Message4EditPart || getHost() instanceof Message6EditPart || getHost() instanceof Message7EditPart) {
-			if(router == null) {
+		// Add impossible to dragging MessageLost and MessageFound. See bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=403138
+		if (getHost() instanceof Message4EditPart || getHost() instanceof Message6EditPart || getHost() instanceof Message7EditPart) {
+			if (router == null) {
 				router = getConnection().getConnectionRouter();
 				getConnection().setConnectionRouter(new DummyRouter());
 			}
@@ -413,11 +414,11 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 			getConnection().translateToRelative(ptLoc);
 			int dy = ptLoc.y - linkPoints.getFirstPoint().y;
 			int size = linkPoints.size();
-			for(int i = 0; i < size; i++) {
+			for (int i = 0; i < size; i++) {
 				Point p = linkPoints.getPoint(i).translate(0, dy);
 				linkPoints.setPoint(p, i);
 			}
-			if(checkBounds(linkPoints)) {
+			if (checkBounds(linkPoints)) {
 				getConnection().setPoints(linkPoints);
 				getConnection().getLayoutManager().layout(getConnection());
 			}
@@ -427,42 +428,42 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 	}
 
 	protected boolean checkBounds(PointList linkPoints) {
-		if(linkPoints.getFirstPoint().y > linkPoints.getLastPoint().y) {
+		if (linkPoints.getFirstPoint().y > linkPoints.getLastPoint().y) {
 			return false;
 		}
-		EditPart sourcePart = ((ConnectionNodeEditPart)getHost()).getSource();
-		if(sourcePart instanceof LifelineEditPart) {
-			LifelineEditPart lep = (LifelineEditPart)sourcePart;
+		EditPart sourcePart = ((ConnectionNodeEditPart) getHost()).getSource();
+		if (sourcePart instanceof LifelineEditPart) {
+			LifelineEditPart lep = (LifelineEditPart) sourcePart;
 			NodeFigure fig = lep.getPrimaryShape().getFigureLifelineDotLineFigure().getDashLineRectangle();
 			Rectangle bounds = fig.getBounds().getCopy();
 			fig.translateToAbsolute(bounds);
 			Rectangle conBounds = linkPoints.getBounds();
 			getConnection().translateToAbsolute(conBounds);
 			// check top and bottom y limit
-			if(conBounds.y <= bounds.y || conBounds.getBottom().y >= bounds.getBottom().y) {
+			if (conBounds.y <= bounds.y || conBounds.getBottom().y >= bounds.getBottom().y) {
 				return false;
 			}
 		}
-		//It seems the self message can be created on ES, too
-		else if(sourcePart instanceof AbstractExecutionSpecificationEditPart) {
-			AbstractExecutionSpecificationEditPart esep = (AbstractExecutionSpecificationEditPart)sourcePart;
+		// It seems the self message can be created on ES, too
+		else if (sourcePart instanceof AbstractExecutionSpecificationEditPart) {
+			AbstractExecutionSpecificationEditPart esep = (AbstractExecutionSpecificationEditPart) sourcePart;
 			IFigure fig = esep.getFigure();
 			Rectangle bounds = fig.getBounds().getCopy();
 			fig.translateToAbsolute(bounds);
 			Rectangle conBounds = linkPoints.getBounds().getCopy();
 			getConnection().translateToAbsolute(conBounds);
-			if(getHost() instanceof MessageEditPart) {//Sync message is linked between two executions.
-				if(conBounds.width < 2 || conBounds.height < 2
-				// check top and bottom y limit
-				|| conBounds.y <= bounds.y || conBounds.getBottom().y >= bounds.getBottom().y) {
+			if (getHost() instanceof MessageEditPart) {// Sync message is linked between two executions.
+				if (conBounds.width < 2 || conBounds.height < 2
+						// check top and bottom y limit
+						|| conBounds.y <= bounds.y || conBounds.getBottom().y >= bounds.getBottom().y) {
 					return false;
 				}
-			} else if( //Don't change the orientation of self message.
+			} else if ( // Don't change the orientation of self message.
 			bounds.intersects(conBounds.getShrinked(1, 1))
-			//make sure the line is not closest.
-			|| conBounds.width < 2 || conBounds.height < 2
-			// check top and bottom y limit
-			|| conBounds.y <= bounds.y || conBounds.getBottom().y >= bounds.getBottom().y) {
+					// make sure the line is not closest.
+					|| conBounds.width < 2 || conBounds.height < 2
+					// check top and bottom y limit
+					|| conBounds.y <= bounds.y || conBounds.getBottom().y >= bounds.getBottom().y) {
 				return false;
 			}
 		}
@@ -473,34 +474,34 @@ public class MessageConnectionLineSegEditPolicy extends ConnectionBendpointEditP
 	protected void eraseConnectionFeedback(BendpointRequest request, boolean removeFeedbackFigure) {
 		getConnection().setVisible(true);
 		super.eraseConnectionFeedback(request, removeFeedbackFigure);
-		if(router != null) {
+		if (router != null) {
 			getConnection().setConnectionRouter(router);
 		}
 		router = null;
 	}
-	//	private boolean isHorizontal() {
-	//		Connection connection = getConnection();
-	//		RouterKind kind = RouterKind.getKind(connection, connection.getPoints());
+	// private boolean isHorizontal() {
+	// Connection connection = getConnection();
+	// RouterKind kind = RouterKind.getKind(connection, connection.getPoints());
 	//
-	//		if(kind.equals(RouterKind.HORIZONTAL)) {
-	//			return true;
-	//		}
-	//		return false;
-	//	}
+	// if(kind.equals(RouterKind.HORIZONTAL)) {
+	// return true;
+	// }
+	// return false;
+	// }
 	//
-	//	final private static char TERMINAL_START_CHAR = '(';
+	// final private static char TERMINAL_START_CHAR = '(';
 	//
-	//	final private static char TERMINAL_DELIMITER_CHAR = ',';
+	// final private static char TERMINAL_DELIMITER_CHAR = ',';
 	//
-	//	final private static char TERMINAL_END_CHAR = ')';
+	// final private static char TERMINAL_END_CHAR = ')';
 	//
-	//	private static String composeTerminalString(PrecisionPoint p) {
-	//		StringBuffer s = new StringBuffer(24);
-	//		s.append(TERMINAL_START_CHAR); // 1 char
-	//		s.append(p.preciseX); // 10 chars
-	//		s.append(TERMINAL_DELIMITER_CHAR); // 1 char
-	//		s.append(p.preciseY); // 10 chars
-	//		s.append(TERMINAL_END_CHAR); // 1 char
-	//		return s.toString(); // 24 chars max (+1 for safety, i.e. for string termination)
-	//	}
+	// private static String composeTerminalString(PrecisionPoint p) {
+	// StringBuffer s = new StringBuffer(24);
+	// s.append(TERMINAL_START_CHAR); // 1 char
+	// s.append(p.preciseX); // 10 chars
+	// s.append(TERMINAL_DELIMITER_CHAR); // 1 char
+	// s.append(p.preciseY); // 10 chars
+	// s.append(TERMINAL_END_CHAR); // 1 char
+	// return s.toString(); // 24 chars max (+1 for safety, i.e. for string termination)
+	// }
 }

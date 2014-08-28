@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.swt.widgets.Control;
 
 /**
  * Implementation of dynamic combo field editor. Add {@link IDynamicFieldEditor} interface behavior to standard combo field editor.
- * 
+ *
  * @see org.eclipse.jface.preference.ComboFieldEditor
- * 
+ *
  * @author gpascual
  *
  */
@@ -50,16 +50,16 @@ public class InputComboFieldEditor extends FieldEditor implements IDynamicFieldE
 
 	/**
 	 * Create the combo box field editor.
-	 * 
+	 *
 	 * @param name
-	 *        the name of the preference this field editor works on
+	 *            the name of the preference this field editor works on
 	 * @param labelText
-	 *        the label text of the field editor
+	 *            the label text of the field editor
 	 * @param entryNamesAndValues
-	 *        the names (labels) and underlying values to populate the combo widget. These should be
-	 *        arranged as: { {name1, value1}, {name2, value2}, ...}
+	 *            the names (labels) and underlying values to populate the combo widget. These should be
+	 *            arranged as: { {name1, value1}, {name2, value2}, ...}
 	 * @param parent
-	 *        the parent composite
+	 *            the parent composite
 	 */
 	public InputComboFieldEditor(String name, String labelText, String[][] entryNamesAndValues, Composite parent) {
 		init(name, labelText);
@@ -74,12 +74,12 @@ public class InputComboFieldEditor extends FieldEditor implements IDynamicFieldE
 	 * @return <code>true</code> if it is ok, and <code>false</code> otherwise
 	 */
 	private boolean checkArray(String[][] table) {
-		if(table == null) {
+		if (table == null) {
 			return false;
 		}
-		for(int i = 0; i < table.length; i++) {
+		for (int i = 0; i < table.length; i++) {
 			String[] array = table[i];
-			if(array == null || array.length != 2) {
+			if (array == null || array.length != 2) {
 				return false;
 			}
 		}
@@ -88,37 +88,37 @@ public class InputComboFieldEditor extends FieldEditor implements IDynamicFieldE
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#adjustForNumColumns(int)
 	 */
 	@Override
 	protected void adjustForNumColumns(int numColumns) {
-		if(numColumns > 1) {
+		if (numColumns > 1) {
 			Control control = getLabelControl();
 			int left = numColumns;
-			if(control != null) {
-				((GridData)control.getLayoutData()).horizontalSpan = 1;
+			if (control != null) {
+				((GridData) control.getLayoutData()).horizontalSpan = 1;
 				left = left - 1;
 			}
-			((GridData)combo.getLayoutData()).horizontalSpan = left;
+			((GridData) combo.getLayoutData()).horizontalSpan = left;
 		} else {
 			Control control = getLabelControl();
-			if(control != null) {
-				((GridData)control.getLayoutData()).horizontalSpan = 1;
+			if (control != null) {
+				((GridData) control.getLayoutData()).horizontalSpan = 1;
 			}
-			((GridData)combo.getLayoutData()).horizontalSpan = 1;
+			((GridData) combo.getLayoutData()).horizontalSpan = 1;
 		}
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#doFillIntoGrid(org.eclipse.swt.widgets.Composite, int)
 	 */
 	@Override
 	protected void doFillIntoGrid(Composite parent, int numColumns) {
 		int comboC = 1;
-		if(numColumns > 1) {
+		if (numColumns > 1) {
 			comboC = numColumns - 1;
 		}
 		Control control = getLabelControl(parent);
@@ -135,7 +135,7 @@ public class InputComboFieldEditor extends FieldEditor implements IDynamicFieldE
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#doLoad()
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class InputComboFieldEditor extends FieldEditor implements IDynamicFieldE
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#doLoadDefault()
 	 */
 	@Override
@@ -155,12 +155,12 @@ public class InputComboFieldEditor extends FieldEditor implements IDynamicFieldE
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#doStore()
 	 */
 	@Override
 	protected void doStore() {
-		if(value == null) {
+		if (value == null) {
 			getPreferenceStore().setToDefault(getPreferenceName());
 			return;
 		}
@@ -169,7 +169,7 @@ public class InputComboFieldEditor extends FieldEditor implements IDynamicFieldE
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#getNumberOfControls()
 	 */
 	@Override
@@ -181,10 +181,10 @@ public class InputComboFieldEditor extends FieldEditor implements IDynamicFieldE
 	 * Lazily create and return the Combo control.
 	 */
 	private Combo getComboBoxControl(Composite parent) {
-		if(combo == null) {
+		if (combo == null) {
 			combo = new Combo(parent, SWT.READ_ONLY);
 			combo.setFont(parent.getFont());
-			for(int i = 0; i < fEntryNamesAndValues.length; i++) {
+			for (int i = 0; i < fEntryNamesAndValues.length; i++) {
 				combo.add(fEntryNamesAndValues[i][0], i);
 			}
 
@@ -207,9 +207,9 @@ public class InputComboFieldEditor extends FieldEditor implements IDynamicFieldE
 	 * Given the name (label) of an entry, return the corresponding value.
 	 */
 	private String getValueForName(String name) {
-		for(int i = 0; i < fEntryNamesAndValues.length; i++) {
+		for (int i = 0; i < fEntryNamesAndValues.length; i++) {
 			String[] entry = fEntryNamesAndValues[i];
-			if(name.equals(entry[0])) {
+			if (name.equals(entry[0])) {
 				return entry[1];
 			}
 		}
@@ -221,13 +221,13 @@ public class InputComboFieldEditor extends FieldEditor implements IDynamicFieldE
 	 */
 	private void updateComboForValue(String value) {
 		this.value = value;
-		for(int i = 0; i < fEntryNamesAndValues.length; i++) {
-			if(value.equals(fEntryNamesAndValues[i][1])) {
+		for (int i = 0; i < fEntryNamesAndValues.length; i++) {
+			if (value.equals(fEntryNamesAndValues[i][1])) {
 				combo.setText(fEntryNamesAndValues[i][0]);
 				return;
 			}
 		}
-		if(fEntryNamesAndValues.length > 0) {
+		if (fEntryNamesAndValues.length > 0) {
 			value = fEntryNamesAndValues[0][1];
 			combo.setText(fEntryNamesAndValues[0][0]);
 		}
@@ -252,12 +252,12 @@ public class InputComboFieldEditor extends FieldEditor implements IDynamicFieldE
 	 */
 	public void setInput(Object input) {
 
-		if(input.getClass().equals(fEntryNamesAndValues.getClass())) {
-			fEntryNamesAndValues = (String[][])input;
+		if (input.getClass().equals(fEntryNamesAndValues.getClass())) {
+			fEntryNamesAndValues = (String[][]) input;
 		}
 
 		combo.removeAll();
-		for(int i = 0; i < fEntryNamesAndValues.length; i++) {
+		for (int i = 0; i < fEntryNamesAndValues.length; i++) {
 			combo.add(fEntryNamesAndValues[i][0], i);
 		}
 

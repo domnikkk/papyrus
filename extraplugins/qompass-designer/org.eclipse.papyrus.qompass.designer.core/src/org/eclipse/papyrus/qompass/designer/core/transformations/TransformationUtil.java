@@ -1,6 +1,6 @@
 package org.eclipse.papyrus.qompass.designer.core.transformations;
 
-import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.papyrus.qompass.designer.core.Log;
@@ -26,13 +26,13 @@ public class TransformationUtil {
 			}
 		}
 	}
-	
+
 	public static void propagateAllocation(InstanceSpecification instance) {
 		propagateAllocation(instance, new UniqueEList<InstanceSpecification>());
 	}
-	
+
 	public static void propagateAllocation(InstanceSpecification instance, EList<InstanceSpecification> nodes) {
-		// create copy of node (otherwise, more and more nodes get aggregated. 
+		// create copy of node (otherwise, more and more nodes get aggregated.
 		UniqueEList<InstanceSpecification> nodesCopy = new UniqueEList<InstanceSpecification>();
 		nodesCopy.addAll(nodes);
 		nodesCopy.addAll(AllocUtils.getNodes(instance));
@@ -41,7 +41,7 @@ public class TransformationUtil {
 			if (subInstance != null) {
 				if (DepUtils.isShared(slot)) {
 					for (InstanceSpecification node : nodesCopy) {
-						Log.log(Status.INFO, Log.DEPLOYMENT, String.format("Propagate node allocation: %s to %s", subInstance.getName(), node.getName())); //$NON-NLS-1$
+						Log.log(IStatus.INFO, Log.DEPLOYMENT, String.format("Propagate node allocation: %s to %s", subInstance.getName(), node.getName())); //$NON-NLS-1$
 						AllocUtils.allocate(subInstance, node);
 					}
 				}
@@ -51,7 +51,7 @@ public class TransformationUtil {
 			}
 		}
 	}
-	
+
 	/**
 	 * Update derived interfaces of ports. This is required, since the Copier does not follow references
 	 * that are referenced via a derived attribute. Derived attributes are used for provided and required

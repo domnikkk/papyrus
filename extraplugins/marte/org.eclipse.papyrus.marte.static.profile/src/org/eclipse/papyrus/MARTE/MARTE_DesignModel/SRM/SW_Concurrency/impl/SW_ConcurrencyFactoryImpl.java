@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.*;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.Alarm;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.EntryPoint;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptKind;
@@ -34,6 +33,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwTimerRes
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_ConcurrencyFactory {
@@ -41,16 +41,16 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static SW_ConcurrencyFactory init() {
 		try {
-			SW_ConcurrencyFactory theSW_ConcurrencyFactory = (SW_ConcurrencyFactory)EPackage.Registry.INSTANCE.getEFactory(SW_ConcurrencyPackage.eNS_URI);
+			SW_ConcurrencyFactory theSW_ConcurrencyFactory = (SW_ConcurrencyFactory) EPackage.Registry.INSTANCE.getEFactory(SW_ConcurrencyPackage.eNS_URI);
 			if (theSW_ConcurrencyFactory != null) {
 				return theSW_ConcurrencyFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new SW_ConcurrencyFactoryImpl();
@@ -60,6 +60,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SW_ConcurrencyFactoryImpl() {
@@ -69,57 +70,68 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case SW_ConcurrencyPackage.ENTRY_POINT: return createEntryPoint();
-			case SW_ConcurrencyPackage.INTERRUPT_RESOURCE: return createInterruptResource();
-			case SW_ConcurrencyPackage.SW_SCHEDULABLE_RESOURCE: return createSwSchedulableResource();
-			case SW_ConcurrencyPackage.SW_TIMER_RESOURCE: return createSwTimerResource();
-			case SW_ConcurrencyPackage.MEMORY_PARTITION: return createMemoryPartition();
-			case SW_ConcurrencyPackage.ALARM: return createAlarm();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case SW_ConcurrencyPackage.ENTRY_POINT:
+			return createEntryPoint();
+		case SW_ConcurrencyPackage.INTERRUPT_RESOURCE:
+			return createInterruptResource();
+		case SW_ConcurrencyPackage.SW_SCHEDULABLE_RESOURCE:
+			return createSwSchedulableResource();
+		case SW_ConcurrencyPackage.SW_TIMER_RESOURCE:
+			return createSwTimerResource();
+		case SW_ConcurrencyPackage.MEMORY_PARTITION:
+			return createMemoryPartition();
+		case SW_ConcurrencyPackage.ALARM:
+			return createAlarm();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case SW_ConcurrencyPackage.INTERRUPT_KIND:
-				return createInterruptKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case SW_ConcurrencyPackage.INTERRUPT_KIND:
+			return createInterruptKindFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case SW_ConcurrencyPackage.INTERRUPT_KIND:
-				return convertInterruptKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case SW_ConcurrencyPackage.INTERRUPT_KIND:
+			return convertInterruptKindToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EntryPoint createEntryPoint() {
 		EntryPointImpl entryPoint = new EntryPointImpl();
 		return entryPoint;
@@ -128,8 +140,10 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public InterruptResource createInterruptResource() {
 		InterruptResourceImpl interruptResource = new InterruptResourceImpl();
 		return interruptResource;
@@ -138,8 +152,10 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public SwSchedulableResource createSwSchedulableResource() {
 		SwSchedulableResourceImpl swSchedulableResource = new SwSchedulableResourceImpl();
 		return swSchedulableResource;
@@ -148,8 +164,10 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public SwTimerResource createSwTimerResource() {
 		SwTimerResourceImpl swTimerResource = new SwTimerResourceImpl();
 		return swTimerResource;
@@ -158,8 +176,10 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public MemoryPartition createMemoryPartition() {
 		MemoryPartitionImpl memoryPartition = new MemoryPartitionImpl();
 		return memoryPartition;
@@ -168,8 +188,10 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Alarm createAlarm() {
 		AlarmImpl alarm = new AlarmImpl();
 		return alarm;
@@ -178,17 +200,21 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public InterruptKind createInterruptKindFromString(EDataType eDataType, String initialValue) {
 		InterruptKind result = InterruptKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertInterruptKindToString(EDataType eDataType, Object instanceValue) {
@@ -198,15 +224,18 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public SW_ConcurrencyPackage getSW_ConcurrencyPackage() {
-		return (SW_ConcurrencyPackage)getEPackage();
+		return (SW_ConcurrencyPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -215,4 +244,4 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 		return SW_ConcurrencyPackage.eINSTANCE;
 	}
 
-} //SW_ConcurrencyFactoryImpl
+} // SW_ConcurrencyFactoryImpl

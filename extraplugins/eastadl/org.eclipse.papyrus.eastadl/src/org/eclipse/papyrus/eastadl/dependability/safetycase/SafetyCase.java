@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,20 +26,20 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecificatio
  *
  * <!-- begin-model-doc -->
  * SafetyCase represents a safety case that communicates a clear, comprehensive and defensible argument that a system is acceptable safe to operate in a given context.
- * 
+ *
  * Safety Cases are used in safety related systems, where failures can lead to catastrophic or at least dangerous consequences.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getSafetyCase <em>Safety Case</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getStage <em>Stage</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getContext <em>Context</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getGround <em>Ground</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getWarrant <em>Warrant</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getClaim <em>Claim</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getSafetyCase <em>Safety Case</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getStage <em>Stage</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getContext <em>Context</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getGround <em>Ground</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getWarrant <em>Warrant</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getClaim <em>Claim</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,10 +53,10 @@ public interface SafetyCase extends TraceableSpecification {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.dependability.safetycase.Claim}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Claim</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Claim</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Claim</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getSafetyCase_Claim()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -68,10 +68,10 @@ public interface SafetyCase extends TraceableSpecification {
 	 * Returns the value of the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Class</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getSafetyCase_Base_Class()
@@ -84,7 +84,9 @@ public interface SafetyCase extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Class</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
@@ -94,10 +96,10 @@ public interface SafetyCase extends TraceableSpecification {
 	 * Returns the value of the '<em><b>Context</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Context</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Context</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Context</em>' attribute.
 	 * @see #setContext(String)
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getSafetyCase_Context()
@@ -111,10 +113,10 @@ public interface SafetyCase extends TraceableSpecification {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.dependability.safetycase.Ground}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ground</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Ground</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Ground</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getSafetyCase_Ground()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -130,6 +132,7 @@ public interface SafetyCase extends TraceableSpecification {
 	 * <!-- begin-model-doc -->
 	 * Attached SafetyCases
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Safety Case</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getSafetyCase_SafetyCase()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -142,10 +145,10 @@ public interface SafetyCase extends TraceableSpecification {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.eastadl.dependability.safetycase.LifecycleStageKind}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Stage</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Stage</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Stage</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.LifecycleStageKind
 	 * @see #setStage(LifecycleStageKind)
@@ -160,10 +163,10 @@ public interface SafetyCase extends TraceableSpecification {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.dependability.safetycase.Warrant}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Warrant</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Warrant</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Warrant</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getSafetyCase_Warrant()
 	 * @model transient="true" volatile="true" derived="true" ordered="false"
@@ -175,7 +178,9 @@ public interface SafetyCase extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getContext <em>Context</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Context</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Context</em>' attribute.
 	 * @see #getContext()
 	 * @generated
 	 */
@@ -185,7 +190,9 @@ public interface SafetyCase extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getStage <em>Stage</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Stage</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Stage</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.LifecycleStageKind
 	 * @see #getStage()
 	 * @generated

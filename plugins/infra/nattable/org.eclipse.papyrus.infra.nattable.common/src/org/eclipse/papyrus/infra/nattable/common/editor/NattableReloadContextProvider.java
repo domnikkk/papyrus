@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ class NattableReloadContextProvider implements IReloadContextProvider {
 
 	@Override
 	public void restore(Object reloadContext) {
-		((NatTableSelectionContext)reloadContext).restore(getSelectionProvider(), getSelectionLayer());
+		((NatTableSelectionContext) reloadContext).restore(getSelectionProvider(), getSelectionLayer());
 	}
 
 	private ISelectionProvider getSelectionProvider() {
@@ -75,12 +75,12 @@ class NattableReloadContextProvider implements IReloadContextProvider {
 
 		void restore(ISelectionProvider structuredSelectionProvider, SelectionLayer selectionLayer) {
 			selectionLayer.clear();
-			if(selectedColumns.length > 0) {
-				for(int i = 0; i < selectedColumns.length; i++) {
+			if (selectedColumns.length > 0) {
+				for (int i = 0; i < selectedColumns.length; i++) {
 					selectionLayer.doCommand(new SelectColumnCommand(selectionLayer, selectedColumns[i], Integer.MAX_VALUE, false, true));
 				}
 			}
-			if(selectedRows.length > 0) {
+			if (selectedRows.length > 0) {
 				selectionLayer.doCommand(new SelectRowsCommand(selectionLayer, Integer.MAX_VALUE, selectedRows, false, true, selectedRows[selectedRows.length - 1]));
 			}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,7 +45,7 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * Represents a prototype of view in Papyrus
- * 
+ *
  * @author Laurent Wouters
  */
 public abstract class ViewPrototype {
@@ -75,7 +75,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Retrieves the helpers from the extensions
-	 * 
+	 *
 	 * @return The helpers
 	 */
 	private static Collection<IViewTypeHelper> getCommandHelpers() {
@@ -89,8 +89,9 @@ public abstract class ViewPrototype {
 			for (int j = 0; j != elements.length; j++) {
 				try {
 					IViewTypeHelper instance = (IViewTypeHelper) elements[j].createExecutableExtension("class");
-					if (instance != null)
+					if (instance != null) {
 						result.add(instance);
+					}
 				} catch (CoreException e) {
 				}
 			}
@@ -100,7 +101,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Determines whether the given configuration element applies on a natural view
-	 * 
+	 *
 	 * @param config
 	 *            The configuration element
 	 * @return <code>true</code> if the configuration applies on a natural view
@@ -111,21 +112,23 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Determines whether the given object is a supported view object
-	 * 
+	 *
 	 * @param object
 	 *            The object to inspect
 	 * @return <code>true</code> if the object is a supported view
 	 */
 	public static boolean isViewObject(EObject object) {
-		for (IViewTypeHelper helper : HELPERS)
-			if (helper.isSupported(object))
+		for (IViewTypeHelper helper : HELPERS) {
+			if (helper.isSupported(object)) {
 				return true;
+			}
+		}
 		return false;
 	}
 
 	/**
 	 * Gets the prototype for the given configuration element
-	 * 
+	 *
 	 * @param config
 	 *            The configuration element
 	 * @return The prototype
@@ -134,23 +137,25 @@ public abstract class ViewPrototype {
 		for (IViewTypeHelper helper : HELPERS) {
 			if (helper.isSupported(config.eClass())) {
 				ViewPrototype proto = helper.getPrototypeFor(config);
-				if (proto != null)
+				if (proto != null) {
 					return proto;
+				}
 			}
 		}
-		if (config instanceof PapyrusDiagram)
+		if (config instanceof PapyrusDiagram) {
 			return UNAVAILABLE_DIAGRAM;
-		else if (config instanceof PapyrusTable)
+		} else if (config instanceof PapyrusTable) {
 			return UNAVAILABLE_TABLE;
-		else if (config instanceof PapyrusSyncTable)
+		} else if (config instanceof PapyrusSyncTable) {
 			return UNAVAILABLE_TABLE;
-		else
+		} else {
 			return UNAVAILABLE_VIEW;
+		}
 	}
 
 	/**
 	 * Gets the prototype for the the given object representing a view
-	 * 
+	 *
 	 * @param view
 	 *            The view for which a prototype is expected
 	 * @return The view's prototype
@@ -159,8 +164,9 @@ public abstract class ViewPrototype {
 		for (IViewTypeHelper helper : HELPERS) {
 			if (helper.isSupported(view)) {
 				ViewPrototype proto = helper.getPrototypeOf(view);
-				if (proto != null)
+				if (proto != null) {
 					return proto;
+				}
 			}
 		}
 		return UNAVAILABLE_VIEW;
@@ -168,7 +174,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the prototype for the given implementation identifier
-	 * 
+	 *
 	 * @param implem
 	 *            The implementation ID
 	 * @param owner
@@ -179,9 +185,10 @@ public abstract class ViewPrototype {
 	 */
 	public static ViewPrototype get(String implem, EObject owner, EObject root) {
 		PapyrusView view = PolicyChecker.getCurrent().getViewFrom(implem, owner, root);
-		if (view == null)
+		if (view == null) {
 			// The given implementation has been inhibited by the current viewpoint configuration
 			return UNAVAILABLE_VIEW;
+		}
 		return get(view);
 	}
 
@@ -193,7 +200,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param configuration
 	 *            The configuration element
 	 */
@@ -203,7 +210,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the configuration element for this view prototype
-	 * 
+	 *
 	 * @return The configuration element
 	 */
 	public PapyrusView getConfiguration() {
@@ -212,7 +219,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets whether the represented view is the raw implementation
-	 * 
+	 *
 	 * @return <code>true</code> if this is a natural view
 	 */
 	public boolean isNatural() {
@@ -221,7 +228,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the ID of the implementation of this prototype
-	 * 
+	 *
 	 * @return The implementation ID
 	 */
 	public String getImplementation() {
@@ -230,7 +237,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the label
-	 * 
+	 *
 	 * @return The label
 	 */
 	public String getLabel() {
@@ -239,7 +246,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the full label that is qualified with its possible root elements
-	 * 
+	 *
 	 * @return The full label
 	 */
 	public String getFullLabel() {
@@ -270,7 +277,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the qualified name of this prototype
-	 * 
+	 *
 	 * @return The qualified name
 	 */
 	public String getQualifiedName() {
@@ -280,7 +287,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the URI of this prototype's icon
-	 * 
+	 *
 	 * @return The icon's URI
 	 */
 	public String getIconURI() {
@@ -289,7 +296,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the image descriptor of this prototype's icon
-	 * 
+	 *
 	 * @return The icon's descriptor
 	 */
 	public ImageDescriptor getIconDescriptor() {
@@ -304,7 +311,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the image of this prototype's icon
-	 * 
+	 *
 	 * @return The icon's image
 	 */
 	public Image getIcon() {
@@ -313,7 +320,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the categories of this view prototype
-	 * 
+	 *
 	 * @return The prototype's categories
 	 */
 	public Collection<Category> getCategories() {
@@ -322,14 +329,14 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Determines whether the instances of this prototype can change owners
-	 * 
+	 *
 	 * @return <code>true</code> if the owner is reassignable
 	 */
 	public abstract boolean isOwnerReassignable();
 
 	/**
 	 * Create a new view from this prototype with the given owner
-	 * 
+	 *
 	 * @param owner
 	 *            The new view's owner
 	 * @return <code>true</code> if the instantiation succeeded
@@ -338,7 +345,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Create a new view from this prototype with the given owner and name
-	 * 
+	 *
 	 * @param owner
 	 *            The new view's owner
 	 * @param name
@@ -349,7 +356,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the command for moving the given view to a new owner (target)
-	 * 
+	 *
 	 * @param view
 	 *            The view to be moved
 	 * @param target
@@ -360,7 +367,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the command for changing the root element of the given view to a new element (target)
-	 * 
+	 *
 	 * @param view
 	 *            The view to change root
 	 * @param target
@@ -371,7 +378,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the object owning the given view
-	 * 
+	 *
 	 * @param view
 	 *            The view
 	 * @return The view's owner
@@ -380,7 +387,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the object which is the root element of the given view
-	 * 
+	 *
 	 * @param view
 	 *            The view
 	 * @return The views's root element
@@ -389,7 +396,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Represents a comparator of prototypes
-	 * 
+	 *
 	 * @author Laurent Wouters
 	 */
 	public static class Comp implements Comparator<ViewPrototype> {
@@ -425,7 +432,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the number of views of this type owned by a given object
-	 * 
+	 *
 	 * @param element
 	 *            The object to count views for
 	 * @param prototype
@@ -435,15 +442,17 @@ public abstract class ViewPrototype {
 	public int getOwnedViewCount(EObject element) {
 		int count = 0;
 		Iterator<EObject> roots = NotationUtils.getNotationRoots(element);
-		if (roots == null)
+		if (roots == null) {
 			return count;
+		}
 		while (roots.hasNext()) {
 			EObject view = roots.next();
 			ViewPrototype proto = ViewPrototype.get(view);
 			if (this == proto) {
 				EObject owner = proto.getOwnerOf(view);
-				if (EcoreUtil.equals(owner, element))
+				if (EcoreUtil.equals(owner, element)) {
 					count++;
+				}
 			}
 		}
 		return count;
@@ -451,7 +460,7 @@ public abstract class ViewPrototype {
 
 	/**
 	 * Gets the number of views of this type on a given object
-	 * 
+	 *
 	 * @param element
 	 *            The object to count views on
 	 * @param prototype
@@ -461,15 +470,17 @@ public abstract class ViewPrototype {
 	public int getViewCountOn(EObject element) {
 		int count = 0;
 		Iterator<EObject> roots = NotationUtils.getNotationRoots(element);
-		if (roots == null)
+		if (roots == null) {
 			return count;
+		}
 		while (roots.hasNext()) {
 			EObject view = roots.next();
 			ViewPrototype proto = ViewPrototype.get(view);
 			if (this == proto) {
 				EObject root = proto.getRootOf(view);
-				if (EcoreUtil.equals(root, element))
+				if (EcoreUtil.equals(root, element)) {
 					count++;
+				}
 			}
 		}
 		return count;

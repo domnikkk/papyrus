@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 AtoS.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.papyrus.uml.diagram.common.service.AspectUnspecifiedTypeCreat
 
 /**
  * Annotation to apply to Aspect Actions which modify references
- * 
+ *
  * @author tristan.faure@atos.net
- * 
+ *
  */
 public interface IFeatureSetterAspectAction {
 
@@ -36,7 +36,7 @@ public interface IFeatureSetterAspectAction {
 		/**
 		 * Return all the impacted features for a given request the array of int
 		 * represents the ids
-		 * 
+		 *
 		 * @param request
 		 * @return never null
 		 */
@@ -44,9 +44,10 @@ public interface IFeatureSetterAspectAction {
 				Request request) {
 			return getAllImpactedFeatures(request.getExtendedData());
 		}
-		
+
 		/**
 		 * Return all the impacted Features from a map given by a request
+		 *
 		 * @param map
 		 * @return the features impacted by an action
 		 */
@@ -67,9 +68,10 @@ public interface IFeatureSetterAspectAction {
 			}
 			return result;
 		}
-		
+
 		/**
 		 * Return all the impacted features in a {@link IEditCommandRequest} containing Pre and Post actions
+		 *
 		 * @param request
 		 * @return
 		 */
@@ -81,6 +83,7 @@ public interface IFeatureSetterAspectAction {
 		/**
 		 * Determine if the features in parameters are managed by Pre/Post
 		 * Action in the request
+		 *
 		 * @param request
 		 * @param features
 		 * @return true if they are ALL managed
@@ -89,10 +92,11 @@ public interface IFeatureSetterAspectAction {
 		{
 			return request != null && areFeaturesManaged(request.getExtendedData(), features);
 		}
-		
+
 		/**
 		 * Determine if the features in parameters are managed by Pre/Post
 		 * Action in the request
+		 *
 		 * @param request
 		 * @param features
 		 * @return true if they are ALL managed
@@ -101,7 +105,7 @@ public interface IFeatureSetterAspectAction {
 		{
 			return request != null && areFeaturesManaged(request.getParameters(), features);
 		}
-		
+
 		private static boolean areFeaturesManaged(Map map, EStructuralFeature... feature)
 		{
 			Set<EStructuralFeature> impacted = getAllImpactedFeatures(map);
@@ -109,12 +113,12 @@ public interface IFeatureSetterAspectAction {
 			{
 				if (!impacted.contains(f))
 				{
-					return false ;
+					return false;
 				}
 			}
-			return true ;
+			return true;
 		}
-		
+
 	}
 
 }

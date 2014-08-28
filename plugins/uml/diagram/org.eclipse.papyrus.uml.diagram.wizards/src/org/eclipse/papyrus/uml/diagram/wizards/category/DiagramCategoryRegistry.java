@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -73,11 +73,11 @@ public class DiagramCategoryRegistry extends ExtensionUtils {
 
 	/**
 	 * Gets the single instance of DiagramCategoryRegistry.
-	 * 
+	 *
 	 * @return single instance of DiagramCategoryRegistry
 	 */
 	public static DiagramCategoryRegistry getInstance() {
-		if(ourInstance == null) {
+		if (ourInstance == null) {
 			ourInstance = new DiagramCategoryRegistry();
 		}
 		return ourInstance;
@@ -85,11 +85,11 @@ public class DiagramCategoryRegistry extends ExtensionUtils {
 
 	/**
 	 * Gets the diagram categories.
-	 * 
+	 *
 	 * @return the diagram categories
 	 */
 	public List<DiagramCategoryDescriptor> getDiagramCategories() {
-		if(diagramCategories == null) {
+		if (diagramCategories == null) {
 			diagramCategories = buildDiagramCategories();
 		}
 		return new ArrayList<DiagramCategoryDescriptor>(diagramCategories.values());
@@ -101,7 +101,7 @@ public class DiagramCategoryRegistry extends ExtensionUtils {
 	 * @return the diagram category map
 	 */
 	public Map<String, DiagramCategoryDescriptor> getDiagramCategoryMap() {
-		if(diagramCategories == null) {
+		if (diagramCategories == null) {
 			diagramCategories = buildDiagramCategories();
 		}
 		return diagramCategories;
@@ -109,16 +109,16 @@ public class DiagramCategoryRegistry extends ExtensionUtils {
 
 	/**
 	 * Builds the diagram categories.
-	 * 
+	 *
 	 * @return the hash map
 	 */
 	public Map<String, DiagramCategoryDescriptor> buildDiagramCategories() {
 		Map<String, DiagramCategoryDescriptor> result = new HashMap<String, DiagramCategoryDescriptor>();
 
 		IExtensionPoint extensionPoint = Platform.getExtensionRegistry().getExtensionPoint(CATEGORY_EXTENSION_POINT_NAME);
-		for(IExtension extension : extensionPoint.getExtensions()) {
-			for(IConfigurationElement confElement : extension.getConfigurationElements()) {
-				if(CATEGORY_ELEMENT_NAME.equals(confElement.getName())) {
+		for (IExtension extension : extensionPoint.getExtensions()) {
+			for (IConfigurationElement confElement : extension.getConfigurationElements()) {
+				if (CATEGORY_ELEMENT_NAME.equals(confElement.getName())) {
 					DiagramCategoryDescriptor diagramCategoryDescriptor;
 					try {
 						diagramCategoryDescriptor = buildCategoryDescriptor(confElement);
@@ -135,17 +135,19 @@ public class DiagramCategoryRegistry extends ExtensionUtils {
 	/**
 	 * Builds the category descriptor.
 	 *
-	 * @param confElement the conf element
+	 * @param confElement
+	 *            the conf element
 	 * @return the diagram category descriptor
-	 * @throws BadClassNameException the bad class name exception
+	 * @throws BadClassNameException
+	 *             the bad class name exception
 	 */
 	protected DiagramCategoryDescriptor buildCategoryDescriptor(IConfigurationElement confElement) throws BadClassNameException {
-		Class<IModelCreationCommand> commandClazz = (Class<IModelCreationCommand>)parseClass(confElement, CATEGORY_CLASS, CATEGORY_ELEMENT_NAME);
+		Class<IModelCreationCommand> commandClazz = (Class<IModelCreationCommand>) parseClass(confElement, CATEGORY_CLASS, CATEGORY_ELEMENT_NAME);
 		DiagramCategoryDescriptor diagramCategoryDescriptor = new DiagramCategoryDescriptor(confElement.getAttribute(CATEGORY_ID), confElement.getAttribute(CATEGORY_LABEL), commandClazz);
 		diagramCategoryDescriptor.setDescription(confElement.getAttribute(CATEGORY_DESCRIPTION));
 		diagramCategoryDescriptor.setExtensionPrefix(confElement.getAttribute(CATEGORY_FILE_EXTENSION_PREFIX));
 		String iconPath = confElement.getAttribute(CATEGORY_ICON);
-		if(iconPath != null) {
+		if (iconPath != null) {
 			diagramCategoryDescriptor.setIcon(AbstractUIPlugin.imageDescriptorFromPlugin(confElement.getNamespaceIdentifier(), iconPath));
 		}
 		return diagramCategoryDescriptor;

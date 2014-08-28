@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,9 +44,9 @@ public class DIModel extends PlatformObject implements Adapter {
 		this.resource = resource;
 
 		// ensure that I am the only adapter
-		for(Iterator<Adapter> iter = resource.eAdapters().iterator(); iter.hasNext();) {
+		for (Iterator<Adapter> iter = resource.eAdapters().iterator(); iter.hasNext();) {
 
-			if(iter.next() instanceof DIModel) {
+			if (iter.next() instanceof DIModel) {
 				iter.remove();
 			}
 		}
@@ -58,9 +58,9 @@ public class DIModel extends PlatformObject implements Adapter {
 	}
 
 	public static DIModel getInstance(CDOResource resource, boolean create) {
-		DIModel result = (DIModel)EcoreUtil.getExistingAdapter(resource, DIModel.class);
+		DIModel result = (DIModel) EcoreUtil.getExistingAdapter(resource, DIModel.class);
 
-		if((result == null) && create) {
+		if ((result == null) && create) {
 			result = new DIModel(resource);
 		}
 
@@ -70,7 +70,7 @@ public class DIModel extends PlatformObject implements Adapter {
 	@Override
 	@SuppressWarnings("rawtypes")
 	public Object getAdapter(Class adapter) {
-		if((adapter == CDOResourceNode.class) || (adapter == CDOResource.class) || (adapter == CDOObject.class) || (adapter == EObject.class)) {
+		if ((adapter == CDOResourceNode.class) || (adapter == CDOResource.class) || (adapter == CDOObject.class) || (adapter == EObject.class)) {
 			return getResource();
 		}
 
@@ -89,22 +89,22 @@ public class DIModel extends PlatformObject implements Adapter {
 		List<CDOResource> result = Lists.newArrayListWithExpectedSize(3);
 
 		String name = getName();
-		if(name != null) {
+		if (name != null) {
 			Collection<? extends EObject> nodes;
 			CDOResourceFolder folder = getResource().getFolder();
-			if(folder != null) {
+			if (folder != null) {
 				nodes = folder.getNodes();
 			} else {
 				CDOResource root = getResource().cdoResource();
-				if((root != null) && root.isRoot()) {
+				if ((root != null) && root.isRoot()) {
 					nodes = root.getContents();
 				} else {
 					nodes = Collections.emptyList();
 				}
 			}
 
-			for(CDOResource next : Iterables.filter(nodes, CDOResource.class)) {
-				if(name.equals(next.getURI().trimFileExtension().lastSegment())) {
+			for (CDOResource next : Iterables.filter(nodes, CDOResource.class)) {
+				if (name.equals(next.getURI().trimFileExtension().lastSegment())) {
 
 					result.add(next);
 				}

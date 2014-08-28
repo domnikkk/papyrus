@@ -7,29 +7,29 @@ Export-Package: org.eclipse.papyrus.uml.search.ui.actions,
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.search;bundle-version="3.8.0",
- org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.core;bundle-version="1.0.1",
  org.eclipse.core.resources;bundle-version="3.8.1",
- org.eclipse.papyrus.editor;bundle-version="1.0.0",
- org.eclipse.papyrus.views.search;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.onefile;bundle-version="1.0.0",
+ org.eclipse.papyrus.editor;bundle-version="1.0.1",
+ org.eclipse.papyrus.views.search;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.onefile;bundle-version="1.0.1",
  org.eclipse.emf;bundle-version="2.6.0",
  org.eclipse.ui.ide;bundle-version="3.8.100",
- org.eclipse.papyrus.infra.emf;bundle-version="1.0.0",
- org.eclipse.papyrus.uml.tools;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.emf;bundle-version="1.0.1",
+ org.eclipse.papyrus.uml.tools;bundle-version="1.0.1",
  org.eclipse.uml2.uml;bundle-version="4.0.100",
- org.eclipse.papyrus.infra.services.viewersearch;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.services.openelement;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.core.log;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.services.viewersearch;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.services.openelement;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.0.1",
  org.eclipse.jface,
  org.eclipse.emf.transaction,
- org.eclipse.papyrus.infra.services.labelprovider;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.services.labelprovider;bundle-version="1.0.1",
  org.eclipse.ocl.examples.xtext.essentialocl;bundle-version="3.3.0",
  org.eclipse.ocl.examples.xtext.essentialocl.ui;bundle-version="3.3.0",
  org.eclipse.ocl.examples.xtext.console,
  org.eclipse.ltk.ui.refactoring;bundle-version="3.7.100"
 Bundle-Vendor: %vendorName
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-Activator: org.eclipse.papyrus.uml.search.ui.Activator

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
  * <!-- begin-user-doc -->
  * The <b>Resource Factory</b> associated with the package.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.util.OperatorsResourceImpl
  * @generated
  */
@@ -23,6 +24,7 @@ public class OperatorsResourceFactoryImpl extends ResourceFactoryImpl {
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public OperatorsResourceFactoryImpl() {
@@ -33,6 +35,7 @@ public class OperatorsResourceFactoryImpl extends ResourceFactoryImpl {
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -50,4 +53,4 @@ public class OperatorsResourceFactoryImpl extends ResourceFactoryImpl {
 		return result;
 	}
 
-} //OperatorsResourceFactoryImpl
+} // OperatorsResourceFactoryImpl

@@ -1,14 +1,14 @@
 /**
  *  Copyright (c) 2011 Atos.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Atos - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.sysml.edit.umllayer;
 
@@ -45,9 +45,9 @@ import org.eclipse.uml2.uml.UMLPackage;
  * new layer in order to have only one ItemProvider instead of one for each
  * EPackage. Moreover this ItemProvider will accept UML elements stereotypes by
  * SysML profile in order to display them as SysML elements
- * 
+ *
  * @author Arthur Daussy - arthur.daussy@atos.net
- * 
+ *
  */
 public class SysLMOverUMLItemProviderAdapterFactory extends AdapterFactoryImpl implements IChildCreationExtender, IRootAdapterFactory, ComposeableAdapterFactory {
 
@@ -59,7 +59,7 @@ public class SysLMOverUMLItemProviderAdapterFactory extends AdapterFactoryImpl i
 	/**
 	 * This helps manage the child creation extenders. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 */
 	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(SysmlEditPlugin.INSTANCE, UMLPackage.eNS_URI);
 
@@ -71,7 +71,7 @@ public class SysLMOverUMLItemProviderAdapterFactory extends AdapterFactoryImpl i
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
@@ -99,7 +99,7 @@ public class SysLMOverUMLItemProviderAdapterFactory extends AdapterFactoryImpl i
 		 * Initialize model package
 		 */
 		supportedTypes.add(IItemPropertySource.class);
-		if(modelPackage == null) {
+		if (modelPackage == null) {
 			modelPackage = UMLPackage.eINSTANCE;
 		}
 		/**
@@ -116,22 +116,22 @@ public class SysLMOverUMLItemProviderAdapterFactory extends AdapterFactoryImpl i
 	@Override
 	public Adapter adapt(Notifier target, Object type) {
 		Adapter result = null;
-		for(AdapterFactory adFac : getSysmlRegistryAdapterFactoryRegistry().getAdapterFactoriesForType((Object)target)) {
+		for (AdapterFactory adFac : getSysmlRegistryAdapterFactoryRegistry().getAdapterFactoriesForType(target)) {
 			result = adFac.adaptNew(target, type);
-			if(result != null) {
+			if (result != null) {
 				return result;
 			}
 		}
-		return (Adapter)getSysmlRegistryAdapterFactoryRegistry().getDefaultAdapterFactory().adapt(target, type);
+		return getSysmlRegistryAdapterFactoryRegistry().getDefaultAdapterFactory().adapt(target, type);
 	}
 
 	/**
 	 * Get the getSysmlRegistryAdapterFactoryRegistry
-	 * 
+	 *
 	 * @return
 	 */
 	private SysmlRegistryAdapterFactoryRegistry getSysmlRegistryAdapterFactoryRegistry() {
-		if(registery == null) {
+		if (registery == null) {
 			registery = SysmlRegistryAdapterFactoryRegistry.getSingleton();
 		}
 		return registery;
@@ -142,9 +142,9 @@ public class SysLMOverUMLItemProviderAdapterFactory extends AdapterFactoryImpl i
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if(isFactoryForType(type)) {
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if(!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -161,16 +161,16 @@ public class SysLMOverUMLItemProviderAdapterFactory extends AdapterFactoryImpl i
 
 	/**
 	 * Test if the EPackage correspond to UML
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
 	public boolean superIsFactoryForType(Object object) {
-		if(object == modelPackage) {
+		if (object == modelPackage) {
 			return true;
 		}
-		if(object instanceof EObject) {
-			return (((EObject)object).eClass().getEPackage() == modelPackage);
+		if (object instanceof EObject) {
+			return (((EObject) object).eClass().getEPackage() == modelPackage);
 		}
 		return false;
 	}
@@ -178,6 +178,7 @@ public class SysLMOverUMLItemProviderAdapterFactory extends AdapterFactoryImpl i
 	/**
 	 * {@link IChildCreationExtender}
 	 */
+	@Override
 	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
 	}
@@ -185,18 +186,22 @@ public class SysLMOverUMLItemProviderAdapterFactory extends AdapterFactoryImpl i
 	/**
 	 * {@link IChildCreationExtender}
 	 */
+	@Override
 	public ResourceLocator getResourceLocator() {
 		return childCreationExtenderManager;
 	}
 
+	@Override
 	public ItemProviderAdapter getItemProvider(EClass eClass) {
 		return umlItemProviderRegistery.get(eClass);
 	}
 
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return this;
 	}
 
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 	}
 }

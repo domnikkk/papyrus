@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,7 +55,7 @@ public class ActivityParameterNodeParser extends MessageFormatParser implements 
 	private static final String STATE_SEPARATOR = ", ";
 
 	public ActivityParameterNodeParser() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() });
 	}
 
 	public ActivityParameterNodeParser(EAttribute[] features) {
@@ -68,16 +68,16 @@ public class ActivityParameterNodeParser extends MessageFormatParser implements 
 
 	/**
 	 * Gets the e structural feature.
-	 * 
+	 *
 	 * @param notification
 	 * @return the structural feature
 	 */
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -86,6 +86,7 @@ public class ActivityParameterNodeParser extends MessageFormatParser implements 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		EStructuralFeature feature = getEStructuralFeature(event);
 		return isValidFeature(feature);
@@ -94,34 +95,35 @@ public class ActivityParameterNodeParser extends MessageFormatParser implements 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		String result = "";
 		ActivityParameterNode parameterNode = null;
 		Object adapter = element.getAdapter(EObject.class);
-		if(adapter instanceof ActivityParameterNode) {
-			parameterNode = (ActivityParameterNode)adapter;
+		if (adapter instanceof ActivityParameterNode) {
+			parameterNode = (ActivityParameterNode) adapter;
 			String name = parameterNode.getName();
 			result = String.format(UNTYPED_PARAMETER_FORMAT, name);
 			// manage type
-			if(parameterNode.getType() != null) {
+			if (parameterNode.getType() != null) {
 				String type = parameterNode.getType().getName();
 				result = String.format(TYPED_PARAMETER_FORMAT, name, type);
 			}
 			// manage states
 			StringBuffer stateLabel = new StringBuffer();
-			for(State state : parameterNode.getInStates()) {
+			for (State state : parameterNode.getInStates()) {
 				String stateName = state.getName();
-				if(stateName == null) {
+				if (stateName == null) {
 					stateName = "";
 				}
-				if(!"".equals(stateName)) {
-					if(stateLabel.length() > 0) {
+				if (!"".equals(stateName)) {
+					if (stateLabel.length() > 0) {
 						stateLabel.append(STATE_SEPARATOR);
 					}
 					stateLabel.append(stateName);
 				}
 			}
-			if(stateLabel.length() > 0) {
+			if (stateLabel.length() > 0) {
 				result += String.format(STATE_FORMAT, stateLabel.toString());
 			}
 		}
@@ -131,6 +133,7 @@ public class ActivityParameterNodeParser extends MessageFormatParser implements 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		EStructuralFeature feature = getEStructuralFeature(notification);
 		return isValidFeature(feature);
@@ -139,17 +142,18 @@ public class ActivityParameterNodeParser extends MessageFormatParser implements 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
 		ActivityParameterNode parameterNode = null;
-		if(element instanceof ActivityParameterNode) {
-			parameterNode = (ActivityParameterNode)element;
+		if (element instanceof ActivityParameterNode) {
+			parameterNode = (ActivityParameterNode) element;
 			semanticElementsBeingParsed.add(parameterNode);
-			if(parameterNode.getType() != null) {
+			if (parameterNode.getType() != null) {
 				semanticElementsBeingParsed.add(parameterNode.getType());
 			}
-			if(parameterNode.getInStates() != null && !parameterNode.getInStates().isEmpty()) {
+			if (parameterNode.getInStates() != null && !parameterNode.getInStates().isEmpty()) {
 				semanticElementsBeingParsed.addAll(parameterNode.getInStates());
 			}
 		}
@@ -159,9 +163,9 @@ public class ActivityParameterNodeParser extends MessageFormatParser implements 
 	/**
 	 * Determines if the given feature has to be taken into account in this
 	 * parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {

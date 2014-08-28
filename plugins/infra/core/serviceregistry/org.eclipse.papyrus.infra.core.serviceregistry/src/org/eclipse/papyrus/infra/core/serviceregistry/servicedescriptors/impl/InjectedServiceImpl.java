@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.AbstractServiceDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.InjectedService;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage;
@@ -20,7 +17,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl.InjectedServiceImpl#getService <em>Service</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl.InjectedServiceImpl#getService <em>Service</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,6 +28,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	 * The cached value of the '{@link #getService() <em>Service</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getService()
 	 * @generated
 	 * @ordered
@@ -40,6 +38,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected InjectedServiceImpl() {
@@ -49,6 +48,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -59,15 +59,18 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public AbstractServiceDesc getService() {
 		if (service != null && service.eIsProxy()) {
-			InternalEObject oldService = (InternalEObject)service;
-			service = (AbstractServiceDesc)eResolveProxy(oldService);
+			InternalEObject oldService = (InternalEObject) service;
+			service = (AbstractServiceDesc) eResolveProxy(oldService);
 			if (service != oldService) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServicedescriptorsPackage.INJECTED_SERVICE__SERVICE, oldService, service));
+				}
 			}
 		}
 		return service;
@@ -76,6 +79,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public AbstractServiceDesc basicGetService() {
@@ -85,26 +89,32 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setService(AbstractServiceDesc newService) {
 		AbstractServiceDesc oldService = service;
 		service = newService;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorsPackage.INJECTED_SERVICE__SERVICE, oldService, service));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicedescriptorsPackage.INJECTED_SERVICE__SERVICE:
-				if (resolve) return getService();
-				return basicGetService();
+		case ServicedescriptorsPackage.INJECTED_SERVICE__SERVICE:
+			if (resolve) {
+				return getService();
+			}
+			return basicGetService();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,14 +122,15 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicedescriptorsPackage.INJECTED_SERVICE__SERVICE:
-				setService((AbstractServiceDesc)newValue);
-				return;
+		case ServicedescriptorsPackage.INJECTED_SERVICE__SERVICE:
+			setService((AbstractServiceDesc) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -127,14 +138,15 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorsPackage.INJECTED_SERVICE__SERVICE:
-				setService((AbstractServiceDesc)null);
-				return;
+		case ServicedescriptorsPackage.INJECTED_SERVICE__SERVICE:
+			setService((AbstractServiceDesc) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -142,15 +154,16 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorsPackage.INJECTED_SERVICE__SERVICE:
-				return service != null;
+		case ServicedescriptorsPackage.INJECTED_SERVICE__SERVICE:
+			return service != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //InjectedServiceImpl
+} // InjectedServiceImpl

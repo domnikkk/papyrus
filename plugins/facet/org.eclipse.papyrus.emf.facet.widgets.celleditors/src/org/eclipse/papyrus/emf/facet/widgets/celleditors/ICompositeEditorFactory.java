@@ -16,11 +16,10 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 
 /**
- * The factory interface for creating some control
- * {@link AbstractCellEditorComposite} dedicated to the edition of one java
+ * The factory interface for creating some control {@link AbstractCellEditorComposite} dedicated to the edition of one java
  * type. The developer should register some factories using the dedicated
  * extension point "compositeEditors"
- * 
+ *
  * @param <T>
  *            the java type managed by this composite editor factory.
  */
@@ -33,10 +32,9 @@ public interface ICompositeEditorFactory<T> {
 	Class<T> getHandledType();
 
 	/**
-	 * Create a cell editor composite for a value of type &lt;T&gt;, as a subclass of
-	 * {@link AbstractCellEditorComposite}, which is a SWT {@link Composite} suited for use as an
+	 * Create a cell editor composite for a value of type &lt;T&gt;, as a subclass of {@link AbstractCellEditorComposite}, which is a SWT {@link Composite} suited for use as an
 	 * in-place editor for values of type &lt;T&gt;.
-	 * 
+	 *
 	 * @param parent
 	 *            the SWT parent of the new composite
 	 * @param style

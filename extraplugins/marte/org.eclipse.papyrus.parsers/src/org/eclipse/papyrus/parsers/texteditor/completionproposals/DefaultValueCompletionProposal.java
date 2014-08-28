@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,18 +41,18 @@ public class DefaultValueCompletionProposal implements ICompletionProposalComput
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.classdiagram.parsers.texteditor.completionproposals.ICompletionProposalComputer
 	 * #generateCompletionProposals(int, int, java.lang.String)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param selectionRange
 	 * @param prefix
 	 * @param documentOffset
-	 * 
+	 *
 	 * @return
 	 */
 	public List<ICompletionProposal> generateCompletionProposals(int documentOffset, int selectionRange, String prefix) {
@@ -62,8 +62,8 @@ public class DefaultValueCompletionProposal implements ICompletionProposalComput
 		ICompletionProposal proposal = null;
 
 		// adds all name (static strings...)
-		for(int i = 0; i < defaultValueStrings.length; i++) {
-			if(defaultValueStrings[i].startsWith(prefix)) {
+		for (int i = 0; i < defaultValueStrings.length; i++) {
+			if (defaultValueStrings[i].startsWith(prefix)) {
 				proposal = new CompletionProposal(defaultValueStrings[i], documentOffset - prefix.length(), prefix
 						.length()
 						+ selectionRange, defaultValueStrings[i].length(), null, defaultValueStringsName[i], null,

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,49 +49,49 @@ public class DataContextPropertiesLabelProvider extends StyledCellLabelProvider 
 	protected StyledString getStyledText(Object element, int columnIndex) {
 		String text = getText(element, columnIndex);
 
-		if(columnIndex == selectFieldsPage.fieldColumn) {
+		if (columnIndex == selectFieldsPage.fieldColumn) {
 			EObject eObject = EMFHelper.getEObject(element);
-			if(!(eObject instanceof Property)) {
+			if (!(eObject instanceof Property)) {
 				StyledString styledString = new StyledString(text, StyledString.QUALIFIER_STYLER);
 
 				return styledString;
 			}
 		}
 
-		//	if(columnIndex == selectFieldsPage.selectionSingleColumn) {
-		//		//Nothing
-		//	}
+		// if(columnIndex == selectFieldsPage.selectionSingleColumn) {
+		// //Nothing
+		// }
 		//
-		//	if(columnIndex == selectFieldsPage.selectionMultipleColumn) {
-		//		//Nothing
-		//	}
+		// if(columnIndex == selectFieldsPage.selectionMultipleColumn) {
+		// //Nothing
+		// }
 		//
-		//	if(columnIndex == selectFieldsPage.descriptionColumn) {
-		//		//Nothing
-		//	}
+		// if(columnIndex == selectFieldsPage.descriptionColumn) {
+		// //Nothing
+		// }
 
-		//Default
+		// Default
 		return new StyledString(text);
 	}
 
 	protected String getText(Object element, int columnIndex) {
-		if(columnIndex == selectFieldsPage.fieldColumn) {
+		if (columnIndex == selectFieldsPage.fieldColumn) {
 			return labelProvider.getText(element);
 		}
 
-		//	if(columnIndex == selectFieldsPage.selectionSingleColumn) {
-		//		//Nothing
-		//	}
+		// if(columnIndex == selectFieldsPage.selectionSingleColumn) {
+		// //Nothing
+		// }
 		//
-		//	if(columnIndex == selectFieldsPage.selectionMultipleColumn) {
-		//		//Nothing
-		//	}
+		// if(columnIndex == selectFieldsPage.selectionMultipleColumn) {
+		// //Nothing
+		// }
 
-		if(columnIndex == selectFieldsPage.descriptionColumn) {
+		if (columnIndex == selectFieldsPage.descriptionColumn) {
 			EObject eObject = EMFHelper.getEObject(element);
-			if(eObject instanceof Property) {
-				String description = ((Property)element).getDescription();
-				if(description != null) {
+			if (eObject instanceof Property) {
+				String description = ((Property) element).getDescription();
+				if (description != null) {
 					return description.replaceAll("[\n\r]+", "\\\\");
 				}
 
@@ -99,28 +99,28 @@ public class DataContextPropertiesLabelProvider extends StyledCellLabelProvider 
 			}
 		}
 
-		//Default
+		// Default
 		return "";
 	}
 
 	protected Image getImage(Object element, int columnIndex) {
-		if(columnIndex == selectFieldsPage.fieldColumn) {
+		if (columnIndex == selectFieldsPage.fieldColumn) {
 			return labelProvider.getImage(element);
 		}
 
-		//	if(columnIndex == selectFieldsPage.selectionSingleColumn) {
-		//		//Nothing
-		//	}
+		// if(columnIndex == selectFieldsPage.selectionSingleColumn) {
+		// //Nothing
+		// }
 		//
-		//	if(columnIndex == selectFieldsPage.selectionMultipleColumn) {
-		//		//Nothing
-		//	}
+		// if(columnIndex == selectFieldsPage.selectionMultipleColumn) {
+		// //Nothing
+		// }
 		//
-		//	if(columnIndex == selectFieldsPage.descriptionColumn) {
-		//		//Nothing
-		//	}
+		// if(columnIndex == selectFieldsPage.descriptionColumn) {
+		// //Nothing
+		// }
 
-		//Default
+		// Default
 		return null;
 	}
 

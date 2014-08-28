@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,14 +38,14 @@ import org.eclipse.uml2.uml.UMLFactory;
 /**
  * <pre>
  * This class is a custom creation command for Extension.
- * 
+ *
  * Difficulties for Extension creation:
- * - differences between semantic (ExtensionEnd) graphical (Stereotype) ends of Extension 
- * 
- * 
+ * - differences between semantic (ExtensionEnd) graphical (Stereotype) ends of Extension
+ *
+ *
  * The Extension source is declared as ExtensionEnd in the GMFGEN model to ensure correct validation,
  * but the real source is Stereotype.
- * 
+ *
  * </pre>
  */
 /**
@@ -64,13 +64,13 @@ public class CustomExtensionCreateCommand extends ExtensionCreateCommand {
 
 	/**
 	 * Constructor of Extension custom creation command
-	 * 
+	 *
 	 * @param req
-	 *        the creation request
+	 *            the creation request
 	 * @param source
-	 *        the extension source element
+	 *            the extension source element
 	 * @param target
-	 *        the extension target element
+	 *            the extension target element
 	 */
 	public CustomExtensionCreateCommand(CreateRelationshipRequest req, EObject source, EObject target) {
 		super(req, source, target);
@@ -78,42 +78,42 @@ public class CustomExtensionCreateCommand extends ExtensionCreateCommand {
 		this.target = target;
 		// Resolve graphical parents of source store in request as Parameters
 		// This parameter is added in request by (custom) GraphicalNodeEditPolicy
-		if(req.getParameter(CustomGraphicalNodeEditPolicy.CONNECTOR_CREATE_REQUEST_SOURCE_PARENT) instanceof Property) {
-			sourcePartWithPort = (Property)req.getParameter(CustomGraphicalNodeEditPolicy.CONNECTOR_CREATE_REQUEST_SOURCE_PARENT);
+		if (req.getParameter(CustomGraphicalNodeEditPolicy.CONNECTOR_CREATE_REQUEST_SOURCE_PARENT) instanceof Property) {
+			sourcePartWithPort = (Property) req.getParameter(CustomGraphicalNodeEditPolicy.CONNECTOR_CREATE_REQUEST_SOURCE_PARENT);
 		}
 	}
 
 
 	/**
 	 * Replaces the original getter which is cast as ExtensionEnd (expected end of Extension)
-	 * 
+	 *
 	 * @return the element that is graphically connected to Extension as source
 	 */
 	protected Stereotype _getSource() {
-		return (Stereotype)source;
+		return (Stereotype) source;
 	}
 
 	/**
 	 * <pre>
 	 * Checks if the Extension can be created or not.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
 	@Override
 	public boolean canExecute() {
-		if(source == null && target == null) {
+		if (source == null && target == null) {
 			return false;
 		}
-		if(source != null && false == source instanceof Stereotype) {
+		if (source != null && false == source instanceof Stereotype) {
 			return false;
 		}
-		if(target != null && false == target instanceof Class) {
+		if (target != null && false == target instanceof Class) {
 
 			return false;
 		}
 
-		if(_getSource() == null) {
+		if (_getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 
@@ -123,36 +123,36 @@ public class CustomExtensionCreateCommand extends ExtensionCreateCommand {
 	/**
 	 * <pre>
 	 * Creates the new Connector.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		//create the extension
+		// create the extension
 		Extension newExtension = UMLFactory.eINSTANCE.createExtension();
 
-		//create the endSource
+		// create the endSource
 		ExtensionEnd endSource = UMLFactory.eINSTANCE.createExtensionEnd();
 
-		if(_getSource() instanceof Stereotype) {
-			//initialize the endSource
+		if (_getSource() instanceof Stereotype) {
+			// initialize the endSource
 			endSource.setName(ExtensionHelper.EXTENSION.replaceFirst("E", "e") + _getSource().getName()); //$NON-NLS-1$ //$NON-NLS-2$
 			endSource.setType(_getSource());
 			endSource.setAggregation(AggregationKind.COMPOSITE_LITERAL);
 
-			//add the endSource to the extension
+			// add the endSource to the extension
 			newExtension.getOwnedEnds().add(endSource); // add extension end to extension
 
 
-			//create source_property
+			// create source_property
 			Property property = UMLFactory.eINSTANCE.createProperty();
 			property.setName(ExtensionHelper.BASE + getTarget().getName());
-			//	property.setIsDerived(true);
+			// property.setIsDerived(true);
 			property.setType(getTarget()); // set the type
 			property.setAssociation(newExtension); // Set the association link
 			property.setAggregation(AggregationKind.NONE_LITERAL);
@@ -173,10 +173,10 @@ public class CustomExtensionCreateCommand extends ExtensionCreateCommand {
 		doConfigure(newExtension, monitor, info);
 		getContainer().getPackagedElements().add(newExtension);
 
-		//set the extension name
+		// set the extension name
 		newExtension.setName(ExtensionHelper.getExtensionName(getContainer(), _getSource(), getTarget()));
 
-		((CreateElementRequest)getRequest()).setNewElement(newExtension);
+		((CreateElementRequest) getRequest()).setNewElement(newExtension);
 		return CommandResult.newOKCommandResult(newExtension);
 	}
 
@@ -185,15 +185,15 @@ public class CustomExtensionCreateCommand extends ExtensionCreateCommand {
 	 */
 	@Override
 	protected void doConfigure(Extension newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest)getRequest()).getElementType();
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest)getRequest()).getClientContext());
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
 		configureRequest.setParameter(CreateRelationshipRequest.SOURCE, _getSource());
 		configureRequest.setParameter(CreateRelationshipRequest.TARGET, getTarget());
 		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 
-		if(configureCommand != null && configureCommand.canExecute()) {
+		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
 	}

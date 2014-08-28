@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 402525
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.creation;
 
@@ -24,7 +24,7 @@ import org.eclipse.swt.widgets.Control;
 /**
  * A Factory for setting languages in a UML Expression editor.
  * The value is the name of the language
- * 
+ *
  * @author Camille Letavernier
  */
 public class ExpressionLanguageFactory extends StringEditionFactory {
@@ -34,9 +34,9 @@ public class ExpressionLanguageFactory extends StringEditionFactory {
 	private List<?> expressionList;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param currentExpressionList
 	 */
 	public ExpressionLanguageFactory(List<?> currentExpressionList) {
@@ -57,14 +57,14 @@ public class ExpressionLanguageFactory extends StringEditionFactory {
 		}
 
 		public String isValid(String newText) {
-			if(newText.equals(currentValue)) {
+			if (newText.equals(currentValue)) {
 				return null;
 			}
 
-			for(Object object : expressionList) {
-				if(object instanceof Expression) {
-					Expression expression = (Expression)object;
-					if(newText.equals(expression.getLanguage())) {
+			for (Object object : expressionList) {
+				if (object instanceof Expression) {
+					Expression expression = (Expression) object;
+					if (newText.equals(expression.getLanguage())) {
 						return Messages.ExpressionLanguageFactory_LanguageDuplicateError;
 					}
 				}
@@ -76,11 +76,11 @@ public class ExpressionLanguageFactory extends StringEditionFactory {
 
 	@Override
 	public Object edit(Control widget, Object currentValue) {
-		if(currentValue instanceof Expression) {
-			String valueToEdit = ((Expression)currentValue).getLanguage();
+		if (currentValue instanceof Expression) {
+			String valueToEdit = ((Expression) currentValue).getLanguage();
 			validator.setCurrentValue(valueToEdit);
-			String newValue = (String)super.edit(widget, valueToEdit);
-			((Expression)currentValue).setLanguage(newValue);
+			String newValue = (String) super.edit(widget, valueToEdit);
+			((Expression) currentValue).setLanguage(newValue);
 		}
 
 		return currentValue;
@@ -88,8 +88,8 @@ public class ExpressionLanguageFactory extends StringEditionFactory {
 
 	@Override
 	public Object createObject(Control widget, Object context) {
-		String languageName = (String)super.createObject(widget, context);
-		if(languageName == null) {
+		String languageName = (String) super.createObject(widget, context);
+		if (languageName == null) {
 			return null;
 		}
 		Expression expression = new Expression();

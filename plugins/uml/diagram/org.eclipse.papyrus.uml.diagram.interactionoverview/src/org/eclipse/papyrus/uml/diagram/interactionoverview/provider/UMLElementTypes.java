@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,7 +45,7 @@ public class UMLElementTypes {
 
 
 	private static ImageRegistry getImageRegistry() {
-		if(imageRegistry == null) {
+		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
 		}
 		return imageRegistry;
@@ -62,19 +62,19 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	private static ImageDescriptor getProvidedImageDescriptor(ENamedElement element) {
-		if(element instanceof EStructuralFeature) {
-			final EStructuralFeature feature = ((EStructuralFeature)element);
+		if (element instanceof EStructuralFeature) {
+			final EStructuralFeature feature = ((EStructuralFeature) element);
 			final EClass eContainingClass = feature.getEContainingClass();
 			final EClassifier eType = feature.getEType();
-			if(eContainingClass != null && !eContainingClass.isAbstract()) {
+			if (eContainingClass != null && !eContainingClass.isAbstract()) {
 				element = eContainingClass;
-			} else if(eType instanceof EClass && !((EClass)eType).isAbstract()) {
+			} else if (eType instanceof EClass && !((EClass) eType).isAbstract()) {
 				element = eType;
 			}
 		}
-		if(element instanceof EClass) {
-			final EClass eClass = (EClass)element;
-			if(!eClass.isAbstract()) {
+		if (element instanceof EClass) {
+			final EClass eClass = (EClass) element;
+			if (!eClass.isAbstract()) {
 				return UMLDiagramEditorPlugin.getInstance().getItemImageDescriptor(eClass.getEPackage().getEFactoryInstance().create(eClass));
 			}
 		}
@@ -88,9 +88,9 @@ public class UMLElementTypes {
 	public static ImageDescriptor getImageDescriptor(final ENamedElement element) {
 		final String key = getImageRegistryKey(element);
 		ImageDescriptor imageDescriptor = getImageRegistry().getDescriptor(key);
-		if(imageDescriptor == null) {
+		if (imageDescriptor == null) {
 			imageDescriptor = getProvidedImageDescriptor(element);
-			if(imageDescriptor == null) {
+			if (imageDescriptor == null) {
 				imageDescriptor = ImageDescriptor.getMissingImageDescriptor();
 			}
 			getImageRegistry().put(key, imageDescriptor);
@@ -104,9 +104,9 @@ public class UMLElementTypes {
 	public static Image getImage(final ENamedElement element) {
 		final String key = getImageRegistryKey(element);
 		Image image = getImageRegistry().get(key);
-		if(image == null) {
+		if (image == null) {
 			ImageDescriptor imageDescriptor = getProvidedImageDescriptor(element);
-			if(imageDescriptor == null) {
+			if (imageDescriptor == null) {
 				imageDescriptor = ImageDescriptor.getMissingImageDescriptor();
 			}
 			getImageRegistry().put(key, imageDescriptor);
@@ -120,7 +120,7 @@ public class UMLElementTypes {
 	 */
 	public static ImageDescriptor getImageDescriptor(final IAdaptable hint) {
 		final ENamedElement element = getElement(hint);
-		if(element == null) {
+		if (element == null) {
 			return null;
 		}
 		return getImageDescriptor(element);
@@ -131,7 +131,7 @@ public class UMLElementTypes {
 	 */
 	public static Image getImage(final IAdaptable hint) {
 		final ENamedElement element = getElement(hint);
-		if(element == null) {
+		if (element == null) {
 			return null;
 		}
 		return getImage(element);
@@ -139,12 +139,12 @@ public class UMLElementTypes {
 
 	/**
 	 * Returns 'type' of the ecore object associated with the hint.
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ENamedElement getElement(final IAdaptable hint) {
 		final Object type = hint.getAdapter(IElementType.class);
-		if(elements == null) {
+		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 			elements.put(CallBehaviorAction_5000, UMLPackage.eINSTANCE.getCallBehaviorAction());
 		}
@@ -162,7 +162,7 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static boolean isKnownElementType(final IElementType elementType) {
-		if(KNOWN_ELEMENT_TYPES == null) {
+		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(CallBehaviorAction_5000);
 		}
@@ -173,7 +173,7 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static IElementType getElementType(final int visualID) {
-		switch(visualID) {
+		switch (visualID) {
 		case CallBehaviorActionAsInteractionEditPart.VISUAL_ID:
 			return CallBehaviorAction_5000;
 

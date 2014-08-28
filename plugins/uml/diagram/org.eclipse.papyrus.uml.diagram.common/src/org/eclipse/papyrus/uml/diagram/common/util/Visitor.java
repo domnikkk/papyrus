@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,44 +25,44 @@ import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.PackageImport;
 
 /**
- * 
+ *
  * This class provides methods to get
  * <ul>
  * <li>all element of a given type</li>
  * <li>all imported namespaces</li>
  * </ul>
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class Visitor {
 
 	/**
-	 * 
+	 *
 	 * shall be overridden to restrict the possible {@link Type}
-	 * 
-	 * 
+	 *
+	 *
 	 * Returns the owned and imported {@link Type} imported namespace
-	 * 
+	 *
 	 * @param visited
-	 *        the visited namespace
+	 *            the visited namespace
 	 * @return the owned and imported {@link Type} imported namespace
 	 */
 	public static List<Element> getOwnedAndImportedElement(Namespace visited, Class<?> wantedClass) {
 		List<Element> visibleElements = new ArrayList<Element>();
 		// first retrieves imported properties
-		for(ElementImport eImport : visited.getElementImports()) {
-			if(wantedClass.isInstance(eImport)) {
+		for (ElementImport eImport : visited.getElementImports()) {
+			if (wantedClass.isInstance(eImport)) {
 				visibleElements.add(eImport.getImportedElement());
 			}
 		}
 		// then retrieves owned properties
-		for(NamedElement n : visited.getOwnedMembers()) {
-			if(wantedClass.isInstance(n)) {
+		for (NamedElement n : visited.getOwnedMembers()) {
+			if (wantedClass.isInstance(n)) {
 				visibleElements.add(n);
 			}
-			if(n instanceof Namespace) {
-				visibleElements.addAll(getOwnedAndImportedElement((Namespace)n, wantedClass));
+			if (n instanceof Namespace) {
+				visibleElements.addAll(getOwnedAndImportedElement((Namespace) n, wantedClass));
 			}
 		}
 
@@ -72,21 +72,22 @@ public class Visitor {
 
 	/**
 	 * Returns the imported {@link Namespace}
-	 * 
+	 *
 	 * @param visited
-	 *        the visited namespace
+	 *            the visited namespace
 	 * @return the imported {@link Namespace}
 	 */
 	public static List<Namespace> getImportedNamespaces(Namespace visited) {
 		List<Namespace> namespaces = new ArrayList<Namespace>();
 
 		// retrieves imported namespaces
-		for(PackageImport pImport : visited.getPackageImports()) {
+		for (PackageImport pImport : visited.getPackageImports()) {
 			namespaces.add(pImport.getImportedPackage());
 		}
-		for(ElementImport eImport : visited.getElementImports()) {
-			if(eImport.getImportedElement() instanceof Namespace)
-				namespaces.add((Namespace)eImport.getImportedElement());
+		for (ElementImport eImport : visited.getElementImports()) {
+			if (eImport.getImportedElement() instanceof Namespace) {
+				namespaces.add((Namespace) eImport.getImportedElement());
+			}
 		}
 
 		return namespaces;
@@ -94,9 +95,9 @@ public class Visitor {
 
 	/**
 	 * Returns the owned and imported {@link Namespace}
-	 * 
+	 *
 	 * @param visited
-	 *        the visited namespace
+	 *            the visited namespace
 	 * @return the owned and imported {@link Namespace}
 	 */
 	public static List<Namespace> getOwnedAndImportedNamespaces(Namespace visited) {
@@ -104,9 +105,10 @@ public class Visitor {
 		// first retrieves imported namespaces
 		namespaces.addAll(getImportedNamespaces(visited));
 		// then retrieves owned namespaces
-		for(NamedElement n : visited.getOwnedMembers()) {
-			if(n instanceof Namespace)
-				namespaces.add((Namespace)n);
+		for (NamedElement n : visited.getOwnedMembers()) {
+			if (n instanceof Namespace) {
+				namespaces.add((Namespace) n);
+			}
 		}
 		return namespaces;
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SW_Resour
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class SW_ResourceCoreXMLProcessor extends XMLProcessor {
@@ -32,17 +33,19 @@ public class SW_ResourceCoreXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SW_ResourceCoreXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		SW_ResourceCorePackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the SW_ResourceCoreResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -55,4 +58,4 @@ public class SW_ResourceCoreXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //SW_ResourceCoreXMLProcessor
+} // SW_ResourceCoreXMLProcessor

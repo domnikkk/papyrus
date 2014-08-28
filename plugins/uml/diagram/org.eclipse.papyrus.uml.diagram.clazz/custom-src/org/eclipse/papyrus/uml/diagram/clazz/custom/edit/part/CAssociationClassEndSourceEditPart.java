@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ public class CAssociationClassEndSourceEditPart extends AssociationClassRoleSour
 
 	/**
 	 * Instantiates a new association end source edit part.
-	 * 
+	 *
 	 * @param view
 	 *            the view
 	 */
@@ -38,13 +38,15 @@ public class CAssociationClassEndSourceEditPart extends AssociationClassRoleSour
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#resolveSemanticElement()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public EObject resolveSemanticElement() {
 		return AssociationEndTargetLabelHelper.getInstance().getUMLElement(this);
 	}
 
+	@Override
 	public Object getAdapter(@SuppressWarnings("rawtypes") Class key) {
 		if (key == IPropertySource.class) {
 			return resolveSemanticElement();

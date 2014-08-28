@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,14 +26,15 @@ import org.eclipse.uml2.uml.Property;
 /** get all ports from a classifier */
 public class GetAllPortsQuery implements IJavaModelQuery<Classifier, Collection<Property>> {
 
+	@Override
 	public Collection<Property> evaluate(final Classifier context, final ParameterValueList parameterValues) throws ModelQueryExecutionException {
 		ArrayList<Property> result = new ArrayList<Property>();
-		if(ProfileUtil.getAppliedProfile(context.getNearestPackage(), "RobotML") != null) {
+		if (ProfileUtil.getAppliedProfile(context.getNearestPackage(), "RobotML") != null) {
 			Iterator<Property> iter = context.getAllAttributes().iterator();
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 				Property currentElement = iter.next();
-				if(currentElement instanceof Port) {
-					result.add((Port)currentElement);
+				if (currentElement instanceof Port) {
+					result.add(currentElement);
 				}
 			}
 		}

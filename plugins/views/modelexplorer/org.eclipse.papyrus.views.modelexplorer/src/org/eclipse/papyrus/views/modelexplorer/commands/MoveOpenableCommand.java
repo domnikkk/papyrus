@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 Atos .
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,6 +27,7 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 
 /**
  * Command to move a diagram from a resource to another
+ *
  * @author arthur daussy
  *
  */
@@ -41,7 +42,7 @@ public class MoveOpenableCommand extends AbstractTransactionalCommand {
 	private EObject diagram;
 
 	public MoveOpenableCommand(TransactionalEditingDomain domain, String label, EObject diagram, Resource newContainingRessource) {
-		super(domain, label,null);
+		super(domain, label, null);
 		this.diagram = diagram;
 		this.newContainingRessource = newContainingRessource;
 		/*
@@ -54,11 +55,11 @@ public class MoveOpenableCommand extends AbstractTransactionalCommand {
 
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		
+
 		if (newContainingRessource != null) {
 			newContainingRessource.getContents().add(diagram);
 			return CommandResult.newOKCommandResult();
-		}else {
+		} else {
 			return CommandResult.newErrorCommandResult("The new resource to add the diagram is null");////$NON-NLS-1$
 		}
 	}

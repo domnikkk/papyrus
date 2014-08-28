@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,6 +18,7 @@ import java.util.Map;
 
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.papyrus.infra.widgets.toolbox.notification.INotification;
 import org.eclipse.papyrus.uml.diagram.common.groups.core.ui.ChooseChildrenNotificationConfigurator;
 import org.eclipse.papyrus.uml.diagram.common.groups.core.ui.ChooseParentNotificationConfigurator;
 import org.eclipse.papyrus.uml.diagram.common.groups.core.ui.NotificationConfigurator;
@@ -25,7 +26,7 @@ import org.eclipse.papyrus.uml.diagram.common.groups.core.ui.NotificationConfigu
 /**
  * The pending group notifications manager handles notifications which have not been resolved.
  * It ensures that notifications are reconducted in the next notification and that old notifications are deleted.
- * 
+ *
  * @author vhemery
  */
 public class PendingGroupNotificationsManager {
@@ -56,14 +57,14 @@ public class PendingGroupNotificationsManager {
 
 	/**
 	 * Access to an existing instance or create a new one for an active diagram
-	 * 
+	 *
 	 * @param diagramPart
-	 *        the active diagram part
+	 *            the active diagram part
 	 * @return the PendingGroupNotificationsManager instance for the active diagram or null if the diagram is unactive
 	 */
 	public static PendingGroupNotificationsManager getInstanceForDiagram(DiagramEditPart diagramPart) {
-		if(diagramPart.isActive()) {
-			if(!instances.containsKey(diagramPart)) {
+		if (diagramPart.isActive()) {
+			if (!instances.containsKey(diagramPart)) {
 				PendingGroupNotificationsManager instance = new PendingGroupNotificationsManager(diagramPart);
 				instances.put(diagramPart, instance);
 				return instance;
@@ -77,12 +78,12 @@ public class PendingGroupNotificationsManager {
 
 	/**
 	 * Delete the PendingGroupNotificationsManager instance corresponding to this diagram part
-	 * 
+	 *
 	 * @param diagramPart
-	 *        the diagram edit part
+	 *            the diagram edit part
 	 */
 	public static void removeInstanceForDiagram(DiagramEditPart diagramPart) {
-		if(instances.containsKey(diagramPart)) {
+		if (instances.containsKey(diagramPart)) {
 			instances.get(diagramPart).delete();
 		}
 	}
@@ -90,44 +91,44 @@ public class PendingGroupNotificationsManager {
 	/**
 	 * Update the map and delete the no longer needed notifications.
 	 * The old notification entries are added to the map, unneccessary entries are removed.
-	 * 
+	 *
 	 * @param movedPartsAndParents
-	 *        the map with moved parts and their parent groups
+	 *            the map with moved parts and their parent groups
 	 */
-	//	public void updateParentAssignementsMap(Map<IGraphicalEditPart, List<IGraphicalEditPart>> movedPartsAndParents) {
-	//		Set<IGraphicalEditPart> newlyMovedParts = movedPartsAndParents.keySet();
-	//		if(newlyMovedParts.size() > 0) {
-	//			// the parent assignment from the same diagram must be combined
-	//			// 1. report unchanged assignments in the new map
-	//			Map<INotification, ChooseContainingGroupCreator> copy = new HashMap<INotification, ChooseContainingGroupCreator>(chooseParentNotifications);
-	//			for(Entry<INotification, ChooseContainingGroupCreator> creatorEntry : copy.entrySet()) {
-	//				if(!creatorEntry.getKey().isDeleted()) {
-	//					// report
-	//					ChooseContainingGroupCreator creator = creatorEntry.getValue();
-	//					Map<IGraphicalEditPart, List<IGraphicalEditPart>> previousAssignement = creator.getElementsAndParents();
-	//					Set<IGraphicalEditPart> oldlyMovedParts = new HashSet<IGraphicalEditPart>(previousAssignement.keySet());
-	//					oldlyMovedParts.removeAll(newlyMovedParts);
-	//					for(IGraphicalEditPart partToReport : oldlyMovedParts) {
-	//						// do not report orphan parts
-	//						if(partToReport.getParent() != null) {
-	//							movedPartsAndParents.put(partToReport, previousAssignement.get(partToReport));
-	//						}
-	//					}
-	//				} else {
-	//					// remove deleted notification from manager
-	//					chooseParentNotifications.remove(creatorEntry.getKey());
-	//				}
-	//			}
-	//			// 2. delete old notification
-	//			removeChooseParentNotification();
-	//		}
-	//		// clean useless assignments with only one parent
-	//		for(Entry<IGraphicalEditPart, List<IGraphicalEditPart>> entry : new HashMap<IGraphicalEditPart, List<IGraphicalEditPart>>(movedPartsAndParents).entrySet()) {
-	//			if(entry.getValue().size() < 2) {
-	//				movedPartsAndParents.remove(entry.getKey());
-	//			}
-	//		}
-	//	}
+	// public void updateParentAssignementsMap(Map<IGraphicalEditPart, List<IGraphicalEditPart>> movedPartsAndParents) {
+	// Set<IGraphicalEditPart> newlyMovedParts = movedPartsAndParents.keySet();
+	// if(newlyMovedParts.size() > 0) {
+	// // the parent assignment from the same diagram must be combined
+	// // 1. report unchanged assignments in the new map
+	// Map<INotification, ChooseContainingGroupCreator> copy = new HashMap<INotification, ChooseContainingGroupCreator>(chooseParentNotifications);
+	// for(Entry<INotification, ChooseContainingGroupCreator> creatorEntry : copy.entrySet()) {
+	// if(!creatorEntry.getKey().isDeleted()) {
+	// // report
+	// ChooseContainingGroupCreator creator = creatorEntry.getValue();
+	// Map<IGraphicalEditPart, List<IGraphicalEditPart>> previousAssignement = creator.getElementsAndParents();
+	// Set<IGraphicalEditPart> oldlyMovedParts = new HashSet<IGraphicalEditPart>(previousAssignement.keySet());
+	// oldlyMovedParts.removeAll(newlyMovedParts);
+	// for(IGraphicalEditPart partToReport : oldlyMovedParts) {
+	// // do not report orphan parts
+	// if(partToReport.getParent() != null) {
+	// movedPartsAndParents.put(partToReport, previousAssignement.get(partToReport));
+	// }
+	// }
+	// } else {
+	// // remove deleted notification from manager
+	// chooseParentNotifications.remove(creatorEntry.getKey());
+	// }
+	// }
+	// // 2. delete old notification
+	// removeChooseParentNotification();
+	// }
+	// // clean useless assignments with only one parent
+	// for(Entry<IGraphicalEditPart, List<IGraphicalEditPart>> entry : new HashMap<IGraphicalEditPart, List<IGraphicalEditPart>>(movedPartsAndParents).entrySet()) {
+	// if(entry.getValue().size() < 2) {
+	// movedPartsAndParents.remove(entry.getKey());
+	// }
+	// }
+	// }
 
 	/**
 	 * Remove notifications to assign the graphical parent group
@@ -138,9 +139,9 @@ public class PendingGroupNotificationsManager {
 
 	/**
 	 * Remove notification to assign a group's graphical children
-	 * 
+	 *
 	 * @param parentGroup
-	 *        the group
+	 *            the group
 	 */
 	public void removeChooseChildrenNotification(IGraphicalEditPart parentGroup) {
 		chooseChildrenNotifications.remove(parentGroup);
@@ -150,28 +151,28 @@ public class PendingGroupNotificationsManager {
 
 	/**
 	 * Store a notification and its composite creator to let it be managed
-	 * 
+	 *
 	 * @param creator
-	 *        the composite creator
+	 *            the composite creator
 	 * @param notification
-	 *        the notification
+	 *            the notification
 	 */
 	public void storeNotification(NotificationConfigurator configurator) {
-		if(configurator instanceof ChooseParentNotificationConfigurator) {
-			chooseParentNotifications.put(((ChooseParentNotificationConfigurator)configurator).getMainEditPart(), configurator);
-		} else if(configurator instanceof ChooseChildrenNotificationConfigurator) {
-			chooseChildrenNotifications.put(((ChooseChildrenNotificationConfigurator)configurator).getMainEditPart(), configurator);
+		if (configurator instanceof ChooseParentNotificationConfigurator) {
+			chooseParentNotifications.put(((ChooseParentNotificationConfigurator) configurator).getMainEditPart(), configurator);
+		} else if (configurator instanceof ChooseChildrenNotificationConfigurator) {
+			chooseChildrenNotifications.put(((ChooseChildrenNotificationConfigurator) configurator).getMainEditPart(), configurator);
 		}
 	}
 
 	/**
 	 * Get the {@link INotification} for choosing the children of an edit and return null is there none
-	 * 
+	 *
 	 * @param parentEditPart
 	 * @return
 	 */
 	public NotificationConfigurator getChooseChildrenPendingNotification(IGraphicalEditPart parentEditPart) {
-		if(chooseChildrenNotifications.containsKey(parentEditPart)) {
+		if (chooseChildrenNotifications.containsKey(parentEditPart)) {
 			return chooseChildrenNotifications.get(parentEditPart);
 		} else {
 			return null;

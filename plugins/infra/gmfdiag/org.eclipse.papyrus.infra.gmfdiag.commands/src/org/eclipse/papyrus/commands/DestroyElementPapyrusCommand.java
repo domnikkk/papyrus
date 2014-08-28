@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
  * of using only the GMF one. This is useful because elements that don't have a
  * corresponding GMF type (like MOS in the sequence diagram) don't have the GMF
  * cross referencer registered after a reload.
- * 
+ *
  * @author mvelten
- * 
+ *
  */
 public class DestroyElementPapyrusCommand extends DestroyElementCommand {
 
@@ -44,32 +44,32 @@ public class DestroyElementPapyrusCommand extends DestroyElementCommand {
 
 	private List<Object> affectedFiles;
 
-	//Compute the affected files as late as possible, as this is an expensive operation (CrossReference)
+	// Compute the affected files as late as possible, as this is an expensive operation (CrossReference)
 	@Override
 	public List<Object> getAffectedFiles() {
-		if(affectedFiles == null) {
+		if (affectedFiles == null) {
 			affectedFiles = new ArrayList<Object>(super.getAffectedFiles());
-			affectedFiles.addAll(fileOfIncomingReferences(((DestroyElementRequest)getRequest()).getElementToDestroy()));
+			affectedFiles.addAll(fileOfIncomingReferences(((DestroyElementRequest) getRequest()).getElementToDestroy()));
 		}
 		return affectedFiles;
 	}
 
 	/**
 	 * Compute list of affected files affected by the tear donw methods
-	 * 
+	 *
 	 * @param destructee
 	 * @return
 	 */
 	protected List fileOfIncomingReferences(EObject destructee) {
-		if(destructee != null) {
+		if (destructee != null) {
 			Collection<Setting> usages = EMFHelper.getUsages(destructee);
 			List<Object> result = new ArrayList<Object>();
-			for(Setting setting : usages) {
-				if(setting.getEStructuralFeature() instanceof EReference) {
-					EReference eRef = (EReference)setting.getEStructuralFeature();
-					if(eRef.isChangeable() && (eRef.isDerived() == false) && (eRef.isContainment() == false) && (eRef.isContainer() == false)) {
+			for (Setting setting : usages) {
+				if (setting.getEStructuralFeature() instanceof EReference) {
+					EReference eRef = (EReference) setting.getEStructuralFeature();
+					if (eRef.isChangeable() && (eRef.isDerived() == false) && (eRef.isContainment() == false) && (eRef.isContainer() == false)) {
 						List files = getWorkspaceFiles(setting.getEObject());
-						if(files != null) {
+						if (files != null) {
 							result.addAll(files);
 						}
 					}
@@ -84,10 +84,10 @@ public class DestroyElementPapyrusCommand extends DestroyElementCommand {
 	protected void tearDownIncomingReferences(EObject destructee) {
 		Collection<Setting> usages = EMFHelper.getUsages(destructee);
 
-		for(Setting setting : usages) {
-			if(setting.getEStructuralFeature() instanceof EReference) {
-				EReference eRef = (EReference)setting.getEStructuralFeature();
-				if(eRef.isChangeable() && (eRef.isDerived() == false) && (eRef.isContainment() == false) && (eRef.isContainer() == false)) {
+		for (Setting setting : usages) {
+			if (setting.getEStructuralFeature() instanceof EReference) {
+				EReference eRef = (EReference) setting.getEStructuralFeature();
+				if (eRef.isChangeable() && (eRef.isDerived() == false) && (eRef.isContainment() == false) && (eRef.isContainer() == false)) {
 					EcoreUtil.remove(setting.getEObject(), eRef, destructee);
 				}
 			}

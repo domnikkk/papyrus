@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2009 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,30 +19,31 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * A specific parser to manage association end multiplicity.
- * 
+ *
  * @author tlandre
  */
 public class AssociationMultiplicityParser extends AbstractAssociationEndParser {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param memberEndIndex
-	 *        the position of the attribute end.
+	 *            the position of the attribute end.
 	 */
 	public AssociationMultiplicityParser(int memberEndIndex) {
 		super(memberEndIndex);
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		Property property = doAdapt(element);
 		StringBuffer displayedString = new StringBuffer();
-		if(property != null) {
-			if(property.getLower() == property.getUpper()) {
+		if (property != null) {
+			if (property.getLower() == property.getUpper()) {
 				displayedString.append(property.getLower());
 			} else {
 				displayedString.append(validValue(property.getLower()));
@@ -56,9 +57,9 @@ public class AssociationMultiplicityParser extends AbstractAssociationEndParser 
 	/**
 	 * Convert the int to a valid String to display. If the value is -1, then it
 	 * is converted to *
-	 * 
+	 *
 	 * @param val
-	 *        the int to convert to String
+	 *            the int to convert to String
 	 * @return the valid string
 	 */
 	private String validValue(int val) {
@@ -66,16 +67,18 @@ public class AssociationMultiplicityParser extends AbstractAssociationEndParser 
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 
 		boolean isAffectingEvent = false;
 
 		EStructuralFeature feature = getEStructuralFeature(event);
 
-		if(UMLPackage.eINSTANCE.getMultiplicityElement_Lower().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_UpperValue().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_Lower().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_LowerValue().equals(feature) || UMLPackage.eINSTANCE.getLiteralInteger_Value().equals(feature) || UMLPackage.eINSTANCE.getLiteralUnlimitedNatural_Value().equals(feature)) {
+		if (UMLPackage.eINSTANCE.getMultiplicityElement_Lower().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_UpperValue().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_Lower().equals(feature)
+				|| UMLPackage.eINSTANCE.getMultiplicityElement_LowerValue().equals(feature) || UMLPackage.eINSTANCE.getLiteralInteger_Value().equals(feature) || UMLPackage.eINSTANCE.getLiteralUnlimitedNatural_Value().equals(feature)) {
 			isAffectingEvent = true;
 		}
 		return isAffectingEvent;

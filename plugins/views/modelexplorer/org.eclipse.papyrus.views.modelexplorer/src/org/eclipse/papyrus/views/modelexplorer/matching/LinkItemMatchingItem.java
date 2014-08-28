@@ -35,9 +35,9 @@ public class LinkItemMatchingItem implements IMatchingItem {
 	}
 
 	public boolean matchingItemEquals(Object obj) {
-		if(obj instanceof EReferenceTreeElement) {
-			if(ref != null && parent != null) {
-				EReferenceTreeElement other = (EReferenceTreeElement)obj;
+		if (obj instanceof EReferenceTreeElement) {
+			if (ref != null && parent != null) {
+				EReferenceTreeElement other = (EReferenceTreeElement) obj;
 				EObject semanticParent = other.getParent().getEObject();
 				EReference otherReference = other.getEReference();
 				return parent == semanticParent && ref == otherReference;
@@ -47,7 +47,7 @@ public class LinkItemMatchingItem implements IMatchingItem {
 	}
 
 	public int matchingItemHashcode() {
-		if(ref != null && parent != null) {
+		if (ref != null && parent != null) {
 			return HashCodeCalculus.getHashCode(parent, ref);
 		}
 		return 0;

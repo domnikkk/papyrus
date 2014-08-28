@@ -3,9 +3,7 @@
 package org.eclipse.papyrus.customization.model.customizationplugin.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizableElement;
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage;
 
@@ -22,6 +20,7 @@ public abstract class CustomizableElementImpl extends EObjectImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected CustomizableElementImpl() {
@@ -31,6 +30,7 @@ public abstract class CustomizableElementImpl extends EObjectImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -38,4 +38,4 @@ public abstract class CustomizableElementImpl extends EObjectImpl implements Cus
 		return CustomizationPluginPackage.Literals.CUSTOMIZABLE_ELEMENT;
 	}
 
-} //CustomizableElementImpl
+} // CustomizableElementImpl

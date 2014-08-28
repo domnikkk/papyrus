@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -61,7 +61,7 @@ public class FillNewChild extends FillMenu implements FillElement {
 
 	protected NewEMFChildMenu menu;
 
-	//private static PolicyManager policyManager;
+	// private static PolicyManager policyManager;
 
 	private PolicyManager policyManager;
 
@@ -70,10 +70,10 @@ public class FillNewChild extends FillMenu implements FillElement {
 		this.menu = menu;
 		this.selectedEObject = EMFHelper.getEObject(selectedObject);
 
-		//TODO : Extract that to a static instance, and load with extension point
+		// TODO : Extract that to a static instance, and load with extension point
 		policyManager = new PolicyManager();
 		try {
-			NewchildConfiguration configuration = (NewchildConfiguration)EMFHelper.loadEMFModel(null, URI.createPlatformPluginURI("org.eclipse.papyrus.emf.facet.editor/newChild/NewchildConfiguration.xmi", true));
+			NewchildConfiguration configuration = (NewchildConfiguration) EMFHelper.loadEMFModel(null, URI.createPlatformPluginURI("org.eclipse.papyrus.emf.facet.editor/newChild/NewchildConfiguration.xmi", true));
 			policyManager.addConfiguration(configuration);
 		} catch (IOException ex) {
 			Activator.log.error(ex);
@@ -83,17 +83,17 @@ public class FillNewChild extends FillMenu implements FillElement {
 	@Override
 	public void fill(IMenuManager menuManager) {
 		EObject parentEObject = selectedEObject;
-		if(menu.getCreateIn() == CreateIn.PARENT) {
-			if(selectedEObject != null) {
+		if (menu.getCreateIn() == CreateIn.PARENT) {
+			if (selectedEObject != null) {
 				parentEObject = selectedEObject.eContainer();
 			}
 		}
 
-		if(parentEObject == null) {
+		if (parentEObject == null) {
 			return;
 		}
 
-		if(EMFHelper.isReadOnly(parentEObject)) {
+		if (EMFHelper.isReadOnly(parentEObject)) {
 			DisabledContributionItem disabledItem = new DisabledContributionItem(menu.getName(), Util.getImage(menu), menu.getId());
 			disabledItem.setMenuStyle(true);
 			MenuHelper.add(parentGroup, menuManager, disabledItem);
@@ -108,8 +108,8 @@ public class FillNewChild extends FillMenu implements FillElement {
 		Collections.sort(features, new Comparator<EStructuralFeature>() {
 
 			public int compare(EStructuralFeature feature1, EStructuralFeature feature2) {
-				if(feature1 == null) {
-					if(feature2 == null) {
+				if (feature1 == null) {
+					if (feature2 == null) {
 						return 0;
 					}
 					return -1;
@@ -120,40 +120,41 @@ public class FillNewChild extends FillMenu implements FillElement {
 
 		});
 
-		//		Collection<EPackage> allPackages = new HashSet<EPackage>();
+		// Collection<EPackage> allPackages = new HashSet<EPackage>();
 		//
-		//		allPackages.add(selectedEObject.eClass().getEPackage());
-		//		for(EClass eClass : selectedEObject.eClass().getEAllSuperTypes()) {
-		//			EPackage ePackage = eClass.getEPackage();
-		//			allPackages.add(ePackage);
-		//		}
+		// allPackages.add(selectedEObject.eClass().getEPackage());
+		// for(EClass eClass : selectedEObject.eClass().getEAllSuperTypes()) {
+		// EPackage ePackage = eClass.getEPackage();
+		// allPackages.add(ePackage);
+		// }
 
 		Collection<EPackage> allPackages = new HashSet<EPackage>();
-		Collection<EPackage> packagesToExclude = Arrays.asList(new EPackage[]{ EPackage.Registry.INSTANCE.getEPackage("http://www.eclipse.org/MoDisco/infra/facet/0.8.incubation"), EPackage.Registry.INSTANCE.getEPackage("http://www.eclipse.org/emf/facet/efacet/0.1.incubation"), EPackage.Registry.INSTANCE.getEPackage("http://www.eclipse.org/EmfFacet/infra/facet/0.8.incubation") });
+		Collection<EPackage> packagesToExclude = Arrays.asList(new EPackage[] { EPackage.Registry.INSTANCE.getEPackage("http://www.eclipse.org/MoDisco/infra/facet/0.8.incubation"),
+				EPackage.Registry.INSTANCE.getEPackage("http://www.eclipse.org/emf/facet/efacet/0.1.incubation"), EPackage.Registry.INSTANCE.getEPackage("http://www.eclipse.org/EmfFacet/infra/facet/0.8.incubation") });
 
-		//		Collection<EPackage> packagesToExclude = Collections.emptyList();
+		// Collection<EPackage> packagesToExclude = Collections.emptyList();
 
-		for(Object registeredPackage : EPackage.Registry.INSTANCE.values()) {
-			if(registeredPackage instanceof EPackage && !packagesToExclude.contains(registeredPackage)) {
-				EPackage ePackage = (EPackage)registeredPackage;
-				if(ePackage.getNsURI().contains("ocl")) {
+		for (Object registeredPackage : EPackage.Registry.INSTANCE.values()) {
+			if (registeredPackage instanceof EPackage && !packagesToExclude.contains(registeredPackage)) {
+				EPackage ePackage = (EPackage) registeredPackage;
+				if (ePackage.getNsURI().contains("ocl")) {
 					continue;
 				}
 				allPackages.add(ePackage);
 			}
 		}
 
-		for(EStructuralFeature feature : features) {
-			if(feature instanceof EReference && ((EReference)feature).isContainment()) {
-				EClass type = (EClass)feature.getEType();
+		for (EStructuralFeature feature : features) {
+			if (feature instanceof EReference && ((EReference) feature).isContainment()) {
+				EClass type = (EClass) feature.getEType();
 
 				List<EClass> eClasses = EMFHelper.getSubclassesOf(type, true, allPackages);
 
 				Collections.sort(eClasses, new Comparator<EClass>() {
 
 					public int compare(EClass class1, EClass class2) {
-						if(class1 == null) {
-							if(class2 == null) {
+						if (class1 == null) {
+							if (class2 == null) {
 								return 0;
 							}
 							return -1;
@@ -174,18 +175,18 @@ public class FillNewChild extends FillMenu implements FillElement {
 		PolicyMatcher matcher = new PolicyMatcher();
 		matcher.setPolicies(policySets);
 
-		if(layout == Layout.FLAT) {
-			for(EStructuralFeature feature : instantiableClasses.keySet()) {
-				for(EClass eClass : instantiableClasses.get(feature)) {
+		if (layout == Layout.FLAT) {
+			for (EStructuralFeature feature : instantiableClasses.keySet()) {
+				for (EClass eClass : instantiableClasses.get(feature)) {
 					addActionToMenu(matcher, createChildMenu, parentEObject, eClass, feature);
 				}
 			}
-		} else { //Hierarchical
-			for(EStructuralFeature feature : instantiableClasses.keySet()) {
+		} else { // Hierarchical
+			for (EStructuralFeature feature : instantiableClasses.keySet()) {
 				IMenuManager subMenu = new MenuManager(feature.getName());
 				createChildMenu.add(subMenu);
 
-				for(EClass eClass : instantiableClasses.get(feature)) {
+				for (EClass eClass : instantiableClasses.get(feature)) {
 					addActionToMenu(matcher, subMenu, parentEObject, eClass, feature);
 				}
 			}
@@ -193,19 +194,19 @@ public class FillNewChild extends FillMenu implements FillElement {
 
 		super.fill(menuManager);
 
-		for(MenuGroup group : menu.getGroups()) {
+		for (MenuGroup group : menu.getGroups()) {
 			FillerFactory.instance.getFiller(group, selectedObject).fill(createChildMenu);
 		}
 	}
 
 	protected void addActionToMenu(PolicyMatcher matcher, IMenuManager menu, EObject parentEObject, EClass eClass, EStructuralFeature feature) {
-		eClass = (EClass)eClass.getEPackage().getEClassifier(eClass.getName()); //Loads the EClass from the static resourceSet
+		eClass = (EClass) eClass.getEPackage().getEClassifier(eClass.getName()); // Loads the EClass from the static resourceSet
 
 		List<NewChildFillPolicy> matchingPolicies = matcher.getMatchingPolicies(eClass, feature);
-		if(matchingPolicies.isEmpty()) {
-			addCreateActionToMenu(menu, parentEObject, eClass, (EReference)feature);
+		if (matchingPolicies.isEmpty()) {
+			addCreateActionToMenu(menu, parentEObject, eClass, (EReference) feature);
 		} else {
-			for(NewChildFillPolicy policy : matchingPolicies) {
+			for (NewChildFillPolicy policy : matchingPolicies) {
 				policy.fill(menu, parentEObject, eClass, feature, parentEObject);
 			}
 		}
@@ -217,33 +218,33 @@ public class FillNewChild extends FillMenu implements FillElement {
 	}
 
 	private Layout getLayout(Map<EStructuralFeature, List<EClass>> instantiableClasses) {
-		//If the layout is not in automatic mode, return it
-		if(menu.getLayout() != Layout.AUTO) {
+		// If the layout is not in automatic mode, return it
+		if (menu.getLayout() != Layout.AUTO) {
 			return menu.getLayout();
 		}
 
 		//
-		//Automatic layout
+		// Automatic layout
 		//
 
-		//If there is 0 or 1 category, use a Flat Layout
-		if(instantiableClasses.size() < 2) {
+		// If there is 0 or 1 category, use a Flat Layout
+		if (instantiableClasses.size() < 2) {
 			return Layout.FLAT;
 		}
 
-		//If there are more than 5 categories, use a Hierarchic layout
-		if(instantiableClasses.size() > 5) {
+		// If there are more than 5 categories, use a Hierarchic layout
+		if (instantiableClasses.size() > 5) {
 			return Layout.HIERARCHICAL;
 		}
 
-		//If at least one category contains more than 5 elements, use a Hierarchic layout
-		for(List<EClass> eClasses : instantiableClasses.values()) {
-			if(eClasses.size() > 5) {
+		// If at least one category contains more than 5 elements, use a Hierarchic layout
+		for (List<EClass> eClasses : instantiableClasses.values()) {
+			if (eClasses.size() > 5) {
 				return Layout.HIERARCHICAL;
 			}
 		}
 
-		//The case is simple enough (Few classes and few categories); use a Flat layout
+		// The case is simple enough (Few classes and few categories); use a Flat layout
 		return Layout.FLAT;
 	}
 

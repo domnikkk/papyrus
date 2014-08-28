@@ -18,8 +18,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IAdapterManager;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
@@ -35,6 +33,7 @@ import org.eclipse.jface.resource.LocalResourceManager;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.editor.CoreMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
@@ -66,7 +65,7 @@ import com.google.common.collect.Collections2;
 
 /**
  * Utility class for User Interface interactions.
- * 
+ *
  * @author adaussy
  */
 public class UIUtils {
@@ -76,18 +75,18 @@ public class UIUtils {
 
 	/**
 	 * Save all dirty editor.
-	 * 
+	 *
 	 * @return the {@link IStatus}
 	 */
 	public static IStatus saveAllDirtyEditor() {
-		//Force save
+		// Force save
 		IEditorPart[] dirtyEditors = SaveAllDirtyEditorsDialog.getDirtyEditors();
-		if(dirtyEditors.length > 0) {
+		if (dirtyEditors.length > 0) {
 			SaveAllDirtyEditorsDialog dialog = new SaveAllDirtyEditorsDialog(Display.getDefault().getActiveShell());
-			if(dialog.open() == SaveAllDirtyEditorsDialog.CANCEL) {
+			if (dialog.open() == Window.CANCEL) {
 				return Status.CANCEL_STATUS;
 			} else {
-				for(int i = 0; i < dirtyEditors.length; i++) {
+				for (int i = 0; i < dirtyEditors.length; i++) {
 					IEditorPart editorI = dirtyEditors[i];
 					editorI.doSave(new NullProgressMonitor());
 				}
@@ -98,13 +97,13 @@ public class UIUtils {
 
 	/**
 	 * Gets the current resource set.
-	 * 
+	 *
 	 * @return the current resource set
 	 */
 	public static ResourceSet getCurrentResourceSet() {
 		IEditorPart editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if(editor instanceof CoreMultiDiagramEditor) {
-			CoreMultiDiagramEditor papyrusEditor = (CoreMultiDiagramEditor)editor;
+		if (editor instanceof CoreMultiDiagramEditor) {
+			CoreMultiDiagramEditor papyrusEditor = (CoreMultiDiagramEditor) editor;
 			return papyrusEditor.getEditingDomain().getResourceSet();
 		}
 		return null;
@@ -112,22 +111,23 @@ public class UIUtils {
 
 	/**
 	 * Return all the leaf from the semantic meta model
-	 * 
+	 *
 	 * @param uris
-	 *        Input set for the search of leaf
+	 *            Input set for the search of leaf
 	 * @param resourceSet
 	 * @return
 	 */
 	public static Collection<EObject> getLeafSemanticElement(Collection<IExtendedURI> uris, ResourceSet resourceSet) {
 		Collection<IExtendedURI> semanticURIS = Collections2.filter(uris, new Predicate<IExtendedURI>() {
 
+			@Override
 			public boolean apply(IExtendedURI arg0) {
 				return UmlModel.UML_FILE_EXTENSION.equals(arg0.getUri().fileExtension());
 			}
 		});
 		Collection<Collection<EObject>> eObjects = Collections2.transform(semanticURIS, CollabFunctionsFactory.getExtendedURIToEObjects(resourceSet));
 		Set<EObject> semanticElements = new HashSet<EObject>();
-		for(Collection<EObject> eos : eObjects) {
+		for (Collection<EObject> eos : eObjects) {
 			semanticElements.addAll(eos);
 		}
 		return ModelsUtil.getRoots(semanticElements);
@@ -135,12 +135,12 @@ public class UIUtils {
 
 	/**
 	 * Gets the first selection from the workbench
-	 * 
+	 *
 	 * @return the first selection
 	 */
 	public static EObject getFirstSelection() {
 		Collection<EObject> selection = getSelection();
-		if(selection.isEmpty()) {
+		if (selection.isEmpty()) {
 			return null;
 		}
 		return selection.iterator().next();
@@ -148,20 +148,20 @@ public class UIUtils {
 
 	/**
 	 * Gets the selection from the workbench
-	 * 
+	 *
 	 * @return the selection
 	 */
 	public static Collection<EObject> getSelection() {
 		ISelectionService selectionService = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService();
 		ISelection selection = selectionService.getSelection();
-		if(selection != null) {
-			if(selection instanceof IStructuredSelection) {
+		if (selection != null) {
+			if (selection instanceof IStructuredSelection) {
 				List<EObject> result = new ArrayList<EObject>();
-				Iterator<?> ite = ((IStructuredSelection)selection).iterator();
-				while(ite.hasNext()) {
+				Iterator<?> ite = ((IStructuredSelection) selection).iterator();
+				while (ite.hasNext()) {
 					Object next = ite.next();
 					EObject eObject = EMFHelper.getEObject(next);
-					if(eObject != null) {
+					if (eObject != null) {
 						result.add(eObject);
 					}
 				}
@@ -173,14 +173,14 @@ public class UIUtils {
 
 	/**
 	 * Refresh elements in model explorer view.
-	 * 
+	 *
 	 * @param uris
-	 *        {@link IExtendedURI} to refresh
+	 *            {@link IExtendedURI} to refresh
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 */
 	public static void refreshModelExplorer(Set<IExtendedURI> uris, ResourceSet resourceSet) {
-		for(Collection<EObject> objects : Collections2.transform(uris, CollabFunctionsFactory.getExtendedURIToEObjects(resourceSet))) {
+		for (Collection<EObject> objects : Collections2.transform(uris, CollabFunctionsFactory.getExtendedURIToEObjects(resourceSet))) {
 			RefreshHelper.refreshModelExplorer(objects);
 		}
 	}
@@ -192,6 +192,7 @@ public class UIUtils {
 	public static void reloadEditor() {
 		Display.getCurrent().syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				IWorkbench wb = PlatformUI.getWorkbench();
 				IWorkbenchPage page = wb.getActiveWorkbenchWindow().getActivePage();
@@ -210,27 +211,27 @@ public class UIUtils {
 
 	/**
 	 * Display an error dialog using a status.
-	 * 
+	 *
 	 * @param errorStatus
-	 *        the error status
+	 *            the error status
 	 * @param title
-	 *        the title
+	 *            the title
 	 */
 	public static void errorDialog(IStatus errorStatus, String title) {
-		ErrorDialog dialog = new ErrorDialog(Display.getDefault().getActiveShell(), title, errorStatus.getMessage(), errorStatus, Status.ERROR);
+		ErrorDialog dialog = new ErrorDialog(Display.getDefault().getActiveShell(), title, errorStatus.getMessage(), errorStatus, IStatus.ERROR);
 		dialog.open();
 		LogHelper.getInstance().logError(errorStatus.getMessage(), Activator.PLUGIN_ID, errorStatus.getException());
 	}
 
 	/**
 	 * Error dialog.
-	 * 
+	 *
 	 * @param throwable
-	 *        the throwable
+	 *            the throwable
 	 * @param title
-	 *        the title
+	 *            the title
 	 * @param message
-	 *        the message
+	 *            the message
 	 */
 	public static void errorDialog(Throwable throwable, String title, String message) {
 		errorDialog(CollabStatus.createErrorStatus(message, throwable), title);
@@ -242,25 +243,25 @@ public class UIUtils {
 	/**
 	 * Try to get a correct label from a Object
 	 * Handle: {@link EObject} {@link Resource}.
-	 * 
+	 *
 	 * @param object
-	 *        the object
+	 *            the object
 	 * @return the label
 	 */
 	public static String getLabel(Object object) {
-		if(object instanceof EObject) {
-			EObject eObject = (EObject)object;
-			IItemLabelProvider labelProvider = (IItemLabelProvider)adapterFactory.adapt(eObject, IItemLabelProvider.class);
+		if (object instanceof EObject) {
+			EObject eObject = (EObject) object;
+			IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(eObject, IItemLabelProvider.class);
 			return labelProvider.getText(eObject);
-		} else if(object instanceof Resource) {
-			return "Resouce " + ((Resource)object).getURI();
+		} else if (object instanceof Resource) {
+			return "Resouce " + ((Resource) object).getURI();
 		}
 		return object.toString();
 	}
 
 	public static ILabelProvider getModelExplorerLavelProvider() {
 		ILabelProvider labelProvider = getLabelProvider(ModelExplorerView.LABEL_PROVIDER_SERVICE_CONTEXT);
-		if(labelProvider == null) {
+		if (labelProvider == null) {
 			labelProvider = getLabelProvider();
 		}
 		return labelProvider;
@@ -276,7 +277,7 @@ public class UIUtils {
 			IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 			ServicesRegistry serviceRegistry = ServiceUtilsForWorkbenchPage.getInstance().getServiceRegistry(activePage);
 			LabelProviderService service = serviceRegistry.getService(LabelProviderService.class);
-			if(context != null) {
+			if (context != null) {
 				return service.getLabelProvider(context);
 			} else {
 				return service.getLabelProvider();

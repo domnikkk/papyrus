@@ -6,7 +6,7 @@ package org.eclipse.papyrus.infra.core.lifecycleevents;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.junit.Before;
 import org.junit.Test;
 

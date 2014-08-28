@@ -30,15 +30,15 @@ public class EmbeddingRule {
 	public static final String IEMBEDDING_RULE_ID = Activator.PLUGIN_ID + ".embeddingRule"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * @param iConfiguratorName
 	 * @param component
-	 *        containing composite (container)
+	 *            containing composite (container)
 	 * @param instance
 	 */
 	public static void embeddExtension(String embeddingRuleID, InstanceSpecification executorIS, InstanceSpecification instance, Port port) {
 		IEmbeddingRule iEmbeddingRule = getEmbeddingRule(embeddingRuleID);
-		if(iEmbeddingRule != null) {
+		if (iEmbeddingRule != null) {
 			iEmbeddingRule.embeddExtension(executorIS, instance, port);
 		}
 	}
@@ -46,14 +46,14 @@ public class EmbeddingRule {
 	private static IEmbeddingRule getEmbeddingRule(String embeddingRuleID) {
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
 		IConfigurationElement[] configElements = reg.getConfigurationElementsFor(IEMBEDDING_RULE_ID);
-		for(IConfigurationElement configElement : configElements) {
+		for (IConfigurationElement configElement : configElements) {
 			try {
 				final String iConfiguratorIDext = configElement.getAttribute("configuratorID"); //$NON-NLS-1$
-				if(iConfiguratorIDext.equals(embeddingRuleID)) {
+				if (iConfiguratorIDext.equals(embeddingRuleID)) {
 					// TODO: cache returned instance (avoid creating a new instance each time => more efficient, no need for static attributes)
 					final Object obj = configElement.createExecutableExtension("class"); //$NON-NLS-1$
-					if(obj instanceof IEmbeddingRule) {
-						return (IEmbeddingRule)obj;
+					if (obj instanceof IEmbeddingRule) {
+						return (IEmbeddingRule) obj;
 					}
 				}
 			} catch (CoreException exception) {

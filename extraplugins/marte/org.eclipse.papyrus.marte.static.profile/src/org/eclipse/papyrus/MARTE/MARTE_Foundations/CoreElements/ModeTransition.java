@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ import org.eclipse.uml2.uml.Transition;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.ModeTransition#getBase_Transition <em>Base Transition</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.ModeTransition#getBase_Transition <em>Base Transition</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,10 +37,10 @@ public interface ModeTransition extends EObject {
 	 * Returns the value of the '<em><b>Base Transition</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Transition</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Transition</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Transition</em>' reference.
 	 * @see #setBase_Transition(Transition)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.CoreElementsPackage#getModeTransition_Base_Transition()
@@ -53,7 +53,9 @@ public interface ModeTransition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.ModeTransition#getBase_Transition <em>Base Transition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Transition</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Transition</em>' reference.
 	 * @see #getBase_Transition()
 	 * @generated
 	 */

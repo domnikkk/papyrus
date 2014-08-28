@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,13 +28,13 @@ public class CommentContentProvider implements IHierarchicContentProvider {
 
 	public Object[] getElements(Object inputElement) {
 		// Roots
-		if(inputElement instanceof Collection) {
-			return ((Collection<?>)inputElement).toArray();
-		} else if(inputElement instanceof Object[]) {
-			return (Object[])inputElement;
+		if (inputElement instanceof Collection) {
+			return ((Collection<?>) inputElement).toArray();
+		} else if (inputElement instanceof Object[]) {
+			return (Object[]) inputElement;
 		}
 
-		return new Object[]{};
+		return new Object[] {};
 	}
 
 	public Object[] getChildren(Object parentElement) {
@@ -42,12 +42,12 @@ public class CommentContentProvider implements IHierarchicContentProvider {
 
 		List<Comment> result = new LinkedList<Comment>();
 
-		Iterator<Setting> it = UML2Util.getNonNavigableInverseReferences((Element)parentElement).iterator();
-		while(it.hasNext()) {
+		Iterator<Setting> it = UML2Util.getNonNavigableInverseReferences((Element) parentElement).iterator();
+		while (it.hasNext()) {
 			Setting setting = it.next();
-			if(setting.getEStructuralFeature() == UMLPackage.Literals.COMMENT__ANNOTATED_ELEMENT) {
-				if(setting.getEObject() instanceof Comment) {
-					Comment comment = (Comment)setting.getEObject();
+			if (setting.getEStructuralFeature() == UMLPackage.Literals.COMMENT__ANNOTATED_ELEMENT) {
+				if (setting.getEObject() instanceof Comment) {
+					Comment comment = (Comment) setting.getEObject();
 
 					// small bugfix...
 					// UML2Util.getNonNavigableInverseReferences returns more element than
@@ -55,15 +55,15 @@ public class CommentContentProvider implements IHierarchicContentProvider {
 					// so we must check if they are contained by the current resource or
 					// not...
 					boolean isProxy = false;
-					for(Element annotatedElement : comment.getAnnotatedElements()) {
-						if(annotatedElement.eResource() == null) {
+					for (Element annotatedElement : comment.getAnnotatedElements()) {
+						if (annotatedElement.eResource() == null) {
 							isProxy = true;
 						}
 					}
 
 					// this is the real element, not a ghost one. display it in the list
-					if(!isProxy) {
-						if(comment.getAnnotatedElements().contains(parentElement)) {
+					if (!isProxy) {
+						if (comment.getAnnotatedElements().contains(parentElement)) {
 							result.add(comment);
 						}
 					}
@@ -85,11 +85,11 @@ public class CommentContentProvider implements IHierarchicContentProvider {
 	}
 
 	public void dispose() {
-		//Nothing
+		// Nothing
 	}
 
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		//Nothing
+		// Nothing
 	}
 
 	public boolean isValidValue(Object element) {

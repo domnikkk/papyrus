@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,9 +48,9 @@ public class SettingsHelper {
 
 	/**
 	 * Instantiates a new settings utils.
-	 * 
+	 *
 	 * @param settings
-	 *        the settings
+	 *            the settings
 	 */
 	public SettingsHelper(IDialogSettings settings) {
 		mySettings = settings;
@@ -58,7 +58,7 @@ public class SettingsHelper {
 
 	/**
 	 * Gets the default diagram category.
-	 * 
+	 *
 	 * @return the default diagram category
 	 */
 	public String[] getDefaultDiagramCategories() {
@@ -68,7 +68,8 @@ public class SettingsHelper {
 	/**
 	 * Save default diagram category.
 	 *
-	 * @param categories the categories
+	 * @param categories
+	 *            the categories
 	 */
 	public void saveDefaultDiagramCategory(String[] categories) {
 		mySettings.put(LAST_SELECTED_CATEGORY, categories);
@@ -76,19 +77,19 @@ public class SettingsHelper {
 
 	/**
 	 * Gets the default diagram kinds.
-	 * 
+	 *
 	 * @param category
-	 *        the category
+	 *            the category
 	 * @return the default diagram kinds
 	 */
 	public List<String> getDefaultDiagramKinds(String category) {
 		String csl = mySettings.get(getKeyForDiagramKind(category));
-		if(csl == null || csl == "") { //$NON-NLS-1$
+		if (csl == null || csl == "") { //$NON-NLS-1$
 			return Collections.emptyList();
 		}
 		List<String> result = new ArrayList<String>();
 		StringTokenizer tokenizer = new StringTokenizer(csl, DIAGRAM_KIND_SEPARATOR);
-		while(tokenizer.hasMoreTokens()) {
+		while (tokenizer.hasMoreTokens()) {
 			result.add(tokenizer.nextToken().trim());
 		}
 		return result;
@@ -96,15 +97,15 @@ public class SettingsHelper {
 
 	/**
 	 * Save default diagram kinds.
-	 * 
+	 *
 	 * @param category
-	 *        the category
+	 *            the category
 	 * @param kinds
-	 *        the kinds
+	 *            the kinds
 	 */
 	public void saveDefaultDiagramKinds(String category, List<String> kinds) {
 		String value = ""; //$NON-NLS-1$
-		for(String kind : kinds) {
+		for (String kind : kinds) {
 			value += kind;
 			value += DIAGRAM_KIND_SEPARATOR;
 		}
@@ -113,19 +114,19 @@ public class SettingsHelper {
 
 	/**
 	 * Gets the default templates.
-	 * 
+	 *
 	 * @param category
-	 *        the category
+	 *            the category
 	 * @return the default templates
 	 */
 	public List<String> getDefaultTemplates(String category) {
 		String csl = mySettings.get(getKeyForTemplate(category));
-		if(csl == null || csl == "") { //$NON-NLS-1$
+		if (csl == null || csl == "") { //$NON-NLS-1$
 			return Collections.emptyList();
 		}
 		List<String> result = new ArrayList<String>();
 		StringTokenizer tokenizer = new StringTokenizer(csl, TEMPLATE_SEPARATOR);
-		while(tokenizer.hasMoreTokens()) {
+		while (tokenizer.hasMoreTokens()) {
 			result.add(tokenizer.nextToken().trim());
 		}
 		return result;
@@ -133,15 +134,15 @@ public class SettingsHelper {
 
 	/**
 	 * Save default templates.
-	 * 
+	 *
 	 * @param category
-	 *        the category
+	 *            the category
 	 * @param templates
-	 *        the templates
+	 *            the templates
 	 */
 	public void saveDefaultTemplates(String category, List<String> templates) {
 		String value = ""; //$NON-NLS-1$
-		for(String template : templates) {
+		for (String template : templates) {
 			value += template;
 			value += TEMPLATE_SEPARATOR;
 		}
@@ -150,9 +151,9 @@ public class SettingsHelper {
 
 	/**
 	 * Save remember current selection.
-	 * 
+	 *
 	 * @param remember
-	 *        the remember
+	 *            the remember
 	 */
 	public void saveRememberCurrentSelection(boolean remember) {
 		mySettings.put(SETTINGS_KEY_REMEMBER_CURRENT_SELECTION, remember);
@@ -160,9 +161,9 @@ public class SettingsHelper {
 
 	/**
 	 * Remember current selection.
-	 * 
+	 *
 	 * @param settings
-	 *        the settings
+	 *            the settings
 	 * @return true, if successful
 	 */
 	public boolean rememberCurrentSelection(IDialogSettings settings) {
@@ -172,7 +173,8 @@ public class SettingsHelper {
 	/**
 	 * Gets the key for diagram kind.
 	 *
-	 * @param category the category
+	 * @param category
+	 *            the category
 	 * @return the key for diagram kind
 	 */
 	private String getKeyForDiagramKind(String category) {
@@ -182,7 +184,8 @@ public class SettingsHelper {
 	/**
 	 * Gets the key for template.
 	 *
-	 * @param category the category
+	 * @param category
+	 *            the category
 	 * @return the key for template
 	 */
 	private String getKeyForTemplate(String category) {

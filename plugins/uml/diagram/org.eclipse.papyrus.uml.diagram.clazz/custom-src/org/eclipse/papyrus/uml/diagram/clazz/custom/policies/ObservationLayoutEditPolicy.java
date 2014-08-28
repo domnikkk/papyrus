@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,6 +23,7 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DurationObservationNameEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DurationObservationStereotypeLabelEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.TimeObservationEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.TimeObservationNameEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.TimeObservationStereotypeLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
@@ -35,9 +36,10 @@ import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
  */
 public class ObservationLayoutEditPolicy extends LayoutEditPolicy {
 
+	@Override
 	protected EditPolicy createChildEditPolicy(EditPart child) {
-		View childView = (View)child.getModel();
-		switch(UMLVisualIDRegistry.getVisualID(childView)) {
+		View childView = (View) child.getModel();
+		switch (UMLVisualIDRegistry.getVisualID(childView)) {
 		case DurationObservationNameEditPart.VISUAL_ID:
 		case DurationObservationStereotypeLabelEditPart.VISUAL_ID:
 		case TimeObservationNameEditPart.VISUAL_ID:
@@ -45,16 +47,18 @@ public class ObservationLayoutEditPolicy extends LayoutEditPolicy {
 			return new ExternalLabelPrimaryDragRoleEditPolicy();
 		}
 		EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if(result == null) {
+		if (result == null) {
 			result = new NonResizableEditPolicy();
 		}
 		return result;
 	}
 
+	@Override
 	protected Command getMoveChildrenCommand(Request request) {
 		return null;
 	}
 
+	@Override
 	protected Command getCreateCommand(CreateRequest request) {
 		return null;
 	}

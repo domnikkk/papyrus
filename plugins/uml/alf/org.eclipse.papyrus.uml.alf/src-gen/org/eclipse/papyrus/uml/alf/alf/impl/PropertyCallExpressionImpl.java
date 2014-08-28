@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.Expression;
 import org.eclipse.papyrus.uml.alf.alf.PropertyCallExpression;
@@ -112,8 +109,9 @@ public class PropertyCallExpressionImpl extends SuffixExpressionImpl implements 
   {
     String oldPropertyName = propertyName;
     propertyName = newPropertyName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.PROPERTY_CALL_EXPRESSION__PROPERTY_NAME, oldPropertyName, propertyName));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.PROPERTY_CALL_EXPRESSION__PROPERTY_NAME, oldPropertyName, propertyName));
+	}
   }
 
   /**
@@ -138,7 +136,11 @@ public class PropertyCallExpressionImpl extends SuffixExpressionImpl implements 
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.PROPERTY_CALL_EXPRESSION__INDEX, oldIndex, newIndex);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -153,15 +155,20 @@ public class PropertyCallExpressionImpl extends SuffixExpressionImpl implements 
     if (newIndex != index)
     {
       NotificationChain msgs = null;
-      if (index != null)
-        msgs = ((InternalEObject)index).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PROPERTY_CALL_EXPRESSION__INDEX, null, msgs);
-      if (newIndex != null)
-        msgs = ((InternalEObject)newIndex).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PROPERTY_CALL_EXPRESSION__INDEX, null, msgs);
+      if (index != null) {
+		msgs = ((InternalEObject)index).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PROPERTY_CALL_EXPRESSION__INDEX, null, msgs);
+	}
+      if (newIndex != null) {
+		msgs = ((InternalEObject)newIndex).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PROPERTY_CALL_EXPRESSION__INDEX, null, msgs);
+	}
       msgs = basicSetIndex(newIndex, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.PROPERTY_CALL_EXPRESSION__INDEX, newIndex, newIndex));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.PROPERTY_CALL_EXPRESSION__INDEX, newIndex, newIndex));
+	}
   }
 
   /**
@@ -186,7 +193,11 @@ public class PropertyCallExpressionImpl extends SuffixExpressionImpl implements 
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.PROPERTY_CALL_EXPRESSION__SUFFIX, oldSuffix, newSuffix);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -201,15 +212,20 @@ public class PropertyCallExpressionImpl extends SuffixExpressionImpl implements 
     if (newSuffix != suffix)
     {
       NotificationChain msgs = null;
-      if (suffix != null)
-        msgs = ((InternalEObject)suffix).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PROPERTY_CALL_EXPRESSION__SUFFIX, null, msgs);
-      if (newSuffix != null)
-        msgs = ((InternalEObject)newSuffix).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PROPERTY_CALL_EXPRESSION__SUFFIX, null, msgs);
+      if (suffix != null) {
+		msgs = ((InternalEObject)suffix).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PROPERTY_CALL_EXPRESSION__SUFFIX, null, msgs);
+	}
+      if (newSuffix != null) {
+		msgs = ((InternalEObject)newSuffix).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.PROPERTY_CALL_EXPRESSION__SUFFIX, null, msgs);
+	}
       msgs = basicSetSuffix(newSuffix, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.PROPERTY_CALL_EXPRESSION__SUFFIX, newSuffix, newSuffix));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.PROPERTY_CALL_EXPRESSION__SUFFIX, newSuffix, newSuffix));
+	}
   }
 
   /**
@@ -324,7 +340,9 @@ public class PropertyCallExpressionImpl extends SuffixExpressionImpl implements 
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (propertyName: ");

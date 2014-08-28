@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class CustomConstraintCreateCommand extends ConstraintCreateCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -41,19 +41,20 @@ public class CustomConstraintCreateCommand extends ConstraintCreateCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomConstraintCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req, diagram);
 	}
 
+	@Override
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest)getRequest()).getContainer();
-		if(container instanceof View) {
-			container = ((View)container).getElement();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
+		if (container instanceof View) {
+			container = ((View) container).getElement();
 		}
-		if(container != null) {
+		if (container != null) {
 			return getNamespace(container);
 		}
 		return getNamespace(eObject);
@@ -68,11 +69,11 @@ public class CustomConstraintCreateCommand extends ConstraintCreateCommand {
 	}
 
 	protected Namespace getNamespace(EObject element) {
-		if(element instanceof Namespace) {
-			return (Namespace)element;
+		if (element instanceof Namespace) {
+			return (Namespace) element;
 		}
-		if(element instanceof Lifeline) {
-			return ((Lifeline)element).getInteraction();
+		if (element instanceof Lifeline) {
+			return ((Lifeline) element).getInteraction();
 		}
 		return null;
 	}

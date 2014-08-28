@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -46,12 +46,12 @@ public class ActorShapeProvider extends AbstractShapeProvider {
 	 */
 	@Override
 	public List<RenderedImage> getShapes(EObject view) {
-		if(providesShapes(view)) {
+		if (providesShapes(view)) {
 			List<SVGDocument> documents = getSVGDocument(view);
 
-			if(documents != null) {
+			if (documents != null) {
 				List<RenderedImage> result = new LinkedList<RenderedImage>();
-				for(SVGDocument document : documents) {
+				for (SVGDocument document : documents) {
 					try {
 						result.add(renderSVGDocument(view, document));
 					} catch (IOException ex) {
@@ -70,13 +70,13 @@ public class ActorShapeProvider extends AbstractShapeProvider {
 	 */
 	@Override
 	public boolean providesShapes(EObject view) {
-		if(!(view instanceof View)) {
+		if (!(view instanceof View)) {
 			return false;
 		}
 
-		EObject element = ((View)view).getElement();
+		EObject element = ((View) view).getElement();
 
-		if(element instanceof Actor || (element instanceof TypedElement && ((TypedElement)element).getType() instanceof Actor)) {
+		if (element instanceof Actor || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof Actor)) {
 			return true;
 		}
 		return false;
@@ -88,7 +88,7 @@ public class ActorShapeProvider extends AbstractShapeProvider {
 	@Override
 	public ProviderNotificationManager createProviderNotificationManager(DiagramEventBroker diagramEventBroker, EObject view, NotificationListener listener) {
 		// retrieve semantic element from the view and add a notification listener on the Type feature if the semantic element is a TypedElement
-		if(view == null || !(view instanceof View)) {
+		if (view == null || !(view instanceof View)) {
 			return null;
 		}
 
@@ -103,13 +103,13 @@ public class ActorShapeProvider extends AbstractShapeProvider {
 
 		/**
 		 * Creates a new ActorShapeProviderNotificationManager.
-		 * 
+		 *
 		 * @param diagramEventBroker
-		 *        event broker specific to the diargam displaying the shapes.
+		 *            event broker specific to the diargam displaying the shapes.
 		 * @param view
-		 *        the view from which all elements to listen will be computed.
+		 *            the view from which all elements to listen will be computed.
 		 * @param listener
-		 *        the listener to which notifications will be forwarded.
+		 *            the listener to which notifications will be forwarded.
 		 */
 		public ActorShapeProviderNotificationManager(DiagramEventBroker diagramEventBroker, EObject view, NotificationListener listener) {
 			super(diagramEventBroker, view, listener);
@@ -120,12 +120,12 @@ public class ActorShapeProvider extends AbstractShapeProvider {
 		 */
 		@Override
 		protected void registerListeners() {
-			if(view == null || !(view instanceof View)) {
+			if (view == null || !(view instanceof View)) {
 				return;
 			}
 			Object semanticElement = BusinessModelResolver.getInstance().getBusinessModel(view);
-			if(semanticElement instanceof Element) {
-				diagramEventBroker.addNotificationListener((Element)semanticElement, this);
+			if (semanticElement instanceof Element) {
+				diagramEventBroker.addNotificationListener((Element) semanticElement, this);
 			}
 		}
 
@@ -134,12 +134,12 @@ public class ActorShapeProvider extends AbstractShapeProvider {
 		 */
 		@Override
 		public void dispose() {
-			if(view == null || !(view instanceof View)) {
+			if (view == null || !(view instanceof View)) {
 				return;
 			}
 			Object semanticElement = BusinessModelResolver.getInstance().getBusinessModel(view);
-			if(semanticElement instanceof Element) {
-				diagramEventBroker.removeNotificationListener((Element)semanticElement, this);
+			if (semanticElement instanceof Element) {
+				diagramEventBroker.removeNotificationListener((Element) semanticElement, this);
 			}
 			super.dispose();
 		}
@@ -149,10 +149,10 @@ public class ActorShapeProvider extends AbstractShapeProvider {
 		 */
 		@Override
 		public void notifyChanged(Notification notification) {
-			if(listener == null) {
+			if (listener == null) {
 				return;
 			}
-			if(UMLPackage.eINSTANCE.getTypedElement_Type().equals(notification.getFeature())) {
+			if (UMLPackage.eINSTANCE.getTypedElement_Type().equals(notification.getFeature())) {
 				listener.notifyChanged(notification);
 			}
 		}
@@ -163,11 +163,11 @@ public class ActorShapeProvider extends AbstractShapeProvider {
 	 */
 	@Override
 	public List<SVGDocument> getSVGDocument(EObject view) {
-		if(providesShapes(view)) {
+		if (providesShapes(view)) {
 			URI uri = URI.createPlatformPluginURI(org.eclipse.papyrus.uml.diagram.common.Activator.ID + "/icons/symbols/actor.svg", true);
 			String path = uri.toString();
 			SVGDocument document = getSVGDocument(path);
-			if(document == null) {
+			if (document == null) {
 				return null;
 			}
 			return Arrays.asList(getSVGDocument(path));

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,7 @@ public class MultiReferenceEditorWithPropertyView extends AbstractListEditor imp
 	public MultiReferenceEditorWithPropertyView(Composite parent, int style) {
 		super(parent, style);
 		// parent.setBackground(getDisplay().getSystemColor(SWT.COLOR_RED));
-		((GridLayout)getLayout()).numColumns++;
+		((GridLayout) getLayout()).numColumns++;
 
 		multiReferenceEditor = createMultipleReferenceEditor(style);
 		multiReferenceEditor.addSelectionChangedListener(this);
@@ -55,11 +55,11 @@ public class MultiReferenceEditorWithPropertyView extends AbstractListEditor imp
 
 	/**
 	 * Creates the multi reference editor.
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 * @return the multi reference editor.
 	 */
 	protected MultipleReferenceEditor createMultipleReferenceEditor(int style) {
@@ -113,12 +113,12 @@ public class MultiReferenceEditorWithPropertyView extends AbstractListEditor imp
 	public void setModelObservable(IObservableList modelObservable) {
 		multiReferenceEditor.setModelObservable(modelObservable);
 
-		//If the properties view of the first element contains a recursive view, we may have a StackOverFlow here.
-		//Do not force the initial selection.
+		// If the properties view of the first element contains a recursive view, we may have a StackOverFlow here.
+		// Do not force the initial selection.
 
-		//		if(!modelObservable.isEmpty()) {
-		//			multiReferenceEditor.getViewer().setSelection(new StructuredSelection(modelObservable.get(0)));
-		//		}
+		// if(!modelObservable.isEmpty()) {
+		// multiReferenceEditor.getViewer().setSelection(new StructuredSelection(modelObservable.get(0)));
+		// }
 	}
 
 	@Override
@@ -163,6 +163,6 @@ public class MultiReferenceEditorWithPropertyView extends AbstractListEditor imp
 	@Override
 	public void changeColorField() {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

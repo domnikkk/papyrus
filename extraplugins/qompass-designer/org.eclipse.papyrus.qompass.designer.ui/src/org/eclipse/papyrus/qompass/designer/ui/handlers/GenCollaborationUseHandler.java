@@ -16,20 +16,21 @@ public class GenCollaborationUseHandler extends CmdHandler {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		return null;
 	}
-	
+
 	/**
-	/*
+	 * /*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
 	public void run(IAction action) {
 		updateSelectedEObject();
 
-		org.eclipse.uml2.uml.Connector selectedConnector = (org.eclipse.uml2.uml.Connector)selectedEObject;
+		org.eclipse.uml2.uml.Connector selectedConnector = (org.eclipse.uml2.uml.Connector) selectedEObject;
 		Connector fcmConn = UMLUtil.getStereotypeApplication(selectedConnector, Connector.class);
 		FCMUtil.generateCollaborationUse(fcmConn);
 	}

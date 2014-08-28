@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -53,21 +53,22 @@ public class FlowPortAffixedLabelNameEditPart extends AbstractElementLabelEditPa
 		super.createDefaultEditPolicies();
 	}
 
+	@Override
 	public IBorderItemLocator getBorderItemLocator() {
 		IFigure parentFigure = getFigure().getParent();
-		if(parentFigure != null && parentFigure.getLayoutManager() != null) {
+		if (parentFigure != null && parentFigure.getLayoutManager() != null) {
 			Object constraint = parentFigure.getLayoutManager().getConstraint(getFigure());
-			return (IBorderItemLocator)constraint;
+			return (IBorderItemLocator) constraint;
 		}
 		return null;
 	}
 
 	@Override
 	public void refreshBounds() {
-		int x = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-		int y = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
-		int width = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
-		int height = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
+		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
+		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
 
 		// Update locator constraint
 		IBorderItemLocator locator = getBorderItemLocator();
@@ -83,13 +84,13 @@ public class FlowPortAffixedLabelNameEditPart extends AbstractElementLabelEditPa
 	@Override
 	protected Image getLabelIcon() {
 		EObject parserElement = getParserElement();
-		if(parserElement == null) {
+		if (parserElement == null) {
 			return null;
 		}
 
 		List<View> views = DiagramEditPartsUtil.findViews(parserElement, getViewer());
-		for(View view : views) {
-			if(NameLabelIconHelper.showLabelIcon(view)) {
+		for (View view : views) {
+			if (NameLabelIconHelper.showLabelIcon(view)) {
 				return labelProvider.getImage(parserElement);
 			}
 		}

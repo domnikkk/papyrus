@@ -45,7 +45,7 @@ public class RevealCurrentOperation {
 	public Element obtainSelectedElement(ITextSelection selection) {
 		ICElement ice = CDTUITools.getEditorInputCElement(m_input);
 
-		if(ice instanceof ITranslationUnit) {
+		if (ice instanceof ITranslationUnit) {
 			ICProject project = CoreModel.getDefault().getCModel().getCProject(m_projectName);
 
 			IIndex index = null;
@@ -54,7 +54,7 @@ public class RevealCurrentOperation {
 				index.acquireReadLock();
 
 				// index = CCorePlugin.getIndexManager().getIndex(project);
-				ITranslationUnit itu = (ITranslationUnit)ice;
+				ITranslationUnit itu = (ITranslationUnit) ice;
 				// hack: force re-evaluation of AST node, requires modified CDT!
 				// Seems to be no longer required.
 				// ASTProvider.getASTProvider().fCache.setActiveElement(itu);
@@ -66,10 +66,12 @@ public class RevealCurrentOperation {
 				if (opName != null) {
 					int sep = opName.lastIndexOf("::"); //$NON-NLS-1$
 					if (sep != -1) {
-						opName = opName.substring(sep+2);
+						opName = opName.substring(sep + 2);
 					}
-					Operation operation = m_classifier.getOperation(opName,  null,  null);
-					if (operation != null) return operation;
+					Operation operation = m_classifier.getOperation(opName, null, null);
+					if (operation != null) {
+						return operation;
+					}
 				}
 
 			} catch (CModelException e) {
@@ -77,7 +79,7 @@ public class RevealCurrentOperation {
 			} catch (Exception e) {
 				System.err.println(e);
 			} finally {
-				if(index != null) {
+				if (index != null) {
 					index.releaseReadLock();
 				}
 			}
@@ -88,7 +90,7 @@ public class RevealCurrentOperation {
 	/**
 	 * Examine the children of a translation unit in order to extract the methods that are defined within
 	 * the unit
-	 * 
+	 *
 	 * @param itu
 	 * @param selector
 	 * @param parent
@@ -96,17 +98,17 @@ public class RevealCurrentOperation {
 	 */
 	public String findOperation(ITranslationUnit itu, IASTNodeSelector selector, IParent parent, ITextSelection selection) throws CModelException {
 
-		for(ICElement child : parent.getChildren()) {
-			if(child instanceof IParent) {
-				return findOperation(itu, selector, (IParent)child, selection);
+		for (ICElement child : parent.getChildren()) {
+			if (child instanceof IParent) {
+				return findOperation(itu, selector, (IParent) child, selection);
 			}
 			ISourceRange range = null;
-			if(child instanceof ISourceReference) {
-				range = ((ISourceReference)child).getSourceRange();
+			if (child instanceof ISourceReference) {
+				range = ((ISourceReference) child).getSourceRange();
 			}
-			if(child instanceof IFunctionDeclaration) {
+			if (child instanceof IFunctionDeclaration) {
 				// function declaration is a superclass for method declaration (but need to trace functions differently?)
-				String name = ((IFunctionDeclaration)child).getElementName();
+				String name = ((IFunctionDeclaration) child).getElementName();
 				int pos = selection.getOffset();
 				if ((pos >= range.getStartPos()) && (pos < range.getStartPos() + range.getLength())) {
 					return name;

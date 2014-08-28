@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,14 +34,14 @@ import org.eclipse.papyrus.sysml.blocks.ValueType;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -54,13 +54,13 @@ public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static BlocksFactory init() {
 		try {
-			BlocksFactory theBlocksFactory = (BlocksFactory)EPackage.Registry.INSTANCE.getEFactory(BlocksPackage.eNS_URI);
-			if(theBlocksFactory != null) {
+			BlocksFactory theBlocksFactory = (BlocksFactory) EPackage.Registry.INSTANCE.getEFactory(BlocksPackage.eNS_URI);
+			if (theBlocksFactory != null) {
 				return theBlocksFactory;
 			}
 		} catch (Exception exception) {
@@ -73,7 +73,7 @@ public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BlocksFactoryImpl() {
@@ -82,12 +82,12 @@ public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case BlocksPackage.BLOCK:
 			return createBlock();
 		case BlocksPackage.DISTRIBUTED_PROPERTY:
@@ -115,7 +115,7 @@ public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BindingConnector createBindingConnector() {
@@ -125,7 +125,7 @@ public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Block createBlock() {
@@ -135,7 +135,7 @@ public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConnectorProperty createConnectorProperty() {
@@ -145,7 +145,7 @@ public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Dimension createDimension() {
@@ -155,7 +155,7 @@ public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DistributedProperty createDistributedProperty() {
@@ -165,7 +165,7 @@ public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NestedConnectorEnd createNestedConnectorEnd() {
@@ -175,7 +175,7 @@ public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ParticipantProperty createParticipantProperty() {
@@ -185,7 +185,7 @@ public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PropertySpecificType createPropertySpecificType() {
@@ -195,7 +195,7 @@ public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Unit createUnit() {
@@ -205,7 +205,7 @@ public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueType createValueType() {
@@ -215,11 +215,11 @@ public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BlocksPackage getBlocksPackage() {
-		return (BlocksPackage)getEPackage();
+		return (BlocksPackage) getEPackage();
 	}
 
 } // BlocksFactoryImpl

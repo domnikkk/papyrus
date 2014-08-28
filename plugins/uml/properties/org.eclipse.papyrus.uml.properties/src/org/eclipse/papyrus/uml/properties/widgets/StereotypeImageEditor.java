@@ -106,8 +106,8 @@ public class StereotypeImageEditor extends AbstractPropertyEditor implements Sel
 
 	protected Element getElement() {
 		ModelElement element = input.getModelElement(propertyPath);
-		if(element instanceof UMLModelElement) {
-			return (Element)((UMLModelElement)element).getSource();
+		if (element instanceof UMLModelElement) {
+			return (Element) ((UMLModelElement) element).getSource();
 		}
 
 		return null;
@@ -126,14 +126,14 @@ public class StereotypeImageEditor extends AbstractPropertyEditor implements Sel
 		String iconSelected = fd.open();
 
 		// No image selected
-		if(iconSelected == null) {
+		if (iconSelected == null) {
 			return;
 		}
 
-		if(getElement() instanceof Image) {
+		if (getElement() instanceof Image) {
 
 			final File imgFile = new File(iconSelected);
-			Image image = (Image)getElement();
+			Image image = (Image) getElement();
 
 			TransactionalEditingDomain domain;
 			try {
@@ -147,8 +147,8 @@ public class StereotypeImageEditor extends AbstractPropertyEditor implements Sel
 					@Override
 					protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 						try {
-							ImageUtil.setContent((Image)getElement(), imgFile);
-							((Image)getElement()).setFormat(PAPYRUS_FORMAT);
+							ImageUtil.setContent((Image) getElement(), imgFile);
+							((Image) getElement()).setFormat(PAPYRUS_FORMAT);
 						} catch (Exception ex) {
 							return CommandResult.newErrorCommandResult(ex);
 						}
@@ -159,12 +159,12 @@ public class StereotypeImageEditor extends AbstractPropertyEditor implements Sel
 			} catch (ServiceException ex) {
 				Activator.log.error(ex);
 
-				//FIXME: Workaround for Bug 402525. The icon is not yet attached to the editing domain. Modify it directly.
-				ImageUtil.setContent((Image)getElement(), imgFile);
-				((Image)getElement()).setFormat(PAPYRUS_FORMAT);
-				//////
+				// FIXME: Workaround for Bug 402525. The icon is not yet attached to the editing domain. Modify it directly.
+				ImageUtil.setContent((Image) getElement(), imgFile);
+				((Image) getElement()).setFormat(PAPYRUS_FORMAT);
+				// ////
 
-				//return;
+				// return;
 			}
 
 			refresh();
@@ -173,8 +173,8 @@ public class StereotypeImageEditor extends AbstractPropertyEditor implements Sel
 
 	protected void removeAction() {
 		// Erase image content
-		if(getElement() instanceof Image) {
-			Image image = (Image)getElement();
+		if (getElement() instanceof Image) {
+			Image image = (Image) getElement();
 			TransactionalEditingDomain domain;
 			try {
 				domain = ServiceUtilsForEObject.getInstance().getTransactionalEditingDomain(image);
@@ -190,7 +190,7 @@ public class StereotypeImageEditor extends AbstractPropertyEditor implements Sel
 				@Override
 				protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 					try {
-						ImageUtil.setContent((Image)getElement(), null);
+						ImageUtil.setContent((Image) getElement(), null);
 					} catch (Exception ex) {
 						return CommandResult.newErrorCommandResult(ex);
 					}
@@ -205,22 +205,22 @@ public class StereotypeImageEditor extends AbstractPropertyEditor implements Sel
 	}
 
 	public void widgetSelected(SelectionEvent e) {
-		if(e.widget == browseButton) {
+		if (e.widget == browseButton) {
 			browseAction();
-		} else if(e.widget == removeButton) {
+		} else if (e.widget == removeButton) {
 			removeAction();
 		}
 	}
 
 	public void widgetDefaultSelected(SelectionEvent e) {
-		//Nothing
+		// Nothing
 	}
 
 	public void refresh() {
-		if(!browseButton.isDisposed()) {
+		if (!browseButton.isDisposed()) {
 
 			/* initialization of buttons enabling */
-			if(!(getElement() instanceof Image)) {
+			if (!(getElement() instanceof Image)) {
 				return;
 			}
 
@@ -228,13 +228,13 @@ public class StereotypeImageEditor extends AbstractPropertyEditor implements Sel
 			org.eclipse.swt.graphics.Image image = null;
 
 			try {
-				image = ImageUtil.getContent((Image)getElement());
+				image = ImageUtil.getContent((Image) getElement());
 			} catch (Exception e) {
 				Activator.log.error(e);
 			}
 
 			// Refresh text
-			if(image != null) {
+			if (image != null) {
 				// Resize icon to 32x32
 				org.eclipse.swt.graphics.Image resizedIcon = new org.eclipse.swt.graphics.Image(image.getDevice(), image.getImageData().scaledTo(32, 32));
 				browseButton.setImage(resizedIcon);

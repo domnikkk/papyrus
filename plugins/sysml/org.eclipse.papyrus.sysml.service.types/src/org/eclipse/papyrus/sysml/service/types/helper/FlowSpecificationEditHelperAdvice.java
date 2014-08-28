@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,16 +58,16 @@ public class FlowSpecificationEditHelperAdvice extends AbstractStereotypedElemen
 		IElementType elementToCreate = request.getElementType();
 
 		// [1] Flow specifications cannot own operations or receptions (they can only own FlowProperties).
-		if(elementToCreate == UMLElementTypes.OPERATION) {
+		if (elementToCreate == UMLElementTypes.OPERATION) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if(elementToCreate == UMLElementTypes.RECEPTION) {
+		if (elementToCreate == UMLElementTypes.RECEPTION) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		// [2] Every “ownedAttribute” of a FlowSpecification must be a FlowProperty.
-		if(UMLElementTypes.PROPERTY.getEClass().isSuperTypeOf(elementToCreate.getEClass())) {
-			if((elementToCreate != SysMLElementTypes.FLOW_PROPERTY) && !(Arrays.asList(elementToCreate.getAllSuperTypes()).contains(SysMLElementTypes.FLOW_PROPERTY))) {
+		if (UMLElementTypes.PROPERTY.getEClass().isSuperTypeOf(elementToCreate.getEClass())) {
+			if ((elementToCreate != SysMLElementTypes.FLOW_PROPERTY) && !(Arrays.asList(elementToCreate.getAllSuperTypes()).contains(SysMLElementTypes.FLOW_PROPERTY))) {
 				return UnexecutableCommand.INSTANCE;
 			}
 		}
@@ -77,9 +77,9 @@ public class FlowSpecificationEditHelperAdvice extends AbstractStereotypedElemen
 
 	/**
 	 * Check if the creation context is allowed.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.sysml.service.types.helper.AbstractStereotypedElementEditHelperAdvice#approveRequest(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return true if the request is approved
 	 */
@@ -87,26 +87,26 @@ public class FlowSpecificationEditHelperAdvice extends AbstractStereotypedElemen
 	public boolean approveRequest(IEditCommandRequest request) {
 		boolean isApproved = super.approveRequest(request);
 
-		if((request != null) && (request instanceof GetEditContextRequest)) {
+		if ((request != null) && (request instanceof GetEditContextRequest)) {
 
 			// Retrieve the edit context from request
-			GetEditContextRequest editContextRequest = (GetEditContextRequest)request;
+			GetEditContextRequest editContextRequest = (GetEditContextRequest) request;
 
 			// Test context type
-			if(editContextRequest.getEditContext() instanceof Element) {
-				Element contextElement = (Element)editContextRequest.getEditContext();
+			if (editContextRequest.getEditContext() instanceof Element) {
+				Element contextElement = (Element) editContextRequest.getEditContext();
 
 				IElementMatcher matcher;
 
 				// Cannot create a nested FlowSpecification in FlowSpecification
 				matcher = new FlowSpecificationMatcher();
-				if(matcher.matches(contextElement)) {
+				if (matcher.matches(contextElement)) {
 					isApproved = false;
 				}
 
 				// Cannot create a nested FlowSpecification in Requirement
 				matcher = new RequirementMatcher();
-				if(matcher.matches(contextElement)) {
+				if (matcher.matches(contextElement)) {
 					isApproved = false;
 				}
 			}
@@ -121,9 +121,10 @@ public class FlowSpecificationEditHelperAdvice extends AbstractStereotypedElemen
 
 		return new ConfigureElementCommand(request) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				NamedElement element = (NamedElement)request.getElementToConfigure();
-				if(element != null) {
+				NamedElement element = (NamedElement) request.getElementToConfigure();
+				if (element != null) {
 					StereotypeApplicationHelper.INSTANCE.applyStereotype(element, PortandflowsPackage.eINSTANCE.getFlowSpecification());
 
 					// Set default name

@@ -41,6 +41,7 @@ public class SVNControlModeParticipant implements IControlCommandParticipant, IU
 	 * 
 	 * @see org.eclipse.papyrus.controlmode.interfaces.IControlModeParticipant#getID()
 	 */
+	@Override
 	public String getID() {
 		return "org.eclipse.papyrus.team.collaborative.core.integration.papyrus.control.SVNControlModeParticipant";
 	}
@@ -50,6 +51,7 @@ public class SVNControlModeParticipant implements IControlCommandParticipant, IU
 	 * 
 	 * @see org.eclipse.papyrus.controlmode.interfaces.IControlModeParticipant#getPriority()
 	 */
+	@Override
 	public int getPriority() {
 		return 10000;
 	}
@@ -60,6 +62,7 @@ public class SVNControlModeParticipant implements IControlCommandParticipant, IU
 	 * @see org.eclipse.papyrus.controlmode.interfaces.IUncontrolCommandParticipant#provideUnControlCommand(org.eclipse.papyrus.controlmode.request.
 	 * ControlModeRequest)
 	 */
+	@Override
 	public boolean provideUnControlCommand(ControlModeRequest request) {
 		return CollabUtils.isCollab(request.getTargetObject());
 	}
@@ -70,6 +73,7 @@ public class SVNControlModeParticipant implements IControlCommandParticipant, IU
 	 * @see org.eclipse.papyrus.controlmode.interfaces.IUncontrolCommandParticipant#getPreUncontrolCommand(org.eclipse.papyrus.controlmode.request.
 	 * ControlModeRequest)
 	 */
+	@Override
 	public ICommand getPreUncontrolCommand(ControlModeRequest request) {
 		// TODO Auto-generated method stub
 		return null;
@@ -81,6 +85,7 @@ public class SVNControlModeParticipant implements IControlCommandParticipant, IU
 	 * @see org.eclipse.papyrus.controlmode.interfaces.IUncontrolCommandParticipant#getPostUncontrolCommand(org.eclipse.papyrus.controlmode.request.
 	 * ControlModeRequest)
 	 */
+	@Override
 	public ICommand getPostUncontrolCommand(ControlModeRequest request) {
 		// TODO Auto-generated method stub
 		return null;
@@ -92,6 +97,7 @@ public class SVNControlModeParticipant implements IControlCommandParticipant, IU
 	 * @see org.eclipse.papyrus.controlmode.interfaces.IControlCommandParticipant#provideControlCommand(org.eclipse.papyrus.controlmode.request.
 	 * ControlModeRequest)
 	 */
+	@Override
 	public boolean provideControlCommand(ControlModeRequest request) {
 		return CollabUtils.isCollab(request.getTargetObject());
 	}
@@ -102,6 +108,7 @@ public class SVNControlModeParticipant implements IControlCommandParticipant, IU
 	 * @see org.eclipse.papyrus.controlmode.interfaces.IControlCommandParticipant#getPreControlCommand(org.eclipse.papyrus.controlmode.request.
 	 * ControlModeRequest)
 	 */
+	@Override
 	public ICommand getPreControlCommand(ControlModeRequest request) {
 		return null;
 	}
@@ -112,10 +119,11 @@ public class SVNControlModeParticipant implements IControlCommandParticipant, IU
 	 * @see org.eclipse.papyrus.controlmode.interfaces.IControlCommandParticipant#getPostControlCommand(org.eclipse.papyrus.controlmode.request.
 	 * ControlModeRequest)
 	 */
+	@Override
 	public ICommand getPostControlCommand(ControlModeRequest request) {
 		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(request.getEditingDomain(), "Share file to SVN with need lock");
 		IEditorPart editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if(editor instanceof ISaveablePart) {
+		if (editor instanceof ISaveablePart) {
 			cc.compose(new SaveCommand(request.getEditingDomain(), editor));
 			cc.compose(new AddFileToCollabSVN(request.getEditingDomain(), request));
 		}

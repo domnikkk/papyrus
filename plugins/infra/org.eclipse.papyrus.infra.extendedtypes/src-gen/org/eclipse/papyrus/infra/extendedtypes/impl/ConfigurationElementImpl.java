@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -14,13 +14,10 @@ package org.eclipse.papyrus.infra.extendedtypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.ConfigurationElement;
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
 import org.eclipse.papyrus.infra.extendedtypes.IconEntry;
@@ -38,7 +35,7 @@ import org.eclipse.papyrus.infra.extendedtypes.IconEntry;
  * <li>{@link org.eclipse.papyrus.infra.extendedtypes.impl.ConfigurationElementImpl#getIconEntry <em>Icon Entry</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class ConfigurationElementImpl extends EObjectImpl implements ConfigurationElement {
@@ -47,7 +44,7 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -58,7 +55,7 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -69,7 +66,7 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -80,7 +77,7 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -91,7 +88,7 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -102,7 +99,7 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -113,7 +110,7 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	 * The cached value of the '{@link #getIconEntry() <em>Icon Entry</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIconEntry()
 	 * @generated
 	 * @ordered
@@ -123,7 +120,7 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConfigurationElementImpl() {
@@ -133,7 +130,7 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +141,7 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -154,20 +151,21 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ExtendedtypesPackage.CONFIGURATION_ELEMENT__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -177,20 +175,21 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ExtendedtypesPackage.CONFIGURATION_ELEMENT__DESCRIPTION, oldDescription, description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getIdentifier() {
@@ -200,20 +199,21 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIdentifier(String newIdentifier) {
 		String oldIdentifier = identifier;
 		identifier = newIdentifier;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ExtendedtypesPackage.CONFIGURATION_ELEMENT__IDENTIFIER, oldIdentifier, identifier));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IconEntry getIconEntry() {
@@ -223,18 +223,19 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetIconEntry(IconEntry newIconEntry, NotificationChain msgs) {
 		IconEntry oldIconEntry = iconEntry;
 		iconEntry = newIconEntry;
-		if(eNotificationRequired()) {
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExtendedtypesPackage.CONFIGURATION_ELEMENT__ICON_ENTRY, oldIconEntry, newIconEntry);
-			if(msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -242,32 +243,36 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIconEntry(IconEntry newIconEntry) {
-		if(newIconEntry != iconEntry) {
+		if (newIconEntry != iconEntry) {
 			NotificationChain msgs = null;
-			if(iconEntry != null)
-				msgs = ((InternalEObject)iconEntry).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExtendedtypesPackage.CONFIGURATION_ELEMENT__ICON_ENTRY, null, msgs);
-			if(newIconEntry != null)
-				msgs = ((InternalEObject)newIconEntry).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExtendedtypesPackage.CONFIGURATION_ELEMENT__ICON_ENTRY, null, msgs);
+			if (iconEntry != null) {
+				msgs = ((InternalEObject) iconEntry).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExtendedtypesPackage.CONFIGURATION_ELEMENT__ICON_ENTRY, null, msgs);
+			}
+			if (newIconEntry != null) {
+				msgs = ((InternalEObject) newIconEntry).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExtendedtypesPackage.CONFIGURATION_ELEMENT__ICON_ENTRY, null, msgs);
+			}
 			msgs = basicSetIconEntry(newIconEntry, msgs);
-			if(msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if(eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ExtendedtypesPackage.CONFIGURATION_ELEMENT__ICON_ENTRY, newIconEntry, newIconEntry));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.CONFIGURATION_ELEMENT__ICON_ENTRY:
 			return basicSetIconEntry(null, msgs);
 		}
@@ -277,12 +282,12 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.CONFIGURATION_ELEMENT__NAME:
 			return getName();
 		case ExtendedtypesPackage.CONFIGURATION_ELEMENT__DESCRIPTION:
@@ -298,23 +303,23 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.CONFIGURATION_ELEMENT__NAME:
-			setName((String)newValue);
+			setName((String) newValue);
 			return;
 		case ExtendedtypesPackage.CONFIGURATION_ELEMENT__DESCRIPTION:
-			setDescription((String)newValue);
+			setDescription((String) newValue);
 			return;
 		case ExtendedtypesPackage.CONFIGURATION_ELEMENT__IDENTIFIER:
-			setIdentifier((String)newValue);
+			setIdentifier((String) newValue);
 			return;
 		case ExtendedtypesPackage.CONFIGURATION_ELEMENT__ICON_ENTRY:
-			setIconEntry((IconEntry)newValue);
+			setIconEntry((IconEntry) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -323,12 +328,12 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.CONFIGURATION_ELEMENT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
@@ -339,7 +344,7 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 			setIdentifier(IDENTIFIER_EDEFAULT);
 			return;
 		case ExtendedtypesPackage.CONFIGURATION_ELEMENT__ICON_ENTRY:
-			setIconEntry((IconEntry)null);
+			setIconEntry((IconEntry) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -348,12 +353,12 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.CONFIGURATION_ELEMENT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case ExtendedtypesPackage.CONFIGURATION_ELEMENT__DESCRIPTION:
@@ -369,13 +374,14 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: "); //$NON-NLS-1$
 		result.append(name);
@@ -386,4 +392,4 @@ public abstract class ConfigurationElementImpl extends EObjectImpl implements Co
 		result.append(')');
 		return result.toString();
 	}
-} //ConfigurationElementImpl
+} // ConfigurationElementImpl

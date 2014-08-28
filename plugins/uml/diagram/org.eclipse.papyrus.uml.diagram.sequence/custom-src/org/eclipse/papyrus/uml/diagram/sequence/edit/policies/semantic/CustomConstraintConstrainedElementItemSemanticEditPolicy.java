@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,14 +34,14 @@ public class CustomConstraintConstrainedElementItemSemanticEditPolicy extends Co
 	 */
 	@Override
 	protected Command getDestroyReferenceCommand(final DestroyReferenceRequest req) {
-		if(req.getReferencedObject() instanceof MessageEnd) {
+		if (req.getReferencedObject() instanceof MessageEnd) {
 			return getGEFWrapper(new DestroyReferenceCommand(req) {
 
 				@Override
 				protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 					CommandResult res = super.doExecuteWithResult(monitor, info);
-					if(res.getStatus().isOK()) {
-						MessageEndHelper.removeConnectionSourceFromMessageEnd((MessageEnd)req.getReferencedObject(), req.getContainer());
+					if (res.getStatus().isOK()) {
+						MessageEndHelper.removeConnectionSourceFromMessageEnd((MessageEnd) req.getReferencedObject(), req.getContainer());
 					}
 					return res;
 				}

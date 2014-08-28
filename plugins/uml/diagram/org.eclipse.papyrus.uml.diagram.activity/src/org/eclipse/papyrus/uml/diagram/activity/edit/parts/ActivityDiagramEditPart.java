@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,13 +55,14 @@ public class ActivityDiagramEditPart extends PapyrusDiagramEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new PapyrusCreationEditPolicy());
 		installEditPolicy(DuplicatePasteEditPolicy.PASTE_ROLE, new DuplicatePasteEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityDiagramItemSemanticEditPolicy());
-		//in Papyrus diagrams are not strongly synchronised
-		//installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramCanonicalEditPolicy());
+		// in Papyrus diagrams are not strongly synchronised
+		// installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramCanonicalEditPolicy());
 		installEditPolicy("RemoveOrphanView", new RemoveOrphanViewPolicy()); //$NON-NLS-1$
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
@@ -74,9 +75,10 @@ public class ActivityDiagramEditPart extends PapyrusDiagramEditPart {
 		/**
 		 * @generated
 		 */
+		@Override
 		@SuppressWarnings("rawtypes")
 		protected List createSelectionHandles() {
-			MoveHandle h = new MoveHandle((GraphicalEditPart)getHost());
+			MoveHandle h = new MoveHandle((GraphicalEditPart) getHost());
 			h.setBorder(null);
 			return Collections.singletonList(h);
 		}
@@ -84,6 +86,7 @@ public class ActivityDiagramEditPart extends PapyrusDiagramEditPart {
 		/**
 		 * @generated
 		 */
+		@Override
 		public Command getCommand(Request request) {
 			return null;
 		}
@@ -91,6 +94,7 @@ public class ActivityDiagramEditPart extends PapyrusDiagramEditPart {
 		/**
 		 * @generated
 		 */
+		@Override
 		public boolean understandsRequest(Request request) {
 			return false;
 		}
@@ -104,9 +108,10 @@ public class ActivityDiagramEditPart extends PapyrusDiagramEditPart {
 		/**
 		 * @generated
 		 */
+		@Override
 		@SuppressWarnings("rawtypes")
 		protected List createSelectionHandles() {
-			MoveHandle mh = new MoveHandle((GraphicalEditPart)getHost());
+			MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
 			mh.setBorder(null);
 			return Collections.singletonList(mh);
 		}

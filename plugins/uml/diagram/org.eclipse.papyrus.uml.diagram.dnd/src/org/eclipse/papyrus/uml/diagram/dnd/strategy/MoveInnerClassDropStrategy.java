@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,11 +52,11 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * A DropStrategy to move a Classifier into a Class
- * 
+ *
  * @author Camille Letavernier
  */
-//FIXME: The Class diagram already automatically displays inner classes 
-//when they are added to the semantic model. There might be a conflict with this strategy.
+// FIXME: The Class diagram already automatically displays inner classes
+// when they are added to the semantic model. There might be a conflict with this strategy.
 public class MoveInnerClassDropStrategy extends MoveDropStrategy {
 
 	@Override
@@ -76,11 +76,11 @@ public class MoveInnerClassDropStrategy extends MoveDropStrategy {
 	@Override
 	protected EStructuralFeature getTargetFeature(Request request, EditPart targetEditPart) {
 		EObject targetSemanticElement = getTargetSemanticElement(targetEditPart);
-		if(targetSemanticElement instanceof org.eclipse.uml2.uml.Class) {
-			//In this case, the service edit will create the GMF View for InnerClass
+		if (targetSemanticElement instanceof org.eclipse.uml2.uml.Class) {
+			// In this case, the service edit will create the GMF View for InnerClass
 			return UMLPackage.eINSTANCE.getClass_NestedClassifier();
 		}
-		if(targetSemanticElement instanceof Interface) {
+		if (targetSemanticElement instanceof Interface) {
 			return UMLPackage.eINSTANCE.getInterface_NestedClassifier();
 		}
 
@@ -92,7 +92,7 @@ public class MoveInnerClassDropStrategy extends MoveDropStrategy {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param request
 	 * @param targetEditPart
 	 * @return A command to edit the graphical view
@@ -100,7 +100,7 @@ public class MoveInnerClassDropStrategy extends MoveDropStrategy {
 	@Override
 	protected Command getGraphicalCommand(Request request, EditPart targetEditPart) {
 		DropObjectsRequest dropRequest = getDropObjectsRequest(request);
-		if(dropRequest == null) {
+		if (dropRequest == null) {
 			return null;
 		}
 
@@ -109,12 +109,12 @@ public class MoveInnerClassDropStrategy extends MoveDropStrategy {
 
 		List<CreateViewRequest.ViewDescriptor> viewDescriptors = new LinkedList<CreateViewRequest.ViewDescriptor>();
 
-		for(EObject eObject : getSourceEObjects(dropRequest)) {
-			if(eObject instanceof org.eclipse.uml2.uml.Class) {
-				viewDescriptors.add(new CreateViewRequest.ViewDescriptor(new EObjectAdapter(eObject), Node.class, Integer.toString(NestedClassForClassEditPart.VISUAL_ID), ((IGraphicalEditPart)targetEditPart).getDiagramPreferencesHint()));
+		for (EObject eObject : getSourceEObjects(dropRequest)) {
+			if (eObject instanceof org.eclipse.uml2.uml.Class) {
+				viewDescriptors.add(new CreateViewRequest.ViewDescriptor(new EObjectAdapter(eObject), Node.class, Integer.toString(NestedClassForClassEditPart.VISUAL_ID), ((IGraphicalEditPart) targetEditPart).getDiagramPreferencesHint()));
 			}
 		}
-		if(viewDescriptors.isEmpty()) {
+		if (viewDescriptors.isEmpty()) {
 			return null;
 		}
 
@@ -125,8 +125,8 @@ public class MoveInnerClassDropStrategy extends MoveDropStrategy {
 
 		Command createCommand = targetEditPart.getCommand(createViewRequest);
 
-		if(createCommand != null) {
-			List<?> result = (List<?>)createViewRequest.getNewObject();
+		if (createCommand != null) {
+			List<?> result = (List<?>) createViewRequest.getNewObject();
 			dropRequest.setResult(result);
 
 			RefreshConnectionsRequest refreshRequest = new RefreshConnectionsRequest(result);
@@ -141,12 +141,12 @@ public class MoveInnerClassDropStrategy extends MoveDropStrategy {
 			cc.add(createCommand.chain(refreshCommand));
 			cc.add(arrangeCommand);
 
-			for(Object object : dropRequest.getObjects()) {
-				if(object instanceof EditPart) {
-					EditPart editPart = (EditPart)object;
+			for (Object object : dropRequest.getObjects()) {
+				if (object instanceof EditPart) {
+					EditPart editPart = (EditPart) object;
 					ShowHideElementsRequest destroyViewRequest = new ShowHideElementsRequest(editPart);
 					Command destroyViewCommand = editPart.getCommand(destroyViewRequest);
-					if(destroyViewCommand != null) {
+					if (destroyViewCommand != null) {
 						cc.add(destroyViewCommand);
 					}
 				}
@@ -159,12 +159,12 @@ public class MoveInnerClassDropStrategy extends MoveDropStrategy {
 	}
 
 	protected EditPart getTargetEditPart(final EditPart targetEditPart) {
-		if(targetEditPart instanceof IGraphicalEditPart) {
+		if (targetEditPart instanceof IGraphicalEditPart) {
 			EditPart primaryEditPart = getPrimaryEditPart(targetEditPart);
-			View primaryView = ((IGraphicalEditPart)targetEditPart).getPrimaryView();
+			View primaryView = ((IGraphicalEditPart) targetEditPart).getPrimaryView();
 
 			int nestedClassSemanticHint = -1;
-			switch(UMLVisualIDRegistry.getVisualID(primaryView)) {
+			switch (UMLVisualIDRegistry.getVisualID(primaryView)) {
 			case ClassEditPart.VISUAL_ID:
 				nestedClassSemanticHint = ClassNestedClassifierCompartmentEditPart.VISUAL_ID;
 				break;
@@ -185,10 +185,10 @@ public class MoveInnerClassDropStrategy extends MoveDropStrategy {
 				break;
 			}
 
-			if(nestedClassSemanticHint != -1) {
+			if (nestedClassSemanticHint != -1) {
 				String type = UMLVisualIDRegistry.getType(nestedClassSemanticHint);
-				EditPart target = ((IGraphicalEditPart)primaryEditPart).getChildBySemanticHint(type);
-				if(target != null) {
+				EditPart target = ((IGraphicalEditPart) primaryEditPart).getChildBySemanticHint(type);
+				if (target != null) {
 					return target;
 				}
 			}
@@ -200,8 +200,8 @@ public class MoveInnerClassDropStrategy extends MoveDropStrategy {
 	protected EditPart getPrimaryEditPart(final EditPart targetEditPart) {
 		EditPart currentPart = targetEditPart;
 
-		while(currentPart != null) {
-			if(currentPart instanceof IPrimaryEditPart) {
+		while (currentPart != null) {
+			if (currentPart instanceof IPrimaryEditPart) {
 				return currentPart;
 			}
 			currentPart = currentPart.getParent();

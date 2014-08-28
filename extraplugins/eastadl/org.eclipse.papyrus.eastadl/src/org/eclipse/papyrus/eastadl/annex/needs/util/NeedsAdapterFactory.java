@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,6 +41,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecificatio
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage
  * @generated
  */
@@ -49,6 +50,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static NeedsPackage modelPackage;
@@ -57,76 +59,92 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected NeedsSwitch<Adapter> modelSwitch =
-		new NeedsSwitch<Adapter>() {
-			@Override
-			public Adapter caseStakeholder(Stakeholder object) {
-				return createStakeholderAdapter();
-			}
-			@Override
-			public Adapter caseStakeholderNeed(StakeholderNeed object) {
-				return createStakeholderNeedAdapter();
-			}
-			@Override
-			public Adapter caseProblemStatement(ProblemStatement object) {
-				return createProblemStatementAdapter();
-			}
-			@Override
-			public Adapter caseProductPositioning(ProductPositioning object) {
-				return createProductPositioningAdapter();
-			}
-			@Override
-			public Adapter caseBusinessOpportunity(BusinessOpportunity object) {
-				return createBusinessOpportunityAdapter();
-			}
-			@Override
-			public Adapter caseConcept(Concept object) {
-				return createConceptAdapter();
-			}
-			@Override
-			public Adapter caseMission(Mission object) {
-				return createMissionAdapter();
-			}
-			@Override
-			public Adapter caseVehicleSystem(VehicleSystem object) {
-				return createVehicleSystemAdapter();
-			}
-			@Override
-			public Adapter caseArchitecture(Architecture object) {
-				return createArchitectureAdapter();
-			}
-			@Override
-			public Adapter caseArchitecturalDescription(ArchitecturalDescription object) {
-				return createArchitecturalDescriptionAdapter();
-			}
-			@Override
-			public Adapter caseArchitecturalModel(ArchitecturalModel object) {
-				return createArchitecturalModelAdapter();
-			}
-			@Override
-			public Adapter caseEAElement(EAElement object) {
-				return createEAElementAdapter();
-			}
-			@Override
-			public Adapter caseEAPackageableElement(EAPackageableElement object) {
-				return createEAPackageableElementAdapter();
-			}
-			@Override
-			public Adapter caseTraceableSpecification(TraceableSpecification object) {
-				return createTraceableSpecificationAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new NeedsSwitch<Adapter>() {
+				@Override
+				public Adapter caseStakeholder(Stakeholder object) {
+					return createStakeholderAdapter();
+				}
+
+				@Override
+				public Adapter caseStakeholderNeed(StakeholderNeed object) {
+					return createStakeholderNeedAdapter();
+				}
+
+				@Override
+				public Adapter caseProblemStatement(ProblemStatement object) {
+					return createProblemStatementAdapter();
+				}
+
+				@Override
+				public Adapter caseProductPositioning(ProductPositioning object) {
+					return createProductPositioningAdapter();
+				}
+
+				@Override
+				public Adapter caseBusinessOpportunity(BusinessOpportunity object) {
+					return createBusinessOpportunityAdapter();
+				}
+
+				@Override
+				public Adapter caseConcept(Concept object) {
+					return createConceptAdapter();
+				}
+
+				@Override
+				public Adapter caseMission(Mission object) {
+					return createMissionAdapter();
+				}
+
+				@Override
+				public Adapter caseVehicleSystem(VehicleSystem object) {
+					return createVehicleSystemAdapter();
+				}
+
+				@Override
+				public Adapter caseArchitecture(Architecture object) {
+					return createArchitectureAdapter();
+				}
+
+				@Override
+				public Adapter caseArchitecturalDescription(ArchitecturalDescription object) {
+					return createArchitecturalDescriptionAdapter();
+				}
+
+				@Override
+				public Adapter caseArchitecturalModel(ArchitecturalModel object) {
+					return createArchitecturalModelAdapter();
+				}
+
+				@Override
+				public Adapter caseEAElement(EAElement object) {
+					return createEAElementAdapter();
+				}
+
+				@Override
+				public Adapter caseEAPackageableElement(EAPackageableElement object) {
+					return createEAPackageableElementAdapter();
+				}
+
+				@Override
+				public Adapter caseTraceableSpecification(TraceableSpecification object) {
+					return createTraceableSpecificationAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NeedsAdapterFactory() {
@@ -139,13 +157,15 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 *
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 	/**
@@ -154,6 +174,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ArchitecturalDescription
 	 * @generated
@@ -169,6 +190,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ArchitecturalModel
 	 * @generated
@@ -183,6 +205,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement
 	 * @generated
@@ -197,6 +220,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAPackageableElement
 	 * @generated
@@ -211,6 +235,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.Architecture
 	 * @generated
@@ -225,6 +250,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity
 	 * @generated
@@ -239,6 +265,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.Concept
 	 * @generated
@@ -252,6 +279,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -265,6 +293,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.Mission
 	 * @generated
@@ -279,6 +308,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement
 	 * @generated
@@ -293,6 +323,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning
 	 * @generated
@@ -307,6 +338,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.Stakeholder
 	 * @generated
@@ -321,6 +353,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed
 	 * @generated
@@ -335,6 +368,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecification
 	 * @generated
@@ -349,6 +383,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem
 	 * @generated
@@ -362,6 +397,7 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -371,9 +407,9 @@ public class NeedsAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
 
-} //NeedsAdapterFactory
+} // NeedsAdapterFactory

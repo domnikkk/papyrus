@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,64 +42,68 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 public class AppliedStereotypePropertyProposalProvider extends AbstractAppliedStereotypePropertyProposalProvider {
 
 
+	@Override
 	public void complete_ExpressionValueRule(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 	}
 
 
+	@Override
 	public void completeNameExpression_Path(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 
 		AppliedStereotypeProperty appliedStereotypeProperty = StereotypePropertyEditorConfigurationContribution.getAppliedStereoProperty();
-		
-		if(appliedStereotypeProperty != null) {
-			
-			if((model instanceof ExpressionValueRule) && ((appliedStereotypeProperty.getStereotypeProperty().getUpper() == 1)) || (!(model instanceof ExpressionValueRule))) {
+
+		if (appliedStereotypeProperty != null) {
+
+			if ((model instanceof ExpressionValueRule) && ((appliedStereotypeProperty.getStereotypeProperty().getUpper() == 1)) || (!(model instanceof ExpressionValueRule))) {
 				EClass stereotypeApplication = appliedStereotypeProperty.getStereotypeApplication().eClass();
 
 				EStructuralFeature foundStructuralFeature = null;
 				Iterator<EStructuralFeature> iterator = stereotypeApplication.getEAllStructuralFeatures().iterator();
-				while(iterator.hasNext()) {
-					EStructuralFeature eStructuralFeature = (EStructuralFeature)iterator.next();
-					if(eStructuralFeature.getName().equals(appliedStereotypeProperty.getStereotypeProperty().getName())) {
+				while (iterator.hasNext()) {
+					EStructuralFeature eStructuralFeature = iterator.next();
+					if (eStructuralFeature.getName().equals(appliedStereotypeProperty.getStereotypeProperty().getName())) {
 						foundStructuralFeature = eStructuralFeature;
 					}
 				}
-				if(foundStructuralFeature != null) {
+				if (foundStructuralFeature != null) {
 					UMLContentProvider umlContentProvider = new UMLContentProvider(appliedStereotypeProperty.getStereotypeApplication(), foundStructuralFeature, appliedStereotypeProperty.getStereotype());
 					HierarchicToFlatContentProvider treeToFlatContentProvider = new HierarchicToFlatContentProvider(umlContentProvider);
 					Object[] result = treeToFlatContentProvider.getElements();
 					// UMLLabelProvider umlLabelProvider = new UMLLabelProvider();
-					for(int i = 0; i < result.length; i++) {
-						if(result[i] instanceof EObject && UMLUtil.getBaseElement((EObject)result[i]) != null) {
-							acceptor.accept(CompletionProposalUtils.createCompletionProposal(((NamedElement)UMLUtil.getBaseElement((EObject)result[i])), ((NamedElement)UMLUtil.getBaseElement((EObject)result[i])).getQualifiedName(), ((NamedElement)UMLUtil.getBaseElement((EObject)result[i])).getQualifiedName(), context));
-						} else if(result[i] instanceof EEnumLiteral) {
-							EEnumLiteral enumerationLiteral = (EEnumLiteral)result[i];
+					for (int i = 0; i < result.length; i++) {
+						if (result[i] instanceof EObject && UMLUtil.getBaseElement((EObject) result[i]) != null) {
+							acceptor.accept(CompletionProposalUtils.createCompletionProposal(((NamedElement) UMLUtil.getBaseElement((EObject) result[i])), ((NamedElement) UMLUtil.getBaseElement((EObject) result[i])).getQualifiedName(),
+									((NamedElement) UMLUtil.getBaseElement((EObject) result[i])).getQualifiedName(), context));
+						} else if (result[i] instanceof EEnumLiteral) {
+							EEnumLiteral enumerationLiteral = (EEnumLiteral) result[i];
 							acceptor.accept(CompletionProposalUtils.createCompletionProposal(enumerationLiteral.getName(), enumerationLiteral.getName(), context));
-						} else if(result[i] instanceof Enumerator) {
-							Enumerator enumerationLiteral = (Enumerator)result[i];
+						} else if (result[i] instanceof Enumerator) {
+							Enumerator enumerationLiteral = (Enumerator) result[i];
 							acceptor.accept(CompletionProposalUtils.createCompletionProposal(enumerationLiteral.getName(), enumerationLiteral.getName(), context));
 						} else {
-							if(result[i] instanceof NamedElement) {
-								NamedElement namedElement = (NamedElement)result[i];
+							if (result[i] instanceof NamedElement) {
+								NamedElement namedElement = (NamedElement) result[i];
 								acceptor.accept(CompletionProposalUtils.createCompletionProposal(namedElement, namedElement.getQualifiedName(), namedElement.getQualifiedName(), context));
 							}
 						}
 					}
-					completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+					completeRuleCall(((RuleCall) assignment.getTerminal()), context, acceptor);
 				}
 			}
 		}
 	}
 
+	@Override
 	public void completeNameExpression_Id(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		//acceptor.accept(CompletionProposalUtils.createCompletionProposal("NameExpression_Id", "NameExpression_Id", context)) ;
+		// acceptor.accept(CompletionProposalUtils.createCompletionProposal("NameExpression_Id", "NameExpression_Id", context)) ;
 		super.completeNameExpression_Id(model, assignment, context, acceptor);
-		//completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+		// completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
 
 	public void completeBooleanKeyWord(Keyword keyword, ContentAssistContext contentAssistContext, ICompletionProposalAcceptor acceptor, AppliedStereotypeProperty appliedStereotypeProperty) {
 
-		if(appliedStereotypeProperty.getStereotypeProperty().getType().getName().equals(StringConstants.BOOLEAN)) {
-			if(keyword.getValue().startsWith(StringConstants.TRUE) || (keyword.getValue().startsWith(StringConstants.FALSE))) {
+		if (appliedStereotypeProperty.getStereotypeProperty().getType().getName().equals(StringConstants.BOOLEAN)) {
+			if (keyword.getValue().startsWith(StringConstants.TRUE) || (keyword.getValue().startsWith(StringConstants.FALSE))) {
 				addKeyWord(keyword, contentAssistContext, acceptor);
 			}
 		}
@@ -117,29 +121,31 @@ public class AppliedStereotypePropertyProposalProvider extends AbstractAppliedSt
 	@Override
 	public void completeKeyword(Keyword keyword, ContentAssistContext contentAssistContext, ICompletionProposalAcceptor acceptor) {
 
-		if(!contentAssistContext.getPrefix().equals(StringConstants.EMPTY) && !contentAssistContext.getPrefix().equals(StringConstants.EQUALS)) { 
-			if(keyword.getValue().startsWith(contentAssistContext.getPrefix()))
+		if (!contentAssistContext.getPrefix().equals(StringConstants.EMPTY) && !contentAssistContext.getPrefix().equals(StringConstants.EQUALS)) {
+			if (keyword.getValue().startsWith(contentAssistContext.getPrefix())) {
 				super.completeKeyword(keyword, contentAssistContext, acceptor);
+			}
 		} else {
-			//take in account cardinalities and type of the properties
+			// take in account cardinalities and type of the properties
 			AppliedStereotypeProperty appliedStereotypeProperty = StereotypePropertyEditorConfigurationContribution.getAppliedStereoProperty();
-			
-			if(appliedStereotypeProperty != null) {
+
+			if (appliedStereotypeProperty != null) {
 				completeBooleanKeyWord(keyword, contentAssistContext, acceptor, appliedStereotypeProperty);
-				//collection
-				if(appliedStereotypeProperty.getStereotypeProperty().getUpper() == -1 || appliedStereotypeProperty.getStereotypeProperty().getUpper() > 1) {
-					if(keyword.getValue().startsWith(StringConstants.CURLY_CLOSE) || keyword.getValue().startsWith(StringConstants.CURLY_OPEN) || keyword.getValue().startsWith(StringConstants.COMMA) || keyword.getValue().startsWith(StringConstants.NULL) || keyword.getValue().startsWith(StringConstants.COMMA)) {
+				// collection
+				if (appliedStereotypeProperty.getStereotypeProperty().getUpper() == -1 || appliedStereotypeProperty.getStereotypeProperty().getUpper() > 1) {
+					if (keyword.getValue().startsWith(StringConstants.CURLY_CLOSE) || keyword.getValue().startsWith(StringConstants.CURLY_OPEN) || keyword.getValue().startsWith(StringConstants.COMMA) || keyword.getValue().startsWith(StringConstants.NULL)
+							|| keyword.getValue().startsWith(StringConstants.COMMA)) {
 						addKeyWord(keyword, contentAssistContext, acceptor);
 					}
 				}
-				if(appliedStereotypeProperty.getStereotypeProperty().getUpper() == 1) {
-					if(keyword.getValue().startsWith(StringConstants.NULL)) {
+				if (appliedStereotypeProperty.getStereotypeProperty().getUpper() == 1) {
+					if (keyword.getValue().startsWith(StringConstants.NULL)) {
 						addKeyWord(keyword, contentAssistContext, acceptor);
 					}
 				}
 
-				if(appliedStereotypeProperty.getStereotypeProperty().getType().eClass().getName().equals(StringConstants.PRIMITIVE_TYPE)) {
-					if(keyword.getValue().startsWith("\"")) { //$NON-NLS-1$
+				if (appliedStereotypeProperty.getStereotypeProperty().getType().eClass().getName().equals(StringConstants.PRIMITIVE_TYPE)) {
+					if (keyword.getValue().startsWith("\"")) { //$NON-NLS-1$
 						addKeyWord(keyword, contentAssistContext, acceptor);
 					}
 				}

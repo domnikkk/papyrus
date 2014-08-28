@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.papyrus.sysml.statemachines.StatemachinesPackage;
 /**
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class StatemachinesXMLProcessor extends XMLProcessor {
@@ -32,7 +32,7 @@ public class StatemachinesXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StatemachinesXMLProcessor() {
@@ -44,12 +44,12 @@ public class StatemachinesXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the StatemachinesResourceFactoryImpl factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	protected Map<String, Resource.Factory> getRegistrations() {
-		if(registrations == null) {
+		if (registrations == null) {
 			super.getRegistrations();
 			registrations.put(XML_EXTENSION, new StatemachinesResourceFactoryImpl());
 			registrations.put(STAR_EXTENSION, new StatemachinesResourceFactoryImpl());

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		 Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -41,17 +41,17 @@ public abstract class AbstractPapyrusPreferenceStore extends PapyrusScopedPrefer
 
 	/**
 	 * constructor
-	 * 
+	 *
 	 * @param context
-	 *        the scope to store to
+	 *            the scope to store to
 	 * @param qualifier
-	 *        the qualifier used to look up the preference node
+	 *            the qualifier used to look up the preference node
 	 * @param key
-	 *        for all editor of the same kind (all diagrams, all tables, ...)
+	 *            for all editor of the same kind (all diagrams, all tables, ...)
 	 * @param key
-	 *        for an instance of this editor
+	 *            for an instance of this editor
 	 * @param key
-	 *        for an element
+	 *            for an element
 	 */
 	public AbstractPapyrusPreferenceStore(IScopeContext context, String qualifier, String editorLevelPrefix, String instanceEditorLevelPrefix, String elementLevelPrefix) {
 		super(context, qualifier);
@@ -62,19 +62,19 @@ public abstract class AbstractPapyrusPreferenceStore extends PapyrusScopedPrefer
 
 	/**
 	 * constructor
-	 * 
+	 *
 	 * @param context
-	 *        the scope to store to
+	 *            the scope to store to
 	 * @param qualifier
-	 *        the qualifier used to look up the preference node
+	 *            the qualifier used to look up the preference node
 	 * @param defaultQualifierPath
-	 *        the qualifier used when looking up the defaults
+	 *            the qualifier used when looking up the defaults
 	 * @param key
-	 *        for all editor of the same kind (all diagrams, all tables, ...)
+	 *            for all editor of the same kind (all diagrams, all tables, ...)
 	 * @param key
-	 *        for an instance of this editor
+	 *            for an instance of this editor
 	 * @param key
-	 *        for an element
+	 *            for an element
 	 */
 	public AbstractPapyrusPreferenceStore(IScopeContext context, String qualifier, String defaultQualifierPath, String editorLevelPrefix, String instanceEditorLevelPrefix, String elementLevelPrefix) {
 		super(context, qualifier, defaultQualifierPath);
@@ -89,27 +89,27 @@ public abstract class AbstractPapyrusPreferenceStore extends PapyrusScopedPrefer
 	/**
 	 * this method is used to overload all value under a level of preferences.
 	 * In order to overload a pop-up is opened, and the user can choose value to overload
-	 * 
+	 *
 	 * @param level
-	 *        of preference: Editor or diagram
+	 *            of preference: Editor or diagram
 	 */
 
 	public void deleteAllSubPreference(String level) {
-		//remove all sub value diagram+ element
+		// remove all sub value diagram+ element
 
-		//key to collect
+		// key to collect
 		List<String> elementKey = new ArrayList<String>();
 		try {
-			for(int i = 0; i < getStorePreferences().keys().length; i++) {
-				//level diagram collect only element
-				if(level.startsWith(instanceEditorLevelPrefix)) {
-					if(getStorePreferences().keys()[i].startsWith(elementLevelPrefix)) {
+			for (int i = 0; i < getStorePreferences().keys().length; i++) {
+				// level diagram collect only element
+				if (level.startsWith(instanceEditorLevelPrefix)) {
+					if (getStorePreferences().keys()[i].startsWith(elementLevelPrefix)) {
 						elementKey.add(getStorePreferences().keys()[i]);
 					}
 				}
-				//editor level, collect all element+diagram
-				else if(level.startsWith(editorLevelPrefix)) {
-					if((getStorePreferences().keys()[i].startsWith(elementLevelPrefix)) || (getStorePreferences().keys()[i].startsWith(instanceEditorLevelPrefix))) {
+				// editor level, collect all element+diagram
+				else if (level.startsWith(editorLevelPrefix)) {
+					if ((getStorePreferences().keys()[i].startsWith(elementLevelPrefix)) || (getStorePreferences().keys()[i].startsWith(instanceEditorLevelPrefix))) {
 						elementKey.add(getStorePreferences().keys()[i]);
 					}
 				}
@@ -119,24 +119,24 @@ public abstract class AbstractPapyrusPreferenceStore extends PapyrusScopedPrefer
 		} catch (Exception e) {
 			Activator.log.error(e);
 		}
-		if(elementKey.size() > 0) {
+		if (elementKey.size() > 0) {
 			List<String> keytoRemove = new ArrayList<String>();
 			String[] keyRoconsult = new String[elementKey.size()];
 			AbstractApplyValueOnPreferenceKeyDialog dialog = createPreferenceKeyDialog(elementKey.toArray(keyRoconsult));
 			dialog.open();
 			keytoRemove = dialog.getKeyToRemove();
 
-			//remove key
+			// remove key
 			Iterator<String> iterator = keytoRemove.iterator();
-			while(iterator.hasNext()) {
-				String key = (String)iterator.next();
+			while (iterator.hasNext()) {
+				String key = iterator.next();
 				getStorePreferences().remove(key);
 			}
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @param keys
 	 * @return
 	 *         the dialog to apply values
@@ -146,7 +146,7 @@ public abstract class AbstractPapyrusPreferenceStore extends PapyrusScopedPrefer
 
 
 	// each get value will be overloaded
-	//if not value is found for an element, a value is look for in DIAGRAM
+	// if not value is found for an element, a value is look for in DIAGRAM
 	// if a the value is not find for Diagram a value is find for Papyrus editor
 
 
@@ -158,17 +158,17 @@ public abstract class AbstractPapyrusPreferenceStore extends PapyrusScopedPrefer
 	 * element : ELEMENT_DiagramKind_ElementKind.preferenceKind
 	 * Diagram : DIAGRAM_DiagramKind.preferenceKind
 	 * Editor: PAPYRUS_EDITOR.preferenceKind
-	 * 
+	 *
 	 */
 	protected String findKeyWithAValue(String initialKey) {
 		String foundedKey = null;
-		//first look for in value stack
+		// first look for in value stack
 		foundedKey = findKeyAStoreValue(initialKey);
-		//then look for in default stack
-		if(foundedKey == null) {
+		// then look for in default stack
+		if (foundedKey == null) {
 			foundedKey = findKeyWithADefaultValue(initialKey);
 		}
-		if(foundedKey == null) {
+		if (foundedKey == null) {
 			foundedKey = initialKey;
 		}
 		return foundedKey;
@@ -177,20 +177,20 @@ public abstract class AbstractPapyrusPreferenceStore extends PapyrusScopedPrefer
 
 	/**
 	 * look for a key with a value in the store stack
-	 * 
+	 *
 	 * @param initialKey
-	 *        element : ELEMENT_DiagramKind_ElementKind.preferenceKind
-	 *        Diagram : DIAGRAM_DiagramKind.preferenceKind
-	 *        Editor: PAPYRUS_EDITOR.preferenceKind
+	 *            element : ELEMENT_DiagramKind_ElementKind.preferenceKind
+	 *            Diagram : DIAGRAM_DiagramKind.preferenceKind
+	 *            Editor: PAPYRUS_EDITOR.preferenceKind
 	 * @return the key that returns a value or null if there is no value
 	 */
 	protected String findKeyAStoreValue(String initialKey) {
 		String foundedKey = null;
-		if(getStorePreferences().get(initialKey, null) != null) {
+		if (getStorePreferences().get(initialKey, null) != null) {
 			foundedKey = initialKey;
 		}
 
-		if(foundedKey == null && hasPrefix(initialKey)) {
+		if (foundedKey == null && hasPrefix(initialKey)) {
 			foundedKey = findKeyAStoreValue(getUpperKey(initialKey));
 		}
 		return foundedKey;
@@ -204,16 +204,16 @@ public abstract class AbstractPapyrusPreferenceStore extends PapyrusScopedPrefer
 	 * element : ELEMENT_DiagramKind_ElementKind.preferenceKind
 	 * Diagram : DIAGRAM_DiagramKind.preferenceKind
 	 * Editor: PAPYRUS_EDITOR.preferenceKind
-	 * 
+	 *
 	 */
 	protected String findKeyWithADefaultValue(String initialKey) {
 		String foundedKey = null;
 
-		if(getDefaultPreferences().get(initialKey, null) != null) {
+		if (getDefaultPreferences().get(initialKey, null) != null) {
 			foundedKey = initialKey;
 		}
 
-		if(foundedKey == null && hasPrefix(initialKey)) {
+		if (foundedKey == null && hasPrefix(initialKey)) {
 			return findKeyWithADefaultValue(getUpperKey(initialKey));
 		} else {
 			foundedKey = initialKey;
@@ -228,27 +228,27 @@ public abstract class AbstractPapyrusPreferenceStore extends PapyrusScopedPrefer
 	 * element : ELEMENT_DiagramKind_ElementKind.preferenceKind
 	 * Diagram : DIAGRAM_DiagramKind.preferenceKind
 	 * Editor: PAPYRUS_EDITOR.preferenceKind
-	 * 
+	 *
 	 * @param initialKey
 	 * @return the upperKey
-	 * 
+	 *
 	 */
 	protected String getUpperKey(String initialKey) {
 
 		String out = initialKey.toString();
-		if(initialKey.startsWith(elementLevelPrefix)) {
+		if (initialKey.startsWith(elementLevelPrefix)) {
 			out = initialKey.toString().replaceAll(elementLevelPrefix, instanceEditorLevelPrefix);
 			out = out.substring(0, out.lastIndexOf("_")) + out.substring(out.indexOf("."), out.length());
 		}
-		if(initialKey.startsWith(instanceEditorLevelPrefix)) {
-			//	out=initialKey.toString().replaceAll(instanceEditorLevelPrefix, editorLevelPrefix);
+		if (initialKey.startsWith(instanceEditorLevelPrefix)) {
+			// out=initialKey.toString().replaceAll(instanceEditorLevelPrefix, editorLevelPrefix);
 			out = editorLevelPrefix + out.substring(out.indexOf("."), out.length());
 		}
 		return out;
 	}
 
 	protected boolean hasPrefix(String key) {
-		if(key.startsWith(elementLevelPrefix) || key.startsWith(instanceEditorLevelPrefix)) {
+		if (key.startsWith(elementLevelPrefix) || key.startsWith(instanceEditorLevelPrefix)) {
 			return true;
 		}
 		return false;
@@ -256,37 +256,44 @@ public abstract class AbstractPapyrusPreferenceStore extends PapyrusScopedPrefer
 
 	/**
 	 * get the value from a key
-	 * 
+	 *
 	 * @param key
 	 * @return the value
 	 */
+	@Override
 	protected String internalGet(String key) {
 		String newKey = findKeyWithAValue(key);
-		//System.err.println("-->Initial Key "+key+"--> "+ newKey);
+		// System.err.println("-->Initial Key "+key+"--> "+ newKey);
 		return Platform.getPreferencesService().get(newKey, null, getPreferenceNodes(true));
 	}
 
+	@Override
 	public boolean getDefaultBoolean(String name) {
 
 		return super.getDefaultBoolean(findKeyWithADefaultValue(name));
 	}
 
+	@Override
 	public double getDefaultDouble(String name) {
 		return super.getDefaultDouble(findKeyWithADefaultValue(name));
 	}
 
+	@Override
 	public float getDefaultFloat(String name) {
 		return super.getDefaultFloat(findKeyWithADefaultValue(name));
 	};
 
+	@Override
 	public int getDefaultInt(String name) {
 		return super.getDefaultInt(findKeyWithADefaultValue(name));
 	}
 
+	@Override
 	public long getDefaultLong(String name) {
 		return super.getDefaultLong(findKeyWithADefaultValue(name));
 	}
 
+	@Override
 	public String getDefaultString(String name) {
 		return super.getDefaultString(findKeyWithADefaultValue(name));
 	}

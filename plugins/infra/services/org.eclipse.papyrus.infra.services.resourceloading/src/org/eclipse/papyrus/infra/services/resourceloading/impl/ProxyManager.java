@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 Atos Origin, CEA, and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -102,13 +102,13 @@ public class ProxyManager implements IProxyManager {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.resourceloading.IProxyManager#loadResource(URI)
 	 */
 	public boolean loadResource(URI uri) {
 		boolean result = availableStrategies.get(getCurrentStrategy()).loadResource(modelSet, uri);
 		Iterator<ILoadingStrategyExtension> iterator = strategyExtensions.iterator();
-		while(!result && iterator.hasNext()) {
+		while (!result && iterator.hasNext()) {
 			ILoadingStrategyExtension extension = iterator.next();
 			result = extension.loadResource(modelSet, uri.trimFragment());
 		}
@@ -117,12 +117,12 @@ public class ProxyManager implements IProxyManager {
 
 	/**
 	 * Gets the eobject according to the strategy.
-	 * 
+	 *
 	 * @param uri
-	 *        the specified uri to load
+	 *            the specified uri to load
 	 * @return the resolved eobject or the proxy, depending on the loading strategy
 	 * @throws MissingResourceException
-	 *         the missing resource exception
+	 *             the missing resource exception
 	 */
 	public EObject getEObjectFromStrategy(URI uri) throws MissingResourceException {
 		// ask the strategy if the resource of the uri must be loaded
@@ -130,10 +130,10 @@ public class ProxyManager implements IProxyManager {
 		boolean loadOnDemand = loadResource(trimFragment);
 		// accept to recover object, either if strategy provides it, or if it has already been loaded anyway
 		Resource resource = modelSet.getResource(trimFragment, loadOnDemand);
-		if(resource != null) {
+		if (resource != null) {
 			String fragment = uri.fragment();
 			EObject object = resource.getEObject(fragment);
-			if(object != null) {
+			if (object != null) {
 				// object find in the resource
 				return object;
 			}
@@ -142,7 +142,7 @@ public class ProxyManager implements IProxyManager {
 				String fileExtension = uri.fileExtension();
 				Resource diResource = null;
 				String resourceName = "";
-				if(DiModel.MODEL_FILE_EXTENSION.equals(fileExtension)) {
+				if (DiModel.MODEL_FILE_EXTENSION.equals(fileExtension)) {
 					// proxy is in DI resource
 					diResource = modelSet.getResource(trimFragment, loadOnDemand);
 					resourceName = trimFragment.toString();
@@ -151,14 +151,13 @@ public class ProxyManager implements IProxyManager {
 					URI newURI = trimFragment.trimFileExtension().appendFileExtension(DiModel.MODEL_FILE_EXTENSION);
 					try {
 						diResource = modelSet.getResource(newURI.trimFragment(), loadOnDemand);
-					}
-					catch (WrappedException e) {
+					} catch (WrappedException e) {
 						// capture wrapped exception here, see Bug 405047 - [core] FileNotFoundException during MARTE profile load
-						throw new MissingResourceException(CommonPlugin.INSTANCE.getString("_UI_StringResourceNotFound_exception", new Object[]{ resourceName }), getClass().getName(), resourceName);
+						throw new MissingResourceException(CommonPlugin.INSTANCE.getString("_UI_StringResourceNotFound_exception", new Object[] { resourceName }), getClass().getName(), resourceName);
 					}
 					resourceName = newURI.trimFragment().toString();
 				}
-				if(diResource != null) {
+				if (diResource != null) {
 					// call the HistoryRoutingManager to get the EObject
 					// we assume di/notation are at the same level in folder hierarchy
 					EObject eobject = routeManager.getEObject(modelSet, uri.lastSegment().toString(), fragment);
@@ -166,16 +165,16 @@ public class ProxyManager implements IProxyManager {
 				} else {
 					// resource di not found
 					// warn the user, ask him to select the resource
-					throw new MissingResourceException(CommonPlugin.INSTANCE.getString("_UI_StringResourceNotFound_exception", new Object[]{ resourceName }), getClass().getName(), resourceName);
+					throw new MissingResourceException(CommonPlugin.INSTANCE.getString("_UI_StringResourceNotFound_exception", new Object[] { resourceName }), getClass().getName(), resourceName);
 				}
 			}
-		} else if(loadOnDemand) {
+		} else if (loadOnDemand) {
 			// resource not found
 			// warn the user, ask him to select a resource to search in
 			// or ask to search in the entire resource set
 			// or use a proxy
 			// strategy used for the specified resource only
-			throw new MissingResourceException(CommonPlugin.INSTANCE.getString("_UI_StringResourceNotFound_exception", new Object[]{ trimFragment.toString() }), getClass().getName(), trimFragment.toString());
+			throw new MissingResourceException(CommonPlugin.INSTANCE.getString("_UI_StringResourceNotFound_exception", new Object[] { trimFragment.toString() }), getClass().getName(), trimFragment.toString());
 		} else {
 			// we just want to manage a proxy for this object
 			return null;
@@ -184,11 +183,11 @@ public class ProxyManager implements IProxyManager {
 
 	/**
 	 * Gets the current strategy.
-	 * 
+	 *
 	 * @return the current strategy, strategy 0 (load all resources) is loaded by default if null
 	 */
 	private static int getCurrentStrategy() {
-		if(strategyChooser == null) {
+		if (strategyChooser == null) {
 			return 0;
 		}
 		return strategyChooser.getCurrentStrategy();
@@ -196,7 +195,7 @@ public class ProxyManager implements IProxyManager {
 
 	/**
 	 * Gets the all strategies.
-	 * 
+	 *
 	 * @return the all strategies
 	 */
 	public static Map<Integer, String> getAllStrategies() {
@@ -205,19 +204,19 @@ public class ProxyManager implements IProxyManager {
 
 	/**
 	 * Gets the available strategies from extensions
-	 * 
+	 *
 	 * @return the strategies
 	 */
 	private static Map<Integer, ILoadingStrategy> getLoadingStrategies() {
 		Map<Integer, ILoadingStrategy> strategies = new HashMap<Integer, ILoadingStrategy>();
 		IConfigurationElement[] extensions = Platform.getExtensionRegistry().getConfigurationElementsFor(LOADING_STRATEGY_EXTENSION_POINT_ID);
-		for(IConfigurationElement element : extensions) {
-			if(LOADING_STRATEGY_ELEMENT_ID.equals(element.getName())) {
+		for (IConfigurationElement element : extensions) {
+			if (LOADING_STRATEGY_ELEMENT_ID.equals(element.getName())) {
 				try {
 					// use description in extension to define preferences from the extensions
 					int id = Integer.valueOf(element.getAttribute(LOADING_STRATEGY_ID));
 					String description = element.getAttribute(LOADING_STRATEGY_DESCRIPTION_ID);
-					ILoadingStrategy strategy = (ILoadingStrategy)element.createExecutableExtension(STRATEGY_ID);
+					ILoadingStrategy strategy = (ILoadingStrategy) element.createExecutableExtension(STRATEGY_ID);
 					strategies.put(id, strategy);
 					strategiesAndDescriptions.put(id, description);
 				} catch (CoreException e1) {
@@ -234,16 +233,16 @@ public class ProxyManager implements IProxyManager {
 
 	/**
 	 * Gets the strategy extensions
-	 * 
+	 *
 	 * @return the strategy extensions
 	 */
 	private static Set<ILoadingStrategyExtension> getLoadingStrategyExtensions() {
 		Set<ILoadingStrategyExtension> strategies = new HashSet<ILoadingStrategyExtension>();
 		IConfigurationElement[] extensions = Platform.getExtensionRegistry().getConfigurationElementsFor(STRATEGY_EXTENDER_EXTENSION_POINT_ID);
-		for(IConfigurationElement element : extensions) {
-			if(STRATEGY_EXTENDER_ELEMENT_ID.equals(element.getName())) {
+		for (IConfigurationElement element : extensions) {
+			if (STRATEGY_EXTENDER_ELEMENT_ID.equals(element.getName())) {
 				try {
-					ILoadingStrategyExtension strategyExtension = (ILoadingStrategyExtension)element.createExecutableExtension(STRATEGY_EXTENSION_ID);
+					ILoadingStrategyExtension strategyExtension = (ILoadingStrategyExtension) element.createExecutableExtension(STRATEGY_EXTENSION_ID);
 					strategies.add(strategyExtension);
 				} catch (CoreException e) {
 					Activator.log.error(e.getMessage(), e);
@@ -256,16 +255,16 @@ public class ProxyManager implements IProxyManager {
 
 	/**
 	 * There is only one Strategy chooser chosen in extension registry.
-	 * 
+	 *
 	 * @return
 	 */
 	public static IStrategyChooser getStrategyChooser() {
 		IStrategyChooser result = null;
 		IConfigurationElement[] element = Platform.getExtensionRegistry().getConfigurationElementsFor(STRATEGY_CHOOSER_EXTENSION_POINT_ID);
-		if(element.length > 0) {
+		if (element.length > 0) {
 			IConfigurationElement e = element[0];
 			try {
-				result = (IStrategyChooser)e.createExecutableExtension(STRATEGY_CHOOSER_CHOOSER_ATTRIBUTE);
+				result = (IStrategyChooser) e.createExecutableExtension(STRATEGY_CHOOSER_CHOOSER_ATTRIBUTE);
 			} catch (CoreException e1) {
 				Activator.log.error(e1.getMessage(), e1);
 				e1.printStackTrace();
@@ -277,7 +276,7 @@ public class ProxyManager implements IProxyManager {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.resourceloading.IProxyManager#dispose()
 	 */
 	public void dispose() {

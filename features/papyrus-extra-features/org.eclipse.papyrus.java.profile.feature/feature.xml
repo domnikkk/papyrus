@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.java.profile.feature" label="%featureName" provider-name="%providerName" version="1.0.0.qualifier">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.java.profile.feature" label="%featureName" provider-name="%providerName" version="1.0.1.qualifier">
 
    <description url="http://www.example.com/description">
       Profile for the Java language.

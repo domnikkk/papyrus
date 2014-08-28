@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012-2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,15 +24,16 @@ import com.google.inject.Injector;
 @SuppressWarnings("all")
 public class CSSStandaloneSetupGenerated implements ISetup {
 
+	@Override
 	public Injector createInjectorAndDoEMFRegistration() {
 		// register default ePackages
-		if(!Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().containsKey("ecore")) {
+		if (!Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().containsKey("ecore")) {
 			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("ecore", new org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl());
 		}
-		if(!Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().containsKey("xmi")) {
+		if (!Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().containsKey("xmi")) {
 			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("xmi", new org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl());
 		}
-		if(!EPackage.Registry.INSTANCE.containsKey(org.eclipse.xtext.XtextPackage.eNS_URI)) {
+		if (!EPackage.Registry.INSTANCE.containsKey(org.eclipse.xtext.XtextPackage.eNS_URI)) {
 			EPackage.Registry.INSTANCE.put(org.eclipse.xtext.XtextPackage.eNS_URI, org.eclipse.xtext.XtextPackage.eINSTANCE);
 		}
 
@@ -46,7 +47,7 @@ public class CSSStandaloneSetupGenerated implements ISetup {
 	}
 
 	public void register(Injector injector) {
-		if(!EPackage.Registry.INSTANCE.containsKey("http://www.eclipse.org/papyrus/infra/gmfdiag/CSS")) {
+		if (!EPackage.Registry.INSTANCE.containsKey("http://www.eclipse.org/papyrus/infra/gmfdiag/CSS")) {
 			EPackage.Registry.INSTANCE.put("http://www.eclipse.org/papyrus/infra/gmfdiag/CSS", org.eclipse.papyrus.infra.gmfdiag.css.CssPackage.eINSTANCE);
 		}
 

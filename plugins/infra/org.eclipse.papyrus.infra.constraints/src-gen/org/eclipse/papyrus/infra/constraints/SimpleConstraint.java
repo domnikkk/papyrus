@@ -17,8 +17,8 @@ import org.eclipse.papyrus.infra.constraints.environment.ConstraintType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.SimpleConstraint#getConstraintType <em>Constraint Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.SimpleConstraint#getProperties <em>Properties</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.SimpleConstraint#getConstraintType <em>Constraint Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.SimpleConstraint#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,10 +31,10 @@ public interface SimpleConstraint extends ConstraintDescriptor {
 	 * Returns the value of the '<em><b>Constraint Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Constraint Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Constraint Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Constraint Type</em>' reference.
 	 * @see #setConstraintType(ConstraintType)
 	 * @see org.eclipse.papyrus.infra.constraints.ConstraintsPackage#getSimpleConstraint_ConstraintType()
@@ -47,7 +47,9 @@ public interface SimpleConstraint extends ConstraintDescriptor {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.constraints.SimpleConstraint#getConstraintType <em>Constraint Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Constraint Type</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Constraint Type</em>' reference.
 	 * @see #getConstraintType()
 	 * @generated
 	 */
@@ -58,10 +60,10 @@ public interface SimpleConstraint extends ConstraintDescriptor {
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.constraints.ConfigProperty}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Properties</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Properties</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Properties</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.constraints.ConstraintsPackage#getSimpleConstraint_Properties()
 	 * @model containment="true"

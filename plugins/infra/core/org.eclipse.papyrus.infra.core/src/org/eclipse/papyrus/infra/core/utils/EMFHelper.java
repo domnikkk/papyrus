@@ -34,22 +34,22 @@ public class EMFHelper {
 	 * Gets the usages.
 	 *
 	 * @param source
-	 *        the source
+	 *            the source
 	 *
 	 * @return the usages or null if there is no usages
 	 */
 	public static Collection<Setting> getUsages(EObject source) {
-		if(source == null) {
+		if (source == null) {
 			return Collections.emptyList();
 		}
 
 		ECrossReferenceAdapter crossReferencer = ECrossReferenceAdapter.getCrossReferenceAdapter(source);
-		if(crossReferencer == null) {
+		if (crossReferencer == null) {
 			// try to register a cross referencer at the highest level
 			crossReferencer = new ECrossReferenceAdapter();
 			Resource resource = source.eResource();
-			if(resource != null) {
-				if(resource.getResourceSet() != null) {
+			if (resource != null) {
+				if (resource.getResourceSet() != null) {
 					resource.getResourceSet().eAdapters().add(crossReferencer);
 				} else {
 					resource.eAdapters().add(crossReferencer);

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.properties.widgets;
 
@@ -30,7 +30,7 @@ public class ResetStyleWidget implements SelectionListener {
 	private DataSource input;
 
 	private String propertyPath;
-	
+
 	public ResetStyleWidget(Composite parent, int style) {
 		button = new Button(parent, SWT.PUSH);
 		button.addSelectionListener(this);
@@ -39,7 +39,7 @@ public class ResetStyleWidget implements SelectionListener {
 	}
 
 	public void widgetSelected(SelectionEvent event) {
-		if(event.widget != button || input == null) {
+		if (event.widget != button || input == null) {
 			return;
 		}
 
@@ -48,7 +48,7 @@ public class ResetStyleWidget implements SelectionListener {
 	}
 
 	public void widgetDefaultSelected(SelectionEvent e) {
-		//Nothing
+		// Nothing
 	}
 
 	public void setText(String text) {
@@ -75,7 +75,7 @@ public class ResetStyleWidget implements SelectionListener {
 	public DataSource getInput() {
 		return input;
 	}
-	
+
 	public String getProperty() {
 		return propertyPath;
 	}
@@ -84,9 +84,9 @@ public class ResetStyleWidget implements SelectionListener {
 		this.propertyPath = property;
 		checkInput();
 	}
-	
+
 	protected void checkInput() {
-		if((propertyPath != null) && (input != null)) {
+		if ((propertyPath != null) && (input != null)) {
 			button.setEnabled(input.isEditable(propertyPath));
 		} else {
 			button.setEnabled(true); // For compatibility with XWT models that don't specify the property

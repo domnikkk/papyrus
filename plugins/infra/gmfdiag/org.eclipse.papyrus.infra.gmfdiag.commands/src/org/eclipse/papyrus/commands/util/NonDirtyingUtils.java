@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.commands.INonDirtying;
 
 /**
  * Utilities for working with non-dirtying EMF, GEF, and GMF commands.
- * 
+ *
  * @see INonDirtying
  * @see AbstractCommand.NonDirtying
  */
@@ -42,14 +42,14 @@ public class NonDirtyingUtils {
 	}
 
 	public static IUndoableOperation wrap(TransactionalEditingDomain domain, Command command) {
-		if(command instanceof AbstractCommand.NonDirtying) {
+		if (command instanceof AbstractCommand.NonDirtying) {
 			return new NonDirtyingEMFCommandOperation(domain, command);
 		}
 		return new EMFCommandOperation(domain, command);
 	}
 
 	public static IUndoableOperation wrap(TransactionalEditingDomain domain, Command command, Map<?, ?> options) {
-		if(command instanceof AbstractCommand.NonDirtying) {
+		if (command instanceof AbstractCommand.NonDirtying) {
 			return new NonDirtyingEMFCommandOperation(domain, command, options);
 		}
 		return new EMFCommandOperation(domain, command, options);
@@ -58,18 +58,18 @@ public class NonDirtyingUtils {
 	public static CompoundCommand nonDirtyingEMFCompound() {
 		return new NonDirtyingEMFCompoundCommand();
 	}
-	
+
 	/**
 	 * Wrap a possibly {@linkplain INonDirtying non-dirtying} GEF command as a GMF command.
-	 * 
+	 *
 	 * @param command
-	 *        a GEF command
+	 *            a GEF command
 	 * @return the most appropriate wrapper GMF command
 	 */
 	public static ICommand wrap(org.eclipse.gef.commands.Command command) {
 		ICommand result;
 
-		if(command instanceof INonDirtying) {
+		if (command instanceof INonDirtying) {
 			result = new NonDirytingCommandProxy(command);
 		} else {
 			result = new CommandProxy(command);
@@ -79,7 +79,7 @@ public class NonDirtyingUtils {
 	}
 
 	public static Command chain(Command command1, Command command2) {
-		if((command1 instanceof AbstractCommand.NonDirtying) && (command2 instanceof AbstractCommand.NonDirtying)) {
+		if ((command1 instanceof AbstractCommand.NonDirtying) && (command2 instanceof AbstractCommand.NonDirtying)) {
 			return new NonDirtyingEMFCompoundCommand().chain(command1).chain(command2);
 		}
 		return command1.chain(command2);
@@ -90,7 +90,7 @@ public class NonDirtyingUtils {
 	}
 
 	public static org.eclipse.gef.commands.Command chain(org.eclipse.gef.commands.Command command1, org.eclipse.gef.commands.Command command2) {
-		if((command1 instanceof INonDirtying) && (command2 instanceof INonDirtying)) {
+		if ((command1 instanceof INonDirtying) && (command2 instanceof INonDirtying)) {
 			return new NonDirtyingGEFCompoundCommand().chain(command1).chain(command2);
 		}
 		return command1.chain(command2);
@@ -101,7 +101,7 @@ public class NonDirtyingUtils {
 	}
 
 	public static ICommand compose(ICommand command1, ICommand command2) {
-		if((command1 instanceof INonDirtying) && (command2 instanceof INonDirtying)) {
+		if ((command1 instanceof INonDirtying) && (command2 instanceof INonDirtying)) {
 			return new NonDirtyingGMFCompositeCommand(command1.getLabel()).compose(command1).compose(command2);
 		}
 		return command1.compose(command2);
@@ -122,7 +122,7 @@ public class NonDirtyingUtils {
 		}
 
 		static Command checkCommand(Command command) {
-			if(!(command instanceof AbstractCommand.NonDirtying)) {
+			if (!(command instanceof AbstractCommand.NonDirtying)) {
 				throw new IllegalStateException("Attempt to wrap dirtying command in a non-dirtying operation."); //$NON-NLS-1$
 			}
 			return command;
@@ -156,7 +156,7 @@ public class NonDirtyingUtils {
 		}
 
 		private void checkNonDirtying(Command command) {
-			if(!(command instanceof AbstractCommand.NonDirtying)) {
+			if (!(command instanceof AbstractCommand.NonDirtying)) {
 				throw new IllegalArgumentException("Attempt to append a dirtying command to a non-dirtying compound."); //$NON-NLS-1$
 			}
 		}
@@ -167,7 +167,7 @@ public class NonDirtyingUtils {
 		@Override
 		public void add(org.eclipse.gef.commands.Command command) {
 			// GEF compounds allow appending null commands, which just has no effect
-			if(command != null) {
+			if (command != null) {
 				checkNonDirtying(command);
 				super.add(command);
 			}
@@ -180,7 +180,7 @@ public class NonDirtyingUtils {
 		}
 
 		private void checkNonDirtying(org.eclipse.gef.commands.Command command) {
-			if(!(command instanceof INonDirtying)) {
+			if (!(command instanceof INonDirtying)) {
 				throw new IllegalArgumentException("Attempt to append a dirtying command to a non-dirtying compound."); //$NON-NLS-1$
 			}
 		}
@@ -199,12 +199,12 @@ public class NonDirtyingUtils {
 		}
 
 		private void checkNonDirtying(IUndoableOperation operation) {
-			if(!(operation instanceof INonDirtying)) {
+			if (!(operation instanceof INonDirtying)) {
 				throw new IllegalArgumentException("Attempt to append a dirtying operation to a non-dirtying composite."); //$NON-NLS-1$
 			}
 		}
 	}
-	
+
 	private static class NonDirytingCommandProxy extends CommandProxy implements INonDirtying {
 
 		NonDirytingCommandProxy(org.eclipse.gef.commands.Command command) {

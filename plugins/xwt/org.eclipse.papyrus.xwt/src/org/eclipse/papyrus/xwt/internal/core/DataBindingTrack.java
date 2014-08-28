@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -33,7 +33,7 @@ import org.eclipse.swt.widgets.Widget;
 
 /**
  * @author liang.zhang
- * 
+ *
  */
 public class DataBindingTrack {
 
@@ -65,11 +65,11 @@ public class DataBindingTrack {
 
 	private int validateParentElementError(Element bindingElement) {
 		int isError = 0;
-		if(!bindingError.equals("")) {
+		if (!bindingError.equals("")) {
 			Object parentObj = bindingElement.getParent();
-			while(parentObj != null) {
-				bindingElement = (Element)parentObj;
-				if(errorElements.contains(bindingElement.getId())) {
+			while (parentObj != null) {
+				bindingElement = (Element) parentObj;
+				if (errorElements.contains(bindingElement.getId())) {
 					isError = 1;
 					break;
 				}
@@ -80,8 +80,8 @@ public class DataBindingTrack {
 	}
 
 	private String getCurrentWidgetPosition(Element element) {
-		if(element.getParent() != null) {
-			return " " + getCurrentWidgetPosition((Element)element.getParent());
+		if (element.getParent() != null) {
+			return " " + getCurrentWidgetPosition((Element) element.getParent());
 		}
 		return "";
 	}
@@ -90,27 +90,27 @@ public class DataBindingTrack {
 		StringBuffer message = new StringBuffer("");
 		Iterator<Element> widgetIt = widgetList.iterator();
 		Set<Element> keys = bindingMap.keySet();
-		while(widgetIt.hasNext()) {
+		while (widgetIt.hasNext()) {
 			Element element = widgetIt.next();
 			int parentHasError = validateParentElementError(element);
-			if(parentHasError == 0) {
+			if (parentHasError == 0) {
 				String content = getCurrentWidgetPosition(element);
-				if(!message.toString().equals("")) {
+				if (!message.toString().equals("")) {
 					content += "+ ";
 				}
 				content = content + element.getName();
-				if(XWT.isTracking(Tracking.NAME)) {
+				if (XWT.isTracking(Tracking.NAME)) {
 					Attribute nameAttr = element.getAttribute("Name");
-					if(nameAttr == null) {
+					if (nameAttr == null) {
 						nameAttr = element.getAttribute(IConstants.XWT_X_NAMESPACE, "Name");
 					}
-					if(nameAttr != null) {
+					if (nameAttr != null) {
 						content += " <" + nameAttr.getContent() + ">";
 					}
 				}
 				message.append(content);
-				if(XWT.isTracking(Tracking.DATABINDING)) {
-					if(keys.contains(element)) {
+				if (XWT.isTracking(Tracking.DATABINDING)) {
+					if (keys.contains(element)) {
 						message.append(bindingMap.get(element));
 					} else {
 						message.append("\n");
@@ -127,25 +127,27 @@ public class DataBindingTrack {
 
 	public void tracking(Object swtObject, Element element, Object dataContext) {
 		String bindingMessage = "";
-		if(swtObject instanceof Binding) {
+		if (swtObject instanceof Binding) {
 			String error = "";
-			Binding newInstance = (Binding)swtObject;
+			Binding newInstance = (Binding) swtObject;
 			String path = null;
 			Attribute attr = element.getAttribute("Path");
-			if(null == attr)
+			if (null == attr) {
 				attr = element.getAttribute("path");
-			if(null != attr)
+			}
+			if (null != attr) {
 				path = attr.getContent();
+			}
 			Object dataContext2 = null;
 			try {
 				dataContext2 = newInstance.getValue(null);
-				if(path != null && path.length() > 0) {
+				if (path != null && path.length() > 0) {
 					String[] paths = path.trim().split("\\.");
-					if(paths.length > 1) {
+					if (paths.length > 1) {
 						String path1 = "";
-						for(int i = 0; i < paths.length - 1; i++) {
+						for (int i = 0; i < paths.length - 1; i++) {
 							path1 = paths[i];
-							if(dataContext2 != null) {
+							if (dataContext2 != null) {
 								dataContext2 = getObserveData(dataContext2, path1);
 							}
 						}
@@ -156,26 +158,26 @@ public class DataBindingTrack {
 				setBindingErrorMessage("-> Error");
 				error = "-> Error";
 			}
-			if(dataContext2 != null) {
+			if (dataContext2 != null) {
 				bindingMessage = " (DataContext=" + dataContext2.getClass().getSimpleName() + ", Path=" + path + ")" + error + "\n";
-				addBindingMessageToMap((Element)element.getParent().getParent(), bindingMessage);// bindingMap.put((Element) element.getParent().getParent(), bindingMessage);
+				addBindingMessageToMap((Element) element.getParent().getParent(), bindingMessage);// bindingMap.put((Element) element.getParent().getParent(), bindingMessage);
 			}
-		} else if(swtObject instanceof Widget) {
+		} else if (swtObject instanceof Widget) {
 			addWidgetElement(element);
-			if(dataContext != null) {
+			if (dataContext != null) {
 				bindingMessage = " (DataContext=" + dataContext.getClass().getSimpleName() + ")\n";
 				addBindingMessageToMap(element, bindingMessage);
 			}
-		} else if(JFacesHelper.isViewer(swtObject)) {
-			if(dataContext != null) {
+		} else if (JFacesHelper.isViewer(swtObject)) {
+			if (dataContext != null) {
 				bindingMessage = " (DataContext=" + dataContext.getClass().getSimpleName() + ")\n";
 				addBindingMessageToMap(element, bindingMessage);// bindingMap.put(element, bindingMessage);
 			}
-		} else if(element.attributeNames(IConstants.XWT_X_NAMESPACE).length > 0) {
+		} else if (element.attributeNames(IConstants.XWT_X_NAMESPACE).length > 0) {
 			// ??
-			if(element.getParent() != null && element.getParent().getParent() != null) {
+			if (element.getParent() != null && element.getParent().getParent() != null) {
 				bindingMessage = " (DataContext=" + element.getName() + ")\n";
-				addBindingMessageToMap((Element)element.getParent().getParent(), bindingMessage);// bindingMap.put((Element) element.getParent().getParent(), bindingMessage);
+				addBindingMessageToMap((Element) element.getParent().getParent(), bindingMessage);// bindingMap.put((Element) element.getParent().getParent(), bindingMessage);
 			}
 		}
 	}
@@ -184,7 +186,7 @@ public class DataBindingTrack {
 		try {
 			Class<?> dataContextClass = dataContext.getClass();
 			Method getMethod = ObjectUtil.findGetter(dataContextClass, path, null);
-			if(getMethod != null) {
+			if (getMethod != null) {
 				return getMethod.invoke(dataContext);
 			}
 		} catch (SecurityException e) {

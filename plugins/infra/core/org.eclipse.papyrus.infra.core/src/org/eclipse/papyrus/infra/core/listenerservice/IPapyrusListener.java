@@ -15,16 +15,16 @@ import org.eclipse.emf.common.notify.Notification;
 /**
  * This interface is a listener that will listen directly all events in papyrus:
  * uml. It will be very useful for external plug-in.
- * 
+ *
  * An implementation may be an adapter.
  */
 public interface IPapyrusListener {
 
 	/**
 	 * Notifies that a change to some feature has occurred.
-	 * 
+	 *
 	 * @param notification
-	 *        - a description of the change.
+	 *            - a description of the change.
 	 **/
 	public void notifyChanged(Notification notification);
 }

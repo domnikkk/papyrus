@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *   Nicolas Guyomar (Mia-Software) - initial API and implementation
  *   Nicolas Guyomar (Mia-Software) - Bug 334546 - [celleditors] no border on Text field
  *   Gregoire Dupe (Mia-Software) - Bug 339998 - public methods of AbstractCellEditorComposite have to be protected
- *   Nicolas Bros (Mia-Software) - Bug 334539 - [celleditors] change listener 
+ *   Nicolas Bros (Mia-Software) - Bug 334539 - [celleditors] change listener
  *****************************************************************************/
 package org.eclipse.papyrus.emf.facet.widgets.celleditors;
 
@@ -41,7 +41,8 @@ public abstract class AbstractCellEditorComposite<T> extends Composite implement
 		this(parent, SWT.NONE);
 	}
 
-	@SuppressWarnings("deprecation") /* backwards-compatibility */
+	@SuppressWarnings("deprecation")
+	/* backwards-compatibility */
 	public AbstractCellEditorComposite(final Composite parent, final int style) {
 		super(parent, style);
 		this.compatibilityCommitListeners = new ArrayList<Listener>();
@@ -81,7 +82,8 @@ public abstract class AbstractCellEditorComposite<T> extends Composite implement
 		}
 	}
 
-	@SuppressWarnings("deprecation") /* backwards-compatibility */
+	@SuppressWarnings("deprecation")
+	/* backwards-compatibility */
 	protected final void fireCommit() {
 		synchronized (this.compatibilityCommitListeners) {
 			for (Listener commitListener : new ArrayList<Listener>(

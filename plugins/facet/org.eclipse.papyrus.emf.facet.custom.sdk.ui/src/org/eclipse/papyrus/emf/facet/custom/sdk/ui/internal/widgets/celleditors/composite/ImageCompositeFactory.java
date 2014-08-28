@@ -10,9 +10,9 @@
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.widgets.celleditors.composite;
 
+import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IImage;
 import org.eclipse.papyrus.emf.facet.widgets.celleditors.AbstractCellEditorComposite;
 import org.eclipse.papyrus.emf.facet.widgets.celleditors.ICompositeEditorFactory;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IImage;
 import org.eclipse.swt.widgets.Composite;
 
 /** Factory for {@link ImageComposite} */

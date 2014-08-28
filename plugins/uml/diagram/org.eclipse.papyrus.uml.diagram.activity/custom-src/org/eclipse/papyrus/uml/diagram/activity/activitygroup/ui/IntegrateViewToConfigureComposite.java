@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,18 +37,18 @@ import com.google.common.collect.Lists;
 public class IntegrateViewToConfigureComposite extends Composite {
 
 	/**
-	 * 
+	 *
 	 */
 	private Table table;
 
 	/**
-	 * 
+	 *
 	 */
 	private CheckboxTableViewer checkboxTableViewer;
 
 	/**
 	 * Create the composite.
-	 * 
+	 *
 	 * @param parent
 	 * @param style
 	 */
@@ -75,8 +75,9 @@ public class IntegrateViewToConfigureComposite extends Composite {
 		Iterable<Object> groupNotifiers = Iterables.filter(Lists.newArrayList(selection), Predicates.instanceOf(IGroupNotifier.class));
 		return Iterables.transform(groupNotifiers, new Function<Object, IGroupNotifier>() {
 
+			@Override
 			public IGroupNotifier apply(Object arg0) {
-				return (IGroupNotifier)arg0;
+				return (IGroupNotifier) arg0;
 			}
 		});
 	}

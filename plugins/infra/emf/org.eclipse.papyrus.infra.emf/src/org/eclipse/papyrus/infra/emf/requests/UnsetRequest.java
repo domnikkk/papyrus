@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,7 +8,7 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
- *   
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.infra.emf.requests;
@@ -48,7 +48,7 @@ public class UnsetRequest extends AbstractEditCommandRequest {
 	public Object getEditHelperContext() {
 		IClientContext context = getClientContext();
 
-		if(context == null) {
+		if (context == null) {
 			return elementToEdit;
 		} else {
 			return new EditHelperContext(elementToEdit, context);
@@ -63,8 +63,9 @@ public class UnsetRequest extends AbstractEditCommandRequest {
 		return elementToEdit;
 	}
 
+	@Override
 	public List<? extends EObject> getElementsToEdit() {
-		if(elementToEdit != null) {
+		if (elementToEdit != null) {
 			return Collections.singletonList(elementToEdit);
 		}
 

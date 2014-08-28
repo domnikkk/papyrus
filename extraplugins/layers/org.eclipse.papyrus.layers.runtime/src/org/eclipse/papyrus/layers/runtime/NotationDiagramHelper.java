@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -22,9 +22,9 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
  * <li>Add or remove a LayersStack</li>
  * <li>get the LayersStackMngr if a LayersStack exist.</li>
  * </ul>
- * 
+ *
  * @author Cedric dumoulin
- * 
+ *
  */
 public class NotationDiagramHelper {
 
@@ -32,77 +32,78 @@ public class NotationDiagramHelper {
 	 * Associated Diagram.
 	 */
 	protected Diagram diagram;
-	
+
 	/**
 	 * Layers model.
 	 */
 	protected LayersModel layersModel;
-	
+
 	protected LayersStackApplication layersApplication;
 
-//	/**
-//	 * The associated {@link LayersStackMngr}. Maybe null if no LayersStack is associated.
-//	 */
-//	protected LayersStackMngr layerStackMngr;
-//
-//	/**
-//	 * Notifier sending event when the layerStack is added or removed.
-//	 */
-//	private LayersStackAttachedNotifier layerStackAttachedNotifier;
+	// /**
+	// * The associated {@link LayersStackMngr}. Maybe null if no LayersStack is associated.
+	// */
+	// protected LayersStackMngr layerStackMngr;
+	//
+	// /**
+	// * Notifier sending event when the layerStack is added or removed.
+	// */
+	// private LayersStackAttachedNotifier layerStackAttachedNotifier;
 
-//	/**
-//	 * Listen on events from the layerStackAttachedNotifier.
-//	 */
-//	private LayersStackAttachedListener layerStackAttachedListener = new LayersStackAttachedListener() {
-//
-//		public void layerStackRemoved(LayersStackAttachedEvent event) {
-//			layerStackMngr.dispose();
-//			layerStackMngr = null;
-//		}
-//
-//		public void layerStackAttached(LayersStackAttachedEvent event) {
-//
-//			if(layerStackMngr != null)
-//			{
-//				layerStackMngr.dispose();
-//				layerStackMngr = null;
-//			}
-//
-//			layerStackMngr = new LayersStackMngr(event.getLayersStack());
-//		}
-//
-//		public void diagramChanged(LayersStackAttachedEvent event) {
-//			// Not used because diagram is never set.
-//			if(layerStackMngr != null)
-//			{
-//				layerStackMngr.dispose();
-//				layerStackMngr = null;
-//			}
-//
-//			layerStackMngr = new LayersStackMngr(event.getLayersStack());
-//
-//		}
-//	};
+	// /**
+	// * Listen on events from the layerStackAttachedNotifier.
+	// */
+	// private LayersStackAttachedListener layerStackAttachedListener = new LayersStackAttachedListener() {
+	//
+	// public void layerStackRemoved(LayersStackAttachedEvent event) {
+	// layerStackMngr.dispose();
+	// layerStackMngr = null;
+	// }
+	//
+	// public void layerStackAttached(LayersStackAttachedEvent event) {
+	//
+	// if(layerStackMngr != null)
+	// {
+	// layerStackMngr.dispose();
+	// layerStackMngr = null;
+	// }
+	//
+	// layerStackMngr = new LayersStackMngr(event.getLayersStack());
+	// }
+	//
+	// public void diagramChanged(LayersStackAttachedEvent event) {
+	// // Not used because diagram is never set.
+	// if(layerStackMngr != null)
+	// {
+	// layerStackMngr.dispose();
+	// layerStackMngr = null;
+	// }
+	//
+	// layerStackMngr = new LayersStackMngr(event.getLayersStack());
+	//
+	// }
+	// };
 
 	/**
 	 * Constructor.
 	 * Construct the manager and initialize it.
-	 * @param layersModel 
-	 * 
+	 *
+	 * @param layersModel
+	 *
 	 */
 	public NotationDiagramHelper(LayersModel layersModel, Diagram diagram) {
 		this.diagram = diagram;
 		this.layersModel = layersModel;
 
-//		// Set the layerStackMngr if necessary
-//		LayersStack layerStack = LayersStackUtil.getInstance().lookupLayersStack(diagram);
-//		if(layerStack != null) {
-//			layerStackMngr = new LayersStackMngr(layerStack);
-//		}
-//
-//		// Set the listeners on changes
-//		layerStackAttachedNotifier = new LayersStackAttachedNotifier(diagram);
-//		layerStackAttachedNotifier.addLayersStackAttachedEventListener(layerStackAttachedListener);
+		// // Set the layerStackMngr if necessary
+		// LayersStack layerStack = LayersStackUtil.getInstance().lookupLayersStack(diagram);
+		// if(layerStack != null) {
+		// layerStackMngr = new LayersStackMngr(layerStack);
+		// }
+		//
+		// // Set the listeners on changes
+		// layerStackAttachedNotifier = new LayersStackAttachedNotifier(diagram);
+		// layerStackAttachedNotifier.addLayersStackAttachedEventListener(layerStackAttachedListener);
 
 		activate();
 	}
@@ -111,26 +112,26 @@ public class NotationDiagramHelper {
 	 * Activate the manager.
 	 */
 	public void activate() {
-//		layerStackAttachedNotifier.activate();
+		// layerStackAttachedNotifier.activate();
 	}
 
 	/**
 	 * Deactivate the manager.
 	 */
 	public void deactivate() {
-//		layerStackAttachedNotifier.deactivate();
+		// layerStackAttachedNotifier.deactivate();
 	}
 
 	/**
 	 * Dispose all resources.
 	 */
 	public void dispose() {
-//		layerStackAttachedNotifier.deactivate();
+		// layerStackAttachedNotifier.deactivate();
 
 		diagram = null;
 	}
 
-	
+
 	/**
 	 * @return the diagram
 	 */
@@ -138,19 +139,19 @@ public class NotationDiagramHelper {
 		return diagram;
 	}
 
-	
-//	/**
-//	 * Return the {@link LayersStackMngr} if any. Throw an 
-//	 * @return the layerStackMngr
-//	 * @throws NotSetException If the layerStackMngr is not set.
-//	 */
-//	public LayersStackMngr getLayersStackMngr() throws NotSetException {
-//		
-//		if(layerStackMngr == null)
-//			throw new NotSetException(this.getClass().getSimpleName() + ".getLayersStackMngr(): layerStackMngr is not set.");
-//		
-//		return layerStackMngr;
-//	}
+
+	// /**
+	// * Return the {@link LayersStackMngr} if any. Throw an
+	// * @return the layerStackMngr
+	// * @throws NotSetException If the layerStackMngr is not set.
+	// */
+	// public LayersStackMngr getLayersStackMngr() throws NotSetException {
+	//
+	// if(layerStackMngr == null)
+	// throw new NotSetException(this.getClass().getSimpleName() + ".getLayersStackMngr(): layerStackMngr is not set.");
+	//
+	// return layerStackMngr;
+	// }
 
 	/**
 	 * Attach the {@link LayersStack} to the diagram.
@@ -173,34 +174,34 @@ public class NotationDiagramHelper {
 
 	/**
 	 * Return True if a {@link LayersStack} is attached to the diagram.
-	 * 
+	 *
 	 * @return True if a {@link LayersStack} is attached to the diagram.
 	 */
 	public boolean isLayersStackAttached() {
 		LayersStackApplication application = layersModel.lookupLayerStackApplication();
-		if(application == null ) {
+		if (application == null) {
 			return false;
 		}
 		return application.isLayersStackAttachedFor(diagram);
 	}
 
-//	/**
-//	 * Add a listener for the {@link LayersStackActivatedEvent}.
-//	 * 
-//	 * @param listener
-//	 */
-//	public void addLayersStackAttachedEventListener(LayersStackAttachedListener listener) {
-//		layerStackAttachedNotifier.addLayersStackAttachedEventListener(listener);
-//	}
-//
-//	/**
-//	 * Remove a listener for the {@link LayersStackActivatedEvent}.
-//	 * 
-//	 * @param listener
-//	 */
-//	public void removeLayersStackAttachedEventListener(LayersStackAttachedListener listener) {
-//		layerStackAttachedNotifier.removeLayersStackAttachedEventListener(listener);
-//	}
+	// /**
+	// * Add a listener for the {@link LayersStackActivatedEvent}.
+	// *
+	// * @param listener
+	// */
+	// public void addLayersStackAttachedEventListener(LayersStackAttachedListener listener) {
+	// layerStackAttachedNotifier.addLayersStackAttachedEventListener(listener);
+	// }
+	//
+	// /**
+	// * Remove a listener for the {@link LayersStackActivatedEvent}.
+	// *
+	// * @param listener
+	// */
+	// public void removeLayersStackAttachedEventListener(LayersStackAttachedListener listener) {
+	// layerStackAttachedNotifier.removeLayersStackAttachedEventListener(listener);
+	// }
 
 
 }

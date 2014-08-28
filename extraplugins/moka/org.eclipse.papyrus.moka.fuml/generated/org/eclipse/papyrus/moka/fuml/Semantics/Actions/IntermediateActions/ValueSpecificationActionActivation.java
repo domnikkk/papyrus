@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,10 +19,11 @@ import org.eclipse.uml2.uml.ValueSpecificationAction;
 
 public class ValueSpecificationActionActivation extends ActionActivation {
 
+	@Override
 	public void doAction() {
 		// Evaluate the value specification for the action and place the result
 		// on the result pin of the action.
-		ValueSpecificationAction action = (ValueSpecificationAction)(this.node);
+		ValueSpecificationAction action = (ValueSpecificationAction) (this.node);
 		Value value = this.getExecutionLocus().executor.evaluate(action.getValue());
 		this.putToken(action.getResult(), value);
 	}

@@ -10,9 +10,9 @@ public class Utils {
 
 	/**
 	 * Return the absolute file name to a file name given e.g. in the form platform:/plugin/xxx
-	 * 
+	 *
 	 * @param fileName
-	 *        the file name using eclipse elements such as platform:/plugin
+	 *            the file name using eclipse elements such as platform:/plugin
 	 * @return the absolute file name
 	 */
 	public static String getAbsoluteFN(String fileName) {

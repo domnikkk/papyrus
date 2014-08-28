@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -12,24 +12,24 @@ package org.eclipse.papyrus.xwt.converters;
 
 /**
  * Default implementation of MultiValueConverter from a string
- * 
+ *
  * @author yyang <yesc.yang@soyatec.com>
- * 
+ *
  */
 public class StringMultiValueConerter extends AbstractMultiValueConverter {
 
 	private String separatorExpression = null;
 
 	public Object[] convertBack(Object value) {
-		if(value instanceof Object[]) {
-			return (Object[])value;
+		if (value instanceof Object[]) {
+			return (Object[]) value;
 		}
 		String valueString = value.toString();
 		return valueString.split(getSeparatorExpression());
 	}
 
 	public String getSeparatorExpression() {
-		if(separatorExpression == null) {
+		if (separatorExpression == null) {
 			return "[ \t\r\n]+";
 		}
 		return separatorExpression;
@@ -40,7 +40,7 @@ public class StringMultiValueConerter extends AbstractMultiValueConverter {
 	}
 
 	protected String getSeparator() {
-		if(separatorExpression == null || separatorExpression.length() == 0) {
+		if (separatorExpression == null || separatorExpression.length() == 0) {
 			return " ";
 		}
 		return "" + separatorExpression.charAt(0);
@@ -49,8 +49,8 @@ public class StringMultiValueConerter extends AbstractMultiValueConverter {
 	public Object convert(Object[] value) {
 		StringBuffer buffer = new StringBuffer();
 		String separator = getSeparator();
-		for(int i = 0; i < value.length; i++) {
-			if(i != 0) {
+		for (int i = 0; i < value.length; i++) {
+			if (i != 0) {
 				buffer.append(separator);
 			}
 			buffer.append(value[i]);

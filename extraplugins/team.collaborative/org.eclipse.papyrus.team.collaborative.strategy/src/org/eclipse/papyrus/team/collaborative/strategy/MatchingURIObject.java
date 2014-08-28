@@ -37,15 +37,16 @@ public class MatchingURIObject implements Predicate<EObject> {
 		this.uris = uris;
 	}
 
+	@Override
 	public boolean apply(EObject input) {
 		List<EObject> objectToTEObjects = new ArrayList<EObject>();
 		objectToTEObjects.add(input);
 		objectToTEObjects.addAll(NotationUtils.getLoadedAssociatedDiagrams(input));
-		for(IExtendedURI extendedURI : uris) {
-			for(EObject o : objectToTEObjects) {
+		for (IExtendedURI extendedURI : uris) {
+			for (EObject o : objectToTEObjects) {
 				boolean contained = ExtendedURIUtil.isIncluded(o, extendedURI);
 
-				if(contained) {
+				if (contained) {
 					return contained;
 				}
 			}
@@ -56,18 +57,18 @@ public class MatchingURIObject implements Predicate<EObject> {
 
 	protected EObject getSemanticObject(EObject eObject) {
 		EObject result = null;
-		if(eObject instanceof Element) {
+		if (eObject instanceof Element) {
 			result = eObject;
-		} else if(eObject instanceof View) {
-			//Handle view
-			result = ((View)eObject).getElement();
+		} else if (eObject instanceof View) {
+			// Handle view
+			result = ((View) eObject).getElement();
 		} else {
-			//Handle setereotype
+			// Handle setereotype
 			Element baseElement = org.eclipse.uml2.uml.util.UMLUtil.getBaseElement(eObject);
-			if(baseElement != null) {
+			if (baseElement != null) {
 				result = baseElement;
 			}
-			//TODO handle tab
+			// TODO handle tab
 		}
 		return result;
 	}

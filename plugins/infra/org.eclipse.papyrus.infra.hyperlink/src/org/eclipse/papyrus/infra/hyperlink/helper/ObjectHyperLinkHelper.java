@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,9 +45,9 @@ import org.eclipse.ui.PlatformUI;
 /**
  * An Hyperlink Helper for referencing objects (i.e. specific object within an
  * editor, such as a Specific Class in a Class Diagram)
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ObjectHyperLinkHelper extends AbstractHyperLinkHelper {
 
@@ -63,7 +63,7 @@ public class ObjectHyperLinkHelper extends AbstractHyperLinkHelper {
 		ModelSet modelSet;
 		try {
 			servicesRegistry = ServiceUtilsForEObject.getInstance().getServiceRegistry(aModel);
-			if(servicesRegistry == null) {
+			if (servicesRegistry == null) {
 				return;
 			}
 
@@ -74,7 +74,7 @@ public class ObjectHyperLinkHelper extends AbstractHyperLinkHelper {
 			return;
 		}
 
-		//Create and opens a dialog for page models
+		// Create and opens a dialog for page models
 		TreeSelectorDialog selectionDialog = new TreeSelectorDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
 		selectionDialog.setBlockOnOpen(true);
 
@@ -85,11 +85,11 @@ public class ObjectHyperLinkHelper extends AbstractHyperLinkHelper {
 		selectionDialog.setLabelProvider(labelProviderService.getLabelProvider());
 		selectionDialog.setInput(aModel);
 		selectionDialog.open();
-		if(selectionDialog.getReturnCode() == Window.OK) {
+		if (selectionDialog.getReturnCode() == Window.OK) {
 			Object[] result = selectionDialog.getResult();
-			for(Object resultElement : result) {
-				if(resultElement instanceof EObject) {
-					list.add(new HyperLinkSpecificObject((EObject)resultElement));
+			for (Object resultElement : result) {
+				if (resultElement instanceof EObject) {
+					list.add(new HyperLinkSpecificObject((EObject) resultElement));
 				}
 			}
 		}
@@ -102,15 +102,15 @@ public class ObjectHyperLinkHelper extends AbstractHyperLinkHelper {
 
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
-		for(IConfigurationElement e : configElements) {
+		for (IConfigurationElement e : configElements) {
 			try {
 				Object contentProviderObject = e.createExecutableExtension("contentProvider");
-				if(!(contentProviderObject instanceof ITreeContentProvider)) {
+				if (!(contentProviderObject instanceof ITreeContentProvider)) {
 					Activator.log.warn("Plugin " + e.getContributor() + " contributed an invalid extension for " + EXTENSION_ID + ". The content provider must be a ITreeContentProvider");
 					continue;
 				}
 
-				ITreeContentProvider contentProvider = (ITreeContentProvider)contentProviderObject;
+				ITreeContentProvider contentProvider = (ITreeContentProvider) contentProviderObject;
 				provider.appendContentProvider(contentProvider);
 			} catch (Exception ex) {
 				Activator.log.error("Plugin " + e.getContributor() + " contributed an invalid extension for " + EXTENSION_ID, ex);
@@ -123,8 +123,8 @@ public class ObjectHyperLinkHelper extends AbstractHyperLinkHelper {
 	@Override
 	public List<HyperLinkObject> getFilteredObject(List<HyperLinkObject> hyperLinkObjects) {
 		List<HyperLinkObject> result = new LinkedList<HyperLinkObject>();
-		for(HyperLinkObject object : hyperLinkObjects) {
-			if(object instanceof HyperLinkSpecificObject) {
+		for (HyperLinkObject object : hyperLinkObjects) {
+			if (object instanceof HyperLinkSpecificObject) {
 				result.add(object);
 			}
 		}
@@ -133,8 +133,8 @@ public class ObjectHyperLinkHelper extends AbstractHyperLinkHelper {
 
 	@Override
 	public HyperLinkObject getHyperLinkObject(EAnnotation eAnnotation) {
-		if(HyperLinkConstants.PAPYRUS_HYPERLINK_SPECIFIC_ELEMENT.equals(eAnnotation.getSource())) {
-			if(!eAnnotation.getReferences().isEmpty()) {
+		if (HyperLinkConstants.PAPYRUS_HYPERLINK_SPECIFIC_ELEMENT.equals(eAnnotation.getSource())) {
+			if (!eAnnotation.getReferences().isEmpty()) {
 				HyperLinkSpecificObject specificObjectHyperlink = new HyperLinkSpecificObject();
 				specificObjectHyperlink.setTargetElement(eAnnotation.getReferences().get(0));
 				specificObjectHyperlink.setIsDefault(Boolean.parseBoolean(eAnnotation.getDetails().get(HyperLinkConstants.HYPERLINK_IS_DEFAULT_NAVIGATION)));
@@ -148,8 +148,8 @@ public class ObjectHyperLinkHelper extends AbstractHyperLinkHelper {
 
 	@Override
 	public RecordingCommand getAddHyperLinkCommand(TransactionalEditingDomain domain, EModelElement object, HyperLinkObject hyperLinkObject) {
-		if(hyperLinkObject instanceof HyperLinkSpecificObject) {
-			HyperLinkSpecificObject hyperLinkSpecificObject = (HyperLinkSpecificObject)hyperLinkObject;
+		if (hyperLinkObject instanceof HyperLinkSpecificObject) {
+			HyperLinkSpecificObject hyperLinkSpecificObject = (HyperLinkSpecificObject) hyperLinkObject;
 			return new CreateHyperLinkObjectCommand(domain, object, hyperLinkSpecificObject.getTooltipText(), HyperLinkConstants.PAPYRUS_HYPERLINK_SPECIFIC_ELEMENT, hyperLinkSpecificObject.getTargetElement(), hyperLinkObject.getIsDefault());
 		}
 		return null;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,14 +32,15 @@ import org.eclipse.gef.editpolicies.ConnectionEndpointEditPolicy;
 import org.eclipse.gef.handles.ConnectionEndpointHandle;
 import org.eclipse.gef.requests.ReconnectRequest;
 import org.eclipse.gef.tools.ConnectionEndpointTracker;
+import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.AnnotatedLinkEditPart;
 import org.eclipse.swt.SWT;
 
 /**
  * An editpolicy for handling reconnections of an {@link AnnotatedLinkEditPart}.
- * 
+ *
  * @see AnnotatedLinkStartEditPolicy
  * @see AnnotatedLinkEndEditPolicy
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class AnnotatedLinkEndpointEditPolicy extends ConnectionEndpointEditPolicy {
@@ -48,15 +49,15 @@ public class AnnotatedLinkEndpointEditPolicy extends ConnectionEndpointEditPolic
 
 	@Override
 	public void eraseSourceFeedback(Request request) {
-		if(AnnotatedLinkStartEditPolicy.REQ_ANNOTATED_LINK_REORIENT_START.equals(request.getType()) || AnnotatedLinkEndEditPolicy.REQ_ANNOTATED_LINK_REORIENT_END.equals(request.getType())) {
-			eraseConnectionMoveFeedback((ReconnectRequest)request);
+		if (AnnotatedLinkStartEditPolicy.REQ_ANNOTATED_LINK_REORIENT_START.equals(request.getType()) || AnnotatedLinkEndEditPolicy.REQ_ANNOTATED_LINK_REORIENT_END.equals(request.getType())) {
+			eraseConnectionMoveFeedback((ReconnectRequest) request);
 		}
 	}
 
 	@Override
 	public void showSourceFeedback(Request request) {
-		if(AnnotatedLinkStartEditPolicy.REQ_ANNOTATED_LINK_REORIENT_START.equals(request.getType()) || AnnotatedLinkEndEditPolicy.REQ_ANNOTATED_LINK_REORIENT_END.equals(request.getType())) {
-			showConnectionMoveFeedback((ReconnectRequest)request);
+		if (AnnotatedLinkStartEditPolicy.REQ_ANNOTATED_LINK_REORIENT_START.equals(request.getType()) || AnnotatedLinkEndEditPolicy.REQ_ANNOTATED_LINK_REORIENT_END.equals(request.getType())) {
+			showConnectionMoveFeedback((ReconnectRequest) request);
 		}
 	}
 
@@ -65,15 +66,15 @@ public class AnnotatedLinkEndpointEditPolicy extends ConnectionEndpointEditPolic
 		super.showConnectionMoveFeedback(request);
 		EditPart target = request.getTarget();
 		boolean showFeedback = target != null;
-		if(target != null) {
+		if (target != null) {
 			Command command = target.getCommand(request);
 			showFeedback = command != null && command.canExecute();
 		}
-		if(showFeedback) {
+		if (showFeedback) {
 			Point location = null;
 			Connection connection = getConnection();
 			PointList points = connection.getPoints().getCopy();
-			if(request.isMovingStartAnchor()) {
+			if (request.isMovingStartAnchor()) {
 				location = points.getFirstPoint();
 			} else {
 				location = points.getLastPoint();
@@ -81,7 +82,7 @@ public class AnnotatedLinkEndpointEditPolicy extends ConnectionEndpointEditPolic
 			connection.translateToAbsolute(location);
 			setFeedbackLocation(getAnchorFeedback(), location);
 		} else {
-			if(anchorFeedback != null && anchorFeedback.getParent() != null) {
+			if (anchorFeedback != null && anchorFeedback.getParent() != null) {
 				removeFeedback(anchorFeedback);
 			}
 			anchorFeedback = null;
@@ -91,14 +92,14 @@ public class AnnotatedLinkEndpointEditPolicy extends ConnectionEndpointEditPolic
 	@Override
 	protected void eraseConnectionMoveFeedback(ReconnectRequest request) {
 		super.eraseConnectionMoveFeedback(request);
-		if(anchorFeedback != null && anchorFeedback.getParent() != null) {
+		if (anchorFeedback != null && anchorFeedback.getParent() != null) {
 			removeFeedback(anchorFeedback);
 		}
 		anchorFeedback = null;
 	}
 
 	private void setFeedbackLocation(IFigure feedback, Point location) {
-		if(feedback == null || location == null) {
+		if (feedback == null || location == null) {
 			return;
 		}
 		Point p = location.getCopy();
@@ -110,7 +111,7 @@ public class AnnotatedLinkEndpointEditPolicy extends ConnectionEndpointEditPolic
 	}
 
 	private IFigure getAnchorFeedback() {
-		if(anchorFeedback == null || anchorFeedback.getParent() == null) {
+		if (anchorFeedback == null || anchorFeedback.getParent() == null) {
 			Ellipse feedback = new Ellipse();
 			feedback.setLineWidth(2);
 			feedback.setAntialias(SWT.ON);
@@ -125,11 +126,11 @@ public class AnnotatedLinkEndpointEditPolicy extends ConnectionEndpointEditPolic
 	@Override
 	protected List createSelectionHandles() {
 		List list = new ArrayList();
-		list.add(new ConnectionEndpointHandle((ConnectionEditPart)getHost(), ConnectionLocator.SOURCE) {
+		list.add(new ConnectionEndpointHandle((ConnectionEditPart) getHost(), ConnectionLocator.SOURCE) {
 
 			@Override
 			protected DragTracker createDragTracker() {
-				ConnectionEndpointTracker tracker = new ConnectionEndpointTracker((ConnectionEditPart)getOwner()) {
+				ConnectionEndpointTracker tracker = new ConnectionEndpointTracker((ConnectionEditPart) getOwner()) {
 
 					@Override
 					protected Request createTargetRequest() {
@@ -149,11 +150,11 @@ public class AnnotatedLinkEndpointEditPolicy extends ConnectionEndpointEditPolic
 				return tracker;
 			}
 		});
-		list.add(new ConnectionEndpointHandle((ConnectionEditPart)getHost(), ConnectionLocator.TARGET) {
+		list.add(new ConnectionEndpointHandle((ConnectionEditPart) getHost(), ConnectionLocator.TARGET) {
 
 			@Override
 			protected DragTracker createDragTracker() {
-				ConnectionEndpointTracker tracker = new ConnectionEndpointTracker((ConnectionEditPart)getOwner()) {
+				ConnectionEndpointTracker tracker = new ConnectionEndpointTracker((ConnectionEditPart) getOwner()) {
 
 					@Override
 					protected Request createTargetRequest() {

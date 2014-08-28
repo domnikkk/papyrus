@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 435420
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.editors;
 
@@ -48,7 +48,7 @@ import org.eclipse.swt.widgets.Composite;
  * @author Camille Letavernier
  *
  */
-public class ReferenceCombo extends AbstractValueEditor { //implements SelectionListener {
+public class ReferenceCombo extends AbstractValueEditor { // implements SelectionListener {
 
 	/**
 	 * The viewer displaying the available values from the model
@@ -62,7 +62,7 @@ public class ReferenceCombo extends AbstractValueEditor { //implements Selection
 
 	protected boolean unsettable;
 
-	//	protected Button unset;
+	// protected Button unset;
 
 	protected EncapsulatedContentProvider contentProvider;
 
@@ -72,9 +72,9 @@ public class ReferenceCombo extends AbstractValueEditor { //implements Selection
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The Composite in which this editor is diplayed
+	 *            The Composite in which this editor is diplayed
 	 * @param style
-	 *        The style for this editor's combo
+	 *            The style for this editor's combo
 	 */
 	public ReferenceCombo(Composite parent, int style) {
 		this(parent, style, null);
@@ -85,11 +85,11 @@ public class ReferenceCombo extends AbstractValueEditor { //implements Selection
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The Composite in which this editor is diplayed
+	 *            The Composite in which this editor is diplayed
 	 * @param style
-	 *        The style for this editor's combo
+	 *            The style for this editor's combo
 	 * @param label
-	 *        The label for this editor
+	 *            The label for this editor
 	 */
 	public ReferenceCombo(Composite parent, int style, String label) {
 		super(parent, label);
@@ -101,12 +101,12 @@ public class ReferenceCombo extends AbstractValueEditor { //implements Selection
 
 		viewer = new ComboViewer(combo);
 
-		//		unset = new Button(this, SWT.PUSH);
+		// unset = new Button(this, SWT.PUSH);
 		//		unset.setImage(Activator.getDefault().getImage("/icons/Delete_12x12.gif")); //$NON-NLS-1$
-		//		unset.setToolTipText("Unset the current value");
-		//		unset.addSelectionListener(this);
+		// unset.setToolTipText("Unset the current value");
+		// unset.addSelectionListener(this);
 
-		((GridLayout)getLayout()).numColumns++;
+		((GridLayout) getLayout()).numColumns++;
 
 		setCommitOnFocusLost(combo);
 		controlDecoration = new ControlDecoration(combo, SWT.TOP | SWT.LEFT);
@@ -134,7 +134,7 @@ public class ReferenceCombo extends AbstractValueEditor { //implements Selection
 		Assert.isNotNull(contentProvider, "The content provider should not be null"); //$NON-NLS-1$
 		setContentProvider(contentProvider);
 
-		if(labelProvider != null) {
+		if (labelProvider != null) {
 			setLabelProvider(labelProvider);
 		}
 	}
@@ -155,13 +155,13 @@ public class ReferenceCombo extends AbstractValueEditor { //implements Selection
 
 	@Override
 	protected void doBinding() {
-		if(contentProvider == null || modelProperty == null) {
+		if (contentProvider == null || modelProperty == null) {
 			return;
 		}
 
 		setWidgetObservable(getObservableValue(), true);
-		if(modelProperty instanceof AggregatedObservable) {
-			if(((AggregatedObservable)modelProperty).hasDifferentValues()) {
+		if (modelProperty instanceof AggregatedObservable) {
+			if (((AggregatedObservable) modelProperty).hasDifferentValues()) {
 				contentProvider.addTemporaryElement(UnchangedObject.instance);
 				viewer.refresh();
 			}
@@ -206,8 +206,8 @@ public class ReferenceCombo extends AbstractValueEditor { //implements Selection
 	 */
 	@Override
 	public Object getValue() {
-		IStructuredSelection selection = (IStructuredSelection)viewer.getSelection();
-		if(selection.isEmpty()) {
+		IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
+		if (selection.isEmpty()) {
 			return null;
 		}
 		return selection.getFirstElement();
@@ -219,7 +219,7 @@ public class ReferenceCombo extends AbstractValueEditor { //implements Selection
 	 * @param value
 	 */
 	public void setValue(Object value) {
-		if(value == null) {
+		if (value == null) {
 			viewer.setSelection(new StructuredSelection());
 		} else {
 			viewer.setSelection(new StructuredSelection(value), true);
@@ -252,14 +252,14 @@ public class ReferenceCombo extends AbstractValueEditor { //implements Selection
 	 * Updates the controls display
 	 */
 	protected void updateControls() {
-		//		setExclusion(unset, !unsettable);
+		// setExclusion(unset, !unsettable);
 
-		//		if(isReadOnly() && unsettable) {
-		//			unset.setEnabled(false);
-		//		}
+		// if(isReadOnly() && unsettable) {
+		// unset.setEnabled(false);
+		// }
 
-		if(contentProvider != null) {
-			if(unsettable) {
+		if (contentProvider != null) {
+			if (unsettable) {
 				contentProvider.addTemporaryElement(UnsetObject.instance);
 			} else {
 				contentProvider.removeTemporaryElement(UnsetObject.instance);
@@ -279,10 +279,10 @@ public class ReferenceCombo extends AbstractValueEditor { //implements Selection
 		this.combo = viewer.getCCombo();
 	}
 
-	//FIXME error avec multiplicit� nulllpointerexception l285
+	// FIXME error avec multiplicit� nulllpointerexception l285
 	@Override
 	public void updateStatus(IStatus status) {
-		switch(status.getSeverity()) {
+		switch (status.getSeverity()) {
 		case IStatus.OK:
 			controlDecoration.hide();
 			break;
@@ -308,20 +308,20 @@ public class ReferenceCombo extends AbstractValueEditor { //implements Selection
 
 	}
 
-	//	protected void unsetAction() {
-	//		viewer.setSelection(StructuredSelection.EMPTY);
-	//		if(modelProperty != null) {
-	//			modelProperty.setValue(null);
-	//		}
-	//	}
+	// protected void unsetAction() {
+	// viewer.setSelection(StructuredSelection.EMPTY);
+	// if(modelProperty != null) {
+	// modelProperty.setValue(null);
+	// }
+	// }
 
-	//	public void widgetSelected(SelectionEvent e) {
-	//		if(e.widget == unset) {
-	//			unsetAction();
-	//		}
-	//	}
+	// public void widgetSelected(SelectionEvent e) {
+	// if(e.widget == unset) {
+	// unsetAction();
+	// }
+	// }
 
-	//	public void widgetDefaultSelected(SelectionEvent e) {
-	//		//Nothing
-	//	}
+	// public void widgetDefaultSelected(SelectionEvent e) {
+	// //Nothing
+	// }
 }

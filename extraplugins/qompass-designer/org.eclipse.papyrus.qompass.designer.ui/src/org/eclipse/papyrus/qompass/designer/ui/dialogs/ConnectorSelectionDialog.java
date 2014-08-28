@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -17,7 +17,7 @@ package org.eclipse.papyrus.qompass.designer.ui.dialogs;
 
 import java.util.Arrays;
 
-import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.UniqueEList;
@@ -56,9 +56,9 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * Select a connector type and implementation (group)
  * TODO: show information about the used connector [usage, implem properties, ...]
  * similar help for ports?
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog {
 
@@ -92,8 +92,9 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 		m_model = model;
 	}
 
+	@Override
 	public Control createDialogArea(Composite parent) {
-		Composite contents = (Composite)super.createDialogArea(parent);
+		Composite contents = (Composite) super.createDialogArea(parent);
 		createMessageArea(contents);
 		// createLabel(contents, "Connector type");
 		GridData gridData = DialogUtils.createFillGridData();
@@ -114,7 +115,7 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 		fLower = createFilteredList(fLowerGroup);
 		fFilteredList = fUpper;
 		org.eclipse.papyrus.FCM.Connector fcmConnector = UMLUtil.getStereotypeApplication(m_selectedConnector, org.eclipse.papyrus.FCM.Connector.class);
-		if(fcmConnector != null) {
+		if (fcmConnector != null) {
 			// getInitialElementSelections();
 			initialSelection = fcmConnector.getIc();
 		} else {
@@ -125,8 +126,9 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 		fTypeOnly.setText("Select type only"); //$NON-NLS-1$
 		SelectionListener fTypeOnlySL = new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(fTypeOnly.getSelection()) {
+				if (fTypeOnly.getSelection()) {
 					fLower.setEnabled(false);
 					fLowerGroup.setEnabled(false);
 					fLower.setSelection(new int[0]);
@@ -139,6 +141,7 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 				}
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 		};
@@ -147,10 +150,10 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 		fUpper.setElements(connectorList.toArray());
 
 		// create initial selections
-		if(initialSelection instanceof InteractionComponent) {
+		if (initialSelection instanceof InteractionComponent) {
 			InteractionComponent componentComp = initialSelection;
 			Class componentCompBase = componentComp.getBase_Class();
-			if(!componentCompBase.isAbstract()) {
+			if (!componentCompBase.isAbstract()) {
 				// get first superclass that is a component type
 				Class componentTypeBase = Utils.componentType(componentCompBase);
 				componentComp = UMLUtil.getStereotypeApplication(componentTypeBase, InteractionComponent.class);
@@ -163,7 +166,7 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 			fTypeOnlySL.widgetSelected(null);
 
 			// set initial selections
-			fUpper.setSelection(new Object[]{ componentComp.getBase_Class() });
+			fUpper.setSelection(new Object[] { componentComp.getBase_Class() });
 		}
 
 		Label info = createMessageArea(contents);
@@ -182,10 +185,11 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 
 		fLower.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				Object[] selected = fLower.getSelection();
-				if((selected.length > 0) && (selected[0] instanceof NamedElement)) {
-					NamedElement selectedNE = (NamedElement)selected[0];
+				if ((selected.length > 0) && (selected[0] instanceof NamedElement)) {
+					NamedElement selectedNE = (NamedElement) selected[0];
 					m_description.setText(Description.getDescription(selectedNE));
 				}
 				else {
@@ -194,6 +198,7 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 				}
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 		});
@@ -208,11 +213,11 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 	 *
 	 */
 	protected void updateOkState() {
-		if(fTypeOnly.getSelection()) {
+		if (fTypeOnly.getSelection()) {
 			super.updateOkState();
 		} else {
 			Button okButton = getOkButton();
-			if(okButton != null) {
+			if (okButton != null) {
 				okButton.setEnabled(fLower.getSelection().length != 0);
 			}
 		}
@@ -220,7 +225,7 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 
 
 	protected Label createLabel(Composite parent, String name) {
-		if(name == null) {
+		if (name == null) {
 			return null;
 		}
 		Label label = new Label(parent, SWT.NONE);
@@ -231,11 +236,11 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 
 	/**
 	 * Creates a label if name was not <code>null</code>.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite.
+	 *            the parent composite.
 	 * @param name
-	 *        the name of the label.
+	 *            the name of the label.
 	 * @return returns a label if a name was given, <code>null</code> otherwise.
 	 */
 
@@ -243,16 +248,18 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 	/**
 	 * @see SelectionStatusDialog#computeResult()
 	 */
+	@Override
 	protected void computeResult() {
-		Object[] result = new Object[]{ getSelectedElement(fTypeOnly.getSelection()) };
+		Object[] result = new Object[] { getSelectedElement(fTypeOnly.getSelection()) };
 		setResult(Arrays.asList(result));
 	}
 
 	/**
 	 * @see AbstractElementListSelectionDialog#handleDefaultSelected()
 	 */
+	@Override
 	protected void handleDefaultSelected() {
-		if(validateCurrentSelection() && (getSelectedElement(false) != null)) {
+		if (validateCurrentSelection() && (getSelectedElement(false) != null)) {
 			buttonPressed(IDialogConstants.OK_ID);
 		}
 	}
@@ -260,23 +267,24 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 	/**
 	 * @see AbstractElementListSelectionDialog#handleSelectionChanged()
 	 */
+	@Override
 	protected void handleSelectionChanged() {
 		handleUpperSelectionChanged();
 	}
 
 	private void handleUpperSelectionChanged() {
 		int index = getSelectionIndex();
-		if(index >= 0) {
+		if (index >= 0) {
 			fUpperElements = getFoldedElements(index);
 
-			if((fUpperElements == null) || fTypeOnly.getSelection()) {
+			if ((fUpperElements == null) || fTypeOnly.getSelection()) {
 				// lower list remains empty, if typeOnly is true
-				fLower.setElements(new Object[]{});
+				fLower.setElements(new Object[] {});
 			} else {
 				fLower.setElements(getLowerList(fUpperElements[0]));
-				if(initialSelection instanceof InteractionComponent) {
+				if (initialSelection instanceof InteractionComponent) {
 					// select existing selection in lower section
-					fLower.setSelection(new Object[]{ initialSelection });
+					fLower.setSelection(new Object[] { initialSelection });
 					// do not try to set it again.
 					initialSelection = null;
 				}
@@ -287,17 +295,17 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 
 	/**
 	 * Returns the selected element from the upper or lower pane.
-	 * 
+	 *
 	 * @return Object
 	 */
 	protected Object getSelectedElement(boolean upper) {
 		Object[] selection;
-		if(upper) {
+		if (upper) {
 			selection = fFilteredList.getSelection();
 		} else {
 			selection = fLower.getSelection();
 		}
-		if(selection.length > 0) {
+		if (selection.length > 0) {
 			return selection[0];
 		}
 		return null;
@@ -305,36 +313,36 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 
 	protected Object[] getLowerList(Object selectedUpperObj) {
 		EList<Class> connectorList = new UniqueEList<Class>();
-		if(selectedUpperObj instanceof Class) {
+		if (selectedUpperObj instanceof Class) {
 			visitedPackages = new BasicEList<Package>();
-			getImplGroups(m_model, (Class)selectedUpperObj, connectorList);
+			getImplGroups(m_model, (Class) selectedUpperObj, connectorList);
 		}
 		return connectorList.toArray();
 	}
 
 	void getAllConnectors(Package pkg, Feature selectedConnector, EList<Class> connectorList) {
-		for(Element el : pkg.getMembers()) {
-			if(el instanceof Package) {
-				if(!visitedPackages.contains(el)) {
-					visitedPackages.add((Package)el);
-					getAllConnectors((Package)el, selectedConnector, connectorList);
+		for (Element el : pkg.getMembers()) {
+			if (el instanceof Package) {
+				if (!visitedPackages.contains(el)) {
+					visitedPackages.add((Package) el);
+					getAllConnectors((Package) el, selectedConnector, connectorList);
 				}
-			} else if(el instanceof Class) {
-				if(StereotypeUtil.isApplied(el, InteractionComponent.class) && Utils.isCompType((Class)el)) {
+			} else if (el instanceof Class) {
+				if (StereotypeUtil.isApplied(el, InteractionComponent.class) && Utils.isCompType((Class) el)) {
 
-					if(selectedConnector == null) {
-						connectorList.add((Class)el);
+					if (selectedConnector == null) {
+						connectorList.add((Class) el);
 					} else {
 						try {
-							Element owner = (Class)selectedConnector.getOwner();
-							if(owner instanceof Class) {
-								Class composite = (Class)owner;
-								Log.log(Status.INFO, Log.DIALOGS, "ConnectorSelectionDialog.getAllConnectors: try to bind connector " + //$NON-NLS-1$
-									((Class)el).getQualifiedName());
-								ConnectorBinding.obtainBinding(composite, selectedConnector, (Class)el, false);
-								connectorList.add((Class)el);
+							Element owner = selectedConnector.getOwner();
+							if (owner instanceof Class) {
+								Class composite = (Class) owner;
+								Log.log(IStatus.INFO, Log.DIALOGS, "ConnectorSelectionDialog.getAllConnectors: try to bind connector " + //$NON-NLS-1$
+										((Class) el).getQualifiedName());
+								ConnectorBinding.obtainBinding(composite, selectedConnector, (Class) el, false);
+								connectorList.add((Class) el);
 							} else {
-								connectorList.add((Class)el);
+								connectorList.add((Class) el);
 							}
 						} catch (TransformationException e) {
 							// silently ignore exception: it is normal that we cannot find a binding for some connectors
@@ -346,16 +354,16 @@ public class ConnectorSelectionDialog extends AbstractElementListSelectionDialog
 	}
 
 	void getImplGroups(Package pkg, Class selectedConnType, EList<Class> implGroupList) {
-		for(Element el : pkg.getMembers()) {
-			if(el instanceof Package) {
-				if(!visitedPackages.contains(el)) {
-					visitedPackages.add((Package)el);
-					getImplGroups((Package)el, selectedConnType, implGroupList);
+		for (Element el : pkg.getMembers()) {
+			if (el instanceof Package) {
+				if (!visitedPackages.contains(el)) {
+					visitedPackages.add((Package) el);
+					getImplGroups((Package) el, selectedConnType, implGroupList);
 				}
-			} else if(el instanceof Class) {
-				Class class_ = (Class)el;
-				if(class_.getGeneralization(selectedConnType) != null) {
-					implGroupList.add((Class)el);
+			} else if (el instanceof Class) {
+				Class class_ = (Class) el;
+				if (class_.getGeneralization(selectedConnType) != null) {
+					implGroupList.add((Class) el);
 				}
 			}
 		}

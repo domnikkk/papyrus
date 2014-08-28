@@ -12,10 +12,10 @@ package org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.composites.SelectETypeComposite.ETypeSelectionOptions;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.widget.EClassifierSelectionControl;
-import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionEvent;

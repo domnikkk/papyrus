@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,11 +47,11 @@ public class ExportModelHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
-		if(selection instanceof IStructuredSelection) {
+		if (selection instanceof IStructuredSelection) {
 			IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);
 
-			if(window != null) {
-				exportModels(window, null, (IStructuredSelection)selection);
+			if (window != null) {
+				exportModels(window, null, (IStructuredSelection) selection);
 			}
 		}
 
@@ -70,17 +70,17 @@ public class ExportModelHandler extends AbstractHandler {
 		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
 
 		List<DIModel> models = Lists.newArrayList();
-		for(URI next : resourceURIs) {
+		for (URI next : resourceURIs) {
 			IPapyrusRepository repo = PapyrusRepositoryManager.INSTANCE.getRepositoryForURI(next);
-			if(repo != null) {
-				CDOView view = ((IInternalPapyrusRepository)repo).getMasterView();
-				if(view != null) { // the repository could be disconnected by now
+			if (repo != null) {
+				CDOView view = ((IInternalPapyrusRepository) repo).getMasterView();
+				if (view != null) { // the repository could be disconnected by now
 					try {
 						CDOResourceNode resource = view.getResourceNode(CDOURIUtil.extractResourcePath(next));
-						if(resource instanceof CDOResource) {
+						if (resource instanceof CDOResource) {
 							// only export DI models!
-							if(DIResourceQuery.getDIResources(view).contains(resource)) {
-								models.add(DIModel.getInstance((CDOResource)resource, true));
+							if (DIResourceQuery.getDIResources(view).contains(resource)) {
+								models.add(DIModel.getInstance((CDOResource) resource, true));
 							}
 						}
 					} catch (Exception e) {
@@ -90,7 +90,7 @@ public class ExportModelHandler extends AbstractHandler {
 			}
 		}
 
-		if((window != null) && !models.isEmpty()) {
+		if ((window != null) && !models.isEmpty()) {
 			exportModels(window, destination, new StructuredSelection(models));
 		}
 	}

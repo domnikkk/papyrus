@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,13 +29,13 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * A basic menu which proposes a list of choices.
- * 
+ *
  * Implementation is based on a JFace TableViewer
- * 
+ *
  * Typical usage: JDT-like Ctrl + Click (Navigation)
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class SelectionMenu {
 
@@ -60,8 +60,8 @@ public class SelectionMenu {
 	}
 
 	public SelectionMenu(Shell parentShell, Point location) {
-		//Move the shell so that it doesn't open under the mouse
-		//The hovered element can still be selected
+		// Move the shell so that it doesn't open under the mouse
+		// The hovered element can still be selected
 		location.x += 1;
 		location.y += 1;
 
@@ -71,8 +71,9 @@ public class SelectionMenu {
 		selectionChangedListeners = new LinkedList<ISelectionChangedListener>();
 		selectionChangedListener = new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				for(ISelectionChangedListener listener : selectionChangedListeners) {
+				for (ISelectionChangedListener listener : selectionChangedListeners) {
 					listener.selectionChanged(event);
 				}
 			}
@@ -107,7 +108,7 @@ public class SelectionMenu {
 	}
 
 	public void dispose() {
-		if(shell != null) {
+		if (shell != null) {
 			shell.dispose();
 		}
 	}

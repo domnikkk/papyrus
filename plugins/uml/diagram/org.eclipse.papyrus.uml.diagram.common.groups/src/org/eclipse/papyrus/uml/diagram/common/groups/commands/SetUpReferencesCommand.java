@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.uml.diagram.common.groups.groupcontainment.AbstractCo
 /**
  * Command to update referencing groups for a child element.
  * (The child element is not necessary already created, it has just to be available through an adapter at runtime execution).
- * 
+ *
  * @author arthur daussy
  */
 public class SetUpReferencesCommand extends AbstractTransactionalCommand {
@@ -43,13 +43,13 @@ public class SetUpReferencesCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Command constructor
-	 * 
+	 *
 	 * @param domain
-	 *        editing domain
+	 *            editing domain
 	 * @param label
-	 *        command label
+	 *            command label
 	 * @param adapter
-	 *        adapter to recover created element
+	 *            adapter to recover created element
 	 */
 	public SetUpReferencesCommand(TransactionalEditingDomain domain, String label, IAdaptable adapter, List<IGraphicalEditPart> _graphicalParents) {
 		super(domain, label, null);
@@ -58,10 +58,9 @@ public class SetUpReferencesCommand extends AbstractTransactionalCommand {
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 *
+	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+	 *
 	 * @param arg0
 	 * @param arg1
 	 * @return
@@ -71,19 +70,19 @@ public class SetUpReferencesCommand extends AbstractTransactionalCommand {
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor arg0, IAdaptable arg1) throws ExecutionException {
 		Object createdElement = elementAdapter.getAdapter(EObject.class);
-		if(createdElement instanceof EObject) {
-			EObject eObjectCreatedElement = (EObject)createdElement;
-			for(IGraphicalEditPart parent : graphicalParent) {
+		if (createdElement instanceof EObject) {
+			EObject eObjectCreatedElement = (EObject) createdElement;
+			for (IGraphicalEditPart parent : graphicalParent) {
 				EObject eObjectSourceReference = parent.resolveSemanticElement();
 				AbstractContainerNodeDescriptor desc = GroupContainmentRegistry.getContainerDescriptor(parent);
 				List<EReference> refs = desc.getReferenceFor(eObjectCreatedElement.eClass());
-				for(EReference ref : refs) {
-					if(ref != null && ref.isMany()) {
-						Collection<EObject> collection = (Collection<EObject>)eObjectSourceReference.eGet(ref);
-						if(!collection.contains(eObjectCreatedElement)) {
+				for (EReference ref : refs) {
+					if (ref != null && ref.isMany()) {
+						Collection<EObject> collection = (Collection<EObject>) eObjectSourceReference.eGet(ref);
+						if (!collection.contains(eObjectCreatedElement)) {
 							collection.add(eObjectCreatedElement);
 						}
-					} else if(ref != null && !ref.isMany()) {
+					} else if (ref != null && !ref.isMany()) {
 						eObjectSourceReference.eSet(ref, eObjectCreatedElement);
 					}
 				}

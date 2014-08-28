@@ -51,7 +51,7 @@ public class IResourceToExtendedURI implements Function<IResource, ExtendedURI> 
 	/**
 	 * Returns the Singleton instance.
 	 * <p>
-	 * 
+	 *
 	 * @return The Singleton instance.
 	 */
 	public static IResourceToExtendedURI getInstance() {

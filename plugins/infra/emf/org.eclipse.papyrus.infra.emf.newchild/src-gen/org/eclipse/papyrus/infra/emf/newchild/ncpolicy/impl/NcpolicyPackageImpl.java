@@ -36,12 +36,14 @@ import org.eclipse.uml2.types.TypesPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass newEMFChildMenuEClass = null;
@@ -49,6 +51,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass newChildPolicySetEClass = null;
@@ -56,6 +59,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass newChildPolicyEClass = null;
@@ -63,6 +67,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass filterPolicyEClass = null;
@@ -70,6 +75,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass replacePolicyEClass = null;
@@ -77,6 +83,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass customPolicyEClass = null;
@@ -84,6 +91,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EEnum createInEEnum = null;
@@ -91,20 +99,17 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EEnum layoutEEnum = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyPackage#eNS_URI
 	 * @see #init()
@@ -117,27 +122,29 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link NcpolicyPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 *
+	 * <p>
+	 * This method is used to initialize {@link NcpolicyPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static NcpolicyPackage init() {
-		if (isInited) return (NcpolicyPackage)EPackage.Registry.INSTANCE.getEPackage(NcpolicyPackage.eNS_URI);
+		if (isInited) {
+			return (NcpolicyPackage) EPackage.Registry.INSTANCE.getEPackage(NcpolicyPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		NcpolicyPackageImpl theNcpolicyPackage = (NcpolicyPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof NcpolicyPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new NcpolicyPackageImpl());
+		NcpolicyPackageImpl theNcpolicyPackage = (NcpolicyPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof NcpolicyPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new NcpolicyPackageImpl());
 
 		isInited = true;
 
@@ -147,7 +154,8 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 		TypesPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		NewchildPackageImpl theNewchildPackage = (NewchildPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NewchildPackage.eNS_URI) instanceof NewchildPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NewchildPackage.eNS_URI) : NewchildPackage.eINSTANCE);
+		NewchildPackageImpl theNewchildPackage = (NewchildPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NewchildPackage.eNS_URI) instanceof NewchildPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NewchildPackage.eNS_URI)
+				: NewchildPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theNcpolicyPackage.createPackageContents();
@@ -160,7 +168,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 		// Mark meta-data to indicate it can't be changed
 		theNcpolicyPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(NcpolicyPackage.eNS_URI, theNcpolicyPackage);
 		return theNcpolicyPackage;
@@ -169,6 +177,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getNewEMFChildMenu() {
@@ -178,33 +187,37 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getNewEMFChildMenu_CreateIn() {
-		return (EAttribute)newEMFChildMenuEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) newEMFChildMenuEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getNewEMFChildMenu_Layout() {
-		return (EAttribute)newEMFChildMenuEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) newEMFChildMenuEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getNewEMFChildMenu_Groups() {
-		return (EReference)newEMFChildMenuEClass.getEStructuralFeatures().get(2);
+		return (EReference) newEMFChildMenuEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getNewChildPolicySet() {
@@ -214,24 +227,27 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getNewChildPolicySet_Name() {
-		return (EAttribute)newChildPolicySetEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) newChildPolicySetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getNewChildPolicySet_Policies() {
-		return (EReference)newChildPolicySetEClass.getEStructuralFeatures().get(1);
+		return (EReference) newChildPolicySetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getNewChildPolicy() {
@@ -241,33 +257,37 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getNewChildPolicy_Roles() {
-		return (EAttribute)newChildPolicyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) newChildPolicyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getNewChildPolicy_EClasses() {
-		return (EReference)newChildPolicyEClass.getEStructuralFeatures().get(1);
+		return (EReference) newChildPolicyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getNewChildPolicy_Name() {
-		return (EAttribute)newChildPolicyEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) newChildPolicyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getFilterPolicy() {
@@ -277,6 +297,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getReplacePolicy() {
@@ -286,15 +307,17 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getReplacePolicy_ReplaceWith() {
-		return (EReference)replacePolicyEClass.getEStructuralFeatures().get(0);
+		return (EReference) replacePolicyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getCustomPolicy() {
@@ -304,15 +327,17 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getCustomPolicy_ClassName() {
-		return (EAttribute)customPolicyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) customPolicyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EEnum getCreateIn() {
@@ -322,6 +347,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EEnum getLayout() {
@@ -331,28 +357,33 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NcpolicyFactory getNcpolicyFactory() {
-		return (NcpolicyFactory)getEFactoryInstance();
+		return (NcpolicyFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -386,19 +417,23 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -407,9 +442,9 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		NewchildPackage theNewchildPackage = (NewchildPackage)EPackage.Registry.INSTANCE.getEPackage(NewchildPackage.eNS_URI);
-		ConstraintsPackage theConstraintsPackage = (ConstraintsPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintsPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		NewchildPackage theNewchildPackage = (NewchildPackage) EPackage.Registry.INSTANCE.getEPackage(NewchildPackage.eNS_URI);
+		ConstraintsPackage theConstraintsPackage = (ConstraintsPackage) EPackage.Registry.INSTANCE.getEPackage(ConstraintsPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -426,21 +461,25 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 		initEClass(newEMFChildMenuEClass, NewEMFChildMenu.class, "NewEMFChildMenu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNewEMFChildMenu_CreateIn(), this.getCreateIn(), "createIn", "self", 1, 1, NewEMFChildMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNewEMFChildMenu_Layout(), this.getLayout(), "layout", "hierarchical", 1, 1, NewEMFChildMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNewEMFChildMenu_Groups(), theNewchildPackage.getMenuGroup(), null, "groups", null, 0, -1, NewEMFChildMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNewEMFChildMenu_Groups(), theNewchildPackage.getMenuGroup(), null, "groups", null, 0, -1, NewEMFChildMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(newChildPolicySetEClass, NewChildPolicySet.class, "NewChildPolicySet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNewChildPolicySet_Name(), theEcorePackage.getEString(), "name", null, 1, 1, NewChildPolicySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNewChildPolicySet_Policies(), this.getNewChildPolicy(), null, "policies", null, 0, -1, NewChildPolicySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNewChildPolicySet_Policies(), this.getNewChildPolicy(), null, "policies", null, 0, -1, NewChildPolicySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(newChildPolicyEClass, NewChildPolicy.class, "NewChildPolicy", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNewChildPolicy_Roles(), theEcorePackage.getEString(), "roles", null, 0, -1, NewChildPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNewChildPolicy_EClasses(), theEcorePackage.getEClass(), null, "eClasses", null, 0, -1, NewChildPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNewChildPolicy_EClasses(), theEcorePackage.getEClass(), null, "eClasses", null, 0, -1, NewChildPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getNewChildPolicy_Name(), theEcorePackage.getEString(), "name", null, 1, 1, NewChildPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(filterPolicyEClass, FilterPolicy.class, "FilterPolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(replacePolicyEClass, ReplacePolicy.class, "ReplacePolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReplacePolicy_ReplaceWith(), theNewchildPackage.getMenuItem(), null, "replaceWith", null, 1, -1, ReplacePolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReplacePolicy_ReplaceWith(), theNewchildPackage.getMenuItem(), null, "replaceWith", null, 1, -1, ReplacePolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(customPolicyEClass, CustomPolicy.class, "CustomPolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomPolicy_ClassName(), theEcorePackage.getEString(), "className", null, 1, 1, CustomPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -456,4 +495,4 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 		addEEnumLiteral(layoutEEnum, Layout.AUTO);
 	}
 
-} //NcpolicyPackageImpl
+} // NcpolicyPackageImpl

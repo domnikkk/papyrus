@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.infra.core.sashwindows.di.DiFactory
  * @model kind="package"
  * @generated
@@ -33,6 +34,7 @@ public interface DiPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "di";
@@ -41,6 +43,7 @@ public interface DiPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/0.7.0/sashdi";
@@ -49,6 +52,7 @@ public interface DiPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "di";
@@ -57,6 +61,7 @@ public interface DiPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	DiPackage eINSTANCE = org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl.init();
@@ -65,6 +70,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashModelImpl <em>Sash Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashModelImpl
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getSashModel()
 	 * @generated
@@ -75,6 +81,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Windows</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -84,6 +91,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Current Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -93,6 +101,7 @@ public interface DiPackage extends EPackage {
 	 * The number of structural features of the '<em>Sash Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -102,6 +111,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.PanelParentImpl <em>Panel Parent</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.PanelParentImpl
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getPanelParent()
 	 * @generated
@@ -112,6 +122,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -121,6 +132,7 @@ public interface DiPackage extends EPackage {
 	 * The number of structural features of the '<em>Panel Parent</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -130,6 +142,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.WindowImpl <em>Window</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.WindowImpl
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getWindow()
 	 * @generated
@@ -140,6 +153,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -149,6 +163,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Position</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -158,6 +173,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Size</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -167,6 +183,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Panel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -176,6 +193,7 @@ public interface DiPackage extends EPackage {
 	 * The number of structural features of the '<em>Window</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -185,6 +203,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.AbstractPanelImpl <em>Abstract Panel</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.AbstractPanelImpl
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getAbstractPanel()
 	 * @generated
@@ -195,6 +214,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -204,6 +224,7 @@ public interface DiPackage extends EPackage {
 	 * The number of structural features of the '<em>Abstract Panel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -213,6 +234,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.PositionImpl <em>Position</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.PositionImpl
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getPosition()
 	 * @generated
@@ -223,6 +245,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>X</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -232,6 +255,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -241,6 +265,7 @@ public interface DiPackage extends EPackage {
 	 * The number of structural features of the '<em>Position</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -250,6 +275,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.SizeImpl <em>Size</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.SizeImpl
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getSize()
 	 * @generated
@@ -260,6 +286,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -269,6 +296,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Length</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -278,6 +306,7 @@ public interface DiPackage extends EPackage {
 	 * The number of structural features of the '<em>Size</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -287,6 +316,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.TabFolderImpl <em>Tab Folder</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.TabFolderImpl
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getTabFolder()
 	 * @generated
@@ -297,6 +327,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -306,6 +337,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -315,6 +347,7 @@ public interface DiPackage extends EPackage {
 	 * The number of structural features of the '<em>Tab Folder</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -324,6 +357,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.PageRefImpl <em>Page Ref</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.PageRefImpl
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getPageRef()
 	 * @generated
@@ -334,6 +368,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Emf Page Identifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -343,6 +378,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Page Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -352,6 +388,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Object Page Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -361,6 +398,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -370,6 +408,7 @@ public interface DiPackage extends EPackage {
 	 * The number of structural features of the '<em>Page Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -379,6 +418,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashPanelImpl <em>Sash Panel</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashPanelImpl
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getSashPanel()
 	 * @generated
@@ -389,6 +429,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -398,6 +439,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -407,6 +449,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Sash Position</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -416,6 +459,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -425,6 +469,7 @@ public interface DiPackage extends EPackage {
 	 * The number of structural features of the '<em>Sash Panel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -434,6 +479,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.AbstractPageImpl <em>Abstract Page</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.AbstractPageImpl
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getAbstractPage()
 	 * @generated
@@ -444,6 +490,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Page Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -453,6 +500,7 @@ public interface DiPackage extends EPackage {
 	 * The number of structural features of the '<em>Abstract Page</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -462,6 +510,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.PageListImpl <em>Page List</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.PageListImpl
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getPageList()
 	 * @generated
@@ -473,6 +522,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Available Page</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -483,6 +533,7 @@ public interface DiPackage extends EPackage {
 	 * The number of structural features of the '<em>Page List</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -492,6 +543,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashWindowsMngrImpl <em>Sash Windows Mngr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashWindowsMngrImpl
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getSashWindowsMngr()
 	 * @generated
@@ -502,6 +554,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Page List</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -511,6 +564,7 @@ public interface DiPackage extends EPackage {
 	 * The feature id for the '<em><b>Sash Model</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -520,6 +574,7 @@ public interface DiPackage extends EPackage {
 	 * The number of structural features of the '<em>Sash Windows Mngr</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -529,6 +584,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '<em>int</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getint()
 	 * @generated
 	 */
@@ -538,6 +594,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '<em>Java Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.Object
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getJavaObject()
 	 * @generated
@@ -548,6 +605,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '<em>Float</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getFloat()
 	 * @generated
 	 */
@@ -557,6 +615,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '<em>boolean</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getboolean()
 	 * @generated
 	 */
@@ -567,6 +626,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.sashwindows.di.SashModel <em>Sash Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Sash Model</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.SashModel
 	 * @generated
@@ -577,6 +637,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.core.sashwindows.di.SashModel#getWindows <em>Windows</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Windows</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.SashModel#getWindows()
 	 * @see #getSashModel()
@@ -588,6 +649,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.core.sashwindows.di.SashModel#getCurrentSelection <em>Current Selection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Current Selection</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.SashModel#getCurrentSelection()
 	 * @see #getSashModel()
@@ -599,6 +661,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.sashwindows.di.Window <em>Window</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Window</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.Window
 	 * @generated
@@ -609,6 +672,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.core.sashwindows.di.Window#getPosition <em>Position</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Position</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.Window#getPosition()
 	 * @see #getWindow()
@@ -620,6 +684,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.core.sashwindows.di.Window#getSize <em>Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Size</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.Window#getSize()
 	 * @see #getWindow()
@@ -631,6 +696,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.core.sashwindows.di.Window#getPanel <em>Panel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Panel</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.Window#getPanel()
 	 * @see #getWindow()
@@ -642,6 +708,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.sashwindows.di.PanelParent <em>Panel Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Panel Parent</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.PanelParent
 	 * @generated
@@ -652,6 +719,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.core.sashwindows.di.PanelParent#getChildren <em>Children</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Children</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.PanelParent#getChildren()
 	 * @see #getPanelParent()
@@ -663,6 +731,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.sashwindows.di.AbstractPanel <em>Abstract Panel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Abstract Panel</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.AbstractPanel
 	 * @generated
@@ -673,6 +742,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.infra.core.sashwindows.di.AbstractPanel#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the container reference '<em>Parent</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.AbstractPanel#getParent()
 	 * @see #getAbstractPanel()
@@ -684,6 +754,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.sashwindows.di.Position <em>Position</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Position</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.Position
 	 * @generated
@@ -694,6 +765,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.sashwindows.di.Position#getX <em>X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>X</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.Position#getX()
 	 * @see #getPosition()
@@ -705,6 +777,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.sashwindows.di.Position#getY <em>Y</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Y</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.Position#getY()
 	 * @see #getPosition()
@@ -716,6 +789,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.sashwindows.di.Size <em>Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Size</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.Size
 	 * @generated
@@ -726,6 +800,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.sashwindows.di.Size#getWidth <em>Width</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Width</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.Size#getWidth()
 	 * @see #getSize()
@@ -737,6 +812,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.sashwindows.di.Size#getLength <em>Length</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Length</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.Size#getLength()
 	 * @see #getSize()
@@ -748,6 +824,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.sashwindows.di.TabFolder <em>Tab Folder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Tab Folder</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.TabFolder
 	 * @generated
@@ -758,6 +835,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.core.sashwindows.di.TabFolder#getChildren <em>Children</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Children</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.TabFolder#getChildren()
 	 * @see #getTabFolder()
@@ -769,6 +847,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.sashwindows.di.PageRef <em>Page Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Page Ref</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.PageRef
 	 * @generated
@@ -779,6 +858,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.core.sashwindows.di.PageRef#getEmfPageIdentifier <em>Emf Page Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Emf Page Identifier</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.PageRef#getEmfPageIdentifier()
 	 * @see #getPageRef()
@@ -790,6 +870,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.sashwindows.di.PageRef#getPageIdentifier <em>Page Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Page Identifier</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.PageRef#getPageIdentifier()
 	 * @see #getPageRef()
@@ -801,6 +882,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.sashwindows.di.PageRef#getObjectPageIdentifier <em>Object Page Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Object Page Identifier</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.PageRef#getObjectPageIdentifier()
 	 * @see #getPageRef()
@@ -812,6 +894,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.infra.core.sashwindows.di.PageRef#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the container reference '<em>Parent</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.PageRef#getParent()
 	 * @see #getPageRef()
@@ -823,6 +906,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.sashwindows.di.SashPanel <em>Sash Panel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Sash Panel</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.SashPanel
 	 * @generated
@@ -833,6 +917,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.sashwindows.di.SashPanel#getSashPosition <em>Sash Position</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Sash Position</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.SashPanel#getSashPosition()
 	 * @see #getSashPanel()
@@ -844,6 +929,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.sashwindows.di.SashPanel#getDirection <em>Direction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Direction</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.SashPanel#getDirection()
 	 * @see #getSashPanel()
@@ -855,6 +941,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.sashwindows.di.AbstractPage <em>Abstract Page</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Abstract Page</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.AbstractPage
 	 * @generated
@@ -865,6 +952,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.sashwindows.di.AbstractPage#getPageIdentifier <em>Page Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Page Identifier</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.AbstractPage#getPageIdentifier()
 	 * @see #getAbstractPage()
@@ -876,6 +964,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.sashwindows.di.PageList <em>Page List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Page List</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.PageList
 	 * @generated
@@ -887,6 +976,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.core.sashwindows.di.PageList#getAvailablePage <em>Available Page</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Available Page</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.PageList#getAvailablePage()
 	 * @see #getPageList()
@@ -899,6 +989,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.sashwindows.di.SashWindowsMngr <em>Sash Windows Mngr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Sash Windows Mngr</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.SashWindowsMngr
 	 * @generated
@@ -909,6 +1000,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.core.sashwindows.di.SashWindowsMngr#getPageList <em>Page List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference '<em>Page List</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.SashWindowsMngr#getPageList()
 	 * @see #getSashWindowsMngr()
@@ -921,6 +1013,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.core.sashwindows.di.SashWindowsMngr#getSashModel <em>Sash Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference '<em>Sash Model</em>'.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.SashWindowsMngr#getSashModel()
 	 * @see #getSashWindowsMngr()
@@ -932,6 +1025,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for data type '<em>int</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>int</em>'.
 	 * @model instanceClass="int"
 	 * @generated
@@ -942,6 +1036,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.Object <em>Java Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Java Object</em>'.
 	 * @see java.lang.Object
 	 * @model instanceClass="java.lang.Object"
@@ -953,6 +1048,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for data type '<em>Float</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Float</em>'.
 	 * @model instanceClass="float"
 	 * @generated
@@ -963,6 +1059,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for data type '<em>boolean</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>boolean</em>'.
 	 * @model instanceClass="boolean"
 	 * @generated
@@ -973,6 +1070,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -988,6 +1086,7 @@ public interface DiPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -996,6 +1095,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashModelImpl <em>Sash Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashModelImpl
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getSashModel()
 		 * @generated
@@ -1006,6 +1106,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Windows</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference SASH_MODEL__WINDOWS = eINSTANCE.getSashModel_Windows();
@@ -1014,6 +1115,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Current Selection</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference SASH_MODEL__CURRENT_SELECTION = eINSTANCE.getSashModel_CurrentSelection();
@@ -1022,6 +1124,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.WindowImpl <em>Window</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.WindowImpl
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getWindow()
 		 * @generated
@@ -1032,6 +1135,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Position</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference WINDOW__POSITION = eINSTANCE.getWindow_Position();
@@ -1040,6 +1144,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Size</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference WINDOW__SIZE = eINSTANCE.getWindow_Size();
@@ -1048,6 +1153,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Panel</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference WINDOW__PANEL = eINSTANCE.getWindow_Panel();
@@ -1056,6 +1162,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.PanelParentImpl <em>Panel Parent</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.PanelParentImpl
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getPanelParent()
 		 * @generated
@@ -1066,6 +1173,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference PANEL_PARENT__CHILDREN = eINSTANCE.getPanelParent_Children();
@@ -1074,6 +1182,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.AbstractPanelImpl <em>Abstract Panel</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.AbstractPanelImpl
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getAbstractPanel()
 		 * @generated
@@ -1084,6 +1193,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference ABSTRACT_PANEL__PARENT = eINSTANCE.getAbstractPanel_Parent();
@@ -1092,6 +1202,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.PositionImpl <em>Position</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.PositionImpl
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getPosition()
 		 * @generated
@@ -1102,6 +1213,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute POSITION__X = eINSTANCE.getPosition_X();
@@ -1110,6 +1222,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute POSITION__Y = eINSTANCE.getPosition_Y();
@@ -1118,6 +1231,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.SizeImpl <em>Size</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.SizeImpl
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getSize()
 		 * @generated
@@ -1128,6 +1242,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute SIZE__WIDTH = eINSTANCE.getSize_Width();
@@ -1136,6 +1251,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute SIZE__LENGTH = eINSTANCE.getSize_Length();
@@ -1144,6 +1260,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.TabFolderImpl <em>Tab Folder</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.TabFolderImpl
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getTabFolder()
 		 * @generated
@@ -1154,6 +1271,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TAB_FOLDER__CHILDREN = eINSTANCE.getTabFolder_Children();
@@ -1162,6 +1280,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.PageRefImpl <em>Page Ref</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.PageRefImpl
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getPageRef()
 		 * @generated
@@ -1172,6 +1291,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Emf Page Identifier</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference PAGE_REF__EMF_PAGE_IDENTIFIER = eINSTANCE.getPageRef_EmfPageIdentifier();
@@ -1180,6 +1300,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Page Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute PAGE_REF__PAGE_IDENTIFIER = eINSTANCE.getPageRef_PageIdentifier();
@@ -1188,6 +1309,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Object Page Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute PAGE_REF__OBJECT_PAGE_IDENTIFIER = eINSTANCE.getPageRef_ObjectPageIdentifier();
@@ -1196,6 +1318,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference PAGE_REF__PARENT = eINSTANCE.getPageRef_Parent();
@@ -1204,6 +1327,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashPanelImpl <em>Sash Panel</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashPanelImpl
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getSashPanel()
 		 * @generated
@@ -1214,6 +1338,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Sash Position</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute SASH_PANEL__SASH_POSITION = eINSTANCE.getSashPanel_SashPosition();
@@ -1222,6 +1347,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute SASH_PANEL__DIRECTION = eINSTANCE.getSashPanel_Direction();
@@ -1230,6 +1356,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.AbstractPageImpl <em>Abstract Page</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.AbstractPageImpl
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getAbstractPage()
 		 * @generated
@@ -1240,6 +1367,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Page Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute ABSTRACT_PAGE__PAGE_IDENTIFIER = eINSTANCE.getAbstractPage_PageIdentifier();
@@ -1248,6 +1376,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.PageListImpl <em>Page List</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.PageListImpl
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getPageList()
 		 * @generated
@@ -1259,6 +1388,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Available Page</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		@Deprecated
@@ -1268,6 +1398,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashWindowsMngrImpl <em>Sash Windows Mngr</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashWindowsMngrImpl
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getSashWindowsMngr()
 		 * @generated
@@ -1278,6 +1409,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Page List</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		@Deprecated
@@ -1287,6 +1419,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Sash Model</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference SASH_WINDOWS_MNGR__SASH_MODEL = eINSTANCE.getSashWindowsMngr_SashModel();
@@ -1295,6 +1428,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em>int</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getint()
 		 * @generated
 		 */
@@ -1304,6 +1438,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em>Java Object</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.Object
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getJavaObject()
 		 * @generated
@@ -1314,6 +1449,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em>Float</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getFloat()
 		 * @generated
 		 */
@@ -1323,6 +1459,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em>boolean</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sashwindows.di.impl.DiPackageImpl#getboolean()
 		 * @generated
 		 */
@@ -1330,4 +1467,4 @@ public interface DiPackage extends EPackage {
 
 	}
 
-} //DiPackage
+} // DiPackage

@@ -23,7 +23,7 @@ import org.eclipse.papyrus.domaincontextcodegen.GenMatcher;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.GenMatcherImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class GenMatcherImpl extends EObjectImpl implements GenMatcher {
@@ -32,7 +32,7 @@ public abstract class GenMatcherImpl extends EObjectImpl implements GenMatcher {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public abstract class GenMatcherImpl extends EObjectImpl implements GenMatcher {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public abstract class GenMatcherImpl extends EObjectImpl implements GenMatcher {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GenMatcherImpl() {
@@ -63,7 +63,7 @@ public abstract class GenMatcherImpl extends EObjectImpl implements GenMatcher {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +74,7 @@ public abstract class GenMatcherImpl extends EObjectImpl implements GenMatcher {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -84,25 +84,26 @@ public abstract class GenMatcherImpl extends EObjectImpl implements GenMatcher {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.GEN_MATCHER__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.GEN_MATCHER__NAME:
 			return getName();
 		}
@@ -112,14 +113,14 @@ public abstract class GenMatcherImpl extends EObjectImpl implements GenMatcher {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.GEN_MATCHER__NAME:
-			setName((String)newValue);
+			setName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -128,12 +129,12 @@ public abstract class GenMatcherImpl extends EObjectImpl implements GenMatcher {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.GEN_MATCHER__NAME:
 			setName(NAME_EDEFAULT);
 			return;
@@ -144,12 +145,12 @@ public abstract class GenMatcherImpl extends EObjectImpl implements GenMatcher {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.GEN_MATCHER__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
@@ -159,13 +160,14 @@ public abstract class GenMatcherImpl extends EObjectImpl implements GenMatcher {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -174,4 +176,4 @@ public abstract class GenMatcherImpl extends EObjectImpl implements GenMatcher {
 		return result.toString();
 	}
 
-} //GenMatcherImpl
+} // GenMatcherImpl

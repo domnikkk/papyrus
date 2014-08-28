@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012-2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,12 +12,14 @@
 package org.eclipse.papyrus.infra.gmfdiag.parser.antlr;
 
 import java.io.InputStream;
+
 import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class CSSAntlrTokenFileProvider implements IAntlrTokenFileProvider {
-	
+
+	@Override
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
-    	return classLoader.getResourceAsStream("org/eclipse/papyrus/infra/gmfdiag/parser/antlr/internal/InternalCSS.tokens");
+		return classLoader.getResourceAsStream("org/eclipse/papyrus/infra/gmfdiag/parser/antlr/internal/InternalCSS.tokens");
 	}
 }

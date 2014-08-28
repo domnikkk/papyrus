@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ import org.eclipse.uml2.uml.Classifier;
 public class OperationHistoryListener implements IOperationHistoryListener {
 
 	public static void init() {
-		if(ohl == null) {
+		if (ohl == null) {
 			ohl = new OperationHistoryListener();
 			OperationHistoryFactory.getOperationHistory().addOperationHistoryListener(ohl);
 		}
@@ -34,16 +34,17 @@ public class OperationHistoryListener implements IOperationHistoryListener {
 
 	private static OperationHistoryListener ohl = null;
 
+	@Override
 	public void historyNotification(OperationHistoryEvent event) {
 		int eventType = event.getEventType();
-		if(eventType == OperationHistoryEvent.OPERATION_ADDED ||
-			eventType == OperationHistoryEvent.REDONE ||
-			eventType == OperationHistoryEvent.UNDONE) {
+		if (eventType == OperationHistoryEvent.OPERATION_ADDED ||
+				eventType == OperationHistoryEvent.REDONE ||
+				eventType == OperationHistoryEvent.UNDONE) {
 
 			EList<Classifier> regenListCopy = new BasicEList<Classifier>(ModelListener.regenList);
 			ModelListener.regenList.clear();
 			// regen ...
-			for(Classifier cl : regenListCopy) {
+			for (Classifier cl : regenListCopy) {
 				// System.err.println("regenerate: " + cl.getQualifiedName());
 				SyncModelToCDT.syncModelToCDT(cl);
 			}

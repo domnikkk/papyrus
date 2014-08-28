@@ -45,5 +45,5 @@ AdapterUtilsTest.class
  * Suite Class for all tests in the plugin
  */
 public class AllTests {
-
+	//Junit 4 Test suite
 }

@@ -15,7 +15,7 @@ package org.eclipse.papyrus.uml.diagram.common.tests.parser;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.diagram.common.parser.HTMLCleaner;
 import org.junit.Test;
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ public class ChangeInteractionUseToInteraction extends
 		AbstractChangeInteractionTypeCommand {
 
 	public ChangeInteractionUseToInteraction(final TransactionalEditingDomain domain, final IGraphicalEditPart callBehaviorActionView) {
-		super(domain, callBehaviorActionView,"ChangeInteractionUseToInteraction");
+		super(domain, callBehaviorActionView, "ChangeInteractionUseToInteraction");
 	}
-	
+
 	@Override
 	protected CallBehaviorActionType getTargetCallBehaviorType() {
 		return CallBehaviorActionType.snapshot;

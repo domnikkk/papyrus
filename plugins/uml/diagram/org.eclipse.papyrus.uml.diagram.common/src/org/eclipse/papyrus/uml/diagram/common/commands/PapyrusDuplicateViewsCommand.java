@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,19 +50,20 @@ public class PapyrusDuplicateViewsCommand extends DuplicateViewsCommand implemen
 	/**
 	 * Verifies that the container of all the original objects can contain
 	 * multiple objects.
-	 * 
+	 *
 	 */
+	@Override
 	@SuppressWarnings("rawtypes")
 	public boolean canExecute() {
-		for(Iterator iter = getObjectsToBeDuplicated().iterator(); iter.hasNext();) {
-			EObject original = (EObject)iter.next();
+		for (Iterator iter = getObjectsToBeDuplicated().iterator(); iter.hasNext();) {
+			EObject original = (EObject) iter.next();
 			// In the case of cut the owner does not exist
-			if(original.eContainer() == null) {
+			if (original.eContainer() == null) {
 				return true;
 
 			} else {
 				EReference reference = original.eContainmentFeature();
-				if(reference == null || !FeatureMapUtil.isMany(original.eContainer(), reference)) {
+				if (reference == null || !FeatureMapUtil.isMany(original.eContainer(), reference)) {
 					return false;
 				}
 			}
@@ -71,27 +72,27 @@ public class PapyrusDuplicateViewsCommand extends DuplicateViewsCommand implemen
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.gmf.runtime.diagram.ui.internal.commands.DuplicateViewsCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 *
+	 * @see org.eclipse.gmf.runtime.diagram.ui.internal.commands.DuplicateViewsCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+	 *
 	 * @param progressMonitor
 	 * @param info
 	 * @return
 	 * @throws ExecutionException
 	 */
+	@Override
 	@SuppressWarnings("rawtypes")
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 		CommandResult result = super.doExecuteWithResult(progressMonitor, info);
 		// reassociation to the new container
-		if(result.getReturnValue() instanceof List) {
-			List duplicatedObject = (List)result.getReturnValue();
+		if (result.getReturnValue() instanceof List) {
+			List duplicatedObject = (List) result.getReturnValue();
 			Iterator iterator = duplicatedObject.iterator();
-			while(iterator.hasNext()) {
-				Object object = (Object)iterator.next();
-				if(object instanceof View) {
-					View duplicatedView = (View)object;
-					if(duplicatedView.eContainer() == null && container != null) {
+			while (iterator.hasNext()) {
+				Object object = iterator.next();
+				if (object instanceof View) {
+					View duplicatedView = (View) object;
+					if (duplicatedView.eContainer() == null && container != null) {
 
 						ViewUtil.insertChildView(container, duplicatedView, -1, true);
 

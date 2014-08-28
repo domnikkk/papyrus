@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -13,9 +13,7 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.FolderElement;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 
@@ -32,6 +30,7 @@ public abstract class FolderElementImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FolderElementImpl() {
@@ -41,6 +40,7 @@ public abstract class FolderElementImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -48,4 +48,4 @@ public abstract class FolderElementImpl extends MinimalEObjectImpl.Container imp
 		return LayersPackage.Literals.FOLDER_ELEMENT;
 	}
 
-} //FolderElementImpl
+} // FolderElementImpl

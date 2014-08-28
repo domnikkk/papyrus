@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,6 +62,7 @@ import org.eclipse.uml2.uml.InteractionOperand;
  */
 public class CustomViewProvider extends UMLViewProvider {
 
+	@Override
 	protected boolean provides(CreateNodeViewOperation op) {
 		if (op.getContainerView() == null) {
 			return false;
@@ -72,12 +73,14 @@ public class CustomViewProvider extends UMLViewProvider {
 																// UMLVisualIDRegistry.getNodeVisualID(View,
 																// EObject)
 			if (InteractionInteractionCompartmentEditPart.VISUAL_ID == UMLVisualIDRegistry
-					.getVisualID(op.getContainerView()))
+					.getVisualID(op.getContainerView())) {
 				return true;
+			}
 		}
 		return super.provides(op);
 	}
 
+	@Override
 	protected boolean provides(CreateViewForKindOperation op) {
 		if (op.getContainerView() == null) {
 			return false;
@@ -88,8 +91,9 @@ public class CustomViewProvider extends UMLViewProvider {
 																// UMLVisualIDRegistry.getNodeVisualID(View,
 																// EObject)
 			if (InteractionInteractionCompartmentEditPart.VISUAL_ID == UMLVisualIDRegistry
-					.getVisualID(op.getContainerView()))
+					.getVisualID(op.getContainerView())) {
 				return true;
+			}
 		}
 		return super.provides(op);
 	}
@@ -110,6 +114,7 @@ public class CustomViewProvider extends UMLViewProvider {
 		return edge;
 	}
 
+	@Override
 	public Node createTimeObservation_3020(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
@@ -158,6 +163,7 @@ public class CustomViewProvider extends UMLViewProvider {
 		return node;
 	}
 
+	@Override
 	public Node createDurationConstraint_3021(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
@@ -196,6 +202,7 @@ public class CustomViewProvider extends UMLViewProvider {
 		return node;
 	}
 
+	@Override
 	public Node createCombinedFragment_3004(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
@@ -231,6 +238,7 @@ public class CustomViewProvider extends UMLViewProvider {
 		return node;
 	}
 
+	@Override
 	public Node createDurationConstraint_3023(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
@@ -268,6 +276,7 @@ public class CustomViewProvider extends UMLViewProvider {
 		return node;
 	}
 
+	@Override
 	public Node createDurationObservation_3024(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
@@ -304,6 +313,7 @@ public class CustomViewProvider extends UMLViewProvider {
 		return node;
 	}
 
+	@Override
 	public Node createConsiderIgnoreFragment_3007(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
@@ -339,6 +349,7 @@ public class CustomViewProvider extends UMLViewProvider {
 		return node;
 	}
 
+	@Override
 	public Edge createCommentAnnotatedElement_4010(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Edge edge = NotationFactory.eINSTANCE.createEdge(); // override

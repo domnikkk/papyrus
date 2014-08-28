@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,27 +36,27 @@ import org.eclipse.uml2.uml.Property;
 public class CustomAssociationItemSemanticEditPolicy extends org.eclipse.papyrus.uml.diagram.profile.edit.policies.AssociationItemSemanticEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Association_4001 == req.getElementType()) {
+		if (UMLElementTypes.Association_4001 == req.getElementType()) {
 			return getGEFWrapper(new org.eclipse.papyrus.uml.diagram.profile.custom.commands.CustomAssociationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getCompleteCreateRelationshipCommand(req);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.profile.edit.policies.AssociationItemSemanticEditPolicy#getReorientRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest)
-	 * 
+	 *
 	 * @param req
 	 * @return
 	 */
 	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case AssociationEditPart.VISUAL_ID:
 			return getGEFWrapper(new CustomAssociationReorientCommand(req));
 		}
@@ -73,11 +73,11 @@ public class CustomAssociationItemSemanticEditPolicy extends org.eclipse.papyrus
 		List<EObject> todestroy = new ArrayList<EObject>();
 		EObject mainObjectToDelete = req.getElementToDestroy();
 		todestroy.add(mainObjectToDelete);
-		if(mainObjectToDelete instanceof Association) {
+		if (mainObjectToDelete instanceof Association) {
 			// check end properties. If they do not belong to the association, they should be deleted also
-			Association association = (Association)mainObjectToDelete;
-			for(Property end : association.getMemberEnds()) {
-				if(end.getOwner() != association) {
+			Association association = (Association) mainObjectToDelete;
+			for (Property end : association.getMemberEnds()) {
+				if (end.getOwner() != association) {
 					todestroy.add(end);
 				}
 			}
@@ -87,12 +87,12 @@ public class CustomAssociationItemSemanticEditPolicy extends org.eclipse.papyrus
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Association_4001 == req.getElementType()) {
+		if (UMLElementTypes.Association_4001 == req.getElementType()) {
 			return getGEFWrapper(new org.eclipse.papyrus.uml.diagram.profile.custom.commands.CustomAssociationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getStartCreateRelationshipCommand(req);

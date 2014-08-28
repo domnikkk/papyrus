@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,14 +39,14 @@ import org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.SchedPolicyKind;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#isIsPreemptible <em>Is Preemptible</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#getSchedPolicy <em>Sched Policy</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#getOtherSchedPolicy <em>Other Sched Policy</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#getSchedule <em>Schedule</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#getProcessingUnits <em>Processing Units</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#getHost <em>Host</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#getProtectedSharedResources <em>Protected Shared Resources</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#getSchedulableResources <em>Schedulable Resources</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#isIsPreemptible <em>Is Preemptible</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#getSchedPolicy <em>Sched Policy</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#getOtherSchedPolicy <em>Other Sched Policy</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#getSchedule <em>Schedule</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#getProcessingUnits <em>Processing Units</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#getHost <em>Host</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#getProtectedSharedResources <em>Protected Shared Resources</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulerImpl#getSchedulableResources <em>Schedulable Resources</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,6 +57,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The default value of the '{@link #isIsPreemptible() <em>Is Preemptible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsPreemptible()
 	 * @generated
 	 * @ordered
@@ -67,6 +68,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #isIsPreemptible() <em>Is Preemptible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsPreemptible()
 	 * @generated
 	 * @ordered
@@ -77,6 +79,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The default value of the '{@link #getSchedPolicy() <em>Sched Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSchedPolicy()
 	 * @generated
 	 * @ordered
@@ -87,6 +90,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #getSchedPolicy() <em>Sched Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSchedPolicy()
 	 * @generated
 	 * @ordered
@@ -97,6 +101,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The default value of the '{@link #getOtherSchedPolicy() <em>Other Sched Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOtherSchedPolicy()
 	 * @generated
 	 * @ordered
@@ -107,6 +112,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #getOtherSchedPolicy() <em>Other Sched Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOtherSchedPolicy()
 	 * @generated
 	 * @ordered
@@ -117,6 +123,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The default value of the '{@link #getSchedule() <em>Schedule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSchedule()
 	 * @generated
 	 * @ordered
@@ -127,6 +134,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #getSchedule() <em>Schedule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSchedule()
 	 * @generated
 	 * @ordered
@@ -137,6 +145,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #getProcessingUnits() <em>Processing Units</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getProcessingUnits()
 	 * @generated
 	 * @ordered
@@ -147,6 +156,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #getHost() <em>Host</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getHost()
 	 * @generated
 	 * @ordered
@@ -157,6 +167,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #getProtectedSharedResources() <em>Protected Shared Resources</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getProtectedSharedResources()
 	 * @generated
 	 * @ordered
@@ -167,6 +178,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #getSchedulableResources() <em>Schedulable Resources</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSchedulableResources()
 	 * @generated
 	 * @ordered
@@ -176,6 +188,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SchedulerImpl() {
@@ -185,6 +198,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,8 +209,10 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isIsPreemptible() {
 		return isPreemptible;
 	}
@@ -204,20 +220,25 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsPreemptible(boolean newIsPreemptible) {
 		boolean oldIsPreemptible = isPreemptible;
 		isPreemptible = newIsPreemptible;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.SCHEDULER__IS_PREEMPTIBLE, oldIsPreemptible, isPreemptible));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public SchedPolicyKind getSchedPolicy() {
 		return schedPolicy;
 	}
@@ -225,20 +246,25 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setSchedPolicy(SchedPolicyKind newSchedPolicy) {
 		SchedPolicyKind oldSchedPolicy = schedPolicy;
 		schedPolicy = newSchedPolicy == null ? SCHED_POLICY_EDEFAULT : newSchedPolicy;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.SCHEDULER__SCHED_POLICY, oldSchedPolicy, schedPolicy));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getOtherSchedPolicy() {
 		return otherSchedPolicy;
 	}
@@ -246,20 +272,25 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setOtherSchedPolicy(String newOtherSchedPolicy) {
 		String oldOtherSchedPolicy = otherSchedPolicy;
 		otherSchedPolicy = newOtherSchedPolicy;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.SCHEDULER__OTHER_SCHED_POLICY, oldOtherSchedPolicy, otherSchedPolicy));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getSchedule() {
 		return schedule;
 	}
@@ -267,20 +298,25 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setSchedule(String newSchedule) {
 		String oldSchedule = schedule;
 		schedule = newSchedule;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.SCHEDULER__SCHEDULE, oldSchedule, schedule));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<ProcessingResource> getProcessingUnits() {
 		if (processingUnits == null) {
 			processingUnits = new EObjectResolvingEList<ProcessingResource>(ProcessingResource.class, this, GRMPackage.SCHEDULER__PROCESSING_UNITS);
@@ -291,15 +327,18 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ComputingResource getHost() {
 		if (host != null && host.eIsProxy()) {
-			InternalEObject oldHost = (InternalEObject)host;
-			host = (ComputingResource)eResolveProxy(oldHost);
+			InternalEObject oldHost = (InternalEObject) host;
+			host = (ComputingResource) eResolveProxy(oldHost);
 			if (host != oldHost) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GRMPackage.SCHEDULER__HOST, oldHost, host));
+				}
 			}
 		}
 		return host;
@@ -308,6 +347,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ComputingResource basicGetHost() {
@@ -317,20 +357,25 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setHost(ComputingResource newHost) {
 		ComputingResource oldHost = host;
 		host = newHost;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.SCHEDULER__HOST, oldHost, host));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<MutualExclusionResource> getProtectedSharedResources() {
 		if (protectedSharedResources == null) {
 			protectedSharedResources = new EObjectWithInverseResolvingEList<MutualExclusionResource>(MutualExclusionResource.class, this, GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES, GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER);
@@ -341,8 +386,10 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<SchedulableResource> getSchedulableResources() {
 		if (schedulableResources == null) {
 			schedulableResources = new EObjectWithInverseResolvingEList<SchedulableResource>(SchedulableResource.class, this, GRMPackage.SCHEDULER__SCHEDULABLE_RESOURCES, GRMPackage.SCHEDULABLE_RESOURCE__HOST);
@@ -353,16 +400,17 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProtectedSharedResources()).basicAdd(otherEnd, msgs);
-			case GRMPackage.SCHEDULER__SCHEDULABLE_RESOURCES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSchedulableResources()).basicAdd(otherEnd, msgs);
+		case GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getProtectedSharedResources()).basicAdd(otherEnd, msgs);
+		case GRMPackage.SCHEDULER__SCHEDULABLE_RESOURCES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSchedulableResources()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -370,15 +418,16 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES:
-				return ((InternalEList<?>)getProtectedSharedResources()).basicRemove(otherEnd, msgs);
-			case GRMPackage.SCHEDULER__SCHEDULABLE_RESOURCES:
-				return ((InternalEList<?>)getSchedulableResources()).basicRemove(otherEnd, msgs);
+		case GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES:
+			return ((InternalEList<?>) getProtectedSharedResources()).basicRemove(otherEnd, msgs);
+		case GRMPackage.SCHEDULER__SCHEDULABLE_RESOURCES:
+			return ((InternalEList<?>) getSchedulableResources()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -386,28 +435,31 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GRMPackage.SCHEDULER__IS_PREEMPTIBLE:
-				return isIsPreemptible();
-			case GRMPackage.SCHEDULER__SCHED_POLICY:
-				return getSchedPolicy();
-			case GRMPackage.SCHEDULER__OTHER_SCHED_POLICY:
-				return getOtherSchedPolicy();
-			case GRMPackage.SCHEDULER__SCHEDULE:
-				return getSchedule();
-			case GRMPackage.SCHEDULER__PROCESSING_UNITS:
-				return getProcessingUnits();
-			case GRMPackage.SCHEDULER__HOST:
-				if (resolve) return getHost();
-				return basicGetHost();
-			case GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES:
-				return getProtectedSharedResources();
-			case GRMPackage.SCHEDULER__SCHEDULABLE_RESOURCES:
-				return getSchedulableResources();
+		case GRMPackage.SCHEDULER__IS_PREEMPTIBLE:
+			return isIsPreemptible();
+		case GRMPackage.SCHEDULER__SCHED_POLICY:
+			return getSchedPolicy();
+		case GRMPackage.SCHEDULER__OTHER_SCHED_POLICY:
+			return getOtherSchedPolicy();
+		case GRMPackage.SCHEDULER__SCHEDULE:
+			return getSchedule();
+		case GRMPackage.SCHEDULER__PROCESSING_UNITS:
+			return getProcessingUnits();
+		case GRMPackage.SCHEDULER__HOST:
+			if (resolve) {
+				return getHost();
+			}
+			return basicGetHost();
+		case GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES:
+			return getProtectedSharedResources();
+		case GRMPackage.SCHEDULER__SCHEDULABLE_RESOURCES:
+			return getSchedulableResources();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -415,39 +467,40 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GRMPackage.SCHEDULER__IS_PREEMPTIBLE:
-				setIsPreemptible((Boolean)newValue);
-				return;
-			case GRMPackage.SCHEDULER__SCHED_POLICY:
-				setSchedPolicy((SchedPolicyKind)newValue);
-				return;
-			case GRMPackage.SCHEDULER__OTHER_SCHED_POLICY:
-				setOtherSchedPolicy((String)newValue);
-				return;
-			case GRMPackage.SCHEDULER__SCHEDULE:
-				setSchedule((String)newValue);
-				return;
-			case GRMPackage.SCHEDULER__PROCESSING_UNITS:
-				getProcessingUnits().clear();
-				getProcessingUnits().addAll((Collection<? extends ProcessingResource>)newValue);
-				return;
-			case GRMPackage.SCHEDULER__HOST:
-				setHost((ComputingResource)newValue);
-				return;
-			case GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES:
-				getProtectedSharedResources().clear();
-				getProtectedSharedResources().addAll((Collection<? extends MutualExclusionResource>)newValue);
-				return;
-			case GRMPackage.SCHEDULER__SCHEDULABLE_RESOURCES:
-				getSchedulableResources().clear();
-				getSchedulableResources().addAll((Collection<? extends SchedulableResource>)newValue);
-				return;
+		case GRMPackage.SCHEDULER__IS_PREEMPTIBLE:
+			setIsPreemptible((Boolean) newValue);
+			return;
+		case GRMPackage.SCHEDULER__SCHED_POLICY:
+			setSchedPolicy((SchedPolicyKind) newValue);
+			return;
+		case GRMPackage.SCHEDULER__OTHER_SCHED_POLICY:
+			setOtherSchedPolicy((String) newValue);
+			return;
+		case GRMPackage.SCHEDULER__SCHEDULE:
+			setSchedule((String) newValue);
+			return;
+		case GRMPackage.SCHEDULER__PROCESSING_UNITS:
+			getProcessingUnits().clear();
+			getProcessingUnits().addAll((Collection<? extends ProcessingResource>) newValue);
+			return;
+		case GRMPackage.SCHEDULER__HOST:
+			setHost((ComputingResource) newValue);
+			return;
+		case GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES:
+			getProtectedSharedResources().clear();
+			getProtectedSharedResources().addAll((Collection<? extends MutualExclusionResource>) newValue);
+			return;
+		case GRMPackage.SCHEDULER__SCHEDULABLE_RESOURCES:
+			getSchedulableResources().clear();
+			getSchedulableResources().addAll((Collection<? extends SchedulableResource>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -455,35 +508,36 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GRMPackage.SCHEDULER__IS_PREEMPTIBLE:
-				setIsPreemptible(IS_PREEMPTIBLE_EDEFAULT);
-				return;
-			case GRMPackage.SCHEDULER__SCHED_POLICY:
-				setSchedPolicy(SCHED_POLICY_EDEFAULT);
-				return;
-			case GRMPackage.SCHEDULER__OTHER_SCHED_POLICY:
-				setOtherSchedPolicy(OTHER_SCHED_POLICY_EDEFAULT);
-				return;
-			case GRMPackage.SCHEDULER__SCHEDULE:
-				setSchedule(SCHEDULE_EDEFAULT);
-				return;
-			case GRMPackage.SCHEDULER__PROCESSING_UNITS:
-				getProcessingUnits().clear();
-				return;
-			case GRMPackage.SCHEDULER__HOST:
-				setHost((ComputingResource)null);
-				return;
-			case GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES:
-				getProtectedSharedResources().clear();
-				return;
-			case GRMPackage.SCHEDULER__SCHEDULABLE_RESOURCES:
-				getSchedulableResources().clear();
-				return;
+		case GRMPackage.SCHEDULER__IS_PREEMPTIBLE:
+			setIsPreemptible(IS_PREEMPTIBLE_EDEFAULT);
+			return;
+		case GRMPackage.SCHEDULER__SCHED_POLICY:
+			setSchedPolicy(SCHED_POLICY_EDEFAULT);
+			return;
+		case GRMPackage.SCHEDULER__OTHER_SCHED_POLICY:
+			setOtherSchedPolicy(OTHER_SCHED_POLICY_EDEFAULT);
+			return;
+		case GRMPackage.SCHEDULER__SCHEDULE:
+			setSchedule(SCHEDULE_EDEFAULT);
+			return;
+		case GRMPackage.SCHEDULER__PROCESSING_UNITS:
+			getProcessingUnits().clear();
+			return;
+		case GRMPackage.SCHEDULER__HOST:
+			setHost((ComputingResource) null);
+			return;
+		case GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES:
+			getProtectedSharedResources().clear();
+			return;
+		case GRMPackage.SCHEDULER__SCHEDULABLE_RESOURCES:
+			getSchedulableResources().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -491,27 +545,28 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GRMPackage.SCHEDULER__IS_PREEMPTIBLE:
-				return isPreemptible != IS_PREEMPTIBLE_EDEFAULT;
-			case GRMPackage.SCHEDULER__SCHED_POLICY:
-				return schedPolicy != SCHED_POLICY_EDEFAULT;
-			case GRMPackage.SCHEDULER__OTHER_SCHED_POLICY:
-				return OTHER_SCHED_POLICY_EDEFAULT == null ? otherSchedPolicy != null : !OTHER_SCHED_POLICY_EDEFAULT.equals(otherSchedPolicy);
-			case GRMPackage.SCHEDULER__SCHEDULE:
-				return SCHEDULE_EDEFAULT == null ? schedule != null : !SCHEDULE_EDEFAULT.equals(schedule);
-			case GRMPackage.SCHEDULER__PROCESSING_UNITS:
-				return processingUnits != null && !processingUnits.isEmpty();
-			case GRMPackage.SCHEDULER__HOST:
-				return host != null;
-			case GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES:
-				return protectedSharedResources != null && !protectedSharedResources.isEmpty();
-			case GRMPackage.SCHEDULER__SCHEDULABLE_RESOURCES:
-				return schedulableResources != null && !schedulableResources.isEmpty();
+		case GRMPackage.SCHEDULER__IS_PREEMPTIBLE:
+			return isPreemptible != IS_PREEMPTIBLE_EDEFAULT;
+		case GRMPackage.SCHEDULER__SCHED_POLICY:
+			return schedPolicy != SCHED_POLICY_EDEFAULT;
+		case GRMPackage.SCHEDULER__OTHER_SCHED_POLICY:
+			return OTHER_SCHED_POLICY_EDEFAULT == null ? otherSchedPolicy != null : !OTHER_SCHED_POLICY_EDEFAULT.equals(otherSchedPolicy);
+		case GRMPackage.SCHEDULER__SCHEDULE:
+			return SCHEDULE_EDEFAULT == null ? schedule != null : !SCHEDULE_EDEFAULT.equals(schedule);
+		case GRMPackage.SCHEDULER__PROCESSING_UNITS:
+			return processingUnits != null && !processingUnits.isEmpty();
+		case GRMPackage.SCHEDULER__HOST:
+			return host != null;
+		case GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES:
+			return protectedSharedResources != null && !protectedSharedResources.isEmpty();
+		case GRMPackage.SCHEDULER__SCHEDULABLE_RESOURCES:
+			return schedulableResources != null && !schedulableResources.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -519,11 +574,14 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isPreemptible: ");
@@ -538,4 +596,4 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 		return result.toString();
 	}
 
-} //SchedulerImpl
+} // SchedulerImpl

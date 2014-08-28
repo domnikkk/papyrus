@@ -7,13 +7,14 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.common.edit.part;
 
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.sysml.portandflows.FlowPort;
 import org.eclipse.papyrus.uml.diagram.common.edit.part.AbstractElementChildLabelEditPart;
 
 /**
@@ -34,23 +35,23 @@ public class FlowPortChildLabelEditPart extends AbstractElementChildLabelEditPar
 		super.createDefaultEditPolicies();
 	}
 
-	//	/**
-	//	 * {@inheritDoc}
-	//	 */
-	//	@Override
-	//	protected Image getLabelIcon() {
-	//		EObject parserElement = getParserElement();
-	//		if(parserElement == null) {
-	//			return null;
-	//		}
+	// /**
+	// * {@inheritDoc}
+	// */
+	// @Override
+	// protected Image getLabelIcon() {
+	// EObject parserElement = getParserElement();
+	// if(parserElement == null) {
+	// return null;
+	// }
 	//
-	//		List<View> views = DiagramEditPartsUtil.findViews(parserElement, getViewer());
-	//		for(View view : views) {
-	//			if(NameLabelIconHelper.showLabelIcon(view)) {
-	//				return labelProvider.getImage(parserElement);
-	//			}
-	//		}
+	// List<View> views = DiagramEditPartsUtil.findViews(parserElement, getViewer());
+	// for(View view : views) {
+	// if(NameLabelIconHelper.showLabelIcon(view)) {
+	// return labelProvider.getImage(parserElement);
+	// }
+	// }
 	//
-	//		return null;
-	//	}
+	// return null;
+	// }
 }

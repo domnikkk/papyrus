@@ -42,10 +42,10 @@ public interface IFacetManagerFactory {
 
 	/**
 	 * Create an {@link IFacetManager}.
-	 * 
+	 *
 	 * @param resourceSet
 	 *            the resourceSet which will be used to manage the facet models.
-	 * 
+	 *
 	 */
 	IFacetManager getOrCreateFacetManager(ResourceSet resourceSet);
 }

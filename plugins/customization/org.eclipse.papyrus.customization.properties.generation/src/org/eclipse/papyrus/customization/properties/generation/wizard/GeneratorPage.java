@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Strategy improvement of generated files
  *  Christian W. Damus (CEA) - bug 422257
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.generation.wizard;
 
@@ -55,7 +55,7 @@ import org.eclipse.swt.widgets.Listener;
 public class GeneratorPage extends AbstractCreateContextPage implements Listener {
 
 	private final List<ILayoutGenerator> layoutGenerators;
-	
+
 	protected IGenerator generator;
 
 	private Composite root, generatorControl;
@@ -92,7 +92,7 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 		ctx = new DataBindingContext();
 		srcFieldStrategy = new UpdateValueStrategy();
 		targetFieldStrategy = new UpdateValueStrategy();
-		
+
 		layoutGenerators = new LayoutExtensionPoint().getGenerators();
 	}
 
@@ -125,7 +125,7 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 	}
 
 	private void cleanGeneratorControl() {
-		for(Control control : generatorControl.getChildren()) {
+		for (Control control : generatorControl.getChildren()) {
 			control.dispose();
 		}
 	}
@@ -149,7 +149,7 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 		layoutCombo.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 		layoutCombo.setEditable(false);
 		layoutCombo.setBackground(new Color(layoutCombo.getDisplay(), 255, 255, 255));
-		for(ILayoutGenerator layoutGenerator : layoutGenerators) {
+		for (ILayoutGenerator layoutGenerator : layoutGenerators) {
 			layoutCombo.add(layoutGenerator.getName());
 		}
 		layoutCombo.select(0);
@@ -164,8 +164,8 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 		targetFileChooser.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 		targetFileChooser.addListener(this);
 		targetTextObservable = targetFileChooser.getObservableValue();
-		targetFileChooser.setFilterExtensions(new String[]{ "ctx" });
-		if(targetFieldStrategy != null) {
+		targetFileChooser.setFilterExtensions(new String[] { "ctx" });
+		if (targetFieldStrategy != null) {
 			targetFieldStrategy.setConverter(new IConverter() {
 
 				public Object getToType() {
@@ -178,9 +178,9 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 				}
 
 				public String convert(Object fromObject) {
-					if(srcTextObservable != null) {
-						return (String)srcTextObservable.getValue();
-					} else if(targetFileChooser.getFilePath() != null) {
+					if (srcTextObservable != null) {
+						return (String) srcTextObservable.getValue();
+					} else if (targetFileChooser.getFilePath() != null) {
 						return targetFileChooser.getFilePath();
 
 					}
@@ -188,7 +188,7 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 				}
 			});
 		}
-		if(srcFieldStrategy != null) {
+		if (srcFieldStrategy != null) {
 			srcFieldStrategy.setConverter(new IConverter() {
 
 				public Object getToType() {
@@ -201,9 +201,9 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 
 				public String convert(Object fromObject) {
 
-					if(fromObject instanceof String) {
-						String stringObject = (String)fromObject;
-						if(stringObject.equals("")) {
+					if (fromObject instanceof String) {
+						String stringObject = (String) fromObject;
+						if (stringObject.equals("")) {
 							return "";
 						}
 						String[] result = stringObject.split("/");
@@ -211,12 +211,12 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 						String[] ext = filename.split("\\.");
 						StringBuilder builder = new StringBuilder();
 
-						if(targetTextObservable != null) {
-							String s = (String)targetTextObservable.getValue();
-							if(!s.equals("")) {
+						if (targetTextObservable != null) {
+							String s = (String) targetTextObservable.getValue();
+							if (!s.equals("")) {
 								String original[] = s.split("/");
 								builder.append("/");
-								for(int i = 1; i < original.length - 1; i++) {
+								for (int i = 1; i < original.length - 1; i++) {
 									builder.append(original[i]);
 									builder.append("/");
 
@@ -246,7 +246,7 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 
 		String filePath = targetFileChooser.getFilePath();
 
-		if(filePath != null) {
+		if (filePath != null) {
 			super.getContainer().updateButtons();
 		}
 
@@ -264,7 +264,7 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 	}
 
 	public void doBinding() {
-		if(srcTextObservable != null || targetTextObservable != null) {
+		if (srcTextObservable != null || targetTextObservable != null) {
 
 			srcValidator = new SourceValidator(generator);
 			targetValidator = new TargetValidator();
@@ -282,8 +282,8 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 		binding.getValidationStatus().addValueChangeListener(new IValueChangeListener() {
 
 			public void handleValueChange(ValueChangeEvent event) {
-				IStatus status = (IStatus)event.diff.getNewValue();
-				if(status.isOK()) {
+				IStatus status = (IStatus) event.diff.getNewValue();
+				if (status.isOK()) {
 					setNext(true);
 				} else {
 					setNext(false);

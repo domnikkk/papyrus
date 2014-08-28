@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
- * 
+ *
  * @author Vincent Lorenzo
  *         This class provides the possibles enumeration literal for properties of stereotype typed with a UMLEnumerationLiteral
  */
@@ -45,13 +45,13 @@ public class UMLStereotypeSingleEnumerationComboBoxDataProvider implements IComb
 	private Object axisElement;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param axisElement
-	 *        the obejct represented by the axis
+	 *            the obejct represented by the axis
 	 * @param elementProvider
-	 *        The table axis element provider
+	 *            The table axis element provider
 	 */
 	public UMLStereotypeSingleEnumerationComboBoxDataProvider(final Object axisElement, final ITableAxisElementProvider elementProvider) {
 		this.axisElement = axisElement;
@@ -59,15 +59,16 @@ public class UMLStereotypeSingleEnumerationComboBoxDataProvider implements IComb
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.IComboBoxDataProvider#getValues(int, int)
-	 * 
+	 *
 	 * @param columnIndex
 	 * @param rowIndex
-	 * 
+	 *
 	 * @return
 	 *         the list of the available enumeration literal
 	 */
+	@Override
 	public List<?> getValues(int columnIndex, int rowIndex) {
 		final List<Object> literals = new ArrayList<Object>();
 		Object el = this.elementProvider.getColumnElement(columnIndex);
@@ -75,19 +76,19 @@ public class UMLStereotypeSingleEnumerationComboBoxDataProvider implements IComb
 		el = AxisUtils.getRepresentedElement(el);
 		rowElement = AxisUtils.getRepresentedElement(rowElement);
 		Element modelElement = null;
-		if(rowElement instanceof Element && el == this.axisElement) {
-			modelElement = (Element)rowElement;
-		} else if(rowElement == this.axisElement && el instanceof Element) {
-			modelElement = (Element)el;
+		if (rowElement instanceof Element && el == this.axisElement) {
+			modelElement = (Element) rowElement;
+		} else if (rowElement == this.axisElement && el instanceof Element) {
+			modelElement = (Element) el;
 		}
-		if(modelElement != null) {
+		if (modelElement != null) {
 			final String id = AxisUtils.getPropertyId(this.axisElement);
 			final Property property = UMLTableUtils.getRealStereotypeProperty(modelElement, id);
 			final List<Stereotype> ste = UMLTableUtils.getApplicableStereotypesWithThisProperty(modelElement, id);
-			if(ste.size() == 1) {
+			if (ste.size() == 1) {
 				final Stereotype current = ste.get(0);
-				final EEnum eenum = (EEnum)current.getProfile().getDefinition(property.getType());
-				for(final EEnumLiteral instances : eenum.getELiterals()) {
+				final EEnum eenum = (EEnum) current.getProfile().getDefinition(property.getType());
+				for (final EEnumLiteral instances : eenum.getELiterals()) {
 					literals.add(instances.getInstance());
 				}
 			}

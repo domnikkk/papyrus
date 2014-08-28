@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.SuperInvocationExpression;
 import org.eclipse.papyrus.uml.alf.alf.SuperInvocationStatement;
@@ -82,7 +79,11 @@ public class SuperInvocationStatementImpl extends StatementImpl implements Super
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.SUPER_INVOCATION_STATEMENT__SUPER, old_super, new_super);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -97,15 +98,20 @@ public class SuperInvocationStatementImpl extends StatementImpl implements Super
     if (new_super != _super)
     {
       NotificationChain msgs = null;
-      if (_super != null)
-        msgs = ((InternalEObject)_super).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SUPER_INVOCATION_STATEMENT__SUPER, null, msgs);
-      if (new_super != null)
-        msgs = ((InternalEObject)new_super).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SUPER_INVOCATION_STATEMENT__SUPER, null, msgs);
+      if (_super != null) {
+		msgs = ((InternalEObject)_super).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SUPER_INVOCATION_STATEMENT__SUPER, null, msgs);
+	}
+      if (new_super != null) {
+		msgs = ((InternalEObject)new_super).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SUPER_INVOCATION_STATEMENT__SUPER, null, msgs);
+	}
       msgs = basicSet_super(new_super, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SUPER_INVOCATION_STATEMENT__SUPER, new_super, new_super));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SUPER_INVOCATION_STATEMENT__SUPER, new_super, new_super));
+	}
   }
 
   /**

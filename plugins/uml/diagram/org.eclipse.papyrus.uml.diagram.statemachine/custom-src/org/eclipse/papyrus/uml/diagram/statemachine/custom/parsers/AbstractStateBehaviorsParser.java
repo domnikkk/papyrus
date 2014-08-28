@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -17,6 +17,7 @@ import java.util.List;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -37,9 +38,9 @@ import org.eclipse.uml2.uml.Behavior;
 /**
  * Abstract Parser for States behavior (Entry , Do , Exit)
  * To use this only implement the abstract methods ...
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public abstract class AbstractStateBehaviorsParser implements ISemanticParser {
 	private static final String ONE_SPACE_STRING = " ";
@@ -56,22 +57,22 @@ public abstract class AbstractStateBehaviorsParser implements ISemanticParser {
 	 * public EStructuralFeature getEStructuralFeature(){
 	 * return UMLPackage.Literals.STATE__ENTRY;
 	 * }
-	 * 
+	 *
 	 * @author adaussy
-	 * 
+	 *
 	 */
 	public interface BehaviorType {
 		/**
 		 * Get the keyword to display in the label name
 		 * CAN NOT RETURN NULL
-		 * 
+		 *
 		 * @return {@link String}
 		 */
 		public String getKeyWord();
 
 		/**
 		 * Get the corresponding {@link EStructuralFeature} CAN NOT RETURN NULL
-		 * 
+		 *
 		 * @return
 		 */
 		public EStructuralFeature getEStructuralFeature();
@@ -79,11 +80,12 @@ public abstract class AbstractStateBehaviorsParser implements ISemanticParser {
 
 	/***
 	 * Get the parser type ( among {@link Behavior_Type})
-	 * 
+	 *
 	 * @return
 	 */
 	protected abstract BehaviorType getParserType();
 
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		Object obj = element.getAdapter(Behavior.class);
 		if (obj instanceof Behavior) {
@@ -93,20 +95,22 @@ public abstract class AbstractStateBehaviorsParser implements ISemanticParser {
 		return EMPTY_STRING;
 	}
 
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
-		return new ParserEditStatus(org.eclipse.papyrus.uml.diagram.statemachine.part.UMLDiagramEditorPlugin.ID, IParserEditStatus.OK, ""); //$NON-NLS-1$
+		return new ParserEditStatus(org.eclipse.papyrus.uml.diagram.statemachine.part.UMLDiagramEditorPlugin.ID, IStatus.OK, ""); //$NON-NLS-1$
 	}
 
 	/***
 	 * Allow to set the name of behavior directly from the direct edit
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getParseCommand(org.eclipse.core.runtime.IAdaptable, java.lang.String, int)
-	 * 
+	 *
 	 * @param element
 	 * @param newString
 	 * @param flags
 	 * @return
 	 */
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		final Behavior behavior = ((Behavior) ((EObjectAdapter) element).getRealObject());
 		final EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(behavior);
@@ -126,6 +130,7 @@ public abstract class AbstractStateBehaviorsParser implements ISemanticParser {
 		return UnexecutableCommand.INSTANCE;
 	}
 
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		Object obj = element.getAdapter(Behavior.class);
 		if (obj instanceof Behavior) {
@@ -152,6 +157,7 @@ public abstract class AbstractStateBehaviorsParser implements ISemanticParser {
 		}
 	}
 
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		if (event instanceof Notification) {
 			int notificationType = ((Notification) event).getEventType();
@@ -168,10 +174,12 @@ public abstract class AbstractStateBehaviorsParser implements ISemanticParser {
 		return false;
 	}
 
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
+	@Override
 	public List<Behavior> getSemanticElementsBeingParsed(EObject element) {
 		if (element instanceof Behavior) {
 			final Behavior behavior = ((Behavior) element);
@@ -180,6 +188,7 @@ public abstract class AbstractStateBehaviorsParser implements ISemanticParser {
 		return Collections.emptyList();
 	}
 
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		return true;
 	}

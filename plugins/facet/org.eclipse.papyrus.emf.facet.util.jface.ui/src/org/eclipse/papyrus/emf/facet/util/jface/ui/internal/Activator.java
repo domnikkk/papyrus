@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Copyright (c) 2013 Soft-Maint.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,9 +15,9 @@ import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
 
 @SuppressWarnings("PMD.UseSingleton")
-//@SuppressWarnings("PMD.UseSingleton") We cannot conforms to this rule because
-//this class is an Eclipse plug-in activator which will be instantiated by the
-//Eclipse framework.
+// @SuppressWarnings("PMD.UseSingleton") We cannot conforms to this rule because
+// this class is an Eclipse plug-in activator which will be instantiated by the
+// Eclipse framework.
 public class Activator extends Plugin {
 
 	private static Activator plugin;

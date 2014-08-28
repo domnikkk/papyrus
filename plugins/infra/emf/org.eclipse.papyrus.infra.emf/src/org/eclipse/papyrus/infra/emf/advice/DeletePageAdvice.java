@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 433371
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.advice;
 
@@ -32,7 +32,7 @@ public class DeletePageAdvice extends AbstractEditHelperAdvice {
 	@Override
 	protected ICommand getBeforeDestroyDependentsCommand(DestroyDependentsRequest request) {
 		final EObject objectToDestroy = request.getElementToDestroy();
-		if(objectToDestroy == null) {
+		if (objectToDestroy == null) {
 			return null;
 		}
 		return RemovePageHelper.getRemovePageCommand(request.getEditingDomain(), objectToDestroy);

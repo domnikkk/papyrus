@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Time Interpretation Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeTypesLibraryPackage#getTimeInterpretationKind()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum TimeInterpretationKind implements Enumerator {
 	 * The '<em><b>Duration</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #DURATION_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum TimeInterpretationKind implements Enumerator {
 	 * The '<em><b>Instant</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #INSTANT_VALUE
 	 * @generated
 	 * @ordered
@@ -53,10 +56,10 @@ public enum TimeInterpretationKind implements Enumerator {
 	 * The '<em><b>Duration</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Duration</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Duration</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #DURATION
 	 * @model name="duration"
 	 * @generated
@@ -68,10 +71,10 @@ public enum TimeInterpretationKind implements Enumerator {
 	 * The '<em><b>Instant</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Instant</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Instant</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #INSTANT
 	 * @model name="instant"
 	 * @generated
@@ -83,18 +86,20 @@ public enum TimeInterpretationKind implements Enumerator {
 	 * An array of all the '<em><b>Time Interpretation Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static final TimeInterpretationKind[] VALUES_ARRAY =
-		new TimeInterpretationKind[] {
-			DURATION,
-			INSTANT,
-		};
+			new TimeInterpretationKind[] {
+					DURATION,
+					INSTANT,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Time Interpretation Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final List<TimeInterpretationKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -103,6 +108,7 @@ public enum TimeInterpretationKind implements Enumerator {
 	 * Returns the '<em><b>Time Interpretation Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static TimeInterpretationKind get(String literal) {
@@ -119,6 +125,7 @@ public enum TimeInterpretationKind implements Enumerator {
 	 * Returns the '<em><b>Time Interpretation Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static TimeInterpretationKind getByName(String name) {
@@ -135,12 +142,15 @@ public enum TimeInterpretationKind implements Enumerator {
 	 * Returns the '<em><b>Time Interpretation Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static TimeInterpretationKind get(int value) {
 		switch (value) {
-			case DURATION_VALUE: return DURATION;
-			case INSTANT_VALUE: return INSTANT;
+		case DURATION_VALUE:
+			return DURATION;
+		case INSTANT_VALUE:
+			return INSTANT;
 		}
 		return null;
 	}
@@ -148,6 +158,7 @@ public enum TimeInterpretationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -155,6 +166,7 @@ public enum TimeInterpretationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -162,6 +174,7 @@ public enum TimeInterpretationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -170,6 +183,7 @@ public enum TimeInterpretationKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private TimeInterpretationKind(int value, String name, String literal) {
@@ -181,39 +195,46 @@ public enum TimeInterpretationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //TimeInterpretationKind
+
+} // TimeInterpretationKind

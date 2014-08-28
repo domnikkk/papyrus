@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,12 +55,12 @@ public class CreateFolderAction extends AsyncEditAction<CDOResourceNode> {
 	protected CDOResourceNode coerce(Object selection) {
 		CDOResourceNode result = super.coerce(selection);
 
-		if((result == null) && (selection instanceof IInternalPapyrusRepository)) {
-			IInternalPapyrusRepository repository = (IInternalPapyrusRepository)selection;
+		if ((result == null) && (selection instanceof IInternalPapyrusRepository)) {
+			IInternalPapyrusRepository repository = (IInternalPapyrusRepository) selection;
 
-			if(repository.isConnected()) {
+			if (repository.isConnected()) {
 				CDOView view = repository.getMasterView();
-				if(view != null) {
+				if (view != null) {
 					result = view.getRootResource();
 				}
 			}
@@ -75,7 +75,7 @@ public class CreateFolderAction extends AsyncEditAction<CDOResourceNode> {
 
 		InputDialog dialog = new InputDialog(shellProvider.getShell(), Messages.CreateFolderAction_1, Messages.CreateFolderAction_2, getDefaultFolderName(selection), createInputValidator(selection));
 
-		if(dialog.open() == Window.OK) {
+		if (dialog.open() == Window.OK) {
 			folderName = dialog.getValue().trim();
 			result = true;
 		}
@@ -86,10 +86,10 @@ public class CreateFolderAction extends AsyncEditAction<CDOResourceNode> {
 	private Iterable<CDOResourceNode> getChildren(CDOResourceNode node) {
 		Iterable<CDOResourceNode> result;
 
-		if(node instanceof CDOResourceFolder) {
-			result = ((CDOResourceFolder)node).getNodes();
-		} else if((node instanceof CDOResource) && ((CDOResource)node).isRoot()) {
-			result = Iterables.filter(((CDOResource)node).getContents(), CDOResourceNode.class);
+		if (node instanceof CDOResourceFolder) {
+			result = ((CDOResourceFolder) node).getNodes();
+		} else if ((node instanceof CDOResource) && ((CDOResource) node).isRoot()) {
+			result = Iterables.filter(((CDOResource) node).getContents(), CDOResourceNode.class);
 		} else {
 			result = Collections.emptyList();
 		}
@@ -100,8 +100,8 @@ public class CreateFolderAction extends AsyncEditAction<CDOResourceNode> {
 	boolean nameExists(Iterable<CDOResourceNode> existingNodes, String name) {
 		boolean result = false;
 
-		for(CDOResourceNode next : existingNodes) {
-			if(name.equals(next.getName())) {
+		for (CDOResourceNode next : existingNodes) {
+			if (name.equals(next.getName())) {
 				result = true;
 				break;
 			}
@@ -114,10 +114,10 @@ public class CreateFolderAction extends AsyncEditAction<CDOResourceNode> {
 		Iterable<CDOResourceNode> existing = getChildren(parent);
 		String result = null;
 
-		for(int i = 1; result == null; i++) {
+		for (int i = 1; result == null; i++) {
 			result = "folder" + i; //$NON-NLS-1$
 
-			if(nameExists(existing, result)) {
+			if (nameExists(existing, result)) {
 				result = null;
 			}
 		}
@@ -134,11 +134,11 @@ public class CreateFolderAction extends AsyncEditAction<CDOResourceNode> {
 			public String isValid(String newText) {
 				String result;
 				String name = (newText == null) ? "" //$NON-NLS-1$
-				: newText.trim();
+						: newText.trim();
 
-				if(name.length() == 0) {
+				if (name.length() == 0) {
 					result = Messages.CreateFolderAction_5;
-				} else if(nameExists(existing, name)) {
+				} else if (nameExists(existing, name)) {
 					result = Messages.CreateFolderAction_6;
 				} else {
 					result = null;
@@ -154,10 +154,10 @@ public class CreateFolderAction extends AsyncEditAction<CDOResourceNode> {
 		CDOResourceFolder folder = EresourceFactory.eINSTANCE.createCDOResourceFolder();
 		folder.setName(folderName);
 
-		if(selection instanceof CDOResourceFolder) {
-			((CDOResourceFolder)selection).getNodes().add(folder);
-		} else if(selection instanceof CDOResource) {
-			((CDOResource)selection).getContents().add(folder);
+		if (selection instanceof CDOResourceFolder) {
+			((CDOResourceFolder) selection).getNodes().add(folder);
+		} else if (selection instanceof CDOResource) {
+			((CDOResource) selection).getContents().add(folder);
 		}
 	}
 

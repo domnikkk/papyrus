@@ -42,8 +42,8 @@ public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 	public Edge createEdge(IAdaptable semanticAdapter, View containerView, String semanticHint, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Edge createdEdge = null;
 
-		IElementType elementType = (IElementType)semanticAdapter.getAdapter(IElementType.class);
-		if(elementType != null) {
+		IElementType elementType = (IElementType) semanticAdapter.getAdapter(IElementType.class);
+		if (elementType != null) {
 			if (elementType == ElementTypes.CONTEXT_LINK) {
 				org.eclipse.papyrus.uml.diagram.clazz.providers.UMLViewProvider classDiagramUMLProvider = new org.eclipse.papyrus.uml.diagram.clazz.providers.UMLViewProvider();
 				createdEdge = classDiagramUMLProvider.createConstraintContext_8500(containerView, index, persisted, preferencesHint);
@@ -53,7 +53,7 @@ public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 			}
 		}
 
-		if(createdEdge == null) {
+		if (createdEdge == null) {
 			Activator.log.error(new Exception("Could not create Edge."));
 		}
 
@@ -64,7 +64,7 @@ public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 	protected boolean provides(CreateViewForKindOperation op) {
 		// Never use this method (often incorrectly implemented due to GMF Tooling choices).
 		String diagramType = op.getContainerView().getDiagram().getType();
-		if(!ElementTypes.DIAGRAM_ID.equals(diagramType)) {
+		if (!ElementTypes.DIAGRAM_ID.equals(diagramType)) {
 			return false;
 		}
 
@@ -75,21 +75,21 @@ public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 	protected boolean provides(CreateEdgeViewOperation op) {
 
 		// Must have a container
-		if(op.getContainerView() == null) {
+		if (op.getContainerView() == null) {
 			return false;
 		}
 
 		// This provider is registered for InternalBlock Diagram only
 		String diagramType = op.getContainerView().getDiagram().getType();
-		if(!ElementTypes.DIAGRAM_ID.equals(diagramType)) {
+		if (!ElementTypes.DIAGRAM_ID.equals(diagramType)) {
 			return false;
 		}
 
 		IElementType elementType = getSemanticElementType(op.getSemanticAdapter());
-		if(elementType == ElementTypes.COMMENT_ANNOTATED_ELEMENT) {
+		if (elementType == ElementTypes.COMMENT_ANNOTATED_ELEMENT) {
 			return true;
 		}
-		if(elementType == ElementTypes.CONTEXT_LINK) {
+		if (elementType == ElementTypes.CONTEXT_LINK) {
 			return true;
 		}
 
@@ -98,15 +98,15 @@ public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 		// /////////////////////////////////////////////////////////////////////
 
 		// IElementType may be null (especially when drop from ModelExplorer).
-		// In such a case, test the semantic EObject instead.	
-		if(elementType == null) {
-			EObject domainElement = (EObject)op.getSemanticAdapter().getAdapter(EObject.class);
+		// In such a case, test the semantic EObject instead.
+		if (elementType == null) {
+			EObject domainElement = (EObject) op.getSemanticAdapter().getAdapter(EObject.class);
 			String domainElementGraphicalType = op.getSemanticHint();
-			if(domainElementGraphicalType == null) {
+			if (domainElementGraphicalType == null) {
 				domainElementGraphicalType = registry.getEdgeGraphicalType(domainElement);
 			}
 
-			if((!IGraphicalTypeRegistry.UNDEFINED_TYPE.equals(domainElementGraphicalType)) && (registry.isKnownEdgeType(domainElementGraphicalType))) {
+			if ((!org.eclipse.papyrus.infra.gmfdiag.common.providers.IGraphicalTypeRegistry.UNDEFINED_TYPE.equals(domainElementGraphicalType)) && (registry.isKnownEdgeType(domainElementGraphicalType))) {
 				return true;
 			}
 		}
@@ -117,7 +117,7 @@ public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 	@Override
 	protected boolean provides(CreateNodeViewOperation op) {
 		// Must have a container
-		if(op.getContainerView() == null) {
+		if (op.getContainerView() == null) {
 			return false;
 		}
 		// Get the type of the container
@@ -125,7 +125,7 @@ public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 
 		// This provider is registered for InternalBlock Diagram only
 		String diagramType = op.getContainerView().getDiagram().getType();
-		if(!ElementTypes.DIAGRAM_ID.equals(diagramType)) {
+		if (!ElementTypes.DIAGRAM_ID.equals(diagramType)) {
 			return false;
 		}
 
@@ -133,23 +133,23 @@ public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 		// Test possibility to provide a view based on the ElementType and its expected container.
 		// /////////////////////////////////////////////////////////////////////
 
-		IElementType elementType = (IElementType)op.getSemanticAdapter().getAdapter(IElementType.class);
-		if(elementType == UMLElementTypes.CONSTRAINT) {
-			if(ElementTypes.DIAGRAM_ID.equals(containerGraphicalType)) {
+		IElementType elementType = (IElementType) op.getSemanticAdapter().getAdapter(IElementType.class);
+		if (elementType == UMLElementTypes.CONSTRAINT) {
+			if (ElementTypes.DIAGRAM_ID.equals(containerGraphicalType)) {
 				return true;
 			}
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerGraphicalType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerGraphicalType)) {
 				return true;
 			}
 		}
-		if(elementType == UMLElementTypes.COMMENT) {
-			if(ElementTypes.DIAGRAM_ID.equals(containerGraphicalType)) {
+		if (elementType == UMLElementTypes.COMMENT) {
+			if (ElementTypes.DIAGRAM_ID.equals(containerGraphicalType)) {
 				return true;
 			}
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerGraphicalType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerGraphicalType)) {
 				return true;
 			}
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerGraphicalType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerGraphicalType)) {
 				return true;
 			}
 		}
@@ -160,16 +160,16 @@ public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 
 		// IElementType may be null (especially when drop from ModelExplorer).
 		// In such a case, test the semantic EObject instead.
-		if(elementType == null) {
-			EObject domainElement = (EObject)op.getSemanticAdapter().getAdapter(EObject.class);
+		if (elementType == null) {
+			EObject domainElement = (EObject) op.getSemanticAdapter().getAdapter(EObject.class);
 			String domainElementGraphicalType = op.getSemanticHint();
-			if(domainElementGraphicalType == null) {
+			if (domainElementGraphicalType == null) {
 				domainElementGraphicalType = registry.getNodeGraphicalType(domainElement, containerGraphicalType);
 			} else {
 				domainElementGraphicalType = registry.getNodeGraphicalType(domainElementGraphicalType, containerGraphicalType);
 			}
 
-			if((!IGraphicalTypeRegistry.UNDEFINED_TYPE.equals(domainElementGraphicalType)) && (registry.isKnownNodeType(domainElementGraphicalType))) {
+			if ((!org.eclipse.papyrus.infra.gmfdiag.common.providers.IGraphicalTypeRegistry.UNDEFINED_TYPE.equals(domainElementGraphicalType)) && (registry.isKnownNodeType(domainElementGraphicalType))) {
 				return true;
 			}
 		}
@@ -184,9 +184,9 @@ public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 		String containerGraphicalType = containerView.getType();
 
 		// Get the type of the domain element
-		EObject domainElement = (EObject)semanticAdapter.getAdapter(EObject.class);
+		EObject domainElement = (EObject) semanticAdapter.getAdapter(EObject.class);
 
-		if(semanticHint != null) {
+		if (semanticHint != null) {
 			// Look for a possible graphicalType replacement
 			String graphicalType = registry.getNodeGraphicalType(semanticHint, containerGraphicalType);
 			return super.createNode(new SemanticAdapter(domainElement, null), containerView, graphicalType, index, persisted, preferencesHint);
@@ -195,7 +195,7 @@ public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 		String domainElementGraphicalType = registry.getNodeGraphicalType(domainElement, containerGraphicalType);
 
 		// Create the expected node
-		if(!IGraphicalTypeRegistry.UNDEFINED_TYPE.equals(domainElementGraphicalType)) {
+		if (!org.eclipse.papyrus.infra.gmfdiag.common.providers.IGraphicalTypeRegistry.UNDEFINED_TYPE.equals(domainElementGraphicalType)) {
 			return super.createNode(semanticAdapter, containerView, domainElementGraphicalType, index, persisted, preferencesHint);
 		}
 
@@ -203,48 +203,48 @@ public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 		return null;
 	}
 
-	
+
 	@Override
 	protected void stampShortcut(View containerView, Node target) {
-		if(!ElementTypes.DIAGRAM_ID.equals(containerView.getDiagram().getType())) {
+		if (!ElementTypes.DIAGRAM_ID.equals(containerView.getDiagram().getType())) {
 			EAnnotation shortcutAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 			shortcutAnnotation.setSource("Shortcut"); //$NON-NLS-1$
 			shortcutAnnotation.getDetails().put("modelID", ElementTypes.DIAGRAM_ID); //$NON-NLS-1$
 			target.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-	
-//	/**
-//	 * @generated
-//	 */
-//	@SuppressWarnings("unchecked")
-//	public Edge createContextLink_8500(View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
-//		Connector edge = NotationFactory.eINSTANCE.createConnector();
-//		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-//		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
-//		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(2);
-//		points.add(new RelativeBendpoint());
-//		points.add(new RelativeBendpoint());
-//		bendpoints.setPoints(points);
-//		edge.setBendpoints(bendpoints);
-//		ViewUtil.insertChildView(containerView, edge, index, persisted);
-//		edge.setType(UMLVisualIDRegistry.getType(ContextLinkEditPart.VISUAL_ID));
-//		edge.setElement(null);
-//		// initializePreferences
-//		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
-//		PreferenceInitializerForElementHelper.initForegroundFromPrefs(edge, prefStore, "Undefined");
-//		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(edge, prefStore, "Undefined");
-//		//org.eclipse.gmf.runtime.notation.Routing routing = org.eclipse.gmf.runtime.notation.Routing.get(prefStore.getInt(org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_STYLE));
-//		//if (routing != null) {
-//		//	org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.setStructuralFeatureValue(edge, org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
-//		//}
-//		PreferenceInitializerForElementHelper.initRountingFromPrefs(edge, prefStore, "Undefined");
-//		Node label8501 = createLabel(edge, UMLVisualIDRegistry.getType(ContextLinkAppliedStereotypeEditPart.VISUAL_ID));
-//		label8501.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
-//		Location location8501 = (Location)label8501.getLayoutConstraint();
-//		location8501.setX(0);
-//		location8501.setY(15);
-//		return edge;
-//	}
 
-}	
+	// /**
+	// * @generated
+	// */
+	// @SuppressWarnings("unchecked")
+	// public Edge createContextLink_8500(View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+	// Connector edge = NotationFactory.eINSTANCE.createConnector();
+	// edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+	// RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
+	// ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(2);
+	// points.add(new RelativeBendpoint());
+	// points.add(new RelativeBendpoint());
+	// bendpoints.setPoints(points);
+	// edge.setBendpoints(bendpoints);
+	// ViewUtil.insertChildView(containerView, edge, index, persisted);
+	// edge.setType(UMLVisualIDRegistry.getType(ContextLinkEditPart.VISUAL_ID));
+	// edge.setElement(null);
+	// // initializePreferences
+	// final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
+	// PreferenceInitializerForElementHelper.initForegroundFromPrefs(edge, prefStore, "Undefined");
+	// PreferenceInitializerForElementHelper.initFontStyleFromPrefs(edge, prefStore, "Undefined");
+	// //org.eclipse.gmf.runtime.notation.Routing routing = org.eclipse.gmf.runtime.notation.Routing.get(prefStore.getInt(org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_STYLE));
+	// //if (routing != null) {
+	// // org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.setStructuralFeatureValue(edge, org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
+	// //}
+	// PreferenceInitializerForElementHelper.initRountingFromPrefs(edge, prefStore, "Undefined");
+	// Node label8501 = createLabel(edge, UMLVisualIDRegistry.getType(ContextLinkAppliedStereotypeEditPart.VISUAL_ID));
+	// label8501.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+	// Location location8501 = (Location)label8501.getLayoutConstraint();
+	// location8501.setX(0);
+	// location8501.setY(15);
+	// return edge;
+	// }
+
+}

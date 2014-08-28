@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,13 +32,13 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * A class managing tooltips as Part.
- * 
+ *
  * @author dumoulin
  */
 public class ImageToolTipManager {
 
 	protected ITabTooltipPreferences settings = new TabTooltipPreferences();
-	
+
 	/** */
 	private Control toolTipedControl;
 
@@ -57,10 +57,10 @@ public class ImageToolTipManager {
 	private int toolTipAlignement = SWT.TOP;
 
 	/**
-	 * 
+	 *
 	 */
 	private Shell tip = null;
-	
+
 	/**
 	 * Cached value of the image. Use to do dispose when closing.
 	 */
@@ -74,20 +74,22 @@ public class ImageToolTipManager {
 	}
 
 	private void resetTimer() {
-		if( settings.getTooltipAutoCloseDelay() == -1)
+		if (settings.getTooltipAutoCloseDelay() == -1) {
 			return;
-		
+		}
+
 		// do reset timer
 	}
+
 	/**
 	 * Close the tooltip and dispose it.
 	 */
 	public void closeToolTip() {
-		if(tip != null) {
+		if (tip != null) {
 			tip.dispose();
 			tip = null;
 		}
-		if(image != null) {
+		if (image != null) {
 			image.dispose();
 			image = null;
 		}
@@ -104,11 +106,11 @@ public class ImageToolTipManager {
 	 */
 	public void disableToolTip() {
 		// Close the tooltip.
-		if(tip != null) {
+		if (tip != null) {
 			tip.dispose();
 			tip = null;
 		}
-		if(image != null) {
+		if (image != null) {
 			image.dispose();
 			image = null;
 		}
@@ -117,14 +119,14 @@ public class ImageToolTipManager {
 
 	/**
 	 * dispose the tooltip and its resources.
-	 * 
+	 *
 	 */
 	public void dispose() {
-		if(tip != null) {
+		if (tip != null) {
 			tip.dispose();
 			tip = null;
 		}
-		if(image != null) {
+		if (image != null) {
 			image.dispose();
 			image = null;
 		}
@@ -134,77 +136,82 @@ public class ImageToolTipManager {
 	/**
 	 * Ask to show the tooltip.
 	 * First check if preferences allows to show tooltip.
-	 * 
-	 * @param pagePart The PagePart for which a ToolTip should be opened.
-	 * @param flyedControl The control that trigger the tooltip opening
+	 *
+	 * @param pagePart
+	 *            The PagePart for which a ToolTip should be opened.
+	 * @param flyedControl
+	 *            The control that trigger the tooltip opening
 	 * @param mousePos
 	 */
 	public void showToolTip(PagePart pagePart, Rectangle flyedControlBounds, Point mousePos) {
-		
+
 		// If tooltip is already showing for this control, skip.
-		if(toolTipedControl ==  pagePart.getControl()) {
+		if (toolTipedControl == pagePart.getControl()) {
 			resetTimer();
 			return;
 		}
 
-		if( ! settings.isTooltipEnable() )
+		if (!settings.isTooltipEnable()) {
 			return;
-		
+		}
+
 		// Check if we are showing the tooltip for current tab.
-		if( ! settings.isTooltipForCurrentTabShown() && pagePart.getParent().getVisiblePagePart() == pagePart ) {
+		if (!settings.isTooltipForCurrentTabShown() && pagePart.getParent().getVisiblePagePart() == pagePart) {
 			// close current tooltip if any
 			closeToolTip();
 			return;
 		}
-		
+
 		doShowToolTip(pagePart, flyedControlBounds, mousePos);
 	}
 
 	/**
 	 * Do show th tooltip, unless we can't get an image for the part.
+	 *
 	 * @param pagePart
 	 * @param flyedControlBounds
 	 * @param mousePos
 	 */
 	private void doShowToolTip(PagePart pagePart, Rectangle flyedControlBounds, Point mousePos) {
 		Image image = getPageImage(pagePart);
-		if(image == null)
+		if (image == null) {
 			return;
+		}
 
 		toolTipedControl = pagePart.getControl();
 		// Change image scale
-		float scaleFactor = settings.getScaledFactor(); //.5f;
+		float scaleFactor = settings.getScaledFactor(); // .5f;
 		Image scaledImage = scaledImage(pagePart.getControl().getDisplay(), image, scaleFactor);
 		image.dispose();
 
 		// Remember the image to be able to dispose it.
 		this.image = scaledImage;
-		
+
 		Point pos = computeToolTipPosition(flyedControlBounds, mousePos, scaledImage.getBounds());
 		openToolTip(pagePart.getControl(), scaledImage, pos);
 	}
-	
+
 	/**
 	 * Compute the tooltip position.
-	 * 
+	 *
 	 * @param relatedControlBounds
-	 *        Bounds of the item to which the tooltip apply
+	 *            Bounds of the item to which the tooltip apply
 	 * @param mousePos
-	 *        Position of the mouse inside the relatedControlBounds.
+	 *            Position of the mouse inside the relatedControlBounds.
 	 * @param toolTipSize
-	 *        Size of the ToolTip.
-	 * 
+	 *            Size of the ToolTip.
+	 *
 	 * @return Position of the tooltip
 	 */
 	private Point computeToolTipPosition(Rectangle relatedControlBounds, Point mousePos, Rectangle toolTipSize) {
 
 		int x, y;
-		if(toolTipAlignement == SWT.TOP) {
+		if (toolTipAlignement == SWT.TOP) {
 			// Position.x = mousePoint.x
 			// Position.y = itemBounds - (toolTipSize.y + offsetY)
 			x = mousePos.x;
 			y = relatedControlBounds.y - (toolTipSize.height + offsetY);
-		} else if(toolTipAlignement == SWT.BOTTOM) {
+		} else if (toolTipAlignement == SWT.BOTTOM) {
 			x = mousePos.x;
 			y = relatedControlBounds.y + (relatedControlBounds.height + offsetY);
 		} else {
@@ -215,15 +222,16 @@ public class ImageToolTipManager {
 
 	/**
 	 * Open a tooltip like window containing the image.
-	 * 
+	 *
 	 * @param device
-	 *        The control from which atPoint is specified.
+	 *            The control from which atPoint is specified.
 	 * @param scaledImage
 	 * @param atPoint
 	 */
 	private void openToolTip(Control device, Image scaledImage, Point atPoint) {
-		if(tip != null && !tip.isDisposed())
+		if (tip != null && !tip.isDisposed()) {
 			tip.dispose();
+		}
 		tip = new Shell(device.getShell(), SWT.ON_TOP | SWT.NO_FOCUS | SWT.TOOL);
 		FillLayout layout = new FillLayout();
 		layout.marginWidth = 2;
@@ -238,9 +246,9 @@ public class ImageToolTipManager {
 
 	/**
 	 * Create an image corresponding to the control.
-	 * 
+	 *
 	 * @param control
-	 *        The control for which an image is to be built.
+	 *            The control for which an image is to be built.
 	 * @return
 	 */
 	private Image createControlImage(Control control) {
@@ -249,7 +257,7 @@ public class ImageToolTipManager {
 		Rectangle size;
 
 		size = control.getBounds();
-		if(size.width == 0 && size.height == 0) {
+		if (size.width == 0 && size.height == 0) {
 			Point pt = control.computeSize(SWT.DEFAULT, SWT.DEFAULT);
 			size = new Rectangle(0, 0, pt.x, pt.y);
 		}
@@ -259,9 +267,9 @@ public class ImageToolTipManager {
 
 		boolean success = control.print(gc);
 		gc.dispose();
-		if(!success) {
+		if (!success) {
 			image.dispose();
-			//			log.warning("Can't create Snapshot for the control of '" + part + "'.");
+			// log.warning("Can't create Snapshot for the control of '" + part + "'.");
 			return null;
 		}
 
@@ -270,9 +278,9 @@ public class ImageToolTipManager {
 
 	/**
 	 * Create an image corresponding to the control.
-	 * 
+	 *
 	 * @param control
-	 *        The control for which an image is to be built.
+	 *            The control for which an image is to be built.
 	 * @return
 	 */
 	private Image scaledImage2(Device device, Image image, float factor) {
@@ -289,22 +297,22 @@ public class ImageToolTipManager {
 	/**
 	 * Compute the expected size of the tooltip.
 	 * For now, simply return the expected size.
-	 * 
+	 *
 	 * @param image
 	 * @param factor
 	 * @return
 	 */
 	private Rectangle computeToolTipSize(Image image, float factor) {
 
-		//		Rectangle imageBounds = image.getBounds();
-		//		Rectangle size;
+		// Rectangle imageBounds = image.getBounds();
+		// Rectangle size;
 
 		return toolTipExpectedSize;
 	}
 
 	/**
 	 * Create a new image which is the input image scaled.
-	 * 
+	 *
 	 * @param image
 	 * @param factor
 	 * @return
@@ -312,7 +320,7 @@ public class ImageToolTipManager {
 	private Image scaledImage(Device device, Image image, float factor) {
 
 		Rectangle bounds = image.getBounds();
-		//		Float factor = 0.5f;
+		// Float factor = 0.5f;
 
 		Rectangle newBounds = new Rectangle(0, 0, Math.round(bounds.width * factor), Math.round(bounds.height * factor));
 		Image scaledImage = new Image(device, newBounds);
@@ -331,12 +339,13 @@ public class ImageToolTipManager {
 
 	/**
 	 * get the Image for the page.
+	 *
 	 * @param pagePart
 	 * @return
 	 */
-	private Image getPageImage( PagePart pagePart ) {
-		
+	private Image getPageImage(PagePart pagePart) {
+
 		return IPageImageUtils.getPageImage(pagePart);
 	}
-	
+
 }

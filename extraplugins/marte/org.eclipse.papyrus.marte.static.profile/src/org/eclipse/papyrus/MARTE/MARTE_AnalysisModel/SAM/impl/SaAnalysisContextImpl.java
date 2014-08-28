@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,8 +28,8 @@ import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaAnalysisContext;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaAnalysisContextImpl#getIsSched <em>Is Sched</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaAnalysisContextImpl#getOptCriterion <em>Opt Criterion</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaAnalysisContextImpl#getIsSched <em>Is Sched</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaAnalysisContextImpl#getOptCriterion <em>Opt Criterion</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	 * The default value of the '{@link #getIsSched() <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIsSched()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	 * The cached value of the '{@link #getIsSched() <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIsSched()
 	 * @generated
 	 * @ordered
@@ -60,6 +62,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	 * The default value of the '{@link #getOptCriterion() <em>Opt Criterion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOptCriterion()
 	 * @generated
 	 * @ordered
@@ -70,6 +73,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	 * The cached value of the '{@link #getOptCriterion() <em>Opt Criterion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOptCriterion()
 	 * @generated
 	 * @ordered
@@ -79,6 +83,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SaAnalysisContextImpl() {
@@ -88,6 +93,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,8 +104,10 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getIsSched() {
 		return isSched;
 	}
@@ -107,20 +115,25 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsSched(String newIsSched) {
 		String oldIsSched = isSched;
 		isSched = newIsSched;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SAMPackage.SA_ANALYSIS_CONTEXT__IS_SCHED, oldIsSched, isSched));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public OptimallityCriterionKind getOptCriterion() {
 		return optCriterion;
 	}
@@ -128,27 +141,31 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setOptCriterion(OptimallityCriterionKind newOptCriterion) {
 		OptimallityCriterionKind oldOptCriterion = optCriterion;
 		optCriterion = newOptCriterion == null ? OPT_CRITERION_EDEFAULT : newOptCriterion;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SAMPackage.SA_ANALYSIS_CONTEXT__OPT_CRITERION, oldOptCriterion, optCriterion));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SAMPackage.SA_ANALYSIS_CONTEXT__IS_SCHED:
-				return getIsSched();
-			case SAMPackage.SA_ANALYSIS_CONTEXT__OPT_CRITERION:
-				return getOptCriterion();
+		case SAMPackage.SA_ANALYSIS_CONTEXT__IS_SCHED:
+			return getIsSched();
+		case SAMPackage.SA_ANALYSIS_CONTEXT__OPT_CRITERION:
+			return getOptCriterion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -156,17 +173,18 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SAMPackage.SA_ANALYSIS_CONTEXT__IS_SCHED:
-				setIsSched((String)newValue);
-				return;
-			case SAMPackage.SA_ANALYSIS_CONTEXT__OPT_CRITERION:
-				setOptCriterion((OptimallityCriterionKind)newValue);
-				return;
+		case SAMPackage.SA_ANALYSIS_CONTEXT__IS_SCHED:
+			setIsSched((String) newValue);
+			return;
+		case SAMPackage.SA_ANALYSIS_CONTEXT__OPT_CRITERION:
+			setOptCriterion((OptimallityCriterionKind) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -174,17 +192,18 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SAMPackage.SA_ANALYSIS_CONTEXT__IS_SCHED:
-				setIsSched(IS_SCHED_EDEFAULT);
-				return;
-			case SAMPackage.SA_ANALYSIS_CONTEXT__OPT_CRITERION:
-				setOptCriterion(OPT_CRITERION_EDEFAULT);
-				return;
+		case SAMPackage.SA_ANALYSIS_CONTEXT__IS_SCHED:
+			setIsSched(IS_SCHED_EDEFAULT);
+			return;
+		case SAMPackage.SA_ANALYSIS_CONTEXT__OPT_CRITERION:
+			setOptCriterion(OPT_CRITERION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,15 +211,16 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SAMPackage.SA_ANALYSIS_CONTEXT__IS_SCHED:
-				return IS_SCHED_EDEFAULT == null ? isSched != null : !IS_SCHED_EDEFAULT.equals(isSched);
-			case SAMPackage.SA_ANALYSIS_CONTEXT__OPT_CRITERION:
-				return optCriterion != OPT_CRITERION_EDEFAULT;
+		case SAMPackage.SA_ANALYSIS_CONTEXT__IS_SCHED:
+			return IS_SCHED_EDEFAULT == null ? isSched != null : !IS_SCHED_EDEFAULT.equals(isSched);
+		case SAMPackage.SA_ANALYSIS_CONTEXT__OPT_CRITERION:
+			return optCriterion != OPT_CRITERION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -208,11 +228,14 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isSched: ");
@@ -223,4 +246,4 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 		return result.toString();
 	}
 
-} //SaAnalysisContextImpl
+} // SaAnalysisContextImpl

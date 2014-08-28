@@ -37,71 +37,71 @@ import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 /**
  * The Cell manager for the ModelViews table
  * TODO : should inherits from emf.nattable
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class ModelViewsCellManager extends AbstractCellManager {
 
 
 
 	/**
-	 * 
+	 *
 	 * @param columnElement
-	 *        the column element
+	 *            the column element
 	 * @param rowElement
-	 *        the row element
+	 *            the row element
 	 * @return <code>null</code> or a list of 2 objects.
 	 *         <ul>
 	 *         <li>the first element is the edited EObject</li>
 	 *         <li>the second one is the edited feature</li>
 	 *         </ul>
-	 * 
+	 *
 	 */
 	protected List<Object> organizeAndResolvedObjects(final Object columnElement, final Object rowElement) {
 		final List<Object> objects = new ArrayList<Object>();
 		Object row = AxisUtils.getRepresentedElement(rowElement);
 		Object column = AxisUtils.getRepresentedElement(columnElement);
-		if(row instanceof String && ((String)row).startsWith(Utils.NATTABLE_EDITOR_PAGE_ID) && column instanceof EObject) {
+		if (row instanceof String && ((String) row).startsWith(Utils.NATTABLE_EDITOR_PAGE_ID) && column instanceof EObject) {
 			objects.add(column);
 			objects.add(row);
-		} else if(column instanceof String && ((String)column).startsWith(Utils.NATTABLE_EDITOR_PAGE_ID) && row instanceof EObject) {
+		} else if (column instanceof String && ((String) column).startsWith(Utils.NATTABLE_EDITOR_PAGE_ID) && row instanceof EObject) {
 			objects.add(row);
 			objects.add(column);
 		}
 
-		if(objects.size() == 2) {
-			final EObject first = (EObject)objects.get(0);
+		if (objects.size() == 2) {
+			final EObject first = (EObject) objects.get(0);
 			final IPageManager mngr = Utils.getIPagneManager(first);
-			if((mngr != null && !mngr.allPages().contains(first)) || mngr == null) {
+			if ((mngr != null && !mngr.allPages().contains(first)) || mngr == null) {
 				return null;
 			}
 		}
 
-		if(objects.size() == 2) {
+		if (objects.size() == 2) {
 			return objects;
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#handles(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param rowElement
 	 * @param columnElement
 	 * @return
 	 */
+	@Override
 	public boolean handles(Object rowElement, Object columnElement) {
 		return organizeAndResolvedObjects(columnElement, rowElement) != null;
 	}
 
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.AbstractCellManager#doGetValue(java.lang.Object, java.lang.Object,
-	 *      org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.AbstractCellManager#doGetValue(java.lang.Object, java.lang.Object, org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager)
+	 *
 	 * @param columnElement
 	 * @param rowElement
 	 * @param tableManager
@@ -110,43 +110,44 @@ public class ModelViewsCellManager extends AbstractCellManager {
 	@Override
 	protected Object doGetValue(Object columnElement, Object rowElement, INattableModelManager tableManager) {
 		final List<Object> objects = organizeAndResolvedObjects(columnElement, rowElement);
-		final String featureName = ((String)objects.get(1)).replace(Utils.NATTABLE_EDITOR_PAGE_ID, ""); //$NON-NLS-1$
+		final String featureName = ((String) objects.get(1)).replace(Utils.NATTABLE_EDITOR_PAGE_ID, ""); //$NON-NLS-1$
 		final Object editor = objects.get(0);
-		if(Utils.VIEW_NAME.equals(featureName)) {
+		if (Utils.VIEW_NAME.equals(featureName)) {
 			return getEditorName(editor);
 		}
-		if(Utils.VIEW_CONTEXT.equals(featureName)) {
+		if (Utils.VIEW_CONTEXT.equals(featureName)) {
 			return getEditorContext(editor);
 		}
-		if(Utils.VIEW_IS_OPEN.equals(featureName)) {
+		if (Utils.VIEW_IS_OPEN.equals(featureName)) {
 			return getEditorIsOpen(editor);
 		}
-		if(Utils.VIEW_EDITOR_TYPE.equals(featureName)) {
+		if (Utils.VIEW_EDITOR_TYPE.equals(featureName)) {
 			return getEditorType(editor);
 		}
 		return NOT_AVALAIBLE;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#isCellEditable(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param rowElement
 	 * @param columnElement
 	 * @return
 	 *         <code>true</code> excepted if the edited feature is isOpen
 	 */
+	@Override
 	public boolean isCellEditable(Object rowElement, Object columnElement) {
 		final List<Object> objects = organizeAndResolvedObjects(columnElement, rowElement);
-		final String featureName = ((String)objects.get(1)).replace(Utils.NATTABLE_EDITOR_PAGE_ID, ""); //$NON-NLS-1$
+		final String featureName = ((String) objects.get(1)).replace(Utils.NATTABLE_EDITOR_PAGE_ID, ""); //$NON-NLS-1$
 		return featureName.equals(Utils.VIEW_NAME);
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.AbstractCellManager#getSetValueCommand(org.eclipse.emf.transaction.TransactionalEditingDomain,
-	 *      java.lang.Object, java.lang.Object, java.lang.Object, org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.AbstractCellManager#getSetValueCommand(org.eclipse.emf.transaction.TransactionalEditingDomain, java.lang.Object, java.lang.Object, java.lang.Object,
+	 *      org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager)
+	 *
 	 * @param domain
 	 * @param columnElement
 	 * @param rowElement
@@ -157,14 +158,14 @@ public class ModelViewsCellManager extends AbstractCellManager {
 	@Override
 	public Command getSetValueCommand(final TransactionalEditingDomain domain, final Object columnElement, final Object rowElement, final Object newValue, final INattableModelManager manager) {
 		final List<Object> objects = organizeAndResolvedObjects(columnElement, rowElement);
-		final EObject editor = (EObject)objects.get(0);
-		final String featureName = ((String)objects.get(1)).replace(Utils.NATTABLE_EDITOR_PAGE_ID, ""); //$NON-NLS-1$
-		if(Utils.VIEW_NAME.equals(featureName)) {
+		final EObject editor = (EObject) objects.get(0);
+		final String featureName = ((String) objects.get(1)).replace(Utils.NATTABLE_EDITOR_PAGE_ID, ""); //$NON-NLS-1$
+		if (Utils.VIEW_NAME.equals(featureName)) {
 			final EStructuralFeature feature = editor.eClass().getEStructuralFeature(Utils.VIEW_NAME);
-			if(!newValue.equals(editor.eClass().eGet(feature))) {
-				//				426731: [Table 2] Opening then closing cells editors without modifiyng values execute a command in the stack
-				//				https://bugs.eclipse.org/bugs/show_bug.cgi?id=426731
-				final AbstractEditCommandRequest request = new SetRequest((TransactionalEditingDomain)domain, editor, feature, newValue);
+			if (!newValue.equals(editor.eClass().eGet(feature))) {
+				// 426731: [Table 2] Opening then closing cells editors without modifiyng values execute a command in the stack
+				// https://bugs.eclipse.org/bugs/show_bug.cgi?id=426731
+				final AbstractEditCommandRequest request = new SetRequest(domain, editor, feature, newValue);
 				final IElementEditService provider = ElementEditServiceUtils.getCommandProvider(editor);
 				return new GMFtoEMFCommandWrapper(provider.getEditCommand(request));
 			}
@@ -173,20 +174,20 @@ public class ModelViewsCellManager extends AbstractCellManager {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param editor
-	 *        an editor
+	 *            an editor
 	 * @return
 	 *         the type of the editor
 	 */
 	protected Object getEditorType(final Object editor) {
-		if(editor instanceof EObject) {
-			if(editor instanceof Table) {
-				return ((Table)editor).getTableConfiguration().getType();
+		if (editor instanceof EObject) {
+			if (editor instanceof Table) {
+				return ((Table) editor).getTableConfiguration().getType();
 			} else {
-				EStructuralFeature feature = ((EObject)editor).eClass().getEStructuralFeature(Utils.VIEW_EDITOR_TYPE);
-				if(feature != null) {
-					return ((EObject)editor).eGet(feature);
+				EStructuralFeature feature = ((EObject) editor).eClass().getEStructuralFeature(Utils.VIEW_EDITOR_TYPE);
+				if (feature != null) {
+					return ((EObject) editor).eGet(feature);
 				}
 			}
 		}
@@ -194,20 +195,20 @@ public class ModelViewsCellManager extends AbstractCellManager {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param editor
-	 *        the editor
+	 *            the editor
 	 * @return
 	 *         <code>true</code> if the current editor is open
 	 */
 	protected Object getEditorIsOpen(final Object editor) {
-		if(editor instanceof EObject) {
+		if (editor instanceof EObject) {
 			IPageManager mngr = null;
 			try {
-				mngr = ServiceUtilsForResource.getInstance().getIPageManager(((EObject)editor).eResource());
+				mngr = ServiceUtilsForResource.getInstance().getIPageManager(((EObject) editor).eResource());
 				return mngr.isOpen(editor);
 			} catch (ServiceException e) {
-				//				Activator.log.error(e);
+				// Activator.log.error(e);
 			}
 		}
 
@@ -215,17 +216,17 @@ public class ModelViewsCellManager extends AbstractCellManager {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param editor
-	 *        an editor
+	 *            an editor
 	 * @return
 	 *         the name of the editor
 	 */
 	protected Object getEditorName(final Object editor) {
-		if(editor instanceof EObject) {
-			final EObject eobject = (EObject)editor;
+		if (editor instanceof EObject) {
+			final EObject eobject = (EObject) editor;
 			EStructuralFeature feature = eobject.eClass().getEStructuralFeature(Utils.VIEW_NAME);
-			if(feature != null) {
+			if (feature != null) {
 				return eobject.eGet(feature);
 			}
 		}
@@ -233,15 +234,15 @@ public class ModelViewsCellManager extends AbstractCellManager {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param editor
-	 *        the editor
+	 *            the editor
 	 * @return
 	 *         the context of this editor
 	 */
 	protected Object getEditorContext(final Object editor) {
 		final Object result = Utils.getEditorContext(editor);
-		if(result == null) {
+		if (result == null) {
 			return NOT_AVALAIBLE;
 		}
 		return result;

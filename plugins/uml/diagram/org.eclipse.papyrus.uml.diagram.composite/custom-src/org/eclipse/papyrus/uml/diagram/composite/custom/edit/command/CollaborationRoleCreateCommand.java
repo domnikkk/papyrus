@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,6 +23,7 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.uml.diagram.composite.custom.messages.Messages;
 import org.eclipse.papyrus.uml.diagram.composite.custom.ui.CollaborationRoleValidator;
 import org.eclipse.papyrus.uml.diagram.composite.edit.commands.CollaborationRoleCreateCommandCN;
@@ -37,7 +38,7 @@ import org.eclipse.uml2.uml.ConnectableElement;
  * <pre>
  * This class provides a custom creation command for CollaborationRole.
  * CollaborationRole are references toward any {@link ConnectableElement} in the model
- * (not necessarily owned by the {@link Collaboration}) graphically represented in 
+ * (not necessarily owned by the {@link Collaboration}) graphically represented in
  * {@link Collaboration}.
  * </pre>
  */
@@ -45,7 +46,7 @@ public class CollaborationRoleCreateCommand extends CollaborationRoleCreateComma
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param req
 	 *            the creation request
 	 */
@@ -58,10 +59,11 @@ public class CollaborationRoleCreateCommand extends CollaborationRoleCreateComma
 	 * The method executes the creation :
 	 *  - opens a selection dialog to choose a {@link ConnectableElement} to reference as a role
 	 *  - add the selection in CollaborationRole eReference of the edited {@link Collaboration}.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(final IProgressMonitor monitor, final IAdaptable info) throws ExecutionException {
 
 		// Retrieve the edited Collaboration
@@ -91,17 +93,17 @@ public class CollaborationRoleCreateCommand extends CollaborationRoleCreateComma
 		// If a ConnectableElement has been selected, complete command execution
 		// using selection as the "newly created" element and make the edited
 		// Collaboration reference it in the CollaborationRoles eReference.
-		if (dialog.getReturnCode() == ElementTreeSelectionDialog.OK) {
+		if (dialog.getReturnCode() == Window.OK) {
 			ConnectableElement role = (ConnectableElement) dialog.getFirstResult();
 
-			owner.getCollaborationRoles().add((ConnectableElement) role);
+			owner.getCollaborationRoles().add(role);
 
 			try {
-				doConfigure((ConnectableElement) role, monitor, info);
+				doConfigure(role, monitor, info);
 			} catch (ExecutionException e) {
 				e.printStackTrace();
 			}
-			((CreateElementRequest) getRequest()).setNewElement((ConnectableElement) role);
+			((CreateElementRequest) getRequest()).setNewElement(role);
 
 			return CommandResult.newOKCommandResult(role);
 		}

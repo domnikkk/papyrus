@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.dsml.validation.wizard;
 
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.WizardDialog;
@@ -26,8 +27,8 @@ import org.eclipse.uml2.uml.Profile;
  * This class represents the plugin project wizard and triggers creation of an
  * EMF Validation plugin when user clicks finish button on a plugin creation
  * wizard.
- * 
- * 
+ *
+ *
  */
 public class CreateEMFValidationProject extends NewPluginProjectWizard {
 
@@ -43,9 +44,9 @@ public class CreateEMFValidationProject extends NewPluginProjectWizard {
 	private EPackage definition = null;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param selectedProfile
 	 * @param constraintsExtractor
 	 */
@@ -59,7 +60,7 @@ public class CreateEMFValidationProject extends NewPluginProjectWizard {
 
 	@Override
 	public IWizardPage getNextPage(IWizardPage page) {
-		if(page == fContentPage) { //Remove the template page
+		if (page == fContentPage) { // Remove the template page
 			return null;
 		}
 		return super.getNextPage(page);
@@ -82,18 +83,18 @@ public class CreateEMFValidationProject extends NewPluginProjectWizard {
 	@Override
 	public boolean performFinish() {
 		boolean result = super.performFinish();
-		if(result) {
+		if (result) {
 			IProject project = this.fMainPage.getProjectHandle();
 			try {
 
-				//generate java code
+				// generate java code
 				generateAllJava = new JavaContentGenerator(project, selectedProfile);
 				generateAllJava.run();
-				//generate plugin + extension point
+				// generate plugin + extension point
 				ValidationPluginGenerator.instance.generate(project, constraintsManager, definition);
 
 
-				project.refreshLocal(IProject.DEPTH_INFINITE, null);
+				project.refreshLocal(IResource.DEPTH_INFINITE, null);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

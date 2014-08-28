@@ -35,9 +35,9 @@ public class IsControlledFragmentTester extends org.eclipse.core.expressions.Pro
 	public static String ID_PARENT_LOADED = "isParentLoaded";
 
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
-		if(IS_MODEL_FRAGMENT_PROP.equals(property)) {
-			return (Boolean)expectedValue == isModelFragment(receiver);
-		} else if(ID_PARENT_LOADED.equals(property)) {
+		if (IS_MODEL_FRAGMENT_PROP.equals(property)) {
+			return (Boolean) expectedValue == isModelFragment(receiver);
+		} else if (ID_PARENT_LOADED.equals(property)) {
 			return expectedValue == isParentLoaded(receiver);
 		}
 		return false;
@@ -48,9 +48,9 @@ public class IsControlledFragmentTester extends org.eclipse.core.expressions.Pro
 	 * @return true the container of an element is loaded
 	 */
 	protected Object isParentLoaded(Object receiver) {
-		if(receiver instanceof IStructuredSelection) {
-			EObject eObject = getSemanticObject(((IStructuredSelection)receiver).getFirstElement());
-			if(eObject != null) {
+		if (receiver instanceof IStructuredSelection) {
+			EObject eObject = getSemanticObject(((IStructuredSelection) receiver).getFirstElement());
+			if (eObject != null) {
 				return eObject.eContainer() != null;
 			}
 		}
@@ -62,9 +62,9 @@ public class IsControlledFragmentTester extends org.eclipse.core.expressions.Pro
 	 * @return true if the model is a model fragment root
 	 */
 	protected Object isModelFragment(Object receiver) {
-		if(receiver instanceof IStructuredSelection) {
-			EObject eObject = getSemanticObject(((IStructuredSelection)receiver).getFirstElement());
-			if(eObject != null) {
+		if (receiver instanceof IStructuredSelection) {
+			EObject eObject = getSemanticObject(((IStructuredSelection) receiver).getFirstElement());
+			if (eObject != null) {
 				return ControlHelper.isRootControlledObject(eObject);
 			}
 		}
@@ -79,7 +79,7 @@ public class IsControlledFragmentTester extends org.eclipse.core.expressions.Pro
 	 */
 	public static EObject getSemanticObject(Object selectedElement) {
 		EObject semanticObject = EMFHelper.getEObject(selectedElement);
-		if(selectedElement == null || selectedElement instanceof EReference || semanticObject instanceof EReference) {
+		if (selectedElement == null || selectedElement instanceof EReference || semanticObject instanceof EReference) {
 			return null;
 		}
 		return semanticObject;

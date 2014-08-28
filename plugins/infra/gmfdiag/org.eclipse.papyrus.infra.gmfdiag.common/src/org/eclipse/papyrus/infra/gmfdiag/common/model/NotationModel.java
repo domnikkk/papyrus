@@ -5,7 +5,6 @@ package org.eclipse.papyrus.infra.gmfdiag.common.model;
 
 import java.util.Collections;
 
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -17,9 +16,6 @@ import org.eclipse.papyrus.infra.core.resource.EMFLogicalModel;
 import org.eclipse.papyrus.infra.core.resource.IEMFModel;
 import org.eclipse.papyrus.infra.core.resource.IModel;
 import org.eclipse.papyrus.infra.core.resource.NotFoundException;
-import org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.IOpenable;
-import org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.IOpenableWithContainer;
-import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 
 /**
  * @author cedric dumoulin
@@ -74,7 +70,7 @@ public class NotationModel extends EMFLogicalModel implements IModel {
 	 * Add a new initialized {@link Diagram} to the model.
 	 *
 	 * @param newDiagram
-	 *        The diagram to add.
+	 *            The diagram to add.
 	 */
 	public void addDiagram(Diagram newDiagram) {
 		getResource().getContents().add(newDiagram);
@@ -86,13 +82,13 @@ public class NotationModel extends EMFLogicalModel implements IModel {
 	 */
 	@Override
 	public boolean isControlled(Resource resource) {
-		for(Resource resourceInModelSet : modelSet.getResources()) {
-			if ( resource.getURI().trimFileExtension().equals(resourceInModelSet.getURI().trimFileExtension()) && !isRelatedResource(resourceInModelSet)){
-				if(!resourceInModelSet.getContents().isEmpty()){
+		for (Resource resourceInModelSet : modelSet.getResources()) {
+			if (resource.getURI().trimFileExtension().equals(resourceInModelSet.getURI().trimFileExtension()) && !isRelatedResource(resourceInModelSet)) {
+				if (!resourceInModelSet.getContents().isEmpty()) {
 					EObject eObject = resourceInModelSet.getContents().get(0);
 					IModel iModel = modelSet.getModelFor(eObject);
-					if(iModel instanceof IEMFModel) {
-						if(((IEMFModel)iModel).isControlled(resourceInModelSet)) {
+					if (iModel instanceof IEMFModel) {
+						if (((IEMFModel) iModel).isControlled(resourceInModelSet)) {
 							return true;
 						}
 					}
@@ -105,18 +101,18 @@ public class NotationModel extends EMFLogicalModel implements IModel {
 	@Override
 	public void handle(Resource resource) {
 		super.handle(resource);
-		if(resource == null) {
+		if (resource == null) {
 			return;
 		}
 
-		//If the parameter resource is already a notation resource, nothing to do
-		if(!isRelatedResource(resource)) {
+		// If the parameter resource is already a notation resource, nothing to do
+		if (!isRelatedResource(resource)) {
 			URI notationURI = resource.getURI().trimFileExtension().appendFileExtension(NOTATION_FILE_EXTENSION);
 			ResourceSet resourceSet = getResourceSet();
-			if(resourceSet != null && resourceSet.getURIConverter() != null) {
+			if (resourceSet != null && resourceSet.getURIConverter() != null) {
 				URIConverter converter = resourceSet.getURIConverter();
-				if(converter.exists(notationURI, Collections.emptyMap())) {
-					//If the notation resource associated to the parameter resource exists, load it
+				if (converter.exists(notationURI, Collections.emptyMap())) {
+					// If the notation resource associated to the parameter resource exists, load it
 					getResourceSet().getResource(notationURI, true);
 				}
 			}
@@ -128,22 +124,22 @@ public class NotationModel extends EMFLogicalModel implements IModel {
 	 * Get a diagram by its name.
 	 *
 	 * @param diagramName
-	 *        Name of the diagram. This is the name set by the user.
+	 *            Name of the diagram. This is the name set by the user.
 	 * @return
 	 * @throws NotFoundException
 	 * @throws BadArgumentExcetion
 	 */
 	public Diagram getDiagram(String diagramName) throws NotFoundException, BadArgumentExcetion {
 
-		if(diagramName == null || diagramName.length() == 0) {
+		if (diagramName == null || diagramName.length() == 0) {
 			throw new BadArgumentExcetion("Diagram name should not be null and size should be >0.");
 		}
 
-		for(EObject element : getResource().getContents()) {
-			if(element instanceof Diagram) {
-				Diagram diagram = (Diagram)element;
+		for (EObject element : getResource().getContents()) {
+			if (element instanceof Diagram) {
+				Diagram diagram = (Diagram) element;
 
-				if(diagramName.equals(diagram.getName())) {
+				if (diagramName.equals(diagram.getName())) {
 					// Found
 					return diagram;
 

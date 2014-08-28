@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    CEA LIST - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.C_Cpp.impl;
 
@@ -28,8 +28,8 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.C_Cpp.impl.CppInitImpl#getValue <em>Value</em>}</li>
- *   <li>{@link org.eclipse.papyrus.C_Cpp.impl.CppInitImpl#getBase_enumerationliteral <em>Base enumerationliteral</em>}</li>
+ * <li>{@link org.eclipse.papyrus.C_Cpp.impl.CppInitImpl#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.C_Cpp.impl.CppInitImpl#getBase_enumerationliteral <em>Base enumerationliteral</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class CppInitImpl extends MinimalEObjectImpl.Container implements CppInit
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class CppInitImpl extends MinimalEObjectImpl.Container implements CppInit
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -60,6 +62,7 @@ public class CppInitImpl extends MinimalEObjectImpl.Container implements CppInit
 	 * The cached value of the '{@link #getBase_enumerationliteral() <em>Base enumerationliteral</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_enumerationliteral()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class CppInitImpl extends MinimalEObjectImpl.Container implements CppInit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected CppInitImpl() {
@@ -78,6 +82,7 @@ public class CppInitImpl extends MinimalEObjectImpl.Container implements CppInit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,8 +93,10 @@ public class CppInitImpl extends MinimalEObjectImpl.Container implements CppInit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 		return value;
 	}
@@ -97,27 +104,33 @@ public class CppInitImpl extends MinimalEObjectImpl.Container implements CppInit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setValue(int newValue) {
 		int oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, C_CppPackage.CPP_INIT__VALUE, oldValue, value));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EnumerationLiteral getBase_enumerationliteral() {
 		if (base_enumerationliteral != null && base_enumerationliteral.eIsProxy()) {
-			InternalEObject oldBase_enumerationliteral = (InternalEObject)base_enumerationliteral;
-			base_enumerationliteral = (EnumerationLiteral)eResolveProxy(oldBase_enumerationliteral);
+			InternalEObject oldBase_enumerationliteral = (InternalEObject) base_enumerationliteral;
+			base_enumerationliteral = (EnumerationLiteral) eResolveProxy(oldBase_enumerationliteral);
 			if (base_enumerationliteral != oldBase_enumerationliteral) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, C_CppPackage.CPP_INIT__BASE_ENUMERATIONLITERAL, oldBase_enumerationliteral, base_enumerationliteral));
+				}
 			}
 		}
 		return base_enumerationliteral;
@@ -126,6 +139,7 @@ public class CppInitImpl extends MinimalEObjectImpl.Container implements CppInit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EnumerationLiteral basicGetBase_enumerationliteral() {
@@ -135,28 +149,34 @@ public class CppInitImpl extends MinimalEObjectImpl.Container implements CppInit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_enumerationliteral(EnumerationLiteral newBase_enumerationliteral) {
 		EnumerationLiteral oldBase_enumerationliteral = base_enumerationliteral;
 		base_enumerationliteral = newBase_enumerationliteral;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, C_CppPackage.CPP_INIT__BASE_ENUMERATIONLITERAL, oldBase_enumerationliteral, base_enumerationliteral));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case C_CppPackage.CPP_INIT__VALUE:
-				return getValue();
-			case C_CppPackage.CPP_INIT__BASE_ENUMERATIONLITERAL:
-				if (resolve) return getBase_enumerationliteral();
-				return basicGetBase_enumerationliteral();
+		case C_CppPackage.CPP_INIT__VALUE:
+			return getValue();
+		case C_CppPackage.CPP_INIT__BASE_ENUMERATIONLITERAL:
+			if (resolve) {
+				return getBase_enumerationliteral();
+			}
+			return basicGetBase_enumerationliteral();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,17 +184,18 @@ public class CppInitImpl extends MinimalEObjectImpl.Container implements CppInit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case C_CppPackage.CPP_INIT__VALUE:
-				setValue((Integer)newValue);
-				return;
-			case C_CppPackage.CPP_INIT__BASE_ENUMERATIONLITERAL:
-				setBase_enumerationliteral((EnumerationLiteral)newValue);
-				return;
+		case C_CppPackage.CPP_INIT__VALUE:
+			setValue((Integer) newValue);
+			return;
+		case C_CppPackage.CPP_INIT__BASE_ENUMERATIONLITERAL:
+			setBase_enumerationliteral((EnumerationLiteral) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -182,17 +203,18 @@ public class CppInitImpl extends MinimalEObjectImpl.Container implements CppInit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case C_CppPackage.CPP_INIT__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
-			case C_CppPackage.CPP_INIT__BASE_ENUMERATIONLITERAL:
-				setBase_enumerationliteral((EnumerationLiteral)null);
-				return;
+		case C_CppPackage.CPP_INIT__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
+		case C_CppPackage.CPP_INIT__BASE_ENUMERATIONLITERAL:
+			setBase_enumerationliteral((EnumerationLiteral) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -200,15 +222,16 @@ public class CppInitImpl extends MinimalEObjectImpl.Container implements CppInit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case C_CppPackage.CPP_INIT__VALUE:
-				return value != VALUE_EDEFAULT;
-			case C_CppPackage.CPP_INIT__BASE_ENUMERATIONLITERAL:
-				return base_enumerationliteral != null;
+		case C_CppPackage.CPP_INIT__VALUE:
+			return value != VALUE_EDEFAULT;
+		case C_CppPackage.CPP_INIT__BASE_ENUMERATIONLITERAL:
+			return base_enumerationliteral != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,11 +239,14 @@ public class CppInitImpl extends MinimalEObjectImpl.Container implements CppInit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: "); //$NON-NLS-1$
@@ -229,4 +255,4 @@ public class CppInitImpl extends MinimalEObjectImpl.Container implements CppInit
 		return result.toString();
 	}
 
-} //CppInitImpl
+} // CppInitImpl

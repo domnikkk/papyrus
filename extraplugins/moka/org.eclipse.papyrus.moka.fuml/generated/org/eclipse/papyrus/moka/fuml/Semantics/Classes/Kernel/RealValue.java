@@ -39,8 +39,8 @@ public class RealValue extends PrimitiveValue {
 		// To be equal, the otherValue must have the same value as this real
 		// value.
 		boolean isEqual = false;
-		if(otherValue instanceof RealValue) {
-			isEqual = ((RealValue)otherValue).value == this.value;
+		if (otherValue instanceof RealValue) {
+			isEqual = ((RealValue) otherValue).value == this.value;
 		}
 		return isEqual;
 	}
@@ -48,7 +48,7 @@ public class RealValue extends PrimitiveValue {
 	@Override
 	public Value copy() {
 		// Create a new real value with the same value as this real value.
-		RealValue newValue = (RealValue)(super.copy());
+		RealValue newValue = (RealValue) (super.copy());
 		newValue.value = this.value;
 		return newValue;
 	}
@@ -61,35 +61,35 @@ public class RealValue extends PrimitiveValue {
 	@Override
 	public String toString() {
 		String stringValue = "";
-		if(this.value == 0) {
+		if (this.value == 0) {
 			stringValue = "0";
 		} else {
 			double positiveValue = this.value;
-			if(positiveValue < 0) {
+			if (positiveValue < 0) {
 				positiveValue = -positiveValue;
 			}
 			int exponent = 0;
-			if(positiveValue < .1) {
-				while(positiveValue < .1) {
+			if (positiveValue < .1) {
+				while (positiveValue < .1) {
 					positiveValue = positiveValue * 10;
 					exponent = exponent - 1;
 				}
-			} else if(positiveValue > 1) {
-				while(positiveValue > 1) {
+			} else if (positiveValue > 1) {
+				while (positiveValue > 1) {
 					positiveValue = positiveValue / 10;
 					exponent = exponent + 1;
 				}
 			}
 			// This gives 9 significant digits in the mantissa.
-			for(int i = 0; i < 9; i++) {
+			for (int i = 0; i < 9; i++) {
 				positiveValue = positiveValue * 10;
 			}
 			IntegerValue integerValue = new IntegerValue();
-			integerValue.value = (int)positiveValue;
+			integerValue.value = (int) positiveValue;
 			stringValue = "0." + integerValue.toString();
 			integerValue.value = exponent;
 			stringValue = stringValue + "E" + integerValue.toString();
-			if(this.value < 0) {
+			if (this.value < 0) {
 				stringValue = "-" + stringValue;
 			}
 		}

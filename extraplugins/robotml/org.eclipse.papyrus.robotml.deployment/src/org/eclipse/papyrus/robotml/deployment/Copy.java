@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,9 +53,9 @@ import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
  * information about source and target packages within a model transformation
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class Copy extends Copier {
 
@@ -70,7 +70,7 @@ public class Copy extends Copier {
 		standardMap = new HashMap<EObject, EObject>();
 		shallowMap = new HashMap<EObject, Boolean>();
 		boundPackages = new Stack<Namespace>();
-		if(copyExtReferences) {
+		if (copyExtReferences) {
 			// original source package becomes a sub-package in the target model
 			Package newSourceRoot = target.createNestedPackage(source.getName());
 			put(source, newSourceRoot);
@@ -81,7 +81,7 @@ public class Copy extends Copier {
 	};
 
 	/**
- * 
+ *
  */
 	private static final long serialVersionUID = -1664013545661635289L;
 
@@ -141,14 +141,14 @@ public class Copy extends Copier {
 	public Map<EObject, EObject> getMap(EObject sourceEObj) {
 		boolean withinTemplate = withinTemplate(sourceEObj);
 		return withinTemplate ?
-			templateMap :
-			standardMap;
+				templateMap :
+				standardMap;
 	}
 
 	@Override
 	public EObject get(Object sourceEObj) {
-		if(sourceEObj instanceof EObject) {
-			Map<EObject, EObject> map = getMap((EObject)sourceEObj);
+		if (sourceEObj instanceof EObject) {
+			Map<EObject, EObject> map = getMap((EObject) sourceEObj);
 			return map.get(sourceEObj);
 		}
 		return null;
@@ -156,8 +156,8 @@ public class Copy extends Copier {
 
 	@Override
 	public EObject put(EObject sourceEObj, EObject targetEObj) {
-		if(sourceEObj instanceof EObject) {
-			Map<EObject, EObject> map = getMap((EObject)sourceEObj);
+		if (sourceEObj instanceof EObject) {
+			Map<EObject, EObject> map = getMap(sourceEObj);
 			return map.put(sourceEObj, targetEObj);
 		}
 		return null;
@@ -165,8 +165,8 @@ public class Copy extends Copier {
 
 	@Override
 	public boolean containsKey(Object sourceEObj) {
-		if(sourceEObj instanceof EObject) {
-			Map<EObject, EObject> map = getMap((EObject)sourceEObj);
+		if (sourceEObj instanceof EObject) {
+			Map<EObject, EObject> map = getMap((EObject) sourceEObj);
 			return map.containsKey(sourceEObj);
 		}
 		return false;
@@ -174,8 +174,8 @@ public class Copy extends Copier {
 
 	@Override
 	public EObject remove(Object sourceEObj) {
-		if(sourceEObj instanceof EObject) {
-			Map<EObject, EObject> map = getMap((EObject)sourceEObj);
+		if (sourceEObj instanceof EObject) {
+			Map<EObject, EObject> map = getMap((EObject) sourceEObj);
 			return map.remove(sourceEObj);
 		}
 		return null;
@@ -187,13 +187,13 @@ public class Copy extends Copier {
 
 	/**
 	 * return true, if a shallow copy of the passed EObject exists
-	 * 
+	 *
 	 * @param sourceEObj
 	 * @return
 	 */
 	public boolean isShallow(EObject targetEObj) {
 		Boolean shallow = shallowMap.get(targetEObj);
-		if(shallow != null) {
+		if (shallow != null) {
 			return shallow;
 		}
 		return false;
@@ -207,21 +207,21 @@ public class Copy extends Copier {
 	 * Set the reference of a bound package template. It must be a member of the target model.
 	 * Setting the package template is required to assure that elements that are part of a different
 	 * resource get copied (depending on the copyExtReferences flag, this is not the case)
-	 * 
+	 *
 	 * @param packageTemplate
-	 *        Reference to package (with a template signature) in source model that should be instantiated
+	 *            Reference to package (with a template signature) in source model that should be instantiated
 	 * @param boundPackage
-	 *        Reference to (an initially empty) package in which the packate template will be instantiated
-	 *        during the copy process
+	 *            Reference to (an initially empty) package in which the packate template will be instantiated
+	 *            during the copy process
 	 */
 	public void setPackageTemplate(Namespace packageTemplate, Namespace boundPackage) {
 		this.boundPackage = boundPackage;
-		if(packageTemplate == null) {
+		if (packageTemplate == null) {
 			return;
 		}
 		templateMap =
-			templateMapInfo.get(boundPackage);
-		if(templateMap == null) {
+				templateMapInfo.get(boundPackage);
+		if (templateMap == null) {
 			templateMap = new HashMap<EObject, EObject>();
 			templateMapInfo.put(boundPackage, templateMap);
 		}
@@ -238,7 +238,7 @@ public class Copy extends Copier {
 	public void popPackageTemplate() {
 		boundPackage = boundPackages.pop();
 		templateMap =
-			templateMapInfo.get(boundPackage);
+				templateMapInfo.get(boundPackage);
 	}
 
 	private Stack<Namespace> boundPackages;
@@ -246,22 +246,22 @@ public class Copy extends Copier {
 	public void removeForCopy(EObject element) {
 		templateMap.remove(element);
 		EClass eClass = element.eClass();
-		for(int i = 0, size = eClass.getFeatureCount(); i < size; ++i)
+		for (int i = 0, size = eClass.getFeatureCount(); i < size; ++i)
 		{
 			EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(i);
-			if(eStructuralFeature.isChangeable() && !eStructuralFeature.isDerived())
+			if (eStructuralFeature.isChangeable() && !eStructuralFeature.isDerived())
 			{
-				if(eStructuralFeature instanceof EAttribute) {
+				if (eStructuralFeature instanceof EAttribute) {
 					// copyAttribute((EAttribute)eStructuralFeature, sourceEObj, targetEObj);
 				}
 				else {
-					EReference eReference = (EReference)eStructuralFeature;
-					if(eReference.isContainment()) {
-						for(EObject ref : getRefs(eReference, element)) {
+					EReference eReference = (EReference) eStructuralFeature;
+					if (eReference.isContainment()) {
+						for (EObject ref : getRefs(eReference, element)) {
 							removeForCopy(ref);
 						}
 					}
-					else if(!eReference.isContainer()) {
+					else if (!eReference.isContainer()) {
 						// not contained, but copy reference as well
 
 					}
@@ -273,23 +273,23 @@ public class Copy extends Copier {
 	@SuppressWarnings("unchecked")
 	public EList<EObject> getRefs(EReference eReference, EObject eObject) {
 		EList<EObject> refs = new BasicEList<EObject>();
-		if(eObject.eIsSet(eReference)) {
-			if(eReference.isMany()) {
+		if (eObject.eIsSet(eReference)) {
+			if (eReference.isMany()) {
 				// @SuppressWarnings("unchecked")
-				refs.addAll((List<EObject>)eObject.eGet(eReference));
+				refs.addAll((List<EObject>) eObject.eGet(eReference));
 			} else {
-				refs.add((EObject)eObject.eGet(eReference));
+				refs.add((EObject) eObject.eGet(eReference));
 			}
 		}
 		return refs;
 	}
 
 	public boolean withinTemplate(EObject element) {
-		if(boundPackage != null) {
+		if (boundPackage != null) {
 			EObject owner = element;
-			while(owner != null) {
+			while (owner != null) {
 				owner = owner.eContainer();
-				if(get(owner) == boundPackage) {
+				if (get(owner) == boundPackage) {
 					return true;
 				}
 			}
@@ -299,14 +299,14 @@ public class Copy extends Copier {
 
 	/**
 	 * Returns a copy of the given eObject.
-	 * 
+	 *
 	 * Normally, we do not want to copy elements that are from a different
 	 * resource. There are two exceptions (1) if this is explicitly specified
 	 * (for producing "complete" models) (2) if we want to copy elements from a
 	 * template into the target model.
-	 * 
+	 *
 	 * @param sourceEObj
-	 *        the object to copy.
+	 *            the object to copy.
 	 * @return the copy.
 	 */
 	@SuppressWarnings("unchecked")
@@ -318,61 +318,61 @@ public class Copy extends Copier {
 
 		boolean shallowCopy = (targetEObj != null) && isShallow(targetEObj);
 
-		if((targetEObj != null) && !shallowCopy) {
+		if ((targetEObj != null) && !shallowCopy) {
 			// copy already exists, return
 			return targetEObj;
 		}
 		setShallow(targetEObj, false);
 
-		if(sourceEObj == null) {
+		if (sourceEObj == null) {
 			// this case may happen, if elements were systematcially copied without checking for
 			// null references in the application code (e.g. if we copy a part-with-port which might
 			// be null in case of delegation or connectors without ports
 			return null;
 		}
 		boolean sameResource = (sourceEObj.eResource() == source.eResource());
-		if(!sameResource && !copyExtReferences && !withinTemplate) {
+		if (!sameResource && !copyExtReferences && !withinTemplate) {
 			// do not copy if within different resource, unless
 			// 1. copyImports
 			// 2. within package template
 			return sourceEObj;
 		}
 
-		if(sourceEObj instanceof Stereotype) {
+		if (sourceEObj instanceof Stereotype) {
 			// do not copy Stereotypes, as it would imply copying meta-model elements (the base_X
 			// attribute of the stereotype is typed with a meta-model element)
 			return sourceEObj;
 		}
 
-		for(CopyListener listener : preCopyListeners) {
+		for (CopyListener listener : preCopyListeners) {
 			EObject result = listener.copyEObject(this, sourceEObj);
-			if(result != sourceEObj) {
+			if (result != sourceEObj) {
 				return result;
 			}
 		}
 
-		if(sourceEObj instanceof NamedElement) {
-			String name = ((NamedElement)sourceEObj).getQualifiedName();
+		if (sourceEObj instanceof NamedElement) {
+			String name = ((NamedElement) sourceEObj).getQualifiedName();
 			// System.err.println("eC3Mcopier: " + name);
-			if((name != null) && name.startsWith("uml::")) {
+			if ((name != null) && name.startsWith("uml::")) {
 				Log.log(Log.ERROR_MSG, Log.TRAFO_COPY, "copy for meta-model element \"" + name + "\" requested. Return original element");
 				return sourceEObj;
 			}
-			if((name != null) && name.startsWith("ProducerConsumer")) {
-				if(Utils.getTop((NamedElement)sourceEObj) != source) {
+			if ((name != null) && name.startsWith("ProducerConsumer")) {
+				if (Utils.getTop((NamedElement) sourceEObj) != source) {
 					System.err.println(name);
 				}
 			}
 		}
 		// additional sanity check: want to avoid copying (instead of instantiating) elements
 		// of a package template
-		if((sourceEObj instanceof Package) && (!withinTemplate)) {
-			if(((Package)sourceEObj).getOwnedTemplateSignature() != null) {
+		if ((sourceEObj instanceof Package) && (!withinTemplate)) {
+			if (((Package) sourceEObj).getOwnedTemplateSignature() != null) {
 				Log.log(Log.WARNING_MSG, Log.TRAFO_COPY, "warning: copying a package template without instantiating a template");
 			}
 		}
 
-		if(shallowCopy) {
+		if (shallowCopy) {
 			// shallowCopy is true: a copy exists already
 		}
 		else {
@@ -382,17 +382,17 @@ public class Copy extends Copier {
 			createShallowContainer(sourceEObj);
 		}
 		EClass eClass = sourceEObj.eClass();
-		for(int i = 0, size = eClass.getFeatureCount(); i < size; ++i)
+		for (int i = 0, size = eClass.getFeatureCount(); i < size; ++i)
 		{
 			EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(i);
-			if(eStructuralFeature.isChangeable() && !eStructuralFeature.isDerived())
+			if (eStructuralFeature.isChangeable() && !eStructuralFeature.isDerived())
 			{
-				if(eStructuralFeature instanceof EAttribute) {
-					copyAttribute((EAttribute)eStructuralFeature, sourceEObj, targetEObj);
+				if (eStructuralFeature instanceof EAttribute) {
+					copyAttribute((EAttribute) eStructuralFeature, sourceEObj, targetEObj);
 				}
 				else {
-					EReference eReference = (EReference)eStructuralFeature;
-					if(eReference.isContainment()) {
+					EReference eReference = (EReference) eStructuralFeature;
+					if (eReference.isContainment()) {
 						copyContainment(eReference, sourceEObj, targetEObj);
 					}
 					// some containment relationships require copying the container completely
@@ -401,13 +401,13 @@ public class Copy extends Copier {
 					// e.g. if an operation is referenced, we need to copy the whole interface
 					// Currently: only the standard owning reference is not copied recursively.
 					// else if(!eReference.isContainer()) {
-					else if(!eReference.getName().equals("owner")) {
+					else if (!eReference.getName().equals("owner")) {
 						// not contained, but copy reference as well
 						Object feature = sourceEObj.eGet(eStructuralFeature);
-						if(feature instanceof Element) {
-							copy((Element)feature);
-						} else if(feature instanceof EList) {
-							copyAll((EList<Object>)feature);
+						if (feature instanceof Element) {
+							copy((Element) feature);
+						} else if (feature instanceof EList) {
+							copyAll((EList<Object>) feature);
 						}
 						copyReference(eReference, sourceEObj, targetEObj);
 					}
@@ -417,14 +417,14 @@ public class Copy extends Copier {
 		copyProxyURI(sourceEObj, targetEObj);
 		copyID(sourceEObj, targetEObj);
 
-		if(sourceEObj instanceof Element) {
+		if (sourceEObj instanceof Element) {
 			// TODO: handle stereotype copy in a generic way
-			StUtils.copyStereotypes(this, (Element)sourceEObj, (Element)targetEObj);
+			StUtils.copyStereotypes(this, (Element) sourceEObj, (Element) targetEObj);
 		}
 
-		for(CopyListener listener : postCopyListeners) {
+		for (CopyListener listener : postCopyListeners) {
 			EObject result = listener.copyEObject(this, targetEObj);
-			if(result != targetEObj) {
+			if (result != targetEObj) {
 				return result;
 			}
 		}
@@ -434,42 +434,41 @@ public class Copy extends Copier {
 
 	/**
 	 * Copy the containment of an element with respect to a certain reference
-	 * 
-	 * @see org.eclipse.emf.ecore.util.EcoreUtil.Copier#copyContainment(org.eclipse.emf.ecore.EReference, org.eclipse.emf.ecore.EObject,
-	 *      org.eclipse.emf.ecore.EObject)
+	 *
+	 * @see org.eclipse.emf.ecore.util.EcoreUtil.Copier#copyContainment(org.eclipse.emf.ecore.EReference, org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject)
 	 *      Differences to referenced function in ECoreUtil
 	 *      - If an element in copyAll is null, it is not added
 	 *      - List elements are always cleared before copying, since the list elements may already have been
 	 *      partially filled by a previous shallow copy
-	 * 
+	 *
 	 * @param eReference
-	 *        a reference, such as for instance packagedElement (the
-	 *        caller needs to check, is this reference is a containment reference).
+	 *            a reference, such as for instance packagedElement (the
+	 *            caller needs to check, is this reference is a containment reference).
 	 * @param eObject
-	 *        the source eObject
+	 *            the source eObject
 	 * @param copyEObject
-	 *        the copy of this eObject
+	 *            the copy of this eObject
 	 */
 	@Override
 	protected void copyContainment(EReference eReference, EObject eObject, EObject copyEObject) {
-		if(eObject.eIsSet(eReference)) {
-			if(eReference.isMany()) {
+		if (eObject.eIsSet(eReference)) {
+			if (eReference.isMany()) {
 				@SuppressWarnings("unchecked")
-				List<EObject> source = (List<EObject>)eObject.eGet(eReference);
+				List<EObject> source = (List<EObject>) eObject.eGet(eReference);
 				@SuppressWarnings("unchecked")
-				List<EObject> target = (List<EObject>)copyEObject.eGet(getTarget(eReference));
+				List<EObject> target = (List<EObject>) copyEObject.eGet(getTarget(eReference));
 				// do not clear (would remove elements that are added by copy listeners)
 				// But: better enforce exact copy? (listeners could only add in a post-copy step)
 				// target.clear();
-				if(!source.isEmpty()) {
-					for(EObject copyEObj : copyAll(source)) {
-						if(copyEObj != null) {
+				if (!source.isEmpty()) {
+					for (EObject copyEObj : copyAll(source)) {
+						if (copyEObj != null) {
 							target.add(copyEObj);
 						}
 					}
 				}
 			} else {
-				EObject childEObject = (EObject)eObject.eGet(eReference);
+				EObject childEObject = (EObject) eObject.eGet(eReference);
 				copyEObject.eSet(getTarget(eReference), childEObject == null ? null : copy(childEObject));
 			}
 		}
@@ -479,31 +478,31 @@ public class Copy extends Copier {
 	 * Copy the containment in a "shallow" way, i.e. copy references to contained objects, if these exist already.
 	 * If called for instance for a package, it will add those elements to the packagedElements list of the
 	 * target package, that have already been copied.
-	 * 
+	 *
 	 * @param eReference
 	 * @param eObject
 	 * @param copyEObject
 	 */
 	protected void shallowCopyContainment(EReference eReference, EObject eObject, EObject copyEObject) {
-		if(eObject.eIsSet(eReference)) {
-			if(eReference.isMany()) {
+		if (eObject.eIsSet(eReference)) {
+			if (eReference.isMany()) {
 				@SuppressWarnings("unchecked")
-				List<EObject> source = (List<EObject>)eObject.eGet(eReference);
+				List<EObject> source = (List<EObject>) eObject.eGet(eReference);
 				@SuppressWarnings("unchecked")
-				List<EObject> target = (List<EObject>)copyEObject.eGet(getTarget(eReference));
-				if(source.isEmpty()) {
+				List<EObject> target = (List<EObject>) copyEObject.eGet(getTarget(eReference));
+				if (source.isEmpty()) {
 					target.clear();
 				} else {
-					for(EObject sourceEObj : source) {
+					for (EObject sourceEObj : source) {
 						// if eObject has already been copied, add it
 						EObject copyEObj = get(sourceEObj);
-						if((copyEObj != null) && (!target.contains(copyEObj))) {
+						if ((copyEObj != null) && (!target.contains(copyEObj))) {
 							target.add(copyEObj);
 						}
 					}
 				}
 			} else {
-				EObject childEObject = (EObject)eObject.eGet(eReference);
+				EObject childEObject = (EObject) eObject.eGet(eReference);
 				copyEObject.eSet(getTarget(eReference), childEObject == null ? null : copy(childEObject));
 			}
 		}
@@ -513,14 +512,14 @@ public class Copy extends Copier {
 	 * Create a "shallow" container for an object, i.e. create (recursively) the owner without
 	 * adding all other children of this owner (e.g. in case of a package, the package itself will
 	 * be created, but not all elements within that package).
-	 * 
+	 *
 	 * @param sourceEObj
 	 */
 	public void createShallowContainer(EObject sourceEObj) {
 		EObject owner = sourceEObj.eContainer();
 		EObject copy = null;
-		while(owner != null) {
-			if(containsKey(owner)) {
+		while (owner != null) {
+			if (containsKey(owner)) {
 				// owner is in map, still need to re-copy (update) the containment
 				// references, since one of the children did not exist before
 				//
@@ -528,15 +527,15 @@ public class Copy extends Copier {
 				return;
 			}
 			copy = shallowCopy(owner);
-			if(copy instanceof NamedElement) {
-				((NamedElement)copy).setName(((NamedElement)owner).getName());
+			if (copy instanceof NamedElement) {
+				((NamedElement) copy).setName(((NamedElement) owner).getName());
 			}
 			owner = owner.eContainer();
 		}
-		if(copy instanceof PackageableElement) {
+		if (copy instanceof PackageableElement) {
 			// if we copy external resources, we might reach the "top" on the source level
 			// which becomes a sub-package of the new model.
-			target.getPackagedElements().add((PackageableElement)copy);
+			target.getPackagedElements().add((PackageableElement) copy);
 		}
 	}
 
@@ -549,33 +548,33 @@ public class Copy extends Copier {
 	 * of a package after a single class within it has been copied. It may be called again,
 	 * once a second class within the package has been copied => the packagedElements reference
 	 * of the package will be updated).
-	 * 
+	 *
 	 * @param sourceEObj
 	 * @return
 	 */
 	public EObject shallowCopy(EObject sourceEObj) {
 		EObject targetEObj = get(sourceEObj);
-		if(targetEObj == null) {
+		if (targetEObj == null) {
 			targetEObj = createCopy(sourceEObj);
 			put(sourceEObj, targetEObj);
 			setShallow(targetEObj, true);
 		}
-		if((sourceEObj instanceof Element) && (targetEObj instanceof Element)) {
+		if ((sourceEObj instanceof Element) && (targetEObj instanceof Element)) {
 			// TODO: cannot copy stereotypes only after creation, since eContainer does
 			// not exist at this moment. Need to put that intelligently into createShallowContainer
-			StUtils.copyStereotypes(this, (Element)sourceEObj, (Element)targetEObj);
+			StUtils.copyStereotypes(this, (Element) sourceEObj, (Element) targetEObj);
 		}
 
 		EClass eClass = sourceEObj.eClass();
 
-		for(int i = 0, size = eClass.getFeatureCount(); i < size; ++i) {
+		for (int i = 0, size = eClass.getFeatureCount(); i < size; ++i) {
 			EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(i);
-			if(eStructuralFeature.isChangeable() && !eStructuralFeature.isDerived()) {
-				if(eStructuralFeature instanceof EAttribute) {
+			if (eStructuralFeature.isChangeable() && !eStructuralFeature.isDerived()) {
+				if (eStructuralFeature instanceof EAttribute) {
 					// copyAttribute((EAttribute)eStructuralFeature, sourceEObj, targetEObj);
 				} else {
-					EReference eReference = (EReference)eStructuralFeature;
-					if(eReference.isContainment()) {
+					EReference eReference = (EReference) eStructuralFeature;
+					if (eReference.isContainment()) {
 						shallowCopyContainment(eReference, sourceEObj, targetEObj);
 					}
 				}
@@ -586,7 +585,7 @@ public class Copy extends Copier {
 
 	@SuppressWarnings("unchecked")
 	public <T extends Element> T getCopy(T source) {
-		return (T)copy(source);
+		return (T) copy(source);
 	}
 
 	public EList<CopyListener> preCopyListeners;
@@ -597,49 +596,49 @@ public class Copy extends Copier {
 	 * Called to handle the copying of a cross reference;
 	 * this adds values or sets a single value as appropriate for the multiplicity
 	 * while omitting any bidirectional reference that isn't in the copy map.
-	 * 
+	 *
 	 * @param eReference
-	 *        the reference to copy.
+	 *            the reference to copy.
 	 * @param eObject
-	 *        the object from which to copy.
+	 *            the object from which to copy.
 	 * @param copyEObject
-	 *        the object to copy to.
+	 *            the object to copy to.
 	 */
 	@Override
 	protected void copyReference(EReference eReference, EObject eObject, EObject copyEObject)
 	{
-		if(eObject.eIsSet(eReference)) {
-			if(eReference.isMany()) {
+		if (eObject.eIsSet(eReference)) {
+			if (eReference.isMany()) {
 				@SuppressWarnings("unchecked")
-				InternalEList<EObject> source = (InternalEList<EObject>)eObject.eGet(eReference);
+				InternalEList<EObject> source = (InternalEList<EObject>) eObject.eGet(eReference);
 				@SuppressWarnings("unchecked")
-				InternalEList<EObject> target = (InternalEList<EObject>)copyEObject.eGet(getTarget(eReference));
-				if(source.isEmpty()) {
+				InternalEList<EObject> target = (InternalEList<EObject>) copyEObject.eGet(getTarget(eReference));
+				if (source.isEmpty()) {
 					target.clear();
 				}
 				else {
 					boolean isBidirectional = eReference.getEOpposite() != null;
 					int index = 0;
-					for(Iterator<EObject> k = resolveProxies ? source.iterator() : source.basicIterator(); k.hasNext();) {
+					for (Iterator<EObject> k = resolveProxies ? source.iterator() : source.basicIterator(); k.hasNext();) {
 						EObject referencedEObject = k.next();
 						EObject copyReferencedEObject = get(referencedEObject);
-						if(copyReferencedEObject == null) {
-							if(useOriginalReferences && !isBidirectional) {
+						if (copyReferencedEObject == null) {
+							if (useOriginalReferences && !isBidirectional) {
 								target.addUnique(index, referencedEObject);
 								++index;
 							}
 						}
 						else {
-							if(isBidirectional) {
+							if (isBidirectional) {
 								int position = target.indexOf(copyReferencedEObject);
-								if(position == -1) {
+								if (position == -1) {
 									target.addUnique(index, copyReferencedEObject);
 								}
-								else if(index != position) {
+								else if (index != position) {
 									target.move(index, copyReferencedEObject);
 								}
 							}
-							else if(!target.contains(copyReferencedEObject)) {
+							else if (!target.contains(copyReferencedEObject)) {
 								// TODO: does not allow multiple identical elements in the list. Problematic?
 								// Check above is necessary, since some references that are not
 								// part of the containment may have already been copied (e.g. in case of
@@ -654,18 +653,18 @@ public class Copy extends Copier {
 			}
 			else {
 				Object referencedEObject = eObject.eGet(eReference, resolveProxies);
-				if(referencedEObject == null) {
+				if (referencedEObject == null) {
 					copyEObject.eSet(getTarget(eReference), null);
 				}
-				else if(referencedEObject instanceof EObject) {
+				else if (referencedEObject instanceof EObject) {
 					// difference to original code in EcoreUtil: we obtain a copy (which might be null or the
 					// source object) of the referenced EObject. This assures that we only set a value of a
 					// reference to something we actually want to have in the target model.
 					// Specific problematic case in original code: classifierBehavior is a reference, but assigning such
 					// a behavior will also add an owned behavior. If we assign a referencedEObject (a behavior) from the
 					// source model in the target, we will actually remove it from the source model (as it is uniquely owned).
-					EObject copyReferencedEObject = copy((EObject)referencedEObject);
-					if(copyReferencedEObject != null) {
+					EObject copyReferencedEObject = copy((EObject) referencedEObject);
+					if (copyReferencedEObject != null) {
 						copyEObject.eSet(getTarget(eReference), copyReferencedEObject);
 					}
 				}
@@ -677,12 +676,12 @@ public class Copy extends Copier {
 	 * Copy all methods from the passed source-model class.
 	 * This function is useful, if the passed class only exist
 	 * as a shallow copy.
-	 * 
+	 *
 	 * @param source
-	 *        A class within the source model
+	 *            A class within the source model
 	 */
 	public void copyMethods(Class source) {
-		for(Behavior method : source.getOwnedBehaviors()) {
+		for (Behavior method : source.getOwnedBehaviors()) {
 			getCopy(method);
 		}
 	}
@@ -691,12 +690,12 @@ public class Copy extends Copier {
 	 * Copy all attributes from the source-model classifier
 	 * This function is useful, if the passed class only exist
 	 * as a shallow copy.
-	 * 
+	 *
 	 * @param source
-	 *        A classifier within the source model
+	 *            A classifier within the source model
 	 */
 	public void copyAttributes(Classifier source) {
-		for(Property attribute : source.getAttributes()) {
+		for (Property attribute : source.getAttributes()) {
 			getCopy(attribute);
 		}
 	}
@@ -705,12 +704,12 @@ public class Copy extends Copier {
 	 * copy all operations from the source-model classifier.
 	 * This function is useful, if the passed class only exist
 	 * as a shallow copy.
-	 * 
+	 *
 	 * @param source
-	 *        A classifier within the source model
+	 *            A classifier within the source model
 	 */
 	public void copyOperations(Classifier source) {
-		for(Operation operation : source.getOperations()) {
+		for (Operation operation : source.getOperations()) {
 			getCopy(operation);
 		}
 	}
@@ -733,7 +732,7 @@ public class Copy extends Copier {
 
 	/**
 	 * Copy a value to a target slot
-	 * 
+	 *
 	 * @param smValue
 	 * @param target
 	 * @return
@@ -745,7 +744,7 @@ public class Copy extends Copier {
 
 	public static ValueSpecification copyDefaultValue(Property source, Property target) {
 		ValueSpecification value = source.getDefaultValue();
-		if(value != null) {
+		if (value != null) {
 			ValueSpecification newValue = target.createDefaultValue(value.getName(), value.getType(), value.eClass());
 			return copyValue(value, newValue);
 		} else {
@@ -754,24 +753,24 @@ public class Copy extends Copier {
 	}
 
 	public static ValueSpecification copyValue(ValueSpecification smValue, ValueSpecification tmValue) {
-		if(smValue instanceof OpaqueExpression) {
-			OpaqueExpression oeValue = (OpaqueExpression)smValue;
-			OpaqueExpression noeValue = (OpaqueExpression)tmValue;
-			for(String language : oeValue.getLanguages()) {
+		if (smValue instanceof OpaqueExpression) {
+			OpaqueExpression oeValue = (OpaqueExpression) smValue;
+			OpaqueExpression noeValue = (OpaqueExpression) tmValue;
+			for (String language : oeValue.getLanguages()) {
 				noeValue.getLanguages().add(language);
 			}
-			for(String body : oeValue.getBodies()) {
+			for (String body : oeValue.getBodies()) {
 				noeValue.getBodies().add(body);
 			}
-		} else if(smValue instanceof LiteralString) {
-			((LiteralString)tmValue).setValue(((LiteralString)smValue).getValue());
-		} else if(smValue instanceof LiteralInteger) {
-			((LiteralInteger)tmValue).setValue(((LiteralInteger)smValue).getValue());
-		} else if(smValue instanceof LiteralUnlimitedNatural) {
-			((LiteralUnlimitedNatural)tmValue).setValue(((LiteralUnlimitedNatural)smValue).getValue());
-		} else if(smValue instanceof LiteralBoolean) {
-			((LiteralBoolean)tmValue).setValue(((LiteralBoolean)smValue).booleanValue());
-		} else if(smValue instanceof LiteralNull) {
+		} else if (smValue instanceof LiteralString) {
+			((LiteralString) tmValue).setValue(((LiteralString) smValue).getValue());
+		} else if (smValue instanceof LiteralInteger) {
+			((LiteralInteger) tmValue).setValue(((LiteralInteger) smValue).getValue());
+		} else if (smValue instanceof LiteralUnlimitedNatural) {
+			((LiteralUnlimitedNatural) tmValue).setValue(((LiteralUnlimitedNatural) smValue).getValue());
+		} else if (smValue instanceof LiteralBoolean) {
+			((LiteralBoolean) tmValue).setValue(((LiteralBoolean) smValue).booleanValue());
+		} else if (smValue instanceof LiteralNull) {
 		}
 		return tmValue;
 	}
@@ -783,11 +782,11 @@ public class Copy extends Copier {
 	 * references from the diagram to model elements would break (of course,
 	 * they could still break, for instance if structural modifications of the
 	 * source model are made).
-	 * 
+	 *
 	 * @param source
-	 *        source model element
+	 *            source model element
 	 * @param dest
-	 *        corresponding target model element
+	 *            corresponding target model element
 	 */
 	public static void copyID(EObject source, EObject target) {
 		copyID(source, target, "");
@@ -796,13 +795,13 @@ public class Copy extends Copier {
 	/**
 	 * Copy the (XML) ID from the source to the destination model element.
 	 * Prefix the ID with a string passed as parameter
-	 * 
+	 *
 	 * @param source
-	 *        source model element
+	 *            source model element
 	 * @param dest
-	 *        corresponding target model element
+	 *            corresponding target model element
 	 * @param prefix
-	 *        a prefix for the target model ID
+	 *            a prefix for the target model ID
 	 */
 	@SuppressWarnings("deprecation")
 	public static void copyID(EObject source, EObject target, String prefix) {
@@ -810,13 +809,13 @@ public class Copy extends Copier {
 		Resource resourceTarget = target.eResource();
 		// TODO: use EcoreUtil getURI (InternalEObject) instead?
 
-		if((resourceSource instanceof XMLResource) && (resourceTarget instanceof XMLResource)) {
-			XMLResource xmlResSource = (XMLResource)resourceSource;
-			XMLResource xmlResTarget = (XMLResource)resourceTarget;
+		if ((resourceSource instanceof XMLResource) && (resourceTarget instanceof XMLResource)) {
+			XMLResource xmlResSource = (XMLResource) resourceSource;
+			XMLResource xmlResTarget = (XMLResource) resourceTarget;
 			String id = prefix + xmlResSource.getID(source);
 			int counter = 0;
 			String uniqueID = id;
-			while(xmlResTarget.getIDToEObjectMap().containsKey(uniqueID)) {
+			while (xmlResTarget.getIDToEObjectMap().containsKey(uniqueID)) {
 				uniqueID = id + counter;
 				counter++;
 			}

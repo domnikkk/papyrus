@@ -24,11 +24,12 @@ import org.eclipse.papyrus.views.properties.environment.CompositeWidgetType;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.views.properties.environment.CompositeWidgetType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class CompositeWidgetTypeItemProvider
-	extends WidgetTypeItemProvider
-	implements
+		extends WidgetTypeItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -38,6 +39,7 @@ public class CompositeWidgetTypeItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public CompositeWidgetTypeItemProvider(AdapterFactory adapterFactory) {
@@ -48,6 +50,7 @@ public class CompositeWidgetTypeItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -63,6 +66,7 @@ public class CompositeWidgetTypeItemProvider
 	 * This returns CompositeWidgetType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,14 +78,15 @@ public class CompositeWidgetTypeItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CompositeWidgetType)object).getLabel();
+		String label = ((CompositeWidgetType) object).getLabel();
 		return label == null || label.length() == 0 ?
-			getString("_UI_CompositeWidgetType_type") :
-			getString("_UI_CompositeWidgetType_type") + " " + label;
+				getString("_UI_CompositeWidgetType_type") :
+				getString("_UI_CompositeWidgetType_type") + " " + label;
 	}
 
 	/**
@@ -89,6 +94,7 @@ public class CompositeWidgetTypeItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,6 +108,7 @@ public class CompositeWidgetTypeItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

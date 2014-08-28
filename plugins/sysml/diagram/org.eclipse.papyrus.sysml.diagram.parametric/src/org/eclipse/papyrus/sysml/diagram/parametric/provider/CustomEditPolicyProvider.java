@@ -64,45 +64,45 @@ public class CustomEditPolicyProvider extends ParametricDiagramEditPolicyProvide
 	@Override
 	public boolean provides(IOperation operation) {
 
-		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
-		if(!(epOperation.getEditPart() instanceof IGraphicalEditPart)) {
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
+		if (!(epOperation.getEditPart() instanceof IGraphicalEditPart)) {
 			return false;
 		}
 
 		// Make sure this concern Parametric Diagram only
-		IGraphicalEditPart gep = (IGraphicalEditPart)epOperation.getEditPart();
+		IGraphicalEditPart gep = (IGraphicalEditPart) epOperation.getEditPart();
 		String diagramType = gep.getNotationView().getDiagram().getType();
-		if(!ElementTypes.DIAGRAM_ID.equals(diagramType)) {
+		if (!ElementTypes.DIAGRAM_ID.equals(diagramType)) {
 			return false;
 		}
 
 		// provides for the main diagram edit part
-		if(gep instanceof ParametricDiagramEditPart) {
+		if (gep instanceof ParametricDiagramEditPart) {
 			return true;
 		}
 
 		// Provides for edit parts that represent nodes in Internal Block diagram
-		if(gep instanceof AbstractElementEditPart) {
+		if (gep instanceof AbstractElementEditPart) {
 			return true;
 		}
-		if(gep instanceof AbstractElementBorderEditPart) {
+		if (gep instanceof AbstractElementBorderEditPart) {
 			return true;
 		}
 
 		// Provides for edit parts that represent edges in Internal Block diagram
-		if(gep instanceof AbstractElementLinkEditPart) {
+		if (gep instanceof AbstractElementLinkEditPart) {
 			return true;
 		}
 
-		if(gep instanceof ResizableCompartmentEditPart) {
+		if (gep instanceof ResizableCompartmentEditPart) {
 			return true;
 		}
 
-		if(gep instanceof ConstraintSpecificationEditPartCN) {
+		if (gep instanceof ConstraintSpecificationEditPartCN) {
 			return true;
 		}
 
-		if(gep instanceof ConstraintEditPartCN) {
+		if (gep instanceof ConstraintEditPartCN) {
 			return true;
 		}
 
@@ -113,74 +113,74 @@ public class CustomEditPolicyProvider extends ParametricDiagramEditPolicyProvide
 	public void createEditPolicies(EditPart editPart) {
 		super.createEditPolicies(editPart);
 
-		if(editPart instanceof ParametricDiagramEditPart) {
+		if (editPart instanceof ParametricDiagramEditPart) {
 			editPart.installEditPolicy(DuplicatePasteEditPolicy.PASTE_ROLE, new CustomDuplicatePasteEditPolicy());
 			editPart.installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new CustomDiagramDropEditPolicy());
-			// no installation of other policies. 
+			// no installation of other policies.
 			return;
 		}
 
 		editPart.installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new CustomDragDropEditPolicy());
 
-		if((editPart instanceof ConstraintEditPart) || (editPart instanceof ConstraintEditPartCN)) {
+		if ((editPart instanceof ConstraintEditPart) || (editPart instanceof ConstraintEditPartCN)) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomParametricSemanticPolicy());
 			editPart.installEditPolicy(EditPolicyRoles.CREATION_ROLE, new DefaultCreationEditPolicy());
 			editPart.installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new DefaultGraphicalNodeEditPolicy());
 		}
 
-		if((editPart instanceof CommentEditPart) || (editPart instanceof CommentEditPartCN)) {
+		if ((editPart instanceof CommentEditPart) || (editPart instanceof CommentEditPartCN)) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomDefaultSemanticEditPolicy());
 			editPart.installEditPolicy(EditPolicyRoles.CREATION_ROLE, new DefaultCreationEditPolicy());
 			editPart.installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new DefaultGraphicalNodeEditPolicy());
 		}
 
-		if(editPart instanceof BlockPropertyCompositeEditPart) {
+		if (editPart instanceof BlockPropertyCompositeEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new CustomBlockPropertyCompositeDropEditPolicy());
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomParametricSemanticPolicy());
 		}
 
-		if(editPart instanceof BlockPropertyStructureCompartmentEditPart) {
+		if (editPart instanceof BlockPropertyStructureCompartmentEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomBlockPropertyStructureCompartmentSemanticEditPolicy());
 			editPart.installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new CustomBlockPropertyStructureCompartmentEditPartDropEditPolicy());
 			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new DefaultXYLayoutEditPolicy());
 		}
 
-		if(editPart instanceof CustomBlockCompositeEditPartTN) {
+		if (editPart instanceof CustomBlockCompositeEditPartTN) {
 			editPart.installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new CustomBlockCompositeDropEditPolicy());
 			editPart.installEditPolicy(EditPolicyRoles.CREATION_ROLE, new StructuredClassifierCreationEditPolicy());
 
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomBlockCompositeSemanticEditPolicy());
 		}
 
-		if(editPart instanceof StructureCompartmentEditPart) {
+		if (editPart instanceof StructureCompartmentEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomStructureCompartmentSemanticEditPolicy());
 			editPart.installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new CustomStructureClassifierDropEditPolicy());
 			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new DefaultXYLayoutEditPolicy());
 		}
 
-		if(editPart instanceof DependencyEditPart) {
+		if (editPart instanceof DependencyEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomDefaultSemanticEditPolicy());
 		}
 
-		if(editPart instanceof ConnectorEditPart) {
+		if (editPart instanceof ConnectorEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomDefaultSemanticEditPolicy());
 		}
-		
-		if(editPart instanceof CustomConstraintBlockPropertyCompositeEditPart) {
+
+		if (editPart instanceof CustomConstraintBlockPropertyCompositeEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new CustomBlockPropertyCompositeDropEditPolicy());
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomParametricSemanticPolicy());
 		}
-		if(editPart instanceof ConstraintParameterAffixedNodeEditPart) {
+		if (editPart instanceof ConstraintParameterAffixedNodeEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new TypedElementDropEditPolicy());
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomParametricSemanticPolicy());
 		}
-		if(editPart instanceof CustomBlockCompositeEditPartTN) {
+		if (editPart instanceof CustomBlockCompositeEditPartTN) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomParametricSemanticPolicy());
 		}
-		if(editPart instanceof ConstraintSpecificationEditPartCN) {
+		if (editPart instanceof ConstraintSpecificationEditPartCN) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomParametricSemanticPolicy());
 		}
-		if(editPart instanceof ConstraintEditPartCN) {
+		if (editPart instanceof ConstraintEditPartCN) {
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomParametricSemanticPolicy());
 		}
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -88,8 +88,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInteractionName_5001Parser() {
-		if(interactionName_5001Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (interactionName_5001Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("sd: {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("{0}"); //$NON-NLS-1$
@@ -108,7 +108,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getLifelineName_5002Parser() {
-		if(lifelineName_5002Parser == null) {
+		if (lifelineName_5002Parser == null) {
 			lifelineName_5002Parser = new LifelineCustomParsers();
 		}
 		return lifelineName_5002Parser;
@@ -123,8 +123,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getStateInvariantName_5008Parser() {
-		if(stateInvariantName_5008Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (stateInvariantName_5008Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			stateInvariantName_5008Parser = parser;
 		}
@@ -140,7 +140,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getStateInvariantLabel_5023Parser() {
-		if(stateInvariantLabel_5023Parser == null) {
+		if (stateInvariantLabel_5023Parser == null) {
 			stateInvariantLabel_5023Parser = new ConstraintParser();
 		}
 		return stateInvariantLabel_5023Parser;
@@ -155,7 +155,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getTimeConstraintLabel_5009Parser() {
-		if(timeConstraintLabel_5009Parser == null) {
+		if (timeConstraintLabel_5009Parser == null) {
 			timeConstraintLabel_5009Parser = new TimeConstraintParser();
 		}
 		return timeConstraintLabel_5009Parser;
@@ -170,7 +170,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getTimeConstraintLabel_5013Parser() {
-		if(timeConstraintLabel_5013Parser == null) {
+		if (timeConstraintLabel_5013Parser == null) {
 			timeConstraintLabel_5013Parser = new AppliedStereotypeParser();
 		}
 		return timeConstraintLabel_5013Parser;
@@ -185,7 +185,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getTimeObservationLabel_5010Parser() {
-		if(timeObservationLabel_5010Parser == null) {
+		if (timeObservationLabel_5010Parser == null) {
 			timeObservationLabel_5010Parser = new TimeObservationParser();
 		}
 		return timeObservationLabel_5010Parser;
@@ -200,7 +200,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getTimeObservationLabel_5014Parser() {
-		if(timeObservationLabel_5014Parser == null) {
+		if (timeObservationLabel_5014Parser == null) {
 			timeObservationLabel_5014Parser = new AppliedStereotypeParser();
 		}
 		return timeObservationLabel_5014Parser;
@@ -215,7 +215,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDurationConstraintLabel_5011Parser() {
-		if(durationConstraintLabel_5011Parser == null) {
+		if (durationConstraintLabel_5011Parser == null) {
 			durationConstraintLabel_5011Parser = new TimeConstraintParser();
 		}
 		return durationConstraintLabel_5011Parser;
@@ -230,7 +230,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDurationConstraintLabel_5015Parser() {
-		if(durationConstraintLabel_5015Parser == null) {
+		if (durationConstraintLabel_5015Parser == null) {
 			durationConstraintLabel_5015Parser = new AppliedStereotypeParser();
 		}
 		return durationConstraintLabel_5015Parser;
@@ -245,8 +245,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInteractionUseName_5003Parser() {
-		if(interactionUseName_5003Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (interactionUseName_5003Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Ref"); //$NON-NLS-1$
 			parser.setEditorPattern("Ref"); //$NON-NLS-1$
@@ -265,7 +265,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInteractionUseName_5004Parser() {
-		if(interactionUseName_5004Parser == null) {
+		if (interactionUseName_5004Parser == null) {
 			interactionUseName_5004Parser = new InteractionUseCustomParsers();
 		}
 		return interactionUseName_5004Parser;
@@ -280,8 +280,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getContinuationName_5007Parser() {
-		if(continuationName_5007Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (continuationName_5007Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			continuationName_5007Parser = parser;
 		}
@@ -297,8 +297,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getConstraintName_5005Parser() {
-		if(constraintName_5005Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (constraintName_5005Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			constraintName_5005Parser = parser;
 		}
@@ -314,7 +314,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getConstraintLabel_5012Parser() {
-		if(constraintLabel_5012Parser == null) {
+		if (constraintLabel_5012Parser == null) {
 			constraintLabel_5012Parser = new ConstraintParser();
 		}
 		return constraintLabel_5012Parser;
@@ -329,7 +329,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getCommentBody_5006Parser() {
-		if(commentBody_5006Parser == null) {
+		if (commentBody_5006Parser == null) {
 			commentBody_5006Parser = new CommentParser();
 		}
 		return commentBody_5006Parser;
@@ -344,7 +344,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDurationConstraintLabel_5018Parser() {
-		if(durationConstraintLabel_5018Parser == null) {
+		if (durationConstraintLabel_5018Parser == null) {
 			durationConstraintLabel_5018Parser = new TimeConstraintParser();
 		}
 		return durationConstraintLabel_5018Parser;
@@ -359,7 +359,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDurationConstraintLabel_5019Parser() {
-		if(durationConstraintLabel_5019Parser == null) {
+		if (durationConstraintLabel_5019Parser == null) {
 			durationConstraintLabel_5019Parser = new AppliedStereotypeParser();
 		}
 		return durationConstraintLabel_5019Parser;
@@ -374,7 +374,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDurationObservationLabel_5016Parser() {
-		if(durationObservationLabel_5016Parser == null) {
+		if (durationObservationLabel_5016Parser == null) {
 			durationObservationLabel_5016Parser = new DurationObservationParser();
 		}
 		return durationObservationLabel_5016Parser;
@@ -389,7 +389,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDurationObservationLabel_5017Parser() {
-		if(durationObservationLabel_5017Parser == null) {
+		if (durationObservationLabel_5017Parser == null) {
 			durationObservationLabel_5017Parser = new AppliedStereotypeParser();
 		}
 		return durationObservationLabel_5017Parser;
@@ -404,7 +404,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMessageName_6001Parser() {
-		if(messageName_6001Parser == null) {
+		if (messageName_6001Parser == null) {
 			messageName_6001Parser = new MessageCustomParser();
 		}
 		return messageName_6001Parser;
@@ -419,7 +419,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMessageLabel_6008Parser() {
-		if(messageLabel_6008Parser == null) {
+		if (messageLabel_6008Parser == null) {
 			messageLabel_6008Parser = new AppliedStereotypeParser();
 		}
 		return messageLabel_6008Parser;
@@ -434,7 +434,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMessageName_6002Parser() {
-		if(messageName_6002Parser == null) {
+		if (messageName_6002Parser == null) {
 			messageName_6002Parser = new MessageCustomParser();
 		}
 		return messageName_6002Parser;
@@ -449,7 +449,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMessageLabel_6009Parser() {
-		if(messageLabel_6009Parser == null) {
+		if (messageLabel_6009Parser == null) {
 			messageLabel_6009Parser = new AppliedStereotypeParser();
 		}
 		return messageLabel_6009Parser;
@@ -464,7 +464,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMessageName_6003Parser() {
-		if(messageName_6003Parser == null) {
+		if (messageName_6003Parser == null) {
 			messageName_6003Parser = new MessageCustomParser();
 		}
 		return messageName_6003Parser;
@@ -479,7 +479,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMessageLabel_6010Parser() {
-		if(messageLabel_6010Parser == null) {
+		if (messageLabel_6010Parser == null) {
 			messageLabel_6010Parser = new AppliedStereotypeParser();
 		}
 		return messageLabel_6010Parser;
@@ -494,7 +494,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMessageName_6004Parser() {
-		if(messageName_6004Parser == null) {
+		if (messageName_6004Parser == null) {
 			messageName_6004Parser = new MessageCustomParser();
 		}
 		return messageName_6004Parser;
@@ -509,7 +509,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMessageLabel_6011Parser() {
-		if(messageLabel_6011Parser == null) {
+		if (messageLabel_6011Parser == null) {
 			messageLabel_6011Parser = new AppliedStereotypeParser();
 		}
 		return messageLabel_6011Parser;
@@ -524,7 +524,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMessageName_6005Parser() {
-		if(messageName_6005Parser == null) {
+		if (messageName_6005Parser == null) {
 			messageName_6005Parser = new MessageCustomParser();
 		}
 		return messageName_6005Parser;
@@ -539,7 +539,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMessageLabel_6012Parser() {
-		if(messageLabel_6012Parser == null) {
+		if (messageLabel_6012Parser == null) {
 			messageLabel_6012Parser = new AppliedStereotypeParser();
 		}
 		return messageLabel_6012Parser;
@@ -554,7 +554,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMessageName_6006Parser() {
-		if(messageName_6006Parser == null) {
+		if (messageName_6006Parser == null) {
 			messageName_6006Parser = new MessageCustomParser();
 		}
 		return messageName_6006Parser;
@@ -569,7 +569,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMessageLabel_6013Parser() {
-		if(messageLabel_6013Parser == null) {
+		if (messageLabel_6013Parser == null) {
 			messageLabel_6013Parser = new AppliedStereotypeParser();
 		}
 		return messageLabel_6013Parser;
@@ -584,7 +584,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMessageName_6007Parser() {
-		if(messageName_6007Parser == null) {
+		if (messageName_6007Parser == null) {
 			messageName_6007Parser = new MessageCustomParser();
 		}
 		return messageName_6007Parser;
@@ -599,7 +599,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMessageLabel_6014Parser() {
-		if(messageLabel_6014Parser == null) {
+		if (messageLabel_6014Parser == null) {
 			messageLabel_6014Parser = new AppliedStereotypeParser();
 		}
 		return messageLabel_6014Parser;
@@ -614,7 +614,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getGeneralOrderingLabel_6015Parser() {
-		if(generalOrderingLabel_6015Parser == null) {
+		if (generalOrderingLabel_6015Parser == null) {
 			generalOrderingLabel_6015Parser = new AppliedStereotypeParser();
 		}
 		return generalOrderingLabel_6015Parser;
@@ -629,7 +629,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getConstraintContextName_8501Parser() {
-		if(constraintContextName_8501Parser == null) {
+		if (constraintContextName_8501Parser == null) {
 			constraintContextName_8501Parser = new AppliedStereotypeParser();
 		}
 		return constraintContextName_8501Parser;
@@ -639,7 +639,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	protected IParser getParser(int visualID) {
-		switch(visualID) {
+		switch (visualID) {
 		case InteractionNameEditPart.VISUAL_ID:
 			return getInteractionName_5001Parser();
 		case InteractionUseNameEditPart.VISUAL_ID:
@@ -718,7 +718,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 
 	/**
 	 * Utility method that consults ParserService
-	 * 
+	 *
 	 * @generated
 	 */
 	public static IParser getParser(IElementType type, EObject object, String parserHint) {
@@ -728,13 +728,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	@Override
 	public IParser getParser(IAdaptable hint) {
-		String vid = (String)hint.getAdapter(String.class);
-		if(vid != null) {
+		String vid = (String) hint.getAdapter(String.class);
+		if (vid != null) {
 			return getParser(UMLVisualIDRegistry.getVisualID(vid));
 		}
-		View view = (View)hint.getAdapter(View.class);
-		if(view != null) {
+		View view = (View) hint.getAdapter(View.class);
+		if (view != null) {
 			return getParser(UMLVisualIDRegistry.getVisualID(view));
 		}
 		return null;
@@ -743,10 +744,11 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean provides(IOperation operation) {
-		if(operation instanceof GetParserOperation) {
-			IAdaptable hint = ((GetParserOperation)operation).getHint();
-			if(UMLElementTypes.getElement(hint) == null) {
+		if (operation instanceof GetParserOperation) {
+			IAdaptable hint = ((GetParserOperation) operation).getHint();
+			if (UMLElementTypes.getElement(hint) == null) {
 				return false;
 			}
 			return getParser(hint) != null;
@@ -776,8 +778,9 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		/**
 		 * @generated
 		 */
+		@Override
 		public Object getAdapter(Class adapter) {
-			if(IElementType.class.equals(adapter)) {
+			if (IElementType.class.equals(adapter)) {
 				return elementType;
 			}
 			return super.getAdapter(adapter);

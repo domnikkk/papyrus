@@ -66,7 +66,7 @@ public class PreSaveProfileListener implements ISaveEventListener {
 	 * This function is called before the user make a "save" action
 	 */
 	public void doSave(DoSaveEvent event) {
-		if(event.isAutoSave()) {
+		if (event.isAutoSave()) {
 			return;
 		}
 		try {
@@ -87,16 +87,16 @@ public class PreSaveProfileListener implements ISaveEventListener {
 			IModel umlModel = modelSet.getModel(UmlModel.MODEL_ID);
 
 			EObject profileEObject = null;
-			if(umlModel != null) {
-				profileEObject = ((UmlModel)umlModel).lookupRoot();
+			if (umlModel != null) {
+				profileEObject = ((UmlModel) umlModel).lookupRoot();
 			}
 
-			if(profileEObject instanceof Profile) {
-				rootProfile = (Profile)profileEObject;
+			if (profileEObject instanceof Profile) {
+				rootProfile = (Profile) profileEObject;
 			}
 
-			if(rootProfile == null) {
-				return; //We're not saving a profile model
+			if (rootProfile == null) {
+				return; // We're not saving a profile model
 			}
 
 			/**
@@ -108,28 +108,28 @@ public class PreSaveProfileListener implements ISaveEventListener {
 			Shell activeShell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 
 			boolean result = MessageDialog.openQuestion(activeShell, PAPYRUS_QUESTION, DEFINE_MSG);
-			if(!result) {
+			if (!result) {
 				return;
 			}
 
 			ProfileDefinitionDialog dialog = new ProfileDefinitionDialog(activeShell, rootProfile);
 			dialog.open();
-			if(dialog.getReturnCode() == Window.OK) {
+			if (dialog.getReturnCode() == Window.OK) {
 				PapyrusDefinitionAnnotation papyrusAnnotation = dialog.getPapyrusDefinitionAnnotation();
 				TransactionalEditingDomain domain = ServiceUtils.getInstance().getTransactionalEditingDomain(registry);
-				//evaluate contraint of profiles
-				AdapterFactory adapterFactory = domain instanceof AdapterFactoryEditingDomain ? ((AdapterFactoryEditingDomain)domain).getAdapterFactory() : null;
+				// evaluate contraint of profiles
+				AdapterFactory adapterFactory = domain instanceof AdapterFactoryEditingDomain ? ((AdapterFactoryEditingDomain) domain).getAdapterFactory() : null;
 				Diagnostician diagnostician = createDiagnostician(adapterFactory, new NullProgressMonitor());
 				BasicDiagnostic diagnostic = diagnostician.createDefaultDiagnostic(rootProfile);
 				diagnostic.getSeverity();
 				Map<Object, Object> context = diagnostician.createDefaultContext();
 				diagnostician.validate(rootProfile, diagnostic, context);
-				if(canDefine(diagnostic)) {
+				if (canDefine(diagnostic)) {
 
 					DefineProfileCommand cmd = new DefineProfileCommand(domain, papyrusAnnotation, rootProfile, dialog.saveConstraintInDefinition());
 					try {
 						IStatus status = CheckedOperationHistory.getInstance().execute(cmd, new NullProgressMonitor(), null);
-						switch(status.getSeverity()) {
+						switch (status.getSeverity()) {
 						case IStatus.OK:
 							MessageDialog.openInformation(activeShell, "The profile has been defined", "The profile has been successfully defined");
 							break;
@@ -162,28 +162,28 @@ public class PreSaveProfileListener implements ISaveEventListener {
 
 	protected boolean canDefine(Diagnostic diagnostic) {
 		int severity = diagnostic.getSeverity();
-		if(severity == Diagnostic.CANCEL) {
+		if (severity == Diagnostic.CANCEL) {
 			return false;
 		}
-		if(severity == Diagnostic.ERROR) {
+		if (severity == Diagnostic.ERROR) {
 			//
-			for(Diagnostic childDiagnostic : diagnostic.getChildren()) {
-				if(childDiagnostic.getSeverity() != Diagnostic.ERROR) {
+			for (Diagnostic childDiagnostic : diagnostic.getChildren()) {
+				if (childDiagnostic.getSeverity() != Diagnostic.ERROR) {
 					continue;
 				}
 
-				if(childDiagnostic.getData().isEmpty()) {
+				if (childDiagnostic.getData().isEmpty()) {
 					continue;
 				}
 
-				//Only fail on validation errors occuring on the UML Profile itself; do not fail on its Ecore definitions
-				if(childDiagnostic.getData().get(0) instanceof Element) {
+				// Only fail on validation errors occuring on the UML Profile itself; do not fail on its Ecore definitions
+				if (childDiagnostic.getData().get(0) instanceof Element) {
 					return false;
 				}
 			}
 		}
 
-		//Ok, Warning, Info
+		// Ok, Warning, Info
 		return true;
 	}
 
@@ -192,9 +192,9 @@ public class PreSaveProfileListener implements ISaveEventListener {
 
 			@Override
 			public String getObjectLabel(EObject eObject) {
-				if(adapterFactory != null && !eObject.eIsProxy()) {
-					IItemLabelProvider itemLabelProvider = (IItemLabelProvider)adapterFactory.adapt(eObject, IItemLabelProvider.class);
-					if(itemLabelProvider != null) {
+				if (adapterFactory != null && !eObject.eIsProxy()) {
+					IItemLabelProvider itemLabelProvider = (IItemLabelProvider) adapterFactory.adapt(eObject, IItemLabelProvider.class);
+					if (itemLabelProvider != null) {
 						return itemLabelProvider.getText(eObject);
 					}
 				}
@@ -213,8 +213,8 @@ public class PreSaveProfileListener implements ISaveEventListener {
 		// Do not show a dialog, as in the original version since the user sees the result directly
 		// in the model explorer
 		Resource resource = profil.eResource();
-		if(resource != null) {
-			if(profil != null) {
+		if (resource != null) {
+			if (profil != null) {
 				ValidationTool vt = new ValidationTool(profil);
 				vt.deleteSubMarkers();
 			}
@@ -223,7 +223,7 @@ public class PreSaveProfileListener implements ISaveEventListener {
 			// IFile file = wsRoot.getFile(path);
 			// eclipseResourcesUtil.deleteMarkers (file);
 			EclipseResourcesUtil eclipseResourcesUtil = new EclipseResourcesUtil();
-			for(Diagnostic childDiagnostic : diagnostic.getChildren()) {
+			for (Diagnostic childDiagnostic : diagnostic.getChildren()) {
 				eclipseResourcesUtil.createMarkers(resource, childDiagnostic);
 				// createMarkersOnDi (file, childDiagnostic);
 			}

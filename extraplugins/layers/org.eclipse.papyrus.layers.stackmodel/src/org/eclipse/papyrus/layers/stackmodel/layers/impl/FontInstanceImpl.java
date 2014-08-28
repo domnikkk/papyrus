@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -26,10 +26,10 @@ import org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FontInstanceImpl#getFontColor <em>Font Color</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FontInstanceImpl#getFontName <em>Font Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FontInstanceImpl#getFontHeigh <em>Font Heigh</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FontInstanceImpl#isBold <em>Bold</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FontInstanceImpl#getFontColor <em>Font Color</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FontInstanceImpl#getFontName <em>Font Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FontInstanceImpl#getFontHeigh <em>Font Heigh</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FontInstanceImpl#isBold <em>Bold</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The default value of the '{@link #getFontColor() <em>Font Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFontColor()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The cached value of the '{@link #getFontColor() <em>Font Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFontColor()
 	 * @generated
 	 * @ordered
@@ -60,6 +62,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The default value of the '{@link #getFontName() <em>Font Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFontName()
 	 * @generated
 	 * @ordered
@@ -70,6 +73,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The cached value of the '{@link #getFontName() <em>Font Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFontName()
 	 * @generated
 	 * @ordered
@@ -80,6 +84,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The default value of the '{@link #getFontHeigh() <em>Font Heigh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFontHeigh()
 	 * @generated
 	 * @ordered
@@ -90,6 +95,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The cached value of the '{@link #getFontHeigh() <em>Font Heigh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFontHeigh()
 	 * @generated
 	 * @ordered
@@ -100,6 +106,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The default value of the '{@link #isBold() <em>Bold</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isBold()
 	 * @generated
 	 * @ordered
@@ -110,6 +117,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The cached value of the '{@link #isBold() <em>Bold</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isBold()
 	 * @generated
 	 * @ordered
@@ -119,6 +127,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FontInstanceImpl() {
@@ -128,6 +137,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,8 +148,10 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getFontColor() {
 		return fontColor;
 	}
@@ -147,20 +159,25 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setFontColor(int newFontColor) {
 		int oldFontColor = fontColor;
 		fontColor = newFontColor;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.FONT_INSTANCE__FONT_COLOR, oldFontColor, fontColor));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getFontName() {
 		return fontName;
 	}
@@ -168,20 +185,25 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setFontName(String newFontName) {
 		String oldFontName = fontName;
 		fontName = newFontName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.FONT_INSTANCE__FONT_NAME, oldFontName, fontName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getFontHeigh() {
 		return fontHeigh;
 	}
@@ -189,20 +211,25 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setFontHeigh(int newFontHeigh) {
 		int oldFontHeigh = fontHeigh;
 		fontHeigh = newFontHeigh;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.FONT_INSTANCE__FONT_HEIGH, oldFontHeigh, fontHeigh));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isBold() {
 		return bold;
 	}
@@ -210,31 +237,35 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBold(boolean newBold) {
 		boolean oldBold = bold;
 		bold = newBold;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.FONT_INSTANCE__BOLD, oldBold, bold));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersPackage.FONT_INSTANCE__FONT_COLOR:
-				return getFontColor();
-			case LayersPackage.FONT_INSTANCE__FONT_NAME:
-				return getFontName();
-			case LayersPackage.FONT_INSTANCE__FONT_HEIGH:
-				return getFontHeigh();
-			case LayersPackage.FONT_INSTANCE__BOLD:
-				return isBold();
+		case LayersPackage.FONT_INSTANCE__FONT_COLOR:
+			return getFontColor();
+		case LayersPackage.FONT_INSTANCE__FONT_NAME:
+			return getFontName();
+		case LayersPackage.FONT_INSTANCE__FONT_HEIGH:
+			return getFontHeigh();
+		case LayersPackage.FONT_INSTANCE__BOLD:
+			return isBold();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -242,23 +273,24 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersPackage.FONT_INSTANCE__FONT_COLOR:
-				setFontColor((Integer)newValue);
-				return;
-			case LayersPackage.FONT_INSTANCE__FONT_NAME:
-				setFontName((String)newValue);
-				return;
-			case LayersPackage.FONT_INSTANCE__FONT_HEIGH:
-				setFontHeigh((Integer)newValue);
-				return;
-			case LayersPackage.FONT_INSTANCE__BOLD:
-				setBold((Boolean)newValue);
-				return;
+		case LayersPackage.FONT_INSTANCE__FONT_COLOR:
+			setFontColor((Integer) newValue);
+			return;
+		case LayersPackage.FONT_INSTANCE__FONT_NAME:
+			setFontName((String) newValue);
+			return;
+		case LayersPackage.FONT_INSTANCE__FONT_HEIGH:
+			setFontHeigh((Integer) newValue);
+			return;
+		case LayersPackage.FONT_INSTANCE__BOLD:
+			setBold((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -266,23 +298,24 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersPackage.FONT_INSTANCE__FONT_COLOR:
-				setFontColor(FONT_COLOR_EDEFAULT);
-				return;
-			case LayersPackage.FONT_INSTANCE__FONT_NAME:
-				setFontName(FONT_NAME_EDEFAULT);
-				return;
-			case LayersPackage.FONT_INSTANCE__FONT_HEIGH:
-				setFontHeigh(FONT_HEIGH_EDEFAULT);
-				return;
-			case LayersPackage.FONT_INSTANCE__BOLD:
-				setBold(BOLD_EDEFAULT);
-				return;
+		case LayersPackage.FONT_INSTANCE__FONT_COLOR:
+			setFontColor(FONT_COLOR_EDEFAULT);
+			return;
+		case LayersPackage.FONT_INSTANCE__FONT_NAME:
+			setFontName(FONT_NAME_EDEFAULT);
+			return;
+		case LayersPackage.FONT_INSTANCE__FONT_HEIGH:
+			setFontHeigh(FONT_HEIGH_EDEFAULT);
+			return;
+		case LayersPackage.FONT_INSTANCE__BOLD:
+			setBold(BOLD_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -290,19 +323,20 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersPackage.FONT_INSTANCE__FONT_COLOR:
-				return fontColor != FONT_COLOR_EDEFAULT;
-			case LayersPackage.FONT_INSTANCE__FONT_NAME:
-				return FONT_NAME_EDEFAULT == null ? fontName != null : !FONT_NAME_EDEFAULT.equals(fontName);
-			case LayersPackage.FONT_INSTANCE__FONT_HEIGH:
-				return fontHeigh != FONT_HEIGH_EDEFAULT;
-			case LayersPackage.FONT_INSTANCE__BOLD:
-				return bold != BOLD_EDEFAULT;
+		case LayersPackage.FONT_INSTANCE__FONT_COLOR:
+			return fontColor != FONT_COLOR_EDEFAULT;
+		case LayersPackage.FONT_INSTANCE__FONT_NAME:
+			return FONT_NAME_EDEFAULT == null ? fontName != null : !FONT_NAME_EDEFAULT.equals(fontName);
+		case LayersPackage.FONT_INSTANCE__FONT_HEIGH:
+			return fontHeigh != FONT_HEIGH_EDEFAULT;
+		case LayersPackage.FONT_INSTANCE__BOLD:
+			return bold != BOLD_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -310,18 +344,20 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void setValueFromString(String value) {
-		
-		if(value==null || value.length()==0) {
+
+		if (value == null || value.length() == 0) {
 			return;
 		}
-			
-		// The value should contains the  values, separated by comma
+
+		// The value should contains the values, separated by comma
 		// "FontName, FontHeight, FontColor, Bold"
 		String[] values = value.split(",");
-		int i=0;
+		int i = 0;
 		try {
 			setFontName(values[i++].trim());
 			setFontHeigh(Integer.parseInt(values[i++].trim()));
@@ -336,31 +372,36 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void setValueFromInstance(TypeInstance value) {
-		
+
 		// Check if the value is of the right instance
-		if( ! getClass().isInstance(value) ) {
+		if (!getClass().isInstance(value)) {
 			return;
 		}
-		
-		FontInstance instance = (FontInstance)value;
+
+		FontInstance instance = (FontInstance) value;
 		setFontName(instance.getFontName());
 		setFontHeigh(instance.getFontHeigh());
 		setFontColor(instance.getFontColor());
 		setBold(instance.isBold());
 	}
 
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (fontColor: ");
@@ -375,4 +416,4 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 		return result.toString();
 	}
 
-} //FontInstanceImpl
+} // FontInstanceImpl

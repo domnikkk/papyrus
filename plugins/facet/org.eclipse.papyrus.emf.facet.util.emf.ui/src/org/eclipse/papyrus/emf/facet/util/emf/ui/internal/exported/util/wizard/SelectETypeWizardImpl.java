@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2011, 2012 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Nicolas Guyomar (Mia-Software) - Bug 349546 - EMF Facet facetSet editor
  *  Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
@@ -18,6 +18,10 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.ETypedElement;
+import org.eclipse.jface.window.Window;
+import org.eclipse.jface.wizard.IWizardPage;
+import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.papyrus.emf.facet.util.core.DebugUtils;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Messages;
@@ -28,10 +32,6 @@ import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.util.wizard.p
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.wizard.ISelectETypeWizard;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.wizard.page.ISelectEClassifierWizardPage;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.wizard.page.ISelectEPackageWizardPage;
-import org.eclipse.jface.window.Window;
-import org.eclipse.jface.wizard.IWizardPage;
-import org.eclipse.jface.wizard.Wizard;
-import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
@@ -73,6 +73,7 @@ public class SelectETypeWizardImpl<T extends EClassifier> extends Wizard
 		addPage(this.eClassifierWP);
 	}
 
+	@Override
 	public int open() {
 		int result = Window.CANCEL;
 
@@ -88,6 +89,7 @@ public class SelectETypeWizardImpl<T extends EClassifier> extends Wizard
 		return true;
 	}
 
+	@Override
 	public T getSelectedEClassifier() {
 		return this.eClassifier;
 	}
@@ -100,6 +102,7 @@ public class SelectETypeWizardImpl<T extends EClassifier> extends Wizard
 		return this.ePackageWP;
 	}
 
+	@Override
 	public boolean finish() {
 		final boolean result = performFinish();
 		dispose();
@@ -108,10 +111,12 @@ public class SelectETypeWizardImpl<T extends EClassifier> extends Wizard
 		return result;
 	}
 
+	@Override
 	public IWizardPage getCurrentPage() {
 		return getSynchronizedPage(getContainer().getCurrentPage());
 	}
 
+	@Override
 	public IWizardPage next() {
 		DebugUtils.debug(SelectETypeWizardImpl.DEBUG);
 		final IWizardPage nextPage = getNextPage(getContainer()
@@ -120,6 +125,7 @@ public class SelectETypeWizardImpl<T extends EClassifier> extends Wizard
 		return getSynchronizedPage(nextPage);
 	}
 
+	@Override
 	public IWizardPage previous() {
 		final IWizardPage previousPage = getPreviousPage(getContainer()
 				.getCurrentPage());

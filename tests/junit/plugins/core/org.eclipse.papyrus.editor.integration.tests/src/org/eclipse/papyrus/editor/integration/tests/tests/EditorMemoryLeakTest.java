@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
 import org.eclipse.papyrus.infra.services.validation.commands.ValidateModelCommand;
-import org.eclipse.papyrus.junit.utils.rules.MemoryLeakRule;
-import org.eclipse.papyrus.junit.utils.rules.MemoryLeakRule.SoftReferenceSensitive;
+import org.eclipse.papyrus.junit.framework.classification.rules.MemoryLeakRule;
+import org.eclipse.papyrus.junit.framework.classification.rules.MemoryLeakRule.SoftReferenceSensitive;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.junit.utils.rules.PapyrusEditorFixture;
 import org.eclipse.papyrus.junit.utils.rules.PluginResource;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.service.validation.UMLDiagnostician;
 import org.junit.Rule;
 import org.junit.Test;
@@ -132,7 +132,7 @@ public class EditorMemoryLeakTest extends AbstractPapyrusTest {
 		}
 
 		editor.flushDisplayEvents();
-		
+
 		memory.add(editor.getModel());
 		memory.add(editor.getModel().getAppliedProfile("j2ee"));
 	}
@@ -175,7 +175,7 @@ public class EditorMemoryLeakTest extends AbstractPapyrusTest {
 		}
 
 		editor.flushDisplayEvents();
-		
+
 		memory.add(editor.getModel());
 		memory.add(editor.getModel().getAppliedProfile("j2ee"));
 	}

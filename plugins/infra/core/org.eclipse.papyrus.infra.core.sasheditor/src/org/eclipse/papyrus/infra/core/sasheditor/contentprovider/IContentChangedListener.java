@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.sasheditor.contentprovider;
 
@@ -9,7 +9,7 @@ package org.eclipse.papyrus.infra.core.sasheditor.contentprovider;
  * when the SashContent model has changed.
  * This interface is not used by the sashesWindows itself. It exists to allows ContentProvider
  * implementation to provide a common notification mechanism.
- * 
+ *
  * @author dumoulin
  */
 public interface IContentChangedListener {
@@ -17,7 +17,7 @@ public interface IContentChangedListener {
 	/**
 	 * Event indicating the change.
 	 * TODO The types are not set correctly from user like DI model. But anyway there aren't used by clients.
-	 * 
+	 *
 	 * @author dumoulin
 	 */
 	public class ContentEvent {

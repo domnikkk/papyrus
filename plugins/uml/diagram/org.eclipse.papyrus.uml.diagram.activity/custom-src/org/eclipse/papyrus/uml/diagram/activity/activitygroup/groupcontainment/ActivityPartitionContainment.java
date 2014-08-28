@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * The descriptor for ActivityPartition node used by
  * org.eclipse.papyrus.uml.diagram.common.groups.groupcontainment extension point.
- * 
+ *
  * @author vhemery
  */
 public class ActivityPartitionContainment extends AbstractContainerNodeDescriptor {
@@ -42,9 +42,10 @@ public class ActivityPartitionContainment extends AbstractContainerNodeDescripto
 
 	/**
 	 * Get the eclass of the model eobject represented by the node
-	 * 
+	 *
 	 * @return ActivityPartition eclass
 	 */
+	@Override
 	public EClass getContainerEClass() {
 		return UMLPackage.eINSTANCE.getActivityPartition();
 	}
@@ -52,9 +53,10 @@ public class ActivityPartitionContainment extends AbstractContainerNodeDescripto
 	/**
 	 * Get the list of references linking the ActivityPartition to children
 	 * element.
-	 * 
+	 *
 	 * @return the references to contained elements
 	 */
+	@Override
 	public List<EReference> getChildrenReferences() {
 		List<EReference> references = new ArrayList<EReference>(3);
 		references.add(UMLPackage.eINSTANCE.getActivityPartition_Node());
@@ -65,7 +67,7 @@ public class ActivityPartitionContainment extends AbstractContainerNodeDescripto
 
 	@Override
 	public List<EReference> getParentReferences() {
-		if(parentReferences == null) {
+		if (parentReferences == null) {
 			parentReferences = new ArrayList<EReference>();
 			parentReferences.add(UMLPackage.Literals.ACTIVITY_PARTITION__SUPER_PARTITION);
 			parentReferences.add(UMLPackage.Literals.ACTIVITY_GROUP__IN_ACTIVITY);
@@ -75,7 +77,7 @@ public class ActivityPartitionContainment extends AbstractContainerNodeDescripto
 
 	@Override
 	public Map<EStructuralFeature, EStructuralFeature> getParentEOppositeReferences() {
-		if(parentOpositeReferences == null) {
+		if (parentOpositeReferences == null) {
 			parentOpositeReferences = new HashMap<EStructuralFeature, EStructuralFeature>();
 			parentOpositeReferences.put(UMLPackage.Literals.ACTIVITY_PARTITION__SUPER_PARTITION, UMLPackage.Literals.ACTIVITY_PARTITION__SUBPARTITION);
 			parentOpositeReferences.put(UMLPackage.Literals.ACTIVITY_GROUP__IN_ACTIVITY, UMLPackage.Literals.ACTIVITY__OWNED_GROUP);
@@ -86,9 +88,10 @@ public class ActivityPartitionContainment extends AbstractContainerNodeDescripto
 	@Override
 	public IGraphicalEditPart getCompartmentPartFromView(IGraphicalEditPart editpart) {
 		String hint = "" + ActivityPartitionActivityPartitionContentCompartmentEditPart.VISUAL_ID;
-		return ((GraphicalEditPart)editpart).getChildBySemanticHintOnPrimaryView(hint);
+		return ((GraphicalEditPart) editpart).getChildBySemanticHintOnPrimaryView(hint);
 	}
 
+	@Override
 	public int getGroupPriority() {
 		return IGroupPriority.ACTIVITY_PARTITION_PRIORITY;
 	}

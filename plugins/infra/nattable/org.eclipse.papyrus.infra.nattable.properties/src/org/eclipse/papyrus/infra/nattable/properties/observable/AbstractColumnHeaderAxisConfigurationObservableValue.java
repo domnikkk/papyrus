@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,27 +25,27 @@ import org.eclipse.papyrus.infra.nattable.utils.TableEditingDomainUtils;
 
 /**
  * Abstract class for the columnHeaderAxisConfiguration
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public abstract class AbstractColumnHeaderAxisConfigurationObservableValue extends AbstractConfigurationElementObservableValue {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param table
-	 *        the managed table
+	 *            the managed table
 	 * @param managedFeature
-	 *        the managed feature
+	 *            the managed feature
 	 */
 	public AbstractColumnHeaderAxisConfigurationObservableValue(Table table, EStructuralFeature managedFeature) {
 		super(table, managedFeature);
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the header axis configuration to use to get the value
 	 */
@@ -55,9 +55,9 @@ public abstract class AbstractColumnHeaderAxisConfigurationObservableValue exten
 	}
 
 	/**
-	 * 
+	 *
 	 * @param value
-	 *        the new value
+	 *            the new value
 	 */
 	@Override
 	protected final void doSetValue(final Object value) {

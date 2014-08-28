@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,12 +21,12 @@ public class ErrorTypeFacade extends TypeFacade {
 	private String errorMessage = "" ;
 	private EStructuralFeature structuralFeature ;
 	private EObject errorSource ;
-	
+
 	@Override
 	public String getLabel() {
 		return errorMessage ;
 	}
-	
+
 	public void setMessage(String message) {
 		errorMessage = "" + message ;
 	}
@@ -38,13 +38,13 @@ public class ErrorTypeFacade extends TypeFacade {
 	public void setStructuralFeature(EStructuralFeature structuralFeature) {
 		this.structuralFeature = structuralFeature ;
 	}
-	
+
 	public EObject getErrorSource() {
 		return errorSource;
 	}
-	
+
 	public void setErrorSource(EObject errorSource) {
 		this.errorSource = errorSource ;
 	}
-	
+
 }

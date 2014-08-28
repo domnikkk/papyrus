@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -23,16 +23,16 @@ import org.eclipse.papyrus.infra.gmfdiag.common.snap.PapyrusConnectionEndpointHa
 
 
 /**
- * 
+ *
  * This class allows to provides our own EndPointHandle to provide our own DragTracker
- * 
+ *
  */
 public class PapyrusConnectionEndEditPolicy extends ConnectionEndpointEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public PapyrusConnectionEndEditPolicy() {
 		super();
@@ -44,8 +44,8 @@ public class PapyrusConnectionEndEditPolicy extends ConnectionEndpointEditPolicy
 	@Override
 	protected List<?> createSelectionHandles() {
 		List<PapyrusConnectionEndpointHandle> list = new ArrayList<PapyrusConnectionEndpointHandle>();
-		list.add(new PapyrusConnectionEndpointHandle((ConnectionEditPart)getHost(), ConnectionLocator.SOURCE));
-		list.add(new PapyrusConnectionEndpointHandle((ConnectionEditPart)getHost(), ConnectionLocator.TARGET));
+		list.add(new PapyrusConnectionEndpointHandle((ConnectionEditPart) getHost(), ConnectionLocator.SOURCE));
+		list.add(new PapyrusConnectionEndpointHandle((ConnectionEditPart) getHost(), ConnectionLocator.TARGET));
 		return list;
 	}
 

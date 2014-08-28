@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
  *   Christian W. Damus (CEA) - bug 422257
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core.importer;
 
@@ -77,7 +77,7 @@ public class ModelImporter implements IModelImporter {
 		add(result, mapping.getConfiguration().validate());
 		add(result, mapping.validate());
 
-		if(result.getSeverity() < Diagnostic.ERROR) {
+		if (result.getSeverity() < Diagnostic.ERROR) {
 			add(result, mapping.getConfiguration().getOperationContext().run(new IModelTransferOperation() {
 
 				@Override
@@ -102,12 +102,12 @@ public class ModelImporter implements IModelImporter {
 		// 1 for each transaction commit, 1 for saving affected non-imported models, and 1 for clean-up
 		SubMonitor sub = SubMonitor.convert(monitor, Messages.ModelImporter_4, configuration.getModelsToTransfer().size() + 4);
 
-		IInternalPapyrusRepository repository = (IInternalPapyrusRepository)mapping.getRepository();
+		IInternalPapyrusRepository repository = (IInternalPapyrusRepository) mapping.getRepository();
 		ResourceSet destination = repository.createTransaction(new ResourceSetImpl());
-		CDOTransaction transaction = (CDOTransaction)repository.getCDOView(destination);
+		CDOTransaction transaction = (CDOTransaction) repository.getCDOView(destination);
 
 		try {
-			for(IModelTransferNode model : configuration.getModelsToTransfer()) {
+			for (IModelTransferNode model : configuration.getModelsToTransfer()) {
 				add(result, importModel(model, configuration.getResourceSet(), mapping.getMapping(model), transaction, sub.newChild(1)));
 			}
 
@@ -115,29 +115,29 @@ public class ModelImporter implements IModelImporter {
 				transaction.commit(sub.newChild(1));
 
 				// save sash resources (if any)
-				for(Resource next : destination.getResources()) {
+				for (Resource next : destination.getResources()) {
 					// sash resource would have been saved by commit if it were a CDO URI
-					if(DependencyAdapter.isDIResource(next) && !CDOUtils.isCDOURI(next.getURI())) {
+					if (DependencyAdapter.isDIResource(next) && !CDOUtils.isCDOURI(next.getURI())) {
 						next.save(null);
 					}
 				}
 			} catch (Exception e) {
-				result.add(new BasicDiagnostic(IStatus.ERROR, Activator.PLUGIN_ID, 0, Messages.ModelImporter_5, new Object[]{ e }));
+				result.add(new BasicDiagnostic(IStatus.ERROR, Activator.PLUGIN_ID, 0, Messages.ModelImporter_5, new Object[] { e }));
 			}
 
 			// can't create CDO-style proxies until the resources have been committed, because only then
 			// will the objects be persisted and have OIDs to reference
 			boolean hasSubUnits = false;
-			for(IModelTransferNode model : configuration.getModelsToTransfer()) {
-				if(createSubUnitProxies(model, mapping.getMapping(model), transaction, sub.newChild(1))) {
+			for (IModelTransferNode model : configuration.getModelsToTransfer()) {
+				if (createSubUnitProxies(model, mapping.getMapping(model), transaction, sub.newChild(1))) {
 					hasSubUnits = true;
 				}
 			}
-			if(hasSubUnits) {
+			if (hasSubUnits) {
 				try {
 					transaction.commit(sub.newChild(1));
 				} catch (CommitException e) {
-					result.add(new BasicDiagnostic(IStatus.ERROR, Activator.PLUGIN_ID, 0, Messages.ModelImporter_5, new Object[]{ e }));
+					result.add(new BasicDiagnostic(IStatus.ERROR, Activator.PLUGIN_ID, 0, Messages.ModelImporter_5, new Object[] { e }));
 				}
 			} else {
 				sub.worked(1); // nothing to commit but still count progress
@@ -146,7 +146,7 @@ public class ModelImporter implements IModelImporter {
 			try {
 				saveNonimportedModels(mapping, transaction, sub.newChild(1));
 			} catch (Exception e) {
-				result.add(new BasicDiagnostic(IStatus.ERROR, Activator.PLUGIN_ID, 0, Messages.ModelImporter_6, new Object[]{ e }));
+				result.add(new BasicDiagnostic(IStatus.ERROR, Activator.PLUGIN_ID, 0, Messages.ModelImporter_6, new Object[] { e }));
 			}
 		} finally {
 			EMFHelper.unload(configuration.getResourceSet());
@@ -168,16 +168,16 @@ public class ModelImporter implements IModelImporter {
 
 		SubMonitor sub = SubMonitor.convert(monitor, model.getName(), model.getResourceURIs().size());
 
-		for(URI next : model.getResourceURIs()) {
+		for (URI next : model.getResourceURIs()) {
 			Resource destination = transaction.getOrCreateResource(basePath.addFileExtension(next.fileExtension()).toString());
 			Resource source = rset.getResource(next, true);
 
-			if(model.getConfiguration().isStripSashModelContent() && DependencyAdapter.isDIResource(source)) {
+			if (model.getConfiguration().isStripSashModelContent() && DependencyAdapter.isDIResource(source)) {
 				// import *.di content into the *.sash
 				URI sashURI = new CDOSashModelProvider().initialize(transaction).getSashModelURI(destination.getURI());
 				ResourceSet dset = destination.getResourceSet();
 				Resource sashResource = dset.getURIConverter().exists(sashURI, null) ? dset.getResource(sashURI, true) : null;
-				if(sashResource == null) {
+				if (sashResource == null) {
 					sashResource = dset.createResource(sashURI);
 				}
 				destination = sashResource;
@@ -212,9 +212,9 @@ public class ModelImporter implements IModelImporter {
 	}
 
 	protected Diagnostic importResource(Resource source, Resource destination) {
-		if(!destination.getContents().isEmpty()) {
+		if (!destination.getContents().isEmpty()) {
 			ContentType contentType = getContentType(source);
-			if(contentType == DI_CONTENT) {
+			if (contentType == DI_CONTENT) {
 				mergeDIContent(source, destination);
 			} else {
 				// just append the additional content
@@ -230,26 +230,26 @@ public class ModelImporter implements IModelImporter {
 	/**
 	 * Determines the content-type of a resource for the purpose of combining
 	 * content.
-	 * 
+	 *
 	 * @param resource
-	 *        a resource to be combined with existing content
-	 * 
+	 *            a resource to be combined with existing content
+	 *
 	 * @return the content type
 	 */
 	protected ContentType getContentType(Resource resource) {
 		ContentType result = UNKNOWN_CONTENT;
 
-		for(EObject next : resource.getContents()) {
+		for (EObject next : resource.getContents()) {
 			EPackage ePackage = next.eClass().getEPackage();
-			if(ePackage == DiPackage.eINSTANCE) {
+			if (ePackage == DiPackage.eINSTANCE) {
 				result = DI_CONTENT;
 				break;
 			}
-			if(ePackage.getName().equalsIgnoreCase("uml")) { //$NON-NLS-1$
+			if (ePackage.getName().equalsIgnoreCase("uml")) { //$NON-NLS-1$
 				result = UML_CONTENT;
 				break;
 			}
-			if(ePackage.getName().equalsIgnoreCase("notation")) { //$NON-NLS-1$
+			if (ePackage.getName().equalsIgnoreCase("notation")) { //$NON-NLS-1$
 				result = NOTATION_CONTENT;
 				break;
 			}
@@ -265,17 +265,17 @@ public class ModelImporter implements IModelImporter {
 		SashWindowsMngr dstMngr = DiUtils.lookupSashWindowsMngr(destination);
 
 		// merge the window manager contents
-		if(dstMngr == null) {
+		if (dstMngr == null) {
 			destination.getContents().add(0, srcMngr);
 		} else {
 			SashModel dstModel = dstMngr.getSashModel();
 			SashModel srcModel = srcMngr.getSashModel();
 
-			if(dstModel == null) {
+			if (dstModel == null) {
 				dstMngr.setSashModel(srcModel);
 			} else {
 				dstModel.getWindows().addAll(srcModel.getWindows());
-				if(dstModel.getCurrentSelection() == null) {
+				if (dstModel.getCurrentSelection() == null) {
 					dstModel.setCurrentSelection(srcModel.getCurrentSelection());
 				}
 			}
@@ -283,7 +283,7 @@ public class ModelImporter implements IModelImporter {
 			PageList dstPages = dstMngr.getPageList();
 			PageList srcPages = srcMngr.getPageList();
 
-			if(dstPages == null) {
+			if (dstPages == null) {
 				dstMngr.setPageList(srcPages);
 			} else {
 				dstPages.getAvailablePage().addAll(srcPages.getAvailablePage());
@@ -302,31 +302,31 @@ public class ModelImporter implements IModelImporter {
 		Collection<IModelTransferNode> imported = configuration.getModelsToTransfer();
 		Set<IModelTransferNode> nonImported = Sets.newHashSet();
 
-		for(IModelTransferNode next : configuration.getModelsToTransfer()) {
-			for(IModelTransferNode dependent : next.getDependents()) {
-				if(!imported.contains(dependent)) {
+		for (IModelTransferNode next : configuration.getModelsToTransfer()) {
+			for (IModelTransferNode dependent : next.getDependents()) {
+				if (!imported.contains(dependent)) {
 					nonImported.add(dependent);
 				}
 			}
 		}
 
-		if(!nonImported.isEmpty()) {
+		if (!nonImported.isEmpty()) {
 			SubMonitor sub = SubMonitor.convert(monitor, Messages.ModelImporter_9, nonImported.size());
 
 			ResourceSet rset = configuration.getResourceSet();
 
 			try {
-				for(IModelTransferNode next : nonImported) {
-					for(URI uri : next.getResourceURIs()) {
+				for (IModelTransferNode next : nonImported) {
+					for (URI uri : next.getResourceURIs()) {
 						Resource resource = rset.getResource(uri, false);
 
 						// if the resource is modified, then we imported it, so
 						// don't save
-						if((resource != null) && !resource.isModified()) {
+						if ((resource != null) && !resource.isModified()) {
 							try {
 								resource.save(null);
 							} catch (Exception e) {
-								add(result, new BasicDiagnostic(IStatus.ERROR, Activator.PLUGIN_ID, 0, Messages.ModelImporter_10, new Object[]{ e }));
+								add(result, new BasicDiagnostic(IStatus.ERROR, Activator.PLUGIN_ID, 0, Messages.ModelImporter_10, new Object[] { e }));
 							}
 						}
 					}
@@ -342,7 +342,7 @@ public class ModelImporter implements IModelImporter {
 	}
 
 	private static void add(DiagnosticChain diagnostics, Diagnostic diagnostic) {
-		if(diagnostic.getSeverity() > Diagnostic.OK) {
+		if (diagnostic.getSeverity() > Diagnostic.OK) {
 			diagnostics.merge(diagnostic);
 		}
 	}
@@ -370,7 +370,7 @@ public class ModelImporter implements IModelImporter {
 
 		@Override
 		public boolean equals(Object obj) {
-			return (obj instanceof ContentType) && ((ContentType)obj).getName().equals(getName());
+			return (obj instanceof ContentType) && ((ContentType) obj).getName().equals(getName());
 		}
 
 		@Override

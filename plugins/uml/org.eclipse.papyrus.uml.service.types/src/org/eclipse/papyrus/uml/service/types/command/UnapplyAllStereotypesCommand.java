@@ -30,7 +30,7 @@ public class UnapplyAllStereotypesCommand extends CompositeCommand {
 	public UnapplyAllStereotypesCommand(TransactionalEditingDomain domain, String label, Element element) {
 		super(label);
 		List<EObject> stereotypeApplications = element.getStereotypeApplications();
-		for (ListIterator<EObject> it = stereotypeApplications.listIterator(stereotypeApplications.size()); it.hasPrevious(); ) {
+		for (ListIterator<EObject> it = stereotypeApplications.listIterator(stereotypeApplications.size()); it.hasPrevious();) {
 			EObject stereotypeApplication = it.previous();
 			DestroyElementRequest stereoReq = new DestroyElementRequest(domain, stereotypeApplication, false);
 			add(new DestroyElementPapyrusCommand(stereoReq));

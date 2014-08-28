@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -34,7 +34,6 @@ import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.ExceptionHandler;
 import org.eclipse.uml2.uml.ExecutableNode;
 import org.eclipse.uml2.uml.ObjectNode;
-import org.eclipse.uml2.uml.Type;
 
 /**
  * Edit helper class for binary {@link ExceptionHandler}
@@ -47,29 +46,29 @@ public class ExceptionHandlerEditHelper extends ElementEditHelper {
 	@Override
 	protected ICommand getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		return new ExceptionHandlerReorientCommand(req);
-	
+
 	}
 
 	/**
 	 * Test if the relationship creation is allowed.
-	 * 
+	 *
 	 * @param source
-	 *        the relationship source can be null
+	 *            the relationship source can be null
 	 * @param target
-	 *        the relationship target can be null
+	 *            the relationship target can be null
 	 * @param sourceView
-	 *        the relationship graphical source can be null
+	 *            the relationship graphical source can be null
 	 * @param targetView
-	 *        the relationship graphical target can be null
+	 *            the relationship graphical target can be null
 	 * @return true if the creation is allowed
 	 */
 	protected boolean canCreate(EObject source, EObject target, View sourceView, View targetView) {
 
-		if((source != null) && !(source instanceof ActivityNode)) {
+		if ((source != null) && !(source instanceof ActivityNode)) {
 			return false;
 		}
 
-		if((target != null) && !(target instanceof ActivityNode)) {
+		if ((target != null) && !(target instanceof ActivityNode)) {
 			return false;
 		}
 
@@ -87,15 +86,15 @@ public class ExceptionHandlerEditHelper extends ElementEditHelper {
 		boolean noSourceOrTarget = (source == null || target == null);
 		boolean noSourceAndTarget = (source == null && target == null);
 
-		if(!noSourceAndTarget && !canCreate(source, target, RequestParameterUtils.getSourceView(req), RequestParameterUtils.getTargetView(req))) {
+		if (!noSourceAndTarget && !canCreate(source, target, RequestParameterUtils.getSourceView(req), RequestParameterUtils.getTargetView(req))) {
 			// Abort creation.
 			return UnexecutableCommand.INSTANCE;
 		}
 
-		if(noSourceOrTarget && !noSourceAndTarget) {
+		if (noSourceOrTarget && !noSourceAndTarget) {
 			// The request isn't complete yet. Return the identity command so
 			// that the create relationship gesture is enabled.
-			if(source != null && !(source instanceof ExecutableNode)) {
+			if (source != null && !(source instanceof ExecutableNode)) {
 				return UnexecutableCommand.INSTANCE;
 			}
 			return IdentityCommand.INSTANCE;
@@ -103,7 +102,7 @@ public class ExceptionHandlerEditHelper extends ElementEditHelper {
 
 		// Propose a semantic container for the new Exception Handler.
 		ExecutableNode proposedContainer = deduceContainer(req);
-		if(proposedContainer == null) {
+		if (proposedContainer == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -115,21 +114,21 @@ public class ExceptionHandlerEditHelper extends ElementEditHelper {
 	/**
 	 * Default approach is to traverse ancestors of the source to find instance of container.
 	 * Modify with appropriate logic.
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExecutableNode deduceContainer(CreateRelationshipRequest req) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
-		for(EObject element = req.getSource(); element != null; element = element.eContainer()) {
-			if(element instanceof ExecutableNode) {
-				return (ExecutableNode)element;
+		for (EObject element = req.getSource(); element != null; element = element.eContainer()) {
+			if (element instanceof ExecutableNode) {
+				return (ExecutableNode) element;
 			}
 		}
 		return null;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -138,15 +137,16 @@ public class ExceptionHandlerEditHelper extends ElementEditHelper {
 
 		ICommand configureCommand = new ConfigureElementCommand(req) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
-				ExceptionHandler element = (ExceptionHandler)req.getElementToConfigure();
+				ExceptionHandler element = (ExceptionHandler) req.getElementToConfigure();
 
-				if(req.getParameter(CreateRelationshipRequest.SOURCE) != null) {
+				if (req.getParameter(CreateRelationshipRequest.SOURCE) != null) {
 					element.setProtectedNode(getSourceObject(req));
 				}
 
-				if(req.getParameter(CreateRelationshipRequest.TARGET) != null) {
+				if (req.getParameter(CreateRelationshipRequest.TARGET) != null) {
 					element.setExceptionInput(getTargetObject(req));
 				}
 
@@ -156,29 +156,29 @@ public class ExceptionHandlerEditHelper extends ElementEditHelper {
 
 		return CompositeCommand.compose(configureCommand, super.getConfigureCommand(req));
 	}
-	
+
 	/**
 	 * This method provides the object to be use as source.
-	 * 
+	 *
 	 * @return the source value (EList or EObject)
 	 */
 	protected ExecutableNode getSourceObject(ConfigureRequest req) {
 		Object result = req.getParameter(CreateRelationshipRequest.SOURCE);
-		if(result instanceof ExecutableNode) {
-			return (ExecutableNode)result;
+		if (result instanceof ExecutableNode) {
+			return (ExecutableNode) result;
 		}
 		return null;
 	}
 
 	/**
 	 * This method provides the object to be used as target.
-	 * 
+	 *
 	 * @return the target value (EList or EObject)
 	 */
 	protected ObjectNode getTargetObject(ConfigureRequest req) {
 		Object result = req.getParameter(CreateRelationshipRequest.TARGET);
-		if(result instanceof ObjectNode) {
-			return (ObjectNode)result;
+		if (result instanceof ObjectNode) {
+			return (ObjectNode) result;
 		}
 		return null;
 	}

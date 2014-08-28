@@ -32,9 +32,9 @@ public class CollabUtils {
 
 	/**
 	 * Checks if an {@link EObject} can be used in the collaborative framework.
-	 * 
+	 *
 	 * @param input
-	 *        the input
+	 *            the input
 	 * @return true, if is collab
 	 */
 	public static boolean isCollab(EObject input) {

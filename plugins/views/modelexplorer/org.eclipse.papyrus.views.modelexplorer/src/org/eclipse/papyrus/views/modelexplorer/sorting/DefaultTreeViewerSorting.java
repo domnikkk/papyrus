@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,20 +27,20 @@ public class DefaultTreeViewerSorting implements ITreeViewerSorting {
 
 	/**
 	 * Obtains the tree-viewer sorting adapter for a workbench part, or a no-op default if the part provides none.
-	 * 
+	 *
 	 * @param part
-	 *        a workbench part (may be {@code null}
-	 * 
+	 *            a workbench part (may be {@code null}
+	 *
 	 * @return the sorting adapter (never {@code null})
 	 */
 	public static ITreeViewerSorting getSorting(IWorkbenchPart part) {
 		ITreeViewerSorting result = null;
 
-		if(part != null) {
-			result = (ITreeViewerSorting)part.getAdapter(ITreeViewerSorting.class);
+		if (part != null) {
+			result = (ITreeViewerSorting) part.getAdapter(ITreeViewerSorting.class);
 		}
 
-		if(result == null) {
+		if (result == null) {
 			result = new DefaultTreeViewerSorting();
 		}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ public class PapyrusPerspective implements IPerspectiveFactory {
 	public static final String ID_BOTTOM_FOLDER = "org.eclipse.papyrus.perspective.folder.bottom";
 
 	/**
-	 * 
+	 *
 	 * this method create the layout attached to this perspective
-	 * 
+	 *
 	 * @param layout
 	 */
 	public void createInitialLayout(IPageLayout layout) {
@@ -43,10 +43,10 @@ public class PapyrusPerspective implements IPerspectiveFactory {
 
 	/**
 	 * Add actions into the workbench UI.
-	 * 
+	 *
 	 * @param layout
-	 *        the page layout
-	 * 
+	 *            the page layout
+	 *
 	 * @see org.eclipse.ui.IPerspectiveFactory#createInitialLayout(org.eclipse.ui.IPageLayout)
 	 */
 	public void defineActions(IPageLayout layout) {
@@ -61,7 +61,7 @@ public class PapyrusPerspective implements IPerspectiveFactory {
 		layout.addShowViewShortcut(ID_MODELEXPLORER);
 		layout.addShowViewShortcut(ModelValidationView.VIEW_ID);
 		layout.addShowViewShortcut(IPageLayout.ID_PROBLEM_VIEW);
-		layout.addShowViewShortcut("org.eclipse.pde.runtime.LogView"); //Error log. //A constant doesn't seem to exist for this ID
+		layout.addShowViewShortcut("org.eclipse.pde.runtime.LogView"); // Error log. //A constant doesn't seem to exist for this ID
 
 		layout.addActionSet("org.eclipse.debug.ui.launchActionSet");
 
@@ -72,10 +72,10 @@ public class PapyrusPerspective implements IPerspectiveFactory {
 
 	/**
 	 * Defines the layout of the perspective (where and which views are available).
-	 * 
+	 *
 	 * @param layout
-	 *        the page layout
-	 * 
+	 *            the page layout
+	 *
 	 * @see org.eclipse.ui.IPerspectiveFactory#createInitialLayout(org.eclipse.ui.IPageLayout)
 	 */
 	public void defineLayout(IPageLayout layout) {

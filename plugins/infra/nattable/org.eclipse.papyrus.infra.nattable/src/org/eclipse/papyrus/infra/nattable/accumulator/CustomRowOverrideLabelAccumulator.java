@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,9 @@ import org.eclipse.nebula.widgets.nattable.layer.LabelStack;
 import org.eclipse.nebula.widgets.nattable.layer.cell.AbstractOverrider;
 
 /**
- * 
+ *
  * Tghis accumulator is used to register CellEditor on rows
- * 
+ *
  */
 public class CustomRowOverrideLabelAccumulator extends AbstractOverrider {
 
@@ -33,19 +33,19 @@ public class CustomRowOverrideLabelAccumulator extends AbstractOverrider {
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.IConfigLabelAccumulator#accumulateConfigLabels(org.eclipse.nebula.widgets.nattable.layer.LabelStack,
-	 *      int, int)
-	 * 
+	 *
+	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.IConfigLabelAccumulator#accumulateConfigLabels(org.eclipse.nebula.widgets.nattable.layer.LabelStack, int, int)
+	 *
 	 * @param configLabels
 	 * @param columnPosition
 	 * @param rowPosition
 	 */
+	@Override
 	public void accumulateConfigLabels(LabelStack configLabels, int columnPosition, int rowPosition) {
 		int rowIndex = layer.getRowIndexByPosition(rowPosition);
 		List<String> overrides = getOverrides(Integer.valueOf(rowIndex));
-		if(overrides != null) {
-			for(String configLabel : overrides) {
+		if (overrides != null) {
+			for (String configLabel : overrides) {
 				configLabels.addLabel(configLabel);
 			}
 		}

@@ -21,14 +21,14 @@ import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResource;
 import org.eclipse.papyrus.infra.nattable.views.config.Activator;
 
 /**
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class Utils {
 
 	private Utils() {
-		//to prevent instanciation
+		// to prevent instanciation
 	}
 
 	/**
@@ -72,9 +72,9 @@ public class Utils {
 	private static final String PAPYRUS_TABLE_INSTANCE__TABLE_INSTANCE2_FEATURE_NAME = "table"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * @param eobject
-	 *        an eobject
+	 *            an eobject
 	 * @return
 	 *         the IPageMngr found thanks to this eobject or <code>null</code> if not found
 	 */
@@ -89,28 +89,28 @@ public class Utils {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param editor
-	 *        an editor
+	 *            an editor
 	 * @return
 	 *         the Context of this editor, or <code>null</code> if not found
 	 */
 	public static final Object getEditorContext(final Object editor) {
-		if(editor instanceof EObject) {
-			EObject eobject = (EObject)editor;
+		if (editor instanceof EObject) {
+			EObject eobject = (EObject) editor;
 			EStructuralFeature feature = eobject.eClass().getEStructuralFeature(Utils.VIEW_CONTEXT);
-			if(feature == null) {//it is maybe a diagram
-				//workaround for the diagram
+			if (feature == null) {// it is maybe a diagram
+				// workaround for the diagram
 				feature = eobject.eClass().getEStructuralFeature(DIAGRAM_CONTEXT_FEATURE_NAME);
 			}
-			if(feature != null) {
+			if (feature != null) {
 				return eobject.eGet(feature);
 			}
-			//its maybe an old table
+			// its maybe an old table
 			EStructuralFeature tmp = eobject.eClass().getEStructuralFeature(PAPYRUS_TABLE_INSTANCE__TABLE_INSTANCE2_FEATURE_NAME);
-			if(tmp != null) {
-				final EObject tableinstance2 = (EObject)eobject.eGet(tmp);
-				if(tableinstance2 != null) {
+			if (tmp != null) {
+				final EObject tableinstance2 = (EObject) eobject.eGet(tmp);
+				if (tableinstance2 != null) {
 					feature = tableinstance2.eClass().getEStructuralFeature(Utils.VIEW_CONTEXT);
 					return tableinstance2.eGet(feature);
 				}

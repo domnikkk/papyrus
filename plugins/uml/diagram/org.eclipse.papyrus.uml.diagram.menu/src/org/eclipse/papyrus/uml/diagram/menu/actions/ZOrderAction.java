@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,8 +28,8 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.ZOrderRequest;
 /**
  * The ZOrder action
  * A part of this code comes from {@link org.eclipse.gmf.runtime.diagram.ui.actions.internal.ZOrderAction}
- * 
- * 
+ *
+ *
  */
 public class ZOrderAction extends AbstractGraphicalParametricAction {
 
@@ -46,9 +46,9 @@ public class ZOrderAction extends AbstractGraphicalParametricAction {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameter
 	 */
 	public ZOrderAction(String parameter, List<IGraphicalEditPart> selectedElements) {
@@ -57,49 +57,49 @@ public class ZOrderAction extends AbstractGraphicalParametricAction {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.menu.actions.AbstractParametricAction#isEnabled()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public boolean isEnabled() {
-		if(getSelection().isEmpty()) {
+		if (getSelection().isEmpty()) {
 			return false;
 		}
 		// Get the first selected editpart
 		EditPart editPart = getSelection().get(0);
 
 		// Get the parent of the first selected editpart
-		GraphicalEditPart parentEditPart = (GraphicalEditPart)editPart.getParent();
+		GraphicalEditPart parentEditPart = (GraphicalEditPart) editPart.getParent();
 
-		if(parentEditPart == null) {
+		if (parentEditPart == null) {
 			return false;
 		}
 
 		// bugzilla 156733: disable this action if the parent is not editable
-		if((parentEditPart instanceof IEditableEditPart) && !((IEditableEditPart)parentEditPart).isEditModeEnabled()) {
+		if ((parentEditPart instanceof IEditableEditPart) && !((IEditableEditPart) parentEditPart).isEditModeEnabled()) {
 			return false;
 		}
 
 		// disable this action if the parent doesn't have an XYLayout
-		if(!(parentEditPart.getContentPane().getLayoutManager() instanceof XYLayout)) {
+		if (!(parentEditPart.getContentPane().getLayoutManager() instanceof XYLayout)) {
 			return false;
 		}
 
 		// Iterate over all the selected edit parts
-		for(Iterator<IGraphicalEditPart> iter = getSelection().iterator(); iter.hasNext();) {
+		for (Iterator<IGraphicalEditPart> iter = getSelection().iterator(); iter.hasNext();) {
 
 			// Get the next selected editpart
 			EditPart selectedEditPart = iter.next();
 
 			// Verify that the editparts share the same parent
-			if(parentEditPart != selectedEditPart.getParent()) {
+			if (parentEditPart != selectedEditPart.getParent()) {
 				return false;
 			}
 
 			// bugzilla 156733: disable this action if the selected edit part is not editable
-			if((selectedEditPart instanceof IEditableEditPart) && !((IEditableEditPart)selectedEditPart).isEditModeEnabled()) {
+			if ((selectedEditPart instanceof IEditableEditPart) && !((IEditableEditPart) selectedEditPart).isEditModeEnabled()) {
 				return false;
 			}
 		}
@@ -107,22 +107,22 @@ public class ZOrderAction extends AbstractGraphicalParametricAction {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.menu.actions.AbstractParametricAction#getBuildedCommand()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected Command getBuildedCommand() {
 		Command cmd = null;
 		ZOrderRequest request = null;
-		if(BRING_FORWARD.equals(getParameter())) {
+		if (BRING_FORWARD.equals(getParameter())) {
 			request = new ZOrderRequest(ZOrderRequest.REQ_BRING_FORWARD);
-		} else if(BRING_TO_FRONT.equals(getParameter())) {
+		} else if (BRING_TO_FRONT.equals(getParameter())) {
 			request = new ZOrderRequest(ZOrderRequest.REQ_BRING_TO_FRONT);
-		} else if(SEND_BACKWARD.equals(getParameter())) {
+		} else if (SEND_BACKWARD.equals(getParameter())) {
 			request = new ZOrderRequest(ZOrderRequest.REQ_SEND_BACKWARD);
-		} else if(SEND_TO_BACK.equals(getParameter())) {
+		} else if (SEND_TO_BACK.equals(getParameter())) {
 			request = new ZOrderRequest(ZOrderRequest.REQ_SEND_TO_BACK);
 		}
 		request.setPartsToOrder(getSelection());

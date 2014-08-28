@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,7 @@ import org.eclipse.papyrus.infra.constraints.Activator;
 
 /**
  * A Helper class for Class Loading.
- * 
+ *
  * @author Camille Letavernier
  */
 public class ClassLoader {
@@ -23,9 +23,9 @@ public class ClassLoader {
 	/**
 	 * Loads the class matching the given className. Exceptions are caught and sent
 	 * to the Logger.
-	 * 
+	 *
 	 * @param className
-	 *        The qualified name of the Class to load.
+	 *            The qualified name of the Class to load.
 	 * @return
 	 *         The loaded Class, or null if an error occured
 	 */
@@ -46,9 +46,9 @@ public class ClassLoader {
 
 	/**
 	 * Returns a new Instance of the given class
-	 * 
+	 *
 	 * @param className
-	 *        The qualified name of the Class to instantiate
+	 *            The qualified name of the Class to instantiate
 	 * @return
 	 *         A new instance of the given class, or null if the class couldn't be
 	 *         instantiated
@@ -59,15 +59,15 @@ public class ClassLoader {
 
 	/**
 	 * Returns a new Instance of the given class
-	 * 
+	 *
 	 * @param theClass
-	 *        The Class to instantiate
+	 *            The Class to instantiate
 	 * @return
 	 *         A new instance of the given class, or null if the class couldn't be
 	 *         instantiated
 	 */
 	public <T extends Object> T newInstance(Class<T> theClass) {
-		if(theClass == null) {
+		if (theClass == null) {
 			return null;
 		}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,27 +31,27 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * A Parser Helper to replace references to NamedElements in a text
- * 
+ *
  * It relies on a parser to search references and replace them with a text value
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
-//FIXME: Reimplement listeners mechanism. The listeners are not correctly added/removed (Especially when the referenced element is moved)
-//FIXME: URI changes are not properly detected (ControlMode)
+// FIXME: Reimplement listeners mechanism. The listeners are not correctly added/removed (Especially when the referenced element is moved)
+// FIXME: URI changes are not properly detected (ControlMode)
 public class NameReferencesHelper extends TextReferencesHelper {
 
 	private ChangeDispatcher listener = new ChangeDispatcher();
 
 	public NameReferencesHelper() {
 		super();
-		//Empty
+		// Empty
 	}
 
 	/**
-	 * 
+	 *
 	 * @param baseResource
-	 *        The resource against which the link uris will be resolved
+	 *            The resource against which the link uris will be resolved
 	 */
 	public NameReferencesHelper(Resource baseResource) {
 		super(baseResource);
@@ -64,7 +64,7 @@ public class NameReferencesHelper extends TextReferencesHelper {
 
 	@Override
 	public String replaceReferences(String text) {
-		listener.clearElementListeners(); //Remove all previous listeners before adding new ones
+		listener.clearElementListeners(); // Remove all previous listeners before adding new ones
 		dispatch = false;
 		String result = super.replaceReferences(text);
 		dispatch = true;
@@ -76,43 +76,43 @@ public class NameReferencesHelper extends TextReferencesHelper {
 	 */
 	@Override
 	protected String getReplacement(EObject elementToReplace, String cachedValue) {
-		if(elementToReplace == null) {
+		if (elementToReplace == null) {
 			return UNKNOWN_ELEMENT;
 		}
 
-		if(elementToReplace.eIsProxy()) {
+		if (elementToReplace.eIsProxy()) {
 			return PROXY_ELEMENT;
 		}
 
-		if(elementToReplace instanceof NamedElement) {
-			NamedElement target = (NamedElement)elementToReplace;
+		if (elementToReplace instanceof NamedElement) {
+			NamedElement target = (NamedElement) elementToReplace;
 
-			if(installListeners()) {
+			if (installListeners()) {
 
-				if(!target.eAdapters().contains(listener)) {
-					//Listen on value changes (NamedElement#name)
+				if (!target.eAdapters().contains(listener)) {
+					// Listen on value changes (NamedElement#name)
 					listener.listenOnElement(target);
 				}
 
-				if(!target.eResource().eAdapters().contains(listener)) {
-					//Listen on resource changes (Deletion)
+				if (!target.eResource().eAdapters().contains(listener)) {
+					// Listen on resource changes (Deletion)
 					listener.listenOnElement(target.eResource());
 				}
 
-				if(target.eContainer() != null && !target.eContainer().eAdapters().contains(listener)) {
-					//Listen on the contents of the parent element (Deletion)
+				if (target.eContainer() != null && !target.eContainer().eAdapters().contains(listener)) {
+					// Listen on the contents of the parent element (Deletion)
 					listener.listenOnElement(target.eContainer());
 				}
 			}
 
-			if(target.getName() == null) {
+			if (target.getName() == null) {
 				return "UNNAMED";
 			} else {
 				return target.getName();
 			}
 		}
 
-		if(cachedValue == null) {
+		if (cachedValue == null) {
 			return UNKNOWN_ELEMENT;
 		}
 
@@ -147,10 +147,10 @@ public class NameReferencesHelper extends TextReferencesHelper {
 
 		@Override
 		public void notifyChanged(Notification msg) {
-			//A change occurred on one of the referenced elements
+			// A change occurred on one of the referenced elements
 			try {
-				if(dispatch && isValidNotification(msg)) {
-					for(Adapter listener : listeners) {
+				if (dispatch && isValidNotification(msg)) {
+					for (Adapter listener : listeners) {
 						try {
 							listener.notifyChanged(msg);
 						} catch (Exception ex) {
@@ -163,33 +163,33 @@ public class NameReferencesHelper extends TextReferencesHelper {
 			}
 		}
 
-		//The current implementation is not strict. This will lead to useless refreshes
-		//(e.g. each time the contents of the parent change, or when the name of the parent changes)
-		//The NameReferencesHelper should probably handle its own listeners, and call a 
-		//refresh/listener method when updated, to be more precise
+		// The current implementation is not strict. This will lead to useless refreshes
+		// (e.g. each time the contents of the parent change, or when the name of the parent changes)
+		// The NameReferencesHelper should probably handle its own listeners, and call a
+		// refresh/listener method when updated, to be more precise
 		boolean isValidNotification(Notification msg) {
-			if(!listenOnElements.contains(msg.getNotifier())) {
+			if (!listenOnElements.contains(msg.getNotifier())) {
 				Object notifierObject = msg.getNotifier();
-				if(notifierObject instanceof Notifier) {
-					((Notifier)notifierObject).eAdapters().remove(this);
+				if (notifierObject instanceof Notifier) {
+					((Notifier) notifierObject).eAdapters().remove(this);
 				}
 				return false;
 			}
 
-			//Name of a NamedElement
-			if(msg.getFeature() == UMLPackage.eINSTANCE.getNamedElement_Name()) {
+			// Name of a NamedElement
+			if (msg.getFeature() == UMLPackage.eINSTANCE.getNamedElement_Name()) {
 				return true;
 			}
 
-			//Resource contents
-			if(msg.getNotifier() instanceof Resource) {
+			// Resource contents
+			if (msg.getNotifier() instanceof Resource) {
 				return true;
 			}
 
-			//Parent contents
+			// Parent contents
 			Object feature = msg.getFeature();
-			if(feature instanceof EReference) {
-				if(((EReference)feature).isContainment()) {
+			if (feature instanceof EReference) {
+				if (((EReference) feature).isContainment()) {
 					return true;
 				}
 			}
@@ -206,7 +206,7 @@ public class NameReferencesHelper extends TextReferencesHelper {
 		}
 
 		private void listenOnElement(Notifier element) {
-			if(element.eAdapters().contains(this)) {
+			if (element.eAdapters().contains(this)) {
 				return;
 			}
 
@@ -216,7 +216,7 @@ public class NameReferencesHelper extends TextReferencesHelper {
 
 		private void clearElementListeners() {
 			List<Notifier> notifiers = new LinkedList<Notifier>(listenOnElements);
-			for(Notifier notifier : notifiers) {
+			for (Notifier notifier : notifiers) {
 				notifier.eAdapters().remove(this);
 			}
 			listenOnElements.clear();

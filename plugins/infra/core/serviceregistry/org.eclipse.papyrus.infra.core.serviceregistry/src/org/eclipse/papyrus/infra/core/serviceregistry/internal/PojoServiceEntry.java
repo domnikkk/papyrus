@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.serviceregistry.internal;
 
@@ -11,8 +11,8 @@ import org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry;
 
 /**
  * Entry for a service provided as POJO.
- * 
- * 
+ *
+ *
  * @author cedric dumoulin
  */
 public class PojoServiceEntry extends ServiceTypeEntry {
@@ -22,7 +22,7 @@ public class PojoServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param serviceDescriptor
 	 */
 	public PojoServiceEntry(ServiceDescriptor serviceDescriptor) {
@@ -32,11 +32,11 @@ public class PojoServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Create an entry for an already created service. Constructor.
-	 * 
+	 *
 	 * @param descriptor
-	 *        Descriptor of the service. Key and priority should be set.
+	 *            Descriptor of the service. Key and priority should be set.
 	 * @param serviceInstance
-	 *        The service Instance
+	 *            The service Instance
 	 */
 	public PojoServiceEntry(ServiceDescriptor descriptor, Object serviceInstance) {
 		super(descriptor);
@@ -46,15 +46,15 @@ public class PojoServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Get the service instance.
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
-	 *         If service can't be started.
+	 *             If service can't be started.
 	 */
 	@Override
 	public Object getServiceInstance() throws ServiceException {
 
-		if(serviceInstance == null) {
+		if (serviceInstance == null) {
 			throw new BadStateException("Service is not created.", state, serviceDescriptor);
 		}
 
@@ -63,14 +63,14 @@ public class PojoServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Already created : do nothing.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
 	public void createService() throws ServiceException {
 		checkState(ServiceState.registered);
 		// Exit if already created.
-		if(serviceInstance != null) {
+		if (serviceInstance != null) {
 			setState(ServiceState.created);
 			return;
 		}
@@ -88,10 +88,10 @@ public class PojoServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Pojo : can't initialize the service. Do nothing.
-	 * 
+	 *
 	 * @param servicesRegistry
-	 *        The servicesRegistry containing this service.
-	 * 
+	 *            The servicesRegistry containing this service.
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -101,7 +101,7 @@ public class PojoServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Already started : do nothing.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class PojoServiceEntry extends ServiceTypeEntry {
 	 */
 	@Override
 	public void disposeService() throws ServiceException {
-		if(serviceInstance == null) {
+		if (serviceInstance == null) {
 			return;
 		}
 

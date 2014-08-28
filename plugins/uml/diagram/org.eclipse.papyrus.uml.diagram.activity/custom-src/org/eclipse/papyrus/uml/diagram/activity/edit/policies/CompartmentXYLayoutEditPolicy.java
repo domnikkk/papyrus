@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,16 +35,15 @@ public class CompartmentXYLayoutEditPolicy extends XYLayoutEditPolicy {
 	 * <p/>
 	 * We would better override the Dimension.max() logic from the super class but it itself calls super.super so we can't easily do that.
 	 * <p/>
-	 * So we have to explicitly call {@link #getMinimumSizeForHint(GraphicalEditPart, Dimension)} and ensure that Dimension.max() logic in super-class
-	 * does not affect results by returning something small from {@link #getMinimumSizeFor(GraphicalEditPart)}
+	 * So we have to explicitly call {@link #getMinimumSizeForHint(GraphicalEditPart, Dimension)} and ensure that Dimension.max() logic in super-class does not affect results by returning something small from {@link #getMinimumSizeFor(GraphicalEditPart)}
 	 */
 	@Override
 	protected Object getConstraintFor(Request request, GraphicalEditPart child, Rectangle rect) {
-		if(isReflowable(child) && request instanceof ChangeBoundsRequest) {
-			ChangeBoundsRequest reqImpl = (ChangeBoundsRequest)request;
+		if (isReflowable(child) && request instanceof ChangeBoundsRequest) {
+			ChangeBoundsRequest reqImpl = (ChangeBoundsRequest) request;
 
 			Dimension sizeDelta = reqImpl.getSizeDelta();
-			if(sizeDelta.width != 0 || sizeDelta.height != 0) {
+			if (sizeDelta.width != 0 || sizeDelta.height != 0) {
 				Dimension correctedMinSize = getMinimumSizeForHint(child, rect.getSize());
 				rect.setSize(Dimension.max(correctedMinSize, rect.getSize()));
 			}
@@ -54,12 +53,12 @@ public class CompartmentXYLayoutEditPolicy extends XYLayoutEditPolicy {
 
 	/**
 	 * Called for reflowable editpart and allows them to compute minimum height based on suggested width.
-	 * 
+	 *
 	 * @return minimum size computed by using the given width as a hint.
 	 */
 	protected Dimension getMinimumSizeForHint(GraphicalEditPart child, Dimension hint) {
 		IFigure figure = child.getFigure();
-		if(figure == null) {
+		if (figure == null) {
 			return super.getMinimumSizeFor(child);
 		}
 		return figure.getMinimumSize(hint.width, -1);
@@ -78,22 +77,21 @@ public class CompartmentXYLayoutEditPolicy extends XYLayoutEditPolicy {
 	/**
 	 * Get the static minimum size from child edit part rather than imposing a constant one.
 	 * <p/>
-	 * Bug #422827 is about this method called for reflowable comments, so the new version of this class should call
-	 * {@link #getMinimumSizeForHint(GraphicalEditPart, Dimension)} instead.
-	 * 
+	 * Bug #422827 is about this method called for reflowable comments, so the new version of this class should call {@link #getMinimumSizeForHint(GraphicalEditPart, Dimension)} instead.
+	 *
 	 * @see org.eclipse.gef.editpolicies.XYLayoutEditPolicy#getMinimumSizeFor(org.eclipse.gef.GraphicalEditPart)
 	 * @param child
-	 *        the child
+	 *            the child
 	 * @return the minumum size
 	 */
 	@Override
 	protected Dimension getMinimumSizeFor(GraphicalEditPart child) {
-		if(isReflowable(child)) {
-			//call from super class, we need to return something very small
-			//because this class will call getMinimumSizeForHint() anyway
+		if (isReflowable(child)) {
+			// call from super class, we need to return something very small
+			// because this class will call getMinimumSizeForHint() anyway
 			return new Dimension(5, 5);
 		}
-		if(child.getFigure() != null) {
+		if (child.getFigure() != null) {
 			return child.getFigure().getMinimumSize();
 		}
 		return super.getMinimumSizeFor(child);

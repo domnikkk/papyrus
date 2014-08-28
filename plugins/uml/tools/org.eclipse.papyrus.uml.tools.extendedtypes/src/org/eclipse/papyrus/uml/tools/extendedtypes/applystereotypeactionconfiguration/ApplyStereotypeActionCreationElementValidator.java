@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,31 +32,31 @@ public class ApplyStereotypeActionCreationElementValidator implements IActionCre
 	 * {@inheritDoc}
 	 */
 	public boolean canCreate(CreateElementRequest request) {
-		if(configuration == null) {
+		if (configuration == null) {
 			return false;
 		}
-		if(!(request.getContainer() instanceof Element)) {
+		if (!(request.getContainer() instanceof Element)) {
 			return false;
 		}
-		Element container = (Element)request.getContainer();
+		Element container = (Element) request.getContainer();
 		Package nearestPackage = container.getNearestPackage();
-		if(nearestPackage == null) {
+		if (nearestPackage == null) {
 			return false;
 		}
 		List<Profile> appliedProfiles = nearestPackage.getAllAppliedProfiles();
-		if(appliedProfiles==null) {
+		if (appliedProfiles == null) {
 			// no profiles applied, no stereotype can be applied
 			return false;
 		}
 		List<String> appliedProfileNames = new ArrayList<String>();
-		for(Profile profile : appliedProfiles) {
+		for (Profile profile : appliedProfiles) {
 			appliedProfileNames.add(profile.getQualifiedName());
 		}
-		for(StereotypeToApply stereotypeToApply : configuration.getStereotypesToApply()) {
+		for (StereotypeToApply stereotypeToApply : configuration.getStereotypesToApply()) {
 			List<String> requiredProfiles = stereotypeToApply.getRequiredProfiles();
-			if(requiredProfiles != null) {
-				for(String requiredProfile : requiredProfiles) {
-					if(!appliedProfileNames.contains(requiredProfile)) {
+			if (requiredProfiles != null) {
+				for (String requiredProfile : requiredProfiles) {
+					if (!appliedProfileNames.contains(requiredProfile)) {
 						return false;
 					}
 				}

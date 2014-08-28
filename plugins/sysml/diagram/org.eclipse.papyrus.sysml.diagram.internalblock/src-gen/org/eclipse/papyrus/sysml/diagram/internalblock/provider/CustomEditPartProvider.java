@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -88,19 +88,19 @@ public class CustomEditPartProvider extends CustomAbstractEditPartProvider {
 	 */
 	@Override
 	public boolean provides(IOperation operation) {
-		if(operation instanceof CreateGraphicEditPartOperation) {
-			View newView = ((IEditPartOperation)operation).getView();
-			if(newView == null) {
+		if (operation instanceof CreateGraphicEditPartOperation) {
+			View newView = ((IEditPartOperation) operation).getView();
+			if (newView == null) {
 				return false;
 			}
 
 			String graphicalType = newView.getType();
 
-			if((newView instanceof Node) && (!nodeMap.containsKey(graphicalType))) {
+			if ((newView instanceof Node) && (!nodeMap.containsKey(graphicalType))) {
 				return false;
 			}
 
-			if((newView instanceof Edge) && (!edgeMap.containsKey(graphicalType))) {
+			if ((newView instanceof Edge) && (!edgeMap.containsKey(graphicalType))) {
 				return false;
 			}
 		}

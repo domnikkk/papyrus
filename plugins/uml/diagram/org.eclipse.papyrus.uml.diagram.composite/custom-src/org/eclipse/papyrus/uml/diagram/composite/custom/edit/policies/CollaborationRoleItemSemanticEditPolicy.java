@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <pre>
- * This class provides a custom edit policy used to replace the SEMANTIC_ROLE 
+ * This class provides a custom edit policy used to replace the SEMANTIC_ROLE
  * generated for the CollaborationUse element (when used in CompositeStructure Diagram)
  * </pre>
  */
@@ -38,28 +38,28 @@ public class CollaborationRoleItemSemanticEditPolicy extends CollaborationRoleIt
 	 * <pre>
 	 * This method retrieves a Destroy Reference command instead of Destroy Element.
 	 * </pre>
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.composite.edit.policies.CollaborationRoleItemSemanticEditPolicyCN#getDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest)
-	 * 
+	 *
 	 * @param req
-	 *        the destroy element request
+	 *            the destroy element request
 	 * @return the destroy element command
 	 */
 	@Override
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 
-		GraphicalEditPart graphicalParent = (GraphicalEditPart)getHost().getParent();
-		Collaboration collaboration = (Collaboration)graphicalParent.resolveSemanticElement();
+		GraphicalEditPart graphicalParent = (GraphicalEditPart) getHost().getParent();
+		Collaboration collaboration = (Collaboration) graphicalParent.resolveSemanticElement();
 
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(collaboration);
-		if(provider != null) {
+		if (provider != null) {
 
 			// Retrieve delete command from the Element Edit service
 			DestroyReferenceRequest setRequest = new DestroyReferenceRequest(collaboration, UMLPackage.eINSTANCE.getCollaboration_CollaborationRole(), req.getElementToDestroy(), false);
 
 			ICommand setCommand = provider.getEditCommand(setRequest);
 
-			if(setCommand != null) {
+			if (setCommand != null) {
 				return new ICommandProxy(setCommand.reduce());
 			}
 		}

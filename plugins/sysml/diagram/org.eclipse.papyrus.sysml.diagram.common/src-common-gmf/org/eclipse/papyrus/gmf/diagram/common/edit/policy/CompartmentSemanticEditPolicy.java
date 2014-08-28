@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -22,10 +22,11 @@ import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 
 public class CompartmentSemanticEditPolicy extends DefaultSemanticEditPolicy {
 
+	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
 
 		IElementEditService commandService = ElementEditServiceUtils.getCommandProvider(req.getContainer());
-		if(commandService == null) {
+		if (commandService == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -33,7 +34,7 @@ public class CompartmentSemanticEditPolicy extends DefaultSemanticEditPolicy {
 		createRequest.addParameters(req.getParameters());
 		Command semanticCreateCommand = new ICommandProxy(commandService.getEditCommand(createRequest));
 
-		if((semanticCreateCommand != null) && (semanticCreateCommand.canExecute())) {
+		if ((semanticCreateCommand != null) && (semanticCreateCommand.canExecute())) {
 			return semanticCreateCommand;
 		} // else
 

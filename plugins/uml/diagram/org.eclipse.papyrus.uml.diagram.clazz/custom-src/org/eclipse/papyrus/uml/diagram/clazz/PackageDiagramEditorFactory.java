@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 
 /**
  * Factory for legacy package diagrams tht migrates them to the viewpoints-defined ones
- * 
+ *
  * @author Laurent Wouters
- * 
+ *
  */
 public class PackageDiagramEditorFactory extends GmfEditorFactory {
 
@@ -40,9 +40,10 @@ public class PackageDiagramEditorFactory extends GmfEditorFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.GmfEditorFactory#createIPageModel(java.lang.Object)
 	 */
+	@Override
 	public IPageModel createIPageModel(Object pageIdentifier) {
 		migrate((Diagram) pageIdentifier);
 		return super.createIPageModel(pageIdentifier);
@@ -50,7 +51,7 @@ public class PackageDiagramEditorFactory extends GmfEditorFactory {
 
 	/**
 	 * Migrate the given package diagram to the viewpoints-defined one
-	 * 
+	 *
 	 * @param diagram
 	 *            The diagram to migrate
 	 */
@@ -68,6 +69,7 @@ public class PackageDiagramEditorFactory extends GmfEditorFactory {
 				DiagramUtils.setPrototype(diagram, proto);
 				diagram.setType("PapyrusUMLClassDiagram");
 			}
+
 			@Override
 			public void redo() {
 				execute();

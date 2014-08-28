@@ -23,24 +23,26 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PackagePackageableElemen
  */
 public class CustomEditPolicyProvider extends RequirementDiagramEditPolicyProvider {
 
+	@Override
 	public boolean provides(IOperation operation) {
-		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
-		if(!(epOperation.getEditPart() instanceof GraphicalEditPart)) {
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
+		if (!(epOperation.getEditPart() instanceof GraphicalEditPart)) {
 			return false;
 		}
-		GraphicalEditPart gep = (GraphicalEditPart)epOperation.getEditPart();
+		GraphicalEditPart gep = (GraphicalEditPart) epOperation.getEditPart();
 		String diagramType = gep.getNotationView().getDiagram().getType();
-		if(!ElementTypes.DIAGRAM_ID.equals(diagramType)) {
+		if (!ElementTypes.DIAGRAM_ID.equals(diagramType)) {
 			return false;
 		}
 
-		if((gep instanceof PackagePackageableElementCompartmentEditPart) || (gep instanceof PackagePackageableElementCompartmentEditPartCN)) {
+		if ((gep instanceof PackagePackageableElementCompartmentEditPart) || (gep instanceof PackagePackageableElementCompartmentEditPartCN)) {
 			return true;
 		}
 
 		return false;
 	}
 
+	@Override
 	public void createEditPolicies(EditPart editPart) {
 		editPart.installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new CustomDragDropEditPolicy());
 	}

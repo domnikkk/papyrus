@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,7 +54,7 @@ public abstract class TransactionalCommandHandler<T extends ILayerCommand> imple
 	public final boolean doCommand(final ILayer targetLayer, final T command) {
 		final boolean[] result = { false };
 
-		if(command.convertToTargetLayer(targetLayer)) {
+		if (command.convertToTargetLayer(targetLayer)) {
 			domain.getCommandStack().execute(new RecordingCommand(domain, getLabel()) {
 
 				@Override
@@ -63,7 +63,7 @@ public abstract class TransactionalCommandHandler<T extends ILayerCommand> imple
 
 					result[0] = status.isOK();
 
-					if(status.isRollback()) {
+					if (status.isRollback()) {
 						// Refresh the visual presentation of the layer because stereotype applications
 						// may have updated some cells
 						Display.getCurrent().asyncExec(new Runnable() {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,14 +17,14 @@ import org.eclipse.uml2.uml.TemplateableElement;
 
 /**
  * <code>AssertionFailedException</code> is a runtime exception thrown by some of the methods in <code>Assert</code>.
- * 
+ *
  * @see Assert
  */
 public class UnboundTemplateRecognitionException extends RuntimeException {
 
 	/**
 	 * serial ID
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final long serialVersionUID = -3962411131136049484L;
@@ -33,9 +33,9 @@ public class UnboundTemplateRecognitionException extends RuntimeException {
 
 	/**
 	 * Constructs a new exception with the given message.
-	 * 
+	 *
 	 * @param detail
-	 *        the message
+	 *            the message
 	 */
 	public UnboundTemplateRecognitionException(String message, TemplateableElement template) {
 		super(message);

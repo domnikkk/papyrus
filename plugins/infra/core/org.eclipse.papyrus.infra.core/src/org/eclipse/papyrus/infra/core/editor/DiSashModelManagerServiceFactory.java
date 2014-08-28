@@ -72,7 +72,7 @@ public class DiSashModelManagerServiceFactory implements IServiceFactory {
 		PluggableEditorFactoryReader editorReader = new PluggableEditorFactoryReader(Activator.PLUGIN_ID);
 		editorReader.populate(pageModelRegistry, servicesRegistry);
 
-		if(sashModel.getResource() == null) {
+		if (sashModel.getResource() == null) {
 			throw new ServiceException("Can't start " + this.getClass().getSimpleName() + "'. Required model (SashModel) should be loaded prior starting the service."); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
@@ -102,7 +102,7 @@ public class DiSashModelManagerServiceFactory implements IServiceFactory {
 		// Start locally the service if needed.
 		// Question: Can createServiceInstance() method be called before
 		// startService() is called ?
-		if(sashModelMngr == null) {
+		if (sashModelMngr == null) {
 			startService();
 		}
 

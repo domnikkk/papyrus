@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,10 +28,10 @@ public class CombinationGenerator {
 	private BigInteger total;
 
 	public CombinationGenerator(int n, int r) {
-		if(r > n) {
+		if (r > n) {
 			throw new IllegalArgumentException();
 		}
-		if(n < 1) {
+		if (n < 1) {
 			throw new IllegalArgumentException();
 		}
 		this.n = n;
@@ -48,7 +48,7 @@ public class CombinationGenerator {
 	 * Reset the generator
 	 */
 	public void reset() {
-		for(int i = 0; i < a.length; i++) {
+		for (int i = 0; i < a.length; i++) {
 			a[i] = i;
 		}
 		numLeft = new BigInteger(total.toString());
@@ -56,7 +56,7 @@ public class CombinationGenerator {
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         number of combinations not yet generated
 	 */
@@ -65,7 +65,7 @@ public class CombinationGenerator {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return true if there are more combinations
 	 */
 	public boolean hasMore() {
@@ -73,7 +73,7 @@ public class CombinationGenerator {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return total number of combinations
 	 */
 	public BigInteger getTotal() {
@@ -83,13 +83,13 @@ public class CombinationGenerator {
 
 	/**
 	 * Compute the factorial of n
-	 * 
+	 *
 	 * @param n
 	 * @return fact(n)
 	 */
 	private static BigInteger getFactorial(int n) {
 		BigInteger fact = BigInteger.ONE;
-		for(int i = n; i > 1; i--) {
+		for (int i = n; i > 1; i--) {
 			fact = fact.multiply(new BigInteger(Integer.toString(i)));
 		}
 		return fact;
@@ -97,22 +97,22 @@ public class CombinationGenerator {
 
 	/**
 	 * Generate next combination (algorithm from Rosen)
-	 * 
+	 *
 	 * @return next combination from generator
 	 */
 	public int[] getNext() {
 
-		if(numLeft.equals(total)) {
+		if (numLeft.equals(total)) {
 			numLeft = numLeft.subtract(BigInteger.ONE);
 			return a;
 		}
 
 		int i = r - 1;
-		while(a[i] == n - r + i) {
+		while (a[i] == n - r + i) {
 			i--;
 		}
 		a[i] = a[i] + 1;
-		for(int j = i + 1; j < r; j++) {
+		for (int j = i + 1; j < r; j++) {
 			a[j] = a[i] + j - i;
 		}
 

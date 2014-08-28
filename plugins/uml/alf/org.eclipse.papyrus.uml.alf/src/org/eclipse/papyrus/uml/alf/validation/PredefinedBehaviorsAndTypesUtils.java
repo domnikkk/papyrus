@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,14 +32,14 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageImport;
 
 public class PredefinedBehaviorsAndTypesUtils {
-	
+
 	private Map<String, List<SignatureFacade>> behaviorMap = new HashMap<String, List<SignatureFacade>>();
 	private Map<String, TypeFacade> typeMap = new HashMap<String, TypeFacade>() ;
 	private List<Behavior> behaviorInsertedAsElementImport = new ArrayList<Behavior>() ;
 	private List<Classifier> classifierInsertedAsElementImport = new ArrayList<Classifier>();
 	//private List<Behavior> predefinedCollectionFunctions = new ArrayList<Behavior>() ;
 	//private Map<String, SignatureFacade> predefinedCollectionFunctionsMap = new HashMap<String, SignatureFacade>() ;
-	
+
 	public void init(org.eclipse.uml2.uml.Package library) {
 		behaviorMap = new HashMap<String, List<SignatureFacade>>();
 		typeMap = new HashMap<String, TypeFacade>() ;
@@ -66,7 +66,7 @@ public class PredefinedBehaviorsAndTypesUtils {
 		TypeUtils._Map = typeMap.get("Map") ;
 		TypeUtils._Entry = typeMap.get("Entry") ;
 	}
-	
+
 	private void localInit(org.eclipse.uml2.uml.Package library) {
 		if (library.getQualifiedName().equals("Alf::Library::CollectionFunctions")) {
 			this.initCollectionFunctions(library) ;
@@ -107,9 +107,9 @@ public class PredefinedBehaviorsAndTypesUtils {
 		TypeUtils._Deque = typeMap.get("Deque") ;
 		TypeUtils._Map = typeMap.get("Map") ;
 		TypeUtils._Entry = typeMap.get("Entry") ;
-		
+
 	}
-	
+
 	private void initCollectionFunctions(Package library) {
 		for (NamedElement element : library.getOwnedMembers()) {
 			if (element instanceof Behavior) {
@@ -128,15 +128,16 @@ public class PredefinedBehaviorsAndTypesUtils {
 	public List<SignatureFacade> getSignatures(String name) {
 		return behaviorMap.get(name) ;
 	}
-	
+
 	public TypeFacade getClassifier(String name) {
 		return typeMap.get(name) ;
 	}
-	
+
 	private void insertSignatureFacade(SignatureFacade s) {
 		for (Behavior b : behaviorInsertedAsElementImport) {
-			if (s.equals(b))
+			if (s.equals(b)) {
 				return ;
+			}
 		}
 		List<SignatureFacade> l = behaviorMap.get(s.getName()) ;
 		if (l == null) {
@@ -145,14 +146,16 @@ public class PredefinedBehaviorsAndTypesUtils {
 		}
 		l.add(s) ;
 	}
-	
+
 	private void insertTypeFacade(TypeFacade t) {
 		for (Classifier c : classifierInsertedAsElementImport) {
-			if (t.equals(c))
+			if (t.equals(c)) {
 				return ;
+			}
 		}
-		if (typeMap.get(t.getLabel()) == null)
+		if (typeMap.get(t.getLabel()) == null) {
 			typeMap.put(t.getLabel(), t) ;
+		}
 	}
-	
+
 }

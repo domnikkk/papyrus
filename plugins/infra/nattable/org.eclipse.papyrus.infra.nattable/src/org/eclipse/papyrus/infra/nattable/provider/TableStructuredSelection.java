@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.papyrus.infra.nattable.utils.TableSelectionWrapper;
 
 /**
  * The StructuredSelection filled by the tables. It able to embed more precision about the selected elements in the table.
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class TableStructuredSelection extends StructuredSelection implements IAdaptable {
 
@@ -34,9 +34,9 @@ public class TableStructuredSelection extends StructuredSelection implements IAd
 	private final TableSelectionWrapper wrapper;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param wrapper
 	 */
 	public TableStructuredSelection(TableSelectionWrapper wrapper) {
@@ -45,9 +45,9 @@ public class TableStructuredSelection extends StructuredSelection implements IAd
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param elements
 	 * @param comparer
 	 * @param wrapper
@@ -58,9 +58,9 @@ public class TableStructuredSelection extends StructuredSelection implements IAd
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param elements
 	 * @param wrapper
 	 */
@@ -70,9 +70,9 @@ public class TableStructuredSelection extends StructuredSelection implements IAd
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param element
 	 * @param wrapper
 	 */
@@ -82,9 +82,9 @@ public class TableStructuredSelection extends StructuredSelection implements IAd
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param elements
 	 * @param wrapper
 	 */
@@ -94,15 +94,15 @@ public class TableStructuredSelection extends StructuredSelection implements IAd
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
-	 * 
+	 *
 	 * @param adapter
 	 * @return
 	 */
 	@Override
 	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
-		if(adapter == TableSelectionWrapper.class) {
+		if (adapter == TableSelectionWrapper.class) {
 			return this.wrapper;
 		}
 		return null;

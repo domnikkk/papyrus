@@ -11,9 +11,9 @@ package org.eclipse.papyrus.eastadl.infrastructure.datatypes;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getMaxLenght <em>Max Lenght</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getMinLenght <em>Min Lenght</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getElementType <em>Element Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getMaxLenght <em>Max Lenght</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getMinLenght <em>Min Lenght</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getElementType <em>Element Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,10 +26,10 @@ public interface ArrayDataType extends EADatatype {
 	 * Returns the value of the '<em><b>Max Lenght</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Max Lenght</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Max Lenght</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Max Lenght</em>' attribute.
 	 * @see #setMaxLenght(int)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getArrayDataType_MaxLenght()
@@ -42,7 +42,9 @@ public interface ArrayDataType extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getMaxLenght <em>Max Lenght</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Max Lenght</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Max Lenght</em>' attribute.
 	 * @see #getMaxLenght()
 	 * @generated
 	 */
@@ -52,10 +54,10 @@ public interface ArrayDataType extends EADatatype {
 	 * Returns the value of the '<em><b>Min Lenght</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Min Lenght</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Min Lenght</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Min Lenght</em>' attribute.
 	 * @see #setMinLenght(int)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getArrayDataType_MinLenght()
@@ -68,7 +70,9 @@ public interface ArrayDataType extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getMinLenght <em>Min Lenght</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Min Lenght</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Min Lenght</em>' attribute.
 	 * @see #getMinLenght()
 	 * @generated
 	 */
@@ -78,10 +82,10 @@ public interface ArrayDataType extends EADatatype {
 	 * Returns the value of the '<em><b>Element Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Element Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Element Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Element Type</em>' reference.
 	 * @see #setElementType(EADatatype)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getArrayDataType_ElementType()
@@ -94,7 +98,9 @@ public interface ArrayDataType extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getElementType <em>Element Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Element Type</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Element Type</em>' reference.
 	 * @see #getElementType()
 	 * @generated
 	 */

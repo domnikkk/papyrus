@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 Atos.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,12 +55,12 @@ public class StereotypePropertyEditor implements ISelectionChangedListener, ICha
 	}
 
 	public void selectionChanged(SelectionChangedEvent event) {
-		if(event != null) {
-			IStructuredSelection structSelection = (IStructuredSelection)event.getSelection();
+		if (event != null) {
+			IStructuredSelection structSelection = (IStructuredSelection) event.getSelection();
 			Object selection = structSelection.getFirstElement();
 
-			if(selection instanceof AppliedStereotypePropertyTreeObject) {
-				AppliedStereotypePropertyTreeObject pTO = (AppliedStereotypePropertyTreeObject)selection;
+			if (selection instanceof AppliedStereotypePropertyTreeObject) {
+				AppliedStereotypePropertyTreeObject pTO = (AppliedStereotypePropertyTreeObject) selection;
 
 				EObject stereotypeApplication = pTO.getStereotypeApplication();
 				EStructuralFeature feature = pTO.getFeature();
@@ -74,8 +74,8 @@ public class StereotypePropertyEditor implements ISelectionChangedListener, ICha
 				}
 
 				eStructuralFeatureEditor.setProviders(new UMLContentProvider(stereotypeApplication, feature, stereotype), labelProvider);
-				if(feature instanceof EReference) {
-					eStructuralFeatureEditor.setValueFactory(getUMLPropertyEditorFactory(stereotypeApplication, (EReference)feature));
+				if (feature instanceof EReference) {
+					eStructuralFeatureEditor.setValueFactory(getUMLPropertyEditorFactory(stereotypeApplication, (EReference) feature));
 				}
 
 				eStructuralFeatureEditor.setFeatureToEdit(feature, stereotypeApplication);
@@ -105,7 +105,7 @@ public class StereotypePropertyEditor implements ISelectionChangedListener, ICha
 	}
 
 	public void handleChange(ChangeEvent event) {
-		if(!stereotypeComposite.isDisposed()) {
+		if (!stereotypeComposite.isDisposed()) {
 			stereotypeComposite.refreshTreeViewer();
 		}
 	}

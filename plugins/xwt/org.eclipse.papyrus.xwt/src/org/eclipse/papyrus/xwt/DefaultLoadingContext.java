@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -26,7 +26,7 @@ public class DefaultLoadingContext implements ILoadingContext {
 	}
 
 	public ClassLoader getClassLoader() {
-		if(classLoader == null) {
+		if (classLoader == null) {
 			return Thread.currentThread().getContextClassLoader();
 		}
 		return classLoader;
@@ -42,14 +42,14 @@ public class DefaultLoadingContext implements ILoadingContext {
 
 	public Class<?> loadClass(String name) {
 		Class<?> type = doLoadClass(name);
-		if(type != null) {
+		if (type != null) {
 			return type;
 		}
 		int index = name.lastIndexOf('.');
-		while(index != -1) {
+		while (index != -1) {
 			name = name.substring(0, index) + "$" + name.substring(index + 1);
 			type = doLoadClass(name);
-			if(type != null) {
+			if (type != null) {
 				return type;
 			}
 			index = name.lastIndexOf('.');

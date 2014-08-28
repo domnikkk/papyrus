@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.provider;
 
@@ -35,16 +35,17 @@ import org.eclipse.papyrus.emf.facet.efacet.Literal;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.Literal} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  * @deprecated use the new eFacet metamodel in org.eclipse.papyrus.emf.facet.efacet.metamodel. Cf.
  *             https://bugs.eclipse.org/bugs/show_bug.cgi?id=373672
  */
 @Deprecated
-//generated code
+// generated code
 @SuppressWarnings("all")
 public class LiteralItemProvider
-	extends QueryItemProvider
-	implements
+		extends QueryItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -54,6 +55,7 @@ public class LiteralItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LiteralItemProvider(AdapterFactory adapterFactory) {
@@ -64,6 +66,7 @@ public class LiteralItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,28 +83,30 @@ public class LiteralItemProvider
 	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Literal_value_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_Literal_value_feature", "_UI_Literal_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 EFacetPackage.Literals.LITERAL__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Literal_value_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_Literal_value_feature", "_UI_Literal_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						EFacetPackage.Literals.LITERAL__VALUE,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns Literal.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,14 +118,15 @@ public class LiteralItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Literal)object).getName();
+		String label = ((Literal) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Literal_type") : //$NON-NLS-1$
-			getString("_UI_Literal_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_Literal_type") : //$NON-NLS-1$
+				getString("_UI_Literal_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -128,6 +134,7 @@ public class LiteralItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,9 +142,9 @@ public class LiteralItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Literal.class)) {
-			case EFacetPackage.LITERAL__VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case EFacetPackage.LITERAL__VALUE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -147,6 +154,7 @@ public class LiteralItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

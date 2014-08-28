@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -21,8 +21,8 @@ package org.eclipse.papyrus.layers.configmodel.layersconfig;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.SimpleBinding#getOperators <em>Operators</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.SimpleBinding#getLayerOperatorMultipleBinding <em>Layer Operator Multiple Binding</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.SimpleBinding#getOperators <em>Operators</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.SimpleBinding#getLayerOperatorMultipleBinding <em>Layer Operator Multiple Binding</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,10 +35,10 @@ public interface SimpleBinding extends LayersOperatorBinding {
 	 * Returns the value of the '<em><b>Operators</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Operators</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Operators</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Operators</em>' reference.
 	 * @see #setOperators(OperatorConfig)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getSimpleBinding_Operators()
@@ -51,7 +51,9 @@ public interface SimpleBinding extends LayersOperatorBinding {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.SimpleBinding#getOperators <em>Operators</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Operators</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Operators</em>' reference.
 	 * @see #getOperators()
 	 * @generated
 	 */
@@ -62,10 +64,10 @@ public interface SimpleBinding extends LayersOperatorBinding {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorMultipleBinding#getBindings <em>Bindings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Layer Operator Multiple Binding</em>' container reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Layer Operator Multiple Binding</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Layer Operator Multiple Binding</em>' container reference.
 	 * @see #setLayerOperatorMultipleBinding(LayerOperatorMultipleBinding)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getSimpleBinding_LayerOperatorMultipleBinding()
@@ -79,7 +81,9 @@ public interface SimpleBinding extends LayersOperatorBinding {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.SimpleBinding#getLayerOperatorMultipleBinding <em>Layer Operator Multiple Binding</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Layer Operator Multiple Binding</em>' container reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Layer Operator Multiple Binding</em>' container reference.
 	 * @see #getLayerOperatorMultipleBinding()
 	 * @generated
 	 */

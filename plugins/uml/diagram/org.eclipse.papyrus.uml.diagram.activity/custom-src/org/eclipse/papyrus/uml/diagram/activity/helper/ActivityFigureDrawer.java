@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -125,13 +125,13 @@ public class ActivityFigureDrawer {
 
 	/**
 	 * Get the direction opposite to the parameter one
-	 * 
+	 *
 	 * @param direction
-	 *        {@link PositionConstants#NORTH}, {@link PositionConstants#EAST}, {@link PositionConstants#SOUTH} or {@link PositionConstants#WEST}
+	 *            {@link PositionConstants#NORTH}, {@link PositionConstants#EAST}, {@link PositionConstants#SOUTH} or {@link PositionConstants#WEST}
 	 * @return the direction at the opposite or {@link PositionConstants#NONE}
 	 */
 	public static int getOppositeDirection(int direction) {
-		switch(direction) {
+		switch (direction) {
 		case PositionConstants.NORTH:
 			return PositionConstants.SOUTH;
 		case PositionConstants.EAST:
@@ -147,19 +147,19 @@ public class ActivityFigureDrawer {
 
 	/**
 	 * Draw the triangle or refresh it
-	 * 
+	 *
 	 * @param triangle
-	 *        figure which contains the triangle
+	 *            figure which contains the triangle
 	 * @param iMapMode
-	 *        the map mode to translate points
+	 *            the map mode to translate points
 	 * @param parentDimension
-	 *        the dimension of the parent
+	 *            the dimension of the parent
 	 */
 	public static void redrawTriangle(Polygon triangle, IMapMode iMapMode, Dimension parentDimension) {
 		triangle.removeAllPoints();
 		double xScale = parentDimension.preciseWidth() / TRIANGLE_FIGURE_SIZE.x;
 		double yScale = parentDimension.preciseHeight() / TRIANGLE_FIGURE_SIZE.y;
-		for(Point refPoint : TRIANGLE_FIGURE) {
+		for (Point refPoint : TRIANGLE_FIGURE) {
 			Point translatedPoint = new Point(refPoint).scale(xScale, yScale);
 			iMapMode.DPtoLP(translatedPoint);
 			triangle.addPoint(translatedPoint);
@@ -168,52 +168,51 @@ public class ActivityFigureDrawer {
 
 	/**
 	 * Draw the rake or refresh it
-	 * 
+	 *
 	 * @param rake
-	 *        figure which contains the rake
+	 *            figure which contains the rake
 	 * @param iMapMode
-	 *        the map mode to translate points
+	 *            the map mode to translate points
 	 * @param parentDimension
-	 *        the dimension of the parent
+	 *            the dimension of the parent
 	 */
 	public static void redrawRake(AbstractPointListShape rake, IMapMode iMapMode, Dimension parentDimension) {
 		rake.removeAllPoints();
 		Point translationPoint = new Point();
-		if(!(rake instanceof PolylineShape)) {
+		if (!(rake instanceof PolylineShape)) {
 			// do not translate for PolylineShape since bounds will be adapted
 			new Point(RAKE_FIGURE_TRANSLATION);
 			translationPoint.translate(parentDimension);
 		}
-		for(Point refPoint : RAKE_FIGURE) {
+		for (Point refPoint : RAKE_FIGURE) {
 			Point translatedPoint = new Point(refPoint).translate(translationPoint);
 			iMapMode.DPtoLP(translatedPoint);
 			rake.addPoint(translatedPoint);
 		}
-		if(rake instanceof PolylineShape) {
+		if (rake instanceof PolylineShape) {
 			// adapt bounds for PolylineShape
 			Point loc = rake.getParent().getBounds().getLocation().getCopy().translate(parentDimension).translate(RAKE_FIGURE_TRANSLATION);
 			Rectangle b = new Rectangle(loc, new Dimension(-RAKE_FIGURE_TRANSLATION.x, -RAKE_FIGURE_TRANSLATION.y));
-			((PolylineShape)rake).setBounds(b);
+			((PolylineShape) rake).setBounds(b);
 		}
 	}
 
 	/**
 	 * Draw the pin arrow or refresh it
-	 * 
+	 *
 	 * @param arrow
-	 *        figure which contains the arrow
+	 *            figure which contains the arrow
 	 * @param iMapMode
-	 *        the map mode to translate points
+	 *            the map mode to translate points
 	 * @param parentDimension
-	 *        the dimension of the parent
+	 *            the dimension of the parent
 	 * @param direction
-	 *        the direction to which the arrow is directed : {@link PositionConstants#SOUTH}, {@link PositionConstants#NORTH},
-	 *        {@link PositionConstants#EAST}, {@link PositionConstants#WEST}
+	 *            the direction to which the arrow is directed : {@link PositionConstants#SOUTH}, {@link PositionConstants#NORTH}, {@link PositionConstants#EAST}, {@link PositionConstants#WEST}
 	 */
 	public static void redrawPinArrow(AbstractPointListShape arrow, IMapMode iMapMode, Dimension parentDimension, int direction) {
 		arrow.removeAllPoints();
 		List<Point> template;
-		switch(direction) {
+		switch (direction) {
 		case PositionConstants.NORTH:
 			template = UP_PIN_ARROW_FIGURE;
 			break;
@@ -230,22 +229,22 @@ public class ActivityFigureDrawer {
 		}
 		double xScale = parentDimension.preciseWidth() / PIN_ARROW_FIGURE_SIZE.x;
 		double yScale = parentDimension.preciseHeight() / PIN_ARROW_FIGURE_SIZE.y;
-		for(Point refPoint : template) {
+		for (Point refPoint : template) {
 			Point translatedPoint = new Point(refPoint).scale(xScale, yScale);
 			iMapMode.DPtoLP(translatedPoint);
 			arrow.addPoint(translatedPoint);
 		}
-		if(arrow instanceof PolylineShape) {
+		if (arrow instanceof PolylineShape) {
 			// adapt bounds for PolylineShape
-			((PolylineShape)arrow).setBounds(arrow.getParent().getBounds());
+			((PolylineShape) arrow).setBounds(arrow.getParent().getBounds());
 		}
 	}
 
 	/**
 	 * Undraw the polyline figure
-	 * 
+	 *
 	 * @param figure
-	 *        figure to undraw
+	 *            figure to undraw
 	 */
 	public static void undrawFigure(AbstractPointListShape figure) {
 		figure.removeAllPoints();
@@ -253,11 +252,11 @@ public class ActivityFigureDrawer {
 
 	/**
 	 * Get the size of the edit part node
-	 * 
+	 *
 	 * @param editPart
-	 *        edit part
+	 *            edit part
 	 * @param dimensionChangeEvent
-	 *        the change dimension event or null
+	 *            the change dimension event or null
 	 * @return the node size
 	 */
 	public static Dimension getNodeSize(AbstractGraphicalEditPart editPart, Notification dimensionChangeEvent) {
@@ -265,25 +264,25 @@ public class ActivityFigureDrawer {
 		// if a bounds change is notified, size may have changed, otherwise, get
 		// size from model
 		// shape
-		if(dimensionChangeEvent != null && dimensionChangeEvent.getNotifier() instanceof Bounds) {
-			bounds = (Bounds)dimensionChangeEvent.getNotifier();
-		} else if(editPart.getModel() instanceof Shape) {
-			Shape shape = (Shape)editPart.getModel();
-			if(shape.getLayoutConstraint() instanceof Bounds) {
-				bounds = (Bounds)shape.getLayoutConstraint();
+		if (dimensionChangeEvent != null && dimensionChangeEvent.getNotifier() instanceof Bounds) {
+			bounds = (Bounds) dimensionChangeEvent.getNotifier();
+		} else if (editPart.getModel() instanceof Shape) {
+			Shape shape = (Shape) editPart.getModel();
+			if (shape.getLayoutConstraint() instanceof Bounds) {
+				bounds = (Bounds) shape.getLayoutConstraint();
 			}
 		}
 		Dimension size = null;
-		if(bounds != null) {
+		if (bounds != null) {
 			size = new Dimension(bounds.getWidth(), bounds.getHeight());
 		}
-		if(size == null || size.isEmpty()) {
+		if (size == null || size.isEmpty()) {
 			// recover the exact size from the figure
 			Dimension preferredSize = editPart.getFigure().getPreferredSize(size.width, size.height);
-			if(size.width <= 0) {
+			if (size.width <= 0) {
 				size.width = preferredSize.width;
 			}
-			if(size.height <= 0) {
+			if (size.height <= 0) {
 				size.height = preferredSize.height;
 			}
 		}

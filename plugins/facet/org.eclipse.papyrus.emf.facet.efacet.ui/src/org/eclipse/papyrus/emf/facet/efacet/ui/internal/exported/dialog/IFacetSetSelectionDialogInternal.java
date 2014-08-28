@@ -10,15 +10,15 @@
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.dialog;
 
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
 
 /**
  * Internal interface for a dialog to let the user select {@link FacetSet}s.
- * 
+ *
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
- * 
+ *
  * @param <T>
  *            the type of a pre-commit dialog (can be <code>null</code> if there is no pre-commit dialog)
  */

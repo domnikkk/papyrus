@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ import org.eclipse.papyrus.uml.diagram.common.groups.groupcontainment.AbstractCo
 
 /**
  * This registry recovers information from the extensions for the GroupContainment point.
- * 
+ *
  * @author vhemery
  */
 public class GroupContainmentRegistry {
@@ -78,27 +78,27 @@ public class GroupContainmentRegistry {
 		// Load extensions of edit part mapping
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		IExtensionPoint extensionPoint = registry.getExtensionPoint(GROUP_EXTENSION_POINT);
-		for(IExtension extension : extensionPoint.getExtensions()) {
-			for(IConfigurationElement providing : extension.getConfigurationElements()) {
-				if(MODEL_CONTAINER_NODE.equals(providing.getName())) {
+		for (IExtension extension : extensionPoint.getExtensions()) {
+			for (IConfigurationElement providing : extension.getConfigurationElements()) {
+				if (MODEL_CONTAINER_NODE.equals(providing.getName())) {
 					String editPartType = providing.getAttribute(EDIT_PART_TYPE_ATTRIBUTE);
-					if(editPartType != null) {
+					if (editPartType != null) {
 						try {
 							Object provider = providing.createExecutableExtension(CONTAINER_DESCRIPTOR_ATTRIBUTE);
-							if(provider instanceof AbstractContainerNodeDescriptor) {
-								modelContainersDescriptors.put(editPartType, (AbstractContainerNodeDescriptor)provider);
+							if (provider instanceof AbstractContainerNodeDescriptor) {
+								modelContainersDescriptors.put(editPartType, (AbstractContainerNodeDescriptor) provider);
 							}
 						} catch (CoreException e) {
 							// ignore this extension node
 						}
 					}
-				} else if(REFERENCE_CONTAINER_NODE.equals(providing.getName())) {
+				} else if (REFERENCE_CONTAINER_NODE.equals(providing.getName())) {
 					String editPartType = providing.getAttribute(EDIT_PART_TYPE_ATTRIBUTE);
-					if(editPartType != null) {
+					if (editPartType != null) {
 						try {
 							Object provider = providing.createExecutableExtension(CONTAINER_DESCRIPTOR_ATTRIBUTE);
-							if(provider instanceof AbstractContainerNodeDescriptor) {
-								graphicalContainersDescriptors.put(editPartType, (AbstractContainerNodeDescriptor)provider);
+							if (provider instanceof AbstractContainerNodeDescriptor) {
+								graphicalContainersDescriptors.put(editPartType, (AbstractContainerNodeDescriptor) provider);
 							}
 						} catch (CoreException e) {
 							// ignore this extension node
@@ -112,7 +112,7 @@ public class GroupContainmentRegistry {
 
 	/**
 	 * Get the AbstractContainerNodeDescriptor from a EClass
-	 * 
+	 *
 	 * @param containerEClass
 	 * @return Set<AbstractContainerNodeDescriptor> Return all the descriptor which match the corresponding EClass
 	 */
@@ -122,8 +122,8 @@ public class GroupContainmentRegistry {
 		descriptors.addAll(modelContainersDescriptors.values());
 		descriptors.addAll(graphicalContainersDescriptors.values());
 		// filter descriptors
-		for(AbstractContainerNodeDescriptor descriptor : descriptors) {
-			if(descriptor.getContainerEClass().equals(containerEClass)) {
+		for (AbstractContainerNodeDescriptor descriptor : descriptors) {
+			if (descriptor.getContainerEClass().equals(containerEClass)) {
 				descriptorsResult.add(descriptor);
 			}
 		}
@@ -132,7 +132,7 @@ public class GroupContainmentRegistry {
 
 	/**
 	 * Get all the references which can point to a group
-	 * 
+	 *
 	 * @return give back a set of ERefences pointing at group
 	 */
 	public static Set<EReference> getAllERefencesFromNodeToGroup() {
@@ -140,10 +140,10 @@ public class GroupContainmentRegistry {
 		Set<AbstractContainerNodeDescriptor> descriptors = new HashSet<AbstractContainerNodeDescriptor>(modelContainersDescriptors.size() + graphicalContainersDescriptors.size());
 		descriptors.addAll(modelContainersDescriptors.values());
 		descriptors.addAll(graphicalContainersDescriptors.values());
-		for(AbstractContainerNodeDescriptor descriptor : descriptors) {
-			for(EReference ref : descriptor.getChildrenReferences()) {
+		for (AbstractContainerNodeDescriptor descriptor : descriptors) {
+			for (EReference ref : descriptor.getChildrenReferences()) {
 				EReference eoppositeRef = ref.getEOpposite();
-				if(eoppositeRef != null) {
+				if (eoppositeRef != null) {
 					referencesResult.add(eoppositeRef);
 				}
 			}
@@ -154,13 +154,13 @@ public class GroupContainmentRegistry {
 
 	/**
 	 * Know whether the edit part is concerned by the group framework, which means there is a container descriptor for its class.
-	 * 
+	 *
 	 * @param editPart
-	 *        the edit part to test
+	 *            the edit part to test
 	 * @return true if there is a descriptor
 	 */
 	public static boolean isContainerConcerned(IGraphicalEditPart editPart) {
-		if(editPart == null) {
+		if (editPart == null) {
 			return false;
 		}
 		String editPartClassName = editPart.getClass().getCanonicalName();
@@ -169,22 +169,22 @@ public class GroupContainmentRegistry {
 
 	/**
 	 * Return true it the element pointed by the EditPart is a node whicj=h is concerned by the framework
-	 * 
+	 *
 	 * @param editPart
-	 *        of EObject you want to test
+	 *            of EObject you want to test
 	 * @return
 	 */
 	public static boolean isNodeConcerned(IGraphicalEditPart editPart) {
 		EClass current = editPart.resolveSemanticElement().eClass();
 		Set<EReference> allReferences = new HashSet<EReference>();
-		for(AbstractContainerNodeDescriptor nodeDesc1 : modelContainersDescriptors.values()) {
+		for (AbstractContainerNodeDescriptor nodeDesc1 : modelContainersDescriptors.values()) {
 			allReferences.addAll(nodeDesc1.getChildrenReferences());
 		}
-		for(AbstractContainerNodeDescriptor nodeDesc2 : graphicalContainersDescriptors.values()) {
+		for (AbstractContainerNodeDescriptor nodeDesc2 : graphicalContainersDescriptors.values()) {
 			allReferences.addAll(nodeDesc2.getChildrenReferences());
 		}
-		for(EReference ref : allReferences) {
-			if(ref.getEReferenceType().isSuperTypeOf(current)) {
+		for (EReference ref : allReferences) {
+			if (ref.getEReferenceType().isSuperTypeOf(current)) {
 				return true;
 			}
 		}
@@ -195,16 +195,16 @@ public class GroupContainmentRegistry {
 	 * Get the group descriptor of the edit part concerned by the group framework.
 	 * Warning the edit part has to be exactly the same than the one register in the extension point.
 	 * For example in the case of Activity Diagram. Onlu the compartment edit Part are register.
-	 * 
+	 *
 	 * @param editPart
-	 *        the edit part to get descriptor of
+	 *            the edit part to get descriptor of
 	 * @return container node descriptor or null if none
 	 */
 	public static AbstractContainerNodeDescriptor getContainerDescriptor(IGraphicalEditPart editPart) {
 		String editPartClassName = editPart.getClass().getCanonicalName();
-		if(modelContainersDescriptors.containsKey(editPartClassName)) {
+		if (modelContainersDescriptors.containsKey(editPartClassName)) {
 			return modelContainersDescriptors.get(editPartClassName);
-		} else if(graphicalContainersDescriptors.containsKey(editPartClassName)) {
+		} else if (graphicalContainersDescriptors.containsKey(editPartClassName)) {
 			return graphicalContainersDescriptors.get(editPartClassName);
 		} else {
 			return null;
@@ -213,9 +213,9 @@ public class GroupContainmentRegistry {
 
 	/**
 	 * Know whether the edit part concerned by the group framework is a model container.
-	 * 
+	 *
 	 * @param editPart
-	 *        the edit part to test
+	 *            the edit part to test
 	 * @return true if the container is a direct model container
 	 */
 	public static boolean isContainerModel(IGraphicalEditPart editPart) {
@@ -225,36 +225,36 @@ public class GroupContainmentRegistry {
 
 	/**
 	 * Get the group compartment part (containing children elements) from a view of the node
-	 * 
+	 *
 	 * @param view
-	 *        a view, either of the compartment, or the primary node view
+	 *            a view, either of the compartment, or the primary node view
 	 * @param diagramPart
-	 *        the diagram edit part to recover parts from views
+	 *            the diagram edit part to recover parts from views
 	 * @return the group compartment part or null if none is adequate for the group framework
 	 */
 	public static IGraphicalEditPart getGroupContainingPartFromView(View view, DiagramEditPart diagramPart) {
 		String viewType = view.getType();
-		if(descriptorForViewType.containsKey(viewType)) {
+		if (descriptorForViewType.containsKey(viewType)) {
 			// the appropriate descriptor has already been found for this view type
 			AbstractContainerNodeDescriptor desc = descriptorForViewType.get(viewType);
-			if(desc != null) {
+			if (desc != null) {
 				return desc.getPartFromView(view, diagramPart);
 			} else {
 				return null;
 			}
 		} else {
 			// find the the appropriate descriptor for this view type
-			for(AbstractContainerNodeDescriptor desc : modelContainersDescriptors.values()) {
+			for (AbstractContainerNodeDescriptor desc : modelContainersDescriptors.values()) {
 				IGraphicalEditPart res = desc.getPartFromView(view, diagramPart);
-				if(res != null) {
+				if (res != null) {
 					// register for further use
 					descriptorForViewType.put(viewType, desc);
 					return res;
 				}
 			}
-			for(AbstractContainerNodeDescriptor desc : graphicalContainersDescriptors.values()) {
+			for (AbstractContainerNodeDescriptor desc : graphicalContainersDescriptors.values()) {
 				IGraphicalEditPart res = desc.getPartFromView(view, diagramPart);
-				if(res != null) {
+				if (res != null) {
 					// register for further use
 					descriptorForViewType.put(viewType, desc);
 					return res;

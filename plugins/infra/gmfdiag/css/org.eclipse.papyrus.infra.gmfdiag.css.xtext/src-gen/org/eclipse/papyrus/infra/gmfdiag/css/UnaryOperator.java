@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012-2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.gmfdiag.css.UnaryOperator#getOperator <em>Operator</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.gmfdiag.css.UnaryOperator#getOperator <em>Operator</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,33 +31,35 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface UnaryOperator extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Operator</b></em>' attribute.
-   * The literals are from the enumeration {@link org.eclipse.papyrus.infra.gmfdiag.css.UNARY}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Operator</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Operator</em>' attribute.
-   * @see org.eclipse.papyrus.infra.gmfdiag.css.UNARY
-   * @see #setOperator(UNARY)
-   * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getUnaryOperator_Operator()
-   * @model
-   * @generated
-   */
-  UNARY getOperator();
+	/**
+	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.eclipse.papyrus.infra.gmfdiag.css.UNARY}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operator</em>' attribute isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Operator</em>' attribute.
+	 * @see org.eclipse.papyrus.infra.gmfdiag.css.UNARY
+	 * @see #setOperator(UNARY)
+	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getUnaryOperator_Operator()
+	 * @model
+	 * @generated
+	 */
+	UNARY getOperator();
 
-  /**
-   * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.UnaryOperator#getOperator <em>Operator</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Operator</em>' attribute.
-   * @see org.eclipse.papyrus.infra.gmfdiag.css.UNARY
-   * @see #getOperator()
-   * @generated
-   */
-  void setOperator(UNARY value);
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.UnaryOperator#getOperator <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Operator</em>' attribute.
+	 * @see org.eclipse.papyrus.infra.gmfdiag.css.UNARY
+	 * @see #getOperator()
+	 * @generated
+	 */
+	void setOperator(UNARY value);
 
 } // UnaryOperator

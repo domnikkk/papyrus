@@ -39,17 +39,18 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.papyrus.emf.facet.util.core.Logger;
+import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogFactory;
+import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet;
 import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogManager;
 import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManager;
 import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManager2;
 import org.eclipse.papyrus.emf.facet.util.emf.core.exception.InvalidFacetSetException;
 import org.eclipse.papyrus.emf.facet.util.emf.core.internal.Activator;
 import org.eclipse.papyrus.emf.facet.util.pde.core.internal.exported.PluginUtils;
-import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogFactory;
-import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet;
 import org.osgi.framework.Bundle;
 
-@SuppressWarnings("deprecation") //TODO Bug 362087 - [Deprecated] org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManager
+@SuppressWarnings("deprecation")
+// TODO Bug 362087 - [Deprecated] org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManager
 public class CatalogSetManager implements ICatalogSetManager, ICatalogSetManager2, Adapter {
 
 	private static final String CATALOG_MGR_EXTENSION_POINT_ID = "org.eclipse.papyrus.emf.facet.util.emf.core.catalogmanager"; //$NON-NLS-1$
@@ -139,7 +140,7 @@ public class CatalogSetManager implements ICatalogSetManager, ICatalogSetManager
 
 	/**
 	 * @author Nicolas Guyomar
-	 * Modified by Emmanuelle Rouillé
+	 *         Modified by Emmanuelle Rouillé
 	 */
 	public Bundle getBundleByResource(final Resource eResource) {
 		if (eResource == null) {
@@ -152,8 +153,7 @@ public class CatalogSetManager implements ICatalogSetManager, ICatalogSetManager
 	}
 
 	public void registerModelDeclaration(final IFile file) throws InvalidFacetSetException {
-		PluginUtils.register(file, CatalogSetManager.MODEL_DECLARATION_EXTENSION_POINT_ID,
-				"modeldeclaration"); //$NON-NLS-1$
+		PluginUtils.register(file, CatalogSetManager.MODEL_DECLARATION_EXTENSION_POINT_ID, "modeldeclaration"); //$NON-NLS-1$
 	}
 
 	public <T> List<T> getCatalogManagerByType(final Class<? extends T> catalogManagerClass) {
@@ -182,6 +182,6 @@ public class CatalogSetManager implements ICatalogSetManager, ICatalogSetManager
 		return type == ICatalogSetManager2.class;
 	}
 
-	
+
 
 }

@@ -1,7 +1,6 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA
+ * Copyright (c) 2013, 2014 CEA and others.
  *
- *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,6 +8,7 @@
  *
  * Contributors:
  *   Soyatec - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 417409
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.util;
@@ -27,27 +27,19 @@ import org.eclipse.papyrus.infra.gmfdiag.common.helper.NotationHelper;
 import org.eclipse.papyrus.views.properties.Activator;
 import org.eclipse.papyrus.views.properties.contexts.DataContextElement;
 import org.eclipse.papyrus.views.properties.modelelement.AnnotationModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory;
+import org.eclipse.papyrus.views.properties.modelelement.AnnotationModelElementFactory;
 
 /**
  * @author Jin Liu (jin.liu@soyatec.com)
  */
-public class GateModelElementFactory implements ModelElementFactory {
+public class GateModelElementFactory extends AnnotationModelElementFactory {
 
 	private static final String GATE_SHOW_NAME = "showName";
 
-	/**
-	 * @see org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory#createFromSource(java.lang.Object,
-	 *      org.eclipse.papyrus.views.properties.contexts.DataContextElement)
-	 * 
-	 * @param sourceElement
-	 * @param context
-	 * @return
-	 */
-	public ModelElement createFromSource(Object sourceElement, DataContextElement context) {
+	@Override
+	protected AnnotationModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 		View source = NotationHelper.findView(sourceElement);
-		if(source == null) {
+		if (source == null) {
 			Activator.log.warn("Unable to resolve the selected element to an EObject"); //$NON-NLS-1$
 			return null;
 		}
@@ -60,7 +52,7 @@ public class GateModelElementFactory implements ModelElementFactory {
 
 					@Override
 					protected Command getCommand(final Object value) {
-						return new CreateEAnnotationCommand((TransactionalEditingDomain)domain, source, GATE_SHOW_NAME) {
+						return new CreateEAnnotationCommand((TransactionalEditingDomain) domain, source, GATE_SHOW_NAME) {
 
 							@Override
 							protected void doExecute() {
@@ -74,8 +66,8 @@ public class GateModelElementFactory implements ModelElementFactory {
 					@Override
 					protected Object doGetValue() {
 						Object value = super.doGetValue();
-						if(value == null) {
-							//By default, return true.
+						if (value == null) {
+							// By default, return true.
 							return "true";
 						}
 						return value;
@@ -86,17 +78,17 @@ public class GateModelElementFactory implements ModelElementFactory {
 	}
 
 	public static final boolean isShowNameChanged(Notification msg) {
-		if(msg == null || !(msg.getNewValue() instanceof EAnnotation)) {
+		if (msg == null || !(msg.getNewValue() instanceof EAnnotation)) {
 			return false;
 		}
-		EAnnotation anno = (EAnnotation)msg.getNewValue();
+		EAnnotation anno = (EAnnotation) msg.getNewValue();
 		return GATE_SHOW_NAME.equals(anno.getSource());
 	}
 
 	public static final boolean isShowName(View view) {
-		if(view != null) {
+		if (view != null) {
 			EAnnotation anno = view.getEAnnotation(GATE_SHOW_NAME);
-			if(anno != null) {
+			if (anno != null) {
 				return !"false".equalsIgnoreCase(anno.getDetails().get(GATE_SHOW_NAME));
 			}
 		}

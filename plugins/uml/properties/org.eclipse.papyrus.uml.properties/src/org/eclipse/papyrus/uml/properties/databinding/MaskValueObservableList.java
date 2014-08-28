@@ -31,11 +31,11 @@ import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEd
 
 /**
  * An IObservableList for the StringListValueStyle named "maskLabel" (See {@link VisualInformationPapyrusConstants#CUSTOM_MASK_LABEL}
- * 
+ *
  * It is used for configuring an {@link IMaskManagedLabelEditPolicy}
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class MaskValueObservableList extends CustomStringStyleObservableList {
 
@@ -49,41 +49,41 @@ public class MaskValueObservableList extends CustomStringStyleObservableList {
 	}
 
 	private static View getView(EditPart editPart) {
-		return (View)editPart.getModel();
+		return (View) editPart.getModel();
 	}
 
 	@Override
 	protected IObservableList getConcreteList() {
-		if(!isStyleCreated()) {
+		if (!isStyleCreated()) {
 			return new WritableList(getDefaultValues(), String.class);
 		}
 		return super.getConcreteList();
 	}
 
 	protected List<String> getDefaultValues() {
-		return new LinkedList<String>(((IMaskManagedLabelEditPolicy)editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY)).getCurrentDisplayValue());
+		return new LinkedList<String>(((IMaskManagedLabelEditPolicy) editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY)).getCurrentDisplayValue());
 	}
 
 	@Override
 	protected void refreshCacheList() {
 		super.refreshCacheList();
-		((IMaskManagedLabelEditPolicy)editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY)).refreshDisplay();
+		((IMaskManagedLabelEditPolicy) editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY)).refreshDisplay();
 	}
 
 
-	//When the style is not yet created (Style#values = []), we need to transform the commands. In this case, the "current value" equals "defaut value", which is not always empty.
-	//The superclass expects an empty default state, and will return Unexecutable commands if we try to e.g. remove elements
-	//For example, if our default state is [name, visibility], we can handle a "Remove visibility" command, by creating a [name] list.
+	// When the style is not yet created (Style#values = []), we need to transform the commands. In this case, the "current value" equals "defaut value", which is not always empty.
+	// The superclass expects an empty default state, and will return Unexecutable commands if we try to e.g. remove elements
+	// For example, if our default state is [name, visibility], we can handle a "Remove visibility" command, by creating a [name] list.
 
 	@Override
 	public Command getRemoveCommand(Object value) {
-		if(isStyleCreated()) {
+		if (isStyleCreated()) {
 			return super.getRemoveCommand(value);
 		}
 
-		//The current list is not always empty, even if the style is not defined: we have a default value
+		// The current list is not always empty, even if the style is not defined: we have a default value
 		Collection<Object> currentValues = new HashSet<Object>(wrappedList);
-		if(currentValues.remove(value)) {
+		if (currentValues.remove(value)) {
 			return getAddAllCommand(currentValues);
 		}
 		return UnexecutableCommand.INSTANCE;
@@ -91,14 +91,14 @@ public class MaskValueObservableList extends CustomStringStyleObservableList {
 
 	@Override
 	public Command getRemoveAllCommand(Collection<?> values) {
-		if(isStyleCreated()) {
+		if (isStyleCreated()) {
 			return super.getRemoveAllCommand(values);
 		}
 
 		Collection<Object> currentValues = new HashSet<Object>(wrappedList);
-		if(currentValues.containsAll(values)) {
+		if (currentValues.containsAll(values)) {
 			currentValues.removeAll(values);
-			if(currentValues.isEmpty()) {
+			if (currentValues.isEmpty()) {
 				return IdentityCommand.INSTANCE;
 			}
 			return getAddAllCommand(currentValues);

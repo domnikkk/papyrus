@@ -30,7 +30,7 @@ import org.eclipse.papyrus.domaincontextcodegen.SpecializationType;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.SpecializationTypeImpl#getGenHelper <em>Gen Helper</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class SpecializationTypeImpl extends ElementTypeImpl implements SpecializationType {
@@ -39,7 +39,7 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	 * The cached value of the '{@link #getRef() <em>Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRef()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	 * The default value of the '{@link #getMatcher() <em>Matcher</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMatcher()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	 * The cached value of the '{@link #getMatcher() <em>Matcher</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMatcher()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	 * The cached value of the '{@link #getGenMatcher() <em>Gen Matcher</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenMatcher()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	 * The cached value of the '{@link #getGenHelper() <em>Gen Helper</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenHelper()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SpecializationTypeImpl() {
@@ -103,7 +103,7 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,16 +114,17 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementType getRef() {
-		if(ref != null && ref.eIsProxy()) {
-			InternalEObject oldRef = (InternalEObject)ref;
-			ref = (ElementType)eResolveProxy(oldRef);
-			if(ref != oldRef) {
-				if(eNotificationRequired())
+		if (ref != null && ref.eIsProxy()) {
+			InternalEObject oldRef = (InternalEObject) ref;
+			ref = (ElementType) eResolveProxy(oldRef);
+			if (ref != oldRef) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomaincontextcodegenPackage.SPECIALIZATION_TYPE__REF, oldRef, ref));
+				}
 			}
 		}
 		return ref;
@@ -132,7 +133,7 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementType basicGetRef() {
@@ -142,20 +143,21 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRef(ElementType newRef) {
 		ElementType oldRef = ref;
 		ref = newRef;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.SPECIALIZATION_TYPE__REF, oldRef, ref));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getMatcher() {
@@ -165,20 +167,21 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMatcher(String newMatcher) {
 		String oldMatcher = matcher;
 		matcher = newMatcher;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.SPECIALIZATION_TYPE__MATCHER, oldMatcher, matcher));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GenMatcher getGenMatcher() {
@@ -188,18 +191,19 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetGenMatcher(GenMatcher newGenMatcher, NotificationChain msgs) {
 		GenMatcher oldGenMatcher = genMatcher;
 		genMatcher = newGenMatcher;
-		if(eNotificationRequired()) {
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_MATCHER, oldGenMatcher, newGenMatcher);
-			if(msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -207,27 +211,31 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setGenMatcher(GenMatcher newGenMatcher) {
-		if(newGenMatcher != genMatcher) {
+		if (newGenMatcher != genMatcher) {
 			NotificationChain msgs = null;
-			if(genMatcher != null)
-				msgs = ((InternalEObject)genMatcher).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_MATCHER, null, msgs);
-			if(newGenMatcher != null)
-				msgs = ((InternalEObject)newGenMatcher).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_MATCHER, null, msgs);
+			if (genMatcher != null) {
+				msgs = ((InternalEObject) genMatcher).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_MATCHER, null, msgs);
+			}
+			if (newGenMatcher != null) {
+				msgs = ((InternalEObject) newGenMatcher).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_MATCHER, null, msgs);
+			}
 			msgs = basicSetGenMatcher(newGenMatcher, msgs);
-			if(msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if(eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_MATCHER, newGenMatcher, newGenMatcher));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GenHelper getGenHelper() {
@@ -237,18 +245,19 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetGenHelper(GenHelper newGenHelper, NotificationChain msgs) {
 		GenHelper oldGenHelper = genHelper;
 		genHelper = newGenHelper;
-		if(eNotificationRequired()) {
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_HELPER, oldGenHelper, newGenHelper);
-			if(msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -256,32 +265,36 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setGenHelper(GenHelper newGenHelper) {
-		if(newGenHelper != genHelper) {
+		if (newGenHelper != genHelper) {
 			NotificationChain msgs = null;
-			if(genHelper != null)
-				msgs = ((InternalEObject)genHelper).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_HELPER, null, msgs);
-			if(newGenHelper != null)
-				msgs = ((InternalEObject)newGenHelper).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_HELPER, null, msgs);
+			if (genHelper != null) {
+				msgs = ((InternalEObject) genHelper).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_HELPER, null, msgs);
+			}
+			if (newGenHelper != null) {
+				msgs = ((InternalEObject) newGenHelper).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_HELPER, null, msgs);
+			}
 			msgs = basicSetGenHelper(newGenHelper, msgs);
-			if(msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if(eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_HELPER, newGenHelper, newGenHelper));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_MATCHER:
 			return basicSetGenMatcher(null, msgs);
 		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_HELPER:
@@ -293,15 +306,16 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE__REF:
-			if(resolve)
+			if (resolve) {
 				return getRef();
+			}
 			return basicGetRef();
 		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE__MATCHER:
 			return getMatcher();
@@ -316,23 +330,23 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE__REF:
-			setRef((ElementType)newValue);
+			setRef((ElementType) newValue);
 			return;
 		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE__MATCHER:
-			setMatcher((String)newValue);
+			setMatcher((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_MATCHER:
-			setGenMatcher((GenMatcher)newValue);
+			setGenMatcher((GenMatcher) newValue);
 			return;
 		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_HELPER:
-			setGenHelper((GenHelper)newValue);
+			setGenHelper((GenHelper) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -341,23 +355,23 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE__REF:
-			setRef((ElementType)null);
+			setRef((ElementType) null);
 			return;
 		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE__MATCHER:
 			setMatcher(MATCHER_EDEFAULT);
 			return;
 		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_MATCHER:
-			setGenMatcher((GenMatcher)null);
+			setGenMatcher((GenMatcher) null);
 			return;
 		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE__GEN_HELPER:
-			setGenHelper((GenHelper)null);
+			setGenHelper((GenHelper) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -366,12 +380,12 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE__REF:
 			return ref != null;
 		case DomaincontextcodegenPackage.SPECIALIZATION_TYPE__MATCHER:
@@ -387,13 +401,14 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (matcher: ");
@@ -402,4 +417,4 @@ public class SpecializationTypeImpl extends ElementTypeImpl implements Specializ
 		return result.toString();
 	}
 
-} //SpecializationTypeImpl
+} // SpecializationTypeImpl

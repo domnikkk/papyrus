@@ -34,7 +34,7 @@ import org.eclipse.uml2.uml.OpaqueBehavior;
 
 /**
  * Panel displayed when an Operation is selected
- * 
+ *
  * TODO: instead of keeping isAbstract and pureVirtual Stereotype synchronized, pure virtual
  * could be removed from the panel
  */
@@ -48,7 +48,7 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 	private Behavior selectedBehavior;
 
 	private Button verifyAcceleo;
-	
+
 	Element selectedEOwner;
 
 	public CppBehaviorPanel(Composite parent, int style) {
@@ -57,7 +57,7 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#getSelectedElement()
 	 */
 	@Override
@@ -67,14 +67,14 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#setSelectedElement(java.lang.Element)
 	 */
 	@Override
 	public void setSelectedElement(Element newElement) {
 		super.setSelectedElement(newElement);
-		if(newElement instanceof Behavior) {
-			this.selectedBehavior = (Behavior)newElement;
+		if (newElement instanceof Behavior) {
+			this.selectedBehavior = (Behavior) newElement;
 			// Retrieve the owner
 			this.selectedEOwner = selectedBehavior.getOwner();
 		}
@@ -85,28 +85,29 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#createContent()
 	 */
 	@Override
 	public Control createContent()
 	{
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// Create checkboxes
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		verifyAcceleo = new Button(this, SWT.PUSH);
 		verifyAcceleo.setText("verify embedded Acceleo");
 		FormData dataVA = new FormData();
 		dataVA.left = new FormAttachment(this, H_SPACE);
 		dataVA.top = new FormAttachment(0, H_SPACE);
 		verifyAcceleo.setLayoutData(dataVA);
-		
-		///////////////////////////////////////////////////////////////////////
+
+		// /////////////////////////////////////////////////////////////////////
 		// Add checkboxes listeners
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 
 		verifyAcceleo.addSelectionListener(new SelectionAdapter() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				try {
 					AcceleoDriver.evaluate(docBody.get(), selectedBehavior, null);
@@ -118,33 +119,33 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 			}
 		});
 
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// Create save reset buttons with superclass method
-		///////////////////////////////////////////////////////////////////////    	
+		// /////////////////////////////////////////////////////////////////////
 		createSaveResetButtons();
 
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 		// Constructor init list
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// Body
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 
 		docBody = createDocumentC();
 		groupBody = createGroup(
-			this
-			, "Method body"
-			, verifyAcceleo
-			, null
-			, true
-			, 0
-			, 0
-			, true);
+				this
+				, "Method body"
+				, verifyAcceleo
+				, null
+				, true
+				, 0
+				, 0
+				, true);
 		// Use CDT CEditor coloration
 		createViewerC(docBody, groupBody);
 
-		///////////////////////////////////////////////////////////////////////	
+		// /////////////////////////////////////////////////////////////////////
 
 		return this;
 	}
@@ -153,17 +154,18 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#save()
 	 */
 	@Override
 	public void save()
 	{
-		if(selectedBehavior == null) {
+		if (selectedBehavior == null) {
 			/* Log.debug("saveBody : selectedOperation is null"); */
 		} else {
 			CommandSupport.exec("C++ behavior save", new Runnable() {
 
+				@Override
 				public void run() {
 					// Body
 					setCppBody(selectedBehavior, docBody.get());
@@ -175,17 +177,17 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	public static String getCppBody(Behavior behavior)
 	{
-		if(behavior instanceof OpaqueBehavior) {
-			OpaqueBehavior ob = (OpaqueBehavior)behavior;
+		if (behavior instanceof OpaqueBehavior) {
+			OpaqueBehavior ob = (OpaqueBehavior) behavior;
 			int i = 0;
-			for(String language : ob.getLanguages()) {
-				if(language.equals(C_CPP_ID)) {
+			for (String language : ob.getLanguages()) {
+				if (language.equals(C_CPP_ID)) {
 					return ob.getBodies().get(i);
 				}
-				else if(language.equals(CPP_ID)) {
+				else if (language.equals(CPP_ID)) {
 					return ob.getBodies().get(i);
 				}
-				else if(language.equals(C_ID)) {
+				else if (language.equals(C_ID)) {
 					return ob.getBodies().get(i);
 				}
 				i++;
@@ -197,18 +199,18 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 	public static void setCppBody(Behavior behavior, String body)
 	{
 		boolean done = false;
-		if(behavior instanceof OpaqueBehavior) {
-			OpaqueBehavior ob = (OpaqueBehavior)behavior;
+		if (behavior instanceof OpaqueBehavior) {
+			OpaqueBehavior ob = (OpaqueBehavior) behavior;
 			int i = 0;
-			for(String language : ob.getLanguages()) {
-				if(language.equals(C_CPP_ID) || language.equals(CPP_ID) || language.equals(C_ID)) {
+			for (String language : ob.getLanguages()) {
+				if (language.equals(C_CPP_ID) || language.equals(CPP_ID) || language.equals(C_ID)) {
 					done = true;
 					ob.getBodies().set(i, body);
 					break;
 				}
 				i++;
 			}
-			if(!done) {
+			if (!done) {
 				ob.getLanguages().add(C_CPP_ID);
 				ob.getBodies().add(body);
 			}
@@ -217,9 +219,10 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#entryAction()
 	 */
+	@Override
 	public void entryAction() {
 		super.entryAction();
 		reset();
@@ -227,12 +230,13 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#exitAction()
 	 */
+	@Override
 	public void exitAction() {
 		// do exit action, only if the owner is a class
-		if(selectedEOwner instanceof Class) {
+		if (selectedEOwner instanceof Class) {
 			super.exitAction();
 		}
 	}
@@ -240,10 +244,10 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 	@Override
 	public boolean checkModifications() {
 		// check if ConstInit has changed
-	
+
 		String methodBody = getCppBody(selectedBehavior);
 
-		if(!(docBody.get().equals(methodBody))) {
+		if (!(docBody.get().equals(methodBody))) {
 			return true;
 		}
 
@@ -252,7 +256,7 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	@Override
 	protected void refreshPanel() {
-		if(selectedBehavior == null) {
+		if (selectedBehavior == null) {
 			/* Log.debug("resetBody : selectedOperation is null"); */
 		} else {
 
@@ -263,22 +267,22 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	@Override
 	protected boolean isModelValid() {
-		if(selectedBehavior == null) {
+		if (selectedBehavior == null) {
 			return true;
 		}
-		if(selectedEOwner instanceof Class) {
+		if (selectedEOwner instanceof Class) {
 
-			if(selectedBehavior.isAbstract()) {
-				if(!StereotypeUtil.isApplied(selectedBehavior, Virtual.class)) {
+			if (selectedBehavior.isAbstract()) {
+				if (!StereotypeUtil.isApplied(selectedBehavior, Virtual.class)) {
 					return false;
 				}
 			}
 		} else {
 			// owner is interface
-			if(!selectedBehavior.isAbstract()) {
+			if (!selectedBehavior.isAbstract()) {
 				return false;
 			}
-			if(StereotypeUtil.isApplied(selectedBehavior, Virtual.class)) {
+			if (StereotypeUtil.isApplied(selectedBehavior, Virtual.class)) {
 				return false;
 			}
 		}
@@ -291,15 +295,16 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 	{
 		CommandSupport.exec("C++ operation save", new Runnable() {
 
+			@Override
 			public void run()
 			{
-				if(selectedBehavior == null) {
+				if (selectedBehavior == null) {
 					return;
 				}
-				if(selectedEOwner instanceof Class) {
+				if (selectedEOwner instanceof Class) {
 					// toggle Stereotypes pure virtual if element is abstract
-					if(selectedBehavior.isAbstract()) {
-						if(!StereotypeUtil.isApplied(selectedBehavior, Virtual.class)) {
+					if (selectedBehavior.isAbstract()) {
+						if (!StereotypeUtil.isApplied(selectedBehavior, Virtual.class)) {
 							// selectedOperation.toggleStereotype("VirtualPure", true);
 							// selectedOperation.toggleStereotype("Virtual", false);
 						} else {
@@ -308,8 +313,8 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 					}
 
 					// if element is abstract and has VirtualPure, set to Virtual only
-					if(!selectedBehavior.isAbstract()) {
-						if(StereotypeUtil.isApplied(selectedBehavior, Virtual.class)) {
+					if (!selectedBehavior.isAbstract()) {
+						if (StereotypeUtil.isApplied(selectedBehavior, Virtual.class)) {
 							// selectedOperation.toggleStereotype("VirtualPure", false);
 							// selectedOperation.toggleStereotype("Virtual", true);
 						} else {

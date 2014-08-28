@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,11 +28,11 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * A Command to edit the Multiplicity of a MultiplicityElement. The expected value is a String
  * representing the Multiplicity.
- * 
+ *
  * This command is a CompoundCommand, and relies on the Service Edit to retrieve the individual "set bounds" commands
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  * @see {@link MultiplicityParser}
  */
 public class SetMultiplicityCommand extends CompoundCommand {
@@ -46,19 +46,19 @@ public class SetMultiplicityCommand extends CompoundCommand {
 	static EStructuralFeature upperFeature = UMLPackage.eINSTANCE.getMultiplicityElement_Upper();
 
 	public SetMultiplicityCommand(MultiplicityElement element, String value) {
-		if(element == null) {
+		if (element == null) {
 			return;
 		}
 
 		int[] lowerUpper = MultiplicityParser.getBounds(value);
-		if(lowerUpper == null || lowerUpper.length < 2) {
+		if (lowerUpper == null || lowerUpper.length < 2) {
 			return;
 		}
 
 		int lower = lowerUpper[0];
 		int upper = lowerUpper[1];
 
-		if(!MultiplicityParser.isValidMultiplicity(lower, upper)) {
+		if (!MultiplicityParser.isValidMultiplicity(lower, upper)) {
 			return;
 		}
 
@@ -71,7 +71,7 @@ public class SetMultiplicityCommand extends CompoundCommand {
 
 	private Command getSetCommand(EStructuralFeature feature, int value) {
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(element);
-		if(provider != null) {
+		if (provider != null) {
 			SetRequest request = new SetRequest(element, feature, value);
 			ICommand createGMFCommand = provider.getEditCommand(request);
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,24 +30,25 @@ import org.eclipse.papyrus.views.modelexplorer.NavigatorUtils;
 import org.eclipse.papyrus.views.modelexplorer.queries.AbstractEditorContainerQuery;
 
 /** Get the collection of all contained tables */
-//FIXME this query is declared using Element in the querySet -> change into EObject when the EMF-Facet bug will be corrected 365744
+// FIXME this query is declared using Element in the querySet -> change into EObject when the EMF-Facet bug will be corrected 365744
 public class GetContainedTextEditors extends AbstractEditorContainerQuery implements IJavaModelQuery<EObject, Collection<TextEditorModel>> {
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<TextEditorModel> evaluate(final EObject context, final ParameterValueList parameterValues) throws ModelQueryExecutionException {
 		List<TextEditorModel> result = new ArrayList<TextEditorModel>();
 		Iterator<EObject> roots = NavigatorUtils.getNotationRoots(context);
-		if(roots == null) {
+		if (roots == null) {
 			return result;
 		}
 
-		while(roots.hasNext()) {
+		while (roots.hasNext()) {
 			EObject root = roots.next();
-			if(root instanceof TextEditorModel) {
-				if(EcoreUtil.equals(((TextEditorModel)root).getEditedObject(), context)) {
-					result.add((TextEditorModel)root);
+			if (root instanceof TextEditorModel) {
+				if (EcoreUtil.equals(((TextEditorModel) root).getEditedObject(), context)) {
+					result.add((TextEditorModel) root);
 				}
 			}
 		}

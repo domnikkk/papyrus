@@ -24,15 +24,15 @@ public class LifelineLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 		Lifeline lifeline = getUMLElement();
 		// check host semantic element is not null
-		if(lifeline == null) {
+		if (lifeline == null) {
 			return;
 		}
 		// adds a listener to the element itself, and to linked elements, like Type
 		getDiagramEventBroker().addNotificationListener(lifeline, this);
 		ConnectableElement ce = lifeline.getRepresents();
-		if(ce != null) {
+		if (ce != null) {
 			getDiagramEventBroker().addNotificationListener(ce, this);
-			if(ce.getType() != null) {
+			if (ce.getType() != null) {
 				getDiagramEventBroker().addNotificationListener(ce.getType(), this);
 			}
 		}
@@ -43,14 +43,14 @@ public class LifelineLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 		super.removeAdditionalListeners();
 		Lifeline lifeline = getUMLElement();
 		// check host semantic element is not null
-		if(lifeline == null) {
+		if (lifeline == null) {
 			return;
 		}
 		getDiagramEventBroker().removeNotificationListener(lifeline, this);
 		ConnectableElement ce = lifeline.getRepresents();
-		if(ce != null) {
+		if (ce != null) {
 			getDiagramEventBroker().removeNotificationListener(ce, this);
-			if(ce.getType() != null) {
+			if (ce.getType() != null) {
 				getDiagramEventBroker().removeNotificationListener(ce.getType(), this);
 			}
 		}
@@ -60,37 +60,37 @@ public class LifelineLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	public void notifyChanged(Notification notification) {
 		super.notifyChanged(notification);
 		Object object = notification.getNotifier();
-		if(object == null || getUMLElement() == null) {
+		if (object == null || getUMLElement() == null) {
 			return;
 		}
-		if(notification.getFeature().equals(UMLPackage.eINSTANCE.getNamedElement_Name())) {
+		if (notification.getFeature().equals(UMLPackage.eINSTANCE.getNamedElement_Name())) {
 			refreshDisplay();
-		} else if(notification.getFeature().equals(UMLPackage.Literals.LIFELINE__REPRESENTS)) {
+		} else if (notification.getFeature().equals(UMLPackage.Literals.LIFELINE__REPRESENTS)) {
 			// change represent element
-			if(notification.getNewValue() instanceof ConnectableElement) {
-				ConnectableElement ce = (ConnectableElement)notification.getNewValue();
+			if (notification.getNewValue() instanceof ConnectableElement) {
+				ConnectableElement ce = (ConnectableElement) notification.getNewValue();
 				getDiagramEventBroker().addNotificationListener(ce, this);
-				if(ce.getType() != null) {
+				if (ce.getType() != null) {
 					getDiagramEventBroker().addNotificationListener(ce.getType(), this);
 				}
 			}
-			if(notification.getOldValue() instanceof ConnectableElement) {
-				ConnectableElement ce = (ConnectableElement)notification.getOldValue();
+			if (notification.getOldValue() instanceof ConnectableElement) {
+				ConnectableElement ce = (ConnectableElement) notification.getOldValue();
 				getDiagramEventBroker().removeNotificationListener(ce, this);
-				if(ce.getType() != null) {
+				if (ce.getType() != null) {
 					getDiagramEventBroker().removeNotificationListener(ce.getType(), this);
 				}
 			}
 			refreshDisplay();
-		} else if(isMaskManagedAnnotation(object) || isRemovedMaskManagedLabelAnnotation(object, notification)) {
+		} else if (isMaskManagedAnnotation(object) || isRemovedMaskManagedLabelAnnotation(object, notification)) {
 			refreshDisplay();
-		} else if(object.equals(getUMLElement().getRepresents())) {
+		} else if (object.equals(getUMLElement().getRepresents())) {
 			// change represent type
-			if(notification.getNewValue() instanceof Type && notification.getNewValue() instanceof EObject) {
-				getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+			if (notification.getNewValue() instanceof Type && notification.getNewValue() instanceof EObject) {
+				getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 			}
-			if(notification.getOldValue() instanceof Type && notification.getOldValue() instanceof EObject) {
-				getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+			if (notification.getOldValue() instanceof Type && notification.getOldValue() instanceof EObject) {
+				getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 			}
 			refreshDisplay();
 		}
@@ -99,11 +99,11 @@ public class LifelineLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	@Override
 	public void refreshDisplay() {
 		// calls the helper for this edit Part
-		LifelineEditPart lp = (LifelineEditPart)getHost();
+		LifelineEditPart lp = (LifelineEditPart) getHost();
 		List children = lp.getChildren();
-		for(Object p : children) {
-			if(p instanceof LifelineNameEditPart) {
-				LifelineLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart)p);
+		for (Object p : children) {
+			if (p instanceof LifelineNameEditPart) {
+				LifelineLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart) p);
 			}
 		}
 	}
@@ -126,6 +126,6 @@ public class LifelineLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	 */
 	@Override
 	public Lifeline getUMLElement() {
-		return (Lifeline)hostSemanticElement;
+		return (Lifeline) hostSemanticElement;
 	}
 }

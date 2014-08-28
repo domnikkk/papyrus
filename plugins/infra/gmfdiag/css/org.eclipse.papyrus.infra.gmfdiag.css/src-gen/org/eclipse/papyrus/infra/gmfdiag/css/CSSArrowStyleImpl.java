@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,52 +32,54 @@ public class CSSArrowStyleImpl extends ArrowStyleImpl implements CSSArrowStyle {
 	private CSSArrowStyle arrowStyle;
 
 	protected CSSArrowStyle getArrowStyle() {
-		if(arrowStyle == null) {
+		if (arrowStyle == null) {
 			arrowStyle = new CSSArrowStyleDelegate(this, getEngine());
 		}
 		return arrowStyle;
 	}
 
 	protected ExtendedCSSEngine getEngine() {
-		if(engine == null) {
-			engine = ((CSSDiagramImpl)findView().getDiagram()).getEngine();
+		if (engine == null) {
+			engine = ((CSSDiagramImpl) findView().getDiagram()).getEngine();
 		}
 		return engine;
 	}
 
 	protected View findView() {
 		EObject parent = eContainer();
-		while(!(parent instanceof View) && parent != null) {
+		while (!(parent instanceof View) && parent != null) {
 			parent = parent.eContainer();
 		}
 
-		if(parent != null) {
-			return (View)parent;
+		if (parent != null) {
+			return (View) parent;
 		}
 
 		return null;
 	}
 
 
-	//////////////////////////////////////////
-	//	Forwards accesses to CSS properties	//
-	//////////////////////////////////////////
+	// ////////////////////////////////////////
+	// Forwards accesses to CSS properties //
+	// ////////////////////////////////////////
 
 
+	@Override
 	public ArrowType getCSSArrowSource() {
 		ArrowType value = super.getArrowSource();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getArrowStyle_ArrowSource(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getArrowStyle_ArrowSource(), value)) {
 			return value;
 		} else {
 			return getArrowStyle().getCSSArrowSource();
 		}
 	}
 
+	@Override
 	public ArrowType getCSSArrowTarget() {
 		ArrowType value = super.getArrowTarget();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getArrowStyle_ArrowTarget(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getArrowStyle_ArrowTarget(), value)) {
 			return value;
 		} else {
 			return getArrowStyle().getCSSArrowTarget();
@@ -87,21 +89,21 @@ public class CSSArrowStyleImpl extends ArrowStyleImpl implements CSSArrowStyle {
 
 	@Override
 	public ArrowType getArrowSource() {
-		//return super.getArrowSource();
+		// return super.getArrowSource();
 		return getCSSArrowSource();
 	}
 
 	@Override
 	public ArrowType getArrowTarget() {
-		//return super.getArrowTarget();
+		// return super.getArrowTarget();
 		return getCSSArrowTarget();
 	}
 
 
 
-	////////////////////////////////////////////////
-	//	Implements a setter for each CSS property //
-	////////////////////////////////////////////////	
+	// //////////////////////////////////////////////
+	// Implements a setter for each CSS property //
+	// //////////////////////////////////////////////
 
 	@Override
 	public void setArrowSource(ArrowType value) {
@@ -109,7 +111,7 @@ public class CSSArrowStyleImpl extends ArrowStyleImpl implements CSSArrowStyle {
 
 		boolean deliver = eDeliver();
 		try {
-			//Do not rely on super implementation for sending the event. Just change the value.
+			// Do not rely on super implementation for sending the event. Just change the value.
 			eSetDeliver(false);
 			super.setArrowSource(value);
 		} finally {
@@ -119,8 +121,8 @@ public class CSSArrowStyleImpl extends ArrowStyleImpl implements CSSArrowStyle {
 		EStructuralFeature feature = NotationPackage.eINSTANCE.getArrowStyle_ArrowSource();
 		ForceValueHelper.setValue(findView(), feature, value);
 
-		//Bug YYY YYY: Super implementation doesn't rely on "getArrowSource" and doesn't properly compute oldArrowSource
-		if(eNotificationRequired()) {
+		// Bug YYY YYY: Super implementation doesn't rely on "getArrowSource" and doesn't properly compute oldArrowSource
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NotationPackage.ARROW_STYLE__ARROW_SOURCE, oldArrowSource, value));
 		}
 	}
@@ -133,9 +135,9 @@ public class CSSArrowStyleImpl extends ArrowStyleImpl implements CSSArrowStyle {
 		ForceValueHelper.setValue(findView(), feature, value);
 	}
 
-	//////////////////////////////////
-	//	Implements the unset method //
-	//////////////////////////////////
+	// ////////////////////////////////
+	// Implements the unset method //
+	// ////////////////////////////////
 
 	@Override
 	public void eUnset(int featureId) {

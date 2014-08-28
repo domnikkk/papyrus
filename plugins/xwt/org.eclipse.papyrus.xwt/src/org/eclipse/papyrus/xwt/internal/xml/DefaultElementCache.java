@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import java.util.Map;
  */
 public class DefaultElementCache implements IElementCache {
 
-	/** The default cache size (currently {@value}). */
+	/** The default cache size (currently {@value} ). */
 	static int DEFAULT_CACHE_SIZE = 128;
 
 	private final int cacheSize;
@@ -31,6 +31,7 @@ public class DefaultElementCache implements IElementCache {
 
 		private static final long serialVersionUID = 1L;
 
+		@Override
 		protected boolean removeEldestEntry(Map.Entry<String, Element> eldest) {
 			return size() > cacheSize;
 		}
@@ -46,17 +47,17 @@ public class DefaultElementCache implements IElementCache {
 
 	/**
 	 * Initializes me with a specific size of cache.
-	 * 
+	 *
 	 * @param cacheSize
-	 *        the maximal number of cached XML elements to keep
-	 * 
+	 *            the maximal number of cached XML elements to keep
+	 *
 	 * @throws IllegalArgumentException
-	 *         if the {@code cacheSize} is not positive
+	 *             if the {@code cacheSize} is not positive
 	 */
 	public DefaultElementCache(int cacheSize) {
 		super();
 
-		if(cacheSize <= 0) {
+		if (cacheSize <= 0) {
 			throw new IllegalArgumentException("non-positive cacheSize"); //$NON-NLS-1$
 		}
 

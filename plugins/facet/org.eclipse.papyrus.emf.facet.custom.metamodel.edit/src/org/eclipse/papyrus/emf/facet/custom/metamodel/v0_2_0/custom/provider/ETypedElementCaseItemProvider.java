@@ -1,16 +1,16 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 361794 - [Restructuring] New customization meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
  *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning
- *       Gregoire Dupe (Mia-Software) - Bug 376576 - [EFacet] Change the multiplicity of Facet::extendedFacet 
+ *       Gregoire Dupe (Mia-Software) - Bug 376576 - [EFacet] Change the multiplicity of Facet::extendedFacet
  */
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.provider;
 
@@ -31,20 +31,21 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryFactory;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomFactory;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryFactory;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class ETypedElementCaseItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -54,6 +55,7 @@ public class ETypedElementCaseItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ETypedElementCaseItemProvider(AdapterFactory adapterFactory) {
@@ -64,6 +66,7 @@ public class ETypedElementCaseItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,30 +83,31 @@ public class ETypedElementCaseItemProvider
 	 * This adds a property descriptor for the Case feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addCasePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ETypedElementCase_case_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ETypedElementCase_case_feature", "_UI_ETypedElementCase_type"),
-				 CustomPackage.Literals.ETYPED_ELEMENT_CASE__CASE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ETypedElementCase_case_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ETypedElementCase_case_feature", "_UI_ETypedElementCase_type"),
+						CustomPackage.Literals.ETYPED_ELEMENT_CASE__CASE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,6 +122,7 @@ public class ETypedElementCaseItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,6 +137,7 @@ public class ETypedElementCaseItemProvider
 	 * This returns ETypedElementCase.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,6 +149,7 @@ public class ETypedElementCaseItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,6 +162,7 @@ public class ETypedElementCaseItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,9 +170,9 @@ public class ETypedElementCaseItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ETypedElementCase.class)) {
-			case CustomPackage.ETYPED_ELEMENT_CASE__VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case CustomPackage.ETYPED_ELEMENT_CASE__VALUE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -174,6 +182,7 @@ public class ETypedElementCaseItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,65 +190,66 @@ public class ETypedElementCaseItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(CustomPackage.Literals.ETYPED_ELEMENT_CASE__VALUE,
-				 CustomFactory.eINSTANCE.createETypedElementSwitchQuery()));
+						CustomFactory.eINSTANCE.createETypedElementSwitchQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(CustomPackage.Literals.ETYPED_ELEMENT_CASE__VALUE,
-				 QueryFactory.eINSTANCE.createNavigationQuery()));
+						QueryFactory.eINSTANCE.createNavigationQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(CustomPackage.Literals.ETYPED_ELEMENT_CASE__VALUE,
-				 QueryFactory.eINSTANCE.createIsOneOfQuery()));
+						QueryFactory.eINSTANCE.createIsOneOfQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(CustomPackage.Literals.ETYPED_ELEMENT_CASE__VALUE,
-				 QueryFactory.eINSTANCE.createStringLiteralQuery()));
+						QueryFactory.eINSTANCE.createStringLiteralQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(CustomPackage.Literals.ETYPED_ELEMENT_CASE__VALUE,
-				 QueryFactory.eINSTANCE.createTrueLiteralQuery()));
+						QueryFactory.eINSTANCE.createTrueLiteralQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(CustomPackage.Literals.ETYPED_ELEMENT_CASE__VALUE,
-				 QueryFactory.eINSTANCE.createFalseLiteralQuery()));
+						QueryFactory.eINSTANCE.createFalseLiteralQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(CustomPackage.Literals.ETYPED_ELEMENT_CASE__VALUE,
-				 QueryFactory.eINSTANCE.createNullLiteralQuery()));
+						QueryFactory.eINSTANCE.createNullLiteralQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(CustomPackage.Literals.ETYPED_ELEMENT_CASE__VALUE,
-				 QueryFactory.eINSTANCE.createIntegerLiteralQuery()));
+						QueryFactory.eINSTANCE.createIntegerLiteralQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(CustomPackage.Literals.ETYPED_ELEMENT_CASE__VALUE,
-				 QueryFactory.eINSTANCE.createFloatLiteralQuery()));
+						QueryFactory.eINSTANCE.createFloatLiteralQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(CustomPackage.Literals.ETYPED_ELEMENT_CASE__VALUE,
-				 QueryFactory.eINSTANCE.createEObjectLiteralQuery()));
+						QueryFactory.eINSTANCE.createEObjectLiteralQuery()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(CustomPackage.Literals.ETYPED_ELEMENT_CASE__VALUE,
-				 QueryFactory.eINSTANCE.createOperationCallQuery()));
+						QueryFactory.eINSTANCE.createOperationCallQuery()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * Helper for extracting information used by the ComparePapyrusDiagramPostProcessor,
  * in order to establish requirements between Diffs representing changes on Generalization in a .uml model,
  * and Diffs representing changes on nodes for inherited features in .notation model.
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public class GeneralizationChangesHelper {
@@ -79,7 +79,7 @@ public class GeneralizationChangesHelper {
 
 	/**
 	 * Constructor for this helper. Instantiation of this helper implies classification of Diffs associated with the given comparison.
-	 * 
+	 *
 	 * @param comparison
 	 */
 	public GeneralizationChangesHelper(Comparison comparison) {
@@ -97,13 +97,13 @@ public class GeneralizationChangesHelper {
 	 * classesWithNodeForInheritedFeature_ADDED, classesWithNodeForInheritedFeature_DELETED)
 	 */
 	protected void classifyDiffs() {
-		for(Diff difference : this.comparison.getDifferences()) {
-			if(difference instanceof ReferenceChange) {
+		for (Diff difference : this.comparison.getDifferences()) {
+			if (difference instanceof ReferenceChange) {
 				// TODO Changes may be required in connection with the following bug:
-				// Bug 406405 - A macroscopic change has to be created for UML DirectedRelationship elements 
-				this.evaluateGeneralizationChange((ReferenceChange)difference);
-			} else if(difference instanceof NodeChange) {
-				this.evaluateNodeForInheritedFeatureChange((NodeChange)difference);
+				// Bug 406405 - A macroscopic change has to be created for UML DirectedRelationship elements
+				this.evaluateGeneralizationChange((ReferenceChange) difference);
+			} else if (difference instanceof NodeChange) {
+				this.evaluateNodeForInheritedFeatureChange((NodeChange) difference);
 			}
 		}
 	}
@@ -111,62 +111,62 @@ public class GeneralizationChangesHelper {
 	/**
 	 * Evaluates if the given difference concerns a change on a Generalization,
 	 * and classifies it accordingly.
-	 * 
+	 *
 	 * @param difference
-	 *        The difference being evaluated
+	 *            The difference being evaluated
 	 */
 	protected void evaluateGeneralizationChange(ReferenceChange difference) {
 		// difference is a generalization if the associated eReference is Classifier.generalization
-		if(difference.getReference().equals(UMLPackage.eINSTANCE.getClassifier_Generalization())) {
-			this.generalizationToReferenceChange.put((Generalization)difference.getValue(), difference);
+		if (difference.getReference().equals(UMLPackage.eINSTANCE.getClassifier_Generalization())) {
+			this.generalizationToReferenceChange.put((Generalization) difference.getValue(), difference);
 		}
 	}
 
 	/**
 	 * Evaluates if the given difference concerns a change on a node (in the .notation)
 	 * representing an inherited feature, and classifies it accordingly.
-	 * 
+	 *
 	 * @param difference
-	 *        The difference being evaluated
+	 *            The difference being evaluated
 	 */
 	protected void evaluateNodeForInheritedFeatureChange(NodeChange difference) {
 		Feature feature = null;
 		View view = null;
 		// Determines if the NodeChange concerns a View for a Feature
-		if(difference.getView() != null && (difference.getView() instanceof View)) {
-			view = (View)difference.getView();
+		if (difference.getView() != null && (difference.getView() instanceof View)) {
+			view = (View) difference.getView();
 			EObject semanticElement = view.getElement();
-			if(semanticElement == null || !(semanticElement instanceof Feature)) {
+			if (semanticElement == null || !(semanticElement instanceof Feature)) {
 				return;
 			} else {
-				feature = (Feature)semanticElement;
+				feature = (Feature) semanticElement;
 			}
 		}
 		// Determines if the View corresponds to an inherited Feature.
 		// Requires to retrieve the View for the Class containing this Feature
 		Class class_ = null;
 		EObject viewContainer = view.eContainer();
-		while(viewContainer != null && class_ == null) {
-			if(viewContainer instanceof View) {
-				EObject semanticElement = ((View)viewContainer).getElement();
-				if(semanticElement != null && semanticElement instanceof Class) {
-					class_ = (Class)semanticElement;
+		while (viewContainer != null && class_ == null) {
+			if (viewContainer instanceof View) {
+				EObject semanticElement = ((View) viewContainer).getElement();
+				if (semanticElement != null && semanticElement instanceof Class) {
+					class_ = (Class) semanticElement;
 				}
 			}
 			viewContainer = viewContainer.eContainer();
 		}
-		if(class_ == null) {
+		if (class_ == null) {
 			return;
 		}
-		// The difference is added to the appropriate collections if the 
+		// The difference is added to the appropriate collections if the
 		// corresponding feature is an inherited member of the Class
-		if(class_.getInheritedMembers().contains(feature)) {
-			if(difference.getKind() == DifferenceKind.ADD) {
-				if(!this.classesWithNodeForInheritedFeature_ADDED.contains(class_)) {
+		if (class_.getInheritedMembers().contains(feature)) {
+			if (difference.getKind() == DifferenceKind.ADD) {
+				if (!this.classesWithNodeForInheritedFeature_ADDED.contains(class_)) {
 					this.classesWithNodeForInheritedFeature_ADDED.add(class_);
 				}
-			} else if(difference.getKind() == DifferenceKind.DELETE) {
-				if(!this.classesWithNodeForInheritedFeature_DELETED.contains(class_)) {
+			} else if (difference.getKind() == DifferenceKind.DELETE) {
+				if (!this.classesWithNodeForInheritedFeature_DELETED.contains(class_)) {
 					this.classesWithNodeForInheritedFeature_DELETED.add(class_);
 				}
 			}
@@ -179,15 +179,15 @@ public class GeneralizationChangesHelper {
 	/**
 	 * Returns Classes for which there are changes on nodes representing inherited properties,
 	 * with the given difference kind.
-	 * 
+	 *
 	 * @param kind
-	 *        The DifferenceKind for changes on nodes representing inherited properties
+	 *            The DifferenceKind for changes on nodes representing inherited properties
 	 * @return Classes for which there are changes on nodes representing inherited properties, with the given DifferenceKind
 	 */
 	public List<Class> getClassesWithInheritedPropertyNode(DifferenceKind kind) {
-		if(kind == DifferenceKind.ADD) {
+		if (kind == DifferenceKind.ADD) {
 			return this.classesWithNodeForInheritedFeature_ADDED;
-		} else if(kind == DifferenceKind.DELETE) {
+		} else if (kind == DifferenceKind.DELETE) {
 			return this.classesWithNodeForInheritedFeature_DELETED;
 		}
 		// Not supposed to happen
@@ -197,9 +197,9 @@ public class GeneralizationChangesHelper {
 	/**
 	 * Returns the Generalization path which enables the given classifier to inherit from the given feature.
 	 * If no generalization path is found, returns an empty list
-	 * 
+	 *
 	 * FIXME Currently returns the first Generalization path that matches. Since multiple inheritance is allowed in UML, there can be multiple paths
-	 * 
+	 *
 	 * @param classifier
 	 * @param inherited
 	 * @return the Generalization path which enables the given classifier to inherit from the given feature.
@@ -207,7 +207,7 @@ public class GeneralizationChangesHelper {
 	public List<Generalization> getGeneralizationPath(Classifier classifier, Feature inherited) {
 		List<Generalization> path = null;
 		Map<Feature, List<Generalization>> inheritedFeatureToPath = this.classifierAndFeatureToGeneralizationPath.get(classifier);
-		if(inheritedFeatureToPath != null) {
+		if (inheritedFeatureToPath != null) {
 			path = inheritedFeatureToPath.get(inherited);
 		}
 		return path != null ? path : new ArrayList<Generalization>();
@@ -216,17 +216,17 @@ public class GeneralizationChangesHelper {
 	/**
 	 * From the inherited features of the given classifier, returns those for which the inherited features of
 	 * the given classifier that are related to changes on graphical nodes.
-	 * 
+	 *
 	 * @param classifier
 	 * @return the inherited features of the given classifier that are related to change on graphical nodes
 	 */
 	public Set<Feature> getInheritedFeaturesWithNodeChange(Classifier classifier) {
 		Set<Feature> inheritedFeatures = null;
 		Map<Feature, List<Generalization>> inheritedFeatureToPath = this.classifierAndFeatureToGeneralizationPath.get(classifier);
-		if(inheritedFeatureToPath != null) {
+		if (inheritedFeatureToPath != null) {
 			inheritedFeatures = inheritedFeatureToPath.keySet();
 		}
-		if(inheritedFeatures == null) {
+		if (inheritedFeatures == null) {
 			inheritedFeatures = new HashSet<Feature>();
 		}
 		return inheritedFeatures;
@@ -234,9 +234,9 @@ public class GeneralizationChangesHelper {
 
 	/**
 	 * Returns the generalization path that enables the given classifier to inherit from the given feature.
-	 * 
+	 *
 	 * FIXME Currently returns the first Generalization path that matches. Since multiple inheritance is allowed in UML, there can be multiple paths
-	 * 
+	 *
 	 * @param classifier
 	 * @param inherited
 	 * @return the generalization path that enables the given classifier to inherit from the given feature.
@@ -244,21 +244,21 @@ public class GeneralizationChangesHelper {
 	protected List<Generalization> computeGeneralizationPath(Classifier classifier, Feature inherited) {
 		Classifier featuringClassifier = inherited.getFeaturingClassifiers().get(0); // There is always 1 and only 1 featuring classifier
 		Generalization match = null;
-		for(int i = 0; i < classifier.getGeneralizations().size() && match == null; i++) {
+		for (int i = 0; i < classifier.getGeneralizations().size() && match == null; i++) {
 			Generalization generalization = classifier.getGeneralizations().get(i);
-			if(generalization.getGeneral() == featuringClassifier) {
+			if (generalization.getGeneral() == featuringClassifier) {
 				match = generalization;
 			}
 		}
 		List<Generalization> path = new ArrayList<Generalization>();
 		// if no match found, it means that the feature is not directly inherited.
 		// Repeat recursively on general classifiers of the classifier to construct the generalization path
-		if(match == null) {
-			for(int i = 0; i < classifier.getGeneralizations().size() && path.size() == 0; i++) {
+		if (match == null) {
+			for (int i = 0; i < classifier.getGeneralizations().size() && path.size() == 0; i++) {
 				Generalization generalization = classifier.getGeneralizations().get(i);
 				Classifier general = generalization.getGeneral();
 				List<Generalization> remaining = this.computeGeneralizationPath(general, inherited);
-				if(remaining.size() != 0) {
+				if (remaining.size() != 0) {
 					path.add(generalization);
 					path.addAll(remaining);
 				}
@@ -273,17 +273,17 @@ public class GeneralizationChangesHelper {
 	/**
 	 * Inserts a generalization path in the local map inheritedFeatureToGeneralizationPath,
 	 * in the context of a specific classifier (cf. classifierAndFeatureToGeneralizationPath)
-	 * 
+	 *
 	 * @param classifier
-	 *        The context classifier that inherits the given feature
+	 *            The context classifier that inherits the given feature
 	 * @param inherited
-	 *        The feature inherited following the given path, in the context of the given classifier
+	 *            The feature inherited following the given path, in the context of the given classifier
 	 * @param path
-	 *        The generalization path (as a List) enabling the given classifier to inherit from the given feature
+	 *            The generalization path (as a List) enabling the given classifier to inherit from the given feature
 	 */
 	protected void insertGeneralizationPath(Classifier classifier, Feature inherited, List<Generalization> path) {
 		Map<Feature, List<Generalization>> inheritedFeatureToGeneralizationPath = this.classifierAndFeatureToGeneralizationPath.get(classifier);
-		if(inheritedFeatureToGeneralizationPath == null) {
+		if (inheritedFeatureToGeneralizationPath == null) {
 			inheritedFeatureToGeneralizationPath = new HashMap<Feature, List<Generalization>>();
 		}
 		inheritedFeatureToGeneralizationPath.put(inherited, path);
@@ -293,7 +293,7 @@ public class GeneralizationChangesHelper {
 	/**
 	 * From the comparison object from which this helper was constructed,
 	 * returns the ReferenceChange diff corresponding to the given Generalization, if any.
-	 * 
+	 *
 	 * @param generalization
 	 * @return the ReferenceChange diff corresponding to the given Generalization, if any.
 	 */
@@ -304,7 +304,7 @@ public class GeneralizationChangesHelper {
 	/**
 	 * From the comparison object from which this helper was constructed,
 	 * returns the NodeChange diff corresponding to the given feature, if any.
-	 * 
+	 *
 	 * @param feature
 	 * @return
 	 */

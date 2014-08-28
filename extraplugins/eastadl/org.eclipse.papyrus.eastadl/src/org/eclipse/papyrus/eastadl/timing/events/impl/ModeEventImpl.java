@@ -19,8 +19,8 @@ import org.eclipse.papyrus.eastadl.timing.impl.EventImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.events.impl.ModeEventImpl#getStart <em>Start</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.events.impl.ModeEventImpl#getEnd <em>End</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.events.impl.ModeEventImpl#getStart <em>Start</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.events.impl.ModeEventImpl#getEnd <em>End</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,6 +31,7 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -41,6 +42,7 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	 * The cached value of the '{@link #getEnd() <em>End</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnd()
 	 * @generated
 	 * @ordered
@@ -50,6 +52,7 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ModeEventImpl() {
@@ -59,6 +62,7 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,8 +73,10 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<Mode> getStart() {
 		if (start == null) {
 			start = new EObjectResolvingEList<Mode>(Mode.class, this, EventsPackage.MODE_EVENT__START);
@@ -81,8 +87,10 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<Mode> getEnd() {
 		if (end == null) {
 			end = new EObjectResolvingEList<Mode>(Mode.class, this, EventsPackage.MODE_EVENT__END);
@@ -93,15 +101,16 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EventsPackage.MODE_EVENT__START:
-				return getStart();
-			case EventsPackage.MODE_EVENT__END:
-				return getEnd();
+		case EventsPackage.MODE_EVENT__START:
+			return getStart();
+		case EventsPackage.MODE_EVENT__END:
+			return getEnd();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -109,20 +118,21 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EventsPackage.MODE_EVENT__START:
-				getStart().clear();
-				getStart().addAll((Collection<? extends Mode>)newValue);
-				return;
-			case EventsPackage.MODE_EVENT__END:
-				getEnd().clear();
-				getEnd().addAll((Collection<? extends Mode>)newValue);
-				return;
+		case EventsPackage.MODE_EVENT__START:
+			getStart().clear();
+			getStart().addAll((Collection<? extends Mode>) newValue);
+			return;
+		case EventsPackage.MODE_EVENT__END:
+			getEnd().clear();
+			getEnd().addAll((Collection<? extends Mode>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -130,17 +140,18 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EventsPackage.MODE_EVENT__START:
-				getStart().clear();
-				return;
-			case EventsPackage.MODE_EVENT__END:
-				getEnd().clear();
-				return;
+		case EventsPackage.MODE_EVENT__START:
+			getStart().clear();
+			return;
+		case EventsPackage.MODE_EVENT__END:
+			getEnd().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -148,17 +159,18 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EventsPackage.MODE_EVENT__START:
-				return start != null && !start.isEmpty();
-			case EventsPackage.MODE_EVENT__END:
-				return end != null && !end.isEmpty();
+		case EventsPackage.MODE_EVENT__START:
+			return start != null && !start.isEmpty();
+		case EventsPackage.MODE_EVENT__END:
+			return end != null && !end.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ModeEventImpl
+} // ModeEventImpl

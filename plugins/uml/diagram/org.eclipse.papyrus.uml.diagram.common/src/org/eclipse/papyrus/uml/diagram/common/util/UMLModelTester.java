@@ -41,10 +41,10 @@ public class UMLModelTester extends PropertyTester {
 	@Override
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
 		Object currentValue = null;
-		if(IS_UML_MODEL.equals(property)) {
+		if (IS_UML_MODEL.equals(property)) {
 			currentValue = testUMLModelNature(receiver);
 			return (currentValue == expectedValue);
-		} else if(IS_UML_PROFILE.equals(property)) {
+		} else if (IS_UML_PROFILE.equals(property)) {
 			currentValue = testUMLProfileNature(receiver);
 			return (currentValue == expectedValue);
 		}
@@ -70,35 +70,35 @@ public class UMLModelTester extends PropertyTester {
 
 	private EObject getRoot(Object receiver) {
 		ModelSet modelSet = getModelSet(receiver);
-		if(modelSet == null) {
+		if (modelSet == null) {
 			return null;
 		}
 		return getRoot(modelSet);
 	}
 
 	private ModelSet getModelSet(Object receiver) {
-		if(receiver instanceof IWorkbenchPart) {
+		if (receiver instanceof IWorkbenchPart) {
 			try {
 
 				/* First, retrieve the ModelSet from the Active Part (e.g. ActiveEditor, ModelExplorer, ...) */
-				IWorkbenchPart currentPart = (IWorkbenchPart)receiver;
-				ServicesRegistry servicesRegistry = (ServicesRegistry)currentPart.getAdapter(ServicesRegistry.class);
+				IWorkbenchPart currentPart = (IWorkbenchPart) receiver;
+				ServicesRegistry servicesRegistry = (ServicesRegistry) currentPart.getAdapter(ServicesRegistry.class);
 
-				if(servicesRegistry != null) {
+				if (servicesRegistry != null) {
 					return ServiceUtils.getInstance().getModelSet(servicesRegistry);
 				}
 
 				/* If not found, retrieve the ModelSet from the Active Editor */
 				IEditorPart activeEditor = EditorHelper.getCurrentEditor();
-				if(activeEditor != null) {
-					servicesRegistry = (ServicesRegistry)activeEditor.getAdapter(ServicesRegistry.class);
+				if (activeEditor != null) {
+					servicesRegistry = (ServicesRegistry) activeEditor.getAdapter(ServicesRegistry.class);
 
-					if(servicesRegistry != null) {
+					if (servicesRegistry != null) {
 						return ServiceUtils.getInstance().getModelSet(servicesRegistry);
 					}
 				}
 			} catch (Exception ex) {
-				return null; //NPE (getActiveEditor) or ServiceException (Service registry cannot be found). In both cases, we just don't handle the event. Fail silently.
+				return null; // NPE (getActiveEditor) or ServiceException (Service registry cannot be found). In both cases, we just don't handle the event. Fail silently.
 			}
 		}
 
@@ -107,8 +107,8 @@ public class UMLModelTester extends PropertyTester {
 
 	/** Returns the root EObject of currently opened model */
 	private EObject getRoot(ModelSet modelSet) {
-		UmlModel openedModel = (UmlModel)modelSet.getModel(UmlModel.MODEL_ID);
-		if(openedModel != null) {
+		UmlModel openedModel = (UmlModel) modelSet.getModel(UmlModel.MODEL_ID);
+		if (openedModel != null) {
 			EObject root;
 			try {
 				root = openedModel.lookupRoot();

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,7 +47,7 @@ public class ClobInputStream extends InputStream {
 
 	@Override
 	public void close() throws IOException {
-		if(reader != null) {
+		if (reader != null) {
 			reader.close();
 			reader = null;
 			buffer = null;
@@ -60,7 +60,7 @@ public class ClobInputStream extends InputStream {
 		checkClosed();
 		checkBuffer();
 
-		if(buffer != null) {
+		if (buffer != null) {
 			return buffer.get() & MASK;
 		}
 
@@ -68,7 +68,7 @@ public class ClobInputStream extends InputStream {
 	}
 
 	private void checkBuffer() throws IOException {
-		if((buffer == null) || !buffer.hasRemaining()) {
+		if ((buffer == null) || !buffer.hasRemaining()) {
 			buffer = null;
 			createBuffer();
 		}
@@ -78,13 +78,13 @@ public class ClobInputStream extends InputStream {
 	public int read(byte[] b, int off, int len) throws IOException {
 		checkClosed();
 
-		if(len == 0) {
+		if (len == 0) {
 			return 0;
 		}
 
 		checkBuffer();
 
-		if(buffer == null) {
+		if (buffer == null) {
 			return EOF;
 		}
 
@@ -92,7 +92,7 @@ public class ClobInputStream extends InputStream {
 		do {
 			checkBuffer();
 
-			if(buffer == null) {
+			if (buffer == null) {
 				// no more to read
 				break;
 			}
@@ -100,7 +100,7 @@ public class ClobInputStream extends InputStream {
 			int toRead = Math.min(buffer.remaining(), len - count);
 			buffer.get(b, off + count, toRead);
 			count = count + toRead;
-		} while(count < len);
+		} while (count < len);
 
 		return count;
 	}
@@ -110,7 +110,7 @@ public class ClobInputStream extends InputStream {
 		checkClosed();
 		checkBuffer();
 
-		if(buffer != null) {
+		if (buffer != null) {
 			return buffer.remaining();
 		}
 
@@ -118,7 +118,7 @@ public class ClobInputStream extends InputStream {
 	}
 
 	protected final void checkClosed() throws IOException {
-		if(reader == null) {
+		if (reader == null) {
 			throw new IOException("CLOB reader is closed"); //$NON-NLS-1$
 		}
 	}
@@ -128,7 +128,7 @@ public class ClobInputStream extends InputStream {
 
 		chars.rewind();
 		int count = reader.read(chars);
-		if(count > 0) {
+		if (count > 0) {
 			chars.flip();
 			buffer = charset.encode(chars);
 		}

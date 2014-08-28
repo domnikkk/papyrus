@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -57,39 +57,40 @@ public class UMLValidationProvider {
 
 		/**
 		 * Report the validation result to the user in case operation did not fully succeed
-		 * 
+		 *
 		 * @see org.eclipse.emf.validation.service.IValidationListener#validationOccurred(org.eclipse.emf.validation.service.ValidationEvent)
-		 * 
+		 *
 		 * @param event
-		 *        provides the validation operation results
+		 *            provides the validation operation results
 		 */
 		public void validationOccurred(ValidationEvent event) {
 			boolean needReport = false;
-			if(event.getSeverity() >= IStatus.WARNING) {
+			if (event.getSeverity() >= IStatus.WARNING) {
 				needReport = true;
 			}
-			if(needReport && event.getEvaluationMode().isLive()) {
+			if (needReport && event.getEvaluationMode().isLive()) {
 				StringBuffer messageBuff = new StringBuffer();
 				List<String> handledConstraints = new LinkedList<String>(SELF_MANAGING_CONSTRAINTS);
-				for(IConstraintStatus status : event.getValidationResults()) {
+				for (IConstraintStatus status : event.getValidationResults()) {
 					// report only major problems
-					if(status.getSeverity() >= event.getSeverity()) {
+					if (status.getSeverity() >= event.getSeverity()) {
 						String constraintId = status.getConstraint().getDescriptor().getId();
 						String constraintPlugin = status.getConstraint().getDescriptor().getPluginId();
-						if(Activator.PLUGIN_ID.equals(constraintPlugin) && !handledConstraints.contains(constraintId)) {
+						if (Activator.PLUGIN_ID.equals(constraintPlugin) && !handledConstraints.contains(constraintId)) {
 							handledConstraints.add(constraintId);
 							messageBuff.append(status.getMessage());
 						}
 					}
 				}
-				if(messageBuff.length() == 0) {
+				if (messageBuff.length() == 0) {
 					// no error to report
 					return;
 				}
 				final String message = messageBuff.toString();
-				if(event.getSeverity() >= IStatus.ERROR) {
+				if (event.getSeverity() >= IStatus.ERROR) {
 					SafeDialogOpenerDuringValidation<Void> opener = new SafeDialogOpenerDuringValidation<Void>() {
 
+						@Override
 						protected Void openDialog() {
 							NotificationBuilder.createWarningPopup(message).run();
 							return null;
@@ -99,6 +100,7 @@ public class UMLValidationProvider {
 				} else {
 					SafeDialogOpenerDuringValidation<Void> opener = new SafeDialogOpenerDuringValidation<Void>() {
 
+						@Override
 						protected Void openDialog() {
 							NotificationBuilder.createInfoPopup(message).run();
 							return null;
@@ -119,11 +121,11 @@ public class UMLValidationProvider {
 
 	/**
 	 * Run an operation with checking of the constraints
-	 * 
+	 *
 	 * @param editingDomain
-	 *        editing domain
+	 *            editing domain
 	 * @param operation
-	 *        operation to run
+	 *            operation to run
 	 */
 	public static void runWithConstraints(TransactionalEditingDomain editingDomain, Runnable operation) {
 		final Runnable op = operation;
@@ -138,7 +140,7 @@ public class UMLValidationProvider {
 				}
 			}
 		};
-		if(editingDomain != null) {
+		if (editingDomain != null) {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
@@ -156,23 +158,23 @@ public class UMLValidationProvider {
 
 		/**
 		 * Indicate whether validation is activated
-		 * 
+		 *
 		 * @see org.eclipse.emf.validation.model.IClientSelector#selects(java.lang.Object)
-		 * 
+		 *
 		 * @param object
-		 *        object to eventually validate
+		 *            object to eventually validate
 		 * @return true if validation is required
 		 */
 		public boolean selects(Object object) {
-			if(constraintsActive) {
+			if (constraintsActive) {
 				return true;
 			}
-			if(object instanceof EObject) {
-				EObject eObj = (EObject)object;
+			if (object instanceof EObject) {
+				EObject eObj = (EObject) object;
 				Resource resource = eObj.eResource();
 				if (resource != null) {
 					ResourceSet set = resource.getResourceSet();
-					return set instanceof ModelSet;					
+					return set instanceof ModelSet;
 				}
 			}
 			return false;
@@ -181,9 +183,9 @@ public class UMLValidationProvider {
 
 	/**
 	 * Format a model element
-	 * 
+	 *
 	 * @param object
-	 *        element to format
+	 *            element to format
 	 * @return text
 	 */
 	static String formatElement(EObject object) {

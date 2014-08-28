@@ -1,5 +1,5 @@
 /*
- * 
+ *
  */
 package org.eclipse.papyrus.uml.modelexplorer.handler;
 
@@ -9,9 +9,9 @@ import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
 /**
  * <pre>
  * Command handler for OpaqueBehavior creation
- * 
+ *
  * </pre>
- * 
+ *
  * @generated
  */
 public class OpaqueBehaviorHandler extends AbstractUmlModelExplorerCreateCommandHandler {
@@ -19,13 +19,14 @@ public class OpaqueBehaviorHandler extends AbstractUmlModelExplorerCreateCommand
 	/**
 	 * <pre>
 	 * @see org.eclipse.papyrus.uml.service.creation.handler.CreateHandler#getElementTypeToCreate()
-	 * 
+	 *
 	 * @return the IElementType this handler is supposed to create
-	 * 
+	 *
 	 * </pre>
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected IElementType getElementTypeToCreate() {
 		return UMLElementTypes.OPAQUE_BEHAVIOR;
 	}

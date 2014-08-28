@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,16 +58,18 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
- * 
+ *
  * Papyrus specific search query
- * 
+ *
  */
 public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 
+	@Override
 	public boolean isCaseSensitive() {
 		return isCaseSensitive;
 	}
 
+	@Override
 	public boolean isRegularExpression() {
 		return isRegularExpression;
 	}
@@ -117,28 +119,30 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 
 		participantsList = new HashMap<EObject, List<EAttribute>>();
 		stereotypeList = new HashMap<Stereotype, ArrayList<Property>>();
-		for(Object participant : this.participantsChecked) {
-			if(participant instanceof ParticipantTypeElement) {
-				if(((ParticipantTypeElement)participant).getElement() instanceof ENamedElement) {
+		for (Object participant : this.participantsChecked) {
+			if (participant instanceof ParticipantTypeElement) {
+				if (((ParticipantTypeElement) participant).getElement() instanceof ENamedElement) {
 					List<EAttribute> attributesChecked = new ArrayList<EAttribute>();
-					for(Object attributesFound : this.participantsChecked) {
-						if(attributesFound instanceof ParticipantTypeAttribute) {
-							if(((ParticipantTypeAttribute)attributesFound).getParent() == participant)
-								attributesChecked.add((EAttribute)((ParticipantTypeAttribute)attributesFound).getElement());
+					for (Object attributesFound : this.participantsChecked) {
+						if (attributesFound instanceof ParticipantTypeAttribute) {
+							if (((ParticipantTypeAttribute) attributesFound).getParent() == participant) {
+								attributesChecked.add((EAttribute) ((ParticipantTypeAttribute) attributesFound).getElement());
+							}
 						}
 					}
-					participantsList.put((EObject)((ParticipantTypeElement)participant).getElement(), attributesChecked);
+					participantsList.put(((ParticipantTypeElement) participant).getElement(), attributesChecked);
 
-				} else if(((ParticipantTypeElement)participant).getElement() instanceof Stereotype) {
+				} else if (((ParticipantTypeElement) participant).getElement() instanceof Stereotype) {
 
 					ArrayList<Property> attributesChecked = new ArrayList<Property>();
-					for(Object attributesFound : this.participantsChecked) {
-						if(attributesFound instanceof ParticipantTypeAttribute) {
-							if(((ParticipantTypeAttribute)attributesFound).getParent() == participant)
-								attributesChecked.add((Property)((ParticipantTypeAttribute)attributesFound).getElement());
+					for (Object attributesFound : this.participantsChecked) {
+						if (attributesFound instanceof ParticipantTypeAttribute) {
+							if (((ParticipantTypeAttribute) attributesFound).getParent() == participant) {
+								attributesChecked.add((Property) ((ParticipantTypeAttribute) attributesFound).getElement());
+							}
 						}
 					}
-					stereotypeList.put((Stereotype)((ParticipantTypeElement)participant).getElement(), attributesChecked);
+					stereotypeList.put((Stereotype) ((ParticipantTypeElement) participant).getElement(), attributesChecked);
 				}
 			}
 		}
@@ -150,21 +154,21 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 		results.removeAll();
 		fResults.clear();
 
-		for(ScopeEntry scopeEntry : scopeEntries) {
+		for (ScopeEntry scopeEntry : scopeEntries) {
 			try {
 
-				if(scopeEntry.getModelSet() != null) {
+				if (scopeEntry.getModelSet() != null) {
 
-					UmlModel umlModel = (UmlModel)scopeEntry.getModelSet().getModelChecked(UmlModel.MODEL_ID);
+					UmlModel umlModel = (UmlModel) scopeEntry.getModelSet().getModelChecked(UmlModel.MODEL_ID);
 
 					EObject root = umlModel.lookupRoot();
 
 					Collection<EObject> participants = ParticipantValidator.getInstance().getParticipants(root, participantsList.keySet().toArray());
 					Collection<EObject> stereotypesParticipants = ParticipantValidator.getInstance().getParticipantsStereotype(root, stereotypeList.keySet().toArray());
 
-					if(searchForAllSter) {
+					if (searchForAllSter) {
 
-						if(participantsList.keySet().size() == 0) {
+						if (participantsList.keySet().size() == 0) {
 							stereotypesParticipants = getElementsWithAllSter(stereotypesParticipants);
 							evaluateStereotypes(stereotypesParticipants, scopeEntry);
 						} else {
@@ -192,19 +196,19 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 
 	private Collection<EObject> getElementsWithAllSter(Collection<EObject> initialParticipants) {
 		Collection<EObject> participantsToKeep = new ArrayList<EObject>();
-		for(EObject participants : initialParticipants) {
-			if(participants instanceof Element) {
+		for (EObject participants : initialParticipants) {
+			if (participants instanceof Element) {
 				int numberOfStereotypeToBeApplied = stereotypeList.size();
 				int numberOfStereotypeMatching = 0;
-				if(numberOfStereotypeToBeApplied == ((Element)participants).getAppliedStereotypes().size()) {
-					for(Stereotype stereotypeToBeApplied : stereotypeList.keySet()) {
-						for(Stereotype stereotypeApplied : ((Element)participants).getAppliedStereotypes()) {
-							if(EcoreUtil.equals(stereotypeToBeApplied, stereotypeApplied)) {
+				if (numberOfStereotypeToBeApplied == ((Element) participants).getAppliedStereotypes().size()) {
+					for (Stereotype stereotypeToBeApplied : stereotypeList.keySet()) {
+						for (Stereotype stereotypeApplied : ((Element) participants).getAppliedStereotypes()) {
+							if (EcoreUtil.equals(stereotypeToBeApplied, stereotypeApplied)) {
 								numberOfStereotypeMatching++;
 							}
 						}
 					}
-					if(numberOfStereotypeMatching == numberOfStereotypeToBeApplied) {
+					if (numberOfStereotypeMatching == numberOfStereotypeToBeApplied) {
 						participantsToKeep.add(participants);
 					}
 				}
@@ -215,17 +219,17 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 
 	/**
 	 * Evaluate if the value matches the pattern
-	 * 
+	 *
 	 * @param value
-	 *        the value to evaluate
+	 *            the value to evaluate
 	 * @param attribute
-	 *        the attribute has the value
+	 *            the attribute has the value
 	 * @param pattern
-	 *        the pattern that is searched
+	 *            the pattern that is searched
 	 * @param participant
-	 *        the element that contains the value
+	 *            the element that contains the value
 	 * @param scopeEntry
-	 *        the scopeEntry that contains the participant
+	 *            the scopeEntry that contains the participant
 	 */
 	protected void evaluateAndAddToResult(String value, Object attribute, Pattern pattern, Object participant, ScopeEntry scopeEntry, Stereotype stereotype) {
 
@@ -233,8 +237,8 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 
 		Matcher m = pattern.matcher(value);
 
-		if(isRegularExpression) {
-			if(m.matches()) {
+		if (isRegularExpression) {
+			if (m.matches()) {
 				int start = m.start();
 				int end = m.end();
 				ModelMatch match = new AttributeMatch(start, end, participant, scopeEntry, attribute, stereotype);
@@ -242,7 +246,7 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 				fResults.add(match);
 			}
 		} else {
-			while(m.find()) {
+			while (m.find()) {
 				int start = m.start();
 				int end = m.end();
 				AttributeMatch match = new AttributeMatch(start, end, participant, scopeEntry, attribute, stereotype);
@@ -250,18 +254,18 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 			}
 		}
 
-		//		if(PatternHelper.getInstance().evaluate(m, isRegularExpression)) {
-		//			int start = m.start();
-		//			int end = m.end();
-		//			ModelMatch match = new AttributeMatch(start, end, participant, scopeEntry, attribute);
+		// if(PatternHelper.getInstance().evaluate(m, isRegularExpression)) {
+		// int start = m.start();
+		// int end = m.end();
+		// ModelMatch match = new AttributeMatch(start, end, participant, scopeEntry, attribute);
 		//
-		//			fResults.add(match);
-		//		}
+		// fResults.add(match);
+		// }
 	}
 
 	/**
 	 * Try to find elements that match in the participants
-	 * 
+	 *
 	 * @param participants
 	 * @param scopeEntry
 	 */
@@ -269,23 +273,23 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 
 	protected void evaluate(Collection<EObject> participants, ScopeEntry scopeEntry) {
 
-		for(EObject participant : participants) {
+		for (EObject participant : participants) {
 
-			if(searchQueryText.equals("")) { //$NON-NLS-1$
+			if (searchQueryText.equals("")) { //$NON-NLS-1$
 
 
 				fResults.add(new ModelElementMatch(participant, scopeEntry));
 
 			} else {
 				String query = searchQueryText;
-				if(searchQueryText.equals("")) { //$NON-NLS-1$
+				if (searchQueryText.equals("")) { //$NON-NLS-1$
 					query = ".*"; //$NON-NLS-1$
 				}
 
 				Pattern pattern = PatternHelper.getInstance().createPattern(query, isCaseSensitive, isRegularExpression);
 
-				if(pattern != null) {
-					if(participantsList.get(participant.eClass()).size() == 0) {
+				if (pattern != null) {
+					if (participantsList.get(participant.eClass()).size() == 0) {
 						attributesList = participant.eClass().getEAllAttributes();
 
 
@@ -297,12 +301,12 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 
 					}
 
-					for(EAttribute attribute : attributesList) {
+					for (EAttribute attribute : attributesList) {
 
 						Object value = participant.eGet(attribute);
 
-						if(value instanceof String) {
-							String stringValue = (String)value;
+						if (value instanceof String) {
+							String stringValue = (String) value;
 							evaluateAndAddToResult(stringValue, attribute, pattern, participant, scopeEntry, null);
 						} else {
 							String stringValue = String.valueOf(value);
@@ -321,33 +325,33 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 
 	protected void evaluateStereotypes(Collection<EObject> participants, ScopeEntry scopeEntry) {
 
-		for(EObject participant : participants) {
+		for (EObject participant : participants) {
 
-			if(searchQueryText.equals("")) { //$NON-NLS-1$
+			if (searchQueryText.equals("")) { //$NON-NLS-1$
 				fResults.add(new ModelElementMatch(participant, scopeEntry));
 
 			} else {
 				String query = searchQueryText;
-				if(searchQueryText.equals("")) { //$NON-NLS-1$
+				if (searchQueryText.equals("")) { //$NON-NLS-1$
 					query = ".*"; //$NON-NLS-1$
 				}
 
 				Pattern pattern = PatternHelper.getInstance().createPattern(query, isCaseSensitive, isRegularExpression);
 
-				if(pattern != null) {
-					EList<Stereotype> stereotypesApplied = ((Element)participant).getAppliedStereotypes();
-					for(Stereotype stereotype : stereotypesApplied) {
-						for(Stereotype stereotypeSelected : stereotypeList.keySet()) {
-							if(EcoreUtil.equals(stereotype, stereotypeSelected)) {
-								if(stereotypeList.get(stereotypeSelected).size() == 0) {
+				if (pattern != null) {
+					EList<Stereotype> stereotypesApplied = ((Element) participant).getAppliedStereotypes();
+					for (Stereotype stereotype : stereotypesApplied) {
+						for (Stereotype stereotypeSelected : stereotypeList.keySet()) {
+							if (EcoreUtil.equals(stereotype, stereotypeSelected)) {
+								if (stereotypeList.get(stereotypeSelected).size() == 0) {
 
 									propertyList = this.getStereotypesAttributes(stereotype);
-									for(Property property : propertyList) {
+									for (Property property : propertyList) {
 
-										Object value = ((Element)participant).getValue(stereotype, property.getName());
-										if(value != null) {
-											if(value instanceof String) {
-												String stringValue = (String)value;
+										Object value = ((Element) participant).getValue(stereotype, property.getName());
+										if (value != null) {
+											if (value instanceof String) {
+												String stringValue = (String) value;
 												evaluateAndAddToResult(stringValue, property, pattern, participant, scopeEntry, stereotype);
 											} else {
 												String stringValue = String.valueOf(value);
@@ -357,13 +361,13 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 									}
 								} else {
 									propertyList = this.getStereotypesAttributes(stereotype);
-									for(Property property : propertyList) {
-										for(Property property2 : (stereotypeList.get(stereotypeSelected))) {
-											if(EcoreUtil.equals(property, property2)) {
+									for (Property property : propertyList) {
+										for (Property property2 : (stereotypeList.get(stereotypeSelected))) {
+											if (EcoreUtil.equals(property, property2)) {
 
-												String value = getStringValueOfProperty((Element)participant, stereotype, property);
+												String value = getStringValueOfProperty((Element) participant, stereotype, property);
 
-												if(value != null) {
+												if (value != null) {
 													evaluateAndAddToResult(value, property, pattern, participant, scopeEntry, stereotype);
 												}
 											}
@@ -385,10 +389,10 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 
 	private String getStringValueOfProperty(Element element, Stereotype stereotype, Property property) {
 		Object value = element.getValue(stereotype, property.getName());
-		if(value instanceof String) {
-			return (String)value;
-		} else if(value instanceof EnumerationLiteral) {
-			return ((EnumerationLiteral)value).getName();
+		if (value instanceof String) {
+			return (String) value;
+		} else if (value instanceof EnumerationLiteral) {
+			return ((EnumerationLiteral) value).getName();
 		} else {
 			return String.valueOf(value);
 		}
@@ -396,14 +400,15 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 
 	public List<Property> getStereotypesAttributes(Object parentElement) {
 		List<Property> result = new ArrayList<Property>();
-		if(parentElement instanceof Stereotype) {
+		if (parentElement instanceof Stereotype) {
 
-			for(Property property : ((Stereotype)parentElement).getAllAttributes()) {
+			for (Property property : ((Stereotype) parentElement).getAllAttributes()) {
 
-				if(!property.getName().startsWith("base_")) { //$NON-NLS-1$
-					if(property.getType() instanceof Element) {
+				if (!property.getName().startsWith("base_")) { //$NON-NLS-1$
+					if (property.getType() instanceof Element) {
 
-						if(UMLUtil.isBoolean(property.getType()) || UMLUtil.isString(property.getType()) || UMLUtil.isInteger(property.getType()) || UMLUtil.isReal(property.getType()) || UMLUtil.isUnlimitedNatural(property.getType()) || property.getType() instanceof Enumeration) {
+						if (UMLUtil.isBoolean(property.getType()) || UMLUtil.isString(property.getType()) || UMLUtil.isInteger(property.getType()) || UMLUtil.isReal(property.getType()) || UMLUtil.isUnlimitedNatural(property.getType())
+								|| property.getType() instanceof Enumeration) {
 							result.add(property);
 
 
@@ -420,27 +425,27 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 	}
 
 	protected void findInDiagram(ScopeEntry scopeEntry) {
-		//Now, find in diagram and others the elements we found
+		// Now, find in diagram and others the elements we found
 		ViewerSearchService viewerSearcherService = new ViewerSearchService();
 		try {
 			viewerSearcherService.startService();
 
-			//Get sources elements that matched
+			// Get sources elements that matched
 
-			for(AbstractResultEntry match : fResults) {
-				if(match instanceof AttributeMatch) {
-					sources.add(((AttributeMatch)match).getSource());
+			for (AbstractResultEntry match : fResults) {
+				if (match instanceof AttributeMatch) {
+					sources.add(((AttributeMatch) match).getSource());
 				} else {
 					sources.add(match.getSource());
 				}
 			}
 
-			//Get viewer of these sources
+			// Get viewer of these sources
 			Map<Object, Map<Object, Object>> viewersMappings = viewerSearcherService.getViewers(sources, scopeEntry.getModelSet());
 
-			//Add viewers to results
-			for(Object containingModelSet : viewersMappings.keySet()) {
-				for(Object view : viewersMappings.get(containingModelSet).keySet()) {
+			// Add viewers to results
+			for (Object containingModelSet : viewersMappings.keySet()) {
+				for (Object view : viewersMappings.get(containingModelSet).keySet()) {
 					Object semanticElement = viewersMappings.get(containingModelSet).get(view);
 					ViewerMatch viewMatch = new ViewerMatch(view, scopeEntry, semanticElement);
 					fResults.add(viewMatch);
@@ -465,7 +470,7 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 	}
 
 	public ISearchResult getSearchResult() {
-		for(AbstractResultEntry match : fResults) {
+		for (AbstractResultEntry match : fResults) {
 			results.addMatch(match);
 		}
 		return results;
@@ -473,9 +478,10 @@ public class PapyrusAdvancedQuery extends AbstractPapyrusQuery {
 
 	/**
 	 * Getter for the text query
-	 * 
+	 *
 	 * @return the the query text
 	 */
+	@Override
 	public String getSearchQueryText() {
 		return searchQueryText;
 	}

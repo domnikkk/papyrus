@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,14 +40,14 @@ public class ComposedContainerDescriptor implements IContainerDescriptor {
 	public IElementMatcher getMatcher() {
 		List<IElementMatcher> matchers = new ArrayList<IElementMatcher>();
 		// creates a composed matcher from all container descriptors
-		for(IContainerDescriptor containerDescriptor : getContainerDescriptors()) {
+		for (IContainerDescriptor containerDescriptor : getContainerDescriptors()) {
 			// each composed advice should approve the request
 			IElementMatcher composedMatcher = containerDescriptor.getMatcher();
-			if(composedMatcher != null) {
+			if (composedMatcher != null) {
 				matchers.add(composedMatcher);
 			}
 		}
-		if(matchers != null && !matchers.isEmpty()) {
+		if (matchers != null && !matchers.isEmpty()) {
 			return new ComposedElementMatcher(matchers);
 		}
 		return null;
@@ -60,19 +60,19 @@ public class ComposedContainerDescriptor implements IContainerDescriptor {
 		// retrieve all references in the intersection of all composed container descriptors
 		List<EReference> joinReferences = null;
 		// creates a composed matcher from all container descriptors
-		for(IContainerDescriptor containerDescriptor : getContainerDescriptors()) {
+		for (IContainerDescriptor containerDescriptor : getContainerDescriptors()) {
 			// each composed advice should approve the request
 			EReference[] eReferencesArray = containerDescriptor.getContainmentFeatures();
-			if(eReferencesArray != null) {
+			if (eReferencesArray != null) {
 				List<EReference> eReferences = Arrays.asList(eReferencesArray);
 				// if join references has not been set yet, set the list of possible containment features
 				// if not, make the intersection of both list
-				if(joinReferences ==null) {
+				if (joinReferences == null) {
 					joinReferences = eReferences;
 				} else {
 					List<EReference> newReferences = new ArrayList<EReference>();
-					for(EReference eReference : joinReferences) {
-						if(eReferences.contains(eReference)) {
+					for (EReference eReference : joinReferences) {
+						if (eReferences.contains(eReference)) {
 							newReferences.add(eReference);
 						}
 					}
@@ -80,7 +80,7 @@ public class ComposedContainerDescriptor implements IContainerDescriptor {
 				}
 			}
 		}
-		if(joinReferences != null) {
+		if (joinReferences != null) {
 			return joinReferences.toArray(new EReference[] {});
 		}
 		return null;

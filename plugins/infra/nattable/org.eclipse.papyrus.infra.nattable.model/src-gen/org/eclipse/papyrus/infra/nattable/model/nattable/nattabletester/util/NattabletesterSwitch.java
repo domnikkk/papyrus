@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -15,10 +15,10 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.util;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.*;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.AbstractTableTester;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.JavaTableTester;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.NattabletesterPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.NattabletesterPackage
  * @generated
  */
@@ -39,7 +39,7 @@ public class NattabletesterSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static NattabletesterPackage modelPackage;
@@ -48,11 +48,11 @@ public class NattabletesterSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NattabletesterSwitch() {
-		if(modelPackage == null) {
+		if (modelPackage == null) {
 			modelPackage = NattabletesterPackage.eINSTANCE;
 		}
 	}
@@ -61,7 +61,7 @@ public class NattabletesterSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -75,33 +75,36 @@ public class NattabletesterSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch(classifierID) {
-		case NattabletesterPackage.ABSTRACT_TABLE_TESTER:
-		{
-			AbstractTableTester abstractTableTester = (AbstractTableTester)theEObject;
+		switch (classifierID) {
+		case NattabletesterPackage.ABSTRACT_TABLE_TESTER: {
+			AbstractTableTester abstractTableTester = (AbstractTableTester) theEObject;
 			T result = caseAbstractTableTester(abstractTableTester);
-			if(result == null)
+			if (result == null) {
 				result = caseEModelElement(abstractTableTester);
-			if(result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case NattabletesterPackage.JAVA_TABLE_TESTER:
-		{
-			JavaTableTester javaTableTester = (JavaTableTester)theEObject;
+		case NattabletesterPackage.JAVA_TABLE_TESTER: {
+			JavaTableTester javaTableTester = (JavaTableTester) theEObject;
 			T result = caseJavaTableTester(javaTableTester);
-			if(result == null)
+			if (result == null) {
 				result = caseAbstractTableTester(javaTableTester);
-			if(result == null)
+			}
+			if (result == null) {
 				result = caseEModelElement(javaTableTester);
-			if(result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		default:
@@ -115,9 +118,9 @@ public class NattabletesterSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Abstract Table Tester</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -132,9 +135,9 @@ public class NattabletesterSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Java Table Tester</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -149,9 +152,9 @@ public class NattabletesterSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -166,9 +169,9 @@ public class NattabletesterSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -178,4 +181,4 @@ public class NattabletesterSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //NattabletesterSwitch
+} // NattabletesterSwitch

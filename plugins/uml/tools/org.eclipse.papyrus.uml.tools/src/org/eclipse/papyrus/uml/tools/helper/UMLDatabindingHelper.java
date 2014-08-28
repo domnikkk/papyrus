@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,24 +20,24 @@ import org.eclipse.papyrus.uml.tools.databinding.PapyrusObservableValue;
 
 /**
  * A Helper class for UML Databinding
- * 
+ *
  * @author Camille Letavernier
  */
 public class UMLDatabindingHelper {
 
 	/**
 	 * Returns an IObservableValue for the given feature and EObject
-	 * 
+	 *
 	 * If the EditingDomain is set, the IObservableValue will use the Papyrus ServiceEdit ;
 	 * otherwise, a standard EMFObservableValue will be used
-	 * 
+	 *
 	 * @param source
-	 *        The EObject to observe
+	 *            The EObject to observe
 	 * @param feature
-	 *        The feature to observe
+	 *            The feature to observe
 	 * @param domain
-	 *        The editing domain on which the commands will be executed. If null, direct
-	 *        object modifications will be used.
+	 *            The editing domain on which the commands will be executed. If null, direct
+	 *            object modifications will be used.
 	 * @return
 	 *         The IObservableValue
 	 */

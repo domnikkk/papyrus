@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -14,14 +14,6 @@ package org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.wizard;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.papyrus.emf.facet.custom.sdk.core.ICustomizationActions;
-import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.Activator;
-import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.Messages;
-import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.wizard.page.CreateCustomizationWizardPage;
-import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.wizard.page.CustomPropertyWizardPage;
-import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.wizard.page.ICreateCustomizationWizardPage;
-import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.wizard.page.ICustomizationPropertyWizardPage;
-import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -32,6 +24,14 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
+import org.eclipse.papyrus.emf.facet.custom.sdk.core.ICustomizationActions;
+import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.Activator;
+import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.Messages;
+import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.wizard.page.CreateCustomizationWizardPage;
+import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.wizard.page.CustomPropertyWizardPage;
+import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.wizard.page.ICreateCustomizationWizardPage;
+import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.wizard.page.ICustomizationPropertyWizardPage;
+import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorDescriptor;
 import org.eclipse.ui.IEditorPart;
@@ -145,8 +145,7 @@ public class CreateCustimizationWizardImpl extends Wizard implements INewWizard 
 			final FileEditorInput editorInput = new FileEditorInput(modelFile);
 			page.openEditor(editorInput, editorId);
 		} catch (final PartInitException exception) {
-			MessageDialog.openError(workbenchWindow.getShell(),
-					"Open Editor", exception.getMessage()); //$NON-NLS-1$
+			MessageDialog.openError(workbenchWindow.getShell(), "Open Editor", exception.getMessage()); //$NON-NLS-1$
 		}
 	}
 
@@ -182,8 +181,7 @@ public class CreateCustimizationWizardImpl extends Wizard implements INewWizard 
 		final Customization customization = CustomPackage.eINSTANCE
 				.getCustomFactory().createCustomization();
 		final String projectName = getProjectName();
-		final String modelCustomName = getModelFile().getName().replaceAll(
-				".custom", ""); //$NON-NLS-1$ //$NON-NLS-2$
+		final String modelCustomName = getModelFile().getName().replaceAll(".custom", ""); //$NON-NLS-1$ //$NON-NLS-2$
 		customization.setName(projectName + "." + modelCustomName); //$NON-NLS-1$
 		customization.setNsURI(this.propertyWP.getNsUri());
 		customization.setNsPrefix(this.propertyWP.getPrefix());

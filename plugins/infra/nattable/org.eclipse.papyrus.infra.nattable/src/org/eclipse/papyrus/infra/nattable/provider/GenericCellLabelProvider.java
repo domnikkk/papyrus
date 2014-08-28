@@ -26,9 +26,9 @@ import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderSer
 
 /**
  * The generic label provider for the cells
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class GenericCellLabelProvider extends AbstractNattableCellLabelProvider {
 
@@ -38,13 +38,12 @@ public class GenericCellLabelProvider extends AbstractNattableCellLabelProvider 
 	public static final int MAX_DISPLAYED_ELEMENTS = 10;
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.provider.AbstractNattableCellLabelProvider#accept(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
-	 *         <code>true</code> if the element is an instance of {@link ILabelProviderContextElementWrapper} and if the cell represents an
-	 *         {@link EStructuralFeature} of an {@link EObject}
+	 *         <code>true</code> if the element is an instance of {@link ILabelProviderContextElementWrapper} and if the cell represents an {@link EStructuralFeature} of an {@link EObject}
 	 */
 	@Override
 	public boolean accept(Object element) {
@@ -52,32 +51,32 @@ public class GenericCellLabelProvider extends AbstractNattableCellLabelProvider 
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.provider.AbstractNattableCellLabelProvider#getText(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	public String getText(Object element) {
-		final ILabelProviderCellContextElementWrapper contextElement = (ILabelProviderCellContextElementWrapper)element;
-		final IConfigRegistry registry = ((ILabelProviderContextElementWrapper)element).getConfigRegistry();
+		final ILabelProviderCellContextElementWrapper contextElement = (ILabelProviderCellContextElementWrapper) element;
+		final IConfigRegistry registry = ((ILabelProviderContextElementWrapper) element).getConfigRegistry();
 		Object value = contextElement.getObject();
 		final StringBuffer label = new StringBuffer();
 		final LabelProviderService service = getLabelProviderService(registry);
-		if(value instanceof Collection<?>) {
-			Iterator<?> iter = ((Collection<?>)value).iterator();
+		if (value instanceof Collection<?>) {
+			Iterator<?> iter = ((Collection<?>) value).iterator();
 			label.append(Constants.BEGIN_OF_COLLECTION);
 			int i = 1;
-			while(iter.hasNext()) {
-				if(i > MAX_DISPLAYED_ELEMENTS) {
+			while (iter.hasNext()) {
+				if (i > MAX_DISPLAYED_ELEMENTS) {
 					label.append(Constants.BIG_COLLECTION);
 					break;
 				}
 
 				Object current = iter.next();
 				label.append(service.getLabelProvider(current).getText(current));
-				if(iter.hasNext()) {
+				if (iter.hasNext()) {
 					label.append(Constants.SEPARATOR);
 				}
 				i++;

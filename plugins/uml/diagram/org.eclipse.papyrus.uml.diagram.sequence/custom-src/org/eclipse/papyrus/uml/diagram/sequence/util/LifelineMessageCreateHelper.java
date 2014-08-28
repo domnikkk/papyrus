@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,8 +51,9 @@ public class LifelineMessageCreateHelper {
 		@Override
 		protected Command createDeleteViewCommand(GroupRequest deleteRequest) {
 			Command command = super.createDeleteViewCommand(deleteRequest);
-			if(command != null && getHost() instanceof LifelineEditPart)
-				command = restoreLifelineOnDelete(command, (LifelineEditPart)getHost());
+			if (command != null && getHost() instanceof LifelineEditPart) {
+				command = restoreLifelineOnDelete(command, (LifelineEditPart) getHost());
+			}
 			return command;
 		}
 	}
@@ -60,7 +61,7 @@ public class LifelineMessageCreateHelper {
 	public static ConnectionAnchor getCreateMessageAnchor(LifelineEditPart part, Request request, Point location) {
 		IFigure fig = part.getPrimaryShape().getFigureLifelineNameContainerFigure();
 		fig.translateToRelative(location);
-		if(fig.containsPoint(location)) {// move to header
+		if (fig.containsPoint(location)) {// move to header
 			return new LifelineAnchor(part.getPrimaryShape().getFigureLifelineNameContainerFigure());
 		}
 		// move to dash line
@@ -69,38 +70,38 @@ public class LifelineMessageCreateHelper {
 
 	static ConnectionAnchor getTargetConnectionAnchor(LifelineEditPart part, Request request) {
 		NodeFigure nodeFigure = null;
-		if(part instanceof CustomLifelineEditPart) {
-			nodeFigure = ((CustomLifelineEditPart)part).getNodeFigure();
+		if (part instanceof CustomLifelineEditPart) {
+			nodeFigure = ((CustomLifelineEditPart) part).getNodeFigure();
 		} else {
-			if(part.getContentPane() instanceof LifelineDotLineCustomFigure) {
-				nodeFigure = ((LifelineDotLineCustomFigure)part.getContentPane()).getDashLineRectangle();
+			if (part.getContentPane() instanceof LifelineDotLineCustomFigure) {
+				nodeFigure = ((LifelineDotLineCustomFigure) part.getContentPane()).getDashLineRectangle();
 			}
 		}
-		if(nodeFigure == null) {
+		if (nodeFigure == null) {
 			return null;
 		}
-		if(request instanceof ReconnectRequest) {
-			if(((DropRequest)request).getLocation() == null) {
+		if (request instanceof ReconnectRequest) {
+			if (((DropRequest) request).getLocation() == null) {
 				return nodeFigure.getTargetConnectionAnchorAt(null);
 			}
-			Point pt = ((DropRequest)request).getLocation().getCopy();
+			Point pt = ((DropRequest) request).getLocation().getCopy();
 			return nodeFigure.getTargetConnectionAnchorAt(pt);
-		} else if(request instanceof DropRequest) {
-			return nodeFigure.getTargetConnectionAnchorAt(((DropRequest)request).getLocation());
+		} else if (request instanceof DropRequest) {
+			return nodeFigure.getTargetConnectionAnchorAt(((DropRequest) request).getLocation());
 		}
 		return nodeFigure.getTargetConnectionAnchorAt(null);
 	}
 
-	//when a create message is deleted, move its target lifelines up
+	// when a create message is deleted, move its target lifelines up
 	public static Command restoreLifelineOnMessageDelete(Command commands, EditPart editPart) {
-		if(editPart instanceof Message4EditPart) {
-			Message4EditPart part = (Message4EditPart)editPart;
-			if(part.getTarget() instanceof LifelineEditPart && LifelineMessageCreateHelper.getIncomingMessageCreate(part.getTarget()).size() == 1) {
-				LifelineEditPart target = (LifelineEditPart)part.getTarget();
-				if(target.getModel() instanceof Shape) {
-					Shape view = (ShapeImpl)target.getModel();
-					if(view.getLayoutConstraint() instanceof Bounds) {
-						Bounds bounds = (Bounds)view.getLayoutConstraint();
+		if (editPart instanceof Message4EditPart) {
+			Message4EditPart part = (Message4EditPart) editPart;
+			if (part.getTarget() instanceof LifelineEditPart && LifelineMessageCreateHelper.getIncomingMessageCreate(part.getTarget()).size() == 1) {
+				LifelineEditPart target = (LifelineEditPart) part.getTarget();
+				if (target.getModel() instanceof Shape) {
+					Shape view = (ShapeImpl) target.getModel();
+					if (view.getLayoutConstraint() instanceof Bounds) {
+						Bounds bounds = (Bounds) view.getLayoutConstraint();
 						ICommand boundsCommand = new SetBoundsCommand(target.getEditingDomain(), DiagramUIMessages.SetLocationCommand_Label_Resize, new EObjectAdapter(view), new Point(bounds.getX(), SequenceUtil.LIFELINE_VERTICAL_OFFSET));
 						commands = commands.chain(new ICommandProxy(boundsCommand));
 						int dy = SequenceUtil.LIFELINE_VERTICAL_OFFSET - bounds.getY();
@@ -115,12 +116,12 @@ public class LifelineMessageCreateHelper {
 	// when a lifleine is deleted, move its created lifelines up
 	public static Command restoreLifelineOnDelete(Command command, LifelineEditPart part) {
 		List list = part.getSourceConnections();
-		if(list != null && list.size() > 0) {
-			for(Object l : list)
-				if(l instanceof Message4EditPart) {
-					EditPart target = ((Message4EditPart)l).getTarget();
-					if(target instanceof LifelineEditPart && getIncomingMessageCreate(target).size() == 1) {
-						LifelineEditPart lp = (LifelineEditPart)target;
+		if (list != null && list.size() > 0) {
+			for (Object l : list) {
+				if (l instanceof Message4EditPart) {
+					EditPart target = ((Message4EditPart) l).getTarget();
+					if (target instanceof LifelineEditPart && getIncomingMessageCreate(target).size() == 1) {
+						LifelineEditPart lp = (LifelineEditPart) target;
 						Rectangle bounds = lp.getPrimaryShape().getBounds();
 						Point location = new Point(bounds.x, SequenceUtil.LIFELINE_VERTICAL_OFFSET);
 						int dy = location.y - bounds.y;
@@ -129,16 +130,18 @@ public class LifelineMessageCreateHelper {
 						command = moveCascadeLifeline(lp, command, dy);
 					}
 				}
+			}
 		}
 		return command;
 	}
 
 	public static boolean hasMessageCreate(GraphicalEditPart sourceEditPart, EditPart targetEditPart) {
 		List list = sourceEditPart.getSourceConnections();
-		for(Object o : list)
-			if(o instanceof Message4EditPart && targetEditPart.equals(((Message4EditPart)o).getTarget())) {
+		for (Object o : list) {
+			if (o instanceof Message4EditPart && targetEditPart.equals(((Message4EditPart) o).getTarget())) {
 				return true;
 			}
+		}
 		return false;
 	}
 
@@ -148,36 +151,39 @@ public class LifelineMessageCreateHelper {
 
 	public static List getIncomingMessageCreate(EditPart target) {
 		List create = new ArrayList();
-		if(target instanceof LifelineEditPart) {
-			List list = ((LifelineEditPart)target).getTargetConnections();
-			if(list != null && list.size() > 0) {
-				for(Object l : list)
-					if(l instanceof Message4EditPart) {
+		if (target instanceof LifelineEditPart) {
+			List list = ((LifelineEditPart) target).getTargetConnections();
+			if (list != null && list.size() > 0) {
+				for (Object l : list) {
+					if (l instanceof Message4EditPart) {
 						create.add(l);
 					}
+				}
 			}
 		}
 		return create;
 	}
 
 	public static boolean canReconnectMessageCreate(ReconnectRequest request) {
-		Message4EditPart connPart = (Message4EditPart)request.getConnectionEditPart();
-		if(request.isMovingStartAnchor()) { // reconnect source
-			if(hasMessageCreate((GraphicalEditPart)request.getTarget(), (GraphicalEditPart)connPart.getTarget()))
+		Message4EditPart connPart = (Message4EditPart) request.getConnectionEditPart();
+		if (request.isMovingStartAnchor()) { // reconnect source
+			if (hasMessageCreate((GraphicalEditPart) request.getTarget(), (GraphicalEditPart) connPart.getTarget())) {
 				return false;
+			}
 		} else { // reconnect target
-			if(hasMessageCreate((GraphicalEditPart)connPart.getSource(), request.getTarget()))
+			if (hasMessageCreate((GraphicalEditPart) connPart.getSource(), request.getTarget())) {
 				return false;
+			}
 		}
 		return true;
 	}
 
 	public static Command reconnectMessageCreateTarget(ReconnectRequest request, Command command) {
-		LifelineEditPart oldTarget = (LifelineEditPart)request.getConnectionEditPart().getTarget();
-		//		LifelineEditPart source = (LifelineEditPart)request.getConnectionEditPart().getSource();
-		LifelineEditPart newTarget = (LifelineEditPart)request.getTarget();
+		LifelineEditPart oldTarget = (LifelineEditPart) request.getConnectionEditPart().getTarget();
+		// LifelineEditPart source = (LifelineEditPart)request.getConnectionEditPart().getSource();
+		LifelineEditPart newTarget = (LifelineEditPart) request.getTarget();
 		// move up the original connection target lifeline, it has only one create message, which will be removed
-		if(getIncomingMessageCreate(oldTarget).size() == 1) {
+		if (getIncomingMessageCreate(oldTarget).size() == 1) {
 			Rectangle bounds = oldTarget.getPrimaryShape().getBounds();
 			Point location = new Point(bounds.x, SequenceUtil.LIFELINE_VERTICAL_OFFSET);
 			int dy = location.y - bounds.y;
@@ -185,7 +191,7 @@ public class LifelineMessageCreateHelper {
 			command = command.chain(new ICommandProxy(boundsCommand));
 			command = moveCascadeLifeline(oldTarget, command, dy);
 		}
-		//move down the new connection target lifeline
+		// move down the new connection target lifeline
 		command = moveLifelineDown(command, newTarget, request.getLocation().getCopy());
 		return command;
 	}
@@ -194,8 +200,8 @@ public class LifelineMessageCreateHelper {
 		IFigure fig = part.getFigure();
 		Rectangle bounds = fig.getBounds().getCopy();
 		int height = part.getPrimaryShape().getFigureLifelineNameContainerFigure().getBounds().height;
-		//Fixed bug: When the Lifeline is created by MessageCreate at dynamic time(@see https://bugs.eclipse.org/bugs/show_bug.cgi?id=403134), the bounds would not be get when the Lifeline is not displayed yet.
-		if(bounds.isEmpty()) {
+		// Fixed bug: When the Lifeline is created by MessageCreate at dynamic time(@see https://bugs.eclipse.org/bugs/show_bug.cgi?id=403134), the bounds would not be get when the Lifeline is not displayed yet.
+		if (bounds.isEmpty()) {
 			bounds = SequenceUtil.getAbsoluteBounds(part);
 			height = 29;
 		} else {
@@ -203,7 +209,7 @@ public class LifelineMessageCreateHelper {
 		}
 		Point location = new Point(bounds.x, Math.max(bounds.y, sourcePointCopy.y() - height / 2));
 		View targetView = part.getNotationView();
-		if(location.y != bounds.y) {
+		if (location.y != bounds.y) {
 			int dy = location.y - bounds.y;
 			fig.translateToRelative(location);
 			fig.translateToParent(location);
@@ -217,18 +223,18 @@ public class LifelineMessageCreateHelper {
 	// move all lifelines which has incoming create link from part
 	public static Command moveCascadeLifeline(LifelineEditPart part, Command command, int dy) {
 		List list = part.getSourceConnections();
-		if(list != null && list.size() > 0) {
-			for(Object l : list)
-				if(l instanceof Message4EditPart) {
-					EditPart target = ((Message4EditPart)l).getTarget();
-					if(target instanceof LifelineEditPart) {
-						LifelineEditPart lp = (LifelineEditPart)target;
+		if (list != null && list.size() > 0) {
+			for (Object l : list) {
+				if (l instanceof Message4EditPart) {
+					EditPart target = ((Message4EditPart) l).getTarget();
+					if (target instanceof LifelineEditPart) {
+						LifelineEditPart lp = (LifelineEditPart) target;
 						Rectangle bounds = lp.getFigure().getBounds().getCopy();
 						View targetView = lp.getNotationView();
 						Point location = bounds.getLocation().getCopy().translate(0, dy);
 						Command boundsCommand = new ICommandProxy(new SetBoundsCommand(part.getEditingDomain(), DiagramUIMessages.SetLocationCommand_Label_Resize, new EObjectAdapter(targetView), location));
 						// Take care of the order of commands, to make sure target is always bellow the source.
-						if(dy < 0) { // move up
+						if (dy < 0) { // move up
 							command = command == null ? boundsCommand : command.chain(boundsCommand);
 							command = moveCascadeLifeline(lp, command, dy);
 						} else { // move down
@@ -237,6 +243,7 @@ public class LifelineMessageCreateHelper {
 						}
 					}
 				}
+			}
 		}
 		return command;
 	}
@@ -245,27 +252,32 @@ public class LifelineMessageCreateHelper {
 		int halfHeight = child.getPrimaryShape().getFigureLifelineNameContainerFigure().getBounds().height / 2;
 		// check outgoing links
 		List list = child.getSourceConnections();
-		if(list != null && list.size() > 0) {
-			for(Object l : list)
-				if(l instanceof Message4EditPart && ((Message4EditPart)l).getTarget() instanceof LifelineEditPart) {
-					LifelineEditPart lowPart = (LifelineEditPart)((Message4EditPart)l).getTarget();
+		if (list != null && list.size() > 0) {
+			for (Object l : list) {
+				if (l instanceof Message4EditPart && ((Message4EditPart) l).getTarget() instanceof LifelineEditPart) {
+					LifelineEditPart lowPart = (LifelineEditPart) ((Message4EditPart) l).getTarget();
 					Rectangle outBounds = lowPart.getFigure().getBounds();
-					if(outBounds.y - newBounds.y < halfHeight)
+					if (outBounds.y - newBounds.y < halfHeight) {
 						return false;
+					}
 				}
+			}
 		}
 		// check incoming links
 		list = child.getTargetConnections();
-		if(list != null && list.size() > 0) {
-			for(Object l : list)
-				if(l instanceof Message4EditPart && ((Message4EditPart)l).getSource() instanceof LifelineEditPart) {
-					LifelineEditPart highPart = (LifelineEditPart)((Message4EditPart)l).getSource();
+		if (list != null && list.size() > 0) {
+			for (Object l : list) {
+				if (l instanceof Message4EditPart && ((Message4EditPart) l).getSource() instanceof LifelineEditPart) {
+					LifelineEditPart highPart = (LifelineEditPart) ((Message4EditPart) l).getSource();
 					Rectangle inBounds = highPart.getFigure().getBounds();
-					if(newBounds.y - inBounds.y < halfHeight)
+					if (newBounds.y - inBounds.y < halfHeight) {
 						return false;
-					if(newBounds.y > inBounds.getBottom().y - halfHeight)
+					}
+					if (newBounds.y > inBounds.getBottom().y - halfHeight) {
 						return false;
+					}
 				}
+			}
 		}
 		return true;
 	}

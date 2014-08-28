@@ -12,20 +12,17 @@
  */
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EReferenceTreeElement;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.TreeElement;
 
 /**
  * An implementation of the model object '<em><b>EReference Tree Element</b></em>'.
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl.EReferenceTreeElementImpl#getEReference <em>EReference
- * </em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl.EReferenceTreeElementImpl#getEReference <em>EReference </em>}</li>
  * </ul>
  * </p>
  *
@@ -53,16 +50,16 @@ public class EReferenceTreeElementImpl extends EStructuralFeatureTreeElementImpl
 
 	@Override
 	public EObjectTreeElement getParent() {
-		return (EObjectTreeElement)super.getParent();
+		return (EObjectTreeElement) super.getParent();
 	}
 
 	public void setParent(EObjectTreeElement parent) {
 		super.setParent(parent);
 	}
-	
+
 	@Override
 	protected EStructuralFeature getEStructuralFeature() {
 		return getEReference();
 	}
 
-} //EReferenceTreeElementImpl
+} // EReferenceTreeElementImpl

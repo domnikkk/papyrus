@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -22,9 +22,9 @@ import org.eclipse.swt.widgets.ExpandItem;
 public class ExpandItemHeightAction implements ISetPostAction {
 
 	public void action(Object target, IProperty property, Object value) {
-		if(target instanceof ExpandItem && value instanceof Control) {
-			ExpandItem targetControl = (ExpandItem)target;
-			Control valueControl = (Control)value;
+		if (target instanceof ExpandItem && value instanceof Control) {
+			ExpandItem targetControl = (ExpandItem) target;
+			Control valueControl = (Control) value;
 			targetControl.setHeight(valueControl.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
 		}
 	}

@@ -23,7 +23,7 @@ import org.eclipse.papyrus.infra.emf.appearance.helper.VisualInformationPapyrusC
 
 /**
  * Basic implementation of AppearanceStyleProvider, based on EMF EAnnotations
- * 
+ *
  * @author Camille Letavernier
  */
 // Implementation note: the CSS rely on these EAnnotations to determine
@@ -36,11 +36,11 @@ public class AnnotationStyleProvider implements AppearanceStyleProvider {
 
 	public boolean showElementIcon(EModelElement modelElement) {
 		EAnnotation displayNameLabelIcon = modelElement.getEAnnotation(VisualInformationPapyrusConstants.DISPLAY_NAMELABELICON);
-		if(displayNameLabelIcon != null) {
+		if (displayNameLabelIcon != null) {
 			EMap<String, String> entries = displayNameLabelIcon.getDetails();
-			if(entries != null) {
+			if (entries != null) {
 				String gradientvalueString = entries.get(VisualInformationPapyrusConstants.DISPLAY_NAMELABELICON_VALUE);
-				if(gradientvalueString != null) {
+				if (gradientvalueString != null) {
 					return new Boolean(gradientvalueString);
 				}
 			}
@@ -56,12 +56,12 @@ public class AnnotationStyleProvider implements AppearanceStyleProvider {
 	// already manipulates and parses "FULL" and "NONE")
 	public int getQualifiedNameDepth(EModelElement modelElement) {
 		EAnnotation qualifiedNameAnnotation = modelElement.getEAnnotation(VisualInformationPapyrusConstants.QUALIFIED_NAME);
-		if(qualifiedNameAnnotation != null) {
+		if (qualifiedNameAnnotation != null) {
 			EMap<String, String> entries = qualifiedNameAnnotation.getDetails();
 
-			if(entries != null) {
+			if (entries != null) {
 				String depthString = entries.get(VisualInformationPapyrusConstants.QUALIFIED_NAME_DEPTH);
-				if(depthString != null) {
+				if (depthString != null) {
 					return new Integer(depthString);
 				}
 			}
@@ -72,12 +72,12 @@ public class AnnotationStyleProvider implements AppearanceStyleProvider {
 
 	public boolean showShadow(EModelElement modelElement) {
 		EAnnotation shadowAnnotation = modelElement.getEAnnotation(VisualInformationPapyrusConstants.SHADOWFIGURE);
-		if(shadowAnnotation != null) {
+		if (shadowAnnotation != null) {
 			EMap<String, String> entries = shadowAnnotation.getDetails();
 
-			if(entries != null) {
+			if (entries != null) {
 				String gradientvalueString = entries.get(VisualInformationPapyrusConstants.SHADOWFIGURE_VALUE);
-				if(gradientvalueString != null) {
+				if (gradientvalueString != null) {
 					return new Boolean(gradientvalueString);
 				}
 			}
@@ -88,14 +88,14 @@ public class AnnotationStyleProvider implements AppearanceStyleProvider {
 
 	/**
 	 * Gets the command to set the gradient to true are false.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param view
-	 *        the view
+	 *            the view
 	 * @param nameLabelIconValue
-	 *        true to display the icon of the element in labelName
-	 * 
+	 *            true to display the icon of the element in labelName
+	 *
 	 * @return the command to set the elementIcon to true are false.
 	 */
 	public static RecordingCommand getSetElementIconCommand(TransactionalEditingDomain domain, EModelElement view, boolean nameLabelIconValue) {
@@ -104,14 +104,14 @@ public class AnnotationStyleProvider implements AppearanceStyleProvider {
 
 	/**
 	 * Gets the sets the qualifed name depth command.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param view
-	 *        the view
+	 *            the view
 	 * @param depth
-	 *        the depth
-	 * 
+	 *            the depth
+	 *
 	 * @return the set qualified name depth command
 	 */
 	public static RecordingCommand getSetQualifiedNameDepthCommand(TransactionalEditingDomain domain, EModelElement view, int depth) {
@@ -120,14 +120,14 @@ public class AnnotationStyleProvider implements AppearanceStyleProvider {
 
 	/**
 	 * Gets the command to set the shadow figure to true are false.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param view
-	 *        the view
+	 *            the view
 	 * @param shadowFigureValue
-	 *        true to display the shadow on the figure
-	 * 
+	 *            true to display the shadow on the figure
+	 *
 	 * @return the command to set the shadow to true or false.
 	 */
 	public static RecordingCommand getSetShadowCommand(TransactionalEditingDomain domain, EModelElement view, boolean shadowFigureValue) {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,8 +30,8 @@ import org.eclipse.uml2.uml.InvocationAction;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMInvocationActionImpl#getBase_InvocationAction <em>Base Invocation Action</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMInvocationActionImpl#getOnFeature <em>On Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMInvocationActionImpl#getBase_InvocationAction <em>Base Invocation Action</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMInvocationActionImpl#getOnFeature <em>On Feature</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +42,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	 * The cached value of the '{@link #getBase_InvocationAction() <em>Base Invocation Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_InvocationAction()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	 * The cached value of the '{@link #getOnFeature() <em>On Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOnFeature()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected GCMInvocationActionImpl() {
@@ -70,6 +73,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,15 +84,18 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public InvocationAction getBase_InvocationAction() {
 		if (base_InvocationAction != null && base_InvocationAction.eIsProxy()) {
-			InternalEObject oldBase_InvocationAction = (InternalEObject)base_InvocationAction;
-			base_InvocationAction = (InvocationAction)eResolveProxy(oldBase_InvocationAction);
+			InternalEObject oldBase_InvocationAction = (InternalEObject) base_InvocationAction;
+			base_InvocationAction = (InvocationAction) eResolveProxy(oldBase_InvocationAction);
 			if (base_InvocationAction != oldBase_InvocationAction) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GCMPackage.GCM_INVOCATION_ACTION__BASE_INVOCATION_ACTION, oldBase_InvocationAction, base_InvocationAction));
+				}
 			}
 		}
 		return base_InvocationAction;
@@ -97,6 +104,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public InvocationAction basicGetBase_InvocationAction() {
@@ -106,27 +114,33 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_InvocationAction(InvocationAction newBase_InvocationAction) {
 		InvocationAction oldBase_InvocationAction = base_InvocationAction;
 		base_InvocationAction = newBase_InvocationAction;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GCMPackage.GCM_INVOCATION_ACTION__BASE_INVOCATION_ACTION, oldBase_InvocationAction, base_InvocationAction));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Feature getOnFeature() {
 		if (onFeature != null && onFeature.eIsProxy()) {
-			InternalEObject oldOnFeature = (InternalEObject)onFeature;
-			onFeature = (Feature)eResolveProxy(oldOnFeature);
+			InternalEObject oldOnFeature = (InternalEObject) onFeature;
+			onFeature = (Feature) eResolveProxy(oldOnFeature);
 			if (onFeature != oldOnFeature) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GCMPackage.GCM_INVOCATION_ACTION__ON_FEATURE, oldOnFeature, onFeature));
+				}
 			}
 		}
 		return onFeature;
@@ -135,6 +149,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Feature basicGetOnFeature() {
@@ -144,29 +159,37 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setOnFeature(Feature newOnFeature) {
 		Feature oldOnFeature = onFeature;
 		onFeature = newOnFeature;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GCMPackage.GCM_INVOCATION_ACTION__ON_FEATURE, oldOnFeature, onFeature));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GCMPackage.GCM_INVOCATION_ACTION__BASE_INVOCATION_ACTION:
-				if (resolve) return getBase_InvocationAction();
-				return basicGetBase_InvocationAction();
-			case GCMPackage.GCM_INVOCATION_ACTION__ON_FEATURE:
-				if (resolve) return getOnFeature();
-				return basicGetOnFeature();
+		case GCMPackage.GCM_INVOCATION_ACTION__BASE_INVOCATION_ACTION:
+			if (resolve) {
+				return getBase_InvocationAction();
+			}
+			return basicGetBase_InvocationAction();
+		case GCMPackage.GCM_INVOCATION_ACTION__ON_FEATURE:
+			if (resolve) {
+				return getOnFeature();
+			}
+			return basicGetOnFeature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,17 +197,18 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GCMPackage.GCM_INVOCATION_ACTION__BASE_INVOCATION_ACTION:
-				setBase_InvocationAction((InvocationAction)newValue);
-				return;
-			case GCMPackage.GCM_INVOCATION_ACTION__ON_FEATURE:
-				setOnFeature((Feature)newValue);
-				return;
+		case GCMPackage.GCM_INVOCATION_ACTION__BASE_INVOCATION_ACTION:
+			setBase_InvocationAction((InvocationAction) newValue);
+			return;
+		case GCMPackage.GCM_INVOCATION_ACTION__ON_FEATURE:
+			setOnFeature((Feature) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -192,17 +216,18 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GCMPackage.GCM_INVOCATION_ACTION__BASE_INVOCATION_ACTION:
-				setBase_InvocationAction((InvocationAction)null);
-				return;
-			case GCMPackage.GCM_INVOCATION_ACTION__ON_FEATURE:
-				setOnFeature((Feature)null);
-				return;
+		case GCMPackage.GCM_INVOCATION_ACTION__BASE_INVOCATION_ACTION:
+			setBase_InvocationAction((InvocationAction) null);
+			return;
+		case GCMPackage.GCM_INVOCATION_ACTION__ON_FEATURE:
+			setOnFeature((Feature) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -210,17 +235,18 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GCMPackage.GCM_INVOCATION_ACTION__BASE_INVOCATION_ACTION:
-				return base_InvocationAction != null;
-			case GCMPackage.GCM_INVOCATION_ACTION__ON_FEATURE:
-				return onFeature != null;
+		case GCMPackage.GCM_INVOCATION_ACTION__BASE_INVOCATION_ACTION:
+			return base_InvocationAction != null;
+		case GCMPackage.GCM_INVOCATION_ACTION__ON_FEATURE:
+			return onFeature != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //GCMInvocationActionImpl
+} // GCMInvocationActionImpl

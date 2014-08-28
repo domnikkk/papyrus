@@ -34,7 +34,7 @@ public class Activator extends AbstractUIPlugin {
 	// The shared instance
 	private static Activator plugin;
 
-	//	Resource bundle.
+	// Resource bundle.
 	public static final Font VIEW_FONT = new Font(null, "Bitstream Vera Sans Mono", 10, SWT.NORMAL);
 
 	private static final String RESOURCE_NAME = PLUGIN_ID + ".Activator";
@@ -53,7 +53,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -68,14 +68,14 @@ public class Activator extends AbstractUIPlugin {
 		try {
 			resourceBundle = ResourceBundle.getBundle(RESOURCE_NAME);
 		} catch (MissingResourceException mre) {
-			//Log.exception(mre);
+			// Log.exception(mre);
 			resourceBundle = null;
 		}
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
 	 */
 	@Override
@@ -86,7 +86,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
 	 */
 	@Override
@@ -120,21 +120,21 @@ public class Activator extends AbstractUIPlugin {
 	 * its key. <BR>
 	 * By default, it returns a default image. This image is the image placed in
 	 * the directory <em>resources/icons/default.gif</em>
-	 * 
+	 *
 	 * @param key
-	 *        the key of the image
+	 *            the key of the image
 	 * @return the Image
 	 */
 	public static Image getImage(String key) {
 		ImageRegistry registry = getDefault().getImageRegistry();
 		Image image = registry.get(key);
-		if(image == null) {
+		if (image == null) {
 			ImageDescriptor desc = AbstractUIPlugin
-				.imageDescriptorFromPlugin(PLUGIN_ID, key);
+					.imageDescriptorFromPlugin(PLUGIN_ID, key);
 			registry.put(key, desc);
 			image = registry.get(key);
 		}
-		if(image == null && !key.equals(DEFAULT_IMAGE)) {
+		if (image == null && !key.equals(DEFAULT_IMAGE)) {
 			image = getImage(DEFAULT_IMAGE);
 		}
 
@@ -143,16 +143,16 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Log the given exception into the plugin log.
-	 * 
+	 *
 	 * @param e
-	 *        the exception to log
+	 *            the exception to log
 	 */
 	public static void log(Exception e) {
 		getDefault().getLog().log(new Status(
-			IStatus.ERROR,
-			PLUGIN_ID,
-			IStatus.OK,
-			"exception caught: " + e.getMessage(),
-			e));
+				IStatus.ERROR,
+				PLUGIN_ID,
+				IStatus.OK,
+				"exception caught: " + e.getMessage(),
+				e));
 	}
 }

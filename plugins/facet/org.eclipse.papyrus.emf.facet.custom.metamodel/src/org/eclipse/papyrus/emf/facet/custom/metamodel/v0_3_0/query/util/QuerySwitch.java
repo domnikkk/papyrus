@@ -1,11 +1,11 @@
 /**
  *  Copyright (c) 2013 Soft-Maint.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  * 		David Couvrand (Soft-Maint) - Bug 402725 - Need a query to get an image from an URI
  *  	Nicolas Rault (Soft-Maint) - Bug 402725 - Need a query to get an image from an URI
@@ -16,20 +16,20 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.QueryPackage;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.URIImageQuery;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
- * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
- * to invoke the <code>caseXXX</code> method for each class of the model,
+ * It supports the call {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object
  * and proceeding up the inheritance hierarchy
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.QueryPackage
  * @generated
  */
@@ -38,6 +38,7 @@ public class QuerySwitch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static QueryPackage modelPackage;
@@ -46,6 +47,7 @@ public class QuerySwitch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public QuerySwitch() {
@@ -58,6 +60,7 @@ public class QuerySwitch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -69,6 +72,7 @@ public class QuerySwitch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -78,10 +82,9 @@ public class QuerySwitch<T> {
 		}
 		else {
 			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-					eSuperTypes.isEmpty() ?
-							defaultCase(theEObject) :
-								doSwitch(eSuperTypes.get(0), theEObject);
+			return eSuperTypes.isEmpty() ?
+					defaultCase(theEObject) :
+					doSwitch(eSuperTypes.get(0), theEObject);
 		}
 	}
 
@@ -89,19 +92,25 @@ public class QuerySwitch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 		case QueryPackage.URI_IMAGE_QUERY: {
-			URIImageQuery uriImageQuery = (URIImageQuery)theEObject;
+			URIImageQuery uriImageQuery = (URIImageQuery) theEObject;
 			T result = caseURIImageQuery(uriImageQuery);
-			if (result == null) result = caseQuery(uriImageQuery);
-			if (result == null) result = defaultCase(theEObject);
+			if (result == null) {
+				result = caseQuery(uriImageQuery);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		default: return defaultCase(theEObject);
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
@@ -111,7 +120,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>URI Image Query</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -126,7 +137,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Query</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -141,7 +154,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -150,4 +165,4 @@ public class QuerySwitch<T> {
 		return null;
 	}
 
-} //QuerySwitch
+} // QuerySwitch

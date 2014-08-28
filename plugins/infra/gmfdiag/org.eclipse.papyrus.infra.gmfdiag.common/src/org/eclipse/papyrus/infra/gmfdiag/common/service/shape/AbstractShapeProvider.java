@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -79,7 +79,7 @@ public abstract class AbstractShapeProvider extends AbstractProvider implements 
 
 	/**
 	 * Returns the bundle identifier for this provider
-	 * 
+	 *
 	 * @return the bundle identifier for this provider
 	 */
 	public String getBundleId() {
@@ -89,7 +89,7 @@ public abstract class AbstractShapeProvider extends AbstractProvider implements 
 
 	/**
 	 * Returns the name of this provider
-	 * 
+	 *
 	 * @return the name of this provider
 	 */
 	public String getName() {
@@ -108,7 +108,7 @@ public abstract class AbstractShapeProvider extends AbstractProvider implements 
 
 	/**
 	 * Returns the description of this provider
-	 * 
+	 *
 	 * @return the description of this provider
 	 */
 	public String getDescription() {
@@ -137,7 +137,7 @@ public abstract class AbstractShapeProvider extends AbstractProvider implements 
 	/**
 	 * Loads a SVG document from the given location.
 	 * This method uses a cache so that any given document is only loaded once.
-	 * 
+	 *
 	 * @param view
 	 *            The view object to retrieve a svg document for
 	 * @param location
@@ -155,7 +155,7 @@ public abstract class AbstractShapeProvider extends AbstractProvider implements 
 	/**
 	 * Loads a SVG document from the given location.
 	 * This method uses a cache so that any given document is only loaded once.
-	 * 
+	 *
 	 * @param location
 	 *            The location to load the document from
 	 * @return the Document SVG from its location, can return null if this is not a svg
@@ -164,8 +164,9 @@ public abstract class AbstractShapeProvider extends AbstractProvider implements 
 		if (cache == null) {
 			cache = new HashMap<String, SVGDocument>();
 		}
-		if (cache.containsKey(location))
+		if (cache.containsKey(location)) {
 			return cache.get(location);
+		}
 		SVGDocument doc = doGetSVGDocument(location);
 		cache.put(location, doc);
 		return doc;
@@ -173,18 +174,18 @@ public abstract class AbstractShapeProvider extends AbstractProvider implements 
 
 	/**
 	 * Loads a SVG document from the given location
-	 * 
+	 *
 	 * @param location
 	 *            The location to load the document from
 	 * @return the Document SVG from its location, can return null if this is not a svg
 	 */
 	private SVGDocument doGetSVGDocument(String location) {
 		int extensionIndex = location.lastIndexOf('.');
-		if(extensionIndex == 0) {
+		if (extensionIndex == 0) {
 			return null;
 		}
 		String fileExtension = location.substring(extensionIndex);
-		if(!fileExtension.equalsIgnoreCase(".svg")) {
+		if (!fileExtension.equalsIgnoreCase(".svg")) {
 			return null;
 		}
 
@@ -194,7 +195,7 @@ public abstract class AbstractShapeProvider extends AbstractProvider implements 
 			SAXSVGDocumentFactory f = new SAXSVGDocumentFactory(parser);
 
 			Document doc = f.createDocument(location);
-			SVGDocument svgDocument = (SVGDocument)doc;
+			SVGDocument svgDocument = (SVGDocument) doc;
 			return svgDocument;
 
 		} catch (Exception e) {
@@ -206,7 +207,7 @@ public abstract class AbstractShapeProvider extends AbstractProvider implements 
 	/**
 	 * Translates the given uri as a string to a canonical Eclipse URI
 	 * The uri may be relative to the currently edited EMF resource
-	 * 
+	 *
 	 * @param model
 	 *            The model element used to retrieve the EMF resource that is currently edited
 	 * @param uri
@@ -267,6 +268,7 @@ public abstract class AbstractShapeProvider extends AbstractProvider implements 
 	/**
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.handler.IRefreshHandlerPart#refresh(org.eclipse.ui.IEditorPart)
 	 */
+	@Override
 	public synchronized void refresh(IEditorPart editorPart) {
 		// Clears the cache of loaded SVG documents
 		// This will force their reloading

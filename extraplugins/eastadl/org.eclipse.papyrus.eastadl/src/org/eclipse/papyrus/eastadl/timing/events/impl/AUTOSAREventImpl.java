@@ -18,7 +18,7 @@ import org.eclipse.uml2.uml.TimeEvent;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.events.impl.AUTOSAREventImpl#getRef <em>Ref</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.events.impl.AUTOSAREventImpl#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,6 +29,7 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	 * The cached value of the '{@link #getRef() <em>Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRef()
 	 * @generated
 	 * @ordered
@@ -38,6 +39,7 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected AUTOSAREventImpl() {
@@ -47,6 +49,7 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -57,15 +60,18 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimeEvent getRef() {
 		if (ref != null && ref.eIsProxy()) {
-			InternalEObject oldRef = (InternalEObject)ref;
-			ref = (TimeEvent)eResolveProxy(oldRef);
+			InternalEObject oldRef = (InternalEObject) ref;
+			ref = (TimeEvent) eResolveProxy(oldRef);
 			if (ref != oldRef) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventsPackage.AUTOSAR_EVENT__REF, oldRef, ref));
+				}
 			}
 		}
 		return ref;
@@ -74,6 +80,7 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public TimeEvent basicGetRef() {
@@ -83,26 +90,32 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setRef(TimeEvent newRef) {
 		TimeEvent oldRef = ref;
 		ref = newRef;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EventsPackage.AUTOSAR_EVENT__REF, oldRef, ref));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EventsPackage.AUTOSAR_EVENT__REF:
-				if (resolve) return getRef();
-				return basicGetRef();
+		case EventsPackage.AUTOSAR_EVENT__REF:
+			if (resolve) {
+				return getRef();
+			}
+			return basicGetRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,14 +123,15 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EventsPackage.AUTOSAR_EVENT__REF:
-				setRef((TimeEvent)newValue);
-				return;
+		case EventsPackage.AUTOSAR_EVENT__REF:
+			setRef((TimeEvent) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -125,14 +139,15 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EventsPackage.AUTOSAR_EVENT__REF:
-				setRef((TimeEvent)null);
-				return;
+		case EventsPackage.AUTOSAR_EVENT__REF:
+			setRef((TimeEvent) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,15 +155,16 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EventsPackage.AUTOSAR_EVENT__REF:
-				return ref != null;
+		case EventsPackage.AUTOSAR_EVENT__REF:
+			return ref != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //AUTOSAREventImpl
+} // AUTOSAREventImpl

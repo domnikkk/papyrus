@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,6 +16,7 @@ package org.eclipse.papyrus.uml.diagram.sequence.command;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.papyrus.uml.diagram.sequence.edit.commands.DurationConstraintCreateCommand;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.commands.DurationConstraintInMessageCreateCommand;
 
 /**
@@ -25,7 +26,7 @@ public class CustomDurationConstraintInMessageCreateCommand extends DurationCons
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -35,7 +36,7 @@ public class CustomDurationConstraintInMessageCreateCommand extends DurationCons
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomDurationConstraintInMessageCreateCommand(CreateElementRequest req, Diagram diagram) {

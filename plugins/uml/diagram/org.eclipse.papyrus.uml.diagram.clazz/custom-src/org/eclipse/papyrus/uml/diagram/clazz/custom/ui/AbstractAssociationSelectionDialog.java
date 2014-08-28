@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,7 +41,7 @@ public class AbstractAssociationSelectionDialog extends Dialog {
 
 	/**
 	 * Create the dialog.
-	 * 
+	 *
 	 * @param parent
 	 * @param style
 	 */
@@ -52,7 +52,7 @@ public class AbstractAssociationSelectionDialog extends Dialog {
 
 	/**
 	 * Open the dialog.
-	 * 
+	 *
 	 * @return the result
 	 */
 	public Object open() {
@@ -60,8 +60,8 @@ public class AbstractAssociationSelectionDialog extends Dialog {
 		shlAssociationselection.open();
 		shlAssociationselection.layout();
 		Display display = getParent().getDisplay();
-		while(!shlAssociationselection.isDisposed()) {
-			if(!display.readAndDispatch()) {
+		while (!shlAssociationselection.isDisposed()) {
+			if (!display.readAndDispatch()) {
 				display.sleep();
 			}
 		}

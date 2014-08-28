@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,6 +39,7 @@ public class ConstraintConstrainedElementEditPart extends AnnotatedLinkEditPart 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ConstraintConstrainedElementItemSemanticEditPolicy());
@@ -46,12 +47,13 @@ public class ConstraintConstrainedElementEditPart extends AnnotatedLinkEditPart 
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected Connection createConnectionFigure() {
 		return new AnnotatedLinkEditPart.AnnotatedLinkDescriptor();
 	}
@@ -59,7 +61,8 @@ public class ConstraintConstrainedElementEditPart extends AnnotatedLinkEditPart 
 	/**
 	 * @generated
 	 */
+	@Override
 	public AnnotatedLinkEditPart.AnnotatedLinkDescriptor getPrimaryShape() {
-		return (AnnotatedLinkEditPart.AnnotatedLinkDescriptor)getFigure();
+		return (AnnotatedLinkEditPart.AnnotatedLinkDescriptor) getFigure();
 	}
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.papyrus.infra.services.controlmode.mm.history.ControledResour
 
 /**
  * This manager navigates in the history to access to controlled resources
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 public class HistoryRoutingManager {
 
@@ -40,7 +40,7 @@ public class HistoryRoutingManager {
 
 	/**
 	 * Returns the eobject navigating through the history
-	 * 
+	 *
 	 * @param modelSet
 	 * @param resourceURI
 	 * @param fragment
@@ -50,21 +50,21 @@ public class HistoryRoutingManager {
 		adapter = HistoryRoutingUtils.getControledResourceAdapter(modelSet);
 		EObject result = null;
 		HistoryModel historyModel = HistoryUtils.getHistoryModel(modelSet);
-		if(historyModel != null) {
+		if (historyModel != null) {
 			List<ControledResource> res = adapter.getControledResource(resourceURI);
-			if(res != null) {
-				for(ControledResource controled : res) {
-					for(ControledResource child : controled.getChildren()) {
+			if (res != null) {
+				for (ControledResource controled : res) {
+					for (ControledResource child : controled.getChildren()) {
 						URI locationURI = URI.createURI(child.getResourceURL());
 						URI toGet = locationURI.resolve(HistoryUtils.getURIFullPath(child.eResource().getURI()));
 						Resource resource = modelSet.getResource(toGet, proxyManager.loadResource(locationURI));
-						if(resource != null) {
+						if (resource != null) {
 							result = resource.getEObject(fragment);
-							if(result != null) {
+							if (result != null) {
 								break;
 							} else {
 								result = getEObject(modelSet, child.getResourceURL(), fragment);
-								if(result != null) {
+								if (result != null) {
 									break;
 								}
 							}
@@ -80,7 +80,7 @@ public class HistoryRoutingManager {
 	 * Unload the routing manager dropping the ControledResourceAdapter
 	 */
 	public void unload() {
-		if(adapter != null) {
+		if (adapter != null) {
 			Notifier resSet = adapter.getTarget();
 			resSet.eAdapters().remove(adapter);
 			adapter = null;

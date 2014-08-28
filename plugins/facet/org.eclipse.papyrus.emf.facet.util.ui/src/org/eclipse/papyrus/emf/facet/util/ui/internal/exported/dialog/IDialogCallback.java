@@ -13,14 +13,14 @@ package org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog;
 
 /**
  * A callback used to return a dialog's result asynchronously.
- * 
+ *
  * @param <T>
  *            the type of the result
  */
 public interface IDialogCallback<T> {
 	/**
 	 * The user committed their selection in the dialog.
-	 * 
+	 *
 	 * @param result
 	 *            the result
 	 */

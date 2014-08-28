@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -57,6 +57,7 @@ public class ConstraintParameterAffixedNodeEditPart extends AbstractElementBorde
 	}
 
 
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeIconlDisplayEditPolicy() {
@@ -64,18 +65,18 @@ public class ConstraintParameterAffixedNodeEditPart extends AbstractElementBorde
 			/**
 			 * <pre>
 			 * {@inheritDoc}
-			 * 
+			 *
 			 * This modifies the edit policy in order to call refreshVisuals() whenever the stereotype image to show is null.
 			 * (required to show the Port default image correctly).
 			 * </pre>
 			 */
 			@Override
 			protected void refreshStereotypeDisplay() {
-				if(getHost() instanceof IPapyrusEditPart) {
-					IFigure figure = ((IPapyrusEditPart)getHost()).getPrimaryShape();
+				if (getHost() instanceof IPapyrusEditPart) {
+					IFigure figure = ((IPapyrusEditPart) getHost()).getPrimaryShape();
 
-					if((figure instanceof IPapyrusUMLElementFigure) && (stereotypeIconToDisplay() != null)) {
-						((IPapyrusUMLElementFigure)figure).setStereotypeDisplay(null, stereotypeIconToDisplay());
+					if ((figure instanceof IPapyrusUMLElementFigure) && (stereotypeIconToDisplay() != null)) {
+						((IPapyrusUMLElementFigure) figure).setStereotypeDisplay(null, stereotypeIconToDisplay());
 					} else {
 						refreshVisuals();
 					}
@@ -91,13 +92,15 @@ public class ConstraintParameterAffixedNodeEditPart extends AbstractElementBorde
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
+			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				if(child instanceof IBorderItemEditPart) { // External labels
+				if (child instanceof IBorderItemEditPart) { // External labels
 					return new ExternalLabelPrimaryDragRoleEditPolicy() {
 
+						@Override
 						@SuppressWarnings("rawtypes")
 						protected List createSelectionHandles() {
-							MoveHandle mh = new MoveHandle((GraphicalEditPart)getHost());
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
 							mh.setBorder(null);
 							return Collections.singletonList(mh);
 						}
@@ -105,16 +108,18 @@ public class ConstraintParameterAffixedNodeEditPart extends AbstractElementBorde
 				}
 
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
 			}
 
+			@Override
 			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
+			@Override
 			protected Command getCreateCommand(CreateRequest request) {
 				return null;
 			}
@@ -136,9 +141,9 @@ public class ConstraintParameterAffixedNodeEditPart extends AbstractElementBorde
 
 	/**
 	 * <pre>
-	 * Calls the figure refresh when a change event is detected on 
+	 * Calls the figure refresh when a change event is detected on
 	 * UMLPackage.eINSTANCE.getProperty_Aggregation().
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -147,7 +152,7 @@ public class ConstraintParameterAffixedNodeEditPart extends AbstractElementBorde
 
 		// When the constraint parameter position changes, its position on parent side may change and requires a visual refresh.
 		Object feature = event.getFeature();
-		if(NotationPackage.eINSTANCE.getSize_Width().equals(feature) || NotationPackage.eINSTANCE.getSize_Height().equals(feature) || NotationPackage.eINSTANCE.getLocation_X().equals(feature) || NotationPackage.eINSTANCE.getLocation_Y().equals(feature)) {
+		if (NotationPackage.eINSTANCE.getSize_Width().equals(feature) || NotationPackage.eINSTANCE.getSize_Height().equals(feature) || NotationPackage.eINSTANCE.getLocation_X().equals(feature) || NotationPackage.eINSTANCE.getLocation_Y().equals(feature)) {
 			refreshVisuals();
 		}
 
@@ -167,7 +172,7 @@ public class ConstraintParameterAffixedNodeEditPart extends AbstractElementBorde
 	 */
 	@Override
 	public AffixedNamedElementFigure getPrimaryShape() {
-		return (AffixedNamedElementFigure)primaryShape;
+		return (AffixedNamedElementFigure) primaryShape;
 	}
 
 	/**
@@ -175,9 +180,9 @@ public class ConstraintParameterAffixedNodeEditPart extends AbstractElementBorde
 	 * A post layout listener is added during activate and remove the first time the layout occurs.
 	 * This is required in order to be able to find the side of this border item on its parent when opening the model.
 	 * Without this, the locator is unable to guess the parent side because the parent constraint is not set yet.
-	 * 
+	 *
 	 * Once the initialization is done, the listener become useless and can be removed.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -189,7 +194,7 @@ public class ConstraintParameterAffixedNodeEditPart extends AbstractElementBorde
 			@Override
 			public void postLayout(IFigure container) {
 				refreshVisuals();
-				//getBorderedFigure().getBorderItemContainer().removeLayoutListener(layoutInitializationListener);
+				// getBorderedFigure().getBorderItemContainer().removeLayoutListener(layoutInitializationListener);
 				layoutInitializationListener = null;
 			}
 		};

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 408491
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.modelrepair.ui;
 
@@ -86,7 +86,7 @@ import com.google.common.eventbus.Subscribe;
 
 /**
  * The dialog to switch from a Profile application to another
- * 
+ *
  * @author Camille Letavernier
  */
 public class SwitchProfileDialog extends SelectionDialog {
@@ -104,7 +104,7 @@ public class SwitchProfileDialog extends SelectionDialog {
 	protected Table table;
 
 	protected BrowseProfilesBlock browseBlock;
-	
+
 	protected LabelProviderService labelProviderService;
 
 	protected final Map<Resource, Resource> profilesToEdit = new HashMap<Resource, Resource>();
@@ -119,7 +119,7 @@ public class SwitchProfileDialog extends SelectionDialog {
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite contents = (Composite)super.createDialogArea(parent);
+		Composite contents = (Composite) super.createDialogArea(parent);
 
 		Composite self = new Composite(contents, SWT.NONE);
 		self.setLayout(new GridLayout(1, false));
@@ -159,7 +159,7 @@ public class SwitchProfileDialog extends SelectionDialog {
 				replaceSelectionWith(profile.getUri());
 			}
 		});
-		
+
 		viewer = new TableViewer(self, SWT.FULL_SELECTION | SWT.BORDER);
 		table = viewer.getTable();
 		TableLayout layout = new TableLayout();
@@ -183,21 +183,21 @@ public class SwitchProfileDialog extends SelectionDialog {
 		viewer.setContentProvider(new IStructuredContentProvider() {
 
 			public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-				//Nothing
+				// Nothing
 			}
 
 			public void dispose() {
-				//Nothing
+				// Nothing
 			}
 
 			public Object[] getElements(Object inputElement) {
-				if(inputElement instanceof ModelSet) {
-					ModelSet modelSet = (ModelSet)inputElement;
+				if (inputElement instanceof ModelSet) {
+					ModelSet modelSet = (ModelSet) inputElement;
 
 					Collection<Profile> allAppliedProfiles = ProfileHelper.getAllAppliedProfiles(modelSet);
 
 					Set<Resource> allResources = new HashSet<Resource>();
-					for(Profile appliedProfile : allAppliedProfiles) {
+					for (Profile appliedProfile : allAppliedProfiles) {
 						URI profileResourceURI = EcoreUtil.getURI(appliedProfile).trimFragment();
 						Resource resource = modelSet.getResource(profileResourceURI, true);
 						allResources.add(resource);
@@ -213,12 +213,12 @@ public class SwitchProfileDialog extends SelectionDialog {
 
 			@Override
 			public String getText(Object element) {
-				if(element instanceof Resource) {
-					Resource resource = (Resource)element;
+				if (element instanceof Resource) {
+					Resource resource = (Resource) element;
 
-					for(EObject rootElement : resource.getContents()) {
-						if(rootElement instanceof Profile) {
-							return ((Profile)rootElement).getName();
+					for (EObject rootElement : resource.getContents()) {
+						if (rootElement instanceof Profile) {
+							return ((Profile) rootElement).getName();
 						}
 					}
 
@@ -234,7 +234,7 @@ public class SwitchProfileDialog extends SelectionDialog {
 				return nullToEmpty(labelProvider.getText(e1)).compareTo(nullToEmpty(labelProvider.getText(e2)));
 			}
 		});
-		
+
 		viewer.setInput(modelSet);
 
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
@@ -243,9 +243,9 @@ public class SwitchProfileDialog extends SelectionDialog {
 				updateControls();
 			}
 		});
-		
+
 		viewer.getControl().addDisposeListener(new DisposeListener() {
-			
+
 			public void widgetDisposed(DisposeEvent e) {
 				labelProvider.dispose();
 			}
@@ -256,7 +256,7 @@ public class SwitchProfileDialog extends SelectionDialog {
 
 	protected void updateControls() {
 		String newTitle = "Switch Profile Locations";
-		if(!profilesToEdit.isEmpty()) {
+		if (!profilesToEdit.isEmpty()) {
 			newTitle += " *";
 		}
 		getShell().setText(newTitle);
@@ -265,12 +265,12 @@ public class SwitchProfileDialog extends SelectionDialog {
 		boolean enableBrowse = !viewer.getSelection().isEmpty();
 
 		browseBlock.setEnabled(enableBrowse);
-		
+
 		viewer.refresh();
 	}
 
 	protected void applyPressed() {
-		if(profilesToEdit.isEmpty()) {
+		if (profilesToEdit.isEmpty()) {
 			return;
 		}
 
@@ -281,17 +281,17 @@ public class SwitchProfileDialog extends SelectionDialog {
 
 				final Collection<Replacement> allReplacements = new LinkedList<Replacement>();
 				final BasicDiagnostic diagnostics = new BasicDiagnostic(Activator.PLUGIN_ID, 0, "Problems in switching profile", null);
-				
+
 				IRunnableWithProgress runnable = TransactionHelper.createPrivilegedRunnableWithProgress(editingDomain, new IRunnableWithProgress() {
 
 					public void run(IProgressMonitor monitor) {
 						SubMonitor subMonitor = SubMonitor.convert(monitor, profilesToEdit.size());
 
-						for(Entry<Resource, Resource> replacementEntry : profilesToEdit.entrySet()) {
+						for (Entry<Resource, Resource> replacementEntry : profilesToEdit.entrySet()) {
 							URI uriToReplace = replacementEntry.getKey().getURI();
 							URI targetURI = replacementEntry.getValue().getURI();
 
-							if(uriToReplace.equals(targetURI)) {
+							if (uriToReplace.equals(targetURI)) {
 								continue;
 							}
 
@@ -302,18 +302,20 @@ public class SwitchProfileDialog extends SelectionDialog {
 						subMonitor.done();
 					}
 				});
-				
+
 				try {
 					PlatformUI.getWorkbench().getProgressService().busyCursorWhile(runnable);
 				} catch (Exception e) {
 					StatusManager.getManager().handle(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to execute profile switch."), StatusManager.SHOW);
 				}
 
-				if(allReplacements.isEmpty()) {
+				if (allReplacements.isEmpty()) {
 					MessageDialog.openWarning(getShell(), "Switch Profiles", "No profile applications were found to update.");
 				} else {
-					if(diagnostics.getSeverity() > Diagnostic.OK) {
-						DiagnosticDialog dialog = new DiagnosticDialog(getShell(), "Problems in Switching Profiles", "Some incompatible differences in the target profile likely resulted in loss or transformation of data in stereotype applications. Please review the specific details and take any corrective action that may be required.", diagnostics, Diagnostic.ERROR | Diagnostic.WARNING);
+					if (diagnostics.getSeverity() > Diagnostic.OK) {
+						DiagnosticDialog dialog = new DiagnosticDialog(getShell(), "Problems in Switching Profiles",
+								"Some incompatible differences in the target profile likely resulted in loss or transformation of data in stereotype applications. Please review the specific details and take any corrective action that may be required.",
+								diagnostics, Diagnostic.ERROR | Diagnostic.WARNING);
 						dialog.setBlockOnOpen(true);
 						dialog.open();
 					}
@@ -333,9 +335,9 @@ public class SwitchProfileDialog extends SelectionDialog {
 
 	@Override
 	protected void buttonPressed(int buttonId) {
-		switch(buttonId) {
+		switch (buttonId) {
 		case IDialogConstants.CANCEL_ID:
-			if(!profilesToEdit.isEmpty() && !MessageDialog.openQuestion(getShell(), "Switch Profiles", "You have not yet applied the pending profile switch(es). Are you sure you want to cancel?")) {
+			if (!profilesToEdit.isEmpty() && !MessageDialog.openQuestion(getShell(), "Switch Profiles", "You have not yet applied the pending profile switch(es). Are you sure you want to cancel?")) {
 				// don't cancel
 				return;
 			}
@@ -391,8 +393,8 @@ public class SwitchProfileDialog extends SelectionDialog {
 		@Override
 		public void update(ViewerCell cell) {
 			Object element = cell.getElement();
-			Resource resource = (element instanceof Resource) ? (Resource)element : null;
-			
+			Resource resource = (element instanceof Resource) ? (Resource) element : null;
+
 			switch (cell.getColumnIndex()) {
 			case 0:
 				updateName(cell);
@@ -414,9 +416,9 @@ public class SwitchProfileDialog extends SelectionDialog {
 
 		public void updateLocation(ViewerCell cell, Resource resource) {
 			String location = "Unknown";
-			if(resource != null) {
+			if (resource != null) {
 				URI uri = resource.getURI();
-				if(uri != null) {
+				if (uri != null) {
 					location = uri.toString();
 				}
 			}
@@ -427,10 +429,10 @@ public class SwitchProfileDialog extends SelectionDialog {
 		public void updateNewLocation(ViewerCell cell, Resource resource) {
 			String location = "";
 			resource = profilesToEdit.get(resource);
-			
-			if(resource != null) {
+
+			if (resource != null) {
 				URI uri = resource.getURI();
-				if(uri != null) {
+				if (uri != null) {
 					location = uri.toString();
 				}
 			}
@@ -441,14 +443,14 @@ public class SwitchProfileDialog extends SelectionDialog {
 
 	protected Resource getSelectedResource() {
 		ISelection selection = viewer.getSelection();
-		if(selection.isEmpty()) {
+		if (selection.isEmpty()) {
 			return null;
 		}
 
-		if(selection instanceof IStructuredSelection) {
-			Object selectedElement = ((IStructuredSelection)selection).getFirstElement();
-			if(selectedElement instanceof Resource) {
-				return (Resource)selectedElement;
+		if (selection instanceof IStructuredSelection) {
+			Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
+			if (selectedElement instanceof Resource) {
+				return (Resource) selectedElement;
 			}
 		}
 
@@ -458,7 +460,7 @@ public class SwitchProfileDialog extends SelectionDialog {
 	protected void replaceSelectionWith(URI targetURI) {
 		Resource targetResource = modelSet.getResource(targetURI, true);
 
-		if(getSelectedResource() != targetResource) {
+		if (getSelectedResource() != targetResource) {
 			profilesToEdit.put(getSelectedResource(), targetResource);
 			updateControls();
 		} else {

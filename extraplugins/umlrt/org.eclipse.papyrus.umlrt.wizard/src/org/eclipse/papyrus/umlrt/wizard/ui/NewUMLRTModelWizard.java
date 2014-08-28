@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,24 +39,24 @@ public class NewUMLRTModelWizard extends CreateModelWizard {
 	 */
 	@Override
 	protected String[] getDiagramCategoryIds() {
-		return new String[]{ CreateUMLRTModelCommand.COMMAND_ID };
+		return new String[] { CreateUMLRTModelCommand.COMMAND_ID };
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	//	@Override
-	//	protected SelectDiagramCategoryPage createSelectDiagramCategoryPage() {
-	//		//here UML RT is the only available category
-	//		return null;
-	//	}
+	// @Override
+	// protected SelectDiagramCategoryPage createSelectDiagramCategoryPage() {
+	// //here UML RT is the only available category
+	// return null;
+	// }
 
 	/**
 	 * {@inheritDoc}
 	 */
-	//	@Override
-	//	protected void saveDiagramCategorySettings() {
-	//		//here UML RT is the only available category
-	//	}
+	// @Override
+	// protected void saveDiagramCategorySettings() {
+	// //here UML RT is the only available category
+	// }
 
 }

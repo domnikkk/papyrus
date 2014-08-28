@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,13 +25,13 @@ public class ModelTemplateDescription {
 
 
 
-	
+
 	/** The uml_path. */
 	private String uml_path;
-	
+
 	/** The di_path. */
 	private String di_path;
-	
+
 	/** The notation_path. */
 	private String notation_path;
 
@@ -44,17 +44,22 @@ public class ModelTemplateDescription {
 	/**
 	 * Instantiates a new model template description.
 	 *
-	 * @param name the name
-	 * @param pluginId the plugin id
-	 * @param uml_path the uml_path
-	 * @param notation_path the notation_path
-	 * @param di_path the di_path
+	 * @param name
+	 *            the name
+	 * @param pluginId
+	 *            the plugin id
+	 * @param uml_path
+	 *            the uml_path
+	 * @param notation_path
+	 *            the notation_path
+	 * @param di_path
+	 *            the di_path
 	 */
-	public ModelTemplateDescription(String name, String pluginId,  String uml_path, String notation_path, String di_path) {
+	public ModelTemplateDescription(String name, String pluginId, String uml_path, String notation_path, String di_path) {
 		super();
 		this.name = name;
 		// this.e = metamodelURI;
-		
+
 		this.setDi_path(di_path);
 		this.setNotation_path(notation_path);
 		this.setUml_path(uml_path);
@@ -64,7 +69,8 @@ public class ModelTemplateDescription {
 	/**
 	 * Sets the language.
 	 *
-	 * @param language the new language
+	 * @param language
+	 *            the new language
 	 */
 	public void setLanguage(String language) {
 		this.language = language;
@@ -91,7 +97,7 @@ public class ModelTemplateDescription {
 	 *
 	 * @return the path
 	 */
-	
+
 
 	/**
 	 * Gets the file name.
@@ -99,8 +105,8 @@ public class ModelTemplateDescription {
 	 * @return the file name
 	 */
 	public String getFileName() {
-//		String[] pathParts = uml_path.split("/"); //$NON-NLS-1$
-//		return pathParts[pathParts.length - 1];
+		//		String[] pathParts = uml_path.split("/"); //$NON-NLS-1$
+		// return pathParts[pathParts.length - 1];
 		return WizardsHelper.getFileNameWithoutExtension(uml_path);
 	}
 
@@ -134,7 +140,8 @@ public class ModelTemplateDescription {
 	/**
 	 * Sets the uml_path.
 	 *
-	 * @param uml_path the new uml_path
+	 * @param uml_path
+	 *            the new uml_path
 	 */
 	public void setUml_path(String uml_path) {
 		this.uml_path = uml_path;
@@ -152,7 +159,8 @@ public class ModelTemplateDescription {
 	/**
 	 * Sets the di_path.
 	 *
-	 * @param di_path the new di_path
+	 * @param di_path
+	 *            the new di_path
 	 */
 	public void setDi_path(String di_path) {
 		this.di_path = di_path;
@@ -170,7 +178,8 @@ public class ModelTemplateDescription {
 	/**
 	 * Sets the notation_path.
 	 *
-	 * @param notation_path the new notation_path
+	 * @param notation_path
+	 *            the new notation_path
 	 */
 	public void setNotation_path(String notation_path) {
 		this.notation_path = notation_path;

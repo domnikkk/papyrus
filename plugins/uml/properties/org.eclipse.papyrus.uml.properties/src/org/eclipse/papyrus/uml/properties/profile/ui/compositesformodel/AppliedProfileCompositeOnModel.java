@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2014 CEA LIST, Atos Origin, and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -121,11 +121,11 @@ public class AppliedProfileCompositeOnModel extends Composite {
 
 	/**
 	 * The default constructor.
-	 * 
+	 *
 	 * @param style
-	 *        the style of this panel
+	 *            the style of this panel
 	 * @param parent
-	 *        the parent Composite for this panel
+	 *            the parent Composite for this panel
 	 */
 	public AppliedProfileCompositeOnModel(AppliedProfilePanel parent) {
 		super(parent, SWT.NONE);
@@ -134,8 +134,8 @@ public class AppliedProfileCompositeOnModel extends Composite {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param factory
 	 * @param parent
 	 */
@@ -148,13 +148,13 @@ public class AppliedProfileCompositeOnModel extends Composite {
 
 	/**
 	 * apply profile done in asynchronous thread
-	 * 
+	 *
 	 * @param thepackage
-	 *        the package where the profile will be applied
+	 *            the package where the profile will be applied
 	 * @param profile
-	 *        to apply
+	 *            to apply
 	 * @param withSubProfiles
-	 *        yes if we want to apply all contained subprofiles
+	 *            yes if we want to apply all contained subprofiles
 	 */
 	protected void applyProfile(final Package thepackage, final Profile profile, final boolean withSubProfiles) {
 		try {
@@ -210,37 +210,37 @@ public class AppliedProfileCompositeOnModel extends Composite {
 		dialog.setHelpAvailable(false);
 		dialog.setAllowMultiple(true);
 
-		if(dialog.open() != Window.OK) {
+		if (dialog.open() != Window.OK) {
 			return;
 		}
 
 		// If nothing is selected : abort
-		if((dialog.getResult() == null) || (dialog.getResult().length < 1)) {
+		if ((dialog.getResult() == null) || (dialog.getResult().length < 1)) {
 			return;
 		}
 
 		ArrayList<Package> importedModels = new ArrayList<Package>();
 		Package package_ = getSelectedPackage();
 
-		for(int i = 0; i < dialog.getResult().length; i++) {
-			IFile selectedFile = (IFile)dialog.getResult()[i];
+		for (int i = 0; i < dialog.getResult().length; i++) {
+			IFile selectedFile = (IFile) dialog.getResult()[i];
 			URI profileUri = URI.createURI("platform:/resource" + selectedFile.getFullPath().toString());
 
 			ResourceSet resourceSet = package_.eResource().getResourceSet();
 
 			Resource profileResource = resourceSet.getResource(profileUri, true);
 
-			if(profileResource.getContents().get(0) instanceof Package) {
-				Package importedModel = (Package)profileResource.getContents().get(0);
+			if (profileResource.getContents().get(0) instanceof Package) {
+				Package importedModel = (Package) profileResource.getContents().get(0);
 				importedModels.add(importedModel);
 			}
 
 		}
 
-		if(importedModels.size() > 0) {
+		if (importedModels.size() > 0) {
 			ProfileTreeSelectionDialog profileDialog = new ProfileTreeSelectionDialog(getShell(), importedModels);
 
-			if(profileDialog.open() != Window.OK) {
+			if (profileDialog.open() != Window.OK) {
 				return;
 			}
 			Collection<ImportSpec<Profile>> profilestoApply = profileDialog.getResult();
@@ -248,7 +248,7 @@ public class AppliedProfileCompositeOnModel extends Composite {
 			Message message = new Message("Profile application", "Applying profile...");
 			message.open();
 			Iterator<ImportSpec<Profile>> iterator = profilestoApply.iterator();
-			while(iterator.hasNext()) {
+			while (iterator.hasNext()) {
 				applyProfile(package_, iterator.next().getElement(), false);
 			}
 			message.close();
@@ -290,7 +290,7 @@ public class AppliedProfileCompositeOnModel extends Composite {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public void createContent() {
 
@@ -301,7 +301,7 @@ public class AppliedProfileCompositeOnModel extends Composite {
 
 		profiles = createProfilesList();
 		profiles.setVisible(true);
-		
+
 		updateEnablement();
 	}
 
@@ -322,7 +322,7 @@ public class AppliedProfileCompositeOnModel extends Composite {
 
 	/**
 	 * Creates the profiles list.
-	 * 
+	 *
 	 * @return the list of applied profiles
 	 */
 	private List createProfilesList() {
@@ -419,16 +419,16 @@ public class AppliedProfileCompositeOnModel extends Composite {
 	 * Dispose listeners.
 	 */
 	public void disposeListeners() {
-		if(addButton != null && !addButton.isDisposed()) {
+		if (addButton != null && !addButton.isDisposed()) {
 			addButton.removeMouseListener(addButtonListener);
 		}
-		if(removeButton != null && !removeButton.isDisposed()) {
+		if (removeButton != null && !removeButton.isDisposed()) {
 			removeButton.removeMouseListener(removeButtonListener);
 		}
-		if(addRegisteredButton != null && !addRegisteredButton.isDisposed()) {
+		if (addRegisteredButton != null && !addRegisteredButton.isDisposed()) {
 			addRegisteredButton.removeMouseListener(addRegisteredButtonListener);
 		}
-		if(profiles != null && !profiles.isDisposed()) {
+		if (profiles != null && !profiles.isDisposed()) {
 			profiles.removeSelectionListener(profilesListener);
 		}
 	}
@@ -443,8 +443,8 @@ public class AppliedProfileCompositeOnModel extends Composite {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
 	protected List getProfiles() {
@@ -453,15 +453,15 @@ public class AppliedProfileCompositeOnModel extends Composite {
 
 	/**
 	 * Gets the selected package.
-	 * 
+	 *
 	 * @return the selected package or null
 	 */
 	public Package getSelectedPackage() {
 		Package selectedPackage = null;
-		Object input = ((IStructuredSelection)selectedElement).getFirstElement();
+		Object input = ((IStructuredSelection) selectedElement).getFirstElement();
 		Element element = UMLUtil.resolveUMLElement(input);
-		if(element != null && element instanceof Package) {
-			selectedPackage = (Package)element;
+		if (element != null && element instanceof Package) {
+			selectedPackage = (Package) element;
 		}
 
 		return selectedPackage;
@@ -469,11 +469,11 @@ public class AppliedProfileCompositeOnModel extends Composite {
 
 	/**
 	 * Checks if the profile applied has been changed since last application (definition does not match).
-	 * 
+	 *
 	 * @param _package
-	 *        on which the profile is applied
+	 *            on which the profile is applied
 	 * @param _profile
-	 *        the applied profile
+	 *            the applied profile
 	 * @return true if the profile has changed
 	 */
 	private boolean isDirty(Package _package, Profile _profile) {
@@ -485,16 +485,16 @@ public class AppliedProfileCompositeOnModel extends Composite {
 	 */
 	public void refresh() {
 		Package currentPackage = getSelectedPackage();
-		if(currentPackage != null && !profiles.isDisposed()) {
+		if (currentPackage != null && !profiles.isDisposed()) {
 			profiles.removeAll();
 			EList<Profile> appliedProfiles = currentPackage.getAllAppliedProfiles();
-			for(int i = 0; i < appliedProfiles.size(); i++) {
+			for (int i = 0; i < appliedProfiles.size(); i++) {
 				Profile currentProfile = appliedProfiles.get(i);
 				String currentName = currentProfile.getQualifiedName();
 
-				if(currentName == null) {
+				if (currentName == null) {
 					Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Warning a profile applied on " + currentPackage.getName() + " could not be found : \n\t" + currentProfile.toString()));
-				} else if(isDirty(currentPackage, currentProfile)) {
+				} else if (isDirty(currentPackage, currentProfile)) {
 					profiles.add(currentName + TAG_PROFILE_CHANGED);
 					profiles.setData(currentName, currentProfile);
 				} else {
@@ -503,19 +503,19 @@ public class AppliedProfileCompositeOnModel extends Composite {
 				}
 			}
 		}
-		
+
 		updateEnablement();
 	}
-	
+
 	protected boolean isEditable() {
 		Package currentPackage = getSelectedPackage();
 		return (currentPackage != null) && !EMFHelper.isReadOnly(currentPackage);
 	}
-	
+
 	protected void updateEnablement() {
 		boolean isEditable = isEditable();
-		
-		if((addButton != null) && !addButton.isDisposed()) {
+
+		if ((addButton != null) && !addButton.isDisposed()) {
 			addButton.setEnabled(isEditable);
 			removeButton.setEnabled(isEditable);
 			addRegisteredButton.setEnabled(isEditable);
@@ -529,8 +529,8 @@ public class AppliedProfileCompositeOnModel extends Composite {
 		RegisteredProfileSelectionDialog profileSelectionDialog = new RegisteredProfileSelectionDialog(getShell(), getSelectedPackage());
 		java.util.List<Profile> profilestoApply = profileSelectionDialog.run();
 		Iterator<Profile> iterator = profilestoApply.iterator();
-		while(iterator.hasNext()) {
-			if(getSelectedPackage() != null) {
+		while (iterator.hasNext()) {
+			if (getSelectedPackage() != null) {
 				this.applyProfile(getSelectedPackage(), iterator.next(), false);
 			}
 		}
@@ -538,23 +538,23 @@ public class AppliedProfileCompositeOnModel extends Composite {
 
 	/**
 	 * Sets the selection.
-	 * 
+	 *
 	 * @param selection
-	 *        the selection
+	 *            the selection
 	 */
 	public void setSelection(ISelection selection) {
 		this.selectedElement = selection;
-		
+
 		updateEnablement();
 	}
 
 	/**
 	 * unApply profile done in asynchronous thread
-	 * 
+	 *
 	 * @param thepackage
-	 *        the package where the profile will be unapplied
+	 *            the package where the profile will be unapplied
 	 * @param profile
-	 *        to unapply
+	 *            to unapply
 	 */
 	protected void unApplyProfile(final Package thepackage, final Profile profile) {
 		try {
@@ -591,26 +591,26 @@ public class AppliedProfileCompositeOnModel extends Composite {
 
 		// Retrieve indices of selected profiles to unapply
 		int[] selectionIndices = profiles.getSelectionIndices();
-		if((selectionIndices == null) || (selectionIndices.length == 0)) {
+		if ((selectionIndices == null) || (selectionIndices.length == 0)) {
 			return;
 		}
 
 		// Parse selection
-		for(int i = 0; i < selectionIndices.length; i++) {
+		for (int i = 0; i < selectionIndices.length; i++) {
 
 			int currentIndex = selectionIndices[i];
 			// Remove TAG_PROFILE_CHANGED when it exists
 			String itemName = profiles.getItem(currentIndex).replace(TAG_PROFILE_CHANGED, "");
-			Profile profileToUnapply = (Profile)profiles.getData(itemName);
+			Profile profileToUnapply = (Profile) profiles.getData(itemName);
 
-			if(profileToUnapply == null) {
+			if (profileToUnapply == null) {
 				return;
 			}
 
 			// Allow removal if profile is applied on current package
 			// Not if it is applied from owner package
 			EList appliedProfiles = getSelectedPackage().getAppliedProfiles();
-			if(appliedProfiles.contains(profileToUnapply)) {
+			if (appliedProfiles.contains(profileToUnapply)) {
 
 				/**********************************************************************/
 				/** delete imported model libraries and types related to that profile */
@@ -619,10 +619,10 @@ public class AppliedProfileCompositeOnModel extends Composite {
 				EList importedPackages = getSelectedPackage().getPackageImports();
 				Iterator<PackageImport> iterPI = importedPackages.iterator();
 				ArrayList importedPackagesToRemove = new ArrayList();
-				while(iterPI.hasNext()) {
+				while (iterPI.hasNext()) {
 					PackageImport pi = iterPI.next();
-					if(pi.getImportedPackage().getOwner() != null) {
-						if(pi.getImportedPackage().getOwner().equals(profileToUnapply)) {
+					if (pi.getImportedPackage().getOwner() != null) {
+						if (pi.getImportedPackage().getOwner().equals(profileToUnapply)) {
 							importedPackagesToRemove.add(pi);
 						}
 					}
@@ -630,7 +630,7 @@ public class AppliedProfileCompositeOnModel extends Composite {
 
 				// remove model librairies
 				// this has been done here to avoid concurrent modification of importedPackages
-				for(int j = 0; j < importedPackagesToRemove.size(); j++) {
+				for (int j = 0; j < importedPackagesToRemove.size(); j++) {
 					importedPackages.remove(importedPackagesToRemove.get(j));
 				}
 			}
@@ -641,17 +641,17 @@ public class AppliedProfileCompositeOnModel extends Composite {
 
 	/**
 	 * Resolve semantic element
-	 * 
+	 *
 	 * @param object
-	 *        the object to resolve
+	 *            the object to resolve
 	 * @return <code>null</code> or the semantic element associated to the specified object
 	 */
 	private EObject resolveSemanticObject(Object object) {
-		if(object instanceof EObject) {
-			return (EObject)object;
-		} else if(object instanceof IAdaptable) {
-			IAdaptable adaptable = (IAdaptable)object;
-			if(EMFHelper.getEObject(adaptable) != null) {
+		if (object instanceof EObject) {
+			return (EObject) object;
+		} else if (object instanceof IAdaptable) {
+			IAdaptable adaptable = (IAdaptable) object;
+			if (EMFHelper.getEObject(adaptable) != null) {
 				return EMFHelper.getEObject(adaptable);
 			}
 		}

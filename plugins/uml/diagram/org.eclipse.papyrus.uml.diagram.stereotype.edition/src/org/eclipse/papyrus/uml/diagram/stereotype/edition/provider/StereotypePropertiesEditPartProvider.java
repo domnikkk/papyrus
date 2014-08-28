@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,19 +54,19 @@ public class StereotypePropertiesEditPartProvider extends RestrictedAbstractEdit
 	 */
 	@Override
 	public boolean provides(IOperation operation) {
-		if(operation instanceof CreateGraphicEditPartOperation) {
-			View newView = ((IEditPartOperation)operation).getView();
-			if(newView == null) {
+		if (operation instanceof CreateGraphicEditPartOperation) {
+			View newView = ((IEditPartOperation) operation).getView();
+			if (newView == null) {
 				return false;
 			}
 
 			String graphicalType = newView.getType();
 
-			if((newView instanceof Node) && (nodeMap.containsKey(graphicalType))) {
+			if ((newView instanceof Node) && (nodeMap.containsKey(graphicalType))) {
 				return true;
 			}
 
-			if((newView instanceof Edge) && (edgeMap.containsKey(graphicalType))) {
+			if ((newView instanceof Edge) && (edgeMap.containsKey(graphicalType))) {
 				return true;
 			}
 			return false;

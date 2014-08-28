@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,22 +17,16 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.facade.Facade;
 import org.eclipse.papyrus.facade.FacadePackage;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualClassifier;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
@@ -44,11 +38,11 @@ import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetamodelImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetamodelImpl#getNsPrefix <em>Ns Prefix</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetamodelImpl#getNsURI <em>Ns URI</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetamodelImpl#getVirtualClassifiers <em>Virtual Classifiers</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetamodelImpl#getFacade <em>Facade</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetamodelImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetamodelImpl#getNsPrefix <em>Ns Prefix</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetamodelImpl#getNsURI <em>Ns URI</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetamodelImpl#getVirtualClassifiers <em>Virtual Classifiers</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetamodelImpl#getFacade <em>Facade</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +53,7 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -69,6 +64,7 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -79,6 +75,7 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getNsPrefix() <em>Ns Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNsPrefix()
 	 * @generated
 	 * @ordered
@@ -89,6 +86,7 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getNsPrefix() <em>Ns Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNsPrefix()
 	 * @generated
 	 * @ordered
@@ -99,6 +97,7 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getNsURI() <em>Ns URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNsURI()
 	 * @generated
 	 * @ordered
@@ -109,6 +108,7 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getNsURI() <em>Ns URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNsURI()
 	 * @generated
 	 * @ordered
@@ -119,6 +119,7 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getVirtualClassifiers() <em>Virtual Classifiers</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getVirtualClassifiers()
 	 * @generated
 	 * @ordered
@@ -128,6 +129,7 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected VirtualMetamodelImpl() {
@@ -137,6 +139,7 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,8 +150,10 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -156,20 +161,25 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, VirtualmetamodelPackage.VIRTUAL_METAMODEL__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getNsPrefix() {
 		return nsPrefix;
 	}
@@ -177,20 +187,25 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setNsPrefix(String newNsPrefix) {
 		String oldNsPrefix = nsPrefix;
 		nsPrefix = newNsPrefix;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_PREFIX, oldNsPrefix, nsPrefix));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getNsURI() {
 		return nsURI;
 	}
@@ -198,20 +213,25 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setNsURI(String newNsURI) {
 		String oldNsURI = nsURI;
 		nsURI = newNsURI;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_URI, oldNsURI, nsURI));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<VirtualClassifier> getVirtualClassifiers() {
 		if (virtualClassifiers == null) {
 			virtualClassifiers = new EObjectContainmentWithInverseEList<VirtualClassifier>(VirtualClassifier.class, this, VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS, VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL);
@@ -222,59 +242,74 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Facade getFacade() {
-		if (eContainerFeatureID() != VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE) return null;
-		return (Facade)eInternalContainer();
+		if (eContainerFeatureID() != VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE) {
+			return null;
+		}
+		return (Facade) eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetFacade(Facade newFacade, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newFacade, VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newFacade, VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setFacade(Facade newFacade) {
 		if (newFacade != eInternalContainer() || (eContainerFeatureID() != VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE && newFacade != null)) {
-			if (EcoreUtil.isAncestor(this, newFacade))
+			if (EcoreUtil.isAncestor(this, newFacade)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newFacade != null)
-				msgs = ((InternalEObject)newFacade).eInverseAdd(this, FacadePackage.FACADE__VIRTUALMETAMODEL, Facade.class, msgs);
+			}
+			if (newFacade != null) {
+				msgs = ((InternalEObject) newFacade).eInverseAdd(this, FacadePackage.FACADE__VIRTUALMETAMODEL, Facade.class, msgs);
+			}
 			msgs = basicSetFacade(newFacade, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE, newFacade, newFacade));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getVirtualClassifiers()).basicAdd(otherEnd, msgs);
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetFacade((Facade)otherEnd, msgs);
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getVirtualClassifiers()).basicAdd(otherEnd, msgs);
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE:
+			if (eInternalContainer() != null) {
+				msgs = eBasicRemoveFromContainer(msgs);
+			}
+			return basicSetFacade((Facade) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -282,15 +317,16 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS:
-				return ((InternalEList<?>)getVirtualClassifiers()).basicRemove(otherEnd, msgs);
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE:
-				return basicSetFacade(null, msgs);
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS:
+			return ((InternalEList<?>) getVirtualClassifiers()).basicRemove(otherEnd, msgs);
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE:
+			return basicSetFacade(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -298,13 +334,14 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE:
-				return eInternalContainer().eInverseRemove(this, FacadePackage.FACADE__VIRTUALMETAMODEL, Facade.class, msgs);
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE:
+			return eInternalContainer().eInverseRemove(this, FacadePackage.FACADE__VIRTUALMETAMODEL, Facade.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -312,21 +349,22 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NAME:
-				return getName();
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_PREFIX:
-				return getNsPrefix();
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_URI:
-				return getNsURI();
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS:
-				return getVirtualClassifiers();
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE:
-				return getFacade();
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NAME:
+			return getName();
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_PREFIX:
+			return getNsPrefix();
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_URI:
+			return getNsURI();
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS:
+			return getVirtualClassifiers();
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE:
+			return getFacade();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -334,28 +372,29 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NAME:
-				setName((String)newValue);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_PREFIX:
-				setNsPrefix((String)newValue);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_URI:
-				setNsURI((String)newValue);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS:
-				getVirtualClassifiers().clear();
-				getVirtualClassifiers().addAll((Collection<? extends VirtualClassifier>)newValue);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE:
-				setFacade((Facade)newValue);
-				return;
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NAME:
+			setName((String) newValue);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_PREFIX:
+			setNsPrefix((String) newValue);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_URI:
+			setNsURI((String) newValue);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS:
+			getVirtualClassifiers().clear();
+			getVirtualClassifiers().addAll((Collection<? extends VirtualClassifier>) newValue);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE:
+			setFacade((Facade) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -363,26 +402,27 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_PREFIX:
-				setNsPrefix(NS_PREFIX_EDEFAULT);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_URI:
-				setNsURI(NS_URI_EDEFAULT);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS:
-				getVirtualClassifiers().clear();
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE:
-				setFacade((Facade)null);
-				return;
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_PREFIX:
+			setNsPrefix(NS_PREFIX_EDEFAULT);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_URI:
+			setNsURI(NS_URI_EDEFAULT);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS:
+			getVirtualClassifiers().clear();
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE:
+			setFacade((Facade) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -390,21 +430,22 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_PREFIX:
-				return NS_PREFIX_EDEFAULT == null ? nsPrefix != null : !NS_PREFIX_EDEFAULT.equals(nsPrefix);
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_URI:
-				return NS_URI_EDEFAULT == null ? nsURI != null : !NS_URI_EDEFAULT.equals(nsURI);
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS:
-				return virtualClassifiers != null && !virtualClassifiers.isEmpty();
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE:
-				return getFacade() != null;
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_PREFIX:
+			return NS_PREFIX_EDEFAULT == null ? nsPrefix != null : !NS_PREFIX_EDEFAULT.equals(nsPrefix);
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__NS_URI:
+			return NS_URI_EDEFAULT == null ? nsURI != null : !NS_URI_EDEFAULT.equals(nsURI);
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS:
+			return virtualClassifiers != null && !virtualClassifiers.isEmpty();
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE:
+			return getFacade() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -412,11 +453,14 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -429,4 +473,4 @@ public class VirtualMetamodelImpl extends MinimalEObjectImpl.Container implement
 		return result.toString();
 	}
 
-} //VirtualMetamodelImpl
+} // VirtualMetamodelImpl

@@ -15,17 +15,18 @@ public class IConfiguratorTrace implements IInstanceConfigurator {
 
 	/**
 	 * Configure the passed trace instance
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.qompass.designer.gentools.core.extensions.IInstanceConfigurator
 	 */
+	@Override
 	public void configureInstance(InstanceSpecification instance, Property componentPart, InstanceSpecification parentInstance) {
 		// The tracing code needs informations about the component instance and port.
 
 		String instanceName = instance.getName();
 		int index = instanceName.lastIndexOf("."); //$NON-NLS-1$
-		if(index != -1) {
+		if (index != -1) {
 			String lastSegment = instanceName.substring(index + 1);
-			if(lastSegment.startsWith(ContainerTrafo.interceptorName)) {
+			if (lastSegment.startsWith(ContainerTrafo.interceptorName)) {
 				instanceName = instanceName.substring(0, index);
 			}
 		}
@@ -36,7 +37,7 @@ public class IConfiguratorTrace implements IInstanceConfigurator {
 		ContainerTrafo containerTrafo = ContainerTrafo.getContainerTrafo(parentInstance);
 		if (containerTrafo != null) {
 			Port port = containerTrafo.getInterceptedPort(componentPart);
-			if(port != null) {
+			if (port != null) {
 				DepPlanUtils.configureProperty(instance, PROP_PORT_NAME, StringConstants.QUOTE + port.getName() + StringConstants.QUOTE);
 			}
 		}

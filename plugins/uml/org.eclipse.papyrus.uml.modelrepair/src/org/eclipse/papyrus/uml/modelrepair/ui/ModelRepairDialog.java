@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 408491
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.modelrepair.ui;
 
@@ -73,7 +73,7 @@ public class ModelRepairDialog extends TrayDialog {
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite contents = (Composite)super.createDialogArea(parent);
+		Composite contents = (Composite) super.createDialogArea(parent);
 
 		Composite self = new Composite(contents, SWT.NONE);
 		self.setLayout(new GridLayout(1, false));
@@ -130,52 +130,52 @@ public class ModelRepairDialog extends TrayDialog {
 		textEditor.addFocusListener(new FocusListener() {
 
 			public void focusLost(FocusEvent e) {
-				if(e.widget == textEditor) {
+				if (e.widget == textEditor) {
 					validate();
 				}
 			}
 
 			public void focusGained(FocusEvent e) {
-				//Nothing
+				// Nothing
 			}
 		});
 
 		textEditor.addKeyListener(new KeyListener() {
 
 			public void keyReleased(KeyEvent e) {
-				if(e.keyCode == SWT.CR || e.keyCode == SWT.KEYPAD_CR) {
+				if (e.keyCode == SWT.CR || e.keyCode == SWT.KEYPAD_CR) {
 					validate();
 					e.doit = false;
 				}
 			}
 
 			public void keyPressed(KeyEvent e) {
-				//Nothing
+				// Nothing
 			}
 		});
 
 		viewer.getTree().addKeyListener(new KeyListener() {
 
 			public void keyReleased(KeyEvent e) {
-				if(e.keyCode == SWT.F2 && e.widget == tree) {
+				if (e.keyCode == SWT.F2 && e.widget == tree) {
 					editElement(tree);
 				}
 			}
 
 			public void keyPressed(KeyEvent e) {
-				//Nothing
+				// Nothing
 			}
 		});
 
 		tree.addSelectionListener(new SelectionListener() {
 
 			public void widgetSelected(SelectionEvent e) {
-				//Nothing
+				// Nothing
 			}
 
 			public void widgetDefaultSelected(SelectionEvent e) {
-				//Double click
-				if(e.widget == tree) {
+				// Double click
+				if (e.widget == tree) {
 					editElement(tree);
 					e.doit = false;
 				}
@@ -186,24 +186,24 @@ public class ModelRepairDialog extends TrayDialog {
 	}
 
 	protected void editElement(Tree tree) {
-		if(tree.getSelection().length == 0) {
+		if (tree.getSelection().length == 0) {
 			return;
 		}
 
 		currentSelection = tree.getSelection()[0];
 		Object element = currentSelection.getData();
-		textEditor.setText(((ILabelProvider)viewer.getLabelProvider()).getText(element));
+		textEditor.setText(((ILabelProvider) viewer.getLabelProvider()).getText(element));
 		editor.setEditor(textEditor, currentSelection);
 		textEditor.setFocus();
 		textEditor.forceFocus();
-		textEditor.setSelection(textEditor.getText().length()); //At the end
+		textEditor.setSelection(textEditor.getText().length()); // At the end
 	}
 
 	protected void validate() {
 		editor.setEditor(null);
 		textEditor.setVisible(false);
 
-		if(currentSelection == null) {
+		if (currentSelection == null) {
 			return;
 		}
 
@@ -228,42 +228,42 @@ public class ModelRepairDialog extends TrayDialog {
 
 		Resource fromResource = null;
 
-		if(currentSelection.getParentItem() == null) { //We selected a root, which is a resource
+		if (currentSelection.getParentItem() == null) { // We selected a root, which is a resource
 			Object element = currentSelection.getData();
 
-			if(element instanceof Resource) {
-				uriToReplace = ((Resource)element).getURI();
+			if (element instanceof Resource) {
+				uriToReplace = ((Resource) element).getURI();
 			} else {
 				return;
 			}
-		} else { //We selected a child, which is a URI. Its parent is a Resource.
+		} else { // We selected a child, which is a URI. Its parent is a Resource.
 			TreeItem parentItem = currentSelection.getParentItem();
 			Object parentData = parentItem.getData();
-			if(parentData instanceof Resource) {
-				fromResource = (Resource)parentData;
+			if (parentData instanceof Resource) {
+				fromResource = (Resource) parentData;
 			} else {
 				return;
 			}
 
 			Object element = currentSelection.getData();
 
-			if(element instanceof URI) {
-				uriToReplace = (URI)element;
+			if (element instanceof URI) {
+				uriToReplace = (URI) element;
 			} else {
 				return;
 			}
 		}
 
-		if(uriToReplace == null) {
+		if (uriToReplace == null) {
 			return;
 		}
 
-		if(uriToReplace.equals(newURI)) {
+		if (uriToReplace.equals(newURI)) {
 			return;
 		}
 
 		DependencyManager dependencyManager;
-		if(fromResource == null) {
+		if (fromResource == null) {
 			dependencyManager = new DependencyManager(modelSet);
 		} else {
 			dependencyManager = new DependencyManager(fromResource);

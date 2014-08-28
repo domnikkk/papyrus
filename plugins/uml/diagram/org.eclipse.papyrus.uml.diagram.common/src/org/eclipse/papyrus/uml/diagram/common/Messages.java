@@ -8,7 +8,7 @@
  *
  * Contributors: Francisco Javier Cano MuÃ±oz (Prodevelop) - initial API implementation
  * Emilien Perico (Atos Origin) - add tags for links with keywords
- *
+ * Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
  ******************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common;
 
@@ -18,6 +18,8 @@ public class Messages extends NLS {
 
 	private static final String BUNDLE_NAME = "messages"; //$NON-NLS-1$
 
+	public static String CreateUmlElementDialog_New_Element_Name;
+
 	public static String ElementImportParser_undefined_value;
 
 	public static String IconStylePreferencePage_cheerful_style;
@@ -26,7 +28,31 @@ public class Messages extends NLS {
 
 	public static String IconStylePreferencePage_icon_style_group;
 
+	public static String InterfaceManagerDialog_CreateANewInterface;
+
+	public static String InterfaceManagerDialog_CreateNewInterface;
+
+	public static String InterfaceManagerDialog_SelectedTheProvidedInterfaces;
+
+	public static String InterfaceManagerDialog_SelectionHasToBeAPackageOrAClassifier;
+
+	public static String InterfaceManagerDialog_SelectTheParentOfThisNewInterface;
+
+	public static String InterfaceManagerDialog_SelectTheRequiredInterfaces;
+
+	public static String InterfaceManagerDialog_ThePortIsTypedWithAnInterfaceWarningMessage;
+
+	public static String InterfaceManagerDialog_Title;
+
 	public static String ModelElementSelectionPageMessage;
+
+	public static String ManageProvidedInterfacesHandler_OK;
+
+	public static String ManageProvidedInterfacesHandler_TheTypeOfThePortIsNotDefined;
+
+	public static String SelectionValidated;
+
+	public static String NoSelectionFound;
 
 	public static String UMLNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 

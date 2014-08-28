@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,42 +30,43 @@ public class CSSLineTypeStyleImpl extends LineTypeStyleImpl implements CSSLineTy
 	private CSSLineTypeStyle lineTypeStyle;
 
 	protected CSSLineTypeStyle getLineTypeStyle() {
-		if(lineTypeStyle == null) {
+		if (lineTypeStyle == null) {
 			lineTypeStyle = new CSSLineTypeStyleDelegate(this, getEngine());
 		}
 		return lineTypeStyle;
 	}
 
 	protected ExtendedCSSEngine getEngine() {
-		if(engine == null) {
-			engine = ((CSSDiagramImpl)findView().getDiagram()).getEngine();
+		if (engine == null) {
+			engine = ((CSSDiagramImpl) findView().getDiagram()).getEngine();
 		}
 		return engine;
 	}
 
 	protected View findView() {
 		EObject parent = eContainer();
-		while(!(parent instanceof View) && parent != null) {
+		while (!(parent instanceof View) && parent != null) {
 			parent = parent.eContainer();
 		}
 
-		if(parent != null) {
-			return (View)parent;
+		if (parent != null) {
+			return (View) parent;
 		}
 
 		return null;
 	}
 
 
-	//////////////////////////////////////////
-	//	Forwards accesses to CSS properties	//
-	//////////////////////////////////////////
+	// ////////////////////////////////////////
+	// Forwards accesses to CSS properties //
+	// ////////////////////////////////////////
 
 
+	@Override
 	public LineType getCSSLineType() {
 		LineType value = super.getLineType();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getLineTypeStyle_LineType(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getLineTypeStyle_LineType(), value)) {
 			return value;
 		} else {
 			return getLineTypeStyle().getCSSLineType();
@@ -75,15 +76,15 @@ public class CSSLineTypeStyleImpl extends LineTypeStyleImpl implements CSSLineTy
 
 	@Override
 	public LineType getLineType() {
-		//return super.getLineType();
+		// return super.getLineType();
 		return getCSSLineType();
 	}
 
 
 
-	////////////////////////////////////////////////
-	//	Implements a setter for each CSS property //
-	////////////////////////////////////////////////	
+	// //////////////////////////////////////////////
+	// Implements a setter for each CSS property //
+	// //////////////////////////////////////////////
 
 	@Override
 	public void setLineType(LineType value) {
@@ -93,9 +94,9 @@ public class CSSLineTypeStyleImpl extends LineTypeStyleImpl implements CSSLineTy
 		ForceValueHelper.setValue(findView(), feature, value);
 	}
 
-	//////////////////////////////////
-	//	Implements the unset method //
-	//////////////////////////////////
+	// ////////////////////////////////
+	// Implements the unset method //
+	// ////////////////////////////////
 
 	@Override
 	public void eUnset(int featureId) {

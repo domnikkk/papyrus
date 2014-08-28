@@ -27,7 +27,7 @@ import org.w3c.dom.css.CSSStyleDeclaration;
  * styles coming from Condition Selector (ex : Label#MyId) and other selectors
  * (ex : Label).
  */
-//Copied from org.eclipse.e4.ui.css.core.impl.dom.CSSComputedStyleImpl
+// Copied from org.eclipse.e4.ui.css.core.impl.dom.CSSComputedStyleImpl
 @SuppressWarnings({ "serial", "restriction" })
 public class CSSComputedStyleImpl extends CSSStyleDeclarationImpl implements CSSStyleDeclaration {
 
@@ -40,15 +40,15 @@ public class CSSComputedStyleImpl extends CSSStyleDeclarationImpl implements CSS
 		// only once after reading the stylesheet(s).
 		Collections.sort(this.styleRules, StyleWrapper.COMPARATOR);
 		Iterator<StyleWrapper> iterator = this.styleRules.iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			StyleWrapper styleWrapper = iterator.next();
-			addCSSPropertyList(((CSSStyleDeclarationImpl)styleWrapper.style).getCSSPropertyList());
+			addCSSPropertyList(((CSSStyleDeclarationImpl) styleWrapper.style).getCSSPropertyList());
 		}
 	}
 
 	private void addCSSPropertyList(CSSPropertyList properties) {
 		int length = properties.getLength();
-		for(int i = 0; i < length; i++) {
+		for (int i = 0; i < length; i++) {
 			CSSProperty property = properties.item(i);
 
 			super.removeProperty(property.getName());

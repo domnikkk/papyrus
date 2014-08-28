@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,72 +38,78 @@ import org.eclipse.uml2.uml.Package;
  */
 public abstract class IDMAbstractHandler extends AbstractHandler {
 
-	protected TransactionalEditingDomain transactionalEditingDomain=null;
+	protected TransactionalEditingDomain transactionalEditingDomain = null;
 	protected PapyrusMultiDiagramEditor papyrusEditor;
 
 
 	/**
 	 * get the root package
+	 *
 	 * @param elem
 	 * @return the root package
 	 */
-	public Package getToPackage(Element elem){
-		Package tmp= elem.getNearestPackage();
-		while(tmp.getOwner()!=null && (tmp.getOwner()instanceof Package)){
-			tmp= (Package)tmp.getOwner();
+	public Package getToPackage(Element elem) {
+		Package tmp = elem.getNearestPackage();
+		while (tmp.getOwner() != null && (tmp.getOwner() instanceof Package)) {
+			tmp = (Package) tmp.getOwner();
 		}
 		return tmp;
 	}
 
-	//@Override
+	// @Override
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		try {
-			papyrusEditor =(PapyrusMultiDiagramEditor)ServiceUtilsForHandlers.getInstance().getService(IMultiDiagramEditor.class, event);
-			transactionalEditingDomain =ServiceUtilsForHandlers.getInstance().getService(org.eclipse.emf.transaction.TransactionalEditingDomain.class, event);
+			papyrusEditor = (PapyrusMultiDiagramEditor) ServiceUtilsForHandlers.getInstance().getService(IMultiDiagramEditor.class, event);
+			transactionalEditingDomain = ServiceUtilsForHandlers.getInstance().getService(org.eclipse.emf.transaction.TransactionalEditingDomain.class, event);
 		} catch (Exception e) {
-			System.err.println("impossible to get the Transactional Editing Domain "+e); //$NON-NLS-1$
+			System.err.println("impossible to get the Transactional Editing Domain " + e); //$NON-NLS-1$
 		}
 		return null;
 	}
+
 	/**
 	 * getSelected element in the diagram or in hte model explorer
+	 *
 	 * @return Element or null
 	 */
-	protected Element getSelection(){
+	protected Element getSelection() {
 		ISelectionService selectionService = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService();
 		ISelection selection = selectionService.getSelection();
 
-		if(selection instanceof IStructuredSelection) {
-			Object selectedobject = ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			Object selectedobject = ((IStructuredSelection) selection).getFirstElement();
 
-			EObject selectedElement=(EObject)EMFHelper.getEObject(selectedobject);
-			if( selectedElement instanceof Element){
-				return (Element)selectedElement;
+			EObject selectedElement = EMFHelper.getEObject(selectedobject);
+			if (selectedElement instanceof Element) {
+				return (Element) selectedElement;
 			}
 		}
 
 		return null;
 
 	}
+
 	/**
 	 * getSelected element in the diagram or in hte model explorer
+	 *
 	 * @return Element or null
 	 */
-	protected ArrayList<Element> getSelectionSet(){
-		ArrayList<Element> selectedSet =new ArrayList<Element>();
+	protected ArrayList<Element> getSelectionSet() {
+		ArrayList<Element> selectedSet = new ArrayList<Element>();
 		ISelectionService selectionService = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService();
 		ISelection selection = selectionService.getSelection();
 
-		//look for papyrus
+		// look for papyrus
 
-		if(selection instanceof IStructuredSelection) {
+		if (selection instanceof IStructuredSelection) {
 			@SuppressWarnings("rawtypes")
-			Iterator selectedobjectIteractor = ((IStructuredSelection)selection).iterator();
+			Iterator selectedobjectIteractor = ((IStructuredSelection) selection).iterator();
 			while (selectedobjectIteractor.hasNext()) {
 				Object currentSelection = selectedobjectIteractor.next();
-				EObject selectedElement=(EObject)EMFHelper.getEObject(currentSelection);
-				if( selectedElement instanceof Element){
-					selectedSet.add((Element)selectedElement);
+				EObject selectedElement = EMFHelper.getEObject(currentSelection);
+				if (selectedElement instanceof Element) {
+					selectedSet.add((Element) selectedElement);
 				}
 			}
 

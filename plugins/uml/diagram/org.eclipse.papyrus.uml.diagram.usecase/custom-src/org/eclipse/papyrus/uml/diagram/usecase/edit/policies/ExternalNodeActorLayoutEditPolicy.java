@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,23 +42,23 @@ public class ExternalNodeActorLayoutEditPolicy extends LayoutEditPolicy {
 
 	@Override
 	protected EditPolicy createChildEditPolicy(EditPart child) {
-		View childView = (View)child.getModel();
-		switch(UMLVisualIDRegistry.getVisualID(childView)) {
+		View childView = (View) child.getModel();
+		switch (UMLVisualIDRegistry.getVisualID(childView)) {
 		case ActorNameEditPartTN.VISUAL_ID:
 		case ActorAppliedStereotypeEditPartTN.VISUAL_ID:
 		case ActorQualifiedNameEditPartTN.VISUAL_ID:
-		//actor in package	
+			// actor in package
 		case ActorInPackageNameEditPart.VISUAL_ID:
 		case ActorQualifiedNameInPEditPart.VISUAL_ID:
 		case ActorInPackageAppliedStereotypeEditPart.VISUAL_ID:
-		//actor in component
+			// actor in component
 		case ActorInComponentNameEditPart.VISUAL_ID:
 		case ActorQualifiedNameInCEditPart.VISUAL_ID:
 		case ActorInComponentAppliedStereotypeEditPart.VISUAL_ID:
 			return new ExternalLabelPrimaryDragRoleEditPolicy();
 		}
 		EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if(result == null) {
+		if (result == null) {
 			result = new NonResizableEditPolicy();
 		}
 		return result;

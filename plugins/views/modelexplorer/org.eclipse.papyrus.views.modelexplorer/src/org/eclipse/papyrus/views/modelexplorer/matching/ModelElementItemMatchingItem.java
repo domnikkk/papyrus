@@ -31,14 +31,14 @@ public class ModelElementItemMatchingItem implements IMatchingItem {
 	}
 
 	public boolean matchingItemEquals(Object obj) {
-		if(element != null && obj instanceof EObjectTreeElement) {
-			return element == ((EObjectTreeElement)obj).getEObject();
+		if (element != null && obj instanceof EObjectTreeElement) {
+			return element == ((EObjectTreeElement) obj).getEObject();
 		}
 		return super.equals(obj);
 	}
 
 	public int matchingItemHashcode() {
-		if(element != null) {
+		if (element != null) {
 			return HashCodeCalculus.getHashCode(element);
 		}
 		return 0;

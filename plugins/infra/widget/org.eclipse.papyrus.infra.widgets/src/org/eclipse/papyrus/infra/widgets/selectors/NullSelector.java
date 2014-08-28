@@ -6,9 +6,9 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * A Null implementation of the IElementSelector interface
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class NullSelector implements IElementSelector {
 
@@ -16,36 +16,44 @@ public class NullSelector implements IElementSelector {
 
 	}
 
+	@Override
 	public Object[] getSelectedElements() {
 		return new Object[0];
 	}
 
+	@Override
 	public void setSelectedElements(Object[] elements) {
-		//Nothing
+		// Nothing
 	}
 
+	@Override
 	public Object[] getAllElements() {
 		return new Object[0];
 	}
 
+	@Override
 	public void createControls(Composite parent) {
-		//Nothing
+		// Nothing
 	}
 
+	@Override
 	public void newObjectCreated(Object newObject) {
-		//Nothing
+		// Nothing
 	}
 
+	@Override
 	public void clearTemporaryElements() {
-		//Nothing
+		// Nothing
 	}
 
+	@Override
 	public void addElementSelectionListener(IElementSelectionListener listener) {
-		//Nothing
+		// Nothing
 	}
 
+	@Override
 	public void removeElementSelectionListener(IElementSelectionListener listener) {
-		//Nothing
+		// Nothing
 	}
 
 	public final static NullSelector instance = new NullSelector();

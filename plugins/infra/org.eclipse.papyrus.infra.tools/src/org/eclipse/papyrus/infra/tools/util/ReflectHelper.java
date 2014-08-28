@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,18 +14,18 @@ package org.eclipse.papyrus.infra.tools.util;
 import java.lang.reflect.Method;
 
 /**
- * 
+ *
  * This helper provides methods to get methods reflectively
  * It is not the better way to access to method, but sometimes it can be interested to avoid to duplicate
  * lot of code
- * 
+ *
  */
 public class ReflectHelper {
 
 	/**
-	 * 
+	 *
 	 * Should not be instantiated
-	 * 
+	 *
 	 */
 	private ReflectHelper() {
 		// prevents instantiation
@@ -34,13 +34,13 @@ public class ReflectHelper {
 	/**
 	 * Warning : each call of this method should be tested with a JUnit test, in order to know
 	 * when the API has changed
-	 * 
+	 *
 	 * @param aClass
-	 *        a class
+	 *            a class
 	 * @param methodName
-	 *        the name of the method to find
+	 *            the name of the method to find
 	 * @param parameterTypes
-	 *        an array owning the type of the parameters of the called method
+	 *            an array owning the type of the parameters of the called method
 	 * @return
 	 *         the wanted method
 	 * @throws NoSuchMethodException

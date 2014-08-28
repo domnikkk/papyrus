@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,13 +39,13 @@ public class InteractionOperandComponentEditPolicy extends ComponentEditPolicy {
 	 */
 	@Override
 	protected Command createDeleteViewCommand(GroupRequest deleteRequest) {
-		if(getEditingDomain() != null) {
+		if (getEditingDomain() != null) {
 			CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 			cmd.setTransactionNestingEnabled(false);
 			cmd.add(new CommandProxy(super.createDeleteViewCommand(deleteRequest)));
-			if(getEObject() instanceof InteractionOperand) {
+			if (getEObject() instanceof InteractionOperand) {
 				// Get the elements associated with the CF
-				List<Element> elements = SequenceUtil.getInteractionOperandAssociatedElement((InteractionOperand)getEObject());
+				List<Element> elements = SequenceUtil.getInteractionOperandAssociatedElement((InteractionOperand) getEObject());
 				// Create the delete view commands
 				SequenceDeleteHelper.deleteView(cmd, elements, getEditingDomain());
 			}
@@ -57,16 +57,16 @@ public class InteractionOperandComponentEditPolicy extends ComponentEditPolicy {
 
 	/**
 	 * Copy from superclass as visibility is private
-	 * 
+	 *
 	 * @return the editing domain
 	 */
 	private TransactionalEditingDomain getEditingDomain() {
-		if(getHost() instanceof IGraphicalEditPart) {
-			return ((IGraphicalEditPart)getHost()).getEditingDomain();
-		} else if(getHost() instanceof IEditingDomainProvider) {
-			Object domain = ((IEditingDomainProvider)getHost()).getEditingDomain();
-			if(domain instanceof TransactionalEditingDomain) {
-				return (TransactionalEditingDomain)domain;
+		if (getHost() instanceof IGraphicalEditPart) {
+			return ((IGraphicalEditPart) getHost()).getEditingDomain();
+		} else if (getHost() instanceof IEditingDomainProvider) {
+			Object domain = ((IEditingDomainProvider) getHost()).getEditingDomain();
+			if (domain instanceof TransactionalEditingDomain) {
+				return (TransactionalEditingDomain) domain;
 			}
 		}
 		return null;
@@ -74,12 +74,12 @@ public class InteractionOperandComponentEditPolicy extends ComponentEditPolicy {
 
 	/**
 	 * Get the EObject of the host
-	 * 
+	 *
 	 * @return the EObject or null
 	 */
 	private EObject getEObject() {
-		if(getHost() instanceof GraphicalEditPart) {
-			return ((GraphicalEditPart)getHost()).resolveSemanticElement();
+		if (getHost() instanceof GraphicalEditPart) {
+			return ((GraphicalEditPart) getHost()).resolveSemanticElement();
 		}
 		return null;
 	}

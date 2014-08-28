@@ -12,7 +12,7 @@ package org.eclipse.papyrus.infra.core.utils;
 
 /**
  * This interface contains all channels to trace papyrus
- * 
+ *
  * @author Patrick Tessier
  */
 public interface IDebugChannel {

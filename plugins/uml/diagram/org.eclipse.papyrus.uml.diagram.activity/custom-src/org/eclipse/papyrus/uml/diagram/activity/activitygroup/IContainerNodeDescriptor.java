@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,15 +24,15 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 
 /**
  * Interface used to descripbe a node
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public interface IContainerNodeDescriptor extends Comparable<IContainerNodeDescriptor> {
 
 	/**
 	 * Get the EReference used to contained a child of a specified eClass
-	 * 
+	 *
 	 * @param childType
 	 * @return
 	 */
@@ -40,7 +40,7 @@ public interface IContainerNodeDescriptor extends Comparable<IContainerNodeDescr
 
 	/**
 	 * Get all references that can used to reference an child of a specified eClass
-	 * 
+	 *
 	 * @param childType
 	 * @return
 	 */
@@ -48,7 +48,7 @@ public interface IContainerNodeDescriptor extends Comparable<IContainerNodeDescr
 
 	/**
 	 * Can the node point by this node descriptor can be a an a parent of a child describe by the eClass childType
-	 * 
+	 *
 	 * @param childType
 	 * @return
 	 */
@@ -56,7 +56,7 @@ public interface IContainerNodeDescriptor extends Comparable<IContainerNodeDescr
 
 	/**
 	 * Return true if the node can be a graphical parent of the child specified by its eClass
-	 * 
+	 *
 	 * @param childType
 	 * @return
 	 */
@@ -65,7 +65,7 @@ public interface IContainerNodeDescriptor extends Comparable<IContainerNodeDescr
 	/**
 	 * Get the corrent compartment form an edit part
 	 * (This is a limit the handle node can have only one compartment)
-	 * 
+	 *
 	 * @param editpart
 	 * @return
 	 */
@@ -73,7 +73,7 @@ public interface IContainerNodeDescriptor extends Comparable<IContainerNodeDescr
 
 	/**
 	 * Get all the references of the child
-	 * 
+	 *
 	 * @return
 	 */
 	public List<EReference> getChildrenReferences();
@@ -88,7 +88,7 @@ public interface IContainerNodeDescriptor extends Comparable<IContainerNodeDescr
 
 	/**
 	 * Return an int which define for a same child the priority of this parent to be its graphical father
-	 * 
+	 *
 	 * @return
 	 */
 	public int getGroupPriority();

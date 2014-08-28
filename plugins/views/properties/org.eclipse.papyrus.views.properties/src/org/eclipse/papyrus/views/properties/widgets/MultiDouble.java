@@ -27,9 +27,9 @@ public class MultiDouble extends AbstractPropertyEditor {
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 */
 	public MultiDouble(Composite parent, int style) {
 		editor = createMultipleDoubleEditor(parent, style);
@@ -40,9 +40,9 @@ public class MultiDouble extends AbstractPropertyEditor {
 	 * Creates the multiple double editor.
 	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 * @return the multiple double editor.
 	 */
 	protected MultipleDoubleEditor createMultipleDoubleEditor(Composite parent, int style) {
@@ -54,8 +54,8 @@ public class MultiDouble extends AbstractPropertyEditor {
 		editor.setOrdered(input.isOrdered(propertyPath));
 		editor.setUnique(input.isUnique(propertyPath));
 
-		if(getInputObservableList() instanceof ICommitListener) {
-			editor.addCommitListener((ICommitListener)getInputObservableList());
+		if (getInputObservableList() instanceof ICommitListener) {
+			editor.addCommitListener((ICommitListener) getInputObservableList());
 		}
 
 		super.doBinding();

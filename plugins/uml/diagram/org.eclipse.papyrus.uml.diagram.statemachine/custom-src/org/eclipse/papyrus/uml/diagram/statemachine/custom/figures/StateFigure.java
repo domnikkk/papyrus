@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -50,15 +50,15 @@ public class StateFigure extends CompartmentFigure {
 
 	/**
 	 * Create a new StateMachine figure with the given tag
-	 * 
+	 *
 	 * @param tagLabel
-	 *        a String that will be displayed at the top of the figure
+	 *            a String that will be displayed at the top of the figure
 	 */
 	public StateFigure(String tagLabel) {
 		super(COMPARTMENT, tagLabel);
 		shadowborder = new RoundedShadowBorder(getForegroundColor());
 		setBorder(shadowborder);
-		((AutomaticCompartmentLayoutManager)getLayoutManager()).setAddExtraHeight(false);
+		((AutomaticCompartmentLayoutManager) getLayoutManager()).setAddExtraHeight(false);
 	}
 
 	public void setSubmachineStateName(String text) {
@@ -71,14 +71,14 @@ public class StateFigure extends CompartmentFigure {
 
 
 	protected void refreshName() {
-		if(isSubmachineState) {
+		if (isSubmachineState) {
 			nameLabel.setText(submachineStateName);
 		}
 	}
 
 	/**
 	 * Get the state compartment figure
-	 * 
+	 *
 	 * @return
 	 */
 	public RectangleFigure getStateCompartmentFigure() {
@@ -88,7 +88,7 @@ public class StateFigure extends CompartmentFigure {
 	@Override
 	public void setShadow(boolean shadow) {
 		super.setShadow(shadow);
-		if(!shadow) {
+		if (!shadow) {
 			RoundedBorder bord = new RoundedBorder(arcwidth, arcwidth);
 			this.setBorder(bord);
 		}

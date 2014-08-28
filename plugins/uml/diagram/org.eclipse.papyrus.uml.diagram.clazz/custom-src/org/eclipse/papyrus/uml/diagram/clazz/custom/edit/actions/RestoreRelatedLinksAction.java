@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
@@ -25,7 +25,7 @@ import org.eclipse.papyrus.uml.diagram.common.actions.AbstractAction;
 
 /**
  * Restore related links to selected element
- * 
+ *
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  */
 public class RestoreRelatedLinksAction extends AbstractAction {
@@ -52,7 +52,7 @@ public class RestoreRelatedLinksAction extends AbstractAction {
 	@Override
 	public boolean isEnabled() {
 		Diagram currentDiagram = getCurrentDiagram();
-		if(currentDiagram != null) {
+		if (currentDiagram != null) {
 			return (!getSelection().isEmpty() && getDiagramNotationID().equals(currentDiagram.getType()));
 		}
 		return false;
@@ -64,13 +64,13 @@ public class RestoreRelatedLinksAction extends AbstractAction {
 	@Override
 	public void run() {
 		List<View> selection = getSelection();
-		if(selection.isEmpty()) {
+		if (selection.isEmpty()) {
 			return;
 		}
-		if(false == getHost() instanceof DiagramEditPart) {
+		if (false == getHost() instanceof DiagramEditPart) {
 			return;
 		}
-		DiagramEditPart diagramEditPart = (DiagramEditPart)getHost();
+		DiagramEditPart diagramEditPart = (DiagramEditPart) getHost();
 		final DiagramCommandStack commandStack = getHost().getDiagramEditDomain().getDiagramCommandStack();
 		CompoundCommand cmd = new CompoundCommand("Restore Related Links");
 		cmd.add(new ICommandProxy(new RestoreRelatedLinksCommand(diagramEditPart, selection)));

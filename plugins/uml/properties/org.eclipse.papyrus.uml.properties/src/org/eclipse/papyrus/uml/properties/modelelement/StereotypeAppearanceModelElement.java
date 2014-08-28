@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,8 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
- *  
+ *  Christian W. Damus (CEA) - bug 417409
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
@@ -36,7 +37,6 @@ import org.eclipse.papyrus.infra.widgets.providers.StaticContentProvider;
 import org.eclipse.papyrus.uml.properties.Activator;
 import org.eclipse.papyrus.uml.properties.databinding.StereotypeAppearanceObservableValue;
 import org.eclipse.papyrus.views.properties.modelelement.AbstractModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElement;
 import org.eclipse.uml2.uml.Element;
 
 /**
@@ -44,11 +44,11 @@ import org.eclipse.uml2.uml.Element;
  * - stereotypeDisplay
  * - textAlignment
  * - displayPlace
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
-public class StereotypeAppearanceModelElement extends AbstractModelElement implements ModelElement {
+public class StereotypeAppearanceModelElement extends AbstractModelElement {
 
 	/**
 	 * The current UML Element
@@ -66,15 +66,15 @@ public class StereotypeAppearanceModelElement extends AbstractModelElement imple
 	protected EModelElement diagramElement;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param umlSource
-	 *        The UML Element on which the stereotypes are applied
+	 *            The UML Element on which the stereotypes are applied
 	 * @param domain
-	 *        The Editing Domain on which the commands will be executed
+	 *            The Editing Domain on which the commands will be executed
 	 * @param diagramElement
-	 *        The GMF EModelElement
+	 *            The GMF EModelElement
 	 */
 	public StereotypeAppearanceModelElement(Element umlSource, EditingDomain domain, EModelElement diagramElement) {
 		this.umlSource = umlSource;
@@ -84,7 +84,7 @@ public class StereotypeAppearanceModelElement extends AbstractModelElement imple
 
 	@Override
 	public IObservable doGetObservable(String propertyPath) {
-		if(propertyPath.equals(STEREOTYPE_DISPLAY) || propertyPath.equals(TEXT_ALIGNMENT) || propertyPath.equals(DISPLAY_PLACE)) {
+		if (propertyPath.equals(STEREOTYPE_DISPLAY) || propertyPath.equals(TEXT_ALIGNMENT) || propertyPath.equals(DISPLAY_PLACE)) {
 			return new StereotypeAppearanceObservableValue(diagramElement, umlSource, propertyPath, domain);
 		}
 
@@ -94,12 +94,12 @@ public class StereotypeAppearanceModelElement extends AbstractModelElement imple
 
 	@Override
 	public IStaticContentProvider getContentProvider(String propertyPath) {
-		if(propertyPath.equals(STEREOTYPE_DISPLAY)) {
-			return new StaticContentProvider(new String[]{ TEXT, ICON, TEXT_AND_ICON, SHAPE });
-		} else if(propertyPath.equals(TEXT_ALIGNMENT)) {
-			return new StaticContentProvider(new String[]{ HORIZONTAL, VERTICAL });
-		} else if(propertyPath.equals(DISPLAY_PLACE)) {
-			return new StaticContentProvider(new String[]{ STEREOTYPE_COMPARTMENT_LOCATION, STEREOTYPE_COMMENT_LOCATION, STEREOTYPE_BRACE_LOCATION });
+		if (propertyPath.equals(STEREOTYPE_DISPLAY)) {
+			return new StaticContentProvider(new String[] { TEXT, ICON, TEXT_AND_ICON, SHAPE });
+		} else if (propertyPath.equals(TEXT_ALIGNMENT)) {
+			return new StaticContentProvider(new String[] { HORIZONTAL, VERTICAL });
+		} else if (propertyPath.equals(DISPLAY_PLACE)) {
+			return new StaticContentProvider(new String[] { STEREOTYPE_COMPARTMENT_LOCATION, STEREOTYPE_COMMENT_LOCATION, STEREOTYPE_BRACE_LOCATION });
 		}
 
 		return EmptyContentProvider.instance;

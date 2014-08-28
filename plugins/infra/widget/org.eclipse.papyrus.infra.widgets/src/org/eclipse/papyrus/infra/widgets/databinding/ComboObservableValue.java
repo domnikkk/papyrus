@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ import org.eclipse.papyrus.infra.widgets.providers.UnsetObject;
 
 /**
  * An ObservableValue for a ComboViewer, with support for AggregatedObservable
- * 
+ *
  * @author Camille Letavernier
  */
 public class ComboObservableValue extends AbstractObservableValue implements ISelectionChangedListener {
@@ -45,27 +45,28 @@ public class ComboObservableValue extends AbstractObservableValue implements ISe
 	/**
 	 * If the Combo may represent more than one value,
 	 * use an AggregatedObservable
-	 * 
+	 *
 	 * May be null
 	 */
 	protected AggregatedObservable modelProperty;
 
 	/**
-	 * 
+	 *
 	 * @param viewer
-	 *        The observed ComboViewer
+	 *            The observed ComboViewer
 	 * @param modelProperty
-	 *        The Model IObservable
+	 *            The Model IObservable
 	 */
 	public ComboObservableValue(ComboViewer viewer, IObservableValue modelProperty) {
 		this.viewer = viewer;
 		viewer.setLabelProvider(new ComboLabelProvider(viewer.getLabelProvider()));
-		if(modelProperty instanceof AggregatedObservable) {
-			this.modelProperty = (AggregatedObservable)modelProperty;
+		if (modelProperty instanceof AggregatedObservable) {
+			this.modelProperty = (AggregatedObservable) modelProperty;
 		}
 		viewer.addSelectionChangedListener(this);
 	}
 
+	@Override
 	public Object getValueType() {
 		return Object.class;
 	}
@@ -73,13 +74,13 @@ public class ComboObservableValue extends AbstractObservableValue implements ISe
 	@Override
 	protected Object doGetValue() {
 		ISelection selection = viewer.getSelection();
-		if(!selection.isEmpty() && selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+		if (!selection.isEmpty() && selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			Object firstElement = structuredSelection.getFirstElement();
-			if(firstElement == UnsetObject.instance) {
+			if (firstElement == UnsetObject.instance) {
 				return null;
 			}
-			if(firstElement == UnchangedObject.instance) {
+			if (firstElement == UnchangedObject.instance) {
 				return null;
 			}
 			return firstElement;
@@ -92,9 +93,9 @@ public class ComboObservableValue extends AbstractObservableValue implements ISe
 	protected void doSetValue(Object value) {
 		currentValue = value;
 
-		if(modelProperty != null && modelProperty.hasDifferentValues()) {
+		if (modelProperty != null && modelProperty.hasDifferentValues()) {
 			viewer.setSelection(new StructuredSelection(UnchangedObject.instance));
-		} else if(value == null) {
+		} else if (value == null) {
 			viewer.setSelection(new StructuredSelection(UnsetObject.instance));
 		} else {
 			viewer.setSelection(new StructuredSelection(value));
@@ -107,8 +108,9 @@ public class ComboObservableValue extends AbstractObservableValue implements ISe
 		super.dispose();
 	}
 
+	@Override
 	public void selectionChanged(SelectionChangedEvent event) {
-		if(((IStructuredSelection)event.getSelection()).getFirstElement() != UnchangedObject.instance) {
+		if (((IStructuredSelection) event.getSelection()).getFirstElement() != UnchangedObject.instance) {
 
 			final Object oldValue = currentValue;
 			final Object newValue = doGetValue();

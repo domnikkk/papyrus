@@ -17,22 +17,22 @@ import org.eclipse.osgi.util.NLS;
  * Internationalization messages
  */
 public class Messages extends NLS {
-	
-    private static final String BUNDLE_NAME = "org.eclipse.papyrus.infra.discovery.ui.wizards.messages"; //$NON-NLS-1$
 
-    public static String DiscoveryComponent_CannotConnectToSource_title;
-   
-    public static String DiscoveryComponent_CannotConnectToSource_label;
-    
-    public static String DiscoveryComponent_title;
+	private static final String BUNDLE_NAME = "org.eclipse.papyrus.infra.discovery.ui.wizards.messages"; //$NON-NLS-1$
+
+	public static String DiscoveryComponent_CannotConnectToSource_title;
+
+	public static String DiscoveryComponent_CannotConnectToSource_label;
+
+	public static String DiscoveryComponent_title;
 
 	public static String DiscoveryComponent_description;
 
-    static {
-        // initialize resource bundle
-        NLS.initializeMessages(BUNDLE_NAME, Messages.class);
-    }
+	static {
+		// initialize resource bundle
+		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
+	}
 
-    private Messages() {
-    }
+	private Messages() {
+	}
 }

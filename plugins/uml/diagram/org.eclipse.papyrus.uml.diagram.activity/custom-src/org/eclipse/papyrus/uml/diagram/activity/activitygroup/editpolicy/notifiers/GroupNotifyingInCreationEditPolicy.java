@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,9 +38,9 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Policy which catch creation event in order to integrated it into the group framework
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class GroupNotifyingInCreationEditPolicy extends GroupListenerEditPolicy {
 
@@ -52,8 +52,8 @@ public class GroupNotifyingInCreationEditPolicy extends GroupListenerEditPolicy 
 
 	@Override
 	public Command getCommand(Request request) {
-		if(request instanceof CreateViewRequest) {
-			final CreateViewRequest c = (CreateViewRequest)request;
+		if (request instanceof CreateViewRequest) {
+			final CreateViewRequest c = (CreateViewRequest) request;
 			return new EMFtoGEFCommandWrapper(new DeferredFakeMoveCommand(getHostEditPart().getEditingDomain(), "Fake move command to integrate into group framework", c, getHost().getViewer().getEditPartRegistry()));
 		}
 		return null;
@@ -62,9 +62,9 @@ public class GroupNotifyingInCreationEditPolicy extends GroupListenerEditPolicy 
 	/**
 	 * Fake move command with a special type which will simulate a change bounds request in the newly create element in order to integrate it in te
 	 * group framework
-	 * 
+	 *
 	 * @author arthur daussy
-	 * 
+	 *
 	 */
 	private class DeferredFakeMoveCommand extends CompoundCommand {
 
@@ -92,38 +92,39 @@ public class GroupNotifyingInCreationEditPolicy extends GroupListenerEditPolicy 
 			return true;
 		}
 
+		@Override
 		public void execute() {
 			Object newObject = request.getNewObject();
 			/*
 			 * Try to get the newly created view
 			 */
-			if(newObject instanceof List<?> && !((List<?>)newObject).isEmpty()) {
-				Object newObj = ((List<?>)newObject).get(0);
-				if(newObj instanceof IAdaptable) {
-					IAdaptable adpatable = (IAdaptable)newObj;
+			if (newObject instanceof List<?> && !((List<?>) newObject).isEmpty()) {
+				Object newObj = ((List<?>) newObject).get(0);
+				if (newObj instanceof IAdaptable) {
+					IAdaptable adpatable = (IAdaptable) newObj;
 					Object v = adpatable.getAdapter(View.class);
-					if(v instanceof View) {
-						View view = (View)v;
+					if (v instanceof View) {
+						View view = (View) v;
 						/*
 						 * Try to get the related editpart
 						 */
 						Object editPart = editPartRegistry.get(view);
-						if(editPart instanceof IGraphicalEditPart) {
+						if (editPart instanceof IGraphicalEditPart) {
 							/*
 							 * Send a fake change bounds request
 							 */
-							IGraphicalEditPart graphEdit = (IGraphicalEditPart)editPart;
+							IGraphicalEditPart graphEdit = (IGraphicalEditPart) editPart;
 							IGraphicalEditPart compartmentEditPart = ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.ACTIVITY_PARTITION).getCompartmentPartFromView(graphEdit);
-							if(compartmentEditPart != null) {
+							if (compartmentEditPart != null) {
 								RefreshEditPartCommand refreshCommand = new RefreshEditPartCommand(compartmentEditPart, true);
-								if(refreshCommand.canExecute()) {
+								if (refreshCommand.canExecute()) {
 									appendAndExecute(new GMFtoEMFCommandWrapper(refreshCommand));
 								}
 							}
 							ChangeBoundsRequest changeBoundRequest = new ChangeBoundsRequest(FAKE_MOVE_COMMAND_TYPE);
 							changeBoundRequest.setEditParts(graphEdit);
 							Command fakeMoveCommand = graphEdit.getCommand(changeBoundRequest);
-							if(fakeMoveCommand != null && fakeMoveCommand.canExecute()) {
+							if (fakeMoveCommand != null && fakeMoveCommand.canExecute()) {
 								appendAndExecute(new GEFtoEMFCommandWrapper(fakeMoveCommand));
 							}
 						}
@@ -133,6 +134,7 @@ public class GroupNotifyingInCreationEditPolicy extends GroupListenerEditPolicy 
 		}
 	}
 
+	@Override
 	protected IGroupRequestAdvisor getGroupRequestAdvisor() {
 		return GroupRequestAdvisor.getInstance();
 	}
@@ -142,7 +144,7 @@ public class GroupNotifyingInCreationEditPolicy extends GroupListenerEditPolicy 
 	 */
 	@Override
 	public boolean understandsRequest(Request req) {
-		if(req instanceof ChangeBoundsRequest) {
+		if (req instanceof ChangeBoundsRequest) {
 			return true;
 		}
 		return false;

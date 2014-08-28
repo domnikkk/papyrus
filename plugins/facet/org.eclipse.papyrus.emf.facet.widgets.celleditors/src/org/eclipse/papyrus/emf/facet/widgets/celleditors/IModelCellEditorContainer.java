@@ -20,6 +20,6 @@ public interface IModelCellEditorContainer<T extends AbstractModelCellEditor> {
 	public void setBundleName(String bundleName);
 
 	public AbstractModelCellEditor getModelCellEditor();
-	
+
 	public void setModelCellEditor(AbstractModelCellEditor modelCellEditor);
 }

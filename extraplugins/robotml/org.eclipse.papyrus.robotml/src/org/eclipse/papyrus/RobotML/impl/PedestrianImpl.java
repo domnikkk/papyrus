@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.Pedestrian;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -20,6 +19,7 @@ public class PedestrianImpl extends HumanImpl implements Pedestrian {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected PedestrianImpl() {
@@ -29,6 +29,7 @@ public class PedestrianImpl extends HumanImpl implements Pedestrian {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class PedestrianImpl extends HumanImpl implements Pedestrian {
 		return RobotMLPackage.Literals.PEDESTRIAN;
 	}
 
-} //PedestrianImpl
+} // PedestrianImpl

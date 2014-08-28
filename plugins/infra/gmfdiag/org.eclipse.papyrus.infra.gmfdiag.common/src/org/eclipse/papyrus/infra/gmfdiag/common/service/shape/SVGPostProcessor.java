@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,11 +17,11 @@ import org.w3c.dom.svg.SVGDocument;
 
 /**
  * A Post-Processor for SVG Documents
- * 
+ *
  * Can be used to apply transformations before the SVGDocument is displayed on the diagram
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public interface SVGPostProcessor {
 
@@ -38,7 +38,7 @@ public interface SVGPostProcessor {
 	/**
 	 * Apply a transformation on the given SVGDocument before it is rendered
 	 * The view can be used as the context of the transformation
-	 * 
+	 *
 	 * @param view
 	 * @param document
 	 */

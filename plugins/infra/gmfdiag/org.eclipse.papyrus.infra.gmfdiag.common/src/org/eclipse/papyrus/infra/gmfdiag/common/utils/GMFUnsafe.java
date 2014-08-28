@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,24 +44,23 @@ public class GMFUnsafe {
 	 * Performs an unsafe write to the model. The editing domain may or may not already have an active transaction, which may or may not be read-only;
 	 * it does not matter. In any case, the changes performed will not be recorded for undo/redo or roll-back. Thus, this is appropriate only for use
 	 * cases such as synchronization of canonical views, which are not considered logically as abstract model edits (though they be concrete changes).
-	 * 
+	 *
 	 * @param domain
-	 *        an editing domain that may or may not have a transaction in progress
+	 *            an editing domain that may or may not have a transaction in progress
 	 * @param writeOperation
-	 *        an operation that will make unchecked/unsafe changes to the editing {@code domain}
-	 * 
+	 *            an operation that will make unchecked/unsafe changes to the editing {@code domain}
+	 *
 	 * @throws RollbackException
-	 *         if the unprotected write transaction fails to commit. Note that this could occlude an uncaught exception thrown by the
-	 *         {@code writeOperation} runnable
+	 *             if the unprotected write transaction fails to commit. Note that this could occlude an uncaught exception thrown by the {@code writeOperation} runnable
 	 * @throws InterruptedException
-	 *         if the current thread is interrupted while waiting for the unprotected write transaction to start
+	 *             if the current thread is interrupted while waiting for the unprotected write transaction to start
 	 */
 	public static void write(TransactionalEditingDomain domain, Runnable writeOperation) throws InterruptedException, RollbackException {
 		runUnprotected(domain, writeOperation);
 	}
 
 	private static void runUnprotected(TransactionalEditingDomain domain, Runnable writeOperation) throws InterruptedException, RollbackException {
-		InternalTransactionalEditingDomain internalDomain = (InternalTransactionalEditingDomain)domain;
+		InternalTransactionalEditingDomain internalDomain = (InternalTransactionalEditingDomain) domain;
 		Transaction unprotected = internalDomain.startTransaction(false, Collections.singletonMap(Transaction.OPTION_UNPROTECTED, true));
 		try {
 			writeOperation.run();
@@ -75,18 +74,17 @@ public class GMFUnsafe {
 	 * read-only; it does not matter. In any case, the changes performed will not be recorded for undo/redo or roll-back. Thus, this is appropriate
 	 * only for use cases such as synchronization of canonical views, which are not considered logically as abstract model edits (though they be
 	 * concrete changes).
-	 * 
+	 *
 	 * @param domain
-	 *        an editing domain that may or may not have a transaction in progress
+	 *            an editing domain that may or may not have a transaction in progress
 	 * @param command
-	 *        a command that will make unchecked/unsafe changes to the editing {@code domain}
-	 * 
+	 *            a command that will make unchecked/unsafe changes to the editing {@code domain}
+	 *
 	 * @throws RollbackException
-	 *         if the unprotected write transaction fails to commit. Note that this could occlude an uncaught exception thrown by the
-	 *         {@code writeOperation} runnable
+	 *             if the unprotected write transaction fails to commit. Note that this could occlude an uncaught exception thrown by the {@code writeOperation} runnable
 	 * @throws InterruptedException
-	 *         if the current thread is interrupted while waiting for the unprotected write transaction to start
-	 * 
+	 *             if the current thread is interrupted while waiting for the unprotected write transaction to start
+	 *
 	 * @see #write(TransactionalEditingDomain, Runnable)
 	 */
 	public static void write(TransactionalEditingDomain domain, Command command) throws InterruptedException, RollbackException {
@@ -98,42 +96,41 @@ public class GMFUnsafe {
 	 * read-only; it does not matter. In any case, the changes performed will not be recorded for undo/redo or roll-back. Thus, this is appropriate
 	 * only for use cases such as synchronization of canonical views, which are not considered logically as abstract model edits (though they be
 	 * concrete changes).
-	 * 
+	 *
 	 * @param domain
-	 *        an editing domain that may or may not have a transaction in progress
+	 *            an editing domain that may or may not have a transaction in progress
 	 * @param command
-	 *        a command that will make unchecked/unsafe changes to the editing {@code domain}
-	 * 
+	 *            a command that will make unchecked/unsafe changes to the editing {@code domain}
+	 *
 	 * @throws RollbackException
-	 *         if the unprotected write transaction fails to commit. Note that this could occlude an uncaught exception thrown by the
-	 *         {@code writeOperation} runnable
+	 *             if the unprotected write transaction fails to commit. Note that this could occlude an uncaught exception thrown by the {@code writeOperation} runnable
 	 * @throws InterruptedException
-	 *         if the current thread is interrupted while waiting for the unprotected write transaction to start
+	 *             if the current thread is interrupted while waiting for the unprotected write transaction to start
 	 * @throws ExecutionException
-	 *         if the {@code command} fails to execute
-	 * 
+	 *             if the {@code command} fails to execute
+	 *
 	 * @see #write(TransactionalEditingDomain, Runnable)
 	 */
 	public static void write(TransactionalEditingDomain domain, ICommand command) throws InterruptedException, RollbackException, ExecutionException {
 		try {
 			write(domain, new GMFCommandRunnable(command));
 		} catch (WrappedException e) {
-			if(e.exception() instanceof ExecutionException) {
-				throw (ExecutionException)e.exception();
+			if (e.exception() instanceof ExecutionException) {
+				throw (ExecutionException) e.exception();
 			} else {
 				// It must have been an unchecked RuntimeException of some kind
-				throw (RuntimeException)e.exception();
+				throw (RuntimeException) e.exception();
 			}
 		}
 	}
 
 	/**
 	 * Wraps a command for unprotected execution, undo, and redo on the command stack.
-	 * 
+	 *
 	 * @param domain
-	 *        a transactional editing domain on which the {@code command} operates
+	 *            a transactional editing domain on which the {@code command} operates
 	 * @param command
-	 *        a command to wrap
+	 *            a command to wrap
 	 * @return the wrapped command
 	 */
 	public static Command wrap(TransactionalEditingDomain domain, Command command) {
@@ -200,7 +197,7 @@ public class GMFUnsafe {
 		}
 
 		protected void doUndo() {
-			// Pass.  Usually, unprotected changes are not undoable
+			// Pass. Usually, unprotected changes are not undoable
 		}
 
 		@Override
@@ -219,7 +216,7 @@ public class GMFUnsafe {
 		}
 
 		protected void doRedo() {
-			// Pass.  Usually, unprotected changes are not undoable
+			// Pass. Usually, unprotected changes are not undoable
 		}
 
 		void handleException(Exception e) {

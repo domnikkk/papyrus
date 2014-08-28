@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -34,12 +34,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * <pre>
  * EditPolicy which support the RequestConstants.REQ_SNAP_BACK request type.
- * 
+ *
  * Returns a command to position a label's offset to it default set at creation.
- * 
+ *
  * This edit policy is a copy of LabelSnapBackEditPolicy, which does not only use the label view type
  * to find the snap back position (also takes into account the diagram and parent view type).
- * 
+ *
  * @see org.eclipse.gmf.runtime.diagram.ui.internal.editpolicies.LabelSnapBackEditPolicy
  * </pre>
  */
@@ -49,10 +49,11 @@ public class DefaultSnapBackEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
 	 * Understands RequestConstants.REQ_SNAP_BACK request types
-	 * 
+	 *
 	 * @param request
 	 * @return boolean
 	 */
+	@Override
 	public boolean understandsRequest(Request request) {
 		return RequestConstants.REQ_SNAP_BACK.equals(request.getType());
 	}
@@ -60,24 +61,26 @@ public class DefaultSnapBackEditPolicy extends GraphicalNodeEditPolicy {
 	/**
 	 * Returns a <code>Command</code> which sets the label's offset to its
 	 * original position.
-	 * 
+	 *
 	 * @param request
-	 *        the request
+	 *            the request
 	 * @return the command
 	 */
+	@Override
 	public Command getCommand(Request request) {
-		if(RequestConstants.REQ_SNAP_BACK.equals(request.getType())) {
-			View view = (View)getHost().getModel();
+		if (RequestConstants.REQ_SNAP_BACK.equals(request.getType())) {
+			View view = (View) getHost().getModel();
 
-			// YT - Use a snap back hint that takes into account the diagram 
+			// YT - Use a snap back hint that takes into account the diagram
 			// and parent view type.
 			String hint = getSnapBackHint(view);
 
 			Point offset = LabelEditPart.getSnapBackPosition(hint);
-			if(offset == null)
+			if (offset == null) {
 				return null;
+			}
 
-			TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+			TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 
 			ICommand moveCommand = new SetBoundsCommand(editingDomain, DiagramUIMessages.SetLocationCommand_Label_Resize, new EObjectAdapter(view), offset);
 			return new ICommandProxy(moveCommand);
@@ -85,17 +88,19 @@ public class DefaultSnapBackEditPolicy extends GraphicalNodeEditPolicy {
 		return null;
 	}
 
+	@Override
 	public EditPart getTargetEditPart(Request request) {
-		if(understandsRequest(request))
+		if (understandsRequest(request)) {
 			return getHost();
+		}
 		return super.getTargetEditPart(request);
 	}
 
 	/**
 	 * Get the snap back hint for the view.
-	 * 
+	 *
 	 * @param view
-	 *        the view to snap back.
+	 *            the view to snap back.
 	 * @return the snap back hint.
 	 */
 	private String getSnapBackHint(View view) {

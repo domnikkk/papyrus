@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,6 +39,7 @@ public class MultiplicityLabelParser implements ISemanticParser {
 	/** The String format for displaying a {@link MultiplicityElement} multiplicity */
 	protected static final String MULTIPLICITY_FORMAT = "%s..%s";
 
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 
 		String result = "";
@@ -61,10 +62,12 @@ public class MultiplicityLabelParser implements ISemanticParser {
 		return result;
 	}
 
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		return getPrintString(element, flags);
 	}
 
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 
 		if (event instanceof Notification) {
@@ -77,6 +80,7 @@ public class MultiplicityLabelParser implements ISemanticParser {
 		return false;
 	}
 
+	@Override
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = new ArrayList<EObject>();
 
@@ -94,18 +98,22 @@ public class MultiplicityLabelParser implements ISemanticParser {
 		return semanticElementsBeingParsed;
 	}
 
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.UNEDITABLE_STATUS;
 	}
 
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		return true;
 	}

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -22,7 +22,7 @@ public interface RequestParameterConstants {
 
 	/**
 	 * The ID for the additional parameter SOURCE_PARENT possibly required in link creation request
-	 * 
+	 *
 	 * @deprecated
 	 */
 	@Deprecated
@@ -30,7 +30,7 @@ public interface RequestParameterConstants {
 
 	/**
 	 * The ID for the additional parameter TARGET_PARENT possibly required in link creation request
-	 * 
+	 *
 	 * @deprecated
 	 */
 	@Deprecated
@@ -38,7 +38,7 @@ public interface RequestParameterConstants {
 
 	/**
 	 * The ID for the additional parameter RECONNECT_PARENT possibly required in link reconnect request
-	 * 
+	 *
 	 * @deprecated
 	 */
 	@Deprecated
@@ -83,7 +83,7 @@ public interface RequestParameterConstants {
 	 * The ID to store the target figure for an edge creation
 	 */
 	public static final String EDGE_TARGET_FIGURE = "EDGE_TARGET_FIGURE"; //$NON-NLS-1$
-	
+
 	/**
 	 * the ID to store the source point for an edge creation
 	 */
@@ -93,5 +93,5 @@ public interface RequestParameterConstants {
 	 * the ID to store the target point for an edge creation
 	 */
 	public static final String EDGE_TARGET_POINT = "EDGE_TARGET_POINT"; //$NON-NLS-1$
-	
+
 }

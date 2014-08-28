@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ public class CustomDurationConstraintCreateCommand extends DurationConstraintCre
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -49,7 +49,7 @@ public class CustomDurationConstraintCreateCommand extends DurationConstraintCre
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomDurationConstraintCreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -113,21 +113,21 @@ public class CustomDurationConstraintCreateCommand extends DurationConstraintCre
 		Object paramOccurrence2 = getRequest().getParameter(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2);
 		List<OccurrenceSpecification> occ2List = SequenceUtil.getAsOccSpecList(paramOccurrence2);
 		OccurrenceSpecification[] pair = SequenceUtil.getPairOfCorrespondingOccSpec(occ1List, occ2List);
-		if(pair != null && pair.length > 1) {
+		if (pair != null && pair.length > 1) {
 			newElement.getConstrainedElements().add(pair[0]);
 			newElement.getConstrainedElements().add(pair[1]);
 		}
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 
 	protected Namespace getNamespace(EObject element) {
-		if(element instanceof Namespace) {
-			return (Namespace)element;
+		if (element instanceof Namespace) {
+			return (Namespace) element;
 		}
-		if(element instanceof CombinedFragment) {
-			return ((CombinedFragment)element).getNamespace();
+		if (element instanceof CombinedFragment) {
+			return ((CombinedFragment) element).getNamespace();
 		}
 		return getNamespace(element.eContainer());
 	}

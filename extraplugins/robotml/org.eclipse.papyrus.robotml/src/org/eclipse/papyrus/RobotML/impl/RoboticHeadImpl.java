@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.RoboticHead;
 
@@ -20,6 +19,7 @@ public class RoboticHeadImpl extends ManMachineInterfaceSystemImpl implements Ro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected RoboticHeadImpl() {
@@ -29,6 +29,7 @@ public class RoboticHeadImpl extends ManMachineInterfaceSystemImpl implements Ro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class RoboticHeadImpl extends ManMachineInterfaceSystemImpl implements Ro
 		return RobotMLPackage.Literals.ROBOTIC_HEAD;
 	}
 
-} //RoboticHeadImpl
+} // RoboticHeadImpl

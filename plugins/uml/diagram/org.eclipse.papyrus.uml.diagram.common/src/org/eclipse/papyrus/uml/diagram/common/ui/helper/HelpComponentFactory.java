@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,20 +42,20 @@ public class HelpComponentFactory {
 	/**
 	 * Creates help component that insert a new hyperlink icon to display
 	 * additional help description if tooltip is null, default value is "Help"
-	 * 
+	 *
 	 * ParseTags parameter must be used if you want to define rich text content
 	 * for the helpText. For example use <form> tag to format your text
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param toolkit
-	 *        the toolkit
+	 *            the toolkit
 	 * @param helpText
-	 *        the help text
+	 *            the help text
 	 * @param pToolTip
-	 *        the tool tip
+	 *            the tool tip
 	 * @param parseTags
-	 *        enables tags parsing on the description content
+	 *            enables tags parsing on the description content
 	 * @return the hyperlink image
 	 */
 	public static ImageHyperlink createHelpComponent(final Composite parent, FormToolkit toolkit, final String helpText, String pToolTip, final boolean parseTags) {
@@ -67,14 +67,17 @@ public class HelpComponentFactory {
 		helpImage.addHyperlinkListener(new IHyperlinkListener() {
 
 			// create the HelpDialog that displays the help description
+			@Override
 			public void linkActivated(HyperlinkEvent e) {
 				HelpDialog dialog = new HelpDialog(parent.getShell(), Display.getDefault().getCursorLocation(), toolTip, helpText, parseTags);
 				dialog.open();
 			}
 
+			@Override
 			public void linkEntered(HyperlinkEvent e) {
 			}
 
+			@Override
 			public void linkExited(HyperlinkEvent e) {
 			}
 
@@ -86,15 +89,15 @@ public class HelpComponentFactory {
 	 * Creates a new HelpComponent object. ParseTags parameter must be used if
 	 * you want to define rich text content for the helpText. For example use
 	 * <form> tag to format your text
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param toolkit
-	 *        the toolkit
+	 *            the toolkit
 	 * @param helpText
-	 *        the help text
+	 *            the help text
 	 * @param parseTags
-	 *        enables tags parsing on the description content
+	 *            enables tags parsing on the description content
 	 * @return the image hyperlink
 	 */
 	public static ImageHyperlink createHelpComponent(final Composite parent, FormToolkit toolkit, final String helpText, boolean parseTags) {
@@ -104,13 +107,13 @@ public class HelpComponentFactory {
 	/**
 	 * Creates a new HelpComponent object. You must use method with parseTags
 	 * parameter if you want to define rich text content for the helpText
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param toolkit
-	 *        the toolkit
+	 *            the toolkit
 	 * @param helpText
-	 *        the help text
+	 *            the help text
 	 * @return the image hyperlink
 	 */
 	public static ImageHyperlink createHelpComponent(final Composite parent, FormToolkit toolkit, final String helpText) {

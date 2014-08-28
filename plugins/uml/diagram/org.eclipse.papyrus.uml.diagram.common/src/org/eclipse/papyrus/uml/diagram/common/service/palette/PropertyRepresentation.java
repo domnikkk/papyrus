@@ -65,9 +65,9 @@ public class PropertyRepresentation {
 	 * Constructor.
 	 *
 	 * @param stereotypeQualifiedName
-	 *        the stereotype owning this property
+	 *            the stereotype owning this property
 	 * @param propertyQualifiedName
-	 *        the property represented by this {@link PropertyRepresentation}
+	 *            the property represented by this {@link PropertyRepresentation}
 	 */
 	public PropertyRepresentation(String stereotypeQualifiedName, String propertyQualifiedName) {
 		this.propertyQualifiedName = propertyQualifiedName;
@@ -81,8 +81,8 @@ public class PropertyRepresentation {
 	 * PropertyRepresentation share the same instances of the values
 	 *
 	 * @param propRep
-	 *        the PropertyRepresentation used to instantiate a new
-	 *        PropertyRepresentation
+	 *            the PropertyRepresentation used to instantiate a new
+	 *            PropertyRepresentation
 	 */
 	public PropertyRepresentation(PropertyRepresentation propRep) {
 		this.propertyQualifiedName = new String(propRep.getQualifiedName());
@@ -105,7 +105,7 @@ public class PropertyRepresentation {
 	 * Adds the value to this property
 	 *
 	 * @param value
-	 *        the value to add to this property
+	 *            the value to add to this property
 	 */
 	public void addValue(Value value) {
 		value.setPropertyRepresentation(this);
@@ -159,7 +159,7 @@ public class PropertyRepresentation {
 		Assert.isNotNull(umlProperty, "The property has not been set!"); //$NON-NLS-1$
 		String multiplicity = "[" + umlProperty.getLower() + ".."; //$NON-NLS-1$ //$NON-NLS-2$
 		int upper = umlProperty.getUpper();
-		if(upper == -1) {
+		if (upper == -1) {
 			multiplicity += "*"; //$NON-NLS-1$
 		} else {
 			multiplicity += upper;
@@ -188,11 +188,11 @@ public class PropertyRepresentation {
 	protected String getValueToDisplay() {
 		String label = null;
 		ArrayList<Value> values = getValues();
-		if(!values.isEmpty()) {
+		if (!values.isEmpty()) {
 			label = values.toString();
-		} else if(umlProperty.getDefaultValue() != null) {
+		} else if (umlProperty.getDefaultValue() != null) {
 			label = umlProperty.getDefault();
-		} else if(umlProperty.isMultivalued()) {
+		} else if (umlProperty.isMultivalued()) {
 			label = "[]"; //$NON-NLS-1$
 		}
 		return label;
@@ -220,7 +220,7 @@ public class PropertyRepresentation {
 	 * Setter for {@link #umlProperty}
 	 *
 	 * @param property
-	 *        the UML {@link Property}
+	 *            the UML {@link Property}
 	 */
 	public void setUMLProperty(Property property) {
 		this.umlProperty = property;
@@ -240,7 +240,7 @@ public class PropertyRepresentation {
 	/**
 	 *
 	 * @param value
-	 *        the value to remove
+	 *            the value to remove
 	 */
 	public void removeValue(Value value) {
 		values.remove(value);
@@ -286,7 +286,7 @@ public class PropertyRepresentation {
 	public String getLabel() {
 		String label = this.name;
 		String type = ""; //$NON-NLS-1$
-		if(getType() != null) {
+		if (getType() != null) {
 			type = getType().getLabel();
 		}
 		label += ": " + type + getPropertyMultiplicity() + " = " + getValueToDisplay(); //$NON-NLS-1$ //$NON-NLS-2$
@@ -302,7 +302,7 @@ public class PropertyRepresentation {
 	 */
 	public ArrayList<String> getStringValue() {
 		ArrayList<String> stringValues = new ArrayList<String>();
-		for(Value val : values) {
+		for (Value val : values) {
 			stringValues.add(val.getValue());
 		}
 		return stringValues;

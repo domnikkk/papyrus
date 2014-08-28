@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,13 +47,13 @@ public class CreateEAnnotationCommand extends org.eclipse.emf.transaction.Record
 
 	/**
 	 * Instantiates a new creates the e annotation command.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param object
-	 *        the object
+	 *            the object
 	 * @param eannotationName
-	 *        the eannotation name
+	 *            the eannotation name
 	 */
 	public CreateEAnnotationCommand(TransactionalEditingDomain domain, EModelElement object, String eannotationName) {
 		super(domain);
@@ -72,7 +72,7 @@ public class CreateEAnnotationCommand extends org.eclipse.emf.transaction.Record
 
 	/**
 	 * Creates the e annotation.
-	 * 
+	 *
 	 * @return the e annotation
 	 */
 	protected EAnnotation createEAnnotation() {
@@ -83,11 +83,11 @@ public class CreateEAnnotationCommand extends org.eclipse.emf.transaction.Record
 
 	/**
 	 * Attach eannotation to an EmodelElement.
-	 * 
+	 *
 	 * @param annotation
-	 *        the annotation
+	 *            the annotation
 	 * @param object
-	 *        the object
+	 *            the object
 	 */
 	protected void attachEannotation(EAnnotation annotation, EModelElement object) {
 		object.getEAnnotations().add(annotation);
@@ -96,14 +96,14 @@ public class CreateEAnnotationCommand extends org.eclipse.emf.transaction.Record
 	/**
 	 * Replace existing eannotation with a new eannotation. This repplaced eannotation has the same
 	 * source.
-	 * 
+	 *
 	 * @param annotation
-	 *        the annotation
+	 *            the annotation
 	 * @param object
-	 *        the object
+	 *            the object
 	 */
 	protected void replaceEannotation(EAnnotation annotation, EModelElement object) {
-		while(object.getEAnnotation(annotation.getSource()) != null) {
+		while (object.getEAnnotation(annotation.getSource()) != null) {
 			object.getEAnnotations().remove(object.getEAnnotation(annotation.getSource()));
 		}
 
@@ -112,13 +112,13 @@ public class CreateEAnnotationCommand extends org.eclipse.emf.transaction.Record
 
 	/**
 	 * Adds the entry.
-	 * 
+	 *
 	 * @param annotation
-	 *        the annotation
+	 *            the annotation
 	 * @param key
-	 *        the key
+	 *            the key
 	 * @param value
-	 *        the value
+	 *            the value
 	 */
 	// @unused
 	protected void addEntry(EAnnotation annotation, String key, String value) {
@@ -127,16 +127,16 @@ public class CreateEAnnotationCommand extends org.eclipse.emf.transaction.Record
 
 	/**
 	 * Replace entry.
-	 * 
+	 *
 	 * @param annotation
-	 *        the annotation not null
+	 *            the annotation not null
 	 * @param key
-	 *        the key
+	 *            the key
 	 * @param value
-	 *        the value
+	 *            the value
 	 */
 	protected void replaceEntry(EAnnotation annotation, String key, String value) {
-		while(annotation.getDetails().get(key) != null) {
+		while (annotation.getDetails().get(key) != null) {
 			annotation.getDetails().removeKey(key);
 
 		}

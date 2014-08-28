@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.papyrus.infra.emf.editor.util.ActionUtil;
 /**
  * An adapter for the EMF "Copy" Action, compatible with the
  * MoDisco customizable content provider.
- * 
+ *
  * @author Camille Letavernier
  */
 public class MoDiscoCopyAction extends CopyAction {
@@ -34,9 +34,9 @@ public class MoDiscoCopyAction extends CopyAction {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
-	 *        The Editing domain on which the action will be executed
+	 *            The Editing domain on which the action will be executed
 	 */
 	public MoDiscoCopyAction(EditingDomain domain) {
 		super(domain);

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,11 +42,11 @@ public class UpdateExtendedPaletteWizard extends Wizard {
 
 	/**
 	 * Creates a NewLocalPaletteWizard.
-	 * 
+	 *
 	 * @param part
-	 *        the editor part where the palette is available
+	 *            the editor part where the palette is available
 	 * @param descriptor
-	 *        the descriptor to edit
+	 *            the descriptor to edit
 	 */
 	public UpdateExtendedPaletteWizard(IEditorPart part, PapyrusPaletteService.ExtendedProviderDescriptor descriptor, PaletteCustomizer customizer) {
 		this.editorPart = part;
@@ -82,13 +82,13 @@ public class UpdateExtendedPaletteWizard extends Wizard {
 		// file has been created or updated
 		contentPage.performFinish(PapyrusPalettePreferences.getPalettePathFromID(infoPage.getPaletteID()));
 
-		//PapyrusPalettePreferences.unregisterLocalRedefinition(infoPage.getPaletteID());
+		// PapyrusPalettePreferences.unregisterLocalRedefinition(infoPage.getPaletteID());
 		// generate the preference for local palette
 		String path = PapyrusPalettePreferences.getPaletteRedefinition(infoPage.getPaletteID());
-		PapyrusPalettePreferences.registerLocalRedefinition(infoPage.getPaletteID(), path); // if already exists: removes, then add 
+		PapyrusPalettePreferences.registerLocalRedefinition(infoPage.getPaletteID(), path); // if already exists: removes, then add
 
 		// toggle visiblity to refresh the content
-		if(editorPart instanceof DiagramEditorWithFlyOutPalette) {
+		if (editorPart instanceof DiagramEditorWithFlyOutPalette) {
 			PapyrusPalettePreferences.changePaletteVisibility(infoPage.getPaletteID(), editorPart, false);
 			PapyrusPalettePreferences.changePaletteVisibility(infoPage.getPaletteID(), editorPart, true);
 		}

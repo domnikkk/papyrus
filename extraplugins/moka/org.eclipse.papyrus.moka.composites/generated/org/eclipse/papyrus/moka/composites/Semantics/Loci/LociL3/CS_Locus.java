@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,6 +23,7 @@ import org.eclipse.uml2.uml.Class;
 
 public class CS_Locus extends Locus {
 
+	@Override
 	public Object_ instantiate(Class type) {
 		// Extends fUML semantics by instantiating a CS_Object
 		// in the case where type is not a Behavior.
@@ -30,7 +31,7 @@ public class CS_Locus extends Locus {
 
 		Object_ object = null;
 
-		if(type instanceof Behavior) {
+		if (type instanceof Behavior) {
 			object = super.instantiate(type);
 		} else {
 			object = new CS_Object();

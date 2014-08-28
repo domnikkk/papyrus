@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,18 +40,18 @@ import org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage;
 import org.eclipse.papyrus.cdo.validation.problems.edit.ProblemTypeItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.papyrus.cdo.validation.problems.EProblem} object. <!--
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.cdo.validation.problems.EProblem} object. <!--
  * begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
-public class EProblemItemProvider extends ProblemTypeItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider {
+public class EProblemItemProvider extends ProblemTypeItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider,
+		ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EProblemItemProvider(AdapterFactory adapterFactory) {
@@ -61,12 +61,12 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addSeverityPropertyDescriptor(object);
@@ -83,98 +83,100 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	/**
 	 * This adds a property descriptor for the Severity feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addSeverityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_EProblem_severity_feature"), //$NON-NLS-1$
-			getString("_UI_PropertyDescriptor_description", "_UI_EProblem_severity_feature", "_UI_EProblem_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			ProblemsPackage.Literals.EPROBLEM__SEVERITY, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_EProblem_severity_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EProblem_severity_feature", "_UI_EProblem_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				ProblemsPackage.Literals.EPROBLEM__SEVERITY, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Message feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addMessagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_EProblem_message_feature"), //$NON-NLS-1$
-			getString("_UI_PropertyDescriptor_description", "_UI_EProblem_message_feature", "_UI_EProblem_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			ProblemsPackage.Literals.EPROBLEM__MESSAGE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_EProblem_message_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EProblem_message_feature", "_UI_EProblem_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				ProblemsPackage.Literals.EPROBLEM__MESSAGE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Source feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_EProblem_source_feature"), //$NON-NLS-1$
-			getString("_UI_PropertyDescriptor_description", "_UI_EProblem_source_feature", "_UI_EProblem_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			ProblemsPackage.Literals.EPROBLEM__SOURCE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_EProblem_source_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EProblem_source_feature", "_UI_EProblem_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				ProblemsPackage.Literals.EPROBLEM__SOURCE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Code feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addCodePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_EProblem_code_feature"), //$NON-NLS-1$
-			getString("_UI_PropertyDescriptor_description", "_UI_EProblem_code_feature", "_UI_EProblem_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			ProblemsPackage.Literals.EPROBLEM__CODE, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_EProblem_code_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EProblem_code_feature", "_UI_EProblem_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				ProblemsPackage.Literals.EPROBLEM__CODE, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Element feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addElementPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_EProblem_element_feature"), //$NON-NLS-1$
-			getString("_UI_PropertyDescriptor_description", "_UI_EProblem_element_feature", "_UI_EProblem_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			ProblemsPackage.Literals.EPROBLEM__ELEMENT, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_EProblem_element_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EProblem_element_feature", "_UI_EProblem_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				ProblemsPackage.Literals.EPROBLEM__ELEMENT, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Related feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addRelatedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_EProblem_related_feature"), //$NON-NLS-1$
-			getString("_UI_PropertyDescriptor_description", "_UI_EProblem_related_feature", "_UI_EProblem_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			ProblemsPackage.Literals.EPROBLEM__RELATED, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_EProblem_related_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EProblem_related_feature", "_UI_EProblem_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				ProblemsPackage.Literals.EPROBLEM__RELATED, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_EProblem_type_feature"), //$NON-NLS-1$
-			getString("_UI_PropertyDescriptor_description", "_UI_EProblem_type_feature", "_UI_EProblem_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			ProblemsPackage.Literals.EPROBLEM__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_EProblem_type_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EProblem_type_feature", "_UI_EProblem_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				ProblemsPackage.Literals.EPROBLEM__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if(childrenFeatures == null) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ProblemsPackage.Literals.EPROBLEM__ATTRIBUTES);
 		}
@@ -184,6 +186,7 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,6 +199,7 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,6 +210,7 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	/**
 	 * This returns EProblem.gif.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,14 +222,15 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		ESeverity labelValue = ((EProblem)object).getSeverity();
+		ESeverity labelValue = ((EProblem) object).getSeverity();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ? getString("_UI_EProblem_type") : //$NON-NLS-1$
-		getString("_UI_EProblem_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EProblem_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -232,13 +238,14 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch(notification.getFeatureID(EProblem.class)) {
+		switch (notification.getFeatureID(EProblem.class)) {
 		case ProblemsPackage.EPROBLEM__SEVERITY:
 		case ProblemsPackage.EPROBLEM__MESSAGE:
 		case ProblemsPackage.EPROBLEM__SOURCE:
@@ -257,7 +264,7 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,12 +277,12 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	/**
 	 * Return the resource locator for this item provider's resources. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

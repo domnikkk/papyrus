@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -30,6 +30,7 @@ public interface TypeInstance extends EObject, ComputePropertyValueCommand {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @model valueDataType="org.eclipse.papyrus.layers.stackmodel.layers.String" valueRequired="true" valueOrdered="false"
 	 * @generated
 	 */
@@ -38,6 +39,7 @@ public interface TypeInstance extends EObject, ComputePropertyValueCommand {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @model valueRequired="true" valueOrdered="false"
 	 * @generated
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -80,7 +80,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Add implementing IPapyrusEditPart to displaying Stereotypes.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class CustomInteractionEditPart extends InteractionEditPart implements IPapyrusEditPart {
@@ -92,7 +92,7 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomInteractionEditPart(View view) {
@@ -103,11 +103,11 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 	 * Try to use the notifier from super class, if not exist, create new one.
 	 */
 	protected NotificationHelper getNotifier() {
-		if(notifier == null) {
+		if (notifier == null) {
 			try {
 				Field f = InteractionEditPart.class.getDeclaredField("notifier");
 				f.setAccessible(true);
-				notifier = (NotificationHelper)f.get(this);
+				notifier = (NotificationHelper) f.get(this);
 			} catch (Exception e) {
 				notifier = new NotificationHelper(new UIAdapterImpl() {
 
@@ -128,13 +128,13 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomInteractionItemSemanticEditPolicy());
-		//Fixed bugs: https://bugs.eclipse.org/bugs/show_bug.cgi?id=403134 and https://bugs.eclipse.org/bugs/show_bug.cgi?id=389531
+		// Fixed bugs: https://bugs.eclipse.org/bugs/show_bug.cgi?id=403134 and https://bugs.eclipse.org/bugs/show_bug.cgi?id=389531
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new InteractionGraphicalNodeEditPolicy());
-		//Create gate: https://bugs.eclipse.org/bugs/show_bug.cgi?id=389531
+		// Create gate: https://bugs.eclipse.org/bugs/show_bug.cgi?id=389531
 		installEditPolicy("Gate Creation Edit Policy", new GateCreationEditPolicy());
-		//Ordering fragments after creation, See https://bugs.eclipse.org/bugs/show_bug.cgi?id=403233
+		// Ordering fragments after creation, See https://bugs.eclipse.org/bugs/show_bug.cgi?id=403233
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new InteractionFragmentsCreationEditPolicy());
-		//Install custom PrimaryDragEditPolicy to preserve anchors for lost and found.
+		// Install custom PrimaryDragEditPolicy to preserve anchors for lost and found.
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableShapeEditPolicy() {
 
 			@Override
@@ -144,21 +144,21 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 				newBounds.width += sizeDelta.width;
 				newBounds.height += sizeDelta.height;
 				Dimension minimumSize = getFigure().getMinimumSize();
-				//Avoid to update model when the new size is less than the minimum one.
-				if(newBounds.width < minimumSize.width || newBounds.height < minimumSize.height) {
+				// Avoid to update model when the new size is less than the minimum one.
+				if (newBounds.width < minimumSize.width || newBounds.height < minimumSize.height) {
 					return UnexecutableCommand.INSTANCE;
 				}
 				Command command = super.getResizeCommand(request);
 				/** Anchors for Lost/Found message were updated, there's no need to preserve positions after resize. */
-				//if(command != null && command.canExecute()) {
-				//if(newBounds.width >= minimumSize.width && newBounds.height >= minimumSize.height) {
-				//command = command.chain(new ICommandProxy(new PreserveAnchorsPositionCommand(CustomInteractionEditPart.this, sizeDelta, PreserveAnchorsPositionCommand.PRESERVE_XY)));
-				//}
-				//}
+				// if(command != null && command.canExecute()) {
+				// if(newBounds.width >= minimumSize.width && newBounds.height >= minimumSize.height) {
+				// command = command.chain(new ICommandProxy(new PreserveAnchorsPositionCommand(CustomInteractionEditPart.this, sizeDelta, PreserveAnchorsPositionCommand.PRESERVE_XY)));
+				// }
+				// }
 				return command;
 			}
 		});
-		//install a editpolicy to display stereotypes
+		// install a editpolicy to display stereotypes
 		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeNodeLabelDisplayEditPolicy());
 		installEditPolicy(AbstractHeadImpactLayoutEditPolicy.HEAD_IMPACT_LAYOUT_POLICY, new InteractionHeadImpactLayoutEditPolicy());
 	}
@@ -173,11 +173,11 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 			@Override
 			public Dimension getMinimumSize(int wHint, int hHint) {
 				Rectangle bounds = new Rectangle();
-				for(Object child : CustomInteractionEditPart.this.getChildren()) {
-					if(child instanceof InteractionInteractionCompartmentEditPart) {
-						InteractionInteractionCompartmentEditPart childEditPart = (InteractionInteractionCompartmentEditPart)child;
-						for(Object grandChild : childEditPart.getChildren()) {
-							GraphicalEditPart editPart = (GraphicalEditPart)grandChild;
+				for (Object child : CustomInteractionEditPart.this.getChildren()) {
+					if (child instanceof InteractionInteractionCompartmentEditPart) {
+						InteractionInteractionCompartmentEditPart childEditPart = (InteractionInteractionCompartmentEditPart) child;
+						for (Object grandChild : childEditPart.getChildren()) {
+							GraphicalEditPart editPart = (GraphicalEditPart) grandChild;
 							IFigure figure = editPart.getFigure();
 							bounds.union(figure.getBounds());
 						}
@@ -200,16 +200,16 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 	 * The changement in the background color of the Container must set the forground color of the
 	 * ContainerCompartiment to avoid the separation line betewen the Compartiment and the
 	 * ContainerLablel.
-	 * 
+	 *
 	 * @Override-not
 	 */
 	@Override
 	protected void setBackgroundColor(Color color) {
-		if(primaryShape != null) {
+		if (primaryShape != null) {
 			primaryShape.setBackgroundColor(color);
-			if(primaryShape instanceof InteractionRectangleFigure) {
-				InteractionRectangleFigure irf = (InteractionRectangleFigure)primaryShape;
-				if(irf.getCompartmentFigure() != null) {
+			if (primaryShape instanceof InteractionRectangleFigure) {
+				InteractionRectangleFigure irf = (InteractionRectangleFigure) primaryShape;
+				if (irf.getCompartmentFigure() != null) {
 					irf.getCompartmentFigure().setForegroundColor(color);
 				}
 			}
@@ -229,19 +229,19 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 	protected void handleNotificationEvent(Notification notification) {
 		final NotificationHelper notifier = getNotifier();
 		Object feature = notification.getFeature();
-		if(UMLPackage.eINSTANCE.getInteraction_FormalGate().equals(feature)) {
+		if (UMLPackage.eINSTANCE.getInteraction_FormalGate().equals(feature)) {
 			// Handle formal gate
-			notifier.unlistenObject((Notifier)notification.getOldValue());
-			notifier.listenObject((Notifier)notification.getNewValue());
-		} else if(UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature) && notification.getNotifier() instanceof Gate) {
+			notifier.unlistenObject((Notifier) notification.getOldValue());
+			notifier.listenObject((Notifier) notification.getNewValue());
+		} else if (UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature) && notification.getNotifier() instanceof Gate) {
 			// Handle modification of formal gate's name
-			Gate gate = (Gate)notification.getNotifier();
+			Gate gate = (Gate) notification.getNotifier();
 			String oldStringValue = notification.getOldStringValue();
 			String newStringValue = notification.getNewStringValue();
-			if(oldStringValue != null && newStringValue != null) {
+			if (oldStringValue != null && newStringValue != null) {
 				String oldPrefix = oldStringValue.split("_")[0];
 				String newPrefix = newStringValue.split("_")[0];
-				if(!oldPrefix.equals(newPrefix) && (oldPrefix.equals(MessageDirection.IN.getName()) || oldPrefix.equals(MessageDirection.OUT.getName()))) {
+				if (!oldPrefix.equals(newPrefix) && (oldPrefix.equals(MessageDirection.IN.getName()) || oldPrefix.equals(MessageDirection.OUT.getName()))) {
 					notifier.unlistenObject(gate);
 					gate.setName(oldPrefix + "_" + gate.getName());
 					notifier.listenObject(gate);
@@ -249,22 +249,23 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 			}
 		}
 		super.handleNotificationEvent(notification);
-		if(!notification.isTouch()) {
+		if (!notification.isTouch()) {
 			synchronizeSize();
 		}
 	}
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeEditPart#refreshBounds()
-	 * 
+	 *
 	 */
 
 	@Override
 	protected void refreshBounds() {
 		super.refreshBounds();
-		//Add size updater at the beginning of showing this edit part.
+		// Add size updater at the beginning of showing this edit part.
 		getViewer().getControl().getDisplay().asyncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				synchronizeSize();
 			}
@@ -280,38 +281,42 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 	 */
 	private void synchronizeSize() {
 		View view = getNotationView();
-		if(view instanceof Shape) {
-			LayoutConstraint c = ((Shape)view).getLayoutConstraint();
-			if(c instanceof Size) {
-				final Size size = (Size)c;
+		if (view instanceof Shape) {
+			LayoutConstraint c = ((Shape) view).getLayoutConstraint();
+			if (c instanceof Size) {
+				final Size size = (Size) c;
 				Dimension realSize = getFigure().getMinimumSize();
 				final Dimension sizeDelta = new Dimension();
-				if(size.getWidth() != -1 && realSize.width > size.getWidth()) {
+				if (size.getWidth() != -1 && realSize.width > size.getWidth()) {
 					sizeDelta.width = realSize.width;
 				}
-				if(size.getHeight() != -1 && realSize.height > size.getHeight()) {
+				if (size.getHeight() != -1 && realSize.height > size.getHeight()) {
 					sizeDelta.height = realSize.height;
 				}
-				if(sizeDelta.width != 0 || sizeDelta.height != 0) {
+				if (sizeDelta.width != 0 || sizeDelta.height != 0) {
 					AbstractCommand cmd = new AbstractCommand() {
 
+						@Override
 						public boolean canExecute() {
 							return true;
 						}
 
+						@Override
 						public boolean canUndo() {
 							return false;
 						}
 
+						@Override
 						public void execute() {
-							if(sizeDelta.width != 0) {
+							if (sizeDelta.width != 0) {
 								size.setWidth(sizeDelta.width);
 							}
-							if(sizeDelta.height != 0) {
+							if (sizeDelta.height != 0) {
 								size.setHeight(sizeDelta.height);
 							}
 						}
 
+						@Override
 						public void redo() {
 							execute();
 						}
@@ -329,9 +334,9 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 	public void activate() {
 		super.activate();
 		final NotificationHelper notifier = getNotifier();
-		Interaction interaction = (Interaction)resolveSemanticElement();
-		if(interaction != null) {
-			for(Gate formalGate : interaction.getFormalGates()) {
+		Interaction interaction = (Interaction) resolveSemanticElement();
+		if (interaction != null) {
+			for (Gate formalGate : interaction.getFormalGates()) {
 				notifier.listenObject(formalGate);
 			}
 		}
@@ -344,7 +349,7 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 	@Override
 	public void deactivate() {
 		super.deactivate();
-		if(notifier != null) {
+		if (notifier != null) {
 			notifier.unlistenAll();
 		}
 	}
@@ -354,7 +359,7 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 	 */
 	@Override
 	public void removeNotify() {
-		if(notifier != null) {
+		if (notifier != null) {
 			notifier.unlistenAll();
 		}
 		super.removeNotify();
@@ -366,7 +371,7 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 	@Override
 	public ConnectionAnchor getSourceConnectionAnchor(Request request) {
 		ConnectionAnchor sourceAnchor = createAnchor(request, UMLElementTypes.Message_4009, Message7EditPart.VISUAL_ID, Message7EditPart.class);
-		if(sourceAnchor == null) {
+		if (sourceAnchor == null) {
 			sourceAnchor = super.getSourceConnectionAnchor(request);
 		}
 		return sourceAnchor;
@@ -377,18 +382,18 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 	 */
 	@Override
 	public ConnectionAnchor getSourceConnectionAnchor(ConnectionEditPart connEditPart) {
-		if(connEditPart instanceof Message7EditPart) {
+		if (connEditPart instanceof Message7EditPart) {
 			String terminal = AnchorHelper.getAnchorId(getEditingDomain(), connEditPart, true);
-			if(terminal.length() > 0) {
+			if (terminal.length() > 0) {
 				PrecisionPoint pt = BaseSlidableAnchor.parseTerminalString(terminal);
 				return new AnchorHelper.InnerPointAnchor(getFigure(), pt);
 			}
 		}
 		ConnectionAnchor sourceConnectionAnchor = super.getSourceConnectionAnchor(connEditPart);
-		//		Point referencePoint = sourceConnectionAnchor.getReferencePoint();
-		//		if(connEditPart instanceof Message7EditPart && referencePoint.x != 0 && referencePoint.y != 0) {
-		//			sourceConnectionAnchor = new XYAnchor(referencePoint);
-		//		}
+		// Point referencePoint = sourceConnectionAnchor.getReferencePoint();
+		// if(connEditPart instanceof Message7EditPart && referencePoint.x != 0 && referencePoint.y != 0) {
+		// sourceConnectionAnchor = new XYAnchor(referencePoint);
+		// }
 		return sourceConnectionAnchor;
 	}
 
@@ -398,12 +403,12 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 	@Override
 	public ConnectionAnchor getTargetConnectionAnchor(Request request) {
 		ConnectionAnchor targetAnchor = createAnchor(request, UMLElementTypes.Message_4008, Message6EditPart.VISUAL_ID, Message6EditPart.class);
-		if(targetAnchor == null) {
-			//Enabled to find Anchor for MessageCreate, this would be useful when showing feedbacks.
-			//Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=403134
+		if (targetAnchor == null) {
+			// Enabled to find Anchor for MessageCreate, this would be useful when showing feedbacks.
+			// Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=403134
 			targetAnchor = createAnchor(request, UMLElementTypes.Message_4006, Message4EditPart.VISUAL_ID, Message4EditPart.class);
 		}
-		if(targetAnchor == null) {
+		if (targetAnchor == null) {
 			targetAnchor = super.getTargetConnectionAnchor(request);
 		}
 		return targetAnchor;
@@ -414,59 +419,59 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 	 */
 	@Override
 	public ConnectionAnchor getTargetConnectionAnchor(ConnectionEditPart connEditPart) {
-		//Enabled to find Anchor for MessageCreate, this would be useful when showing feedbacks.
-		//Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=403134
-		if(connEditPart instanceof Message6EditPart || connEditPart instanceof Message4EditPart) {
+		// Enabled to find Anchor for MessageCreate, this would be useful when showing feedbacks.
+		// Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=403134
+		if (connEditPart instanceof Message6EditPart || connEditPart instanceof Message4EditPart) {
 			String terminal = AnchorHelper.getAnchorId(getEditingDomain(), connEditPart, false);
-			if(terminal.length() > 0) {
+			if (terminal.length() > 0) {
 				PrecisionPoint pt = BaseSlidableAnchor.parseTerminalString(terminal);
 				return new AnchorHelper.InnerPointAnchor(getFigure(), pt);
 			}
 		}
 		ConnectionAnchor targetConnectionAnchor = super.getTargetConnectionAnchor(connEditPart);
-		//		Point referencePoint = targetConnectionAnchor.getReferencePoint();
-		//		if(connEditPart instanceof Message6EditPart && referencePoint.x != 0 && referencePoint.y != 0) {
-		//			targetConnectionAnchor = new XYAnchor(referencePoint);
-		//		}		
+		// Point referencePoint = targetConnectionAnchor.getReferencePoint();
+		// if(connEditPart instanceof Message6EditPart && referencePoint.x != 0 && referencePoint.y != 0) {
+		// targetConnectionAnchor = new XYAnchor(referencePoint);
+		// }
 		return targetConnectionAnchor;
 	}
 
 	/**
 	 * Create Anchor
-	 * 
+	 *
 	 * @param request
-	 *        The request
+	 *            The request
 	 * @param elementType
-	 *        The element type of the message
+	 *            The element type of the message
 	 * @param visualId
-	 *        The visual ID of the message
+	 *            The visual ID of the message
 	 * @param messageType
-	 *        The type of the message
+	 *            The type of the message
 	 * @return The connection anchor
 	 */
 	private ConnectionAnchor createAnchor(Request request, IElementType elementType, int visualId, Class<?> messageType) {
-		if(request instanceof CreateUnspecifiedTypeConnectionRequest) {
-			CreateUnspecifiedTypeConnectionRequest createRequest = (CreateUnspecifiedTypeConnectionRequest)request;
+		if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
+			CreateUnspecifiedTypeConnectionRequest createRequest = (CreateUnspecifiedTypeConnectionRequest) request;
 			List<?> relationshipTypes = createRequest.getElementTypes();
-			for(Object obj : relationshipTypes) {
-				if(elementType.equals(obj)) {
+			for (Object obj : relationshipTypes) {
+				if (elementType.equals(obj)) {
 					return createAnchor(createRequest.getLocation().getCopy());
 				}
 			}
-		} else if(request instanceof CreateConnectionViewRequest) {
-			CreateConnectionViewRequest createRequest = (CreateConnectionViewRequest)request;
+		} else if (request instanceof CreateConnectionViewRequest) {
+			CreateConnectionViewRequest createRequest = (CreateConnectionViewRequest) request;
 			ConnectionViewDescriptor connectionViewDescriptor = createRequest.getConnectionViewDescriptor();
-			if(connectionViewDescriptor != null) {
-				if(String.valueOf(visualId).equals(connectionViewDescriptor.getSemanticHint())) {
+			if (connectionViewDescriptor != null) {
+				if (String.valueOf(visualId).equals(connectionViewDescriptor.getSemanticHint())) {
 					return createAnchor(createRequest.getLocation().getCopy());
 				}
 			}
-		} else if(request instanceof ReconnectRequest) {
-			ReconnectRequest reconnectRequest = (ReconnectRequest)request;
+		} else if (request instanceof ReconnectRequest) {
+			ReconnectRequest reconnectRequest = (ReconnectRequest) request;
 			ConnectionEditPart connectionEditPart = reconnectRequest.getConnectionEditPart();
-			//Fixed bug creating anchors for MessageLost and MessageFound.
-			if(messageType.isInstance(connectionEditPart) && request instanceof LocationRequest) {
-				return createAnchor(((LocationRequest)request).getLocation().getCopy());
+			// Fixed bug creating anchors for MessageLost and MessageFound.
+			if (messageType.isInstance(connectionEditPart) && request instanceof LocationRequest) {
+				return createAnchor(((LocationRequest) request).getLocation().getCopy());
 			}
 		}
 		return null;
@@ -474,28 +479,28 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 
 	/**
 	 * Create Anchor
-	 * 
+	 *
 	 * @param location
-	 *        The location
+	 *            The location
 	 * @return The connection anchor
 	 */
 	private ConnectionAnchor createAnchor(Point location) {
-		//return new SlidableAnchor(getFigure(), BaseSlidableAnchor.getAnchorRelativeLocation(location, getFigure().getBounds()));
+		// return new SlidableAnchor(getFigure(), BaseSlidableAnchor.getAnchorRelativeLocation(location, getFigure().getBounds()));
 		return AnchorHelper.InnerPointAnchor.createAnchorAtLocation(getFigure(), new PrecisionPoint(location));
 	}
 
 	@Override
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof InteractionNameEditPart) {
+		if (childEditPart instanceof InteractionNameEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof InteractionInteractionCompartmentEditPart) {
+		if (childEditPart instanceof InteractionInteractionCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((InteractionInteractionCompartmentEditPart)childEditPart).getFigure());
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
+			pane.remove(((InteractionInteractionCompartmentEditPart) childEditPart).getFigure());
 			return true;
-		} else if(childEditPart instanceof GateEditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((GateEditPart)childEditPart).getFigure());
+		} else if (childEditPart instanceof GateEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((GateEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -504,24 +509,27 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 	/**
 	 * Create a BorderedNodeFigure for holding Gates.
 	 */
+	@Override
 	protected NodeFigure createNodeFigure() {
 		return new BorderedNodeFigure(super.createNodeFigure());
 	}
 
+	@Override
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if(editPart instanceof IBorderItemEditPart) {
+		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
 		return getContentPane();
 	}
 
 	public final BorderedNodeFigure getBorderedFigure() {
-		return (BorderedNodeFigure)getFigure();
+		return (BorderedNodeFigure) getFigure();
 	}
 
+	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof GateEditPart) {
-			getBorderedFigure().getBorderItemContainer().add(((GateEditPart)childEditPart).getFigure(), new GateLocator((GateEditPart)childEditPart, getFigure()));
+		if (childEditPart instanceof GateEditPart) {
+			getBorderedFigure().getBorderItemContainer().add(((GateEditPart) childEditPart).getFigure(), new GateLocator((GateEditPart) childEditPart, getFigure()));
 			return true;
 		}
 		return super.addFixedChild(childEditPart);
@@ -537,7 +545,7 @@ public class CustomInteractionEditPart extends InteractionEditPart implements IP
 
 			@Override
 			protected ConnectionAnchor createAnchor(PrecisionPoint p) {
-				if(p == null) {
+				if (p == null) {
 					// If the old terminal for the connection anchor cannot be resolved (by SlidableAnchor) a null
 					// PrecisionPoint will passed in - this is handled here
 					return createDefaultAnchor();

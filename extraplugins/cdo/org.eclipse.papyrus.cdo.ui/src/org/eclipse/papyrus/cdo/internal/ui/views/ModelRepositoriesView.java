@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.views;
 
@@ -129,7 +129,7 @@ public class ModelRepositoriesView extends ContainerView {
 
 	@Override
 	protected IContainer<?> getContainer() {
-		return (IContainer<?>)repositoryManager;
+		return (IContainer<?>) repositoryManager;
 	}
 
 	@Override
@@ -143,7 +143,7 @@ public class ModelRepositoriesView extends ContainerView {
 
 		// attach the admin manager
 		clientManager = Activator.getCDOAdminClientManager();
-		if(clientManager != null) {
+		if (clientManager != null) {
 			adminManager.install(clientManager);
 			adminListener = new RepositoryAdminListener(repositoryManager);
 			adminManager.addRepositoryAdminListener(adminListener);
@@ -153,7 +153,7 @@ public class ModelRepositoriesView extends ContainerView {
 	@Override
 	public void dispose() {
 		try {
-			if(clientManager != null) {
+			if (clientManager != null) {
 				adminManager.removeRepositoryAdminListener(adminListener);
 				clientManager.removeListener(adminManager);
 				clientManager = null;
@@ -174,10 +174,10 @@ public class ModelRepositoriesView extends ContainerView {
 	}
 
 	public void setLinkWithEditor(boolean link) {
-		if(isLinkWithEditor != link) {
+		if (isLinkWithEditor != link) {
 			isLinkWithEditor = link;
 
-			if(linkingHelper != null) {
+			if (linkingHelper != null) {
 				linkingHelper.setLinkWithEditor(link);
 			}
 
@@ -251,28 +251,28 @@ public class ModelRepositoriesView extends ContainerView {
 
 		manager.add(new GroupMarker("createActions")); //$NON-NLS-1$
 
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 			Object selected = selection.getFirstElement();
 
-			if(selected instanceof DIModel) {
+			if (selected instanceof DIModel) {
 				manager.add(openModelAction);
 				manager.add(renameModelAction);
 				manager.add(deleteModelAction);
-			} else if(selected instanceof CDOResource) {
+			} else if (selected instanceof CDOResource) {
 				manager.add(openModelAction);
 			}
 
-			if(selected instanceof IPapyrusRepository) {
-				if(((IPapyrusRepository)selected).isConnected()) {
+			if (selected instanceof IPapyrusRepository) {
+				if (((IPapyrusRepository) selected).isConnected()) {
 					manager.add(createFolderAction);
 				}
 
 				manager.add(connectRepositoryAction);
 				manager.add(disconnectRepositoryAction);
 
-				if(selected instanceof IInternalPapyrusRepository) {
-					CDOSession session = ((IInternalPapyrusRepository)selected).getCDOSession();
-					if((session != null) && !Strings.isNullOrEmpty(session.getUserID())) {
+				if (selected instanceof IInternalPapyrusRepository) {
+					CDOSession session = ((IInternalPapyrusRepository) selected).getCDOSession();
+					if ((session != null) && !Strings.isNullOrEmpty(session.getUserID())) {
 						manager.add(changePasswordAction);
 					}
 				}
@@ -287,13 +287,13 @@ public class ModelRepositoriesView extends ContainerView {
 
 	@Override
 	protected void doubleClicked(Object object) {
-		if(object instanceof DIModel) {
+		if (object instanceof DIModel) {
 			invoke(openModelAction);
-		} else if(object instanceof IPapyrusRepository) {
+		} else if (object instanceof IPapyrusRepository) {
 			invoke(connectRepositoryAction);
-		} else if(object instanceof CDOResourceLeaf) {
-			CDOResourceLeaf leaf = (CDOResourceLeaf)object;
-			if(isPapyrusResource(leaf)) {
+		} else if (object instanceof CDOResourceLeaf) {
+			CDOResourceLeaf leaf = (CDOResourceLeaf) object;
+			if (isPapyrusResource(leaf)) {
 				invoke(openModelAction);
 			} else {
 				openCDOEditor(leaf);
@@ -306,7 +306,7 @@ public class ModelRepositoriesView extends ContainerView {
 	protected boolean isPapyrusResource(CDOResourceNode resourceNode) {
 		boolean result = false;
 
-		if(resourceNode instanceof CDOResource) {
+		if (resourceNode instanceof CDOResource) {
 			result = new ModelsReader().hasAssociatedModel(resourceNode.getURI());
 		}
 
@@ -314,7 +314,7 @@ public class ModelRepositoriesView extends ContainerView {
 	}
 
 	protected void invoke(Action action) {
-		if(action.isEnabled()) {
+		if (action.isEnabled()) {
 			action.run();
 		}
 	}
@@ -326,7 +326,7 @@ public class ModelRepositoriesView extends ContainerView {
 
 	protected void openCDOEditor(CDOResourceLeaf res) {
 		String editorID = CDOEditorUtil.getEffectiveEditorID(res);
-		if(editorID != null) {
+		if (editorID != null) {
 			final CDOTransaction trans = res.cdoView().getSession().openTransaction();
 			res = trans.getObject(res);
 			IEditorInput input = CDOEditorUtil.createEditorInput(editorID, res, false);
@@ -336,8 +336,8 @@ public class ModelRepositoriesView extends ContainerView {
 
 					@Override
 					public void propertyChanged(Object source, int propId) {
-						if((propId == IEditorPart.PROP_DIRTY) && !editor.isDirty()) {
-							// editor was saved.  Commit changes
+						if ((propId == IEditorPart.PROP_DIRTY) && !editor.isDirty()) {
+							// editor was saved. Commit changes
 							try {
 								trans.commit();
 							} catch (CommitException e) {
@@ -353,7 +353,7 @@ public class ModelRepositoriesView extends ContainerView {
 
 					@Override
 					public void partClosed(IWorkbenchPart part) {
-						if(part == editor) {
+						if (part == editor) {
 							trans.close();
 						}
 					}

@@ -3,7 +3,7 @@
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Jacques Lescot (Anyware Technologies) - initial API and
  * implementation
  * Anass Radouani (AtoS) - use of ExporterManager removed
@@ -19,9 +19,9 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 
 /**
- * 
+ *
  * Creation 24 sept. 07
- * 
+ *
  * @author <a href="mailto:jacques.lescot@anyware-tech.com">Jacques LESCOT</a>
  */
 public class ExportAllDiagramsDialog extends Dialog {
@@ -44,7 +44,7 @@ public class ExportAllDiagramsDialog extends Dialog {
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite composite = (Composite)super.createDialogArea(parent);
+		Composite composite = (Composite) super.createDialogArea(parent);
 		dialogComposite = new ExportComposite(composite, SWT.NONE);
 		dialogComposite.setSelectedDiagramFile(selectedDiagramFile);
 		return composite;

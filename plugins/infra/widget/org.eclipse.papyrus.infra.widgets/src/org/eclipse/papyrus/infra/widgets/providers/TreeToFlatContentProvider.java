@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ public class TreeToFlatContentProvider extends AbstractStaticContentProvider {
 	private StructuredViewer viewer;
 
 	public TreeToFlatContentProvider(ITreeContentProvider provider) {
-		if(!(provider instanceof IStaticContentProvider)) {
+		if (!(provider instanceof IStaticContentProvider)) {
 			throw new IllegalArgumentException();
 		}
 		this.contentProvider = provider;
@@ -42,13 +42,14 @@ public class TreeToFlatContentProvider extends AbstractStaticContentProvider {
 
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		if(viewer instanceof StructuredViewer) {
-			this.viewer = (StructuredViewer)viewer;
+		if (viewer instanceof StructuredViewer) {
+			this.viewer = (StructuredViewer) viewer;
 		}
 
 		contentProvider.inputChanged(viewer, oldInput, newInput);
 	}
 
+	@Override
 	public Object[] getElements() {
 		return getElementsList().toArray();
 	}
@@ -57,25 +58,25 @@ public class TreeToFlatContentProvider extends AbstractStaticContentProvider {
 	 * Returns the concrete value from the given Object
 	 * For example, if the content provider is an IAdaptableContentProvider,
 	 * returns the adapted value.
-	 * 
+	 *
 	 * @param value
 	 * @return
 	 */
 	protected Object getValue(Object value) {
-		if(contentProvider instanceof IAdaptableContentProvider) {
-			return ((IAdaptableContentProvider)contentProvider).getAdaptedValue(value);
+		if (contentProvider instanceof IAdaptableContentProvider) {
+			return ((IAdaptableContentProvider) contentProvider).getAdaptedValue(value);
 		} else {
 			return value;
 		}
 	}
 
 	protected boolean exploreBranch(Object parentElement, Object element) {
-		if(viewer == null) {
+		if (viewer == null) {
 			return true;
 		}
 
-		for(ViewerFilter filter : viewer.getFilters()) {
-			if(!filter.select(viewer, parentElement, element)) {
+		for (ViewerFilter filter : viewer.getFilters()) {
+			if (!filter.select(viewer, parentElement, element)) {
 				return false;
 			}
 		}
@@ -87,8 +88,8 @@ public class TreeToFlatContentProvider extends AbstractStaticContentProvider {
 		Collection<Object> result = new LinkedHashSet<Object>();
 		Set<Object> browsedElements = new HashSet<Object>();
 
-		for(Object root : ((IStaticContentProvider)contentProvider).getElements()) {
-			if(exploreBranch(null, root)) {
+		for (Object root : ((IStaticContentProvider) contentProvider).getElements()) {
+			if (exploreBranch(null, root)) {
 				result.add(root);
 				getElementsList(root, result, browsedElements);
 			}
@@ -98,11 +99,11 @@ public class TreeToFlatContentProvider extends AbstractStaticContentProvider {
 	}
 
 	protected void getElementsList(Object parent, Collection<Object> result, Set<Object> browsedElements) {
-		for(Object child : contentProvider.getChildren(parent)) {
+		for (Object child : contentProvider.getChildren(parent)) {
 			Object childValue = getValue(child);
-			if(!result.contains(childValue)) { //Avoid infinite recursion
+			if (!result.contains(childValue)) { // Avoid infinite recursion
 				result.add(childValue);
-				if(exploreBranch(parent, child)) {
+				if (exploreBranch(parent, child)) {
 					getElementsList(child, result, browsedElements);
 				}
 			}

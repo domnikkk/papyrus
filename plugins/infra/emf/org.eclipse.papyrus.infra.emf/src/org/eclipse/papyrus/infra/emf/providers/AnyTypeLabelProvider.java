@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * A LabelProvider for unresolved "AnyType" elements
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class AnyTypeLabelProvider extends EMFLabelProvider implements IFilteredLabelProvider {
 
@@ -34,13 +34,13 @@ public class AnyTypeLabelProvider extends EMFLabelProvider implements IFilteredL
 	public String getText(Object element) {
 		EObject eObject = EMFHelper.getEObject(element);
 
-		if(!(eObject instanceof AnyType)) {
+		if (!(eObject instanceof AnyType)) {
 			return super.getText(element);
 		}
 
-		AnyType anyType = (AnyType)eObject;
+		AnyType anyType = (AnyType) eObject;
 		EClass eClass = anyType.eClass();
-		if(eClass != null) {
+		if (eClass != null) {
 			return "Missing " + eClass.getName();
 		} else {
 			return "Missing component";
@@ -50,7 +50,7 @@ public class AnyTypeLabelProvider extends EMFLabelProvider implements IFilteredL
 	@Override
 	public Image getImage(Object element) {
 		EObject eObject = EMFHelper.getEObject(element);
-		if(!(eObject instanceof AnyType)) {
+		if (!(eObject instanceof AnyType)) {
 			return super.getImage(element);
 		}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,18 +36,18 @@ public abstract class AbstractAssociationEditPart extends UMLConnectionNodeEditP
 	protected static final String ASSOCIATION_END_LISTENERS_TARGET = "AssociationEndListenersTarget"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
-	 *        the view
+	 *            the view
 	 */
 	public AbstractAssociationEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -61,20 +61,20 @@ public abstract class AbstractAssociationEditPart extends UMLConnectionNodeEditP
 	 */
 	protected void addAssociationEndListeners() {
 		EObject semanticElement = resolveSemanticElement();
-		if(semanticElement instanceof Association) {
-			Association association = (Association)semanticElement;
-			if(association.getMemberEnds().size() >= 2) {
+		if (semanticElement instanceof Association) {
+			Association association = (Association) semanticElement;
+			if (association.getMemberEnds().size() >= 2) {
 				EObject sourceEnd = association.getMemberEnds().get(0);
 				EObject targetEnd = association.getMemberEnds().get(1);
 
-				addListenerFilter(ASSOCIATION_END_LISTENERS_SOURCE, this, sourceEnd); //$NON-NLS-1$
-				addListenerFilter(ASSOCIATION_END_LISTENERS_TARGET, this, targetEnd); //$NON-NLS-1$
+				addListenerFilter(ASSOCIATION_END_LISTENERS_SOURCE, this, sourceEnd);
+				addListenerFilter(ASSOCIATION_END_LISTENERS_TARGET, this, targetEnd);
 			}
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 
@@ -85,7 +85,7 @@ public abstract class AbstractAssociationEditPart extends UMLConnectionNodeEditP
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 
@@ -94,23 +94,23 @@ public abstract class AbstractAssociationEditPart extends UMLConnectionNodeEditP
 		super.handleNotificationEvent(event);
 
 		// set the good ends for the association figure
-		if(resolveSemanticElement() != null) {
+		if (resolveSemanticElement() != null) {
 
 			refreshVisuals();
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected void refreshVisuals() {
-		if(resolveSemanticElement() != null) {
-			if(getSource() == null || getTarget() == null) {
+		if (resolveSemanticElement() != null) {
+			if (getSource() == null || getTarget() == null) {
 				return;
 			}
-			if(((GraphicalEditPart)getSource()).resolveSemanticElement() == null || ((GraphicalEditPart)getTarget()).resolveSemanticElement() == null) {
+			if (((GraphicalEditPart) getSource()).resolveSemanticElement() == null || ((GraphicalEditPart) getTarget()).resolveSemanticElement() == null) {
 				return;
 			}
 
@@ -119,11 +119,11 @@ public abstract class AbstractAssociationEditPart extends UMLConnectionNodeEditP
 
 			// Get the association
 			Element umlElement = getUMLElement();
-			if(umlElement instanceof Association) {
-				Association association = (Association)getUMLElement();
+			if (umlElement instanceof Association) {
+				Association association = (Association) getUMLElement();
 				assert (association.getMemberEnds().size() >= 2);
-				if(association.getMemberEnds() != null && association.getMemberEnds().size() >= 2) {
-					if(((association.getMemberEnds().get(0))).getType().equals(((GraphicalEditPart)getSource()).resolveSemanticElement())) {
+				if (association.getMemberEnds() != null && association.getMemberEnds().size() >= 2) {
+					if (((association.getMemberEnds().get(0))).getType().equals(((GraphicalEditPart) getSource()).resolveSemanticElement())) {
 						source = ((association.getMemberEnds().get(0)));
 						target = ((association.getMemberEnds().get(1)));
 					} else {
@@ -134,38 +134,38 @@ public abstract class AbstractAssociationEditPart extends UMLConnectionNodeEditP
 					int targetType = 0;
 					// to display the dot.
 					// owned?
-					if(!source.getOwner().equals(resolveSemanticElement())) {
+					if (!source.getOwner().equals(resolveSemanticElement())) {
 						sourceType += AssociationFigure.owned;
 						sourceType += AssociationFigure.navigable;
 					}
-					if(!target.getOwner().equals(resolveSemanticElement())) {
+					if (!target.getOwner().equals(resolveSemanticElement())) {
 						targetType += AssociationFigure.owned;
 						targetType += AssociationFigure.navigable;
 					}
 					// aggregation? for it the opposite is changed
-					if(source.getAggregation() == AggregationKind.SHARED_LITERAL) {
+					if (source.getAggregation() == AggregationKind.SHARED_LITERAL) {
 						targetType += AssociationFigure.aggregation;
 					}
-					if(target.getAggregation() == AggregationKind.SHARED_LITERAL) {
+					if (target.getAggregation() == AggregationKind.SHARED_LITERAL) {
 						sourceType += AssociationFigure.aggregation;
 					}
 					// composite? for it the opposite is changed
-					if(source.getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
+					if (source.getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
 						targetType += AssociationFigure.composition;
 					}
-					if(target.getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
+					if (target.getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
 						sourceType += AssociationFigure.composition;
 					}
 
 					// navigable?
-					if(association.getNavigableOwnedEnds().contains(source)) {
+					if (association.getNavigableOwnedEnds().contains(source)) {
 						sourceType += AssociationFigure.navigable;
 					}
-					if(association.getNavigableOwnedEnds().contains(target)) {
+					if (association.getNavigableOwnedEnds().contains(target)) {
 						targetType += AssociationFigure.navigable;
 					}
-					if(getPrimaryShape() instanceof AssociationFigure) {
-						((AssociationFigure)getPrimaryShape()).setEnd(sourceType, targetType);
+					if (getPrimaryShape() instanceof AssociationFigure) {
+						((AssociationFigure) getPrimaryShape()).setEnd(sourceType, targetType);
 					}
 				}
 

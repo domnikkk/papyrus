@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,7 @@ public class LifelineResizeHelper {
 	public static boolean isManualSize(LifelineEditPart lp) {
 		View view = lp.getNotationView();
 		EAnnotation oldAnnotation = view.getEAnnotation(CUSTOM_EXTENSION_INFO);
-		if(oldAnnotation != null) {
+		if (oldAnnotation != null) {
 			String val = oldAnnotation.getDetails().get(MANUAL_LABEL_SIZE);
 			return "true".equalsIgnoreCase(val);
 		}
@@ -50,20 +50,20 @@ public class LifelineResizeHelper {
 		Dimension namePreSize = primaryShape.getFigureLifelineNameContainerFigure().getPreferredSize();
 		Rectangle childrenRect = null;
 		List<ShapeNodeEditPart> childShapeNodeEditPart = LifelineEditPartUtil.getChildShapeNodeEditPart(lp);
-		for(ShapeNodeEditPart child : childShapeNodeEditPart) {
-			if(!(child.resolveSemanticElement() instanceof ExecutionSpecification)) {
+		for (ShapeNodeEditPart child : childShapeNodeEditPart) {
+			if (!(child.resolveSemanticElement() instanceof ExecutionSpecification)) {
 				continue;
 			}
 			Rectangle rect = SequenceUtil.getAbsoluteBounds(child);
-			if(childrenRect == null) {
+			if (childrenRect == null) {
 				childrenRect = rect;
 			} else {
 				childrenRect.union(rect);
 			}
 		}
-		if(childrenRect != null) {
-			//This will disable the auto expanding of Lifeline Bordered Figure.
-			if(namePreSize.width / 2 < childrenRect.width - 8) {
+		if (childrenRect != null) {
+			// This will disable the auto expanding of Lifeline Bordered Figure.
+			if (namePreSize.width / 2 < childrenRect.width - 8) {
 				return true;
 			}
 		}
@@ -81,10 +81,11 @@ public class LifelineResizeHelper {
 	public static class ManualLabelSizeCommand extends AbstractTransactionalCommand {
 
 		public EModelElement getObject() {
-			if(object != null)
+			if (object != null) {
 				return object;
-			if(adapter != null) {
-				return (View)adapter.getAdapter(View.class);
+			}
+			if (adapter != null) {
+				return (View) adapter.getAdapter(View.class);
 			}
 			return null;
 		}
@@ -122,7 +123,7 @@ public class LifelineResizeHelper {
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 			EAnnotation oldAnnotation = getObject().getEAnnotation(eAnnotationName);
-			if(oldAnnotation == null) {
+			if (oldAnnotation == null) {
 				oldAnnotation = createEAnnotation();
 				attachEannotation(oldAnnotation, getObject());
 			}

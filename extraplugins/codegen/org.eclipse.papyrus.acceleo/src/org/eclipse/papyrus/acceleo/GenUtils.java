@@ -45,9 +45,9 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * Some utilities: a set of static methods for Acceleo based code generation
- * 
+ *
  * @author wassim, ansgar
- * 
+ *
  */
 public class GenUtils {
 
@@ -56,14 +56,14 @@ public class GenUtils {
 	/**
 	 * Retrieve template bindings for the class passed as a Parameter
 	 * only one template binding can exist for an element
-	 * 
+	 *
 	 * @param current
-	 *        Class on which the template binding is searched
+	 *            Class on which the template binding is searched
 	 * @return the template binding of current Class
 	 */
 	public static TemplateBinding getTemplateBindings(Class current) {
 		TemplateBinding binding = null;
-		if(current.getTemplateBindings().size() == 1) {
+		if (current.getTemplateBindings().size() == 1) {
 			binding = current.getTemplateBindings().get(0);
 		}
 
@@ -79,7 +79,7 @@ public class GenUtils {
 	public static boolean isTemplateBoundElement(Classifier cl) {
 		boolean result = false;
 		EList<TemplateBinding> tbs = cl.getTemplateBindings();
-		if(tbs.size() > 0) {
+		if (tbs.size() > 0) {
 			for (TemplateBinding tb : tbs) {
 				// TODO: will only work for single element in template binding list
 				result = tb.getBoundElement() == cl;
@@ -90,15 +90,15 @@ public class GenUtils {
 
 	/**
 	 * Get the name of a template parameter or undefined, if it is not set
-	 * 
+	 *
 	 * @param templateParam
 	 * @return
 	 */
 	public static String getTemplateName(TemplateParameter templateParam) {
 		String name = ""; //$NON-NLS-1$
 		ParameterableElement pElt = templateParam.getParameteredElement();
-		if((pElt != null) && (pElt instanceof NamedElement)) {
-			name = ((NamedElement)pElt).getName();
+		if ((pElt != null) && (pElt instanceof NamedElement)) {
+			name = ((NamedElement) pElt).getName();
 		} else {
 			name = "undefined"; //$NON-NLS-1$
 		}
@@ -106,17 +106,18 @@ public class GenUtils {
 		return name;
 	}
 
-	
+
 	/**
 	 *
-	 * @param classifier a classifier owning a template signature
+	 * @param classifier
+	 *            a classifier owning a template signature
 	 * @return the list of (formal) parameters defined within a template signature
 	 */
 	public static Collection<TemplateParameter> getTemplateParameters(Classifier classifier) {
 
 		Collection<TemplateParameter> params = new ArrayList<TemplateParameter>();
 		TemplateSignature ts = classifier.getOwnedTemplateSignature();
-		if(ts != null) {
+		if (ts != null) {
 			params.addAll(ts.getOwnedParameters());
 		}
 
@@ -124,7 +125,7 @@ public class GenUtils {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param classifier
 	 * @return
 	 */
@@ -132,9 +133,9 @@ public class GenUtils {
 
 		Collection<ParameterableElement> params = new ArrayList<ParameterableElement>();
 		TemplateSignature ts = classifier.getOwnedTemplateSignature();
-		if(ts != null) {
-			for(TemplateParameter tp : ts.getOwnedParameters()) {
-				if(tp != null) {
+		if (ts != null) {
+			for (TemplateParameter tp : ts.getOwnedParameters()) {
+				if (tp != null) {
 					params.add(tp.getParameteredElement());
 				}
 			}
@@ -144,9 +145,9 @@ public class GenUtils {
 
 	/**
 	 * Retrieve a list of types that belong to by a classifier in the current class
-	 * 
+	 *
 	 * @param current
-	 *        Class on which the attributes are searched
+	 *            Class on which the attributes are searched
 	 * @return collection of classes which are the type of the attributes
 	 */
 	public static EList<Classifier> getOwnedAttributeTypes(Classifier current) {
@@ -154,22 +155,22 @@ public class GenUtils {
 
 		Iterator<Property> attributes;
 		attributes = current.getAttributes().iterator();
-		while(attributes.hasNext()) {
+		while (attributes.hasNext()) {
 			Property currentAttribute = attributes.next();
 			Type type = currentAttribute.getType();
-			if(type instanceof Classifier) {
-				Classifier attrType = (Classifier)type;
+			if (type instanceof Classifier) {
+				Classifier attrType = (Classifier) type;
 				result.add(attrType);
 			}
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Retrieve a list of types that belong to by a classifier in the current class
-	 * 
+	 *
 	 * @param current
-	 *        Class on which the attributes are searched
+	 *            Class on which the attributes are searched
 	 * @return collection of classes which are the type of the attributes
 	 */
 	public static EList<Classifier> getTypesViaAttributes(Classifier current) {
@@ -177,7 +178,7 @@ public class GenUtils {
 
 		for (Property currentAttribute : current.getAttributes()) {
 			Type type = currentAttribute.getType();
-			if(type instanceof Classifier) {
+			if (type instanceof Classifier) {
 				result.add((Classifier) type);
 			}
 		}
@@ -188,18 +189,18 @@ public class GenUtils {
 	 * Retrieve the operations in the current class. For each
 	 * operation collected the classifier type. This class thus finds types, on
 	 * which the signature depends.
-	 * 
+	 *
 	 * @param current
-	 *        Class on which the attributes are searched
+	 *            Class on which the attributes are searched
 	 * @return collection of classes which are the types of the operations parameters
 	 */
 	public static EList<Classifier> getTypesViaOperations(Classifier current) {
 		EList<Classifier> result = new UniqueEList<Classifier>();
-		for(Operation operation : current.getOperations()) {
+		for (Operation operation : current.getOperations()) {
 			for (Parameter param : operation.getOwnedParameters()) {
 				Type type = param.getType();
-				if(type instanceof Classifier) {
-					Classifier paramType = (Classifier)type;
+				if (type instanceof Classifier) {
+					Classifier paramType = (Classifier) type;
 					result.add(paramType);
 				}
 			}
@@ -210,21 +211,21 @@ public class GenUtils {
 	/**
 	 * Return a list of classifiers that are referenced by relationships, i.e.
 	 * dependencies or associations
-	 * 
+	 *
 	 * @param current
 	 * @return
 	 */
 	public static EList<Classifier> getTypesViaRelationships(Classifier current) {
 		EList<Classifier> classifiers = new UniqueEList<Classifier>();
 
-		for(DirectedRelationship relationship : current.getSourceDirectedRelationships()) {
+		for (DirectedRelationship relationship : current.getSourceDirectedRelationships()) {
 
-			if(relationship.getTargets().size() > 0) {
+			if (relationship.getTargets().size() > 0) {
 				// there should always be at least one element in the target
 				// list and it should be a classifier, but better check.
 				Element element = relationship.getTargets().get(0);
-				if(element instanceof Classifier) {
-					classifiers.add((Classifier)element);
+				if (element instanceof Classifier) {
+					classifiers.add((Classifier) element);
 				}
 			}
 		}
@@ -233,21 +234,21 @@ public class GenUtils {
 
 	/**
 	 * Return a list of classifiers that are referenced via dependencies
-	 * 
+	 *
 	 * @param current
 	 * @return
 	 */
 	public static EList<Classifier> getTypesViaDependencies(Classifier current) {
 		EList<Classifier> classifiers = new UniqueEList<Classifier>();
 
-		for(DirectedRelationship relationship : current.getSourceDirectedRelationships()) {
-			if(relationship instanceof Dependency) {
-				if(relationship.getTargets().size() > 0) {
+		for (DirectedRelationship relationship : current.getSourceDirectedRelationships()) {
+			if (relationship instanceof Dependency) {
+				if (relationship.getTargets().size() > 0) {
 					// there should always be at least one element in the target
 					// list and it should be a classifier, but better check.
 					Element element = relationship.getTargets().get(0);
-					if(element instanceof Classifier) {
-						classifiers.add((Classifier)element);
+					if (element instanceof Classifier) {
+						classifiers.add((Classifier) element);
 					}
 				}
 			}
@@ -258,21 +259,21 @@ public class GenUtils {
 	/**
 	 * Return a list of classifiers that are referenced via all kinds of relations except
 	 * dependencies
-	 * 
+	 *
 	 * @param current
 	 * @return
 	 */
 	public static EList<Classifier> getTypesViaRelationshipsNoDeps(Classifier current) {
 		EList<Classifier> classifiers = new UniqueEList<Classifier>();
 
-		for(DirectedRelationship relationship : current.getSourceDirectedRelationships()) {
-			if(!(relationship instanceof Dependency)) {
-				if(relationship.getTargets().size() > 0) {
+		for (DirectedRelationship relationship : current.getSourceDirectedRelationships()) {
+			if (!(relationship instanceof Dependency)) {
+				if (relationship.getTargets().size() > 0) {
 					// there should always be at least one element in the target
 					// list and it should be a classifier, but better check.
 					Element element = relationship.getTargets().get(0);
-					if(element instanceof Classifier) {
-						classifiers.add((Classifier)element);
+					if (element instanceof Classifier) {
+						classifiers.add((Classifier) element);
 					}
 				}
 			}
@@ -280,12 +281,12 @@ public class GenUtils {
 		return classifiers;
 	}
 
-	
+
 	/**
 	 * Return the qualified name of a named element, but use "_" instead of "::" as separator
-	 * 
+	 *
 	 * @param ne
-	 *        a named element
+	 *            a named element
 	 * @return the fully qualified name with "_" as separator character
 	 */
 	public static String getFullName(NamedElement ne) {
@@ -294,7 +295,7 @@ public class GenUtils {
 
 	/**
 	 * return the full name in upper case
-	 * 
+	 *
 	 * @param ne
 	 * @return
 	 */
@@ -302,16 +303,17 @@ public class GenUtils {
 		return ne.getQualifiedName().replace("::", "_").toUpperCase(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
-	
+
 	/**
 	 * Retrieve the comments associated with an element
 	 * TODO: check whether comment's annotated element link belongs to element in question
+	 *
 	 * @param element
 	 * @return
 	 */
 	public static String getComments(Element element) {
 		String commentText = ""; //$NON-NLS-1$
-		for(Comment comment : element.getOwnedComments()) {
+		for (Comment comment : element.getOwnedComments()) {
 			// remove eventual CRs (avoid confusion in Acceleo template which adds " *" after line breaks)
 			commentText += cleanCR(comment.getBody());
 		}
@@ -321,15 +323,15 @@ public class GenUtils {
 	/**
 	 * Return a list of dependent package (the list of dependent
 	 * elements filtered for packages)
-	 * 
+	 *
 	 * @param pkg
 	 * @return
 	 */
 	public static EList<Package> getUsedPackages(Package pkg) {
 		EList<Package> result = new UniqueEList<Package>();
-		for(Element depElement : pkg.getClientDependencies()) {
-			if(depElement instanceof Package) {
-				result.add((Package)depElement);
+		for (Element depElement : pkg.getClientDependencies()) {
+			if (depElement instanceof Package) {
+				result.add((Package) depElement);
 			}
 		}
 		return result;
@@ -338,15 +340,15 @@ public class GenUtils {
 	/**
 	 * Return a list of dependent classifiers (the list of dependent
 	 * elements filtered for classifiers)
-	 * 
+	 *
 	 * @param pkg
 	 * @return
 	 */
 	public static EList<Classifier> getUsedClassifiers(Classifier cls) {
 		EList<Classifier> result = new BasicEList<Classifier>();
-		for(Element depElement : cls.getClientDependencies()) {
-			if(depElement instanceof Classifier) {
-				result.add((Classifier)depElement);
+		for (Element depElement : cls.getClientDependencies()) {
+			if (depElement instanceof Classifier) {
+				result.add((Classifier) depElement);
 			}
 		}
 		return result;
@@ -354,20 +356,20 @@ public class GenUtils {
 
 	/**
 	 * Return the qualified name of a package, but use "/" instead of "::" as separator
-	 * 
+	 *
 	 * @param pkg
 	 * @return
 	 */
 	public static String getFullPath(Package pkg) {
-		return pkg.getQualifiedName().replace("::", "/");  //$NON-NLS-1$//$NON-NLS-2$
+		return pkg.getQualifiedName().replace("::", "/"); //$NON-NLS-1$//$NON-NLS-2$
 	}
 
 	/**
 	 * Is a certain stereotype applied?
-	 * 
+	 *
 	 * @param element
 	 * @param stereotype
-	 *        fully qualified stereotype name
+	 *            fully qualified stereotype name
 	 * @return
 	 */
 	public static boolean hasStereotype(Element element, String stereotName) {
@@ -376,16 +378,16 @@ public class GenUtils {
 
 	/**
 	 * Is a certain stereotype applied?
-	 * 
+	 *
 	 * @param element
 	 * @param stereotype
-	 *        fully qualified stereotype name
+	 *            fully qualified stereotype name
 	 * @return
 	 */
 	public static boolean hasStereotype(Element element, java.lang.Class<? extends EObject> clazz) {
-		for(EObject stereoApplication : element.getStereotypeApplications()) {
+		for (EObject stereoApplication : element.getStereotypeApplications()) {
 			// check whether the stereotype is a super-class of the passed parameter clazz
-			if(clazz.isAssignableFrom(stereoApplication.getClass())) {
+			if (clazz.isAssignableFrom(stereoApplication.getClass())) {
 				return true;
 			}
 		}
@@ -397,19 +399,20 @@ public class GenUtils {
 	 * Is a certain stereotype applied?
 	 * In case of Java, we use the class above (without the A) prefix. In case of Acceleo, a stereotype
 	 * such as C_Cpp::Include is passed as EClass and we therefore use this operation from Acceleo.
-	 * 
+	 *
 	 * @param element
-	 * @param definition The eClass associated with the stereotype name (its definition)
+	 * @param definition
+	 *            The eClass associated with the stereotype name (its definition)
 	 * @return
 	 */
 	public static boolean hasStereotypeA(Element element, EClass definition) {
-		if(element == null) {
+		if (element == null) {
 			// make query more robust
 			return false;
 		}
-		for(EObject stereoApplication : element.getStereotypeApplications()) {
+		for (EObject stereoApplication : element.getStereotypeApplications()) {
 			// check whether the stereotype application has the right eClass
-			if(stereoApplication.eClass() == definition) {
+			if (stereoApplication.eClass() == definition) {
 				return true;
 			}
 		}
@@ -418,18 +421,18 @@ public class GenUtils {
 
 	/**
 	 * Verify if an Element or its parent Elements have a stereotype. Pass the class associated with a stereotype
-	 * 
+	 *
 	 * @param elt
-	 *        Element used.
+	 *            Element used.
 	 * @param clazz
-	 * 		  the class associated with a stereotype in a static profile
-	 * 
+	 *            the class associated with a stereotype in a static profile
+	 *
 	 * @return true if found. false otherwise
 	 */
 	public static boolean hasStereotypeTree(Element elt, java.lang.Class<? extends EObject> clazz)
 	{
 
-		if(hasStereotype(elt, clazz)) {
+		if (hasStereotype(elt, clazz)) {
 			return true;
 		}
 		else {
@@ -446,38 +449,41 @@ public class GenUtils {
 
 	/**
 	 * Verify if an Element or its parent Elements have a stereotype. Pass the definition of the stereotype
-	 * 
+	 *
 	 * @param elt
-	 *        Element used.
+	 *            Element used.
 	 * @param definition
-	 *        The stereotype definition
+	 *            The stereotype definition
 	 * @return true if found. false otherwise
 	 */
 	public static boolean hasStereotypeTree(Element elt, EClass definition)
 	{
 		Element owner;
 
-		if(hasStereotypeA(elt, definition))
+		if (hasStereotypeA(elt, definition)) {
 			return true;
-		else if((owner = elt.getOwner()) != null)
+		} else if ((owner = elt.getOwner()) != null) {
 			return hasStereotypeTree(owner, definition);
-		else
+		} else {
 			return false;
+		}
 	}
 
 
 	/**
 	 * return the first occurrence of a stereotype application in the ownership tree
-	 * 
-	 * @param elt an element
-	 * @param definition the definition of a stereotype (its eClass)
+	 *
+	 * @param elt
+	 *            an element
+	 * @param definition
+	 *            the definition of a stereotype (its eClass)
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T extends EObject> T getApplicationTree(Element elt, java.lang.Class<T> clazz)
 	{
 		EObject application = UMLUtil.getStereotypeApplication(elt, clazz);
-		if(application != null) {
+		if (application != null) {
 			return (T) application;
 		}
 		else {
@@ -495,14 +501,17 @@ public class GenUtils {
 	/**
 	 * return the first occurrence of a stereotype application in the ownership tree
 	 * Variant of @see getApplicationTree that is useful for Acceleo
-	 * @param elt an element
-	 * @param definition the definition of a stereotype (its eClass)
+	 *
+	 * @param elt
+	 *            an element
+	 * @param definition
+	 *            the definition of a stereotype (its eClass)
 	 * @return
 	 */
 	public static EObject getApplicationTreeA(Element elt, EClass definition)
 	{
 		EObject application = getApplicationA(elt, definition);
-		if(application != null) {
+		if (application != null) {
 			return application;
 		}
 		else {
@@ -515,64 +524,64 @@ public class GenUtils {
 			}
 		}
 	}
-	
+
 
 	/**
 	 * Return a stereotype application when given the eClass of that application.
 	 * In case of Java, we use the class above (without the A) prefix. In case of Acceleo, a stereotype
 	 * such as C_Cpp::Include is passed as EClass and we therefore use this operation from Acceleo.
-
+	 *
 	 * @param element
-	 *        the UML model element
+	 *            the UML model element
 	 * @param eClass
-	 *        the eClass of the stereotype application
+	 *            the eClass of the stereotype application
 	 * @return
 	 */
 	public static EObject getApplicationA(Element element, EClass eClass) {
-		for(EObject stereoApplication : element.getStereotypeApplications()) {
+		for (EObject stereoApplication : element.getStereotypeApplications()) {
 			// check whether the stereotype is an instance of the passed parameter clazz
-			if(stereoApplication.eClass() == eClass) {
+			if (stereoApplication.eClass() == eClass) {
 				return stereoApplication;
 			}
 		}
 		return null;
 	}
 
-	
+
 	/**
 	 * @param operation
-	 *        the operation
+	 *            the operation
 	 * @param selectedLanguage
-	 *        the selected language
+	 *            the selected language
 	 * @return Return the first body of a selected language that is provided by
 	 *         one of the operation's methods
 	 */
 	public static String getBody(Operation operation, String selectedLanguage) {
-		for(Behavior behavior : operation.getMethods()) {
-			if(behavior instanceof OpaqueBehavior) {
+		for (Behavior behavior : operation.getMethods()) {
+			if (behavior instanceof OpaqueBehavior) {
 				return getBodyFromOB((OpaqueBehavior) behavior, selectedLanguage);
 			}
 		}
 		return ""; //$NON-NLS-1$
 	}
-	
-	
+
+
 	/**
 	 * @param ob
-	 *        an opaque behavior
+	 *            an opaque behavior
 	 * @param selectedLanguage
-	 *        the selected language
+	 *            the selected language
 	 * @return Return the first body of a selected language that is provided by
 	 *         one of the operation's methods
 	 */
 	public static String getBodyFromOB(OpaqueBehavior ob, String selectedLanguage) {
 		Iterator<String> bodies = ob.getBodies().iterator();
-		for(String language : ob.getLanguages()) {
+		for (String language : ob.getLanguages()) {
 			// additional sanity check: number of languages and number of bodies should be synchronized,
-			// 	but there is no guarantee that this is the case 
+			// but there is no guarantee that this is the case
 			if (bodies.hasNext()) {
 				String body = bodies.next();
-				if(language.equals(selectedLanguage)) {
+				if (language.equals(selectedLanguage)) {
 					// additional "\r" confuses Acceleo
 					return cleanCR(body);
 				}
@@ -580,37 +589,40 @@ public class GenUtils {
 		}
 		return ""; //$NON-NLS-1$
 	}
-	
+
 	/**
 	 * Remove <CR> from a String. These confuse Acceleo's indentation
+	 *
 	 * @param str
 	 * @return
 	 */
 	public static String cleanCR(String str) {
 		return str.replace("\r", ""); //$NON-NLS-1$ //$NON-NLS-2$
 	}
-	
-	
+
+
 	/**
 	 * Avoid null strings, i.e. replace null strings by empty strings
-	 * 
+	 *
 	 * @param str
 	 * @return
 	 */
 	public static String maskNull(String str) {
-		if(str == null) {
+		if (str == null) {
 			return ""; //$NON-NLS-1$
 		}
 		return str;
 	}
-	
+
 	/**
 	 * Return the relative path of ne2 as seen from ne1
 	 * (might not always be useful, if includes are always done from a common root)
 	 * TODO: incomplete, currently unused
-	 * 
-	 * @param ne1 a named element
-	 * @param ne2 a named element
+	 *
+	 * @param ne1
+	 *            a named element
+	 * @param ne2
+	 *            a named element
 	 * @return
 	 */
 	public static String getRelativePath(NamedElement ne1, NamedElement ne2) {
@@ -626,11 +638,13 @@ public class GenUtils {
 		}
 		return path;
 	}
-	
+
 	/**
 	 * Return the type of a behavior, i.e. the type of the first parameter with
 	 * "return" direction
-	 * @param behavior a behavior
+	 *
+	 * @param behavior
+	 *            a behavior
 	 * @return the associated type
 	 */
 	public static Parameter returnResult(Behavior behavior) {

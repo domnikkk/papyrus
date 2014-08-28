@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.Operation;
 
 public abstract class DispatchStrategy extends SemanticStrategy {
 
+	@Override
 	public String getName() {
 		// Dispatch strategies are always named "dispatch".
 		return "dispatch";

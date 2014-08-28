@@ -70,14 +70,14 @@ public class UMLProfileControlParticipant implements IControlCommandParticipant,
 
 	public ICommand getPostControlCommand(ControlModeRequest request) {
 		CompositeCommand cc = new CompositeCommand("Composite command for control command [UML Part]");
-		//Move stereotype application
-		if(request.getTargetObject() instanceof Package) {
+		// Move stereotype application
+		if (request.getTargetObject() instanceof Package) {
 			cc.compose(getMoveProfileAppliationCommand(request));
 		}
-		//Move stereotype application
+		// Move stereotype application
 		cc.compose(getMoveStereotypeCommand(request));
-		//Copy profile application
-		if(request.getTargetObject() instanceof Package) {
+		// Copy profile application
+		if (request.getTargetObject() instanceof Package) {
 			cc.compose(getCopyProfileApplication(request));
 		}
 		return cc;
@@ -86,7 +86,7 @@ public class UMLProfileControlParticipant implements IControlCommandParticipant,
 	public ICommand getPostUncontrolCommand(ControlModeRequest request) {
 		CompositeCommand cc = new CompositeCommand("Composite command for uncontrol command [UML Part]");
 
-		if(cc.isEmpty()) {
+		if (cc.isEmpty()) {
 			return null;
 		}
 		return cc;
@@ -113,8 +113,8 @@ public class UMLProfileControlParticipant implements IControlCommandParticipant,
 	}
 
 	public ICommand getPreControlCommand(ControlModeRequest request) {
-		Element elem = (Element)request.getTargetObject();
-		if(request.isUIAction() && !(elem instanceof org.eclipse.uml2.uml.Package)) {
+		Element elem = (Element) request.getTargetObject();
+		if (request.isUIAction() && !(elem instanceof org.eclipse.uml2.uml.Package)) {
 			return new AskUserCommand(request.getEditingDomain(), getPreControlCommandMessage(elem), getPreControlCommandDialogTitle(elem), true, "org.eclipse.papyrus.controlmode.umlprofiles.participants.UMLProfileParticipant.openstandalonemodeldialog");
 		}
 		return null;
@@ -122,8 +122,8 @@ public class UMLProfileControlParticipant implements IControlCommandParticipant,
 
 	public ICommand getPreUncontrolCommand(ControlModeRequest request) {
 		CompositeCommand cc = new CompositeCommand("Composite command for pre uncontrol command [UML Part]");
-		//Copy profile application
-		if(request.getTargetObject() instanceof Package) {
+		// Copy profile application
+		if (request.getTargetObject() instanceof Package) {
 			cc.compose(getRemoveProfileApplication(request));
 		}
 		cc.compose(getMoveStereotypeCommand(request));

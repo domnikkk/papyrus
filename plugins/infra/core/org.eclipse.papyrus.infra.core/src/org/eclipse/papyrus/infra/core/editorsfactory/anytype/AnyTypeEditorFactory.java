@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,9 +32,9 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * An EditorFactory for "AnyType", i.e. EObject deserialized from unknown Packages
- * 
+ *
  * Allows recovery and manipulation of models containing optional EMF components
- * 
+ *
  * @author Camille Letavernier
  */
 public class AnyTypeEditorFactory extends AbstractEditorFactory {
@@ -43,9 +43,10 @@ public class AnyTypeEditorFactory extends AbstractEditorFactory {
 		super(null, "AnyTypeHandler");
 	}
 
+	@Override
 	public IPageModel createIPageModel(Object pageIdentifier) {
 
-		final AnyType anyTypeModel = (AnyType)pageIdentifier;
+		final AnyType anyTypeModel = (AnyType) pageIdentifier;
 
 		return new IComponentModel() {
 
@@ -55,11 +56,12 @@ public class AnyTypeEditorFactory extends AbstractEditorFactory {
 			public void dispose() {
 				// Pass. The tab icon is a workbench-shared image
 			}
-			
+
+			@Override
 			public String getTabTitle() {
 				EClass eClass = anyType.eClass();
 				String label;
-				if(eClass == null) {
+				if (eClass == null) {
 					label = "component";
 				} else {
 					label = eClass.getName();
@@ -85,10 +87,12 @@ public class AnyTypeEditorFactory extends AbstractEditorFactory {
 				return Display.getDefault().getSystemImage(SWT.ICON_WARNING);
 			}
 
+			@Override
 			public Image getTabIcon() {
 				return PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJS_WARN_TSK);
 			}
 
+			@Override
 			public Object getRawModel() {
 				return anyType;
 			}
@@ -102,12 +106,13 @@ public class AnyTypeEditorFactory extends AbstractEditorFactory {
 				return message;
 			}
 
+			@Override
 			public Composite createPartControl(Composite parent) {
 				Composite tabComposite = new Composite(parent, SWT.NONE);
 				tabComposite.setLayout(new GridLayout(2, false));
 
 				Image componentIcon = getComponentIcon();
-				if(componentIcon != null) {
+				if (componentIcon != null) {
 					Label errorImageLabel = new Label(tabComposite, SWT.NONE);
 					errorImageLabel.setLayoutData(new GridData(SWT.BEGINNING, SWT.CENTER, false, false));
 					errorImageLabel.setImage(componentIcon);
@@ -122,6 +127,7 @@ public class AnyTypeEditorFactory extends AbstractEditorFactory {
 		};
 	}
 
+	@Override
 	public boolean isPageModelFactoryFor(Object pageIdentifier) {
 		return pageIdentifier instanceof AnyType;
 	}

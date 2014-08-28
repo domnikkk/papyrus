@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.Property;
 /**
  * This class bundles the configuration space of the action language source viewer. Instances of
  * this class are passed to the configure method of <code>SourceViewer</code>.
- * 
+ *
  * @see org.eclipse.jface.text.source.SourceViewerConfiguration
  */
 public class PropertyLabelSourceViewerConfiguration extends CompletionFilterSourceViewerConfiguration {
@@ -48,7 +48,7 @@ public class PropertyLabelSourceViewerConfiguration extends CompletionFilterSour
 
 	/**
 	 * Creates a new PropertyLabelSourceViewerConfiguration
-	 * 
+	 *
 	 * @param property
 	 *            the property to edit
 	 */
@@ -59,7 +59,7 @@ public class PropertyLabelSourceViewerConfiguration extends CompletionFilterSour
 
 	/**
 	 * Instantiates a new property label source viewer configuration.
-	 * 
+	 *
 	 * @param property
 	 *            the property
 	 * @param filter
@@ -78,13 +78,13 @@ public class PropertyLabelSourceViewerConfiguration extends CompletionFilterSour
 	}
 
 	/**
-     * 
+     *
      */
 	static class SingleTokenScanner extends BufferedRuleBasedScanner {
 
 		/**
-		 * 
-		 * 
+		 *
+		 *
 		 * @param attribute
 		 */
 		public SingleTokenScanner(TextAttribute attribute) {
@@ -135,7 +135,7 @@ public class PropertyLabelSourceViewerConfiguration extends CompletionFilterSour
 
 	/**
 	 * Returns the edited PropertyUtil
-	 * 
+	 *
 	 * @return the property to edit
 	 */
 	public Property getProperty() {
@@ -144,7 +144,7 @@ public class PropertyLabelSourceViewerConfiguration extends CompletionFilterSour
 
 	/**
 	 * Sets the property to Edit
-	 * 
+	 *
 	 * @param property
 	 *            the property to edit
 	 */

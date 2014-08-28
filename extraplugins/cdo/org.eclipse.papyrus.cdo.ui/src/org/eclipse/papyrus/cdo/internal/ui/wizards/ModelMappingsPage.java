@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -87,6 +87,7 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 		super("mappings", Messages.ModelMappingsPage_2, null, bus, MESSAGE); //$NON-NLS-1$
 	}
 
+	@Override
 	public void createControl(Composite parent) {
 		initializeDialogUnits(parent);
 
@@ -124,7 +125,7 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 		oneToOnePathsTable.setContentProvider(new OneToOneMappingContentProvider());
 		oneToOnePathsTable.setLabelProvider(new OneToOneMappingLabelProvider());
 
-		if(importConfig != null) {
+		if (importConfig != null) {
 			oneToOnePathsTable.setInput(importConfig);
 		}
 
@@ -132,8 +133,8 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(((Button)e.widget).getSelection()) {
-					if(e.widget == manyToOneRadio) {
+				if (((Button) e.widget).getSelection()) {
+					if (e.widget == manyToOneRadio) {
 						oneToOneRadio.setSelection(false);
 						oneToOnePathsTable.getControl().setEnabled(false);
 						manyToOnePathText.setEnabled(true);
@@ -143,8 +144,8 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 						oneToOnePathsTable.getControl().setEnabled(true);
 					}
 
-					if(e.widget.getData() != null) {
-						selectedMapping((IModelImportMapping)e.widget.getData());
+					if (e.widget.getData() != null) {
+						selectedMapping((IModelImportMapping) e.widget.getData());
 					}
 
 					validatePage();
@@ -156,8 +157,9 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 
 		manyToOnePathText.addModifyListener(new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
-				manyToOnePathChanged(((Text)e.widget).getText().trim());
+				manyToOnePathChanged(((Text) e.widget).getText().trim());
 			}
 		});
 
@@ -168,7 +170,7 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 
 	@Override
 	public void dispose() {
-		if(importConfig != null) {
+		if (importConfig != null) {
 			importConfig.removeModelTransferListener(getImportConfigListener());
 		}
 
@@ -187,7 +189,7 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 	protected Diagnostic doValidatePage() {
 		Diagnostic result = Diagnostic.CANCEL_INSTANCE;
 
-		if(selectedMapping != null) {
+		if (selectedMapping != null) {
 			result = selectedMapping.validate();
 		}
 
@@ -202,14 +204,14 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 	public void setConfiguration(IModelTransferConfiguration config) {
 		this.importConfig = config;
 
-		if(config != null) {
+		if (config != null) {
 			config.addModelTransferListener(getImportConfigListener());
 		}
 
 		setManyToOneMapping(IModelImportMapping.Factory.MANY_TO_ONE.create(config));
 		setOneToOneMapping(IModelImportMapping.Factory.ONE_TO_ONE.create(config));
 
-		if(oneToOnePathsTable != null) {
+		if (oneToOnePathsTable != null) {
 			oneToOnePathsTable.setInput(config);
 		}
 
@@ -217,13 +219,13 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 	}
 
 	private IModelTransferListener getImportConfigListener() {
-		if(importConfigListener == null) {
+		if (importConfigListener == null) {
 			importConfigListener = new ModelTransferListenerAdapter() {
 
 				@Override
 				public void modelsToTransferChanged(IModelTransferConfiguration configuration) {
 
-					if((oneToOnePathsTable != null) && !oneToOnePathsTable.getControl().isDisposed()) {
+					if ((oneToOnePathsTable != null) && !oneToOnePathsTable.getControl().isDisposed()) {
 
 						oneToOnePathsTable.refresh();
 					}
@@ -235,23 +237,23 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 	}
 
 	private void setManyToOneMapping(IModelImportMapping mapping) {
-		if(manyToOne != null) {
+		if (manyToOne != null) {
 			manyToOne.removeModelTransferMappingListener(getManyToOneListener());
 		}
 
 		manyToOne = mapping;
 
-		if(manyToOne != null) {
+		if (manyToOne != null) {
 			manyToOne.addModelTransferMappingListener(getManyToOneListener());
 			manyToOne.setRepository(repository);
-			if(manyToOneRadio != null) {
+			if (manyToOneRadio != null) {
 				manyToOneRadio.setData(manyToOne);
-				if(manyToOneRadio.getSelection()) {
+				if (manyToOneRadio.getSelection()) {
 					selectedMapping(manyToOne);
 				}
 
 				IModelTransferNode node = Iterables.getFirst(importConfig.getModelsToTransfer(), null);
-				if(node != null) {
+				if (node != null) {
 					updateManyToOneMapping(node);
 				}
 			}
@@ -259,7 +261,7 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 	}
 
 	private IModelTransferMappingListener getManyToOneListener() {
-		if(manyToOneListener == null) {
+		if (manyToOneListener == null) {
 			manyToOneListener = new ModelTransferMappingListenerAdapter() {
 
 				@Override
@@ -274,27 +276,27 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 
 	void updateManyToOneMapping(IModelTransferNode node) {
 		IPath mapping = manyToOne.getMapping(node);
-		if((mapping != null) && (manyToOnePathText != null)) {
+		if ((mapping != null) && (manyToOnePathText != null)) {
 			String path = mapping.toString();
-			if(!manyToOnePathText.getText().equals(path)) {
+			if (!manyToOnePathText.getText().equals(path)) {
 				manyToOnePathText.setText(path);
 			}
 		}
 	}
 
 	private void setOneToOneMapping(IModelImportMapping mapping) {
-		if(oneToOne != null) {
+		if (oneToOne != null) {
 			oneToOne.removeModelTransferMappingListener(getOneToOneListener());
 		}
 
 		oneToOne = mapping;
 
-		if(oneToOne != null) {
+		if (oneToOne != null) {
 			oneToOne.addModelTransferMappingListener(getOneToOneListener());
 			oneToOne.setRepository(repository);
-			if(oneToOneRadio != null) {
+			if (oneToOneRadio != null) {
 				oneToOneRadio.setData(oneToOne);
-				if(oneToOneRadio.getSelection()) {
+				if (oneToOneRadio.getSelection()) {
 					selectedMapping(oneToOne);
 				}
 			}
@@ -302,13 +304,13 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 	}
 
 	private IModelTransferMappingListener getOneToOneListener() {
-		if(oneToOneListener == null) {
+		if (oneToOneListener == null) {
 			oneToOneListener = new ModelTransferMappingListenerAdapter() {
 
 				@Override
 				public void modelTransferMappingChanged(IModelTransferNode node) {
 					IPath mapping = oneToOne.getMapping(node);
-					if((mapping != null) && (oneToOnePathsTable != null)) {
+					if ((mapping != null) && (oneToOnePathsTable != null)) {
 						oneToOnePathsTable.refresh();
 					}
 				}
@@ -322,10 +324,10 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 	public void setRepository(IPapyrusRepository repository) {
 		this.repository = repository;
 
-		if(manyToOne != null) {
+		if (manyToOne != null) {
 			manyToOne.setRepository(repository);
 		}
-		if(oneToOne != null) {
+		if (oneToOne != null) {
 			oneToOne.setRepository(repository);
 		}
 
@@ -345,16 +347,16 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 		boolean result = false;
 
 		IPath path = new Path(newPath);
-		if(path.isEmpty()) {
+		if (path.isEmpty()) {
 			setMessage(Messages.ModelMappingsPage_9, IMessageProvider.ERROR);
 			setPageComplete(false);
-		} else if(path.hasTrailingSeparator()) {
+		} else if (path.hasTrailingSeparator()) {
 			setMessage(Messages.ModelMappingsPage_10, IMessageProvider.ERROR);
 			setPageComplete(false);
 		} else {
 			result = true;
 
-			if((selectedMapping != null) && (node != null)) {
+			if ((selectedMapping != null) && (node != null)) {
 				selectedMapping.mapTo(node, path);
 			}
 
@@ -370,14 +372,17 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 
 	private static class OneToOneMappingContentProvider implements IStructuredContentProvider {
 
+		@Override
 		public Object[] getElements(Object inputElement) {
-			return ((IModelTransferConfiguration)inputElement).getModelsToTransfer().toArray();
+			return ((IModelTransferConfiguration) inputElement).getModelsToTransfer().toArray();
 		}
 
+		@Override
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 			// pass
 		}
 
+		@Override
 		public void dispose() {
 			// pass
 		}
@@ -386,26 +391,28 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 
 	private class OneToOneMappingLabelProvider extends ModelImportNodeLabelProvider implements ITableLabelProvider {
 
+		@Override
 		public Image getColumnImage(Object element, int columnIndex) {
 			return (columnIndex == 0) ? getImage(element) : null;
 		}
 
+		@Override
 		public String getColumnText(Object element, int columnIndex) {
 			String result = null;
 
-			switch(columnIndex) {
+			switch (columnIndex) {
 			case 0: // Model
 				result = getText(element);
 				break;
 			case 1: // Path
-				if(oneToOne != null) {
-					IPath path = oneToOne.getMapping((IModelTransferNode)element);
-					if(path != null) {
+				if (oneToOne != null) {
+					IPath path = oneToOne.getMapping((IModelTransferNode) element);
+					if (path != null) {
 						result = path.toString();
 					}
 				}
 
-				if(result == null) {
+				if (result == null) {
 					result = ""; //$NON-NLS-1$
 				}
 				break;
@@ -430,8 +437,8 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 
 		@Override
 		protected CellEditor getCellEditor(Object element) {
-			if(editor == null) {
-				editor = new TextCellEditor((Composite)getViewer().getControl());
+			if (editor == null) {
+				editor = new TextCellEditor((Composite) getViewer().getControl());
 			}
 			return editor;
 		}
@@ -443,7 +450,7 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 
 		@Override
 		protected Object getValue(Object element) {
-			IPath path = oneToOne.getMapping((IModelTransferNode)element);
+			IPath path = oneToOne.getMapping((IModelTransferNode) element);
 			return (path == null) ? "" : path.toString(); //$NON-NLS-1$
 		}
 
@@ -451,10 +458,11 @@ public class ModelMappingsPage extends ModelImportWizardPage {
 		protected void setValue(final Object element, Object value) {
 			String newPath = (value == null) ? "" : String.valueOf(value); //$NON-NLS-1$
 
-			if(!setMapping((IModelTransferNode)element, newPath)) {
+			if (!setMapping((IModelTransferNode) element, newPath)) {
 				// continue editing
 				getViewer().getControl().getDisplay().asyncExec(new Runnable() {
 
+					@Override
 					public void run() {
 						getViewer().editElement(element, columnIndex);
 					}

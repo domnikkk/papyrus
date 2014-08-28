@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,29 +15,30 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivitie
 
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.ActivityParameterNode;
 import org.eclipse.uml2.uml.Parameter;
 
 public class ActivityParameterNodeActivation extends ObjectNodeActivation {
 
+	@Override
 	public void fire(List<Token> incomingTokens) {
 		// If there are no incoming edges, this is an activation of an input
 		// activity parameter node.
 		// Get the values from the input parameter indicated by the activity
 		// parameter node and offer those values as object tokens.
-		if(this.node.getIncomings().size() == 0) {
+		if (this.node.getIncomings().size() == 0) {
 			Debug.println("[fire] Input activity parameter node " + this.node.getName() + "...");
-			Parameter parameter = ((ActivityParameterNode)(this.node)).getParameter();
+			Parameter parameter = ((ActivityParameterNode) (this.node)).getParameter();
 			ParameterValue parameterValue = this.getActivityExecution().getParameterValue(parameter);
 			// Debug.println("[fire] parameter = " + parameter.name);
-			if(parameterValue != null) {
+			if (parameterValue != null) {
 				Debug.println("[fire] Parameter has " + parameterValue.values.size() + " value(s).");
 				// List<Token> tokens = new ArrayList<Token>();
 				List<Value> values = parameterValue.values;
-				for(int i = 0; i < values.size(); i++) {
+				for (int i = 0; i < values.size(); i++) {
 					Value value = values.get(i);
 					ObjectToken token = new ObjectToken();
 					token.value = value;
@@ -58,9 +59,10 @@ public class ActivityParameterNodeActivation extends ObjectNodeActivation {
 		}
 	}
 
+	@Override
 	public void clearTokens() {
 		// Clear all held tokens only if this is an input parameter node.
-		if(this.node.getIncomings().size() == 0) {
+		if (this.node.getIncomings().size() == 0) {
 			super.clearTokens();
 		}
 	}

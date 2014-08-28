@@ -18,16 +18,16 @@ public class ElementIconUtil {
 
 	public static Image getLabelIcon(GraphicalEditPart part) {
 		EObject parserElement = part.resolveSemanticElement();
-		if(parserElement == null) {
+		if (parserElement == null) {
 			return null;
 		}
 		List<View> views = DiagramEditPartsUtil.findViews(parserElement, part.getViewer());
-		for(View view : views) {
-			if(!(view instanceof Diagram) && !(view.eContainer() instanceof View)) {
-				continue;//there's a bug in SemanticElementHelper.findSemanticElement().
+		for (View view : views) {
+			if (!(view instanceof Diagram) && !(view.eContainer() instanceof View)) {
+				continue;// there's a bug in SemanticElementHelper.findSemanticElement().
 			}
-			//if(NameLabelIconHelper.showLabelIcon(view)) {
-			if(AppearanceHelper.showElementIcon(view)) {
+			// if(NameLabelIconHelper.showLabelIcon(view)) {
+			if (AppearanceHelper.showElementIcon(view)) {
 				return UMLElementTypes.getImage(parserElement.eClass());
 			}
 		}
@@ -35,7 +35,7 @@ public class ElementIconUtil {
 	}
 
 	public static boolean isIconNotification(Notification event) {
-		if(event.getNewValue() instanceof EAnnotation && VisualInformationPapyrusConstants.DISPLAY_NAMELABELICON.equals(((EAnnotation)event.getNewValue()).getSource())) {
+		if (event.getNewValue() instanceof EAnnotation && VisualInformationPapyrusConstants.DISPLAY_NAMELABELICON.equals(((EAnnotation) event.getNewValue()).getSource())) {
 			return true;
 		}
 		return false;

@@ -25,8 +25,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
-import org.eclipse.papyrus.sysml.diagram.common.preferences.ILabelPreferenceConstants;
 import org.eclipse.papyrus.uml.diagram.common.utils.ParameterLabelUtil;
+import org.eclipse.papyrus.uml.tools.utils.ICustomAppearance;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -61,14 +61,14 @@ public class ParameterLabelParser extends NamedElementLabelParser {
 
 		Collection<String> maskValues = getMaskValues(element);
 
-		if(maskValues.isEmpty()) {
+		if (maskValues.isEmpty()) {
 			return MaskedLabel;
 		}
 
 		EObject eObject = EMFHelper.getEObject(element);
 
-		if(eObject != null && eObject instanceof Parameter) {
-			Parameter parameter = (Parameter)eObject;
+		if (eObject != null && eObject instanceof Parameter) {
+			Parameter parameter = (Parameter) eObject;
 			return ParameterLabelUtil.getPrintString(parameter, maskValues);
 		}
 
@@ -81,10 +81,13 @@ public class ParameterLabelParser extends NamedElementLabelParser {
 	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 
-		if(event instanceof Notification) {
-			Object feature = ((Notification)event).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				return UMLPackage.eINSTANCE.getTypedElement_Type().equals(feature) || UMLPackage.eINSTANCE.getParameter_Direction().equals(feature) || UMLPackage.eINSTANCE.getParameter_DefaultValue().equals(feature) || UMLPackage.eINSTANCE.getParameter_IsStream().equals(feature) || UMLPackage.eINSTANCE.getParameter_IsException().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_IsOrdered().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_IsUnique().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_LowerValue().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_UpperValue().equals(feature) || super.isAffectingEvent(event, flags);
+		if (event instanceof Notification) {
+			Object feature = ((Notification) event).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				return UMLPackage.eINSTANCE.getTypedElement_Type().equals(feature) || UMLPackage.eINSTANCE.getParameter_Direction().equals(feature) || UMLPackage.eINSTANCE.getParameter_DefaultValue().equals(feature)
+						|| UMLPackage.eINSTANCE.getParameter_IsStream().equals(feature) || UMLPackage.eINSTANCE.getParameter_IsException().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_IsOrdered().equals(feature)
+						|| UMLPackage.eINSTANCE.getMultiplicityElement_IsUnique().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_LowerValue().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_UpperValue().equals(feature)
+						|| super.isAffectingEvent(event, flags);
 			}
 		}
 
@@ -98,20 +101,20 @@ public class ParameterLabelParser extends NamedElementLabelParser {
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = new ArrayList<EObject>();
 
-		if((element != null) && (element instanceof Parameter)) {
-			Parameter semElement = (Parameter)element;
+		if ((element != null) && (element instanceof Parameter)) {
+			Parameter semElement = (Parameter) element;
 
 			semanticElementsBeingParsed.add(semElement);
-			if(semElement.getType() != null) {
+			if (semElement.getType() != null) {
 				semanticElementsBeingParsed.add(semElement.getType());
 			}
-			if(semElement.getDefaultValue() != null) {
+			if (semElement.getDefaultValue() != null) {
 				semanticElementsBeingParsed.add(semElement.getDefaultValue());
 			}
-			if(semElement.getLowerValue() != null) {
+			if (semElement.getLowerValue() != null) {
 				semanticElementsBeingParsed.add(semElement.getLowerValue());
 			}
-			if(semElement.getUpperValue() != null) {
+			if (semElement.getUpperValue() != null) {
 				semanticElementsBeingParsed.add(semElement.getUpperValue());
 			}
 		}
@@ -124,17 +127,17 @@ public class ParameterLabelParser extends NamedElementLabelParser {
 	@Override
 	public Map<String, String> getMasks() {
 		Map<String, String> masks = new HashMap<String, String>();
-		masks.put(ILabelPreferenceConstants.DISP_DIRECTION, "Direction");
-		masks.put(ILabelPreferenceConstants.DISP_NAME, "Name");
-		masks.put(ILabelPreferenceConstants.DISP_TYPE, "Type");
-		masks.put(ILabelPreferenceConstants.DISP_MULTIPLICITY, "Multiplicity");
-		masks.put(ILabelPreferenceConstants.DISP_DEFAULT_VALUE, "Default value");
-		masks.put(ILabelPreferenceConstants.DISP_MODIFIERS, "Modifiers");
+		masks.put(ICustomAppearance.DISP_DIRECTION, "Direction");
+		masks.put(ICustomAppearance.DISP_NAME, "Name");
+		masks.put(ICustomAppearance.DISP_TYPE, "Type");
+		masks.put(ICustomAppearance.DISP_MULTIPLICITY, "Multiplicity");
+		masks.put(ICustomAppearance.DISP_DEFAULT_VALUE, "Default value");
+		masks.put(ICustomAppearance.DISP_MODIFIERS, "Modifiers");
 		return masks;
 	}
 
 	@Override
 	public Collection<String> getDefaultValue(IAdaptable element) {
-		return Arrays.asList(ILabelPreferenceConstants.DISP_NAME);
+		return Arrays.asList(ICustomAppearance.DISP_NAME);
 	}
 }

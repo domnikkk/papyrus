@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,30 +25,36 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
  * Represents a descriptor for properties of type EClass
+ *
  * @author Laurent Wouters
  */
 public class EClassPropertyDescriptor extends SurrogateItemPropertyDescriptor {
 	private static final Collection<EObject> empty = new ArrayList<EObject>();
-	
+
 	public EClassPropertyDescriptor(IItemPropertyDescriptor inner) {
 		super(inner);
 	}
-	
+
 	@Override
 	public Collection<?> getChoiceOfValues(Object object) {
-		EObject current = (EObject)object;
-		while (current != null && !(current instanceof PapyrusConfiguration))
+		EObject current = (EObject) object;
+		while (current != null && !(current instanceof PapyrusConfiguration)) {
 			current = current.eContainer();
-		if (current == null)
+		}
+		if (current == null) {
 			return empty;
-		PapyrusConfiguration conf = (PapyrusConfiguration)current;
+		}
+		PapyrusConfiguration conf = (PapyrusConfiguration) current;
 		List<EClass> result = new ArrayList<EClass>();
 		EPackage p = conf.getMetamodel();
-		if (p == null)
+		if (p == null) {
 			return result;
-		for (EClassifier c : p.getEClassifiers())
-			if (c instanceof EClass)
-				result.add((EClass)c);
+		}
+		for (EClassifier c : p.getEClassifiers()) {
+			if (c instanceof EClass) {
+				result.add((EClass) c);
+			}
+		}
 		return result;
 	}
 }

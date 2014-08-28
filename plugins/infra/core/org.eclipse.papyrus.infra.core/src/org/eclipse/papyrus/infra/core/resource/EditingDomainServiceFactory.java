@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.resource;
 
@@ -9,9 +9,9 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 
 /**
  * A service factory starting the EditingDomain service.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class EditingDomainServiceFactory implements IServiceFactory {
 
@@ -23,35 +23,39 @@ public class EditingDomainServiceFactory implements IServiceFactory {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#init(org.eclipse.papyrus.infra.core.services.ServicesRegistry)
-	 * 
+	 *
 	 * @param servicesRegistry
 	 * @throws ServiceException
 	 */
+	@Override
 	public void init(ServicesRegistry servicesRegistry) throws ServiceException {
 		modelSet = servicesRegistry.getService(ModelSet.class);
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#startService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
+	@Override
 	public void startService() throws ServiceException {
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#disposeService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
+	@Override
 	public void disposeService() throws ServiceException {
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IServiceFactory#createServiceInstance()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public Object createServiceInstance() {
 		return modelSet.getTransactionalEditingDomain();
 	}

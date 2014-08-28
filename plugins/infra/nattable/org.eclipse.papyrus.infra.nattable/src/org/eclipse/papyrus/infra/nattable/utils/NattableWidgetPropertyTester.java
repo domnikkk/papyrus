@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,22 +37,23 @@ public class NattableWidgetPropertyTester extends PropertyTester {
 
 	private static final String CAN_INVERT_AXIS = "canInvertAxis";//$NON-NLS-1$
 
+	@Override
 	public boolean test(final Object receiver, final String property, final Object[] args, final Object expectedValue) {
 		final INattableModelManager manager = getNattableModelManager();
-		if(IS_NATTABLE_WIDGET.equals(property) && expectedValue instanceof Boolean) {
+		if (IS_NATTABLE_WIDGET.equals(property) && expectedValue instanceof Boolean) {
 			return expectedValue.equals(manager != null);
 		}
-		if(manager != null && expectedValue instanceof Boolean) {
-			if(HAS_FEATURE_ROW_HEADER_CONFIGURATION.equals(property)) {
+		if (manager != null && expectedValue instanceof Boolean) {
+			if (HAS_FEATURE_ROW_HEADER_CONFIGURATION.equals(property)) {
 				LabelConfigurationManagementUtils.getRowFeatureLabelConfigurationInTable(manager.getTable());
 				return expectedValue.equals(LabelConfigurationManagementUtils.hasRowFeatureLabelConfiguration(manager.getTable()));
-			} else if(HAS_FEATURE_COLUMN_HEADER_CONFIGURATION.equals(property)) {
+			} else if (HAS_FEATURE_COLUMN_HEADER_CONFIGURATION.equals(property)) {
 				return expectedValue.equals(LabelConfigurationManagementUtils.hasColumnFeatureLabelConfiguration(manager.getTable()));
-			} else if(HAS_SLAVE_COLUMNS_AXIS_PROVIDER.equals(property)) {
+			} else if (HAS_SLAVE_COLUMNS_AXIS_PROVIDER.equals(property)) {
 				return expectedValue.equals(AxisUtils.getAxisProviderUsedForColumns(manager) instanceof ISlaveAxisProvider);
-			} else if(HAS_SLAVE_ROWS_AXIS_PROVIDER.equals(property)) {
+			} else if (HAS_SLAVE_ROWS_AXIS_PROVIDER.equals(property)) {
 				return expectedValue.equals(AxisUtils.getAxisProviderUsedForRows(manager) instanceof ISlaveAxisProvider);
-			} else if(CAN_INVERT_AXIS.equals(property)) {
+			} else if (CAN_INVERT_AXIS.equals(property)) {
 				return expectedValue.equals(manager.canInvertAxis());
 			}
 		}
@@ -60,25 +61,25 @@ public class NattableWidgetPropertyTester extends PropertyTester {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the current nattable model manager or <code>null</code> if not found
 	 */
 	protected INattableModelManager getNattableModelManager() {
 		final IWorkbench workbench = PlatformUI.getWorkbench();
 		IWorkbenchPart current = null;
-		if(workbench != null) {
+		if (workbench != null) {
 			final IWorkbenchWindow activeWorkbench = workbench.getActiveWorkbenchWindow();
-			if(activeWorkbench != null) {
+			if (activeWorkbench != null) {
 				final IWorkbenchPage activePage = activeWorkbench.getActivePage();
-				if(activePage != null) {
+				if (activePage != null) {
 					current = activePage.getActivePart();
 				}
 			}
 		}
 
-		if(current != null) {
-			return (INattableModelManager)current.getAdapter(INattableModelManager.class);
+		if (current != null) {
+			return (INattableModelManager) current.getAdapter(INattableModelManager.class);
 		}
 		return null;
 	}

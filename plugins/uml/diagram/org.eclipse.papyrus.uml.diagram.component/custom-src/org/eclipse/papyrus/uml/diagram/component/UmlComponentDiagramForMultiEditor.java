@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,19 +50,19 @@ public class UmlComponentDiagramForMultiEditor extends UMLDiagramEditor {
 	private Composite splitter;
 
 	private Image titleImage;
-	
+
 	/**
 	 * Constructor for SashSystem v2. Context and required objects are retrieved from the
 	 * ServiceRegistry.
-	 * 
+	 *
 	 * @param servicesRegistry
-	 *        the services registry
+	 *            the services registry
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 * @throws BackboneException
-	 *         the backbone exception
+	 *             the backbone exception
 	 * @throws ServiceException
-	 *         the service exception
+	 *             the service exception
 	 */
 	public UmlComponentDiagramForMultiEditor(ServicesRegistry servicesRegistry, Diagram diagram) throws BackboneException, ServiceException {
 		super(servicesRegistry, diagram);
@@ -71,15 +71,14 @@ public class UmlComponentDiagramForMultiEditor extends UMLDiagramEditor {
 
 	/**
 	 * Inits the.
-	 * 
+	 *
 	 * @param site
-	 *        the site
+	 *            the site
 	 * @param input
-	 *        the input
+	 *            the input
 	 * @throws PartInitException
-	 *         the part init exception
-	 * @see org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor#init(org.eclipse.ui.IEditorSite,
-	 *      org.eclipse.ui.IEditorInput)
+	 *             the part init exception
+	 * @see org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor#init(org.eclipse.ui.IEditorSite, org.eclipse.ui.IEditorInput)
 	 */
 
 	@Override
@@ -92,20 +91,20 @@ public class UmlComponentDiagramForMultiEditor extends UMLDiagramEditor {
 
 	@Override
 	public void dispose() {
-		if(titleImage != null) {
+		if (titleImage != null) {
 			titleImage.dispose();
 			titleImage = null;
 		}
-		
+
 		super.dispose();
 	}
 
 
 	/**
 	 * Sets the input.
-	 * 
+	 *
 	 * @param input
-	 *        the new input
+	 *            the new input
 	 * @see org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor#setInput(org.eclipse.ui.IEditorInput)
 	 */
 
@@ -127,9 +126,9 @@ public class UmlComponentDiagramForMultiEditor extends UMLDiagramEditor {
 
 	/**
 	 * Creates the graphical viewer.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @see org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor#createGraphicalViewer(org.eclipse.swt.widgets.Composite)
 	 */
 
@@ -142,7 +141,7 @@ public class UmlComponentDiagramForMultiEditor extends UMLDiagramEditor {
 
 	/**
 	 * Sets the focus.
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditorWithFlyOutPalette#setFocus()
 	 */
 
@@ -154,7 +153,7 @@ public class UmlComponentDiagramForMultiEditor extends UMLDiagramEditor {
 
 	/**
 	 * Gets the editing domain id.
-	 * 
+	 *
 	 * @return the editing domain id
 	 * @see org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor#getEditingDomainID()
 	 */

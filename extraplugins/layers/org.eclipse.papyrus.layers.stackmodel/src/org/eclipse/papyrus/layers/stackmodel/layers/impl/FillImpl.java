@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -33,6 +33,7 @@ public class FillImpl extends TypeImpl implements Fill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	protected FillImpl() {
@@ -43,8 +44,10 @@ public class FillImpl extends TypeImpl implements Fill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public TypeInstance createInstance() {
 		FillInstance instance = LayersFactory.eINSTANCE.createFillInstance();
 		ColorInstance color = LayersFactory.eINSTANCE.createColorInstance();
@@ -55,6 +58,7 @@ public class FillImpl extends TypeImpl implements Fill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -62,4 +66,4 @@ public class FillImpl extends TypeImpl implements Fill {
 		return LayersPackage.Literals.FILL;
 	}
 
-} //FillImpl
+} // FillImpl

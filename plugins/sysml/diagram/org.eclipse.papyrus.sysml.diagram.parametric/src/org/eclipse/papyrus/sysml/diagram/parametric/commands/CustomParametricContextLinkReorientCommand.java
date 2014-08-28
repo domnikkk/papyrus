@@ -21,7 +21,6 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
-import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.service.types.utils.NamedElementHelper;
@@ -33,6 +32,7 @@ import org.eclipse.uml2.uml.Type;
 
 /**
  * A context link must have a Constraint as source and a Namespace as target
+ *
  * @See ContextLinkReorientCommand
  *
  */
@@ -46,7 +46,7 @@ public class CustomParametricContextLinkReorientCommand extends EditElementComma
 	protected EObject newSource;
 	protected EObject oldTarget;
 	protected EObject newTarget;
-	
+
 	public CustomParametricContextLinkReorientCommand(
 			ReorientReferenceRelationshipRequestWithGraphical request) {
 		super(request.getLabel(), null, request);
@@ -56,9 +56,10 @@ public class CustomParametricContextLinkReorientCommand extends EditElementComma
 		oldSource = reorientDirection == ReorientRequest.REORIENT_SOURCE ? request.getOldRelationshipEnd() : request.getReferenceOwner();
 		newSource = reorientDirection == ReorientRequest.REORIENT_SOURCE ? request.getNewRelationshipEnd() : request.getReferenceOwner();
 		oldTarget = reorientDirection == ReorientRequest.REORIENT_SOURCE ? request.getReferenceOwner() : request.getOldRelationshipEnd();
-		newTarget = reorientDirection == ReorientRequest.REORIENT_SOURCE ? request.getReferenceOwner() : request.getNewRelationshipEnd();		
+		newTarget = reorientDirection == ReorientRequest.REORIENT_SOURCE ? request.getReferenceOwner() : request.getNewRelationshipEnd();
 	}
 
+	@Override
 	public boolean canExecute() {
 		return getNewSource() instanceof Constraint && resolveNamespace(getNewTarget()) instanceof Namespace;
 	}
@@ -68,12 +69,12 @@ public class CustomParametricContextLinkReorientCommand extends EditElementComma
 	 */
 	protected Namespace resolveNamespace(Element element) {
 		if (element instanceof Namespace) {
-			return (Namespace)element;
+			return (Namespace) element;
 		}
 		if (element instanceof Property) {
 			Type type = ((Property) element).getType();
 			if (type instanceof Namespace) {
-				return (Namespace)type;
+				return (Namespace) type;
 			}
 		}
 		return null;
@@ -81,13 +82,13 @@ public class CustomParametricContextLinkReorientCommand extends EditElementComma
 
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -105,9 +106,9 @@ public class CustomParametricContextLinkReorientCommand extends EditElementComma
 		Namespace context = resolveNamespace(getNewTarget());
 		// Check name
 		String defaultNameWithIncrementFromBase = NamedElementHelper.getDefaultNameWithIncrementFromBase(Constraint.class.getSimpleName(), context.getOwnedRules(), getNewSource());
-		((Constraint)getNewSource()).setName(defaultNameWithIncrementFromBase);
+		((Constraint) getNewSource()).setName(defaultNameWithIncrementFromBase);
 		// set the context
-		((Constraint)getNewSource()).setContext(resolveNamespace(getNewTarget()));
+		((Constraint) getNewSource()).setContext(resolveNamespace(getNewTarget()));
 
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
@@ -116,11 +117,11 @@ public class CustomParametricContextLinkReorientCommand extends EditElementComma
 		if (editPart != null) {
 			EObject semanticElement = ViewUtil.resolveSemanticElement((View) editPart.getModel());
 			if (semanticElement != null) {
-				Namespace resolvedNamespace = resolveNamespace((Element)semanticElement);
+				Namespace resolvedNamespace = resolveNamespace((Element) semanticElement);
 				if (resolvedNamespace instanceof Namespace) {
 					return resolvedNamespace;
 				}
-				return getNearestNamespace(editPart.getParent());				
+				return getNearestNamespace(editPart.getParent());
 			}
 		}
 		return null;
@@ -134,25 +135,25 @@ public class CustomParametricContextLinkReorientCommand extends EditElementComma
 		Namespace context = resolveNamespace(getNewTarget());
 		// Check name
 		String defaultNameWithIncrementFromBase = NamedElementHelper.getDefaultNameWithIncrementFromBase(Constraint.class.getSimpleName(), context.getOwnedRules(), getNewSource());
-		((Constraint)getNewSource()).setName(defaultNameWithIncrementFromBase);
+		((Constraint) getNewSource()).setName(defaultNameWithIncrementFromBase);
 		// Set the context
-		((Constraint)getNewSource()).setContext(context);
+		((Constraint) getNewSource()).setContext(context);
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
 	protected Constraint getOldSource() {
-		return (Constraint)oldSource;
+		return (Constraint) oldSource;
 	}
 
 	protected Element getNewSource() {
-		return (Element)newSource;
+		return (Element) newSource;
 	}
 
 	protected Element getOldTarget() {
-		return (Element)oldTarget;
+		return (Element) oldTarget;
 	}
 
 	protected Element getNewTarget() {
-		return (Element)newTarget;
+		return (Element) newTarget;
 	}
 }

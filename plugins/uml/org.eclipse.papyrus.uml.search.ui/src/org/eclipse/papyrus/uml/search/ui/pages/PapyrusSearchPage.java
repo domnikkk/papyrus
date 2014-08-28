@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -61,6 +61,7 @@ import org.eclipse.ocl.examples.pivot.utilities.BaseResource;
 import org.eclipse.ocl.examples.pivot.utilities.PivotUtil;
 import org.eclipse.ocl.examples.xtext.base.utilities.CS2PivotResourceAdapter;
 import org.eclipse.ocl.examples.xtext.console.xtfo.EmbeddedXtextEditor;
+import org.eclipse.ocl.examples.xtext.essentialocl.ui.internal.EssentialOCLActivator;
 import org.eclipse.ocl.examples.xtext.essentialocl.ui.model.BaseDocument;
 import org.eclipse.ocl.examples.xtext.essentialocl.utilities.EssentialOCLCSResource;
 import org.eclipse.ocl.examples.xtext.essentialocl.utilities.EssentialOCLPlugin;
@@ -135,9 +136,9 @@ import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import com.google.inject.Injector;
 
 /**
- * 
+ *
  * Papyrus specific search page
- * 
+ *
  */
 public class PapyrusSearchPage extends DialogPage implements ISearchPage, IReplacePage, MetaModelManagerListener {
 
@@ -277,14 +278,15 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 		searchKind.select(SIMPLE_SEARCH);
 		searchKind.addSelectionListener(new SelectionAdapter() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
-				for(Control childControl : advancedSearchComposite.getChildren()) {
+				for (Control childControl : advancedSearchComposite.getChildren()) {
 					childControl.dispose();
 				}
 
-				if(searchKind.getSelectionIndex() == ADVANCED_SEARCH) {
+				if (searchKind.getSelectionIndex() == ADVANCED_SEARCH) {
 					participantsList.clear();
-						createResultList();
+					createResultList();
 
 					createAdvancedSearch();
 				} else {
@@ -295,7 +297,7 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 		});
 
 		advancedSearchComposite = new Composite(groupComposite, SWT.NONE);
-		//		gd_advancedSearchComposite.widthHint = 479;
+		// gd_advancedSearchComposite.widthHint = 479;
 		advancedSearchComposite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1));
 		advancedSearchComposite.setLayout(new GridLayout(2, false));
 
@@ -311,14 +313,14 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 			public void run(IProgressMonitor thePM) throws InterruptedException {
 
-				//UML metaclasses
-				for(EClassifier eClassifier : UMLPackage.eINSTANCE.getEClassifiers()) {
-					if(eClassifier instanceof EClass) {
+				// UML metaclasses
+				for (EClassifier eClassifier : UMLPackage.eINSTANCE.getEClassifiers()) {
+					if (eClassifier instanceof EClass) {
 						ParticipantTypeElement parentElement = new ParticipantTypeElement(eClassifier);
-						if(parentElement.getElement() instanceof EClass) {
+						if (parentElement.getElement() instanceof EClass) {
 							List<ParticipantTypeAttribute> attributeList = new ArrayList<ParticipantTypeAttribute>();
-							for(EObject eAttribute : ((EClass)(parentElement).getElement()).getEAllAttributes()) {
-								ParticipantTypeAttribute attribute = new ParticipantTypeAttribute(eAttribute, ((ParticipantTypeElement)parentElement));
+							for (EObject eAttribute : ((EClass) (parentElement).getElement()).getEAllAttributes()) {
+								ParticipantTypeAttribute attribute = new ParticipantTypeAttribute(eAttribute, (parentElement));
 								attributeList.add(attribute);
 
 
@@ -329,16 +331,17 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 				}
 
 
-				//Find available stereotypes
+				// Find available stereotypes
 				availableStereotypes = StereotypeCollector.getInstance().computeAvailableStereotypes(container);
-				for(Stereotype stereotype : availableStereotypes) {
+				for (Stereotype stereotype : availableStereotypes) {
 					ParticipantTypeElement parentElement = new ParticipantTypeElement(stereotype);
 					List<ParticipantTypeAttribute> attributeList = new ArrayList<ParticipantTypeAttribute>();
-					for(Property property : ((Stereotype)((ParticipantTypeElement)parentElement).getElement()).getAllAttributes()) {
-						if(!property.getName().startsWith("base_")) { //$NON-NLS-1$
-							if(property.getType() instanceof Element) {
-								if(UMLUtil.isBoolean(property.getType()) || UMLUtil.isString(property.getType()) || UMLUtil.isInteger(property.getType()) || UMLUtil.isReal(property.getType()) || UMLUtil.isUnlimitedNatural(property.getType()) || property.getType() instanceof Enumeration) {
-									ParticipantTypeAttribute attribute = new ParticipantTypeAttribute(property, (ParticipantTypeElement)parentElement);
+					for (Property property : ((Stereotype) parentElement.getElement()).getAllAttributes()) {
+						if (!property.getName().startsWith("base_")) { //$NON-NLS-1$
+							if (property.getType() instanceof Element) {
+								if (UMLUtil.isBoolean(property.getType()) || UMLUtil.isString(property.getType()) || UMLUtil.isInteger(property.getType()) || UMLUtil.isReal(property.getType()) || UMLUtil.isUnlimitedNatural(property.getType())
+										|| property.getType() instanceof Enumeration) {
+									ParticipantTypeAttribute attribute = new ParticipantTypeAttribute(property, parentElement);
 									attributeList.add(attribute);
 								}
 
@@ -377,7 +380,7 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 		chechboxTreeViewerGridData.heightHint = 150;
 		participantTypesTree.setLayoutData(chechboxTreeViewerGridData);
 
-		participantTypesTreeViewer = (CheckboxTreeViewer)participantTypesTree.getViewer();
+		participantTypesTreeViewer = (CheckboxTreeViewer) participantTypesTree.getViewer();
 		participantTypesTreeViewer.setContentProvider(new ParticipantTypeContentProvider());
 		participantTypesTreeViewer.setLabelProvider(new ParticipantTypeLabelProvider());
 		participantTypesTreeViewer.setSorter(new ViewerSorter());
@@ -388,9 +391,9 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 			}
 
 			public boolean isChecked(Object element) {
-				if(element instanceof ParticipantTypeElement) {
+				if (element instanceof ParticipantTypeElement) {
 
-					return ((ParticipantTypeElement)element).isChecked();
+					return ((ParticipantTypeElement) element).isChecked();
 
 				}
 				return false;
@@ -408,27 +411,27 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 			@Override
 			public void mouseUp(MouseEvent e) {
 				ISelection selection = participantTypesTreeViewer.getSelection();
-				if(selection instanceof IStructuredSelection) {
-					Object selectedElement = ((IStructuredSelection)selection).getFirstElement();
+				if (selection instanceof IStructuredSelection) {
+					Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
 
-					if(selectedElement instanceof ParticipantTypeElement) {
+					if (selectedElement instanceof ParticipantTypeElement) {
 						List<ParticipantTypeAttribute> attributeParentList = new ArrayList<ParticipantTypeAttribute>();
 
-						for(Object attribute : participantsList.get(selectedElement)) {
-							if(attribute instanceof ParticipantTypeAttribute) {
-								if(((ParticipantTypeAttribute)attribute).isChecked()) {
-									attributeParentList.add(((ParticipantTypeAttribute)attribute));
+						for (Object attribute : participantsList.get(selectedElement)) {
+							if (attribute instanceof ParticipantTypeAttribute) {
+								if (((ParticipantTypeAttribute) attribute).isChecked()) {
+									attributeParentList.add(((ParticipantTypeAttribute) attribute));
 								}
 
 							}
 						}
-						if(((ParticipantTypeElement)selectedElement).getElement() instanceof EClass) {
+						if (((ParticipantTypeElement) selectedElement).getElement() instanceof EClass) {
 
-							selectAllSubUML((ParticipantTypeElement)selectedElement, attributeParentList);
+							selectAllSubUML((ParticipantTypeElement) selectedElement, attributeParentList);
 
-						} else if(((ParticipantTypeElement)selectedElement).getElement() instanceof Stereotype) {
+						} else if (((ParticipantTypeElement) selectedElement).getElement() instanceof Stereotype) {
 
-							selectAllSubSter((ParticipantTypeElement)selectedElement, attributeParentList);
+							selectAllSubSter((ParticipantTypeElement) selectedElement, attributeParentList);
 
 						}
 					}
@@ -446,11 +449,11 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 			@Override
 			public void mouseUp(MouseEvent e) {
-				for(ParticipantTypeElement element : participantsList.keySet()) {
-					if(!element.isChecked()) {
+				for (ParticipantTypeElement element : participantsList.keySet()) {
+					if (!element.isChecked()) {
 						element.setChecked(true);
 
-						for(ParticipantTypeAttribute attribute : participantsList.get(element)) {
+						for (ParticipantTypeAttribute attribute : participantsList.get(element)) {
 							attribute.setChecked(true);
 
 						}
@@ -468,11 +471,11 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 			@Override
 			public void mouseUp(MouseEvent e) {
-				for(ParticipantTypeElement element : participantsList.keySet()) {
-					if(element.isChecked()) {
+				for (ParticipantTypeElement element : participantsList.keySet()) {
+					if (element.isChecked()) {
 						element.setChecked(false);
 
-						for(ParticipantTypeAttribute attribute : participantsList.get(element)) {
+						for (ParticipantTypeAttribute attribute : participantsList.get(element)) {
 							attribute.setChecked(false);
 
 
@@ -501,40 +504,40 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 		participantTypesTreeViewer.setInput(participantsList);
 
-		//		participantTypesTreeViewer.setAllChecked(true);
-		((ICheckable)participantTypesTreeViewer).addCheckStateListener(new ICheckStateListener() {
+		// participantTypesTreeViewer.setAllChecked(true);
+		((ICheckable) participantTypesTreeViewer).addCheckStateListener(new ICheckStateListener() {
 
 
 			public void checkStateChanged(CheckStateChangedEvent event) {
-				if(event.getElement() instanceof ParticipantTypeElement) {
+				if (event.getElement() instanceof ParticipantTypeElement) {
 
 
 					// If the item is checked . . .
-					if(event.getChecked()) {
+					if (event.getChecked()) {
 						Object selectedElement = event.getElement();
 
-						((ParticipantTypeElement)selectedElement).setChecked(true);
+						((ParticipantTypeElement) selectedElement).setChecked(true);
 						participantTypesTreeViewer.refresh(selectedElement);
 
-						if(selectedElement instanceof ParticipantTypeAttribute) {
-							ParticipantTypeElement parent = ((ParticipantTypeAttribute)selectedElement).getParent();
-							if(parent != null) {
-								//								participantTypesTreeViewer.setChecked(parent, true);
-								((ParticipantTypeElement)parent).setChecked(true);
+						if (selectedElement instanceof ParticipantTypeAttribute) {
+							ParticipantTypeElement parent = ((ParticipantTypeAttribute) selectedElement).getParent();
+							if (parent != null) {
+								// participantTypesTreeViewer.setChecked(parent, true);
+								parent.setChecked(true);
 								participantTypesTreeViewer.refresh(parent);
 							}
 						}
 					} else {
 						Object selectedElement = event.getElement();
-						((ParticipantTypeElement)selectedElement).setChecked(false);
+						((ParticipantTypeElement) selectedElement).setChecked(false);
 						participantTypesTreeViewer.refresh(selectedElement);
 
-						if(((ParticipantTypeElement)selectedElement).getElement() instanceof Stereotype || ((ParticipantTypeElement)selectedElement).getElement() instanceof EClassImpl) {
-							for(Object attribute : participantTypesTreeViewer.getCheckedElements()) {
-								if(attribute instanceof ParticipantTypeAttribute) {
-									if(((ParticipantTypeAttribute)attribute).getParent().equals(selectedElement)) {
-										//										participantTypesTreeViewer.setChecked(attribute, false);
-										((ParticipantTypeElement)attribute).setChecked(false);
+						if (((ParticipantTypeElement) selectedElement).getElement() instanceof Stereotype || ((ParticipantTypeElement) selectedElement).getElement() instanceof EClassImpl) {
+							for (Object attribute : participantTypesTreeViewer.getCheckedElements()) {
+								if (attribute instanceof ParticipantTypeAttribute) {
+									if (((ParticipantTypeAttribute) attribute).getParent().equals(selectedElement)) {
+										// participantTypesTreeViewer.setChecked(attribute, false);
+										((ParticipantTypeElement) attribute).setChecked(false);
 										participantTypesTreeViewer.refresh(attribute);
 									}
 								}
@@ -558,9 +561,9 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 		IRunnableWithProgress computeAvailableTypes = new IRunnableWithProgress() {
 
 			public void run(IProgressMonitor thePM) throws InterruptedException {
-				for(Object element : participantsList.keySet()) {
-					if(element instanceof ParticipantTypeElement) {
-						checkAllSubSter((ParticipantTypeElement)element, elementParent, attributeParentList);
+				for (Object element : participantsList.keySet()) {
+					if (element instanceof ParticipantTypeElement) {
+						checkAllSubSter((ParticipantTypeElement) element, elementParent, attributeParentList);
 
 					}
 				}
@@ -583,28 +586,28 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 	}
 
 	protected void checkAllSubSter(ParticipantTypeElement element, ParticipantTypeElement elementParent, List<ParticipantTypeAttribute> attributeParentList) {
-						if(((ParticipantTypeElement)element).getElement() instanceof Stereotype) {
-							List<Class> superTypes = ((Class)((ParticipantTypeElement)element).getElement()).getSuperClasses();
+		if (element.getElement() instanceof Stereotype) {
+			List<Class> superTypes = ((Class) element.getElement()).getSuperClasses();
 
-							if(superTypes.contains(elementParent.getElement())) {
-								((ParticipantTypeElement)element).setChecked(true);
-
-
-								//Proceed with attributes 
-								for(ParticipantTypeAttribute attributeParent : attributeParentList) {
-									for(ParticipantTypeAttribute attributeToEvaluate : participantsList.get(element)) {
-										if(attributeParent.getElement() == attributeToEvaluate.getElement()) {
-
-											attributeToEvaluate.setChecked(true);
+			if (superTypes.contains(elementParent.getElement())) {
+				element.setChecked(true);
 
 
-										}
+				// Proceed with attributes
+				for (ParticipantTypeAttribute attributeParent : attributeParentList) {
+					for (ParticipantTypeAttribute attributeToEvaluate : participantsList.get(element)) {
+						if (attributeParent.getElement() == attributeToEvaluate.getElement()) {
 
-									}
-								}
-							}
+							attributeToEvaluate.setChecked(true);
+
+
 						}
+
 					}
+				}
+			}
+		}
+	}
 
 	protected void selectAllSubUML(final ParticipantTypeElement elementParent, final List<ParticipantTypeAttribute> attributeParentList) {
 
@@ -612,11 +615,11 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 		IRunnableWithProgress computeAvailableTypes = new IRunnableWithProgress() {
 
 			public void run(IProgressMonitor thePM) throws InterruptedException {
-				for(Object element : participantsList.keySet()) {
-					if(element instanceof ParticipantTypeElement) {
-						checkAllSubUML((ParticipantTypeElement)element, elementParent, attributeParentList);
+				for (Object element : participantsList.keySet()) {
+					if (element instanceof ParticipantTypeElement) {
+						checkAllSubUML((ParticipantTypeElement) element, elementParent, attributeParentList);
 
-			}
+					}
 				}
 			}
 
@@ -636,28 +639,28 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 
 	protected void checkAllSubUML(ParticipantTypeElement element, ParticipantTypeElement elementParent, List<ParticipantTypeAttribute> attributeParentList) {
-						if(((ParticipantTypeElement)element).getElement() instanceof EClass) {
-							List<EClass> superTypes = ((EClass)((ParticipantTypeElement)element).getElement()).getEAllSuperTypes();
+		if (element.getElement() instanceof EClass) {
+			List<EClass> superTypes = ((EClass) element.getElement()).getEAllSuperTypes();
 
-							if(superTypes.contains(elementParent.getElement())) {
-								//					participantTypesTreeViewer.setChecked(element, true);
-								((ParticipantTypeElement)element).setChecked(true);
-
-
-								//Proceed with attributes 
-								for(ParticipantTypeAttribute attributeParent : attributeParentList) {
-									for(ParticipantTypeAttribute attributeToEvaluate : participantsList.get(element)) {
-										if(attributeParent.getElement() == attributeToEvaluate.getElement()) {
-
-											attributeToEvaluate.setChecked(true);
+			if (superTypes.contains(elementParent.getElement())) {
+				// participantTypesTreeViewer.setChecked(element, true);
+				element.setChecked(true);
 
 
-										}
+				// Proceed with attributes
+				for (ParticipantTypeAttribute attributeParent : attributeParentList) {
+					for (ParticipantTypeAttribute attributeToEvaluate : participantsList.get(element)) {
+						if (attributeParent.getElement() == attributeToEvaluate.getElement()) {
 
-									}
-								}
-							}
+							attributeToEvaluate.setChecked(true);
+
+
 						}
+
+					}
+				}
+			}
+		}
 
 	}
 
@@ -683,10 +686,10 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 
 	public Object[] getMetaClassesList() {
-		Set<EObject> umlMetaClasses= new HashSet<EObject>();
+		Set<EObject> umlMetaClasses = new HashSet<EObject>();
 
-		for(EClassifier eClassifier : UMLPackage.eINSTANCE.getEClassifiers()) {
-			if(eClassifier instanceof EClass) {
+		for (EClassifier eClassifier : UMLPackage.eINSTANCE.getEClassifiers()) {
+			if (eClassifier instanceof EClass) {
 				umlMetaClasses.add(eClassifier);
 			}
 		}
@@ -720,10 +723,10 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 				ScopeEntry currentScope = getCurrentScopeEntry();
 
-				if(currentScope != null) {
+				if (currentScope != null) {
 
 					try {
-						((UmlModel)currentScope.getModelSet().getModel(UmlModel.MODEL_ID)).lookupRoot();
+						((UmlModel) currentScope.getModelSet().getModel(UmlModel.MODEL_ID)).lookupRoot();
 
 						ElementTreeSelectionDialog dialog = new ElementTreeSelectionDialog(Display.getCurrent().getActiveShell(), labelProvider, new OCLContextContentProvider());
 						dialog.setTitle(Messages.PapyrusSearchPage_19);
@@ -733,12 +736,12 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 						dialog.open();
 						Object selection = dialog.getFirstResult();
 
-						if(selection instanceof EObject) {
+						if (selection instanceof EObject) {
 
 							refreshSelection(selection);
 
-							if(contextObject instanceof NamedElement) {
-								oclContext.setText(((NamedElement)contextObject).getQualifiedName());
+							if (contextObject instanceof NamedElement) {
+								oclContext.setText(((NamedElement) contextObject).getQualifiedName());
 							} else {
 								oclContext.setText(labelProvider.getText(contextObject));
 							}
@@ -754,7 +757,7 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 		});
 		btnSelectContext.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false, 1, 1));
 
-		Injector injector = Activator.getInstance().getInjector(EssentialOCLPlugin.LANGUAGE_ID);
+		Injector injector = EssentialOCLActivator.getInstance().getInjector(EssentialOCLPlugin.LANGUAGE_ID);
 		Composite editorComposite = client;
 		oclEditor = new EmbeddedXtextEditor(editorComposite, injector, SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL);
 
@@ -762,8 +765,8 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 			public void verifyKey(VerifyEvent e) {
 				// System.out.println("verifyKey: " + e.keyCode);
-				if(e.keyCode == SWT.KEYPAD_CR || e.keyCode == SWT.CR) {
-					if((e.stateMask & (SWT.CTRL | SWT.SHIFT)) == 0) {
+				if (e.keyCode == SWT.KEYPAD_CR || e.keyCode == SWT.CR) {
+					if ((e.stateMask & (SWT.CTRL | SWT.SHIFT)) == 0) {
 						e.doit = false;
 					}
 				}
@@ -778,15 +781,15 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 	}
 
 	protected ScopeEntry getCurrentScopeEntry() {
-		if(container.getSelectedScope() == ISearchPageContainer.SELECTION_SCOPE) {
+		if (container.getSelectedScope() == ISearchPageContainer.SELECTION_SCOPE) {
 			Collection<URI> scope = ScopeCollector.getInstance().computeSearchScope(container);
 
 			// this is only used for OCL queries, which currently assume workspace-like availability of the model content
 			Collection<ScopeEntry> scopeEntries = WorkspaceQueryProvider.createScopeEntries(scope);
 
-			if(scopeEntries.size() == 1) {
+			if (scopeEntries.size() == 1) {
 				Object[] entries = scopeEntries.toArray();
-				ScopeEntry selectedResource = (ScopeEntry)entries[0];
+				ScopeEntry selectedResource = (ScopeEntry) entries[0];
 
 				return selectedResource;
 			}
@@ -817,30 +820,31 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 		queryKind.addSelectionListener(new SelectionAdapter() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
-				for(Control childControl : queryComposite.getChildren()) {
+				for (Control childControl : queryComposite.getChildren()) {
 					childControl.dispose();
 				}
 
-				if(queryKind.getSelectionIndex() == TEXT_QUERY_KIND) {
+				if (queryKind.getSelectionIndex() == TEXT_QUERY_KIND) {
 					createSimpleSearchQueryField();
 
 
 
 
 				} else {
-					if(container.getSelectedScope() == ISearchPageContainer.SELECTION_SCOPE) {
+					if (container.getSelectedScope() == ISearchPageContainer.SELECTION_SCOPE) {
 
 						ScopeEntry currentScope = getCurrentScopeEntry();
-						if(currentScope != null) {
-							if(currentScope.getModelSet() != null) {
+						if (currentScope != null) {
+							if (currentScope.getModelSet() != null) {
 
 								try {
-									EObject root = ((UmlModel)currentScope.getModelSet().getModel(UmlModel.MODEL_ID)).lookupRoot();
+									EObject root = ((UmlModel) currentScope.getModelSet().getModel(UmlModel.MODEL_ID)).lookupRoot();
 									createOCLSearchQueryField(root);
 
-									if(contextObject instanceof NamedElement) {
-										oclContext.setText(((NamedElement)contextObject).getQualifiedName());
+									if (contextObject instanceof NamedElement) {
+										oclContext.setText(((NamedElement) contextObject).getQualifiedName());
 									} else {
 										LabelProviderService labelProviderService = new LabelProviderServiceImpl();
 										ILabelProvider labelProvider = labelProviderService.getLabelProvider();
@@ -881,7 +885,7 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 	}
 
 	public boolean getSearchAllStringAttributes() {
-		if(btnSearchAllStringAttributes != null) {
+		if (btnSearchAllStringAttributes != null) {
 			return btnSearchAllStringAttributes.getSelection();
 		} else {
 			return false;
@@ -890,7 +894,7 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 	/**
 	 * Validate syntax of the regular expression of the search query text.
-	 * 
+	 *
 	 * @return true, if successful
 	 */
 	private boolean validateRegex() {
@@ -910,42 +914,42 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 	}
 
 	protected void refreshSelection(final Object selected) {
-		final BaseDocument editorDocument = (BaseDocument)oclEditor.getDocument();
+		final BaseDocument editorDocument = (BaseDocument) oclEditor.getDocument();
 		editorDocument.modify(new IUnitOfWork<Object, XtextResource>() {
 
 			public Value exec(XtextResource resource) throws Exception {
 				Object selectedObject = selected;
-				if(selectedObject instanceof IOutlineNode) {
-					if(selectedObject instanceof EObjectNode) {
-						EObjectNode selectedObjectNode = (EObjectNode)selectedObject;
+				if (selectedObject instanceof IOutlineNode) {
+					if (selectedObject instanceof EObjectNode) {
+						EObjectNode selectedObjectNode = (EObjectNode) selectedObject;
 						selectedObjectNode.getEObjectURI();
 						contextObject = null; // FIXME
 												// metaModelManager.loadResource(eObjectURI,
 												// null, null);
-					} else if(selectedObject instanceof EStructuralFeatureNode) {
+					} else if (selectedObject instanceof EStructuralFeatureNode) {
 						contextObject = null;
 					} else {
 						contextObject = null;
 					}
 				} else {
-					if(selectedObject instanceof IAdaptable) {
-						selectedObject = ((IAdaptable)selectedObject).getAdapter(EObject.class);
+					if (selectedObject instanceof IAdaptable) {
+						selectedObject = ((IAdaptable) selectedObject).getAdapter(EObject.class);
 					}
-					if(selectedObject instanceof EObject) {
-						contextObject = (EObject)selectedObject;
+					if (selectedObject instanceof EObject) {
+						contextObject = (EObject) selectedObject;
 					} else {
 						contextObject = null;
 					}
 				}
 				MetaModelManager metaModelManager = getMetaModelManager(contextObject);
 				parserContext = new EObjectContext(metaModelManager, null, contextObject);
-				EssentialOCLCSResource csResource = (EssentialOCLCSResource)resource;
-				if(csResource != null) {
-					if(contextObject != null) {
+				EssentialOCLCSResource csResource = (EssentialOCLCSResource) resource;
+				if (csResource != null) {
+					if (contextObject != null) {
 						CS2PivotResourceAdapter.getAdapter(csResource, metaModelManager);
 					}
 					ResourceSet resourceSet = oclEditor.getResourceSet();
-					if(resourceSet != null) {
+					if (resourceSet != null) {
 						MetaModelManagerResourceSetAdapter.getAdapter(resourceSet, metaModelManager);
 					}
 					csResource.setParserContext(parserContext);
@@ -960,7 +964,7 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 	private Collection<ScopeEntry> createScopeEntries(Collection<URI> scope) {
 		Collection<ScopeEntry> results = new HashSet<ScopeEntry>();
 
-		for(URI resource : scope) {
+		for (URI resource : scope) {
 
 			ScopeEntry scopeEntry = new ScopeEntry(resource);
 
@@ -970,15 +974,15 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 		return results;
 	}
-	
+
 	private List<ParticipantTypeElement> getParticipantsToEvaluate(HashMap<ParticipantTypeElement, List<ParticipantTypeAttribute>> participantsList) {
 		List<ParticipantTypeElement> participantsToEvaluate = new ArrayList<ParticipantTypeElement>();
 
-		for(ParticipantTypeElement element : participantsList.keySet()) {
-			if(element.isChecked()) {
+		for (ParticipantTypeElement element : participantsList.keySet()) {
+			if (element.isChecked()) {
 				participantsToEvaluate.add(element);
-				for(ParticipantTypeAttribute attributesToEvaluate : participantsList.get(element)) {
-					if(attributesToEvaluate.isChecked()) {
+				for (ParticipantTypeAttribute attributesToEvaluate : participantsList.get(element)) {
+					if (attributesToEvaluate.isChecked()) {
 						participantsToEvaluate.add(attributesToEvaluate);
 					}
 				}
@@ -986,15 +990,15 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 		}
 		return participantsToEvaluate;
 	}
-	
+
 	public boolean performAction() {
 
-		if(queryKind.getSelectionIndex() == TEXT_QUERY_KIND) {
-			if(validateRegex()) {
+		if (queryKind.getSelectionIndex() == TEXT_QUERY_KIND) {
+			if (validateRegex()) {
 				Collection<URI> scope = ScopeCollector.getInstance().computeSearchScope(container);
 				ISearchQuery query;
-				if(searchKind.getSelectionIndex() == SIMPLE_SEARCH) {
-					if(searchQueryText.getText().length() == 0) {
+				if (searchKind.getSelectionIndex() == SIMPLE_SEARCH) {
+					if (searchQueryText.getText().length() == 0) {
 						MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.PapyrusSearchPage_29, Messages.PapyrusSearchPage_30);
 						return false;
 					} else {
@@ -1005,24 +1009,24 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 
 					List<ParticipantTypeElement> participantsToEvaluate = new ArrayList<ParticipantTypeElement>();
-					for(ParticipantTypeElement element : this.participantsList.keySet()) {
-						if(element.isChecked()) {
+					for (ParticipantTypeElement element : this.participantsList.keySet()) {
+						if (element.isChecked()) {
 							participantsToEvaluate.add(element);
-							for(ParticipantTypeAttribute attributesToEvaluate : participantsList.get(element)) {
-								if(attributesToEvaluate.isChecked()) {
+							for (ParticipantTypeAttribute attributesToEvaluate : participantsList.get(element)) {
+								if (attributesToEvaluate.isChecked()) {
 									participantsToEvaluate.add(attributesToEvaluate);
 								}
 							}
 						}
 					}
-					if(participantsToEvaluate.size() == 0) {
+					if (participantsToEvaluate.size() == 0) {
 
 						MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.PapyrusSearchPage_31, Messages.PapyrusSearchPage_32);
 						return false;
 					} else {
-						if(searchQueryText.getText().length() == 0) {
-							for(Object participantChecked : participantTypesTreeViewer.getCheckedElements()) {
-								if(participantChecked instanceof ParticipantTypeAttribute) {
+						if (searchQueryText.getText().length() == 0) {
+							for (Object participantChecked : participantTypesTreeViewer.getCheckedElements()) {
+								if (participantChecked instanceof ParticipantTypeAttribute) {
 									MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.PapyrusSearchPage_33, Messages.PapyrusSearchPage_34);
 									return false;
 								}
@@ -1035,7 +1039,7 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 					}
 
 				}
-				if(query.canRunInBackground()) {
+				if (query.canRunInBackground()) {
 					NewSearchUI.runQueryInBackground(query);
 				}
 
@@ -1048,16 +1052,16 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 			ScopeEntry scopeEntry = getCurrentScopeEntry();
 
-			if(scopeEntry != null) {
+			if (scopeEntry != null) {
 
 				try {
 
 					PivotUtil.checkResourceErrors("", oclEditor.getResource()); //$NON-NLS-1$
-					ExpressionInOCL expressionInOCL = parserContext.getExpression((BaseResource)oclEditor.getResource());
-					ISearchQuery query = new PapyrusOCLQuery((BaseDocument)oclEditor.getDocument(), parserContext, getMetaModelManager(contextObject), modelManager, contextObject, scopeEntry);
+					ExpressionInOCL expressionInOCL = parserContext.getExpression((BaseResource) oclEditor.getResource());
+					ISearchQuery query = new PapyrusOCLQuery((BaseDocument) oclEditor.getDocument(), parserContext, getMetaModelManager(contextObject), modelManager, contextObject, scopeEntry);
 
 
-					if(query.canRunInBackground()) {
+					if (query.canRunInBackground()) {
 						NewSearchUI.runQueryInBackground(query);
 					}
 				} catch (ParserException e) {
@@ -1079,85 +1083,85 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 	}
 
 	public boolean performReplace() {
-		if(queryKind.getSelectionIndex() == TEXT_QUERY_KIND) {
-			if(container.getSelectedScope() == ISearchPageContainer.SELECTION_SCOPE) {
-			if(validateRegex()) {
-				if(searchQueryText.getText().length() == 0) {
-					MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.PapyrusSearchPage_36, Messages.PapyrusSearchPage_37);
-					return false;
-				}
+		if (queryKind.getSelectionIndex() == TEXT_QUERY_KIND) {
+			if (container.getSelectedScope() == ISearchPageContainer.SELECTION_SCOPE) {
+				if (validateRegex()) {
+					if (searchQueryText.getText().length() == 0) {
+						MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.PapyrusSearchPage_36, Messages.PapyrusSearchPage_37);
+						return false;
+					}
 
-				Collection<URI> scope = ScopeCollector.getInstance().computeSearchScope(container);
+					Collection<URI> scope = ScopeCollector.getInstance().computeSearchScope(container);
 
-				AbstractPapyrusQuery query;
-				if(searchKind.getSelectionIndex() == SIMPLE_SEARCH) {
-					QueryInfo info = new QueryInfo(searchQueryText.getText(), btnCaseSensitive.getSelection(), btnRegularExpression.getSelection(), btnSearchAllStringAttributes.getSelection(), scope);
-					query = CompositePapyrusQueryProvider.getInstance().createSimpleSearchQuery(info);
-				} else {
-					List<ParticipantTypeElement> participantsToEvaluate = new ArrayList<ParticipantTypeElement>();
-					for(ParticipantTypeElement element : this.participantsList.keySet()) {
-						if(element.isChecked()) {
-							participantsToEvaluate.add(element);
-							if(participantsList.get(element).size() == 0) {
-								MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.PapyrusSearchPage_38, Messages.PapyrusSearchPage_39);
-								return false;
+					AbstractPapyrusQuery query;
+					if (searchKind.getSelectionIndex() == SIMPLE_SEARCH) {
+						QueryInfo info = new QueryInfo(searchQueryText.getText(), btnCaseSensitive.getSelection(), btnRegularExpression.getSelection(), btnSearchAllStringAttributes.getSelection(), scope);
+						query = CompositePapyrusQueryProvider.getInstance().createSimpleSearchQuery(info);
+					} else {
+						List<ParticipantTypeElement> participantsToEvaluate = new ArrayList<ParticipantTypeElement>();
+						for (ParticipantTypeElement element : this.participantsList.keySet()) {
+							if (element.isChecked()) {
+								participantsToEvaluate.add(element);
+								if (participantsList.get(element).size() == 0) {
+									MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.PapyrusSearchPage_38, Messages.PapyrusSearchPage_39);
+									return false;
 
-							} else {
-								for(ParticipantTypeAttribute attributesToEvaluate : participantsList.get(element)) {
-									if(attributesToEvaluate.isChecked()) {
-										participantsToEvaluate.add(attributesToEvaluate);
+								} else {
+									for (ParticipantTypeAttribute attributesToEvaluate : participantsList.get(element)) {
+										if (attributesToEvaluate.isChecked()) {
+											participantsToEvaluate.add(attributesToEvaluate);
 											boolean canDoReplace = false;
-											if(attributesToEvaluate.getElement() instanceof EAttribute) {
-										Object value = element.getElement().eGet((EAttribute)attributesToEvaluate.getElement());
-												if(value instanceof String) {
+											if (attributesToEvaluate.getElement() instanceof EAttribute) {
+												Object value = element.getElement().eGet((EAttribute) attributesToEvaluate.getElement());
+												if (value instanceof String) {
 													canDoReplace = true;
 												}
-											} else if(attributesToEvaluate.getElement() instanceof Property) {
-												Property property = (Property)attributesToEvaluate.getElement();
-												if(UMLUtil.isString(property.getType())) {
+											} else if (attributesToEvaluate.getElement() instanceof Property) {
+												Property property = (Property) attributesToEvaluate.getElement();
+												if (UMLUtil.isString(property.getType())) {
 													canDoReplace = true;
 												}
 											}
-											if(!canDoReplace) {
-											MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.PapyrusSearchPage_40, Messages.PapyrusSearchPage_41);
-											return false;
+											if (!canDoReplace) {
+												MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.PapyrusSearchPage_40, Messages.PapyrusSearchPage_41);
+												return false;
+											}
 										}
 									}
 								}
 							}
 						}
+						QueryInfo info = new QueryInfo(searchQueryText.getText(), btnCaseSensitive.getSelection(), btnRegularExpression.getSelection(), participantsToEvaluate, scope, fBtnSearchForAllSelected.getSelection());
+						query = CompositePapyrusQueryProvider.getInstance().createAdvancedSearchQuery(info);
+
 					}
-					QueryInfo info = new QueryInfo(searchQueryText.getText(), btnCaseSensitive.getSelection(), btnRegularExpression.getSelection(), participantsToEvaluate, scope, fBtnSearchForAllSelected.getSelection());
-					query = CompositePapyrusQueryProvider.getInstance().createAdvancedSearchQuery(info);
 
-				}
-
-				NewSearchUI.runQueryInForeground(container.getRunnableContext(), query);
+					NewSearchUI.runQueryInForeground(container.getRunnableContext(), query);
 
 
-				Display.getCurrent().syncExec(new Runnable() {
+					Display.getCurrent().syncExec(new Runnable() {
 
-					public void run() {
-						ISearchResultViewPart view = NewSearchUI.activateSearchResultView();
-						if(view != null) {
-							ISearchResultPage page = view.getActivePage();
+						public void run() {
+							ISearchResultViewPart view = NewSearchUI.activateSearchResultView();
+							if (view != null) {
+								ISearchResultPage page = view.getActivePage();
 
-							if(page instanceof PapyrusSearchResultPage) {
-								PapyrusSearchResultPage resultPage = (PapyrusSearchResultPage)page;
-								ReplaceAction replaceAction = new ReplaceAction(resultPage.getSite().getShell(), resultPage, null);
-								replaceAction.run();
+								if (page instanceof PapyrusSearchResultPage) {
+									PapyrusSearchResultPage resultPage = (PapyrusSearchResultPage) page;
+									ReplaceAction replaceAction = new ReplaceAction(resultPage.getSite().getShell(), resultPage, null);
+									replaceAction.run();
+								}
 							}
 						}
-					}
-				});
+					});
 
 					NewSearchUI.removeQuery(query);
-				return true;
+					return true;
+				} else {
+					MessageDialog.openError(Display.getCurrent().getActiveShell(), SEARCH_ISSUE, REGULAR_EXPRESSION_ILLFORMED);
+					return false;
+				}
 			} else {
-				MessageDialog.openError(Display.getCurrent().getActiveShell(), SEARCH_ISSUE, REGULAR_EXPRESSION_ILLFORMED);
-				return false;
-			}
-		} else {
 				MessageDialog.openWarning(Display.getCurrent().getActiveShell(), Messages.PapyrusSearchPage_27, Messages.PapyrusSearchPage_28);
 				return false;
 			}
@@ -1173,11 +1177,11 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 	public MetaModelManager getMetaModelManager(EObject contextObject) {
 		MetaModelManager metaModelManager = contextObject != null ? PivotUtil.findMetaModelManager(contextObject) : null;
-		if(metaModelManager != null) {
+		if (metaModelManager != null) {
 			return metaModelManager;
 		}
 		MetaModelManager nullMetaModelManager2 = nullMetaModelManager;
-		if(nullMetaModelManager2 == null) {
+		if (nullMetaModelManager2 == null) {
 			nullMetaModelManager2 = nullMetaModelManager = new MetaModelManager();
 			nullMetaModelManager2.addListener(this);
 		}
@@ -1192,38 +1196,40 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 	protected void flushEvents() {
 		IWorkbench workbench = PlatformUI.getWorkbench();
-		while(workbench.getDisplay().readAndDispatch());
+		while (workbench.getDisplay().readAndDispatch()) {
+			;
+		}
 	}
 
 	public void reset() {
-		if(oclEditor != null) {
+		if (oclEditor != null) {
 			IXtextDocument document = oclEditor.getDocument();
 			MetaModelManager metaModelManager = document.modify(new IUnitOfWork<MetaModelManager, XtextResource>() { // Cancel
 
-				// validation
+						// validation
 
-				public MetaModelManager exec(XtextResource state) throws Exception {
-					if(state == null) {
-						return null;
-					}
-					if(state instanceof BaseResource) {
-						((BaseResource)state).setParserContext(null);
-					}
-					return PivotUtil.findMetaModelManager(state);
-				}
-			});
+						public MetaModelManager exec(XtextResource state) throws Exception {
+							if (state == null) {
+								return null;
+							}
+							if (state instanceof BaseResource) {
+								((BaseResource) state).setParserContext(null);
+							}
+							return PivotUtil.findMetaModelManager(state);
+						}
+					});
 			flushEvents();
 			// editor.close(false);
 			flushEvents();
-			if(metaModelManager != null) {
+			if (metaModelManager != null) {
 				metaModelManager.dispose();
 			}
 		}
-		if(modelManager != null) {
+		if (modelManager != null) {
 			// modelManager.dispose();
 			modelManager = null;
 		}
-		if(nullMetaModelManager != null) {
+		if (nullMetaModelManager != null) {
 			nullMetaModelManager.dispose();
 			nullMetaModelManager = null;
 		}

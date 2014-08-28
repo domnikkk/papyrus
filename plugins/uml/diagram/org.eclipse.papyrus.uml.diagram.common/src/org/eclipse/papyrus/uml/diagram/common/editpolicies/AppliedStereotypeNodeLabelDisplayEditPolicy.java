@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,9 +45,10 @@ public class AppliedStereotypeNodeLabelDisplayEditPolicy extends AppliedStereoty
 	/**
 	 * Refreshes the stereotype display
 	 */
+	@Override
 	protected void refreshStereotypeDisplay() {
-		if(getHost() instanceof IPapyrusEditPart) {
-			IFigure figure = ((IPapyrusEditPart)getHost()).getPrimaryShape();
+		if (getHost() instanceof IPapyrusEditPart) {
+			IFigure figure = ((IPapyrusEditPart) getHost()).getPrimaryShape();
 
 			// calculate text and icon to display
 			final String stereotypesToDisplay = stereotypesOnlyToDisplay();
@@ -58,13 +59,13 @@ public class AppliedStereotypeNodeLabelDisplayEditPolicy extends AppliedStereoty
 			// Else, it displays
 			// nothing
 			// if (stereotypesToDisplay != "" || imageToDisplay != null) {
-			if(figure instanceof IPapyrusNodeUMLElementFigure) {
-				((IPapyrusNodeUMLElementFigure)figure).setStereotypeDisplay(tag + (stereotypesOnlyToDisplay().equals("") ? stereotypesToDisplay : stereotypesToDisplay), imageToDisplay);
+			if (figure instanceof IPapyrusNodeUMLElementFigure) {
+				((IPapyrusNodeUMLElementFigure) figure).setStereotypeDisplay(tag + (stereotypesOnlyToDisplay().equals("") ? stereotypesToDisplay : stereotypesToDisplay), imageToDisplay);
 
-				if(figure instanceof IPapyrusNodeNamedElementFigure) {
-					refreshAppliedStereotypesProperties((IPapyrusNodeNamedElementFigure)figure);
+				if (figure instanceof IPapyrusNodeNamedElementFigure) {
+					refreshAppliedStereotypesProperties((IPapyrusNodeNamedElementFigure) figure);
 				} else {
-					refreshAppliedStereotypesProperties((IPapyrusNodeUMLElementFigure)figure);
+					refreshAppliedStereotypesProperties((IPapyrusNodeUMLElementFigure) figure);
 				}
 			}
 			// TODO we should manage PapyrusNodeFigure here too (and
@@ -76,7 +77,7 @@ public class AppliedStereotypeNodeLabelDisplayEditPolicy extends AppliedStereoty
 	 * Refreshes the displayed stereotypes properties for this edit part.
 	 */
 	protected void refreshAppliedStereotypesProperties(IPapyrusNodeNamedElementFigure figure) {
-		final String stereotypesPropertiesToDisplay = AppliedStereotypeHelper.getAppliedStereotypesPropertiesToDisplay((View)getHost().getModel());
+		final String stereotypesPropertiesToDisplay = AppliedStereotypeHelper.getAppliedStereotypesPropertiesToDisplay((View) getHost().getModel());
 
 		refreshAppliedStereotypesPropertiesInCompartment(stereotypesPropertiesToDisplay, figure);
 		refreshAppliedStereotypesPropertiesInBrace(stereotypesPropertiesToDisplay, figure);
@@ -93,7 +94,7 @@ public class AppliedStereotypeNodeLabelDisplayEditPolicy extends AppliedStereoty
 	 * Refreshes the displayed stereotypes properties for this edit part.
 	 */
 	protected void refreshAppliedStereotypesProperties(IPapyrusNodeUMLElementFigure figure) {
-		final String stereotypesPropertiesToDisplay = AppliedStereotypeHelper.getAppliedStereotypesPropertiesToDisplay((View)getHost().getModel());
+		final String stereotypesPropertiesToDisplay = AppliedStereotypeHelper.getAppliedStereotypesPropertiesToDisplay((View) getHost().getModel());
 
 		refreshAppliedStereotypesPropertiesInCompartment(stereotypesPropertiesToDisplay, figure);
 		refreshAppliedStereotypesPropertiesInBrace(stereotypesPropertiesToDisplay, figure);
@@ -102,20 +103,20 @@ public class AppliedStereotypeNodeLabelDisplayEditPolicy extends AppliedStereoty
 	/**
 	 * Refreshes the stereotypes properties displayed in a compartment of this
 	 * edit part.
-	 * 
+	 *
 	 * @param stereotypesPropertiesToDisplay
-	 *        list of properties to display
+	 *            list of properties to display
 	 * @param figure
-	 *        the figure in which stereotype will be displayed
+	 *            the figure in which stereotype will be displayed
 	 */
 	protected void refreshAppliedStereotypesPropertiesInCompartment(String stereotypesPropertiesToDisplay, IPapyrusNodeUMLElementFigure figure) {
 		// retrieve the stereotype properties to be displayed
 
-		final boolean displayInCompartment = AppliedStereotypeHelper.hasAppliedStereotypesPropertiesToDisplay((View)(View)getHost().getModel(), UMLVisualInformationPapyrusConstant.STEREOTYPE_COMPARTMENT_LOCATION);
+		final boolean displayInCompartment = AppliedStereotypeHelper.hasAppliedStereotypesPropertiesToDisplay((View) getHost().getModel(), UMLVisualInformationPapyrusConstant.STEREOTYPE_COMPARTMENT_LOCATION);
 
 		// if the string is not empty, then, the figure has to display it. Else,
 		// it displays nothing
-		if(displayInCompartment) {
+		if (displayInCompartment) {
 			String todisplay = StereotypeUtil.getPropertiesValues(stereotypesPropertiesToDisplay, getUMLElement());
 			figure.setStereotypePropertiesInCompartment(todisplay);
 		} else {
@@ -129,11 +130,11 @@ public class AppliedStereotypeNodeLabelDisplayEditPolicy extends AppliedStereoty
 	 */
 	protected void refreshAppliedStereotypesPropertiesInBrace(String stereotypesPropertiesToDisplay, IPapyrusNodeUMLElementFigure figure) {
 		// check if properties have to be displayed in braces.
-		final boolean displayInBrace = AppliedStereotypeHelper.hasAppliedStereotypesPropertiesToDisplay((View)getHost().getModel(), UMLVisualInformationPapyrusConstant.STEREOTYPE_BRACE_LOCATION);
+		final boolean displayInBrace = AppliedStereotypeHelper.hasAppliedStereotypesPropertiesToDisplay((View) getHost().getModel(), UMLVisualInformationPapyrusConstant.STEREOTYPE_BRACE_LOCATION);
 
 		// if the string is not empty, then, the figure has to display it. Else,
 		// it displays nothing
-		if(displayInBrace) {
+		if (displayInBrace) {
 			// it has to be displayed in braces, so compute the string to
 			// display
 			String todisplay = StereotypeUtil.getPropertiesValuesInBrace(stereotypesPropertiesToDisplay, getUMLElement());
@@ -145,32 +146,32 @@ public class AppliedStereotypeNodeLabelDisplayEditPolicy extends AppliedStereoty
 
 	/**
 	 * this method is used to display only applied stereotypes
-	 * 
+	 *
 	 * @return the string with applied stereotypes. It can return "" if there is
 	 *         no stereotypes to display
 	 */
 	public String stereotypesOnlyToDisplay() {
 		// list of stereotypes to display
-		String stereotypesToDisplay = AppliedStereotypeHelper.getStereotypesToDisplay((View)getHost().getModel());
+		String stereotypesToDisplay = AppliedStereotypeHelper.getStereotypesToDisplay((View) getHost().getModel());
 		// Kind of the representation
-		String stereotypespresentationKind = AppliedStereotypeHelper.getAppliedStereotypePresentationKind((View)getHost().getModel());
+		String stereotypespresentationKind = AppliedStereotypeHelper.getAppliedStereotypePresentationKind((View) getHost().getModel());
 
 		// check the presentation kind. if only icon => do not display
 		// stereotypes
-		if(UMLVisualInformationPapyrusConstant.ICON_STEREOTYPE_PRESENTATION.equals(stereotypespresentationKind)) {
+		if (UMLVisualInformationPapyrusConstant.ICON_STEREOTYPE_PRESENTATION.equals(stereotypespresentationKind)) {
 			return ""; // empty string, so stereotype label should not be
 						// displayed
 		}
 
 		// stereotypes with qualified name to display
-		String stereotypesToDisplayWithQN = AppliedStereotypeHelper.getStereotypesQNToDisplay(((View)getHost().getModel()));
+		String stereotypesToDisplayWithQN = AppliedStereotypeHelper.getStereotypesQNToDisplay(((View) getHost().getModel()));
 
 		// the set is empty
-		if(stereotypesToDisplayWithQN.length() == 0 && stereotypesToDisplay.length() == 0) {
+		if (stereotypesToDisplayWithQN.length() == 0 && stereotypesToDisplay.length() == 0) {
 			return "";
 		}
 		// vertical representation
-		if(UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION.equals(stereotypespresentationKind)) {
+		if (UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION.equals(stereotypespresentationKind)) {
 			return Activator.ST_LEFT + stereotypesToDisplay(Activator.ST_RIGHT + "\n" + Activator.ST_LEFT, stereotypesToDisplay, stereotypesToDisplayWithQN) + Activator.ST_RIGHT;
 		} else {// horizontal representation
 			return Activator.ST_LEFT + stereotypesToDisplay(", ", stereotypesToDisplay, stereotypesToDisplayWithQN) + Activator.ST_RIGHT;

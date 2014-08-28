@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.eclipse.papyrus.uml.diagram.common.figure.edge.DashedEdgeFigure;
 
 /**
  * this branch dependency can change its arrow
- * 
+ *
  */
 public class CDependencyBranchEditPart extends org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DependencyBranchEditPart {
 
@@ -27,10 +27,11 @@ public class CDependencyBranchEditPart extends org.eclipse.papyrus.uml.diagram.c
 		super(view);
 	}
 
+	@Override
 	protected void refreshVisuals() {
-		if(getTarget() instanceof DependencyNodeEditPart) {
-			if(getPrimaryShape() instanceof DashedEdgeFigure) {
-				((DashedEdgeFigure)getPrimaryShape()).setArrow(false);
+		if (getTarget() instanceof DependencyNodeEditPart) {
+			if (getPrimaryShape() instanceof DashedEdgeFigure) {
+				getPrimaryShape().setArrow(false);
 			}
 			super.refreshVisuals();
 		}

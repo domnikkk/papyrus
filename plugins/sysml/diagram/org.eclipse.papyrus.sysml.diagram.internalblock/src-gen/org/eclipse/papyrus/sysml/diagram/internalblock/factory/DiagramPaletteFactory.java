@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -31,51 +31,52 @@ public class DiagramPaletteFactory extends PaletteFactory.Adapter {
 	private static HashMap<String, IElementType[]> nodesToolIdTypesMap = new HashMap<String, IElementType[]>() {
 
 		{
-			put("internalblock.tool.blockcomposite", new IElementType[]{ SysMLElementTypes.BLOCK });
-			put("internalblock.tool.blockpropertycomposite", new IElementType[]{ SysMLElementTypes.PART_PROPERTY, SysMLElementTypes.REFERENCE_PROPERTY, SysMLElementTypes.ACTOR_PART_PROPERTY,
-				SysMLElementTypes.VALUE_PROPERTY, UMLElementTypes.PROPERTY });
-			put("internalblock.tool.flowport", new IElementType[]{ SysMLElementTypes.FLOW_PORT });
-			put("internalblock.tool.port", new IElementType[]{ UMLElementTypes.PORT });
-			//Start of user code Custom nodes
-			put("internalblock.tool.part", new IElementType[]{ SysMLElementTypes.PART_PROPERTY });
-			put("internalblock.tool.reference", new IElementType[]{ SysMLElementTypes.REFERENCE_PROPERTY });
-			put("internalblock.tool.actorpart", new IElementType[]{ SysMLElementTypes.ACTOR_PART_PROPERTY });
-			put("internalblock.tool.value", new IElementType[]{ SysMLElementTypes.VALUE_PROPERTY });
-			put("internalblock.tool.property", new IElementType[]{ UMLElementTypes.PROPERTY });
+			put("internalblock.tool.blockcomposite", new IElementType[] { SysMLElementTypes.BLOCK });
+			put("internalblock.tool.blockpropertycomposite", new IElementType[] { SysMLElementTypes.PART_PROPERTY, SysMLElementTypes.REFERENCE_PROPERTY, SysMLElementTypes.ACTOR_PART_PROPERTY,
+					SysMLElementTypes.VALUE_PROPERTY, UMLElementTypes.PROPERTY });
+			put("internalblock.tool.flowport", new IElementType[] { SysMLElementTypes.FLOW_PORT });
+			put("internalblock.tool.port", new IElementType[] { UMLElementTypes.PORT });
+			// Start of user code Custom nodes
+			put("internalblock.tool.part", new IElementType[] { SysMLElementTypes.PART_PROPERTY });
+			put("internalblock.tool.reference", new IElementType[] { SysMLElementTypes.REFERENCE_PROPERTY });
+			put("internalblock.tool.actorpart", new IElementType[] { SysMLElementTypes.ACTOR_PART_PROPERTY });
+			put("internalblock.tool.value", new IElementType[] { SysMLElementTypes.VALUE_PROPERTY });
+			put("internalblock.tool.property", new IElementType[] { UMLElementTypes.PROPERTY });
 
-			put("internalblock.tool.flowport_na", new IElementType[]{ SysMLElementTypes.FLOW_PORT_NA });
-			put("internalblock.tool.flowport_in", new IElementType[]{ SysMLElementTypes.FLOW_PORT_IN });
-			put("internalblock.tool.flowport_out", new IElementType[]{ SysMLElementTypes.FLOW_PORT_OUT });
-			put("internalblock.tool.flowport_inout", new IElementType[]{ SysMLElementTypes.FLOW_PORT_IN_OUT });
+			put("internalblock.tool.flowport_na", new IElementType[] { SysMLElementTypes.FLOW_PORT_NA });
+			put("internalblock.tool.flowport_in", new IElementType[] { SysMLElementTypes.FLOW_PORT_IN });
+			put("internalblock.tool.flowport_out", new IElementType[] { SysMLElementTypes.FLOW_PORT_OUT });
+			put("internalblock.tool.flowport_inout", new IElementType[] { SysMLElementTypes.FLOW_PORT_IN_OUT });
 
-			put("internalblock.tool.constraint", new IElementType[]{ UMLElementTypes.CONSTRAINT });
-			put("internalblock.tool.comment", new IElementType[]{ UMLElementTypes.COMMENT });
-			//End of user code
+			put("internalblock.tool.constraint", new IElementType[] { UMLElementTypes.CONSTRAINT });
+			put("internalblock.tool.comment", new IElementType[] { UMLElementTypes.COMMENT });
+			// End of user code
 		}
 	};
 
 	private static HashMap<String, IElementType[]> edgesToolIdTypesMap = new HashMap<String, IElementType[]>() {
 
 		{
-			put("internalblock.tool.connector", new IElementType[]{ UMLElementTypes.CONNECTOR });
-			put("internalblock.tool.dependency", new IElementType[]{ UMLElementTypes.DEPENDENCY });
-			//Start of user code Custom edges
-			put("internalblock.tool.comment_constraint_link", new IElementType[]{ ElementTypes.COMMENT_ANNOTATED_ELEMENT, ElementTypes.CONSTRAINT_CONSTRAINED_ELEMENT });
-			//End of user code
+			put("internalblock.tool.connector", new IElementType[] { UMLElementTypes.CONNECTOR });
+			put("internalblock.tool.dependency", new IElementType[] { UMLElementTypes.DEPENDENCY });
+			// Start of user code Custom edges
+			put("internalblock.tool.comment_constraint_link", new IElementType[] { ElementTypes.COMMENT_ANNOTATED_ELEMENT, ElementTypes.CONSTRAINT_CONSTRAINED_ELEMENT });
+			// End of user code
 		}
 	};
 
+	@Override
 	public Tool createTool(String toolId) {
 
 		IElementType[] types;
 
 		types = nodesToolIdTypesMap.get(toolId);
-		if(types != null) {
+		if (types != null) {
 			return new AspectUnspecifiedTypeCreationTool(Arrays.asList(types));
 		}
 
 		types = edgesToolIdTypesMap.get(toolId);
-		if(types != null) {
+		if (types != null) {
 			return new AspectUnspecifiedTypeConnectionTool(Arrays.asList(types));
 		}
 		return null;

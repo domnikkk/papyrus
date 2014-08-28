@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 408491
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.modelrepair.handler;
 
@@ -33,22 +33,22 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 public class ModelRepairHandler extends AbstractHandler {
 
-	//Prototype.
-	//Not visible.
+	// Prototype.
+	// Not visible.
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
-		if(currentSelection.isEmpty() || !(currentSelection instanceof IStructuredSelection)) {
+		if (currentSelection.isEmpty() || !(currentSelection instanceof IStructuredSelection)) {
 			return null;
 		}
 
-		IStructuredSelection selection = (IStructuredSelection)currentSelection;
+		IStructuredSelection selection = (IStructuredSelection) currentSelection;
 
 		Object selectedElement = selection.getFirstElement();
 
 		Object selectedAdapter = Platform.getAdapterManager().getAdapter(selectedElement, IFile.class);
 
-		if(selectedAdapter instanceof IFile) {
-			IFile selectedFile = (IFile)selectedAdapter;
+		if (selectedAdapter instanceof IFile) {
+			IFile selectedFile = (IFile) selectedAdapter;
 			ModelSet modelSet = new DiResourceSet();
 			TransactionalEditingDomain editingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(modelSet);
 

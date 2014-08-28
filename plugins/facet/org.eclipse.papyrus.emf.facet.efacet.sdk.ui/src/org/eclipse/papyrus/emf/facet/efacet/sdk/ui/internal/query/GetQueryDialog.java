@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -28,16 +28,13 @@ import org.eclipse.papyrus.emf.facet.util.ui.utils.PropertyElement2;
 /**
  * This class provide the dialog for the creation of the specific dialog
  * according of the type of the query selected.
- * 
+ *
  * To run, this class needs to have into the properties pass in the constructor:
  * <p>
- * <li>The {@link PropertyElement} <code>name</code> with the key
- * <code>EcorePackage.eINSTANCE.getENamedElement_Name()</code></li>
+ * <li>The {@link PropertyElement} <code>name</code> with the key <code>EcorePackage.eINSTANCE.getENamedElement_Name()</code></li>
  * </p>
- * <li>The {@link PropertyElement} <code>type</code> with the key
- * <code>EcorePackage.eINSTANCE.getETypedElement_EType()</code></li> </p> <li>
- * The {@link PropertyElement} <code>parent</code> (a {@link Facet}) with the
- * key <code>EcorePackage.eINSTANCE.getEObject__EContainer()</code></li> </p>
+ * <li>The {@link PropertyElement} <code>type</code> with the key <code>EcorePackage.eINSTANCE.getETypedElement_EType()</code></li> </p> <li>
+ * The {@link PropertyElement} <code>parent</code> (a {@link Facet}) with the key <code>EcorePackage.eINSTANCE.getEObject__EContainer()</code></li> </p>
  */
 public class GetQueryDialog extends
 		AbstractCommandDialog<IWithResultDialogCallback<IQueryCreationResult>, ICreateQueryWidget> {
@@ -50,7 +47,7 @@ public class GetQueryDialog extends
 	private final IQueryContext queryContext;
 
 	/**
-	 * 
+	 *
 	 * @param callback
 	 *            the callback.
 	 * @param properties

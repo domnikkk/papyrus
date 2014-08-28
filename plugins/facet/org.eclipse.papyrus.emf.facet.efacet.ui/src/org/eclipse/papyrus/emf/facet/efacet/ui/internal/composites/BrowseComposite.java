@@ -26,9 +26,9 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Text;
 
 @SuppressWarnings("PMD.ConstructorCallsOverridableMethod")
-//@SuppressWarnings("PMD.ConstructorCallsOverridableMethod") Temporary: this class must be deeply refactored.
-//TODO remove the @SuppressWarnings("PMD.ConstructorCallsOverridableMethod")
-//cf. bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=373248
+// @SuppressWarnings("PMD.ConstructorCallsOverridableMethod") Temporary: this class must be deeply refactored.
+// TODO remove the @SuppressWarnings("PMD.ConstructorCallsOverridableMethod")
+// cf. bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=373248
 public class BrowseComposite extends Composite {
 
 	private Text textField;

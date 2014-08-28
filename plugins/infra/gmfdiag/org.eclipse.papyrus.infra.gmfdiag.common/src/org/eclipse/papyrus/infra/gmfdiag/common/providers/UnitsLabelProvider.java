@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -20,76 +20,82 @@ import org.eclipse.papyrus.infra.gmfdiag.common.utils.UnitsConstants;
 import org.eclipse.swt.graphics.Image;
 
 /**
- * 
+ *
  * Label provider for Units
- * 
+ *
  */
 public class UnitsLabelProvider implements ILabelProvider {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
-	 * 
+	 *
 	 * @param listener
 	 */
+	@Override
 	public void addListener(ILabelProviderListener listener) {
-		//not used
+		// not used
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#dispose()
-	 * 
+	 *
 	 */
+	@Override
 	public void dispose() {
-		//not used
+		// not used
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#isLabelProperty(java.lang.Object, java.lang.String)
-	 * 
+	 *
 	 * @param element
 	 * @param property
 	 * @return
 	 */
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#removeListener(org.eclipse.jface.viewers.ILabelProviderListener)
-	 * 
+	 *
 	 * @param listener
 	 */
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
-		//not used
+		// not used
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
+	@Override
 	public Image getImage(Object element) {
-		//not used
+		// not used
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getText(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
+	@Override
 	public String getText(Object element) {
-		if(element instanceof Integer) {
-			final int unit = (Integer)element;
-			switch(unit) {
+		if (element instanceof Integer) {
+			final int unit = (Integer) element;
+			switch (unit) {
 			case RulerProvider.UNIT_INCHES:
 				return UnitsConstants.INCHES;
 			case RulerProvider.UNIT_CENTIMETERS:

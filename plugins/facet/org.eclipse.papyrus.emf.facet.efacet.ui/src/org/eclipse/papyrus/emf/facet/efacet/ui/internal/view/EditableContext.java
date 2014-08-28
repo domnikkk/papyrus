@@ -14,7 +14,7 @@ package org.eclipse.papyrus.emf.facet.efacet.ui.internal.view;
 import org.eclipse.emf.ecore.EObject;
 
 /** An interface that supports editing the query context */
-//Copied from org.eclipse.papyrus.emf.facet.infra.query.ui.views.queryExecution.internal.EditableContext
+// Copied from org.eclipse.papyrus.emf.facet.infra.query.ui.views.queryExecution.internal.EditableContext
 public interface EditableContext {
 	void add(EObject eObject);
 

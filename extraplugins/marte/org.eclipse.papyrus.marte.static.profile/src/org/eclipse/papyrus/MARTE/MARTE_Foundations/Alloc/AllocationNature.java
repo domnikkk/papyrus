@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Allocation Nature</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getAllocationNature()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum AllocationNature implements Enumerator {
 	 * The '<em><b>Spatial Distribution</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #SPATIAL_DISTRIBUTION_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum AllocationNature implements Enumerator {
 	 * The '<em><b>Time Scheduling</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #TIME_SCHEDULING_VALUE
 	 * @generated
 	 * @ordered
@@ -53,10 +56,10 @@ public enum AllocationNature implements Enumerator {
 	 * The '<em><b>Spatial Distribution</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Spatial Distribution</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Spatial Distribution</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #SPATIAL_DISTRIBUTION
 	 * @model name="spatialDistribution"
 	 * @generated
@@ -68,10 +71,10 @@ public enum AllocationNature implements Enumerator {
 	 * The '<em><b>Time Scheduling</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Time Scheduling</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Time Scheduling</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #TIME_SCHEDULING
 	 * @model name="timeScheduling"
 	 * @generated
@@ -83,18 +86,20 @@ public enum AllocationNature implements Enumerator {
 	 * An array of all the '<em><b>Allocation Nature</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static final AllocationNature[] VALUES_ARRAY =
-		new AllocationNature[] {
-			SPATIAL_DISTRIBUTION,
-			TIME_SCHEDULING,
-		};
+			new AllocationNature[] {
+					SPATIAL_DISTRIBUTION,
+					TIME_SCHEDULING,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Allocation Nature</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final List<AllocationNature> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -103,6 +108,7 @@ public enum AllocationNature implements Enumerator {
 	 * Returns the '<em><b>Allocation Nature</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static AllocationNature get(String literal) {
@@ -119,6 +125,7 @@ public enum AllocationNature implements Enumerator {
 	 * Returns the '<em><b>Allocation Nature</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static AllocationNature getByName(String name) {
@@ -135,12 +142,15 @@ public enum AllocationNature implements Enumerator {
 	 * Returns the '<em><b>Allocation Nature</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static AllocationNature get(int value) {
 		switch (value) {
-			case SPATIAL_DISTRIBUTION_VALUE: return SPATIAL_DISTRIBUTION;
-			case TIME_SCHEDULING_VALUE: return TIME_SCHEDULING;
+		case SPATIAL_DISTRIBUTION_VALUE:
+			return SPATIAL_DISTRIBUTION;
+		case TIME_SCHEDULING_VALUE:
+			return TIME_SCHEDULING;
 		}
 		return null;
 	}
@@ -148,6 +158,7 @@ public enum AllocationNature implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -155,6 +166,7 @@ public enum AllocationNature implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -162,6 +174,7 @@ public enum AllocationNature implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -170,6 +183,7 @@ public enum AllocationNature implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private AllocationNature(int value, String name, String literal) {
@@ -181,39 +195,46 @@ public enum AllocationNature implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //AllocationNature
+
+} // AllocationNature

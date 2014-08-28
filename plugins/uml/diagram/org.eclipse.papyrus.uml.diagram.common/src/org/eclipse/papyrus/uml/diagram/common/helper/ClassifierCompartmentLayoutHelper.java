@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,13 +45,14 @@ public abstract class ClassifierCompartmentLayoutHelper implements ICompartmentL
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void applyLayout(AbstractGraphicalEditPart compartmentEditPart) {
 		EditPart containerEditPart = compartmentEditPart.getParent();
-		IFigure fig = (IFigure)(((IGraphicalEditPart)containerEditPart).getFigure().getChildren().get(0));
-		IFigure primaryfig = (IFigure)(fig.getChildren().get(0));
-		String layoutKind = getLayoutKindFromView(((EModelElement)containerEditPart.getModel()));
+		IFigure fig = (IFigure) (((IGraphicalEditPart) containerEditPart).getFigure().getChildren().get(0));
+		IFigure primaryfig = (IFigure) (fig.getChildren().get(0));
+		String layoutKind = getLayoutKindFromView(((EModelElement) containerEditPart.getModel()));
 		ILayoutToolBox currentLayoutToolBox = layoutToolBoxList.get(layoutKind);
-		if(currentLayoutToolBox != null) {
+		if (currentLayoutToolBox != null) {
 			compartmentEditPart.installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, currentLayoutToolBox.getEditPolicy());
 			primaryfig.setLayoutManager(currentLayoutToolBox.getFigureLayout());
 		}
@@ -61,12 +62,13 @@ public abstract class ClassifierCompartmentLayoutHelper implements ICompartmentL
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getLayoutKindFromView(EModelElement modelElement) {
 		EAnnotation layoutAnnotation = modelElement.getEAnnotation(VisualInformationPapyrusConstants.LAYOUTFIGURE);
-		if(layoutAnnotation != null) {
+		if (layoutAnnotation != null) {
 			EMap<String, String> entries = layoutAnnotation.getDetails();
 
-			if(entries != null) {
+			if (entries != null) {
 				String gradientvalueString = entries.get(VisualInformationPapyrusConstants.LAYOUTFIGURE_VALUE);
 				return gradientvalueString;
 			}
@@ -77,6 +79,7 @@ public abstract class ClassifierCompartmentLayoutHelper implements ICompartmentL
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public SetLayoutKindCommand setLayoutKindOnView(TransactionalEditingDomain domain, EModelElement view, String layoutKind) {
 		return new SetLayoutKindCommand(domain, view, layoutKind);
 	}

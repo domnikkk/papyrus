@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,25 +47,25 @@ public interface IMarkerProvider2 {
 	 * permitted for implementations to optimistically return a positive result when further analysis would actually
 	 * determine that there are no markers for the specific object (e.g., perhaps it can be efficiently determined
 	 * that a resource has markers but not for which objects).
-	 * 
+	 *
 	 * @param context
-	 *        a resource on which markers would be attached (or not)
+	 *            a resource on which markers would be attached (or not)
 	 * @param object
-	 *        an object whose markers, if any, would be attached to the {@code context} resource
-	 * 
+	 *            an object whose markers, if any, would be attached to the {@code context} resource
+	 *
 	 * @return whether it seems likely that the {@code object} has markers
 	 */
 	boolean hasMarkers(Resource context, EObject object);
 
 	/**
 	 * Creates a command for undoable deletion of the markers associated with a model element.
-	 * 
+	 *
 	 * @param context
-	 *        the contextual resource from which markers are to be deleted. The {@code object} may not
-	 *        be sufficient to infer this {@code context}, especially in the case that it has already been detached
+	 *            the contextual resource from which markers are to be deleted. The {@code object} may not
+	 *            be sufficient to infer this {@code context}, especially in the case that it has already been detached
 	 * @param object
-	 *        a model element, which may or may not currently have any markers attached to it
-	 * 
+	 *            a model element, which may or may not currently have any markers attached to it
+	 *
 	 * @return the marker-deletion command (never {@code null})
 	 */
 	ICommand getMarkerDeletionCommand(Resource context, EObject object);
@@ -87,7 +87,7 @@ public interface IMarkerProvider2 {
 		}
 
 		public static IMarkerProvider2 getExtendedProvider(IMarkerProvider provider) {
-			return (provider instanceof IMarkerProvider2) ? (IMarkerProvider2)provider : new Adapter(provider);
+			return (provider instanceof IMarkerProvider2) ? (IMarkerProvider2) provider : new Adapter(provider);
 		}
 
 		public boolean hasMarkers(Resource context, EObject object) {
@@ -95,7 +95,7 @@ public interface IMarkerProvider2 {
 			// We can't take the time to iterate the list, and the cache only has to be populated once anyways
 			return !markerCache.getMarkers(context).isEmpty();
 		}
-		
+
 		public ICommand getMarkerDeletionCommand(Resource context, EObject object) {
 			return new DeleteMarkersCommand(provider, context, object);
 		}
@@ -107,7 +107,7 @@ public interface IMarkerProvider2 {
 					Collection<? extends IPapyrusMarker> result;
 
 					List<IMarkerProvider> providers = MarkerProviderRegistry.INSTANCE.getMarkerProviders(resource);
-					switch(providers.size()) {
+					switch (providers.size()) {
 					case 0:
 						result = Collections.emptyList();
 						break;
@@ -116,7 +116,7 @@ public interface IMarkerProvider2 {
 						break;
 					default:
 						List<IPapyrusMarker> markers = new ArrayList<IPapyrusMarker>();
-						for(IMarkerProvider provider : providers) {
+						for (IMarkerProvider provider : providers) {
 							markers.addAll(provider.getMarkers(resource, null, true));
 						}
 						result = markers;
@@ -127,7 +127,7 @@ public interface IMarkerProvider2 {
 				}
 			};
 		}
-		
+
 		//
 		// Nested types
 		//
@@ -163,7 +163,7 @@ public interface IMarkerProvider2 {
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 				Collection<? extends IPapyrusMarker> markers = markerCache.getMarkers(context, object);
-				if(markers.isEmpty()) {
+				if (markers.isEmpty()) {
 					// Nothing to do
 					return CommandResult.newOKCommandResult();
 				}
@@ -172,24 +172,24 @@ public interface IMarkerProvider2 {
 
 				BasicDiagnostic diagnostics = new BasicDiagnostic();
 
-				for(IPapyrusMarker marker : markers) {
+				for (IPapyrusMarker marker : markers) {
 					try {
 						// Capture the marker details as a diagnostic for undo, to recreate the marker
 						int severity = marker.getAttribute(IPapyrusMarker.SEVERITY, Diagnostic.ERROR);
-						String message = (String)marker.getAttribute(IPapyrusMarker.MESSAGE);
+						String message = (String) marker.getAttribute(IPapyrusMarker.MESSAGE);
 						String source = marker.getAttribute(IMarker.SOURCE_ID, Activator.PLUGIN_ID);
-						diagnostics.add(new BasicDiagnostic(toDiagnosticSeverity(severity), source, 0, message, new Object[]{ object }));
+						diagnostics.add(new BasicDiagnostic(toDiagnosticSeverity(severity), source, 0, message, new Object[] { object }));
 
 						marker.delete();
 					} catch (CoreException e) {
-						if(exception == null) {
+						if (exception == null) {
 							// Record the first one (others should be similar)
 							exception = e;
 						}
 					}
 				}
 
-				if(!diagnostics.getChildren().isEmpty()) {
+				if (!diagnostics.getChildren().isEmpty()) {
 					// Initialize undo information
 					diagnosticForUndo = diagnostics;
 				}
@@ -199,7 +199,7 @@ public interface IMarkerProvider2 {
 
 			@Override
 			protected CommandResult doUndoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				if(diagnosticForUndo == null) {
+				if (diagnosticForUndo == null) {
 					// Nothing to do
 					return CommandResult.newOKCommandResult();
 				}
@@ -211,7 +211,7 @@ public interface IMarkerProvider2 {
 				diagnosticForUndo = null;
 
 				Resource resource = object.eResource();
-				if(resource != null) { // Should have been reattached by now
+				if (resource != null) { // Should have been reattached by now
 					context = resource;
 
 					try {
@@ -230,7 +230,7 @@ public interface IMarkerProvider2 {
 			}
 
 			static int toDiagnosticSeverity(int markerSeverity) {
-				switch(markerSeverity) {
+				switch (markerSeverity) {
 				case IPapyrusMarker.SEVERITY_INFO:
 					return Diagnostic.INFO;
 				case IPapyrusMarker.SEVERITY_WARNING:

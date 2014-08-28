@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ public class LifelineHeadImpactLayoutEditPolicy extends AbstractHeadImpactLayout
 
 	@Override
 	protected int getHeadHeight() {
-		CustomLifelineFigure primaryShape = ((CustomLifelineEditPart)getHost()).getPrimaryShape();
+		CustomLifelineFigure primaryShape = ((CustomLifelineEditPart) getHost()).getPrimaryShape();
 		RectangleFigure figure = primaryShape.getFigureLifelineNameContainerFigure();
 		Rectangle r = getBoundsRect();
 		Dimension preferredSize = figure.getPreferredSize(r.width, -1);
@@ -38,7 +38,7 @@ public class LifelineHeadImpactLayoutEditPolicy extends AbstractHeadImpactLayout
 
 	@Override
 	protected void doImpactLayout(int resizeDelta) {
-		LifelineHeadUtil.updateHead((LifelineEditPart)getHost(), resizeDelta);
+		LifelineHeadUtil.updateHead((LifelineEditPart) getHost(), resizeDelta);
 	}
 
 }

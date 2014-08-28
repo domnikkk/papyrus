@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ import org.eclipse.uml2.uml.State;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.impl.RTStateImpl#getBase_State <em>Base State</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.impl.RTStateImpl#getBase_State <em>Base State</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +54,7 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	 * The cached value of the '{@link #getBase_State() <em>Base State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_State()
 	 * @generated
 	 * @ordered
@@ -63,6 +64,7 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RTStateImpl() {
@@ -72,6 +74,7 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -82,15 +85,18 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public State getBase_State() {
 		if (base_State != null && base_State.eIsProxy()) {
-			InternalEObject oldBase_State = (InternalEObject)base_State;
-			base_State = (State)eResolveProxy(oldBase_State);
+			InternalEObject oldBase_State = (InternalEObject) base_State;
+			base_State = (State) eResolveProxy(oldBase_State);
 			if (base_State != oldBase_State) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UMLRealTimeStateMachPackage.RT_STATE__BASE_STATE, oldBase_State, base_State));
+				}
 			}
 		}
 		return base_State;
@@ -99,6 +105,7 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public State basicGetBase_State() {
@@ -108,20 +115,25 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_State(State newBase_State) {
 		State oldBase_State = base_State;
 		base_State = newBase_State;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLRealTimeStateMachPackage.RT_STATE__BASE_STATE, oldBase_State, base_State));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean AcomposteRTstatehasexactlyoneregion(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -130,12 +142,12 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeStateMachValidator.RT_STATE__ACOMPOSTE_RTSTATEHASEXACTLYONEREGION,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AcomposteRTstatehasexactlyoneregion", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeStateMachValidator.RT_STATE__ACOMPOSTE_RTSTATEHASEXACTLYONEREGION,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AcomposteRTstatehasexactlyoneregion", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -145,8 +157,10 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean RTdoesnotsupportsubmachinestates(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -155,12 +169,12 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeStateMachValidator.RT_STATE__RTDOESNOTSUPPORTSUBMACHINESTATES,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTdoesnotsupportsubmachinestates", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeStateMachValidator.RT_STATE__RTDOESNOTSUPPORTSUBMACHINESTATES,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTdoesnotsupportsubmachinestates", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -170,8 +184,10 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean RTstatemachinesdonotsupportdoactivities(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -180,12 +196,12 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeStateMachValidator.RT_STATE__RTSTATEMACHINESDONOTSUPPORTDOACTIVITIES,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTstatemachinesdonotsupportdoactivities", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeStateMachValidator.RT_STATE__RTSTATEMACHINESDONOTSUPPORTDOACTIVITIES,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTstatemachinesdonotsupportdoactivities", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -195,8 +211,10 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean RTstatemachinescannothaveanydeferredtriggers(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -205,12 +223,12 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeStateMachValidator.RT_STATE__RTSTATEMACHINESCANNOTHAVEANYDEFERREDTRIGGERS,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTstatemachinescannothaveanydeferredtriggers", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeStateMachValidator.RT_STATE__RTSTATEMACHINESCANNOTHAVEANYDEFERREDTRIGGERS,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTstatemachinescannothaveanydeferredtriggers", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -220,8 +238,10 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean Constraint5(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -230,12 +250,12 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeStateMachValidator.RT_STATE__CONSTRAINT5,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Constraint5", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeStateMachValidator.RT_STATE__CONSTRAINT5,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Constraint5", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -245,14 +265,17 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UMLRealTimeStateMachPackage.RT_STATE__BASE_STATE:
-				if (resolve) return getBase_State();
-				return basicGetBase_State();
+		case UMLRealTimeStateMachPackage.RT_STATE__BASE_STATE:
+			if (resolve) {
+				return getBase_State();
+			}
+			return basicGetBase_State();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,14 +283,15 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UMLRealTimeStateMachPackage.RT_STATE__BASE_STATE:
-				setBase_State((State)newValue);
-				return;
+		case UMLRealTimeStateMachPackage.RT_STATE__BASE_STATE:
+			setBase_State((State) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -275,14 +299,15 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UMLRealTimeStateMachPackage.RT_STATE__BASE_STATE:
-				setBase_State((State)null);
-				return;
+		case UMLRealTimeStateMachPackage.RT_STATE__BASE_STATE:
+			setBase_State((State) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -290,13 +315,14 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UMLRealTimeStateMachPackage.RT_STATE__BASE_STATE:
-				return base_State != null;
+		case UMLRealTimeStateMachPackage.RT_STATE__BASE_STATE:
+			return base_State != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -304,24 +330,25 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case UMLRealTimeStateMachPackage.RT_STATE___ACOMPOSTE_RTSTATEHASEXACTLYONEREGION__DIAGNOSTICCHAIN_MAP:
-				return AcomposteRTstatehasexactlyoneregion((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case UMLRealTimeStateMachPackage.RT_STATE___RTDOESNOTSUPPORTSUBMACHINESTATES__DIAGNOSTICCHAIN_MAP:
-				return RTdoesnotsupportsubmachinestates((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case UMLRealTimeStateMachPackage.RT_STATE___RTSTATEMACHINESDONOTSUPPORTDOACTIVITIES__DIAGNOSTICCHAIN_MAP:
-				return RTstatemachinesdonotsupportdoactivities((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case UMLRealTimeStateMachPackage.RT_STATE___RTSTATEMACHINESCANNOTHAVEANYDEFERREDTRIGGERS__DIAGNOSTICCHAIN_MAP:
-				return RTstatemachinescannothaveanydeferredtriggers((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case UMLRealTimeStateMachPackage.RT_STATE___CONSTRAINT5__DIAGNOSTICCHAIN_MAP:
-				return Constraint5((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		case UMLRealTimeStateMachPackage.RT_STATE___ACOMPOSTE_RTSTATEHASEXACTLYONEREGION__DIAGNOSTICCHAIN_MAP:
+			return AcomposteRTstatehasexactlyoneregion((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case UMLRealTimeStateMachPackage.RT_STATE___RTDOESNOTSUPPORTSUBMACHINESTATES__DIAGNOSTICCHAIN_MAP:
+			return RTdoesnotsupportsubmachinestates((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case UMLRealTimeStateMachPackage.RT_STATE___RTSTATEMACHINESDONOTSUPPORTDOACTIVITIES__DIAGNOSTICCHAIN_MAP:
+			return RTstatemachinesdonotsupportdoactivities((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case UMLRealTimeStateMachPackage.RT_STATE___RTSTATEMACHINESCANNOTHAVEANYDEFERREDTRIGGERS__DIAGNOSTICCHAIN_MAP:
+			return RTstatemachinescannothaveanydeferredtriggers((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case UMLRealTimeStateMachPackage.RT_STATE___CONSTRAINT5__DIAGNOSTICCHAIN_MAP:
+			return Constraint5((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-} //RTStateImpl
+} // RTStateImpl

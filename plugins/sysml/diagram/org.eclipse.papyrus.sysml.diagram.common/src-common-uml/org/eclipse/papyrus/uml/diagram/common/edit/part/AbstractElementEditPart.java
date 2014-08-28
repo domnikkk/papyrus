@@ -7,14 +7,13 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.edit.part;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.StackLayout;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -32,8 +31,8 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.papyrus.gmf.diagram.common.edit.policy.DefaultCreationEditPolicy;
 import org.eclipse.papyrus.gmf.diagram.common.edit.policy.DefaultGraphicalNodeEditPolicy;
-import org.eclipse.papyrus.infra.gmfdiag.preferences.utils.GradientPreferenceConverter;
 import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper;
+import org.eclipse.papyrus.infra.gmfdiag.preferences.utils.GradientPreferenceConverter;
 import org.eclipse.papyrus.sysml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ClassifierFigure;
@@ -57,6 +56,7 @@ public abstract class AbstractElementEditPart extends NamedElementEditPart {
 		setCompartmentLayoutHelper(BasicClassifierCompartmentLayoutHelper.getInstances());
 	}
 
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new DefaultGraphicalNodeEditPolicy());
@@ -65,35 +65,41 @@ public abstract class AbstractElementEditPart extends NamedElementEditPart {
 
 	protected abstract LayoutEditPolicy createLayoutEditPolicy();
 
+	@Override
 	protected IFigure createNodeShape() {
 		return primaryShape = new ClassifierFigure();
 	}
 
+	@Override
 	public NodeNamedElementFigure getPrimaryShape() {
-		return (NodeNamedElementFigure)primaryShape;
+		return (NodeNamedElementFigure) primaryShape;
 	}
 
 	protected abstract boolean addFixedChild(EditPart childEditPart);
 
 	protected abstract boolean removeFixedChild(EditPart childEditPart);
 
+	@Override
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if(addFixedChild(childEditPart)) {
+		if (addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
 	}
 
+	@Override
 	protected void removeChildVisual(EditPart childEditPart) {
-		if(removeFixedChild(childEditPart)) {
+		if (removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
 	}
 
+	@Override
 	protected abstract IFigure getContentPaneFor(IGraphicalEditPart editPart);
 
-	
+
+	@Override
 	protected NodeFigure createNodePlate() {
 		String prefElementId = getNotationView().getType();
 		IPreferenceStore store = Activator.getInstance().getPreferenceStore();
@@ -104,12 +110,14 @@ public abstract class AbstractElementEditPart extends NamedElementEditPart {
 		return result;
 	}
 
+	@Override
 	protected NodeFigure createMainFigure() {
 		return createMainFigureWithSVG();
 	}
 
+	@Override
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if(nodeShape.getLayoutManager() == null) {
+		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
 			layout.setSpacing(5);
 			nodeShape.setLayoutManager(layout);
@@ -117,21 +125,25 @@ public abstract class AbstractElementEditPart extends NamedElementEditPart {
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
+	@Override
 	public IFigure getContentPane() {
-		if(contentPane != null) {
+		if (contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
 	}
 
+	@Override
 	protected void setForegroundColor(Color color) {
-		if(primaryShape != null) {
+		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
 		}
 	}
 
+	@Override
 	public abstract EditPart getPrimaryChildEditPart();
 
+	@Override
 	public EditPart getTargetEditPart(Request request) {
 		return super.getTargetEditPart(request);
 	}
@@ -140,38 +152,38 @@ public abstract class AbstractElementEditPart extends NamedElementEditPart {
 	public Object getPreferredValue(EStructuralFeature feature) {
 		String prefKey = getNotationView().getType();
 
-		IPreferenceStore store = (IPreferenceStore)getDiagramPreferencesHint().getPreferenceStore();
+		IPreferenceStore store = (IPreferenceStore) getDiagramPreferencesHint().getPreferenceStore();
 		Object result = null;
 
-		if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
+		if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 
 			String prefColor = null;
-			if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
+			if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant(prefKey, PreferencesConstantsHelper.COLOR_LINE);
 
-			} else if(feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant(prefKey, PreferencesConstantsHelper.COLOR_FONT);
 
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant(prefKey, PreferencesConstantsHelper.COLOR_FILL);
 
 			}
-			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor((IPreferenceStore)store, prefColor));
+			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor(store, prefColor));
 
-		} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
+		} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 
 			String prefGradient = PreferencesConstantsHelper.getElementConstant(prefKey, PreferencesConstantsHelper.COLOR_GRADIENT);
 			GradientPreferenceConverter gradientPreferenceConverter = new GradientPreferenceConverter(store.getString(prefGradient));
-			if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
+			if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
 				result = new Integer(gradientPreferenceConverter.getTransparency());
 
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 				result = gradientPreferenceConverter.getGradientData();
 
 			}
 		}
 
-		if(result == null) {
+		if (result == null) {
 			result = getStructuralFeatureValue(feature);
 		}
 		return result;

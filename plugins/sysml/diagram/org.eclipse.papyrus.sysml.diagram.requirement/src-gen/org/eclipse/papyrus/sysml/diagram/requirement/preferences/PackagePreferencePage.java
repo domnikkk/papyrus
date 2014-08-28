@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ public class PackagePreferencePage extends RequirementDiagramNodePreferencePage 
 	/** Static attribute initialization */
 	static {
 		compartmentDefaultVisibilityMap = new LinkedHashMap<String, Boolean>();
-		compartmentDefaultVisibilityMap.put("PackageableElementCompartment", Boolean.TRUE); //$NON-NLS-1$	
+		compartmentDefaultVisibilityMap.put("PackageableElementCompartment", Boolean.TRUE); //$NON-NLS-1$
 
 		compartmentTitleDefaultVisibilityMap = new LinkedHashMap<String, Boolean>();
 		compartmentTitleDefaultVisibilityMap.put("PackageableElementCompartment", Boolean.TRUE); //$NON-NLS-1$
@@ -57,9 +57,9 @@ public class PackagePreferencePage extends RequirementDiagramNodePreferencePage 
 
 	/**
 	 * Initialize defaults using a specified {@link IPreferenceStore}
-	 * 
+	 *
 	 * @param store
-	 *        the preference store.
+	 *            the preference store.
 	 */
 	public static void initDefaults(IPreferenceStore store) {
 		// Start of user code custom default initializations
@@ -68,13 +68,13 @@ public class PackagePreferencePage extends RequirementDiagramNodePreferencePage 
 		store.setDefault(PreferencesConstantsHelper.getElementConstant(prefKey, PreferencesConstantsHelper.WIDTH), 200);
 		store.setDefault(PreferencesConstantsHelper.getElementConstant(prefKey, PreferencesConstantsHelper.HEIGHT), 100);
 		// Initialize default visibility for compartments in preference page.
-		for(String compartmentName : compartmentDefaultVisibilityMap.keySet()) {
+		for (String compartmentName : compartmentDefaultVisibilityMap.keySet()) {
 			String showCompartmentKey = PreferencesConstantsHelper.getCompartmentElementConstant(prefKey, compartmentName, PreferencesConstantsHelper.COMPARTMENT_VISIBILITY);
 			store.setDefault(showCompartmentKey, compartmentDefaultVisibilityMap.get(compartmentName));
 		}
 
 		// Initialize default title visibility for compartments in preference page.
-		for(String compartmentName : compartmentTitleDefaultVisibilityMap.keySet()) {
+		for (String compartmentName : compartmentTitleDefaultVisibilityMap.keySet()) {
 			String showCompartmentTitleKey = PreferencesConstantsHelper.getCompartmentElementConstant(prefKey, compartmentName, PreferencesConstantsHelper.COMPARTMENT_NAME_VISIBILITY);
 			store.setDefault(showCompartmentTitleKey, compartmentTitleDefaultVisibilityMap.get(compartmentName));
 		}
@@ -85,7 +85,7 @@ public class PackagePreferencePage extends RequirementDiagramNodePreferencePage 
 	 */
 	@Override
 	protected void initializeCompartmentNamesList() {
-		for(String name : compartmentDefaultVisibilityMap.keySet()) {
+		for (String name : compartmentDefaultVisibilityMap.keySet()) {
 			this.compartmentNamesList.add(name);
 		}
 	}
@@ -95,7 +95,7 @@ public class PackagePreferencePage extends RequirementDiagramNodePreferencePage 
 	 */
 	@Override
 	protected void initializeCompartmentTitlesList() {
-		for(String name : compartmentTitleDefaultVisibilityMap.keySet()) {
+		for (String name : compartmentTitleDefaultVisibilityMap.keySet()) {
 			this.compartmentTitlesList.add(name);
 		}
 	}

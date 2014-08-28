@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.facade.virtualmetamodel.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualLiteral;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
 
@@ -31,6 +30,7 @@ public class VirtualLiteralImpl extends VirtualElementImpl implements VirtualLit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected VirtualLiteralImpl() {
@@ -40,6 +40,7 @@ public class VirtualLiteralImpl extends VirtualElementImpl implements VirtualLit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -47,4 +48,4 @@ public class VirtualLiteralImpl extends VirtualElementImpl implements VirtualLit
 		return VirtualmetamodelPackage.Literals.VIRTUAL_LITERAL;
 	}
 
-} //VirtualLiteralImpl
+} // VirtualLiteralImpl

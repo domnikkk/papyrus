@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,9 +35,9 @@ import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 public class SetValuesActionEditHelperAdvice extends AbstractEditHelperAdvice implements IActionEditHelperAdvice<SetValuesActionConfiguration> {
 
 	/** list of the features to set */
-	//protected Map<String, FeatureValue> featuresToValues = null; 
+	// protected Map<String, FeatureValue> featuresToValues = null;
 	/** list of runtime defined features */
-	//protected Map<String, FeatureValue> featuresToRuntimeDefinitions = null;
+	// protected Map<String, FeatureValue> featuresToRuntimeDefinitions = null;
 
 	/** list of static defined features */
 	protected Map<String, FeatureValue> featuresToStaticDefinitions = null;
@@ -45,14 +45,15 @@ public class SetValuesActionEditHelperAdvice extends AbstractEditHelperAdvice im
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void init(SetValuesActionConfiguration configuration) {
-		//featuresToRuntimeDefinitions = new HashMap<String, FeatureValue>();
+		// featuresToRuntimeDefinitions = new HashMap<String, FeatureValue>();
 		featuresToStaticDefinitions = new HashMap<String, FeatureValue>();
-		if(configuration == null) {
+		if (configuration == null) {
 			return;
 		}
-		for(FeatureToSet featureToSet : configuration.getFeaturesToSet()) {
-			featuresToStaticDefinitions.put(featureToSet.getFeatureName(), featureToSet.getValue());	
+		for (FeatureToSet featureToSet : configuration.getFeaturesToSet()) {
+			featuresToStaticDefinitions.put(featureToSet.getFeatureName(), featureToSet.getValue());
 		}
 	}
 
@@ -65,6 +66,7 @@ public class SetValuesActionEditHelperAdvice extends AbstractEditHelperAdvice im
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean approveRequest(IEditCommandRequest request) {
 		return super.approveRequest(request);
 	}
@@ -99,72 +101,72 @@ public class SetValuesActionEditHelperAdvice extends AbstractEditHelperAdvice im
 	@Override
 	protected ICommand getAfterConfigureCommand(ConfigureRequest request) {
 		ICommand resultCommand = null;
-		
-		// retrieve eobject 
+
+		// retrieve eobject
 		EObject elementToConfigure = request.getElementToConfigure();
-		if(elementToConfigure==null) {
+		if (elementToConfigure == null) {
 			return null;
 		}
 		// retrieve edit service to get features from configure command
 		IElementEditService service = ElementEditServiceUtils.getCommandProvider(elementToConfigure);
-		if(service == null) {
-			Activator.log.error("Impossible to get edit service from element: "+elementToConfigure, null);
+		if (service == null) {
+			Activator.log.error("Impossible to get edit service from element: " + elementToConfigure, null);
 			return null;
 		}
-		
-		for(Entry<String, FeatureValue> featureEntry: featuresToStaticDefinitions.entrySet()) {
+
+		for (Entry<String, FeatureValue> featureEntry : featuresToStaticDefinitions.entrySet()) {
 			// retrieve feature value
 			ICommand command = getSetFeatureValueCommand(elementToConfigure, featureEntry.getKey(), featureEntry.getValue(), service, request);
-			if(command !=null) {
-				if(resultCommand == null) {
-					resultCommand = command; 
+			if (command != null) {
+				if (resultCommand == null) {
+					resultCommand = command;
 				} else {
 					resultCommand = resultCommand.compose(command);
 				}
 			}
 		}
-		
-//		if(!featuresToRuntimeDefinitions.isEmpty()) {
-//			ICommand command = getDynamicSetFeatureValueCommand(elementToConfigure, featuresToRuntimeDefinitions, service, request);
-//			if(command !=null) {
-//				if(resultCommand == null) {
-//					resultCommand = command; 
-//				} else {
-//					resultCommand = resultCommand.compose(command);
-//				}
-//			}
-//		}
-		
-		
-		if(resultCommand!=null) {
+
+		// if(!featuresToRuntimeDefinitions.isEmpty()) {
+		// ICommand command = getDynamicSetFeatureValueCommand(elementToConfigure, featuresToRuntimeDefinitions, service, request);
+		// if(command !=null) {
+		// if(resultCommand == null) {
+		// resultCommand = command;
+		// } else {
+		// resultCommand = resultCommand.compose(command);
+		// }
+		// }
+		// }
+
+
+		if (resultCommand != null) {
 			return resultCommand.reduce();
 		}
-		
-		
+
+
 		return super.getAfterConfigureCommand(request);
 	}
 
 
 	/**
 	 * @param elementToConfigure
-	 *        the eobject to configure
+	 *            the eobject to configure
 	 * @param name
-	 *        the name of the feature to set
+	 *            the name of the feature to set
 	 * @param value
-	 *        the new value of the feature
+	 *            the new value of the feature
 	 */
 	protected ICommand getSetFeatureValueCommand(EObject elementToConfigure, String name, FeatureValue featureValue, IElementEditService service, ConfigureRequest configureRequest) {
-		if(name == null) {
+		if (name == null) {
 			Activator.log.debug("No feature name has been set.");
 			return null;
 		}
-		if(elementToConfigure.eClass() == null) {
+		if (elementToConfigure.eClass() == null) {
 			Activator.log.error("Impossible to find EClass from EObject: " + elementToConfigure, null);
 			return null;
 		}
 		// retrieve structural feature for the element to configure
 		EStructuralFeature feature = elementToConfigure.eClass().getEStructuralFeature(name);
-		if(feature == null) {
+		if (feature == null) {
 			Activator.log.error("Impossible to find feature " + name + " for eobject " + elementToConfigure, null);
 			return null;
 		}

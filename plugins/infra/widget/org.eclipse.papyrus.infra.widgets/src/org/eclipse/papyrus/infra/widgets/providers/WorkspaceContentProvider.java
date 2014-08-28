@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * A Workspace content provider with search possibilities and filters (By file name and by file extension)
- * 
+ *
  * @author Camille Letavernier
  */
 public class WorkspaceContentProvider extends EncapsulatedContentProvider {
@@ -43,11 +43,12 @@ public class WorkspaceContentProvider extends EncapsulatedContentProvider {
 
 	private ISelectionChangedListener extensionFiltersListener = new ISelectionChangedListener() {
 
+		@Override
 		public void selectionChanged(SelectionChangedEvent event) {
 
 			String patternString = "*";
-			if(!event.getSelection().isEmpty()) {
-				patternString = (String)((IStructuredSelection)event.getSelection()).getFirstElement();
+			if (!event.getSelection().isEmpty()) {
+				patternString = (String) ((IStructuredSelection) event.getSelection()).getFirstElement();
 			}
 			extensionViewerFilter.setPattern(patternString);
 			viewer.refresh();
@@ -69,8 +70,8 @@ public class WorkspaceContentProvider extends EncapsulatedContentProvider {
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 		super.inputChanged(viewer, oldInput, newInput);
 
-		if(viewer instanceof StructuredViewer) {
-			this.viewer = (StructuredViewer)viewer;
+		if (viewer instanceof StructuredViewer) {
+			this.viewer = (StructuredViewer) viewer;
 			addViewerFilter(this.viewer, extensionViewerFilter);
 		}
 	}
@@ -114,7 +115,7 @@ public class WorkspaceContentProvider extends EncapsulatedContentProvider {
 
 				@Override
 				public String getText(Object element) {
-					if(extensionFilters.containsKey(element)) {
+					if (extensionFilters.containsKey(element)) {
 						return extensionFilters.get(element);
 					} else {
 						return super.getText(element);
@@ -125,7 +126,7 @@ public class WorkspaceContentProvider extends EncapsulatedContentProvider {
 			extensionFiltersViewer.addSelectionChangedListener(extensionFiltersListener);
 
 			extensionFiltersViewer.setInput(extensionFilters.keySet());
-			if(!extensionFilters.isEmpty()) {
+			if (!extensionFilters.isEmpty()) {
 				extensionFiltersViewer.setSelection(new StructuredSelection(extensionFilters.keySet().iterator().next()));
 			}
 		}

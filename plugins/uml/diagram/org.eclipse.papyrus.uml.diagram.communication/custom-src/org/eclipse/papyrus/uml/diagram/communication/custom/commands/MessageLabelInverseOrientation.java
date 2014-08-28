@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,81 +49,81 @@ public class MessageLabelInverseOrientation implements IObjectActionDelegate {
 
 	/**
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
-	 * 
+	 *
 	 * @param action
 	 */
 	public void run(IAction action) {
 		CompoundCommand command = new CompoundCommand();
-		TransactionalEditingDomain domain = ((IGraphicalEditPart)selectedElement.getParent()).getEditingDomain();
-		//The source Lifeline of the connection
-		source = (EObject)((LifelineEditPartCN)((ConnectionEditPart)selectedElement.getParent()).getSource()).resolveSemanticElement();
-		//The target Lifeline of the connection
-		target = (EObject)((LifelineEditPartCN)((ConnectionEditPart)selectedElement.getParent()).getTarget()).resolveSemanticElement();
-		//if the selected element is a label that represents a message
-		if(selectedElement.resolveSemanticElement() instanceof Message) {
-			//request to change the source by the target (semantically)
+		TransactionalEditingDomain domain = ((IGraphicalEditPart) selectedElement.getParent()).getEditingDomain();
+		// The source Lifeline of the connection
+		source = ((LifelineEditPartCN) ((ConnectionEditPart) selectedElement.getParent()).getSource()).resolveSemanticElement();
+		// The target Lifeline of the connection
+		target = ((LifelineEditPartCN) ((ConnectionEditPart) selectedElement.getParent()).getTarget()).resolveSemanticElement();
+		// if the selected element is a label that represents a message
+		if (selectedElement.resolveSemanticElement() instanceof Message) {
+			// request to change the source by the target (semantically)
 			ReorientRelationshipRequest req = null;
-			//request to change the target by the source (semantically)
+			// request to change the target by the source (semantically)
 			ReorientRelationshipRequest req2 = null;
-			//create a command to execute the request req
+			// create a command to execute the request req
 			CustomMessageReorientCommand reorientcommandSrc = null;
-			//create a command to execute the request req2
+			// create a command to execute the request req2
 			CustomMessageReorientCommand reorientcommandTarget = null;
-			Message message = (Message)selectedElement.resolveSemanticElement();
+			Message message = (Message) selectedElement.resolveSemanticElement();
 			MessageEnd sendEvent = message.getSendEvent();
 			MessageEnd rcvEvent = message.getReceiveEvent();
-			EList<InteractionFragment> listSrc = ((Lifeline)source).getCoveredBys();
-			//get the source and target lifelines of the message
+			EList<InteractionFragment> listSrc = ((Lifeline) source).getCoveredBys();
+			// get the source and target lifelines of the message
 			EObject srcLifeline = null;
 			EObject targetLifeline = null;
-			if(!listSrc.isEmpty()) {
-				done: for(int i = 0; i < listSrc.size(); i++) {
-					if(listSrc.get(i).equals(rcvEvent)) {
+			if (!listSrc.isEmpty()) {
+				done: for (int i = 0; i < listSrc.size(); i++) {
+					if (listSrc.get(i).equals(rcvEvent)) {
 						srcLifeline = target;
 						targetLifeline = source;
 						break done;
-					} else if(listSrc.get(i).equals(sendEvent)) {
+					} else if (listSrc.get(i).equals(sendEvent)) {
 						srcLifeline = source;
 						targetLifeline = target;
 						break done;
 					}
 				}
-				//request to change the source by the target (semantically)
-				req = new ReorientRelationshipRequest(domain, (EObject)message, targetLifeline, srcLifeline, 1);
-				//request to change the target by the source (semantically)
-				req2 = new ReorientRelationshipRequest(domain, (EObject)message, srcLifeline, targetLifeline, 2);
-				//create a command to execute the request req
+				// request to change the source by the target (semantically)
+				req = new ReorientRelationshipRequest(domain, message, targetLifeline, srcLifeline, 1);
+				// request to change the target by the source (semantically)
+				req2 = new ReorientRelationshipRequest(domain, message, srcLifeline, targetLifeline, 2);
+				// create a command to execute the request req
 				reorientcommandSrc = new CustomMessageReorientCommand(req);
-				//create a command to execute the request req2
+				// create a command to execute the request req2
 				reorientcommandTarget = new CustomMessageReorientCommand(req2);
-				//only change semantically the source and target of the message			
+				// only change semantically the source and target of the message
 				command.add(new ICommandProxy(reorientcommandSrc));
 				command.add(new ICommandProxy(reorientcommandTarget));
 			}
-			//Execute the command
+			// Execute the command
 			selectedElement.getDiagramEditDomain().getDiagramCommandStack().execute(command);
-			((IGraphicalEditPart)selectedElement).refresh();
+			((IGraphicalEditPart) selectedElement).refresh();
 		}
 	}
 
 	/**
 	 * @see org.eclipse.ui.IActionDelegate#selectionChanged(org.eclipse.jface.action.IAction, org.eclipse.jface.viewers.ISelection)
-	 * 
+	 *
 	 * @param action
 	 * @param selection
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
-		if(selection instanceof IStructuredSelection) {
-			Object selectedobject = ((IStructuredSelection)selection).getFirstElement();
-			if(selectedobject instanceof MessageNameEditPart) {
-				selectedElement = (MessageNameEditPart)selectedobject;
+		if (selection instanceof IStructuredSelection) {
+			Object selectedobject = ((IStructuredSelection) selection).getFirstElement();
+			if (selectedobject instanceof MessageNameEditPart) {
+				selectedElement = (MessageNameEditPart) selectedobject;
 			}
 		}
 	}
 
 	/**
 	 * @see org.eclipse.ui.IObjectActionDelegate#setActivePart(org.eclipse.jface.action.IAction, org.eclipse.ui.IWorkbenchPart)
-	 * 
+	 *
 	 * @param action
 	 * @param targetPart
 	 */
@@ -132,10 +132,10 @@ public class MessageLabelInverseOrientation implements IObjectActionDelegate {
 
 	/**
 	 * Gets the UML message.
-	 * 
+	 *
 	 * @return the UML message
 	 */
 	protected Message getMessage() {
-		return (Message)selectedElement.resolveSemanticElement();
+		return (Message) selectedElement.resolveSemanticElement();
 	}
 }

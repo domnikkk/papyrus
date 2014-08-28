@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 Atos, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,10 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.command.AbstractCommand;
+import org.eclipse.emf.common.command.AbstractCommand.NonDirtying;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.command.UnexecutableCommand;
-import org.eclipse.emf.common.command.AbstractCommand.NonDirtying;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -39,7 +39,7 @@ public class LoadResourceHandler extends AbstractCommandHandler {
 
 	/**
 	 * Get the command to load resource of selected model object
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#getCommand()
 	 * @return the command
 	 */
@@ -47,19 +47,19 @@ public class LoadResourceHandler extends AbstractCommandHandler {
 	protected Command getCommand() {
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 		List<EObject> selection = getSelectedElements();
-		if(editingDomain != null && editingDomain.getResourceSet() instanceof ModelSet && selection.size() > 0) {
-			final ModelSet set = (ModelSet)editingDomain.getResourceSet();
+		if (editingDomain != null && editingDomain.getResourceSet() instanceof ModelSet && selection.size() > 0) {
+			final ModelSet set = (ModelSet) editingDomain.getResourceSet();
 			class NonDirtyingCompound extends CompoundCommand implements NonDirtying {
 				// Empty
 			}
 			CompoundCommand command = new NonDirtyingCompound();
 			List<URI> handledURI = new ArrayList<URI>();
-			for(EObject sel : selection) {
-				if(sel.eIsProxy()) {
-					InternalEObject internal = (InternalEObject)sel;
+			for (EObject sel : selection) {
+				if (sel.eIsProxy()) {
+					InternalEObject internal = (InternalEObject) sel;
 					URI uriProxy = internal.eProxyURI();
 					final URI uriTrim = uriProxy.trimFragment().trimFileExtension();
-					if(!handledURI.contains(uriTrim)) {
+					if (!handledURI.contains(uriTrim)) {
 						handledURI.add(uriTrim);
 						class LoadCommand extends AbstractCommand implements NonDirtying {
 
@@ -75,7 +75,8 @@ public class LoadResourceHandler extends AbstractCommandHandler {
 							public boolean canExecute() {
 								return true;
 							}
-						};
+						}
+						;
 						command.append(new LoadCommand());
 					}
 				}

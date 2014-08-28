@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -19,6 +19,7 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.gmf.diagram.common.edit.policy.DefaultSemanticEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLinkLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.figure.EdgeDecorationType;
 import org.eclipse.papyrus.uml.diagram.common.figure.NamedElementEdgeFigure;
@@ -39,7 +40,7 @@ public class UsageEditPart extends AbstractElementLinkEditPart {
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DefaultSemanticEditPolicy());
-		installEditPolicy(AppliedStereotypeLinkLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeLinkLabelDisplayEditPolicy("use"));
+		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeLinkLabelDisplayEditPolicy("use"));
 		// Start of user code custom policies
 		// End of user code
 	}
@@ -49,8 +50,8 @@ public class UsageEditPart extends AbstractElementLinkEditPart {
 	 */
 	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof NamedElementLinkLabelNameEditPart) {
-			((NamedElementLinkLabelNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
+		if (childEditPart instanceof NamedElementLinkLabelNameEditPart) {
+			((NamedElementLinkLabelNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
 		return super.addFixedChild(childEditPart);
@@ -61,7 +62,7 @@ public class UsageEditPart extends AbstractElementLinkEditPart {
 	 */
 	@Override
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof NamedElementLinkLabelNameEditPart) {
+		if (childEditPart instanceof NamedElementLinkLabelNameEditPart) {
 			return true;
 		}
 		return super.removeFixedChild(childEditPart);
@@ -70,6 +71,7 @@ public class UsageEditPart extends AbstractElementLinkEditPart {
 	/**
 	 * Creates figure for this edit part.
 	 */
+	@Override
 	protected Connection createConnectionFigure() {
 		return new NamedElementEdgeFigure();
 	}
@@ -77,8 +79,9 @@ public class UsageEditPart extends AbstractElementLinkEditPart {
 	/**
 	 * Creates primary shape for this edit part.
 	 */
+	@Override
 	public NamedElementEdgeFigure getPrimaryShape() {
-		return (NamedElementEdgeFigure)getFigure();
+		return (NamedElementEdgeFigure) getFigure();
 	}
 
 	/**

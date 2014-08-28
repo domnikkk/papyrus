@@ -1,19 +1,18 @@
 /**
- * 
+ *
  *   Copyright (c)  2012 CEA LIST.
  *   All rights reserved. This program and the accompanying materials
  *   are made available under the terms of the Eclipse Public License v1.0
  *   which accompanies this distribution, and is available at
  *   http://www.eclipse.org/legal/epl-v10.html
- *   
+ *
  *   Contributors:
  *       CEA LIST - initial API and implementation
- *  
+ *
  */
 package org.eclipse.papyrus.infra.discovery;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -24,23 +23,23 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getProvider <em>Provider</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getSitesURLS <em>Sites URLS</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getOverview <em>Overview</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getCategory <em>Category</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getId <em>Id</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getLicense <em>License</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isSelected <em>Selected</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isAvailable <em>Available</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isInstalled <em>Installed</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getGroups <em>Groups</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getImage32 <em>Image32</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isIncubation <em>Incubation</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getMessages <em>Messages</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isVisible <em>Visible</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getHiddingFeatureID <em>Hidding Feature ID</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getProvider <em>Provider</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getSitesURLS <em>Sites URLS</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getOverview <em>Overview</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getCategory <em>Category</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getId <em>Id</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getLicense <em>License</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isSelected <em>Selected</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isAvailable <em>Available</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isInstalled <em>Installed</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getGroups <em>Groups</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getImage32 <em>Image32</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isIncubation <em>Incubation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getMessages <em>Messages</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isVisible <em>Visible</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getHiddingFeatureID <em>Hidding Feature ID</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,10 +52,10 @@ public interface InstallableComponent extends EObject {
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_Name()
@@ -69,7 +68,9 @@ public interface InstallableComponent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -79,10 +80,10 @@ public interface InstallableComponent extends EObject {
 	 * Returns the value of the '<em><b>Provider</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Provider</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Provider</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Provider</em>' attribute.
 	 * @see #setProvider(String)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_Provider()
@@ -95,7 +96,9 @@ public interface InstallableComponent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getProvider <em>Provider</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Provider</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Provider</em>' attribute.
 	 * @see #getProvider()
 	 * @generated
 	 */
@@ -106,10 +109,10 @@ public interface InstallableComponent extends EObject {
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Sites URLS</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Sites URLS</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Sites URLS</em>' attribute list.
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_SitesURLS()
 	 * @model required="true"
@@ -121,10 +124,10 @@ public interface InstallableComponent extends EObject {
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_Description()
@@ -137,7 +140,9 @@ public interface InstallableComponent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -147,10 +152,10 @@ public interface InstallableComponent extends EObject {
 	 * Returns the value of the '<em><b>Overview</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Overview</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Overview</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Overview</em>' containment reference.
 	 * @see #setOverview(Overview)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_Overview()
@@ -163,7 +168,9 @@ public interface InstallableComponent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getOverview <em>Overview</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Overview</em>' containment reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Overview</em>' containment reference.
 	 * @see #getOverview()
 	 * @generated
 	 */
@@ -174,10 +181,10 @@ public interface InstallableComponent extends EObject {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.infra.discovery.Category#getComponents <em>Components</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Category</em>' container reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Category</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Category</em>' container reference.
 	 * @see #setCategory(Category)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_Category()
@@ -191,7 +198,9 @@ public interface InstallableComponent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getCategory <em>Category</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Category</em>' container reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Category</em>' container reference.
 	 * @see #getCategory()
 	 * @generated
 	 */
@@ -202,10 +211,10 @@ public interface InstallableComponent extends EObject {
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Id</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Id</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Id</em>' attribute list.
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_Id()
 	 * @model required="true"
@@ -217,10 +226,10 @@ public interface InstallableComponent extends EObject {
 	 * Returns the value of the '<em><b>License</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>License</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>License</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>License</em>' attribute.
 	 * @see #setLicense(String)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_License()
@@ -233,7 +242,9 @@ public interface InstallableComponent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getLicense <em>License</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>License</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>License</em>' attribute.
 	 * @see #getLicense()
 	 * @generated
 	 */
@@ -244,10 +255,10 @@ public interface InstallableComponent extends EObject {
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Selected</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Selected</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Selected</em>' attribute.
 	 * @see #setSelected(boolean)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_Selected()
@@ -260,7 +271,9 @@ public interface InstallableComponent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isSelected <em>Selected</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Selected</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Selected</em>' attribute.
 	 * @see #isSelected()
 	 * @generated
 	 */
@@ -271,10 +284,10 @@ public interface InstallableComponent extends EObject {
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Available</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Available</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Available</em>' attribute.
 	 * @see #setAvailable(boolean)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_Available()
@@ -287,7 +300,9 @@ public interface InstallableComponent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isAvailable <em>Available</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Available</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Available</em>' attribute.
 	 * @see #isAvailable()
 	 * @generated
 	 */
@@ -298,10 +313,10 @@ public interface InstallableComponent extends EObject {
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Installed</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Installed</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Installed</em>' attribute.
 	 * @see #setInstalled(boolean)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_Installed()
@@ -314,7 +329,9 @@ public interface InstallableComponent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isInstalled <em>Installed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Installed</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Installed</em>' attribute.
 	 * @see #isInstalled()
 	 * @generated
 	 */
@@ -325,10 +342,10 @@ public interface InstallableComponent extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.discovery.Group}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Groups</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Groups</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Groups</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_Groups()
 	 * @model
@@ -340,10 +357,10 @@ public interface InstallableComponent extends EObject {
 	 * Returns the value of the '<em><b>Image32</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Image32</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Image32</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Image32</em>' attribute.
 	 * @see #setImage32(String)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_Image32()
@@ -356,7 +373,9 @@ public interface InstallableComponent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getImage32 <em>Image32</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Image32</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Image32</em>' attribute.
 	 * @see #getImage32()
 	 * @generated
 	 */
@@ -367,10 +386,10 @@ public interface InstallableComponent extends EObject {
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Incubation</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Incubation</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Incubation</em>' attribute.
 	 * @see #setIncubation(boolean)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_Incubation()
@@ -383,7 +402,9 @@ public interface InstallableComponent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isIncubation <em>Incubation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Incubation</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Incubation</em>' attribute.
 	 * @see #isIncubation()
 	 * @generated
 	 */
@@ -394,10 +415,10 @@ public interface InstallableComponent extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.discovery.Message}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Messages</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Messages</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Messages</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_Messages()
 	 * @model containment="true"
@@ -410,10 +431,10 @@ public interface InstallableComponent extends EObject {
 	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Visible</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Visible</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Visible</em>' attribute.
 	 * @see #setVisible(boolean)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_Visible()
@@ -426,7 +447,9 @@ public interface InstallableComponent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isVisible <em>Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Visible</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Visible</em>' attribute.
 	 * @see #isVisible()
 	 * @generated
 	 */
@@ -437,10 +460,10 @@ public interface InstallableComponent extends EObject {
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Hidding Feature ID</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Hidding Feature ID</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Hidding Feature ID</em>' attribute list.
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getInstallableComponent_HiddingFeatureID()
 	 * @model

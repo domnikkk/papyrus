@@ -3,7 +3,7 @@ package org.eclipse.papyrus.eclipse.project.editors.interfaces;
 import org.w3c.dom.Document;
 
 
-public interface IFeatureProjectEditor { //TODo use interface inheritance
+public interface IFeatureProjectEditor { // TODo use interface inheritance
 
 	/** the name of the file plugin.xml */
 	public static final String FRAGMENT_XML_FILE = "feature.xml"; //$NON-NLS-1$

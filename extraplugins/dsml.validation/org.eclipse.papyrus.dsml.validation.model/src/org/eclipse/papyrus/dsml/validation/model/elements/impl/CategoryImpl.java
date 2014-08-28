@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,7 +8,7 @@
  *
  * Contributors:
  *  Ernest Wozniak (CEA LIST) ernest.wozniak@cea.fr - Initial API and implementation
- *  Patrick Tessier (CEA LIST) patrick.Tessuier@cea.fr - modification 
+ *  Patrick Tessier (CEA LIST) patrick.Tessuier@cea.fr - modification
  *****************************************************************************/
 package org.eclipse.papyrus.dsml.validation.model.elements.impl;
 
@@ -19,8 +19,8 @@ import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.Category;
 
 /**
  * Implementation of a category interface.
- * 
- * 
+ *
+ *
  */
 public class CategoryImpl implements Category {
 
@@ -32,10 +32,11 @@ public class CategoryImpl implements Category {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
-	 * @param name the name of the category
+	 * @param name
+	 *            the name of the category
 	 * @param parentCategory
 	 */
 	public CategoryImpl(String name, Category parentCategory) {
@@ -53,11 +54,11 @@ public class CategoryImpl implements Category {
 		return this.id;
 	}
 
-/**
- * 
- * @see org.eclipse.papyrus.dsml.validation.model.elements.interfaces.Category#getName()
- *
- */
+	/**
+	 *
+	 * @see org.eclipse.papyrus.dsml.validation.model.elements.interfaces.Category#getName()
+	 *
+	 */
 	public String getName() {
 		return this.name;
 	}
@@ -65,7 +66,7 @@ public class CategoryImpl implements Category {
 	private String name;
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.dsml.validation.model.elements.interfaces.Category#isMandatory()
 	 *
 	 */
@@ -76,7 +77,7 @@ public class CategoryImpl implements Category {
 	private boolean isMandatory;
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.dsml.validation.model.elements.interfaces.Category#getSubcategories()
 	 *
 	 */
@@ -85,7 +86,7 @@ public class CategoryImpl implements Category {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.dsml.validation.model.elements.interfaces.Category#addSubcategories(java.util.List)
 	 *
 	 */
@@ -94,7 +95,7 @@ public class CategoryImpl implements Category {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.dsml.validation.model.elements.interfaces.Category#getParentCategory()
 	 *
 	 */

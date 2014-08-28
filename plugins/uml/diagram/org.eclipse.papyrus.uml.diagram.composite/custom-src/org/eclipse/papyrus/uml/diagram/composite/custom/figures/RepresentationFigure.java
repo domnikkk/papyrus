@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,10 +19,10 @@ import org.eclipse.papyrus.uml.diagram.common.figure.edge.DashedEdgeFigure;
 
 /**
  * Create an {@link RepresentationFigure} with the tag <code>&laquo representation &raquo</code>
- * 
+ *
  * This figure represents the representation link between an InformationItem and the possible
  * elements (Signal, Class, Actor, InformationItem, Interface, Component.
- * 
+ *
  */
 public class RepresentationFigure extends DashedEdgeFigure {
 
@@ -40,6 +40,7 @@ public class RepresentationFigure extends DashedEdgeFigure {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected void createContents() {
 		super.createContents();
 		initTagLabel(TAG_LABEL);
@@ -47,12 +48,12 @@ public class RepresentationFigure extends DashedEdgeFigure {
 
 	/**
 	 * Create the tag label in the figure. The tag label is created if value is not null.
-	 * 
+	 *
 	 * @param value
-	 *        the value to use
+	 *            the value to use
 	 */
 	protected void initTagLabel(String value) {
-		if(value != null && value.length() > 0) {
+		if (value != null && value.length() > 0) {
 			tagLabel = new WrappingLabel();
 			String textToDisplay = Activator.ST_LEFT + value + Activator.ST_RIGHT;
 			tagLabel.setText(textToDisplay);

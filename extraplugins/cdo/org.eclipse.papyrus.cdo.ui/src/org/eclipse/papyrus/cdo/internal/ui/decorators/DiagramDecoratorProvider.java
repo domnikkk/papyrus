@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,26 +32,28 @@ public class DiagramDecoratorProvider
 		super();
 	}
 
+	@Override
 	public boolean provides(IOperation operation) {
 		if (!(operation instanceof CreateDecoratorsOperation)) {
 			return false;
 		}
 		IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation) operation)
-			.getDecoratorTarget();
+				.getDecoratorTarget();
 		EditPart editPart = (EditPart) decoratorTarget
-			.getAdapter(EditPart.class);
+				.getAdapter(EditPart.class);
 		return editPart instanceof IPapyrusEditPart;
 	}
 
+	@Override
 	public void createDecorators(IDecoratorTarget decoratorTarget) {
 		EditPart editPart = (EditPart) decoratorTarget
-			.getAdapter(EditPart.class);
+				.getAdapter(EditPart.class);
 
 		DawnElementStylizer stylizer = DawnElementStylizerRegistry.instance
-			.getStylizer(editPart);
+				.getStylizer(editPart);
 		if (stylizer != null) {
 			decoratorTarget.installDecorator("cdoState", new CDOStateDiagramDecorator( //$NON-NLS-1$
-				decoratorTarget, stylizer));
+					decoratorTarget, stylizer));
 		}
 	}
 

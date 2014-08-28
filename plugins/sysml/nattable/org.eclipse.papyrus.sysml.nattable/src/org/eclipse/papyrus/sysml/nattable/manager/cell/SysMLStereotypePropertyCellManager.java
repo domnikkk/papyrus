@@ -22,10 +22,10 @@ import org.eclipse.papyrus.uml.nattable.utils.Constants;
 import org.eclipse.uml2.uml.Port;
 
 /**
- * 
+ *
  * This cell manager manages the cell displaying the direction of the FlowPort.
  * If the flowport is not atomic, the cell is not editable and the direction is N/A.
- * 
+ *
  */
 public class SysMLStereotypePropertyCellManager extends StereotypePropertyCellManager {
 
@@ -36,21 +36,21 @@ public class SysMLStereotypePropertyCellManager extends StereotypePropertyCellMa
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.nattable.manager.cell.manager.StereotypePropertyCellManager#handles(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param columnElement
 	 * @param rowElement
 	 * @return
 	 */
 	@Override
 	public boolean handles(final Object columnElement, final Object rowElement) {
-		if(super.handles(columnElement, rowElement)) {
+		if (super.handles(columnElement, rowElement)) {
 			final List<Object> objects = organizeAndResolvedObjects(columnElement, rowElement, null);
-			if(objects.size() == 2) {
-				final EObject object = (EObject)objects.get(0);
-				if(object instanceof Port) {
-					String propertyQualifiedName = (String)objects.get(1);
+			if (objects.size() == 2) {
+				final EObject object = (EObject) objects.get(0);
+				if (object instanceof Port) {
+					String propertyQualifiedName = (String) objects.get(1);
 					propertyQualifiedName = propertyQualifiedName.substring(Constants.PROPERTY_OF_STEREOTYPE_PREFIX.length(), propertyQualifiedName.length());
 					return propertyQualifiedName.equals(org.eclipse.papyrus.sysml.nattable.utils.Constants.STEREOTYPE_FLOWPORT_DIRECTION);
 				}
@@ -61,9 +61,9 @@ public class SysMLStereotypePropertyCellManager extends StereotypePropertyCellMa
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.nattable.manager.cell.manager.StereotypePropertyCellManager#isCellEditable(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param columnElement
 	 * @param rowElement
 	 * @return
@@ -71,11 +71,11 @@ public class SysMLStereotypePropertyCellManager extends StereotypePropertyCellMa
 	@Override
 	public boolean isCellEditable(final Object columnElement, final Object rowElement) {
 		boolean value = super.isCellEditable(columnElement, rowElement);
-		if(value) {
+		if (value) {
 			final List<Object> objects = organizeAndResolvedObjects(columnElement, rowElement, null);
-			if(objects.size() == 2) {
-				final EObject object = (EObject)objects.get(0);
-				if(matcher.matches(object)) {
+			if (objects.size() == 2) {
+				final EObject object = (EObject) objects.get(0);
+				if (matcher.matches(object)) {
 					value = false;
 				}
 			}

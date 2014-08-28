@@ -1,14 +1,14 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Nicolas Guyomar (Mia-Software) - Bug 334615 - Java Query for EMF Facet
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.query.java.javaquery.util;
 
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.emf.facet.query.java.javaquery.JavaqueryPackage;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.emf.facet.query.java.javaquery.JavaqueryPackage
  * @generated
  * @deprecated cf. https://bugs.eclipse.org/bugs/show_bug.cgi?id=374198
@@ -39,6 +39,7 @@ public class JavaqueryAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static JavaqueryPackage modelPackage;
@@ -47,6 +48,7 @@ public class JavaqueryAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public JavaqueryAdapterFactory() {
@@ -60,6 +62,7 @@ public class JavaqueryAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -69,7 +72,7 @@ public class JavaqueryAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == JavaqueryAdapterFactory.modelPackage;
+			return ((EObject) object).eClass().getEPackage() == JavaqueryAdapterFactory.modelPackage;
 		}
 		return false;
 	}
@@ -78,47 +81,55 @@ public class JavaqueryAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JavaquerySwitch<Adapter> modelSwitch =
-		new JavaquerySwitch<Adapter>() {
-			@Override
-			public Adapter caseJavaQuery(final JavaQuery object) {
-				return createJavaQueryAdapter();
-			}
-			@Override
-			public Adapter caseEModelElement(final EModelElement object) {
-				return createEModelElementAdapter();
-			}
-			@Override
-			public Adapter caseENamedElement(final ENamedElement object) {
-				return createENamedElementAdapter();
-			}
-			@Override
-			public Adapter caseETypedElement(final ETypedElement object) {
-				return createETypedElementAdapter();
-			}
-			@Override
-			public Adapter caseQuery(final Query object) {
-				return createQueryAdapter();
-			}
-			@Override
-			public Adapter defaultCase(final EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new JavaquerySwitch<Adapter>() {
+				@Override
+				public Adapter caseJavaQuery(final JavaQuery object) {
+					return createJavaQueryAdapter();
+				}
+
+				@Override
+				public Adapter caseEModelElement(final EModelElement object) {
+					return createEModelElementAdapter();
+				}
+
+				@Override
+				public Adapter caseENamedElement(final ENamedElement object) {
+					return createENamedElementAdapter();
+				}
+
+				@Override
+				public Adapter caseETypedElement(final ETypedElement object) {
+					return createETypedElementAdapter();
+				}
+
+				@Override
+				public Adapter caseQuery(final Query object) {
+					return createQueryAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(final EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 *
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(final Notifier target) {
-		return this.modelSwitch.doSwitch((EObject)target);
+		return this.modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -128,6 +139,7 @@ public class JavaqueryAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.query.java.javaquery.JavaQuery
 	 * @generated
@@ -142,6 +154,7 @@ public class JavaqueryAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.EModelElement
 	 * @generated
@@ -156,6 +169,7 @@ public class JavaqueryAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.ENamedElement
 	 * @generated
@@ -170,6 +184,7 @@ public class JavaqueryAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.ETypedElement
 	 * @generated
@@ -184,6 +199,7 @@ public class JavaqueryAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Query
 	 * @generated
@@ -197,6 +213,7 @@ public class JavaqueryAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -204,4 +221,4 @@ public class JavaqueryAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //JavaqueryAdapterFactory
+} // JavaqueryAdapterFactory

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.swt.events.MouseEvent;
  * This class is used to maintain a list of listeners {@link TabMouseEventsListener}.
  * Instance of this class can be use to fire the events to the listeners.
  * The various fireXxx() methods are used to fire events.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -36,19 +36,20 @@ public class TabMouseEventsProvider {
 
 	/**
 	 * Add a listener on the activeEditorChange event.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void addListener(ITabMouseEventsListener listener) {
 		// no duplicate
-		if(listeners.contains(listener))
+		if (listeners.contains(listener)) {
 			return;
+		}
 		listeners.add(listener);
 	}
 
 	/**
 	 * Add a listener on the activeEditorChange event.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeListener(ITabMouseEventsListener listener) {
@@ -58,33 +59,36 @@ public class TabMouseEventsProvider {
 
 	/**
 	 * Notify all listener with event.
+	 *
 	 * @param newEditor
 	 */
 	public void fireMouseDoubleClickEvent(PagePart page, TabFolderPart folder, MouseEvent event) {
 		// Fire events to internal listeners
-		for(ITabMouseEventsListener listener : listeners) {
+		for (ITabMouseEventsListener listener : listeners) {
 			listener.mouseDoubleClick(new TabMouseEvent(page, folder, event));
 		}
 	}
 
 	/**
 	 * Notify all listener with event.
+	 *
 	 * @param newEditor
 	 */
 	public void fireMouseDownEvent(PagePart page, TabFolderPart folder, MouseEvent event) {
 		// Fire events to internal listeners
-		for(ITabMouseEventsListener listener : listeners) {
+		for (ITabMouseEventsListener listener : listeners) {
 			listener.mouseDown(new TabMouseEvent(page, folder, event));
 		}
 	}
 
 	/**
 	 * Notify all listener with event.
+	 *
 	 * @param newEditor
 	 */
 	public void fireMouseUpEvent(PagePart page, TabFolderPart folder, MouseEvent event) {
 		// Fire events to internal listeners
-		for(ITabMouseEventsListener listener : listeners) {
+		for (ITabMouseEventsListener listener : listeners) {
 			listener.mouseUp(new TabMouseEvent(page, folder, event));
 		}
 	}

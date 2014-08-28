@@ -67,7 +67,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Add implementing IPapyrusEditPart to displaying Stereotypes.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEditPart implements IPapyrusEditPart {
@@ -82,7 +82,7 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 
 	@Override
 	public List getChildren() {
-		if(executionSpecificationEndParts == null) {
+		if (executionSpecificationEndParts == null) {
 			initExecutionSpecificationEndEditPart();
 		}
 		return super.getChildren();
@@ -90,16 +90,16 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 
 	protected void initExecutionSpecificationEndEditPart() {
 		EObject element = this.resolveSemanticElement();
-		if(!(element instanceof ExecutionSpecification)) {
+		if (!(element instanceof ExecutionSpecification)) {
 			return;
 		}
 		executionSpecificationEndParts = new ArrayList<ExecutionSpecificationEndEditPart>();
-		ExecutionSpecification execution = (ExecutionSpecification)element;
+		ExecutionSpecification execution = (ExecutionSpecification) element;
 		final ExecutionSpecificationEndEditPart startPart = new ExecutionSpecificationEndEditPart(execution.getStart(), this, new RelativeLocator(getFigure(), PositionConstants.NORTH));
 		executionSpecificationEndParts.add(startPart);
 		final ExecutionSpecificationEndEditPart finishPart = new ExecutionSpecificationEndEditPart(execution.getFinish(), this, new RelativeLocator(getFigure(), PositionConstants.SOUTH));
 		executionSpecificationEndParts.add(finishPart);
-		Diagram diagram = ((View)this.getModel()).getDiagram();
+		Diagram diagram = ((View) this.getModel()).getDiagram();
 		startPart.rebuildLinks(diagram);
 		finishPart.rebuildLinks(diagram);
 		addChild(startPart, -1);
@@ -108,6 +108,7 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 
 	static class FillParentLocator implements Locator {
 
+		@Override
 		public void relocate(IFigure target) {
 			target.setBounds(target.getParent().getBounds());
 		}
@@ -116,7 +117,7 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 	/**
 	 * Overrides to disable the defaultAnchorArea. The edge is now more stuck with the middle of the
 	 * figure.
-	 * 
+	 *
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(16, 60) {
@@ -140,21 +141,21 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 
 			@Override
 			protected Command getResizeCommand(ChangeBoundsRequest request) {
-				// Bugfix: Avoid resize ES with the child size is little than parent one. 
+				// Bugfix: Avoid resize ES with the child size is little than parent one.
 				EditPart host = getHost();
-				List<ShapeNodeEditPart> movedChildrenParts = LifelineXYLayoutEditPolicy.getAffixedExecutionSpecificationEditParts((ShapeNodeEditPart)host);
+				List<ShapeNodeEditPart> movedChildrenParts = LifelineXYLayoutEditPolicy.getAffixedExecutionSpecificationEditParts((ShapeNodeEditPart) host);
 				Rectangle r = getInitialFeedbackBounds().getCopy();
 				getHostFigure().translateToAbsolute(r);
 				r.translate(0, request.getMoveDelta().y);
 				r.resize(0, request.getSizeDelta().height);
-				for(ShapeNodeEditPart child : movedChildrenParts) {
+				for (ShapeNodeEditPart child : movedChildrenParts) {
 					IFigure figure = child.getFigure();
 					Rectangle rect = figure.getBounds().getCopy();
-					if(figure instanceof HandleBounds) {
-						rect = ((HandleBounds)figure).getBounds().getCopy();
+					if (figure instanceof HandleBounds) {
+						rect = ((HandleBounds) figure).getBounds().getCopy();
 					}
 					figure.translateToAbsolute(rect);
-					if(rect.y < (r.y) || r.bottom() < (rect.y)) {
+					if (rect.y < (r.y) || r.bottom() < (rect.y)) {
 						return UnexecutableCommand.INSTANCE;
 					}
 				}
@@ -178,29 +179,29 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 				Rectangle originalBounds = rect.getCopy();
 				rect.translate(request.getMoveDelta());
 				rect.resize(request.getSizeDelta());
-				if(min.width > rect.width) {
+				if (min.width > rect.width) {
 					rect.width = min.width;
-				} else if(max.width < rect.width) {
+				} else if (max.width < rect.width) {
 					rect.width = max.width;
 				}
-				if(min.height > rect.height) {
+				if (min.height > rect.height) {
 					rect.height = min.height;
-				} else if(max.height < rect.height) {
+				} else if (max.height < rect.height) {
 					rect.height = max.height;
 				}
-				if(rect.height == min.height && request.getSizeDelta().height < 0 && request.getMoveDelta().y > 0) { //shrink at north
+				if (rect.height == min.height && request.getSizeDelta().height < 0 && request.getMoveDelta().y > 0) { // shrink at north
 					Point loc = rect.getLocation();
 					loc.y = originalBounds.getBottom().y - min.height;
 					rect.setLocation(loc);
 					request.getSizeDelta().height = min.height - originalBounds.height;
 					request.getMoveDelta().y = loc.y - originalBounds.y;
 				}
-				if(request.getSizeDelta().height == 0) { // moving
+				if (request.getSizeDelta().height == 0) { // moving
 					EditPart parentBar = moveExecutionSpecificationFeedback(request, AbstractExecutionSpecificationEditPart.this, rect);
-					if(parentBar == null) {
+					if (parentBar == null) {
 						parentBar = getParent();
 					}
-					//Highlight the parentBar when perform moving.
+					// Highlight the parentBar when perform moving.
 					HighlightUtil.unhighlight();
 					HighlightUtil.highlight(parentBar);
 				}
@@ -214,19 +215,19 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 				HighlightUtil.unhighlight();
 			}
 		});
-		//install a editpolicy to display stereotypes
+		// install a editpolicy to display stereotypes
 		installEditPolicy(AppliedStereotypeCommentCreationEditPolicy.APPLIED_STEREOTYPE_COMMENT, new AppliedStereotypeCommentCreationEditPolicyEx());
 	}
 
 	@Override
 	protected void setLineWidth(int width) {
-		if(getPrimaryShape() instanceof NodeFigure) {
-			((NodeFigure)getPrimaryShape()).setLineWidth(width);
+		if (getPrimaryShape() instanceof NodeFigure) {
+			((NodeFigure) getPrimaryShape()).setLineWidth(width);
 		}
 	}
 
 	protected final void refreshShadow() {
-		getPrimaryShape().setShadow(AppearanceHelper.showShadow((View)getModel()));
+		getPrimaryShape().setShadow(AppearanceHelper.showShadow((View) getModel()));
 	}
 
 	/**
@@ -239,9 +240,9 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 
 	/**
 	 * sets the back ground color of this edit part
-	 * 
+	 *
 	 * @param color
-	 *        the new value of the back ground color
+	 *            the new value of the back ground color
 	 */
 	@Override
 	protected void setBackgroundColor(Color color) {
@@ -256,8 +257,8 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 	@Override
 	protected void setGradient(GradientData gradient) {
 		IPapyrusNodeFigure fig = getPrimaryShape();
-		FillStyle style = (FillStyle)getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
-		if(gradient != null) {
+		FillStyle style = (FillStyle) getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
+		if (gradient != null) {
 			fig.setIsUsingGradient(true);
 			fig.setGradientData(style.getFillColor(), gradient.getGradientColor1(), gradient.getGradientStyle());
 		} else {
@@ -274,18 +275,19 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
 		Object feature = event.getFeature();
-		if((getModel() != null) && (getModel() == event.getNotifier())) {
-			if(NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
+		if ((getModel() != null) && (getModel() == event.getNotifier())) {
+			if (NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
 				refreshLineWidth();
-			} else if(NotationPackage.eINSTANCE.getLineTypeStyle_LineType().equals(feature)) {
+			} else if (NotationPackage.eINSTANCE.getLineTypeStyle_LineType().equals(feature)) {
 				refreshLineType();
 			}
-		} else if(NotationPackage.eINSTANCE.getLocation_X().equals(feature) || NotationPackage.eINSTANCE.getLocation_Y().equals(feature) || NotationPackage.eINSTANCE.getSize_Height().equals(feature) || NotationPackage.eINSTANCE.getSize_Width().equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getLocation_X().equals(feature) || NotationPackage.eINSTANCE.getLocation_Y().equals(feature) || NotationPackage.eINSTANCE.getSize_Height().equals(feature)
+				|| NotationPackage.eINSTANCE.getSize_Width().equals(feature)) {
 			getParent().refresh();
-		} else if(UMLPackage.eINSTANCE.getExecutionSpecification_Finish().equals(feature) || UMLPackage.eINSTANCE.getExecutionSpecification_Start().equals(feature)) {
-			if(executionSpecificationEndParts != null) {
-				for(ExecutionSpecificationEndEditPart child : executionSpecificationEndParts) {
-					removeChild((EditPart)child);
+		} else if (UMLPackage.eINSTANCE.getExecutionSpecification_Finish().equals(feature) || UMLPackage.eINSTANCE.getExecutionSpecification_Start().equals(feature)) {
+			if (executionSpecificationEndParts != null) {
+				for (ExecutionSpecificationEndEditPart child : executionSpecificationEndParts) {
+					removeChild(child);
 					child.removeFromResource();
 				}
 				executionSpecificationEndParts = null;
@@ -295,7 +297,7 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 		refreshShadow();
 	}
 
-	public class ExecutionSpecificationRectangleFigure extends PapyrusNodeFigure { //RectangleFigure {
+	public class ExecutionSpecificationRectangleFigure extends PapyrusNodeFigure { // RectangleFigure {
 
 		public ExecutionSpecificationRectangleFigure() {
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(60)));
@@ -306,13 +308,13 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 		public IFigure findMouseEventTargetAt(int x, int y) {
 			// check children first instead of self
 			IFigure f = findMouseEventTargetInDescendantsAt(x, y);
-			if(f != null) {
+			if (f != null) {
 				return f;
 			}
-			if(!containsPoint(x, y)) {
+			if (!containsPoint(x, y)) {
 				return null;
 			}
-			if(isMouseEventTarget()) {
+			if (isMouseEventTarget()) {
 				return this;
 			}
 			return null;
@@ -320,28 +322,29 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 
 		@Override
 		public IFigure findFigureAt(int x, int y, TreeSearch search) {
-			if(search.prune(this)) {
+			if (search.prune(this)) {
 				return null;
 			}
 			IFigure child = findDescendantAtExcluding(x, y, search);
-			if(child != null) {
+			if (child != null) {
 				return child;
 			}
-			if(!containsPoint(x, y)) {
+			if (!containsPoint(x, y)) {
 				return null;
 			}
-			if(search.accept(this)) {
+			if (search.accept(this)) {
 				return this;
 			}
 			return null;
 		}
 	}
 
+	@Override
 	public abstract ExecutionSpecificationRectangleFigure getPrimaryShape();
 
-	//see bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=385604
+	// see bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=385604
 	protected ShapeNodeEditPart moveExecutionSpecificationFeedback(ChangeBoundsRequest request, AbstractExecutionSpecificationEditPart movedPart, PrecisionRectangle rect) {
-		CustomLifelineEditPart lifelineEP = (CustomLifelineEditPart)movedPart.getParent();
+		CustomLifelineEditPart lifelineEP = (CustomLifelineEditPart) movedPart.getParent();
 		Rectangle copy = rect.getCopy();
 		lifelineEP.getPrimaryShape().translateToRelative(copy);
 		List<ShapeNodeEditPart> executionSpecificationList = LifelineEditPartUtil.getChildShapeNodeEditPart(lifelineEP);
@@ -351,14 +354,14 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 		ShapeNodeEditPart parentBar = LifelineXYLayoutEditPolicy.getParent(lifelineEP, copy, executionSpecificationList);
 		Rectangle dotLineBounds = lifelineEP.getPrimaryShape().getFigureLifelineDotLineFigure().getBounds();
 		int dotLineBarLocationX = dotLineBounds.x + dotLineBounds.width / 2 - LifelineXYLayoutEditPolicy.EXECUTION_INIT_WIDTH / 2;
-		if(parentBar == null) {
-			if(dotLineBarLocationX < copy.x) { // there is no parent bar, move to the center dotline position
+		if (parentBar == null) {
+			if (dotLineBarLocationX < copy.x) { // there is no parent bar, move to the center dotline position
 				int dx = dotLineBarLocationX - copy.x;
 				request.getMoveDelta().x += dx;
 				rect.x += dx;
 			}
 		} else {
-			while(!executionSpecificationList.isEmpty()) {
+			while (!executionSpecificationList.isEmpty()) {
 				Rectangle parentBounds = parentBar.getFigure().getBounds();
 				int width = parentBounds.width > 0 ? parentBounds.width : LifelineXYLayoutEditPolicy.EXECUTION_INIT_WIDTH;
 				int x = parentBounds.x + width / 2 + 1; // affixed to the parent bar
@@ -368,7 +371,7 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 				copy.x = x;
 				// check again to see if the new bar location overlaps with existing bars
 				ShapeNodeEditPart part = LifelineXYLayoutEditPolicy.getParent(lifelineEP, copy, executionSpecificationList);
-				if(part == parentBar) {
+				if (part == parentBar) {
 					break;
 				} else {
 					// if overlaps, go on moving the bar to next x position
@@ -384,7 +387,7 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 	 */
 	@Override
 	public Command getCommand(Request request) {
-		if(request instanceof CreateUnspecifiedTypeRequest) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
 			return getParent().getCommand(request);
 		}
 		return super.getCommand(request);
@@ -395,7 +398,7 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 	 */
 	@Override
 	public void showSourceFeedback(Request request) {
-		if(request instanceof CreateUnspecifiedTypeRequest) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
 			getParent().showSourceFeedback(request);
 		}
 		super.showSourceFeedback(request);
@@ -406,7 +409,7 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 	 */
 	@Override
 	public void eraseSourceFeedback(Request request) {
-		if(request instanceof CreateUnspecifiedTypeRequest) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
 			getParent().eraseSourceFeedback(request);
 		}
 		super.eraseSourceFeedback(request);
@@ -414,7 +417,7 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 
 	@Override
 	public void showTargetFeedback(Request request) {
-		if(request instanceof CreateUnspecifiedTypeRequest) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
 			getParent().showTargetFeedback(request);
 		}
 		super.showTargetFeedback(request);
@@ -422,7 +425,7 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 
 	@Override
 	public void eraseTargetFeedback(Request request) {
-		if(request instanceof CreateUnspecifiedTypeRequest) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
 			getParent().eraseTargetFeedback(request);
 		}
 		super.eraseTargetFeedback(request);
@@ -434,36 +437,36 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 	@Override
 	public ConnectionAnchor getTargetConnectionAnchor(Request request) {
 		Object fixPos = request.getExtendedData().get(EXECUTION_FIX_ANCHOR_POSITION);
-		if(fixPos != null && (fixPos.equals(PositionConstants.TOP) || fixPos.equals(PositionConstants.BOTTOM))) {
-			return new AnchorHelper.FixedAnchorEx(getFigure(), (Integer)fixPos);
+		if (fixPos != null && (fixPos.equals(PositionConstants.TOP) || fixPos.equals(PositionConstants.BOTTOM))) {
+			return new AnchorHelper.FixedAnchorEx(getFigure(), (Integer) fixPos);
 		}
-		if(request instanceof CreateUnspecifiedTypeConnectionRequest) {
-			CreateUnspecifiedTypeConnectionRequest createRequest = (CreateUnspecifiedTypeConnectionRequest)request;
+		if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
+			CreateUnspecifiedTypeConnectionRequest createRequest = (CreateUnspecifiedTypeConnectionRequest) request;
 			List<?> relationshipTypes = createRequest.getElementTypes();
-			for(Object obj : relationshipTypes) {
-				if(UMLElementTypes.Message_4003.equals(obj)) {
+			for (Object obj : relationshipTypes) {
+				if (UMLElementTypes.Message_4003.equals(obj)) {
 					// Sync Message
-					if(!createRequest.getTargetEditPart().equals(createRequest.getSourceEditPart())) {
+					if (!createRequest.getTargetEditPart().equals(createRequest.getSourceEditPart())) {
 						return new AnchorHelper.FixedAnchorEx(getFigure(), PositionConstants.TOP);
 					}
 					// otherwise, this is a recursive call, let destination free
 				}
 			}
-		} else if(request instanceof ReconnectRequest) {
-			ReconnectRequest reconnectRequest = (ReconnectRequest)request;
+		} else if (request instanceof ReconnectRequest) {
+			ReconnectRequest reconnectRequest = (ReconnectRequest) request;
 			ConnectionEditPart connectionEditPart = reconnectRequest.getConnectionEditPart();
-			if(connectionEditPart instanceof MessageEditPart) {
+			if (connectionEditPart instanceof MessageEditPart) {
 				// Sync Message
 				return new AnchorHelper.FixedAnchorEx(getFigure(), PositionConstants.TOP);
 			}
 		}
-		//Fixed bug about computing target anchor when creating message sync.
-		else if(request instanceof CreateConnectionViewRequest) {
-			CreateConnectionViewRequest createRequest = (CreateConnectionViewRequest)request;
-			ConnectionViewDescriptor viewDesc = ((CreateConnectionViewRequest)request).getConnectionViewDescriptor();
-			if(((IHintedType)UMLElementTypes.Message_4003).getSemanticHint().equals(viewDesc.getSemanticHint())) {
+		// Fixed bug about computing target anchor when creating message sync.
+		else if (request instanceof CreateConnectionViewRequest) {
+			CreateConnectionViewRequest createRequest = (CreateConnectionViewRequest) request;
+			ConnectionViewDescriptor viewDesc = ((CreateConnectionViewRequest) request).getConnectionViewDescriptor();
+			if (((IHintedType) UMLElementTypes.Message_4003).getSemanticHint().equals(viewDesc.getSemanticHint())) {
 				// Sync Message
-				if(!createRequest.getTargetEditPart().equals(createRequest.getSourceEditPart())) {
+				if (!createRequest.getTargetEditPart().equals(createRequest.getSourceEditPart())) {
 					return new AnchorHelper.FixedAnchorEx(getFigure(), PositionConstants.TOP);
 				}
 			}
@@ -473,37 +476,40 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#getTargetConnectionAnchor(org.eclipse.gef.ConnectionEditPart)
-	 * 
+	 *
 	 * @param connEditPart
-	 *        The connection edit part.
+	 *            The connection edit part.
 	 * @return The anchor.
 	 */
 	@Override
 	public ConnectionAnchor getTargetConnectionAnchor(ConnectionEditPart connEditPart) {
-		if(connEditPart instanceof MessageEditPart) {
+		if (connEditPart instanceof MessageEditPart) {
 			// Sync Message
 			return new AnchorHelper.FixedAnchorEx(getFigure(), PositionConstants.TOP);
 		}
-		final org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart connection = (org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart)connEditPart;
-		String t = null; //$NON-NLS-1$
+		final org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart connection = (org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart) connEditPart;
+		String t = null;
 		try {
-			t = (String)getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+			t = (String) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
+				@Override
 				public void run() {
-					Anchor a = ((Edge)connection.getModel()).getTargetAnchor();
-					if(a instanceof IdentityAnchor)
-						setResult(((IdentityAnchor)a).getId());
-					else
+					Anchor a = ((Edge) connection.getModel()).getTargetAnchor();
+					if (a instanceof IdentityAnchor) {
+						setResult(((IdentityAnchor) a).getId());
+					}
+					else {
 						setResult(""); //$NON-NLS-1$
+					}
 				}
 			});
 		} catch (InterruptedException e) {
 			Trace.catching(DiagramUIPlugin.getInstance(), DiagramUIDebugOptions.EXCEPTIONS_CATCHING, getClass(), "getTargetConnectionAnchor", e); //$NON-NLS-1$
 			Log.error(DiagramUIPlugin.getInstance(), DiagramUIStatusCodes.IGNORED_EXCEPTION_WARNING, "getTargetConnectionAnchor", e); //$NON-NLS-1$
 		}
-		if(t != null && !"".equals(t)) {
+		if (t != null && !"".equals(t)) {
 			int position = AnchorHelper.FixedAnchorEx.parsePosition(t);
-			if(position != -1) {
+			if (position != -1) {
 				return new AnchorHelper.FixedAnchorEx(getFigure(), position);
 			}
 		}
@@ -512,30 +518,30 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#getSourceConnectionAnchor(org.eclipse.gef.Request)
-	 * 
+	 *
 	 * @param request
-	 *        The request
+	 *            The request
 	 * @return The anchor
 	 */
 	@Override
 	public ConnectionAnchor getSourceConnectionAnchor(Request request) {
 		Object fixPos = request.getExtendedData().get(EXECUTION_FIX_ANCHOR_POSITION);
-		if(fixPos != null && (fixPos.equals(PositionConstants.TOP) || fixPos.equals(PositionConstants.BOTTOM))) {
-			return new AnchorHelper.FixedAnchorEx(getFigure(), (Integer)fixPos);
+		if (fixPos != null && (fixPos.equals(PositionConstants.TOP) || fixPos.equals(PositionConstants.BOTTOM))) {
+			return new AnchorHelper.FixedAnchorEx(getFigure(), (Integer) fixPos);
 		}
-		if(request instanceof CreateUnspecifiedTypeConnectionRequest) {
-			CreateUnspecifiedTypeConnectionRequest createRequest = (CreateUnspecifiedTypeConnectionRequest)request;
+		if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
+			CreateUnspecifiedTypeConnectionRequest createRequest = (CreateUnspecifiedTypeConnectionRequest) request;
 			List<?> relationshipTypes = createRequest.getElementTypes();
-			for(Object obj : relationshipTypes) {
-				if(UMLElementTypes.Message_4005.equals(obj)) {
+			for (Object obj : relationshipTypes) {
+				if (UMLElementTypes.Message_4005.equals(obj)) {
 					// Reply Message
 					return new AnchorHelper.FixedAnchorEx(getFigure(), PositionConstants.BOTTOM);
 				}
 			}
-		} else if(request instanceof ReconnectRequest) {
-			ReconnectRequest reconnectRequest = (ReconnectRequest)request;
+		} else if (request instanceof ReconnectRequest) {
+			ReconnectRequest reconnectRequest = (ReconnectRequest) request;
 			ConnectionEditPart connectionEditPart = reconnectRequest.getConnectionEditPart();
-			if(connectionEditPart instanceof Message3EditPart) {
+			if (connectionEditPart instanceof Message3EditPart) {
 				// Reply Message
 				return new AnchorHelper.FixedAnchorEx(getFigure(), PositionConstants.BOTTOM);
 			}
@@ -545,37 +551,40 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#getSourceConnectionAnchor(org.eclipse.gef.ConnectionEditPart)
-	 * 
+	 *
 	 * @param connEditPart
-	 *        The connection edit part.
+	 *            The connection edit part.
 	 * @return The anchor.
 	 */
 	@Override
 	public ConnectionAnchor getSourceConnectionAnchor(ConnectionEditPart connEditPart) {
-		if(connEditPart instanceof Message3EditPart) {
+		if (connEditPart instanceof Message3EditPart) {
 			// Reply Message
 			return new AnchorHelper.FixedAnchorEx(getFigure(), PositionConstants.BOTTOM);
 		}
-		final org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart connection = (org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart)connEditPart;
-		String t = null; //$NON-NLS-1$
+		final org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart connection = (org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart) connEditPart;
+		String t = null;
 		try {
-			t = (String)getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+			t = (String) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
+				@Override
 				public void run() {
-					Anchor a = ((Edge)connection.getModel()).getSourceAnchor();
-					if(a instanceof IdentityAnchor)
-						setResult(((IdentityAnchor)a).getId());
-					else
+					Anchor a = ((Edge) connection.getModel()).getSourceAnchor();
+					if (a instanceof IdentityAnchor) {
+						setResult(((IdentityAnchor) a).getId());
+					}
+					else {
 						setResult(""); //$NON-NLS-1$
+					}
 				}
 			});
 		} catch (InterruptedException e) {
 			Trace.catching(DiagramUIPlugin.getInstance(), DiagramUIDebugOptions.EXCEPTIONS_CATCHING, getClass(), "getSourceConnectionAnchor", e); //$NON-NLS-1$
 			Log.error(DiagramUIPlugin.getInstance(), DiagramUIStatusCodes.IGNORED_EXCEPTION_WARNING, "getSourceConnectionAnchor", e); //$NON-NLS-1$
 		}
-		if(t != null && !"".equals(t)) {
+		if (t != null && !"".equals(t)) {
 			int position = AnchorHelper.FixedAnchorEx.parsePosition(t);
-			if(position != -1) {
+			if (position != -1) {
 				return new AnchorHelper.FixedAnchorEx(getFigure(), position);
 			}
 		}

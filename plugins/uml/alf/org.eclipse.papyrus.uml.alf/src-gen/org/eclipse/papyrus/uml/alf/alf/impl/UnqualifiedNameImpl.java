@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.TemplateBinding;
 import org.eclipse.papyrus.uml.alf.alf.UnqualifiedName;
@@ -101,8 +98,9 @@ public class UnqualifiedNameImpl extends MinimalEObjectImpl.Container implements
   {
     String oldName = name;
     name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.UNQUALIFIED_NAME__NAME, oldName, name));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.UNQUALIFIED_NAME__NAME, oldName, name));
+	}
   }
 
   /**
@@ -127,7 +125,11 @@ public class UnqualifiedNameImpl extends MinimalEObjectImpl.Container implements
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.UNQUALIFIED_NAME__TEMPLATE_BINDING, oldTemplateBinding, newTemplateBinding);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -142,15 +144,20 @@ public class UnqualifiedNameImpl extends MinimalEObjectImpl.Container implements
     if (newTemplateBinding != templateBinding)
     {
       NotificationChain msgs = null;
-      if (templateBinding != null)
-        msgs = ((InternalEObject)templateBinding).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.UNQUALIFIED_NAME__TEMPLATE_BINDING, null, msgs);
-      if (newTemplateBinding != null)
-        msgs = ((InternalEObject)newTemplateBinding).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.UNQUALIFIED_NAME__TEMPLATE_BINDING, null, msgs);
+      if (templateBinding != null) {
+		msgs = ((InternalEObject)templateBinding).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.UNQUALIFIED_NAME__TEMPLATE_BINDING, null, msgs);
+	}
+      if (newTemplateBinding != null) {
+		msgs = ((InternalEObject)newTemplateBinding).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.UNQUALIFIED_NAME__TEMPLATE_BINDING, null, msgs);
+	}
       msgs = basicSetTemplateBinding(newTemplateBinding, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.UNQUALIFIED_NAME__TEMPLATE_BINDING, newTemplateBinding, newTemplateBinding));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.UNQUALIFIED_NAME__TEMPLATE_BINDING, newTemplateBinding, newTemplateBinding));
+	}
   }
 
   /**
@@ -253,7 +260,9 @@ public class UnqualifiedNameImpl extends MinimalEObjectImpl.Container implements
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");

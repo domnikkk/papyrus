@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.robotml.deployment.handlers;
 
 import org.eclipse.core.commands.ExecutionEvent;
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.RobotML.Platform;
@@ -36,32 +35,35 @@ public class CreatePlatformHandler extends CmdHandler {
 	public boolean isEnabled() {
 		updateSelectedEObject();
 		EObject selectedObj = getSelectedEObject();
-		if(selectedObj instanceof Class && isPlatform((Class)selectedObj)) {
+		if (selectedObj instanceof Class && isPlatform((Class) selectedObj)) {
 			return true;
 		}
 		return false;
 	}
 
-	private boolean isPlatform(Class elt){
-		Platform platform = UMLUtil.getStereotypeApplication((Class)elt, Platform.class);
-		if (platform != null){
+	private boolean isPlatform(Class elt) {
+		Platform platform = UMLUtil.getStereotypeApplication(elt, Platform.class);
+		if (platform != null) {
 			return true;
 		}
 		return false;
-		
-		
+
+
 	}
+
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) {
-		if(!(getSelectedEObject() instanceof Class)) {
+		if (!(getSelectedEObject() instanceof Class)) {
 			return null;
 		}
-		final Class selectedComposite = (Class)getSelectedEObject();
+		final Class selectedComposite = (Class) getSelectedEObject();
 
 		CommandSupport.exec("Create platform model", new Runnable() {
 
+			@Override
 			public void run() {
 				// execute with transaction support
 				platform = Utils.getRoot(selectedComposite, "PlatformModel");
@@ -71,13 +73,14 @@ public class CreatePlatformHandler extends CmdHandler {
 		final String newPlatform = selectedComposite.getName() + "Platform";
 
 		try {
-			if(platform.getMember(newPlatform) != null) {
+			if (platform.getMember(newPlatform) != null) {
 				Shell shell = new Shell();
 				MessageDialog.openInformation(shell, "Error",
-					"Platform definition \"" + newPlatform + "\" exists already");
+						"Platform definition \"" + newPlatform + "\" exists already");
 			} else {
 				CommandSupport.exec("Create platform definition", new Runnable() {
 
+					@Override
 					public void run() {
 						Package platformPkg = platform.createNestedPackage(newPlatform);
 						try {

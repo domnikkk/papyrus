@@ -23,6 +23,7 @@ public class SeparatorImpl extends MenuItemImpl implements Separator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SeparatorImpl() {
@@ -32,6 +33,7 @@ public class SeparatorImpl extends MenuItemImpl implements Separator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -39,4 +41,4 @@ public class SeparatorImpl extends MenuItemImpl implements Separator {
 		return NewchildPackage.Literals.SEPARATOR;
 	}
 
-} //SeparatorImpl
+} // SeparatorImpl

@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.WeaponSystem;
 
@@ -20,6 +19,7 @@ public class WeaponSystemImpl extends ActuatorSystemImpl implements WeaponSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected WeaponSystemImpl() {
@@ -29,6 +29,7 @@ public class WeaponSystemImpl extends ActuatorSystemImpl implements WeaponSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class WeaponSystemImpl extends ActuatorSystemImpl implements WeaponSystem
 		return RobotMLPackage.Literals.WEAPON_SYSTEM;
 	}
 
-} //WeaponSystemImpl
+} // WeaponSystemImpl

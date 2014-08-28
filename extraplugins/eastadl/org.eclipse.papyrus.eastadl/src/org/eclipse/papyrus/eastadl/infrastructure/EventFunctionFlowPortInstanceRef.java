@@ -14,8 +14,8 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.EventFunctionFlowPortInstanceRef#getFunctionFlowPort <em>Function Flow Port</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.EventFunctionFlowPortInstanceRef#getFunctionPrototype <em>Function Prototype</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.EventFunctionFlowPortInstanceRef#getFunctionFlowPort <em>Function Flow Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.EventFunctionFlowPortInstanceRef#getFunctionPrototype <em>Function Prototype</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface EventFunctionFlowPortInstanceRef extends InstanceRef {
 	 * Returns the value of the '<em><b>Function Flow Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Function Flow Port</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Function Flow Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Function Flow Port</em>' reference.
 	 * @see #setFunctionFlowPort(FunctionFlowPort)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getEventFunctionFlowPortInstanceRef_FunctionFlowPort()
@@ -44,7 +44,9 @@ public interface EventFunctionFlowPortInstanceRef extends InstanceRef {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.EventFunctionFlowPortInstanceRef#getFunctionFlowPort <em>Function Flow Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Function Flow Port</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Function Flow Port</em>' reference.
 	 * @see #getFunctionFlowPort()
 	 * @generated
 	 */
@@ -55,10 +57,10 @@ public interface EventFunctionFlowPortInstanceRef extends InstanceRef {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Function Prototype</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Function Prototype</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Function Prototype</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getEventFunctionFlowPortInstanceRef_FunctionPrototype()
 	 * @model ordered="false"

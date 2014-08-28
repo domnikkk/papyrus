@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.importt.handlers;
 
@@ -44,26 +44,26 @@ public abstract class AbstractImportHandler extends AbstractCommandHandler {
 	protected abstract class AbstractImportCommand extends AbstractTransactionalCommand {
 
 		private final Runnable runnable;
-		
+
 		private final String description;
-		
+
 		protected AbstractImportCommand(Runnable runnable, String label, String description) {
 			super(AbstractImportHandler.this.getEditingDomain(), label, computeAffectedFiles(getSelectedElements()));
-			
+
 			this.runnable = runnable;
 			this.description = description;
 		}
 
 		/**
 		 * {@inheritDoc}
-		 * 
+		 *
 		 * @see org.eclipse.emf.common.command.AbstractCommand#canExecute()
-		 * 
+		 *
 		 * @return
 		 */
 		@Override
 		public boolean canExecute() {
-			if(getSelectedElements().size() == 1) {
+			if (getSelectedElements().size() == 1) {
 				return (getSelectedElement() instanceof Package);
 			}
 			return false;
@@ -74,7 +74,7 @@ public abstract class AbstractImportHandler extends AbstractCommandHandler {
 			runnable.run();
 			return CommandResult.newOKCommandResult();
 		}
-		
+
 		String getDescription() {
 			return description;
 		}
@@ -82,9 +82,9 @@ public abstract class AbstractImportHandler extends AbstractCommandHandler {
 
 	static List<IFile> computeAffectedFiles(Collection<?> selected) {
 		Set<IFile> unique = new LinkedHashSet<IFile>();
-		
+
 		for (Object next : selected) {
-			EObject object = (next instanceof EObject) ? (EObject)next : null;
+			EObject object = (next instanceof EObject) ? (EObject) next : null;
 			Resource resource = (object == null) ? null : object.eResource();
 			if (resource != null) {
 				IFile file = WorkspaceSynchronizer.getFile(resource);
@@ -93,26 +93,27 @@ public abstract class AbstractImportHandler extends AbstractCommandHandler {
 				}
 			}
 		}
-		
+
 		return new ArrayList<IFile>(unique);
 	}
-	
+
+	@Override
 	protected Command getCommand() {
 		ICommand command = getGMFCommand();
 		GMFtoEMFCommandWrapper result = new GMFtoEMFCommandWrapper(command);
-		
+
 		if (command instanceof AbstractImportCommand) {
-			result.setDescription(((AbstractImportCommand)command).getDescription());
+			result.setDescription(((AbstractImportCommand) command).getDescription());
 		}
-		
+
 		return result;
 	}
-	
+
 	protected abstract ICommand getGMFCommand();
-	
+
 	/**
 	 * Loads the Package resource into the current resource set
-	 * 
+	 *
 	 * @param _package
 	 */
 	protected void handleLoadPackage(Package _package) {
@@ -122,7 +123,7 @@ public abstract class AbstractImportHandler extends AbstractCommandHandler {
 	/**
 	 * Creates a PackageImport in the current package, which refers to the
 	 * selected package
-	 * 
+	 *
 	 * @param _package
 	 */
 	protected void handleImportPackage(Package _package) {
@@ -130,18 +131,18 @@ public abstract class AbstractImportHandler extends AbstractCommandHandler {
 
 		Package importedPackage = EMFHelper.reloadIntoContext(_package, getSelectedElement());
 
-		((Package)getSelectedElement()).getPackageImports().add(ei);
+		((Package) getSelectedElement()).getPackageImports().add(ei);
 		ei.setImportedPackage(importedPackage);
 	}
 
 	/**
 	 * Creates a copy of the selected package in the current package
-	 * 
+	 *
 	 * @param _package
 	 */
 	protected void handleCopyPackage(Package _package) {
-		//FIXME: Stereotype applications are not copied
-		((Package)getSelectedElement()).getNestedPackages().add(EcoreUtil.copy(_package));
+		// FIXME: Stereotype applications are not copied
+		((Package) getSelectedElement()).getNestedPackages().add(EcoreUtil.copy(_package));
 	}
 
 }

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,7 @@ public class NestedProfilesAdapterFactory implements AdapterFactory, IDisposable
 	public NestedProfilesAdapterFactory() {
 		super();
 
-		delegate = new ComposedAdapterFactory(new AdapterFactory[]{ createUMLAdapterFactory(), createResourceAdapterFactory() });
+		delegate = new ComposedAdapterFactory(new AdapterFactory[] { createUMLAdapterFactory(), createResourceAdapterFactory() });
 	}
 
 	public void dispose() {
@@ -74,12 +74,12 @@ public class NestedProfilesAdapterFactory implements AdapterFactory, IDisposable
 
 			@Override
 			public Adapter createPackageAdapter() {
-				if(packageItemProvider == null) {
+				if (packageItemProvider == null) {
 					packageItemProvider = new PackageItemProvider(this) {
 
 						@Override
 						public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-							if(childrenFeatures == null) {
+							if (childrenFeatures == null) {
 								childrenFeatures = Lists.<EStructuralFeature> newArrayList(UMLPackage.Literals.PACKAGE__NESTED_PACKAGE);
 							}
 							return childrenFeatures;
@@ -92,11 +92,12 @@ public class NestedProfilesAdapterFactory implements AdapterFactory, IDisposable
 
 			@Override
 			public Adapter createProfileAdapter() {
-				if(profileItemProvider == null) {
+				if (profileItemProvider == null) {
 					profileItemProvider = new ProfileItemProvider(this) {
 
+						@Override
 						public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-							if(childrenFeatures == null) {
+							if (childrenFeatures == null) {
 								childrenFeatures = Lists.<EStructuralFeature> newArrayList(UMLPackage.Literals.PACKAGE__NESTED_PACKAGE);
 							}
 							return childrenFeatures;
@@ -119,7 +120,7 @@ public class NestedProfilesAdapterFactory implements AdapterFactory, IDisposable
 
 					@Override
 					public Collection<?> getElements(Object object) {
-						return EcoreUtil.getObjectsByType(((Resource)object).getContents(), UMLPackage.Literals.PACKAGE);
+						return EcoreUtil.getObjectsByType(((Resource) object).getContents(), UMLPackage.Literals.PACKAGE);
 					}
 				};
 			}

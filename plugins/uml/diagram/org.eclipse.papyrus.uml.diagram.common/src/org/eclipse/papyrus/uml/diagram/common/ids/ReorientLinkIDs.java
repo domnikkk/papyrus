@@ -14,7 +14,7 @@ package org.eclipse.papyrus.uml.diagram.common.ids;
 // TODO: Auto-generated Javadoc
 /**
  * The Class ReorientLinkIDs.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  */
 public class ReorientLinkIDs {

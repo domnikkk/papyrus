@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,8 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
- *  
+ *  Christian W. Damus (CEA) - bug 417409
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
@@ -40,14 +41,14 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * A Model Element for manipulating MemberEnd properties
- * 
+ *
  * @author Camille Letavernier
  */
 public class MemberEndModelElement extends AbstractModelElement {
 
-	private EObject source;
+	protected EObject source;
 
-	private EditingDomain domain;
+	protected EditingDomain domain;
 
 	/**
 	 * The "multiplicity" virtual property
@@ -65,13 +66,13 @@ public class MemberEndModelElement extends AbstractModelElement {
 	public static String NAVIGABLE = "navigable"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
-	 *        The EObject being edited
+	 *            The EObject being edited
 	 * @param domain
-	 *        The Editing domain on which the commands will be executed
+	 *            The Editing domain on which the commands will be executed
 	 */
 	public MemberEndModelElement(EObject source, EditingDomain domain) {
 		this.source = source;
@@ -80,14 +81,14 @@ public class MemberEndModelElement extends AbstractModelElement {
 
 	@Override
 	public IObservable doGetObservable(String propertyPath) {
-		if(propertyPath.equals(MULTIPLICITY)) {
-			if(source instanceof ExtensionEnd) {
-				return new ExtensionEndMultiplicityObservableValue((ExtensionEnd)source, domain);
+		if (propertyPath.equals(MULTIPLICITY)) {
+			if (source instanceof ExtensionEnd) {
+				return new ExtensionEndMultiplicityObservableValue((ExtensionEnd) source, domain);
 			}
 			return new MultiplicityObservableValue(source, domain);
-		} else if(propertyPath.equals(OWNER)) {
+		} else if (propertyPath.equals(OWNER)) {
 			return new OwnerObservableValue(source, domain);
-		} else if(propertyPath.equals(NAVIGABLE)) {
+		} else if (propertyPath.equals(NAVIGABLE)) {
 			return new NavigationObservableValue(source, domain);
 		}
 		Activator.log.warn("The property " + propertyPath + " doesn't exist"); //$NON-NLS-1$ //$NON-NLS-2$
@@ -96,13 +97,13 @@ public class MemberEndModelElement extends AbstractModelElement {
 
 	@Override
 	public IStaticContentProvider getContentProvider(String propertyPath) {
-		if(propertyPath.equals(MULTIPLICITY)) {
-			if(source instanceof ExtensionEnd) {
-				return new StaticContentProvider(new String[]{ ONE, OPTIONAL });
+		if (propertyPath.equals(MULTIPLICITY)) {
+			if (source instanceof ExtensionEnd) {
+				return new StaticContentProvider(new String[] { ONE, OPTIONAL });
 			}
-			return new StaticContentProvider(new String[]{ ANY, ONE_OR_MORE, OPTIONAL, ONE });
-		} else if(propertyPath.equals(OWNER)) {
-			return new StaticContentProvider(new String[]{ ASSOCIATION, CLASSIFIER });
+			return new StaticContentProvider(new String[] { ANY, ONE_OR_MORE, OPTIONAL, ONE });
+		} else if (propertyPath.equals(OWNER)) {
+			return new StaticContentProvider(new String[] { ASSOCIATION, CLASSIFIER });
 		}
 		return super.getContentProvider(propertyPath);
 	}
@@ -114,15 +115,15 @@ public class MemberEndModelElement extends AbstractModelElement {
 
 	@Override
 	public boolean isEditable(String propertyPath) {
-		if(propertyPath.equals(OWNER)) {
-			List<Property> memberEnds = ((Property)source).getAssociation().getMemberEnds();
-			if(memberEnds.size() == 2) {
-				//Association between two associations : this doesn't make sense ?
-				if(isAssociation(memberEnds.get(0)) && isAssociation(memberEnds.get(1))) {
+		if (propertyPath.equals(OWNER)) {
+			List<Property> memberEnds = ((Property) source).getAssociation().getMemberEnds();
+			if (memberEnds.size() == 2) {
+				// Association between two associations : this doesn't make sense ?
+				if (isAssociation(memberEnds.get(0)) && isAssociation(memberEnds.get(1))) {
 					return false;
 				}
 			}
-			return (((Property)source).getAssociation().getMemberEnds().size() <= 2) && !EMFHelper.isReadOnly(source);
+			return (((Property) source).getAssociation().getMemberEnds().size() <= 2) && !EMFHelper.isReadOnly(source);
 		}
 		return !EMFHelper.isReadOnly(source);
 	}

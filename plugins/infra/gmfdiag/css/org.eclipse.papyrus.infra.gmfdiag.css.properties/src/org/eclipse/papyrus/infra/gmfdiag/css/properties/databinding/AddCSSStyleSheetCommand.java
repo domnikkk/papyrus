@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,9 +34,9 @@ public class AddCSSStyleSheetCommand extends AddCustomStyleListValueCommand impl
 
 	@Override
 	public void execute() {
-		if(value instanceof EObject) {
-			EObject eObject = (EObject)value;
-			if(eObject.eResource() == null) {
+		if (value instanceof EObject) {
+			EObject eObject = (EObject) value;
+			if (eObject.eResource() == null) {
 				view.eResource().getContents().add(eObject);
 				createdEObject = true;
 			}
@@ -47,9 +47,9 @@ public class AddCSSStyleSheetCommand extends AddCustomStyleListValueCommand impl
 
 	@Override
 	public void undo() {
-		if(value instanceof EObject) {
-			EObject eObject = (EObject)value;
-			if(createdEObject) {
+		if (value instanceof EObject) {
+			EObject eObject = (EObject) value;
+			if (createdEObject) {
 				eObject.eResource().getContents().remove(eObject);
 			}
 		}

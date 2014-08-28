@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -189,7 +189,7 @@ public class NestedBlockPropertyCompositeEditPart extends AbstractElementEditPar
 
 	/**
 	 * <pre>
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -221,7 +221,7 @@ public class NestedBlockPropertyCompositeEditPart extends AbstractElementEditPar
 
 	/**
 	 * <pre>
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

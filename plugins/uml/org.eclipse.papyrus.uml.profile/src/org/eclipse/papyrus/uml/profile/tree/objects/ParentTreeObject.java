@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,11 +29,11 @@ public abstract class ParentTreeObject extends TreeObject {
 
 	/**
 	 * The Constructor.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	public ParentTreeObject(ParentTreeObject parent) {
 		super(parent);
@@ -41,9 +41,9 @@ public abstract class ParentTreeObject extends TreeObject {
 
 	/**
 	 * Adds the child.
-	 * 
+	 *
 	 * @param child
-	 *        the child
+	 *            the child
 	 */
 	public void addChild(TreeObject child) {
 		children.add(child);
@@ -51,9 +51,9 @@ public abstract class ParentTreeObject extends TreeObject {
 
 	/**
 	 * Removes the child.
-	 * 
+	 *
 	 * @param child
-	 *        the child
+	 *            the child
 	 */
 	public void removeChild(TreeObject child) {
 		children.remove(child);
@@ -61,59 +61,59 @@ public abstract class ParentTreeObject extends TreeObject {
 
 	/**
 	 * Move child up.
-	 * 
+	 *
 	 * @param child
-	 *        the child
+	 *            the child
 	 */
 	public void moveChildUp(TreeObject child) {
-		if(children == null) {
+		if (children == null) {
 			return;
 		}
 
 		int index = children.indexOf(child);
-		if(index < 1) {
+		if (index < 1) {
 			// do nothing
 			return;
 		}
 
-		TreeObject tmp = (TreeObject)children.get(index - 1);
+		TreeObject tmp = children.get(index - 1);
 		children.set(index - 1, child);
 		children.set(index, tmp);
 	}
 
 	/**
 	 * Move child down.
-	 * 
+	 *
 	 * @param child
-	 *        the child
+	 *            the child
 	 */
 	public void moveChildDown(TreeObject child) {
-		if(children == null) {
+		if (children == null) {
 			return;
 		}
 
 		int index = children.indexOf(child);
-		if((index == -1) || (index >= children.size() - 1)) {
+		if ((index == -1) || (index >= children.size() - 1)) {
 			// do nothing
 			return;
 		}
 
-		TreeObject tmp = (TreeObject)children.get(index + 1);
+		TreeObject tmp = children.get(index + 1);
 		children.set(index + 1, child);
 		children.set(index, tmp);
 	}
 
 	/**
 	 * Gets the children.
-	 * 
+	 *
 	 * @return the children
 	 */
 	public TreeObject[] getChildren() {
 		if (children == null) {
-			children = new ArrayList<TreeObject> ();
+			children = new ArrayList<TreeObject>();
 			createChildren();
 		}
-		return (TreeObject[])children.toArray(new TreeObject[children.size()]);
+		return children.toArray(new TreeObject[children.size()]);
 	}
 
 	/* subclasses should override this method and add the child nodes */

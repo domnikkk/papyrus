@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -45,21 +45,21 @@ public class PortDropHelper extends ElementHelper {
 	public Command getDropPortOnPart(DropObjectsRequest request, GraphicalEditPart host) {
 
 		Object droppedEObject = request.getObjects().get(0);
-		if(!isValidPort(droppedEObject, getHostEObject(host))) {
+		if (!isValidPort(droppedEObject, getHostEObject(host))) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
-		return getDropPortOnPart((Port)droppedEObject, request.getLocation().getCopy(), host);
+		return getDropPortOnPart((Port) droppedEObject, request.getLocation().getCopy(), host);
 	}
 
 	public Command getDropPortOnPart(Port droppedPort, Point location, GraphicalEditPart host) {
 
-		if(!isValidPort(droppedPort, getHostEObject(host))) {
+		if (!isValidPort(droppedPort, getHostEObject(host))) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		// Prepare the view creation command
-		ViewDescriptor descriptor = new ViewDescriptor(new SemanticAdapter((EObject)droppedPort, null), Node.class, /* explicit semantic hint is mandatory */ null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
+		ViewDescriptor descriptor = new ViewDescriptor(new SemanticAdapter(droppedPort, null), Node.class, /* explicit semantic hint is mandatory */null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
 		CreateViewRequest createViewRequest = new CreateViewRequest(descriptor);
 		createViewRequest.setLocation(location);
 		Command viewCreateCommand = host.getCommand(createViewRequest);
@@ -71,19 +71,19 @@ public class PortDropHelper extends ElementHelper {
 		boolean isValid = false;
 
 		// The drop object is supposed to be a Port (or FlowPort)
-		if((object != null) && (object instanceof Port)) {
+		if ((object != null) && (object instanceof Port)) {
 
 			Port port = (Port) object;
 			// The dropTarget has to be a TypedElement with a non-null Type
-			if((dropTarget != null) && (dropTarget instanceof TypedElement) && (((TypedElement)dropTarget).getType() != null)) {
+			if ((dropTarget != null) && (dropTarget instanceof TypedElement) && (((TypedElement) dropTarget).getType() != null)) {
 
-				Type targetType = ((TypedElement)dropTarget).getType();
-				// The dropped object is owned by the target type 
-				
-				 if (targetType instanceof Classifier){
-					 Classifier classifier = (Classifier) targetType;
-					 isValid =  classifier.getAllAttributes().contains(port);
-				 }
+				Type targetType = ((TypedElement) dropTarget).getType();
+				// The dropped object is owned by the target type
+
+				if (targetType instanceof Classifier) {
+					Classifier classifier = (Classifier) targetType;
+					isValid = classifier.getAllAttributes().contains(port);
+				}
 			}
 		}
 
@@ -93,10 +93,10 @@ public class PortDropHelper extends ElementHelper {
 	/**
 	 * return the host Edit Part's semantic element, if the semantic element
 	 * is <code>null</code> or unresolvable it will return <code>null</code>
-	 * 
+	 *
 	 * @return EObject
 	 */
 	protected EObject getHostEObject(GraphicalEditPart host) {
-		return ViewUtil.resolveSemanticElement((View)host.getModel());
+		return ViewUtil.resolveSemanticElement((View) host.getModel());
 	}
 }

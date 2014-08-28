@@ -17,8 +17,8 @@ import org.eclipse.gmf.codegen.gmfgen.TypeModelFacet;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.AlternateGenLink#getGenLinkNode <em>Gen Link Node</em>}</li>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.AlternateGenLink#getTypeModelFacet <em>Type Model Facet</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.AlternateGenLink#getGenLinkNode <em>Gen Link Node</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.AlternateGenLink#getTypeModelFacet <em>Type Model Facet</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,6 +35,7 @@ public interface AlternateGenLink extends CommentedElement {
 	 * If the meaning of the '<em>Gen Link Node</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Gen Link Node</em>' reference.
 	 * @see #setGenLinkNode(GenLink)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getAlternateGenLink_GenLinkNode()
@@ -47,7 +48,9 @@ public interface AlternateGenLink extends CommentedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.AlternateGenLink#getGenLinkNode <em>Gen Link Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gen Link Node</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Gen Link Node</em>' reference.
 	 * @see #getGenLinkNode()
 	 * @generated
 	 */
@@ -60,6 +63,7 @@ public interface AlternateGenLink extends CommentedElement {
 	 * If the meaning of the '<em>Type Model Facet</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Type Model Facet</em>' containment reference.
 	 * @see #setTypeModelFacet(TypeModelFacet)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getAlternateGenLink_TypeModelFacet()
@@ -72,7 +76,9 @@ public interface AlternateGenLink extends CommentedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.AlternateGenLink#getTypeModelFacet <em>Type Model Facet</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type Model Facet</em>' containment reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Type Model Facet</em>' containment reference.
 	 * @see #getTypeModelFacet()
 	 * @generated
 	 */

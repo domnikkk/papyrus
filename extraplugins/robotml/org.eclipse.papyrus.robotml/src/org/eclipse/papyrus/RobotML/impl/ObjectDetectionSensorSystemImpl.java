@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.ObjectDetectionSensorSystem;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -20,6 +19,7 @@ public class ObjectDetectionSensorSystemImpl extends SensorSystemImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ObjectDetectionSensorSystemImpl() {
@@ -29,6 +29,7 @@ public class ObjectDetectionSensorSystemImpl extends SensorSystemImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class ObjectDetectionSensorSystemImpl extends SensorSystemImpl implements
 		return RobotMLPackage.Literals.OBJECT_DETECTION_SENSOR_SYSTEM;
 	}
 
-} //ObjectDetectionSensorSystemImpl
+} // ObjectDetectionSensorSystemImpl

@@ -38,8 +38,7 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.part.ViewPart;
 
 /**
- * A column in a {@link TreeViewer} or {@link TableViewer} that is sortable (using the given
- * {@link ColumnLabelProvider}) and can save its width to an {@link IMemento}.
+ * A column in a {@link TreeViewer} or {@link TableViewer} that is sortable (using the given {@link ColumnLabelProvider}) and can save its width to an {@link IMemento}.
  */
 public class PersistableColumn {
 
@@ -69,7 +68,7 @@ public class PersistableColumn {
 
 	/**
 	 * Initialize a sortable column that can be persisted to an {@link IMemento} .
-	 * 
+	 *
 	 * @param columnText
 	 *            the title of the column
 	 * @param uniqueID
@@ -103,7 +102,7 @@ public class PersistableColumn {
 
 	/**
 	 * Create a sortable column that can be persisted to an {@link IMemento}.
-	 * 
+	 *
 	 * @param columnText
 	 *            the title of the column
 	 * @param uniqueID
@@ -128,7 +127,7 @@ public class PersistableColumn {
 
 	/**
 	 * Create a sortable column that can be persisted to an {@link IMemento}.
-	 * 
+	 *
 	 * @param columnText
 	 *            the title of the column
 	 * @param uniqueID

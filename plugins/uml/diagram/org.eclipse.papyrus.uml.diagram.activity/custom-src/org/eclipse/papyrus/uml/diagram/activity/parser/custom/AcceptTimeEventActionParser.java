@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,15 +45,15 @@ public class AcceptTimeEventActionParser extends MessageFormatParser implements 
 	}
 
 	public AcceptTimeEventActionParser() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() });
 	}
 
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -61,11 +61,12 @@ public class AcceptTimeEventActionParser extends MessageFormatParser implements 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.uml.diagram.sequence.parsers.AbstractParser#isAffectingEvent
 	 * (java.lang.Object , int)
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		EStructuralFeature feature = getEStructuralFeature(event);
 		return isValidFeature(feature);
@@ -73,16 +74,17 @@ public class AcceptTimeEventActionParser extends MessageFormatParser implements 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.parsers.MessageFormatParser#
 	 * getPrintString(org.eclipse .core.runtime.IAdaptable, int)
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		Object obj = element.getAdapter(EObject.class);
-		if(obj instanceof AcceptEventAction) {
-			AcceptEventAction action = (AcceptEventAction)obj;
+		if (obj instanceof AcceptEventAction) {
+			AcceptEventAction action = (AcceptEventAction) obj;
 			String name = action.getName();
-			if(name != null && CustomAcceptEventActionEditHelper.isAcceptTimeEventAction(action)) {
+			if (name != null && CustomAcceptEventActionEditHelper.isAcceptTimeEventAction(action)) {
 				return name;
 			}
 		}
@@ -91,11 +93,12 @@ public class AcceptTimeEventActionParser extends MessageFormatParser implements 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * areSemanticElementsAffected (org.eclipse.emf.ecore.EObject,
 	 * java.lang.Object)
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		EStructuralFeature feature = getEStructuralFeature(notification);
 		return isValidFeature(feature);
@@ -103,18 +106,19 @@ public class AcceptTimeEventActionParser extends MessageFormatParser implements 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * getSemanticElementsBeingParsed (org.eclipse.emf.ecore.EObject)
 	 */
+	@Override
 	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-		if(element instanceof AcceptEventAction) {
-			AcceptEventAction action = (AcceptEventAction)element;
+		if (element instanceof AcceptEventAction) {
+			AcceptEventAction action = (AcceptEventAction) element;
 			semanticElementsBeingParsed.add(action);
-			if(action.getTriggers() != null) {
-				for(Trigger trigger : action.getTriggers()) {
-					if(trigger != null) {
+			if (action.getTriggers() != null) {
+				for (Trigger trigger : action.getTriggers()) {
+					if (trigger != null) {
 						semanticElementsBeingParsed.add(trigger);
 					}
 				}
@@ -126,9 +130,9 @@ public class AcceptTimeEventActionParser extends MessageFormatParser implements 
 	/**
 	 * Determines if the given feature has to be taken into account in this
 	 * parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {

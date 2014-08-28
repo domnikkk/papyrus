@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 /**
  * An abstract DropStrategy relying on the ServiceEdit. This strategy should
  * only be used for semantic drops.
- * 
+ *
  * @author Camille Letavernier
  */
 public abstract class ServiceEditDropStrategy extends TransactionalDropStrategy {
@@ -37,15 +37,15 @@ public abstract class ServiceEditDropStrategy extends TransactionalDropStrategy 
 
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(targetElement);
 
-			if(provider != null) {
+			if (provider != null) {
 				IEditCommandRequest editRequest = getEditRequest(request, targetEditPart);
-				if(editRequest == null) {
+				if (editRequest == null) {
 					return null;
 				}
 
 				ICommand createGMFCommand = provider.getEditCommand(editRequest);
 
-				if(createGMFCommand == null) {
+				if (createGMFCommand == null) {
 					return null;
 				}
 

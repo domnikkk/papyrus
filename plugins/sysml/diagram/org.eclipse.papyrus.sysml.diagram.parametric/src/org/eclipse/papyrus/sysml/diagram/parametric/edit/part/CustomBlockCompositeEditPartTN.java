@@ -51,31 +51,32 @@ public class CustomBlockCompositeEditPartTN extends AbstractElementEditPart {
 		installEditPolicy(AffixedNodeAlignmentEditPolicy.AFFIXED_CHILD_ALIGNMENT_ROLE, new AffixedNodeAlignmentEditPolicy());
 		super.createDefaultEditPolicies();
 	}
+
 	@Override
 	protected IFigure createNodeShape() {
 		return this.primaryShape = new ParametricDiagramFrameFigure();
 	}
-	
+
 	@Override
 	public ParametricDiagramFrameFigure getPrimaryShape() {
-		return (ParametricDiagramFrameFigure)primaryShape;
+		return (ParametricDiagramFrameFigure) primaryShape;
 	}
-	
+
 	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof BlockLabelNameEditPart) {
-			((BlockLabelNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
+		if (childEditPart instanceof BlockLabelNameEditPart) {
+			((BlockLabelNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
-		if(childEditPart instanceof StructureCompartmentEditPart) {
+		if (childEditPart instanceof StructureCompartmentEditPart) {
 			IFigure pane = getPrimaryShape();
 			setupContentPane(pane);
-			pane.add(((StructureCompartmentEditPart)childEditPart).getFigure());
+			pane.add(((StructureCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if(childEditPart instanceof ConstraintParameterAffixedNodeEditPart) {
+		if (childEditPart instanceof ConstraintParameterAffixedNodeEditPart) {
 			IBorderItemLocator locator = new FullInsidePortPositionLocator(getMainFigure(), PositionConstants.NONE);
-			getBorderedFigure().getBorderItemContainer().add(((ConstraintParameterAffixedNodeEditPart)childEditPart).getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((ConstraintParameterAffixedNodeEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		return false;
@@ -83,17 +84,17 @@ public class CustomBlockCompositeEditPartTN extends AbstractElementEditPart {
 
 	@Override
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof BlockLabelNameEditPart) {
+		if (childEditPart instanceof BlockLabelNameEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof StructureCompartmentEditPart) {
+		if (childEditPart instanceof StructureCompartmentEditPart) {
 			IFigure pane = getPrimaryShape();
 			setupContentPane(pane);
-			pane.remove(((StructureCompartmentEditPart)childEditPart).getFigure());
+			pane.remove(((StructureCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if(childEditPart instanceof ConstraintParameterAffixedNodeEditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((ConstraintParameterAffixedNodeEditPart)childEditPart).getFigure());
+		if (childEditPart instanceof ConstraintParameterAffixedNodeEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ConstraintParameterAffixedNodeEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -114,7 +115,7 @@ public class CustomBlockCompositeEditPartTN extends AbstractElementEditPart {
 		return null;
 	}
 
-	
+
 	@Override
 	protected void refreshVisuals() {
 		refreshStereotypes();
@@ -122,7 +123,7 @@ public class CustomBlockCompositeEditPartTN extends AbstractElementEditPart {
 	}
 
 	protected void refreshStereotypes() {
-		Element resolveSemanticElement = (Element)this.resolveSemanticElement();
+		Element resolveSemanticElement = (Element) this.resolveSemanticElement();
 		EList<EObject> stereotypeApplications = resolveSemanticElement.getStereotypeApplications();
 		List<EObject> additionnalStereotypeApplications = new ArrayList<EObject>();
 		for (EObject currentStereotypeApplication : stereotypeApplications) {
@@ -140,7 +141,7 @@ public class CustomBlockCompositeEditPartTN extends AbstractElementEditPart {
 		}
 		getPrimaryShape().setStereotypeLabel(stereotypeLabel.toString());
 	}
-	
+
 	private String firstLetterToLowerCase(String string) {
 		String result = "";
 		if (string != null && string.length() != 0) {

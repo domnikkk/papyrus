@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,8 +28,8 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.infra.core.clipboard.IClipboardAdditionalData;
 import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
 import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
-import org.eclipse.papyrus.infra.gmfdiag.common.DiagramsUtil;
 import org.eclipse.papyrus.infra.gmfdiag.common.commands.InsertDiagramCommand;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
 
 
 /**
@@ -55,34 +55,37 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getLabel()
 	 */
+	@Override
 	public String getLabel() {
 		return "Diagram Strategy"; //$NON-NLS-1$
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getID()
 	 */
+	@Override
 	public String getID() {
 		return Activator.ID + ".DiagramStrategy"; //$NON-NLS-1$
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getDescription()
 	 */
+	@Override
 	public String getDescription() {
 		return "Copy Diagrams in model explorer"; //$NON-NLS-1$
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getSemanticCommand(org.eclipse.emf.edit.domain.EditingDomain,
 	 * org.eclipse.emf.ecore.EObject, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
@@ -92,30 +95,30 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 
 		Map internalClipboardToTargetCopy = papyrusClipboard.getInternalClipboardToTargetCopy();
 		Map<Object, ?> additionalDataMap = papyrusClipboard.getAdditionalDataForStrategy(getID());
-		if(additionalDataMap != null) {
+		if (additionalDataMap != null) {
 			Object additionalData = additionalDataMap.get(DIAGRAM_WITH_NO_OWNER);
-			if(additionalData instanceof DiagramClipboardAdditionalData) {
-				DiagramClipboardAdditionalData diagramClipboardAdditionnalData = (DiagramClipboardAdditionalData)additionalData;
+			if (additionalData instanceof DiagramClipboardAdditionalData) {
+				DiagramClipboardAdditionalData diagramClipboardAdditionnalData = (DiagramClipboardAdditionalData) additionalData;
 				Collection<Diagram> duplicateDiagrams = diagramClipboardAdditionnalData.getDuplicatedDiagrams(internalClipboardToTargetCopy);
-				for(final Diagram diagram : duplicateDiagrams) {
-					org.eclipse.emf.common.command.Command command = new InsertDiagramCommand((TransactionalEditingDomain)domain, "Insert a diagram with no source owner", diagram, targetOwner); //$NON-NLS-1$
+				for (final Diagram diagram : duplicateDiagrams) {
+					org.eclipse.emf.common.command.Command command = new InsertDiagramCommand((TransactionalEditingDomain) domain, "Insert a diagram with no source owner", diagram, targetOwner); //$NON-NLS-1$
 					compoundCommand.append(command);
 				}
 			}
 
-			for(Iterator<Object> iterator = papyrusClipboard.iterator(); iterator.hasNext();) {
-				Object object = (Object)iterator.next();
+			for (Iterator<Object> iterator = papyrusClipboard.iterator(); iterator.hasNext();) {
+				Object object = iterator.next();
 				// get target Element
 				EObject target = papyrusClipboard.getTragetCopyFromInternalClipboardCopy(object);
-				if(target != null && target instanceof EObject) {
+				if (target != null && target instanceof EObject) {
 					// get affiliate additional data
 					additionalData = additionalDataMap.get(object);
-					if(additionalData instanceof DiagramClipboardAdditionalData) {
-						DiagramClipboardAdditionalData diagramClipboardAdditionalData = (DiagramClipboardAdditionalData)additionalData;
+					if (additionalData instanceof DiagramClipboardAdditionalData) {
+						DiagramClipboardAdditionalData diagramClipboardAdditionalData = (DiagramClipboardAdditionalData) additionalData;
 						Collection<Diagram> diagrams = diagramClipboardAdditionalData.getDuplicatedDiagrams(internalClipboardToTargetCopy);
-						// duplicate diagrams 
-						for(final Diagram diagram : diagrams) {
-							org.eclipse.emf.common.command.Command command = new InsertDiagramCommand((TransactionalEditingDomain)domain, "InsertDiagramCommand", diagram, target); //$NON-NLS-1$
+						// duplicate diagrams
+						for (final Diagram diagram : diagrams) {
+							org.eclipse.emf.common.command.Command command = new InsertDiagramCommand((TransactionalEditingDomain) domain, "InsertDiagramCommand", diagram, target); //$NON-NLS-1$
 							compoundCommand.append(command);
 						}
 					}
@@ -123,8 +126,8 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 			}
 		}
 
-		// An empty compound Command can't be executed 
-		if(compoundCommand.getCommandList().isEmpty()) {
+		// An empty compound Command can't be executed
+		if (compoundCommand.getCommandList().isEmpty()) {
 			return null;
 		}
 		return compoundCommand;
@@ -132,7 +135,7 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#dependsOn()
 	 */
 	@Override
@@ -142,7 +145,7 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#prepare(org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
 	@Override
@@ -150,16 +153,16 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 		Map<Object, IClipboardAdditionalData> mapCopyToClipboardAdditionalData = new HashMap<Object, IClipboardAdditionalData>();
 		Map sourceToInternalClipboard = papyrusClipboard.getSourceToInternalClipboard();
 		List<Diagram> extractSelectedWithoutOwner = extractDiagramWithoutOwner(selection);
-		if(extractSelectedWithoutOwner != null && !extractSelectedWithoutOwner.isEmpty()) {
+		if (extractSelectedWithoutOwner != null && !extractSelectedWithoutOwner.isEmpty()) {
 			DiagramClipboardAdditionalData diagramAdditionnalData = new DiagramClipboardAdditionalData(extractSelectedWithoutOwner, sourceToInternalClipboard);
 			mapCopyToClipboardAdditionalData.put(DIAGRAM_WITH_NO_OWNER, diagramAdditionnalData);
 		}
 
-		for(Iterator<EObject> iterator = papyrusClipboard.iterateOnSource(); iterator.hasNext();) {
+		for (Iterator<EObject> iterator = papyrusClipboard.iterateOnSource(); iterator.hasNext();) {
 			EObject eObjectSource = iterator.next();
 			ResourceSet resourceSet = eObjectSource.eResource().getResourceSet();
-			List<Diagram> associatedDiagrams = DiagramsUtil.getAssociatedDiagrams(eObjectSource, resourceSet);
-			if(associatedDiagrams != null) {
+			List<Diagram> associatedDiagrams = DiagramUtils.getAssociatedDiagrams(eObjectSource, resourceSet);
+			if (associatedDiagrams != null) {
 				DiagramClipboardAdditionalData diagramAdditionnalData = new DiagramClipboardAdditionalData(associatedDiagrams, sourceToInternalClipboard);
 				Object copy = papyrusClipboard.getCopyFromSource(eObjectSource);
 				mapCopyToClipboardAdditionalData.put(copy, diagramAdditionnalData);
@@ -172,18 +175,18 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 
 	/**
 	 * Extract Diagram which owner is not in the selection
-	 * 
+	 *
 	 * @param selection
 	 * @return
 	 */
 	protected List<Diagram> extractDiagramWithoutOwner(Collection<EObject> selection) {
 		List<Diagram> diagramWithoutOwnerInSelection = new ArrayList<Diagram>();
-		if(selection != null) {
-			for(EObject eObject : selection) {
-				if(eObject instanceof Diagram) {
-					Diagram diagram = (Diagram)eObject;
+		if (selection != null) {
+			for (EObject eObject : selection) {
+				if (eObject instanceof Diagram) {
+					Diagram diagram = (Diagram) eObject;
 					EObject element = diagram.getElement();
-					if(!selection.contains(element)) {
+					if (!selection.contains(element)) {
 						diagramWithoutOwnerInSelection.add(diagram);
 					}
 				}
@@ -215,7 +218,7 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 
 		/**
 		 * @param diagrams
-		 *        to duplicate
+		 *            to duplicate
 		 * @param alreadyCopied
 		 * @return duplicated diagrams
 		 */
@@ -223,12 +226,12 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 			Collection<Diagram> duplicatedDiagrams = new ArrayList<Diagram>();
 			EcoreUtil.Copier copier = new EcoreUtil.Copier();
 			copier.putAll(alreadyCopied);
-			for(Diagram diagram : diagrams) {
+			for (Diagram diagram : diagrams) {
 				copier.copy(diagram);
 				copier.copyReferences();
 				EObject copy = copier.get(diagram);
-				if(copy instanceof Diagram) {
-					duplicatedDiagrams.add((Diagram)copy);
+				if (copy instanceof Diagram) {
+					duplicatedDiagrams.add((Diagram) copy);
 				}
 			}
 			return duplicatedDiagrams;

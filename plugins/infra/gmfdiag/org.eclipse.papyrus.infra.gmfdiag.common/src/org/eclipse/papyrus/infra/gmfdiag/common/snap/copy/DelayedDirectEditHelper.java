@@ -46,21 +46,21 @@ class DelayedDirectEditHelper implements Runnable {
 	/**
 	 * Constructs a new helper and starts it immediately. If another helper is
 	 * active, it is aborted and neither helper will run.
-	 * 
+	 *
 	 * @param viewer
-	 *        the viewer on which the direct-edit is supposed to happen
+	 *            the viewer on which the direct-edit is supposed to happen
 	 * @param request
-	 *        the request that triggered the direct-edit
+	 *            the request that triggered the direct-edit
 	 * @param receiver
-	 *        the EditPart that received the request
+	 *            the EditPart that received the request
 	 */
 	public DelayedDirectEditHelper(EditPartViewer viewer, Request request, EditPart receiver) {
 		this.req = request;
 		this.viewer = viewer;
 		this.part = receiver;
-		if(activeHelper != null)
+		if (activeHelper != null) {
 			activeHelper = null;
-		else {
+		} else {
 			hookControl(viewer.getControl());
 			activeHelper = this;
 			Display.getCurrent().timerExec(400, this);
@@ -77,16 +77,19 @@ class DelayedDirectEditHelper implements Runnable {
 	void hookControl(Control control) {
 		control.addFocusListener(focus = new FocusAdapter() {
 
+			@Override
 			public void focusLost(FocusEvent e) {
 				abort();
 			}
 		});
 		control.addKeyListener(key = new KeyListener() {
 
+			@Override
 			public void keyPressed(KeyEvent e) {
 				abort();
 			}
 
+			@Override
 			public void keyReleased(KeyEvent e) {
 				abort();
 			}
@@ -94,10 +97,12 @@ class DelayedDirectEditHelper implements Runnable {
 
 		control.addMouseListener(mouse = new MouseAdapter() {
 
+			@Override
 			public void mouseDoubleClick(MouseEvent e) {
 				abort();
 			}
 
+			@Override
 			public void mouseDown(MouseEvent e) {
 				abort();
 			}
@@ -108,11 +113,12 @@ class DelayedDirectEditHelper implements Runnable {
 	 * If this helper has not been aborted, the target editpart will be sent the
 	 * request.
 	 */
+	@Override
 	public void run() {
-		if(activeHelper == this && part.isActive() && viewer.getControl() != null && !viewer.getControl().isDisposed()) {
+		if (activeHelper == this && part.isActive() && viewer.getControl() != null && !viewer.getControl().isDisposed()) {
 			part.performRequest(req);
 		}
-		if(viewer.getControl() != null && !viewer.getControl().isDisposed()) {
+		if (viewer.getControl() != null && !viewer.getControl().isDisposed()) {
 			viewer.getControl().removeFocusListener(focus);
 			viewer.getControl().removeMouseListener(mouse);
 			viewer.getControl().removeKeyListener(key);

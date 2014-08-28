@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -26,7 +26,7 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * Attach a property to the selected Layer
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -59,7 +59,7 @@ public class AttachPropertyToLayer extends AbstractLayersCommand {
 	@Override
 	protected void doExecute(ExecutionEvent event, IEvaluationContext context, List<Object> selections) {
 		// check enable
-		if( ! isEnabled(context, selections)) {
+		if (!isEnabled(context, selections)) {
 			return;
 		}
 
@@ -68,9 +68,9 @@ public class AttachPropertyToLayer extends AbstractLayersCommand {
 		String currentName = "";
 		String newName = null;
 		InputDialog dialog = new InputDialog(Display.getCurrent().getActiveShell(), "Attach a Property to Layer", "Enter the name of an existing property", currentName, null);
-		if(dialog.open() == Window.OK) {
+		if (dialog.open() == Window.OK) {
 			newName = dialog.getValue();
-			if(newName == null || newName.length() <= 0) {
+			if (newName == null || newName.length() <= 0) {
 				return;
 			}
 		} else {
@@ -82,7 +82,7 @@ public class AttachPropertyToLayer extends AbstractLayersCommand {
 			LayersStackApplication application = lookupLayersStackApplicationChecked(context);
 			Property property = application.getPropertyRegistry().getProperty(newName);
 			// Get the layer
-			AbstractLayer layer = (AbstractLayer)getSelections(context).get(0);
+			AbstractLayer layer = (AbstractLayer) getSelections(context).get(0);
 			layer.addPropertyInstance(property);
 		} catch (LayersException e) {
 			// silently fails
@@ -94,7 +94,7 @@ public class AttachPropertyToLayer extends AbstractLayersCommand {
 			// silently fails
 			e.printStackTrace();
 		}
-		
+
 
 	}
 
@@ -107,5 +107,5 @@ public class AttachPropertyToLayer extends AbstractLayersCommand {
 		return selectionFirstElementInstanceOf(selections, AbstractLayer.class);
 	}
 
-	
+
 }

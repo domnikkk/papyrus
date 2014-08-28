@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *   Atos - Initial API and implementation
- *   Arthur Daussy Bug 366026 - [ActivityDiagram] Refactoring in order to try respect Generation Gap Pattern 
+ *   Arthur Daussy Bug 366026 - [ActivityDiagram] Refactoring in order to try respect Generation Gap Pattern
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.activity.edit.part;
@@ -24,9 +24,9 @@ import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
  * Customization to implement InterruptibleEdge
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class CustomControlFlowEditPart extends ControlFlowEditPart implements InterruptibleEdge {
 
@@ -37,6 +37,7 @@ public class CustomControlFlowEditPart extends ControlFlowEditPart implements In
 	/**
 	 * {@inheritDoc InterruptibleEdge}
 	 */
+	@Override
 	public int getInterruptibleEdgeIconVisualID() {
 		return ControlFlowInterruptibleIconEditPart.VISUAL_ID;
 	}
@@ -44,12 +45,13 @@ public class CustomControlFlowEditPart extends ControlFlowEditPart implements In
 	/**
 	 * {@inheritDoc InterruptibleEdge}
 	 */
+	@Override
 	public Node getInterrutibleEgdeIcon() {
 		Object view = getModel();
-		if(view instanceof View) {
-			View node = ViewUtil.getChildBySemanticHint((View)view, UMLVisualIDRegistry.getType(ControlFlowInterruptibleIconEditPart.VISUAL_ID));
-			if(node instanceof Node) {
-				return (Node)node;
+		if (view instanceof View) {
+			View node = ViewUtil.getChildBySemanticHint((View) view, UMLVisualIDRegistry.getType(ControlFlowInterruptibleIconEditPart.VISUAL_ID));
+			if (node instanceof Node) {
+				return (Node) node;
 			}
 		}
 		return null;

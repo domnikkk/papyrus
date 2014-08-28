@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.swt.widgets.Display;
 import org.hamcrest.Matcher;
 import org.junit.After;
@@ -130,7 +130,7 @@ public class UIUtilTest {
 
 			ExecutorService executor = Executors.newSingleThreadExecutor();
 			Future<Boolean> waiter = executor.submit(new AwaitTermination(1));
-			
+
 			try {
 				assertResult(waiter, is(false));
 			} finally {
@@ -196,9 +196,9 @@ public class UIUtilTest {
 
 
 	static void flushDisplayEvents() {
-		for(;;) {
+		for (;;) {
 			try {
-				if(!Display.getCurrent().readAndDispatch()) {
+				if (!Display.getCurrent().readAndDispatch()) {
 					break;
 				}
 			} catch (Exception e) {

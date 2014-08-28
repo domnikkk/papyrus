@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,12 +14,9 @@
 package org.eclipse.papyrus.facade.extensiondefinition.validation;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.facade.Facade;
-
 import org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass;
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinitionKind;
-
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Stereotype;
 
@@ -33,8 +30,12 @@ public interface ExtensionDefinitionValidator {
 	boolean validate();
 
 	boolean validateExtension(Extension value);
+
 	boolean validateBaseMetaclasses(EList<BaseMetaclass> value);
+
 	boolean validateFacade(Facade value);
+
 	boolean validateStereotype(Stereotype value);
+
 	boolean validateKind(ExtensionDefinitionKind value);
 }

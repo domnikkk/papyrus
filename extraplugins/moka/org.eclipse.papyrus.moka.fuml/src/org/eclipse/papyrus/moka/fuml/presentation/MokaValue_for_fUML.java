@@ -24,9 +24,9 @@ public abstract class MokaValue_for_fUML extends MokaValue implements IPresentat
 		super(FUMLExecutionEngine.eInstance.getDebugTarget());
 	}
 
-	//////////////////////////////////
+	// ////////////////////////////////
 	// Presentation
-	//////////////////////////////////
+	// ////////////////////////////////
 
 	public String getLabel() {
 		// Not used
@@ -40,13 +40,13 @@ public abstract class MokaValue_for_fUML extends MokaValue implements IPresentat
 		return null;
 	}
 
-	//////////////////////////////////
+	// ////////////////////////////////
 	// Debug
-	//////////////////////////////////
+	// ////////////////////////////////
 
 	@Override
 	public IVariable[] getVariables() throws DebugException {
-		return new IVariable[]{};
+		return new IVariable[] {};
 	}
 
 	@Override

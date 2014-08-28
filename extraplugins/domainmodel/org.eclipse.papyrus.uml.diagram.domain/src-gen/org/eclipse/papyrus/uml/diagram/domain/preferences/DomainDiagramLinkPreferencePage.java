@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -43,7 +43,7 @@ public class DomainDiagramLinkPreferencePage extends AbstractPapyrusLinkPreferen
 		super.createPageContents(parent);
 
 		// Add label visibility group
-		if(!labelsList.isEmpty()) {
+		if (!labelsList.isEmpty()) {
 			OrderedLabelGroup compartmentGroup = new OrderedLabelGroup(parent, getPreferenceKey(), this, labelsList);
 			addAbstractGroup(compartmentGroup);
 		}
@@ -60,7 +60,7 @@ public class DomainDiagramLinkPreferencePage extends AbstractPapyrusLinkPreferen
 
 	/** Initialize the list containing names of labels. */
 	protected void initializeLabelsList() {
-		//  Implemented by subclasses.
+		// Implemented by subclasses.
 	}
 
 	/**

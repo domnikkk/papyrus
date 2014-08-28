@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,10 +26,10 @@ public class ThemeInitializerManager {
 	private static IThemeInitializer loadThemeInitializer() {
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
-		for(IConfigurationElement e : config) {
+		for (IConfigurationElement e : config) {
 			try {
-				final IThemeInitializer initializer = (IThemeInitializer)e.createExecutableExtension("initializeView"); //$NON-NLS-1$
-				if(initializer != null) {
+				final IThemeInitializer initializer = (IThemeInitializer) e.createExecutableExtension("initializeView"); //$NON-NLS-1$
+				if (initializer != null) {
 					return initializer;
 				}
 			} catch (Exception ex) {
@@ -42,6 +42,7 @@ public class ThemeInitializerManager {
 
 	private static class DefaultThemeInitializer implements IThemeInitializer {
 
+		@Override
 		public boolean usePreferenceInitializer(View view) {
 			return true;
 		}

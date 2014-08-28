@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,20 +24,22 @@ import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 
 /**
  * this class has been specialized in order to manage reconnection of multidependency
- * 
+ *
  */
 public class CustomInstanceSpecificationItemSemanticEditPolicyCN extends InstanceSpecificationItemSemanticEditPolicyCN {
 
+	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case DependencyBranchEditPart.VISUAL_ID:
 			return getGEFWrapper(new BranchDependenctReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}
 
+	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.InstanceSpecification_4021 == req.getElementType()) {
+		if (UMLElementTypes.InstanceSpecification_4021 == req.getElementType()) {
 			return getGEFWrapper(new CInstanceSpecificationLinkCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getStartCreateRelationshipCommand(req);
@@ -46,7 +48,7 @@ public class CustomInstanceSpecificationItemSemanticEditPolicyCN extends Instanc
 	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		// TODO Auto-generated method stub
-		if(UMLElementTypes.InstanceSpecification_4021 == req.getElementType()) {
+		if (UMLElementTypes.InstanceSpecification_4021 == req.getElementType()) {
 			return getGEFWrapper(new CInstanceSpecificationLinkCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getCompleteCreateRelationshipCommand(req);

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,9 +16,9 @@ import org.eclipse.jface.viewers.Viewer;
 /**
  * Default implementation of IStaticContentProvider, creating a ContentProvider
  * from an Array of objects.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class StaticContentProvider extends AbstractStaticContentProvider {
 
@@ -33,11 +33,11 @@ public class StaticContentProvider extends AbstractStaticContentProvider {
 	private Viewer viewer;
 
 	/**
-	 * 
+	 *
 	 * Constructor. Creates a new ContentProvider with the given elements
-	 * 
+	 *
 	 * @param elements
-	 *        The elements known by this ContentProvider
+	 *            The elements known by this ContentProvider
 	 */
 	public StaticContentProvider(Object[] elements) {
 		this.elements = elements;
@@ -45,13 +45,13 @@ public class StaticContentProvider extends AbstractStaticContentProvider {
 
 	/**
 	 * Changes the elements known by this ContentProvider
-	 * 
+	 *
 	 * @param elements
-	 *        The elements known by this ContentProvider
+	 *            The elements known by this ContentProvider
 	 */
 	public void setElements(Object[] elements) {
 		this.elements = elements;
-		if(viewer != null) {
+		if (viewer != null) {
 			viewer.refresh();
 		}
 	}
@@ -67,6 +67,7 @@ public class StaticContentProvider extends AbstractStaticContentProvider {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object[] getElements() {
 		return elements;
 	}

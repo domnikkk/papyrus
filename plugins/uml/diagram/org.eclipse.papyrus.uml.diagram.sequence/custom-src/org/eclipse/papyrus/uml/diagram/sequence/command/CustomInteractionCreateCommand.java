@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ public class CustomInteractionCreateCommand extends InteractionCreateCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -44,7 +44,7 @@ public class CustomInteractionCreateCommand extends InteractionCreateCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomInteractionCreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -58,17 +58,17 @@ public class CustomInteractionCreateCommand extends InteractionCreateCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Interaction newElement = UMLFactory.eINSTANCE.createInteraction();
 		EObject elementToEdit = getElementToEdit();
-		if(elementToEdit instanceof Package) {
-			if(((Package)elementToEdit).getPackagedElements() != null) {
-				((Package)elementToEdit).getPackagedElements().add(newElement);
+		if (elementToEdit instanceof Package) {
+			if (((Package) elementToEdit).getPackagedElements() != null) {
+				((Package) elementToEdit).getPackagedElements().add(newElement);
 			}
 			// the interaction will be created in a behavioredClassifier
-		} else if(elementToEdit instanceof BehavioredClassifier) {
-			((BehavioredClassifier)elementToEdit).setClassifierBehavior(newElement);
+		} else if (elementToEdit instanceof BehavioredClassifier) {
+			((BehavioredClassifier) elementToEdit).setClassifierBehavior(newElement);
 		}
 		ElementInitializers.getInstance().init_Interaction_2001(newElement);
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 }

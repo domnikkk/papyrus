@@ -21,9 +21,9 @@ import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.AllocationTarget;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.TargetInstanceRefImpl#getAllocationTarget <em>Allocation Target</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.TargetInstanceRefImpl#getAllocationTarget_context <em>Allocation Target context</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.TargetInstanceRefImpl#getIntAttribute <em>Int Attribute</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.TargetInstanceRefImpl#getAllocationTarget <em>Allocation Target</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.TargetInstanceRefImpl#getAllocationTarget_context <em>Allocation Target context</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.TargetInstanceRefImpl#getIntAttribute <em>Int Attribute</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,6 +34,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	 * The cached value of the '{@link #getAllocationTarget() <em>Allocation Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getAllocationTarget()
 	 * @generated
 	 * @ordered
@@ -44,6 +45,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	 * The cached value of the '{@link #getAllocationTarget_context() <em>Allocation Target context</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getAllocationTarget_context()
 	 * @generated
 	 * @ordered
@@ -54,6 +56,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	 * The default value of the '{@link #getIntAttribute() <em>Int Attribute</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIntAttribute()
 	 * @generated
 	 * @ordered
@@ -64,6 +67,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	 * The cached value of the '{@link #getIntAttribute() <em>Int Attribute</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIntAttribute()
 	 * @generated
 	 * @ordered
@@ -73,6 +77,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TargetInstanceRefImpl() {
@@ -82,6 +87,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,15 +98,18 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public AllocationTarget getAllocationTarget() {
 		if (allocationTarget != null && allocationTarget.eIsProxy()) {
-			InternalEObject oldAllocationTarget = (InternalEObject)allocationTarget;
-			allocationTarget = (AllocationTarget)eResolveProxy(oldAllocationTarget);
+			InternalEObject oldAllocationTarget = (InternalEObject) allocationTarget;
+			allocationTarget = (AllocationTarget) eResolveProxy(oldAllocationTarget);
 			if (allocationTarget != oldAllocationTarget) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET, oldAllocationTarget, allocationTarget));
+				}
 			}
 		}
 		return allocationTarget;
@@ -109,6 +118,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public AllocationTarget basicGetAllocationTarget() {
@@ -118,20 +128,25 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setAllocationTarget(AllocationTarget newAllocationTarget) {
 		AllocationTarget oldAllocationTarget = allocationTarget;
 		allocationTarget = newAllocationTarget;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET, oldAllocationTarget, allocationTarget));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<AllocationTarget> getAllocationTarget_context() {
 		if (allocationTarget_context == null) {
 			allocationTarget_context = new EObjectResolvingEList<AllocationTarget>(AllocationTarget.class, this, InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET_CONTEXT);
@@ -142,8 +157,10 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getIntAttribute() {
 		return intAttribute;
 	}
@@ -151,30 +168,36 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIntAttribute(int newIntAttribute) {
 		int oldIntAttribute = intAttribute;
 		intAttribute = newIntAttribute;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.TARGET_INSTANCE_REF__INT_ATTRIBUTE, oldIntAttribute, intAttribute));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET:
-				if (resolve) return getAllocationTarget();
-				return basicGetAllocationTarget();
-			case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET_CONTEXT:
-				return getAllocationTarget_context();
-			case InfrastructurePackage.TARGET_INSTANCE_REF__INT_ATTRIBUTE:
-				return getIntAttribute();
+		case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET:
+			if (resolve) {
+				return getAllocationTarget();
+			}
+			return basicGetAllocationTarget();
+		case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET_CONTEXT:
+			return getAllocationTarget_context();
+		case InfrastructurePackage.TARGET_INSTANCE_REF__INT_ATTRIBUTE:
+			return getIntAttribute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,22 +205,23 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET:
-				setAllocationTarget((AllocationTarget)newValue);
-				return;
-			case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET_CONTEXT:
-				getAllocationTarget_context().clear();
-				getAllocationTarget_context().addAll((Collection<? extends AllocationTarget>)newValue);
-				return;
-			case InfrastructurePackage.TARGET_INSTANCE_REF__INT_ATTRIBUTE:
-				setIntAttribute((Integer)newValue);
-				return;
+		case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET:
+			setAllocationTarget((AllocationTarget) newValue);
+			return;
+		case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET_CONTEXT:
+			getAllocationTarget_context().clear();
+			getAllocationTarget_context().addAll((Collection<? extends AllocationTarget>) newValue);
+			return;
+		case InfrastructurePackage.TARGET_INSTANCE_REF__INT_ATTRIBUTE:
+			setIntAttribute((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -205,20 +229,21 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET:
-				setAllocationTarget((AllocationTarget)null);
-				return;
-			case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET_CONTEXT:
-				getAllocationTarget_context().clear();
-				return;
-			case InfrastructurePackage.TARGET_INSTANCE_REF__INT_ATTRIBUTE:
-				setIntAttribute(INT_ATTRIBUTE_EDEFAULT);
-				return;
+		case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET:
+			setAllocationTarget((AllocationTarget) null);
+			return;
+		case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET_CONTEXT:
+			getAllocationTarget_context().clear();
+			return;
+		case InfrastructurePackage.TARGET_INSTANCE_REF__INT_ATTRIBUTE:
+			setIntAttribute(INT_ATTRIBUTE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -226,17 +251,18 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET:
-				return allocationTarget != null;
-			case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET_CONTEXT:
-				return allocationTarget_context != null && !allocationTarget_context.isEmpty();
-			case InfrastructurePackage.TARGET_INSTANCE_REF__INT_ATTRIBUTE:
-				return intAttribute != INT_ATTRIBUTE_EDEFAULT;
+		case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET:
+			return allocationTarget != null;
+		case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET_CONTEXT:
+			return allocationTarget_context != null && !allocationTarget_context.isEmpty();
+		case InfrastructurePackage.TARGET_INSTANCE_REF__INT_ATTRIBUTE:
+			return intAttribute != INT_ATTRIBUTE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -244,11 +270,14 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (intAttribute: ");
@@ -257,4 +286,4 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 		return result.toString();
 	}
 
-} //TargetInstanceRefImpl
+} // TargetInstanceRefImpl

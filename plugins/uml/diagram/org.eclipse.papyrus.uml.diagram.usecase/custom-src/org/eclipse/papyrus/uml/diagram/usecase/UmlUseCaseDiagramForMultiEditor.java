@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2014 Atos Origin, CEA, and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,9 +34,9 @@ import org.eclipse.ui.PartInitException;
 
 /**
  * Editor used in multitabs editor.
- * 
+ *
  * @author Emilien Perico
- * 
+ *
  */
 public class UmlUseCaseDiagramForMultiEditor extends UMLDiagramEditor {
 
@@ -54,14 +54,14 @@ public class UmlUseCaseDiagramForMultiEditor extends UMLDiagramEditor {
 	private Composite splitter;
 
 	private Image titleImage;
-	
+
 	/**
 	 * Constructor for SashSystem v2. Context and required objects are retrieved from the
 	 * ServiceRegistry.
-	 * 
+	 *
 	 * @throws BackboneException
 	 * @throws ServiceException
-	 * 
+	 *
 	 */
 	public UmlUseCaseDiagramForMultiEditor(ServicesRegistry servicesRegistry, Diagram diagram) throws BackboneException, ServiceException {
 		super(servicesRegistry, diagram);
@@ -80,11 +80,11 @@ public class UmlUseCaseDiagramForMultiEditor extends UMLDiagramEditor {
 
 	@Override
 	public void dispose() {
-		if(titleImage != null) {
+		if (titleImage != null) {
 			titleImage.dispose();
 			titleImage = null;
 		}
-		
+
 		super.dispose();
 	}
 

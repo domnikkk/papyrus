@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -13,6 +13,12 @@ package org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.wizard;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.window.Window;
+import org.eclipse.jface.wizard.IWizardPage;
+import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetActions;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.EFacetPackage;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
@@ -27,12 +33,6 @@ import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.wizard.page.Synchron
 import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.wizard.page.SynchronizedFacetSetPropertyWizardPage;
 import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.wizard.IExtendedWizard;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.window.Window;
-import org.eclipse.jface.wizard.IWizardPage;
-import org.eclipse.jface.wizard.Wizard;
-import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
@@ -74,8 +74,7 @@ public class CreateFacetSetWizard extends Wizard implements INewWizard,
 		}
 		setWindowTitle(Messages.Create_FacetSet_Model);
 
-		this.facetSetWizard = new CreateFacetSetWizardPage(
-				"Whatever", this.selection); //$NON-NLS-1$
+		this.facetSetWizard = new CreateFacetSetWizardPage("Whatever", this.selection); //$NON-NLS-1$
 		this.propertyWizard = new FacetSetPropertyWizardPage("Whatever"); //$NON-NLS-1$
 
 	}
@@ -175,8 +174,7 @@ public class CreateFacetSetWizard extends Wizard implements INewWizard,
 	protected FacetSet createInitialFacet() {
 		final FacetSet facetSet = EFacetPackage.eINSTANCE.getEFacetFactory()
 				.createFacetSet();
-		final String modelFacetSetName = getModelFile().getName().replaceAll(
-				".efacet", ""); //$NON-NLS-1$ //$NON-NLS-2$
+		final String modelFacetSetName = getModelFile().getName().replaceAll(".efacet", ""); //$NON-NLS-1$ //$NON-NLS-2$
 		facetSet.setName(modelFacetSetName);
 		facetSet.setNsURI(this.propertyWizard.getNsUri());
 		facetSet.setNsPrefix(this.propertyWizard.getPrefix());

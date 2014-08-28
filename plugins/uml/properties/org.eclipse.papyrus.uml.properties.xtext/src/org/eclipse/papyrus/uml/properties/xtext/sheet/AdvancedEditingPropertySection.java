@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 Itemis AG, CEA LIST, and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -72,18 +72,18 @@ public class AdvancedEditingPropertySection extends
 			this);
 
 	UndoRedoStack<ExtendedModifyEvent> undoRedoStack;
-	
+
 	protected boolean isUndo;
 
 	protected boolean isRedo;
 
 	protected EObject currentEObj;
-	
+
 	public AdvancedEditingPropertySection() {
 		undoRedoStack = new UndoRedoStack<ExtendedModifyEvent>();
 		ModelListener.currentEditor = this;
 	}
-	
+
 	@Override
 	public void refresh() {
 		updateXtextAdapters(textControl);
@@ -112,8 +112,9 @@ public class AdvancedEditingPropertySection extends
 	public void dispose() {
 		super.dispose();
 		ModelListener.currentEditor = null;
-		if (toolkit != null)
+		if (toolkit != null) {
 			toolkit.dispose();
+		}
 	}
 
 	@Override
@@ -131,7 +132,7 @@ public class AdvancedEditingPropertySection extends
 		createTextControl(form.getBody());
 	}
 
-	
+
 	protected void createTextControl(final Composite parent) {
 
 		textControl = new StyledText(parent, SWT.MULTI | SWT.BORDER
@@ -145,7 +146,7 @@ public class AdvancedEditingPropertySection extends
 					// ignore focus lost
 					return;
 				}
-				if ((parser != null) &&	!parser.getEditString(null, 0).equals(textControl.getText())) {
+				if ((parser != null) && !parser.getEditString(null, 0).equals(textControl.getText())) {
 					ICommand command = parser.getParseCommand(
 							new EObjectAdapter(getEObject()),
 							textControl.getText(), 0);
@@ -158,12 +159,12 @@ public class AdvancedEditingPropertySection extends
 			public void focusGained(FocusEvent e) {
 			}
 		});
-		
+
 		textControl.setAlwaysShowScrollBars(false);
 		GridDataFactory.fillDefaults().grab(true, true).hint(parent.getSize())
 				.applyTo(textControl);
 		textControl.addExtendedModifyListener(new ExtendedModifyListener() {
-			
+
 			public void modifyText(ExtendedModifyEvent event) {
 				if (isUndo) {
 					undoRedoStack.pushRedo(event);
@@ -178,6 +179,7 @@ public class AdvancedEditingPropertySection extends
 		});
 
 		textControl.addKeyListener(new KeyAdapter() {
+			@Override
 			public void keyPressed(KeyEvent e) {
 				boolean isCtrl = (e.stateMask & SWT.CTRL) > 0;
 				boolean isAlt = (e.stateMask & SWT.ALT) > 0;
@@ -186,7 +188,7 @@ public class AdvancedEditingPropertySection extends
 					if (e.keyCode == 'z') {
 						if (isShift) {
 							redo();
-		            	}
+						}
 						else {
 							undo();
 						}
@@ -215,17 +217,17 @@ public class AdvancedEditingPropertySection extends
 	/**
 	 * Reverts the given modify event, in the way as the Eclipse text editor
 	 * does it.
-	 * 
+	 *
 	 * @param event
 	 */
 	private void revertEvent(ExtendedModifyEvent event) {
 		textControl.replaceTextRange(event.start, event.length, event.replacedText);
 		// (causes the modifyText() listener method to be called)
-		
+
 		textControl.setSelectionRange(event.start, event.replacedText.length());
 	}
-	
-	 
+
+
 	protected DefaultXtextDirectEditorConfiguration getConfigurationFromSelection() {
 		EObject semanticElement = getSemanticObjectFromSelection();
 		if (semanticElement != null) {
@@ -242,7 +244,7 @@ public class AdvancedEditingPropertySection extends
 						.findEditorConfiguration(languagePreferred,
 								semanticClassName);
 				if (configuration instanceof DefaultXtextDirectEditorConfiguration) {
-					
+
 					DefaultXtextDirectEditorConfiguration xtextConfiguration = (DefaultXtextDirectEditorConfiguration) configuration;
 					xtextConfiguration.preEditAction(semanticElement);
 					return xtextConfiguration;
@@ -273,7 +275,7 @@ public class AdvancedEditingPropertySection extends
 
 	protected void updateXtextAdapters(Control styledText) {
 		final Object oldObjectToEdit = configuration != null ? configuration.getObjectToEdit() : null;
-		
+
 		final DefaultXtextDirectEditorConfiguration newConfiguration = getConfigurationFromSelection();
 		// Check if configuration has changed and update adapters
 		if (newConfiguration != null && newConfiguration != configuration) {
@@ -284,24 +286,24 @@ public class AdvancedEditingPropertySection extends
 			configuration = newConfiguration;
 			xtextAdapter = new StyledTextXtextAdapter(
 					configuration.getInjector());
-			
+
 			EObject semanticElement = getSemanticObjectFromSelection();
 			if (semanticElement != null) {
-				newConfiguration.preEditAction(semanticElement);	
+				newConfiguration.preEditAction(semanticElement);
 			}
-			
+
 			xtextAdapter.getFakeResourceContext().getFakeResource().eAdapters()
 					.add(contextElementAdapter);
 			xtextAdapter.adapt((StyledText) styledText);
 		}
-		
+
 		if (configuration.getObjectToEdit() != oldObjectToEdit) {
 			IContextElementProvider provider = configuration.getContextProvider();
 			if (provider instanceof IContextElementProviderWithInit) {
 				// update resource, if required by text editor
 				if (xtextAdapter != null) {
 					((IContextElementProviderWithInit) provider).initResource(
-						xtextAdapter.getFakeResourceContext().getFakeResource());
+							xtextAdapter.getFakeResourceContext().getFakeResource());
 				}
 			}
 			Object semanticObject = configuration.getObjectToEdit();
@@ -314,7 +316,7 @@ public class AdvancedEditingPropertySection extends
 	public EObject getContextObject() {
 		return getEObject();
 	}
-	
+
 	@Override
 	protected boolean isReadOnly() {
 		EObject context = getContextObject();

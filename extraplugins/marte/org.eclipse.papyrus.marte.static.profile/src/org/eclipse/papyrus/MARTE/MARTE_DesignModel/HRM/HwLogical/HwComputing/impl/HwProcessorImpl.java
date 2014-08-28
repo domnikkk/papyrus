@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,18 +36,18 @@ import org.eclipse.papyrus.MARTE.utils.MarteUtils;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getArchitecture <em>Architecture</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getMips <em>Mips</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getIpc <em>Ipc</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getNbCores <em>Nb Cores</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getNbPipelines <em>Nb Pipelines</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getNbStages <em>Nb Stages</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getNbALUs <em>Nb AL Us</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getNbFPUs <em>Nb FP Us</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getOwnedISAs <em>Owned IS As</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getPredictors <em>Predictors</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getCaches <em>Caches</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getOwnedMMUs <em>Owned MM Us</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getArchitecture <em>Architecture</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getMips <em>Mips</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getIpc <em>Ipc</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getNbCores <em>Nb Cores</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getNbPipelines <em>Nb Pipelines</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getNbStages <em>Nb Stages</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getNbALUs <em>Nb AL Us</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getNbFPUs <em>Nb FP Us</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getOwnedISAs <em>Owned IS As</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getPredictors <em>Predictors</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getCaches <em>Caches</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwProcessorImpl#getOwnedMMUs <em>Owned MM Us</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,6 +58,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getArchitecture() <em>Architecture</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getArchitecture()
 	 * @generated
 	 * @ordered
@@ -68,6 +69,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getMips() <em>Mips</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMips()
 	 * @generated
 	 * @ordered
@@ -78,6 +80,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getMips() <em>Mips</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMips()
 	 * @generated
 	 * @ordered
@@ -88,6 +91,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getIpc() <em>Ipc</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIpc()
 	 * @generated
 	 * @ordered
@@ -98,6 +102,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getNbCores() <em>Nb Cores</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNbCores()
 	 * @generated
 	 * @ordered
@@ -108,6 +113,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getNbCores() <em>Nb Cores</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNbCores()
 	 * @generated
 	 * @ordered
@@ -118,6 +124,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getNbPipelines() <em>Nb Pipelines</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNbPipelines()
 	 * @generated
 	 * @ordered
@@ -128,6 +135,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getNbPipelines() <em>Nb Pipelines</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNbPipelines()
 	 * @generated
 	 * @ordered
@@ -138,6 +146,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getNbStages() <em>Nb Stages</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNbStages()
 	 * @generated
 	 * @ordered
@@ -148,6 +157,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getNbStages() <em>Nb Stages</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNbStages()
 	 * @generated
 	 * @ordered
@@ -158,6 +168,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getNbALUs() <em>Nb AL Us</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNbALUs()
 	 * @generated
 	 * @ordered
@@ -168,6 +179,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getNbALUs() <em>Nb AL Us</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNbALUs()
 	 * @generated
 	 * @ordered
@@ -178,6 +190,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getNbFPUs() <em>Nb FP Us</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNbFPUs()
 	 * @generated
 	 * @ordered
@@ -188,6 +201,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getNbFPUs() <em>Nb FP Us</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNbFPUs()
 	 * @generated
 	 * @ordered
@@ -198,6 +212,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getOwnedISAs() <em>Owned IS As</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOwnedISAs()
 	 * @generated
 	 * @ordered
@@ -208,6 +223,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getPredictors() <em>Predictors</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPredictors()
 	 * @generated
 	 * @ordered
@@ -218,6 +234,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getCaches() <em>Caches</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getCaches()
 	 * @generated
 	 * @ordered
@@ -228,6 +245,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getOwnedMMUs() <em>Owned MM Us</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOwnedMMUs()
 	 * @generated
 	 * @ordered
@@ -237,6 +255,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HwProcessorImpl() {
@@ -246,6 +265,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,46 +276,49 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public String getArchitecture() {
 		// TODO: implement this method to return the 'Architecture' attribute
 		// Ensure that you remove @generated or mark it @generated NOT
 		// throw new UnsupportedOperationException();
-		
+
 		Object base = null;
-		if(getBase_Classifier()!=null)
+		if (getBase_Classifier() != null) {
 			base = getBase_Classifier();
-		else if(getBase_ConnectableElement()!=null)
+		} else if (getBase_ConnectableElement() != null) {
 			base = getBase_ConnectableElement();
-		else if(getBase_InstanceSpecification()!=null)
+		} else if (getBase_InstanceSpecification() != null) {
 			base = getBase_InstanceSpecification();
-		else if(getBase_Lifeline()!=null)
+		} else if (getBase_Lifeline() != null) {
 			base = getBase_Lifeline();
-		else if(getBase_Property()!=null)
+		} else if (getBase_Property() != null) {
 			base = getBase_Property();
-		
-		String archi=null;
-		
-		if(base!=null) {
-			//Object ownedISAs = eGet(HwComputingPackage.HW_PROCESSOR__OWNED_IS_AS, false, false);
-			
+		}
+
+		String archi = null;
+
+		if (base != null) {
+			// Object ownedISAs = eGet(HwComputingPackage.HW_PROCESSOR__OWNED_IS_AS, false, false);
+
 			int instWidth = 0;
 			Iterator<HwISA> isaIter = getOwnedISAs().iterator();
-			while(isaIter.hasNext()) {
+			while (isaIter.hasNext()) {
 				HwISA currentISA = isaIter.next();
 				String widthTuple = currentISA.getInst_Width();
-				if(widthTuple!=null) {
+				if (widthTuple != null) {
 					Integer intWidth = Integer.valueOf(MarteUtils.getValueFromTuple(widthTuple, "value"));
-					if(instWidth < intWidth) {
+					if (instWidth < intWidth) {
 						instWidth = intWidth;
-						String stringUnit = MarteUtils.getValueFromTuple(widthTuple, "unit"); 
-						archi = "{unit="+stringUnit+",value=" + String.valueOf(instWidth) + "}";
+						String stringUnit = MarteUtils.getValueFromTuple(widthTuple, "unit");
+						archi = "{unit=" + stringUnit + ",value=" + String.valueOf(instWidth) + "}";
 					}
 				}
 			}
 		}
-		
+
 		return archi;
 
 	}
@@ -303,8 +326,10 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setArchitecture(String newArchitecture) {
 		// TODO: implement this method to set the 'Architecture' attribute
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -314,8 +339,10 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getMips() {
 		return mips;
 	}
@@ -323,53 +350,61 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setMips(String newMips) {
 		String oldMips = mips;
 		mips = newMips;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwComputingPackage.HW_PROCESSOR__MIPS, oldMips, mips));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public String getIpc() {
 		// TODO: implement this method to return the 'Ipc' attribute
 		// Ensure that you remove @generated or mark it @generated NOT
 		// throw new UnsupportedOperationException();
-		
+
 		String ipc = null;
-		
+
 		String mipsTuple = getMips();
 		String frequencyTuple = getFrequency();
-		
-		if(mipsTuple != null && frequencyTuple!=null) {
+
+		if (mipsTuple != null && frequencyTuple != null) {
 			int mipsValue = Integer.valueOf(MarteUtils.getValueFromTuple(mipsTuple, "value"));
 			float frequencyValue = Float.valueOf(MarteUtils.getValueFromTuple(frequencyTuple, "value"));
 			String frequencyUnit = MarteUtils.getValueFromTuple(frequencyTuple, "unit");
 			long convFactor = 1;
-			if(frequencyUnit.equals("Gz"))
+			if (frequencyUnit.equals("Gz")) {
 				convFactor = 1000000000;
-			else if(frequencyUnit.equals("Mz"))
+			} else if (frequencyUnit.equals("Mz")) {
 				convFactor = 1000000;
-			else if(frequencyUnit.equals("KHz"))
+			} else if (frequencyUnit.equals("KHz")) {
 				convFactor = 1000;
-			
-			ipc = String.valueOf((mipsValue*1000000)/(convFactor*frequencyValue));
+			}
+
+			ipc = String.valueOf((mipsValue * 1000000) / (convFactor * frequencyValue));
 		}
-		
+
 		return ipc;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIpc(String newIpc) {
 		// TODO: implement this method to set the 'Ipc' attribute
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -379,8 +414,10 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getNbCores() {
 		return nbCores;
 	}
@@ -388,20 +425,25 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setNbCores(String newNbCores) {
 		String oldNbCores = nbCores;
 		nbCores = newNbCores;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwComputingPackage.HW_PROCESSOR__NB_CORES, oldNbCores, nbCores));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getNbPipelines() {
 		return nbPipelines;
 	}
@@ -409,20 +451,25 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setNbPipelines(String newNbPipelines) {
 		String oldNbPipelines = nbPipelines;
 		nbPipelines = newNbPipelines;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwComputingPackage.HW_PROCESSOR__NB_PIPELINES, oldNbPipelines, nbPipelines));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getNbStages() {
 		return nbStages;
 	}
@@ -430,20 +477,25 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setNbStages(String newNbStages) {
 		String oldNbStages = nbStages;
 		nbStages = newNbStages;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwComputingPackage.HW_PROCESSOR__NB_STAGES, oldNbStages, nbStages));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getNbALUs() {
 		return nbALUs;
 	}
@@ -451,20 +503,25 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setNbALUs(String newNbALUs) {
 		String oldNbALUs = nbALUs;
 		nbALUs = newNbALUs;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwComputingPackage.HW_PROCESSOR__NB_AL_US, oldNbALUs, nbALUs));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getNbFPUs() {
 		return nbFPUs;
 	}
@@ -472,20 +529,25 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setNbFPUs(String newNbFPUs) {
 		String oldNbFPUs = nbFPUs;
 		nbFPUs = newNbFPUs;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwComputingPackage.HW_PROCESSOR__NB_FP_US, oldNbFPUs, nbFPUs));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<HwISA> getOwnedISAs() {
 		if (ownedISAs == null) {
 			ownedISAs = new EObjectResolvingEList<HwISA>(HwISA.class, this, HwComputingPackage.HW_PROCESSOR__OWNED_IS_AS);
@@ -496,8 +558,10 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<HwBranchPredictor> getPredictors() {
 		if (predictors == null) {
 			predictors = new EObjectResolvingEList<HwBranchPredictor>(HwBranchPredictor.class, this, HwComputingPackage.HW_PROCESSOR__PREDICTORS);
@@ -508,8 +572,10 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<HwCache> getCaches() {
 		if (caches == null) {
 			caches = new EObjectResolvingEList<HwCache>(HwCache.class, this, HwComputingPackage.HW_PROCESSOR__CACHES);
@@ -520,8 +586,10 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<HwMMU> getOwnedMMUs() {
 		if (ownedMMUs == null) {
 			ownedMMUs = new EObjectResolvingEList<HwMMU>(HwMMU.class, this, HwComputingPackage.HW_PROCESSOR__OWNED_MM_US);
@@ -532,35 +600,36 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwComputingPackage.HW_PROCESSOR__ARCHITECTURE:
-				return getArchitecture();
-			case HwComputingPackage.HW_PROCESSOR__MIPS:
-				return getMips();
-			case HwComputingPackage.HW_PROCESSOR__IPC:
-				return getIpc();
-			case HwComputingPackage.HW_PROCESSOR__NB_CORES:
-				return getNbCores();
-			case HwComputingPackage.HW_PROCESSOR__NB_PIPELINES:
-				return getNbPipelines();
-			case HwComputingPackage.HW_PROCESSOR__NB_STAGES:
-				return getNbStages();
-			case HwComputingPackage.HW_PROCESSOR__NB_AL_US:
-				return getNbALUs();
-			case HwComputingPackage.HW_PROCESSOR__NB_FP_US:
-				return getNbFPUs();
-			case HwComputingPackage.HW_PROCESSOR__OWNED_IS_AS:
-				return getOwnedISAs();
-			case HwComputingPackage.HW_PROCESSOR__PREDICTORS:
-				return getPredictors();
-			case HwComputingPackage.HW_PROCESSOR__CACHES:
-				return getCaches();
-			case HwComputingPackage.HW_PROCESSOR__OWNED_MM_US:
-				return getOwnedMMUs();
+		case HwComputingPackage.HW_PROCESSOR__ARCHITECTURE:
+			return getArchitecture();
+		case HwComputingPackage.HW_PROCESSOR__MIPS:
+			return getMips();
+		case HwComputingPackage.HW_PROCESSOR__IPC:
+			return getIpc();
+		case HwComputingPackage.HW_PROCESSOR__NB_CORES:
+			return getNbCores();
+		case HwComputingPackage.HW_PROCESSOR__NB_PIPELINES:
+			return getNbPipelines();
+		case HwComputingPackage.HW_PROCESSOR__NB_STAGES:
+			return getNbStages();
+		case HwComputingPackage.HW_PROCESSOR__NB_AL_US:
+			return getNbALUs();
+		case HwComputingPackage.HW_PROCESSOR__NB_FP_US:
+			return getNbFPUs();
+		case HwComputingPackage.HW_PROCESSOR__OWNED_IS_AS:
+			return getOwnedISAs();
+		case HwComputingPackage.HW_PROCESSOR__PREDICTORS:
+			return getPredictors();
+		case HwComputingPackage.HW_PROCESSOR__CACHES:
+			return getCaches();
+		case HwComputingPackage.HW_PROCESSOR__OWNED_MM_US:
+			return getOwnedMMUs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -568,52 +637,53 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwComputingPackage.HW_PROCESSOR__ARCHITECTURE:
-				setArchitecture((String)newValue);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__MIPS:
-				setMips((String)newValue);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__IPC:
-				setIpc((String)newValue);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__NB_CORES:
-				setNbCores((String)newValue);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__NB_PIPELINES:
-				setNbPipelines((String)newValue);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__NB_STAGES:
-				setNbStages((String)newValue);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__NB_AL_US:
-				setNbALUs((String)newValue);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__NB_FP_US:
-				setNbFPUs((String)newValue);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__OWNED_IS_AS:
-				getOwnedISAs().clear();
-				getOwnedISAs().addAll((Collection<? extends HwISA>)newValue);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__PREDICTORS:
-				getPredictors().clear();
-				getPredictors().addAll((Collection<? extends HwBranchPredictor>)newValue);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__CACHES:
-				getCaches().clear();
-				getCaches().addAll((Collection<? extends HwCache>)newValue);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__OWNED_MM_US:
-				getOwnedMMUs().clear();
-				getOwnedMMUs().addAll((Collection<? extends HwMMU>)newValue);
-				return;
+		case HwComputingPackage.HW_PROCESSOR__ARCHITECTURE:
+			setArchitecture((String) newValue);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__MIPS:
+			setMips((String) newValue);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__IPC:
+			setIpc((String) newValue);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__NB_CORES:
+			setNbCores((String) newValue);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__NB_PIPELINES:
+			setNbPipelines((String) newValue);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__NB_STAGES:
+			setNbStages((String) newValue);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__NB_AL_US:
+			setNbALUs((String) newValue);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__NB_FP_US:
+			setNbFPUs((String) newValue);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__OWNED_IS_AS:
+			getOwnedISAs().clear();
+			getOwnedISAs().addAll((Collection<? extends HwISA>) newValue);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__PREDICTORS:
+			getPredictors().clear();
+			getPredictors().addAll((Collection<? extends HwBranchPredictor>) newValue);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__CACHES:
+			getCaches().clear();
+			getCaches().addAll((Collection<? extends HwCache>) newValue);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__OWNED_MM_US:
+			getOwnedMMUs().clear();
+			getOwnedMMUs().addAll((Collection<? extends HwMMU>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -621,47 +691,48 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwComputingPackage.HW_PROCESSOR__ARCHITECTURE:
-				setArchitecture(ARCHITECTURE_EDEFAULT);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__MIPS:
-				setMips(MIPS_EDEFAULT);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__IPC:
-				setIpc(IPC_EDEFAULT);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__NB_CORES:
-				setNbCores(NB_CORES_EDEFAULT);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__NB_PIPELINES:
-				setNbPipelines(NB_PIPELINES_EDEFAULT);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__NB_STAGES:
-				setNbStages(NB_STAGES_EDEFAULT);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__NB_AL_US:
-				setNbALUs(NB_AL_US_EDEFAULT);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__NB_FP_US:
-				setNbFPUs(NB_FP_US_EDEFAULT);
-				return;
-			case HwComputingPackage.HW_PROCESSOR__OWNED_IS_AS:
-				getOwnedISAs().clear();
-				return;
-			case HwComputingPackage.HW_PROCESSOR__PREDICTORS:
-				getPredictors().clear();
-				return;
-			case HwComputingPackage.HW_PROCESSOR__CACHES:
-				getCaches().clear();
-				return;
-			case HwComputingPackage.HW_PROCESSOR__OWNED_MM_US:
-				getOwnedMMUs().clear();
-				return;
+		case HwComputingPackage.HW_PROCESSOR__ARCHITECTURE:
+			setArchitecture(ARCHITECTURE_EDEFAULT);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__MIPS:
+			setMips(MIPS_EDEFAULT);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__IPC:
+			setIpc(IPC_EDEFAULT);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__NB_CORES:
+			setNbCores(NB_CORES_EDEFAULT);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__NB_PIPELINES:
+			setNbPipelines(NB_PIPELINES_EDEFAULT);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__NB_STAGES:
+			setNbStages(NB_STAGES_EDEFAULT);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__NB_AL_US:
+			setNbALUs(NB_AL_US_EDEFAULT);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__NB_FP_US:
+			setNbFPUs(NB_FP_US_EDEFAULT);
+			return;
+		case HwComputingPackage.HW_PROCESSOR__OWNED_IS_AS:
+			getOwnedISAs().clear();
+			return;
+		case HwComputingPackage.HW_PROCESSOR__PREDICTORS:
+			getPredictors().clear();
+			return;
+		case HwComputingPackage.HW_PROCESSOR__CACHES:
+			getCaches().clear();
+			return;
+		case HwComputingPackage.HW_PROCESSOR__OWNED_MM_US:
+			getOwnedMMUs().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -669,35 +740,36 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwComputingPackage.HW_PROCESSOR__ARCHITECTURE:
-				return ARCHITECTURE_EDEFAULT == null ? getArchitecture() != null : !ARCHITECTURE_EDEFAULT.equals(getArchitecture());
-			case HwComputingPackage.HW_PROCESSOR__MIPS:
-				return MIPS_EDEFAULT == null ? mips != null : !MIPS_EDEFAULT.equals(mips);
-			case HwComputingPackage.HW_PROCESSOR__IPC:
-				return IPC_EDEFAULT == null ? getIpc() != null : !IPC_EDEFAULT.equals(getIpc());
-			case HwComputingPackage.HW_PROCESSOR__NB_CORES:
-				return NB_CORES_EDEFAULT == null ? nbCores != null : !NB_CORES_EDEFAULT.equals(nbCores);
-			case HwComputingPackage.HW_PROCESSOR__NB_PIPELINES:
-				return NB_PIPELINES_EDEFAULT == null ? nbPipelines != null : !NB_PIPELINES_EDEFAULT.equals(nbPipelines);
-			case HwComputingPackage.HW_PROCESSOR__NB_STAGES:
-				return NB_STAGES_EDEFAULT == null ? nbStages != null : !NB_STAGES_EDEFAULT.equals(nbStages);
-			case HwComputingPackage.HW_PROCESSOR__NB_AL_US:
-				return NB_AL_US_EDEFAULT == null ? nbALUs != null : !NB_AL_US_EDEFAULT.equals(nbALUs);
-			case HwComputingPackage.HW_PROCESSOR__NB_FP_US:
-				return NB_FP_US_EDEFAULT == null ? nbFPUs != null : !NB_FP_US_EDEFAULT.equals(nbFPUs);
-			case HwComputingPackage.HW_PROCESSOR__OWNED_IS_AS:
-				return ownedISAs != null && !ownedISAs.isEmpty();
-			case HwComputingPackage.HW_PROCESSOR__PREDICTORS:
-				return predictors != null && !predictors.isEmpty();
-			case HwComputingPackage.HW_PROCESSOR__CACHES:
-				return caches != null && !caches.isEmpty();
-			case HwComputingPackage.HW_PROCESSOR__OWNED_MM_US:
-				return ownedMMUs != null && !ownedMMUs.isEmpty();
+		case HwComputingPackage.HW_PROCESSOR__ARCHITECTURE:
+			return ARCHITECTURE_EDEFAULT == null ? getArchitecture() != null : !ARCHITECTURE_EDEFAULT.equals(getArchitecture());
+		case HwComputingPackage.HW_PROCESSOR__MIPS:
+			return MIPS_EDEFAULT == null ? mips != null : !MIPS_EDEFAULT.equals(mips);
+		case HwComputingPackage.HW_PROCESSOR__IPC:
+			return IPC_EDEFAULT == null ? getIpc() != null : !IPC_EDEFAULT.equals(getIpc());
+		case HwComputingPackage.HW_PROCESSOR__NB_CORES:
+			return NB_CORES_EDEFAULT == null ? nbCores != null : !NB_CORES_EDEFAULT.equals(nbCores);
+		case HwComputingPackage.HW_PROCESSOR__NB_PIPELINES:
+			return NB_PIPELINES_EDEFAULT == null ? nbPipelines != null : !NB_PIPELINES_EDEFAULT.equals(nbPipelines);
+		case HwComputingPackage.HW_PROCESSOR__NB_STAGES:
+			return NB_STAGES_EDEFAULT == null ? nbStages != null : !NB_STAGES_EDEFAULT.equals(nbStages);
+		case HwComputingPackage.HW_PROCESSOR__NB_AL_US:
+			return NB_AL_US_EDEFAULT == null ? nbALUs != null : !NB_AL_US_EDEFAULT.equals(nbALUs);
+		case HwComputingPackage.HW_PROCESSOR__NB_FP_US:
+			return NB_FP_US_EDEFAULT == null ? nbFPUs != null : !NB_FP_US_EDEFAULT.equals(nbFPUs);
+		case HwComputingPackage.HW_PROCESSOR__OWNED_IS_AS:
+			return ownedISAs != null && !ownedISAs.isEmpty();
+		case HwComputingPackage.HW_PROCESSOR__PREDICTORS:
+			return predictors != null && !predictors.isEmpty();
+		case HwComputingPackage.HW_PROCESSOR__CACHES:
+			return caches != null && !caches.isEmpty();
+		case HwComputingPackage.HW_PROCESSOR__OWNED_MM_US:
+			return ownedMMUs != null && !ownedMMUs.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -705,11 +777,14 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mips: ");
@@ -728,4 +803,4 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 		return result.toString();
 	}
 
-} //HwProcessorImpl
+} // HwProcessorImpl

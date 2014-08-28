@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,13 +54,13 @@ public class ClassifierBehaviorExecution {
 		// "...");
 		this.classifier = classifier;
 		Object_ object = this.objectActivation.object;
-		if(classifier instanceof Behavior) {
-			this.execution = (Execution)object;
+		if (classifier instanceof Behavior) {
+			this.execution = (Execution) object;
 		} else {
 			this.execution = object.locus.factory.createExecution(classifier.getClassifierBehavior(), object);
 		}
-		if(inputs != null) {
-			for(int i = 0; i < inputs.size(); i++) {
+		if (inputs != null) {
+			for (int i = 0; i < inputs.size(); i++) {
 				ParameterValue input = inputs.get(i);
 				this.execution.setParameterValue(input);
 			}
@@ -79,7 +79,7 @@ public class ClassifierBehaviorExecution {
 		// Debug.println("[terminate] Terminating behavior for " +
 		// classifier.name + "...");
 		this.execution.terminate();
-		if(this.execution != this.objectActivation.object) {
+		if (this.execution != this.objectActivation.object) {
 			this.execution.destroy();
 		}
 	}

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -24,7 +24,7 @@ import org.eclipse.swt.widgets.TreeItem;
 /**
  * This abstract class represent an item of the tree. All the item types of the
  * tree must extend this abstract class.
- * 
+ *
  * @since 0.3
  */
 public abstract class AbstractTreeItem<T extends Object> {
@@ -35,7 +35,7 @@ public abstract class AbstractTreeItem<T extends Object> {
 
 	/**
 	 * Create a new item {@link TreeItem} into the parent.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the item to create.
 	 */
@@ -49,7 +49,7 @@ public abstract class AbstractTreeItem<T extends Object> {
 
 	/**
 	 * Create a new item {@link TreeItem} into the parent.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the item to create.
 	 */
@@ -64,8 +64,7 @@ public abstract class AbstractTreeItem<T extends Object> {
 	}
 
 	/**
-	 * Initialize the tree item with the text and call the method
-	 * {@link #onItemCreation()} if the user wants an extra action.
+	 * Initialize the tree item with the text and call the method {@link #onItemCreation()} if the user wants an extra action.
 	 */
 	private void initialize(final TreeItem item) {
 		item.setChecked(true);
@@ -80,7 +79,7 @@ public abstract class AbstractTreeItem<T extends Object> {
 
 	/**
 	 * Return the default message when the item is created.
-	 * 
+	 *
 	 * @return the default message.
 	 */
 	public static String getDefaultItemText() {
@@ -89,9 +88,8 @@ public abstract class AbstractTreeItem<T extends Object> {
 
 	/**
 	 * Return the text to display for the item. This text can be null or an
-	 * empty string (the value of the string will be {@link Messages#item_todo}
-	 * ). The item text can be setted later with {@link #setItemText(String)}.
-	 * 
+	 * empty string (the value of the string will be {@link Messages#item_todo} ). The item text can be setted later with {@link #setItemText(String)}.
+	 *
 	 * @return the text of the item in the tree.
 	 */
 	public abstract String getItemText();
@@ -108,7 +106,7 @@ public abstract class AbstractTreeItem<T extends Object> {
 
 	/**
 	 * Return the value of this item.
-	 * 
+	 *
 	 * @return the value.
 	 */
 	public abstract Object returnValue();
@@ -126,7 +124,7 @@ public abstract class AbstractTreeItem<T extends Object> {
 
 	/**
 	 * Return the children of this item in the tree.
-	 * 
+	 *
 	 * @return the list of the children.
 	 */
 	public TreeItem[] getChildren() {
@@ -135,7 +133,7 @@ public abstract class AbstractTreeItem<T extends Object> {
 
 	/**
 	 * Return the parent of this item on the tree.
-	 * 
+	 *
 	 * @return the parent of the item or null if the item is root.
 	 */
 	public AbstractTreeItem<T> getParent() {
@@ -144,7 +142,7 @@ public abstract class AbstractTreeItem<T extends Object> {
 
 	/**
 	 * Edit the text of the item into the tree.
-	 * 
+	 *
 	 * @param newText
 	 *            the new text.
 	 */
@@ -153,8 +151,7 @@ public abstract class AbstractTreeItem<T extends Object> {
 	}
 
 	/**
-	 * When a modification append, this method has to be called and the method
-	 * {@link #notifyChanged()} is called for the listener of this Tree.
+	 * When a modification append, this method has to be called and the method {@link #notifyChanged()} is called for the listener of this Tree.
 	 */
 	protected void fireChanged() {
 		this.getMenuItem().fireChanged();
@@ -191,10 +188,8 @@ public abstract class AbstractTreeItem<T extends Object> {
 	}
 
 	/**
-	 * This method gets the <code>properties</code> passed by the
-	 * {@link #treeExtended} via the method
-	 * {@link ExtendedTree#putExtraPropertiesToItems(Map)}.
-	 * 
+	 * This method gets the <code>properties</code> passed by the {@link #treeExtended} via the method {@link ExtendedTree#putExtraPropertiesToItems(Map)}.
+	 *
 	 * @return the extraProperties
 	 */
 	public Map<String, Object> getExtraProperties() {
@@ -202,7 +197,8 @@ public abstract class AbstractTreeItem<T extends Object> {
 	}
 
 	/**
-	 * @param extraProperties the extraProperties to set
+	 * @param extraProperties
+	 *            the extraProperties to set
 	 */
 	public void setExtraProperties(final Map<String, Object> extraProperties) {
 		this.extraProperties = extraProperties;

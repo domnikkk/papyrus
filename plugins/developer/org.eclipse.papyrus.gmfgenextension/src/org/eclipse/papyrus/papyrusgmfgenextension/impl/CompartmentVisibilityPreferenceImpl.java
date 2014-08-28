@@ -9,17 +9,11 @@ package org.eclipse.papyrus.papyrusgmfgenextension.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.gmf.codegen.gmfgen.GenCompartment;
-
 import org.eclipse.papyrus.papyrusgmfgenextension.CompartmentVisibilityPreference;
 import org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage;
 
@@ -30,8 +24,8 @@ import org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.impl.CompartmentVisibilityPreferenceImpl#isVisibleByDefault <em>Visible By Default</em>}</li>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.impl.CompartmentVisibilityPreferenceImpl#getCompartments <em>Compartments</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.impl.CompartmentVisibilityPreferenceImpl#isVisibleByDefault <em>Visible By Default</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.impl.CompartmentVisibilityPreferenceImpl#getCompartments <em>Compartments</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +36,7 @@ public class CompartmentVisibilityPreferenceImpl extends CommentedElementImpl im
 	 * The default value of the '{@link #isVisibleByDefault() <em>Visible By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isVisibleByDefault()
 	 * @generated
 	 * @ordered
@@ -52,6 +47,7 @@ public class CompartmentVisibilityPreferenceImpl extends CommentedElementImpl im
 	 * The cached value of the '{@link #isVisibleByDefault() <em>Visible By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isVisibleByDefault()
 	 * @generated
 	 * @ordered
@@ -62,6 +58,7 @@ public class CompartmentVisibilityPreferenceImpl extends CommentedElementImpl im
 	 * The cached value of the '{@link #getCompartments() <em>Compartments</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getCompartments()
 	 * @generated
 	 * @ordered
@@ -71,6 +68,7 @@ public class CompartmentVisibilityPreferenceImpl extends CommentedElementImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected CompartmentVisibilityPreferenceImpl() {
@@ -80,6 +78,7 @@ public class CompartmentVisibilityPreferenceImpl extends CommentedElementImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,8 +89,10 @@ public class CompartmentVisibilityPreferenceImpl extends CommentedElementImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isVisibleByDefault() {
 		return visibleByDefault;
 	}
@@ -99,20 +100,25 @@ public class CompartmentVisibilityPreferenceImpl extends CommentedElementImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setVisibleByDefault(boolean newVisibleByDefault) {
 		boolean oldVisibleByDefault = visibleByDefault;
 		visibleByDefault = newVisibleByDefault;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__VISIBLE_BY_DEFAULT, oldVisibleByDefault, visibleByDefault));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<GenCompartment> getCompartments() {
 		if (compartments == null) {
 			compartments = new EObjectResolvingEList<GenCompartment>(GenCompartment.class, this, PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__COMPARTMENTS);
@@ -123,15 +129,16 @@ public class CompartmentVisibilityPreferenceImpl extends CommentedElementImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__VISIBLE_BY_DEFAULT:
-				return isVisibleByDefault();
-			case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__COMPARTMENTS:
-				return getCompartments();
+		case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__VISIBLE_BY_DEFAULT:
+			return isVisibleByDefault();
+		case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__COMPARTMENTS:
+			return getCompartments();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -139,19 +146,20 @@ public class CompartmentVisibilityPreferenceImpl extends CommentedElementImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__VISIBLE_BY_DEFAULT:
-				setVisibleByDefault((Boolean)newValue);
-				return;
-			case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__COMPARTMENTS:
-				getCompartments().clear();
-				getCompartments().addAll((Collection<? extends GenCompartment>)newValue);
-				return;
+		case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__VISIBLE_BY_DEFAULT:
+			setVisibleByDefault((Boolean) newValue);
+			return;
+		case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__COMPARTMENTS:
+			getCompartments().clear();
+			getCompartments().addAll((Collection<? extends GenCompartment>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -159,17 +167,18 @@ public class CompartmentVisibilityPreferenceImpl extends CommentedElementImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__VISIBLE_BY_DEFAULT:
-				setVisibleByDefault(VISIBLE_BY_DEFAULT_EDEFAULT);
-				return;
-			case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__COMPARTMENTS:
-				getCompartments().clear();
-				return;
+		case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__VISIBLE_BY_DEFAULT:
+			setVisibleByDefault(VISIBLE_BY_DEFAULT_EDEFAULT);
+			return;
+		case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__COMPARTMENTS:
+			getCompartments().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -177,15 +186,16 @@ public class CompartmentVisibilityPreferenceImpl extends CommentedElementImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__VISIBLE_BY_DEFAULT:
-				return visibleByDefault != VISIBLE_BY_DEFAULT_EDEFAULT;
-			case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__COMPARTMENTS:
-				return compartments != null && !compartments.isEmpty();
+		case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__VISIBLE_BY_DEFAULT:
+			return visibleByDefault != VISIBLE_BY_DEFAULT_EDEFAULT;
+		case PapyrusgmfgenextensionPackage.COMPARTMENT_VISIBILITY_PREFERENCE__COMPARTMENTS:
+			return compartments != null && !compartments.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -193,11 +203,14 @@ public class CompartmentVisibilityPreferenceImpl extends CommentedElementImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (visibleByDefault: ");
@@ -206,4 +219,4 @@ public class CompartmentVisibilityPreferenceImpl extends CommentedElementImpl im
 		return result.toString();
 	}
 
-} //CompartmentVisibilityPreferenceImpl
+} // CompartmentVisibilityPreferenceImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,16 +19,16 @@ import org.eclipse.papyrus.infra.gmfdiag.common.GmfEditorFactory;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.ModelEditPart;
 
 /**
- * 
+ *
  * Specialization for communication diagram
- * 
+ *
  */
 public class CommunicationDiagramEditorFactory extends GmfEditorFactory {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public CommunicationDiagramEditorFactory() {
 		super(UmlCommunicationDiagramForMultiEditor.class, ModelEditPart.MODEL_ID);

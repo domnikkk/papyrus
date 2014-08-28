@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2011, 2012 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	  Nicolas Guyomar (Mia-Software) - Bug 349546 - EMF Facet facetSet editor
  *    Nicolas Bros (Mia-Software) - Bug 370442 - rewrite the Facet loading dialog for v0.2
@@ -127,8 +127,8 @@ public class Messages extends NLS {
 	public static String JavaQueryWizardPage_Can_be_cached;
 	public static String JavaQueryWizardPage_has_side_effect;
 	public static String JavaQueryWizardPage_Query_name;
-	
-	//Begin copied from org.eclipse.papyrus.emf.facet.infra.query.ui.Messages
+
+	// Begin copied from org.eclipse.papyrus.emf.facet.infra.query.ui.Messages
 	public static String QueryExecutionView_0;
 	public static String QueryExecutionView_1;
 	public static String QueryExecutionView_classpathWarning;
@@ -152,8 +152,8 @@ public class Messages extends NLS {
 	public static String QueryExecutionView_QueryException;
 	public static String QueryExecutionView_QueryReturnedNull;
 	public static String QueryExecutionView_SelectQueryToExecute;
-	//End copied from org.eclipse.papyrus.emf.facet.infra.query.ui.Messages
-	
+	// End copied from org.eclipse.papyrus.emf.facet.infra.query.ui.Messages
+
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(Messages.BUNDLE_NAME, Messages.class);

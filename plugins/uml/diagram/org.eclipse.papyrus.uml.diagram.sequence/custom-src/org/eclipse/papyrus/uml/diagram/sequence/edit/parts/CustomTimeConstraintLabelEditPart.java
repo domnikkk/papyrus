@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,14 +24,14 @@ import org.eclipse.papyrus.uml.diagram.stereotype.edition.editpolicies.AppliedSt
 
 /**
  * Support displaying Stereotype as a Comment Node for TimeConstraint.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class CustomTimeConstraintLabelEditPart extends TimeConstraintLabelEditPart implements IPapyrusEditPart {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomTimeConstraintLabelEditPart(View view) {
@@ -40,10 +40,11 @@ public class CustomTimeConstraintLabelEditPart extends TimeConstraintLabelEditPa
 
 	/**
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart#getPrimaryShape()
-	 * 
+	 *
 	 * @return
 	 */
 
+	@Override
 	public IFigure getPrimaryShape() {
 		return getFigure();
 	}
@@ -52,7 +53,7 @@ public class CustomTimeConstraintLabelEditPart extends TimeConstraintLabelEditPa
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.CONNECTION_HANDLES_ROLE, new CustomConnectionHandleEditPolicy());
-		//install a editpolicy to display stereotypes
+		// install a editpolicy to display stereotypes
 		installEditPolicy(AppliedStereotypeCommentCreationEditPolicy.APPLIED_STEREOTYPE_COMMENT, new AppliedStereotypeCommentCreationEditPolicyEx());
 	}
 

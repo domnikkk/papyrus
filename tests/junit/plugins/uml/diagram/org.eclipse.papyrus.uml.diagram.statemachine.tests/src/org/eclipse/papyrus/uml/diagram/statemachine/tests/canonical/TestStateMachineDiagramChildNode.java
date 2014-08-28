@@ -11,12 +11,10 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.statemachine.tests.canonical;
 
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.diagram.tests.canonical.TestChildNode;
-import org.eclipse.papyrus.junit.utils.classification.InvalidTest;
+import org.eclipse.papyrus.junit.framework.classification.InvalidTest;
 import org.eclipse.papyrus.uml.diagram.statemachine.CreateStateMachineDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.statemachine.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.statemachine.providers.UMLElementTypes;

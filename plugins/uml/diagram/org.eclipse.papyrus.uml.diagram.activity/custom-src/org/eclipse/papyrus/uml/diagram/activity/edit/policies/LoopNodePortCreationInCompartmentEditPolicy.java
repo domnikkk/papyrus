@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class LoopNodePortCreationInCompartmentEditPolicy extends PinAndEdgeCreat
 
 	@Override
 	protected Collection<IElementType> getElementHandleByParent() {
-		if(elements == null) {
+		if (elements == null) {
 			elements = Lists.newArrayList(UMLElementTypes.InputPin_3105);
 		}
 		return elements;

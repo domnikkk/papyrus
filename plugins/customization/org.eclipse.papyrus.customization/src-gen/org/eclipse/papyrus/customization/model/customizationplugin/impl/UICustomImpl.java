@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.customization.model.customizationplugin.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage;
 import org.eclipse.papyrus.customization.model.customizationplugin.UICustom;
 
@@ -18,7 +15,7 @@ import org.eclipse.papyrus.customization.model.customizationplugin.UICustom;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.customization.model.customizationplugin.impl.UICustomImpl#isLoadByDefault <em>Load By Default</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.model.customizationplugin.impl.UICustomImpl#isLoadByDefault <em>Load By Default</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,6 +26,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	 * The default value of the '{@link #isLoadByDefault() <em>Load By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isLoadByDefault()
 	 * @generated
 	 * @ordered
@@ -39,6 +37,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	 * The cached value of the '{@link #isLoadByDefault() <em>Load By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isLoadByDefault()
 	 * @generated
 	 * @ordered
@@ -48,6 +47,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected UICustomImpl() {
@@ -57,6 +57,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -67,6 +68,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public boolean isLoadByDefault() {
@@ -76,25 +78,28 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setLoadByDefault(boolean newLoadByDefault) {
 		boolean oldLoadByDefault = loadByDefault;
 		loadByDefault = newLoadByDefault;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CustomizationPluginPackage.UI_CUSTOM__LOAD_BY_DEFAULT, oldLoadByDefault, loadByDefault));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CustomizationPluginPackage.UI_CUSTOM__LOAD_BY_DEFAULT:
-				return isLoadByDefault();
+		case CustomizationPluginPackage.UI_CUSTOM__LOAD_BY_DEFAULT:
+			return isLoadByDefault();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -102,14 +107,15 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CustomizationPluginPackage.UI_CUSTOM__LOAD_BY_DEFAULT:
-				setLoadByDefault((Boolean)newValue);
-				return;
+		case CustomizationPluginPackage.UI_CUSTOM__LOAD_BY_DEFAULT:
+			setLoadByDefault((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -117,14 +123,15 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CustomizationPluginPackage.UI_CUSTOM__LOAD_BY_DEFAULT:
-				setLoadByDefault(LOAD_BY_DEFAULT_EDEFAULT);
-				return;
+		case CustomizationPluginPackage.UI_CUSTOM__LOAD_BY_DEFAULT:
+			setLoadByDefault(LOAD_BY_DEFAULT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -132,13 +139,14 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CustomizationPluginPackage.UI_CUSTOM__LOAD_BY_DEFAULT:
-				return loadByDefault != LOAD_BY_DEFAULT_EDEFAULT;
+		case CustomizationPluginPackage.UI_CUSTOM__LOAD_BY_DEFAULT:
+			return loadByDefault != LOAD_BY_DEFAULT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -146,11 +154,14 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (loadByDefault: ");
@@ -159,4 +170,4 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 		return result.toString();
 	}
 
-} //UICustomImpl
+} // UICustomImpl

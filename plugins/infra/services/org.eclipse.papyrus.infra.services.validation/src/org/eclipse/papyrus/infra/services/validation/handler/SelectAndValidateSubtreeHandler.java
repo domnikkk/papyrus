@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,6 +27,6 @@ public class SelectAndValidateSubtreeHandler extends AbstractCommandHandler {
 	@Override
 	protected Command getCommand() {
 		// not useful to cache command, since selected element may change
-		return new GMFtoEMFCommandWrapper(new SelectAndValidateSubtreeCommand(getSelectedElement(),new EcoreDiagnostician()));
+		return new GMFtoEMFCommandWrapper(new SelectAndValidateSubtreeCommand(getSelectedElement(), new EcoreDiagnostician()));
 	}
 }

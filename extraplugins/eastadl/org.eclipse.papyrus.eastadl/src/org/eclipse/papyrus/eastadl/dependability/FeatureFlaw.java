@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,10 +27,10 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.Requirement;
  *
  * <!-- begin-model-doc -->
  * FeatureFlaw denotes an abstract failure of a set of items, i.e. an inability to fulfill one or several of its requirements.
- * 
+ *
  * Semantics:
  * FeatureFlaw represents functional anomalies derivable from each foreseeable source. nonFulfilledRequirements identifies those requirements that corresponds to the FeatureFlaw.
- * 
+ *
  * Extension:
  * UML::Class
  * <!-- end-model-doc -->
@@ -38,9 +38,9 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.Requirement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.FeatureFlaw#getBase_Class <em>Base Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.FeatureFlaw#getItem <em>Item</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.FeatureFlaw#getNonFulfilledRequirement <em>Non Fulfilled Requirement</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.FeatureFlaw#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.FeatureFlaw#getItem <em>Item</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.FeatureFlaw#getNonFulfilledRequirement <em>Non Fulfilled Requirement</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,10 +53,10 @@ public interface FeatureFlaw extends TraceableSpecification {
 	 * Returns the value of the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Class</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getFeatureFlaw_Base_Class()
@@ -69,7 +69,9 @@ public interface FeatureFlaw extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.FeatureFlaw#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Class</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
@@ -80,10 +82,10 @@ public interface FeatureFlaw extends TraceableSpecification {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.dependability.Item}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Item</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Item</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Item</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getFeatureFlaw_Item()
 	 * @model required="true" ordered="false"
@@ -96,10 +98,10 @@ public interface FeatureFlaw extends TraceableSpecification {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.requirements.requirements.Requirement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Non Fulfilled Requirement</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Non Fulfilled Requirement</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Non Fulfilled Requirement</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getFeatureFlaw_NonFulfilledRequirement()
 	 * @model ordered="false"

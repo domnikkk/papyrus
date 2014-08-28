@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ import org.eclipse.uml2.uml.StructuralFeature;
 public abstract class StructuralFeatureActionActivation extends ActionActivation {
 
 	public Association getAssociation(StructuralFeature feature) {
-		return ((GetAssociationStrategy)this.getExecutionLocus().factory.getStrategy("GetAssociationStrategy")).getAssociation(feature);
+		return ((GetAssociationStrategy) this.getExecutionLocus().factory.getStrategy("GetAssociationStrategy")).getAssociation(feature);
 	}
 
 	public List<Link> getMatchingLinks(Association association, StructuralFeature end, Value oppositeValue) {
@@ -36,23 +36,23 @@ public abstract class StructuralFeatureActionActivation extends ActionActivation
 		Property oppositeEnd = this.getOppositeEnd(association, end);
 		List<ExtensionalValue> extent = this.getExecutionLocus().getExtent(association);
 		List<Link> links = new ArrayList<Link>();
-		for(int i = 0; i < extent.size(); i++) {
+		for (int i = 0; i < extent.size(); i++) {
 			ExtensionalValue link = extent.get(i);
-			if(link.getFeatureValue(oppositeEnd).values.get(0).equals(oppositeValue)) {
-				if(!end.isOrdered() | links.size() == 0) {
-					links.add((Link)link);
+			if (link.getFeatureValue(oppositeEnd).values.get(0).equals(oppositeValue)) {
+				if (!end.isOrdered() | links.size() == 0) {
+					links.add((Link) link);
 				} else {
 					int n = link.getFeatureValue(end).position;
 					boolean continueSearching = true;
 					int j = 0;
-					while(continueSearching & j < links.size()) {
+					while (continueSearching & j < links.size()) {
 						j = j + 1;
 						continueSearching = links.get(j - 1).getFeatureValue(end).position < n;
 					}
-					if(continueSearching) {
-						links.add((Link)link);
+					if (continueSearching) {
+						links.add((Link) link);
 					} else {
-						links.add(j - 1, (Link)link);
+						links.add(j - 1, (Link) link);
 					}
 				}
 			}
@@ -63,7 +63,7 @@ public abstract class StructuralFeatureActionActivation extends ActionActivation
 	public Property getOppositeEnd(Association association, StructuralFeature end) {
 		// Get the end of a binary association opposite to the given end.
 		Property oppositeEnd = association.getMemberEnds().get(0);
-		if(oppositeEnd == end) {
+		if (oppositeEnd == end) {
 			oppositeEnd = association.getMemberEnds().get(1);
 		}
 		return oppositeEnd;

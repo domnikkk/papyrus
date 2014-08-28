@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -68,6 +68,7 @@ public class CDOFunctions {
 			this.adapterType = adapterType;
 		}
 
+		@Override
 		public T apply(F input) {
 			return CDOUtils.adapt(input, adapterType);
 		}
@@ -84,7 +85,7 @@ public class CDOFunctions {
 
 		@Override
 		public boolean equals(Object other) {
-			return (other instanceof AdaptFunction<?, ?>) && (((AdaptFunction<?, ?>)other).adapterType == adapterType);
+			return (other instanceof AdaptFunction<?, ?>) && (((AdaptFunction<?, ?>) other).adapterType == adapterType);
 		}
 	}
 
@@ -96,8 +97,9 @@ public class CDOFunctions {
 			this.rootElementType = rootElementType;
 		}
 
+		@Override
 		public T apply(Resource input) {
-			if(!input.isLoaded()) {
+			if (!input.isLoaded()) {
 				try {
 					input.load(null);
 				} catch (Exception e) {
@@ -120,7 +122,7 @@ public class CDOFunctions {
 
 		@Override
 		public boolean equals(Object other) {
-			return (other instanceof ResourceRootFunction<?>) && (((ResourceRootFunction<?>)other).rootElementType == rootElementType);
+			return (other instanceof ResourceRootFunction<?>) && (((ResourceRootFunction<?>) other).rootElementType == rootElementType);
 		}
 	}
 
@@ -132,13 +134,14 @@ public class CDOFunctions {
 			this.nodeType = nodeType;
 		}
 
+		@Override
 		public Iterable<T> apply(CDOResourceNode input) {
 			Iterable<T> result;
 
-			if(input instanceof CDOResourceFolder) {
-				result = Iterables.filter(((CDOResourceFolder)input).getNodes(), nodeType);
-			} else if(input.isRoot()) {
-				result = Iterables.filter(((CDOResource)input).getContents(), nodeType);
+			if (input instanceof CDOResourceFolder) {
+				result = Iterables.filter(((CDOResourceFolder) input).getNodes(), nodeType);
+			} else if (input.isRoot()) {
+				result = Iterables.filter(((CDOResource) input).getContents(), nodeType);
 			} else {
 				result = Collections.emptyList();
 			}
@@ -158,7 +161,7 @@ public class CDOFunctions {
 
 		@Override
 		public boolean equals(Object other) {
-			return (other instanceof FolderContentsFunction<?>) && (((FolderContentsFunction<?>)other).nodeType == nodeType);
+			return (other instanceof FolderContentsFunction<?>) && (((FolderContentsFunction<?>) other).nodeType == nodeType);
 		}
 	}
 
@@ -170,6 +173,7 @@ public class CDOFunctions {
 			super();
 		}
 
+		@Override
 		public EObject apply(CDOObject input) {
 			return CDOUtil.getEObject(input);
 		}

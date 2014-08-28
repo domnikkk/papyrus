@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -31,6 +31,7 @@ public class LinkMappingHelper implements ILinkMappingHelper {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<?> getSource(Element link) {
 		CommonSourceUMLSwitch umlSwitch = new CommonSourceUMLSwitch();
 		return umlSwitch.doSwitch(link);
@@ -39,6 +40,7 @@ public class LinkMappingHelper implements ILinkMappingHelper {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<?> getTarget(Element link) {
 		CommonTargetUMLSwitch umlSwitch = new CommonTargetUMLSwitch();
 		return umlSwitch.doSwitch(link);
@@ -46,7 +48,7 @@ public class LinkMappingHelper implements ILinkMappingHelper {
 
 	/**
 	 * Contains diagrams common behavior that need to be redefined
-	 * 
+	 *
 	 * @author eperico
 	 */
 	public static class CommonSourceUMLSwitch extends UMLSwitch<Collection<?>> {
@@ -102,7 +104,7 @@ public class LinkMappingHelper implements ILinkMappingHelper {
 
 	/**
 	 * Contains diagrams common behavior that need to be redefined
-	 * 
+	 *
 	 * @author eperico
 	 */
 	public static class CommonTargetUMLSwitch extends UMLSwitch<Collection<?>> {

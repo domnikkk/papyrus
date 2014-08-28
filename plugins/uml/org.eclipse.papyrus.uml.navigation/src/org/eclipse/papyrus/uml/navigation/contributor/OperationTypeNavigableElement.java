@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,9 +15,9 @@ import org.eclipse.uml2.uml.Operation;
 
 /**
  * Navigates from an Operation to it's return type declaration
- * 
+ *
  * @author CL228098
- * 
+ *
  */
 public class OperationTypeNavigableElement extends TypedNavigableElement {
 

@@ -46,7 +46,7 @@ public class DurationConstraintContributionItem extends ContributionItem impleme
 	private MenuItem subMenuItem;
 
 	/**
-	 * 
+	 *
 	 */
 	public DurationConstraintContributionItem() {
 		setId("org.eclipse.papyrus.sequence.duraitonconstraint.menuitem");
@@ -65,7 +65,7 @@ public class DurationConstraintContributionItem extends ContributionItem impleme
 	 */
 	@Override
 	public void dispose() {
-		if(subMenuItem != null && !subMenuItem.isDisposed()) {
+		if (subMenuItem != null && !subMenuItem.isDisposed()) {
 			subMenuItem.dispose();
 		}
 	}
@@ -90,18 +90,18 @@ public class DurationConstraintContributionItem extends ContributionItem impleme
 		// first case: this class was not able to retrieve the selection service
 		// or does not understand the current selection.
 		// does not build any sub-menu and returns.
-		if(selectedElement == null) {
+		if (selectedElement == null) {
 			return;
 		}
 
 		// get the uml object type of this element, using the business resolver
 		final Object businessObject = EMFHelper.getEObject(selectedElement);
 		// no object found: exit
-		if(businessObject == null || !(businessObject instanceof DurationConstraint)) {
+		if (businessObject == null || !(businessObject instanceof DurationConstraint)) {
 			return;
 		}
 
-		createSubMenu(menu, index, (DurationConstraint)businessObject);
+		createSubMenu(menu, index, (DurationConstraint) businessObject);
 	}
 
 	protected void createSubMenu(Menu menu, int index, DurationConstraint businessObject) {
@@ -110,10 +110,12 @@ public class DurationConstraintContributionItem extends ContributionItem impleme
 
 		subMenuItem.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 
 			}
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				doRotate();
 			}
@@ -122,26 +124,26 @@ public class DurationConstraintContributionItem extends ContributionItem impleme
 
 	/**
 	 * Retrieves and return the current selected element
-	 * 
+	 *
 	 * @return the current selected element
 	 */
 	protected Object getSelectedElement() {
 		ISelection selection = getSelection();
 		// this checks if it is the good instance AND if it is not null
-		if(selection instanceof IStructuredSelection) {
-			return ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			return ((IStructuredSelection) selection).getFirstElement();
 		}
 		return null;
 	}
 
 	/**
 	 * Retrieves and return the current selection
-	 * 
+	 *
 	 * @return the current selection
 	 */
 	protected ISelection getSelection() {
 		ISelectionService selectionService = getSelectionService();
-		if(selectionService != null) {
+		if (selectionService != null) {
 			return selectionService.getSelection();
 		}
 		return null;
@@ -149,12 +151,12 @@ public class DurationConstraintContributionItem extends ContributionItem impleme
 
 	/**
 	 * Returns the selection service for the current workbench
-	 * 
+	 *
 	 * @return the selection service for the current workbench or <code>null</code> if no selection
 	 *         service was found.
 	 */
 	protected ISelectionService getSelectionService() {
-		ISelectionService selectionService = (ISelectionService)serviceLocator.getService(ISelectionService.class);
+		ISelectionService selectionService = (ISelectionService) serviceLocator.getService(ISelectionService.class);
 		return selectionService;
 	}
 
@@ -169,7 +171,7 @@ public class DurationConstraintContributionItem extends ContributionItem impleme
 	/**
 	 * The default implementation of this <code>IContributionItem</code> method does nothing.
 	 * Subclasses may override.
-	 * 
+	 *
 	 * @since 3.0
 	 */
 	@Override
@@ -179,7 +181,7 @@ public class DurationConstraintContributionItem extends ContributionItem impleme
 	/**
 	 * The default implementation of this <code>IContributionItem</code> method does nothing.
 	 * Subclasses may override.
-	 * 
+	 *
 	 * @since 3.0
 	 */
 	@Override
@@ -255,6 +257,7 @@ public class DurationConstraintContributionItem extends ContributionItem impleme
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void initialize(IServiceLocator serviceLocator) {
 		assert (serviceLocator != null);
 		this.serviceLocator = serviceLocator;
@@ -262,10 +265,11 @@ public class DurationConstraintContributionItem extends ContributionItem impleme
 
 	private void doRotate() {
 		Object element = getSelectedElement();
-		if(!(element instanceof CustomDurationConstraintEditPart))
+		if (!(element instanceof CustomDurationConstraintEditPart)) {
 			return;
+		}
 
-		CustomDurationConstraintEditPart durationPart = (CustomDurationConstraintEditPart)element;
+		CustomDurationConstraintEditPart durationPart = (CustomDurationConstraintEditPart) element;
 		boolean isVertical = durationPart.isArrowVertical();
 
 		CompositeCommand compositeCmd = new CompositeCommand("rotate");
@@ -278,28 +282,31 @@ public class DurationConstraintContributionItem extends ContributionItem impleme
 
 		// update anchor
 		List list = durationPart.getSourceConnections();
-		for(Object o : list)
-			if(o instanceof CustomCommentAnnotatedElementEditPart) {
-				CustomCommentAnnotatedElementEditPart connectionPart = (CustomCommentAnnotatedElementEditPart)o;
+		for (Object o : list) {
+			if (o instanceof CustomCommentAnnotatedElementEditPart) {
+				CustomCommentAnnotatedElementEditPart connectionPart = (CustomCommentAnnotatedElementEditPart) o;
 				String terminal = AnchorHelper.getAnchorId(connectionPart.getEditingDomain(), connectionPart, true);
-				if(terminal.length() > 0) {
+				if (terminal.length() > 0) {
 					PrecisionPoint pt = BaseSlidableAnchor.parseTerminalString(terminal);
 					SetConnectionAnchorsCommand rotateAnchorsCommand = new SetConnectionAnchorsCommand(connectionPart.getEditingDomain(), "Rotate Duration Anchors");
 					rotateAnchorsCommand.setEdgeAdaptor(new EObjectAdapter(connectionPart.getNotationView()));
-					if(isVertical) {
-						if(pt.y < 0.3)
+					if (isVertical) {
+						if (pt.y < 0.3) {
 							rotateAnchorsCommand.setNewSourceTerminal("(0,0.5){L}");
-						else if(pt.y > 0.7)
+						} else if (pt.y > 0.7) {
 							rotateAnchorsCommand.setNewSourceTerminal("(1,0.5){R}");
+						}
 					} else {
-						if(pt.x < 0.3)
+						if (pt.x < 0.3) {
 							rotateAnchorsCommand.setNewSourceTerminal("(0.5,0){T}");
-						else if(pt.x > 0.7)
+						} else if (pt.x > 0.7) {
 							rotateAnchorsCommand.setNewSourceTerminal("(0.5,1){D}");
+						}
 					}
 					compositeCmd.add(rotateAnchorsCommand);
 				}
 			}
+		}
 		// execute command
 		durationPart.getEditingDomain().getCommandStack().execute(new GMFtoEMFCommandWrapper(compositeCmd));
 	}

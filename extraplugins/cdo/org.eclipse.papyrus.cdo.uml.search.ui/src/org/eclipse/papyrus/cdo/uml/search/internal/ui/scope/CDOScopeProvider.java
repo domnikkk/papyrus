@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,14 +47,14 @@ public class CDOScopeProvider implements IScopeProvider {
 		Collection<URI> result;
 
 		final Collection<? extends IInternalPapyrusRepository> repos = PapyrusRepositoryManager.INSTANCE.getRepositories();
-		if(repos.isEmpty()) {
+		if (repos.isEmpty()) {
 			result = Collections.emptyList();
 		} else {
 			result = Lists.newArrayListWithCapacity(repos.size());
-			for(IInternalPapyrusRepository next : repos) {
-				if(next.isConnected()) {
+			for (IInternalPapyrusRepository next : repos) {
+				if (next.isConnected()) {
 					CDOView view = next.getMasterView();
-					if(view != null) {
+					if (view != null) {
 						result.add(view.getRootResource().getURI());
 					}
 				}
@@ -70,29 +70,29 @@ public class CDOScopeProvider implements IScopeProvider {
 
 		// try to get the contextual resource node
 		CDOResourceNode node = CDOUtils.adapt(selected, CDOResourceNode.class);
-		if(node == null) {
+		if (node == null) {
 			EObject obj = CDOUtils.adapt(selected, EObject.class);
-			if(obj != null) {
+			if (obj != null) {
 				node = CDOUtils.adapt(obj.eResource(), CDOResource.class);
 			}
 		}
 
-		if(node == null) {
+		if (node == null) {
 			result = Collections.emptyList();
 		} else {
 			URI uri = node.getURI();
-			if(!node.isRoot() && (node instanceof CDOResource)) {
+			if (!node.isRoot() && (node instanceof CDOResource)) {
 				// ensure that we search the UML resource, not the notation or di
 				uri = uri.trimFileExtension().appendFileExtension(UMLResource.FILE_EXTENSION);
 
-				if(!uri.equals(node.getURI())) {
-					// does the UML resource exist?  If not, don't try to search it
+				if (!uri.equals(node.getURI())) {
+					// does the UML resource exist? If not, don't try to search it
 					String path = CDOURIUtil.extractResourcePath(uri);
-					if(!node.cdoView().hasResource(path)) {
+					if (!node.cdoView().hasResource(path)) {
 						uri = null;
 					}
 				}
-			} else if((node instanceof CDOResourceFolder) && !uri.hasTrailingPathSeparator()) {
+			} else if ((node instanceof CDOResourceFolder) && !uri.hasTrailingPathSeparator()) {
 				uri = uri.appendSegment(""); //$NON-NLS-1$
 			}
 

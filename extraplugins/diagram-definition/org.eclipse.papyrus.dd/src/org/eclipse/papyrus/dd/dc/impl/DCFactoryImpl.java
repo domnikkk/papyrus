@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -17,17 +17,19 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.dd.dc.*;
+import org.eclipse.papyrus.dd.dc.Bounds;
+import org.eclipse.papyrus.dd.dc.DCFactory;
+import org.eclipse.papyrus.dd.dc.DCPackage;
+import org.eclipse.papyrus.dd.dc.Dimension;
+import org.eclipse.papyrus.dd.dc.KnownColor;
+import org.eclipse.papyrus.dd.dc.Point;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
@@ -36,13 +38,13 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DCFactory init() {
 		try {
-			DCFactory theDCFactory = (DCFactory)EPackage.Registry.INSTANCE.getEFactory(DCPackage.eNS_URI);
-			if(theDCFactory != null) {
+			DCFactory theDCFactory = (DCFactory) EPackage.Registry.INSTANCE.getEFactory(DCPackage.eNS_URI);
+			if (theDCFactory != null) {
 				return theDCFactory;
 			}
 		} catch (Exception exception) {
@@ -55,7 +57,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DCFactoryImpl() {
@@ -64,12 +66,12 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case DCPackage.POINT:
 			return createPoint();
 		case DCPackage.DIMENSION:
@@ -83,12 +85,12 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case DCPackage.KNOWN_COLOR:
 			return createKnownColorFromString(eDataType, initialValue);
 		case DCPackage.BOOLEAN:
@@ -108,12 +110,12 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case DCPackage.KNOWN_COLOR:
 			return convertKnownColorToString(eDataType, instanceValue);
 		case DCPackage.BOOLEAN:
@@ -133,9 +135,10 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public Point createPoint() {
 		PointImpl point = new PointImpl();
 		return point;
@@ -143,9 +146,10 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public Dimension createDimension() {
 		DimensionImpl dimension = new DimensionImpl();
 		return dimension;
@@ -153,9 +157,10 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public Bounds createBounds() {
 		BoundsImpl bounds = new BoundsImpl();
 		return bounds;
@@ -163,19 +168,20 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public KnownColor createKnownColorFromString(EDataType eDataType, String initialValue) {
 		KnownColor result = KnownColor.get(initialValue);
-		if(result == null)
+		if (result == null) {
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertKnownColorToString(EDataType eDataType, Object instanceValue) {
@@ -184,16 +190,16 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Boolean createBooleanFromString(EDataType eDataType, String initialValue) {
-		return (Boolean)super.createFromString(eDataType, initialValue);
+		return (Boolean) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertBooleanToString(EDataType eDataType, Object instanceValue) {
@@ -202,16 +208,16 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Integer createIntegerFromString(EDataType eDataType, String initialValue) {
-		return (Integer)super.createFromString(eDataType, initialValue);
+		return (Integer) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertIntegerToString(EDataType eDataType, Object instanceValue) {
@@ -220,16 +226,16 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Double createRealFromString(EDataType eDataType, String initialValue) {
-		return (Double)super.createFromString(eDataType, initialValue);
+		return (Double) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertRealToString(EDataType eDataType, Object instanceValue) {
@@ -238,16 +244,16 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createStringFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+		return (String) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertStringToString(EDataType eDataType, Object instanceValue) {
@@ -256,39 +262,42 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public Color createColorFromString(EDataType eDataType, String initialValue) {
-		if(initialValue == null || initialValue.isEmpty())
+		if (initialValue == null || initialValue.isEmpty()) {
 			return null;
+		}
 		return Color.decode(initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public String convertColorToString(EDataType eDataType, Object instanceValue) {
-		if(instanceValue == null)
+		if (instanceValue == null) {
 			return null;
-		Color c = (Color)instanceValue;
+		}
+		Color c = (Color) instanceValue;
 		return String.format("#%02X%02X%02X", c.getRed(), c.getGreen(), c.getBlue());
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public DCPackage getDCPackage() {
-		return (DCPackage)getEPackage();
+		return (DCPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

@@ -1392,6 +1392,9 @@
     <sections name="SingleElementAppliedComments" sectionFile="ui/SingleElementAppliedComments.xwt">
       <widget href="ui/SingleElementAppliedComments.xwt#/"/>
     </sections>
+    <sections name="SingleElementOwnedComments" sectionFile="ui/SingleElementOwnedComments.xwt">
+      <widget href="ui/SingleElementOwnedComments.xwt#/"/>
+    </sections>
   </tabs>
   <tabs label="Profile" id="profile" category="org.eclipse.papyrus" priority="50">
     <sections name="SinglePackageProfile" sectionFile="ui/SinglePackageProfile.xwt">
@@ -1415,7 +1418,7 @@
       <properties xsi:type="constraints:ValueProperty" name="umlClassName" value="Package"/>
     </constraints>
   </views>
-  <views name="SingleElement" sections="//@tabs.2/@sections.1 //@tabs.1/@sections.0">
+  <views name="SingleElement" sections="//@tabs.2/@sections.1 //@tabs.1/@sections.0 //@tabs.1/@sections.1">
     <constraints xsi:type="constraints:SimpleConstraint" name="isSingleElement" overrideable="false">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.0"/>
       <properties xsi:type="constraints:ValueProperty" name="umlClassName" value="Element"/>
@@ -4228,7 +4231,7 @@
     <elements name="Element" supertypes="//@dataContexts.0/@elements.241">
       <properties name="ownedElement" type="Reference" description="The Elements owned by this element."/>
       <properties name="owner" type="Reference" description="The Element that owns this element."/>
-      <properties name="ownedComment" type="Reference" description="The Comments owned by this element."/>
+      <properties name="ownedComment" type="Reference" multiplicity="-1" description="The Comment owned by this element."/>
     </elements>
     <elements name="Package" supertypes="//@dataContexts.0/@elements.8 //@dataContexts.0/@elements.3 //@dataContexts.0/@elements.18">
       <properties name="ownedType" type="Reference" description="References the packaged elements that are Types."/>
@@ -5281,6 +5284,10 @@
   </dataContexts>
   <dataContexts name="AppliedComments" label="AppliedComments">
     <properties name="appliedComments" label="" type="Reference" multiplicity="-1" description="The list of comments applied to this element"/>
+    <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@modelElementFactories.7"/>
+  </dataContexts>
+  <dataContexts name="OwnedComments" label="OwnedComments">
+    <properties name="ownedComment" label="Owned comments" type="Reference" multiplicity="-1"/>
     <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@modelElementFactories.7"/>
   </dataContexts>
   <dataContexts name="Profile" label="ProfileDefinition">

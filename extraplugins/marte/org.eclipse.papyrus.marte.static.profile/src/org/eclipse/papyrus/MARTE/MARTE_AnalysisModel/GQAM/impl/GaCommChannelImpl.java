@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,8 +27,8 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SchedulableResourceI
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommChannelImpl#getPacketSize <em>Packet Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommChannelImpl#getUtilization <em>Utilization</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommChannelImpl#getPacketSize <em>Packet Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaCommChannelImpl#getUtilization <em>Utilization</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +39,7 @@ public class GaCommChannelImpl extends SchedulableResourceImpl implements GaComm
 	 * The default value of the '{@link #getPacketSize() <em>Packet Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPacketSize()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class GaCommChannelImpl extends SchedulableResourceImpl implements GaComm
 	 * The cached value of the '{@link #getPacketSize() <em>Packet Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPacketSize()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class GaCommChannelImpl extends SchedulableResourceImpl implements GaComm
 	 * The default value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getUtilization()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class GaCommChannelImpl extends SchedulableResourceImpl implements GaComm
 	 * The cached value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getUtilization()
 	 * @generated
 	 * @ordered
@@ -78,6 +82,7 @@ public class GaCommChannelImpl extends SchedulableResourceImpl implements GaComm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected GaCommChannelImpl() {
@@ -87,6 +92,7 @@ public class GaCommChannelImpl extends SchedulableResourceImpl implements GaComm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,8 +103,10 @@ public class GaCommChannelImpl extends SchedulableResourceImpl implements GaComm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getPacketSize() {
 		return packetSize;
 	}
@@ -106,20 +114,25 @@ public class GaCommChannelImpl extends SchedulableResourceImpl implements GaComm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setPacketSize(String newPacketSize) {
 		String oldPacketSize = packetSize;
 		packetSize = newPacketSize;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_COMM_CHANNEL__PACKET_SIZE, oldPacketSize, packetSize));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getUtilization() {
 		return utilization;
 	}
@@ -127,27 +140,31 @@ public class GaCommChannelImpl extends SchedulableResourceImpl implements GaComm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setUtilization(String newUtilization) {
 		String oldUtilization = utilization;
 		utilization = newUtilization;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_COMM_CHANNEL__UTILIZATION, oldUtilization, utilization));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GQAMPackage.GA_COMM_CHANNEL__PACKET_SIZE:
-				return getPacketSize();
-			case GQAMPackage.GA_COMM_CHANNEL__UTILIZATION:
-				return getUtilization();
+		case GQAMPackage.GA_COMM_CHANNEL__PACKET_SIZE:
+			return getPacketSize();
+		case GQAMPackage.GA_COMM_CHANNEL__UTILIZATION:
+			return getUtilization();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -155,17 +172,18 @@ public class GaCommChannelImpl extends SchedulableResourceImpl implements GaComm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GQAMPackage.GA_COMM_CHANNEL__PACKET_SIZE:
-				setPacketSize((String)newValue);
-				return;
-			case GQAMPackage.GA_COMM_CHANNEL__UTILIZATION:
-				setUtilization((String)newValue);
-				return;
+		case GQAMPackage.GA_COMM_CHANNEL__PACKET_SIZE:
+			setPacketSize((String) newValue);
+			return;
+		case GQAMPackage.GA_COMM_CHANNEL__UTILIZATION:
+			setUtilization((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -173,17 +191,18 @@ public class GaCommChannelImpl extends SchedulableResourceImpl implements GaComm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_COMM_CHANNEL__PACKET_SIZE:
-				setPacketSize(PACKET_SIZE_EDEFAULT);
-				return;
-			case GQAMPackage.GA_COMM_CHANNEL__UTILIZATION:
-				setUtilization(UTILIZATION_EDEFAULT);
-				return;
+		case GQAMPackage.GA_COMM_CHANNEL__PACKET_SIZE:
+			setPacketSize(PACKET_SIZE_EDEFAULT);
+			return;
+		case GQAMPackage.GA_COMM_CHANNEL__UTILIZATION:
+			setUtilization(UTILIZATION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -191,15 +210,16 @@ public class GaCommChannelImpl extends SchedulableResourceImpl implements GaComm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_COMM_CHANNEL__PACKET_SIZE:
-				return PACKET_SIZE_EDEFAULT == null ? packetSize != null : !PACKET_SIZE_EDEFAULT.equals(packetSize);
-			case GQAMPackage.GA_COMM_CHANNEL__UTILIZATION:
-				return UTILIZATION_EDEFAULT == null ? utilization != null : !UTILIZATION_EDEFAULT.equals(utilization);
+		case GQAMPackage.GA_COMM_CHANNEL__PACKET_SIZE:
+			return PACKET_SIZE_EDEFAULT == null ? packetSize != null : !PACKET_SIZE_EDEFAULT.equals(packetSize);
+		case GQAMPackage.GA_COMM_CHANNEL__UTILIZATION:
+			return UTILIZATION_EDEFAULT == null ? utilization != null : !UTILIZATION_EDEFAULT.equals(utilization);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -207,11 +227,14 @@ public class GaCommChannelImpl extends SchedulableResourceImpl implements GaComm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (packetSize: ");
@@ -222,4 +245,4 @@ public class GaCommChannelImpl extends SchedulableResourceImpl implements GaComm
 		return result.toString();
 	}
 
-} //GaCommChannelImpl
+} // GaCommChannelImpl

@@ -59,7 +59,8 @@ public class PromptCreateElementAndNodeCommand extends CreateOrSelectElementComm
 
 	private EditPart sourceEP;
 
-	public PromptCreateElementAndNodeCommand(Command createCommand, TransactionalEditingDomain editingDomain, ConnectionViewDescriptor descriptor, ShapeNodeEditPart targetEP, EObject target, EditPart sourceEP, CreateConnectionRequest request, InteractionFragment container) {
+	public PromptCreateElementAndNodeCommand(Command createCommand, TransactionalEditingDomain editingDomain, ConnectionViewDescriptor descriptor, ShapeNodeEditPart targetEP, EObject target, EditPart sourceEP, CreateConnectionRequest request,
+			InteractionFragment container) {
 		super(Display.getCurrent().getActiveShell(), executionTypes);
 		this.editingDomain = editingDomain;
 		this.descriptor = descriptor;
@@ -72,7 +73,7 @@ public class PromptCreateElementAndNodeCommand extends CreateOrSelectElementComm
 		command = new CompoundCommand();
 		command.add(createCommand);
 
-		//Repair the location of Popup menu.
+		// Repair the location of Popup menu.
 		setPopupMenu(new PopupMenu(executionTypes, getLabelProvider()) {
 
 			@Override
@@ -82,19 +83,20 @@ public class PromptCreateElementAndNodeCommand extends CreateOrSelectElementComm
 
 				menu.setVisible(true);
 				org.eclipse.swt.graphics.Point loc = getMenuLocation();
-				if(loc != null) {
+				if (loc != null) {
 					menu.setLocation(loc);
 				}
 				Display display = menu.getDisplay();
-				while(!menu.isDisposed() && menu.isVisible()) {
-					if(!display.readAndDispatch())
+				while (!menu.isDisposed() && menu.isVisible()) {
+					if (!display.readAndDispatch()) {
 						display.sleep();
+					}
 				}
 
-				if(!menu.isDisposed()) {
+				if (!menu.isDisposed()) {
 					menu.dispose();
 
-					if(getResult() != null) {
+					if (getResult() != null) {
 						return true;
 					}
 				}
@@ -104,7 +106,7 @@ public class PromptCreateElementAndNodeCommand extends CreateOrSelectElementComm
 	}
 
 	protected org.eclipse.swt.graphics.Point getMenuLocation() {
-		if(location == null || sourceEP == null || sourceEP.getViewer() == null) {
+		if (location == null || sourceEP == null || sourceEP.getViewer() == null) {
 			return null;
 		}
 		Control control = sourceEP.getViewer().getControl();
@@ -112,19 +114,20 @@ public class PromptCreateElementAndNodeCommand extends CreateOrSelectElementComm
 		return control.toDisplay(menuLoc);
 	}
 
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 		sourceEP.eraseSourceFeedback(request);
 		targetEP.eraseSourceFeedback(request);
 		CommandResult cmdResult = super.doExecuteWithResult(progressMonitor, info);
-		if(!cmdResult.getStatus().isOK()) {
+		if (!cmdResult.getStatus().isOK()) {
 			return cmdResult;
 		}
 		Object returnValue = cmdResult.getReturnValue();
-		if(!(returnValue instanceof IHintedType)) {
+		if (!(returnValue instanceof IHintedType)) {
 			return cmdResult;
 		}
-		IHintedType connectionType = (IHintedType)returnValue;
-		CreateElementAndNodeCommand createExecutionSpecificationCommand = new CreateElementAndNodeCommand(editingDomain, (ShapeNodeEditPart)targetEP, target, connectionType, location);
+		IHintedType connectionType = (IHintedType) returnValue;
+		CreateElementAndNodeCommand createExecutionSpecificationCommand = new CreateElementAndNodeCommand(editingDomain, targetEP, target, connectionType, location);
 		createExecutionSpecificationCommand.putCreateElementRequestParameter(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER, container);
 		command.add(new ICommandProxy(createExecutionSpecificationCommand));
 		// put the anchor at the top of the figure
@@ -134,32 +137,36 @@ public class PromptCreateElementAndNodeCommand extends CreateOrSelectElementComm
 		return CommandResult.newOKCommandResult(descriptor);
 	}
 
+	@Override
 	public boolean canUndo() {
 		return command != null && command.canUndo();
 	}
 
+	@Override
 	protected CommandResult doRedoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-		if(command != null) {
+		if (command != null) {
 			command.redo();
 		}
 		return super.doRedoWithResult(progressMonitor, info);
 	}
 
+	@Override
 	protected CommandResult doUndoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-		if(command != null) {
+		if (command != null) {
 			command.undo();
 		}
 		return super.doUndoWithResult(progressMonitor, info);
 	}
 
+	@Override
 	protected ILabelProvider getLabelProvider() {
 		return new LabelProvider() {
 
 			@Override
 			public String getText(Object object) {
-				if(object instanceof IHintedType) {
-					IHintedType elementType = (IHintedType)object;
-					switch(UMLVisualIDRegistry.getVisualID(elementType.getSemanticHint())) {
+				if (object instanceof IHintedType) {
+					IHintedType elementType = (IHintedType) object;
+					switch (UMLVisualIDRegistry.getVisualID(elementType.getSemanticHint())) {
 					case ActionExecutionSpecificationEditPart.VISUAL_ID:
 						return Messages.createActionExecutionSpecification2CreationTool_title;
 					case BehaviorExecutionSpecificationEditPart.VISUAL_ID:

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ public class CreateUMLRTModelCommand extends ModelCreationCommandBase {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.extension.commands.ModelCreationCommandBase#createRootElement()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -40,25 +40,25 @@ public class CreateUMLRTModelCommand extends ModelCreationCommandBase {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.extension.commands.ModelCreationCommandBase#initializeModel(org.eclipse.emf.ecore.EObject)
-	 * 
+	 *
 	 * @param owner
 	 */
 
 	@Override
 	protected void initializeModel(EObject owner) {
 		super.initializeModel(owner);
-		((org.eclipse.uml2.uml.Package)owner).setName(getModelName());
+		((org.eclipse.uml2.uml.Package) owner).setName(getModelName());
 
 		// Retrieve UML RT profile and apply
-		Profile umlrt = (Profile)PackageUtil.loadPackage(URI.createURI(UMLRT_PROFILE_URI), owner.eResource().getResourceSet());
-		if(umlrt != null) {
-			PackageUtil.applyProfile(((org.eclipse.uml2.uml.Package)owner), umlrt, true);
+		Profile umlrt = (Profile) PackageUtil.loadPackage(URI.createURI(UMLRT_PROFILE_URI), owner.eResource().getResourceSet());
+		if (umlrt != null) {
+			PackageUtil.applyProfile(((org.eclipse.uml2.uml.Package) owner), umlrt, true);
 		}
 	}
 
 	/**
 	 * Gets the model name.
-	 * 
+	 *
 	 * @return the model name
 	 */
 	protected String getModelName() {

@@ -21,9 +21,7 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
  * use the field support built into JFace that allows us to create a page that
  * is small and knows how to save, restore and apply itself.
  * <p>
- * This page is used to modify preferences, that are stored in the preference
- * store that belongs to the main plug-in class. That way, preferences can be
- * accessed directly via the preference store.
+ * This page is used to modify preferences, that are stored in the preference store that belongs to the main plug-in class. That way, preferences can be accessed directly via the preference store.
  */
 
 public class EmfFacetRootPreferencePage extends FieldEditorPreferencePage
@@ -48,7 +46,7 @@ public class EmfFacetRootPreferencePage extends FieldEditorPreferencePage
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
@@ -18,7 +18,7 @@ import org.eclipse.papyrus.uml.diagram.usecase.part.UMLDiagramEditorPlugin;
 /**
  * Define a command to create a new UseCase Diagram. This command is used by all UI (toolbar,
  * outline, creation wizards) to create a new UseCase Diagram.
- * 
+ *
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  */
 public class CreateUseCaseDiagramCommand extends AbstractPapyrusGmfCreateDiagramCommandHandler {

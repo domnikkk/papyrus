@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -83,7 +83,7 @@ import org.eclipse.uml2.uml.MessageOccurrenceSpecification;
 
 /**
  * Add implementing IPapyrusEditPart to displaying Stereotypes.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class CustomDurationConstraintEditPart extends DurationConstraintEditPart implements IPapyrusEditPart {
@@ -98,7 +98,7 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomDurationConstraintEditPart(View view) {
@@ -112,29 +112,29 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomDurationConstraintItemSemanticEditPolicy());
-		//install a editpolicy to display stereotypes, there's a bug on super class.
+		// install a editpolicy to display stereotypes, there's a bug on super class.
 		installEditPolicy(AppliedStereotypeCommentCreationEditPolicy.APPLIED_STEREOTYPE_COMMENT, new AppliedStereotypeCommentCreationEditPolicyEx());
 	}
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#getSourceConnectionAnchor(org.eclipse.gef.Request)
-	 * 
+	 *
 	 * @param request
-	 *        The request
+	 *            The request
 	 * @return The anchor
 	 */
 	@Override
 	public ConnectionAnchor getSourceConnectionAnchor(Request request) {
-		IHintedType type = (IHintedType)UMLElementTypes.CommentAnnotatedElement_4010;
-		if(request instanceof CreateConnectionViewRequest) {
-			String hint = ((CreateConnectionViewRequest)request).getConnectionViewDescriptor().getSemanticHint();
-			if(hint.equals(type.getSemanticHint())) {
-				return new RotateAnchor(getFigure(), computeAnchorLocation(((CreateConnectionViewRequest)request).getLocation()));
+		IHintedType type = (IHintedType) UMLElementTypes.CommentAnnotatedElement_4010;
+		if (request instanceof CreateConnectionViewRequest) {
+			String hint = ((CreateConnectionViewRequest) request).getConnectionViewDescriptor().getSemanticHint();
+			if (hint.equals(type.getSemanticHint())) {
+				return new RotateAnchor(getFigure(), computeAnchorLocation(((CreateConnectionViewRequest) request).getLocation()));
 			}
-		} else if(request instanceof ReconnectRequest) {
-			ConnectionEditPart linkPart = ((ReconnectRequest)request).getConnectionEditPart();
-			if(linkPart instanceof CommentAnnotatedElementEditPart) {
-				return new RotateAnchor(getFigure(), computeAnchorLocation(((ReconnectRequest)request).getLocation()));
+		} else if (request instanceof ReconnectRequest) {
+			ConnectionEditPart linkPart = ((ReconnectRequest) request).getConnectionEditPart();
+			if (linkPart instanceof CommentAnnotatedElementEditPart) {
+				return new RotateAnchor(getFigure(), computeAnchorLocation(((ReconnectRequest) request).getLocation()));
 			}
 		}
 		return super.getSourceConnectionAnchor(request);
@@ -142,64 +142,70 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 	protected int computeAnchorLocation(Point location) {
 		Rectangle box = getBox();
-		if(isArrowVertical()) {
-			if(location.getDistance2(box.getTop()) > location.getDistance2(box.getBottom()))
+		if (isArrowVertical()) {
+			if (location.getDistance2(box.getTop()) > location.getDistance2(box.getBottom())) {
 				return PositionConstants.BOTTOM;
+			}
 			return PositionConstants.TOP;
 		} else {
-			if(location.getDistance2(box.getLeft()) > location.getDistance2(box.getRight()))
+			if (location.getDistance2(box.getLeft()) > location.getDistance2(box.getRight())) {
 				return PositionConstants.RIGHT;
+			}
 			return PositionConstants.LEFT;
 		}
 	}
 
 	protected Rectangle getBox() {
-		Rectangle rBox = getFigure() instanceof HandleBounds ? new PrecisionRectangle(((HandleBounds)getFigure()).getHandleBounds()) : new PrecisionRectangle(getFigure().getBounds());
+		Rectangle rBox = getFigure() instanceof HandleBounds ? new PrecisionRectangle(((HandleBounds) getFigure()).getHandleBounds()) : new PrecisionRectangle(getFigure().getBounds());
 		getFigure().translateToAbsolute(rBox);
 		return rBox;
 	}
 
 	public boolean canCreateLink(Point point) {
-		DurationConstraint dc = (DurationConstraint)this.resolveSemanticElement();
+		DurationConstraint dc = (DurationConstraint) this.resolveSemanticElement();
 
 		int count = 0; // link counts
 		List list = this.getSourceConnections();
-		for(Object o : list)
-			if(o instanceof CustomCommentAnnotatedElementEditPart) {
+		for (Object o : list) {
+			if (o instanceof CustomCommentAnnotatedElementEditPart) {
 				count++;
 			}
-		if(count >= 2)
+		}
+		if (count >= 2) {
 			return false;
+		}
 
-		if(count < 1)
+		if (count < 1) {
 			return true;
+		}
 
 		int targetPosition = computeAnchorLocation(point);
-		if(findLinkAtPosition(targetPosition))
+		if (findLinkAtPosition(targetPosition)) {
 			return false;
+		}
 		return true;
 	}
 
-	//	protected void refreshSourceConnections() {
-	//		super.refreshSourceConnections();
-	//		Display.getDefault().asyncExec(new Runnable(){
-	//			public void run() {
-	//				refreshBorder();
-	//			}
-	//		});
-	//	}
-	//	
-	//	public void refresh(){
-	//		super.refresh();
-	//		refreshBorder();
-	//	}
+	// protected void refreshSourceConnections() {
+	// super.refreshSourceConnections();
+	// Display.getDefault().asyncExec(new Runnable(){
+	// public void run() {
+	// refreshBorder();
+	// }
+	// });
+	// }
 	//
-	//	private void refreshBorder() {
-	//		if(getPrimaryShape() instanceof CustomDurationConstraintFigure){
-	//			CustomDurationConstraintFigure fig = (CustomDurationConstraintFigure)getPrimaryShape();
-	//			fig.setBorderVisible(hasTopLink(), hasBottomLink());
-	//		}
-	//	}
+	// public void refresh(){
+	// super.refresh();
+	// refreshBorder();
+	// }
+	//
+	// private void refreshBorder() {
+	// if(getPrimaryShape() instanceof CustomDurationConstraintFigure){
+	// CustomDurationConstraintFigure fig = (CustomDurationConstraintFigure)getPrimaryShape();
+	// fig.setBorderVisible(hasTopLink(), hasBottomLink());
+	// }
+	// }
 
 	public boolean hasTopLink() {
 		return findLinkAtPosition(PositionConstants.TOP);
@@ -211,28 +217,30 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 	protected boolean findLinkAtPosition(int targetPos) {
 		List list = this.getSourceConnections();
-		for(Object o : list)
-			if(o instanceof CustomCommentAnnotatedElementEditPart) {
-				CustomCommentAnnotatedElementEditPart connPart = (CustomCommentAnnotatedElementEditPart)o;
-				if((targetPos & getSourceAnchorPosition(connPart)) > 0)
+		for (Object o : list) {
+			if (o instanceof CustomCommentAnnotatedElementEditPart) {
+				CustomCommentAnnotatedElementEditPart connPart = (CustomCommentAnnotatedElementEditPart) o;
+				if ((targetPos & getSourceAnchorPosition(connPart)) > 0) {
 					return true;
+				}
 
 			}
+		}
 		return false;
 	}
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#getSourceConnectionAnchor(org.eclipse.gef.ConnectionEditPart)
-	 * 
+	 *
 	 * @param connEditPart
-	 *        The connection edit part.
+	 *            The connection edit part.
 	 * @return The anchor.
 	 */
 	@Override
 	public ConnectionAnchor getSourceConnectionAnchor(ConnectionEditPart connEditPart) {
 		ConnectionAnchor anchor = null;
-		if(connEditPart instanceof CommentAnnotatedElementEditPart) {
-			anchor = new RotateAnchor(getFigure(), getSourceAnchorPosition((CommentAnnotatedElementEditPart)connEditPart));
+		if (connEditPart instanceof CommentAnnotatedElementEditPart) {
+			anchor = new RotateAnchor(getFigure(), getSourceAnchorPosition((CommentAnnotatedElementEditPart) connEditPart));
 		} else {
 			anchor = super.getSourceConnectionAnchor(connEditPart);
 		}
@@ -242,7 +250,7 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 	private int getSourceAnchorPosition(CommentAnnotatedElementEditPart connEditPart) {
 		String terminal = AnchorHelper.getAnchorId(getEditingDomain(), connEditPart, true);
-		if(terminal.length() > 0) {
+		if (terminal.length() > 0) {
 			return parseLocation(terminal);
 		}
 		return PositionConstants.TOP;
@@ -252,22 +260,24 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 	protected void refreshBounds() {
 		super.refreshBounds();
 
-		int width = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
-		int height = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
+		int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
+		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
 		// restore to default size
-		if(width == -1)
+		if (width == -1) {
 			width = getFigure().getPreferredSize().width;
-		if(height == -1)
+		}
+		if (height == -1) {
 			height = getFigure().getPreferredSize().height;
-
-		if(width != -1 && height != -1) {
-			Dimension size = primaryShape.getBounds().getSize();
-			//if(size.width != width || size.height != height) { // if resize bounds
-			primaryShape.setBounds(new Rectangle(primaryShape.getBounds().getLocation(), new Dimension(width, height)));
-			//}
 		}
 
-		//fix combined fragment move
+		if (width != -1 && height != -1) {
+			Dimension size = primaryShape.getBounds().getSize();
+			// if(size.width != width || size.height != height) { // if resize bounds
+			primaryShape.setBounds(new Rectangle(primaryShape.getBounds().getLocation(), new Dimension(width, height)));
+			// }
+		}
+
+		// fix combined fragment move
 		this.getFigure().getParent().getLayoutManager().layout(this.getFigure().getParent());
 		relocateLabelEditPart();
 	}
@@ -279,9 +289,9 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 	/**
 	 * This method creates a specific edit policy for time realted elements
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart#getPrimaryDragEditPolicy()
-	 * 
+	 *
 	 * @return <code>EditPolicy</code>
 	 * @Override
 	 */
@@ -290,6 +300,7 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 		EditPolicy policy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 		return policy != null ? policy : new ResizableShapeEditPolicy() {
 
+			@Override
 			protected Command getResizeCommand(ChangeBoundsRequest request) {
 				ChangeBoundsRequest req = new ChangeBoundsRequest(REQ_RESIZE_CHILDREN);
 				req.setEditParts(getHost());
@@ -301,6 +312,7 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 				return getHost().getParent().getCommand(req);
 			}
 
+			@Override
 			protected void showChangeBoundsFeedback(ChangeBoundsRequest request) {
 				IFigure feedback = getDragSourceFeedbackFigure();
 
@@ -316,11 +328,13 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 				max.width = mmode.LPtoDP(max.width);
 
 				// no minimal size
-				if(max.width < rect.width)
+				if (max.width < rect.width) {
 					rect.width = max.width;
+				}
 
-				if(max.height < rect.height)
+				if (max.height < rect.height) {
 					rect.height = max.height;
+				}
 
 				feedback.translateToRelative(rect);
 				feedback.setBounds(rect);
@@ -337,15 +351,15 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				View childView = (View)child.getModel();
-				switch(UMLVisualIDRegistry.getVisualID(childView)) {
+				View childView = (View) child.getModel();
+				switch (UMLVisualIDRegistry.getVisualID(childView)) {
 				case DurationConstraintLabelEditPart.VISUAL_ID:
 				case DurationConstraintAppliedStereotypeEditPart.VISUAL_ID:
 					// use ExternalLabelPrimaryDragRoleEditPolicy
 					return new ExternalLabelPrimaryDragRoleEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
@@ -369,12 +383,12 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 	 */
 	@Override
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if(borderItemEditPart instanceof DurationConstraintLabelEditPart) {
+		if (borderItemEditPart instanceof DurationConstraintLabelEditPart) {
 			DurationConstraintLabelLocator locator = new DurationConstraintLabelLocator(getMainFigure());
 			locator.setParentEditPart(this);
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
-		} else if(borderItemEditPart instanceof DurationConstraintAppliedStereotypeEditPart) {
-			//use ExternalLabelPositionLocator
+		} else if (borderItemEditPart instanceof DurationConstraintAppliedStereotypeEditPart) {
+			// use ExternalLabelPositionLocator
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
@@ -387,7 +401,7 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 	 */
 	@Override
 	public Command getCommand(Request request) {
-		if(request instanceof CreateUnspecifiedTypeRequest) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
 			return getParent().getCommand(request);
 		}
 		return super.getCommand(request);
@@ -398,7 +412,7 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 	 */
 	@Override
 	public void showSourceFeedback(Request request) {
-		if(request instanceof CreateUnspecifiedTypeRequest) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
 			getParent().showSourceFeedback(request);
 		}
 		super.showSourceFeedback(request);
@@ -409,7 +423,7 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 	 */
 	@Override
 	public void eraseSourceFeedback(Request request) {
-		if(request instanceof CreateUnspecifiedTypeRequest) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
 			getParent().eraseSourceFeedback(request);
 		}
 		super.eraseSourceFeedback(request);
@@ -419,16 +433,16 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 	protected void handleNotificationEvent(Notification notification) {
 		super.handleNotificationEvent(notification);
 		Object feature = notification.getFeature();
-		if((getModel() != null) && (getModel() == notification.getNotifier())) {
-			if(NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
+		if ((getModel() != null) && (getModel() == notification.getNotifier())) {
+			if (NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
 				refreshLineWidth();
 			}
 		}
 
-		if(notification.getNewValue() instanceof EAnnotation && ARROW.equals(((EAnnotation)notification.getNewValue()).getSource())) {
-			refreshArrowDirection((EAnnotation)notification.getNewValue());
-		} else if(notification.getNotifier() instanceof EAnnotation && ARROW.equals(((EAnnotation)notification.getNotifier()).getSource())) {
-			refreshArrowDirection((EAnnotation)notification.getNotifier()); //notification.getEventType() == 
+		if (notification.getNewValue() instanceof EAnnotation && ARROW.equals(((EAnnotation) notification.getNewValue()).getSource())) {
+			refreshArrowDirection((EAnnotation) notification.getNewValue());
+		} else if (notification.getNotifier() instanceof EAnnotation && ARROW.equals(((EAnnotation) notification.getNotifier()).getSource())) {
+			refreshArrowDirection((EAnnotation) notification.getNotifier()); // notification.getEventType() ==
 		}
 	}
 
@@ -441,10 +455,10 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 	private void relocateLabelEditPart() {
 		List list = this.getChildren();
-		for(Object o : list) {
-			if(o instanceof DurationConstraintLabelEditPart) {
-				DurationConstraintLabelEditPart label = (DurationConstraintLabelEditPart)o;
-				if(label.getBorderItemLocator() != null) {
+		for (Object o : list) {
+			if (o instanceof DurationConstraintLabelEditPart) {
+				DurationConstraintLabelEditPart label = (DurationConstraintLabelEditPart) o;
+				if (label.getBorderItemLocator() != null) {
 					IBorderItemLocator loc = label.getBorderItemLocator();
 					loc.relocate(label.getFigure());
 				}
@@ -453,7 +467,7 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 	}
 
 	public Rectangle updateMoveBounds(Rectangle newBounds) {
-		if(getCurrentSideOfParent() == PositionConstants.WEST) {
+		if (getCurrentSideOfParent() == PositionConstants.WEST) {
 			Rectangle bounds = this.getFigure().getBounds();
 			return newBounds.translate(-bounds.width, 0); // keep bounds in left side
 		}
@@ -462,7 +476,7 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 	public int getCurrentSideOfParent() {
 		IBorderItemLocator locator = this.getBorderItemLocator();
-		if(locator != null) {
+		if (locator != null) {
 			return locator.getCurrentSideOfParent();
 		}
 		return PositionConstants.EAST;
@@ -472,13 +486,13 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 		/**
 		 * Height of the arrow end
-		 * 
+		 *
 		 */
 		private static final int ARROW_HEIGHT = 8;
 
 		/**
 		 * Width of the half of the arrow end
-		 * 
+		 *
 		 */
 		private static final int ARROW_SEMI_WIDTH = 7;
 
@@ -509,18 +523,18 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 					tempRect.y += halfWidthInLP;
 					tempRect.height -= getWidth();
 
-					if((getPositions() & PositionConstants.TOP) > 0) {
-						//graphics.drawLine(tempRect.getTopLeft(), tempRect.getTopRight());
+					if ((getPositions() & PositionConstants.TOP) > 0) {
+						// graphics.drawLine(tempRect.getTopLeft(), tempRect.getTopRight());
 						graphics.drawLine(new Point(tempRect.getTopLeft().x(), tempRect.getTopLeft().y() + 1), new Point(tempRect.getTopRight().x(), tempRect.getTopRight().y() + 1));
 					}
-					if((getPositions() & PositionConstants.LEFT) > 0) {
-						//graphics.drawLine(tempRect.getTopLeft(), tempRect.getBottomLeft());
+					if ((getPositions() & PositionConstants.LEFT) > 0) {
+						// graphics.drawLine(tempRect.getTopLeft(), tempRect.getBottomLeft());
 						graphics.drawLine(new Point(tempRect.getTopLeft().x() + 1, tempRect.getTopLeft().y()), new Point(tempRect.getBottomLeft().x() + 1, tempRect.getBottomLeft().y()));
 					}
-					if((getPositions() & PositionConstants.BOTTOM) > 0) {
+					if ((getPositions() & PositionConstants.BOTTOM) > 0) {
 						graphics.drawLine(tempRect.getBottomLeft(), tempRect.getBottomRight());
 					}
-					if((getPositions() & PositionConstants.RIGHT) > 0) {
+					if ((getPositions() & PositionConstants.RIGHT) > 0) {
 						graphics.drawLine(tempRect.getTopRight(), tempRect.getBottomRight());
 					}
 				}
@@ -530,52 +544,54 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 		}
 
 		protected void setDashBorder() {
-			if(this.getBorder() instanceof LinesBorder) {
-				LinesBorder lb = (LinesBorder)this.getBorder();
+			if (this.getBorder() instanceof LinesBorder) {
+				LinesBorder lb = (LinesBorder) this.getBorder();
 				lb.setStyle(Graphics.LINE_DASH);
-				if(vertical)
+				if (vertical) {
 					lb.setSides(PositionConstants.TOP | PositionConstants.BOTTOM);
-				else
+				} else {
 					lb.setSides(PositionConstants.LEFT | PositionConstants.RIGHT);
+				}
 			}
 		}
 
 		@Override
 		public Insets getInsets() {
-			if(getBorder() != null)
+			if (getBorder() != null) {
 				return getBorder().getInsets(this);
+			}
 			return NO_INSETS;
 		}
 
 		public void setVertical(boolean val) {
-			if(val != vertical) {
+			if (val != vertical) {
 				vertical = val;
 				setDashBorder();
 				revalidate();
 			}
 		}
 
-		//		public void setBorderVisible(boolean top, boolean bottom){
-		//			if(this.getBorder() instanceof LinesBorder){
-		//				LinesBorder lb = (LinesBorder) this.getBorder();
-		//				if(top){
-		//					int value = bottom ? PositionConstants.TOP | PositionConstants.BOTTOM : PositionConstants.TOP;
-		//					lb.setSides(value);
-		//				}else{
-		//					int value = bottom ? PositionConstants.BOTTOM : PositionConstants.NONE;
-		//					lb.setSides(value);
-		//				}
-		//				this.repaint();
-		//			}
-		//		}
+		// public void setBorderVisible(boolean top, boolean bottom){
+		// if(this.getBorder() instanceof LinesBorder){
+		// LinesBorder lb = (LinesBorder) this.getBorder();
+		// if(top){
+		// int value = bottom ? PositionConstants.TOP | PositionConstants.BOTTOM : PositionConstants.TOP;
+		// lb.setSides(value);
+		// }else{
+		// int value = bottom ? PositionConstants.BOTTOM : PositionConstants.NONE;
+		// lb.setSides(value);
+		// }
+		// this.repaint();
+		// }
+		// }
 
 		/**
 		 * Sets the bounds of this Figure to the Rectangle <i>rect</i>.
 		 * This also updates sub-figures.
-		 * 
+		 *
 		 * @see Figure#setBounds(Rectangle)
 		 * @param rect
-		 *        The new bounds
+		 *            The new bounds
 		 */
 		@Override
 		public void setBounds(Rectangle rect) {
@@ -589,19 +605,19 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 		/**
 		 * Update the arrow polyline taking in account new figure's size
-		 * 
+		 *
 		 * @param figureWidth
-		 *        the new figure width
+		 *            the new figure width
 		 * @param figureHeight
-		 *        the new figure height
+		 *            the new figure height
 		 */
 		public void updateArrow(int figureWidth, int figureHeight) {
 			// handle insets to avoid figure growing indefinitely
 			figureWidth -= getInsets().left + getInsets().right;
 			figureHeight -= getInsets().top + getInsets().bottom;
-			if(getDurationArrow() != null) {
+			if (getDurationArrow() != null) {
 				int halfLineWidth = getLineWidth() / 2;
-				if(vertical) {
+				if (vertical) {
 					PointList points = new PointList(8);
 					int centerX = figureWidth / 2;
 					points.addPoint(centerX - ARROW_SEMI_WIDTH, halfLineWidth + ARROW_HEIGHT);
@@ -638,17 +654,18 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 		@Override
 		public boolean containsPoint(int x, int y) {
 			boolean containsPoint = super.containsPoint(x, y);
-			if(!containsPoint) {
+			if (!containsPoint) {
 				return false;
 			}
 			PolylineShape durationArrow = getDurationArrow();
-			if(durationArrow != null) {
+			if (durationArrow != null) {
 				return PointListUtilities.containsPoint(durationArrow.getPoints(), new Point(x, y));
-				//				return fDurationArrow.containsPoint(x, y);
+				// return fDurationArrow.containsPoint(x, y);
 			}
 			return containsPoint;
 		}
 
+		@Override
 		public void paintFigure(Graphics graphics) {
 			graphics.setLineWidth(lineWidth);
 			super.paintFigure(graphics);
@@ -656,7 +673,7 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 		@Override
 		public void setLineWidth(int w) {
-			LinesBorder lb = (LinesBorder)getBorder();
+			LinesBorder lb = (LinesBorder) getBorder();
 			lb.setWidth(w);
 			getDurationArrow().setLineWidth(w);
 			super.setLineWidth(w);
@@ -666,24 +683,24 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 	public static Rectangle fixMessageBounds(Rectangle newBounds, Request cvr, LifelineEditPart host) {
 		Object oc1 = getFirstElement(cvr.getExtendedData().get(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION));
 		Object oc2 = getFirstElement(cvr.getExtendedData().get(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2));
-		if(oc1 != null && oc2 != null && (oc1 instanceof MessageOccurrenceSpecification || oc2 instanceof MessageOccurrenceSpecification)) {
+		if (oc1 != null && oc2 != null && (oc1 instanceof MessageOccurrenceSpecification || oc2 instanceof MessageOccurrenceSpecification)) {
 			Point start = null, end = null;
 			Rectangle bounds = null;
-			if(oc1 instanceof InteractionFragment) {
-				start = SequenceUtil.findLocationOfEvent(host, (InteractionFragment)oc1, true);
+			if (oc1 instanceof InteractionFragment) {
+				start = SequenceUtil.findLocationOfEvent(host, (InteractionFragment) oc1, true);
 			}
-			if(oc2 instanceof InteractionFragment) {
-				end = SequenceUtil.findLocationOfEvent(host, (InteractionFragment)oc2, true);
+			if (oc2 instanceof InteractionFragment) {
+				end = SequenceUtil.findLocationOfEvent(host, (InteractionFragment) oc2, true);
 			}
-			if(start != null && end != null) {
+			if (start != null && end != null) {
 				bounds = (start.y < end.y) ? new Rectangle(start, end) : new Rectangle(end, start);
 			}
-			if(bounds != null) {
+			if (bounds != null) {
 				IFigure parentFigure = host.getFigure();
 				Point parentFigDelta = parentFigure.getBounds().getLocation().getCopy().negate();
 				parentFigure.translateToRelative(bounds);
 				bounds.translate(parentFigDelta);
-				if(bounds.y != newBounds.y || newBounds.height != bounds.height) {
+				if (bounds.y != newBounds.y || newBounds.height != bounds.height) {
 					newBounds.y = bounds.y;
 					newBounds.height = bounds.height;
 				}
@@ -706,23 +723,24 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 		@Override
 		public void relocate(IFigure target) {
-			if(constraint.y == 0) {
-				if(durationConstraintEditPart.getCurrentSideOfParent() == PositionConstants.WEST) {
+			if (constraint.y == 0) {
+				if (durationConstraintEditPart.getCurrentSideOfParent() == PositionConstants.WEST) {
 					Point r = parentFigure.getBounds().getLeft().translate(-20, -5);
 					target.setBounds(new Rectangle(r, target.getPreferredSize()));
 				} else {
 					Point r = parentFigure.getBounds().getRight().translate(5, -5);
 					target.setBounds(new Rectangle(r, target.getPreferredSize()));
 				}
-			} else
+			} else {
 				super.relocate(target);
+			}
 		}
 	}
 
 	static Object getFirstElement(Object obj) {
-		if(obj != null && obj instanceof List) {
-			List list = (List)obj;
-			if(list.size() > 0) {
+		if (obj != null && obj instanceof List) {
+			List list = (List) obj;
+			if (list.size() > 0) {
 				return list.get(0);
 			}
 		}
@@ -731,18 +749,19 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 
 	protected void refreshArrowDirection(EAnnotation newValue) {
-		CustomDurationConstraintFigure dc = (CustomDurationConstraintFigure)getPrimaryShape();
+		CustomDurationConstraintFigure dc = (CustomDurationConstraintFigure) getPrimaryShape();
 		dc.setVertical(isArrowVertical());
 		refreshBounds();
 	}
 
 	public void setArrowDirection(String dir) {
 		View view = this.getNotationView();
-		if(view == null)
+		if (view == null) {
 			return;
+		}
 
 		EAnnotation ea = view.getEAnnotation(ARROW);
-		if(ea == null) {
+		if (ea == null) {
 			ea = EcoreFactory.eINSTANCE.createEAnnotation();
 			ea.setSource(ARROW);
 			ea.getDetails().put(DIRECTION, dir);
@@ -755,12 +774,13 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 	public String getArrowDirection() {
 		View view = this.getNotationView();
-		if(view == null)
+		if (view == null) {
 			return "";
+		}
 		EAnnotation ea = view.getEAnnotation(ARROW);
-		if(ea != null) {
+		if (ea != null) {
 			String pos = ea.getDetails().get(DIRECTION);
-			if(pos != null) {
+			if (pos != null) {
 				return pos;
 			}
 		}
@@ -772,7 +792,7 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 	}
 
 	public void rotateArrow() {
-		if(isArrowVertical()) {
+		if (isArrowVertical()) {
 			setArrowDirection(HORIZONTAL);
 		} else {
 			setArrowDirection(VERTICAL);
@@ -785,18 +805,18 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 
 	public Rectangle getBounds() {
 		View view = this.getNotationView();
-		int width = ((Integer)getStructuralFeatureValue(view, NotationPackage.eINSTANCE.getSize_Width())).intValue();
-		int height = ((Integer)getStructuralFeatureValue(view, NotationPackage.eINSTANCE.getSize_Height())).intValue();
-		int x = ((Integer)getStructuralFeatureValue(view, NotationPackage.eINSTANCE.getLocation_X())).intValue();
-		int y = ((Integer)getStructuralFeatureValue(view, NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		int width = ((Integer) getStructuralFeatureValue(view, NotationPackage.eINSTANCE.getSize_Width())).intValue();
+		int height = ((Integer) getStructuralFeatureValue(view, NotationPackage.eINSTANCE.getSize_Height())).intValue();
+		int x = ((Integer) getStructuralFeatureValue(view, NotationPackage.eINSTANCE.getLocation_X())).intValue();
+		int y = ((Integer) getStructuralFeatureValue(view, NotationPackage.eINSTANCE.getLocation_Y())).intValue();
 		String prefElementId = ViewUtil.resolveSemanticElement(view).eClass().getName();
 		IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
 		String preferenceConstantWitdh = PreferenceInitializerForElementHelper.getpreferenceKey(view, prefElementId, PreferencesConstantsHelper.WIDTH);
 		String preferenceConstantHeight = PreferenceInitializerForElementHelper.getpreferenceKey(view, prefElementId, PreferencesConstantsHelper.HEIGHT);
-		if(width <= 0) {
+		if (width <= 0) {
 			width = store.getInt(preferenceConstantWitdh);
 		}
-		if(height <= 0) {
+		if (height <= 0) {
 			height = store.getInt(preferenceConstantHeight);
 		}
 		return new Rectangle(x, y, width, height);
@@ -814,7 +834,7 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 		@Override
 		protected void doExecute() {
 			List list = part.getSourceConnections();
-			if(part.isArrowVertical()) {
+			if (part.isArrowVertical()) {
 				part.setArrowDirection(HORIZONTAL);
 			} else {
 				part.setArrowDirection(VERTICAL);
@@ -828,26 +848,27 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 			super(f, location);
 		}
 
+		@Override
 		public Point getLocation(Point reference) {
 			double zoom = 0;
-			if(CustomDurationConstraintEditPart.this.getRoot() instanceof RenderedDiagramRootEditPart) {
-				RenderedDiagramRootEditPart render = (RenderedDiagramRootEditPart)CustomDurationConstraintEditPart.this.getRoot();
+			if (CustomDurationConstraintEditPart.this.getRoot() instanceof RenderedDiagramRootEditPart) {
+				RenderedDiagramRootEditPart render = (RenderedDiagramRootEditPart) CustomDurationConstraintEditPart.this.getRoot();
 				zoom = render.getZoomManager().getZoom();
 			}
-			if(position == PositionConstants.TOP) {
+			if (position == PositionConstants.TOP) {
 				return new PrecisionPoint(getBox().getTop().preciseX(), getBox().getTop().preciseY() + 1 * zoom);
-			} else if(position == PositionConstants.BOTTOM) {
-				if(zoom > 1) {
+			} else if (position == PositionConstants.BOTTOM) {
+				if (zoom > 1) {
 					zoom = zoom - 1;
 				}
 				return new PrecisionPoint(getBox().getBottom().preciseX(), getBox().getBottom().preciseY() - 1 * zoom);
-			} else if(position == PositionConstants.LEFT) {
-				if(zoom > 1) {
+			} else if (position == PositionConstants.LEFT) {
+				if (zoom > 1) {
 					zoom = zoom - 1;
 				}
 				return new PrecisionPoint(getBox().getLeft().preciseX(), getBox().getLeft().preciseY() + 1 * zoom);
-			} else if(position == PositionConstants.RIGHT) {
-				if(zoom > 1) {
+			} else if (position == PositionConstants.RIGHT) {
+				if (zoom > 1) {
 					zoom = zoom - 1;
 				}
 				return new PrecisionPoint(getBox().getRight().preciseX(), getBox().getRight().preciseY() + 1 * zoom);
@@ -855,16 +876,18 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 			return super.getLocation(reference);
 		}
 
+		@Override
 		public String getTerminal() {
-			if(isDefaultAnchor())
+			if (isDefaultAnchor()) {
 				return StringStatics.BLANK;
-			if(position == PositionConstants.TOP) {
+			}
+			if (position == PositionConstants.TOP) {
 				return "(0.5,0){T}";
-			} else if(position == PositionConstants.BOTTOM) {
+			} else if (position == PositionConstants.BOTTOM) {
 				return "(0.5,1){D}";
-			} else if(position == PositionConstants.LEFT) {
+			} else if (position == PositionConstants.LEFT) {
 				return "(0,0.5){L}";
-			} else if(position == PositionConstants.RIGHT) {
+			} else if (position == PositionConstants.RIGHT) {
 				return "(1,0.5){R}";
 			}
 			return "(0.5,0){T}";
@@ -873,11 +896,11 @@ public class CustomDurationConstraintEditPart extends DurationConstraintEditPart
 	}
 
 	private int parseLocation(String terminal) {
-		if(terminal.length() > 0) {
+		if (terminal.length() > 0) {
 			int start = terminal.indexOf("{") + 1;
-			if(start > 0) {
+			if (start > 0) {
 				char ch = Character.toUpperCase(terminal.charAt(start));
-				switch(ch) {
+				switch (ch) {
 				case 'L':
 					return PositionConstants.LEFT;
 				case 'R':

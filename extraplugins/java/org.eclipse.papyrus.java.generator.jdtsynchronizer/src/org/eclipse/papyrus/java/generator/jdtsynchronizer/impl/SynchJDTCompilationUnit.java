@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -29,9 +29,9 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitor
 
 /**
  * Allow to generate compilation Unit
- * 
+ *
  * @author Deblock Nicolas & Manuel Giles
- * 
+ *
  */
 public class SynchJDTCompilationUnit extends EObjectImpl implements JDTVisitor {
 
@@ -41,9 +41,9 @@ public class SynchJDTCompilationUnit extends EObjectImpl implements JDTVisitor {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param ipack
-	 *        the IPackageFragment parent
+	 *            the IPackageFragment parent
 	 */
 	public SynchJDTCompilationUnit(IPackageFragment ipack, GeneratorPreference preference) {
 		super();
@@ -51,28 +51,33 @@ public class SynchJDTCompilationUnit extends EObjectImpl implements JDTVisitor {
 		this.preference = preference;
 	}
 
+	@Override
 	public void visit(JDTJavaElement element) throws JDTVisitorException {
 		// if element can't be generated, we stop all
-		if(!element.isGenerated())
+		if (!element.isGenerated()) {
 			return;
-		if(SynchTools.isPrimiveType(element.getElementName()) && !element.getElementName().equals("String"))
+		}
+		if (SynchTools.isPrimiveType(element.getElementName()) && !element.getElementName().equals("String")) {
 			return;
+		}
 
-		JDTCompilationUnit cu = (JDTCompilationUnit)element;
+		JDTCompilationUnit cu = (JDTCompilationUnit) element;
 		try {
 			ICompilationUnit icu = SynchTools.searchIJavaElement(ipack.getCompilationUnits(), cu.getElementName() + ".java");
 
-			if(icu == null) {
+			if (icu == null) {
 				icu = ipack.createCompilationUnit(cu.getElementName() + ".java", "", true, null);
-				if(!ipack.getElementName().equals(IPackageFragment.DEFAULT_PACKAGE_NAME))
+				if (!ipack.getElementName().equals(IPackageFragment.DEFAULT_PACKAGE_NAME)) {
 					icu.createPackageDeclaration(ipack.getElementName(), null);
+				}
 			}
 
-			//call the children JDTType
+			// call the children JDTType
 			JDTVisitor visitor = new SynchJDTType(icu, preference);
 
-			for(JDTType type : cu.getTypes())
+			for (JDTType type : cu.getTypes()) {
 				type.accept(visitor);
+			}
 
 			// save the compilation unit
 			icu.save(null, true);

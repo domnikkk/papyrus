@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,13 +14,12 @@
 package org.eclipse.papyrus.uml.diagram.common.helper;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.OrderedLayout;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.GravityConstrainedFlowLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.GravityDirectionType;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.eclipse.gmf.runtime.draw2d.ui.mapmode.IMapMode;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.CenteredWrappedLabel;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
@@ -67,6 +66,7 @@ public abstract class StereotypeFigureHelper {
 		init();
 		createContents();
 	}
+
 	/**
 	 * Method use to be override by child class to set the options
 	 */
@@ -97,7 +97,7 @@ public abstract class StereotypeFigureHelper {
 	 * if not displayed
 	 */
 	protected void ensureStereotypeRectanglePrinted() {
-		if(!stereotypePrinted) {
+		if (!stereotypePrinted) {
 			Object constraintStereotypeRect0 = getStereotypeRectangleConstraint();
 
 			container.add(stereotypeRectangle, constraintStereotypeRect0, 0);
@@ -110,7 +110,7 @@ public abstract class StereotypeFigureHelper {
 	 * elements is not displayed if empty
 	 */
 	protected void cleanStereotypeRectangle() {
-		if(stereotypePrinted && stereotypeRectangle.getChildren().isEmpty()) {
+		if (stereotypePrinted && stereotypeRectangle.getChildren().isEmpty()) {
 			container.remove(stereotypeRectangle);
 			stereotypePrinted = false;
 		}
@@ -121,7 +121,7 @@ public abstract class StereotypeFigureHelper {
 	 */
 	protected void removeStereotypeLabel() {
 		// Remove label if any
-		if(fActionStereotypeLabel != null) {
+		if (fActionStereotypeLabel != null) {
 			stereotypeRectangle.remove(fActionStereotypeLabel);
 			fActionStereotypeLabel = null;
 		}
@@ -134,9 +134,9 @@ public abstract class StereotypeFigureHelper {
 	protected void createStereotypeLabel() {
 		ensureStereotypeRectanglePrinted();
 		fActionStereotypeLabel = new CenteredWrappedLabel();
-		//fActionStereotypeLabel.setBorder(new MarginBorder(getMapMode().DPtoLP(topInset), getMapMode().DPtoLP(leftInset), getMapMode().DPtoLP(bottomInset ), getMapMode().DPtoLP(rightInset)));
+		// fActionStereotypeLabel.setBorder(new MarginBorder(getMapMode().DPtoLP(topInset), getMapMode().DPtoLP(leftInset), getMapMode().DPtoLP(bottomInset ), getMapMode().DPtoLP(rightInset)));
 		// Add the stereotype label to the figure
-		stereotypeRectangle.add(fActionStereotypeLabel, GravityConstrainedFlowLayout.ALIGN_CENTER, 0);
+		stereotypeRectangle.add(fActionStereotypeLabel, OrderedLayout.ALIGN_CENTER, 0);
 	}
 
 	/**
@@ -144,7 +144,7 @@ public abstract class StereotypeFigureHelper {
 	 */
 	protected void removeStereotypePropertiesInBraceLabel() {
 		// Remove label if any
-		if(stereotypePropertiesInBraceContent != null) {
+		if (stereotypePropertiesInBraceContent != null) {
 			stereotypeRectangle.remove(stereotypePropertiesInBraceContent);
 			stereotypePropertiesInBraceContent = null;
 		}
@@ -157,9 +157,9 @@ public abstract class StereotypeFigureHelper {
 	protected void createStereotypePropertiesInBraceLabel() {
 		ensureStereotypeRectanglePrinted();
 		stereotypePropertiesInBraceContent = new CenteredWrappedLabel();
-		//stereotypePropertiesInBraceContent.setBorder(new MarginBorder(getMapMode().DPtoLP(2), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+		// stereotypePropertiesInBraceContent.setBorder(new MarginBorder(getMapMode().DPtoLP(2), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 		// Add the stereotype label to the figure
-		stereotypeRectangle.add(stereotypePropertiesInBraceContent, GravityConstrainedFlowLayout.ALIGN_CENTER, -1);
+		stereotypeRectangle.add(stereotypePropertiesInBraceContent, OrderedLayout.ALIGN_CENTER, -1);
 	}
 
 	/**
@@ -167,7 +167,7 @@ public abstract class StereotypeFigureHelper {
 	 */
 	protected void removeStereotypePropertiesInCompartment() {
 		// Remove label if any
-		if(stereotypePropertiesContent != null) {
+		if (stereotypePropertiesContent != null) {
 			stereotypeRectangle.remove(stereotypePropertiesContent);
 			stereotypePropertiesContent = null;
 		}
@@ -184,16 +184,16 @@ public abstract class StereotypeFigureHelper {
 		stereotypePropertiesContent.setTextJustification(SWT.LEFT);
 		stereotypePropertiesContent.setTextAlignment(PositionConstants.LEFT);
 		stereotypePropertiesContent.setTextWrap(true);
-		//stereotypePropertiesContent.setBorder(new MarginBorder(getMapMode().DPtoLP(2), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+		// stereotypePropertiesContent.setBorder(new MarginBorder(getMapMode().DPtoLP(2), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 		// Add the stereotype label to the figure
-		stereotypeRectangle.add(stereotypePropertiesContent, GravityConstrainedFlowLayout.ALIGN_TOPLEFT, -1);
+		stereotypeRectangle.add(stereotypePropertiesContent, OrderedLayout.ALIGN_TOPLEFT, -1);
 	}
 
 	/**
 	 * Fill properties compartment with displayed properties
-	 * 
+	 *
 	 * @param stereotypeProperties
-	 *        the properties string
+	 *            the properties string
 	 */
 	private void fillStereotypePropertiesInCompartment(String stereotypeProperties) {
 
@@ -213,20 +213,19 @@ public abstract class StereotypeFigureHelper {
 	 * <li>if this is not <code>null</code>, it creates the stereotype label if needed and displays the specified string.</li>
 	 * </ul>
 	 * </p>
-	 * 
+	 *
 	 * @param stereotypes
-	 *        the string representing the stereotypes to be displayed
+	 *            the string representing the stereotypes to be displayed
 	 * @param image
-	 *        the image representing the stereotypes to be displayed
-	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String,
-	 *      org.eclipse.swt.graphics.Image)
+	 *            the image representing the stereotypes to be displayed
+	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String, org.eclipse.swt.graphics.Image)
 	 */
 	public void setStereotypeDisplay(String stereotypes, Image image) {
-		if(("".equals(stereotypes) || stereotypes == null) && image == null) {
+		if (("".equals(stereotypes) || stereotypes == null) && image == null) {
 			removeStereotypeLabel();
 		} else {
 			// Set the stereotype label if it does not already exist
-			if(fActionStereotypeLabel == null) {
+			if (fActionStereotypeLabel == null) {
 				createStereotypeLabel();
 			}
 			// Set stereotype text on figure
@@ -246,17 +245,17 @@ public abstract class StereotypeFigureHelper {
 	 * <li>if this is not <code>null</code>, it creates the stereotype properties label if needed and displays the specified string.</li>
 	 * </ul>
 	 * </p>
-	 * 
+	 *
 	 * @param stereotypeProperties
-	 *        the string representing the stereotype properties to be
-	 *        displayed
+	 *            the string representing the stereotype properties to be
+	 *            displayed
 	 */
 	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
-		if("".equals(stereotypeProperties) || stereotypeProperties == null) {
+		if ("".equals(stereotypeProperties) || stereotypeProperties == null) {
 			removeStereotypePropertiesInBraceLabel();
 		} else {
 			// Set the stereotype label if it does not already exist
-			if(stereotypePropertiesInBraceContent == null) {
+			if (stereotypePropertiesInBraceContent == null) {
 				createStereotypePropertiesInBraceLabel();
 			}
 			// Set stereotype text on figure
@@ -267,19 +266,19 @@ public abstract class StereotypeFigureHelper {
 
 	/**
 	 * displays the new string corresponding to the list of stereotypes.
-	 * 
+	 *
 	 * if the string is <code>null</code>, then the figure that displays the
 	 * stereotype label is removed from the NodeNamedElementFigure.
-	 * 
+	 *
 	 * @param stereotypeProperties
-	 *        the string to be displayed.
+	 *            the string to be displayed.
 	 */
 	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
-		if("".equals(stereotypeProperties) || stereotypeProperties == null) {
+		if ("".equals(stereotypeProperties) || stereotypeProperties == null) {
 			removeStereotypePropertiesInCompartment();
 		} else {
 			// set stereotype properties content
-			if(stereotypePropertiesContent == null) {
+			if (stereotypePropertiesContent == null) {
 				createStereotypePropertiesInCompartment();
 			}
 			fillStereotypePropertiesInCompartment(stereotypeProperties);
@@ -303,14 +302,14 @@ public abstract class StereotypeFigureHelper {
 	/**
 	 * Get the map mode of the corresponding edit part
 	 */
-	//public abstract IMapMode getMapMode();
+	// public abstract IMapMode getMapMode();
 
 	public int getTopInset() {
 		return topInset;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param topInset
 	 */
 	public void setTopInset(int topInset) {
@@ -318,7 +317,7 @@ public abstract class StereotypeFigureHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public int getLeftInset() {
@@ -326,7 +325,7 @@ public abstract class StereotypeFigureHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param leftInset
 	 */
 	public void setLeftInset(int leftInset) {
@@ -334,7 +333,7 @@ public abstract class StereotypeFigureHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public int getBottomInset() {
@@ -342,7 +341,7 @@ public abstract class StereotypeFigureHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param bottomInset
 	 */
 	public void setBottomInset(int bottomInset) {
@@ -350,7 +349,7 @@ public abstract class StereotypeFigureHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public int getRightInset() {
@@ -358,7 +357,7 @@ public abstract class StereotypeFigureHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param rightInset
 	 */
 	public void setRightInset(int rightInset) {
@@ -368,6 +367,7 @@ public abstract class StereotypeFigureHelper {
 	/**
 	 * Return true if the Rectangle containing the the stereotype has to be
 	 * filled
+	 *
 	 * @return
 	 */
 	public boolean isStereotypeContainerFilled() {
@@ -376,6 +376,7 @@ public abstract class StereotypeFigureHelper {
 
 	/**
 	 * If set to true the rectangle containing the stereotype will be filled
+	 *
 	 * @param isStereotypeContainerFilled
 	 */
 	public void setStereotypeContainerFilled(boolean isStereotypeContainerFilled) {

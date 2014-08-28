@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import java.util.Map;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -100,12 +101,14 @@ import org.eclipse.papyrus.layers.stackmodel.operators.CustomPropertyOperatorsIn
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layerNamedStyleEClass = null;
@@ -113,6 +116,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layersStackEClass = null;
@@ -120,6 +124,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layerExpressionEClass = null;
@@ -127,6 +132,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass applicationDependantElementEClass = null;
@@ -134,6 +140,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layersStackApplicationEClass = null;
@@ -141,6 +148,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass folderElementEClass = null;
@@ -148,6 +156,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layerStackDescriptorRegistryEClass = null;
@@ -155,6 +164,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass propertyRegistryEClass = null;
@@ -162,6 +172,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass propertyEClass = null;
@@ -169,6 +180,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass typeEClass = null;
@@ -176,6 +188,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass metamodelEClass = null;
@@ -183,6 +196,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass typeInstanceEClass = null;
@@ -190,6 +204,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass computePropertyValueCommandItfEClass = null;
@@ -197,6 +212,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass typeRegistryEClass = null;
@@ -204,6 +220,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass stringToTypeMapEClass = null;
@@ -211,6 +228,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layerDescriptorRegistryEClass = null;
@@ -218,6 +236,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layerDescriptorEClass = null;
@@ -225,6 +244,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layerApplicationFactoryEClass = null;
@@ -232,6 +252,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass propertySetterRegistryEClass = null;
@@ -239,6 +260,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass propertySetterEClass = null;
@@ -246,6 +268,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass stringToPropertySetterEClass = null;
@@ -253,6 +276,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass abstractLayerEClass = null;
@@ -260,6 +284,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass stringToTypeInstanceMapEClass = null;
@@ -267,6 +292,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass folderEClass = null;
@@ -274,6 +300,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass intInstanceEClass = null;
@@ -281,6 +308,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass booleanInstanceEClass = null;
@@ -288,6 +316,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass stringInstanceEClass = null;
@@ -295,6 +324,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass intTypeEClass = null;
@@ -302,6 +332,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass booleanTypeEClass = null;
@@ -309,6 +340,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass stringTypeEClass = null;
@@ -316,6 +348,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass customTypeEClass = null;
@@ -323,6 +356,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layerOperatorEClass = null;
@@ -330,6 +364,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layersContainerEClass = null;
@@ -337,6 +372,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass abstractLayerOperatorEClass = null;
@@ -344,6 +380,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layerOperatorDescriptorEClass = null;
@@ -351,6 +388,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass propertyOperatorEClass = null;
@@ -358,6 +396,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass defaultPropertyOperatorEClass = null;
@@ -365,6 +404,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass topLayerOperatorEClass = null;
@@ -372,6 +412,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass stackedLayerOperatorEClass = null;
@@ -379,6 +420,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass customLayerOperatorEClass = null;
@@ -386,6 +428,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass propertyIndexEClass = null;
@@ -393,6 +436,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass stringToPropertyIndexMapEClass = null;
@@ -400,6 +444,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass simpleLayerDescriptorEClass = null;
@@ -407,6 +452,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass regExpLayerDescriptorEClass = null;
@@ -414,6 +460,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass nullInstanceEClass = null;
@@ -421,6 +468,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass regExpLayerEClass = null;
@@ -428,6 +476,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layerEClass = null;
@@ -435,6 +484,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass colorEClass = null;
@@ -442,6 +492,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass colorInstanceEClass = null;
@@ -449,6 +500,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass fillInstanceEClass = null;
@@ -456,6 +508,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass fillEClass = null;
@@ -463,6 +516,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass fillPropertySetterEClass = null;
@@ -470,6 +524,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass isValidPropertySetterEClass = null;
@@ -477,6 +532,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass nullPropertySetterEClass = null;
@@ -484,6 +540,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass lineTypeEClass = null;
@@ -491,6 +548,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass lineInstanceEClass = null;
@@ -498,6 +556,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass linePropertySetterEClass = null;
@@ -505,6 +564,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass fontPropertySetterEClass = null;
@@ -512,6 +572,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass fontInstanceEClass = null;
@@ -519,6 +580,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass fontTypeEClass = null;
@@ -526,6 +588,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass isVisiblePropertySetterEClass = null;
@@ -533,6 +596,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass layerOperatorDescriptorRegistryEClass = null;
@@ -540,6 +604,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass topLayerOperatorDescriptorEClass = null;
@@ -547,6 +612,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass stackedLayerOperatorDescriptorEClass = null;
@@ -554,6 +620,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass customPropertyOperatorEClass = null;
@@ -561,6 +628,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass andStackedLayerOperatorDescriptorEClass = null;
@@ -568,6 +636,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass orStackedLayerOperatorDescriptorEClass = null;
@@ -575,6 +644,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass isAbstractUmlSetterEClass = null;
@@ -582,6 +652,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass allViewsDerivedLayerEClass = null;
@@ -589,6 +660,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EEnum layerStateEEnum = null;
@@ -596,6 +668,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EEnum eventLevelEEnum = null;
@@ -603,6 +676,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType stringEDataType = null;
@@ -610,6 +684,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType booleanEDataType = null;
@@ -617,6 +692,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType ePackageEDataType = null;
@@ -624,6 +700,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType badStateExceptionEDataType = null;
@@ -631,6 +708,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType layersExceptionEDataType = null;
@@ -638,6 +716,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType notFoundExceptionEDataType = null;
@@ -645,6 +724,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType computePropertyValueCommandEDataType = null;
@@ -652,6 +732,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType intEDataType = null;
@@ -659,6 +740,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType objectEDataType = null;
@@ -666,20 +748,17 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType customPropertyOpertorInstanceEDataType = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#eNS_URI
 	 * @see #init()
@@ -692,27 +771,29 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link LayersPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 *
+	 * <p>
+	 * This method is used to initialize {@link LayersPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static LayersPackage init() {
-		if (isInited) return (LayersPackage)EPackage.Registry.INSTANCE.getEPackage(LayersPackage.eNS_URI);
+		if (isInited) {
+			return (LayersPackage) EPackage.Registry.INSTANCE.getEPackage(LayersPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		LayersPackageImpl theLayersPackage = (LayersPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof LayersPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new LayersPackageImpl());
+		LayersPackageImpl theLayersPackage = (LayersPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof LayersPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new LayersPackageImpl());
 
 		isInited = true;
 
@@ -728,7 +809,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 		// Mark meta-data to indicate it can't be changed
 		theLayersPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(LayersPackage.eNS_URI, theLayersPackage);
 		return theLayersPackage;
@@ -737,8 +818,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayerNamedStyle() {
 		return layerNamedStyleEClass;
 	}
@@ -746,17 +829,21 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayerNamedStyle_LayersStack() {
-		return (EReference)layerNamedStyleEClass.getEStructuralFeatures().get(0);
+		return (EReference) layerNamedStyleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayersStack() {
 		return layersStackEClass;
 	}
@@ -764,53 +851,65 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayersStack_Layers() {
-		return (EReference)layersStackEClass.getEStructuralFeatures().get(0);
+		return (EReference) layersStackEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayersStack_Name() {
-		return (EAttribute)layersStackEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) layersStackEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayersStack_Description() {
-		return (EAttribute)layersStackEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) layersStackEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayersStack_Diagram() {
-		return (EReference)layersStackEClass.getEStructuralFeatures().get(3);
+		return (EReference) layersStackEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayersStack_State() {
-		return (EAttribute)layersStackEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) layersStackEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersStack__GetComputePropertyValueCommand__View_Property() {
 		return layersStackEClass.getEOperations().get(0);
 	}
@@ -818,8 +917,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersStack__GetPropertiesComputePropertyValueCommand__View_EList() {
 		return layersStackEClass.getEOperations().get(1);
 	}
@@ -827,8 +928,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersStack__GetViewsComputePropertyValueCommand__EList_Property() {
 		return layersStackEClass.getEOperations().get(2);
 	}
@@ -836,8 +939,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersStack__StartAfterCreation() {
 		return layersStackEClass.getEOperations().get(3);
 	}
@@ -845,8 +950,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersStack__AttachLayers() {
 		return layersStackEClass.getEOperations().get(4);
 	}
@@ -854,8 +961,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersStack__Attach() {
 		return layersStackEClass.getEOperations().get(5);
 	}
@@ -863,8 +972,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersStack__Detach() {
 		return layersStackEClass.getEOperations().get(6);
 	}
@@ -872,8 +983,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersStack__EnterAttachedState() {
 		return layersStackEClass.getEOperations().get(7);
 	}
@@ -881,8 +994,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersStack__ExitAttachedState() {
 		return layersStackEClass.getEOperations().get(8);
 	}
@@ -890,8 +1005,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayerExpression() {
 		return layerExpressionEClass;
 	}
@@ -899,71 +1016,87 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayerExpression_Name() {
-		return (EAttribute)layerExpressionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) layerExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayerExpression_Description() {
-		return (EAttribute)layerExpressionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) layerExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayerExpression_IsLayerEnabledInternal() {
-		return (EAttribute)layerExpressionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) layerExpressionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayerExpression_IsLayerEnabled() {
-		return (EAttribute)layerExpressionEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) layerExpressionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayerExpression_IsBranchEnabled() {
-		return (EAttribute)layerExpressionEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) layerExpressionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayerExpression_OwningLayersStack() {
-		return (EReference)layerExpressionEClass.getEStructuralFeatures().get(5);
+		return (EReference) layerExpressionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayerExpression_State() {
-		return (EAttribute)layerExpressionEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) layerExpressionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerExpression__GetComputePropertyValueCommand__View_Property() {
 		return layerExpressionEClass.getEOperations().get(0);
 	}
@@ -971,8 +1104,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerExpression__GetViewsComputePropertyValueCommand__EList_Property() {
 		return layerExpressionEClass.getEOperations().get(1);
 	}
@@ -980,8 +1115,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerExpression__GetPropertiesComputePropertyValueCommand__View_EList() {
 		return layerExpressionEClass.getEOperations().get(2);
 	}
@@ -989,8 +1126,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerExpression__AttachToLayersStack__LayersStack() {
 		return layerExpressionEClass.getEOperations().get(3);
 	}
@@ -998,8 +1137,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerExpression__GetLayersStack() {
 		return layerExpressionEClass.getEOperations().get(4);
 	}
@@ -1007,8 +1148,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerExpression__EnterAttachedState() {
 		return layerExpressionEClass.getEOperations().get(5);
 	}
@@ -1016,8 +1159,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerExpression__Attach() {
 		return layerExpressionEClass.getEOperations().get(6);
 	}
@@ -1025,8 +1170,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerExpression__Detach() {
 		return layerExpressionEClass.getEOperations().get(7);
 	}
@@ -1034,8 +1181,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerExpression__ExitAttachedState() {
 		return layerExpressionEClass.getEOperations().get(8);
 	}
@@ -1043,8 +1192,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getApplicationDependantElement() {
 		return applicationDependantElementEClass;
 	}
@@ -1052,17 +1203,21 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getApplicationDependantElement_Application() {
-		return (EReference)applicationDependantElementEClass.getEStructuralFeatures().get(0);
+		return (EReference) applicationDependantElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayersStackApplication() {
 		return layersStackApplicationEClass;
 	}
@@ -1070,71 +1225,87 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayersStackApplication_LayersStacks() {
-		return (EReference)layersStackApplicationEClass.getEStructuralFeatures().get(0);
+		return (EReference) layersStackApplicationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayersStackApplication_LayerStackRegistry() {
-		return (EReference)layersStackApplicationEClass.getEStructuralFeatures().get(1);
+		return (EReference) layersStackApplicationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayersStackApplication_PropertyRegistry() {
-		return (EReference)layersStackApplicationEClass.getEStructuralFeatures().get(2);
+		return (EReference) layersStackApplicationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayersStackApplication_LayerDescriptorRegistry() {
-		return (EReference)layersStackApplicationEClass.getEStructuralFeatures().get(3);
+		return (EReference) layersStackApplicationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayersStackApplication_Factory() {
-		return (EReference)layersStackApplicationEClass.getEStructuralFeatures().get(4);
+		return (EReference) layersStackApplicationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayersStackApplication_PropertySetterRegistry() {
-		return (EReference)layersStackApplicationEClass.getEStructuralFeatures().get(5);
+		return (EReference) layersStackApplicationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayersStackApplication_LayerOperatorDescriptorRegistry() {
-		return (EReference)layersStackApplicationEClass.getEStructuralFeatures().get(6);
+		return (EReference) layersStackApplicationEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersStackApplication__GetLayersStackFor__Diagram() {
 		return layersStackApplicationEClass.getEOperations().get(0);
 	}
@@ -1142,8 +1313,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersStackApplication__RemoveLayersStackFor__Diagram() {
 		return layersStackApplicationEClass.getEOperations().get(1);
 	}
@@ -1151,8 +1324,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersStackApplication__IsLayersStackAttachedFor__Diagram() {
 		return layersStackApplicationEClass.getEOperations().get(2);
 	}
@@ -1160,8 +1335,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersStackApplication__CreateLayersStackFor__Diagram() {
 		return layersStackApplicationEClass.getEOperations().get(3);
 	}
@@ -1169,8 +1346,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersStackApplication__LookupLayersStackFor__Diagram() {
 		return layersStackApplicationEClass.getEOperations().get(4);
 	}
@@ -1178,8 +1357,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFolderElement() {
 		return folderElementEClass;
 	}
@@ -1187,8 +1368,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayerStackDescriptorRegistry() {
 		return layerStackDescriptorRegistryEClass;
 	}
@@ -1196,8 +1379,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertyRegistry() {
 		return propertyRegistryEClass;
 	}
@@ -1205,35 +1390,43 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyRegistry_Properties() {
-		return (EReference)propertyRegistryEClass.getEStructuralFeatures().get(0);
+		return (EReference) propertyRegistryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyRegistry_TypeRegistry() {
-		return (EReference)propertyRegistryEClass.getEStructuralFeatures().get(1);
+		return (EReference) propertyRegistryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPropertyRegistry_PropertiesCount() {
-		return (EAttribute)propertyRegistryEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) propertyRegistryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getPropertyRegistry__GetPropertyIndex__String() {
 		return propertyRegistryEClass.getEOperations().get(0);
 	}
@@ -1241,8 +1434,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getPropertyRegistry__GetProperty__String() {
 		return propertyRegistryEClass.getEOperations().get(1);
 	}
@@ -1250,8 +1445,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getPropertyRegistry__AddProperty__Property() {
 		return propertyRegistryEClass.getEOperations().get(2);
 	}
@@ -1259,8 +1456,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getProperty() {
 		return propertyEClass;
 	}
@@ -1268,53 +1467,65 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getProperty_Type() {
-		return (EReference)propertyEClass.getEStructuralFeatures().get(0);
+		return (EReference) propertyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getProperty_DefaultValue() {
-		return (EReference)propertyEClass.getEStructuralFeatures().get(1);
+		return (EReference) propertyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProperty_Name() {
-		return (EAttribute)propertyEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) propertyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProperty_Description() {
-		return (EAttribute)propertyEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) propertyEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProperty_Index() {
-		return (EAttribute)propertyEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) propertyEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getProperty__CreateInstance() {
 		return propertyEClass.getEOperations().get(0);
 	}
@@ -1322,8 +1533,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getType() {
 		return typeEClass;
 	}
@@ -1331,35 +1544,43 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getType_Metamodel() {
-		return (EReference)typeEClass.getEStructuralFeatures().get(0);
+		return (EReference) typeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getType_Name() {
-		return (EAttribute)typeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) typeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getType_Description() {
-		return (EAttribute)typeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) typeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getType__CreateInstance() {
 		return typeEClass.getEOperations().get(0);
 	}
@@ -1367,8 +1588,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getMetamodel() {
 		return metamodelEClass;
 	}
@@ -1376,62 +1599,76 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMetamodel_Name() {
-		return (EAttribute)metamodelEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) metamodelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMetamodel_Description() {
-		return (EAttribute)metamodelEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) metamodelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMetamodel_Nsuri() {
-		return (EAttribute)metamodelEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) metamodelEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMetamodel_PluginID() {
-		return (EAttribute)metamodelEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) metamodelEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMetamodel_EPackageInstanceName() {
-		return (EAttribute)metamodelEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) metamodelEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMetamodel_IsTypeValid() {
-		return (EAttribute)metamodelEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) metamodelEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getMetamodel__GetEPackage() {
 		return metamodelEClass.getEOperations().get(0);
 	}
@@ -1439,8 +1676,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getTypeInstance() {
 		return typeInstanceEClass;
 	}
@@ -1448,8 +1687,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getTypeInstance__SetValueFromString__String() {
 		return typeInstanceEClass.getEOperations().get(0);
 	}
@@ -1457,8 +1698,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getTypeInstance__SetValueFromInstance__TypeInstance() {
 		return typeInstanceEClass.getEOperations().get(1);
 	}
@@ -1466,8 +1709,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getComputePropertyValueCommandItf() {
 		return computePropertyValueCommandItfEClass;
 	}
@@ -1475,8 +1720,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getComputePropertyValueCommandItf__GetCmdValue() {
 		return computePropertyValueCommandItfEClass.getEOperations().get(0);
 	}
@@ -1484,8 +1731,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getTypeRegistry() {
 		return typeRegistryEClass;
 	}
@@ -1493,17 +1742,21 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getTypeRegistry_Types() {
-		return (EReference)typeRegistryEClass.getEStructuralFeatures().get(0);
+		return (EReference) typeRegistryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getStringToTypeMap() {
 		return stringToTypeMapEClass;
 	}
@@ -1511,26 +1764,32 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getStringToTypeMap_Value() {
-		return (EReference)stringToTypeMapEClass.getEStructuralFeatures().get(0);
+		return (EReference) stringToTypeMapEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStringToTypeMap_Key() {
-		return (EAttribute)stringToTypeMapEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) stringToTypeMapEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayerDescriptorRegistry() {
 		return layerDescriptorRegistryEClass;
 	}
@@ -1538,17 +1797,21 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayerDescriptorRegistry_LayerDescriptors() {
-		return (EReference)layerDescriptorRegistryEClass.getEStructuralFeatures().get(0);
+		return (EReference) layerDescriptorRegistryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayerDescriptor() {
 		return layerDescriptorEClass;
 	}
@@ -1556,17 +1819,21 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayerDescriptor_PropertyRegistry() {
-		return (EReference)layerDescriptorEClass.getEStructuralFeatures().get(0);
+		return (EReference) layerDescriptorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayerApplicationFactory() {
 		return layerApplicationFactoryEClass;
 	}
@@ -1574,17 +1841,21 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayerApplicationFactory_Application() {
-		return (EReference)layerApplicationFactoryEClass.getEStructuralFeatures().get(0);
+		return (EReference) layerApplicationFactoryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertySetterRegistry() {
 		return propertySetterRegistryEClass;
 	}
@@ -1592,35 +1863,43 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertySetterRegistry_PropertySetters() {
-		return (EReference)propertySetterRegistryEClass.getEStructuralFeatures().get(0);
+		return (EReference) propertySetterRegistryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertySetterRegistry_SetterMap() {
-		return (EReference)propertySetterRegistryEClass.getEStructuralFeatures().get(1);
+		return (EReference) propertySetterRegistryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertySetterRegistry_Application() {
-		return (EReference)propertySetterRegistryEClass.getEStructuralFeatures().get(2);
+		return (EReference) propertySetterRegistryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getPropertySetterRegistry__GetPropertySetter__Property() {
 		return propertySetterRegistryEClass.getEOperations().get(0);
 	}
@@ -1628,8 +1907,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getPropertySetterRegistry__GetPropertySetter__String() {
 		return propertySetterRegistryEClass.getEOperations().get(1);
 	}
@@ -1637,8 +1918,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getPropertySetterRegistry__AddPropertySetter__PropertySetter() {
 		return propertySetterRegistryEClass.getEOperations().get(2);
 	}
@@ -1646,8 +1929,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertySetter() {
 		return propertySetterEClass;
 	}
@@ -1655,26 +1940,32 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertySetter_Property() {
-		return (EReference)propertySetterEClass.getEStructuralFeatures().get(0);
+		return (EReference) propertySetterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPropertySetter_PropertyName() {
-		return (EAttribute)propertySetterEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) propertySetterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getPropertySetter__SetValue__View_TypeInstance() {
 		return propertySetterEClass.getEOperations().get(0);
 	}
@@ -1682,8 +1973,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getStringToPropertySetter() {
 		return stringToPropertySetterEClass;
 	}
@@ -1691,26 +1984,32 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStringToPropertySetter_Key() {
-		return (EAttribute)stringToPropertySetterEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) stringToPropertySetterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getStringToPropertySetter_Value() {
-		return (EReference)stringToPropertySetterEClass.getEStructuralFeatures().get(1);
+		return (EReference) stringToPropertySetterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractLayer() {
 		return abstractLayerEClass;
 	}
@@ -1718,53 +2017,65 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractLayer_PropertyValues() {
-		return (EReference)abstractLayerEClass.getEStructuralFeatures().get(0);
+		return (EReference) abstractLayerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractLayer_PropertyValueMap() {
-		return (EReference)abstractLayerEClass.getEStructuralFeatures().get(1);
+		return (EReference) abstractLayerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractLayer_LayerDescriptor() {
-		return (EReference)abstractLayerEClass.getEStructuralFeatures().get(2);
+		return (EReference) abstractLayerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractLayer_Views() {
-		return (EReference)abstractLayerEClass.getEStructuralFeatures().get(3);
+		return (EReference) abstractLayerEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractLayer_AttachedProperties() {
-		return (EReference)abstractLayerEClass.getEStructuralFeatures().get(4);
+		return (EReference) abstractLayerEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getAbstractLayer__AddPropertyInstance__Property() {
 		return abstractLayerEClass.getEOperations().get(0);
 	}
@@ -1772,8 +2083,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getAbstractLayer__RemovePropertyInstance__Property() {
 		return abstractLayerEClass.getEOperations().get(1);
 	}
@@ -1781,8 +2094,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getAbstractLayer__GetPropertyInstance__Property() {
 		return abstractLayerEClass.getEOperations().get(2);
 	}
@@ -1790,8 +2105,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getAbstractLayer__GetPropertyInstance__String() {
 		return abstractLayerEClass.getEOperations().get(3);
 	}
@@ -1799,8 +2116,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getStringToTypeInstanceMap() {
 		return stringToTypeInstanceMapEClass;
 	}
@@ -1808,26 +2127,32 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStringToTypeInstanceMap_Key() {
-		return (EAttribute)stringToTypeInstanceMapEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) stringToTypeInstanceMapEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getStringToTypeInstanceMap_Value() {
-		return (EReference)stringToTypeInstanceMapEClass.getEStructuralFeatures().get(1);
+		return (EReference) stringToTypeInstanceMapEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFolder() {
 		return folderEClass;
 	}
@@ -1835,26 +2160,32 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFolder_Elements() {
-		return (EReference)folderEClass.getEStructuralFeatures().get(0);
+		return (EReference) folderEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFolder_Name() {
-		return (EAttribute)folderEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) folderEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getIntInstance() {
 		return intInstanceEClass;
 	}
@@ -1862,17 +2193,21 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getIntInstance_Value() {
-		return (EAttribute)intInstanceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) intInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getBooleanInstance() {
 		return booleanInstanceEClass;
 	}
@@ -1880,17 +2215,21 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBooleanInstance_Value() {
-		return (EAttribute)booleanInstanceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) booleanInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getStringInstance() {
 		return stringInstanceEClass;
 	}
@@ -1898,17 +2237,21 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStringInstance_Value() {
-		return (EAttribute)stringInstanceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) stringInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getIntType() {
 		return intTypeEClass;
 	}
@@ -1916,8 +2259,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getBooleanType() {
 		return booleanTypeEClass;
 	}
@@ -1925,8 +2270,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getStringType() {
 		return stringTypeEClass;
 	}
@@ -1934,8 +2281,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getCustomType() {
 		return customTypeEClass;
 	}
@@ -1943,17 +2292,21 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCustomType_Classifier() {
-		return (EAttribute)customTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) customTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayerOperator() {
 		return layerOperatorEClass;
 	}
@@ -1961,17 +2314,21 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayerOperator_Layers() {
-		return (EReference)layerOperatorEClass.getEStructuralFeatures().get(0);
+		return (EReference) layerOperatorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayersContainer() {
 		return layersContainerEClass;
 	}
@@ -1979,8 +2336,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayersContainer__AddLayer__LayerExpression() {
 		return layersContainerEClass.getEOperations().get(0);
 	}
@@ -1988,8 +2347,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractLayerOperator() {
 		return abstractLayerOperatorEClass;
 	}
@@ -1997,26 +2358,32 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractLayerOperator_LayerOperatorDescriptor() {
-		return (EReference)abstractLayerOperatorEClass.getEStructuralFeatures().get(0);
+		return (EReference) abstractLayerOperatorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractLayerOperator_LayerOperatorDescriptorName() {
-		return (EAttribute)abstractLayerOperatorEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) abstractLayerOperatorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getAbstractLayerOperator__IsDescriptorSet() {
 		return abstractLayerOperatorEClass.getEOperations().get(0);
 	}
@@ -2024,8 +2391,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getAbstractLayerOperator__ResetDescriptor() {
 		return abstractLayerOperatorEClass.getEOperations().get(1);
 	}
@@ -2033,8 +2402,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayerOperatorDescriptor() {
 		return layerOperatorDescriptorEClass;
 	}
@@ -2042,26 +2413,32 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayerOperatorDescriptor_PropertyOperators() {
-		return (EReference)layerOperatorDescriptorEClass.getEStructuralFeatures().get(0);
+		return (EReference) layerOperatorDescriptorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayerOperatorDescriptor_Name() {
-		return (EAttribute)layerOperatorDescriptorEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) layerOperatorDescriptorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerOperatorDescriptor__GetPropertyOperator__Property() {
 		return layerOperatorDescriptorEClass.getEOperations().get(0);
 	}
@@ -2069,8 +2446,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerOperatorDescriptor__SetPropertyOperator__Property_PropertyOperator() {
 		return layerOperatorDescriptorEClass.getEOperations().get(1);
 	}
@@ -2078,8 +2457,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerOperatorDescriptor__CreateLayerOperator() {
 		return layerOperatorDescriptorEClass.getEOperations().get(2);
 	}
@@ -2087,8 +2468,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerOperatorDescriptor__SetPropertyCollectionSize__int_DefaultPropertyOperator() {
 		return layerOperatorDescriptorEClass.getEOperations().get(3);
 	}
@@ -2096,8 +2479,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertyOperator() {
 		return propertyOperatorEClass;
 	}
@@ -2105,17 +2490,21 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPropertyOperator_Name() {
-		return (EAttribute)propertyOperatorEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) propertyOperatorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getPropertyOperator__GetComputePropertyValueCommand__EList() {
 		return propertyOperatorEClass.getEOperations().get(0);
 	}
@@ -2123,8 +2512,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getDefaultPropertyOperator() {
 		return defaultPropertyOperatorEClass;
 	}
@@ -2132,8 +2523,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getTopLayerOperator() {
 		return topLayerOperatorEClass;
 	}
@@ -2141,8 +2534,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getStackedLayerOperator() {
 		return stackedLayerOperatorEClass;
 	}
@@ -2150,8 +2545,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getCustomLayerOperator() {
 		return customLayerOperatorEClass;
 	}
@@ -2159,8 +2556,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertyIndex() {
 		return propertyIndexEClass;
 	}
@@ -2168,26 +2567,32 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyIndex_Property() {
-		return (EReference)propertyIndexEClass.getEStructuralFeatures().get(0);
+		return (EReference) propertyIndexEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPropertyIndex_Index() {
-		return (EAttribute)propertyIndexEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) propertyIndexEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getStringToPropertyIndexMap() {
 		return stringToPropertyIndexMapEClass;
 	}
@@ -2195,26 +2600,32 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getStringToPropertyIndexMap_Value() {
-		return (EReference)stringToPropertyIndexMapEClass.getEStructuralFeatures().get(0);
+		return (EReference) stringToPropertyIndexMapEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStringToPropertyIndexMap_Key() {
-		return (EAttribute)stringToPropertyIndexMapEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) stringToPropertyIndexMapEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getSimpleLayerDescriptor() {
 		return simpleLayerDescriptorEClass;
 	}
@@ -2222,8 +2633,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getRegExpLayerDescriptor() {
 		return regExpLayerDescriptorEClass;
 	}
@@ -2231,8 +2644,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getNullInstance() {
 		return nullInstanceEClass;
 	}
@@ -2240,8 +2655,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getNullInstance__GetInstance() {
 		return nullInstanceEClass.getEOperations().get(0);
 	}
@@ -2249,8 +2666,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getRegExpLayer() {
 		return regExpLayerEClass;
 	}
@@ -2258,71 +2677,87 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegExpLayer_Expr() {
-		return (EAttribute)regExpLayerEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) regExpLayerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegExpLayer_Language() {
-		return (EAttribute)regExpLayerEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) regExpLayerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegExpLayer_IsDomainChangedEventDependant() {
-		return (EAttribute)regExpLayerEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) regExpLayerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegExpLayer_DomainChangedEventLevel() {
-		return (EAttribute)regExpLayerEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) regExpLayerEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegExpLayer_IsDiagramChangedEventDependant() {
-		return (EAttribute)regExpLayerEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) regExpLayerEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegExpLayer_DiagramChangedEventLevel() {
-		return (EAttribute)regExpLayerEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) regExpLayerEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegExpLayer_ExpressionContextObjectType() {
-		return (EAttribute)regExpLayerEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) regExpLayerEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getRegExpLayer__Activate__AbstractLayerOperator() {
 		return regExpLayerEClass.getEOperations().get(0);
 	}
@@ -2330,8 +2765,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getRegExpLayer__Deactivate__AbstractLayerOperator() {
 		return regExpLayerEClass.getEOperations().get(1);
 	}
@@ -2339,8 +2776,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getRegExpLayer__IsDerivedView__View() {
 		return regExpLayerEClass.getEOperations().get(2);
 	}
@@ -2348,8 +2787,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getRegExpLayer__AttachDerivedView__View() {
 		return regExpLayerEClass.getEOperations().get(3);
 	}
@@ -2357,8 +2798,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getRegExpLayer__AttachDerivedViews__EList() {
 		return regExpLayerEClass.getEOperations().get(4);
 	}
@@ -2366,8 +2809,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getRegExpLayer__AttachDerivedViews() {
 		return regExpLayerEClass.getEOperations().get(5);
 	}
@@ -2375,8 +2820,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getRegExpLayer__LookupDerivedViews__EList() {
 		return regExpLayerEClass.getEOperations().get(6);
 	}
@@ -2384,8 +2831,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayer() {
 		return layerEClass;
 	}
@@ -2393,8 +2842,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getColor() {
 		return colorEClass;
 	}
@@ -2402,8 +2853,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getColorInstance() {
 		return colorInstanceEClass;
 	}
@@ -2411,17 +2864,21 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getColorInstance_Value() {
-		return (EAttribute)colorInstanceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) colorInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFillInstance() {
 		return fillInstanceEClass;
 	}
@@ -2429,26 +2886,32 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFillInstance_Transparency() {
-		return (EAttribute)fillInstanceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) fillInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getFillInstance_FillColor() {
-		return (EReference)fillInstanceEClass.getEStructuralFeatures().get(1);
+		return (EReference) fillInstanceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFill() {
 		return fillEClass;
 	}
@@ -2456,8 +2919,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFillPropertySetter() {
 		return fillPropertySetterEClass;
 	}
@@ -2465,8 +2930,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getIsValidPropertySetter() {
 		return isValidPropertySetterEClass;
 	}
@@ -2474,8 +2941,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getNullPropertySetter() {
 		return nullPropertySetterEClass;
 	}
@@ -2483,8 +2952,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLineType() {
 		return lineTypeEClass;
 	}
@@ -2492,8 +2963,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLineInstance() {
 		return lineInstanceEClass;
 	}
@@ -2501,26 +2974,32 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLineInstance_LineColor() {
-		return (EAttribute)lineInstanceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) lineInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLineInstance_LineWith() {
-		return (EAttribute)lineInstanceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) lineInstanceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLinePropertySetter() {
 		return linePropertySetterEClass;
 	}
@@ -2528,8 +3007,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFontPropertySetter() {
 		return fontPropertySetterEClass;
 	}
@@ -2537,8 +3018,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFontInstance() {
 		return fontInstanceEClass;
 	}
@@ -2546,44 +3029,54 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFontInstance_FontColor() {
-		return (EAttribute)fontInstanceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) fontInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFontInstance_FontName() {
-		return (EAttribute)fontInstanceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) fontInstanceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFontInstance_FontHeigh() {
-		return (EAttribute)fontInstanceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) fontInstanceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFontInstance_Bold() {
-		return (EAttribute)fontInstanceEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) fontInstanceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getFontType() {
 		return fontTypeEClass;
 	}
@@ -2591,8 +3084,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getIsVisiblePropertySetter() {
 		return isVisiblePropertySetterEClass;
 	}
@@ -2600,8 +3095,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getLayerOperatorDescriptorRegistry() {
 		return layerOperatorDescriptorRegistryEClass;
 	}
@@ -2609,44 +3106,54 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayerOperatorDescriptorRegistry_Descriptors() {
-		return (EReference)layerOperatorDescriptorRegistryEClass.getEStructuralFeatures().get(0);
+		return (EReference) layerOperatorDescriptorRegistryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayerOperatorDescriptorRegistry_PropertyOperators() {
-		return (EReference)layerOperatorDescriptorRegistryEClass.getEStructuralFeatures().get(1);
+		return (EReference) layerOperatorDescriptorRegistryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayerOperatorDescriptorRegistry_PropertyCollectionSize() {
-		return (EAttribute)layerOperatorDescriptorRegistryEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) layerOperatorDescriptorRegistryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EReference getLayerOperatorDescriptorRegistry_DefaultOperator() {
-		return (EReference)layerOperatorDescriptorRegistryEClass.getEStructuralFeatures().get(3);
+		return (EReference) layerOperatorDescriptorRegistryEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerOperatorDescriptorRegistry__AddLayerOperatorDescriptor__LayerOperatorDescriptor() {
 		return layerOperatorDescriptorRegistryEClass.getEOperations().get(0);
 	}
@@ -2654,8 +3161,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerOperatorDescriptorRegistry__GetLayerOperatorDescriptor__String() {
 		return layerOperatorDescriptorRegistryEClass.getEOperations().get(1);
 	}
@@ -2663,8 +3172,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerOperatorDescriptorRegistry__AddPropertyOperator__PropertyOperator() {
 		return layerOperatorDescriptorRegistryEClass.getEOperations().get(2);
 	}
@@ -2672,8 +3183,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerOperatorDescriptorRegistry__GetPropertyOperator__String() {
 		return layerOperatorDescriptorRegistryEClass.getEOperations().get(3);
 	}
@@ -2681,8 +3194,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerOperatorDescriptorRegistry__AttachOperatorToDescriptor__Property_String_String() {
 		return layerOperatorDescriptorRegistryEClass.getEOperations().get(4);
 	}
@@ -2690,8 +3205,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getLayerOperatorDescriptorRegistry__CreateLayerOperator__String() {
 		return layerOperatorDescriptorRegistryEClass.getEOperations().get(5);
 	}
@@ -2699,8 +3216,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getTopLayerOperatorDescriptor() {
 		return topLayerOperatorDescriptorEClass;
 	}
@@ -2708,8 +3227,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getStackedLayerOperatorDescriptor() {
 		return stackedLayerOperatorDescriptorEClass;
 	}
@@ -2717,8 +3238,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getCustomPropertyOperator() {
 		return customPropertyOperatorEClass;
 	}
@@ -2726,35 +3249,43 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCustomPropertyOperator_Classname() {
-		return (EAttribute)customPropertyOperatorEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) customPropertyOperatorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCustomPropertyOperator_OperatorInstance() {
-		return (EAttribute)customPropertyOperatorEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) customPropertyOperatorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCustomPropertyOperator_ClassBundleID() {
-		return (EAttribute)customPropertyOperatorEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) customPropertyOperatorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EOperation getCustomPropertyOperator__ResetOperatorInstance() {
 		return customPropertyOperatorEClass.getEOperations().get(0);
 	}
@@ -2762,8 +3293,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getAndStackedLayerOperatorDescriptor() {
 		return andStackedLayerOperatorDescriptorEClass;
 	}
@@ -2771,8 +3304,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getOrStackedLayerOperatorDescriptor() {
 		return orStackedLayerOperatorDescriptorEClass;
 	}
@@ -2780,8 +3315,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getIsAbstractUmlSetter() {
 		return isAbstractUmlSetterEClass;
 	}
@@ -2789,8 +3326,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EClass getAllViewsDerivedLayer() {
 		return allViewsDerivedLayerEClass;
 	}
@@ -2798,8 +3337,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EEnum getLayerState() {
 		return layerStateEEnum;
 	}
@@ -2807,8 +3348,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EEnum getEventLevel() {
 		return eventLevelEEnum;
 	}
@@ -2816,8 +3359,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getString() {
 		return stringEDataType;
 	}
@@ -2825,8 +3370,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getboolean() {
 		return booleanEDataType;
 	}
@@ -2834,8 +3381,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getEPackage() {
 		return ePackageEDataType;
 	}
@@ -2843,8 +3392,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getBadStateException() {
 		return badStateExceptionEDataType;
 	}
@@ -2852,8 +3403,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getLayersException() {
 		return layersExceptionEDataType;
 	}
@@ -2861,8 +3414,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getNotFoundException() {
 		return notFoundExceptionEDataType;
 	}
@@ -2870,8 +3425,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getComputePropertyValueCommand() {
 		return computePropertyValueCommandEDataType;
 	}
@@ -2879,8 +3436,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getint() {
 		return intEDataType;
 	}
@@ -2888,8 +3447,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getObject() {
 		return objectEDataType;
 	}
@@ -2897,8 +3458,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EDataType getCustomPropertyOpertorInstance() {
 		return customPropertyOpertorInstanceEDataType;
 	}
@@ -2906,28 +3469,34 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public LayersFactory getLayersFactory() {
-		return (LayersFactory)getEFactoryInstance();
+		return (LayersFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -3249,19 +3818,23 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -3270,7 +3843,7 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		NotationPackage theNotationPackage = (NotationPackage)EPackage.Registry.INSTANCE.getEPackage(NotationPackage.eNS_URI);
+		NotationPackage theNotationPackage = (NotationPackage) EPackage.Registry.INSTANCE.getEPackage(NotationPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -3330,13 +3903,15 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(layerNamedStyleEClass, LayerNamedStyle.class, "LayerNamedStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLayerNamedStyle_LayersStack(), this.getLayersStack(), null, "layersStack", null, 0, -1, LayerNamedStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayerNamedStyle_LayersStack(), this.getLayersStack(), null, "layersStack", null, 0, -1, LayerNamedStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 
 		initEClass(layersStackEClass, LayersStack.class, "LayersStack", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLayersStack_Layers(), this.getLayerExpression(), null, "layers", null, 0, 1, LayersStack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLayersStack_Name(), this.getString(), "name", null, 1, 1, LayersStack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLayersStack_Description(), this.getString(), "description", null, 1, 1, LayersStack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLayersStack_Diagram(), theNotationPackage.getDiagram(), null, "diagram", null, 0, 1, LayersStack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayersStack_Diagram(), theNotationPackage.getDiagram(), null, "diagram", null, 0, 1, LayersStack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getLayersStack_State(), this.getLayerState(), "state", "detached", 1, 1, LayersStack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		EOperation op = initEOperation(getLayersStack__GetComputePropertyValueCommand__View_Property(), this.getComputePropertyValueCommand(), "getComputePropertyValueCommand", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -3376,7 +3951,8 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 		initEAttribute(getLayerExpression_IsLayerEnabledInternal(), this.getboolean(), "isLayerEnabledInternal", null, 1, 1, LayerExpression.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLayerExpression_IsLayerEnabled(), this.getboolean(), "isLayerEnabled", "true", 1, 1, LayerExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLayerExpression_IsBranchEnabled(), this.getboolean(), "isBranchEnabled", "true", 1, 1, LayerExpression.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLayerExpression_OwningLayersStack(), this.getLayersStack(), null, "owningLayersStack", null, 0, 1, LayerExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayerExpression_OwningLayersStack(), this.getLayersStack(), null, "owningLayersStack", null, 0, 1, LayerExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLayerExpression_State(), this.getLayerState(), "state", "detached", 1, 1, LayerExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getLayerExpression__GetComputePropertyValueCommand__View_Property(), this.getComputePropertyValueCommand(), "getComputePropertyValueCommand", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -3412,16 +3988,24 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 		initEOperation(getLayerExpression__ExitAttachedState(), null, "exitAttachedState", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(applicationDependantElementEClass, ApplicationDependantElement.class, "ApplicationDependantElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getApplicationDependantElement_Application(), this.getLayersStackApplication(), null, "application", null, 0, 1, ApplicationDependantElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getApplicationDependantElement_Application(), this.getLayersStackApplication(), null, "application", null, 0, 1, ApplicationDependantElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(layersStackApplicationEClass, LayersStackApplication.class, "LayersStackApplication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLayersStackApplication_LayersStacks(), this.getLayersStack(), null, "layersStacks", null, 0, -1, LayersStackApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLayersStackApplication_LayerStackRegistry(), this.getLayerStackDescriptorRegistry(), null, "layerStackRegistry", null, 1, 1, LayersStackApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLayersStackApplication_PropertyRegistry(), this.getPropertyRegistry(), null, "propertyRegistry", null, 1, 1, LayersStackApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLayersStackApplication_LayerDescriptorRegistry(), this.getLayerDescriptorRegistry(), null, "layerDescriptorRegistry", null, 1, 1, LayersStackApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLayersStackApplication_Factory(), this.getLayerApplicationFactory(), this.getLayerApplicationFactory_Application(), "factory", null, 1, 1, LayersStackApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLayersStackApplication_PropertySetterRegistry(), this.getPropertySetterRegistry(), this.getPropertySetterRegistry_Application(), "propertySetterRegistry", null, 0, 1, LayersStackApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLayersStackApplication_LayerOperatorDescriptorRegistry(), this.getLayerOperatorDescriptorRegistry(), null, "layerOperatorDescriptorRegistry", null, 0, 1, LayersStackApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayersStackApplication_LayersStacks(), this.getLayersStack(), null, "layersStacks", null, 0, -1, LayersStackApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayersStackApplication_LayerStackRegistry(), this.getLayerStackDescriptorRegistry(), null, "layerStackRegistry", null, 1, 1, LayersStackApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayersStackApplication_PropertyRegistry(), this.getPropertyRegistry(), null, "propertyRegistry", null, 1, 1, LayersStackApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayersStackApplication_LayerDescriptorRegistry(), this.getLayerDescriptorRegistry(), null, "layerDescriptorRegistry", null, 1, 1, LayersStackApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayersStackApplication_Factory(), this.getLayerApplicationFactory(), this.getLayerApplicationFactory_Application(), "factory", null, 1, 1, LayersStackApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayersStackApplication_PropertySetterRegistry(), this.getPropertySetterRegistry(), this.getPropertySetterRegistry_Application(), "propertySetterRegistry", null, 0, 1, LayersStackApplication.class, IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayersStackApplication_LayerOperatorDescriptorRegistry(), this.getLayerOperatorDescriptorRegistry(), null, "layerOperatorDescriptorRegistry", null, 0, 1, LayersStackApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getLayersStackApplication__GetLayersStackFor__Diagram(), this.getLayersStack(), "getLayersStackFor", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theNotationPackage.getDiagram(), "diagram", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -3444,8 +4028,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 		initEClass(layerStackDescriptorRegistryEClass, LayerStackDescriptorRegistry.class, "LayerStackDescriptorRegistry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(propertyRegistryEClass, PropertyRegistry.class, "PropertyRegistry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPropertyRegistry_Properties(), this.getProperty(), null, "properties", null, 0, -1, PropertyRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPropertyRegistry_TypeRegistry(), this.getTypeRegistry(), null, "typeRegistry", null, 0, 1, PropertyRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPropertyRegistry_Properties(), this.getProperty(), null, "properties", null, 0, -1, PropertyRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getPropertyRegistry_TypeRegistry(), this.getTypeRegistry(), null, "typeRegistry", null, 0, 1, PropertyRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 		initEAttribute(getPropertyRegistry_PropertiesCount(), this.getint(), "propertiesCount", null, 1, 1, PropertyRegistry.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getPropertyRegistry__GetPropertyIndex__String(), this.getint(), "getPropertyIndex", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -3507,18 +4093,24 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 		initEAttribute(getStringToTypeMap_Key(), this.getString(), "key", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(layerDescriptorRegistryEClass, LayerDescriptorRegistry.class, "LayerDescriptorRegistry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLayerDescriptorRegistry_LayerDescriptors(), this.getLayerDescriptor(), null, "layerDescriptors", null, 0, -1, LayerDescriptorRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayerDescriptorRegistry_LayerDescriptors(), this.getLayerDescriptor(), null, "layerDescriptors", null, 0, -1, LayerDescriptorRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(layerDescriptorEClass, LayerDescriptor.class, "LayerDescriptor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLayerDescriptor_PropertyRegistry(), this.getPropertyRegistry(), null, "propertyRegistry", null, 1, 1, LayerDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayerDescriptor_PropertyRegistry(), this.getPropertyRegistry(), null, "propertyRegistry", null, 1, 1, LayerDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
 
 		initEClass(layerApplicationFactoryEClass, LayerApplicationFactory.class, "LayerApplicationFactory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLayerApplicationFactory_Application(), this.getLayersStackApplication(), this.getLayersStackApplication_Factory(), "application", null, 0, 1, LayerApplicationFactory.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayerApplicationFactory_Application(), this.getLayersStackApplication(), this.getLayersStackApplication_Factory(), "application", null, 0, 1, LayerApplicationFactory.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(propertySetterRegistryEClass, PropertySetterRegistry.class, "PropertySetterRegistry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPropertySetterRegistry_PropertySetters(), this.getPropertySetter(), null, "propertySetters", null, 0, -1, PropertySetterRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPropertySetterRegistry_SetterMap(), this.getStringToPropertySetter(), null, "setterMap", null, 0, -1, PropertySetterRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getPropertySetterRegistry_Application(), this.getLayersStackApplication(), this.getLayersStackApplication_PropertySetterRegistry(), "application", null, 0, 1, PropertySetterRegistry.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPropertySetterRegistry_PropertySetters(), this.getPropertySetter(), null, "propertySetters", null, 0, -1, PropertySetterRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertySetterRegistry_SetterMap(), this.getStringToPropertySetter(), null, "setterMap", null, 0, -1, PropertySetterRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPropertySetterRegistry_Application(), this.getLayersStackApplication(), this.getLayersStackApplication_PropertySetterRegistry(), "application", null, 0, 1, PropertySetterRegistry.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getPropertySetterRegistry__GetPropertySetter__Property(), this.getPropertySetter(), "getPropertySetter", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getProperty(), "property", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -3544,10 +4136,14 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 		initEReference(getStringToPropertySetter_Value(), this.getPropertySetter(), null, "value", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(layerOperatorDescriptorRegistryEClass, LayerOperatorDescriptorRegistry.class, "LayerOperatorDescriptorRegistry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLayerOperatorDescriptorRegistry_Descriptors(), this.getLayerOperatorDescriptor(), null, "descriptors", null, 0, -1, LayerOperatorDescriptorRegistry.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLayerOperatorDescriptorRegistry_PropertyOperators(), this.getPropertyOperator(), null, "propertyOperators", null, 0, -1, LayerOperatorDescriptorRegistry.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLayerOperatorDescriptorRegistry_PropertyCollectionSize(), this.getint(), "propertyCollectionSize", null, 1, 1, LayerOperatorDescriptorRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLayerOperatorDescriptorRegistry_DefaultOperator(), this.getDefaultPropertyOperator(), null, "defaultOperator", null, 1, 1, LayerOperatorDescriptorRegistry.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayerOperatorDescriptorRegistry_Descriptors(), this.getLayerOperatorDescriptor(), null, "descriptors", null, 0, -1, LayerOperatorDescriptorRegistry.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayerOperatorDescriptorRegistry_PropertyOperators(), this.getPropertyOperator(), null, "propertyOperators", null, 0, -1, LayerOperatorDescriptorRegistry.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLayerOperatorDescriptorRegistry_PropertyCollectionSize(), this.getint(), "propertyCollectionSize", null, 1, 1, LayerOperatorDescriptorRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayerOperatorDescriptorRegistry_DefaultOperator(), this.getDefaultPropertyOperator(), null, "defaultOperator", null, 1, 1, LayerOperatorDescriptorRegistry.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getLayerOperatorDescriptorRegistry__AddLayerOperatorDescriptor__LayerOperatorDescriptor(), null, "addLayerOperatorDescriptor", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getLayerOperatorDescriptor(), "descriptor", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -3574,7 +4170,8 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 		addEException(op, this.getLayersException());
 
 		initEClass(layerOperatorDescriptorEClass, LayerOperatorDescriptor.class, "LayerOperatorDescriptor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLayerOperatorDescriptor_PropertyOperators(), this.getPropertyOperator(), null, "propertyOperators", null, 0, -1, LayerOperatorDescriptor.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLayerOperatorDescriptor_PropertyOperators(), this.getPropertyOperator(), null, "propertyOperators", null, 0, -1, LayerOperatorDescriptor.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLayerOperatorDescriptor_Name(), this.getString(), "name", null, 1, 1, LayerOperatorDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getLayerOperatorDescriptor__GetPropertyOperator__Property(), this.getPropertyOperator(), "getPropertyOperator", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -3599,8 +4196,10 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 		addEException(op, this.getLayersException());
 
 		initEClass(abstractLayerOperatorEClass, AbstractLayerOperator.class, "AbstractLayerOperator", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAbstractLayerOperator_LayerOperatorDescriptor(), this.getLayerOperatorDescriptor(), null, "layerOperatorDescriptor", null, 1, 1, AbstractLayerOperator.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getAbstractLayerOperator_LayerOperatorDescriptorName(), this.getString(), "layerOperatorDescriptorName", null, 1, 1, AbstractLayerOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAbstractLayerOperator_LayerOperatorDescriptor(), this.getLayerOperatorDescriptor(), null, "layerOperatorDescriptor", null, 1, 1, AbstractLayerOperator.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAbstractLayerOperator_LayerOperatorDescriptorName(), this.getString(), "layerOperatorDescriptorName", null, 1, 1, AbstractLayerOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getAbstractLayerOperator__IsDescriptorSet(), this.getboolean(), "isDescriptorSet", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -3617,11 +4216,15 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 		initEClass(defaultPropertyOperatorEClass, DefaultPropertyOperator.class, "DefaultPropertyOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(abstractLayerEClass, AbstractLayer.class, "AbstractLayer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAbstractLayer_PropertyValues(), this.getTypeInstance(), null, "propertyValues", null, 0, -1, AbstractLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractLayer_PropertyValueMap(), this.getStringToTypeInstanceMap(), null, "propertyValueMap", null, 0, -1, AbstractLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getAbstractLayer_LayerDescriptor(), this.getLayerDescriptor(), null, "layerDescriptor", null, 1, 1, AbstractLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAbstractLayer_PropertyValues(), this.getTypeInstance(), null, "propertyValues", null, 0, -1, AbstractLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getAbstractLayer_PropertyValueMap(), this.getStringToTypeInstanceMap(), null, "propertyValueMap", null, 0, -1, AbstractLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAbstractLayer_LayerDescriptor(), this.getLayerDescriptor(), null, "layerDescriptor", null, 1, 1, AbstractLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
 		initEReference(getAbstractLayer_Views(), theNotationPackage.getView(), null, "views", null, 0, -1, AbstractLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getAbstractLayer_AttachedProperties(), this.getProperty(), null, "attachedProperties", null, 0, -1, AbstractLayer.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getAbstractLayer_AttachedProperties(), this.getProperty(), null, "attachedProperties", null, 0, -1, AbstractLayer.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED,
+				!IS_ORDERED);
 
 		op = initEOperation(getAbstractLayer__AddPropertyInstance__Property(), this.getTypeInstance(), "addPropertyInstance", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getProperty(), "property", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -3765,7 +4368,8 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 
 		initEClass(customPropertyOperatorEClass, CustomPropertyOperator.class, "CustomPropertyOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomPropertyOperator_Classname(), this.getString(), "classname", null, 1, 1, CustomPropertyOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCustomPropertyOperator_OperatorInstance(), this.getCustomPropertyOpertorInstance(), "operatorInstance", null, 1, 1, CustomPropertyOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCustomPropertyOperator_OperatorInstance(), this.getCustomPropertyOpertorInstance(), "operatorInstance", null, 1, 1, CustomPropertyOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCustomPropertyOperator_ClassBundleID(), this.getString(), "classBundleID", null, 1, 1, CustomPropertyOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getCustomPropertyOperator__ResetOperatorInstance(), null, "resetOperatorInstance", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -3812,22 +4416,21 @@ public class LayersPackageImpl extends EPackageImpl implements LayersPackage {
 	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";															
-		addAnnotation
-		  (badStateExceptionEDataType, 
-		   source, 
-		   new String[] {
-			 "baseType", "LayersException"
-		   });		
-		addAnnotation
-		  (notFoundExceptionEDataType, 
-		   source, 
-		   new String[] {
-			 "baseType", "LayersException"
-		   });	
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+		addAnnotation(badStateExceptionEDataType,
+				source,
+				new String[] {
+						"baseType", "LayersException"
+				});
+		addAnnotation(notFoundExceptionEDataType,
+				source,
+				new String[] {
+						"baseType", "LayersException"
+				});
 	}
 
-} //LayersPackageImpl
+} // LayersPackageImpl

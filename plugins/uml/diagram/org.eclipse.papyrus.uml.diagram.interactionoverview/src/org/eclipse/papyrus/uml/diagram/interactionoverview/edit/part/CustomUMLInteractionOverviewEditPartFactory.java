@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,11 +21,11 @@ public class CustomUMLInteractionOverviewEditPartFactory extends CustomUMLEditPa
 
 	@Override
 	public EditPart createEditPart(final EditPart context, final Object model) {
-		if(model instanceof View) {
-			final View view = (View)model;
+		if (model instanceof View) {
+			final View view = (View) model;
 			int visualID = org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry.getVisualID(view);
-			if(visualID != -1) {
-				switch(visualID) {
+			if (visualID != -1) {
+				switch (visualID) {
 				case ActivityEditPart.VISUAL_ID:// 2001
 					return new CustomActivityEditPartTN(view);
 				case CallBehaviorActionEditPart.VISUAL_ID:// 3008
@@ -33,7 +33,7 @@ public class CustomUMLInteractionOverviewEditPartFactory extends CustomUMLEditPa
 				case CallBehaviorActionNameEditPart.VISUAL_ID:
 					return new CustomInteractionUseNameEditPart(view);// 5004
 				case CallBehaviorActionAsInteractionEditPart.VISUAL_ID:
-					return new CallBehaviorActionAsInteractionEditPart(view);//5000
+					return new CallBehaviorActionAsInteractionEditPart(view);// 5000
 				default:
 					// when adding cases to this switch, also add the corresponding
 					// IDs in the extension
@@ -41,9 +41,9 @@ public class CustomUMLInteractionOverviewEditPartFactory extends CustomUMLEditPa
 				}
 			} else {
 				visualID = org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry.getVisualID(view);
-				switch(visualID) {
+				switch (visualID) {
 				case CallBehaviorActionAsInteractionEditPart.VISUAL_ID:
-					return new CallBehaviorActionAsInteractionEditPart(view);//5000
+					return new CallBehaviorActionAsInteractionEditPart(view);// 5000
 				default:
 				}
 			}

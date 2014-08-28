@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,11 +50,11 @@ public class CollaborationHelperAdvice extends AbstractEditHelperAdvice {
 	protected ICommand getBeforeDestroyDependentsCommand(DestroyDependentsRequest request) {
 		List<EObject> dependentsToDestroy = new ArrayList<EObject>();
 
-		Collaboration collaboration = (Collaboration)request.getElementToDestroy();
+		Collaboration collaboration = (Collaboration) request.getElementToDestroy();
 		dependentsToDestroy.addAll(getRelatedRoleBindings(collaboration, null));
 
 		// return command to destroy dependents
-		if(!dependentsToDestroy.isEmpty()) {
+		if (!dependentsToDestroy.isEmpty()) {
 			return request.getDestroyDependentsCommand(dependentsToDestroy);
 		}
 
@@ -71,17 +71,17 @@ public class CollaborationHelperAdvice extends AbstractEditHelperAdvice {
 		EObject elementToEdit = request.getContainer();
 
 		// Test if current destroy reference is removing a Role from Collaboration role, and destroy related role bindings
-		if((elementToEdit instanceof Collaboration) && (request.getContainingFeature() == UMLPackage.eINSTANCE.getCollaboration_CollaborationRole())) {
+		if ((elementToEdit instanceof Collaboration) && (request.getContainingFeature() == UMLPackage.eINSTANCE.getCollaboration_CollaborationRole())) {
 
-			Collaboration collaboration = (Collaboration)elementToEdit;
+			Collaboration collaboration = (Collaboration) elementToEdit;
 
 			// Parse relatedBindings
-			Iterator<Dependency> bindingsIt = getRelatedRoleBindings(collaboration, (ConnectableElement)request.getReferencedObject()).iterator();
-			while(bindingsIt.hasNext()) {
+			Iterator<Dependency> bindingsIt = getRelatedRoleBindings(collaboration, (ConnectableElement) request.getReferencedObject()).iterator();
+			while (bindingsIt.hasNext()) {
 				Dependency binding = bindingsIt.next();
 
 				IElementEditService provider = ElementEditServiceUtils.getCommandProvider(binding.eContainer());
-				if(provider != null) {
+				if (provider != null) {
 
 					// Retrieve delete command from the Element Edit service
 					DestroyElementRequest req = new DestroyElementRequest(binding, false);
@@ -93,7 +93,7 @@ public class CollaborationHelperAdvice extends AbstractEditHelperAdvice {
 			}
 		}
 
-		if(gmfCommand != null) {
+		if (gmfCommand != null) {
 			gmfCommand = gmfCommand.reduce();
 		}
 
@@ -110,31 +110,31 @@ public class CollaborationHelperAdvice extends AbstractEditHelperAdvice {
 		EObject elementToEdit = request.getElementToEdit();
 
 		// Test if current destroy reference is removing a Role from Collaboration role, and destroy related role bindings
-		if((elementToEdit instanceof Collaboration) && (request.getFeature() == UMLPackage.eINSTANCE.getCollaboration_CollaborationRole())) {
+		if ((elementToEdit instanceof Collaboration) && (request.getFeature() == UMLPackage.eINSTANCE.getCollaboration_CollaborationRole())) {
 
-			Collaboration collaboration = (Collaboration)elementToEdit;
+			Collaboration collaboration = (Collaboration) elementToEdit;
 
 			// Parse removed roles and find related RoleBindings that need to be deleted
 			Set<ConnectableElement> deletedRoles = new HashSet<ConnectableElement>();
 			deletedRoles.addAll(collaboration.getRoles());
-			if(request.getValue() instanceof ConnectableElement) {
-				deletedRoles.remove((ConnectableElement)request.getValue());
-			} else if(request.getValue() instanceof List<?>) {
-				deletedRoles.removeAll((List<?>)request.getValue());
+			if (request.getValue() instanceof ConnectableElement) {
+				deletedRoles.remove(request.getValue());
+			} else if (request.getValue() instanceof List<?>) {
+				deletedRoles.removeAll((List<?>) request.getValue());
 			}
 
 			// Parse roles and create deletion command for related bindings
 			Iterator<ConnectableElement> it = deletedRoles.iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				ConnectableElement role = it.next();
 
 				// Parse relatedBindings
 				Iterator<Dependency> bindingsIt = getRelatedRoleBindings(collaboration, role).iterator();
-				while(bindingsIt.hasNext()) {
+				while (bindingsIt.hasNext()) {
 					Dependency binding = bindingsIt.next();
 
 					IElementEditService provider = ElementEditServiceUtils.getCommandProvider(binding.eContainer());
-					if(provider != null) {
+					if (provider != null) {
 
 						// Retrieve delete command from the Element Edit service
 						DestroyElementRequest req = new DestroyElementRequest(binding, false);
@@ -147,7 +147,7 @@ public class CollaborationHelperAdvice extends AbstractEditHelperAdvice {
 			}
 		}
 
-		if(gmfCommand != null) {
+		if (gmfCommand != null) {
 			gmfCommand = gmfCommand.reduce();
 		}
 
@@ -158,11 +158,11 @@ public class CollaborationHelperAdvice extends AbstractEditHelperAdvice {
 	 * <pre>
 	 * This method retrieve all the role bindings related to a specific role.
 	 * </pre>
-	 * 
+	 *
 	 * @param collaboration
-	 *        the {@link Collaboration} owning the role
+	 *            the {@link Collaboration} owning the role
 	 * @param role
-	 *        the role (if null, all roles are considered)
+	 *            the role (if null, all roles are considered)
 	 * @return role bindings connecting the role
 	 */
 	private Set<Dependency> getRelatedRoleBindings(Collaboration collaboration, ConnectableElement role) {
@@ -174,17 +174,17 @@ public class CollaborationHelperAdvice extends AbstractEditHelperAdvice {
 
 		Iterator<?> it = refs.iterator();
 
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			Object object = it.next();
-			if(object instanceof CollaborationUse) {
+			if (object instanceof CollaborationUse) {
 
-				CollaborationUse collaborationUse = (CollaborationUse)object;
+				CollaborationUse collaborationUse = (CollaborationUse) object;
 
 				Iterator<Dependency> itBindings = collaborationUse.getRoleBindings().iterator();
-				while(itBindings.hasNext()) {
+				while (itBindings.hasNext()) {
 					Dependency roleBinding = itBindings.next();
 
-					if((role == null) || (roleBinding.getClients().contains(role))) {
+					if ((role == null) || (roleBinding.getClients().contains(role))) {
 						roleBindings.add(roleBinding);
 					}
 				}

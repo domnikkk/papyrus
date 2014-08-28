@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -14,7 +14,7 @@ import org.eclipse.papyrus.xwt.IValidationRule;
 
 /**
  * Abstract implementation of {@link IValidationRule}
- * 
+ *
  * @author hceylan
  */
 public abstract class AbstractValidationRule implements IValidationRule {
@@ -28,7 +28,7 @@ public abstract class AbstractValidationRule implements IValidationRule {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IValueValidator#getBindingMode()
 	 */
 	public Direction getBindingMode() {
@@ -37,7 +37,7 @@ public abstract class AbstractValidationRule implements IValidationRule {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IValueValidator#getPhase()
 	 */
 	public Phase getPhase() {

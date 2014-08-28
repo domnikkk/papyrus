@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,14 +28,15 @@ import org.eclipse.papyrus.views.modelexplorer.queries.AbstractEditorContainerQu
 /** Get the collection of all contained tables */
 public class GetContainedTables extends AbstractEditorContainerQuery implements IJavaQuery2<EObject, Collection<Table>> {
 
+	@Override
 	public Collection<Table> evaluate(EObject source, IParameterValueList2 parameterValues, IFacetManager facetManager) throws DerivedTypedElementException {
 		List<Table> result = new ArrayList<Table>();
 		Iterator<EObject> roots = NavigatorUtils.getNotationRoots(source);
-		if(roots == null) {
+		if (roots == null) {
 			return result;
 		}
 
-		while(roots.hasNext()) {
+		while (roots.hasNext()) {
 			EObject root = roots.next();
 			if (root instanceof Table) {
 				Table table = (Table) root;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SchedulableResource#getSchedParams <em>Sched Params</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SchedulableResource#getDependentScheduler <em>Dependent Scheduler</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SchedulableResource#getHost <em>Host</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SchedulableResource#getSchedParams <em>Sched Params</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SchedulableResource#getDependentScheduler <em>Dependent Scheduler</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SchedulableResource#getHost <em>Host</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,10 +39,10 @@ public interface SchedulableResource extends Resource {
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Sched Params</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Sched Params</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Sched Params</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getSchedulableResource_SchedParams()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.SchedParameters" ordered="false"
@@ -55,10 +55,10 @@ public interface SchedulableResource extends Resource {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SecondaryScheduler#getVirtualProcessingUnits <em>Virtual Processing Units</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Dependent Scheduler</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Dependent Scheduler</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Dependent Scheduler</em>' reference.
 	 * @see #setDependentScheduler(SecondaryScheduler)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getSchedulableResource_DependentScheduler()
@@ -72,7 +72,9 @@ public interface SchedulableResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SchedulableResource#getDependentScheduler <em>Dependent Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dependent Scheduler</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Dependent Scheduler</em>' reference.
 	 * @see #getDependentScheduler()
 	 * @generated
 	 */
@@ -83,10 +85,10 @@ public interface SchedulableResource extends Resource {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Scheduler#getSchedulableResources <em>Schedulable Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Host</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Host</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Host</em>' reference.
 	 * @see #setHost(Scheduler)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getSchedulableResource_Host()
@@ -100,7 +102,9 @@ public interface SchedulableResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SchedulableResource#getHost <em>Host</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Host</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Host</em>' reference.
 	 * @see #getHost()
 	 * @generated
 	 */

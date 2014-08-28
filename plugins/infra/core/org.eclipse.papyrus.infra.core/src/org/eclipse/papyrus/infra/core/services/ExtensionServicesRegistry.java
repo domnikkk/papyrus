@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 LIFL and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.papyrus.infra.core.services.ServiceDescriptor.ServiceTypeKind
 /**
  * ServiceRegistry reading and registering services declared in Eclipse
  * Extensions.
- * 
+ *
  * @author dumoulin
- * 
+ *
  */
 public class ExtensionServicesRegistry extends ServicesRegistry {
 
@@ -56,7 +56,7 @@ public class ExtensionServicesRegistry extends ServicesRegistry {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	public ExtensionServicesRegistry(String extensionPointNamespace) throws ServiceException {
@@ -66,7 +66,7 @@ public class ExtensionServicesRegistry extends ServicesRegistry {
 
 	/**
 	 * Register the services declared in Eclipse Extension.
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	private void registerDeclaredExtensions() throws ServiceException {
@@ -77,9 +77,9 @@ public class ExtensionServicesRegistry extends ServicesRegistry {
 		// Reading data from plugins
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(extensionPointNamespace, SERVICE_EXTENSION_ID);
 
-		for(IConfigurationElement ele : configElements) {
+		for (IConfigurationElement ele : configElements) {
 			ServiceDescriptor desc;
-			if(SERVICE_EXTENSIONPOINT.equals(ele.getName())) {
+			if (SERVICE_EXTENSIONPOINT.equals(ele.getName())) {
 				// Read a Service
 				try {
 					desc = readServiceDescriptor(ele);
@@ -88,11 +88,12 @@ public class ExtensionServicesRegistry extends ServicesRegistry {
 					descriptors.add(desc);
 				} catch (ServiceException e) {
 					// record exceptions
-					if(exceptions == null)
+					if (exceptions == null) {
 						exceptions = new ArrayList<ServiceException>();
+					}
 					exceptions.add(e);
 				}
-			} else if(SERVICE_FACTORY_ELEMENT_NAME.equals(ele.getName())) {
+			} else if (SERVICE_FACTORY_ELEMENT_NAME.equals(ele.getName())) {
 				// Read a Service Factory
 				try {
 					desc = readServiceDescriptor(ele);
@@ -101,24 +102,27 @@ public class ExtensionServicesRegistry extends ServicesRegistry {
 					descriptors.add(desc);
 				} catch (ServiceException e) {
 					// record exceptions
-					if(exceptions == null)
+					if (exceptions == null) {
 						exceptions = new ArrayList<ServiceException>();
+					}
 					exceptions.add(e);
 				}
 			}
 		}
 
 		// Add found descriptors
-		for(ServiceDescriptor desc : descriptors) {
+		for (ServiceDescriptor desc : descriptors) {
 			add(desc);
 		}
 
 		// Throw exceptions if pb encountered
-		if(exceptions != null) {
-			if(exceptions.size() == 1)
+		if (exceptions != null) {
+			if (exceptions.size() == 1) {
 				throw exceptions.get(0);
-			else
+			}
+			else {
 				throw new ServiceException("Somme services are not started (first is shown)", exceptions.get(0)); //$NON-NLS-1$
+			}
 
 		}
 
@@ -126,7 +130,7 @@ public class ExtensionServicesRegistry extends ServicesRegistry {
 
 	/**
 	 * Read descriptor values from provided element.
-	 * 
+	 *
 	 * @param ele
 	 * @return
 	 * @throws ServiceException
@@ -138,14 +142,14 @@ public class ExtensionServicesRegistry extends ServicesRegistry {
 
 		// key
 		String key = ele.getAttribute("id");
-		if(key == null || key.length() == 0) {
+		if (key == null || key.length() == 0) {
 			key = serviceClassname;
 		}
 
 		// Service start kind
 		ServiceStartKind serviceStartKind = ServiceStartKind.LAZY;
 		String serviceStartKindStr = ele.getAttribute(STARTKIND_PROPERTY);
-		if(serviceStartKindStr != null && serviceStartKindStr.length() > 0) {
+		if (serviceStartKindStr != null && serviceStartKindStr.length() > 0) {
 			try {
 				serviceStartKind = ServiceStartKind.valueOf(serviceStartKindStr.toUpperCase());
 			} catch (IllegalArgumentException e) {
@@ -157,7 +161,7 @@ public class ExtensionServicesRegistry extends ServicesRegistry {
 		// priority
 		int priority = 1;
 		String priorityStr = ele.getAttribute("priority");
-		if(priorityStr != null && priorityStr.length() > 0) {
+		if (priorityStr != null && priorityStr.length() > 0) {
 			try {
 				priority = Integer.parseInt(priorityStr);
 			} catch (NumberFormatException e) {
@@ -171,15 +175,16 @@ public class ExtensionServicesRegistry extends ServicesRegistry {
 		ServiceDescriptor desc = new ServiceDescriptor(key, serviceClassname, serviceStartKind, priority);
 		desc.setClassBundleID(ele.getContributor().getName());
 
-		if(keys.size() > 0)
+		if (keys.size() > 0) {
 			desc.setRequiredServiceKeys(keys);
+		}
 
 		return desc;
 	}
 
 	/**
 	 * Add dependsOn keys.
-	 * 
+	 *
 	 * @param parentElement
 	 * @param model
 	 */
@@ -190,15 +195,16 @@ public class ExtensionServicesRegistry extends ServicesRegistry {
 		// Get children
 		IConfigurationElement[] configElements = parentElement.getChildren(DEPENDSON_ELEMENT_NAME);
 
-		for(IConfigurationElement ele : configElements) {
+		for (IConfigurationElement ele : configElements) {
 			String key = ele.getAttribute(DEPENDSON_KEY_ATTRIBUTE_NAME);
-			if(key != null && key.length() > 0) {
+			if (key != null && key.length() > 0) {
 				keys.add(key.trim());
 			}
 		}
 
-		if(keys.size() == 0)
+		if (keys.size() == 0) {
 			return Collections.emptyList();
+		}
 
 		return keys;
 	}

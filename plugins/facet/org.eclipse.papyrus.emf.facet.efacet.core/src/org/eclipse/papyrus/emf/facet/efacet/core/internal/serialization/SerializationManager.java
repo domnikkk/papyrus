@@ -73,8 +73,7 @@ public class SerializationManager {
 	}
 
 	/**
-	 * This method returns the {@link ExtendedEObjectReference} associated with the given
-	 * {@link EObject} if it exists or <code>null</code> if it does not exist.
+	 * This method returns the {@link ExtendedEObjectReference} associated with the given {@link EObject} if it exists or <code>null</code> if it does not exist.
 	 */
 	private static ExtendedEObjectReference getExtendedEObjectReference(final EObject eObject) {
 		ExtendedEObjectReference result = null;
@@ -162,8 +161,7 @@ public class SerializationManager {
 					result = (SingleValuedReferenceInstance) referenceInstance;
 					break;
 				}
-				throw new IllegalStateException(
-						"a single valued non-containment reference should be associated to an instance of SingleValuedReferenceInstance"); //$NON-NLS-1$
+				throw new IllegalStateException("a single valued non-containment reference should be associated to an instance of SingleValuedReferenceInstance"); //$NON-NLS-1$
 			}
 		}
 		return result;
@@ -180,8 +178,7 @@ public class SerializationManager {
 					result = (SingleValuedContainmentReferenceInstance) referenceInstance;
 					break;
 				}
-				throw new IllegalStateException(
-						"a single valued containment reference should be associated to an instance of SingleValuedContainmentReferenceInstance"); //$NON-NLS-1$
+				throw new IllegalStateException("a single valued containment reference should be associated to an instance of SingleValuedContainmentReferenceInstance"); //$NON-NLS-1$
 			}
 		}
 		return result;
@@ -197,8 +194,7 @@ public class SerializationManager {
 					result = (MultiValuedReferenceInstance) referenceInstance;
 					break;
 				}
-				throw new IllegalStateException(
-						"a multi valued non-containment reference should be associated to an instance of MultiValuedReferenceInstance"); //$NON-NLS-1$
+				throw new IllegalStateException("a multi valued non-containment reference should be associated to an instance of MultiValuedReferenceInstance"); //$NON-NLS-1$
 			}
 		}
 		return result;
@@ -214,8 +210,7 @@ public class SerializationManager {
 					result = (MultiValuedContainmentReferenceInstance) referenceInstance;
 					break;
 				}
-				throw new IllegalStateException(
-						"a multi valued containment reference should be associated to an instance of MultiValuedContainmentReferenceInstance"); //$NON-NLS-1$
+				throw new IllegalStateException("a multi valued containment reference should be associated to an instance of MultiValuedContainmentReferenceInstance"); //$NON-NLS-1$
 			}
 		}
 		return result;
@@ -313,11 +308,10 @@ public class SerializationManager {
 	public void setReference(final EObject eObject, final EReference reference, final Object newValue) {
 		final ExtendedEObjectReference extendedEObjectReference = this.getOrCreateExtendedEObjectReference(eObject);
 		if (reference.isMany()) {
-			throw new UnsupportedOperationException(
-					"The given FacetReference is multi-valued : add elements to the list returned by getMultiValuedReference() instead"); //$NON-NLS-1$
+			throw new UnsupportedOperationException("The given FacetReference is multi-valued : add elements to the list returned by getMultiValuedReference() instead"); //$NON-NLS-1$
 		}
 		if (!(newValue instanceof EObject)) {
-			throw new IllegalArgumentException("newValue should be an EObject because eStructuralFeature is an EReference"); //$NON-NLS-1$	
+			throw new IllegalArgumentException("newValue should be an EObject because eStructuralFeature is an EReference"); //$NON-NLS-1$
 		}
 		final EObject newEObjectValue = (EObject) newValue;
 		if (reference.isContainment()) {
@@ -339,7 +333,7 @@ public class SerializationManager {
 		}
 
 	}
-	
+
 	/**
 	 * This method creates a ReferenceInstance in the given {@link ExtendedEObjectReference} with
 	 * the reference {@link EStructuralFeature} and the value {@link Object}.
@@ -372,16 +366,16 @@ public class SerializationManager {
 						SerializationManager.getMultiValuedContainmentReferenceInstance(extendedEObjectReference, eReference);
 				if (referenceInstance == null) {
 					referenceInstance = SerializationManager.createMultiValuedContainmentReferenceInstance(eReference, null, extendedEObjectReference);
-					result = referenceInstance.getOwnedElements();					
+					result = referenceInstance.getOwnedElements();
 				} else {
-					result =  referenceInstance.getOwnedElements();
+					result = referenceInstance.getOwnedElements();
 				}
 			} else {
 				MultiValuedReferenceInstance referenceInstance =
 						SerializationManager.getMultiValuedReferenceInstance(extendedEObjectReference, eReference);
 				if (referenceInstance == null) {
 					referenceInstance = SerializationManager.createMultiValuedReferenceInstance(eReference, null, extendedEObjectReference);
-					result =  referenceInstance.getReferencedElements();
+					result = referenceInstance.getReferencedElements();
 				} else {
 					result = referenceInstance.getReferencedElements();
 				}
@@ -391,7 +385,7 @@ public class SerializationManager {
 		}
 		return result;
 	}
-	
+
 	private static Object getSingleValuedStructuralFeature(final EObject eObject, final EStructuralFeature structuralFeature) {
 		Object result = null;
 		final ExtendedEObjectReference extendedEObjectReference = SerializationManager.getExtendedEObjectReference(eObject);
@@ -419,7 +413,7 @@ public class SerializationManager {
 		}
 		return result;
 	}
-	
+
 	public Object getNotDerivedValue(final EObject eObject, final EStructuralFeature structuralFeature) {
 		Object result;
 		if (structuralFeature.isMany()) {

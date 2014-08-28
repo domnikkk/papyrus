@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -59,7 +59,7 @@ public class ECoreUtilsTest {
 
 		TypeInstance instance2 = LayersFactory.eINSTANCE.createBooleanInstance();
 		layer.getPropertyValueMap().put("prop1", instance2);
-		
+
 		// Check ancestor
 		assertTrue("ancestor found", ECoreUtils.isAncestorInstanceOf(instance2, LayersPackage.eINSTANCE.getTypeInstance()));
 		assertTrue("ancestor found", ECoreUtils.isAncestorInstanceOf(instance2, LayersPackage.eINSTANCE.getLayer()));
@@ -71,7 +71,8 @@ public class ECoreUtilsTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.util.ECoreUtils#lookupAncestorOfType(org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EClass)}.
-	 * @throws LayersException 
+	 *
+	 * @throws LayersException
 	 */
 	@Test
 	public void testLookupAncestorOfType() throws LayersException {
@@ -82,14 +83,14 @@ public class ECoreUtilsTest {
 
 		TypeInstance instance2 = LayersFactory.eINSTANCE.createBooleanInstance();
 		layer.getPropertyValueMap().put("prop1", instance2);
-		
+
 		// Check ancestor
 		assertEquals("ancestor found", instance2, ECoreUtils.lookupAncestorOfType(instance2, LayersPackage.eINSTANCE.getTypeInstance()));
 		assertEquals("ancestor found", layer, ECoreUtils.lookupAncestorOfType(instance2, LayersPackage.eINSTANCE.getLayer()));
 		assertEquals("ancestor found", layerOperator, ECoreUtils.lookupAncestorOfType(instance2, LayersPackage.eINSTANCE.getTopLayerOperator()));
 		assertEquals("ancestor found", layerOperator, ECoreUtils.lookupAncestorOfType(instance2, LayersPackage.eINSTANCE.getLayerOperator()));
 
-		 try {
+		try {
 			ECoreUtils.lookupAncestorOfType(instance2, LayersPackage.eINSTANCE.getLayersStack());
 			fail("Exception is thrown");
 		} catch (LayersException e) {

@@ -7,7 +7,7 @@ import static org.junit.Assert.fail;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.services.edit.internal.ElementEditServiceProviderFactory;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditServiceProvider;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.junit.Test;
 
 /**

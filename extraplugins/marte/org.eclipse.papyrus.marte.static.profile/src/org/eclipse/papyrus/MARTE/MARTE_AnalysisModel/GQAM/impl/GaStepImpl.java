@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,18 +37,18 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SchedulableResource;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getIsAtomic <em>Is Atomic</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getBlockT <em>Block T</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getRep <em>Rep</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getProb <em>Prob</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getPriority <em>Priority</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getConcurRes <em>Concur Res</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getHost <em>Host</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getServDemand <em>Serv Demand</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getServCount <em>Serv Count</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getSelfDelay <em>Self Delay</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getScenario <em>Scenario</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getChildScenario <em>Child Scenario</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getIsAtomic <em>Is Atomic</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getBlockT <em>Block T</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getRep <em>Rep</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getProb <em>Prob</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getPriority <em>Priority</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getConcurRes <em>Concur Res</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getHost <em>Host</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getServDemand <em>Serv Demand</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getServCount <em>Serv Count</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getSelfDelay <em>Self Delay</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getScenario <em>Scenario</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaStepImpl#getChildScenario <em>Child Scenario</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +59,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The default value of the '{@link #getIsAtomic() <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIsAtomic()
 	 * @generated
 	 * @ordered
@@ -69,6 +70,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getIsAtomic() <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getIsAtomic()
 	 * @generated
 	 * @ordered
@@ -79,6 +81,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The default value of the '{@link #getBlockT() <em>Block T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBlockT()
 	 * @generated
 	 * @ordered
@@ -89,6 +92,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getBlockT() <em>Block T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBlockT()
 	 * @generated
 	 * @ordered
@@ -99,6 +103,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The default value of the '{@link #getRep() <em>Rep</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRep()
 	 * @generated
 	 * @ordered
@@ -109,6 +114,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getRep() <em>Rep</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRep()
 	 * @generated
 	 * @ordered
@@ -119,6 +125,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The default value of the '{@link #getProb() <em>Prob</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getProb()
 	 * @generated
 	 * @ordered
@@ -129,6 +136,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getProb() <em>Prob</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getProb()
 	 * @generated
 	 * @ordered
@@ -139,6 +147,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -149,6 +158,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -159,6 +169,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getConcurRes() <em>Concur Res</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getConcurRes()
 	 * @generated
 	 * @ordered
@@ -169,6 +180,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getHost() <em>Host</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getHost()
 	 * @generated
 	 * @ordered
@@ -179,6 +191,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getServDemand() <em>Serv Demand</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getServDemand()
 	 * @generated
 	 * @ordered
@@ -189,6 +202,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getServCount() <em>Serv Count</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getServCount()
 	 * @generated
 	 * @ordered
@@ -199,6 +213,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The default value of the '{@link #getSelfDelay() <em>Self Delay</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSelfDelay()
 	 * @generated
 	 * @ordered
@@ -209,6 +224,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getSelfDelay() <em>Self Delay</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSelfDelay()
 	 * @generated
 	 * @ordered
@@ -219,6 +235,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getScenario() <em>Scenario</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getScenario()
 	 * @generated
 	 * @ordered
@@ -229,6 +246,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getChildScenario() <em>Child Scenario</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getChildScenario()
 	 * @generated
 	 * @ordered
@@ -238,6 +256,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected GaStepImpl() {
@@ -247,6 +266,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,8 +277,10 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getIsAtomic() {
 		return isAtomic;
 	}
@@ -266,20 +288,25 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsAtomic(String newIsAtomic) {
 		String oldIsAtomic = isAtomic;
 		isAtomic = newIsAtomic;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_STEP__IS_ATOMIC, oldIsAtomic, isAtomic));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getBlockT() {
 		return blockT;
 	}
@@ -287,20 +314,25 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBlockT(String newBlockT) {
 		String oldBlockT = blockT;
 		blockT = newBlockT;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_STEP__BLOCK_T, oldBlockT, blockT));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getRep() {
 		return rep;
 	}
@@ -308,20 +340,25 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setRep(String newRep) {
 		String oldRep = rep;
 		rep = newRep;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_STEP__REP, oldRep, rep));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getProb() {
 		return prob;
 	}
@@ -329,20 +366,25 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setProb(String newProb) {
 		String oldProb = prob;
 		prob = newProb;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_STEP__PROB, oldProb, prob));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getPriority() {
 		return priority;
 	}
@@ -350,27 +392,33 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setPriority(String newPriority) {
 		String oldPriority = priority;
 		priority = newPriority;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_STEP__PRIORITY, oldPriority, priority));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public SchedulableResource getConcurRes() {
 		if (concurRes != null && concurRes.eIsProxy()) {
-			InternalEObject oldConcurRes = (InternalEObject)concurRes;
-			concurRes = (SchedulableResource)eResolveProxy(oldConcurRes);
+			InternalEObject oldConcurRes = (InternalEObject) concurRes;
+			concurRes = (SchedulableResource) eResolveProxy(oldConcurRes);
 			if (concurRes != oldConcurRes) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_STEP__CONCUR_RES, oldConcurRes, concurRes));
+				}
 			}
 		}
 		return concurRes;
@@ -379,6 +427,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SchedulableResource basicGetConcurRes() {
@@ -388,27 +437,33 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setConcurRes(SchedulableResource newConcurRes) {
 		SchedulableResource oldConcurRes = concurRes;
 		concurRes = newConcurRes;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_STEP__CONCUR_RES, oldConcurRes, concurRes));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaExecHost getHost() {
 		if (host != null && host.eIsProxy()) {
-			InternalEObject oldHost = (InternalEObject)host;
-			host = (GaExecHost)eResolveProxy(oldHost);
+			InternalEObject oldHost = (InternalEObject) host;
+			host = (GaExecHost) eResolveProxy(oldHost);
 			if (host != oldHost) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_STEP__HOST, oldHost, host));
+				}
 			}
 		}
 		return host;
@@ -417,6 +472,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public GaExecHost basicGetHost() {
@@ -426,20 +482,25 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setHost(GaExecHost newHost) {
 		GaExecHost oldHost = host;
 		host = newHost;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_STEP__HOST, oldHost, host));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<GaRequestedService> getServDemand() {
 		if (servDemand == null) {
 			servDemand = new EObjectResolvingEList<GaRequestedService>(GaRequestedService.class, this, GQAMPackage.GA_STEP__SERV_DEMAND);
@@ -450,8 +511,10 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<String> getServCount() {
 		if (servCount == null) {
 			servCount = new EDataTypeUniqueEList<String>(String.class, this, GQAMPackage.GA_STEP__SERV_COUNT);
@@ -462,8 +525,10 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getSelfDelay() {
 		return selfDelay;
 	}
@@ -471,27 +536,33 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setSelfDelay(String newSelfDelay) {
 		String oldSelfDelay = selfDelay;
 		selfDelay = newSelfDelay;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_STEP__SELF_DELAY, oldSelfDelay, selfDelay));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaScenario getScenario() {
 		if (scenario != null && scenario.eIsProxy()) {
-			InternalEObject oldScenario = (InternalEObject)scenario;
-			scenario = (GaScenario)eResolveProxy(oldScenario);
+			InternalEObject oldScenario = (InternalEObject) scenario;
+			scenario = (GaScenario) eResolveProxy(oldScenario);
 			if (scenario != oldScenario) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_STEP__SCENARIO, oldScenario, scenario));
+				}
 			}
 		}
 		return scenario;
@@ -500,6 +571,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public GaScenario basicGetScenario() {
@@ -509,6 +581,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetScenario(GaScenario newScenario, NotificationChain msgs) {
@@ -516,7 +589,11 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 		scenario = newScenario;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_STEP__SCENARIO, oldScenario, newScenario);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -524,34 +601,44 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setScenario(GaScenario newScenario) {
 		if (newScenario != scenario) {
 			NotificationChain msgs = null;
-			if (scenario != null)
-				msgs = ((InternalEObject)scenario).eInverseRemove(this, GQAMPackage.GA_SCENARIO__STEPS, GaScenario.class, msgs);
-			if (newScenario != null)
-				msgs = ((InternalEObject)newScenario).eInverseAdd(this, GQAMPackage.GA_SCENARIO__STEPS, GaScenario.class, msgs);
+			if (scenario != null) {
+				msgs = ((InternalEObject) scenario).eInverseRemove(this, GQAMPackage.GA_SCENARIO__STEPS, GaScenario.class, msgs);
+			}
+			if (newScenario != null) {
+				msgs = ((InternalEObject) newScenario).eInverseAdd(this, GQAMPackage.GA_SCENARIO__STEPS, GaScenario.class, msgs);
+			}
 			msgs = basicSetScenario(newScenario, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_STEP__SCENARIO, newScenario, newScenario));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaScenario getChildScenario() {
 		if (childScenario != null && childScenario.eIsProxy()) {
-			InternalEObject oldChildScenario = (InternalEObject)childScenario;
-			childScenario = (GaScenario)eResolveProxy(oldChildScenario);
+			InternalEObject oldChildScenario = (InternalEObject) childScenario;
+			childScenario = (GaScenario) eResolveProxy(oldChildScenario);
 			if (childScenario != oldChildScenario) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_STEP__CHILD_SCENARIO, oldChildScenario, childScenario));
+				}
 			}
 		}
 		return childScenario;
@@ -560,6 +647,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public GaScenario basicGetChildScenario() {
@@ -569,6 +657,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetChildScenario(GaScenario newChildScenario, NotificationChain msgs) {
@@ -576,7 +665,11 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 		childScenario = newChildScenario;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_STEP__CHILD_SCENARIO, oldChildScenario, newChildScenario);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -584,38 +677,48 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setChildScenario(GaScenario newChildScenario) {
 		if (newChildScenario != childScenario) {
 			NotificationChain msgs = null;
-			if (childScenario != null)
-				msgs = ((InternalEObject)childScenario).eInverseRemove(this, GQAMPackage.GA_SCENARIO__PARENT_STEP, GaScenario.class, msgs);
-			if (newChildScenario != null)
-				msgs = ((InternalEObject)newChildScenario).eInverseAdd(this, GQAMPackage.GA_SCENARIO__PARENT_STEP, GaScenario.class, msgs);
+			if (childScenario != null) {
+				msgs = ((InternalEObject) childScenario).eInverseRemove(this, GQAMPackage.GA_SCENARIO__PARENT_STEP, GaScenario.class, msgs);
+			}
+			if (newChildScenario != null) {
+				msgs = ((InternalEObject) newChildScenario).eInverseAdd(this, GQAMPackage.GA_SCENARIO__PARENT_STEP, GaScenario.class, msgs);
+			}
 			msgs = basicSetChildScenario(newChildScenario, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_STEP__CHILD_SCENARIO, newChildScenario, newChildScenario));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GQAMPackage.GA_STEP__SCENARIO:
-				if (scenario != null)
-					msgs = ((InternalEObject)scenario).eInverseRemove(this, GQAMPackage.GA_SCENARIO__STEPS, GaScenario.class, msgs);
-				return basicSetScenario((GaScenario)otherEnd, msgs);
-			case GQAMPackage.GA_STEP__CHILD_SCENARIO:
-				if (childScenario != null)
-					msgs = ((InternalEObject)childScenario).eInverseRemove(this, GQAMPackage.GA_SCENARIO__PARENT_STEP, GaScenario.class, msgs);
-				return basicSetChildScenario((GaScenario)otherEnd, msgs);
+		case GQAMPackage.GA_STEP__SCENARIO:
+			if (scenario != null) {
+				msgs = ((InternalEObject) scenario).eInverseRemove(this, GQAMPackage.GA_SCENARIO__STEPS, GaScenario.class, msgs);
+			}
+			return basicSetScenario((GaScenario) otherEnd, msgs);
+		case GQAMPackage.GA_STEP__CHILD_SCENARIO:
+			if (childScenario != null) {
+				msgs = ((InternalEObject) childScenario).eInverseRemove(this, GQAMPackage.GA_SCENARIO__PARENT_STEP, GaScenario.class, msgs);
+			}
+			return basicSetChildScenario((GaScenario) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -623,15 +726,16 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GQAMPackage.GA_STEP__SCENARIO:
-				return basicSetScenario(null, msgs);
-			case GQAMPackage.GA_STEP__CHILD_SCENARIO:
-				return basicSetChildScenario(null, msgs);
+		case GQAMPackage.GA_STEP__SCENARIO:
+			return basicSetScenario(null, msgs);
+		case GQAMPackage.GA_STEP__CHILD_SCENARIO:
+			return basicSetChildScenario(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -639,39 +743,48 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GQAMPackage.GA_STEP__IS_ATOMIC:
-				return getIsAtomic();
-			case GQAMPackage.GA_STEP__BLOCK_T:
-				return getBlockT();
-			case GQAMPackage.GA_STEP__REP:
-				return getRep();
-			case GQAMPackage.GA_STEP__PROB:
-				return getProb();
-			case GQAMPackage.GA_STEP__PRIORITY:
-				return getPriority();
-			case GQAMPackage.GA_STEP__CONCUR_RES:
-				if (resolve) return getConcurRes();
-				return basicGetConcurRes();
-			case GQAMPackage.GA_STEP__HOST:
-				if (resolve) return getHost();
-				return basicGetHost();
-			case GQAMPackage.GA_STEP__SERV_DEMAND:
-				return getServDemand();
-			case GQAMPackage.GA_STEP__SERV_COUNT:
-				return getServCount();
-			case GQAMPackage.GA_STEP__SELF_DELAY:
-				return getSelfDelay();
-			case GQAMPackage.GA_STEP__SCENARIO:
-				if (resolve) return getScenario();
-				return basicGetScenario();
-			case GQAMPackage.GA_STEP__CHILD_SCENARIO:
-				if (resolve) return getChildScenario();
-				return basicGetChildScenario();
+		case GQAMPackage.GA_STEP__IS_ATOMIC:
+			return getIsAtomic();
+		case GQAMPackage.GA_STEP__BLOCK_T:
+			return getBlockT();
+		case GQAMPackage.GA_STEP__REP:
+			return getRep();
+		case GQAMPackage.GA_STEP__PROB:
+			return getProb();
+		case GQAMPackage.GA_STEP__PRIORITY:
+			return getPriority();
+		case GQAMPackage.GA_STEP__CONCUR_RES:
+			if (resolve) {
+				return getConcurRes();
+			}
+			return basicGetConcurRes();
+		case GQAMPackage.GA_STEP__HOST:
+			if (resolve) {
+				return getHost();
+			}
+			return basicGetHost();
+		case GQAMPackage.GA_STEP__SERV_DEMAND:
+			return getServDemand();
+		case GQAMPackage.GA_STEP__SERV_COUNT:
+			return getServCount();
+		case GQAMPackage.GA_STEP__SELF_DELAY:
+			return getSelfDelay();
+		case GQAMPackage.GA_STEP__SCENARIO:
+			if (resolve) {
+				return getScenario();
+			}
+			return basicGetScenario();
+		case GQAMPackage.GA_STEP__CHILD_SCENARIO:
+			if (resolve) {
+				return getChildScenario();
+			}
+			return basicGetChildScenario();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -679,50 +792,51 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GQAMPackage.GA_STEP__IS_ATOMIC:
-				setIsAtomic((String)newValue);
-				return;
-			case GQAMPackage.GA_STEP__BLOCK_T:
-				setBlockT((String)newValue);
-				return;
-			case GQAMPackage.GA_STEP__REP:
-				setRep((String)newValue);
-				return;
-			case GQAMPackage.GA_STEP__PROB:
-				setProb((String)newValue);
-				return;
-			case GQAMPackage.GA_STEP__PRIORITY:
-				setPriority((String)newValue);
-				return;
-			case GQAMPackage.GA_STEP__CONCUR_RES:
-				setConcurRes((SchedulableResource)newValue);
-				return;
-			case GQAMPackage.GA_STEP__HOST:
-				setHost((GaExecHost)newValue);
-				return;
-			case GQAMPackage.GA_STEP__SERV_DEMAND:
-				getServDemand().clear();
-				getServDemand().addAll((Collection<? extends GaRequestedService>)newValue);
-				return;
-			case GQAMPackage.GA_STEP__SERV_COUNT:
-				getServCount().clear();
-				getServCount().addAll((Collection<? extends String>)newValue);
-				return;
-			case GQAMPackage.GA_STEP__SELF_DELAY:
-				setSelfDelay((String)newValue);
-				return;
-			case GQAMPackage.GA_STEP__SCENARIO:
-				setScenario((GaScenario)newValue);
-				return;
-			case GQAMPackage.GA_STEP__CHILD_SCENARIO:
-				setChildScenario((GaScenario)newValue);
-				return;
+		case GQAMPackage.GA_STEP__IS_ATOMIC:
+			setIsAtomic((String) newValue);
+			return;
+		case GQAMPackage.GA_STEP__BLOCK_T:
+			setBlockT((String) newValue);
+			return;
+		case GQAMPackage.GA_STEP__REP:
+			setRep((String) newValue);
+			return;
+		case GQAMPackage.GA_STEP__PROB:
+			setProb((String) newValue);
+			return;
+		case GQAMPackage.GA_STEP__PRIORITY:
+			setPriority((String) newValue);
+			return;
+		case GQAMPackage.GA_STEP__CONCUR_RES:
+			setConcurRes((SchedulableResource) newValue);
+			return;
+		case GQAMPackage.GA_STEP__HOST:
+			setHost((GaExecHost) newValue);
+			return;
+		case GQAMPackage.GA_STEP__SERV_DEMAND:
+			getServDemand().clear();
+			getServDemand().addAll((Collection<? extends GaRequestedService>) newValue);
+			return;
+		case GQAMPackage.GA_STEP__SERV_COUNT:
+			getServCount().clear();
+			getServCount().addAll((Collection<? extends String>) newValue);
+			return;
+		case GQAMPackage.GA_STEP__SELF_DELAY:
+			setSelfDelay((String) newValue);
+			return;
+		case GQAMPackage.GA_STEP__SCENARIO:
+			setScenario((GaScenario) newValue);
+			return;
+		case GQAMPackage.GA_STEP__CHILD_SCENARIO:
+			setChildScenario((GaScenario) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -730,47 +844,48 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_STEP__IS_ATOMIC:
-				setIsAtomic(IS_ATOMIC_EDEFAULT);
-				return;
-			case GQAMPackage.GA_STEP__BLOCK_T:
-				setBlockT(BLOCK_T_EDEFAULT);
-				return;
-			case GQAMPackage.GA_STEP__REP:
-				setRep(REP_EDEFAULT);
-				return;
-			case GQAMPackage.GA_STEP__PROB:
-				setProb(PROB_EDEFAULT);
-				return;
-			case GQAMPackage.GA_STEP__PRIORITY:
-				setPriority(PRIORITY_EDEFAULT);
-				return;
-			case GQAMPackage.GA_STEP__CONCUR_RES:
-				setConcurRes((SchedulableResource)null);
-				return;
-			case GQAMPackage.GA_STEP__HOST:
-				setHost((GaExecHost)null);
-				return;
-			case GQAMPackage.GA_STEP__SERV_DEMAND:
-				getServDemand().clear();
-				return;
-			case GQAMPackage.GA_STEP__SERV_COUNT:
-				getServCount().clear();
-				return;
-			case GQAMPackage.GA_STEP__SELF_DELAY:
-				setSelfDelay(SELF_DELAY_EDEFAULT);
-				return;
-			case GQAMPackage.GA_STEP__SCENARIO:
-				setScenario((GaScenario)null);
-				return;
-			case GQAMPackage.GA_STEP__CHILD_SCENARIO:
-				setChildScenario((GaScenario)null);
-				return;
+		case GQAMPackage.GA_STEP__IS_ATOMIC:
+			setIsAtomic(IS_ATOMIC_EDEFAULT);
+			return;
+		case GQAMPackage.GA_STEP__BLOCK_T:
+			setBlockT(BLOCK_T_EDEFAULT);
+			return;
+		case GQAMPackage.GA_STEP__REP:
+			setRep(REP_EDEFAULT);
+			return;
+		case GQAMPackage.GA_STEP__PROB:
+			setProb(PROB_EDEFAULT);
+			return;
+		case GQAMPackage.GA_STEP__PRIORITY:
+			setPriority(PRIORITY_EDEFAULT);
+			return;
+		case GQAMPackage.GA_STEP__CONCUR_RES:
+			setConcurRes((SchedulableResource) null);
+			return;
+		case GQAMPackage.GA_STEP__HOST:
+			setHost((GaExecHost) null);
+			return;
+		case GQAMPackage.GA_STEP__SERV_DEMAND:
+			getServDemand().clear();
+			return;
+		case GQAMPackage.GA_STEP__SERV_COUNT:
+			getServCount().clear();
+			return;
+		case GQAMPackage.GA_STEP__SELF_DELAY:
+			setSelfDelay(SELF_DELAY_EDEFAULT);
+			return;
+		case GQAMPackage.GA_STEP__SCENARIO:
+			setScenario((GaScenario) null);
+			return;
+		case GQAMPackage.GA_STEP__CHILD_SCENARIO:
+			setChildScenario((GaScenario) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -778,35 +893,36 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_STEP__IS_ATOMIC:
-				return IS_ATOMIC_EDEFAULT == null ? isAtomic != null : !IS_ATOMIC_EDEFAULT.equals(isAtomic);
-			case GQAMPackage.GA_STEP__BLOCK_T:
-				return BLOCK_T_EDEFAULT == null ? blockT != null : !BLOCK_T_EDEFAULT.equals(blockT);
-			case GQAMPackage.GA_STEP__REP:
-				return REP_EDEFAULT == null ? rep != null : !REP_EDEFAULT.equals(rep);
-			case GQAMPackage.GA_STEP__PROB:
-				return PROB_EDEFAULT == null ? prob != null : !PROB_EDEFAULT.equals(prob);
-			case GQAMPackage.GA_STEP__PRIORITY:
-				return PRIORITY_EDEFAULT == null ? priority != null : !PRIORITY_EDEFAULT.equals(priority);
-			case GQAMPackage.GA_STEP__CONCUR_RES:
-				return concurRes != null;
-			case GQAMPackage.GA_STEP__HOST:
-				return host != null;
-			case GQAMPackage.GA_STEP__SERV_DEMAND:
-				return servDemand != null && !servDemand.isEmpty();
-			case GQAMPackage.GA_STEP__SERV_COUNT:
-				return servCount != null && !servCount.isEmpty();
-			case GQAMPackage.GA_STEP__SELF_DELAY:
-				return SELF_DELAY_EDEFAULT == null ? selfDelay != null : !SELF_DELAY_EDEFAULT.equals(selfDelay);
-			case GQAMPackage.GA_STEP__SCENARIO:
-				return scenario != null;
-			case GQAMPackage.GA_STEP__CHILD_SCENARIO:
-				return childScenario != null;
+		case GQAMPackage.GA_STEP__IS_ATOMIC:
+			return IS_ATOMIC_EDEFAULT == null ? isAtomic != null : !IS_ATOMIC_EDEFAULT.equals(isAtomic);
+		case GQAMPackage.GA_STEP__BLOCK_T:
+			return BLOCK_T_EDEFAULT == null ? blockT != null : !BLOCK_T_EDEFAULT.equals(blockT);
+		case GQAMPackage.GA_STEP__REP:
+			return REP_EDEFAULT == null ? rep != null : !REP_EDEFAULT.equals(rep);
+		case GQAMPackage.GA_STEP__PROB:
+			return PROB_EDEFAULT == null ? prob != null : !PROB_EDEFAULT.equals(prob);
+		case GQAMPackage.GA_STEP__PRIORITY:
+			return PRIORITY_EDEFAULT == null ? priority != null : !PRIORITY_EDEFAULT.equals(priority);
+		case GQAMPackage.GA_STEP__CONCUR_RES:
+			return concurRes != null;
+		case GQAMPackage.GA_STEP__HOST:
+			return host != null;
+		case GQAMPackage.GA_STEP__SERV_DEMAND:
+			return servDemand != null && !servDemand.isEmpty();
+		case GQAMPackage.GA_STEP__SERV_COUNT:
+			return servCount != null && !servCount.isEmpty();
+		case GQAMPackage.GA_STEP__SELF_DELAY:
+			return SELF_DELAY_EDEFAULT == null ? selfDelay != null : !SELF_DELAY_EDEFAULT.equals(selfDelay);
+		case GQAMPackage.GA_STEP__SCENARIO:
+			return scenario != null;
+		case GQAMPackage.GA_STEP__CHILD_SCENARIO:
+			return childScenario != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -814,11 +930,14 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isAtomic: ");
@@ -839,4 +958,4 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 		return result.toString();
 	}
 
-} //GaStepImpl
+} // GaStepImpl

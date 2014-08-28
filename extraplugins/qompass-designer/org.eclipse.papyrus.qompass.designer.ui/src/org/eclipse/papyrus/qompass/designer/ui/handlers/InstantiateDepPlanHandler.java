@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -46,9 +46,9 @@ public class InstantiateDepPlanHandler extends CmdHandler {
 	@Override
 	public boolean isEnabled() {
 		updateSelectedEObject();
-		if(selectedEObject instanceof Element) {
-			if(StereotypeUtil.isApplied((Element)selectedEObject, DeploymentPlan.class) ||
-				StereotypeUtil.isApplied((Element)selectedEObject, Configuration.class)) {
+		if (selectedEObject instanceof Element) {
+			if (StereotypeUtil.isApplied((Element) selectedEObject, DeploymentPlan.class) ||
+					StereotypeUtil.isApplied((Element) selectedEObject, Configuration.class)) {
 				return true;
 			}
 		}
@@ -58,10 +58,11 @@ public class InstantiateDepPlanHandler extends CmdHandler {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		// only one model is selected
 		selectedCDP = null;
-		if((selectedEObject instanceof Package) || (selectedEObject instanceof Class)) {
+		if ((selectedEObject instanceof Package) || (selectedEObject instanceof Class)) {
 			selectedCDP = (NamedElement) selectedEObject;
 		} else {
 			return null;
@@ -70,16 +71,16 @@ public class InstantiateDepPlanHandler extends CmdHandler {
 
 		GenerationOptionsDialog optionsDialog = new GenerationOptionsDialog(new Shell());
 		optionsDialog.open();
-		if(optionsDialog.getReturnCode() == IDialogConstants.OK_ID) {
+		if (optionsDialog.getReturnCode() == IDialogConstants.OK_ID) {
 
-			final int genOptions = (Integer)optionsDialog.getResult()[0];
+			final int genOptions = (Integer) optionsDialog.getResult()[0];
 			Job job = new Job("Create deployment model (OO)") {
 
 				@Override
 				protected IStatus run(IProgressMonitor monitor) {
 					// execute the task ...
 					if (selectedCDP instanceof Package) {
-						new InstantiateDepPlan().instantiate((Package)selectedCDP, monitor, project, genOptions);
+						new InstantiateDepPlan().instantiate((Package) selectedCDP, monitor, project, genOptions);
 					} else if (StereotypeUtil.isApplied(selectedCDP, Configuration.class)) {
 						Configuration configuration = UMLUtil.getStereotypeApplication(selectedCDP, Configuration.class);
 						new InstantiateDepPlan().instantiate(configuration, monitor, project, genOptions);

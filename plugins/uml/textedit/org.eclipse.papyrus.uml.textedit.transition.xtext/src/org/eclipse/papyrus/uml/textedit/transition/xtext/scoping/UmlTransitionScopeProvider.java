@@ -22,16 +22,16 @@ import org.eclipse.xtext.scoping.impl.SimpleScope;
 
 /**
  * This class contains custom scoping description.
- * 
+ *
  * see : http://www.eclipse.org/Xtext/documentation/latest/xtext.html#scoping
  * on how and when to use it
- * 
+ *
  */
 public class UmlTransitionScopeProvider extends AbstractDeclarativeScopeProvider {
 
 	/**
 	 * Rule for computing the scope of TriggerRule
-	 * 
+	 *
 	 * @param ctx
 	 * @param ref
 	 * @return
@@ -50,20 +50,20 @@ public class UmlTransitionScopeProvider extends AbstractDeclarativeScopeProvider
 	public static List<EObject> getVisibleOperationAndSignals(EObject context) {
 		List<EObject> allOperationsAndSignals = new ArrayList<EObject>();
 
-		Element tmpContext = (Element)context;
+		Element tmpContext = (Element) context;
 
-		while(tmpContext != null && !(tmpContext instanceof Classifier && !(tmpContext instanceof StateMachine))) {
+		while (tmpContext != null && !(tmpContext instanceof Classifier && !(tmpContext instanceof StateMachine))) {
 			tmpContext = tmpContext.getOwner();
 		}
 
-		if(tmpContext != null) {
-			Classifier behavioredClassifier = (Classifier)tmpContext;
+		if (tmpContext != null) {
+			Classifier behavioredClassifier = (Classifier) tmpContext;
 			allOperationsAndSignals.addAll(behavioredClassifier.getAllOperations());
-			if(behavioredClassifier instanceof org.eclipse.uml2.uml.Class) {
-				org.eclipse.uml2.uml.Class behavioredClass = (org.eclipse.uml2.uml.Class)behavioredClassifier;
-				for(Reception r : behavioredClass.getOwnedReceptions()) {
-					if(r.getSignal() != null) {
-						if(!(allOperationsAndSignals.contains(r.getSignal()))) {
+			if (behavioredClassifier instanceof org.eclipse.uml2.uml.Class) {
+				org.eclipse.uml2.uml.Class behavioredClass = (org.eclipse.uml2.uml.Class) behavioredClassifier;
+				for (Reception r : behavioredClass.getOwnedReceptions()) {
+					if (r.getSignal() != null) {
+						if (!(allOperationsAndSignals.contains(r.getSignal()))) {
 							allOperationsAndSignals.add(r.getSignal());
 						}
 					}

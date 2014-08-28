@@ -35,14 +35,14 @@ import org.eclipse.pde.core.plugin.PluginRegistry;
 public final class BuildPropertiesUtils {
 
 	// This class has been copied from org.eclipse.papyrus.emf.facet.infra.common.core.internal.utils.BuildPropertiesUtils
-	
+
 	private BuildPropertiesUtils() {
 		// utilities class
 	}
 
 	/**
 	 * Get the build model of an Eclipse plug-in
-	 * 
+	 *
 	 * @param model
 	 *            a plug-in's PDE model
 	 * @return a build model or <code>null</code> if the build.properties file
@@ -52,11 +52,11 @@ public final class BuildPropertiesUtils {
 	public static IBuildModel getBuildModel(final IPluginModelBase model) throws CoreException {
 		final IProject project = model.getUnderlyingResource().getProject();
 		final IPluginModelBase pluginModelBase = PluginRegistry.findModel(project);
-		//Here we use a reflexive call to be able to build against an Helios platform.
-		//This method will build with Helios, but will fail at runtime.
-		//We do not have a better solution. Otherwise we would have to use an internal API.
-		//We prefer some loose of functionality with Helios that to use internal API.
-		IBuildModel buildModel  = null;
+		// Here we use a reflexive call to be able to build against an Helios platform.
+		// This method will build with Helios, but will fail at runtime.
+		// We do not have a better solution. Otherwise we would have to use an internal API.
+		// We prefer some loose of functionality with Helios that to use internal API.
+		IBuildModel buildModel = null;
 		try {
 			final Class<? extends IPluginModelBase> class1 = pluginModelBase.getClass();
 			final Method method = class1.getMethod("getBuildModel"); //$NON-NLS-1$
@@ -77,7 +77,7 @@ public final class BuildPropertiesUtils {
 	 * @throws CoreException
 	 */
 	public static IBuild getBuild(final IProject project) throws CoreException {
-		IBuild result = null; 
+		IBuild result = null;
 		final IPluginModelBase pluginModel = PluginRegistry.findModel(project);
 		if (pluginModel != null) {
 			final IBuildModel buildModel = getBuildModel(pluginModel);
@@ -92,8 +92,7 @@ public final class BuildPropertiesUtils {
 	 * @param elementFile
 	 *            the file whose presence in the build.properties is being
 	 *            tested
-	 * @return whether the file is in the build.properties (<code>false</code>
-	 *         if the build.properties file does not exist)
+	 * @return whether the file is in the build.properties (<code>false</code> if the build.properties file does not exist)
 	 * @throws CoreException
 	 */
 	public static boolean isInBuild(final IFile elementFile) throws CoreException {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,7 +45,7 @@ import org.eclipse.ui.part.ViewPart;
 
 /**
  * This class shows the figure hierarchy attached to a edit-part
- * 
+ *
  */
 public class ElementTypeView extends ViewPart {
 
@@ -57,19 +57,20 @@ public class ElementTypeView extends ViewPart {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.WorkbenchPart#setFocus()
 	 */
+	@Override
 	public void setFocus() {
 		Viewer viewer = getViewer();
-		if(viewer != null && !viewer.getControl().isDisposed()) {
+		if (viewer != null && !viewer.getControl().isDisposed()) {
 			viewer.getControl().setFocus();
 		}
 	}
 
 	/**
 	 * Create the main tree control
-	 * 
+	 *
 	 * @param parent
 	 * @return Tree
 	 */
@@ -81,7 +82,7 @@ public class ElementTypeView extends ViewPart {
 
 	/**
 	 * Return the viewer.
-	 * 
+	 *
 	 * @return TreeViewer
 	 */
 	protected TreeViewer getViewer() {
@@ -89,44 +90,45 @@ public class ElementTypeView extends ViewPart {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public ElementTypeView() {
 		myEditPartlistener = new ISelectionListener() {
 
+			@Override
 			public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-				if(selection instanceof IStructuredSelection) {
-					Object selectedobject = ((IStructuredSelection)selection).getFirstElement();
+				if (selection instanceof IStructuredSelection) {
+					Object selectedobject = ((IStructuredSelection) selection).getFirstElement();
 					IClientContext papyrusContext;
 					try {
 						papyrusContext = TypeContext.getContext();
 					} catch (ServiceException e) {
 						Activator.log.error(e);
-						if(viewer != null) {
+						if (viewer != null) {
 							viewer.setInput(new Object[0]);
 							viewer.expandAll();
 						}
 						return;
 					}
 					EObject selectedEObject = null;
-					if(selectedobject instanceof EObject) {
-						selectedEObject = (EObject)selectedobject;
-					} else if(selectedobject instanceof IAdaptable) {
-						selectedEObject = (EObject)((IAdaptable)selectedobject).getAdapter(EObject.class);
+					if (selectedobject instanceof EObject) {
+						selectedEObject = (EObject) selectedobject;
+					} else if (selectedobject instanceof IAdaptable) {
+						selectedEObject = (EObject) ((IAdaptable) selectedobject).getAdapter(EObject.class);
 					}
-					
-					if(selectedElement != null && !selectedElement.isDisposed()) {
-						selectedElement.setText((selectedEObject != null ) ? selectedEObject.toString() : ""  );
+
+					if (selectedElement != null && !selectedElement.isDisposed()) {
+						selectedElement.setText((selectedEObject != null) ? selectedEObject.toString() : "");
 					}
-					
-					if(viewer != null) {
-						if(selectedEObject ==null) {
+
+					if (viewer != null) {
+						if (selectedEObject == null) {
 							viewer.setInput(new IElementType[0]);
 						} else {
 							viewer.setInput(ElementTypeRegistry.getInstance().getAllTypesMatching(selectedEObject, papyrusContext));
-							viewer.expandAll();	
+							viewer.expandAll();
 						}
 					}
 				}
@@ -145,12 +147,12 @@ public class ElementTypeView extends ViewPart {
 		TreeColumn tcIdentifier = new TreeColumn(viewer.getTree(), SWT.LEFT);
 		tcIdentifier.setText("Identifier");
 		tcIdentifier.setWidth(250);
-		//		TreeColumn tcLayoutManager = new TreeColumn(viewer.getTree(), SWT.LEFT);
-		//		tcLayoutManager.setText("Layout manager");
-		//		tcLayoutManager.setWidth(150);
-		//		TreeColumn tcBorder = new TreeColumn(viewer.getTree(), SWT.LEFT);
-		//		tcBorder.setText("Border");
-		//		tcBorder.setWidth(150);
+		// TreeColumn tcLayoutManager = new TreeColumn(viewer.getTree(), SWT.LEFT);
+		// tcLayoutManager.setText("Layout manager");
+		// tcLayoutManager.setWidth(150);
+		// TreeColumn tcBorder = new TreeColumn(viewer.getTree(), SWT.LEFT);
+		// tcBorder.setText("Border");
+		// tcBorder.setWidth(150);
 	}
 
 	@Override
@@ -161,9 +163,9 @@ public class ElementTypeView extends ViewPart {
 		composite.setLayout(new GridLayout(1, true));
 		selectedElement = new CLabel(composite, SWT.NONE);
 		selectedElement.setText("<no element>");
-		selectedElement.setLayoutData(new GridData(SWT.FILL,  SWT.FILL, true, false));
-		Tree tree= createTree(composite);
-		tree.setLayoutData(new GridData(SWT.FILL,  SWT.FILL, true, true));
+		selectedElement.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+		Tree tree = createTree(composite);
+		tree.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		viewer = new TreeViewer(tree);
 		viewer.setContentProvider(getContentProvider());
 		viewer.setLabelProvider(getLabelProvider());
@@ -202,29 +204,35 @@ public class ElementTypeView extends ViewPart {
 	protected IContentProvider getContentProvider() {
 		return new ITreeContentProvider() {
 
+			@Override
 			public Object[] getElements(final Object inputElement) {
-				if(inputElement instanceof IElementType[]) {
-					return (IElementType[])inputElement;
+				if (inputElement instanceof IElementType[]) {
+					return (IElementType[]) inputElement;
 				}
 				return null;
 			}
 
+			@Override
 			public void inputChanged(final Viewer viewer, final Object oldInput, final Object newInput) {
 				// nothing
 			}
 
+			@Override
 			public void dispose() {
 				// nothing
 			}
 
+			@Override
 			public boolean hasChildren(final Object element) {
 				return false;
 			}
 
+			@Override
 			public Object getParent(final Object element) {
 				return null;
 			}
 
+			@Override
 			public Object[] getChildren(final Object parentElement) {
 				return new Object[0];
 			}

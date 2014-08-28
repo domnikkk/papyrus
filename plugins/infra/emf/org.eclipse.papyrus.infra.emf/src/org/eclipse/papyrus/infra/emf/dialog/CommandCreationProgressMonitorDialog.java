@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) Vincent.Lorenzo@cea.fr - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.dialog;
 
@@ -19,16 +19,16 @@ import org.eclipse.swt.widgets.Shell;
 
 
 /**
- * 
+ *
  * This dialog allows to create a command using a progress bar dialog
  * Typical usage is:
- * 
+ *
  * <pre>
  * CreationCommandProgressMonitorDialog commandCreationDialog = new CreationCommandProgressMonitorDialog(Display.getShell());
- * 
+ *
  * try {
  * 		commandCreationDialog.run(true, true, new IRunnableWithProgress() {
- * 
+ *
  * 			public void run(final IProgressMonitor cancelProvider) throws InvocationTargetException, InterruptedException {
  * 				final Command cmd = commandProvider.getCommand();
  * 				commandCreationDialog.setCreatedCommand(cmd);
@@ -55,9 +55,9 @@ public class CommandCreationProgressMonitorDialog extends ProgressMonitorDialog 
 	private Exception exception;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 */
 	public CommandCreationProgressMonitorDialog(final Shell parent) {
@@ -67,9 +67,9 @@ public class CommandCreationProgressMonitorDialog extends ProgressMonitorDialog 
 
 	/**
 	 * Setter for {@link #createdCommand}
-	 * 
+	 *
 	 * @param cmd
-	 *        the created command
+	 *            the created command
 	 */
 	public void setCreatedCommand(final Command cmd) {
 		this.createdCommand = cmd;
@@ -77,7 +77,7 @@ public class CommandCreationProgressMonitorDialog extends ProgressMonitorDialog 
 
 	/**
 	 * Getter for {@link #createdCommand}
-	 * 
+	 *
 	 * @return
 	 *         the created command
 	 */
@@ -90,7 +90,7 @@ public class CommandCreationProgressMonitorDialog extends ProgressMonitorDialog 
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the exception throwed by the command creation
 	 */

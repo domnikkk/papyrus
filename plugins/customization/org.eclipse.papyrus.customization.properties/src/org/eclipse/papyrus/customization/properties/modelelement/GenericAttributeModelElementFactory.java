@@ -1,6 +1,6 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *    
+ * Copyright (c) 2010, 2014 CEA LIST and others.
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.modelelement;
 
@@ -19,23 +21,24 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.customization.properties.Activator;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.views.properties.contexts.DataContextElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory;
+import org.eclipse.papyrus.views.properties.modelelement.AbstractModelElementFactory;
 import org.eclipse.papyrus.views.properties.ui.UiFactory;
 import org.eclipse.papyrus.views.properties.ui.UiPackage;
+import org.eclipse.papyrus.views.properties.ui.WidgetAttribute;
 
 /**
  * A ModelElementFactory for handling {@link WidgetAttribute} properties
- * 
+ *
  * @author Camille Letavernier
  */
-public class GenericAttributeModelElementFactory implements ModelElementFactory {
+public class GenericAttributeModelElementFactory extends AbstractModelElementFactory<GenericAttributeModelElement> {
 
-	//Source : Group
-	//context : Custom:Attribute:Group
-	public ModelElement createFromSource(Object sourceElement, DataContextElement context) {
+	// Source : Group
+	// context : Custom:Attribute:Group
+	@Override
+	protected GenericAttributeModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 		EObject source = EMFHelper.getEObject(sourceElement);
-		if(source == null) {
+		if (source == null) {
 			Activator.log.warn("Unable to resolve the source element to an EObject"); //$NON-NLS-1$
 			return null;
 		}
@@ -49,8 +52,17 @@ public class GenericAttributeModelElementFactory implements ModelElementFactory 
 		return new GenericAttributeModelElement(source, domain, attributes, UiFactory.eINSTANCE, valueAttribute, referenceAttribute);
 	}
 
-	//	public List<ModelElement> createFromDataSource(ModelElement currentElement, DataSource source, String propertyPath, DataContextElement context) {
-	//		throw new UnsupportedOperationException();
-	//	}
+	// public List<ModelElement> createFromDataSource(ModelElement currentElement, DataSource source, String propertyPath, DataContextElement context) {
+	// throw new UnsupportedOperationException();
+	// }
 
+	@Override
+	protected void updateModelElement(GenericAttributeModelElement modelElement, Object newSourceElement) {
+		EObject eObject = EMFHelper.getEObject(newSourceElement);
+		if (eObject == null) {
+			throw new IllegalArgumentException("Cannot resolve EObject selection: " + newSourceElement);
+		}
+		modelElement.source = eObject;
+		modelElement.domain = EMFHelper.resolveEditingDomain(eObject);
+	}
 }

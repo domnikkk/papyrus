@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,12 +28,12 @@ import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderSer
 
 /**
  * Default implementation for the LabelProviderService
- * 
+ *
  * It relies on an ExtensibleLabelProvider. Different label providers can be contributed via
  * an extension point.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class LabelProviderServiceImpl implements LabelProviderService {
 
@@ -51,34 +51,36 @@ public class LabelProviderServiceImpl implements LabelProviderService {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void init(ServicesRegistry servicesRegistry) throws ServiceException {
-		//Nothing
+		// Nothing
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void startService() throws ServiceException {
-		//Nothing
+		// Nothing
 	}
 
 	/**
 	 * Parses the available contexts from the extension point
-	 * 
+	 *
 	 * @param config
-	 *        The extension point IConfigurationElements
+	 *            The extension point IConfigurationElements
 	 */
 	private void readContexts(IConfigurationElement[] config) {
-		for(IConfigurationElement e : config) {
+		for (IConfigurationElement e : config) {
 			try {
-				if("context".equals(e.getName())) {
+				if ("context".equals(e.getName())) {
 					String contextId = e.getAttribute("id");
-					if(contextId == null) {
+					if (contextId == null) {
 						Activator.log.warn("The plug-in " + e.getContributor() + " contributed an invalid extension for " + EXTENSION_ID + ". The context id must be set");
 						continue;
 					}
 
-					if(labelProviders.containsKey(contextId)) {
+					if (labelProviders.containsKey(contextId)) {
 						Activator.log.warn("The context " + contextId + " is already contributed");
 						continue;
 					}
@@ -94,23 +96,23 @@ public class LabelProviderServiceImpl implements LabelProviderService {
 		/**
 		 * THe default label provider context may have been registered via an extension. Otherwise, we force its creation.
 		 */
-		if(!labelProviders.containsKey(DEFAULT_LABEL_PROVIDER)) {
+		if (!labelProviders.containsKey(DEFAULT_LABEL_PROVIDER)) {
 			labelProviders.put(DEFAULT_LABEL_PROVIDER, new SharedExtensibleLabelProvider());
 		}
 	}
 
 	/**
 	 * Parses the available label providers from the extension point
-	 * 
+	 *
 	 * @param config
-	 *        The extension point IConfigurationElements
+	 *            The extension point IConfigurationElements
 	 */
 	private void readLabelProviders(IConfigurationElement[] config) {
-		for(IConfigurationElement e : config) {
+		for (IConfigurationElement e : config) {
 			try {
-				if("labelProvider".equals(e.getName())) {
-					IFilteredLabelProvider provider = (IFilteredLabelProvider)e.createExecutableExtension("provider");
-					if(provider == null) {
+				if ("labelProvider".equals(e.getName())) {
+					IFilteredLabelProvider provider = (IFilteredLabelProvider) e.createExecutableExtension("provider");
+					if (provider == null) {
 						Activator.log.warn("The labelProvider class is required");
 						continue;
 					}
@@ -119,17 +121,17 @@ public class LabelProviderServiceImpl implements LabelProviderService {
 
 					IConfigurationElement[] contextElements = e.getChildren("labelProviderContext");
 
-					//No context means all contexts
-					if(contextElements.length == 0) {
-						for(ExtensibleLabelProvider labelProvider : labelProviders.values()) {
+					// No context means all contexts
+					if (contextElements.length == 0) {
+						for (ExtensibleLabelProvider labelProvider : labelProviders.values()) {
 							labelProvider.registerProvider(priority, provider);
 						}
 					} else {
-						for(IConfigurationElement contextElement : contextElements) {
+						for (IConfigurationElement contextElement : contextElements) {
 							String context = contextElement.getAttribute("context");
-							if(context != null) {
+							if (context != null) {
 								ExtensibleLabelProvider labelProvider = labelProviders.get(context);
-								if(labelProvider == null) {
+								if (labelProvider == null) {
 									Activator.log.warn("Unknown label provider context: " + context);
 									continue;
 								}
@@ -152,8 +154,9 @@ public class LabelProviderServiceImpl implements LabelProviderService {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void disposeService() throws ServiceException {
-		for(SharedExtensibleLabelProvider provider : labelProviders.values()) {
+		for (SharedExtensibleLabelProvider provider : labelProviders.values()) {
 			provider.doDispose();
 		}
 		this.labelProviders.clear();
@@ -162,6 +165,7 @@ public class LabelProviderServiceImpl implements LabelProviderService {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ILabelProvider getLabelProvider() {
 		return getLabelProvider(DEFAULT_LABEL_PROVIDER);
 	}
@@ -169,16 +173,17 @@ public class LabelProviderServiceImpl implements LabelProviderService {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ILabelProvider getLabelProvider(String context) {
-		if(context == null) {
+		if (context == null) {
 			return getLabelProvider();
 		}
 
-		if(!labelProviders.containsKey(context)) {
+		if (!labelProviders.containsKey(context)) {
 			Activator.log.warn("Unknown label provider context: " + context + ". The default label provider will be used");
 
-			//The default label provider has been unregistered (or is not registered yet)
-			if(DEFAULT_LABEL_PROVIDER.equals(context)) {
+			// The default label provider has been unregistered (or is not registered yet)
+			if (DEFAULT_LABEL_PROVIDER.equals(context)) {
 				return new LabelProvider();
 			}
 
@@ -194,23 +199,24 @@ public class LabelProviderServiceImpl implements LabelProviderService {
 
 		@Override
 		public void dispose() {
-			//Nothing. The LabelProvider is shared, and JFace viewers dispose their providers
-			//when they are disposed.
-			//The providers should be disposed only when the service is disposed.
+			// Nothing. The LabelProvider is shared, and JFace viewers dispose their providers
+			// when they are disposed.
+			// The providers should be disposed only when the service is disposed.
 		}
 
 		public void doDispose() {
-			super.dispose(); //Disposed only when the service is disposed
+			super.dispose(); // Disposed only when the service is disposed
 		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ILabelProvider getLabelProvider(String context, Object contextElement) {
 		ILabelProvider provider = getLabelProvider(context);
-		if(provider instanceof ContextualLabelProvider) {
-			((ContextualLabelProvider)provider).setContext(contextElement);
+		if (provider instanceof ContextualLabelProvider) {
+			((ContextualLabelProvider) provider).setContext(contextElement);
 		}
 		return provider;
 	}
@@ -218,10 +224,11 @@ public class LabelProviderServiceImpl implements LabelProviderService {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ILabelProvider getLabelProvider(Object contextElement) {
 		ILabelProvider provider = getLabelProvider();
-		if(provider instanceof ContextualLabelProvider) {
-			((ContextualLabelProvider)provider).setContext(contextElement);
+		if (provider instanceof ContextualLabelProvider) {
+			((ContextualLabelProvider) provider).setContext(contextElement);
 		}
 		return provider;
 	}

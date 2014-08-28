@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -28,27 +28,27 @@ public class CustomStateItemSemanticEditPolicy extends StateItemSemanticEditPoli
 
 	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if(UMLElementTypes.Pseudostate_16000 == req.getElementType()) {
+		if (UMLElementTypes.Pseudostate_16000 == req.getElementType()) {
 			return getGEFWrapper(new CustomPseudostateEntryPointCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Pseudostate_17000 == req.getElementType()) {
+		if (UMLElementTypes.Pseudostate_17000 == req.getElementType()) {
 			return getGEFWrapper(new CustomPseudostateExitPointCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.ConnectionPointReference_18000 == req.getElementType()) {
+		if (UMLElementTypes.ConnectionPointReference_18000 == req.getElementType()) {
 			return getGEFWrapper(new CustomConnectionPointReferenceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		return super.getCreateCommand(req);
 	}
-	
+
 	/**
 	 * Returns command to reorient EClass based link. New link target or source
 	 * should be the domain model element associated with this node.
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case TransitionEditPart.VISUAL_ID:
 			return getGEFWrapper(new CustomTransitionReorientCommand(req));
 		}

@@ -16,16 +16,17 @@ import java.util.Iterator;
 
 /**
  * Represents an iterator over rows in a CSV document
- * 
+ *
  * @author Laurent Wouters
  */
 public abstract class RowIterator implements Iterator<CellIterator> {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see java.util.Iterator#remove()
 	 */
+	@Override
 	public void remove() {
 		throw new UnsupportedOperationException();
 	}

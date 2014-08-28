@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
@@ -46,11 +46,11 @@ public class ProfileDefinitionModelElement extends AbstractModelElement {
 
 	@Override
 	protected IObservable doGetObservable(String propertyPath) {
-		if(DEFINITIONS.equals(propertyPath)) {
-			if(profile != null) {
+		if (DEFINITIONS.equals(propertyPath)) {
+			if (profile != null) {
 
 				EAnnotation definitions = profile.getEAnnotation(UMLUtil.UML2_UML_PACKAGE_2_0_NS_URI);
-				if(definitions != null) {
+				if (definitions != null) {
 					EditingDomain domain = EMFHelper.resolveEditingDomain(profile);
 					return new PapyrusObservableList(EMFObservables.observeList(definitions, EcorePackage.eINSTANCE.getEAnnotation_Contents()), domain, definitions, EcorePackage.eINSTANCE.getEAnnotation_Contents());
 				}
@@ -76,9 +76,9 @@ public class ProfileDefinitionModelElement extends AbstractModelElement {
 
 	@Override
 	public boolean getDirectCreation(String propertyPath) {
-		return true; //Cannot browse other definitions
+		return true; // Cannot browse other definitions
 	}
-	
+
 	@Override
 	public boolean isEditable(String propertyPath) {
 		return !EMFHelper.isReadOnly(profile);

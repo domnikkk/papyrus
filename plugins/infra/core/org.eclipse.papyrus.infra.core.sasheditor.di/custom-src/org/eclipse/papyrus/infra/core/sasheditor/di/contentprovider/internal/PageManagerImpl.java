@@ -46,10 +46,10 @@ public class PageManagerImpl extends PageMngrImpl implements IPageManager {
 	 * Suitable for tests
 	 *
 	 * @param diSashModel
-	 *        The model onto which operation of this class act.
+	 *            The model onto which operation of this class act.
 	 * @param contentChangedEventProvider
-	 *        A class listening on changes on the internal model and delivering events to registered listeners. This implementation
-	 *        need the class in order to deactivate event triggering during the operations.
+	 *            A class listening on changes on the internal model and delivering events to registered listeners. This implementation
+	 *            need the class in order to deactivate event triggering during the operations.
 	 *
 	 */
 	protected PageManagerImpl(SashWindowsMngr diSashModel, ContentChangedEventProvider contentChangedEventProvider) {
@@ -69,25 +69,25 @@ public class PageManagerImpl extends PageMngrImpl implements IPageManager {
 
 	@Override
 	public void closeAllOpenedPages(Object pageIdentifier) {
-		while(isOpen(pageIdentifier)) {
+		while (isOpen(pageIdentifier)) {
 			closePage(pageIdentifier);
 		}
 	}
 
 	@Override
 	public void addPage(Object pageIdentifier) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public List<Object> allPages() {
-		//FIXME: Temporary, naive code. Need to implement a mechanism to contribute page providers
+		// FIXME: Temporary, naive code. Need to implement a mechanism to contribute page providers
 		List<Object> result = new LinkedList<Object>();
-		for(Resource resource : diSashModel.eResource().getResourceSet().getResources()) {
-			if(resource != null && resource.isLoaded()) {
-				if("notation".equals(resource.getURI().fileExtension())) {
-					for(EObject content : resource.getContents()) {
-						if(Platform.getAdapterManager().getAdapter(content, IOpenable.class) != null) {
+		for (Resource resource : diSashModel.eResource().getResourceSet().getResources()) {
+			if (resource != null && resource.isLoaded()) {
+				if ("notation".equals(resource.getURI().fileExtension())) {
+					for (EObject content : resource.getContents()) {
+						if (Platform.getAdapterManager().getAdapter(content, IOpenable.class) != null) {
 							result.add(content);
 						}
 					}
@@ -122,21 +122,21 @@ public class PageManagerImpl extends PageMngrImpl implements IPageManager {
 		this.folderAndPageMngr = currentFolderAndPageMngr;
 
 	}
-	
+
 	/**
 	 * Executes an operation on my internal sash model.
-	 * 
+	 *
 	 * @param sashModelOperation
-	 *        the operation to execute
+	 *            the operation to execute
 	 * @return the operation's result
-	 * 
+	 *
 	 * @throws IllegalAccessException
-	 *         on attempt to execute an operation defined by a client bundle
+	 *             on attempt to execute an operation defined by a client bundle
 	 */
 	public <T> T execute(SashModelOperation<T> sashModelOperation) throws IllegalAccessException {
 		T result;
 
-		if(FrameworkUtil.getBundle(sashModelOperation.getClass()) != Activator.getDefault().getBundle()) {
+		if (FrameworkUtil.getBundle(sashModelOperation.getClass()) != Activator.getDefault().getBundle()) {
 			throw new IllegalAccessException("Attempt to access bundle-private API."); //$NON-NLS-1$
 		}
 

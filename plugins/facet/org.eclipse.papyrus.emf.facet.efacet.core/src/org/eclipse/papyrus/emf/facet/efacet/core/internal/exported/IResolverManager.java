@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Gregoire Dupe (Mia-Software) - Bug 375087 - [Table] ITableWidget.addColumn(List<ETypedElement>, List<FacetSet>)
  *    Gregoire Dupe (Mia-Software) - Bug 372626 - Aggregates
@@ -22,7 +22,7 @@ public interface IResolverManager {
 	<T> T resolve(Object object, Class<T> aClass);
 
 	<T> List<T> selectionPropagation(Object selectedObject, Class<T> aClass);
-	
+
 	<T> T selectionRoot(Object selectedObject, Class<T> aClass);
 
 }

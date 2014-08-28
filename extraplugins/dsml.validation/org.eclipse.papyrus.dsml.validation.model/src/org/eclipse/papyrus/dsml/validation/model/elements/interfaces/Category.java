@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,33 +16,33 @@ import java.util.List;
 
 /**
  * Interface representing category from the EMF Validation Framework.
- * 
- * 
+ *
+ *
  */
 public interface Category {
 
 	/**
 	 *
-	 * 
-	 * @return  ID of a category
+	 *
+	 * @return ID of a category
 	 */
 	public String getID();
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return Name of a category
 	 */
 	public String getName();
 
 	/**
-	 * 
-	 * @return  Information whether category is mandatory
+	 *
+	 * @return Information whether category is mandatory
 	 */
 	public boolean isMandatory();
 
 	/**
-	 * 
+	 *
 	 * @return Sub-categories of a given category
 	 */
 	public List<Category> getSubcategories();
@@ -50,7 +50,7 @@ public interface Category {
 
 	/**
 	 * Adding list of sub-categories
-	 * 
+	 *
 	 * @param subCategories
 	 *            list of sub-categories to add
 	 */

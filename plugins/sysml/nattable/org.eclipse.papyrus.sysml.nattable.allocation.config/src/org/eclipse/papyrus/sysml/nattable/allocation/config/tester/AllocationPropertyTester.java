@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,8 +25,8 @@ public class AllocationPropertyTester extends NattableWidgetPropertyTester {
 	@Override
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
 		final INattableModelManager manager = getNattableModelManager();
-		if(manager != null) {
-			if(IS_ALLOCATION_TABLE.equals(property) && expectedValue instanceof Boolean) {
+		if (manager != null) {
+			if (IS_ALLOCATION_TABLE.equals(property) && expectedValue instanceof Boolean) {
 				return expectedValue.equals(manager.getTable().getTableConfiguration().getType().equals(CreateAllocateHandler.TABLE_ALLOCATION_TYPE));
 			}
 		}

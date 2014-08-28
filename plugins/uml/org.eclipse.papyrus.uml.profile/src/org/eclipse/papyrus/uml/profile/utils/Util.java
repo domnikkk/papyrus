@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -67,84 +67,84 @@ public class Util {
 
 	/**
 	 * Return a usable string label for passed object.
-	 * 
+	 *
 	 * @param object
-	 *        the object
-	 * 
+	 *            the object
+	 *
 	 * @return the label
 	 */
 	public static String getLabel(Object object, boolean shortLabel) {
 		String label = "";
 
-		if(object == null) {
+		if (object == null) {
 			return "undefined";
 		}
 
-		if(object instanceof ValueSpecification) {
-			label = getLabel((ValueSpecification)object);
+		if (object instanceof ValueSpecification) {
+			label = getLabel((ValueSpecification) object);
 
-		} else if(object instanceof Element) {
-			Element cE = (Element)object;
+		} else if (object instanceof Element) {
+			Element cE = (Element) object;
 			String cName = null;
 			String suffix = "";
 			String cComLabel = "";
 
 			NamedElement cNE = null;
-			if(object instanceof NamedElement) {
-				cNE = (NamedElement)object;
+			if (object instanceof NamedElement) {
+				cNE = (NamedElement) object;
 
-			} else if(object instanceof PackageImport) {
-				PackageImport cPI = (PackageImport)object;
+			} else if (object instanceof PackageImport) {
+				PackageImport cPI = (PackageImport) object;
 				suffix = " (PackageImport)";
 				cNE = cPI.getImportedPackage();
 
-			} else if(object instanceof ElementImport) {
-				ElementImport cEI = (ElementImport)object;
+			} else if (object instanceof ElementImport) {
+				ElementImport cEI = (ElementImport) object;
 				suffix = " (ElementImport)";
 				cNE = cEI.getImportedElement();
 
-			} else if(object instanceof ProfileApplication) {
-				ProfileApplication cPA = (ProfileApplication)object;
+			} else if (object instanceof ProfileApplication) {
+				ProfileApplication cPA = (ProfileApplication) object;
 				suffix = " (ProfileApplication)";
 				cNE = cPA.getAppliedProfile();
 
-			} else if(object instanceof Comment) {
-				Comment cCom = (Comment)object;
+			} else if (object instanceof Comment) {
+				Comment cCom = (Comment) object;
 				suffix = " (Comment)";
 				String cComBody = cCom.getBody();
-				if(cComBody != null && cComBody.length() >= 10) {
+				if (cComBody != null && cComBody.length() >= 10) {
 					cComLabel = cComBody.substring(0, 9) + "...";
 				} else {
 					cComLabel = cComBody;
 				}
-			} else if(object instanceof TemplateSignature) {
-				TemplateableElement te = ((TemplateSignature)object).getTemplate();
+			} else if (object instanceof TemplateSignature) {
+				TemplateableElement te = ((TemplateSignature) object).getTemplate();
 				suffix = " (TemplateSignature owner)";
-				if(te instanceof NamedElement) {
-					cNE = (NamedElement)te;
+				if (te instanceof NamedElement) {
+					cNE = (NamedElement) te;
 				}
-			} else if(object instanceof TemplateBinding) {
-				TemplateableElement te = ((TemplateBinding)object).getBoundElement();
+			} else if (object instanceof TemplateBinding) {
+				TemplateableElement te = ((TemplateBinding) object).getBoundElement();
 				suffix = " (TemplateBinding bound-element)";
-				if(te instanceof NamedElement) {
-					cNE = (NamedElement)te;
+				if (te instanceof NamedElement) {
+					cNE = (NamedElement) te;
 				}
 			}
-			if(shortLabel) {
-				if(object instanceof Comment) {
+			if (shortLabel) {
+				if (object instanceof Comment) {
 					cName = cComLabel;
-				} else if(cNE != null) {
+				} else if (cNE != null) {
 					cName = cNE.getName();
 				}
 			} else {
-				if(object instanceof Comment) {
+				if (object instanceof Comment) {
 					cName = cComLabel + suffix;
-				} else if(cNE != null) {
+				} else if (cNE != null) {
 					cName = cNE.getQualifiedName() + suffix;
 				}
 			}
 
-			if(cName != null) {
+			if (cName != null) {
 				label = cName;
 			} else {
 				label = cE.toString();
@@ -157,20 +157,20 @@ public class Util {
 
 	/**
 	 * Check if a type is a metaclass.
-	 * 
+	 *
 	 * @param type
-	 *        to check
-	 * 
+	 *            to check
+	 *
 	 * @return true if type is metaclass, else false
 	 */
 	public static boolean isMetaclass(Type type) {
 		boolean isMetaclass = false;
 
-		if((type instanceof org.eclipse.uml2.uml.Class) && (type.getAppliedStereotypes() != null) && (type.getAppliedStereotypes().size() > 0)) {
+		if ((type instanceof org.eclipse.uml2.uml.Class) && (type.getAppliedStereotypes() != null) && (type.getAppliedStereotypes().size() > 0)) {
 
 			Stereotype firstStereotype = type.getAppliedStereotypes().get(0);
 
-			if(firstStereotype.getName().equals("Metaclass")) {
+			if (firstStereotype.getName().equals("Metaclass")) {
 				isMetaclass = true;
 			}
 		}
@@ -179,7 +179,7 @@ public class Util {
 
 	/**
 	 * Check if the type is a UML Metaclass
-	 * 
+	 *
 	 * @param type
 	 * @return
 	 */
@@ -189,10 +189,10 @@ public class Util {
 
 	/**
 	 * Convert the list of element in a list of string after some basic checks.
-	 * 
+	 *
 	 * @param elements
-	 *        the elements
-	 * 
+	 *            the elements
+	 *
 	 * @return the string array from list
 	 */
 	public static String[] getStringArrayFromList(List<Element> elements) {
@@ -200,13 +200,13 @@ public class Util {
 		ArrayList<String> tmp = new ArrayList<String>();
 
 		// if no possible selection : abort
-		if(elements.size() == 0) {
+		if (elements.size() == 0) {
 			return null;
 		}
 
 		// First create tmp list
 		Iterator<Element> it = elements.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			Object current = it.next();
 
 			String label = getLabel(current, false);
@@ -214,18 +214,18 @@ public class Util {
 		}
 
 		// if no possible selection : abort
-		if(tmp.size() == 0) {
+		if (tmp.size() == 0) {
 			return null;
 		}
 
 		// Put this in array
 		String[] elementsNames = new String[tmp.size()];
-		for(int i = 0; i < tmp.size(); i++) {
+		for (int i = 0; i < tmp.size(); i++) {
 			elementsNames[i] = tmp.get(i);
 		}
 
 		// PostCondition
-		if(elementsNames.length != elements.size()) {
+		if (elementsNames.length != elements.size()) {
 			Message.error("Number of elements in name list does not match number or elements.");
 			elementsNames = null;
 		}
@@ -235,12 +235,12 @@ public class Util {
 	/**
 	 * Treat a string provided by the user for a primitiveType and return
 	 * the corresponding object.
-	 * 
+	 *
 	 * @param dialogValue
-	 *        user input string
+	 *            user input string
 	 * @param type
-	 *        expected
-	 * 
+	 *            expected
+	 *
 	 * @return object
 	 */
 	public static Object getValueObjectFromString(String dialogValue, Type type) {
@@ -248,33 +248,33 @@ public class Util {
 		String typeName = type.getQualifiedName();
 
 		try {
-			if(type instanceof PrimitiveType || ((type instanceof DataType) && !(type instanceof Enumeration))) {
-				if(typeName.equals("UMLPrimitiveTypes::Integer")) {
+			if (type instanceof PrimitiveType || ((type instanceof DataType) && !(type instanceof Enumeration))) {
+				if (typeName.equals("UMLPrimitiveTypes::Integer")) {
 					newValue = Integer.valueOf(dialogValue);
 
-				} else if(typeName.equals("UMLPrimitiveTypes::UnlimitedNatural")) {
-					if(Integer.signum(Integer.parseInt(dialogValue)) != -1) {
+				} else if (typeName.equals("UMLPrimitiveTypes::UnlimitedNatural")) {
+					if (Integer.signum(Integer.parseInt(dialogValue)) != -1) {
 						newValue = Integer.valueOf(dialogValue);
 
 					} else {
 						Message.warning("UnlimitedNatural must be positive or null.");
 					}
 
-				} else if(typeName.equals("UMLPrimitiveTypes::String")) {
+				} else if (typeName.equals("UMLPrimitiveTypes::String")) {
 					newValue = dialogValue;
 
-				} else if(typeName.equals("UMLPrimitiveTypes::Boolean")) {
+				} else if (typeName.equals("UMLPrimitiveTypes::Boolean")) {
 					newValue = Boolean.valueOf(dialogValue);
 
 				} else { // user defined primitive type
 					newValue = dialogValue;
 				}
 
-			} else if(type instanceof Enumeration) {
-				Enumeration enumeration = (Enumeration)type;
+			} else if (type instanceof Enumeration) {
+				Enumeration enumeration = (Enumeration) type;
 				EnumerationLiteral literal = enumeration.getOwnedLiteral(dialogValue);
 
-				if(literal != null) {
+				if (literal != null) {
 					newValue = literal;
 				}
 			}
@@ -291,36 +291,36 @@ public class Util {
 	 * Helper function used by getInstancesFilteredByType
 	 */
 	private static void checkAndAddElement(EObject currentEObj, @SuppressWarnings("rawtypes") Class metaType, Stereotype appliedStereotype, ArrayList<Element> filteredElements) {
-		if(currentEObj instanceof Element) {
-			Element piCurrentElt = (Element)currentEObj;
-			if(appliedStereotype != null) {
+		if (currentEObj instanceof Element) {
+			Element piCurrentElt = (Element) currentEObj;
+			if (appliedStereotype != null) {
 
 				// It is not sufficient to call getAppliedStereotypes, since we also want to
 				// retrieve elements that apply a sub-stereotype
-				if(piCurrentElt.getAppliedSubstereotype(appliedStereotype, null) != null) {
+				if (piCurrentElt.getAppliedSubstereotype(appliedStereotype, null) != null) {
 					filteredElements.add(piCurrentElt);
 				}
 				Iterator<Stereotype> appStIter = piCurrentElt.getAppliedStereotypes().iterator();
-				while(appStIter.hasNext()) {
+				while (appStIter.hasNext()) {
 					Stereotype currentSt = appStIter.next();
 
-					if(currentSt.conformsTo(appliedStereotype)) {
+					if (currentSt.conformsTo(appliedStereotype)) {
 						filteredElements.add(piCurrentElt);
 					}
 				}
 
 			} else { // if (appliedStereotype == null)
-				if(metaType.isInstance(piCurrentElt)) {
+				if (metaType.isInstance(piCurrentElt)) {
 					filteredElements.add(piCurrentElt);
 				}
 
 				/** add imported meta elements */
-				else if(piCurrentElt instanceof ElementImport) {
-					Iterator<EObject> eIter = ((ElementImport)piCurrentElt).getImportedElement().eAllContents();
-					while(eIter.hasNext()) {
+				else if (piCurrentElt instanceof ElementImport) {
+					Iterator<EObject> eIter = ((ElementImport) piCurrentElt).getImportedElement().eAllContents();
+					while (eIter.hasNext()) {
 						EObject currentEIelt = eIter.next();
-						if((currentEIelt instanceof Element) && (metaType.isInstance(currentEIelt))) {
-							filteredElements.add((Element)currentEIelt);
+						if ((currentEIelt instanceof Element) && (metaType.isInstance(currentEIelt))) {
+							filteredElements.add((Element) currentEIelt);
 						}
 					}
 				}
@@ -332,13 +332,13 @@ public class Util {
 	 * Retrieve an ArrayList of all instances in the model that
 	 * are instances of the java.lang.Class metaType or with a
 	 * stereotype applied
-	 * 
+	 *
 	 * @param metaType
-	 *        selected classes
+	 *            selected classes
 	 * @param model
-	 *        to check
+	 *            to check
 	 * @param appliedStereotype
-	 *        may be null, metatype is ignored if not null
+	 *            may be null, metatype is ignored if not null
 	 * @return an arraylist containing the selected instances
 	 */
 	public static ArrayList<Element> getInstancesFilteredByType(Element element, @SuppressWarnings("rawtypes") Class metaType, Stereotype appliedStereotype) {
@@ -348,22 +348,22 @@ public class Util {
 		Iterator<EObject> iter = topPackage.eAllContents();
 		ArrayList<Element> filteredElements = new ArrayList<Element>();
 
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			EObject currentEObj = iter.next();
 
 			// If currentElt is an ElementImport, it is replaced by the imported
 			// Element.
-			if(currentEObj instanceof ElementImport) {
-				ElementImport elementImport = (ElementImport)currentEObj;
+			if (currentEObj instanceof ElementImport) {
+				ElementImport elementImport = (ElementImport) currentEObj;
 				currentEObj = elementImport.getImportedElement();
 			}
 
 			/* package imports treatment */
-			else if(currentEObj instanceof PackageImport) {
-				Package importedPkg = ((PackageImport)currentEObj).getImportedPackage();
-				if(importedPkg != null) {
+			else if (currentEObj instanceof PackageImport) {
+				Package importedPkg = ((PackageImport) currentEObj).getImportedPackage();
+				if (importedPkg != null) {
 					Iterator<EObject> piIter = importedPkg.eAllContents();
-					while(piIter.hasNext()) {
+					while (piIter.hasNext()) {
 						EObject piCurrentEObj = piIter.next();
 						checkAndAddElement(piCurrentEObj, metaType, appliedStereotype, filteredElements);
 					}
@@ -379,20 +379,20 @@ public class Util {
 
 	/**
 	 * Reorder stereotype applications.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param stereotypes
-	 *        the stereotypes
+	 *            the stereotypes
 	 */
 	public static void reorderStereotypeApplications(Element element, EList<Stereotype> stereotypes) {
-		for(Iterator<Stereotype> s = stereotypes.iterator(); s.hasNext();) {
+		for (Iterator<Stereotype> s = stereotypes.iterator(); s.hasNext();) {
 			EObject stereotypeApplication = element.getStereotypeApplication(s.next());
-			if(stereotypeApplication != null) {
+			if (stereotypeApplication != null) {
 				UMLUtil.setBaseElement(stereotypeApplication, null);
 				UMLUtil.setBaseElement(stereotypeApplication, element);
 				Resource eResource = stereotypeApplication.eResource();
-				if(eResource != null) {
+				if (eResource != null) {
 					EList<EObject> contents = eResource.getContents();
 					contents.move(contents.size() - 1, stereotypeApplication);
 				}
@@ -402,20 +402,20 @@ public class Util {
 
 	/**
 	 * Return the labe for a value specification
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
 	public static String getLabel(ValueSpecification value) {
 		String label = "";
 
-		if(value instanceof LiteralBoolean) {
+		if (value instanceof LiteralBoolean) {
 			label = "<LiteralBoolean> ";
-		} else if(value instanceof LiteralInteger) {
+		} else if (value instanceof LiteralInteger) {
 			label = "<LiteralInteger> ";
-		} else if(value instanceof LiteralString) {
+		} else if (value instanceof LiteralString) {
 			label = "<LiteralString> ";
-		} else if(value instanceof LiteralUnlimitedNatural) {
+		} else if (value instanceof LiteralUnlimitedNatural) {
 			label = "<LiteralUnlimitedNatural> ";
 		} else {
 			label = "<ValueSpecification> ";
@@ -429,7 +429,7 @@ public class Util {
 
 	/**
 	 * Return the label for a value specification
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
@@ -438,13 +438,13 @@ public class Util {
 
 		Element owner = value.getOwner();
 		// Add parent qualified name when possible
-		if(owner instanceof NamedElement) {
-			NamedElement ownerNE = (NamedElement)value.getOwner();
-			if(ownerNE.isSetName()) {
+		if (owner instanceof NamedElement) {
+			NamedElement ownerNE = (NamedElement) value.getOwner();
+			if (ownerNE.isSetName()) {
 				label = label + " (" + ownerNE.getQualifiedName() + ")";
 			}
-		} else if(owner instanceof Slot) {
-			Slot ownerSlot = (Slot)owner;
+		} else if (owner instanceof Slot) {
+			Slot ownerSlot = (Slot) owner;
 			InstanceSpecification ownerISpec = ownerSlot.getOwningInstance();
 			StructuralFeature definingFeature = ownerSlot.getDefiningFeature();
 			label = label + " (" + ownerISpec.getQualifiedName() + "::" + definingFeature.getLabel() + ")";
@@ -456,14 +456,14 @@ public class Util {
 
 	/**
 	 * This method is used to look for the top package that contains this element.
-	 * 
+	 *
 	 * @param element
-	 *        the element for which top package must be returned
+	 *            the element for which top package must be returned
 	 * @return the top package
 	 */
 	public static Package topPackage(Element element) {
-		if(element.getOwner() == null) {
-			return (Package)element;
+		if (element.getOwner() == null) {
+			return (Package) element;
 		} else {
 			return topPackage(element.getOwner());
 		}
@@ -471,16 +471,16 @@ public class Util {
 
 	/**
 	 * Returns every PapyrusDefinitionAnnotation corresponding to the version of profile definitions
-	 * 
+	 *
 	 * @param profile
-	 *        the profile to study
+	 *            the profile to study
 	 * @return every eAnnotations associated to the profile definitions or an empty list if no
 	 *         eAnnotation exists for given profile
 	 */
 	public static List<PapyrusDefinitionAnnotation> getAllPapyrusDefinitionAnnotation(Profile profile) {
 		List<PapyrusDefinitionAnnotation> definitions = new ArrayList<PapyrusDefinitionAnnotation>();
 		Iterator<EAnnotation> it = getAllPapyrusVersionAnnotation(profile).iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			definitions.add(PapyrusDefinitionAnnotation.parseEAnnotation(it.next()));
 		}
 		return definitions;
@@ -488,25 +488,25 @@ public class Util {
 
 	/**
 	 * Returns every eAnnotations associated to the profile definitions
-	 * 
+	 *
 	 * @param profile
-	 *        the profile to study
+	 *            the profile to study
 	 * @return every eAnnotations associated to the profile definitions or an empty list if no
 	 *         eAnnotation exists for given profile
 	 */
 	public static List<EAnnotation> getAllPapyrusVersionAnnotation(Profile profile) {
 		List<EAnnotation> annotations = new ArrayList<EAnnotation>();
 		EAnnotation definitions = profile.getEAnnotation("http://www.eclipse.org/uml2/2.0.0/UML");
-		if(definitions == null) {
+		if (definitions == null) {
 			return annotations;
 		}
 
 		Iterator<EObject> it = definitions.getContents().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			// content are EPackage
-			EPackage object = (EPackage)it.next();
+			EPackage object = (EPackage) it.next();
 			EAnnotation annotation = object.getEAnnotation(IPapyrusVersionConstants.PAPYRUS_EANNOTATION_SOURCE);
-			if(annotation != null) {
+			if (annotation != null) {
 				annotations.add(annotation);
 			}
 		}
@@ -515,12 +515,12 @@ public class Util {
 
 	/**
 	 * Returns the eAnnotation associated to the current profile definition
-	 * 
+	 *
 	 * @return the eAnnotation associated to the current profile definition or <code>null</code> if no
 	 *         eAnnotation exists for given profile
 	 */
 	public static EAnnotation getPapyrusVersionAnnotation(Profile profile) {
-		if(profile.getDefinition() != null) {
+		if (profile.getDefinition() != null) {
 			return profile.getDefinition().getEAnnotation(IPapyrusVersionConstants.PAPYRUS_EANNOTATION_SOURCE);
 		}
 		return null;
@@ -528,9 +528,9 @@ public class Util {
 
 	/**
 	 * Returns the version of the current profile definition
-	 * 
+	 *
 	 * @param profile
-	 *        the profile to check
+	 *            the profile to check
 	 * @return the version of the current profile definition
 	 */
 	public static Version getProfileDefinitionVersion(Profile profile) {
@@ -539,14 +539,14 @@ public class Util {
 
 	/**
 	 * Returns the author of the current profile definition
-	 * 
+	 *
 	 * @param profile
-	 *        the profile to check
+	 *            the profile to check
 	 * @return the author of the current profile definition or the empty string if none was given
 	 */
 	public static String getProfileDefinitionAuthor(Profile profile) {
 		EAnnotation annotation = getPapyrusVersionAnnotation(profile);
-		if(annotation == null) {
+		if (annotation == null) {
 			return "";
 		} else {
 			// retrieve the version from the annotation
@@ -557,14 +557,14 @@ public class Util {
 
 	/**
 	 * Returns the date of the current profile definition
-	 * 
+	 *
 	 * @param profile
-	 *        the profile to check
+	 *            the profile to check
 	 * @return the date of the current profile definition or the empty string if none was given
 	 */
 	public static String getProfileDefinitionDate(Profile profile) {
 		EAnnotation annotation = getPapyrusVersionAnnotation(profile);
-		if(annotation == null) {
+		if (annotation == null) {
 			return "";
 		} else {
 			// retrieve the version from the annotation
@@ -575,14 +575,14 @@ public class Util {
 
 	/**
 	 * Returns the comment of the current profile definition
-	 * 
+	 *
 	 * @param profile
-	 *        the profile to check
+	 *            the profile to check
 	 * @return the comment of the current profile definition or the empty string if none was given
 	 */
 	public static String getProfileDefinitionComment(Profile profile) {
 		EAnnotation annotation = getPapyrusVersionAnnotation(profile);
-		if(annotation == null) {
+		if (annotation == null) {
 			return "";
 		} else {
 			// retrieve the version from the annotation
@@ -593,14 +593,14 @@ public class Util {
 
 	/**
 	 * Returns the copyright of the current profile definition
-	 * 
+	 *
 	 * @param profile
-	 *        the profile to check
+	 *            the profile to check
 	 * @return the copyright of the current profile definition or the empty string if none was given
 	 */
 	public static String getProfileDefinitionCopyright(Profile profile) {
 		EAnnotation annotation = getPapyrusVersionAnnotation(profile);
-		if(annotation == null) {
+		if (annotation == null) {
 			return "";
 		} else {
 			// retrieve the version from the annotation
@@ -611,7 +611,7 @@ public class Util {
 
 	/**
 	 * We look for the nearest profile application from the Element, owning the stereotype;
-	 * 
+	 *
 	 * @param stereotype
 	 * @return
 	 *         the nearest profile application owning the stereotype
@@ -620,9 +620,9 @@ public class Util {
 		ProfileApplication profileApplication = null;
 		Profile profile = stereotype.getProfile();
 		EObject container = element;
-		while(profileApplication == null && container != null) {
-			if(container instanceof Package) {
-				profileApplication = ((Package)container).getProfileApplication(profile);
+		while (profileApplication == null && container != null) {
+			if (container instanceof Package) {
+				profileApplication = ((Package) container).getProfileApplication(profile);
 			}
 			container = container.eContainer();
 		}
@@ -632,17 +632,17 @@ public class Util {
 	/**
 	 * Returns the Version of the specified Profile Definition.
 	 * It is never null, but can be empty (Version.emptyVersion)
-	 * 
+	 *
 	 * @param definition
 	 * @return
 	 */
 	public static Version getDefinitionVersion(EPackage definition) {
-		if(definition == null) {
+		if (definition == null) {
 			return Version.emptyVersion;
 		}
 
 		EAnnotation annotation = definition.getEAnnotation(IPapyrusVersionConstants.PAPYRUS_EANNOTATION_SOURCE);
-		if(annotation == null) {
+		if (annotation == null) {
 			return Version.emptyVersion;
 		} else {
 			// retrieve the version from the annotation

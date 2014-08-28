@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.eastadl.annex.computationconstraint;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
 
 /**
@@ -14,8 +13,8 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationConstraint#getLogicalPath <em>Logical Path</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationConstraint#getLogicalTransformation <em>Logical Transformation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationConstraint#getLogicalPath <em>Logical Path</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationConstraint#getLogicalTransformation <em>Logical Transformation</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,10 +28,10 @@ public interface ComputationConstraint extends EAElement {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalPath}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Logical Path</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Logical Path</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Logical Path</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getComputationConstraint_LogicalPath()
 	 * @model ordered="false"
@@ -45,10 +44,10 @@ public interface ComputationConstraint extends EAElement {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalTransformation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Logical Transformation</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Logical Transformation</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Logical Transformation</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getComputationConstraint_LogicalTransformation()
 	 * @model ordered="false"

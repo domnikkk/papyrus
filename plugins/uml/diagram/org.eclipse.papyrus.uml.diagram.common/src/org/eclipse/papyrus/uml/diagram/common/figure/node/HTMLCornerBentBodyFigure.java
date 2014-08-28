@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,10 +42,11 @@ public class HTMLCornerBentBodyFigure extends Figure implements ILabelFigure {
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#setText(java.lang.String)
-	 * 
+	 *
 	 * @param text
-	 *        the text to display
+	 *            the text to display
 	 */
+	@Override
 	public void setText(String text) {
 		this.text = text;
 
@@ -57,27 +58,30 @@ public class HTMLCornerBentBodyFigure extends Figure implements ILabelFigure {
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#getText()
-	 * 
+	 *
 	 * @return the text displayed by this figure
 	 */
+	@Override
 	public String getText() {
 		return text;
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#getIcon()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public Image getIcon() {
 		return icon;
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#setIcon(org.eclipse.swt.graphics.Image)
-	 * 
+	 *
 	 * @param icon
 	 */
+	@Override
 	public void setIcon(Image icon) {
 		this.icon = icon;
 	}

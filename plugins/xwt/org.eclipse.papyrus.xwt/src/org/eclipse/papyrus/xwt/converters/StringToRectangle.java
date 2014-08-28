@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -15,7 +15,7 @@ import org.eclipse.swt.graphics.Rectangle;
 
 /**
  * String to Rectangle converter
- * 
+ *
  * @author yyang
  */
 public class StringToRectangle implements IConverter {
@@ -27,10 +27,10 @@ public class StringToRectangle implements IConverter {
 		int y = 0;
 		int width = 0;
 		int height = 0;
-		if(fromObject != null) {
+		if (fromObject != null) {
 			StringToIntArray arrayConvertor = new StringToIntArray();
-			int[] array = (int[])arrayConvertor.convert(fromObject);
-			if(array.length == 4) {
+			int[] array = (int[]) arrayConvertor.convert(fromObject);
+			if (array.length == 4) {
 				x = array[0];
 				y = array[1];
 				width = array[2];

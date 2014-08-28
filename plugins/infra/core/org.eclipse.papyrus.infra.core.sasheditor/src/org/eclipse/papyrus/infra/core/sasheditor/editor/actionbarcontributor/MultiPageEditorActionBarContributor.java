@@ -42,11 +42,12 @@ public abstract class MultiPageEditorActionBarContributor extends EditorActionBa
 	 * editor for future editor action redirection when the active page is changed, and sets
 	 * the active page.
 	 */
+	@Override
 	public void setActiveEditor(IEditorPart part) {
 
 		IEditorPart activeNestedEditor = null;
-		if(part instanceof IMultiPageEditorPart) {
-			activeNestedEditor = ((IMultiPageEditorPart)part).getActiveEditor();
+		if (part instanceof IMultiPageEditorPart) {
+			activeNestedEditor = ((IMultiPageEditorPart) part).getActiveEditor();
 			setActivePage(activeNestedEditor);
 		}
 
@@ -54,8 +55,9 @@ public abstract class MultiPageEditorActionBarContributor extends EditorActionBa
 
 	/**
 	 * Called by the MultiEditor whenever the active page change.
-	 * 
+	 *
 	 * @param activeEditor
 	 */
+	@Override
 	public abstract void setActivePage(IEditorPart activeEditor);
 }

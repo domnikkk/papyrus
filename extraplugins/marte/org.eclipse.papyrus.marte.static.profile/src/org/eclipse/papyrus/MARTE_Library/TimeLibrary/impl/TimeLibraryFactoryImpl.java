@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.MARTE_Library.TimeLibrary.*;
 import org.eclipse.papyrus.MARTE_Library.TimeLibrary.IdealClock;
 import org.eclipse.papyrus.MARTE_Library.TimeLibrary.LogicalTimeUnit;
 import org.eclipse.papyrus.MARTE_Library.TimeLibrary.TimeLibraryFactory;
@@ -30,6 +29,7 @@ import org.eclipse.papyrus.MARTE_Library.TimeLibrary.TimeUnitKind;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryFactory {
@@ -37,16 +37,16 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static TimeLibraryFactory init() {
 		try {
-			TimeLibraryFactory theTimeLibraryFactory = (TimeLibraryFactory)EPackage.Registry.INSTANCE.getEFactory(TimeLibraryPackage.eNS_URI);
+			TimeLibraryFactory theTimeLibraryFactory = (TimeLibraryFactory) EPackage.Registry.INSTANCE.getEFactory(TimeLibraryPackage.eNS_URI);
 			if (theTimeLibraryFactory != null) {
 				return theTimeLibraryFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new TimeLibraryFactoryImpl();
@@ -56,6 +56,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public TimeLibraryFactoryImpl() {
@@ -65,64 +66,70 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case TimeLibraryPackage.IDEAL_CLOCK: return createIdealClock();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case TimeLibraryPackage.IDEAL_CLOCK:
+			return createIdealClock();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case TimeLibraryPackage.TIME_UNIT_KIND:
-				return createTimeUnitKindFromString(eDataType, initialValue);
-			case TimeLibraryPackage.LOGICAL_TIME_UNIT:
-				return createLogicalTimeUnitFromString(eDataType, initialValue);
-			case TimeLibraryPackage.TIMED_VALUE_TYPE:
-				return createTimedValueTypeFromString(eDataType, initialValue);
-			case TimeLibraryPackage.CLOCKED_VALUE_SPECIFICATION:
-				return createClockedValueSpecificationFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case TimeLibraryPackage.TIME_UNIT_KIND:
+			return createTimeUnitKindFromString(eDataType, initialValue);
+		case TimeLibraryPackage.LOGICAL_TIME_UNIT:
+			return createLogicalTimeUnitFromString(eDataType, initialValue);
+		case TimeLibraryPackage.TIMED_VALUE_TYPE:
+			return createTimedValueTypeFromString(eDataType, initialValue);
+		case TimeLibraryPackage.CLOCKED_VALUE_SPECIFICATION:
+			return createClockedValueSpecificationFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case TimeLibraryPackage.TIME_UNIT_KIND:
-				return convertTimeUnitKindToString(eDataType, instanceValue);
-			case TimeLibraryPackage.LOGICAL_TIME_UNIT:
-				return convertLogicalTimeUnitToString(eDataType, instanceValue);
-			case TimeLibraryPackage.TIMED_VALUE_TYPE:
-				return convertTimedValueTypeToString(eDataType, instanceValue);
-			case TimeLibraryPackage.CLOCKED_VALUE_SPECIFICATION:
-				return convertClockedValueSpecificationToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case TimeLibraryPackage.TIME_UNIT_KIND:
+			return convertTimeUnitKindToString(eDataType, instanceValue);
+		case TimeLibraryPackage.LOGICAL_TIME_UNIT:
+			return convertLogicalTimeUnitToString(eDataType, instanceValue);
+		case TimeLibraryPackage.TIMED_VALUE_TYPE:
+			return convertTimedValueTypeToString(eDataType, instanceValue);
+		case TimeLibraryPackage.CLOCKED_VALUE_SPECIFICATION:
+			return convertClockedValueSpecificationToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public IdealClock createIdealClock() {
 		IdealClockImpl idealClock = new IdealClockImpl();
 		return idealClock;
@@ -131,17 +138,21 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public TimeUnitKind createTimeUnitKindFromString(EDataType eDataType, String initialValue) {
 		TimeUnitKind result = TimeUnitKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertTimeUnitKindToString(EDataType eDataType, Object instanceValue) {
@@ -151,17 +162,21 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LogicalTimeUnit createLogicalTimeUnitFromString(EDataType eDataType, String initialValue) {
 		LogicalTimeUnit result = LogicalTimeUnit.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertLogicalTimeUnitToString(EDataType eDataType, Object instanceValue) {
@@ -171,15 +186,17 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String createTimedValueTypeFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+		return (String) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertTimedValueTypeToString(EDataType eDataType, Object instanceValue) {
@@ -189,15 +206,17 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String createClockedValueSpecificationFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+		return (String) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertClockedValueSpecificationToString(EDataType eDataType, Object instanceValue) {
@@ -207,15 +226,18 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public TimeLibraryPackage getTimeLibraryPackage() {
-		return (TimeLibraryPackage)getEPackage();
+		return (TimeLibraryPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -224,4 +246,4 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 		return TimeLibraryPackage.eINSTANCE;
 	}
 
-} //TimeLibraryFactoryImpl
+} // TimeLibraryFactoryImpl

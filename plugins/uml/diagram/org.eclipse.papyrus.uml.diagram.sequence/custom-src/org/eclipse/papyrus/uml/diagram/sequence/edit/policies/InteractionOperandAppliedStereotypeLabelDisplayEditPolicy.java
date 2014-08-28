@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,14 +32,14 @@ public class InteractionOperandAppliedStereotypeLabelDisplayEditPolicy extends A
 	@Override
 	protected void refreshStereotypeDisplay() {
 		EditPart host = getHost();
-		if(!(host instanceof CustomInteractionOperandEditPart)) {
+		if (!(host instanceof CustomInteractionOperandEditPart)) {
 			return;
 		}
-		IGraphicalEditPart guard = ((CustomInteractionOperandEditPart)host).getChildBySemanticHint(InteractionOperandGuardEditPart.GUARD_TYPE);
-		if(!(guard instanceof InteractionOperandGuardEditPart)) {
+		IGraphicalEditPart guard = ((CustomInteractionOperandEditPart) host).getChildBySemanticHint(InteractionOperandGuardEditPart.GUARD_TYPE);
+		if (!(guard instanceof InteractionOperandGuardEditPart)) {
 			return;
 		}
-		GuardFigure figure = ((InteractionOperandGuardEditPart)guard).getPrimaryFigure();
+		GuardFigure figure = ((InteractionOperandGuardEditPart) guard).getPrimaryFigure();
 		// calculate text and icon to display
 		final String stereotypesToDisplay = stereotypesOnlyToDisplay();
 		// computes the icon to be displayed
@@ -49,9 +49,9 @@ public class InteractionOperandAppliedStereotypeLabelDisplayEditPolicy extends A
 		// Else, it displays
 		// nothing
 		// if (stereotypesToDisplay != "" || imageToDisplay != null) {
-		if(figure instanceof IPapyrusNodeUMLElementFigure) {
-			((IPapyrusNodeUMLElementFigure)figure).setStereotypeDisplay(tag + ("".equals(stereotypesOnlyToDisplay()) ? stereotypesToDisplay : stereotypesToDisplay), imageToDisplay);
-			if (figure instanceof IPapyrusNodeNamedElementFigure){
+		if (figure instanceof IPapyrusNodeUMLElementFigure) {
+			((IPapyrusNodeUMLElementFigure) figure).setStereotypeDisplay(tag + ("".equals(stereotypesOnlyToDisplay()) ? stereotypesToDisplay : stereotypesToDisplay), imageToDisplay);
+			if (figure instanceof IPapyrusNodeNamedElementFigure) {
 				refreshAppliedStereotypesProperties((IPapyrusNodeNamedElementFigure) figure);
 			}
 		}

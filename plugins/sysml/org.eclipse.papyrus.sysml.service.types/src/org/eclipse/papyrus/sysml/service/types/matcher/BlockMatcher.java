@@ -23,10 +23,10 @@ public class BlockMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if(eObject instanceof Class) {
+		if (eObject instanceof Class) {
 
-			Class element = (Class)eObject;
-			if(UMLUtil.getStereotypeApplication(element, Block.class) != null) {
+			Class element = (Class) eObject;
+			if (UMLUtil.getStereotypeApplication(element, Block.class) != null) {
 				isMatch = true;
 			}
 		}

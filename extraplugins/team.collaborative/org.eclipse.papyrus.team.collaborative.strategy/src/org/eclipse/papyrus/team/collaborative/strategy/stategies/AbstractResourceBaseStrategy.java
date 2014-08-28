@@ -29,13 +29,13 @@ public abstract class AbstractResourceBaseStrategy extends AbstractLockingStrate
 
 	/**
 	 * Add all satellite resources (uml,di,notation).
-	 * 
+	 *
 	 * @param ressourceSet
-	 *        the ressource set
+	 *            the ressource set
 	 * @param uris
-	 *        the uris
+	 *            the uris
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 */
 	protected void addExtraResources(ResourceSet ressourceSet, Collection<URI> uris, URI uri) {
 		PapyrusResourceUtils.addExtraResources(ressourceSet, uris, uri);

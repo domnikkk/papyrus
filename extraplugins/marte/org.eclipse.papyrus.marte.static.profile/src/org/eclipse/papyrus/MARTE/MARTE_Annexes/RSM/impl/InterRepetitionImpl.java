@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,8 +26,8 @@ import org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.InterRepetitionImpl#getRepetitionShapeDependence <em>Repetition Shape Dependence</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.InterRepetitionImpl#isIsModulo <em>Is Modulo</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.InterRepetitionImpl#getRepetitionShapeDependence <em>Repetition Shape Dependence</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.InterRepetitionImpl#isIsModulo <em>Is Modulo</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +38,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	 * The default value of the '{@link #getRepetitionShapeDependence() <em>Repetition Shape Dependence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRepetitionShapeDependence()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	 * The cached value of the '{@link #getRepetitionShapeDependence() <em>Repetition Shape Dependence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRepetitionShapeDependence()
 	 * @generated
 	 * @ordered
@@ -58,6 +60,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	 * The default value of the '{@link #isIsModulo() <em>Is Modulo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsModulo()
 	 * @generated
 	 * @ordered
@@ -68,6 +71,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	 * The cached value of the '{@link #isIsModulo() <em>Is Modulo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsModulo()
 	 * @generated
 	 * @ordered
@@ -77,6 +81,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected InterRepetitionImpl() {
@@ -86,6 +91,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,8 +102,10 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getRepetitionShapeDependence() {
 		return repetitionShapeDependence;
 	}
@@ -105,20 +113,25 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setRepetitionShapeDependence(String newRepetitionShapeDependence) {
 		String oldRepetitionShapeDependence = repetitionShapeDependence;
 		repetitionShapeDependence = newRepetitionShapeDependence;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.INTER_REPETITION__REPETITION_SHAPE_DEPENDENCE, oldRepetitionShapeDependence, repetitionShapeDependence));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isIsModulo() {
 		return isModulo;
 	}
@@ -126,27 +139,31 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsModulo(boolean newIsModulo) {
 		boolean oldIsModulo = isModulo;
 		isModulo = newIsModulo;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.INTER_REPETITION__IS_MODULO, oldIsModulo, isModulo));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RSMPackage.INTER_REPETITION__REPETITION_SHAPE_DEPENDENCE:
-				return getRepetitionShapeDependence();
-			case RSMPackage.INTER_REPETITION__IS_MODULO:
-				return isIsModulo();
+		case RSMPackage.INTER_REPETITION__REPETITION_SHAPE_DEPENDENCE:
+			return getRepetitionShapeDependence();
+		case RSMPackage.INTER_REPETITION__IS_MODULO:
+			return isIsModulo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,17 +171,18 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RSMPackage.INTER_REPETITION__REPETITION_SHAPE_DEPENDENCE:
-				setRepetitionShapeDependence((String)newValue);
-				return;
-			case RSMPackage.INTER_REPETITION__IS_MODULO:
-				setIsModulo((Boolean)newValue);
-				return;
+		case RSMPackage.INTER_REPETITION__REPETITION_SHAPE_DEPENDENCE:
+			setRepetitionShapeDependence((String) newValue);
+			return;
+		case RSMPackage.INTER_REPETITION__IS_MODULO:
+			setIsModulo((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -172,17 +190,18 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RSMPackage.INTER_REPETITION__REPETITION_SHAPE_DEPENDENCE:
-				setRepetitionShapeDependence(REPETITION_SHAPE_DEPENDENCE_EDEFAULT);
-				return;
-			case RSMPackage.INTER_REPETITION__IS_MODULO:
-				setIsModulo(IS_MODULO_EDEFAULT);
-				return;
+		case RSMPackage.INTER_REPETITION__REPETITION_SHAPE_DEPENDENCE:
+			setRepetitionShapeDependence(REPETITION_SHAPE_DEPENDENCE_EDEFAULT);
+			return;
+		case RSMPackage.INTER_REPETITION__IS_MODULO:
+			setIsModulo(IS_MODULO_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -190,15 +209,16 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RSMPackage.INTER_REPETITION__REPETITION_SHAPE_DEPENDENCE:
-				return REPETITION_SHAPE_DEPENDENCE_EDEFAULT == null ? repetitionShapeDependence != null : !REPETITION_SHAPE_DEPENDENCE_EDEFAULT.equals(repetitionShapeDependence);
-			case RSMPackage.INTER_REPETITION__IS_MODULO:
-				return isModulo != IS_MODULO_EDEFAULT;
+		case RSMPackage.INTER_REPETITION__REPETITION_SHAPE_DEPENDENCE:
+			return REPETITION_SHAPE_DEPENDENCE_EDEFAULT == null ? repetitionShapeDependence != null : !REPETITION_SHAPE_DEPENDENCE_EDEFAULT.equals(repetitionShapeDependence);
+		case RSMPackage.INTER_REPETITION__IS_MODULO:
+			return isModulo != IS_MODULO_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -206,11 +226,14 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (repetitionShapeDependence: ");
@@ -221,4 +244,4 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 		return result.toString();
 	}
 
-} //InterRepetitionImpl
+} // InterRepetitionImpl

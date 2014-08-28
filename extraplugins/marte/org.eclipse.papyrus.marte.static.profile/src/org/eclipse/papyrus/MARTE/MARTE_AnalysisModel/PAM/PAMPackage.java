@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,12 +25,13 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMFactory
  * @model kind="package"
  * @generated
@@ -40,6 +41,7 @@ public interface PAMPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "PAM";
@@ -48,6 +50,7 @@ public interface PAMPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/PAM/1";
@@ -56,6 +59,7 @@ public interface PAMPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "PAM";
@@ -64,6 +68,7 @@ public interface PAMPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	PAMPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PAMPackageImpl.init();
@@ -72,6 +77,7 @@ public interface PAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaStepImpl <em>Pa Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaStepImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PAMPackageImpl#getPaStep()
 	 * @generated
@@ -82,6 +88,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Exec Time</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -91,6 +98,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Allocated Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -100,6 +108,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -109,6 +118,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Power Peak</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -118,6 +128,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Energy</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,6 +138,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -136,6 +148,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Sub Usage</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -145,6 +158,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -154,6 +168,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Msg Size</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -163,6 +178,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -172,6 +188,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -181,6 +198,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -190,6 +208,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,6 +218,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Duration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -208,6 +228,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -217,6 +238,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Finish</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -226,6 +248,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Cause</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -235,6 +258,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -244,6 +268,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand Ops</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -253,6 +278,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Inter Occ T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -262,6 +288,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -271,6 +298,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Resp T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -280,6 +308,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -289,6 +318,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization On Host</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -298,6 +328,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Root</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -307,6 +338,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Steps</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -316,6 +348,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -325,6 +358,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Timing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -334,6 +368,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -343,6 +378,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -352,6 +388,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Rep</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -361,6 +398,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Prob</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -370,6 +408,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -379,6 +418,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -388,6 +428,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -397,6 +438,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Demand</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -406,6 +448,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -415,6 +458,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Self Delay</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -424,6 +468,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -433,6 +478,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -442,6 +488,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>No Sync</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -451,6 +498,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Ext Op Demand</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -460,6 +508,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Ext Op Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -469,6 +518,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Behav Demand</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -478,6 +528,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Behav Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -487,6 +538,7 @@ public interface PAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Pa Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -496,6 +548,7 @@ public interface PAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRequestedStepImpl <em>Pa Requested Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRequestedStepImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PAMPackageImpl#getPaRequestedStep()
 	 * @generated
@@ -506,6 +559,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Exec Time</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -515,6 +569,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Allocated Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -524,6 +579,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -533,6 +589,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Power Peak</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -542,6 +599,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Energy</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -551,6 +609,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -560,6 +619,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Sub Usage</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -569,6 +629,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -578,6 +639,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Msg Size</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -587,6 +649,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -596,6 +659,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -605,6 +669,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -614,6 +679,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -623,6 +689,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Duration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -632,6 +699,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -641,6 +709,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Finish</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -650,6 +719,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Cause</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -659,6 +729,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -668,6 +739,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand Ops</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -677,6 +749,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Inter Occ T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -686,6 +759,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -695,6 +769,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Resp T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -704,6 +779,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -713,6 +789,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization On Host</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -722,6 +799,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Root</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -731,6 +809,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Steps</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -740,6 +819,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -749,6 +829,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Timing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -758,6 +839,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -767,6 +849,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -776,6 +859,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Rep</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -785,6 +869,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Prob</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -794,6 +879,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -803,6 +889,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -812,6 +899,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -821,6 +909,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Demand</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -830,6 +919,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -839,6 +929,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Self Delay</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -848,6 +939,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -857,6 +949,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -866,6 +959,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>No Sync</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -875,6 +969,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Ext Op Demand</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -884,6 +979,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Ext Op Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -893,6 +989,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Behav Demand</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -902,6 +999,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Behav Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -911,6 +1009,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Operation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -920,6 +1019,7 @@ public interface PAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Pa Requested Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -929,6 +1029,7 @@ public interface PAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaCommStepImpl <em>Pa Comm Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaCommStepImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PAMPackageImpl#getPaCommStep()
 	 * @generated
@@ -939,6 +1040,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Exec Time</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -948,6 +1050,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Allocated Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -957,6 +1060,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -966,6 +1070,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Power Peak</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -975,6 +1080,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Energy</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -984,6 +1090,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -993,6 +1100,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Sub Usage</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1002,6 +1110,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1011,6 +1120,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Msg Size</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1020,6 +1130,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1029,6 +1140,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1038,6 +1150,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1047,6 +1160,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1056,6 +1170,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Duration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1065,6 +1180,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1074,6 +1190,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Finish</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1083,6 +1200,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Cause</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1092,6 +1210,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1101,6 +1220,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand Ops</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1110,6 +1230,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Inter Occ T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1119,6 +1240,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1128,6 +1250,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Resp T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1137,6 +1260,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1146,6 +1270,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization On Host</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1155,6 +1280,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Root</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1164,6 +1290,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Steps</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1173,6 +1300,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1182,6 +1310,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Timing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1191,6 +1320,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1200,6 +1330,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1209,6 +1340,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Rep</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1218,6 +1350,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Prob</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1227,6 +1360,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1236,6 +1370,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1245,6 +1380,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1254,6 +1390,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Demand</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1263,6 +1400,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1272,6 +1410,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Self Delay</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1281,6 +1420,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1290,6 +1430,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1299,6 +1440,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>No Sync</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1308,6 +1450,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Ext Op Demand</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1317,6 +1460,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Ext Op Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1326,6 +1470,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Behav Demand</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1335,6 +1480,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Behav Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1344,6 +1490,7 @@ public interface PAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Pa Comm Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1353,6 +1500,7 @@ public interface PAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaResPassStepImpl <em>Pa Res Pass Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaResPassStepImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PAMPackageImpl#getPaResPassStep()
 	 * @generated
@@ -1363,6 +1511,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Exec Time</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1372,6 +1521,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Allocated Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1381,6 +1531,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Memory</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1390,6 +1541,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Power Peak</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1399,6 +1551,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Energy</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1408,6 +1561,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1417,6 +1571,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Sub Usage</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1426,6 +1581,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Used Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1435,6 +1591,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Msg Size</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1444,6 +1601,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1453,6 +1611,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1462,6 +1621,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1471,6 +1631,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1480,6 +1641,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Duration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1489,6 +1651,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1498,6 +1661,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Finish</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1507,6 +1671,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Cause</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1516,6 +1681,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1525,6 +1691,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host Demand Ops</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1534,6 +1701,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Inter Occ T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1543,6 +1711,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1552,6 +1721,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Resp T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1561,6 +1731,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1570,6 +1741,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization On Host</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1579,6 +1751,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Root</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1588,6 +1761,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Steps</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1597,6 +1771,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1606,6 +1781,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Timing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1615,6 +1791,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1624,6 +1801,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1633,6 +1811,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Rep</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1642,6 +1821,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Prob</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1651,6 +1831,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1660,6 +1841,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1669,6 +1851,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1678,6 +1861,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Demand</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1687,6 +1871,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Serv Count</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1696,6 +1881,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Self Delay</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1705,6 +1891,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1714,6 +1901,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1723,6 +1911,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Resource</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1732,6 +1921,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Units</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1741,6 +1931,7 @@ public interface PAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Pa Res Pass Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1750,6 +1941,7 @@ public interface PAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaLogicalResourceImpl <em>Pa Logical Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaLogicalResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PAMPackageImpl#getPaLogicalResource()
 	 * @generated
@@ -1760,6 +1952,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1769,6 +1962,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1778,6 +1972,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1787,6 +1982,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1796,6 +1992,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1805,6 +2002,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1814,6 +2012,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1823,6 +2022,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1832,6 +2032,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1841,6 +2042,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1850,6 +2052,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Pool Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1859,6 +2062,7 @@ public interface PAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Pa Logical Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1868,6 +2072,7 @@ public interface PAMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl <em>Pa Run TInstance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PAMPackageImpl#getPaRunTInstance()
 	 * @generated
@@ -1878,6 +2083,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Pool Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1887,6 +2093,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Unbdd Pool</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1896,6 +2103,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1905,6 +2113,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Host</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1914,6 +2123,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Utilization</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1923,6 +2133,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1932,6 +2143,7 @@ public interface PAMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1941,6 +2153,7 @@ public interface PAMPackage extends EPackage {
 	 * The number of structural features of the '<em>Pa Run TInstance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1951,6 +2164,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaStep <em>Pa Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Pa Step</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaStep
 	 * @generated
@@ -1961,6 +2175,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaStep#getNoSync <em>No Sync</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>No Sync</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaStep#getNoSync()
 	 * @see #getPaStep()
@@ -1972,6 +2187,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaStep#getExtOpDemand <em>Ext Op Demand</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Ext Op Demand</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaStep#getExtOpDemand()
 	 * @see #getPaStep()
@@ -1983,6 +2199,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaStep#getExtOpCount <em>Ext Op Count</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Ext Op Count</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaStep#getExtOpCount()
 	 * @see #getPaStep()
@@ -1994,6 +2211,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaStep#getBehavDemand <em>Behav Demand</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Behav Demand</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaStep#getBehavDemand()
 	 * @see #getPaStep()
@@ -2005,6 +2223,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaStep#getBehavCount <em>Behav Count</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Behav Count</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaStep#getBehavCount()
 	 * @see #getPaStep()
@@ -2016,6 +2235,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRequestedStep <em>Pa Requested Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Pa Requested Step</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRequestedStep
 	 * @generated
@@ -2026,6 +2246,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaCommStep <em>Pa Comm Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Pa Comm Step</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaCommStep
 	 * @generated
@@ -2036,6 +2257,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaResPassStep <em>Pa Res Pass Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Pa Res Pass Step</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaResPassStep
 	 * @generated
@@ -2046,6 +2268,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaResPassStep#getResource <em>Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaResPassStep#getResource()
 	 * @see #getPaResPassStep()
@@ -2057,6 +2280,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaResPassStep#getResUnits <em>Res Units</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Res Units</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaResPassStep#getResUnits()
 	 * @see #getPaResPassStep()
@@ -2068,6 +2292,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaLogicalResource <em>Pa Logical Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Pa Logical Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaLogicalResource
 	 * @generated
@@ -2078,6 +2303,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaLogicalResource#getUtilization <em>Utilization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Utilization</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaLogicalResource#getUtilization()
 	 * @see #getPaLogicalResource()
@@ -2089,6 +2315,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaLogicalResource#getThroughput <em>Throughput</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Throughput</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaLogicalResource#getThroughput()
 	 * @see #getPaLogicalResource()
@@ -2100,6 +2327,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaLogicalResource#getPoolSize <em>Pool Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Pool Size</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaLogicalResource#getPoolSize()
 	 * @see #getPaLogicalResource()
@@ -2111,6 +2339,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance <em>Pa Run TInstance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Pa Run TInstance</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance
 	 * @generated
@@ -2121,6 +2350,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getPoolSize <em>Pool Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Pool Size</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getPoolSize()
 	 * @see #getPaRunTInstance()
@@ -2132,6 +2362,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#isUnbddPool <em>Unbdd Pool</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Unbdd Pool</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#isUnbddPool()
 	 * @see #getPaRunTInstance()
@@ -2143,6 +2374,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getInstance <em>Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Instance</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getInstance()
 	 * @see #getPaRunTInstance()
@@ -2154,6 +2386,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getHost <em>Host</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Host</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getHost()
 	 * @see #getPaRunTInstance()
@@ -2165,6 +2398,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getUtilization <em>Utilization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Utilization</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getUtilization()
 	 * @see #getPaRunTInstance()
@@ -2176,6 +2410,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getThroughput <em>Throughput</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Throughput</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getThroughput()
 	 * @see #getPaRunTInstance()
@@ -2187,6 +2422,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getBase_NamedElement <em>Base Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Named Element</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getBase_NamedElement()
 	 * @see #getPaRunTInstance()
@@ -2198,6 +2434,7 @@ public interface PAMPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -2207,12 +2444,13 @@ public interface PAMPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -2220,6 +2458,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaStepImpl <em>Pa Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaStepImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PAMPackageImpl#getPaStep()
 		 * @generated
@@ -2230,6 +2469,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>No Sync</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute PA_STEP__NO_SYNC = eINSTANCE.getPaStep_NoSync();
@@ -2238,6 +2478,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ext Op Demand</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute PA_STEP__EXT_OP_DEMAND = eINSTANCE.getPaStep_ExtOpDemand();
@@ -2246,6 +2487,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ext Op Count</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute PA_STEP__EXT_OP_COUNT = eINSTANCE.getPaStep_ExtOpCount();
@@ -2254,6 +2496,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Behav Demand</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference PA_STEP__BEHAV_DEMAND = eINSTANCE.getPaStep_BehavDemand();
@@ -2262,6 +2505,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Behav Count</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute PA_STEP__BEHAV_COUNT = eINSTANCE.getPaStep_BehavCount();
@@ -2270,6 +2514,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRequestedStepImpl <em>Pa Requested Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRequestedStepImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PAMPackageImpl#getPaRequestedStep()
 		 * @generated
@@ -2280,6 +2525,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaCommStepImpl <em>Pa Comm Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaCommStepImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PAMPackageImpl#getPaCommStep()
 		 * @generated
@@ -2290,6 +2536,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaResPassStepImpl <em>Pa Res Pass Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaResPassStepImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PAMPackageImpl#getPaResPassStep()
 		 * @generated
@@ -2300,6 +2547,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Resource</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference PA_RES_PASS_STEP__RESOURCE = eINSTANCE.getPaResPassStep_Resource();
@@ -2308,6 +2556,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Res Units</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute PA_RES_PASS_STEP__RES_UNITS = eINSTANCE.getPaResPassStep_ResUnits();
@@ -2316,6 +2565,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaLogicalResourceImpl <em>Pa Logical Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaLogicalResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PAMPackageImpl#getPaLogicalResource()
 		 * @generated
@@ -2326,6 +2576,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Utilization</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute PA_LOGICAL_RESOURCE__UTILIZATION = eINSTANCE.getPaLogicalResource_Utilization();
@@ -2334,6 +2585,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Throughput</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute PA_LOGICAL_RESOURCE__THROUGHPUT = eINSTANCE.getPaLogicalResource_Throughput();
@@ -2342,6 +2594,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Pool Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute PA_LOGICAL_RESOURCE__POOL_SIZE = eINSTANCE.getPaLogicalResource_PoolSize();
@@ -2350,6 +2603,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl <em>Pa Run TInstance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PAMPackageImpl#getPaRunTInstance()
 		 * @generated
@@ -2360,6 +2614,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Pool Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute PA_RUN_TINSTANCE__POOL_SIZE = eINSTANCE.getPaRunTInstance_PoolSize();
@@ -2368,6 +2623,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Unbdd Pool</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute PA_RUN_TINSTANCE__UNBDD_POOL = eINSTANCE.getPaRunTInstance_UnbddPool();
@@ -2376,6 +2632,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Instance</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference PA_RUN_TINSTANCE__INSTANCE = eINSTANCE.getPaRunTInstance_Instance();
@@ -2384,6 +2641,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Host</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference PA_RUN_TINSTANCE__HOST = eINSTANCE.getPaRunTInstance_Host();
@@ -2392,6 +2650,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Utilization</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute PA_RUN_TINSTANCE__UTILIZATION = eINSTANCE.getPaRunTInstance_Utilization();
@@ -2400,6 +2659,7 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Throughput</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute PA_RUN_TINSTANCE__THROUGHPUT = eINSTANCE.getPaRunTInstance_Throughput();
@@ -2408,10 +2668,11 @@ public interface PAMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Named Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference PA_RUN_TINSTANCE__BASE_NAMED_ELEMENT = eINSTANCE.getPaRunTInstance_Base_NamedElement();
 
 	}
 
-} //PAMPackage
+} // PAMPackage

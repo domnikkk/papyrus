@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
 /**
- * 
+ *
  * Content provider for the types available from a EReference
- * 
+ *
  */
 public class TypesAvailableFromEReferenceContentProvider implements IStructuredContentProvider {
 
@@ -41,18 +41,18 @@ public class TypesAvailableFromEReferenceContentProvider implements IStructuredC
 	}
 
 	public Object[] getElements(Object inputElement) {
-		if(inputElement instanceof EReference) {
+		if (inputElement instanceof EReference) {
 
 			List<EObject> results = new ArrayList<EObject>();
 
-			results.add(((EReference)inputElement).getEReferenceType());
+			results.add(((EReference) inputElement).getEReferenceType());
 
-			TreeIterator<EObject> it = ((EReference)inputElement).eResource().getAllContents();
-			while(it.hasNext()) {
-				EObject eObject = (EObject)it.next();
-				if(eObject instanceof EClass) {
-					List<EClass> superTypes = ((EClass)eObject).getEAllSuperTypes();
-					if(superTypes.contains(((EReference)inputElement).getEReferenceType())) {
+			TreeIterator<EObject> it = ((EReference) inputElement).eResource().getAllContents();
+			while (it.hasNext()) {
+				EObject eObject = it.next();
+				if (eObject instanceof EClass) {
+					List<EClass> superTypes = ((EClass) eObject).getEAllSuperTypes();
+					if (superTypes.contains(((EReference) inputElement).getEReferenceType())) {
 
 						results.add(eObject);
 					}

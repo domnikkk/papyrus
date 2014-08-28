@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors: Francisco Javier Cano Muñoz (Prodevelop) - initial api implementation 
- * 
+ *
+ * Contributors: Francisco Javier Cano Muñoz (Prodevelop) - initial api implementation
+ *
  ******************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.actions;
 
@@ -19,16 +19,18 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.papyrus.commands.wrappers.EMFtoGEFCommandWrapper;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  * {@link IAction} that moves an element up and/or down in a list compartment.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
- * 
+ *
  */
 public class MoveCompartmentObjectAction extends DiagramAction {
 
@@ -64,23 +66,24 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 
 	/**
 	 * Instantiates a new creates the move object action.
-	 * 
+	 *
 	 * @param workbenchPage
-	 *        the workbench page
+	 *            the workbench page
 	 * @param diagramKind
-	 *        the diagram kind
+	 *            the diagram kind
 	 */
 	public MoveCompartmentObjectAction(IWorkbenchPage workbenchPage, int actionType) {
 		super(workbenchPage);
-		if(actionType > MOVE_TOP || actionType < MOVE_BOTTOM)
+		if (actionType > MOVE_TOP || actionType < MOVE_BOTTOM) {
 			this.actionType = getDefaultAction();
-		else
+		} else {
 			this.actionType = actionType;
+		}
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.diagram.ui.actions.DiagramAction#createTargetRequest
 	 * ()
@@ -92,7 +95,7 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.diagram.ui.actions.DiagramAction#isSelectionListener
 	 * ()
@@ -105,7 +108,7 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 	/**
 	 * Returns the command for moving the selected EditPart along the
 	 * ListCompartmentEditPart where is contained.
-	 * 
+	 *
 	 * @return a EMF MoveCommand to move the object
 	 */
 	@Override
@@ -114,21 +117,22 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 		IGraphicalEditPart selEP = getSelectedEditPart();
 
 		// Check that neither the EditPart nor the EditingDomain are null
-		if(selEP == null || selEP.getEditingDomain() == null)
+		if (selEP == null || selEP.getEditingDomain() == null) {
 			return null;
+		}
 
 		// If everything ok, get the domain and
 		TransactionalEditingDomain eDomain = selEP.getEditingDomain();
 
 		// Get the View
 		Object model = selEP.getModel();
-		if(model instanceof View) {
-			View view = (View)model;
-			if(view.eContainer() != null && view.eContainer() instanceof View) {
+		if (model instanceof View) {
+			View view = (View) model;
+			if (view.eContainer() != null && view.eContainer() instanceof View) {
 				// Create move through list command
-				View viewParent = (View)view.eContainer();
+				View viewParent = (View) view.eContainer();
 				int pos = 0;
-				switch(actionType) {
+				switch (actionType) {
 				case MOVE_TOP:
 					pos = 0;
 					break;
@@ -141,7 +145,8 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 				case MOVE_BOTTOM:
 					pos = viewParent.getPersistedChildren().size() - 1;
 					break;
-				};
+				}
+				;
 				MoveCommand moveCmd = new MoveCommand(eDomain, viewParent, NotationPackage.eINSTANCE.getView_PersistedChildren(), view, pos);
 				return new EMFtoGEFCommandWrapper(moveCmd);
 			}
@@ -152,7 +157,7 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 
 	/**
 	 * Checks whether the action should be enabled or not
-	 * 
+	 *
 	 * @return True if everything is OK. False otherwise.
 	 */
 	@Override
@@ -162,27 +167,31 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 		IGraphicalEditPart selEP = getSelectedEditPart();
 
 		// If there is no parent, there is nothing to do
-		if(selEP == null || selEP.getParent() == null)
+		if (selEP == null || selEP.getParent() == null) {
 			return false;
+		}
 
 		// Parent must be a ListCompartment
-		if(!(selEP.getParent() instanceof ListCompartmentEditPart))
+		if (!(selEP.getParent() instanceof ListCompartmentEditPart)) {
 			return false;
+		}
 
 		// Parent must have more than one child
-		if(selEP.getParent().getChildren().size() <= 1)
+		if (selEP.getParent().getChildren().size() <= 1) {
 			return false;
+		}
 
 		// The View of the EditPart cannot be null and with a parent
-		if(selEP.getModel() != null && selEP.getModel() instanceof View)
+		if (selEP.getModel() != null && selEP.getModel() instanceof View) {
 			return true;
-		else
+		} else {
 			return false;
+		}
 
 	}
 
 	/**
- * 
+ *
  */
 	@Override
 	public void refresh() {
@@ -196,7 +205,7 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 	/**
 	 * Returns the default action. It should only be used in case a bad
 	 * parameter is passed to the Constructor.
-	 * 
+	 *
 	 * @return the MOVE_TOP action
 	 */
 	protected int getDefaultAction() {
@@ -206,7 +215,7 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 	/**
 	 * Returns the string for the default action. It should only be used in case
 	 * a bad parameter is passed to the Constructor.
-	 * 
+	 *
 	 * @return the MOVE_TOP_STR action string
 	 */
 	protected String getDefaultActionStr() {
@@ -216,7 +225,7 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 	/**
 	 * Returns the image path for the default action. It should only be used in
 	 * case a bad parameter is passed to the Constructor.
-	 * 
+	 *
 	 * @return the MOVE_TOP_IMG action image path
 	 */
 	protected String getDefaultActionImgPath() {
@@ -225,12 +234,12 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 
 	/**
 	 * Depending on the value of actionType, it returns a suitable text
-	 * 
+	 *
 	 * @return a MOVE_XXX_STR value. It depends on the actionType value
 	 */
 	private String calculateText() {
 		// It return the text for the action depending on the actionType value
-		switch(actionType) {
+		switch (actionType) {
 		case MOVE_TOP:
 			return MOVE_TOP_STR;
 		case MOVE_UP:
@@ -247,12 +256,12 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 
 	/**
 	 * It returns a suitable ImageDescriptor for the currect actionType value
-	 * 
+	 *
 	 * @return the suitable ImageDescriptor
 	 */
 	private ImageDescriptor calculateImage() {
 		String imgPath = getDefaultActionImgPath();
-		switch(actionType) {
+		switch (actionType) {
 		case MOVE_TOP:
 			imgPath = MOVE_TOP_IMG;
 			break;
@@ -266,19 +275,19 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 			imgPath = MOVE_BOTTOM_IMG;
 			break;
 		}
-		ImageDescriptor descriptor = Activator.imageDescriptorFromPlugin(Activator.ID, imgPath);
+		ImageDescriptor descriptor = AbstractUIPlugin.imageDescriptorFromPlugin(Activator.ID, imgPath);
 		return descriptor;
 	}
 
 	/**
 	 * Gets the selected edit part.
-	 * 
+	 *
 	 * @return the selected edit part
 	 */
 	private IGraphicalEditPart getSelectedEditPart() {
-		for(Object next : getSelectedObjects()) {
-			if(next instanceof IGraphicalEditPart) {
-				IGraphicalEditPart editPart = (IGraphicalEditPart)next;
+		for (Object next : getSelectedObjects()) {
+			if (next instanceof IGraphicalEditPart) {
+				IGraphicalEditPart editPart = (IGraphicalEditPart) next;
 				return editPart;
 			}
 		}

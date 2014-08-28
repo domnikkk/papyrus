@@ -12,13 +12,14 @@ import org.eclipse.emf.ecore.EReference;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each operation of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.uml.documentation.Documentation.DocumentationFactory
  * @model kind="package"
  * @generated
@@ -28,6 +29,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "Documentation";
@@ -36,6 +38,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/documentation";
@@ -44,6 +47,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "documentation";
@@ -52,6 +56,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	DocumentationPackage eINSTANCE = org.eclipse.papyrus.uml.documentation.Documentation.impl.DocumentationPackageImpl.init();
@@ -60,6 +65,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.documentation.Documentation.impl.DocumentationImpl <em>Documentation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.uml.documentation.Documentation.impl.DocumentationImpl
 	 * @see org.eclipse.papyrus.uml.documentation.Documentation.impl.DocumentationPackageImpl#getDocumentation()
 	 * @generated
@@ -70,6 +76,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Comment</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -79,6 +86,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>Associated Resource</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -88,6 +96,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The number of structural features of the '<em>Documentation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,6 +106,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The number of operations of the '<em>Documentation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,6 +117,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.documentation.Documentation.Documentation <em>Documentation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Documentation</em>'.
 	 * @see org.eclipse.papyrus.uml.documentation.Documentation.Documentation
 	 * @generated
@@ -117,6 +128,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.uml.documentation.Documentation.Documentation#getBase_Comment <em>Base Comment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Base Comment</em>'.
 	 * @see org.eclipse.papyrus.uml.documentation.Documentation.Documentation#getBase_Comment()
 	 * @see #getDocumentation()
@@ -128,6 +140,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.uml.documentation.Documentation.Documentation#getAssociatedResource <em>Associated Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute list '<em>Associated Resource</em>'.
 	 * @see org.eclipse.papyrus.uml.documentation.Documentation.Documentation#getAssociatedResource()
 	 * @see #getDocumentation()
@@ -139,6 +152,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -148,13 +162,14 @@ public interface DocumentationPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each operation of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -162,6 +177,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.documentation.Documentation.impl.DocumentationImpl <em>Documentation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.uml.documentation.Documentation.impl.DocumentationImpl
 		 * @see org.eclipse.papyrus.uml.documentation.Documentation.impl.DocumentationPackageImpl#getDocumentation()
 		 * @generated
@@ -172,6 +188,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Comment</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference DOCUMENTATION__BASE_COMMENT = eINSTANCE.getDocumentation_Base_Comment();
@@ -180,10 +197,11 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Associated Resource</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute DOCUMENTATION__ASSOCIATED_RESOURCE = eINSTANCE.getDocumentation_AssociatedResource();
 
 	}
 
-} //DocumentationPackage
+} // DocumentationPackage

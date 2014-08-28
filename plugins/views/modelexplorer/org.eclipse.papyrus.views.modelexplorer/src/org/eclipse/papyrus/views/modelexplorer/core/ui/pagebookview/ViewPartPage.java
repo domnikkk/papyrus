@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 LIFL & CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.part.IPageSite;
 import org.eclipse.ui.part.Page;
+import org.eclipse.ui.part.ViewPart;
 
 
 /**
@@ -31,9 +32,9 @@ import org.eclipse.ui.part.Page;
  * Subclass must create the viewer in their constructor. The constructor take the part as argument.
  * The constructor is called from a subclass of {@link MultiViewPageBookView}.
  * Subclass should also implements the method getControl().
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public abstract class ViewPartPage extends Page implements IAdaptable {
 
@@ -45,21 +46,21 @@ public abstract class ViewPartPage extends Page implements IAdaptable {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public ViewPartPage() {
 	}
 
 	/**
 	 * Init the inner View
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.Page#init(org.eclipse.ui.part.IPageSite)
-	 * 
+	 *
 	 * @param pageSite
 	 */
 	@Override
 	public void init(IPageSite pageSite) {
-		// Not used. 
+		// Not used.
 		super.init(pageSite);
 	}
 
@@ -77,8 +78,8 @@ public abstract class ViewPartPage extends Page implements IAdaptable {
 		modelExplorer = createViewer(part);
 
 		// Add the extension config if requested by the Viewer
-		if(modelExplorer instanceof IExecutableExtension) {
-			((IExecutableExtension)modelExplorer).setInitializationData(cfig, null, null);
+		if (modelExplorer instanceof IExecutableExtension) {
+			((IExecutableExtension) modelExplorer).setInitializationData(cfig, null, null);
 		}
 		// Init the part
 		modelExplorer.init(viewPageSite, memento);
@@ -86,19 +87,19 @@ public abstract class ViewPartPage extends Page implements IAdaptable {
 
 	/**
 	 * Create the viewer for this page. The Viewer is associated to the specified part.
-	 * 
+	 *
 	 * @param part
-	 *        The part associated to the Viewer.
-	 * 
+	 *            The part associated to the Viewer.
+	 *
 	 * @return The Viewer to render in the page.
 	 */
 	abstract protected IViewPart createViewer(IWorkbenchPart part);
 
 	/**
 	 * Subclass must implement this method.
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.Page#getControl()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -106,7 +107,7 @@ public abstract class ViewPartPage extends Page implements IAdaptable {
 
 	/**
 	 * @see org.eclipse.ui.part.Page#setFocus()
-	 * 
+	 *
 	 */
 	@Override
 	public void setFocus() {
@@ -115,7 +116,7 @@ public abstract class ViewPartPage extends Page implements IAdaptable {
 
 	/**
 	 * Return the associated viewer
-	 * 
+	 *
 	 * @return
 	 */
 	public IViewPart getViewer() {
@@ -124,17 +125,18 @@ public abstract class ViewPartPage extends Page implements IAdaptable {
 
 	/**
 	 * Forward to the
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
-	 * 
+	 *
 	 * @param adapter
 	 * @return
 	 */
 	@SuppressWarnings("rawtypes")
 	public Object getAdapter(Class adapter) {
 
-		if(modelExplorer instanceof IAdaptable)
-			return ((IAdaptable)modelExplorer).getAdapter(adapter);
+		if (modelExplorer instanceof IAdaptable) {
+			return ((IAdaptable) modelExplorer).getAdapter(adapter);
+		}
 
 		// do nothing
 		return null;
@@ -142,6 +144,7 @@ public abstract class ViewPartPage extends Page implements IAdaptable {
 
 	/**
 	 * Dispose the page, and its associated viewer.
+	 *
 	 * @see org.eclipse.ui.part.Page#dispose()
 	 *
 	 */

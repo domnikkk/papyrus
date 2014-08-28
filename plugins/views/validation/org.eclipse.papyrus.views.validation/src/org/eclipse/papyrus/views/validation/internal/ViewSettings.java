@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ class ViewSettings {
 	private static int DEFAULT_SORT_DIRECTION = SWT.UP;
 
 	// negative values indicate relative weights
-	private static Integer[] DEFAULT_COLUMN_WIDTHS = {0, -30, -25, -30, -15};
+	private static Integer[] DEFAULT_COLUMN_WIDTHS = { 0, -30, -25, -30, -15 };
 
 	private static int DEFAULT_COLUMN_WIDTH = 30;
 
@@ -66,8 +66,8 @@ class ViewSettings {
 
 	public void setSortDirection(int direction) {
 		sortDirection = (direction == SWT.DOWN)
-			? SWT.DOWN
-			: SWT.UP;
+				? SWT.DOWN
+				: SWT.UP;
 	}
 
 	public int getColumnWidth(int index) {
@@ -88,7 +88,7 @@ class ViewSettings {
 				if (index > columnWidths.size()) {
 					// pad
 					columnWidths.addAll(Collections.nCopies(index
-						- columnWidths.size(), DEFAULT_COLUMN_WIDTH));
+							- columnWidths.size(), DEFAULT_COLUMN_WIDTH));
 				}
 				columnWidths.add(weight);
 			}
@@ -103,7 +103,7 @@ class ViewSettings {
 
 	private void load(IMemento memento) {
 		columnWidths = getIntegerList(memento, "columnWidths",
-			DEFAULT_COLUMN_WIDTHS);
+				DEFAULT_COLUMN_WIDTHS);
 		sortColumn = getInt(memento, "sortColumn", DEFAULT_SORT_COLUMN);
 		sortDirection = getInt(memento, "sortDirection", DEFAULT_SORT_DIRECTION);
 	}
@@ -118,8 +118,8 @@ class ViewSettings {
 		Integer value = memento.getInteger(key);
 
 		return (value == null)
-			? defaultValue
-			: value.intValue();
+				? defaultValue
+				: value.intValue();
 	}
 
 	private List<Integer> getIntegerList(IMemento memento, String key,
@@ -132,15 +132,15 @@ class ViewSettings {
 			result = Lists.newArrayList(defaultValue);
 		} else {
 			result = Lists.newArrayList(Iterables.transform(Splitter.on(',')
-				.trimResults().split(stringValue),
-				new Function<String, Integer>() {
+					.trimResults().split(stringValue),
+					new Function<String, Integer>() {
 
-					public Integer apply(String input) {
-						return "".equals(input)
-							? DEFAULT_COLUMN_WIDTH
-							: Integer.valueOf(input);
-					}
-				}));
+						public Integer apply(String input) {
+							return "".equals(input)
+									? DEFAULT_COLUMN_WIDTH
+									: Integer.valueOf(input);
+						}
+					}));
 		}
 
 		return result;

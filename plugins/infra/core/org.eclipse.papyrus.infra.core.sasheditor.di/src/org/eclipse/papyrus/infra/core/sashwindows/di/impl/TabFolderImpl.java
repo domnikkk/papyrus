@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.core.sashwindows.di.TabFolder;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.TabFolderImpl#getChildren <em>Children</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.TabFolderImpl#getChildren <em>Children</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +38,7 @@ public class TabFolderImpl extends AbstractPanelImpl implements TabFolder {
 	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
@@ -47,6 +48,7 @@ public class TabFolderImpl extends AbstractPanelImpl implements TabFolder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TabFolderImpl() {
@@ -56,6 +58,7 @@ public class TabFolderImpl extends AbstractPanelImpl implements TabFolder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -66,8 +69,10 @@ public class TabFolderImpl extends AbstractPanelImpl implements TabFolder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<PageRef> getChildren() {
 		if (children == null) {
 			children = new EObjectContainmentWithInverseEList<PageRef>(PageRef.class, this, DiPackage.TAB_FOLDER__CHILDREN, DiPackage.PAGE_REF__PARENT);
@@ -78,9 +83,10 @@ public class TabFolderImpl extends AbstractPanelImpl implements TabFolder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void addPage(Object pageIdentifier) {
 		PageRef newPage = DiFactory.eINSTANCE.createPageRef();
 		newPage.setPageIdentifier(pageIdentifier);
@@ -90,9 +96,10 @@ public class TabFolderImpl extends AbstractPanelImpl implements TabFolder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void addPage(int index, Object pageIdentifier) {
 		PageRef newPage = DiFactory.eINSTANCE.createPageRef();
 		newPage.setPageIdentifier(pageIdentifier);
@@ -102,9 +109,10 @@ public class TabFolderImpl extends AbstractPanelImpl implements TabFolder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void removePage(int pageIndex) {
 		getChildren().remove(pageIndex);
 	}
@@ -112,14 +120,15 @@ public class TabFolderImpl extends AbstractPanelImpl implements TabFolder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DiPackage.TAB_FOLDER__CHILDREN:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildren()).basicAdd(otherEnd, msgs);
+		case DiPackage.TAB_FOLDER__CHILDREN:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getChildren()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -127,13 +136,14 @@ public class TabFolderImpl extends AbstractPanelImpl implements TabFolder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DiPackage.TAB_FOLDER__CHILDREN:
-				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+		case DiPackage.TAB_FOLDER__CHILDREN:
+			return ((InternalEList<?>) getChildren()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -141,13 +151,14 @@ public class TabFolderImpl extends AbstractPanelImpl implements TabFolder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DiPackage.TAB_FOLDER__CHILDREN:
-				return getChildren();
+		case DiPackage.TAB_FOLDER__CHILDREN:
+			return getChildren();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -155,16 +166,17 @@ public class TabFolderImpl extends AbstractPanelImpl implements TabFolder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DiPackage.TAB_FOLDER__CHILDREN:
-				getChildren().clear();
-				getChildren().addAll((Collection<? extends PageRef>)newValue);
-				return;
+		case DiPackage.TAB_FOLDER__CHILDREN:
+			getChildren().clear();
+			getChildren().addAll((Collection<? extends PageRef>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -172,14 +184,15 @@ public class TabFolderImpl extends AbstractPanelImpl implements TabFolder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DiPackage.TAB_FOLDER__CHILDREN:
-				getChildren().clear();
-				return;
+		case DiPackage.TAB_FOLDER__CHILDREN:
+			getChildren().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -187,42 +200,46 @@ public class TabFolderImpl extends AbstractPanelImpl implements TabFolder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DiPackage.TAB_FOLDER__CHILDREN:
-				return children != null && !children.isEmpty();
+		case DiPackage.TAB_FOLDER__CHILDREN:
+			return children != null && !children.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.TabFolder#movePage(int, int)
-	 * 
+	 *
 	 * @param oldIndex
 	 * @param newIndex
 	 * @generated NOT
 	 */
+	@Override
 	public void movePage(int oldIndex, int newIndex) {
 		int listSize = getChildren().size();
-		if(newIndex >= listSize) {
+		if (newIndex >= listSize) {
 			newIndex = listSize - 1;
 		}
-		if(newIndex < 0) {
+		if (newIndex < 0) {
 			newIndex = 0;
 		}
 
-		if(oldIndex == newIndex)
+		if (oldIndex == newIndex) {
 			return;
+		}
 
-		if(listSize == 0)
+		if (listSize == 0) {
 			return;
+		}
 
 
 		getChildren().move(newIndex, oldIndex);
 	}
 
-} //TabFolderImpl
+} // TabFolderImpl

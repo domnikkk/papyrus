@@ -1,6 +1,6 @@
 /***********************************************************************
  * Copyright (c) 2008, 2014 Anyware Technologies, Obeo, CEA LIST, and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,14 +52,14 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  * An outline in order to navigate in current diagram.
- * 
+ *
  * @author <a href="mailto:david.sciamma@anyware-tech.com">David Sciamma</a>
  * @author <a href="mailto:jacques.lescot@anyware-tech.com">Jacques Lescot</a>
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  * @author <a href="mailto:yann.tanguy@cea.fr">Yann Tanguy</a>
  */
-//FIXME: The outline is broken in Eclipse 4.2. #createControl(Composite) is never called.
-//See #refresh()
+// FIXME: The outline is broken in Eclipse 4.2. #createControl(Composite) is never called.
+// See #refresh()
 public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, ISelectionListener, IAdaptable {
 
 	private final class ShowAllAction extends Action {
@@ -70,7 +70,7 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 
 		@Override
 		public void run() {
-			if(sashComp != null && !sashComp.isDisposed()) {
+			if (sashComp != null && !sashComp.isDisposed()) {
 				performShowAction();
 			}
 		}
@@ -84,7 +84,7 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 
 		@Override
 		public void run() {
-			if(overview != null && !overview.isDisposed()) {
+			if (overview != null && !overview.isDisposed()) {
 				performShowAction();
 			}
 		}
@@ -98,7 +98,7 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 
 		@Override
 		public void run() {
-			if(navigator != null && !navigator.isDisposed()) {
+			if (navigator != null && !navigator.isDisposed()) {
 				performShowAction();
 			}
 		}
@@ -159,8 +159,8 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 	/**
 	 * {@inheritDoc}
 	 */
-	//FIXME: In Eclipse 4.2, this method is never called. This results in sashComp being null,
-	//and a NPE being thrown after each selectionChangedEvent
+	// FIXME: In Eclipse 4.2, this method is never called. This results in sashComp being null,
+	// and a NPE being thrown after each selectionChangedEvent
 	@Override
 	public void createControl(Composite parent) {
 
@@ -172,20 +172,20 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 		refreshSelection();
 
 		// Create Overview
-		if(root != null) {
+		if (root != null) {
 			overview = createOverview(sashComp, root);
 			overview.setLayoutData(new GridData(GridData.FILL_BOTH));
 		}
 
 		// Create Navigator
 		navigator = createNavigator(sashComp, getSite());
-		if(diagram != null) {
+		if (diagram != null) {
 			navigator.getTreeViewer().setInput(diagram);
 		}
 
 		// Slip SashForm in two sections
-		if(overview != null) {
-			sashComp.setWeights(new int[]{ 30, 70 });
+		if (overview != null) {
+			sashComp.setWeights(new int[] { 30, 70 });
 		}
 
 		createActions();
@@ -193,11 +193,11 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 
 	/**
 	 * Create the composite that shows an overview of the model
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param rootEditPart
-	 *        the root edit part
+	 *            the root edit part
 	 * @return the overview composite
 	 */
 	protected Composite createOverview(Composite parent, ScalableFreeformRootEditPart rootEditPart) {
@@ -215,9 +215,9 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 
 	/**
 	 * Create the show outline actions in the given tool bar manager.
-	 * 
+	 *
 	 * @param tbm
-	 *        the outline tool bar manager
+	 *            the outline tool bar manager
 	 */
 	private void createShowOutlineActions(IToolBarManager tbm) {
 		// Show Tree action
@@ -261,7 +261,7 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 	}
 
 	public void addSelectionChangedListener(ISelectionChangedListener listener) {
-		if(navigator != null && !navigator.isDisposed()) {
+		if (navigator != null && !navigator.isDisposed()) {
 			navigator.getTreeViewer().addSelectionChangedListener(listener);
 		}
 	}
@@ -271,7 +271,7 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 	}
 
 	public void removeSelectionChangedListener(ISelectionChangedListener listener) {
-		if(navigator != null && !navigator.isDisposed()) {
+		if (navigator != null && !navigator.isDisposed()) {
 			navigator.getTreeViewer().removeSelectionChangedListener(listener);
 		}
 	}
@@ -284,33 +284,33 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 	public void dispose() {
 		super.dispose();
 		// Navigator, overview... can be null
-		if(navigator != null) {
+		if (navigator != null) {
 			navigator.dispose();
 			navigator = null;
 		}
-		if(overview != null) {
+		if (overview != null) {
 			overview.dispose();
 			overview = null;
 		}
 
-		if(multiEditor != null) {
+		if (multiEditor != null) {
 			// Remove selection change listener
 			multiEditor.getSite().getPage().removePostSelectionListener(this);
 			multiEditor = null;
 		}
 
 		IToolBarManager toolBarManager = getSite().getActionBars().getToolBarManager();
-		if(showTreeItem != null) {
+		if (showTreeItem != null) {
 			showTreeItem.dispose();
 			showTreeItem = null;
 		}
 
-		if(showOverviewItem != null) {
+		if (showOverviewItem != null) {
 			showOverviewItem.dispose();
 			showOverviewItem = null;
 		}
 
-		if(showAllItem != null) {
+		if (showAllItem != null) {
 			showAllItem.dispose();
 			showAllItem = null;
 		}
@@ -330,7 +330,7 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 
 		// Refresh outline contents content with the new selection
 		try {
-			refresh(); //When outline breaks, the selectionChangeEvent is borken too. It may prevent the others views from receiving it...
+			refresh(); // When outline breaks, the selectionChangeEvent is borken too. It may prevent the others views from receiving it...
 		} catch (Exception ex) {
 			Activator.log.error(ex);
 		}
@@ -341,9 +341,9 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 	 */
 	private void refreshSelection() {
 
-		if(multiEditor.getActiveEditor() != null) {
-			GraphicalViewer viewer = (GraphicalViewer)multiEditor.getAdapter(GraphicalViewer.class);
-			if(viewer == null) { // In case of an editor that is not GEF based.
+		if (multiEditor.getActiveEditor() != null) {
+			GraphicalViewer viewer = (GraphicalViewer) multiEditor.getAdapter(GraphicalViewer.class);
+			if (viewer == null) { // In case of an editor that is not GEF based.
 				root = null;
 				diagram = null;
 				return;
@@ -351,10 +351,10 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 
 			RootEditPart rootEditPart = viewer.getRootEditPart();
 
-			if(rootEditPart instanceof RenderedDiagramRootEditPart) {
-				root = (RenderedDiagramRootEditPart)rootEditPart;
-				if(rootEditPart.getContents() != null) {
-					diagram = (Diagram)rootEditPart.getContents().getModel();
+			if (rootEditPart instanceof RenderedDiagramRootEditPart) {
+				root = (RenderedDiagramRootEditPart) rootEditPart;
+				if (rootEditPart.getContents() != null) {
+					diagram = (Diagram) rootEditPart.getContents().getModel();
 				} else {
 					diagram = null;
 				}
@@ -373,34 +373,34 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 	/**
 	 * Refresh the outline view
 	 */
-	//FIXME: Sometimes, this method is called before #createControl(), which results in a NPE with sashComp
-	//Temporary fix : A non-null test has been added to avoid breaking the view
+	// FIXME: Sometimes, this method is called before #createControl(), which results in a NPE with sashComp
+	// Temporary fix : A non-null test has been added to avoid breaking the view
 	private void refresh() {
 		// Trash and re-Create Overview
-		if((overview != null) && !(overview.isDisposed())) {
+		if ((overview != null) && !(overview.isDisposed())) {
 			overview.dispose();
 		}
 
-		//If the view hasn't been created for any reason, we shouldn't do anything. 
-		//However, this is still a (minor) problem.
-		if(sashComp == null) {
+		// If the view hasn't been created for any reason, we shouldn't do anything.
+		// However, this is still a (minor) problem.
+		if (sashComp == null) {
 			Activator.log.warn("Trying to refresh the Outline view before it is initialized");
 			return;
 		}
 
-		if(root != null) {
+		if (root != null) {
 			overview = createOverview(sashComp, root);
 			overview.setLayoutData(new GridData(GridData.FILL_BOTH));
 		}
 
 		// Update navigator content
-		if(diagram != null) {
+		if (diagram != null) {
 			navigator.getTreeViewer().setInput(diagram);
 		}
 
 		// Slip SashForm in two sections
-		if((overview != null) && !(overview.isDisposed())) {
-			sashComp.setWeights(new int[]{ 30, 70 });
+		if ((overview != null) && !(overview.isDisposed())) {
+			sashComp.setWeights(new int[] { 30, 70 });
 		}
 
 		// Refresh outline without changing mode
@@ -415,7 +415,7 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 		// Select the kind of outline to show content
 		Control control = null;
 		control = null;
-		switch(getShowActionMode()) {
+		switch (getShowActionMode()) {
 		case SHOW_TREE:
 			control = navigator;
 			break;
@@ -430,26 +430,26 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 		}
 
 		// Update outline view
-		if(sashComp != null && !sashComp.isDisposed()) {
+		if (sashComp != null && !sashComp.isDisposed()) {
 			sashComp.setMaximizedControl(control);
 		}
 	}
 
 	/**
 	 * Get current contents representation of the outline
-	 * 
+	 *
 	 * @return current Outline show mode
 	 */
 	private int getShowActionMode() {
 		int showActionMode = -1;
 
-		if(showTreeItem.getAction().isChecked()) {
+		if (showTreeItem.getAction().isChecked()) {
 			showActionMode = SHOW_TREE;
 		}
-		if(showOverviewItem.getAction().isChecked()) {
+		if (showOverviewItem.getAction().isChecked()) {
 			showActionMode = SHOW_OVERVIEW;
 		}
-		if(showAllItem.getAction().isChecked()) {
+		if (showAllItem.getAction().isChecked()) {
 			showActionMode = SHOW_BOTH;
 		}
 
@@ -457,7 +457,7 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 	}
 
 	private void setShowActionMode(int showAction) {
-		switch(showAction) {
+		switch (showAction) {
 		case SHOW_TREE:
 			showTreeItem.getAction().setChecked(true);
 			break;
@@ -475,7 +475,7 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 	}
 
 	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
-		if(adapter == IReloadContextProvider.class) {
+		if (adapter == IReloadContextProvider.class) {
 			return new IReloadContextProvider() {
 
 				public Object createReloadContext() {
@@ -483,7 +483,7 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 				}
 
 				public void restore(Object reloadContext) {
-					((ReloadContext)reloadContext).restore(DiagramOutline.this);
+					((ReloadContext) reloadContext).restore(DiagramOutline.this);
 				}
 			};
 		}

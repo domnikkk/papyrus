@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -63,23 +63,23 @@ public class ReplaceDialog extends Dialog {
 	Text replaceText;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell, or <code>null</code> to create a top-level
-	 *        shell
+	 *            the parent shell, or <code>null</code> to create a top-level
+	 *            shell
 	 * @param fSelection
 	 * @param fResult
 	 * @param page
-	 *        the result page whose results while be filtered
+	 *            the result page whose results while be filtered
 	 */
 	public ReplaceDialog(Shell parentShell, PapyrusSearchResultPage fResultPage, Object[] selection) {
 		super(parentShell);
 
 		this.fResultPage = fResultPage;
 		this.fSelection = selection;
-		this.fQuery = (org.eclipse.papyrus.uml.search.ui.query.AbstractPapyrusQuery)fResultPage.getInput().getQuery();
+		this.fQuery = (org.eclipse.papyrus.uml.search.ui.query.AbstractPapyrusQuery) fResultPage.getInput().getQuery();
 
 	}
 
@@ -126,13 +126,13 @@ public class ReplaceDialog extends Dialog {
 	}
 
 	private String computeReplacementString(Pattern pattern, String originalText, String replacementText) throws PatternSyntaxException {
-		if(pattern != null) {
+		if (pattern != null) {
 			try {
 
 				Matcher matcher = pattern.matcher(originalText);
 				StringBuffer sb = new StringBuffer();
 				matcher.reset();
-				if(matcher.find()) {
+				if (matcher.find()) {
 					matcher.appendReplacement(sb, replacementText);
 				} else {
 					return null;
@@ -147,40 +147,40 @@ public class ReplaceDialog extends Dialog {
 	}
 
 	private void change(AttributeMatch match) {
-		if(match.getSource() instanceof EObject) {
+		if (match.getSource() instanceof EObject) {
 
-			EObject target = (EObject)match.getSource();
+			EObject target = (EObject) match.getSource();
 
-			if(match.getMetaAttribute() instanceof EAttribute) {
-				Object value = target.eGet((EAttribute)match.getMetaAttribute());
-				if(value != null) {
-					if(value instanceof String) {
-						String originalvalue = (String)value;
+			if (match.getMetaAttribute() instanceof EAttribute) {
+				Object value = target.eGet((EAttribute) match.getMetaAttribute());
+				if (value != null) {
+					if (value instanceof String) {
+						String originalvalue = (String) value;
 						Pattern pattern = PatternHelper.getInstance().createPattern(fQuery.getSearchQueryText(), fQuery.isCaseSensitive(), fQuery.isRegularExpression());
 
 						String newValue = computeReplacementString(pattern, originalvalue, replaceText.getText());
 
-						target.eSet((EAttribute)match.getMetaAttribute(), newValue);
+						target.eSet((EAttribute) match.getMetaAttribute(), newValue);
 
 					}
 				}
-			} else if(match.getMetaAttribute() instanceof Property) {
-				Property source = (Property)match.getMetaAttribute();
+			} else if (match.getMetaAttribute() instanceof Property) {
+				Property source = (Property) match.getMetaAttribute();
 				Class containingClass = source.getClass_();
-				if(containingClass instanceof Stereotype) {
-					if(target instanceof Element) {
-						Object tagValue = ((Element)target).getValue((Stereotype)containingClass, source.getName());
-						if(tagValue instanceof String) {
+				if (containingClass instanceof Stereotype) {
+					if (target instanceof Element) {
+						Object tagValue = ((Element) target).getValue((Stereotype) containingClass, source.getName());
+						if (tagValue instanceof String) {
 							Object value = tagValue;
 
-							if(value != null) {
-								if(value instanceof String) {
-									String originalvalue = (String)value;
+							if (value != null) {
+								if (value instanceof String) {
+									String originalvalue = (String) value;
 									Pattern pattern = PatternHelper.getInstance().createPattern(fQuery.getSearchQueryText(), fQuery.isCaseSensitive(), fQuery.isRegularExpression());
 
 									String newValue = computeReplacementString(pattern, originalvalue, replaceText.getText());
 
-									((Element)target).setValue((Stereotype)containingClass, source.getName(), newValue);
+									((Element) target).setValue((Stereotype) containingClass, source.getName(), newValue);
 
 								}
 							}
@@ -200,29 +200,29 @@ public class ReplaceDialog extends Dialog {
 		Set<AbstractResultEntry> toProcess = new HashSet<AbstractResultEntry>();
 		Set<ScopeEntry> toSave = new HashSet<ScopeEntry>();
 
-		if(fSelection == null) {
+		if (fSelection == null) {
 			toProcess.addAll(MatchUtils.getMatches(fResultPage.getInput(), false));
 
 		} else {
-			for(Object selected : Arrays.asList(fSelection)) {
-				if(selected instanceof AbstractResultEntry) {
-					toProcess.add((AbstractResultEntry)selected);
+			for (Object selected : Arrays.asList(fSelection)) {
+				if (selected instanceof AbstractResultEntry) {
+					toProcess.add((AbstractResultEntry) selected);
 				}
 			}
 		}
 
-		for(AbstractResultEntry match : toProcess) {
+		for (AbstractResultEntry match : toProcess) {
 
-			if(match instanceof AttributeMatch) {
-				final AttributeMatch attributeMatch = (AttributeMatch)match;
+			if (match instanceof AttributeMatch) {
+				final AttributeMatch attributeMatch = (AttributeMatch) match;
 
 				EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(attributeMatch.getSource());
 
 				Object element = match.getElement();
 
-				if(editingDomain != null) {
-					if(editingDomain instanceof TransactionalEditingDomain) {
-						editingDomain.getCommandStack().execute(new RecordingCommand((TransactionalEditingDomain)editingDomain) {
+				if (editingDomain != null) {
+					if (editingDomain instanceof TransactionalEditingDomain) {
+						editingDomain.getCommandStack().execute(new RecordingCommand((TransactionalEditingDomain) editingDomain) {
 
 							@Override
 							protected void doExecute() {
@@ -231,18 +231,18 @@ public class ReplaceDialog extends Dialog {
 						});
 					}
 				} else {
-					if(element instanceof ScopeEntry) {
+					if (element instanceof ScopeEntry) {
 
 						change(attributeMatch);
 
-						toSave.add((ScopeEntry)element);
+						toSave.add((ScopeEntry) element);
 
 					}
 				}
 			}
 		}
 
-		for(ScopeEntry scopeEntry : toSave) {
+		for (ScopeEntry scopeEntry : toSave) {
 			try {
 				scopeEntry.getModelSet().save(new NullProgressMonitor());
 			} catch (IOException e) {

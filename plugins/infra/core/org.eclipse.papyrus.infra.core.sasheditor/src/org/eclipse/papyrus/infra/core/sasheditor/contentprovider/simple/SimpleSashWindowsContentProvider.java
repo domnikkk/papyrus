@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ import org.eclipse.swt.SWT;
 /**
  * A simple implementation of providers allowing sashes and folders.
  * The tabs can be added and removed.
- * 
+ *
  * @author dumoulin
- * 
+ *
  */
 public class SimpleSashWindowsContentProvider implements ISashWindowsContentProvider, IContentChangedProvider {
 
@@ -58,9 +58,10 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 	/**
 	 * Add a listener listening on content changed. This listener will be
 	 * notified each time the content change.
-	 * 
+	 *
 	 * @param listener
 	 */
+	@Override
 	public void addListener(IContentChangedListener listener) {
 		contentChangedListenerManager.addContentChangedListener(listener);
 	}
@@ -68,9 +69,10 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 	/**
 	 * Add a listener listening on content changed. This listener will be
 	 * notified each time the content change.
-	 * 
+	 *
 	 * @param listener
 	 */
+	@Override
 	public void removeListener(IContentChangedListener listener) {
 		contentChangedListenerManager.removeContentChangedListener(listener);
 	}
@@ -78,7 +80,7 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 	/**
 	 * Add a listener listening on content changed. This listener will be
 	 * notified each time the content change.
-	 * 
+	 *
 	 * @param listener
 	 */
 	protected void firePropertyChanged(ContentEvent event) {
@@ -88,15 +90,17 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 	/**
 	 * Add the page which should be an IPageModel instance. {@inheritDoc}
 	 */
+	@Override
 	public void addPage(Object newModel) {
-		addPage((IPageModel)newModel);
+		addPage((IPageModel) newModel);
 	}
 
 	/**
 	 * Add the page which should be an IPageModel instance. {@inheritDoc}
 	 */
+	@Override
 	public void addPage(Object newModel, int index) {
-		addPage(index, (IPageModel)newModel);
+		addPage(index, (IPageModel) newModel);
 	}
 
 	public void addPage(IPageModel newModel) {
@@ -105,7 +109,7 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 	}
 
 	public void addPage(ITabFolderModel toFolderModel, IPageModel newModel) {
-		TabFolderModel srcFolder = (TabFolderModel)toFolderModel;
+		TabFolderModel srcFolder = (TabFolderModel) toFolderModel;
 		srcFolder.doAddItem(newModel);
 		firePropertyChanged(new ContentEvent(ContentEvent.ADDED, this, newModel));
 	}
@@ -116,7 +120,7 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 	}
 
 	public void addPage(ITabFolderModel toFolderModel, int index, IPageModel newModel) {
-		TabFolderModel srcFolder = (TabFolderModel)toFolderModel;
+		TabFolderModel srcFolder = (TabFolderModel) toFolderModel;
 		srcFolder.doAddItem(index, newModel);
 		firePropertyChanged(new ContentEvent(ContentEvent.ADDED, this, newModel));
 	}
@@ -124,9 +128,10 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 	/**
 	 * Move a Page inside the folder. {@inheritDoc}
 	 */
+	@Override
 	public void movePage(ITabFolderModel folderModel, int oldIndex, int newIndex) {
 		org.eclipse.papyrus.infra.core.sasheditor.Activator.log.debug("movePage()");
-		((TabFolderModel)folderModel).moveTab(oldIndex, newIndex);
+		((TabFolderModel) folderModel).moveTab(oldIndex, newIndex);
 
 	}
 
@@ -134,38 +139,39 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 	 * Move a tab from folder to folder.
 	 * The change event is sent only once after the complete operation is performed. {@inheritDoc}
 	 */
+	@Override
 	public void movePage(ITabFolderModel srcFolderModel, int sourceIndex, ITabFolderModel targetFolderModel, int targetIndex) {
 		// This implementation use (TabFolderModel), so we can cast safely
 		org.eclipse.papyrus.infra.core.sasheditor.Activator.log.debug("movePage()");
-		if(sourceIndex == -1) {
+		if (sourceIndex == -1) {
 			moveAllPages(srcFolderModel, targetFolderModel);
 			return;
 		}
-		IPageModel movedTab = doMoveTab((TabFolderModel)srcFolderModel, sourceIndex, (TabFolderModel)targetFolderModel, targetIndex);
-		removeEmptyFolder((TabFolderModel)srcFolderModel);
-		doSetCurrentFolder((TabFolderModel)targetFolderModel);
+		IPageModel movedTab = doMoveTab((TabFolderModel) srcFolderModel, sourceIndex, (TabFolderModel) targetFolderModel, targetIndex);
+		removeEmptyFolder((TabFolderModel) srcFolderModel);
+		doSetCurrentFolder((TabFolderModel) targetFolderModel);
 		contentChangedListenerManager.fireContentChanged(new ContentEvent(ContentEvent.MOVED, this, movedTab));
 	}
 
 	/**
 	 * Move all tabs from source to target
-	 * 
+	 *
 	 * @param srcFolderModel
 	 * @param targetFolderModel
 	 */
 	public void moveAllPages(ITabFolderModel srcFolderModel, ITabFolderModel targetFolderModel) {
-		TabFolderModel srcFolder = (TabFolderModel)srcFolderModel;
-		TabFolderModel targetFolder = (TabFolderModel)targetFolderModel;
+		TabFolderModel srcFolder = (TabFolderModel) srcFolderModel;
+		TabFolderModel targetFolder = (TabFolderModel) targetFolderModel;
 		List<IPageModel> toMove = srcFolder.doRemoveAll();
 		targetFolder.doAddAllTab(toMove);
-		removeEmptyFolder((TabFolderModel)srcFolderModel);
-		doSetCurrentFolder((TabFolderModel)targetFolderModel);
+		removeEmptyFolder((TabFolderModel) srcFolderModel);
+		doSetCurrentFolder((TabFolderModel) targetFolderModel);
 		contentChangedListenerManager.fireContentChanged(new ContentEvent(ContentEvent.MOVED, this, srcFolderModel));
 	}
 
 	/**
 	 * Set the Current Folder to the newCurrentFolder.
-	 * 
+	 *
 	 * @param targetFolderModel
 	 */
 	private void doSetCurrentFolder(TabFolderModel newCurrentFolder) {
@@ -174,37 +180,38 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 
 	/**
 	 * Create a new folder and insert it at the specified side. Move the specified tab into the created Folder.
-	 * 
+	 *
 	 * The change event is sent only once after the complete operation is performed. {@inheritDoc}
-	 * 
+	 *
 	 * @param referenceFolder
-	 *        The folder used as reference to insert the newly created Folder.
+	 *            The folder used as reference to insert the newly created Folder.
 	 * @param side
-	 *        The side to which the created folder is inserted. Can be SWT.TOP, DOWN, LEFT, RIGHT.
+	 *            The side to which the created folder is inserted. Can be SWT.TOP, DOWN, LEFT, RIGHT.
 	 */
+	@Override
 	public void createFolder(ITabFolderModel sourceFolder, int tabIndex, ITabFolderModel referenceFolder, int side) {
 		org.eclipse.papyrus.infra.core.sasheditor.Activator.log.debug("createFolder()");
 
-		doCreateFolder((TabFolderModel)sourceFolder, tabIndex, (TabFolderModel)referenceFolder, side);
+		doCreateFolder((TabFolderModel) sourceFolder, tabIndex, (TabFolderModel) referenceFolder, side);
 		contentChangedListenerManager.fireContentChanged(new ContentEvent(ContentEvent.CHANGED, this, sourceFolder));
-		//		return newFolder;
+		// return newFolder;
 	}
 
 	/**
 	 * Create a new folder and insert it at the specified side of the reference folder.
 	 * The change event is sent only once after the complete operation is performed.
-	 * 
+	 *
 	 * This method is not part of the {@link SashWindowsContainer} API. It is here to help writing junit tests.
-	 * 
+	 *
 	 * @param referenceFolder
-	 *        The folder used as reference to insert the newly created Folder.
+	 *            The folder used as reference to insert the newly created Folder.
 	 * @param side
-	 *        The side to which the created folder is inserted. Can be SWT.TOP, DOWN, LEFT, RIGHT.
+	 *            The side to which the created folder is inserted. Can be SWT.TOP, DOWN, LEFT, RIGHT.
 	 */
 	public ITabFolderModel createFolder(ITabFolderModel referenceFolder, int side) {
 		org.eclipse.papyrus.infra.core.sasheditor.Activator.log.debug("createFolder()");
 
-		ITabFolderModel newFolder = doCreateFolder((TabFolderModel)referenceFolder, side);
+		ITabFolderModel newFolder = doCreateFolder((TabFolderModel) referenceFolder, side);
 		contentChangedListenerManager.fireContentChanged(new ContentEvent(ContentEvent.CHANGED, this, referenceFolder));
 		return newFolder;
 	}
@@ -212,7 +219,7 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 	/**
 	 * Move a tab from folder to folder.
 	 * The change event is sent only once after the complete operation is performed.
-	 * 
+	 *
 	 * @return The moved tab.
 	 */
 	private IPageModel doMoveTab(TabFolderModel srcFolderModel, int sourceIndex, TabFolderModel targetFolderModel, int targetIndex) {
@@ -230,7 +237,7 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 	private void doMoveTab(TabFolderModel srcFolderModel, int sourceIndex, TabFolderModel targetFolderModel) {
 
 		// Move all
-		if(sourceIndex < 0) {
+		if (sourceIndex < 0) {
 			targetFolderModel.getChildren().addAll(srcFolderModel.getChildren());
 			srcFolderModel.getChildren().clear();
 			return;
@@ -242,7 +249,7 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 
 	/**
 	 * Create a new folder and insert it at the specified side.
-	 * 
+	 *
 	 */
 	private TabFolderModel doCreateFolder(TabFolderModel tabFolder, int tabIndex, TabFolderModel targetFolder, int side) {
 
@@ -261,7 +268,7 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 
 	/**
 	 * Create a new folder and insert it at the specified side.
-	 * 
+	 *
 	 */
 	private TabFolderModel doCreateFolder(TabFolderModel referenceFolder, int side) {
 
@@ -276,29 +283,29 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 
 	/**
 	 * Remove the folder if it is empty.
-	 * 
+	 *
 	 * @param tabFolder
 	 */
 	private void removeEmptyFolder(TabFolderModel tabFolder) {
 		// Check if empty
-		if(tabFolder.getChildren().size() > 0) {
+		if (tabFolder.getChildren().size() > 0) {
 			return;
 		}
 
 		AbstractModel parent = tabFolder.getParent();
 		// Forbid removing of the last folder
-		if(parent == rootModel) {
+		if (parent == rootModel) {
 			return;
 		}
 
 		// Parent is a sash. Ask it to remove the child and itself
-		((SashPanelModel)parent).delete(tabFolder);
+		((SashPanelModel) parent).delete(tabFolder);
 	}
 
 	/**
 	 * Insert the folderToInsert on the specified side of the refFolder. Create and insert the
 	 * requested SashModel.
-	 * 
+	 *
 	 * @param folderToInsert
 	 * @param refFolder
 	 * @param side
@@ -310,13 +317,13 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 
 		int direction;
 		// Compute sash direction
-		if(side == SWT.LEFT || side == SWT.RIGHT) {
+		if (side == SWT.LEFT || side == SWT.RIGHT) {
 			direction = SWT.HORIZONTAL;
 		} else {
 			direction = SWT.VERTICAL;
 		}
 		// Create sash
-		if(side == SWT.LEFT || side == SWT.UP) {
+		if (side == SWT.LEFT || side == SWT.UP) {
 			newSash = new SashPanelModel(refParent, folderToInsert, refFolder, direction);
 		} else {
 			newSash = new SashPanelModel(refParent, refFolder, folderToInsert, direction);
@@ -333,6 +340,7 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 	/**
 	 * Get the root used as root to be shown in the editor. {@inheritDoc}
 	 */
+	@Override
 	public IAbstractPanelModel getRootModel() {
 		return rootModel.getChild();
 	}
@@ -340,16 +348,18 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 	/**
 	 * Create the interface used to access the rootModel {@inheritDoc}
 	 */
+	@Override
 	public IAbstractPanelModel createChildSashModel(Object root) {
 		// The root object should be of type IAbstractPanelModel.
 		// This is normally the object returned by getRootPanel
-		return (IAbstractPanelModel)root;
+		return (IAbstractPanelModel) root;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void removePage(int index) {
 		currentTabFolder.removeTab(index);
 	}
@@ -357,9 +367,10 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 	/**
 	 * Remove the specified page which should be an instance of IPageModel. {@inheritDoc}
 	 */
+	@Override
 	public void removePage(Object page) {
 
-		removePage((IPageModel)page);
+		removePage((IPageModel) page);
 	}
 
 	/**
@@ -368,9 +379,9 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 	public void removePage(IPageModel tabItem) {
 
 		TabFolderModel folder = lookupPageFolder(tabItem);
-		//		if(folder != null)
-		//			folder.removeTab(tabItem);
-		if(folder != null) {
+		// if(folder != null)
+		// folder.removeTab(tabItem);
+		if (folder != null) {
 			folder.doRemoveTab(tabItem);
 			removeEmptyFolder(folder);
 			doSetCurrentFolder(lookupPageFolder());
@@ -380,10 +391,11 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 
 	/**
 	 * Remove the tab at the specified index.
-	 * 
+	 *
 	 */
+	@Override
 	public void removePage(ITabFolderModel parentFolder, int tabIndex) {
-		TabFolderModel folder = (TabFolderModel)parentFolder;
+		TabFolderModel folder = (TabFolderModel) parentFolder;
 		IPageModel removed = folder.doRemoveTab(tabIndex);
 		removeEmptyFolder(folder);
 		doSetCurrentFolder(lookupPageFolder());
@@ -392,10 +404,10 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 
 	/**
 	 * Lookup the folder containing the specified tabItem.
-	 * 
+	 *
 	 * @param tabItem
-	 *        Item for which a folder is looked for. If the item is null, return
-	 *        the first folder encountered.
+	 *            Item for which a folder is looked for. If the item is null, return
+	 *            the first folder encountered.
 	 * @return The folder containing the item, or the first encountered folder if item is null.
 	 */
 	private TabFolderModel lookupPageFolder(IPageModel tabItem) {
@@ -404,7 +416,7 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 
 	/**
 	 * Lookup for the first folder in the model.
-	 * 
+	 *
 	 * @return The first encountered folder.
 	 */
 	private TabFolderModel lookupPageFolder() {
@@ -413,7 +425,7 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 
 	/**
 	 * Get the parent of the specified tabItem, or null
-	 * 
+	 *
 	 * @param tabItem
 	 * @return The parent tabFolder or null if not found.
 	 */
@@ -423,7 +435,7 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 
 	/**
 	 * Return the currently selected TabFolder.
-	 * 
+	 *
 	 * @return
 	 */
 	public ITabFolderModel getCurrentTabFolder() {
@@ -432,22 +444,23 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 
 	/**
 	 * Set the the current Folder.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#setCurrentFolder(java.lang.Object)
-	 * 
+	 *
 	 * @param rawModel
-	 *        Object identifying the current folder. In this implementation, the object is the FolderModel.
+	 *            Object identifying the current folder. In this implementation, the object is the FolderModel.
 	 */
+	@Override
 	public void setCurrentFolder(Object rawModel) {
-		if(!(rawModel instanceof TabFolderModel)) {
+		if (!(rawModel instanceof TabFolderModel)) {
 			return;
 		}
-		doSetCurrentFolder((TabFolderModel)rawModel);
+		doSetCurrentFolder((TabFolderModel) rawModel);
 	}
 
 	/**
 	 * A class managing a list of listeners.
-	 * 
+	 *
 	 * @author dumoulin
 	 */
 	protected class ContentChangeListenerManager {
@@ -457,16 +470,16 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 		/**
 		 * Add a listener listening on content changed. This listener will be
 		 * notified each time the content change.
-		 * 
+		 *
 		 * @param listener
 		 */
 		public void addContentChangedListener(IContentChangedListener listener) {
-			if(listeners == null) {
+			if (listeners == null) {
 				createListeners();
 			}
 
 			// Check if already exists.
-			if(listeners.contains(listener)) {
+			if (listeners.contains(listener)) {
 				return;
 			}
 
@@ -476,11 +489,11 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 		/**
 		 * Add a listener listening on content changed. This listener will be
 		 * notified each time the content change.
-		 * 
+		 *
 		 * @param listener
 		 */
 		public void removeContentChangedListener(IContentChangedListener listener) {
-			if(listeners == null) {
+			if (listeners == null) {
 				return;
 			}
 
@@ -491,7 +504,7 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 		 * Create the list of listeners.
 		 */
 		private void createListeners() {
-			if(listeners == null) {
+			if (listeners == null) {
 				listeners = new ArrayList<IContentChangedListener>();
 			}
 
@@ -499,15 +512,15 @@ public class SimpleSashWindowsContentProvider implements ISashWindowsContentProv
 
 		/**
 		 * Fire the changed event.
-		 * 
+		 *
 		 * @param event
 		 */
 		public void fireContentChanged(ContentEvent event) {
-			if(listeners == null) {
+			if (listeners == null) {
 				return;
 			}
 
-			for(IContentChangedListener listener : listeners) {
+			for (IContentChangedListener listener : listeners) {
 				listener.contentChanged(event);
 			}
 		}

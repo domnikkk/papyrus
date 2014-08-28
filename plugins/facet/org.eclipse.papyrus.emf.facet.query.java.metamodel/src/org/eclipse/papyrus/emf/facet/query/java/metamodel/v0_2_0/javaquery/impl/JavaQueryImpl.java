@@ -1,26 +1,22 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Nicolas Guyomar (Mia-Software) - Bug 334615 - Java Query for EMF Facet
- *  	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
- *  
+ *  	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
+ *
  */
 package org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.impl.QueryImpl;
-
 import org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.JavaQuery;
 import org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.JavaQueryPackage;
 
@@ -31,7 +27,7 @@ import org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.JavaQ
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.impl.JavaQueryImpl#getImplementationClassName <em>Implementation Class Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.impl.JavaQueryImpl#getImplementationClassName <em>Implementation Class Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +38,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	 * The default value of the '{@link #getImplementationClassName() <em>Implementation Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getImplementationClassName()
 	 * @generated
 	 * @ordered
@@ -52,6 +49,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	 * The cached value of the '{@link #getImplementationClassName() <em>Implementation Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getImplementationClassName()
 	 * @generated
 	 * @ordered
@@ -61,6 +59,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected JavaQueryImpl() {
@@ -70,6 +69,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,6 +80,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getImplementationClassName() {
@@ -89,25 +90,28 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setImplementationClassName(String newImplementationClassName) {
 		String oldImplementationClassName = implementationClassName;
 		implementationClassName = newImplementationClassName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaQueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME, oldImplementationClassName, implementationClassName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case JavaQueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
-				return getImplementationClassName();
+		case JavaQueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
+			return getImplementationClassName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -115,14 +119,15 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case JavaQueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
-				setImplementationClassName((String)newValue);
-				return;
+		case JavaQueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
+			setImplementationClassName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -130,14 +135,15 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case JavaQueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
-				setImplementationClassName(IMPLEMENTATION_CLASS_NAME_EDEFAULT);
-				return;
+		case JavaQueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
+			setImplementationClassName(IMPLEMENTATION_CLASS_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -145,13 +151,14 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case JavaQueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
-				return IMPLEMENTATION_CLASS_NAME_EDEFAULT == null ? implementationClassName != null : !IMPLEMENTATION_CLASS_NAME_EDEFAULT.equals(implementationClassName);
+		case JavaQueryPackage.JAVA_QUERY__IMPLEMENTATION_CLASS_NAME:
+			return IMPLEMENTATION_CLASS_NAME_EDEFAULT == null ? implementationClassName != null : !IMPLEMENTATION_CLASS_NAME_EDEFAULT.equals(implementationClassName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -159,11 +166,14 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (implementationClassName: "); //$NON-NLS-1$
@@ -172,4 +182,4 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 		return result.toString();
 	}
 
-} //JavaQueryImpl
+} // JavaQueryImpl

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -54,50 +54,50 @@ public class StructureClassifierDropEditPolicy extends CustomDragDropEditPolicy 
 		BlockDropHelper helper = new BlockDropHelper(getEditingDomain());
 
 		// Single drop management possible drop action list can be proposed
-		if(dropRequest.getObjects().size() == 1) {
+		if (dropRequest.getObjects().size() == 1) {
 
 			// List of available drop commands
 			final List<Command> commandChoice = new ArrayList<Command>();
 
 			// 1. Try to create a Part typed by the dropped object
-			Command dropAsTypedPart = helper.getDropAsStructureItem(dropRequest, (GraphicalEditPart)getHost(), SysMLElementTypes.PART_PROPERTY);
-			if((dropAsTypedPart != null) && (dropAsTypedPart.canExecute())) {
+			Command dropAsTypedPart = helper.getDropAsStructureItem(dropRequest, (GraphicalEditPart) getHost(), SysMLElementTypes.PART_PROPERTY);
+			if ((dropAsTypedPart != null) && (dropAsTypedPart.canExecute())) {
 				commandChoice.add(dropAsTypedPart);
 			}
 
 			// 2. Try to create a Reference typed by the dropped object
-			Command dropAsTypedReference = helper.getDropAsStructureItem(dropRequest, (GraphicalEditPart)getHost(), SysMLElementTypes.REFERENCE_PROPERTY);
-			if((dropAsTypedReference != null) && (dropAsTypedReference.canExecute())) {
+			Command dropAsTypedReference = helper.getDropAsStructureItem(dropRequest, (GraphicalEditPart) getHost(), SysMLElementTypes.REFERENCE_PROPERTY);
+			if ((dropAsTypedReference != null) && (dropAsTypedReference.canExecute())) {
 				commandChoice.add(dropAsTypedReference);
 			}
 
 			// 3. Try to create an ActorPart typed by the dropped object
-			Command dropAsTypedActorPart = helper.getDropAsStructureItem(dropRequest, (GraphicalEditPart)getHost(), SysMLElementTypes.ACTOR_PART_PROPERTY);
-			if((dropAsTypedActorPart != null) && (dropAsTypedActorPart.canExecute())) {
+			Command dropAsTypedActorPart = helper.getDropAsStructureItem(dropRequest, (GraphicalEditPart) getHost(), SysMLElementTypes.ACTOR_PART_PROPERTY);
+			if ((dropAsTypedActorPart != null) && (dropAsTypedActorPart.canExecute())) {
 				commandChoice.add(dropAsTypedActorPart);
 			}
 
 			// 4. Try to create a Value typed by the dropped object
-			Command dropAsTypedValue = helper.getDropAsStructureItem(dropRequest, (GraphicalEditPart)getHost(), SysMLElementTypes.VALUE_PROPERTY);
-			if((dropAsTypedValue != null) && (dropAsTypedValue.canExecute())) {
+			Command dropAsTypedValue = helper.getDropAsStructureItem(dropRequest, (GraphicalEditPart) getHost(), SysMLElementTypes.VALUE_PROPERTY);
+			if ((dropAsTypedValue != null) && (dropAsTypedValue.canExecute())) {
 				commandChoice.add(dropAsTypedValue);
 			}
 
 			// 5. Try to create a Property typed by the dropped object
-			Command dropAsTypedProperty = helper.getDropAsStructureItem(dropRequest, (GraphicalEditPart)getHost(), UMLElementTypes.PROPERTY);
-			if((dropAsTypedProperty != null) && (dropAsTypedProperty.canExecute())) {
+			Command dropAsTypedProperty = helper.getDropAsStructureItem(dropRequest, (GraphicalEditPart) getHost(), UMLElementTypes.PROPERTY);
+			if ((dropAsTypedProperty != null) && (dropAsTypedProperty.canExecute())) {
 				commandChoice.add(dropAsTypedProperty);
 			}
 
 			// 6. Build default drop command (show view of the dropped object)
 			Command defaultDropCommand = super.getDropObjectsCommand(dropRequest);
 			defaultDropCommand.setLabel("Default drop (Show dropped object in diagram)");
-			if((defaultDropCommand != null) && (defaultDropCommand.canExecute())) {
+			if ((defaultDropCommand != null) && (defaultDropCommand.canExecute())) {
 				commandChoice.add(defaultDropCommand);
 			}
 
 			// Prepare the selection command (if several command are available) or return the drop command
-			if(commandChoice.size() > 1) {
+			if (commandChoice.size() > 1) {
 				RunnableWithResult<ICommand> runnable;
 				Display.getDefault().syncExec(runnable = new RunnableWithResult.Impl<ICommand>() {
 
@@ -110,7 +110,7 @@ public class StructureClassifierDropEditPolicy extends CustomDragDropEditPolicy 
 
 				return new ICommandProxy(selectCommand);
 
-			} else if(commandChoice.size() == 1) {
+			} else if (commandChoice.size() == 1) {
 				return commandChoice.get(0);
 			}
 
@@ -121,7 +121,7 @@ public class StructureClassifierDropEditPolicy extends CustomDragDropEditPolicy 
 
 		return super.getDropObjectsCommand(dropRequest);
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

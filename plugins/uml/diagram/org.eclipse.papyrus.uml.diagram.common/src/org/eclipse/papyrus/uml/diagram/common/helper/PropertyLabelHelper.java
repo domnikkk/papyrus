@@ -35,7 +35,7 @@ public class PropertyLabelHelper extends StereotypedElementLabelHelper {
 	private static PropertyLabelHelper labelHelper;
 
 	public static PropertyLabelHelper getInstance() {
-		if(labelHelper == null) {
+		if (labelHelper == null) {
 			labelHelper = new PropertyLabelHelper();
 		}
 		return labelHelper;
@@ -60,22 +60,22 @@ public class PropertyLabelHelper extends StereotypedElementLabelHelper {
 	 * edit part.
 	 *
 	 * @param editPart
-	 *        the edit part that controls the {@link Property} to be
-	 *        displayed
+	 *            the edit part that controls the {@link Property} to be
+	 *            displayed
 	 * @return the label corresponding to the specific display of the property
 	 *         ("default" display given by preferences or specific display given
 	 *         by eAnnotation).
 	 */
 	@Override
 	protected String elementLabel(GraphicalEditPart editPart) {
-		IMaskManagedLabelEditPolicy policy = (IMaskManagedLabelEditPolicy)editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
-		if( policy==null){
-			policy = (IMaskManagedLabelEditPolicy)editPart.getEditPolicy(IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL);
+		IMaskManagedLabelEditPolicy policy = (IMaskManagedLabelEditPolicy) editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
+		if (policy == null) {
+			policy = (IMaskManagedLabelEditPolicy) editPart.getEditPolicy(IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL);
 		}
 
 		Collection<String> displayValue = Collections.emptySet();
 
-		if(policy != null) {
+		if (policy != null) {
 			displayValue = policy.getCurrentDisplayValue();
 		}
 
@@ -85,7 +85,7 @@ public class PropertyLabelHelper extends StereotypedElementLabelHelper {
 	protected String parseString(GraphicalEditPart editPart, Collection<String> displayValue) {
 		Property property = getUMLElement(editPart);
 
-		if(property != null) {
+		if (property != null) {
 			return PropertyUtil.getCustomLabel(property, displayValue);
 		}
 
@@ -107,10 +107,10 @@ public class PropertyLabelHelper extends StereotypedElementLabelHelper {
 	 */
 	@Override
 	public Property getUMLElement(GraphicalEditPart editPart) {
-		if(editPart.getModel() instanceof View) {
-			View view = (View)editPart.getModel();
-			if(view.getElement() instanceof Property) {
-				return (Property)view.getElement();
+		if (editPart.getModel() instanceof View) {
+			View view = (View) editPart.getModel();
+			if (view.getElement() instanceof Property) {
+				return (Property) view.getElement();
 			}
 		}
 		return null;

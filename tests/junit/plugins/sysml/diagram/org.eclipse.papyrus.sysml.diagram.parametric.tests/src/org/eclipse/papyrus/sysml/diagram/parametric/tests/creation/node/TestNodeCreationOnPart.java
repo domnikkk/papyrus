@@ -13,8 +13,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.parametric.tests.creation.node;
 
-import static org.eclipse.papyrus.sysml.diagram.parametric.tests.utils.TestPrepareUtils.createGraphicalNode;
 import static org.eclipse.papyrus.sysml.diagram.parametric.tests.utils.EditorUtils.getDiagramView;
+import static org.eclipse.papyrus.sysml.diagram.parametric.tests.utils.TestPrepareUtils.createGraphicalNode;
 import static org.eclipse.papyrus.sysml.diagram.parametric.tests.utils.TestUtils.createNodeFromPalette;
 
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;

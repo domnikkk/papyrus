@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -39,7 +39,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * This class encapsulates functions around template instantiation.
- * 
+ *
  * With respect to composite structures, we need to consider two different
  * cases: (1) the type of a property is a template class itself (2) the type of
  * a property is a sub-class (nesting) of the template class. We consider that
@@ -55,22 +55,25 @@ public class TemplateInstantiation {
 	}
 
 	/**
-	 * 
-	 * @param copier_ copier
-	 * @param binding UML template binding
-	 * @param args currently unused
+	 *
+	 * @param copier_
+	 *            copier
+	 * @param binding
+	 *            UML template binding
+	 * @param args
+	 *            currently unused
 	 * @throws TransformationException
 	 */
 	public TemplateInstantiation(final LazyCopier copier_, final TemplateBinding binding, Object args[]) throws TransformationException {
-		if(binding == null) {
+		if (binding == null) {
 			// user should never see this exception
 			throw new TransformationException("Passed binding is null"); //$NON-NLS-1$
 		}
 		signature = binding.getSignature();
-		if(signature == null) {
+		if (signature == null) {
 			throw new TransformationException("Passed template binding does not have a signature"); //$NON-NLS-1$
 		}
-		packageTemplate = (Package)signature.getOwner();
+		packageTemplate = (Package) signature.getOwner();
 		/*
 		 * copy = (Copy)copy_.clone();
 		 * // make copy of copy listeners (clone alone does not duplicate contained lists)
@@ -81,7 +84,7 @@ public class TemplateInstantiation {
 		 */
 		copier = copier_;
 
-		Package boundPackage = (Package)binding.getBoundElement();
+		Package boundPackage = (Package) binding.getBoundElement();
 		// set template instantiation parameter. Used by Acceleo templates to get relation between
 		// formal and actual parameters
 		TransformationContext.setTemplateInstantiation(this);
@@ -89,28 +92,28 @@ public class TemplateInstantiation {
 		copier.setPackageTemplate(packageTemplate, boundPackage);
 		// some parameters of the package template may not be owned. Thus, an additional package
 		// template is involved in the instantiation
-		for(TemplateParameter parameter : signature.getParameters()) {
+		for (TemplateParameter parameter : signature.getParameters()) {
 			//
-			if(parameter.getSignature() != signature) {
+			if (parameter.getSignature() != signature) {
 				Package addedPkgTemplate = parameter.getSignature().getNearestPackage();
 				copier.setPackageTemplate(addedPkgTemplate, boundPackage);
 			}
 		}
-		
+
 		if (boundPackage.getPackagedElements() != null) {
 			// bound package is not empty, but copy does not know about it. Fill copyMap with information about the relation
 			// This happens, if the original model already contains template instantiations, e.g. for template ports
-			if (copier.getMap(signature).keySet().size() == 0) {		
+			if (copier.getMap(signature).keySet().size() == 0) {
 				syncCopyMap(packageTemplate, boundPackage);
 			}
 		}
-		
+
 		this.binding = binding;
 		this.args = args;
 
 		// register a combination of formal/actual in the hashmap
 		// => copy will replace actual with formal
-		for(TemplateParameterSubstitution substitution : binding.getParameterSubstitutions()) {
+		for (TemplateParameterSubstitution substitution : binding.getParameterSubstitutions()) {
 			ParameterableElement formal = substitution.getFormal().getParameteredElement();
 			ParameterableElement actual = substitution.getActual();
 			copier.putPair(formal, actual);
@@ -118,22 +121,22 @@ public class TemplateInstantiation {
 
 		// add copy listeners ---
 		// remove template signature
-		if(!copier.preCopyListeners.contains(FilterSignatures.getInstance())) {
+		if (!copier.preCopyListeners.contains(FilterSignatures.getInstance())) {
 			copier.preCopyListeners.add(FilterSignatures.getInstance());
 		}
 
 		// 2a. special treatment for elements stereotyped with template parameter
-		if(!copier.preCopyListeners.contains(PreTemplateInstantiationListener.getInstance())) {
+		if (!copier.preCopyListeners.contains(PreTemplateInstantiationListener.getInstance())) {
 			copier.preCopyListeners.add(PreTemplateInstantiationListener.getInstance());
 		}
 		PreTemplateInstantiationListener.getInstance().init(copier, binding, args);
 		// 2b. special treatment for elements stereotyped with template parameter
-		if(!copier.postCopyListeners.contains(PostTemplateInstantiationListener.getInstance())) {
+		if (!copier.postCopyListeners.contains(PostTemplateInstantiationListener.getInstance())) {
 			copier.postCopyListeners.add(PostTemplateInstantiationListener.getInstance());
 		}
 		PostTemplateInstantiationListener.getInstance().init(copier, binding, args);
-		
-		if(!copier.postCopyListeners.contains(FixTemplateSync.getInstance())) {
+
+		if (!copier.postCopyListeners.contains(FixTemplateSync.getInstance())) {
 			copier.postCopyListeners.add(FixTemplateSync.getInstance());
 		}
 	}
@@ -142,10 +145,12 @@ public class TemplateInstantiation {
 	 * Synchronize the copy map, i.e. put the correspondences between existing source and target elements into the map.
 	 * Otherwise, a new binding would produce duplicates.
 	 * TODO: A more efficient way would be to cache the copy function and only re-sync, if a new model has been loaded.
-	 *   On the other hand, the bound package is normally not very large
-	 *   
-	 * @param sourcePkg The package template (source)
-	 * @param targetPkg The bound package (target)
+	 * On the other hand, the bound package is normally not very large
+	 *
+	 * @param sourcePkg
+	 *            The package template (source)
+	 * @param targetPkg
+	 *            The bound package (target)
 	 */
 	public void syncCopyMap(Package sourcePkg, Package targetPkg) {
 		copier.put(sourcePkg, targetPkg);
@@ -153,7 +158,7 @@ public class TemplateInstantiation {
 			if (target instanceof NamedElement) {
 				String targetName = ((NamedElement) target).getName();
 				PackageableElement source = sourcePkg.getPackagedElement(targetName);
-				if((source instanceof Package) && (target instanceof Package)) {
+				if ((source instanceof Package) && (target instanceof Package)) {
 					syncCopyMap((Package) source, (Package) target);
 				}
 				else {
@@ -163,6 +168,7 @@ public class TemplateInstantiation {
 		}
 
 	}
+
 	Package packageTemplate;
 
 	public TemplateBinding binding;
@@ -177,52 +183,52 @@ public class TemplateInstantiation {
 	 * Bind a named element. Besides of binding the passed element, this
 	 * operation will bind all elements that are referenced (required) by the
 	 * passed element.
-	 * 
+	 *
 	 * In consequence, typically only a small part of a package template is
 	 * actually created within the bound package. We call this mechanism lazy
 	 * instantiation/binding
-	 * 
+	 *
 	 * @param copier
-	 *        Source and target model
+	 *            Source and target model
 	 * @param namedElement
-	 *        A member within the package template which should be bound,
-	 *        i.e. for which template instantiation should be performed.
+	 *            A member within the package template which should be bound,
+	 *            i.e. for which template instantiation should be performed.
 	 * @param binding
-	 *        The binding between the bound package and the package template
+	 *            The binding between the bound package and the package template
 	 * @param args
-	 *        Acceleo arguments
+	 *            Acceleo arguments
 	 */
 	@SuppressWarnings("unchecked")
 	public <T extends NamedElement> T bindNamedElement(T namedElement) throws TransformationException {
-		if(namedElement == null) {
+		if (namedElement == null) {
 			// user should never see this exception
 			throw new TransformationException(Messages.TemplateInstantiation_TemplateIsNull);
 		}
 
-		Package boundPackage = (Package)binding.getBoundElement();
+		Package boundPackage = (Package) binding.getBoundElement();
 		EList<Namespace> path = TemplateUtils.relativePathWithMerge(namedElement, packageTemplate);
 		Template template = UMLUtil.getStereotypeApplication(namedElement, Template.class);
 		BindingHelper helper = (template != null) ?
-			template.getHelper() : null;
-	
-		/*
-		if((templateKind == TemplateKind.ACCUMULATE) || (templateKind == TemplateKind.LATE_EVALUATION)) {
-			// TODO: not very clean yet
-			path = TemplateUtils.relativePathWithMerge(namedElement, copy.source);
-			if(path == null) {
-				// element is imported
-				path = namedElement.allNamespaces();
-			}
-			boundPackage = copy.target; // CreationUtils.getAndCreate
-										// (sat.target, "accumulate");
-		}
-		*/
+				template.getHelper() : null;
 
-		if(path != null) {
+		/*
+		 * if((templateKind == TemplateKind.ACCUMULATE) || (templateKind == TemplateKind.LATE_EVALUATION)) {
+		 * // TODO: not very clean yet
+		 * path = TemplateUtils.relativePathWithMerge(namedElement, copy.source);
+		 * if(path == null) {
+		 * // element is imported
+		 * path = namedElement.allNamespaces();
+		 * }
+		 * boundPackage = copy.target; // CreationUtils.getAndCreate
+		 * // (sat.target, "accumulate");
+		 * }
+		 */
+
+		if (path != null) {
 			// register owning package template (template can be defined in
 			// multiple packages)
 			Element owner = TemplateUtils.getTemplateOwner(namedElement, signature);
-			if(owner != null) {
+			if (owner != null) {
 				// note that we might overwrite an existing value
 				copier.put(owner, boundPackage);
 			}
@@ -230,17 +236,17 @@ public class TemplateInstantiation {
 		else {
 			// element is not part of the package template referenced by the
 			// binding
-			if(namedElement instanceof TemplateableElement) {
+			if (namedElement instanceof TemplateableElement) {
 				// check whether the referenced element is part of another
 				// package template,
 				// (for which we allow for implicit binding with the first
 				// template parameter)
-				TemplateSignature signatureOfNE = TemplateUtils.getSignature((TemplateableElement)namedElement);
-				if((signatureOfNE != null) && (signature != signatureOfNE)) {
-					TemplateBinding subBinding = TemplateUtils.getSubBinding(copier.target, (TemplateableElement)namedElement, binding);
+				TemplateSignature signatureOfNE = TemplateUtils.getSignature((TemplateableElement) namedElement);
+				if ((signatureOfNE != null) && (signature != signatureOfNE)) {
+					TemplateBinding subBinding = TemplateUtils.getSubBinding(copier.target, (TemplateableElement) namedElement, binding);
 					TemplateInstantiation ti = new TemplateInstantiation(copier, subBinding, args);
 					NamedElement ret = ti.bindNamedElement(namedElement);
-					return (T)ret;
+					return (T) ret;
 				}
 			}
 
@@ -254,21 +260,21 @@ public class TemplateInstantiation {
 		// already exists in the
 		// bound package.
 
-		NamedElement existingMember = (NamedElement)copier.get(namedElement);
+		NamedElement existingMember = (NamedElement) copier.get(namedElement);
 		/*
-		if((existingMember != null) && (templateKind != TemplateKind.ACCUMULATE)) {
-			// element is already existing (and thus bound), nothing to do
-			// additional check, whether the ACCUMULATE information is unset)
-			// however: if the element is a package, existence is not sufficient
-			// since it might have been created via getAndCreate above
-			
-			//if(namedElement instanceof Package) {
-			//	bindPackage((Package)namedElement);
-			//}
-			return (T)existingMember;
-		}
-		*/
-		if(existingMember == null) {
+		 * if((existingMember != null) && (templateKind != TemplateKind.ACCUMULATE)) {
+		 * // element is already existing (and thus bound), nothing to do
+		 * // additional check, whether the ACCUMULATE information is unset)
+		 * // however: if the element is a package, existence is not sufficient
+		 * // since it might have been created via getAndCreate above
+		 *
+		 * //if(namedElement instanceof Package) {
+		 * // bindPackage((Package)namedElement);
+		 * //}
+		 * return (T)existingMember;
+		 * }
+		 */
+		if (existingMember == null) {
 			FilterTemplate.getInstance().setActive(false);
 			T copiedElement = copier.getCopy(namedElement);
 			FilterTemplate.getInstance().setActive(true);
@@ -276,7 +282,7 @@ public class TemplateInstantiation {
 			return copiedElement;
 		}
 
-		return (T)existingMember;
+		return (T) existingMember;
 	}
 
 }

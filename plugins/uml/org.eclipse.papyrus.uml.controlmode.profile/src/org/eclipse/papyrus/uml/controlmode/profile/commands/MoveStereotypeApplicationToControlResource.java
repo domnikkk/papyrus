@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,9 +34,9 @@ import com.google.common.collect.Sets;
 
 /**
  * Command to move stereotype application to new resource when controling or uncontroling elements
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public final class MoveStereotypeApplicationToControlResource extends AbstractControlCommand {
 
@@ -48,21 +48,21 @@ public final class MoveStereotypeApplicationToControlResource extends AbstractCo
 
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		Element elem = (Element)getRequest().getTargetObject();
+		Element elem = (Element) getRequest().getTargetObject();
 		Set<Element> elements = Sets.newHashSet(elem);
 		TreeIterator<Object> contents = EcoreUtil.getAllProperContents(elem, true);
-		while(contents.hasNext()) {
-			EObject eObject = (EObject)contents.next();
-			if(eObject instanceof Element) {
-				elements.add((Element)eObject);
+		while (contents.hasNext()) {
+			EObject eObject = (EObject) contents.next();
+			if (eObject instanceof Element) {
+				elements.add((Element) eObject);
 			}
 		}
 
 		Resource targetResource = getRequest().getTargetResource(UmlModel.UML_FILE_EXTENSION);
-		if(targetResource == null) {
-			return createNewControlCommandError("No uml resource created");////$NON-NLS-0$
+		if (targetResource == null) {
+			return createNewControlCommandError("No uml resource created");//
 		}
-		for(Element e : elements) {
+		for (Element e : elements) {
 			EList<EObject> stereotypeApplications = e.getStereotypeApplications();
 			targetResource.getContents().addAll(stereotypeApplications);
 		}

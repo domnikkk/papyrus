@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -43,6 +43,7 @@ public class ContainmentSubLinkEditPart extends ConnectionEditPart implements IT
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.COMPONENT_ROLE, new ViewComponentEditPolicy());
@@ -51,28 +52,29 @@ public class ContainmentSubLinkEditPart extends ConnectionEditPart implements IT
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomContainmentSubLinkItemSemanticEditPolicy());
 	}
 
-	
 	/**
 	 * @generated NOT temporaly
 	 */
 	@Override
 	public Object getAdapter(Class key) {
 		// TODO Auto-generated method stub
-		if( EObject.class.isAssignableFrom(key)){
-			if(getTarget()!=null){
-				return   getTarget().getAdapter(key);
+		if (EObject.class.isAssignableFrom(key)) {
+			if (getTarget() != null) {
+				return getTarget().getAdapter(key);
 			}
 		}
 		return super.getAdapter(key);
 	}
+
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected Connection createConnectionFigure() {
 		return new AddedLinkFigure();
 	}
@@ -80,7 +82,8 @@ public class ContainmentSubLinkEditPart extends ConnectionEditPart implements IT
 	/**
 	 * @generated
 	 */
+	@Override
 	public AddedLinkFigure getPrimaryShape() {
-		return (AddedLinkFigure)getFigure();
+		return (AddedLinkFigure) getFigure();
 	}
 }

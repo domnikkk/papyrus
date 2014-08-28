@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,9 @@ import org.eclipse.swt.graphics.Image;
  * and you don't have one yet.
  * If there is no wrapped label provider, the default toString method will be called
  * on non-null objects.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class WrappedLabelProvider implements ILabelProvider {
 
@@ -40,11 +40,11 @@ public class WrappedLabelProvider implements ILabelProvider {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructs a new Label provider, wrapping the specified label provider.
-	 * 
+	 *
 	 * @param provider
-	 *        The wrapped label provider
+	 *            The wrapped label provider
 	 */
 	public WrappedLabelProvider(ILabelProvider provider) {
 		this.labelProvider = provider;
@@ -52,9 +52,9 @@ public class WrappedLabelProvider implements ILabelProvider {
 
 	/**
 	 * Changes the wrapped label provider
-	 * 
+	 *
 	 * @param provider
-	 *        The new wrapped label provider
+	 *            The new wrapped label provider
 	 */
 	public void setLabelProvider(ILabelProvider provider) {
 		this.labelProvider = provider;
@@ -63,20 +63,23 @@ public class WrappedLabelProvider implements ILabelProvider {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void addListener(ILabelProviderListener listener) {
-		//Nothing
+		// Nothing
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void dispose() {
-		//Nothing
+		// Nothing
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return true;
 	}
@@ -84,27 +87,34 @@ public class WrappedLabelProvider implements ILabelProvider {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
-		//Nothing
+		// Nothing
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Image getImage(Object element) {
-		if(labelProvider != null)
+		if (labelProvider != null) {
 			return labelProvider.getImage(element);
+		}
 		return null;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getText(Object element) {
-		if(labelProvider != null)
+		if (labelProvider != null) {
 			return labelProvider.getText(element);
-		if(element == null)
+		}
+		if (element == null)
+		{
 			return "null"; //$NON-NLS-1$
+		}
 		return element.toString();
 	}
 

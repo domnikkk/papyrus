@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
 
 /**
  * <pre>
- * This class provides a custom edit policy used to replace the SEMANTIC_ROLE 
+ * This class provides a custom edit policy used to replace the SEMANTIC_ROLE
  * generated for the CollaborationUse element (when used in CompositeStructure Diagram)
  * </pre>
  */
@@ -30,13 +30,13 @@ public class CustomCollaborationUseItemSemanticEditPolicyCN extends org.eclipse.
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a RoleBinding linked
 	 * to a ConnectableElement.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
 	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Dependency_4017 == req.getElementType()) {
+		if (UMLElementTypes.Dependency_4017 == req.getElementType()) {
 			return getGEFWrapper(new CustomRoleBindingCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getStartCreateRelationshipCommand(req);
@@ -46,13 +46,13 @@ public class CustomCollaborationUseItemSemanticEditPolicyCN extends org.eclipse.
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a RoleBinding linked
 	 * to a ConnectableElement.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
 	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Dependency_4017 == req.getElementType()) {
+		if (UMLElementTypes.Dependency_4017 == req.getElementType()) {
 			return getGEFWrapper(new CustomRoleBindingCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getCompleteCreateRelationshipCommand(req);

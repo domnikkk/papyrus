@@ -17,11 +17,11 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DerivedTypedElement;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
 import org.eclipse.emf.validation.AbstractModelConstraint;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DerivedTypedElement;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
 
 /**
  * Creates a warning if a {@link FacetOperation} defined in an {@link EClassCustomization} overrides (i.e. customizes)
@@ -29,8 +29,7 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustom
  */
 public class AvoidEClassOverlayConstraint extends AbstractModelConstraint {
 
-	private static final List<String> OVERLAY_OPS = Arrays.asList(
-			"platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/topLeftOverlay", //$NON-NLS-1$
+	private static final List<String> OVERLAY_OPS = Arrays.asList("platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/topLeftOverlay", //$NON-NLS-1$
 			"platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/topMiddleOverlay", //$NON-NLS-1$
 			"platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/topRightOverlay", //$NON-NLS-1$
 			"platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/bottomLeftOverlay", //$NON-NLS-1$

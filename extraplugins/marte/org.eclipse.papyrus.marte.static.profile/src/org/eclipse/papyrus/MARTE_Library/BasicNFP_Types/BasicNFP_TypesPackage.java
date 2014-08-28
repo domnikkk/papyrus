@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,12 +22,13 @@ import org.eclipse.emf.ecore.EPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.BasicNFP_TypesFactory
  * @model kind="package"
  * @generated
@@ -37,6 +38,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "BasicNFP_Types";
@@ -45,6 +47,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http:///MARTE_Library/BasicNFP_Types.ecore";
@@ -53,6 +56,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "MARTE_Library.BasicNFP_Types";
@@ -61,6 +65,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	BasicNFP_TypesPackage eINSTANCE = org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl.init();
@@ -69,6 +74,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.SourceKind <em>Source Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.SourceKind
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getSourceKind()
 	 * @generated
@@ -79,6 +85,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.DirectionKind <em>Direction Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.DirectionKind
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getDirectionKind()
 	 * @generated
@@ -89,6 +96,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.StatisticalQualifierKind <em>Statistical Qualifier Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.StatisticalQualifierKind
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getStatisticalQualifierKind()
 	 * @generated
@@ -99,6 +107,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Common Type</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_CommonType()
 	 * @generated
@@ -109,6 +118,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Boolean</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Boolean()
 	 * @generated
@@ -119,6 +129,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Natural</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Natural()
 	 * @generated
@@ -129,6 +140,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP String</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_String()
 	 * @generated
@@ -139,6 +151,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Real</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Real()
 	 * @generated
@@ -149,6 +162,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Integer</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Integer()
 	 * @generated
@@ -159,6 +173,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Date Time</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_DateTime()
 	 * @generated
@@ -169,6 +184,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Duration</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Duration()
 	 * @generated
@@ -179,6 +195,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Data Tx Rate</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_DataTxRate()
 	 * @generated
@@ -189,6 +206,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Frequency</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Frequency()
 	 * @generated
@@ -199,6 +217,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Power</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Power()
 	 * @generated
@@ -209,6 +228,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Data Size</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_DataSize()
 	 * @generated
@@ -219,6 +239,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Energy</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Energy()
 	 * @generated
@@ -229,6 +250,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Length</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Length()
 	 * @generated
@@ -239,6 +261,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Area</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Area()
 	 * @generated
@@ -249,6 +272,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>Arrival Pattern</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getArrivalPattern()
 	 * @generated
@@ -259,6 +283,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>Periodic Pattern</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getPeriodicPattern()
 	 * @generated
@@ -269,6 +294,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>Aperiodic Pattern</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getAperiodicPattern()
 	 * @generated
@@ -279,6 +305,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>Closed Pattern</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getClosedPattern()
 	 * @generated
@@ -289,6 +316,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>Sporadic Pattern</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getSporadicPattern()
 	 * @generated
@@ -299,6 +327,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>Burst Pattern</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getBurstPattern()
 	 * @generated
@@ -309,6 +338,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>Irregular Pattern</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getIrregularPattern()
 	 * @generated
@@ -319,6 +349,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Percentage</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Percentage()
 	 * @generated
@@ -329,6 +360,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>Open Pattern</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getOpenPattern()
 	 * @generated
@@ -339,6 +371,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Price</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Price()
 	 * @generated
@@ -349,6 +382,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Weight</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Weight()
 	 * @generated
@@ -360,6 +394,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.SourceKind <em>Source Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Source Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.SourceKind
 	 * @generated
@@ -370,6 +405,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.DirectionKind <em>Direction Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Direction Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.DirectionKind
 	 * @generated
@@ -380,6 +416,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.StatisticalQualifierKind <em>Statistical Qualifier Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Statistical Qualifier Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.StatisticalQualifierKind
 	 * @generated
@@ -390,6 +427,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Common Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Common Type</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -401,6 +439,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Boolean</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Boolean</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -412,6 +451,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Natural</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Natural</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -423,6 +463,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP String</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -434,6 +475,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Real</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Real</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -445,6 +487,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Integer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Integer</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -456,6 +499,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Date Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Date Time</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -467,6 +511,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Duration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Duration</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -478,6 +523,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Data Tx Rate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Data Tx Rate</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -489,6 +535,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Frequency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Frequency</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -500,6 +547,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Power</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Power</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -511,6 +559,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Data Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Data Size</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -522,6 +571,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Energy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Energy</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -533,6 +583,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Length</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Length</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -544,6 +595,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Area</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Area</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -555,6 +607,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Arrival Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Arrival Pattern</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -566,6 +619,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Periodic Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Periodic Pattern</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -577,6 +631,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Aperiodic Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Aperiodic Pattern</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -588,6 +643,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Closed Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Closed Pattern</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -599,6 +655,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Sporadic Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Sporadic Pattern</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -610,6 +667,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Burst Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Burst Pattern</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -621,6 +679,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Irregular Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Irregular Pattern</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -632,6 +691,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Percentage</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Percentage</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -643,6 +703,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Open Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Open Pattern</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -654,6 +715,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Price</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Price</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -665,6 +727,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Weight</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>NFP Weight</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -676,6 +739,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -685,12 +749,13 @@ public interface BasicNFP_TypesPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -698,6 +763,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.SourceKind <em>Source Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.SourceKind
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getSourceKind()
 		 * @generated
@@ -708,6 +774,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.DirectionKind <em>Direction Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.DirectionKind
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getDirectionKind()
 		 * @generated
@@ -718,6 +785,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.StatisticalQualifierKind <em>Statistical Qualifier Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.StatisticalQualifierKind
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getStatisticalQualifierKind()
 		 * @generated
@@ -728,6 +796,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Common Type</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_CommonType()
 		 * @generated
@@ -738,6 +807,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Boolean</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Boolean()
 		 * @generated
@@ -748,6 +818,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Natural</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Natural()
 		 * @generated
@@ -758,6 +829,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP String</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_String()
 		 * @generated
@@ -768,6 +840,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Real</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Real()
 		 * @generated
@@ -778,6 +851,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Integer</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Integer()
 		 * @generated
@@ -788,6 +862,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Date Time</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_DateTime()
 		 * @generated
@@ -798,6 +873,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Duration</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Duration()
 		 * @generated
@@ -808,6 +884,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Data Tx Rate</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_DataTxRate()
 		 * @generated
@@ -818,6 +895,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Frequency</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Frequency()
 		 * @generated
@@ -828,6 +906,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Power</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Power()
 		 * @generated
@@ -838,6 +917,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Data Size</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_DataSize()
 		 * @generated
@@ -848,6 +928,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Energy</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Energy()
 		 * @generated
@@ -858,6 +939,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Length</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Length()
 		 * @generated
@@ -868,6 +950,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Area</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Area()
 		 * @generated
@@ -878,6 +961,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Arrival Pattern</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getArrivalPattern()
 		 * @generated
@@ -888,6 +972,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Periodic Pattern</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getPeriodicPattern()
 		 * @generated
@@ -898,6 +983,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Aperiodic Pattern</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getAperiodicPattern()
 		 * @generated
@@ -908,6 +994,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Closed Pattern</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getClosedPattern()
 		 * @generated
@@ -918,6 +1005,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Sporadic Pattern</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getSporadicPattern()
 		 * @generated
@@ -928,6 +1016,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Burst Pattern</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getBurstPattern()
 		 * @generated
@@ -938,6 +1027,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Irregular Pattern</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getIrregularPattern()
 		 * @generated
@@ -948,6 +1038,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Percentage</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Percentage()
 		 * @generated
@@ -958,6 +1049,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Open Pattern</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getOpenPattern()
 		 * @generated
@@ -968,6 +1060,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Price</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Price()
 		 * @generated
@@ -978,6 +1071,7 @@ public interface BasicNFP_TypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Weight</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.impl.BasicNFP_TypesPackageImpl#getNFP_Weight()
 		 * @generated
@@ -986,4 +1080,4 @@ public interface BasicNFP_TypesPackage extends EPackage {
 
 	}
 
-} //BasicNFP_TypesPackage
+} // BasicNFP_TypesPackage

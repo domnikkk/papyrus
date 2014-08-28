@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -35,13 +35,13 @@ public class UpdateUtils {
 	public static EList<Element> getDerivedElements(Package pkg, NamedElement source) {
 		EList<Element> list = new BasicEList<Element>();
 		Iterator<NamedElement> members = pkg.getOwnedMembers().iterator();
-		while(members.hasNext()) {
+		while (members.hasNext()) {
 			NamedElement member = members.next();
-			if(getSource(member) == source) {
+			if (getSource(member) == source) {
 				list.add(member);
 			}
-			if(member instanceof Package) {
-				EList<Element> subList = getDerivedElements((Package)member, source);
+			if (member instanceof Package) {
+				EList<Element> subList = getDerivedElements((Package) member, source);
 				list.addAll(subList);
 			}
 		}
@@ -50,11 +50,11 @@ public class UpdateUtils {
 
 	public static Element getDerivedElement(EList<? extends Element> list, Element source) {
 		Iterator<? extends Element> elements = list.iterator();
-		while(elements.hasNext()) {
+		while (elements.hasNext()) {
 			Element element = elements.next();
-			if(StereotypeUtil.isApplied(element, DerivedElement.class)) {
+			if (StereotypeUtil.isApplied(element, DerivedElement.class)) {
 				DerivedElement de = UMLUtil.getStereotypeApplication(element, DerivedElement.class);
-				if((de != null) && (de.getSource() == source)) {
+				if ((de != null) && (de.getSource() == source)) {
 					return element;
 				}
 			}
@@ -73,9 +73,9 @@ public class UpdateUtils {
 	}
 
 	public static Element getSource(Element element) {
-		if(StereotypeUtil.isApplied(element, DerivedElement.class)) {
+		if (StereotypeUtil.isApplied(element, DerivedElement.class)) {
 			DerivedElement de = UMLUtil.getStereotypeApplication(element, DerivedElement.class);
-			if(de != null) {
+			if (de != null) {
 				return de.getSource();
 			}
 		}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,18 +36,19 @@ public class AppliedStereotypeExternalNodeEditPolicy extends AppliedStereotypeLa
 		super();
 	}
 
+	@Override
 	public void activate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
 		super.activate();
 		// add a listener for TimeObservationEditPart
 		// eContainer = getParent() , but here it's the ECore model
 		EObject parent = view.eContainer();
-		if(parent instanceof View) {
-			parentView = (View)parent;
+		if (parent instanceof View) {
+			parentView = (View) parent;
 			getDiagramEventBroker().addNotificationListener(parentView, this);
 		}
 
@@ -57,8 +58,9 @@ public class AppliedStereotypeExternalNodeEditPolicy extends AppliedStereotypeLa
 
 	@Override
 	public void deactivate() {
-		if(parentView != null)
+		if (parentView != null) {
 			getDiagramEventBroker().removeNotificationListener(parentView, this);
+		}
 
 		super.deactivate();
 	}
@@ -72,11 +74,12 @@ public class AppliedStereotypeExternalNodeEditPolicy extends AppliedStereotypeLa
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return the list of stereotypes to display with properties if there are
 	 *         selected to be displayed
 	 */
+	@Override
 	public String stereotypesToDisplay() {
 
 		// retrieve all stereotypes to be displayed
@@ -102,23 +105,23 @@ public class AppliedStereotypeExternalNodeEditPolicy extends AppliedStereotypeLa
 
 		// check the presentation kind. if only icon => do not display
 		// stereotype, only values
-		if(UMLVisualInformationPapyrusConstant.ICON_STEREOTYPE_PRESENTATION.equals(stereotypespresentationKind)) {
+		if (UMLVisualInformationPapyrusConstant.ICON_STEREOTYPE_PRESENTATION.equals(stereotypespresentationKind)) {
 			return StereotypeUtil.getPropertiesValuesInBrace(stereotypesPropertiesToDisplay, getUMLElement());
 		}
 		String display = "";
-		if(UMLVisualInformationPapyrusConstant.STEREOTYPE_BRACE_LOCATION.equals(stereotypespresentationLocation)) {
+		if (UMLVisualInformationPapyrusConstant.STEREOTYPE_BRACE_LOCATION.equals(stereotypespresentationLocation)) {
 			String stereotypesToDisplayWithQN = AppliedStereotypeHelper.getStereotypesQNToDisplay(parentView);
 
-			if(UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION.equals(stereotypespresentationKind)) {
+			if (UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION.equals(stereotypespresentationKind)) {
 				display += stereotypesAndPropertiesToDisplay("\n", stereotypesToDisplay, stereotypesToDisplayWithQN, stereotypesPropertiesToDisplay);
 			} else {
 				final String st = stereotypesToDisplay(", ", stereotypesToDisplay, stereotypesToDisplayWithQN);
-				if(st != null && !st.equals("")) {
+				if (st != null && !st.equals("")) {
 					display += Activator.ST_LEFT + st + Activator.ST_RIGHT;
 				}
 				final String propSt = StereotypeUtil.getPropertiesValuesInBrace(stereotypesPropertiesToDisplay, getUMLElement());
-				if(propSt != null && !propSt.equals("")) {
-					if(st != null && !st.equals("")) {
+				if (propSt != null && !propSt.equals("")) {
+					if (st != null && !st.equals("")) {
 						display += "\n";
 					}
 					display += "{" + propSt + "}";
@@ -132,15 +135,16 @@ public class AppliedStereotypeExternalNodeEditPolicy extends AppliedStereotypeLa
 	 * Refresh the text of the stereotype
 	 */
 
+	@Override
 	protected void refreshStereotypeDisplay() {
-		if(getHost() instanceof IPapyrusEditPart) {
-			IFigure figure = ((IPapyrusEditPart)getHost()).getPrimaryShape();
+		if (getHost() instanceof IPapyrusEditPart) {
+			IFigure figure = ((IPapyrusEditPart) getHost()).getPrimaryShape();
 
-			if(figure instanceof IPapyrusUMLElementFigure) {// calculate text
+			if (figure instanceof IPapyrusUMLElementFigure) {// calculate text
 				// and icon to
 				// display
 				final String stereotypesToDisplay = stereotypesToDisplay();
-				((IPapyrusUMLElementFigure)figure).setStereotypeDisplay(tag + (stereotypesToDisplay), null);
+				((IPapyrusUMLElementFigure) figure).setStereotypeDisplay(tag + (stereotypesToDisplay), null);
 			}
 		}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,7 +50,7 @@ public class CustomConsiderIgnoreFragmentEditPart extends CustomCombinedFragment
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomConsiderIgnoreFragmentEditPart(View view) {
@@ -61,11 +61,11 @@ public class CustomConsiderIgnoreFragmentEditPart extends CustomCombinedFragment
 	 * Try to use the notifier from super class, if not exist, create new one.
 	 */
 	protected NotificationHelper getNotifier() {
-		if(notifier == null) {
+		if (notifier == null) {
 			try {
 				Field f = ConsiderIgnoreFragmentEditPart.class.getDeclaredField("notifier");
 				f.setAccessible(true);
-				notifier = (NotificationHelper)f.get(this);
+				notifier = (NotificationHelper) f.get(this);
 			} catch (Exception e) {
 				notifier = new NotificationHelper(new UIAdapterImpl() {
 
@@ -105,19 +105,19 @@ public class CustomConsiderIgnoreFragmentEditPart extends CustomCombinedFragment
 	protected void handleNotificationEvent(Notification notification) {
 		final NotificationHelper notifier = getNotifier();
 		Object feature = notification.getFeature();
-		if(UMLPackage.eINSTANCE.getConsiderIgnoreFragment_Message().equals(feature)) {
+		if (UMLPackage.eINSTANCE.getConsiderIgnoreFragment_Message().equals(feature)) {
 			// Handle message creation
 			Object newValue = notification.getNewValue();
 			// TODO Filter NamedElements type for message on higher level
-			if(newValue == null || newValue instanceof Operation || newValue instanceof Reception || newValue instanceof Signal) {
+			if (newValue == null || newValue instanceof Operation || newValue instanceof Reception || newValue instanceof Signal) {
 				updateHeaderLabel();
-				notifier.unlistenObject((Notifier)notification.getOldValue());
-				notifier.listenObject((Notifier)notification.getNewValue());
+				notifier.unlistenObject((Notifier) notification.getOldValue());
+				notifier.listenObject((Notifier) notification.getNewValue());
 			} else {
-				ConsiderIgnoreFragment considerIgnoreFragment = (ConsiderIgnoreFragment)resolveSemanticElement();
+				ConsiderIgnoreFragment considerIgnoreFragment = (ConsiderIgnoreFragment) resolveSemanticElement();
 				considerIgnoreFragment.getMessages().remove(newValue);
 			}
-		} else if(UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature)) {
+		} else if (UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature)) {
 			// Handle message modification
 			updateHeaderLabel();
 		}
@@ -127,20 +127,21 @@ public class CustomConsiderIgnoreFragmentEditPart extends CustomCombinedFragment
 	/**
 	 * Update operator kind
 	 */
+	@Override
 	protected void updateHeaderLabel() {
-		ConsiderIgnoreFragment considerIgnoreFragment = (ConsiderIgnoreFragment)resolveSemanticElement();
+		ConsiderIgnoreFragment considerIgnoreFragment = (ConsiderIgnoreFragment) resolveSemanticElement();
 		StringBuilder operatorKind = new StringBuilder();
 		operatorKind.append(considerIgnoreFragment.getInteractionOperator().getName());
 		EList<NamedElement> messages = considerIgnoreFragment.getMessages();
-		if(messages != null && messages.size() > 0) {
+		if (messages != null && messages.size() > 0) {
 			StringBuilder sb = new StringBuilder();
-			for(int i = 0; i < messages.size(); i++) {
+			for (int i = 0; i < messages.size(); i++) {
 				String name = messages.get(i).getName();
-				if(name != null) {
+				if (name != null) {
 					sb.append(name).append(",");
 				}
 			}
-			if(sb.length() > 0) {
+			if (sb.length() > 0) {
 				operatorKind.append(" {").append(sb.deleteCharAt(sb.length() - 1).toString()).append("}");
 			}
 		}
@@ -149,11 +150,12 @@ public class CustomConsiderIgnoreFragmentEditPart extends CustomCombinedFragment
 
 	/**
 	 * Return true if the InteractionOperatorKind is allowed
-	 * 
+	 *
 	 * @param interactionOperatorLiteral
-	 *        The InteractionOperator to test
+	 *            The InteractionOperator to test
 	 * @return true if allowed
 	 */
+	@Override
 	protected boolean isAllowedInteractionOperator(String interactionOperatorLiteral) {
 		return InteractionOperatorKind.CONSIDER_LITERAL.getLiteral().equals(interactionOperatorLiteral) || InteractionOperatorKind.IGNORE_LITERAL.getLiteral().equals(interactionOperatorLiteral);
 	}
@@ -165,8 +167,8 @@ public class CustomConsiderIgnoreFragmentEditPart extends CustomCombinedFragment
 	public void activate() {
 		super.activate();
 		final NotificationHelper notifier = getNotifier();
-		ConsiderIgnoreFragment considerIgnoreFragment = (ConsiderIgnoreFragment)resolveSemanticElement();
-		for(NamedElement message : considerIgnoreFragment.getMessages()) {
+		ConsiderIgnoreFragment considerIgnoreFragment = (ConsiderIgnoreFragment) resolveSemanticElement();
+		for (NamedElement message : considerIgnoreFragment.getMessages()) {
 			notifier.listenObject(message);
 		}
 	}
@@ -178,7 +180,7 @@ public class CustomConsiderIgnoreFragmentEditPart extends CustomCombinedFragment
 	@Override
 	public void deactivate() {
 		super.deactivate();
-		if(notifier != null) {
+		if (notifier != null) {
 			notifier.unlistenAll();
 		}
 	}
@@ -188,12 +190,13 @@ public class CustomConsiderIgnoreFragmentEditPart extends CustomCombinedFragment
 	 */
 	@Override
 	public void removeNotify() {
-		if(notifier != null) {
+		if (notifier != null) {
 			notifier.unlistenAll();
 		}
 		super.removeNotify();
 	}
 
+	@Override
 	public String getTitlePreferenceKey() {
 		return "ELEMENT_PapyrusUMLSequenceDiagram_ConsiderIgnoreFragment_CombinedFragmentCompartment.compartment_name.visibility";
 	}

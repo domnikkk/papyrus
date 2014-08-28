@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwArbiter;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationResource;
-import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.*;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwDMA;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwMMU;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwStorageManager;
@@ -33,6 +32,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.StorageResource;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwStorageManagerPackage
  * @generated
  */
@@ -41,6 +41,7 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static HwStorageManagerPackage modelPackage;
@@ -49,6 +50,7 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public HwStorageManagerAdapterFactory() {
@@ -62,6 +64,7 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -71,7 +74,7 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -80,59 +83,70 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HwStorageManagerSwitch<Adapter> modelSwitch =
-		new HwStorageManagerSwitch<Adapter>() {
-			@Override
-			public Adapter caseHwStorageManager(HwStorageManager object) {
-				return createHwStorageManagerAdapter();
-			}
-			@Override
-			public Adapter caseHwDMA(HwDMA object) {
-				return createHwDMAAdapter();
-			}
-			@Override
-			public Adapter caseHwMMU(HwMMU object) {
-				return createHwMMUAdapter();
-			}
-			@Override
-			public Adapter caseResource(Resource object) {
-				return createResourceAdapter();
-			}
-			@Override
-			public Adapter caseHwResource(HwResource object) {
-				return createHwResourceAdapter();
-			}
-			@Override
-			public Adapter caseStorageResource(StorageResource object) {
-				return createStorageResourceAdapter();
-			}
-			@Override
-			public Adapter caseHwCommunicationResource(HwCommunicationResource object) {
-				return createHwCommunicationResourceAdapter();
-			}
-			@Override
-			public Adapter caseHwArbiter(HwArbiter object) {
-				return createHwArbiterAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new HwStorageManagerSwitch<Adapter>() {
+				@Override
+				public Adapter caseHwStorageManager(HwStorageManager object) {
+					return createHwStorageManagerAdapter();
+				}
+
+				@Override
+				public Adapter caseHwDMA(HwDMA object) {
+					return createHwDMAAdapter();
+				}
+
+				@Override
+				public Adapter caseHwMMU(HwMMU object) {
+					return createHwMMUAdapter();
+				}
+
+				@Override
+				public Adapter caseResource(Resource object) {
+					return createResourceAdapter();
+				}
+
+				@Override
+				public Adapter caseHwResource(HwResource object) {
+					return createHwResourceAdapter();
+				}
+
+				@Override
+				public Adapter caseStorageResource(StorageResource object) {
+					return createStorageResourceAdapter();
+				}
+
+				@Override
+				public Adapter caseHwCommunicationResource(HwCommunicationResource object) {
+					return createHwCommunicationResourceAdapter();
+				}
+
+				@Override
+				public Adapter caseHwArbiter(HwArbiter object) {
+					return createHwArbiterAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 *
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -142,6 +156,7 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwStorageManager
 	 * @generated
@@ -156,6 +171,7 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwDMA
 	 * @generated
@@ -170,6 +186,7 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwMMU
 	 * @generated
@@ -184,6 +201,7 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Resource
 	 * @generated
@@ -198,6 +216,7 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource
 	 * @generated
@@ -212,6 +231,7 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.StorageResource
 	 * @generated
@@ -226,6 +246,7 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationResource
 	 * @generated
@@ -240,6 +261,7 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwArbiter
 	 * @generated
@@ -253,6 +275,7 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -260,4 +283,4 @@ public class HwStorageManagerAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //HwStorageManagerAdapterFactory
+} // HwStorageManagerAdapterFactory

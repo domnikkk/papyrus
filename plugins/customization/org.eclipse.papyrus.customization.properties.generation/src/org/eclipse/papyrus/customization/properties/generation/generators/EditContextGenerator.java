@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com
  *  Christian W. Damus (CEA) - bug 422257
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.generation.generators;
 
@@ -38,9 +38,9 @@ public class EditContextGenerator implements IGenerator {
 
 	public void dispose() {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	public List<Context> generate(List<URI> targetURI) {
 		// TODO Auto-generated method stub
 		return null;

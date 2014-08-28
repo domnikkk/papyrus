@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 CEA-LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  Vincent Lorenzo (CEA-LIST) - Bug 357621 - Improve the label displayed for Customization and Facets
  *  Gregoire Dupe (Mia-Software) - Bug 357621 - Improve the label displayed for Customization and Facets
@@ -23,14 +23,14 @@ import java.util.Map;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.ETypedElement;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.preferences.PreferenceConstants;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.viewers.IOpenListener;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.preferences.PreferenceConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -180,8 +180,8 @@ public class ETypedElementSelectionControlManager implements
 		// only select elements that match the filter
 		final List<ETypedElement> filteredSelection = new ArrayList<ETypedElement>();
 		for (ETypedElement typedElement : newSelection) {
-				if (this.availableElements.contains(typedElement)) {
-					filteredSelection.add(typedElement);
+			if (this.availableElements.contains(typedElement)) {
+				filteredSelection.add(typedElement);
 			}
 		}
 		setSelection(new StructuredSelection(filteredSelection));

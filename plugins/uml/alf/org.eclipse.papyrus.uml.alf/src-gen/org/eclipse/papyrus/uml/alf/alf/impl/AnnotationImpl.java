@@ -5,16 +5,11 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeEList;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.Annotation;
 import org.eclipse.papyrus.uml.alf.alf.AnnotationKind;
@@ -105,8 +100,9 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
   {
     AnnotationKind oldKind = kind;
     kind = newKind == null ? KIND_EDEFAULT : newKind;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ANNOTATION__KIND, oldKind, kind));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ANNOTATION__KIND, oldKind, kind));
+	}
   }
 
   /**
@@ -209,7 +205,9 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (kind: ");

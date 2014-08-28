@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,12 +23,13 @@ import org.eclipse.emf.ecore.EPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.TimeLibraryFactory
  * @model kind="package"
  * @generated
@@ -38,6 +39,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "TimeLibrary";
@@ -46,6 +48,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http:///MARTE_Library/TimeLibrary.ecore";
@@ -54,6 +57,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "MARTE_Library.TimeLibrary";
@@ -62,6 +66,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	TimeLibraryPackage eINSTANCE = org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.TimeLibraryPackageImpl.init();
@@ -70,6 +75,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.IdealClockImpl <em>Ideal Clock</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.IdealClockImpl
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.TimeLibraryPackageImpl#getIdealClock()
 	 * @generated
@@ -80,6 +86,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * The number of structural features of the '<em>Ideal Clock</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -89,6 +96,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.TimeLibrary.TimeUnitKind <em>Time Unit Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.TimeUnitKind
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.TimeLibraryPackageImpl#getTimeUnitKind()
 	 * @generated
@@ -99,6 +107,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.TimeLibrary.LogicalTimeUnit <em>Logical Time Unit</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.LogicalTimeUnit
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.TimeLibraryPackageImpl#getLogicalTimeUnit()
 	 * @generated
@@ -109,6 +118,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * The meta object id for the '<em>Timed Value Type</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.TimeLibraryPackageImpl#getTimedValueType()
 	 * @generated
@@ -119,6 +129,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * The meta object id for the '<em>Clocked Value Specification</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.TimeLibraryPackageImpl#getClockedValueSpecification()
 	 * @generated
@@ -130,6 +141,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE_Library.TimeLibrary.IdealClock <em>Ideal Clock</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Ideal Clock</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.IdealClock
 	 * @generated
@@ -140,6 +152,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.TimeLibrary.TimeUnitKind <em>Time Unit Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Time Unit Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.TimeUnitKind
 	 * @generated
@@ -150,6 +163,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.TimeLibrary.LogicalTimeUnit <em>Logical Time Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Logical Time Unit</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.LogicalTimeUnit
 	 * @generated
@@ -160,6 +174,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Timed Value Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Timed Value Type</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -171,6 +186,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Clocked Value Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Clocked Value Specification</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -182,6 +198,7 @@ public interface TimeLibraryPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -191,12 +208,13 @@ public interface TimeLibraryPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -204,6 +222,7 @@ public interface TimeLibraryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.IdealClockImpl <em>Ideal Clock</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.IdealClockImpl
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.TimeLibraryPackageImpl#getIdealClock()
 		 * @generated
@@ -214,6 +233,7 @@ public interface TimeLibraryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.TimeLibrary.TimeUnitKind <em>Time Unit Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.TimeUnitKind
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.TimeLibraryPackageImpl#getTimeUnitKind()
 		 * @generated
@@ -224,6 +244,7 @@ public interface TimeLibraryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.TimeLibrary.LogicalTimeUnit <em>Logical Time Unit</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.LogicalTimeUnit
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.TimeLibraryPackageImpl#getLogicalTimeUnit()
 		 * @generated
@@ -234,6 +255,7 @@ public interface TimeLibraryPackage extends EPackage {
 		 * The meta object literal for the '<em>Timed Value Type</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.TimeLibraryPackageImpl#getTimedValueType()
 		 * @generated
@@ -244,6 +266,7 @@ public interface TimeLibraryPackage extends EPackage {
 		 * The meta object literal for the '<em>Clocked Value Specification</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.impl.TimeLibraryPackageImpl#getClockedValueSpecification()
 		 * @generated
@@ -252,4 +275,4 @@ public interface TimeLibraryPackage extends EPackage {
 
 	}
 
-} //TimeLibraryPackage
+} // TimeLibraryPackage

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ public class PrimitiveTypeFigure extends CompartmentFigure {
 	/** List of compartment */
 	private final static List<String> COMPARTMENT = new ArrayList<String>() {
 
-		private static final long serialVersionUID =  -6373359195626265958L;
+		private static final long serialVersionUID = -6373359195626265958L;
 
 		{
 			add(ATTRIBUTE_COMPARTMENT);
@@ -50,7 +50,7 @@ public class PrimitiveTypeFigure extends CompartmentFigure {
 
 	/**
 	 * Get the attribute's compartment figure
-	 * 
+	 *
 	 * @return
 	 */
 	public IFigure getAttributeCompartmentFigure() {
@@ -59,7 +59,7 @@ public class PrimitiveTypeFigure extends CompartmentFigure {
 
 	/**
 	 * Get the operation's compartment figure
-	 * 
+	 *
 	 * @return
 	 */
 	public IFigure getOperationCompartmentFigure() {

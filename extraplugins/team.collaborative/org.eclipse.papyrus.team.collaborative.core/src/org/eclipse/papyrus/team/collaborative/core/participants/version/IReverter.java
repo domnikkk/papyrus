@@ -16,15 +16,15 @@ import org.eclipse.papyrus.team.collaborative.core.participants.IExtendedURISupe
 
 /**
  * Do a reverter action
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public interface IReverter extends IExtendedURISuperSet, IWorkOnModifiedElementParticipant {
 
 	/**
 	 * Revert changes on {@link IExtendedURISuperSet#getExtendedSet()}
-	 * 
+	 *
 	 * @return
 	 * @throws CollabException
 	 */

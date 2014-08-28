@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2013 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -63,8 +63,8 @@ public class CDOResourceHyperlinkEditorShell extends AbstractEditHyperlinkDocume
 		// code use to wait for an action from the user
 		getEditHyperlinkShell().pack();
 		getEditHyperlinkShell().open();
-		while(!getEditHyperlinkShell().isDisposed()) {
-			if(!display.readAndDispatch()) {
+		while (!getEditHyperlinkShell().isDisposed()) {
+			if (!display.readAndDispatch()) {
 				display.sleep();
 			}
 		}
@@ -83,7 +83,7 @@ public class CDOResourceHyperlinkEditorShell extends AbstractEditHyperlinkDocume
 		// intialize "use default" check box
 		getUseDefaultCheckBox().setSelection(usedefaultTooltip);
 		getObjectLabeltext().setEditable(false);
-		if(usedefaultTooltip) {
+		if (usedefaultTooltip) {
 			getTooltipInputText().setEditable(false);
 			getTooltipInputText().setText(getObjectLabeltext().getText());
 		}
@@ -93,7 +93,7 @@ public class CDOResourceHyperlinkEditorShell extends AbstractEditHyperlinkDocume
 			@Override
 			public void mouseUp(MouseEvent e) {
 				usedefaultTooltip = getUseDefaultCheckBox().getSelection();
-				if(usedefaultTooltip) {
+				if (usedefaultTooltip) {
 					getTooltipInputText().setEditable(false);
 					getTooltipInputText().setText(getObjectLabeltext().getText());
 				} else {
@@ -110,20 +110,20 @@ public class CDOResourceHyperlinkEditorShell extends AbstractEditHyperlinkDocume
 				browse.setBlockOnOpen(true);
 
 				String initialURIString = getObjectLabeltext().getText().trim();
-				if(!initialURIString.isEmpty()) {
+				if (!initialURIString.isEmpty()) {
 					browse.setInitialURI(URI.createURI(initialURIString));
 				}
 
 				// select resource nodes of file or model kind, not folders
 				browse.setNodeTypeFilter(EresourcePackage.Literals.CDO_RESOURCE_LEAF);
 
-				if(browse.open() == Window.OK) {
+				if (browse.open() == Window.OK) {
 					URI selected = browse.getSelectedURI();
-					if(selected != null) {
+					if (selected != null) {
 						getObjectLabeltext().setText(selected.toString());
 					}
 
-					if(usedefaultTooltip) {
+					if (usedefaultTooltip) {
 						getTooltipInputText().setText(selected.toString());
 					}
 				}
@@ -144,7 +144,7 @@ public class CDOResourceHyperlinkEditorShell extends AbstractEditHyperlinkDocume
 
 			@Override
 			public void mouseDown(MouseEvent e) {
-				if(hyperlink == null) {
+				if (hyperlink == null) {
 					hyperlink = new CDOResourceHyperlink();
 				}
 

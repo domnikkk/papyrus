@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,7 +41,7 @@ public class DebugMarkerMappingToPseudoSelector implements IMarkerToPseudoSelect
 	}
 
 	public Map<String, String> getMappings() {
-		if(this.mappings == null) {
+		if (this.mappings == null) {
 			this.mappings = new HashMap<String, String>();
 			// Adds pseudo selectors for 'breakpoint', 'suspended' and 'animation' markers
 			this.mappings.put(MokaConstants.MOKA_BREAKPOINT_MARKER_ID, BREAKPOINT_MARKER_PSEUDO_SELECTOR);

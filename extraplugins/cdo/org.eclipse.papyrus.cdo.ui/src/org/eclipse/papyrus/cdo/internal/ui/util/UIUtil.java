@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,7 +44,7 @@ public class UIUtil {
 	 * this method is useful in code that is on the UI thread but needs to
 	 * ensure that some block runs later, after other events have been
 	 * processed.
-	 * 
+	 *
 	 * @param runnable
 	 *            a block of code to run later
 	 */
@@ -55,7 +55,7 @@ public class UIUtil {
 	/**
 	 * Posts a callable that needs access to the UI to run asynchronously on the
 	 * specified {@code display} thread.
-	 * 
+	 *
 	 * @param display
 	 *            the display on which to post a computation asynchronously
 	 * @param callable
@@ -73,7 +73,7 @@ public class UIUtil {
 	 * the current thread is the UI thread, then the result will be available
 	 * immediately. Otherwise, the {@code callable} will be invoked
 	 * asynchronously and the result will be available some time later.
-	 * 
+	 *
 	 * @param callable
 	 *            a computation to run on the UI thread
 	 * @return the future result of the {@code callable}
@@ -93,14 +93,12 @@ public class UIUtil {
 
 	/**
 	 * <p>
-	 * Queries whether the current thread is the UI thread and, if not, posts an
-	 * runnable to re-dispatch the calling method asynchronously on the UI
-	 * thread.
+	 * Queries whether the current thread is the UI thread and, if not, posts an runnable to re-dispatch the calling method asynchronously on the UI thread.
 	 * </p>
 	 * <p>
 	 * The intended usage pattern is thus:
 	 * </p>
-	 * 
+	 *
 	 * <pre>
 	 *     public void doSomethingToTheUI(Object arg1, String arg2) {
 	 *         if (UIUtil.ensureUIThread(this, arg1, arg2) {
@@ -109,15 +107,14 @@ public class UIUtil {
 	 *         }
 	 *     }
 	 * </pre>
-	 * 
+	 *
 	 * @param receiver
 	 *            the receiver of the method to be (potentially) re-dispatched.
-	 *            This is the object calling the {@code ensureUIThread()}
-	 *            utility
+	 *            This is the object calling the {@code ensureUIThread()} utility
 	 * @param arguments
 	 *            the arguments passed in the method invocation to be
 	 *            re-dispatched
-	 * 
+	 *
 	 * @return {@code true} if the current thread is the UI thread and the
 	 *         calling method may proceed; {@code false} if the method
 	 *         invocation was re-dispatched asynchronously and the calling
@@ -136,7 +133,7 @@ public class UIUtil {
 			for (int i = 0; i < stack.length; i++) {
 				StackTraceElement next = stack[i];
 				if (UIUtil.class.getName().equals(next.getClassName())
-					&& "ensureUIThread".equals(next.getMethodName())) { //$NON-NLS-1$
+						&& "ensureUIThread".equals(next.getMethodName())) { //$NON-NLS-1$
 
 					callingMethodName = stack[i + 1].getMethodName();
 					break;
@@ -148,7 +145,7 @@ public class UIUtil {
 			}
 
 			final Method method = findMethod(receiver.getClass(),
-				callingMethodName, arguments);
+					callingMethodName, arguments);
 			if (method == null) {
 				throw new IllegalStateException("Could not find calling method"); //$NON-NLS-1$
 			}
@@ -157,6 +154,7 @@ public class UIUtil {
 
 			display.asyncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					try {
 						method.invoke(receiver, arguments);
@@ -177,19 +175,19 @@ public class UIUtil {
 		Class<?>[] actual = new Class<?>[arguments.length];
 		for (int i = 0; i < arguments.length; i++) {
 			actual[i] = (arguments[i] == null)
-				? null
-				: arguments[i].getClass();
+					? null
+					: arguments[i].getClass();
 		}
 
 		Method[] declared = owner.getDeclaredMethods();
-		out : for (int i = 0; i < declared.length; i++) {
+		out: for (int i = 0; i < declared.length; i++) {
 			Method next = declared[i];
 			if (name.equals(next.getName())) {
 				Class<?>[] parameters = next.getParameterTypes();
 
 				for (int j = 0; j < parameters.length; j++) {
 					if ((actual[j] != null)
-						&& !parameters[j].isAssignableFrom(actual[j])) {
+							&& !parameters[j].isAssignableFrom(actual[j])) {
 						continue out;
 					}
 				}
@@ -211,6 +209,7 @@ public class UIUtil {
 
 		static final UISafeExecutor INSTANCE = new UISafeExecutor();
 
+		@Override
 		public void execute(Runnable command) {
 			Display workbenchDisplay = PlatformUI.getWorkbench().getDisplay();
 			if (Display.getCurrent() == workbenchDisplay) {

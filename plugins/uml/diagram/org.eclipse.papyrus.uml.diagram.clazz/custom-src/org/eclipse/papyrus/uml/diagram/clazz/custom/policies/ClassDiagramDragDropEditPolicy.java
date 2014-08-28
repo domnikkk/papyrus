@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -108,6 +108,7 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 	/**
 	 * {@inheritedDoc}
 	 */
+	@Override
 	protected Command getSpecificDropCommand(DropObjectsRequest dropRequest, Element semanticLink, int nodeVISUALID, int linkVISUALID) {
 		// respecify for enumeration because this is also an instancespecification
 		if (nodeVISUALID == EnumerationLiteralEditPart.VISUAL_ID) {
@@ -148,7 +149,7 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 
 	/**
 	 * drop a instance specification as a link or as a node
-	 * 
+	 *
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
@@ -214,14 +215,14 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 	 * this method has in charge to create command for create an association if the number of
 	 * endtype is superior of 2 a multi association is dropped. if the number of endtype this is
 	 * binary association that is dropped.
-	 * 
+	 *
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
 	 *            the semantic link
 	 * @param nodeVISUALID
 	 *            the node visualid
-	 * 
+	 *
 	 * @return the command
 	 */
 	protected Command dropAssociation(DropObjectsRequest dropRequest, Element semanticLink, int nodeVISUALID) {
@@ -245,14 +246,14 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 
 	/**
 	 * this method send a Command that create views for associationClass
-	 * 
+	 *
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
 	 *            the semantic link
 	 * @param nodeVISUALID
 	 *            the node visualid
-	 * 
+	 *
 	 * @return the command
 	 */
 	protected Command dropAssociationClass(DropObjectsRequest dropRequest, Element semanticLink, int nodeVISUALID) {
@@ -262,14 +263,14 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 
 	/**
 	 * this method send a command to create views to display
-	 * 
+	 *
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
 	 *            the semantic link
 	 * @param nodeVISUALID
 	 *            the node visualid
-	 * 
+	 *
 	 * @return the command
 	 */
 	protected Command dropDependency(DropObjectsRequest dropRequest, Element semanticLink, int nodeVISUALID) {
@@ -289,7 +290,7 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 
 	/**
 	 * Use to drop a class from the outline to the diagram
-	 * 
+	 *
 	 * @param dropRequest
 	 *            is the request for the drop, never be null
 	 * @param semanticObject
@@ -300,7 +301,7 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 	 */
 	protected Command dropTopLevelNodeWithContainmentLink(DropObjectsRequest dropRequest, Element semanticObject, int nodeVISUALID) {
 		ContainmentHelper containmentHelper = new ContainmentHelper(getEditingDomain());
-		Element owner = (Element) semanticObject.getOwner();
+		Element owner = semanticObject.getOwner();
 		if (owner == null) {
 			return new ICommandProxy(getDefaultDropNodeCommand(nodeVISUALID, dropRequest.getLocation(), semanticObject));
 		}
@@ -314,7 +315,7 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 
 	/**
 	 * Use to drop a class from the diagram to the nestedClassifierCompartment
-	 * 
+	 *
 	 * @param dropRequest
 	 *            is the request for the drop, never be null
 	 * @param droppedElement
@@ -343,7 +344,7 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 
 	/**
 	 * call the mechanism to drop a binary link without specific type
-	 * 
+	 *
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
@@ -366,10 +367,11 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.DiagramDragDropEditPolicy#getDropCommand(org.eclipse.gef.requests.ChangeBoundsRequest)
-	 * 
+	 *
 	 */
+	@Override
 	protected Command getDropCommand(ChangeBoundsRequest request) {
 		// this is a drop done by user internal to the diagram
 		// prevent from the drop intra diagram of a template signature into the diagram

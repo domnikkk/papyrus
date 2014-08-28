@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Francisco Javier Cano Muñoz (Prodevelop) – Initial implementation.
  *
  ******************************************************************************/
@@ -32,10 +32,11 @@ import org.eclipse.papyrus.uml.diagram.common.commands.UpdateDiagramCommand;
  * A DragAndDropEditPolicy for <Diagram>s. Checks whether the dropped elements can be shown as views
  * in the canvas and if so, creates their views and add their references to the diagram's list of
  * references.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  * @deprecated
  */
+@Deprecated
 public class DiagramDragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editpolicies.DiagramDragDropEditPolicy {
 
 	/** The resolver. */
@@ -43,9 +44,9 @@ public class DiagramDragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.u
 
 	/**
 	 * Instantiates a new diagram drag drop edit policy.
-	 * 
+	 *
 	 * @param resolver
-	 *        the resolver
+	 *            the resolver
 	 */
 	public DiagramDragDropEditPolicy(ViewResolver resolver) {
 		this.resolver = resolver;
@@ -53,19 +54,19 @@ public class DiagramDragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.u
 
 	/**
 	 * Gets the graphical host.
-	 * 
+	 *
 	 * @return the graphical host
 	 */
 	public IGraphicalEditPart getGraphicalHost() {
-		if(getHost() instanceof IGraphicalEditPart) {
-			return (IGraphicalEditPart)getHost();
+		if (getHost() instanceof IGraphicalEditPart) {
+			return (IGraphicalEditPart) getHost();
 		}
 		return null;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.diagram.ui.editpolicies.DiagramDragDropEditPolicy
 	 * #getDropObjectsCommand
@@ -82,12 +83,12 @@ public class DiagramDragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.u
 		Command edgesCommand = buildAddEObjectsReferencesCommand(edgeObjects);
 		command = command == null ? edgesCommand : command.chain(edgesCommand);
 		// if no nodes or edges are to be added, there is nothing to do.
-		if(command == null) {
+		if (command == null) {
 			return null;
 		}
 		// build the create views commands.
 		Command viewsCommand = createViewsAndArrangeCommand(dropRequest, viewDescriptors);
-		if(viewsCommand != null && viewsCommand.canExecute()) {
+		if (viewsCommand != null && viewsCommand.canExecute()) {
 			command = command.chain(viewsCommand);
 		}
 		// update diagram.
@@ -98,18 +99,18 @@ public class DiagramDragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.u
 
 	/**
 	 * Find nodes in drop.
-	 * 
+	 *
 	 * @param request
-	 *        the request
-	 * 
+	 *            the request
+	 *
 	 * @return the list< e object>
 	 */
 	protected List<EObject> findNodesInDrop(DropObjectsRequest request) {
 		List<EObject> nodes = new ArrayList<EObject>();
-		for(Object object : request.getObjects()) {
-			if(object instanceof EObject) {
-				EObject element = (EObject)object;
-				if(resolver.isEObjectNode(element)) {
+		for (Object object : request.getObjects()) {
+			if (object instanceof EObject) {
+				EObject element = (EObject) object;
+				if (resolver.isEObjectNode(element)) {
 					nodes.add(element);
 				}
 			}
@@ -119,18 +120,18 @@ public class DiagramDragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.u
 
 	/**
 	 * Find edges in drop.
-	 * 
+	 *
 	 * @param request
-	 *        the request
-	 * 
+	 *            the request
+	 *
 	 * @return the list< e object>
 	 */
 	protected List<EObject> findEdgesInDrop(DropObjectsRequest request) {
 		List<EObject> edges = new ArrayList<EObject>();
-		for(Object object : request.getObjects()) {
-			if(object instanceof EObject) {
-				EObject element = (EObject)object;
-				if(resolver.isEObjectLink(element)) {
+		for (Object object : request.getObjects()) {
+			if (object instanceof EObject) {
+				EObject element = (EObject) object;
+				if (resolver.isEObjectLink(element)) {
 					edges.add(element);
 				}
 			}
@@ -140,17 +141,17 @@ public class DiagramDragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.u
 
 	/**
 	 * Creates the view descriptors.
-	 * 
+	 *
 	 * @param elements
-	 *        the elements
-	 * 
+	 *            the elements
+	 *
 	 * @return the list< view descriptor>
 	 */
 	protected List<ViewDescriptor> createViewDescriptors(List<EObject> elements) {
 		List<ViewDescriptor> viewDescriptors = new ArrayList<ViewDescriptor>();
-		for(EObject element : elements) {
+		for (EObject element : elements) {
 			int semanticHint = resolver.getEObjectSemanticHint(element);
-			if(semanticHint > -1) {
+			if (semanticHint > -1) {
 				ViewDescriptor viewDescriptor = new ViewDescriptor(new EObjectAdapter(element), Node.class, String.valueOf(semanticHint), getGraphicalHost().getDiagramPreferencesHint());
 				viewDescriptors.add(viewDescriptor);
 			}
@@ -160,18 +161,18 @@ public class DiagramDragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.u
 
 	/**
 	 * Builds the add e objects references command.
-	 * 
+	 *
 	 * @param elements
-	 *        the elements
-	 * 
+	 *            the elements
+	 *
 	 * @return the command
 	 */
 	protected Command buildAddEObjectsReferencesCommand(List<EObject> elements) {
-		if(elements != null && elements.size() > 0) {
+		if (elements != null && elements.size() > 0) {
 			TransactionalEditingDomain domain = getGraphicalHost().getEditingDomain();
 			View view = getGraphicalHost().getNotationView();
-			Diagram diagram = view instanceof Diagram ? (Diagram)view : null;
-			if(diagram != null) {
+			Diagram diagram = view instanceof Diagram ? (Diagram) view : null;
+			if (diagram != null) {
 				return new ICommandProxy(new AddEObjectReferencesToDiagram(domain, diagram, elements));
 			}
 		}

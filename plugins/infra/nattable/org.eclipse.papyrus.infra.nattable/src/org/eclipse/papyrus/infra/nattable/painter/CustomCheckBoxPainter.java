@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.swt.graphics.Rectangle;
 
 /**
  * This checkbox painter allows to display text into the cell
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class CustomCheckBoxPainter extends CheckBoxPainter {
 
@@ -35,11 +35,10 @@ public class CustomCheckBoxPainter extends CheckBoxPainter {
 	private TextPainter textPainter = new CustomizedCellPainter();
 
 	/**
-	 * 
-	 * @see org.eclipse.nebula.widgets.nattable.painter.cell.ImagePainter#getCellPainterAt(int, int,
-	 *      org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell, org.eclipse.swt.graphics.GC, org.eclipse.swt.graphics.Rectangle,
+	 *
+	 * @see org.eclipse.nebula.widgets.nattable.painter.cell.ImagePainter#getCellPainterAt(int, int, org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell, org.eclipse.swt.graphics.GC, org.eclipse.swt.graphics.Rectangle,
 	 *      org.eclipse.nebula.widgets.nattable.config.IConfigRegistry)
-	 * 
+	 *
 	 * @param x
 	 * @param y
 	 * @param cell
@@ -59,10 +58,10 @@ public class CustomCheckBoxPainter extends CheckBoxPainter {
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.nebula.widgets.nattable.painter.cell.ImagePainter#paintCell(org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell,
-	 *      org.eclipse.swt.graphics.GC, org.eclipse.swt.graphics.Rectangle, org.eclipse.nebula.widgets.nattable.config.IConfigRegistry)
-	 * 
+	 *
+	 * @see org.eclipse.nebula.widgets.nattable.painter.cell.ImagePainter#paintCell(org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell, org.eclipse.swt.graphics.GC, org.eclipse.swt.graphics.Rectangle,
+	 *      org.eclipse.nebula.widgets.nattable.config.IConfigRegistry)
+	 *
 	 * @param cell
 	 * @param gc
 	 * @param bounds
@@ -80,10 +79,9 @@ public class CustomCheckBoxPainter extends CheckBoxPainter {
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.nebula.widgets.nattable.painter.cell.ImagePainter#getPreferredWidth(org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell,
-	 *      org.eclipse.swt.graphics.GC, org.eclipse.nebula.widgets.nattable.config.IConfigRegistry)
-	 * 
+	 *
+	 * @see org.eclipse.nebula.widgets.nattable.painter.cell.ImagePainter#getPreferredWidth(org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell, org.eclipse.swt.graphics.GC, org.eclipse.nebula.widgets.nattable.config.IConfigRegistry)
+	 *
 	 * @param cell
 	 * @param gc
 	 * @param configRegistry
@@ -100,10 +98,9 @@ public class CustomCheckBoxPainter extends CheckBoxPainter {
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.nebula.widgets.nattable.painter.cell.ImagePainter#getPreferredHeight(org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell,
-	 *      org.eclipse.swt.graphics.GC, org.eclipse.nebula.widgets.nattable.config.IConfigRegistry)
-	 * 
+	 *
+	 * @see org.eclipse.nebula.widgets.nattable.painter.cell.ImagePainter#getPreferredHeight(org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell, org.eclipse.swt.graphics.GC, org.eclipse.nebula.widgets.nattable.config.IConfigRegistry)
+	 *
 	 * @param cell
 	 * @param gc
 	 * @param configRegistry

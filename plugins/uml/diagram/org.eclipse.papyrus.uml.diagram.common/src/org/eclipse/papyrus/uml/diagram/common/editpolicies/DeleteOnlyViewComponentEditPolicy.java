@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Francisco Javier Cano Muñoz (Prodevelop) – Initial implementation.
  *
  ******************************************************************************/
@@ -27,26 +27,26 @@ import org.eclipse.papyrus.uml.diagram.common.commands.RemoveEObjectReferencesFr
 /**
  * A ComponentEditPolicy that prevents the deletion of the underlying models. Will delete the view
  * and remove the element's reference from the diagram upon a delete request.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  */
 public class DeleteOnlyViewComponentEditPolicy extends ComponentEditPolicy {
 
 	/**
 	 * Gets the graphical host.
-	 * 
+	 *
 	 * @return the graphical host
 	 */
 	protected IGraphicalEditPart getGraphicalHost() {
-		if(getHost() instanceof IGraphicalEditPart) {
-			return (IGraphicalEditPart)getHost();
+		if (getHost() instanceof IGraphicalEditPart) {
+			return (IGraphicalEditPart) getHost();
 		}
 		return null;
 	}
 
 	/**
 	 * Won't delete the underlying model element.
-	 * 
+	 *
 	 * @return true, if should delete semantic
 	 */
 	@Override
@@ -57,10 +57,10 @@ public class DeleteOnlyViewComponentEditPolicy extends ComponentEditPolicy {
 	/**
 	 * Will delete the view and remove the EObject's reference from the
 	 * diagram's list of elements to show.
-	 * 
+	 *
 	 * @param request
-	 *        the request
-	 * 
+	 *            the request
+	 *
 	 * @return the delete command
 	 */
 	@Override
@@ -71,7 +71,7 @@ public class DeleteOnlyViewComponentEditPolicy extends ComponentEditPolicy {
 		Diagram diagram = view != null ? view.getDiagram() : null;
 		EObject element = editPart != null ? editPart.resolveSemanticElement() : null;
 		Command command = super.getDeleteCommand(request);
-		if(domain != null && diagram != null && element != null) {
+		if (domain != null && diagram != null && element != null) {
 			command = command.chain(new ICommandProxy(new RemoveEObjectReferencesFromDiagram(domain, diagram, Collections.singletonList(element))));
 		}
 		return command;

@@ -35,10 +35,11 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * Represents the creation command for a SysML internal block diagram
+ *
  * @author Laurent Wouters
  */
 public class InternalBlockDiagramCreateCommand extends AbstractPapyrusGmfCreateDiagramCommandHandler {
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -75,7 +76,7 @@ public class InternalBlockDiagramCreateCommand extends AbstractPapyrusGmfCreateD
 		Block block = UMLUtil.getStereotypeApplication(cOwner, Block.class);
 
 		if (block != null) {
-			canvasDomainElement = (EObject) element;
+			canvasDomainElement = element;
 			Package owningPackage = ((Element) element).getNearestPackage();
 			diagram = super.doCreateDiagram(diagramResource, owner, owningPackage, prototype, name);
 		}
@@ -103,9 +104,9 @@ public class InternalBlockDiagramCreateCommand extends AbstractPapyrusGmfCreateD
 	 */
 	@Override
 	protected void initializeDiagram(EObject diagram) {
-		if(diagram instanceof Diagram) {
-			Diagram currentDiagram = (Diagram)diagram;
-			if(canvasDomainElement != null) {
+		if (diagram instanceof Diagram) {
+			Diagram currentDiagram = (Diagram) diagram;
+			if (canvasDomainElement != null) {
 				currentDiagram.setElement(canvasDomainElement);
 				initializeDiagramContent(currentDiagram);
 			}
@@ -114,19 +115,19 @@ public class InternalBlockDiagramCreateCommand extends AbstractPapyrusGmfCreateD
 
 	/**
 	 * Initialize the diagram with the canvas domain element shown.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram to initialize
+	 *            the diagram to initialize
 	 */
 	protected void initializeDiagramContent(Diagram diagram) {
 
 		// Create a view for the canvasDomainElement in the new diagram
 		View view =
-			ViewService.getInstance().createNode(new SemanticAdapter(canvasDomainElement, null), diagram, SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID, ViewUtil.APPEND, true, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				ViewService.getInstance().createNode(new SemanticAdapter(canvasDomainElement, null), diagram, SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID, ViewUtil.APPEND, true, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 		view.setElement(diagram.getElement());
 
 		// Update the view position and size (should adapt to canvas current size)
-		Bounds viewBounds = (Bounds)((Node)view).getLayoutConstraint();
+		Bounds viewBounds = (Bounds) ((Node) view).getLayoutConstraint();
 		viewBounds.setX(DEFAULT_MARGIN);
 		viewBounds.setY(DEFAULT_MARGIN);
 		viewBounds.setHeight(DEFAULT_HEIGHT);
@@ -135,12 +136,12 @@ public class InternalBlockDiagramCreateCommand extends AbstractPapyrusGmfCreateD
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
 	public boolean isParentReassignable() {
-		// Bug 374626: [Model Explorer] Moving an IBD from a block to another block shall be forbidden 
+		// Bug 374626: [Model Explorer] Moving an IBD from a block to another block shall be forbidden
 		return false;
 	}
 

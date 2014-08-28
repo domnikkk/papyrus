@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,8 +33,8 @@ public class RemoveRepositoryAction
 
 	public RemoveRepositoryAction(IWorkbenchPart part) {
 		super(Messages.RemoveRepositoryAction_0, ISharedImages.IMG_TOOL_DELETE,
-			ISharedImages.IMG_TOOL_DELETE_DISABLED, part);
-		
+				ISharedImages.IMG_TOOL_DELETE_DISABLED, part);
+
 		setActionDefinitionId(IWorkbenchCommandConstants.EDIT_DELETE);
 	}
 
@@ -48,11 +48,11 @@ public class RemoveRepositoryAction
 		boolean connected = repository.isConnected();
 
 		String message = connected
-			? Messages.RemoveRepositoryAction_1
-			: Messages.RemoveRepositoryAction_2;
+				? Messages.RemoveRepositoryAction_1
+				: Messages.RemoveRepositoryAction_2;
 
 		if (MessageDialog.openQuestion(getPart().getSite().getShell(),
-			Messages.RemoveRepositoryAction_3, NLS.bind(message, repository.getName()))) {
+				Messages.RemoveRepositoryAction_3, NLS.bind(message, repository.getName()))) {
 			IPapyrusRepositoryManager mgr = PapyrusRepositoryManager.INSTANCE;
 
 			if (!connected) {
@@ -70,9 +70,9 @@ public class RemoveRepositoryAction
 				} catch (CommitException e) {
 					StatusAdapter adapter = new StatusAdapter(e.getStatus());
 					adapter.setProperty(IStatusAdapterConstants.TITLE_PROPERTY,
-						Messages.RemoveRepositoryAction_4);
+							Messages.RemoveRepositoryAction_4);
 					StatusManager.getManager().handle(adapter,
-						StatusManager.SHOW);
+							StatusManager.SHOW);
 				}
 			}
 		}

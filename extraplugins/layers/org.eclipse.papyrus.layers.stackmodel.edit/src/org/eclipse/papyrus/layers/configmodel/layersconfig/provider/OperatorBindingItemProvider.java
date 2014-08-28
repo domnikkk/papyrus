@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -18,9 +18,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -29,18 +27,18 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-
 import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class OperatorBindingItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -50,6 +48,7 @@ public class OperatorBindingItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public OperatorBindingItemProvider(AdapterFactory adapterFactory) {
@@ -60,6 +59,7 @@ public class OperatorBindingItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,72 +78,76 @@ public class OperatorBindingItemProvider
 	 * This adds a property descriptor for the Operator feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addOperatorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OperatorBinding_operator_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OperatorBinding_operator_feature", "_UI_OperatorBinding_type"),
-				 LayersconfigPackage.Literals.OPERATOR_BINDING__OPERATOR,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_OperatorBinding_operator_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_OperatorBinding_operator_feature", "_UI_OperatorBinding_type"),
+						LayersconfigPackage.Literals.OPERATOR_BINDING__OPERATOR,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Layer Operator Config feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addLayerOperatorConfigPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OperatorBinding_layerOperatorConfig_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OperatorBinding_layerOperatorConfig_feature", "_UI_OperatorBinding_type"),
-				 LayersconfigPackage.Literals.OPERATOR_BINDING__LAYER_OPERATOR_CONFIG,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_OperatorBinding_layerOperatorConfig_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_OperatorBinding_layerOperatorConfig_feature", "_UI_OperatorBinding_type"),
+						LayersconfigPackage.Literals.OPERATOR_BINDING__LAYER_OPERATOR_CONFIG,
+						false,
+						false,
+						false,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Property Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addPropertyIdPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OperatorBinding_propertyId_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OperatorBinding_propertyId_feature", "_UI_OperatorBinding_type"),
-				 LayersconfigPackage.Literals.OPERATOR_BINDING__PROPERTY_ID,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_OperatorBinding_propertyId_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_OperatorBinding_propertyId_feature", "_UI_OperatorBinding_type"),
+						LayersconfigPackage.Literals.OPERATOR_BINDING__PROPERTY_ID,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns OperatorBinding.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,6 +159,7 @@ public class OperatorBindingItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,6 +172,7 @@ public class OperatorBindingItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,6 +186,7 @@ public class OperatorBindingItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,6 +198,7 @@ public class OperatorBindingItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

@@ -20,6 +20,7 @@ public class InstanceRefImpl extends MinimalEObjectImpl.Container implements Ins
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected InstanceRefImpl() {
@@ -29,6 +30,7 @@ public class InstanceRefImpl extends MinimalEObjectImpl.Container implements Ins
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class InstanceRefImpl extends MinimalEObjectImpl.Container implements Ins
 		return InfrastructurePackage.Literals.INSTANCE_REF;
 	}
 
-} //InstanceRefImpl
+} // InstanceRefImpl

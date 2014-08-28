@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,14 +40,14 @@ public class DefaultCopyCommand extends AbstractOverrideableCommand implements N
 
 	/**
 	 * Creates a new Command that set the new content of the clipboard
-	 * 
+	 *
 	 * @param domain
-	 *        editing domain for which the clipboard is set.
+	 *            editing domain for which the clipboard is set.
 	 */
 	public DefaultCopyCommand(EditingDomain domain, PapyrusClipboard papyrusClipboard, Collection<EObject> pObjectsToPutInClipboard) {
 		super(domain);
 		objectsToPutInClipboard = new ArrayList<Object>();
-		Boolean keepReferences = Activator.getInstance().getPreferenceStore().getBoolean(PastePreferencesPage.KEEP_EXTERNAL_REFERENCES);	
+		Boolean keepReferences = Activator.getInstance().getPreferenceStore().getBoolean(PastePreferencesPage.KEEP_EXTERNAL_REFERENCES);
 		EcoreUtil.Copier copier = new EcoreUtil.Copier(Boolean.TRUE, keepReferences);
 		copier.copyAll(pObjectsToPutInClipboard);
 		copier.copyReferences();

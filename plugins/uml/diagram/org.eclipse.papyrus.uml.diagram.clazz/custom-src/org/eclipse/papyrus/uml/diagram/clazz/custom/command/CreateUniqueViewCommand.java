@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,19 +40,21 @@ public class CreateUniqueViewCommand extends CreateCommand {
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Object object = viewDescriptor.getElementAdapter().getAdapter(EObject.class);
-		if(object instanceof EObject) {
-			final EObject childEObject = (EObject)object;
-			//trnasforme view to the semantic element (EObject)
+		if (object instanceof EObject) {
+			final EObject childEObject = (EObject) object;
+			// trnasforme view to the semantic element (EObject)
 			@SuppressWarnings("unchecked")
 			Iterable<EObject> ite = Iterables.transform(containerView.getChildren(), new Function<View, EObject>() {
 
+				@Override
 				public EObject apply(View from) {
 					return from.getElement();
 				}
 			});
-			//try to find in the view a view which correspond to the EObbject
+			// try to find in the view a view which correspond to the EObbject
 			Iterable<EObject> find = Iterables.filter(ite, new Predicate<EObject>() {
 
+				@Override
 				public boolean apply(EObject input) {
 					return childEObject.equals(input);
 				}
@@ -60,7 +62,7 @@ public class CreateUniqueViewCommand extends CreateCommand {
 			/*
 			 * Create the element only if there is no element relative to same EOBject already created
 			 */
-			if(!find.iterator().hasNext()) {
+			if (!find.iterator().hasNext()) {
 				return super.doExecuteWithResult(monitor, info);
 			}
 		}

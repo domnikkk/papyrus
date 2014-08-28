@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 Atos, CEA LIST, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,9 +50,9 @@ import org.eclipse.swt.widgets.Text;
  * A dialog that asks the user to select the scope for analysis of dependent resources in a refactoring of some model resource.
  * If the user cancels the dialog, then the initialization of the refactoring participant is cancelled and the refactoring
  * wizard does not advance (the user may then cancel the refactoring).
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 public class RenameParticipantsDialog extends TrayDialog {
 
@@ -62,7 +62,7 @@ public class RenameParticipantsDialog extends TrayDialog {
 
 	/**
 	 * Create the dialog.
-	 * 
+	 *
 	 * @param parentShell
 	 */
 	public RenameParticipantsDialog(Shell parentShell, IFile context) {
@@ -79,12 +79,12 @@ public class RenameParticipantsDialog extends TrayDialog {
 
 	/**
 	 * Create contents of the dialog.
-	 * 
+	 *
 	 * @param parent
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite area = (Composite)super.createDialogArea(parent);
+		Composite area = (Composite) super.createDialogArea(parent);
 
 		final int verticalSpace = convertVerticalDLUsToPixels(8);
 
@@ -107,13 +107,15 @@ public class RenameParticipantsDialog extends TrayDialog {
 		comboViewer.setUseHashlookup(true);
 		comboViewer.setLabelProvider(new LabelProvider() {
 
+			@Override
 			public boolean isLabelProperty(Object element, String property) {
 				return true;
 			}
 
+			@Override
 			public String getText(Object element) {
-				if(element instanceof IScopeChooser) {
-					IScopeChooser scope = (IScopeChooser)element;
+				if (element instanceof IScopeChooser) {
+					IScopeChooser scope = (IScopeChooser) element;
 					return scope.getName();
 				}
 				return null;
@@ -137,14 +139,14 @@ public class RenameParticipantsDialog extends TrayDialog {
 		scopeDescription.setLayoutData(gdata);
 		scopeDescription.setText(""); //$NON-NLS-1$
 
-		// when the selection changed the description too 
+		// when the selection changed the description too
 		comboViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
 			public void selectionChanged(SelectionChangedEvent event) {
-				if(event.getSelection() instanceof IStructuredSelection) {
-					IStructuredSelection selec = (IStructuredSelection)event.getSelection();
-					if(selec.getFirstElement() instanceof IScopeChooser) {
-						IScopeChooser chooser = (IScopeChooser)selec.getFirstElement();
+				if (event.getSelection() instanceof IStructuredSelection) {
+					IStructuredSelection selec = (IStructuredSelection) event.getSelection();
+					if (selec.getFirstElement() instanceof IScopeChooser) {
+						IScopeChooser chooser = (IScopeChooser) selec.getFirstElement();
 						scopeDescription.setText(chooser.getDescription());
 						currentScope = chooser;
 					}
@@ -168,12 +170,12 @@ public class RenameParticipantsDialog extends TrayDialog {
 
 	/**
 	 * Pre defined list of chooser maybe later an extension point will be creates
-	 * 
+	 *
 	 * @return
 	 */
 	private Object[] getInput() {
 		final ScopeChooserVisitor visitor = new ScopeChooserVisitor();
-		return new IScopeChooser[]{ new ScopeChooser(Messages.RenameParticipantsDialog_NAME_PROJECT, Messages.RenameParticipantsDialog_DESCRIPTION_PROJECT) {
+		return new IScopeChooser[] { new ScopeChooser(Messages.RenameParticipantsDialog_NAME_PROJECT, Messages.RenameParticipantsDialog_DESCRIPTION_PROJECT) {
 
 			public List<IFile> getRelatedFiles(IFile f) {
 				try {

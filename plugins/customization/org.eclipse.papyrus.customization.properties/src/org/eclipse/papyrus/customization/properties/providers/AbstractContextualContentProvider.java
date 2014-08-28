@@ -43,21 +43,21 @@ public abstract class AbstractContextualContentProvider extends SemanticEMFConte
 	 * Constructor.
 	 *
 	 * @param source
-	 *        The EObject used to retrieve the available contexts
+	 *            The EObject used to retrieve the available contexts
 	 */
 	protected AbstractContextualContentProvider(EObject source) {
 		super(findContexts(source).toArray(new Context[0]), org.eclipse.papyrus.infra.emf.Activator.getDefault().getCustomizationManager());
-		contexts = ListHelper.asList((Context[])roots);
+		contexts = ListHelper.asList((Context[]) roots);
 	}
 
 	private static List<Context> findContexts(EObject source) {
 		List<Context> contexts = new LinkedList<Context>();
 
 		Context rootContext = null;
-		if(source.eResource() != null) {
-			for(Resource resource : source.eResource().getResourceSet().getResources()) {
-				if(!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Context) {
-					rootContext = (Context)resource.getContents().get(0);
+		if (source.eResource() != null) {
+			for (Resource resource : source.eResource().getResourceSet().getResources()) {
+				if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Context) {
+					rootContext = (Context) resource.getContents().get(0);
 					contexts.add(rootContext);
 					break;
 				}

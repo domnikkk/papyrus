@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2008 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * An abstract implementation of a basic link preference page.
- * 
+ *
  * <p>
  * This Preference page adds the preference for
  * <ul>
@@ -33,7 +33,7 @@ import org.eclipse.swt.widgets.Composite;
  * <li>{@link org.eclipse.gmf.runtime.notation.RoutingStyle#getJumpLinkType <em>Jump Link Type</em>}</li>
  * <li>{@link org.eclipse.gmf.runtime.notation.RoutingStyle#isJumpLinksReverse <em>Jump Links Reverse</em>}</li>
  * </ul>
- * 
+ *
  * @author tlandre
  */
 public abstract class AbstractPapyrusLinkPreferencePage extends AbstractPapyrusElementPreferencePage {
@@ -50,8 +50,8 @@ public abstract class AbstractPapyrusLinkPreferencePage extends AbstractPapyrusE
 		ConnectionGroup connectionGroupComposite = new ConnectionGroup(parent, getPreferenceKey(), this);
 		addAbstractGroup(connectionGroupComposite);
 
-		//Label role group
-		if(!getLabelRole().isEmpty()) {
+		// Label role group
+		if (!getLabelRole().isEmpty()) {
 			LabelGroup compartmentGroup = new LabelGroup(parent, getPreferenceKey(), this, getLabelRole());
 			addAbstractGroup(compartmentGroup);
 		}

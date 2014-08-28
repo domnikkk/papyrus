@@ -30,23 +30,23 @@ public class MokaValue_from_FeatureValue extends MokaValue_for_fUML {
 		this.featureValue = featureValue;
 	}
 
-	////////////////////////
+	// //////////////////////
 	// Presentation
-	////////////////////////
+	// //////////////////////
 
 	@Override
 	public String getDetails() {
 		return computeDetails();
 	}
 
-	////////////////////////
+	// //////////////////////
 	// Debug
-	////////////////////////
+	// //////////////////////
 
 	@Override
 	public String getValueString() throws DebugException {
 		String valueString = null;
-		if(FUMLPresentationUtils.isCollection(featureValue)) {
+		if (FUMLPresentationUtils.isCollection(featureValue)) {
 			valueString = FUMLPresentationUtils.getValueString(featureValue);
 		} else {
 			valueString = computeDetails();
@@ -56,12 +56,12 @@ public class MokaValue_from_FeatureValue extends MokaValue_for_fUML {
 
 	@Override
 	public IVariable[] getVariables() throws DebugException {
-		if(variables == null) {
-			if(featureValue.values.isEmpty()) {
-				variables = new IVariable[]{};
+		if (variables == null) {
+			if (featureValue.values.isEmpty()) {
+				variables = new IVariable[] {};
 			} else {
 				variables = new IVariable[featureValue.values.size()];
-				for(int i = 0; i < variables.length; i++) {
+				for (int i = 0; i < variables.length; i++) {
 					MokaVariable valueVariable = new MokaVariable_from_Value(featureValue.values.get(i));
 					valueVariable.setName("[" + (i + 1) + "]");
 					variables[i] = valueVariable;
@@ -80,10 +80,11 @@ public class MokaValue_from_FeatureValue extends MokaValue_for_fUML {
 		String valueString = FUMLPresentationUtils.isCollection(featureValue) ? "{ " : "";
 		List<Value> values = featureValue.values;
 		boolean first = true;
-		if(values.isEmpty() && !FUMLPresentationUtils.isCollection(featureValue))
+		if (values.isEmpty() && !FUMLPresentationUtils.isCollection(featureValue)) {
 			return "null";
-		for(Value v : values) {
-			if(first) {
+		}
+		for (Value v : values) {
+			if (first) {
 				valueString += v.toString();
 				first = false;
 			} else {

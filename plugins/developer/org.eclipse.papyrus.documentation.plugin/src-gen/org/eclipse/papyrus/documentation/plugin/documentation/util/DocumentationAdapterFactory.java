@@ -8,19 +8,22 @@ package org.eclipse.papyrus.documentation.plugin.documentation.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.papyrus.documentation.plugin.documentation.*;
+import org.eclipse.papyrus.documentation.plugin.documentation.Comment;
+import org.eclipse.papyrus.documentation.plugin.documentation.Dependency;
+import org.eclipse.papyrus.documentation.plugin.documentation.Documentation;
+import org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage;
+import org.eclipse.papyrus.documentation.plugin.documentation.FileDependency;
+import org.eclipse.papyrus.documentation.plugin.documentation.Person;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage
  * @generated
  */
@@ -29,6 +32,7 @@ public class DocumentationAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static DocumentationPackage modelPackage;
@@ -37,6 +41,7 @@ public class DocumentationAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DocumentationAdapterFactory() {
@@ -50,6 +55,7 @@ public class DocumentationAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -59,7 +65,7 @@ public class DocumentationAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -68,51 +74,60 @@ public class DocumentationAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DocumentationSwitch<Adapter> modelSwitch =
-		new DocumentationSwitch<Adapter>() {
-			@Override
-			public Adapter caseDocumentation(Documentation object) {
-				return createDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseDependency(Dependency object) {
-				return createDependencyAdapter();
-			}
-			@Override
-			public Adapter caseFileDependency(FileDependency object) {
-				return createFileDependencyAdapter();
-			}
-			@Override
-			public Adapter casePerson(Person object) {
-				return createPersonAdapter();
-			}
-			@Override
-			public Adapter caseComment(Comment object) {
-				return createCommentAdapter();
-			}
-			@Override
-			public Adapter caseEModelElement(EModelElement object) {
-				return createEModelElementAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new DocumentationSwitch<Adapter>() {
+				@Override
+				public Adapter caseDocumentation(Documentation object) {
+					return createDocumentationAdapter();
+				}
+
+				@Override
+				public Adapter caseDependency(Dependency object) {
+					return createDependencyAdapter();
+				}
+
+				@Override
+				public Adapter caseFileDependency(FileDependency object) {
+					return createFileDependencyAdapter();
+				}
+
+				@Override
+				public Adapter casePerson(Person object) {
+					return createPersonAdapter();
+				}
+
+				@Override
+				public Adapter caseComment(Comment object) {
+					return createCommentAdapter();
+				}
+
+				@Override
+				public Adapter caseEModelElement(EModelElement object) {
+					return createEModelElementAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 *
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -122,6 +137,7 @@ public class DocumentationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Documentation
 	 * @generated
@@ -136,6 +152,7 @@ public class DocumentationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Dependency
 	 * @generated
@@ -150,6 +167,7 @@ public class DocumentationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.FileDependency
 	 * @generated
@@ -164,6 +182,7 @@ public class DocumentationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Person
 	 * @generated
@@ -178,6 +197,7 @@ public class DocumentationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Comment
 	 * @generated
@@ -192,6 +212,7 @@ public class DocumentationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.EModelElement
 	 * @generated
@@ -205,6 +226,7 @@ public class DocumentationAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -212,4 +234,4 @@ public class DocumentationAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //DocumentationAdapterFactory
+} // DocumentationAdapterFactory

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,9 +19,9 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 /**
  * This descriptor describes a nested diagram. It is used by MultiDiagramEditor
  * to know about the nested diagram. It is fill by an extension.
- * 
+ *
  * @author Cedric Dumoulin
- * 
+ *
  */
 public class EditorDescriptor {
 
@@ -54,7 +54,7 @@ public class EditorDescriptor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param attribute
 	 */
 	public void setActionBarContributorId(String actionBarContributorId) {
@@ -65,7 +65,7 @@ public class EditorDescriptor {
 	/**
 	 * @see org.eclipse.papyrus.infra.core.extension.diagrameditor.IEditorDescriptor#getActionBarContributorId()
 	 * @return
-	 * 
+	 *
 	 */
 	public String getActionBarContributorId() {
 		return actionBarContributorId;
@@ -73,7 +73,7 @@ public class EditorDescriptor {
 
 	/**
 	 * get the editor icon path
-	 * 
+	 *
 	 * @return the editor icon path
 	 */
 	public ImageDescriptor getIcon() {
@@ -82,9 +82,9 @@ public class EditorDescriptor {
 
 	/**
 	 * set the editor icon
-	 * 
+	 *
 	 * @param icon
-	 *        the icon path
+	 *            the icon path
 	 */
 	public void setIcon(ImageDescriptor icon) {
 		this.icon = icon;
@@ -92,7 +92,7 @@ public class EditorDescriptor {
 
 	/**
 	 * get the class of the editor factory
-	 * 
+	 *
 	 * @return the class of the editor
 	 */
 	public Class<IPluggableEditorFactory> getEditorFactoryClass() {
@@ -101,21 +101,21 @@ public class EditorDescriptor {
 
 	/**
 	 * set the editor facoty to this descriptor
-	 * 
+	 *
 	 * @param editorFactoryClass
-	 *        the class that represents the editor factory
+	 *            the class that represents the editor factory
 	 */
 	public void setEditorFactoryClass(Class<IPluggableEditorFactory> editorFactoryClass) {
 		this.editorFactoryClass = editorFactoryClass;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	public String toString() {
-		if(editorFactoryClass == null || editorFactoryClass.getName() == null) {
+		if (editorFactoryClass == null || editorFactoryClass.getName() == null) {
 			return "[nestedEditor  editorFactory:" + editorFactoryClass + "(null)]";
 		}
 		return "[nestedEditor  editorFactory:" + editorFactoryClass.getName() + "]";
@@ -123,9 +123,9 @@ public class EditorDescriptor {
 
 	/**
 	 * Set the URL of the Icon
-	 * 
+	 *
 	 * @param iconPath
-	 *        path of the Icon
+	 *            path of the Icon
 	 */
 	public void setIconURL(String iconPath) {
 		this.iconPath = iconPath;
@@ -133,7 +133,7 @@ public class EditorDescriptor {
 
 	/**
 	 * Get the URL of the based images
-	 * 
+	 *
 	 * @return the path of the mai image. can return null if this property is not set
 	 */
 	public String getIconURL() {
@@ -142,7 +142,7 @@ public class EditorDescriptor {
 
 	/**
 	 * set the Icon thanks to a {@link IConfigurationElement} and {@link String}which represent the path of the Icon
-	 * 
+	 *
 	 * @param element
 	 * @param iconPath
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,7 +55,7 @@ public class RequestView extends AbstractTreeView {
 	}
 
 	public void addRequest(final IEditCommandRequest request) {
-		if(!this.requestList.contains(request)) {
+		if (!this.requestList.contains(request)) {
 			this.requestList.add(request);
 			final DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss"); //$NON-NLS-1$
 			final Calendar cal = Calendar.getInstance();
@@ -99,18 +99,18 @@ public class RequestView extends AbstractTreeView {
 
 			@Override
 			public String getText(final Object element) {
-				if(element instanceof IEditCommandRequest) {
+				if (element instanceof IEditCommandRequest) {
 					return element.getClass().getSimpleName();
 				}
-				if(element instanceof AbstractOperation) {
-					return ((AbstractOperation)element).getLabel();
-				} else if(element instanceof AbstractCommand) {
-					return ((AbstractCommand)element).getLabel();
+				if (element instanceof AbstractOperation) {
+					return ((AbstractOperation) element).getLabel();
+				} else if (element instanceof AbstractCommand) {
+					return ((AbstractCommand) element).getLabel();
 				}
 				return "no managed"; //$NON-NLS-1$
 			}
 		};
-		createColumn(Messages.RequestView_Name, "NAME_COLUMN_ID", 200, columnLabelProvider); //$NON-NLS-2$
+		createColumn(Messages.RequestView_Name, "NAME_COLUMN_ID", 200, columnLabelProvider);
 	}
 
 	protected void createTimeColumn() {
@@ -118,13 +118,13 @@ public class RequestView extends AbstractTreeView {
 
 			@Override
 			public String getText(final Object element) {
-				if(RequestView.this.dates.containsKey(element)) {
+				if (RequestView.this.dates.containsKey(element)) {
 					return RequestView.this.dates.get(element);
 				}
 				return ""; //$NON-NLS-1$
 			}
 		};
-		createColumn(Messages.RequestView_Time, "TIME_COLUMN_ID", 100, columnLabelProvider); //$NON-NLS-2$
+		createColumn(Messages.RequestView_Time, "TIME_COLUMN_ID", 100, columnLabelProvider);
 	}
 
 	@Override
@@ -132,8 +132,8 @@ public class RequestView extends AbstractTreeView {
 		return new ITreeContentProvider() {
 
 			public Object[] getElements(final Object inputElement) {
-				if(inputElement instanceof Collection<?>) {
-					return ((Collection<?>)inputElement).toArray();
+				if (inputElement instanceof Collection<?>) {
+					return ((Collection<?>) inputElement).toArray();
 				}
 				return new Object[0];
 

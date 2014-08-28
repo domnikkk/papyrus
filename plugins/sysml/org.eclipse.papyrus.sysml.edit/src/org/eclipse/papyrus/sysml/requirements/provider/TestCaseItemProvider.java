@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.sysml.requirements.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -33,7 +34,7 @@ import org.eclipse.papyrus.sysml.requirements.RequirementsPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.sysml.requirements.TestCase} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class TestCaseItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
@@ -44,7 +45,7 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TestCaseItemProvider(AdapterFactory adapterFactory) {
@@ -55,12 +56,12 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addBase_BehaviorPropertyDescriptor(object);
@@ -74,40 +75,43 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	 * This adds a property descriptor for the Base Behavior feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBase_BehaviorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_TestCase_base_Behavior_feature"), getString("_UI_PropertyDescriptor_description", "_UI_TestCase_base_Behavior_feature", "_UI_TestCase_type"), RequirementsPackage.Literals.TEST_CASE__BASE_BEHAVIOR, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_TestCase_base_Behavior_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_TestCase_base_Behavior_feature", "_UI_TestCase_type"), RequirementsPackage.Literals.TEST_CASE__BASE_BEHAVIOR, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Base Operation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBase_OperationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_TestCase_base_Operation_feature"), getString("_UI_PropertyDescriptor_description", "_UI_TestCase_base_Operation_feature", "_UI_TestCase_type"), RequirementsPackage.Literals.TEST_CASE__BASE_OPERATION, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_TestCase_base_Operation_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_TestCase_base_Operation_feature", "_UI_TestCase_type"), RequirementsPackage.Literals.TEST_CASE__BASE_OPERATION, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Verifies feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addVerifiesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_TestCase_verifies_feature"), getString("_UI_PropertyDescriptor_description", "_UI_TestCase_verifies_feature", "_UI_TestCase_type"), RequirementsPackage.Literals.TEST_CASE__VERIFIES, false, false, false, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_TestCase_verifies_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_TestCase_verifies_feature", "_UI_TestCase_type"), RequirementsPackage.Literals.TEST_CASE__VERIFIES, false, false, false, null, null, null));
 	}
 
 	/**
 	 * This returns TestCase.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +123,7 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +136,7 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +150,7 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +162,7 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

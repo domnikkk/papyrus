@@ -38,15 +38,15 @@ public class CommitDialog extends PreviewDialog {
 
 	/**
 	 * Instantiates a new commit dialog.
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell
+	 *            the parent shell
 	 * @param labelProvider
-	 *        the label provider
+	 *            the label provider
 	 * @param title
-	 *        the title
+	 *            the title
 	 * @param message
-	 *        the message
+	 *            the message
 	 */
 	public CommitDialog(Shell parentShell, ILabelProvider labelProvider, String title, String message) {
 		super(parentShell, labelProvider, title, message);
@@ -60,7 +60,7 @@ public class CommitDialog extends PreviewDialog {
 	@Override
 	protected Control createDialogArea(Composite parent) {
 		Control result = super.createDialogArea(parent);
-		commitComposite((Composite)result, SWT.BORDER);
+		commitComposite((Composite) result, SWT.BORDER);
 		return result;
 
 	}
@@ -73,11 +73,11 @@ public class CommitDialog extends PreviewDialog {
 
 	/**
 	 * Commit composite.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param style
-	 *        the style
+	 *            the style
 	 * @return the composite
 	 */
 	public Composite commitComposite(Composite parent, int style) {
@@ -95,6 +95,7 @@ public class CommitDialog extends PreviewDialog {
 		messageValueText.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		messageValueText.addModifyListener(new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
 				message = messageValueText.getMessage();
 
@@ -112,7 +113,7 @@ public class CommitDialog extends PreviewDialog {
 
 	/**
 	 * Gets the commit message.
-	 * 
+	 *
 	 * @return the commit message
 	 */
 	public String getCommitMessage() {
@@ -122,7 +123,7 @@ public class CommitDialog extends PreviewDialog {
 
 	/**
 	 * Checks if is keep lock.
-	 * 
+	 *
 	 * @return true, if is keep lock
 	 */
 	public boolean isKeepLock() {

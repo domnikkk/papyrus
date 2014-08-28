@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,12 +35,12 @@ public class StereotypedElementMatcher implements IConfigurableElementMatcher<St
 	 * {@inheritDoc}
 	 */
 	public boolean matches(EObject eObject) {
-		if(!(eObject instanceof Element)) {
-			return false;	
+		if (!(eObject instanceof Element)) {
+			return false;
 		}
-		
-		return ((Element)eObject).getAppliedStereotype(getStereotypedQualifiedName()) != null;
-		
+
+		return ((Element) eObject).getAppliedStereotype(getStereotypedQualifiedName()) != null;
+
 	}
 
 	/**
@@ -51,7 +51,8 @@ public class StereotypedElementMatcher implements IConfigurableElementMatcher<St
 	}
 
 	/**
-	 * @param stereotypedQualifiedName the stereotypedQualifiedName to set
+	 * @param stereotypedQualifiedName
+	 *            the stereotypedQualifiedName to set
 	 */
 	public void setStereotypedQualifiedName(String stereotypedQualifiedName) {
 		this.stereotypedQualifiedName = stereotypedQualifiedName;

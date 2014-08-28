@@ -59,7 +59,7 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 	 * Creates a new ShapeDisplayCompartmentEditPart
 	 *
 	 * @param model
-	 *        The resizable compartment view
+	 *            The resizable compartment view
 	 */
 	public ShapeDisplayCompartmentEditPart(EObject model) {
 		super(model);
@@ -110,14 +110,14 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 	 * @param maintainRatio
 	 */
 	protected void maintainRatio(boolean maintainRatio) {
-		IFigure contentPane = ((ResizableCompartmentFigure)getFigure()).getContentPane();
-		for(Object subFigure : contentPane.getChildren()) {
-			if(subFigure instanceof BorderedScalableImageFigure) {
-				((BorderedScalableImageFigure)subFigure).setMaintainAspectRatio(maintainRatio);
+		IFigure contentPane = ((ResizableCompartmentFigure) getFigure()).getContentPane();
+		for (Object subFigure : contentPane.getChildren()) {
+			if (subFigure instanceof BorderedScalableImageFigure) {
+				((BorderedScalableImageFigure) subFigure).setMaintainAspectRatio(maintainRatio);
 			}
 
 		}
-		if(!maintainRatio) {
+		if (!maintainRatio) {
 			OneShapeLayoutManager layout = new OneShapeLayoutManager();
 			contentPane.setLayoutManager(layout);
 		} else {
@@ -132,16 +132,16 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 	@Override
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = new ScalableCompartmentFigure(getCompartmentName(), getMapMode());
-		//result.setBackgroundColor(ColorConstants.lightBlue);
-		//result.setForegroundColor(ColorConstants.blue);
+		// result.setBackgroundColor(ColorConstants.lightBlue);
+		// result.setForegroundColor(ColorConstants.blue);
 		// result.getParent().setBackgroundColor(ColorConstants.lightGray);
 		ShapeCompartmentLayoutManager layoutManager = new ShapeCompartmentLayoutManager();
 		result.setLayoutManager(layoutManager);
 		ShapeFlowLayout layout = new ShapeFlowLayout();
-		//		layout.setHorizontal(true);
-		//		layout.setStretchMinorAxis(true);
-		//		layout.setStretchMajorAxis(true);
-		//		layout.setMinorAlignment(OrderedLayout.ALIGN_CENTER);
+		// layout.setHorizontal(true);
+		// layout.setStretchMinorAxis(true);
+		// layout.setStretchMajorAxis(true);
+		// layout.setMinorAlignment(OrderedLayout.ALIGN_CENTER);
 
 		result.getContentPane().setLayoutManager(layout);
 
@@ -151,25 +151,24 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 	/**
 	 * Refreshes the displayed shapes on the figure.
 	 * <P>
-	 * To be sure everything is clean, it removes all the current displayed shapes and then redraw all of the demanded shapes. This could be probably
-	 * improved in case of performance issues.
+	 * To be sure everything is clean, it removes all the current displayed shapes and then redraw all of the demanded shapes. This could be probably improved in case of performance issues.
 	 * </P>
 	 *
 	 * @param contentPane
-	 *        the figure where to add the new shapes
+	 *            the figure where to add the new shapes
 	 */
 	protected void refreshShapes(IFigure contentPane) {
 		List<Object> children = new ArrayList<Object>(contentPane.getChildren());
-		for(Object child : children) {
-			if(child instanceof IFigure) {
-				contentPane.remove((IFigure)child);
+		for (Object child : children) {
+			if (child instanceof IFigure) {
+				contentPane.remove((IFigure) child);
 			}
 		}
 
 		List<RenderedImage> shapesToDisplay = ShapeService.getInstance().getShapesToDisplay(getNotationView().eContainer());
-		if(shapesToDisplay != null && !shapesToDisplay.isEmpty()) {
-			for(RenderedImage image : shapesToDisplay) {
-				if(image != null) {
+		if (shapesToDisplay != null && !shapesToDisplay.isEmpty()) {
+			for (RenderedImage image : shapesToDisplay) {
+				if (image != null) {
 					IFigure imageFigure = new BorderedScalableImageFigure(image, false, true, true);
 					imageFigure.setOpaque(false);
 					imageFigure.setVisible(true);
@@ -196,7 +195,7 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 	 */
 	@Override
 	protected void setRatio(Double ratio) {
-		if(getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
+		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);
 		}
 	}
@@ -216,9 +215,9 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		@Override
 		public void layout(IFigure container) {
 			super.layout(container);
-			for(int i = 0; i < container.getChildren().size(); i++) {
-				if(container.getChildren().get(i) instanceof ScrollPane) {
-					((ScrollPane)container.getChildren().get(i)).setBounds(container.getBounds());
+			for (int i = 0; i < container.getChildren().size(); i++) {
+				if (container.getChildren().get(i) instanceof ScrollPane) {
+					((ScrollPane) container.getChildren().get(i)).setBounds(container.getBounds());
 				}
 			}
 
@@ -261,21 +260,21 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		@Override
 		public void layout(IFigure container) {
 			Rectangle compartmentBound = new Rectangle(container.getBounds());
-			if(container.getBorder() instanceof MarginBorder) {
-				MarginBorder marginBorder = ((MarginBorder)container.getBorder());
+			if (container.getBorder() instanceof MarginBorder) {
+				MarginBorder marginBorder = ((MarginBorder) container.getBorder());
 				compartmentBound = compartmentBound.shrink(marginBorder.getInsets(container));
 			}
 
 
-			IFigure contentPane = ((ResizableCompartmentFigure)getFigure()).getContentPane();
+			IFigure contentPane = ((ResizableCompartmentFigure) getFigure()).getContentPane();
 			ScalableImageFigure scalableImageFigure = null;
-			if(contentPane.getChildren().size() > 0) {
+			if (contentPane.getChildren().size() > 0) {
 				Object lastFig = contentPane.getChildren().get(contentPane.getChildren().size() - 1);
-				if(lastFig instanceof ScalableImageFigure) {
-					scalableImageFigure = (ScalableImageFigure)lastFig;
+				if (lastFig instanceof ScalableImageFigure) {
+					scalableImageFigure = (ScalableImageFigure) lastFig;
 				}
 			}
-			if(scalableImageFigure != null) {
+			if (scalableImageFigure != null) {
 				scalableImageFigure.setBounds(compartmentBound);
 			}
 
@@ -302,7 +301,7 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 			super.activate();
 			// retrieve the view and the element managed by the edit part
 			View view = getView();
-			if(view == null) {
+			if (view == null) {
 				return;
 			}
 			// listens for modifications on the container of the compartment, i.e. the figure that handle stereotype management (ClassifierView for example)
@@ -316,7 +315,7 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		public void deactivate() {
 			// retrieve the view and the element managed by the edit part
 			View view = getView();
-			if(view == null) {
+			if (view == null) {
 				return;
 			}
 			notificationManager.dispose();
@@ -347,8 +346,8 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		 * @return the diagram event broker
 		 */
 		protected DiagramEventBroker getDiagramEventBroker() {
-			TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
-			if(theEditingDomain != null) {
+			TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+			if (theEditingDomain != null) {
 				return DiagramEventBroker.getInstance(theEditingDomain);
 			}
 			return null;
@@ -360,7 +359,7 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		 * @return the view controlled by the host edit part
 		 */
 		protected View getView() {
-			return (View)getHost().getModel();
+			return (View) getHost().getModel();
 		}
 	}
 
@@ -369,7 +368,7 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 	 */
 	protected void refreshSymbolCompartment() {
 		BooleanValueStyle maintainRatio = getMaintainSymbolRatioStyle(getNotationView());
-		if(maintainRatio != null && maintainRatio.isBooleanValue() == false) {
+		if (maintainRatio != null && maintainRatio.isBooleanValue() == false) {
 			maintainRatio(false);
 		} else {
 			maintainRatio(true);
@@ -383,14 +382,14 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 	 */
 	protected BooleanValueStyle getMaintainSymbolRatioStyle(View currentView) {
 		View parentView = currentView;
-		while(parentView.getElement() == currentView.getElement()) {
-			BooleanValueStyle style = (BooleanValueStyle)parentView.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), MaintainSymbolRatioEditPolicy.MAINTAIN_SYMBOL_RATIO);
-			if(style != null) {
+		while (parentView.getElement() == currentView.getElement()) {
+			BooleanValueStyle style = (BooleanValueStyle) parentView.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), MaintainSymbolRatioEditPolicy.MAINTAIN_SYMBOL_RATIO);
+			if (style != null) {
 				return style;
 			}
 
-			if(parentView.eContainer() instanceof View) {
-				parentView = (View)parentView.eContainer();
+			if (parentView.eContainer() instanceof View) {
+				parentView = (View) parentView.eContainer();
 			} else {
 				break;
 			}

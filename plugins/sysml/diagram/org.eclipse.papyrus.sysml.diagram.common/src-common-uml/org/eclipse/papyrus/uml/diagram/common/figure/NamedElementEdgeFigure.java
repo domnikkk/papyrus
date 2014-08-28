@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -22,7 +22,7 @@ import org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusWrappingLabel;
  * This edge figure support stereotype application and name labels,
  * and does not make any assumption on style, decorations, and width.
  * These properties are managed by the edit part.
- * 
+ *
  * This figure also provides its own custom dash pattern that can be use calling
  * setLineType(Graphics.LINE_CUSTOM);
  * </pre>
@@ -38,7 +38,7 @@ public class NamedElementEdgeFigure extends UMLEdgeFigure {
 		super();
 
 		// set dashes
-		for(int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++) {
 			dashes[i] = 5;
 		}
 		setLineDash(dashes);

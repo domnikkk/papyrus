@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,14 +48,14 @@ public class TracepointPropertiesCommand extends AbstractTracepointCommand {
 
 	protected void selectTraceActions() {
 		IMarker marker = findMarker(TracepointConstants.tpOrbpMarker);
-		if(marker != null) {
+		if (marker != null) {
 			// should normally always hold, since this is checked in canExecute
-			TraceActionSelection tad = new TraceActionSelection(new Shell(), marker, (Element)selectedElement);
+			TraceActionSelection tad = new TraceActionSelection(new Shell(), marker, (Element) selectedElement);
 			tad.open();
-			if(tad.getReturnCode() == IDialogConstants.OK_ID) {
+			if (tad.getReturnCode() == IDialogConstants.OK_ID) {
 				Object[] result = tad.getResult();
-				String traceAction = (String)result[0];
-				String traceMechanism = (String)result[1];
+				String traceAction = (String) result[0];
+				String traceMechanism = (String) result[1];
 				try {
 					marker.setAttribute(TracepointConstants.traceAction, traceAction);
 					marker.setAttribute(TracepointConstants.traceMechanism, traceMechanism);
@@ -70,7 +70,7 @@ public class TracepointPropertiesCommand extends AbstractTracepointCommand {
 	 */
 	@Override
 	public boolean canExecute() {
-		if(selectedElement != null) {
+		if (selectedElement != null) {
 			updateResourceAndURI();
 			IMarker marker = findMarker(TracepointConstants.tpOrbpMarker);
 			if (marker != null) {

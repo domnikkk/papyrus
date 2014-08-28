@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -21,7 +21,7 @@ import org.eclipse.emf.common.notify.Adapter;
  * adapters also support Eclipse property sheets. Note that most of the adapters
  * are shared among multiple instances. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CustomExtendedtypesItemProviderAdapterFactory extends
@@ -44,10 +44,10 @@ public class CustomExtendedtypesItemProviderAdapterFactory extends
 	 */
 	@Override
 	public Adapter createAspectSemanticTypeConfigurationAdapter() {
-		if(aspectSemanticTypeConfigurationItemProvider == null) {
+		if (aspectSemanticTypeConfigurationItemProvider == null) {
 			aspectSemanticTypeConfigurationItemProvider = new CustomAspectSemanticTypeConfigurationItemProvider(this);
 		}
 		return aspectSemanticTypeConfigurationItemProvider;
 	}
-	
+
 }

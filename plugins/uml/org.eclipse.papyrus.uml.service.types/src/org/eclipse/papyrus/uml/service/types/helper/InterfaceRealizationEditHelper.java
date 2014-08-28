@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -23,6 +23,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.papyrus.uml.service.types.command.InterfaceRealizationReorientCommand;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -52,15 +53,15 @@ public class InterfaceRealizationEditHelper extends DependencyEditHelper {
 	@Override
 	protected boolean canCreate(EObject source, EObject target) {
 
-		if((source != null) && !(source instanceof BehavioredClassifier)) {
+		if ((source != null) && !(source instanceof BehavioredClassifier)) {
 			return false;
 		}
 
-		if((target != null) && !(target instanceof Interface)) {
+		if ((target != null) && !(target instanceof Interface)) {
 			return false;
 		}
 
-		if((source != null) && (target != null) && (source == target)) {
+		if ((source != null) && (target != null) && (source == target)) {
 			return false;
 		}
 
@@ -76,12 +77,12 @@ public class InterfaceRealizationEditHelper extends DependencyEditHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.service.types.helper.DirectedRelationshipEditHelper#getCreateRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest)
 	 *
 	 * @param req
 	 * @return
-	 * the command to use to create the interface realization link
+	 *         the command to use to create the interface realization link
 	 */
 	@Override
 	protected ICommand getCreateRelationshipCommand(CreateRelationshipRequest req) {
@@ -91,17 +92,17 @@ public class InterfaceRealizationEditHelper extends DependencyEditHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelper#configureRequest(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest)
-	 * 
+	 *
 	 * @param request
-	 *        the request
+	 *            the request
 	 */
 	@Override
 	protected void configureRequest(final IEditCommandRequest request) {
 		super.configureRequest(request);
-		if(request instanceof CreateRelationshipRequest) {
-			((CreateRelationshipRequest)request).setContainer(((CreateRelationshipRequest)request).getSource());
+		if (request instanceof CreateRelationshipRequest) {
+			((CreateRelationshipRequest) request).setContainer(((CreateRelationshipRequest) request).getSource());
 		}
 	}
 }

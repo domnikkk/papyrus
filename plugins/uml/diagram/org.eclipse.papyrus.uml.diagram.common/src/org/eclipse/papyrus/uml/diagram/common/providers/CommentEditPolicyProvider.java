@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,21 +29,22 @@ import org.eclipse.uml2.uml.Element;
 
 /**
  * An edit policy provider to install
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class CommentEditPolicyProvider extends AbstractProvider implements IEditPolicyProvider {
 
+	@Override
 	public boolean provides(IOperation operation) {
-		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
 		Element element = UMLUtil.resolveUMLElement(epOperation.getEditPart());
-		if(!(element instanceof Comment)) {
+		if (!(element instanceof Comment)) {
 			return false;
 		}
 		try {
 			ServicesRegistry registry = ServiceUtilsForEObject.getInstance().getServiceRegistry(element);
-			if(registry == null) {
+			if (registry == null) {
 				return false;
 			}
 		} catch (Exception ex) {
@@ -53,6 +54,7 @@ public class CommentEditPolicyProvider extends AbstractProvider implements IEdit
 		return !(epOperation.getEditPart() instanceof IPrimaryEditPart);
 	}
 
+	@Override
 	public void createEditPolicies(EditPart editPart) {
 		editPart.installEditPolicy(AbstractNameReferencesListenerEditPolicy.NAME_REFERENCES_LISTENER_ID, new CommentReferencesListenerEditPolicy());
 	}

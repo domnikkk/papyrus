@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -29,18 +29,18 @@ public class TableEditorMetaclass extends Metaclass {
 	@Override
 	public Object newInstance(Object[] parameters) {
 		Object widget = parameters[0];
-		if(parameters.length == 0 || !(widget instanceof Widget)) {
+		if (parameters.length == 0 || !(widget instanceof Widget)) {
 			throw new IllegalStateException("Table parent is missing.");
 		}
 		Table table = null;
-		if(widget instanceof Table) {
-			table = (Table)widget;
+		if (widget instanceof Table) {
+			table = (Table) widget;
 		} else {
-			table = (Table)UserData.findParent((Widget)widget, Table.class);
+			table = (Table) UserData.findParent((Widget) widget, Table.class);
 		}
-		if(table == null) {
+		if (table == null) {
 			throw new IllegalStateException("Table parent is missing.");
 		}
-		return super.newInstance(new Object[]{ table });
+		return super.newInstance(new Object[] { table });
 	}
 }

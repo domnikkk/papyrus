@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class CustomCombinedFragmentCreateCommand extends CombinedFragmentCreateC
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -48,7 +48,7 @@ public class CustomCombinedFragmentCreateCommand extends CombinedFragmentCreateC
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomCombinedFragmentCreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -57,7 +57,7 @@ public class CustomCombinedFragmentCreateCommand extends CombinedFragmentCreateC
 
 	/**
 	 * The creation command can only be executed if the elementToEdit (i.e the container) is an Interaction or an InteractionOperand
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
@@ -67,7 +67,7 @@ public class CustomCombinedFragmentCreateCommand extends CombinedFragmentCreateC
 
 	/**
 	 * Handle creation on InteractionOperand
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
@@ -76,16 +76,16 @@ public class CustomCombinedFragmentCreateCommand extends CombinedFragmentCreateC
 		CombinedFragment newElement = UMLFactory.eINSTANCE.createCombinedFragment();
 		// START GENERATED NOT CODE
 		EObject elementToEdit = getElementToEdit();
-		if(elementToEdit instanceof InteractionOperand) {
-			((InteractionOperand)elementToEdit).getFragments().add(newElement);
-		} else if(elementToEdit instanceof Interaction) {
-			((Interaction)elementToEdit).getFragments().add(newElement);
+		if (elementToEdit instanceof InteractionOperand) {
+			((InteractionOperand) elementToEdit).getFragments().add(newElement);
+		} else if (elementToEdit instanceof Interaction) {
+			((Interaction) elementToEdit).getFragments().add(newElement);
 		}
 		ElementInitializers.getInstance().init_CombinedFragment_3004(newElement);
-		Set<InteractionFragment> coveredInteractionFragments = (Set<InteractionFragment>)getRequest().getParameters().get(SequenceRequestConstant.COVERED_INTERACTIONFRAGMENTS);
+		Set<InteractionFragment> coveredInteractionFragments = (Set<InteractionFragment>) getRequest().getParameters().get(SequenceRequestConstant.COVERED_INTERACTIONFRAGMENTS);
 		CustomInteractionOperandCreateCommand.createInteractionOperand(newElement, coveredInteractionFragments);
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 }

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.papyrus.parsers.messages.NFPMessages;
 
 //unlimited natural
-// TODO: To change the symbol of Infinity='*' (UML2 & MARTE) because it conflict with multiplication operator 
+// TODO: To change the symbol of Infinity='*' (UML2 & MARTE) because it conflict with multiplication operator
 public class VSL_UnlimitedNatural_CompletionProposal implements ICompletionProposalComputer {
 
 	/** Text inserted in the editor */
@@ -39,7 +39,7 @@ public class VSL_UnlimitedNatural_CompletionProposal implements ICompletionPropo
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.classdiagram.parsers.texteditor.completionproposals.ICompletionProposalComputer
 	 * #generateCompletionProposals(int, int, java.lang.String)
@@ -51,8 +51,8 @@ public class VSL_UnlimitedNatural_CompletionProposal implements ICompletionPropo
 		ICompletionProposal proposal = null;
 
 		// adds all name (static strings...)
-		for(int i = 0; i < TVL_UnlimitedNatural_Strings.length; i++) {
-			if(TVL_UnlimitedNatural_Strings[i].startsWith(prefix)) {
+		for (int i = 0; i < TVL_UnlimitedNatural_Strings.length; i++) {
+			if (TVL_UnlimitedNatural_Strings[i].startsWith(prefix)) {
 				proposal = new CompletionProposal(TVL_UnlimitedNatural_Strings[i], documentOffset - prefix.length(),
 						prefix.length() + selectionRange, TVL_UnlimitedNatural_Strings[i].length(), null,
 						TVL_UnlimitedNatural_StringName[i], null, TVL_UnlimitedNatural_StringsInfo[i]);

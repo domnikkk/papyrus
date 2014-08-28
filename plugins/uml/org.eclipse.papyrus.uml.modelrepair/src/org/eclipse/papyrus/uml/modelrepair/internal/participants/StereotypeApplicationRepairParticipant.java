@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,8 +35,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -68,7 +68,7 @@ import com.google.common.collect.Maps;
 /**
  * This is the StereotypeApplicationRepairParticipant type. Enjoy.
  */
-//extending UML-internal PackageOperations class to access protected API
+// extending UML-internal PackageOperations class to access protected API
 @SuppressWarnings("restriction")
 public class StereotypeApplicationRepairParticipant extends PackageOperations implements IDependencyReplacementParticipant {
 
@@ -81,29 +81,29 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 		Map<ProfileApplication, Replacement> applicationsToDefinitions = Maps.newHashMap();
 
-		for(Replacement next : replacements) {
-			if(next.getEStructuralFeature() == UMLPackage.Literals.PROFILE_APPLICATION__APPLIED_PROFILE) {
-				ProfileApplication application = (ProfileApplication)next.getEObject();
-				if(application.getApplyingPackage() != null) {
-					if(!applicationsToDefinitions.containsKey(application)) {
+		for (Replacement next : replacements) {
+			if (next.getEStructuralFeature() == UMLPackage.Literals.PROFILE_APPLICATION__APPLIED_PROFILE) {
+				ProfileApplication application = (ProfileApplication) next.getEObject();
+				if (application.getApplyingPackage() != null) {
+					if (!applicationsToDefinitions.containsKey(application)) {
 						applicationsToDefinitions.put(application, next);
 					} // else we processed the applied-definition annotation, first
-				} else if(diagnostics != null) {
+				} else if (diagnostics != null) {
 					diagnostics.add(new BasicDiagnostic(Diagnostic.WARNING, Activator.PLUGIN_ID, 0, "Profile application has no applying package: " + application, null)); //$NON-NLS-1$
 				}
-			} else if(next.getEStructuralFeature() == EcorePackage.Literals.EANNOTATION__REFERENCES) {
-				if(next.getOldValue() instanceof EPackage) {
-					EObject application = ((EAnnotation)next.getEObject()).getEModelElement();
-					if(application instanceof ProfileApplication) {
-						applicationsToDefinitions.put((ProfileApplication)application, next);
+			} else if (next.getEStructuralFeature() == EcorePackage.Literals.EANNOTATION__REFERENCES) {
+				if (next.getOldValue() instanceof EPackage) {
+					EObject application = ((EAnnotation) next.getEObject()).getEModelElement();
+					if (application instanceof ProfileApplication) {
+						applicationsToDefinitions.put((ProfileApplication) application, next);
 					}
 				}
 			}
 		}
 
-		for(Map.Entry<ProfileApplication, Replacement> next : applicationsToDefinitions.entrySet()) {
+		for (Map.Entry<ProfileApplication, Replacement> next : applicationsToDefinitions.entrySet()) {
 			ProfileApplication application = next.getKey();
-			EPackage oldDefinition = (EPackage)next.getValue().getOldValue();
+			EPackage oldDefinition = (EPackage) next.getValue().getOldValue();
 
 			migrateStereotypeApplications(application, application.getApplyingPackage(), oldDefinition, diagnostics);
 			monitor.worked(1);
@@ -114,10 +114,10 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 	protected void migrateStereotypeApplications(ProfileApplication profileApplication, Package applyingPackage, EPackage oldDefinition, DiagnosticChain diagnostics) {
 		Profile newProfile = profileApplication.getAppliedProfile();
-		if(newProfile.eIsProxy()) {
+		if (newProfile.eIsProxy()) {
 			// the profile's ID has changed. Try to locate the new one
 			newProfile = resolveNewProfile(profileApplication.eResource().getResourceSet(), newProfile, oldDefinition);
-			if(newProfile != profileApplication.getAppliedProfile()) {
+			if (newProfile != profileApplication.getAppliedProfile()) {
 				// Found a new profile. Update the profile application
 				profileApplication.setAppliedProfile(newProfile);
 			}
@@ -125,11 +125,11 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 		EPackage definition = profileApplication.getAppliedDefinition();
 		EPackage newDefinition = newProfile.getDefinition();
-		if((newDefinition != null) && (newDefinition != definition)) {
+		if ((newDefinition != null) && (newDefinition != definition)) {
 			// Update the profile application's applied definition
 			EList<EObject> references = getEAnnotation(profileApplication, UML2_UML_PACKAGE_2_0_NS_URI, true).getReferences();
 
-			if(references.isEmpty()) {
+			if (references.isEmpty()) {
 				references.add(newDefinition);
 			} else {
 				references.set(0, newDefinition);
@@ -137,16 +137,16 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		}
 
 		List<EObject> oldStereotypeApplications = Lists.newArrayList();
-		for(TreeIterator<EObject> iter = getAllContents(applyingPackage, true, false); iter.hasNext();) {
+		for (TreeIterator<EObject> iter = getAllContents(applyingPackage, true, false); iter.hasNext();) {
 			EObject element = iter.next();
 
 			// stereotypes are only applicable to Elements
-			if(element instanceof Element) {
-				for(EStructuralFeature.Setting setting : EMFHelper.getUsages(element)) {
+			if (element instanceof Element) {
+				for (EStructuralFeature.Setting setting : EMFHelper.getUsages(element)) {
 					EObject owner = setting.getEObject();
-					if(isStereotypeApplicationExtensionSetting(owner, setting)) {
-						// Looks like a stereotype application.  Do we need to rebuild it?
-						if(owner.eClass().getEPackage() == oldDefinition) {
+					if (isStereotypeApplicationExtensionSetting(owner, setting)) {
+						// Looks like a stereotype application. Do we need to rebuild it?
+						if (owner.eClass().getEPackage() == oldDefinition) {
 							oldStereotypeApplications.add(owner);
 						}
 					}
@@ -159,7 +159,7 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 		createStereotypeApplicationMigrator(newProfile, diagnostics).migrate(oldStereotypeApplications, null);
 
-		if(!newProfile.getOwnedExtensions(true).isEmpty()) {
+		if (!newProfile.getOwnedExtensions(true).isEmpty()) {
 			// Ensure that required stereotypes of the new profile are applied
 			applyAllRequiredStereotypes(profileApplication.getApplyingPackage());
 		}
@@ -167,30 +167,30 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 	protected boolean isStereotypeApplicationExtensionSetting(EObject owner, EStructuralFeature.Setting setting) {
 		EStructuralFeature feature = setting.getEStructuralFeature();
-		return !(owner instanceof Element) && (feature instanceof EReference) && feature.getName().startsWith("base_") && UMLPackage.Literals.ELEMENT.isSuperTypeOf(((EReference)feature).getEReferenceType());
+		return !(owner instanceof Element) && (feature instanceof EReference) && feature.getName().startsWith("base_") && UMLPackage.Literals.ELEMENT.isSuperTypeOf(((EReference) feature).getEReferenceType());
 	}
 
 	protected Profile resolveNewProfile(ResourceSet context, Profile proxy, EPackage oldDefinition) {
 		Profile result = proxy;
 
-		if(context != null) {
+		if (context != null) {
 			try {
 				Resource res = context.getResource(EcoreUtil.getURI(proxy).trimFragment(), true);
-				if(res != null) {
-					Profile oldProfile = (Profile)getNamedElement(oldDefinition);
+				if (res != null) {
+					Profile oldProfile = (Profile) getNamedElement(oldDefinition);
 					String qname = (oldProfile != null) ? getQualifiedName(oldProfile) : getQualifiedName(oldDefinition, NamedElement.SEPARATOR);
 					Collection<Profile> resolved = findNamedElements(res, qname);
-					if(!resolved.isEmpty()) {
+					if (!resolved.isEmpty()) {
 						result = resolved.iterator().next();
 					} else {
-						Profile profile = (Profile)EcoreUtil.getObjectByType(res.getContents(), UMLPackage.Literals.PROFILE);
-						if(profile != null) {
+						Profile profile = (Profile) EcoreUtil.getObjectByType(res.getContents(), UMLPackage.Literals.PROFILE);
+						if (profile != null) {
 							result = profile;
 						}
 					}
 				}
 			} catch (Exception e) {
-				// Couldn't resolve.  Fine
+				// Couldn't resolve. Fine
 				Activator.log.error(e);
 			}
 		}
@@ -217,12 +217,12 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		public void migrate(Collection<? extends EObject> stereotypeApplications, IProgressMonitor monitor) {
 			SubMonitor sub = SubMonitor.convert(monitor, (2 * stereotypeApplications.size()) + 2);
 
-			for(EObject next : stereotypeApplications) {
+			for (EObject next : stereotypeApplications) {
 				EObject newInstance = copier.copy(next);
-				if((newInstance != null) && (newInstance != next)) {
+				if ((newInstance != null) && (newInstance != next)) {
 					// Depends how we copied the stereotype instance (by applying again or not),
 					// it may not be attached, yet
-					if(newInstance.eResource() == null) {
+					if (newInstance.eResource() == null) {
 						EcoreUtil.replace(next, newInstance);
 					}
 				}
@@ -237,29 +237,29 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 			// Preserve the identities of stereotype applications and their contents and update references not accounted for by the copier
 			// (for example, references from Notation views/styles in the diagrams)
-			for(Map.Entry<EObject, EObject> next : copier.entrySet()) {
+			for (Map.Entry<EObject, EObject> next : copier.entrySet()) {
 				EObject original = next.getKey();
 				EObject copy = next.getValue();
 
-				if(copy != null) {
+				if (copy != null) {
 					// Update the ID, if the old ID is known
 					Resource res = original.eResource();
-					if(res instanceof XMLResource) {
-						XMLResource xml = (XMLResource)res;
+					if (res instanceof XMLResource) {
+						XMLResource xml = (XMLResource) res;
 						String id = xml.getID(original);
-						if(id != null) {
+						if (id != null) {
 							xml.setID(copy, id);
 						}
 					}
 
 					// Replace incoming references to the old stereotypes with references to the new stereotypes
-					for(Setting setting : ImmutableList.copyOf(getNonNavigableInverseReferences(original))) {
+					for (Setting setting : ImmutableList.copyOf(getNonNavigableInverseReferences(original))) {
 						EStructuralFeature ref = setting.getEStructuralFeature();
 
-						if((ref != null) && ref.isChangeable()) {
-							if(ref.isMany()) {
+						if ((ref != null) && ref.isChangeable()) {
+							if (ref.isMany()) {
 								@SuppressWarnings("unchecked")
-								EList<EObject> list = ((EList<EObject>)setting.getEObject().eGet(ref));
+								EList<EObject> list = ((EList<EObject>) setting.getEObject().eGet(ref));
 								list.set(list.indexOf(original), copy);
 							} else {
 								setting.set(copy);
@@ -292,7 +292,7 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		/**
 		 * @param profile
 		 * @param diagnostics
-		 *        may be {@code null}
+		 *            may be {@code null}
 		 */
 		public StereotypeApplicationRepairCopier(Profile profile, DiagnosticChain diagnostics) {
 			super(profile);
@@ -313,24 +313,24 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 		@Override
 		protected NamedElement getNamedElement(ENamedElement element) {
-			if(element instanceof EClassifier) {
-				EClassifier classifier = (EClassifier)element;
+			if (element instanceof EClassifier) {
+				EClassifier classifier = (EClassifier) element;
 				// Handle case of unrecognized schema
-				if(isUnrecognizedSchema(classifier.getEPackage()) && (profile.getDefinition() != null)) {
-					// It's unrecognized content.  Force look-up in the profile chosen by the user
+				if (isUnrecognizedSchema(classifier.getEPackage()) && (profile.getDefinition() != null)) {
+					// It's unrecognized content. Force look-up in the profile chosen by the user
 					EClassifier force = profile.getDefinition().getEClassifier(classifier.getName());
-					if(force != null) {
+					if (force != null) {
 						element = force;
 					}
 				}
-			} else if(element instanceof EStructuralFeature) {
-				EStructuralFeature feature = (EStructuralFeature)element;
+			} else if (element instanceof EStructuralFeature) {
+				EStructuralFeature feature = (EStructuralFeature) element;
 				// Handle case of unrecognized schema
-				if(isUnrecognizedSchema(feature.getEContainingClass().getEPackage()) && (profile.getDefinition() != null)) {
+				if (isUnrecognizedSchema(feature.getEContainingClass().getEPackage()) && (profile.getDefinition() != null)) {
 					EClassifier classifier = profile.getDefinition().getEClassifier(feature.getEContainingClass().getName());
-					if(classifier instanceof EClass) {
-						EStructuralFeature force = ((EClass)classifier).getEStructuralFeature(element.getName());
-						if(force != null) {
+					if (classifier instanceof EClass) {
+						EStructuralFeature force = ((EClass) classifier).getEStructuralFeature(element.getName());
+						if (force != null) {
 							element = force;
 						}
 					}
@@ -343,10 +343,10 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		protected boolean isUnrecognizedSchema(EPackage ePackage) {
 			boolean result;
 
-			if(copying != null) {
+			if (copying != null) {
 				result = getExtendedMetadata(copying).demandedPackages().contains(ePackage);
 			} else {
-				// Simple heuristic:  unknown-schema packages don't have names, but profile-defined packages always do
+				// Simple heuristic: unknown-schema packages don't have names, but profile-defined packages always do
 				result = (ePackage.getName() == null);
 			}
 
@@ -357,10 +357,10 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			ExtendedMetaData result = ExtendedMetaData.INSTANCE;
 
 			Resource resource = context.eResource();
-			if(resource instanceof XMLResource) {
-				Object option = ((XMLResource)resource).getDefaultSaveOptions().get(XMLResource.OPTION_EXTENDED_META_DATA);
-				if(option instanceof ExtendedMetaData) {
-					result = (ExtendedMetaData)option;
+			if (resource instanceof XMLResource) {
+				Object option = ((XMLResource) resource).getDefaultSaveOptions().get(XMLResource.OPTION_EXTENDED_META_DATA);
+				if (option instanceof ExtendedMetaData) {
+					result = (ExtendedMetaData) option;
 				}
 			}
 
@@ -369,15 +369,15 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 		@Override
 		protected void copyAttribute(EAttribute eAttribute, EObject eObject, EObject copyEObject) {
-			if(copyEObject == null) {
+			if (copyEObject == null) {
 				// We couldn't find the corresponding stereotype/class/datatype in the profile, so it is dropped and we can't copy any properties
 				return;
 			}
 
-			if(eAttribute == XMLTypePackage.Literals.ANY_TYPE__ANY_ATTRIBUTE) {
+			if (eAttribute == XMLTypePackage.Literals.ANY_TYPE__ANY_ATTRIBUTE) {
 				// The 'anyAttribute' feature-map only appears in unknown schema content
 				copyUnrecognizedContentAnyAttribute(eAttribute, eObject, copyEObject);
-			} else if(eAttribute == XMLTypePackage.Literals.ANY_TYPE__MIXED) {
+			} else if (eAttribute == XMLTypePackage.Literals.ANY_TYPE__MIXED) {
 				// UML stereotype applications will not have arbitrarily mixed content, but nested objects (further AnyTypes)
 				// and elements for multi-valued attributes will appear in this feature map
 				copyUnrecognizedContentMixed(eAttribute, eObject, copyEObject);
@@ -387,29 +387,29 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		}
 
 		protected void copyUnrecognizedContentAnyAttribute(EAttribute anyAttribute, EObject eObject, EObject copyEObject) {
-			FeatureMap featureMap = (FeatureMap)eObject.eGet(anyAttribute);
-			for(FeatureMap.Entry next : featureMap) {
+			FeatureMap featureMap = (FeatureMap) eObject.eGet(anyAttribute);
+			for (FeatureMap.Entry next : featureMap) {
 				EStructuralFeature f = next.getEStructuralFeature();
 
 				EStructuralFeature copyFeature = copyEObject.eClass().getEStructuralFeature(f.getName());
-				if(copyFeature instanceof EReference) {
+				if (copyFeature instanceof EReference) {
 					// values in the XMI will be IDREFs or HREFs
 					String refs = String.valueOf(next.getValue());
-					for(String ref : whitespace.split(refs)) {
+					for (String ref : whitespace.split(refs)) {
 						EObject referenced = resolveRef(eObject, ref);
-						if(referenced == null) {
+						if (referenced == null) {
 							String propertyName = getQualifiedName(UMLUtil.getNamedElement(copyFeature, eObject));
 							handleException(new IllegalStateException(String.format("Unresolved reference in stereotype property %s: %s", propertyName, ref))); //$NON-NLS-1$
-						} else if(!copyFeature.getEType().isInstance(referenced)) {
+						} else if (!copyFeature.getEType().isInstance(referenced)) {
 							String propertyName = getQualifiedName(UMLUtil.getNamedElement(copyFeature, eObject));
 							handleException(new IllegalStateException(String.format("Attempt to reference object of type %s in stereotype property %s", UML2EcoreConverter.getOriginalName(referenced.eClass()), propertyName))); //$NON-NLS-1$
 						} else {
 							eAdd(copyEObject, copyFeature, referenced);
 						}
 					}
-				} else if(copyFeature instanceof EAttribute) {
+				} else if (copyFeature instanceof EAttribute) {
 					// values in the XMI will be string serializations of data types
-					EDataType dataType = ((EAttribute)copyFeature).getEAttributeType();
+					EDataType dataType = ((EAttribute) copyFeature).getEAttributeType();
 
 					try {
 						Object value = EcoreUtil.createFromString(dataType, String.valueOf(next.getValue()));
@@ -427,10 +427,10 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		}
 
 		protected void eAdd(EObject owner, EStructuralFeature feature, Object value) {
-			if(feature.isChangeable() && !feature.isDerived()) {
-				if(feature.isMany()) {
+			if (feature.isChangeable() && !feature.isDerived()) {
+				if (feature.isMany()) {
 					@SuppressWarnings("unchecked")
-					Collection<Object> list = (Collection<Object>)owner.eGet(feature);
+					Collection<Object> list = (Collection<Object>) owner.eGet(feature);
 					list.add(value);
 				} else {
 					owner.eSet(feature, value);
@@ -442,7 +442,7 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			Resource baseResource = anyType.eResource();
 
 			URI uri;
-			if(ref.contains("#")) {
+			if (ref.contains("#")) {
 				// HREF case
 				uri = baseResource.getURI().resolve(URI.createURI(ref));
 			} else {
@@ -454,40 +454,40 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		}
 
 		protected void copyUnrecognizedContentMixed(EAttribute mixed, EObject eObject, EObject copyEObject) {
-			FeatureMap featureMap = (FeatureMap)eObject.eGet(mixed);
-			for(FeatureMap.Entry next : featureMap) {
+			FeatureMap featureMap = (FeatureMap) eObject.eGet(mixed);
+			for (FeatureMap.Entry next : featureMap) {
 				EStructuralFeature f = next.getEStructuralFeature();
 
 				// UML stereotypes do not use comments, arbitrary mixed text, processing instructions, etc.
-				if(f.getEContainingClass() != XMLTypePackage.Literals.XML_TYPE_DOCUMENT_ROOT) {
+				if (f.getEContainingClass() != XMLTypePackage.Literals.XML_TYPE_DOCUMENT_ROOT) {
 					// The incoming thing is an element of some kind
-					if(f instanceof EReference) {
-						EObject anyType = (EObject)next.getValue();
+					if (f instanceof EReference) {
+						EObject anyType = (EObject) next.getValue();
 						EStructuralFeature copyFeature = copyEObject.eClass().getEStructuralFeature(f.getName());
-						if(copyFeature instanceof EAttribute) {
+						if (copyFeature instanceof EAttribute) {
 							// Get the text value of the element, convert it to the appropriate data type, and set it into the attribute
 							try {
 								String text = getTextContent(anyType);
-								if(text != null) {
-									EDataType dataType = ((EAttribute)copyFeature).getEAttributeType();
+								if (text != null) {
+									EDataType dataType = ((EAttribute) copyFeature).getEAttributeType();
 									Object value = EcoreUtil.createFromString(dataType, text);
 									eAdd(copyEObject, copyFeature, value);
 								}
 							} catch (Exception e) {
 								handleException(e);
 							}
-						} else if(copyFeature instanceof EReference) {
-							EReference reference = (EReference)copyFeature;
-							if(!reference.isContainment()) {
+						} else if (copyFeature instanceof EReference) {
+							EReference reference = (EReference) copyFeature;
+							if (!reference.isContainment()) {
 								// Get the HREF/IDREF from the element, resolve the referenced object, and set it into the reference
 								String refs = getTextContent(anyType);
-								if(refs != null) {
-									for(String ref : whitespace.split(refs)) {
+								if (refs != null) {
+									for (String ref : whitespace.split(refs)) {
 										EObject referenced = resolveRef(eObject, ref);
-										if(referenced == null) {
+										if (referenced == null) {
 											String propertyName = getQualifiedName(UMLUtil.getNamedElement(copyFeature, eObject));
 											handleException(new IllegalStateException(String.format("Unresolved reference in stereotype property %s: %s", propertyName, ref))); //$NON-NLS-1$
-										} else if(!copyFeature.getEType().isInstance(referenced)) {
+										} else if (!copyFeature.getEType().isInstance(referenced)) {
 											String propertyName = getQualifiedName(UMLUtil.getNamedElement(copyFeature, eObject));
 											handleException(new IllegalStateException(String.format("Attempt to reference object of type %s in stereotype property %s", UML2EcoreConverter.getOriginalName(referenced.eClass()), propertyName))); //$NON-NLS-1$
 										} else {
@@ -498,8 +498,8 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 							} else {
 								// Handle the contained object
 								EObject containedCopy = copy(anyType);
-								if(containedCopy != null) {
-									if(reference.getEReferenceType().isInstance(containedCopy)) {
+								if (containedCopy != null) {
+									if (reference.getEReferenceType().isInstance(containedCopy)) {
 										eAdd(copyEObject, reference, containedCopy);
 									} else {
 										String propertyName = getQualifiedName(UMLUtil.getNamedElement(reference, eObject));
@@ -522,12 +522,12 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			String result = null;
 
 			Object value = anyType.eGet(XMLTypePackage.Literals.XML_TYPE_DOCUMENT_ROOT__TEXT);
-			if(value instanceof String) {
-				result = (String)value;
-			} else if(value instanceof List<?>) {
-				List<?> list = (List<?>)value;
-				if(!list.isEmpty()) {
-					result = (String)list.get(0);
+			if (value instanceof String) {
+				result = (String) value;
+			} else if (value instanceof List<?>) {
+				List<?> list = (List<?>) value;
+				if (!list.isEmpty()) {
+					result = (String) list.get(0);
 				}
 			}
 
@@ -536,7 +536,7 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 		@Override
 		protected void copyReference(EReference eReference, EObject eObject, EObject copyEObject) {
-			if(copyEObject != null) {
+			if (copyEObject != null) {
 				final EObject previousCopying = copying;
 
 				try {
@@ -550,7 +550,7 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 		@Override
 		protected void copyProxyURI(EObject eObject, EObject copyEObject) {
-			if(copyEObject != null) {
+			if (copyEObject != null) {
 				super.copyProxyURI(eObject, copyEObject);
 			} // Else we couldn't find the corresponding stereotype/class/datatype in the profile, so it is dropped and we can't copy the proxy URI
 		}
@@ -560,17 +560,17 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		 */
 		@Override
 		public void copyReferences() {
-			for(Map.Entry<EObject, EObject> entry : entrySet()) {
+			for (Map.Entry<EObject, EObject> entry : entrySet()) {
 				EObject eObject = entry.getKey();
 				EObject copyEObject = entry.getValue();
 				EClass eClass = eObject.eClass();
 
-				for(int i = 0, size = eClass.getFeatureCount(); i < size; ++i) {
+				for (int i = 0, size = eClass.getFeatureCount(); i < size; ++i) {
 					EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(i);
-					if(eStructuralFeature.isChangeable() && !eStructuralFeature.isDerived()) {
-						if(eStructuralFeature instanceof EReference) {
-							EReference eReference = (EReference)eStructuralFeature;
-							if(!eReference.isContainment() && !eReference.isContainer()) {
+					if (eStructuralFeature.isChangeable() && !eStructuralFeature.isDerived()) {
+						if (eStructuralFeature instanceof EReference) {
+							EReference eReference = (EReference) eStructuralFeature;
+							if (!eReference.isContainment() && !eReference.isContainer()) {
 								copyReference(eReference, eObject, copyEObject);
 							}
 						}
@@ -598,7 +598,7 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		}
 
 		protected NamedElement getSameNamedElement(NamedElement namedElement, Package package_) {
-			if(namedElement == null) {
+			if (namedElement == null) {
 				return null;
 			}
 
@@ -606,10 +606,10 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			String qualifiedName = namedElement.getQualifiedName();
 			String prefix = package_.getQualifiedName();
 			int last = prefix.lastIndexOf(NamedElement.SEPARATOR);
-			if(last >= 0) {
+			if (last >= 0) {
 				prefix = prefix.substring(0, last + NamedElement.SEPARATOR.length());
 
-				if(qualifiedName.startsWith(prefix)) {
+				if (qualifiedName.startsWith(prefix)) {
 					qualifiedName = qualifiedName.substring(prefix.length());
 				}
 			}
@@ -620,15 +620,15 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		@Override
 		protected void handleException(Exception exception) {
 			// target EClass does not exist in the profile or target EClass does not have this attribute in the profile
-			if(diagnostics != null) {
+			if (diagnostics != null) {
 				Object[] data = null;
 
-				if(copying != null) {
+				if (copying != null) {
 					Element base = (copying == null) ? null : (copying instanceof AnyType) ? guessAnyTypeBaseElement(copying) : getBaseElement(copying);
-					if(base != null) {
-						data = new Object[]{ base };
+					if (base != null) {
+						data = new Object[] { base };
 					} else {
-						data = new Object[]{ copying.eResource() };
+						data = new Object[] { copying.eResource() };
 					}
 				}
 
@@ -642,23 +642,23 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			Element result = null;
 
 			// The base_Xyz extension end is always at most one, so it should be serialized as an IDREF
-			for(FeatureMap.Entry next : (FeatureMap)anyType.eGet(XMLTypePackage.Literals.ANY_TYPE__ANY_ATTRIBUTE)) {
-				if(next.getEStructuralFeature().getName().startsWith("base_")) {
+			for (FeatureMap.Entry next : (FeatureMap) anyType.eGet(XMLTypePackage.Literals.ANY_TYPE__ANY_ATTRIBUTE)) {
+				if (next.getEStructuralFeature().getName().startsWith("base_")) {
 					EObject referenced = resolveRef(anyType, String.valueOf(next.getValue()));
-					if(referenced instanceof Element) {
-						result = (Element)referenced;
+					if (referenced instanceof Element) {
+						result = (Element) referenced;
 						break;
 					}
 				}
 			}
 
 			// But, if it's a cross-doc reference, it will be an HREF and thus probably an element
-			if(result == null) {
-				for(FeatureMap.Entry next : (FeatureMap)anyType.eGet(XMLTypePackage.Literals.ANY_TYPE__MIXED)) {
-					if((next.getEStructuralFeature() instanceof EReference) && next.getEStructuralFeature().getName().startsWith("base_")) {
-						EObject referenced = resolveRef(anyType, getTextContent((EObject)next.getValue()));
-						if(referenced instanceof Element) {
-							result = (Element)referenced;
+			if (result == null) {
+				for (FeatureMap.Entry next : (FeatureMap) anyType.eGet(XMLTypePackage.Literals.ANY_TYPE__MIXED)) {
+					if ((next.getEStructuralFeature() instanceof EReference) && next.getEStructuralFeature().getName().startsWith("base_")) {
+						EObject referenced = resolveRef(anyType, getTextContent((EObject) next.getValue()));
+						if (referenced instanceof Element) {
+							result = (Element) referenced;
 							break;
 						}
 					}
@@ -672,9 +672,9 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			NamedElement result = null;
 
 			int separator = qualifiedName.indexOf(NamedElement.SEPARATOR);
-			if(separator < 0) {
+			if (separator < 0) {
 				// last segment
-				if(qualifiedName.equals(search.getName()) && metaclass.isInstance(search)) {
+				if (qualifiedName.equals(search.getName()) && metaclass.isInstance(search)) {
 					result = search;
 				}
 			} else {
@@ -682,10 +682,10 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 				String rest = qualifiedName.substring(separator + NamedElement.SEPARATOR.length());
 
 				// Must be a namespace if we are to look for another segment
-				if(nextSegment.equals(search.getName()) && (search instanceof Namespace)) {
-					for(NamedElement next : ((Namespace)search).getMembers()) {
+				if (nextSegment.equals(search.getName()) && (search instanceof Namespace)) {
+					for (NamedElement next : ((Namespace) search).getMembers()) {
 						result = findNamedElement(next, rest, metaclass);
-						if(result != null) {
+						if (result != null) {
 							break;
 						}
 					}

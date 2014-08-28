@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ public class AddRepositoryAction
 
 	public AddRepositoryAction(IWorkbenchPart part) {
 		super(Messages.AddRepositoryAction_0, Activator
-			.getIcon(Activator.ICON_ADD_REPOSITORY));
+				.getIcon(Activator.ICON_ADD_REPOSITORY));
 
 		this.part = part;
 	}
@@ -43,7 +43,7 @@ public class AddRepositoryAction
 	@Override
 	public void run() {
 		AddRepositoryDialog dlg = new AddRepositoryDialog(part.getSite()
-			.getShell());
+				.getShell());
 		if (dlg.open() == Window.OK) {
 			IPapyrusRepositoryManager mgr = PapyrusRepositoryManager.INSTANCE;
 			String url = dlg.getURL();
@@ -61,19 +61,19 @@ public class AddRepositoryAction
 				final IPapyrusRepository _repository = repository;
 				try {
 					part.getSite().getWorkbenchWindow()
-						.run(true, false, new IRunnableWithProgress() {
+							.run(true, false, new IRunnableWithProgress() {
 
-							public void run(IProgressMonitor monitor)
-									throws InvocationTargetException,
-									InterruptedException {
+								@Override
+								public void run(IProgressMonitor monitor)
+										throws InvocationTargetException,
+										InterruptedException {
 
-								_repository.connect();
-							}
-						});
+									_repository.connect();
+								}
+							});
 				} catch (Exception e) {
-					Activator.log.error(
-						"Unexpected exception in async repository connection.", //$NON-NLS-1$
-						e);
+					Activator.log.error("Unexpected exception in async repository connection.", //$NON-NLS-1$
+							e);
 				}
 			}
 		}

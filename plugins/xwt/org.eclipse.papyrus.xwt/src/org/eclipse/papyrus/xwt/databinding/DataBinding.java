@@ -32,7 +32,7 @@ import org.eclipse.swt.widgets.Text;
 
 /**
  * The default implementation of the dataBinding object.
- * 
+ *
  * @author jliu (jin.liu@soyatec.com)
  */
 public class DataBinding extends AbstractDataBinding {
@@ -60,65 +60,65 @@ public class DataBinding extends AbstractDataBinding {
 		 * If observableWidget is null, we need only return the data from
 		 * provider.
 		 */
-		if(observableWidget == null) {
-			if(observableSource == null) {
+		if (observableWidget == null) {
+			if (observableSource == null) {
 				// TODO should raise an exception
 				return null;
 			}
-			if(targetType != null && !targetType.isInstance(observableSource)) {
+			if (targetType != null && !targetType.isInstance(observableSource)) {
 				return observableSource;
 			}
 
 			// convert to final value
 			Object value = observableSource;
-			if(observableSource instanceof IObservableValue) {
-				value = ((IObservableValue)observableSource).getValue();
+			if (observableSource instanceof IObservableValue) {
+				value = ((IObservableValue) observableSource).getValue();
 			}
 			return convertedValue(value);
 		}
 
 		BindingGate bindingContext = getBindingGate();
 
-		if(bindingContext != null && observableSource != null) {
+		if (bindingContext != null && observableSource != null) {
 			Object target = getControl();
-			if(target instanceof Text && getTargetProperty().equalsIgnoreCase("text")) {
-				if(isSourcePropertyReadOnly()) {
-					Text text = (Text)target;
+			if (target instanceof Text && getTargetProperty().equalsIgnoreCase("text")) {
+				if (isSourcePropertyReadOnly()) {
+					Text text = (Text) target;
 					text.setEditable(false);
 				}
-			} else if(target instanceof Button && getTargetProperty().equalsIgnoreCase("selection")) {
-				if(isSourcePropertyReadOnly()) {
-					Button button = (Button)target;
+			} else if (target instanceof Button && getTargetProperty().equalsIgnoreCase("selection")) {
+				if (isSourcePropertyReadOnly()) {
+					Button button = (Button) target;
 					button.setEnabled(false);
 				}
-			} else if((target instanceof Combo || target instanceof CCombo) && getTargetProperty().equalsIgnoreCase("text")) {
-				if(isSourcePropertyReadOnly()) {
-					Control control = (Control)target;
+			} else if ((target instanceof Combo || target instanceof CCombo) && getTargetProperty().equalsIgnoreCase("text")) {
+				if (isSourcePropertyReadOnly()) {
+					Control control = (Control) target;
 					control.setEnabled(false);
 				}
-			} else if(target instanceof MenuItem && getTargetProperty().equalsIgnoreCase("selection")) {
-				if(isSourcePropertyReadOnly()) {
-					MenuItem menuItem = (MenuItem)target;
+			} else if (target instanceof MenuItem && getTargetProperty().equalsIgnoreCase("selection")) {
+				if (isSourcePropertyReadOnly()) {
+					MenuItem menuItem = (MenuItem) target;
 					menuItem.setEnabled(false);
 				}
 			}
 			bindingContext.bind(observableSource, observableWidget, this);
 		}
 
-		if(targetType != null && !targetType.isInstance(observableSource)) {
+		if (targetType != null && !targetType.isInstance(observableSource)) {
 			return observableSource;
 		}
 
 		// convert to final value
 		Object value = observableSource;
-		while(value instanceof IObservableValue) {
-			value = ((IObservableValue)value).getValue();
+		while (value instanceof IObservableValue) {
+			value = ((IObservableValue) value).getValue();
 		}
 		return convertedValue(value);
 	}
 
 	private BindingGate getBindingGate() {
-		if(this.bindingGate == null) {
+		if (this.bindingGate == null) {
 			IBindingContext dataBindingContext = getDataBindingContext();
 			this.bindingGate = new BindingGate(dataBindingContext);
 		}
@@ -128,7 +128,7 @@ public class DataBinding extends AbstractDataBinding {
 
 	private Object convertedValue(Object value) {
 		IValueConverter converter = getConverter();
-		if(converter != null) {
+		if (converter != null) {
 			value = converter.convert(value);
 		}
 		return value;
@@ -145,10 +145,10 @@ public class DataBinding extends AbstractDataBinding {
 
 	public IObservable getObservableSource(int observeKind) {
 		IObservable observableSource = getObservableSource();
-		if(observableSource == null) {
+		if (observableSource == null) {
 			IDataProvider dataProvider = getDataProvider();
 			observableSource = ScopeManager.observe(getControl(), dataProvider.getData(null), getSourcePropertyExpression(), getUpdateSourceTrigger(), observeKind);
-			if(observableSource != null) {
+			if (observableSource != null) {
 				setObservableSource(observableSource);
 			}
 		}
@@ -156,25 +156,25 @@ public class DataBinding extends AbstractDataBinding {
 	}
 
 	public IObservable getObservableWidget() {
-		if(observableWidget == null) {
+		if (observableWidget == null) {
 			Object target = getControl();
 			Object host = getHost();
 			String targetProperty = getTargetProperty();
 			targetProperty = ModelUtils.normalizePropertyName(targetProperty);
 			int observeKind = ScopeManager.AUTO;
-			if(host instanceof Viewer && "input".equals(targetProperty)) {
+			if (host instanceof Viewer && "input".equals(targetProperty)) {
 				// It is possible to use List
 				getObservableSource(ScopeManager.COLLECTION);
 				IObservable observableSource = getObservableSource();
-				if(observableSource instanceof IObservableList) {
+				if (observableSource instanceof IObservableList) {
 					return null;
-				} else if(observableSource instanceof IObservableSet) {
+				} else if (observableSource instanceof IObservableSet) {
 					return null;
 				}
 			}
 			try {
 				BindingExpressionPath path = getTargetPropertyExpression();
-				if(path.isEmptyPath()) {
+				if (path.isEmptyPath()) {
 					return null;
 				}
 				observableWidget = ScopeManager.observe(target, host, path, getUpdateSourceTrigger(), observeKind);

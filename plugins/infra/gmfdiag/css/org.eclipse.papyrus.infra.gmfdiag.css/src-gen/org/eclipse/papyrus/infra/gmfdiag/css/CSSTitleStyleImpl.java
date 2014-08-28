@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,42 +29,43 @@ public class CSSTitleStyleImpl extends TitleStyleImpl implements CSSTitleStyle {
 	private CSSTitleStyle titleStyle;
 
 	protected CSSTitleStyle getTitleStyle() {
-		if(titleStyle == null) {
+		if (titleStyle == null) {
 			titleStyle = new CSSTitleStyleDelegate(this, getEngine());
 		}
 		return titleStyle;
 	}
 
 	protected ExtendedCSSEngine getEngine() {
-		if(engine == null) {
-			engine = ((CSSDiagramImpl)findView().getDiagram()).getEngine();
+		if (engine == null) {
+			engine = ((CSSDiagramImpl) findView().getDiagram()).getEngine();
 		}
 		return engine;
 	}
 
 	protected View findView() {
 		EObject parent = eContainer();
-		while(!(parent instanceof View) && parent != null) {
+		while (!(parent instanceof View) && parent != null) {
 			parent = parent.eContainer();
 		}
 
-		if(parent != null) {
-			return (View)parent;
+		if (parent != null) {
+			return (View) parent;
 		}
 
 		return null;
 	}
 
 
-	//////////////////////////////////////////
-	//	Forwards accesses to CSS properties	//
-	//////////////////////////////////////////
+	// ////////////////////////////////////////
+	// Forwards accesses to CSS properties //
+	// ////////////////////////////////////////
 
 
+	@Override
 	public boolean isCSSShowTitle() {
 		boolean value = super.isShowTitle();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getTitleStyle_ShowTitle(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getTitleStyle_ShowTitle(), value)) {
 			return value;
 		} else {
 			return getTitleStyle().isCSSShowTitle();
@@ -74,15 +75,15 @@ public class CSSTitleStyleImpl extends TitleStyleImpl implements CSSTitleStyle {
 
 	@Override
 	public boolean isShowTitle() {
-		//return super.isShowTitle();
+		// return super.isShowTitle();
 		return isCSSShowTitle();
 	}
 
 
 
-	////////////////////////////////////////////////
-	//	Implements a setter for each CSS property //
-	////////////////////////////////////////////////	
+	// //////////////////////////////////////////////
+	// Implements a setter for each CSS property //
+	// //////////////////////////////////////////////
 
 	@Override
 	public void setShowTitle(boolean value) {
@@ -92,9 +93,9 @@ public class CSSTitleStyleImpl extends TitleStyleImpl implements CSSTitleStyle {
 		ForceValueHelper.setValue(findView(), feature, value);
 	}
 
-	//////////////////////////////////
-	//	Implements the unset method //
-	//////////////////////////////////
+	// ////////////////////////////////
+	// Implements the unset method //
+	// ////////////////////////////////
 
 	@Override
 	public void eUnset(int featureId) {

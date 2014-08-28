@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,39 +21,40 @@ import org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager;
 
 /**
  * The handler used to destroy the selected columns
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class ColumnDestroyAxisHandler extends AbstractTableHandler {
 
 	/**
 	 * @Override
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		final IAxisManager axisManager = getColumnAxisManager();
-		if(axisManager != null) {
+		if (axisManager != null) {
 			axisManager.destroyAxis(getFullSelectedColumnsIndex(this.eventData));
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
 		boolean enabled = false;
 		final IAxisManager axisManager = getColumnAxisManager();
-		if(axisManager != null) {
+		if (axisManager != null) {
 			this.eventData = getNatEventData(evaluationContext);
 			final List<Integer> col = getFullSelectedColumnsIndex(this.eventData);
 			enabled = axisManager.canDestroyAxis(col);

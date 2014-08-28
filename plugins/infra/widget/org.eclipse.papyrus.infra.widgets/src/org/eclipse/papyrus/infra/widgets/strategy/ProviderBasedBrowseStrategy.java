@@ -71,11 +71,11 @@ public class ProviderBasedBrowseStrategy extends EncapsulatedContentProvider imp
 	 * @return
 	 */
 	protected Object[] getValidElements(Object[] roots) {
-		if(filterElements) {
+		if (filterElements) {
 			List<Object> rootsList = ListHelper.asList(roots);
 			Iterator<?> iterator = rootsList.iterator();
-			while(iterator.hasNext()) {
-				if(!isValid(iterator.next(), new HashSet<Object>())) {
+			while (iterator.hasNext()) {
+				if (!isValid(iterator.next(), new HashSet<Object>())) {
 					iterator.remove();
 				}
 			}
@@ -87,7 +87,7 @@ public class ProviderBasedBrowseStrategy extends EncapsulatedContentProvider imp
 
 	@Override
 	public Object[] getChildren(Object parent) {
-		if(provider == null) {
+		if (provider == null) {
 			Activator.log.warn("The provider has not been initialized");
 			return new Object[0];
 		}
@@ -97,15 +97,15 @@ public class ProviderBasedBrowseStrategy extends EncapsulatedContentProvider imp
 
 	@Override
 	public boolean hasChildren(Object parent) {
-		//May be expensive
+		// May be expensive
 		return getChildren(parent).length > 0;
 	}
 
 	protected boolean isValid(Object containerElement, Set<Object> visitedElements) {
-		if(!cache.containsKey(containerElement)) {
+		if (!cache.containsKey(containerElement)) {
 			boolean isVisible;
 
-			if(browseElement(containerElement)) {
+			if (browseElement(containerElement)) {
 				isVisible = isValidValue(containerElement) || hasOneVisibleChild(containerElement, visitedElements);
 			} else {
 				isVisible = false;
@@ -121,11 +121,11 @@ public class ProviderBasedBrowseStrategy extends EncapsulatedContentProvider imp
 	}
 
 	protected boolean hasOneVisibleChild(Object element, Set<Object> visitedElements) {
-		if(!visibleChildCache.containsKey(element)) {
+		if (!visibleChildCache.containsKey(element)) {
 			boolean result = false;
-			if(visitedElements.add(getAdaptedValue(element))) {
-				for(Object child : super.getChildren(element)) {
-					if(isValid(child, visitedElements)) {
+			if (visitedElements.add(getAdaptedValue(element))) {
+				for (Object child : super.getChildren(element)) {
+					if (isValid(child, visitedElements)) {
 						result = true;
 						break;
 					}
@@ -139,7 +139,7 @@ public class ProviderBasedBrowseStrategy extends EncapsulatedContentProvider imp
 
 	@Override
 	public TreePath findPath(Object semanticElement, Object[] rootElements) {
-		return TreePath.EMPTY; //TODO : Naive search
+		return TreePath.EMPTY; // TODO : Naive search
 	}
 
 	protected void clearCache() {
@@ -162,9 +162,9 @@ public class ProviderBasedBrowseStrategy extends EncapsulatedContentProvider imp
 	 */
 	@Override
 	public void revealSemanticElement(List<?> elementsToReveal) {
-		if(viewer != null) {
-			//FIXME: TreeViewers cannot do this search when the items have not yet be expanded.
-			//We need to search on the ContentProvider and pass a TreeSelection to the viewer
+		if (viewer != null) {
+			// FIXME: TreeViewers cannot do this search when the items have not yet be expanded.
+			// We need to search on the ContentProvider and pass a TreeSelection to the viewer
 			viewer.setSelection(new StructuredSelection(elementsToReveal), true);
 		}
 	}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,10 +41,10 @@ public class DepPlanUtils {
 	/**
 	 * Return the package in which deployment plans are stored. Caveat: needs to be executed within a
 	 * transition, since the deployment plan package will be created, if it does not exist yet.
-	 * 
+	 *
 	 * @param element
-	 *        an arbitrary element of the source model (i.e. the model that will
-	 *        store the deployment plan
+	 *            an arbitrary element of the source model (i.e. the model that will
+	 *            store the deployment plan
 	 * @return package in which deployment plans are stored
 	 */
 	public static Package getDepPlanRoot(Element element) {
@@ -53,19 +53,19 @@ public class DepPlanUtils {
 
 	/**
 	 * Return all deployment plans
-	 * 
+	 *
 	 * @param element
-	 *        an arbitrary element of the source model (i.e. the model that will
-	 *        store the deployment plan
+	 *            an arbitrary element of the source model (i.e. the model that will
+	 *            store the deployment plan
 	 * @return
 	 */
 	public static EList<Package> getAllDepPlans(Element element) {
 		Package root = Utils.getTop(element);
 		Package depPlanRoot = root.getNestedPackage(depPlanFolder);
 		EList<Package> depPlanList = new BasicEList<Package>();
-		if(depPlanRoot != null) {
-			for(Package pkg : depPlanRoot.getNestedPackages()) {
-				if(StUtils.isApplied(pkg, DeploymentPlan.class)) {
+		if (depPlanRoot != null) {
+			for (Package pkg : depPlanRoot.getNestedPackages()) {
+				if (StUtils.isApplied(pkg, DeploymentPlan.class)) {
 					depPlanList.add(pkg);
 				}
 			}
@@ -75,32 +75,32 @@ public class DepPlanUtils {
 
 	public static void delDepPlan(InstanceSpecification is) {
 		Iterator<Slot> slots = is.getSlots().iterator();
-		while(slots.hasNext()) {
+		while (slots.hasNext()) {
 			Slot slot = slots.next();
 			InstanceSpecification subInstance = getInstance(slot);
-			if(subInstance != null) {
+			if (subInstance != null) {
 				delDepPlan(subInstance);
 			}
 		}
 		Element owner = is.getOwner();
-		if(owner instanceof Package) {
-			((Package)owner).getPackagedElements().remove(is);
+		if (owner instanceof Package) {
+			((Package) owner).getPackagedElements().remove(is);
 		}
 	}
 
 	/**
 	 * Return the instance that is defined by a slot value
-	 * 
+	 *
 	 * @param slot
 	 * @return the first slot that corresponds to an instance specification
 	 */
 	public static InstanceSpecification getInstance(Slot slot) {
 		Iterator<ValueSpecification> values = slot.getValues().iterator();
-		while(values.hasNext()) {
+		while (values.hasNext()) {
 			ValueSpecification value = values.next();
 			// instances are accessible via ValueSpecification subclass InstanceValue
-			if(value instanceof InstanceValue) {
-				return ((InstanceValue)value).getInstance();
+			if (value instanceof InstanceValue) {
+				return ((InstanceValue) value).getInstance();
 			}
 		}
 		return null;
@@ -108,15 +108,15 @@ public class DepPlanUtils {
 
 	/**
 	 * create a slot for a given sub-instance specification.
-	 * 
+	 *
 	 * @param cdp
-	 *        a deployment plan
+	 *            a deployment plan
 	 * @param is
-	 *        an instance specification for a composite class
+	 *            an instance specification for a composite class
 	 * @param partIS
-	 *        the instance specification of a part within the composite
+	 *            the instance specification of a part within the composite
 	 * @param part
-	 *        the part within the composite
+	 *            the part within the composite
 	 */
 	public static Slot createSlot(Package cdp, InstanceSpecification is, InstanceSpecification partIS, Property part) {
 		// the instance specification of the composite has a slot for each part and it points
@@ -125,7 +125,7 @@ public class DepPlanUtils {
 		slot.setDefiningFeature(part);
 
 		InstanceValue iv = (InstanceValue)
-			slot.createValue(null, null, UMLPackage.eINSTANCE.getInstanceValue());
+				slot.createValue(null, null, UMLPackage.eINSTANCE.getInstanceValue());
 		iv.setInstance(partIS);
 		return slot;
 
@@ -133,15 +133,15 @@ public class DepPlanUtils {
 
 	/**
 	 * Apply the stereotype deployment plan and set the mainInstance value
-	 * 
+	 *
 	 * @param cdp
-	 *        the deployment plan
+	 *            the deployment plan
 	 * @param main
-	 *        instance the top-level instance specification of the plan
+	 *            instance the top-level instance specification of the plan
 	 */
 	public static void setMainInstance(Package cdp, InstanceSpecification mainInstance) {
 		DeploymentPlan cdpApp = StUtils.applyApp(cdp, DeploymentPlan.class);
-		if(cdpApp != null) {
+		if (cdpApp != null) {
 			cdpApp.setMainInstance(mainInstance);
 		}
 	}
@@ -156,11 +156,11 @@ public class DepPlanUtils {
 		// get reference to component model, then search all classes contained in it.
 		Package compModel = Utils.getRoot(componentType, "ComponentModel");
 		Iterator<Element> elements = compModel.allOwnedElements().iterator();
-		while(elements.hasNext()) {
+		while (elements.hasNext()) {
 			Element element = elements.next();
-			if(element instanceof Class) {
-				Class candidate = (Class)element;
-				if(candidate.getSuperClass(componentType.getName()) != null) {
+			if (element instanceof Class) {
+				Class candidate = (Class) element;
+				if (candidate.getSuperClass(componentType.getName()) != null) {
 					return candidate;
 				}
 			}
@@ -171,25 +171,25 @@ public class DepPlanUtils {
 	/**
 	 * create a deployment plan, i.e. a set of instances
 	 * Automatic choice of implementations (otherwise leave unassigned)
-	 * 
+	 *
 	 * @param composite
-	 *        System composite
+	 *            System composite
 	 */
 	public static InstanceSpecification createDepPlan(Package cdp, Classifier composite, String name) {
 		// create an instance specification for the composite
 		InstanceSpecification is = (InstanceSpecification)
-			cdp.createPackagedElement(name, UMLPackage.eINSTANCE.getInstanceSpecification());
+				cdp.createPackagedElement(name, UMLPackage.eINSTANCE.getInstanceSpecification());
 
-		if(name == "mainInstance") {
+		if (name == "mainInstance") {
 			setMainInstance(cdp, is);
 		}
 
 		Class implementation = null;
 
-		if(Utils.isCompImpl(composite)) {
+		if (Utils.isCompImpl(composite)) {
 			// implementation is known => must be able to do this.
-			if(composite instanceof Class) {
-				implementation = (Class)composite;
+			if (composite instanceof Class) {
+				implementation = (Class) composite;
 			}
 		} else {
 			// TODO: really need that? (better indicate to user that he needs to choose?)
@@ -197,7 +197,7 @@ public class DepPlanUtils {
 			implementation = autoChooseImplementation(composite);
 		}
 
-		if(!(implementation instanceof Class)) {
+		if (!(implementation instanceof Class)) {
 			return is;
 		}
 		// else implementation is instance of Class (and not null)
@@ -209,12 +209,12 @@ public class DepPlanUtils {
 		 * }
 		 */
 
-		for(Property part : Utils.getParts(implementation)) {
-			if(part instanceof Port) {
+		for (Property part : Utils.getParts(implementation)) {
+			if (part instanceof Port) {
 				continue;
 			}
 			InstanceSpecification partIS =
-				createDepPlan(cdp, (Classifier)part.getType(), name + "." + part.getName());
+					createDepPlan(cdp, (Classifier) part.getType(), name + "." + part.getName());
 
 			createSlot(cdp, is, partIS, part);
 		}
@@ -227,18 +227,18 @@ public class DepPlanUtils {
 
 	public static void configureProperty(InstanceSpecification instance, String propertyName, String value) {
 		Classifier extension = DepUtils.getClassifier(instance);
-		Property attribute = (Property)Utils.getNamedElementFromList(extension.getAllAttributes(), propertyName);
-		if(attribute == null) {
+		Property attribute = (Property) Utils.getNamedElementFromList(extension.getAllAttributes(), propertyName);
+		if (attribute == null) {
 			throw new RuntimeException("cannot find attribute " + propertyName + " in classifier " + extension.getName());
 		}
-		if(attribute.getType() instanceof Enumeration) {
+		if (attribute.getType() instanceof Enumeration) {
 			configureEnumProperty(instance, propertyName, value);
 		}
 		else {
 			// create a slot for a string value
 			Slot slotStringVal = DepCreation.createSlotForConfigProp(instance, attribute);
-			if(slotStringVal.getValues().get(0) instanceof LiteralString) {
-				((LiteralString)slotStringVal.getValues().get(0)).setValue(value);
+			if (slotStringVal.getValues().get(0) instanceof LiteralString) {
+				((LiteralString) slotStringVal.getValues().get(0)).setValue(value);
 			}
 			else {
 				// indicates that operation has been called although types do not match
@@ -254,14 +254,14 @@ public class DepPlanUtils {
 
 	public static void configureProperty(InstanceSpecification instance, String propertyName, int value) {
 		Classifier extension = DepUtils.getClassifier(instance);
-		Property attribute = (Property)Utils.getNamedElementFromList(extension.getAllAttributes(), propertyName);
-		if(attribute == null) {
+		Property attribute = (Property) Utils.getNamedElementFromList(extension.getAllAttributes(), propertyName);
+		if (attribute == null) {
 			throw new RuntimeException("cannot find attribute " + propertyName + " in classifier " + extension.getName());
 		}
 		Slot slotIntVal = instance.createSlot();
 		slotIntVal.setDefiningFeature(attribute);
 		LiteralInteger intValue = (LiteralInteger)
-			slotIntVal.createValue("value for " + attribute.getName(), attribute.getType(), UMLPackage.eINSTANCE.getLiteralInteger());
+				slotIntVal.createValue("value for " + attribute.getName(), attribute.getType(), UMLPackage.eINSTANCE.getLiteralInteger());
 		intValue.setValue(value);
 
 	}
@@ -270,7 +270,7 @@ public class DepPlanUtils {
 	 * Convenience function: allow that an ecore named element is passed instead of a property name. This is useful if the
 	 * parameter that should be configured stems from a static profile [TODO: should not be in the general class support, but
 	 * in the instance configurators for RT-Describe)
-	 * 
+	 *
 	 * @param instance
 	 * @param extension
 	 * @param property
@@ -283,13 +283,13 @@ public class DepPlanUtils {
 	/**
 	 * configure a property for an enumeration. Enumerations are a bit difficult to handle, since the enumeration literal itself
 	 * must be created first in form of an instance specification
-	 * 
+	 *
 	 * @param instance
-	 *        The instance of which an attribute should be configured.
+	 *            The instance of which an attribute should be configured.
 	 * @param propertyName
-	 *        The name of the property that should be configured
+	 *            The name of the property that should be configured
 	 * @param value
-	 *        its value in form of an element of a static profile [TODO: not general enough?]
+	 *            its value in form of an element of a static profile [TODO: not general enough?]
 	 */
 	public static void configureProperty(InstanceSpecification instance, String propertyName, Enumerator value) {
 		configureProperty(instance, propertyName, value.getName());
@@ -297,19 +297,19 @@ public class DepPlanUtils {
 
 	public static void configureEnumProperty(InstanceSpecification instance, String propertyName, String literalName) {
 		Classifier extension = DepUtils.getClassifier(instance);
-		Property attribute = (Property)Utils.getNamedElementFromList(extension.getAllAttributes(), propertyName);
-		if(attribute == null) {
+		Property attribute = (Property) Utils.getNamedElementFromList(extension.getAllAttributes(), propertyName);
+		if (attribute == null) {
 			throw new RuntimeException("cannot find attribute " + propertyName + " in classifier " + extension.getName());
 		}
 
-		if(attribute.getType() instanceof Enumeration) {
-			Enumeration enumeration = (Enumeration)attribute.getType();
-			for(EnumerationLiteral enumLiteral : enumeration.getOwnedLiterals()) {
-				if(enumLiteral.getLabel().equals(literalName)) {
+		if (attribute.getType() instanceof Enumeration) {
+			Enumeration enumeration = (Enumeration) attribute.getType();
+			for (EnumerationLiteral enumLiteral : enumeration.getOwnedLiterals()) {
+				if (enumLiteral.getLabel().equals(literalName)) {
 					Slot slotEnumVal = instance.createSlot();
 					slotEnumVal.setDefiningFeature(attribute);
 					InstanceValue enumLitValue = (InstanceValue)
-						slotEnumVal.createValue("value for " + attribute.getName(), attribute.getType(), UMLPackage.eINSTANCE.getInstanceValue());
+							slotEnumVal.createValue("value for " + attribute.getName(), attribute.getType(), UMLPackage.eINSTANCE.getInstanceValue());
 					enumLitValue.setInstance(enumLiteral);
 					break;
 				}

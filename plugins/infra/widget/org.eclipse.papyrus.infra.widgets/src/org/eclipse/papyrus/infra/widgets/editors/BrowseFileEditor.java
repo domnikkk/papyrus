@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ import org.eclipse.swt.widgets.MenuItem;
 
 /**
  * Specific String editor to select a file with unique button.
- * 
+ *
  * @author gpascual
  *
  */
@@ -77,13 +77,13 @@ public class BrowseFileEditor extends StringEditor {
 	 * Default constructor.
 	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param style
-	 *        the style
+	 *            the style
 	 */
 	public BrowseFileEditor(Composite parent, int style) {
 		super(parent, style);
-		((GridLayout)getLayout()).numColumns++;
+		((GridLayout) getLayout()).numColumns++;
 		button = factory.createButton(this, Messages.StringFileSelector_Browse, SWT.PUSH);
 		button.setLayoutData(new GridData());
 
@@ -112,7 +112,7 @@ public class BrowseFileEditor extends StringEditor {
 	private Menu createButtonMenu() {
 		final Menu browseMenu = new Menu(button);
 
-		// Add file system menu 
+		// Add file system menu
 		fileSystemMenuItem = new MenuItem(browseMenu, SWT.NONE);
 		fileSystemMenuItem.setText("File system");
 		fileSystemMenuItem.addSelectionListener(new SelectionAdapter() {
@@ -124,14 +124,14 @@ public class BrowseFileEditor extends StringEditor {
 				File file = getFile(text.getText());
 
 				FileDialog dialog = new FileDialog(getShell());
-				if(labelText != null) {
+				if (labelText != null) {
 					dialog.setText(labelText);
 				}
 				dialog.setFileName(file.getAbsolutePath());
 				dialog.setFilterExtensions(filterExtensions.toArray(new String[filterExtensions.size()]));
 				dialog.setFilterNames(filterNames.toArray(new String[filterNames.size()]));
 				String result = dialog.open();
-				if(result == null) { //Cancel
+				if (result == null) { // Cancel
 					return;
 				}
 				setResult(result);
@@ -157,18 +157,18 @@ public class BrowseFileEditor extends StringEditor {
 				IFile currentFile = getIFile(text.getText());
 
 				TreeSelectorDialog dialog = new TreeSelectorDialog(getShell());
-				if(labelText != null) {
+				if (labelText != null) {
 					dialog.setTitle(labelText);
 				}
 
 				WorkspaceContentProvider contentProvider = new WorkspaceContentProvider();
 
-				if(!(filterExtensions.isEmpty() || filterNames.isEmpty())) {
-					//The filters have been defined 
-					contentProvider.setExtensionFilters(new LinkedHashMap<String, String>()); //Reset the default filters
+				if (!(filterExtensions.isEmpty() || filterNames.isEmpty())) {
+					// The filters have been defined
+					contentProvider.setExtensionFilters(new LinkedHashMap<String, String>()); // Reset the default filters
 
-					//Use our own filters
-					for(int i = 0; i < Math.min(filterNames.size(), filterExtensions.size()); i++) {
+					// Use our own filters
+					for (int i = 0; i < Math.min(filterNames.size(), filterExtensions.size()); i++) {
 						contentProvider.addExtensionFilter(filterExtensions.get(i), filterNames.get(i));
 					}
 				}
@@ -177,17 +177,17 @@ public class BrowseFileEditor extends StringEditor {
 				dialog.setLabelProvider(labelProvider);
 
 
-				if(currentFile != null && currentFile.exists()) {
-					dialog.setInitialSelections(new IFile[]{ currentFile });
+				if (currentFile != null && currentFile.exists()) {
+					dialog.setInitialSelections(new IFile[] { currentFile });
 				}
 
 				int code = dialog.open();
-				if(code == Window.OK) {
+				if (code == Window.OK) {
 					Object[] result = dialog.getResult();
-					if(result.length > 0) {
+					if (result.length > 0) {
 						Object file = result[0];
-						if(file instanceof IFile) {
-							setResult((IFile)file);
+						if (file instanceof IFile) {
+							setResult((IFile) file);
 						}
 					}
 				}
@@ -202,7 +202,7 @@ public class BrowseFileEditor extends StringEditor {
 	 * Sets the result.
 	 *
 	 * @param file
-	 *        the new result
+	 *            the new result
 	 */
 	protected void setResult(IFile file) {
 		text.setText(file.getFullPath().toString());
@@ -213,7 +213,7 @@ public class BrowseFileEditor extends StringEditor {
 	 * Sets the result.
 	 *
 	 * @param file
-	 *        the new result
+	 *            the new result
 	 */
 	protected void setResult(File file) {
 		text.setText(file.getAbsolutePath());
@@ -224,7 +224,7 @@ public class BrowseFileEditor extends StringEditor {
 	 * Sets the result.
 	 *
 	 * @param path
-	 *        the new result
+	 *            the new result
 	 */
 	protected void setResult(String path) {
 		text.setText(path);
@@ -235,7 +235,7 @@ public class BrowseFileEditor extends StringEditor {
 	 * Gets the file.
 	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @return the i file
 	 */
 	protected IFile getIFile(String path) {
@@ -246,7 +246,7 @@ public class BrowseFileEditor extends StringEditor {
 	 * Gets the file.
 	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @return the file
 	 */
 	protected File getFile(String path) {
@@ -257,13 +257,13 @@ public class BrowseFileEditor extends StringEditor {
 	 * Sets the filters.
 	 *
 	 * @param filterExtensions
-	 *        the filter extensions
+	 *            the filter extensions
 	 * @param filterNames
-	 *        the filter names
+	 *            the filter names
 	 */
 	public void setFilters(String[] filterExtensions, String[] filterNames) {
-		if(filterExtensions.length != filterNames.length) {
-			//This is a simple warning. Only valid filters will be retained.
+		if (filterExtensions.length != filterNames.length) {
+			// This is a simple warning. Only valid filters will be retained.
 			Activator.log.warn("FilterExtensions and FilterNames do not match");
 		}
 
@@ -275,15 +275,15 @@ public class BrowseFileEditor extends StringEditor {
 	 * Gets the filter labels.
 	 *
 	 * @param filterNames
-	 *        the filter names
+	 *            the filter names
 	 * @param filterExtensions
-	 *        the filter extensions
+	 *            the filter extensions
 	 * @return the filter labels
 	 */
 	protected String[] getFilterLabels(String[] filterNames, String[] filterExtensions) {
 		int size = Math.min(filterNames.length, filterExtensions.length);
 		String[] filters = new String[size];
-		for(int i = 0; i < size; i++) {
+		for (int i = 0; i < size; i++) {
 			filters[i] = filterNames[i] + " (" + filterExtensions[i] + ")";
 		}
 		return filters;
@@ -293,7 +293,7 @@ public class BrowseFileEditor extends StringEditor {
 	 * Sets the filter extensions.
 	 *
 	 * @param filterExtensions
-	 *        the new filter extensions
+	 *            the new filter extensions
 	 */
 	public void setFilterExtensions(String[] filterExtensions) {
 		this.filterExtensions = Arrays.asList(filterExtensions);
@@ -303,7 +303,7 @@ public class BrowseFileEditor extends StringEditor {
 	 * Sets the filter names.
 	 *
 	 * @param filterNames
-	 *        the new filter names
+	 *            the new filter names
 	 */
 	public void setFilterNames(String[] filterNames) {
 		this.filterNames = Arrays.asList(filterNames);
@@ -313,13 +313,13 @@ public class BrowseFileEditor extends StringEditor {
 	 * Adds the filtered extension.
 	 *
 	 * @param filteredExtension
-	 *        the filtered extension
+	 *            the filtered extension
 	 * @param filterName
-	 *        the filter name
+	 *            the filter name
 	 */
 	public void addFilteredExtension(String filteredExtension, String filterName) {
-		if(filteredExtension != null) {
-			if(filterName == null) {
+		if (filteredExtension != null) {
+			if (filterName == null) {
 				filterName = filteredExtension;
 			}
 
@@ -356,7 +356,7 @@ public class BrowseFileEditor extends StringEditor {
 	 * Sets the allow workspace.
 	 *
 	 * @param allowWorkspace
-	 *        the new allow workspace
+	 *            the new allow workspace
 	 */
 	public void setAllowWorkspace(boolean allowWorkspace) {
 		this.allowWorkspace = allowWorkspace;
@@ -367,7 +367,7 @@ public class BrowseFileEditor extends StringEditor {
 	 * Sets the allow file system.
 	 *
 	 * @param allowFileSystem
-	 *        the new allow file system
+	 *            the new allow file system
 	 */
 	public void setAllowFileSystem(boolean allowFileSystem) {
 
@@ -379,7 +379,7 @@ public class BrowseFileEditor extends StringEditor {
 	 * Sets the button label.
 	 *
 	 * @param label
-	 *        the new button label
+	 *            the new button label
 	 */
 	public void setButtonLabel(String label) {
 		button.setText(label);
@@ -400,8 +400,8 @@ public class BrowseFileEditor extends StringEditor {
 	private void updateButtons() {
 		boolean enableWorkspace = !readOnly && allowWorkspace;
 		boolean enableFileSystem = !readOnly && allowFileSystem;
-		//((GridData)browseWorkspace.getLayoutData()).exclude = !allowWorkspace;
-		//((GridData)browse.getLayoutData()).exclude = !allowFileSystem;
+		// ((GridData)browseWorkspace.getLayoutData()).exclude = !allowWorkspace;
+		// ((GridData)browse.getLayoutData()).exclude = !allowFileSystem;
 		fileSystemMenuItem.setEnabled(enableWorkspace);
 		workspaceMenuItem.setEnabled(enableFileSystem);
 	}

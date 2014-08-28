@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,13 +27,13 @@ public class ParameterModifierProposal implements ICompletionProposalComputer {
 
 	// vector that keeps modifiers already used (used for completion)
 	/**
-	 * 
+	 *
 	 */
 	public Map<String, Boolean> modifiersUsed;
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return the modifiersUsed
 	 */
 	public Map<String, Boolean> getModifiersUsed() {
@@ -41,10 +41,10 @@ public class ParameterModifierProposal implements ICompletionProposalComputer {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param modifiersUsed
-	 *        the modifiersUsed to set
+	 *            the modifiersUsed to set
 	 */
 	public void setModifiersUsed(Map<String, Boolean> modifiersUsed) {
 		this.modifiersUsed = modifiersUsed;
@@ -67,18 +67,18 @@ public class ParameterModifierProposal implements ICompletionProposalComputer {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.classdiagram.parsers.texteditor.completionproposals.ICompletionProposalComputer
 	 * #generateCompletionProposals(int, int, java.lang.String)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param selectionRange
 	 * @param prefix
 	 * @param documentOffset
-	 * 
+	 *
 	 * @return
 	 */
 	public List<ICompletionProposal> generateCompletionProposals(int documentOffset, int selectionRange, String prefix) {
@@ -88,10 +88,10 @@ public class ParameterModifierProposal implements ICompletionProposalComputer {
 		ICompletionProposal proposal = null;
 
 		// adds all standard multiplicities (static strings...)
-		for(int i = 0; i < modifiersStrings.length; i++) {
+		for (int i = 0; i < modifiersStrings.length; i++) {
 			// test if this modifier is valid (already used or othe contrary has alreday been used.
-			if(!getModifiersUsed().get(modifiersStrings[i])) {
-				if(modifiersStrings[i].startsWith(prefix)) {
+			if (!getModifiersUsed().get(modifiersStrings[i])) {
+				if (modifiersStrings[i].startsWith(prefix)) {
 					proposal = new CompletionProposal(modifiersStrings[i], documentOffset - prefix.length(), prefix.length() + selectionRange, modifiersStrings[i].length(), null, modifiersStringsName[i], null, modifiersStringsInfo[i]);
 					v.add(proposal);
 				}

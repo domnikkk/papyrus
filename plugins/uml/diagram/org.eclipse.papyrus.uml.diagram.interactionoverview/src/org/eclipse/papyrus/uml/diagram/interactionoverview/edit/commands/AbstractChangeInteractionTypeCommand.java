@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,11 +39,11 @@ public abstract class AbstractChangeInteractionTypeCommand extends
 
 	/**
 	 * Constructor of this command
-	 * 
+	 *
 	 * @param domain
-	 *        the transactional editing domain to execute the transaction
+	 *            the transactional editing domain to execute the transaction
 	 * @param callBehaviorActionEditPart
-	 *        the editpart that will be transformed
+	 *            the editpart that will be transformed
 	 * @param commandLabel
 	 */
 	public AbstractChangeInteractionTypeCommand(final TransactionalEditingDomain domain, final IGraphicalEditPart callBehaviorActionEditPart, final String commandLabel) {
@@ -55,15 +55,15 @@ public abstract class AbstractChangeInteractionTypeCommand extends
 	protected CommandResult doExecuteWithResult(final IProgressMonitor monitor, final IAdaptable info) throws ExecutionException {
 		final EditPart parentEditPart = this.callBehaviorActionEditPart.getParent();
 		// creation of the node
-		final CallBehaviorAction callBehaviorAction = (CallBehaviorAction)this.callBehaviorActionEditPart.resolveSemanticElement();
+		final CallBehaviorAction callBehaviorAction = (CallBehaviorAction) this.callBehaviorActionEditPart.resolveSemanticElement();
 		final View view = this.callBehaviorActionEditPart.getNotationView();
-		final View containerView = (View)view.eContainer();
+		final View containerView = (View) view.eContainer();
 		final int index = containerView.getChildren().indexOf(view);
 		final Node callBehaviorActionNode = createTargetCallBehaviorView(callBehaviorAction, containerView, index);
-		callBehaviorActionNode.setLayoutConstraint(((Node)this.callBehaviorActionEditPart.getNotationView()).getLayoutConstraint());
+		callBehaviorActionNode.setLayoutConstraint(((Node) this.callBehaviorActionEditPart.getNotationView()).getLayoutConstraint());
 		// copy all EAnnotations
 		final Iterator<EAnnotation> iter = this.callBehaviorActionEditPart.getNotationView().getEAnnotations().iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			final EAnnotation annotation = EcoreUtil.copy(iter.next());
 			callBehaviorActionNode.getEAnnotations().add(annotation);
 		}
@@ -73,7 +73,7 @@ public abstract class AbstractChangeInteractionTypeCommand extends
 		parentEditPart.refresh();
 		ViewUtils.selectInViewer(callBehaviorActionNode, parentEditPart.getViewer());
 		EditPartViewer viewer = parentEditPart.getViewer();
-		GraphicalEditPart newEditPart = (GraphicalEditPart)viewer.getEditPartRegistry().get(callBehaviorActionNode);
+		GraphicalEditPart newEditPart = (GraphicalEditPart) viewer.getEditPartRegistry().get(callBehaviorActionNode);
 		return CommandResult.newOKCommandResult(callBehaviorActionNode);
 	}
 

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.swt.graphics.Image;
 
 public abstract class MoveDropStrategy extends TransactionalDropStrategy {
 
-	//	public final static String TARGET_FEATURE = "targetFeature";
+	// public final static String TARGET_FEATURE = "targetFeature";
 
 	protected EStructuralFeature feature;
 
@@ -56,53 +56,53 @@ public abstract class MoveDropStrategy extends TransactionalDropStrategy {
 		this.feature = targetFeature;
 	}
 
-	//parameters: 
-	//what element should be dropped ? (Extract the right value from the selection)
-	//where should it be dropped ?
-	//	- Target object
-	//	- Target property
-	//	- Target view (Compartment, ...)
-	//	public void setOptions(Map<String, Object> options) {
-	//		if(options.containsKey(TARGET_FEATURE)) {
-	//			Object targetFeature = options.get(TARGET_FEATURE);
-	//			if(targetFeature instanceof EStructuralFeature) {
-	//				setTargetFeature((EStructuralFeature)targetFeature);
-	//			}
-	//		}
-	//	}
+	// parameters:
+	// what element should be dropped ? (Extract the right value from the selection)
+	// where should it be dropped ?
+	// - Target object
+	// - Target property
+	// - Target view (Compartment, ...)
+	// public void setOptions(Map<String, Object> options) {
+	// if(options.containsKey(TARGET_FEATURE)) {
+	// Object targetFeature = options.get(TARGET_FEATURE);
+	// if(targetFeature instanceof EStructuralFeature) {
+	// setTargetFeature((EStructuralFeature)targetFeature);
+	// }
+	// }
+	// }
 
 	@Override
 	public Command doGetCommand(Request request, EditPart targetEditPart) {
 		List<EObject> objectsToDrop = getSourceEObjects(request);
-		if(objectsToDrop.isEmpty()) {
+		if (objectsToDrop.isEmpty()) {
 			return null;
 		}
 
-		Object newValue; //Single or multi-valued
+		Object newValue; // Single or multi-valued
 
 		EObject targetElement = getTargetSemanticElement(targetEditPart);
 
 		EStructuralFeature targetFeature = getTargetFeature(request, targetEditPart);
-		if(targetFeature == null) {
+		if (targetFeature == null) {
 			return null;
 		}
 
-		if(targetFeature.getUpperBound() == 1) {
+		if (targetFeature.getUpperBound() == 1) {
 			newValue = objectsToDrop.get(0);
 		} else {
-			EList<?> currentValues = (EList<?>)targetElement.eGet(targetFeature);
+			EList<?> currentValues = (EList<?>) targetElement.eGet(targetFeature);
 			List<? extends Object> values = new LinkedList<Object>(currentValues);
-			values.addAll((List)objectsToDrop);
+			values.addAll((List) objectsToDrop);
 			newValue = values;
 		}
 
 		EditingDomain domain = getEditingDomain(targetEditPart);
-		SetRequest setRequest = new SetRequest((TransactionalEditingDomain)domain, targetElement, targetFeature, newValue);
+		SetRequest setRequest = new SetRequest((TransactionalEditingDomain) domain, targetElement, targetFeature, newValue);
 
 		ICommand command = new SetValueCommand(setRequest);
 
 		Command graphicalCommand = getGraphicalCommand(request, targetEditPart);
-		if(graphicalCommand != null) {
+		if (graphicalCommand != null) {
 			command = command.compose(new CommandProxy(graphicalCommand));
 		}
 
@@ -110,7 +110,7 @@ public abstract class MoveDropStrategy extends TransactionalDropStrategy {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param request
 	 * @param targetEditPart
 	 * @return A command to edit the graphical view

@@ -19,6 +19,12 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jface.wizard.IWizardPage;
+import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
 import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.IQueryContext;
 import org.eclipse.papyrus.emf.facet.query.java.core.internal.exceptions.ClassAlreadyExistsException;
@@ -31,12 +37,6 @@ import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.wizard.page.Sele
 import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallback;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.wizard.IExtendedWizard;
-import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jface.wizard.IWizardPage;
-import org.eclipse.jface.wizard.Wizard;
-import org.eclipse.jface.wizard.WizardDialog;
 
 // Copied from org.eclipse.papyrus.emf.facet.query.java.ui.internal.wizard.SelectOrCreateJavaClassWizard
 public class SelectOrCreateJavaClassWizard extends Wizard implements
@@ -114,26 +114,31 @@ public class SelectOrCreateJavaClassWizard extends Wizard implements
 		return finish();
 	}
 
+	@Override
 	public int open() {
 		return this.dialog.open();
 	}
 
+	@Override
 	public IWizardPage getCurrentPage() {
 		return getContainer().getCurrentPage();
 	}
 
+	@Override
 	public IWizardPage next() {
 		final IWizardPage nextPage = getNextPage(this.getCurrentPage());
 		this.dialog.showPage(nextPage);
 		return nextPage;
 	}
 
+	@Override
 	public IWizardPage previous() {
 		final IWizardPage previousPage = getPreviousPage(this.getCurrentPage());
 		this.dialog.showPage(previousPage);
 		return previousPage;
 	}
 
+	@Override
 	public boolean finish() {
 		boolean result = true;
 		try {

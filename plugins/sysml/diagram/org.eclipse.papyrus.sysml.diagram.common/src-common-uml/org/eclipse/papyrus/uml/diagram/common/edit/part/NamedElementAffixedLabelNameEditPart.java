@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -27,6 +27,7 @@ import org.eclipse.papyrus.sysml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.util.DiagramEditPartsUtil;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * Abstract non-diagram specific edit part for border node label representing {@link NamedElement}.
@@ -48,20 +49,22 @@ public class NamedElementAffixedLabelNameEditPart extends AbstractElementLabelEd
 		super.createDefaultEditPolicies();
 	}
 
+	@Override
 	public IBorderItemLocator getBorderItemLocator() {
 		IFigure parentFigure = getFigure().getParent();
-		if(parentFigure != null && parentFigure.getLayoutManager() != null) {
+		if (parentFigure != null && parentFigure.getLayoutManager() != null) {
 			Object constraint = parentFigure.getLayoutManager().getConstraint(getFigure());
-			return (IBorderItemLocator)constraint;
+			return (IBorderItemLocator) constraint;
 		}
 		return null;
 	}
 
+	@Override
 	public void refreshBounds() {
-		int x = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-		int y = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
-		int width = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
-		int height = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
+		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
+		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
 
 		// Update locator constraint
 		IBorderItemLocator locator = getBorderItemLocator();
@@ -77,13 +80,13 @@ public class NamedElementAffixedLabelNameEditPart extends AbstractElementLabelEd
 	@Override
 	protected Image getLabelIcon() {
 		EObject parserElement = getParserElement();
-		if(parserElement == null) {
+		if (parserElement == null) {
 			return null;
 		}
 
 		List<View> views = DiagramEditPartsUtil.findViews(parserElement, getViewer());
-		for(View view : views) {
-			if(NameLabelIconHelper.showLabelIcon(view)) {
+		for (View view : views) {
+			if (NameLabelIconHelper.showLabelIcon(view)) {
 				return Activator.getInstance().getImage(parserElement.eClass());
 			}
 		}
@@ -108,6 +111,7 @@ public class NamedElementAffixedLabelNameEditPart extends AbstractElementLabelEd
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getLabelRole() {
 		return "Name"; //$NON-NLS-1$
 	}
@@ -115,6 +119,7 @@ public class NamedElementAffixedLabelNameEditPart extends AbstractElementLabelEd
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getIconPathRole() {
 		return ""; //$NON-NLS-1$
 	}

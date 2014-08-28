@@ -34,9 +34,9 @@ public class ExtendedURIToEObjects implements Function<IExtendedURI, Collection<
 
 	/**
 	 * Instantiates a new extended uri to e objects.
-	 * 
+	 *
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 */
 	public ExtendedURIToEObjects(ResourceSet resourceSet) {
 		super();
@@ -50,11 +50,11 @@ public class ExtendedURIToEObjects implements Function<IExtendedURI, Collection<
 	 */
 	@Override
 	public Collection<EObject> apply(IExtendedURI from) {
-		if(URIUtils.isEObject(from.getUri(), resourceSet)) {
+		if (URIUtils.isEObject(from.getUri(), resourceSet)) {
 			return Collections.singleton(resourceSet.getEObject(from.getUri(), false));
-		} else if(URIUtils.isResourceURI(from.getUri(), resourceSet)) {
+		} else if (URIUtils.isResourceURI(from.getUri(), resourceSet)) {
 			Resource resource = resourceSet.getResource(from.getUri(), false);
-			if(resource != null) {
+			if (resource != null) {
 				return resource.getContents();
 			}
 		}

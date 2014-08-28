@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -39,14 +39,13 @@ import org.eclipse.swt.widgets.Text;
 
 /**
  * Provide the composite for the query type selection.</p>
- * 
+ *
  * Label : [ combobox ] [ TextField ]
- * 
+ *
  * When the user select a {@link AbstractQueryDialogFactory}, the associated
- * dialog {@link GetQueryDialog} is created (with the method
- * {@link #createQueryWidgetDialog(AbstractQueryDialogFactory)} using the
+ * dialog {@link GetQueryDialog} is created (with the method {@link #createQueryWidgetDialog(AbstractQueryDialogFactory)} using the
  * attributes of the query type) and displayed.
- * 
+ *
  * @see Query
  * @see AbstractQueryDialogFactory
  * @see GetQueryDialog
@@ -64,7 +63,7 @@ public class SelectQueryTypeWidget extends AbstractWidget {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the composite.
 	 * @param properties
@@ -80,7 +79,7 @@ public class SelectQueryTypeWidget extends AbstractWidget {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the composite.
 	 * @param properties
@@ -131,7 +130,7 @@ public class SelectQueryTypeWidget extends AbstractWidget {
 
 	/**
 	 * Select the item in the combobox with the name in parameter.
-	 * 
+	 *
 	 * @param selection
 	 *            the name of the selection.
 	 */
@@ -200,7 +199,7 @@ public class SelectQueryTypeWidget extends AbstractWidget {
 	/**
 	 * Set the alert message that will be displayed if the checkbox is not
 	 * checked.
-	 * 
+	 *
 	 * @param alertMessage
 	 *            the alertMessage to set
 	 */
@@ -210,7 +209,7 @@ public class SelectQueryTypeWidget extends AbstractWidget {
 
 	/**
 	 * The action when an element of the combobox is selected.</p>
-	 * 
+	 *
 	 * If the default element is selected, the property value is set to null.
 	 */
 	protected IDialog<ICreateQueryWidget> onSelection() {
@@ -263,9 +262,9 @@ public class SelectQueryTypeWidget extends AbstractWidget {
 
 	/**
 	 * Check if the query is the query exists.
-	 * 
+	 *
 	 * @param query
-	 * 
+	 *
 	 * @return true if the query exists.
 	 */
 	protected boolean checkQuery(final Query query) {

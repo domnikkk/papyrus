@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ import org.eclipse.swt.widgets.TableColumn;
 
 /**
  * This dialog displays in a table the axis providers stored in a table's historic. It allows to choose one of them.
- * 
+ *
  */
 public class LoadCurrentAxisProvidersDialog extends Dialog {
 
@@ -56,9 +56,9 @@ public class LoadCurrentAxisProvidersDialog extends Dialog {
 	private IConfigRegistry registry;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 * @param iAxisProvidersHistory
 	 * @param currentColumnAxisProvider
@@ -73,15 +73,15 @@ public class LoadCurrentAxisProvidersDialog extends Dialog {
 
 	/**
 	 * Create the dialog.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#createDialogArea(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 * @return
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		final Composite composite = (Composite)super.createDialogArea(parent);
+		final Composite composite = (Composite) super.createDialogArea(parent);
 		GridLayout layout = new GridLayout(1, false);
 		composite.setLayout(layout);
 		viewer = new TableViewer(composite, (SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER));
@@ -93,9 +93,9 @@ public class LoadCurrentAxisProvidersDialog extends Dialog {
 
 			@Override
 			public String getText(Object element) {
-				AbstractAxisProvider provider = (AbstractAxisProvider)element;
+				AbstractAxisProvider provider = (AbstractAxisProvider) element;
 				String text = provider.getName();
-				if(currentColumnAxisProvider.equals(element)) {
+				if (currentColumnAxisProvider.equals(element)) {
 					text += Messages.LoadCurrentAxisProvidersDialog_3;
 				}
 				return text;
@@ -114,7 +114,7 @@ public class LoadCurrentAxisProvidersDialog extends Dialog {
 
 			@Override
 			public String getText(Object element) {
-				AbstractAxisProvider provider = (AbstractAxisProvider)element;
+				AbstractAxisProvider provider = (AbstractAxisProvider) element;
 				return provider.getDescription();
 			}
 		});
@@ -123,25 +123,25 @@ public class LoadCurrentAxisProvidersDialog extends Dialog {
 
 			@Override
 			public String getText(Object element) {
-				AbstractAxisProvider provider = (AbstractAxisProvider)element;
+				AbstractAxisProvider provider = (AbstractAxisProvider) element;
 				String text = ""; //$NON-NLS-1$
-				for(IAxis axis : provider.getAxis()) {
+				for (IAxis axis : provider.getAxis()) {
 					final Object representedElement = axis.getElement();
-					//					ILabelProviderContextElement contextEl = new LabelProviderContextElement(axis, registry);
-					//					LabelProviderService labelProvider = (ILabelProvider)registry.getConfigAttribute(NattableConfigAttributes.LABEL_PROVIDER_SERVICE_CONFIG_ATTRIBUTE, DisplayMode.NORMAL, NattableConfigAttributes.LABEL_PROVIDER_SERVICE_ID);
-					if(labelProvider != null) {
-						//						text += labelProvider.getText(contextEl) + ", ";
+					// ILabelProviderContextElement contextEl = new LabelProviderContextElement(axis, registry);
+					// LabelProviderService labelProvider = (ILabelProvider)registry.getConfigAttribute(NattableConfigAttributes.LABEL_PROVIDER_SERVICE_CONFIG_ATTRIBUTE, DisplayMode.NORMAL, NattableConfigAttributes.LABEL_PROVIDER_SERVICE_ID);
+					if (labelProvider != null) {
+						// text += labelProvider.getText(contextEl) + ", ";
 					} else {
-						if(representedElement instanceof ENamedElement) {
-							text += ((ENamedElement)representedElement).getName() + ", "; //$NON-NLS-1$
+						if (representedElement instanceof ENamedElement) {
+							text += ((ENamedElement) representedElement).getName() + ", "; //$NON-NLS-1$
 						} else {
 							final String string = representedElement.toString();
 							text += string.substring(string.lastIndexOf("::") + 2) + ", "; //$NON-NLS-1$ //$NON-NLS-2$
 						}
 					}
 				}
-				//We cut the remaining comma and space
-				if(!text.isEmpty()) {
+				// We cut the remaining comma and space
+				if (!text.isEmpty()) {
 					text = text.substring(0, text.length() - 2);
 				}
 				return text;
@@ -153,12 +153,12 @@ public class LoadCurrentAxisProvidersDialog extends Dialog {
 		viewer.setContentProvider(new ArrayContentProvider());
 		viewer.setInput(iAxisProvidersHistory);
 
-		//We add the listener for the selection
+		// We add the listener for the selection
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				StructuredSelection selection = (StructuredSelection)event.getSelection();
+				StructuredSelection selection = (StructuredSelection) event.getSelection();
 				setSelectedAxisProvider(selection.getFirstElement());
 			}
 
@@ -167,7 +167,7 @@ public class LoadCurrentAxisProvidersDialog extends Dialog {
 
 			@Override
 			public void doubleClick(DoubleClickEvent event) {
-				StructuredSelection selection = (StructuredSelection)event.getSelection();
+				StructuredSelection selection = (StructuredSelection) event.getSelection();
 				setSelectedAxisProvider(selection.getFirstElement());
 				close();
 			}
@@ -179,17 +179,17 @@ public class LoadCurrentAxisProvidersDialog extends Dialog {
 
 	/**
 	 * Set the axis provider selected by the user.
-	 * 
+	 *
 	 * @param firstElement
 	 */
 	private void setSelectedAxisProvider(Object firstElement) {
-		selectedAxisProvider = (AbstractAxisProvider)firstElement;
+		selectedAxisProvider = (AbstractAxisProvider) firstElement;
 	}
 
 
 	/**
 	 * Getter for the selected provider
-	 * 
+	 *
 	 * @return
 	 */
 	public AbstractAxisProvider getSelectedAxisProvider() {
@@ -199,7 +199,7 @@ public class LoadCurrentAxisProvidersDialog extends Dialog {
 
 	/**
 	 * Create columns
-	 * 
+	 *
 	 * @param title
 	 * @param bound
 	 * @param colNumber
@@ -218,7 +218,7 @@ public class LoadCurrentAxisProvidersDialog extends Dialog {
 
 	/**
 	 * Set a label provider to show labels for each one of the axis of every axis provider
-	 * 
+	 *
 	 * @param labelProvider
 	 */
 	public void setLabelProvider(ILabelProvider labelProvider) {

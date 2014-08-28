@@ -11,14 +11,14 @@
 package org.eclipse.papyrus.emf.facet.custom.ui.internal;
 
 import org.eclipse.emf.ecore.ETypedElement;
-import org.eclipse.papyrus.emf.facet.custom.ui.CustomizedContentProviderUtils;
-import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedLabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EAttributeTreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EReferenceTreeElement;
+import org.eclipse.papyrus.emf.facet.custom.ui.CustomizedContentProviderUtils;
+import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedLabelProvider;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Image;
@@ -36,14 +36,14 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image image;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			image = this.delegate.getImage(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
 			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
 			image = this.delegate.getImage(parent.getEObject(), treeElement.getEAttribute());
-		} 
-	
+		}
+
 		else {
 			image = this.delegate.getImage(CustomizedContentProviderUtils.resolve(element));
 		}
@@ -54,7 +54,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		String result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getText(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -102,7 +102,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		String result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getToolTipText(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -118,7 +118,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getToolTipImage(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -134,7 +134,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Font result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getToolTipFont(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -150,7 +150,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Color result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getToolTipBackgroundColor(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -166,7 +166,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Color result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getToolTipForegroundColor(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -182,7 +182,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getToolTipTopLeftOverlay(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -198,7 +198,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getToolTipTopMiddleOverlay(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -214,7 +214,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getToolTipTopRightOverlay(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -230,7 +230,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getToolTipBottomLeftOverlay(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -246,7 +246,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getToolTipBottomMiddleOverlay(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -262,7 +262,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getToolTipBottomRightOverlay(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -278,7 +278,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		int result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getToolTipTimeDisplayed(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -294,7 +294,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		int result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getToolTipDisplayDelayTime(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -310,7 +310,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		int result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getToolTipStyle(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -330,7 +330,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		boolean result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.isUnderlined(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -346,7 +346,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		boolean result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.isStruckthrough(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -362,7 +362,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getTopLeftOverlay(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -378,7 +378,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getTopMiddleOverlay(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -394,7 +394,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getTopRightOverlay(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -410,7 +410,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getBottomLeftOverlay(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -426,7 +426,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getBottomMiddleOverlay(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -442,7 +442,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getBottomRightOverlay(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -458,7 +458,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		String result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getText(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;
@@ -474,7 +474,7 @@ public class ResolvingCustomizedLabelProvider implements ICustomizedLabelProvide
 		Image result;
 		if (element instanceof EReferenceTreeElement) {
 			final EReferenceTreeElement treeElement = (EReferenceTreeElement) element;
-			final EObjectTreeElement parent = (EObjectTreeElement) treeElement.getParent();
+			final EObjectTreeElement parent = treeElement.getParent();
 			result = this.delegate.getImage(parent.getEObject(), treeElement.getEReference());
 		} else if (element instanceof EAttributeTreeElement) {
 			final EAttributeTreeElement treeElement = (EAttributeTreeElement) element;

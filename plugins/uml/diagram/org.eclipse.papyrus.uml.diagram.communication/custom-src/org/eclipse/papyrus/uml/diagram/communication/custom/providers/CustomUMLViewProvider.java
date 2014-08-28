@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia Dhouib saadia.dhouib@cea.fr  
+ *  Saadia Dhouib saadia.dhouib@cea.fr
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.communication.custom.providers;
@@ -43,9 +43,9 @@ import org.eclipse.papyrus.uml.diagram.communication.providers.UMLViewProvider;
 public class CustomUMLViewProvider extends UMLViewProvider {
 
 	/**
-	 * @see org.eclipse.papyrus.uml.diagram.communication.providers.UMLViewProvider#createEdge(org.eclipse.core.runtime.IAdaptable,
-	 *      org.eclipse.gmf.runtime.notation.View, java.lang.String, int, boolean, org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint)
-	 * 
+	 * @see org.eclipse.papyrus.uml.diagram.communication.providers.UMLViewProvider#createEdge(org.eclipse.core.runtime.IAdaptable, org.eclipse.gmf.runtime.notation.View, java.lang.String, int, boolean,
+	 *      org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint)
+	 *
 	 * @param semanticAdapter
 	 * @param containerView
 	 * @param semanticHint
@@ -54,10 +54,11 @@ public class CustomUMLViewProvider extends UMLViewProvider {
 	 * @param preferencesHint
 	 * @return the edge
 	 */
+	@Override
 	public Edge createEdge(IAdaptable semanticAdapter, View containerView, String semanticHint, int index, boolean persisted, PreferencesHint preferencesHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
-		String elementTypeHint = ((IHintedType)elementType).getSemanticHint();
-		switch(UMLVisualIDRegistry.getVisualID(elementTypeHint)) {
+		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
+		switch (UMLVisualIDRegistry.getVisualID(elementTypeHint)) {
 		case MessageEditPart.VISUAL_ID:
 			return customCreateMessage_8009(getSemanticElement(semanticAdapter), containerView, index, persisted, preferencesHint);
 		}
@@ -68,17 +69,17 @@ public class CustomUMLViewProvider extends UMLViewProvider {
 	/**
 	 * Custom create message_8009.
 	 * this method adds a customization to set the semantic element of the connection label to the domainElement which is a uml message in our case
-	 * 
+	 *
 	 * @param domainElement
-	 *        the domain element
+	 *            the domain element
 	 * @param containerView
-	 *        the container view
+	 *            the container view
 	 * @param index
-	 *        the index
+	 *            the index
 	 * @param persisted
-	 *        the persisted
+	 *            the persisted
 	 * @param preferencesHint
-	 *        the preferences hint
+	 *            the preferences hint
 	 * @return the edge
 	 */
 	@SuppressWarnings("unchecked")
@@ -93,27 +94,27 @@ public class CustomUMLViewProvider extends UMLViewProvider {
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
 		edge.setType(UMLVisualIDRegistry.getType(MessageEditPart.VISUAL_ID));
-		//the semantic element is no more associated to the edge
-		//edge.setElement(domainElement);
+		// the semantic element is no more associated to the edge
+		// edge.setElement(domainElement);
 		// initializePreferences
-		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initForegroundFromPrefs(edge, prefStore, "Message"); //$NON-NLS-1$
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(edge, prefStore, "Message"); //$NON-NLS-1$
-		//org.eclipse.gmf.runtime.notation.Routing routing = org.eclipse.gmf.runtime.notation.Routing.get(prefStore.getInt(org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_STYLE));
-		//if (routing != null) {
-		//	org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.setStructuralFeatureValue(edge, org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
-		//}
+		// org.eclipse.gmf.runtime.notation.Routing routing = org.eclipse.gmf.runtime.notation.Routing.get(prefStore.getInt(org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_STYLE));
+		// if (routing != null) {
+		// org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.setStructuralFeatureValue(edge, org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
+		// }
 		PreferenceInitializerForElementHelper.initRountingFromPrefs(edge, prefStore, "Message"); //$NON-NLS-1$
 		Node label6001 = createLabel(edge, UMLVisualIDRegistry.getType(MessageNameEditPart.VISUAL_ID));
 		label6001.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
-		Location location6001 = (Location)label6001.getLayoutConstraint();
+		Location location6001 = (Location) label6001.getLayoutConstraint();
 		location6001.setX(1);
 		location6001.setY(-23);
-		//added to set the element of the connection label to the domainElement which is a uml message in our case
+		// added to set the element of the connection label to the domainElement which is a uml message in our case
 		label6001.setElement(domainElement);
 		Node label6012 = createLabel(edge, UMLVisualIDRegistry.getType(AppliedStereotypeMessageEditPart.VISUAL_ID));
 		label6012.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
-		Location location6012 = (Location)label6012.getLayoutConstraint();
+		Location location6012 = (Location) label6012.getLayoutConstraint();
 		location6012.setX(1);
 		location6012.setY(-53);
 		return edge;

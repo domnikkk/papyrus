@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,8 +27,9 @@ public class DurationConstraintAutomaticRouter extends ObliqueRouter {
 		super();
 	}
 
+	@Override
 	protected void resetEndPointsToEdge(Connection conn, PointList newLine) {
-		if(newLine.size() < 2) {
+		if (newLine.size() < 2) {
 			/*
 			 * Connection must have at least 2 points in the list: the source
 			 * and target anchor points. Otherwise it's invalid connection.
@@ -42,7 +43,7 @@ public class DurationConstraintAutomaticRouter extends ObliqueRouter {
 		}
 
 		PrecisionPoint sourceAnchorPoint = null, targetAnchorPoint = null;
-		while(newLine.size() != 2) {
+		while (newLine.size() != 2) {
 			newLine.removePoint(1);
 		}
 		PrecisionPoint sourceReference = getAnchorReference(conn.getTargetAnchor());
@@ -70,7 +71,7 @@ public class DurationConstraintAutomaticRouter extends ObliqueRouter {
 	}
 
 	private double computeOffset(double x, double x2) {
-		if(Math.abs(x - x2) > 20) {
+		if (Math.abs(x - x2) > 20) {
 			return 20 * Math.signum(x - x2);
 		} else {
 			return (x - x2) * 0.5;

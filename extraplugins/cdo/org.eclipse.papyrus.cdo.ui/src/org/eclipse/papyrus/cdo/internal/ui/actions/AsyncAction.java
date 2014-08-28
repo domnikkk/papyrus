@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -63,10 +63,10 @@ public abstract class AsyncAction<T> extends BaseSelectionListenerAction {
 	protected T coerce(Object selection) {
 		T result = null;
 
-		if(type.isInstance(selection)) {
+		if (type.isInstance(selection)) {
 			result = type.cast(selection);
-		} else if(selection instanceof IAdaptable) {
-			result = type.cast(((IAdaptable)selection).getAdapter(type));
+		} else if (selection instanceof IAdaptable) {
+			result = type.cast(((IAdaptable) selection).getAdapter(type));
 		}
 
 		return result;
@@ -74,8 +74,8 @@ public abstract class AsyncAction<T> extends BaseSelectionListenerAction {
 
 	@Override
 	public void run() {
-		if(selection != null) {
-			if(gatherInput(selection)) {
+		if (selection != null) {
+			if (gatherInput(selection)) {
 				new Job(getText()) {
 
 					{
@@ -107,7 +107,7 @@ public abstract class AsyncAction<T> extends BaseSelectionListenerAction {
 	protected static IStatus wrap(Collection<? extends IStatus> statuses, String summary) {
 		IStatus result;
 
-		if(statuses.size() == 1) {
+		if (statuses.size() == 1) {
 			result = Iterables.getOnlyElement(statuses);
 		} else {
 			result = new MultiStatus(Activator.PLUGIN_ID, 0, Iterables.toArray(statuses, IStatus.class), summary, null);

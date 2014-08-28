@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ public class TPPreferenceConstants {
 	 * Options for trace implementation for operations
 	 */
 	public static final String P_TRACE_OPTION_STATE = "papyrus.trace.option.state"; //$NON-NLS-1$
-	
+
 	/**
 	 * Options for trace implementation via state machines
 	 */

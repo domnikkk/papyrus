@@ -49,10 +49,10 @@ public class CustomStyleObservableList extends EMFObservableList implements ICha
 
 	protected boolean changing = false;
 
-	//Equals to concreteList
+	// Equals to concreteList
 	protected IObservableList observableConcreteList;
 
-	//	protected final List<?> transientList;
+	// protected final List<?> transientList;
 
 	public CustomStyleObservableList(View view, String styleName, EditingDomain domain, EClass eClass, EStructuralFeature feature) {
 		super(getWrappedList(view, styleName, eClass, feature), domain, null, null);
@@ -61,7 +61,7 @@ public class CustomStyleObservableList extends EMFObservableList implements ICha
 		this.styleName = styleName;
 		this.view = view;
 		this.domain = domain;
-		observableConcreteList = (IObservableList)concreteList;
+		observableConcreteList = (IObservableList) concreteList;
 		styleExists = styleExists();
 
 		view.eAdapters().add(listener = new CustomStyleListener(view, feature, this, styleName));
@@ -75,12 +75,12 @@ public class CustomStyleObservableList extends EMFObservableList implements ICha
 	}
 
 	protected boolean styleExists() {
-		//getNamedStyle may return a volatile result when CSS are available. We want a persistent element, so we should call directly view#getStyles()
-		//Call directly view.getStyles() instead of view.getNamedStyle()
-		for(Style style : (List<Style>)view.getStyles()) {
-			if(eClass.isInstance(style)) {
-				NamedStyle namedStyle = (NamedStyle)style;
-				if(styleName.equals(namedStyle.getName())) {
+		// getNamedStyle may return a volatile result when CSS are available. We want a persistent element, so we should call directly view#getStyles()
+		// Call directly view.getStyles() instead of view.getNamedStyle()
+		for (Style style : (List<Style>) view.getStyles()) {
+			if (eClass.isInstance(style)) {
+				NamedStyle namedStyle = (NamedStyle) style;
+				if (styleName.equals(namedStyle.getName())) {
 					return true;
 				}
 			}
@@ -100,12 +100,12 @@ public class CustomStyleObservableList extends EMFObservableList implements ICha
 	private static IObservableList getWrappedList(View view, String styleName, EClass eClass, EStructuralFeature feature) {
 		NamedStyle style = view.getNamedStyle(eClass, styleName);
 
-		if(style != null) {
+		if (style != null) {
 			return EMFProperties.list(feature).observe(style);
 		}
 
-		//The style doesn't exist yet, we need to simulate it
-		//(With an empty list)
+		// The style doesn't exist yet, we need to simulate it
+		// (With an empty list)
 		return new WritableList();
 	}
 
@@ -146,17 +146,17 @@ public class CustomStyleObservableList extends EMFObservableList implements ICha
 
 	@Override
 	public void handleChange(ChangeEvent event) {
-		//If the ListValueStyle has been created or removed, we need to resync
-		//the concrete list with it
-		if(styleExists != (styleExists = styleExists())) {
+		// If the ListValueStyle has been created or removed, we need to resync
+		// the concrete list with it
+		if (styleExists != (styleExists = styleExists())) {
 			observableConcreteList.dispose();
 			concreteList = observableConcreteList = getConcreteList();
 			observableConcreteList.addChangeListener(this);
 		}
 
-		//If this observable is not the source of the change, the wrapped
-		//list should also be refreshed.
-		if(!changing) {
+		// If this observable is not the source of the change, the wrapped
+		// list should also be refreshed.
+		if (!changing) {
 			refreshCacheList();
 		}
 	}

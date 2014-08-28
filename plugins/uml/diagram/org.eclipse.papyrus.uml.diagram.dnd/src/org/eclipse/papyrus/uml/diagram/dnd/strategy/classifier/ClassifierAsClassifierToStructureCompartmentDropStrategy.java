@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,9 +33,9 @@ import org.eclipse.uml2.uml.Type;
  * A strategy to drop a classifier into the structure compartment (composite structure diagram). There are two options to do this.
  * (1) Drop the classifier itself. It is more likely that the user wants to do this, if the classifier is also a behavior.
  * (2) Create an property typed with the classifier.
- * 
+ *
  * @author Ansgar Radermacher
- * 
+ *
  */
 public class ClassifierAsClassifierToStructureCompartmentDropStrategy extends TransactionalDropStrategy {
 
@@ -60,25 +60,25 @@ public class ClassifierAsClassifierToStructureCompartmentDropStrategy extends Tr
 	}
 
 	public void setOptions(Map<String, Object> options) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public Command doGetCommand(Request request, EditPart targetEditPart) {
 
-		if(!(request instanceof DropObjectsRequest)) {
+		if (!(request instanceof DropObjectsRequest)) {
 			return null;
 		}
-		DropObjectsRequest dropRequest = (DropObjectsRequest)request;
+		DropObjectsRequest dropRequest = (DropObjectsRequest) request;
 		EObject targetSemanticElement = getTargetSemanticElement(targetEditPart);
 
-		if((targetSemanticElement instanceof StructuredClassifier) &&
-			(dropRequest.getLocation() != null) &&
-			(targetEditPart instanceof GraphicalEditPart)) {
-			GraphicalEditPart gtEditPart = (GraphicalEditPart)targetEditPart;
-			
-			TypeHelper helper = new TypeHelper((TransactionalEditingDomain)getEditingDomain(targetEditPart));
-			
+		if ((targetSemanticElement instanceof StructuredClassifier) &&
+				(dropRequest.getLocation() != null) &&
+				(targetEditPart instanceof GraphicalEditPart)) {
+			GraphicalEditPart gtEditPart = (GraphicalEditPart) targetEditPart;
+
+			TypeHelper helper = new TypeHelper((TransactionalEditingDomain) getEditingDomain(targetEditPart));
+
 			Point location = dropRequest.getLocation().getCopy();
 			gtEditPart.getContentPane().translateToRelative(location);
 			gtEditPart.getContentPane().translateFromParent(location);
@@ -86,12 +86,12 @@ public class ClassifierAsClassifierToStructureCompartmentDropStrategy extends Tr
 
 			CompoundCommand cc = new CompoundCommand();
 
-			for(EObject dropElement : getSourceEObjects(request)) {
-				if(dropElement instanceof Type) {
+			for (EObject dropElement : getSourceEObjects(request)) {
+				if (dropElement instanceof Type) {
 					Type type = (Type) dropElement;
 					// check whether element is a nested classifier of the targetSemanticElement
 					if (type.allNamespaces().contains(targetSemanticElement)) {
-						cc.add(helper.dropTypeOnClassifier(gtEditPart, (Type)dropElement, location));
+						cc.add(helper.dropTypeOnClassifier(gtEditPart, (Type) dropElement, location));
 					}
 				}
 			}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -57,6 +57,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 
 
@@ -222,13 +223,13 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/**
 	 * Creates a new instance of this class.
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell for this dialog
+	 *            the parent shell for this dialog
 	 * @param selectedText
-	 *        the selected text
+	 *            the selected text
 	 * @param possibleText
-	 *        the possible text
+	 *            the possible text
 	 */
 	public ChooseSetAssistedDialog(Shell parentShell, String possibleText, String selectedText) {
 		super(parentShell);
@@ -237,11 +238,11 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 		setShellStyle(SWT.RESIZE | super.getShellStyle());
 
 		// set the text for labels ubove elements lists
-		if(possibleText != null) {
-			this.possibleText = possibleText; //set possible Text
+		if (possibleText != null) {
+			this.possibleText = possibleText; // set possible Text
 		}
-		if(selectedText != null) {
-			this.selectedText = selectedText;//set selected Label
+		if (selectedText != null) {
+			this.selectedText = selectedText;// set selected Label
 		}
 
 		// create listeners
@@ -256,14 +257,14 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.ui.dialogs.ChooseSetDialog#createButtonsForButtonBar(org.eclipse.swt.widgets.Composite)
 	 */
 	/**
 	 * Creates the buttons for button bar.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
@@ -274,21 +275,21 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#createDialogArea(org.eclipse.swt.widgets.Composite)
 	 */
 	/**
 	 * Creates the dialog area.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
-	 * 
+	 *            the parent
+	 *
 	 * @return the control
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		//place all composites
-		Composite comp = (Composite)super.createDialogArea(parent);
+		// place all composites
+		Composite comp = (Composite) super.createDialogArea(parent);
 		FormLayout layout = new FormLayout();
 		comp.setLayout(layout);
 
@@ -327,9 +328,9 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/**
 	 * Create elements in the dialog.
-	 * 
+	 *
 	 * @param comp
-	 *        the parent composite
+	 *            the parent composite
 	 */
 	private void createElements(Composite comp) {
 		// buttons
@@ -478,22 +479,22 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 		// replace all text
 		adapter.setProposalAcceptanceStyle(ContentProposalAdapter.PROPOSAL_REPLACE);
 
-		//this listener is activated when a stereotype item in popup menu is selected and
-		//the popup menu is closed. It is used to add the selected stereotype in to the right hand side part
-		//of the dialog, so that uers can economize one key hit.
-		//cf. proposalAccepted() operation in KeyTextListener
+		// this listener is activated when a stereotype item in popup menu is selected and
+		// the popup menu is closed. It is used to add the selected stereotype in to the right hand side part
+		// of the dialog, so that uers can economize one key hit.
+		// cf. proposalAccepted() operation in KeyTextListener
 		adapter.addContentProposalListener(keyTextListener);
 
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.ui.dialogs.IChooseDialog#getValue()
 	 */
 	/**
 	 * Gets the value.
-	 * 
+	 *
 	 * @return the value
 	 */
 	public Object getValue() {
@@ -504,9 +505,9 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 	 * Behavior for the add button.
 	 */
 	protected void runActionAdd() {
-		IStructuredSelection selection = (IStructuredSelection)possibleElementsTableViewer.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) possibleElementsTableViewer.getSelection();
 		Iterator it = selection.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			runActionAdd(it.next());
 		}
 	}
@@ -514,9 +515,9 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 	/**
 	 * adds the element to the list of selected elements and remove it from the
 	 * list of possible elements.
-	 * 
+	 *
 	 * @param element
-	 *        the element to add to the selected elements list
+	 *            the element to add to the selected elements list
 	 */
 	public void runActionAdd(Object element) {
 		// remove to possible list
@@ -531,9 +532,9 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 	 * Behavior for the delete button.
 	 */
 	protected void runActionRemove() {
-		IStructuredSelection selection = (IStructuredSelection)selectedElementsTableViewer.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) selectedElementsTableViewer.getSelection();
 		Iterator it = selection.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			runActionRemove(it.next());
 		}
 	}
@@ -541,9 +542,9 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 	/**
 	 * adds the element to the list of possible elements and remove it from the
 	 * list of selected elements.
-	 * 
+	 *
 	 * @param element
-	 *        the element to remove from the selected elements list
+	 *            the element to remove from the selected elements list
 	 */
 	protected void runActionRemove(Object element) {
 		// remove to selected list
@@ -557,18 +558,18 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 	 * Behavior for the up button.
 	 */
 	protected void runActionUp() {
-		IStructuredSelection selection = (IStructuredSelection)selectedElementsTableViewer.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) selectedElementsTableViewer.getSelection();
 		Iterator it = selection.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			runActionUp(it.next());
 		}
 	}
 
 	/**
 	 * Moves the given element up in the selected element list.
-	 * 
+	 *
 	 * @param element
-	 *        the element to move
+	 *            the element to move
 	 */
 	protected void runActionUp(Object element) {
 		selectedElementList.moveElementUp(element);
@@ -578,18 +579,18 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 	 * Behavior for the bottom button.
 	 */
 	protected void runActionDown() {
-		IStructuredSelection selection = (IStructuredSelection)selectedElementsTableViewer.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) selectedElementsTableViewer.getSelection();
 		Iterator it = selection.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			runActionDown(it.next());
 		}
 	}
 
 	/**
 	 * Moves the given element down in the selected element list.
-	 * 
+	 *
 	 * @param element
-	 *        the element to move
+	 *            the element to move
 	 */
 	protected void runActionDown(Object element) {
 		selectedElementList.moveElementDown(element);
@@ -597,33 +598,33 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/**
 	 * Behavior when item is double clicked in the possible element list.
-	 * 
+	 *
 	 * @param item
-	 *        the item
+	 *            the item
 	 */
 	protected void runAddItem(TableItem item) {
-		if(item != null) {
+		if (item != null) {
 			runActionAdd(item.getData());
 		}
 	}
 
 	/**
 	 * Behavior when item is double clicked in the selected element list.
-	 * 
+	 *
 	 * @param item
-	 *        the item
+	 *            the item
 	 */
 	protected void runRemoveItem(TableItem item) {
-		if(item != null) {
+		if (item != null) {
 			runActionRemove(item.getData());
 		}
 	}
 
 	/**
 	 * adds the element to the selected element list, given its name.
-	 * 
+	 *
 	 * @param name
-	 *        the name of the element to add
+	 *            the name of the element to add
 	 */
 	protected void runAddElement(String name) {
 
@@ -631,11 +632,11 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/**
 	 * Returns the default label provider.
-	 * 
+	 *
 	 * @return the default label provider
 	 */
 	protected ILabelProvider getLabelProvider() {
-		if(labelProvider == null) {
+		if (labelProvider == null) {
 			labelProvider = new LabelProvider();
 		}
 		return labelProvider;
@@ -644,11 +645,11 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 	/**
 	 * Returns the default content proposal provider which is added to the Text
 	 * area (Singleton pattern).
-	 * 
+	 *
 	 * @return the content proposal provider which is added to the Text area
 	 */
 	protected IContentProposalProvider getContentProposalProvider() {
-		if(decoratedContentProposalProvider == null) {
+		if (decoratedContentProposalProvider == null) {
 			decoratedContentProposalProvider = new DecoratedContentProposalProvider();
 		}
 		return decoratedContentProposalProvider;
@@ -656,10 +657,10 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/**
 	 * Checks if the element is selectable or not.
-	 * 
+	 *
 	 * @param text
-	 *        the text
-	 * 
+	 *            the text
+	 *
 	 * @return <code>true</code> if the element is selectable
 	 */
 	protected boolean isSelectableElement(String text) {
@@ -668,19 +669,19 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/**
 	 * Returns the list of selected elements.
-	 * 
+	 *
 	 * @return the list of selected elements
 	 */
 	public ArrayList getSelectedElements() {
 		return selectedElementList.getElements();
 	}
 
-	///////////////////////////////////////////////////////////////////////////
-	//	Inner classes: listener for the buttons and items of the list
-	///////////////////////////////////////////////////////////////////////////
+	// /////////////////////////////////////////////////////////////////////////
+	// Inner classes: listener for the buttons and items of the list
+	// /////////////////////////////////////////////////////////////////////////
 	/**
 	 * listener of the button to add an element from possiblelist into selectedList.
-	 * 
+	 *
 	 * @author Patrick Tessier
 	 */
 	protected class AddButtonListener implements MouseListener {
@@ -693,27 +694,27 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Mouse double click.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseDoubleClick(MouseEvent e) {
 		}
 
 		/**
 		 * Mouse down.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseDown(MouseEvent e) {
 		}
 
 		/**
 		 * Mouse up.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseUp(MouseEvent e) {
 			runActionAdd();
@@ -722,7 +723,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/**
 	 * Listener of the button to move an element from selectedList into possiblelist.
-	 * 
+	 *
 	 * @author Patrick Tessier
 	 */
 	protected class RemoveButtonListener implements MouseListener {
@@ -735,27 +736,27 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Mouse double click.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseDoubleClick(MouseEvent e) {
 		}
 
 		/**
 		 * Mouse down.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseDown(MouseEvent e) {
 		}
 
 		/**
 		 * Mouse up.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseUp(MouseEvent e) {
 			runActionRemove();
@@ -764,7 +765,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/**
 	 * listener of the button to move up an element.
-	 * 
+	 *
 	 * @author Patrick Tessier
 	 */
 	protected class UpButtonListener implements MouseListener {
@@ -777,27 +778,27 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Mouse double click.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseDoubleClick(MouseEvent e) {
 		}
 
 		/**
 		 * Mouse down.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseDown(MouseEvent e) {
 		}
 
 		/**
 		 * Mouse up.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseUp(MouseEvent e) {
 			runActionUp();
@@ -806,7 +807,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/**
 	 * listener of the button to move down an element.
-	 * 
+	 *
 	 * @author Patrick Tessier
 	 */
 	protected class DownButtonListener implements MouseListener {
@@ -819,27 +820,27 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Mouse double click.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseDoubleClick(MouseEvent e) {
 		}
 
 		/**
 		 * Mouse down.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseDown(MouseEvent e) {
 		}
 
 		/**
 		 * Mouse up.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseUp(MouseEvent e) {
 			runActionDown();
@@ -848,7 +849,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/**
 	 * listener to add an item from the table.
-	 * 
+	 *
 	 * @author Remi Schnekenburger
 	 */
 	protected class AddItemListener implements MouseListener {
@@ -861,9 +862,9 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Mouse double click.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseDoubleClick(MouseEvent e) {
 			runAddItem(getItem(e));
@@ -871,18 +872,18 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Mouse down.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseDown(MouseEvent e) {
 		}
 
 		/**
 		 * Mouse up.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseUp(MouseEvent e) {
 		}
@@ -890,7 +891,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/**
 	 * listener to remove an item from the table.
-	 * 
+	 *
 	 * @author Remi Schnekenburger
 	 */
 	protected class RemoveItemListener implements MouseListener {
@@ -903,9 +904,9 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Mouse double click.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseDoubleClick(MouseEvent e) {
 			runRemoveItem(getItem(e));
@@ -913,18 +914,18 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Mouse down.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseDown(MouseEvent e) {
 		}
 
 		/**
 		 * Mouse up.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void mouseUp(MouseEvent e) {
 		}
@@ -934,26 +935,26 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 	 * Listener for the {@link Text} area. On "Carriage Return"key event, tries
 	 * to add the element entered in the text area in the selected element list
 	 * and clear the Text area.
-	 * 
+	 *
 	 * @author Remi Schnekenburger
 	 */
 	protected class KeyTextListener implements KeyListener, IContentProposalListener {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.swt.events.KeyListener#keyPressed(org.eclipse.swt.events.KeyEvent)
 		 */
 		/**
 		 * Key pressed.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void keyPressed(KeyEvent e) {
 			// if "enter" pressed and text is valid, add element to selected elements
-			if(e.keyCode == SWT.CR) {
-				if(isSelectableElement(possibleElementsText.getText())) {
+			if (e.keyCode == SWT.CR) {
+				if (isSelectableElement(possibleElementsText.getText())) {
 					runAddElement(possibleElementsText.getText());
 					possibleElementsText.setText("");
 				}
@@ -962,14 +963,14 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.swt.events.KeyListener#keyReleased(org.eclipse.swt.events.KeyEvent)
 		 */
 		/**
 		 * Key released.
-		 * 
+		 *
 		 * @param e
-		 *        the e
+		 *            the e
 		 */
 		public void keyReleased(KeyEvent e) {
 			// do nothing
@@ -979,7 +980,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 		 * {@inheritDoc}
 		 */
 		public void proposalAccepted(IContentProposal proposal) {
-			if(isSelectableElement(proposal.getContent())) {
+			if (isSelectableElement(proposal.getContent())) {
 				runAddElement(proposal.getContent());
 			}
 
@@ -988,23 +989,23 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/**
 	 * Returns the item on which a mouse event happened.
-	 * 
+	 *
 	 * @param event
-	 *        the mouse event that happened on the item
-	 * 
+	 *            the mouse event that happened on the item
+	 *
 	 * @return the retrieved item
 	 */
 	protected TableItem getItem(MouseEvent event) {
-		TableItem[] items = ((Table)event.getSource()).getSelection();
-		if(items.length > 0) {
+		TableItem[] items = ((Table) event.getSource()).getSelection();
+		if (items.length > 0) {
 			return items[0];
 		}
 		return null;
 	}
 
-	///////////////////////////////////////////////////////////////////////////
-	//	CONTENT PROPOSALS
-	///////////////////////////////////////////////////////////////////////////
+	// /////////////////////////////////////////////////////////////////////////
+	// CONTENT PROPOSALS
+	// /////////////////////////////////////////////////////////////////////////
 	/**
 	 * The Class DecoratedContentProposal.
 	 */
@@ -1022,11 +1023,11 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Default Constructor.
-		 * 
+		 *
 		 * @param element
-		 *        the element
+		 *            the element
 		 * @param labelProvider
-		 *        the {@link LabelProvider} to decorate text
+		 *            the {@link LabelProvider} to decorate text
 		 */
 		public DecoratedContentProposal(Object element, LabelProvider labelProvider) {
 			this.labelProvider = labelProvider;
@@ -1035,7 +1036,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Gets the content.
-		 * 
+		 *
 		 * @return the content
 		 */
 		public String getContent() {
@@ -1044,7 +1045,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Gets the cursor position.
-		 * 
+		 *
 		 * @return the cursor position
 		 */
 		public int getCursorPosition() {
@@ -1053,7 +1054,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Gets the description.
-		 * 
+		 *
 		 * @return the description
 		 */
 		public String getDescription() {
@@ -1062,7 +1063,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Gets the label.
-		 * 
+		 *
 		 * @return the label
 		 */
 		public String getLabel() {
@@ -1071,7 +1072,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Gets the image.
-		 * 
+		 *
 		 * @return the image
 		 */
 		public Image getImage() {
@@ -1080,10 +1081,10 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/**
 		 * Compare to.
-		 * 
+		 *
 		 * @param o
-		 *        the o
-		 * 
+		 *            the o
+		 *
 		 * @return the int
 		 */
 		public int compareTo(DecoratedContentProposal o) {
@@ -1096,19 +1097,19 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 	 * Base class to propose content with a label and an image.
 	 * NOTA: quick asssist processor does not actually support decorated
 	 * proposals. Should be implemented...
-	 * 
+	 *
 	 * @author Remi Schnekenburger
 	 */
 	protected class DecoratedContentProposalProvider implements IContentProposalProvider {
 
 		/**
 		 * Gets the proposals.
-		 * 
+		 *
 		 * @param contents
-		 *        the contents
+		 *            the contents
 		 * @param position
-		 *        the position
-		 * 
+		 *            the position
+		 *
 		 * @return the proposals
 		 */
 		public DecoratedContentProposal[] getProposals(String contents, int position) {
@@ -1124,31 +1125,31 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 		 */
 		/**
 		 * Input changed.
-		 * 
+		 *
 		 * @param newInput
-		 *        the new input
+		 *            the new input
 		 * @param oldInput
-		 *        the old input
+		 *            the old input
 		 * @param v
-		 *        the v
+		 *            the v
 		 */
 		public void inputChanged(Viewer v, Object oldInput, Object newInput) {
-			if(newInput != null) {
-				((ElementList)newInput).addChangeListener(this);
+			if (newInput != null) {
+				((ElementList) newInput).addChangeListener(this);
 			}
-			if(oldInput != null) {
-				((ElementList)oldInput).removeChangeListener(this);
+			if (oldInput != null) {
+				((ElementList) oldInput).removeChangeListener(this);
 			}
 		}
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
 		 */
 		/**
@@ -1161,10 +1162,10 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 		// Return the tasks as an array of Objects
 		/**
 		 * Gets the elements.
-		 * 
+		 *
 		 * @param parent
-		 *        the parent
-		 * 
+		 *            the parent
+		 *
 		 * @return the elements
 		 */
 		public Object[] getElements(Object parent) {
@@ -1173,14 +1174,14 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see com.cea.papyrus.ui.dialogs.IListViewer#addElement(java.lang.Object)
 		 */
 		/**
 		 * Adds the element.
-		 * 
+		 *
 		 * @param element
-		 *        the element
+		 *            the element
 		 */
 		public void addElement(Object element) {
 			possibleElementsTableViewer.add(element);
@@ -1188,14 +1189,14 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see com.cea.papyrus.ui.dialogs.IListViewer#removeElement(java.lang.Object)
 		 */
 		/**
 		 * Removes the element.
-		 * 
+		 *
 		 * @param element
-		 *        the element
+		 *            the element
 		 */
 		public void removeElement(Object element) {
 			possibleElementsTableViewer.remove(element);
@@ -1203,14 +1204,14 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see com.cea.papyrus.ui.dialogs.IListViewer#updateElement(java.lang.Object)
 		 */
 		/**
 		 * Update element.
-		 * 
+		 *
 		 * @param element
-		 *        the element
+		 *            the element
 		 */
 		public void updateElement(Object element) {
 			possibleElementsTableViewer.refresh();
@@ -1225,31 +1226,31 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 		 */
 		/**
 		 * Input changed.
-		 * 
+		 *
 		 * @param newInput
-		 *        the new input
+		 *            the new input
 		 * @param oldInput
-		 *        the old input
+		 *            the old input
 		 * @param v
-		 *        the v
+		 *            the v
 		 */
 		public void inputChanged(Viewer v, Object oldInput, Object newInput) {
-			if(newInput != null) {
-				((ElementList)newInput).addChangeListener(this);
+			if (newInput != null) {
+				((ElementList) newInput).addChangeListener(this);
 			}
-			if(oldInput != null) {
-				((ElementList)oldInput).removeChangeListener(this);
+			if (oldInput != null) {
+				((ElementList) oldInput).removeChangeListener(this);
 			}
 		}
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
 		 */
 		/**
@@ -1262,10 +1263,10 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 		// Return the tasks as an array of Objects
 		/**
 		 * Gets the elements.
-		 * 
+		 *
 		 * @param parent
-		 *        the parent
-		 * 
+		 *            the parent
+		 *
 		 * @return the elements
 		 */
 		public Object[] getElements(Object parent) {
@@ -1274,14 +1275,14 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see com.cea.papyrus.ui.dialogs.IListViewer#addElement(java.lang.Object)
 		 */
 		/**
 		 * Adds the element.
-		 * 
+		 *
 		 * @param element
-		 *        the element
+		 *            the element
 		 */
 		public void addElement(Object element) {
 			selectedElementsTableViewer.add(element);
@@ -1289,14 +1290,14 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see com.cea.papyrus.ui.dialogs.IListViewer#removeElement(java.lang.Object)
 		 */
 		/**
 		 * Removes the element.
-		 * 
+		 *
 		 * @param element
-		 *        the element
+		 *            the element
 		 */
 		public void removeElement(Object element) {
 			selectedElementsTableViewer.remove(element);
@@ -1304,14 +1305,14 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see com.cea.papyrus.ui.dialogs.IListViewer#updateElement(java.lang.Object)
 		 */
 		/**
 		 * Update element.
-		 * 
+		 *
 		 * @param element
-		 *        the element
+		 *            the element
 		 */
 		public void updateElement(Object element) {
 			selectedElementsTableViewer.refresh();
@@ -1323,23 +1324,23 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/**
 	 * Long running class to set input.
-	 * 
+	 *
 	 * @see WorkspaceModifyOperation
 	 */
 	private class InputOperation implements IRunnableWithProgress {
 
 
 		/**
-		 * 
-		 * 
+		 *
+		 *
 		 * @param monitor
-		 * 
+		 *
 		 * @throws CoreException
 		 * @throws InterruptedException
 		 * @throws InvocationTargetException
 		 */
 		protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
-			//  should run in a separate process
+			// should run in a separate process
 			possibleElementsTableViewer = new TableViewer(possibleElementsTable);
 			possibleElementsTableViewer.setLabelProvider(getLabelProvider());
 			possibleElementsTableViewer.setContentProvider(new PossibleElementsContentProvider());
@@ -1355,9 +1356,9 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 		 * The <code>WorkspaceModifyOperation</code> implementation of this <code>IRunnableWithProgress</code> method initiates a batch of changes by
 		 * invoking the <code>execute</code> method as a workspace runnable
 		 * (<code>IWorkspaceRunnable</code>).
-		 * 
+		 *
 		 * @param monitor
-		 * 
+		 *
 		 * @throws InterruptedException
 		 * @throws InvocationTargetException
 		 */
@@ -1387,7 +1388,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 				throw new InterruptedException(e.getMessage());
 			}
 			// Re-throw the InvocationTargetException, if any occurred
-			if(iteHolder[0] != null) {
+			if (iteHolder[0] != null) {
 				throw iteHolder[0];
 			}
 		}

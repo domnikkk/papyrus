@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.serviceregistry.internal;
 
@@ -10,20 +10,20 @@ import org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry;
 
 /**
  * An alias can be used to access a service using another name.
- * 
+ *
  * @author cedric dumoulin
  */
 public class AliasServiceEntry extends ServiceTypeEntry {
 
 	/** The real service entry. */
-	//	private ServiceTypeEntry referencedService;
+	// private ServiceTypeEntry referencedService;
 
 	/** The instance of the real service. */
 	private Object serviceInstance;
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param serviceDescriptor
 	 */
 	public AliasServiceEntry(ServiceDescriptor serviceDescriptor) {
@@ -33,10 +33,10 @@ public class AliasServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Get the service instance.
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
-	 *         If service can't be started.
+	 *             If service can't be started.
 	 */
 	@Override
 	public Object getServiceInstance() throws ServiceException {
@@ -48,7 +48,7 @@ public class AliasServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Already created : do nothing.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -60,10 +60,10 @@ public class AliasServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Try to get the instance of the referenced service.
-	 * 
+	 *
 	 * @param servicesRegistry
-	 *        The servicesRegistry containing this service.
-	 * 
+	 *            The servicesRegistry containing this service.
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class AliasServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Already started : do nothing.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override

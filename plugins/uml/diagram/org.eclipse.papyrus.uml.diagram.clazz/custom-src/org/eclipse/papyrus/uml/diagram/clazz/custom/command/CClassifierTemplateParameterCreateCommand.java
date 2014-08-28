@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,11 +36,12 @@ public class CClassifierTemplateParameterCreateCommand extends ClassifierTemplat
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		ClassifierTemplateParameter newElement = UMLFactory.eINSTANCE.createClassifierTemplateParameter();
-		TemplateSignature owner = (TemplateSignature)getElementToEdit();
+		TemplateSignature owner = (TemplateSignature) getElementToEdit();
 		owner.getOwnedParameters().add(newElement);
-		TemplateSignature childHolder = (TemplateSignature)getElementToEdit();
+		TemplateSignature childHolder = (TemplateSignature) getElementToEdit();
 		childHolder.getParameters().add(newElement);
 		TemplateParameterConfigurationDialog configurationDialog = new TemplateParameterConfigurationDialog(new Shell(), SWT.APPLICATION_MODAL, UMLPackage.eINSTANCE.getClassifier());
 		configurationDialog.setOwner(childHolder);
@@ -48,7 +49,7 @@ public class CClassifierTemplateParameterCreateCommand extends ClassifierTemplat
 		newElement.setParameteredElement(configurationDialog.getParameterableElement());
 		newElement.setDefault(configurationDialog.getDefaultparameterableElement());
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 }

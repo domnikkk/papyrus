@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -18,7 +18,7 @@ import org.eclipse.papyrus.xwt.metadata.ILoadingType;
 
 /**
  * This class is used to extend the Java Bean model
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class DynamicProperty extends AbstractProperty {
@@ -51,7 +51,7 @@ public class DynamicProperty extends AbstractProperty {
 	}
 
 	public Object getValue(Object target) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
-		return getter.invoke(target, (Object[])null);
+		return getter.invoke(target, (Object[]) null);
 	}
 
 	protected static Method createSetter0(Class<?> type, Class<?> propertyType, String name) {

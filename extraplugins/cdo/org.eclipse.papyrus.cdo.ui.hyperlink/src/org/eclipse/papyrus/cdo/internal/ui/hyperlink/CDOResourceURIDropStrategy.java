@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -70,31 +70,31 @@ public class CDOResourceURIDropStrategy extends TransactionalDropStrategy {
 
 	@Override
 	protected Command doGetCommand(Request request, EditPart targetEditPart) {
-		if(request instanceof DropObjectsRequest) {
+		if (request instanceof DropObjectsRequest) {
 			View view = getTargetView(targetEditPart);
-			if(view == null) {
+			if (view == null) {
 				return null;
 			}
 
 			final View mainView = SemanticElementHelper.findPrimaryView(view);
-			if(mainView instanceof Diagram) {
+			if (mainView instanceof Diagram) {
 				// don't create hyperlinks on the diagram surface
 				return null;
 			}
 
-			final DropObjectsRequest dropRequest = (DropObjectsRequest)request;
+			final DropObjectsRequest dropRequest = (DropObjectsRequest) request;
 			List<URI> hyperlinkURIs = null;
 
-			for(EObject next : Iterables.filter(dropRequest.getObjects(), EObject.class)) {
-				if(CDOResourceURITransferData.isCDOResourceURITransferData(next)) {
-					if(hyperlinkURIs == null) {
+			for (EObject next : Iterables.filter(dropRequest.getObjects(), EObject.class)) {
+				if (CDOResourceURITransferData.isCDOResourceURITransferData(next)) {
+					if (hyperlinkURIs == null) {
 						hyperlinkURIs = Lists.newArrayListWithCapacity(dropRequest.getObjects().size());
 					}
 					hyperlinkURIs.addAll(CDOResourceURITransferData.fromEObject(next).getURIs());
 				}
 			}
 
-			if(hyperlinkURIs != null) {
+			if (hyperlinkURIs != null) {
 				final TransactionalEditingDomain domain = getTransactionalEditingDomain(targetEditPart);
 
 				final List<URI> _hyperlinkURIs = hyperlinkURIs;
@@ -102,7 +102,7 @@ public class CDOResourceURIDropStrategy extends TransactionalDropStrategy {
 
 					@Override
 					public void execute() {
-						for(URI next : _hyperlinkURIs) {
+						for (URI next : _hyperlinkURIs) {
 							new CreateCDOResourceHyperlinkCommand(domain, mainView, next.lastSegment(), next, false).execute();
 						}
 					}

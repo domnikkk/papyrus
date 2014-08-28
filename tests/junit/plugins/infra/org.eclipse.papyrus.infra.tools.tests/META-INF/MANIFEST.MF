@@ -1,14 +1,22 @@
 Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Papyrus Infrastructure Tools Tests
-Bundle-SymbolicName: org.eclipse.papyrus.infra.tools.tests;singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: Eclipse Modeling Project
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.junit;bundle-version="4.10.0",
- org.eclipse.papyrus.junit.utils;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.tools;bundle-version="1.0.0",
+ org.eclipse.papyrus.junit.framework;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.tools;bundle-version="1.0.1",
  org.eclipse.swt;bundle-version="3.100.0",
- org.eclipse.core.runtime;bundle-version="3.10.0"
-Export-Package: org.eclipse.papyrus.infra.tools.tests,
+ org.eclipse.core.runtime;bundle-version="3.10.0",
+ org.eclipse.core.databinding;bundle-version="1.4.0",
+ org.eclipse.core.databinding.beans;bundle-version="1.2.0",
+ org.eclipse.core.databinding.property;bundle-version="1.4.0",
+ com.google.guava;bundle-version="11.0.0",
+ org.eclipse.papyrus.junit.utils;bundle-version="1.0.1"
+Export-Package: org.eclipse.papyrus.infra.tools.databinding,
+ org.eclipse.papyrus.infra.tools.tests,
  org.eclipse.papyrus.infra.tools.util
+Bundle-Vendor: Eclipse Modeling Project
+Bundle-Version: 1.0.1.qualifier
+Bundle-Name: Papyrus Infrastructure Tools Tests
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.papyrus.infra.tools.tests;singleton:=
+ true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

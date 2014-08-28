@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,25 +32,26 @@ import org.eclipse.uml2.uml.PrimitiveType;
 public class SignatureFacadeFactory {
 
 	public static SignatureFacadeFactory eInstance = new SignatureFacadeFactory() ;
-	
+
 	public SignatureFacade createSignatureFacade(EObject o) {
 		return new SignatureFacade(o) ;
 	}
-	
+
 	public SignatureFacade createConstructorFacade(InstanceCreationExpression exp) throws Exception {
 		List<TypeExpression> arguments = new ArrayList<TypeExpression>() ;
 		Map<String, TypeExpression> argumentsMap = new HashMap<String, TypeExpression>() ;
-		
+
 		if (exp.getTuple().getInstanceCreationTupleElement() != null) {
 			for (InstanceCreationTupleElement tupleElement : exp.getTuple().getInstanceCreationTupleElement()) {
 				TypeExpression typeOfArgument = new TypeUtils().getTypeOfExpression(tupleElement.getObject()) ;
-				if (typeOfArgument.getTypeFacade() instanceof ErrorTypeFacade)
+				if (typeOfArgument.getTypeFacade() instanceof ErrorTypeFacade) {
 					throw new TypeInferenceException(typeOfArgument) ;
+				}
 				arguments.add(typeOfArgument) ;
 				argumentsMap.put(tupleElement.getRole(), typeOfArgument) ;
 			}
 		}
-		
+
 		// first try to determine if the expression directly refers to a Class or a DataType
 		TypeFacade cddClassifier = TypeFacadeFactory.eInstance.createVoidFacade(exp.getConstructor()) ;
 		boolean errorInResolutionOfClassifier = false ;
@@ -78,15 +79,20 @@ public class SignatureFacadeFactory {
 					List<SignatureFacade> visibleConstructorSignatures = new ArrayList<SignatureFacade>() ;
 					for (EObject cddConstructor : visibleConstructor) {
 						SignatureFacade cddConstructorSignature = SignatureFacadeFactory.eInstance.createSignatureFacade(cddConstructor) ;
-						if (cddConstructorSignature.isAConstructor())
+						if (cddConstructorSignature.isAConstructor()) {
 							visibleConstructorSignatures.add(cddConstructorSignature) ;
+						}
 					}
 					List<SignatureFacade> matchingSignatures = SignatureFacade.findNearestSignature(arguments, visibleConstructorSignatures) ;
 					if (matchingSignatures.size() > 1) {
 						String errorMessage = referencedType.getName() + "(" ;
 						boolean first = true ;
 						for (TypeExpression arg : arguments) {
-							if (first) first = false ; else errorMessage += ", " ;
+							if (first) {
+								first = false ;
+							} else {
+								errorMessage += ", " ;
+							}
 							errorMessage += arg.getLabel() ;
 						}
 						errorMessage += ") resolves to multiple constructors" ;
@@ -96,7 +102,11 @@ public class SignatureFacadeFactory {
 						String errorMessage = "Constructor " + referencedType.getName() + "(" ;
 						boolean first = true ;
 						for (TypeExpression arg : arguments) {
-							if (first) first = false ; else errorMessage += ", " ;
+							if (first) {
+								first = false ;
+							} else {
+								errorMessage += ", " ;
+							}
 							errorMessage += arg.getLabel() ;
 						}
 						errorMessage += ") is undefined" ;
@@ -112,7 +122,11 @@ public class SignatureFacadeFactory {
 						String errorMessage = "Constructor " + referencedType.getName() + "(";
 						boolean first = true ;
 						for (TypeExpression t : arguments) {
-							if (first) first = false ; else errorMessage += ", " ;
+							if (first) {
+								first = false ;
+							} else {
+								errorMessage += ", " ;
+							}
 							errorMessage += t.getLabel() ;
 						}
 						errorMessage += ") is undefined" ;
@@ -128,27 +142,33 @@ public class SignatureFacadeFactory {
 						String errorMessage = "Constructor " + referencedType.getName() + "(";
 						boolean first = true ;
 						for (TypeExpression t : arguments) {
-							if (first) first = false ; else errorMessage += ", " ;
+							if (first) {
+								first = false ;
+							} else {
+								errorMessage += ", " ;
+							}
 							errorMessage += t.getLabel() ;
 						}
 						errorMessage += ") is undefined" ;
 						throw new Exception(errorMessage) ;
 					}
 					String potentialErrorMessage = constructor.isCompatibleWithMe(argumentsMap) ;
-					if (potentialErrorMessage.length() == 0)
+					if (potentialErrorMessage.length() == 0) {
 						return constructor ;
-					else
+					} else {
 						throw new Exception(potentialErrorMessage) ;
+					}
 				}
 			}
-			else if (referencedType instanceof DataType){ // This is a data type. 
+			else if (referencedType instanceof DataType){ // This is a data type.
 				//must match arguments with visible properties of the data type
 				SignatureFacade defaultDataTypeConstructor = new DefaultConstructorFacade((DataType)referencedType) ;
 				String errorMessage = defaultDataTypeConstructor.isCompatibleWithMe(argumentsMap) ;
-				if (!(errorMessage.length() == 0))
+				if (!(errorMessage.length() == 0)) {
 					throw new Exception(errorMessage) ;
-				else
+				} else {
 					return defaultDataTypeConstructor ;
+				}
 			}
 		}
 
@@ -157,8 +177,9 @@ public class SignatureFacadeFactory {
 			// - the last element in the qualified name as the name of a constructor
 			// - the element before the last element is a class name
 
-			if (exp.getConstructor().getRemaining() == null)
+			if (exp.getConstructor().getRemaining() == null) {
 				throw new Exception("Constructor " + exp.getConstructor().getId() + " is undefined") ;
+			}
 
 			QualifiedNameWithBinding remaining = exp.getConstructor() ;
 			QualifiedNameWithBinding cddClassName = exp.getConstructor() ;
@@ -201,10 +222,11 @@ public class SignatureFacadeFactory {
 			// cddClassName should resolve to a classifier
 			List<EObject> visibleClassifiers = null ;
 			EObject resolvedClassifier = null ;
-			if (previousPackage != null) 
+			if (previousPackage != null) {
 				visibleClassifiers = AlfScopeProvider.scopingTool.getVisibleClassifiers(previousPackage).resolveByName(cddClassName.getId()) ;
-			else
+			} else {
 				visibleClassifiers = AlfScopeProvider.scopingTool.getVisibleClassifiers(exp).resolveByName(cddClassName.getId()) ;
+			}
 			if (visibleClassifiers.isEmpty()) {
 				throw new Exception("Could not resolve classifier " + cddClassName.getId()) ;
 			}
@@ -221,15 +243,20 @@ public class SignatureFacadeFactory {
 				List<SignatureFacade> visibleConstructorSignatures = new ArrayList<SignatureFacade>() ;
 				for (EObject cddConstructor : visibleConstructor) {
 					SignatureFacade cddConstructorSignature = SignatureFacadeFactory.eInstance.createSignatureFacade(cddConstructor) ;
-					if (cddConstructorSignature.isAConstructor())
+					if (cddConstructorSignature.isAConstructor()) {
 						visibleConstructorSignatures.add(cddConstructorSignature) ;
+					}
 				}
 				List<SignatureFacade> matchingSignatures = SignatureFacade.findNearestSignature(arguments, visibleConstructorSignatures) ;
 				if (matchingSignatures.size() > 1) {
 					String errorMessage = cddConstructorName.getId() + "(" ;
 					boolean first = true ;
 					for (TypeExpression arg : arguments) {
-						if (first) first = false ; else errorMessage += ", " ;
+						if (first) {
+							first = false ;
+						} else {
+							errorMessage += ", " ;
+						}
 						errorMessage += arg.getLabel() ;
 					}
 					errorMessage += ") resolves to multiple constructors" ;
@@ -239,7 +266,11 @@ public class SignatureFacadeFactory {
 					String errorMessage = "Constructor " + cddConstructorName.getId() + "(" ;
 					boolean first = true ;
 					for (TypeExpression arg : arguments) {
-						if (first) first = false ; else errorMessage += ", " ;
+						if (first) {
+							first = false ;
+						} else {
+							errorMessage += ", " ;
+						}
 						errorMessage += arg.getLabel() ;
 					}
 					errorMessage += ") is undefined" ;
@@ -253,7 +284,11 @@ public class SignatureFacadeFactory {
 				String errorMessage = "Constructor " + cddConstructorName.getId() + "(" ;
 				boolean first = true ;
 				for (TypeExpression arg : arguments) {
-					if (first) first = false ; else errorMessage += ", " ;
+					if (first) {
+						first = false ;
+					} else {
+						errorMessage += ", " ;
+					}
 					errorMessage += arg.getLabel() ;
 				}
 				errorMessage += ") is undefined" ;
@@ -267,17 +302,22 @@ public class SignatureFacadeFactory {
 					String errorMessage = "Constructor " + cddConstructorName.getId() + "(";
 					boolean first = true ;
 					for (TypeExpression t : arguments) {
-						if (first) first = false ; else errorMessage += ", " ;
+						if (first) {
+							first = false ;
+						} else {
+							errorMessage += ", " ;
+						}
 						errorMessage += t.getLabel() ;
 					}
 					errorMessage += ") is undefined" ;
 					throw new Exception(errorMessage) ;
 				}
 				String potentialErrorMessage = constructor.isCompatibleWithMe(arguments, true) ;
-				if (potentialErrorMessage.length() == 0)
+				if (potentialErrorMessage.length() == 0) {
 					return constructor ;
-				else
+				} else {
 					throw new Exception(potentialErrorMessage) ;
+				}
 			}
 		}
 

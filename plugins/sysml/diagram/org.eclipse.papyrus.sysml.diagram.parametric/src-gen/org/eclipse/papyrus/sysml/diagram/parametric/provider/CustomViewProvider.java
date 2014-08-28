@@ -11,7 +11,7 @@
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.sysml.diagram.parametric.provider; 
+package org.eclipse.papyrus.sysml.diagram.parametric.provider;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,17 +38,17 @@ public class CustomViewProvider extends CustomAbstractViewProvider {
 
 	/** Map containing node view types supported by this provider */
 	protected Map<String, Class<?>> nodeMap = new HashMap<String, Class<?>>();
-	
+
 	/** Map containing edge view types supported by this provider */
 	protected Map<String, Class<?>> edgeMap = new HashMap<String, Class<?>>();
-	
+
 	/** Default constructor */
 	public CustomViewProvider() {
 		super();
 		this.registry = new CustomGraphicalTypeRegistry();
 
 		diagramType = ElementTypes.DIAGRAM_ID;
-		
+
 		// Custom classifier nodes
 		nodeMap.put(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID, BlockCompositeClassifierViewFactory.class);
 		nodeMap.put(SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID, BlockPropertyCompositeClassifierViewFactory.class);
@@ -63,13 +63,13 @@ public class CustomViewProvider extends CustomAbstractViewProvider {
 		nodeMap.put(UMLGraphicalTypes.LABEL_UML_PROPERTY_LABEL_ID, InnerLabelViewFactory.class);
 		nodeMap.put(UMLGraphicalTypes.SHAPE_UML_CONSTRAINT_AS_LABEL_ID, InnerLabelViewFactory.class);
 		// Custom compartments
-		nodeMap.put(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID, CompartmentShapeViewFactory.class);		
+		nodeMap.put(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID, CompartmentShapeViewFactory.class);
 		nodeMap.put(SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID, CompartmentShapeViewFactory.class);
 		// Custom affixed labels
 		nodeMap.put(SysMLGraphicalTypes.AFFIXEDLABEL_SYSML_FLOWPORT_LABEL_ID, AffixedLabelViewFactory.class);
 		nodeMap.put(UMLGraphicalTypes.AFFIXEDLABEL_UML_APPLIEDSTEREOTYPE_ID, AffixedLabelViewFactory.class);
 		nodeMap.put(UMLGraphicalTypes.AFFIXEDLABEL_UML_PORT_LABEL_ID, AffixedLabelViewFactory.class);
-		
+
 		// Custom edges
 		edgeMap.put(UMLGraphicalTypes.LINK_UML_CONNECTOR_ID, ConnectorLinkViewFactory.class);
 		edgeMap.put(UMLGraphicalTypes.LINK_UML_DEPENDENCY_ID, DependencyLinkViewFactory.class);
@@ -89,7 +89,7 @@ public class CustomViewProvider extends CustomAbstractViewProvider {
 	protected Class<?> getNodeViewClass(IAdaptable semanticAdapter, View containerView, String graphicalType) {
 		return nodeMap.get(graphicalType);
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

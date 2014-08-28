@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -100,14 +100,14 @@ public class CDOPapyrusQuery extends AbstractPapyrusQuery {
 		// we cannot query for EClasses that the server doesn't know about. And,
 		// if it doesn't know about an EClass, then a priori, none of its
 		// instances exist, so we don't need to run the query
-		if(view.getSession().getPackageRegistry().getPackageInfo(UMLPackage.eINSTANCE) != null) {
+		if (view.getSession().getPackageRegistry().getPackageInfo(UMLPackage.eINSTANCE) != null) {
 			List<Element> queryResult = query.getResult(Element.class);
 
 			final Map<URI, ScopeEntry> scopeEntries = Maps.newHashMap();
 
 			// don't use an iterator because it won't be able to advance
 			// past a resource proxy that cannot be resolved
-			for(int i = 0; i < queryResult.size(); i++) {
+			for (int i = 0; i < queryResult.size(); i++) {
 				try {
 					Element next = queryResult.get(i);
 
@@ -115,7 +115,7 @@ public class CDOPapyrusQuery extends AbstractPapyrusQuery {
 					ResourceSet rset = resource.getResourceSet();
 					ServicesRegistry services = ServiceUtilsForResourceSet.getInstance().getServiceRegistry(rset);
 					ScopeEntry scopeEntry = scopeEntries.get(resource.getURI());
-					if(scopeEntry == null) {
+					if (scopeEntry == null) {
 						scopeEntry = new ScopeEntry(resource.getURI(), services);
 						scopeEntries.put(resource.getURI(), scopeEntry);
 					}
@@ -141,7 +141,7 @@ public class CDOPapyrusQuery extends AbstractPapyrusQuery {
 		List<Match> attributeMatches = Lists.newArrayListWithExpectedSize(1);
 		attributeMatchStrategy.apply(elementMatch, element, attributeMatches);
 
-		if(!attributeMatches.isEmpty()) {
+		if (!attributeMatches.isEmpty()) {
 			searchResult.addMatches(Iterables.toArray(attributeMatches, Match.class));
 		}
 	}
@@ -156,9 +156,9 @@ public class CDOPapyrusQuery extends AbstractPapyrusQuery {
 
 			@Override
 			protected void onDeactivated(ILifecycle lifecycle) {
-				// the view is closed.  The user probably closed the repository session.  Attempts to access the search results
+				// the view is closed. The user probably closed the repository session. Attempts to access the search results
 				// will fail henceforth, so clear them
-				if(searchResult != null) {
+				if (searchResult != null) {
 					searchResult.removeAll();
 				}
 			}

@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -31,9 +31,9 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitor
 
 /**
  * allow to generate package fragment
- * 
+ *
  * @author Deblock Nicolas & Manuel Giles
- * 
+ *
  */
 public class SynchJDTPackageFragment extends EObjectImpl implements JDTVisitor {
 
@@ -43,9 +43,9 @@ public class SynchJDTPackageFragment extends EObjectImpl implements JDTVisitor {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param iroot
-	 *        the IPackageFragmentRoot parent
+	 *            the IPackageFragmentRoot parent
 	 */
 	public SynchJDTPackageFragment(IPackageFragmentRoot iroot, GeneratorPreference preference) {
 		super();
@@ -54,14 +54,17 @@ public class SynchJDTPackageFragment extends EObjectImpl implements JDTVisitor {
 	}
 
 
+	@Override
 	public void visit(JDTJavaElement element) throws JDTVisitorException {
 		// if element can't be generated, we stop all
-		if(!element.isGenerated())
+		if (!element.isGenerated()) {
 			return;
-		if(!preference.isPackageToGenerate(element.getElementName()))
+		}
+		if (!preference.isPackageToGenerate(element.getElementName())) {
 			return;
+		}
 
-		JDTPackageFragment packag = (JDTPackageFragment)element;
+		JDTPackageFragment packag = (JDTPackageFragment) element;
 
 		try {
 			// search the package
@@ -69,20 +72,22 @@ public class SynchJDTPackageFragment extends EObjectImpl implements JDTVisitor {
 			IPackageFragment ipack = null;
 
 
-			if((tmp = SynchTools.searchIJavaElement(iroot.getChildren(), packag.getElementName())) != null &&
-					tmp instanceof IPackageFragment)
-				ipack = (IPackageFragment)tmp;
+			if ((tmp = SynchTools.searchIJavaElement(iroot.getChildren(), packag.getElementName())) != null &&
+					tmp instanceof IPackageFragment) {
+				ipack = (IPackageFragment) tmp;
+			}
 
 			// if name=null, it's the default package
-			if(packag.getQualifiedName() == null) {
+			if (packag.getQualifiedName() == null) {
 				// generate Compilation unit without package
 				IJavaElement defaultPackageElement = SynchTools.searchIJavaElement(iroot.getChildren(), IPackageFragment.DEFAULT_PACKAGE_NAME);
-				if(defaultPackageElement != null)
-					ipack = (IPackageFragment)defaultPackageElement;
+				if (defaultPackageElement != null) {
+					ipack = (IPackageFragment) defaultPackageElement;
+				}
 			}
 
 			// if the package don't exist, we create it!
-			if(ipack == null) {
+			if (ipack == null) {
 
 				// find the name of the package
 				ipack = iroot.createPackageFragment(packag.getQualifiedName(), true, null);
@@ -91,8 +96,9 @@ public class SynchJDTPackageFragment extends EObjectImpl implements JDTVisitor {
 
 			// call the children compilationUnit
 			JDTVisitor visitor = new SynchJDTCompilationUnit(ipack, preference);
-			for(JDTCompilationUnit cu : packag.getCompilationUnits())
+			for (JDTCompilationUnit cu : packag.getCompilationUnits()) {
 				cu.accept(visitor);
+			}
 
 		} catch (JavaModelException e) {
 			e.printStackTrace();

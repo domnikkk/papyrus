@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.sysml.blocks.BlocksPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.sysml.constraints.ConstraintsFactory
  * @model kind="package"
  * @generated
@@ -45,7 +45,7 @@ public interface ConstraintsPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -55,7 +55,7 @@ public interface ConstraintsPackage extends EPackage {
 		 * class.
 		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.sysml.constraints.internal.impl.ConstraintBlockImpl
 		 * @see org.eclipse.papyrus.sysml.constraints.internal.impl.ConstraintsPackageImpl#getConstraintBlock()
 		 * @generated
@@ -67,7 +67,7 @@ public interface ConstraintsPackage extends EPackage {
 		 * <em>Constraint Property</em>}' class.
 		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.sysml.constraints.internal.impl.ConstraintPropertyImpl
 		 * @see org.eclipse.papyrus.sysml.constraints.internal.impl.ConstraintsPackageImpl#getConstraintProperty()
 		 * @generated
@@ -77,7 +77,7 @@ public interface ConstraintsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONSTRAINT_PROPERTY__BASE_PROPERTY = eINSTANCE.getConstraintProperty_Base_Property();
@@ -87,7 +87,7 @@ public interface ConstraintsPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "constraints";
@@ -95,7 +95,7 @@ public interface ConstraintsPackage extends EPackage {
 	/**
 	 * The package namespace URI.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/0.7.0/SysML/Constraints";
@@ -103,7 +103,7 @@ public interface ConstraintsPackage extends EPackage {
 	/**
 	 * The package namespace name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "Constraints";
@@ -112,7 +112,7 @@ public interface ConstraintsPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	ConstraintsPackage eINSTANCE = org.eclipse.papyrus.sysml.constraints.internal.impl.ConstraintsPackageImpl.init();
@@ -121,7 +121,7 @@ public interface ConstraintsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.sysml.constraints.internal.impl.ConstraintBlockImpl <em>Constraint Block</em>}' class.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.sysml.constraints.internal.impl.ConstraintBlockImpl
 	 * @see org.eclipse.papyrus.sysml.constraints.internal.impl.ConstraintsPackageImpl#getConstraintBlock()
 	 * @generated
@@ -131,7 +131,7 @@ public interface ConstraintsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -140,7 +140,7 @@ public interface ConstraintsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -149,7 +149,7 @@ public interface ConstraintsPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Constraint Block</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -159,7 +159,7 @@ public interface ConstraintsPackage extends EPackage {
 	 * The number of operations of the '<em>Constraint Block</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -170,7 +170,7 @@ public interface ConstraintsPackage extends EPackage {
 	 * class.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.sysml.constraints.internal.impl.ConstraintPropertyImpl
 	 * @see org.eclipse.papyrus.sysml.constraints.internal.impl.ConstraintsPackageImpl#getConstraintProperty()
 	 * @generated
@@ -180,7 +180,7 @@ public interface ConstraintsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -189,7 +189,7 @@ public interface ConstraintsPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Constraint Property</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,7 +199,7 @@ public interface ConstraintsPackage extends EPackage {
 	 * The number of operations of the '<em>Constraint Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -209,7 +209,7 @@ public interface ConstraintsPackage extends EPackage {
 	 * Returns the meta object for class ' {@link org.eclipse.papyrus.sysml.constraints.ConstraintBlock
 	 * <em>Constraint Block</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Constraint Block</em>'.
 	 * @see org.eclipse.papyrus.sysml.constraints.ConstraintBlock
 	 * @generated
@@ -220,7 +220,7 @@ public interface ConstraintsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml.constraints.ConstraintProperty <em>Constraint Property</em>}'.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Constraint Property</em>'.
 	 * @see org.eclipse.papyrus.sysml.constraints.ConstraintProperty
 	 * @generated
@@ -231,7 +231,7 @@ public interface ConstraintsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml.constraints.ConstraintProperty#getBase_Property
 	 * <em>Base Property</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.eclipse.papyrus.sysml.constraints.ConstraintProperty#getBase_Property()
 	 * @see #getConstraintProperty()
@@ -242,7 +242,7 @@ public interface ConstraintsPackage extends EPackage {
 	/**
 	 * Returns the factory that creates the instances of the model. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */

@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.RoboticSimulator;
 
@@ -20,6 +19,7 @@ public class RoboticSimulatorImpl extends PlatformImpl implements RoboticSimulat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected RoboticSimulatorImpl() {
@@ -29,6 +29,7 @@ public class RoboticSimulatorImpl extends PlatformImpl implements RoboticSimulat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class RoboticSimulatorImpl extends PlatformImpl implements RoboticSimulat
 		return RobotMLPackage.Literals.ROBOTIC_SIMULATOR;
 	}
 
-} //RoboticSimulatorImpl
+} // RoboticSimulatorImpl

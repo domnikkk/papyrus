@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,12 +29,12 @@ import org.eclipse.uml2.uml.Signal;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_Message <em>Base Message</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_Signal <em>Base Signal</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_Port <em>Base Port</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_InvocationAction <em>Base Invocation Action</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getSpecification <em>Specification</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_Message <em>Base Message</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_Signal <em>Base Signal</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_Port <em>Base Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_InvocationAction <em>Base Invocation Action</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getSpecification <em>Specification</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,10 +47,10 @@ public interface RtFeature extends EObject {
 	 * Returns the value of the '<em><b>Base Behavioral Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Behavioral Feature</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Behavioral Feature</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Behavioral Feature</em>' reference.
 	 * @see #setBase_BehavioralFeature(BehavioralFeature)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtFeature_Base_BehavioralFeature()
@@ -63,7 +63,9 @@ public interface RtFeature extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Behavioral Feature</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Behavioral Feature</em>' reference.
 	 * @see #getBase_BehavioralFeature()
 	 * @generated
 	 */
@@ -73,10 +75,10 @@ public interface RtFeature extends EObject {
 	 * Returns the value of the '<em><b>Base Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Message</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Message</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Message</em>' reference.
 	 * @see #setBase_Message(Message)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtFeature_Base_Message()
@@ -89,7 +91,9 @@ public interface RtFeature extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_Message <em>Base Message</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Message</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Message</em>' reference.
 	 * @see #getBase_Message()
 	 * @generated
 	 */
@@ -99,10 +103,10 @@ public interface RtFeature extends EObject {
 	 * Returns the value of the '<em><b>Base Signal</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Signal</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Signal</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Signal</em>' reference.
 	 * @see #setBase_Signal(Signal)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtFeature_Base_Signal()
@@ -115,7 +119,9 @@ public interface RtFeature extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_Signal <em>Base Signal</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Signal</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Signal</em>' reference.
 	 * @see #getBase_Signal()
 	 * @generated
 	 */
@@ -125,10 +131,10 @@ public interface RtFeature extends EObject {
 	 * Returns the value of the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Port</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Port</em>' reference.
 	 * @see #setBase_Port(Port)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtFeature_Base_Port()
@@ -141,7 +147,9 @@ public interface RtFeature extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_Port <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Port</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Port</em>' reference.
 	 * @see #getBase_Port()
 	 * @generated
 	 */
@@ -151,10 +159,10 @@ public interface RtFeature extends EObject {
 	 * Returns the value of the '<em><b>Base Invocation Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Invocation Action</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Invocation Action</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Invocation Action</em>' reference.
 	 * @see #setBase_InvocationAction(InvocationAction)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtFeature_Base_InvocationAction()
@@ -167,7 +175,9 @@ public interface RtFeature extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtFeature#getBase_InvocationAction <em>Base Invocation Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Invocation Action</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Invocation Action</em>' reference.
 	 * @see #getBase_InvocationAction()
 	 * @generated
 	 */
@@ -178,10 +188,10 @@ public interface RtFeature extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtSpecification}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Specification</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Specification</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Specification</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtFeature_Specification()
 	 * @model required="true" transient="true" volatile="true" derived="true" ordered="false"

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.sysml.activities.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -33,7 +34,7 @@ import org.eclipse.papyrus.sysml.provider.SysmlEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.sysml.activities.Probability} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ProbabilityItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
@@ -44,7 +45,7 @@ public class ProbabilityItemProvider extends ItemProviderAdapter implements IEdi
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ProbabilityItemProvider(AdapterFactory adapterFactory) {
@@ -55,12 +56,12 @@ public class ProbabilityItemProvider extends ItemProviderAdapter implements IEdi
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addBase_ActivityEdgePropertyDescriptor(object);
@@ -74,40 +75,43 @@ public class ProbabilityItemProvider extends ItemProviderAdapter implements IEdi
 	 * This adds a property descriptor for the Base Activity Edge feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBase_ActivityEdgePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Probability_base_ActivityEdge_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Probability_base_ActivityEdge_feature", "_UI_Probability_type"), ActivitiesPackage.Literals.PROBABILITY__BASE_ACTIVITY_EDGE, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Probability_base_ActivityEdge_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Probability_base_ActivityEdge_feature", "_UI_Probability_type"), ActivitiesPackage.Literals.PROBABILITY__BASE_ACTIVITY_EDGE, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Base Parameter Set feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBase_ParameterSetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Probability_base_ParameterSet_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Probability_base_ParameterSet_feature", "_UI_Probability_type"), ActivitiesPackage.Literals.PROBABILITY__BASE_PARAMETER_SET, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Probability_base_ParameterSet_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Probability_base_ParameterSet_feature", "_UI_Probability_type"), ActivitiesPackage.Literals.PROBABILITY__BASE_PARAMETER_SET, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Probability feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addProbabilityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Probability_probability_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Probability_probability_feature", "_UI_Probability_type"), ActivitiesPackage.Literals.PROBABILITY__PROBABILITY, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Probability_probability_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Probability_probability_feature", "_UI_Probability_type"), ActivitiesPackage.Literals.PROBABILITY__PROBABILITY, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This returns Probability.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +123,7 @@ public class ProbabilityItemProvider extends ItemProviderAdapter implements IEdi
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +136,7 @@ public class ProbabilityItemProvider extends ItemProviderAdapter implements IEdi
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +150,7 @@ public class ProbabilityItemProvider extends ItemProviderAdapter implements IEdi
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +162,7 @@ public class ProbabilityItemProvider extends ItemProviderAdapter implements IEdi
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

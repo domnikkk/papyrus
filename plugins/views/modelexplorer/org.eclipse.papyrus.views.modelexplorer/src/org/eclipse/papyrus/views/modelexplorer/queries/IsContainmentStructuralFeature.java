@@ -23,43 +23,44 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetReferen
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.ParameterValue;
 import org.eclipse.papyrus.emf.facet.query.java.core.IJavaQuery2;
 import org.eclipse.papyrus.emf.facet.query.java.core.IParameterValueList2;
+
 /**
- * this query is used to return false, if the  given object is a references that is not containment or if it is a attribute.
+ * this query is used to return false, if the given object is a references that is not containment or if it is a attribute.
  * it return true if the the feature is also a facetReferences
  *
  */
 public class IsContainmentStructuralFeature implements IJavaQuery2<EObject, Boolean> {
-	public Boolean evaluate(final EObject context, 
-		final IParameterValueList2 parameterValues,
-		final IFacetManager facetManager)
+	public Boolean evaluate(final EObject context,
+			final IParameterValueList2 parameterValues,
+			final IFacetManager facetManager)
 			throws DerivedTypedElementException {
-		ParameterValue parameterValue= (ParameterValue)parameterValues.getParameterValueByName("eStructuralFeature");
-		EStructuralFeature eStructuralFeature=(EStructuralFeature)parameterValue.getValue();
-		//if eStructural feature ==null this is root model explorer.
-		//border effect of  this kind of queries
-		if (eStructuralFeature==null){
+		ParameterValue parameterValue = parameterValues.getParameterValueByName("eStructuralFeature");
+		EStructuralFeature eStructuralFeature = (EStructuralFeature) parameterValue.getValue();
+		// if eStructural feature ==null this is root model explorer.
+		// border effect of this kind of queries
+		if (eStructuralFeature == null) {
 			return true;
 		}
 		// This is an UML element?
-		if(context instanceof EObject){
-			//the eStructure is a containmentReference or Facet Reference?
-			if(eStructuralFeature instanceof EReference){
-				if( ((EReference)eStructuralFeature).equals(EcorePackage.eINSTANCE.getEModelElement_EAnnotations())){
+		if (context instanceof EObject) {
+			// the eStructure is a containmentReference or Facet Reference?
+			if (eStructuralFeature instanceof EReference) {
+				if (((EReference) eStructuralFeature).equals(EcorePackage.eINSTANCE.getEModelElement_EAnnotations())) {
 					return false;
 				}
-				if(((EReference)(eStructuralFeature)).isContainment()||(eStructuralFeature instanceof FacetReference)){
+				if (((EReference) (eStructuralFeature)).isContainment() || (eStructuralFeature instanceof FacetReference)) {
 					return true;
 				}
-				else{
+				else {
 					return false;
 				}
 			}
-			//this is not a ref like EAttribute
-			else{
+			// this is not a ref like EAttribute
+			else {
 				return false;
 			}
 		}
-		//this is not a UML element
+		// this is not a UML element
 		return false;
 	}
 }

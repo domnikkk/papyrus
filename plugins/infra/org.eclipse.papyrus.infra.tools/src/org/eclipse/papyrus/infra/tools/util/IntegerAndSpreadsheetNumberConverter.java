@@ -27,7 +27,7 @@ package org.eclipse.papyrus.infra.tools.util;
  *
  *
  */
-//adapted code from http://www.developpez.net/forums/d1197058/dotnet/general-dotnet/contribuez/extensions-types-int-string-conversion-format-colonne-excel/
+// adapted code from http://www.developpez.net/forums/d1197058/dotnet/general-dotnet/contribuez/extensions-types-int-string-conversion-format-colonne-excel/
 public class IntegerAndSpreadsheetNumberConverter {
 
 	/**
@@ -36,25 +36,25 @@ public class IntegerAndSpreadsheetNumberConverter {
 	 *
 	 */
 	private IntegerAndSpreadsheetNumberConverter() {
-		//to prevent instanciation
+		// to prevent instanciation
 	}
 
 	/**
 	 *
 	 * @param number
-	 *        an integer
+	 *            an integer
 	 * @return
 	 *         the string representing this integer in a spreedsheet
 	 */
 	public static String toString(int number) {
-		if(number <= 0) {
+		if (number <= 0) {
 			throw new NumberFormatException();
 		}
 		int tmp = number;
 		String string = ""; //$NON-NLS-1$
-		while(tmp > 0) {
+		while (tmp > 0) {
 			final int r = (tmp - 1) % 26;
-			string = (char)('A' + r) + string;
+			string = (char) ('A' + r) + string;
 			tmp = (tmp - r) / 26;
 		}
 
@@ -65,20 +65,20 @@ public class IntegerAndSpreadsheetNumberConverter {
 	 *
 	 * @unused
 	 * @param string
-	 *        a string
+	 *            a string
 	 * @return
 	 *         the number corresponding to the string
 	 */
 	public static int toInt(String string) {
-		if(string == null || string.length() == 0) {
+		if (string == null || string.length() == 0) {
 			throw new NumberFormatException();
 		}
 		string = string.toUpperCase();
 		int multiplier = 1;
 		int columnNumber = 0;
-		for(int i = string.length() - 1; i >= 0; i--) {
+		for (int i = string.length() - 1; i >= 0; i--) {
 			final char c = string.charAt(i);
-			if(c < 'A' || c > 'Z') {
+			if (c < 'A' || c > 'Z') {
 				throw new NumberFormatException();
 			}
 			final int value = (c - 'A' + 1) * multiplier;

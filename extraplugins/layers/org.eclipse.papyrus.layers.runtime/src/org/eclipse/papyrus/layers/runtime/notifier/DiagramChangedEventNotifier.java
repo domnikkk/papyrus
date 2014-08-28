@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
 
 /**
  * Notify listeners when a change occurs on an domain element associated to an element of the LayerStack's diagram.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -29,9 +29,9 @@ public class DiagramChangedEventNotifier extends AbstractDerivedViewLayerNotifie
 	 * {@link LayersStack} containing the {@link Diagram} on which this notifier is listening changes.
 	 */
 	protected LayersStack layersStack;
-	
+
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param layersStack
@@ -39,9 +39,10 @@ public class DiagramChangedEventNotifier extends AbstractDerivedViewLayerNotifie
 	public DiagramChangedEventNotifier(LayersStack layersStack) {
 		this.layersStack = layersStack;
 	}
-	
+
 	/**
 	 * Start listening on externals events that should be relayed by this Notifier.
+	 *
 	 * @see org.eclipse.papyrus.layers.runtime.notifier.AbstractDerivedViewLayerNotifier#startListening()
 	 *
 	 */
@@ -53,6 +54,7 @@ public class DiagramChangedEventNotifier extends AbstractDerivedViewLayerNotifie
 
 	/**
 	 * Start listening on externals events that should be relayed by this Notifier.
+	 *
 	 * @see org.eclipse.papyrus.layers.runtime.notifier.AbstractDerivedViewLayerNotifier#stopListening()
 	 *
 	 */

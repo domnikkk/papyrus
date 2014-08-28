@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -50,15 +50,15 @@ public class ObjectFlowEditHelper extends ElementEditHelper {
 
 	/**
 	 * Test if the relationship creation is allowed.
-	 * 
+	 *
 	 * @param source
-	 *        the relationship source can be null
+	 *            the relationship source can be null
 	 * @param target
-	 *        the relationship target can be null
+	 *            the relationship target can be null
 	 * @param sourceView
-	 *        the relationship graphical source can be null
+	 *            the relationship graphical source can be null
 	 * @param targetView
-	 *        the relationship graphical target can be null
+	 *            the relationship graphical target can be null
 	 * @return true if the creation is allowed
 	 */
 	protected boolean canCreate(EObject source, EObject target, View sourceView, View targetView) {
@@ -74,21 +74,21 @@ public class ObjectFlowEditHelper extends ElementEditHelper {
 		EObject target = req.getTarget();
 		boolean noSourceOrTarget = (source == null || target == null);
 		boolean noSourceAndTarget = (source == null && target == null);
-		if(!noSourceAndTarget && !canCreate(source, target, RequestParameterUtils.getSourceView(req), RequestParameterUtils.getTargetView(req))) {
+		if (!noSourceAndTarget && !canCreate(source, target, RequestParameterUtils.getSourceView(req), RequestParameterUtils.getTargetView(req))) {
 			// Abort creation.
 			return UnexecutableCommand.INSTANCE;
 		}
-		if(noSourceOrTarget && !noSourceAndTarget) {
+		if (noSourceOrTarget && !noSourceAndTarget) {
 			// The request isn't complete yet. Return the identity command so
 			// that the create relationship gesture is enabled.
-			if(source != null && !(source instanceof ActivityNode)) {
+			if (source != null && !(source instanceof ActivityNode)) {
 				return UnexecutableCommand.INSTANCE;
 			}
 			return IdentityCommand.INSTANCE;
 		}
 		// Propose a semantic container for the new control flow.
 		Activity proposedContainer = deduceContainer(req);
-		if(proposedContainer == null) {
+		if (proposedContainer == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		req.setContainer(proposedContainer);
@@ -103,9 +103,9 @@ public class ObjectFlowEditHelper extends ElementEditHelper {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
-		for(EObject element = source; element != null; element = element.eContainer()) {
-			if(element instanceof Activity) {
-				return (Activity)element;
+		for (EObject element = source; element != null; element = element.eContainer()) {
+			if (element instanceof Activity) {
+				return (Activity) element;
 			}
 		}
 		return null;
@@ -118,14 +118,15 @@ public class ObjectFlowEditHelper extends ElementEditHelper {
 	protected ICommand getConfigureCommand(final ConfigureRequest req) {
 		ICommand configureCommand = new ConfigureElementCommand(req) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				ObjectFlow element = (ObjectFlow)req.getElementToConfigure();
+				ObjectFlow element = (ObjectFlow) req.getElementToConfigure();
 				ActivityNode source = getSourceObject(req);
 				ActivityNode target = getTargetObject(req);
-				if(source != null) {
+				if (source != null) {
 					element.setSource(getSourceObject(req));
 				}
-				if(target != null) {
+				if (target != null) {
 					element.setTarget(target);
 				}
 				return CommandResult.newOKCommandResult(element);
@@ -136,39 +137,39 @@ public class ObjectFlowEditHelper extends ElementEditHelper {
 
 	/**
 	 * This method provides the object to be use as source.
-	 * 
+	 *
 	 * @return the source value
 	 */
 	protected ActivityNode getSourceObject(ConfigureRequest req) {
 		Object result = req.getParameter(CreateRelationshipRequest.SOURCE);
-		return (result instanceof ActivityNode) ? (ActivityNode)result : null;
+		return (result instanceof ActivityNode) ? (ActivityNode) result : null;
 	}
 
 	/**
 	 * This method provides the object to be used as target.
-	 * 
+	 *
 	 * @return the target value
 	 */
 	protected ActivityNode getTargetObject(ConfigureRequest req) {
 		Object result = req.getParameter(CreateRelationshipRequest.TARGET);
-		return (result instanceof ActivityNode) ? (ActivityNode)result : null;
+		return (result instanceof ActivityNode) ? (ActivityNode) result : null;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	protected boolean canCreate(EObject source, EObject target) {
-		if((source != null) && !(source instanceof ActivityNode)) {
+		if ((source != null) && !(source instanceof ActivityNode)) {
 			return false;
 		}
-		if((target != null) && !(target instanceof ActivityNode)) {
+		if ((target != null) && !(target instanceof ActivityNode)) {
 			return false;
 		}
-		
+
 		Activity container = deduceContainer(source, target);
-		if(container == null) {
+		if (container == null) {
 			return false;
 		}
-		return ObjectFlowUtil.canExistObjectFlow(container, null, (ActivityNode)source, (ActivityNode)target);
+		return ObjectFlowUtil.canExistObjectFlow(container, null, (ActivityNode) source, (ActivityNode) target);
 	}
 }

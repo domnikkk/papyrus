@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,6 +59,7 @@ public class DependencyBranchDeletion implements IObjectActionDelegate {
 	/**
 	 * {@inheritedDoc}
 	 */
+	@Override
 	public void run(IAction action) {
 		CompoundCommand command = new CompoundCommand();
 		Dependency dependency = null;
@@ -122,6 +123,7 @@ public class DependencyBranchDeletion implements IObjectActionDelegate {
 	/**
 	 * {@inheritedDoc}
 	 */
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		if (selection instanceof IStructuredSelection) {
 			Object selectedobject = ((IStructuredSelection) selection).getFirstElement();
@@ -134,6 +136,7 @@ public class DependencyBranchDeletion implements IObjectActionDelegate {
 	/**
 	 * {@inheritedDoc}
 	 */
+	@Override
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 		// TODO Auto-generated method stub
 	}

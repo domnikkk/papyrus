@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.action.ContributionItem;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.BehaviorExecutionSpecificationBehaviorEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.util.BehaviorDisplayHelper;
 import org.eclipse.swt.SWT;
@@ -41,9 +40,10 @@ public class DisplayBehaviorContributionItem extends ContributionItem implements
 
 	/**
 	 * @see org.eclipse.ui.menus.IWorkbenchContribution#initialize(org.eclipse.ui.services.IServiceLocator)
-	 * 
+	 *
 	 * @param serviceLocator
 	 */
+	@Override
 	public void initialize(IServiceLocator serviceLocator) {
 		this.serviceLocator = serviceLocator;
 	}
@@ -54,11 +54,11 @@ public class DisplayBehaviorContributionItem extends ContributionItem implements
 	}
 
 	private ISelection getSelection() {
-		if(serviceLocator == null) {
+		if (serviceLocator == null) {
 			return null;
 		}
-		ISelectionService selectionService = (ISelectionService)serviceLocator.getService(ISelectionService.class);
-		if(selectionService != null) {
+		ISelectionService selectionService = (ISelectionService) serviceLocator.getService(ISelectionService.class);
+		if (selectionService != null) {
 			return selectionService.getSelection();
 		}
 		return null;
@@ -66,7 +66,7 @@ public class DisplayBehaviorContributionItem extends ContributionItem implements
 
 	/**
 	 * @see org.eclipse.jface.action.ContributionItem#fill(org.eclipse.swt.widgets.Menu, int)
-	 * 
+	 *
 	 * @param menu
 	 * @param index
 	 */
@@ -74,20 +74,21 @@ public class DisplayBehaviorContributionItem extends ContributionItem implements
 	public void fill(Menu menu, int index) {
 		super.fill(menu, index);
 		ISelection selection = getSelection();
-		if(selection == null || selection.isEmpty()) {
+		if (selection == null || selection.isEmpty()) {
 			return;
 		}
-		if(selection instanceof IStructuredSelection) {
-			Object firstElement = ((IStructuredSelection)selection).getFirstElement();
-			if(firstElement instanceof BehaviorExecutionSpecificationEditPart) {
-				final View view = ((BehaviorExecutionSpecificationEditPart)firstElement).getNotationView();
-				final TransactionalEditingDomain domain = ((BehaviorExecutionSpecificationEditPart)firstElement).getEditingDomain();
+		if (selection instanceof IStructuredSelection) {
+			Object firstElement = ((IStructuredSelection) selection).getFirstElement();
+			if (firstElement instanceof BehaviorExecutionSpecificationEditPart) {
+				final View view = ((BehaviorExecutionSpecificationEditPart) firstElement).getNotationView();
+				final TransactionalEditingDomain domain = ((BehaviorExecutionSpecificationEditPart) firstElement).getEditingDomain();
 				boolean displayBehavior = BehaviorDisplayHelper.shouldDisplayBehavior(view);
-				if(displayBehavior) {
+				if (displayBehavior) {
 					MenuItem hide = new MenuItem(menu, SWT.NONE, 0);
 					hide.setText("Hide Behavior Label");
 					hide.addListener(SWT.Selection, new Listener() {
 
+						@Override
 						public void handleEvent(Event event) {
 							Command cmd = BehaviorDisplayHelper.getChangeDisplayBehaviorCommand(domain, view, false);
 							domain.getCommandStack().execute(cmd);
@@ -99,6 +100,7 @@ public class DisplayBehaviorContributionItem extends ContributionItem implements
 					show.setText("Display Behavior Label");
 					show.addListener(SWT.Selection, new Listener() {
 
+						@Override
 						public void handleEvent(Event event) {
 							Command cmd = BehaviorDisplayHelper.getChangeDisplayBehaviorCommand(domain, view, true);
 							domain.getCommandStack().execute(cmd);

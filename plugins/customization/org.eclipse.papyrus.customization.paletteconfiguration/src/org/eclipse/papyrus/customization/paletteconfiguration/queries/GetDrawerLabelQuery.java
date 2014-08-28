@@ -10,6 +10,6 @@ import org.eclipse.papyrus.uml.diagram.paletteconfiguration.DrawerConfiguration;
 public class GetDrawerLabelQuery implements IJavaQuery2<DrawerConfiguration, String> {
 
 	public String evaluate(DrawerConfiguration source, IParameterValueList2 parameterValues, IFacetManager facetManager) throws DerivedTypedElementException {
-		return (source.getLabel() !=null ? source.getLabel() : "<>");
+		return (source.getLabel() != null ? source.getLabel() : "<>");
 	}
 }

@@ -12,20 +12,20 @@
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal.view;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.ImageProvider;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.view.NavigationView.ContextInfo;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.ImageProvider;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.view.NavigationView.ContextInfo;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 
 @SuppressWarnings("synthetic-access")
-//Copied from org.eclipse.papyrus.emf.facet.infra.query.ui.views.queryExecution.internal.ContextPaneMenuManager
+// Copied from org.eclipse.papyrus.emf.facet.infra.query.ui.views.queryExecution.internal.ContextPaneMenuManager
 public class ContextPaneMenuManager extends MenuManager implements IMenuListener {
 
 	private final EditableContext context;

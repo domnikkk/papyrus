@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,9 +17,9 @@ import org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell;
 import org.eclipse.swt.graphics.Point;
 
 /**
- * 
+ *
  * This class allows to store information about a location
- * 
+ *
  */
 public class LocationValue {
 
@@ -66,19 +66,19 @@ public class LocationValue {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param kind
-	 *        the kind of location
+	 *            the kind of location
 	 * @param cell
-	 *        the cell located as this place
+	 *            the cell located as this place
 	 * @param columnIndex
-	 *        the columnIndex
+	 *            the columnIndex
 	 * @param rowIndex
-	 *        the rowIndex
+	 *            the rowIndex
 	 * @param columnObject
-	 *        the column object
+	 *            the column object
 	 * @param rowObject
-	 *        the row object
+	 *            the row object
 	 */
 	public LocationValue(final TableGridRegion kind, final ILayerCell cell, final int columnIndex, final int rowIndex, final Object columnObject, final Object rowObject) {
 		this(null, null, kind, cell, columnIndex, rowIndex, columnObject, rowObject);
@@ -89,23 +89,23 @@ public class LocationValue {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param absoluteLocation
-	 *        a location in the absolute coordinate
+	 *            a location in the absolute coordinate
 	 * @param widgetLocation
-	 *        the same point, but with the widget coordinate
+	 *            the same point, but with the widget coordinate
 	 * @param kind
-	 *        the kind of location
+	 *            the kind of location
 	 * @param cell
-	 *        the cell located as this place
+	 *            the cell located as this place
 	 * @param columnIndex
-	 *        the columnIndex
+	 *            the columnIndex
 	 * @param rowIndex
-	 *        the rowIndex
+	 *            the rowIndex
 	 * @param columnObject
-	 *        the column object
+	 *            the column object
 	 * @param rowObject
-	 *        the row object
+	 *            the row object
 	 */
 	public LocationValue(final Point absoluteLocation, final Point widgetLocation, final TableGridRegion kind, final ILayerCell cell, final int columnIndex, final int rowIndex, final Object columnObject, final Object rowObject) {
 		this.absolutePoint = absoluteLocation;
@@ -120,7 +120,7 @@ public class LocationValue {
 
 	/**
 	 * Gets the point.
-	 * 
+	 *
 	 * @return the point
 	 */
 	public Point getPoint() {
@@ -130,7 +130,7 @@ public class LocationValue {
 
 	/**
 	 * Gets the translated point.
-	 * 
+	 *
 	 * @return the translated point
 	 */
 	public Point getTranslatedPoint() {
@@ -139,7 +139,7 @@ public class LocationValue {
 
 	/**
 	 * Gets the kind.
-	 * 
+	 *
 	 * @return the kind
 	 */
 	public TableGridRegion getKind() {
@@ -149,7 +149,7 @@ public class LocationValue {
 
 	/**
 	 * Gets the column index.
-	 * 
+	 *
 	 * @return the column index
 	 */
 	public int getColumnIndex() {
@@ -159,7 +159,7 @@ public class LocationValue {
 
 	/**
 	 * Gets the row index.
-	 * 
+	 *
 	 * @return the row index
 	 */
 	public int getRowIndex() {
@@ -169,7 +169,7 @@ public class LocationValue {
 
 	/**
 	 * Gets the layer cell.
-	 * 
+	 *
 	 * @return the layer cell
 	 */
 	public ILayerCell getLayerCell() {
@@ -178,7 +178,7 @@ public class LocationValue {
 
 	/**
 	 * Gets the absolute point.
-	 * 
+	 *
 	 * @return the absolute point
 	 */
 	public Point getAbsolutePoint() {
@@ -188,7 +188,7 @@ public class LocationValue {
 
 	/**
 	 * Gets the widget point.
-	 * 
+	 *
 	 * @return the widget point
 	 */
 	public Point getWidgetPoint() {
@@ -198,7 +198,7 @@ public class LocationValue {
 
 	/**
 	 * Gets the column object.
-	 * 
+	 *
 	 * @return the column object
 	 */
 	public Object getColumnObject() {
@@ -208,7 +208,7 @@ public class LocationValue {
 
 	/**
 	 * Gets the row object.
-	 * 
+	 *
 	 * @return the row object
 	 */
 	public Object getRowObject() {
@@ -216,9 +216,9 @@ public class LocationValue {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see java.lang.Object#toString()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

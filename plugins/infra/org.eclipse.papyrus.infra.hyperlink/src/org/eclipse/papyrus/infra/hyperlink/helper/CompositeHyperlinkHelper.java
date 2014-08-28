@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ public class CompositeHyperlinkHelper extends AbstractHyperLinkHelper {
 	public CompositeHyperlinkHelper(Collection<? extends AbstractHyperLinkHelper> helpers) {
 		this.helpers = helpers.toArray(new AbstractHyperLinkHelper[helpers.size()]);
 
-		if(this.helpers.length > 0) {
+		if (this.helpers.length > 0) {
 			this.activeHelper = this.helpers[0];
 		}
 	}
@@ -53,9 +53,9 @@ public class CompositeHyperlinkHelper extends AbstractHyperLinkHelper {
 	public List<? extends AbstractHyperLinkHelper> getHelpers() {
 		return Collections.unmodifiableList(Arrays.asList(helpers));
 	}
-	
+
 	public void setActiveHelper(AbstractHyperLinkHelper helper) {
-		if(!Arrays.asList(helpers).contains(helper)) {
+		if (!Arrays.asList(helpers).contains(helper)) {
 			throw new IllegalArgumentException("not a composed helper");
 		}
 
@@ -64,12 +64,12 @@ public class CompositeHyperlinkHelper extends AbstractHyperLinkHelper {
 
 	@Override
 	public void executeNewMousePressed(List<HyperLinkObject> list, EObject aModel) {
-		if(activeHelper != null) {
+		if (activeHelper != null) {
 			final int originalSize = list.size();
 			activeHelper.executeNewMousePressed(list, aModel);
 
 			// remember the helper that created these hyperlinks; we may need it later
-			for(int i = originalSize; i < list.size(); i++) {
+			for (int i = originalSize; i < list.size(); i++) {
 				hyperlinks.put(list.get(i), activeHelper);
 			}
 		}
@@ -80,7 +80,7 @@ public class CompositeHyperlinkHelper extends AbstractHyperLinkHelper {
 		// return result of list type suggests that ordering is important
 		Set<HyperLinkObject> result = new java.util.LinkedHashSet<HyperLinkObject>();
 
-		for(int i = 0; i < helpers.length; i++) {
+		for (int i = 0; i < helpers.length; i++) {
 			result.addAll(helpers[i].getFilteredObject(hyperLinkObjects));
 		}
 
@@ -91,10 +91,10 @@ public class CompositeHyperlinkHelper extends AbstractHyperLinkHelper {
 	public HyperLinkObject getHyperLinkObject(EAnnotation eAnnotation) {
 		HyperLinkObject result = null;
 
-		for(int i = 0; (result == null) && (i < helpers.length); i++) {
+		for (int i = 0; (result == null) && (i < helpers.length); i++) {
 			result = helpers[i].getHyperLinkObject(eAnnotation);
 
-			if(result != null) {
+			if (result != null) {
 				// remember the helper that created this hyperlink; we may need it later
 				hyperlinks.put(result, helpers[i]);
 			}
@@ -108,7 +108,7 @@ public class CompositeHyperlinkHelper extends AbstractHyperLinkHelper {
 		RecordingCommand result = null;
 		AbstractHyperLinkHelper helper = hyperlinks.get(hyperLinkObject);
 
-		if(helper != null) {
+		if (helper != null) {
 			result = helper.getAddHyperLinkCommand(domain, object, hyperLinkObject);
 		}
 

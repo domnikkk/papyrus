@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -70,6 +70,7 @@ public class DawnEditorAdapter
 		ADAPTERS.remove(editor);
 	}
 
+	@Override
 	public CDOView getView() {
 		return view;
 	}
@@ -78,6 +79,7 @@ public class DawnEditorAdapter
 		this.view = view;
 	}
 
+	@Override
 	public String getContributorID() {
 		if (contributorID == null) {
 			contributorID = determineEditorID(diagramEditor);
@@ -86,18 +88,19 @@ public class DawnEditorAdapter
 		return contributorID;
 	}
 
+	@Override
 	public void setDirty() {
 		IDocumentProvider documentProvider = diagramEditor
-			.getDocumentProvider();
+				.getDocumentProvider();
 		if (documentProvider != null) {
 			documentProvider.setCanSaveDocument(getEditorInput());
 		}
 	}
 
-	public Object getAdapter(@SuppressWarnings("rawtypes")
-	Class adapter) {
+	@Override
+	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
 		if ((adapter == DiagramDocumentEditor.class)
-			|| (adapter == DiagramEditor.class)) {
+				|| (adapter == DiagramEditor.class)) {
 			return diagramEditor;
 		}
 
@@ -109,15 +112,15 @@ public class DawnEditorAdapter
 
 		// look for the generated ID constant
 		for (Class<?> clazz = editor.getClass(); (clazz != null)
-			&& (clazz != Object.class); clazz = clazz.getSuperclass()) {
+				&& (clazz != Object.class); clazz = clazz.getSuperclass()) {
 
 			try {
 				Field idField = clazz.getField("ID"); //$NON-NLS-1$
 				int modifiers = idField.getModifiers();
 				if ((idField.getType() == String.class)
-					&& Modifier.isStatic(modifiers)
-					&& Modifier.isFinal(modifiers)
-					&& Modifier.isPublic(modifiers)) {
+						&& Modifier.isStatic(modifiers)
+						&& Modifier.isFinal(modifiers)
+						&& Modifier.isPublic(modifiers)) {
 
 					result = (String) idField.get(null);
 				}
@@ -134,6 +137,7 @@ public class DawnEditorAdapter
 		return result;
 	}
 
+	@Override
 	public void doSave(IProgressMonitor monitor) {
 		CDOView view = getView();
 
@@ -143,8 +147,7 @@ public class DawnEditorAdapter
 			try {
 				((CDOTransaction) view).commit(monitor);
 			} catch (CommitException e) {
-				Activator.log.error(
-					"Failed to commit transaction to save editor.", e); //$NON-NLS-1$
+				Activator.log.error("Failed to commit transaction to save editor.", e); //$NON-NLS-1$
 			}
 		} else {
 			diagramEditor.doSave(monitor);
@@ -155,10 +158,12 @@ public class DawnEditorAdapter
 	// Delegation methods
 	//
 
+	@Override
 	public boolean isDirty() {
 		return diagramEditor.isDirty();
 	}
 
+	@Override
 	public IDawnEditorSupport getDawnEditorSupport() {
 		return editorSupport;
 	}
@@ -167,64 +172,79 @@ public class DawnEditorAdapter
 		this.editorSupport = editorSupport;
 	}
 
+	@Override
 	public IEditorInput getEditorInput() {
 		return diagramEditor.getEditorInput();
 	}
 
+	@Override
 	public IEditorSite getEditorSite() {
 		return diagramEditor.getEditorSite();
 	}
 
+	@Override
 	public void init(IEditorSite site, IEditorInput input)
 			throws PartInitException {
 
 		diagramEditor.init(site, input);
 	}
 
+	@Override
 	public void addPropertyListener(IPropertyListener listener) {
 		diagramEditor.addPropertyListener(listener);
 	}
 
+	@Override
 	public void createPartControl(Composite parent) {
 		diagramEditor.createPartControl(parent);
 	}
 
+	@Override
 	public void dispose() {
 		diagramEditor.dispose();
 	}
 
+	@Override
 	public IWorkbenchPartSite getSite() {
 		return diagramEditor.getSite();
 	}
 
+	@Override
 	public String getTitle() {
 		return diagramEditor.getTitle();
 	}
 
+	@Override
 	public Image getTitleImage() {
 		return diagramEditor.getTitleImage();
 	}
 
+	@Override
 	public String getTitleToolTip() {
 		return diagramEditor.getTitleToolTip();
 	}
 
+	@Override
 	public void removePropertyListener(IPropertyListener listener) {
 		diagramEditor.removePropertyListener(listener);
 	}
 
+	@Override
 	public void setFocus() {
 		diagramEditor.setFocus();
 	}
 
+	@Override
 	public void doSaveAs() {
 		diagramEditor.doSaveAs();
 	}
 
+	@Override
 	public boolean isSaveAsAllowed() {
 		return diagramEditor.isSaveAsAllowed();
 	}
 
+	@Override
 	public boolean isSaveOnCloseNeeded() {
 		return diagramEditor.isSaveOnCloseNeeded();
 	}

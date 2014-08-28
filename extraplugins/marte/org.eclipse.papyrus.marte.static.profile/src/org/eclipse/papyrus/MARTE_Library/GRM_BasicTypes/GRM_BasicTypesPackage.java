@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,12 +22,13 @@ import org.eclipse.emf.ecore.EPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.GRM_BasicTypesFactory
  * @model kind="package"
  * @generated
@@ -37,6 +38,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "GRM_BasicTypes";
@@ -45,6 +47,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http:///MARTE_Library/GRM_BasicTypes.ecore";
@@ -53,6 +56,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "MARTE_Library.GRM_BasicTypes";
@@ -61,6 +65,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	GRM_BasicTypesPackage eINSTANCE = org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl.init();
@@ -69,6 +74,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.SchedPolicyKind <em>Sched Policy Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.SchedPolicyKind
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getSchedPolicyKind()
 	 * @generated
@@ -79,6 +85,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.ProtectProtocolKind <em>Protect Protocol Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.ProtectProtocolKind
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getProtectProtocolKind()
 	 * @generated
@@ -89,6 +96,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.PeriodicServerKind <em>Periodic Server Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.PeriodicServerKind
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getPeriodicServerKind()
 	 * @generated
@@ -99,6 +107,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The meta object id for the '<em>EDF Parameters</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getEDF_Parameters()
 	 * @generated
@@ -109,6 +118,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Sched Parameters</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getSchedParameters()
 	 * @generated
@@ -119,6 +129,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Fixed Priority Parameters</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getFixedPriorityParameters()
 	 * @generated
@@ -129,6 +140,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Periodic Server Parameters</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getPeriodicServerParameters()
 	 * @generated
@@ -139,6 +151,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Pooling Parameters</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getPoolingParameters()
 	 * @generated
@@ -149,6 +162,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Schedule Specification</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getScheduleSpecification()
 	 * @generated
@@ -159,6 +173,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Table Driven Schedule</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getTableDrivenSchedule()
 	 * @generated
@@ -169,6 +184,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Table Entry Type</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getTableEntryType()
 	 * @generated
@@ -180,6 +196,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.SchedPolicyKind <em>Sched Policy Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Sched Policy Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.SchedPolicyKind
 	 * @generated
@@ -190,6 +207,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.ProtectProtocolKind <em>Protect Protocol Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Protect Protocol Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.ProtectProtocolKind
 	 * @generated
@@ -200,6 +218,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.PeriodicServerKind <em>Periodic Server Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for enum '<em>Periodic Server Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.PeriodicServerKind
 	 * @generated
@@ -210,6 +229,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>EDF Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>EDF Parameters</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -221,6 +241,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Sched Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Sched Parameters</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -232,6 +253,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Fixed Priority Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Fixed Priority Parameters</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -243,6 +265,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Periodic Server Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Periodic Server Parameters</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -254,6 +277,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Pooling Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Pooling Parameters</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -265,6 +289,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Schedule Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Schedule Specification</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -276,6 +301,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Table Driven Schedule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Table Driven Schedule</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -287,6 +313,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Table Entry Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for data type '<em>Table Entry Type</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -298,6 +325,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -307,12 +335,13 @@ public interface GRM_BasicTypesPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -320,6 +349,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.SchedPolicyKind <em>Sched Policy Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.SchedPolicyKind
 		 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getSchedPolicyKind()
 		 * @generated
@@ -330,6 +360,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.ProtectProtocolKind <em>Protect Protocol Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.ProtectProtocolKind
 		 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getProtectProtocolKind()
 		 * @generated
@@ -340,6 +371,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.PeriodicServerKind <em>Periodic Server Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.PeriodicServerKind
 		 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getPeriodicServerKind()
 		 * @generated
@@ -350,6 +382,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>EDF Parameters</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getEDF_Parameters()
 		 * @generated
@@ -360,6 +393,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Sched Parameters</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getSchedParameters()
 		 * @generated
@@ -370,6 +404,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Fixed Priority Parameters</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getFixedPriorityParameters()
 		 * @generated
@@ -380,6 +415,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Periodic Server Parameters</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getPeriodicServerParameters()
 		 * @generated
@@ -390,6 +426,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Pooling Parameters</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getPoolingParameters()
 		 * @generated
@@ -400,6 +437,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Schedule Specification</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getScheduleSpecification()
 		 * @generated
@@ -410,6 +448,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Table Driven Schedule</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getTableDrivenSchedule()
 		 * @generated
@@ -420,6 +459,7 @@ public interface GRM_BasicTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Table Entry Type</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.impl.GRM_BasicTypesPackageImpl#getTableEntryType()
 		 * @generated
@@ -428,4 +468,4 @@ public interface GRM_BasicTypesPackage extends EPackage {
 
 	}
 
-} //GRM_BasicTypesPackage
+} // GRM_BasicTypesPackage

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,7 +13,7 @@ package org.eclipse.papyrus.customization.palette.dialog;
 
 import java.util.List;
 
-import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.Messages;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration;
@@ -65,11 +65,11 @@ public class ConfigurationInformationComposite {
 
 	/**
 	 * Creates the content of the information composite
-	 * 
+	 *
 	 * @param parent
-	 *        the composite where to add created controls
+	 *            the composite where to add created controls
 	 * @param appliedProfiles
-	 *        the list of applied profiles
+	 *            the list of applied profiles
 	 * @return the newly created composite
 	 */
 	public Composite createComposite(final Composite parent, List<Profile> appliedProfiles) {
@@ -140,9 +140,9 @@ public class ConfigurationInformationComposite {
 			 */
 			public void mouseUp(MouseEvent e) {
 				BundleIconExplorerDialog dialog = new BundleIconExplorerDialog(parent.getShell(), iconText.getText());
-				if(Dialog.OK == dialog.open()) {
+				if (Window.OK == dialog.open()) {
 					Object[] values = dialog.getResult();
-					if(values.length != 1) {
+					if (values.length != 1) {
 						Activator.log.error("Waiting one icon path, but found " + values.length, null);
 					} else {
 						iconText.setText(values[0].toString());
@@ -172,9 +172,9 @@ public class ConfigurationInformationComposite {
 
 
 	private void updateIconInConfiguration(String bundleId, String iconPath) {
-		if(selectedConfiguration != null) {
+		if (selectedConfiguration != null) {
 			IconDescriptor descriptor = PaletteconfigurationFactory.eINSTANCE.createIconDescriptor();
-			if(bundleId != null && iconPath != null) {
+			if (bundleId != null && iconPath != null) {
 				descriptor.setPluginID(bundleId);
 				descriptor.setIconPath(iconPath);
 			}
@@ -186,7 +186,7 @@ public class ConfigurationInformationComposite {
 	 * Updates the name field in the information area
 	 */
 	protected void updateNameEntryField() {
-		if(selectedConfiguration != null) {
+		if (selectedConfiguration != null) {
 			nameText.setText((selectedConfiguration.getLabel() != null) ? selectedConfiguration.getLabel() : "");
 			nameText.setEnabled(true);
 		} else {
@@ -200,8 +200,8 @@ public class ConfigurationInformationComposite {
 	 * Updates the reference field in the information area
 	 */
 	protected void updateReferencedEntryField() {
-		if(selectedConfiguration instanceof ToolConfiguration) {
-			ToolConfiguration configuration = ((ToolConfiguration)selectedConfiguration);
+		if (selectedConfiguration instanceof ToolConfiguration) {
+			ToolConfiguration configuration = ((ToolConfiguration) selectedConfiguration);
 		} else {
 			referencedText.setText("");
 			referencedText.setEnabled(false);
@@ -212,7 +212,7 @@ public class ConfigurationInformationComposite {
 	 * Updates the description field in the information area
 	 */
 	protected void updateDescriptionEntryField() {
-		if(selectedConfiguration != null) {
+		if (selectedConfiguration != null) {
 			descriptionText.setText((selectedConfiguration.getDescription() != null) ? selectedConfiguration.getDescription() : "");
 			descriptionText.setEnabled(true);
 		} else {
@@ -225,12 +225,12 @@ public class ConfigurationInformationComposite {
 	 * Updates the icon field in the information area
 	 */
 	protected void updateIconEntryField() {
-		if(selectedConfiguration != null) {
+		if (selectedConfiguration != null) {
 			IconDescriptor descriptor = selectedConfiguration.getIcon();
-			if(descriptor != null) {
+			if (descriptor != null) {
 				String iconPath = descriptor.getIconPath();
 				String bundleId = descriptor.getPluginID();
-				if(iconPath != null && bundleId != null) {
+				if (iconPath != null && bundleId != null) {
 					iconText.setText(PLUGIN_PROTOCOL + bundleId + iconPath);
 				}
 			}
@@ -243,9 +243,9 @@ public class ConfigurationInformationComposite {
 
 	/**
 	 * Sets the new Selected entry
-	 * 
+	 *
 	 * @param configuration
-	 *        the selectedConfiguration to set
+	 *            the selectedConfiguration to set
 	 */
 	public void setSelectedConfiguration(Configuration configuration) {
 		this.selectedConfiguration = configuration;
@@ -271,7 +271,7 @@ public class ConfigurationInformationComposite {
 		 * @{inheritDoc
 		 */
 		public void focusLost(FocusEvent e) {
-			if(selectedConfiguration != null) {
+			if (selectedConfiguration != null) {
 				selectedConfiguration.setLabel(nameText.getText().trim());
 			}
 		}
@@ -293,7 +293,7 @@ public class ConfigurationInformationComposite {
 		 * @{inheritDoc
 		 */
 		public void focusLost(FocusEvent e) {
-			if(selectedConfiguration != null) {
+			if (selectedConfiguration != null) {
 				selectedConfiguration.setDescription(descriptionText.getText().trim());
 			}
 		}
@@ -315,17 +315,17 @@ public class ConfigurationInformationComposite {
 		 */
 		public void focusLost(FocusEvent e) {
 			String text = iconText.getText();
-			if(selectedConfiguration != null && text != null && !text.equals("")) {
+			if (selectedConfiguration != null && text != null && !text.equals("")) {
 
 				// parse the text....
-				if(!text.startsWith(PLUGIN_PROTOCOL)) {
+				if (!text.startsWith(PLUGIN_PROTOCOL)) {
 					return;
 				}
 
 				text = text.substring(PLUGIN_PROTOCOL.length(), text.length());
 
 				int i = text.indexOf("/");
-				if(i < 1) {
+				if (i < 1) {
 					return;
 				}
 				String bundlePath = text.substring(0, i);

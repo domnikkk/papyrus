@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * The descriptor for StructuredActivityNode node used by
  * org.eclipse.papyrus.uml.diagram.common.groups.groupcontainment extension point.
- * 
+ *
  * @author vhemery
  */
 public class StructuredActivityNodeContainment extends AbstractContainerNodeDescriptor {
@@ -43,9 +43,10 @@ public class StructuredActivityNodeContainment extends AbstractContainerNodeDesc
 
 	/**
 	 * Get the eclass of the model eobject represented by the node
-	 * 
+	 *
 	 * @return StructuredActivityNode eclass
 	 */
+	@Override
 	public EClass getContainerEClass() {
 		return UMLPackage.eINSTANCE.getStructuredActivityNode();
 	}
@@ -53,11 +54,12 @@ public class StructuredActivityNodeContainment extends AbstractContainerNodeDesc
 	/**
 	 * Get the list of references linking the StructuredActivityNode to children
 	 * element.
-	 * 
+	 *
 	 * @return the references to contained elements
 	 */
+	@Override
 	public List<EReference> getChildrenReferences() {
-		if(childrenReferences == null) {
+		if (childrenReferences == null) {
 			childrenReferences = new ArrayList<EReference>(2);
 			childrenReferences.add(UMLPackage.eINSTANCE.getStructuredActivityNode_Node());
 			childrenReferences.add(UMLPackage.eINSTANCE.getStructuredActivityNode_Edge());
@@ -67,7 +69,7 @@ public class StructuredActivityNodeContainment extends AbstractContainerNodeDesc
 
 	@Override
 	public List<EReference> getParentReferences() {
-		if(parentReferences == null) {
+		if (parentReferences == null) {
 			parentReferences = new ArrayList<EReference>();
 			parentReferences.add(UMLPackage.Literals.ACTIVITY_NODE__IN_INTERRUPTIBLE_REGION);
 			parentReferences.add(UMLPackage.Literals.ACTIVITY_NODE__IN_PARTITION);
@@ -79,7 +81,7 @@ public class StructuredActivityNodeContainment extends AbstractContainerNodeDesc
 
 	@Override
 	public Map<EStructuralFeature, EStructuralFeature> getParentEOppositeReferences() {
-		if(parentOpositeReferences == null) {
+		if (parentOpositeReferences == null) {
 			parentOpositeReferences = new HashMap<EStructuralFeature, EStructuralFeature>();
 			parentOpositeReferences.put(UMLPackage.Literals.ACTIVITY_NODE__IN_INTERRUPTIBLE_REGION, UMLPackage.Literals.INTERRUPTIBLE_ACTIVITY_REGION__NODE);
 			parentOpositeReferences.put(UMLPackage.Literals.ACTIVITY_NODE__IN_PARTITION, UMLPackage.Literals.ACTIVITY_PARTITION__NODE);
@@ -92,9 +94,10 @@ public class StructuredActivityNodeContainment extends AbstractContainerNodeDesc
 	@Override
 	public IGraphicalEditPart getCompartmentPartFromView(IGraphicalEditPart editpart) {
 		String hint = "" + StructuredActivityNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID;
-		return ((GraphicalEditPart)editpart).getChildBySemanticHintOnPrimaryView(hint);
+		return ((GraphicalEditPart) editpart).getChildBySemanticHintOnPrimaryView(hint);
 	}
 
+	@Override
 	public int getGroupPriority() {
 		return IGroupPriority.STRUCTURED_ACTIVITY_NODE_PRIORITY;
 	}

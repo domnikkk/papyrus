@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.TypeRegistry;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TypeRegistryImpl#getTypes <em>Types</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TypeRegistryImpl#getTypes <em>Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	 * The cached value of the '{@link #getTypes() <em>Types</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getTypes()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	protected TypeRegistryImpl() {
@@ -64,34 +66,37 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	 * Register standard types.
 	 */
 	protected void init() {
-		
+
 		Type type = LayersFactory.eINSTANCE.createBooleanType();
 		getTypes().put(type.getName(), type);
-		
+
 		type = LayersFactory.eINSTANCE.createIntType();
 		getTypes().put(type.getName(), type);
-		
+
 		type = LayersFactory.eINSTANCE.createStringType();
 		getTypes().put(type.getName(), type);
-		
+
 		addType(LayersFactory.eINSTANCE.createColor());
 		addType(LayersFactory.eINSTANCE.createFill());
 		addType(LayersFactory.eINSTANCE.createLineType());
 		addType(LayersFactory.eINSTANCE.createFontType());
 	}
-	
+
 	/**
 	 * Add the type in the registry
+	 *
 	 * @param type
 	 */
 	public void addType(Type type) {
 		String typeName = type.getName();
-		
+
 		getTypes().put(typeName, type);
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,11 +107,13 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EMap<String, Type> getTypes() {
 		if (types == null) {
-			types = new EcoreEMap<String,Type>(LayersPackage.Literals.STRING_TO_TYPE_MAP, StringToTypeMapImpl.class, this, LayersPackage.TYPE_REGISTRY__TYPES);
+			types = new EcoreEMap<String, Type>(LayersPackage.Literals.STRING_TO_TYPE_MAP, StringToTypeMapImpl.class, this, LayersPackage.TYPE_REGISTRY__TYPES);
 		}
 		return types;
 	}
@@ -114,13 +121,14 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LayersPackage.TYPE_REGISTRY__TYPES:
-				return ((InternalEList<?>)getTypes()).basicRemove(otherEnd, msgs);
+		case LayersPackage.TYPE_REGISTRY__TYPES:
+			return ((InternalEList<?>) getTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -128,14 +136,18 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersPackage.TYPE_REGISTRY__TYPES:
-				if (coreType) return getTypes();
-				else return getTypes().map();
+		case LayersPackage.TYPE_REGISTRY__TYPES:
+			if (coreType) {
+				return getTypes();
+			} else {
+				return getTypes().map();
+			}
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -143,14 +155,15 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersPackage.TYPE_REGISTRY__TYPES:
-				((EStructuralFeature.Setting)getTypes()).set(newValue);
-				return;
+		case LayersPackage.TYPE_REGISTRY__TYPES:
+			((EStructuralFeature.Setting) getTypes()).set(newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -158,14 +171,15 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersPackage.TYPE_REGISTRY__TYPES:
-				getTypes().clear();
-				return;
+		case LayersPackage.TYPE_REGISTRY__TYPES:
+			getTypes().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -173,15 +187,16 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersPackage.TYPE_REGISTRY__TYPES:
-				return types != null && !types.isEmpty();
+		case LayersPackage.TYPE_REGISTRY__TYPES:
+			return types != null && !types.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //TypeRegistryImpl
+} // TypeRegistryImpl

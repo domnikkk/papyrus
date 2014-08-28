@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,19 +16,19 @@ import java.util.List;
 
 /**
  * Interface representing constraint category from EMF Validation Framework
- * 
- * 
+ *
+ *
  */
-public interface IConstraintsCategory extends Category{
+public interface IConstraintsCategory extends Category {
 	/**
-	 * 
+	 *
 	 * @return constraints
 	 */
 
 	public List<IValidationRule> getConstraints();
 
 	/**
-	 * 
+	 *
 	 * @return the list of categories as a string
 	 */
 	public String getCategoriesList();
@@ -36,6 +36,7 @@ public interface IConstraintsCategory extends Category{
 
 	/**
 	 * add a list of constraint
+	 *
 	 * @param constraints
 	 */
 	public void addConstraints(List<IValidationRule> constraints);

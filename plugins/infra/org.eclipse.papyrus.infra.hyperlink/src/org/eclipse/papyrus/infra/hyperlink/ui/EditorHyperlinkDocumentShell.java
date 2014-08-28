@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ public class EditorHyperlinkDocumentShell extends AbstractEditHyperlinkDocumentS
 
 	/**
 	 * Gets the hyperlink document.
-	 * 
+	 *
 	 * @return the hyperlinkDocument
 	 */
 	public HyperLinkDocument getHyperlinkDocument() {
@@ -43,9 +43,9 @@ public class EditorHyperlinkDocumentShell extends AbstractEditHyperlinkDocumentS
 
 	/**
 	 * Sets the hyperlink document.
-	 * 
+	 *
 	 * @param hyperlinkDocument
-	 *        the hyperlinkDocument to set
+	 *            the hyperlinkDocument to set
 	 */
 	public void setHyperlinkDocument(HyperLinkDocument hyperlinkDocument) {
 		this.hyperlinkDocument = hyperlinkDocument;
@@ -60,11 +60,11 @@ public class EditorHyperlinkDocumentShell extends AbstractEditHyperlinkDocumentS
 		Display display = Display.getCurrent();
 
 		// code use to wait for an action from the user
-		//		getEditHyperlinkShell().setBounds(500, 500, 600, 120);
+		// getEditHyperlinkShell().setBounds(500, 500, 600, 120);
 		getEditHyperlinkShell().pack();
 		getEditHyperlinkShell().open();
-		while(!getEditHyperlinkShell().isDisposed()) {
-			if(!display.readAndDispatch()) {
+		while (!getEditHyperlinkShell().isDisposed()) {
+			if (!display.readAndDispatch()) {
 				display.sleep();
 			}
 		}
@@ -80,7 +80,7 @@ public class EditorHyperlinkDocumentShell extends AbstractEditHyperlinkDocumentS
 		// intialize "use default" check box
 		getUseDefaultCheckBox().setSelection(usedefaultTooltip);
 		getObjectLabeltext().setEditable(false);
-		if(usedefaultTooltip) {
+		if (usedefaultTooltip) {
 			getTooltipInputText().setEditable(false);
 			getTooltipInputText().setText(getObjectLabeltext().getText());
 		}
@@ -89,7 +89,7 @@ public class EditorHyperlinkDocumentShell extends AbstractEditHyperlinkDocumentS
 
 			public void mouseUp(MouseEvent e) {
 				usedefaultTooltip = getUseDefaultCheckBox().getSelection();
-				if(usedefaultTooltip) {
+				if (usedefaultTooltip) {
 					getTooltipInputText().setEditable(false);
 					getTooltipInputText().setText(getObjectLabeltext().getText());
 				} else {
@@ -115,9 +115,9 @@ public class EditorHyperlinkDocumentShell extends AbstractEditHyperlinkDocumentS
 				String[] filterExt = { "*.pdf", "*.doc", "*.txt", "*" }; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 				fd.setFilterExtensions(filterExt);
 				String selected = fd.open();
-				if(selected != null) {
+				if (selected != null) {
 					getObjectLabeltext().setText(selected);
-					if(usedefaultTooltip) {
+					if (usedefaultTooltip) {
 						getTooltipInputText().setText(selected);
 					}
 				}
@@ -148,7 +148,7 @@ public class EditorHyperlinkDocumentShell extends AbstractEditHyperlinkDocumentS
 			}
 
 			public void mouseDown(MouseEvent e) {
-				if(hyperlinkDocument == null) {
+				if (hyperlinkDocument == null) {
 					hyperlinkDocument = new HyperLinkDocument();
 				}
 				hyperlinkDocument.setHyperlinkDocument(getObjectLabeltext().getText().trim());

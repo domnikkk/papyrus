@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,25 +48,25 @@ import org.eclipse.uml2.uml.ValueSpecification;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getOn <em>On</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getBase_Action <em>Base Action</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getBase_Behavior <em>Base Behavior</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getBase_Message <em>Base Message</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getDuration <em>Duration</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getStart <em>Start</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getFinish <em>Finish</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getCause <em>Cause</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getHostDemand <em>Host Demand</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getHostDemandOps <em>Host Demand Ops</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getInterOccT <em>Inter Occ T</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getThroughput <em>Throughput</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getRespT <em>Resp T</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getUtilization <em>Utilization</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getUtilizationOnHost <em>Utilization On Host</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getRoot <em>Root</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getSteps <em>Steps</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getParentStep <em>Parent Step</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getTiming <em>Timing</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getOn <em>On</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getBase_Action <em>Base Action</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getBase_Behavior <em>Base Behavior</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getBase_Message <em>Base Message</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getDuration <em>Duration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getStart <em>Start</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getFinish <em>Finish</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getCause <em>Cause</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getHostDemand <em>Host Demand</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getHostDemandOps <em>Host Demand Ops</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getInterOccT <em>Inter Occ T</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getThroughput <em>Throughput</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getRespT <em>Resp T</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getUtilization <em>Utilization</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getUtilizationOnHost <em>Utilization On Host</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getRoot <em>Root</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getSteps <em>Steps</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getParentStep <em>Parent Step</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaScenarioImpl#getTiming <em>Timing</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +77,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getOn() <em>On</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOn()
 	 * @generated
 	 * @ordered
@@ -87,6 +88,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getBase_Action() <em>Base Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_Action()
 	 * @generated
 	 * @ordered
@@ -97,6 +99,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getBase_Behavior() <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_Behavior()
 	 * @generated
 	 * @ordered
@@ -107,6 +110,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getBase_Message() <em>Base Message</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_Message()
 	 * @generated
 	 * @ordered
@@ -117,6 +121,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getDuration() <em>Duration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDuration()
 	 * @generated
 	 * @ordered
@@ -127,6 +132,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -137,6 +143,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getFinish() <em>Finish</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFinish()
 	 * @generated
 	 * @ordered
@@ -147,6 +154,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getCause() <em>Cause</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getCause()
 	 * @generated
 	 * @ordered
@@ -157,6 +165,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getHostDemand() <em>Host Demand</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getHostDemand()
 	 * @generated
 	 * @ordered
@@ -167,6 +176,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getHostDemandOps() <em>Host Demand Ops</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getHostDemandOps()
 	 * @generated
 	 * @ordered
@@ -177,6 +187,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getInterOccT() <em>Inter Occ T</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getInterOccT()
 	 * @generated
 	 * @ordered
@@ -187,6 +198,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getThroughput() <em>Throughput</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -197,6 +209,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getRespT() <em>Resp T</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRespT()
 	 * @generated
 	 * @ordered
@@ -207,6 +220,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getUtilization() <em>Utilization</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getUtilization()
 	 * @generated
 	 * @ordered
@@ -217,6 +231,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getUtilizationOnHost() <em>Utilization On Host</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getUtilizationOnHost()
 	 * @generated
 	 * @ordered
@@ -227,6 +242,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getRoot() <em>Root</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRoot()
 	 * @generated
 	 * @ordered
@@ -237,6 +253,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getSteps() <em>Steps</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSteps()
 	 * @generated
 	 * @ordered
@@ -247,6 +264,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getParentStep() <em>Parent Step</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getParentStep()
 	 * @generated
 	 * @ordered
@@ -257,6 +275,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getTiming() <em>Timing</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getTiming()
 	 * @generated
 	 * @ordered
@@ -266,6 +285,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected GaScenarioImpl() {
@@ -275,6 +295,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,8 +306,10 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<Clock> getOn() {
 		if (on == null) {
 			on = new EObjectResolvingEList<Clock>(Clock.class, this, GQAMPackage.GA_SCENARIO__ON);
@@ -297,15 +320,18 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Action getBase_Action() {
 		if (base_Action != null && base_Action.eIsProxy()) {
-			InternalEObject oldBase_Action = (InternalEObject)base_Action;
-			base_Action = (Action)eResolveProxy(oldBase_Action);
+			InternalEObject oldBase_Action = (InternalEObject) base_Action;
+			base_Action = (Action) eResolveProxy(oldBase_Action);
 			if (base_Action != oldBase_Action) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_SCENARIO__BASE_ACTION, oldBase_Action, base_Action));
+				}
 			}
 		}
 		return base_Action;
@@ -314,6 +340,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Action basicGetBase_Action() {
@@ -323,27 +350,33 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_Action(Action newBase_Action) {
 		Action oldBase_Action = base_Action;
 		base_Action = newBase_Action;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_SCENARIO__BASE_ACTION, oldBase_Action, base_Action));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Behavior getBase_Behavior() {
 		if (base_Behavior != null && base_Behavior.eIsProxy()) {
-			InternalEObject oldBase_Behavior = (InternalEObject)base_Behavior;
-			base_Behavior = (Behavior)eResolveProxy(oldBase_Behavior);
+			InternalEObject oldBase_Behavior = (InternalEObject) base_Behavior;
+			base_Behavior = (Behavior) eResolveProxy(oldBase_Behavior);
 			if (base_Behavior != oldBase_Behavior) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_SCENARIO__BASE_BEHAVIOR, oldBase_Behavior, base_Behavior));
+				}
 			}
 		}
 		return base_Behavior;
@@ -352,6 +385,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Behavior basicGetBase_Behavior() {
@@ -361,27 +395,33 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_Behavior(Behavior newBase_Behavior) {
 		Behavior oldBase_Behavior = base_Behavior;
 		base_Behavior = newBase_Behavior;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_SCENARIO__BASE_BEHAVIOR, oldBase_Behavior, base_Behavior));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Message getBase_Message() {
 		if (base_Message != null && base_Message.eIsProxy()) {
-			InternalEObject oldBase_Message = (InternalEObject)base_Message;
-			base_Message = (Message)eResolveProxy(oldBase_Message);
+			InternalEObject oldBase_Message = (InternalEObject) base_Message;
+			base_Message = (Message) eResolveProxy(oldBase_Message);
 			if (base_Message != oldBase_Message) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_SCENARIO__BASE_MESSAGE, oldBase_Message, base_Message));
+				}
 			}
 		}
 		return base_Message;
@@ -390,6 +430,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Message basicGetBase_Message() {
@@ -399,20 +440,25 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_Message(Message newBase_Message) {
 		Message oldBase_Message = base_Message;
 		base_Message = newBase_Message;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_SCENARIO__BASE_MESSAGE, oldBase_Message, base_Message));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public ValueSpecification getDuration() {
 		return duration;
 	}
@@ -420,6 +466,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetDuration(ValueSpecification newDuration, NotificationChain msgs) {
@@ -427,7 +474,11 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 		duration = newDuration;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_SCENARIO__DURATION, oldDuration, newDuration);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -435,34 +486,44 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDuration(ValueSpecification newDuration) {
 		if (newDuration != duration) {
 			NotificationChain msgs = null;
-			if (duration != null)
-				msgs = ((InternalEObject)duration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GQAMPackage.GA_SCENARIO__DURATION, null, msgs);
-			if (newDuration != null)
-				msgs = ((InternalEObject)newDuration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GQAMPackage.GA_SCENARIO__DURATION, null, msgs);
+			if (duration != null) {
+				msgs = ((InternalEObject) duration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GQAMPackage.GA_SCENARIO__DURATION, null, msgs);
+			}
+			if (newDuration != null) {
+				msgs = ((InternalEObject) newDuration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GQAMPackage.GA_SCENARIO__DURATION, null, msgs);
+			}
 			msgs = basicSetDuration(newDuration, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_SCENARIO__DURATION, newDuration, newDuration));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Event getStart() {
 		if (start != null && start.eIsProxy()) {
-			InternalEObject oldStart = (InternalEObject)start;
-			start = (Event)eResolveProxy(oldStart);
+			InternalEObject oldStart = (InternalEObject) start;
+			start = (Event) eResolveProxy(oldStart);
 			if (start != oldStart) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_SCENARIO__START, oldStart, start));
+				}
 			}
 		}
 		return start;
@@ -471,6 +532,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Event basicGetStart() {
@@ -480,27 +542,33 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setStart(Event newStart) {
 		Event oldStart = start;
 		start = newStart;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_SCENARIO__START, oldStart, start));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Event getFinish() {
 		if (finish != null && finish.eIsProxy()) {
-			InternalEObject oldFinish = (InternalEObject)finish;
-			finish = (Event)eResolveProxy(oldFinish);
+			InternalEObject oldFinish = (InternalEObject) finish;
+			finish = (Event) eResolveProxy(oldFinish);
 			if (finish != oldFinish) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_SCENARIO__FINISH, oldFinish, finish));
+				}
 			}
 		}
 		return finish;
@@ -509,6 +577,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Event basicGetFinish() {
@@ -518,27 +587,33 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setFinish(Event newFinish) {
 		Event oldFinish = finish;
 		finish = newFinish;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_SCENARIO__FINISH, oldFinish, finish));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaWorkloadEvent getCause() {
 		if (cause != null && cause.eIsProxy()) {
-			InternalEObject oldCause = (InternalEObject)cause;
-			cause = (GaWorkloadEvent)eResolveProxy(oldCause);
+			InternalEObject oldCause = (InternalEObject) cause;
+			cause = (GaWorkloadEvent) eResolveProxy(oldCause);
 			if (cause != oldCause) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_SCENARIO__CAUSE, oldCause, cause));
+				}
 			}
 		}
 		return cause;
@@ -547,6 +622,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public GaWorkloadEvent basicGetCause() {
@@ -556,20 +632,25 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setCause(GaWorkloadEvent newCause) {
 		GaWorkloadEvent oldCause = cause;
 		cause = newCause;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_SCENARIO__CAUSE, oldCause, cause));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<String> getHostDemand() {
 		if (hostDemand == null) {
 			hostDemand = new EDataTypeUniqueEList<String>(String.class, this, GQAMPackage.GA_SCENARIO__HOST_DEMAND);
@@ -580,8 +661,10 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<String> getHostDemandOps() {
 		if (hostDemandOps == null) {
 			hostDemandOps = new EDataTypeUniqueEList<String>(String.class, this, GQAMPackage.GA_SCENARIO__HOST_DEMAND_OPS);
@@ -592,8 +675,10 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<String> getInterOccT() {
 		if (interOccT == null) {
 			interOccT = new EDataTypeUniqueEList<String>(String.class, this, GQAMPackage.GA_SCENARIO__INTER_OCC_T);
@@ -604,8 +689,10 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<String> getThroughput() {
 		if (throughput == null) {
 			throughput = new EDataTypeUniqueEList<String>(String.class, this, GQAMPackage.GA_SCENARIO__THROUGHPUT);
@@ -616,8 +703,10 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<String> getRespT() {
 		if (respT == null) {
 			respT = new EDataTypeUniqueEList<String>(String.class, this, GQAMPackage.GA_SCENARIO__RESP_T);
@@ -628,8 +717,10 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<String> getUtilization() {
 		if (utilization == null) {
 			utilization = new EDataTypeUniqueEList<String>(String.class, this, GQAMPackage.GA_SCENARIO__UTILIZATION);
@@ -640,8 +731,10 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<String> getUtilizationOnHost() {
 		if (utilizationOnHost == null) {
 			utilizationOnHost = new EDataTypeUniqueEList<String>(String.class, this, GQAMPackage.GA_SCENARIO__UTILIZATION_ON_HOST);
@@ -652,15 +745,18 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public GaStep getRoot() {
 		if (root != null && root.eIsProxy()) {
-			InternalEObject oldRoot = (InternalEObject)root;
-			root = (GaStep)eResolveProxy(oldRoot);
+			InternalEObject oldRoot = (InternalEObject) root;
+			root = (GaStep) eResolveProxy(oldRoot);
 			if (root != oldRoot) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_SCENARIO__ROOT, oldRoot, root));
+				}
 			}
 		}
 		return root;
@@ -669,6 +765,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public GaStep basicGetRoot() {
@@ -678,20 +775,25 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setRoot(GaStep newRoot) {
 		GaStep oldRoot = root;
 		root = newRoot;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_SCENARIO__ROOT, oldRoot, root));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<GaStep> getSteps() {
 		if (steps == null) {
 			steps = new EObjectWithInverseResolvingEList<GaStep>(GaStep.class, this, GQAMPackage.GA_SCENARIO__STEPS, GQAMPackage.GA_STEP__SCENARIO);
@@ -702,8 +804,10 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<GaStep> getParentStep() {
 		if (parentStep == null) {
 			parentStep = new EObjectWithInverseResolvingEList<GaStep>(GaStep.class, this, GQAMPackage.GA_SCENARIO__PARENT_STEP, GQAMPackage.GA_STEP__CHILD_SCENARIO);
@@ -714,8 +818,10 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<GaTimedObs> getTiming() {
 		if (timing == null) {
 			timing = new EObjectResolvingEList<GaTimedObs>(GaTimedObs.class, this, GQAMPackage.GA_SCENARIO__TIMING);
@@ -726,16 +832,17 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GQAMPackage.GA_SCENARIO__STEPS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSteps()).basicAdd(otherEnd, msgs);
-			case GQAMPackage.GA_SCENARIO__PARENT_STEP:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParentStep()).basicAdd(otherEnd, msgs);
+		case GQAMPackage.GA_SCENARIO__STEPS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSteps()).basicAdd(otherEnd, msgs);
+		case GQAMPackage.GA_SCENARIO__PARENT_STEP:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getParentStep()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -743,17 +850,18 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GQAMPackage.GA_SCENARIO__DURATION:
-				return basicSetDuration(null, msgs);
-			case GQAMPackage.GA_SCENARIO__STEPS:
-				return ((InternalEList<?>)getSteps()).basicRemove(otherEnd, msgs);
-			case GQAMPackage.GA_SCENARIO__PARENT_STEP:
-				return ((InternalEList<?>)getParentStep()).basicRemove(otherEnd, msgs);
+		case GQAMPackage.GA_SCENARIO__DURATION:
+			return basicSetDuration(null, msgs);
+		case GQAMPackage.GA_SCENARIO__STEPS:
+			return ((InternalEList<?>) getSteps()).basicRemove(otherEnd, msgs);
+		case GQAMPackage.GA_SCENARIO__PARENT_STEP:
+			return ((InternalEList<?>) getParentStep()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -761,56 +869,71 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GQAMPackage.GA_SCENARIO__ON:
-				return getOn();
-			case GQAMPackage.GA_SCENARIO__BASE_ACTION:
-				if (resolve) return getBase_Action();
-				return basicGetBase_Action();
-			case GQAMPackage.GA_SCENARIO__BASE_BEHAVIOR:
-				if (resolve) return getBase_Behavior();
-				return basicGetBase_Behavior();
-			case GQAMPackage.GA_SCENARIO__BASE_MESSAGE:
-				if (resolve) return getBase_Message();
-				return basicGetBase_Message();
-			case GQAMPackage.GA_SCENARIO__DURATION:
-				return getDuration();
-			case GQAMPackage.GA_SCENARIO__START:
-				if (resolve) return getStart();
-				return basicGetStart();
-			case GQAMPackage.GA_SCENARIO__FINISH:
-				if (resolve) return getFinish();
-				return basicGetFinish();
-			case GQAMPackage.GA_SCENARIO__CAUSE:
-				if (resolve) return getCause();
-				return basicGetCause();
-			case GQAMPackage.GA_SCENARIO__HOST_DEMAND:
-				return getHostDemand();
-			case GQAMPackage.GA_SCENARIO__HOST_DEMAND_OPS:
-				return getHostDemandOps();
-			case GQAMPackage.GA_SCENARIO__INTER_OCC_T:
-				return getInterOccT();
-			case GQAMPackage.GA_SCENARIO__THROUGHPUT:
-				return getThroughput();
-			case GQAMPackage.GA_SCENARIO__RESP_T:
-				return getRespT();
-			case GQAMPackage.GA_SCENARIO__UTILIZATION:
-				return getUtilization();
-			case GQAMPackage.GA_SCENARIO__UTILIZATION_ON_HOST:
-				return getUtilizationOnHost();
-			case GQAMPackage.GA_SCENARIO__ROOT:
-				if (resolve) return getRoot();
-				return basicGetRoot();
-			case GQAMPackage.GA_SCENARIO__STEPS:
-				return getSteps();
-			case GQAMPackage.GA_SCENARIO__PARENT_STEP:
-				return getParentStep();
-			case GQAMPackage.GA_SCENARIO__TIMING:
-				return getTiming();
+		case GQAMPackage.GA_SCENARIO__ON:
+			return getOn();
+		case GQAMPackage.GA_SCENARIO__BASE_ACTION:
+			if (resolve) {
+				return getBase_Action();
+			}
+			return basicGetBase_Action();
+		case GQAMPackage.GA_SCENARIO__BASE_BEHAVIOR:
+			if (resolve) {
+				return getBase_Behavior();
+			}
+			return basicGetBase_Behavior();
+		case GQAMPackage.GA_SCENARIO__BASE_MESSAGE:
+			if (resolve) {
+				return getBase_Message();
+			}
+			return basicGetBase_Message();
+		case GQAMPackage.GA_SCENARIO__DURATION:
+			return getDuration();
+		case GQAMPackage.GA_SCENARIO__START:
+			if (resolve) {
+				return getStart();
+			}
+			return basicGetStart();
+		case GQAMPackage.GA_SCENARIO__FINISH:
+			if (resolve) {
+				return getFinish();
+			}
+			return basicGetFinish();
+		case GQAMPackage.GA_SCENARIO__CAUSE:
+			if (resolve) {
+				return getCause();
+			}
+			return basicGetCause();
+		case GQAMPackage.GA_SCENARIO__HOST_DEMAND:
+			return getHostDemand();
+		case GQAMPackage.GA_SCENARIO__HOST_DEMAND_OPS:
+			return getHostDemandOps();
+		case GQAMPackage.GA_SCENARIO__INTER_OCC_T:
+			return getInterOccT();
+		case GQAMPackage.GA_SCENARIO__THROUGHPUT:
+			return getThroughput();
+		case GQAMPackage.GA_SCENARIO__RESP_T:
+			return getRespT();
+		case GQAMPackage.GA_SCENARIO__UTILIZATION:
+			return getUtilization();
+		case GQAMPackage.GA_SCENARIO__UTILIZATION_ON_HOST:
+			return getUtilizationOnHost();
+		case GQAMPackage.GA_SCENARIO__ROOT:
+			if (resolve) {
+				return getRoot();
+			}
+			return basicGetRoot();
+		case GQAMPackage.GA_SCENARIO__STEPS:
+			return getSteps();
+		case GQAMPackage.GA_SCENARIO__PARENT_STEP:
+			return getParentStep();
+		case GQAMPackage.GA_SCENARIO__TIMING:
+			return getTiming();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -818,80 +941,81 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GQAMPackage.GA_SCENARIO__ON:
-				getOn().clear();
-				getOn().addAll((Collection<? extends Clock>)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__BASE_ACTION:
-				setBase_Action((Action)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__BASE_BEHAVIOR:
-				setBase_Behavior((Behavior)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__BASE_MESSAGE:
-				setBase_Message((Message)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__DURATION:
-				setDuration((ValueSpecification)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__START:
-				setStart((Event)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__FINISH:
-				setFinish((Event)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__CAUSE:
-				setCause((GaWorkloadEvent)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__HOST_DEMAND:
-				getHostDemand().clear();
-				getHostDemand().addAll((Collection<? extends String>)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__HOST_DEMAND_OPS:
-				getHostDemandOps().clear();
-				getHostDemandOps().addAll((Collection<? extends String>)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__INTER_OCC_T:
-				getInterOccT().clear();
-				getInterOccT().addAll((Collection<? extends String>)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__THROUGHPUT:
-				getThroughput().clear();
-				getThroughput().addAll((Collection<? extends String>)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__RESP_T:
-				getRespT().clear();
-				getRespT().addAll((Collection<? extends String>)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__UTILIZATION:
-				getUtilization().clear();
-				getUtilization().addAll((Collection<? extends String>)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__UTILIZATION_ON_HOST:
-				getUtilizationOnHost().clear();
-				getUtilizationOnHost().addAll((Collection<? extends String>)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__ROOT:
-				setRoot((GaStep)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__STEPS:
-				getSteps().clear();
-				getSteps().addAll((Collection<? extends GaStep>)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__PARENT_STEP:
-				getParentStep().clear();
-				getParentStep().addAll((Collection<? extends GaStep>)newValue);
-				return;
-			case GQAMPackage.GA_SCENARIO__TIMING:
-				getTiming().clear();
-				getTiming().addAll((Collection<? extends GaTimedObs>)newValue);
-				return;
+		case GQAMPackage.GA_SCENARIO__ON:
+			getOn().clear();
+			getOn().addAll((Collection<? extends Clock>) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__BASE_ACTION:
+			setBase_Action((Action) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__BASE_BEHAVIOR:
+			setBase_Behavior((Behavior) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__BASE_MESSAGE:
+			setBase_Message((Message) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__DURATION:
+			setDuration((ValueSpecification) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__START:
+			setStart((Event) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__FINISH:
+			setFinish((Event) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__CAUSE:
+			setCause((GaWorkloadEvent) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__HOST_DEMAND:
+			getHostDemand().clear();
+			getHostDemand().addAll((Collection<? extends String>) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__HOST_DEMAND_OPS:
+			getHostDemandOps().clear();
+			getHostDemandOps().addAll((Collection<? extends String>) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__INTER_OCC_T:
+			getInterOccT().clear();
+			getInterOccT().addAll((Collection<? extends String>) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__THROUGHPUT:
+			getThroughput().clear();
+			getThroughput().addAll((Collection<? extends String>) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__RESP_T:
+			getRespT().clear();
+			getRespT().addAll((Collection<? extends String>) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__UTILIZATION:
+			getUtilization().clear();
+			getUtilization().addAll((Collection<? extends String>) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__UTILIZATION_ON_HOST:
+			getUtilizationOnHost().clear();
+			getUtilizationOnHost().addAll((Collection<? extends String>) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__ROOT:
+			setRoot((GaStep) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__STEPS:
+			getSteps().clear();
+			getSteps().addAll((Collection<? extends GaStep>) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__PARENT_STEP:
+			getParentStep().clear();
+			getParentStep().addAll((Collection<? extends GaStep>) newValue);
+			return;
+		case GQAMPackage.GA_SCENARIO__TIMING:
+			getTiming().clear();
+			getTiming().addAll((Collection<? extends GaTimedObs>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -899,68 +1023,69 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_SCENARIO__ON:
-				getOn().clear();
-				return;
-			case GQAMPackage.GA_SCENARIO__BASE_ACTION:
-				setBase_Action((Action)null);
-				return;
-			case GQAMPackage.GA_SCENARIO__BASE_BEHAVIOR:
-				setBase_Behavior((Behavior)null);
-				return;
-			case GQAMPackage.GA_SCENARIO__BASE_MESSAGE:
-				setBase_Message((Message)null);
-				return;
-			case GQAMPackage.GA_SCENARIO__DURATION:
-				setDuration((ValueSpecification)null);
-				return;
-			case GQAMPackage.GA_SCENARIO__START:
-				setStart((Event)null);
-				return;
-			case GQAMPackage.GA_SCENARIO__FINISH:
-				setFinish((Event)null);
-				return;
-			case GQAMPackage.GA_SCENARIO__CAUSE:
-				setCause((GaWorkloadEvent)null);
-				return;
-			case GQAMPackage.GA_SCENARIO__HOST_DEMAND:
-				getHostDemand().clear();
-				return;
-			case GQAMPackage.GA_SCENARIO__HOST_DEMAND_OPS:
-				getHostDemandOps().clear();
-				return;
-			case GQAMPackage.GA_SCENARIO__INTER_OCC_T:
-				getInterOccT().clear();
-				return;
-			case GQAMPackage.GA_SCENARIO__THROUGHPUT:
-				getThroughput().clear();
-				return;
-			case GQAMPackage.GA_SCENARIO__RESP_T:
-				getRespT().clear();
-				return;
-			case GQAMPackage.GA_SCENARIO__UTILIZATION:
-				getUtilization().clear();
-				return;
-			case GQAMPackage.GA_SCENARIO__UTILIZATION_ON_HOST:
-				getUtilizationOnHost().clear();
-				return;
-			case GQAMPackage.GA_SCENARIO__ROOT:
-				setRoot((GaStep)null);
-				return;
-			case GQAMPackage.GA_SCENARIO__STEPS:
-				getSteps().clear();
-				return;
-			case GQAMPackage.GA_SCENARIO__PARENT_STEP:
-				getParentStep().clear();
-				return;
-			case GQAMPackage.GA_SCENARIO__TIMING:
-				getTiming().clear();
-				return;
+		case GQAMPackage.GA_SCENARIO__ON:
+			getOn().clear();
+			return;
+		case GQAMPackage.GA_SCENARIO__BASE_ACTION:
+			setBase_Action((Action) null);
+			return;
+		case GQAMPackage.GA_SCENARIO__BASE_BEHAVIOR:
+			setBase_Behavior((Behavior) null);
+			return;
+		case GQAMPackage.GA_SCENARIO__BASE_MESSAGE:
+			setBase_Message((Message) null);
+			return;
+		case GQAMPackage.GA_SCENARIO__DURATION:
+			setDuration((ValueSpecification) null);
+			return;
+		case GQAMPackage.GA_SCENARIO__START:
+			setStart((Event) null);
+			return;
+		case GQAMPackage.GA_SCENARIO__FINISH:
+			setFinish((Event) null);
+			return;
+		case GQAMPackage.GA_SCENARIO__CAUSE:
+			setCause((GaWorkloadEvent) null);
+			return;
+		case GQAMPackage.GA_SCENARIO__HOST_DEMAND:
+			getHostDemand().clear();
+			return;
+		case GQAMPackage.GA_SCENARIO__HOST_DEMAND_OPS:
+			getHostDemandOps().clear();
+			return;
+		case GQAMPackage.GA_SCENARIO__INTER_OCC_T:
+			getInterOccT().clear();
+			return;
+		case GQAMPackage.GA_SCENARIO__THROUGHPUT:
+			getThroughput().clear();
+			return;
+		case GQAMPackage.GA_SCENARIO__RESP_T:
+			getRespT().clear();
+			return;
+		case GQAMPackage.GA_SCENARIO__UTILIZATION:
+			getUtilization().clear();
+			return;
+		case GQAMPackage.GA_SCENARIO__UTILIZATION_ON_HOST:
+			getUtilizationOnHost().clear();
+			return;
+		case GQAMPackage.GA_SCENARIO__ROOT:
+			setRoot((GaStep) null);
+			return;
+		case GQAMPackage.GA_SCENARIO__STEPS:
+			getSteps().clear();
+			return;
+		case GQAMPackage.GA_SCENARIO__PARENT_STEP:
+			getParentStep().clear();
+			return;
+		case GQAMPackage.GA_SCENARIO__TIMING:
+			getTiming().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -968,49 +1093,50 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_SCENARIO__ON:
-				return on != null && !on.isEmpty();
-			case GQAMPackage.GA_SCENARIO__BASE_ACTION:
-				return base_Action != null;
-			case GQAMPackage.GA_SCENARIO__BASE_BEHAVIOR:
-				return base_Behavior != null;
-			case GQAMPackage.GA_SCENARIO__BASE_MESSAGE:
-				return base_Message != null;
-			case GQAMPackage.GA_SCENARIO__DURATION:
-				return duration != null;
-			case GQAMPackage.GA_SCENARIO__START:
-				return start != null;
-			case GQAMPackage.GA_SCENARIO__FINISH:
-				return finish != null;
-			case GQAMPackage.GA_SCENARIO__CAUSE:
-				return cause != null;
-			case GQAMPackage.GA_SCENARIO__HOST_DEMAND:
-				return hostDemand != null && !hostDemand.isEmpty();
-			case GQAMPackage.GA_SCENARIO__HOST_DEMAND_OPS:
-				return hostDemandOps != null && !hostDemandOps.isEmpty();
-			case GQAMPackage.GA_SCENARIO__INTER_OCC_T:
-				return interOccT != null && !interOccT.isEmpty();
-			case GQAMPackage.GA_SCENARIO__THROUGHPUT:
-				return throughput != null && !throughput.isEmpty();
-			case GQAMPackage.GA_SCENARIO__RESP_T:
-				return respT != null && !respT.isEmpty();
-			case GQAMPackage.GA_SCENARIO__UTILIZATION:
-				return utilization != null && !utilization.isEmpty();
-			case GQAMPackage.GA_SCENARIO__UTILIZATION_ON_HOST:
-				return utilizationOnHost != null && !utilizationOnHost.isEmpty();
-			case GQAMPackage.GA_SCENARIO__ROOT:
-				return root != null;
-			case GQAMPackage.GA_SCENARIO__STEPS:
-				return steps != null && !steps.isEmpty();
-			case GQAMPackage.GA_SCENARIO__PARENT_STEP:
-				return parentStep != null && !parentStep.isEmpty();
-			case GQAMPackage.GA_SCENARIO__TIMING:
-				return timing != null && !timing.isEmpty();
+		case GQAMPackage.GA_SCENARIO__ON:
+			return on != null && !on.isEmpty();
+		case GQAMPackage.GA_SCENARIO__BASE_ACTION:
+			return base_Action != null;
+		case GQAMPackage.GA_SCENARIO__BASE_BEHAVIOR:
+			return base_Behavior != null;
+		case GQAMPackage.GA_SCENARIO__BASE_MESSAGE:
+			return base_Message != null;
+		case GQAMPackage.GA_SCENARIO__DURATION:
+			return duration != null;
+		case GQAMPackage.GA_SCENARIO__START:
+			return start != null;
+		case GQAMPackage.GA_SCENARIO__FINISH:
+			return finish != null;
+		case GQAMPackage.GA_SCENARIO__CAUSE:
+			return cause != null;
+		case GQAMPackage.GA_SCENARIO__HOST_DEMAND:
+			return hostDemand != null && !hostDemand.isEmpty();
+		case GQAMPackage.GA_SCENARIO__HOST_DEMAND_OPS:
+			return hostDemandOps != null && !hostDemandOps.isEmpty();
+		case GQAMPackage.GA_SCENARIO__INTER_OCC_T:
+			return interOccT != null && !interOccT.isEmpty();
+		case GQAMPackage.GA_SCENARIO__THROUGHPUT:
+			return throughput != null && !throughput.isEmpty();
+		case GQAMPackage.GA_SCENARIO__RESP_T:
+			return respT != null && !respT.isEmpty();
+		case GQAMPackage.GA_SCENARIO__UTILIZATION:
+			return utilization != null && !utilization.isEmpty();
+		case GQAMPackage.GA_SCENARIO__UTILIZATION_ON_HOST:
+			return utilizationOnHost != null && !utilizationOnHost.isEmpty();
+		case GQAMPackage.GA_SCENARIO__ROOT:
+			return root != null;
+		case GQAMPackage.GA_SCENARIO__STEPS:
+			return steps != null && !steps.isEmpty();
+		case GQAMPackage.GA_SCENARIO__PARENT_STEP:
+			return parentStep != null && !parentStep.isEmpty();
+		case GQAMPackage.GA_SCENARIO__TIMING:
+			return timing != null && !timing.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1018,25 +1144,35 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == TimedElement.class) {
 			switch (derivedFeatureID) {
-				case GQAMPackage.GA_SCENARIO__ON: return TimePackage.TIMED_ELEMENT__ON;
-				default: return -1;
+			case GQAMPackage.GA_SCENARIO__ON:
+				return TimePackage.TIMED_ELEMENT__ON;
+			default:
+				return -1;
 			}
 		}
 		if (baseClass == TimedProcessing.class) {
 			switch (derivedFeatureID) {
-				case GQAMPackage.GA_SCENARIO__BASE_ACTION: return TimePackage.TIMED_PROCESSING__BASE_ACTION;
-				case GQAMPackage.GA_SCENARIO__BASE_BEHAVIOR: return TimePackage.TIMED_PROCESSING__BASE_BEHAVIOR;
-				case GQAMPackage.GA_SCENARIO__BASE_MESSAGE: return TimePackage.TIMED_PROCESSING__BASE_MESSAGE;
-				case GQAMPackage.GA_SCENARIO__DURATION: return TimePackage.TIMED_PROCESSING__DURATION;
-				case GQAMPackage.GA_SCENARIO__START: return TimePackage.TIMED_PROCESSING__START;
-				case GQAMPackage.GA_SCENARIO__FINISH: return TimePackage.TIMED_PROCESSING__FINISH;
-				default: return -1;
+			case GQAMPackage.GA_SCENARIO__BASE_ACTION:
+				return TimePackage.TIMED_PROCESSING__BASE_ACTION;
+			case GQAMPackage.GA_SCENARIO__BASE_BEHAVIOR:
+				return TimePackage.TIMED_PROCESSING__BASE_BEHAVIOR;
+			case GQAMPackage.GA_SCENARIO__BASE_MESSAGE:
+				return TimePackage.TIMED_PROCESSING__BASE_MESSAGE;
+			case GQAMPackage.GA_SCENARIO__DURATION:
+				return TimePackage.TIMED_PROCESSING__DURATION;
+			case GQAMPackage.GA_SCENARIO__START:
+				return TimePackage.TIMED_PROCESSING__START;
+			case GQAMPackage.GA_SCENARIO__FINISH:
+				return TimePackage.TIMED_PROCESSING__FINISH;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -1045,25 +1181,35 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == TimedElement.class) {
 			switch (baseFeatureID) {
-				case TimePackage.TIMED_ELEMENT__ON: return GQAMPackage.GA_SCENARIO__ON;
-				default: return -1;
+			case TimePackage.TIMED_ELEMENT__ON:
+				return GQAMPackage.GA_SCENARIO__ON;
+			default:
+				return -1;
 			}
 		}
 		if (baseClass == TimedProcessing.class) {
 			switch (baseFeatureID) {
-				case TimePackage.TIMED_PROCESSING__BASE_ACTION: return GQAMPackage.GA_SCENARIO__BASE_ACTION;
-				case TimePackage.TIMED_PROCESSING__BASE_BEHAVIOR: return GQAMPackage.GA_SCENARIO__BASE_BEHAVIOR;
-				case TimePackage.TIMED_PROCESSING__BASE_MESSAGE: return GQAMPackage.GA_SCENARIO__BASE_MESSAGE;
-				case TimePackage.TIMED_PROCESSING__DURATION: return GQAMPackage.GA_SCENARIO__DURATION;
-				case TimePackage.TIMED_PROCESSING__START: return GQAMPackage.GA_SCENARIO__START;
-				case TimePackage.TIMED_PROCESSING__FINISH: return GQAMPackage.GA_SCENARIO__FINISH;
-				default: return -1;
+			case TimePackage.TIMED_PROCESSING__BASE_ACTION:
+				return GQAMPackage.GA_SCENARIO__BASE_ACTION;
+			case TimePackage.TIMED_PROCESSING__BASE_BEHAVIOR:
+				return GQAMPackage.GA_SCENARIO__BASE_BEHAVIOR;
+			case TimePackage.TIMED_PROCESSING__BASE_MESSAGE:
+				return GQAMPackage.GA_SCENARIO__BASE_MESSAGE;
+			case TimePackage.TIMED_PROCESSING__DURATION:
+				return GQAMPackage.GA_SCENARIO__DURATION;
+			case TimePackage.TIMED_PROCESSING__START:
+				return GQAMPackage.GA_SCENARIO__START;
+			case TimePackage.TIMED_PROCESSING__FINISH:
+				return GQAMPackage.GA_SCENARIO__FINISH;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -1072,11 +1218,14 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (hostDemand: ");
@@ -1097,4 +1246,4 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 		return result.toString();
 	}
 
-} //GaScenarioImpl
+} // GaScenarioImpl

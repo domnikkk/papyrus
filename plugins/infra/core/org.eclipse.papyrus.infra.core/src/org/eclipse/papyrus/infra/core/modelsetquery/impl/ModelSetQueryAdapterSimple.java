@@ -10,7 +10,7 @@ import org.eclipse.papyrus.infra.core.modelsetquery.IModelSetQueryAdapter;
 /**
  * This implementation uses ItemPropertyDescriptor class to resolve objects
  * from type
- * 
+ *
  * @author tfaure
  */
 public class ModelSetQueryAdapterSimple implements IModelSetQueryAdapter {
@@ -19,12 +19,13 @@ public class ModelSetQueryAdapterSimple implements IModelSetQueryAdapter {
 	 * TypeCacheAdapter. With the simple cache adapter performance are not good
 	 * but a result is still returned
 	 */
-	private static ModelSetQueryAdapterSimple simpleCacheAdapter = new ModelSetQueryAdapterSimple();	
-	
+	private static ModelSetQueryAdapterSimple simpleCacheAdapter = new ModelSetQueryAdapterSimple();
+
 	public static IModelSetQueryAdapter getSimpleTypeCacheAdapter() {
 		return simpleCacheAdapter;
 	}
 
+	@Override
 	public Collection<EObject> getReachableObjectsOfType(EObject object, EClassifier type) {
 		return ItemPropertyDescriptor.getReachableObjectsOfType(object, type);
 	}

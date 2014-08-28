@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,13 +32,13 @@ import org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureModel;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.variability.Variability#getBase_Class <em>Base Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.variability.Variability#getBase_Package <em>Base Package</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.variability.Variability#getConfigurableContainer <em>Configurable Container</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.variability.Variability#getConfiguration <em>Configuration</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.variability.Variability#getProductFeatureModel <em>Product Feature Model</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.variability.Variability#getDecisionModel <em>Decision Model</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.variability.Variability#getVariableElement <em>Variable Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.variability.Variability#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.variability.Variability#getBase_Package <em>Base Package</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.variability.Variability#getConfigurableContainer <em>Configurable Container</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.variability.Variability#getConfiguration <em>Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.variability.Variability#getProductFeatureModel <em>Product Feature Model</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.variability.Variability#getDecisionModel <em>Decision Model</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.variability.Variability#getVariableElement <em>Variable Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,10 +51,10 @@ public interface Variability extends Context {
 	 * Returns the value of the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Class</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getVariability_Base_Class()
@@ -67,7 +67,9 @@ public interface Variability extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.Variability#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Class</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
@@ -77,10 +79,10 @@ public interface Variability extends Context {
 	 * Returns the value of the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Package</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Package</em>' reference.
 	 * @see #setBase_Package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getVariability_Base_Package()
@@ -93,7 +95,9 @@ public interface Variability extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.Variability#getBase_Package <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Package</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Package</em>' reference.
 	 * @see #getBase_Package()
 	 * @generated
 	 */
@@ -104,10 +108,10 @@ public interface Variability extends Context {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.variability.ConfigurableContainer}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Configurable Container</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Configurable Container</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Configurable Container</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getVariability_ConfigurableContainer()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -120,10 +124,10 @@ public interface Variability extends Context {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.variability.FeatureConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Configuration</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Configuration</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Configuration</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getVariability_Configuration()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -136,10 +140,10 @@ public interface Variability extends Context {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.variability.VehicleLevelBinding}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Decision Model</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Decision Model</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Decision Model</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getVariability_DecisionModel()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -152,10 +156,10 @@ public interface Variability extends Context {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureModel}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Product Feature Model</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Product Feature Model</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Product Feature Model</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getVariability_ProductFeatureModel()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -168,10 +172,10 @@ public interface Variability extends Context {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.variability.VariableElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Variable Element</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Variable Element</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Variable Element</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getVariability_VariableElement()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"

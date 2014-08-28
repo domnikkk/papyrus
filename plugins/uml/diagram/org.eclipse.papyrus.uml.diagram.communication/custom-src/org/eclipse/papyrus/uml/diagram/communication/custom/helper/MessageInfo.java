@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia Dhouib saadia.dhouib@cea.fr  
+ *  Saadia Dhouib saadia.dhouib@cea.fr
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.communication.custom.helper;
@@ -32,13 +32,13 @@ public class MessageInfo {
 
 	/**
 	 * Instantiates a new message info.
-	 * 
+	 *
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @param source
-	 *        the source
+	 *            the source
 	 * @param target
-	 *        the target
+	 *            the target
 	 */
 	public MessageInfo(Message message, Lifeline source, Lifeline target) {
 		super();
@@ -49,7 +49,7 @@ public class MessageInfo {
 
 	/**
 	 * Gets the source.
-	 * 
+	 *
 	 * @return the source
 	 */
 	public Lifeline getSource() {
@@ -58,9 +58,9 @@ public class MessageInfo {
 
 	/**
 	 * Sets the source.
-	 * 
+	 *
 	 * @param source
-	 *        the new source
+	 *            the new source
 	 */
 	public void setSource(Lifeline source) {
 		this.source = source;
@@ -68,7 +68,7 @@ public class MessageInfo {
 
 	/**
 	 * Gets the target.
-	 * 
+	 *
 	 * @return the target
 	 */
 	public Lifeline getTarget() {
@@ -77,9 +77,9 @@ public class MessageInfo {
 
 	/**
 	 * Sets the target.
-	 * 
+	 *
 	 * @param target
-	 *        the new target
+	 *            the new target
 	 */
 	public void setTarget(Lifeline target) {
 		this.target = target;
@@ -87,7 +87,7 @@ public class MessageInfo {
 
 	/**
 	 * Gets the message.
-	 * 
+	 *
 	 * @return the message
 	 */
 	public Message getMessage() {
@@ -96,9 +96,9 @@ public class MessageInfo {
 
 	/**
 	 * Sets the message.
-	 * 
+	 *
 	 * @param message
-	 *        the new message
+	 *            the new message
 	 */
 	public void setMessage(Message message) {
 		this.message = message;

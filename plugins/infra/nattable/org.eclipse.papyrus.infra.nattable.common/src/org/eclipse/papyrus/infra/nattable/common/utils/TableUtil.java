@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,21 +27,21 @@ public class TableUtil {
 
 	/**
 	 * Gets the tables associated to element.
-	 * 
+	 *
 	 * @param element
 	 * @param resourceSet
-	 *        can be null, it will then try to retrieve it from the element.
+	 *            can be null, it will then try to retrieve it from the element.
 	 * @return the list of diagrams associated with the given element
 	 */
 	public static List<Table> getAssociatedTables(EObject element, ResourceSet resourceSet) {
-		if(resourceSet == null) {
-			if(element != null && element.eResource() != null) {
+		if (resourceSet == null) {
+			if (element != null && element.eResource() != null) {
 				resourceSet = element.eResource().getResourceSet();
 			}
 		}
 
-		if(resourceSet instanceof ModelSet) {
-			Resource notationResource = NotationUtils.getNotationResource((ModelSet)resourceSet);
+		if (resourceSet instanceof ModelSet) {
+			Resource notationResource = NotationUtils.getNotationResource((ModelSet) resourceSet);
 			return getAssociatedTablesFromNotationResource(element, notationResource);
 		}
 
@@ -50,19 +50,19 @@ public class TableUtil {
 
 	/**
 	 * Gets the diagrams associated to element.
-	 * 
+	 *
 	 * @param element
 	 * @param notationResource
-	 *        the notation resource where to look for diagrams
+	 *            the notation resource where to look for diagrams
 	 * @return the list of diagrams associated with the given element
 	 */
 	public static List<Table> getAssociatedTablesFromNotationResource(EObject element, Resource notationResource) {
-		if(notationResource != null) {
+		if (notationResource != null) {
 			LinkedList<Table> tables = new LinkedList<Table>();
-			for(EObject eObj : notationResource.getContents()) {
-				if(eObj instanceof Table) {
-					Table table = (Table)eObj;
-					if(element.equals(table.getOwner())) {
+			for (EObject eObj : notationResource.getContents()) {
+				if (eObj instanceof Table) {
+					Table table = (Table) eObj;
+					if (element.equals(table.getOwner())) {
 						tables.add(table);
 					}
 				}

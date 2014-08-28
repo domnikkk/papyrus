@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,14 +53,14 @@ public class ProfileSwitchValidator {
 	public boolean validate(final ProfileSwitchContext ctx) {
 		final boolean[] result = { true };
 
-		if(!preconditions.isEmpty()) {
+		if (!preconditions.isEmpty()) {
 			List<IStatus> statuses = Lists.newArrayListWithCapacity(preconditions.size());
 
-			for(IProfileSwitchPrecondition next : preconditions) {
+			for (IProfileSwitchPrecondition next : preconditions) {
 				try {
 					IStatus status = next.validateProfileSwitch(ctx);
 
-					if((status != null) && !status.isOK()) {
+					if ((status != null) && !status.isOK()) {
 						statuses.add(status);
 					}
 				} catch (Exception e) {
@@ -68,16 +68,18 @@ public class ProfileSwitchValidator {
 				}
 			}
 
-			final IStatus status = statuses.isEmpty() ? Status.OK_STATUS : (statuses.size() == 1) ? statuses.get(0) : new MultiStatus(Activator.PLUGIN_ID, 0, Iterables.toArray(statuses, IStatus.class), "Problems in profile switch initial conditions check.", null);
+			final IStatus status = statuses.isEmpty() ? Status.OK_STATUS : (statuses.size() == 1) ? statuses.get(0) : new MultiStatus(Activator.PLUGIN_ID, 0, Iterables.toArray(statuses, IStatus.class), "Problems in profile switch initial conditions check.",
+					null);
 
-			switch(status.getSeverity()) {
+			switch (status.getSeverity()) {
 			case IStatus.OK:
 			case IStatus.INFO:
-				// All's well.  Don't bother the user.
+				// All's well. Don't bother the user.
 				break;
 			case IStatus.WARNING:
 				// Get confirmation before proceeding
-				final ErrorDialog dlg = new ErrorDialog(ctx.getShell(), "Profile Switch", "Profile switch initial conditions check found problems in the model that may cause the switch to fail or be incomplete.  Are you sure you want to proceed?", status, IStatus.INFO | IStatus.WARNING) {
+				final ErrorDialog dlg = new ErrorDialog(ctx.getShell(), "Profile Switch", "Profile switch initial conditions check found problems in the model that may cause the switch to fail or be incomplete.  Are you sure you want to proceed?", status,
+						IStatus.INFO | IStatus.WARNING) {
 
 					@Override
 					protected void createButtonsForButtonBar(Composite parent) {
@@ -88,7 +90,7 @@ public class ProfileSwitchValidator {
 
 					@Override
 					protected void buttonPressed(int id) {
-						switch(id) {
+						switch (id) {
 						case IDialogConstants.YES_ID:
 							setReturnCode(OK);
 							close();
@@ -112,7 +114,7 @@ public class ProfileSwitchValidator {
 				});
 				break;
 			default:
-				// Errors.  Don't proceed
+				// Errors. Don't proceed
 				ctx.getShell().getDisplay().syncExec(new Runnable() {
 
 					public void run() {
@@ -130,10 +132,10 @@ public class ProfileSwitchValidator {
 	private static List<IProfileSwitchPrecondition> loadPreconditions() {
 		List<IProfileSwitchPrecondition> result = Lists.newArrayList();
 
-		for(IConfigurationElement next : Platform.getExtensionRegistry().getConfigurationElementsFor(Activator.PLUGIN_ID, EXT_PT)) {
-			if(E_PRECONDITION.equals(next.getName())) {
+		for (IConfigurationElement next : Platform.getExtensionRegistry().getConfigurationElementsFor(Activator.PLUGIN_ID, EXT_PT)) {
+			if (E_PRECONDITION.equals(next.getName())) {
 				try {
-					result.add((IProfileSwitchPrecondition)next.createExecutableExtension(A_CLASS));
+					result.add((IProfileSwitchPrecondition) next.createExecutableExtension(A_CLASS));
 				} catch (Exception e) {
 					Activator.log.error("Invalid profile switch precondition extension in bundle " + next.getContributor().getName(), e); //$NON-NLS-1$
 				}

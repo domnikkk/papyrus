@@ -8,7 +8,7 @@
  * Contributors:
  *     CEA List - initial API and implementation
  *     Christian W. Damus (CEA) - bug 422257
- *     Dr. David H. Akehurst - enable programmatic registration 
+ *     Dr. David H. Akehurst - enable programmatic registration
  *******************************************************************************/
 package org.eclipse.papyrus.uml.extensionpoints.library;
 
@@ -35,33 +35,33 @@ import org.eclipse.uml2.uml.PackageImport;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
- * 
+ *
  */
 public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelectionDialog {
 
 	/**
-	 * 
+	 *
 	 */
 	private EList<PackageImport> importedProfiles;
 
 	/**
-	 * 
+	 *
 	 */
 	private List<String> importedProfilesNames;
 
 	/**
-	 * 
+	 *
 	 */
 	private IRegisteredProfile[] regProfiles;
 
 	/**
-	 * 
+	 *
 	 */
 	private Package currentPackage;
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param umlPackage
 	 * @param parent
 	 */
@@ -82,8 +82,8 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
 	public boolean run() {
@@ -92,10 +92,10 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param appliedProfiles
-	 * 
+	 *
 	 * @return
 	 */
 	private List<String> getImportedProfileNames(EList<? extends PackageImport> importedProfiles) {
@@ -103,7 +103,7 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 		List<String> Libraries = new ArrayList<String>();
 		Iterator<? extends PackageImport> importedIt = importedProfiles.iterator();
 
-		while(importedIt.hasNext()) {
+		while (importedIt.hasNext()) {
 			PackageImport currentImport = importedIt.next();
 			String currentName = currentImport.getImportedPackage().getName();
 			Libraries.add(currentName);
@@ -113,18 +113,18 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
 	private IRegisteredProfile[] removeAlreadyImportedFromSelection() {
 
 		List<IRegisteredProfile> profiles = new ArrayList<IRegisteredProfile>();
 
-		for(int i = 0; i < regProfiles.length; i++) {
+		for (int i = 0; i < regProfiles.length; i++) {
 
 			String currentName = regProfiles[i].getName();
-			if(!importedProfilesNames.contains(currentName)) {
+			if (!importedProfilesNames.contains(currentName)) {
 				profiles.add(regProfiles[i]);
 			}
 		}
@@ -136,8 +136,8 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
 	private boolean treatSelection() {
@@ -146,18 +146,18 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 		Object[] selection = this.getResult();
 		boolean hasChanged = false;
 
-		if(selection == null) { // Cancel was selected
+		if (selection == null) { // Cancel was selected
 			return hasChanged;
 		}
 
-		for(int i = 0; i < selection.length; i++) {
+		for (int i = 0; i < selection.length; i++) {
 
-			IRegisteredProfile currentProfile = (IRegisteredProfile)(selection[i]);
+			IRegisteredProfile currentProfile = (IRegisteredProfile) (selection[i]);
 			URI modelUri = currentProfile.getUri();
 
 			PackageImport pi = getModelLibraryImportFromURI(modelUri);
 
-			if(pi != null) {
+			if (pi != null) {
 				currentPackage.getPackageImports().add(pi);
 			}
 		}
@@ -165,10 +165,10 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param uri
-	 * 
+	 *
 	 * @return
 	 */
 	public PackageImport getModelLibraryImportFromURI(URI uri) {
@@ -176,20 +176,20 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 		ResourceSet resourceSet = EMFHelper.getResourceSet(currentPackage);
 		Resource modelResource = resourceSet.getResource(uri, true);
 
-		if(modelResource.getContents().size() <= 0) {
+		if (modelResource.getContents().size() <= 0) {
 			Activator.getDefault().getLog().log(
 					new Status(IStatus.ERROR, Activator.PLUGIN_ID, "No element found in model from URI "
-					+ uri.toString()));
+							+ uri.toString()));
 			return null;
 		}
 
 		// Try to reach model
-		Element root = (Element)modelResource.getContents().get(0);
+		Element root = (Element) modelResource.getContents().get(0);
 
-		if(root instanceof Package) {
+		if (root instanceof Package) {
 
 			// Import model library
-			Package libToImport = (Package)(modelResource.getContents().get(0));
+			Package libToImport = (Package) (modelResource.getContents().get(0));
 			// create import package
 			PackageImport modelLibImport = UMLFactory.eINSTANCE.createPackageImport();
 			modelLibImport.setImportedPackage(libToImport);
@@ -198,7 +198,7 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 		}
 		Activator.getDefault().getLog().log(
 				new Status(IStatus.ERROR, Activator.PLUGIN_ID, "The selected uri (" + uri.toString()
-				+ ") does not contain any model library !"));
+						+ ") does not contain any model library !"));
 		return null;
 	}
 }

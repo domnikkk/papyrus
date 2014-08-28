@@ -36,19 +36,19 @@ public class PanelFactory {
 	/**
 	 * Creates a panel for the given object. The object should be an {@link Element}. If not,
 	 * it returns a default panel.
-	 * 
+	 *
 	 * @param parent
-	 *        the composite parent for the new panel
+	 *            the composite parent for the new panel
 	 * @param style
-	 *        the SWT style of the panel
+	 *            the SWT style of the panel
 	 * @param object
-	 *        the object for which the panel is created
+	 *            the object for which the panel is created
 	 * @return the newly created panel
 	 */
 	public CppAbstractPanel createPanel(Composite parent, int style, Object object) {
 		CppAbstractPanel panel;
-		if(object instanceof Element) {
-			panel = createPanel(parent, style, (Element)object);
+		if (object instanceof Element) {
+			panel = createPanel(parent, style, (Element) object);
 		} else {
 			panel = createPanel(parent, style, null);
 		}
@@ -57,30 +57,30 @@ public class PanelFactory {
 
 	/**
 	 * Creates a panel for the given element.
-	 * 
+	 *
 	 * @param parent
-	 *        the composite parent for the new panel
+	 *            the composite parent for the new panel
 	 * @param style
-	 *        the SWT style of the panel
+	 *            the SWT style of the panel
 	 * @param element
-	 *        the UML2 element for which the panel is created
+	 *            the UML2 element for which the panel is created
 	 * @return the newly created panel
 	 */
 	public CppAbstractPanel createPanel(Composite parent, int style, Element element) {
 		CppAbstractPanel panel = null;
-		int metaclassID = -1; // -1 => default case 
-		if(element instanceof Transition) {
+		int metaclassID = -1; // -1 => default case
+		if (element instanceof Transition) {
 			// navigate from transition to effect, if it exists (and has an opaque behavior)
-			Behavior effect = ((Transition)element).getEffect();
+			Behavior effect = ((Transition) element).getEffect();
 			if (effect instanceof OpaqueBehavior) {
 				element = effect;
 			}
 		}
-		if(element != null) {
+		if (element != null) {
 			metaclassID = element.eClass().getClassifierID();
 		}
 
-		switch(metaclassID) {
+		switch (metaclassID) {
 
 		case UMLPackage.OPERATION:
 			panel = new CppOperationPanel(parent, style);
@@ -89,7 +89,7 @@ public class PanelFactory {
 		case UMLPackage.OPAQUE_BEHAVIOR:
 			panel = new CppBehaviorPanel(parent, style);
 			break;
-			
+
 		case UMLPackage.CLASS:
 			panel = new CppClassPanel(parent, style);
 			break;

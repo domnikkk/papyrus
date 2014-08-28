@@ -108,7 +108,7 @@ public abstract class AbstractIResourceComposite<T extends IResource> extends
 				}
 			}
 		});
-		
+
 		this.text.addModifyListener(new ModifyListener() {
 			public void modifyText(final ModifyEvent e) {
 				fireChanged();

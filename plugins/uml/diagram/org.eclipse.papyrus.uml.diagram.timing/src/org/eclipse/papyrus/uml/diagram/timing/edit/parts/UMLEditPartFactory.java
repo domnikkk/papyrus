@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -20,7 +20,6 @@ import org.eclipse.gef.tools.CellEditorLocator;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess;
 import org.eclipse.gmf.tooling.runtime.directedit.locator.LabelCellEditorLocator;
 import org.eclipse.gmf.tooling.runtime.directedit.locator.TextCellEditorLocator;
 import org.eclipse.jface.viewers.CellEditor;
@@ -39,10 +38,11 @@ public class UMLEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
+	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
-		if(model instanceof View) {
-			View view = (View)model;
-			switch(UMLVisualIDRegistry.getVisualID(view)) {
+		if (model instanceof View) {
+			View view = (View) model;
+			switch (UMLVisualIDRegistry.getVisualID(view)) {
 			case TimingDiagramEditPart.VISUAL_ID:
 				return new TimingDiagramEditPart(view);
 			case InteractionEditPartTN.VISUAL_ID:
@@ -206,14 +206,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 	 * @generated NOT
 	 */
 	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
-		if(source.getFigure() instanceof IMultilineEditableFigure) {
-			return new MultilineCellEditorLocator((IMultilineEditableFigure)source.getFigure());
-		} else if(source.getFigure() instanceof WrappingLabel) {
-			return new TextCellEditorLocator((WrappingLabel)source.getFigure());
-		} else if(source.getFigure() instanceof LifelineVerticalLabel) {
-			return new LifelineVerticalLabelCellEditorLocator((LifelineVerticalLabel)source.getFigure());
+		if (source.getFigure() instanceof IMultilineEditableFigure) {
+			return new MultilineCellEditorLocator((IMultilineEditableFigure) source.getFigure());
+		} else if (source.getFigure() instanceof WrappingLabel) {
+			return new TextCellEditorLocator((WrappingLabel) source.getFigure());
+		} else if (source.getFigure() instanceof LifelineVerticalLabel) {
+			return new LifelineVerticalLabelCellEditorLocator((LifelineVerticalLabel) source.getFigure());
 		} else {
-			return new LabelCellEditorLocator((Label)source.getFigure());
+			return new LabelCellEditorLocator((Label) source.getFigure());
 		}
 	}
 
@@ -244,16 +244,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 		/**
 		 * @generated
 		 */
+		@Override
 		public void relocate(CellEditor celleditor) {
-			Text text = (Text)celleditor.getControl();
+			Text text = (Text) celleditor.getControl();
 			Rectangle rect = getMultilineEditableFigure().getBounds().getCopy();
 			rect.x = getMultilineEditableFigure().getEditionLocation().x;
 			rect.y = getMultilineEditableFigure().getEditionLocation().y;
 			getMultilineEditableFigure().translateToAbsolute(rect);
-			if(getMultilineEditableFigure().getText().length() > 0) {
+			if (getMultilineEditableFigure().getText().length() > 0) {
 				rect.setSize(new Dimension(text.computeSize(rect.width, SWT.DEFAULT)));
 			}
-			if(!rect.equals(new Rectangle(text.getBounds()))) {
+			if (!rect.equals(new Rectangle(text.getBounds()))) {
 				text.setBounds(rect.x, rect.y, rect.width, rect.height);
 			}
 		}

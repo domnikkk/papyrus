@@ -33,9 +33,9 @@ public class ExtendedURIToIResource implements Function<IExtendedURI, IResource>
 
 	/**
 	 * Instantiates a new extended uri to i resource.
-	 * 
+	 *
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 */
 	public ExtendedURIToIResource(ResourceSet resourceSet) {
 		super();
@@ -53,14 +53,14 @@ public class ExtendedURIToIResource implements Function<IExtendedURI, IResource>
 	public IResource apply(IExtendedURI from) {
 		URI uri = from.getUri();
 		IResource result = null;
-		if(URIUtils.isEObject(from.getUri(), resourceSet)) {
+		if (URIUtils.isEObject(from.getUri(), resourceSet)) {
 			result = WorkspaceSynchronizer.getFile(resourceSet.getEObject(uri, false).eResource());
-		} else if(URIUtils.isResourceURI(from.getUri(), resourceSet)) {
+		} else if (URIUtils.isResourceURI(from.getUri(), resourceSet)) {
 			Resource resource = resourceSet.getResource(from.getUri(), false);
 			result = WorkspaceSynchronizer.getFile(resource);
 		} else {
 			result = URIUtils.getFile(uri);
-			if(result == null) {
+			if (result == null) {
 				result = URIUtils.getFolder(uri);
 			}
 		}

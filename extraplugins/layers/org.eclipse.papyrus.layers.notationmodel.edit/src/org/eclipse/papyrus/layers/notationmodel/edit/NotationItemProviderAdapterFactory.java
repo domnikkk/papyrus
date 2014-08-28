@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -16,8 +16,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 /**
  * A ProviderAdapterFactory for notations elements in Layers.
  * The associated providers allows to render notation elements as UML elements.
- * 
- * 
+ *
+ *
  * @author cedric dumoulin
  *
  */
@@ -29,7 +29,7 @@ public class NotationItemProviderAdapterFactory extends org.eclipse.gmf.runtime.
 	 * models.
 	 */
 	protected AdapterFactory domainAdapterFactory;
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -38,8 +38,10 @@ public class NotationItemProviderAdapterFactory extends org.eclipse.gmf.runtime.
 	public NotationItemProviderAdapterFactory(AdapterFactory domainAdapterFactory) {
 		this.domainAdapterFactory = domainAdapterFactory;
 	}
+
 	/**
 	 * Use our DiagramAdapter.
+	 *
 	 * @see org.eclipse.gmf.runtime.notation.provider.NotationItemProviderAdapterFactory#createDiagramAdapter()
 	 *
 	 * @return
@@ -52,7 +54,7 @@ public class NotationItemProviderAdapterFactory extends org.eclipse.gmf.runtime.
 
 		return diagramItemProvider;
 	}
-	
+
 	@Override
 	public Adapter createShapeAdapter() {
 		if (shapeItemProvider == null) {
@@ -61,7 +63,7 @@ public class NotationItemProviderAdapterFactory extends org.eclipse.gmf.runtime.
 
 		return shapeItemProvider;
 	}
-	
+
 	@Override
 	public Adapter createConnectorAdapter() {
 		if (connectorItemProvider == null) {
@@ -70,7 +72,7 @@ public class NotationItemProviderAdapterFactory extends org.eclipse.gmf.runtime.
 
 		return connectorItemProvider;
 	}
-	
+
 	@Override
 	public Adapter createNodeAdapter() {
 		if (nodeItemProvider == null) {

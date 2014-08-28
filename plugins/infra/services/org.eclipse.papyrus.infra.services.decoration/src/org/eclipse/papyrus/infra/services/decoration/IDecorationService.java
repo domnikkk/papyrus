@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public interface IDecorationService extends IMarkerEventListener {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#startService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 
@@ -38,7 +38,7 @@ public interface IDecorationService extends IMarkerEventListener {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#disposeService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 
@@ -46,55 +46,55 @@ public interface IDecorationService extends IMarkerEventListener {
 
 	/**
 	 * Adds the listener.
-	 * 
+	 *
 	 * @param o
-	 *        the o
+	 *            the o
 	 */
 	void addListener(Observer o);
 
 	/**
 	 * Delete listener.
-	 * 
+	 *
 	 * @param o
-	 *        the o
+	 *            the o
 	 */
 	void deleteListener(Observer o);
 
 	/**
 	 * Adds the decoration. If a decoration with the same ID already exists, do not add, but update
 	 * the decoration.
-	 * 
+	 *
 	 * @param id
-	 *        the id
+	 *            the id
 	 * @param type
-	 *        the decoration type, currently corresponding to the marker type
+	 *            the decoration type, currently corresponding to the marker type
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param decorationForGE
-	 *        the decoration image for a graphical editor
+	 *            the decoration image for a graphical editor
 	 * @param decorationForME
-	 *        the decoration image for the model explorer
+	 *            the decoration image for the model explorer
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @return the created (or existing) decoration
 	 */
 	IPapyrusDecoration addDecoration(String id, String type, EObject element, ImageDescriptor decorationForGE, ImageDescriptor decorationForME, PreferedPosition position, String message, int priority);
 
 	/**
 	 * Removes the decoration.
-	 * 
+	 *
 	 * @param id
-	 *        the id
+	 *            the id
 	 */
 	void removeDecoration(String id);
 
 	/**
 	 * Gets the decoration.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param navigateToParents
-	 *        the navigate to parents
+	 *            the navigate to parents
 	 * @return the decoration
 	 */
 	List<IPapyrusDecoration> getDecorations(Object element, boolean navigateToParents);

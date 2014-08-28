@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,13 +48,13 @@ public abstract class ValueTreeObject extends ParentTreeObject {
 
 	/**
 	 * The Constructor.
-	 * 
+	 *
 	 * @param value
-	 *        the value
+	 *            the value
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param domain
-	 *        editing domain used to modify element values
+	 *            editing domain used to modify element values
 	 */
 	public ValueTreeObject(AppliedStereotypePropertyTreeObject parent, Object value) {
 		super(parent);
@@ -72,31 +72,32 @@ public abstract class ValueTreeObject extends ParentTreeObject {
 
 	/**
 	 * Gets the value.
-	 * 
+	 *
 	 * @return the value
 	 */
 	public Object getValue() {
 		return value;
 	}
 
-	
+
 
 	/**
 	 * Move me up: change order of values in case of a stereotype attribute supporting
 	 * a set of values. Updates the order on model model level and tree level
-	 * 
-	 * @param index index of value that should move up
+	 *
+	 * @param index
+	 *            index of value that should move up
 	 */
 	public void moveMeUp(int index) {
 
-		Object currentVal = ((AppliedStereotypePropertyTreeObject)getParent()).getValue();
+		Object currentVal = ((AppliedStereotypePropertyTreeObject) getParent()).getValue();
 		ArrayList<Object> tempValues = new ArrayList<Object>();
 
 		if (currentVal instanceof EList) {
 			@SuppressWarnings("unchecked")
 			EList<Object> currentValues = (EList<Object>) currentVal;
 
-			for(int i = 0; i < currentValues.size(); i++) {
+			for (int i = 0; i < currentValues.size(); i++) {
 				tempValues.add(currentValues.get(i));
 			}
 		} else {
@@ -104,7 +105,7 @@ public abstract class ValueTreeObject extends ParentTreeObject {
 			return;
 		}
 
-		if ((index < 1) || (index >= tempValues.size ())) {
+		if ((index < 1) || (index >= tempValues.size())) {
 			// Not found or already on top...
 			return;
 		}
@@ -114,9 +115,9 @@ public abstract class ValueTreeObject extends ParentTreeObject {
 		tempValues.set(index, tmp);
 
 		// update
-		AppliedStereotypePropertyTreeObject pTO = (AppliedStereotypePropertyTreeObject)getParent();
-		pTO.updateValue (tempValues);
-		
+		AppliedStereotypePropertyTreeObject pTO = (AppliedStereotypePropertyTreeObject) getParent();
+		pTO.updateValue(tempValues);
+
 		// Refresh - move tree elements
 		getParent().moveChildUp(this);
 	}
@@ -124,22 +125,23 @@ public abstract class ValueTreeObject extends ParentTreeObject {
 	/**
 	 * Move me down: change order of values in case of a stereotype attribute supporting
 	 * a set of values. Updates the order on model model level and tree level
-	 * 
-	 * @param index index of the value that should move down
+	 *
+	 * @param index
+	 *            index of the value that should move down
 	 */
 	public void moveMeDown(int index) {
 
 		// Stereotype stereotype = ((AppliedStereotypeTreeObject)getParent().getParent()).getStereotype();
 		// Element element = ((StereotypedElementTreeObject)getParent().getParent().getParent()).element;
 
-		Object currentVal = ((AppliedStereotypePropertyTreeObject)getParent()).getValue();
-		ArrayList<Object> tempValues = new ArrayList <Object>();
+		Object currentVal = ((AppliedStereotypePropertyTreeObject) getParent()).getValue();
+		ArrayList<Object> tempValues = new ArrayList<Object>();
 
 		if (currentVal instanceof EList) {
 			@SuppressWarnings("unchecked")
 			EList<Object> currentValues = (EList<Object>) currentVal;
 
-			for(int i = 0; i < currentValues.size(); i++) {
+			for (int i = 0; i < currentValues.size(); i++) {
 				tempValues.add(currentValues.get(i));
 			}
 		} else {
@@ -157,9 +159,9 @@ public abstract class ValueTreeObject extends ParentTreeObject {
 		tempValues.set(index, tmp);
 
 		// update
-		AppliedStereotypePropertyTreeObject pTO = (AppliedStereotypePropertyTreeObject)getParent();
-		pTO.updateValue (tempValues);
-		
+		AppliedStereotypePropertyTreeObject pTO = (AppliedStereotypePropertyTreeObject) getParent();
+		pTO.updateValue(tempValues);
+
 		// Refresh - move tree elements
 		getParent().moveChildDown(this);
 		// Force model change
@@ -168,12 +170,12 @@ public abstract class ValueTreeObject extends ParentTreeObject {
 
 	/**
 	 * Creates the instance.
-	 * 
+	 *
 	 * @param newValue
-	 *        the new value
+	 *            the new value
 	 * @param parent
-	 *        the parent
-	 * 
+	 *            the parent
+	 *
 	 * @return the value tree object
 	 */
 	public static ValueTreeObject createInstance(AppliedStereotypePropertyTreeObject parent, Object newValue) {
@@ -182,30 +184,30 @@ public abstract class ValueTreeObject extends ParentTreeObject {
 		Type type = property.getType();
 		ValueTreeObject newVTO = null;
 
-			/** primitive type **/
-		if(type instanceof PrimitiveType) {
+		/** primitive type **/
+		if (type instanceof PrimitiveType) {
 			newVTO = PrimitiveTypeValueTreeObject.createInstance(parent, newValue);
 			/** Composite **/
-		} else if((type instanceof org.eclipse.uml2.uml.Class) && !(type instanceof Stereotype) && property.isComposite()) {
+		} else if ((type instanceof org.eclipse.uml2.uml.Class) && !(type instanceof Stereotype) && property.isComposite()) {
 			//
 			/** Enumeration **/
-		} else if(type instanceof Enumeration) {
+		} else if (type instanceof Enumeration) {
 			newVTO = new EnumerationValueTreeObject(parent, newValue);
 			/** DataType **/
-		} else if(type instanceof DataType) {
+		} else if (type instanceof DataType) {
 			newVTO = new DataTypeValueTreeObject(parent, newValue);
 			/** Stereotype **/
-		} else	if(type instanceof Stereotype) {
+		} else if (type instanceof Stereotype) {
 			newVTO = new StereotypeValueTreeObject(parent, newValue);
 			/** Metaclass **/
-		} else if(Util.isMetaclass(type)) {
+		} else if (Util.isMetaclass(type)) {
 			newVTO = new MetaclassValueTreeObject(parent, newValue);
 		}
-		
+
 		return newVTO;
 	}
 
-	
+
 	/**
 	 * Edit me.
 	 * Abstract method that must be implemented by heirs. It will open a dialog and provide a selection

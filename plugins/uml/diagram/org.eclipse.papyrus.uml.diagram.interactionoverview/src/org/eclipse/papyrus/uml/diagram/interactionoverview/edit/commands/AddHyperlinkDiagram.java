@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,11 +28,11 @@ import org.eclipse.papyrus.uml.diagram.interactionoverview.part.Messages;
 public class AddHyperlinkDiagram extends AbstractTransactionalCommand {
 
 	protected ICommand commandToGetView;
-	
+
 	protected ICommand commandToGetDiagram;
-	
+
 	public AddHyperlinkDiagram(final ICommand commandToGetView, final ICommand commandToGetDiagram) {
-		super(((AbstractEMFOperation)commandToGetView).getEditingDomain(), Messages.AddHyperlinkDiagram_addHyperlinkCommand, null);
+		super(((AbstractEMFOperation) commandToGetView).getEditingDomain(), Messages.AddHyperlinkDiagram_addHyperlinkCommand, null);
 		this.commandToGetView = commandToGetView;
 		this.commandToGetDiagram = commandToGetDiagram;
 	}
@@ -41,28 +41,28 @@ public class AddHyperlinkDiagram extends AbstractTransactionalCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
 		View callBehaviorView = getViewFromViewCommand();
-		Diagram diagram = (Diagram)commandToGetDiagram.getCommandResult().getReturnValue();
-		
-		//hyperlink management
+		Diagram diagram = (Diagram) commandToGetDiagram.getCommandResult().getReturnValue();
+
+		// hyperlink management
 		HyperLinkEditor hyperLinkEditor = new HyperLinkEditor();
 		hyperLinkEditor.setObject(diagram);
 		hyperLinkEditor.setIsDefault(true);
 		hyperLinkEditor.setTooltipText(diagram.getName());
-		
+
 		EditorHyperLinkHelper helper = new EditorHyperLinkHelper();
 		RecordingCommand command = helper.getAddHyperLinkCommand(getEditingDomain(), callBehaviorView, hyperLinkEditor);
 		command.execute();
 		return CommandResult.newOKCommandResult(hyperLinkEditor);
 	}
-	
-	protected View getViewFromViewCommand(){
-		if(commandToGetView != null){
+
+	protected View getViewFromViewCommand() {
+		if (commandToGetView != null) {
 			Object resultAsObject = commandToGetView.getCommandResult().getReturnValue();
-			if(resultAsObject instanceof ViewDescriptor){
-				final ViewDescriptor viewDescriptor = (ViewDescriptor)resultAsObject;
-				return (View)viewDescriptor.getAdapter(View.class);
-			}else if(resultAsObject instanceof View){
-				return (View)resultAsObject;
+			if (resultAsObject instanceof ViewDescriptor) {
+				final ViewDescriptor viewDescriptor = (ViewDescriptor) resultAsObject;
+				return (View) viewDescriptor.getAdapter(View.class);
+			} else if (resultAsObject instanceof View) {
+				return (View) resultAsObject;
 			}
 		}
 		return null;

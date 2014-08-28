@@ -75,7 +75,7 @@ public class DerivedTypedElementImplementationFactoryRegistry {
 	 *
 	 * @param query
 	 *            the type of query for which an {@link IDerivedTypedElementImplementation} is searched
-	 * @param derivedTEManager 
+	 * @param derivedTEManager
 	 * @return the {@link IDerivedTypedElementImplementation}
 	 * @throws DerivedTypedElementException
 	 *             if no factory implementation was registered for the type of the given query

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,9 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * Services to access to Papyrus images
- * 
+ *
  * @author tristan faure
- * 
+ *
  */
 public class PapyrusImageUtils {
 
@@ -34,7 +34,7 @@ public class PapyrusImageUtils {
 	/**
 	 * get the default icon for Papyrus the image does not have to be disposed
 	 * as it is registered in an ImageRegistry
-	 * 
+	 *
 	 * @return the Image
 	 */
 	public static Image getDefaultIcon() {
@@ -44,7 +44,7 @@ public class PapyrusImageUtils {
 	/**
 	 * get the default icon 32x32 for Papyrus the image does not have to be
 	 * disposed as it is registered in an ImageRegistry
-	 * 
+	 *
 	 * @return the Image
 	 */
 	public static Image getDefaultIcon32() {
@@ -54,7 +54,7 @@ public class PapyrusImageUtils {
 	private static Image getIcon(String path) {
 		String key = Activator.PLUGIN_ID + path;
 		Image result = JFaceResources.getImageRegistry().get(key);
-		if(result == null) {
+		if (result == null) {
 			URL url = Activator.getDefault().getBundle().getEntry(path);
 			try {
 				result = new Image(Display.getDefault(), url.openStream());

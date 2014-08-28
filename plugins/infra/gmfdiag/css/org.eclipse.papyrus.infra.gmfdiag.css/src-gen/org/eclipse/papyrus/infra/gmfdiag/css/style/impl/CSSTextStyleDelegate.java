@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,15 +29,16 @@ public class CSSTextStyleDelegate implements CSSTextStyle {
 		this.engine = engine;
 	}
 
-	////////////////////////////////////////////////
-	//	Implements a getter for each CSS property //
-	////////////////////////////////////////////////
+	// //////////////////////////////////////////////
+	// Implements a getter for each CSS property //
+	// //////////////////////////////////////////////
 
+	@Override
 	public TextAlignment getCSSTextAlignment() {
 		CSSValue cssValue = engine.retrievePropertyValue(textStyle, "textAlignment");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getTextStyle_TextAlignment().getDefaultValue();
-			return (TextAlignment)defaultValue;
+			return (TextAlignment) defaultValue;
 		}
 		return TextAlignment.get(cssValue.getCssText());
 	}

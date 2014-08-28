@@ -28,15 +28,15 @@ public class SwitchConstraintPropertyRepresentationCommandHandler extends Graphi
 	protected Command getCommand() {
 		CompoundCommand command = new CompoundCommand("Switch ConstraintProperty Representation");
 		final List<IGraphicalEditPart> selectedElements = getSelectedElements();
-		for(final IGraphicalEditPart selectedElement : selectedElements) {
-			if(selectedElement instanceof CustomConstraintBlockPropertyCompositeEditPart) {
+		for (final IGraphicalEditPart selectedElement : selectedElements) {
+			if (selectedElement instanceof CustomConstraintBlockPropertyCompositeEditPart) {
 				if (selectedElement.getParent() instanceof GraphicalEditPart) {
-					command.add(new SwitchConstraintPropertyRepresentationCommand((GraphicalEditPart)selectedElement));
+					command.add(new SwitchConstraintPropertyRepresentationCommand(selectedElement));
 				}
 			}
 		}
 		return command;
 	}
-	
-	
+
+
 }

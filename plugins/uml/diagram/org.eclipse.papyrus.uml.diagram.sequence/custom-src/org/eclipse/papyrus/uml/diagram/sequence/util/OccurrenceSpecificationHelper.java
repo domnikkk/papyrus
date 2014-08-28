@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 Soyatec, CEA, and others
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,39 +35,39 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Update execution ends to message ends for Sync and Reply message, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=402975
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class OccurrenceSpecificationHelper {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	private OccurrenceSpecificationHelper() {
 	}
 
 	public static boolean resetExecutionStart(ExecutionSpecification execution, Element newStart) {
-		if(!(newStart instanceof OccurrenceSpecification)) {
+		if (!(newStart instanceof OccurrenceSpecification)) {
 			return false;
 		}
-		return resetExecutionEnd(execution, (OccurrenceSpecification)newStart, true);
+		return resetExecutionEnd(execution, (OccurrenceSpecification) newStart, true);
 	}
 
 	public static boolean resetExecutionFinish(ExecutionSpecification execution, Element newFinish) {
-		if(!(newFinish instanceof OccurrenceSpecification)) {
+		if (!(newFinish instanceof OccurrenceSpecification)) {
 			return false;
 		}
-		return resetExecutionEnd(execution, (OccurrenceSpecification)newFinish, false);
+		return resetExecutionEnd(execution, (OccurrenceSpecification) newFinish, false);
 	}
 
 	private static void copyInfo(OccurrenceSpecification fromOS, OccurrenceSpecification toOS) {
-		if(fromOS == null || toOS == null) {
+		if (fromOS == null || toOS == null) {
 			return;
 		}
 		EList<Lifeline> covereds = fromOS.getCovereds();
-		for(Lifeline lifeline : covereds) {
-			if(toOS.getCovereds().contains(lifeline)) {
+		for (Lifeline lifeline : covereds) {
+			if (toOS.getCovereds().contains(lifeline)) {
 				continue;
 			}
 			toOS.getCovereds().add(lifeline);
@@ -75,35 +75,35 @@ public class OccurrenceSpecificationHelper {
 	}
 
 	public static boolean resetExecutionEnd(ExecutionSpecification execution, OccurrenceSpecification newEnd, boolean isStart) {
-		if(execution == null || newEnd == null) {
+		if (execution == null || newEnd == null) {
 			return false;
 		}
 		OccurrenceSpecification oldEnd = isStart ? execution.getStart() : execution.getFinish();
-		if(newEnd.eContainer() == null) {
+		if (newEnd.eContainer() == null) {
 			EObject eContainer = oldEnd != null ? oldEnd.eContainer() : execution.eContainer();
-			if(eContainer instanceof Interaction) {
-				newEnd.setEnclosingInteraction((Interaction)eContainer);
-			} else if(eContainer instanceof InteractionOperand) {
-				newEnd.setEnclosingOperand((InteractionOperand)eContainer);
+			if (eContainer instanceof Interaction) {
+				newEnd.setEnclosingInteraction((Interaction) eContainer);
+			} else if (eContainer instanceof InteractionOperand) {
+				newEnd.setEnclosingOperand((InteractionOperand) eContainer);
 			}
 		}
-		if(newEnd.getName() == null) {
-			if(isStart) {
+		if (newEnd.getName() == null) {
+			if (isStart) {
 				newEnd.setName(execution.getName() + "Start");
 			} else {
 				newEnd.setName(execution.getName() + "Finish");
 			}
 		}
 		copyInfo(oldEnd, newEnd);
-		if(newEnd instanceof ExecutionOccurrenceSpecification) {
-			((ExecutionOccurrenceSpecification)newEnd).setExecution(execution);
+		if (newEnd instanceof ExecutionOccurrenceSpecification) {
+			((ExecutionOccurrenceSpecification) newEnd).setExecution(execution);
 		}
-		if(isStart) {
+		if (isStart) {
 			execution.setStart(newEnd);
 		} else {
 			execution.setFinish(newEnd);
 		}
-		if(canBeRemoved(oldEnd, newEnd, isStart)) {
+		if (canBeRemoved(oldEnd, newEnd, isStart)) {
 			EcoreUtil.remove(oldEnd);
 		}
 		return true;
@@ -111,23 +111,23 @@ public class OccurrenceSpecificationHelper {
 
 	/**
 	 * The given <code>Occurrence Specification</code> object can be removed without any references.
-	 * 
+	 *
 	 * @param isStart
 	 */
 	private static boolean canBeRemoved(OccurrenceSpecification os, OccurrenceSpecification copy, boolean isStart) {
-		if(os == null || copy == null || os instanceof MessageOccurrenceSpecification) {
+		if (os == null || copy == null || os instanceof MessageOccurrenceSpecification) {
 			return false;
 		}
 		Collection<Setting> usages = EMFHelper.getUsages(os);
-		for(Setting setting : usages) {
+		for (Setting setting : usages) {
 			Object osValue = setting.get(true);
-			if(osValue instanceof List<?> && ((List<?>)osValue).contains(copy)) {
+			if (osValue instanceof List<?> && ((List<?>) osValue).contains(copy)) {
 				continue;
 			}
 			EStructuralFeature feature = setting.getEStructuralFeature();
-			if(isStart && UMLPackage.eINSTANCE.getExecutionSpecification_Start() == feature) {
+			if (isStart && UMLPackage.eINSTANCE.getExecutionSpecification_Start() == feature) {
 				continue;
-			} else if(!isStart && UMLPackage.eINSTANCE.getExecutionSpecification_Finish() == feature) {
+			} else if (!isStart && UMLPackage.eINSTANCE.getExecutionSpecification_Finish() == feature) {
 				continue;
 			}
 		}
@@ -138,17 +138,17 @@ public class OccurrenceSpecificationHelper {
 	 * Find an Execution with the given end.
 	 */
 	public static ExecutionSpecification findExecutionWith(OccurrenceSpecification end, boolean isStart) {
-		if(end instanceof ExecutionOccurrenceSpecification) {
-			return ((ExecutionOccurrenceSpecification)end).getExecution();
+		if (end instanceof ExecutionOccurrenceSpecification) {
+			return ((ExecutionOccurrenceSpecification) end).getExecution();
 		}
 		Collection<Setting> usages = EMFHelper.getUsages(end);
-		for(Setting setting : usages) {
+		for (Setting setting : usages) {
 			EObject eObject = setting.getEObject();
 			EStructuralFeature feature = setting.getEStructuralFeature();
-			if(isStart && UMLPackage.eINSTANCE.getExecutionSpecification_Start() == feature) {
-				return (ExecutionSpecification)eObject;
-			} else if(!isStart && UMLPackage.eINSTANCE.getExecutionSpecification_Finish() == feature) {
-				return (ExecutionSpecification)eObject;
+			if (isStart && UMLPackage.eINSTANCE.getExecutionSpecification_Start() == feature) {
+				return (ExecutionSpecification) eObject;
+			} else if (!isStart && UMLPackage.eINSTANCE.getExecutionSpecification_Finish() == feature) {
+				return (ExecutionSpecification) eObject;
 			}
 		}
 		return null;

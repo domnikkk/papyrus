@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2014 CEA LIST and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -75,7 +75,7 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.editor.presentation.UMLModelWizard#addPages()
 	 */
 	@Override
@@ -90,12 +90,12 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.editor.presentation.UMLModelWizard#createInitialModel()
 	 */
 	@Override
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass)umlPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EClass eClass = (EClass) umlPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
 		EObject rootObject = umlFactory.create(eClass);
 
 		applySelectedProfiles(rootObject, rProfilesToApply);
@@ -105,18 +105,18 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 
 	/**
 	 * Apply profiles to the root element.
-	 * 
+	 *
 	 * @param root
-	 *        the element where profiles are applied
+	 *            the element where profiles are applied
 	 * @param rProfilesToApply
-	 *        the list of profiles to apply
+	 *            the list of profiles to apply
 	 * @return the number of applied profiles
 	 */
 	protected int applySelectedProfiles(EObject root, Collection<IRegisteredProfile> rProfilesToApply) {
 		// number of applied profiles
 		int num = 0;
 		Iterator<IRegisteredProfile> it = rProfilesToApply.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			num += applySelectedProfile(root, it.next());
 		}
 		return num;
@@ -124,24 +124,24 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 
 	/**
 	 * Apply profiles to the root element.
-	 * 
+	 *
 	 * @param root
-	 *        the element where profiles are applied
+	 *            the element where profiles are applied
 	 * @param rProfile
-	 *        the profile to apply
+	 *            the profile to apply
 	 * @return the number of applied profiles
 	 */
 	protected int applySelectedProfile(EObject root, IRegisteredProfile rProfile) {
 		// number of applied profiles
 		int num = 0;
-		if(root instanceof org.eclipse.uml2.uml.Package) {
+		if (root instanceof org.eclipse.uml2.uml.Package) {
 			URI modelUri = rProfile.getUri();
 			Resource modelResource = EMFHelper.getResourceSet(root).getResource(modelUri, true);
-			if(modelResource.getContents().get(0) instanceof Profile) {
+			if (modelResource.getContents().get(0) instanceof Profile) {
 				// two case : qualified names is equal to "" => whole profile must be applied
 				// not equal to "" => specific profiles must be applied
-				if("".equals(rProfile.getQualifiedNames())) {
-					PackageUtil.applyProfile((org.eclipse.uml2.uml.Package)root, (Profile)modelResource.getContents().get(0), true);
+				if ("".equals(rProfile.getQualifiedNames())) {
+					PackageUtil.applyProfile((org.eclipse.uml2.uml.Package) root, (Profile) modelResource.getContents().get(0), true);
 					num++;
 				} else {
 					// apply subprofiles corresponding to the qualified names selected
@@ -149,12 +149,12 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 					String[] profiles = rProfile.getQualifiedNames().split(",");
 					List<String> subprofilesList = new ArrayList<String>();
 					// make a collection with String with no space
-					for(int j = 0; j < profiles.length; j++) {
+					for (int j = 0; j < profiles.length; j++) {
 						String string = profiles[j].trim();
 						subprofilesList.add(string);
 					}
 
-					return applySelectedProfile((Package)root, (Profile)modelResource.getContents().get(0), subprofilesList);
+					return applySelectedProfile((Package) root, (Profile) modelResource.getContents().get(0), subprofilesList);
 				}
 			}
 		}
@@ -164,12 +164,12 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 	protected int applySelectedProfile(Package root, Profile profile, List<String> subprofilesList) {
 		int num = 0;
 		Iterator<EObject> it = profile.eAllContents();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject o = it.next();
-			if(o instanceof Profile) {
-				String name = ((Profile)o).getQualifiedName();
-				if(subprofilesList.contains(name)) {
-					PackageUtil.applyProfile(root, (Profile)o, true);
+			if (o instanceof Profile) {
+				String name = ((Profile) o).getQualifiedName();
+				if (subprofilesList.contains(name)) {
+					PackageUtil.applyProfile(root, (Profile) o, true);
 					num++;
 				}
 			}
@@ -200,7 +200,7 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 
 		/**
 		 * The framework calls this to see if the file is correct.
-		 * 
+		 *
 		 * @generated
 		 */
 		protected boolean validatePage() {
@@ -209,20 +209,20 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.dialogs.DialogPage#setVisible(boolean)
 		 */
 		@Override
 		public void setVisible(boolean visible) {
 			super.setVisible(visible);
-			if(visible) {
+			if (visible) {
 
 			}
 		}
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
 		 */
 		public void createControl(Composite parent) {
@@ -266,20 +266,20 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 				}
 
 				public void widgetSelected(SelectionEvent e) {
-					if(SWT.CHECK == e.detail) {
+					if (SWT.CHECK == e.detail) {
 						// => add or remove the element to the list of profiles to apply
 						// 1. get item
-						TableItem item = (TableItem)e.item;
+						TableItem item = (TableItem) e.item;
 
 						// 2. get data associated to this item = Registered profile
 						IRegisteredProfile rProfile = null;
-						if(item != null) {
-							rProfile = (IRegisteredProfile)item.getData();
+						if (item != null) {
+							rProfile = (IRegisteredProfile) item.getData();
 						}
 
 						// 3. if not null, check if the profiel must be applied or not
-						if(rProfile != null) {
-							if(item.getChecked()) {
+						if (rProfile != null) {
+							if (item.getChecked()) {
 								// profile must be applied
 								rProfilesToApply.add(rProfile);
 							} else {
@@ -303,7 +303,7 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 		private void fillTable() {
 			// for each profile, proposes a line with a selection box.
 			IRegisteredProfile[] rProfiles = Registry.getRegisteredProfiles().toArray(new IRegisteredProfile[0]);
-			for(int i = 0; i < rProfiles.length; i++) {
+			for (int i = 0; i < rProfiles.length; i++) {
 				TableItem item = new TableItem(table, SWT.CHECK);
 				IRegisteredProfile rProfile = rProfiles[i];
 				item.setData(rProfile);
@@ -319,13 +319,13 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 
 	protected void addProfile(String name, String path, String qualifiedNames) {
 		IRegisteredProfile profile = Registry.getRegisteredProfile(name, path);
-		if(profile != null) {
+		if (profile != null) {
 			// get the profiles to be applied
 			// retrieve sub profiles in the profile => should explore the profile and add elements that match the qualified names
 			rProfilesToApply.add(profile);
 		} else {
 			org.eclipse.papyrus.uml.profile.Activator.getDefault().getLog().log(
-				new Status(IStatus.ERROR, org.eclipse.papyrus.uml.profile.Activator.PLUGIN_ID, IStatus.ERROR, "impossible to find profile: " + name + " in: " + path, null));
+					new Status(IStatus.ERROR, org.eclipse.papyrus.uml.profile.Activator.PLUGIN_ID, IStatus.ERROR, "impossible to find profile: " + name + " in: " + path, null));
 		}
 	}
 

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,20 +23,20 @@ import com.google.common.collect.Lists;
 /**
  * A convenient context object for {@link IEditorReloadListener}s to store in an {@link EditorReloadEvent} to capture and restore
  * the selection state a selection provider;
- * 
+ *
  * @param <V>
- *        the type of selection provider
+ *            the type of selection provider
  * @param <T>
- *        the type of token used to restore the selection state
+ *            the type of token used to restore the selection state
  */
 public abstract class SelectionContext<V extends ISelectionProvider, T> {
 
 	private List<T> selection = Lists.newArrayList();
 
 	public SelectionContext(V structuredSelectionProvider) {
-		for(Object next : ((IStructuredSelection)structuredSelectionProvider.getSelection()).toList()) {
+		for (Object next : ((IStructuredSelection) structuredSelectionProvider.getSelection()).toList()) {
 			T token = token(next);
-			if(token != null) {
+			if (token != null) {
 				selection.add(token);
 			}
 		}
@@ -44,9 +44,9 @@ public abstract class SelectionContext<V extends ISelectionProvider, T> {
 
 	public void restore(V structuredSelectionProvider) {
 		List<Object> select = Lists.newArrayListWithCapacity(selection.size());
-		for(T next : selection) {
+		for (T next : selection) {
 			Object resolved = resolve(next);
-			if(resolved != null) {
+			if (resolved != null) {
 				select.add(resolved);
 			}
 		}

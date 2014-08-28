@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,9 +17,9 @@ import org.eclipse.swt.SWT;
 
 /**
  * The INotification corresponding to the popup builder
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 public class PopupNotification implements INotification {
 
@@ -37,9 +37,9 @@ public class PopupNotification implements INotification {
 
 	/**
 	 * Whether the popup has been closed
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.toolbox.notification.INotification#isDeleted()
-	 * 
+	 *
 	 * @return true
 	 */
 	public boolean isDeleted() {
@@ -53,7 +53,7 @@ public class PopupNotification implements INotification {
 
 	/**
 	 * Returns the result of the popup
-	 * 
+	 *
 	 * @return
 	 */
 	public int getResult() {

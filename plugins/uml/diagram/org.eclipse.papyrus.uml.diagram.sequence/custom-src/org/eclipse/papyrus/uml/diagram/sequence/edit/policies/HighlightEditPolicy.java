@@ -46,9 +46,9 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 
 	public static final String HIGHLIGHT_ROLE = "Highlight Edit Policy";
 
-	private static final String DURATION_CONSTRAINT_ON_LIFELINE_HINT = ((IHintedType)UMLElementTypes.DurationConstraint_3021).getSemanticHint();
+	private static final String DURATION_CONSTRAINT_ON_LIFELINE_HINT = ((IHintedType) UMLElementTypes.DurationConstraint_3021).getSemanticHint();
 
-	private static final String TIME_CONSTRAINT_ON_LIFELINE_HINT = ((IHintedType)UMLElementTypes.TimeConstraint_3019).getSemanticHint();
+	private static final String TIME_CONSTRAINT_ON_LIFELINE_HINT = ((IHintedType) UMLElementTypes.TimeConstraint_3019).getSemanticHint();
 
 	protected Indicator sourceIndicator;
 
@@ -58,22 +58,22 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 	public void showSourceFeedback(Request request) {
 		EditPolicy editPolicy = null;
 		Object type = request.getType();
-		if(REQ_CONNECTION_END.equals(type)) {
+		if (REQ_CONNECTION_END.equals(type)) {
 			editPolicy = getHost().getEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE);
-		} else if(SequenceUtil.OBSERVATION_LINK_REQUEST_END.equals(type)) {
+		} else if (SequenceUtil.OBSERVATION_LINK_REQUEST_END.equals(type)) {
 			editPolicy = getHost().getEditPolicy("observationlink");
 		}
-		if(editPolicy != null) {
-			EditPart targetEditPart = ((CreateConnectionRequest)request).getTargetEditPart();
+		if (editPolicy != null) {
+			EditPart targetEditPart = ((CreateConnectionRequest) request).getTargetEditPart();
 			boolean canExecute = targetEditPart != null;
-			if(targetEditPart != null) {
+			if (targetEditPart != null) {
 				Command command = targetEditPart.getCommand(request);
 				canExecute = command != null && command.canExecute();
 			}
 			editPolicy.showSourceFeedback(request);
-			PolylineConnection connectionFeedback = (PolylineConnection)getConnectionFeedback(editPolicy);
-			if(connectionFeedback != null) {
-				if(canExecute) {
+			PolylineConnection connectionFeedback = (PolylineConnection) getConnectionFeedback(editPolicy);
+			if (connectionFeedback != null) {
+				if (canExecute) {
 					EllipseDecoration dec = new EllipseDecoration();
 					dec.setPreferredSize(10, 10);
 					dec.setSize(10, 10);
@@ -85,20 +85,20 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 				}
 			}
 		}
-		if(REQ_RECONNECT_SOURCE.equals(type) || SequenceUtil.OBSERVATION_LINK_REQUEST_RECONNECT_SOURCE.equals(type)) {
+		if (REQ_RECONNECT_SOURCE.equals(type) || SequenceUtil.OBSERVATION_LINK_REQUEST_RECONNECT_SOURCE.equals(type)) {
 			editPolicy = getHost().getEditPolicy(EditPolicy.CONNECTION_ENDPOINTS_ROLE);
-			if(editPolicy != null) {
+			if (editPolicy != null) {
 				editPolicy.showSourceFeedback(request);
 			}
-			ConnectionEditPart connection = ((ReconnectRequest)request).getConnectionEditPart();
-			EditPart target = ((ReconnectRequest)request).getTarget();
+			ConnectionEditPart connection = ((ReconnectRequest) request).getConnectionEditPart();
+			EditPart target = ((ReconnectRequest) request).getTarget();
 			boolean highlight = target != null;
-			if(target != null) {
+			if (target != null) {
 				Command command = target.getCommand(request);
 				highlight = command != null && command.canExecute();
 			}
-			if(highlight) {
-				Connection conn = (Connection)connection.getFigure();
+			if (highlight) {
+				Connection conn = (Connection) connection.getFigure();
 				PointList line = conn.getPoints().getCopy();
 				conn.translateToAbsolute(line);
 				IFigure sourceFeedback = getSourceIndicator();
@@ -106,21 +106,21 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 			} else {
 				safeRemoveFeedback(sourceIndicator);
 			}
-		} else if(REQ_RECONNECT_TARGET.equals(type) || SequenceUtil.OBSERVATION_LINK_REQUEST_RECONNECT_TARGET.equals(type)) {
+		} else if (REQ_RECONNECT_TARGET.equals(type) || SequenceUtil.OBSERVATION_LINK_REQUEST_RECONNECT_TARGET.equals(type)) {
 			editPolicy = getHost().getEditPolicy(EditPolicy.CONNECTION_ENDPOINTS_ROLE);
-			if(editPolicy != null) {
+			if (editPolicy != null) {
 				editPolicy.showSourceFeedback(request);
 			}
-			ReconnectRequest reconnectRequest = (ReconnectRequest)request;
+			ReconnectRequest reconnectRequest = (ReconnectRequest) request;
 			ConnectionEditPart connection = reconnectRequest.getConnectionEditPart();
 			EditPart target = reconnectRequest.getTarget();
 			boolean highlight = target != null;
-			if(target != null) {
+			if (target != null) {
 				Command command = target.getCommand(reconnectRequest);
 				highlight = command != null && command.canExecute();
 			}
-			if(highlight) {
-				Connection conn = (Connection)connection.getFigure();
+			if (highlight) {
+				Connection conn = (Connection) connection.getFigure();
 				PointList line = conn.getPoints().getCopy();
 				conn.translateToAbsolute(line);
 				IFigure targetFeedback = getTargetIndicator();
@@ -135,26 +135,26 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 	@Override
 	public void showTargetFeedback(Request request) {
 		EditPart host = getHost();
-		if(request instanceof GroupRequest) {
-			List editParts = ((GroupRequest)request).getEditParts();
-			for(Object object : editParts) {
-				highlight((EditPart)object);
+		if (request instanceof GroupRequest) {
+			List editParts = ((GroupRequest) request).getEditParts();
+			for (Object object : editParts) {
+				highlight((EditPart) object);
 			}
-		} else if(request instanceof CreateConnectionRequest) {
-			CreateConnectionRequest req = (CreateConnectionRequest)request;
+		} else if (request instanceof CreateConnectionRequest) {
+			CreateConnectionRequest req = (CreateConnectionRequest) request;
 			EditPart sourceEditPart = req.getSourceEditPart();
 			EditPart targetEditPart = req.getTargetEditPart();
 			highlight(sourceEditPart);
 			highlight(targetEditPart);
-		} else if(request instanceof ReconnectRequest) {
-			highlight(((ReconnectRequest)request).getTarget());
-			highlight(((ReconnectRequest)request).getConnectionEditPart());
+		} else if (request instanceof ReconnectRequest) {
+			highlight(((ReconnectRequest) request).getTarget());
+			highlight(((ReconnectRequest) request).getConnectionEditPart());
 			// for message end
-			if(host instanceof MessageEndEditPart) {
+			if (host instanceof MessageEndEditPart) {
 				highlightMessageEnd(request);
 			} else {
 				Object type = request.getType();
-				if(host instanceof LifelineEditPart && (SequenceUtil.OBSERVATION_LINK_REQUEST_END).equals(type)) {
+				if (host instanceof LifelineEditPart && (SequenceUtil.OBSERVATION_LINK_REQUEST_END).equals(type)) {
 					highlightObservationEvent(request);
 				}
 			}
@@ -162,9 +162,9 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 			highlight(host);
 		}
 		// for Duration Constraint and Time Constraint.
-		if(isCreating(request, DURATION_CONSTRAINT_ON_LIFELINE_HINT) || isCreating(request, TIME_CONSTRAINT_ON_LIFELINE_HINT)) {
+		if (isCreating(request, DURATION_CONSTRAINT_ON_LIFELINE_HINT) || isCreating(request, TIME_CONSTRAINT_ON_LIFELINE_HINT)) {
 			Command command = getHost().getCommand(request);
-			if(command != null && command.canExecute()) {
+			if (command != null && command.canExecute()) {
 				highlightEventsAboutConstraints(request);
 			}
 		}
@@ -192,11 +192,11 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 	}
 
 	private Connection getConnectionFeedback(EditPolicy policy) {
-		if(policy != null) {
+		if (policy != null) {
 			try {
 				Field f = GraphicalNodeEditPolicy.class.getDeclaredField("connectionFeedback");
 				f.setAccessible(true);
-				return (Connection)f.get(policy);
+				return (Connection) f.get(policy);
 			} catch (Exception e) {
 			}
 		}
@@ -208,12 +208,12 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 	 */
 	private void highlightMessageEnd(Request request) {
 		Point location = getConnectiveLocation(request);
-		if(location == null) {
+		if (location == null) {
 			// not connection request.
 			return;
 		}
-		MessageEndEditPart host = (MessageEndEditPart)getHost();
-		ConnectionNodeEditPart parent = (ConnectionNodeEditPart)host.getParent();
+		MessageEndEditPart host = (MessageEndEditPart) getHost();
+		ConnectionNodeEditPart parent = (ConnectionNodeEditPart) host.getParent();
 		Point p = getNearestEndOfConnection(location, parent);
 		IFigure feedback = getSourceIndicator();
 		setFeedbackLocation(feedback, p);
@@ -225,14 +225,14 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 	 */
 	private void highlightObservationEvent(Request request) {
 		Point location = getConnectiveLocation(request);
-		Entry<Point, List<OccurrenceSpecification>> eventAndLocation = SequenceUtil.findNearestEvent(location, (LifelineEditPart)getHost());
+		Entry<Point, List<OccurrenceSpecification>> eventAndLocation = SequenceUtil.findNearestEvent(location, (LifelineEditPart) getHost());
 		OccurrenceSpecification event = null;
-		if(eventAndLocation != null) {
+		if (eventAndLocation != null) {
 			List<OccurrenceSpecification> events = eventAndLocation.getValue();
-			for(OccurrenceSpecification occurrence : events) {
-				if(occurrence instanceof MessageOccurrenceSpecification) {
-					Message mess = ((MessageOccurrenceSpecification)occurrence).getMessage();
-					if(occurrence.equals(mess.getReceiveEvent()) && MessageSort.SYNCH_CALL_LITERAL.equals(mess.getMessageSort())) {
+			for (OccurrenceSpecification occurrence : events) {
+				if (occurrence instanceof MessageOccurrenceSpecification) {
+					Message mess = ((MessageOccurrenceSpecification) occurrence).getMessage();
+					if (occurrence.equals(mess.getReceiveEvent()) && MessageSort.SYNCH_CALL_LITERAL.equals(mess.getMessageSort())) {
 						continue;
 					}
 				}
@@ -240,7 +240,7 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 				break;
 			}
 		}
-		if(event != null) {
+		if (event != null) {
 			Point p = fixLocationOfEventOnLifeline(getHost(), event, location.getCopy());
 			IFigure feedback = getTargetIndicator();
 			setFeedbackLocation(feedback, p);
@@ -252,10 +252,10 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 	 */
 	private Point getConnectiveLocation(Request request) {
 		Point location = null;
-		if(request instanceof CreateConnectionRequest) {
-			location = ((CreateConnectionRequest)request).getLocation();
-		} else if(request instanceof ReconnectRequest) {
-			location = ((ReconnectRequest)request).getLocation();
+		if (request instanceof CreateConnectionRequest) {
+			location = ((CreateConnectionRequest) request).getLocation();
+		} else if (request instanceof ReconnectRequest) {
+			location = ((ReconnectRequest) request).getLocation();
 		}
 		return location;
 	}
@@ -266,10 +266,10 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 	private void highlightEventsAboutConstraints(Request request) {
 		Object locTop = request.getExtendedData().get(SequenceRequestConstant.OCCURRENCE_SPECIFICATION_LOCATION);
 		Object topEvents = request.getExtendedData().get(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION);
-		if(locTop instanceof Point && topEvents != null && topEvents instanceof Collection<?> && !((Collection<?>)topEvents).isEmpty()) {
-			Point referenceTop = ((Point)locTop).getCopy();
-			OccurrenceSpecification event = (OccurrenceSpecification)((Collection<?>)topEvents).iterator().next();
-			if(event instanceof MessageOccurrenceSpecification) {
+		if (locTop instanceof Point && topEvents != null && topEvents instanceof Collection<?> && !((Collection<?>) topEvents).isEmpty()) {
+			Point referenceTop = ((Point) locTop).getCopy();
+			OccurrenceSpecification event = (OccurrenceSpecification) ((Collection<?>) topEvents).iterator().next();
+			if (event instanceof MessageOccurrenceSpecification) {
 				referenceTop = fixLocationOfEventOnLifeline(null, event, referenceTop);
 			}
 			IFigure sourceIndicator = getSourceIndicator();
@@ -277,10 +277,10 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 		}
 		Object bottomEvents = request.getExtendedData().get(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2);
 		Object locBottom = request.getExtendedData().get(SequenceRequestConstant.OCCURRENCE_SPECIFICATION_LOCATION_2);
-		if(locBottom instanceof Point && bottomEvents != null && bottomEvents instanceof Collection<?> && !((Collection<?>)bottomEvents).isEmpty()) {
-			Point referenceBottom = ((Point)locBottom).getCopy();
-			OccurrenceSpecification event = (OccurrenceSpecification)((Collection<?>)bottomEvents).iterator().next();
-			if(event instanceof MessageOccurrenceSpecification) {
+		if (locBottom instanceof Point && bottomEvents != null && bottomEvents instanceof Collection<?> && !((Collection<?>) bottomEvents).isEmpty()) {
+			Point referenceBottom = ((Point) locBottom).getCopy();
+			OccurrenceSpecification event = (OccurrenceSpecification) ((Collection<?>) bottomEvents).iterator().next();
+			if (event instanceof MessageOccurrenceSpecification) {
 				referenceBottom = fixLocationOfEventOnLifeline(null, event, referenceBottom);
 			}
 			IFigure targetIndicator = getTargetIndicator();
@@ -289,19 +289,19 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 	}
 
 	private Point fixLocationOfEventOnLifeline(EditPart lifeline, OccurrenceSpecification event, Point location) {
-		if(lifeline == null) {
+		if (lifeline == null) {
 			lifeline = findLifelineAt(location);
 		}
-		if(lifeline == null) {
+		if (lifeline == null) {
 			return location;
 		}
-		Point loc = SequenceUtil.findLocationOfEvent((LifelineEditPart)lifeline, event);
-		if(loc != null) {
+		Point loc = SequenceUtil.findLocationOfEvent((LifelineEditPart) lifeline, event);
+		if (loc != null) {
 			return loc;
 		}
 		EditPart linkedEditPart = SequenceUtil.getLinkedEditPart(lifeline, event);
-		if(linkedEditPart instanceof ConnectionNodeEditPart) {
-			ConnectionNodeEditPart connection = ((ConnectionNodeEditPart)linkedEditPart);
+		if (linkedEditPart instanceof ConnectionNodeEditPart) {
+			ConnectionNodeEditPart connection = ((ConnectionNodeEditPart) linkedEditPart);
 			return getNearestEndOfConnection(location, connection);
 		}
 		return location;
@@ -309,12 +309,12 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 
 	private Point getNearestEndOfConnection(Point location, ConnectionNodeEditPart connection) {
 		Connection msgFigure = connection.getConnectionFigure();
-		if(msgFigure instanceof AbstractPointListShape) {
-			Point start = ((AbstractPointListShape)msgFigure).getStart().getCopy();
+		if (msgFigure instanceof AbstractPointListShape) {
+			Point start = ((AbstractPointListShape) msgFigure).getStart().getCopy();
 			msgFigure.translateToAbsolute(start);
-			Point end = ((AbstractPointListShape)msgFigure).getEnd().getCopy();
+			Point end = ((AbstractPointListShape) msgFigure).getEnd().getCopy();
 			msgFigure.translateToAbsolute(end);
-			if(location.getDistance(start) < location.getDistance(end)) {
+			if (location.getDistance(start) < location.getDistance(end)) {
 				return start;
 			} else {
 				return end;
@@ -324,7 +324,7 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 	}
 
 	private boolean isCreating(Request request, String sementicHint) {
-		if(request == null || sementicHint == null) {
+		if (request == null || sementicHint == null) {
 			return false;
 		}
 		String hint = getSementicHint(request);
@@ -337,13 +337,13 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 	 */
 	private String getSementicHint(Request request) {
 		String hint = null;
-		if(request instanceof CreateViewRequest) {
-			ViewDescriptor viewDesc = ((CreateViewRequest)request).getViewDescriptors().iterator().next();
+		if (request instanceof CreateViewRequest) {
+			ViewDescriptor viewDesc = ((CreateViewRequest) request).getViewDescriptors().iterator().next();
 			hint = viewDesc.getSemanticHint();
-		} else if(request instanceof CreateUnspecifiedTypeRequest) {
-			Object elementType = ((CreateUnspecifiedTypeRequest)request).getElementTypes().iterator().next();
-			if(elementType instanceof IHintedType) {
-				hint = ((IHintedType)elementType).getSemanticHint();
+		} else if (request instanceof CreateUnspecifiedTypeRequest) {
+			Object elementType = ((CreateUnspecifiedTypeRequest) request).getElementTypes().iterator().next();
+			if (elementType instanceof IHintedType) {
+				hint = ((IHintedType) elementType).getSemanticHint();
 			}
 		}
 		return hint;
@@ -352,15 +352,15 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 	@SuppressWarnings("rawtypes")
 	private EditPart findLifelineAt(Point pt) {
 		Collection values = getHost().getViewer().getEditPartRegistry().values();
-		for(Object object : values) {
-			if(!(object instanceof LifelineEditPart)) {
+		for (Object object : values) {
+			if (!(object instanceof LifelineEditPart)) {
 				continue;
 			}
-			LifelineEditPart lifeline = ((LifelineEditPart)object);
+			LifelineEditPart lifeline = ((LifelineEditPart) object);
 			LifelineFigure primaryShape = lifeline.getPrimaryShape();
 			Point p = pt.getCopy();
 			primaryShape.translateToRelative(p);
-			if(primaryShape.containsPoint(p)) {
+			if (primaryShape.containsPoint(p)) {
 				return lifeline;
 			}
 		}
@@ -368,14 +368,14 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 	}
 
 	protected Indicator getSourceIndicator() {
-		if(sourceIndicator == null || sourceIndicator.getParent() == null) {
+		if (sourceIndicator == null || sourceIndicator.getParent() == null) {
 			sourceIndicator = createCircleFeedback();
 		}
 		return sourceIndicator;
 	}
 
 	protected Indicator getTargetIndicator() {
-		if(targetIndicator == null || targetIndicator.getParent() == null) {
+		if (targetIndicator == null || targetIndicator.getParent() == null) {
 			targetIndicator = createCircleFeedback();
 		}
 		return targetIndicator;
@@ -388,7 +388,7 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 	}
 
 	protected void setFeedbackLocation(IFigure feedback, Point location) {
-		if(feedback == null || location == null) {
+		if (feedback == null || location == null) {
 			return;
 		}
 		Point p = location.getCopy();
@@ -400,7 +400,7 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 	}
 
 	private void safeRemoveFeedback(IFigure feedback) {
-		if(feedback == null || feedback.getParent() == null) {
+		if (feedback == null || feedback.getParent() == null) {
 			return;
 		}
 		feedback.getParent().remove(feedback);
@@ -428,7 +428,7 @@ public class HighlightEditPolicy extends GraphicalEditPolicy {
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 */
 		public Indicator() {
 			setLineWidth(2);

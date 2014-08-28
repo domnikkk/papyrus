@@ -27,8 +27,8 @@ import org.eclipse.papyrus.infra.gmfdiag.css.helper.CSSHelper;
 import org.eclipse.papyrus.infra.gmfdiag.css.notation.CSSDiagram;
 import org.eclipse.papyrus.infra.gmfdiag.css.notation.ForceValueHelper;
 import org.eclipse.papyrus.infra.gmfdiag.css.tests.Activator;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -99,7 +99,6 @@ public class CSSSupportTest extends AbstractPapyrusTest {
 					if(NotationPackage.eINSTANCE.getStyle().isSuperTypeOf(feature.getEContainingClass())) {
 						//For non-CSS models, this method should always return true (i.e. the value is never computed)
 						Assert.assertTrue(ForceValueHelper.isSet(child, feature, null));
-						System.out.println("Test");
 					}
 				}
 			}

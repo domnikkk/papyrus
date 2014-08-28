@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,16 +30,16 @@ public final class ChangePasswordAction extends AsyncAction<IInternalPapyrusRepo
 	private static final String TOOL_TIP = Messages.ChangePasswordAction_1;
 
 	public ChangePasswordAction(IWorkbenchPart part) {
-		super(IInternalPapyrusRepository.class, TITLE, (ImageDescriptor)null);
+		super(IInternalPapyrusRepository.class, TITLE, (ImageDescriptor) null);
 
 		setToolTipText(TOOL_TIP);
 	}
 
 	@Override
 	protected void doRun(IInternalPapyrusRepository selection, IProgressMonitor monitor) throws CoreException {
-		if(selection.isConnected()) {
+		if (selection.isConnected()) {
 			CDOSession session = selection.getCDOSession();
-			if((session != null) && !session.isClosed()) {
+			if ((session != null) && !session.isClosed()) {
 				session.changeCredentials();
 			}
 		}
@@ -49,7 +49,7 @@ public final class ChangePasswordAction extends AsyncAction<IInternalPapyrusRepo
 	protected boolean updateSelection(IStructuredSelection selection) {
 		boolean result = super.updateSelection(selection);
 
-		if(result) {
+		if (result) {
 			result = getSelection().isConnected();
 		}
 

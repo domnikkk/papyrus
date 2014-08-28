@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Strategy improvement of generated files
  *  Christian W. Damus (CEA) - bug 422257
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.generation.generators;
 
@@ -66,12 +66,12 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 	private Set<Listener> listeners = new HashSet<Listener>();
 
 	private int strategy;
-	
+
 	private Collection<ResourceSet> scratchResourceSets;
 
 	public List<Context> generate(List<URI> targetURI) {
 
-		switch(strategy) {
+		switch (strategy) {
 		case 0:
 			generatedContexts = generateSameFile(targetURI);
 			break;
@@ -88,8 +88,8 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 	}
 
 	public void dispose() {
-		if(scratchResourceSets != null) {
-			for(ResourceSet next : scratchResourceSets) {
+		if (scratchResourceSets != null) {
+			for (ResourceSet next : scratchResourceSets) {
 				EMFHelper.unload(next);
 			}
 			scratchResourceSets = null;
@@ -108,7 +108,7 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 	 * @return the ModelExtent containing the generated context
 	 */
 	protected ModelExtent getOutContextExtent() {
-		if(out == null) {
+		if (out == null) {
 			out = new BasicModelExtent();
 		}
 
@@ -124,18 +124,18 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 	 * Loads the EObject from the given URI.
 	 *
 	 * @param uri
-	 *        The URI from which the EObject is loaded
+	 *            The URI from which the EObject is loaded
 	 * @return
 	 *         The loaded EObject, or null if an error occured
 	 * @throws IOException
-	 *         If the URI isn't a valid EObject
+	 *             If the URI isn't a valid EObject
 	 */
 	protected EObject loadEMFModel(URI uri) throws IOException {
 		ResourceSet resourceSet = createResourceSet();
 		try {
 			Resource resource = resourceSet.getResource(uri, true);
-			if(resource != null) {
-				if(!resource.getContents().isEmpty()) {
+			if (resource != null) {
+				if (!resource.getContents().isEmpty()) {
 					return resource.getContents().get(0);
 				}
 			}
@@ -145,10 +145,10 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 
 		return null;
 	}
-	
+
 	protected final ResourceSet createResourceSet() {
 		ResourceSet result = new ResourceSetImpl();
-		if(scratchResourceSets == null) {
+		if (scratchResourceSets == null) {
 			scratchResourceSets = new ArrayList<ResourceSet>();
 		}
 		scratchResourceSets.add(result);
@@ -164,7 +164,7 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 	}
 
 	public void handleEvent(Event event) {
-		for(Listener listener : listeners) {
+		for (Listener listener : listeners) {
 			listener.handleEvent(event);
 		}
 	}
@@ -173,16 +173,16 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 	 * Return the generated Context from a list of EObjects
 	 *
 	 * @param outObjects
-	 *        The list of EObjects from which the context will be retrieved
+	 *            The list of EObjects from which the context will be retrieved
 	 * @return
 	 *         The main generated context
 	 */
 	protected List<Context> getContexts(List<EObject> outObjects) {
 		List<Context> result = new LinkedList<Context>();
 
-		for(Object objectResult : outObjects) {
-			if(objectResult instanceof Context) {
-				result.add((Context)objectResult);
+		for (Object objectResult : outObjects) {
+			if (objectResult instanceof Context) {
+				result.add((Context) objectResult);
 			}
 		}
 
@@ -202,7 +202,7 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 
 		TransformationExecutor executor = new TransformationExecutor(transformationURI);
 		Diagnostic diagnostic = executor.loadTransformation();
-		if(diagnostic.getSeverity() != Diagnostic.OK) {
+		if (diagnostic.getSeverity() != Diagnostic.OK) {
 			Activator.log.warn("Cannot load the transformation : " + transformationURI);
 			return generatedContexts = null;
 		}
@@ -215,10 +215,10 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 
 		ExecutionDiagnostic result = executor.execute(context, extents.toArray(new ModelExtent[0]));
 
-		if(result.getSeverity() == org.eclipse.emf.common.util.Diagnostic.OK) {
+		if (result.getSeverity() == org.eclipse.emf.common.util.Diagnostic.OK) {
 			List<EObject> outObjects = getOutContextExtent().getContents();
 			Object objectResult = outObjects.get(0);
-			if(!(objectResult instanceof Context)) {
+			if (!(objectResult instanceof Context)) {
 				return null;
 			}
 
@@ -246,7 +246,7 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 
 		TransformationExecutor executor = new TransformationExecutor(transformationURI);
 		Diagnostic diagnostic = executor.loadTransformation();
-		if(diagnostic.getSeverity() != Diagnostic.OK) {
+		if (diagnostic.getSeverity() != Diagnostic.OK) {
 			Activator.log.warn("Cannot load the transformation : " + transformationURI);
 			return generatedContexts = null;
 		}
@@ -256,17 +256,17 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 		context.setLog(new WriterLog(new OutputStreamWriter(System.out)));
 		List<Context> temp = new LinkedList<Context>();
 
-		for(int i = 0; i < targetURI.size(); i++) {
+		for (int i = 0; i < targetURI.size(); i++) {
 			extents = getModelExtents(i);
 
 
 
 			ExecutionDiagnostic result = executor.execute(context, extents.toArray(new ModelExtent[0]));
 
-			if(result.getSeverity() == org.eclipse.emf.common.util.Diagnostic.OK) {
+			if (result.getSeverity() == org.eclipse.emf.common.util.Diagnostic.OK) {
 				List<EObject> outObjects = getOutContextExtent().getContents();
 				Object objectResult = outObjects.get(0);
-				if(!(objectResult instanceof Context)) {
+				if (!(objectResult instanceof Context)) {
 					return null;
 				}
 				ResourceSet resourceSet = createResourceSet();

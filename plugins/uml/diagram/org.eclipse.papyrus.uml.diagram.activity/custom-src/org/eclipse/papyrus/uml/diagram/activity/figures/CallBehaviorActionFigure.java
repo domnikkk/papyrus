@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * this is a specific figure to display the rake of this action
- * 
+ *
  */
 public class CallBehaviorActionFigure extends PapyrusRoundedNodeFigure {
 
@@ -34,9 +34,9 @@ public class CallBehaviorActionFigure extends PapyrusRoundedNodeFigure {
 
 	/**
 	 * set true to display the rake
-	 * 
+	 *
 	 * @param displayRake
-	 *        true to display the rake
+	 *            true to display the rake
 	 */
 	public void displayRake(boolean displayRake) {
 		this.isDisplayedRake = displayRake;
@@ -46,8 +46,9 @@ public class CallBehaviorActionFigure extends PapyrusRoundedNodeFigure {
 	public void paint(Graphics graphics) {
 		// TODO Auto-generated method stub
 		super.paint(graphics);
-		if(isDisplayedRake) {
-			Image image = Activator.getDefault().getPluginIconImage(UMLDiagramEditorPlugin.ID, IMAGE_PATH);
+		if (isDisplayedRake) {
+			Activator.getDefault();
+			Image image = Activator.getPluginIconImage(UMLDiagramEditorPlugin.ID, IMAGE_PATH);
 			org.eclipse.draw2d.geometry.Rectangle rect = getBounds();
 			Point pt = rect.getBottomRight();
 			pt.x = pt.x - image.getBounds().width - margin;

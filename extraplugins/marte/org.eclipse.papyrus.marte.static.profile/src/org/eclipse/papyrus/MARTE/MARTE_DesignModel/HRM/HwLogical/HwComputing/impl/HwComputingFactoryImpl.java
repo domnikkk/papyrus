@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.*;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwASIC;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwBranchPredictor;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingFactory;
@@ -36,6 +35,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.PLD
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingFactory {
@@ -43,16 +43,16 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static HwComputingFactory init() {
 		try {
-			HwComputingFactory theHwComputingFactory = (HwComputingFactory)EPackage.Registry.INSTANCE.getEFactory(HwComputingPackage.eNS_URI);
+			HwComputingFactory theHwComputingFactory = (HwComputingFactory) EPackage.Registry.INSTANCE.getEFactory(HwComputingPackage.eNS_URI);
 			if (theHwComputingFactory != null) {
 				return theHwComputingFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new HwComputingFactoryImpl();
@@ -62,6 +62,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public HwComputingFactoryImpl() {
@@ -71,69 +72,80 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case HwComputingPackage.HW_PROCESSOR: return createHwProcessor();
-			case HwComputingPackage.HW_COMPUTING_RESOURCE: return createHwComputingResource();
-			case HwComputingPackage.HW_ISA: return createHwISA();
-			case HwComputingPackage.HW_BRANCH_PREDICTOR: return createHwBranchPredictor();
-			case HwComputingPackage.HW_ASIC: return createHwASIC();
-			case HwComputingPackage.HW_PLD: return createHwPLD();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case HwComputingPackage.HW_PROCESSOR:
+			return createHwProcessor();
+		case HwComputingPackage.HW_COMPUTING_RESOURCE:
+			return createHwComputingResource();
+		case HwComputingPackage.HW_ISA:
+			return createHwISA();
+		case HwComputingPackage.HW_BRANCH_PREDICTOR:
+			return createHwBranchPredictor();
+		case HwComputingPackage.HW_ASIC:
+			return createHwASIC();
+		case HwComputingPackage.HW_PLD:
+			return createHwPLD();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case HwComputingPackage.ISA_TYPE:
-				return createISA_TypeFromString(eDataType, initialValue);
-			case HwComputingPackage.PLD_TECHNOLOGY:
-				return createPLD_TechnologyFromString(eDataType, initialValue);
-			case HwComputingPackage.PLD_CLASS:
-				return createPLD_ClassFromString(eDataType, initialValue);
-			case HwComputingPackage.PLD_ORGANIZATION:
-				return createPLD_OrganizationFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case HwComputingPackage.ISA_TYPE:
+			return createISA_TypeFromString(eDataType, initialValue);
+		case HwComputingPackage.PLD_TECHNOLOGY:
+			return createPLD_TechnologyFromString(eDataType, initialValue);
+		case HwComputingPackage.PLD_CLASS:
+			return createPLD_ClassFromString(eDataType, initialValue);
+		case HwComputingPackage.PLD_ORGANIZATION:
+			return createPLD_OrganizationFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case HwComputingPackage.ISA_TYPE:
-				return convertISA_TypeToString(eDataType, instanceValue);
-			case HwComputingPackage.PLD_TECHNOLOGY:
-				return convertPLD_TechnologyToString(eDataType, instanceValue);
-			case HwComputingPackage.PLD_CLASS:
-				return convertPLD_ClassToString(eDataType, instanceValue);
-			case HwComputingPackage.PLD_ORGANIZATION:
-				return convertPLD_OrganizationToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case HwComputingPackage.ISA_TYPE:
+			return convertISA_TypeToString(eDataType, instanceValue);
+		case HwComputingPackage.PLD_TECHNOLOGY:
+			return convertPLD_TechnologyToString(eDataType, instanceValue);
+		case HwComputingPackage.PLD_CLASS:
+			return convertPLD_ClassToString(eDataType, instanceValue);
+		case HwComputingPackage.PLD_ORGANIZATION:
+			return convertPLD_OrganizationToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public HwProcessor createHwProcessor() {
 		HwProcessorImpl hwProcessor = new HwProcessorImpl();
 		return hwProcessor;
@@ -142,8 +154,10 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public HwComputingResource createHwComputingResource() {
 		HwComputingResourceImpl hwComputingResource = new HwComputingResourceImpl();
 		return hwComputingResource;
@@ -152,8 +166,10 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public HwISA createHwISA() {
 		HwISAImpl hwISA = new HwISAImpl();
 		return hwISA;
@@ -162,8 +178,10 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public HwBranchPredictor createHwBranchPredictor() {
 		HwBranchPredictorImpl hwBranchPredictor = new HwBranchPredictorImpl();
 		return hwBranchPredictor;
@@ -172,8 +190,10 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public HwASIC createHwASIC() {
 		HwASICImpl hwASIC = new HwASICImpl();
 		return hwASIC;
@@ -182,8 +202,10 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public HwPLD createHwPLD() {
 		HwPLDImpl hwPLD = new HwPLDImpl();
 		return hwPLD;
@@ -192,17 +214,21 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ISA_Type createISA_TypeFromString(EDataType eDataType, String initialValue) {
 		ISA_Type result = ISA_Type.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertISA_TypeToString(EDataType eDataType, Object instanceValue) {
@@ -212,17 +238,21 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PLD_Technology createPLD_TechnologyFromString(EDataType eDataType, String initialValue) {
 		PLD_Technology result = PLD_Technology.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertPLD_TechnologyToString(EDataType eDataType, Object instanceValue) {
@@ -232,17 +262,21 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PLD_Class createPLD_ClassFromString(EDataType eDataType, String initialValue) {
 		PLD_Class result = PLD_Class.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertPLD_ClassToString(EDataType eDataType, Object instanceValue) {
@@ -252,15 +286,17 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String createPLD_OrganizationFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+		return (String) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertPLD_OrganizationToString(EDataType eDataType, Object instanceValue) {
@@ -270,15 +306,18 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public HwComputingPackage getHwComputingPackage() {
-		return (HwComputingPackage)getEPackage();
+		return (HwComputingPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -287,4 +326,4 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 		return HwComputingPackage.eINSTANCE;
 	}
 
-} //HwComputingFactoryImpl
+} // HwComputingFactoryImpl

@@ -32,6 +32,7 @@ import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.papyrus.xwt.callback.IBeforeParsingCallback;
 import org.eclipse.papyrus.xwt.core.IBinding;
 import org.eclipse.papyrus.xwt.core.TriggerBase;
+import org.eclipse.papyrus.xwt.databinding.BindingContext;
 import org.eclipse.papyrus.xwt.databinding.IBindingContext;
 import org.eclipse.papyrus.xwt.input.ICommand;
 import org.eclipse.papyrus.xwt.internal.core.UpdateSourceTrigger;
@@ -49,7 +50,7 @@ import org.eclipse.swt.widgets.Widget;
 /**
  * XWT is the main class of the XWT framework. It provides most of the services
  * in API.
- * 
+ *
  * @author yyang
  */
 public class XWT {
@@ -62,7 +63,7 @@ public class XWT {
 
 	/**
 	 * Get the system logger.
-	 * 
+	 *
 	 * @returnF
 	 */
 	public static ILogger getLogger() {
@@ -71,7 +72,7 @@ public class XWT {
 
 	/**
 	 * Create a UI Profile with the provide data and apply it immediately.
-	 * 
+	 *
 	 * @param profileData
 	 * @return
 	 */
@@ -81,7 +82,7 @@ public class XWT {
 
 	/**
 	 * Put the Profile in place
-	 * 
+	 *
 	 * @param profile
 	 * @return
 	 */
@@ -91,7 +92,7 @@ public class XWT {
 
 	/**
 	 * Restore the previous profile
-	 * 
+	 *
 	 * @return
 	 */
 	public static Object restoreProfile() {
@@ -99,7 +100,7 @@ public class XWT {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 * @param handler
 	 */
@@ -108,7 +109,7 @@ public class XWT {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 */
 	public static void unregisterNamespaceHandler(String nsmapace) {
@@ -116,7 +117,7 @@ public class XWT {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
@@ -127,7 +128,7 @@ public class XWT {
 	/**
 	 * Register an Observable IChangeListener for a given UI element. The second
 	 * registration of the same listener on the same UI Element has no effect.
-	 * 
+	 *
 	 * @param context
 	 * @param listener
 	 * @return
@@ -139,7 +140,7 @@ public class XWT {
 	/**
 	 * Undo the registration of the Observable IChangeListener for a given UI
 	 * element.
-	 * 
+	 *
 	 * @param context
 	 * @param listener
 	 */
@@ -149,7 +150,7 @@ public class XWT {
 
 	/**
 	 * Find an existing IObservableValue
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return null if it doesn't exist.
 	 */
@@ -159,7 +160,7 @@ public class XWT {
 
 	/**
 	 * Find an existing IObservableValue
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return null if it doesn't exist.
 	 */
@@ -169,7 +170,7 @@ public class XWT {
 
 	/**
 	 * Find an existing IObservableValue
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return null if it doesn't exist.
 	 */
@@ -179,7 +180,7 @@ public class XWT {
 
 	/**
 	 * get or create a IObservableValue
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return return null or raises an exception XWTException if fails
 	 */
@@ -189,7 +190,7 @@ public class XWT {
 
 	/**
 	 * get or create a IObservable
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return return null or raises an exception XWTException if fails
 	 */
@@ -199,7 +200,7 @@ public class XWT {
 
 	/**
 	 * get or create a IObservable
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return return null or raises an exception XWTException if fails
 	 */
@@ -209,7 +210,7 @@ public class XWT {
 
 	/**
 	 * get or create a IObservableValue
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return return null or raises an exception XWTException if fails
 	 */
@@ -219,7 +220,7 @@ public class XWT {
 
 	/**
 	 * Change the system logger
-	 * 
+	 *
 	 * @param logger
 	 */
 	public static void setLogger(ILogger log) {
@@ -228,7 +229,7 @@ public class XWT {
 
 	/**
 	 * Get the name of the element, which is defined by <code>Name</code> or <code>x:Name</code>. Return <code>null</code>
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
@@ -238,9 +239,9 @@ public class XWT {
 
 	/**
 	 * Find a named UI element.
-	 * 
+	 *
 	 * @param context
-	 *        the start point of research.
+	 *            the start point of research.
 	 * @param name
 	 * @return
 	 */
@@ -250,18 +251,18 @@ public class XWT {
 
 	/**
 	 * Get the DataContext of given element
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
 	public static Object getDataContext(Object element, Class<?> targetType) {
 		Object value = XWTLoaderManager.getActive().getDataContext(element);
-		if(targetType == null || !targetType.isInstance(value)) {
-			if(value instanceof IBinding) {
-				return ((IBinding)value).getValue(targetType);
+		if (targetType == null || !targetType.isInstance(value)) {
+			if (value instanceof IBinding) {
+				return ((IBinding) value).getValue(targetType);
 			}
-			if(value instanceof IObservableValue) {
-				return ((IObservableValue)value).getValue();
+			if (value instanceof IObservableValue) {
+				return ((IObservableValue) value).getValue();
 			}
 		}
 		return value;
@@ -270,13 +271,12 @@ public class XWT {
 	/**
 	 * Returns the {@link BindingContext} within the upper scope of the control.
 	 * <p>
-	 * Each UI Element may have a local DataBindingContext property. While locating DataBindingContext, if the current UI Element has not the
-	 * property, the parent's will be used.
+	 * Each UI Element may have a local DataBindingContext property. While locating DataBindingContext, if the current UI Element has not the property, the parent's will be used.
 	 * <p>
 	 * If none is found, a default one will be created as default for the current scope
 	 * <p>
 	 * If still not found {@link XWTException} thrown...
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
@@ -286,7 +286,7 @@ public class XWT {
 
 	/**
 	 * Get the DataContext of given element
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -296,7 +296,7 @@ public class XWT {
 
 	/**
 	 * Set the DataContext of given element
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -306,7 +306,7 @@ public class XWT {
 
 	/**
 	 * Get the Triggers of given element
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -316,7 +316,7 @@ public class XWT {
 
 	/**
 	 * Get the Triggers of given element
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -327,7 +327,7 @@ public class XWT {
 	/**
 	 * Get the CLR (Common Language Runtime) object. If no CLR object is found
 	 * in this element, the research will be propagated in it parent.
-	 * 
+	 *
 	 * @param widget
 	 * @return
 	 */
@@ -337,7 +337,7 @@ public class XWT {
 
 	/**
 	 * Find the root shell
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -370,7 +370,7 @@ public class XWT {
 	/**
 	 * Load the file content. All widget will be created but they are showed.
 	 * This method return the root element.
-	 * 
+	 *
 	 */
 	static public Object load(URL file) throws Exception {
 		XWT.checkInitialization();
@@ -380,7 +380,7 @@ public class XWT {
 	/**
 	 * Load the content from IUIResource. All widget will be created but they
 	 * are showed. This method return the root element.
-	 * 
+	 *
 	 */
 	static public Object load(IUIResource resource) throws Exception {
 		XWT.checkInitialization();
@@ -390,7 +390,7 @@ public class XWT {
 	/**
 	 * Load the file content. All widget will be created but they are showed.
 	 * This method return the root element.
-	 * 
+	 *
 	 */
 	static public Object load(URL file, Object dataContext) throws Exception {
 		XWT.checkInitialization();
@@ -400,7 +400,7 @@ public class XWT {
 	/**
 	 * Load the content from IUIResource. All widget will be created but they
 	 * are showed. This method return the root element.
-	 * 
+	 *
 	 */
 	static public Object load(IUIResource resource, Object dataContext) throws Exception {
 		XWT.checkInitialization();
@@ -420,7 +420,7 @@ public class XWT {
 	 * Load the file content under a UI Object. All widget will be created. This
 	 * method returns the root element. The DataContext will be associated to
 	 * the root element.
-	 * 
+	 *
 	 */
 	static public Object load(Object parent, IUIResource resource) throws Exception {
 		return XWTLoaderManager.getActive().load(parent, resource);
@@ -437,11 +437,11 @@ public class XWT {
 
 	/**
 	 * Load the content from IUIResource.
-	 * 
+	 *
 	 * @param stream
 	 * @param input
 	 * @param parsingCallback
-	 *        null if the callback is not necessary
+	 *            null if the callback is not necessary
 	 * @return
 	 * @throws Exception
 	 */
@@ -451,11 +451,11 @@ public class XWT {
 
 	/**
 	 * Load the content from IUIResource.
-	 * 
+	 *
 	 * @param stream
 	 * @param input
 	 * @param parsingCallback
-	 *        null if the callback is not necessary
+	 *            null if the callback is not necessary
 	 * @return
 	 * @throws Exception
 	 */
@@ -465,10 +465,10 @@ public class XWT {
 
 	/**
 	 * Load the content from IUIResource.
-	 * 
+	 *
 	 * @param input
 	 * @param parsingCallback
-	 *        null if the callback is not necessary
+	 *            null if the callback is not necessary
 	 * @return
 	 * @throws Exception
 	 */
@@ -478,7 +478,7 @@ public class XWT {
 
 	/**
 	 * Load the content from IUIResource.
-	 * 
+	 *
 	 * @param input
 	 * @return
 	 * @throws Exception
@@ -586,7 +586,7 @@ public class XWT {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param stream
 	 * @param url
 	 * @param options
@@ -599,7 +599,7 @@ public class XWT {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param stream
 	 * @param url
 	 * @param options
@@ -613,7 +613,7 @@ public class XWT {
 
 	/**
 	 * Metaclass services to return all registered Metaclasses.
-	 * 
+	 *
 	 * @param stream
 	 * @param url
 	 * @param loadData
@@ -626,10 +626,10 @@ public class XWT {
 
 	/**
 	 * Get the corresponding Metaclass
-	 * 
+	 *
 	 * @param tagName
 	 * @param ns
-	 *        The namespace
+	 *            The namespace
 	 * @return
 	 */
 	static public IMetaclass getMetaclass(String tagName, String ns) {
@@ -638,7 +638,7 @@ public class XWT {
 
 	/**
 	 * Register a Data converter
-	 * 
+	 *
 	 * @param converter
 	 * @param type
 	 */
@@ -648,7 +648,7 @@ public class XWT {
 
 	/**
 	 * Register a Data converter
-	 * 
+	 *
 	 * @param converter
 	 * @param type
 	 */
@@ -658,7 +658,7 @@ public class XWT {
 
 	/**
 	 * Register a command to a name
-	 * 
+	 *
 	 * @param name
 	 * @param command
 	 */
@@ -668,7 +668,7 @@ public class XWT {
 
 	/**
 	 * Add a default style
-	 * 
+	 *
 	 * @param style
 	 * @return
 	 */
@@ -694,7 +694,7 @@ public class XWT {
 
 	/**
 	 * Register UI type
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	static public IMetaclass registerMetaclass(Class<?> type) {
@@ -703,7 +703,7 @@ public class XWT {
 
 	/**
 	 * Register UI type
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	static public void registerMetaclass(IMetaclass type) {
@@ -712,7 +712,7 @@ public class XWT {
 
 	/**
 	 * Get the dynamic property value
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	static public Object getPropertyValue(Object uiElement, IProperty property) {
@@ -721,13 +721,13 @@ public class XWT {
 
 	/**
 	 * Get the dynamic property value
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	static public Object getPropertyValue(Object uiElement, String propertyName) {
 		IMetaclass metaclass = XWT.getMetaclass(uiElement);
 		IProperty property = metaclass.findProperty(propertyName);
-		if(property == null) {
+		if (property == null) {
 			return null;
 		}
 		return XWTLoaderManager.getActive().getPropertyValue(uiElement, property);
@@ -735,7 +735,7 @@ public class XWT {
 
 	/**
 	 * Set the dynamic property value
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	static public void setPropertyValue(Object uiElement, IProperty property, Object value) {
@@ -744,13 +744,13 @@ public class XWT {
 
 	/**
 	 * Set the dynamic property value
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	static public void setPropertyValue(Object uiElement, String propertyName, Object value) {
 		IMetaclass metaclass = XWT.getMetaclass(uiElement);
 		IProperty property = metaclass.findProperty(propertyName);
-		if(property == null) {
+		if (property == null) {
 			throw new XWTException("Property " + propertyName + " not found.");
 		}
 		XWTLoaderManager.getActive().setPropertyValue(uiElement, property, value);
@@ -758,7 +758,7 @@ public class XWT {
 
 	/**
 	 * Remove the dynamic property value
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	static public void removePropertyValue(Object uiElement, IProperty property) {
@@ -767,7 +767,7 @@ public class XWT {
 
 	/**
 	 * Remove the dynamic property value
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	static public boolean hasPropertyValue(Object uiElement, IProperty property) {
@@ -776,7 +776,7 @@ public class XWT {
 
 	/**
 	 * Find a Data converter
-	 * 
+	 *
 	 * @param converter
 	 * @param type
 	 */
@@ -786,7 +786,7 @@ public class XWT {
 
 	/**
 	 * Switch current loading context
-	 * 
+	 *
 	 */
 	public static void setLoadingContext(ILoadingContext loadingContext) {
 		XWTLoaderManager.getActive().setLoadingContext(loadingContext);
@@ -794,7 +794,7 @@ public class XWT {
 
 	/**
 	 * Return current loading context
-	 * 
+	 *
 	 * @return ILoadingContext
 	 */
 	public static ILoadingContext getLoadingContext() {
@@ -803,7 +803,7 @@ public class XWT {
 
 	/**
 	 * Add a tracking option
-	 * 
+	 *
 	 * @param tracking
 	 */
 	static public void addTracking(Tracking tracking) {
@@ -812,7 +812,7 @@ public class XWT {
 
 	/**
 	 * Test if the tracking on argument is enabled.
-	 * 
+	 *
 	 * @param tracking
 	 * @return
 	 */
@@ -822,7 +822,7 @@ public class XWT {
 
 	/**
 	 * Get all tracking options
-	 * 
+	 *
 	 * @return
 	 */
 	static public Set<Tracking> getTrackings() {
@@ -831,7 +831,7 @@ public class XWT {
 
 	/**
 	 * Set up the default ICLRFactory
-	 * 
+	 *
 	 * @param factory
 	 */
 	static public void setCLRFactory(ICLRFactory factory) {
@@ -839,7 +839,7 @@ public class XWT {
 	}
 
 	static public boolean checkInitialization() {
-		if(isAllInitializersInitialized()) {
+		if (isAllInitializersInitialized()) {
 			return false;
 		}
 		return checkInitialization(-1);
@@ -847,12 +847,12 @@ public class XWT {
 
 	static public boolean checkInitialization(long timeoutMillis) {
 		long started = System.currentTimeMillis();
-		while(true) {
-			if(timeoutMillis != -1 && System.currentTimeMillis() - started > timeoutMillis) {
+		while (true) {
+			if (timeoutMillis != -1 && System.currentTimeMillis() - started > timeoutMillis) {
 				return false;
 			}
 
-			if(isAllInitializersInitialized()) {
+			if (isAllInitializersInitialized()) {
 				return false;
 			}
 
@@ -865,9 +865,9 @@ public class XWT {
 	}
 
 	private static boolean isAllInitializersInitialized() {
-		synchronized(initializers) {
-			for(IXWTInitializer initializer : initializers) {
-				if(!initializer.isInitialized()) {
+		synchronized (initializers) {
+			for (IXWTInitializer initializer : initializers) {
+				if (!initializer.isInitialized()) {
 					return false;
 				}
 			}
@@ -877,7 +877,7 @@ public class XWT {
 
 	/**
 	 * The default CLRFactory.
-	 * 
+	 *
 	 * @return
 	 */
 	static public ICLRFactory getCLRFactory() {
@@ -886,7 +886,7 @@ public class XWT {
 
 	/**
 	 * Find a command by name
-	 * 
+	 *
 	 * @param name
 	 * @return
 	 */
@@ -908,9 +908,9 @@ public class XWT {
 
 	/**
 	 * Check if the value of a property is to resolve.
-	 * 
+	 *
 	 * @param type
-	 *        type of property
+	 *            type of property
 	 * @return
 	 */
 	public static boolean isFileResolveType(Class<?> type) {
@@ -919,9 +919,9 @@ public class XWT {
 
 	/**
 	 * Register the value of a property is to resolve.
-	 * 
+	 *
 	 * @param type
-	 *        type of property
+	 *            type of property
 	 * @return
 	 */
 	public static void registerFileResolveType(Class<?> type) {
@@ -930,9 +930,9 @@ public class XWT {
 
 	/**
 	 * Register the value of a property is to resolve.
-	 * 
+	 *
 	 * @param type
-	 *        type of property
+	 *            type of property
 	 * @return
 	 */
 	public static void unregisterFileResolveType(Class<?> type) {
@@ -957,26 +957,26 @@ public class XWT {
 
 	/**
 	 * Run in UI context.
-	 * 
+	 *
 	 * @param runnable
 	 */
 	public static void runOnUIThread(final Runnable runnable) {
 		String platform = SWT.getPlatform();
-		if(platform.startsWith("win")) {
+		if (platform.startsWith("win")) {
 			XWTLoaderManager.getDefault();
 			runnable.run();
-		} else if(platform.startsWith("rap")) {
+		} else if (platform.startsWith("rap")) {
 			XWTLoaderManager.getDefault();
 			runnable.run();
-		} else if(platform.endsWith("gtk") || platform.endsWith("cocoa")) {
-			synchronized(displayLock) {
-				if(displayThread == null || !displayThread.isAlive()) {
+		} else if (platform.endsWith("gtk") || platform.endsWith("cocoa")) {
+			synchronized (displayLock) {
+				if (displayThread == null || !displayThread.isAlive()) {
 					try {
 						Field field = Display.class.getDeclaredField("Default");
-						if(field != null) {
+						if (field != null) {
 							field.setAccessible(true);
-							Display defaultDisplay = (Display)field.get(null);
-							if(defaultDisplay != null) {
+							Display defaultDisplay = (Display) field.get(null);
+							if (defaultDisplay != null) {
 								displayThread = defaultDisplay.getThread();
 							}
 						}
@@ -984,7 +984,7 @@ public class XWT {
 					}
 				}
 
-				if(displayThread == null || !displayThread.isAlive()) {
+				if (displayThread == null || !displayThread.isAlive()) {
 					displayThread = new Thread() {
 
 						private long startTime = -1;
@@ -998,14 +998,14 @@ public class XWT {
 						protected Runnable runnable = new Runnable() {
 
 							public void run() {
-								if(ignoreNotification) {
+								if (ignoreNotification) {
 									startTime = -1;
 									return;
 								}
-								if(startTime == -1) {
+								if (startTime == -1) {
 									startTime = System.currentTimeMillis();
 								} else {
-									if((System.currentTimeMillis() - startTime) > 10000 && display.getActiveShell() == null && display.getShells().length == 0) {
+									if ((System.currentTimeMillis() - startTime) > 10000 && display.getActiveShell() == null && display.getShells().length == 0) {
 										toStop = true;
 										display.wake();
 									} else {
@@ -1021,13 +1021,13 @@ public class XWT {
 							XWTLoaderManager.getDefault();
 							display = Display.getDefault();
 							runnable.run();
-							while(true) {
-								if(!display.readAndDispatch()) {
+							while (true) {
+								if (!display.readAndDispatch()) {
 									display.timerExec(10000, runnable);
 									display.sleep();
 									ignoreNotification = true;
 								}
-								if(toStop) {
+								if (toStop) {
 									break;
 								}
 								startTime = -1;
@@ -1039,7 +1039,7 @@ public class XWT {
 					XWTLoaderManager.getDefault();
 					XWT.checkInitialization();
 					Display display = Display.findDisplay(displayThread);
-					if(display != null) {
+					if (display != null) {
 						display.syncExec(runnable);
 					}
 				}
@@ -1050,8 +1050,8 @@ public class XWT {
 	}
 
 	public static void addInitializer(IXWTInitializer initializer) {
-		synchronized(initializers) {
-			if(!XWTLoaderManager.isStarted()) {
+		synchronized (initializers) {
+			if (!XWTLoaderManager.isStarted()) {
 				initializers.add(initializer);
 			}
 		}
@@ -1063,15 +1063,15 @@ public class XWT {
 
 	public static Object findParent(Object element, Class<?> type) {
 		Widget widget = UserData.getWidget(element);
-		if(widget == null) {
+		if (widget == null) {
 			return null;
 		}
 		return UserData.findParent(widget, type);
 	}
 
 	static void runInitializers(IXWTLoader loader) {
-		synchronized(initializers) {
-			for(IXWTInitializer initializer : XWT.getInitializers()) {
+		synchronized (initializers) {
+			for (IXWTInitializer initializer : XWT.getInitializers()) {
 				initializer.initialize(loader);
 			}
 		}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - support adapter instead of custom resource impl (CDO)
  *  Christian W. Damus (CEA) - bug 429422
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.resource;
 
@@ -32,9 +32,9 @@ import org.eclipse.papyrus.infra.gmfdiag.css.engine.ProjectCSSEngine;
 
 /**
  * A GMF Resource with CSS support
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public class CSSNotationResource extends GMFResource {
@@ -50,7 +50,7 @@ public class CSSNotationResource extends GMFResource {
 	}
 
 	public ExtendedCSSEngine getModelEngine() {
-		if(modelEngine == null) {
+		if (modelEngine == null) {
 			// Create a CSSEngine and listen to modifications on the
 			// resourceSet,
 			// to know when this resource is disposed
@@ -61,7 +61,7 @@ public class CSSNotationResource extends GMFResource {
 	}
 
 	public ExtendedCSSEngine getProjectEngine() {
-		if(projectEngine == null) {
+		if (projectEngine == null) {
 			projectEngine = ProjectCSSEngine.createEngine(this);
 		}
 
@@ -71,23 +71,23 @@ public class CSSNotationResource extends GMFResource {
 	public static ExtendedCSSEngine getEngine(Resource resource) {
 		ExtendedCSSEngine result = null;
 
-		if(resource instanceof CSSNotationResource) {
-			result = ((CSSNotationResource)resource).getModelEngine();
-		} else if("notation".equals(resource.getURI().fileExtension())) {
-			CSSNotationResourceAdapter adapter = (CSSNotationResourceAdapter)EcoreUtil.getExistingAdapter(resource, ExtendedCSSEngine.class);
+		if (resource instanceof CSSNotationResource) {
+			result = ((CSSNotationResource) resource).getModelEngine();
+		} else if ("notation".equals(resource.getURI().fileExtension())) {
+			CSSNotationResourceAdapter adapter = (CSSNotationResourceAdapter) EcoreUtil.getExistingAdapter(resource, ExtendedCSSEngine.class);
 
-			if(adapter == null) {
+			if (adapter == null) {
 				// is the resource set a ModelSet that has the CSS notation
 				// model associated?
 				ResourceSet resourceSet = resource.getResourceSet();
-				if((resourceSet instanceof ModelSet) && (((ModelSet)resourceSet).getModel(NotationModel.MODEL_ID) instanceof CSSNotationModel)) {
+				if ((resourceSet instanceof ModelSet) && (((ModelSet) resourceSet).getModel(NotationModel.MODEL_ID) instanceof CSSNotationModel)) {
 
 					adapter = new CSSNotationResourceAdapter();
 					resource.eAdapters().add(adapter);
 				}
 			}
 
-			if(adapter != null) {
+			if (adapter != null) {
 				result = adapter.getEngine();
 			}
 		}
@@ -98,24 +98,24 @@ public class CSSNotationResource extends GMFResource {
 	public static boolean isCSSEnabled(Resource resource) {
 		// while a resource is loading, we don't want to poke its CSS style
 		// annotations
-		return (resource != null) && !((Resource.Internal)resource).isLoading() && (getEngine(resource) != null);
+		return (resource != null) && !((Resource.Internal) resource).isLoading() && (getEngine(resource) != null);
 	}
 
 	/**
 	 * Dispose the CSS Engine and stops listening on the ResourceSet
-	 * 
+	 *
 	 * @param notifier
 	 */
 	private void disposeEngine(Object notifier) {
 		// notifier is the owning resourceSet
-		if(modelEngine != null) {
+		if (modelEngine != null) {
 			modelEngine.dispose();
 			modelEngine = null;
 			// Stop listening on the resourceSet
-			((ResourceSet)notifier).eAdapters().remove(disposeListener);
+			((ResourceSet) notifier).eAdapters().remove(disposeListener);
 		}
 
-		if(projectEngine != null) {
+		if (projectEngine != null) {
 			projectEngine.dispose();
 			projectEngine = null;
 		}
@@ -128,16 +128,16 @@ public class CSSNotationResource extends GMFResource {
 			// If this resource is removed from the resourceSet, dispose the
 			// CSSEngine
 			// and stop listening on the resourceSet
-			switch(notification.getEventType()) {
+			switch (notification.getEventType()) {
 			case Notification.REMOVE_MANY:
-				for(Object oldValue : (Collection<?>)notification.getOldValue()) {
-					if(oldValue == CSSNotationResource.this) {
+				for (Object oldValue : (Collection<?>) notification.getOldValue()) {
+					if (oldValue == CSSNotationResource.this) {
 						disposeEngine(notification.getNotifier());
 					}
 				}
 				break;
 			case Notification.REMOVE:
-				if(notification.getOldValue() == CSSNotationResource.this) {
+				if (notification.getOldValue() == CSSNotationResource.this) {
 					disposeEngine(notification.getNotifier());
 				}
 				break;

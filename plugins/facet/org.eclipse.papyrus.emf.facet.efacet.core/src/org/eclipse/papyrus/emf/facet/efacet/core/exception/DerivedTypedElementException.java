@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Gregoire Dupe (Mia-Software) - initial API and implementation
  *     Nicolas Bros (Mia-Software) - Bug 362191 - [Restructuring] Query mechanism for eFacet2
@@ -16,6 +16,7 @@ import org.eclipse.papyrus.emf.facet.efacet.core.internal.exception.DerivedTyped
 /**
  * This exception is raised when something is wrong with a query, and there is not a more specific
  * sub-class to describe the error (e.g. {@link DerivedTypedElementEvaluationException} )
+ *
  * @since 0.2
  */
 public class DerivedTypedElementException extends Exception {

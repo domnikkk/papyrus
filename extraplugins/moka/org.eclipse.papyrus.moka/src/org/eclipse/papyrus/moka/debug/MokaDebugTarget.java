@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -97,17 +97,17 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/**
 	 * Constructs a new moka debug target in the given launch for the associated Execution Engine process.
-	 * 
+	 *
 	 * @param launch
-	 *        containing launch
+	 *            containing launch
 	 * @param process
-	 *        The execution engine process
+	 *            The execution engine process
 	 * @param requestPort
-	 *        port to send requests to the process
+	 *            port to send requests to the process
 	 * @param eventPort
-	 *        port to read events from
+	 *            port to read events from
 	 * @exception CoreException
-	 *            if unable to connect to host
+	 *                if unable to connect to host
 	 */
 	public MokaDebugTarget(ILaunch launch, IProcess process) throws CoreException {
 		super(null);
@@ -119,13 +119,13 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/**
 	 * Connects this debug target to the execution engine, and starts the event dispatch job.
-	 * 
+	 *
 	 * @param requestPort
-	 *        The port for the request socket
+	 *            The port for the request socket
 	 * @param replyPort
-	 *        The port for the reply socket
+	 *            The port for the reply socket
 	 * @param eventPort
-	 *        The port for the event socket
+	 *            The port for the event socket
 	 * @throws DebugException
 	 */
 	public void connect(int requestPort, int replyPort, int eventPort) throws DebugException {
@@ -147,16 +147,17 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.debug.MokaDebugElement#getLaunch()
 	 */
+	@Override
 	public ILaunch getLaunch() {
 		return this.launch;
 	}
 
-	///////////////////////////////////////////
+	// /////////////////////////////////////////
 	// Implementation of interface IDebugTarget
-	///////////////////////////////////////////
+	// /////////////////////////////////////////
 
 	/**
 	 * The name of this debug target.
@@ -167,9 +168,9 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 	 * The threads for this debug target.
 	 * This collection of threads is initialized with the first Start_Event received in the event dispatch loop
 	 * This collection of threads is updated with reception of a Suspend_Event in the event dispatch loop
-	 * 
+	 *
 	 */
-	protected MokaThread[] threads = new MokaThread[]{};
+	protected MokaThread[] threads = new MokaThread[] {};
 
 	/**
 	 * The process associated with this debug target. Hosts the target program, i.e., the actual execution engine
@@ -178,7 +179,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDebugTarget#getProcess()
 	 */
 	public IProcess getProcess() {
@@ -187,7 +188,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDebugTarget#getThreads()
 	 */
 	public IThread[] getThreads() throws DebugException {
@@ -196,7 +197,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDebugTarget#hasThreads()
 	 */
 	public boolean hasThreads() throws DebugException {
@@ -205,11 +206,11 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDebugTarget#getName()
 	 */
 	public String getName() throws DebugException {
-		if(this.name != null) {
+		if (this.name != null) {
 			return this.name;
 		}
 		return "";
@@ -217,7 +218,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/**
 	 * Convenience method for setting the new name for this MokaDebugTarget
-	 * 
+	 *
 	 * @param name
 	 */
 	public void setName(String name) {
@@ -226,33 +227,33 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDebugTarget#supportsBreakpoint(org.eclipse.debug.core.model.IBreakpoint)
 	 */
 	public boolean supportsBreakpoint(IBreakpoint breakpoint) {
-		// By default, a breakpoint is supported if it has MokaConstants.ID_MOKA_DEBUG_MODEL as a debug model identifier 
-		if(breakpoint.getModelIdentifier().equals(MokaConstants.MOKA_DEBUG_MODEL_ID)) {
+		// By default, a breakpoint is supported if it has MokaConstants.ID_MOKA_DEBUG_MODEL as a debug model identifier
+		if (breakpoint.getModelIdentifier().equals(MokaConstants.MOKA_DEBUG_MODEL_ID)) {
 			return true;
 		}
 		return false;
 	}
 
-	//////////////////////////////////////////////////
+	// ////////////////////////////////////////////////
 	// Implementation of interface IBreakpointListener
-	//////////////////////////////////////////////////
+	// ////////////////////////////////////////////////
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.IBreakpointListener#breakpointAdded(org.eclipse.debug.core.model.IBreakpoint)
 	 */
 	public void breakpointAdded(IBreakpoint breakpoint) {
-		if(this.supportsBreakpoint(breakpoint)) {
+		if (this.supportsBreakpoint(breakpoint)) {
 			try {
-				if(breakpoint.isEnabled()) {
+				if (breakpoint.isEnabled()) {
 					try {
 						// If the breakpoint is supported, this is a MokaBreakpoint
-						MokaBreakpoint mokaBreakpoint = (MokaBreakpoint)breakpoint;
+						MokaBreakpoint mokaBreakpoint = (MokaBreakpoint) breakpoint;
 						AddBreakpoint_Request request = new AddBreakpoint_Request(mokaBreakpoint);
 						this.sendRequest(request);
 						// Waits for an acknowledge from the execution engine
@@ -270,15 +271,15 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.IBreakpointListener#breakpointRemoved(org.eclipse.debug.core.model.IBreakpoint,
 	 * org.eclipse.core.resources.IMarkerDelta)
 	 */
 	public void breakpointRemoved(IBreakpoint breakpoint, IMarkerDelta delta) {
-		if(supportsBreakpoint(breakpoint)) {
+		if (supportsBreakpoint(breakpoint)) {
 			try {
 				// If the breakpoint is supported, this is a MokaBreakpoint
-				MokaBreakpoint mokaBreakpoint = (MokaBreakpoint)breakpoint;
+				MokaBreakpoint mokaBreakpoint = (MokaBreakpoint) breakpoint;
 				RemoveBreakpoint_Request request = new RemoveBreakpoint_Request(mokaBreakpoint);
 				this.sendRequest(request);
 				// Waits for an acknowledge from the execution engine
@@ -294,14 +295,14 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.IBreakpointListener#breakpointChanged(org.eclipse.debug.core.model.IBreakpoint,
 	 * org.eclipse.core.resources.IMarkerDelta)
 	 */
 	public void breakpointChanged(IBreakpoint breakpoint, IMarkerDelta delta) {
-		if(this.supportsBreakpoint(breakpoint)) {
+		if (this.supportsBreakpoint(breakpoint)) {
 			try {
-				if(breakpoint.isEnabled() && DebugPlugin.getDefault().getBreakpointManager().isEnabled()) {
+				if (breakpoint.isEnabled() && DebugPlugin.getDefault().getBreakpointManager().isEnabled()) {
 					this.breakpointAdded(breakpoint);
 				} else {
 					this.breakpointRemoved(breakpoint, delta);
@@ -312,9 +313,9 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 		}
 	}
 
-	//////////////////////////////////////////
+	// ////////////////////////////////////////
 	// Implementation of interface IDisconnect
-	//////////////////////////////////////////
+	// ////////////////////////////////////////
 
 	/**
 	 * Determines whether the target program is disconnected or not from this debug target.
@@ -323,7 +324,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDisconnect#canDisconnect()
 	 */
 	public boolean canDisconnect() {
@@ -333,7 +334,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDisconnect#disconnect()
 	 */
 	public void disconnect() throws DebugException {
@@ -353,20 +354,20 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDisconnect#isDisconnected()
 	 */
 	public boolean isDisconnected() {
 		return this.isDisconnected;
 	}
 
-	////////////////////////////////////////////////////
+	// //////////////////////////////////////////////////
 	// Implementation of interface IMemoryBlockRetrieval
-	////////////////////////////////////////////////////
+	// //////////////////////////////////////////////////
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IMemoryBlockRetrieval#supportsStorageRetrieval()
 	 */
 	public boolean supportsStorageRetrieval() {
@@ -376,16 +377,16 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IMemoryBlockRetrieval#getMemoryBlock(long, long)
 	 */
 	public IMemoryBlock getMemoryBlock(long startAddress, long length) throws DebugException {
 		return null;
 	}
 
-	///////////////////////////////////
+	// /////////////////////////////////
 	// Implementation of ISuspendResume
-	///////////////////////////////////
+	// /////////////////////////////////
 
 	/**
 	 * Determines whether this element is currently suspended.
@@ -394,7 +395,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#canResume()
 	 */
 	public boolean canResume() {
@@ -404,7 +405,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#canSuspend()
 	 */
 	public boolean canSuspend() {
@@ -414,7 +415,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#isSuspended()
 	 */
 	public boolean isSuspended() {
@@ -423,21 +424,21 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#resume()
 	 */
 	public void resume() throws DebugException {
 		// A call to resume() has no effect on an element that is not suspended.
-		//		if (this.isSuspended)
+		// if (this.isSuspended)
 		this.resume(this, DebugEvent.CLIENT_REQUEST);
 	}
 
 	/**
 	 * Handles occurrence of a resume event. The event is represented by the String message, and has been emitted by the target program.
 	 * This method is called by the event dispatch job.
-	 * 
+	 *
 	 * @param message
-	 *        The String representation of the event
+	 *            The String representation of the event
 	 */
 	protected void handle_Resume_Event(String message) {
 		Resume_Event event = Marshaller.getInstance().resume_event_unmarshal(message);
@@ -456,11 +457,11 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 	 * - DebugEvent.STEP_RETURN: Execution is resumed due to a step return client request
 	 * In reply to this request, the target program will emit a Resume_Event.
 	 * This Resume_Event is handled by the event dispatch job, so that the appropriate RESUME DebugEvent is emitted to the DebugPlugin.
-	 * 
+	 *
 	 * @param debugElement
-	 *        The debug element being resumed
+	 *            The debug element being resumed
 	 * @param resumeDetail
-	 *        Details about the reason for resuming
+	 *            Details about the reason for resuming
 	 */
 	public void resume(IDebugElement debugElement, int resumeDetail) throws DebugException {
 		Resume_Request request = new Resume_Request(debugElement, resumeDetail);
@@ -473,13 +474,14 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#suspend()
 	 */
 	public void suspend() throws DebugException {
 		// A call to suspend() has no effect on an element that is already suspended.
-		if(!this.isSuspended)
+		if (!this.isSuspended) {
 			this.suspend(this, DebugEvent.CLIENT_REQUEST);
+		}
 	}
 
 	/**
@@ -491,11 +493,11 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 	 * - DebugEvent.BREAKPOINT: Execution was suspended due to a breakpoint
 	 * In reply to this request, the target program will emit a Suspend_Event.
 	 * This Suspend_Event is handled by the event dispatch job, so that the appropriate SUSPEND DebugEvent is emitted to the DebugPlugin.
-	 * 
+	 *
 	 * @param debugElement
-	 *        The debug element being resumed
+	 *            The debug element being resumed
 	 * @param suspendDetail
-	 *        Details about the reason for resuming
+	 *            Details about the reason for resuming
 	 */
 	public void suspend(IDebugElement debugElement, int suspendDetail) throws DebugException {
 		Suspend_Request request = new Suspend_Request(debugElement, suspendDetail);
@@ -509,9 +511,9 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 	/**
 	 * Handles occurrence of a suspend event. The event is represented by the String message, and has been emitted by the target program.
 	 * This method is called by the event dispatch job.
-	 * 
+	 *
 	 * @param message
-	 *        The String representation of the event
+	 *            The String representation of the event
 	 */
 	protected void handle_Suspend_Event(String message) {
 		Suspend_Event event = Marshaller.getInstance().suspend_event_unmarshal(message);
@@ -520,17 +522,17 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 		int suspendEventDetail = event.getDebugEvent().getDetail();
 		// In the case where the suspend event occured due to a step end, the corresponding IThread must be explicitly stated that it is not stepping anymore.
 		// @see MokaThrea.stepEnded()
-		if(suspendEventDetail == DebugEvent.STEP_END || suspendEventDetail == DebugEvent.BREAKPOINT) {
+		if (suspendEventDetail == DebugEvent.STEP_END || suspendEventDetail == DebugEvent.BREAKPOINT) {
 			// By construction, the source element associated with this debug event is a MokaThread
-			MokaThread thread = (MokaThread)event.getDebugEvent().getSource();
+			MokaThread thread = (MokaThread) event.getDebugEvent().getSource();
 			thread.stepEnded();
 		}
 		this.fireEvent(event.getDebugEvent());
 	}
 
-	///////////////////////////////
+	// /////////////////////////////
 	// Implementation of ITerminate
-	///////////////////////////////
+	// /////////////////////////////
 
 	/**
 	 * Determines whether this element is terminated
@@ -539,7 +541,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ITerminate#canTerminate()
 	 */
 	public boolean canTerminate() {
@@ -549,7 +551,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ITerminate#isTerminated()
 	 */
 	public boolean isTerminated() {
@@ -572,7 +574,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ITerminate#terminate()
 	 */
 	public void terminate() throws DebugException {
@@ -583,9 +585,9 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 	 * Sends a request to the target program for terminating the given debugElement (which can be an IDebugTarget or an IThread).
 	 * In reply to this request, the target program will emit a Terminate_Event.
 	 * This Terminate_Event is handled by the event dispatch job, so that the appropriate TERMINATE DebugEvent is emitted to the DebugPlugin.
-	 * 
+	 *
 	 * @param debugElement
-	 *        The debug element being terminated
+	 *            The debug element being terminated
 	 */
 	public void terminate(IDebugElement debugElement) throws DebugException {
 		Terminate_Request request = new Terminate_Request(debugElement);
@@ -599,14 +601,14 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 	/**
 	 * Handles occurrence of a terminate event, emitted by the target program.
 	 * This method is called by the event dispatch job.
-	 * 
+	 *
 	 */
 	protected void handle_Terminate_Event(String event) {
 		Terminate_Event terminateEvent = Marshaller.getInstance().terminate_event_unmarshal(event);
-		if(terminateEvent.getSource() instanceof IDebugTarget) {
+		if (terminateEvent.getSource() instanceof IDebugTarget) {
 			this.isTerminated = true;
 		} else {
-			this.threads = (MokaThread[])terminateEvent.getThreads();
+			this.threads = (MokaThread[]) terminateEvent.getThreads();
 			this.fireEvent(terminateEvent.getDebugEvent());
 		}
 	}
@@ -623,24 +625,25 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.core.runtime.jobs.Job#run(org.eclipse.core.runtime.IProgressMonitor)
 		 */
+		@Override
 		protected IStatus run(IProgressMonitor monitor) {
 			String event = "";
 
-			while(!isTerminated() && event != null) {
+			while (!isTerminated() && event != null) {
 				try {
 					event = eventReader.readLine();
-					if(event != null) {
+					if (event != null) {
 						isSuspended = false;
-						if(event.startsWith(MokaConstants.event_start)) {
+						if (event.startsWith(MokaConstants.event_start)) {
 							handle_Start_Event(event);
-						} else if(event.startsWith(MokaConstants.event_resume)) {
+						} else if (event.startsWith(MokaConstants.event_resume)) {
 							handle_Resume_Event(event);
-						} else if(event.startsWith(MokaConstants.event_suspend)) {
+						} else if (event.startsWith(MokaConstants.event_suspend)) {
 							handle_Suspend_Event(event);
-						} else if(event.startsWith(MokaConstants.event_terminate)) {
+						} else if (event.startsWith(MokaConstants.event_terminate)) {
 							handle_Terminate_Event(event);
 						}
 					}
@@ -653,24 +656,24 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 		}
 	}
 
-	//////////////////////
+	// ////////////////////
 	// Convenience methods
-	//////////////////////
+	// ////////////////////
 
 	/**
 	 * Handles occurrence of a start event, which means that the target program is ready to receive requests.
 	 * This method is called by the event dispatch job.
-	 * 
+	 *
 	 */
 	protected void handle_Start_Event(String message) {
 		Start_Event event = Marshaller.getInstance().start_event_unmarshal(message);
 		this.threads = event.getThreads();
 		this.fireEvent(event.getDebugEvent());
 		// Installs deferred breakpoints only if the breakpoint manager is enabled
-		//if (DebugPlugin.getDefault().getBreakpointManager().isEnabled())
+		// if (DebugPlugin.getDefault().getBreakpointManager().isEnabled())
 		this.installDeferredBreakpoints();
 		try {
-			if(!this.isStarted) {
+			if (!this.isStarted) {
 				resume();
 				this.isStarted = true;
 			}
@@ -683,23 +686,24 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 	 * Install breakpoints that are already registered with the breakpoint manager
 	 */
 	protected void installDeferredBreakpoints() {
-		if(!DebugPlugin.getDefault().getBreakpointManager().isEnabled())
+		if (!DebugPlugin.getDefault().getBreakpointManager().isEnabled()) {
 			return;
+		}
 		IBreakpoint[] breakpoints = DebugPlugin.getDefault().getBreakpointManager().getBreakpoints(MokaConstants.MOKA_DEBUG_MODEL_ID);
-		for(int i = 0; i < breakpoints.length; i++) {
+		for (int i = 0; i < breakpoints.length; i++) {
 			this.breakpointAdded(breakpoints[i]);
 		}
 	}
 
 	/**
 	 * Convenience methods for marshaling and sending a request to the target program, through the request socket
-	 * 
+	 *
 	 * @param request
-	 *        The Request object to be marshaled and sent to the target program
+	 *            The Request object to be marshaled and sent to the target program
 	 * @throws DebugException
 	 */
 	protected void sendRequest(RequestMessage request) throws DebugException {
-		synchronized(requestSocket) {
+		synchronized (requestSocket) {
 			requestWriter.println(request.marshall());
 			requestWriter.flush();
 		}
@@ -710,16 +714,17 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 	 * The returned array is empty (but not null) if no stack frames are available, or if the thread is not suspended.
 	 * This method is provided as a convenience for MokaThread, so that all requests (respectively replies) are emitted (respectively received) from
 	 * (by) the debug target
-	 * 
+	 *
 	 * @param thread
-	 *        The thread for which stack frames have to be retrieved
+	 *            The thread for which stack frames have to be retrieved
 	 * @return The (possibly empty) collection of stack frames associated with the given thread
 	 * @throws DebugException
 	 */
 	public IStackFrame[] getStackFrames(IThread thread) throws DebugException {
-		IStackFrame[] stackFrames = new IStackFrame[]{};
-		if(!thread.isSuspended())
+		IStackFrame[] stackFrames = new IStackFrame[] {};
+		if (!thread.isSuspended()) {
 			return stackFrames;
+		}
 		this.sendRequest(new GetStackFrames_Request(thread));
 		try {
 			String reply = replyReader.readLine();
@@ -736,14 +741,14 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 	 * This method is provided as a convenience for MokaStackFrame and MokaValue, so that all requests (respectively replies) are emitted
 	 * (respectively received) from (by) the debug target
 	 * stackFrameOrValue must be an IStackFrame or an IValue
-	 * 
+	 *
 	 * @param stackFrameOrValue
-	 *        The stack frame or value for which variables have to be retrieved
+	 *            The stack frame or value for which variables have to be retrieved
 	 * @return The (possibly empty) collection of variables associated with this stack frame or value
 	 * @throws DebugException
 	 */
 	public MokaVariable[] getVariables(IDebugElement stackFrameOrValue) throws DebugException {
-		MokaVariable[] variables = new MokaVariable[]{};
+		MokaVariable[] variables = new MokaVariable[] {};
 		this.sendRequest(new GetVariables_Request(stackFrameOrValue));
 		try {
 			String reply = replyReader.readLine();
@@ -756,14 +761,14 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/**
 	 * Not supported by this default implementation
-	 * 
+	 *
 	 * @param stackFrame
-	 *        The stack frame for which register groups have to be retrieved
+	 *            The stack frame for which register groups have to be retrieved
 	 * @return The (possibly empty) collection of register groups associated with this stack frame
 	 * @throws DebugException
 	 */
 	public IRegisterGroup[] getRegisterGroups(IStackFrame stackFrame) throws DebugException {
-		return new IRegisterGroup[]{};
+		return new IRegisterGroup[] {};
 	}
 
 	/**
@@ -771,9 +776,9 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 	 * The returned value may be null.
 	 * This method is provided as a convenience for MokaVariable, so that all requests (respectively replies) are emitted (respectively received) from
 	 * (by) the debug target
-	 * 
+	 *
 	 * @param variable
-	 *        The variable for which value has to be retrieved
+	 *            The variable for which value has to be retrieved
 	 * @return The value of this variable, if any
 	 * @throws DebugException
 	 */
@@ -794,9 +799,9 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 	 * The returned value may be null.
 	 * This method is provided as a convenience for MokaVariable, so that all requests (respectively replies) are emitted (respectively received) from
 	 * (by) the debug target
-	 * 
+	 *
 	 * @param debugElement
-	 *        The variable or value for which the reference type name has to be retrieved
+	 *            The variable or value for which the reference type name has to be retrieved
 	 * @return The reference type name of this variable or value, if any
 	 * @throws DebugException
 	 */
@@ -817,9 +822,9 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 	 * The returned value may be null.
 	 * This method is provided as a convenience for MokaVariable, so that all requests (respectively replies) are emitted (respectively received) from
 	 * (by) the debug target
-	 * 
+	 *
 	 * @param value
-	 *        The value for which the string representation has to be retrieved
+	 *            The value for which the string representation has to be retrieved
 	 * @return The string representation of this value
 	 * @throws DebugException
 	 */

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -12,12 +12,12 @@ package org.eclipse.papyrus.xwt.graphics;
 
 /**
  * Color consists of four elements: alpha, blue, green and red.
- * 
+ *
  * @author yyang
  */
 public class Point {
 
-	public static final Point[] EMPTY_ARRAY = new Point[]{};
+	public static final Point[] EMPTY_ARRAY = new Point[] {};
 
 	private double x;
 
@@ -49,10 +49,10 @@ public class Point {
 
 	@Override
 	public boolean equals(Object obj) {
-		if(!(obj instanceof Point)) {
+		if (!(obj instanceof Point)) {
 			return false;
 		}
-		Point point = (Point)obj;
+		Point point = (Point) obj;
 		return x == point.getX() && y == point.getY();
 	}
 

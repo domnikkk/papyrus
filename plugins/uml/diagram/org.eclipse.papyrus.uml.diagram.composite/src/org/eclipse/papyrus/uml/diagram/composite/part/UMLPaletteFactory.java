@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -26,9 +26,9 @@ import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
  */
 public class UMLPaletteFactory extends PaletteFactory.Adapter {
 
-	//RS: New Palette generation
-	//Generates the ID for the tool elements
-	//Generate the tool factory (if(ID) createtool...)
+	// RS: New Palette generation
+	// Generates the ID for the tool elements
+	// Generate the tool factory (if(ID) createtool...)
 	/**
 	 * @generated
 	 */
@@ -183,92 +183,93 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Tool createTool(String toolId) {
-		if(toolId.equals(COMPOSITE_TOOL_CLASS)) {
+		if (toolId.equals(COMPOSITE_TOOL_CLASS)) {
 			return createClassCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_PROPERTY)) {
+		if (toolId.equals(COMPOSITE_TOOL_PROPERTY)) {
 			return createPropertyCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_PORT)) {
+		if (toolId.equals(COMPOSITE_TOOL_PORT)) {
 			return createPortCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_COLLABORATION)) {
+		if (toolId.equals(COMPOSITE_TOOL_COLLABORATION)) {
 			return createCollaborationCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_COLLABORATIONROLE)) {
+		if (toolId.equals(COMPOSITE_TOOL_COLLABORATIONROLE)) {
 			return createCollaborationRoleCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_COLLABORATIONUSE)) {
+		if (toolId.equals(COMPOSITE_TOOL_COLLABORATIONUSE)) {
 			return createCollaborationUseCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_COMMENT)) {
+		if (toolId.equals(COMPOSITE_TOOL_COMMENT)) {
 			return createCommentCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_CONSTRAINT)) {
+		if (toolId.equals(COMPOSITE_TOOL_CONSTRAINT)) {
 			return createConstraintCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_TIMEOBSERVATION)) {
+		if (toolId.equals(COMPOSITE_TOOL_TIMEOBSERVATION)) {
 			return createTimeObservationCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_DURATIONOBSERVATION)) {
+		if (toolId.equals(COMPOSITE_TOOL_DURATIONOBSERVATION)) {
 			return createDurationObservationCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_INFORMATIONITEM)) {
+		if (toolId.equals(COMPOSITE_TOOL_INFORMATIONITEM)) {
 			return createInformationItemCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_PARAMETER)) {
+		if (toolId.equals(COMPOSITE_TOOL_PARAMETER)) {
 			return createParameterCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_ACTIVITY)) {
+		if (toolId.equals(COMPOSITE_TOOL_ACTIVITY)) {
 			return createActivityCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_INTERACTION)) {
+		if (toolId.equals(COMPOSITE_TOOL_INTERACTION)) {
 			return createInteractionCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_PROTOCOLSTATEMACHINE)) {
+		if (toolId.equals(COMPOSITE_TOOL_PROTOCOLSTATEMACHINE)) {
 			return createProtocolStateMachineCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_STATEMACHINE)) {
+		if (toolId.equals(COMPOSITE_TOOL_STATEMACHINE)) {
 			return createStateMachineCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_FUNCTIONBEHAVIOR)) {
+		if (toolId.equals(COMPOSITE_TOOL_FUNCTIONBEHAVIOR)) {
 			return createFunctionBehaviorCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_OPAQUEBEHAVIOR)) {
+		if (toolId.equals(COMPOSITE_TOOL_OPAQUEBEHAVIOR)) {
 			return createOpaqueBehaviorCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_LINK)) {
+		if (toolId.equals(COMPOSITE_TOOL_LINK)) {
 			return createLinkCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_CONNECTOR)) {
+		if (toolId.equals(COMPOSITE_TOOL_CONNECTOR)) {
 			return createConnectorCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_ROLEBINDING)) {
+		if (toolId.equals(COMPOSITE_TOOL_ROLEBINDING)) {
 			return createRoleBindingCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_GENERALIZATION)) {
+		if (toolId.equals(COMPOSITE_TOOL_GENERALIZATION)) {
 			return createGeneralizationCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_REALIZATION)) {
+		if (toolId.equals(COMPOSITE_TOOL_REALIZATION)) {
 			return createRealizationCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_SUBSTITUTION)) {
+		if (toolId.equals(COMPOSITE_TOOL_SUBSTITUTION)) {
 			return createSubstitutionCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_ABSTRACTION)) {
+		if (toolId.equals(COMPOSITE_TOOL_ABSTRACTION)) {
 			return createAbstractionCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_USAGE)) {
+		if (toolId.equals(COMPOSITE_TOOL_USAGE)) {
 			return createUsageCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_DEPENDENCY)) {
+		if (toolId.equals(COMPOSITE_TOOL_DEPENDENCY)) {
 			return createDependencyCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_REPRESENTATION)) {
+		if (toolId.equals(COMPOSITE_TOOL_REPRESENTATION)) {
 			return createRepresentationCreationTool();
 		}
-		if(toolId.equals(COMPOSITE_TOOL_INFORMATIONFLOW)) {
+		if (toolId.equals(COMPOSITE_TOOL_INFORMATIONFLOW)) {
 			return createInformationFlowCreationTool();
 		}
 		// default return: null
@@ -278,6 +279,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Object getTemplate(String templateId) {
 		// default return: null
 		return null;

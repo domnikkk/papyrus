@@ -16,7 +16,7 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.QualityRequirementImpl#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.QualityRequirementImpl#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,6 +27,7 @@ public class QualityRequirementImpl extends RequirementImpl implements QualityRe
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -37,6 +38,7 @@ public class QualityRequirementImpl extends RequirementImpl implements QualityRe
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -46,6 +48,7 @@ public class QualityRequirementImpl extends RequirementImpl implements QualityRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected QualityRequirementImpl() {
@@ -55,6 +58,7 @@ public class QualityRequirementImpl extends RequirementImpl implements QualityRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -65,8 +69,10 @@ public class QualityRequirementImpl extends RequirementImpl implements QualityRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public QualityRequirementKind getKind() {
 		return kind;
 	}
@@ -74,25 +80,29 @@ public class QualityRequirementImpl extends RequirementImpl implements QualityRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setKind(QualityRequirementKind newKind) {
 		QualityRequirementKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.QUALITY_REQUIREMENT__KIND, oldKind, kind));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RequirementsPackage.QUALITY_REQUIREMENT__KIND:
-				return getKind();
+		case RequirementsPackage.QUALITY_REQUIREMENT__KIND:
+			return getKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -100,14 +110,15 @@ public class QualityRequirementImpl extends RequirementImpl implements QualityRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RequirementsPackage.QUALITY_REQUIREMENT__KIND:
-				setKind((QualityRequirementKind)newValue);
-				return;
+		case RequirementsPackage.QUALITY_REQUIREMENT__KIND:
+			setKind((QualityRequirementKind) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -115,14 +126,15 @@ public class QualityRequirementImpl extends RequirementImpl implements QualityRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RequirementsPackage.QUALITY_REQUIREMENT__KIND:
-				setKind(KIND_EDEFAULT);
-				return;
+		case RequirementsPackage.QUALITY_REQUIREMENT__KIND:
+			setKind(KIND_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -130,13 +142,14 @@ public class QualityRequirementImpl extends RequirementImpl implements QualityRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RequirementsPackage.QUALITY_REQUIREMENT__KIND:
-				return kind != KIND_EDEFAULT;
+		case RequirementsPackage.QUALITY_REQUIREMENT__KIND:
+			return kind != KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -144,11 +157,14 @@ public class QualityRequirementImpl extends RequirementImpl implements QualityRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (kind: ");
@@ -157,4 +173,4 @@ public class QualityRequirementImpl extends RequirementImpl implements QualityRe
 		return result.toString();
 	}
 
-} //QualityRequirementImpl
+} // QualityRequirementImpl

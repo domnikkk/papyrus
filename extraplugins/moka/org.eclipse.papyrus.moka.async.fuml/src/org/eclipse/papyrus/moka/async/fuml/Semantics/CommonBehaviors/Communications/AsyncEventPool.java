@@ -28,7 +28,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticStrategy;
  * The only Java thread that can retrieve signal instances is the one linked to to the
  * object activation.
  * Every object activation that need to communicate with the one owning the event pool can
- * use the send method to offer a new SignalInstance 
+ * use the send method to offer a new SignalInstance
  * @author CEA LIST (jt605650)
  */
 public class AsyncEventPool extends LinkedBlockingQueue<SignalInstance> implements IAsyncEventPool {
@@ -41,7 +41,7 @@ public class AsyncEventPool extends LinkedBlockingQueue<SignalInstance> implemen
 	 * Constructor.
 	 *
 	 * @param activation
-	 *        that owns the event pool
+	 *            that owns the event pool
 	 */
 	public AsyncEventPool(ObjectActivation activation) {
 		super();
@@ -53,7 +53,7 @@ public class AsyncEventPool extends LinkedBlockingQueue<SignalInstance> implemen
 	 * offer always deliver the SignalInstance to the event pool
 	 *
 	 * @param signalInstance
-	 *        that need to be added to the event pool
+	 *            that need to be added to the event pool
 	 * @return true, if successful
 	 */
 	public boolean send(SignalInstance signalInstance) {
@@ -67,7 +67,7 @@ public class AsyncEventPool extends LinkedBlockingQueue<SignalInstance> implemen
 	 */
 	public SignalInstance getNextEvent() {
 		SemanticStrategy strategy = this.objectActivation.object.locus.factory.getStrategy("getNextEvent");
-		return ((AsyncGetNextEventStrategy)strategy).getNextEvent(this);
+		return ((AsyncGetNextEventStrategy) strategy).getNextEvent(this);
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class AsyncEventPool extends LinkedBlockingQueue<SignalInstance> implemen
 	 * Modify the owner of the current event pool.
 	 *
 	 * @param objectActivation
-	 *        new owner of the current event pool
+	 *            new owner of the current event pool
 	 */
 	public synchronized void setObjectActivation(ObjectActivation objectActivation) {
 		this.objectActivation = objectActivation;

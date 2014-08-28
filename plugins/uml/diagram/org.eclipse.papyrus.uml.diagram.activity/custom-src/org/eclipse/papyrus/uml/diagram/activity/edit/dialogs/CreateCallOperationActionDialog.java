@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,38 +42,40 @@ public class CreateCallOperationActionDialog extends CreateCallActionDialog {
 
 	/**
 	 * Create a new dialog to initialize a CallOperationAction.
-	 * 
+	 *
 	 * @param shell
-	 *        parent shell
+	 *            parent shell
 	 * @param owner
-	 *        the activity that owns the action
+	 *            the activity that owns the action
 	 */
-	public CreateCallOperationActionDialog(Shell shell, Activity owner,InvocationAction newAction) {
-		super(shell, owner,newAction);
+	public CreateCallOperationActionDialog(Shell shell, Activity owner, InvocationAction newAction) {
+		super(shell, owner, newAction);
 	}
 
 	/**
 	 * Get the id of the preference storing whether selection is the default
 	 * choice.
-	 * 
+	 *
 	 * @return preference id
 	 */
+	@Override
 	protected String getSelectionIsDefaultPreference() {
 		return IActivityPreferenceConstants.PREF_NEW_CALL_OPERATION_ACTION_SELECT_AS_DEFAULT;
 	}
 
 	/**
 	 * Get the id of the preference storing the last selected owner.
-	 * 
+	 *
 	 * @return preference id
 	 */
+	@Override
 	protected String getCreationDefaultOwnerPreference() {
 		return IActivityPreferenceConstants.PREF_NEW_CALL_OPERATION_ACTION_CREATION_OWNER;
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getInvocationFeature()
 	 */
 	@Override
@@ -83,24 +85,24 @@ public class CreateCallOperationActionDialog extends CreateCallActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getPossibleInvokedTypes()
 	 */
 	@Override
 	protected EClass[] getPossibleInvokedTypes() {
-		return new EClass[]{ UMLPackage.eINSTANCE.getOperation() };
+		return new EClass[] { UMLPackage.eINSTANCE.getOperation() };
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#hasOutParameters(org.eclipse.emf.ecore.EObject)
 	 */
 	@Override
 	protected boolean hasOutParameters(EObject invokedObject) {
-		if(invokedObject instanceof Operation) {
-			for(Parameter param : ((Operation)invokedObject).getOwnedParameters()) {
-				if(ParameterDirectionKind.INOUT_LITERAL.equals(param.getDirection()) || ParameterDirectionKind.OUT_LITERAL.equals(param.getDirection())) {
+		if (invokedObject instanceof Operation) {
+			for (Parameter param : ((Operation) invokedObject).getOwnedParameters()) {
+				if (ParameterDirectionKind.INOUT_LITERAL.equals(param.getDirection()) || ParameterDirectionKind.OUT_LITERAL.equals(param.getDirection())) {
 					return true;
 				}
 			}
@@ -110,7 +112,7 @@ public class CreateCallOperationActionDialog extends CreateCallActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getPossibleInvokedParents()
 	 */
 	@Override
@@ -120,7 +122,7 @@ public class CreateCallOperationActionDialog extends CreateCallActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateInvocationActionDialog#isPossibleInvokedParent(org.eclipse.emf.ecore.EObject)
 	 */
 	@Override
@@ -154,7 +156,7 @@ public class CreateCallOperationActionDialog extends CreateCallActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getTitle()
 	 */
 	@Override
@@ -164,7 +166,7 @@ public class CreateCallOperationActionDialog extends CreateCallActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getCreationLabel()
 	 */
 	@Override
@@ -174,7 +176,7 @@ public class CreateCallOperationActionDialog extends CreateCallActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getSelectionLabel()
 	 */
 	@Override
@@ -184,7 +186,7 @@ public class CreateCallOperationActionDialog extends CreateCallActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getParentImage()
 	 */
 	@Override

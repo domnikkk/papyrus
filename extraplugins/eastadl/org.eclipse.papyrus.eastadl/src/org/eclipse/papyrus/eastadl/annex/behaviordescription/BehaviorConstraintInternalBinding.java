@@ -16,9 +16,9 @@ import org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintInternalBind
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintInternalBinding#getBindingThroughClampConnector <em>Binding Through Clamp Connector</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintInternalBinding#getBindingThroughFunctionConnector <em>Binding Through Function Connector</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintInternalBinding#getBindingThroughHardwareConnector <em>Binding Through Hardware Connector</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintInternalBinding#getBindingThroughClampConnector <em>Binding Through Clamp Connector</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintInternalBinding#getBindingThroughFunctionConnector <em>Binding Through Function Connector</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintInternalBinding#getBindingThroughHardwareConnector <em>Binding Through Hardware Connector</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,10 +32,10 @@ public interface BehaviorConstraintInternalBinding extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.environment.ClampConnector}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Binding Through Clamp Connector</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Binding Through Clamp Connector</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Binding Through Clamp Connector</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintInternalBinding_BindingThroughClampConnector()
 	 * @model ordered="false"
@@ -48,10 +48,10 @@ public interface BehaviorConstraintInternalBinding extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Binding Through Function Connector</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Binding Through Function Connector</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Binding Through Function Connector</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintInternalBinding_BindingThroughFunctionConnector()
 	 * @model containment="true" ordered="false"
@@ -64,10 +64,10 @@ public interface BehaviorConstraintInternalBinding extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Binding Through Hardware Connector</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Binding Through Hardware Connector</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Binding Through Hardware Connector</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintInternalBinding_BindingThroughHardwareConnector()
 	 * @model containment="true" ordered="false"

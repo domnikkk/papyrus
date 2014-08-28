@@ -20,17 +20,17 @@ import org.eclipse.papyrus.uml.diagram.common.util.MDTUtil;
 // TODO: Auto-generated Javadoc
 /**
  * Utility methods to "demultiplex" <EClass>es and <EObject>s for different canvas elements.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  */
 public class DiagramCanvasSwitch {
 
 	/**
 	 * Gets the <Diagram>'s <EObject> given an <EditPolicy>.
-	 * 
+	 *
 	 * @param policy
-	 *        the policy
-	 * 
+	 *            the policy
+	 *
 	 * @return the canvas element
 	 */
 	public static EObject getCanvasElement(EditPolicy policy) {
@@ -41,10 +41,10 @@ public class DiagramCanvasSwitch {
 	/**
 	 * Gets the element to edit in a mutating canvas <Diagram>. By default, it's
 	 * the canvas semantic <EObject>.
-	 * 
+	 *
 	 * @param editPolicy
-	 *        the edit policy
-	 * 
+	 *            the edit policy
+	 *
 	 * @return the element to edit for create command
 	 */
 	// @unused
@@ -54,10 +54,10 @@ public class DiagramCanvasSwitch {
 
 	/**
 	 * Gets the <EClass> to edit. It's the EClass of the canvas <EObject>
-	 * 
+	 *
 	 * @param editPolicy
-	 *        the edit policy
-	 * 
+	 *            the edit policy
+	 *
 	 * @return the e class to edit for create command
 	 */
 	// @unused

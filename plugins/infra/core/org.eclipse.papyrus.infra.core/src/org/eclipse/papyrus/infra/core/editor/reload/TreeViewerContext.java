@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,19 +31,20 @@ public abstract class TreeViewerContext<T> extends SelectionContext<AbstractTree
 	public TreeViewerContext(AbstractTreeViewer viewer) {
 		super(viewer);
 
-		for(Object next : viewer.getExpandedElements()) {
+		for (Object next : viewer.getExpandedElements()) {
 			T token = token(next);
-			if(token != null) {
+			if (token != null) {
 				expandedNodes.add(token);
 			}
 		}
 	}
 
+	@Override
 	public void restore(AbstractTreeViewer viewer) {
 		List<Object> expand = Lists.newArrayListWithCapacity(expandedNodes.size());
-		for(T next : expandedNodes) {
+		for (T next : expandedNodes) {
 			Object resolved = resolve(next);
-			if(resolved != null) {
+			if (resolved != null) {
 				expand.add(resolved);
 			}
 		}
@@ -52,6 +53,7 @@ public abstract class TreeViewerContext<T> extends SelectionContext<AbstractTree
 		super.restore(viewer);
 	}
 
+	@Override
 	protected void setSelection(AbstractTreeViewer viewer, List<?> selection) {
 		viewer.setSelection(new StructuredSelection(selection), true);
 	}

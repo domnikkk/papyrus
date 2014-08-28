@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ import org.eclipse.papyrus.uml.diagram.component.providers.UMLViewProvider;
 
 /**
  * this is the specific command in charge to transform an element editpart into a defaultShape
- * 
+ *
  */
 public class RectangleToLollipopCommand extends AbstractTransactionalCommand {
 	private static View node;
@@ -45,9 +45,9 @@ public class RectangleToLollipopCommand extends AbstractTransactionalCommand {
 	private SemanticAdapter semanticApdater;
 
 	/**
-	 * 
+	 *
 	 * Constructor of this command
-	 * 
+	 *
 	 * @param domain
 	 *            the transactional editing domain to execute transaction
 	 * @param classView
@@ -63,7 +63,7 @@ public class RectangleToLollipopCommand extends AbstractTransactionalCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param elementID
 	 * @return return the element type from the id
 	 */
@@ -72,7 +72,7 @@ public class RectangleToLollipopCommand extends AbstractTransactionalCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param containerView
 	 * @param domainElement
 	 * @return get the visual id from the domain element

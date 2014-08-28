@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Descriptor for an Activity Node
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class ActivityNodeContainment extends AbstractContainerNodeDescriptor {
 
@@ -41,7 +41,7 @@ public class ActivityNodeContainment extends AbstractContainerNodeDescriptor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.activitygroup.AbstractContainerNodeDescriptor#getContainerEClass()
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class ActivityNodeContainment extends AbstractContainerNodeDescriptor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.activitygroup.AbstractContainerNodeDescriptor#getChildrenReferences()
 	 */
 	@Override
@@ -61,12 +61,12 @@ public class ActivityNodeContainment extends AbstractContainerNodeDescriptor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.activitygroup.AbstractContainerNodeDescriptor#getParentReferences()
 	 */
 	@Override
 	public List<EReference> getParentReferences() {
-		if(parentReferences == null) {
+		if (parentReferences == null) {
 			parentReferences = new ArrayList<EReference>();
 			parentReferences.add(UMLPackage.Literals.ACTIVITY_NODE__IN_INTERRUPTIBLE_REGION);
 			parentReferences.add(UMLPackage.Literals.ACTIVITY_NODE__IN_PARTITION);
@@ -78,12 +78,12 @@ public class ActivityNodeContainment extends AbstractContainerNodeDescriptor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.activitygroup.AbstractContainerNodeDescriptor#getParentEOppositeReferences()
 	 */
 	@Override
 	public Map<EStructuralFeature, EStructuralFeature> getParentEOppositeReferences() {
-		if(parentOpositeReferences == null) {
+		if (parentOpositeReferences == null) {
 			parentOpositeReferences = new HashMap<EStructuralFeature, EStructuralFeature>();
 			parentOpositeReferences.put(UMLPackage.Literals.ACTIVITY_NODE__IN_INTERRUPTIBLE_REGION, UMLPackage.Literals.INTERRUPTIBLE_ACTIVITY_REGION__NODE);
 			parentOpositeReferences.put(UMLPackage.Literals.ACTIVITY_NODE__IN_PARTITION, UMLPackage.Literals.ACTIVITY_PARTITION__NODE);
@@ -95,21 +95,22 @@ public class ActivityNodeContainment extends AbstractContainerNodeDescriptor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.uml.diagram.activity.activitygroup.AbstractContainerNodeDescriptor#getCompartmentPartFromView(org.eclipse.gmf.runtime.diagram
 	 * .ui.editparts.IGraphicalEditPart)
 	 */
 	@Override
 	public IGraphicalEditPart getCompartmentPartFromView(IGraphicalEditPart editpart) {
-		return null;//no compartment for activity node
+		return null;// no compartment for activity node
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.activitygroup.IContainerNodeDescriptor#getGroupPriority()
 	 */
+	@Override
 	public int getGroupPriority() {
 		return IGroupPriority.ACTIVITY_NODE_PRIORITY;
 	}

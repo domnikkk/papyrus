@@ -4,7 +4,7 @@
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *      Gregoire Dupe (Mia-Software) - Bug 345730 - Deleting an element in the model breaks the table
  */
@@ -29,8 +29,10 @@ public class SetResourceContentCommand implements Command, ILockableUndoCommand 
 	private boolean enableUndo = true;
 
 	/**
-	 * @param resource the resource of which we want to set the content.
-	 * @param content a list of EObject to set as the content of the resource 
+	 * @param resource
+	 *            the resource of which we want to set the content.
+	 * @param content
+	 *            a list of EObject to set as the content of the resource
 	 */
 	public SetResourceContentCommand(final Resource resource, final Collection<EObject> content) {
 		this.resource = resource;
@@ -79,12 +81,12 @@ public class SetResourceContentCommand implements Command, ILockableUndoCommand 
 	}
 
 	public String getLabel() {
-		//TODO: Must be externalized
-		return "Set Resource Content";  //$NON-NLS-1$
+		// TODO: Must be externalized
+		return "Set Resource Content"; //$NON-NLS-1$
 	}
 
 	public String getDescription() {
-		//TODO: Must be externalized
+		// TODO: Must be externalized
 		return "This command changes the content of an EMF resource"; //$NON-NLS-1$
 	}
 

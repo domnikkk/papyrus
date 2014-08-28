@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,13 +33,13 @@ import org.eclipse.ui.IEditorPart;
 /**
  * This handler allows to rename a gmf diagram.
  * The handler is activated when the current selection denote a gmf diagram.
- * 
+ *
  * <br>
  * There is another RenameHandler in Papyrus (for modelexplorer):
  * /org.eclipse.papyrus.infra.gmfdiag.modelexplorer/src/org/eclipse/papyrus/infra/gmfdiag/modelexplorer/handlers/RenameDiagramHandler.java
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class RenameDiagramHandler extends AbstractHandler {
 
@@ -48,7 +48,7 @@ public class RenameDiagramHandler extends AbstractHandler {
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
-	 * 
+	 *
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		executeTransaction(event);
@@ -58,7 +58,7 @@ public class RenameDiagramHandler extends AbstractHandler {
 
 	/**
 	 * Execute as transaction
-	 * 
+	 *
 	 * @param event
 	 */
 	private void executeTransaction(ExecutionEvent event) {
@@ -82,9 +82,9 @@ public class RenameDiagramHandler extends AbstractHandler {
 		String currentName = notationDiagramHelper.getName();
 		String newName = null;
 		InputDialog dialog = new InputDialog(Display.getCurrent().getActiveShell(), Messages.RenameDiagramHandler_RenameAnExistingDiagram, Messages.RenameDiagramHandler_NewName, currentName, null);
-		if(dialog.open() == Window.OK) {
+		if (dialog.open() == Window.OK) {
 			newName = dialog.getValue();
-			if(newName == null || newName.length() <= 0) {
+			if (newName == null || newName.length() <= 0) {
 				return;
 			}
 		} else {
@@ -111,7 +111,7 @@ public class RenameDiagramHandler extends AbstractHandler {
 	/**
 	 * Get the name used in the {@link RecordingCommand}. This name will be visible in
 	 * undo/redo.
-	 * 
+	 *
 	 * @return The command name to show.
 	 */
 	public String getCommandName() {
@@ -120,28 +120,28 @@ public class RenameDiagramHandler extends AbstractHandler {
 
 	protected IEvaluationContext getIEvaluationContext(ExecutionEvent event) throws NotFoundException {
 		try {
-			return (IEvaluationContext)event.getApplicationContext();
+			return (IEvaluationContext) event.getApplicationContext();
 		} catch (ClassCastException e) {
 			throw new NotFoundException("IEvaluationContext can't be found."); //$NON-NLS-1$
 		}
 
 	}
 
-	//	/**
-	//	 * 
-	//	 * @return
-	//	 * @throws NotFoundException
-	//	 */
-	//	protected LayerStackMngr lookupLayerStackMngrChecked() throws NotFoundException {
-	//		
-	//		return lookupLayersViewChecked().getLayerStackMngrChecked();
-	//		
-	//	}
+	// /**
+	// *
+	// * @return
+	// * @throws NotFoundException
+	// */
+	// protected LayerStackMngr lookupLayerStackMngrChecked() throws NotFoundException {
+	//
+	// return lookupLayersViewChecked().getLayerStackMngrChecked();
+	//
+	// }
 
 	/**
 	 * Get the notation diagram helper.
 	 * This method can be used from {@link #execute(ExecutionEvent)} or {@link #setEnabled(Object)}.
-	 * 
+	 *
 	 * @return The
 	 * @throws NotFoundException
 	 * @throws ServiceException
@@ -150,17 +150,17 @@ public class RenameDiagramHandler extends AbstractHandler {
 
 
 		// Get page from the event !
-		//	    IWorkbenchPage page = HandlerUtil.getActiveWorkbenchWindow(event).getActivePage();
+		// IWorkbenchPage page = HandlerUtil.getActiveWorkbenchWindow(event).getActivePage();
 
 		IEditorPart editor = ServiceUtilsForIEvaluationContext.getInstance().getNestedActiveIEditorPart(context);
 
-		if(!(editor instanceof DiagramDocumentEditor)) {
+		if (!(editor instanceof DiagramDocumentEditor)) {
 			throw new NotFoundException("Selected editor do not contains Diagram"); //$NON-NLS-1$
 		}
-		DiagramDocumentEditor diagramEditor = (DiagramDocumentEditor)editor;
+		DiagramDocumentEditor diagramEditor = (DiagramDocumentEditor) editor;
 
 		Diagram diagram = diagramEditor.getDiagram();
-		if(diagram == null) {
+		if (diagram == null) {
 			throw new NotFoundException("Selected editor do not contains Diagram"); //$NON-NLS-1$
 		}
 
@@ -170,35 +170,35 @@ public class RenameDiagramHandler extends AbstractHandler {
 
 	/**
 	 * Try to lookup the TransactionalEditingDomain.
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
-	 *         If the Editing domain can't be found.
+	 *             If the Editing domain can't be found.
 	 */
 	protected TransactionalEditingDomain lookupTransactionalEditingDomain(IEvaluationContext context) throws ServiceException {
 
 		// Get page from the event !
-		//	    IWorkbenchPage page = HandlerUtil.getActiveWorkbenchWindow(event).getActivePage();
+		// IWorkbenchPage page = HandlerUtil.getActiveWorkbenchWindow(event).getActivePage();
 
 		return ServiceUtilsForIEvaluationContext.getInstance().getTransactionalEditingDomain(context);
 	}
 
 	/**
 	 * Called by framework. Need to set the enabled flag.
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
 
-		if(!(evaluationContext instanceof IEvaluationContext)) {
+		if (!(evaluationContext instanceof IEvaluationContext)) {
 			setBaseEnabled(false);
 			return;
 		}
 
-		IEvaluationContext context = (IEvaluationContext)evaluationContext;
+		IEvaluationContext context = (IEvaluationContext) evaluationContext;
 
 		try {
 			// Try to get the diagram

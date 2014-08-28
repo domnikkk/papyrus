@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.uml.tools.utils.StereotypeUtil;
 
 /**
  * Display both stereotype and stereotype properties in one figure.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class AppliedStereotypeExternalNodeLabelEditPolicy extends AppliedStereotypeLabelDisplayEditPolicy {
@@ -37,7 +37,7 @@ public class AppliedStereotypeExternalNodeLabelEditPolicy extends AppliedStereot
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public AppliedStereotypeExternalNodeLabelEditPolicy() {
 		this(null);
@@ -45,25 +45,26 @@ public class AppliedStereotypeExternalNodeLabelEditPolicy extends AppliedStereot
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public AppliedStereotypeExternalNodeLabelEditPolicy(View hostView) {
 		this.hostView = hostView;
 	}
 
+	@Override
 	public void activate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
 		super.activate();
-		if(hostView == null) {
+		if (hostView == null) {
 			// add a listener for TimeObservationEditPart
 			// eContainer = getParent() , but here it's the ECore model
 			EObject parent = view.eContainer();
-			if(parent instanceof View) {
-				hostView = (View)parent;
+			if (parent instanceof View) {
+				hostView = (View) parent;
 			}
 		}
 		getDiagramEventBroker().addNotificationListener(hostView, this);
@@ -74,7 +75,7 @@ public class AppliedStereotypeExternalNodeLabelEditPolicy extends AppliedStereot
 
 	@Override
 	public void deactivate() {
-		if(hostView != null) {
+		if (hostView != null) {
 			getDiagramEventBroker().removeNotificationListener(hostView, this);
 		}
 		super.deactivate();
@@ -83,17 +84,18 @@ public class AppliedStereotypeExternalNodeLabelEditPolicy extends AppliedStereot
 	@Override
 	public void refreshDisplay() {
 		super.refreshDisplay();
-		if(getHost() instanceof IPapyrusEditPart) {
-			IFigure figure = ((IPapyrusEditPart)getHost()).getPrimaryShape();
+		if (getHost() instanceof IPapyrusEditPart) {
+			IFigure figure = ((IPapyrusEditPart) getHost()).getPrimaryShape();
 
-			if(figure instanceof IPapyrusNodeUMLElementFigure) {
-				refreshAppliedStereotypesProperties((IPapyrusNodeUMLElementFigure)figure);
+			if (figure instanceof IPapyrusNodeUMLElementFigure) {
+				refreshAppliedStereotypesProperties((IPapyrusNodeUMLElementFigure) figure);
 			}
 		}
 	}
 
+	@Override
 	public String stereotypesToDisplay() {
-		if(hostView == null) {
+		if (hostView == null) {
 			return "";
 		}
 		// list of stereotypes to display
@@ -103,7 +105,7 @@ public class AppliedStereotypeExternalNodeLabelEditPolicy extends AppliedStereot
 
 		// check the presentation kind. if only icon => do not display
 		// stereotypes
-		if(UMLVisualInformationPapyrusConstant.ICON_STEREOTYPE_PRESENTATION.equals(stereotypespresentationKind)) {
+		if (UMLVisualInformationPapyrusConstant.ICON_STEREOTYPE_PRESENTATION.equals(stereotypespresentationKind)) {
 			return ""; // empty string, so stereotype label should not be
 						// displayed
 		}
@@ -112,11 +114,11 @@ public class AppliedStereotypeExternalNodeLabelEditPolicy extends AppliedStereot
 		String stereotypesToDisplayWithQN = AppliedStereotypeHelper.getStereotypesQNToDisplay(hostView);
 
 		// the set is empty
-		if(stereotypesToDisplayWithQN.length() == 0 && stereotypesToDisplay.length() == 0) {
+		if (stereotypesToDisplayWithQN.length() == 0 && stereotypesToDisplay.length() == 0) {
 			return "";
 		}
 		// vertical representation
-		if(UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION.equals(stereotypespresentationKind)) {
+		if (UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION.equals(stereotypespresentationKind)) {
 			return Activator.ST_LEFT + stereotypesToDisplay(Activator.ST_RIGHT + "\n" + Activator.ST_LEFT, stereotypesToDisplay, stereotypesToDisplayWithQN) + Activator.ST_RIGHT;
 		} else {// horizontal representation
 			return Activator.ST_LEFT + stereotypesToDisplay(", ", stereotypesToDisplay, stereotypesToDisplayWithQN) + Activator.ST_RIGHT;
@@ -125,7 +127,7 @@ public class AppliedStereotypeExternalNodeLabelEditPolicy extends AppliedStereot
 	}
 
 	protected void refreshAppliedStereotypesProperties(IPapyrusNodeUMLElementFigure figure) {
-		if(hostView == null) {
+		if (hostView == null) {
 			return;
 		}
 		final String stereotypesPropertiesToDisplay = AppliedStereotypeHelper.getAppliedStereotypesPropertiesToDisplay(hostView);
@@ -137,14 +139,14 @@ public class AppliedStereotypeExternalNodeLabelEditPolicy extends AppliedStereot
 	/**
 	 * Refreshes the stereotypes properties displayed in a compartment of this
 	 * edit part.
-	 * 
+	 *
 	 * @param stereotypesPropertiesToDisplay
-	 *        list of properties to display
+	 *            list of properties to display
 	 * @param figure
-	 *        the figure in which stereotype will be displayed
+	 *            the figure in which stereotype will be displayed
 	 */
 	protected void refreshAppliedStereotypesPropertiesInCompartment(String stereotypesPropertiesToDisplay, IPapyrusNodeUMLElementFigure figure) {
-		if(hostView == null) {
+		if (hostView == null) {
 			return;
 		}
 		// retrieve the stereotype properties to be displayed
@@ -153,7 +155,7 @@ public class AppliedStereotypeExternalNodeLabelEditPolicy extends AppliedStereot
 
 		// if the string is not empty, then, the figure has to display it. Else,
 		// it displays nothing
-		if(displayInCompartment) {
+		if (displayInCompartment) {
 			String todisplay = StereotypeUtil.getPropertiesValues(stereotypesPropertiesToDisplay, getUMLElement());
 			figure.setStereotypePropertiesInCompartment(todisplay);
 		} else {
@@ -166,7 +168,7 @@ public class AppliedStereotypeExternalNodeLabelEditPolicy extends AppliedStereot
 	 * in this edit part.
 	 */
 	protected void refreshAppliedStereotypesPropertiesInBrace(String stereotypesPropertiesToDisplay, IPapyrusNodeUMLElementFigure figure) {
-		if(hostView == null) {
+		if (hostView == null) {
 			return;
 		}
 		// check if properties have to be displayed in braces.
@@ -174,7 +176,7 @@ public class AppliedStereotypeExternalNodeLabelEditPolicy extends AppliedStereot
 
 		// if the string is not empty, then, the figure has to display it. Else,
 		// it displays nothing
-		if(displayInBrace) {
+		if (displayInBrace) {
 			// it has to be displayed in braces, so compute the string to
 			// display
 			String todisplay = StereotypeUtil.getPropertiesValuesInBrace(stereotypesPropertiesToDisplay, getUMLElement());
@@ -186,19 +188,19 @@ public class AppliedStereotypeExternalNodeLabelEditPolicy extends AppliedStereot
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy#refreshStereotypeDisplay()
-	 * 
+	 *
 	 */
 
 	@Override
 	protected void refreshStereotypeDisplay() {
-		if(getHost() instanceof IPapyrusEditPart) {
-			IFigure figure = ((IPapyrusEditPart)getHost()).getPrimaryShape();
+		if (getHost() instanceof IPapyrusEditPart) {
+			IFigure figure = ((IPapyrusEditPart) getHost()).getPrimaryShape();
 
-			if(figure instanceof IPapyrusUMLElementFigure) {// calculate text
+			if (figure instanceof IPapyrusUMLElementFigure) {// calculate text
 				// and icon to
 				// display
 				final String stereotypesToDisplay = stereotypesToDisplay();
-				((IPapyrusUMLElementFigure)figure).setStereotypeDisplay(tag + (stereotypesToDisplay), null);
+				((IPapyrusUMLElementFigure) figure).setStereotypeDisplay(tag + (stereotypesToDisplay), null);
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 422257
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.factory;
 
@@ -61,7 +61,7 @@ public class PropertyViewExtensionFactory extends FileBasedExtensionFactory {
 	@Override
 	protected Element createExtension(FileBasedCustomizableElement element, PluginEditor editor) {
 		Element extension = super.createExtension(element, editor);
-		//extension.setAttribute("loadDefault", ((PropertyView)element).isLoadDefault() ? "true" : "false");
+		// extension.setAttribute("loadDefault", ((PropertyView)element).isLoadDefault() ? "true" : "false");
 		return extension;
 	}
 
@@ -72,25 +72,25 @@ public class PropertyViewExtensionFactory extends FileBasedExtensionFactory {
 		URI uri = URI.createFileURI(sourceFile.getAbsolutePath());
 
 		File targetFile = FileUtil.getWorkspaceFile("/" + editor.getProject().getName() + "/" + getTargetPath(element)); //$NON-NLS-1$ //$NON-NLS-2$
-		if(!targetFile.getParentFile().exists()) {
+		if (!targetFile.getParentFile().exists()) {
 			targetFile.getParentFile().mkdirs();
 		}
 
 		ResourceSet resourceSet = new ResourceSetImpl();
 		try {
 			EObject propertyViewModel = EMFHelper.loadEMFModel(resourceSet, uri);
-			copyAll((Context)propertyViewModel, targetFile);
+			copyAll((Context) propertyViewModel, targetFile);
 		} catch (IOException ex) {
 			Activator.log.error(ex);
 		} finally {
 			EMFHelper.unload(resourceSet);
 		}
 
-		//		try {
-		//			copy(new FileInputStream(sourceFile), targetFile);
-		//		} catch (IOException ex) {
-		//			Activator.log.error(ex);
-		//		}
+		// try {
+		// copy(new FileInputStream(sourceFile), targetFile);
+		// } catch (IOException ex) {
+		// Activator.log.error(ex);
+		// }
 		//
 		editor.getBuildEditor().addToBuild("propertyView/");
 	}
@@ -113,7 +113,7 @@ public class PropertyViewExtensionFactory extends FileBasedExtensionFactory {
 
 			dialog = new ProgressMonitorDialog(Display.getCurrent().getActiveShell());
 
-			if(result.getCode() == IStatus.OK) {
+			if (result.getCode() == IStatus.OK) {
 
 				dialog.run(true, true, new IRunnableWithProgress() {
 
@@ -123,17 +123,17 @@ public class PropertyViewExtensionFactory extends FileBasedExtensionFactory {
 
 							monitor.beginTask(Messages.PropertyViewExtensionFactory_Copying + source.getName() + Messages.PropertyViewExtensionFactory_To + targetName, source.eResource().getResourceSet().getResources().size());
 
-							//Copy of the context
+							// Copy of the context
 							copy(source.eResource(), target);
 							monitor.worked(1);
 
-							//Copy of the dependent resources which are located in the same folder
-							//(or subfolders)
-							for(Resource resource : source.eResource().getResourceSet().getResources()) {
-								if(monitor.isCanceled()) {
+							// Copy of the dependent resources which are located in the same folder
+							// (or subfolders)
+							for (Resource resource : source.eResource().getResourceSet().getResources()) {
+								if (monitor.isCanceled()) {
 									return;
 								}
-								if(source.eResource() != resource && isRelative(source, resource)) {
+								if (source.eResource() != resource && isRelative(source, resource)) {
 									copy(resource, targetDirectory, source, targetName);
 								}
 								monitor.worked(1);
@@ -160,8 +160,8 @@ public class PropertyViewExtensionFactory extends FileBasedExtensionFactory {
 		URI baseURI = source.eResource().getURI();
 		URI resourceURI = resource.getURI();
 		URI uri = resourceURI.deresolve(baseURI);
-		if(uri.isRelative()) {
-			if(!(uri.toString().startsWith("..") || uri.toString().startsWith("/"))) { //$NON-NLS-1$ //$NON-NLS-2$
+		if (uri.isRelative()) {
+			if (!(uri.toString().startsWith("..") || uri.toString().startsWith("/"))) { //$NON-NLS-1$ //$NON-NLS-2$
 				return true;
 			}
 		}
@@ -170,7 +170,7 @@ public class PropertyViewExtensionFactory extends FileBasedExtensionFactory {
 
 	protected void copy(Resource resource, File directory, EObject source, String targetName) throws IOException {
 		URI relativeURI = resource.getURI().deresolve(source.eResource().getURI());
-		if(relativeURI.toString().equals("")) { //$NON-NLS-1$
+		if (relativeURI.toString().equals("")) { //$NON-NLS-1$
 			relativeURI = URI.createURI(targetName + ".ctx"); //$NON-NLS-1$
 		}
 		File target = new File(directory, relativeURI.toString());
@@ -184,13 +184,13 @@ public class PropertyViewExtensionFactory extends FileBasedExtensionFactory {
 	@Override
 	protected String getTargetPath(FileBasedCustomizableElement element) {
 		String fileName = getFileName(element);
-		if(fileName.indexOf(".") > -1) {
+		if (fileName.indexOf(".") > -1) {
 			String simpleName = fileName.substring(0, fileName.lastIndexOf(".")); //$NON-NLS-1$
 			return "/propertyView/" + simpleName + "/" + fileName; //$NON-NLS-1$ //$NON-NLS-2$
 		} else {
 			return fileName;
 		}
-		//TODO : Copy the whole directory (.xwt files + model dependencies)
+		// TODO : Copy the whole directory (.xwt files + model dependencies)
 	}
 
 	public EClass getCustomizableElementClass() {

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,23 +24,23 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * A generic implementation for a IGraphicalContentProvider.
  * This class doesn't provide any element, and should be extended.
- * 
+ *
  * It implements a filter for List or Tree elements, based on the label
  * provided by the viewer's label provider (Or Object#toString() if the viewer
  * doesn't have a label provider).
- * 
+ *
  * A Text widget is added before the display control to insert the filter
  * pattern. An element is matched if at least one of these conditions is
  * matched :
  * - The element's name matches the pattern
  * - One of the element's children matches the pattern
  * - One of the element's parent matches the pattern
- * 
+ *
  * The elements' hierarchy is obtained via the viewer's ContentProvider.
- * 
+ *
  * @author Camille Letavernier
  */
-//TODO : Encapsulate a IStructuredContentProvider and make this class concrete
+// TODO : Encapsulate a IStructuredContentProvider and make this class concrete
 public abstract class AbstractFilteredContentProvider implements IGraphicalContentProvider {
 
 	protected StructuredViewer viewer;
@@ -53,23 +53,26 @@ public abstract class AbstractFilteredContentProvider implements IGraphicalConte
 
 	protected boolean showIfHasVisibleParent = false;
 
+	@Override
 	public void dispose() {
 		// Nothing
 	}
 
+	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		if(viewer instanceof StructuredViewer) {
-			this.viewer = (StructuredViewer)viewer;
+		if (viewer instanceof StructuredViewer) {
+			this.viewer = (StructuredViewer) viewer;
 			updateFilter();
 		}
 	}
 
 	private void updateFilter() {
-		if(this.viewer != null && filterPattern != null) {
-			this.viewer.setFilters(new ViewerFilter[]{ filter });
+		if (this.viewer != null && filterPattern != null) {
+			this.viewer.setFilters(new ViewerFilter[] { filter });
 		}
 	}
 
+	@Override
 	public void createBefore(Composite parent) {
 		filterPattern = new StringEditor(parent, SWT.NONE, "Filter : "); //$NON-NLS-1$
 		filterPattern.setValidateOnDelay(true);
@@ -77,8 +80,9 @@ public abstract class AbstractFilteredContentProvider implements IGraphicalConte
 		filter = getViewerFilter();
 		filterPattern.addCommitListener(new ICommitListener() {
 
+			@Override
 			public void commit(AbstractEditor editor) {
-				filter.setPattern((String)filterPattern.getValue());
+				filter.setPattern((String) filterPattern.getValue());
 				viewer.refresh();
 			}
 
@@ -86,8 +90,9 @@ public abstract class AbstractFilteredContentProvider implements IGraphicalConte
 		updateFilter();
 	}
 
+	@Override
 	public void createAfter(Composite parent) {
-		//Nothing
+		// Nothing
 	}
 
 	protected PatternViewerFilter getViewerFilter() {

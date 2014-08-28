@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditP
 import org.eclipse.gmf.runtime.diagram.ui.internal.handles.CompartmentResizeHandle;
 
 /**
- * 
+ *
  * this class is used to display an handle and command to make a compartment
  * resizable by the user
  */
@@ -48,8 +48,8 @@ public class CResizableCompartmentEditPolicy extends ResizableCompartmentEditPol
 		removeSelectionHandles();
 		IFigure layer = getLayer(LayerConstants.HANDLE_LAYER);
 		handles = createCollapseHandles();
-		for(int i = 0; i < handles.size(); i++) {
-			layer.add((IFigure)handles.get(i));
+		for (int i = 0; i < handles.size(); i++) {
+			layer.add((IFigure) handles.get(i));
 		}
 	}
 
@@ -59,7 +59,7 @@ public class CResizableCompartmentEditPolicy extends ResizableCompartmentEditPol
 	@Override
 	protected List createSelectionHandles() {
 		List selectionHandles = new ArrayList();
-		IGraphicalEditPart part = (IGraphicalEditPart)getHost();
+		IGraphicalEditPart part = (IGraphicalEditPart) getHost();
 		int d1 = isHorizontal() ? PositionConstants.WEST : PositionConstants.NORTH;
 		int d2 = isHorizontal() ? PositionConstants.EAST : PositionConstants.SOUTH;
 		selectionHandles.addAll(createCollapseHandles());// add collapsable
@@ -67,13 +67,13 @@ public class CResizableCompartmentEditPolicy extends ResizableCompartmentEditPol
 		selectionHandles.add(new CompartmentResizeHandle(part, d1));
 		selectionHandles.add(new CompartmentResizeHandle(part, d2));
 		// add resize handle in the south
-		ResizableHandleKit.addHandle((GraphicalEditPart)getHost(), selectionHandles, PositionConstants.SOUTH);
+		ResizableHandleKit.addHandle((GraphicalEditPart) getHost(), selectionHandles, PositionConstants.SOUTH);
 
 		return selectionHandles;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -87,7 +87,7 @@ public class CResizableCompartmentEditPolicy extends ResizableCompartmentEditPol
 		req.setExtendedData(request.getExtendedData());
 		req.setResizeDirection(request.getResizeDirection());
 		// if this is the last compartment the command is redirect to the parent
-		if(getHost().getParent().getChildren().indexOf(getHost()) == indexOfTheLast) {
+		if (getHost().getParent().getChildren().indexOf(getHost()) == indexOfTheLast) {
 			req.setEditParts(getHost().getParent());
 			return getHost().getParent().getParent().getCommand(req);
 		} else {
@@ -98,7 +98,7 @@ public class CResizableCompartmentEditPolicy extends ResizableCompartmentEditPol
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -120,11 +120,11 @@ public class CResizableCompartmentEditPolicy extends ResizableCompartmentEditPol
 	@Override
 	protected void showSelection() {
 		// not selected but we want to see collapsable handle
-		if(getHost().getSelected() == EditPart.SELECTED_NONE) {
+		if (getHost().getSelected() == EditPart.SELECTED_NONE) {
 			addCollapsableHandles();
 		}
 		// selected we want to see collapsable handle and resize handle
-		if(getHost().getSelected() == EditPart.SELECTED_PRIMARY) {
+		if (getHost().getSelected() == EditPart.SELECTED_PRIMARY) {
 			super.showSelection();
 		}
 

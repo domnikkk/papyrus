@@ -13,6 +13,7 @@
  *    Grégoire Dupé (Mia-Software) - Bug 373078 - API Cleaning
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.util.emf.core;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
@@ -36,11 +37,11 @@ public final class EmfDebugUtils {
 	private EmfDebugUtils() {
 		// Must not be used
 	}
-	
+
 	public static String debugCommand(final Command command) {
 		return debugCommand(command, 1);
 	}
-	
+
 	private static String debugCommand(final Command command, final int indent) {
 		StringBuffer result = new StringBuffer();
 		result.append('\n');
@@ -64,11 +65,11 @@ public final class EmfDebugUtils {
 		}
 		return result.toString();
 	}
-	
+
 	/**
 	 * This method can be used to easily dump a model into a file. This method has been written to be
 	 * used by unit tests.
-	 * 
+	 *
 	 * @param eObject
 	 * @param fileExtension
 	 * @return a string explaining where the file has been saved.

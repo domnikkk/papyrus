@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.InlineStatement;
 
@@ -107,8 +104,9 @@ public class InlineStatementImpl extends StatementImpl implements InlineStatemen
   {
     String oldLangageName = langageName;
     langageName = newLangageName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INLINE_STATEMENT__LANGAGE_NAME, oldLangageName, langageName));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INLINE_STATEMENT__LANGAGE_NAME, oldLangageName, langageName));
+	}
   }
 
   /**
@@ -130,8 +128,9 @@ public class InlineStatementImpl extends StatementImpl implements InlineStatemen
   {
     String oldBody = body;
     body = newBody;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INLINE_STATEMENT__BODY, oldBody, body));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INLINE_STATEMENT__BODY, oldBody, body));
+	}
   }
 
   /**
@@ -218,7 +217,9 @@ public class InlineStatementImpl extends StatementImpl implements InlineStatemen
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (langageName: ");

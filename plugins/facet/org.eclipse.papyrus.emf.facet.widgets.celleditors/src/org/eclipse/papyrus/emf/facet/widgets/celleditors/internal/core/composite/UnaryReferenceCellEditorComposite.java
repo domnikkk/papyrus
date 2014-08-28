@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,15 +23,15 @@ import java.util.Set;
 import java.util.TreeMap;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.fieldassist.ComboContentAdapter;
+import org.eclipse.jface.fieldassist.ContentProposalAdapter;
+import org.eclipse.jface.fieldassist.SimpleContentProposalProvider;
 import org.eclipse.papyrus.emf.facet.util.swt.fontprovider.IFontProvider;
 import org.eclipse.papyrus.emf.facet.util.swt.fontprovider.IFontProviderFactory;
 import org.eclipse.papyrus.emf.facet.widgets.celleditors.AbstractCellEditorComposite;
 import org.eclipse.papyrus.emf.facet.widgets.celleditors.internal.Messages;
 import org.eclipse.papyrus.emf.facet.widgets.internal.CustomizableLabelProvider;
-import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.fieldassist.ComboContentAdapter;
-import org.eclipse.jface.fieldassist.ContentProposalAdapter;
-import org.eclipse.jface.fieldassist.SimpleContentProposalProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
@@ -193,7 +193,7 @@ public class UnaryReferenceCellEditorComposite extends AbstractCellEditorComposi
 				Display.getDefault().removeFilter(SWT.MouseDown, clickListener);
 			}
 		});
-		
+
 		this.combo.addModifyListener(new ModifyListener() {
 			public void modifyText(final ModifyEvent e) {
 				fireChanged();

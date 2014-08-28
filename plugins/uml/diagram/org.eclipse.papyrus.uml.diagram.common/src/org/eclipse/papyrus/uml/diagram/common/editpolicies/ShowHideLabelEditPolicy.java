@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,8 +30,8 @@ import org.eclipse.papyrus.uml.diagram.common.commands.ShowHideLabelsRequest;
  * The EditPolicy {@link ConnectionLabelsEditPolicy} provided by GMF allows only
  * show or hide all the labels for a connection (or an affixed child node!)and
  * not only some of them This EditPolicy replaces it!
- * 
- * 
+ *
+ *
  */
 public class ShowHideLabelEditPolicy extends ConnectionLabelsEditPolicy {
 
@@ -39,32 +39,33 @@ public class ShowHideLabelEditPolicy extends ConnectionLabelsEditPolicy {
 	public static final String SHOW_HIDE_LABEL_ROLE = EditPolicyRoles.CONNECTION_LABELS_ROLE;
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConnectionLabelsEditPolicy#understandsRequest(org.eclipse.gef.Request)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	public boolean understandsRequest(Request request) {
-		if(ShowHideLabelsRequest.SHOW_HIDE_LABELS_REQUEST_TYPE.equals(request.getType())) {
+		if (ShowHideLabelsRequest.SHOW_HIDE_LABELS_REQUEST_TYPE.equals(request.getType())) {
 			return true;
 		}
 		return super.understandsRequest(request);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConnectionLabelsEditPolicy#getCommand(org.eclipse.gef.Request)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	public Command getCommand(Request request) {
-		if(ShowHideLabelsRequest.SHOW_HIDE_LABELS_REQUEST_TYPE.equals(request.getType())) {
-			SetPropertyCommand cmd = new SetPropertyCommand(getEditingDomain(), new EObjectAdapter(((ShowHideLabelsRequest)request).getView()), Properties.ID_ISVISIBLE, DiagramUIMessages.Command_hideLabel_Label, Boolean.valueOf(((ShowHideLabelsRequest)request).showConnectionLabel()));
-			if(cmd.canExecute()) {
+		if (ShowHideLabelsRequest.SHOW_HIDE_LABELS_REQUEST_TYPE.equals(request.getType())) {
+			SetPropertyCommand cmd = new SetPropertyCommand(getEditingDomain(), new EObjectAdapter(((ShowHideLabelsRequest) request).getView()), Properties.ID_ISVISIBLE, DiagramUIMessages.Command_hideLabel_Label,
+					Boolean.valueOf(((ShowHideLabelsRequest) request).showConnectionLabel()));
+			if (cmd.canExecute()) {
 				return new ICommandProxy(cmd);
 			}
 		} else {
@@ -74,9 +75,9 @@ public class ShowHideLabelEditPolicy extends ConnectionLabelsEditPolicy {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConnectionLabelsEditPolicy#getTargetEditPart(org.eclipse.gef.Request)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */

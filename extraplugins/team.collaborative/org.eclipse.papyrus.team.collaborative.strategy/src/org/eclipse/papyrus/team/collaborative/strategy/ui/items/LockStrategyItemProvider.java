@@ -28,7 +28,7 @@ import com.google.common.collect.Collections2;
 
 /**
  * Item provider which fill the menu with all lock strategy.
- * 
+ *
  * @author adaussy
  */
 public class LockStrategyItemProvider extends org.eclipse.ui.actions.CompoundContributionItem {
@@ -40,9 +40,10 @@ public class LockStrategyItemProvider extends org.eclipse.ui.actions.CompoundCon
 	 */
 	@Override
 	protected IContributionItem[] getContributionItems() {
-		if(isEnabled()) {
+		if (isEnabled()) {
 			Collection<ActionContributionItem> contribution = Collections2.transform(ICollaborativeManager.INSTANCE.getStrategies().values(), new Function<ILockingStrategy.Descriptor, ActionContributionItem>() {
 
+				@Override
 				public ActionContributionItem apply(final ILockingStrategy.Descriptor from) {
 
 					Action action = new LockAction(from);
@@ -61,9 +62,10 @@ public class LockStrategyItemProvider extends org.eclipse.ui.actions.CompoundCon
 	 * 
 	 * @see org.eclipse.jface.action.ContributionItem#isEnabled()
 	 */
+	@Override
 	public boolean isEnabled() {
 		EObject firstSelection = UIUtils.getFirstSelection();
-		if(firstSelection != null) {
+		if (firstSelection != null) {
 			return CollabUtils.isCollab(firstSelection);
 		}
 		return false;

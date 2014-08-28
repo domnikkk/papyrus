@@ -49,20 +49,21 @@ public class CollabReadOnlyHandler extends AbstractReadOnlyHandler {
 	 * 
 	 * @see org.eclipse.papyrus.readonly.IReadOnlyHandler#isReadOnly(org.eclipse.emf.common.util.URI[], org.eclipse.emf.edit.domain.EditingDomain)
 	 */
+	@Override
 	public Optional<Boolean> anyReadOnly(Set<ReadOnlyAxis> axes, URI[] uris) {
-		if(uris != null && uris.length > 0 && getEditingDomain() != null && axes.contains(ReadOnlyAxis.PERMISSION)) {
+		if (uris != null && uris.length > 0 && getEditingDomain() != null && axes.contains(ReadOnlyAxis.PERMISSION)) {
 			ArrayList<URI> urisList = Lists.newArrayList(uris);
 			Collection<IExtendedURI> extendedURICollection = Collections2.transform(urisList, CollabFunctionsFactory.getURIToExtendedURIWithContainment());
 			HashSet<IExtendedURI> extendURISet = Sets.newHashSet(extendedURICollection);
 			ResourceSet resourceSet = getEditingDomain().getResourceSet();
-			if(ICollaborativeManager.INSTANCE.isCollab(extendURISet, resourceSet)) {
+			if (ICollaborativeManager.INSTANCE.isCollab(extendURISet, resourceSet)) {
 				ILocker locker;
 				locker = ICollaborativeManager.INSTANCE.getLocker(extendURISet, resourceSet);
-				if(locker == null) {
+				if (locker == null) {
 					return Optional.absent();
 				}
-				for(IExtendedURI extendURI : locker.getExtendedSet()) {
-					if(!locker.isLocked(extendURI).isOK()) {
+				for (IExtendedURI extendURI : locker.getExtendedSet()) {
+					if (!locker.isLocked(extendURI).isOK()) {
 						return Optional.of(true);
 					}
 				}
@@ -76,15 +77,16 @@ public class CollabReadOnlyHandler extends AbstractReadOnlyHandler {
 	 * 
 	 * @see org.eclipse.papyrus.readonly.IReadOnlyHandler#enableWrite(org.eclipse.emf.common.util.URI[], org.eclipse.emf.edit.domain.EditingDomain)
 	 */
+	@Override
 	public Optional<Boolean> makeWritable(Set<ReadOnlyAxis> axes, URI[] uris) {
-		if(axes.contains(ReadOnlyAxis.PERMISSION)) {
+		if (axes.contains(ReadOnlyAxis.PERMISSION)) {
 			ArrayList<URI> urisList = Lists.newArrayList(uris);
 			Collection<IExtendedURI> extendedURICollection = Collections2.transform(urisList, CollabFunctionsFactory.getURIToExtendedURIWithContainment());
 			HashSet<IExtendedURI> extendedURISet = Sets.newHashSet(extendedURICollection);
 			ResourceSet resourceSet = getEditingDomain().getResourceSet();
-			if(ICollaborativeManager.INSTANCE.isCollab(extendedURISet, resourceSet)) {
+			if (ICollaborativeManager.INSTANCE.isCollab(extendedURISet, resourceSet)) {
 				IStatus status = LockAction.doSafeLock(resourceSet, extendedURISet, true);
-				if(!status.isOK()) {
+				if (!status.isOK()) {
 					return Optional.absent();
 				}
 				return Optional.of(true);

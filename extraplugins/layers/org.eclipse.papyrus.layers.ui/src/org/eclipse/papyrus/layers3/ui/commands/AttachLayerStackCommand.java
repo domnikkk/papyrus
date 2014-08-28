@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -18,9 +18,9 @@ import org.eclipse.papyrus.layers.runtime.NotationDiagramHelper;
 /**
  * Add a layer stack to a diagram.
  * This is performed on the current LayerStack Viewer.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class AttachLayerStackCommand extends AbstractLayerStackCommand implements IHandler {
 
@@ -34,7 +34,7 @@ public class AttachLayerStackCommand extends AbstractLayerStackCommand implement
 	public String getCommandName() {
 		return "Attach Layer Stack";
 	}
-	
+
 	/**
 	 * @see org.eclipse.papyrus.layers2.ui.view.commands.AbstractLayerCommand#doExecute(org.eclipse.papyrus.layers.application.NotationDiagramMngr)
 	 *
@@ -42,11 +42,11 @@ public class AttachLayerStackCommand extends AbstractLayerStackCommand implement
 	 */
 	@Override
 	protected void doExecute(ExecutionEvent event, NotationDiagramHelper notationDiagramHelper) {
-//		System.out.println( this.getClass().getSimpleName() + ".doExecute()");
+		// System.out.println( this.getClass().getSimpleName() + ".doExecute()");
 		notationDiagramHelper.attachLayersStack();
-		
+
 		// ensure the Layers explorer is open
-//		LayersExplorerViewUtils.openView(event);
+		// LayersExplorerViewUtils.openView(event);
 	}
 
 
@@ -55,7 +55,7 @@ public class AttachLayerStackCommand extends AbstractLayerStackCommand implement
 	 */
 	@Override
 	public boolean isEnabled(NotationDiagramHelper notationDiagramHelper) {
-		return ! notationDiagramHelper.isLayersStackAttached();
+		return !notationDiagramHelper.isLayersStackAttached();
 	}
 
 }

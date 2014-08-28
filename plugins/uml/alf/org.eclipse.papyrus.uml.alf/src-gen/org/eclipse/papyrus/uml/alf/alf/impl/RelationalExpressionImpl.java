@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.RelationalExpression;
 import org.eclipse.papyrus.uml.alf.alf.ShiftExpression;
@@ -115,7 +112,11 @@ public class RelationalExpressionImpl extends MinimalEObjectImpl.Container imple
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.RELATIONAL_EXPRESSION__LEFT, oldLeft, newLeft);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -130,15 +131,20 @@ public class RelationalExpressionImpl extends MinimalEObjectImpl.Container imple
     if (newLeft != left)
     {
       NotificationChain msgs = null;
-      if (left != null)
-        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.RELATIONAL_EXPRESSION__LEFT, null, msgs);
-      if (newLeft != null)
-        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.RELATIONAL_EXPRESSION__LEFT, null, msgs);
+      if (left != null) {
+		msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.RELATIONAL_EXPRESSION__LEFT, null, msgs);
+	}
+      if (newLeft != null) {
+		msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.RELATIONAL_EXPRESSION__LEFT, null, msgs);
+	}
       msgs = basicSetLeft(newLeft, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.RELATIONAL_EXPRESSION__LEFT, newLeft, newLeft));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.RELATIONAL_EXPRESSION__LEFT, newLeft, newLeft));
+	}
   }
 
   /**
@@ -160,8 +166,9 @@ public class RelationalExpressionImpl extends MinimalEObjectImpl.Container imple
   {
     String oldOp = op;
     op = newOp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.RELATIONAL_EXPRESSION__OP, oldOp, op));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.RELATIONAL_EXPRESSION__OP, oldOp, op));
+	}
   }
 
   /**
@@ -186,7 +193,11 @@ public class RelationalExpressionImpl extends MinimalEObjectImpl.Container imple
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.RELATIONAL_EXPRESSION__RIGHT, oldRight, newRight);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -201,15 +212,20 @@ public class RelationalExpressionImpl extends MinimalEObjectImpl.Container imple
     if (newRight != right)
     {
       NotificationChain msgs = null;
-      if (right != null)
-        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.RELATIONAL_EXPRESSION__RIGHT, null, msgs);
-      if (newRight != null)
-        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.RELATIONAL_EXPRESSION__RIGHT, null, msgs);
+      if (right != null) {
+		msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.RELATIONAL_EXPRESSION__RIGHT, null, msgs);
+	}
+      if (newRight != null) {
+		msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.RELATIONAL_EXPRESSION__RIGHT, null, msgs);
+	}
       msgs = basicSetRight(newRight, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.RELATIONAL_EXPRESSION__RIGHT, newRight, newRight));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.RELATIONAL_EXPRESSION__RIGHT, newRight, newRight));
+	}
   }
 
   /**
@@ -324,7 +340,9 @@ public class RelationalExpressionImpl extends MinimalEObjectImpl.Container imple
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (op: ");

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ public class CustomStateInvariantCreateCommand extends StateInvariantCreateComma
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -43,7 +43,7 @@ public class CustomStateInvariantCreateCommand extends StateInvariantCreateComma
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomStateInvariantCreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -52,17 +52,17 @@ public class CustomStateInvariantCreateCommand extends StateInvariantCreateComma
 
 	/**
 	 * The StateInvariant is created on the lifeline and not on its container
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// Get the model container
-		Object modelContainer = ((CreateElementRequest)getRequest()).getParameters().get(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER);
+		Object modelContainer = ((CreateElementRequest) getRequest()).getParameters().get(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER);
 		// Create the stateInvariant
-		StateInvariant stateInvariant = CommandHelper.doCreateStateInvariant((Lifeline)getElementToEdit(), modelContainer);
+		StateInvariant stateInvariant = CommandHelper.doCreateStateInvariant((Lifeline) getElementToEdit(), modelContainer);
 		doConfigure(stateInvariant, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(stateInvariant);
+		((CreateElementRequest) getRequest()).setNewElement(stateInvariant);
 		return CommandResult.newOKCommandResult(stateInvariant);
 	}
 }

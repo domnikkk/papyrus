@@ -42,6 +42,7 @@ import org.eclipse.papyrus.emf.facet.efacet.core.FacetUtils;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManagerListener;
 import org.eclipse.papyrus.emf.facet.efacet.core.exception.FacetManagerException;
 import org.eclipse.papyrus.emf.facet.efacet.core.internal.FacetManager.ConformanceState;
+import org.eclipse.papyrus.emf.facet.efacet.core.internal.exception.FacetConformanceEvaluationException;
 import org.eclipse.papyrus.emf.facet.efacet.core.internal.exception.UnmatchingExpectedTypeException;
 import org.eclipse.papyrus.emf.facet.efacet.core.internal.exported.IResolverManager;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DerivedTypedElement;
@@ -53,12 +54,12 @@ import org.eclipse.papyrus.emf.facet.util.emf.core.ModelUtils;
 
 /**
  * @author oremaud
- * 
+ *
  *         FacetManager Context
- * 
+ *
  *         Defines which FacetSets will be taken into account, and in which
  *         order ('front' FacetSets have higher precedence)
- * 
+ *
  *         Responsible of overrides resolution for Facets and Customs
  */
 class FacetManagerContext implements List<FacetSet> {
@@ -75,7 +76,7 @@ class FacetManagerContext implements List<FacetSet> {
 	 * This field is used to avoid to have to many error messages in the log.
 	 */
 	private final Set<ETypedElement> failingFeatures = new HashSet<ETypedElement>();
-	
+
 	private final Set<IFacetManagerListener> listeners = new HashSet<IFacetManagerListener>();
 
 	public FacetManagerContext(final FacetManager manager) {
@@ -83,13 +84,13 @@ class FacetManagerContext implements List<FacetSet> {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param baseFeature
 	 * @param eObject
 	 * @return
 	 * @throws FacetConformanceEvaluationException
 	 * @throws UnmatchingExpectedTypeException
-	 * @throws FacetManagerException 
+	 * @throws FacetManagerException
 	 */
 	public <T extends ETypedElement> T resolveOverrides(final T baseFeature,
 			final EObject eObject) throws FacetManagerException {
@@ -112,12 +113,12 @@ class FacetManagerContext implements List<FacetSet> {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param baseFeature
 	 * @param eObject
 	 * @return
 	 * @throws FacetConformanceEvaluationException
-	 * @throws FacetManagerException 
+	 * @throws FacetManagerException
 	 */
 	public <T extends DerivedTypedElement> T resolveOverrides(
 			final T baseFeature, final EObject eObject)
@@ -180,7 +181,7 @@ class FacetManagerContext implements List<FacetSet> {
 	 * is the feature that : - is the most specific (in terms of Facet
 	 * inheritance) : the lowest in the inheritance tree (per branch) - is
 	 * encountered first. The order is given by the FacetManager context.
-	 * 
+	 *
 	 * @param candidates
 	 *            The list of candidates features. Can be empty.
 	 * @return
@@ -206,11 +207,11 @@ class FacetManagerContext implements List<FacetSet> {
 
 	/**
 	 * Find matching candidates.
-	 * 
+	 *
 	 * @param eObject
 	 * @param baseFeature
 	 * @return A list of candidates, in the right order for conflict resolution
-	 * @throws FacetManagerException 
+	 * @throws FacetManagerException
 	 */
 	private <T extends DerivedTypedElement> List<T> getOverrideCandidateFeatures(
 			final EObject eObject, final T baseFeature)
@@ -223,7 +224,7 @@ class FacetManagerContext implements List<FacetSet> {
 		final List<FacetSet> allFacetSets = new ArrayList<FacetSet>(managedFSets);
 		// add aggregated FacetSets
 		for (FacetSet facetSet : managedFSets) {
-			//FIXME Should handle recursive containment.
+			// FIXME Should handle recursive containment.
 			for (FacetSet subFacetSet : facetSet.getFacetSets()) {
 				final FacetSet resolvedFacetSet = IResolverManager.DEFAULT
 						.resolve(subFacetSet, FacetSet.class);
@@ -233,15 +234,13 @@ class FacetManagerContext implements List<FacetSet> {
 		for (FacetSet facetSet : allFacetSets) {
 			final Resource resource = facetSet.eResource();
 			if (resource == null) {
-				final String message = String.format(
-						"The facetSet %s (%s) is not stored in a resource.", //$NON-NLS-1$
+				final String message = String.format("The facetSet %s (%s) is not stored in a resource.", //$NON-NLS-1$
 						facetSet.getName(), facetSet.getNsURI());
 				Logger.logWarning(message, Activator.getDefault());
 			} else {
 				final ResourceSet facetSetRS = resource.getResourceSet();
 				if (!facetSetRS.equals(baserFeatureRS)) {
-					Logger.logWarning(
-							"The facet manager is dealing with more than one resource set.", //$NON-NLS-1$
+					Logger.logWarning("The facet manager is dealing with more than one resource set.", //$NON-NLS-1$
 							Activator.getDefault());
 				}
 			}
@@ -273,7 +272,7 @@ class FacetManagerContext implements List<FacetSet> {
 
 	/**
 	 * Test whether a feature is overridden by another (directly or not)
-	 * 
+	 *
 	 * @param targetParent
 	 * @param child
 	 * @return true if child is directly or indirectly overridden by parent,
@@ -300,13 +299,13 @@ class FacetManagerContext implements List<FacetSet> {
 
 	/**
 	 * Find DerivedTypedElement features that matches the 'signature'
-	 * 
+	 *
 	 * @param eObject
 	 *            EObject used to test conformance
 	 * @param facet
 	 * @param signatureFeature
 	 *            reference feature that serves as 'signature'
-	 * @throws FacetManagerException 
+	 * @throws FacetManagerException
 	 */
 	private <T extends DerivedTypedElement> T getMatchingFeature(
 			final EObject eObject, final Facet facet, final T signatureFeature)
@@ -372,10 +371,9 @@ class FacetManagerContext implements List<FacetSet> {
 				final Resource topResource = topFeature.eResource();
 				final Resource signatureResource = signatureFeature.eResource();
 				if (topResource == null || signatureResource == null || topFeature.eResource().getResourceSet() != signatureFeature.eResource().getResourceSet()) {
-					Logger.logWarning(
-							"topOverrideFeature.eResource().getResourceSet() != signatureFeature.eResource().getResourceSet()", //$NON-NLS-1$
+					Logger.logWarning("topOverrideFeature.eResource().getResourceSet() != signatureFeature.eResource().getResourceSet()", //$NON-NLS-1$
 							Activator.getDefault());
-				} 
+				}
 			}
 		}
 		return result;
@@ -545,7 +543,7 @@ class FacetManagerContext implements List<FacetSet> {
 	public void removeListener(final IFacetManagerListener listener) {
 		this.listeners.remove(listener);
 	}
-	
+
 	private void notifyListeners() {
 		for (IFacetManagerListener listener : this.listeners) {
 			listener.facetManagerChanged();

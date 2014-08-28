@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
@@ -14,7 +14,7 @@ import org.eclipse.jface.action.Action;
 import org.eclipse.papyrus.infra.discovery.ui.wizards.DiscoveryComponent;
 
 /**
- * Action used for discovery 
+ * Action used for discovery
  */
 public class PapyrusDiscoveryAction extends Action {
 	/**

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.papyrus.emf.facet.util.core.DebugUtils;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Messages;
@@ -25,7 +26,6 @@ import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.util.widget.c
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.util.wizard.page.exception.SelectedEPackageRuntimeException;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.wizard.page.ISelectEPackageWizardPage;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.util.EditingUtil;
-import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
@@ -58,6 +58,7 @@ public class SelectEPackageWizardPage extends WizardPage implements
 		}
 	}
 
+	@Override
 	public void createControl(final Composite parent) {
 		this.mmSelectionCtl = new MetamodelSelectionControl(parent);
 		this.mmSelectionCtl.setLayoutData(new GridData(
@@ -67,12 +68,14 @@ public class SelectEPackageWizardPage extends WizardPage implements
 
 		filteredList.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(final SelectionEvent event) {
 				if (event.item != null) {
 					setPageComplete(filteredList.getSelection().length == 1);
 				}
 			}
 
+			@Override
 			public void widgetDefaultSelected(final SelectionEvent event) {
 				if (getWizard().canFinish()) {
 					getWizard().performFinish();
@@ -93,6 +96,7 @@ public class SelectEPackageWizardPage extends WizardPage implements
 		getContainer().showPage(getNextPage());
 	}
 
+	@Override
 	public EPackage getSelectedEPackage() {
 		EPackage ePackage = null;
 		// Only one result
@@ -142,10 +146,11 @@ public class SelectEPackageWizardPage extends WizardPage implements
 
 	/**
 	 * Select the <code>packageName</code> into the list.
-	 * 
+	 *
 	 * @param packageName
 	 *            the name of the package to select.
 	 */
+	@Override
 	public void selectPackage(final String packageName) {
 		DebugUtils.debug(DEBUG);
 		boolean doItNow = true;
@@ -171,6 +176,7 @@ public class SelectEPackageWizardPage extends WizardPage implements
 
 	private void asyncSelectionPackage(final String packageName) {
 		Display.getDefault().asyncExec(new Runnable() {
+			@Override
 			public void run() {
 				selectPackage(packageName);
 			}

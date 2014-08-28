@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -33,7 +33,7 @@ import org.eclipse.papyrus.uml.diagram.common.locator.PortPositionLocator;
  * <pre>
  * This class is a command that updates the location of Port border items,
  * when the parent is resized.
- * This command is not generic (meaning valid for any IBorderItem) in the sense that 
+ * This command is not generic (meaning valid for any IBorderItem) in the sense that
  * the calculation of the new location is totally based on the way {@link PortPositionLocator}
  * behaves.
  * </pre>
@@ -42,7 +42,7 @@ public class UpdatePortLocationCommand extends AbstractTransactionalCommand {
 
 	/** The border item edit part (assumed to be a Port) */
 	private IBorderItemEditPart borderItemEditPart;
-	
+
 	/** The parent edit part */
 	private GraphicalEditPart parentEditPart;
 
@@ -56,17 +56,17 @@ public class UpdatePortLocationCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param request
-	 *        the move request
+	 *            the move request
 	 * @param parentEditPart
-	 *        the parent edit part
+	 *            the parent edit part
 	 * @param borderItemEditPart
-	 *        the Port edit part
+	 *            the Port edit part
 	 * @param borderItemSide
-	 *        the side of Port on parent before resize
+	 *            the side of Port on parent before resize
 	 */
 	public UpdatePortLocationCommand(TransactionalEditingDomain domain, ChangeBoundsRequest request, GraphicalEditPart parentEditPart, IBorderItemEditPart borderItemEditPart, int borderItemSide) {
 		super(domain, "Update port location command", null); //$NON-NLS-1$
@@ -84,16 +84,16 @@ public class UpdatePortLocationCommand extends AbstractTransactionalCommand {
 
 		// At this step the resized bounds of the parent should have been set.
 		// Get the parent bounds.
-		Shape parentShape = (Shape)parentEditPart.getNotationView();
-		Bounds parentBounds = (Bounds)parentShape.getLayoutConstraint();
+		Shape parentShape = (Shape) parentEditPart.getNotationView();
+		Bounds parentBounds = (Bounds) parentShape.getLayoutConstraint();
 
 		// Retrieve borderItemBounds
 		int borderItemOffset = 10; // see PortPositionLocator.
 
-		Shape borderItemShape = (Shape)borderItemEditPart.getNotationView();
-		Bounds borderItemBounds = (Bounds)borderItemShape.getLayoutConstraint();
+		Shape borderItemShape = (Shape) borderItemEditPart.getNotationView();
+		Bounds borderItemBounds = (Bounds) borderItemShape.getLayoutConstraint();
 
-		switch(borderItemSide) { // The borderItemSide is not supposed to
+		switch (borderItemSide) { // The borderItemSide is not supposed to
 									// change during a parent resize.
 		case PositionConstants.NORTH:
 			borderItemBounds.setY(-borderItemOffset);
@@ -131,31 +131,31 @@ public class UpdatePortLocationCommand extends AbstractTransactionalCommand {
 
 
 		final int resizeDirection = this.request.getResizeDirection();
-		//if true, we don't move port (so we translate them in the opposite direction		
-		if(this.request.isConstrainedResize()) {// see bug 424942 https://bugs.eclipse.org/bugs/show_bug.cgi?id=424942	
+		// if true, we don't move port (so we translate them in the opposite direction
+		if (this.request.isConstrainedResize()) {// see bug 424942 https://bugs.eclipse.org/bugs/show_bug.cgi?id=424942
 			final Point delta = request.getMoveDelta();
-			if(resizeDirection == PositionConstants.NORTH) {
-				switch(borderItemSide) {
+			if (resizeDirection == PositionConstants.NORTH) {
+				switch (borderItemSide) {
 				case PositionConstants.EAST:
 				case PositionConstants.WEST:
 					borderItemBounds.setY(borderItemBounds.getY() - delta.y);
 					break;
 				default:
-					//nothing to do
+					// nothing to do
 					break;
 				}
-			} else if(resizeDirection == PositionConstants.WEST) {
-				switch(borderItemSide) {
+			} else if (resizeDirection == PositionConstants.WEST) {
+				switch (borderItemSide) {
 				case PositionConstants.SOUTH:
 				case PositionConstants.NORTH:
 					borderItemBounds.setX(borderItemBounds.getX() - delta.x);
 					break;
 				default:
-					//nothing to do
+					// nothing to do
 					break;
 				}
-			} else if(resizeDirection == PositionConstants.NORTH_WEST) {
-				switch(borderItemSide) {
+			} else if (resizeDirection == PositionConstants.NORTH_WEST) {
+				switch (borderItemSide) {
 				case PositionConstants.SOUTH:
 				case PositionConstants.NORTH:
 					borderItemBounds.setX(borderItemBounds.getX() - delta.x);
@@ -165,27 +165,27 @@ public class UpdatePortLocationCommand extends AbstractTransactionalCommand {
 					borderItemBounds.setY(borderItemBounds.getY() - delta.y);
 					break;
 				default:
-					//nothing to do
+					// nothing to do
 					break;
 				}
-			}else if(resizeDirection==PositionConstants.SOUTH_WEST){
-				switch(borderItemSide) {
+			} else if (resizeDirection == PositionConstants.SOUTH_WEST) {
+				switch (borderItemSide) {
 				case PositionConstants.SOUTH:
 				case PositionConstants.NORTH:
 					borderItemBounds.setX(borderItemBounds.getX() - delta.x);
 					break;
 				default:
-					//nothing to do
+					// nothing to do
 					break;
 				}
-			}else if(resizeDirection==PositionConstants.NORTH_EAST){
-				switch(borderItemSide) {
+			} else if (resizeDirection == PositionConstants.NORTH_EAST) {
+				switch (borderItemSide) {
 				case PositionConstants.EAST:
 				case PositionConstants.WEST:
 					borderItemBounds.setY(borderItemBounds.getY() - delta.y);
 					break;
 				default:
-					//nothing to do
+					// nothing to do
 					break;
 				}
 			}

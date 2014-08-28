@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,9 +56,9 @@ public class SynchronizeViewEditPolicy extends CanonicalEditPolicy {
 	public void activate() {
 		super.activate();
 		synchroSemanticChild = SynchroSemanticChildRegistry.getInstance().getSynchroSemanticChild(getHost().getClass());
-		if(synchroSemanticChild != null) {
-			derivedSemanticHost = synchroSemanticChild.getSemanticEObjectToListen(((Element)getSemanticHost()));
-			if(derivedSemanticHost != null) {
+		if (synchroSemanticChild != null) {
+			derivedSemanticHost = synchroSemanticChild.getSemanticEObjectToListen((getSemanticHost()));
+			if (derivedSemanticHost != null) {
 				addListenerFilter("SYNCHRONIZE", this, derivedSemanticHost);
 			}
 		}
@@ -66,30 +66,31 @@ public class SynchronizeViewEditPolicy extends CanonicalEditPolicy {
 
 	@Override
 	public boolean isEnabled() {
-		//by default there is no synchronization 
-	if (getCanonicalStyle()==null){
-		return false;
-	}
+		// by default there is no synchronization
+		if (getCanonicalStyle() == null) {
+			return false;
+		}
 		return super.isEnabled();
 	}
+
 	@Override
 	protected List<EObject> getSemanticChildrenList() {
 		ArrayList<EObject> result = new ArrayList<EObject>();
 		Class<? extends EditPart> EditPart = getHost().getClass();
 		ISynchroSemanticChild synchroSemanticChild = SynchroSemanticChildRegistry.getInstance().getSynchroSemanticChild(EditPart);
-		if(synchroSemanticChild != null) {
+		if (synchroSemanticChild != null) {
 			ArrayList<EObject> ancestor = getAllEObjectAncestor();
-			List<EObject> tmplist = (synchroSemanticChild.getSynchroSemanticChild(((Element)getSemanticHost())));
-			for(Iterator<EObject> iterator = tmplist.iterator(); iterator.hasNext();) {
-				EObject eObject = (EObject)iterator.next();
-				if(ancestor.contains(eObject)) {
+			List<EObject> tmplist = (synchroSemanticChild.getSynchroSemanticChild((getSemanticHost())));
+			for (Iterator<EObject> iterator = tmplist.iterator(); iterator.hasNext();) {
+				EObject eObject = iterator.next();
+				if (ancestor.contains(eObject)) {
 					return Collections.emptyList();
 				}
 			}
 			return tmplist;
 		}
-		if(getSemanticHost() instanceof Element) {
-			result.addAll(((Element)getSemanticHost()).getOwnedElements());
+		if (getSemanticHost() instanceof Element) {
+			result.addAll(((Element) getSemanticHost()).getOwnedElements());
 			return result;
 		}
 
@@ -99,19 +100,19 @@ public class SynchronizeViewEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * This method is used to calculate if a semantic element has been already display in parent to avoid loop of display
-	 * 
+	 *
 	 * @return the list of all semantic element display by parents edipart.
 	 */
 	protected ArrayList<EObject> getAllEObjectAncestor() {
 		ArrayList<EObject> ancestor = new ArrayList<EObject>();
 		EditPart currentEditPart = getHost();
-		if(currentEditPart.getModel() instanceof View) {
-			ancestor.add(((View)currentEditPart.getModel()).getElement());
+		if (currentEditPart.getModel() instanceof View) {
+			ancestor.add(((View) currentEditPart.getModel()).getElement());
 		}
-		while(currentEditPart.getParent() != null) {
-			currentEditPart = (EditPart)currentEditPart.getParent();
-			if(currentEditPart.getModel() instanceof View) {
-				ancestor.add(((View)currentEditPart.getModel()).getElement());
+		while (currentEditPart.getParent() != null) {
+			currentEditPart = currentEditPart.getParent();
+			if (currentEditPart.getModel() instanceof View) {
+				ancestor.add(((View) currentEditPart.getModel()).getElement());
 			}
 		}
 		return ancestor;
@@ -121,9 +122,9 @@ public class SynchronizeViewEditPolicy extends CanonicalEditPolicy {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
-		if(synchroSemanticChild != null) {
-			if(derivedSemanticHost == null && (synchroSemanticChild.getSemanticEObjectToListen(((Element)getSemanticHost())) != null)) {
-				derivedSemanticHost = synchroSemanticChild.getSemanticEObjectToListen(((Element)getSemanticHost()));
+		if (synchroSemanticChild != null) {
+			if (derivedSemanticHost == null && (synchroSemanticChild.getSemanticEObjectToListen((getSemanticHost())) != null)) {
+				derivedSemanticHost = synchroSemanticChild.getSemanticEObjectToListen((getSemanticHost()));
 				addListenerFilter("SYNCHRONIZE", this, derivedSemanticHost);
 			}
 		}
@@ -133,6 +134,7 @@ public class SynchronizeViewEditPolicy extends CanonicalEditPolicy {
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy#refreshSemantic()
 	 *      In order to connect the drop mechanism this method has be overloaded
 	 */
+	@Override
 	protected void refreshSemantic() {
 		List<IAdaptable> createdViews = refreshSemanticChildrenByDrop();
 		makeViewsImmutable(createdViews);
@@ -141,14 +143,14 @@ public class SynchronizeViewEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * this method is extracted from refreshSemanticChildren
 	 * but instead of using the service view it uses the drop
-	 * 
+	 *
 	 * @return
 	 */
 	protected List<IAdaptable> refreshSemanticChildrenByDrop() {
-		//-------------- code from superClass----------------
+		// -------------- code from superClass----------------
 		// Don't try to refresh children if the semantic element
 		// cannot be resolved.
-		if(resolveSemanticElement() == null) {
+		if (resolveSemanticElement() == null) {
 			return Collections.emptyList();
 		}
 
@@ -160,18 +162,18 @@ public class SynchronizeViewEditPolicy extends CanonicalEditPolicy {
 		boolean changed = false;
 		//
 		// delete all the remaining orphaned views
-		if(!orphaned.isEmpty()) {
+		if (!orphaned.isEmpty()) {
 			changed = deleteViews(orphaned.iterator());
 		}
 
 		//
 		// create a view for each remaining semantic element.
 		List<IAdaptable> createdViews = Collections.emptyList();
-		if(!semanticChildren.isEmpty()) {
+		if (!semanticChildren.isEmpty()) {
 			createdViews = createViews(semanticChildren);
 		}
 
-		if(changed || createdViews.size() > 0) {
+		if (changed || createdViews.size() > 0) {
 			postProcessRefreshSemantic(createdViews);
 		}
 
@@ -181,17 +183,17 @@ public class SynchronizeViewEditPolicy extends CanonicalEditPolicy {
 
 	@Override
 	protected Command getCreateViewCommand(CreateRequest request) {
-		//transform the request to drop request
-		if(request instanceof CreateViewRequest) {
-			CreateViewRequest createViewRequest = (CreateViewRequest)request;
+		// transform the request to drop request
+		if (request instanceof CreateViewRequest) {
+			CreateViewRequest createViewRequest = (CreateViewRequest) request;
 			createViewRequest.getViewDescriptors();
 
 			CompoundCommand compoundCommand = new CompoundCommand();
-			for(Iterator<? extends ViewDescriptor> iterator = createViewRequest.getViewDescriptors().iterator(); iterator.hasNext();) {
-				ViewDescriptor viewDescriptor = (ViewDescriptor)iterator.next();
-				EObject element = (EObject)viewDescriptor.getElementAdapter().getAdapter(EObject.class);
+			for (Iterator<? extends ViewDescriptor> iterator = createViewRequest.getViewDescriptors().iterator(); iterator.hasNext();) {
+				ViewDescriptor viewDescriptor = iterator.next();
+				EObject element = (EObject) viewDescriptor.getElementAdapter().getAdapter(EObject.class);
 
-				if(element != null) {
+				if (element != null) {
 					ArrayList<EObject> elementToDrop = new ArrayList<EObject>();
 					elementToDrop.add(element);
 					DropObjectsRequest dropRequest = new DropObjectsRequest();
@@ -199,7 +201,7 @@ public class SynchronizeViewEditPolicy extends CanonicalEditPolicy {
 					dropRequest.setLocation(createViewRequest.getLocation());
 
 					Command cmd = getHost().getCommand(dropRequest);
-					if(cmd != null && cmd.canExecute()) {
+					if (cmd != null && cmd.canExecute()) {
 						compoundCommand.add(cmd);
 					}
 				}
@@ -215,12 +217,12 @@ public class SynchronizeViewEditPolicy extends CanonicalEditPolicy {
 
 	@Override
 	protected boolean shouldDeleteView(View view) {
-		//in order to avoid duplication of views allow deleting of edges
-		if(view instanceof Edge && view.getElement() == null) {
+		// in order to avoid duplication of views allow deleting of edges
+		if (view instanceof Edge && view.getElement() == null) {
 
 			return true;
 		}
-		//it is managed by the service edit.
+		// it is managed by the service edit.
 		return false;
 	}
 
@@ -229,7 +231,7 @@ public class SynchronizeViewEditPolicy extends CanonicalEditPolicy {
 	@Override
 	protected List<View> getViewChildren() {
 		List<View> children = super.getViewChildren();
-		children.addAll(((GraphicalEditPart)getHost()).getNotationView().getDiagram().getEdges());
+		children.addAll(((GraphicalEditPart) getHost()).getNotationView().getDiagram().getEdges());
 		return children;
 	}
 

@@ -112,7 +112,7 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 
 			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
-				if(event.getChecked() == true) {
+				if (event.getChecked() == true) {
 					viewer.setChecked(event.getElement(), true);
 					checkList.add(event.getElement());
 				} else {
@@ -126,16 +126,16 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 
 			@Override
 			public void widgetSelected(SelectionEvent event) {
-				List<?> elements = (List<?>)viewer.getInput();
+				List<?> elements = (List<?>) viewer.getInput();
 				Property data = null;
 
-				if(event.item.getData() instanceof Property) {
-					data = (Property)event.item.getData();
+				if (event.item.getData() instanceof Property) {
+					data = (Property) event.item.getData();
 
-					if(data == elements.get(0)) {
+					if (data == elements.get(0)) {
 						btUP.setEnabled(false);
 						btDown.setEnabled(true);
-					} else if(data == elements.get(elements.size() - 1)) {
+					} else if (data == elements.get(elements.size() - 1)) {
 						btDown.setEnabled(false);
 						btUP.setEnabled(true);
 					} else {
@@ -152,7 +152,7 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 
 		viewer.setAllChecked(true);
 		Object[] tmp = viewer.getCheckedElements();
-		for(int i = 0; i < tmp.length; i++) {
+		for (int i = 0; i < tmp.length; i++) {
 			checkList.add(tmp[i]);
 		}
 
@@ -183,14 +183,14 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 			public void widgetSelected(SelectionEvent event) {
 				viewer.setAllChecked(true);
 
-				if(checkList.size() != 0) {
+				if (checkList.size() != 0) {
 					checkList.removeAll(checkList);
 					Object[] tmp = viewer.getCheckedElements();
-					for(int i = 0; i < tmp.length; i++) {
+					for (int i = 0; i < tmp.length; i++) {
 						checkList.add(tmp[i]);
 					}
 				}
-				//System.out.println(event.toString());
+				// System.out.println(event.toString());
 			}
 		});
 
@@ -211,11 +211,11 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 			public void widgetSelected(SelectionEvent event) {
 				viewer.setAllChecked(false);
 
-				if(checkList.size() != 0) {
+				if (checkList.size() != 0) {
 					checkList.removeAll(checkList);
 				}
 
-				//System.out.println(event.toString());
+				// System.out.println(event.toString());
 			}
 		});
 
@@ -236,7 +236,7 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
 				viewer.setInput(getElementListUP());
-				//System.out.println(event.toString());
+				// System.out.println(event.toString());
 			}
 		});
 
@@ -255,7 +255,7 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
 				viewer.setInput(getElementListDown());
-				//System.out.println(event.toString());
+				// System.out.println(event.toString());
 			}
 		});
 
@@ -263,9 +263,9 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 	}
 
 	protected boolean isCreate(Operation operation) {
-		for(int j = 0; j < operation.getAppliedStereotypes().size(); j++) {
+		for (int j = 0; j < operation.getAppliedStereotypes().size(); j++) {
 			Stereotype st_tmp = operation.getAppliedStereotypes().get(j);
-			if(st_tmp.getName().equals("Create")) {
+			if (st_tmp.getName().equals("Create")) {
 				return true;
 			}
 		}
@@ -278,8 +278,8 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 		@Override
 		public Object[] getElements(Object inputElement) {
 			ArrayList<Property> result = new ArrayList<Property>();
-			if(inputElement instanceof List) {
-				result.addAll((Collection<? extends Property>)inputElement);
+			if (inputElement instanceof List) {
+				result.addAll((Collection<? extends Property>) inputElement);
 			}
 			return result.toArray();
 		}
@@ -297,9 +297,9 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 
 		@Override
 		public Image getColumnImage(Object element, int columnIndex) {
-			if(element instanceof Property) {
-				Property current = (Property)element;
-				switch(columnIndex) {
+			if (element instanceof Property) {
+				Property current = (Property) element;
+				switch (columnIndex) {
 				case 0:
 					FUMLPresentationUtils.init(current);
 					Image image = FUMLPresentationUtils.getImage(current);
@@ -314,9 +314,9 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 
 		@Override
 		public String getColumnText(Object element, int columnIndex) {
-			if(element instanceof Property) {
-				Property current = (Property)element;
-				switch(columnIndex) {
+			if (element instanceof Property) {
+				Property current = (Property) element;
+				switch (columnIndex) {
 				case 0:
 					return current.getName();
 				default:
@@ -330,14 +330,14 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 
 	protected List<?> getElementListUP() {
 
-		List<?> elements = (List<?>)viewer.getInput();
-		IStructuredSelection selection = (IStructuredSelection)viewer.getSelection();
+		List<?> elements = (List<?>) viewer.getInput();
+		IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
 		List<?> element = selection.toList();
 		ArrayList<Object> elementList = new ArrayList<Object>();
 		ArrayList<Object> elementListTMP = new ArrayList<Object>();
 
-		for(int i = 0; i < elements.size(); i++) {
-			if(element.get(0) == elements.get(i)) {
+		for (int i = 0; i < elements.size(); i++) {
+			if (element.get(0) == elements.get(i)) {
 				elementListTMP.remove(elements.get(i - 1));
 				elementListTMP.add(element.get(0));
 				elementListTMP.add(elements.get(i - 1));
@@ -354,14 +354,14 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 
 	protected List<?> getElementListDown() {
 
-		List<?> elements = (List<?>)viewer.getInput();
-		IStructuredSelection selection = (IStructuredSelection)viewer.getSelection();
+		List<?> elements = (List<?>) viewer.getInput();
+		IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
 		List<?> element = selection.toList();
 		ArrayList<Object> elementList = new ArrayList<Object>();
 		ArrayList<Object> elementListTMP = new ArrayList<Object>();
 
-		for(int i = 0; i < elements.size(); i++) {
-			if(element.get(0) == elements.get(i)) {
+		for (int i = 0; i < elements.size(); i++) {
+			if (element.get(0) == elements.get(i)) {
 				elementListTMP.add(elements.get(i + 1));
 				elementListTMP.add(element.get(0));
 				i++;
@@ -376,15 +376,15 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 
 	@Override
 	protected void okPressed() {
-		//System.err.println("Ok pressed");
+		// System.err.println("Ok pressed");
 
 		// Check if the right profile is applied.
-		//List<Profile> appliedProfiles = context.getModel().getAppliedProfiles();
-		//for(int i = 0; i < appliedProfiles.size(); i++) {
-		//System.out.println(appliedProfiles.get(i).getQualifiedName());
-		//}
+		// List<Profile> appliedProfiles = context.getModel().getAppliedProfiles();
+		// for(int i = 0; i < appliedProfiles.size(); i++) {
+		// System.out.println(appliedProfiles.get(i).getQualifiedName());
+		// }
 
-		if(!Utils.isStandardProfileApplied(context)) {
+		if (!Utils.isStandardProfileApplied(context)) {
 			PackageUtil.applyProfile(context.getModel(), Utils.standardProfile, true);
 		}
 
@@ -394,9 +394,9 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 		int flagParamOp = 0;
 
 		// Add parameters to instantiate
-		for(int i = 0; i < checkList.size(); i++) {
-			if(checkList.get(i) instanceof Property) {
-				Property prop = (Property)checkList.get(i);
+		for (int i = 0; i < checkList.size(); i++) {
+			if (checkList.get(i) instanceof Property) {
+				Property prop = (Property) checkList.get(i);
 				Parameter in = UMLFactory.eINSTANCE.createParameter();
 				in.setDirection(ParameterDirectionKind.IN_LITERAL);
 				in.setType(prop.getType());
@@ -405,21 +405,21 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 				/* Check if parameter is already exist on the operation. */
 				flagParamOp = 0;
 
-				if(operation.getOwnedParameters().size() <= 1) {
+				if (operation.getOwnedParameters().size() <= 1) {
 					operation.getOwnedParameters().add(operation.getOwnedParameters().size() - 1, in);
 				}
 
 				else {
-					for(int j = 0; j < operation.getOwnedParameters().size() && flagParamOp == 0; j++) {
+					for (int j = 0; j < operation.getOwnedParameters().size() && flagParamOp == 0; j++) {
 						Parameter opParameter = operation.getOwnedParameters().get(j);
-						if(!opParameter.getName().equals(in.getName())) {
+						if (!opParameter.getName().equals(in.getName())) {
 							flagParamOp = 0;
 						} else {
 							flagParamOp = -1;
 						}
 					}
 
-					if(flagParamOp == 0) {
+					if (flagParamOp == 0) {
 						operation.getOwnedParameters().add(operation.getOwnedParameters().size() - 1, in);
 					}
 				}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ import org.eclipse.ui.IEditorPart;
 /**
  * This handler allows to rename a Papyrus Table. The handler is activated when
  * the active editor is a Papyrus NatTableEditor.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class RenameTableHandler extends AbstractHandler {
 
@@ -46,8 +46,9 @@ public class RenameTableHandler extends AbstractHandler {
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
-	 * 
+	 *
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		executeTransaction(event);
 
@@ -56,7 +57,7 @@ public class RenameTableHandler extends AbstractHandler {
 
 	/**
 	 * Execute as transaction
-	 * 
+	 *
 	 * @param event
 	 */
 	private void executeTransaction(ExecutionEvent event) {
@@ -71,7 +72,7 @@ public class RenameTableHandler extends AbstractHandler {
 			return;
 		}
 
-		if(tableManager == null) {
+		if (tableManager == null) {
 			return;
 		}
 
@@ -79,9 +80,9 @@ public class RenameTableHandler extends AbstractHandler {
 		String currentName = tableManager.getTableName();
 		String newName = null;
 		InputDialog dialog = new InputDialog(Display.getCurrent().getActiveShell(), RenameTableHandler_RenameAnExistingTable, RenameTableHandler_NewName, currentName, null);
-		if(dialog.open() == Window.OK) {
+		if (dialog.open() == Window.OK) {
 			newName = dialog.getValue();
-			if(newName == null || newName.length() <= 0) {
+			if (newName == null || newName.length() <= 0) {
 				return;
 			}
 		} else {
@@ -95,7 +96,7 @@ public class RenameTableHandler extends AbstractHandler {
 	/**
 	 * Get the name used in the {@link RecordingCommand}. This name will be
 	 * visible in undo/redo.
-	 * 
+	 *
 	 * @return The command name to show.
 	 */
 	public String getCommandName() {
@@ -103,8 +104,8 @@ public class RenameTableHandler extends AbstractHandler {
 	}
 
 	protected IEvaluationContext getIEvaluationContext(ExecutionEvent event) {
-		if(event.getApplicationContext() instanceof IEvaluationContext) {
-			return (IEvaluationContext)event.getApplicationContext();
+		if (event.getApplicationContext() instanceof IEvaluationContext) {
+			return (IEvaluationContext) event.getApplicationContext();
 		}
 		return null;
 
@@ -112,23 +113,23 @@ public class RenameTableHandler extends AbstractHandler {
 
 	/**
 	 * Get the Table model element. This method can be used from {@link #execute(ExecutionEvent)} or {@link #setEnabled(Object)}.
-	 * 
+	 *
 	 * @return The current table
 	 * @throws ServiceException
 	 */
 	protected INattableModelManager lookupTableManager(IEvaluationContext context) throws ServiceException {
 		IEditorPart editor = ServiceUtilsForIEvaluationContext.getInstance().getService(IMultiDiagramEditor.class, context);
 
-		INattableModelManager tableManager = (INattableModelManager)editor.getAdapter(INattableModelManager.class);
+		INattableModelManager tableManager = (INattableModelManager) editor.getAdapter(INattableModelManager.class);
 		return tableManager;
 	}
 
 	/**
 	 * Try to lookup the TransactionalEditingDomain.
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
-	 *         If the Editing domain can't be found.
+	 *             If the Editing domain can't be found.
 	 */
 	protected TransactionalEditingDomain lookupTransactionalEditingDomain(IEvaluationContext context) throws ServiceException {
 
@@ -141,19 +142,19 @@ public class RenameTableHandler extends AbstractHandler {
 
 	/**
 	 * Called by framework. Need to set the enabled flag.
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
-		if(!(evaluationContext instanceof IEvaluationContext)) {
+		if (!(evaluationContext instanceof IEvaluationContext)) {
 			setBaseEnabled(false);
 			return;
 		}
 
-		IEvaluationContext context = (IEvaluationContext)evaluationContext;
+		IEvaluationContext context = (IEvaluationContext) evaluationContext;
 
 		try {
 			// Try to get the Table
@@ -163,7 +164,7 @@ public class RenameTableHandler extends AbstractHandler {
 			// Can't find ServiceRegistry: disable
 		}
 
-		//In all other cases
+		// In all other cases
 		setBaseEnabled(false);
 	}
 }

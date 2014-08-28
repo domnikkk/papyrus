@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,10 +21,10 @@ import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.IValidation
 
 /**
  * Implementation of a constraint category interface.
- * 
- * 
+ *
+ *
  */
-public class ConstraintCategoryImpl  extends CategoryImpl implements IConstraintsCategory {
+public class ConstraintCategoryImpl extends CategoryImpl implements IConstraintsCategory {
 
 	private List<IValidationRule> constraints = new ArrayList<IValidationRule>();
 
@@ -32,7 +32,7 @@ public class ConstraintCategoryImpl  extends CategoryImpl implements IConstraint
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param category
@@ -42,7 +42,7 @@ public class ConstraintCategoryImpl  extends CategoryImpl implements IConstraint
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.dsml.validation.model.elements.interfaces.IConstraintsCategory#getCategoriesList()
 	 *
 	 */
@@ -51,7 +51,7 @@ public class ConstraintCategoryImpl  extends CategoryImpl implements IConstraint
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.dsml.validation.model.elements.interfaces.IConstraintsCategory#getConstraints()
 	 *
 	 */
@@ -60,7 +60,7 @@ public class ConstraintCategoryImpl  extends CategoryImpl implements IConstraint
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.dsml.validation.model.elements.interfaces.IConstraintsCategory#addConstraints(java.util.List)
 	 *
 	 * @param constraints

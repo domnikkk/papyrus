@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -22,10 +22,10 @@ public class ShowFiles {
 
 	/**
 	 * Initialize the ShowFiles class
-	 * 
+	 *
 	 * @param rootPath
-	 *        the path of a folder, that in turn contains a set of folders. It is assume that the
-	 *        latter contain code related to a specific node
+	 *            the path of a folder, that in turn contains a set of folders. It is assume that the
+	 *            latter contain code related to a specific node
 	 */
 	public ShowFiles(String rootPath) {
 		m_rootPath = rootPath;
@@ -50,13 +50,13 @@ public class ShowFiles {
 	public void getFilesRec(ArrayList<String> fileList, ArrayList<String> folderList, String root) {
 		File f = new File(root);
 		File[] listFiles = f.listFiles();
-		for(File file : listFiles) {
-			if(file.isDirectory()) {
-				// call recursively with 
+		for (File file : listFiles) {
+			if (file.isDirectory()) {
+				// call recursively with
 				getFilesRec(fileList, folderList, file.toString());
 				folderList.add(file.toString());
 			} else {
-				if(file.toString().endsWith(".cpp")) { //$NON-NLS-1$
+				if (file.toString().endsWith(".cpp")) { //$NON-NLS-1$
 					// found a C++ file
 					fileList.add(file.toString());
 				}
@@ -70,11 +70,11 @@ public class ShowFiles {
 	 */
 	public ArrayList<String> findNodesDir(ArrayList<String> folderList) {
 		ArrayList<String> allNodes = new ArrayList<String>();
-		for(String dir : folderList) {
+		for (String dir : folderList) {
 			String tmp = dir.replaceFirst(m_rootPath, ""); //$NON-NLS-1$
 			// all the nodes are at the level (ACCORD_ROOT + 1)
 			tmp = tmp.trim().replaceFirst(File.pathSeparator, ""); //$NON-NLS-1$
-			if(!tmp.contains(File.pathSeparator)) {
+			if (!tmp.contains(File.pathSeparator)) {
 				allNodes.add(tmp.trim());
 			}
 		}
@@ -89,9 +89,9 @@ public class ShowFiles {
 	public ArrayList<String> getNodeSources(ArrayList<String> allFiles, String nodeName) {
 		ArrayList<String> sourceFilesPath = new ArrayList<String>();
 
-		for(String filePath : allFiles) {
-			if(filePath.contains(nodeName)) {
-				// path is related to given node 
+		for (String filePath : allFiles) {
+			if (filePath.contains(nodeName)) {
+				// path is related to given node
 				int index = filePath.indexOf(nodeName);
 				String tmp = filePath.substring(index);
 				index = tmp.indexOf(File.pathSeparator);

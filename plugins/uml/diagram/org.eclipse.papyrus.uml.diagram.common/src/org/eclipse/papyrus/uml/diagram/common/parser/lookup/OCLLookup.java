@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2006 Borland Software Corporation
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,28 +43,30 @@ public class OCLLookup<T extends NamedElement> implements Lookup<T> {
 
 	public OCLLookup(Expression ocl, IElementType[] resolutions) {
 		mySelector = ocl;
-		if(resolutions == null) {
+		if (resolutions == null) {
 			resolutions = NO_RESOLUTIONS;
 		}
 		myResolutionTypes = new ArrayList<IElementType>(Arrays.asList(resolutions));
 	}
 
+	@Override
 	public List getResolutionElementTypes() {
 		return new ArrayList<IElementType>(myResolutionTypes);
 	}
 
 	public List<T> computeScope(EObject context) {
 		Object result = mySelector.evaluate(context);
-		if(result instanceof Collection) {
-			return new LinkedList<T>((Collection<T>)result);
+		if (result instanceof Collection) {
+			return new LinkedList<T>((Collection<T>) result);
 		}
 		return Collections.emptyList();
 	}
 
+	@Override
 	public T lookup(String name, EObject context) {
 		List<T> scope = computeScope(context);
-		for(T next : scope) {
-			if(name.equals(next.getName()) || name.equals(next.getQualifiedName())) {
+		for (T next : scope) {
+			if (name.equals(next.getName()) || name.equals(next.getQualifiedName())) {
 				return next;
 			}
 		}

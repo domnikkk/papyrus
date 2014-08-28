@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core.importer;
 
@@ -53,7 +53,7 @@ public class DependencyAdapter extends AdapterImpl {
 	public static DependencyAdapter getInstance(Resource resource) {
 		DependencyAdapter result = getExistingInstance(resource);
 
-		if(result == null) {
+		if (result == null) {
 			result = new DependencyAdapter();
 			resource.eAdapters().add(Math.min(1, resource.eAdapters().size()), result);
 
@@ -66,9 +66,9 @@ public class DependencyAdapter extends AdapterImpl {
 	static DependencyAdapter getExistingInstance(Resource resource) {
 		DependencyAdapter result = null;
 
-		for(Object next : resource.eAdapters()) {
-			if(next instanceof DependencyAdapter) {
-				result = (DependencyAdapter)next;
+		for (Object next : resource.eAdapters()) {
+			if (next instanceof DependencyAdapter) {
+				result = (DependencyAdapter) next;
 				break;
 			}
 		}
@@ -93,24 +93,24 @@ public class DependencyAdapter extends AdapterImpl {
 	}
 
 	private void analyze(Resource resource) {
-		if(resource.getContents().isEmpty() && isDIResource(resource)) {
+		if (resource.getContents().isEmpty() && isDIResource(resource)) {
 			// similarly-named resources that are recognized by Papyrus are implicitly components
-			for(Resource next : getImplicitComponents(resource)) {
-				if(isUserModelResource(next.getURI())) {
+			for (Resource next : getImplicitComponents(resource)) {
+				if (isUserModelResource(next.getURI())) {
 					addDependency(next);
 				}
 			}
 		} else {
-			for(TreeIterator<EObject> iter = EcoreUtil.getAllProperContents(resource, false); iter.hasNext();) {
+			for (TreeIterator<EObject> iter = EcoreUtil.getAllProperContents(resource, false); iter.hasNext();) {
 				EObject next = iter.next();
 
 				// ignore annotations, such as are used for hyperlinks
-				if(next instanceof EAnnotation) {
+				if (next instanceof EAnnotation) {
 					iter.prune();
 				} else {
-					for(EObject xref : next.eCrossReferences()) {
+					for (EObject xref : next.eCrossReferences()) {
 						Resource xrefRes = xref.eResource();
-						if((xrefRes != null) && (isUserModelResource(xrefRes.getURI()))) {
+						if ((xrefRes != null) && (isUserModelResource(xrefRes.getURI()))) {
 							addDependency(xrefRes);
 						}
 					}
@@ -120,19 +120,19 @@ public class DependencyAdapter extends AdapterImpl {
 	}
 
 	private Resource getResource() {
-		return (Resource)getTarget();
+		return (Resource) getTarget();
 	}
 
 	void addDependency(Resource resource) {
 		Resource self = getResource();
 
-		if((resource != self) && dependencies.add(resource)) {
+		if ((resource != self) && dependencies.add(resource)) {
 			getInstance(resource).addDependent(self);
 		}
 	}
 
 	private void addDependent(Resource resource) {
-		if(resource != getResource()) {
+		if (resource != getResource()) {
 			dependents.add(resource);
 		}
 	}
@@ -140,8 +140,8 @@ public class DependencyAdapter extends AdapterImpl {
 	boolean isUserModelResource(URI uri) {
 		ModelSet modelSet = getModelSet();
 		boolean result = (modelSet != null) ? modelSet.isUserModelResource(uri) :
-		// config.hasResource(uri) &&
-		uri.isPlatformResource() || uri.isFile() || CDOUtils.isCDOURI(uri);
+				// config.hasResource(uri) &&
+				uri.isPlatformResource() || uri.isFile() || CDOUtils.isCDOURI(uri);
 
 		return result && !uri.isArchive();
 	}
@@ -151,14 +151,14 @@ public class DependencyAdapter extends AdapterImpl {
 	}
 
 	private Iterable<Resource> getImplicitComponents(Resource diResource) {
-		// usually only two components:  diagrams and semantics
+		// usually only two components: diagrams and semantics
 		Collection<Resource> result = Lists.newArrayListWithExpectedSize(2);
 
 		ResourceSet rset = diResource.getResourceSet();
 		URIConverter converter = rset.getURIConverter();
 
-		for(URI next : modelsMetadata.getKnownModelURIs(diResource.getURI())) {
-			if(!next.equals(diResource.getURI()) && converter.exists(next, null)) {
+		for (URI next : modelsMetadata.getKnownModelURIs(diResource.getURI())) {
+			if (!next.equals(diResource.getURI()) && converter.exists(next, null)) {
 				try {
 					result.add(rset.getResource(next, true));
 				} catch (Exception e) {
@@ -173,7 +173,7 @@ public class DependencyAdapter extends AdapterImpl {
 	public static boolean isDIResource(Resource resource) {
 		boolean result = false;
 
-		if(resource.getContents().isEmpty()) {
+		if (resource.getContents().isEmpty()) {
 			// DI resources are typically empty; just markers
 			result = DiModel.DI_FILE_EXTENSION.equals(resource.getURI().fileExtension());
 		} else {
@@ -187,16 +187,16 @@ public class DependencyAdapter extends AdapterImpl {
 	public static Resource getDIResource(Resource resource) {
 		Resource result = null;
 
-		if(isDIResource(resource)) {
+		if (isDIResource(resource)) {
 			result = resource;
 		} else {
 			// find the the DI resource
 			ResourceSet rset = resource.getResourceSet();
 			URI uri = resource.getURI().trimFileExtension().appendFileExtension(DiModel.DI_FILE_EXTENSION);
-			if(rset.getURIConverter().exists(uri, null)) {
+			if (rset.getURIConverter().exists(uri, null)) {
 				Resource di = rset.getResource(uri, true);
 
-				if((di != null) && isDIResource(di)) {
+				if ((di != null) && isDIResource(di)) {
 					result = di;
 				}
 			}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,7 +58,7 @@ public class MokaBreakpoint extends Breakpoint {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IBreakpoint#getModelIdentifier()
 	 */
 	public String getModelIdentifier() {
@@ -67,7 +67,7 @@ public class MokaBreakpoint extends Breakpoint {
 
 	/**
 	 * Return the model element to which this breakpoint is attached
-	 * 
+	 *
 	 * @return The model element to which this breakpoint is attached
 	 */
 	public EObject getModelElement() {
@@ -76,9 +76,9 @@ public class MokaBreakpoint extends Breakpoint {
 
 	/**
 	 * Toggles a breakpoint on the given model element
-	 * 
+	 *
 	 * @param modelElement
-	 *        The model element to which a breakpoint has to be attached
+	 *            The model element to which a breakpoint has to be attached
 	 */
 	public void toggleBreakpoint(EObject modelElement) {
 		String uri = modelElement.eResource().getURI().toString();
@@ -86,7 +86,7 @@ public class MokaBreakpoint extends Breakpoint {
 		IResource iresource = getIResource(modelElement.eResource());
 		this.modelElement = modelElement;
 		try {
-			if(iresource != null) {
+			if (iresource != null) {
 				IMarker marker = iresource.createMarker(MokaConstants.MOKA_BREAKPOINT_MARKER_ID);
 				marker.setAttribute(EValidator.URI_ATTRIBUTE, uri + "#" + fragment);
 				marker.setAttribute(IBreakpoint.ID, this.getModelIdentifier());
@@ -101,20 +101,22 @@ public class MokaBreakpoint extends Breakpoint {
 
 	/**
 	 * Convenience method returning the IResource corresponding to a Resource
-	 * 
+	 *
 	 * @param resource
-	 *        The Resource from which the corresponding IResource has to be retrieved
+	 *            The Resource from which the corresponding IResource has to be retrieved
 	 * @return the IResource corresponding to the Resource
 	 */
 	public static IResource getIResource(Resource resource) {
-		if(resource == null)
+		if (resource == null) {
 			return null;
+		}
 		String uriPath = resource.getURI().toPlatformString(true);
-		if(uriPath == null) // FIXME this is not a Platform scheme
+		if (uriPath == null) {
 			return null;
+		}
 		IResource iresource = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uriPath));
-		if(iresource != null) {
-			if(iresource.exists()) {
+		if (iresource != null) {
+			if (iresource.exists()) {
 				return iresource;
 			}
 		}
@@ -123,13 +125,13 @@ public class MokaBreakpoint extends Breakpoint {
 
 	/**
 	 * Computes a label for this breakpoint
-	 * 
+	 *
 	 * @return A label for this breakpoint
 	 */
 	public String getLabel() {
 		String label = "";
-		if(this.modelElement instanceof NamedElement) {
-			return ((NamedElement)this.modelElement).getQualifiedName();
+		if (this.modelElement instanceof NamedElement) {
+			return ((NamedElement) this.modelElement).getQualifiedName();
 		}
 		return label;
 	}
@@ -137,44 +139,48 @@ public class MokaBreakpoint extends Breakpoint {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.Breakpoint#setMarker(org.eclipse.core.resources.IMarker)
 	 */
+	@Override
 	public void setMarker(IMarker marker) throws CoreException {
-		if(this.modelElement == null)
+		if (this.modelElement == null) {
 			this.modelElement = getEObjectOfMarker(marker);
+		}
 		super.setMarker(marker);
 	}
 
 	/**
 	 * Convenience method returning the EObject of a given marker (provided that it is a marker with a URI)
-	 * 
+	 *
 	 * @param marker
-	 *        The marker from which eObject has to be retrieved
+	 *            The marker from which eObject has to be retrieved
 	 * @return The EObject associated with the given marker
 	 */
 	public static EObject getEObjectOfMarker(IMarker marker) {
 		URI uriOfMarker = getURI(marker);
-		if(uriOfMarker != null) {
+		if (uriOfMarker != null) {
 			try {
 				EObject modelElement = null;
 				IEditorPart part = EditorUtils.getEditorPart(uriOfMarker.trimFragment().toString());
-				if(part != null) {
-					ServicesRegistry servicesRegistry = (ServicesRegistry)part.getAdapter(ServicesRegistry.class);
-					if(servicesRegistry != null) {
+				if (part != null) {
+					ServicesRegistry servicesRegistry = (ServicesRegistry) part.getAdapter(ServicesRegistry.class);
+					if (servicesRegistry != null) {
 						try {
 							ResourceSet resourceSet = servicesRegistry.getService(ModelSet.class);
 							modelElement = resourceSet.getEObject(uriOfMarker, true);
-							if(modelElement != null)
+							if (modelElement != null) {
 								return modelElement;
+							}
 						} catch (ServiceException e) {
 							Activator.log.error(e);
 						}
 					}
 				}
 
-				if(defaultResourceSet == null)
+				if (defaultResourceSet == null) {
 					defaultResourceSet = new ResourceSetImpl();
+				}
 				defaultResourceSet.getResource(uriOfMarker.trimFragment(), true);
 				return defaultResourceSet.getEObject(uriOfMarker, true);
 			} catch (MissingResourceException e) {
@@ -186,14 +192,14 @@ public class MokaBreakpoint extends Breakpoint {
 
 	/**
 	 * Convenience method returning the URI corresponding to the value of the EValidator.URI_ATTRIBUTE of a marker
-	 * 
+	 *
 	 * @param marker
-	 *        The marker from which the URI corresponding to the value its EValidator.URI_ATTRIBUTE has to be constructed
+	 *            The marker from which the URI corresponding to the value its EValidator.URI_ATTRIBUTE has to be constructed
 	 * @return The URI corresponding to the value of the EValidator.URI_ATTRIBUTE of the given marker
 	 */
 	public static URI getURI(IMarker marker) {
 		String uriOfMarkerStr = marker.getAttribute(EValidator.URI_ATTRIBUTE, null);
-		if(uriOfMarkerStr != null) {
+		if (uriOfMarkerStr != null) {
 			return URI.createURI(uriOfMarkerStr);
 		}
 		return null;

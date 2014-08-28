@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.uml2.uml.Property;
 
 /**
  * this is a label helper to display the label of an association end
- * 
+ *
  */
 public abstract class AbstractAssociationEndEditPart extends LabelEditPart {
 
@@ -34,9 +34,10 @@ public abstract class AbstractAssociationEndEditPart extends LabelEditPart {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void activate() {
 		super.activate();
 		addAssociationEndListeners();
@@ -57,9 +58,10 @@ public abstract class AbstractAssociationEndEditPart extends LabelEditPart {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected void addSemanticListeners() {
 		if (getParser() instanceof ISemanticParser) {
 			EObject element = ((Association) resolveSemanticElement()).getMemberEnds().get(0);
@@ -73,9 +75,10 @@ public abstract class AbstractAssociationEndEditPart extends LabelEditPart {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void deactivate() {
 		removeAssociationEndListeners();
 		super.deactivate();

@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.uml.diagram.paletteconfiguration.*;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.DrawerConfiguration;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.ElementDescriptor;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.IconDescriptor;
@@ -28,6 +27,7 @@ import org.eclipse.papyrus.uml.diagram.paletteconfiguration.ToolKind;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements PaletteconfigurationFactory {
@@ -35,16 +35,16 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static PaletteconfigurationFactory init() {
 		try {
-			PaletteconfigurationFactory thePaletteconfigurationFactory = (PaletteconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory(PaletteconfigurationPackage.eNS_URI);
+			PaletteconfigurationFactory thePaletteconfigurationFactory = (PaletteconfigurationFactory) EPackage.Registry.INSTANCE.getEFactory(PaletteconfigurationPackage.eNS_URI);
 			if (thePaletteconfigurationFactory != null) {
 				return thePaletteconfigurationFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new PaletteconfigurationFactoryImpl();
@@ -54,6 +54,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PaletteconfigurationFactoryImpl() {
@@ -63,56 +64,67 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case PaletteconfigurationPackage.PALETTE_CONFIGURATION: return createPaletteConfiguration();
-			case PaletteconfigurationPackage.TOOL_CONFIGURATION: return createToolConfiguration();
-			case PaletteconfigurationPackage.STACK_CONFIGURATION: return createStackConfiguration();
-			case PaletteconfigurationPackage.DRAWER_CONFIGURATION: return createDrawerConfiguration();
-			case PaletteconfigurationPackage.ICON_DESCRIPTOR: return createIconDescriptor();
-			case PaletteconfigurationPackage.ELEMENT_DESCRIPTOR: return createElementDescriptor();
-			case PaletteconfigurationPackage.SEPARATOR_CONFIGURATION: return createSeparatorConfiguration();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case PaletteconfigurationPackage.PALETTE_CONFIGURATION:
+			return createPaletteConfiguration();
+		case PaletteconfigurationPackage.TOOL_CONFIGURATION:
+			return createToolConfiguration();
+		case PaletteconfigurationPackage.STACK_CONFIGURATION:
+			return createStackConfiguration();
+		case PaletteconfigurationPackage.DRAWER_CONFIGURATION:
+			return createDrawerConfiguration();
+		case PaletteconfigurationPackage.ICON_DESCRIPTOR:
+			return createIconDescriptor();
+		case PaletteconfigurationPackage.ELEMENT_DESCRIPTOR:
+			return createElementDescriptor();
+		case PaletteconfigurationPackage.SEPARATOR_CONFIGURATION:
+			return createSeparatorConfiguration();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case PaletteconfigurationPackage.TOOL_KIND:
-				return createToolKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case PaletteconfigurationPackage.TOOL_KIND:
+			return createToolKindFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case PaletteconfigurationPackage.TOOL_KIND:
-				return convertToolKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case PaletteconfigurationPackage.TOOL_KIND:
+			return convertToolKindToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PaletteConfiguration createPaletteConfiguration() {
@@ -123,6 +135,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ToolConfiguration createToolConfiguration() {
@@ -133,6 +146,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public StackConfiguration createStackConfiguration() {
@@ -143,6 +157,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DrawerConfiguration createDrawerConfiguration() {
@@ -153,6 +168,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public IconDescriptor createIconDescriptor() {
@@ -163,6 +179,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ElementDescriptor createElementDescriptor() {
@@ -173,6 +190,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SeparatorConfiguration createSeparatorConfiguration() {
@@ -183,17 +201,21 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ToolKind createToolKindFromString(EDataType eDataType, String initialValue) {
 		ToolKind result = ToolKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertToolKindToString(EDataType eDataType, Object instanceValue) {
@@ -203,15 +225,17 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PaletteconfigurationPackage getPaletteconfigurationPackage() {
-		return (PaletteconfigurationPackage)getEPackage();
+		return (PaletteconfigurationPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -220,4 +244,4 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 		return PaletteconfigurationPackage.eINSTANCE;
 	}
 
-} //PaletteconfigurationFactoryImpl
+} // PaletteconfigurationFactoryImpl

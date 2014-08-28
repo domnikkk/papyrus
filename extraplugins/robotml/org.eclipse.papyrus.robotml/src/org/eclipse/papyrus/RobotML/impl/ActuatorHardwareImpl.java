@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.ActuatorHardware;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -20,6 +19,7 @@ public class ActuatorHardwareImpl extends HardwareImpl implements ActuatorHardwa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ActuatorHardwareImpl() {
@@ -29,6 +29,7 @@ public class ActuatorHardwareImpl extends HardwareImpl implements ActuatorHardwa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class ActuatorHardwareImpl extends HardwareImpl implements ActuatorHardwa
 		return RobotMLPackage.Literals.ACTUATOR_HARDWARE;
 	}
 
-} //ActuatorHardwareImpl
+} // ActuatorHardwareImpl

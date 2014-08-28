@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,9 +44,9 @@ public class PaletteMenuAction extends Action implements IMenuCreator {
 
 	/**
 	 * Creates a new PaletteMenuAction
-	 * 
+	 *
 	 * @param viewer
-	 *        the palette viewer on which this action is added
+	 *            the palette viewer on which this action is added
 	 */
 	public PaletteMenuAction(PaletteViewer viewer) {
 		this(viewer, false);
@@ -54,11 +54,11 @@ public class PaletteMenuAction extends Action implements IMenuCreator {
 
 	/**
 	 * Creates a new PaletteMenuAction
-	 * 
+	 *
 	 * @param viewer
-	 *        the palette viewer on which this action is added
+	 *            the palette viewer on which this action is added
 	 * @param hasIcon
-	 *        <code>true</code> if the menu action must display an icon
+	 *            <code>true</code> if the menu action must display an icon
 	 */
 	public PaletteMenuAction(PaletteViewer viewer, boolean hasIcon) {
 		super(Messages.Palette_Action_Label);
@@ -71,11 +71,11 @@ public class PaletteMenuAction extends Action implements IMenuCreator {
 	/**
 	 * Helper method that wraps the given action in an ActionContributionItem
 	 * and then adds it to the given menu.
-	 * 
+	 *
 	 * @param parent
-	 *        The menu to which the given action is to be added
+	 *            The menu to which the given action is to be added
 	 * @param action
-	 *        The action that is to be added to the given menu
+	 *            The action that is to be added to the given menu
 	 */
 	protected void addActionToMenu(Menu parent, IAction action) {
 		ActionContributionItem item = new ActionContributionItem(action);
@@ -85,7 +85,7 @@ public class PaletteMenuAction extends Action implements IMenuCreator {
 	/**
 	 * Creates and returns a list of actions that can toggle palette providers
 	 * visiblity
-	 * 
+	 *
 	 * @return a list of actions that can toggle palette providers visiblity
 	 */
 	protected List<Action> createActions() {
@@ -96,13 +96,13 @@ public class PaletteMenuAction extends Action implements IMenuCreator {
 		final IEditorPart part = getActiveSashPage();
 		final List<String> hiddenPalettes = PapyrusPalettePreferences.getHiddenPalettes(part);
 
-		for(PapyrusPaletteService.ProviderDescriptor descriptor : PapyrusPaletteService.getInstance().getContributingProviders(part, getPaletteViewer().getPaletteRoot())) {
+		for (PapyrusPaletteService.ProviderDescriptor descriptor : PapyrusPaletteService.getInstance().getContributingProviders(part, getPaletteViewer().getPaletteRoot())) {
 
 			action = new DisplayPaletteChangeAction(descriptor);
 
 			// get provider name
 			String name = descriptor.getContributionName();
-			if(name == null || name.equals("")) {
+			if (name == null || name.equals("")) {
 				name = descriptor.getContributionID();
 			}
 			// get the provider ID
@@ -112,7 +112,7 @@ public class PaletteMenuAction extends Action implements IMenuCreator {
 			action.setChecked(!hiddenPalettes.contains(id));
 			// check required profiles
 			boolean requiredPlugins = PaletteUtil.areRequiredProfileApplied(part, descriptor);
-			if(!requiredPlugins) {
+			if (!requiredPlugins) {
 				action.setEnabled(false);
 				action.setToolTipText(Messages.PaletteContextMenu_MissingProfile);
 			}
@@ -124,7 +124,7 @@ public class PaletteMenuAction extends Action implements IMenuCreator {
 
 	/**
 	 * Returns the palette viewer on which this action is build
-	 * 
+	 *
 	 * @return the palette viewer on which this action is build
 	 */
 	protected PaletteViewer getPaletteViewer() {
@@ -133,7 +133,7 @@ public class PaletteMenuAction extends Action implements IMenuCreator {
 
 	/**
 	 * Returns the current active sash page
-	 * 
+	 *
 	 * @return the current active sash page
 	 */
 	protected IEditorPart getActiveSashPage() {
@@ -141,8 +141,8 @@ public class PaletteMenuAction extends Action implements IMenuCreator {
 		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 		IEditorPart editorPart = page.getActiveEditor();
 		assert editorPart != null;
-		ISashWindowsContainer sashWindowsContainer = (ISashWindowsContainer)editorPart.getAdapter(ISashWindowsContainer.class);
-		if(sashWindowsContainer != null) {
+		ISashWindowsContainer sashWindowsContainer = (ISashWindowsContainer) editorPart.getAdapter(ISashWindowsContainer.class);
+		if (sashWindowsContainer != null) {
 			return sashWindowsContainer.getActiveEditor();
 		}
 		return null;
@@ -151,19 +151,20 @@ public class PaletteMenuAction extends Action implements IMenuCreator {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void dispose() {
 	}
 
 	/**
 	 * Fills the menu for this action
-	 * 
+	 *
 	 * @param menu
-	 *        the menu to contribute
+	 *            the menu to contribute
 	 * @return the menu updated
 	 */
 	protected Menu fillMenu(Menu menu) {
-		for(Action action2 : actions) {
-			DisplayPaletteChangeAction action = (DisplayPaletteChangeAction)action2;
+		for (Action action2 : actions) {
+			DisplayPaletteChangeAction action = (DisplayPaletteChangeAction) action2;
 			// action.setChecked(isPaletteEnabled(action.getProviderDescriptor()));
 			addActionToMenu(menu, action);
 		}
@@ -176,6 +177,7 @@ public class PaletteMenuAction extends Action implements IMenuCreator {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Menu getMenu(Control parent) {
 		return fillMenu(new Menu(parent));
 	}
@@ -183,6 +185,7 @@ public class PaletteMenuAction extends Action implements IMenuCreator {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Menu getMenu(Menu parent) {
 		return fillMenu(new Menu(parent));
 	}
@@ -197,9 +200,9 @@ public class PaletteMenuAction extends Action implements IMenuCreator {
 
 		/**
 		 * Creates a new DisplayPaletteChangeAction
-		 * 
+		 *
 		 * @param providerDescriptor
-		 *        the provider descriptor that must be hidden/shown
+		 *            the provider descriptor that must be hidden/shown
 		 */
 		public DisplayPaletteChangeAction(PapyrusPaletteService.ProviderDescriptor providerDescriptor) {
 			this.providerDescriptor = providerDescriptor;
@@ -207,7 +210,7 @@ public class PaletteMenuAction extends Action implements IMenuCreator {
 
 		/**
 		 * Returns the provider descriptor on which this action runs
-		 * 
+		 *
 		 * @return the provider descriptor on which this action runs
 		 */
 		public PapyrusPaletteService.ProviderDescriptor getProviderDescriptor() {

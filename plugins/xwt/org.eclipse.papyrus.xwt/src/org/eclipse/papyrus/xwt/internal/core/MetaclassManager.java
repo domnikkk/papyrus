@@ -51,7 +51,7 @@ public class MetaclassManager {
 
 	public void register(IMetaclass metaclass) {
 		Class<?> type = metaclass.getType();
-		if(classRegister.contains(type)) {
+		if (classRegister.contains(type)) {
 			return;
 		}
 		String key = type.getSimpleName();
@@ -65,12 +65,12 @@ public class MetaclassManager {
 
 	public IMetaclass register(Class<?> javaClass, IMetaclass superMetaclass) {
 		IMetaclass metaclass = getMetaclass(javaClass);
-		if(metaclass != null) {
+		if (metaclass != null) {
 			return metaclass;
 		}
-		if(superMetaclass == null) {
+		if (superMetaclass == null) {
 			Class<?> superclass = javaClass.getSuperclass();
-			if(superclass != null && superclass != Object.class) {
+			if (superclass != null && superclass != Object.class) {
 				register(superclass, null);
 			}
 			superMetaclass = getMetaclass(superclass);
@@ -81,9 +81,9 @@ public class MetaclassManager {
 	}
 
 	protected IMetaclass createMetaclass(Class<?> javaClass, IMetaclass superMetaclass) {
-		if(service != null) {
+		if (service != null) {
 			IMetaclassFactory factory = service.findFactory(javaClass);
-			if(factory != null) {
+			if (factory != null) {
 				return factory.create(javaClass, superMetaclass, xwtLoader);
 			}
 		}
@@ -93,30 +93,30 @@ public class MetaclassManager {
 
 	public IMetaclass getMetaclass(ILoadingContext context, String name, String namespace) {
 		IMetaclass metaclass = nameRegister.get(name);
-		if(metaclass != null) {
-			if(namespace == null || namespace.equals(IConstants.XWT_NAMESPACE)) {
+		if (metaclass != null) {
+			if (namespace == null || namespace.equals(IConstants.XWT_NAMESPACE)) {
 				return metaclass;
 			}
-			if(namespace != null && namespace.startsWith(IConstants.XAML_CLR_NAMESPACE_PROTO)) {
+			if (namespace != null && namespace.startsWith(IConstants.XAML_CLR_NAMESPACE_PROTO)) {
 				String packageName = namespace.substring(IConstants.XAML_CLR_NAMESPACE_PROTO.length());
 				int index = packageName.indexOf('=');
-				if(index != -1) {
+				if (index != -1) {
 					packageName = packageName.substring(0, index);
 				}
 				// if using default package(null), use only name as class name,
 				// else use package.class as class name
 				String className = packageName.length() == 0 ? name : (packageName + "." + name);
-				if(metaclass.getType().getName().equals(className)) {
+				if (metaclass.getType().getName().equals(className)) {
 					return metaclass;
 				}
 			}
 		}
-		if(namespace == null || !namespace.startsWith(IConstants.XAML_CLR_NAMESPACE_PROTO)) {
+		if (namespace == null || !namespace.startsWith(IConstants.XAML_CLR_NAMESPACE_PROTO)) {
 			return null;
 		}
 		String packageName = namespace.substring(IConstants.XAML_CLR_NAMESPACE_PROTO.length());
 		int index = packageName.indexOf('=');
-		if(index != -1) {
+		if (index != -1) {
 			packageName = packageName.substring(0, index);
 		}
 		// if using default package(null), use only name as class name, else use
@@ -124,7 +124,7 @@ public class MetaclassManager {
 		String className = packageName.length() == 0 ? name : (packageName + "." + name);
 		// try {
 		Class<?> type = ClassLoaderUtil.loadClass(context, className);
-		if(type == null) {
+		if (type == null) {
 			throw new XWTException("Cannot load " + className);
 		}
 		metaclass = register(type, null);
@@ -135,25 +135,25 @@ public class MetaclassManager {
 	}
 
 	public IMetaclass getMetaclass(Object object) {
-		if(object instanceof Class) {
-			return getMetaclass((Class<?>)object);
-		} else if(object instanceof String) {
-			return getMetaclass((String)object);
+		if (object instanceof Class) {
+			return getMetaclass((Class<?>) object);
+		} else if (object instanceof String) {
+			return getMetaclass(object);
 		}
 		Class<?> type = object.getClass();
 		return getMetaclass(type);
 	}
 
 	public IMetaclass getMetaclass(Class<?> type) {
-		if(classRegister.contains(type)) {
+		if (classRegister.contains(type)) {
 			IMetaclass metaclass = nameRegister.get(type.getSimpleName());
-			if(metaclass != null && metaclass.getType() == type) {
+			if (metaclass != null && metaclass.getType() == type) {
 				return metaclass;
 			}
 		}
-		if(parent != null) {
+		if (parent != null) {
 			IMetaclass metaclass = parent.getMetaclass(type);
-			if(metaclass != null) {
+			if (metaclass != null) {
 				return metaclass;
 			}
 		}

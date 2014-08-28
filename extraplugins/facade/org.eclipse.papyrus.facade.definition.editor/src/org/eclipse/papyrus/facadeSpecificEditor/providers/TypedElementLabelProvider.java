@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,72 +32,77 @@ public class TypedElementLabelProvider implements ITableLabelProvider {
 
 	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
-	 * 
+	 *
 	 * @param listener
 	 */
 
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 
 	}
 
 	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#dispose()
-	 * 
+	 *
 	 */
+	@Override
 	public void dispose() {
 
 	}
 
 	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#isLabelProperty(java.lang.Object, java.lang.String)
-	 * 
+	 *
 	 * @param element
 	 * @param property
 	 * @return
 	 */
 
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
 
 	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#removeListener(org.eclipse.jface.viewers.ILabelProviderListener)
-	 * 
+	 *
 	 * @param listener
 	 */
 
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 
 	}
 
 	/**
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnImage(java.lang.Object, int)
-	 * 
+	 *
 	 * @param element
 	 * @param columnIndex
 	 * @return
 	 */
 
+	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case 0:
-			if(element instanceof VirtualProperty) {
+			if (element instanceof VirtualProperty) {
 				return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/virtualmetamodel/VirtualReference.gif"); //$NON-NLS-1$
 
-			} else if(element instanceof VirtualOperation) {
+			} else if (element instanceof VirtualOperation) {
 				return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/virtualmetamodel/VirtualOperation.gif"); //$NON-NLS-1$
 
-			} else if(element instanceof VirtualLiteral) {
+			} else if (element instanceof VirtualLiteral) {
 				return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/virtualmetamodel/VirtualLiteral.gif"); //$NON-NLS-1$
 
-			} else if(element instanceof VirtualParameter) {
+			} else if (element instanceof VirtualParameter) {
 				return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/virtualmetamodel/VirtualParameter.gif"); //$NON-NLS-1$
 
 			}
 			break;
 		case 1:
-			if(element instanceof VirtualElement) {
-				if(((VirtualElement)element).isKept()) {
+			if (element instanceof VirtualElement) {
+				if (((VirtualElement) element).isKept()) {
 					return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/checked.gif"); //$NON-NLS-1$
 				} else {
 					return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/unchecked.gif"); //$NON-NLS-1$
@@ -122,27 +127,28 @@ public class TypedElementLabelProvider implements ITableLabelProvider {
 
 	/**
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnText(java.lang.Object, int)
-	 * 
+	 *
 	 * @param element
 	 * @param columnIndex
 	 * @return
 	 */
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case 0:
-			if(element instanceof VirtualElement) {
+			if (element instanceof VirtualElement) {
 
 				String name = ""; //$NON-NLS-1$
-				if(((VirtualElement)element).getRepresentedElement() instanceof ENamedElement) {
-					name += ((ENamedElement)((VirtualElement)element).getRepresentedElement()).getName();
-				} else if(((VirtualElement)element).getRepresentedElement() instanceof NamedElement) {
-					name += ((NamedElement)((VirtualElement)element).getRepresentedElement()).getName();
+				if (((VirtualElement) element).getRepresentedElement() instanceof ENamedElement) {
+					name += ((ENamedElement) ((VirtualElement) element).getRepresentedElement()).getName();
+				} else if (((VirtualElement) element).getRepresentedElement() instanceof NamedElement) {
+					name += ((NamedElement) ((VirtualElement) element).getRepresentedElement()).getName();
 				}
 
-				if(element instanceof VirtualTypedElement) {
-					if(((VirtualTypedElement)element).getType() != null) {
-						name += " (" + ((VirtualTypedElement)element).getType().getAliasName() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
+				if (element instanceof VirtualTypedElement) {
+					if (((VirtualTypedElement) element).getType() != null) {
+						name += " (" + ((VirtualTypedElement) element).getType().getAliasName() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
 					}
 				}
 
@@ -153,18 +159,18 @@ public class TypedElementLabelProvider implements ITableLabelProvider {
 
 			break;
 		case 2:
-			if(element instanceof VirtualElement) {
-				return ((VirtualElement)element).getAliasName();
+			if (element instanceof VirtualElement) {
+				return ((VirtualElement) element).getAliasName();
 			}
 			break;
 		case 3:
-			if(element instanceof VirtualTypedElement) {
-				return ((VirtualTypedElement)element).getLower() + ""; //$NON-NLS-1$
+			if (element instanceof VirtualTypedElement) {
+				return ((VirtualTypedElement) element).getLower() + ""; //$NON-NLS-1$
 			}
 			break;
 		case 4:
-			if(element instanceof VirtualTypedElement) {
-				return ((VirtualTypedElement)element).getUpper() + ""; //$NON-NLS-1$
+			if (element instanceof VirtualTypedElement) {
+				return ((VirtualTypedElement) element).getUpper() + ""; //$NON-NLS-1$
 			}
 			break;
 		default:

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,39 +55,45 @@ public abstract class AbstractModelTransferMapping implements IModelTransferMapp
 		config.addModelTransferListener(createConfigurationListener());
 	}
 
+	@Override
 	public IModelTransferConfiguration getConfiguration() {
 		return config;
 	}
 
+	@Override
 	public void mapTo(IModelTransferNode source, IPath path) {
-		if(!Objects.equal(getMapping(source), path)) {
+		if (!Objects.equal(getMapping(source), path)) {
 			mappings.put(source, path);
 
 			fireMappingChanged(source);
 		}
 	}
 
+	@Override
 	public IPath getMapping(IModelTransferNode node) {
 		return mappings.get(node);
 	}
 
+	@Override
 	public IPapyrusRepository getRepository() {
 		return repository;
 	}
 
+	@Override
 	public void setRepository(IPapyrusRepository repository) {
-		if(repository != this.repository) {
+		if (repository != this.repository) {
 			this.repository = repository;
 
 			fireRepositoryChanged();
 		}
 	}
 
+	@Override
 	public Diagnostic validate() {
 		BasicDiagnostic result = new BasicDiagnostic();
 
-		if(validateRepository(result)) {
-			for(IModelTransferNode node : getConfiguration().getModelsToTransfer()) {
+		if (validateRepository(result)) {
+			for (IModelTransferNode node : getConfiguration().getModelsToTransfer()) {
 				validateMapping(node, result);
 			}
 
@@ -104,11 +110,11 @@ public abstract class AbstractModelTransferMapping implements IModelTransferMapp
 	protected void validateUniqueMappings(DiagnosticChain diagnostics) {
 		Set<IPath> paths = Sets.newHashSet();
 
-		for(IModelTransferNode next : getConfiguration().getModelsToTransfer()) {
+		for (IModelTransferNode next : getConfiguration().getModelsToTransfer()) {
 			IPath mapping = getMapping(next);
 
-			if((mapping != null) && !paths.add(mapping)) {
-				diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, NLS.bind(Messages.AbstractModelTransferMapping_0, mapping), new Object[]{ next }));
+			if ((mapping != null) && !paths.add(mapping)) {
+				diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, NLS.bind(Messages.AbstractModelTransferMapping_0, mapping), new Object[] { next }));
 				break;
 			}
 		}
@@ -117,28 +123,30 @@ public abstract class AbstractModelTransferMapping implements IModelTransferMapp
 	protected boolean validateRepository(DiagnosticChain diagnostics) {
 		boolean result = true;
 
-		if(getRepository() == null) {
+		if (getRepository() == null) {
 			diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, Messages.AbstractModelTransferMapping_1, null));
 			result = false;
-		} else if(!getRepository().isConnected()) {
-			diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, NLS.bind(Messages.AbstractModelTransferMapping_2, getRepository().getName()), new Object[]{ getRepository() }));
+		} else if (!getRepository().isConnected()) {
+			diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, NLS.bind(Messages.AbstractModelTransferMapping_2, getRepository().getName()), new Object[] { getRepository() }));
 			result = false;
 		}
 
 		return result;
 	}
 
+	@Override
 	public void addModelTransferMappingListener(IModelTransferMappingListener listener) {
 		listeners.addIfAbsent(listener);
 	}
 
+	@Override
 	public void removeModelTransferMappingListener(IModelTransferMappingListener listener) {
 		listeners.remove(listener);
 	}
 
 	protected void fireProblemsEvent(Diagnostic problems) {
-		if(problems.getSeverity() > Diagnostic.OK) {
-			for(IModelTransferMappingListener next : listeners) {
+		if (problems.getSeverity() > Diagnostic.OK) {
+			for (IModelTransferMappingListener next : listeners) {
 				try {
 					next.modelTransferMappingProblemsOccurred(problems);
 				} catch (Exception e) {
@@ -149,7 +157,7 @@ public abstract class AbstractModelTransferMapping implements IModelTransferMapp
 	}
 
 	protected void fireMappingChanged(IModelTransferNode node) {
-		for(IModelTransferMappingListener next : listeners) {
+		for (IModelTransferMappingListener next : listeners) {
 			try {
 				next.modelTransferMappingChanged(node);
 			} catch (Exception e) {
@@ -159,7 +167,7 @@ public abstract class AbstractModelTransferMapping implements IModelTransferMapp
 	}
 
 	protected void fireRepositoryChanged() {
-		for(IModelTransferMappingListener next : listeners) {
+		for (IModelTransferMappingListener next : listeners) {
 			try {
 				next.modelTransferRepositoryChanged(this);
 			} catch (Exception e) {

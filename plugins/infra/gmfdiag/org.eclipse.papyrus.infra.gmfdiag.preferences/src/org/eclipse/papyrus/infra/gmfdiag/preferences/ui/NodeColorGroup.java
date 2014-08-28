@@ -1,15 +1,15 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr 
- *  Thibault Landre (Atos Origin) 
+ *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr
+ *  Thibault Landre (Atos Origin)
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.preferences.ui;
 
@@ -35,13 +35,13 @@ public class NodeColorGroup extends LinkColorGroup {
 
 	/**
 	 * create a composite to display the group color for a node.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent of the composite
+	 *            the parent of the composite
 	 * @param dialogPage
-	 *        to set the page in field editor
+	 *            to set the page in field editor
 	 * @param title
-	 *        the title
+	 *            the title
 	 */
 
 
@@ -51,10 +51,11 @@ public class NodeColorGroup extends LinkColorGroup {
 
 	/**
 	 * create the content.
-	 * 
+	 *
 	 * @param parent
-	 *        : the parent composite
+	 *            : the parent composite
 	 */
+	@Override
 	protected void createContent(Composite parent) {
 		super.createContent(parent);
 

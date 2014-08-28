@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -54,9 +54,9 @@ public class SelectAndExecuteCommand extends PopupMenuCommand {
 		@Override
 		public String getText(Object object) {
 			String text = super.getText(object);
-			if(object instanceof Command) {
-				String commandLabel = ((Command)object).getLabel();
-				if(commandLabel != null) {
+			if (object instanceof Command) {
+				String commandLabel = ((Command) object).getLabel();
+				if (commandLabel != null) {
 					text = commandLabel;
 				}
 			}
@@ -65,34 +65,34 @@ public class SelectAndExecuteCommand extends PopupMenuCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param label
-	 *        the command label
+	 *            the command label
 	 * @param parentShell
-	 *        the parent shell
+	 *            the parent shell
 	 * @param content
-	 *        the list of available commands proposed for user selection
-	 *        (List<org.eclipse.gef.commands.Command> expected here)
+	 *            the list of available commands proposed for user selection
+	 *            (List<org.eclipse.gef.commands.Command> expected here)
 	 */
 	public SelectAndExecuteCommand(String label, Shell parentShell, List<Command> content) {
 		this(label, parentShell, content, null);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param label
-	 *        the command label
+	 *            the command label
 	 * @param parentShell
-	 *        the parent shell
+	 *            the parent shell
 	 * @param content
-	 *        the list of available commands proposed for user selection
-	 *        (List<org.eclipse.gef.commands.Command> expected here)
+	 *            the list of available commands proposed for user selection
+	 *            (List<org.eclipse.gef.commands.Command> expected here)
 	 * @param handler
-	 *        an object to handle the "default action" case
+	 *            an object to handle the "default action" case
 	 */
 	public SelectAndExecuteCommand(String label, Shell parentShell, List<Command> content, DefaultActionHandler handler) {
 		super(label, parentShell);
@@ -103,14 +103,14 @@ public class SelectAndExecuteCommand extends PopupMenuCommand {
 
 	/**
 	 * Adds a submenu to the popup menu, to handle the "Select default" case
-	 * 
+	 *
 	 * @param menu
 	 */
 	protected void createPopupMenu(List<Command> content) {
 		PopupMenu popupMenu;
 
-		if(defaultHandler != null) {
-			//Contains a list of commands + a Default item
+		if (defaultHandler != null) {
+			// Contains a list of commands + a Default item
 			List<Object> menuContents = new LinkedList<Object>(content);
 
 			PopupMenu submenu = new PopupMenu(convertToDefault(content), new CommandLabelProvider());
@@ -128,13 +128,13 @@ public class SelectAndExecuteCommand extends PopupMenuCommand {
 
 	/**
 	 * Adds a "Set as default" behavior to a list of commands
-	 * 
+	 *
 	 * @param commands
 	 * @return
 	 */
 	protected List<Command> convertToDefault(List<Command> commands) {
 		List<Command> result = new ArrayList<Command>(commands.size());
-		for(Command command : commands) {
+		for (Command command : commands) {
 			final Command commandToExecute = command;
 			CompoundCommand compound = new CompoundCommand(commandToExecute.getLabel());
 			compound.add(commandToExecute);
@@ -155,18 +155,18 @@ public class SelectAndExecuteCommand extends PopupMenuCommand {
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, org.eclipse.core.runtime.IAdaptable info) throws ExecutionException {
 		CommandResult cmdResult = super.doExecuteWithResult(progressMonitor, info);
-		if(!cmdResult.getStatus().isOK()) {
-			if(cmdResult.getStatus().getSeverity() != IStatus.CANCEL) {
+		if (!cmdResult.getStatus().isOK()) {
+			if (cmdResult.getStatus().getSeverity() != IStatus.CANCEL) {
 				Activator.log.error(cmdResult.getStatus().getException());
 			}
 			return cmdResult;
 		}
 
 		Object returnValue = cmdResult.getReturnValue();
-		if(returnValue instanceof List<?>) {
-			_selectedCmd = (Command)((List<?>)returnValue).get(((List<?>)returnValue).size() - 1); //Returns the last command
+		if (returnValue instanceof List<?>) {
+			_selectedCmd = (Command) ((List<?>) returnValue).get(((List<?>) returnValue).size() - 1); // Returns the last command
 		} else {
-			_selectedCmd = (Command)cmdResult.getReturnValue();
+			_selectedCmd = (Command) cmdResult.getReturnValue();
 		}
 		Assert.isTrue(_selectedCmd != null && _selectedCmd.canExecute());
 		_selectedCmd.execute();
@@ -177,7 +177,7 @@ public class SelectAndExecuteCommand extends PopupMenuCommand {
 	@Override
 	protected CommandResult doUndoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
-		if(_selectedCmd != null && _selectedCmd.canUndo()) {
+		if (_selectedCmd != null && _selectedCmd.canUndo()) {
 			_selectedCmd.undo();
 		}
 		return super.doUndoWithResult(progressMonitor, info);
@@ -186,7 +186,7 @@ public class SelectAndExecuteCommand extends PopupMenuCommand {
 	@Override
 	protected CommandResult doRedoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
-		if(_selectedCmd != null && CommandUtilities.canRedo(_selectedCmd)) {
+		if (_selectedCmd != null && CommandUtilities.canRedo(_selectedCmd)) {
 			_selectedCmd.redo();
 		}
 		return super.doRedoWithResult(progressMonitor, info);

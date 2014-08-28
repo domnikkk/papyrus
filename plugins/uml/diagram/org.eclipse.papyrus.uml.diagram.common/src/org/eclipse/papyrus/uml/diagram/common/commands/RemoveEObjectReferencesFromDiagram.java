@@ -27,7 +27,7 @@ import org.eclipse.papyrus.uml.diagram.common.util.MultiDiagramUtil;
 // TODO: Auto-generated Javadoc
 /**
  * The Class RemoveEObjectReferencesFromDiagram.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  */
 public class RemoveEObjectReferencesFromDiagram extends AbstractTransactionalCommand {
@@ -40,13 +40,13 @@ public class RemoveEObjectReferencesFromDiagram extends AbstractTransactionalCom
 
 	/**
 	 * Instantiates a new removes the e object references from diagram.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 * @param eObjects
-	 *        the e objects
+	 *            the e objects
 	 */
 	public RemoveEObjectReferencesFromDiagram(TransactionalEditingDomain domain, Diagram diagram, List<EObject> eObjects) {
 		super(domain, "Add EObject references to Diagram", null);
@@ -56,7 +56,7 @@ public class RemoveEObjectReferencesFromDiagram extends AbstractTransactionalCom
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.operations.AbstractOperation#canExecute()
 	 */
 	@Override
@@ -66,7 +66,7 @@ public class RemoveEObjectReferencesFromDiagram extends AbstractTransactionalCom
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.emf.commands.core.command.
 	 * AbstractTransactionalCommand#
 	 * doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
@@ -74,7 +74,7 @@ public class RemoveEObjectReferencesFromDiagram extends AbstractTransactionalCom
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		for(EObject eObject : eObjects) {
+		for (EObject eObject : eObjects) {
 			MultiDiagramUtil.RemoveEAnnotationReferenceFromDiagram(diagram, eObject);
 		}
 		return CommandResult.newOKCommandResult();

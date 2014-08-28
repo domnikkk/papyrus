@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,7 +47,7 @@ public class ViewerSearchService extends AbstractViewerSearcher implements IServ
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#init(org.eclipse.papyrus.infra.core.services.ServicesRegistry)
-	 * 
+	 *
 	 * @param servicesRegistry
 	 * @throws ServiceException
 	 */
@@ -58,7 +58,7 @@ public class ViewerSearchService extends AbstractViewerSearcher implements IServ
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#startService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 
@@ -70,29 +70,29 @@ public class ViewerSearchService extends AbstractViewerSearcher implements IServ
 
 	/**
 	 * Parses the available viewerSearcher from the extension point.
-	 * 
+	 *
 	 * @param configurations
-	 *        The extension point IConfigurationElements
+	 *            The extension point IConfigurationElements
 	 */
 	private void readViewerSearchers(IConfigurationElement[] configurations) {
 		viewerSearchers.clear();
 
-		for(IConfigurationElement config : configurations) {
+		for (IConfigurationElement config : configurations) {
 			try {
-				if("viewerSearcher".equals(config.getName())) { //$NON-NLS-1$
+				if ("viewerSearcher".equals(config.getName())) { //$NON-NLS-1$
 					String viewerSearcherId = config.getAttribute(VIEWER_SEARCHER_ID);
-					if(viewerSearcherId == null) {
+					if (viewerSearcherId == null) {
 						Activator.log.warn(Messages.ViewerSearcherService_2 + config.getContributor() + Messages.ViewerSearcherService_3 + EXTENSION_ID + Messages.ViewerSearcherService_4 + VIEWER_SEARCHER_ID + Messages.ViewerSearcherService_5);
 						continue;
 					}
 
-					IViewerSearcher viewerSearcherClass = (IViewerSearcher)config.createExecutableExtension(VIEWER_SEARCHER_CLASS);
-					if(viewerSearcherClass == null) {
+					IViewerSearcher viewerSearcherClass = (IViewerSearcher) config.createExecutableExtension(VIEWER_SEARCHER_CLASS);
+					if (viewerSearcherClass == null) {
 						Activator.log.warn(Messages.ViewerSearcherService_6 + config.getContributor() + Messages.ViewerSearcherService_7 + EXTENSION_ID + Messages.ViewerSearcherService_8 + VIEWER_SEARCHER_CLASS + Messages.ViewerSearcherService_9);
 						continue;
 					}
 
-					if(viewerSearchers.containsKey(viewerSearcherId)) {
+					if (viewerSearchers.containsKey(viewerSearcherId)) {
 						Activator.log.warn(Messages.ViewerSearcherService_10 + viewerSearcherId + Messages.ViewerSearcherService_11);
 						continue;
 					}
@@ -108,7 +108,7 @@ public class ViewerSearchService extends AbstractViewerSearcher implements IServ
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#disposeService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 
@@ -119,9 +119,9 @@ public class ViewerSearchService extends AbstractViewerSearcher implements IServ
 
 	/**
 	 * Collects viewers from the difference viewerSearcher contributors
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.viewersearch.impl.AbstractViewerSearcher#getViewers(java.util.Collection, java.util.Collection)
-	 * 
+	 *
 	 * @param modelElements
 	 * @param models
 	 * @return
@@ -131,14 +131,14 @@ public class ViewerSearchService extends AbstractViewerSearcher implements IServ
 	public Map<Object, Map<Object, Object>> getViewers(Collection<Object> modelElements, Collection<ModelSet> models) {
 		Map<Object, Map<Object, Object>> results = new HashMap<Object, Map<Object, Object>>();
 
-		for(String key : viewerSearchers.keySet()) {
+		for (String key : viewerSearchers.keySet()) {
 			IViewerSearcher viewerSearcher = viewerSearchers.get(key);
 
 			Map<Object, Map<Object, Object>> subResults = viewerSearcher.getViewers(modelElements, models);
-			if(subResults != null) {
-				for(Object viewer : subResults.keySet()) {
+			if (subResults != null) {
+				for (Object viewer : subResults.keySet()) {
 
-					if(results.containsKey(viewer)) {
+					if (results.containsKey(viewer)) {
 						Map<Object, Object> viewMappings = subResults.get(viewer);
 						Map<Object, Object> resultViewMappings = results.get(viewer);
 						resultViewMappings.putAll(viewMappings);

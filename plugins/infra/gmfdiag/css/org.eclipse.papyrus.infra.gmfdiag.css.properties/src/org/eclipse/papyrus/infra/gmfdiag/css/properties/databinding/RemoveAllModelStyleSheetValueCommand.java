@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,6 @@ import java.util.Collection;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -24,9 +23,9 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StyleSheetReference;
 
 /**
- * 
+ *
  * Command to remove all styleSheets from the resource.
- * 
+ *
  * @author Mickael ADAM
  *
  */
@@ -45,11 +44,11 @@ public class RemoveAllModelStyleSheetValueCommand extends RecordingCommand {
 	 * Constructor.
 	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param resource
-	 *        the resource
+	 *            the resource
 	 * @param values
-	 *        the values
+	 *            the values
 	 */
 	public RemoveAllModelStyleSheetValueCommand(TransactionalEditingDomain domain, Resource resource, Collection<?> values) {
 		super(domain);
@@ -64,16 +63,16 @@ public class RemoveAllModelStyleSheetValueCommand extends RecordingCommand {
 	 */
 	@Override
 	public void doExecute() {
-		for(Object value : values) {
-			if(value instanceof StyleSheetReference) {
-				StyleSheetReference styleSheet = (StyleSheetReference)value;
+		for (Object value : values) {
+			if (value instanceof StyleSheetReference) {
+				StyleSheetReference styleSheet = (StyleSheetReference) value;
 
 				// Create a request to delete the styleSheet
-				DestroyElementRequest request = new DestroyElementRequest((TransactionalEditingDomain)domain, (EObject)styleSheet, false);
+				DestroyElementRequest request = new DestroyElementRequest(domain, styleSheet, false);
 				// Get the command to delete the styleSheet
 				DestroyElementCommand command = new DestroyElementCommand(request);
 				try {
-					//execute command
+					// execute command
 					command.execute(new NullProgressMonitor(), null);
 				} catch (ExecutionException e) {
 					e.printStackTrace();

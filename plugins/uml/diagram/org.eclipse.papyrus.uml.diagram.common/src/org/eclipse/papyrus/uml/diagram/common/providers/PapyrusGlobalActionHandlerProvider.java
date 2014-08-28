@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.ui.IWorkbenchPart;
 /**
  * this is the provider is charge to give the handler in order to have the
  * functionnality cut copy paste
- * 
+ *
  */
 public class PapyrusGlobalActionHandlerProvider extends AbstractGlobalActionHandlerProvider {
 
@@ -45,16 +45,17 @@ public class PapyrusGlobalActionHandlerProvider extends AbstractGlobalActionHand
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.action.global.
 	 * IGlobalActionHandlerProvider
 	 * #getGlobalActionHandler(org.eclipse.gmf.runtime.common
 	 * .ui.services.action.global.IGlobalActionHandlerContext)
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public IGlobalActionHandler getGlobalActionHandler(final IGlobalActionHandlerContext context) {
 		/* create the handler */
-		if(!getHandlerList().containsKey(context.getActivePart())) {
+		if (!getHandlerList().containsKey(context.getActivePart())) {
 			getHandlerList().put(context.getActivePart(), new PapyrusDiagramGlobalActionHandler());
 			/*
 			 * register as a part listener so that the cache can be cleared when
@@ -67,6 +68,7 @@ public class PapyrusGlobalActionHandlerProvider extends AbstractGlobalActionHand
 				/**
 				 * @see org.eclipse.ui.IPartListener#partActivated(IWorkbenchPart)
 				 */
+				@Override
 				public void partActivated(IWorkbenchPart part) {
 					// NULL implementation
 				}
@@ -74,6 +76,7 @@ public class PapyrusGlobalActionHandlerProvider extends AbstractGlobalActionHand
 				/**
 				 * @see org.eclipse.ui.IPartListener#partBroughtToTop(IWorkbenchPart)
 				 */
+				@Override
 				public void partBroughtToTop(IWorkbenchPart part) {
 					// NULL implementation
 				}
@@ -81,9 +84,10 @@ public class PapyrusGlobalActionHandlerProvider extends AbstractGlobalActionHand
 				/**
 				 * @see org.eclipse.ui.IPartListener#partClosed(IWorkbenchPart)
 				 */
+				@Override
 				public void partClosed(IWorkbenchPart part) {
 					/* remove the cache associated with the part */
-					if(part != null && part == localPart && getHandlerList().containsKey(part)) {
+					if (part != null && part == localPart && getHandlerList().containsKey(part)) {
 						getHandlerList().remove(part);
 						localPart.getSite().getPage().removePartListener(this);
 						localPart = null;
@@ -93,6 +97,7 @@ public class PapyrusGlobalActionHandlerProvider extends AbstractGlobalActionHand
 				/**
 				 * @see org.eclipse.ui.IPartListener#partDeactivated(IWorkbenchPart)
 				 */
+				@Override
 				public void partDeactivated(IWorkbenchPart part) {
 					// NULL implementation
 				}
@@ -100,17 +105,18 @@ public class PapyrusGlobalActionHandlerProvider extends AbstractGlobalActionHand
 				/**
 				 * @see org.eclipse.ui.IPartListener#partOpened(IWorkbenchPart)
 				 */
+				@Override
 				public void partOpened(IWorkbenchPart part) {
 					// NULL implementation
 				}
 			});
 		}
-		return (DiagramGlobalActionHandler)getHandlerList().get(context.getActivePart());
+		return (DiagramGlobalActionHandler) getHandlerList().get(context.getActivePart());
 	}
 
 	/**
 	 * Returns the handlerList.
-	 * 
+	 *
 	 * @return Hashtable
 	 */
 	@SuppressWarnings("rawtypes")

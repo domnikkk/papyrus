@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,32 +33,32 @@ import org.eclipse.uml2.uml.Stereotype;
 public class AttributeMatchLabelProvider implements IFilteredLabelProvider {
 
 	public Image getImage(Object element) {
-		if(element instanceof AttributeMatch) {
+		if (element instanceof AttributeMatch) {
 			LabelProviderService service = new LabelProviderServiceImpl();
 			try {
 				service.startService();
-				return service.getLabelProvider().getImage(((AttributeMatch)element).getMetaAttribute());
+				return service.getLabelProvider().getImage(((AttributeMatch) element).getMetaAttribute());
 			} catch (ServiceException e) {
-				Activator.log.warn(Messages.AttributeMatchLabelProvider_0 + ((AttributeMatch)element).getMetaAttribute());
+				Activator.log.warn(Messages.AttributeMatchLabelProvider_0 + ((AttributeMatch) element).getMetaAttribute());
 			}
 		}
 		return null;
 	}
 
 	private String printResult(String sectionThatMatch, String value, int offset, int lenght, String attributeName) {
-		return "\"" + sectionThatMatch + "\"" + Messages.AttributeMatchLabelProvider_3 + "\"" + value + "\" [" + offset + "," + (offset + lenght) + "] (" + attributeName + Messages.AttributeMatchLabelProvider_8 + ")"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$ 
+		return "\"" + sectionThatMatch + "\"" + Messages.AttributeMatchLabelProvider_3 + "\"" + value + "\" [" + offset + "," + (offset + lenght) + "] (" + attributeName + Messages.AttributeMatchLabelProvider_8 + ")"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$
 	}
 
 	public String getText(Object element) {
 
-		if(element instanceof AttributeMatch) {
-			AttributeMatch attributeMatch = ((AttributeMatch)element);
-			if((attributeMatch).getSource() instanceof EObject) {
-				EObject target = (EObject)attributeMatch.getSource();
-				if(attributeMatch.getMetaAttribute() instanceof EAttribute) {
-					EAttribute source = (EAttribute)attributeMatch.getMetaAttribute();
-					if(target.eGet(source) instanceof String) {
-						String value = (String)target.eGet(source);
+		if (element instanceof AttributeMatch) {
+			AttributeMatch attributeMatch = ((AttributeMatch) element);
+			if ((attributeMatch).getSource() instanceof EObject) {
+				EObject target = (EObject) attributeMatch.getSource();
+				if (attributeMatch.getMetaAttribute() instanceof EAttribute) {
+					EAttribute source = (EAttribute) attributeMatch.getMetaAttribute();
+					if (target.eGet(source) instanceof String) {
+						String value = (String) target.eGet(source);
 						int end = attributeMatch.getOffset() + attributeMatch.getLength();
 						return printResult(value.substring(attributeMatch.getOffset(), end), value, attributeMatch.getOffset(), attributeMatch.getLength(), source.getName());
 
@@ -67,13 +67,13 @@ public class AttributeMatchLabelProvider implements IFilteredLabelProvider {
 						int end = attributeMatch.getOffset() + attributeMatch.getLength();
 						return printResult(value.substring(attributeMatch.getOffset(), end), value, attributeMatch.getOffset(), attributeMatch.getLength(), source.getName());
 					}
-				} else if(attributeMatch.getMetaAttribute() instanceof Property) {
+				} else if (attributeMatch.getMetaAttribute() instanceof Property) {
 
-					Property source = (Property)attributeMatch.getMetaAttribute();
+					Property source = (Property) attributeMatch.getMetaAttribute();
 					Class containingClass = source.getClass_();
-					if(containingClass instanceof Stereotype) {
-						if(target instanceof Element) {
-							String value = getStringValueOfProperty(((Element)target), (Stereotype)containingClass, (Property)attributeMatch.getMetaAttribute());
+					if (containingClass instanceof Stereotype) {
+						if (target instanceof Element) {
+							String value = getStringValueOfProperty(((Element) target), (Stereotype) containingClass, (Property) attributeMatch.getMetaAttribute());
 							return printResult(value.substring(attributeMatch.getOffset(), attributeMatch.getLength()), value, attributeMatch.getOffset(), attributeMatch.getLength(), source.getName());
 
 						}
@@ -104,7 +104,7 @@ public class AttributeMatchLabelProvider implements IFilteredLabelProvider {
 	}
 
 	public boolean accept(Object element) {
-		if(element instanceof AttributeMatch) {
+		if (element instanceof AttributeMatch) {
 			return true;
 
 		}
@@ -113,10 +113,10 @@ public class AttributeMatchLabelProvider implements IFilteredLabelProvider {
 
 	private String getStringValueOfProperty(Element element, Stereotype stereotype, Property property) {
 		Object value = element.getValue(stereotype, property.getName());
-		if(value instanceof String) {
-			return (String)value;
-		} else if(value instanceof EnumerationLiteral) {
-			return ((EnumerationLiteral)value).getName();
+		if (value instanceof String) {
+			return (String) value;
+		} else if (value instanceof EnumerationLiteral) {
+			return ((EnumerationLiteral) value).getName();
 		} else {
 			return String.valueOf(value);
 		}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) Vincent.Lorenzo@cea.fr - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.utils;
 
@@ -24,48 +24,48 @@ import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 
 /**
- * 
+ *
  * This class provides useful method to get an unused name for a new editor
- * 
+ *
  */
 public class EditorNameInitializer {
 
 	private EditorNameInitializer() {
-		//to prenvent instanciation
+		// to prenvent instanciation
 	}
 
 	/**
-	 * 
+	 *
 	 * @param editorModelEClass
-	 *        the eclass of the model of the editor
+	 *            the eclass of the model of the editor
 	 * @param nameFeature
-	 *        the feature name
+	 *            the feature name
 	 * @param wantedNameWithoutIndex
-	 *        the wantedname for the new editor
+	 *            the wantedname for the new editor
 	 * @param context
-	 *        the context of the editor
+	 *            the context of the editor
 	 * @return
 	 *         the name for this editor
 	 */
 	public static final String getNameWithIncrement(final EClass editorModelEClass, final EStructuralFeature nameFeature, final String wantedNameWithoutIndex, final EObject context) {
-		//a set of the existing index for the wantedName
+		// a set of the existing index for the wantedName
 		final SortedSet<Integer> existingIndex = new TreeSet<Integer>();
 		final ECrossReferenceAdapter crossRef = ECrossReferenceAdapter.getCrossReferenceAdapter(context);
 		final Collection<Setting> crossReference = crossRef.getNonNavigableInverseReferences(context, true);
-		for(final Setting set : crossReference) {
+		for (final Setting set : crossReference) {
 			final EObject eobject = set.getEObject();
-			if(eobject.eClass() == editorModelEClass) {
-				if(nameFeature != null) {
+			if (eobject.eClass() == editorModelEClass) {
+				if (nameFeature != null) {
 					final Object currentName = eobject.eGet(nameFeature);
-					if(currentName instanceof String) {
-						final String aName = (String)currentName;
-						if(aName.contains(wantedNameWithoutIndex)) {
+					if (currentName instanceof String) {
+						final String aName = (String) currentName;
+						if (aName.contains(wantedNameWithoutIndex)) {
 							final String lastChars = aName.substring(wantedNameWithoutIndex.length(), aName.length());
 							try {
 								final Integer value = Integer.parseInt(lastChars);
 								existingIndex.add(value);
 							} catch (final Exception e) {
-								//nothing to do
+								// nothing to do
 							}
 						}
 					}
@@ -73,7 +73,7 @@ public class EditorNameInitializer {
 			}
 		}
 		int index = 0;
-		if(!existingIndex.isEmpty()) {
+		if (!existingIndex.isEmpty()) {
 			index = existingIndex.last().intValue() + 1;
 		}
 		return wantedNameWithoutIndex + String.valueOf(index);

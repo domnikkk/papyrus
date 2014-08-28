@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,20 +15,13 @@ package org.eclipse.papyrus.uml.diagram.sequence.edit.policies;
 
 import java.util.List;
 
-import org.eclipse.draw2d.FigureListener;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.LayoutListener;
-import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.command.CompoundCommand;
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.ExposeHelper;
-import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.commands.SetBoundsCommand;
 import org.eclipse.gmf.runtime.notation.Bounds;
@@ -50,15 +43,15 @@ public class CombinedFragmentHeadImpactLayoutEditPolicy extends AbstractHeadImpa
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.policies.AbstractHeadImpactLayoutEditPolicy#getHeadHeight()
-	 * 
+	 *
 	 * @return
 	 */
 
 	@Override
 	protected int getHeadHeight() {
 		IFigure primaryShape = getPrimaryShape();
-		if(primaryShape instanceof StereotypeInteractionFigure) {
-			IFigure headContainer = ((StereotypeInteractionFigure)primaryShape).getHeaderLabel().getParent();
+		if (primaryShape instanceof StereotypeInteractionFigure) {
+			IFigure headContainer = ((StereotypeInteractionFigure) primaryShape).getHeaderLabel().getParent();
 			Rectangle boundsRect = getBoundsRect();
 			return headContainer.getPreferredSize(boundsRect.width, -1).height;
 		}
@@ -67,43 +60,44 @@ public class CombinedFragmentHeadImpactLayoutEditPolicy extends AbstractHeadImpa
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.policies.AbstractHeadImpactLayoutEditPolicy#doImpactLayout(int)
-	 * 
+	 *
 	 * @param resizeDelta
 	 */
 
 	@Override
 	protected void doImpactLayout(int resizeDelta) {
 		CompoundCommand commands = new CompoundCommand();
-		CombinedFragmentEditPart host = (CombinedFragmentEditPart)getHost();
-		//1. resize the first operand.
-		CombinedFragmentCombinedFragmentCompartmentEditPart compartment = (CombinedFragmentCombinedFragmentCompartmentEditPart)host.getPrimaryChildEditPart();
+		CombinedFragmentEditPart host = (CombinedFragmentEditPart) getHost();
+		// 1. resize the first operand.
+		CombinedFragmentCombinedFragmentCompartmentEditPart compartment = (CombinedFragmentCombinedFragmentCompartmentEditPart) host.getPrimaryChildEditPart();
 		List children = compartment.getChildren();
-		if(!children.isEmpty()) {
+		if (!children.isEmpty()) {
 			Object child = children.get(0);
-			if(child instanceof InteractionOperandEditPart) {
-				InteractionOperandEditPart operand = (InteractionOperandEditPart)child;
-				Node shape = (Node)operand.getNotationView();
-				Bounds bounds = (Bounds)shape.getLayoutConstraint();
+			if (child instanceof InteractionOperandEditPart) {
+				InteractionOperandEditPart operand = (InteractionOperandEditPart) child;
+				Node shape = (Node) operand.getNotationView();
+				Bounds bounds = (Bounds) shape.getLayoutConstraint();
 				Dimension size = new Dimension(bounds.getWidth(), bounds.getHeight()).expand(0, -resizeDelta);
 				Rectangle newBounds = new Rectangle(new Point(bounds.getX(), bounds.getY() + resizeDelta), size);
 				commands.appendIfCanExecute(new GMFtoEMFCommandWrapper(new SetBoundsCommand(getEditingDomain(), "", operand, newBounds)));
 				Command cmd = OperandBoundsComputeHelper.getShiftEnclosedFragmentsCommand(operand, newBounds, resizeDelta);
-				if(cmd != null) {
+				if (cmd != null) {
 					commands.appendIfCanExecute(new GEFtoEMFCommandWrapper(cmd));
 				}
 			}
 		}
-		if(!commands.isEmpty() && commands.canExecute()) {
+		if (!commands.isEmpty() && commands.canExecute()) {
 			CommandHelper.executeCommandWithoutHistory(getEditingDomain(), commands, true);
 		}
-		for(Object object : children) {
-			EditPart part = (EditPart)object;
+		for (Object object : children) {
+			EditPart part = (EditPart) object;
 			EditPart current = part.getParent();
 			while (current != null) {
 				ExposeHelper helper = (ExposeHelper) current
 						.getAdapter(ExposeHelper.class);
-				if (helper != null)
+				if (helper != null) {
 					helper.exposeDescendant(part);
+				}
 				current = current.getParent();
 			}
 		}

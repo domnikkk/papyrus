@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,16 +20,16 @@ import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
 /**
- * 
+ *
  * Content provider for the types available
- * 
+ *
  */
 public class TypesContentProvider implements ITreeContentProvider {
 
 	public Object[] getElements(Object inputElement) {
 
-		if(inputElement instanceof List) {
-			return ((List<EObject>)inputElement).toArray();
+		if (inputElement instanceof List) {
+			return ((List<EObject>) inputElement).toArray();
 		}
 
 		return null;

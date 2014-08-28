@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2011-2012 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Gregoire Dupe (Mia-Software) - Design
  *    Nicolas Guyomar (Mia-Software) - Implementation
- *    Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ *    Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  *    Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  *    Gregoire Dupe (Mia-Software) - Bug 366055 - NavigationQuery
  *    Gregoire Dupe (Mia-Software) - Bug 369673 - [Facet] IsOneOfQuery
@@ -18,18 +18,14 @@
  *    Gregoire Dupe (Mia-software) - Bug 364325 - [Restructuring] The user must be able to navigate into a model using the Facet.
  *    Nicolas Bros (Mia-Software) - Bug 372626 - [Facet] Aggregates
  *    Nicolas Bros (Mia-Software) - Bug 376941 - [EFacet] Facet operation arguments in Facet model
- * 
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.impl.QueryImpl;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IntegerLiteralQuery;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryPackage;
 
@@ -40,7 +36,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryP
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.IntegerLiteralQueryImpl#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.IntegerLiteralQueryImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +47,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -61,6 +58,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -70,6 +68,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected IntegerLiteralQueryImpl() {
@@ -79,6 +78,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -89,6 +89,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public int getValue() {
@@ -98,25 +99,28 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setValue(int newValue) {
 		int oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, QueryPackage.INTEGER_LITERAL_QUERY__VALUE, oldValue, value));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case QueryPackage.INTEGER_LITERAL_QUERY__VALUE:
-				return getValue();
+		case QueryPackage.INTEGER_LITERAL_QUERY__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -124,14 +128,15 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case QueryPackage.INTEGER_LITERAL_QUERY__VALUE:
-				setValue((Integer)newValue);
-				return;
+		case QueryPackage.INTEGER_LITERAL_QUERY__VALUE:
+			setValue((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -139,14 +144,15 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case QueryPackage.INTEGER_LITERAL_QUERY__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		case QueryPackage.INTEGER_LITERAL_QUERY__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -154,13 +160,14 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case QueryPackage.INTEGER_LITERAL_QUERY__VALUE:
-				return value != VALUE_EDEFAULT;
+		case QueryPackage.INTEGER_LITERAL_QUERY__VALUE:
+			return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -168,11 +175,14 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: "); //$NON-NLS-1$
@@ -181,4 +191,4 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 		return result.toString();
 	}
 
-} //IntegerLiteralQueryImpl
+} // IntegerLiteralQueryImpl

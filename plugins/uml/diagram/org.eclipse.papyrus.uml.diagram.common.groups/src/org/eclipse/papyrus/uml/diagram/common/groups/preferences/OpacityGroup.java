@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
  * Group use to set the opacity of a compartment of a group
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class OpacityGroup extends AbstractGroup {
 
@@ -44,9 +44,9 @@ public class OpacityGroup extends AbstractGroup {
 
 	/**
 	 * Creates the content.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	public void createContent(Composite parent) {
 		Group visibilityGroup = new Group(parent, SWT.SCROLL_PAGE);

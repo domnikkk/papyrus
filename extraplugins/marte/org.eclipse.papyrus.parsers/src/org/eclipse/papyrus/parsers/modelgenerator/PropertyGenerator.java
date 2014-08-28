@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,14 +29,14 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.TemplateableElement;
 
 /**
- * 
- * 
+ *
+ *
  * @author Remi SCHNEKENBURGER CEA-List
  */
 public class PropertyGenerator {
 
 	/**
-	 * 
+	 *
 	 */
 	private Property property;
 
@@ -45,9 +45,9 @@ public class PropertyGenerator {
 
 	/**
 	 * Default Constructor.
-	 * 
+	 *
 	 * @param property
-	 *        the property to modify
+	 *            the property to modify
 	 */
 	public PropertyGenerator(Property property) {
 		this.property = property;
@@ -56,9 +56,9 @@ public class PropertyGenerator {
 
 	/**
 	 * Parse the label of the property and modify property attributes.
-	 * 
+	 *
 	 * @param label
-	 *        the label that defines the property
+	 *            the label that defines the property
 	 */
 	public void parseAndModifyProperty(String label) {
 		try {
@@ -69,20 +69,20 @@ public class PropertyGenerator {
 		} catch (RecognitionException e) {
 			PapyrusParsersPlugin.getDefault().getLog().log(
 					new Status(IStatus.ERROR, PapyrusParsersPlugin.PLUGIN_ID, IStatus.OK,
-					"could not parse the property label: " + label, e));
+							"could not parse the property label: " + label, e));
 		} catch (RuntimeException e) {
 			PapyrusParsersPlugin.getDefault().getLog().log(
 					new Status(IStatus.ERROR, PapyrusParsersPlugin.PLUGIN_ID, IStatus.OK,
-					"could not parse the property label: " + label, e));
+							"could not parse the property label: " + label, e));
 		}
 	}
 
 	/**
 	 * Parse the label of the property and validate it.
-	 * 
+	 *
 	 * @param label
-	 *        the label that defines the property
-	 * 
+	 *            the label that defines the property
+	 *
 	 * @return null if label is valid, else return the message that describes the error.
 	 */
 	public String parseAndValidateProperty(String label) {
@@ -95,7 +95,7 @@ public class PropertyGenerator {
 		try {
 			parser.label();
 		} catch (MismatchedTokenException e) {
-			//System.err.println("context:" + parser.getContext());
+			// System.err.println("context:" + parser.getContext());
 		} catch (RecognitionException e) {
 			reporter.setMessage(e.getLocalizedMessage());
 		} catch (RuntimeException e) {
@@ -106,10 +106,10 @@ public class PropertyGenerator {
 
 	/**
 	 * Parse the label of the property, and generates an exception if does not validate.
-	 * 
+	 *
 	 * @param label
-	 *        the label that defines the property
-	 * 
+	 *            the label that defines the property
+	 *
 	 * @return null if label is valid, else return the message that describes the error.
 	 */
 	public String parseUndefinedPropertyType(String label) {
@@ -125,18 +125,19 @@ public class PropertyGenerator {
 		} catch (RecognitionException re) {
 
 		} catch (RuntimeException tse) {
-			if(tse instanceof TypeRecognitionException)
-				return ((TypeRecognitionException)tse).getTypeName();
+			if (tse instanceof TypeRecognitionException) {
+				return ((TypeRecognitionException) tse).getTypeName();
+			}
 		}
 		return null;
 	}
 
 	/**
 	 * Parse the label of the property, and generates an exception if does not validate.
-	 * 
+	 *
 	 * @param label
-	 *        the label that defines the property
-	 * 
+	 *            the label that defines the property
+	 *
 	 * @return null if label is valid, else return the message that describes the error.
 	 */
 	public TemplateableElement parseUnboundPropertyType(String label) {
@@ -152,8 +153,9 @@ public class PropertyGenerator {
 		} catch (RecognitionException re) {
 
 		} catch (RuntimeException re) {
-			if(re instanceof UnboundTemplateRecognitionException)
-				return ((UnboundTemplateRecognitionException)re).getTemplate();
+			if (re instanceof UnboundTemplateRecognitionException) {
+				return ((UnboundTemplateRecognitionException) re).getTemplate();
+			}
 		}
 		return null;
 	}

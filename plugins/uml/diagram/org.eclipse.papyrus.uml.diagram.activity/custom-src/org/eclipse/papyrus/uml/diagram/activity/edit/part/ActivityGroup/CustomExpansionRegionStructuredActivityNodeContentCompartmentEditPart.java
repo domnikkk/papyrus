@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ import org.eclipse.papyrus.uml.diagram.common.service.AspectUnspecifiedTypeCreat
 
 /**
  * Set in order to have Generation Gap Pattern.
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class CustomExpansionRegionStructuredActivityNodeContentCompartmentEditPart extends ExpansionRegionStructuredActivityNodeContentCompartmentEditPart implements IGroupCompartmentEditPart {
 
@@ -42,7 +42,7 @@ public class CustomExpansionRegionStructuredActivityNodeContentCompartmentEditPa
 	 */
 	@Override
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure)super.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
 		// remove the top border
 		result.setBorder(null);
@@ -56,7 +56,7 @@ public class CustomExpansionRegionStructuredActivityNodeContentCompartmentEditPa
 	public boolean isSelectable() {
 		return false;
 	}
-	
+
 	@Override
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof AspectUnspecifiedTypeCreationTool.CreateAspectUnspecifiedTypeRequest) {
@@ -67,16 +67,16 @@ public class CustomExpansionRegionStructuredActivityNodeContentCompartmentEditPa
 		}
 		return super.getTargetEditPart(request);
 	}
-	
+
 	private boolean areAllNodesAffixed(List<?> types) {
-		for(Object type : types) {
+		for (Object type : types) {
 			if (!isAffixedNodeType(type)) {
 				return false;
 			}
 		}
 		return true;
 	}
-	
+
 	private boolean isAffixedNodeType(Object type) {
 		return UMLElementTypes.ExpansionNode_3074.equals(type) || UMLElementTypes.ExpansionNode_3075.equals(type);
 	}

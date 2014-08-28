@@ -52,7 +52,7 @@ public class OpenElementServiceImpl implements OpenElementService {
 
 	private ServicesRegistry registry;
 
-	//FIXME: This constant should be defined in the papyrus core plugin
+	// FIXME: This constant should be defined in the papyrus core plugin
 	private static final String PAPYRUS_EDITOR_ID = "org.eclipse.papyrus.infra.core.papyrusEditor";
 
 	/**
@@ -66,7 +66,7 @@ public class OpenElementServiceImpl implements OpenElementService {
 	 * {@inheritDoc}
 	 */
 	public void startService() throws ServiceException {
-		//Nothing
+		// Nothing
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class OpenElementServiceImpl implements OpenElementService {
 	 */
 	public IMultiDiagramEditor openElement(EObject viewElement) throws PartInitException, ServiceException {
 		URI pageURI = getPageForViewElement(viewElement);
-		if(pageURI == null) {
+		if (pageURI == null) {
 			return null;
 		}
 
@@ -89,14 +89,14 @@ public class OpenElementServiceImpl implements OpenElementService {
 
 		reveal(editor, viewElement);
 
-		if(editor != null) {
+		if (editor != null) {
 			editor.getEditorSite().getPage().activate(editor);
 		}
 		return editor;
 	}
 
 	protected void reveal(final IMultiDiagramEditor editor, final EObject element) {
-		if(editor != null) {
+		if (editor != null) {
 			Display.getDefault().syncExec(new Runnable() {
 
 				public void run() {
@@ -105,12 +105,12 @@ public class OpenElementServiceImpl implements OpenElementService {
 						ModelSet modelSet = editor.getServicesRegistry().getService(ModelSet.class);
 						EObject elementToReveal = modelSet.getEObject(elementURI, false);
 
-						if(elementToReveal == null) {
+						if (elementToReveal == null) {
 							return;
 						}
 
 						NavigationService navigationService = editor.getServicesRegistry().getService(NavigationService.class);
-						if(navigationService != null) {
+						if (navigationService != null) {
 							navigationService.navigate(elementToReveal);
 						}
 					} catch (ServiceException ex) {
@@ -128,7 +128,7 @@ public class OpenElementServiceImpl implements OpenElementService {
 	public IMultiDiagramEditor openSemanticElement(final EObject semanticElement) throws PartInitException, ServiceException {
 		URI[] pages = getPagesForSemanticElement(semanticElement);
 		IMultiDiagramEditor editor = openSemanticElement(semanticElement, pages);
-		if(editor != null) {
+		if (editor != null) {
 			editor.getEditorSite().getPage().activate(editor);
 		}
 		return editor;
@@ -141,10 +141,10 @@ public class OpenElementServiceImpl implements OpenElementService {
 		URI[] pageURIs = new URI[pages.length];
 		int i = 0;
 
-		for(Object pageElement : pages) {
+		for (Object pageElement : pages) {
 			URI uri = null;
-			if(pageElement instanceof EObject) {
-				uri = EcoreUtil.getURI((EObject)pageElement);
+			if (pageElement instanceof EObject) {
+				uri = EcoreUtil.getURI((EObject) pageElement);
 			}
 			pageURIs[i++] = uri;
 		}
@@ -157,8 +157,8 @@ public class OpenElementServiceImpl implements OpenElementService {
 	private IMultiDiagramEditor openSemanticElement(final EObject semanticElement, URI[] pageURIs) throws ServiceException, PartInitException {
 		IMultiDiagramEditor editor = getCurrentEditor();
 
-		if(editor == null) {
-			//Cannot find the IMultiDiagramEditor: try to open a new one
+		if (editor == null) {
+			// Cannot find the IMultiDiagramEditor: try to open a new one
 			URI diFile = getDiResourceURI(semanticElement);
 			editor = openURIsInNewEditor(diFile, pageURIs);
 		} else {
@@ -167,11 +167,11 @@ public class OpenElementServiceImpl implements OpenElementService {
 			final LinkedHashSet<EObject> pagesToOpen = new LinkedHashSet<EObject>();
 			final LinkedHashSet<EObject> pagesToSelect = new LinkedHashSet<EObject>();
 
-			for(URI pageURI : pageURIs) {
+			for (URI pageURI : pageURIs) {
 				final EObject page = modelSet.getEObject(pageURI, true);
 
-				if(pageManager.allPages().contains(page)) {
-					if(pageManager.isOpen(page)) {
+				if (pageManager.allPages().contains(page)) {
+					if (pageManager.isOpen(page)) {
 						pagesToSelect.add(page);
 					} else {
 						pagesToOpen.add(page);
@@ -179,22 +179,22 @@ public class OpenElementServiceImpl implements OpenElementService {
 				}
 			}
 
-			if(!pagesToOpen.isEmpty()) {
-				for(EObject page : pagesToOpen) {
+			if (!pagesToOpen.isEmpty()) {
+				for (EObject page : pagesToOpen) {
 					pageManager.openPage(page);
 				}
 			}
 
-			//More than one editor can be visible (SashEditor).
-			//We need to select each page
-			for(EObject page : pagesToSelect) {
+			// More than one editor can be visible (SashEditor).
+			// We need to select each page
+			for (EObject page : pagesToSelect) {
 				pageManager.selectPage(page);
 			}
 		}
 
 		reveal(editor, semanticElement);
 
-		if(editor != null) {
+		if (editor != null) {
 			editor.getEditorSite().getPage().activate(editor);
 		}
 
@@ -207,28 +207,28 @@ public class OpenElementServiceImpl implements OpenElementService {
 
 			Collection<EStructuralFeature.Setting> usages = EMFHelper.getUsages(element);
 			List<URI> result = new LinkedList<URI>();
-			for(EStructuralFeature.Setting usage : usages) {
+			for (EStructuralFeature.Setting usage : usages) {
 				EObject referencer = usage.getEObject();
 				do {
-					if(pageManager.allPages().contains(referencer)) {
+					if (pageManager.allPages().contains(referencer)) {
 						result.add(EcoreUtil.getURI(referencer));
 						break;
 					}
-				} while((referencer = referencer.eContainer()) != null);
+				} while ((referencer = referencer.eContainer()) != null);
 			}
 
 			return result.toArray(new URI[result.size()]);
 		} catch (ServiceException ex) {
-			//There is no IPageManager: return all usages' URIs
+			// There is no IPageManager: return all usages' URIs
 			Set<URI> result = new HashSet<URI>();
 			Collection<EStructuralFeature.Setting> usages = EMFHelper.getUsages(element);
-			for(EStructuralFeature.Setting usage : usages) {
+			for (EStructuralFeature.Setting usage : usages) {
 				EObject referencer = usage.getEObject();
 				do {
-					if(!result.add(EcoreUtil.getURI(referencer))) {
-						break; //The result and its parents have already been added to the set
+					if (!result.add(EcoreUtil.getURI(referencer))) {
+						break; // The result and its parents have already been added to the set
 					}
-				} while((referencer = referencer.eContainer()) != null);
+				} while ((referencer = referencer.eContainer()) != null);
 			}
 
 			return result.toArray(new URI[result.size()]);
@@ -236,7 +236,7 @@ public class OpenElementServiceImpl implements OpenElementService {
 	}
 
 	private URI getPageForViewElement(EObject viewElement) {
-		if(viewElement == null) {
+		if (viewElement == null) {
 			return null;
 		}
 
@@ -244,22 +244,22 @@ public class OpenElementServiceImpl implements OpenElementService {
 			IPageManager pageManager = registry.getService(IPageManager.class);
 
 			EObject currentViewElement = viewElement;
-			while(currentViewElement != null) {
-				if(pageManager.allPages().contains(currentViewElement)) {
+			while (currentViewElement != null) {
+				if (pageManager.allPages().contains(currentViewElement)) {
 					break;
 				}
 
 				currentViewElement = currentViewElement.eContainer();
 			}
 
-			if(currentViewElement != null) {
+			if (currentViewElement != null) {
 				return EcoreUtil.getURI(currentViewElement);
 			}
 		} catch (ServiceException ex) {
-			//There is no IPageManager (The editor is not opened yet)
-			//The page is "probably" the root element of the view
+			// There is no IPageManager (The editor is not opened yet)
+			// The page is "probably" the root element of the view
 			EObject rootElement = EcoreUtil.getRootContainer(viewElement);
-			if(rootElement != null) {
+			if (rootElement != null) {
 				return EcoreUtil.getURI(rootElement);
 			}
 		}
@@ -271,7 +271,7 @@ public class OpenElementServiceImpl implements OpenElementService {
 		URI fileURI = uri.trimFileExtension().trimFragment();
 		fileURI = fileURI.appendFileExtension(SashModel.MODEL_FILE_EXTENSION);
 
-		if(!exists(fileURI)) {
+		if (!exists(fileURI)) {
 			Activator.log.warn("The resource doesn't exist: " + fileURI);
 		} else {
 			return fileURI;
@@ -308,18 +308,18 @@ public class OpenElementServiceImpl implements OpenElementService {
 
 	private IMultiDiagramEditor openURI(URI pageURI) throws ServiceException, PartInitException {
 		IMultiDiagramEditor editor = getCurrentEditor();
-		if(editor == null) {
-			//Cannot find the IMultiDiagramEditor: try to open a new one
+		if (editor == null) {
+			// Cannot find the IMultiDiagramEditor: try to open a new one
 			URI diFile = getDiResourceURI(pageURI);
-			editor = openURIsInNewEditor(diFile, new URI[]{ pageURI });
+			editor = openURIsInNewEditor(diFile, new URI[] { pageURI });
 		} else {
 			final IPageManager pageManager = registry.getService(IPageManager.class);
 			ModelSet modelSet = registry.getService(ModelSet.class);
 
 			final EObject page = modelSet.getEObject(pageURI, true);
 
-			if(pageManager.allPages().contains(page)) {
-				if(pageManager.isOpen(page)) {
+			if (pageManager.allPages().contains(page)) {
+				if (pageManager.isOpen(page)) {
 					pageManager.selectPage(page);
 				} else {
 					pageManager.openPage(page);
@@ -333,7 +333,7 @@ public class OpenElementServiceImpl implements OpenElementService {
 	protected IMultiDiagramEditor openURIsInNewEditor(URI diResourceURI, URI[] pageURIs) throws PartInitException {
 		final IEditorInput input = createPapyrusPageInput(diResourceURI, pageURIs);
 
-		if(input == null) {
+		if (input == null) {
 			return null;
 		}
 
@@ -352,8 +352,8 @@ public class OpenElementServiceImpl implements OpenElementService {
 			}
 		});
 
-		if(runnable.getStatus().getSeverity() == IStatus.ERROR) {
-			throw (PartInitException)runnable.getStatus().getException();
+		if (runnable.getStatus().getSeverity() == IStatus.ERROR) {
+			throw (PartInitException) runnable.getStatus().getException();
 		}
 
 		return runnable.getResult();
@@ -362,7 +362,7 @@ public class OpenElementServiceImpl implements OpenElementService {
 	protected IPapyrusPageInput createPapyrusPageInput(URI diResourceURI, URI[] pageURIs) {
 		IFile diFile = null;
 
-		if((diResourceURI != null) && diResourceURI.isPlatformResource()) {
+		if ((diResourceURI != null) && diResourceURI.isPlatformResource()) {
 			diFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(diResourceURI.toPlatformString(true)));
 		}
 
@@ -370,7 +370,7 @@ public class OpenElementServiceImpl implements OpenElementService {
 	}
 
 	protected IMultiDiagramEditor openEditor(IWorkbenchPage workbenchPage, IEditorInput input) throws PartInitException {
-		return (IMultiDiagramEditor)IDE.openEditor(workbenchPage, input, PAPYRUS_EDITOR_ID);
+		return (IMultiDiagramEditor) IDE.openEditor(workbenchPage, input, PAPYRUS_EDITOR_ID);
 	}
 
 }

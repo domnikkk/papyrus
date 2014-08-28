@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,81 +33,81 @@ public class WrappingEObjectEList<E extends RepresentingElement> extends EObject
 	@Override
 	public boolean add(E object) {
 
-		if(!representedElementList.contains(((E)object).get__Represented())) {
-			representedElementList.add((Element)((E)object).get__Represented());
+		if (!representedElementList.contains(object.get__Represented())) {
+			representedElementList.add((Element) object.get__Represented());
 		}
 
-		if(isUnique() && contains(object)) {
+		if (isUnique() && contains(object)) {
 			return false;
 		} else {
 			super.doAddUnique(object);
-			if(hasInverse()) {
+			if (hasInverse()) {
 				inverseAdd(object, null);
 			}
 
 			return true;
 		}
 
-		//		return super.add(object);
+		// return super.add(object);
 	}
 
 	@Override
 	public void add(int index, E e) {
-		if(!representedElementList.contains((e).get__Represented())) {
-			representedElementList.add((Element)(e).get__Represented());
+		if (!representedElementList.contains((e).get__Represented())) {
+			representedElementList.add((Element) (e).get__Represented());
 		}
 
 		super.doAddUnique(index, e);
-		if(hasInverse()) {
+		if (hasInverse()) {
 			inverseAdd(e, null);
 		}
 
-		//		super.add(index, e);
+		// super.add(index, e);
 	}
 
 	@Override
 	public boolean addAll(Collection<? extends E> collection) {
-		for(E e : collection) {
-			if(!representedElementList.contains(e.get__Represented())) {
-				representedElementList.add((Element)e.get__Represented());
+		for (E e : collection) {
+			if (!representedElementList.contains(e.get__Represented())) {
+				representedElementList.add((Element) e.get__Represented());
 			}
 		}
 
-		if(collection.isEmpty()) {
+		if (collection.isEmpty()) {
 			return false;
 		} else {
-			for(E e : collection) {
+			for (E e : collection) {
 				super.doAddUnique(e);
-				if(hasInverse()) {
+				if (hasInverse()) {
 					inverseAdd(e, null);
 				}
 			}
 			return true;
 		}
 
-		//		return super.addAll(collection);
+		// return super.addAll(collection);
 	}
 
 	@Override
 	public boolean addAll(int index, Collection<? extends E> collection) {
-		for(E e : collection) {
-			if(!representedElementList.contains(e.get__Represented())) {
-				representedElementList.add((Element)e.get__Represented());
+		for (E e : collection) {
+			if (!representedElementList.contains(e.get__Represented())) {
+				representedElementList.add((Element) e.get__Represented());
 			}
 		}
 
-		if(collection.isEmpty()) {
+		if (collection.isEmpty()) {
 			return false;
 		} else {
 			int collectionSize = collection.size();
 
 			super.doAddAllUnique(index, collection);
 
-			if(hasInverse()) {
+			if (hasInverse()) {
 				int lastIndex = index + collectionSize;
-				for(int i = index; i < lastIndex; ++i) {
+				for (int i = index; i < lastIndex; ++i) {
 					@SuppressWarnings("unchecked")
-					E object = (E)data[i];
+					E object = (E) data[i];
 					inverseAdd(object, null);
 				}
 			}
@@ -118,51 +118,51 @@ public class WrappingEObjectEList<E extends RepresentingElement> extends EObject
 
 	@Override
 	public boolean remove(Object object) {
-		Object representedElement = ((RepresentingElement)object).get__Represented();
+		Object representedElement = ((RepresentingElement) object).get__Represented();
 		representedElementList.remove(representedElement);
 
-		if(this.contains(object)) {
+		if (this.contains(object)) {
 			E oldObject = doRemove(indexOf(object));
-			if(hasInverse() && oldObject != null) {
+			if (hasInverse() && oldObject != null) {
 				inverseRemove(oldObject, null);
 			}
 			return true;
 		} else {
 			return false;
 		}
-		//		return oldObject;
+		// return oldObject;
 
-		//		return super.remove(object);
+		// return super.remove(object);
 	}
 
 	@Override
 	public E remove(int index) {
-		Object representedElement = ((RepresentingElement)this.get(index)).get__Represented();
+		Object representedElement = ((RepresentingElement) this.get(index)).get__Represented();
 		representedElementList.remove(representedElement);
 
 
 		E oldObject = doRemove(index);
-		if(hasInverse() && oldObject != null) {
+		if (hasInverse() && oldObject != null) {
 			inverseRemove(oldObject, null);
 		}
 		return oldObject;
 
-		//		return super.remove(index);
+		// return super.remove(index);
 	}
 
 	@Override
 	public boolean removeAll(Collection<?> collection) {
-		for(Object object : collection) {
-			Object representedElement = ((RepresentingElement)object).get__Represented();
+		for (Object object : collection) {
+			Object representedElement = ((RepresentingElement) object).get__Represented();
 			representedElementList.remove(representedElement);
 		}
 
 		boolean result = false;
 
-		for(Object object : collection) {
-			if(this.contains(object)) {
+		for (Object object : collection) {
+			if (this.contains(object)) {
 				E oldObject = doRemove(indexOf(object));
-				if(hasInverse() && oldObject != null) {
+				if (hasInverse() && oldObject != null) {
 					inverseRemove(oldObject, null);
 				}
 				result = true;
@@ -170,7 +170,7 @@ public class WrappingEObjectEList<E extends RepresentingElement> extends EObject
 		}
 		return result;
 
-		//		return super.removeAll(collection);
+		// return super.removeAll(collection);
 	}
 
 	@Override
@@ -178,10 +178,10 @@ public class WrappingEObjectEList<E extends RepresentingElement> extends EObject
 
 		representedElementList.clear();
 
-		for(Object object : this) {
-			if(this.contains(object)) {
+		for (Object object : this) {
+			if (this.contains(object)) {
 				E oldObject = doRemove(indexOf(object));
-				if(hasInverse() && oldObject != null) {
+				if (hasInverse() && oldObject != null) {
 					inverseRemove(oldObject, null);
 				}
 
@@ -189,7 +189,7 @@ public class WrappingEObjectEList<E extends RepresentingElement> extends EObject
 		}
 
 
-		//		super.clear();
+		// super.clear();
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,7 +52,7 @@ public class DeferredMoveRequest extends MoveRequest {
 	private Class<? extends EObject> classToCast;
 
 	/**
-	 * 
+	 *
 	 * @param editingDomain
 	 * @param targetContainer
 	 * @param elementsToMove
@@ -62,7 +62,7 @@ public class DeferredMoveRequest extends MoveRequest {
 		this.targetContainer = targetContainer;
 		this.iAdaptableToMove = new HashMap<IAdaptable, Object>();
 		this.classToCast = classToCast;
-		for(Iterator<? extends IAdaptable> i = elementsToMove.iterator(); i.hasNext();) {
+		for (Iterator<? extends IAdaptable> i = elementsToMove.iterator(); i.hasNext();) {
 			this.iAdaptableToMove.put(i.next(), null);
 		}
 	}
@@ -84,14 +84,14 @@ public class DeferredMoveRequest extends MoveRequest {
 
 	@Override
 	public Map getElementsToMove() {
-		if(elementsToMove == null) {
+		if (elementsToMove == null) {
 			elementsToMove = new HashMap<EObject, Object>(iAdaptableToMove.size());
-			for(Entry<IAdaptable, Object> entry : iAdaptableToMove.entrySet()) {
+			for (Entry<IAdaptable, Object> entry : iAdaptableToMove.entrySet()) {
 				IAdaptable key = entry.getKey();
 				Object object = key.getAdapter(classToCast);
-				if(object instanceof EObject) {
-					elementsToMove.put((EObject)object, entry.getValue());
-				} else if(UMLDiagramEditorPlugin.getInstance().isDebugging()) {
+				if (object instanceof EObject) {
+					elementsToMove.put((EObject) object, entry.getValue());
+				} else if (UMLDiagramEditorPlugin.getInstance().isDebugging()) {
 					DebugUtils.getLog().warn("Unable to retrieve the Eobject to move (" + key + ")");
 				}
 			}
@@ -102,9 +102,9 @@ public class DeferredMoveRequest extends MoveRequest {
 	@Override
 	public EObject getTargetContainer() {
 		Object object = targetContainer.getAdapter(classToCast);
-		if(object instanceof EObject) {
-			return (EObject)object;
-		} else if(UMLDiagramEditorPlugin.getInstance().isDebugging()) {
+		if (object instanceof EObject) {
+			return (EObject) object;
+		} else if (UMLDiagramEditorPlugin.getInstance().isDebugging()) {
 			DebugUtils.getLog().warn("Unable to retrieve the Eobject of the target container (" + targetContainer + ")");
 		}
 		return null;

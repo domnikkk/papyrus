@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package javagen.umlparser;
 
@@ -16,9 +16,9 @@ import org.eclipse.uml2.uml.resource.UMLResource;
 
 /**
  * This class is responsible of the life cycle of the model.
- * 
+ *
  * @author dumoulin
- * 
+ *
  */
 public class ModelManager {
 
@@ -41,7 +41,7 @@ public class ModelManager {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param filename
 	 */
 	protected void createModel(String filename) {
@@ -50,7 +50,7 @@ public class ModelManager {
 
 
 		// Register the default resource factory -- only needed for stand-alone!
-		//			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
+		// resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.Factory.Registry.DEFAULT_EXTENSION, UMLResource.Factory.INSTANCE);
 
@@ -64,7 +64,7 @@ public class ModelManager {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param filename
 	 */
 	protected void loadModel(String filename) {
@@ -74,7 +74,7 @@ public class ModelManager {
 
 
 		// Register the default resource factory -- only needed for stand-alone!
-		//		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
+		// resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.Factory.Registry.DEFAULT_EXTENSION, UMLResource.Factory.INSTANCE);
 

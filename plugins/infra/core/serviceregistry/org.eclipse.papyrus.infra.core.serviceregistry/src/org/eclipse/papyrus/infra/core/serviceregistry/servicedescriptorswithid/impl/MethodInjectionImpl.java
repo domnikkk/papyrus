@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.MethodInjection;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage;
 
@@ -18,7 +15,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.MethodInjectionImpl#getMethodName <em>Method Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.MethodInjectionImpl#getMethodName <em>Method Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,6 +26,7 @@ public class MethodInjectionImpl extends AbstractMethodInjectionImpl implements 
 	 * The default value of the '{@link #getMethodName() <em>Method Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMethodName()
 	 * @generated
 	 * @ordered
@@ -39,6 +37,7 @@ public class MethodInjectionImpl extends AbstractMethodInjectionImpl implements 
 	 * The cached value of the '{@link #getMethodName() <em>Method Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMethodName()
 	 * @generated
 	 * @ordered
@@ -48,6 +47,7 @@ public class MethodInjectionImpl extends AbstractMethodInjectionImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MethodInjectionImpl() {
@@ -57,6 +57,7 @@ public class MethodInjectionImpl extends AbstractMethodInjectionImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -67,8 +68,10 @@ public class MethodInjectionImpl extends AbstractMethodInjectionImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getMethodName() {
 		return methodName;
 	}
@@ -76,25 +79,29 @@ public class MethodInjectionImpl extends AbstractMethodInjectionImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setMethodName(String newMethodName) {
 		String oldMethodName = methodName;
 		methodName = newMethodName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorswithidPackage.METHOD_INJECTION__METHOD_NAME, oldMethodName, methodName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.METHOD_INJECTION__METHOD_NAME:
-				return getMethodName();
+		case ServicedescriptorswithidPackage.METHOD_INJECTION__METHOD_NAME:
+			return getMethodName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -102,14 +109,15 @@ public class MethodInjectionImpl extends AbstractMethodInjectionImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.METHOD_INJECTION__METHOD_NAME:
-				setMethodName((String)newValue);
-				return;
+		case ServicedescriptorswithidPackage.METHOD_INJECTION__METHOD_NAME:
+			setMethodName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -117,14 +125,15 @@ public class MethodInjectionImpl extends AbstractMethodInjectionImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.METHOD_INJECTION__METHOD_NAME:
-				setMethodName(METHOD_NAME_EDEFAULT);
-				return;
+		case ServicedescriptorswithidPackage.METHOD_INJECTION__METHOD_NAME:
+			setMethodName(METHOD_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -132,13 +141,14 @@ public class MethodInjectionImpl extends AbstractMethodInjectionImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.METHOD_INJECTION__METHOD_NAME:
-				return METHOD_NAME_EDEFAULT == null ? methodName != null : !METHOD_NAME_EDEFAULT.equals(methodName);
+		case ServicedescriptorswithidPackage.METHOD_INJECTION__METHOD_NAME:
+			return METHOD_NAME_EDEFAULT == null ? methodName != null : !METHOD_NAME_EDEFAULT.equals(methodName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -146,11 +156,14 @@ public class MethodInjectionImpl extends AbstractMethodInjectionImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (methodName: ");
@@ -159,4 +172,4 @@ public class MethodInjectionImpl extends AbstractMethodInjectionImpl implements 
 		return result.toString();
 	}
 
-} //MethodInjectionImpl
+} // MethodInjectionImpl

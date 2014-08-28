@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ public class NewModelStorageProviderRegistry
 		implements Iterable<NewModelStorageProviderRegistry.Descriptor> {
 
 	private static final String EXTPT_ID = Activator.PLUGIN_ID
-		+ ".newModelStorageProviders";
+			+ ".newModelStorageProviders";
 
 	private final List<Descriptor> descriptors = new java.util.ArrayList<Descriptor>();
 
@@ -49,7 +49,7 @@ public class NewModelStorageProviderRegistry
 		this.evaluationService = evaluationService;
 
 		for (IConfigurationElement config : sort(Platform
-			.getExtensionRegistry().getConfigurationElementsFor(EXTPT_ID))) {
+				.getExtensionRegistry().getConfigurationElementsFor(EXTPT_ID))) {
 
 			if ("provider".equals(config.getName())) {
 				descriptors.add(new Descriptor(config));
@@ -60,7 +60,7 @@ public class NewModelStorageProviderRegistry
 	public Iterator<Descriptor> iterator() {
 		return descriptors.iterator();
 	}
-	
+
 	public int size() {
 		return descriptors.size();
 	}
@@ -69,9 +69,9 @@ public class NewModelStorageProviderRegistry
 	// others as they come
 	private List<IConfigurationElement> sort(
 			IConfigurationElement[] providerElements) {
-		
+
 		List<IConfigurationElement> result = new java.util.ArrayList<IConfigurationElement>(
-			Arrays.asList(providerElements));
+				Arrays.asList(providerElements));
 
 		Collections.sort(result, new Comparator<IConfigurationElement>() {
 
@@ -131,15 +131,15 @@ public class NewModelStorageProviderRegistry
 			if (instance == null) {
 				try {
 					instance = (INewModelStorageProvider) config
-						.createExecutableExtension("class");
+							.createExecutableExtension("class");
 				} catch (ClassCastException e) {
 					Activator.log
-						.error(
-							"Storage provider does not implement INewModelStorageProvider interface.",
-							e);
+							.error(
+									"Storage provider does not implement INewModelStorageProvider interface.",
+									e);
 				} catch (Exception e) {
 					Activator.log.error(
-						"Could not instantiate storage provider.", e);
+							"Could not instantiate storage provider.", e);
 				}
 
 				if (instance == null) {
@@ -156,7 +156,7 @@ public class NewModelStorageProviderRegistry
 			if (matchSelection != null) {
 				List<?> selection = initialSelection.toList();
 				IEvaluationContext ctx = new EvaluationContext(
-					evaluationService.getCurrentState(), selection);
+						evaluationService.getCurrentState(), selection);
 				ctx.addVariable("selection", selection);
 
 				EvaluationResult evalResult = EvaluationResult.FALSE;
@@ -201,11 +201,11 @@ public class NewModelStorageProviderRegistry
 
 		private void initMatchExpression(IConfigurationElement parentConfig) {
 			IConfigurationElement[] configs = parentConfig
-				.getChildren("enablement");
+					.getChildren("enablement");
 			if (configs.length > 0) {
 				try {
 					matchSelection = ExpressionConverter.getDefault().perform(
-						configs[0]);
+							configs[0]);
 				} catch (CoreException e) {
 					Activator.getDefault().getLog().log(e.getStatus());
 				}

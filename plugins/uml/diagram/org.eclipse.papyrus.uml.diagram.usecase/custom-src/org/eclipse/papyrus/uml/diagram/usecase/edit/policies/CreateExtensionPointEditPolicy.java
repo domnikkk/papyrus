@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,22 +37,21 @@ import org.eclipse.uml2.uml.Extend;
 public class CreateExtensionPointEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
-	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy#getConnectionCompleteCommand(org.eclipse.gef.requests.
-	 *      CreateConnectionRequest)
+	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy#getConnectionCompleteCommand(org.eclipse.gef.requests. CreateConnectionRequest)
 	 */
 	@Override
 	protected Command getConnectionCompleteCommand(CreateConnectionRequest request) {
 		Command command = super.getConnectionCompleteCommand(request);
-		if(request instanceof CreateConnectionViewRequest) {
-			if(getExtendHint().equals(((CreateConnectionViewRequest)request).getConnectionViewDescriptor().getSemanticHint())) {
-				if(command != null && command.canExecute()) {
+		if (request instanceof CreateConnectionViewRequest) {
+			if (getExtendHint().equals(((CreateConnectionViewRequest) request).getConnectionViewDescriptor().getSemanticHint())) {
+				if (command != null && command.canExecute()) {
 					CompoundCommand compound = new CompoundCommand();
 					compound.add(command);
 					INodeEditPart targetEP = getConnectionCompleteEditPart(request);
-					if(targetEP instanceof AbstractEditPart) {
+					if (targetEP instanceof AbstractEditPart) {
 						IAdaptable adapter = getExtendViewAdapter(request);
-						EObject usecase = ViewUtil.resolveSemanticElement((View)getHost().getModel());
-						CreateExtensionPointCommand createExtensionPointCommand = new CreateExtensionPointCommand((IHintedType)UMLElementTypes.ExtensionPoint_3007, (AbstractEditPart)targetEP, usecase, adapter, DiagramUtils.getDiagramFrom(getHost()));
+						EObject usecase = ViewUtil.resolveSemanticElement((View) getHost().getModel());
+						CreateExtensionPointCommand createExtensionPointCommand = new CreateExtensionPointCommand((IHintedType) UMLElementTypes.ExtensionPoint_3007, (AbstractEditPart) targetEP, usecase, adapter, DiagramUtils.getDiagramFrom(getHost()));
 						compound.add(createExtensionPointCommand);
 						return compound;
 					}
@@ -64,21 +63,22 @@ public class CreateExtensionPointEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
 	 * Get the adapter to recover the extend element
-	 * 
+	 *
 	 * @param request
-	 *        the request
+	 *            the request
 	 * @return the extend element
 	 */
 	private IAdaptable getExtendViewAdapter(final CreateConnectionRequest request) {
 		return new IAdaptable() {
 
+			@Override
 			@SuppressWarnings({ "unchecked", "rawtypes" })
 			public Object getAdapter(Class adapter) {
-				if(adapter != null && adapter.isAssignableFrom(Extend.class)) {
+				if (adapter != null && adapter.isAssignableFrom(Extend.class)) {
 					Object view = getViewAdapter().getAdapter(Edge.class);
-					if(view instanceof Edge) {
-						EObject element = ((Edge)view).getElement();
-						if(element instanceof Extend) {
+					if (view instanceof Edge) {
+						EObject element = ((Edge) view).getElement();
+						if (element instanceof Extend) {
 							return element;
 						}
 					}
@@ -90,11 +90,11 @@ public class CreateExtensionPointEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
 	 * Get the semantic hint for an extend element
-	 * 
+	 *
 	 * @return semantic hint
 	 */
 	private static String getExtendHint() {
-		IHintedType extend = (IHintedType)UMLElementTypes.Extend_4009;
+		IHintedType extend = (IHintedType) UMLElementTypes.Extend_4009;
 		return extend.getSemanticHint();
 	}
 }

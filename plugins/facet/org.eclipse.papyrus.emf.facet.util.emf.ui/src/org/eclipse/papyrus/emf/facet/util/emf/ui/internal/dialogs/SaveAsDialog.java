@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2013 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Gregoire Dupe (Mia-Software) - Bug 406570 - Handlers to Save and SaveAs EMF resources
  */
@@ -13,9 +13,9 @@
 package org.eclipse.papyrus.emf.facet.util.emf.ui.internal.dialogs;
 
 
+import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IWithResultDialogCallback;
-import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;

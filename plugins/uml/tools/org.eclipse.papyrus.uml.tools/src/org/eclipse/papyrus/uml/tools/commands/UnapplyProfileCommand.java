@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.uml2.uml.Profile;
 
 /**
  * A command to unapply a profile on a UML Package
- * 
+ *
  * @author Camille Letavernier
  */
 public class UnapplyProfileCommand extends RecordingCommand {
@@ -31,15 +31,15 @@ public class UnapplyProfileCommand extends RecordingCommand {
 	private Collection<Profile> profiles;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param umlPackage
-	 *        The UML Package from which the profiles will be unapplied
+	 *            The UML Package from which the profiles will be unapplied
 	 * @param profiles
-	 *        The list of profiles to unapply
+	 *            The list of profiles to unapply
 	 * @param domain
-	 *        The EditingDomain
+	 *            The EditingDomain
 	 */
 	public UnapplyProfileCommand(Package umlPackage, Collection<Profile> profiles, TransactionalEditingDomain domain) {
 		super(domain);
@@ -48,15 +48,15 @@ public class UnapplyProfileCommand extends RecordingCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param umlPackage
-	 *        The UML Package from which the profile will be unapplied
+	 *            The UML Package from which the profile will be unapplied
 	 * @param profile
-	 *        The profile to unapply
+	 *            The profile to unapply
 	 * @param domain
-	 *        The EditingDomain
+	 *            The EditingDomain
 	 */
 	public UnapplyProfileCommand(Package umlPackage, Profile profile, TransactionalEditingDomain domain) {
 		super(domain);
@@ -66,7 +66,7 @@ public class UnapplyProfileCommand extends RecordingCommand {
 
 	@Override
 	protected void doExecute() {
-		for(Profile profile : profiles) {
+		for (Profile profile : profiles) {
 			umlPackage.unapplyProfile(profile);
 		}
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,11 +22,11 @@ public class InstalledProfileURI {
 
 	/**
 	 * Instantiates a new installed profile uri.
-	 * 
+	 *
 	 * @param uri_installed
-	 *        the uri of the installed profile
+	 *            the uri of the installed profile
 	 * @param uri_local
-	 *        the uri of the corresponding local profile from which the installed profile has been copied
+	 *            the uri of the corresponding local profile from which the installed profile has been copied
 	 */
 	public InstalledProfileURI(String uri_installed, String uri_local) {
 		super();
@@ -42,7 +42,7 @@ public class InstalledProfileURI {
 
 	/**
 	 * Gets the uri of the installed profile.
-	 * 
+	 *
 	 * @return the uri of the installed profile
 	 */
 	public String getUri_installed() {
@@ -51,9 +51,9 @@ public class InstalledProfileURI {
 
 	/**
 	 * Sets the uri of the installed profile.
-	 * 
+	 *
 	 * @param uri_installed
-	 *        the new uri of the installed profile
+	 *            the new uri of the installed profile
 	 */
 	public void setUri_installed(String uri_installed) {
 		this.uri_installed = uri_installed;
@@ -61,7 +61,7 @@ public class InstalledProfileURI {
 
 	/**
 	 * Gets the uri of the local profile.
-	 * 
+	 *
 	 * @return the uri of the local profile
 	 */
 	public String getUri_local() {
@@ -70,9 +70,9 @@ public class InstalledProfileURI {
 
 	/**
 	 * Sets the uri of the local profile.
-	 * 
+	 *
 	 * @param uri_local
-	 *        the new uri of the local profile
+	 *            the new uri of the local profile
 	 */
 	public void setUri_local(String uri_local) {
 		this.uri_local = uri_local;

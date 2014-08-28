@@ -31,7 +31,7 @@ public class Messages extends NLS {
 
 	/** The Init model wizard_init_papyrus_model_desc. */
 	public static String InitModelWizard_init_papyrus_model_desc;
-	
+
 	/** The New papyrus project with multi models wizard_exception_on_project_opening. */
 	public static String NewPapyrusProjectWithMultiModelsWizard_exception_on_project_opening;
 
@@ -55,7 +55,7 @@ public class Messages extends NLS {
 
 	/** The Model templates label provider_model_template_description_text. */
 	public static String ModelTemplatesLabelProvider_model_template_description_text;
-	
+
 	/** The New model file page_3. */
 	public static String NewModelFilePage_3;
 
@@ -124,7 +124,7 @@ public class Messages extends NLS {
 	public static String ModelCopyWizard_CreatePapyrusExample;
 	public static String ModelCopyWizard_DoNotChangeFileName;
 	public static String ModelCopyWizard_SelectParentFolder;
-	
+
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

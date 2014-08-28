@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,48 +40,48 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Update execution ends after the connected message was removed.
- * 
+ *
  * See https://bugs.eclipse.org/bugs/show_bug.cgi?id=402975
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class RestoreExecutionEndAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice#getAfterDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	protected ICommand getAfterDestroyElementCommand(DestroyElementRequest request) {
 		EObject elementToDestroy = request.getElementToDestroy();
-		if(elementToDestroy instanceof Message) {
-			final Message message = (Message)elementToDestroy;
+		if (elementToDestroy instanceof Message) {
+			final Message message = (Message) elementToDestroy;
 			MessageEnd receiveEvent = message.getReceiveEvent();
 			MessageEnd sendEvent = message.getSendEvent();
 			CompositeCommand command = new CompositeCommand("Restore Execution End");
-			if(receiveEvent instanceof MessageOccurrenceSpecification) {
-				OccurrenceSpecification end = (OccurrenceSpecification)receiveEvent;
+			if (receiveEvent instanceof MessageOccurrenceSpecification) {
+				OccurrenceSpecification end = (OccurrenceSpecification) receiveEvent;
 				addRestoreExecutionEndCcommand(command, request.getEditingDomain(), end, true);
 				addRestoreExecutionEndCcommand(command, request.getEditingDomain(), end, false);
 			}
-			if(sendEvent instanceof MessageOccurrenceSpecification) {
-				OccurrenceSpecification end = (OccurrenceSpecification)sendEvent;
+			if (sendEvent instanceof MessageOccurrenceSpecification) {
+				OccurrenceSpecification end = (OccurrenceSpecification) sendEvent;
 				addRestoreExecutionEndCcommand(command, request.getEditingDomain(), end, true);
 				addRestoreExecutionEndCcommand(command, request.getEditingDomain(), end, false);
 			}
-			if(command.canExecute()) {
+			if (command.canExecute()) {
 				return command.reduce();
 			}
 		}
-		//Try to restore the end of execution when the message end has been removed.
-		else if(elementToDestroy instanceof MessageOccurrenceSpecification) {
+		// Try to restore the end of execution when the message end has been removed.
+		else if (elementToDestroy instanceof MessageOccurrenceSpecification) {
 			CompositeCommand command = new CompositeCommand("Restore Execution End");
-			MessageOccurrenceSpecification end = (MessageOccurrenceSpecification)elementToDestroy;
+			MessageOccurrenceSpecification end = (MessageOccurrenceSpecification) elementToDestroy;
 			addRestoreExecutionEndCcommand(command, request.getEditingDomain(), end, true);
 			addRestoreExecutionEndCcommand(command, request.getEditingDomain(), end, false);
-			if(command.canExecute()) {
+			if (command.canExecute()) {
 				return command.reduce();
 			}
 		}
@@ -90,18 +90,18 @@ public class RestoreExecutionEndAdvice extends AbstractEditHelperAdvice {
 
 	private void addRestoreExecutionEndCcommand(CompositeCommand command, TransactionalEditingDomain editingDomain, OccurrenceSpecification end, boolean isStart) {
 		ExecutionSpecification execution = OccurrenceSpecificationHelper.findExecutionWith(end, isStart);
-		if(execution == null) {
+		if (execution == null) {
 			return;
 		}
 		RestoreExecutionEndCommand cmd = new RestoreExecutionEndCommand(editingDomain, execution, isStart);
-		cmd.setContainer((InteractionFragment)end.eContainer());
+		cmd.setContainer((InteractionFragment) end.eContainer());
 		cmd.setCovered(end.getCovered());
-		//Add index support.
+		// Add index support.
 		int executionIndex = getIndex(execution);
 		int index = getIndex(end);
-		if(isStart && index > executionIndex) {
+		if (isStart && index > executionIndex) {
 			index = executionIndex;
-		} else if(!isStart && index <= executionIndex) {
+		} else if (!isStart && index <= executionIndex) {
 			index = executionIndex + 1;
 		}
 		cmd.setIndex(index);
@@ -109,14 +109,14 @@ public class RestoreExecutionEndAdvice extends AbstractEditHelperAdvice {
 	}
 
 	private int getIndex(InteractionFragment fragment) {
-		if(fragment == null || fragment.eContainer() == null) {
+		if (fragment == null || fragment.eContainer() == null) {
 			return -1;
 		}
 		EObject parent = fragment.eContainer();
-		if(parent instanceof Interaction) {
-			return ((Interaction)parent).getFragments().indexOf(fragment);
-		} else if(parent instanceof InteractionOperand) {
-			return ((InteractionOperand)parent).getFragments().indexOf(fragment);
+		if (parent instanceof Interaction) {
+			return ((Interaction) parent).getFragments().indexOf(fragment);
+		} else if (parent instanceof InteractionOperand) {
+			return ((InteractionOperand) parent).getFragments().indexOf(fragment);
 		}
 		return -1;
 	}
@@ -135,7 +135,7 @@ public class RestoreExecutionEndAdvice extends AbstractEditHelperAdvice {
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param domain
 		 * @param isStart
 		 */
@@ -153,9 +153,8 @@ public class RestoreExecutionEndAdvice extends AbstractEditHelperAdvice {
 		}
 
 		/**
-		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-		 *      org.eclipse.core.runtime.IAdaptable)
-		 * 
+		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+		 *
 		 * @param monitor
 		 * @param info
 		 * @return
@@ -163,34 +162,34 @@ public class RestoreExecutionEndAdvice extends AbstractEditHelperAdvice {
 		 */
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-			//Once the execution has been removed, ignore it.
-			if(execution.eContainer() == null) {
+			// Once the execution has been removed, ignore it.
+			if (execution.eContainer() == null) {
 				return CommandResult.newOKCommandResult();
 			}
 			ExecutionOccurrenceSpecification newEnd = null;
-			InteractionFragment container = (InteractionFragment)getContainer();
+			InteractionFragment container = getContainer();
 			EList<InteractionFragment> fragments = null;
-			if(container instanceof Interaction) {
-				newEnd = (ExecutionOccurrenceSpecification)((Interaction)container).createFragment(null, UMLPackage.eINSTANCE.getExecutionOccurrenceSpecification());
-				fragments = ((Interaction)container).getFragments();
-			} else if(container instanceof InteractionOperand) {
-				newEnd = (ExecutionOccurrenceSpecification)((InteractionOperand)container).createFragment(null, UMLPackage.eINSTANCE.getExecutionOccurrenceSpecification());
-				fragments = ((InteractionOperand)container).getFragments();
+			if (container instanceof Interaction) {
+				newEnd = (ExecutionOccurrenceSpecification) ((Interaction) container).createFragment(null, UMLPackage.eINSTANCE.getExecutionOccurrenceSpecification());
+				fragments = ((Interaction) container).getFragments();
+			} else if (container instanceof InteractionOperand) {
+				newEnd = (ExecutionOccurrenceSpecification) ((InteractionOperand) container).createFragment(null, UMLPackage.eINSTANCE.getExecutionOccurrenceSpecification());
+				fragments = ((InteractionOperand) container).getFragments();
 			}
-			if(newEnd == null) {
+			if (newEnd == null) {
 				return CommandResult.newCancelledCommandResult();
 			}
 			newEnd.setExecution(execution);
 			newEnd.setCovered(getCovered());
-			if(isStart) {
+			if (isStart) {
 				newEnd.setName(execution.getName() + "Start");
 				execution.setStart(newEnd);
 			} else {
 				newEnd.setName(execution.getName() + "Finish");
 				execution.setFinish(newEnd);
 			}
-			//Index support.
-			if(index != -1 && fragments != null && index >= 0 && index < fragments.size() && fragments.indexOf(newEnd) != index) {
+			// Index support.
+			if (index != -1 && fragments != null && index >= 0 && index < fragments.size() && fragments.indexOf(newEnd) != index) {
 				fragments.move(index, newEnd);
 			}
 			return CommandResult.newOKCommandResult();
@@ -200,15 +199,15 @@ public class RestoreExecutionEndAdvice extends AbstractEditHelperAdvice {
 		 * @return the container
 		 */
 		public InteractionFragment getContainer() {
-			if(container == null && execution != null) {
-				return (InteractionFragment)execution.eContainer();
+			if (container == null && execution != null) {
+				return (InteractionFragment) execution.eContainer();
 			}
 			return container;
 		}
 
 		/**
 		 * @param container
-		 *        the container to set
+		 *            the container to set
 		 */
 		public void setContainer(InteractionFragment container) {
 			this.container = container;
@@ -218,7 +217,7 @@ public class RestoreExecutionEndAdvice extends AbstractEditHelperAdvice {
 		 * @return the covered
 		 */
 		public Lifeline getCovered() {
-			if(covered == null && execution != null) {
+			if (covered == null && execution != null) {
 				EList<Lifeline> covereds = execution.getCovereds();
 				return covereds.size() != 0 ? covereds.get(0) : null;
 			}
@@ -227,7 +226,7 @@ public class RestoreExecutionEndAdvice extends AbstractEditHelperAdvice {
 
 		/**
 		 * @param covered
-		 *        the covered to set
+		 *            the covered to set
 		 */
 		public void setCovered(Lifeline covered) {
 			this.covered = covered;

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,7 +50,7 @@ public class RepositorySelectionDialog extends TitleAreaDialog {
 	private RepositorySelectionBlock repoSelectionBlock;
 
 	public RepositorySelectionDialog(Shell parentShell, IPapyrusRepositoryManager repoMan, //
-		IPapyrusRepository initialSelection, Supplier<? extends IRunnableContext> runnableContext) {
+			IPapyrusRepository initialSelection, Supplier<? extends IRunnableContext> runnableContext) {
 
 		super(parentShell);
 
@@ -72,7 +72,7 @@ public class RepositorySelectionDialog extends TitleAreaDialog {
 	protected Control createDialogArea(Composite parent) {
 		setTitle(TITLE);
 		setMessage(Messages.RepositorySelectionDialog_1);
-		Composite result = (Composite)super.createDialogArea(parent);
+		Composite result = (Composite) super.createDialogArea(parent);
 
 		Composite main = new Composite(result, SWT.NONE);
 		main.setLayout(new GridLayout());
@@ -103,7 +103,7 @@ public class RepositorySelectionDialog extends TitleAreaDialog {
 	public void setSelectedRepository(IPapyrusRepository repository) {
 		Button ok = getButton(IDialogConstants.OK_ID);
 
-		if(ok != null) {
+		if (ok != null) {
 			ok.setEnabled(repository != null);
 		}
 	}

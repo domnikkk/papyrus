@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,11 +35,11 @@ public class DurationObservationHelper {
 	/**
 	 * Get the list of all DurationObservation observing duration between the
 	 * two elements (order of parameters does not matter)
-	 * 
+	 *
 	 * @param element1
-	 *        the first observed element
+	 *            the first observed element
 	 * @param element2
-	 *        the second observed element
+	 *            the second observed element
 	 * @return list of DurationObservation
 	 */
 	public static List<DurationObservation> getDurationObservationsBetween(NamedElement element1, NamedElement element2) {
@@ -54,18 +54,18 @@ public class DurationObservationHelper {
 	/**
 	 * Get the list of all DurationObservation observing duration from or to an
 	 * element
-	 * 
+	 *
 	 * @param element
-	 *        the observed element
+	 *            the observed element
 	 * @return list of DurationObservation
 	 */
 	public static List<DurationObservation> getDurationObservationsOn(NamedElement element) {
 		Collection<Setting> inverseReferences = EMFHelper.getUsages(element);
 		// DurationObservation referencing element
 		List<DurationObservation> referencing1 = new LinkedList<DurationObservation>();
-		for(Setting ref : inverseReferences) {
-			if(UMLPackage.eINSTANCE.getDurationObservation_Event().equals(ref.getEStructuralFeature()) && ref.getEObject().eContainer() != null) {
-				referencing1.add((DurationObservation)ref.getEObject());
+		for (Setting ref : inverseReferences) {
+			if (UMLPackage.eINSTANCE.getDurationObservation_Event().equals(ref.getEStructuralFeature()) && ref.getEObject().eContainer() != null) {
+				referencing1.add((DurationObservation) ref.getEObject());
 			}
 		}
 		return referencing1;
@@ -73,9 +73,9 @@ public class DurationObservationHelper {
 
 	/**
 	 * Get the string for displaying label of a DurationObservation
-	 * 
+	 *
 	 * @param observation
-	 *        the duration observation to display
+	 *            the duration observation to display
 	 * @return string
 	 */
 	public static String getLabelString(DurationObservation observation) {
@@ -85,11 +85,11 @@ public class DurationObservationHelper {
 	/**
 	 * Check whether two occurrences are ends of the same message for enabling
 	 * duration constraint creation
-	 * 
+	 *
 	 * @param occurrence
-	 *        first occurrence specification
+	 *            first occurrence specification
 	 * @param occurrence2
-	 *        second occurrence specification
+	 *            second occurrence specification
 	 * @return true if occurrences are ends of the same message
 	 */
 	public static boolean endsOfSameMessage(OccurrenceSpecification occurrence, OccurrenceSpecification occurrence2) {

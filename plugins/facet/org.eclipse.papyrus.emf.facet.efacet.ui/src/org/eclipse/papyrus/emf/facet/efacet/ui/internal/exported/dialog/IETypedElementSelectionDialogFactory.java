@@ -18,14 +18,14 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.ETypedElement;
+import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.dialogs.ETypedElementSelectionDialogFactory;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallbackWithPreCommit;
-import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.swt.widgets.Shell;
 
 /**
  * A factory to create {@link IETypedElementSelectionDialog}s
- * 
+ *
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
  * @since 0.2.0
@@ -37,7 +37,7 @@ public interface IETypedElementSelectionDialogFactory {
 
 	/**
 	 * Open a dialog to let the user select ETypedElements to load.
-	 * 
+	 *
 	 * @param eTypedElements
 	 *            the list of ETypedElements that can be selected using this dialog
 	 * @param selectionMaxSize

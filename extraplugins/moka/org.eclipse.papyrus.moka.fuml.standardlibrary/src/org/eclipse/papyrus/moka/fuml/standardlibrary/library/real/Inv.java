@@ -27,15 +27,15 @@ public class Inv extends OpaqueBehaviorExecution {
 	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
 		try {
 			Double inv = 0.0;
-			Double x = ((RealValue)inputParameters.get(0).values.get(0)).value;
-			if(x == inv)
+			Double x = ((RealValue) inputParameters.get(0).values.get(0)).value;
+			if (x == inv) {
 				throw new ArithmeticException("(arg == 0)");
-			else {
+			} else {
 				inv = 1 / x;
 			}
 			RealValue result = new RealValue();
 			result.value = inv;
-			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("Real");
+			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Real");
 			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;
@@ -43,7 +43,7 @@ public class Inv extends OpaqueBehaviorExecution {
 			Activator.log.error("An error occured during the execution of Inv " + a.getMessage(), a);
 			RealValue result = new RealValue();
 			result.value = 0.0;
-			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("Real");
+			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Real");
 			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.uml2.uml.StructuralFeature;
 
 public abstract class CS_StructuralFeatureOfInterfaceAccessStrategy extends SemanticStrategy {
 
+	@Override
 	public String getName() {
 		// StructuralFeatureAccessStrategy are always named "structuralFeature"
 		return "structuralFeature";

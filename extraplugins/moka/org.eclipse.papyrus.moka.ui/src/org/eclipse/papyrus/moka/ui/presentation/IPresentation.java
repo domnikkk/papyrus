@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ public interface IPresentation {
 	 * Returns the label for this element.
 	 * This is effective for the following kind of element:
 	 * - IStackFrame
-	 * 
+	 *
 	 * @return The label for this element
 	 */
 	public String getLabel();
@@ -37,7 +37,7 @@ public interface IPresentation {
 	 * Details are displayed in the Variable panel of the Debug perspective.
 	 * This is effective for the following kind of element:
 	 * - IValue
-	 * 
+	 *
 	 * @return Returns the details corresponding to this element.
 	 */
 	public String getDetails();
@@ -47,7 +47,7 @@ public interface IPresentation {
 	 * This is effective for the following kind of element:
 	 * - IStackFrame
 	 * - IVariable
-	 * 
+	 *
 	 * @return The image for this element.
 	 */
 	public Image getImage();

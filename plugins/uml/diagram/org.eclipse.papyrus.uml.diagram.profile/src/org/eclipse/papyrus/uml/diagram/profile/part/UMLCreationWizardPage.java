@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -39,7 +39,7 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 
 	/**
 	 * Override to create files with this extension.
-	 * 
+	 *
 	 * @generated
 	 */
 	protected String getExtension() {
@@ -58,11 +58,11 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 	 */
 	protected IPath getFilePath() {
 		IPath path = getContainerFullPath();
-		if(path == null) {
+		if (path == null) {
 			path = new Path(""); //$NON-NLS-1$
 		}
 		String fileName = getFileName();
-		if(fileName != null) {
+		if (fileName != null) {
 			path = path.append(fileName);
 		}
 		return path;
@@ -71,6 +71,7 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 	/**
 	 * @generated
 	 */
+	@Override
 	public void createControl(Composite parent) {
 		super.createControl(parent);
 		setFileName(UMLDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), getFileName(), getExtension()));
@@ -80,12 +81,13 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected boolean validatePage() {
-		if(!super.validatePage()) {
+		if (!super.validatePage()) {
 			return false;
 		}
 		String extension = getExtension();
-		if(extension != null && !getFilePath().toString().endsWith("." + extension)) {
+		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
 			setErrorMessage(NLS.bind(Messages.UMLCreationWizardPageExtensionError, extension));
 			return false;
 		}

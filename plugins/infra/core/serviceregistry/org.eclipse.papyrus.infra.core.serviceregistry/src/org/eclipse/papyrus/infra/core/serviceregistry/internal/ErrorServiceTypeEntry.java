@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.serviceregistry.internal;
 
@@ -12,10 +12,10 @@ import org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry;
 /**
  * A service entry used for faulty services. In this implementation, methods do
  * nothings or throw an error.
- * 
- * 
+ *
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class ErrorServiceTypeEntry extends ServiceTypeEntry {
 
@@ -25,9 +25,9 @@ public class ErrorServiceTypeEntry extends ServiceTypeEntry {
 	private ServiceDescriptor descriptor;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param descriptor
 	 */
 	public ErrorServiceTypeEntry(ServiceDescriptor descriptor) {
@@ -35,9 +35,9 @@ public class ErrorServiceTypeEntry extends ServiceTypeEntry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.internal.ServiceTypeEntry#getServiceInstance()
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
 	 */
@@ -47,9 +47,9 @@ public class ErrorServiceTypeEntry extends ServiceTypeEntry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.internal.ServiceTypeEntry#createService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -59,9 +59,9 @@ public class ErrorServiceTypeEntry extends ServiceTypeEntry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.internal.ServiceTypeEntry#initService(ServicesRegistry)
-	 * 
+	 *
 	 * @param servicesRegistry
 	 * @throws ServiceException
 	 */
@@ -72,9 +72,9 @@ public class ErrorServiceTypeEntry extends ServiceTypeEntry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.internal.ServiceTypeEntry#startService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -84,9 +84,9 @@ public class ErrorServiceTypeEntry extends ServiceTypeEntry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.internal.ServiceTypeEntry#disposeService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override

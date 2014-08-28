@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,18 +26,18 @@ import org.eclipse.papyrus.infra.nattable.utils.TableEditingDomainUtils;
 
 /**
  * The Class AbstractRowFeatureLabelProviderConfigurationObservableValue.
- * 
+ *
  * @author vl222926
  */
 public abstract class AbstractRowFeatureLabelProviderConfigurationObservableValue extends AbstractConfigurationElementObservableValue {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param table
-	 *        the table
+	 *            the table
 	 * @param managedFeature
-	 *        the managed feature
+	 *            the managed feature
 	 */
 	public AbstractRowFeatureLabelProviderConfigurationObservableValue(final Table table, final EStructuralFeature managedFeature) {
 		super(table, managedFeature);
@@ -45,7 +45,7 @@ public abstract class AbstractRowFeatureLabelProviderConfigurationObservableValu
 
 	/**
 	 * Gets the edited e object.
-	 * 
+	 *
 	 * @return the edited e object
 	 * @see org.eclipse.papyrus.infra.nattable.properties.observable.AbstractConfigurationElementObservableValue#getEditedEObject()
 	 */
@@ -56,14 +56,14 @@ public abstract class AbstractRowFeatureLabelProviderConfigurationObservableValu
 
 	/**
 	 * Do set value.
-	 * 
+	 *
 	 * @param value
-	 *        the value
+	 *            the value
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doSetValue(java.lang.Object)
 	 */
 	@Override
 	protected void doSetValue(Object value) {
-		final ICommand cmd = TableCommands.getSetRowLabelConfigurationValueCommand(getTable(), (ILabelProviderConfiguration)getEditedEObject(), getManagedFeature(), value);
+		final ICommand cmd = TableCommands.getSetRowLabelConfigurationValueCommand(getTable(), (ILabelProviderConfiguration) getEditedEObject(), getManagedFeature(), value);
 		final TransactionalEditingDomain domain = TableEditingDomainUtils.getTableEditingDomain(getTable());
 		domain.getCommandStack().execute(new GMFtoEMFCommandWrapper(cmd));
 	}

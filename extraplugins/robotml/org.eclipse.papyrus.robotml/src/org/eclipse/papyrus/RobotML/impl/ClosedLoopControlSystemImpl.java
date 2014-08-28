@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.ClosedLoopControlSystem;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -20,6 +19,7 @@ public class ClosedLoopControlSystemImpl extends CyberPhysicalSystemImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ClosedLoopControlSystemImpl() {
@@ -29,6 +29,7 @@ public class ClosedLoopControlSystemImpl extends CyberPhysicalSystemImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -36,4 +37,4 @@ public class ClosedLoopControlSystemImpl extends CyberPhysicalSystemImpl impleme
 		return RobotMLPackage.Literals.CLOSED_LOOP_CONTROL_SYSTEM;
 	}
 
-} //ClosedLoopControlSystemImpl
+} // ClosedLoopControlSystemImpl

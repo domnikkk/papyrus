@@ -9,7 +9,7 @@ public class MessageAsync extends MessageFigure {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public MessageAsync() {
 		super();
@@ -17,13 +17,14 @@ public class MessageAsync extends MessageFigure {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param mapMode
 	 */
 	public MessageAsync(IMapMode mapMode) {
 		super(mapMode);
 	}
 
+	@Override
 	protected RotatableDecoration createTargetDecoration() {
 		PolylineDecoration df = new PolylineDecoration();
 		df.setForegroundColor(getForegroundColor());

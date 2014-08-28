@@ -18,8 +18,8 @@ public class UnloadResourcesEditorFactory implements IPluggableEditorFactory {
 
 	public IPageModel createIPageModel(Object pageIdentifier) {
 		URI uri = null;
-		if(pageIdentifier instanceof InternalEObject) {
-			InternalEObject internal = (InternalEObject)pageIdentifier;
+		if (pageIdentifier instanceof InternalEObject) {
+			InternalEObject internal = (InternalEObject) pageIdentifier;
 			uri = internal.eProxyURI();
 		}
 		return new UnloadResourcesEditorModel(uri);
@@ -27,10 +27,10 @@ public class UnloadResourcesEditorFactory implements IPluggableEditorFactory {
 
 	public boolean isPageModelFactoryFor(Object pageIdentifier) {
 		boolean result = false;
-		//AnyType is a Proxy, but it is already handled by another EditorFactory.
-		//Ignore it to avoid conflicts
-		if(pageIdentifier instanceof EObject && !(pageIdentifier instanceof AnyType)) {
-			EObject eObjectPageIdentifier = (EObject)pageIdentifier;
+		// AnyType is a Proxy, but it is already handled by another EditorFactory.
+		// Ignore it to avoid conflicts
+		if (pageIdentifier instanceof EObject && !(pageIdentifier instanceof AnyType)) {
+			EObject eObjectPageIdentifier = (EObject) pageIdentifier;
 			result = eObjectPageIdentifier.eIsProxy();
 		}
 		return result;

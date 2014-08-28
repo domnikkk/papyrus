@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,9 +26,9 @@ public class CallBehaviorActionPreferencePage extends InteractionOverviewDiagram
 
 	/**
 	 * Initialize defaults using a specified {@link IPreferenceStore}
-	 * 
+	 *
 	 * @param store
-	 *        the preference store.
+	 *            the preference store.
 	 */
 	public static void initDefaults(final IPreferenceStore store) {
 		// Start of user code custom default initializations

@@ -1,5 +1,5 @@
 /*
- * 
+ *
  */
 package org.eclipse.papyrus.uml.modelexplorer.factory;
 
@@ -11,8 +11,8 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 public class ModelElementItemFactory implements IAdapterFactory {
 
 	public Object getAdapter(Object adaptableObject, Class adapterType) {
-			EObject eobject = EMFHelper.getEObject(adaptableObject);
-				return eobject;
+		EObject eobject = EMFHelper.getEObject(adaptableObject);
+		return eobject;
 	}
 
 	public Class<?>[] getAdapterList() {

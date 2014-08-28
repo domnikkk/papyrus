@@ -4,13 +4,13 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
 import org.eclipse.papyrus.layers.stackmodel.layers.TypeRegistry;
@@ -55,11 +55,11 @@ public class TypeRegistryImplTest {
 	public void testInit() {
 		TypeRegistry registry = LayersFactory.eINSTANCE.createTypeRegistry();
 		assertNotNull("registry created", registry);
-		
+
 		// Try to get initialized types
-		assertNotNull( "type found", registry.getTypes().get("boolean") );
-		assertNotNull( "type found", registry.getTypes().get("int") );
-		assertNotNull( "type found", registry.getTypes().get("String") );
+		assertNotNull("type found", registry.getTypes().get("boolean"));
+		assertNotNull("type found", registry.getTypes().get("int"));
+		assertNotNull("type found", registry.getTypes().get("String"));
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class TypeRegistryImplTest {
 	public void testGetTypes() {
 		TypeRegistry registry = LayersFactory.eINSTANCE.createTypeRegistry();
 		assertNotNull("registry created", registry);
-		
+
 		assertNotNull("map created", registry.getTypes());
 	}
 

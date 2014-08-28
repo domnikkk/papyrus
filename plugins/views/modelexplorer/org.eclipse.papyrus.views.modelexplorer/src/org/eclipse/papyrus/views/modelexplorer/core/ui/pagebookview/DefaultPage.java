@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 LIFL & CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.ui.part.Page;
 
 /**
  * A default page to show when the active part can't be rendered by {@link MultiViewPageBookView}.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class DefaultPage extends Page {
 
@@ -39,7 +39,7 @@ public class DefaultPage extends Page {
 
 	/**
 	 * @see org.eclipse.ui.part.Page#createControl(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 */
 	@Override
@@ -50,7 +50,7 @@ public class DefaultPage extends Page {
 
 	/**
 	 * @see org.eclipse.ui.part.Page#getControl()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -60,7 +60,7 @@ public class DefaultPage extends Page {
 
 	/**
 	 * @see org.eclipse.ui.part.Page#setFocus()
-	 * 
+	 *
 	 */
 	@Override
 	public void setFocus() {

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -15,7 +15,7 @@ import org.eclipse.papyrus.xwt.XWTException;
 
 /**
  * String to Boolean converter
- * 
+ *
  * @author yyang
  */
 public class StringToBoolean implements IConverter {
@@ -23,12 +23,12 @@ public class StringToBoolean implements IConverter {
 	public static StringToBoolean instance = new StringToBoolean();
 
 	public Object convert(Object fromObject) {
-		String str = (String)fromObject;
-		if(str == null || "".equalsIgnoreCase(str)) {
+		String str = (String) fromObject;
+		if (str == null || "".equalsIgnoreCase(str)) {
 			return false;
-		} else if("true".equalsIgnoreCase(str)) {
+		} else if ("true".equalsIgnoreCase(str)) {
 			return true;
-		} else if("false".equalsIgnoreCase(str)) {
+		} else if ("false".equalsIgnoreCase(str)) {
 			return false;
 		}
 		throw new XWTException(str + " is not a boolean");

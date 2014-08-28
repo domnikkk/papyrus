@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,9 +19,9 @@ import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CustomLifelineEditPar
 /**
  * This policy is used to automatically move a lifeline when a stereotype is changed.
  * this avoids the move of the dash line and its ES.
- * 
+ *
  * @author mvelten
- * 
+ *
  */
 public class LifelineAppliedStereotypeNodeLabelDisplayEditPolicy extends AppliedStereotypeNodeLabelDisplayEditPolicy {
 
@@ -31,8 +31,8 @@ public class LifelineAppliedStereotypeNodeLabelDisplayEditPolicy extends Applied
 	@Override
 	public void refreshDisplay() {
 		super.refreshDisplay();
-		if(getHost() instanceof CustomLifelineEditPart) {
-			((CustomLifelineEditPart)getHost()).updateLifelinePosition();
+		if (getHost() instanceof CustomLifelineEditPart) {
+			((CustomLifelineEditPart) getHost()).updateLifelinePosition();
 		}
 	}
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,8 +38,8 @@ public class ContextStorageActionUtil {
 
 	public static void initializeCopy(Context source, IProgressMonitor monitor) {
 		monitor.beginTask(Messages.CopyContextAction_InitializingTheCopyOf + source.getName() + Messages.CopyContextAction_ThisMayTakeSomeTime, IProgressMonitor.UNKNOWN);
-		//EcoreUtil.resolveAll(source); //This method is too expensive
-		resolveAllResources(source); //Ignores the *.xwt files. We will copy them manually.
+		// EcoreUtil.resolveAll(source); //This method is too expensive
+		resolveAllResources(source); // Ignores the *.xwt files. We will copy them manually.
 		monitor.done();
 	}
 
@@ -60,26 +60,26 @@ public class ContextStorageActionUtil {
 	 * really expensive to load.
 	 */
 	private static void resolveAllResources(EObject source, Set<EObject> visitedEObjects) {
-		if(!visitedEObjects.add(source)) {
+		if (!visitedEObjects.add(source)) {
 			return;
 		}
 
-		for(EReference reference : source.eClass().getEAllReferences()) {
-			//Do not load *.xwt resources
-			//These files do not contain any useful cross-reference, and are really expensive to load
-			if(reference == ContextsPackage.eINSTANCE.getSection_Widget()) {
+		for (EReference reference : source.eClass().getEAllReferences()) {
+			// Do not load *.xwt resources
+			// These files do not contain any useful cross-reference, and are really expensive to load
+			if (reference == ContextsPackage.eINSTANCE.getSection_Widget()) {
 				continue;
 			}
 
 			Object value = source.eGet(reference);
-			if(value instanceof EList) {
-				for(Object object : (EList<?>)value) {
-					if(object instanceof EObject) {
-						resolveAllResources((EObject)object, visitedEObjects);
+			if (value instanceof EList) {
+				for (Object object : (EList<?>) value) {
+					if (object instanceof EObject) {
+						resolveAllResources((EObject) object, visitedEObjects);
 					}
 				}
-			} else if(value instanceof EObject) {
-				resolveAllResources((EObject)value, visitedEObjects);
+			} else if (value instanceof EObject) {
+				resolveAllResources((EObject) value, visitedEObjects);
 			}
 		}
 	}
@@ -88,8 +88,8 @@ public class ContextStorageActionUtil {
 		URI baseURI = base.getURI();
 		URI resourceURI = resource.getURI();
 		URI uri = resourceURI.deresolve(baseURI);
-		if(uri.isRelative()) {
-			if(!(uri.toString().startsWith("..") || uri.toString().startsWith("/"))) { //$NON-NLS-1$ //$NON-NLS-2$
+		if (uri.isRelative()) {
+			if (!(uri.toString().startsWith("..") || uri.toString().startsWith("/"))) { //$NON-NLS-1$ //$NON-NLS-2$
 				return true;
 			}
 		}

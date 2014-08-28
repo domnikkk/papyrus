@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,30 +45,31 @@ public class ExtendedViewCSSImpl implements ViewCSS {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Implementation based on {@link ViewCSSImpl#getComputedStyle(Element, String)}.
 	 * The base implementations returns the first CSSStyleDeclaration.
-	 * 
+	 *
 	 * When a StyleDeclaration is found in a StyleSheet, it is added to a list of declarations.
 	 * Then, these declarations are merged
 	 */
+	@Override
 	public CSSStyleDeclaration getComputedStyle(Element elt, String pseudo) {
 
 		ExtendedStyleSheetList styleSheetList = engine.getAllStylesheets();
 
 		List<StyleWrapper> declarations = new ArrayList<StyleWrapper>();
 
-		//Stylesheets
-		for(StyleSheet styleSheet : styleSheetList) {
-			List<StyleWrapper> styleWrappers = getStyleWrappers((CSSStyleSheet)styleSheet, elt, pseudo, declarations.size());
+		// Stylesheets
+		for (StyleSheet styleSheet : styleSheetList) {
+			List<StyleWrapper> styleWrappers = getStyleWrappers((CSSStyleSheet) styleSheet, elt, pseudo, declarations.size());
 			declarations.addAll(styleWrappers);
 		}
 
-		//Local styles
-		String localStyles = ((CSSStylableElement)elt).getCSSStyle();
-		if(localStyles != null) {
+		// Local styles
+		String localStyles = ((CSSStylableElement) elt).getCSSStyle();
+		if (localStyles != null) {
 			StyleWrapper wrapper = getStyleWrapper(localStyles);
-			if(wrapper != null) {
+			if (wrapper != null) {
 				declarations.add(wrapper);
 			}
 		}
@@ -90,27 +91,27 @@ public class ExtendedViewCSSImpl implements ViewCSS {
 
 	/**
 	 * Implementation based on {@link ViewCSSImpl#getComputedStyle(CSSStyleSheet, Element, String)}
-	 * 
+	 *
 	 * Returns the StyleWrappers instead of a StyleDeclaration
 	 */
 	private List<StyleWrapper> getStyleWrappers(CSSStyleSheet styleSheet, Element elt, String pseudoElt, int position) {
 		List<StyleWrapper> styleDeclarations = new ArrayList<StyleWrapper>();
 		CSSRuleList ruleList = styleSheet.getCssRules();
 		int length = ruleList.getLength();
-		for(int i = 0; i < length; i++) {
+		for (int i = 0; i < length; i++) {
 			CSSRule rule = ruleList.item(i);
-			if(rule.getType() == CSSRule.STYLE_RULE) {
-				CSSStyleRule styleRule = (CSSStyleRule)rule;
-				if(rule instanceof ExtendedCSSRule) {
-					ExtendedCSSRule r = (ExtendedCSSRule)rule;
+			if (rule.getType() == CSSRule.STYLE_RULE) {
+				CSSStyleRule styleRule = (CSSStyleRule) rule;
+				if (rule instanceof ExtendedCSSRule) {
+					ExtendedCSSRule r = (ExtendedCSSRule) rule;
 					SelectorList selectorList = r.getSelectorList();
 					// Loop for SelectorList
 					int l = selectorList.getLength();
-					for(int j = 0; j < l; j++) {
+					for (int j = 0; j < l; j++) {
 						Selector selector = selectorList.item(j);
-						if(selector instanceof ExtendedSelector) {
-							ExtendedSelector extendedSelector = (ExtendedSelector)selector;
-							if(extendedSelector.match(elt, pseudoElt)) {
+						if (selector instanceof ExtendedSelector) {
+							ExtendedSelector extendedSelector = (ExtendedSelector) selector;
+							if (extendedSelector.match(elt, pseudoElt)) {
 								CSSStyleDeclaration style = styleRule.getStyle();
 								int specificity = extendedSelector.getSpecificity();
 								StyleWrapper wrapper = new StyleWrapper(style, specificity, position++);
@@ -133,10 +134,11 @@ public class ExtendedViewCSSImpl implements ViewCSS {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Unsupported
 	 * TODO : Do we need an implementation ?
 	 */
+	@Override
 	public DocumentView getDocument() {
 		return null;
 	}

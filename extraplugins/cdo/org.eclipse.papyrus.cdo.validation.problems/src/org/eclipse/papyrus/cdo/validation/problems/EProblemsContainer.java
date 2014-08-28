@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,8 +19,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>EProblems Container</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>EProblems Container</b></em>'. <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
  * An optional container for problems, to provide a single node that can be conveniently contained in some larger structure such as an XML resource (which can only have one root element) or other generic container.
@@ -29,10 +28,10 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getProblems <em>Problems</em>}</li>
- *   <li>{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getSubjects <em>Subjects</em>}</li>
- *   <li>{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getSubcontainers <em>Subcontainers</em>}</li>
- *   <li>{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getContainer <em>Container</em>}</li>
+ * <li>{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getProblems <em>Problems</em>}</li>
+ * <li>{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getSubjects <em>Subjects</em>}</li>
+ * <li>{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getSubcontainers <em>Subcontainers</em>}</li>
+ * <li>{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getContainer <em>Container</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,10 +48,10 @@ public interface EProblemsContainer extends CDOObject {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem#getContainer <em>Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Problems</em>' containment reference list
-	 * isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Problems</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Problems</em>' containment reference list.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage#getEProblemsContainer_Problems()
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblem#getContainer
@@ -67,7 +66,7 @@ public interface EProblemsContainer extends CDOObject {
 	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 * Optional reference to elements that are the subjects of some collection
 	 * of problems. <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Subjects</em>' reference list.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage#getEProblemsContainer_Subjects()
 	 * @model
@@ -77,15 +76,13 @@ public interface EProblemsContainer extends CDOObject {
 
 	/**
 	 * Returns the value of the '<em><b>Subcontainers</b></em>' containment
-	 * reference list. The list contents are of type
-	 * {@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer}.
-	 * It is bidirectional and its opposite is '
-	 * {@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getContainer
+	 * reference list. The list contents are of type {@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer}.
+	 * It is bidirectional and its opposite is ' {@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getContainer
 	 * <em>Container</em>}'. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
 	 * begin-model-doc --> Optional nested group of containers, possibly
 	 * referencing different subjects than the parent container. <!--
 	 * end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Subcontainers</em>' containment reference
 	 *         list.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage#getEProblemsContainer_Subcontainers()
@@ -100,10 +97,10 @@ public interface EProblemsContainer extends CDOObject {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getSubcontainers <em>Subcontainers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Container</em>' container reference isn't
-	 * clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Container</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Container</em>' container reference.
 	 * @see #setContainer(EProblemsContainer)
 	 * @see org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage#getEProblemsContainer_Container()
@@ -117,7 +114,9 @@ public interface EProblemsContainer extends CDOObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getContainer <em>Container</em>}' container reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * @param value the new value of the '<em>Container</em>' container reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Container</em>' container reference.
 	 * @see #getContainer()
 	 * @generated
 	 */
@@ -125,6 +124,7 @@ public interface EProblemsContainer extends CDOObject {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @model dataType="org.eclipse.papyrus.cdo.validation.problems.EIterator<org.eclipse.papyrus.cdo.validation.problems.EProblem>" required="true"
 	 * @generated
 	 */
@@ -132,6 +132,7 @@ public interface EProblemsContainer extends CDOObject {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @model dataType="org.eclipse.papyrus.cdo.validation.problems.EIterator<org.eclipse.papyrus.cdo.validation.problems.EProblem>" required="true" elementRequired="true"
 	 * @generated
 	 */
@@ -139,6 +140,7 @@ public interface EProblemsContainer extends CDOObject {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @model dataType="org.eclipse.papyrus.cdo.validation.problems.EDiagnostic"
 	 * @generated
 	 */
@@ -146,6 +148,7 @@ public interface EProblemsContainer extends CDOObject {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @model dataType="org.eclipse.papyrus.cdo.validation.problems.EDiagnostic" elementRequired="true"
 	 * @generated
 	 */
@@ -153,6 +156,7 @@ public interface EProblemsContainer extends CDOObject {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @model
 	 * @generated
 	 */

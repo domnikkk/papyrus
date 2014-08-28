@@ -14,13 +14,14 @@ import org.eclipse.papyrus.eastadl.timing.TimingPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each operation of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintFactory
  * @model kind="package"
  * @generated
@@ -30,6 +31,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "temporalconstraint";
@@ -38,6 +40,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Annex/TemporalConstraint/1";
@@ -46,6 +49,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "TemporalConstraint";
@@ -54,6 +58,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	TemporalconstraintPackage eINSTANCE = org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl.init();
@@ -62,6 +67,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalConstraintImpl <em>Temporal Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalConstraintImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl#getTemporalConstraint()
 	 * @generated
@@ -72,6 +78,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -81,6 +88,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -90,6 +98,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -99,6 +108,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Transition Event</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -108,6 +118,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Time Condition</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,6 +128,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Transition</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -126,6 +138,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>State</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -135,6 +148,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Init State</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -144,6 +158,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Assertion</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -153,6 +168,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The number of structural features of the '<em>Temporal Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -162,6 +178,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The number of operations of the '<em>Temporal Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -171,6 +188,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.LogicalTimeConditionImpl <em>Logical Time Condition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.LogicalTimeConditionImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl#getLogicalTimeCondition()
 	 * @generated
@@ -181,6 +199,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -190,6 +209,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,6 +219,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -208,6 +229,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Logical Time Suspended</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -217,6 +239,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>End Point Reference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -226,6 +249,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Start Point Reference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -235,6 +259,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Width</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -244,6 +269,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -253,6 +279,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -262,6 +289,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Consecutive Time Condition</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -271,6 +299,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The number of structural features of the '<em>Logical Time Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -280,6 +309,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The number of operations of the '<em>Logical Time Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -289,6 +319,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionImpl <em>Transition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl#getTransition()
 	 * @generated
@@ -299,6 +330,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -308,6 +340,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -317,6 +350,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -326,6 +360,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -335,6 +370,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -344,6 +380,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Quantification Guard</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -353,6 +390,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Time Guard</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -362,6 +400,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Effect</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -371,6 +410,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -380,6 +420,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The number of operations of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -389,6 +430,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.StateImpl <em>State</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.StateImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl#getState()
 	 * @generated
@@ -399,6 +441,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -408,6 +451,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -417,6 +461,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -426,6 +471,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Error State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -435,6 +481,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Hazard</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -444,6 +491,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Init State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -453,6 +501,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Mode</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -462,6 +511,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Hazard Declaration</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -471,6 +521,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Mode Declaration</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -480,6 +531,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Quantification Invariant</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -489,6 +541,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Time Invariant</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -498,6 +551,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -507,6 +561,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The number of operations of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -516,6 +571,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.StateEventImpl <em>State Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.StateEventImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl#getStateEvent()
 	 * @generated
@@ -526,6 +582,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -535,6 +592,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -544,6 +602,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -553,6 +612,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -562,6 +622,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>End</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -571,6 +632,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -580,6 +642,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The number of structural features of the '<em>State Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -589,6 +652,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The number of operations of the '<em>State Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -598,6 +662,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.SynchronoustransitionImpl <em>Synchronoustransition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.SynchronoustransitionImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl#getSynchronoustransition()
 	 * @generated
@@ -608,6 +673,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -617,6 +683,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -626,6 +693,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -635,6 +703,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -644,6 +713,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -653,6 +723,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Quantification Guard</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -662,6 +733,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Time Guard</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -671,6 +743,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Effect</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -680,6 +753,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Read Transition Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -689,6 +763,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Write Transition Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -698,6 +773,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The number of structural features of the '<em>Synchronoustransition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -707,6 +783,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The number of operations of the '<em>Synchronoustransition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -716,6 +793,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionEventImpl <em>Transition Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionEventImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl#getTransitionEvent()
 	 * @generated
@@ -726,6 +804,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -735,6 +814,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -744,6 +824,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -753,6 +834,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Occurred Feature Flaw</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -762,6 +844,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Occurred Hazardous Event</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -771,6 +854,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Occurred Fault Failure</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -780,6 +864,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Occurred Execution Event</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -789,6 +874,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The feature id for the '<em><b>Occurred Logical Event</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -798,6 +884,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The number of structural features of the '<em>Transition Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -807,6 +894,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * The number of operations of the '<em>Transition Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -817,6 +905,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint <em>Temporal Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Temporal Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint
 	 * @generated
@@ -827,6 +916,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint#getTransitionEvent <em>Transition Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Transition Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint#getTransitionEvent()
 	 * @see #getTemporalConstraint()
@@ -838,6 +928,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint#getTimeCondition <em>Time Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Time Condition</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint#getTimeCondition()
 	 * @see #getTemporalConstraint()
@@ -849,6 +940,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint#getTransition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Transition</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint#getTransition()
 	 * @see #getTemporalConstraint()
@@ -860,6 +952,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint#getState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>State</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint#getState()
 	 * @see #getTemporalConstraint()
@@ -871,6 +964,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint#getInitState <em>Init State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Init State</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint#getInitState()
 	 * @see #getTemporalConstraint()
@@ -882,6 +976,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint#getAssertion <em>Assertion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Assertion</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint#getAssertion()
 	 * @see #getTemporalConstraint()
@@ -893,6 +988,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition <em>Logical Time Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Logical Time Condition</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition
 	 * @generated
@@ -903,6 +999,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#isIsLogicalTimeSuspended <em>Is Logical Time Suspended</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Is Logical Time Suspended</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#isIsLogicalTimeSuspended()
 	 * @see #getLogicalTimeCondition()
@@ -914,6 +1011,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getEndPointReference <em>End Point Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>End Point Reference</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getEndPointReference()
 	 * @see #getLogicalTimeCondition()
@@ -925,6 +1023,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getStartPointReference <em>Start Point Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Start Point Reference</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getStartPointReference()
 	 * @see #getLogicalTimeCondition()
@@ -936,6 +1035,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getWidth <em>Width</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Width</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getWidth()
 	 * @see #getLogicalTimeCondition()
@@ -947,6 +1047,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getLower <em>Lower</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Lower</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getLower()
 	 * @see #getLogicalTimeCondition()
@@ -958,6 +1059,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getUpper <em>Upper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Upper</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getUpper()
 	 * @see #getLogicalTimeCondition()
@@ -969,6 +1071,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getConsecutiveTimeCondition <em>Consecutive Time Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Consecutive Time Condition</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getConsecutiveTimeCondition()
 	 * @see #getLogicalTimeCondition()
@@ -980,6 +1083,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.Transition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Transition</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.Transition
 	 * @generated
@@ -990,6 +1094,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.Transition#getFrom <em>From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>From</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.Transition#getFrom()
 	 * @see #getTransition()
@@ -1001,6 +1106,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.Transition#getTo <em>To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>To</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.Transition#getTo()
 	 * @see #getTransition()
@@ -1012,6 +1118,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.Transition#getQuantificationGuard <em>Quantification Guard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Quantification Guard</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.Transition#getQuantificationGuard()
 	 * @see #getTransition()
@@ -1023,6 +1130,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.Transition#getTimeGuard <em>Time Guard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Time Guard</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.Transition#getTimeGuard()
 	 * @see #getTransition()
@@ -1034,6 +1142,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.Transition#getEffect <em>Effect</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Effect</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.Transition#getEffect()
 	 * @see #getTransition()
@@ -1045,6 +1154,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.State <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>State</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.State
 	 * @generated
@@ -1055,6 +1165,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#isIsErrorState <em>Is Error State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Is Error State</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#isIsErrorState()
 	 * @see #getState()
@@ -1066,6 +1177,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#isIsHazard <em>Is Hazard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Is Hazard</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#isIsHazard()
 	 * @see #getState()
@@ -1077,6 +1189,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#isIsInitState <em>Is Init State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Is Init State</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#isIsInitState()
 	 * @see #getState()
@@ -1088,6 +1201,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#isIsMode <em>Is Mode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Is Mode</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#isIsMode()
 	 * @see #getState()
@@ -1099,6 +1213,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#getHazardDeclaration <em>Hazard Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Hazard Declaration</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#getHazardDeclaration()
 	 * @see #getState()
@@ -1110,6 +1225,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#getModeDeclaration <em>Mode Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Mode Declaration</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#getModeDeclaration()
 	 * @see #getState()
@@ -1121,6 +1237,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#getQuantificationInvariant <em>Quantification Invariant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Quantification Invariant</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#getQuantificationInvariant()
 	 * @see #getState()
@@ -1132,6 +1249,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#getTimeInvariant <em>Time Invariant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Time Invariant</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#getTimeInvariant()
 	 * @see #getState()
@@ -1143,6 +1261,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.StateEvent <em>State Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>State Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.StateEvent
 	 * @generated
@@ -1153,6 +1272,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.StateEvent#getEnd <em>End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>End</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.StateEvent#getEnd()
 	 * @see #getStateEvent()
@@ -1164,6 +1284,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.StateEvent#getStart <em>Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Start</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.StateEvent#getStart()
 	 * @see #getStateEvent()
@@ -1175,6 +1296,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.Synchronoustransition <em>Synchronoustransition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Synchronoustransition</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.Synchronoustransition
 	 * @generated
@@ -1185,6 +1307,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.Synchronoustransition#getReadTransitionEvent <em>Read Transition Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Read Transition Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.Synchronoustransition#getReadTransitionEvent()
 	 * @see #getSynchronoustransition()
@@ -1196,6 +1319,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.Synchronoustransition#getWriteTransitionEvent <em>Write Transition Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference '<em>Write Transition Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.Synchronoustransition#getWriteTransitionEvent()
 	 * @see #getSynchronoustransition()
@@ -1207,6 +1331,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TransitionEvent <em>Transition Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Transition Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TransitionEvent
 	 * @generated
@@ -1217,6 +1342,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TransitionEvent#getOccurredFeatureFlaw <em>Occurred Feature Flaw</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Occurred Feature Flaw</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TransitionEvent#getOccurredFeatureFlaw()
 	 * @see #getTransitionEvent()
@@ -1228,6 +1354,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TransitionEvent#getOccurredHazardousEvent <em>Occurred Hazardous Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Occurred Hazardous Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TransitionEvent#getOccurredHazardousEvent()
 	 * @see #getTransitionEvent()
@@ -1239,6 +1366,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TransitionEvent#getOccurredFaultFailure <em>Occurred Fault Failure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Occurred Fault Failure</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TransitionEvent#getOccurredFaultFailure()
 	 * @see #getTransitionEvent()
@@ -1250,6 +1378,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TransitionEvent#getOccurredExecutionEvent <em>Occurred Execution Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Occurred Execution Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TransitionEvent#getOccurredExecutionEvent()
 	 * @see #getTransitionEvent()
@@ -1261,6 +1390,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TransitionEvent#getOccurredLogicalEvent <em>Occurred Logical Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Occurred Logical Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TransitionEvent#getOccurredLogicalEvent()
 	 * @see #getTransitionEvent()
@@ -1272,6 +1402,7 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1281,13 +1412,14 @@ public interface TemporalconstraintPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each operation of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -1295,6 +1427,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalConstraintImpl <em>Temporal Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalConstraintImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl#getTemporalConstraint()
 		 * @generated
@@ -1305,6 +1438,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Transition Event</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TEMPORAL_CONSTRAINT__TRANSITION_EVENT = eINSTANCE.getTemporalConstraint_TransitionEvent();
@@ -1313,6 +1447,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Time Condition</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TEMPORAL_CONSTRAINT__TIME_CONDITION = eINSTANCE.getTemporalConstraint_TimeCondition();
@@ -1321,6 +1456,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Transition</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TEMPORAL_CONSTRAINT__TRANSITION = eINSTANCE.getTemporalConstraint_Transition();
@@ -1329,6 +1465,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>State</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TEMPORAL_CONSTRAINT__STATE = eINSTANCE.getTemporalConstraint_State();
@@ -1337,6 +1474,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Init State</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TEMPORAL_CONSTRAINT__INIT_STATE = eINSTANCE.getTemporalConstraint_InitState();
@@ -1345,6 +1483,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Assertion</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TEMPORAL_CONSTRAINT__ASSERTION = eINSTANCE.getTemporalConstraint_Assertion();
@@ -1353,6 +1492,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.LogicalTimeConditionImpl <em>Logical Time Condition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.LogicalTimeConditionImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl#getLogicalTimeCondition()
 		 * @generated
@@ -1363,6 +1503,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Logical Time Suspended</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute LOGICAL_TIME_CONDITION__IS_LOGICAL_TIME_SUSPENDED = eINSTANCE.getLogicalTimeCondition_IsLogicalTimeSuspended();
@@ -1371,6 +1512,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>End Point Reference</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference LOGICAL_TIME_CONDITION__END_POINT_REFERENCE = eINSTANCE.getLogicalTimeCondition_EndPointReference();
@@ -1379,6 +1521,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Start Point Reference</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference LOGICAL_TIME_CONDITION__START_POINT_REFERENCE = eINSTANCE.getLogicalTimeCondition_StartPointReference();
@@ -1387,6 +1530,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Width</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference LOGICAL_TIME_CONDITION__WIDTH = eINSTANCE.getLogicalTimeCondition_Width();
@@ -1395,6 +1539,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Lower</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference LOGICAL_TIME_CONDITION__LOWER = eINSTANCE.getLogicalTimeCondition_Lower();
@@ -1403,6 +1548,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Upper</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference LOGICAL_TIME_CONDITION__UPPER = eINSTANCE.getLogicalTimeCondition_Upper();
@@ -1411,6 +1557,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Consecutive Time Condition</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference LOGICAL_TIME_CONDITION__CONSECUTIVE_TIME_CONDITION = eINSTANCE.getLogicalTimeCondition_ConsecutiveTimeCondition();
@@ -1419,6 +1566,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionImpl <em>Transition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl#getTransition()
 		 * @generated
@@ -1429,6 +1577,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TRANSITION__FROM = eINSTANCE.getTransition_From();
@@ -1437,6 +1586,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TRANSITION__TO = eINSTANCE.getTransition_To();
@@ -1445,6 +1595,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Quantification Guard</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TRANSITION__QUANTIFICATION_GUARD = eINSTANCE.getTransition_QuantificationGuard();
@@ -1453,6 +1604,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Time Guard</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TRANSITION__TIME_GUARD = eINSTANCE.getTransition_TimeGuard();
@@ -1461,6 +1613,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Effect</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TRANSITION__EFFECT = eINSTANCE.getTransition_Effect();
@@ -1469,6 +1622,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.StateImpl <em>State</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.StateImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl#getState()
 		 * @generated
@@ -1479,6 +1633,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Error State</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute STATE__IS_ERROR_STATE = eINSTANCE.getState_IsErrorState();
@@ -1487,6 +1642,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Hazard</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute STATE__IS_HAZARD = eINSTANCE.getState_IsHazard();
@@ -1495,6 +1651,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Init State</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute STATE__IS_INIT_STATE = eINSTANCE.getState_IsInitState();
@@ -1503,6 +1660,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Mode</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute STATE__IS_MODE = eINSTANCE.getState_IsMode();
@@ -1511,6 +1669,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Hazard Declaration</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference STATE__HAZARD_DECLARATION = eINSTANCE.getState_HazardDeclaration();
@@ -1519,6 +1678,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mode Declaration</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference STATE__MODE_DECLARATION = eINSTANCE.getState_ModeDeclaration();
@@ -1527,6 +1687,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Quantification Invariant</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference STATE__QUANTIFICATION_INVARIANT = eINSTANCE.getState_QuantificationInvariant();
@@ -1535,6 +1696,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Time Invariant</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference STATE__TIME_INVARIANT = eINSTANCE.getState_TimeInvariant();
@@ -1543,6 +1705,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.StateEventImpl <em>State Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.StateEventImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl#getStateEvent()
 		 * @generated
@@ -1553,6 +1716,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>End</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference STATE_EVENT__END = eINSTANCE.getStateEvent_End();
@@ -1561,6 +1725,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Start</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference STATE_EVENT__START = eINSTANCE.getStateEvent_Start();
@@ -1569,6 +1734,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.SynchronoustransitionImpl <em>Synchronoustransition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.SynchronoustransitionImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl#getSynchronoustransition()
 		 * @generated
@@ -1579,6 +1745,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Read Transition Event</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference SYNCHRONOUSTRANSITION__READ_TRANSITION_EVENT = eINSTANCE.getSynchronoustransition_ReadTransitionEvent();
@@ -1587,6 +1754,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Write Transition Event</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference SYNCHRONOUSTRANSITION__WRITE_TRANSITION_EVENT = eINSTANCE.getSynchronoustransition_WriteTransitionEvent();
@@ -1595,6 +1763,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionEventImpl <em>Transition Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionEventImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl#getTransitionEvent()
 		 * @generated
@@ -1605,6 +1774,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Occurred Feature Flaw</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TRANSITION_EVENT__OCCURRED_FEATURE_FLAW = eINSTANCE.getTransitionEvent_OccurredFeatureFlaw();
@@ -1613,6 +1783,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Occurred Hazardous Event</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TRANSITION_EVENT__OCCURRED_HAZARDOUS_EVENT = eINSTANCE.getTransitionEvent_OccurredHazardousEvent();
@@ -1621,6 +1792,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Occurred Fault Failure</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TRANSITION_EVENT__OCCURRED_FAULT_FAILURE = eINSTANCE.getTransitionEvent_OccurredFaultFailure();
@@ -1629,6 +1801,7 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Occurred Execution Event</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TRANSITION_EVENT__OCCURRED_EXECUTION_EVENT = eINSTANCE.getTransitionEvent_OccurredExecutionEvent();
@@ -1637,10 +1810,11 @@ public interface TemporalconstraintPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Occurred Logical Event</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference TRANSITION_EVENT__OCCURRED_LOGICAL_EVENT = eINSTANCE.getTransitionEvent_OccurredLogicalEvent();
 
 	}
 
-} //TemporalconstraintPackage
+} // TemporalconstraintPackage

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,13 +39,13 @@ public class DiagramShortCutCreationViewCommand extends AbstractTransactionalCom
 
 	/**
 	 * Instantiates a new diagram short cut creation view command.
-	 * 
+	 *
 	 * @param editingDomain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param viewDescriptor
-	 *        the view descriptor
+	 *            the view descriptor
 	 * @param containerView
-	 *        the container view
+	 *            the container view
 	 */
 	public DiagramShortCutCreationViewCommand(TransactionalEditingDomain editingDomain, CreateViewRequest.ViewDescriptor viewDescriptor, View containerView) {
 		super(editingDomain, DiagramUIMessages.CreateCommand_Label, getWorkspaceFiles(containerView));
@@ -58,9 +58,8 @@ public class DiagramShortCutCreationViewCommand extends AbstractTransactionalCom
 	}
 
 	/**
-	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+	 *
 	 * @param monitor
 	 * @param info
 	 * @return
@@ -69,7 +68,7 @@ public class DiagramShortCutCreationViewCommand extends AbstractTransactionalCom
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		UMLViewProvider umlViewProvider = new UMLViewProvider();
-		EObject eObject = (EObject)(viewDescriptor.getElementAdapter()).getAdapter(EObject.class);
+		EObject eObject = (EObject) (viewDescriptor.getElementAdapter()).getAdapter(EObject.class);
 		View view = umlViewProvider.createDiagram_8016(eObject, containerView, -1, viewDescriptor.isPersisted(), viewDescriptor.getPreferencesHint());
 		Assert.isNotNull(view, "failed to create a view"); //$NON-NLS-1$
 		viewDescriptor.setView(view);

@@ -7,13 +7,14 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.edit.part;
 
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * Abstract non-diagram specific edit part for node label representing {@link NamedElement}.
@@ -36,6 +37,7 @@ public class NamedElementNodeLabelNameEditPart extends AbstractElementNodeLabelE
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getLabelRole() {
 		return "Name"; //$NON-NLS-1$
 	}
@@ -43,6 +45,7 @@ public class NamedElementNodeLabelNameEditPart extends AbstractElementNodeLabelE
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getIconPathRole() {
 		return ""; //$NON-NLS-1$
 	}

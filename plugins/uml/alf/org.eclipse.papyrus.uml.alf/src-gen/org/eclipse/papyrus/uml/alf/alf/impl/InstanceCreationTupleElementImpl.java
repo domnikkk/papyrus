@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.Expression;
 import org.eclipse.papyrus.uml.alf.alf.InstanceCreationTupleElement;
@@ -101,8 +98,9 @@ public class InstanceCreationTupleElementImpl extends MinimalEObjectImpl.Contain
   {
     String oldRole = role;
     role = newRole;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_TUPLE_ELEMENT__ROLE, oldRole, role));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_TUPLE_ELEMENT__ROLE, oldRole, role));
+	}
   }
 
   /**
@@ -127,7 +125,11 @@ public class InstanceCreationTupleElementImpl extends MinimalEObjectImpl.Contain
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_TUPLE_ELEMENT__OBJECT, oldObject, newObject);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -142,15 +144,20 @@ public class InstanceCreationTupleElementImpl extends MinimalEObjectImpl.Contain
     if (newObject != object)
     {
       NotificationChain msgs = null;
-      if (object != null)
-        msgs = ((InternalEObject)object).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_TUPLE_ELEMENT__OBJECT, null, msgs);
-      if (newObject != null)
-        msgs = ((InternalEObject)newObject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_TUPLE_ELEMENT__OBJECT, null, msgs);
+      if (object != null) {
+		msgs = ((InternalEObject)object).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_TUPLE_ELEMENT__OBJECT, null, msgs);
+	}
+      if (newObject != null) {
+		msgs = ((InternalEObject)newObject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_TUPLE_ELEMENT__OBJECT, null, msgs);
+	}
       msgs = basicSetObject(newObject, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_TUPLE_ELEMENT__OBJECT, newObject, newObject));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_TUPLE_ELEMENT__OBJECT, newObject, newObject));
+	}
   }
 
   /**
@@ -253,7 +260,9 @@ public class InstanceCreationTupleElementImpl extends MinimalEObjectImpl.Contain
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (role: ");

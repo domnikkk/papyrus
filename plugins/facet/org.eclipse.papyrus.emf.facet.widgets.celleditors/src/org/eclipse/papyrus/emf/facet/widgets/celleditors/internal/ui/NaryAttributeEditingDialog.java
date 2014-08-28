@@ -19,9 +19,6 @@ import java.util.List;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.papyrus.emf.facet.widgets.celleditors.IModelCellEditHandler;
-import org.eclipse.papyrus.emf.facet.widgets.celleditors.internal.Messages;
-import org.eclipse.papyrus.emf.facet.widgets.internal.CustomizableLabelProvider;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.IOpenListener;
@@ -32,6 +29,9 @@ import org.eclipse.jface.viewers.OpenEvent;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.emf.facet.widgets.celleditors.IModelCellEditHandler;
+import org.eclipse.papyrus.emf.facet.widgets.celleditors.internal.Messages;
+import org.eclipse.papyrus.emf.facet.widgets.internal.CustomizableLabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ControlEvent;
 import org.eclipse.swt.events.ControlListener;
@@ -59,7 +59,7 @@ public class NaryAttributeEditingDialog<T extends Object> extends AbstractNaryEd
 
 	private static final int NUM_COLUMNS = 2;
 	private TableViewer featureValuesTableViewer;
-	
+
 	private final Object newValuePlaceholder = new Object();
 
 	private Button addButton;
@@ -98,11 +98,11 @@ public class NaryAttributeEditingDialog<T extends Object> extends AbstractNaryEd
 	 * @param values
 	 *            the current values
 	 * @param editHandler
-	 * 			  the edit handler to perform the commit.           
+	 *            the edit handler to perform the commit.
 	 * @param feature
 	 *            the feature to edit
 	 * @param eObject
-	 * 				the eObject being currently edited. Should not be modified in this dialog.
+	 *            the eObject being currently edited. Should not be modified in this dialog.
 	 */
 	public NaryAttributeEditingDialog(final Shell shell, final List<T> values,
 			final IModelCellEditHandler editHandler, final EObject eObject, final EStructuralFeature feature) {
@@ -180,14 +180,16 @@ public class NaryAttributeEditingDialog<T extends Object> extends AbstractNaryEd
 		return contents;
 	}
 
-	@SuppressWarnings("unchecked") // type erasure on generic
+	@SuppressWarnings("unchecked")
+	// type erasure on generic
 	private void addButtonClicked() {
 		getValues().add(0, (T) NaryAttributeEditingDialog.this.newValuePlaceholder);
 		refresh();
 		this.featureValuesTableViewer.editElement(this.newValuePlaceholder, 0);
 	}
 
-	@SuppressWarnings("unchecked") // type erasure on generic
+	@SuppressWarnings("unchecked")
+	// type erasure on generic
 	private void removeButtonClicked() {
 		final IStructuredSelection selection = (IStructuredSelection) this.featureValuesTableViewer
 				.getSelection();
@@ -196,7 +198,7 @@ public class NaryAttributeEditingDialog<T extends Object> extends AbstractNaryEd
 			final Object element = it.next();
 
 			if (getValues().contains(element)) {
-				getValues().remove(element);				
+				getValues().remove(element);
 			}
 		}
 		refresh();

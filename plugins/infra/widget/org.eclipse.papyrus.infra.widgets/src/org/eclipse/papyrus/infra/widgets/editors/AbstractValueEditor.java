@@ -11,6 +11,7 @@
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 402525
  *  Mickaël ADAM (ALL4TEC) mickael.adam@all4tec.net - bug 435415
+ *  Christian W. Damus (CEA) - bug 417409
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.editors;
@@ -75,13 +76,13 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 
 	protected ControlDecoration controlDecoration;
 
-	protected static final Color VALID = new Color(Display.getCurrent(), 144, 238, 144); //CSS LightGreen
+	protected static final Color VALID = new Color(Display.getCurrent(), 144, 238, 144); // CSS LightGreen
 
 	protected static final Color DEFAULT = Display.getCurrent().getSystemColor(SWT.COLOR_WHITE);
 
-	protected static final Color EDIT = new Color(Display.getCurrent(), 255, 204, 153); //Orange
+	protected static final Color EDIT = new Color(Display.getCurrent(), 255, 204, 153); // Orange
 
-	protected static final Color ERROR = new Color(Display.getCurrent(), 255, 153, 153); //Red
+	protected static final Color ERROR = new Color(Display.getCurrent(), 255, 153, 153); // Red
 
 	protected AbstractValueEditor(Composite parent) {
 		super(parent);
@@ -104,9 +105,9 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	 *
 	 * @param widgetObservable
 	 * @param targetToModel
-	 *        the IConverter to convert data from Widget to Model
+	 *            the IConverter to convert data from Widget to Model
 	 * @param modelToTarget
-	 *        the IConverter to convert data from Model to Widget
+	 *            the IConverter to convert data from Model to Widget
 	 */
 	protected void setWidgetObservable(IObservableValue widgetObservable, IConverter targetToModel, IConverter modelToTarget) {
 		this.widgetObservable = widgetObservable;
@@ -117,14 +118,14 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	 * Sets this editor's widgetObservable
 	 *
 	 * @param widgetObservable
-	 *        The widget observable value
+	 *            The widget observable value
 	 * @param commitOnChange
-	 *        If true, CommitListeners will be notified when the widget
-	 *        observable changes
+	 *            If true, CommitListeners will be notified when the widget
+	 *            observable changes
 	 */
 	protected void setWidgetObservable(IObservableValue widgetObservable, boolean commitOnChange) {
 		this.widgetObservable = widgetObservable;
-		if(commitOnChange) {
+		if (commitOnChange) {
 			this.widgetObservable.addChangeListener(new IChangeListener() {
 
 				@Override
@@ -160,10 +161,10 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	 */
 	@Override
 	public void setConverters(IConverter targetToModel, IConverter modelToTarget) {
-		if(targetToModelStrategy == null) {
+		if (targetToModelStrategy == null) {
 			targetToModelStrategy = new UpdateValueStrategy();
 		}
-		if(modelToTargetStrategy == null) {
+		if (modelToTargetStrategy == null) {
 			modelToTargetStrategy = new UpdateValueStrategy();
 		}
 		targetToModelStrategy.setConverter(targetToModel);
@@ -175,9 +176,9 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	 * model
 	 *
 	 * @param targetToModelStrategy
-	 *        The widget to model Update strategy
+	 *            The widget to model Update strategy
 	 * @param modelToTargetStrategy
-	 *        The model to widget Update strategy
+	 *            The model to widget Update strategy
 	 */
 	public void setUpdateStrategies(UpdateValueStrategy targetToModelStrategy, UpdateValueStrategy modelToTargetStrategy) {
 		this.targetToModelStrategy = targetToModelStrategy;
@@ -194,7 +195,7 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	 */
 	@Override
 	protected void doBinding() {
-		if(modelProperty == null || widgetObservable == null) {
+		if (modelProperty == null || widgetObservable == null) {
 			return;
 		}
 		setBinding();
@@ -217,13 +218,19 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 
 			@Override
 			public void handleValueChange(ValueChangeEvent event) {
-				//Check if the widget is disposed before isReadOnly() to avoid NPE
-				if(!AbstractValueEditor.this.isDisposed() && !isReadOnly()) { //Bug 434787 : Shouldn't not execute the timer thread if the widget is disposed
-					IStatus status = (IStatus)binding.getValidationStatus().getValue(); //Bug 435415 : Update the status only if the widget isn't disposed
-					updateStatus(status);
-					changeColorField();
+				// Don't handle validation changes if we don't have a validator, because then it could only be green and it isn't useful.
+				// Also, if we're showing in a dialog, then our widget may have been disposed already if we're validating a change applied
+				// by hitting the OK button
+				if ((modelValidator) != null) {
+					// Check if the widget is disposed before isReadOnly() to avoid NPE
+					if (!AbstractValueEditor.this.isDisposed() && !isReadOnly()) { // Bug 434787 : Shouldn't not execute the timer thread if the widget is disposed
+						IStatus status = (IStatus) binding.getValidationStatus().getValue(); // Bug 435415 : Update the status only if the widget isn't disposed
+						updateStatus(status);
+						changeColorField();
+					}
 				}
 			}
+
 		});
 	}
 
@@ -236,7 +243,7 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	 * @param targetToModelValidator
 	 */
 	public void setTargetAfterGetValidator(AbstractValidator targetToModelValidator) {
-		if(targetToModelValidator != null) {
+		if (targetToModelValidator != null) {
 			targetToModelStrategy.setAfterGetValidator(targetToModelValidator);
 		}
 	}
@@ -248,21 +255,19 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	 * @param modelValidator
 	 */
 	public void setModelValidator(IValidator targetToModelValidator) {
-		if(targetToModelValidator != null) {
-			this.modelValidator = targetToModelValidator;
-			targetToModelStrategy.setBeforeSetValidator(targetToModelValidator);
-			modelToTargetStrategy.setAfterGetValidator(targetToModelValidator);
-		}
+		this.modelValidator = targetToModelValidator;
+		targetToModelStrategy.setBeforeSetValidator(targetToModelValidator);
+		modelToTargetStrategy.setAfterGetValidator(targetToModelValidator);
 	}
 
 	/**
 	 * Initialize both strategies with default values
 	 */
 	public void setStrategies() {
-		if(modelToTargetStrategy == null) {
+		if (modelToTargetStrategy == null) {
 			modelToTargetStrategy = new UpdateValueStrategy();
 		}
-		if(targetToModelStrategy == null) {
+		if (targetToModelStrategy == null) {
 			targetToModelStrategy = new UpdateValueStrategy();
 		}
 	}
@@ -271,6 +276,6 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	protected Object getContextElement() {
 		// Our observables for features of EMF objects are expected to implement IObserving because
 		// the observe the value of the object's feature
-		return (modelProperty instanceof IObserving) ? ((IObserving)modelProperty).getObserved() : null;
+		return (modelProperty instanceof IObserving) ? ((IObserving) modelProperty).getObserved() : null;
 	}
 }

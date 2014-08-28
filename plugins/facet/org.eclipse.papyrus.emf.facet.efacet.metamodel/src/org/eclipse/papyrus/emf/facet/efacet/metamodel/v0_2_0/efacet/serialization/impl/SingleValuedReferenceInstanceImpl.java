@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  */
 package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl;
@@ -29,7 +29,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serializatio
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedReferenceInstanceImpl#getReferencedElement <em>Referenced Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedReferenceInstanceImpl#getReferencedElement <em>Referenced Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	 * The cached value of the '{@link #getReferencedElement() <em>Referenced Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReferencedElement()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SingleValuedReferenceInstanceImpl() {
@@ -58,6 +60,7 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,15 +71,17 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EObject getReferencedElement() {
 		if (referencedElement != null && referencedElement.eIsProxy()) {
-			InternalEObject oldReferencedElement = (InternalEObject)referencedElement;
+			InternalEObject oldReferencedElement = (InternalEObject) referencedElement;
 			referencedElement = eResolveProxy(oldReferencedElement);
 			if (referencedElement != oldReferencedElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SerializationPackage.SINGLE_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENT, oldReferencedElement, referencedElement));
+				}
 			}
 		}
 		return referencedElement;
@@ -85,6 +90,7 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EObject basicGetReferencedElement() {
@@ -94,26 +100,31 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setReferencedElement(EObject newReferencedElement) {
 		EObject oldReferencedElement = referencedElement;
 		referencedElement = newReferencedElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SerializationPackage.SINGLE_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENT, oldReferencedElement, referencedElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SerializationPackage.SINGLE_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENT:
-				if (resolve) return getReferencedElement();
-				return basicGetReferencedElement();
+		case SerializationPackage.SINGLE_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENT:
+			if (resolve) {
+				return getReferencedElement();
+			}
+			return basicGetReferencedElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,14 +132,15 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SerializationPackage.SINGLE_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENT:
-				setReferencedElement((EObject)newValue);
-				return;
+		case SerializationPackage.SINGLE_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENT:
+			setReferencedElement((EObject) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -136,14 +148,15 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SerializationPackage.SINGLE_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENT:
-				setReferencedElement((EObject)null);
-				return;
+		case SerializationPackage.SINGLE_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENT:
+			setReferencedElement((EObject) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -151,15 +164,16 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SerializationPackage.SINGLE_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENT:
-				return referencedElement != null;
+		case SerializationPackage.SINGLE_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENT:
+			return referencedElement != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //SingleValuedReferenceInstanceImpl
+} // SingleValuedReferenceInstanceImpl

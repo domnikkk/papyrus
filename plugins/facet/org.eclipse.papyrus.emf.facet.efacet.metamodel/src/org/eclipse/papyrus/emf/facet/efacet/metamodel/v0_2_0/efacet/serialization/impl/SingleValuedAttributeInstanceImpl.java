@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  */
 package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl;
@@ -27,7 +27,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serializatio
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedAttributeInstanceImpl#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedAttributeInstanceImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +38,7 @@ public class SingleValuedAttributeInstanceImpl extends AbstractAttributeInstance
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public class SingleValuedAttributeInstanceImpl extends AbstractAttributeInstance
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -57,6 +59,7 @@ public class SingleValuedAttributeInstanceImpl extends AbstractAttributeInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SingleValuedAttributeInstanceImpl() {
@@ -66,6 +69,7 @@ public class SingleValuedAttributeInstanceImpl extends AbstractAttributeInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,6 +80,7 @@ public class SingleValuedAttributeInstanceImpl extends AbstractAttributeInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Object getValue() {
@@ -85,25 +90,28 @@ public class SingleValuedAttributeInstanceImpl extends AbstractAttributeInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setValue(Object newValue) {
 		Object oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SerializationPackage.SINGLE_VALUED_ATTRIBUTE_INSTANCE__VALUE, oldValue, value));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SerializationPackage.SINGLE_VALUED_ATTRIBUTE_INSTANCE__VALUE:
-				return getValue();
+		case SerializationPackage.SINGLE_VALUED_ATTRIBUTE_INSTANCE__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,14 +119,15 @@ public class SingleValuedAttributeInstanceImpl extends AbstractAttributeInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SerializationPackage.SINGLE_VALUED_ATTRIBUTE_INSTANCE__VALUE:
-				setValue(newValue);
-				return;
+		case SerializationPackage.SINGLE_VALUED_ATTRIBUTE_INSTANCE__VALUE:
+			setValue(newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -126,14 +135,15 @@ public class SingleValuedAttributeInstanceImpl extends AbstractAttributeInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SerializationPackage.SINGLE_VALUED_ATTRIBUTE_INSTANCE__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		case SerializationPackage.SINGLE_VALUED_ATTRIBUTE_INSTANCE__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -141,13 +151,14 @@ public class SingleValuedAttributeInstanceImpl extends AbstractAttributeInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SerializationPackage.SINGLE_VALUED_ATTRIBUTE_INSTANCE__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		case SerializationPackage.SINGLE_VALUED_ATTRIBUTE_INSTANCE__VALUE:
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -155,11 +166,14 @@ public class SingleValuedAttributeInstanceImpl extends AbstractAttributeInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: "); //$NON-NLS-1$
@@ -168,4 +182,4 @@ public class SingleValuedAttributeInstanceImpl extends AbstractAttributeInstance
 		return result.toString();
 	}
 
-} //SingleValuedAttributeInstanceImpl
+} // SingleValuedAttributeInstanceImpl

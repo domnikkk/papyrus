@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,10 +28,10 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
  *
  * <!-- begin-model-doc -->
  * Hardware connectors represent wires that electrically connect the hardware components through its ports.
- * 
+ *
  * Semantics:
  * The connector joins the two referenced ports electrically, with a resistance defined by the resistance attribute.
- * 
+ *
  * Extension:
  * Connector
  * <!-- end-model-doc -->
@@ -39,7 +39,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareConnector#getPin <em>Pin</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareConnector#getPin <em>Pin</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,10 +53,10 @@ public interface HardwareConnector extends EAElement, EAConnector {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.HardwareConnectorInstanceRef}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Pin</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Pin</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Pin</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwareConnector_Pin()
 	 * @model containment="true" lower="2" upper="2" ordered="false"

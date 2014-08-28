@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,26 +55,28 @@ public class SetAggregationPropertyAction implements IObjectActionDelegate {
 
 	/**
 	 * @see org.eclipse.ui.IObjectActionDelegate#setActivePart(org.eclipse.jface.action.IAction, org.eclipse.ui.IWorkbenchPart)
-	 * 
+	 *
 	 * @param action
 	 * @param targetPart
 	 */
+	@Override
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
-	 * 
+	 *
 	 * @param action
 	 */
+	@Override
 	public void run(IAction action) {
-		//1 this is a associationEnd?
+		// 1 this is a associationEnd?
 		CompoundCommand command = new CompoundCommand();
-		if(selectedElement instanceof AssociationEndSourceEditPart || selectedElement instanceof AssociationEndTargetEditPart || selectedElement instanceof AssociationClassRoleSourceEditPart || selectedElement instanceof AssociationClassRoleTargetEditPart) {
-			//2. look for the future owner of the property, run only for binary association
-			Property property = (Property)((GraphicalEditPart)selectedElement).resolveSemanticElement();
-			if(aggregationKind != null) {
+		if (selectedElement instanceof AssociationEndSourceEditPart || selectedElement instanceof AssociationEndTargetEditPart || selectedElement instanceof AssociationClassRoleSourceEditPart || selectedElement instanceof AssociationClassRoleTargetEditPart) {
+			// 2. look for the future owner of the property, run only for binary association
+			Property property = (Property) selectedElement.resolveSemanticElement();
+			if (aggregationKind != null) {
 				// add property in association
 				SetRequest setRequest = new SetRequest(property, feature, aggregationKind);
 				SetValueCommand setValueCommand = new SetValueCommand(setRequest);
@@ -86,15 +88,16 @@ public class SetAggregationPropertyAction implements IObjectActionDelegate {
 
 	/**
 	 * @see org.eclipse.ui.IActionDelegate#selectionChanged(org.eclipse.jface.action.IAction, org.eclipse.jface.viewers.ISelection)
-	 * 
+	 *
 	 * @param action
 	 * @param selection
 	 */
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
-		if(selection instanceof IStructuredSelection) {
-			Object selectedobject = ((IStructuredSelection)selection).getFirstElement();
-			if(selectedobject instanceof GraphicalEditPart) {
-				selectedElement = (GraphicalEditPart)selectedobject;
+		if (selection instanceof IStructuredSelection) {
+			Object selectedobject = ((IStructuredSelection) selection).getFirstElement();
+			if (selectedobject instanceof GraphicalEditPart) {
+				selectedElement = (GraphicalEditPart) selectedobject;
 			}
 		}
 	}

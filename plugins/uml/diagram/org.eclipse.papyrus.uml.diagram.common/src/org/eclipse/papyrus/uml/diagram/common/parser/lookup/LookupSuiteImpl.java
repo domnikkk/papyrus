@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2006 Borland Software Corporation
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,12 +22,13 @@ public class LookupSuiteImpl implements LookupSuite {
 
 	// @unused
 	public <T> void addLookup(Class<T> clazz, Lookup<T> lookup) {
-		if(myLookups.containsKey(clazz)) {
+		if (myLookups.containsKey(clazz)) {
 			throw new IllegalArgumentException("I already have lookup for :" + clazz);
 		}
 		myLookups.put(clazz, lookup);
 	}
 
+	@Override
 	public <T> Lookup<T> getLookup(Class<T> clazz) {
 		Lookup<T> result = myLookups.get(clazz);
 		return result == null ? NULL_LOOKUP : result;
@@ -36,7 +37,7 @@ public class LookupSuiteImpl implements LookupSuite {
 	// @unused
 	public void setLookupResolver(LookupResolver lookupResolver) {
 		myLookupResolver = lookupResolver;
-		if(myLookupResolver == null) {
+		if (myLookupResolver == null) {
 			myLookupResolver = LookupResolver.NULL;
 		}
 	}

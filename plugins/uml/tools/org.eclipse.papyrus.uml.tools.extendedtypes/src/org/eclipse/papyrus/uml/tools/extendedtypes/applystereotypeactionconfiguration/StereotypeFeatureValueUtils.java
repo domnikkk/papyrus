@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,14 +40,18 @@ public class StereotypeFeatureValueUtils {
 	}
 
 	/**
-	 * Returns the value to set for a given feature of a given element 
-	 * @param elementToConfigure eobject for which feature is set. This must not be <code>null</code>
-	 * @param feature {@link EStructuralFeature} to set. This must not be <code>null</code>
-	 * @param valueModel configuration of the value, stored in the model
+	 * Returns the value to set for a given feature of a given element
+	 *
+	 * @param elementToConfigure
+	 *            eobject for which feature is set. This must not be <code>null</code>
+	 * @param feature
+	 *            {@link EStructuralFeature} to set. This must not be <code>null</code>
+	 * @param valueModel
+	 *            configuration of the value, stored in the model
 	 * @return the real value that will be set to the object or <code>null</code> if none could be computed
 	 */
 	public static Object getValue(final EObject elementToConfigure, final Stereotype stereotype, final Type type, final FeatureValue featureValue) {
-		
+
 		Object result = new ApplyStereotypeActionConfigurationSwitch<Object>() {
 			/**
 			 * {@inheritDoc}
@@ -55,39 +59,39 @@ public class StereotypeFeatureValueUtils {
 			@Override
 			public Object caseConstantValue(ConstantValue object) {
 				ValueSpecification valueSpecification = object.getValueInstance();
-				
-				if(valueSpecification==null) {
+
+				if (valueSpecification == null) {
 					return null;
 				}
 
 				try {
-					if(type instanceof PrimitiveType) {
-						final PrimitiveType pType = (PrimitiveType)type;
+					if (type instanceof PrimitiveType) {
+						final PrimitiveType pType = (PrimitiveType) type;
 						final String name = pType.getName();
-						if(PrimitivesTypesUtils.UML_BOOLEAN.equals(name)) {
+						if (PrimitivesTypesUtils.UML_BOOLEAN.equals(name)) {
 							return ConverterRegistry.getSingleton().convert(boolean.class, valueSpecification);
-						} else if(PrimitivesTypesUtils.UML_INTEGER.equals(name)) {
+						} else if (PrimitivesTypesUtils.UML_INTEGER.equals(name)) {
 							return ConverterRegistry.getSingleton().convert(int.class, valueSpecification);
-						} else if(PrimitivesTypesUtils.UML_REAL.equals(name)) {
+						} else if (PrimitivesTypesUtils.UML_REAL.equals(name)) {
 							return ConverterRegistry.getSingleton().convert(double.class, valueSpecification);
-						} else if(PrimitivesTypesUtils.UML_STRING.equals(name)) {
+						} else if (PrimitivesTypesUtils.UML_STRING.equals(name)) {
 							return ConverterRegistry.getSingleton().convert(String.class, valueSpecification);
-						} else if(PrimitivesTypesUtils.UML_UNLIMITED_NATURAL.equals(name)) {
+						} else if (PrimitivesTypesUtils.UML_UNLIMITED_NATURAL.equals(name)) {
 							return ConverterRegistry.getSingleton().convert(int.class, valueSpecification);
-						} else { //custom PrimitiveType
+						} else { // custom PrimitiveType
 							return ConverterRegistry.getSingleton().convert(String.class, valueSpecification);
 						}
-					} else if(type instanceof Enumeration) {
+					} else if (type instanceof Enumeration) {
 						return ConverterRegistry.getSingleton().convert(Enumeration.class, valueSpecification);
-					} else if(type instanceof DataType) {//FIXME manage the data type
+					} else if (type instanceof DataType) {// FIXME manage the data type
 						return ConverterRegistry.getSingleton().convert(String.class, valueSpecification);
-					} 
+					}
 				} catch (ConverterNotfoundException e) {
-					Activator.log.error("Impossible to convert "+valueSpecification+ " to fit feature type :"+type, e);
+					Activator.log.error("Impossible to convert " + valueSpecification + " to fit feature type :" + type, e);
 				}
 				return super.caseConstantValue(object);
 			}
-			
+
 			/**
 			 * {@inheritDoc}
 			 */
@@ -95,7 +99,7 @@ public class StereotypeFeatureValueUtils {
 			public Object caseQueryExecutionValue(QueryExecutionValue object) {
 				throw new UnsupportedOperationException("Query execution values resolution has not been implemented yet");
 			};
-			
+
 			/**
 			 * {@inheritDoc}
 			 */
@@ -103,7 +107,7 @@ public class StereotypeFeatureValueUtils {
 			public Object caseDynamicValue(DynamicValue object) {
 				throw new UnsupportedOperationException("Dynamic values resolution has not been implemented yet");
 			};
-			
+
 			/**
 			 * {@inheritDoc}
 			 */
@@ -111,16 +115,16 @@ public class StereotypeFeatureValueUtils {
 			public Object caseListValue(ListValue object) {
 				// resolve one by one all features in the values list of this listvalue
 				List<Object> results = new ArrayList<Object>();
-				for(FeatureValue value : object.getValues()) {
+				for (FeatureValue value : object.getValues()) {
 					Object singleResult = getValue(elementToConfigure, stereotype, type, value);
 					results.add(singleResult);
 				}
 				return results;
 			};
-			
+
 		}.doSwitch(featureValue);
 		return result;
 	}
-	
-	
+
+
 }

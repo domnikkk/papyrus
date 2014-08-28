@@ -19,25 +19,25 @@ public class PropertyTester extends org.eclipse.core.expressions.PropertyTester 
 
 	/**
 	 * Checks whether each element in the StructuredSelection can be adapted to an org.eclipse.uml2.uml.StructuredClassifier
-	 * 
+	 *
 	 * @param structuredSelection
 	 * @return result of test
 	 */
 	private boolean isStructuredClassifier(IStructuredSelection structuredSelection) {
-		if(structuredSelection != null) {
+		if (structuredSelection != null) {
 			@SuppressWarnings("rawtypes")
 			Iterator iterator = structuredSelection.iterator();
-			while(iterator.hasNext()) {
+			while (iterator.hasNext()) {
 				Object selection = iterator.next();
 
-				if(!(selection instanceof IAdaptable)) {
+				if (!(selection instanceof IAdaptable)) {
 					return false;
 				}
-				EObject object = (EObject)((IAdaptable)selection).getAdapter(EObject.class);
-				if(object == null) {
+				EObject object = (EObject) ((IAdaptable) selection).getAdapter(EObject.class);
+				if (object == null) {
 					return false;
 				}
-				if(!(object instanceof StructuredClassifier)) {
+				if (!(object instanceof StructuredClassifier)) {
 					return false;
 				}
 			}
@@ -48,25 +48,25 @@ public class PropertyTester extends org.eclipse.core.expressions.PropertyTester 
 
 	/**
 	 * Checks whether each element in the StructuredSelection can be adapted to an org.eclipse.uml2.uml.NamedElement
-	 * 
+	 *
 	 * @param structuredSelection
 	 * @return result of test
 	 */
 	private boolean isNamedElement(IStructuredSelection structuredSelection) {
-		if(structuredSelection != null) {
+		if (structuredSelection != null) {
 			@SuppressWarnings("rawtypes")
 			Iterator iterator = structuredSelection.iterator();
-			while(iterator.hasNext()) {
+			while (iterator.hasNext()) {
 				Object selection = iterator.next();
 
-				if(!(selection instanceof IAdaptable)) {
+				if (!(selection instanceof IAdaptable)) {
 					return false;
 				}
-				EObject object = (EObject)((IAdaptable)selection).getAdapter(EObject.class);
-				if(object == null) {
+				EObject object = (EObject) ((IAdaptable) selection).getAdapter(EObject.class);
+				if (object == null) {
 					return false;
 				}
-				if(!(object instanceof NamedElement)) {
+				if (!(object instanceof NamedElement)) {
 					return false;
 				}
 			}
@@ -78,25 +78,25 @@ public class PropertyTester extends org.eclipse.core.expressions.PropertyTester 
 
 	/**
 	 * Checks whether each element in the StructuredSelection can be adapted to an org.eclipse.uml2.uml.Package
-	 * 
+	 *
 	 * @param structuredSelection
 	 * @return result of test
 	 */
 	private boolean isPackage(IStructuredSelection structuredSelection) {
-		if(structuredSelection != null) {
+		if (structuredSelection != null) {
 			@SuppressWarnings("rawtypes")
 			Iterator iterator = structuredSelection.iterator();
-			while(iterator.hasNext()) {
+			while (iterator.hasNext()) {
 				Object selection = iterator.next();
 
-				if(!(selection instanceof IAdaptable)) {
+				if (!(selection instanceof IAdaptable)) {
 					return false;
 				}
-				EObject object = (EObject)((IAdaptable)selection).getAdapter(EObject.class);
-				if(object == null) {
+				EObject object = (EObject) ((IAdaptable) selection).getAdapter(EObject.class);
+				if (object == null) {
 					return false;
 				}
-				if(!(object instanceof org.eclipse.uml2.uml.Package)) {
+				if (!(object instanceof org.eclipse.uml2.uml.Package)) {
 					return false;
 				}
 			}
@@ -108,28 +108,29 @@ public class PropertyTester extends org.eclipse.core.expressions.PropertyTester 
 	/**
 	 * This is the method called when displaying menu whose visibility is conditioned by the tester.
 	 * The property to be tested is passed as a String parameter
-	 * 
+	 *
 	 * @see org.eclipse.core.expressions.IPropertyTester#test(java.lang.Object, java.lang.String, java.lang.Object[], java.lang.Object)
-	 * 
+	 *
 	 * @param receiver
 	 * @param property
 	 * @param args
 	 * @param expectedValue
 	 * @return
 	 */
+	@Override
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
-		if(isPackage.equals(property)) {
-			boolean testResult = isPackage((IStructuredSelection)receiver);
+		if (isPackage.equals(property)) {
+			boolean testResult = isPackage((IStructuredSelection) receiver);
 
 			return expectedValue.equals(new Boolean(testResult));
 		}
-		if(isStructuredClassifier.equals(property)) {
-			boolean testResult = isStructuredClassifier((IStructuredSelection)receiver);
+		if (isStructuredClassifier.equals(property)) {
+			boolean testResult = isStructuredClassifier((IStructuredSelection) receiver);
 
 			return expectedValue.equals(new Boolean(testResult));
 		}
-		if(isNamedElement.equals(property)) {
-			boolean testResult = isNamedElement((IStructuredSelection)receiver);
+		if (isNamedElement.equals(property)) {
+			boolean testResult = isNamedElement((IStructuredSelection) receiver);
 
 			return expectedValue.equals(new Boolean(testResult));
 		}

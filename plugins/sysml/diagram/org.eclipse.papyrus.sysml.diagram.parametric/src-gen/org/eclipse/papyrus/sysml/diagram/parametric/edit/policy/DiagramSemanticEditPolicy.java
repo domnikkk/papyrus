@@ -16,7 +16,7 @@ package org.eclipse.papyrus.sysml.diagram.parametric.edit.policy;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.requests.ReconnectRequest;
-// Start of user code custom imports	
+// Start of user code custom imports
 // End of user code
 import org.eclipse.papyrus.sysml.diagram.parametric.policies.CustomDefaultSemanticEditPolicy;
 
@@ -52,5 +52,5 @@ public class DiagramSemanticEditPolicy extends CustomDefaultSemanticEditPolicy {
 	@Override
 	protected Command getReorientRefRelationshipTargetCommand(ReconnectRequest request) {
 		return UnexecutableCommand.INSTANCE;
-	}	
+	}
 }

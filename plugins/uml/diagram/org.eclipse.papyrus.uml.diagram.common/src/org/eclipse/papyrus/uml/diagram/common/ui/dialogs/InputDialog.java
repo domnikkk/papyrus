@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,7 +49,7 @@ public class InputDialog extends Dialog {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 * @param initialValue
 	 */
@@ -57,7 +57,7 @@ public class InputDialog extends Dialog {
 		super(parentShell);
 		this.title = title;
 		this.message = message;
-		if(initialValue != null) {
+		if (initialValue != null) {
 
 			this.initialValue = initialValue;
 			this.value = initialValue;
@@ -66,7 +66,7 @@ public class InputDialog extends Dialog {
 
 	/**
 	 * Gets the value.
-	 * 
+	 *
 	 * @return the value
 	 */
 	public String getValue() {
@@ -76,23 +76,23 @@ public class InputDialog extends Dialog {
 	@Override
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
-		if(title != null) {
+		if (title != null) {
 			shell.setText(title);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#createDialogArea(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 * @return
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite composite = (Composite)super.createDialogArea(parent);
+		Composite composite = (Composite) super.createDialogArea(parent);
 
-		if(message != null) {
+		if (message != null) {
 			Label label = new Label(composite, SWT.WRAP);
 			label.setText(message);
 			GridData data = new GridData(GridData.GRAB_HORIZONTAL | GridData.GRAB_VERTICAL | GridData.HORIZONTAL_ALIGN_FILL | GridData.VERTICAL_ALIGN_CENTER);
@@ -105,7 +105,7 @@ public class InputDialog extends Dialog {
 
 	/**
 	 * Set the value
-	 * 
+	 *
 	 * @param newValue
 	 */
 	protected void setValue(String newValue) {

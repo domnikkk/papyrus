@@ -3,18 +3,21 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.transaction;bundle-version="1.2.0",
  org.eclipse.gef;bundle-version="3.4.0",
  org.eclipse.jdt.core;bundle-version="3.4.0",
- org.eclipse.papyrus.java.reverse;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
- org.eclipse.papyrus.uml.tools;bundle-version="1.0.0"
+ org.eclipse.papyrus.java.reverse;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.core;bundle-version="1.0.1",
+ org.eclipse.papyrus.uml.tools;bundle-version="1.0.1",
+ org.eclipse.gmf.runtime.diagram.core
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-Activator: org.eclipse.papyrus.java.reverse.ui.Activator
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.java.reverse.ui;singleton:=tr
  ue
+Import-Package: org.eclipse.gmf.runtime.notation,
+ org.eclipse.papyrus.infra.gmfdiag.dnd.strategy,
+ org.eclipse.papyrus.uml.diagram.common.util
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Import-Package: org.eclipse.papyrus.infra.gmfdiag.dnd.strategy
 

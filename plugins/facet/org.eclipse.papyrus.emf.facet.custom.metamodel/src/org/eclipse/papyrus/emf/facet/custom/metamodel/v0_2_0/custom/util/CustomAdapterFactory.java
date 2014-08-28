@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 361794 - [Restructuring] New customization meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
- *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning 
+ *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning
  */
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.util;
 
@@ -21,17 +21,23 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementSwitchQuery;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DocumentedElement;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.*;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage
  * @generated
  */
@@ -40,6 +46,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static CustomPackage modelPackage;
@@ -48,6 +55,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public CustomAdapterFactory() {
@@ -61,6 +69,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -70,7 +79,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -79,79 +88,95 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected CustomSwitch<Adapter> modelSwitch =
-		new CustomSwitch<Adapter>() {
-			@Override
-			public Adapter caseCustomization(Customization object) {
-				return createCustomizationAdapter();
-			}
-			@Override
-			public Adapter caseEClassCustomization(EClassCustomization object) {
-				return createEClassCustomizationAdapter();
-			}
-			@Override
-			public Adapter caseFacetCustomization(FacetCustomization object) {
-				return createFacetCustomizationAdapter();
-			}
-			@Override
-			public Adapter caseETypedElementSwitchQuery(ETypedElementSwitchQuery object) {
-				return createETypedElementSwitchQueryAdapter();
-			}
-			@Override
-			public Adapter caseETypedElementCase(ETypedElementCase object) {
-				return createETypedElementCaseAdapter();
-			}
-			@Override
-			public Adapter caseEModelElement(EModelElement object) {
-				return createEModelElementAdapter();
-			}
-			@Override
-			public Adapter caseENamedElement(ENamedElement object) {
-				return createENamedElementAdapter();
-			}
-			@Override
-			public Adapter caseEPackage(EPackage object) {
-				return createEPackageAdapter();
-			}
-			@Override
-			public Adapter caseDocumentedElement(DocumentedElement object) {
-				return createDocumentedElementAdapter();
-			}
-			@Override
-			public Adapter caseFacetSet(FacetSet object) {
-				return createFacetSetAdapter();
-			}
-			@Override
-			public Adapter caseEClassifier(EClassifier object) {
-				return createEClassifierAdapter();
-			}
-			@Override
-			public Adapter caseFacet(Facet object) {
-				return createFacetAdapter();
-			}
-			@Override
-			public Adapter caseQuery(Query object) {
-				return createQueryAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new CustomSwitch<Adapter>() {
+				@Override
+				public Adapter caseCustomization(Customization object) {
+					return createCustomizationAdapter();
+				}
+
+				@Override
+				public Adapter caseEClassCustomization(EClassCustomization object) {
+					return createEClassCustomizationAdapter();
+				}
+
+				@Override
+				public Adapter caseFacetCustomization(FacetCustomization object) {
+					return createFacetCustomizationAdapter();
+				}
+
+				@Override
+				public Adapter caseETypedElementSwitchQuery(ETypedElementSwitchQuery object) {
+					return createETypedElementSwitchQueryAdapter();
+				}
+
+				@Override
+				public Adapter caseETypedElementCase(ETypedElementCase object) {
+					return createETypedElementCaseAdapter();
+				}
+
+				@Override
+				public Adapter caseEModelElement(EModelElement object) {
+					return createEModelElementAdapter();
+				}
+
+				@Override
+				public Adapter caseENamedElement(ENamedElement object) {
+					return createENamedElementAdapter();
+				}
+
+				@Override
+				public Adapter caseEPackage(EPackage object) {
+					return createEPackageAdapter();
+				}
+
+				@Override
+				public Adapter caseDocumentedElement(DocumentedElement object) {
+					return createDocumentedElementAdapter();
+				}
+
+				@Override
+				public Adapter caseFacetSet(FacetSet object) {
+					return createFacetSetAdapter();
+				}
+
+				@Override
+				public Adapter caseEClassifier(EClassifier object) {
+					return createEClassifierAdapter();
+				}
+
+				@Override
+				public Adapter caseFacet(Facet object) {
+					return createFacetAdapter();
+				}
+
+				@Override
+				public Adapter caseQuery(Query object) {
+					return createQueryAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 *
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -161,6 +186,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization
 	 * @generated
@@ -175,6 +201,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization
 	 * @generated
@@ -189,6 +216,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization
 	 * @generated
@@ -203,6 +231,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementSwitchQuery
 	 * @generated
@@ -217,6 +246,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase
 	 * @generated
@@ -231,6 +261,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.EModelElement
 	 * @generated
@@ -245,6 +276,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.ENamedElement
 	 * @generated
@@ -259,6 +291,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.EPackage
 	 * @generated
@@ -273,6 +306,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DocumentedElement
 	 * @generated
@@ -287,6 +321,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet
 	 * @generated
@@ -301,6 +336,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.EClassifier
 	 * @generated
@@ -315,6 +351,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet
 	 * @generated
@@ -329,6 +366,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query
 	 * @generated
@@ -342,6 +380,7 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -349,4 +388,4 @@ public class CustomAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //CustomAdapterFactory
+} // CustomAdapterFactory

@@ -51,9 +51,9 @@ public class BooleanRadio extends AbstractValueEditor {
 	 * value, represented by two radio buttons.
 	 *
 	 * @param parent
-	 *        This editor's parent composite
+	 *            This editor's parent composite
 	 * @param style
-	 *        The style applied to this editor's radio buttons
+	 *            The style applied to this editor's radio buttons
 	 */
 	public BooleanRadio(Composite parent, int style) {
 		this(parent, style, null);
@@ -65,22 +65,22 @@ public class BooleanRadio extends AbstractValueEditor {
 	 * value, represented by two radio buttons.
 	 *
 	 * @param parent
-	 *        This editor's parent composite
+	 *            This editor's parent composite
 	 * @param style
-	 *        The style applied to this editor's radio buttons
+	 *            The style applied to this editor's radio buttons
 	 * @param label
-	 *        The label for this editor
+	 *            The label for this editor
 	 */
 	public BooleanRadio(Composite parent, int style, String label) {
 		super(parent, label);
 
-		((GridLayout)getLayout()).numColumns = 3;
+		((GridLayout) getLayout()).numColumns = 3;
 
 		trueRadio = factory.createButton(this, "true", style | SWT.RADIO); //$NON-NLS-1$
-		trueRadio.setBackground(this.getBackground()); //For Radio buttons, we need to force the color
+		trueRadio.setBackground(this.getBackground()); // For Radio buttons, we need to force the color
 
 		falseRadio = factory.createButton(this, "false", style | SWT.RADIO); //$NON-NLS-1$
-		falseRadio.setBackground(this.getBackground()); //For Radio buttons, we need to force the color
+		falseRadio.setBackground(this.getBackground()); // For Radio buttons, we need to force the color
 
 		setWidgetObservable(getObservable(), true);
 		controlDecoration = new ControlDecoration(trueRadio, SWT.TOP | SWT.LEFT);

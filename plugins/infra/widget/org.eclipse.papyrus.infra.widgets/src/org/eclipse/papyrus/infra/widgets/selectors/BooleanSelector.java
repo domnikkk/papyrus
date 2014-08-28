@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,9 +17,9 @@ import org.eclipse.papyrus.infra.tools.util.BooleanHelper;
 
 /**
  * A Selector for Integer values
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class BooleanSelector extends StringSelector {
 
@@ -37,12 +37,12 @@ public class BooleanSelector extends StringSelector {
 	public Boolean[] getSelectedElements() {
 		Boolean[] result = new Boolean[0];
 		try {
-			if(BooleanHelper.isBoolean(text.getText())) {
-				result = new Boolean[]{ new Boolean(text.getText()) };
+			if (BooleanHelper.isBoolean(text.getText())) {
+				result = new Boolean[] { new Boolean(text.getText()) };
 				text.setText(""); //$NON-NLS-1$
 			}
 		} catch (NumberFormatException ex) {
-			//nothing to do
+			// nothing to do
 		}
 		return result;
 	}

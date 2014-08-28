@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -25,12 +25,13 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * PseudostateTerminateFigure.
- * 
+ *
  */
 public class PseudostateTerminateFigure extends PapyrusNodeFigure implements IPapyrusNodeUMLElementFigure {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected Border getDefaultBorder(Color borderColor) {
 		return null;
 	}
@@ -46,6 +47,7 @@ public class PseudostateTerminateFigure extends PapyrusNodeFigure implements IPa
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Label getStereotypesLabel() {
 		return new Label();
 	}
@@ -53,6 +55,7 @@ public class PseudostateTerminateFigure extends PapyrusNodeFigure implements IPa
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void paintFigure(Graphics graphics) {
 		graphics.setForegroundColor(getForegroundColor());
 		Rectangle r = getBounds().getCopy().shrink(new Insets(0, 0, 1, 1));
@@ -75,18 +78,21 @@ public class PseudostateTerminateFigure extends PapyrusNodeFigure implements IPa
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypeDisplay(String stereotypes, Image image) {
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
 	}
 }

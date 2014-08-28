@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -65,16 +65,16 @@ public class GraphicalPostAction extends ModelPostAction {
 	@Override
 	public void init(Node configurationNode, IAspectActionProvider factory) {
 		super.init(configurationNode, factory);
-		if(configurationNode == null) {
+		if (configurationNode == null) {
 			return;
 		}
 		NodeList childNodes = configurationNode.getChildNodes();
-		for(int i = 0; i < childNodes.getLength(); i++) {
+		for (int i = 0; i < childNodes.getLength(); i++) {
 			Node featureNode = childNodes.item(i);
-			if(IPapyrusPaletteConstant.FEATURE_NODE_NAME.equals(featureNode.getNodeName())) {
+			if (IPapyrusPaletteConstant.FEATURE_NODE_NAME.equals(featureNode.getNodeName())) {
 				Node nameNode = childNodes.item(i).getAttributes().getNamedItem(IPapyrusPaletteConstant.NAME);
 				Node valueNode = childNodes.item(i).getAttributes().getNamedItem(IPapyrusPaletteConstant.VALUE);
-				if(nameNode != null && valueNode != null) {
+				if (nameNode != null && valueNode != null) {
 					propertiesToUpdate.put(nameNode.getNodeValue(), valueNode.getNodeValue());
 				} else {
 					Activator.log.error("Impossible to parse the configuration node for graphical post action", null);
@@ -86,18 +86,19 @@ public class GraphicalPostAction extends ModelPostAction {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ICommand getPostCommand(final IAdaptable viewAdapter) {
 		final TransactionalEditingDomain editingDomain = EditorUtils.getTransactionalEditingDomain();
 
 		return new AbstractTransactionalCommand(editingDomain, "Modify Graphic", null) {
-			
+
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				View view = (View)viewAdapter.getAdapter(View.class);
-				for(String featureName : propertiesToUpdate.keySet()) {
+				View view = (View) viewAdapter.getAdapter(View.class);
+				for (String featureName : propertiesToUpdate.keySet()) {
 					// retrieve feature to set
 					EStructuralFeature feature = view.eClass().getEStructuralFeature(featureName);
-					if(feature == null) {
+					if (feature == null) {
 						Activator.log.error("Impossible to find the feature " + featureName + " for element " + view, null);
 					} else {
 						view.eSet(feature, getValue(feature, propertiesToUpdate.get(featureName)));
@@ -111,6 +112,7 @@ public class GraphicalPostAction extends ModelPostAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public Control createConfigurationComposite(Composite parent, IPaletteEntryProxy entryProxy, List<Profile> appliedProfiles) {
 		this.appliedProfiles = appliedProfiles;
 		this.entryProxy = entryProxy;
@@ -129,6 +131,7 @@ public class GraphicalPostAction extends ModelPostAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public void save(Node parentNode) {
 		// TODO Auto-generated method stub
 

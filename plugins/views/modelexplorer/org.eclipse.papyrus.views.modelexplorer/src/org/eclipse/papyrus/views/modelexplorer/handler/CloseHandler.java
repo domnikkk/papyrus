@@ -72,7 +72,7 @@ public class CloseHandler extends AbstractModelExplorerHandler implements IExecu
 		}
 
 		// What kind of command ?
-		if(PARAMETER_ALL.equals(parameter)) {
+		if (PARAMETER_ALL.equals(parameter)) {
 			pageMngr.closeAllOpenedPages();
 
 			return null;
@@ -82,14 +82,14 @@ public class CloseHandler extends AbstractModelExplorerHandler implements IExecu
 		// There is no common type for object representing an editor. So,
 		// We try to get the EObject, and try to close it as an Editor.
 		List<EObject> selectedProperties = getCurrentSelectionAdaptedToType(event, EObject.class);
-		if(selectedProperties == null) {
+		if (selectedProperties == null) {
 			// nothing to do
 			return null;
 		}
 
 		// Check each selected object
-		for(EObject selected : selectedProperties) {
-			if(pageMngr.isOpen(selected)) {
+		for (EObject selected : selectedProperties) {
+			if (pageMngr.isOpen(selected)) {
 				pageMngr.closePage(selected);
 			}
 		}
@@ -99,8 +99,7 @@ public class CloseHandler extends AbstractModelExplorerHandler implements IExecu
 
 	/**
 	 *
-	 * @see org.eclipse.core.runtime.IExecutableExtension#setInitializationData(org.eclipse.core.runtime.IConfigurationElement, java.lang.String,
-	 *      java.lang.Object)
+	 * @see org.eclipse.core.runtime.IExecutableExtension#setInitializationData(org.eclipse.core.runtime.IConfigurationElement, java.lang.String, java.lang.Object)
 	 *
 	 * @param config
 	 * @param propertyName
@@ -108,8 +107,8 @@ public class CloseHandler extends AbstractModelExplorerHandler implements IExecu
 	 * @throws CoreException
 	 */
 	public void setInitializationData(IConfigurationElement config, String propertyName, Object data) throws CoreException {
-		if(data instanceof Hashtable && this.parameterID != null) {
-			this.parameter = (String)((Hashtable)data).get(this.parameterID);
+		if (data instanceof Hashtable && this.parameterID != null) {
+			this.parameter = (String) ((Hashtable) data).get(this.parameterID);
 		}
 	}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,49 +23,60 @@ import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 
 /**
  * Represents a simple ECore model content provider for the selection of a diagram's root model element
+ *
  * @author Laurent Wouters
  */
 public abstract class ModelContentProvider extends ECoreModelContentProvider implements IStaticContentProvider, IHierarchicContentProvider {
-	
+
 	/**
 	 * The diagram
 	 */
 	private Diagram diagram;
-	
+
 	/**
 	 * Initializes the provider with the given root
-	 * @param diagram The diagram for which a root model element is to be provided
-	 * @param root The root object
+	 *
+	 * @param diagram
+	 *            The diagram for which a root model element is to be provided
+	 * @param root
+	 *            The root object
 	 */
 	public ModelContentProvider(Diagram diagram, EObject root) {
 		super(root);
 		this.diagram = diagram;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider#getElements()
 	 */
 	public Object[] getElements() {
 		return getElements(null);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IHierarchicContentProvider#isValidValue(java.lang.Object)
 	 */
 	public boolean isValidValue(Object element) {
-		if (element == null)
+		if (element == null) {
 			return false;
-		if (!(element instanceof EObject))
+		}
+		if (!(element instanceof EObject)) {
 			return false;
+		}
 		ViewPrototype prototype = DiagramUtils.getPrototype(diagram);
-		if (prototype == null)
+		if (prototype == null) {
 			return false;
+		}
 		return isValid((EObject) element, diagram, prototype);
 	}
 
 	/**
 	 * Determines whether the selection is valid
-	 * 
+	 *
 	 * @param selection
 	 *            The selection
 	 * @param diagram

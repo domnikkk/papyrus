@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - Refactoring package/profile import/apply UI for CDO
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.widgets;
 
@@ -58,7 +58,7 @@ import org.eclipse.uml2.uml.Profile;
 
 /**
  * An editor for Profile application
- * 
+ *
  * @author Camille Letavernier
  */
 public class ProfileApplicationEditor extends MultipleReferenceEditor {
@@ -79,9 +79,9 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 	protected Package umlPackage;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 * @param style
 	 */
@@ -112,7 +112,7 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 
 	@Override
 	public void setToolTipText(String text) {
-		//Override to avoid displaying a tooltip on the tree. It prevents the Cells tooltips from working
+		// Override to avoid displaying a tooltip on the tree. It prevents the Cells tooltips from working
 		super.setLabelToolTipText(text);
 	}
 
@@ -131,7 +131,7 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 
 		@Override
 		public void update(ViewerCell cell) {
-			if(cell.getColumnIndex() == 0) {
+			if (cell.getColumnIndex() == 0) {
 				updateName(cell);
 				return;
 			}
@@ -139,14 +139,14 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 			Profile profile;
 			EObject element = EMFHelper.getEObject(cell.getElement());
 
-			if(element instanceof Profile) {
-				profile = (Profile)element;
+			if (element instanceof Profile) {
+				profile = (Profile) element;
 			} else {
 				cell.setText("");
 				return;
 			}
 
-			switch(cell.getColumnIndex()) {
+			switch (cell.getColumnIndex()) {
 			case 1:
 				updateLocation(cell, profile);
 				break;
@@ -164,11 +164,11 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 
 		public void updateLocation(ViewerCell cell, Profile profile) {
 			String location = "Unknown";
-			if(profile.eIsProxy()) {
+			if (profile.eIsProxy()) {
 				location = EcoreUtil.getURI(profile).trimFragment().toString();
-			} else if(profile.eResource() != null) {
+			} else if (profile.eResource() != null) {
 				URI uri = profile.eResource().getURI();
-				if(uri != null) {
+				if (uri != null) {
 					location = uri.toString();
 				}
 			}
@@ -179,7 +179,7 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 		public void updateVersion(ViewerCell cell, Profile profile) {
 			String versionText = "";
 			Version version = Util.getProfileDefinitionVersion(profile);
-			if(version != Version.emptyVersion) {
+			if (version != Version.emptyVersion) {
 				versionText = version.toString();
 			}
 
@@ -209,13 +209,13 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 
 	/**
 	 * Applies a profile from workspace
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.editors.MultipleValueEditor#addAction()
-	 * 
+	 *
 	 */
 	@Override
 	protected void addAction() {
-		//Code from org.eclipse.papyrus.uml.profile.ui.compositesformodel.AppliedProfileCompositeOnModel#applyProfileButtonPressed()
+		// Code from org.eclipse.papyrus.uml.profile.ui.compositesformodel.AppliedProfileCompositeOnModel#applyProfileButtonPressed()
 
 
 		// Create and open the dialog box
@@ -230,35 +230,35 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 		Collection<Package> packages = PackageImportSourceDialog.open(getShell(), Messages.ProfileApplicationEditor_ApplyProfilesDialogTitle, Collections.singletonList(umlPackage), extensionFilters);
 
 		// If nothing is selected : abort
-		if((packages == null) || packages.isEmpty()) {
+		if ((packages == null) || packages.isEmpty()) {
 			return;
 		}
 
-		if(packages.size() > 0) {
+		if (packages.size() > 0) {
 			ProfileTreeSelectionDialog profileDialog = new ProfileTreeSelectionDialog(getShell(), packages);
 
-			if(profileDialog.open() != Window.OK) {
+			if (profileDialog.open() != Window.OK) {
 				return;
 			}
 
-			if(profileDialog.getResult().isEmpty()) {
+			if (profileDialog.getResult().isEmpty()) {
 				return;
 			}
 
 			Collection<ImportSpec<Profile>> profilesImportToApply = profileDialog.getResult();
 
 			Collection<Profile> profilesToApply = new LinkedList<Profile>();
-			for(ImportSpec<Profile> importProfile : profilesImportToApply) {
+			for (ImportSpec<Profile> importProfile : profilesImportToApply) {
 				profilesToApply.add(importProfile.getElement());
 			}
 
-			if(!ProfileValidationHelper.checkApplicableProfiles(getShell(), profilesToApply)) {
+			if (!ProfileValidationHelper.checkApplicableProfiles(getShell(), profilesToApply)) {
 				return;
 			}
 
 			Message message = new Message(Messages.ProfileApplicationEditor_WaitMessageTitle, Messages.ProfileApplicationEditor_WaitMessage);
 			message.open();
-			for(Profile profile : profilesToApply) {
+			for (Profile profile : profilesToApply) {
 				modelProperty.add(profile);
 			}
 			message.close();
@@ -272,7 +272,7 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 	protected void addRegisteredAction() {
 		RegisteredProfileSelectionDialog profileSelectionDialog = new RegisteredProfileSelectionDialog(getShell(), umlPackage);
 		List<Profile> profilesToApply = profileSelectionDialog.run();
-		for(Profile profile : profilesToApply) {
+		for (Profile profile : profilesToApply) {
 			modelProperty.add(profile);
 		}
 
@@ -282,23 +282,23 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 	protected void reapplyProfileAction() {
 		ISelection selectedElements = treeViewer.getSelection();
 
-		//Filter profiles
+		// Filter profiles
 		List<Profile> profilesToRefresh = new LinkedList<Profile>();
-		if(!selectedElements.isEmpty() && selectedElements instanceof IStructuredSelection) {
-			IStructuredSelection selection = (IStructuredSelection)selectedElements;
+		if (!selectedElements.isEmpty() && selectedElements instanceof IStructuredSelection) {
+			IStructuredSelection selection = (IStructuredSelection) selectedElements;
 			Iterator<?> iterator = selection.iterator();
-			while(iterator.hasNext()) {
+			while (iterator.hasNext()) {
 				Object element = iterator.next();
-				if(element instanceof Profile) {
-					profilesToRefresh.add((Profile)element);
+				if (element instanceof Profile) {
+					profilesToRefresh.add((Profile) element);
 				}
 			}
 		}
 
-		//Check validity
-		if(ProfileValidationHelper.checkApplicableProfiles(getShell(), profilesToRefresh)) {
-			//If everything is fine, refresh the profiles
-			for(Profile profile : profilesToRefresh) {
+		// Check validity
+		if (ProfileValidationHelper.checkApplicableProfiles(getShell(), profilesToRefresh)) {
+			// If everything is fine, refresh the profiles
+			for (Profile profile : profilesToRefresh) {
 				modelProperty.add(profile);
 			}
 
@@ -309,17 +309,17 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 	@Override
 	public void widgetSelected(SelectionEvent e) {
 		super.widgetSelected(e);
-		if(e.widget == addRegisteredProfile) {
+		if (e.widget == addRegisteredProfile) {
 			addRegisteredAction();
 		}
-		if(e.widget == reapplyProfile) {
+		if (e.widget == reapplyProfile) {
 			reapplyProfileAction();
 		}
 	}
 
 	/**
 	 * Sets the package on which the profiles will be applied
-	 * 
+	 *
 	 * @param umlPackage
 	 */
 	public void setPackage(Package umlPackage) {
@@ -335,14 +335,14 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 		remove.setEnabled(enabled);
 
 		// check whether the selection can be reapplied
-		IStructuredSelection selection = (IStructuredSelection)treeViewer.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) treeViewer.getSelection();
 		enabled = false;
 		Iterator<?> iterator = selection.iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Object element = iterator.next();
-			if(element instanceof Profile) {
-				if(ProfileUtil.isDirty(umlPackage, (Profile)element)) {
-					enabled = true; //At least one dirty profile is selected
+			if (element instanceof Profile) {
+				if (ProfileUtil.isDirty(umlPackage, (Profile) element)) {
+					enabled = true; // At least one dirty profile is selected
 					break;
 				}
 			}

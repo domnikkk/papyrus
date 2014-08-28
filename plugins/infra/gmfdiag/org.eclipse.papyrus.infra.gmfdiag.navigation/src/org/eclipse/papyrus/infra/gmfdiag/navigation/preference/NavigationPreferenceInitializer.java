@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ public class NavigationPreferenceInitializer extends AbstractPreferenceInitializ
 	/**
 	 * Initialize default preferences
 	 */
+	@Override
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = getPreferenceStore();
 		store.setDefault(INavigationPreferenceConstant.PAPYRUS_NAVIGATION_DOUBLECLICK_KIND, INavigationPreferenceConstant.EXPLICIT_IMPLICIT_NAVIGATION);

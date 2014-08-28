@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 Atos Origin, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * This figure handles a rounded dashed rectangle Papyrus node, with no
  * displayed label.
- * 
+ *
  * @author vhemery
  */
 public class InterruptibleActivityRegionFigure extends PapyrusNodeFigure implements IPapyrusNodeUMLElementFigure, IFigure {
@@ -50,11 +50,12 @@ public class InterruptibleActivityRegionFigure extends PapyrusNodeFigure impleme
 
 	/**
 	 * Paint figure.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusNodeFigure#paintFigure(org.eclipse.draw2d.Graphics)
 	 * @param graphics
-	 *        the graphics
+	 *            the graphics
 	 */
+	@Override
 	public void paintFigure(Graphics graphics) {
 		paintBackground(graphics, getBounds());
 		shadowborder.setColor(getForegroundColor());
@@ -64,14 +65,15 @@ public class InterruptibleActivityRegionFigure extends PapyrusNodeFigure impleme
 	 * Paint the background of the figure. If this figure uses gradient, then it
 	 * will paint the background with the gradient informations. Otherwise it
 	 * will use the background color.
-	 * 
+	 *
 	 * @param graphics
-	 *        the graphics
+	 *            the graphics
 	 * @param rectangle
-	 *        the rectangle where the background needs to be fill.
+	 *            the rectangle where the background needs to be fill.
 	 */
+	@Override
 	protected void paintBackground(Graphics graphics, Rectangle rectangle) {
-		if(isUsingGradient()) {
+		if (isUsingGradient()) {
 			applyTransparency(graphics);
 			boolean isVertical = (getGradientStyle() == GradientStyle.VERTICAL) ? true : false;
 			graphics.setBackgroundColor(ColorRegistry.getInstance().getColor(getGradientColor1()));
@@ -87,30 +89,35 @@ public class InterruptibleActivityRegionFigure extends PapyrusNodeFigure impleme
 
 	/**
 	 * set the shadow
-	 * 
+	 *
 	 * @param shadow
-	 *        a boolean true if we want to display the shadow
+	 *            a boolean true if we want to display the shadow
 	 */
+	@Override
 	public void setShadow(boolean shadow) {
 		super.setShadow(shadow);
-		if(!shadow) {
+		if (!shadow) {
 			RoundedRectangleDashedBorder bord = new RoundedRectangleDashedBorder(ROUNDED_CORNER_SIZE, ROUNDED_CORNER_SIZE);
 			this.setBorder(bord);
 		}
 	}
 
+	@Override
 	public void setStereotypeDisplay(String stereotypes, Image image) {
 		// TODO Auto-generated method stub
 	}
 
+	@Override
 	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
 		// TODO Auto-generated method stub
 	}
 
+	@Override
 	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
 		// TODO Auto-generated method stub
 	}
 
+	@Override
 	public Label getStereotypesLabel() {
 		// TODO Auto-generated method stub
 		return null;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,16 +32,16 @@ public class ActivityContentCompartmentCreationEditPolicy extends GroupCreationE
 
 	@Override
 	public EditPart getTargetEditPart(Request request) {
-		if(request instanceof CreateUnspecifiedTypeRequest) {
-			CreateUnspecifiedTypeRequest createUnspecifiedTypeRequest = (CreateUnspecifiedTypeRequest)request;
-			if(understandsRequest(request)) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
+			CreateUnspecifiedTypeRequest createUnspecifiedTypeRequest = (CreateUnspecifiedTypeRequest) request;
+			if (understandsRequest(request)) {
 				List<?> elementTypes = createUnspecifiedTypeRequest.getElementTypes();
 				// Treat the case where only one element type is listed
 				// Only take Port element type into account
-				if((elementTypes.size() == 1) && ((IElementType)(elementTypes.get(0)) == UMLElementTypes.ActivityParameterNode_3059)) {
+				if ((elementTypes.size() == 1) && ((IElementType) (elementTypes.get(0)) == UMLElementTypes.ActivityParameterNode_3059)) {
 					// If the target is a compartment replace by its parent edit
 					// part
-					if((getHost() instanceof ShapeCompartmentEditPart)) {
+					if ((getHost() instanceof ShapeCompartmentEditPart)) {
 						return getHost().getParent();
 					}
 				}

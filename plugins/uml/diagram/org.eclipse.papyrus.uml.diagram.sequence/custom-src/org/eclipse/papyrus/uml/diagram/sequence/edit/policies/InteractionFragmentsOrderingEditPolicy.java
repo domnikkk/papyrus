@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.uml.diagram.sequence.util.FragmentsOrdererHelper;
 /**
  * Ordering fragments after moving, resizing for Shapes and reconnect for message occurrence specifications.
  * See https://bugs.eclipse.org/bugs/show_bug.cgi?id=403233
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class InteractionFragmentsOrderingEditPolicy extends GraphicalEditPolicy {
@@ -40,16 +40,16 @@ public class InteractionFragmentsOrderingEditPolicy extends GraphicalEditPolicy 
 
 	/**
 	 * @see org.eclipse.gef.editpolicies.AbstractEditPolicy#understandsRequest(org.eclipse.gef.Request)
-	 * 
+	 *
 	 * @param req
 	 * @return
 	 */
 	@Override
 	public boolean understandsRequest(Request req) {
 		Object type = req.getType();
-		if(REQ_MOVE.equals(type) || REQ_RESIZE.equals(type)) {//Correct mistake(also fix bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=417375)
+		if (REQ_MOVE.equals(type) || REQ_RESIZE.equals(type)) {// Correct mistake(also fix bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=417375)
 			return true;
-		} else if(getHost() instanceof AbstractMessageEditPart) {
+		} else if (getHost() instanceof AbstractMessageEditPart) {
 			return REQ_RECONNECT_SOURCE.equals(type) || REQ_RECONNECT_TARGET.equals(type) || REQ_CREATE_BENDPOINT.equals(type) || REQ_MOVE_BENDPOINT.equals(type);
 		}
 		return false;
@@ -57,7 +57,7 @@ public class InteractionFragmentsOrderingEditPolicy extends GraphicalEditPolicy 
 
 	@Override
 	public EditPart getTargetEditPart(Request request) {
-		if(understandsRequest(request)) {
+		if (understandsRequest(request)) {
 			return getHost();
 		}
 		return null;
@@ -65,7 +65,7 @@ public class InteractionFragmentsOrderingEditPolicy extends GraphicalEditPolicy 
 
 	@Override
 	public Command getCommand(Request request) {
-		if(understandsRequest(request)) {
+		if (understandsRequest(request)) {
 			AbstractTransactionalCommand cmd = new AbstractTransactionalCommand(getEditingDomain(), "", null) {
 
 				@Override
@@ -81,8 +81,8 @@ public class InteractionFragmentsOrderingEditPolicy extends GraphicalEditPolicy 
 
 	private TransactionalEditingDomain getEditingDomain() {
 		EditPart host = getHost();
-		if(host instanceof IGraphicalEditPart) {
-			return ((IGraphicalEditPart)host).getEditingDomain();
+		if (host instanceof IGraphicalEditPart) {
+			return ((IGraphicalEditPart) host).getEditingDomain();
 		}
 		return null;
 	}

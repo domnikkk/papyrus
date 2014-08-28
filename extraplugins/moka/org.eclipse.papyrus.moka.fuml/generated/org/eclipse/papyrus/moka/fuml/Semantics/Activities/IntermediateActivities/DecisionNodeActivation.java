@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,11 +16,11 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivitie
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.BooleanValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Execution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.DecisionNode;
@@ -36,6 +36,7 @@ public class DecisionNodeActivation extends ControlNodeActivation {
 	 */
 	public Execution decisionInputExecution;
 
+	@Override
 	public void fire(List<Token> incomingTokens) {
 		// Get the decision values and test them on each guard.
 		// Forward the offer over the edges for which the test succeeds.
@@ -44,19 +45,19 @@ public class DecisionNodeActivation extends ControlNodeActivation {
 		List<Token> removedControlTokens = this.removeJoinedControlTokens(incomingTokens);
 		List<Value> decisionValues = this.getDecisionValues(incomingTokens);
 		List<ActivityEdgeInstance> outgoingEdges = this.outgoingEdges;
-		for(int i = 0; i < outgoingEdges.size(); i++) {
+		for (int i = 0; i < outgoingEdges.size(); i++) {
 			ActivityEdgeInstance edgeInstance = outgoingEdges.get(i);
 			ValueSpecification guard = edgeInstance.edge.getGuard();
 			List<Token> offeredTokens = new ArrayList<Token>();
-			for(int j = 0; j < incomingTokens.size(); j++) {
+			for (int j = 0; j < incomingTokens.size(); j++) {
 				Token incomingToken = incomingTokens.get(j);
 				Value decisionValue = decisionValues.get(j);
-				if(this.test(guard, decisionValue)) {
+				if (this.test(guard, decisionValue)) {
 					offeredTokens.add(incomingToken);
 				}
 			}
-			if(offeredTokens.size() > 0) {
-				for(int j = 0; j < removedControlTokens.size(); j++) {
+			if (offeredTokens.size() > 0) {
+				for (int j = 0; j < removedControlTokens.size(); j++) {
 					Token removedControlToken = removedControlTokens.get(j);
 					offeredTokens.add(removedControlToken);
 				}
@@ -82,14 +83,14 @@ public class DecisionNodeActivation extends ControlNodeActivation {
 		// input behavior only receives the decision input flow, if any.
 		Value decisionInputValue = this.getDecisionInputFlowValue();
 		List<Value> decisionValues = new ArrayList<Value>();
-		for(int i = 0; i < incomingTokens.size(); i++) {
+		for (int i = 0; i < incomingTokens.size(); i++) {
 			Token incomingToken = incomingTokens.get(i);
 			Value value = this.executeDecisionInputBehavior(incomingToken.getValue(), decisionInputValue);
 			decisionValues.add(value);
 		}
 		// Debug.println("[getDecisionValues] " + decisionValues.size() +
 		// " decision value(s):");
-		for(int i = 0; i < decisionValues.size(); i++) {
+		for (int i = 0; i < decisionValues.size(); i++) {
 			Value decisionValue = decisionValues.get(i);
 			Debug.println("[getDecisionValues] decisionValues[" + i + "] = " + decisionValue);
 		}
@@ -106,10 +107,10 @@ public class DecisionNodeActivation extends ControlNodeActivation {
 		// returned, if one is given, otherwise the input value is used as the
 		// decision value.
 		Debug.println("[executeDecisionBehavior] inputValue = " + inputValue);
-		Behavior decisionInputBehavior = ((DecisionNode)(this.node)).getDecisionInput();
+		Behavior decisionInputBehavior = ((DecisionNode) (this.node)).getDecisionInput();
 		Value decisionInputResult = null;
-		if(decisionInputBehavior == null) {
-			if(decisionInputValue != null) {
+		if (decisionInputBehavior == null) {
+			if (decisionInputValue != null) {
 				decisionInputResult = decisionInputValue;
 			} else {
 				decisionInputResult = inputValue;
@@ -118,13 +119,13 @@ public class DecisionNodeActivation extends ControlNodeActivation {
 			this.decisionInputExecution = this.getExecutionLocus().factory.createExecution(decisionInputBehavior, this.getExecutionContext());
 			int i = 1;
 			int j = 0;
-			while((j == 0 | (j == 1 & decisionInputValue != null)) & i <= decisionInputBehavior.getOwnedParameters().size()) {
+			while ((j == 0 | (j == 1 & decisionInputValue != null)) & i <= decisionInputBehavior.getOwnedParameters().size()) {
 				Parameter parameter = decisionInputBehavior.getOwnedParameters().get(i - 1);
-				if(parameter.getDirection().equals(ParameterDirectionKind.IN_LITERAL) | parameter.getDirection().equals(ParameterDirectionKind.INOUT_LITERAL)) {
+				if (parameter.getDirection().equals(ParameterDirectionKind.IN_LITERAL) | parameter.getDirection().equals(ParameterDirectionKind.INOUT_LITERAL)) {
 					ParameterValue inputParameterValue = new ParameterValue();
 					inputParameterValue.parameter = parameter;
 					j = j + 1;
-					if(j == 1 && inputValue != null) {
+					if (j == 1 && inputValue != null) {
 						inputParameterValue.values.add(inputValue);
 					} else {
 						inputParameterValue.values.add(decisionInputValue);
@@ -136,12 +137,12 @@ public class DecisionNodeActivation extends ControlNodeActivation {
 			this.decisionInputExecution.execute();
 			List<ParameterValue> outputParameterValues = this.decisionInputExecution.getOutputParameterValues();
 			decisionInputExecution.destroy();
-			if(outputParameterValues.get(0).values.size() == 0) {
+			if (outputParameterValues.get(0).values.size() == 0) {
 				// FIXME Added for connection with debug API
 				// When execution stops due to client request, outputParameterValues is empty
 				// Just puts true. Execution flow is supposed to stop "by itself" then
 				decisionInputResult = new BooleanValue();
-				((BooleanValue)decisionInputResult).value = true;
+				((BooleanValue) decisionInputResult).value = true;
 			} else {
 				decisionInputResult = outputParameterValues.get(0).values.get(0);
 			}
@@ -149,39 +150,42 @@ public class DecisionNodeActivation extends ControlNodeActivation {
 		return decisionInputResult;
 	}
 
+	@Override
 	public void terminate() {
 		// Terminate the decision input execution, if any, and then terminate
 		// this activation.
-		if(this.decisionInputExecution != null) {
+		if (this.decisionInputExecution != null) {
 			this.decisionInputExecution.terminate();
 		}
 		super.terminate();
 	}
 
+	@Override
 	public Boolean isReady() {
 		// Check that all incoming edges have sources that are offering tokens.
 		// [This should be at most two incoming edges, if there is a decision
 		// input flow.]
 		int i = 1;
 		boolean ready = true;
-		while(ready & i <= this.incomingEdges.size()) {
+		while (ready & i <= this.incomingEdges.size()) {
 			ready = this.incomingEdges.get(i - 1).hasOffer();
 			i = i + 1;
 		}
 		return ready;
 	}
 
+	@Override
 	public List<Token> takeOfferedTokens() {
 		// Get tokens from the incoming edge that is not the decision input
 		// flow.
-		ObjectFlow decisionInputFlow = ((DecisionNode)(this.node)).getDecisionInputFlow();
+		ObjectFlow decisionInputFlow = ((DecisionNode) (this.node)).getDecisionInputFlow();
 		List<Token> allTokens = new ArrayList<Token>();
 		List<ActivityEdgeInstance> incomingEdges = this.incomingEdges;
-		for(int i = 0; i < incomingEdges.size(); i++) {
+		for (int i = 0; i < incomingEdges.size(); i++) {
 			ActivityEdgeInstance edgeInstance = incomingEdges.get(i);
-			if(edgeInstance.edge != decisionInputFlow) {
+			if (edgeInstance.edge != decisionInputFlow) {
 				List<Token> tokens = edgeInstance.takeOfferedTokens();
-				for(int j = 0; j < tokens.size(); j++) {
+				for (int j = 0; j < tokens.size(); j++) {
 					allTokens.add(tokens.get(j));
 				}
 			}
@@ -194,9 +198,9 @@ public class DecisionNodeActivation extends ControlNodeActivation {
 		// return its value.
 		ActivityEdgeInstance decisionInputFlowInstance = this.getDecisionInputFlowInstance();
 		Value value = null;
-		if(decisionInputFlowInstance != null) {
+		if (decisionInputFlowInstance != null) {
 			List<Token> tokens = decisionInputFlowInstance.takeOfferedTokens();
-			if(tokens.size() > 0) {
+			if (tokens.size() > 0) {
 				value = tokens.get(0).getValue();
 			}
 		}
@@ -205,13 +209,13 @@ public class DecisionNodeActivation extends ControlNodeActivation {
 
 	public ActivityEdgeInstance getDecisionInputFlowInstance() {
 		// Get the activity edge instance for the decision input flow, if any.
-		ActivityEdge decisionInputFlow = ((DecisionNode)(this.node)).getDecisionInputFlow();
+		ActivityEdge decisionInputFlow = ((DecisionNode) (this.node)).getDecisionInputFlow();
 		ActivityEdgeInstance edgeInstance = null;
-		if(decisionInputFlow != null) {
+		if (decisionInputFlow != null) {
 			int i = 1;
-			while(edgeInstance == null & i <= this.incomingEdges.size()) {
+			while (edgeInstance == null & i <= this.incomingEdges.size()) {
 				ActivityEdgeInstance incomingEdge = this.incomingEdges.get(i - 1);
-				if(incomingEdge.edge == decisionInputFlow) {
+				if (incomingEdge.edge == decisionInputFlow) {
 					edgeInstance = incomingEdge;
 				}
 				i = i + 1;
@@ -224,7 +228,7 @@ public class DecisionNodeActivation extends ControlNodeActivation {
 		// Test if the given value matches the guard. If there is no guard,
 		// return true.
 		boolean guardResult = true;
-		if(guard != null) {
+		if (guard != null) {
 			Value guardValue = this.getExecutionLocus().executor.evaluate(guard);
 			guardResult = guardValue.equals(value);
 		}
@@ -237,11 +241,11 @@ public class DecisionNodeActivation extends ControlNodeActivation {
 		// [Control tokens may effectively be offered on an object flow outgoing
 		// from a join node that has both control and object flows incoming.]
 		List<Token> removedControlTokens = new ArrayList<Token>();
-		if(this.hasObjectFlowInput()) {
+		if (this.hasObjectFlowInput()) {
 			int i = 1;
-			while(i <= incomingTokens.size()) {
+			while (i <= incomingTokens.size()) {
 				Token token = incomingTokens.get(i - 1);
-				if(token.isControl()) {
+				if (token.isControl()) {
 					removedControlTokens.add(token);
 					incomingTokens.remove(i - 1);
 					i = i - 1;
@@ -254,10 +258,10 @@ public class DecisionNodeActivation extends ControlNodeActivation {
 
 	public Boolean hasObjectFlowInput() {
 		// Check that the primary incoming edge is an object flow.
-		ActivityEdge decisionInputFlow = ((DecisionNode)(this.node)).getDecisionInputFlow();
+		ActivityEdge decisionInputFlow = ((DecisionNode) (this.node)).getDecisionInputFlow();
 		boolean isObjectFlow = false;
 		int i = 1;
-		while(!isObjectFlow & i <= this.incomingEdges.size()) {
+		while (!isObjectFlow & i <= this.incomingEdges.size()) {
 			ActivityEdge edge = this.incomingEdges.get(i - 1).edge;
 			isObjectFlow = edge != decisionInputFlow & edge instanceof ObjectFlow;
 			i = i + 1;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,14 +31,14 @@ import org.eclipse.papyrus.sysml.requirements.Verify;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RequirementsFactoryImpl extends EFactoryImpl implements RequirementsFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -51,13 +51,13 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static RequirementsFactory init() {
 		try {
-			RequirementsFactory theRequirementsFactory = (RequirementsFactory)EPackage.Registry.INSTANCE.getEFactory(RequirementsPackage.eNS_URI);
-			if(theRequirementsFactory != null) {
+			RequirementsFactory theRequirementsFactory = (RequirementsFactory) EPackage.Registry.INSTANCE.getEFactory(RequirementsPackage.eNS_URI);
+			if (theRequirementsFactory != null) {
 				return theRequirementsFactory;
 			}
 		} catch (Exception exception) {
@@ -70,7 +70,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RequirementsFactoryImpl() {
@@ -79,12 +79,12 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case RequirementsPackage.DERIVE_REQT:
 			return createDeriveReqt();
 		case RequirementsPackage.VERIFY:
@@ -106,7 +106,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Copy createCopy() {
@@ -116,7 +116,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DeriveReqt createDeriveReqt() {
@@ -126,7 +126,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Requirement createRequirement() {
@@ -136,7 +136,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RequirementRelated createRequirementRelated() {
@@ -146,7 +146,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Satisfy createSatisfy() {
@@ -156,7 +156,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TestCase createTestCase() {
@@ -166,7 +166,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Verify createVerify() {
@@ -176,11 +176,11 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RequirementsPackage getRequirementsPackage() {
-		return (RequirementsPackage)getEPackage();
+		return (RequirementsPackage) getEPackage();
 	}
 
 } // RequirementsFactoryImpl

@@ -34,7 +34,7 @@ public class Reporter {
 	public static Reporter INSTANCE = new Reporter();
 
 	public boolean add(TestReport report) {
-		//System.out.println(report);
+		// System.out.println(report);
 		return this.testReports.add(report);
 	}
 
@@ -45,8 +45,8 @@ public class Reporter {
 		Element testSuiteNode = xmlReport.createElement(JUnit.TEST_SUITE);
 		ReportNameSingleton reportNameSingleton = ReportNameSingleton.getInstance();
 		String reportName = reportNameSingleton.getExecutedActivityName() + JUnit.REPORTING_SEPARATOR + reportNameSingleton.getEngineName();
-		testSuiteNode.setAttribute(JUnit.NAME, reportName); //TODO
-		for(TestReport t : this.testReports) {
+		testSuiteNode.setAttribute(JUnit.NAME, reportName); // TODO
+		for (TestReport t : this.testReports) {
 			testSuiteNode.appendChild(this.toDOMElement(t, xmlReport, reportName));
 		}
 		xmlReport.appendChild(testSuiteNode);
@@ -58,21 +58,21 @@ public class Reporter {
 		Element testNode = context.createElement(JUnit.TEST_CASE);
 
 		String className;
-		if(test.getContext() != null) {
+		if (test.getContext() != null) {
 			className = test.getContext().getQualifiedName();
 		} else {
 			className = "unknown";
 		}
 
-		if(prefix != null) {
+		if (prefix != null) {
 			className = prefix + JUnit.REPORTING_SEPARATOR + className;
 		}
 
 		testNode.setAttribute(JUnit.CLASS_NAME, className);
 
 		testNode.setAttribute(JUnit.NAME, test.getLabel());
-		testNode.setAttribute(JUnit.TIME, "0"); //TODO obtain elapsed time per test case
-		if(test.getVerdict().equals(TestDecision.FAILED)) {
+		testNode.setAttribute(JUnit.TIME, "0"); // TODO obtain elapsed time per test case
+		if (test.getVerdict().equals(TestDecision.FAILED)) {
 			Element failureNode = context.createElement(JUnit.FAILURE);
 			failureNode.setAttribute(JUnit.MESSSAGE, test.getLabel());
 			failureNode.setAttribute(JUnit.TYPE, test.getAssertionType().getName());

@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.util.emf.catalog;
 
@@ -23,12 +23,13 @@ import org.eclipse.emf.ecore.EReference;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogFactory
  * @model kind="package"
  * @generated
@@ -38,6 +39,7 @@ public interface CatalogPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNAME = "catalog"; //$NON-NLS-1$
@@ -46,6 +48,7 @@ public interface CatalogPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/emf/facet/catalog/0.1.incubation"; //$NON-NLS-1$
@@ -54,6 +57,7 @@ public interface CatalogPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "catalog"; //$NON-NLS-1$
@@ -62,6 +66,7 @@ public interface CatalogPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	CatalogPackage eINSTANCE = org.eclipse.papyrus.emf.facet.util.emf.catalog.impl.CatalogPackageImpl.init();
@@ -70,6 +75,7 @@ public interface CatalogPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.util.emf.catalog.impl.CatalogSetImpl <em>Set</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.impl.CatalogSetImpl
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.impl.CatalogPackageImpl#getCatalogSet()
 	 * @generated
@@ -80,6 +86,7 @@ public interface CatalogPackage extends EPackage {
 	 * The feature id for the '<em><b>Catalogs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -89,6 +96,7 @@ public interface CatalogPackage extends EPackage {
 	 * The number of structural features of the '<em>Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,6 +106,7 @@ public interface CatalogPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog <em>Catalog</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.impl.CatalogPackageImpl#getCatalog()
 	 * @generated
@@ -108,6 +117,7 @@ public interface CatalogPackage extends EPackage {
 	 * The feature id for the '<em><b>Installed Entries</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,6 +127,7 @@ public interface CatalogPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -126,6 +137,7 @@ public interface CatalogPackage extends EPackage {
 	 * The number of structural features of the '<em>Catalog</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -136,6 +148,7 @@ public interface CatalogPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet <em>Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Set</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet
 	 * @generated
@@ -146,6 +159,7 @@ public interface CatalogPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet#getCatalogs <em>Catalogs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the containment reference list '<em>Catalogs</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet#getCatalogs()
 	 * @see #getCatalogSet()
@@ -157,6 +171,7 @@ public interface CatalogPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog <em>Catalog</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Catalog</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog
 	 * @generated
@@ -167,6 +182,7 @@ public interface CatalogPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog#getInstalledEntries <em>Installed Entries</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the reference list '<em>Installed Entries</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog#getInstalledEntries()
 	 * @see #getCatalog()
@@ -178,6 +194,7 @@ public interface CatalogPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog#getName()
 	 * @see #getCatalog()
@@ -189,6 +206,7 @@ public interface CatalogPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -198,12 +216,13 @@ public interface CatalogPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -211,6 +230,7 @@ public interface CatalogPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.util.emf.catalog.impl.CatalogSetImpl <em>Set</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.impl.CatalogSetImpl
 		 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.impl.CatalogPackageImpl#getCatalogSet()
 		 * @generated
@@ -221,6 +241,7 @@ public interface CatalogPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Catalogs</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference CATALOG_SET__CATALOGS = eINSTANCE.getCatalogSet_Catalogs();
@@ -229,6 +250,7 @@ public interface CatalogPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog <em>Catalog</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog
 		 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.impl.CatalogPackageImpl#getCatalog()
 		 * @generated
@@ -239,6 +261,7 @@ public interface CatalogPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Installed Entries</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EReference CATALOG__INSTALLED_ENTRIES = eINSTANCE.getCatalog_InstalledEntries();
@@ -247,10 +270,11 @@ public interface CatalogPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute CATALOG__NAME = eINSTANCE.getCatalog_Name();
 
 	}
 
-} //CatalogPackage
+} // CatalogPackage

@@ -62,9 +62,9 @@ public class IntegerSpinner extends AbstractValueEditor implements KeyListener, 
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The Composite in which the editor will be created
+	 *            The Composite in which the editor will be created
 	 * @param style
-	 *        The SWT style to apply
+	 *            The SWT style to apply
 	 */
 	public IntegerSpinner(Composite parent, int style) {
 		super(parent, style);
@@ -79,12 +79,12 @@ public class IntegerSpinner extends AbstractValueEditor implements KeyListener, 
 
 			@Override
 			protected Integer doGetValue() {
-				return (Integer)targetToModelConverter.convert(spinner.getText());
+				return (Integer) targetToModelConverter.convert(spinner.getText());
 			}
 
 			@Override
 			protected void doSetValue(Object value) {
-				spinner.setSelection((Integer)value);
+				spinner.setSelection((Integer) value);
 			}
 
 		});
@@ -116,7 +116,7 @@ public class IntegerSpinner extends AbstractValueEditor implements KeyListener, 
 
 			@Override
 			public void focusGained(FocusEvent e) {
-				//Nothing
+				// Nothing
 			}
 
 			@Override
@@ -193,7 +193,7 @@ public class IntegerSpinner extends AbstractValueEditor implements KeyListener, 
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		if(e.keyCode == SWT.CR || e.keyCode == SWT.KEYPAD_CR) {
+		if (e.keyCode == SWT.CR || e.keyCode == SWT.KEYPAD_CR) {
 			notifyChange();
 		}
 
@@ -206,7 +206,7 @@ public class IntegerSpinner extends AbstractValueEditor implements KeyListener, 
 
 	@Override
 	public void updateStatus(IStatus status) {
-		switch(status.getSeverity()) {
+		switch (status.getSeverity()) {
 		case IStatus.OK:
 			controlDecoration.hide();
 			break;
@@ -231,14 +231,14 @@ public class IntegerSpinner extends AbstractValueEditor implements KeyListener, 
 	}
 
 	private void cancelCurrentTask() {
-		if(changeColorTask != null) {
+		if (changeColorTask != null) {
 			changeColorTask.cancel();
 		}
 	}
 
 	@Override
 	public void changeColorField() {
-		if(timer == null) {
+		if (timer == null) {
 			timer = new Timer(true);
 		}
 
@@ -251,7 +251,7 @@ public class IntegerSpinner extends AbstractValueEditor implements KeyListener, 
 
 					@Override
 					public void run() {
-						if(!spinner.isDisposed()) {
+						if (!spinner.isDisposed()) {
 							spinner.setBackground(DEFAULT);
 							spinner.update();
 						}
@@ -261,12 +261,12 @@ public class IntegerSpinner extends AbstractValueEditor implements KeyListener, 
 				});
 			}
 		};
-		if(errorBinding) {
+		if (errorBinding) {
 			spinner.setBackground(ERROR);
 			spinner.update();
 		} else {
-			IStatus status = (IStatus)binding.getValidationStatus().getValue();
-			switch(status.getSeverity()) {
+			IStatus status = (IStatus) binding.getValidationStatus().getValue();
+			switch (status.getSeverity()) {
 			case IStatus.OK:
 			case IStatus.WARNING:
 				timer.schedule(changeColorTask, 600);
@@ -283,11 +283,11 @@ public class IntegerSpinner extends AbstractValueEditor implements KeyListener, 
 
 	@Override
 	public void dispose() {
-		if(changeColorTask != null) {
+		if (changeColorTask != null) {
 			changeColorTask.cancel();
 			changeColorTask = null;
 		}
-		if(timer != null) {
+		if (timer != null) {
 			timer.cancel();
 			timer = null;
 		}
@@ -302,18 +302,18 @@ public class IntegerSpinner extends AbstractValueEditor implements KeyListener, 
 
 	@Override
 	public void modifyText(ModifyEvent e) {
-		if(modelProperty == null) {
+		if (modelProperty == null) {
 			return;
 		}
 
-		if(modelProperty.getValue() != null) {
-			if(!isReadOnly() && !modelProperty.getValue().toString().equals(spinner.getText())) {
+		if (modelProperty.getValue() != null) {
+			if (!isReadOnly() && !modelProperty.getValue().toString().equals(spinner.getText())) {
 				spinner.setBackground(EDIT);
 			} else {
 				spinner.setBackground(DEFAULT);
 			}
 		} else {
-			if(spinner.getText().equals("")) {
+			if (spinner.getText().equals("")) {
 				spinner.setBackground(DEFAULT);
 			} else {
 				spinner.setBackground(EDIT);

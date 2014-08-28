@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 425270
- *  
+ *
  /*****************************************************************************/
 package org.eclipse.papyrus.uml.tools;
 
@@ -61,7 +61,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
 	 */
 	@Override
@@ -74,7 +74,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
 	 */
 	@Override
@@ -88,7 +88,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -106,14 +106,14 @@ public class Activator extends AbstractUIPlugin {
 
 
 
-	///////////////////////////////////////////////////////////////////////////
+	// /////////////////////////////////////////////////////////////////////////
 	//
-	//	The following code has been extracted from oep.uml.diagram.common during the refactoring,
-	//	to avoid cyclic dependencies between this plug-in and oep.uml.diagram.common.
-	//	This is temporary code, as the Image service is not yet available.
-	//	This code should be removed as soon as the Image service is available.
+	// The following code has been extracted from oep.uml.diagram.common during the refactoring,
+	// to avoid cyclic dependencies between this plug-in and oep.uml.diagram.common.
+	// This is temporary code, as the Image service is not yet available.
+	// This code should be removed as soon as the Image service is available.
 	//
-	///////////////////////////////////////////////////////////////////////////
+	// /////////////////////////////////////////////////////////////////////////
 
 
 	private final static String UML_ICONS = "/org.eclipse.uml2.uml.edit/icons/full/obj16/";
@@ -121,15 +121,15 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Gets the Image for the given EClass
-	 * 
+	 *
 	 * @param eClass
 	 * @return
-	 * 
+	 *
 	 * @deprecated This class can be used during the refactoring phase, until
 	 *             the Image service is written. There is currently no alternative.
 	 */
 	@Deprecated
-	//FIXME : To be refactored. Replace with the Image service when it is available
+	// FIXME : To be refactored. Replace with the Image service when it is available
 	public Image getImageForUMLMetaclass(EClass eClass) {
 		return org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImageFromPlugin(UML_ICONS + eClass.getName() + ".gif"); //$NON-NLS-1$
 	}
@@ -137,16 +137,16 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * this method returns the icon image that represents the first applied
 	 * stereotype.
-	 * 
+	 *
 	 * @param element
-	 *        the stereotyped element
+	 *            the stereotyped element
 	 * @return {@link image} of the icon
 	 */
 	@Deprecated
 	public Image getIconElement(Element element) {
 
 		List<Stereotype> stereotypeList = element.getAppliedStereotypes();
-		if(stereotypeList == null || stereotypeList.isEmpty()) {
+		if (stereotypeList == null || stereotypeList.isEmpty()) {
 			return null;
 		}
 		return getIconElement(element, stereotypeList.get(0));
@@ -155,13 +155,13 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * this method returns the collection of icon images that represents the
 	 * applied stereotypes.
-	 * 
+	 *
 	 * @param elt
-	 *        the stereotyped element
+	 *            the stereotyped element
 	 * @param stereotypes
-	 *        the collection of stereotypes which icon has to be displayed
+	 *            the collection of stereotypes which icon has to be displayed
 	 * @param kind
-	 *        the kind of display "icon" or "shape"
+	 *            the kind of display "icon" or "shape"
 	 * @return {@link image} of the icon
 	 */
 	@Deprecated
@@ -169,10 +169,10 @@ public class Activator extends AbstractUIPlugin {
 		Collection<Image> images = new ArrayList<Image>();
 
 		// look in each stereotype and get the image for each of them
-		for(Stereotype stereotype : stereotypes) {
+		for (Stereotype stereotype : stereotypes) {
 			// getStereotypeImage can return null
 			org.eclipse.uml2.uml.Image icon = ElementUtil.getStereotypeImage(elt, stereotype, "icon");
-			if(icon != null) {
+			if (icon != null) {
 				images.add(getImageInRegistry(icon));
 			}
 		}
@@ -182,13 +182,13 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * this method returns the icon image that represents the first applied
 	 * stereotype.
-	 * 
+	 *
 	 * @param elt
-	 *        the stereotyped element
+	 *            the stereotyped element
 	 * @param stereotype
-	 *        the stereotype which icon has to be displayed
+	 *            the stereotype which icon has to be displayed
 	 * @param kind
-	 *        the kind of display "icon" or "shape"
+	 *            the kind of display "icon" or "shape"
 	 * @return {@link image} of the icon
 	 */
 	@Deprecated
@@ -196,7 +196,7 @@ public class Activator extends AbstractUIPlugin {
 
 		// getStereotypeImage can return null
 		org.eclipse.uml2.uml.Image icon = ElementUtil.getStereotypeImage(elt, stereotype, "icon");
-		if(icon != null) {
+		if (icon != null) {
 			return getImageInRegistry(icon);
 		} else {
 			return null;
@@ -206,9 +206,9 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * Find the image (SWT) in registry Store image in registry if it is not
 	 * found
-	 * 
+	 *
 	 * @param umlImage
-	 *        to retrieve as SWT Image in registry
+	 *            to retrieve as SWT Image in registry
 	 * @return the stored SWT image
 	 */
 	@Deprecated
@@ -224,7 +224,7 @@ public class Activator extends AbstractUIPlugin {
 
 		// If image was not found in registry,
 		// try to find an image and to update registry
-		if(image == null) {
+		if (image == null) {
 
 			try {
 				// Try to retrieve image from UML Image content property
@@ -235,11 +235,11 @@ public class Activator extends AbstractUIPlugin {
 
 			// If no image was found in Content
 			// Try to retrieve image from UML Image location property
-			if(image == null) {
+			if (image == null) {
 				image = ImageUtil.getImageFromLocation(umlImage);
 			}
 
-			if(image != null) {
+			if (image != null) {
 				// Store image in registry
 				ImageData imdata = image.getImageData();
 				papyrusRegistry.put(image_id, ImageDescriptor.createFromImageData(imdata));

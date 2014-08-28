@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.*;
 import org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.DefaultLink;
 import org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Distribute;
 import org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.InterRepetition;
@@ -32,6 +31,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class RSMFactoryImpl extends EFactoryImpl implements RSMFactory {
@@ -39,16 +39,16 @@ public class RSMFactoryImpl extends EFactoryImpl implements RSMFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static RSMFactory init() {
 		try {
-			RSMFactory theRSMFactory = (RSMFactory)EPackage.Registry.INSTANCE.getEFactory(RSMPackage.eNS_URI);
+			RSMFactory theRSMFactory = (RSMFactory) EPackage.Registry.INSTANCE.getEFactory(RSMPackage.eNS_URI);
 			if (theRSMFactory != null) {
 				return theRSMFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new RSMFactoryImpl();
@@ -58,6 +58,7 @@ public class RSMFactoryImpl extends EFactoryImpl implements RSMFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public RSMFactoryImpl() {
@@ -67,27 +68,36 @@ public class RSMFactoryImpl extends EFactoryImpl implements RSMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case RSMPackage.DEFAULT_LINK: return createDefaultLink();
-			case RSMPackage.INTER_REPETITION: return createInterRepetition();
-			case RSMPackage.DISTRIBUTE: return createDistribute();
-			case RSMPackage.RESHAPE: return createReshape();
-			case RSMPackage.TILER: return createTiler();
-			case RSMPackage.SHAPED: return createShaped();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case RSMPackage.DEFAULT_LINK:
+			return createDefaultLink();
+		case RSMPackage.INTER_REPETITION:
+			return createInterRepetition();
+		case RSMPackage.DISTRIBUTE:
+			return createDistribute();
+		case RSMPackage.RESHAPE:
+			return createReshape();
+		case RSMPackage.TILER:
+			return createTiler();
+		case RSMPackage.SHAPED:
+			return createShaped();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public DefaultLink createDefaultLink() {
 		DefaultLinkImpl defaultLink = new DefaultLinkImpl();
 		return defaultLink;
@@ -96,8 +106,10 @@ public class RSMFactoryImpl extends EFactoryImpl implements RSMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public InterRepetition createInterRepetition() {
 		InterRepetitionImpl interRepetition = new InterRepetitionImpl();
 		return interRepetition;
@@ -106,8 +118,10 @@ public class RSMFactoryImpl extends EFactoryImpl implements RSMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Distribute createDistribute() {
 		DistributeImpl distribute = new DistributeImpl();
 		return distribute;
@@ -116,8 +130,10 @@ public class RSMFactoryImpl extends EFactoryImpl implements RSMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Reshape createReshape() {
 		ReshapeImpl reshape = new ReshapeImpl();
 		return reshape;
@@ -126,8 +142,10 @@ public class RSMFactoryImpl extends EFactoryImpl implements RSMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Tiler createTiler() {
 		TilerImpl tiler = new TilerImpl();
 		return tiler;
@@ -136,8 +154,10 @@ public class RSMFactoryImpl extends EFactoryImpl implements RSMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Shaped createShaped() {
 		ShapedImpl shaped = new ShapedImpl();
 		return shaped;
@@ -146,15 +166,18 @@ public class RSMFactoryImpl extends EFactoryImpl implements RSMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public RSMPackage getRSMPackage() {
-		return (RSMPackage)getEPackage();
+		return (RSMPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -163,4 +186,4 @@ public class RSMFactoryImpl extends EFactoryImpl implements RSMFactory {
 		return RSMPackage.eINSTANCE;
 	}
 
-} //RSMFactoryImpl
+} // RSMFactoryImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,8 +29,8 @@ import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.SetConnectionAnchorsCommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.SetConnectionEndsCommand;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.BaseSlidableAnchor;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-import org.eclipse.gmf.runtime.gef.ui.figures.SlidableAnchor;
 import org.eclipse.gmf.runtime.notation.Anchor;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
@@ -56,28 +56,28 @@ import org.eclipse.uml2.uml.Message;
 /**
  * This class fixes the missing view of gate for older version diagrams.
  * It also redirect the messages' ends to the new gate view if existed.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class FixGateViewOnOpening {
 
 	public void fix(Diagram diagram) {
 		TreeIterator<EObject> contents = diagram.eAllContents();
-		while(contents.hasNext()) {
+		while (contents.hasNext()) {
 			EObject next = contents.next();
-			if(!(next instanceof Shape)) {
+			if (!(next instanceof Shape)) {
 				continue;
 			}
-			Shape shape = (Shape)next;
+			Shape shape = (Shape) next;
 			EObject element = ViewUtil.resolveSemanticElement(shape);
-			if(!isGateContainer(element)) {
+			if (!isGateContainer(element)) {
 				continue;
 			}
 			List<Gate> allGates = getAllGates(element);
-			if(allGates.isEmpty()) {
+			if (allGates.isEmpty()) {
 				continue;
 			}
-			for(Gate gate : allGates) {
+			for (Gate gate : allGates) {
 				doFix(diagram, shape, gate);
 			}
 		}
@@ -88,39 +88,39 @@ public class FixGateViewOnOpening {
 	 * @param gate
 	 */
 	private void doFix(Diagram diagram, Shape parent, Gate gate) {
-		//Ignore CoRegion.
-		if(UMLVisualIDRegistry.getType(CombinedFragment2EditPart.VISUAL_ID).equals(parent.getType())) {
+		// Ignore CoRegion.
+		if (UMLVisualIDRegistry.getType(CombinedFragment2EditPart.VISUAL_ID).equals(parent.getType())) {
 			return;
 		}
 		View view = findPrimaryView(diagram, gate);
-		if(view != null) {
+		if (view != null) {
 			return;
 		}
 		Message message = gate.getMessage();
-		//NPE happens.
-		if(message == null) {
+		// NPE happens.
+		if (message == null) {
 			return;
 		}
 		View messageView = findPrimaryView(diagram, message);
 		Edge edge = null;
-		if(messageView instanceof Edge) {
-			edge = ((Edge)messageView);
+		if (messageView instanceof Edge) {
+			edge = ((Edge) messageView);
 		}
 		Point location = null;
 		Rectangle rect = getBounds(parent);
-		if(message != null && edge != null) {
-			if(gate == message.getReceiveEvent() && parent == edge.getTarget()) {
+		if (message != null && edge != null) {
+			if (gate == message.getReceiveEvent() && parent == edge.getTarget()) {
 				location = getLocation(rect, edge.getTargetAnchor());
-			} else if(gate == message.getSendEvent() && parent == edge.getSource()) {
+			} else if (gate == message.getSendEvent() && parent == edge.getSource()) {
 				location = getLocation(rect, edge.getSourceAnchor());
 			}
 		}
-		if(location == null) {
+		if (location == null) {
 			int index = indexOfGate(gate);
-			if(index != -1) {
-				if(gate == message.getReceiveEvent()) {
+			if (index != -1) {
+				if (gate == message.getReceiveEvent()) {
 					location = new Point(rect.x, rect.y + GateEditPart.DEFAULT_SIZE.height * index + 2);
-				} else if(gate == message.getSendEvent()) {
+				} else if (gate == message.getSendEvent()) {
 					location = new Point(rect.right(), rect.y + GateEditPart.DEFAULT_SIZE.height * index + 2);
 				}
 			}
@@ -129,22 +129,22 @@ public class FixGateViewOnOpening {
 		CompositeCommand fixCommands = new CompositeCommand("Fix Gate View");
 		CreateGateViewCommand command = new CreateGateViewCommand(editingDomain, new EObjectAdapter(parent), location, new EObjectAdapter(gate));
 		fixCommands.add(command);
-		if(message != null && edge != null) {
+		if (message != null && edge != null) {
 			SetConnectionEndsCommand redirectCommand = new SetConnectionEndsCommand(editingDomain, "Reset Message End");
 			redirectCommand.setEdgeAdaptor(new EObjectAdapter(messageView));
 			SetConnectionAnchorsCommand repairAnchorsCommand = new SetConnectionAnchorsCommand(editingDomain, "Repair Anchors on Gate");
 			repairAnchorsCommand.setEdgeAdaptor(new EObjectAdapter(messageView));
-			if(gate == message.getReceiveEvent() && parent == edge.getTarget()) {
+			if (gate == message.getReceiveEvent() && parent == edge.getTarget()) {
 				redirectCommand.setNewTargetAdaptor(command.getResult());
 				repairAnchorsCommand.setNewTargetTerminal("(0,0.5)");
-			} else if(gate == message.getSendEvent() && parent == edge.getSource()) {
+			} else if (gate == message.getSendEvent() && parent == edge.getSource()) {
 				redirectCommand.setNewSourceAdaptor(command.getResult());
 				repairAnchorsCommand.setNewSourceTerminal("(1,0.5)");
 			}
-			if(redirectCommand.canExecute()) {
+			if (redirectCommand.canExecute()) {
 				fixCommands.add(redirectCommand);
 			}
-			if(repairAnchorsCommand.canExecute()) {
+			if (repairAnchorsCommand.canExecute()) {
 				fixCommands.add(repairAnchorsCommand);
 			}
 		}
@@ -152,30 +152,30 @@ public class FixGateViewOnOpening {
 	}
 
 	private int indexOfGate(Gate gate) {
-		if(gate == null || gate.eContainer() == null) {
+		if (gate == null || gate.eContainer() == null) {
 			return -1;
 		}
 		EObject parent = gate.eContainer();
-		if(parent instanceof CombinedFragment) {
-			return ((CombinedFragment)parent).getCfragmentGates().indexOf(gate);
-		} else if(parent instanceof InteractionUse) {
-			return ((InteractionUse)parent).getActualGates().indexOf(gate);
-		} else if(parent instanceof Interaction) {
-			return ((Interaction)parent).getFormalGates().indexOf(gate);
+		if (parent instanceof CombinedFragment) {
+			return ((CombinedFragment) parent).getCfragmentGates().indexOf(gate);
+		} else if (parent instanceof InteractionUse) {
+			return ((InteractionUse) parent).getActualGates().indexOf(gate);
+		} else if (parent instanceof Interaction) {
+			return ((Interaction) parent).getFormalGates().indexOf(gate);
 		}
 		return -1;
 	}
 
 	private Rectangle getBounds(Shape parent) {
-		int width = ((Integer)getStructuralFeatureValue(parent, NotationPackage.eINSTANCE.getSize_Width())).intValue();
-		int height = ((Integer)getStructuralFeatureValue(parent, NotationPackage.eINSTANCE.getSize_Height())).intValue();
-		int x = ((Integer)getStructuralFeatureValue(parent, NotationPackage.eINSTANCE.getLocation_X())).intValue();
-		int y = ((Integer)getStructuralFeatureValue(parent, NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		int width = ((Integer) getStructuralFeatureValue(parent, NotationPackage.eINSTANCE.getSize_Width())).intValue();
+		int height = ((Integer) getStructuralFeatureValue(parent, NotationPackage.eINSTANCE.getSize_Height())).intValue();
+		int x = ((Integer) getStructuralFeatureValue(parent, NotationPackage.eINSTANCE.getLocation_X())).intValue();
+		int y = ((Integer) getStructuralFeatureValue(parent, NotationPackage.eINSTANCE.getLocation_Y())).intValue();
 		Dimension size = computePreferenceSize(parent);
-		if(width <= 0) {
+		if (width <= 0) {
 			width = size.width;
 		}
-		if(height <= 0) {
+		if (height <= 0) {
 			height = size.height;
 		}
 		return new Rectangle(x, y, width, height);
@@ -200,10 +200,10 @@ public class FixGateViewOnOpening {
 	 * @return
 	 */
 	private Point getLocation(Rectangle rect, Anchor sourceAnchor) {
-		if(sourceAnchor instanceof IdentityAnchor) {
-			String terminal = ((IdentityAnchor)sourceAnchor).getId();
-			PrecisionPoint precise = SlidableAnchor.parseTerminalString(terminal);
-			if(precise != null) {
+		if (sourceAnchor instanceof IdentityAnchor) {
+			String terminal = ((IdentityAnchor) sourceAnchor).getId();
+			PrecisionPoint precise = BaseSlidableAnchor.parseTerminalString(terminal);
+			if (precise != null) {
 				return new PrecisionPoint(rect.x + rect.width * precise.preciseX(), rect.y + rect.height * precise.preciseY());
 			}
 		}
@@ -211,18 +211,18 @@ public class FixGateViewOnOpening {
 	}
 
 	private View findPrimaryView(Diagram diagram, EObject target) {
-		if(diagram == null || target == null) {
+		if (diagram == null || target == null) {
 			return null;
 		}
 		TreeIterator<EObject> contents = diagram.eAllContents();
-		while(contents.hasNext()) {
+		while (contents.hasNext()) {
 			EObject next = contents.next();
-			if(!(next instanceof Shape || next instanceof Edge)) {
+			if (!(next instanceof Shape || next instanceof Edge)) {
 				continue;
 			}
-			View view = (View)next;
+			View view = (View) next;
 			EObject element = ViewUtil.resolveSemanticElement(view);
-			if(target == element) {
+			if (target == element) {
 				return findTopView(view, element);
 			}
 		}
@@ -231,10 +231,10 @@ public class FixGateViewOnOpening {
 
 	private View findTopView(View view, EObject element) {
 		EObject eContainer = view.eContainer();
-		if(eContainer instanceof View) {
-			View containerView = (View)eContainer;
+		if (eContainer instanceof View) {
+			View containerView = (View) eContainer;
 			EObject containerSemantic = ViewUtil.resolveSemanticElement(containerView);
-			if(element == containerSemantic) {
+			if (element == containerSemantic) {
 				return findTopView(containerView, element);
 			}
 		}
@@ -242,12 +242,12 @@ public class FixGateViewOnOpening {
 	}
 
 	private List<Gate> getAllGates(EObject parent) {
-		if(parent instanceof CombinedFragment) {
-			return ((CombinedFragment)parent).getCfragmentGates();
-		} else if(parent instanceof InteractionUse) {
-			return ((InteractionUse)parent).getActualGates();
-		} else if(parent instanceof Interaction) {
-			return ((Interaction)parent).getFormalGates();
+		if (parent instanceof CombinedFragment) {
+			return ((CombinedFragment) parent).getCfragmentGates();
+		} else if (parent instanceof InteractionUse) {
+			return ((InteractionUse) parent).getActualGates();
+		} else if (parent instanceof Interaction) {
+			return ((Interaction) parent).getFormalGates();
 		}
 		return Collections.emptyList();
 	}

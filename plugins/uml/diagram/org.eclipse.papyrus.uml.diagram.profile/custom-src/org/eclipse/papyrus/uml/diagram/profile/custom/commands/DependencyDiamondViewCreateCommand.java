@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ import org.eclipse.papyrus.uml.diagram.profile.providers.UMLViewProvider;
 
 /**
  * Custom class to create the associationClass node
- * 
+ *
  */
 public class DependencyDiamondViewCreateCommand extends AbstractTransactionalCommand {
 
@@ -76,19 +76,19 @@ public class DependencyDiamondViewCreateCommand extends AbstractTransactionalCom
 
 	/**
 	 * constructor
-	 * 
+	 *
 	 * @param createConnectionViewAndElementRequest
-	 *        the request that is used to obtained the associationclass
+	 *            the request that is used to obtained the associationclass
 	 * @param domain
-	 *        the current edit domain
+	 *            the current edit domain
 	 * @param container
-	 *        the container view
+	 *            the container view
 	 * @param viewer
-	 *        the viewer
+	 *            the viewer
 	 * @param preferencesHint
-	 *        the preference hint of the diagram
+	 *            the preference hint of the diagram
 	 * @param point
-	 *        the location of the future association node
+	 *            the location of the future association node
 	 */
 	public DependencyDiamondViewCreateCommand(TransactionalEditingDomain domain, View container, EditPartViewer viewer, PreferencesHint preferencesHint, Point point, SemanticAdapter semanticAdapter) {
 		super(domain, "AssociationClassViewCreateCommand", null); //$NON-NLS-1$
@@ -102,7 +102,7 @@ public class DependencyDiamondViewCreateCommand extends AbstractTransactionalCom
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -125,16 +125,16 @@ public class DependencyDiamondViewCreateCommand extends AbstractTransactionalCom
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	public List<?> getAffectedFiles() {
-		if(viewer != null) {
+		if (viewer != null) {
 			EditPart editpart = viewer.getRootEditPart().getContents();
-			if(editpart instanceof IGraphicalEditPart) {
-				View view = (View)((IGraphicalEditPart)editpart).getModel();
-				if(view != null) {
+			if (editpart instanceof IGraphicalEditPart) {
+				View view = (View) ((IGraphicalEditPart) editpart).getModel();
+				if (view != null) {
 					IFile f = WorkspaceSynchronizer.getFile(view.eResource());
 					return f != null ? Collections.singletonList(f) : Collections.EMPTY_LIST;
 				}
@@ -145,7 +145,7 @@ public class DependencyDiamondViewCreateCommand extends AbstractTransactionalCom
 
 	/**
 	 * used to obtain the created node
-	 * 
+	 *
 	 * @return the created node
 	 */
 	public View getNode() {

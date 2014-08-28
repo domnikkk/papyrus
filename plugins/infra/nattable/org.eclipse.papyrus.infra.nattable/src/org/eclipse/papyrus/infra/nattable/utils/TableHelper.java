@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,20 +21,20 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.Ab
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableConfiguration;
 
 /**
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class TableHelper {
 
 	private TableHelper() {
-		//to prevent instanciation
+		// to prevent instanciation
 	}
 
 	/**
-	 * 
+	 *
 	 * @param configuration
-	 *        the configuration used to create the table
+	 *            the configuration used to create the table
 	 * @return
 	 *         the table created from this configuration
 	 */
@@ -43,11 +43,11 @@ public class TableHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param configuration
-	 *        the configuration used to create the table
+	 *            the configuration used to create the table
 	 * @param context
-	 *        the context of the table
+	 *            the context of the table
 	 * @return
 	 *         the table created from these parameters
 	 */
@@ -56,13 +56,13 @@ public class TableHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param configuration
-	 *        the configuration used to create the table
+	 *            the configuration used to create the table
 	 * @param context
-	 *        the context of the table
+	 *            the context of the table
 	 * @param name
-	 *        the name for the table
+	 *            the name for the table
 	 * @return
 	 *         the table created from these parameters
 	 */
@@ -71,15 +71,15 @@ public class TableHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param configuration
-	 *        the configuration used to create the table
+	 *            the configuration used to create the table
 	 * @param context
-	 *        the context of the table
+	 *            the context of the table
 	 * @param name
-	 *        the name for the table
+	 *            the name for the table
 	 * @param description
-	 *        the description for the table
+	 *            the description for the table
 	 * @return
 	 *         the table created from these parameters
 	 */
@@ -92,7 +92,7 @@ public class TableHelper {
 		table.setName(name);
 		table.setContext(context);
 
-		//the configuration always provides axis provider
+		// the configuration always provides axis provider
 		AbstractAxisProvider rowProvider = configuration.getDefaultRowAxisProvider();
 		rowProvider = EcoreUtil.copy(rowProvider);
 

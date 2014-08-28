@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.jface.viewers.TreeViewer;
 
 /**
  * A Strategy to search for a Resource in the Workspace
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class WorkspaceRevealStrategy extends ProviderBasedBrowseStrategy {
 
@@ -39,27 +39,27 @@ public class WorkspaceRevealStrategy extends ProviderBasedBrowseStrategy {
 
 	@Override
 	public void revealSemanticElement(List<?> elementsToReveal) {
-		if(viewer instanceof TreeViewer) {
-			TreeViewer treeViewer = (TreeViewer)viewer;
+		if (viewer instanceof TreeViewer) {
+			TreeViewer treeViewer = (TreeViewer) viewer;
 			TreePath[] paths = new TreePath[elementsToReveal.size()];
 			int i = 0;
 
 			List<?> roots = Arrays.asList(getElements());
 
-			for(Object elementToReveal : elementsToReveal) {
+			for (Object elementToReveal : elementsToReveal) {
 				LinkedList<IResource> segments = new LinkedList<IResource>();
 
-				if(elementToReveal instanceof IResource) {
-					IResource currentElement = (IResource)elementToReveal;
+				if (elementToReveal instanceof IResource) {
+					IResource currentElement = (IResource) elementToReveal;
 
 					segments.add(currentElement);
 
 					currentElement = currentElement.getParent();
-					while(currentElement != null) {
+					while (currentElement != null) {
 						segments.addFirst(currentElement);
 
-						if(roots.contains(currentElement)) {
-							break; //If the tree root is not the Workspace Root, stop now
+						if (roots.contains(currentElement)) {
+							break; // If the tree root is not the Workspace Root, stop now
 						}
 						currentElement = currentElement.getParent();
 					}

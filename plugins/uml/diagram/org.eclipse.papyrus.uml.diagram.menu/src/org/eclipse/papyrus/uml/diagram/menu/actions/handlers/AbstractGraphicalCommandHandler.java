@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,38 +29,38 @@ import org.eclipse.papyrus.uml.diagram.common.Activator;
  * This handler is used when the action returns a commands
  * This handler can use a parameter.
  * The command is executed by the handler
- * 
+ *
  * @deprecated Since February 2014 use org.eclipse.papyrus.infra.gmfdiag.menu.handlers.AbstractGraphicalCommandHandler
  */
 @Deprecated
 public abstract class AbstractGraphicalCommandHandler extends AbstractParametricHandler {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameterID
-	 *        the parameter id for this handler
+	 *            the parameter id for this handler
 	 */
 	public AbstractGraphicalCommandHandler(String parameterID) {
 		super(parameterID);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameterID
-	 *        the parameter id for this handler
+	 *            the parameter id for this handler
 	 * @param parameter
-	 *        the value of the parameter for this handler
+	 *            the value of the parameter for this handler
 	 */
 	public AbstractGraphicalCommandHandler(String parameterID, String parameter) {
 		super(parameterID, parameter);
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the command provided by the handler
 	 * @throws ExecutionException
 	 */
@@ -68,9 +68,9 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractParametric
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return null
 	 * @throws ExecutionException
@@ -78,7 +78,7 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractParametric
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
 		TransactionalEditingDomain editingDomain = getEditingDomain();
-		if(editingDomain != null) {
+		if (editingDomain != null) {
 			editingDomain.getCommandStack().execute(new GEFtoEMFCommandWrapper(getCommand()));
 		}
 
@@ -91,7 +91,7 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractParametric
 	@Override
 	public void setEnabled(Object evaluationContext) {
 		try {
-			if(getCommand().canExecute()) {
+			if (getCommand().canExecute()) {
 				setBaseEnabled(true);
 				return;
 			}
@@ -103,12 +103,12 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractParametric
 	}
 
 	/**
-	 * 
+	 *
 	 * @return true if the command can be executed
 	 */
 	public boolean isVisible() {
 		try {
-			if(getCommand().canExecute()) {
+			if (getCommand().canExecute()) {
 				return true;
 			}
 		} catch (ExecutionException e) {
@@ -120,7 +120,7 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractParametric
 
 	/**
 	 * Retrieves the TransactionalEditingDomain
-	 * 
+	 *
 	 * @return the editing domain (can be null)
 	 */
 	protected TransactionalEditingDomain getEditingDomain() {
@@ -135,12 +135,12 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractParametric
 
 	/**
 	 * gives access to the diagram command stack
-	 * 
+	 *
 	 * @return the diagram command stack
 	 */
 	protected DiagramCommandStack getDiagramCommandStack() {
 		Object stack = getWorkbenchPart().getAdapter(CommandStack.class);
-		return (stack instanceof DiagramCommandStack) ? (DiagramCommandStack)stack : null;
+		return (stack instanceof DiagramCommandStack) ? (DiagramCommandStack) stack : null;
 	}
 
 }

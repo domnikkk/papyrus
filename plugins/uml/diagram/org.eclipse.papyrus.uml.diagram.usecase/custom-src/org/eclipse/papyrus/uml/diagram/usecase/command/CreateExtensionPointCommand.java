@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -78,16 +78,16 @@ public class CreateExtensionPointCommand extends Command {
 
 	/**
 	 * Get the Command to create the extension point element
-	 * 
+	 *
 	 * @param container
-	 *        the use case which owns the extension point
+	 *            the use case which owns the extension point
 	 * @param elementType
-	 *        the type of the extension point
+	 *            the type of the extension point
 	 * @return the command to create model element or null
 	 */
 	private static ICommandProxy getElementCreationCommand(EObject container, IHintedType elementType, Diagram diagram) {
 		CreateElementRequest createElementReq = new CreateElementRequest(container, elementType);
-		if(UMLElementTypes.ExtensionPoint_3007.equals(elementType)) {
+		if (UMLElementTypes.ExtensionPoint_3007.equals(elementType)) {
 			ExtensionPointCreateCommand cmd = new ExtensionPointCreateCommand(createElementReq, diagram);
 			return new ICommandProxy(cmd);
 		} else {
@@ -97,11 +97,11 @@ public class CreateExtensionPointCommand extends Command {
 
 	/**
 	 * Get the Command to create the extension point element
-	 * 
+	 *
 	 * @param container
-	 *        the use case which owns the extension point
+	 *            the use case which owns the extension point
 	 * @param elementType
-	 *        the type of the extension point
+	 *            the type of the extension point
 	 * @return the command to create model element or null
 	 */
 	private ICommandProxy getExtensionPointAddCommand(Extend extend, ExtensionPoint extPoint) {
@@ -127,7 +127,7 @@ public class CreateExtensionPointCommand extends Command {
 
 	/**
 	 * Execute the command : create the model element, then the corresponding view
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#execute()
 	 */
 	@Override
@@ -135,17 +135,17 @@ public class CreateExtensionPointCommand extends Command {
 		super.execute();
 		Object extensionPoint = getExtensionPoint();
 		// create the view for the extension point
-		if(extensionPoint instanceof ExtensionPoint && compartment != null && type != null) {
+		if (extensionPoint instanceof ExtensionPoint && compartment != null && type != null) {
 			// set the property of extend element with the extension point
 			Object object = adapter.getAdapter(Extend.class);
-			if(object instanceof Extend) {
-				Extend extend = (Extend)object;
-				setExtensionPropertyCmd = getExtensionPointAddCommand(extend, (ExtensionPoint)extensionPoint);
-				if(setExtensionPropertyCmd.canExecute()) {
+			if (object instanceof Extend) {
+				Extend extend = (Extend) object;
+				setExtensionPropertyCmd = getExtensionPointAddCommand(extend, (ExtensionPoint) extensionPoint);
+				if (setExtensionPropertyCmd.canExecute()) {
 					setExtensionPropertyCmd.execute();
 				}
 			}
-			createExtensionPointView((ExtensionPoint)extensionPoint);
+			createExtensionPointView((ExtensionPoint) extensionPoint);
 		}
 	}
 
@@ -154,14 +154,14 @@ public class CreateExtensionPointCommand extends Command {
 	 */
 	private Object getExtensionPoint() {
 		Object extensionPoint = null;
-		if(containerObject instanceof UseCase) {
-			UseCase useCase = (UseCase)containerObject;
-			if(useCase.getExtensionPoints() != null && !useCase.getExtensionPoints().isEmpty()) {
+		if (containerObject instanceof UseCase) {
+			UseCase useCase = (UseCase) containerObject;
+			if (useCase.getExtensionPoints() != null && !useCase.getExtensionPoints().isEmpty()) {
 				extensionPoint = useCase.getExtensionPoints().get(0);
 			}
 		}
 		// or create a new extension point if needed
-		if(elementCreationCommand != null && extensionPoint == null) {
+		if (elementCreationCommand != null && extensionPoint == null) {
 			elementCreationCommand.execute();
 			extensionPoint = elementCreationCommand.getICommand().getCommandResult().getReturnValue();
 		}
@@ -170,35 +170,35 @@ public class CreateExtensionPointCommand extends Command {
 
 	/**
 	 * Creates the extension point view if needed
-	 * 
+	 *
 	 * @param extensionPoint
-	 *        the extension point element
+	 *            the extension point element
 	 */
 	private void createExtensionPointView(ExtensionPoint extensionPoint) {
 		viewsCreationCommand = new CompoundCommand();
 		IGraphicalEditPart useCasePointEP = null;
-		for(Object ep : compartment.getChildren()) {
-			if(ep instanceof UseCasePointsEditPartTN) {
-				useCasePointEP = (IGraphicalEditPart)ep;
+		for (Object ep : compartment.getChildren()) {
+			if (ep instanceof UseCasePointsEditPartTN) {
+				useCasePointEP = (IGraphicalEditPart) ep;
 				break;
-			} else if(ep instanceof UseCasePointsInComponentEditPart) {
-				useCasePointEP = (IGraphicalEditPart)ep;
+			} else if (ep instanceof UseCasePointsInComponentEditPart) {
+				useCasePointEP = (IGraphicalEditPart) ep;
 				break;
-			} else if(ep instanceof UseCasePointsInPackageEditPart) {
-				useCasePointEP = (IGraphicalEditPart)ep;
+			} else if (ep instanceof UseCasePointsInPackageEditPart) {
+				useCasePointEP = (IGraphicalEditPart) ep;
 				break;
 			}
 		}
-		if(useCasePointEP != null) {
+		if (useCasePointEP != null) {
 			// check if extension point is already drawn
 			boolean alreadyDrawn = false;
-			for(Object obj : useCasePointEP.getChildren()) {
-				if((obj instanceof ExtensionPointEditPart) && extensionPoint.equals(((ExtensionPointEditPart)obj).resolveSemanticElement())) {
+			for (Object obj : useCasePointEP.getChildren()) {
+				if ((obj instanceof ExtensionPointEditPart) && extensionPoint.equals(((ExtensionPointEditPart) obj).resolveSemanticElement())) {
 					alreadyDrawn = true;
 					break;
 				}
 			}
-			if(!alreadyDrawn) {
+			if (!alreadyDrawn) {
 				ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(new EObjectAdapter(extensionPoint), Node.class, type.getSemanticHint(), useCasePointEP.getDiagramPreferencesHint());
 				CreateViewRequest request = new CreateViewRequest(descriptor);
 				Command nodeCreationCommand = useCasePointEP.getCommand(request);
@@ -210,18 +210,18 @@ public class CreateExtensionPointCommand extends Command {
 
 	/**
 	 * Undo model and views creation
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#undo()
 	 */
 	@Override
 	public void undo() {
-		if(viewsCreationCommand != null) {
+		if (viewsCreationCommand != null) {
 			viewsCreationCommand.undo();
 		}
-		if(setExtensionPropertyCmd != null) {
+		if (setExtensionPropertyCmd != null) {
 			setExtensionPropertyCmd.undo();
 		}
-		if(elementCreationCommand != null) {
+		if (elementCreationCommand != null) {
 			elementCreationCommand.undo();
 		}
 	}

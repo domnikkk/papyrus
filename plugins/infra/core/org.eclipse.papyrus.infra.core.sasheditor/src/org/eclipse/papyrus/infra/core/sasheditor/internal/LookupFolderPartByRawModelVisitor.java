@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
@@ -7,9 +7,9 @@ package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
 /**
  * A visitor used to lookup a {@link TabFolderPart} by its raw model.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class LookupFolderPartByRawModelVisitor extends PartVisitor {
 
@@ -24,7 +24,7 @@ public class LookupFolderPartByRawModelVisitor extends PartVisitor {
 
 	/**
 	 * Get the result of the lookup.
-	 * 
+	 *
 	 * @return
 	 */
 	public TabFolderPart result() {
@@ -33,13 +33,13 @@ public class LookupFolderPartByRawModelVisitor extends PartVisitor {
 
 	/**
 	 * Check if the part is for the specified rawModel.
-	 * 
+	 *
 	 * @param part
 	 * @return
 	 */
 	private boolean isModelFor(TabFolderPart part) {
 
-		if(part.getRawModel() == rawModel) {
+		if (part.getRawModel() == rawModel) {
 			result = part;
 			return true;
 		}
@@ -52,8 +52,9 @@ public class LookupFolderPartByRawModelVisitor extends PartVisitor {
 	 */
 	@Override
 	protected boolean acceptTabFolderPart(TabFolderPart part) {
-		if(isModelFor(part))
+		if (isModelFor(part)) {
 			return false;
+		}
 
 		// Continue looking
 		return true;

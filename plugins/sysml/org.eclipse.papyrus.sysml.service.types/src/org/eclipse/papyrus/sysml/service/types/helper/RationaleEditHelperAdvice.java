@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,9 +37,10 @@ public class RationaleEditHelperAdvice extends AbstractStereotypedElementEditHel
 
 		return new ConfigureElementCommand(request) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				Element element = (Element)request.getElementToConfigure();
-				if(element != null) {
+				Element element = (Element) request.getElementToConfigure();
+				if (element != null) {
 					StereotypeApplicationHelper.INSTANCE.applyStereotype(element, ModelelementsPackage.eINSTANCE.getRationale());
 				}
 				return CommandResult.newOKCommandResult(element);

@@ -28,9 +28,9 @@ public class ParametricFrameParser extends NamedElementLabelParser {
 	public String getPrintString(IAdaptable element, int flags) {
 		String elementType = null;
 		if (element instanceof EObjectAdapter) {
-			Object realObject = ((EObjectAdapter)element).getRealObject();
+			Object realObject = ((EObjectAdapter) element).getRealObject();
 			if (realObject instanceof org.eclipse.uml2.uml.Class) {
-				elementType = UMLUtil.getStereotypeApplication(((org.eclipse.uml2.uml.Class)realObject), ConstraintBlock.class) != null ? "ConstraintBlock" : "Block";
+				elementType = UMLUtil.getStereotypeApplication(((org.eclipse.uml2.uml.Class) realObject), ConstraintBlock.class) != null ? "ConstraintBlock" : "Block";
 			}
 		}
 		return "par [" + elementType + "] " + super.getPrintString(element, flags);

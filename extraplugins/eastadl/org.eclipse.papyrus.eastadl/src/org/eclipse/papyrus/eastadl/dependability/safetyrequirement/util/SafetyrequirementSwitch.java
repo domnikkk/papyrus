@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,13 +31,13 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarc
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
- * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
- * to invoke the <code>caseXXX</code> method for each class of the model,
+ * It supports the call {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object
  * and proceeding up the inheritance hierarchy
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
+ *
  * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyrequirementPackage
  * @generated
  */
@@ -46,6 +46,7 @@ public class SafetyrequirementSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static SafetyrequirementPackage modelPackage;
@@ -54,6 +55,7 @@ public class SafetyrequirementSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SafetyrequirementSwitch() {
@@ -66,6 +68,7 @@ public class SafetyrequirementSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -81,7 +84,9 @@ public class SafetyrequirementSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Functional Safety Concept</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -96,7 +101,9 @@ public class SafetyrequirementSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Safety Goal</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -111,7 +118,9 @@ public class SafetyrequirementSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Technical Safety Concept</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -126,7 +135,9 @@ public class SafetyrequirementSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -141,7 +152,9 @@ public class SafetyrequirementSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Packageable Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -156,7 +169,9 @@ public class SafetyrequirementSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Traceable Specification</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -171,7 +186,9 @@ public class SafetyrequirementSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Hierarchy</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -186,7 +203,9 @@ public class SafetyrequirementSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 *
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -200,41 +219,67 @@ public class SafetyrequirementSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case SafetyrequirementPackage.FUNCTIONAL_SAFETY_CONCEPT: {
-				FunctionalSafetyConcept functionalSafetyConcept = (FunctionalSafetyConcept)theEObject;
-				T result = caseFunctionalSafetyConcept(functionalSafetyConcept);
-				if (result == null) result = caseRequirementsHierarchy(functionalSafetyConcept);
-				if (result == null) result = caseTraceableSpecification(functionalSafetyConcept);
-				if (result == null) result = caseEAPackageableElement(functionalSafetyConcept);
-				if (result == null) result = caseEAElement(functionalSafetyConcept);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+		case SafetyrequirementPackage.FUNCTIONAL_SAFETY_CONCEPT: {
+			FunctionalSafetyConcept functionalSafetyConcept = (FunctionalSafetyConcept) theEObject;
+			T result = caseFunctionalSafetyConcept(functionalSafetyConcept);
+			if (result == null) {
+				result = caseRequirementsHierarchy(functionalSafetyConcept);
 			}
-			case SafetyrequirementPackage.SAFETY_GOAL: {
-				SafetyGoal safetyGoal = (SafetyGoal)theEObject;
-				T result = caseSafetyGoal(safetyGoal);
-				if (result == null) result = caseEAElement(safetyGoal);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseTraceableSpecification(functionalSafetyConcept);
 			}
-			case SafetyrequirementPackage.TECHNICAL_SAFETY_CONCEPT: {
-				TechnicalSafetyConcept technicalSafetyConcept = (TechnicalSafetyConcept)theEObject;
-				T result = caseTechnicalSafetyConcept(technicalSafetyConcept);
-				if (result == null) result = caseRequirementsHierarchy(technicalSafetyConcept);
-				if (result == null) result = caseTraceableSpecification(technicalSafetyConcept);
-				if (result == null) result = caseEAPackageableElement(technicalSafetyConcept);
-				if (result == null) result = caseEAElement(technicalSafetyConcept);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseEAPackageableElement(functionalSafetyConcept);
 			}
-			default: return defaultCase(theEObject);
+			if (result == null) {
+				result = caseEAElement(functionalSafetyConcept);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case SafetyrequirementPackage.SAFETY_GOAL: {
+			SafetyGoal safetyGoal = (SafetyGoal) theEObject;
+			T result = caseSafetyGoal(safetyGoal);
+			if (result == null) {
+				result = caseEAElement(safetyGoal);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case SafetyrequirementPackage.TECHNICAL_SAFETY_CONCEPT: {
+			TechnicalSafetyConcept technicalSafetyConcept = (TechnicalSafetyConcept) theEObject;
+			T result = caseTechnicalSafetyConcept(technicalSafetyConcept);
+			if (result == null) {
+				result = caseRequirementsHierarchy(technicalSafetyConcept);
+			}
+			if (result == null) {
+				result = caseTraceableSpecification(technicalSafetyConcept);
+			}
+			if (result == null) {
+				result = caseEAPackageableElement(technicalSafetyConcept);
+			}
+			if (result == null) {
+				result = caseEAElement(technicalSafetyConcept);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
-} //SafetyrequirementSwitch
+} // SafetyrequirementSwitch

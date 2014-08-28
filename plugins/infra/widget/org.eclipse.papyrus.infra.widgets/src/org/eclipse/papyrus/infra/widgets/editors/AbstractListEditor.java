@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 402525
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.editors;
 
@@ -23,9 +23,9 @@ import org.eclipse.swt.widgets.Composite;
  * An abstract class to represent List Editors.
  * List editors are based on the Eclipse Databinding Framework
  * They take {@link IObservableList}s as Input
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public abstract class AbstractListEditor extends AbstractEditor {
 
@@ -67,12 +67,12 @@ public abstract class AbstractListEditor extends AbstractEditor {
 
 	/**
 	 * Sets this editor's IObservableList associated to the widget property
-	 * 
+	 *
 	 * @param widgetObservable
 	 * @param targetToModel
-	 *        the IConverter to convert data from Widget to Model
+	 *            the IConverter to convert data from Widget to Model
 	 * @param modelToTarget
-	 *        the IConverter to convert data from Model to Widget
+	 *            the IConverter to convert data from Model to Widget
 	 */
 	protected void setWidgetObservable(IObservableList widgetObservable, IConverter targetToModel, IConverter modelToTarget) {
 		this.widgetObservable = widgetObservable;
@@ -81,7 +81,7 @@ public abstract class AbstractListEditor extends AbstractEditor {
 
 	/**
 	 * Sets this editor's IObservableList associated to the widget property
-	 * 
+	 *
 	 * @param widgetObservable
 	 */
 	protected void setWidgetObservable(IObservableList widgetObservable) {
@@ -91,7 +91,7 @@ public abstract class AbstractListEditor extends AbstractEditor {
 	/**
 	 * Sets this editor's IObservableList associated to the model property,
 	 * and binds it to the Editor's Widget
-	 * 
+	 *
 	 * @param modelProperty
 	 */
 	public void setModelObservable(IObservableList modelProperty) {
@@ -104,10 +104,10 @@ public abstract class AbstractListEditor extends AbstractEditor {
 	 */
 	@Override
 	public void setConverters(IConverter targetToModel, IConverter modelToTarget) {
-		if(targetToModelStrategy == null) {
+		if (targetToModelStrategy == null) {
 			targetToModelStrategy = new UpdateListStrategy();
 		}
-		if(modelToTargetStrategy == null) {
+		if (modelToTargetStrategy == null) {
 			modelToTargetStrategy = new UpdateListStrategy();
 		}
 
@@ -117,11 +117,11 @@ public abstract class AbstractListEditor extends AbstractEditor {
 
 	/**
 	 * Sets the UpdateStrategies for databinding between the widget and the model
-	 * 
+	 *
 	 * @param targetToModelStrategy
-	 *        The widget to model Update strategy
+	 *            The widget to model Update strategy
 	 * @param modelToTargetStrategy
-	 *        The model to widget Update strategy
+	 *            The model to widget Update strategy
 	 */
 	public void setUpdateStrategies(UpdateListStrategy targetToModelStrategy, UpdateListStrategy modelToTargetStrategy) {
 		this.targetToModelStrategy = targetToModelStrategy;
@@ -131,24 +131,25 @@ public abstract class AbstractListEditor extends AbstractEditor {
 	/**
 	 * Binds the Widget Observable to the Model observable property,
 	 * using the specified converters or Update strategies when available
-	 * 
+	 *
 	 * When overriding this method, you should also override {@link #refreshValue()}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.AbstractEditor#doBinding()
 	 */
 	@Override
 	protected void doBinding() {
 
-		if(modelProperty == null || widgetObservable == null) {
+		if (modelProperty == null || widgetObservable == null) {
 			return;
 		}
 
 		binding = getBindingContext().bindList(widgetObservable, modelProperty, targetToModelStrategy, modelToTargetStrategy);
 	}
-	
+
+	@Override
 	protected Object getContextElement() {
 		// Our observables for features of EMF objects are expected to implement IObserving because
 		// the observe the value of the object's feature
-		return (modelProperty instanceof IObserving) ? ((IObserving)modelProperty).getObserved() : null;
+		return (modelProperty instanceof IObserving) ? ((IObserving) modelProperty).getObserved() : null;
 	}
 }

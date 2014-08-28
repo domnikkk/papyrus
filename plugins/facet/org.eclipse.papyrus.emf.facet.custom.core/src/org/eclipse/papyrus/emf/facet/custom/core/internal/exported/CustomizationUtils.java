@@ -1,11 +1,11 @@
 /**
  *  Copyright (c) 2011, 2012 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *      Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning
  *      Gregoire Dupe (Mia-Software) - Bug 376576 - [EFacet] Change the multiplicity of Facet::extendedFacet
@@ -22,15 +22,15 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.ETypedElement;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
-import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.custom.core.exception.CustomizationException;
 import org.eclipse.papyrus.emf.facet.custom.core.internal.Activator;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
+import org.eclipse.papyrus.emf.facet.util.core.Logger;
 
 /**
  * @since 0.2
@@ -78,17 +78,17 @@ public final class CustomizationUtils {
 
 	/**
 	 * Return the default file extension of a customization file.
-	 * 
+	 *
 	 * @return the file extension without the dot.
 	 */
 	public static String getDefaultFileExtension() {
 		return CustomizationUtils.FILE_EXTENSION;
 	}
-	
+
 	/**
 	 * Find a Customization with the given name among the given list of Customizations. If several Customizations have the same name,
 	 * then return the first one.
-	 * 
+	 *
 	 * @param customizations
 	 *            where to look for
 	 * @param name

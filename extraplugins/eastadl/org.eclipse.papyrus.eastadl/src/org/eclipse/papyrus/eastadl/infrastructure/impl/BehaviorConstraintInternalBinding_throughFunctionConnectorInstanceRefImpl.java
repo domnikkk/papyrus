@@ -22,8 +22,8 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefImpl#getFunctionConnector <em>Function Connector</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefImpl#getFunctionPrototype <em>Function Prototype</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefImpl#getFunctionConnector <em>Function Connector</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefImpl#getFunctionPrototype <em>Function Prototype</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,6 +34,7 @@ public class BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceR
 	 * The cached value of the '{@link #getFunctionConnector() <em>Function Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFunctionConnector()
 	 * @generated
 	 * @ordered
@@ -44,6 +45,7 @@ public class BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceR
 	 * The cached value of the '{@link #getFunctionPrototype() <em>Function Prototype</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFunctionPrototype()
 	 * @generated
 	 * @ordered
@@ -53,6 +55,7 @@ public class BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefImpl() {
@@ -62,6 +65,7 @@ public class BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,15 +76,18 @@ public class BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public FunctionConnector getFunctionConnector() {
 		if (functionConnector != null && functionConnector.eIsProxy()) {
-			InternalEObject oldFunctionConnector = (InternalEObject)functionConnector;
-			functionConnector = (FunctionConnector)eResolveProxy(oldFunctionConnector);
+			InternalEObject oldFunctionConnector = (InternalEObject) functionConnector;
+			functionConnector = (FunctionConnector) eResolveProxy(oldFunctionConnector);
 			if (functionConnector != oldFunctionConnector) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_CONNECTOR, oldFunctionConnector, functionConnector));
+				}
 			}
 		}
 		return functionConnector;
@@ -89,6 +96,7 @@ public class BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public FunctionConnector basicGetFunctionConnector() {
@@ -98,20 +106,25 @@ public class BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setFunctionConnector(FunctionConnector newFunctionConnector) {
 		FunctionConnector oldFunctionConnector = functionConnector;
 		functionConnector = newFunctionConnector;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_CONNECTOR, oldFunctionConnector, functionConnector));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<FunctionPrototype> getFunctionPrototype() {
 		if (functionPrototype == null) {
 			functionPrototype = new EObjectResolvingEList<FunctionPrototype>(FunctionPrototype.class, this, InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE);
@@ -122,16 +135,19 @@ public class BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_CONNECTOR:
-				if (resolve) return getFunctionConnector();
-				return basicGetFunctionConnector();
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				return getFunctionPrototype();
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_CONNECTOR:
+			if (resolve) {
+				return getFunctionConnector();
+			}
+			return basicGetFunctionConnector();
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			return getFunctionPrototype();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -139,19 +155,20 @@ public class BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_CONNECTOR:
-				setFunctionConnector((FunctionConnector)newValue);
-				return;
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				getFunctionPrototype().clear();
-				getFunctionPrototype().addAll((Collection<? extends FunctionPrototype>)newValue);
-				return;
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_CONNECTOR:
+			setFunctionConnector((FunctionConnector) newValue);
+			return;
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			getFunctionPrototype().clear();
+			getFunctionPrototype().addAll((Collection<? extends FunctionPrototype>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -159,17 +176,18 @@ public class BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_CONNECTOR:
-				setFunctionConnector((FunctionConnector)null);
-				return;
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				getFunctionPrototype().clear();
-				return;
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_CONNECTOR:
+			setFunctionConnector((FunctionConnector) null);
+			return;
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			getFunctionPrototype().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -177,17 +195,18 @@ public class BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_CONNECTOR:
-				return functionConnector != null;
-			case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				return functionPrototype != null && !functionPrototype.isEmpty();
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_CONNECTOR:
+			return functionConnector != null;
+		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			return functionPrototype != null && !functionPrototype.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefImpl
+} // BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefImpl

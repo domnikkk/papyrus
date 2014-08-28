@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,13 +45,14 @@ public class NewPapyrusProjectWizard extends CreateModelWizard {
 	public boolean isCreateProjectWizard() {
 		return true;
 	}
-	
+
 	/**
 	 * Inits the.
 	 *
-	 * @param workbench the workbench
-	 * @param selection the selection
-	 * {@inheritDoc}
+	 * @param workbench
+	 *            the workbench
+	 * @param selection
+	 *            the selection {@inheritDoc}
 	 */
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
@@ -87,8 +88,7 @@ public class NewPapyrusProjectWizard extends CreateModelWizard {
 	/**
 	 * Perform finish.
 	 *
-	 * @return true, if successful
-	 * {@inheritDoc}
+	 * @return true, if successful {@inheritDoc}
 	 */
 	@Override
 	public boolean performFinish() {
@@ -109,7 +109,8 @@ public class NewPapyrusProjectWizard extends CreateModelWizard {
 	 * Creates the new project.
 	 *
 	 * @return the i project
-	 * @throws CoreException the core exception
+	 * @throws CoreException
+	 *             the core exception
 	 */
 	protected IProject createNewProject() throws CoreException {
 		// get a project handle
@@ -121,27 +122,27 @@ public class NewPapyrusProjectWizard extends CreateModelWizard {
 			projectLocationURI = myNewProjectPage.getLocationURI();
 		}
 
-        IProjectDescription projectDescription = null;
-        NullProgressMonitor progressMonitor = new NullProgressMonitor();
-        if (!project.exists())
-        {
-          projectDescription = ResourcesPlugin.getWorkspace().newProjectDescription(project.getName());
-          if (projectLocationURI != null)
-          {
-            projectDescription.setLocationURI(projectLocationURI);
-          }
-          project.create(projectDescription, new SubProgressMonitor(progressMonitor, 1));
-          project.open(new SubProgressMonitor(progressMonitor, 1));
-        }
-        else 
-        {
-          projectDescription = project.getDescription();
-          project.open(new SubProgressMonitor(progressMonitor, 1));
-        }
+		IProjectDescription projectDescription = null;
+		NullProgressMonitor progressMonitor = new NullProgressMonitor();
+		if (!project.exists())
+		{
+			projectDescription = ResourcesPlugin.getWorkspace().newProjectDescription(project.getName());
+			if (projectLocationURI != null)
+			{
+				projectDescription.setLocationURI(projectLocationURI);
+			}
+			project.create(projectDescription, new SubProgressMonitor(progressMonitor, 1));
+			project.open(new SubProgressMonitor(progressMonitor, 1));
+		}
+		else
+		{
+			projectDescription = project.getDescription();
+			project.open(new SubProgressMonitor(progressMonitor, 1));
+		}
 
-        return project;
+		return project;
 	}
-	
+
 	@Override
 	protected URI createNewModelURI(String categoryId) {
 		IPath newFilePath = myNewProjectPage.getProjectHandle().getFullPath().append(NewModelFilePage.DEFAULT_NAME + "." + getDiagramFileExtension(categoryId)); //$NON-NLS-1$
@@ -150,9 +151,9 @@ public class NewPapyrusProjectWizard extends CreateModelWizard {
 
 	/**
 	 * Sets the initial project name.
-	 * 
+	 *
 	 * @param initialProjectName
-	 *        the new initial project name
+	 *            the new initial project name
 	 */
 	public void setInitialProjectName(String initialProjectName) {
 		this.initialProjectName = initialProjectName;

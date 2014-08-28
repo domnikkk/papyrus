@@ -18,7 +18,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAEnumerationValueImpl#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EAEnumerationValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,6 +29,7 @@ public class EAEnumerationValueImpl extends EAValueImpl implements EAEnumeration
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -38,6 +39,7 @@ public class EAEnumerationValueImpl extends EAValueImpl implements EAEnumeration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected EAEnumerationValueImpl() {
@@ -47,6 +49,7 @@ public class EAEnumerationValueImpl extends EAValueImpl implements EAEnumeration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -57,8 +60,10 @@ public class EAEnumerationValueImpl extends EAValueImpl implements EAEnumeration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<EnumerationLiteral> getValue() {
 		if (value == null) {
 			value = new EObjectResolvingEList<EnumerationLiteral>(EnumerationLiteral.class, this, ValuesPackage.EA_ENUMERATION_VALUE__VALUE);
@@ -69,13 +74,14 @@ public class EAEnumerationValueImpl extends EAValueImpl implements EAEnumeration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ValuesPackage.EA_ENUMERATION_VALUE__VALUE:
-				return getValue();
+		case ValuesPackage.EA_ENUMERATION_VALUE__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -83,16 +89,17 @@ public class EAEnumerationValueImpl extends EAValueImpl implements EAEnumeration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ValuesPackage.EA_ENUMERATION_VALUE__VALUE:
-				getValue().clear();
-				getValue().addAll((Collection<? extends EnumerationLiteral>)newValue);
-				return;
+		case ValuesPackage.EA_ENUMERATION_VALUE__VALUE:
+			getValue().clear();
+			getValue().addAll((Collection<? extends EnumerationLiteral>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -100,14 +107,15 @@ public class EAEnumerationValueImpl extends EAValueImpl implements EAEnumeration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ValuesPackage.EA_ENUMERATION_VALUE__VALUE:
-				getValue().clear();
-				return;
+		case ValuesPackage.EA_ENUMERATION_VALUE__VALUE:
+			getValue().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -115,15 +123,16 @@ public class EAEnumerationValueImpl extends EAValueImpl implements EAEnumeration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ValuesPackage.EA_ENUMERATION_VALUE__VALUE:
-				return value != null && !value.isEmpty();
+		case ValuesPackage.EA_ENUMERATION_VALUE__VALUE:
+			return value != null && !value.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //EAEnumerationValueImpl
+} // EAEnumerationValueImpl

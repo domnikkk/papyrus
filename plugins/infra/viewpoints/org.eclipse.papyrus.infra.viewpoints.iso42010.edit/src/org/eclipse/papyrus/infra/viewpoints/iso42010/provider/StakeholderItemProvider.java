@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *  
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.infra.viewpoints.iso42010.provider;
 
@@ -33,11 +33,12 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class StakeholderItemProvider
-	extends ADElementItemProvider
-	implements
+		extends ADElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -47,6 +48,7 @@ public class StakeholderItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public StakeholderItemProvider(AdapterFactory adapterFactory) {
@@ -57,6 +59,7 @@ public class StakeholderItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,72 +78,76 @@ public class StakeholderItemProvider
 	 * This adds a property descriptor for the Concerns feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addConcernsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Stakeholder_concerns_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Stakeholder_concerns_feature", "_UI_Stakeholder_type"),
-				 Iso42010Package.Literals.STAKEHOLDER__CONCERNS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Stakeholder_concerns_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Stakeholder_concerns_feature", "_UI_Stakeholder_type"),
+						Iso42010Package.Literals.STAKEHOLDER__CONCERNS,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Viewpoints feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addViewpointsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Stakeholder_viewpoints_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Stakeholder_viewpoints_feature", "_UI_Stakeholder_type"),
-				 Iso42010Package.Literals.STAKEHOLDER__VIEWPOINTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Stakeholder_viewpoints_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Stakeholder_viewpoints_feature", "_UI_Stakeholder_type"),
+						Iso42010Package.Literals.STAKEHOLDER__VIEWPOINTS,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Has Interest In feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected void addHasInterestInPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Stakeholder_hasInterestIn_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Stakeholder_hasInterestIn_feature", "_UI_Stakeholder_type"),
-				 Iso42010Package.Literals.STAKEHOLDER__HAS_INTEREST_IN,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Stakeholder_hasInterestIn_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Stakeholder_hasInterestIn_feature", "_UI_Stakeholder_type"),
+						Iso42010Package.Literals.STAKEHOLDER__HAS_INTEREST_IN,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns Stakeholder.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +162,7 @@ public class StakeholderItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Stakeholder)object).getName();
+		String label = ((Stakeholder) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Stakeholder_type") : label;
 	}
 
@@ -164,6 +171,7 @@ public class StakeholderItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,6 +185,7 @@ public class StakeholderItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

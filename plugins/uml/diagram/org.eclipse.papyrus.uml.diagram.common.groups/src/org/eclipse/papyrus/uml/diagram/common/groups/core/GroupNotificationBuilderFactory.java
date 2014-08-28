@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.papyrus.uml.diagram.common.groups.core.ui.CompositeCreatorWit
 /**
  * This class builds all the necessary notifications for the group framework.
  * It allows to recover configured, ready to run, notification builders.
- * 
+ *
  * @author vhemery
  */
 public class GroupNotificationBuilderFactory {
@@ -55,9 +55,9 @@ public class GroupNotificationBuilderFactory {
 
 	/**
 	 * Create a simple notification builder from a label
-	 * 
+	 *
 	 * @param label
-	 *        Title of your notification
+	 *            Title of your notification
 	 * @return a NotificationBuilder
 	 */
 	public static NotificationBuilder getQuestionBuilder(String label) {
@@ -72,9 +72,9 @@ public class GroupNotificationBuilderFactory {
 
 	/**
 	 * Create a simple warning notification builder from a label
-	 * 
+	 *
 	 * @param label
-	 *        Title of your notification
+	 *            Title of your notification
 	 * @return a NotificationBuilder
 	 */
 	public static NotificationBuilder getWarningBuilder(String label) {

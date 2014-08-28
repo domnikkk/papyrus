@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.Dependency;
  * <li>{@link org.eclipse.papyrus.sysml.modelelements.internal.impl.ConformImpl#getBase_Dependency <em>Base Dependency</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ConformImpl extends MinimalEObjectImpl.Container implements Conform {
@@ -39,7 +39,7 @@ public class ConformImpl extends MinimalEObjectImpl.Container implements Conform
 	 * The cached value of the '{@link #getBase_Dependency() <em>Base Dependency</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Dependency()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class ConformImpl extends MinimalEObjectImpl.Container implements Conform
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConformImpl() {
@@ -57,7 +57,7 @@ public class ConformImpl extends MinimalEObjectImpl.Container implements Conform
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Dependency basicGetBase_Dependency() {
@@ -66,15 +66,16 @@ public class ConformImpl extends MinimalEObjectImpl.Container implements Conform
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case ModelelementsPackage.CONFORM__BASE_DEPENDENCY:
-			if(resolve)
+			if (resolve) {
 				return getBase_Dependency();
+			}
 			return basicGetBase_Dependency();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -82,12 +83,12 @@ public class ConformImpl extends MinimalEObjectImpl.Container implements Conform
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ModelelementsPackage.CONFORM__BASE_DEPENDENCY:
 			return base_Dependency != null;
 		}
@@ -96,14 +97,14 @@ public class ConformImpl extends MinimalEObjectImpl.Container implements Conform
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case ModelelementsPackage.CONFORM__BASE_DEPENDENCY:
-			setBase_Dependency((Dependency)newValue);
+			setBase_Dependency((Dependency) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -111,7 +112,7 @@ public class ConformImpl extends MinimalEObjectImpl.Container implements Conform
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,14 +122,14 @@ public class ConformImpl extends MinimalEObjectImpl.Container implements Conform
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ModelelementsPackage.CONFORM__BASE_DEPENDENCY:
-			setBase_Dependency((Dependency)null);
+			setBase_Dependency((Dependency) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -136,16 +137,17 @@ public class ConformImpl extends MinimalEObjectImpl.Container implements Conform
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Dependency getBase_Dependency() {
-		if(base_Dependency != null && base_Dependency.eIsProxy()) {
-			InternalEObject oldBase_Dependency = (InternalEObject)base_Dependency;
-			base_Dependency = (Dependency)eResolveProxy(oldBase_Dependency);
-			if(base_Dependency != oldBase_Dependency) {
-				if(eNotificationRequired())
+		if (base_Dependency != null && base_Dependency.eIsProxy()) {
+			InternalEObject oldBase_Dependency = (InternalEObject) base_Dependency;
+			base_Dependency = (Dependency) eResolveProxy(oldBase_Dependency);
+			if (base_Dependency != oldBase_Dependency) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelelementsPackage.CONFORM__BASE_DEPENDENCY, oldBase_Dependency, base_Dependency));
+				}
 			}
 		}
 		return base_Dependency;
@@ -153,14 +155,15 @@ public class ConformImpl extends MinimalEObjectImpl.Container implements Conform
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Dependency(Dependency newBase_Dependency) {
 		Dependency oldBase_Dependency = base_Dependency;
 		base_Dependency = newBase_Dependency;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelelementsPackage.CONFORM__BASE_DEPENDENCY, oldBase_Dependency, base_Dependency));
+		}
 	}
 
 } // ConformImpl

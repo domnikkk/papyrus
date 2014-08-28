@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,14 +43,17 @@ interface IInternalEMFSelectionContext {
 			super();
 		}
 
+		@Override
 		public void setResourceSetSupplier(Supplier<? extends ResourceSet> resourceSetSupplier) {
 			this.resourceSetSupplier = Suppliers.memoize(resourceSetSupplier);
 		}
 
+		@Override
 		public URI getToken(Object object) {
-			return (object instanceof EObject) ? EcoreUtil.getURI((EObject)object) : null;
+			return (object instanceof EObject) ? EcoreUtil.getURI((EObject) object) : null;
 		}
 
+		@Override
 		public Object resolveToken(URI token) {
 			ResourceSet rset = (resourceSetSupplier == null) ? null : resourceSetSupplier.get();
 			return (rset == null) ? null : rset.getEObject(token, true);
@@ -72,9 +75,9 @@ interface IInternalEMFSelectionContext {
 		public void setResourceSetSupplier(Supplier<? extends ResourceSet> resourceSetSupplier) {
 			super.setResourceSetSupplier(resourceSetSupplier);
 
-			for(Object next : composite.getReloadContexts()) {
+			for (Object next : composite.getReloadContexts()) {
 				IInternalEMFSelectionContext emfContext = AdapterUtils.adapt(next, IInternalEMFSelectionContext.class, null);
-				if(emfContext != null) {
+				if (emfContext != null) {
 					// Pass along the memoizer so that we can all share it
 					emfContext.setResourceSetSupplier(this.resourceSetSupplier);
 				}
@@ -97,7 +100,7 @@ interface IInternalEMFSelectionContext {
 			super.setResourceSetSupplier(resourceSetSupplier);
 
 			IInternalEMFSelectionContext emfContext = AdapterUtils.adapt(delegating.getDelegate(), IInternalEMFSelectionContext.class, null);
-			if(emfContext != null) {
+			if (emfContext != null) {
 				// Pass along the memoizer so that we can all share it
 				emfContext.setResourceSetSupplier(this.resourceSetSupplier);
 			}

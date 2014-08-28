@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,158 +31,158 @@ public class WrappingSubsetEObjectContainmentEList<E extends RepresentingElement
 	public WrappingSubsetEObjectContainmentEList(Class<?> dataClass, InternalEObject owner, int featureID, Collection<Element> representedElementList, WrappingList<E>... representingSuperSets) {
 		super(dataClass, owner, featureID, representedElementList);
 		this.representingSuperSets = new ArrayList<WrappingList<E>>();
-		for(int i = 0; i < representingSuperSets.length; i++) {
+		for (int i = 0; i < representingSuperSets.length; i++) {
 			this.representingSuperSets.add(representingSuperSets[i]);
 		}
 	}
 
-	//	@Override
-	//	public boolean add(E object) {
-	//		for(WrappingList representingSuperSet : representingSuperSets) {
-	//			EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
+	// @Override
+	// public boolean add(E object) {
+	// for(WrappingList representingSuperSet : representingSuperSets) {
+	// EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
 	//
-	//			Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.ADD, list.getEStructuralFeature(), null, object, list.size(), true);
+	// Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.ADD, list.getEStructuralFeature(), null, object, list.size(), true);
 	//
-	//			list.getEObject().eNotify(notification);
+	// list.getEObject().eNotify(notification);
 	//
-	//			//			if(!representingSuperSet.contains(object)) {
-	//			//				representingSuperSet.notWrappingAdd(object);
-	//			//			}
-	//		}
+	// // if(!representingSuperSet.contains(object)) {
+	// // representingSuperSet.notWrappingAdd(object);
+	// // }
+	// }
 	//
 	//
-	//		return super.add(object);
-	//	}
+	// return super.add(object);
+	// }
 	//
-	//	@Override
-	//	public void add(int index, E object) {
-	//		for(WrappingList representingSuperSet : representingSuperSets) {
-	//			if(!representingSuperSet.contains(object)) {
-	//				//				representingSuperSet.notWrappingAdd(object);
-	//				EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
+	// @Override
+	// public void add(int index, E object) {
+	// for(WrappingList representingSuperSet : representingSuperSets) {
+	// if(!representingSuperSet.contains(object)) {
+	// // representingSuperSet.notWrappingAdd(object);
+	// EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
 	//
-	//				Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.ADD, list.getEStructuralFeature(), null, object, list.size(), true);
+	// Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.ADD, list.getEStructuralFeature(), null, object, list.size(), true);
 	//
-	//				list.getEObject().eNotify(notification);
-	//			}
-	//		}
+	// list.getEObject().eNotify(notification);
+	// }
+	// }
 	//
-	//		super.add(index, object);
-	//	}
+	// super.add(index, object);
+	// }
 	//
-	//	@Override
-	//	public boolean addAll(Collection<? extends E> collection) {
-	//		for(WrappingList representingSuperSet : representingSuperSets) {
-	//			for(E e : collection) {
-	//				if(!representingSuperSet.contains(e)) {
-	//					//					representingSuperSet.notWrappingAdd(e);
-	//					EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
+	// @Override
+	// public boolean addAll(Collection<? extends E> collection) {
+	// for(WrappingList representingSuperSet : representingSuperSets) {
+	// for(E e : collection) {
+	// if(!representingSuperSet.contains(e)) {
+	// // representingSuperSet.notWrappingAdd(e);
+	// EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
 	//
-	//					Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.ADD, list.getEStructuralFeature(), null, e, list.size(), true);
+	// Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.ADD, list.getEStructuralFeature(), null, e, list.size(), true);
 	//
-	//					list.getEObject().eNotify(notification);
-	//				}
-	//			}
-	//		}
+	// list.getEObject().eNotify(notification);
+	// }
+	// }
+	// }
 	//
-	//		return super.addAll(collection);
-	//	}
+	// return super.addAll(collection);
+	// }
 	//
-	//	@Override
-	//	public boolean addAll(int index, Collection<? extends E> collection) {
-	//		for(WrappingList representingSuperSet : representingSuperSets) {
-	//			for(E e : collection) {
-	//				if(!representingSuperSet.contains(e)) {
-	//					//					representingSuperSet.notWrappingAdd(e);
-	//					EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
+	// @Override
+	// public boolean addAll(int index, Collection<? extends E> collection) {
+	// for(WrappingList representingSuperSet : representingSuperSets) {
+	// for(E e : collection) {
+	// if(!representingSuperSet.contains(e)) {
+	// // representingSuperSet.notWrappingAdd(e);
+	// EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
 	//
-	//					Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.ADD, list.getEStructuralFeature(), null, e, list.size(), true);
+	// Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.ADD, list.getEStructuralFeature(), null, e, list.size(), true);
 	//
-	//					list.getEObject().eNotify(notification);
-	//				}
-	//			}
-	//		}
+	// list.getEObject().eNotify(notification);
+	// }
+	// }
+	// }
 	//
-	//		return super.addAll(index, collection);
-	//	}
+	// return super.addAll(index, collection);
+	// }
 	//
-	//	@Override
-	//	public boolean remove(Object object) {
-	//		for(WrappingList representingSuperSet : representingSuperSets) {
-	//			//			representingSuperSet.notWrappingRemove((E)object);
-	//			EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
+	// @Override
+	// public boolean remove(Object object) {
+	// for(WrappingList representingSuperSet : representingSuperSets) {
+	// // representingSuperSet.notWrappingRemove((E)object);
+	// EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
 	//
-	//			Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.REMOVE, list.getEStructuralFeature(), object, null, list.size() - 1, true);
+	// Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.REMOVE, list.getEStructuralFeature(), object, null, list.size() - 1, true);
 	//
-	//			list.getEObject().eNotify(notification);
-	//		}
+	// list.getEObject().eNotify(notification);
+	// }
 	//
-	//		return super.remove(object);
-	//	}
+	// return super.remove(object);
+	// }
 	//
-	//	@Override
-	//	public E remove(int index) {
-	//		for(WrappingList representingSuperSet : representingSuperSets) {
-	//			//			representingSuperSet.notWrappingRemove(get(index));
-	//			EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
+	// @Override
+	// public E remove(int index) {
+	// for(WrappingList representingSuperSet : representingSuperSets) {
+	// // representingSuperSet.notWrappingRemove(get(index));
+	// EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
 	//
-	//			Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.REMOVE, list.getEStructuralFeature(), get(index), null, list.size() - 1, true);
+	// Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.REMOVE, list.getEStructuralFeature(), get(index), null, list.size() - 1, true);
 	//
-	//			list.getEObject().eNotify(notification);
-	//		}
+	// list.getEObject().eNotify(notification);
+	// }
 	//
-	//		return super.remove(index);
-	//	}
+	// return super.remove(index);
+	// }
 	//
-	//	@Override
-	//	public boolean removeAll(Collection<?> collection) {
-	//		for(WrappingList representingSuperSet : representingSuperSets) {
-	//			for(Object e : collection) {
-	//				//				representingSuperSet.notWrappingRemove((E)e);
-	//				EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
+	// @Override
+	// public boolean removeAll(Collection<?> collection) {
+	// for(WrappingList representingSuperSet : representingSuperSets) {
+	// for(Object e : collection) {
+	// // representingSuperSet.notWrappingRemove((E)e);
+	// EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
 	//
-	//				Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.REMOVE, list.getEStructuralFeature(), e, null, list.size() - 1, true);
+	// Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.REMOVE, list.getEStructuralFeature(), e, null, list.size() - 1, true);
 	//
-	//				list.getEObject().eNotify(notification);
-	//			}
-	//		}
+	// list.getEObject().eNotify(notification);
+	// }
+	// }
 	//
-	//		return super.removeAll(collection);
-	//	}
+	// return super.removeAll(collection);
+	// }
 	//
-	//	@Override
-	//	public void clear() {
-	//		for(WrappingList representingSuperSet : representingSuperSets) {
-	//			for(Object e : this) {
-	//				//				representingSuperSet.notWrappingRemove((E)e);
-	//				EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
+	// @Override
+	// public void clear() {
+	// for(WrappingList representingSuperSet : representingSuperSets) {
+	// for(Object e : this) {
+	// // representingSuperSet.notWrappingRemove((E)e);
+	// EcoreEList<E> list = ((EcoreEList<E>)representingSuperSet);
 	//
-	//				Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.REMOVE, list.getEStructuralFeature(), e, null, list.size() - 1, true);
+	// Notification notification = new ENotificationImpl((InternalEObject)list.getEObject(), Notification.REMOVE, list.getEStructuralFeature(), e, null, list.size() - 1, true);
 	//
-	//				list.getEObject().eNotify(notification);
-	//			}
-	//		}
+	// list.getEObject().eNotify(notification);
+	// }
+	// }
 	//
-	//		super.clear();
-	//	}
+	// super.clear();
+	// }
 	//
-	//	@Override
-	//	public void notWrappingAdd(E object) {
-	//		for(WrappingList representingSuperSet : representingSuperSets) {
-	//			if(!representingSuperSet.contains(object)) {
-	//				representingSuperSet.notWrappingAdd(object);
-	//			}
-	//		}
+	// @Override
+	// public void notWrappingAdd(E object) {
+	// for(WrappingList representingSuperSet : representingSuperSets) {
+	// if(!representingSuperSet.contains(object)) {
+	// representingSuperSet.notWrappingAdd(object);
+	// }
+	// }
 	//
-	//		doAddUnique(object);
-	//	}
+	// doAddUnique(object);
+	// }
 	//
-	//	@Override
-	//	public E notWrappingRemove(E object) {
-	//		for(WrappingList representingSuperSet : representingSuperSets) {
-	//			representingSuperSet.notWrappingRemove(object);
-	//		}
+	// @Override
+	// public E notWrappingRemove(E object) {
+	// for(WrappingList representingSuperSet : representingSuperSets) {
+	// representingSuperSet.notWrappingRemove(object);
+	// }
 	//
-	//		return doRemove(indexOf(object));
-	//	}
+	// return doRemove(indexOf(object));
+	// }
 }

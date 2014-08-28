@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,18 +26,18 @@ import org.eclipse.papyrus.uml.diagram.common.figure.node.IMultilineEditableFigu
 public class CellEditorLocators {
 
 	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
-		if(source.getFigure() instanceof IMultilineEditableFigure)
-			return new MultilineCellEditorLocator((IMultilineEditableFigure)source.getFigure());
-		else if(source.getFigure() instanceof WrappingLabel)
-			return new TextCellEditorLocator((WrappingLabel)source.getFigure());
-		else if(source.getFigure() instanceof NodeFigure) {
-			WrappingLabel wrappingLabel = (WrappingLabel)source.getFigure().getChildren().get(0);
-			if(wrappingLabel != null) {
+		if (source.getFigure() instanceof IMultilineEditableFigure) {
+			return new MultilineCellEditorLocator((IMultilineEditableFigure) source.getFigure());
+		} else if (source.getFigure() instanceof WrappingLabel) {
+			return new TextCellEditorLocator((WrappingLabel) source.getFigure());
+		} else if (source.getFigure() instanceof NodeFigure) {
+			WrappingLabel wrappingLabel = (WrappingLabel) source.getFigure().getChildren().get(0);
+			if (wrappingLabel != null) {
 				return new TextCellEditorLocator(wrappingLabel);
 			}
-			return new LabelCellEditorLocator((Label)source.getFigure());
+			return new LabelCellEditorLocator((Label) source.getFigure());
 		} else {
-			return new LabelCellEditorLocator((Label)source.getFigure());
+			return new LabelCellEditorLocator((Label) source.getFigure());
 		}
 	}
 }

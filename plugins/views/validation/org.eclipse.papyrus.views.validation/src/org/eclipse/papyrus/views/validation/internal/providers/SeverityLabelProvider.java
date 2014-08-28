@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,16 +43,16 @@ public class SeverityLabelProvider
 		if (element instanceof IPapyrusMarker) {
 			IPapyrusMarker marker = (IPapyrusMarker) element;
 			switch (marker.getAttribute(IPapyrusMarker.SEVERITY,
-				IPapyrusMarker.SEVERITY_ERROR)) {
-				case IPapyrusMarker.SEVERITY_INFO :
-					result = images.getImage(ISharedImages.IMG_OBJS_INFO_TSK);
-					break;
-				case IPapyrusMarker.SEVERITY_WARNING :
-					result = images.getImage(ISharedImages.IMG_OBJS_WARN_TSK);
-					break;
-				default :
-					result = images.getImage(ISharedImages.IMG_OBJS_ERROR_TSK);
-					break;
+					IPapyrusMarker.SEVERITY_ERROR)) {
+			case IPapyrusMarker.SEVERITY_INFO:
+				result = images.getImage(ISharedImages.IMG_OBJS_INFO_TSK);
+				break;
+			case IPapyrusMarker.SEVERITY_WARNING:
+				result = images.getImage(ISharedImages.IMG_OBJS_WARN_TSK);
+				break;
+			default:
+				result = images.getImage(ISharedImages.IMG_OBJS_ERROR_TSK);
+				break;
 			}
 		}
 
@@ -70,7 +70,7 @@ public class SeverityLabelProvider
 				if (element instanceof IPapyrusMarker) {
 					IPapyrusMarker marker = (IPapyrusMarker) element;
 					result = IPapyrusMarker.SEVERITY_ERROR
-						- marker.getAttribute(IPapyrusMarker.SEVERITY, -1);
+							- marker.getAttribute(IPapyrusMarker.SEVERITY, -1);
 				}
 
 				return result;

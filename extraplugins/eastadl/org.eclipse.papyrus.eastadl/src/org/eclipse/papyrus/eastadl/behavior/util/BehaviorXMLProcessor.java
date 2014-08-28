@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,6 +27,7 @@ import org.eclipse.papyrus.eastadl.behavior.BehaviorPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
+ *
  * @generated
  */
 public class BehaviorXMLProcessor extends XMLProcessor {
@@ -34,6 +35,7 @@ public class BehaviorXMLProcessor extends XMLProcessor {
 	/**
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public BehaviorXMLProcessor() {
@@ -44,7 +46,7 @@ public class BehaviorXMLProcessor extends XMLProcessor {
 	/**
 	 * Register for "*" and "xml" file extensions the BehaviorResourceFactoryImpl factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

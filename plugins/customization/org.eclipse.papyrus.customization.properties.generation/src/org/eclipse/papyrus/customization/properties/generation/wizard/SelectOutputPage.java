@@ -84,13 +84,13 @@ public class SelectOutputPage extends AbstractCreateContextPage implements Liste
 			@Override
 			public String getText(Object element) {
 
-				if(element instanceof EPackage) {
-					EPackage p = (EPackage)element;
+				if (element instanceof EPackage) {
+					EPackage p = (EPackage) element;
 					return "Ecore package Name : " + p.getName(); //$NON-NLS-1$
 
 				}
-				if(element instanceof Package) {
-					Package p = (Package)element;
+				if (element instanceof Package) {
+					Package p = (Package) element;
 					return "Profile name : " + p.getName(); //$NON-NLS-1$
 				}
 				return null;
@@ -110,7 +110,7 @@ public class SelectOutputPage extends AbstractCreateContextPage implements Liste
 
 	public void handleEvent(Event event) {
 
-		if(combo.getSelectionIndex() != 0) {
+		if (combo.getSelectionIndex() != 0) {
 			table.setVisible(true);
 
 		} else {
@@ -129,7 +129,7 @@ public class SelectOutputPage extends AbstractCreateContextPage implements Liste
 	public void setVisible(boolean visible) {
 		super.setVisible(visible);
 
-		if(visible) {
+		if (visible) {
 			setSelectorData();
 		}
 	}
@@ -145,14 +145,14 @@ public class SelectOutputPage extends AbstractCreateContextPage implements Liste
 	public List<URI> getListPackage(int selection) {
 		List<URI> list = new ArrayList<URI>();
 
-		if(selection == 0) {
+		if (selection == 0) {
 			list.add(getWizard().generatorPage.oldURI);
 
 		} else {
-			for(Object o : viewer.getCheckedElements()) {
-				if(o instanceof EPackage) {
-					EPackage p = (EPackage)o;
-					if(selection == 1) {
+			for (Object o : viewer.getCheckedElements()) {
+				if (o instanceof EPackage) {
+					EPackage p = (EPackage) o;
+					if (selection == 1) {
 						list.add(getWizard().generatorPage.oldURI);
 					} else {
 						String temp = getWizard().generatorPage.oldURI.toString();
@@ -162,9 +162,9 @@ public class SelectOutputPage extends AbstractCreateContextPage implements Liste
 					}
 					getWizard().generator.addCheckElement(o);
 				}
-				if(o instanceof Package) {
-					Package p = (Package)o;
-					if(selection == 1) {
+				if (o instanceof Package) {
+					Package p = (Package) o;
+					if (selection == 1) {
 						list.add(getWizard().generatorPage.oldURI);
 					} else {
 						String temp = getWizard().generatorPage.oldURI.toString();
@@ -183,8 +183,8 @@ public class SelectOutputPage extends AbstractCreateContextPage implements Liste
 
 	@Override
 	public boolean canFlipToNextPage() {
-		if(combo.getSelectionIndex() != 0) {
-			if(viewer.getCheckedElements().length == 0) {
+		if (combo.getSelectionIndex() != 0) {
+			if (viewer.getCheckedElements().length == 0) {
 				return false;
 			}
 		}

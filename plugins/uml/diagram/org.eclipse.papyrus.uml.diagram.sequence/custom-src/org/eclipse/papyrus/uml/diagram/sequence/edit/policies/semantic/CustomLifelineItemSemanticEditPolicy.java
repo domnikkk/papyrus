@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -87,54 +87,54 @@ public class CustomLifelineItemSemanticEditPolicy extends LifelineItemSemanticEd
 
 	/**
 	 * Generated not for add lifelines on lifeline
-	 * 
+	 *
 	 * @Override
 	 *           (update at each lifeline modification) add lifelines, add DurationObservation/Constraint
 	 */
 	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if(UMLElementTypes.ActionExecutionSpecification_3006 == req.getElementType()) {
+		if (UMLElementTypes.ActionExecutionSpecification_3006 == req.getElementType()) {
 			return getGEFWrapper(new CustomActionExecutionSpecificationCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.BehaviorExecutionSpecification_3003 == req.getElementType()) {
+		if (UMLElementTypes.BehaviorExecutionSpecification_3003 == req.getElementType()) {
 			return getGEFWrapper(new CustomBehaviorExecutionSpecificationCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.StateInvariant_3017 == req.getElementType()) {
+		if (UMLElementTypes.StateInvariant_3017 == req.getElementType()) {
 			return getGEFWrapper(new CustomStateInvariantCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.CombinedFragment_3018 == req.getElementType()) {
+		if (UMLElementTypes.CombinedFragment_3018 == req.getElementType()) {
 			return getGEFWrapper(new CustomCombinedFragment2CreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.TimeConstraint_3019 == req.getElementType()) {
+		if (UMLElementTypes.TimeConstraint_3019 == req.getElementType()) {
 			return getGEFWrapper(new CustomTimeConstraintCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		//Fix https://bugs.eclipse.org/bugs/show_bug.cgi?id=364826		
-		//		if(UMLElementTypes.TimeObservation_3020 == req.getElementType()) {
-		//			return getGEFWrapper(new TimeObservationCreateCommand(req));
-		//		}
-		if(UMLElementTypes.DurationConstraint_3021 == req.getElementType()) {
+		// Fix https://bugs.eclipse.org/bugs/show_bug.cgi?id=364826
+		// if(UMLElementTypes.TimeObservation_3020 == req.getElementType()) {
+		// return getGEFWrapper(new TimeObservationCreateCommand(req));
+		// }
+		if (UMLElementTypes.DurationConstraint_3021 == req.getElementType()) {
 			return getGEFWrapper(new CustomDurationConstraintCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.DestructionOccurrenceSpecification_3022 == req.getElementType()) {
+		if (UMLElementTypes.DestructionOccurrenceSpecification_3022 == req.getElementType()) {
 			return getGEFWrapper(new CustomDestructionOccurrenceSpecificationCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		//add lifelines
-		if(UMLElementTypes.Lifeline_3001 == req.getElementType()) {
-			CustomLifelineEditPart lifelineEditPart = (CustomLifelineEditPart)getHost();
-			if(lifelineEditPart.isInlineCapability()) {
+		// add lifelines
+		if (UMLElementTypes.Lifeline_3001 == req.getElementType()) {
+			CustomLifelineEditPart lifelineEditPart = (CustomLifelineEditPart) getHost();
+			if (lifelineEditPart.isInlineCapability()) {
 				CustomLifelineCreateCommand cmd = new CustomLifelineCreateCommand(req, DiagramUtils.getDiagramFrom(getHost()));
 				cmd.setAvailableProperties(lifelineEditPart.getAvailableProperties());
 				return getGEFWrapper(cmd);
 			}
 		}
-		//add DurationObservation/Constraint
-		if(UMLElementTypes.DurationConstraint_3023 == req.getElementType()) {
+		// add DurationObservation/Constraint
+		if (UMLElementTypes.DurationConstraint_3023 == req.getElementType()) {
 			return getGEFWrapper(new CustomDurationConstraintCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		//		Fix https://bugs.eclipse.org/bugs/show_bug.cgi?id=364826			
-		//		if(UMLElementTypes.DurationObservation_3024 == req.getElementType()) {
-		//			return getGEFWrapper(new DurationObservationCreateCommand(req));
-		//		}
+		// Fix https://bugs.eclipse.org/bugs/show_bug.cgi?id=364826
+		// if(UMLElementTypes.DurationObservation_3024 == req.getElementType()) {
+		// return getGEFWrapper(new DurationObservationCreateCommand(req));
+		// }
 		return super.getCreateCommand(req);
 	}
 
@@ -145,21 +145,21 @@ public class CustomLifelineItemSemanticEditPolicy extends LifelineItemSemanticEd
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		EObject selectedEObject = req.getElementToDestroy();
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(selectedEObject);
-		if(provider != null) {
+		if (provider != null) {
 			// Retrieve delete command from the Element Edit service
 			ICommand deleteCommand = provider.getEditCommand(req);
-			if(deleteCommand != null) {
+			if (deleteCommand != null) {
 				Command command = new ICommandProxy(deleteCommand);
-				command = LifelineMessageCreateHelper.restoreLifelineOnDelete(command, (LifelineEditPart)getHost());
+				command = LifelineMessageCreateHelper.restoreLifelineOnDelete(command, (LifelineEditPart) getHost());
 				CompoundCommand deleteElementsCommand = new CompoundCommand();
 				deleteElementsCommand.add(command);
-				if(getHost() instanceof LifelineEditPart) {
-					LifelineEditPart ep = (LifelineEditPart)getHost();
+				if (getHost() instanceof LifelineEditPart) {
+					LifelineEditPart ep = (LifelineEditPart) getHost();
 					SequenceDeleteHelper.destroyMessageEvents(deleteElementsCommand, ep, req.getEditingDomain());
 					List children = ep.getChildren();
-					for(Object obj : children) {
-						if(obj instanceof AbstractExecutionSpecificationEditPart) {
-							SequenceDeleteHelper.destroyMessageEvents(deleteElementsCommand, (AbstractExecutionSpecificationEditPart)obj, req.getEditingDomain());
+					for (Object obj : children) {
+						if (obj instanceof AbstractExecutionSpecificationEditPart) {
+							SequenceDeleteHelper.destroyMessageEvents(deleteElementsCommand, (AbstractExecutionSpecificationEditPart) obj, req.getEditingDomain());
 						}
 					}
 				}
@@ -184,35 +184,35 @@ public class CustomLifelineItemSemanticEditPolicy extends LifelineItemSemanticEd
 	 */
 	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Message_4003 == req.getElementType()) {
+		if (UMLElementTypes.Message_4003 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4004 == req.getElementType()) {
+		if (UMLElementTypes.Message_4004 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage2CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4005 == req.getElementType()) {
+		if (UMLElementTypes.Message_4005 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage3CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4006 == req.getElementType()) {
+		if (UMLElementTypes.Message_4006 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage4CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4007 == req.getElementType()) {
+		if (UMLElementTypes.Message_4007 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage5CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4008 == req.getElementType()) {
+		if (UMLElementTypes.Message_4008 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage6CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4009 == req.getElementType()) {
+		if (UMLElementTypes.Message_4009 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage7CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.CommentAnnotatedElement_4010 == req.getElementType()) {
+		if (UMLElementTypes.CommentAnnotatedElement_4010 == req.getElementType()) {
 			return null;
 		}
-		if(UMLElementTypes.ConstraintConstrainedElement_4011 == req.getElementType()) {
+		if (UMLElementTypes.ConstraintConstrainedElement_4011 == req.getElementType()) {
 			return null;
 		}
-		//add general ordering
-		if(UMLElementTypes.GeneralOrdering_4012 == req.getElementType()) {
+		// add general ordering
+		if (UMLElementTypes.GeneralOrdering_4012 == req.getElementType()) {
 			return getGEFWrapper(new CustomGeneralOrderingCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -224,35 +224,35 @@ public class CustomLifelineItemSemanticEditPolicy extends LifelineItemSemanticEd
 	 */
 	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Message_4003 == req.getElementType()) {
+		if (UMLElementTypes.Message_4003 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4004 == req.getElementType()) {
+		if (UMLElementTypes.Message_4004 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage2CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4005 == req.getElementType()) {
+		if (UMLElementTypes.Message_4005 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage3CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4006 == req.getElementType()) {
+		if (UMLElementTypes.Message_4006 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage4CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4007 == req.getElementType()) {
+		if (UMLElementTypes.Message_4007 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage5CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4008 == req.getElementType()) {
+		if (UMLElementTypes.Message_4008 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage6CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4009 == req.getElementType()) {
+		if (UMLElementTypes.Message_4009 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage7CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.CommentAnnotatedElement_4010 == req.getElementType()) {
+		if (UMLElementTypes.CommentAnnotatedElement_4010 == req.getElementType()) {
 			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.ConstraintConstrainedElement_4011 == req.getElementType()) {
+		if (UMLElementTypes.ConstraintConstrainedElement_4011 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		//add general ordering
-		if(UMLElementTypes.GeneralOrdering_4012 == req.getElementType()) {
+		// add general ordering
+		if (UMLElementTypes.GeneralOrdering_4012 == req.getElementType()) {
 			return getGEFWrapper(new CustomGeneralOrderingCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -261,13 +261,13 @@ public class CustomLifelineItemSemanticEditPolicy extends LifelineItemSemanticEd
 	/**
 	 * Returns command to reorient EClass based link. New link target or source should be the domain
 	 * model element associated with this node.
-	 * 
+	 *
 	 * @Override
 	 *           (update at each lifeline modification) add general ordering
 	 */
 	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case MessageEditPart.VISUAL_ID:
 			return getGEFWrapper(new CustomMessageReorientCommand(req));
 		case Message2EditPart.VISUAL_ID:
@@ -282,9 +282,9 @@ public class CustomLifelineItemSemanticEditPolicy extends LifelineItemSemanticEd
 			return getGEFWrapper(new CustomMessage6ReorientCommand(req));
 		case Message7EditPart.VISUAL_ID:
 			return getGEFWrapper(new CustomMessage7ReorientCommand(req));
-			//add general ordering
+			// add general ordering
 		case GeneralOrderingEditPart.VISUAL_ID:
-			if(req.getNewRelationshipEnd() instanceof OccurrenceSpecification) {
+			if (req.getNewRelationshipEnd() instanceof OccurrenceSpecification) {
 				return getGEFWrapper(new GeneralOrderingReorientCommand(req));
 			} else {
 				return null;
@@ -296,12 +296,12 @@ public class CustomLifelineItemSemanticEditPolicy extends LifelineItemSemanticEd
 	/**
 	 * Returns command to reorient EReference based link. New link target or source
 	 * should be the domain model element associated with this node.
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case CommentAnnotatedElementEditPart.VISUAL_ID:
 			return getGEFWrapper(new CustomCommentAnnotatedElementReorientCommand(req));
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
@@ -315,18 +315,18 @@ public class CustomLifelineItemSemanticEditPolicy extends LifelineItemSemanticEd
 	 */
 	@Override
 	public boolean understandsRequest(Request request) {
-		if(REQ_RECONNECT_SOURCE.equals(request.getType())) {
-			ReconnectRequest reconnReq = (ReconnectRequest)request;
+		if (REQ_RECONNECT_SOURCE.equals(request.getType())) {
+			ReconnectRequest reconnReq = (ReconnectRequest) request;
 			Object model = reconnReq.getConnectionEditPart().getModel();
-			//Source of Message Found should be always located on Interaction.
-			if(model instanceof View && 4009 == UMLVisualIDRegistry.getVisualID((View)model)) {
+			// Source of Message Found should be always located on Interaction.
+			if (model instanceof View && 4009 == UMLVisualIDRegistry.getVisualID((View) model)) {
 				return false;
 			}
-		} else if(REQ_RECONNECT_TARGET.equals(request.getType())) {
-			ReconnectRequest reconnReq = (ReconnectRequest)request;
+		} else if (REQ_RECONNECT_TARGET.equals(request.getType())) {
+			ReconnectRequest reconnReq = (ReconnectRequest) request;
 			Object model = reconnReq.getConnectionEditPart().getModel();
-			//Target of Message Lost should be always located on Interaction.
-			if(model instanceof View && 4008 == UMLVisualIDRegistry.getVisualID((View)model)) {
+			// Target of Message Lost should be always located on Interaction.
+			if (model instanceof View && 4008 == UMLVisualIDRegistry.getVisualID((View) model)) {
 				return false;
 			}
 		}

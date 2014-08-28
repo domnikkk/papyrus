@@ -19,10 +19,10 @@ import java.io.Reader;
  * This parser implements the following grammar:
  * Document -> Row (LineEnding Row)* EOF
  * Row -> ( Cell (Separator Cell)* )?
- * 
+ *
  * An empty document is matched as having a single row with no cell.
  * A line ending just before the EOF also represents an empty row.
- * 
+ *
  * @author Laurent Wouters
  */
 public class CSVParser {
@@ -31,7 +31,7 @@ public class CSVParser {
 
 	/**
 	 * Initializes this parser
-	 * 
+	 *
 	 * @param input
 	 *            The input to parse
 	 * @param valueSeparator
@@ -46,7 +46,7 @@ public class CSVParser {
 
 	/**
 	 * Parses the input and gets an iterator over the rows
-	 * 
+	 *
 	 * @return An iterator over the document's rows
 	 */
 	public RowIterator parse() {
@@ -54,7 +54,7 @@ public class CSVParser {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the number of read characters
 	 */
@@ -69,7 +69,7 @@ public class CSVParser {
 	 * Cell is a cell's value token in the lexer
 	 * Separator is a separator token in the lexer
 	 * End can be either the Error, EOF, or Line ending tokens
-	 * 
+	 *
 	 * @author Laurent Wouters
 	 */
 	private class Row extends CellIterator {
@@ -166,7 +166,7 @@ public class CSVParser {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see java.util.Iterator#hasNext()
 		 */
 		@Override
@@ -176,7 +176,7 @@ public class CSVParser {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see java.util.Iterator#next()
 		 */
 		@Override
@@ -189,14 +189,14 @@ public class CSVParser {
 
 	/**
 	 * Represents a CSV document as an iterator over its rows
-	 * 
+	 *
 	 * @author Laurent Wouters
-	 * 
+	 *
 	 */
 	private class Document extends RowIterator {
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see java.util.Iterator#hasNext()
 		 */
 		@Override
@@ -206,7 +206,7 @@ public class CSVParser {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see java.util.Iterator#next()
 		 */
 		@Override

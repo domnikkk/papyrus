@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -27,7 +27,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Q
 
 /**
  * This interface provide a command factory. A command modify the editingDomain.
- * 
+ *
  * @since 0.3
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
@@ -37,7 +37,7 @@ public interface IFacetCommandFactory {
 	/**
 	 * Create the command to add a FacetSet (facetSet) to an existing FacetSet
 	 * (parent).
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the facetSet to add.
 	 * @param facetSet
@@ -49,7 +49,7 @@ public interface IFacetCommandFactory {
 	/**
 	 * Create the command to add a Facet (facet) to an existing FacetSet
 	 * (parent).
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the facet to add.
 	 * @param facet
@@ -61,7 +61,7 @@ public interface IFacetCommandFactory {
 	/**
 	 * Create the command to add an Attribute (facetAttrbute) to an existing
 	 * Facet (parent).
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the attribute to add.
 	 * @param facetAttrbute
@@ -79,7 +79,7 @@ public interface IFacetCommandFactory {
 	/**
 	 * Create the command to add a Reference (facetReference) to an existing
 	 * Facet (parent).
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the reference to add.
 	 * @param facetReference
@@ -92,7 +92,7 @@ public interface IFacetCommandFactory {
 	/**
 	 * Create the command to add an Operation (FacetOperation) to an existing
 	 * Facet (parent).
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the operation to add.
 	 * @param facetOperation
@@ -105,7 +105,7 @@ public interface IFacetCommandFactory {
 	/**
 	 * Create the command to add a Parameter (operationParameter) to an existing
 	 * Operation (parent).
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the operation to add.
 	 * @param facetOperation
@@ -117,7 +117,7 @@ public interface IFacetCommandFactory {
 
 	/**
 	 * Create the command to change the owner of an element.
-	 * 
+	 *
 	 * @param element
 	 * @param newOwner
 	 * @return
@@ -126,7 +126,7 @@ public interface IFacetCommandFactory {
 
 	/**
 	 * Create the command to change the attributes of a FacetSet.
-	 * 
+	 *
 	 * @param initialElement
 	 * @param newElement
 	 * @param newElement
@@ -137,7 +137,7 @@ public interface IFacetCommandFactory {
 
 	/**
 	 * Create the command to change the attributes of a Facet.
-	 * 
+	 *
 	 * @param initialElement
 	 * @param newElement
 	 * @return
@@ -148,7 +148,7 @@ public interface IFacetCommandFactory {
 
 	/**
 	 * Create the command to change the attributes of a FacetAttribute.
-	 * 
+	 *
 	 * @param initialElement
 	 * @param newElement
 	 * @return
@@ -159,7 +159,7 @@ public interface IFacetCommandFactory {
 
 	/**
 	 * Create the command to change the attributes of a FacetReference.
-	 * 
+	 *
 	 * @param initialElement
 	 * @param newElement
 	 * @return
@@ -170,7 +170,7 @@ public interface IFacetCommandFactory {
 
 	/**
 	 * Create the command to change the attributes of a FacetOperation.
-	 * 
+	 *
 	 * @param initialElement
 	 * @param newElement
 	 * @return
@@ -181,7 +181,7 @@ public interface IFacetCommandFactory {
 
 	/**
 	 * Create the command to change the attributes of a FacetAttribute.
-	 * 
+	 *
 	 * @param initialElement
 	 * @param newElement
 	 * @return

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.papyrus.infra.services.validation.Activator;
 public class PreferenceUtils {
 
 	/**
-	 * @return the value of the  auto-open-validation-view preference choice
+	 * @return the value of the auto-open-validation-view preference choice
 	 */
 	public static boolean getAutoShowValidation() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
@@ -36,10 +36,10 @@ public class PreferenceUtils {
 	public static MarkChildren getHierarchicalMarkers() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 		String choice = store.getString(PreferenceConstants.HIERARCHICAL_MARKERS);
-		if(choice.equals("NO")) { //$NON-NLS-1$
+		if (choice.equals("NO")) { //$NON-NLS-1$
 			return MarkChildren.NO;
 		}
-		else if(choice.equals("DIRECT")) { //$NON-NLS-1$
+		else if (choice.equals("DIRECT")) { //$NON-NLS-1$
 			return MarkChildren.DIRECT;
 		}
 		else {

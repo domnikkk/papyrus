@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,52 +29,54 @@ public class CSSImageBufferStyleImpl extends ImageBufferStyleImpl implements CSS
 	private CSSImageBufferStyle imageBufferStyle;
 
 	protected CSSImageBufferStyle getImageBufferStyle() {
-		if(imageBufferStyle == null) {
+		if (imageBufferStyle == null) {
 			imageBufferStyle = new CSSImageBufferStyleDelegate(this, getEngine());
 		}
 		return imageBufferStyle;
 	}
 
 	protected ExtendedCSSEngine getEngine() {
-		if(engine == null) {
-			engine = ((CSSDiagramImpl)findView().getDiagram()).getEngine();
+		if (engine == null) {
+			engine = ((CSSDiagramImpl) findView().getDiagram()).getEngine();
 		}
 		return engine;
 	}
 
 	protected View findView() {
 		EObject parent = eContainer();
-		while(!(parent instanceof View) && parent != null) {
+		while (!(parent instanceof View) && parent != null) {
 			parent = parent.eContainer();
 		}
 
-		if(parent != null) {
-			return (View)parent;
+		if (parent != null) {
+			return (View) parent;
 		}
 
 		return null;
 	}
 
 
-	//////////////////////////////////////////
-	//	Forwards accesses to CSS properties	//
-	//////////////////////////////////////////
+	// ////////////////////////////////////////
+	// Forwards accesses to CSS properties //
+	// ////////////////////////////////////////
 
 
+	@Override
 	public java.lang.Boolean getCSSAntiAlias() {
 		java.lang.Boolean value = super.getAntiAlias();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getImageStyle_AntiAlias(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getImageStyle_AntiAlias(), value)) {
 			return value;
 		} else {
 			return getImageBufferStyle().getCSSAntiAlias();
 		}
 	}
 
+	@Override
 	public java.lang.Boolean getCSSMaintainAspectRatio() {
 		java.lang.Boolean value = super.getMaintainAspectRatio();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getImageStyle_MaintainAspectRatio(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getImageStyle_MaintainAspectRatio(), value)) {
 			return value;
 		} else {
 			return getImageBufferStyle().getCSSMaintainAspectRatio();
@@ -84,21 +86,21 @@ public class CSSImageBufferStyleImpl extends ImageBufferStyleImpl implements CSS
 
 	@Override
 	public java.lang.Boolean getAntiAlias() {
-		//return super.getAntiAlias();
+		// return super.getAntiAlias();
 		return getCSSAntiAlias();
 	}
 
 	@Override
 	public java.lang.Boolean getMaintainAspectRatio() {
-		//return super.getMaintainAspectRatio();
+		// return super.getMaintainAspectRatio();
 		return getCSSMaintainAspectRatio();
 	}
 
 
 
-	////////////////////////////////////////////////
-	//	Implements a setter for each CSS property //
-	////////////////////////////////////////////////	
+	// //////////////////////////////////////////////
+	// Implements a setter for each CSS property //
+	// //////////////////////////////////////////////
 
 	@Override
 	public void setAntiAlias(java.lang.Boolean value) {
@@ -116,9 +118,9 @@ public class CSSImageBufferStyleImpl extends ImageBufferStyleImpl implements CSS
 		ForceValueHelper.setValue(findView(), feature, value);
 	}
 
-	//////////////////////////////////
-	//	Implements the unset method //
-	//////////////////////////////////
+	// ////////////////////////////////
+	// Implements the unset method //
+	// ////////////////////////////////
 
 	@Override
 	public void eUnset(int featureId) {

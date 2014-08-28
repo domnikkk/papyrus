@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,23 +47,23 @@ public class AcceleoRTMapsCodeGenerator {
 
 	/**
 	 * Run acceleo transformation.
-	 * 
+	 *
 	 * @param generationInputModel
-	 *        the generation input model
+	 *            the generation input model
 	 * @param rtmapsTargetFolderPath
-	 *        the rtmaps target folder path
+	 *            the rtmaps target folder path
 	 */
 	public void runAcceleoTransformation(EObject generationInputModel, String rtmapsTargetFolderPath) {
 		this.generationInputModel = generationInputModel;
 		this.rtmapsTargetFolder = new File(rtmapsTargetFolderPath);
-		if(this.generationInputModel != null && this.rtmapsTargetFolder != null) {
+		if (this.generationInputModel != null && this.rtmapsTargetFolder != null) {
 			try {
 
-				File targetFolder = FileUtil.getWorkspaceFile(rtmapsTargetFolderPath); //$NON-NLS-1$ //$NON-NLS-2$
-				if(!targetFolder.getParentFile().exists()) {
+				File targetFolder = FileUtil.getWorkspaceFile(rtmapsTargetFolderPath);
+				if (!targetFolder.getParentFile().exists()) {
 					targetFolder.getParentFile().mkdirs();
 				}
-				//Instantiate a new acceleo generator 
+				// Instantiate a new acceleo generator
 				Generate_rtmaps generate = new Generate_rtmaps(this.generationInputModel, targetFolder, Collections.EMPTY_LIST);
 
 				generate.doGenerate(null);

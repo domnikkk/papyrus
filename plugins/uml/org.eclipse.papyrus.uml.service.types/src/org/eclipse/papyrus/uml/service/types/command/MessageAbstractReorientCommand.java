@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.Gate;
@@ -35,7 +36,7 @@ import org.eclipse.uml2.uml.MessageOccurrenceSpecification;
  * This re-orient command is adapted from re-orient command generated
  * for {@link Message} in the Communication Diagram.
  * </pre>
- * 
+ *
  * @generated
  */
 public abstract class MessageAbstractReorientCommand extends EditElementCommand {
@@ -68,14 +69,15 @@ public abstract class MessageAbstractReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(false == getElementToEdit() instanceof Message) {
+		if (false == getElementToEdit() instanceof Message) {
 			return false;
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -86,34 +88,34 @@ public abstract class MessageAbstractReorientCommand extends EditElementCommand 
 	 * This method test if the Message can be re-oriented to a new source.
 	 * It is assumed here that the possible (graphical) element used as Message source
 	 * is either a {@link Lifeline} or an {@link InteractionFragment}.
-	 * It is also assumed that a re-orient that would require the {@link MessageEnd} to be 
+	 * It is also assumed that a re-orient that would require the {@link MessageEnd} to be
 	 * converted from {@link Gate} to {@link MessageOccurrenceSpecification} (or the contrary)
 	 * is not allowed.
 	 * </pre>
-	 * 
+	 *
 	 * @return true if the link end can be re-oriented to a new source
 	 */
 	protected boolean canReorientSource() {
 		// Verify possible type of new source
-		if(!((getNewSource() instanceof InteractionFragment) || (getNewSource() instanceof Lifeline))) {
+		if (!((getNewSource() instanceof InteractionFragment) || (getNewSource() instanceof Lifeline))) {
 			return false;
 		}
 
 		// Avoid re-orient from Gate to MOS source (not currently supported)
-		if(getLink().getSendEvent() instanceof Gate) {
-			if((getNewSource() instanceof Lifeline) || (getNewSource() instanceof ExecutionSpecification)) {
+		if (getLink().getSendEvent() instanceof Gate) {
+			if ((getNewSource() instanceof Lifeline) || (getNewSource() instanceof ExecutionSpecification)) {
 				return false;
 			}
 		}
 		// Avoid re-orient from MOS to Gate source (not currently supported)
-		if(getLink().getSendEvent() instanceof MessageOccurrenceSpecification) {
-			if(!(getNewSource() instanceof Lifeline) && !(getNewSource() instanceof ExecutionSpecification)) {
+		if (getLink().getSendEvent() instanceof MessageOccurrenceSpecification) {
+			if (!(getNewSource() instanceof Lifeline) && !(getNewSource() instanceof ExecutionSpecification)) {
 				return false;
 			}
 		}
 
 		// Ensure the message owner is an interaction
-		if(!(getLink().eContainer() instanceof Interaction)) {
+		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
 
@@ -125,35 +127,35 @@ public abstract class MessageAbstractReorientCommand extends EditElementCommand 
 	 * This method test if the Message can be re-oriented to a new target.
 	 * It is assumed here that the possible (graphical) element used as Message target
 	 * is either a {@link Lifeline} or an {@link InteractionFragment}.
-	 * It is also assumed that a re-orient that would require the {@link MessageEnd} to be 
+	 * It is also assumed that a re-orient that would require the {@link MessageEnd} to be
 	 * converted from {@link Gate} to {@link MessageOccurrenceSpecification} (or the contrary)
 	 * is not allowed.
 	 * </pre>
-	 * 
+	 *
 	 * @return true if the link end can be re-oriented to a new target
 	 */
 	protected boolean canReorientTarget() {
 
 		// Verify possible type of new target
-		if(!((getNewTarget() instanceof InteractionFragment) || (getNewTarget() instanceof Lifeline))) {
+		if (!((getNewTarget() instanceof InteractionFragment) || (getNewTarget() instanceof Lifeline))) {
 			return false;
 		}
 
 		// Avoid re-orient from Gate to MOS target (not currently supported)
-		if(getLink().getReceiveEvent() instanceof Gate) {
-			if((getNewTarget() instanceof Lifeline) || (getNewTarget() instanceof ExecutionSpecification)) {
+		if (getLink().getReceiveEvent() instanceof Gate) {
+			if ((getNewTarget() instanceof Lifeline) || (getNewTarget() instanceof ExecutionSpecification)) {
 				return false;
 			}
 		}
 		// Avoid re-orient from MOS to Gate target (not currently supported)
-		if(getLink().getReceiveEvent() instanceof MessageOccurrenceSpecification) {
-			if(!(getNewTarget() instanceof Lifeline) && !(getNewTarget() instanceof ExecutionSpecification)) {
+		if (getLink().getReceiveEvent() instanceof MessageOccurrenceSpecification) {
+			if (!(getNewTarget() instanceof Lifeline) && !(getNewTarget() instanceof ExecutionSpecification)) {
 				return false;
 			}
 		}
 
 		// Ensure the message owner is an interaction
-		if(!(getLink().eContainer() instanceof Interaction)) {
+		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
 
@@ -163,14 +165,15 @@ public abstract class MessageAbstractReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -198,34 +201,34 @@ public abstract class MessageAbstractReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected Message getLink() {
-		return (Message)getElementToEdit();
+		return (Message) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Element getOldSource() {
-		return (Element)oldEnd;
+		return (Element) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Element getNewSource() {
-		return (Element)newEnd;
+		return (Element) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Element getOldTarget() {
-		return (Element)oldEnd;
+		return (Element) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Element getNewTarget() {
-		return (Element)newEnd;
+		return (Element) newEnd;
 	}
 }

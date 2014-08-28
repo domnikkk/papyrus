@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *  
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.infra.viewpoints.iso42010.provider;
 
@@ -19,11 +19,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -32,7 +29,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Factory;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
@@ -41,11 +37,12 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class ArchitectureFrameworkItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -55,6 +52,7 @@ public class ArchitectureFrameworkItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ArchitectureFrameworkItemProvider(AdapterFactory adapterFactory) {
@@ -65,6 +63,7 @@ public class ArchitectureFrameworkItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,11 +76,11 @@ public class ArchitectureFrameworkItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,6 +98,7 @@ public class ArchitectureFrameworkItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,6 +113,7 @@ public class ArchitectureFrameworkItemProvider
 	 * This returns ArchitectureFramework.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,6 +125,7 @@ public class ArchitectureFrameworkItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,6 +138,7 @@ public class ArchitectureFrameworkItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,12 +146,12 @@ public class ArchitectureFrameworkItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ArchitectureFramework.class)) {
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__STAKEHOLDERS:
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__VIEWPOINTS:
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__RULES:
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__CONCERNS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__STAKEHOLDERS:
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__VIEWPOINTS:
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__RULES:
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__CONCERNS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -158,6 +161,7 @@ public class ArchitectureFrameworkItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,30 +169,31 @@ public class ArchitectureFrameworkItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(Iso42010Package.Literals.ARCHITECTURE_FRAMEWORK__STAKEHOLDERS,
-				 Iso42010Factory.eINSTANCE.createStakeholder()));
+						Iso42010Factory.eINSTANCE.createStakeholder()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(Iso42010Package.Literals.ARCHITECTURE_FRAMEWORK__VIEWPOINTS,
-				 Iso42010Factory.eINSTANCE.createArchitectureViewpoint()));
+						Iso42010Factory.eINSTANCE.createArchitectureViewpoint()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(Iso42010Package.Literals.ARCHITECTURE_FRAMEWORK__RULES,
-				 Iso42010Factory.eINSTANCE.createCorrespondenceRule()));
+						Iso42010Factory.eINSTANCE.createCorrespondenceRule()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(Iso42010Package.Literals.ARCHITECTURE_FRAMEWORK__CONCERNS,
-				 Iso42010Factory.eINSTANCE.createConcern()));
+						Iso42010Factory.eINSTANCE.createConcern()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

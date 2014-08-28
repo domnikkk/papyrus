@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,21 +29,21 @@ public class ToUnlimitedNatural extends OpaqueBehaviorExecution {
 	@Override
 	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
 		try {
-			String x = ((StringValue)inputParameters.get(0).values.get(0)).value;
+			String x = ((StringValue) inputParameters.get(0).values.get(0)).value;
 			UnlimitedNaturalValue result = new UnlimitedNaturalValue();
 			Integer value = null;
-			if(x.equals("*")) {
+			if (x.equals("*")) {
 				result.value = -1;
 			} else {
 				try {
 					value = new Integer(x);
 				} catch (NumberFormatException badFormat) {
 				}
-				if(value != null && value >= 0) {
+				if (value != null && value >= 0) {
 					result.value = value;
 				}
 			}
-			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("UnlimitedNatural");
+			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("UnlimitedNatural");
 			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;

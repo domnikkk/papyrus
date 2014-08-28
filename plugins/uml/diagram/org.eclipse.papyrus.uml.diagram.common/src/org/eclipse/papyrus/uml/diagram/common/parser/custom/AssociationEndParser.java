@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2009 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,13 +21,13 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * A parser to handle the displayed role of an association end
- * 
+ *
  * @author tlandre
  */
 public class AssociationEndParser extends AbstractAssociationEndParser {
 
 	/**
-	 * 
+	 *
 	 * @param index
 	 */
 	public AssociationEndParser(int memberEndIndex) {
@@ -51,13 +51,17 @@ public class AssociationEndParser extends AbstractAssociationEndParser {
 	 * <li>
 	 * {@link org.eclipse.uml2.uml.UMLPackage#STRUCTURAL_FEATURE__IS_READ_ONLY
 	 * <em>is ReadOnly </em>}</li>
-	 * </ul> {@inheritDoc}
+	 * </ul>
+	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		EStructuralFeature feature = getEStructuralFeature(event);
 
 		boolean isAffectingEvent = false;
-		if(UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature) || UMLPackage.eINSTANCE.getProperty_RedefinedProperty().equals(feature) || UMLPackage.eINSTANCE.getProperty_SubsettedProperty().equals(feature) || UMLPackage.eINSTANCE.getProperty_IsDerived().equals(feature) || UMLPackage.eINSTANCE.getProperty_IsDerivedUnion().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_IsOrdered().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_IsUnique().equals(feature) || UMLPackage.eINSTANCE.getNamedElement_Visibility().equals(feature) || UMLPackage.eINSTANCE.getStructuralFeature_IsReadOnly().equals(feature)) {
+		if (UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature) || UMLPackage.eINSTANCE.getProperty_RedefinedProperty().equals(feature) || UMLPackage.eINSTANCE.getProperty_SubsettedProperty().equals(feature)
+				|| UMLPackage.eINSTANCE.getProperty_IsDerived().equals(feature) || UMLPackage.eINSTANCE.getProperty_IsDerivedUnion().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_IsOrdered().equals(feature)
+				|| UMLPackage.eINSTANCE.getMultiplicityElement_IsUnique().equals(feature) || UMLPackage.eINSTANCE.getNamedElement_Visibility().equals(feature) || UMLPackage.eINSTANCE.getStructuralFeature_IsReadOnly().equals(feature)) {
 			isAffectingEvent = true;
 		}
 		return isAffectingEvent;
@@ -65,19 +69,20 @@ public class AssociationEndParser extends AbstractAssociationEndParser {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		Property property = doAdapt(element);
 		StringBuffer displayedString = new StringBuffer();
-		if(property != null) {
+		if (property != null) {
 			// Visibility of the property
 			displayedString.append(NamedElementUtil.getVisibilityAsSign(property));
 			// isDerived
 			displayedString.append(PropertyUtil.getDerived(property));
 			// name
-			if(property.getName() != null) {
+			if (property.getName() != null) {
 				displayedString.append(property.getName());
 			}
 

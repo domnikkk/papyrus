@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Nicolas Bros (Mia-Software) - initial API and implementation
  */
@@ -20,26 +20,24 @@ import org.eclipse.papyrus.emf.facet.util.emf.core.serialization.model.serializa
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class SerializationPackageImpl extends EPackageImpl implements SerializationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType extensibleSerializableJavaObjectEDataType = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.core.serialization.model.serialization.SerializationPackage#eNS_URI
 	 * @see #init()
@@ -52,17 +50,18 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link SerializationPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 *
+	 * <p>
+	 * This method is used to initialize {@link SerializationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -70,11 +69,12 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	 */
 	public static SerializationPackage init() {
 		if (SerializationPackageImpl.isInited) {
-			return (SerializationPackage)EPackage.Registry.INSTANCE.getEPackage(SerializationPackage.eNS_URI);
+			return (SerializationPackage) EPackage.Registry.INSTANCE.getEPackage(SerializationPackage.eNS_URI);
 		}
 
 		// Obtain or create and register package
-		SerializationPackageImpl theSerializationPackage = (SerializationPackageImpl)(EPackage.Registry.INSTANCE.get(SerializationPackage.eNS_URI) instanceof SerializationPackageImpl ? EPackage.Registry.INSTANCE.get(SerializationPackage.eNS_URI) : new SerializationPackageImpl());
+		SerializationPackageImpl theSerializationPackage = (SerializationPackageImpl) (EPackage.Registry.INSTANCE.get(SerializationPackage.eNS_URI) instanceof SerializationPackageImpl ? EPackage.Registry.INSTANCE.get(SerializationPackage.eNS_URI)
+				: new SerializationPackageImpl());
 
 		SerializationPackageImpl.isInited = true;
 
@@ -87,7 +87,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 		// Mark meta-data to indicate it can't be changed
 		theSerializationPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(SerializationPackage.eNS_URI, theSerializationPackage);
 		return theSerializationPackage;
@@ -96,6 +96,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getExtensibleSerializableJavaObject() {
@@ -105,24 +106,27 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SerializationFactory getSerializationFactory() {
-		return (SerializationFactory)getEFactoryInstance();
+		return (SerializationFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -138,15 +142,17 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
@@ -167,4 +173,4 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 		createResource(SerializationPackage.eNS_URI);
 	}
 
-} //SerializationPackageImpl
+} // SerializationPackageImpl

@@ -5,17 +5,25 @@ package org.eclipse.papyrus.customization.model.customizationplugin.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.customization.model.customizationplugin.*;
+import org.eclipse.papyrus.customization.model.customizationplugin.ConstraintsEnvironment;
+import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationConfiguration;
+import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginFactory;
+import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage;
+import org.eclipse.papyrus.customization.model.customizationplugin.ModelTemplate;
+import org.eclipse.papyrus.customization.model.customizationplugin.Palette;
+import org.eclipse.papyrus.customization.model.customizationplugin.Profile;
+import org.eclipse.papyrus.customization.model.customizationplugin.PropertyView;
+import org.eclipse.papyrus.customization.model.customizationplugin.PropertyViewEnvironment;
+import org.eclipse.papyrus.customization.model.customizationplugin.UICustom;
+import org.eclipse.papyrus.customization.model.customizationplugin.UMLModel;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class CustomizationPluginFactoryImpl extends EFactoryImpl implements CustomizationPluginFactory {
@@ -23,16 +31,16 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static CustomizationPluginFactory init() {
 		try {
-			CustomizationPluginFactory theCustomizationPluginFactory = (CustomizationPluginFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/customization"); 
+			CustomizationPluginFactory theCustomizationPluginFactory = (CustomizationPluginFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/customization");
 			if (theCustomizationPluginFactory != null) {
 				return theCustomizationPluginFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new CustomizationPluginFactoryImpl();
@@ -42,6 +50,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public CustomizationPluginFactoryImpl() {
@@ -51,28 +60,39 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION: return createCustomizationConfiguration();
-			case CustomizationPluginPackage.PROPERTY_VIEW: return createPropertyView();
-			case CustomizationPluginPackage.UI_CUSTOM: return createUICustom();
-			case CustomizationPluginPackage.MODEL_TEMPLATE: return createModelTemplate();
-			case CustomizationPluginPackage.PALETTE: return createPalette();
-			case CustomizationPluginPackage.PROFILE: return createProfile();
-			case CustomizationPluginPackage.UML_MODEL: return createUMLModel();
-			case CustomizationPluginPackage.CONSTRAINTS_ENVIRONMENT: return createConstraintsEnvironment();
-			case CustomizationPluginPackage.PROPERTY_VIEW_ENVIRONMENT: return createPropertyViewEnvironment();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case CustomizationPluginPackage.CUSTOMIZATION_CONFIGURATION:
+			return createCustomizationConfiguration();
+		case CustomizationPluginPackage.PROPERTY_VIEW:
+			return createPropertyView();
+		case CustomizationPluginPackage.UI_CUSTOM:
+			return createUICustom();
+		case CustomizationPluginPackage.MODEL_TEMPLATE:
+			return createModelTemplate();
+		case CustomizationPluginPackage.PALETTE:
+			return createPalette();
+		case CustomizationPluginPackage.PROFILE:
+			return createProfile();
+		case CustomizationPluginPackage.UML_MODEL:
+			return createUMLModel();
+		case CustomizationPluginPackage.CONSTRAINTS_ENVIRONMENT:
+			return createConstraintsEnvironment();
+		case CustomizationPluginPackage.PROPERTY_VIEW_ENVIRONMENT:
+			return createPropertyViewEnvironment();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public CustomizationConfiguration createCustomizationConfiguration() {
@@ -83,6 +103,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PropertyView createPropertyView() {
@@ -93,6 +114,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public UICustom createUICustom() {
@@ -103,6 +125,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ModelTemplate createModelTemplate() {
@@ -113,6 +136,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Palette createPalette() {
@@ -123,6 +147,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Profile createProfile() {
@@ -133,6 +158,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public UMLModel createUMLModel() {
@@ -143,6 +169,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ConstraintsEnvironment createConstraintsEnvironment() {
@@ -153,6 +180,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public PropertyViewEnvironment createPropertyViewEnvironment() {
@@ -163,15 +191,17 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public CustomizationPluginPackage getCustomizationPluginPackage() {
-		return (CustomizationPluginPackage)getEPackage();
+		return (CustomizationPluginPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -180,4 +210,4 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 		return CustomizationPluginPackage.eINSTANCE;
 	}
 
-} //CustomizationPluginFactoryImpl
+} // CustomizationPluginFactoryImpl

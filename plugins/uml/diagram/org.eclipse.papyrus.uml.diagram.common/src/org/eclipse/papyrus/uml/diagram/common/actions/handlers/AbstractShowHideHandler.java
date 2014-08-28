@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 
 /**
- * 
+ *
  * Abstract Handler for the ShowHideActions
- * 
+ *
  */
 
 abstract public class AbstractShowHideHandler extends AbstractHandler {
@@ -47,13 +47,13 @@ abstract public class AbstractShowHideHandler extends AbstractHandler {
 	private final List<IGraphicalEditPart> selection = new ArrayList<IGraphicalEditPart>();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param action
-	 *        to execute
+	 *            to execute
 	 * @param key
-	 *        the key representing the EditPolicy providing this action
+	 *            the key representing the EditPolicy providing this action
 	 */
 	public AbstractShowHideHandler(AbstractShowHideAction action, String key) {
 		this.action = action;
@@ -61,16 +61,17 @@ abstract public class AbstractShowHideHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		// buildSelection();
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 			this.action.setSelection(selection);
 			this.action.run(null);
 		}
@@ -78,9 +79,9 @@ abstract public class AbstractShowHideHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#isEnabled()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -95,23 +96,23 @@ abstract public class AbstractShowHideHandler extends AbstractHandler {
 	protected void buildSelection() {
 		this.selection.clear();
 		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-		if (activeWorkbenchWindow!=null){
+		if (activeWorkbenchWindow != null) {
 			ISelectionService selectionService = activeWorkbenchWindow.getSelectionService();
 			ISelection selectionTmp = selectionService.getSelection();
-			if((selectionTmp != null) && (!selectionTmp.isEmpty())) {
-				if(selectionTmp instanceof StructuredSelection) {
-					Iterator<?> it = ((StructuredSelection)selectionTmp).iterator();
-					while(it.hasNext()) {
+			if ((selectionTmp != null) && (!selectionTmp.isEmpty())) {
+				if (selectionTmp instanceof StructuredSelection) {
+					Iterator<?> it = ((StructuredSelection) selectionTmp).iterator();
+					while (it.hasNext()) {
 						Object current = it.next();
-						if(current instanceof IGraphicalEditPart) {
-							EditPolicy editpolicy = ((IGraphicalEditPart)current).getEditPolicy(this.editpolicy);
-							if(editpolicy != null) {
-								this.selection.add((IGraphicalEditPart)current);
+						if (current instanceof IGraphicalEditPart) {
+							EditPolicy editpolicy = ((IGraphicalEditPart) current).getEditPolicy(this.editpolicy);
+							if (editpolicy != null) {
+								this.selection.add((IGraphicalEditPart) current);
 							}
 						}
 					}
 				}
-			}			
+			}
 		}
 
 	}

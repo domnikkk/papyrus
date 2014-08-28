@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,9 +37,9 @@ import org.eclipse.ui.IWorkbenchPart;
 
 /**
  * Handler for the Arrange Action
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class ArrangeHandler extends AbstractGraphicalCommandHandler {
 
@@ -47,29 +47,29 @@ public class ArrangeHandler extends AbstractGraphicalCommandHandler {
 	public static final String parameterID = "arrange_parameter"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameter
-	 *        parameter for the arrange action
+	 *            parameter for the arrange action
 	 */
 	public ArrangeHandler(String parameter) {
 		super(parameterID, parameter);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public ArrangeHandler() {
 		super(parameterID);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.handlers.GraphicalCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */
@@ -81,9 +81,9 @@ public class ArrangeHandler extends AbstractGraphicalCommandHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.menu.actions.handlers.AbstractGraphicalCommandHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
@@ -96,19 +96,20 @@ public class ArrangeHandler extends AbstractGraphicalCommandHandler {
 
 	/**
 	 * Execute the action with an animation
-	 * 
+	 *
 	 * @param progressMonitor
-	 *        the progress monitor
+	 *            the progress monitor
 	 */
 	protected void doRun(IProgressMonitor progressMonitor) {
-		IPreferenceStore preferenceStore = (IPreferenceStore)getDiagramEditPart().getDiagramPreferencesHint().getPreferenceStore();
+		IPreferenceStore preferenceStore = (IPreferenceStore) getDiagramEditPart().getDiagramPreferencesHint().getPreferenceStore();
 		boolean animatedLayout = preferenceStore.getBoolean(IPreferenceConstants.PREF_ENABLE_ANIMATED_LAYOUT);
 
-		if(animatedLayout)
+		if (animatedLayout) {
 			Animation.markBegin();
+		}
 
 		DiagramCommandStack stack = getDiagramCommandStack();
-		if(stack != null) {
+		if (stack != null) {
 			try {
 				(stack).execute(getCommand(), progressMonitor);
 			} catch (ExecutionException e) {
@@ -119,19 +120,19 @@ public class ArrangeHandler extends AbstractGraphicalCommandHandler {
 			return;
 		}
 
-		if(animatedLayout) {
+		if (animatedLayout) {
 			int durationInc = 800;
 			int factor = 10;
 			int size = 0;
 
 			List operationSet = getSelectedElements();
-			if(ArrangeAction.ARRANGE_ALL.equals(parameter)) {
-				for(Iterator iter = operationSet.iterator(); iter.hasNext();) {
-					IGraphicalEditPart element = (IGraphicalEditPart)iter.next();
+			if (ArrangeAction.ARRANGE_ALL.equals(parameter)) {
+				for (Iterator iter = operationSet.iterator(); iter.hasNext();) {
+					IGraphicalEditPart element = (IGraphicalEditPart) iter.next();
 					size += element.getFigure().getChildren().size();
 				}
-			} else if(operationSet != null && !operationSet.isEmpty()) {
-				IGraphicalEditPart container = (IGraphicalEditPart)getSelectionParent(operationSet);
+			} else if (operationSet != null && !operationSet.isEmpty()) {
+				IGraphicalEditPart container = (IGraphicalEditPart) getSelectionParent(operationSet);
 				size += container.getFigure().getChildren().size();
 			}
 
@@ -144,18 +145,18 @@ public class ArrangeHandler extends AbstractGraphicalCommandHandler {
 	/**
 	 * getSelectionParent Utility to return the logical parent of the selection
 	 * list
-	 * 
+	 *
 	 * @param editparts
-	 *        List to parse for a common parent.
+	 *            List to parse for a common parent.
 	 * @return EditPart that is the parent or null if a common parent doesn't
 	 *         exist.
 	 */
 	private EditPart getSelectionParent(List editparts) {
 		ListIterator li = editparts.listIterator();
-		while(li.hasNext()) {
+		while (li.hasNext()) {
 			Object obj = li.next();
-			if(!(obj instanceof ConnectionEditPart) && obj instanceof EditPart) {
-				return ((EditPart)obj).getParent();
+			if (!(obj instanceof ConnectionEditPart) && obj instanceof EditPart) {
+				return ((EditPart) obj).getParent();
 			}
 		}
 
@@ -165,7 +166,7 @@ public class ArrangeHandler extends AbstractGraphicalCommandHandler {
 	/**
 	 * A utility method to return the active <code>DiagramEditPart</code> if
 	 * the current part implements <code>IDiagramWorkbenchPart</code>
-	 * 
+	 *
 	 * @return The current diagram if the parts implements <code>IDiagramWorkbenchPart</code>; <code>null</code> otherwise
 	 */
 	@Override
@@ -177,7 +178,7 @@ public class ArrangeHandler extends AbstractGraphicalCommandHandler {
 	/**
 	 * A utility method to return the active part if it implements
 	 * or adapts to the <code>IDiagramWorkbenchPart</code> interface
-	 * 
+	 *
 	 * @return The current part if it implements or adapts to <code>IDiagramWorkbenchPart</code>; <code>null</code> otherwise
 	 */
 	@Override
@@ -185,11 +186,11 @@ public class ArrangeHandler extends AbstractGraphicalCommandHandler {
 		IDiagramWorkbenchPart diagramPart = null;
 		IWorkbenchPart part = getWorkbenchPart();
 
-		if(part instanceof IDiagramWorkbenchPart) {
-			diagramPart = (IDiagramWorkbenchPart)part;
+		if (part instanceof IDiagramWorkbenchPart) {
+			diagramPart = (IDiagramWorkbenchPart) part;
 
-		} else if(part != null) {
-			diagramPart = (IDiagramWorkbenchPart)part.getAdapter(IDiagramWorkbenchPart.class);
+		} else if (part != null) {
+			diagramPart = (IDiagramWorkbenchPart) part.getAdapter(IDiagramWorkbenchPart.class);
 		}
 
 		return diagramPart;

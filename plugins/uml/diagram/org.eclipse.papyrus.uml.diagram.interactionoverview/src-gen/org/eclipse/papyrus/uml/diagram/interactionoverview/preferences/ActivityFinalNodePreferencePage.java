@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class ActivityFinalNodePreferencePage extends InteractionOverviewDiagramN
 	static {
 
 		labelDefaultVisibilityMap = new LinkedHashMap<String, Boolean>();
-		labelDefaultVisibilityMap.put("Stereotype", Boolean.TRUE); //$NON-NLS-1$	
+		labelDefaultVisibilityMap.put("Stereotype", Boolean.TRUE); //$NON-NLS-1$
 
 		// Start of user code custom static initializations
 		// End of user code
@@ -46,9 +46,9 @@ public class ActivityFinalNodePreferencePage extends InteractionOverviewDiagramN
 
 	/**
 	 * Initialize defaults using a specified {@link IPreferenceStore}
-	 * 
+	 *
 	 * @param store
-	 *        the preference store.
+	 *            the preference store.
 	 */
 	public static void initDefaults(final IPreferenceStore store) {
 		// Start of user code custom default initializations
@@ -57,7 +57,7 @@ public class ActivityFinalNodePreferencePage extends InteractionOverviewDiagramN
 		store.setDefault(PreferencesConstantsHelper.getElementConstant(prefKey, PreferencesConstantsHelper.WIDTH), 20);
 		store.setDefault(PreferencesConstantsHelper.getElementConstant(prefKey, PreferencesConstantsHelper.HEIGHT), 20);
 		// Initialize default visibility for labels in preference page.
-		for(final String labelName : labelDefaultVisibilityMap.keySet()) {
+		for (final String labelName : labelDefaultVisibilityMap.keySet()) {
 			final String showLabelKey = PreferencesConstantsHelper.getCompartmentElementConstant(prefKey, labelName, PreferencesConstantsHelper.LABEL_VISIBILITY);
 			store.setDefault(showLabelKey, labelDefaultVisibilityMap.get(labelName));
 		}
@@ -68,7 +68,7 @@ public class ActivityFinalNodePreferencePage extends InteractionOverviewDiagramN
 	 */
 	@Override
 	protected void initializeLabelsList() {
-		for(final String name : labelDefaultVisibilityMap.keySet()) {
+		for (final String name : labelDefaultVisibilityMap.keySet()) {
 			this.labelsList.add(name);
 		}
 	}

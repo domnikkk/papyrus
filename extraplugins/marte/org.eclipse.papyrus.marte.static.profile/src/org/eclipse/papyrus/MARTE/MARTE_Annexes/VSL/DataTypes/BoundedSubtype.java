@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,12 +24,12 @@ import org.eclipse.uml2.uml.DataType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getBaseType <em>Base Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getMinValue <em>Min Value</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getMaxValue <em>Max Value</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#isIsMinOpen <em>Is Min Open</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#isIsMaxOpen <em>Is Max Open</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getBase_DataType <em>Base Data Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getBaseType <em>Base Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getMinValue <em>Min Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getMaxValue <em>Max Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#isIsMinOpen <em>Is Min Open</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#isIsMaxOpen <em>Is Max Open</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getBase_DataType <em>Base Data Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,10 +42,10 @@ public interface BoundedSubtype extends EObject {
 	 * Returns the value of the '<em><b>Base Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Type</em>' reference.
 	 * @see #setBaseType(DataType)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage#getBoundedSubtype_BaseType()
@@ -58,7 +58,9 @@ public interface BoundedSubtype extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getBaseType <em>Base Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Type</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Type</em>' reference.
 	 * @see #getBaseType()
 	 * @generated
 	 */
@@ -68,10 +70,10 @@ public interface BoundedSubtype extends EObject {
 	 * Returns the value of the '<em><b>Min Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Min Value</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Min Value</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Min Value</em>' attribute.
 	 * @see #setMinValue(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage#getBoundedSubtype_MinValue()
@@ -84,7 +86,9 @@ public interface BoundedSubtype extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getMinValue <em>Min Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Min Value</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Min Value</em>' attribute.
 	 * @see #getMinValue()
 	 * @generated
 	 */
@@ -94,10 +98,10 @@ public interface BoundedSubtype extends EObject {
 	 * Returns the value of the '<em><b>Max Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Max Value</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Max Value</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Max Value</em>' attribute.
 	 * @see #setMaxValue(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage#getBoundedSubtype_MaxValue()
@@ -110,7 +114,9 @@ public interface BoundedSubtype extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getMaxValue <em>Max Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Max Value</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Max Value</em>' attribute.
 	 * @see #getMaxValue()
 	 * @generated
 	 */
@@ -120,10 +126,10 @@ public interface BoundedSubtype extends EObject {
 	 * Returns the value of the '<em><b>Is Min Open</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Min Open</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Min Open</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Is Min Open</em>' attribute.
 	 * @see #setIsMinOpen(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage#getBoundedSubtype_IsMinOpen()
@@ -136,7 +142,9 @@ public interface BoundedSubtype extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#isIsMinOpen <em>Is Min Open</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Min Open</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Is Min Open</em>' attribute.
 	 * @see #isIsMinOpen()
 	 * @generated
 	 */
@@ -146,10 +154,10 @@ public interface BoundedSubtype extends EObject {
 	 * Returns the value of the '<em><b>Is Max Open</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Max Open</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Max Open</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Is Max Open</em>' attribute.
 	 * @see #setIsMaxOpen(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage#getBoundedSubtype_IsMaxOpen()
@@ -162,7 +170,9 @@ public interface BoundedSubtype extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#isIsMaxOpen <em>Is Max Open</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Max Open</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Is Max Open</em>' attribute.
 	 * @see #isIsMaxOpen()
 	 * @generated
 	 */
@@ -172,10 +182,10 @@ public interface BoundedSubtype extends EObject {
 	 * Returns the value of the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Data Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Data Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Data Type</em>' reference.
 	 * @see #setBase_DataType(DataType)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage#getBoundedSubtype_Base_DataType()
@@ -188,7 +198,9 @@ public interface BoundedSubtype extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getBase_DataType <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Data Type</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Data Type</em>' reference.
 	 * @see #getBase_DataType()
 	 * @generated
 	 */

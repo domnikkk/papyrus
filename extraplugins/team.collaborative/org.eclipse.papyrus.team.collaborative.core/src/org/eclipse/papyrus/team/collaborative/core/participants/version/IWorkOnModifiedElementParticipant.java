@@ -26,12 +26,12 @@ public interface IWorkOnModifiedElementParticipant {
 
 	/**
 	 * Checks if the {@link ExtendedURI} has been modified.
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 * @return the Istatus
 	 * @throws CollabException
-	 *         the collab exception
+	 *             the collab exception
 	 */
 	IStatus isModified(IExtendedURI uri);
 

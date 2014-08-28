@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.team.collaborative.core.ExtendedURI;
 import org.eclipse.papyrus.team.collaborative.core.ICollaborativeManager;
 import org.eclipse.papyrus.team.collaborative.core.IExtendedURI;
@@ -48,24 +49,25 @@ public class UpdateHandler extends AbstractCollabHandler {
 	 * 
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		if(!UIUtils.saveAllDirtyEditor().isOK()) {
+		if (!UIUtils.saveAllDirtyEditor().isOK()) {
 			return null;
 		}
 		ResourceSet resourceSet = getResourceSet();
-		if(resourceSet == null) {
+		if (resourceSet == null) {
 			UIUtils.errorDialog(CollabStatus.createErrorStatus("unable to retreive the resource set"), "Collaboratibe error");
 			return null;
 		}
 		Set<IExtendedURI> uris = new HashSet<IExtendedURI>();
-		for(Resource r : resourceSet.getResources()) {
+		for (Resource r : resourceSet.getResources()) {
 			IFile file = WorkspaceSynchronizer.getFile(r);
-			if(file != null && file.exists()) {
+			if (file != null && file.exists()) {
 				uris.add(new ExtendedURI(r.getURI()));
 			}
 		}
 		IStatus status = doUpdate(uris, resourceSet, true);
-		if(!status.isOK()) {
+		if (!status.isOK()) {
 			UIUtils.errorDialog(status, "Error");
 		}
 		return null;
@@ -74,17 +76,17 @@ public class UpdateHandler extends AbstractCollabHandler {
 
 	/**
 	 * Do update action
-	 * 
+	 *
 	 * @param uris
-	 *        the {@link IExtendedURI} to update
+	 *            the {@link IExtendedURI} to update
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @throws CollabException
-	 *         the collab exception
+	 *             the collab exception
 	 */
 	public static IStatus doUpdate(Set<IExtendedURI> uris, ResourceSet resourceSet, boolean preview) {
 		IUpdater updater = ICollaborativeManager.INSTANCE.getUpdater(uris, resourceSet);
-		if(updater == null) {
+		if (updater == null) {
 			return CollabStatus.createErrorStatus("Unable to find an Updater for: \n" + uris);
 		}
 		return doUpdateFromUpdater(resourceSet, updater, preview);
@@ -93,16 +95,16 @@ public class UpdateHandler extends AbstractCollabHandler {
 
 	public static IStatus doUpdateFromUpdater(ResourceSet resourceSet, IUpdater updater, boolean preview) {
 		Set<IExtendedURI> toUpdate = updater.getExtendedSet();
-		if(!toUpdate.isEmpty()) {
-			if(preview) {
-				ExtensivePartitionNameLabelProvider labelProvider = new ExtensivePartitionNameLabelProvider(new MatchingURIObject(toUpdate),UIUtils.getModelExplorerLavelProvider());
+		if (!toUpdate.isEmpty()) {
+			if (preview) {
+				ExtensivePartitionNameLabelProvider labelProvider = new ExtensivePartitionNameLabelProvider(new MatchingURIObject(toUpdate), UIUtils.getModelExplorerLavelProvider());
 				labelProvider.setColor(ICollabColors.UPDATE_COLLOR);
 				PreviewDialog previewDialog = new PreviewDialog(Display.getDefault().getActiveShell(), labelProvider, "Update Preview", "Element in light green will be updated");
 				Collection<EObject> objectsToReveal = UIUtils.getLeafSemanticElement(toUpdate, resourceSet);
-				if(objectsToReveal != null && !objectsToReveal.isEmpty()) {
+				if (objectsToReveal != null && !objectsToReveal.isEmpty()) {
 					previewDialog.setObjectsToReveal(objectsToReveal);
 				}
-				if(previewDialog.open() != PreviewDialog.OK) {
+				if (previewDialog.open() != Window.OK) {
 					return CollabStatus.createErrorStatus("Canceled by user");
 				}
 			}

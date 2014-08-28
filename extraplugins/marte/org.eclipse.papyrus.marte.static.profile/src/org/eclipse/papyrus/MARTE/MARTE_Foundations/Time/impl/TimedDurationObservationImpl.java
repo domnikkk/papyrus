@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,8 +33,8 @@ import org.eclipse.uml2.uml.DurationObservation;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedDurationObservationImpl#getObsKind <em>Obs Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedDurationObservationImpl#getBase_DurationObservation <em>Base Duration Observation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedDurationObservationImpl#getObsKind <em>Obs Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedDurationObservationImpl#getBase_DurationObservation <em>Base Duration Observation</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +45,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	 * The cached value of the '{@link #getObsKind() <em>Obs Kind</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getObsKind()
 	 * @generated
 	 * @ordered
@@ -55,6 +56,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	 * The cached value of the '{@link #getBase_DurationObservation() <em>Base Duration Observation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBase_DurationObservation()
 	 * @generated
 	 * @ordered
@@ -64,6 +66,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected TimedDurationObservationImpl() {
@@ -73,6 +76,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,8 +87,10 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<EventKind> getObsKind() {
 		if (obsKind == null) {
 			obsKind = new EDataTypeEList<EventKind>(EventKind.class, this, TimePackage.TIMED_DURATION_OBSERVATION__OBS_KIND);
@@ -95,15 +101,18 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public DurationObservation getBase_DurationObservation() {
 		if (base_DurationObservation != null && base_DurationObservation.eIsProxy()) {
-			InternalEObject oldBase_DurationObservation = (InternalEObject)base_DurationObservation;
-			base_DurationObservation = (DurationObservation)eResolveProxy(oldBase_DurationObservation);
+			InternalEObject oldBase_DurationObservation = (InternalEObject) base_DurationObservation;
+			base_DurationObservation = (DurationObservation) eResolveProxy(oldBase_DurationObservation);
 			if (base_DurationObservation != oldBase_DurationObservation) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimePackage.TIMED_DURATION_OBSERVATION__BASE_DURATION_OBSERVATION, oldBase_DurationObservation, base_DurationObservation));
+				}
 			}
 		}
 		return base_DurationObservation;
@@ -112,6 +121,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DurationObservation basicGetBase_DurationObservation() {
@@ -121,28 +131,34 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setBase_DurationObservation(DurationObservation newBase_DurationObservation) {
 		DurationObservation oldBase_DurationObservation = base_DurationObservation;
 		base_DurationObservation = newBase_DurationObservation;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimePackage.TIMED_DURATION_OBSERVATION__BASE_DURATION_OBSERVATION, oldBase_DurationObservation, base_DurationObservation));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TimePackage.TIMED_DURATION_OBSERVATION__OBS_KIND:
-				return getObsKind();
-			case TimePackage.TIMED_DURATION_OBSERVATION__BASE_DURATION_OBSERVATION:
-				if (resolve) return getBase_DurationObservation();
-				return basicGetBase_DurationObservation();
+		case TimePackage.TIMED_DURATION_OBSERVATION__OBS_KIND:
+			return getObsKind();
+		case TimePackage.TIMED_DURATION_OBSERVATION__BASE_DURATION_OBSERVATION:
+			if (resolve) {
+				return getBase_DurationObservation();
+			}
+			return basicGetBase_DurationObservation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,19 +166,20 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TimePackage.TIMED_DURATION_OBSERVATION__OBS_KIND:
-				getObsKind().clear();
-				getObsKind().addAll((Collection<? extends EventKind>)newValue);
-				return;
-			case TimePackage.TIMED_DURATION_OBSERVATION__BASE_DURATION_OBSERVATION:
-				setBase_DurationObservation((DurationObservation)newValue);
-				return;
+		case TimePackage.TIMED_DURATION_OBSERVATION__OBS_KIND:
+			getObsKind().clear();
+			getObsKind().addAll((Collection<? extends EventKind>) newValue);
+			return;
+		case TimePackage.TIMED_DURATION_OBSERVATION__BASE_DURATION_OBSERVATION:
+			setBase_DurationObservation((DurationObservation) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -170,17 +187,18 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TimePackage.TIMED_DURATION_OBSERVATION__OBS_KIND:
-				getObsKind().clear();
-				return;
-			case TimePackage.TIMED_DURATION_OBSERVATION__BASE_DURATION_OBSERVATION:
-				setBase_DurationObservation((DurationObservation)null);
-				return;
+		case TimePackage.TIMED_DURATION_OBSERVATION__OBS_KIND:
+			getObsKind().clear();
+			return;
+		case TimePackage.TIMED_DURATION_OBSERVATION__BASE_DURATION_OBSERVATION:
+			setBase_DurationObservation((DurationObservation) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -188,15 +206,16 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TimePackage.TIMED_DURATION_OBSERVATION__OBS_KIND:
-				return obsKind != null && !obsKind.isEmpty();
-			case TimePackage.TIMED_DURATION_OBSERVATION__BASE_DURATION_OBSERVATION:
-				return base_DurationObservation != null;
+		case TimePackage.TIMED_DURATION_OBSERVATION__OBS_KIND:
+			return obsKind != null && !obsKind.isEmpty();
+		case TimePackage.TIMED_DURATION_OBSERVATION__BASE_DURATION_OBSERVATION:
+			return base_DurationObservation != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -204,11 +223,14 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (obsKind: ");
@@ -217,4 +239,4 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 		return result.toString();
 	}
 
-} //TimedDurationObservationImpl
+} // TimedDurationObservationImpl

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 402525
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.creation;
 
@@ -26,14 +26,14 @@ import org.eclipse.swt.widgets.Control;
  * reference is the container of the object, it isn't a problem, but sometime it is not it's container.
  * In this case, it's the responsibility of the Factory to create the object in its container. The
  * caller will then refer it from wherever it needs it.
- * 
+ *
  * @author Camille Letavernier
  */
 public interface ReferenceValueFactory {
 
 	/**
 	 * Indicates if this factory can create new instances
-	 * 
+	 *
 	 * @return
 	 *         True if the factory can create a new object
 	 */
@@ -48,13 +48,13 @@ public interface ReferenceValueFactory {
 	 * to a parent (For example, the user can start creating an object, then cancel the operation :
 	 * the Java Object will therefore be created, but won't be attached to anything, and then will
 	 * be garbage collected). That's why this method should *not* attach the object to the given source.
-	 * 
+	 *
 	 * @param widget
-	 *        The widget calling this factory. It can be used for example to retrieve
-	 *        the Display for opening a Dialog
+	 *            The widget calling this factory. It can be used for example to retrieve
+	 *            the Display for opening a Dialog
 	 * @param context
-	 *        The object being edited, in which context the new object is to be created and which will as a result have a reference to the new object.
-	 *        If there is no context object (creation of a free-floating object) or it cannot be determined, this may be {@code null}
+	 *            The object being edited, in which context the new object is to be created and which will as a result have a reference to the new object.
+	 *            If there is no context object (creation of a free-floating object) or it cannot be determined, this may be {@code null}
 	 * @return
 	 *         The newly created object, or null if no object has been created
 	 */
@@ -67,9 +67,9 @@ public interface ReferenceValueFactory {
 	 * to their source. If the source is their container, then this method should probably
 	 * not do anything. However, if the source is a simple reference, this method should
 	 * attach these objects to their container.
-	 * 
+	 *
 	 * @param objectsToValidate
-	 *        The newly created objects that need to be validated
+	 *            The newly created objects that need to be validated
 	 * @return
 	 *         The validated objects
 	 */
@@ -77,7 +77,7 @@ public interface ReferenceValueFactory {
 
 	/**
 	 * Indicates if this factory can edit an object
-	 * 
+	 *
 	 * @return
 	 *         True if the Factory can edit an object
 	 */
@@ -85,11 +85,11 @@ public interface ReferenceValueFactory {
 
 	/**
 	 * Starts the edition of the given object
-	 * 
+	 *
 	 * @param widget
-	 *        The widget calling the factory. May be used for example to retrieve the shell for opening a Dialog.
+	 *            The widget calling the factory. May be used for example to retrieve the shell for opening a Dialog.
 	 * @param object
-	 *        The object to edit
+	 *            The object to edit
 	 * @return the edited object, or null if the object has been edited "in place"
 	 */
 	public Object edit(Control widget, Object object);

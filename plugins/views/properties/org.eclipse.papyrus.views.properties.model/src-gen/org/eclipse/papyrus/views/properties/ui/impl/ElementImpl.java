@@ -24,6 +24,7 @@ public class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ElementImpl() {
@@ -33,6 +34,7 @@ public class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -40,4 +42,4 @@ public class ElementImpl extends EObjectImpl implements Element {
 		return UiPackage.Literals.ELEMENT;
 	}
 
-} //ElementImpl
+} // ElementImpl

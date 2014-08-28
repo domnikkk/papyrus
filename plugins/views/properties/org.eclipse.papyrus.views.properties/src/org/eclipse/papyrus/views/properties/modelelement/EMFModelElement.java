@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 402525
  *  Christian W. Damus (CEA) - bug 323802
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.modelelement;
 
@@ -47,7 +47,7 @@ import org.eclipse.papyrus.views.properties.creation.EcorePropertyEditorFactory;
  * This ModelElement uses EMFProperties to retrieve Observables when there
  * is no Editing Domain, and {@link EMFObservableValue} / {@link EMFObservableList} when
  * an Editing domain is available
- * 
+ *
  * @author Camille Letavernier
  */
 public class EMFModelElement extends AbstractModelElement {
@@ -63,9 +63,9 @@ public class EMFModelElement extends AbstractModelElement {
 	protected EditingDomain domain;
 
 	/**
-	 * 
+	 *
 	 * Constructs a new EMFModelElement for the given EObject
-	 * 
+	 *
 	 * @param source
 	 */
 	public EMFModelElement(EObject source) {
@@ -73,9 +73,9 @@ public class EMFModelElement extends AbstractModelElement {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructs a new EMFModelElement for the given EObject and Editing Domain
-	 * 
+	 *
 	 * @param source
 	 * @param domain
 	 */
@@ -102,11 +102,11 @@ public class EMFModelElement extends AbstractModelElement {
 	protected IObservable doGetObservable(String propertyPath) {
 		FeaturePath featurePath = getFeaturePath(propertyPath);
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature == null) {
+		if (feature == null) {
 			return null;
 		}
 
-		if(feature.getUpperBound() != 1) {
+		if (feature.getUpperBound() != 1) {
 			IObservableList list = domain == null ? EMFProperties.list(featurePath).observe(source) : new EMFObservableList(EMFProperties.list(featurePath).observe(source), domain, getSource(featurePath), feature);
 			return list;
 		}
@@ -118,22 +118,22 @@ public class EMFModelElement extends AbstractModelElement {
 	/**
 	 * Returns the last EObject by following the given featurePath from the {@link #source} EObject
 	 * The last feature of the featurePath can be used to retrieve value from the returned EObject
-	 * 
+	 *
 	 * @param featurePath
 	 * @return the EObject found by resolving to the given FeaturePath
 	 */
 	public EObject getSource(FeaturePath featurePath) {
 		EObject currentSource = source;
 		EStructuralFeature[] features = featurePath.getFeaturePath();
-		for(int i = 0; i < features.length - 1; i++) {
-			currentSource = (EObject)currentSource.eGet(features[i]);
+		for (int i = 0; i < features.length - 1; i++) {
+			currentSource = (EObject) currentSource.eGet(features[i]);
 		}
 		return currentSource;
 	}
 
 	/**
 	 * Returns the feature represented by the given FeaturePath
-	 * 
+	 *
 	 * @param featurePath
 	 * @return
 	 *         The last feature obtained by navigating the feature path
@@ -145,9 +145,9 @@ public class EMFModelElement extends AbstractModelElement {
 
 	/**
 	 * Returns the feature represented by the given propertyPath.
-	 * 
+	 *
 	 * @param propertyPath
-	 *        The property path may contain one or more dots to navigate the properties (e.g. : feature1.feature2.feature3)
+	 *            The property path may contain one or more dots to navigate the properties (e.g. : feature1.feature2.feature3)
 	 * @return
 	 *         The last feature obtained by resolving the full property path
 	 */
@@ -158,9 +158,9 @@ public class EMFModelElement extends AbstractModelElement {
 
 	/**
 	 * Returns the featurePath corresponding to the given propertyPath
-	 * 
+	 *
 	 * @param propertyPath
-	 *        The property path may contain one or more dots to navigate the properties (e.g. : feature1.feature2.feature3)
+	 *            The property path may contain one or more dots to navigate the properties (e.g. : feature1.feature2.feature3)
 	 * @return
 	 *         The featurePath corresponding to the given propertyPath
 	 */
@@ -170,15 +170,15 @@ public class EMFModelElement extends AbstractModelElement {
 
 		int i = 0;
 		EClass currentClass = source.eClass();
-		for(String featureName : featureNames) {
+		for (String featureName : featureNames) {
 			EStructuralFeature feature = currentClass.getEStructuralFeature(featureName);
 			features[i++] = feature;
-			if(i < featureNames.length) {
-				if(feature instanceof EReference) {
-					EReference reference = (EReference)feature;
+			if (i < featureNames.length) {
+				if (feature instanceof EReference) {
+					EReference reference = (EReference) feature;
 					EClassifier type = reference.getEType();
-					if(type instanceof EClass) {
-						currentClass = (EClass)type;
+					if (type instanceof EClass) {
+						currentClass = (EClass) type;
 						continue;
 					}
 				}
@@ -195,7 +195,7 @@ public class EMFModelElement extends AbstractModelElement {
 	public IStaticContentProvider getContentProvider(String propertyPath) {
 		FeaturePath featurePath = getFeaturePath(propertyPath);
 		EStructuralFeature feature = getFeature(featurePath);
-		if(feature != null) {
+		if (feature != null) {
 			return new EMFContentProvider(getSource(featurePath), feature);
 		}
 		return super.getContentProvider(propertyPath);
@@ -206,7 +206,7 @@ public class EMFModelElement extends AbstractModelElement {
 		try {
 			LabelProviderService lpSvc = (source.eResource() != null) //
 			? ServiceUtilsForEObject.getInstance().getService(LabelProviderService.class, source) //
-			: ServiceUtilsForResourceSet.getInstance().getService(LabelProviderService.class, NestedEditingDialogContext.getInstance().getResourceSet());
+					: ServiceUtilsForResourceSet.getInstance().getService(LabelProviderService.class, NestedEditingDialogContext.getInstance().getResourceSet());
 			return lpSvc.getLabelProvider();
 		} catch (ServiceException ex) {
 			Activator.log.error(ex);
@@ -217,7 +217,7 @@ public class EMFModelElement extends AbstractModelElement {
 	@Override
 	public boolean isOrdered(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature == null) {
+		if (feature == null) {
 			return true;
 		}
 		return feature.isOrdered();
@@ -226,7 +226,7 @@ public class EMFModelElement extends AbstractModelElement {
 	@Override
 	public boolean isUnique(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature == null) {
+		if (feature == null) {
 			return false;
 		}
 		return feature.isUnique();
@@ -235,7 +235,7 @@ public class EMFModelElement extends AbstractModelElement {
 	@Override
 	public boolean isMandatory(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature == null) {
+		if (feature == null) {
 			return false;
 		}
 
@@ -249,20 +249,20 @@ public class EMFModelElement extends AbstractModelElement {
 
 	protected boolean isFeatureEditable(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature == null) {
+		if (feature == null) {
 			return false;
 		}
 		return feature.isChangeable();
 	}
-	
+
 	protected boolean isElementEditable() {
 		return !EMFHelper.isReadOnly(source);
 	}
-	
+
 	@Override
 	public boolean forceRefresh(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature == null) {
+		if (feature == null) {
 			return false;
 		}
 		return feature.isDerived();
@@ -271,10 +271,10 @@ public class EMFModelElement extends AbstractModelElement {
 	@Override
 	public ReferenceValueFactory getValueFactory(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature != null) {
-			if(feature instanceof EReference) {
-				EReference reference = (EReference)feature;
-				if(reference.isContainment()) {
+		if (feature != null) {
+			if (feature instanceof EReference) {
+				EReference reference = (EReference) feature;
+				if (reference.isContainment()) {
 					return new EcorePropertyEditorFactory(reference);
 				}
 			}
@@ -286,7 +286,7 @@ public class EMFModelElement extends AbstractModelElement {
 	@Override
 	public Object getDefaultValue(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature == null) {
+		if (feature == null) {
 			return null;
 		}
 		return feature.getDefaultValue();
@@ -295,14 +295,14 @@ public class EMFModelElement extends AbstractModelElement {
 	@Override
 	public boolean getDirectCreation(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature == null) {
+		if (feature == null) {
 			return false;
 		}
 
-		if(feature instanceof EAttribute) {
+		if (feature instanceof EAttribute) {
 			return false;
 		}
 
-		return ((EReference)feature).isContainment();
+		return ((EReference) feature).isContainment();
 	}
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,11 +22,11 @@ import org.eclipse.uml2.common.edit.command.ChangeCommand;
 import org.eclipse.uml2.uml.Image;
 
 /**
- * 
+ *
  * An IObservableValue to handle the way the image is displayed
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ImageKindObservableValue extends AbstractObservableValue implements IObserving {
 
@@ -53,13 +53,13 @@ public class ImageKindObservableValue extends AbstractObservableValue implements
 	private EditingDomain domain;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param image
-	 *        The UML Image element
+	 *            The UML Image element
 	 * @param domain
-	 *        The editing domain on which the commands will be executed
+	 *            The editing domain on which the commands will be executed
 	 */
 	public ImageKindObservableValue(Image image, EditingDomain domain) {
 		this.image = image;
@@ -83,8 +83,8 @@ public class ImageKindObservableValue extends AbstractObservableValue implements
 	 */
 	@Override
 	protected void doSetValue(Object value) {
-		if(value instanceof String) {
-			final String kind = (String)value;
+		if (value instanceof String) {
+			final String kind = (String) value;
 
 			Runnable runnable = new Runnable() {
 

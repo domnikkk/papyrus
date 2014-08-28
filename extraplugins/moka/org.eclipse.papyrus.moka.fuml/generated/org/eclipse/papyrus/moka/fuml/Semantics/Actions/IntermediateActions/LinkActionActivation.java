@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ public abstract class LinkActionActivation extends ActionActivation {
 		// Test whether the given link matches the given end data.
 		boolean matches = true;
 		int i = 1;
-		while(matches & i <= endDataList.size()) {
+		while (matches & i <= endDataList.size()) {
 			matches = this.endMatchesEndData(link, endDataList.get(i - 1));
 			i = i + 1;
 		}
@@ -43,15 +43,15 @@ public abstract class LinkActionActivation extends ActionActivation {
 		// Test whether the appropriate end of the given link matches the given
 		// end data.
 		boolean matches = false;
-		if(endData.getValue() == null) {
+		if (endData.getValue() == null) {
 			matches = true;
 		} else {
 			Property end = endData.getEnd();
 			FeatureValue linkFeatureValue = link.getFeatureValue(end);
 			Value endValue = this.getTokens(endData.getValue()).get(0);
-			if(endData instanceof LinkEndDestructionData) {
-				if(!((LinkEndDestructionData)endData).isDestroyDuplicates() & !end.isUnique() & end.isOrdered()) {
-					int destroyAt = ((UnlimitedNaturalValue)(this.getTokens(((LinkEndDestructionData)endData).getDestroyAt()).get(0))).value;
+			if (endData instanceof LinkEndDestructionData) {
+				if (!((LinkEndDestructionData) endData).isDestroyDuplicates() & !end.isUnique() & end.isOrdered()) {
+					int destroyAt = ((UnlimitedNaturalValue) (this.getTokens(((LinkEndDestructionData) endData).getDestroyAt()).get(0))).value;
 					matches = linkFeatureValue.values.get(0).equals(endValue) && linkFeatureValue.position == destroyAt;
 				} else {
 					matches = linkFeatureValue.values.get(0).equals(endValue);
@@ -65,6 +65,6 @@ public abstract class LinkActionActivation extends ActionActivation {
 
 	public Association getAssociation() {
 		// Get the association for the link action of this activation.
-		return (Association)(((LinkAction)(this.node)).getEndData().get(0).getEnd().getAssociation());
+		return (((LinkAction) (this.node)).getEndData().get(0).getEnd().getAssociation());
 	}
 }

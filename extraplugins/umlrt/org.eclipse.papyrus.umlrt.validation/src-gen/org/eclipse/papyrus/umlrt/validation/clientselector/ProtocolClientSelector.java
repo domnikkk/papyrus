@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -19,18 +19,19 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 public class ProtocolClientSelector implements IClientSelector {
 
+	@Override
 	public boolean selects(Object object) {
-		if(!(object instanceof EObject)) {
+		if (!(object instanceof EObject)) {
 			return false;
 		}
 
-		if(object instanceof Element) {
+		if (object instanceof Element) {
 			return false;
 		}
 
-		EObject stereotypeApplication = ((EObject)object);
+		EObject stereotypeApplication = ((EObject) object);
 		Stereotype stereotype = UMLUtil.getStereotype(stereotypeApplication);
-		if(stereotype == null) {
+		if (stereotype == null) {
 			return false;
 		}
 
@@ -38,7 +39,7 @@ public class ProtocolClientSelector implements IClientSelector {
 	}
 
 	public boolean checkStereotype(Stereotype stereotype, String stereoName) {
-		if(stereoName.equals(stereotype.getName())) {
+		if (stereoName.equals(stereotype.getName())) {
 			return true;
 		}
 		for (Class superStereo : stereotype.getSuperClasses()) {
@@ -51,4 +52,3 @@ public class ProtocolClientSelector implements IClientSelector {
 		return false;
 	}
 }
-

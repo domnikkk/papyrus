@@ -29,24 +29,24 @@ public class GEFtoEMFCommandWrapper extends AbstractCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param gefCommand
-	 *        the gef command
+	 *            the gef command
 	 */
 	public GEFtoEMFCommandWrapper(Command gefCommand) {
 		super(gefCommand.getLabel());
 		this.gefCommand = gefCommand;
 	}
-	
+
 	/**
 	 * Wraps the given {@code command}, accounting for possible non-dirty state.
-	 * 
+	 *
 	 * @param command
-	 *        a command to wrap
+	 *            a command to wrap
 	 * @return the best wrapper for the {@code command}
 	 */
 	public static org.eclipse.emf.common.command.Command wrap(Command command) {
-		if(command instanceof INonDirtying) {
+		if (command instanceof INonDirtying) {
 			return new NonDirtying(command);
 		}
 		return new GEFtoEMFCommandWrapper(command);
@@ -54,7 +54,7 @@ public class GEFtoEMFCommandWrapper extends AbstractCommand {
 
 	/**
 	 * Returns the wrapped GEF command.
-	 * 
+	 *
 	 * @return the GEF command
 	 */
 	// @unused
@@ -64,7 +64,7 @@ public class GEFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.AbstractCommand#canExecute()
 	 */
 	@Override
@@ -74,7 +74,7 @@ public class GEFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.AbstractCommand#dispose()
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class GEFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.AbstractCommand#canUndo()
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class GEFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#execute()
 	 */
 	public void execute() {
@@ -104,7 +104,7 @@ public class GEFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#redo()
 	 */
 	public void redo() {
@@ -112,19 +112,19 @@ public class GEFtoEMFCommandWrapper extends AbstractCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.AbstractCommand#undo()
-	 * 
+	 *
 	 */
 	@Override
 	public void undo() {
 		gefCommand.undo();
 	}
-	
+
 	//
 	// Nested types
 	//
-	
+
 	/**
 	 * A non-dirtying wrapper for non-dirtying commands.
 	 */
@@ -133,10 +133,10 @@ public class GEFtoEMFCommandWrapper extends AbstractCommand {
 		public NonDirtying(Command command) {
 			super(command);
 
-			if(!(command instanceof INonDirtying)) {
+			if (!(command instanceof INonDirtying)) {
 				throw new IllegalArgumentException("Wrapped command is not non-dirtying"); //$NON-NLS-1$
 			}
 		}
-		
+
 	}
 }

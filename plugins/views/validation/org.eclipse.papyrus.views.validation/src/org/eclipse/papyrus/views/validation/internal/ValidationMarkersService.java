@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ public class ValidationMarkersService
 	private ModelSet modelSet;
 
 	private final Multimap<EObject, IPapyrusMarker> markers = HashMultimap
-		.create();
+			.create();
 
 	private final CopyOnWriteArrayList<IValidationMarkerListener> listeners = new CopyOnWriteArrayList<IValidationMarkerListener>();
 
@@ -74,26 +74,26 @@ public class ValidationMarkersService
 		// ADDED
 		try {
 			if (marker.exists() && !marker.isSubtypeOf(IMarker.PROBLEM)) {
-				return ;
+				return;
 			}
 		} catch (CoreException e1) {
-			Activator.log.error(e1) ;
+			Activator.log.error(e1);
 		}
-		//////
-		
+		// ////
+
 		MarkerChangeKind kind = (addedOrRemoved == MARKER_ADDED)
-			? MarkerChangeKind.ADDED
-			: MarkerChangeKind.REMOVED;
+				? MarkerChangeKind.ADDED
+				: MarkerChangeKind.REMOVED;
 
 		switch (kind) {
-			case ADDED :
-				markers.put(eObjectOfMarker, marker);
-				break;
-			case REMOVED :
-				// workspace markers don't know their EObjects, so we can't look
-				// up the mapping to remove by key
-				markers.values().remove(marker);
-				break;
+		case ADDED:
+			markers.put(eObjectOfMarker, marker);
+			break;
+		case REMOVED:
+			// workspace markers don't know their EObjects, so we can't look
+			// up the mapping to remove by key
+			markers.values().remove(marker);
+			break;
 		}
 
 		for (IValidationMarkerListener next : listeners) {
@@ -101,7 +101,7 @@ public class ValidationMarkersService
 				next.notifyMarkerChange(marker, kind);
 			} catch (Exception e) {
 				Activator.log.error(
-					"Uncaught exception in validation marker listener.", e);
+						"Uncaught exception in validation marker listener.", e);
 			}
 		}
 	}

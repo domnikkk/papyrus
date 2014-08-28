@@ -1093,7 +1093,7 @@
 <extension
       point="org.eclipse.ui.handlers">
 	<handler
-         class="org.eclipse.papyrus.sysml.diagram.blockdefinition.handler.ManageProvidedInterfacesHandler"
+         class="org.eclipse.papyrus.sysml.diagram.blockdefinition.handler.BlockDefinitionManageInterfacesHandler"
          commandId="org.eclipse.papyrus.sysml.diagram.blockdefinition.command.manage.interfaces">
 	<activeWhen>
          <and>

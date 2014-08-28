@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,18 +24,20 @@ import org.eclipse.papyrus.infra.core.IElementWithSemantic;
  */
 public class SemanticFromGMFElement implements IElementWithSemantic {
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.IElementWithSemantic#getSemanticElement(java.lang.Object)
 	 *
-	 * @param wrapper can be for examplean editpart of gmf
+	 * @param wrapper
+	 *            can be for examplean editpart of gmf
 	 * @return the semantic element linked to this or null element
 	 */
+	@Override
 	public Object getSemanticElement(Object wrapper) {
-		if(wrapper instanceof IGraphicalEditPart){
-			return ((IGraphicalEditPart)wrapper).resolveSemanticElement();
+		if (wrapper instanceof IGraphicalEditPart) {
+			return ((IGraphicalEditPart) wrapper).resolveSemanticElement();
 		}
-		if( wrapper instanceof IAdaptable){
-			return ((IAdaptable)wrapper).getAdapter(EObject.class);
+		if (wrapper instanceof IAdaptable) {
+			return ((IAdaptable) wrapper).getAdapter(EObject.class);
 		}
 		return null;
 	}

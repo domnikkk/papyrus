@@ -32,7 +32,7 @@ public class CppCodeGenConstants {
 	 * User defined comment header in generated files
 	 */
 	public static final String P_COMMENT_HEADER = "commentHeader"; //$NON-NLS-1$
-	
+
 	/**
 	 * Suffix for generated header files
 	 */

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,38 +37,38 @@ public class InsertDiagramCommand extends RecordingCommand {
 	/** element of the diagram */
 	protected EObject element;
 
-	
+
 	/**
 	 * Insert a diagram with the specified owner and element
-	 * 
+	 *
 	 * @param transactionalEditingDomain
 	 * @param label
-	 *        of the command
+	 *            of the command
 	 * @param diagram
-	 *        to be inserted
+	 *            to be inserted
 	 * @param element
-	 *        of the diagram // FIXME
+	 *            of the diagram // FIXME
 	 * @param owner
-	 *        of the diagram        
+	 *            of the diagram
 	 */
 	public InsertDiagramCommand(TransactionalEditingDomain transactionalEditingDomain, String label, Diagram diagram, EObject owner) {
 		this(transactionalEditingDomain, label, diagram, owner, null);
-	}	
-	
+	}
+
 	/**
 	 * Insert a diagram with the specified owner and element
-	 * 
+	 *
 	 * @param transactionalEditingDomain
 	 * @param label
-	 *        of the command
+	 *            of the command
 	 * @param diagram
-	 *        to be inserted
+	 *            to be inserted
 	 * @param element
-	 *        of the diagram
+	 *            of the diagram
 	 * @param owner
-	 *        of the diagram        
+	 *            of the diagram
 	 */
-	public InsertDiagramCommand(TransactionalEditingDomain transactionalEditingDomain, String label, Diagram diagram,  EObject owner, EObject element) {
+	public InsertDiagramCommand(TransactionalEditingDomain transactionalEditingDomain, String label, Diagram diagram, EObject owner, EObject element) {
 		super(transactionalEditingDomain, label);
 		this.transactionalEditingDomain = transactionalEditingDomain; // FIXME the domain of Recording command should be accessible
 		this.diagram = diagram;
@@ -78,18 +78,18 @@ public class InsertDiagramCommand extends RecordingCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.transaction.RecordingCommand#doExecute()
 	 */
 	@Override
 	protected void doExecute() {
 		Resource targetResource = NotationUtils.getNotationResourceForDiagram(owner, transactionalEditingDomain);
 		DiagramUtils.setOwner(diagram, owner);
-		if (element != null){
+		if (element != null) {
 			diagram.setElement(element);
 		}
-		
-		if(targetResource != null) {
+
+		if (targetResource != null) {
 			targetResource.getContents().add(diagram);
 		}
 	}

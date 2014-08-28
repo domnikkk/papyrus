@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,11 +27,11 @@ public class CustomActivityEditPartTN extends ActivityEditPart {
 	protected IFigure createNodeShape() {
 		return primaryShape = new ActivityAsInteractionFigure();
 	}
-	
+
 	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		//Because ActivityTN is not created by default in this diagram, user may move the figure unlike in Activity diagram
+		// Because ActivityTN is not created by default in this diagram, user may move the figure unlike in Activity diagram
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableShapeEditPolicy());
 	}
 }

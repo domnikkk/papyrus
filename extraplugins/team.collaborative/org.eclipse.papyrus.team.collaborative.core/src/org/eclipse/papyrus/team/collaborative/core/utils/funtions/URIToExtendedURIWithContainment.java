@@ -52,7 +52,7 @@ public class URIToExtendedURIWithContainment implements Function<URI, IExtendedU
 	/**
 	 * Returns the Singleton instance.
 	 * <p>
-	 * 
+	 *
 	 * @return The Singleton instance.
 	 */
 	public static URIToExtendedURIWithContainment getInstance() {

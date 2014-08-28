@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ public class StrategyChooser implements IStrategyChooser {
 	 * @see org.eclipse.papyrus.infra.services.resourceloading.IStrategyChooser#getCurrentStrategy()
 	 */
 	public int getCurrentStrategy() {
-		if(currentStrategy == -1) {
+		if (currentStrategy == -1) {
 			// set the current strategy at the first time
 			currentStrategy = Activator.getDefault().getPreferenceStore().getInt(ICorePreferenceConstants.PREF_CORE_DEFINE_LOADING_STRATEGY);
 		}
@@ -44,13 +44,13 @@ public class StrategyChooser implements IStrategyChooser {
 
 	/**
 	 * Sets the current strategy.
-	 * 
+	 *
 	 * @param strategy
-	 *        the new current strategy ID
+	 *            the new current strategy ID
 	 */
 	public static void setCurrentStrategy(int strategy) {
 		currentStrategy = strategy;
-		if(Activator.getDefault().getPreferenceStore().getInt(ICorePreferenceConstants.PREF_CORE_DEFINE_LOADING_STRATEGY) != strategy) {
+		if (Activator.getDefault().getPreferenceStore().getInt(ICorePreferenceConstants.PREF_CORE_DEFINE_LOADING_STRATEGY) != strategy) {
 			Activator.getDefault().getPreferenceStore().setValue(ICorePreferenceConstants.PREF_CORE_DEFINE_LOADING_STRATEGY, String.valueOf(strategy));
 		}
 	}

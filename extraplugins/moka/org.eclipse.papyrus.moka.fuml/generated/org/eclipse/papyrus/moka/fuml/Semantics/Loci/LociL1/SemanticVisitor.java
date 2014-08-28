@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,10 +16,10 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1;
 public abstract class SemanticVisitor {
 
 	public void _endIsolation() {
-		//System.out.println("_endIsolation");
+		// System.out.println("_endIsolation");
 	}
 
 	public void _beginIsolation() {
-		//System.out.println("_beginIsolation");
+		// System.out.println("_beginIsolation");
 	}
 }

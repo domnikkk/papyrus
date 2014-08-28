@@ -2,7 +2,7 @@
 /* JavaCCOptions:TOKEN_EXTENDS=,KEEP_LINE_COL=null */
 /*
  * Copyright (C) 2008 Júlio Vilmar Gesser.
- * 
+ *
  * This file is part of Java 1.5 parser and Abstract Syntax Tree.
  *
  * Java 1.5 parser and Abstract Syntax Tree is free software: you can redistribute it and/or modify
@@ -110,6 +110,7 @@ public class Token {
 	/**
 	 * Returns the image.
 	 */
+	@Override
 	public String toString() {
 		return image;
 	}
@@ -120,14 +121,14 @@ public class Token {
 	 * Simply add the cases to the switch for all those special cases.
 	 * For example, if you have a subclass of Token called IDToken that
 	 * you want to create if ofKind is ID, simply add something like :
-	 * 
+	 *
 	 * case MyParserConstants.ID : return new IDToken(ofKind, image);
-	 * 
+	 *
 	 * to the following switch statement. Then you can cast matchedToken
 	 * variable to the appropriate type and use sit in your lexical actions.
 	 */
 	public static Token newToken(int ofKind, String image) {
-		switch(ofKind) {
+		switch (ofKind) {
 		default:
 			return new Token(ofKind, image);
 		}

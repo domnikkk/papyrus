@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.StackConfiguration#getOwnedConfigurations <em>Owned Configurations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.StackConfiguration#getOwnedConfigurations <em>Owned Configurations</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,10 +30,10 @@ public interface StackConfiguration extends ChildConfiguration {
 	 * The list contents are of type {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.LeafConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Owned Configurations</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Owned Configurations</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Owned Configurations</em>' containment reference list.
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getStackConfiguration_OwnedConfigurations()
 	 * @model containment="true" required="true"
